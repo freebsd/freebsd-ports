@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	mozart
-PORTVERSION=	1.2.4.20020829
+PORTVERSION=	1.2.5.20030212
 CATEGORIES=	lang tk83 parallel
-MASTER_SITES=	ftp://ftp.mozart-oz.org/pub/mozart/${PORTVERSION}/tar/ \
+MASTER_SITES=	http://www.mozart-oz.org/download/mozart-ftp/store/1.2.5-2003-02-12/ \
+		ftp://ftp.mozart-oz.org/pub/mozart/${PORTVERSION}/tar/ \
 		ftp://ftp.sics.se/pub/mozart/${PORTVERSION}/tar/
 DISTFILES=	${DISTNAME}-src.tar.gz ${MOZART_DOCS}
 .if !defined(NOPORTDOCS)
@@ -18,10 +19,10 @@ DISTFILES+=	${MOZART_DOCS}
 MAINTAINER=	mathiasp@virtual-earth.de
 COMMENT=	A distributed language with constraint-based inference
 
-BROKEN=		"Does not compile"
-
-BUILD_DEPENDS=	emacs:${PORTSDIR}/editors/emacs21
+BUILD_DEPENDS=	emacs:${PORTSDIR}/editors/emacs21 \
+		${LOCALBASE}/include/gmp.h:${PORTSDIR}/math/libgmp4
 LIB_DEPENDS=	gdbm.3:${PORTSDIR}/databases/gdbm \
+		gmp.6:${PORTSDIR}/math/libgmp4 \
 		tk83.1:${PORTSDIR}/x11-toolkits/tk83
 
 MOZART_DOCS=	mozart-${PORTVERSION}-doc.tar.gz
@@ -39,7 +40,7 @@ WANT_AUTOCONF_VER=	213
 # when configuring as root.
 CONFIGURE_ENV=	INSTALL=${CHMOD}
 CONFIGURE_ARGS=	--prefix=${PREFIX}/lib/oz --disable-doc \
-	--with-inc-dir=${LOCALBASE}/include/tcl8.3,${LOCALBASE}/include/tk8.3 \
+	--with-inc-dir=${LOCALBASE}/include/tcl8.3,${LOCALBASE}/include/tk8.3,${LOCALBASE}/include \
 	--with-lib-dir=${LOCALBASE}/lib --with-tcl-lib=${LOCALBASE}/lib \
 	--with-tk-lib=${LOCALBASE}/lib \
 	--with-tkinclude=${LOCALBASE}/include/tk8.3
@@ -56,8 +57,6 @@ pre-extract:
 	@${ECHO}
 
 post-patch:
-	cd ${WRKSRC}/contrib/gtk \
-		&& ${AUTOCONF} ${AUTOCONF_ARGS} -l ${WRKSRC}
 	cd ${WRKSRC}/platform/emulator \
 		&& ${AUTOCONF} ${AUTOCONF_ARGS} -l ${WRKSRC}
 	cd ${WRKSRC}/platform/tools/gump/ozflex \

@@ -1,0 +1,13 @@
+--- platform/emulator/libfd/std.cc    Tue Aug 20 16:19:47 2002
++++ platform/emulator/libfd/std.cc    Thu Jul 24 19:19:27 2003
+@@ -44,7 +44,9 @@
+ 
+ #else
+ 
+-#include <values.h>
++#include <limits.h>
++#include <float.h>
++#define DMAXPOWTWO DBL_MAX_EXP
+ 
+ #endif
+ 
