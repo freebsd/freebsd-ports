@@ -9,8 +9,10 @@
 %%PORTDOCS%%share/doc/twisted/WritingServers.html
 %%PORTDOCS%%share/doc/twisted/delayeds.html
 %%PORTDOCS%%share/doc/twisted/img/TwistedLogo.bmp
+%%PORTDOCS%%share/doc/twisted/index.html
 %%PORTDOCS%%share/doc/twisted/manhole.html
 %%PORTDOCS%%share/doc/twisted/widgets.html
+%%PORTDOCS%%share/examples/twisted/bugs.tac
 %%PORTDOCS%%share/examples/twisted/coil.tac
 %%PORTDOCS%%share/examples/twisted/dbauth.tac
 %%PORTDOCS%%share/examples/twisted/dnstest.py
@@ -55,6 +57,9 @@ lib/%%PYTHON_VERSION%%/site-packages/twisted/enterprise/__init__.pyo
 lib/%%PYTHON_VERSION%%/site-packages/twisted/enterprise/adbapi.py
 lib/%%PYTHON_VERSION%%/site-packages/twisted/enterprise/adbapi.pyc
 lib/%%PYTHON_VERSION%%/site-packages/twisted/enterprise/adbapi.pyo
+lib/%%PYTHON_VERSION%%/site-packages/twisted/enterprise/dbgadgets.py
+lib/%%PYTHON_VERSION%%/site-packages/twisted/enterprise/dbgadgets.pyc
+lib/%%PYTHON_VERSION%%/site-packages/twisted/enterprise/dbgadgets.pyo
 lib/%%PYTHON_VERSION%%/site-packages/twisted/enterprise/dbpassport.py
 lib/%%PYTHON_VERSION%%/site-packages/twisted/enterprise/dbpassport.pyc
 lib/%%PYTHON_VERSION%%/site-packages/twisted/enterprise/dbpassport.pyo
@@ -148,6 +153,9 @@ lib/%%PYTHON_VERSION%%/site-packages/twisted/manhole/ui/__init__.pyo
 lib/%%PYTHON_VERSION%%/site-packages/twisted/manhole/ui/gtkmanhole.py
 lib/%%PYTHON_VERSION%%/site-packages/twisted/manhole/ui/gtkmanhole.pyc
 lib/%%PYTHON_VERSION%%/site-packages/twisted/manhole/ui/gtkmanhole.pyo
+lib/%%PYTHON_VERSION%%/site-packages/twisted/manhole/ui/spelunk_gnome.py
+lib/%%PYTHON_VERSION%%/site-packages/twisted/manhole/ui/spelunk_gnome.pyc
+lib/%%PYTHON_VERSION%%/site-packages/twisted/manhole/ui/spelunk_gnome.pyo
 lib/%%PYTHON_VERSION%%/site-packages/twisted/manhole/webcoil.py
 lib/%%PYTHON_VERSION%%/site-packages/twisted/manhole/webcoil.pyc
 lib/%%PYTHON_VERSION%%/site-packages/twisted/manhole/webcoil.pyo
@@ -181,6 +189,15 @@ lib/%%PYTHON_VERSION%%/site-packages/twisted/protocols/http.pyo
 lib/%%PYTHON_VERSION%%/site-packages/twisted/protocols/irc.py
 lib/%%PYTHON_VERSION%%/site-packages/twisted/protocols/irc.pyc
 lib/%%PYTHON_VERSION%%/site-packages/twisted/protocols/irc.pyo
+lib/%%PYTHON_VERSION%%/site-packages/twisted/protocols/ldap/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/twisted/protocols/ldap/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/twisted/protocols/ldap/__init__.pyo
+lib/%%PYTHON_VERSION%%/site-packages/twisted/protocols/ldap/ldapclient.py
+lib/%%PYTHON_VERSION%%/site-packages/twisted/protocols/ldap/ldapclient.pyc
+lib/%%PYTHON_VERSION%%/site-packages/twisted/protocols/ldap/ldapclient.pyo
+lib/%%PYTHON_VERSION%%/site-packages/twisted/protocols/ldap/ldaperrors.py
+lib/%%PYTHON_VERSION%%/site-packages/twisted/protocols/ldap/ldaperrors.pyc
+lib/%%PYTHON_VERSION%%/site-packages/twisted/protocols/ldap/ldaperrors.pyo
 lib/%%PYTHON_VERSION%%/site-packages/twisted/protocols/loopback.py
 lib/%%PYTHON_VERSION%%/site-packages/twisted/protocols/loopback.pyc
 lib/%%PYTHON_VERSION%%/site-packages/twisted/protocols/loopback.pyo
@@ -220,6 +237,9 @@ lib/%%PYTHON_VERSION%%/site-packages/twisted/python/delay.pyo
 lib/%%PYTHON_VERSION%%/site-packages/twisted/python/explorer.py
 lib/%%PYTHON_VERSION%%/site-packages/twisted/python/explorer.pyc
 lib/%%PYTHON_VERSION%%/site-packages/twisted/python/explorer.pyo
+lib/%%PYTHON_VERSION%%/site-packages/twisted/python/failure.py
+lib/%%PYTHON_VERSION%%/site-packages/twisted/python/failure.pyc
+lib/%%PYTHON_VERSION%%/site-packages/twisted/python/failure.pyo
 lib/%%PYTHON_VERSION%%/site-packages/twisted/python/hook.py
 lib/%%PYTHON_VERSION%%/site-packages/twisted/python/hook.pyc
 lib/%%PYTHON_VERSION%%/site-packages/twisted/python/hook.pyo
@@ -401,6 +421,9 @@ lib/%%PYTHON_VERSION%%/site-packages/twisted/test/test_dirdbm.pyo
 lib/%%PYTHON_VERSION%%/site-packages/twisted/test/test_explorer.py
 lib/%%PYTHON_VERSION%%/site-packages/twisted/test/test_explorer.pyc
 lib/%%PYTHON_VERSION%%/site-packages/twisted/test/test_explorer.pyo
+lib/%%PYTHON_VERSION%%/site-packages/twisted/test/test_failure.py
+lib/%%PYTHON_VERSION%%/site-packages/twisted/test/test_failure.pyc
+lib/%%PYTHON_VERSION%%/site-packages/twisted/test/test_failure.pyo
 lib/%%PYTHON_VERSION%%/site-packages/twisted/test/test_hook.py
 lib/%%PYTHON_VERSION%%/site-packages/twisted/test/test_hook.pyc
 lib/%%PYTHON_VERSION%%/site-packages/twisted/test/test_hook.pyo
@@ -518,6 +541,9 @@ lib/%%PYTHON_VERSION%%/site-packages/twisted/web/twcgi.pyo
 lib/%%PYTHON_VERSION%%/site-packages/twisted/web/vhost.py
 lib/%%PYTHON_VERSION%%/site-packages/twisted/web/vhost.pyc
 lib/%%PYTHON_VERSION%%/site-packages/twisted/web/vhost.pyo
+lib/%%PYTHON_VERSION%%/site-packages/twisted/web/webpassport.py
+lib/%%PYTHON_VERSION%%/site-packages/twisted/web/webpassport.pyc
+lib/%%PYTHON_VERSION%%/site-packages/twisted/web/webpassport.pyo
 lib/%%PYTHON_VERSION%%/site-packages/twisted/web/widgets.py
 lib/%%PYTHON_VERSION%%/site-packages/twisted/web/widgets.pyc
 lib/%%PYTHON_VERSION%%/site-packages/twisted/web/widgets.pyo
@@ -580,6 +606,7 @@ lib/%%PYTHON_VERSION%%/site-packages/twisted/words/webwords.pyo
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/twisted/reality/ui
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/twisted/reality
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/twisted/python
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/twisted/protocols/ldap
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/twisted/protocols
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/twisted/persisted
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/twisted/manhole/ui
