@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Mon Jul  8 02:09:09 2002
++++ Makefile.in	Mon Jul  8 02:52:04 2002
+@@ -116,7 +116,7 @@
+ 
+ SUBDIRS = pixmaps tapes po src help
+ 
+-desktopdir = $(datadir)/apps/Applications
++desktopdir = $(datadir)/applications
+ desktop_in_files = gturing.desktop.in
+ desktop_DATA = $(desktop_in_files:.desktop.in=.desktop)
+ 
