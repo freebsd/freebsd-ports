@@ -124,6 +124,7 @@
     SUBDIR += p5-XML-DT
     SUBDIR += p5-XML-Dumper
     SUBDIR += p5-XML-LibXML
+    SUBDIR += p5-XML-LibXSLT
     SUBDIR += p5-XML-Node
     SUBDIR += p5-XML-Parser
     SUBDIR += p5-XML-RSS
