@@ -1,0 +1,23 @@
+--- ../fxtv-0.46.ORIG/tvcapture.c	Tue Oct 28 01:59:41 1997
++++ tvcapture.c	Sun Mar 22 16:43:45 1998
+@@ -1126,7 +1126,7 @@
+     /*  Just mmap the biggest buffer we'll need and be done with it.  */
+     /*    (Buffer used for non-directvideo captures)                  */
+     c->drv_buf = (TV_UINT8 *) mmap( (caddr_t)0, MAX_MMAP_BUF_SIZE,
+-                                 PROT_READ|PROT_WRITE, 0, c->fd, (off_t)0 );
++                                 PROT_READ, MAP_SHARED, c->fd, (off_t)0 );
+     if ( c->drv_buf == (TV_UINT8 *) -1 ) {
+         fprintf( stderr, "mmap of driver buffer failed: %s\n", 
+                  strerror(errno) );
+@@ -1537,9 +1537,9 @@
+         video.ramsize  = 0;
+ 
+         /*  If TDEC is on, may be a while before old trash gets written on  */
+-        if ( c->fps != c->fps_max )
++/*        if ( c->fps != c->fps_max )
+             memset( c->drv_buf, '\0',
+-                    g.w * g.h * c->pix_geom_list[ c->pix_geom_idx ].Bpp );
++                    g.w * g.h * c->pix_geom_list[ c->pix_geom_idx ].Bpp ); */
+     }
+     memcpy( &pix_geom, &c->pix_geom_list[ c->pix_geom_idx ], 
+             sizeof( pix_geom ) );
