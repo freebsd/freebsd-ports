@@ -1,5 +1,5 @@
---- docs/conf/httpd-std.conf.in.orig	Wed Apr 24 07:24:35 2002
-+++ docs/conf/httpd-std.conf.in	Tue May  7 19:29:28 2002
+--- docs/conf/httpd-std.conf.in.orig	Sat Apr 24 20:13:43 2004
++++ docs/conf/httpd-std.conf.in	Sun Jul 25 11:37:58 2004
 @@ -68,7 +68,7 @@
  #
  <IfModule !mpm_netware.c>
@@ -9,7 +9,7 @@
  </IfModule>
  </IfModule>
  
-@@ -263,8 +263,8 @@
+@@ -265,8 +265,8 @@
  #  when the value of (unsigned)Group is above 60000; 
  #  don't use Group #-1 on these systems!
  #
@@ -20,7 +20,42 @@
  </IfModule>
  </IfModule>
  
-@@ -450,7 +450,7 @@
+@@ -314,10 +314,11 @@
+ #
+ # First, we configure the "default" to be a very restrictive set of 
+ # features.  
+-#
++# 
+ <Directory />
+-    Options FollowSymLinks
+     AllowOverride None
++    Order Deny,Allow
++    Deny from all 
+ </Directory>
+ 
+ #
+@@ -365,8 +366,11 @@
+ # UserDir: The name of the directory that is appended onto a user's home
+ # directory if a ~user request is received.
+ #
++<IfModule mod_userdir.c>
+ UserDir public_html
+ 
++UserDir disabled %%FTPUSERS%%
++
+ #
+ # Control access to UserDir directories.  The following is an example
+ # for a site where these directories are restricted to read-only.
+@@ -384,6 +388,8 @@
+ #    </LimitExcept>
+ #</Directory>
+ 
++</IfModule>
++
+ #
+ # DirectoryIndex: sets the file that Apache will serve if a directory
+ # is requested.
+@@ -472,7 +478,7 @@
  # logged here.  If you *do* define an error logfile for a <VirtualHost>
  # container, that host's errors will be logged there and not here.
  #
@@ -29,7 +64,7 @@
  
  #
  # LogLevel: Control the number of messages logged to the error_log.
-@@ -475,20 +475,20 @@
+@@ -500,20 +506,20 @@
  # define per-<VirtualHost> access logfiles, transactions will be
  # logged therein and *not* in this file.
  #
@@ -53,4 +88,10 @@
 +CustomLog @rel_logfiledir@/httpd-access.log combined
  
  #
- # Optionally add a line containing the server version and virtual host
+ # ServerTokens
+@@ -1049,3 +1055,5 @@
+ #    ErrorLog @rel_logfiledir@/dummy-host.example.com-error_log
+ #    CustomLog @rel_logfiledir@/dummy-host.example.com-access_log common
+ #</VirtualHost>
++
++Include @rel_sysconfdir@/Includes/*.conf
