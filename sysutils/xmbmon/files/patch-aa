@@ -1,8 +1,8 @@
---- Makefile.in.orig	Thu Aug 22 14:03:21 2002
-+++ Makefile.in	Fri Nov 22 22:14:39 2002
+--- Makefile.in.orig	Sun Jun  8 21:28:31 2003
++++ Makefile.in	Sun Jul 27 13:11:15 2003
 @@ -13,9 +13,9 @@
  
- DEFS=-DHAVE_CONFIG_H -Wall
+ DEFS=-DHAVE_CONFIG_H -Wall @HOSTDEF@
  
 -LIBDIR=/usr/X11R6/lib
 +LIBDIR=$(X11BASE)/lib
@@ -12,20 +12,20 @@
  XLIB=-lXaw -lXmu
  EXTENSIONLIB=-lXext
  INCLUDES=-I$(INCDIR)
-@@ -23,9 +23,9 @@
+@@ -24,9 +24,9 @@
  LIBS=-L$(LIBDIR) -lXaw $(XLIB) -lXt $(EXTENSIONLIB) -lX11 -lm
  
  #CC=/compat/linux/usr/bin/gcc
--CC=gcc
+-CC=@CC@
 -CFLAGS=-O3 $(INCLUDES) $(DEFS)
 -CFLAGSX=-O3 $(XINCLUDES) $(DEFS)
-+CC?=gcc
++CC?=@CC@
 +CFLAGS+= $(INCLUDES) $(DEFS)
-+CFLAGSX= $(XINCLUDES) $(CFLAGS)
++CFLAGSX= $(XINCLUDES) $(DEFS)
  LDFLAGS=-s
  
  LINT=lint
-@@ -34,16 +34,22 @@
+@@ -35,16 +35,22 @@
  RM=rm -f
  INSTALL=install
  
@@ -52,8 +52,8 @@
 +all: $(PROGRAM) $(TESTPROG)
  
  MB_OBJ  = getMB-via.o getMB-smb.o getMB-isa.o
- SMB_OBJ = smbus_piix4.o smbus_amd.o smbus_ali.o
-@@ -115,8 +121,14 @@
+ SMB_OBJ = smbuses.o smbus_piix4.o smbus_amd.o smbus_ali.o smbus_amd8.o
+@@ -124,8 +130,14 @@
  	$(RM) Makefile config.cache config.log config.h config.status
  
  install: $(PROGRAM)
