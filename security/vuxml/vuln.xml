@@ -2155,8 +2155,10 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <affects>
       <package>
 	<name>agenda-snow-libs</name>
+	<name>linux-openmotif</name>
+	<name>open-motif</name>
+	<name>open-motif-devel</name>
 	<name>mupad</name>
-	<name>xpm</name>
 	<name>zh-cle_base</name>
 	<range><ge>0</ge></range>
       </package>
@@ -2175,6 +2177,10 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       <package>
 	<name>lesstif</name>
 	<range><lt>0.93.96,2</lt></range>
+      </package>
+      <package>
+	<name>xpm</name>
+	<range><lt>3.4k_1</lt></range>
       </package>
     </affects>
     <description>
@@ -2208,7 +2214,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <dates>
       <discovery>2004-09-15</discovery>
       <entry>2004-09-15</entry>
-      <modified>2004-10-13</modified>
+      <modified>2004-10-21</modified>
     </dates>
   </vuln>
 
