@@ -6,19 +6,18 @@
 #
 
 PORTNAME?=	cdrtools
-PORTVERSION?=	2.01a19
-#PORTREVISION?=	0
-PORTREVISION?=	1
+PORTVERSION?=	2.01a20
+PORTREVISION?=	0
 CATEGORIES?=	sysutils audio
 MASTER_SITES=	ftp://ftp.berlios.de/pub/cdrecord/alpha/ \
 		ftp://ftp.cs.tu-berlin.de/pub/misc/cdrecord/alpha/
-DISTNAME=	cdrtools-2.01a19
+DISTNAME=	cdrtools-2.01a20
 
 .if defined(WITH_DVDHACK) && !defined(MKISOFS)
-PATCH_SITES=	http://people.mandrakesoft.com/~warly/files/cdrtools/archives/
-PATCHFILES=	cdrtools-2.01a16-dvd.patch.bz2
+#PATCH_SITES=	http://people.mandrakesoft.com/~warly/files/cdrtools/archives/
+PATCH_SITES=	ftp://ftp.zeist.de/pub/distfiles/
+PATCHFILES=	cdrtools-2.01a20-dvd.patch.bz2
 PATCH_DIST_STRIP=	-p1
-EXTRA_PATCHES=	${FILESDIR}/extra-patch-drv_mmc.c
 .endif
 
 MAINTAINER=	marius@alchemy.franken.de
