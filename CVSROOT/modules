@@ -9419,6 +9419,7 @@ urt		ports/graphics/urt
 urwfonts	ports/x11-fonts/urwfonts
 urwfonts-ttf	ports/x11-fonts/urwfonts-ttf
 us-zipcodes	ports/misc/us-zipcodes
+usendmail	ports/mail/usendmail
 useracc		ports/databases/useracc
 userinfo	ports/sysutils/userinfo
 userlist	ports/sysutils/userlist
