@@ -1,5 +1,5 @@
---- Imakefile.orig	Wed Jul 28 21:36:20 1999
-+++ Imakefile	Tue Oct 17 20:23:46 2000
+--- Imakefile.orig	Thu Jul 29 04:36:20 1999
++++ Imakefile	Sat Oct 21 08:33:56 2000
 @@ -25,7 +25,9 @@
   * If you want to have sound, comment the following line
   * Set SOUND_DIR to the directory, where the sounds can be found
@@ -11,17 +11,13 @@
  
  /*
   * all programs to be build
-@@ -71,6 +73,13 @@
+@@ -71,7 +73,8 @@
  SRCS2  = xbsndsrv.c
  OBJS2  = xbsndsrv.o
  
-+/*
-+ * The following is a terrible hack, but there is no man page
-+ * and ComplexProgramTarget always wants to install one ...
-+ */
-+#undef InstallManPage
-+#define InstallManPage(p,d)
-+
- ComplexProgramTarget_2(xbsndsrv,NullParameter,NullParameter)
+-ComplexProgramTarget_2(xbsndsrv,NullParameter,NullParameter)
++NormalProgramTarget(xbsndsrv,$(OBJS2),,,)
++InstallProgram(xbsndsrv,$(BINDIR))
  
  /*
+  * Part 3: install Application Defaults
