@@ -1168,11 +1168,12 @@ share/gimp/menus/tool-options-menu.xml
 share/gimp/menus/toolbox-menu.xml
 share/gimp/menus/tools-menu.xml
 share/gimp/menus/vectors-menu.xml
-%%GNOMEPANEL:%%share/gimp/misc/gimp.applications
-%%GNOMEPANEL:%%share/gimp/misc/gimp.desktop
-%%GNOMEPANEL:%%share/gimp/misc/gimp.keys
+share/gimp/misc/gimp.applications
+share/gimp/misc/gimp.desktop
+share/gimp/misc/gimp.keys
 %%GNOMEPANEL:%%share/gnome/application-registry/gimp-2.2.applications
 %%GNOMEPANEL:%%share/gnome/applications/gimp-2.2.desktop
+%%GNOMEPANEL:%%@exec update-desktop-database > /dev/null || /usr/bin/true
 %%GNOMEPANEL:%%share/gnome/mime-info/gimp-2.2.keys
 %%GNOMEPANEL:%%share/gnome/pixmaps/gnome-gimp.png
 share/gimp/palettes/Bears.gpl
@@ -1894,3 +1895,4 @@ share/locale/zh_TW/LC_MESSAGES/gimp20.mo
 @dirrm include/gimp-2.0
 @dirrm etc/gimp/2.2
 @dirrm etc/gimp
+%%GNOMEPANEL:%%@unexec update-desktop-database > /dev/null || /usr/bin/true
