@@ -1,12 +1,13 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/Net/RTP.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Net/time.pl
-%%SITE_PERL%%/%%PERL_ARCH%%/Net/rtpdemo.pl
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/RTP/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/RTP/RTP.bs
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/RTP/RTP.so
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/RTP
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Multicast/Beacon/Beacon.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Multicast/Beacon/Beacon.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Multicast/Beacon/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/Net/Multicast/Beacon.pm
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Multicast/Beacon
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Multicast/
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net 2>/dev/null || true
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Net/Multicast/
 @unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Net 2>/dev/null || true
-www/beacon-%%VERSION%%/beacon.pl
+www/beacon-%%VERSION%%/beacon
 etc/beacon.conf.sample
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
