@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	latex-beamer
-PORTVERSION=	1.21
+PORTVERSION=	2.01
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -13,18 +13,20 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	A LaTeX class to create a beamer presentation
 
-BUILD_DEPENDS=	mktexlsr:${PORTSDIR}/print/teTeX
-RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX
-RUN_DEPENDS+=	${LOCALBASE}/${TEXMF}/tex/latex/xcolor/xcolor.sty:${PORTSDIR}/print/latex-xcolor
-RUN_DEPENDS+=	${LOCALBASE}/${TEXMF}/tex/latex/pgf/pgf.sty:${PORTSDIR}/print/latex-pgf
+BUILD_DEPENDS=	mktexlsr:${PORTSDIR}/print/teTeX \
+		${TEXMFLOCAL_LSR}:${PORTSDIR}/print/tex-texmflocal
+RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX \
+		${LOCALBASE}/${TEXMFLOCAL}/tex/latex/xcolor/xcolor.sty:${PORTSDIR}/print/latex-xcolor \
+		${LOCALBASE}/${TEXMFLOCAL}/tex/latex/pgf/pgf.sty:${PORTSDIR}/print/latex-pgf \
+		${TEXMFLOCAL_LSR}:${PORTSDIR}/print/tex-texmflocal
 
 NO_BUILD=	YES
-PLIST_SUB=	TEXMF=${TEXMF} MKTEXLSR=${MKTEXLSR}
-PLIST_SUB+=	CLASSDIR=${CLASSDIR}
+PLIST_SUB=	MKTEXLSR=${MKTEXLSR} CLASSDIR=${CLASSDIR}
 
-TEXMF=		share/texmf
+TEXMFLOCAL=	share/texmf-local
+TEXMFLOCAL_LSR=	${LOCALBASE}/${TEXMFLOCAL}/ls-R
 MKTEXLSR=	${LOCALBASE}/bin/mktexlsr
-CLASSDIR=	${TEXMF}/tex/latex/${PORTNAME:S/^latex-//}
+CLASSDIR=	${TEXMFLOCAL}/tex/latex/${PORTNAME:S/^latex-//}
 WRKSRC=		${WRKDIR}/${PORTNAME:S/^latex-//}
 
 CLASS_FILES=	art/beamericonarticle.eps
@@ -42,13 +44,17 @@ CLASS_FILES+=	base/beamerbasearticle.sty
 CLASS_FILES+=	base/beamerbaseboxes.sty
 CLASS_FILES+=	base/beamerbasecolor.sty
 CLASS_FILES+=	base/beamerbasecompatibility.sty
+CLASS_FILES+=	base/beamerbasedecode.sty
 CLASS_FILES+=	base/beamerbasefont.sty
 CLASS_FILES+=	base/beamerbaseframe.sty
 CLASS_FILES+=	base/beamerbaseframecomponents.sty
 CLASS_FILES+=	base/beamerbaselocalstructure.sty
+CLASS_FILES+=	base/beamerbasemodes.sty
 CLASS_FILES+=	base/beamerbasemisc.sty
+CLASS_FILES+=	base/beamerbasenotes.sty
 CLASS_FILES+=	base/beamerbasenavigation.sty
 CLASS_FILES+=	base/beamerbaseoverlay.sty
+CLASS_FILES+=	base/beamerbaseoptions.sty
 CLASS_FILES+=	base/beamerbasesection.sty
 CLASS_FILES+=	base/beamerbasetemplates.sty
 CLASS_FILES+=	base/beamerbasetitle.sty
@@ -80,29 +86,34 @@ CLASS_FILES+=	examples/beamerexample5.pdf
 CLASS_FILES+=	examples/beamerexample5.tex
 CLASS_FILES+=	examples/beamerexample6.pdf
 CLASS_FILES+=	examples/beamerexample6.tex
-CLASS_FILES+=	examples/computer.jpg
-CLASS_FILES+=	examples/computerred.jpg
-CLASS_FILES+=	examples/computer.mask.jpg
-CLASS_FILES+=	examples/g4.jpg
-CLASS_FILES+=	examples/g4red.jpg
-CLASS_FILES+=	examples/g4.mask.jpg
-CLASS_FILES+=	examples/ram.jpg
-CLASS_FILES+=	examples/ram.mask.jpg
-CLASS_FILES+=	examples/tu-logo.jpg
-CLASS_FILES+=	examples/ur-logo.jpg
-CLASS_FILES+=	examples/tu-logo.mask.jpg
-CLASS_FILES+=	examples/ur-logo.mask.jpg
-CLASS_FILES+=	lyx/doc/beamerlyxguide.lyx
-CLASS_FILES+=	lyx/doc/beamerlyxguide.pdf
+CLASS_FILES+=	examples/beamer-computer.jpg
+CLASS_FILES+=	examples/beamer-computerred.jpg
+CLASS_FILES+=	examples/beamer-computer-mask.jpg
+CLASS_FILES+=	examples/beamer-g4.jpg
+CLASS_FILES+=	examples/beamer-g4red.jpg
+CLASS_FILES+=	examples/beamer-g4-mask.jpg
+CLASS_FILES+=	examples/beamer-ram.jpg
+CLASS_FILES+=	examples/beamer-ram-mask.jpg
+CLASS_FILES+=	examples/beamer-tu-logo.jpg
+CLASS_FILES+=	examples/beamer-ur-logo.jpg
+CLASS_FILES+=	examples/beamer-tu-logo-mask.jpg
+CLASS_FILES+=	examples/beamer-ur-logo-mask.jpg
+CLASS_FILES+=	lyx/examples/beamerlyxexample1.lyx
+CLASS_FILES+=	lyx/examples/beamerlyxexample1.pdf
+CLASS_FILES+=	lyx/examples/beamer-icsi-logo.pdf
+CLASS_FILES+=	lyx/examples/beamer-knight1.png
+CLASS_FILES+=	lyx/examples/beamer-knight1-mask.png
+CLASS_FILES+=	lyx/examples/beamer-knight2.png
+CLASS_FILES+=	lyx/examples/beamer-knight2-mask.png
+CLASS_FILES+=	lyx/examples/beamer-knight3.png
+CLASS_FILES+=	lyx/examples/beamer-knight3-mask.png
+CLASS_FILES+=	lyx/examples/beamer-knight4.png
+CLASS_FILES+=	lyx/examples/beamer-knight4-mask.png
 CLASS_FILES+=	lyx/layouts/beamer.layout
 CLASS_FILES+=	lyx/templates/beamerpresentation.lyx
 
-DOC_FILES+=	AUTHORS
-DOC_FILES+=	ChangeLog
-DOC_FILES+=	FILES
-DOC_FILES+=	INSTALL
-DOC_FILES+=	README
-DOC_FILES+=	TODO
+DOC_FILES+=	AUTHORS ChangeLog FILES INSTALL
+DOC_FILES+=	README TODO
 DOC_FILES+=	doc/beameruserguide.pdf
 DOC_FILES+=	doc/beameruserguide.tex
 DOC_FILES+=	doc/themebars.pdf
@@ -115,6 +126,8 @@ DOC_FILES+=	doc/themelined.pdf
 DOC_FILES+=	doc/themelined2.pdf
 DOC_FILES+=	doc/themeplain.pdf
 DOC_FILES+=	doc/themeplain2.pdf
+DOC_FILES+=	doc/themeshadow.pdf
+DOC_FILES+=	doc/themeshadow2.pdf
 DOC_FILES+=	doc/themesidebar.pdf
 DOC_FILES+=	doc/themesidebar2.pdf
 DOC_FILES+=	doc/themesidebardark.pdf
@@ -134,7 +147,7 @@ DOC_FILES+=	doc/themetreebars2.pdf
 
 do-install:
 	${MKDIR} ${PREFIX}/${CLASSDIR}
-.for D in art base themes examples lyx/doc lyx/layouts lyx/templates
+.for D in art base themes examples lyx/examples lyx/layouts lyx/templates
 	${MKDIR} ${PREFIX}/${CLASSDIR}/${D}
 	${INSTALL_DATA} ${CLASS_FILES:M${D}/*:S@^@${WRKSRC}/@} ${PREFIX}/${CLASSDIR}/${D}
 .endfor
