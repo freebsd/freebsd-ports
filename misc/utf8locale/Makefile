@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	utf8locale
-PORTVERSION=	1.2
+PORTVERSION=	1.3
 CATEGORIES=	misc
 MASTER_SITES= 	${MASTER_SITE_LOCAL} \
 		http://people.freebsd.org/~perky/distfiles/
