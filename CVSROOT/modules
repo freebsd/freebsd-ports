@@ -6795,6 +6795,7 @@ tcplist		ports/sysutils/tcplist
 tcpmssd		ports/net/tcpmssd
 tcpreplay	ports/net/tcpreplay
 tcpshow		ports/net/tcpshow
+tcpslice	ports/net/tcpslice
 tcpstat		ports/net/tcpstat
 tcptrace	ports/net/tcptrace
 tcptraceroute	ports/net/tcptraceroute
