@@ -48,13 +48,13 @@ fi
 
 if [ "$r" = 1 ]; then
   printsp $printed
-  echo -n "3.1-RELEASE"
+  echo -n "4.0-CURRENT"
   printed=1
 fi
 
 if [ "$v" = 1 ]; then
   printsp $printed
-  echo -n "FreeBSD 3.1-RELEASE #0: Sun Dec 13 03:47:56 PST 1998 asami@bento.freebsd.org:/usr/src/sys/compile/BENTO"
+  echo -n "FreeBSD 4.0-CURRENT #0: Sun Dec 13 03:47:56 PST 1998 asami@bento.freebsd.org:/usr/src/sys/compile/BENTO"
   printed=1
 fi
 
