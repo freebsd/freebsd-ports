@@ -6,19 +6,16 @@
 # $Id: Makefile,v 1.1.1.1 1996/08/02 19:57:31 chuckr Exp $
 #
 
-DISTNAME=	tkdesk-1.0b2
-PKGNAME=	tkdesk-1.0
-CATEGORIES+=	misc x11
+DISTNAME=	tkdesk-1.0b3
+PKGNAME=	tkdesk-1.0b3
+CATEGORIES=	misc x11
 MASTER_SITES=	http://sun1.rrzn-user.uni-hannover.de/~zzhibol/tkdesk/
-DISTFILES=	tkdesk-1.0b2.tar.gz sounds.tar.gz
 
-MAINTAINER=	shanee@rabbit.augusta.de
-
-EXTRACT_ONLY=	tkdesk-1.0b2.tar.gz
+MAINTAINER=	nox@jelal.hb.north.de
 
 LIB_DEPENDS=	tk41\\.1\\.:${PORTSDIR}/x11/tk41
 
-post-extract:
-	cd ${WRKDIR}/tkdesk-1.0b2/tcldesk/;tar -xzf $(DISTDIR)/sounds.tar.gz
+post-patch:
+	-rm ${WRKSRC}/tcldesk/*.orig ${WRKSRC}/tcldesk/*/*.orig
 
 .include <bsd.port.mk>
