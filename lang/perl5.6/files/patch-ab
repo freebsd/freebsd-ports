@@ -1,41 +1,29 @@
---- perl.c.orig	Tue Feb 27 13:30:44 1996
-+++ perl.c	Sun Jun  2 09:22:34 1996
-@@ -1606,10 +1606,10 @@
- 	    (void)setegid(statbuf.st_gid);
- #else
- #ifdef HAS_SETREGID
--           (void)setregid((Gid_t)-1,statbuf.st_gid);
-+           (void)setregid((Gid_t)gid,statbuf.st_gid);
- #else
- #ifdef HAS_SETRESGID
--           (void)setresgid((Gid_t)-1,statbuf.st_gid,(Gid_t)-1);
-+           (void)setresgid((Gid_t)gid,statbuf.st_gid,(Gid_t)gid);
- #else
- 	    setgid(statbuf.st_gid);
- #endif
-@@ -1624,10 +1624,10 @@
- 		(void)seteuid(statbuf.st_uid);	/* all that for this */
- #else
- #ifdef HAS_SETREUID
--                (void)setreuid((Uid_t)-1,statbuf.st_uid);
-+                (void)setreuid((Uid_t)uid,statbuf.st_uid);
- #else
- #ifdef HAS_SETRESUID
--                (void)setresuid((Uid_t)-1,statbuf.st_uid,(Uid_t)-1);
-+                (void)setresuid((Uid_t)uid,statbuf.st_uid,(Uid_t)uid);
- #else
- 		setuid(statbuf.st_uid);
- #endif
-@@ -1641,10 +1641,10 @@
-           (void)seteuid((Uid_t)uid);
- #else
- #ifdef HAS_SETREUID
--          (void)setreuid((Uid_t)-1,(Uid_t)uid);
-+          (void)setreuid((Uid_t)uid,(Uid_t)uid);
- #else
- #ifdef HAS_SETRESUID
--          (void)setresuid((Uid_t)-1,(Uid_t)uid,(Uid_t)-1);
-+          (void)setresuid((Uid_t)uid,(Uid_t)uid,(Uid_t)uid);
- #else
-           setuid((Uid_t)uid);
- #endif
+--- installperl.ORIG	Mon May 12 05:22:27 1997
++++ installperl	Fri May 23 11:40:27 1997
+@@ -93,7 +93,7 @@
+ safe_unlink("$installbin/sperl$ver$exe_ext");
+ if ($d_dosuid) {
+     copy("suidperl$exe_ext", "$installbin/sperl$ver$exe_ext");
+-    chmod(04711, "$installbin/sperl$ver$exe_ext");
++    chmod(04111, "$installbin/sperl$ver$exe_ext");
+ }
+ 
+ # Install library files.
+@@ -156,11 +156,12 @@
+ 	      (-l $usrbinperl) &&
+ 	      ((readlink $usrbinperl) eq $expinstperl));
+     }
+-    if ((! $mainperl_is_instperl) &&
+-	(yn("Many scripts expect perl to be installed as $usrbinperl.\n" . 
+-	     "Do you wish to have $usrbinperl be the same as\n" .
+-	     "$expinstperl? [y] ")))
+-    {	
++#    if ((! $mainperl_is_instperl) &&
++#	(yn("Many scripts expect perl to be installed as $usrbinperl.\n" . 
++#	     "Do you wish to have $usrbinperl be the same as\n" .
++#	     "$expinstperl? [y] ")))
++#    {	
++    if ('') {  # MarkM - May 1997. Take the NO route always.
+ 	unlink($usrbinperl);
+ 	eval { CORE::link $instperl, $usrbinperl } ||
+ 	    eval { symlink $expinstperl, $usrbinperl } ||
