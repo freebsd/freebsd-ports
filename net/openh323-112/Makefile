@@ -44,12 +44,14 @@ THE_MACHTYPE=	${ARCH:S/i386/x86/}
 MAKE_ARGS=	OSTYPE=${OPSYS} MACHTYPE=${THE_MACHTYPE} OSRELEASE=${OSVERSION} CPLUS=${CXX}
 
 post-patch:
+.if ${OSVERSION} < 500000
 .if !exists(/usr/include/sys/telephony.h)
 .if !exists(/usr/local/include/sys/telephony.h)
 	# Copy ixj driver include files into OpenH323 include directory
 	${MKDIR} ${WRKDIR}/openh323/include/sys
 	${CP} ${WRKDIRPREFIX}${.CURDIR}/../../comms/ixj/work/ixj_freebsd/telephony.h ${WRKDIR}/openh323/include/sys
 	${CP} ${WRKDIRPREFIX}${.CURDIR}/../../comms/ixj/work/ixj_freebsd/ixjuser.h ${WRKDIR}/openh323/include/sys
+.endif
 .endif
 .endif
 
