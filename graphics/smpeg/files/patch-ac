@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Sat Apr 22 23:34:24 2000
++++ Makefile.in	Sat Apr 22 23:34:38 2000
+@@ -103,7 +103,7 @@
+ libsmpeginclude_HEADERS =  	MPEG.h				MPEGaction.h			MPEGaudio.h			MPEGerror.h			MPEGring.h			MPEGstream.h			MPEGvideo.h			smpeg.h
+ 
+ 
+-libsmpeg_la_LDFLAGS =          -release $(LT_RELEASE)		-version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE)
++libsmpeg_la_LDFLAGS = -version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE)
+ 
+ 
+ libsmpeg_la_LIBADD =  	audio/libaudio.la		video/libvideo.la

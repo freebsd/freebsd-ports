@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.lokigames.com/development/download/smpeg/
 
 MAINTAINER=	cpiazza@FreeBSD.org
 
-LIB_DEPENDS=  	SDL-1.0.2:${PORTSDIR}/devel/sdl \
+LIB_DEPENDS=  	SDL.2:${PORTSDIR}/devel/sdl \
 		gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
 
 GTK_CONFIG=	${X11BASE}/bin/gtk12-config

@@ -8,11 +8,10 @@ include/smpeg/MPEGring.h
 include/smpeg/MPEGstream.h
 include/smpeg/MPEGvideo.h
 include/smpeg/smpeg.h
-lib/libsmpeg-0.3.so
-lib/libsmpeg-0.3.so.0
 lib/libsmpeg.a
 lib/libsmpeg.la
 lib/libsmpeg.so
+lib/libsmpeg.so.0
 @exec /sbin/ldconfig -m %B
 @unexec /sbin/ldconfig -R
 @dirrm include/smpeg
