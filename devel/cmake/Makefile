@@ -6,14 +6,16 @@
 #
 
 PORTNAME=	cmake
-PORTVERSION=	1.2
+PORTVERSION=	1.4.5
 CATEGORIES=	devel
 MASTER_SITES=	http://www.cmake.org/
-DISTNAME=	CMake1.2-src-unix
+DISTNAME=	CMake${PORTVERSION}-src-unix
 
 MAINTAINER=	mkm@ieee.org
 
-WRKSRC=		${WRKDIR}/CMake-1.2
-HAS_CONFIGURE=	yes
+WRKSRC=		${WRKDIR}/CMake-${PORTVERSION}
+GNU_CONFIGURE=	yes
+
+MAN1=	cmake.1
 
 .include <bsd.port.mk>
