@@ -120,4 +120,8 @@ share/slib/withfile.scm
 share/slib/wttest.scm
 share/slib/wttree.scm
 share/slib/yasyn.scm
+@exec ln -shf %D/share/slib %%LOCALBASE%%/share/guile/slib
+@exec %%LOCALBASE%%/bin/guile -c "(use-modules (slib)) (require 'new-catalog)"
+@unexec rm -f %%LOCALBASE%%/share/guile/slib
+@unexec rm -f %%LOCALBASE%%/share/guile/slibcat
 @dirrm share/slib
