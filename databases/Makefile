@@ -146,7 +146,6 @@
     SUBDIR += ruby-dbd_proxy
     SUBDIR += ruby-dbd_sqlite
     SUBDIR += ruby-dbd_sqlrelay
-    SUBDIR += ruby-dbd_sybase
     SUBDIR += ruby-dbi
     SUBDIR += ruby-gdbm
     SUBDIR += ruby-interbase
