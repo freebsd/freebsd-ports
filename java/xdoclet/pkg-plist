@@ -2,11 +2,10 @@ share/examples/xdoclet/build-dist.properties
 share/examples/xdoclet/build.xml
 share/examples/xdoclet/lib/jboss-j2ee.jar
 share/examples/xdoclet/lib/jmxri.jar
-share/examples/xdoclet/lib/mx4j.jar
-share/examples/xdoclet/lib/openjmx.jar
 share/examples/xdoclet/lib/readme.txt
 share/examples/xdoclet/lib/servlet.jar
 share/examples/xdoclet/lib/struts-1.1-beta-2.jar
+share/examples/xdoclet/lib/velocity-1.4-dev.jar
 share/examples/xdoclet/lib/webwork.jar
 share/examples/xdoclet/maven.xml
 share/examples/xdoclet/project.properties
@@ -21,6 +20,7 @@ share/examples/xdoclet/src/java/test/ejb/BaseEntityHome.java
 share/examples/xdoclet/src/java/test/ejb/BaseTellerBean.java
 share/examples/xdoclet/src/java/test/ejb/CustomerBMPBean.java
 share/examples/xdoclet/src/java/test/ejb/CustomerBean.java
+share/examples/xdoclet/src/java/test/ejb/FileBean.java
 share/examples/xdoclet/src/java/test/ejb/PersonBean.java
 share/examples/xdoclet/src/java/test/ejb/QueueBean.java
 share/examples/xdoclet/src/java/test/ejb/SecurityOfficerBean.java
@@ -28,6 +28,8 @@ share/examples/xdoclet/src/java/test/ejb/StatefulBean.java
 share/examples/xdoclet/src/java/test/ejb/TellerBean.java
 share/examples/xdoclet/src/java/test/ejb/cmr/CityBean.java
 share/examples/xdoclet/src/java/test/ejb/cmr/CountryBean.java
+share/examples/xdoclet/src/java/test/ejb/cmr/EmployeeAddressBean.java
+share/examples/xdoclet/src/java/test/ejb/cmr/EmployeeBean.java
 share/examples/xdoclet/src/java/test/ejb/cmr/LanguageBean.java
 share/examples/xdoclet/src/java/test/ejb/cmr/LanguageCodeBean.java
 share/examples/xdoclet/src/java/test/ejb/cmr/mysql.txt
@@ -36,12 +38,21 @@ share/examples/xdoclet/src/java/test/ejb/jdo/Manager.java
 share/examples/xdoclet/src/java/test/ejb/jdo/Paycheck.java
 share/examples/xdoclet/src/java/test/ejb/jdo/Staff.java
 share/examples/xdoclet/src/java/test/ejb/jdo/Transaction.java
-share/examples/xdoclet/src/java/test/hibernate/BaseReferenceValue.java
-share/examples/xdoclet/src/java/test/hibernate/ItemTypeRefValue.java
+share/examples/xdoclet/src/java/test/hibernate/Animal.java
+share/examples/xdoclet/src/java/test/hibernate/CompositeId.java
+share/examples/xdoclet/src/java/test/hibernate/CompositeIdEntity.java
+share/examples/xdoclet/src/java/test/hibernate/Contraband.java
+share/examples/xdoclet/src/java/test/hibernate/Human.java
+share/examples/xdoclet/src/java/test/hibernate/ImportedProduct.java
+share/examples/xdoclet/src/java/test/hibernate/LineItem.java
+share/examples/xdoclet/src/java/test/hibernate/Lizard.java
+share/examples/xdoclet/src/java/test/hibernate/Name.java
 share/examples/xdoclet/src/java/test/hibernate/Order.java
-share/examples/xdoclet/src/java/test/hibernate/OrderItems.java
-share/examples/xdoclet/src/java/test/hibernate/OrderItems2.java
-share/examples/xdoclet/src/java/test/hibernate/OrderTypeRefValue.java
+share/examples/xdoclet/src/java/test/hibernate/Persistent.java
+share/examples/xdoclet/src/java/test/hibernate/Pet.java
+share/examples/xdoclet/src/java/test/hibernate/Product.java
+share/examples/xdoclet/src/java/test/hibernate/Reptile.java
+share/examples/xdoclet/src/java/test/hibernate/Updateable.java
 share/examples/xdoclet/src/java/test/interfaces/ApplicationException.java
 share/examples/xdoclet/src/java/test/interfaces/Identifiable.java
 share/examples/xdoclet/src/java/test/interfaces/SecurityOfficer.java
@@ -63,6 +74,7 @@ share/examples/xdoclet/src/java/test/web/SimpleTag.java
 share/examples/xdoclet/src/java/test/web/StrutsAction.java
 share/examples/xdoclet/src/java/test/web/StrutsDispatchAction.java
 share/examples/xdoclet/src/java/test/web/TimerFilter.java
+share/examples/xdoclet/src/merge/jboss-service.ent
 share/examples/xdoclet/src/merge/weblogic-security-role-assignment.xml
 share/examples/xdoclet/src/web/index.jsp
 share/examples/xdoclet/target/classes/test/dao/CustomerDAO.class
@@ -80,6 +92,8 @@ share/examples/xdoclet/target/classes/test/ejb/CustomerBMPBMP.class
 share/examples/xdoclet/target/classes/test/ejb/CustomerBMPBean.class
 share/examples/xdoclet/target/classes/test/ejb/CustomerBean.class
 share/examples/xdoclet/target/classes/test/ejb/CustomerCMP.class
+share/examples/xdoclet/target/classes/test/ejb/FileBean.class
+share/examples/xdoclet/target/classes/test/ejb/FileCMP.class
 share/examples/xdoclet/target/classes/test/ejb/PersonBean.class
 share/examples/xdoclet/target/classes/test/ejb/QueueBean.class
 share/examples/xdoclet/target/classes/test/ejb/SecurityOfficerBean.class
@@ -99,6 +113,20 @@ share/examples/xdoclet/target/classes/test/ejb/cmr/CountryData.class
 share/examples/xdoclet/target/classes/test/ejb/cmr/CountryLocal.class
 share/examples/xdoclet/target/classes/test/ejb/cmr/CountryLocalHome.class
 share/examples/xdoclet/target/classes/test/ejb/cmr/CountryUtil.class
+share/examples/xdoclet/target/classes/test/ejb/cmr/EmployeeAddressBean.class
+share/examples/xdoclet/target/classes/test/ejb/cmr/EmployeeAddressCMP.class
+share/examples/xdoclet/target/classes/test/ejb/cmr/EmployeeAddressData.class
+share/examples/xdoclet/target/classes/test/ejb/cmr/EmployeeAddressLocal.class
+share/examples/xdoclet/target/classes/test/ejb/cmr/EmployeeAddressLocalHome.class
+share/examples/xdoclet/target/classes/test/ejb/cmr/EmployeeAddressUtil.class
+share/examples/xdoclet/target/classes/test/ejb/cmr/EmployeeAddressValue.class
+share/examples/xdoclet/target/classes/test/ejb/cmr/EmployeeBean.class
+share/examples/xdoclet/target/classes/test/ejb/cmr/EmployeeCMP.class
+share/examples/xdoclet/target/classes/test/ejb/cmr/EmployeeData.class
+share/examples/xdoclet/target/classes/test/ejb/cmr/EmployeeLocal.class
+share/examples/xdoclet/target/classes/test/ejb/cmr/EmployeeLocalHome.class
+share/examples/xdoclet/target/classes/test/ejb/cmr/EmployeeUtil.class
+share/examples/xdoclet/target/classes/test/ejb/cmr/EmployeeValue.class
 share/examples/xdoclet/target/classes/test/ejb/cmr/LanguageBean.class
 share/examples/xdoclet/target/classes/test/ejb/cmr/LanguageCMP.class
 share/examples/xdoclet/target/classes/test/ejb/cmr/LanguageCodeBean.class
@@ -115,12 +143,21 @@ share/examples/xdoclet/target/classes/test/ejb/jdo/Manager.class
 share/examples/xdoclet/target/classes/test/ejb/jdo/Paycheck.class
 share/examples/xdoclet/target/classes/test/ejb/jdo/Staff.class
 share/examples/xdoclet/target/classes/test/ejb/jdo/Transaction.class
-share/examples/xdoclet/target/classes/test/hibernate/BaseReferenceValue.class
-share/examples/xdoclet/target/classes/test/hibernate/ItemTypeRefValue.class
+share/examples/xdoclet/target/classes/test/hibernate/Animal.class
+share/examples/xdoclet/target/classes/test/hibernate/CompositeId.class
+share/examples/xdoclet/target/classes/test/hibernate/CompositeIdEntity.class
+share/examples/xdoclet/target/classes/test/hibernate/Contraband.class
+share/examples/xdoclet/target/classes/test/hibernate/Human.class
+share/examples/xdoclet/target/classes/test/hibernate/ImportedProduct.class
+share/examples/xdoclet/target/classes/test/hibernate/LineItem.class
+share/examples/xdoclet/target/classes/test/hibernate/Lizard.class
+share/examples/xdoclet/target/classes/test/hibernate/Name.class
 share/examples/xdoclet/target/classes/test/hibernate/Order.class
-share/examples/xdoclet/target/classes/test/hibernate/OrderItems.class
-share/examples/xdoclet/target/classes/test/hibernate/OrderItems2.class
-share/examples/xdoclet/target/classes/test/hibernate/OrderTypeRefValue.class
+share/examples/xdoclet/target/classes/test/hibernate/Persistent.class
+share/examples/xdoclet/target/classes/test/hibernate/Pet.class
+share/examples/xdoclet/target/classes/test/hibernate/Product.class
+share/examples/xdoclet/target/classes/test/hibernate/Reptile.class
+share/examples/xdoclet/target/classes/test/hibernate/Updateable.class
 share/examples/xdoclet/target/classes/test/interfaces/Account.class
 share/examples/xdoclet/target/classes/test/interfaces/AccountData.class
 share/examples/xdoclet/target/classes/test/interfaces/AccountHome.class
@@ -151,6 +188,10 @@ share/examples/xdoclet/target/classes/test/interfaces/CustomerNormalValue.class
 share/examples/xdoclet/target/classes/test/interfaces/CustomerPK.class
 share/examples/xdoclet/target/classes/test/interfaces/CustomerUtil.class
 share/examples/xdoclet/target/classes/test/interfaces/CustomerValue.class
+share/examples/xdoclet/target/classes/test/interfaces/FileData.class
+share/examples/xdoclet/target/classes/test/interfaces/FileLocal.class
+share/examples/xdoclet/target/classes/test/interfaces/FileLocalHome.class
+share/examples/xdoclet/target/classes/test/interfaces/FileUtil.class
 share/examples/xdoclet/target/classes/test/interfaces/Identifiable.class
 share/examples/xdoclet/target/classes/test/interfaces/Person.class
 share/examples/xdoclet/target/classes/test/interfaces/PersonContactForm.class
@@ -194,7 +235,7 @@ share/examples/xdoclet/target/classes/test/web/StrutsAction.class
 share/examples/xdoclet/target/classes/test/web/StrutsDispatchAction.class
 share/examples/xdoclet/target/classes/test/web/TimerFilter.class
 share/examples/xdoclet/target/gen-src/actions.html
-share/examples/xdoclet/target/gen-src/jboss-service.xml
+share/examples/xdoclet/target/gen-src/jboss-simple-service.xml
 share/examples/xdoclet/target/gen-src/metadata.jdo
 share/examples/xdoclet/target/gen-src/test/dao/CustomerDAO.java
 share/examples/xdoclet/target/gen-src/test/ejb/AccountCMP.java
@@ -202,6 +243,7 @@ share/examples/xdoclet/target/gen-src/test/ejb/AddressCMP.java
 share/examples/xdoclet/target/gen-src/test/ejb/AllTypesEntityCMP.java
 share/examples/xdoclet/target/gen-src/test/ejb/CustomerBMPBMP.java
 share/examples/xdoclet/target/gen-src/test/ejb/CustomerCMP.java
+share/examples/xdoclet/target/gen-src/test/ejb/FileCMP.java
 share/examples/xdoclet/target/gen-src/test/ejb/StatefulSession.java
 share/examples/xdoclet/target/gen-src/test/ejb/TellerSession.java
 share/examples/xdoclet/target/gen-src/test/ejb/cmr/CityCMP.java
@@ -214,6 +256,18 @@ share/examples/xdoclet/target/gen-src/test/ejb/cmr/CountryData.java
 share/examples/xdoclet/target/gen-src/test/ejb/cmr/CountryLocal.java
 share/examples/xdoclet/target/gen-src/test/ejb/cmr/CountryLocalHome.java
 share/examples/xdoclet/target/gen-src/test/ejb/cmr/CountryUtil.java
+share/examples/xdoclet/target/gen-src/test/ejb/cmr/EmployeeAddressCMP.java
+share/examples/xdoclet/target/gen-src/test/ejb/cmr/EmployeeAddressData.java
+share/examples/xdoclet/target/gen-src/test/ejb/cmr/EmployeeAddressLocal.java
+share/examples/xdoclet/target/gen-src/test/ejb/cmr/EmployeeAddressLocalHome.java
+share/examples/xdoclet/target/gen-src/test/ejb/cmr/EmployeeAddressUtil.java
+share/examples/xdoclet/target/gen-src/test/ejb/cmr/EmployeeAddressValue.java
+share/examples/xdoclet/target/gen-src/test/ejb/cmr/EmployeeCMP.java
+share/examples/xdoclet/target/gen-src/test/ejb/cmr/EmployeeData.java
+share/examples/xdoclet/target/gen-src/test/ejb/cmr/EmployeeLocal.java
+share/examples/xdoclet/target/gen-src/test/ejb/cmr/EmployeeLocalHome.java
+share/examples/xdoclet/target/gen-src/test/ejb/cmr/EmployeeUtil.java
+share/examples/xdoclet/target/gen-src/test/ejb/cmr/EmployeeValue.java
 share/examples/xdoclet/target/gen-src/test/ejb/cmr/LanguageCMP.java
 share/examples/xdoclet/target/gen-src/test/ejb/cmr/LanguageCodeCMP.java
 share/examples/xdoclet/target/gen-src/test/ejb/cmr/LanguageCodeData.java
@@ -224,8 +278,11 @@ share/examples/xdoclet/target/gen-src/test/ejb/cmr/LanguageData.java
 share/examples/xdoclet/target/gen-src/test/ejb/cmr/LanguageLocal.java
 share/examples/xdoclet/target/gen-src/test/ejb/cmr/LanguageLocalHome.java
 share/examples/xdoclet/target/gen-src/test/ejb/cmr/LanguageUtil.java
-share/examples/xdoclet/target/gen-src/test/hibernate/BaseReferenceValue.hbm.xml
+share/examples/xdoclet/target/gen-src/test/hibernate/Animal.hbm.xml
+share/examples/xdoclet/target/gen-src/test/hibernate/CompositeIdEntity.hbm.xml
+share/examples/xdoclet/target/gen-src/test/hibernate/LineItem.hbm.xml
 share/examples/xdoclet/target/gen-src/test/hibernate/Order.hbm.xml
+share/examples/xdoclet/target/gen-src/test/hibernate/Product.hbm.xml
 share/examples/xdoclet/target/gen-src/test/interfaces/Account.java
 share/examples/xdoclet/target/gen-src/test/interfaces/AccountData.java
 share/examples/xdoclet/target/gen-src/test/interfaces/AccountHome.java
@@ -255,6 +312,10 @@ share/examples/xdoclet/target/gen-src/test/interfaces/CustomerNormalValue.java
 share/examples/xdoclet/target/gen-src/test/interfaces/CustomerPK.java
 share/examples/xdoclet/target/gen-src/test/interfaces/CustomerUtil.java
 share/examples/xdoclet/target/gen-src/test/interfaces/CustomerValue.java
+share/examples/xdoclet/target/gen-src/test/interfaces/FileData.java
+share/examples/xdoclet/target/gen-src/test/interfaces/FileLocal.java
+share/examples/xdoclet/target/gen-src/test/interfaces/FileLocalHome.java
+share/examples/xdoclet/target/gen-src/test/interfaces/FileUtil.java
 share/examples/xdoclet/target/gen-src/test/interfaces/Person.java
 share/examples/xdoclet/target/gen-src/test/interfaces/PersonContactForm.java
 share/examples/xdoclet/target/gen-src/test/interfaces/PersonData.java
@@ -275,6 +336,7 @@ share/examples/xdoclet/target/gen-src/test/interfaces/TellerLocalHome.java
 share/examples/xdoclet/target/gen-src/test/interfaces/TellerUtil.java
 share/examples/xdoclet/target/gen-src/test/javabean/SimpleBeanBeanInfo.java
 share/examples/xdoclet/target/gen-src/test/javabean/SimpleI18NBeanBeanInfo.java
+share/examples/xdoclet/target/gen-src/test/javabean/SimpleI18NBeanBeanInfo.properties
 share/examples/xdoclet/target/gen-src/test/jmx/JBossXMLExample-doc.xml
 share/examples/xdoclet/target/gen-src/test/jmx/JBossXMLExample.xml
 share/examples/xdoclet/target/gen-src/test/jmx/JBossXMLExampleMBean.java
@@ -302,37 +364,37 @@ share/examples/xdoclet/target/web-inf/struts-config.xml
 share/examples/xdoclet/target/web-inf/taglib.tld
 share/examples/xdoclet/target/web-inf/web.xml
 share/examples/xdoclet/target/web-inf/weblogic.xml
-share/java/classes/maven-xdoclet-plugin-1.2b2.jar
-share/java/classes/xdoclet-1.2b2.jar
-share/java/classes/xdoclet-apache-module-1.2b2.jar
-share/java/classes/xdoclet-bea-module-1.2b2.jar
-share/java/classes/xdoclet-borland-module-1.2b2.jar
-share/java/classes/xdoclet-caucho-module-1.2b2.jar
-share/java/classes/xdoclet-ejb-module-1.2b2.jar
-share/java/classes/xdoclet-exolab-module-1.2b2.jar
-share/java/classes/xdoclet-hibernate-module-1.2b2.jar
-share/java/classes/xdoclet-hp-module-1.2b2.jar
-share/java/classes/xdoclet-ibm-module-1.2b2.jar
-share/java/classes/xdoclet-java-module-1.2b2.jar
-share/java/classes/xdoclet-jboss-module-1.2b2.jar
-share/java/classes/xdoclet-jdo-module-1.2b2.jar
-share/java/classes/xdoclet-jmx-module-1.2b2.jar
-share/java/classes/xdoclet-libelis-module-1.2b2.jar
-share/java/classes/xdoclet-macromedia-module-1.2b2.jar
-share/java/classes/xdoclet-mvcsoft-module-1.2b2.jar
-share/java/classes/xdoclet-mx4j-module-1.2b2.jar
-share/java/classes/xdoclet-objectweb-module-1.2b2.jar
-share/java/classes/xdoclet-orion-module-1.2b2.jar
-share/java/classes/xdoclet-pramati-module-1.2b2.jar
-share/java/classes/xdoclet-solarmetric-module-1.2b2.jar
-share/java/classes/xdoclet-sybase-module-1.2b2.jar
-share/java/classes/xdoclet-tjdo-module-1.2b2.jar
-share/java/classes/xdoclet-web-module-1.2b2.jar
-share/java/classes/xdoclet-webwork-module-1.2b2.jar
-share/java/classes/xdoclet-xdoclet-module-1.2b2.jar
-share/java/classes/xdoclet-xjavadoc-1.2b2.jar
-share/java/classes/xdoclet-xjavadoc-uc-1.2b2.jar
-%%PORTDOCS%%share/doc/xdoclet/activity-log.html
+share/java/classes/maven-xdoclet-plugin-1.2b4.jar
+share/java/classes/xdoclet-1.2b4.jar
+share/java/classes/xdoclet-apache-module-1.2b4.jar
+share/java/classes/xdoclet-bea-module-1.2b4.jar
+share/java/classes/xdoclet-borland-module-1.2b4.jar
+share/java/classes/xdoclet-caucho-module-1.2b4.jar
+share/java/classes/xdoclet-ejb-module-1.2b4.jar
+share/java/classes/xdoclet-exolab-module-1.2b4.jar
+share/java/classes/xdoclet-hibernate-module-1.2b4.jar
+share/java/classes/xdoclet-hp-module-1.2b4.jar
+share/java/classes/xdoclet-ibm-module-1.2b4.jar
+share/java/classes/xdoclet-java-module-1.2b4.jar
+share/java/classes/xdoclet-jboss-module-1.2b4.jar
+share/java/classes/xdoclet-jdo-module-1.2b4.jar
+share/java/classes/xdoclet-jmx-module-1.2b4.jar
+share/java/classes/xdoclet-libelis-module-1.2b4.jar
+share/java/classes/xdoclet-macromedia-module-1.2b4.jar
+share/java/classes/xdoclet-mockobjects-module-1.2b4.jar
+share/java/classes/xdoclet-mvcsoft-module-1.2b4.jar
+share/java/classes/xdoclet-mx4j-module-1.2b4.jar
+share/java/classes/xdoclet-objectweb-module-1.2b4.jar
+share/java/classes/xdoclet-oracle-module-1.2b4.jar
+share/java/classes/xdoclet-orion-module-1.2b4.jar
+share/java/classes/xdoclet-pramati-module-1.2b4.jar
+share/java/classes/xdoclet-solarmetric-module-1.2b4.jar
+share/java/classes/xdoclet-sun-module-1.2b4.jar
+share/java/classes/xdoclet-sybase-module-1.2b4.jar
+share/java/classes/xdoclet-tjdo-module-1.2b4.jar
+share/java/classes/xdoclet-web-module-1.2b4.jar
+share/java/classes/xdoclet-webwork-module-1.2b4.jar
+share/java/classes/xdoclet-xdoclet-module-1.2b4.jar
 %%PORTDOCS%%share/doc/xdoclet/ant/xdoclet/ConfigParameter.html
 %%PORTDOCS%%share/doc/xdoclet/ant/xdoclet/DocletTask.html
 %%PORTDOCS%%share/doc/xdoclet/ant/xdoclet/SubTask.html
@@ -393,13 +455,17 @@ share/java/classes/xdoclet-xjavadoc-uc-1.2b2.jar
 %%PORTDOCS%%share/doc/xdoclet/ant/xdoclet/modules/macromedia/jrun/ejb/JRunSubTask.html
 %%PORTDOCS%%share/doc/xdoclet/ant/xdoclet/modules/macromedia/jrun/web/JRunWebXmlSubTask.html
 %%PORTDOCS%%share/doc/xdoclet/ant/xdoclet/modules/maven/MavenpluginSubTask.html
+%%PORTDOCS%%share/doc/xdoclet/ant/xdoclet/modules/mockobjects/MockObjectDocletTask.html
+%%PORTDOCS%%share/doc/xdoclet/ant/xdoclet/modules/mockobjects/MockObjectSubTask.html
 %%PORTDOCS%%share/doc/xdoclet/ant/xdoclet/modules/mvcsoft/ejb/MVCSoftSubTask.html
 %%PORTDOCS%%share/doc/xdoclet/ant/xdoclet/modules/mx4j/Mx4jDescriptionAdapterSubTask.html
 %%PORTDOCS%%share/doc/xdoclet/ant/xdoclet/modules/objectweb/jonas/ejb/JonasSubTask.html
 %%PORTDOCS%%share/doc/xdoclet/ant/xdoclet/modules/objectweb/jonas/web/JonasWebSubTask.html
+%%PORTDOCS%%share/doc/xdoclet/ant/xdoclet/modules/oracle/oc4j/ejb/OC4JSubTask.html
 %%PORTDOCS%%share/doc/xdoclet/ant/xdoclet/modules/orion/ejb/OrionSubTask.html
 %%PORTDOCS%%share/doc/xdoclet/ant/xdoclet/modules/pramati/ejb/PramatiSubTask.html
 %%PORTDOCS%%share/doc/xdoclet/ant/xdoclet/modules/solarmetric/jdo/KodoSubTask.html
+%%PORTDOCS%%share/doc/xdoclet/ant/xdoclet/modules/sun/sunone/ejb/SunONESubTask.html
 %%PORTDOCS%%share/doc/xdoclet/ant/xdoclet/modules/sybase/easerver/ejb/EAServerSubTask.html
 %%PORTDOCS%%share/doc/xdoclet/ant/xdoclet/modules/triactive/jdo/TJDOSubTask.html
 %%PORTDOCS%%share/doc/xdoclet/ant/xdoclet/modules/web/JspTaglibSubTask.html
@@ -424,6 +490,7 @@ share/java/classes/xdoclet-xjavadoc-uc-1.2b2.jar
 %%PORTDOCS%%share/doc/xdoclet/api/overview-tree.html
 %%PORTDOCS%%share/doc/xdoclet/api/package-list
 %%PORTDOCS%%share/doc/xdoclet/api/packages.html
+%%PORTDOCS%%share/doc/xdoclet/api/resources/inherit.gif
 %%PORTDOCS%%share/doc/xdoclet/api/serialized-form.html
 %%PORTDOCS%%share/doc/xdoclet/api/stylesheet.css
 %%PORTDOCS%%share/doc/xdoclet/api/xdoclet/ConfigParamIntrospector.html
@@ -571,10 +638,14 @@ share/java/classes/xdoclet-xjavadoc-uc-1.2b2.jar
 %%PORTDOCS%%share/doc/xdoclet/api/xdoclet/util/package-tree.html
 %%PORTDOCS%%share/doc/xdoclet/api/xdoclet/util/package-use.html
 %%PORTDOCS%%share/doc/xdoclet/bp.html
-%%PORTDOCS%%share/doc/xdoclet/changelog.html
+%%PORTDOCS%%share/doc/xdoclet/changelog-report.html
 %%PORTDOCS%%share/doc/xdoclet/changelogs/xdoclet_1_2_beta1.html
 %%PORTDOCS%%share/doc/xdoclet/changelogs/xdoclet_1_2_beta2.html
+%%PORTDOCS%%share/doc/xdoclet/changelogs/xdoclet_1_2_beta3.html
+%%PORTDOCS%%share/doc/xdoclet/changes.txt
+%%PORTDOCS%%share/doc/xdoclet/cvs-usage.html
 %%PORTDOCS%%share/doc/xdoclet/dependencies.html
+%%PORTDOCS%%share/doc/xdoclet/developer-activity-report.html
 %%PORTDOCS%%share/doc/xdoclet/development/architecture.html
 %%PORTDOCS%%share/doc/xdoclet/development/branches.html
 %%PORTDOCS%%share/doc/xdoclet/development/design.html
@@ -597,6 +668,30 @@ share/java/classes/xdoclet-xjavadoc-uc-1.2b2.jar
 %%PORTDOCS%%share/doc/xdoclet/images/help_logo.gif
 %%PORTDOCS%%share/doc/xdoclet/images/icon_alert.gif
 %%PORTDOCS%%share/doc/xdoclet/images/logo.gif
+%%PORTDOCS%%share/doc/xdoclet/images/logos/maven-bolt.png
+%%PORTDOCS%%share/doc/xdoclet/images/logos/maven-brewed.png
+%%PORTDOCS%%share/doc/xdoclet/images/logos/maven-build-successfull.png
+%%PORTDOCS%%share/doc/xdoclet/images/logos/maven-built.png
+%%PORTDOCS%%share/doc/xdoclet/images/logos/maven-bulldozer.png
+%%PORTDOCS%%share/doc/xdoclet/images/logos/maven-button-1.png
+%%PORTDOCS%%share/doc/xdoclet/images/logos/maven-button-2.png
+%%PORTDOCS%%share/doc/xdoclet/images/logos/maven-button-3.png
+%%PORTDOCS%%share/doc/xdoclet/images/logos/maven-button-4.png
+%%PORTDOCS%%share/doc/xdoclet/images/logos/maven-button-5.png
+%%PORTDOCS%%share/doc/xdoclet/images/logos/maven-button-black.png
+%%PORTDOCS%%share/doc/xdoclet/images/logos/maven-button-blue.png
+%%PORTDOCS%%share/doc/xdoclet/images/logos/maven-button-copper.png
+%%PORTDOCS%%share/doc/xdoclet/images/logos/maven-button-green.png
+%%PORTDOCS%%share/doc/xdoclet/images/logos/maven-button-pinky.png
+%%PORTDOCS%%share/doc/xdoclet/images/logos/maven-button-purple.png
+%%PORTDOCS%%share/doc/xdoclet/images/logos/maven-button-teal.png
+%%PORTDOCS%%share/doc/xdoclet/images/logos/maven-feather.png
+%%PORTDOCS%%share/doc/xdoclet/images/logos/maven-frankenstein.png
+%%PORTDOCS%%share/doc/xdoclet/images/logos/maven-mavenfactured.png
+%%PORTDOCS%%share/doc/xdoclet/images/logos/maven-petesucks.png
+%%PORTDOCS%%share/doc/xdoclet/images/logos/maven-propaganda-2.png
+%%PORTDOCS%%share/doc/xdoclet/images/logos/maven-propaganda.png
+%%PORTDOCS%%share/doc/xdoclet/images/logos/maven-redgreen.png
 %%PORTDOCS%%share/doc/xdoclet/images/nw_min.gif
 %%PORTDOCS%%share/doc/xdoclet/images/remove.gif
 %%PORTDOCS%%share/doc/xdoclet/images/sflogo.png
@@ -608,16 +703,18 @@ share/java/classes/xdoclet-xjavadoc-uc-1.2b2.jar
 %%PORTDOCS%%share/doc/xdoclet/images/xdocletgui-ejbselect.gif
 %%PORTDOCS%%share/doc/xdoclet/index.html
 %%PORTDOCS%%share/doc/xdoclet/install.html
+%%PORTDOCS%%share/doc/xdoclet/issue-tracking.html
+%%PORTDOCS%%share/doc/xdoclet/license.html
 %%PORTDOCS%%share/doc/xdoclet/licenses/ant-license.html
 %%PORTDOCS%%share/doc/xdoclet/licenses/xdoclet-license.html
 %%PORTDOCS%%share/doc/xdoclet/licenses/xerces-license.html
+%%PORTDOCS%%share/doc/xdoclet/linkcheck.html
 %%PORTDOCS%%share/doc/xdoclet/log4j.html
 %%PORTDOCS%%share/doc/xdoclet/mail-lists.html
 %%PORTDOCS%%share/doc/xdoclet/maven-plugin.html
 %%PORTDOCS%%share/doc/xdoclet/maven-reports.html
 %%PORTDOCS%%share/doc/xdoclet/merge.html
 %%PORTDOCS%%share/doc/xdoclet/migration.html
-%%PORTDOCS%%share/doc/xdoclet/navigation.html
 %%PORTDOCS%%share/doc/xdoclet/project-info.html
 %%PORTDOCS%%share/doc/xdoclet/resources.html
 %%PORTDOCS%%share/doc/xdoclet/status.html
@@ -641,12 +738,15 @@ share/java/classes/xdoclet-xjavadoc-uc-1.2b2.jar
 %%PORTDOCS%%share/doc/xdoclet/tags/jmx-tags.html
 %%PORTDOCS%%share/doc/xdoclet/tags/libelis-tags.html
 %%PORTDOCS%%share/doc/xdoclet/tags/macromedia-tags.html
+%%PORTDOCS%%share/doc/xdoclet/tags/mockobjects-tags.html
 %%PORTDOCS%%share/doc/xdoclet/tags/mvcsoft-tags.html
 %%PORTDOCS%%share/doc/xdoclet/tags/mx4j-tags.html
 %%PORTDOCS%%share/doc/xdoclet/tags/objectweb-tags.html
+%%PORTDOCS%%share/doc/xdoclet/tags/oracle-tags.html
 %%PORTDOCS%%share/doc/xdoclet/tags/orion-tags.html
 %%PORTDOCS%%share/doc/xdoclet/tags/pramati-tags.html
 %%PORTDOCS%%share/doc/xdoclet/tags/solarmetric-tags.html
+%%PORTDOCS%%share/doc/xdoclet/tags/sun-tags.html
 %%PORTDOCS%%share/doc/xdoclet/tags/sybase-tags.html
 %%PORTDOCS%%share/doc/xdoclet/tags/tjdo-tags.html
 %%PORTDOCS%%share/doc/xdoclet/tags/web-tags.html
@@ -725,12 +825,12 @@ share/java/classes/xdoclet-xjavadoc-uc-1.2b2.jar
 %%PORTDOCS%%share/doc/xdoclet/templates/JBossWeb.html
 %%PORTDOCS%%share/doc/xdoclet/templates/JBossWeb_toc.html
 %%PORTDOCS%%share/doc/xdoclet/templates/JBoss_toc.html
+%%PORTDOCS%%share/doc/xdoclet/templates/JMX.html
+%%PORTDOCS%%share/doc/xdoclet/templates/JMX_toc.html
 %%PORTDOCS%%share/doc/xdoclet/templates/JavaBean.html
 %%PORTDOCS%%share/doc/xdoclet/templates/JavaBean_toc.html
 %%PORTDOCS%%share/doc/xdoclet/templates/Jdo.html
 %%PORTDOCS%%share/doc/xdoclet/templates/Jdo_toc.html
-%%PORTDOCS%%share/doc/xdoclet/templates/Jmx.html
-%%PORTDOCS%%share/doc/xdoclet/templates/Jmx_toc.html
 %%PORTDOCS%%share/doc/xdoclet/templates/MVCSoft.html
 %%PORTDOCS%%share/doc/xdoclet/templates/MVCSoft_toc.html
 %%PORTDOCS%%share/doc/xdoclet/templates/Mavenplugin.html
@@ -739,6 +839,8 @@ share/java/classes/xdoclet-xjavadoc-uc-1.2b2.jar
 %%PORTDOCS%%share/doc/xdoclet/templates/Merge_toc.html
 %%PORTDOCS%%share/doc/xdoclet/templates/Method.html
 %%PORTDOCS%%share/doc/xdoclet/templates/Method_toc.html
+%%PORTDOCS%%share/doc/xdoclet/templates/MockObject.html
+%%PORTDOCS%%share/doc/xdoclet/templates/MockObject_toc.html
 %%PORTDOCS%%share/doc/xdoclet/templates/Module.html
 %%PORTDOCS%%share/doc/xdoclet/templates/Module_toc.html
 %%PORTDOCS%%share/doc/xdoclet/templates/Package.html
@@ -753,6 +855,8 @@ share/java/classes/xdoclet-xjavadoc-uc-1.2b2.jar
 %%PORTDOCS%%share/doc/xdoclet/templates/Resin_toc.html
 %%PORTDOCS%%share/doc/xdoclet/templates/StrutsForm.html
 %%PORTDOCS%%share/doc/xdoclet/templates/StrutsForm_toc.html
+%%PORTDOCS%%share/doc/xdoclet/templates/SunONE.html
+%%PORTDOCS%%share/doc/xdoclet/templates/SunONE_toc.html
 %%PORTDOCS%%share/doc/xdoclet/templates/TagDef.html
 %%PORTDOCS%%share/doc/xdoclet/templates/TagDef_toc.html
 %%PORTDOCS%%share/doc/xdoclet/templates/Type.html
@@ -771,277 +875,6 @@ share/java/classes/xdoclet-xjavadoc-uc-1.2b2.jar
 %%PORTDOCS%%share/doc/xdoclet/templates/namespaces.html
 %%PORTDOCS%%share/doc/xdoclet/templates/tags.html
 %%PORTDOCS%%share/doc/xdoclet/templates/tags_toc.html
-%%PORTDOCS%%share/doc/xdoclet/todo/all-classes.html
-%%PORTDOCS%%share/doc/xdoclet/todo/all-packages.html
-%%PORTDOCS%%share/doc/xdoclet/todo/class.gif
-%%PORTDOCS%%share/doc/xdoclet/todo/constructor.gif
-%%PORTDOCS%%share/doc/xdoclet/todo/field.gif
-%%PORTDOCS%%share/doc/xdoclet/todo/index.html
-%%PORTDOCS%%share/doc/xdoclet/todo/info.css
-%%PORTDOCS%%share/doc/xdoclet/todo/method.gif
-%%PORTDOCS%%share/doc/xdoclet/todo/overview-packages.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/ConfigParamIntrospector-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/ConfigParamIntrospector.NullObject-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/ConfigParameter-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/DocletContext-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/DocletSupport-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/DocletTask-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/GenerationManager-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/SubTask-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/TemplateSubTask-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/TemplateSubTask.ExtentTypes-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/TemplateSubTask.OfType-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/XDocletException-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/XDocletFacade-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/XDocletFacadeTest-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/XDocletMain-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/XDocletMessages-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/XDocletTagSupport-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/XmlSubTask-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/ant/AntPropertyTagsHandler-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/ant/ReplaceCopy-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/ant/XDocletAntMessages-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/ant/classes-list.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/ant/modulesbuilder/Module-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/ant/modulesbuilder/ModuleXmlParser-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/ant/modulesbuilder/ModulesGrandBuilderTask-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/ant/modulesbuilder/classes-list.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/classes-list.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/ejb/EjbDocletTask-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/ejb/classes-list.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/jmx/JMXDocletTask-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/jmx/classes-list.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/loader/LoaderMessages-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/loader/ModuleFinder-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/loader/SubTaskDefinition-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/loader/TagHandlerDefinition-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/loader/XDocletModule-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/loader/XDocletXmlParser-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/loader/XDocletXmlParserTest-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/loader/classes-list.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/apache/soap/ejb/ApacheSoapSubTask-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/apache/soap/ejb/classes-list.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/apache/struts/StrutsConfigXmlSubTask-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/apache/struts/StrutsConfigXmlSubTask.StrutsVersion-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/apache/struts/StrutsFormTagsHandler-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/apache/struts/StrutsValidationXmlSubTask-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/apache/struts/StrutsValidatorTagsHandler-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/apache/struts/classes-list.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/apache/struts/ejb/StrutsFormSubTask-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/apache/struts/ejb/classes-list.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/bea/wls/ejb/WebLogicSubTask-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/bea/wls/ejb/WebLogicSubTask.ValidateDbSchemaWithTypes-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/bea/wls/ejb/WebLogicSubTask.Version-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/bea/wls/ejb/WeblogicRelationTagsHandler-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/bea/wls/ejb/classes-list.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/bea/wls/web/WeblogicWebXmlSubTask-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/bea/wls/web/classes-list.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/borland/bes/ejb/BorlandRelationTagsHandler-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/borland/bes/ejb/BorlandSubTask-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/borland/bes/ejb/classes-list.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/caucho/ResinEjbSubTask-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/caucho/ResinEjbTagsHandler-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/caucho/ResinWebTagsHandler-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/caucho/ResinWebXmlSubTask-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/caucho/classes-list.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/doc/AntdocSubTask-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/doc/AntdocSubTask.Element-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/doc/AntdocSubTask.SubElement-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/doc/AntdocTagsHandler-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/doc/DocumentDocletTask-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/doc/DocumentTagsSubTask-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/doc/DocumentationTagsHandler-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/doc/ModuleTagsHandler-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/doc/classes-list.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/doc/info/InfoSubTask-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/doc/info/InfoTagsHandler-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/doc/info/classes-list.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/ejb/AbstractEjbCodeGeneratorSubTask-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/ejb/EjbDocletTask-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/ejb/EjbDocletTask.EjbSpecVersion-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/ejb/EjbTagsHandler-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/ejb/classes-list.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/ejb/dao/DaoSubTask-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/ejb/dao/DaoTagsHandler-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/ejb/dao/classes-list.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/ejb/dd/AbstractEjbDeploymentDescriptorSubTask-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/ejb/dd/EjbDotXmlSubTask-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/ejb/dd/EjbRefTagsHandler-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/ejb/dd/RelationTagsHandler-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/ejb/dd/RelationTagsHandler.RelationHolder-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/ejb/dd/SecurityTagsHandler-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/ejb/dd/classes-list.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/ejb/entity/BmpTagsHandler-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/ejb/entity/CmpTagsHandler-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/ejb/entity/DataObjectSubTask-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/ejb/entity/DataObjectTagsHandler-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/ejb/entity/EntityBmpSubTask-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/ejb/entity/EntityCmpSubTask-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/ejb/entity/EntityCmpSubTask.CmpSpecVersion-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/ejb/entity/EntityFacadeSubTask-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/ejb/entity/EntityPkSubTask-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/ejb/entity/EntityTagsHandler-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/ejb/entity/FacadeTagsHandler-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/ejb/entity/PersistentTagsHandler-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/ejb/entity/PkTagsHandler-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/ejb/entity/ValueObjectSubTask-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/ejb/entity/ValueObjectTagsHandler-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/ejb/entity/classes-list.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/ejb/home/HomeInterfaceSubTask-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/ejb/home/HomeTagsHandler-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/ejb/home/LocalHomeInterfaceSubTask-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/ejb/home/classes-list.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/ejb/intf/InterfaceTagsHandler-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/ejb/intf/LocalInterfaceSubTask-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/ejb/intf/RemoteInterfaceSubTask-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/ejb/intf/classes-list.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/ejb/lookup/LookupObjectSubTask-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/ejb/lookup/LookupObjectSubTask.LookupKind-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/ejb/lookup/LookupUtilTagsHandler-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/ejb/lookup/classes-list.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/ejb/mdb/MdbTagsHandler-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/ejb/mdb/classes-list.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/ejb/session/RemoteFacadeSubTask-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/ejb/session/SessionSubTask-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/ejb/session/SessionTagsHandler-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/ejb/session/classes-list.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/exolab/castor/ejb/CastorSubTask-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/exolab/castor/ejb/CastorTagsHandler-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/exolab/castor/ejb/classes-list.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/externalizer/ExternalizerSubTask-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/externalizer/ExternalizerSubTask.Combination-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/externalizer/ExternalizerTagsHandler-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/externalizer/PropertiesTranslatorSubTask-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/externalizer/classes-list.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/hibernate/HibernateDocletTask-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/hibernate/HibernateSubTask-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/hibernate/HibernateTagsHandler-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/hibernate/JBossServiceSubTask-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/hibernate/classes-list.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/hp/hpas/ejb/HPASSubTask-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/hp/hpas/ejb/classes-list.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/ibm/websphere/ejb/WebSphereSubTask-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/ibm/websphere/ejb/classes-list.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/ibm/websphere/web/WebSphereWebXmlSubTask-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/ibm/websphere/web/classes-list.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/java/javabean/BeanInfoSubTask-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/java/javabean/JavaBeanTagsHandler-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/java/javabean/classes-list.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/jboss/ejb/JBossRelationTagsHandler-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/jboss/ejb/JBossSubTask-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/jboss/ejb/JBossSubTask.JBossVersionTypes-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/jboss/ejb/JBossTagsHandler-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/jboss/ejb/classes-list.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/jboss/jmx/JBossXMBeanDescriptorSubTask-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/jboss/jmx/JBossXmlDocSubTask-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/jboss/jmx/JBossXmlServiceTemplateSubTask-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/jboss/jmx/classes-list.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/jboss/web/JBossWebTagsHandler-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/jboss/web/JBossWebXmlSubTask-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/jboss/web/classes-list.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/jdo/JdoDocletTask-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/jdo/JdoDocletTask.JdoSpecVersion-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/jdo/JdoTagsHandler-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/jdo/JdoXmlMetadataSubTask-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/jdo/JdoXmlMetadataSubTask.GenerationOptionTypes-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/jdo/VendorExtensionsSubTask-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/jdo/classes-list.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/jmx/JMXDocletTask-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/jmx/JMXTagsHandler-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/jmx/MBeanInterfaceSubTask-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/jmx/MLetSubTask-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/jmx/classes-list.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/libelis/jdo/LidoSubTask-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/libelis/jdo/LidoSubTask.LidoVersionTypes-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/libelis/jdo/classes-list.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/macromedia/jrun/ejb/JRunSubTask-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/macromedia/jrun/ejb/classes-list.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/macromedia/jrun/web/JRunWebXmlSubTask-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/macromedia/jrun/web/classes-list.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/maven/MavenpluginSubTask-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/maven/MavenpluginTagsHandler-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/maven/classes-list.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/mvcsoft/ejb/MVCSoftSubTask-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/mvcsoft/ejb/MVCSoftSubTask.MVCSoftVersionTypes-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/mvcsoft/ejb/MVCSoftTagsHandler-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/mvcsoft/ejb/classes-list.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/mx4j/Mx4jDescriptionAdapterSubTask-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/mx4j/classes-list.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/objectweb/jonas/ejb/JonasSubTask-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/objectweb/jonas/ejb/JonasSubTask.JonasVersionTypes-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/objectweb/jonas/ejb/classes-list.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/objectweb/jonas/web/JonasWebSubTask-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/objectweb/jonas/web/JonasWebSubTask.JonasVersionTypes-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/objectweb/jonas/web/classes-list.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/orion/ejb/OrionSubTask-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/orion/ejb/OrionSubTask.OrionVersionTypes-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/orion/ejb/classes-list.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/pramati/ejb/PramatiSubTask-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/pramati/ejb/classes-list.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/solarmetric/jdo/KodoSubTask-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/solarmetric/jdo/KodoSubTask.KodoVersionTypes-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/solarmetric/jdo/classes-list.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/sybase/easerver/ejb/EAServerSubTask-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/sybase/easerver/ejb/EAServerSubTask.EAServerVersionTypes-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/sybase/easerver/ejb/classes-list.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/triactive/jdo/TJDOSubTask-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/triactive/jdo/TJDOSubTask.TJDOVersionTypes-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/triactive/jdo/classes-list.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/util/CollectionTagsHandler-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/util/classes-list.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/web/JspTaglibSubTask-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/web/JspTaglibSubTask.ContextParam-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/web/JspTaglibSubTask.JspVersionTypes-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/web/JspTaglibSubTask.TagLib-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/web/WebDocletTask-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/web/WebTagsHandler-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/web/WebXmlSubTask-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/web/WebXmlSubTask.ContextParam-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/web/WebXmlSubTask.ServletVersionTypes-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/web/WebXmlSubTask.TagLib-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/web/WebXmlSubTask.WelcomeFile-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/web/classes-list.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/webwork/WebWorkActionDocsSubTask-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/webwork/WebWorkConfigPropertiesSubTask-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/webwork/WebWorkTagsHandler-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/modules/webwork/classes-list.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/tagshandler/AbstractProgramElementTagsHandler-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/tagshandler/ClassTagsHandler-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/tagshandler/CommentTagsHandler-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/tagshandler/ConfigTagsHandler-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/tagshandler/ConstructorTagsHandler-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/tagshandler/FieldTagsHandler-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/tagshandler/IdTagsHandler-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/tagshandler/MergeTagsHandler-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/tagshandler/MethodTagsHandler-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/tagshandler/PackageTagsHandler-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/tagshandler/PackageTagsHandler.PackageSubstitution-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/tagshandler/ParameterTagsHandler-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/tagshandler/PropertyTagsHandler-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/tagshandler/TagDefTagsHandler-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/tagshandler/TranslatorTagsHandler-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/tagshandler/TypeTagsHandler-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/tagshandler/XDocletTagshandlerMessages-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/tagshandler/XmlTagsHandler-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/tagshandler/classes-list.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/template/PrettyPrintWriter-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/template/TemplateEngine-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/template/TemplateEngine.TagContext-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/template/TemplateException-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/template/TemplateParser-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/template/TemplateTagHandler-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/template/XDocletTemplateMessages-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/template/classes-list.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/util/DocletUtil-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/util/FileManager-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/util/LogUtil-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/util/Translator-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/util/TypeConversionUtil-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/util/XDocletUtilMessages-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/util/XmlValidator-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/util/classes-list.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/web/WebDocletTask-details.html
-%%PORTDOCS%%share/doc/xdoclet/todo/xdoclet/web/classes-list.html
 %%PORTDOCS%%share/doc/xdoclet/tools.html
 %%PORTDOCS%%share/doc/xdoclet/using.html
 %%PORTDOCS%%share/doc/xdoclet/valueobjects.html
@@ -1088,94 +921,12 @@ share/java/classes/xdoclet-xjavadoc-uc-1.2b2.jar
 @dirrm share/examples/xdoclet/src
 @dirrm share/examples/xdoclet/lib
 @dirrm share/examples/xdoclet
-@dirrm share/doc/xdoclet/todo/xdoclet/web
-@dirrm share/doc/xdoclet/todo/xdoclet/util
-@dirrm share/doc/xdoclet/todo/xdoclet/template
-@dirrm share/doc/xdoclet/todo/xdoclet/tagshandler
-@dirrm share/doc/xdoclet/todo/xdoclet/modules/webwork
-@dirrm share/doc/xdoclet/todo/xdoclet/modules/web
-@dirrm share/doc/xdoclet/todo/xdoclet/modules/util
-@dirrm share/doc/xdoclet/todo/xdoclet/modules/triactive/jdo
-@dirrm share/doc/xdoclet/todo/xdoclet/modules/triactive
-@dirrm share/doc/xdoclet/todo/xdoclet/modules/sybase/easerver/ejb
-@dirrm share/doc/xdoclet/todo/xdoclet/modules/sybase/easerver
-@dirrm share/doc/xdoclet/todo/xdoclet/modules/sybase
-@dirrm share/doc/xdoclet/todo/xdoclet/modules/solarmetric/jdo
-@dirrm share/doc/xdoclet/todo/xdoclet/modules/solarmetric
-@dirrm share/doc/xdoclet/todo/xdoclet/modules/pramati/ejb
-@dirrm share/doc/xdoclet/todo/xdoclet/modules/pramati
-@dirrm share/doc/xdoclet/todo/xdoclet/modules/orion/ejb
-@dirrm share/doc/xdoclet/todo/xdoclet/modules/orion
-@dirrm share/doc/xdoclet/todo/xdoclet/modules/objectweb/jonas/web
-@dirrm share/doc/xdoclet/todo/xdoclet/modules/objectweb/jonas/ejb
-@dirrm share/doc/xdoclet/todo/xdoclet/modules/objectweb/jonas
-@dirrm share/doc/xdoclet/todo/xdoclet/modules/objectweb
-@dirrm share/doc/xdoclet/todo/xdoclet/modules/mx4j
-@dirrm share/doc/xdoclet/todo/xdoclet/modules/mvcsoft/ejb
-@dirrm share/doc/xdoclet/todo/xdoclet/modules/mvcsoft
-@dirrm share/doc/xdoclet/todo/xdoclet/modules/maven
-@dirrm share/doc/xdoclet/todo/xdoclet/modules/macromedia/jrun/web
-@dirrm share/doc/xdoclet/todo/xdoclet/modules/macromedia/jrun/ejb
-@dirrm share/doc/xdoclet/todo/xdoclet/modules/macromedia/jrun
-@dirrm share/doc/xdoclet/todo/xdoclet/modules/macromedia
-@dirrm share/doc/xdoclet/todo/xdoclet/modules/libelis/jdo
-@dirrm share/doc/xdoclet/todo/xdoclet/modules/libelis
-@dirrm share/doc/xdoclet/todo/xdoclet/modules/jmx
-@dirrm share/doc/xdoclet/todo/xdoclet/modules/jdo
-@dirrm share/doc/xdoclet/todo/xdoclet/modules/jboss/web
-@dirrm share/doc/xdoclet/todo/xdoclet/modules/jboss/jmx
-@dirrm share/doc/xdoclet/todo/xdoclet/modules/jboss/ejb
-@dirrm share/doc/xdoclet/todo/xdoclet/modules/jboss
-@dirrm share/doc/xdoclet/todo/xdoclet/modules/java/javabean
-@dirrm share/doc/xdoclet/todo/xdoclet/modules/java
-@dirrm share/doc/xdoclet/todo/xdoclet/modules/ibm/websphere/web
-@dirrm share/doc/xdoclet/todo/xdoclet/modules/ibm/websphere/ejb
-@dirrm share/doc/xdoclet/todo/xdoclet/modules/ibm/websphere
-@dirrm share/doc/xdoclet/todo/xdoclet/modules/ibm
-@dirrm share/doc/xdoclet/todo/xdoclet/modules/hp/hpas/ejb
-@dirrm share/doc/xdoclet/todo/xdoclet/modules/hp/hpas
-@dirrm share/doc/xdoclet/todo/xdoclet/modules/hp
-@dirrm share/doc/xdoclet/todo/xdoclet/modules/hibernate
-@dirrm share/doc/xdoclet/todo/xdoclet/modules/externalizer
-@dirrm share/doc/xdoclet/todo/xdoclet/modules/exolab/castor/ejb
-@dirrm share/doc/xdoclet/todo/xdoclet/modules/exolab/castor
-@dirrm share/doc/xdoclet/todo/xdoclet/modules/exolab
-@dirrm share/doc/xdoclet/todo/xdoclet/modules/ejb/session
-@dirrm share/doc/xdoclet/todo/xdoclet/modules/ejb/mdb
-@dirrm share/doc/xdoclet/todo/xdoclet/modules/ejb/lookup
-@dirrm share/doc/xdoclet/todo/xdoclet/modules/ejb/intf
-@dirrm share/doc/xdoclet/todo/xdoclet/modules/ejb/home
-@dirrm share/doc/xdoclet/todo/xdoclet/modules/ejb/entity
-@dirrm share/doc/xdoclet/todo/xdoclet/modules/ejb/dd
-@dirrm share/doc/xdoclet/todo/xdoclet/modules/ejb/dao
-@dirrm share/doc/xdoclet/todo/xdoclet/modules/ejb
-@dirrm share/doc/xdoclet/todo/xdoclet/modules/doc/info
-@dirrm share/doc/xdoclet/todo/xdoclet/modules/doc
-@dirrm share/doc/xdoclet/todo/xdoclet/modules/caucho
-@dirrm share/doc/xdoclet/todo/xdoclet/modules/borland/bes/ejb
-@dirrm share/doc/xdoclet/todo/xdoclet/modules/borland/bes
-@dirrm share/doc/xdoclet/todo/xdoclet/modules/borland
-@dirrm share/doc/xdoclet/todo/xdoclet/modules/bea/wls/web
-@dirrm share/doc/xdoclet/todo/xdoclet/modules/bea/wls/ejb
-@dirrm share/doc/xdoclet/todo/xdoclet/modules/bea/wls
-@dirrm share/doc/xdoclet/todo/xdoclet/modules/bea
-@dirrm share/doc/xdoclet/todo/xdoclet/modules/apache/struts/ejb
-@dirrm share/doc/xdoclet/todo/xdoclet/modules/apache/struts
-@dirrm share/doc/xdoclet/todo/xdoclet/modules/apache/soap/ejb
-@dirrm share/doc/xdoclet/todo/xdoclet/modules/apache/soap
-@dirrm share/doc/xdoclet/todo/xdoclet/modules/apache
-@dirrm share/doc/xdoclet/todo/xdoclet/modules
-@dirrm share/doc/xdoclet/todo/xdoclet/loader
-@dirrm share/doc/xdoclet/todo/xdoclet/jmx
-@dirrm share/doc/xdoclet/todo/xdoclet/ejb
-@dirrm share/doc/xdoclet/todo/xdoclet/ant/modulesbuilder
-@dirrm share/doc/xdoclet/todo/xdoclet/ant
-@dirrm share/doc/xdoclet/todo/xdoclet
-@dirrm share/doc/xdoclet/todo
 @dirrm share/doc/xdoclet/templates
 @dirrm share/doc/xdoclet/tags
+@dirrm share/doc/xdoclet/stylesheets
 @dirrm share/doc/xdoclet/style
 @dirrm share/doc/xdoclet/licenses
+@dirrm share/doc/xdoclet/images/logos
 @dirrm share/doc/xdoclet/images
 @dirrm share/doc/xdoclet/ide/idea
 @dirrm share/doc/xdoclet/ide
@@ -1196,6 +947,7 @@ share/java/classes/xdoclet-xjavadoc-uc-1.2b2.jar
 @dirrm share/doc/xdoclet/api/xdoclet/ant/class-use
 @dirrm share/doc/xdoclet/api/xdoclet/ant
 @dirrm share/doc/xdoclet/api/xdoclet
+@dirrm share/doc/xdoclet/api/resources
 @dirrm share/doc/xdoclet/api
 @dirrm share/doc/xdoclet/ant/xdoclet/tagshandler
 @dirrm share/doc/xdoclet/ant/xdoclet/modules/webwork
@@ -1205,12 +957,18 @@ share/java/classes/xdoclet-xjavadoc-uc-1.2b2.jar
 @dirrm share/doc/xdoclet/ant/xdoclet/modules/sybase/easerver/ejb
 @dirrm share/doc/xdoclet/ant/xdoclet/modules/sybase/easerver
 @dirrm share/doc/xdoclet/ant/xdoclet/modules/sybase
+@dirrm share/doc/xdoclet/ant/xdoclet/modules/sun/sunone/ejb
+@dirrm share/doc/xdoclet/ant/xdoclet/modules/sun/sunone
+@dirrm share/doc/xdoclet/ant/xdoclet/modules/sun
 @dirrm share/doc/xdoclet/ant/xdoclet/modules/solarmetric/jdo
 @dirrm share/doc/xdoclet/ant/xdoclet/modules/solarmetric
 @dirrm share/doc/xdoclet/ant/xdoclet/modules/pramati/ejb
 @dirrm share/doc/xdoclet/ant/xdoclet/modules/pramati
 @dirrm share/doc/xdoclet/ant/xdoclet/modules/orion/ejb
 @dirrm share/doc/xdoclet/ant/xdoclet/modules/orion
+@dirrm share/doc/xdoclet/ant/xdoclet/modules/oracle/oc4j/ejb
+@dirrm share/doc/xdoclet/ant/xdoclet/modules/oracle/oc4j
+@dirrm share/doc/xdoclet/ant/xdoclet/modules/oracle
 @dirrm share/doc/xdoclet/ant/xdoclet/modules/objectweb/jonas/web
 @dirrm share/doc/xdoclet/ant/xdoclet/modules/objectweb/jonas/ejb
 @dirrm share/doc/xdoclet/ant/xdoclet/modules/objectweb/jonas
@@ -1218,6 +976,7 @@ share/java/classes/xdoclet-xjavadoc-uc-1.2b2.jar
 @dirrm share/doc/xdoclet/ant/xdoclet/modules/mx4j
 @dirrm share/doc/xdoclet/ant/xdoclet/modules/mvcsoft/ejb
 @dirrm share/doc/xdoclet/ant/xdoclet/modules/mvcsoft
+@dirrm share/doc/xdoclet/ant/xdoclet/modules/mockobjects
 @dirrm share/doc/xdoclet/ant/xdoclet/modules/maven
 @dirrm share/doc/xdoclet/ant/xdoclet/modules/macromedia/jrun/web
 @dirrm share/doc/xdoclet/ant/xdoclet/modules/macromedia/jrun/ejb
