@@ -1,0 +1,59 @@
+lib/cscc/lib/libc64.dll
+lib/cscc/lib/libm64.dll
+share/cscc/include/alloca.h
+share/cscc/include/assert.h
+share/cscc/include/bits/libc-lock.h
+share/cscc/include/bits/local_lim.h
+share/cscc/include/bits/mman.h
+share/cscc/include/bits/posix1_lim.h
+share/cscc/include/bits/posix2_lim.h
+share/cscc/include/bits/stat.h
+share/cscc/include/bits/stdio_lim.h
+share/cscc/include/bits/types.h
+share/cscc/include/bits/waitflags.h
+share/cscc/include/bits/waitstatus.h
+share/cscc/include/bits/wchar.h
+share/cscc/include/bits/wordsize.h
+share/cscc/include/bits/xopen_lim.h
+share/cscc/include/ctype.h
+share/cscc/include/dirent.h
+share/cscc/include/errno.h
+share/cscc/include/fcntl.h
+share/cscc/include/features.h
+share/cscc/include/gmp-mparam.h
+share/cscc/include/gmp.h
+share/cscc/include/gnu/stubs.h
+share/cscc/include/ieee754.h
+share/cscc/include/inttypes.h
+share/cscc/include/limits.h
+share/cscc/include/malloc.h
+share/cscc/include/math.h
+share/cscc/include/pthread.h
+share/cscc/include/pwd.h
+share/cscc/include/setjmp.h
+share/cscc/include/stdarg.h
+share/cscc/include/stdbool.h
+share/cscc/include/stddef.h
+share/cscc/include/stdint.h
+share/cscc/include/stdio.h
+share/cscc/include/stdio_ext.h
+share/cscc/include/stdlib.h
+share/cscc/include/string.h
+share/cscc/include/strings.h
+share/cscc/include/sys/cdefs.h
+share/cscc/include/sys/errno.h
+share/cscc/include/sys/mman.h
+share/cscc/include/sys/stat.h
+share/cscc/include/sys/sysmacros.h
+share/cscc/include/sys/types.h
+share/cscc/include/time.h
+share/cscc/include/unistd.h
+share/cscc/include/varargs.h
+share/cscc/include/wchar.h
+share/cscc/include/wctype.h
+share/cscc/include/xlocale.h
+@dirrm share/cscc/include/bits
+@dirrm share/cscc/include/gnu
+@dirrm share/cscc/include/sys
+@dirrm share/cscc/include
+@dirrm share/cscc

@@ -1,0 +1,5 @@
+This is the "pnetC" project.  The goal of the project is to create
+an ANSI-compatible C library, that can be compiled down to IL using
+Portable.NET's "cscc" compiler.
+
+WWW: http://www.southern-storm.com.au/portable_net.html

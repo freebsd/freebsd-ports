@@ -120,6 +120,7 @@
     SUBDIR += mdk
     SUBDIR += mit-scheme
     SUBDIR += mixal
+    SUBDIR += ml-pnet
     SUBDIR += mmix
     SUBDIR += mono
     SUBDIR += moscow_ml
@@ -175,6 +176,10 @@
     SUBDIR += pm3-m3tk
     SUBDIR += pm3-net
     SUBDIR += pm3-netobj
+    SUBDIR += pnet
+    SUBDIR += pnet-base
+    SUBDIR += pnetc
+    SUBDIR += pnetlib
     SUBDIR += ptoc
     SUBDIR += py-compiler
     SUBDIR += py-mx-base
