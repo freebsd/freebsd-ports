@@ -22,6 +22,8 @@ DISTFILES=	gcc-core-${SNAPVER}${EXTRACT_SUFX} \
 
 MAINTAINER=	esk@ira.uka.de
 
+BROKEN=		"Does not extract properly"
+
 BUILD_DEPENDS=	${PKGNAMEPREFIX}as:${PORTSDIR}/devel/${PKGNAMEPREFIX}binutils \
 		${PKGNAMEPREFIX}ld:${PORTSDIR}/devel/${PKGNAMEPREFIX}binutils
 RUN_DEPENDS=	${PKGNAMEPREFIX}as:${PORTSDIR}/devel/${PKGNAMEPREFIX}binutils \
