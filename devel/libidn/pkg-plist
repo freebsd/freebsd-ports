@@ -3,9 +3,10 @@ include/idn-int.h
 include/idna.h
 include/punycode.h
 include/stringprep.h
+include/tld.h
 lib/libidn.a
 lib/libidn.so
-lib/libidn.so.12
+lib/libidn.so.13
 libdata/pkgconfig/libidn.pc
 %%EMACS%%%%EMACSDIR%%/site-lisp/idna.el
 %%EMACS%%%%EMACSDIR%%/site-lisp/punycode.el
