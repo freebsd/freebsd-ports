@@ -1,20 +1,16 @@
 --- src/lang-common/Makefile.tmpl.orig	Thu Aug 19 07:33:10 1999
-+++ src/lang-common/Makefile.tmpl	Sat Jan 27 11:12:34 2001
-@@ -15,15 +15,15 @@
- 
- !yacc parser.y
- 
--!object mod_std.o mod_std.c
--!object mod_msql.o mod_msql.c
-+!sobject mod_std.o mod_std.c
-+!sobject mod_msql.o mod_msql.c
++++ src/lang-common/Makefile.tmpl	Sun Jan 28 00:17:00 2001
+@@ -19,11 +19,13 @@
+ !object mod_msql.o mod_msql.c
  
  !library_unix liblite.a symtab.c,types.c,code-gen.c,code-sim.c,extern.c,fcrypt.c,lib.c parser.o
++!slibrary_unix 1 liblite.so symtab.c,types.c,code-gen.c,code-sim.c,extern.c,fcrypt.c,lib.c parser.o
  !dll_os2 lite symtab.c,types.c,code-sim.c,extern.c,fcrypt.c,lib.c,code-gen.c,parser.c ../regexp/libregexp.a
  
  !libinstall liblite.a $(INST_DIR)/lib/liblite.a 744 $(ROOT)
 -!install mod_std.o $(INST_DIR)/lib/mod_std.o 744 $(ROOT)
 -!install mod_msql.o $(INST_DIR)/lib/mod_msql.o 744 $(ROOT)
++!slibinstall 1 liblite.so $(INST_DIR)/lib 744 $(ROOT)
 +!install mod_std.o $(INST_DIR)/libexec/msql/mod_std.so 744 $(ROOT)
 +!install mod_msql.o $(INST_DIR)/libexec/msql/mod_msql.so 744 $(ROOT)
  !install mod_std.h $(INST_DIR)/include/mod_std.h 744 $(ROOT)
