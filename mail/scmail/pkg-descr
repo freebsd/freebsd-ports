@@ -1,0 +1,4 @@
+scmail is a mail filter written in Scheme.  scmail can filter an
+incoming mail when it is received and filter mails in a mailbox.
+
+WWW: http://www.namazu.org/~satoru/scmail/
