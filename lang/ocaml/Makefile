@@ -90,6 +90,12 @@ CONFIGURE_ARGS+=	-tkdefs "-I${LOCALBASE}/include/tcl8.4 -I${LOCALBASE}/include/t
 .endif
 .endif
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "sparc64"
+BROKEN=		"Coredump during build on sparc64"
+.endif
+
 post-install:
 .if !defined(WITHOUT_TK)
 	@${MKDIR} ${EXAMPLESDIR}
@@ -106,4 +112,4 @@ post-install:
 	@${STRIP_CMD} ${PREFIX}/bin/${prog}
 .endfor
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
