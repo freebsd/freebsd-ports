@@ -32,11 +32,13 @@ etc/sane.d/microtek.conf
 etc/sane.d/microtek2.conf
 etc/sane.d/mustek.conf
 etc/sane.d/mustek_pp.conf
+etc/sane.d/mustek_pp_ccd.conf
 etc/sane.d/mustek_usb.conf
 etc/sane.d/nec.conf
 etc/sane.d/net.conf
 etc/sane.d/pie.conf
 etc/sane.d/plustek.conf
+etc/sane.d/plustek_pp.conf
 etc/sane.d/ricoh.conf
 etc/sane.d/s9036.conf
 etc/sane.d/saned.conf
@@ -151,6 +153,9 @@ lib/sane/libsane-mustek.so.1
 lib/sane/libsane-mustek_pp.a
 lib/sane/libsane-mustek_pp.so
 lib/sane/libsane-mustek_pp.so.1
+lib/sane/libsane-mustek_pp_ccd.a
+lib/sane/libsane-mustek_pp_ccd.so
+lib/sane/libsane-mustek_pp_ccd.so.1
 lib/sane/libsane-mustek_usb.a
 lib/sane/libsane-mustek_usb.so
 lib/sane/libsane-mustek_usb.so.1
@@ -166,6 +171,9 @@ lib/sane/libsane-pie.so.1
 lib/sane/libsane-plustek.a
 lib/sane/libsane-plustek.so
 lib/sane/libsane-plustek.so.1
+lib/sane/libsane-plustek_pp.a
+lib/sane/libsane-plustek_pp.so
+lib/sane/libsane-plustek_pp.so.1
 lib/sane/libsane-ricoh.a
 lib/sane/libsane-ricoh.so
 lib/sane/libsane-ricoh.so.1
@@ -225,6 +233,7 @@ sbin/saned
 %%PORTDOCS%%share/doc/sane/README.aix
 %%PORTDOCS%%share/doc/sane/README.beos
 %%PORTDOCS%%share/doc/sane/README.darwin
+%%PORTDOCS%%share/doc/sane/README.djpeg
 %%PORTDOCS%%share/doc/sane/README.freebsd
 %%PORTDOCS%%share/doc/sane/README.hp-ux
 %%PORTDOCS%%share/doc/sane/README.linux
@@ -234,7 +243,7 @@ sbin/saned
 %%PORTDOCS%%share/doc/sane/README.solaris
 %%PORTDOCS%%share/doc/sane/README.unixware2
 %%PORTDOCS%%share/doc/sane/README.unixware7
-%%PORTDOCS%%share/doc/sane/TODO
+%%PORTDOCS%%share/doc/sane/README.windows
 %%PORTDOCS%%share/doc/sane/canon/canon.changes
 %%PORTDOCS%%share/doc/sane/canon/canon.install2700F.txt
 %%PORTDOCS%%share/doc/sane/gt68xx/gt68xx.CHANGES
@@ -243,10 +252,16 @@ sbin/saned
 %%PORTDOCS%%share/doc/sane/mustek/mustek.CHANGES
 %%PORTDOCS%%share/doc/sane/mustek_usb/mustek_usb.CHANGES
 %%PORTDOCS%%share/doc/sane/mustek_usb/mustek_usb.TODO
+%%PORTDOCS%%share/doc/sane/plustek/BUILD
+%%PORTDOCS%%share/doc/sane/plustek/FAQ
+%%PORTDOCS%%share/doc/sane/plustek/Makefile.module
+%%PORTDOCS%%share/doc/sane/plustek/Plustek-PARPORT-TODO.txt
 %%PORTDOCS%%share/doc/sane/plustek/Plustek-PARPORT.txt
 %%PORTDOCS%%share/doc/sane/plustek/Plustek-USB-TODO.txt
 %%PORTDOCS%%share/doc/sane/plustek/Plustek-USB.txt
 %%PORTDOCS%%share/doc/sane/plustek/Plustek.changes
+%%PORTDOCS%%share/doc/sane/plustek/VERSION0
+%%PORTDOCS%%share/doc/sane/plustek/VERSION1
 %%PORTDOCS%%share/doc/sane/sane-backends.html
 %%PORTDOCS%%share/doc/sane/sane-backends-external.html
 %%PORTDOCS%%share/doc/sane/sane-mfgs.html
@@ -304,9 +319,12 @@ sbin/saned
 %%PORTDOCS%%@dirrm share/doc/sane/gt68xx
 %%PORTDOCS%%@dirrm share/doc/sane/canon
 %%PORTDOCS%%@dirrm share/doc/sane
+share/locale/bg/LC_MESSAGES/sane-backends.mo
+share/locale/cs/LC_MESSAGES/sane-backends.mo
 share/locale/de/LC_MESSAGES/sane-backends.mo
 share/locale/es/LC_MESSAGES/sane-backends.mo
 share/locale/fr/LC_MESSAGES/sane-backends.mo
+share/locale/it/LC_MESSAGES/sane-backends.mo
 share/locale/nl/LC_MESSAGES/sane-backends.mo
 share/locale/no/LC_MESSAGES/sane-backends.mo
 share/locale/pt/LC_MESSAGES/sane-backends.mo
