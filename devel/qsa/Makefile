@@ -8,8 +8,8 @@
 PORTNAME=	qsa
 PORTVERSION=	1.1.2
 CATEGORIES=	devel lang
-MASTER_SITES=	ftp://ftp.iasi.roedu.net/mirrors/ftp.trolltech.com/qsa/source/  \
-		ftp://ftp.trolltech.com/qsa/source/
+MASTER_SITES=	${MASTER_SITE_QT}
+MASTER_SITE_SUBDIR=../../qsa/source
 DISTNAME=	${PORTNAME}-x11-free-${PORTVERSION}
 DIST_SUBDIR=	KDE
 
