@@ -2061,6 +2061,7 @@ festvox-ked16	ports/audio/festvox-ked16
 festvox-ked8	ports/audio/festvox-ked8
 festvox-mwm	ports/audio/festvox-mwm
 festvox-ogirab	ports/audio/festvox-ogirab
+festvox-pc	ports/audio/festvox-pc
 festvox-rab16	ports/audio/festvox-rab16
 festvox-rab8	ports/audio/festvox-rab8
 festvox-tll	ports/audio/festvox-tll
