@@ -20,7 +20,7 @@ COMMENT=	Jons GTK plugin for licq
 
 RUN_DEPENDS+=	licq:${PORTSDIR}/${LICQ_PORT}
 
-BROKEN=		"Incompatible with licq-1.3.0"
+IGNORE=		is incompatible with licq-1.3.0
 DEPRECATED=	project stalled, no more releases
 EXPIRATION_DATE=	2005-04-01
 

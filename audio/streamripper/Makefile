@@ -17,7 +17,7 @@ COMMENT=	Splits SHOUTcast stream into tracks
 LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv \
 		mad.2:${PORTSDIR}/audio/libmad
 
-BROKEN=		"fails to split up streams into tracks"
+IGNORE=		fails to split up streams into tracks
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
