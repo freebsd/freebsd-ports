@@ -72,6 +72,10 @@ USE_BISON=	yes
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} != "i386"
+BROKEN=		"Does not build on !i386 (errors running pike binary during build)"
+.endif
+
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 
 # FreeBSD 5.0 Needs to have libgmp port to support gmp.
