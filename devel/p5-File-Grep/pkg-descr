@@ -1,0 +1,4 @@
+The File::Grep module is designed for find matches to a pattern in 
+a series of files and related functions.
+
+WWW: http://search.cpan.org/dist/File-Grep/
