@@ -6,16 +6,15 @@
 #
 
 PORTNAME=	im
-PORTVERSION=	144
+PORTVERSION=	147
 CATEGORIES=	mail
-MASTER_SITES=	http://tats.iris.ne.jp/im/ \
+MASTER_SITES=	http://tats.haun.org/im/ \
 		${MASTER_SITE_PORTS_JP}
 
 MAINTAINER=	kiri@FreeBSD.org
 COMMENT=	Set of user interfaces of Email and NetNews
 
 USE_PERL5=	yes
-USE_AUTOCONF_VER=	213
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS= --libdir=${PREFIX}/etc
 # If you use RPOP instead of APOP, comment out following line.

@@ -74,6 +74,7 @@ lib/IM/Util.pm
 %%EXAMPLESDIR%%/Config
 %%EXAMPLESDIR%%/Petnames
 %%EXAMPLESDIR%%/get.sbr
+%%EXAMPLESDIR%%/get.sbr.refile
 %%EXAMPLESDIR%%/getchk.sbr
 %%EXAMPLESDIR%%/getchk.sbr.postpet
 %%EXAMPLESDIR%%/password
