@@ -16,14 +16,26 @@ MAINTAINER=	roman@xpert.com
 LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
 
 INSTALLS_SHLIB=	yes
-GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+USE_LIBTOOL=	yes
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
+		LDFLAGS="${LDFLAGS}"
+
+LDFLAGS=	-L${LOCALBASE}/lib
+
+.if ${CC} == cc || ${CC} == gcc
+COMPILER?=	gcc
+.else
+COMPILER?=	${CC}
+.endif
 
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 500000
-BROKEN=		"Doesn't link properly, std::char_traits<wchar_t> thingie"
+RUN_DEPENDS=	${LOCALBASE}/lib/libstlport_${COMPILER}.so:${PORTSDIR}/devel/stlport${COMPILER:C/^/-/:S/-gcc//}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
+
+LDFLAGS+=	-lstlport_${COMPILER}
+CPPFLAGS+=	-I${LOCALBASE}/include/stlport
 .endif
 
 post-extract:
