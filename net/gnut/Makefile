@@ -7,6 +7,7 @@
 
 PORTNAME=	gnut
 PORTVERSION=	0.4.14
+PORTREVISION=	1
 CATEGORIES=	net audio
 MASTER_SITES=	http://www.mrob.com/gnut/tars/
 
