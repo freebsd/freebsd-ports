@@ -1,4 +1,7 @@
 bin/xpuyopuyo
+share/xpuyopuyo/sounds/game.xm
+share/xpuyopuyo/sounds/gameover.xm
+share/xpuyopuyo/sounds/prelude.xm
 share/xpuyopuyo/themes/default/img_0.xpm
 share/xpuyopuyo/themes/default/img_0j.xpm
 share/xpuyopuyo/themes/default/img_1.xpm
@@ -97,4 +100,5 @@ share/xpuyopuyo/copying.txt
 @dirrm share/xpuyopuyo/themes/3dRokz
 @dirrm share/xpuyopuyo/themes/default
 @dirrm share/xpuyopuyo/themes
+@dirrm share/xpuyopuyo/sounds
 @dirrm share/xpuyopuyo
