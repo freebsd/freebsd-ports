@@ -107,6 +107,7 @@ post-install:
 	@${MKDIR} ${PREFIX}/share/emacs/site-lisp
 	${INSTALL_DATA} ${WRKSRC}/Misc/python-mode.el ${PREFIX}/share/emacs/site-lisp
 	${INSTALL_DATA} ${WRKSRC}/Misc/COPYRIGHT ${PREFIX}/share/doc/python
+	${INSTALL_DATA} ${WRKSRC}/README.v6 ${PREFIX}/share/doc/python
 	@${MKDIR} ${PREFIX}/lib/python1.5/site-packages
 .if !defined(WITHOUT_TOOLS)
 	@cd ${WRKSRC}; tar cf - Tools | \
