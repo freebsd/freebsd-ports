@@ -3,12 +3,12 @@
 # Date created:         20 Sep 1997
 # Whom:                 Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.9 1999/01/09 00:26:12 fenner Exp $
+# $Id: Makefile,v 1.10 1999/01/11 11:29:24 dirk Exp $
 #
 
 DISTNAME=       xfpovray-1.3.1
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.batse.msfc.nasa.gov/~mallozzi/software/xfpovray/v1.3.1/ \
+MASTER_SITES=	http://www.batse.msfc.nasa.gov/~mallozzi/home/software/xforms/src/ \
 		${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	apps/graphics/rays/pov
 EXTRACT_SUFX=	.tgz
@@ -26,6 +26,6 @@ USE_GMAKE=	yes
 NO_INSTALL_MANPAGES=	yes
 
 post-patch:
-	@/usr/bin/perl -pi -e "s|\@LOCALBASE\@|${LOCALBASE}|g;" ${WRKSRC}/src/xfpovray.h
+	@${PERL} -pi -e "s|\@LOCALBASE\@|${LOCALBASE}|g;" ${WRKSRC}/src/xfpovray.h
 
 .include <bsd.port.mk>
