@@ -19,7 +19,7 @@ MAINTAINER=	tg@FreeBSD.org
 LIB_DEPENDS=	tcl80.1:${PORTSDIR}/lang/tcl80 \
 		Xpm.4:${PORTSDIR}/graphics/xpm \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
-		tiff.4:${PORTSDIR}/graphics/tiff34
+		tiff.4:${PORTSDIR}/graphics/tiff
 FILE_DEPENDS=	${PORTSDIR}/x11-toolkits/tk80
 
 FETCH_BEFORE_ARGS=	-b

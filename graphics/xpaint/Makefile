@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.image.dk/~torsten/xpaint/ \
 MAINTAINER=	jseger@FreeBSD.org
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
-		tiff.4:${PORTSDIR}/graphics/tiff34 \
+		tiff.4:${PORTSDIR}/graphics/tiff \
 		Xpm.4:${PORTSDIR}/graphics/xpm   \
 		png.3:${PORTSDIR}/graphics/png
 

@@ -24,19 +24,21 @@ MAINTAINER=	Lars.Koeller@Uni-Bielefeld.DE
 
 BUILD_DEPENDS=	${X11BASE}/lib/libhlpclient.a:${PORTSDIR}/x11/libhelp \
 		${LOCALBASE}/lib/libmfhdf.a:${PORTSDIR}/graphics/hdf \
-		${LOCALBASE}/lib/libgd.a:${PORTSDIR}/graphics/gd \
-		${LOCALBASE}/lib/libpdf.a:${PORTSDIR}/print/pdflib
+		${LOCALBASE}/lib/libgd.a:${PORTSDIR}/graphics/gd
 LIB_DEPENDS=	Xbae.6:${PORTSDIR}/x11-toolkits/xbae 	\
 		Xpm.4:${PORTSDIR}/graphics/xpm		\
 		fftw.2:${PORTSDIR}/math/fftw		\
-		tiff.4:${PORTSDIR}/graphics/tiff34
+		pdf.2:${PORTSDIR}/print/pdflib		\
+		tiff.4:${PORTSDIR}/graphics/tiff
+
+BROKEN=		"rstdrv.o: undefined reference to gdImageGif"
 
 USE_X_PREFIX=	YES
 USE_GMAKE=	YES
 REQUIRES_MOTIF=	YES
 HAS_CONFIGURE=	YES
 CONFIGURE_ARGS=	-prefix=${X11BASE} \
-	--enable-extra-incpath=${X11BASE}/include/X11:${LOCALBASE}/include:${LOCALBASE}/include/tiff34:${LOCALBASE}/include/gd \
+	--enable-extra-incpath=${X11BASE}/include/X11:${LOCALBASE}/include:${LOCALBASE}/include/gd \
 	--enable-extra-ldpath=${LOCALBASE}/lib --enable-libhelp \
 	--enable-mfhdf --enable-grace-home=${X11BASE}/lib/X11/grace
 

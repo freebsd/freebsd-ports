@@ -15,7 +15,17 @@
  PATH=$PATH:$OPATH
  
  POSIXLY_CORRECT=1; export POSIXLY_CORRECT		# disable GNU extensions
-@@ -3928,7 +3934,8 @@
+@@ -2820,7 +2820,8 @@
+ 	printf("old include files: version %u\n", TIFFLIB_VERSION);
+         exit(-1);
+     }
+-    if (strncmp(TIFFGetVersion(), "LIBTIFF, Version 3.4", 20) != 0) {
++    if (strncmp(TIFFGetVersion(), "LIBTIFF, Version 3.4", 20) != 0 &&
++	strncmp(TIFFGetVersion(), "LIBTIFF, Version 3.5", 20) != 0) {
+ 	printf("old library: version %s\n", TIFFGetVersion());
+ 	exit(-1);
+     } else
+@@ -3966,7 +3967,8 @@
  	printConfig
  	checkForExecutable $PATH_SENDMAIL
  	checkForExecutable $PATH_GETTY

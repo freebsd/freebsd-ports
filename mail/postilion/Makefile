@@ -24,7 +24,7 @@ CONFIGURE_ARGS=	--with-tcl-config=${PREFIX}/lib/tcl8.0
 .if defined(STEPIFY)
 LIB_DEPENDS+=	tkstep80.1:${PORTSDIR}/x11-toolkits/tkstep80 \
 		Dnd.1:${PORTSDIR}/x11/libdnd \
-		tiff.4:${PORTSDIR}/graphics/tiff34 \
+		tiff.4:${PORTSDIR}/graphics/tiff \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		Xpm.4:${PORTSDIR}/graphics/xpm
 CONFIGURE_ARGS+= --with-tk-config=${PREFIX}/lib/tkstep8.0
