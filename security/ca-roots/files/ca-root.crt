@@ -1,17 +1,33 @@
-##
-##  ca-bundle.crt -- Bundle of CA Root Certificates
-##  Last Modified: Thu Mar  2 09:32:46 CET 2000
-##
-##  This is a bundle of X.509 certificates of public
-##  Certificate Authorities (CA). These were automatically
-##  extracted from Netscape Communicator 4.72's certificate database
-##  (the file `cert7.db'). It contains the certificates in both
-##  plain text and PEM format and therefore can be directly used
-##  with an Apache+mod_ssl webserver for SSL client authentication.
-##  Just configure this file as the SSLCACertificateFile.
-##
-##  (SKIPME)
-##
+# ca-root.crt
+#
+# SSL Root Certificate list
+#
+# This file was obtained from the mod_ssl distribution originally.
+# They obtained it from Netscape Communicator 4.72's default root
+# certificate database (the file cert7.db).
+#
+# It is now being separately maintained by the port maintainer,
+# in concert with the FreeBSD security officer. New additions will
+# be thoroughly scrutinized to make sure that the user community can
+# rely on the identity assertions being made by the CA in question.
+#
+# To use this file, specify it as the CAfile arguement to openssl
+# commands like 'smime' or 'verify', or use a code fragment like
+# this:
+#
+# X509_STORE *cert_ctx;
+# X509_LOOKUP *lookup;
+# static int MS_CALLBACK cb(int ok, X509_STORE_CTX *ctx);
+#
+# cert_ctx=X509_STORE_new();
+# X509_STORE_set_verify_cb_func(cert_ctx,cb);
+# lookup=X509_store_add_lookup(cert_ctx,X509_LOOKUP_file());
+# X509_LOOKUP_load_file(lookup,"path_to_me",X509_FILETYPE_PEM);
+# X509_verify_cert(___);
+#
+# This is a very rough outline, of course.
+#
+# $FreeBSD$
 
 ABAecom (sub., Am. Bankers Assn.) Root CA
 =========================================
