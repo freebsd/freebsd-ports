@@ -3,7 +3,7 @@
 # Date created:         7 Aug 1997
 # Whom:                 eserte@cs.tu-berlin.de
 #
-# Makefile,v 1.2 1995/09/14 11:22:50 asami Exp
+# $Id$
 #
 
 DISTNAME= 	dvips2ascii-1.0
