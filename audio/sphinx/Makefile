@@ -16,17 +16,15 @@ MAINTAINER=	trevor@FreeBSD.org
 COMMENT=	Speech recognition system
 
 DEST=		${WRKSRC}/src/libsphinx2/
-USE_LIBTOOL=	yes
+GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 PKGMESSAGE=	${WRKDIR}/pkg-message
 USE_GMAKE=	yes
 
-IGNORE=		"audio read error"
-
 # contains i386 sound code
 ONLY_FOR_ARCHS=	i386
 
-do-patch:
+post-patch:
 .for ii in CM_funcs.c hash.c linklist.c list.c salloc.c
 	${MV} ${DEST}${ii} ${DEST}${ii}.orig
 	${SED} -e "s:<malloc.h>:<stdlib.h>:g" < ${DEST}${ii}.orig > ${DEST}${ii}
