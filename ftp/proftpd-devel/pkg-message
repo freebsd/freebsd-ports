@@ -1,8 +1,8 @@
 ###
-As of proftpd 1.2.0rc3 and later, you need to edit /etc/pam.conf to add
-support for ftp.  To do so, add the following three lines to this file:
+Make sure you have the following lines in your PAM configuration file
+so that ProFTPd's PAM module can authenticate users correctly.
 
-ftp auth    required    pam_unix.so         try_first_pass
-ftp account required    pam_unix.so         try_first_pass
-ftp session required    pam_permit.so
+ftpd auth    required    pam_unix.so         try_first_pass
+ftpd account required    pam_unix.so         try_first_pass
+ftpd session required    pam_permit.so
 ###
