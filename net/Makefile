@@ -608,6 +608,7 @@
     SUBDIR += samba3
     SUBDIR += sambasentinel
     SUBDIR += samplicator
+    SUBDIR += sbd
     SUBDIR += scand
     SUBDIR += scr_ipfm
     SUBDIR += sdl_net
