@@ -11,7 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	autoconf
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ports@geeksrus.net
 
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 RUN_DEPENDS=	gm4:${PORTSDIR}/devel/m4
