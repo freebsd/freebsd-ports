@@ -5,9 +5,6 @@ bin/diffpp
 bin/sliceprint
 bin/mkafmmap
 bin/states
-man/man1/enscript.1.gz
-man/man1/sliceprint.1.gz
-man/man1/states.1.gz
 share/enscript/AvantGarde-Book.afm
 share/enscript/AvantGarde-BookOblique.afm
 share/enscript/AvantGarde-Demi.afm

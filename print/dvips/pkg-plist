@@ -174,5 +174,3 @@ share/texmf/tex/latex/psfonts.sty
 share/texmf/tex/latex/psgreek.sty
 share/texmf/tex/latex/times.sty
 share/texmf/fonts/vf/
-man/man1/dvips.1.gz
-man/man1/afm2tfm.1.gz

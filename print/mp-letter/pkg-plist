@@ -14,7 +14,6 @@ share/mp/mp.pro.l.ps
 share/mp/mp.pro.ps
 share/mp/mp.pro.tm.ps
 share/mp/mp.pro.ts.ps
-man/man1/mp.1.gz
 man/man1/digestp.1.gz
 man/man1/filep.1.gz
 man/man1/filofaxp.1.gz

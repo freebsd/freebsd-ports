@@ -1,7 +1,5 @@
 bin/c2lout
 bin/lout
-man/man1/c2lout.1.gz
-man/man1/lout.1.gz
 share/doc/lout/README
 share/doc/lout/design/README
 share/doc/lout/design/all

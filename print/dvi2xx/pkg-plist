@@ -5,7 +5,6 @@ bin/dvilj2
 bin/dvilj2p
 bin/dvilj4
 bin/dviljp
-man/man1/dvi2xx.1.gz
 lib/dvi2xx/2up.sty
 lib/dvi2xx/lj3-filter
 lib/dvi2xx/sample2.tex

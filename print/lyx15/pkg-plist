@@ -1,5 +1,4 @@
 bin/lyx
-man/man1/lyx.1.gz
 share/locale/da/LC_MESSAGES/lyx.mo
 share/locale/de/LC_MESSAGES/lyx.mo
 share/locale/es/LC_MESSAGES/lyx.mo
