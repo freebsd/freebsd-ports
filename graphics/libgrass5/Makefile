@@ -6,16 +6,15 @@
 #
 
 PORTNAME=	libgrass5
-PORTVERSION=	0.9.0
+PORTVERSION=	1.0.0
 CATEGORIES=	graphics
 MASTER_SITES=	http://gdal.velocet.ca/projects/grass/
 
 MAINTAINER=	ports@FreeBSD.org
 
-INSTALLS_SHLIB=	yes
-LDCONFIG_DIRS=	${PREFIX}/lib
-
 USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
+USE_LIBTOOL=	yes
+CONFIGURE_ARGS=	--includedir=${PREFIX}/include/${PORTNAME}
+INSTALLS_SHLIB=	yes
 
 .include <bsd.port.mk>
