@@ -23,6 +23,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
 
 USE_X_PREFIX=	yes
 USE_XPM=	yes
+USE_GETOPT_LONG=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
@@ -34,12 +35,6 @@ BSDIMAGES=	daemon.xpm
 
 CPPFLAGS=	-I${X11BASE}/include 
 LDFLAGS=	-L${X11BASE}/lib
-
-.if !exists(/usr/include/getopt.h)
-LIB_DEPENDS+=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
-CPPFLAGS+=	-I${LOCALBASE}/include 
-LDFLAGS+=	-L${LOCALBASE}/lib -lgnugetopt
-.endif
 
 post-extract:
 .for i in ${BSDIMAGES}
