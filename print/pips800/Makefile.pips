@@ -23,7 +23,10 @@ DIST_TYPE=	lpr
 DIST_TYPE?=	lpr_and_caps
 .endif
 
-.if ${PRTYPE} == 730
+PRTTYPE_PREFIX=	${PRTYPE:C|^([^0-9]+)[0-9]+.*$|\1|}
+.if ${PRTTYPE_PREFIX} == -sc
+MASTER_SITE_SUBDIR=	${PRTYPE:C|^-(sc[0-9]+)s$|\1|}
+.elif ${PRTYPE} == 730
 MASTER_SITE_SUBDIR=	${PRTYPE}
 .elif ${PRTYPE} == "750_2000"
 MASTER_SITE_SUBDIR=	pm750c_2000clpr
@@ -37,7 +40,7 @@ MASTER_SITE_SUBDIR=	pm${PRTYPE}c
 MASTER_SITE_SUBDIR=	pm${PRTYPE}pxlpr
 .elif ${PRTYPE} == g700 || ${PRTYPE} == g800
 MASTER_SITE_SUBDIR=	pm${PRTYPE}lpr
-.elif ${PRTYPE} == v500 || ${PRTYPE} == v600 || ${PRTYPE} == v700
+.elif ${PRTTYPE_PREFIX} == v
 .if ${DIST_TYPE} == cups
 MASTER_SITE_SUBDIR=	px${PRTYPE}cups
 .else
@@ -45,7 +48,6 @@ MASTER_SITE_SUBDIR=	px${PRTYPE}lpr
 .endif
 .elif ${PIPS_LEVEL} == 0201
 MASTER_SITE_SUBDIR=	${PRTYPE}_21
-#.elif ${PRTYPE} == 740 || ${PRTYPE} == 870
 .elif ${DIST_TYPE} == cups
 MASTER_SITE_SUBDIR=	${PRTYPE}Ccups
 .elif ${PIPS_MAJOR} >= 2 && ${DIST_TYPE} == lpr
@@ -133,7 +135,7 @@ CPPFLAGS+=	${PTHREAD_CFLAGS}
 CONFIGURE_ENV+=	CFLAGS="${CFLAGS}" CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 MAKE_ENV+=	SED="${SED}"
 
-.if defined(INTERNATIONAL_PRODUCTS)
+.if ${PRTTYPE_PREFIX} == -sc
 LIB_FILE=	lib${PRTYPE:S/^-//}.so
 MODEL_FILE=	ekpm${PRTYPE:S/^-//}.ppd
 PRT_MODEL=	${PRTYPE:U:S/^-//}
@@ -154,11 +156,11 @@ PRT_MODEL=	PM820CUG
 LIB_FILE=	libpm${PRTYPE}px.so
 MODEL_FILE=	ekpm${PRTYPE}px.ppd
 PRT_MODEL=	PM${PRTYPE}PX
-.elif ${PRTYPE} == g700 || ${PRTYPE} == g800
+.elif ${PRTTYPE_PREFIX} == g
 LIB_FILE=	libpm${PRTYPE}.so
 MODEL_FILE=	ekpm${PRTYPE}.ppd
 PRT_MODEL=	PM${PRTYPE:U}
-.elif ${PRTYPE} == v500 || ${PRTYPE} == v600 || ${PRTYPE} == v700
+.elif ${PRTTYPE_PREFIX} == v
 LIB_FILE=	libpx${PRTYPE}.so
 MODEL_FILE=	ekpx${PRTYPE}.ppd
 PRT_MODEL=	PX${PRTYPE:U}
