@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	htree
-PORTVERSION=	0.1
+PORTVERSION=	0.2
 CATEGORIES=	textproc www ruby
-MASTER_SITES=	${MASTER_SITE_RUBY}
-MASTER_SITE_SUBDIR=	contrib
+MASTER_SITES=	ftp://ftp.iDaemons.org/pub/distfiles/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DIST_SUBDIR=	ruby
 
@@ -24,6 +23,7 @@ LIB_FILES=	htree.rb htree
 
 RUBY_RD_FILES=	README.rd
 
+WRKSRC=		${WRKDIR}/${PORTNAME}
 DOCS=		${RUBY_RD_FILES} \
 		${RUBY_RD_HTML_FILES} \
 		doc
