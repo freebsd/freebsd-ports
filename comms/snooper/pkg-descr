@@ -1,0 +1,25 @@
+snooper - serial line snooping tool
+	The tool is for snooping communication between two devices
+	that communicate with RS232C serial line.
+
+Machine configuration
+	There are 3 machines/modems to take part in the configuration.
+	We will denote those machines as follows:
+		partyA		a computer 
+		partyB		computer/modem/digi-cam/whatever
+		console		The computer you are using to snoop
+				the communication between A and B.
+
+	Say, you would like to snoop the following configuration.
+		partyA ---cableAB--- partyB
+	In that case you should connect "console" between partyA and
+	cableAB, as follows:
+		partyA ---cableX--- console ---cableAB--- party B
+	cableX must be cross-cable (a cable to connect two computers).
+
+Command-line options
+	% snooper [-options] dev0 dev1
+		-bBAUD	specifies baud rate.
+		-u	don't use uucp locking (questionable option)
+		dev0	name of serial device 0.
+		dev1	name of serial device 1.
