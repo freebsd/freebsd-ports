@@ -1,14 +1,11 @@
-
-$FreeBSD$
-
---- Makefile.in.orig	Wed Jan 23 17:40:22 2002
-+++ Makefile.in	Wed Jan 23 17:40:55 2002
-@@ -166,10 +166,10 @@
- 
- NULL = 
- 
--SUBDIRS =  	macros intl 				idl 					libefs 					bonobo storage-modules 			monikers				components samples	 		gshell					tests doc po
-+SUBDIRS =  	macros intl 				idl 					libefs 					bonobo storage-modules 			monikers				components samples	 		gshell					doc po
+--- Makefile.in.orig	Tue Oct  8 01:30:21 2002
++++ Makefile.in	Tue Oct  8 01:32:12 2002
+@@ -174,10 +174,10 @@
+ 	monikers			\
+ 	components samples	 	\
+ 	gshell				\
+-	tests doc po
++	doc po
  
  
 -confexecdir = $(libdir)
