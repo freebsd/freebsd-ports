@@ -8,55 +8,31 @@
 #
 
 PORTNAME=	lplayer
-PORTVERSION=	0.98.2
+PORTVERSION=	0.99.0
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	${PORTNAME}_${PORTVERSION}_src
+DISTNAME=	${PORTNAME}-${PORTVERSION}_src
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A QT program to queue lots of MP3s for random XMMS play
 
-BUILD_DEPENDS=	xmms-config:${PORTSDIR}/multimedia/xmms
+LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USE_QT_VER=	3
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
-HAS_CONFIGURE=	yes
-MAKE_ENV+=	QTDIR=${QT_PREFIX}
-CONFIGURE_ENV=	${MAKE_ENV}
+GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ARGS=	--with-xmms-prefix=${X11BASE} --with-xinerama
+MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \
+		AUTOHEADER="${TRUE}"
 
-do-configure:
-	cd ${WRKSRC}; \
-	XMMSLIBS=$$(xmms-config --libs); \
-	XMMSINCS=$$(xmms-config --cflags | sed 's|-I||g'); \
-	${REINPLACE_CMD} -e "s|@X11BASE@|${X11BASE}|g" \
-		-e "s|@LOCALBASE@|${LOCALBASE}|g" \
-		-e "s|@XMMSLIBS@|$$XMMSLIBS|" \
-		-e "s|@XMMSINCS@|$$XMMSINCS|" lp.pro; \
-	${SETENV} ${CONFIGURE_ENV} qmake -makefile -o Makefile -unix lp.pro
+post-patch:
+	@${REINPLACE_CMD} -e 's|-pedantic||g ; \
+		 s|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
 
-.include <bsd.port.pre.mk>
-
-DOCS_SUBDIR=		${DOCSDIR:S|^${PREFIX}/||}
-EXAMPLES_SUBDIR=	${EXAMPLESDIR:S|^${PREFIX}/||}
-
-BINDIR=			${PREFIX}/bin
-BIN_SUBDIR=		${BINDIR:S|^${PREFIX}/||}
-LIBDIR=			${PREFIX}/lib
-LIB_SUBDIR=		${LIBDIR:S|^${PREFIX}/||}
-PKGLIBDIR=		${LIBDIR}/${PORTNAME}
-PKGLIB_SUBDIR=		${PKGLIBDIR:S|^${PREFIX}/||}
-
-do-install:
-	${MKDIR} ${BINDIR} ${PKGLIBDIR}
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME}-bin ${PKGLIBDIR}
-	${INSTALL_DATA} ${WRKSRC}/../gnu/lplayerdir/*.png ${PKGLIBDIR}
-	${INSTALL_SCRIPT} ${FILESDIR}/lplayer ${BINDIR}
-
-.include <bsd.port.post.mk>
-
-#EOF
+.include <bsd.port.mk>
