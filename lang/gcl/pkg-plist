@@ -1,8 +1,24 @@
 bin/gcl
 bin/gcl.exe
 @unexec install-info --delete %D/info/gcl-si.info %D/info/dir
+@unexec install-info --delete %D/info/gcl-tk.info %D/info/dir
+info/gcl-tk.info
+info/gcl-tk.info-1
+info/gcl-tk.info-2
+info/gcl-tk.info-3
+info/gcl-tk.info-4
+info/gcl-tk.info-5
+info/gcl-tk.info-6
+info/gcl-tk.info-7
+info/gcl-tk.info-8
 info/gcl-si.info
+info/gcl-si.info-1
+info/gcl-si.info-2
+info/gcl-si.info-3
+info/gcl-si.info-4
+info/gcl-si.info-5
 @exec install-info %D/info/gcl-si.info %D/info/dir
+@exec install-info %D/info/gcl-tk.info %D/info/dir
 lib/gcl-%%GCL_VER%%/unixport/saved_gcl
 lib/gcl-%%GCL_VER%%/cmpnew/collectfn.o
 lib/gcl-%%GCL_VER%%/lsp/gprof.lsp
@@ -33,6 +49,14 @@ lib/gcl-%%GCL_VER%%/gcl-tk/demos/showVars.lisp
 lib/gcl-%%GCL_VER%%/gcl-tk/demos/widget.lisp
 lib/gcl-%%GCL_VER%%/gcl-tk/gcl.tcl
 lib/gcl-%%GCL_VER%%/gcl-tk/gcltksrv
+share/emacs/site-lisp/add-default.el
+share/emacs/site-lisp/smart-complete.el
+share/emacs/site-lisp/man1-to-texi.el
+share/emacs/site-lisp/gcl.el
+share/emacs/site-lisp/doc-to-texi.el
+share/emacs/site-lisp/dbl.el
+share/emacs/site-lisp/ansi-doc.el
+share/emacs/site-lisp/sshell.el
 @dirrm lib/gcl-%%GCL_VER%%/unixport
 @dirrm lib/gcl-%%GCL_VER%%/lsp
 @dirrm lib/gcl-%%GCL_VER%%/gcl-tk/demos

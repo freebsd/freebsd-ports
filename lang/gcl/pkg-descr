@@ -5,5 +5,10 @@ by William Schelter and continued through 1994.  In 1994 AKCL was
 released as GCL (GNU Common Lisp) under the GNU public library
 license.
 
-NOTE: The FreeBSD port has no tcl/tk support due do the fact that gcl-2.2.2 is
-designed to use tcl7.3 and tk 3.6 which are no longer supported under FreeBSD.
+WWW: http://www.gnu.org/software/gcl/
+
+NOTE: GCL 2.4.0 supports Tk bindings with Tcl 8.0 and Tk 8.0.  This
+port of GCL does not insist on Tcl/Tk, but will attempt to build with
+Tcl/Tk support if the libraries are found at build time.
+
+Tim Pierce <twp@unchi.org>

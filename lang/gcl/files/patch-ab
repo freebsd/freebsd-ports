@@ -1,6 +1,6 @@
---- makefile.orig	Tue Nov  9 17:03:29 1999
-+++ makefile	Mon Nov 15 17:14:36 1999
-@@ -175,21 +175,22 @@
+--- makefile.orig	Sun May  6 02:18:49 2001
++++ makefile	Mon Dec  3 22:20:13 2001
+@@ -198,10 +198,12 @@
  	-if [ -d "${prefix}/lib" ] ;then true; else mkdir ${prefix}/lib ; fi
  	-if [ -d "${prefix}/bin" ] ;then true; else mkdir ${prefix}/bin ; fi
  	-if [ -d "${INSTALL_LIB_DIR}" ] ; then true; else mkdir ${INSTALL_LIB_DIR} ;fi
@@ -10,17 +10,31 @@
 -	tar cvf - unixport/saved_gcl info/*info* doc/*.el ${LISP_LIB} \
 +	tar cvf - unixport/saved_gcl doc/*.el ${LISP_LIB} \
  	gcl-tk/gcl.tcl gcl-tk/gcltkaux  |  (cd ${INSTALL_LIB_DIR} ;tar xvf -)
++	strip ${INSTALL_LIB_DIR}/unixport/saved_gcl
  	ln ${SYMB} ${INSTALL_LIB_DIR}/unixport/saved_gcl \
  	 ${prefix}/bin/gcl.exe
  	-cat gcl-tk/gcltksrv | \
- 	sed -e "s:GCL_TK_DIR=.*:GCL_TK_DIR=${INSTALL_LIB_DIR}/gcl-tk:g"  \
- 	-e "s:TK_LIBRARY=.*:TK_LIBRARY=${TK_LIBRARY}:g" > \
- 	${INSTALL_LIB_DIR}/gcl-tk/gcltksrv
- 	-if [ "${TK_CONFIG_PREFIX}" != "unknown" ] ; then  \
- 	chmod a+x ${INSTALL_LIB_DIR}/gcl-tk/gcltksrv ; fi
- 	-if [ "${TK_CONFIG_PREFIX}" != "unknown" ] ; then  \
- 	(cd ${INSTALL_LIB_DIR}/gcl-tk/demos ; \
- 	echo '(load "../tkl.o")(TK::GET-AUTOLOADS (directory "*.lisp"))' | ${prefix}/bin/gcl) ; fi
- 	(cd info ; make ; make install)
+--- makedefc.in.orig	Tue Dec  4 01:39:21 2001
++++ makedefc.in	Tue Dec  4 02:25:46 2001
+@@ -16,13 +16,18 @@
+ prefix=@prefix@
  
- clean:
+ # where to place the info files
+-INFO_DIR=@INFO_DIR@
++INFO_DIR=@prefix@/info
++
++# configure has a clever process for figuring out where Emacs
++# really expects to find site-lisp and default.el.  We use
++# these values instead to ensure that building with --prefix=PREFIX
++# will not make changes outside the specified tree. -twp
+ 
+ # where to put emacs lisp files.
+-EMACS_SITE_LISP=@EMACS_SITE_LISP@
++EMACS_SITE_LISP=@prefix@/share/emacs/site-lisp
+ 
+ # the default.el file
+-EMACS_DEFAULT_EL=@EMACS_DEFAULT_EL@
++EMACS_DEFAULT_EL=@prefix@/share/emacs/site-lisp/default.el
+ 
+ # numerous TCL/TK variables culled from the tkConfig.sh and tclConfig.sh
+ # if these are found.
