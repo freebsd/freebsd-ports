@@ -3,7 +3,7 @@
 # Date created:         24 Feb 1997
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.13 1997/11/20 15:48:15 asami Exp $
+# $Id: Makefile,v 1.14 1998/01/26 09:56:31 vanilla Exp $
 #
 
 DISTNAME=       netscape-communicator-4.04
@@ -19,6 +19,18 @@ NO_BUILD=       Yes
 NDIR=           ${PREFIX}/lib/netscape
 BINDIR=		${PREFIX}/bin
 
+.if defined(USE_128BIT) && ${USA_RESIDENT} == NO
+MASTER_SITES+=	ftp://ftp.fortify.net/pub/Fortify/ \
+		ftp://ftp.za.freebsd.org/pub/Fortify/
+DISTFILES+=	Fortify-1.2.1-unix.tar.gz
+RESTRICTED=     "Contains strong cryptography"
+.endif
+
+.if !defined(USE_128BIT) && ${USA_RESIDENT} == NO
+pre-extract:
+		@${ECHO} "You can make Netscape use 128-bit encryption by defining USE_128BIT"
+.endif
+
 do-install:
 	cd ${WRKSRC} && yes "" | \
 	    LC_TIME=C MOZILLA_HOME="${NDIR}" ./ns-install
@@ -30,6 +42,10 @@ do-install:
 	    ${INSTALL_DATA} ${FILESDIR}/mailcap ${NDIR}; \
 	fi
 	rm -rf ${NDIR}/movemail-src
+.if defined(USE_128BIT) && ${USA_RESIDENT} == NO
+	cd ${WRKSRC}/Fortify-1.2.1-unix && \
+		(${ECHO} yes ; ${ECHO} no) | ./Fortify.sh ${NDIR}/communicator-4.04.bin
+.endif
 	chown -R bin.bin ${NDIR}
 
 post-install:
