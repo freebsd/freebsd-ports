@@ -1,0 +1,35 @@
+# New ports collection makefile for:   oneko
+# Ports collection makefile for:  tdetect
+# Version required:     	  0.2
+# Date created:			  Sun Jan 31, 1997
+# Whom:               		  shipley@dis.org
+#
+# $Id$
+#
+
+DISTNAME=	tdetect-0.2
+PKGNAME=	tdetect-0.2.1
+CATEGORIES=     net
+MASTER_SITES=	http://sb.123.org/ \
+		http://www.genocide2600.com/~tattooman/unix-loggers/ \
+		http://ftp.ceti.com.pl/pub/scout/progs/Unix/
+
+MAINTAINER=	shipley@dis.org
+
+#WRKSRC=         ${WRKDIR}/tdetect-0.2
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/tdetect ${PREFIX}/sbin/tdetect
+
+post-install:
+	strip ${PREFIX}/sbin/tdetect
+	@if [ ! -f ${PREFIX}/etc/rc.d/tdetect.sh ]; then \
+		${ECHO} "Installing ${PREFIX}/etc/rc.d/tdetect.sh startup file."; \
+		${ECHO} "#!/bin/sh" > ${PREFIX}/etc/rc.d/tdetect.sh; \
+		${ECHO} "ethernetdev=ed0" > ${PREFIX}/etc/rc.d/tdetect.sh; \
+		${ECHO} "[ -x ${PREFIX}/sbin/tdetect ] && ${PREFIX}/sbin/tdetect \$ethernetdev && echo -n ' tdetect'" >> ${PREFIX}/etc/rc.d/tdetect.sh; \
+		chmod 750 ${PREFIX}/etc/rc.d/tdetect.sh; \
+		${ECHO} "IMPORTANT ${PREFIX}/etc/rc.d/tdetect.sh and set ethernetdev to the name of the ethernetdev you wish to monitor"; \
+	fi
+
+.include <bsd.port.mk>
