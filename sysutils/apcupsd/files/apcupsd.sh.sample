@@ -19,7 +19,7 @@ apcupsd_enable=${apcupsd_enable:-YES}
 apcupsd_program=${apcupsd_program:-${PREFIX}/sbin/apcupsd}
 apcupsd_flags=${apcupsd_flags:-"--kill-on-powerfail"}
 apcupsd_pidfile=${apcupsd_pidfile:-/var/run/apcupsd.pid}
-apcupsd_lockfile=${apcupsd_pidfile:-/var/spool/lock/apcupsd.lock
+apcupsd_lockfile=${apcupsd_pidfile:-/var/spool/lock/apcupsd.lock}
 
 case $1 in
     start)
@@ -41,6 +41,8 @@ case $1 in
 	    PID=`cat ${apcupsd_pidfile}`
 	    kill -KILL $PID || return="  Failed."
 	    rm -f ${apcupsd_pidfile}
+	    # some slaves won't die
+	    killall apcupsd
 	else
 	    return="  Failed."
 	fi
