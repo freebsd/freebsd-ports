@@ -1,0 +1,11 @@
+--- Makefile.orig	Tue Jan 11 13:23:20 2005
++++ Makefile	Tue Jan 11 13:23:26 2005
+@@ -26,7 +26,7 @@
+ 	     demo/hello demo/buttonbox
+ 
+ ifeq ($(GTK_VERSION_2_4),yes)
+-MAKE_APPS += demo/filechooser
++#MAKE_APPS += demo/filechooser
+ endif
+ 
+ ifeq ($(strip $(ENABLE_LIBGLADE)),yes)

@@ -1,0 +1,21 @@
+--- gconf/Makefile.orig	Tue Jan 11 14:27:55 2005
++++ gconf/Makefile	Tue Jan 11 15:47:48 2005
+@@ -29,6 +29,7 @@
+ EXTRA_CPPFLAGS	= $(GCONF_CFLAGS)
+ 
+ EXTRA_LIBS	= $(GCONF_LIBS)
++EXTRALD_FLAGS	= -pthread
+ 
+ NEEDPACKAGES = gtk2
+ 
+--- mk/library.mk.orig	Tue Jan 11 15:49:48 2005
++++ mk/library.mk	Tue Jan 11 15:50:08 2005
+@@ -46,7 +46,7 @@
+ 	  package_deps		= [$(call makeTextList,$(NEEDPACKAGES))],\
+ 	  extra_ghc_opts	= [$(call makeTextList,$(EXTRAHC_FLAGS))],\
+ 	  extra_cc_opts		= [],\
+-	  extra_ld_opts		= [$(call makeTextList,\
++	  extra_ld_opts		= [$(call makeTextList,$(EXTRALD_FLAGS)\
+           $(addprefix -Wl$(COMMA),\
+ 	  $(addprefix --subsystem$(SPACE),$(SUBSYSTEM))) \
+ 	  $(addprefix -u ,$(EXTRA_SYMBOLS)))]} | \
