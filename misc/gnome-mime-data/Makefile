@@ -15,6 +15,8 @@ DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 
+LIB_DEPENDS=	intl.2:${PORTSDIR}/devel/gettext
+
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GNOMENG=	yes
