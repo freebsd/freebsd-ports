@@ -12,7 +12,7 @@ CATEGORIES=	games linux
 MASTER_SITES=	ftp://usa.lostboys.nl/pub/medialab/rollemup/Linux/
 DISTNAME=	Rollemup
 
-MAINTAINER=	sanpei@jp.FreeBSD.org
+MAINTAINER=	sanpei@sanpei.org
 
 RUN_DEPENDS=	/compat/linux/usr/i486-linux-libc5/lib/libc.so.5:${PORTSDIR}/emulators/linux_base
 
