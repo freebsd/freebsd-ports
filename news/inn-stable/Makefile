@@ -124,8 +124,11 @@ post-install:
 .endfor
 	# drop privs on inews because it is insecure
 	${CHMOD} 555 ${NEWSLIB}/bin/inews
+.if defined(WITH_UUCP_SECURITY_HOLE)
 	# make rnews work when getting news via uucp !
 	${CHMOD} 2555 ${NEWSLIB}/bin/rnews
-
+.else
+	${CHMOD} 555 ${NEWSLIB}/bin/rnews
+.endif
 
 .include <bsd.port.mk>
