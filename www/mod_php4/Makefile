@@ -3,7 +3,7 @@
 # Date created:		So  21 Jun 1998 16:09:39 CEST
 # Whom:			Stefan Herrmann <stefan@asterix.webaffairs.net>
 #
-# $Id: Makefile,v 1.62 1998/12/26 00:08:09 dirk Exp $
+# $Id: Makefile,v 1.63 1999/01/03 12:26:47 dirk Exp $
 #
 
 DISTNAME=	apache_${VERSION_APACHE}
@@ -113,7 +113,9 @@ post-install:
 	find ${APACHEDOCDIR} -type d -exec chmod a+rx {} \; ; \
 	find ${APACHEDOCDIR} -type f -exec chmod a+r {} \;
 .for i in apache_pb.gif index.html manual
-	${LN} -s ${PREFIX}/share/doc/apache/$i ${PREFIX}/www/data/$i
+	if [ ! -e ${PREFIX}/www/data/$i ] ; then \
+		${LN} -s ${PREFIX}/share/doc/apache/$i ${PREFIX}/www/data/$i; \
+	fi
 .endfor
 .for i in CODING_STANDARDS EXTENSION_STATUS LICENSE
 	${INSTALL_DATA} ${WRKDIR}/php-${VERSION_PHP3}/$i ${PHP3DOCDIR}
