@@ -113,6 +113,7 @@ do-install:
 
 	@${ECHO_CMD} -n ">> Copying files to destination directory..."
 	@${CP} -R ${WRKSRC}/* ${APP_HOME}
+	@${CP} ${PATCHDIR}/orion.properties ${APP_HOME}
 	@${CP} ${WRKDIR}/default-web-site.xml ${WRKDIR}/rmi.xml ${APP_HOME}/config
 	@${ECHO_CMD} " [ DONE ]"
 
@@ -126,7 +127,7 @@ do-install:
 	@${ECHO_CMD} -n ">> Compiling and installing control program..."
 	@${SED} \
 	-e "/%%JAVA_ARGS%%/s///g" \
-	-e "/%%JAR_ARGS%%/s///g" \
+	-e "/%%JAR_ARGS%%/s//\"-p\",/g" \
 	${WRKDIR}/daemonctl.c > ${WRKDIR}/daemonctl_.c
 	@cd ${WRKDIR} && ${CC} -ansi -o ${CONTROL_SCRIPT_NAME} daemonctl_.c
 	@${CP} ${WRKDIR}/${CONTROL_SCRIPT_NAME} ${CONTROL_SCRIPT}

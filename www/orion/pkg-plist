@@ -317,6 +317,7 @@ bin/orionctl
 %%T%%/taglibassembler.jar
 %%T%%/parser.jar
 %%T%%/orionconsole.jar
+%%T%%/orion.properties
 %%T%%/orion.jar
 %%T%%/tools.jar
 %%T%%/mail.jar
