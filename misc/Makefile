@@ -93,6 +93,7 @@
     SUBDIR += lv
     SUBDIR += magicpoint
     SUBDIR += man.el
+    SUBDIR += mango
     SUBDIR += matrix-kmod
     SUBDIR += mc
     SUBDIR += metatheme
