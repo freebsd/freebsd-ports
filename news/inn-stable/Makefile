@@ -3,133 +3,83 @@
 # Whom:			torstenb
 #
 # $FreeBSD$
+#
 
 PORTNAME=	inn
-PORTVERSION=	2.2.${STABLE}
-STABLE=		20000709
+SNAPSHOT=	20001220
+PORTVERSION=	2.3.${SNAPSHOT}
 CATEGORIES=	news
-MASTER_SITES=	${MASTER_SITE_LOCAL} \
-		ftp://ftp.isc.org/isc/inn/snapshots/
-MASTER_SITE_SUBDIR=	andreas
-DISTNAME=	inn-STABLE-${STABLE}
+MASTER_SITES=	ftp://ftp.isc.org/isc/inn/snapshots/
+DISTNAME=	inn-STABLE-${SNAPSHOT}
 
-MAINTAINER=	des
+MAINTAINER=	des@FreeBSD.org
 
-Y2K=		http://www.isc.org/inn-y2k.html
+USE_GMAKE=YES
 
-.if defined(BATCH)
-# in BATCH mode we use the default
-NEWSSPOOL=/var/spool/news
-NEWSLIB=${PREFIX}/news
-NEWSLOG=/var/log/news
-NEWSMAN=${PREFIX}/man
-NEWSINFO=${PREFIX}/info
+.if exists(/var/news)
+INN_NEWSSPOOL?=/var/news
+.elif exists(/var/spool/news)
+INN_NEWSSPOOL?=/var/spool/news
 .else
-# you can set this in /etc/make.conf !
-NEWSSPOOL?=/var/spool/news
-NEWSLIB?=${PREFIX}/news
-NEWSLOG?=/var/log/news
-NEWSMAN?=${PREFIX}/man
-NEWSINFO?=${PREFIX}/info
+INN_NEWSSPOOL?=${PREFIX}/news/spool
 .endif
+INN_NEWSLOG?=/var/log/news
 
-HAS_CONFIGURE=	yes
-CONFIGURE_ARGS+=--with-spool-dir=${NEWSSPOOL}
-CONFIGURE_ARGS+=--prefix=${NEWSLIB}
-CONFIGURE_ARGS+=--with-log-dir=${NEWSLOG}
-CONFIGURE_ARGS+=--mandir=${NEWSMAN}
-CONFIGURE_ARGS+=--infodir=${NEWSINFO}
+HAS_CONFIGURE=		yes
+CONFIGURE_ARGS+=	--mandir=${PREFIX}/man
+CONFIGURE_ARGS+=	--prefix=${PREFIX}/news
+CONFIGURE_ARGS+=	--with-spool-dir=${INN_NEWSSPOOL}
+CONFIGURE_ARGS+=	--with-log-dir=${INN_NEWSLOG}
+CONFIGURE_ARGS+=	--with-perl
+CONFIGURE_ARGS+=	--with-tmp-path=${INN_NEWSSPOOL}/tmp
+CONFIGURE_ARGS+=	--with-largefiles
 
-# tmp- and spool-dir have to live on the same filesystem, to avoid this error:
-# "rnews: cant rename /tmp/36d24c3ehN1072
-#              to /var/spool/news/incoming/36d24c3eTg1072 Cross-device link"
-CONFIGURE_ARGS+=--with-tmp-path=${NEWSSPOOL}/tmp
+# Various Options. See ${WRKSRC}/INSTALL for details
 
-# Highly recommended, because many of the really good spam filters
-# are written in Perl (from the author)
-CONFIGURE_ARGS+=--with-perl
-# if server has less than 256 MB RAM
-CONFIGURE_ARGS+=--enable-tagged-hash
-# Do not create static libraries
-CONFIGURE_ARGS+=--disable-static
+# Use tagged hash table for the history database. Uses much less memory but
+# is somewhat slower
+#CONFIGURE_ARGS+=	--enable-tagged-hash
 
-# Most available filters seem to be written in Perl these days,
-# so you can safely leave out TCL support (from the author)
-#CONFIGURE_ARGS+=--with-tcl
-
-# Do not create shared libraries
-#CONFIGURE_ARGS+=--disable-shared
-
-MAN1=	convdate.1 getlist.1 grephistory.1 inews.1 innconfval.1 innfeed.1 \
-	installit.1 nntpget.1 rnews.1 shlock.1 shrinkfile.1 simpleftp.1 \
-	startinnfeed.1 subst.1
+MAN1=	ckpasswd.1 convdate.1 getlist.1 grephistory.1 inews.1 innconfval.1 \
+	innfeed.1 nntpget.1 rnews.1 shlock.1 shrinkfile.1 simpleftp.1 \
+	startinnfeed.1
 MAN3=	clientlib.3 dbz.3 inndcomm.3 libinn.3 libstorage.3 parsedate.3 qio.3 \
 	wildmat.3
-MAN5=	active.5 control.ctl.5 cycbuff.conf.5 distrib.pats.5 expire.ctl.5 \
-	history.5 incoming.conf.5 inn.conf.5 innfeed.conf.5 innwatch.ctl.5 \
-	moderators.5 motd.news.5 newsfeeds.5 newslog.5 nnrp.access.5 \
-	nnrpd.track.5 nntpsend.ctl.5 overview.ctl.5 overview.fmt.5 \
-	passwd.nntp.5 storage.conf.5 storage.ctl.5
-MAN8=	actived.8 actsync.8 actsyncd.8 archive.8 batcher.8 buffchan.8 \
-	cnfsstat.8 controlchan.8 crosspost.8 ctlinnd.8 cvtbatch.8 expire.8 \
-	expireindex.8 expireover.8 expirerm.8 fastrm.8 filechan.8 inncheck.8 \
-	innd.8 inndf.8 innreport.8 innstat.8 innwatch.8 innxbatch.8 innxmit.8 \
-	mailpost.8 makeactive.8 makehistory.8 mod-active.8 \
-	news-recovery.8 news.daily.8 \
-	news2mail.8 newslog.8 newsrequeue.8 nnrpd.8 nntpsend.8 overchan.8 \
-	pgpverify.8 prunehistory.8 pullnews.8 scanlogs.8 send-uucp.8 sm.8 \
-	tally.control.8 tally.unwanted.8 writelog.8
+MAN5=	active.5 buffindexed.conf.5 control.ctl.5 cycbuff.conf.5 \
+	distrib.pats.5 expire.ctl.5 history.5 incoming.conf.5 inn.conf.5 \
+	innfeed.conf.5 innwatch.ctl.5 moderators.5 motd.news.5 newsfeeds.5 \
+	newslog.5 nnrp.access.5 nnrpd.track.5 nntpsend.ctl.5 ovdb.5 \
+	overview.fmt.5 passwd.nntp.5 readers.conf.5 sasl.conf.5 storage.conf.5
+MAN8=	actsync.8 actsyncd.8 archive.8 batcher.8 buffchan.8 cnfsheadconf.8 \
+	cnfsstat.8 controlchan.8 ctlinnd.8 cvtbatch.8 dbprocs.8 expire.8 \
+	expireover.8 expirerm.8 fastrm.8 filechan.8 inncheck.8 innd.8 inndf.8 \
+	inndstart.8 innreport.8 innstat.8 innwatch.8 innxbatch.8 innxmit.8 \
+	mailpost.8 makedbz.8 makehistory.8 mod-active.8 news.daily.8 \
+	news2mail.8 newsrequeue.8 nnrpd.8 nntpsend.8 ovdb_recover.8 \
+	ovdb_upgrade.8 overchan.8 pgpverify.8 prunehistory.8 pullnews.8 \
+	scanlogs.8 send-uucp.8 sm.8 tally.control.8 writelog.8
 
-pre-extract:
-	@${ECHO} ">> building inn2 with NEWSSPOOL=${NEWSSPOOL}..."
-	@${ECHO} ">> building inn2 with NEWSLIB=${NEWSLIB}..."
-	@${ECHO} ">> building inn2 with NEWSLOG=${NEWSLOG}..."
-	@${ECHO} ">> building inn2 with NEWSMAN=${NEWSMAN}..."
-	@${ECHO} ">> building inn2 with NEWSINFO=${NEWSINFO}..."
+EXTRA=	${WRKSRC}/HISTORY ${WRKSRC}/INSTALL ${WRKSRC}/LICENSE
 
 pre-install:
-	@for dir in ${NEWSSPOOL} ${NEWSLIB} ${NEWSLOG} ${NEWSMAN} ${NEWSINFO}; do \
-		${MKDIR} $$dir; \
-		${CHOWN} news:news $$dir; \
-	done
-
-update: build
-	@(cd ${WRKSRC} ; ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} update)
-	@${MAKE} ${.MAKEFLAGS} compress-man
-	@${MAKE} ${.MAKEFLAGS} post-install
+	${MKDIR} ${INN_NEWSSPOOL}
 
 post-install:
-	${MKDIR} -m 0775 ${NEWSSPOOL}/articles
-	${CHOWN} news:news ${NEWSSPOOL}/articles
-	${MKDIR} -m 0775 ${NEWSSPOOL}/cycbuffs
-	${CHOWN} news:news ${NEWSSPOOL}/cycbuffs
-	${MKDIR} -m 0775 ${NEWSSPOOL}/incoming/bad
-	${CHOWN} news:news ${NEWSSPOOL}/incoming/bad
-	${MKDIR} -m 0775 ${NEWSSPOOL}/innfeed
-	${CHOWN} news:news ${NEWSSPOOL}/innfeed
-	${MKDIR} -m 0775 ${NEWSSPOOL}/outgoing
-	${CHOWN} news:news ${NEWSSPOOL}/outgoing
-	${MKDIR} -m 0775 ${NEWSSPOOL}/overview
-	${CHOWN} news:news ${NEWSSPOOL}/overview
-	${MKDIR} -m 0775 ${NEWSSPOOL}/tmp
-	${CHOWN} news:news ${NEWSSPOOL}/tmp
-	${MKDIR} -m 0775 ${NEWSSPOOL}/uniover
-	${CHOWN} news:news ${NEWSSPOOL}/uniover
-	${SED} <${FILESDIR}/innd.sh >${PREFIX}/etc/rc.d/innd.sh \
-		s+!!PREFIX!!+${PREFIX}+g && ${CHMOD} +x ${PREFIX}/etc/rc.d/innd.sh
-	# create log and run subdir with a .keep_me file to make sure
-	# packaging works. The mkdir might be unnecessary, but to be sure ...
-.for dir in log run
-	${MKDIR} -p ${NEWSLIB}/${dir}
-	touch ${NEWSLIB}/${dir}/.keep_me
-.endfor
-	# drop privs on inews because it is insecure
-	${CHMOD} 555 ${NEWSLIB}/bin/inews
-.if defined(WITH_UUCP_SECURITY_HOLE)
-	# make rnews work when getting news via uucp !
-	${CHMOD} 2555 ${NEWSLIB}/bin/rnews
-.else
-	${CHMOD} 555 ${NEWSLIB}/bin/rnews
-.endif
+	@(if [ ! -f ${PREFIX}/news/db/history ] ; then \
+	    ${ECHO} 'Creating empty history database...' ; \
+	    cd ${PREFIX}/news/db ; \
+	    ${TOUCH} history ; \
+	    ${CHMOD} 644 history ; \
+	    ${CHOWN} news:news history ; \
+	    ../bin/makedbz -i ; \
+	    for s in dir hash index ; do \
+		${INSTALL} -o news -m 644 history.n.$${s} history.$${s} ; \
+	    done ; \
+	fi)
+	@${SED} <${FILESDIR}/innd.sh >${PREFIX}/etc/rc.d/innd.sh \
+	    s+!!PREFIX!!+${PREFIX}+g && ${CHMOD} +x ${PREFIX}/etc/rc.d/innd.sh
+	@${MKDIR} ${PREFIX}/share/doc/inn
+	@${INSTALL_DATA} ${EXTRA} ${PREFIX}/share/doc/inn
+	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.mk>
