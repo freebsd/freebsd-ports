@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xemacs-prog-packages
-PORTVERSION=	2.1
+PORTVERSION=	2.2
 CATEGORIES=	editors elisp
 MASTER_SITES=	${MASTER_SITE_XEMACS}
 MASTER_SITE_SUBDIR=	packages
@@ -14,12 +14,12 @@ DISTFILES=	\
 		ada-1.08-pkg.tar.gz \
 		ediff-1.26-pkg.tar.gz \
 		emerge-1.07-pkg.tar.gz \
-		idlwave-1.21-pkg.tar.gz \
-		jde-1.22-pkg.tar.gz \
+		idlwave-1.22-pkg.tar.gz \
+		jde-1.23-pkg.tar.gz \
 		scheme-1.10-pkg.tar.gz \
-		semantic-1.02-pkg.tar.gz \
+		semantic-1.03-pkg.tar.gz \
 		vc-cc-1.14-pkg.tar.gz \
-		vhdl-1.10-pkg.tar.gz
+		vhdl-1.11-pkg.tar.gz
 DIST_SUBDIR=	xemacs
 
 MAINTAINER=	kiri@pis.toba-cmt.ac.jp
