@@ -38,6 +38,10 @@ case "x$1" in
     branch=5
     INDEXFILE=INDEX-5
     ;;
+  x5-exp)
+    branch=5-exp
+    INDEXFILE=INDEX-5
+    ;;
   x6)
     branch=6
     INDEXFILE=INDEX-6
