@@ -1,0 +1,20 @@
+note from the original author:
+ 
+The user interface of xwave is based on Athena and FWF widgets.
+The application defaults are optimized for Xaw3d, so if you don't
+use Xaw3d you may want to modify the resources.
+
+Features:
+	- multiple files
+	- overview window 
+	- zoom window
+	- mark, cut, copy, paste, merge
+	- echo, reverse, swap, resample, volume (absolute, dynamic
+	  compressor)
+	- stop recording on demand
+	- raw, wav, au, aiff, aifc (PCM, ALAW, ULAW, and some ADPCM
+	  implementations)
+	- files of any length
+
+Trevor Johnson
+trevor@jpj.net

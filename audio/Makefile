@@ -127,6 +127,7 @@
     SUBDIR += xmradio
     SUBDIR += xsidplay
     SUBDIR += xtuner
+    SUBDIR += xwave
     SUBDIR += yamt
 
 .include <bsd.port.subdir.mk>

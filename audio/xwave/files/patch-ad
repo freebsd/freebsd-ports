@@ -1,0 +1,184 @@
+$NetBSD: patch-ad,v 1.2 1998/08/07 10:36:23 agc Exp $
+
+--- xwave/src/audio.c.orig	Wed Aug 12 23:27:09 1998
++++ src/audio.c	Sun Jun 11 13:35:54 2000
+@@ -37,7 +37,7 @@
+ #ifdef linux
+ #include <linux/soundcard.h>
+ 
+-#elif defined(FreeBSD)
++#elif defined(__FreeBSD__)
+ #include <machine/soundcard.h>
+ 
+ #elif defined(sgi)
+@@ -55,7 +55,7 @@
+ #include "sample_settings.h"
+ #include "audio.h"
+ 
+-#if defined(linux) || defined (FreeBSD) || defined(sun) 
++#if defined(linux) || defined (__FreeBSD__) || defined(sun) 
+ static int set_dsp(int o_mode,int res,int channels,int freq,int *buf_size);
+ #endif
+ 
+@@ -67,7 +67,7 @@
+ static Audio_File af;
+ static int stop_record;
+ 
+-#if defined (linux) || defined (FreeBSD)
++#if defined (linux) || defined (__FreeBSD__)
+ int set_dsp(int o_mode,int res, int channels, int freq, int *buf_size)
+ {
+     int check;
+@@ -274,7 +274,7 @@
+ }
+ #endif
+ 
+-#ifdef sun
++#if defined(sun)
+ void check_audio(Main_Bool *mb)
+ /* test if there is a play device, and how fast we can play */
+ {
+@@ -307,7 +307,7 @@
+ 	 case AUDIO_ENCODING_LINEAR:
+ 	    printf("ULAW\n");break;
+ 	 default:
+-	    printf("unknown encoding\n");
++	    printf("unknown encoding: %d\n",au_info.play.encoding);
+ 	}
+ 	close(audio);
+     } else  {
+@@ -370,7 +370,7 @@
+ 
+ void play_file(char *fname,Main_Bool *mb)
+ {
+-#if defined (linux) || defined (FreeBSD) || defined (sun)
++#if defined (linux) || defined (__FreeBSD__) || defined (sun)
+     int audio;
+ #elif defined(sgi)
+     ALport port;
+@@ -384,7 +384,7 @@
+ 	return;
+     }
+     
+-#if defined (linux) || defined (FreeBSD) || defined (sun)
++#if defined (linux) || defined (__FreeBSD__) || defined (sun)
+     if ((audio=set_dsp(O_WRONLY,af.bps,af.channels,af.freq,&buf_size))==-1) {
+ 	fprintf(stderr,"XWave: Error ! Cannot set dsp !\n");
+ 	close(af.fd);
+@@ -404,7 +404,7 @@
+     if ((buffer=malloc(buf_size))==NULL) {
+ 	fprintf(stderr,"XWave: Error ! Cannot alloc mem !\n");
+ 	close(af.fd);
+-#if defined (linux) || defined (FreeBSD) || defined (sun)
++#if defined (linux) || defined (__FreeBSD__) || defined (sun)
+ 	close(audio);
+ #elif defined(sgi)
+ 	ALcloseport(port);
+@@ -413,7 +413,7 @@
+ 	return;
+     }
+     
+-#if defined (linux) || defined (FreeBSD) || defined (sun)
++#if defined (linux) || defined (__FreeBSD__) || defined (sun)
+     while ((length=af_read(af,buffer,buf_size))>0) {
+ 	if (write(audio, buffer, length)==-1) break;
+     }
+@@ -440,7 +440,7 @@
+     int offset=0,playlength,length;
+ #ifdef sgi
+     ALport port;
+-#elif defined(linux) || defined (FreeBSD) || defined (sun)
++#elif defined(linux) || defined (__FreeBSD__) || defined (sun)
+     int audio;
+     
+     if ((audio=set_dsp(O_WRONLY,wd->res,wd->channels,wd->freq,&buf_size))==-1) {
+@@ -473,7 +473,7 @@
+ 	buffer=wd->buffer+offset;
+ 	while (playlength>0) {
+ 	    if (playlength<buf_size) buf_size=playlength;
+-#if defined (linux) || defined (FreeBSD) || defined (sun)
++#if defined (linux) || defined (__FreeBSD__) || defined (sun)
+ 	    if (write(audio, buffer, buf_size)==-1) {
+ 		close(audio);
+ 		kill((pid_t) getppid(),SIGUSR1);
+@@ -497,7 +497,7 @@
+ 	wd2af(wd,&af);
+ 	af_rewind(af);
+ 	if (af_seek(af,offset,SEEK_CUR)==AF_ERROR) {
+-#if defined (linux) || defined (FreeBSD) || defined (sun)
++#if defined (linux) || defined (__FreeBSD__) || defined (sun)
+ 	    close(audio);
+ #elif defined(sgi)
+ 	    ALcloseport(port);
+@@ -510,7 +510,7 @@
+ 	while (playlength>0) {
+ 	    if (playlength<buf_size) buf_size=playlength;
+ 	    if ((length=af_read(af,(char*) md->mg->fbuf,buf_size))==-1) {
+-#if defined (linux) || defined (FreeBSD) || defined (sun)
++#if defined (linux) || defined (__FreeBSD__) || defined (sun)
+ 		close(audio);
+ #elif defined(sgi)
+ 		ALcloseport(port);
+@@ -518,7 +518,7 @@
+ 		kill((pid_t) getppid(),SIGUSR1);
+ 		return;
+ 	    }
+-#if defined (linux) || defined (FreeBSD) || defined (sun)
++#if defined (linux) || defined (__FreeBSD__) || defined (sun)
+ 	    if (write(audio,(char*) md->mg->fbuf,length)==-1) {
+ 		close(audio);
+ 		kill((pid_t) getppid(),SIGUSR1);
+@@ -536,7 +536,7 @@
+ 	}
+     }
+     
+-#if defined (linux) || defined (FreeBSD) || defined (sun)
++#if defined (linux) || defined (__FreeBSD__) || defined (sun)
+     close(audio);
+ #elif defined(sgi)
+     while (ALgetfilled(port)) sginap(2);
+@@ -556,7 +556,7 @@
+     void write_length();
+     byte *data=NULL;
+     int abuf_size,count;
+-#if defined (linux) || defined (FreeBSD) || defined (sun)
++#if defined (linux) || defined (__FreeBSD__) || defined (sun)
+     int audio;
+     
+     if ((audio=set_dsp(O_RDONLY,res,mode,freq,&abuf_size))==-1) {
+@@ -577,7 +577,7 @@
+     
+     if ((data = (byte *) malloc(abuf_size)) == NULL) {
+ 	fprintf(stderr,"XWave: Error while alloc mem for audio_buffer !\n");
+-#if defined (linux) || defined (FreeBSD) || defined (sun)
++#if defined (linux) || defined (__FreeBSD__) || defined (sun)
+ 	close(audio);
+ #elif defined(sgi)
+ 	ALcloseport(port);
+@@ -595,7 +595,7 @@
+     
+     if (af_open(fname,&af,AF_NEW)==AF_ERROR) {
+ 	free(data);
+-#if defined (linux) || defined (FreeBSD) || defined (sun)
++#if defined (linux) || defined (__FreeBSD__) || defined (sun)
+ 	close(audio);
+ #elif defined(sgi)
+ 	ALcloseport(port);
+@@ -608,7 +608,7 @@
+     signal(SIGUSR1,write_length);
+     
+     while(1) {
+-#if defined (linux) || defined (FreeBSD) || defined (sun)
++#if defined (linux) || defined (__FreeBSD__) || defined (sun)
+ 	if ((count=read(audio, data, abuf_size))==-1) {
+ 	    close(audio);
+ 	    af_close(af);
+@@ -632,7 +632,7 @@
+ 	    return;
+ 	}
+ 	if ((count=af_write(af,(char*)data,count))==AF_ERROR) {
+-#if defined (linux) || defined (FreeBSD) || defined (sun)
++#if defined (linux) || defined (__FreeBSD__) || defined (sun)
+ 	    close(audio);
+ #elif defined(sgi)
+ 	    ALcloseport(port);

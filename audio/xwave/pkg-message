@@ -1,0 +1,3 @@
+If you run out of space for the temporary files, set the X ressource
+XWave*tdir (either in /usr/X11R6/lib/X11/app-defaults/XWave or your
+~/.Xdefaults) to a suitable directory.
