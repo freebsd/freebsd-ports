@@ -15,5 +15,6 @@
 %%SITE_PERL%%/GD/Graph/utils.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/GD/Graph/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/GD/Graph
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/GD 2>/dev/null || true
 @dirrm %%SITE_PERL%%/GD/Graph
 @unexec rmdir %D/%%SITE_PERL%%/GD 2>/dev/null || true
