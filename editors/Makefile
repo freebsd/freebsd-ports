@@ -67,6 +67,7 @@
     SUBDIR += lpe
     SUBDIR += manedit
     SUBDIR += moleskine
+    SUBDIR += mp
     SUBDIR += muggy
     SUBDIR += mule
     SUBDIR += mule-common
