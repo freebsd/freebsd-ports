@@ -7,6 +7,7 @@
 
 PORTNAME=	sdl-devel
 PORTVERSION=	1.1.7
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.libsdl.org/release/ \
 		http://www.devolution.com/~slouken/SDL/release/
