@@ -15,8 +15,6 @@ EXTRACT_SUFX=	.c
 
 MAINTAINER=     obrien@FreeBSD.org
 
-ONLY_FOR_ARCHS=	alpha
-
 NO_WRKSUBDIR=	yes
 DISTDIR=	${FILESDIR}
 
