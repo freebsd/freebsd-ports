@@ -9,7 +9,6 @@ PORTNAME=	tclock
 PORTVERSION=	1.0.1
 CATEGORIES=	x11-clocks
 MASTER_SITES=	ftp://ftp.uni-potsdam.de/pub/X11/tools/clocks/		\
-		ftp://ftp.fh-anhalt.de/pub/soft/Xwindow/tools/clocks/	\
 		ftp://ftp.uni-bielefeld.de/pub/systems/FreeBSD/lkoeller/
 EXTRACT_SUFX=	.tar.Z
 
