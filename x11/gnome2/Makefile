@@ -7,6 +7,7 @@
 
 PORTNAME=	gnome2
 PORTVERSION=	2.0.3
+PORTREVISION=	1
 CATEGORIES=	x11 gnome
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -30,7 +31,7 @@ RUN_DEPENDS=	${X11BASE}/libexec/cdplayer_applet2:${PORTSDIR}/x11/gnomeapplets2 \
 		yelp:${PORTSDIR}/x11/yelp \
 		gdm:${PORTSDIR}/x11/gdm2 \
 		${X11BASE}/share/themes/Metal/gtk-2.0/gtkrc:${PORTSDIR}/x11-toolkits/gtk-engines2 \
-		nautilus:${PORTSDIR}/x11-fm/nautilus \
+		nautilus:${PORTSDIR}/x11-fm/nautilus2 \
 		screensaver-properties-capplet:${PORTSDIR}/x11/xscreensaver-gnome \
 		${X11BASE}/libdata/pkgconfig/libgail-gnome.pc:${PORTSDIR}/x11-toolkits/libgail-gnome \
 		${X11BASE}/share/gnome/help/user-guide/C/user-guide.xml:${PORTSDIR}/misc/gnomeuserdocs2 \
