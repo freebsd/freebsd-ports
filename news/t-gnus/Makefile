@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	t-gnus
-PORTVERSION=	${TGNUSVERSION:S/quimby/q/g:S/_/./g:S/-/./g}
+PORTVERSION=	${TGNUSVERSION:S/_/./g:S/-/./g}
 CATEGORIES=	news mail elisp
 MASTER_SITES=	http://www.jpl.org/elips/t-gnus-6.16/snapshots/ \
 		http://cvs.m17n.org/archives/gnus/
@@ -19,6 +19,7 @@ COMMENT=	I18N Gnus using SEMI, which provides MIME capabilities
 BUILD_DEPENDS=	${LOCALBASE}/share/semi/${MIMEUI_COOKIE}:${PORTSDIR}/editors/${MIMEUI_PORT_NAME}
 RUN_DEPENDS=	${LOCALBASE}/share/semi/${MIMEUI_COOKIE}:${PORTSDIR}/editors/${MIMEUI_PORT_NAME}
 
+USE_AUTOCONF=	yes
 HAS_CONFIGURE=	yes
 USE_GMAKE=	yes
 CONFIGURE_ENV=	MAKEINFO="makeinfo --no-split"
