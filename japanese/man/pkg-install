@@ -4,8 +4,26 @@ CP=${CP:-/bin/cp}
 
 usr_tmac=/usr/share/tmac
 local_tmac=${PKG_PREFIX}/share/groff/tmac
+elispdir=${PKG_PREFIX}/lib/mule/site-lisp
+
+OptionStart=";;; Jman configuration options"
+OptionEnd=";;; End of Jman configuration options"
 
 if [ "X$2" = X"POST-INSTALL" ]; then
 	${CP} -p ${usr_tmac}/tmac.an ${local_tmac}
 	${CP} -p ${usr_tmac}/tmac.groff_an ${local_tmac}
+	if [ "`grep \"^${OptionStart}\"  ${elispdir}/site-start.el`" ]; then 
+		sed -e "/^${OptionStart}/,/^${OptionEnd}/d" \
+			${elispdir}/site-start.el > ${elispdir}/site-start.el.bak
+		mv ${elispdir}/site-start.el.bak ${elispdir}/site-start.el
+	fi
+	echo "Adding \"Jman\" entry to ${elispdir}/site-start.el"
+	echo "${OptionStart}" >> ${elispdir}/site-start.el
+	echo "(setq load-path (cons \"${elispdir}/jman\" load-path))" \
+					>> ${elispdir}/site-start.el
+	echo "(autoload 'jman \"jman\" nil t)"	>> ${elispdir}/site-start.el
+	echo "${OptionEnd}" \
+					>> ${elispdir}/site-start.el
+	exit 0
 fi
+

@@ -10,3 +10,5 @@ man/ja_JP.EUC/man1/jmanpath.1.gz
 man/ja_JP.EUC/man1/japropos.1.gz
 man/ja_JP.EUC/man1/jwhatis.1.gz
 man/ja_JP.EUC/man1/jmakewhatis.1.gz
+lib/mule/site-lisp/jman/jman.el
+@dirrm lib/mule/site-lisp/jman
