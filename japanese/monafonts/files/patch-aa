@@ -1,13 +1,14 @@
 --- Makefile.orig	Fri Mar 23 21:07:28 2001
-+++ Makefile	Mon Mar 26 00:34:17 2001
++++ Makefile	Thu May 10 02:43:39 2001
 @@ -3,11 +3,11 @@
  
  SED	= sed
  PERL	= perl
 -X11BIN	= /usr/X11R6/bin
-+X11BIN	= ${PREFIX}/bin
- GZIP	= gzip
+-GZIP	= gzip
 -AWK	= gawk
++X11BIN	= ${PREFIX}/bin
++GZIP_CMD?=	gzip
 +AWK	= awk
  
 -FONTDIR = /usr/X11R6/lib/X11/fonts/misc
@@ -15,3 +16,12 @@
  
  BDFTOPCF= $(X11BIN)/bdftopcf
  MKFONTDIR=$(X11BIN)/mkfontdir
+@@ -86,7 +86,7 @@
+ 
+ install: fonts
+ 	if [ ! -e $(FONTDIR) ] ; then mkdir -p $(FONTDIR); fi
+-	for i in $(FONTS); do $(GZIP) -c $$i > $(FONTDIR)/$$i.gz; done
++	for i in $(FONTS); do $(GZIP_CMD) -c $$i > $(FONTDIR)/$$i.gz; done
+ 	$(MKFONTDIR) $(FONTDIR)
+ 
+ clean:
