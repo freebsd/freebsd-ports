@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	archetypes
-PORTVERSION=	1.0.1
+PORTVERSION=	1.2.4
 CATEGORIES=	www zope
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	archetypes
@@ -18,11 +18,12 @@ DIST_SUBDIR=	zope
 MAINTAINER=	filippo@widestore.net
 COMMENT=	Framework for the development of new Content Types in Zope/CMF/Plone
 
-RUN_DEPENDS=	${LOCALBASE}/${SZOPEBASEDIR}/lib/python/Products/CMFPlone/__init__.py:${PORTSDIR}/www/plone
+RUN_DEPENDS=	${LOCALBASE}/${SZOPEBASEDIR}/lib/python/Products/CMFPlone/__init__.py:${PORTSDIR}/www/plone \
+	${LOCALBASE}/${SZOPEBASEDIR}/lib/python/Products/PortalTransforms/__init__.py:${PORTSDIR}/www/zope-cmftransforms
 
+WRKSRC=${WRKDIR}/${DISTNAME}
 USE_ZOPE=	yes
 USE_PYTHON=	yes
-
 MODULES=	ArchExample ArchGenXML Archetypes
 PYTHON_MODULES=	validation generator
 
