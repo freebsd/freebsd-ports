@@ -15,7 +15,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Steve Harris' huge Collection of LADSPA Plugins
 
 BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
-LIB_DEPENDS=	fftw3.3:${PORTSDIR}/math/fftw3
+LIB_DEPENDS=	fftw3f.3:${PORTSDIR}/math/fftw3-float
 
 # includes assembler code
 ONLY_FOR_ARCHS=	i386 amd64
@@ -43,9 +43,6 @@ PLIST_SUB+=	NLS=""
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e \
-		's|$$CFLAGS.*$${USE_SSE}|$$CFLAGS|g ; \
-		 s|fftw3f|fftw3|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|gcc |$$(CC) |g ; \
 		 s| -lc| $$(LDFLAGS)|g ; \
 		 s|-lrt||g' ${WRKSRC}/Makefile.in
