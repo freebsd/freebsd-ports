@@ -24,13 +24,10 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	bms@FreeBSD.org
 COMMENT=	Additional SNMP plugins for Nagios from silfreed.net
 
-.include <bsd.port.pre.mk>
-
 # Also uses traceroute, dig at runtime (in base system with hardcoded paths).
 RUN_DEPENDS+=	\
-	${LOCALBASE}/libexec/nagios:${PORTSDIR}/net-mgmt/nagios-plugins \
-	${SITE_PERL}/Net/Netmask.pm:${PORTSDIR}:net-mgmt/p5-Net-Netmask \
-	${SITE_PERL}/Net/SNMP.pm:${PORTSDIR}:net-mgmt/p5-Net-SNMP
+	${SITE_PERL}/Net/Netmask.pm:${PORTSDIR}/net-mgmt/p5-Net-Netmask \
+	${SITE_PERL}/Net/SNMP.pm:${PORTSDIR}/net-mgmt/p5-Net-SNMP
 .if defined(WITH_EXPECT_TOOLS)
 RUN_DEPENDS+=	\
 	${LOCALBASE}/bin/expect:${PORTSDIR}/lang/expect
@@ -39,9 +36,7 @@ RUN_DEPENDS+=	\
 USE_PERL5=	yes
 NO_WRKSUBDIR=	yes
 
-# XXX: Strictly speaking this shouldn't obey ${PREFIX}, as it has to be
-#      installed to the same location as the Nagios plugins themselves.
-NAGIOS_PLUGIN_DIR=	${LOCALBASE}/libexec/nagios
+NAGIOS_PLUGIN_DIR=	${PREFIX}/libexec/nagios
 
 pre-everything::
 .if !defined(WITH_EXPECT_TOOLS)
@@ -53,8 +48,8 @@ pre-everything::
 .endif
 
 do-build:
-	( cd ${WRKSRC}/check_tcping-0.1.5 ; \
-	  ${CC} ${CFLAGS} -o check_tcping check_tcping.c )
+	cd ${WRKSRC}/check_tcping-0.1.5 ; \
+	  ${CC} ${CFLAGS} -o check_tcping check_tcping.c
 
 # Documentation
 PLUGIN_README_DIRS=	\
@@ -80,6 +75,7 @@ PLIST_SUB+=	EXPECTTOOLS="@comment "
 .endif
 
 do-install:
+	${MKDIR} ${NAGIOS_PLUGIN_DIR}
 	${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/check_snmp_counter-0.5.0/check_snmp_counter ${NAGIOS_PLUGIN_DIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/check_snmp_gauge-0.3.0/check_snmp_gauge ${NAGIOS_PLUGIN_DIR}
@@ -104,4 +100,4 @@ do-install:
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
