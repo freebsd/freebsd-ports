@@ -22,7 +22,3 @@ share/doc/xnc/doc6.html
 share/doc/xnc/doc7.html
 share/doc/xnc/doc8.html
 @dirrm share/doc/xnc
-man/cat1/xnc.1.gz
-man/cat1/ives.1.gz
-man/cat1/xjpegroot.1.gz
-man/cat1/xnlaunch.1.gz

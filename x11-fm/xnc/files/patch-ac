@@ -1,0 +1,11 @@
+--- filedir/makefile.in.orig	Wed Feb 16 15:38:53 2000
++++ filedir/makefile.in	Wed Feb 16 15:39:08 2000
+@@ -34,7 +34,7 @@
+ @MCOMMON@
+ 
+ VERSION	= 3.20.1
+-MAGIC	= /usr/share/magic
++MAGIC	= /usr/share/misc/magic
+ #MAGIC	= /usr/local/etc/magic
+ 
+ MAGDEFS	= -DMAGIC='"$(MAGIC)"' -DMAGIC_FOR_XNC $(DEFS)# -Dvoid=int
