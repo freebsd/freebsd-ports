@@ -15,6 +15,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ijliao@FreeBSD.org
 
+BROKEN=		"Does not build"
+
 USE_GNOMENG=	yes
 USE_GNOME=	libcapplet
 
