@@ -19,8 +19,10 @@ MAINTAINER=	demon@FreeBSD.org
 #		rpm:${PORTSDIR}/archivers/rpm		\
 #		rar:${PORTSDIR}/archivers/rar		\
 #		unarj:${PORTSDIR}/archivers/unarj	\
-#		lha:${PORTSDIR}/archivers/lha		\
-#		bzip2:${PORTSDIR}/archivers/bzip2
+#		lha:${PORTSDIR}/archivers/lha
+#.if !exists(/usr/bin/bzip2)
+#RUN_DEPENDS+=	bzip2:${PORTSDIR}/archivers/bzip2
+#.endif
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.4:${PORTSDIR}/graphics/png
 

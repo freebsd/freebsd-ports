@@ -16,8 +16,10 @@ MAINTAINER=	sobomax@FreeBSD.org
 
 LIB_DEPENDS=	SDL-1.1.3:${PORTSDIR}/devel/sdl12 \
 		SDL_image.10:${PORTSDIR}/graphics/sdl_image \
-		bz2.1:${PORTSDIR}/archivers/bzip2 \
 		gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
+.if !exists(/usr/bin/bzip2)
+LIB_DEPENDS+=	bz2.1:${PORTSDIR}/archivers/bzip2
+.endif
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-beta
 

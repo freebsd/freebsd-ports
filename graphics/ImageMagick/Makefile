@@ -31,8 +31,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 
 BUILD_DEPENDS=	freetype-config:${PORTSDIR}/print/freetype2	# XXX
-LIB_DEPENDS=	bz2.1:${PORTSDIR}/archivers/bzip2 \
-		fpx.1:${PORTSDIR}/graphics/libfpx \
+LIB_DEPENDS=	fpx.1:${PORTSDIR}/graphics/libfpx \
 		jbig.1:${PORTSDIR}/graphics/jbigkit \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		lcms.1:${PORTSDIR}/graphics/lcms \
@@ -40,6 +39,9 @@ LIB_DEPENDS=	bz2.1:${PORTSDIR}/archivers/bzip2 \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		freetype.7:${PORTSDIR}/print/freetype2 \
 		xml2.5:${PORTSDIR}/textproc/libxml2
+.if !exists(/usr/bin/bzip2)
+LIB_DEPENDS+=	bz2.1:${PORTSDIR}/archivers/bzip2
+.endif
 
 USE_PERL5=	yes
 USE_LIBTOOL=	yes

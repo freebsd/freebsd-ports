@@ -14,8 +14,10 @@ MASTER_SITE_SUBDIR=	rproxy
 
 MAINTAINER=	ijliao@FreeBSD.org
 
-LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt \
-		bz2.1:${PORTSDIR}/archivers/bzip2
+LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
+.if !exists(/usr/bin/bzip2)
+LIB_DEPENDS+=	bz2.1:${PORTSDIR}/archivers/bzip2
+.endif
 
 USE_LIBTOOL=	yes
 GNU_CONFIGURE=	yes

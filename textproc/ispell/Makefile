@@ -71,7 +71,9 @@ EXTRA_DICT+=	${BRDISTFILE}
 EXTRACT_ONLY+=	${BRDISTFILE}
 .endif
 .if defined(ISPELL_DENEU)
+.if !exists(/usr/bin/bzip2)
 BUILD_DEPENDS+=	bzip2:${PORTSDIR}/archivers/bzip2
+.endif
 DENEUDISTFILE=	igerman98-20001109.tar.bz2
 MASTER_SITES+=	http://www.suse.de/~bjacke/igerman98/dict/ \
 		ftp://student.physik.uni-dortmund.de/pub/users/jacke/ispell/

@@ -14,8 +14,10 @@ DISTNAME=	gnome-vfs-${PORTVERSION}
 
 MAINTAINER=	gnome@FreeBSD.org
 
-LIB_DEPENDS=	gconf-1.1:${PORTSDIR}/devel/gconf \
-		bz2.1:${PORTSDIR}/archivers/bzip2
+LIB_DEPENDS=	gconf-1.1:${PORTSDIR}/devel/gconf
+.if !exists(/usr/bin/bzip2)
+LIB_DEPENDS+=	bz2.1:${PORTSDIR}/archivers/bzip2
+.endif
 
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes

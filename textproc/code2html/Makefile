@@ -14,7 +14,13 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	jedgar@FreeBSD.org
 
+.if !exists(/usr/bin/bzip2)
 RUN_DEPENDS=	bzip2:${PORTSDIR}/archivers/bzip2
+
+BZIP2BASE=	${PREFIX}
+.else
+BZIP2BASE=	/usr
+.endif
 
 NO_BUILD=	yes
 
@@ -22,7 +28,7 @@ MAN1=		code2html.1
 
 do-configure:
 	@${MV} ${WRKSRC}/code2html ${WRKSRC}/code2html.orig
-	@${SED} -e 's|/usr/bin/bzip2|${PREFIX}/bin/bzip2|' \
+	@${SED} -e 's|/usr/bin/bzip2|${BZIP2BASE}/bin/bzip2|' \
 		-e 's|/bin/gzip|/usr/bin/gzip|' \
 		-e 's|/etc/code|${PREFIX}/etc/code|' \
 		< ${WRKSRC}/code2html.orig > ${WRKSRC}/code2html

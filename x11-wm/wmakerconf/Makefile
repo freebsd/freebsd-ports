@@ -12,8 +12,10 @@ MASTER_SITES=	http://ulli.on.openave.net/wmakerconf/
 
 MAINTAINER=	dr@domix.de
 
-RUN_DEPENDS=	rpm:${PORTSDIR}/archivers/rpm \
-		bunzip2:${PORTSDIR}/archivers/bzip2
+RUN_DEPENDS=	rpm:${PORTSDIR}/archivers/rpm
+.if !exists(/usr/bin/bzip2)
+RUN_DEPENDS+=	bunzip2:${PORTSDIR}/archivers/bzip2
+.endif
 LIB_DEPENDS=	PropList.2:${PORTSDIR}/devel/libPropList \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		tiff.4:${PORTSDIR}/graphics/tiff \
