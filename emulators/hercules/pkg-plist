@@ -17,15 +17,15 @@ bin/hetupd
 bin/tapecopy
 bin/tapemap
 bin/tapesplt
-share/doc/hercules/cckddasd.html
-share/doc/hercules/hercconf.html
-share/doc/hercules/hercfaq.html
-share/doc/hercules/hercinst.html
-share/doc/hercules/herclic.html
-share/doc/hercules/hercload.html
-share/doc/hercules/hercnew.html
-share/doc/hercules/herctcp.html
-share/doc/hercules/hercules.cnf
-share/doc/hercules/hercules.css
-share/doc/hercules/index.html
-@dirrm share/doc/hercules
+%%PORTDOCS%%share/doc/hercules/cckddasd.html
+%%PORTDOCS%%share/doc/hercules/hercconf.html
+%%PORTDOCS%%share/doc/hercules/hercfaq.html
+%%PORTDOCS%%share/doc/hercules/hercinst.html
+%%PORTDOCS%%share/doc/hercules/herclic.html
+%%PORTDOCS%%share/doc/hercules/hercload.html
+%%PORTDOCS%%share/doc/hercules/hercnew.html
+%%PORTDOCS%%share/doc/hercules/herctcp.html
+%%PORTDOCS%%share/doc/hercules/hercules.cnf
+%%PORTDOCS%%share/doc/hercules/hercules.css
+%%PORTDOCS%%share/doc/hercules/index.html
+%%PORTDOCS%%@dirrm share/doc/hercules

@@ -1,0 +1,50 @@
+diff -uNr configure.ac
+--- configure.ac	Wed Dec 19 07:20:00 2001
++++ configure.ac	Thu Jan 17 22:50:57 2002
+@@ -72,6 +72,19 @@
+ 
+ AM_CONDITIONAL(BUILD_FTHREADS, [test x$build_fthreads = xtrue])
+ 
++dnl AC_MSG_NOTICE([Checking to see if -pthread is needed to compile])
++
++AC_MSG_CHECKING([wether ${CC-cc} accepts -pthread])
++
++echo 'void f(){}' >conftest.c
++if test -z "`${CC-cc} -pthread -c conftest.c 2>&1`"; then
++        LIBS="-pthread $LIBS"
++        AC_MSG_RESULT([yes])
++else
++        AC_MSG_RESULT([no])
++fi
++rm -f conftest*
++
+ # Headers
+ AC_CHECK_HEADERS(byteswap.h)
+ AC_CHECK_HEADER(fenv.h,,[AC_DEFINE([NO_IEEE_SUPPORT])])
+@@ -105,6 +118,16 @@
+                                [AC_DEFINE([HAVE_U_INT])],
+                                [AC_MSG_ERROR([Unable to find fixed-size data types])] )] )
+ 
++dnl AC_MSG_NOTICE([Checking for SCSI tape support and what type])
++AC_CHECK_HEADER(sys/mtio.h,
++                [AC_DEFINE([HAVE_MTIO_H])])
++
++AC_TRY_COMPILE([#include mtio.h],
++               [mtget test;
++                int result;
++                result = test.mt_gstat; ],
++               [AC_DEFINE([GNU_MTIO_SUPPORT])])
++
+ # Compiler characteristics
+ 
+ AC_C_BIGENDIAN
+@@ -306,5 +329,9 @@
+             [Define to provide additional information about this build])
+ AH_TEMPLATE([DEBUG],
+             [Define to enable extra debugging code])
++AH_TEMPLATE([HAVE_MTIO_H],
++            [Define if your system has sys/mtio.h])
++AH_TEMPLATE([GNU_MTIO_SUPPORT],
++            [Define if you have the GNU version of mtio.h (Linux)])
+ 
+ AC_OUTPUT(Makefile util/Makefile html/Makefile)

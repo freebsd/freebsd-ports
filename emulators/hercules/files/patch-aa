@@ -1,0 +1,57 @@
+diff -uNr ckddasd.c
+--- ckddasd.c	Tue Nov 20 17:39:46 2001
++++ ckddasd.c	Tue Jan 15 22:03:48 2002
+@@ -786,7 +786,7 @@
+         {
+             /* if lazy write, write the last track image */
+             if (dev->ckdlazywrt)
+-                ckd_lseek (dev, -1, -1, -1);
++                ckd_lseek (dev, -1, (off_t)-1, -1);
+ 
+             /* free the cache */
+             for (i = 0; i < dev->ckdcachenbr; i++)
+@@ -1240,7 +1240,7 @@
+ 
+     DEVTRACE("ckddasd: skipping %d bytes\n", skiplen);
+ 
+-    rc = ckd_lseek (dev, dev->fd, skiplen, SEEK_CUR);
++    rc = ckd_lseek (dev, dev->fd, (off_t)skiplen, SEEK_CUR);
+     if (rc == -1)
+     {
+ #ifdef OPTION_SYNCIO
+@@ -1734,7 +1734,7 @@
+     ckdlen = CKDDASD_RECHDR_SIZE + keylen + datalen;
+ 
+     /* Determine the current position in the file */
+-    curpos = ckd_lseek (dev, dev->fd, 0, SEEK_CUR);
++    curpos = ckd_lseek (dev, dev->fd, (off_t)0, SEEK_CUR);
+     if (curpos == -1)
+     {
+ #ifdef OPTION_SYNCIO
+@@ -1782,7 +1782,7 @@
+     }
+ 
+     /* Backspace over end of track marker */
+-    rc = ckd_lseek (dev, dev->fd, -(CKDDASD_RECHDR_SIZE), SEEK_CUR);
++    rc = ckd_lseek (dev, dev->fd, -(off_t)(CKDDASD_RECHDR_SIZE), SEEK_CUR);
+     if (rc == -1)
+     {
+ #ifdef OPTION_SYNCIO
+@@ -1854,7 +1854,7 @@
+     ckdlen = CKDDASD_RECHDR_SIZE + keylen + datalen;
+ 
+     /* Determine the current position in the file */
+-    curpos = ckd_lseek (dev, dev->fd, 0, SEEK_CUR);
++    curpos = ckd_lseek (dev, dev->fd, (off_t)0, SEEK_CUR);
+     if (curpos == -1)
+     {
+ #ifdef OPTION_SYNCIO
+@@ -1938,7 +1938,7 @@
+     }
+ 
+     /* Backspace over end of track marker */
+-    rc = ckd_lseek (dev, dev->fd, -(CKDDASD_RECHDR_SIZE), SEEK_CUR);
++    rc = ckd_lseek (dev, dev->fd, -(off_t)(CKDDASD_RECHDR_SIZE), SEEK_CUR);
+     if (rc == -1)
+     {
+ #ifdef OPTION_SYNCIO
