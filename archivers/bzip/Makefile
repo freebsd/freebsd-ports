@@ -16,6 +16,8 @@ COMMENT=	A block-sorting file compressor
 NO_CDROM=	"Restrictive copyright (don't sell for profit)"
 MAN1=		bzip.1 bunzip.1
 
+PLIST_FILES=	bin/bzip bin/bunzip
+
 pre-install:
 	@${CAT} ${FILESDIR}/COPYRIGHT
 
