@@ -1,3 +1,17 @@
+# New ports collection makefile for:    XFree86
+# Version required:     3.1.1
+# Date created:         5 January 1995
+# Whom:                 jmz
+#
+# $Id$
+#
+
+#######################################################################
+#                                                                     #
+#                        Configurable Section                         #
+#                                                                     #
+#######################################################################
+#
 # uncomment one of the 3 lines below!
 #(X-Consortium CDROM, O'Reilly 'X-Companion' CDROM, or X by FTP (_*BIG*_)
 #X11_ON_X_CDROM	=	yes
