@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	jetty
-PORTVERSION=	4.2.5
+PORTVERSION=	4.2.9
 CATEGORIES=	www java
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://jetty.mortbay.com/pub/
