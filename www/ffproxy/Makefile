@@ -6,14 +6,26 @@
 #
 
 PORTNAME=	ffproxy
-PORTVERSION=	1.4
+PORTVERSION=	1.4.1
 CATEGORIES=	www
 MASTER_SITES=	http://faith.eu.org/${PORTNAME}/
 
-MAINTAINER=	krion@FreeBSD.org	
+MAINTAINER=	krion@FreeBSD.org
 COMMENT=	Filtering HTTP proxy server
 
+USE_REINPLACE=	yes
+
 MAN8=	${PORTNAME}.8
+
+post-patch:
+	${REINPLACE_CMD} -e \
+		's|/etc|${PREFIX}/etc|g ; \
+		s|/usr/local|${PREFIX}|g ; \
+		s|/var/ffproxy|${DOCSDIR}|g' \
+			${WRKSRC}/Makefile
+	${REINPLACE_CMD} -e \
+		's|/etc|${PREFIX}/etc|g' \
+			${WRKSRC}/${PORTNAME}.8
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
