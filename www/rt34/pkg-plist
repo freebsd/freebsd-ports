@@ -1,5 +1,4 @@
 rt3/etc/RT_Config.pm
-rt3/etc/RT_SiteConfig.pm
 rt3/etc/initialdata
 rt3/etc/schema.SQLite
 rt3/etc/schema.Pg
@@ -344,6 +343,7 @@ rt3/lib/RT/Attachment.pm
 rt3/lib/RT/Attachment_Overlay.pm
 rt3/lib/RT.pm.in
 rt3/lib/RT.pm
+rt3/bin/ap2mp2-fix.pl
 rt3/bin/rt-crontool
 rt3/bin/webmux.pl
 rt3/bin/mason_handler.svc
@@ -352,7 +352,6 @@ rt3/bin/rt-mailgate
 rt3/sbin/rt-test-dependencies
 rt3/sbin/rt-setup-database
 rt3/README
-
 @dirrm rt3/var/session_data
 @dirrm rt3/var/mason_data/obj
 @dirrm rt3/var/mason_data/etc
@@ -390,6 +389,7 @@ rt3/README
 @dirrm rt3/sbin
 @dirrm rt3/local/po
 @dirrm rt3/local/html
+@dirrm rt3/local/etc
 @dirrm rt3/local
 @dirrm rt3/lib/t/regression
 @dirrm rt3/lib/t/data
