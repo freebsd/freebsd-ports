@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.46 1996/12/06 11:29:33 asami Exp $
+# $Id: Makefile,v 1.47 1996/12/07 13:25:15 asami Exp $
 #
 
     SUBDIR += Canna
@@ -30,6 +30,7 @@
     SUBDIR += less
     SUBDIR += man
     SUBDIR += man-doc
+    SUBDIR += mew
     SUBDIR += mh
     SUBDIR += mimekit
     SUBDIR += mnews
@@ -57,6 +58,7 @@
     SUBDIR += vfghostscript4
     SUBDIR += vflib
     SUBDIR += vfxdvi
+    SUBDIR += w3
     SUBDIR += xbakuzan
     SUBDIR += xdvi
 
