@@ -4547,6 +4547,7 @@ p5-Date-Handler	ports/math/p5-Date-Handler
 p5-Date-Leapyear	ports/devel/p5-Date-Leapyear
 p5-Date-Manip	ports/devel/p5-Date-Manip
 p5-Date-Pcalc	ports/devel/p5-Date-Pcalc
+p5-DataCash	ports/misc/p5-DataCash
 p5-DateConvert	ports/devel/p5-DateConvert
 p5-DelimMatch	ports/textproc/p5-DelimMatch
 p5-Devel-Constants	ports/devel/p5-Devel-Constants
