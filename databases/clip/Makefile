@@ -43,7 +43,7 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg		\
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash2			\
 		wget:${PORTSDIR}/ftp/wget
 
-.if !defined(WITHOUT_IODBC) && !exists(${LOCALBASE}/lib/libodbc.so)
+.if !defined(WITHOUT_IODBC) && !exists(${LOCALBASE}/bin/odbcinst)
 LIB_DEPENDS+=	iodbc.3:${PORTSDIR}/databases/libiodbc
 PLIST_SUB=	ODBC=""
 .elseif !defined(WITHOUT_UNIXODBC)
