@@ -16,6 +16,7 @@
     SUBDIR += avifile
     SUBDIR += backfract
     SUBDIR += blender
+    SUBDIR += cadubi
     SUBDIR += camediaplay
     SUBDIR += camserv
     SUBDIR += chbg

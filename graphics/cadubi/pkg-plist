@@ -1,0 +1,4 @@
+bin/cadubi
+libexec/CADUBI.pl
+%%PORTDOCS%%share/doc/cadubi/CADUBI.help
+%%PORTDOCS%%@dirrm share/doc/cadubi
