@@ -70,7 +70,7 @@ while [ "$1" ]; do
 			echo "WITH_MSDFS=YES" >>${WRKDIRPREFIX}${REALCURDIR}/Makefile.inc
 			;;
 		\"quota\")
-			echo "WITH_QUOTA=YES" >>${WRKDIRPREFIX}${REALCURDIR}/Makefile.inc
+			echo "WITH_QUOTAS=YES" >>${WRKDIRPREFIX}${REALCURDIR}/Makefile.inc
 			;;
 		\"recycle\")
 			echo "WITH_RECYCLE=YES" >>${WRKDIRPREFIX}${REALCURDIR}/Makefile.inc
