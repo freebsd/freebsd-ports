@@ -3071,6 +3071,7 @@ gstreamer-plugins-a52dec	ports/audio/gstreamer-plugins-a52dec
 gstreamer-plugins-aalib		ports/graphics/gstreamer-plugins-aalib
 gstreamer-plugins-artsd		ports/audio/gstreamer-plugins-artsd
 gstreamer-plugins-audiofile	ports/audio/gstreamer-plugins-audiofile
+gstreamer-plugins-cairo		ports/graphics/gstreamer-plugins-cairo
 gstreamer-plugins-cdaudio	ports/audio/gstreamer-plugins-cdaudio
 gstreamer-plugins-cdparanoia	ports/audio/gstreamer-plugins-cdparanoia
 gstreamer-plugins-core		ports/multimedia/gstreamer-plugins-core
