@@ -215,6 +215,7 @@
     SUBDIR += icqnix
     SUBDIR += icukrell
     SUBDIR += idnkit
+    SUBDIR += ifstat
     SUBDIR += imcom
     SUBDIR += ip6_int
     SUBDIR += ipcad
