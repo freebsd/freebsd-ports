@@ -1,0 +1,324 @@
+diff -cr ../Ipe-5.0/Ipe/Makefile Ipe/Makefile
+*** ../Ipe-5.0/Ipe/Makefile	Thu Nov 27 16:09:18 1997
+--- Ipe/Makefile	Thu Oct 26 14:57:59 2000
+***************
+*** 26,42 ****
+  
+  # define GFLAGS if you use g++
+  #GFLAGS  =
+! GFLAGS	= -fno-for-scope
+  
+  # Need to find X and Motif
+! INCLUDE_DIRS	= -I../Plageo -I/usr/local/include/Xm
+! LIB_DIRS	= -L../Plageo -L/usr/lib/X11R5 -L/usr/local/lib/
+  
+  # on a Dec Alpha, add -DNO_XMSTRINGS to CFLAGS
+  # if you get an error with signal handlers,
+  # add -DLONG_SIGNAL_HANDLER_ARG to CFLAGS
+! CFLAGS		= $(GFLAGS) -O $(MIXED) $(INCLUDE_DIRS)
+! LFLAGS		= $(LIB_DIRS) -s
+  
+  # LIBRARIES when linking the mixed model (SGI Irix 4)
+  # LIBRARIES	= -lXirisw -lXm -lXt -lfm_s -lgl_s -lPW -lplageo -lm
+--- 26,42 ----
+  
+  # define GFLAGS if you use g++
+  #GFLAGS  =
+! GFLAGS	= -fno-for-scope  -g
+  
+  # Need to find X and Motif
+! INCLUDE_DIRS	= -I../Plageo -I/usr/X11R6/include
+! LIB_DIRS	= -L../Plageo -L/usr/X11R6/lib -L/usr/local/lib/
+  
+  # on a Dec Alpha, add -DNO_XMSTRINGS to CFLAGS
+  # if you get an error with signal handlers,
+  # add -DLONG_SIGNAL_HANDLER_ARG to CFLAGS
+! CFLAGS		= $(GFLAGS)  $(MIXED) $(INCLUDE_DIRS)
+! LFLAGS		= $(LIB_DIRS) 
+  
+  # LIBRARIES when linking the mixed model (SGI Irix 4)
+  # LIBRARIES	= -lXirisw -lXm -lXt -lfm_s -lgl_s -lPW -lplageo -lm
+***************
+*** 83,89 ****
+  all: $(EXE)
+  
+  $(EXE): $(OBJS) 
+! 	$(CC) $(OBJS) $(LFLAGS) $(LIBRARIES) -o $(EXE)
+  
+  .C.o:
+  	$(CC) $(CFLAGS) -c $<
+--- 83,89 ----
+  all: $(EXE)
+  
+  $(EXE): $(OBJS) 
+! 	$(CC) -g $(OBJS) $(LFLAGS) $(LIBRARIES) -o $(EXE)
+  
+  .C.o:
+  	$(CC) $(CFLAGS) -c $<
+diff -cr ../Ipe-5.0/Ipe/advertise.h Ipe/advertise.h
+*** ../Ipe-5.0/Ipe/advertise.h	Tue May  9 04:35:59 1995
+--- Ipe/advertise.h	Wed Oct 25 15:16:18 2000
+***************
+*** 155,161 ****
+  advertise void show_m_ipe(void);
+  advertise void show_operation(const char *op, const char *key);
+  advertise void create_widgets(void);
+! advertise void show_message(char *str1, char *str2);
+  advertise void show_choice(char *str,
+  		 char *but1, IpeCallback call1,
+  		 char *but2, IpeCallback call2,
+--- 155,161 ----
+  advertise void show_m_ipe(void);
+  advertise void show_operation(const char *op, const char *key);
+  advertise void create_widgets(void);
+! advertise void show_message(const char *str1, const char *str2);
+  advertise void show_choice(char *str,
+  		 char *but1, IpeCallback call1,
+  		 char *but2, IpeCallback call2,
+***************
+*** 178,184 ****
+  advertise IpeButton enable_undo_bt, enable_latex_box_bt, enable_fifi_bt;
+  advertise IpeButton enable_interior_bt, enable_zoom_pan_bt, enable_stroke_bt;
+  advertise IpeButton enable_3_spline_bt;
+! advertise void set_ps_preamble(char *s);
+  advertise char *get_preamble(int which DefaultsTo(0));
+  advertise char *get_command(int which);
+  advertise void show_m_ipe_configuration(void);
+--- 178,184 ----
+  advertise IpeButton enable_undo_bt, enable_latex_box_bt, enable_fifi_bt;
+  advertise IpeButton enable_interior_bt, enable_zoom_pan_bt, enable_stroke_bt;
+  advertise IpeButton enable_3_spline_bt;
+! advertise void set_ps_preamble(const char *s);
+  advertise char *get_preamble(int which DefaultsTo(0));
+  advertise char *get_command(int which);
+  advertise void show_m_ipe_configuration(void);
+***************
+*** 313,319 ****
+  // from file.C:
+  
+  advertise Boolean ps_save_picture(IpeCallback callback);
+! advertise Boolean ps_save_picture(char *fn DefaultsTo(filename),
+  				  int pagenum DefaultsTo(0),
+  				  Boolean force DefaultsTo(TRUE),
+  				  IpeCallback callback DefaultsTo(NIL));
+--- 313,319 ----
+  // from file.C:
+  
+  advertise Boolean ps_save_picture(IpeCallback callback);
+! advertise Boolean ps_save_picture(const char *fn DefaultsTo(filename),
+  				  int pagenum DefaultsTo(0),
+  				  Boolean force DefaultsTo(TRUE),
+  				  IpeCallback callback DefaultsTo(NIL));
+diff -cr ../Ipe-5.0/Ipe/colors.C Ipe/colors.C
+*** ../Ipe-5.0/Ipe/colors.C	Tue May  9 04:36:03 1995
+--- Ipe/colors.C	Wed Oct 25 15:19:03 2000
+***************
+*** 123,129 ****
+  // COLOR I/O
+  //
+  
+! void IColor::save(ostream& fh, char *save_ipe, char *save_ps)
+  // save color in file
+  {
+    if (!col)
+--- 123,129 ----
+  // COLOR I/O
+  //
+  
+! void IColor::save(ostream& fh, const char *save_ipe, const char *save_ps)
+  // save color in file
+  {
+    if (!col)
+diff -cr ../Ipe-5.0/Ipe/configuration.C Ipe/configuration.C
+*** ../Ipe-5.0/Ipe/configuration.C	Tue May  9 04:36:04 1995
+--- Ipe/configuration.C	Wed Oct 25 15:24:38 2000
+***************
+*** 52,60 ****
+  // SET and READOUT values
+  //
+  
+! advertise void set_ps_preamble(char *s)
+  {
+!   XmTextSetString(psPreamble, s);
+  }
+  
+  advertise char *get_preamble(int which DefaultsTo(0))
+--- 52,60 ----
+  // SET and READOUT values
+  //
+  
+! advertise void set_ps_preamble(const char *s)
+  {
+!   XmTextSetString(psPreamble,(char *)(s));
+  }
+  
+  advertise char *get_preamble(int which DefaultsTo(0))
+diff -cr ../Ipe-5.0/Ipe/file.C Ipe/file.C
+*** ../Ipe-5.0/Ipe/file.C	Tue May  9 04:36:04 1995
+--- Ipe/file.C	Wed Oct 25 15:12:03 2000
+***************
+*** 164,170 ****
+    return ps_save_picture(filename, 0, TRUE, callback);
+  }
+  
+! advertise Boolean ps_save_picture(char *fn DefaultsTo(filename),
+  				  int pagenum DefaultsTo(0),
+  				  Boolean force DefaultsTo(TRUE),
+  				  IpeCallback callback DefaultsTo(NIL))
+--- 164,170 ----
+    return ps_save_picture(filename, 0, TRUE, callback);
+  }
+  
+! advertise Boolean ps_save_picture(const char *fn DefaultsTo(filename),
+  				  int pagenum DefaultsTo(0),
+  				  Boolean force DefaultsTo(TRUE),
+  				  IpeCallback callback DefaultsTo(NIL))
+diff -cr ../Ipe-5.0/Ipe/iface.h Ipe/iface.h
+*** ../Ipe-5.0/Ipe/iface.h	Tue May  9 04:35:59 1995
+--- Ipe/iface.h	Wed Oct 25 15:19:34 2000
+***************
+*** 257,263 ****
+    void setcol(void);
+    void syscol(short);
+  
+!   void save(ostream&, char *ipe, char *ps);
+    void save_latex(ostream&);
+    void read(int);
+    
+--- 257,263 ----
+    void setcol(void);
+    void syscol(short);
+  
+!   void save(ostream&, const char *ipe, const char *ps);
+    void save_latex(ostream&);
+    void read(int);
+    
+diff -cr ../Ipe-5.0/Ipe/interface.C Ipe/interface.C
+*** ../Ipe-5.0/Ipe/interface.C	Tue May  9 04:36:06 1995
+--- Ipe/interface.C	Wed Oct 25 15:14:23 2000
+***************
+*** 751,757 ****
+  // Show a message in a popup window
+  //
+  
+! advertise void show_message(char *str1, char *str2)
+  // popup an (error) message window with one or two lines of text
+  // window stays, and is removed by its OK button
+  {
+--- 751,757 ----
+  // Show a message in a popup window
+  //
+  
+! advertise void show_message(const char *str1, const char *str2)
+  // popup an (error) message window with one or two lines of text
+  // window stays, and is removed by its OK button
+  {
+Only in ../Ipe-5.0/Ipe: ipe
+Only in Ipe: ipe.core
+diff -cr ../Ipe-5.0/Ipe/itypes.h Ipe/itypes.h
+*** ../Ipe-5.0/Ipe/itypes.h	Tue May  9 04:36:00 1995
+--- Ipe/itypes.h	Wed Oct 25 11:32:14 2000
+***************
+*** 52,58 ****
+  enum Object_type { TEXT, SPLINE, LINE, MARK, SPLINEGON, POLYGON, ARC,
+  		   BOX, CIRCLE, BITMAP, GROUP, SEGMENTS};
+  
+! const NUM_OBJECT_TYPES = 9;
+  
+  // ============================================================
+  
+--- 52,58 ----
+  enum Object_type { TEXT, SPLINE, LINE, MARK, SPLINEGON, POLYGON, ARC,
+  		   BOX, CIRCLE, BITMAP, GROUP, SEGMENTS};
+  
+! const int NUM_OBJECT_TYPES = 9;
+  
+  // ============================================================
+  
+diff -cr ../Ipe-5.0/Ipe/preview.C Ipe/preview.C
+*** ../Ipe-5.0/Ipe/preview.C	Sat Dec 20 11:16:43 1997
+--- Ipe/preview.C	Fri Oct 27 14:18:51 2000
+***************
+*** 215,223 ****
+  	sprintf(buf, "-g%dx%d", canvas_size.x, canvas_size.y);
+  	DEBUG(DBG_GS, "Starting Ghostscript", buf);
+  	if (app.debug & DBG_GS)
+! 	  execl(app.ghostscript_name, "gs", buf, "-r72", NIL);
+  	else
+! 	  execl(app.ghostscript_name, "gs", buf, "-r72", "-q", NIL);
+  	cerr << "could not start ghostscript\n";
+  	exit(1);
+        }
+--- 215,223 ----
+  	sprintf(buf, "-g%dx%d", canvas_size.x, canvas_size.y);
+  	DEBUG(DBG_GS, "Starting Ghostscript", buf);
+  	if (app.debug & DBG_GS)
+! 	  execl(app.ghostscript_name, "gs", buf, "-r72", "-sDEVICE=x11", "-dNOPAUSE", NIL);
+  	else
+! 	  execl(app.ghostscript_name, "gs", buf, "-r72", "-sDEVICE=x11", "-dNOPAUSE" "-q", NIL);
+  	cerr << "could not start ghostscript\n";
+  	exit(1);
+        }
+***************
+*** 228,234 ****
+        // setup stream to ghostscript
+        close(to_ghs[0]);
+  
+!       to_gs.close();
+        // catch broken pipes from now on
+        signal(SIGPIPE, sig_pipe_broken);
+        to_gs.openfd(to_ghs[1], "w");
+--- 228,235 ----
+        // setup stream to ghostscript
+        close(to_ghs[0]);
+  
+!       if (to_gs.isopen())
+! 	to_gs.close();
+        // catch broken pipes from now on
+        signal(SIGPIPE, sig_pipe_broken);
+        to_gs.openfd(to_ghs[1], "w");
+diff -cr ../Ipe-5.0/Ipe/resources.C Ipe/resources.C
+*** ../Ipe-5.0/Ipe/resources.C	Tue May  9 04:36:09 1995
+--- Ipe/resources.C	Wed Oct 25 14:21:26 2000
+***************
+*** 83,89 ****
+  
+  #define RESOURCE_COLOR(name, entry) { \
+    name, XtCColor, XmRString, sizeof(XColor), XtOffsetOf(AppData, entry),\
+!   XmRString, "black" }				      
+  
+  #define RESOURCE_BOOLEAN(name, cls, entry, value) { \
+    name, cls, XmRBoolean, sizeof(Boolean), XtOffsetOf(AppData, entry),\
+--- 83,89 ----
+  
+  #define RESOURCE_COLOR(name, entry) { \
+    name, XtCColor, XmRString, sizeof(XColor), XtOffsetOf(AppData, entry),\
+!   XmRString, XtPointer("black") }				      
+  
+  #define RESOURCE_BOOLEAN(name, cls, entry, value) { \
+    name, cls, XmRBoolean, sizeof(Boolean), XtOffsetOf(AppData, entry),\
+***************
+*** 91,101 ****
+  
+  #define RESOURCE_STRING(name, entry, value) { \
+    name, XmCString, XmRString, sizeof(char *), XtOffsetOf(AppData, entry),\
+!   XmRImmediate, value }
+  
+  #define RESOURCE_FLOAT(name, cls, entry, value) { \
+    name, cls, XtRFloat, sizeof(float), XtOffsetOf(AppData, entry),\
+!   XmRString, value }
+  
+  #define RESOURCE_INT(name, cls, entry, value) { \
+    name, cls, XmRInt, sizeof(int), XtOffsetOf(AppData, entry),\
+--- 91,101 ----
+  
+  #define RESOURCE_STRING(name, entry, value) { \
+    name, XmCString, XmRString, sizeof(char *), XtOffsetOf(AppData, entry),\
+!   XmRImmediate, XtPointer(value) }
+  
+  #define RESOURCE_FLOAT(name, cls, entry, value) { \
+    name, cls, XtRFloat, sizeof(float), XtOffsetOf(AppData, entry),\
+!   XmRString, XtPointer(value) }
+  
+  #define RESOURCE_INT(name, cls, entry, value) { \
+    name, cls, XmRInt, sizeof(int), XtOffsetOf(AppData, entry),\

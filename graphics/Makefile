@@ -89,6 +89,7 @@
     SUBDIR += imanager
     SUBDIR += imlib
     SUBDIR += imlib2
+    SUBDIR += ipe
     SUBDIR += jbigkit
     SUBDIR += jgraph
     SUBDIR += jgv

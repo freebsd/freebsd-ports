@@ -1,0 +1,16 @@
+This is a port of Ipe, Otfried Cheong's Interactive Picture Editor.
+Ipe has a very nice integration of LaTeX text and PostScript drawings.
+There are a couple of gotchas that potential installers should be aware of
+
+1) Unfortunately Ipe only works in 8 bit colour. As far as I know this is
+a Motif limitation. Starting in higher colour depth will yield a core 
+dump.
+
+2) The previewing features sensitive to which versions of teTeX and ghostscript
+are installed. They work with the versions listed in the Makefile, but 
+I had problems with earlier versions.  Ipe is quite useable without the
+preview features.
+
+David Bremner
+bremner@unb.ca
+

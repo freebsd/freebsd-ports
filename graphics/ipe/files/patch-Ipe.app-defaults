@@ -1,0 +1,91 @@
+*** ../Ipe-5.0/Ipe.app-defaults	Tue May  9 04:38:01 1995
+--- Ipe.app-defaults	Wed Nov  1 11:21:40 2000
+***************
+*** 6,13 ****
+  !
+  ! Main Geometry
+  !
+! *mainWindow.width:		17500
+! *mainWindow.height:  		17500
+  
+  *mainForm.horizontalSpacing:	120
+  *mainForm.verticalSpacing:	120
+--- 6,13 ----
+  !
+  ! Main Geometry
+  !
+! *mainWindow.width:		27500
+! *mainWindow.height:  		22500
+  
+  *mainForm.horizontalSpacing:	120
+  *mainForm.verticalSpacing:	120
+***************
+*** 341,347 ****
+  !
+  ! INSTALL: Name and path of ghostscript interpreter
+  !
+! *ghostscriptName:	/net/bin/gs
+  !
+  ! INSTALL: Command to call Dvips on DVI file
+  !
+--- 341,347 ----
+  !
+  ! INSTALL: Name and path of ghostscript interpreter
+  !
+! *ghostscriptName:	/usr/local/bin/gs
+  !
+  ! INSTALL: Command to call Dvips on DVI file
+  !
+***************
+*** 358,372 ****
+  ! INSTALL: Command to start help system
+  !
+  *helpCommand:		\
+! 	Mosaic http://www.cs.ruu.nl/people/otfried/html/Ipe/Ipe.html &
+  !
+  ! INSTALL: Directories where Ipe can find Ipe User Macros (IUMs)
+  !
+! *iumDirectories:	/packages/ipe/lib/ium:/packages/ipe/lib/contrib
+  !
+  ! INSTALL: Command to print a Postscript file
+  !
+! *printCommand:		laser -Plaspr2 %s &
+  !
+  ! Names of Screen fonts that will be used to represent text objects
+  !
+--- 358,373 ----
+  ! INSTALL: Command to start help system
+  !
+  *helpCommand:		\
+! 	netscape file://localhost/usr/X11R6/lib/ipe/doc/Ipe.html &
+! 
+  !
+  ! INSTALL: Directories where Ipe can find Ipe User Macros (IUMs)
+  !
+! *iumDirectories: /usr/local/lib/ipe/lib/ium:
+  !
+  ! INSTALL: Command to print a Postscript file
+  !
+! *printCommand:		lpr  %s 
+  !
+  ! Names of Screen fonts that will be used to represent text objects
+  !
+***************
+*** 445,452 ****
+  
+  ! Commands to call previewer on Postscript file
+  !
+! *mipePreviewCommand:	gv -a4 -magstep -2 %s &
+! *ipePreviewCommand:	gv -a4 -magstep -1 %s &
+  !
+  ! LaTeX preamble
+  !
+--- 446,453 ----
+  
+  ! Commands to call previewer on Postscript file
+  !
+! *mipePreviewCommand:	gv  -magstep -2 %s &
+! *ipePreviewCommand:	gv  -magstep -1 %s &
+  !
+  ! LaTeX preamble
+  !
