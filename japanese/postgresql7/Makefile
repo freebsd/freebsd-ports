@@ -3,7 +3,7 @@
 # Date created:		20 Aug 1998
 # Whom:			Ichiro Fukuhara <ichiro@ichiro.org>
 #
-# $Id: Makefile,v 1.1.1.1 1998/09/08 15:30:19 kuriyama Exp $
+# $Id: Makefile,v 1.2 1998/09/28 10:30:52 asami Exp $
 #
 
 DISTNAME=	postgresql-6.3.2
@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://ftp.postgresql.org/pub/ \
 		ftp://ftp.sra.co.jp/pub/cmd/postgres/6.3.2/
 
 PATCH_SITES=	ftp://ftp.sra.co.jp/pub/cmd/postgres/6.3.2/patches/FreeBSD/
-PATCHFILES=	jumbo.patch.gz
+PATCHFILES=	jumbo_981104.patch.gz
 
 MAINTAINER=	ichiro@ichiro.org
 
