@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	diveintopython
-PORTVERSION=	3.3.1
+PORTVERSION=	3.4
 CATEGORIES=	lang python
 MASTER_SITES=	http://diveintopython.org/download/
 DISTNAME=	${PORTNAME}
@@ -28,9 +28,7 @@ NO_BUILD=	YES
 DIPDIR=		${PREFIX}/share/doc/diveintopython
 DIPDLDIR=	${DIPDIR}/download
 CPIO=		cpio --quiet -pdum -R
-# Is there a way of doing this without using a temporary variable?
-VERSIONTMP=	${PORTVERSION:S|.|-|g}
-VERSIONSTR=	${VERSIONTMP:S|-|.|}
+VERSIONSTR=	${PORTVERSION}-1
 
 post-patch:
 	@ ${PERL} -pi.orig -e \
