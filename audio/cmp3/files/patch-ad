@@ -1,0 +1,15 @@
+--- cmp3volume.c.orig	Tue Mar  7 14:26:13 2000
++++ cmp3volume.c	Tue Mar  7 14:26:22 2000
+@@ -3,7 +3,7 @@
+ */    
+ 
+ #include "cmp3funcs.h"
+-#include<sys/soundcard.h>
++#include <machine/soundcard.h>
+ 
+ static int mixernum,                    /* ID number for the mixer */
+            vol;                         /* Current volume level */
+@@ -89,4 +89,4 @@
+     return;
+ }
+ 

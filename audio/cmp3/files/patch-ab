@@ -1,20 +1,11 @@
---- cmp3.h.orig	Sat Apr 10 21:49:16 1999
-+++ cmp3.h	Sat Apr 10 21:54:51 1999
+--- cmp3.h.orig	Tue Mar  7 14:25:06 2000
++++ cmp3.h	Tue Mar  7 14:25:12 2000
 @@ -1,7 +1,7 @@
  #ifndef _CMP3_H
  #define _CMP3_H
  
 -#include<curses.h>
-+#include<ncurses.h>
++#include <ncurses.h>
  
  #ifndef NCURSES_VERSION
    #error "This program requires ncurses to function"
-@@ -15,7 +15,7 @@
- #include<sys/wait.h>
- #include<sys/ioctl.h>
- #include<sys/stat.h>
--#include<sys/soundcard.h>
-+#include<machine/soundcard.h>
- #include<fcntl.h>
- #include<stdio.h>
- #include<stdlib.h>
