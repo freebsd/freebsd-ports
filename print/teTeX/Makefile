@@ -3,7 +3,7 @@
 # Date created:		30 Dec 1995
 # Whom:			Bernd Rosauer <br@netland.sub.de>
 #
-# $Id: Makefile,v 1.1.1.1 1996/02/22 10:21:51 tg Exp $
+# $Id: Makefile,v 1.2 1996/03/06 07:19:38 asami Exp $
 #
 
 DISTNAME=	teTeX-src-0.3.3
@@ -22,7 +22,7 @@ PATCHFILES=	teTeX-src-0.3.3-patch-001.gz teTeX-src-0.3.3-patch-002.gz \
 
 MAINTAINER=	tetex-freebsd@informatik.uni-hannover.de
 
-DISTDIR=	${PORTSDIR}/distfiles/teTeX
+DIST_SUBDIR=	teTeX
 EXTRACT_ONLY=	teTeX-src-0.3.3.tar.gz
 PATCH_DIST_STRIP=	-p1
 NO_CONFIGURE=	yes
