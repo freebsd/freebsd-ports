@@ -14,10 +14,11 @@ MASTER_SITES=	http://www.lyra.org/sitecopy/
 MAINTAINER=	olgeni@FreeBSD.org
 
 LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext \
-		neon.12:${PORTSDIR}/www/neon
+		xml.5:${PORTSDIR}/textproc/libxml
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CC="${CC} -I${LOCALBASE}/include" LIBS="-L${LOCALBASE}/lib -lintl"
+CONFIGURE_ARGS=	--enable-libxml
 USE_GMAKE=	yes
 
 MAN1=		sitecopy.1
