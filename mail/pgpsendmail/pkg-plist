@@ -1,0 +1,9 @@
+@cwd /usr/local
+lib/pgpsendmail
+bin/pgpdaemon
+bin/pgppipe
+bin/sendpgppass
+man/man8/pgpsendmail.8
+man/man8/pgpdaemon.8
+man/man1/pgppipe.1
+man/man1/sendpgppass.1
