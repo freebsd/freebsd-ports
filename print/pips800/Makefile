@@ -30,8 +30,6 @@ EXTRACT_SUFX=	.i386.tgz
 
 MAINTAINER=	taoka@FreeBSD.org
 COMMENT?=	Photo Image Print System for Linux --- EPSON PM-800C
-DEPRECATED=	"has failed to fetch since September 2002"
-EXPIRATION_DATE=	"August 23, 2004"
 
 RUN_DEPENDS=	${LINUXBASE}/lib/libc.so.6:${PORTSDIR}/emulators/linux_base \
 		${LINUXBASE}/usr/lib/libgtk-1.2.so.0:${PORTSDIR}/x11-toolkits/linux-gtk \
