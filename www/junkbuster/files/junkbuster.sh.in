@@ -1,5 +1,5 @@
 #!/bin/sh
-# $CVSHeader$
+# $FreeBSD$
 
 case $1 in
 start)
