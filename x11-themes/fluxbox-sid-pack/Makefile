@@ -18,9 +18,8 @@ RUN_DEPENDS=	fluxbox:${PORTSDIR}/x11-wm/fluxbox-devel
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
+NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
-
-do-build:
 
 do-install:
 .for i in aleczapka_combination.tar.bz2 aleczapka_digitalshe.tar.bz2 \
