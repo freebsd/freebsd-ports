@@ -7,6 +7,7 @@
 
 PORTNAME=	jdk
 PORTVERSION=	${JDK_VERSION}
+PORTREVISION=	1
 CATEGORIES=	java
 MASTER_SITES=	#
 PKGNAMEPREFIX=	linux-sun-
@@ -50,6 +51,7 @@ do-install:
 
 	@${ECHO_CMD} -n ">> Copying files..."
 	@${CP} -R ${WRKSRC}/* ${APP_HOME}
+	@${INSTALL_DATA} ${FILESDIR}/cacerts ${APP_HOME}/jre/lib/security/cacerts
 	@${CHOWN} -h -R ${LIBOWN}:${LIBGRP} ${APP_HOME}
 	@${ECHO_CMD} " [ DONE ]"
 
