@@ -1,5 +1,5 @@
 *** analhead.h.orig	Fri Mar 14 20:33:09 1997
---- analhead.h	Sat May  3 05:11:35 1997
+--- analhead.h	Wed May  7 23:27:03 1997
 ***************
 *** 14,25 ****
   /* the name of your organisation or WWW host. This is used for printing
@@ -27,7 +27,7 @@
      lives. You don't really need these; they are just used in this file to
      build up other filenames. Note how you can stick together names by
 ***************
-*** 30,40 ****
+*** 30,36 ****
   /* the name of the file where the domain definitions live; see README.html
      for the format of this file */
   
@@ -35,11 +35,7 @@
   /* The name of the default logfile; use "stdin" for stdin.
      Can be a list, separated by commas (but no spaces). */
   
-! #define IMAGEDIR "/images/"
-  /* URL of the directory where the images for the graphical reports live.
-     The URL can be absolute, or relative to the output page: e.g., just the
-     empty string "" for the same directory as the output page. Ends with /. */
---- 29,39 ----
+--- 29,35 ----
   /* the name of the file where the domain definitions live; see README.html
      for the format of this file */
   
@@ -47,10 +43,6 @@
   /* The name of the default logfile; use "stdin" for stdin.
      Can be a list, separated by commas (but no spaces). */
   
-! #define IMAGEDIR "/icons/"
-  /* URL of the directory where the images for the graphical reports live.
-     The URL can be absolute, or relative to the output page: e.g., just the
-     empty string "" for the same directory as the output page. Ends with /. */
 ***************
 *** 93,106 ****
   #define CACHEFILE "none"

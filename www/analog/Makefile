@@ -3,7 +3,7 @@
 # Date created:		October 21st 1996
 # Whom:			jfitz
 #
-# $Id: Makefile,v 1.7 1997/04/30 00:16:34 paul Exp $
+# $Id: Makefile,v 1.8 1997/05/02 23:16:50 ache Exp $
 #
 
 DISTNAME=       analog2.11
@@ -24,11 +24,13 @@ do-install:
 		${PREFIX}/share/doc/analog
 	install -d -o ${BINOWN} -g ${BINGRP} -m 755 \
 		${PREFIX}/lib/analog/lang
+	install -d -o nobody -g nogroup -m 755 \
+		${PREFIX}/www/data/images
 	cd ${WRKSRC} && \
 		${INSTALL_DATA} Readme.html Licence \
 		${PREFIX}/share/doc/analog
 	cd ${WRKSRC}/images && \
-		${INSTALL_DATA} * ${PREFIX}/www/icons
+		${INSTALL_DATA} * ${PREFIX}/www/data/images
 	cd ${WRKSRC}/lang && \
 		${INSTALL_DATA} * ${PREFIX}/lib/analog/lang
 	cd ${WRKSRC} && \
