@@ -1,6 +1,6 @@
---- configure.in.old	Tue Apr 28 09:04:13 1998
-+++ configure.in	Tue Apr 28 09:07:13 1998
-@@ -115,13 +115,13 @@
+--- configure.in.orig	Sun May 17 01:16:39 1998
++++ configure.in	Sun May 17 16:04:23 1998
+@@ -117,13 +117,13 @@
  
  dnl Test for libtiff
    if test -z "$LIBTIFF_LIB"; then
@@ -18,79 +18,12 @@
  	  AC_MSG_WARN(*** TIFF plug-in will not be built (TIFF header files not found) ***)),
  	AC_CHECK_LIB(tiff34, TIFFFlushData,
  	  AC_CHECK_HEADER(tiffio.h,
-@@ -303,7 +303,7 @@
+@@ -306,7 +306,7 @@
  LIBS="$gimp_save_LIBS"
  
  gimpdatadir=$datadir/gimp
--gimpplugindir=$libdir/$PACKAGE/$GIMP_MAJOR_VERSION_NUMBER.$GIMP_MINOR_VERSION_NUMBER
-+gimpplugindir=$libexecdir/$PACKAGE/$GIMP_MAJOR_VERSION_NUMBER.$GIMP_MINOR_VERSION_NUMBER
- 
- brushdata=`ls -1 $srcdir/data/brushes | grep -v Makefile`
- gradientdata=`ls -1 $srcdir/data/gradients | grep -v Makefile`
---- configure.old	Tue Apr 28 09:04:06 1998
-+++ configure	Tue Apr 28 09:09:45 1998
-@@ -2281,14 +2281,14 @@
-   fi
- 
-   if test -z "$LIBTIFF_LIB"; then
--    echo $ac_n "checking for TIFFReadScanline in -ltiff""... $ac_c" 1>&6
--echo "configure:2286: checking for TIFFReadScanline in -ltiff" >&5
--ac_lib_var=`echo tiff'_'TIFFReadScanline | sed 'y%./+-%__p_%'`
-+    echo $ac_n "checking for TIFFReadScanline in -ltiff34""... $ac_c" 1>&6
-+echo "configure:2286: checking for TIFFReadScanline in -ltiff34" >&5
-+ac_lib_var=`echo tiff34'_'TIFFReadScanline | sed 'y%./+-%__p_%'`
- if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
-   echo $ac_n "(cached) $ac_c" 1>&6
- else
-   ac_save_LIBS="$LIBS"
--LIBS="-ltiff -lm $LIBS"
-+LIBS="-ltiff34 -lm $LIBS"
- cat > conftest.$ac_ext <<EOF
- #line 2294 "configure"
- #include "confdefs.h"
-@@ -2344,7 +2344,7 @@
- fi
- if eval "test \"`echo '$ac_cv_header_'$ac_safe`\" = yes"; then
-   echo "$ac_t""yes" 1>&6
--  TIFF='tiff'; LIBTIFF_LIB='-ltiff'
-+  TIFF='tiff'; LIBTIFF_LIB='-ltiff34'
- else
-   echo "$ac_t""no" 1>&6
- echo "configure: warning: *** TIFF plug-in will not be built (TIFF header files not found) ***" 1>&2
-@@ -2352,14 +2352,14 @@
- 
- else
-   echo "$ac_t""no" 1>&6
--echo $ac_n "checking for TIFFWriteScanline in -ltiff""... $ac_c" 1>&6
--echo "configure:2357: checking for TIFFWriteScanline in -ltiff" >&5
--ac_lib_var=`echo tiff'_'TIFFWriteScanline | sed 'y%./+-%__p_%'`
-+echo $ac_n "checking for TIFFWriteScanline in -ltiff34""... $ac_c" 1>&6
-+echo "configure:2357: checking for TIFFWriteScanline in -ltiff34" >&5
-+ac_lib_var=`echo tiff34'_'TIFFWriteScanline | sed 'y%./+-%__p_%'`
- if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
-   echo $ac_n "(cached) $ac_c" 1>&6
- else
-   ac_save_LIBS="$LIBS"
--LIBS="-ltiff -ljpeg -lz -lm $LIBS"
-+LIBS="-ltiff34 -ljpeg -lz -lm $LIBS"
- cat > conftest.$ac_ext <<EOF
- #line 2365 "configure"
- #include "confdefs.h"
-@@ -2415,7 +2415,7 @@
- fi
- if eval "test \"`echo '$ac_cv_header_'$ac_safe`\" = yes"; then
-   echo "$ac_t""yes" 1>&6
--  TIFF='tiff'; LIBTIFF_LIB='-ltiff -ljpeg -lz'
-+  TIFF='tiff'; LIBTIFF_LIB='-ltiff34 -ljpeg -lz'
- else
-   echo "$ac_t""no" 1>&6
- echo "configure: warning: *** TIFF plug-in will not be built (TIFF header files not found) ***" 1>&2
-@@ -4144,7 +4144,7 @@
- LIBS="$gimp_save_LIBS"
- 
- gimpdatadir=$datadir/gimp
--gimpplugindir=$libdir/$PACKAGE/$GIMP_MAJOR_VERSION_NUMBER.$GIMP_MINOR_VERSION_NUMBER
-+gimpplugindir=$libexecdir/$PACKAGE/$GIMP_MAJOR_VERSION_NUMBER.$GIMP_MINOR_VERSION_NUMBER
+-gimpplugindir=$libdir/$PACKAGE/$GIMP_MAJOR_VERSION.$GIMP_MINOR_VERSION
+++gimpplugindir=$libexecdir/$PACKAGE/$GIMP_MAJOR_VERSION_NUMBER.$GIMP_MINOR_VERSION_NUMBER
  
  brushdata=`ls -1 $srcdir/data/brushes | grep -v Makefile`
  gradientdata=`ls -1 $srcdir/data/gradients | grep -v Makefile`
