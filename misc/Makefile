@@ -209,6 +209,7 @@
     SUBDIR += p5-Business-ISBN
     SUBDIR += p5-Business-ISIN
     SUBDIR += p5-Business-ISSN
+    SUBDIR += p5-Business-UPS
     SUBDIR += p5-Chatbot-Eliza
     SUBDIR += p5-Data-Buffer
     SUBDIR += p5-DataCash
