@@ -54,7 +54,7 @@
        break;
      case 'q':
 -      seq_start = atol (optarg);
-+      seq_start = atoll (optarg);
++      seq_start = strtoll (optarg, NULL, 10);
        break;
      case 'w':
        win_len = atoi(optarg);
