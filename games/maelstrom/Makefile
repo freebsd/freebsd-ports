@@ -24,4 +24,10 @@ GNU_CONFIGURE=		yes
 INSTALL_TARGET=		install install_gamedocs
 .endif
 
+post-install:
+	${CHOWN} root:games ${PREFIX}/bin/Maelstrom
+	${CHMOD} 2755 ${PREFIX}/bin/Maelstrom
+	${CHMOD} 664 ${PREFIX}/share/Maelstrom/Maelstrom-Scores
+	${CHOWN} root:games ${PREFIX}/share/Maelstrom/Maelstrom-Scores
+
 .include <bsd.port.mk>
