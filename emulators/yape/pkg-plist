@@ -1,0 +1,3 @@
+bin/yape
+%%PORTDOCS%%share/doc/yape/README.Linux
+%%PORTDOCS%%@dirrm share/doc/yape
