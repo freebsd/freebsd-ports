@@ -1,4 +1,3 @@
 
 You'll need to manually copy ${PREFIX}/etc/pdnsd.conf.sample to
 ${PREFIX}/etc/pdnsd.conf and modify it for your needs.
-
