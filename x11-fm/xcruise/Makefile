@@ -6,10 +6,11 @@
 # $FreeBSD$
 #
 
-PORTNAME=	xcruise
-PORTVERSION=	0.24
+PORTNAME=	xcruiser
+PORTVERSION=	0.30
 CATEGORIES=	x11-fm
-MASTER_SITES=	http://tanaka-www.cs.titech.ac.jp/%7Eeuske/prog/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	sanpei@FreeBSD.org
 COMMENT=	Navigate through a three-dimensional view of a file system

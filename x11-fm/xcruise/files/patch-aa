@@ -1,13 +1,11 @@
-$NetBSD: patch-aa,v 1.1.1.1 1999/11/26 14:25:33 minoura Exp $
-
---- Imakefile.orig	Thu Nov 25 17:56:14 1999
-+++ Imakefile	Thu Nov 25 23:43:28 1999
-@@ -11,6 +11,6 @@
+--- Imakefile.orig	Sat Mar 15 05:32:37 2003
++++ Imakefile	Sat Mar 15 05:33:50 2003
+@@ -12,7 +12,7 @@
  SYS_LIBRARIES = MathLibrary
- LOCAL_LIBRARIES = $(XLIB)
+ DEFINES = XkbClientDefines 
  
--CDEBUGFLAGS = -g
-+XCOMM CDEBUGFLAGS = -g
+-CDEBUGFLAGS = -g -Wall
++#CDEBUGFLAGS = -g -Wall
  
--ComplexProgramTarget(xcruise)
-+ComplexProgramTargetNoMan(xcruise)
+ SRCS = MainScreen.c xcruiser.c draw.c zone.c vec3.c info.c
+ OBJS = MainScreen.o xcruiser.o draw.o zone.o vec3.o info.o
