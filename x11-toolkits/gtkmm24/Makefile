@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gtkmm
-PORTVERSION=	2.2.4
+PORTVERSION=	2.2.5
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_GNOME} \
 		${MASTER_SITE_SOURCEFORGE}
@@ -20,6 +20,7 @@ COMMENT=	C++ wrapper for Gtk+, Pango, Atk, and Glib
 LIB_DEPENDS=	sigc-1.2.5:${PORTSDIR}/devel/libsigc++12
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 
+USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 LATEST_LINK=	gtkmm2
 USE_GMAKE=	yes
