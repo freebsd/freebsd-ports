@@ -1,20 +1,21 @@
---- Makefile.orig	Tue Sep 28 22:40:25 1999
-+++ Makefile	Tue Sep 28 22:41:24 1999
+diff -ru ./Makefile ../../nt-1.07.1/main/Makefile
+--- ./Makefile	Wed Nov  3 05:20:49 1999
++++ ../../nt-1.07.1/main/Makefile	Thu Nov 25 22:18:21 1999
 @@ -1,13 +1,13 @@
 -CC = gcc
 -CCPLUS = c++
-+CC ?= gcc
-+CCPLUS = ${CXX}
++CC = $(CC)
++CCPLUS = $(CXX)
  
  NLS=-DENABLE_NLS # Remove or comment this line to disable gettext
- DEST=/usr/local
+-DEST=/usr/local
++DEST=$(PREFIX)
  LOCALEDIR=$(DEST)/share/locale
 -LIBS=-lpthread
--CFLAGS=-Wall -O2 -D_REENTRANT -D_POSIX_PTHREAD_SEMANTICS
++LIBS=-pthread
+ CFLAGS=-Wall -O2 -D_REENTRANT -D_POSIX_PTHREAD_SEMANTICS
 -GTKLIBS=`gtk-config --libs`
 -GTKFLAGS=`gtk-config --cflags`
-+LIBS=-pthread
-+CFLAGS+=-Wall -D_REENTRANT -D_POSIX_PTHREAD_SEMANTICS
 +GTKLIBS=`gtk12-config --libs`
 +GTKFLAGS=`gtk12-config --cflags`
  
