@@ -22,6 +22,7 @@
     SUBDIR += macutils
     SUBDIR += mastergear
     SUBDIR += mtools
+    SUBDIR += osf1_base
     SUBDIR += pcemu
     SUBDIR += prodosemu
     SUBDIR += quasi88
