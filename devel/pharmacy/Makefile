@@ -10,7 +10,7 @@ DISTNAME=	pharmacy-0.2.1
 CATEGORIES=	devel gnome
 MASTER_SITES=	http://pharmacy.learnrespect.org/
 
-MAINTAINER=	jedgar@fxp.org
+MAINTAINER=	jedgar@FreeBSD.org
 
 LIB_DEPENDS=	gnome.3:${PORTSDIR}/x11/gnomelibs
 
