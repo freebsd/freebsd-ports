@@ -14,9 +14,9 @@ MASTER_SITES=	http://www.kvirc.org/ \
 
 MAINTAINER=	will@FreeBSD.org
 
-BUILD_DEPENDS=	gettext:${PORTSDIR}/devel/gettext \
-		qt2.3:${PORTSDIR}/x11-toolkits/qt21
+BUILD_DEPENDS=	gettext:${PORTSDIR}/devel/gettext
 
+USE_QT2=	yes
 USE_NEWGCC=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
