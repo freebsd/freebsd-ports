@@ -30,8 +30,8 @@ MOUNT_DEV?=	vn0
 .else
 MOUNT_DEV?=	fd0
 .endif
-VMWARE_VER=	2.0.2
-BUILD_VER=	621
+VMWARE_VER=	2.0.3
+BUILD_VER=	799
 
 MOUNT=		/sbin/mount
 UMOUNT=		/sbin/umount
