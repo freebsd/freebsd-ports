@@ -1,5 +1,5 @@
 %%PYTHON_SITELIBDIR%%/paint.so
-%%PORTDOCS%%share/examples/%%SHARE_SUBDIR%%/test_bar.py
-%%PORTDOCS%%share/examples/%%SHARE_SUBDIR%%/test_paint.py
-%%PORTDOCS%%share/examples/%%SHARE_SUBDIR%%/testpie.py
-%%PORTDOCS%%@dirrm share/examples/%%SHARE_SUBDIR%%
+%%PORTDOCS%%%%EXAMPLESDIR%%/test_bar.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/test_paint.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/testpie.py
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%

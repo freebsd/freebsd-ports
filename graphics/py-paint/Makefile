@@ -6,42 +6,36 @@
 #
 
 PORTNAME=	paint
-PORTVERSION=	0.2
+PORTVERSION=	0.3
 CATEGORIES=	graphics python
-MASTER_SITES=	http://object-craft.com.au/projects/paint/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	pypaint
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	pypaint-${PORTVERSION}
 
 MAINTAINER=	perky@FreeBSD.org
 COMMENT=	Simple and flexible painting adaptor to libart for Python
 
-BUILD_DEPENDS=	${PYDISTUTILS}
-LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
-		art_lgpl.5:${PORTSDIR}/graphics/libart
+LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 
-USE_FREETYPE=	yes
+USE_REINPLACE=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
-USE_REINPLACE=	yes
-PLIST_SUB+=	PYTHON_SITELIBDIR=${PYTHON_SITELIBDIR:S,^${LOCALBASE}/,,g} \
-		SHARE_SUBDIR=${SHARE_SUBDIR}
-SHARE_SUBDIR=	${PKGNAMEPREFIX}${PORTNAME}
+USE_FREETYPE=	yes
+USE_GNOME=	libartlgpl2
+NO_WRKSUBDIR=	yes
+CFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/libart-2.0 -I${LOCALBASE}/include/freetype1
+MAKE_ENV=	LDFLAGS="-L${LOCALBASE}/lib"
 
-INC_DIRS=	["${LOCALBASE}/include/freetype1","${LOCALBASE}/include", \
-		 "${X11BASE}/include","${LOCALBASE}/include/freetype1/freetype"]
-LIB_DIRS=	["${LOCALBASE}/lib","${X11BASE}/lib"]
-TMPSUFFIX=	.temp
-EXAMPLES=	test_bar.py test_paint.py testpie.py
-
-.include <bsd.port.pre.mk>
+EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
 
 post-patch:
-	${REINPLACE_CMD} -e 's@^\(.*libraries.*\)$$@\1include_dirs=${INC_DIRS},\
-		library_dirs=${LIB_DIRS},@g' ${WRKSRC}/setup.py
+	@${REINPLACE_CMD} -e "s,art_lgpl,art_lgpl_2," ${WRKSRC}/setup.py
 
 .if !defined(NOPORTDOCS)
 post-install:
-	${MKDIR} ${PREFIX}/share/examples/${SHARE_SUBDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${EXAMPLES} ${PREFIX}/share/examples/${SHARE_SUBDIR}
+	@${MKDIR} ${EXAMPLESDIR}
+	${CP} ${WRKSRC}/test* ${EXAMPLESDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
