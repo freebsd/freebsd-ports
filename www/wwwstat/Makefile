@@ -15,7 +15,7 @@ DISTNAME=	${PORTNAME}-2.0
 PATCH_SITES=	${MASTER_SITES}
 PATCHFILES=	patch-2.01.txt
 
-MAINTAINER=	demon@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Webserver logfile analysis package
 
 RUN_DEPENDS=	${LOCALBASE}/etc/apache/httpd.conf:${PORTSDIR}/www/apache13
