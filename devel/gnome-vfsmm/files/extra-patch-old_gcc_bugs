@@ -1,0 +1,342 @@
+--- ./libgnomevfs/libgnomevfsmm/directory-handle.cc.orig	Fri Jul 18 13:53:54 2003
++++ ./libgnomevfs/libgnomevfsmm/directory-handle.cc	Thu Jul 31 22:20:34 2003
+@@ -99,13 +99,13 @@
+ 
+ void DirectoryHandle::open(const Glib::ustring& text_uri, FileInfoOptions options) throw(exception)
+ {
+-  GnomeVFSResult result = gnome_vfs_directory_open(&gobj_, text_uri.c_str(), static_cast<GnomeVFSFileInfoOptions>(options) );
++  GnomeVFSResult result = gnome_vfs_directory_open(&gobj_, text_uri.c_str(), GnomeVFSFileInfoOptions(options) );
+   handle_result(result);
+ }
+ 
+ void DirectoryHandle::open(const Glib::RefPtr<const Uri>& uri, FileInfoOptions options) throw(exception)
+ {
+-  GnomeVFSResult result = gnome_vfs_directory_open_from_uri(&gobj_, const_cast<GnomeVFSURI*>(uri->gobj()), static_cast<GnomeVFSFileInfoOptions>(options) );
++  GnomeVFSResult result = gnome_vfs_directory_open_from_uri(&gobj_, const_cast<GnomeVFSURI*>(uri->gobj()), GnomeVFSFileInfoOptions(options) );
+   handle_result(result);
+ }
+ 
+@@ -134,35 +134,35 @@
+ void DirectoryHandle::visit(const Glib::ustring& uri, FileInfoOptions info_options, DirectoryVisitOptions visit_options, const SlotVisit& slot) throw(exception)
+ {
+   SignalProxy_Visit proxy(slot);
+-  GnomeVFSResult result = gnome_vfs_directory_visit(uri.c_str(), static_cast<GnomeVFSFileInfoOptions>(info_options), static_cast<GnomeVFSDirectoryVisitOptions>(visit_options), &SignalProxy_Visit::c_callback, &proxy);
++  GnomeVFSResult result = gnome_vfs_directory_visit(uri.c_str(), GnomeVFSFileInfoOptions(info_options), GnomeVFSDirectoryVisitOptions(visit_options), &SignalProxy_Visit::c_callback, &proxy);
+   handle_result(result);
+ }
+ 
+ void DirectoryHandle::visit(const Glib::RefPtr<const Uri>& uri, FileInfoOptions info_options, DirectoryVisitOptions visit_options, const SlotVisit& slot) throw(exception)
+ {
+   SignalProxy_Visit proxy(slot);
+-  GnomeVFSResult result = gnome_vfs_directory_visit_uri(const_cast<GnomeVFSURI*>(uri->gobj()), static_cast<GnomeVFSFileInfoOptions>(info_options), static_cast<GnomeVFSDirectoryVisitOptions>(visit_options), &SignalProxy_Visit::c_callback, &proxy);
++  GnomeVFSResult result = gnome_vfs_directory_visit_uri(const_cast<GnomeVFSURI*>(uri->gobj()), GnomeVFSFileInfoOptions(info_options), GnomeVFSDirectoryVisitOptions(visit_options), &SignalProxy_Visit::c_callback, &proxy);
+   handle_result(result);
+ }
+  
+ void DirectoryHandle::visit_files(const Glib::ustring& uri, const Glib::ListHandle<Glib::ustring>& file_list, FileInfoOptions info_options, DirectoryVisitOptions visit_options, const SlotVisit& slot) throw(exception)
+ {
+   SignalProxy_Visit proxy(slot);
+-  GnomeVFSResult result = gnome_vfs_directory_visit_files(uri.c_str(), file_list.data(), static_cast<GnomeVFSFileInfoOptions>(info_options), static_cast<GnomeVFSDirectoryVisitOptions>(visit_options), &SignalProxy_Visit::c_callback, &proxy);
++  GnomeVFSResult result = gnome_vfs_directory_visit_files(uri.c_str(), file_list.data(), GnomeVFSFileInfoOptions(info_options), GnomeVFSDirectoryVisitOptions(visit_options), &SignalProxy_Visit::c_callback, &proxy);
+   handle_result(result);
+ }
+ 
+ void DirectoryHandle::visit_files(const Glib::RefPtr<const Uri>& uri, const Glib::ListHandle<Glib::ustring> & file_list, FileInfoOptions info_options, DirectoryVisitOptions visit_options, const SlotVisit& slot) throw(exception)
+ {
+   SignalProxy_Visit proxy(slot);
+-   GnomeVFSResult result = gnome_vfs_directory_visit_files_at_uri(const_cast<GnomeVFSURI*>(uri->gobj()), file_list.data(), static_cast<GnomeVFSFileInfoOptions>(info_options), static_cast<GnomeVFSDirectoryVisitOptions>(visit_options), &SignalProxy_Visit::c_callback, &proxy);
++   GnomeVFSResult result = gnome_vfs_directory_visit_files_at_uri(const_cast<GnomeVFSURI*>(uri->gobj()), file_list.data(), GnomeVFSFileInfoOptions(info_options), GnomeVFSDirectoryVisitOptions(visit_options), &SignalProxy_Visit::c_callback, &proxy);
+   handle_result(result);
+ }
+ 
+ void DirectoryHandle::list_load(const Glib::ListHandle<Glib::ustring>& list, const Glib::ustring& text_uri, FileInfoOptions info_options) throw(exception)
+ {
+   GList* temp_list = list.data();
+-  GnomeVFSResult result = gnome_vfs_directory_list_load(&temp_list, text_uri.c_str(), static_cast<GnomeVFSFileInfoOptions>(info_options));
++  GnomeVFSResult result = gnome_vfs_directory_list_load(&temp_list, text_uri.c_str(), GnomeVFSFileInfoOptions(info_options));
+   handle_result(result);
+ }
+   
+--- ./libgnomevfs/libgnomevfsmm/file-info.cc.orig	Tue Jul 22 01:02:02 2003
++++ ./libgnomevfs/libgnomevfsmm/file-info.cc	Thu Jul 31 21:57:31 2003
+@@ -149,17 +149,17 @@
+ 
+ FileType FileInfo::get_type() const
+ {
+-  return static_cast<FileType>(gobj()->type);
++  return FileType(gobj()->type);
+ }
+ 
+ FilePermissions FileInfo::get_permissions() const
+ {
+-  return static_cast<FilePermissions>(gobj()->permissions);
++  return FilePermissions(gobj()->permissions);
+ }
+ 
+ FileFlags FileInfo::get_flags() const
+ {
+-  return static_cast<FileFlags>(gobj()->flags);
++  return FileFlags(gobj()->flags);
+ }
+ 
+ guint FileInfo::get_link_count() const
+--- ./libgnomevfs/libgnomevfsmm/handle.cc.orig	Fri Jul 18 13:53:54 2003
++++ ./libgnomevfs/libgnomevfsmm/handle.cc	Thu Jul 31 22:23:31 2003
+@@ -49,25 +49,25 @@
+ 
+ void Handle::open(const Glib::ustring& text_uri, OpenMode open_mode) throw(exception)
+ {
+-  GnomeVFSResult result = gnome_vfs_open(&gobj_, text_uri.c_str(), static_cast<GnomeVFSOpenMode>(open_mode));
++  GnomeVFSResult result = gnome_vfs_open(&gobj_, text_uri.c_str(), GnomeVFSOpenMode(open_mode));
+   handle_result(result);
+ }
+ 
+ void Handle::open(const Glib::RefPtr<const Uri>& uri, OpenMode open_mode) throw(exception)
+ {
+-  GnomeVFSResult result = gnome_vfs_open_uri(&gobj_, const_cast<GnomeVFSURI*>(uri->gobj()), static_cast<GnomeVFSOpenMode>(open_mode));
++  GnomeVFSResult result = gnome_vfs_open_uri(&gobj_, const_cast<GnomeVFSURI*>(uri->gobj()), GnomeVFSOpenMode(open_mode));
+   handle_result(result);
+ }
+ 
+ void Handle::create(const Glib::ustring& text_uri, OpenMode open_mode, bool exclusive, guint permissions) throw(exception)
+ {
+-  GnomeVFSResult result = gnome_vfs_create(&gobj_, text_uri.c_str(), static_cast<GnomeVFSOpenMode>(open_mode), exclusive, permissions);
++  GnomeVFSResult result = gnome_vfs_create(&gobj_, text_uri.c_str(), GnomeVFSOpenMode(open_mode), exclusive, permissions);
+   handle_result(result);
+ }
+ 
+ void Handle::create(const Glib::RefPtr<const Uri>& uri, OpenMode open_mode, bool exclusive, guint permissions) throw(exception)
+ {
+-  GnomeVFSResult result = gnome_vfs_create_uri(&gobj_, const_cast<GnomeVFSURI*>(uri->gobj()), static_cast<GnomeVFSOpenMode>(open_mode), exclusive, permissions);
++  GnomeVFSResult result = gnome_vfs_create_uri(&gobj_, const_cast<GnomeVFSURI*>(uri->gobj()), GnomeVFSOpenMode(open_mode), exclusive, permissions);
+   handle_result(result);
+ }
+ 
+@@ -95,7 +95,7 @@
+ 
+ void Handle::seek(SeekPosition whence, FileOffset offset) throw(exception)
+ {
+-  GnomeVFSResult result = gnome_vfs_seek(gobj(), static_cast<GnomeVFSSeekPosition>(whence), static_cast<GnomeVFSFileOffset>(offset));
++  GnomeVFSResult result = gnome_vfs_seek(gobj(), GnomeVFSSeekPosition(whence), GnomeVFSFileOffset(offset));
+   handle_result(result);
+ }
+ 
+@@ -112,7 +112,7 @@
+ Glib::RefPtr<FileInfo> Handle::get_file_info(const Glib::ustring& text_uri, FileInfoOptions options) throw(exception)
+ {
+   GnomeVFSFileInfo* file_info = gnome_vfs_file_info_new();
+-  GnomeVFSResult result = gnome_vfs_get_file_info(text_uri.c_str(), file_info, static_cast<GnomeVFSFileInfoOptions>(options));
++  GnomeVFSResult result = gnome_vfs_get_file_info(text_uri.c_str(), file_info, GnomeVFSFileInfoOptions(options));
+   handle_result(result);
+   return Glib::wrap(file_info);
+ }
+@@ -120,7 +120,7 @@
+ Glib::RefPtr<FileInfo> Handle::get_file_info(FileInfoOptions options) const throw(exception)
+ {
+   GnomeVFSFileInfo* file_info = gnome_vfs_file_info_new();
+-  GnomeVFSResult result = gnome_vfs_get_file_info_from_handle(const_cast<GnomeVFSHandle*>(gobj()), file_info, static_cast<GnomeVFSFileInfoOptions>(options));
++  GnomeVFSResult result = gnome_vfs_get_file_info_from_handle(const_cast<GnomeVFSHandle*>(gobj()), file_info, GnomeVFSFileInfoOptions(options));
+   handle_result(result);
+   return Glib::wrap(file_info);
+ }
+@@ -220,14 +220,14 @@
+ //static:
+ void Handle::set_file_info(const Glib::ustring& text_uri, const Glib::RefPtr<const FileInfo>& info, SetFileInfoMask mask) throw(exception)
+ {
+-  GnomeVFSResult result = gnome_vfs_set_file_info(text_uri.c_str(), const_cast<GnomeVFSFileInfo*>(info->gobj()), static_cast<GnomeVFSSetFileInfoMask>(mask) );
++  GnomeVFSResult result = gnome_vfs_set_file_info(text_uri.c_str(), const_cast<GnomeVFSFileInfo*>(info->gobj()), GnomeVFSSetFileInfoMask(mask) );
+   handle_result(result);
+ }
+ 
+ //static:
+ void Handle::set_file_info(const Glib::RefPtr<const Uri>& uri, const Glib::RefPtr<const FileInfo>& info, SetFileInfoMask mask) throw(exception)
+ {
+-  GnomeVFSResult result = gnome_vfs_set_file_info_uri(const_cast<GnomeVFSURI*>(uri->gobj()), const_cast<GnomeVFSFileInfo*>(info->gobj()), static_cast<GnomeVFSSetFileInfoMask>(mask) );
++  GnomeVFSResult result = gnome_vfs_set_file_info_uri(const_cast<GnomeVFSURI*>(uri->gobj()), const_cast<GnomeVFSFileInfo*>(info->gobj()), GnomeVFSSetFileInfoMask(mask) );
+   handle_result(result);
+ }
+ 
+--- ./libgnomevfs/libgnomevfsmm/uri.cc.orig	Tue Jul 22 01:39:50 2003
++++ ./libgnomevfs/libgnomevfsmm/uri.cc	Thu Jul 31 22:09:38 2003
+@@ -42,7 +42,7 @@
+ Glib::RefPtr<FileInfo> Uri::get_file_info(FileInfoOptions options) const throw(exception)
+ {
+   GnomeVFSFileInfo* file_info = gnome_vfs_file_info_new();
+-  GnomeVFSResult result = gnome_vfs_get_file_info_uri(const_cast<GnomeVFSURI*>(gobj()), file_info, static_cast<GnomeVFSFileInfoOptions>(options));
++  GnomeVFSResult result = gnome_vfs_get_file_info_uri(const_cast<GnomeVFSURI*>(gobj()), file_info, GnomeVFSFileInfoOptions(options));
+   handle_result(result);
+   return Glib::wrap(file_info);
+ }
+@@ -160,7 +160,7 @@
+ 
+ Glib::ustring Uri::to_string(URIHideOptions hide_options) const
+ {
+-  return Glib::convert_return_gchar_ptr_to_ustring(gnome_vfs_uri_to_string(const_cast<GnomeVFSURI*>(gobj()), static_cast<GnomeVFSURIHideOptions>(hide_options)));
++  return Glib::convert_return_gchar_ptr_to_ustring(gnome_vfs_uri_to_string(const_cast<GnomeVFSURI*>(gobj()), GnomeVFSURIHideOptions(hide_options)));
+ }
+ 
+ Glib::RefPtr<Uri> Uri::dup()
+--- ./libgnomevfs/libgnomevfsmm/mime-application.cc.orig	Thu Jul 31 22:10:37 2003
++++ ./libgnomevfs/libgnomevfsmm/mime-application.cc	Thu Jul 31 22:12:01 2003
+@@ -42,7 +42,7 @@
+   gobject_->id = g_strdup(id.c_str());
+   gobject_->name = g_strdup(name.c_str());
+   gobject_->command = g_strdup(command.c_str());
+-  gobject_->expects_uris = static_cast<GnomeVFSMimeApplicationArgumentType>(argument_type);
++  gobject_->expects_uris = GnomeVFSMimeApplicationArgumentType(argument_type);
+   gobject_->supported_uri_schemes = supported_uri_schemes.data();
+   gobject_->can_open_multiple_files = multiple_files;
+   gobject_->requires_terminal = requires_terminal;
+@@ -263,7 +263,7 @@
+ 
+ MimeApplicationArgumentType MimeApplication::get_argument_type() const
+ {
+-  return static_cast<MimeApplicationArgumentType>(gobj()->expects_uris);
++  return MimeApplicationArgumentType(gobj()->expects_uris);
+ }
+ 
+ Glib::ListHandle<Glib::ustring> MimeApplication::get_supported_uri_schemes() const
+@@ -288,7 +288,7 @@
+ 
+ void MimeApplication::set_argument_type(const MimeApplicationArgumentType& value)
+ {
+-  gobj()->expects_uris = static_cast<GnomeVFSMimeApplicationArgumentType>(value);
++  gobj()->expects_uris = GnomeVFSMimeApplicationArgumentType(value);
+ }
+ 
+ void MimeApplication::set_supported_uri_schemes(const Glib::ListHandle<Glib::ustring>& value)
+--- ./libgnomevfs/libgnomevfsmm/transfer-progress.cc.orig	Thu Jul 31 22:12:40 2003
++++ ./libgnomevfs/libgnomevfsmm/transfer-progress.cc	Thu Jul 31 22:13:38 2003
+@@ -58,17 +58,17 @@
+ 
+ ProgressStatus ProgressInfo::get_status() const
+ {
+-  return static_cast<Gnome::Vfs::ProgressStatus>(gobj()->status);
++  return Gnome::Vfs::ProgressStatus(gobj()->status);
+ }
+ 
+ Result ProgressInfo::get_vfs_status() const
+ {
+-  return static_cast<Gnome::Vfs::Result>(gobj()->vfs_status);
++  return Gnome::Vfs::Result(gobj()->vfs_status);
+ }
+ 
+ Phase ProgressInfo::get_phase() const
+ {
+-  return static_cast<Gnome::Vfs::Phase>(gobj()->phase);
++  return Gnome::Vfs::Phase(gobj()->phase);
+ }
+ 
+ Glib::ustring ProgressInfo::get_source_name() const
+--- ./libgnomevfs/libgnomevfsmm/private.cc.orig	Thu Jul 31 22:14:21 2003
++++ ./libgnomevfs/libgnomevfsmm/private.cc	Thu Jul 31 22:17:12 2003
+@@ -28,7 +28,7 @@
+ void handle_result(GnomeVFSResult result) throw(Gnome::Vfs::exception)
+ {
+   if(result != GNOME_VFS_OK)
+-    throw(Gnome::Vfs::exception(static_cast<Gnome::Vfs::Result>(result)));
++    throw(Gnome::Vfs::exception((Gnome::Vfs::Result)(result)));
+ }
+ 
+ } // namespace Vfs
+--- ./libgnomevfs/libgnomevfsmm/exception.cc.orig	Thu Jul 31 22:24:02 2003
++++ ./libgnomevfs/libgnomevfsmm/exception.cc	Thu Jul 31 22:24:29 2003
+@@ -39,7 +39,7 @@
+ 
+ Glib::ustring exception::what() const
+ {
+-  const char* error = gnome_vfs_result_to_string( static_cast<GnomeVFSResult>(gobj_) );
++  const char* error = gnome_vfs_result_to_string( GnomeVFSResult(gobj_) );
+   if(error)
+     return error;
+   else
+--- ./libgnomevfs/libgnomevfsmm/monitor-handle.cc.orig	Thu Jul 31 22:24:58 2003
++++ ./libgnomevfs/libgnomevfsmm/monitor-handle.cc	Thu Jul 31 22:26:16 2003
+@@ -72,7 +72,7 @@
+     //I guess that Glib::wrap() would normally just give us the same instance a 2nd time,
+     //but that's not available to us here because it's not a real wrapper.
+     
+-    (self->slot_)(*monitorTemp, strMonitorUriTemp, strInfoUriTemp, static_cast<Gnome::Vfs::MonitorEventType>(event_type));
++    (self->slot_)(*monitorTemp, strMonitorUriTemp, strInfoUriTemp, Gnome::Vfs::MonitorEventType(event_type));
+   }
+   catch(...)
+   {
+@@ -113,7 +113,7 @@
+   if(!proxy_) //Only one callback at a time is allowed.
+   {
+     proxy_ = new SignalProxy_Monitor(slot, this);
+-    GnomeVFSResult result = gnome_vfs_monitor_add(gobj_addr(), text_uri.c_str(), static_cast<GnomeVFSMonitorType>(type), &SignalProxy_Monitor::c_callback, proxy_);
++    GnomeVFSResult result = gnome_vfs_monitor_add(gobj_addr(), text_uri.c_str(), GnomeVFSMonitorType(type), &SignalProxy_Monitor::c_callback, proxy_);
+     handle_result(result);
+   } //TODO: else throw an exception?
+ }
+--- ./libgnomevfs/libgnomevfsmm/mime-handlers.cc.orig	Thu Jul 31 22:26:50 2003
++++ ./libgnomevfs/libgnomevfsmm/mime-handlers.cc	Thu Jul 31 22:27:46 2003
+@@ -37,7 +37,7 @@
+ 
+ MimeActionType get_default_action_type(const Glib::ustring& mime_type)
+ {
+-  return static_cast<Gnome::Vfs::MimeActionType>(gnome_vfs_mime_get_default_action_type(mime_type.c_str()));
++  return Gnome::Vfs::MimeActionType(gnome_vfs_mime_get_default_action_type(mime_type.c_str()));
+ }
+ 
+ MimeApplication get_default_application(const Glib::ustring& mime_type)
+@@ -148,7 +148,7 @@
+ 
+ void set_default_action_type(const Glib::ustring& mime_type, MimeActionType action_type) throw(exception)
+ {
+-  GnomeVFSResult result = gnome_vfs_mime_set_default_action_type(mime_type.c_str(), static_cast<GnomeVFSMimeActionType>(action_type));
++  GnomeVFSResult result = gnome_vfs_mime_set_default_action_type(mime_type.c_str(), GnomeVFSMimeActionType(action_type));
+   handle_result(result);
+ }
+ 
+--- ./libgnomevfs/libgnomevfsmm/transfer.cc.orig	Thu Jul 31 22:28:12 2003
++++ ./libgnomevfs/libgnomevfsmm/transfer.cc	Thu Jul 31 22:29:34 2003
+@@ -86,9 +86,9 @@
+   SignalProxy_Progress proxy(slot);
+   //TODO: Check the memory management with data() here.
+   GnomeVFSResult result = gnome_vfs_xfer_uri_list(source_uri_list.data(), target_uri_list.data(),
+-    static_cast<GnomeVFSXferOptions>(options),
+-    static_cast<GnomeVFSXferErrorMode>(error_mode),
+-    static_cast<GnomeVFSXferOverwriteMode>(overwrite_mode),
++    GnomeVFSXferOptions(options),
++    GnomeVFSXferErrorMode(error_mode),
++    GnomeVFSXferOverwriteMode(overwrite_mode),
+     &SignalProxy_Progress::c_callback, &proxy);
+ 
+   handle_result(result);
+@@ -102,9 +102,9 @@
+ {
+   SignalProxy_Progress proxy(slot);
+   GnomeVFSResult result = gnome_vfs_xfer_uri(source_uri->gobj(), target_uri->gobj(),
+-    static_cast<GnomeVFSXferOptions>(options),
+-    static_cast<GnomeVFSXferErrorMode>(error_mode),
+-    static_cast<GnomeVFSXferOverwriteMode>(overwrite_mode),
++    GnomeVFSXferOptions(options),
++    GnomeVFSXferErrorMode(error_mode),
++    GnomeVFSXferOverwriteMode(overwrite_mode),
+     &SignalProxy_Progress::c_callback, &proxy);
+     
+   handle_result(result);
+@@ -128,8 +128,8 @@
+ {
+   SignalProxy_Progress proxy(slot);
+   GnomeVFSResult result = gnome_vfs_xfer_delete_list(source_uri_list.data(),
+-    static_cast<GnomeVFSXferErrorMode>(error_mode),
+-    static_cast<GnomeVFSXferOptions>(options),
++    GnomeVFSXferErrorMode(error_mode),
++    GnomeVFSXferOptions(options),
+     &SignalProxy_Progress::c_callback, &proxy);
+ 
+   handle_result(result);
+--- ./examples/transfer/main.cc.orig	Thu Jul 31 22:42:09 2003
++++ ./examples/transfer/main.cc	Thu Jul 31 22:42:31 2003
+@@ -38,7 +38,7 @@
+     switch (info.get_status())
+     {
+       case Gnome::Vfs::XFER_PROGRESS_STATUS_VFSERROR:
+-        std::cout << "VFS Error: " << gnome_vfs_result_to_string(static_cast<GnomeVFSResult>(info.get_vfs_status())) << std::endl;
++        std::cout << "VFS Error: " << gnome_vfs_result_to_string(GnomeVFSResult(info.get_vfs_status())) << std::endl;
+         exit(1);
+         
+       case Gnome::Vfs::XFER_PROGRESS_STATUS_OVERWRITE:

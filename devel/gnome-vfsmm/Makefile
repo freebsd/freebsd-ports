@@ -25,4 +25,10 @@ USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--enable-static
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+EXTRA_PATCHES=  ${PATCHDIR}/extra-patch-old_gcc_bugs
+.endif
+
+.include <bsd.port.post.mk>
