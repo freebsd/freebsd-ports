@@ -22,9 +22,6 @@ INSTALL_TARGET=	site-install
 post-extract:
 	${RM} ${WRKSRC}/depend
 
-post-patch:
-	${RUBY} -i -pe 'gsub /\bstr2cstr\b/, "rb_str2cstr"' ${WRKSRC}/*.[ch]
-
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_DOCDIR}/syslog/
