@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Sun Aug  6 13:54:24 2000
++++ Makefile.in	Sun Aug  6 13:55:05 2000
+@@ -1,5 +1,8 @@
+ DEFINES+=	-DHAVE_CONFIG_H
+ CFLAGS+=	-O2 -g -Wall $(DEFINES)
++.if ${ARCH} == "alpha"
++LDFLAGS+=	-lio
++.endif
+ 
+ HEADERS=	chm.h
+ SRCS=		chm.c
