@@ -1,18 +1,21 @@
 #!/bin/sh
 #
-# $Id$
+# $Id: configure,v 1.1 1997/11/13 23:14:58 jraynard Exp $
 #
 
-echo "s!/usr/lib/news!${PREFIX}/news/lib!" > ${TMPDIR}/tmp.slurp.sed.$$
+TMPFILE=${TMPDIR:-/tmp}/tmp.slurp.sed.$$
+trap 'rm -f ${TMPFILE}' 1 2 13 15
+
+echo "s!/usr/lib/news!${PREFIX}/news/lib!" > ${TMPFILE}
 
 if [ -d /var/news ]
 then
-	echo 's!/var/spool!/var!' >> ${TMPDIR}/tmp.slurp.sed.$$	
+	echo 's!/var/spool!/var!' >> ${TMPFILE}
 fi
 
-sed -f ${TMPDIR}/tmp.slurp.sed.$$ < ${WRKSRC}/conf.h > ${WRKSRC}/conf.h.tmp
+sed -f ${TMPFILE} < ${WRKSRC}/conf.h > ${WRKSRC}/conf.h.tmp
 mv ${WRKSRC}/conf.h.tmp ${WRKSRC}/conf.h
-rm -f ${TMPDIR}/tmp.slurp.sed.$$
+rm -f ${TMPFILE}
 
 rm -f ${WRKDIR}/syslog.h
 
