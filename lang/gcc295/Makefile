@@ -29,9 +29,6 @@ LATEST_LINK=	gcc295
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "alpha" && ${OSVERSION} >= 502000
-BROKEN=		"Does not compile"
-.endif
 .if ${OSVERSION} >= 500039
 WITHOUT_CPU_CFLAGS=	yes
 .endif
