@@ -16,6 +16,7 @@ MAINTAINER=	t.vanklaveren@student.utwente.nl
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
+USE_AUTOMAKE=	yes
 WRKSRC=		${WRKDIR}/ogg
 
 ACLOCAL?=	${LOCALBASE}/bin/aclocal
