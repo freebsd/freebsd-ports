@@ -3461,6 +3461,7 @@ libpcap		src/lib/libpcap
 libradius	src/lib/libradius
 libranlib	ports/math/libranlib
 libreadline	src/gnu/lib/libreadline
+libredblack	ports/devel/libredblack
 libregex	src/gnu/lib/libregex
 librep		ports/lang/librep
 libresolv	src/lib/libresolv
