@@ -1,7 +1,7 @@
---- configure.in.orig	Tue Jul  1 09:53:01 2003
-+++ configure.in	Sun Jan 18 05:29:35 2004
-@@ -666,16 +666,16 @@
-     AC_DEFINE(MULTI_CHARSET)
+--- configure.orig	Thu Mar  3 01:05:32 2005
++++ configure	Thu Mar  3 01:07:03 2005
+@@ -9731,16 +9731,16 @@
+ 
      DEF_FONT_IDX=0
      MULTICHAR_ENCODING="eucj"
 -    FONT0="fixed"
@@ -24,5 +24,5 @@
 +    MFONT3="kanji16"
 +    MFONT4="kanji24"
    elif test "$MULTI_CHARSET_TYPE" = "euc-kr" -o "$MULTI_CHARSET_TYPE" = "euckr"; then 
-     AC_MSG_RESULT(euckr)
-     AC_DEFINE(MULTI_CHARSET)
+     echo "$ac_t""euckr" 1>&6
+     cat >> confdefs.h <<\EOF
