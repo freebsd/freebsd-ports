@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	qterm
-PORTVERSION=	0.3.2
-PORTREVISION=	1
+PORTVERSION=	0.3.5
 CATEGORIES=	chinese
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	gavin@tju.edu.cn
 COMMENT=	QTerm is a BBS client in Unix
 
 USE_QT_VER=	3
@@ -20,10 +19,22 @@ USE_GMAKE=	yes
 HAS_CONFIGURE=	yes
 USE_REINPLACE=	yes
 CONFIGURE_ARGS=	--enable-mt --with-pythondir=${LOCALBASE} --prefix=${PREFIX}
-USE_PYTHON=	-2.2
+INSTALLS_SHLIB=	yes
+
+.if !defined(WITHOUT_PYTHON)
+USE_PYTHON=	-2.3
+.endif
+
+.include <bsd.port.pre.mk>
+
+pre-everything::
+		@${ECHO_MSG} "Define WITHOUT_PYTHON to\
+			disable PYTHON scripts support."
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,<malloc.h>,<stdlib.h>,' \
 		${WRKSRC}/qterm/qtermtelnet.cpp
+	@${REINPLACE_CMD} -e 's,-lssl,-lssl -lcrypto,' \
+		${WRKSRC}/configure
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
