@@ -28,6 +28,7 @@ DISTFILES+=	fp${PORTVERSION:S/.//:C/\..*//}_${_FP_LANG}.tar.Z
 
 .include <bsd.port.pre.mk>
 
+USE_REINPLACE=	yes
 ONLY_FOR_ARCHS=	i386 alpha
 
 NO_WRKSUBDIR=	yes
@@ -49,7 +50,7 @@ do-install:
 	@(cd ${PREFIX} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${DISTDIR}/${DISTFILE} ${EXTRACT_AFTER_ARGS})
 .endfor
 .for _FP_LCID in ${FP_LCID}
-	@${PERL} -pi -e 's:IMAGESDIR:../images/:g' ${FP_DIR}/admin/${_FP_LCID}/webadmin.css
+	@${REINPLACE_CMD} -e 's:IMAGESDIR:../images/:g' ${FP_DIR}/admin/${_FP_LCID}/webadmin.css
 	@if [ ! -f ${FP_DIR}/help/${_FP_LCID}/wsgindex.htm ]; then \
 		${CP} ${FP_DIR}/help/${_FP_LCID}/wsgIndex.htm ${FP_DIR}/help/${_FP_LCID}/wsgindex.htm ; \
 	fi
