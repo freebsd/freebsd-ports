@@ -1,0 +1,317 @@
+Index: content/html/content/src/nsHTMLImageElement.cpp
+===================================================================
+RCS file: /cvsroot/mozilla/content/html/content/src/nsHTMLImageElement.cpp,v
+retrieving revision 1.121
+diff -u -r1.121 nsHTMLImageElement.cpp
+--- content/html/content/src/nsHTMLImageElement.cpp	24 Aug 2002 14:40:45 -0000	1.121
++++ content/html/content/src/nsHTMLImageElement.cpp	17 Sep 2002 04:07:27 -0000
+@@ -886,12 +886,17 @@
+ 
+         nsCOMPtr<nsIDocument> doc;
+         nsCOMPtr<nsILoadGroup> loadGroup;
++        nsCOMPtr<nsIURI> documentURI;
+         shell->GetDocument(getter_AddRefs(doc));
+         if (doc) {
+           doc->GetDocumentLoadGroup(getter_AddRefs(loadGroup));
++
++          // Get the documment URI for the referrer.
++          doc->GetDocumentURL(getter_AddRefs(documentURI));
+         }
+ 
+-        il->LoadImage(uri, nsnull, loadGroup, this, context, nsIRequest::LOAD_NORMAL,
++        // XXX: initialDocumentURI is NULL!
++        il->LoadImage(uri, nsnull, documentURI, loadGroup, this, context, nsIRequest::LOAD_NORMAL,
+                       nsnull, nsnull, getter_AddRefs(mRequest));
+       }
+     }
+Index: content/xbl/src/nsXBLResourceLoader.cpp
+===================================================================
+RCS file: /cvsroot/mozilla/content/xbl/src/nsXBLResourceLoader.cpp,v
+retrieving revision 1.7
+diff -u -r1.7 nsXBLResourceLoader.cpp
+--- content/xbl/src/nsXBLResourceLoader.cpp	7 Sep 2002 17:08:43 -0000	1.7
++++ content/xbl/src/nsXBLResourceLoader.cpp	17 Sep 2002 04:07:29 -0000
+@@ -127,9 +127,11 @@
+         if (!il) continue;
+       }
+ 
+-      // Now kick off the image load
++      // Now kick off the image load...
++      // Passing NULL for pretty much everything -- cause we don't care!
++      // XXX: initialDocumentURI is NULL! 
+       nsCOMPtr<imgIRequest> req;
+-      il->LoadImage(url, nsnull, nsnull, nsnull, nsnull, nsIRequest::LOAD_BACKGROUND, nsnull, nsnull, getter_AddRefs(req));
++      il->LoadImage(url, nsnull, nsnull, nsnull, nsnull, nsnull, nsIRequest::LOAD_BACKGROUND, nsnull, nsnull, getter_AddRefs(req));
+     }
+     else if (curr->mType == nsXBLAtoms::stylesheet) {
+       if (!cssLoader) {
+Index: layout/base/src/nsImageLoader.cpp
+===================================================================
+RCS file: /cvsroot/mozilla/layout/base/src/nsImageLoader.cpp,v
+retrieving revision 3.11
+diff -u -r3.11 nsImageLoader.cpp
+--- layout/base/src/nsImageLoader.cpp	26 Apr 2002 20:44:37 -0000	3.11
++++ layout/base/src/nsImageLoader.cpp	17 Sep 2002 04:07:48 -0000
+@@ -92,8 +92,6 @@
+     return NS_ERROR_FAILURE;
+ 
+   nsCOMPtr<nsILoadGroup> loadGroup;
+-  nsCOMPtr<nsIURI> uri;
+-  nsCOMPtr<nsIURI> baseURI;
+ 
+   nsCOMPtr<nsIPresShell> shell;
+   nsresult rv = mPresContext->GetShell(getter_AddRefs(shell));
+@@ -106,6 +104,10 @@
+   // Get the document's loadgroup
+   doc->GetDocumentLoadGroup(getter_AddRefs(loadGroup));
+ 
++  // Get the document URI (for the referrer).
++  nsCOMPtr<nsIURI> documentURI;
++  doc->GetDocumentURL(getter_AddRefs(documentURI));
++
+   if (mRequest) {
+     nsCOMPtr<nsIURI> oldURI;
+     mRequest->GetURI(getter_AddRefs(oldURI));
+@@ -119,7 +121,8 @@
+   nsCOMPtr<imgILoader> il(do_GetService("@mozilla.org/image/loader;1", &rv));
+   if (NS_FAILED(rv)) return rv;
+ 
+-  return il->LoadImage(aURI, nsnull, loadGroup, NS_STATIC_CAST(imgIDecoderObserver *, this), 
++  // XXX: initialDocumentURI is NULL!
++  return il->LoadImage(aURI, nsnull, documentURI, loadGroup, NS_STATIC_CAST(imgIDecoderObserver *, this), 
+                        nsnull, nsIRequest::LOAD_BACKGROUND, nsnull, nsnull, getter_AddRefs(mRequest));
+ }
+ 
+Index: layout/html/base/src/nsBulletFrame.cpp
+===================================================================
+RCS file: /cvsroot/mozilla/layout/html/base/src/nsBulletFrame.cpp,v
+retrieving revision 1.79
+diff -u -r1.79 nsBulletFrame.cpp
+--- layout/html/base/src/nsBulletFrame.cpp	12 Jul 2002 20:46:19 -0000	1.79
++++ layout/html/base/src/nsBulletFrame.cpp	17 Sep 2002 04:07:49 -0000
+@@ -134,6 +134,16 @@
+     nsCOMPtr<nsIURI> imgURI;
+     NS_NewURI(getter_AddRefs(imgURI), myList->mListStyleImage, nsnull, baseURI);
+ 
++    // Get the document URI for the referrer...
++    nsCOMPtr<nsIURI> documentURI;
++    nsCOMPtr<nsIDocument> doc;
++    if (mContent) {
++      (void) mContent->GetDocument(*getter_AddRefs(doc));
++      if (doc) {
++        doc->GetDocumentURL(getter_AddRefs(documentURI));
++      }
++    }
++
+     if (!mListener) {
+       nsBulletListener *listener;
+       NS_NEWXPCOM(listener, nsBulletListener);
+@@ -144,7 +154,8 @@
+       NS_RELEASE(listener);
+     }
+ 
+-    il->LoadImage(imgURI, nsnull, loadGroup, mListener, aPresContext, nsIRequest::LOAD_NORMAL, nsnull, nsnull, getter_AddRefs(mImageRequest));
++    // XXX: initialDocumentURI is NULL !
++    il->LoadImage(imgURI, nsnull, documentURI, loadGroup, mListener, aPresContext, nsIRequest::LOAD_NORMAL, nsnull, nsnull, getter_AddRefs(mImageRequest));
+   }
+ 
+   return NS_OK;
+@@ -1529,7 +1540,19 @@
+         nsCOMPtr<nsILoadGroup> loadGroup;
+         GetLoadGroup(aPresContext, getter_AddRefs(loadGroup));
+ 
+-        il->LoadImage(newURI, nsnull, loadGroup, mListener, aPresContext, nsIRequest::LOAD_NORMAL, nsnull, nsnull, getter_AddRefs(mImageRequest));
++        // Get the document URI for the referrer...
++        nsCOMPtr<nsIURI> documentURI;
++        nsCOMPtr<nsIDocument> doc;
++        if (mContent) {
++          (void) mContent->GetDocument(*getter_AddRefs(doc));
++          if (doc) {
++            doc->GetDocumentURL(getter_AddRefs(documentURI));
++          }
++        }
++
++
++        // XXX: initialDocumentURI is NULL !
++        il->LoadImage(newURI, nsnull, documentURI, loadGroup, mListener, aPresContext, nsIRequest::LOAD_NORMAL, nsnull, nsnull, getter_AddRefs(mImageRequest));
+       }
+     }
+   }
+Index: layout/html/base/src/nsImageFrame.cpp
+===================================================================
+RCS file: /cvsroot/mozilla/layout/html/base/src/nsImageFrame.cpp,v
+retrieving revision 1.248
+diff -u -r1.248 nsImageFrame.cpp
+--- layout/html/base/src/nsImageFrame.cpp	3 Sep 2002 22:49:51 -0000	1.248
++++ layout/html/base/src/nsImageFrame.cpp	17 Sep 2002 04:07:49 -0000
+@@ -2001,8 +2001,19 @@
+ 
+   nsCOMPtr<nsIURI> baseURI;
+   rv = aPresContext->GetBaseURL(getter_AddRefs(baseURI));
++
++  // Get the document URI for the referrer...
++  nsCOMPtr<nsIURI> documentURI;
++  nsCOMPtr<nsIDocument> doc;
++  if (mContent) {
++    (void) mContent->GetDocument(*getter_AddRefs(doc));
++    if (doc) {
++      doc->GetDocumentURL(getter_AddRefs(documentURI));
++    }
++  }
++
+   nsCOMPtr<imgIRequest> tempRequest;
+-  return il->LoadImage(uri, baseURI, loadGroup, mListener, aPresContext, loadFlags, nsnull, aRequest, getter_AddRefs(tempRequest));
++  return il->LoadImage(uri, baseURI, documentURI, loadGroup, mListener, aPresContext, loadFlags, nsnull, aRequest, getter_AddRefs(tempRequest));
+ }
+ 
+ #define INTERNAL_GOPHER_LENGTH 16 /* "internal-gopher-" length */
+Index: layout/xul/base/src/nsImageBoxFrame.cpp
+===================================================================
+RCS file: /cvsroot/mozilla/layout/xul/base/src/nsImageBoxFrame.cpp,v
+retrieving revision 1.39
+diff -u -r1.39 nsImageBoxFrame.cpp
+--- layout/xul/base/src/nsImageBoxFrame.cpp	23 May 2002 00:00:32 -0000	1.39
++++ layout/xul/base/src/nsImageBoxFrame.cpp	17 Sep 2002 04:07:54 -0000
+@@ -456,7 +456,18 @@
+   nsCOMPtr<nsILoadGroup> loadGroup;
+   GetLoadGroup(aPresContext, getter_AddRefs(loadGroup));
+ 
+-  il->LoadImage(srcURI, nsnull, loadGroup, mListener, aPresContext, mLoadFlags, nsnull, nsnull, getter_AddRefs(mImageRequest));
++  // Get the document URI for the referrer...
++  nsCOMPtr<nsIURI> documentURI;
++  nsCOMPtr<nsIDocument> doc;
++  if (mContent) {
++    (void) mContent->GetDocument(*getter_AddRefs(doc));
++    if (doc) {
++      doc->GetDocumentURL(getter_AddRefs(documentURI));
++    }
++  }
++
++  // XXX: initialDocumentURI is NULL!
++  il->LoadImage(srcURI, nsnull, documentURI, loadGroup, mListener, aPresContext, mLoadFlags, nsnull, nsnull, getter_AddRefs(mImageRequest));
+ 
+   aResize = PR_TRUE;
+ }
+Index: layout/xul/base/src/tree/src/nsTreeBodyFrame.cpp
+===================================================================
+RCS file: /cvsroot/mozilla/layout/xul/base/src/tree/src/nsTreeBodyFrame.cpp,v
+retrieving revision 1.136
+diff -u -r1.136 nsTreeBodyFrame.cpp
+--- layout/xul/base/src/tree/src/nsTreeBodyFrame.cpp	7 Sep 2002 05:37:42 -0000	1.136
++++ layout/xul/base/src/tree/src/nsTreeBodyFrame.cpp	17 Sep 2002 04:07:54 -0000
+@@ -1862,8 +1862,14 @@
+ 
+     nsresult rv;
+     nsCOMPtr<imgILoader> il(do_GetService("@mozilla.org/image/loader;1", &rv));
++
++    // Get the documment URI for the referrer.
++    nsCOMPtr<nsIURI> documentURI;
++    doc->GetDocumentURL(getter_AddRefs(documentURI));
++
+     mImageGuard = PR_TRUE;
+-    rv = il->LoadImage(srcURI, nsnull, nsnull, listener, mPresContext, nsIRequest::LOAD_NORMAL, nsnull, nsnull, getter_AddRefs(imageRequest));
++    // XXX: initialDocumentURI is NULL!
++    rv = il->LoadImage(srcURI, nsnull, documentURI, nsnull, listener, mPresContext, nsIRequest::LOAD_NORMAL, nsnull, nsnull, getter_AddRefs(imageRequest));
+     mImageGuard = PR_FALSE;
+ 
+     // In a case it was already cached.
+Index: modules/libpr0n/public/imgILoader.idl
+===================================================================
+RCS file: /cvsroot/mozilla/modules/libpr0n/public/imgILoader.idl,v
+retrieving revision 1.8
+diff -u -r1.8 imgILoader.idl
+--- modules/libpr0n/public/imgILoader.idl	23 Mar 2002 13:21:27 -0000	1.8
++++ modules/libpr0n/public/imgILoader.idl	17 Sep 2002 04:08:04 -0000
+@@ -48,6 +48,8 @@
+   /**
+    * Start the load and decode of an image.
+    * @param aURI the URI to load
++   * @param aInitialDocumentURI the URI that 'initiated' the load -- used for 3rd party cookie blocking
++   * @param aReferrerURI the 'referring' URI
+    * @param aLoadGroup Loadgroup to put the image load into
+    * @param aObserver the observer
+    * @param aCX some random data
+@@ -57,9 +59,14 @@
+    * @param aRequest A newly created, unused imgIRequest object or NULL for one to
+                      be created for you.
+    */
+-  imgIRequest loadImage(in nsIURI aURI, in nsIURI parentURL, in nsILoadGroup aLoadGroup,
+-                        in imgIDecoderObserver aObserver, in nsISupports aCX,
+-                        in nsLoadFlags aLoadFlags, in nsISupports cacheKey,
++  imgIRequest loadImage(in nsIURI aURI,
++                        in nsIURI aInitialDocumentURL,
++                        in nsIURI aReferrerURI,
++                        in nsILoadGroup aLoadGroup,
++                        in imgIDecoderObserver aObserver,
++                        in nsISupports aCX,
++                        in nsLoadFlags aLoadFlags,
++                        in nsISupports cacheKey,
+                         in imgIRequest aRequest);
+ 
+   /**
+Index: modules/libpr0n/src/imgLoader.cpp
+===================================================================
+RCS file: /cvsroot/mozilla/modules/libpr0n/src/imgLoader.cpp,v
+retrieving revision 1.50
+diff -u -r1.50 imgLoader.cpp
+--- modules/libpr0n/src/imgLoader.cpp	12 Sep 2002 08:42:39 -0000	1.50
++++ modules/libpr0n/src/imgLoader.cpp	17 Sep 2002 04:08:04 -0000
+@@ -112,11 +112,18 @@
+   return 1;
+ }
+ 
+-/* imgIRequest loadImage (in nsIURI aURI, in nsIURI parentURI, in nsILoadGroup aLoadGroup, in imgIDecoderObserver aObserver, in nsISupports aCX, in nsLoadFlags aLoadFlags, in nsISupports cacheKey, in imgIRequest aRequest); */
++/* imgIRequest loadImage (in nsIURI aURI, in nsIURI initialDocumentURI, in nsILoadGroup aLoadGroup, in imgIDecoderObserver aObserver, in nsISupports aCX, in nsLoadFlags aLoadFlags, in nsISupports cacheKey, in imgIRequest aRequest); */
+ 
+-NS_IMETHODIMP imgLoader::LoadImage(nsIURI *aURI, nsIURI *parentURI, nsILoadGroup *aLoadGroup,
+-                                   imgIDecoderObserver *aObserver, nsISupports *aCX, nsLoadFlags aLoadFlags,
+-                                   nsISupports *cacheKey, imgIRequest *aRequest, imgIRequest **_retval)
++NS_IMETHODIMP imgLoader::LoadImage(nsIURI *aURI, 
++                                   nsIURI *initialDocumentURI,
++                                   nsIURI *referrerURI,
++                                   nsILoadGroup *aLoadGroup,
++                                   imgIDecoderObserver *aObserver,
++                                   nsISupports *aCX,
++                                   nsLoadFlags aLoadFlags,
++                                   nsISupports *cacheKey,
++                                   imgIRequest *aRequest,
++                                   imgIRequest **_retval)
+ {
+   NS_ASSERTION(aURI, "imgLoader::LoadImage -- NULL URI pointer");
+ 
+@@ -301,7 +308,7 @@
+ 
+     nsCOMPtr<nsIHttpChannel> newHttpChannel = do_QueryInterface(newChannel);
+     if (newHttpChannel) {
+-      newHttpChannel->SetDocumentURI(parentURI);
++      newHttpChannel->SetDocumentURI(initialDocumentURI);
+     }
+ 
+     if (aLoadGroup) {
+@@ -348,24 +355,8 @@
+       nsCOMPtr<nsIHttpChannel> httpChannel(do_QueryInterface(newChannel));
+ 
+       if (httpChannel) {
+-        nsresult rv;
+-        // Get the defloadRequest from the loadgroup
+-        nsCOMPtr<nsIRequest> defLoadRequest;
+-        rv = aLoadGroup->GetDefaultLoadRequest(getter_AddRefs(defLoadRequest));
+-
+-        if (NS_SUCCEEDED(rv) && defLoadRequest) {
+-          nsCOMPtr<nsIChannel> reqChannel(do_QueryInterface(defLoadRequest));
+-
+-          if (reqChannel) {
+-            // Get the referrer from the loadchannel
+-            nsCOMPtr<nsIURI> referrer;
+-            rv = reqChannel->GetURI(getter_AddRefs(referrer));
+-            if (NS_SUCCEEDED(rv)) {
+-              // Set the referrer
+-              httpChannel->SetReferrer(referrer, nsIHttpChannel::REFERRER_INLINES);
+-            }
+-          }   
+-        }
++        // Set the referrer
++        httpChannel->SetReferrer(referrerURI, nsIHttpChannel::REFERRER_INLINES);
+       }
+     }
+ 
