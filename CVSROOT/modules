@@ -446,6 +446,7 @@ battlestar	src/games/battlestar
 battstat-applet ports/sysutils/battstat-applet
 baudline	ports/audio/baudline
 bayonne		ports/comms/bayonne
+bb		ports/misc/bb
 bbapm		ports/x11-wm/bbapm
 bbbike		ports/german/BBBike
 bbconf		ports/x11-wm/bbconf
