@@ -11,7 +11,7 @@
 
 PORTNAME=	autoconf213
 PORTVERSION=	2.13.000227
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEWARE} ${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	binutils autoconf
@@ -54,7 +54,5 @@ post-install:
 .endfor
 	install-info ${PREFIX}/info/autoconf213.info \
 		${PREFIX}/info/dir
-	# temporary
-	${LN} -s . ${PREFIX}/share/autoconf213/autoconf
 
 .include <bsd.port.mk>

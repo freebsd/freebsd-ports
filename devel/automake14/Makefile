@@ -7,7 +7,7 @@
 
 PORTNAME=	automake14
 PORTVERSION=	1.4.5
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	automake
@@ -46,9 +46,6 @@ pre-install:
 	${MKDIR} ${PREFIX}/share/automake14
 	${MKDIR} ${PREFIX}/share/aclocal14
 	${MKDIR} ${PREFIX}/libexec/automake14
-	# temporary
-	cd ${PREFIX}/share/automake14; ln -s . automake
-	cd ${PREFIX}/share/automake14; ln -s ../aclocal14 aclocal
 
 post-install:
 .for i in aclocal automake
