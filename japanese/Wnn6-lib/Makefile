@@ -13,6 +13,8 @@ DISTNAME=	Wnn6-SDK-sources
 
 MAINTAINER=	taoka@FreeBSD.org
 
+.include <bsd.port.pre.mk>
+
 .if ${XFREE86_VERSION} == 3
 BUILD_DEPENDS=	imake:${PORTSDIR}/devel/imake
 .else
@@ -26,9 +28,7 @@ INSTALLS_SHLIB=	yes
 
 # Warning: we cannot use USE_IMAKE.
 do-build:
-	( cd $(WRKSRC) ; make World -f Makefile.ini )
-
-.include <bsd.port.pre.mk>
+	( cd ${WRKSRC} ; make World -f Makefile.ini )
 
 post-install:
 .if ${PORTOBJFORMAT} == "aout"
