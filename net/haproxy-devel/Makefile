@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	haproxy
-PORTVERSION=	1.1.28
+PORTVERSION=	1.1.29
 CATEGORIES=	net www
 MASTER_SITES=	http://w.ods.org/tools/haproxy/src/ \
 		http://w.ods.org/tools/haproxy/src/old/
@@ -32,7 +32,7 @@ CFLAGS+=	-DUSE_PCRE -I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -lpcreposix -lpcre
 .endif
 
-pre-fetch:
+pre-everything::
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "Available options:"
 	@${ECHO_MSG} "WITH_PCRE:            Use pcre regex engine"
