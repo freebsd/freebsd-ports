@@ -1,0 +1,9 @@
+bin/nickle
+share/nickle/arc4.5c
+share/nickle/builtin.5c
+share/nickle/command.5c
+share/nickle/math.5c
+share/nickle/mutex.5c
+share/nickle/prng.5c
+share/nickle/scanf.5c
+@dirrm share/nickle

@@ -72,6 +72,7 @@
     SUBDIR += moscow_ml
     SUBDIR += mozart
     SUBDIR += nawk
+    SUBDIR += nickle
     SUBDIR += nqc
     SUBDIR += o2c
     SUBDIR += objc
