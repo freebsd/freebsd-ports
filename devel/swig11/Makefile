@@ -37,6 +37,8 @@ ALL_TARGET=	all runtime
 MAN1=		swig.1
 PLIST_SUB=	VER="${VER}"
 
+NO_LATEST_LINK=	yes
+
 post-install:
 	${LN} -f ${PREFIX}/bin/swig ${PREFIX}/bin/swig${VER}
 
