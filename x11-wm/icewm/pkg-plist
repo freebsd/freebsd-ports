@@ -318,6 +318,7 @@ share/icewm/themes/win95/restore.xpm
 share/icewm/toolbar
 share/icewm/winoptions
 share/locale/be/LC_MESSAGES/icewm.mo
+share/locale/bg/LC_MESSAGES/icewm.mo
 share/locale/ca/LC_MESSAGES/icewm.mo
 share/locale/cs/LC_MESSAGES/icewm.mo
 share/locale/de/LC_MESSAGES/icewm.mo
