@@ -1,0 +1,13 @@
+--- Makefile.orig	Sun Oct 19 03:06:42 2003
++++ Makefile	Sun Oct 19 03:06:56 2003
+@@ -19,7 +19,9 @@
+ 
+ BINDIR=/usr/local/bin
+ LIBDIR=/usr/local/lib/recjis
+-CFLAGS=-O -DLIBDIR=\"$(LIBDIR)\"
++CC?=cc
++CFLAGS?= -O -pipe
++CFLAGS+= -DLIBDIR=\"$(LIBDIR)\"
+ 
+ prog: rjis rujis rsjis dejis
+ 
