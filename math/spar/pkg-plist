@@ -1,11 +1,13 @@
 bin/spar
 include/spar/sl.h
+include/spar/sl_application.h
 include/spar/sl_bool.h
 include/spar/sl_conf.h
 include/spar/sl_complex.h
 include/spar/sl_constant.h
 include/spar/sl_errno.h
 include/spar/sl_error.h
+include/spar/sl_formula.h
 include/spar/sl_function.h
 include/spar/sl_init.h
 include/spar/sl_io.h
@@ -19,6 +21,7 @@ include/spar/sl_parser.h
 include/spar/sl_poly.h
 include/spar/sl_sort.h
 include/spar/sl_table.h
+include/spar/sl_test.h
 include/spar/sl_util.h
 include/spar/sl_variable.h
 include/spar/sl_vector.h
@@ -32,6 +35,12 @@ lib/spar/solve_c.so
 lib/spar/solve_q.a
 lib/spar/solve_q.la
 lib/spar/solve_q.so
+lib/spar/zsolve_c.a
+lib/spar/zsolve_c.la
+lib/spar/zsolve_c.so
+lib/spar/zsolve_q.a
+lib/spar/zsolve_q.la
+lib/spar/zsolve_q.so
 share/spar/modules_config
 @dirrm include/spar
 @dirrm lib/spar
