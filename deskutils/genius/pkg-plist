@@ -1,0 +1,22 @@
+bin/genius
+bin/gnome-genius
+share/doc/genius/AUTHORS
+share/doc/genius/COPYING
+share/doc/genius/ChangeLog
+share/doc/genius/NEWS
+share/doc/genius/README
+share/doc/genius/TODO
+share/gnome/apps/Utilities/gnome-genius.desktop
+share/gnome/genius/lib.gel
+share/gnome/genius/lib.cgel
+share/locale/cs/LC_MESSAGES/genius.mo
+share/locale/de/LC_MESSAGES/genius.mo
+share/locale/es/LC_MESSAGES/genius.mo
+share/locale/fr/LC_MESSAGES/genius.mo
+share/locale/ga/LC_MESSAGES/genius.mo
+share/locale/it/LC_MESSAGES/genius.mo
+share/locale/ko/LC_MESSAGES/genius.mo
+share/locale/no/LC_MESSAGES/genius.mo
+share/locale/pt/LC_MESSAGES/genius.mo
+@dirrm share/doc/genius
+@dirrm share/gnome/genius
