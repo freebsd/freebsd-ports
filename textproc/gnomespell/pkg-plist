@@ -8,7 +8,10 @@ share/locale/fr/LC_MESSAGES/gnome-spell.mo
 share/locale/lt/LC_MESSAGES/gnome-spell.mo
 share/locale/no/LC_MESSAGES/gnome-spell.mo
 share/locale/pl/LC_MESSAGES/gnome-spell.mo
+share/locale/pt_BR/LC_MESSAGES/gnome-spell.mo
+share/locale/ru/LC_MESSAGES/gnome-spell.mo
 share/locale/sk/LC_MESSAGES/gnome-spell.mo
 share/locale/sv/LC_MESSAGES/gnome-spell.mo
+share/locale/tr/LC_MESSAGES/gnome-spell.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-spell.mo
 @dirrm share/gnome/gnome-spell
