@@ -3,7 +3,7 @@
 # Date created:		25 Aug 1995
 # Whom:			Alain Kalker <A.C.P.M.Kalker@student.utwente.nl>
 #
-# $Id: Makefile,v 1.10 1998/11/11 05:37:30 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	slirp-1.0c

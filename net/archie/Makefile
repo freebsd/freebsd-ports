@@ -3,7 +3,7 @@
 # Date created:		20 Oct 1994
 # Whom:			torstenb
 #
-# $Id: Makefile,v 1.6 1996/11/18 11:34:17 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	c-archie-1.4.1-FIXED

@@ -3,7 +3,7 @@
 # Date created:		14 May 1998
 # Whom:			Hans Petter Bieker <hanspb@persbraten.vgs.no>
 #
-# $Id: Makefile,v 1.2 1999/04/07 17:45:26 jseger Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	ktelnet-0.61

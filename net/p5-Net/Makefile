@@ -3,7 +3,7 @@
 # Date created:				September 30th 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-# $Id: Makefile,v 1.20 1998/09/15 21:31:49 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       libnet-1.0606

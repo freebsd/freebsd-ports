@@ -4,7 +4,7 @@
 # Date created:			  Tue Mar 25, 1997
 # Whom:				  David O'Brien (obrien@FreeBSD.org)
 #
-# $Id: Makefile,v 1.1.1.1 1997/03/25 09:58:02 obrien Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	part01

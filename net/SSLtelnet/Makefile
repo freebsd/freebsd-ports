@@ -3,7 +3,7 @@
 # Date created:		Mar 29, 1998
 # Whom:			issei@jp.FreeBSD.ORG
 #
-# $Id: Makefile,v 1.9 1999/08/23 04:23:52 mharo Exp $
+# $FreeBSD$
 
 DISTNAME=		SSLtelnet-0.13
 CATEGORIES=		net security

@@ -3,7 +3,7 @@
 # Date created:		4 Mar 1997
 # Whom:			Igor Vinokurov <igor@zynaps.ru>
 #
-# $Id: Makefile,v 1.5 1999/08/22 18:59:32 mharo Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	tac_plus.2.1

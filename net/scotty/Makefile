@@ -3,7 +3,7 @@
 # Date created:		18 February 1995
 # Whom:			Gennady Sorokopud <gena@netvisions.net.il>
 #
-# $Id: Makefile,v 1.35 1999/02/03 20:19:11 billf Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	scotty-2.1.9

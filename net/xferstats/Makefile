@@ -3,7 +3,7 @@
 # Date created:         19 February 1999
 # Whom:                 Dima Sivachenko
 #
-# $Id: Makefile,v 1.3 1999/03/08 16:57:45 foxfair Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xferstats-2.14

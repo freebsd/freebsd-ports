@@ -3,7 +3,7 @@
 # Date created:		20 February 1997
 # Whom:			chris@vader.org
 #
-# $Id: Makefile,v 1.4 1999/06/05 20:11:35 mharo Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	traceroute_${RELEASEDATE}

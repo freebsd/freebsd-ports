@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.293 1999/08/27 22:37:29 jim Exp $
+# $FreeBSD$
 #
 
     SUBDIR += SSLtelnet

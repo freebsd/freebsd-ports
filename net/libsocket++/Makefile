@@ -5,7 +5,7 @@
 # Whom:				  Narvi <narvi@haldjas.folklore.ee>
 #				  David O'Brien (obrien@FreeBSD.org)
 #
-# $Id: Makefile,v 1.5 1998/11/22 02:01:55 kuriyama Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	socket++-1.10

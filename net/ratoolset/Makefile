@@ -3,7 +3,7 @@
 # Date created:				May 4th 1997
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-# $Id: Makefile,v 1.6 1998/08/07 23:56:44 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	RAToolSet-3.5.2

@@ -3,7 +3,7 @@
 # Date created:			16 Aug 1999
 # Whom:				Patrick Bihan-Faou <patrick@mindstep.com>
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=	tunip

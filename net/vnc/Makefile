@@ -3,7 +3,7 @@
 # Date created:		24 February 1998
 # Whom:			msmith
 #
-# $Id: Makefile,v 1.10 1999/02/18 16:05:47 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       	vnc-3.3.2r3_unixsrc

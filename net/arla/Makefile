@@ -3,7 +3,7 @@
 # Date created:			09 Sep 1998
 # Whom:				Peter Hawkins <thepish@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.4 1998/12/01 08:31:44 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	arla-0.9

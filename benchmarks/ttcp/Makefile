@@ -3,7 +3,7 @@
 # Date created:			Tue Jun  1 22:58:13 PDT 1999
 # Whom:				mharo@FreeBSD.org
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=	ttcp-1.12

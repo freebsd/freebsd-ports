@@ -3,7 +3,7 @@
 # Date created:        20 July 1999
 # Whom:                Sergey Kosyakov <ks@itp.ac.ru>
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=	tund-0.11

@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# $Id: configure,v 1.4 1998/05/18 21:52:07 andreas Exp $
+# $FreeBSD$
 
 cd $WRKSRC || exit 1
 

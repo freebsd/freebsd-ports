@@ -3,7 +3,7 @@
 # Date created:				12 Jun 1999
 # Whom:					alexp
 #
-# $Id: Makefile,v 1.1.1.1 1999/06/17 10:00:27 jmg Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       domtools${VERSION}

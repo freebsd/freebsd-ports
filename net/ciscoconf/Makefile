@@ -3,7 +3,7 @@
 # Date created: 			11 September 1998
 # Whom: 				jabley@clear.co.nz
 #
-# $Id: Makefile,v 1.1.1.1 1998/11/18 22:15:06 billf Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	ciscoconf-1.0beta1

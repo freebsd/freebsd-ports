@@ -3,7 +3,7 @@
 # Date created:		21 August 1994
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.10 1997/04/30 03:18:07 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	sup

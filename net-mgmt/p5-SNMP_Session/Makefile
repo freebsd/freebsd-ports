@@ -3,7 +3,7 @@
 # Date created:				13 June 1999
 # Whom:					Stephen J. Roznowski <sjr@home.net>
 #
-# $Id: Makefile,v 1.2 1999/06/28 05:47:03 cpiazza Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	SNMP_Session-0.72

@@ -3,7 +3,7 @@
 # Date created:        28 October 1997
 # Whom:                Stefan Eßer <se@freebsd.org>
 #
-# $Id: Makefile,v 1.35 1999/05/27 07:32:29 tg Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	kdenetwork-1.1.1

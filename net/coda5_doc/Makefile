@@ -3,7 +3,7 @@
 # Date created:		11 May 1999
 # Whom:			Ying-Chieh Liao <ijliao@csie.nctu.edu.tw>
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=	coda-doc-5.2.0-1

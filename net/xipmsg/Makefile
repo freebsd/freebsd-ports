@@ -3,7 +3,7 @@
 # Date created:		29 May 1997
 # Whom:			candy@fct.kgc.co.jp
 #
-# $Id: Makefile,v 1.1.1.1 1997/06/11 20:49:41 max Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xipmsg-8087

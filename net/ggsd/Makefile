@@ -3,7 +3,7 @@
 # Date created:				14 February 1999
 # Whom:                			Dima Sivachenko <dima@chg.ru>
 #
-# $Id: Makefile,v 1.3 1999/04/22 07:50:40 mharo Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	ggsd

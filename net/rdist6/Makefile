@@ -3,7 +3,7 @@
 # Date created:		19 August 1995
 # Whom:			peter
 #
-# $Id: Makefile,v 1.17 1999/02/04 01:56:42 peter Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	rdist-6.1.5

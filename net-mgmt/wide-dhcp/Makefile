@@ -3,7 +3,7 @@
 # Date created:         21 November 1995
 # Whom:                 Yoshiro MIHIRA <sanpei@yy.cs.keio.ac.jp>
 #
-# $Id: Makefile,v 1.16 1999/07/10 20:08:06 sada Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       dhcp-1.4.0p5

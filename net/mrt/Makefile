@@ -3,7 +3,7 @@
 # Date created:		Sat Jun  6 00:09:52 JST 1998
 # Whom:			Jun-ichiro itojun Hagino <itojun@itojun.org>
 #
-# $Id: Makefile,v 1.1.1.1.6.1.6.1 1999/01/05 09:30:48 itojun Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	mrt-${VERBASE}-src

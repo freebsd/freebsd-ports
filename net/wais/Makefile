@@ -3,7 +3,7 @@
 # Date created:         20 Sep 1994
 # Whom:                 adam
 #
-# $Id: Makefile,v 1.12 1996/12/08 09:48:59 max Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       freeWAIS-0.5

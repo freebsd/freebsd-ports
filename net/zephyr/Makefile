@@ -3,7 +3,7 @@
 # Date created:		1-Aug-1995
 # Whom:			pst
 #
-# $Id: Makefile,v 1.7 1997/07/10 15:50:55 pst Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	zephyr-2.0.4

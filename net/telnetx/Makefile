@@ -3,7 +3,7 @@
 # Date created:			22 Sep 1996
 # Whom:				Masafumi NAKANE <max@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.5 1997/04/30 03:18:07 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	telnetx+transit.src.940401

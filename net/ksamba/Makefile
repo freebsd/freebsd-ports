@@ -3,7 +3,7 @@
 # Date created:        18 May 1998
 # Whom:                Hans Petter Bieker <hanspb@persbraten.vgs.no>
 #
-# $Id: Makefile,v 1.9 1998/11/21 07:27:39 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	ksamba-0.3.3

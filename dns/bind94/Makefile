@@ -3,7 +3,7 @@
 # Date created:		18 July 1997
 # Whom:			jseger@scds.com
 #
-# $Id: Makefile,v 1.12 1999/06/28 21:25:07 billf Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	bind-8.2.1

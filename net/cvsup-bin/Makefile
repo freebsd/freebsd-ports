@@ -3,7 +3,7 @@
 # Date created:		12 November 1997
 # Whom:			Sheldon Hearn <axl@iafrica.com>
 #
-# $Id: Makefile,v 1.11 1999/07/04 20:50:33 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	cvsup-bin-16.0

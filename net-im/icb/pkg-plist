@@ -1,4 +1,4 @@
-@comment $Id$
+@comment $FreeBSD$
 bin/icb
 share/icb/icbserverdb
 share/icb/sample.icbrc

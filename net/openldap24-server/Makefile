@@ -3,7 +3,7 @@
 # Date created:         20 Sep 1998
 # Whom:                 Lachlan O'Dea
 #
-# $Id: Makefile,v 1.6 1999/04/20 03:46:00 jkoshy Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	openldap-1.2.3

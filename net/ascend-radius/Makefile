@@ -3,7 +3,7 @@
 # Date created:				August 28th 96
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-# $Id: Makefile,v 1.10 1999/01/04 04:56:44 steve Exp $
+# $FreeBSD$
 #
 
 #DISTNAME=	radius-980618

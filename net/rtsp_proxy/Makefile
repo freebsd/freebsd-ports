@@ -3,7 +3,7 @@
 # Date created:				8 June 1999
 # Whom:					Richard Kiss <richard@homemail.com>
 #
-# $Id: Makefile,v 1.2 1999/08/01 02:35:05 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	SS1.0.1

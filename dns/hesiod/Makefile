@@ -3,7 +3,7 @@
 # Date created:				6/11/1998
 # Whom:					n@nectar.com
 #
-# $Id: Makefile,v 1.4 1998/11/14 09:43:26 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=		hesiod-3.0.2

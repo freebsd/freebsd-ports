@@ -3,7 +3,7 @@
 # Date created:				23 Dec 1997
 # Whom:					alexp
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=       rinetd

@@ -3,7 +3,7 @@
 # Date created:				April 5th 1997
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#   $Id: Makefile,v 1.10 1998/08/20 10:03:58 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	Net-DNS-0.12

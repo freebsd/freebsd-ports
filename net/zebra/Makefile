@@ -3,7 +3,7 @@
 # Date created:		So  31 Mai 1998 11:00:30 CEST
 # Whom:			Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.22 1999/08/19 00:01:32 andreas Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	zebra-0.77

@@ -3,7 +3,7 @@
 # Date created:		4 February 1999
 # Whom:			Dima Sivachenko
 #
-# $Id: $
+# $FreeBSD$
 #
 
 DISTNAME=	clusterit-1.2

@@ -3,7 +3,7 @@
 # Date created:        12 August 1998
 # Whom:                Bill Fumerola <billf@chc-chimes.com>
 #
-# $Id: Makefile,v 1.10 1999/07/04 17:08:55 obrien Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	mtr-0.39

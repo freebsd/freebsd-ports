@@ -3,7 +3,7 @@
 # Date created:         23 Jul 1997
 # Whom:                 stb
 #
-# $Id: Makefile,v 1.9 1999/04/21 00:29:37 stb Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       netatalk-1.4b2

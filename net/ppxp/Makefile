@@ -5,7 +5,7 @@
 #			KUNISHIMA Takeo <kunishi@c.oka-pu.ac.jp>
 #			Taguchi Takeshi <taguchi@tohoku.iij.ad.jp>
 #
-# $Id: Makefile,v 1.6 1999/06/08 22:14:32 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	ppxp-0.99072807

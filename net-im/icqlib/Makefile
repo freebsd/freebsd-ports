@@ -3,7 +3,7 @@
 # Date created:                         16 March 1999
 # Whom:                                 Pavel Andreev
 #
-# $Id: Makefile,v 1.1.1.1 1999/05/05 13:57:00 taoka Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	icqlib-0.1.3

@@ -3,7 +3,7 @@
 # Date created:		18 March 1995
 # Whom:			dom@myrddin.demon.co.uk
 #
-# $Id: Makefile,v 1.8 1998/11/25 22:48:06 billf Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	ytalk-3.1.1

@@ -3,7 +3,7 @@
 # Date created:				13 January 1999
 # Whom:					Eugene M. Kim <astralblue@usa.net>
 #
-# $Id: Makefile,v 1.2 1999/01/18 03:15:29 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	tik-0.59

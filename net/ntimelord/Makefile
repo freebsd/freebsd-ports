@@ -3,7 +3,7 @@
 # Date created:		29 Oct 1997
 # Whom:			Takeru NAIKI <naiki@bfd.es.hokudai.ac.jp>
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=	ntimelord-1.0

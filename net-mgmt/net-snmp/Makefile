@@ -3,7 +3,7 @@
 # Date created:				26 June 1996
 # Whom:					gpalmer
 #
-# $Id: Makefile,v 1.30 1999/08/27 03:38:34 cpiazza Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	ucd-snmp-4.0.1

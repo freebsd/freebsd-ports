@@ -3,7 +3,7 @@
 # Date created:		24 September 1994
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.13 1998/10/14 03:21:40 jseger Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xarchie-2.0.10

@@ -3,7 +3,7 @@
 # Date created:				Jan 7 1999
 # Whom:					dom@myrddin.demon.co.uk
 #
-# $Id: Makefile,v 1.1.1.1 1999/03/30 17:26:38 taoka Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	icmpquery

@@ -5,7 +5,7 @@
 # Whom:				  Wu Ching-hong <woju@freebsd.ee.ntu.edu.tw>
 # 				  and David O'Brien (obrien@NUXI.com)
 #
-# $Id: Makefile,v 1.3 1998/11/12 11:50:11 obrien Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	queso-980922

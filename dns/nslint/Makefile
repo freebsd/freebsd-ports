@@ -3,7 +3,7 @@
 # Date created:		27 October 1997
 # Whom:			dglo@ssec.wisc.edu
 #
-# $Id: Makefile,v 1.6 1998/10/10 03:37:08 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	nslint-2.0

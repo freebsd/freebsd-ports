@@ -3,7 +3,7 @@
 # Date created:		28 December 1996
 # Whom:			jseger@scds.com
 #
-# $Id: Makefile,v 1.2 1997/10/13 09:14:49 tg Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	bing-1.0.4

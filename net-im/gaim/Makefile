@@ -3,7 +3,7 @@
 # Date created:			26 Mar 1999
 # Whom:				Jim Mock <jim@FreeBSD.org>
 #
-# $Id: Makefile,v 1.7 1999/08/12 09:20:43 jim Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	gaim-0.9.7

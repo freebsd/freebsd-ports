@@ -3,7 +3,7 @@
 # Date created:		4 January 1997
 # Whom:			mike@binghamton.edu
 #
-# $Id: Makefile,v 1.17 1999/03/22 12:49:50 jseger Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	tf-40s1

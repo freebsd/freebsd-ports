@@ -3,7 +3,7 @@
 # Date created:				October 19th 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#   $Id: Makefile,v 1.7 1998/11/29 03:22:10 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	perl_archie.1.5

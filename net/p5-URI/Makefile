@@ -3,7 +3,7 @@
 # Date created:				1999/04/07
 # Whom:					ache
 #
-# $Id: Makefile,v 1.3 1999/04/12 08:21:08 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       URI-1.03

@@ -3,7 +3,7 @@
 # Date created:        Wed Nov  4 08:48:08 EST 1998
 # Whom:                maurice
 #
-# $Id: Makefile,v 1.4 1999/05/29 04:38:13 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	radiusclient-0.3

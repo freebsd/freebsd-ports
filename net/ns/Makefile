@@ -3,7 +3,7 @@
 # Date created:		26 April 1999
 # Whom:			obonilla
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=	ns-src-2.1b5

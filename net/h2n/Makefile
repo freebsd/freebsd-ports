@@ -3,7 +3,7 @@
 # Date created:		27 Nov 1997
 # Whom:			SADA Kenji <sada@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.1.1.1 1998/11/22 17:39:56 sada Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	dns

@@ -3,7 +3,7 @@
 # Date created:	17 May 1999
 # Whom:		paul@freebsd.org
 #
-# $Id: Makefile,v 1.1.1.1 1999/05/25 22:47:00 paul Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	perldap-1_2_2

@@ -3,7 +3,7 @@
 # Date created:        22 January 1999
 # Whom:                Yukihiro Nakai <Nacai@iname.com>
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=	SOCKS-0.03

@@ -3,7 +3,7 @@
 # Date created:				June 7th 1997
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#   $Id: Makefile,v 1.4 1998/08/23 03:19:48 jseger Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	Net-Whois-0.22

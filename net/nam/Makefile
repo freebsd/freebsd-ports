@@ -3,7 +3,7 @@
 # Date created:		26 April 1999
 # Whom:			obonilla
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=	nam-src-1.0a7

@@ -3,7 +3,7 @@
 # Date created:		4. July 1996
 # Whom:			torstenb@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.9 1998/09/16 21:27:59 torstenb Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	radius.3.6B.basic

@@ -3,7 +3,7 @@
 # Date created:         25 Nov 1997
 # Whom:                 stb
 #
-# $Id: Makefile,v 1.3 1998/12/02 01:02:37 stb Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       macipgw-1.0

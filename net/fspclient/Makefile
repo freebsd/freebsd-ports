@@ -3,7 +3,7 @@
 # Date created:         7 Nov 1994
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.9 1998/02/22 08:41:48 fenner Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       fspclient.0.0-h+

@@ -3,7 +3,7 @@
 # Date created:        10 August 1998
 # Whom:                Bill Fumerola <billf@chc-chimes.com>
 #
-# $Id: Makefile,v 1.8 1999/05/06 20:47:20 billf Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	ntop-1.1-src

@@ -3,7 +3,7 @@
 # Date created:		7 October 1997
 # Whom:			itojun@itojun.org
 #
-# $Id: Makefile,v 1.1.1.1 1997/10/07 14:39:42 itojun Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	choparp-971007
