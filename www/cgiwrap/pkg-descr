@@ -1,0 +1,16 @@
+This is CGIWrap - a gateway that allows more secure user access to
+CGI programs on an HTTPd server than is provided by the http server
+itself. The primary function of CGIWrap is to make certain that
+any CGI script runs with the permissions of the user who installed
+it, and not those of the server.
+
+CGIWrap works with NCSA httpd, Apache, CERN httpd, NetSite Commerce
+and Communications servers, and probably any other Unix based web
+server software that supports CGI.
+
+CGIWrap was written by Nathan Neulinger <nneul@umr.edu>.  More
+information is available at:  http://wwwcgi.umr.edu/~cgiwrap
+
+Port to FreeBSD by
+Brent J. Nordquist <bjn@visi.com>
+Thu Jul 30 1998
