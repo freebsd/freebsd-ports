@@ -18,7 +18,7 @@ COMMENT=	Mirror remote subversion repository to local
 BUILD_DEPENDS=	${SITE_PERL}/URI/Escape.pm:${PORTSDIR}/net/p5-URI \
 		${SITE_PERL}/${PERL_ARCH}/Data/UUID.pm:${PORTSDIR}/devel/p5-Data-UUID \
     		${SITE_PERL}/VCP.pm:${PORTSDIR}/devel/p5-VCP \
-    		${SITE_PERL}/SVN/Simple.pm:${PORTSDIR}/devel/p5-SVN-Simple
+    		${SITE_PERL}/SVN/Simple/Edit.pm:${PORTSDIR}/devel/p5-SVN-Simple
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 CONFIGURE_ENV=	PERL_EXTUTILS_AUTOINSTALL=--skipdeps
