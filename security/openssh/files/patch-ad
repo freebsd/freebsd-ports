@@ -1,11 +1,11 @@
---- /usr/ports/distfiles/OpenSSH-1.2.3/src/usr.bin/ssh/lib/Makefile	Thu Apr 20 17:02:17 2000
-+++ lib/Makefile	Thu Apr 20 17:08:05 2000
+--- lib/Makefile.orig	Thu Apr 27 05:56:30 2000
++++ lib/Makefile	Fri May 12 07:07:30 2000
 @@ -5,7 +5,11 @@
  	cipher.c compat.c compress.c crc32.c deattack.c fingerprint.c \
  	hostfile.c log.c match.c mpaux.c nchan.c packet.c readpass.c \
  	rsa.c tildexpand.c ttymodes.c uidswap.c xmalloc.c atomicio.c \
--	key.c dispatch.c dsa.c kex.c hmac.c
-+	key.c dispatch.c dsa.c kex.c hmac.c strlcat.c strlcpy.c
+-	key.c dispatch.c dsa.c kex.c hmac.c uuencode.c
++	key.c dispatch.c dsa.c kex.c hmac.c uuencode.c strlcat.c strlcpy.c
 +
 +.if defined(COMPAT_GETADDRINFO)
 +SRCS+=	getaddrinfo.c getnameinfo.c name6.c rcmd.c bindresvport.c

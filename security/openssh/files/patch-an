@@ -1,6 +1,6 @@
---- sshd.c.orig	Thu Apr 20 17:11:24 2000
-+++ sshd.c	Thu Apr 20 17:17:12 2000
-@@ -48,6 +48,13 @@
+--- sshd.c.orig	Wed May  3 19:21:49 2000
++++ sshd.c	Fri May 12 07:11:43 2000
+@@ -49,6 +49,13 @@
  int deny_severity = LOG_WARNING;
  #endif /* LIBWRAP */
  
@@ -14,9 +14,9 @@
  #ifndef O_NOCTTY
  #define O_NOCTTY	0
  #endif
-@@ -128,6 +135,32 @@
- /* session identifier, used by RSA-auth */
- unsigned char session_id[16];
+@@ -134,6 +141,32 @@
+ unsigned char *session_id2 = NULL;
+ int session_id2_len = 0;
  
 +/* These are used to implement connections_per_period. */
 +struct magic_connection {
@@ -47,15 +47,15 @@
  /* Prototypes for various functions defined later in this file. */
  void do_ssh1_kex();
  void do_ssh2_kex();
-@@ -395,6 +428,7 @@
+@@ -418,6 +451,7 @@
  	int opt, sock_in = 0, sock_out = 0, newsock, i, fdsetsz, on = 1;
  	pid_t pid;
  	socklen_t fromlen;
-+	int connections_per_period_exceeded = 0;
- 	int silentrsa = 0;
++ 	int connections_per_period_exceeded = 0;
+ 	int silent = 0;
  	fd_set *fdset;
  	struct sockaddr_storage from;
-@@ -709,6 +743,12 @@
+@@ -763,6 +797,12 @@
  		fdsetsz = howmany(maxfd, NFDBITS) * sizeof(fd_mask);
  		fdset = (fd_set *)xmalloc(fdsetsz);
  
@@ -68,7 +68,7 @@
  		/*
  		 * Stay listening for connections until the system crashes or
  		 * the daemon is killed with a signal.
-@@ -740,9 +780,31 @@
+@@ -794,9 +834,31 @@
  				error("newsock del O_NONBLOCK: %s", strerror(errno));
  				continue;
  			}
@@ -102,7 +102,7 @@
  			 */
  			if (debug_flag) {
  				/*
-@@ -756,6 +818,12 @@
+@@ -810,6 +872,12 @@
  				sock_out = newsock;
  				pid = getpid();
  				break;

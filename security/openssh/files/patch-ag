@@ -1,10 +1,13 @@
---- /usr/ports/distfiles/OpenSSH-1.2/src/usr.bin/ssh/ssh/Makefile	Wed Nov 17 20:52:33 1999
-+++ ./ssh/Makefile	Tue Nov 23 19:26:08 1999
-@@ -2,22 +2,16 @@
+--- ssh/Makefile.orig	Thu Apr 27 06:31:58 2000
++++ ssh/Makefile	Fri May 12 07:23:01 2000
+@@ -2,16 +2,10 @@
  
  PROG=	ssh
  BINOWN=	root
--
++BINMODE=4555
++BINDIR=	/bin
++MAN1=	ssh.1
+ 
 -.if (${MACHINE_ARCH} == "alpha" || ${MACHINE_ARCH} == "powerpc" || \
 -	${MACHINE_ARCH} == "hppa")
 -BINMODE=0000
@@ -14,22 +17,22 @@
 -
 -BINDIR=	/usr/bin
 -MAN=	ssh.1
-+BINMODE=4555
-+BINDIR=	/bin
-+MAN1=	ssh.1
  LINKS=	${BINDIR}/ssh ${BINDIR}/slogin
  MLINKS=	ssh.1 slogin.1
  
- SRCS=	ssh.c sshconnect.c log-client.c readconf.c clientloop.c
+@@ -19,6 +13,7 @@
+ 	sshconnect.c sshconnect1.c sshconnect2.c
  
  .include <bsd.own.mk> # for AFS
 +.include "../Makefile.inc"
  
  .if (${KERBEROS} == "yes")
- CFLAGS+= -DKRB4 -I/usr/include/kerberosIV
-@@ -32,5 +26,5 @@
+ CFLAGS+= -DKRB4 -I${DESTDIR}/usr/include/kerberosIV
+@@ -32,6 +27,7 @@
+ .endif # KERBEROS
  
  .include <bsd.prog.mk>
++.include "../Makefile.inc"
  
 -LDADD+=	-lutil -lz -lcrypto
 +LDADD+=	-lutil -lz ${CRYPTOLIBS}
