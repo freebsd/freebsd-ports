@@ -8,4 +8,5 @@ usage: portlint [-AabctvN] [-B#] [port_directory]
         -v      verbose mode
         -t      nit pick about use of spaces
         -N      writing a new port
+        -V      print the version and exit
         -B#     allow # contiguous blank lines (default: 1 line)

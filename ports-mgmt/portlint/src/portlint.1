@@ -10,7 +10,7 @@
 .Nd a verifier for port directory
 .Sh SYNOPSIS
 .Nm portlint
-.Op Fl abchvtN
+.Op Fl abchvtNV
 .Op Fl M Ar ENV
 .Op Fl B Ar n
 .Op Ar dir
@@ -67,6 +67,8 @@ New port flag.
 Adds several checks specific to newly submitted port.
 If you are willing to submit the directory to be checked as a new port,
 use this option.
+.It Fl t
+Print the portlint version and exit.
 .It Fl M Ar ENV
 Set make variables to
 .Pa ENV

@@ -17,7 +17,7 @@
 # OpenBSD and NetBSD will be accepted.
 #
 # $FreeBSD$
-# $Id: portlint.pl,v 1.3 2003/07/20 00:24:42 marcus Exp $
+# $Id: portlint.pl,v 1.6 2003/07/28 20:20:38 marcus Exp $
 #
 
 use vars qw/ $opt_a $opt_A $opt_b $opt_c $opt_h $opt_t $opt_v $opt_M $opt_N $opt_B $opt_V /;
@@ -39,7 +39,8 @@ $portdir = '.';
 
 # version variables
 my $major = 2;
-my $minor = 3;
+my $minor = 4;
+my $micro = 1;
 
 sub l { '[{(]'; }
 sub r { '[)}]'; }
@@ -91,6 +92,7 @@ usage: $prog [-AabchvtN] [-M ENV] [-B#] [port_directory]
 	-v	verbose mode
 	-t	nit pick about use of spaces
 	-N	writing a new port
+	-V	print the version and exit
 	-M ENV	set make variables to ENV (ex. PORTSDIR=/usr/ports.work)
 	-B#	allow # contiguous blank lines (default: $contblank line)
 EOF
@@ -98,10 +100,9 @@ EOF
 }
 
 sub version {
-	print "$prog version $major.$minor\n";
+	print "$prog version $major.$minor.$micro\n";
 	exit $major;
 }
-
 
 getopts('AabchtvB:M:NV');
 
@@ -869,7 +870,7 @@ sub checkmakefile {
 	print "OK: checking direct use of command names.\n" if ($verbose);
 	foreach my $i (qw(
 awk basename cat chmod chown cp echo expr false file find gmake grep gzcat
-ldconfig ln md5 mkdir mv patch rm rmdir sed sh strip touch tr which xargs xmkmf
+ldconfig ln md5 mkdir mv patch rm rmdir sed sh touch tr which xargs xmkmf
 	)) {
 		$cmdnames{$i} = "\$\{\U$i\E\}";
 	}
@@ -877,6 +878,7 @@ ldconfig ln md5 mkdir mv patch rm rmdir sed sh strip touch tr which xargs xmkmf
 	$cmdnames{'gunzip'} = '${GUNZIP_CMD}';
 	$cmdnames{'gzip'} = '${GZIP_CMD}';
 	$cmdnames{'install'} = '${INSTALL_foobaa}';
+	$cmdnames{'strip'} = '${STRIP_CMD}';
 	#
 	# ignore parameter string to echo command.
 	# note that we leave the command as is, since we need to check the
