@@ -1,5 +1,11 @@
---- configure.orig	Sun Feb  6 18:54:02 2000
+--- configure	Sun Feb  6 18:54:02 2000
 +++ configure	Thu Jul 13 14:29:54 2000
+@@ -820,3 +820,5 @@
+ 
++if [ `uname -m` != sparc64 ]; then
+ TCL_SHLIB_CFLAGS=`echo "$TCL_SHLIB_CFLAGS" |sed -e "s|-fPIC|-fpic|" -e "s|-PIC|-pic|" -e "s|-K PIC|-K pic|" -e "s|-KPIC|-Kpic|" -e "s|+Z|+z|"`
++fi
+ 
 @@ -2088,8 +2088,11 @@
  	    ;;
  	FreeBSD-*)
