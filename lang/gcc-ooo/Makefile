@@ -21,7 +21,7 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER?=	openoffice@FreeBSD.org
 COMMENT?=	GNU Compiler Collection for OpenOffice.org
 
-LATEST_LINK?=	No
+NO_LATEST_LINK=	yes
 
 PATCHFILES+=	GCC3.4.0VisibilityPatch2.diff
 PATCH_SITES+=	http://www.nedprod.com/TnFOX/patches/
