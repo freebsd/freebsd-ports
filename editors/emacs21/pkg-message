@@ -1,0 +1,8 @@
+********************************************************************
+* NOTE:                                                            *
+*   This package does not include                                  *
+*     LEIM: Libraries of Emacs Input Method                        *
+*   package.                                                       *
+*   You can find leim port in the following directory:             *
+*     /usr/ports/editors/leim21                                    *
+********************************************************************

@@ -1,0 +1,27 @@
+--- lib-src/Makefile.in.orig	Wed Aug 30 02:12:42 2000
++++ lib-src/Makefile.in	Thu Oct 11 01:54:10 2001
+@@ -85,6 +85,7 @@
+ INSTALL = @INSTALL@
+ INSTALL_PROGRAM = @INSTALL_PROGRAM@
+ INSTALL_DATA = @INSTALL_DATA@
++INSTALL_SCRIPT = @INSTALL_SCRIPT@
+ # By default, we uphold the dignity of our programs.
+ INSTALL_STRIP =
+ 
+@@ -278,7 +279,7 @@
+         if [ `(cd ${archlibdir} && /bin/pwd)` \
+              != `(cd ${srcdir} && /bin/pwd)` ]; then \
+ 	  for file in ${SCRIPTS}; do \
+-	    $(INSTALL_PROGRAM) ${srcdir}/$$file ${archlibdir}/$$file; \
++	    $(INSTALL_SCRIPT) ${srcdir}/$$file ${archlibdir}/$$file; \
+ 	  done ; \
+ 	fi
+ 
+@@ -290,7 +291,7 @@
+ 	  chmod a+rx ${bindir}/$${file}; \
+ 	done
+ 	for file in ${INSTALLABLE_SCRIPTS} ; do \
+-	  $(INSTALL_PROGRAM) ${srcdir}/$${file} ${bindir}/$${file} ; \
++	  $(INSTALL_SCRIPT) ${srcdir}/$${file} ${bindir}/$${file} ; \
+ 	  chmod a+rx ${bindir}/$${file}; \
+ 	done

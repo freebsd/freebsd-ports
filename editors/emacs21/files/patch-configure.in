@@ -1,0 +1,34 @@
+--- configure.in.orig	Fri Oct 19 23:09:18 2001
++++ configure.in	Mon Oct 22 21:19:32 2001
+@@ -179,6 +179,15 @@
+ machine='' opsys='' unported=no
+ case "${canonical}" in
+ 
++  ## FreeBSD ports
++  *-*-freebsd* )
++    opsys=freebsd
++    case "${canonical}" in
++      alpha*-*-freebsd*)       machine=alpha ;;
++      i[3456]86-*-freebsd*)    machine=intel386 ;;
++    esac
++  ;;
++
+   ## NetBSD ports
+   *-*-netbsd* )
+     opsys=netbsd
+@@ -1017,7 +1026,6 @@
+ 				;;
+       *-sysv4.2uw* )	  	opsys=unixware; NON_GNU_CPP=/lib/cpp ;;
+       *-386bsd* )	        opsys=386bsd ;;
+-      *-freebsd* )	        opsys=freebsd ;;
+       *-nextstep* )             opsys=nextstep ;;
+       ## Otherwise, we'll fall through to the generic opsys code at the bottom.
+     esac
+@@ -2007,6 +2015,7 @@
+ # Solaris requires -lintl if you want strerror (which calls dgettext)
+ # to return localized messages.
+ AC_CHECK_LIB(intl, dgettext)
++AC_CHECK_LIB(xpg4, _xpg4_setrunelocale)
+ 
+ AC_MSG_CHECKING(whether localtime caches TZ)
+ AC_CACHE_VAL(emacs_cv_localtime_cache,

@@ -1,0 +1,57 @@
+# New ports collection makefile for:	GNU emacs
+# Date created:		11 October 2001
+# Whom:			MANTANI Nobutaka <nobutaka@nobutaka.com>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	emacs
+PORTVERSION=	21.1
+CATEGORIES=	editors ipv6
+MASTER_SITES=		${MASTER_SITE_GNU}
+MASTER_SITE_SUBDIR=	${PORTNAME}
+
+PATCH_SITES=		http://www.nijino.com/ari/patches/
+PATCHFILES=		emacs-21.0.104-fontset.patch.gz
+PATCH_DIST_STRIP=	-p1
+
+MAINTAINER=	nobutaka@nobutaka.com
+
+.if !defined(WITHOUT_X11)
+LIB_DEPENDS=	Xaw3d.${XAWVER}:${PORTSDIR}/x11-toolkits/Xaw3d \
+		jpeg.9:${PORTSDIR}/graphics/jpeg \
+		tiff.4:${PORTSDIR}/graphics/tiff \
+		ungif.5:${PORTSDIR}/graphics/libungif \
+		png.5:${PORTSDIR}/graphics/png
+USE_XLIB=	yes
+USE_XPM=	yes
+.endif
+
+USE_AUTOCONF=	yes
+USE_GMAKE=	yes
+
+CONFIGURE_TARGET=	${MACHINE_ARCH}--freebsd
+.if defined(WITHOUT_X11)
+CONFIGURE_ARGS=		--with-x=no
+.endif
+
+MAN1=		ctags.1 emacs.1 etags.1 gfdl.1
+PLIST_SUB=	EMACS_VER=${PORTVERSION} EMACS_ARCH=${CONFIGURE_TARGET}
+TEXIFILES=	ada-mode autotype cc-mode cl dired-x ebrowse ediff \
+		faq emacs emacs-mime eshell eudc forms gnus idlwave \
+		info message mh-e pcl-cvs reftex sc speedbar vip \
+		viper widget woman
+
+post-patch:
+	@${RM} -f ${WRKSRC}/info/*
+	@(cd ${WRKSRC}/man ; \
+	for f in ${TEXIFILES} ; do \
+	${CP} $${f}.texi $${f}.texi.orig ; \
+	${SED} -e "s/@dircategory Emacs/@dircategory The Emacs editor and associated tools/" < $${f}.texi.orig > $${f}.texi ; \
+	${RM} $${f}.texi.orig ; \
+	done)
+
+post-install:
+	@${CAT} ${PKGMESSAGE}
+
+.include <bsd.port.mk>
