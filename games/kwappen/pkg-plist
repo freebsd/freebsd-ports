@@ -46,3 +46,12 @@ share/locale/pt_BR/LC_MESSAGES/kwappen.mo
 @dirrm share/doc/HTML/pt_BR/kwappen
 @dirrm share/apps/kwappen/pictures
 @dirrm share/apps/kwappen
+@unexec rmdir %D/share/doc/HTML/de 2>/dev/null || true
+@unexec rmdir %D/share/doc/HTML/pt 2>/dev/null || true
+@unexec rmdir %D/share/doc/HTML/pt_BR 2>/dev/null || true
+@unexec rmdir %D/share/applnk/Applications 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/16x16 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/32x32 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/48x48 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/64x64 2>/dev/null || true
+@unexec rmdir %D/share/icons/locolor 2>/dev/null || true
