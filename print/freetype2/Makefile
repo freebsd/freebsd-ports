@@ -6,14 +6,17 @@
 #
 
 PORTNAME=	freetype
-PORTVERSION=	1.3
+PORTVERSION=	1.3.1
 CATEGORIES=	print
-MASTER_SITES=	ftp://ftp.tux.org/pub/devel/freetype/ \
-		ftp://ftp.lerc.nasa.gov/ImageMagick/delegates/ \
-		ftp://ftp.wizards.dupont.com/pub/ImageMagick/delegates/ \
-		ftp://ftp.kddlabs.co.jp/.6/graphics/freetype/ \
-		ftp://ring.aist.go.jp/pub/graphics/freetype/ \
-		ftp://ftp.unina.it/pub/Unix/pkgs/font/freetype/
+MASTER_SITES=	http://download.sourceforge.net/freetype/ \
+		http://sunsite.cnlab-switch.ch/ftp/mirror/freetype/freetype1/ \
+		http://www.funet.fi/pub/mirrors/ftp.freetype.org/freetype1/ \
+		http://ftp.sunet.se/pub/text-processing/freetype/freetype1/ \
+		ftp://ring.aist.go.jp/pub/graphics/freetype/freetype1/ \
+		ftp://ring.asahi-net.or.jp/pub/graphics/freetype/ \
+		ftp://ring.nacsis.ac.jp/pub/graphics/freetype/ \
+		ftp://ring.so-net.ne.jp/pub/graphics/freetype/ \
+		ftp://ftp.freetype.org/pub/freetype1/ \
 
 MAINTAINER=	jseger@FreeBSD.org
 
