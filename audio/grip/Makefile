@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	grip
-PORTVERSION=	3.0.5
+PORTVERSION=	3.0.7
 PORTREVISION=	0
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=grip
 
 MAINTAINER=	alane@FreeBSD.org
-COMMENT=	GTK-based front-end to external cd audio rippers and mp3 encoders
+COMMENT=	GTK front-end to external cd rippers and mp3 encoders
 
 LIB_DEPENDS=	id3-3.8.2:${PORTSDIR}/audio/id3lib \
 		ghttp.1:${PORTSDIR}/www/libghttp
