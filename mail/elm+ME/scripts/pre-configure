@@ -348,7 +348,7 @@ iconv_ok='define'
 iconv_dir='${LOCALBASE}'
 iconv_include_dir='${LOCALBASE}/include'
 iconv_lib_dir='${LOCALBASE}/lib'
-iconv_link='giconv'
+iconv_link='iconv'
 EOF
 
 mv ${WRKSRC}/shared_libs/tls/README.ME+ \
