@@ -7265,6 +7265,7 @@ tux-aqfh	ports/games/tux-aqfh
 tuxcards	ports/deskutils/tuxcards
 tuxkart		ports/games/tuxkart
 tuxnes		ports/emulators/tuxnes
+tuxpuck		ports/games/tuxpuck
 tuxracer	ports/games/tuxracer
 tuxtype		ports/games/tuxtype
 tvark		ports/net/tvark
