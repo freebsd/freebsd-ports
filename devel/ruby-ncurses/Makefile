@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	ncurses
-PORTVERSION=	0.1
+PORTVERSION=	0.3
 CATEGORIES=	devel ruby
 MASTER_SITES=	http://download.berlios.de/ncurses-ruby/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	${PORTNAME}-ruby-${PORTVERSION}
-EXTRACT_SUFX=	.tar.bz
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
@@ -21,6 +20,7 @@ USE_BZIP2=	yes
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
 
+MAKE_ARGS=	LOCAL_LIBS=-lgcc
 INSTALL_TARGET=	site-install
 
 DOCS=		README TODO
@@ -35,6 +35,8 @@ post-install:
 .for f in ${DOCS}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_DOCDIR}/${PORTNAME}/
 .endfor
+	${MKDIR} ${RUBY_EXAMPLESDIR}/${PORTNAME}
+	${INSTALL_DATA} ${WRKSRC}/examples/* ${RUBY_EXAMPLESDIR}/${PORTNAME}/
 .endif
 
 .include <bsd.port.mk>
