@@ -1,5 +1,35 @@
---- configure.in.orig	Fri Jan 14 09:24:19 2000
-+++ configure.in	Fri Jan 14 09:26:29 2000
+--- configure.in.orig	Tue Nov  9 10:48:20 1999
++++ configure.in	Mon Jan 17 09:13:20 2000
+@@ -22,17 +22,17 @@
+   if test x$gtk_config_exec_prefix != x ; then
+      gtk_config_args="$gtk_config_args --exec-prefix=$gtk_config_exec_prefix"
+      if test x${GTK_CONFIG+set} != xset ; then
+-        GTK_CONFIG=$gtk_config_exec_prefix/bin/gtk-config
++        GTK_CONFIG=$gtk_config_exec_prefix/bin/gtk12-config
+      fi
+   fi
+   if test x$gtk_config_prefix != x ; then
+      gtk_config_args="$gtk_config_args --prefix=$gtk_config_prefix"
+      if test x${GTK_CONFIG+set} != xset ; then
+-        GTK_CONFIG=$gtk_config_prefix/bin/gtk-config
++        GTK_CONFIG=$gtk_config_prefix/bin/gtk12-config
+      fi
+   fi
+ 
+-  AC_PATH_PROG(GTK_CONFIG, gtk-config, no)
++  AC_PATH_PROG(GTK_CONFIG, gtk12-config, no)
+   min_gtk_version=ifelse([$1], ,0.99.7,$1)
+   AC_MSG_CHECKING(for GTK - version >= $min_gtk_version)
+   no_gtk=""
+@@ -1501,7 +1501,7 @@
+ if test "$wxUSE_GTK" = 1; then
+     dnl avoid calling AM_PATH_GTK twice, so check first for the newer version and
+     dnl only then, if it wasn't found, for an older one
+-    AM_PATH_GTK(1.2.1, WXGTK12=1, AC_MSG_ERROR(Is gtk-config in path and GTK+ is version 1.2.1 or above?))
++    AM_PATH_GTK(1.2.1, WXGTK12=1, AC_MSG_ERROR(Is gtk12-config in path and GTK+ is version 1.2.1 or above?))
+ 
+     TOOLKIT_INCLUDE="$GTK_CFLAGS"
+     GUI_TK_LIBRARY="$GTK_LIBS"
 @@ -1701,12 +1701,10 @@
  WX_LIBRARY_NAME_STATIC="lib${WX_LIBRARY}.a"
  
