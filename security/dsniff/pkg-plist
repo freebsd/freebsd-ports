@@ -1,8 +1,9 @@
 sbin/arpredirect
+sbin/dsniff
 sbin/findgw
 sbin/macof
-sbin/dsniff
 sbin/mailsnarf
 sbin/tcpkill
+sbin/tcpnice
 sbin/urlsnarf
 sbin/webspy
