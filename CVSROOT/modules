@@ -6553,6 +6553,7 @@ pstotext	ports/print/pstotext
 pstree		ports/sysutils/pstree
 psutils-a4	ports/print/psutils-a4
 psutils-letter	ports/print/psutils-letter
+psybnc		ports/irc/psybnc
 pt-aspell	ports/portuguese/aspell
 pt-ooodict-BR	ports/portuguese/ooodict-pt_BR
 pt-ooodict-PT	ports/portuguese/ooodict-pt_PT
