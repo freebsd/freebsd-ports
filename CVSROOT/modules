@@ -5263,6 +5263,7 @@ mysqltcl	ports/databases/mysqltcl
 mythserver	ports/games/mythserver
 mytop		ports/databases/mytop
 mziq		ports/audio/mziq
+mDNSResponder	ports/net/mDNSResponder
 nInvaders	ports/games/nInvaders
 nab		ports/biology/nab
 nadar		ports/games/nadar
