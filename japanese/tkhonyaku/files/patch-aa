@@ -1,5 +1,6 @@
---- tkhonyaku.orig	Sun Apr 15 13:47:31 2001
-+++ tkhonyaku	Sun Apr 15 13:47:41 2001
+diff -ru tkhonyaku.orig tkhonyaku
+--- tkhonyaku.orig	Mon May 14 13:19:36 2001
++++ tkhonyaku	Mon May 14 13:20:10 2001
 @@ -1,6 +1,6 @@
  #!/bin/sh
  # the next line restart using wish \
@@ -7,4 +8,4 @@
 +exec wish8.0jp "$0" "$@"
  
  #=============================================================================
- # 『Tk翻訳』version 1.6 for Unix/Windows/Macintosh
+ # 『Tk翻訳』version 1.7 for Unix/Windows/Macintosh
