@@ -89,9 +89,6 @@
     SUBDIR += pycodec
     SUBDIR += qe
     SUBDIR += qterm
-    SUBDIR += rxvt
-    SUBDIR += rxvt-big5
-    SUBDIR += rxvt-gb
     SUBDIR += stardict
     SUBDIR += stardict2
     SUBDIR += tcl83
