@@ -1,8 +1,11 @@
 This is a powerful program at which you can throw a mess of 
 unordered files in any of BinHex, uuencoded, xxencoded, or 
 Base64 formats and expect them all to be properly decoded.
-It even handles encodings that have been garbled by some
-versions of Netscape/MS Explorer or that are missing some parts!
+It even handles encodings that have been garbled by certain
+versions of Netscape/MS-Explorer or encodings that are missing
+some parts!
 
 It is also able to encode in all of the above formats except for 
 BinHex.
+
+http://www.uni-frankfurt.de/~fp/uudeview/
