@@ -1,6 +1,6 @@
 #!/usr/bin/perl -w
 #
-# $Id: log_accum.pl,v 1.10 1995/10/31 23:17:11 peter Exp $
+# $Id: log_accum.pl,v 1.11 1995/11/02 07:33:22 peter Exp $
 #
 # Perl filter to handle the log messages from the checkin of files in
 # a directory.  This script will group the lists of files by log
@@ -279,7 +279,7 @@ sub mail_notification {
 #
 $id = getpgrp();
 $state = $STATE_NONE;
-$login = `logname` || (getpwuid($<))[0] || die("Unknown user $<.\n");
+$login = $ENV{'USER'} || getlogin || (getpwuid($<))[0] || sprintf("uid#%d",$<);
 chop($login);
 @files = split(' ', $ARGV[0]);
 @path = split('/', $files[0]);
