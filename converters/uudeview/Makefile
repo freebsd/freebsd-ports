@@ -3,7 +3,7 @@
 # Date Created:		04 Aug 1996
 # Whom:			Tim Vanderhoek <ac199@freenet.hamilton.on.ca>
 #
-# $Id: Makefile,v 1.1.1.1 1996/08/23 06:45:08 tg Exp $
+# $Id: Makefile,v 1.2 1996/08/23 09:04:06 asami Exp $
 #
 
 DISTNAME=	uudeview-0.5.4
@@ -41,12 +41,12 @@ post-patch:
 post-install:
 .if !defined(NOPORTDOCS)
 	@if [ 'x${DOCFILES}' != x ] ; \
-	then; \
+	then \
 		${ECHO_MSG} "===>  Copying documents to ${PREFIX}/${PORTDOCDIR}"; \
 	fi;
 	mkdir -p ${PREFIX}/${PORTDOCDIR};
 	@for l in ${DOCFILES}; \
-	do; \
+	do \
 		cp ${WRKSRC}/$$l ${PREFIX}/${PORTDOCDIR}; \
 	done
 .else
