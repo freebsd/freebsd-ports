@@ -3,8 +3,16 @@
 
 # paper size, default is no nor A4
 A4=n
-#default font cache directory: must be world writable
-CACHE=/tmp
+prefix=$PREFIX;
+if `echo $PREFIX |grep -q X11` ; then
+  prefix=/usr/local
+fi
+CACHE=$prefix/lib/texmf/fonts
+
+if [ -f $prefix/bin/MakeTeXPK ]; then
+  echo "**WARNING** MakeTeXPK already exists in $PREFIX/bin"
+  echo "This file will be replaced during install."
+fi
 
 
 if [ ! -f ${WRKSRC}/MakeTeXPK.orig ]; then
@@ -25,9 +33,18 @@ for i in $RES; do
   shift
 done
 
-echo "Choose a font cache directory for automatic font generation"
-echo -n "(this directory must be world writable) [$CACHE]: "
-read answ; if [ "$answ" != "" ]; then CACHE=$answ; fi
+rm -f $SCRIPTDIR/install.tmp
+echo "Choose a font directory for automatic font generation."
+echo "The default directory is $CACHE. If you"
+echo "don't want to make this directory world writable, then you"
+echo "can choose eg. /tmp. Then you will have to periodically move "
+echo "the files to $CACHE/pk."
+echo -n "font directory [$CACHE]: "
+read answ; if [ "$answ" != "" ]; then 
+  CACHE=$answ; 
+else
+  echo "mkdir -p $CACHE/pk; chmod 1777 $CACHE/pk" > $SCRIPTDIR/install.tmp
+fi
   
 sed -e s:/usr/lib/tex:/$PREFIX/lib/texmf: \
     -e s:/LocalLibrary/Fonts/TeXFonts:$CACHE: \
