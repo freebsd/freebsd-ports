@@ -3,7 +3,7 @@
 # Date created:         30 July 1998
 # Whom:                 Brent J. Nordquist <bjn@visi.com>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/07/31 18:47:37 nectar Exp $
 #
 
 DISTNAME=	web500gw-2.1b2
@@ -19,7 +19,7 @@ RUN_DEPENDS=	${INSTDIR}:${PORTSDIR}/www/apache12
 
 INSTDIR=	${PREFIX}/www/cgi-bin
 
-MAKE_ENV+=	PLATFORMCFLAGS="${CFLAGS} -DUSE_SYSCONF" \
+MAKE_ENV=	PLATFORMCFLAGS="${CFLAGS} -DUSE_SYSCONF" \
 		INSTDIR=${INSTDIR} \
 		WEB500GWDIR=${WEB500GWDIR} \
 		MANDIR=${MANPREFIX}/man/man8 \
