@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.linvision.com/checkservice/files/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Checkservice is written to check the status of the services
 
-RUN_DEPENDS=	${SITE_PERL}/${PERL_VER}/Mail/Send.pm:${PORTSDIR}/mail/p5-Mail-Tools
+RUN_DEPENDS=	${SITE_PERL}/Mail/Send.pm:${PORTSDIR}/mail/p5-Mail-Tools
 
 USE_REINPLACE=	yes
 USE_PERL5_RUN=	YES
