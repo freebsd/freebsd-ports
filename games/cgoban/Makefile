@@ -11,7 +11,7 @@ CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	cgoban1
 
-MAINTAINER=	simonmar@microsoft.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Internet Go Server client and game editor
 
 BROKEN=		Does not compile, will be removed after Feb 2
