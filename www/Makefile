@@ -32,6 +32,7 @@
     SUBDIR += bk2site
     SUBDIR += bkmrkconv
     SUBDIR += bluefish
+    SUBDIR += bluefish-devel
     SUBDIR += bmsync
     SUBDIR += boa
     SUBDIR += bozohttpd

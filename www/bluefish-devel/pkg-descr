@@ -1,0 +1,15 @@
+Bluefish is an advanced HTML editor that contains functionality for
+PHP, SSI, and RXML.  It is designed for the experienced web designer.
+
+Note: 
+This is the development version for bluefish using gtk2.
+It will be released as 1.0 when it contains all of the features
+of 0.7 (gtk1 version).
+
+[taken from porting file]
+- Translations are still in the works.
+- Some people prefer the old style file browser, need to rethink that.
+- function references for php etc. are not done yet.
+- WML support is not yet ported.
+
+WWW:   http://bluefish.openoffice.nl/
