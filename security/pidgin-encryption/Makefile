@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	encryption
-PORTVERSION=	2.27
+PORTVERSION=	2.28
 CATEGORIES=	security net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PKGNAMEPREFIX}${PORTNAME}
@@ -22,14 +22,23 @@ LIB_DEPENDS=	nss3:${PORTSDIR}/security/nss
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_GNOME=	lthack gtk20
-USE_INC_LIBTOOL_VER=13
+USE_GNOME=	gtk20
+USE_LIBTOOL_VER=15
 CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS}" \
 		LDFLAGS="${PTHREAD_LIBS}"
 CONFIGURE_ARGS=	--with-nspr-includes=${LOCALBASE}/include/nspr \
 		--with-nspr-libs=${LOCALBASE}/lib \
 		--with-nss-includes=${LOCALBASE}/include/nss/nss \
 		--with-nss-libs=${LOCALBASE}/lib
+
+.if !defined(WITHOUT_NLS)
+USE_GETTEXT=	yes
+CONFIGURE_ARGS+=--with-libintl-prefix=${LOCALBASE}
+PLIST_SUB+=	NLS=""
+.else
+CONFIGURE_ARGS+=--disable-nls
+PLIST_SUB+=	NLS="@comment "
+.endif
 
 pre-everything::
 	@${ECHO_MSG} ""
