@@ -1,30 +1,35 @@
-# New ports collection makefile for:    nhppf-1.2
-# Version required:     1.2
+# New ports collection makefile for:    nhppf-2.1
+# Version required:     2.1
 # Date created:         19 Apr 1997
-# Whom:                 Choi Jun Ho <junker@jazz.snu.ac.kr>
+# Whom:                 CHOI Junho <cjh@kr.freebsd.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	nhppf-1.2
-PKGNAME=	ko-nhppf-1.2
+DISTNAME=	nhppf-2.1
+PKGNAME=	ko-nhppf-2.1
 CATEGORIES=	korean
-MASTER_SITES=	ftp://jazz.snu.ac.kr/pub/unix/util/nhppf/
+MASTER_SITES=	ftp://ftp.kr.freebsd.org/pub/users/cjh/nhppf/ \
+		ftp://jazz.snu.ac.kr/pub/unix/util/nhppf/
 
-MAINTAINER=	junker@jazz.snu.ac.kr
+MAINTAINER=	cjh@kr.freebsd.org
 
-RUN_DEPENDS=    ${PREFIX}/share/fonts/HLaTeX-0.95-pfb:$(PORTSDIR)/korean/hlatexpsfonts
+RUN_DEPENDS=    ${PREFIX}/share/texmf/fonts/type1/korean/pkmj/pkmjm0.pfb:$(PORTSDIR)/korean/hlatexpsfonts-wansungstd
 
-USE_PERL5=	yes
 NO_BUILD=	yes
 
+USE_PERL5=	yes
+
 do-configure:
-	@cd ${WRKSRC}; \
-	${ECHO_MSG} "#!${PERL5}" > scriptheader; \
-	${CAT} scriptheader nhppf > nhppf.new
+	${SED} -e 's,%%PREFIX%%,${PREFIX},g' \
+		${WRKSRC}/nhppf > ${WRKSRC}/nhppf.perl
 
 do-install:
 	@cd ${WRKSRC}; \
-	${INSTALL_SCRIPT} nhppf.new ${PREFIX}/bin/nhppf
+	${INSTALL_SCRIPT} nhppf.perl ${PREFIX}/bin/nhppf
+	${MKDIR} ${PREFIX}/share/doc/nhppf
+.for DOC in ChangeLog README charlist test.html
+	${INSTALL_DATA} ${WRKSRC}/${DOC} ${PREFIX}/share/doc/nhppf
+.endfor
 
 .include <bsd.port.mk>
