@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	log4c
-PORTVERSION=	1.0.6
-PORTREVISION=	3
+PORTVERSION=	1.0.8
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.cimai.com/opensource/log4c/
