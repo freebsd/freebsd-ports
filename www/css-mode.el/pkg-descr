@@ -1,0 +1,9 @@
+Css-mode.el emacs-lisp program is an editing major mode.
+You can edit CSS(Cascade Style Sheet)-format text easily.
+
+To use this, put the following into your ~/.emacs:
+
+	(autoload 'css-mode "css-mode")
+	(setq auto-mode-alist (cons '("\\.css\\'" . css-mode) auto-mode-alist))
+
+WWW: http://www.stud.ifi.uio.no/~lmariusg/download/css-mode.html
