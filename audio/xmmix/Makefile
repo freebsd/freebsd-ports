@@ -20,6 +20,8 @@ USE_MOTIF=	yes
 
 MAN1=		xmmix.1
 
+PLIST_FILES=	bin/xmmix lib/X11/app-defaults/XMmix lib/X11/xmmix.hlp
+
 post-patch:
 	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/XMmix.ad
 
