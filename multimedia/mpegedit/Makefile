@@ -13,7 +13,7 @@ DISTNAME=	${PORTNAME}_v${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	pnm.1:${PORTSDIR}/graphics/netpbm
+LIB_DEPENDS=	netpbm.1:${PORTSDIR}/graphics/netpbm
 
 USE_X_PREFIX=	yes
 

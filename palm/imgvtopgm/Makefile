@@ -12,9 +12,10 @@ MASTER_SITES=	http://www.trends.net/~mu/srcs/
 
 MAINTAINER=	sumikawa@FreeBSD.org
 
-LIB_DEPENDS=	pbm.1:${PORTSDIR}/graphics/netpbm
+LIB_DEPENDS=	netpbm.1:${PORTSDIR}/graphics/netpbm
 
 GNU_CONFIGURE=	yes
+CONFIGUR_ARGS=	--libdir=${PREFIX}
 
 MAN1=		imgvinfo.1 imgvtopnm.1 imgvview.1 pbmtoimgv.1 \
 		pgmtoimgv.1 ppmimgvquant.1

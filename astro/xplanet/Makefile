@@ -18,7 +18,7 @@ LIB_DEPENDS+=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		ungif.5:${PORTSDIR}/graphics/libungif \
 		png.5:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff \
-		pnm.1:${PORTSDIR}/graphics/netpbm
+		netpbm.1:${PORTSDIR}/graphics/netpbm
 
 RUN_DEPENDS=	wish8.3:${PORTSDIR}/x11-toolkits/tk83
 

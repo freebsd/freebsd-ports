@@ -1,5 +1,5 @@
---- Makefile.orig	Mon Jul 24 01:00:40 1995
-+++ Makefile	Thu Jun 15 08:53:48 2000
+--- Makefile.orig	Mon Jul 24 02:00:40 1995
++++ Makefile	Sat Jul  6 13:53:51 2002
 @@ -23,8 +23,8 @@
  #
  #                       Mr A S R Ashley B.Eng (Hons)    23rd July 1995
@@ -16,7 +16,7 @@
  OBJS     = main.o globals/version.o
  ARCHIVES = editor/editor.a ui/ui.a MpegCodec/mpeg.a
 -    LIBS = -lXext -lX11 -lpnm -lppm -lpbm -lpgm -lm
-+    LIBS = -L$(X11BASE)/lib -L$(LOCALBASE)/lib -lXext -lX11 -lpnm -lppm -lpbm -lpgm -lm
++    LIBS = -L$(X11BASE)/lib -L$(LOCALBASE)/lib -lXext -lX11 -lnetpbm -lm
  #
  #  CPPFLAGS     -Wall     all warnings
  #               -pipe     speeds up compilation (remove only if not using g++)
