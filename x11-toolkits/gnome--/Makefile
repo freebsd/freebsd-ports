@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	stable/sources/gnomemm
 MAINTAINER=	gnome@FreeBSD.org
 
 LIB_DEPENDS=	gtkmm.2:${PORTSDIR}/x11-toolkits/gtk--
-BUILD_DEPENDS=	m4:${PORTSDIR}/devel/m4
+BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
