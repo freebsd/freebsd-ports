@@ -118,6 +118,7 @@
     SUBDIR += domtools
     SUBDIR += driftnet
     SUBDIR += dtcp
+    SUBDIR += dtcpclient
     SUBDIR += easysoap
     SUBDIR += echolot
     SUBDIR += echoping
