@@ -1,0 +1,22 @@
+--- Makefile.orig	Sun Sep 19 16:22:44 1999
++++ Makefile	Sun Sep 19 16:25:16 1999
+@@ -89,6 +89,7 @@
+ 	@echo "freebsd-x86-any-a.out    FreeBSD, x86, a.out binaries"
+ 	@echo "freebsd-x86-k6-a.out     FreeBSD, AMD K6, a.out binaries"
+ 	@echo "freebsd-x86-any-elf      FreeBSD, x86, ELF binaries"
++	@echo "freebsd-alpha-any-elf    FreeBSD, Alpha, ELF binaries"
+ 	@echo "freebsd-x86-mmx-elf      FreeBSD, x86 with MMX, ELF binaries"
+ 	@echo "freebsd-x86-k6-elf       FreeBSD, AMD K6, ELF binaries"
+ 	@echo "openbsd-x86-any          OpenBSD, x86"
+@@ -175,6 +176,11 @@
+ 		JOHN_OBJS="$(JOHN_OBJS) x86.o" \
+ 		CFLAGS="$(CFLAGS) -m486" \
+ 		ASFLAGS="$(ASFLAGS) -DBSD"
++
++freebsd-alpha-any-elf:
++	$(LN) alpha.h arch.h
++	$(MAKE) $(PROJ) \
++		JOHN_OBJS="$(BITSLICE_OBJS) $(JOHN_OBJS) alpha.o"
+ 
+ freebsd-x86-mmx-elf:
+ 	$(LN) x86-mmx.h arch.h
