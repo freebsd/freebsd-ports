@@ -4,7 +4,7 @@
 # Date created:				9 Jan 1998
 # Whom:					John Polstra <jdp@polstra.com>
 #
-# $Id: Makefile,v 1.51 1999/03/22 01:35:36 obrien Exp $
+# $Id: Makefile,v 1.52 1999/03/23 18:37:47 obrien Exp $
 #
 
 DISTNAME=	egcs-1.1.2
@@ -19,9 +19,6 @@ MASTER_SITES=	ftp://go.cygnus.com/pub/ftp.cygnus.com/egcs/releases/egcs-1.1.2/ \
 		ftp://cambridge.cygnus.com/pub/egcs/releases/egcs-1.1.2/
 DISTFILES=	egcs-core-1.1.2${EXTRACT_SUFX} egcs-g++-1.1.2${EXTRACT_SUFX} \
 		egcs-g77-1.1.2${EXTRACT_SUFX} egcs-objc-1.1.2${EXTRACT_SUFX}
-.if ${MACHINE_ARCH} == "alpha"
-DISTFILES+=	egcs-freebsd-alpha-supplement${EXTRACT_SUFX}
-.endif
 
 MAINTAINER=	obrien@FreeBSD.org
 
