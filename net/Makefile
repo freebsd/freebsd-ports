@@ -1,9 +1,10 @@
-# $Id: Makefile,v 1.184 1998/10/19 14:37:31 vanilla Exp $
+# $Id: Makefile,v 1.185 1998/10/24 23:32:11 obrien Exp $
 #
 
     SUBDIR += SSLtelnet
     SUBDIR += am-utils
     SUBDIR += archie
+    SUBDIR += arla
     SUBDIR += arpwatch
     SUBDIR += ascend-radius
     SUBDIR += bb
@@ -15,6 +16,7 @@
     SUBDIR += cap
     SUBDIR += cftp
     SUBDIR += choparp
+    SUBDIR += citrix_ica
     SUBDIR += clog
     SUBDIR += cnet
     SUBDIR += coda_client
