@@ -20,7 +20,7 @@ RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
 
 USE_SDL=	sdl
 GNU_CONFIGURE=	yes
-PLIST_FILES=	lib/xmms/Visualization/libjess.so
+PLIST_FILES=	lib/xmms/Visualization/libjess.so lib/xmms/Visualization/libjess.la
 USE_GNOME=	glib12
 USE_X_PREFIX=	yes
 

@@ -32,6 +32,8 @@ CONFIGURE_ENV=	SYSCFLAGS='${CFLAGS}'
 
 WRKSRC=		${WRKDIR}/uade-${PORTVERSION}
 
+MAN1=		uade.1
+
 post-install:
 		${RM} -rf ${X11BASE}/share/uade/players/S
 
