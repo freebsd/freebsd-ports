@@ -1,0 +1,36 @@
+--- Makefile.orig	Mon Nov  1 21:21:36 1999
++++ Makefile	Fri Jun  9 12:07:27 2000
+@@ -2,15 +2,15 @@
+ # Makefile for antiword (Linux version)
+ #
+ 
+-CC	= gcc
+-LD	= gcc
++CC	?= gcc
++LD	= $(CC)
+ 
+ # must be equal to DEBUG or NDEBUG
+ DB	= NDEBUG
+ 
+ LDLIBS	=
+ 
+-CFLAGS	= -Wall -pedantic -O2 -D$(DB)
++CFLAGS	+= -D$(DB)
+ LDFLAGS	=
+ 
+ OBJS	=\
+@@ -22,12 +22,12 @@
+ PROGS =\
+ 	antiword
+ 
+-INSTALL_DIR = $(HOME)/bin
++INSTALL_DIR = $(PREFIX)/bin
+ 
+ all:		$(PROGS)
+ 
+ install:	all
+-		cp -pf $(PROGS) $(INSTALL_DIR)
++		$(BSD_INSTALL_PROGRAM) $(PROGS) $(INSTALL_DIR)
+ 
+ clean:
+ 		rm -f $(OBJS)
