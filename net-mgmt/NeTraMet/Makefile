@@ -7,7 +7,7 @@
 
 PORTNAME=	NeTraMet
 PORTVERSION=	4.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net-mgmt
 MASTER_SITES=	ftp://ftp.auckland.ac.nz/pub/iawg/NeTraMet/ \
 		http://www2.auckland.ac.nz/net/Accounting/
@@ -27,6 +27,7 @@ WRKSRC=		${WRKDIR}/NeTraMet${PORTVERSION:S/.//}
 USE_REINPLACE=	yes
 USE_AUTOCONF=	yes
 USE_GMAKE=	yes
+USE_SIZE=	yes
 
 .if defined(WITH_MOTIF)
 USE_MOTIF=	yes
