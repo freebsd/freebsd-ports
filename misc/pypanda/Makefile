@@ -9,7 +9,7 @@ PORTNAME=	pypanda
 PORTVERSION=	0.6
 PORTREVISION=	2
 CATEGORIES=	misc
-MASTER_SITES=	http://www3.telus.net/futility/futility/warez/
+MASTER_SITES=	# none
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Viewer for San Diego Zoo Pandacam written in Python
