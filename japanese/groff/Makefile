@@ -3,7 +3,7 @@
 # Date created:		14 April 1995
 # Whom:			Nobuhiro Yasutomi <nobu@psrc.isac.co.jp>
 #
-# $Id: Makefile,v 1.6 1996/03/31 23:25:11 asami Exp $
+# $Id: Makefile,v 1.7 1996/11/18 10:23:47 asami Exp $
 #
 
 DISTNAME=	groff-1.10
@@ -20,5 +20,13 @@ PATCH_DIST_STRIP=	-p1
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
+
+DNDP=		${WRKSRC}/devnippon/DESC.proto
+
+#for not writing "/usr/local" explicitly in the patch
+post-patch:
+	/bin/mv -f ${DNDP} ${DNDP}.tmp
+	/usr/bin/sed -e '$$d' ${DNDP}.tmp > ${DNDP}
+	/bin/echo "postpro ${PREFIX}/bin/grotty" >> ${DNDP}
 
 .include <bsd.port.mk>
