@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- Makefile	2001/08/28 16:21:28	1.1
++++ Makefile	2001/08/28 16:21:41
+@@ -145,7 +145,7 @@
+ 
+ beforeinstall:
+ 	${INSTALL} -C -o ${BINOWN} -g ${BINGRP} -m 444 \
+-		${GMPDIR}/gmp.h ${DESTDIR}/usr/include
++		${GMPDIR}/gmp.h ${DESTDIR}${INCDIR}
+ 
+ .include "Makefile.inc"
+ .include <bsd.lib.mk>
