@@ -61,4 +61,14 @@ pre-everything::
 	@${ECHO} "WITH_LDAP	use LDAP for authentication"
 	@${ECHO}
 
+pre-install:
+	PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
+
+post-install:
+	${INSTALL_DATA} ${FILESDIR}/jabberd.sh ${PREFIX}/etc/rc.d/jabberd.sh-dist
+	@if [ ! -f ${PREFIX}/etc/rc.d/jabberd.sh ]; then \
+		${ECHO} "Installing ${PREFIX}/etc/rc.d/jabberd.sh startup file."; \
+		${INSTALL_SCRIPT} ${FILESDIR}/jabberd.sh ${PREFIX}/etc/rc.d/jabberd.sh; \
+	fi
+
 .include <bsd.port.mk>
