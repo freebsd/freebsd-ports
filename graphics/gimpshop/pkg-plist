@@ -2,7 +2,6 @@ bin/gimp
 bin/gimp-2.0
 bin/gimp-remote
 bin/gimp-remote-2.0
-bin/gimptool
 bin/gimptool-2.0
 etc/gimp/2.0/gimprc
 etc/gimp/2.0/gtkrc
@@ -1583,6 +1582,10 @@ share/locale/es/LC_MESSAGES/gimp20-libgimp.mo
 share/locale/es/LC_MESSAGES/gimp20-script-fu.mo
 share/locale/es/LC_MESSAGES/gimp20-std-plug-ins.mo
 share/locale/es/LC_MESSAGES/gimp20.mo
+share/locale/eu/LC_MESSAGES/gimp20-libgimp.mo
+share/locale/eu/LC_MESSAGES/gimp20-script-fu.mo
+share/locale/eu/LC_MESSAGES/gimp20-std-plug-ins.mo
+share/locale/eu/LC_MESSAGES/gimp20.mo
 share/locale/fi/LC_MESSAGES/gimp20-libgimp.mo
 share/locale/fi/LC_MESSAGES/gimp20-script-fu.mo
 share/locale/fi/LC_MESSAGES/gimp20-std-plug-ins.mo
