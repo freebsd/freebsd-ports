@@ -3,7 +3,7 @@
 # Date created:        12 August 1998
 # Whom:                Bill Fumerola <billf@chc-chimes.com>
 #
-# $Id: Makefile,v 1.8 1999/04/13 20:53:16 billf Exp $
+# $Id: Makefile,v 1.9 1999/05/29 03:55:57 steve Exp $
 #
 
 DISTNAME=	mtr-0.37
@@ -17,7 +17,7 @@ HAS_CONFIGURE=	yes
 
 MAN8=	mtr.8
 
-pre-fetch:
+pre-patch:
 .if !defined(USE_GTK)
 	@${ECHO} ""
 	@${ECHO} "If you want to compile with GTK support,"
