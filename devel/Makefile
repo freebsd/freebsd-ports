@@ -841,6 +841,7 @@
     SUBDIR += p5-File-Flat
     SUBDIR += p5-File-Flock
     SUBDIR += p5-File-Grep
+    SUBDIR += p5-File-HomeDir
     SUBDIR += p5-File-Lock
     SUBDIR += p5-File-MMagic
     SUBDIR += p5-File-MimeInfo
