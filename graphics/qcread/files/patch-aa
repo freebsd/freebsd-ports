@@ -1,0 +1,26 @@
+--- Makefile.old	Sun Aug 23 21:51:14 1998
++++ Makefile	Sun Aug 23 21:53:23 1998
+@@ -9,17 +9,17 @@
+ 
+ # for Linux
+ #
+-CFLAGS = -O -DLinux
+-INCLUDES = cqc.h
+-OBJS = cqc.o
++#CFLAGS = -O -DLinux
++#INCLUDES = cqc.h
++#OBJS = cqc.o
+ #
+ # end Linux options
+ 
+ ## for FreeBSD
+ ##
+-#CFLAGS = -g -O -Ignu-getopt -DFreeBSD
+-#INCLUDES = cqc.h gnu-getopt/getopt.h
+-#OBJS = cqc.o gnu-getopt/getopt.o gnu-getopt/getopt1.o
++CFLAGS = -g -O -I. -DFreeBSD
++INCLUDES = cqc.h getopt.h
++OBJS = cqc.o getopt.o getopt1.o
+ ##
+ ## end FreeBSD options
+ 
