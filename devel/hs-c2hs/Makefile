@@ -14,17 +14,34 @@ PKGNAMEPREFIX=	hs-
 MAINTAINER=	obraun@FreeBSD.org
 COMMENT=	C->Haskell, an Interface Generator for Haskell
 
-BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc
-RUN_DEPENDS=	ghc:${PORTSDIR}/lang/ghc
+OPTIONS=	GHC5 "Build for ghc5" off
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_GHC5)
+GHC=		ghc-5.04.3
+GHCDEP=		ghc5
+GHCMAJOR=	5
+.else
+GHC=		ghc-6.2
+GHCDEP=		ghc
+GHCMAJOR=	6
+.endif
+PKGNAMESUFFIX=	-${GHCDEP}
+
+BUILD_DEPENDS=	${GHC}:${PORTSDIR}/lang/${GHCDEP}
+RUN_DEPENDS=	${GHC}:${PORTSDIR}/lang/${GHCDEP}
 
 USE_SIZE=	yes
 HAS_CONFIGURE=	yes
 USE_GMAKE=	yes
 
-GHC_VERSION=	`${LOCALBASE}/bin/ghc --numeric-version`
+GHC_VERSION=	`${LOCALBASE}/bin/${GHC} --numeric-version`
 PLIST_SUB+=	C2HS_VERSION="${PORTVERSION}" GHC_VERSION="${GHC_VERSION}"
+PLIST_SUB+=	GHCMAJOR="${GHCMAJOR}"
 
-CONFIGURE_ARGS+=	--prefix=${PREFIX} --enable-add-package
+CONFIGURE_ARGS+=	--prefix=${PREFIX} --enable-add-package \
+			--with-hc=${GHC}
 
 MAN1=	c2hs-config.1 c2hs.1
 
@@ -36,4 +53,4 @@ post-install:
 		 ${INSTALL_MAN} c2hs-config.1 c2hs.1 ${MANPREFIX}/man/man1)
 	@${RM} -f ${PREFIX}/lib/ghc-${GHC_VERSION}/package.conf.old
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
