@@ -1,10 +1,25 @@
-# $Id: Makefile,v 1.17 1995/05/13 09:20:19 asami Exp $
+# $Id: Makefile,v 1.18 1995/05/14 03:29:57 asami Exp $
 #
 
-SUBDIR=	a2ps afm dvi2xx dvips dviselect ghostscript ghostview \
-	latex latex209 makeindex mltex psutils \
-	rtf2latex \
-	tex texinfo tr2latex transfig xdvi \
-	xtexshell
+   SUBDIR += a2ps
+   SUBDIR += afm
+   SUBDIR += dvi2xx
+   SUBDIR += dvips
+   SUBDIR += dviselect
+   SUBDIR += ghostscript
+   SUBDIR += ghostview
+   SUBDIR += latex
+   SUBDIR += latex209
+   SUBDIR += makeindex
+   SUBDIR += mltex
+   SUBDIR += musixtex
+   SUBDIR += psutils
+   SUBDIR += rtf2latex
+   SUBDIR += tex
+   SUBDIR += texinfo
+   SUBDIR += tr2latex
+   SUBDIR += transfig
+   SUBDIR += xdvi
+   SUBDIR += xtexshell
 
 .include <bsd.port.subdir.mk>
