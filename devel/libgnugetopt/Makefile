@@ -8,7 +8,7 @@
 
 DISTNAME=	libgnugetopt-1.1
 CATEGORIES=	devel
-MASTER_SITES= 	http://www.freebsd.org/~andy/	
+MASTER_SITES= 	http://www.freebsd.org/~andy/distfiles/
 
 MAINTAINER=	andy@icc.surw.chel.su
 
