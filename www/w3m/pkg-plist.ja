@@ -7,10 +7,12 @@ share/doc/ja/w3m/HISTORY
 share/doc/ja/w3m/HISTORY.kokb
 share/doc/ja/w3m/MANUAL.html
 share/doc/ja/w3m/README
+share/doc/ja/w3m/README.SSL
+share/doc/ja/w3m/README.cookie
 share/doc/ja/w3m/README.dict
 share/doc/ja/w3m/README.func
 share/doc/ja/w3m/README.keymap
-share/doc/ja/w3m/README.kokb
+share/doc/ja/w3m/README.mailcap
 share/doc/ja/w3m/README.menu
 share/doc/ja/w3m/STORY.html
 share/doc/ja/w3m/keymap.default
