@@ -1,5 +1,5 @@
---- curses.c.orig	Wed Oct 15 22:18:54 2003
-+++ curses.c	Wed Oct 15 22:19:36 2003
+--- curses.c.orig	Fri Feb  8 16:13:22 2002
++++ curses.c	Fri Aug 20 16:26:00 2004
 @@ -221,31 +221,31 @@
    char * t;
    int    row;
@@ -54,3 +54,11 @@
            f=intf, r=ipf rule numbers, i=isba rule numbers, l=ip header length)"
    : (mode_httpd_access
       ? "    o     toggle display options (d=date, t=time, c=client IP, u=user)"
+@@ -1372,6 +1372,7 @@
+ 
+     default:
+       // fprintf(stderr, "-- KEY = 0x%x --", (int) c);
++      break;
+     }
+   }
+ 
