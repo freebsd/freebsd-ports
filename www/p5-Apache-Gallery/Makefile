@@ -25,6 +25,8 @@ BUILD_DEPENDS=	${APXS}:${PORTSDIR}/${APACHE_PORT} \
 		${SITE_PERL}/CGI.pm:${PORTSDIR}/www/p5-CGI.pm
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+BROKEN=		Installation fails
+
 .if defined(WITH_APACHE2)
 BUILD_DEPENDS+=	${LOCALBASE}/libexec/apache2/mod_perl.so:${PORTSDIR}/www/mod_perl2
 DEPENDS_ARGS+=	WITHOUT_MODPERL=yes
