@@ -7,10 +7,17 @@
 # Tunables not (yet) configurable via 'make config':
 # SQUID_{U,G}ID
 #   Which user/group squid should run as (default: squid/squid).
-#   The user and group will be created if they do not already exist.
+#   The user and group will be created if they do not already exist with
+#   a uid:gid of 100:100.
 #   NOTE: before version 2.4.7_11, these settings defaulted to
 #   nobody/nogroup.
 #   If you wish to keep these settings, please define SQUID_UID=nobody and
+#   SQUID_GID=nogroup in your make environment before you start the update.
+#   NOTE2:
+#   Before version 2.4_12 the numerical id chosen for SQUID_UID (and
+#   SQUID_GID respectively) was the first free id greater than or equal 3128.
+#   If you wish to move your squid user to id 100:100, run "make changeuser",
+#   please see the changeuser target's definition for further information.
 #
 # SQUID_LANGUAGE
 #   The set of error pages to be installed. Valid values are:
@@ -26,7 +33,7 @@
 
 PORTNAME=	squid
 PORTVERSION=	2.4
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	www
 MASTER_SITES=	\
 		ftp://ftp.squid-cache.org/pub/%SUBDIR%/ \
@@ -47,7 +54,7 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	tmseck@netcologne.de
 COMMENT=	The successful WWW proxy cache and accelerator
 
-CONFLICTS=	squid-*
+CONFLICTS=	squid-2.[^4]
 
 GNU_CONFIGURE=	yes
 STRIP=		# won't install scripts correctly otherwise.
@@ -221,5 +228,51 @@ post-install:
 	-cd ${PREFIX}/libexec/squid && ${STRIP_CMD} ${libexec}
 	-cd ${PREFIX}/sbin && ${STRIP_CMD} ${sbin}
 	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+
+changeuser:
+# Recover from the problem that earlier versions of this port created the
+# squid pseudo-user with an id greater than 999 which is not allowed in
+# FreeBSD's ports system. The port now uses id 100:100.
+# NOTE:
+# This target assumes that SQUID_GID is the primary group of SQUID_UID. If you
+# have a different setup, do not run this target!
+.if ${SQUID_UID:L} == nobody
+	@${ECHO_CMD} "'nobody' is a system user, you do not need to execute"; \
+	${ECHO_CMD} "this target!"
+	exit 1
+.endif
+	@if [ `id -u` -ne 0 ]; \
+	then ${ECHO_CMD} "Sorry, you must be root to use this target."; exit 1; fi; \
+	current_uid=`id -u ${SQUID_UID}`; \
+	current_gid=`pw groupshow ${SQUID_GID}|cut -f 3 -d :`; \
+	${ECHO_CMD} "I will remove this user:"; \
+	id -P $${current_uid}; \
+	${ECHO_CMD} "and this group:"; \
+	pw groupshow ${SQUID_GID}; \
+	${ECHO_CMD} "I will then re-create them with a user and group id of 100."; \
+	${ECHO_CMD} "Then all files and directories under ${PREFIX} and /var that"; \
+	${ECHO_CMD} "are owned by uid $${current_uid} will be chown(1)'ed."; \
+	${ECHO_CMD} "After that, all files and directories that were accessible"; \
+	${ECHO_CMD} "by group $${current_gid} will chgrp(1)'ed respectively."; \
+	${ECHO_CMD} "Note that this assumes group '${SQUID_GID}' to be the primary"; \
+	${ECHO_CMD} "group of user '${SQUID_UID}'. If you have a different setup"; \
+	${ECHO_CMD} "please abort this target now."; \
+	read -p "Press RETURN to continue or CTRL-C to abort:" dummy ; \
+	${ECHO_CMD} "OK, here we go:"; \
+	${ECHO_CMD} "deleting user $${current_uid} and his primary group..."; \
+	pw userdel -u $${current_uid}; \
+	${ECHO_CMD} "adding user ${SQUID_UID} with id 100..."; \
+	pw groupadd -n ${SQUID_GID} -g 100; \
+	pw useradd -n ${SQUID_UID} -u 100 -c "squid caching-proxy pseudo user" \
+	    -d ${PREFIX}/squid -s /sbin/nologin -h - ; \
+	${ECHO_CMD} "chown(1)'ing everything under ${PREFIX} from $${current_uid} to 100..."; \
+	${FIND} -H ${PREFIX} -user $${current_uid} -exec ${CHOWN} 100 {} \; ; \
+	${ECHO_CMD} "chgrp(1)'ing everything under ${PREFIX} from $${current_gid} to 100..."; \
+	${FIND} -H ${PREFIX} -group $${current_gid} -exec ${CHOWN} :100 {} \; ; \
+	${ECHO_CMD} "chown(1)'ing everything under /var from $${current_uid} to 100..."; \
+	${FIND} -H /var -user $${current_uid} -exec ${CHOWN} 100 {} \; ; \
+	${ECHO_CMD} "chgrp(1)'ing everything under /var from $${current_gid} to 100..."; \
+	${FIND} -H /var -group $${current_gid} -exec ${CHOWN} :100 {} \; ; \
+	${ECHO_CMD} "Finished."
 
 .include <bsd.port.post.mk>
