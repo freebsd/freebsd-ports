@@ -6,14 +6,15 @@
 #
 
 PORTNAME=	fidelio
-PORTVERSION=	0.9.5
+PORTVERSION=	0.9.6
 CATEGORIES=	net gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	matt@gsicomp.on.ca
+MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2
+LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext \
+		xml2.5:${PORTSDIR}/textproc/libxml2
 
 XML_CONFIG?=	${LOCALBASE}/bin/xml2-config
 
@@ -26,6 +27,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/libxml2 \
 			  `${GLIB_CONFIG} --cflags gthread`" \
 		LDFLAGS="-L${LOCALBASE}/lib `${GLIB_CONFIG} --libs gthread`" \
 		XML_CONFIG="${XML_CONFIG}"
+CONFIGURE_ARGS=	--without-included-gettext
 
 pre-patch:
 	@${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
