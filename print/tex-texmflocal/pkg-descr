@@ -1,0 +1,2 @@
+This is a meta-port to create a site-local $TEXMF directory, which is
+used to store site-local fonts, macro packages, and configurations.
