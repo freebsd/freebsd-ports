@@ -8,7 +8,8 @@
 
 DISTNAME=	teapot-1.03
 CATEGORIES=	deskutils
-MASTER_SITES=	ftp://cantor.informatik.rwth-aachen.de/pub/unix/
+MASTER_SITES=	ftp://cantor.informatik.rwth-aachen.de/pub/unix/ \
+		http://www.moria.de/~michael/teapot/
 
 MAINTAINER=	andy@icc.surw.chel.su
 
