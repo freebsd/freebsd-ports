@@ -83,6 +83,9 @@ bin/btshowmetainfo.py
 %%PYTHON_SITELIBDIR%%/BitQueue/timeoutsocket.py
 %%PYTHON_SITELIBDIR%%/BitQueue/timeoutsocket.pyc
 %%PYTHON_SITELIBDIR%%/BitQueue/timeoutsocket.pyo
+%%PYTHON_SITELIBDIR%%/BitQueue/util.py
+%%PYTHON_SITELIBDIR%%/BitQueue/util.pyc
+%%PYTHON_SITELIBDIR%%/BitQueue/util.pyo
 %%PYTHON_SITELIBDIR%%/BitQueue/webservice.py
 %%PYTHON_SITELIBDIR%%/BitQueue/webservice.pyc
 %%PYTHON_SITELIBDIR%%/BitQueue/webservice.pyo
@@ -116,6 +119,9 @@ bin/btshowmetainfo.py
 %%PYTHON_SITELIBDIR%%/BitTornado/BT1/PiecePicker.py
 %%PYTHON_SITELIBDIR%%/BitTornado/BT1/PiecePicker.pyc
 %%PYTHON_SITELIBDIR%%/BitTornado/BT1/PiecePicker.pyo
+%%PYTHON_SITELIBDIR%%/BitTornado/BT1/PiecePicker.new.py
+%%PYTHON_SITELIBDIR%%/BitTornado/BT1/PiecePicker.new.pyc
+%%PYTHON_SITELIBDIR%%/BitTornado/BT1/PiecePicker.new.pyo
 %%PYTHON_SITELIBDIR%%/BitTornado/BT1/Rerequester.py
 %%PYTHON_SITELIBDIR%%/BitTornado/BT1/Rerequester.pyc
 %%PYTHON_SITELIBDIR%%/BitTornado/BT1/Rerequester.pyo
@@ -236,14 +242,14 @@ bin/btshowmetainfo.py
 %%PYTHON_SITELIBDIR%%/BitTornado/zurllib.py
 %%PYTHON_SITELIBDIR%%/BitTornado/zurllib.pyc
 %%PYTHON_SITELIBDIR%%/BitTornado/zurllib.pyo
-share/BTQueue/alias.conf
-share/BTQueue/ip2cc.db
-share/doc/BTQueue/examples/interest.xml
-share/doc/BTQueue/examples/tracker.xml
+%%DATADIR%%/alias.conf
+%%DATADIR%%/ip2cc.db
+%%DOCSDIR%%/examples/interest.xml
+%%DOCSDIR%%/examples/tracker.xml
 @dirrm %%PYTHON_SITELIBDIR%%/BitCrawler
 @dirrm %%PYTHON_SITELIBDIR%%/BitQueue
 @dirrm %%PYTHON_SITELIBDIR%%/BitTornado/BT1
 @dirrm %%PYTHON_SITELIBDIR%%/BitTornado
-@dirrm share/BTQueue
-@dirrm share/doc/BTQueue/examples
-@dirrm share/doc/BTQueue
+@dirrm %%DATADIR%%
+@dirrm %%DOCSDIR%%/examples
+@dirrm %%DOCSDIR%%

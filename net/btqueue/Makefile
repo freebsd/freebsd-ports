@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	btqueue
-PORTVERSION=	0.0.17
+PORTVERSION=	0.0.18
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -21,4 +21,15 @@ CONFLICTS=	py??-*[Bb]it[Tt]ornado* py??-*[Bb]it[Tt]orrent*
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 
-.include <bsd.port.mk>
+DATADIR=	${PREFIX}/share/BTQueue
+DOCSDIR=	${PREFIX}/share/doc/BTQueue
+
+OPTIONS=	PYXML "Add dependency on PyXML (needed for crawler only)" on
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_PYXML)
+RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/_xmlplus/__init__.py:${PORTSDIR}/textproc/py-xml
+.endif
+
+.include <bsd.port.post.mk>
