@@ -11,13 +11,13 @@ DISTNAME=       timidity-0.2i
 CATEGORIES=     audio
 MASTER_SITES=   ftp://ftp.kiarchive.ru/pub/misc/hardware/soundcard/gus/ \
 		http://www.goice.co.jp/member/mo/timidity/dist/
-TIINS=          goemon.tgz
 DISTFILES=      ${TIINS} ${DISTNAME}.tar.gz
 
 MAINTAINER=     ports@FreeBSD.org
 
 NO_CDROM=       "Uses copyrighted patches"
 
+TIINS=          goemon.tgz
 EXTRACT_ONLY=   ${DISTNAME}.tar.gz
 INSTALL_TARGET= install.all
 MAN1=           timidity.1
@@ -29,6 +29,5 @@ post-install:
 	${SED} 's=dir goemon=dir ${PREFIX}/lib/timidity/goemon=' \
 	   < goemon.cfg.bak > goemon.cfg && \
 	${RM} goemon.cfg.bak
-
 
 .include <bsd.port.mk>
