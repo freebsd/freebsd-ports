@@ -10,7 +10,7 @@ PORTVERSION=	1.2
 CATEGORIES=	lang
 MASTER_SITES=	http://www.sigala.it/sandro/files/
 
-MAINTAINER=	pat@databits.net
+MAINTAINER=	pat@FreeBSD.org
 
 GNU_CONFIGURE=	yes
 

@@ -10,7 +10,7 @@ PORTVERSION=	0.92.2
 CATEGORIES=	astro
 MASTER_SITES=	http://www.princeton.edu/~kmccarty/downloads/
 
-MAINTAINER=	pat@databits.net
+MAINTAINER=	pat@FreeBSD.org
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes

@@ -10,7 +10,7 @@ PORTVERSION=	0.30
 CATEGORIES=	misc windowmaker
 MASTER_SITES=	http://home.att.net/~takuper/wmscoreboard/
 
-MAINTAINER=	pat@databits.net
+MAINTAINER=	pat@FreeBSD.org
 
 RUN_DEPENDS=	wget:${PORTSDIR}/ftp/wget
 

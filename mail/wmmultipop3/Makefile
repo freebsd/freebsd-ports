@@ -11,7 +11,7 @@ CATEGORIES=	mail windowmaker
 MASTER_SITES=	http://sumpan.campus.luth.se/software/wmmultipop3/
 DISTNAME=	wmMultiPop3-${PORTVERSION}
 
-MAINTAINER=	pat@databits.net
+MAINTAINER=	pat@FreeBSD.org
 
 BUILD_WRKSRC=		${WRKDIR}/${DISTNAME}/${PORTNAME}
 USE_X_PREFIX=	yes

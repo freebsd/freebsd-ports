@@ -11,7 +11,7 @@ CATEGORIES=	net ipv6
 MASTER_SITES=	http://v6web.litech.org/radvd/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/p4/pl4/}
 
-MAINTAINER=	pat@databits.net
+MAINTAINER=	pat@FreeBSD.org
 
 GNU_CONFIGURE=	yes
 

@@ -10,7 +10,7 @@ PORTVERSION=	1.0.0
 CATEGORIES=	textproc
 MASTER_SITES=	http://pldaniels.com/replaceit/
 
-MAINTAINER=	pat@databits.net
+MAINTAINER=	pat@FreeBSD.org
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/replaceit ${PREFIX}/bin

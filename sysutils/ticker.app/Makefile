@@ -10,7 +10,7 @@ PORTVERSION=	0.2.0
 CATEGORIES=	sysutils windowmaker
 MASTER_SITES=	http://www.sh.rim.or.jp/~ssato/src/
 
-MAINTAINER=	pat@databits.net
+MAINTAINER=	pat@FreeBSD.org
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes

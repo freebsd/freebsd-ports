@@ -11,7 +11,7 @@ CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	pat@databits.net
+MAINTAINER=	pat@FreeBSD.org
 
 RUN_DEPENDS=	crafty:${PORTSDIR}/games/crafty \
 		gnuchess:${PORTSDIR}/games/gnuchess

@@ -10,7 +10,7 @@ PORTVERSION=	0.3
 CATEGORIES=	sysutils windowmaker
 MASTER_SITES=	http://users.chello.be/cr49940//wmzazof/
 
-MAINTAINER=	pat@databits.net
+MAINTAINER=	pat@FreeBSD.org
 
 LIB_DEPENDS=	dockapp.1:${PORTSDIR}/x11-wm/libdockapp
 

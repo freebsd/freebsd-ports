@@ -17,7 +17,7 @@ MASTER_SITES=	ftp://files.ausgamers.com/half-life/linux/ \
 DISTFILES=	hlds_l_3108_full.tar.gz \
 		hlds_l_3108a_up.tar.gz
 
-MAINTAINER=	pat@databits.net
+MAINTAINER=	pat@FreeBSD.org
 
 ONLY_FOR_ARCHS=	i386
 USE_LINUX_PREFIX=	yes

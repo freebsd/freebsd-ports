@@ -10,7 +10,7 @@ PORTVERSION=	2.4
 CATEGORIES=	x11-clocks windowmaker
 MASTER_SITES=	http://home.dwave.net/~jking/wmtimer/
 
-MAINTAINER=	pat@databits.net
+MAINTAINER=	pat@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/wmtimer
 USE_GMAKE=	yes

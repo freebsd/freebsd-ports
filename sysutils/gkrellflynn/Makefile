@@ -10,7 +10,7 @@ PORTVERSION=	0.4
 CATEGORIES=	sysutils
 MASTER_SITES=	http://horus.comlab.uni-rostock.de/flynn/
 
-MAINTAINER=	pat@databits.net
+MAINTAINER=	pat@FreeBSD.org
 
 BUILD_DEPENDS=	${X11BASE}/include/gkrellm/gkrellm.h:${PORTSDIR}/sysutils/gkrellm
 RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm

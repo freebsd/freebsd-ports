@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	sysutils windowmaker
 MASTER_SITES=	http://boombox.campus.luth.se/files/
 
-MAINTAINER=	pat@databits.net
+MAINTAINER=	pat@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/${PORTNAME}/${PORTNAME}
 USE_X_PREFIX=	yes

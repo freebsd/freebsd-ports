@@ -11,7 +11,7 @@ CATEGORIES=	games net
 MASTER_SITES=	http://www.qstat.org/
 DISTNAME=	qstat${PORTVERSION:S/.//g}
 
-MAINTAINER=	pat@databits.net
+MAINTAINER=	pat@FreeBSD.org
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/qstat ${PREFIX}/bin
