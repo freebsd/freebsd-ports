@@ -3,13 +3,18 @@
 # Date created:		30 October 1994
 # Whom:			smace
 #
-# $Id: Makefile,v 1.12 1996/09/22 08:56:34 andreas Exp $
+# $Id: Makefile,v 1.13 1996/11/18 00:29:59 ache Exp $
 #
 
 DISTNAME=	xv-3.10a
 CATEGORIES=     graphics x11
-MASTER_SITES=	ftp://ftp.cis.upenn.edu/pub/xv/
-PATCH_SITES=    ${MASTER_SITES}
+MASTER_SITES=	ftp://ftp.cis.upenn.edu/pub/xv/ \
+		ftp://ftp.kuis.kyoto-u.ac.jp/X11/contrib/clients/xv/ \
+		ftp://ftp.tohoku.ac.jp/pub/X/app/xv/
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
+		xv310a-magpic2-PhotoCD-patch.tar.gz # only from Japan
+
+PATCH_SITES=    ftp://ftp.cis.upenn.edu/pub/xv/
 PATCHFILES=     xv-3.10a.JPEG-patch # xv-3.10a.TIFF-patch (for tiff3.4)
 
 LIB_DEPENDS=    jpeg\\.7\\.:${PORTSDIR}/graphics/jpeg \
@@ -17,11 +22,14 @@ LIB_DEPENDS=    jpeg\\.7\\.:${PORTSDIR}/graphics/jpeg \
 
 USE_IMAKE=	yes
 
+pre-patch:
+	@${PATCH} ${PATCH_ARGS} -p1 < ${WRKDIR}/Patch.magpic2.PhotoCD.XV310a
+
 post-install:
-	mkdir -p ${PREFIX}/share/doc/xv
-	cp ${WRKSRC}/README ${PREFIX}/share/doc/xv
+	${MKDIR} ${PREFIX}/share/doc/xv
+	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/xv
 .if !defined(NOPORTDOCS)
-	cp ${WRKSRC}/docs/xvdocs.ps ${PREFIX}/share/doc/xv
+	${INSTALL_DATA} ${WRKSRC}/docs/xvdocs.ps ${PREFIX}/share/doc/xv
 .endif
 
 .include <bsd.port.mk>
