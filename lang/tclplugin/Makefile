@@ -3,7 +3,7 @@
 # Date created:		Sat Nov  8 10:46:42 CET 1997
 # Whom:			andreas
 #
-# $Id: Makefile,v 1.5 1997/12/07 00:46:30 vanilla Exp $
+# $Id: Makefile,v 1.6 1997/12/26 13:36:49 andreas Exp $
 #
 
 DISTNAME=	tclplug20b5-src
@@ -15,7 +15,7 @@ MAINTAINER=	andreas@FreeBSD.ORG
 
 RUN_DEPENDS=	netscape:${PORTSDIR}/www/netscape4-communicator
 
-BROKEN=		"here TCL Plugin is only recognized when running as root"
+#BROKEN=	"possibly doesn't run on -current"
 NO_PACKAGE=	yes
 WRKSRC=		${WRKDIR}/tclplugin2.0b5/plugin2.0/unix
 GNU_CONFIGURE=	yes
