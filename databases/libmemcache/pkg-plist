@@ -1,3 +1,3 @@
-@unexec rm %D/lib/libmemcache.so.1.0 2>/dev/null
+lib/libmemcache.so.1.0
 lib/libmemcache.so
 lib/libmemcache.a
