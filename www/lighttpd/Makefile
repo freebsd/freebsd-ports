@@ -7,8 +7,11 @@
 
 PORTNAME=	lighttpd
 PORTVERSION=	1.3.6
+PORTREVISION=	1
 CATEGORIES=	www
-MASTER_SITES=	http://jan.kneschke.de/projects/lighttpd/download/
+MASTER_SITES=	http://jan.kneschke.de/projects/lighttpd/download/ \
+				http://dl.fkb.wormulon.net/lighttpd/ \
+				http://dl.kel.wormulon.net/lighttpd/
 
 MAINTAINER=	hendrik@scholz.net
 COMMENT=	A secure, fast, compliant, and very flexible Web Server
@@ -25,7 +28,18 @@ CONFIGURE_ENV=	CPPFLAGS=-I${PREFIX}/include LIBS=-L${PREFIX}/lib
 STARTUP_FILE=	${PREFIX}/etc/rc.d/lighttpd.sh
 RC_SCRIPTS_SUB=	PREFIX=${PREFIX} RC_SUBR=${RC_SUBR}
 
+.if !defined(WITHOUT_OPENSSL)
+USE_OPENSSL=	yes
+CONFIGURE_ARGS+=	--with-openssl
+.endif
+
 MAN1=		lighttpd.1
+
+pre-everything::
+.if !defined(WITHOUT_OPENSSL)
+	@${ECHO_MSG}
+	@${ECHO_MSG} "You can disable SSL support by defining WITHOUT_OPENSSL"
+.endif
 
 post-install:
 	@${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \

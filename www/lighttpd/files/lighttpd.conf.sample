@@ -38,6 +38,9 @@ server.errorlog            = "/var/log/lighttpd.error.log"
 server.indexfiles          = ( "index.php", "index.html", 
                                 "index.htm", "default.htm" )
 
+# server PID file location for init script
+server.pid-file              = "/var/run/lighttpd.pid"
+
 # mimetype mapping
 mimetype.assign            = (  
   ".pdf"          =>      "application/pdf",
