@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dbacl
-PORTVERSION=	1.6
+PORTVERSION=	1.7
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -23,7 +23,8 @@ USE_REINPLACE=	yes
 PROGRAMS=	bayesol dbacl mailinspect
 SCRIPTS=	mailcross mailtoe mailfoot
 MAN1=		bayesol.1 dbacl.1 mailcross.1 mailinspect.1 mailtoe.1 mailfoot.1
-DOCS=		AUTHORS ChangeLog README doc/dbacl.ps doc/email.html doc/tutorial.html
+DOCS=		AUTHORS ChangeLog README doc/dbacl.ps \
+		doc/email.html doc/tutorial.html doc/costs.ps
 EXAMPLES=	sample*.txt japanese.txt example*.risk toy.risk prop.pl
 
 pre-install:
