@@ -126,7 +126,7 @@ sub write_logfile {
 
 	open FILE, ">$filename" or
 	    die "Cannot open for write log file $filename.";
-	print FILE join("\n", @lines), "\n";
+	print FILE map { "$_\n" } @lines;
 	close FILE;
 }
 
@@ -181,7 +181,7 @@ sub format_lists {
 			$tag = "";	# next thing is a tag
 		} elsif (!$tag) {
 			$tag = $line;
-			next if $header . $tag eq $lastsep;
+			next if "$header$tag" eq $lastsep;
 
 			$lastsep = $header . $tag;
 			if ($tag eq 'HEAD') {
@@ -212,7 +212,7 @@ sub append_names_to_file {
 
 	print FILE $dir, "\n";
 	print FILE $tag, "\n";
-	print FILE join("\n", @files), "\n";
+	print FILE map { "$_\n" } @files;
 	close FILE;
 }
 
@@ -453,7 +453,7 @@ sub mail_notification {
 	LINE: foreach my $line (@subj) {
 		foreach my $word (split(/ /, $line)) {
 			if ($subjwords > 2 &&
-			    length($subject . " " . $word) > 75) {
+			    length("$subject $word") > 75) {
 				if ($subjlines > 2) {
 					$subject .= " ...";
 				}
@@ -695,19 +695,12 @@ while (<STDIN>) {
 # single blank line.
 # (Note, this only does the mail and changes log, not the rcs log).
 #
-while ($#log_lines > -1) {
-	last if ($log_lines[0] ne "");
-	shift(@log_lines);
-}
-while ($#log_lines > -1) {
-	last if ($log_lines[$#log_lines] ne "");
-	pop(@log_lines);
-}
-for (my $l = $#log_lines; $l > 0; $l--) {
-	if (($log_lines[$l - 1] eq "") && ($log_lines[$l] eq "")) {
-		splice(@log_lines, $l, 1);
-	}
-}
+my $log_message = join "\n", @log_lines;
+$log_message =~ s/\n{3,}/\n\n/g;
+$log_message =~ s/^\n+//;
+$log_message =~ s/\n+$//;
+@log_lines = split /\n/, $log_message;
+
 
 #
 # Find the log file that matches this log message
@@ -717,8 +710,8 @@ for ($message_index = 0; ; $message_index++) {
 	last unless -e "$LOG_FILE.$message_index";
 
 	my @text = &read_logfile("$LOG_FILE.$message_index");
-	last if  $#text == -1;
-	last if join(" ", @log_lines) eq join(" ", @text);
+	last if @text;
+	last if "@log_lines" eq "@text";
 }
 
 #
@@ -763,7 +756,7 @@ if (-e $LAST_FILE) {
 	$_ = &read_line($LAST_FILE);
 	my $tmpfiles = $directory;
 	$tmpfiles =~ s,([^a-zA-Z0-9_/]),\\$1,g;
-	if (! grep(/$tmpfiles$/, $_)) {
+	unless (grep(/$tmpfiles$/, $_)) {
 		print "More commits to come...\n";
 		exit 0
 	}
