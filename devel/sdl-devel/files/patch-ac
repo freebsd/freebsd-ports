@@ -1,6 +1,15 @@
---- configure.orig	Fri Mar 31 08:26:24 2000
-+++ configure	Mon Apr 24 02:09:39 2000
-@@ -610,9 +610,9 @@
+--- configure.orig	Tue Jun  6 07:36:14 2000
++++ configure	Tue Jun  6 12:10:08 2000
+@@ -607,7 +607,7 @@
+ SDL_MAJOR_VERSION=1
+ SDL_MINOR_VERSION=1
+ SDL_MICRO_VERSION=3
+-SDL_INTERFACE_AGE=0
++SDL_INTERFACE_AGE=2
+ SDL_BINARY_AGE=3
+ SDL_VERSION=$SDL_MAJOR_VERSION.$SDL_MINOR_VERSION.$SDL_MICRO_VERSION
+ 
+@@ -620,9 +620,9 @@
  
  # libtool versioning
  LT_RELEASE=$SDL_MAJOR_VERSION.$SDL_MINOR_VERSION
@@ -12,7 +21,7 @@
  
  
  
-@@ -2907,7 +2907,7 @@
+@@ -2939,7 +2939,7 @@
  
  
  SDL_CFLAGS=""
@@ -21,38 +30,3 @@
  
  
  # Check whether --enable-audio or --disable-audio was given.
-@@ -4616,7 +4616,7 @@
-         echo "$ac_t""$video_opengl" 1>&6
-         if test x$video_opengl = xyes; then
-             CFLAGS="$CFLAGS -DHAVE_OPENGL"
--            SYSTEM_LIBS="$SYSTEM_LIBS -ldl"
-+            SYSTEM_LIBS="$SYSTEM_LIBS"
-         fi
-     fi
- }
-@@ -4649,7 +4649,7 @@
-     ac_save_libs="$LIBS"
-     case "$target" in
-         *-*-freebsd*)
--            pthread_lib="-lc_r"
-+            pthread_lib="-pthread"
-             ;;
-         *-*-openbsd*)
-             pthread_lib="-lc_r"
-@@ -4689,7 +4689,7 @@
-         echo "$ac_t""$use_pthreads" 1>&6
-         if test x$use_pthreads = xyes; then
-             CFLAGS="$CFLAGS -D_REENTRANT -DSDL_USE_PTHREADS"
--            SDL_CFLAGS="$SDL_CFLAGS -D_REENTRANT"
-+            SDL_CFLAGS="$SDL_CFLAGS -D_REENTRANT -D_THREAD_SAFE"
-             SDL_LIBS="$SDL_LIBS $pthread_lib"
-             echo $ac_n "checking whether semun is defined in /usr/include/sys/sem.h""... $ac_c" 1>&6
- echo "configure:4696: checking whether semun is defined in /usr/include/sys/sem.h" >&5
-@@ -5356,6 +5356,7 @@
-         ;;
-     *-*-freebsd*)
-         ARCH=freebsd
-+        CheckNASM
-         CheckESD
-         CheckX11
-         CheckAAlib
