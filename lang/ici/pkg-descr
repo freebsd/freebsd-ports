@@ -1,0 +1,5 @@
+This is Tim Long's ICI language interpreter. ICI is a dynamic interpretive
+language with control flow structures and expression syntax derived from C.
+ICI offers useful inbuilt data types, automatic memory management (garbage
+collection), error handling and other handy features. ICI is in the public
+domain, there is no copyright on it.
