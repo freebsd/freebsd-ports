@@ -6,14 +6,12 @@
 #
 
 MASTERDIR=	${.CURDIR}/../../audio/kdemultimedia11-i18n
-
+PORTNAME=	kdetoys
 CATEGORIES=	x11-clocks kde
 
-MAINTAINER=	imura@kde.gr.jp
+MAINTAINER=	imura@FreeBSD.org
 
 BUILD_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick
-
-KDE_NAME=	kdetoys
 
 .include "${MASTERDIR}/Makefile"
 
