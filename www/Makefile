@@ -558,6 +558,7 @@
     SUBDIR += w3m
     SUBDIR += w3m-img
     SUBDIR += w3m-m17n
+    SUBDIR += w3m-m17n-img
     SUBDIR += w3mir
     SUBDIR += waccess
     SUBDIR += wb0
