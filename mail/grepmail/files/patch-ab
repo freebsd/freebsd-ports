@@ -1,0 +1,11 @@
+--- Makefile.PL.orig	Mon Nov  6 17:56:27 2000
++++ Makefile.PL	Fri Nov 17 18:03:03 2000
+@@ -27,7 +27,7 @@
+ module was written to help speed up grepmail's mailbox processing. It
+ can speed things up by 10-20% (y/n)
+ EOF
+-  my $response = <STDIN>;
++  my $response = "n";
+ 
+   if ($response =~ /^n/i)
+   {
