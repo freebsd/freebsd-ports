@@ -1,0 +1,18 @@
+--- src/Imakefile.orig	Sat Feb 20 14:31:44 1999
++++ src/Imakefile	Sun Feb 21 12:52:40 1999
+@@ -61,11 +61,15 @@
+ 
+ XCOMM I don't know whether or not X11R5/R4 image has got a Concat3.
+ XCOMM This works.
++.if (${PORTOBJFORMAT} == "aout")
+ #if (ProjectX < 6)
+ SOXMHTMLLIBREV = $(XmHTMLVersionNum)./**/$(XmHTMLRevision)./**/$(XmHTMLUpdateLevel)
+ #else
+ SOXMHTMLLIBREV = Concat3($(XmHTMLVersionNum).,$(XmHTMLRevision).,$(XmHTMLUpdateLevel))
+ #endif
++.else
++SOXMHTMLLIBREV = $(XmHTMLVersionNum)./**/$(XmHTMLUpdateLevel)
++.endif
+ 
+ HEADERS = XmHTML.h XmHTMLP.h HTML.h Parser.h ParserP.h
+ 

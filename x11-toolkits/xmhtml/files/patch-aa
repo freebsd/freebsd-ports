@@ -1,0 +1,60 @@
+--- XmHTML.cf.orig	Sat Feb 20 13:38:17 1999
++++ XmHTML.cf	Sat Feb 20 14:08:18 1999
+@@ -22,10 +22,10 @@
+ XCOMM
+ 
+ XCOMM This specifies where the XmHTML library will be installed
+-#define XmHTMLLibDir $(USRLIBDIR)
++#define XmHTMLLibDir /usr/X11R6/lib
+ 
+ XCOMM This specifies where the XmHTML header files will be installed
+-#define XmHTMLIncDir $(INCROOT)/XmHTML
++#define XmHTMLIncDir /usr/X11R6/include
+ 
+ XCOMM You may need to modify the following DEFINES as follows:
+ XCOMM if your system doesn't provide str[n]casecmp, add -DNEED_STRCASECMP
+@@ -51,6 +51,11 @@
+ DEFINES = -DNEED_STRCASECMP
+ #endif
+ 
++BUILDINCTOP= ..
++BUILDBINTOP= ..
++BUILDLIBTOP= ..
++INSTINCFLAGS = -c -m 0444
++
+ XCOMM Image support configuration
+ 
+ XCOMM XPM support.
+@@ -59,8 +64,8 @@
+ XCOMM Uncomment and fill in the proper paths to xpm.h and libXpm
+ XCOMM The defaults are /usr/X11R6/include (or wherever your X includes live)
+ XCOMM and /usr/X11R6/lib (or wherever your X libraries live)
+-XCOMM XPMINCLUDES  = -I$(INCROOT)/X11
+-XCOMM XPMLIBRARIES = -L$(LIBDIR) -lXpm
++XPMINCLUDES  = -I$(INCROOT)/X11
++XPMLIBRARIES = -L$(LIBDIR) -lXpm
+ 
+ XCOMM
+ XCOMM JPEG Support. Enabled by default.
+@@ -74,8 +79,8 @@
+ XCOMM Required include files: jpeglib.h, jconfig.h, jmorecfg.h
+ XCOMM
+ #if (IHaveJPEG)
+-JPEGINC =
+-JPEGLIB = -ljpeg
++JPEGINC = -I/usr/local/include
++JPEGLIB = -ljpeg -L/usr/local/lib
+ #else
+ XCOMM JPEG support not selected
+ #endif
+@@ -93,8 +98,8 @@
+ XCOMM Required include files: png.h, pngconf.h
+ XCOMM
+ #if (IHavePNG)
+-PNGINC =
+-PNGLIB = -lpng
++PNGINC = -I/usr/local/include
++PNGLIB = -lpng -L/usr/local/lib
+ #else
+ XCOMM PNG support not selected
+ #endif
