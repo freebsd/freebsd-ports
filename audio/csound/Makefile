@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	csound
-PORTVERSION=	4.20
+PORTVERSION=	4.23
 CATEGORIES=	audio
 MASTER_SITES=	ftp://sunsite.univie.ac.at/pub/sound/csound/newest/ \
 		ftp://ftp.cs.bath.ac.uk/pub/dream/newest/
@@ -15,8 +15,6 @@ DIST_SUBDIR=	csound
 
 MAINTAINER=	trevor@FreeBSD.org
 COMMENT=	Sound synthesizer
-
-BROKEN=		"Does not fetch"
 
 LIB_DEPENDS=	tcl83:${PORTSDIR}/lang/tcl83 \
 		tk83:${PORTSDIR}/x11-toolkits/tk83
@@ -31,9 +29,10 @@ NO_WRKSUBDIR=	yes
 PKGMESSAGE=	${WRKDIR}/pkg-message
 PLIST=		${WRKDIR}/pkg-plist
 USE_X_PREFIX=	yes
+USE_REINPLACE=	yes
 
 pre-build:
-	${FIND} ${WRKDIR} -type f -exec ${CHMOD} 644 \{\} \;
+	@${FIND} ${WRKDIR} -type f -exec ${CHMOD} 644 \{\} \;
 
 post-build:
 	${RM} -f ${PLIST}
@@ -47,9 +46,9 @@ post-build:
 	${ECHO_CMD} "thoroughly reviewed by the FreeBSD maintainer." >> ${PKGMESSAGE}
 
 post-patch:
-	${PERL} -pi -e "s:/usr/local/lib:${DATADIR}:g" ${WRKSRC}/getstring.c
-	${FIND} ${WRKSRC} -type f -exec \
-		${PERL} -pi -e "s:<malloc.h>:<stdlib.h>:g" {} \;
+	@${REINPLACE_CMD} -i -e "s:/usr/local/lib:${DATADIR}:g" ${WRKSRC}/getstring.c
+	@${FIND} ${WRKSRC} -type f -exec \
+		${REINPLACE_CMD} -i -e 's:<malloc.h>:<stdlib.h>:g' {} \;
 
 do-install:
 	${MKDIR} ${PREFIX}/share/csound

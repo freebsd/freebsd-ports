@@ -1,0 +1,11 @@
+--- anal/convol/makef.orig	Thu Apr 24 14:59:47 2003
++++ anal/convol/makef	Thu Apr 24 15:00:08 2003
+@@ -7,7 +7,7 @@
+ OBJS =  main.o $T/cvanal.o $T/fft.o $T/dsputil.o $T/filopen.o \
+         $T/sfheader.o $T/soundin.o $T/ulaw.o $T/aiff.o $T/ieee80.o \
+         $T/memalloc.o $T/wave.o $T/window.o $T/aifc.o $T/getstring.o \
+-        $T/winFLTK.o $T/FL_graph.o $T/winEPS.o $T/winascii.o 
++        $T/winEPS.o $T/winascii.o 
+ 
+ 
+ cvl:	cvanal

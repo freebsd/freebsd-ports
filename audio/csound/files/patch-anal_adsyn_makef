@@ -1,21 +1,15 @@
-$FreeBSD$
-
---- anal/adsyn/makef.orig	Sun Jul 14 16:02:48 2002
-+++ anal/adsyn/makef	Sun Jul 14 16:02:48 2002
-@@ -6,9 +6,11 @@ T = ../..
+--- anal/adsyn/makef.orig	Tue Oct  8 15:49:08 2002
++++ anal/adsyn/makef	Thu Apr 24 14:49:25 2003
+@@ -6,7 +6,7 @@
  
  OBJS =  main.o $T/hetro.o $T/filopen.o $T/sfheader.o $T/soundin.o \
  	$T/ulaw.o $T/aiff.o $T/ieee80.o $T/memalloc.o $T/wave.o \
--	$T/window.o $T/winX11.o $T/winEPS.o $T/aifc.o $T/winascii.o \
-+	$T/window.o $T/winEPS.o $T/aifc.o $T/winascii.o \
-         $T/sdif.o $T/sdif-mem.o $T/getstring.o
+-	$T/window.o $T/winFLTK.o $T/FL_graph.o $T/winEPS.o $T/aifc.o \
++	$T/window.o $T/winEPS.o $T/aifc.o \
+         $T/winascii.o $T/sdif.o $T/sdif-mem.o $T/getstring.o
  
-+#	$T/window.o $T/winX11.o $T/winEPS.o $T/aifc.o $T/winascii.o \
-+
  adsyns:	hetro
- 
- hetro:	$(OBJS)
-@@ -23,7 +25,7 @@ main.o: $T/ustub.h $T/cs.h main.c
+@@ -23,7 +23,7 @@
  	cc $(CFLAGS) -c main.c
  
  clean:

@@ -1,0 +1,10 @@
+--- util2/dnoise.dir/srconv.c.orig	Thu Apr 24 15:17:43 2003
++++ util2/dnoise.dir/srconv.c	Thu Apr 24 15:18:07 2003
+@@ -78,6 +78,7 @@
+ OPARMS	O = {0,0, 0,1,1,0, 0,0, 0,0, 0,0, 1,0,0,7, 0,0,0, 0,0,0,0, 0,0 };
+ 
+ 
++#undef POLL_EVENTS
+ int POLL_EVENTS(void)
+ {
+     return 1;
