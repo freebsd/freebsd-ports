@@ -118,12 +118,12 @@ libexec/moviedb/lfetch
 libexec/moviedb/make-base
 libexec/moviedb/mkdb
 libexec/moviedb/recompress
-share/doc/moviedb/ADDS-GUIDE
-share/doc/moviedb/ChangeLog
-share/doc/moviedb/FAQ
-share/doc/moviedb/FUTURES
-share/doc/moviedb/INSTRUCTIONS
-share/doc/moviedb/manual.tex
+%%PORTDOCS%%%%DOCSDIR%%/ADDS-GUIDE
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/FAQ
+%%PORTDOCS%%%%DOCSDIR%%/FUTURES
+%%PORTDOCS%%%%DOCSDIR%%/INSTRUCTIONS
+%%PORTDOCS%%%%DOCSDIR%%/manual.tex
 @dirrm lib/moviedb
 @dirrm libexec/moviedb
-@dirrm share/doc/moviedb
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

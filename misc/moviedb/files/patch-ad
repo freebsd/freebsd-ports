@@ -1,10 +1,34 @@
---- dbs/Makefile.orig	Mon Mar  8 14:26:31 1999
-+++ dbs/Makefile	Tue Aug 15 01:25:10 2000
-@@ -328,6 +328,7 @@
- 	-[ -s genres.data ] && $(ZDBSCOMPRESS) genres.data	
- 	-[ -s keywords.data ] && $(ZDBSCOMPRESS) keywords.data	
- 	-[ -s goofs.data ] && $(ZDBSCOMPRESS) goofs.data	
-+	-[ -s language.data ] && $(ZDBSCOMPRESS) language.data
- 	-[ -s laserdisc.data ] && $(ZDBSCOMPRESS) laserdisc.data	
- 	-[ -s literature.data ] && $(ZDBSCOMPRESS) literature.data	
- 	-[ -s locations.data ] && $(ZDBSCOMPRESS) locations.data	
+--- Makefile.orig       Tue Jan 11 09:09:03 2005
++++ Makefile    Tue Jan 11 09:09:47 2005
+@@ -144,7 +144,7 @@
+
+ # Where are the source lists?
+ #RAWDIR = ../lists/
+-RAWDIR = `pwd`/lists/
++RAWDIR = ${WRKSRC}/lists/
+
+ # Where will the databases be?
+ #DBDIR = ../dbs/
+@@ -156,7 +156,7 @@
+
+ # Source files
+ #SRCDIR = ../src/
+-SRCDIR = `pwd`/src/
++SRCDIR = ${WRKSRC}/src/
+
+ # Executable files
+ #BINDIR = ../bin/
+@@ -168,11 +168,11 @@
+
+ # Main directory
+ #MAINDIR = ./
+-MAINDIR = `pwd`/
++MAINDIR = ${WRKSRC}/
+
+ # Documentation directory
+ #DOCDIR = ../docs/
+-DOCDIR = `pwd`/docs/
++DOCDIR = ${WRKSRC}/docs/
+
+ # --------------------------------------------------------------------------
+ #
