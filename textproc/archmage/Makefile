@@ -24,12 +24,6 @@ PYDISTUTILS_INSTALLARGS=	build_ext -I${LOCALBASE}/include -L${LOCALBASE}/lib \
 			 	install -c -O1 --prefix=${PREFIX}
 USE_REINPLACE=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} != "i386"
-BROKEN=		"Does not compile on !i386"
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e "s,/usr/share,${PREFIX}/share," ${WRKSRC}/arch.conf
 	@${REINPLACE_CMD} -e "s,/etc/arch\.conf,${PREFIX}/etc/arch\.conf," ${WRKSRC}/CHM.py
@@ -43,4 +37,4 @@ post-patch:
 post-install:
 	@${ECHO} "archmage" > ${PYTHON_SITELIBDIR}/archmage.pth
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
