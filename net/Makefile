@@ -377,6 +377,7 @@
     SUBDIR += ngrep-lib
     SUBDIR += nic
     SUBDIR += nicmond
+    SUBDIR += nicotine
     SUBDIR += nitpicker
     SUBDIR += nload
     SUBDIR += nocol
