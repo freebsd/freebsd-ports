@@ -21,6 +21,12 @@ CONFIGURE_ARGS+=	--with-config=${PREFIX}/etc/pxe.conf \
 
 DOCS=	Changes INSTALL LICENCE README
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=		"Does not compile on FreeBSD ${OSVERSION}"
+.endif
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/pxe ${PREFIX}/sbin/
 	${INSTALL_DATA} ${WRKSRC}/pxe.conf ${PREFIX}/etc/pxe.conf.sample
@@ -31,4 +37,4 @@ do-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
