@@ -44,7 +44,8 @@ CONFIGURE_ARGS=	--localstatedir=${DB_DIR} \
 		--with-mysqlfs \
 		--with-vio \
 		--with-low-memory \
-		--with-comment='FreeBSD port: ${PKGNAME}'
+		--with-comment='FreeBSD port: ${PKGNAME}' \
+		--enable-thread-safe-client
 
 .include <bsd.port.pre.mk>
 
@@ -78,9 +79,6 @@ LIB_DEPENDS+=   lthread.3:${PORTSDIR}/devel/linuxthreads
 .else
 LIB_DEPENDS+=   lthread.2:${PORTSDIR}/devel/linuxthreads
 .endif
-.endif
-.if defined(THREAD_SAFE_CLIENT)
-CONFIGURE_ARGS+=--enable-thread-safe-client
 .endif
 
 CFLAGS+=	-O3 -fno-omit-frame-pointer
