@@ -1,0 +1,11 @@
+--- highscore.c.orig	Wed Nov  2 16:20:40 1994
++++ highscore.c	Thu Apr 27 14:12:23 2000
+@@ -212,7 +212,7 @@
+     read_highscore();
+     if (atoi((char*)high_score_tab[mode].holders[HIGHSCORE_MAX_KEEP - 1].seconds) >= done - start) {
+ 	sprintf(high_score_tab[mode].holders[HIGHSCORE_MAX_KEEP - 1].seconds, "%3.3d", done - start);
+-	strcpy(high_score_tab[mode].holders[HIGHSCORE_MAX_KEEP - 1].uname, getenv(appData.identifier));
++	strncpy(high_score_tab[mode].holders[HIGHSCORE_MAX_KEEP - 1].uname, getenv(appData.identifier), sizeof(high_score_tab[mode].holders[HIGHSCORE_MAX_KEEP - 1].uname));
+ 	sprintf(high_score_tab[mode].holders[HIGHSCORE_MAX_KEEP - 1].hitime,
+ 		"%0*ld", sizeof high_score_tab[mode].holders[HIGHSCORE_MAX_KEEP - 1].hitime - 1,
+ 		(long)time(NULL));
