@@ -1,0 +1,46 @@
+! fix FreeBSD specific threading and linking things
+--- samples/runConfigure.orig	Sun Feb 29 11:16:27 2004
++++ samples/runConfigure	Sun Feb 29 11:17:16 2004
+@@ -333,7 +333,13 @@
+ elif test $platform = "aix"; then
+     threadingLibs="-lpthreads"
+ elif test $platform = "freebsd"; then
+-    threadingLibs="-pthread -lc_r"
++    if test -n "${PTHREAD_LIBS}" ; then
++      threadingLibs="${PTHREAD_LIBS}"
++      threadingDefines="${PTHREAD_CFLAGS}"
++    else
++      threadingLibs="-lpthread"
++      threadingDefines=""
++    fi
+ elif test $platform = "netbsd"; then
+     threadingLibs="-pthread -lpthread"
+ elif test $platform = "hp-10"; then
+--- Makefile.incl.in.orig	Sun Feb 29 11:13:13 2004
++++ Makefile.incl.in	Sun Feb 29 11:13:41 2004
+@@ -200,7 +200,7 @@
+   ifdef XALAN_USE_ICU
+     LD_RPATH_PRE = -Wl,-rpath,
+     PLATFORM_LIB_LINK_OPTIONS = $(LD_RPATH_PRE)${ICUROOT}/lib
+-    PLATFORM_LIB_LINK_OPTIONS += -licuuc -licudata -lgcc
++    PLATFORM_LIB_LINK_OPTIONS += -licuuc -licudata
+     ALLLIBS += -L${ICUROOT}
+   endif
+ 
+--- runConfigure.orig	Sun Feb 29 11:13:46 2004
++++ runConfigure	Sun Feb 29 11:16:14 2004
+@@ -470,7 +470,13 @@
+ elif test $platform = "aix"; then
+     threadingLibs="-lpthreads"
+ elif test $platform = "freebsd"; then
+-    threadingLibs="-pthread -lc_r"
++    if test -n "${PTHREAD_LIBS}" ; then
++      threadingLibs="${PTHREAD_LIBS}"
++      threadingDefines="${PTHREAD_CFLAGS}"
++    else
++      threadingLibs="-lpthread"
++      threadingDefines=""
++    fi
+ elif test $platform = "netbsd"; then
+     threadingLibs="-pthread -lpthread"
+ elif test $platform = "hp-10"; then
