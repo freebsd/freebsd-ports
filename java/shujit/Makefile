@@ -3,7 +3,7 @@
 # Date created:		30 April 1999
 # Whom:			jake@checker.org
 #
-# $Id: Makefile,v 1.5 1999/07/04 10:04:31 obrien Exp $
+# $Id: Makefile,v 1.6 1999/08/01 03:00:30 steve Exp $
 #
 
 DISTNAME=	shujit-0.3.1b
@@ -17,16 +17,12 @@ BUILD_DEPENDS=	${PREFIX}/bin/ruby:${PORTSDIR}/lang/ruby \
 		${PREFIX}/lib/libgdbm.a:${PORTSDIR}/databases/gdbm
 RUN_DEPENDS=	${PREFIX}/jdk1.1.8/bin/java:${PORTSDIR}/java/jdk
 
-.include <bsd.port.pre.mk>
-.if ${OSVERSION} < 400002
-BUILD_DEPENDS+=	${PREFIX}/bin/egcc:${PORTSDIR}/lang/egcs
-.endif
-
 WRKSRC=		${WRKDIR}/shujit
 ONLY_FOR_ARCHS=	i386
 
 HAS_CONFIGURE=	yes
 USE_GMAKE=	yes
+USE_NEWGCC=	yes
 MAKE_FLAGS=
 MAKEFILE=
 MAKE_ARGS=
@@ -53,4 +49,4 @@ post-install:
 	@${ECHO_MSG} "See ${JAVADIR}/shujit/README for usage instructions."
 	@${ECHO_MSG} ""
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
