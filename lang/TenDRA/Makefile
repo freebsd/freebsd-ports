@@ -17,9 +17,7 @@ MAINTAINER=	obrien@FreeBSD.org
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 400000
 BROKEN=		"Does not compile."
-.endif
 
 ONLY_FOR_ARCHS=	i386
 OSRELEASE!=	uname -r
