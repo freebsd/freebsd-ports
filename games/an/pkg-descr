@@ -1,0 +1,21 @@
+an v0.93 - Anagram Generator
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Generates anagrams for a phrase supplied by the user, the words used in the
+anagram are taken from a specified dictionary which should contain one
+word per line (default:/usr/dict/words).
+
+Read INSTALL for instructions on installing.
+
+Written by Richard M. Jones
+Many ideas contributed by Julian Assange (Let this be a lesson to you)
+
+Please mail bug reports and any suggestions to:
+     jonesr@latcs1.cs.latrobe.edu.au
+
+Some Anagrams Found Using an-0.93
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Free Software Foundation  -  I'd fan out tons of freeware!
+National Security Agency  -  Lusty yearning at cocaine.
+President Dole            -  Led despite Ron.
+Central Intelligence Agency - Langley: Inelegant, eccentric.
