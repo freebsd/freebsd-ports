@@ -1,0 +1,5 @@
+%%RUBY_SITEARCHLIBDIR%%/rbtree.so
+%%PORTDOCS%%%%RUBY_DOCDIR%%/rbtree/ChangeLog
+%%PORTDOCS%%%%RUBY_DOCDIR%%/rbtree/LICENSE
+%%PORTDOCS%%%%RUBY_DOCDIR%%/rbtree/README
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/rbtree
