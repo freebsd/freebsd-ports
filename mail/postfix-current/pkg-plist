@@ -3,11 +3,8 @@
 @unexec if cmp -s %D/etc/postfix/access %D/etc/postfix/sample-access; then rm -f %D/etc/postfix/access; fi
 @unexec if cmp -s %D/etc/postfix/aliases %D/etc/postfix/sample-aliases; then rm -f %D/etc/postfix/aliases; fi
 @unexec if cmp -s %D/etc/postfix/canonical %D/etc/postfix/sample-canonical; then rm -f %D/etc/postfix/canonical; fi
-@unexec if cmp -s %D/etc/postfix/cidr_table %D/etc/postfix/sample-cidr_table; then rm -f %D/etc/postfix/cidr_table; fi
-@unexec if cmp -s %D/etc/postfix/pcre_table %D/etc/postfix/sample-pcre_table; then rm -f %D/etc/postfix/pcre_table; fi
-@unexec if cmp -s %D/etc/postfix/regexp_table %D/etc/postfix/sample-regexp_table; then rm -f %D/etc/postfix/regexp_table; fi
+@unexec if cmp -s %D/etc/postfix/header_checks %D/etc/postfix/sample-header_checks; then rm -f %D/etc/postfix/header_checks; fi
 @unexec if cmp -s %D/etc/postfix/relocated %D/etc/postfix/sample-relocated; then rm -f %D/etc/postfix/relocated; fi
-@unexec if cmp -s %D/etc/postfix/tcp_table %D/etc/postfix/sample-tcp_table; then rm -f %D/etc/postfix/tcp_table; fi
 @unexec if cmp -s %D/etc/postfix/transport %D/etc/postfix/sample-transport; then rm -f %D/etc/postfix/transport; fi
 @unexec if cmp -s %D/etc/postfix/virtual %D/etc/postfix/sample-virtual; then rm -f %D/etc/postfix/virtual; fi
 bin/rmail
@@ -20,16 +17,12 @@ etc/postfix/postfix-script
 etc/postfix/sample-access
 etc/postfix/sample-aliases
 etc/postfix/sample-canonical
-etc/postfix/sample-cidr_table
-etc/postfix/sample-pcre_table
-etc/postfix/sample-regexp_table
+etc/postfix/sample-header_checks
 etc/postfix/sample-relocated
 etc/postfix/sample-aliases.cf
 etc/postfix/sample-auth.cf
-etc/postfix/sample-canonical.cf
 etc/postfix/sample-compatibility.cf
 etc/postfix/sample-debug.cf
-etc/postfix/sample-filter.cf
 etc/postfix/sample-flush.cf
 %%SUB_IPV6%%etc/postfix/sample-ipv6.cf
 etc/postfix/sample-ldap.cf
@@ -39,22 +32,15 @@ etc/postfix/sample-main.cf
 etc/postfix/sample-master.cf
 etc/postfix/sample-mime.cf
 etc/postfix/sample-misc.cf
-etc/postfix/sample-pcre-access.cf
-etc/postfix/sample-pcre-body.cf
-etc/postfix/sample-pcre-header.cf
 etc/postfix/sample-pgsql-aliases.cf
 etc/postfix/sample-qmqpd.cf
 etc/postfix/sample-rate.cf
-etc/postfix/sample-regexp-access.cf
-etc/postfix/sample-regexp-body.cf
-etc/postfix/sample-regexp-header.cf
 etc/postfix/sample-relocated.cf
 etc/postfix/sample-resource.cf
 etc/postfix/sample-rewrite.cf
 etc/postfix/sample-scheduler.cf
 etc/postfix/sample-smtp.cf
 etc/postfix/sample-smtpd.cf
-etc/postfix/sample-tcp_table
 etc/postfix/sample-transport.cf
 etc/postfix/sample-virtual.cf
 etc/postfix/sample-transport
@@ -70,6 +56,7 @@ libexec/postfix/lmtp
 libexec/postfix/local
 libexec/postfix/master
 libexec/postfix/nqmgr
+libexec/postfix/oqmgr
 libexec/postfix/pickup
 libexec/postfix/pipe
 libexec/postfix/proxymap
@@ -105,6 +92,7 @@ bin/mailq
 %%PORTDOCS%%%%DOCSDIR%%/DEBUG_README
 %%PORTDOCS%%%%DOCSDIR%%/ETRN_README
 %%PORTDOCS%%%%DOCSDIR%%/FILTER_README
+%%PORTDOCS%%%%DOCSDIR%%/HOSTING_README
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
 %%PORTDOCS%%%%SUB_IPV6%%%%DOCSDIR%%/IPV6_README
 %%PORTDOCS%%%%DOCSDIR%%/LDAP_README
@@ -129,6 +117,8 @@ bin/mailq
 %%PORTDOCS%%%%DOCSDIR%%/UUCP_README
 %%PORTDOCS%%%%DOCSDIR%%/VERP_README
 %%PORTDOCS%%%%DOCSDIR%%/VIRTUAL_README
+%%PORTDOCS%%%%DOCSDIR%%/XCLIENT_README
+%%PORTDOCS%%%%DOCSDIR%%/XFORWARD_README
 %%PORTDOCS%%%%DOCSDIR%%/access.5.html
 %%PORTDOCS%%%%DOCSDIR%%/aliases.5.html
 %%PORTDOCS%%%%DOCSDIR%%/anvil.8.html
@@ -137,6 +127,7 @@ bin/mailq
 %%PORTDOCS%%%%DOCSDIR%%/basic.html
 %%PORTDOCS%%%%DOCSDIR%%/big-picture.gif
 %%PORTDOCS%%%%DOCSDIR%%/big-picture.html
+%%PORTDOCS%%%%DOCSDIR%%/body_checks.5.html
 %%PORTDOCS%%%%DOCSDIR%%/bounce.8.html
 %%PORTDOCS%%%%DOCSDIR%%/canonical.5.html
 %%PORTDOCS%%%%DOCSDIR%%/cidr_table.5.html
@@ -148,6 +139,7 @@ bin/mailq
 %%PORTDOCS%%%%DOCSDIR%%/faq.html
 %%PORTDOCS%%%%DOCSDIR%%/flush.8.html
 %%PORTDOCS%%%%DOCSDIR%%/goals.html
+%%PORTDOCS%%%%DOCSDIR%%/header_checks.5.html
 %%PORTDOCS%%%%DOCSDIR%%/inbound.gif
 %%PORTDOCS%%%%DOCSDIR%%/index.html
 %%PORTDOCS%%%%DOCSDIR%%/lmtp.8.html
@@ -156,7 +148,7 @@ bin/mailq
 %%PORTDOCS%%%%DOCSDIR%%/master.8.html
 %%PORTDOCS%%%%DOCSDIR%%/motivation.html
 %%PORTDOCS%%%%DOCSDIR%%/newaliases.1.html
-%%PORTDOCS%%%%DOCSDIR%%/nqmgr.8.html
+%%PORTDOCS%%%%DOCSDIR%%/oqmgr.8.html
 %%PORTDOCS%%%%DOCSDIR%%/outbound.gif
 %%PORTDOCS%%%%DOCSDIR%%/pcre_table.5.html
 %%PORTDOCS%%%%DOCSDIR%%/pickup.8.html
