@@ -1,0 +1,4 @@
+bin/commitlog2cvsweb
+bin/cvsrdiff2cvsweb
+bin/cvsuplog2cvsweb
+etc/commitlog2cvsweb.conf.sample

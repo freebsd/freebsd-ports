@@ -25,6 +25,7 @@
     SUBDIR += cpbk
     SUBDIR += cpdup
     SUBDIR += cronolog
+    SUBDIR += cvsweb-converters
     SUBDIR += daemontools
     SUBDIR += daemontools53
     SUBDIR += deleted

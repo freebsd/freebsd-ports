@@ -1,0 +1,24 @@
+Note: If you don't know what cvs, cvsup and cvsweb.cgi are then this
+text is most likely not interesting for you. This is primarily
+intended for people tracking the development of FreeBSD and other open
+source projects with a public CVS repository.
+
+This package provides three Perl scripts:
+  + commitlog2cvsweb: converts FreeBSD commitlog files to HTML
+  + cvsrdiff2cvsweb:  converts output of "cvs rdiff -s" to HTML
+  + cvsuplog2cvsweb:  converts log output of "cvsup" to HTML
+
+They basically transform their input almost unchanged to HTML, adding
+only hyperlinks to a cvsweb.cgi script for each changed file. In order
+to use them you need
+  1. access to a CVS repository of interest to you (either by
+     local/remote cvs or by cvsup)
+  2. WWW access to the repository with a cvsweb CGI.
+To use commitlog2cvsweb you have to mirror the src-base part of the
+FreeBSD CVS repository. This is currently (2001) about 17 megabytes.
+
+Other than saving you some typing (of URLs) these scripts won't do much
+for you. You probably don't need this unless you frequently use cvsweb
+or you got used to browse FreeBSD commit logs.
+--
+Martin Kammerhofer <mkamm@gmx.net>

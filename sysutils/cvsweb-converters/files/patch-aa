@@ -1,0 +1,24 @@
+--- commitlog2cvsweb.pl~	Sun Mar  4 14:26:59 2001
++++ commitlog2cvsweb.pl	Sun Mar  4 17:26:00 2001
+@@ -1,4 +1,4 @@
+-#! /usr/bin/perl -wT
++#! !!PERL!! -wT
+ # Copyright ,A)(B 2001 Martin Kammerhofer <mkamm@gmx.net>
+ # All rights reserved.
+ #
+--- cvsrdiff2cvsweb.pl~	Sun Mar  4 14:27:19 2001
++++ cvsrdiff2cvsweb.pl	Sun Mar  4 17:26:00 2001
+@@ -1,4 +1,4 @@
+-#! /usr/bin/perl -wT
++#! !!PERL!! -wT
+ # Copyright ,A)(B 2001 Martin Kammerhofer <mkamm@gmx.net>
+ # All rights reserved.
+ #
+--- cvsuplog2cvsweb.pl~	Sun Mar  4 14:27:33 2001
++++ cvsuplog2cvsweb.pl	Sun Mar  4 17:26:00 2001
+@@ -1,4 +1,4 @@
+-#! /usr/bin/perl -wT
++#! !!PERL!! -wT
+ # Copyright ,A)(B 2001 Martin Kammerhofer <mkamm@gmx.net>
+ # All rights reserved.
+ #
