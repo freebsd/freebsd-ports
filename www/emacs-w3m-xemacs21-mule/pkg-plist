@@ -7,10 +7,6 @@
 @unexec install-info --delete %D/%%INFODIR%%/emacs-w3m.info %D/%%INFODIR%%/dir
 %%INFODIR%%/emacs-w3m.info
 @exec install-info %D/%%INFODIR%%/emacs-w3m.info %D/%%INFODIR%%/dir
-%%INFODIR%%/emacs-w3m.info-1
-%%INFODIR%%/emacs-w3m.info-2
-%%INFODIR%%/emacs-w3m.info-3
-%%INFODIR%%/emacs-w3m.info-4
 %%PKGINFODIR%%/MANIFEST.w3m
 %%ICONDIR%%/antenna-up.xpm
 %%ICONDIR%%/back-disabled.xpm
@@ -43,20 +39,20 @@
 @unexec rm -f %D/%%LISPDIR%%/mime-w3m.elc
 %%LISPDIR%%/octet.el
 @unexec rm -f %D/%%LISPDIR%%/octet.elc
+%%SHIMBUN%%%%LISPDIR%%/nnshimbun.el
+%%SHIMBUN%%%%LISPDIR%%/nnshimbun.elc
 %%SHIMBUN%%%%LISPDIR%%/sb-2ch.el
 %%SHIMBUN%%%%LISPDIR%%/sb-2ch.elc
 %%SHIMBUN%%%%LISPDIR%%/sb-airs.el
 %%SHIMBUN%%%%LISPDIR%%/sb-airs.elc
-%%SHIMBUN%%%%LISPDIR%%/sb-anthy.el
-%%SHIMBUN%%%%LISPDIR%%/sb-anthy.elc
 %%SHIMBUN%%%%LISPDIR%%/sb-asahi-html.el
 %%SHIMBUN%%%%LISPDIR%%/sb-asahi-html.elc
 %%SHIMBUN%%%%LISPDIR%%/sb-asahi.el
 %%SHIMBUN%%%%LISPDIR%%/sb-asahi.elc
 %%SHIMBUN%%%%LISPDIR%%/sb-bbdb-ml.el
 %%SHIMBUN%%%%LISPDIR%%/sb-bbdb-ml.elc
-%%SHIMBUN%%%%LISPDIR%%/sb-canna-dev.el
-%%SHIMBUN%%%%LISPDIR%%/sb-canna-dev.elc
+%%SHIMBUN%%%%LISPDIR%%/sb-chalow.el
+%%SHIMBUN%%%%LISPDIR%%/sb-chalow.elc
 %%SHIMBUN%%%%LISPDIR%%/sb-cnet.el
 %%SHIMBUN%%%%LISPDIR%%/sb-cnet.elc
 %%SHIMBUN%%%%LISPDIR%%/sb-coldsync.el
@@ -129,6 +125,8 @@
 %%SHIMBUN%%%%LISPDIR%%/sb-mew.elc
 %%SHIMBUN%%%%LISPDIR%%/sb-mhonarc.el
 %%SHIMBUN%%%%LISPDIR%%/sb-mhonarc.elc
+%%SHIMBUN%%%%LISPDIR%%/sb-mozilla-jp.el
+%%SHIMBUN%%%%LISPDIR%%/sb-mozilla-jp.elc
 %%SHIMBUN%%%%LISPDIR%%/sb-muchy.el
 %%SHIMBUN%%%%LISPDIR%%/sb-muchy.elc
 %%SHIMBUN%%%%LISPDIR%%/sb-namazu.el
@@ -153,6 +151,8 @@
 %%SHIMBUN%%%%LISPDIR%%/sb-pilot-mailsync.elc
 %%SHIMBUN%%%%LISPDIR%%/sb-plucker.el
 %%SHIMBUN%%%%LISPDIR%%/sb-plucker.elc
+%%SHIMBUN%%%%LISPDIR%%/sb-pocketgames.el
+%%SHIMBUN%%%%LISPDIR%%/sb-pocketgames.elc
 %%SHIMBUN%%%%LISPDIR%%/sb-quickml.el
 %%SHIMBUN%%%%LISPDIR%%/sb-quickml.elc
 %%SHIMBUN%%%%LISPDIR%%/sb-redhat.el
@@ -167,6 +167,8 @@
 %%SHIMBUN%%%%LISPDIR%%/sb-slashdot-jp.elc
 %%SHIMBUN%%%%LISPDIR%%/sb-sml.el
 %%SHIMBUN%%%%LISPDIR%%/sb-sml.elc
+%%SHIMBUN%%%%LISPDIR%%/sb-sourceforge-jp.el
+%%SHIMBUN%%%%LISPDIR%%/sb-sourceforge-jp.elc
 %%SHIMBUN%%%%LISPDIR%%/sb-sponichi.el
 %%SHIMBUN%%%%LISPDIR%%/sb-sponichi.elc
 %%SHIMBUN%%%%LISPDIR%%/sb-squeak-dev.el
@@ -175,6 +177,8 @@
 %%SHIMBUN%%%%LISPDIR%%/sb-squeak-ja.elc
 %%SHIMBUN%%%%LISPDIR%%/sb-tcup.el
 %%SHIMBUN%%%%LISPDIR%%/sb-tcup.elc
+%%SHIMBUN%%%%LISPDIR%%/sb-tdiary-ml.el
+%%SHIMBUN%%%%LISPDIR%%/sb-tdiary-ml.elc
 %%SHIMBUN%%%%LISPDIR%%/sb-tdiary.el
 %%SHIMBUN%%%%LISPDIR%%/sb-tdiary.elc
 %%SHIMBUN%%%%LISPDIR%%/sb-texfaq.el
@@ -205,8 +209,6 @@
 %%SHIMBUN%%%%LISPDIR%%/shimbun-servers.elc
 %%SHIMBUN%%%%LISPDIR%%/shimbun.el
 %%SHIMBUN%%%%LISPDIR%%/shimbun.elc
-%%LISPDIR%%/nnshimbun.el
-%%LISPDIR%%/nnshimbun.elc
 %%LISPDIR%%/w3m-antenna.el
 %%LISPDIR%%/w3m-antenna.elc
 %%LISPDIR%%/w3m-bitmap.el
