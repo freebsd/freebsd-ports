@@ -3,20 +3,20 @@
 # Date created:         20 Sep 1994
 # Whom:                 adam
 #
-# $Id: Makefile,v 1.15 1996/03/25 23:48:44 adam Exp $
+# $Id: Makefile,v 1.16 1996/11/13 11:49:04 adam Exp $
 #
 
 DISTNAME=       gn-2.24
-CATEGORIES+=	www net
+CATEGORIES=	www net
 MASTER_SITES=	ftp://ftp.acns.nwu.edu/pub/gn/
 
 MAINTAINER=	adam@veda.is
 
-WAISDIR=	${PORTSDIR}/net/wais/work/freeWAIS-0.5
 BUILD_DEPENDS=	${WAISDIR}/bin/waisindex:${PORTSDIR}/net/wais
 
 IS_INTERACTIVE=	yes
 NO_PACKAGE=	# compiled in hostnames
+WAISDIR=	${PORTSDIR}/net/wais/work/freeWAIS-0.5
 
 INETD_CONF=	/etc/inetd.conf
 CONF=	'	stream	tcp	nowait	nobody	/usr/local/libexec/gn	gn'

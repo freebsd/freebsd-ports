@@ -3,12 +3,12 @@
 # Date created:				5 September 1996
 # Whom:	      Bill Fenner <fenner@FreeBSD.ORG>
 #
-#   $Id$
+#   $Id: Makefile,v 1.1.1.1 1996/11/10 21:16:46 fenner Exp $
 #
 
 DISTNAME=	sdr.V2.3a1
 PKGNAME=	sdr-2.3a1
-CATEGORIES+=	mbone
+CATEGORIES=	mbone
 MASTER_SITES=	ftp://cs.ucl.ac.uk/mice/sdr/
 RESTRICTED=	"Contains DES encryption"
 

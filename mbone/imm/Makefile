@@ -3,11 +3,11 @@
 # Date created:		13 October 1994
 # Whom:			wollman
 #
-# $Id: Makefile,v 1.7 1996/11/07 12:25:45 asami Exp $
+# $Id: Makefile,v 1.8 1996/11/11 07:05:28 asami Exp $
 #
 
 DISTNAME=	imm-3.3
-CATEGORIES+=	mbone
+CATEGORIES=	mbone
 MASTER_SITES=	ftp://ftp.ucs.ed.ac.uk/pub/videoconference/imm/
 DISTFILES=	imm.src.tar.Z
 

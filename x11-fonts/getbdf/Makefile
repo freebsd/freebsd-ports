@@ -3,12 +3,12 @@
 # Date created:         30 August 1996
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.2 1996/08/30 22:26:49 ache Exp $
+# $Id: Makefile,v 1.3 1996/08/31 05:11:40 asami Exp $
 #
 
 DISTNAME=       getbdf
 PKGNAME=        getbdf-1.0
-CATEGORIES+=	x11
+CATEGORIES=	x11
 MASTER_SITES=   ftp://ftp.ipa.fhg.de/pub/X/
 EXTRACT_SUFX=   .tar.Z
 

@@ -3,11 +3,11 @@
 # Date created:		14 September 1994
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.9 1995/08/06 22:16:27 torstenb Exp $
+# $Id: Makefile,v 1.10 1996/09/14 22:52:09 torstenb Exp $
 #
 
 DISTNAME=	xpm-3.4i
-CATEGORIES+=	graphics x11
+CATEGORIES=	graphics x11
 MASTER_SITES=	ftp://avahi.inria.fr/pub/xpm/
 
 USE_IMAKE=	yes

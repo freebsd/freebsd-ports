@@ -3,7 +3,7 @@
 # Date created:                         15th June 1996
 # Whom:                                 gpalmer
 #
-# $Id: Makefile,v 1.4 1996/09/19 09:58:47 gpalmer Exp $
+# $Id: Makefile,v 1.5 1996/11/13 18:15:02 markm Exp $
 #
 
 DISTNAME=	fwtk-1.3
@@ -47,11 +47,6 @@ post-install:
 	( cd ${WRKSRC}/doc/man ; ${INSTMAN} ${MAN3} ${PREFIX}/man/man3 )
 	( cd ${WRKSRC}/doc/man ; ${INSTMAN} ${MAN5} ${PREFIX}/man/man5 )
 	( cd ${WRKSRC}/doc/man ; ${INSTMAN} ${MAN8} ${PREFIX}/man/man8 )
-.if !defined(NOMANCOMPRESS)
-	( cd ${PREFIX}/man/man3; gzip -9nfv ${MAN3} )
-	( cd ${PREFIX}/man/man5; gzip -9nfv ${MAN5} )
-	( cd ${PREFIX}/man/man8; gzip -9nfv ${MAN8} )
-.endif
 .if !defined(NOPORTDOCS)
 	( cd ${WRKSRC}/doc ; cp ${DOCS} ${PREFIX}/share/doc/fwtk )
 .endif

@@ -3,13 +3,13 @@
 # Date created:         14 Sep 1996
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.3 1996/09/15 16:41:28 ache Exp $
+# $Id: Makefile,v 1.4 1996/11/06 13:12:38 asami Exp $
 #
 
 # WWW site: http://www.inf.utfsm.cl/~vparada/webcopy.html
 
 DISTNAME=       webcopy-0.98b7
-CATEGORIES+=    www
+CATEGORIES=     www
 MASTER_SITES=   ftp://ftp.inf.utfsm.cl/pub/utfsm/perl/
 DISTFILES=      webcopy.tgz
 

@@ -3,11 +3,11 @@
 # Date created:         22 Mar 1995
 # Whom:                 asami
 #
-# $Id: Makefile,v 1.8 1995/04/11 00:20:32 asami Exp $
+# $Id: Makefile,v 1.9 1995/04/20 18:21:06 asami Exp $
 #
 
 DISTNAME=       xemeraldia-0.3
-CATEGORIES+=	games
+CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.kuis.kyoto-u.ac.jp/News.Archives/fj.sources/1995/
 DISTFILES=	271.gz
 

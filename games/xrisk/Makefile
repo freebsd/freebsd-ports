@@ -3,11 +3,11 @@
 # Date created:         4 Jan 1995
 # Whom:                 swallace
 #
-# $Id: Makefile,v 1.6 1996/03/07 02:19:45 asami Exp $
+# $Id: Makefile,v 1.7 1996/06/14 03:21:40 asami Exp $
 #
 
 DISTNAME=       xrisk-2.13
-CATEGORIES+=	games
+CATEGORIES=	games
 MASTER_SITES=   ftp://geocub.greco-prog.fr/pub/Games/
 EXTRACT_SUFX=   .tar.Z
 

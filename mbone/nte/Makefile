@@ -3,12 +3,12 @@
 # Date created:				5 September 1996
 # Whom:	      Bill Fenner <fenner@FreeBSD.ORG>
 #
-#   $Id$
+#   $Id: Makefile,v 1.1.1.1 1996/11/10 21:14:51 fenner Exp $
 #
 
 DISTNAME=	nt.1.5a23
 PKGNAME=	nte-1.5a23
-CATEGORIES+=	mbone
+CATEGORIES=	mbone
 MASTER_SITES=	ftp://cs.ucl.ac.uk/mice/nte/
 RESTRICTED=	"Contains DES encryption"
 

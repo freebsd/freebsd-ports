@@ -3,12 +3,12 @@
 # Date created:		22 December 1995
 # Whom:			markm
 #
-# $Id: Makefile,v 1.2 1995/12/25 07:38:41 asami Exp $
+# $Id: Makefile,v 1.3 1995/12/25 07:53:54 asami Exp $
 #
 
 DISTNAME=	xneko
 PKGNAME=	xneko-4.4
-CATEGORIES+=	x11 games
+CATEGORIES=	x11 games
 MASTER_SITES=	ftp://ftp.cdrom.com/pub/bsd-sources/4.4BSD-Lite/usr/src/games/
 
 MAINTAINER=	markm@FreeBSD.ORG

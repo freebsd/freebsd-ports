@@ -3,19 +3,16 @@
 # Date created:         25 September 1996
 # Whom:                 igor@zynaps.ru
 #
-# $Id$
+# $Id: Makefile,v 1.4 1996/10/19 17:30:01 chuckr Exp $
 #
 
 DISTNAME=	trafshow-2.0
-CATEGORIES+=	net
+CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.kiae.su/unix/tcpip/netmaint/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=     igor@zynaps.ru
 
-post-install:
-.if !defined(NOMANCOMPRESS)
-	gzip -9nf ${PREFIX}/man/man1/trafshow.1
-.endif
+MAN1=		trafshow.1
 
 .include <bsd.port.mk>

@@ -3,11 +3,11 @@
 # Date created:		5th December 1994
 # Whom:			gpalmer@FreeBSD.org
 #
-# $Id: Makefile,v 1.7 1995/04/12 20:31:23 asami Exp $
+# $Id: Makefile,v 1.8 1996/10/15 19:24:55 asami Exp $
 #
 
 DISTNAME=	rxvt-2.09
-CATEGORIES+=	x11
+CATEGORIES=	x11
 MASTER_SITES=	ftp://iraun1.ira.uka.de/pub/x11/misc/
 
 MAINTAINER=	gpalmer@FreeBSD.ORG

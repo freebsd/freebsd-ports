@@ -3,12 +3,12 @@
 # Date created:		29 September 1994
 # Whom:			adam
 #
-# $Id: Makefile,v 1.8 1995/11/27 00:08:37 asami Exp $
+# $Id: Makefile,v 1.9 1996/03/20 01:48:26 adam Exp $
 #
 
 DISTNAME=	nntp-t5
 PKGNAME=	nntp-1.5.11.5
-CATEGORIES+=	news
+CATEGORIES=	news
 MASTER_SITES=	ftp://nic.sura.net/pub/news/software/nntp/
 
 MAINTAINER=	adam@veda.is

@@ -3,14 +3,14 @@
 # Date created:         18 September 1996
 # Whom:                 Mark Huizer <xaa@stack.urc.tue.nl>
 #
-# $Id: Makefile,v 1.9 1996/09/23 23:44:25 chuckr Exp $
+# $Id: Makefile,v 1.10 1996/10/11 21:56:09 chuckr Exp $
 #
 
 DISTNAME=	kaffe-0.5.5
 PKGNAME=	kaffe-0.5.5
-CATEGORIES+=	www
-MASTER_SITES=	ftp://ftp.sarc.city.ac.uk/pub/kaffe/
-MASTER_SITES+=	ftp://alterego.stack.urc.tue.nl/pub/kaffe/
+CATEGORIES=	www
+MASTER_SITES=	ftp://ftp.sarc.city.ac.uk/pub/kaffe/ \
+		ftp://alterego.stack.urc.tue.nl/pub/kaffe/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	xaa@stack.urc.tue.nl
@@ -18,6 +18,7 @@ MAINTAINER=	xaa@stack.urc.tue.nl
 RUN_DEPENDS=	${PREFIX}/share/java/classes.zip:${PORTSDIR}/www/jdk
 
 GNU_CONFIGURE=	yes
+MAN1=		kaffe.1
 
 do-configure:
 		@(cd ${WRKSRC}; ${CONFIGURE_ENV} ./${CONFIGURE_SCRIPT} ${CONFIGURE_ARGS})
@@ -29,11 +30,8 @@ pre-install:
 	fi)
 
 post-install:
-.if !defined(NOMANCOMPRESS)
-	gzip -9nf ${PREFIX}/man/man1/kaffe.1
-.endif
-	test -d ${PREFIX}/share/kaffe || mkdir -p ${PREFIX}/share/kaffe
-	install -c -m 644  ${WRKSRC}/license.terms ${PREFIX}/share/kaffe
+	${MKDIR} ${PREFIX}/share/kaffe
+	${INSTALL_DATA} ${WRKSRC}/license.terms ${PREFIX}/share/kaffe
 	/sbin/ldconfig -m ${PREFIX}/lib
 
 .include <bsd.port.mk>

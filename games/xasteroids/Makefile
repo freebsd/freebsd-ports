@@ -3,12 +3,12 @@
 # Date created:         3 Jan 1995
 # Whom:                 swallace
 #
-# $Id: Makefile,v 1.4 1995/04/01 12:45:08 jkh Exp $
+# $Id: Makefile,v 1.5 1995/04/11 00:20:22 asami Exp $
 #
 
 DISTNAME=       xasteroids
 PKGNAME=	xasteroids-5.0
-CATEGORIES+=	games
+CATEGORIES=	games
 MASTER_SITES=	ftp://calypso-2.oit.unc.edu/pub/X11/contrib/
 EXTRACT_SUFX=	.sh.Z
 

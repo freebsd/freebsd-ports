@@ -3,11 +3,11 @@
 # Date created:		5 March 1995
 # Whom:			joerg
 #
-# $Id: Makefile,v 1.6 1995/04/11 00:20:05 asami Exp $
+# $Id: Makefile,v 1.7 1996/08/13 20:09:54 markm Exp $
 #
 
 DISTNAME=	acm-4.7
-CATEGORIES+=	games
+CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.warwick.ac.uk/pub/x11/
 
 MAINTAINER=	joerg@FreeBSD.org

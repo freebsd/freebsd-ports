@@ -3,12 +3,12 @@
 # Date created:         11 July 1996
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.5 1996/10/24 01:41:30 ache Exp $
+# $Id: Makefile,v 1.6 1996/10/25 00:51:47 ache Exp $
 #
 
 DISTNAME=       slang0.99-35
 PKGNAME=        libslang-0.99.35
-CATEGORIES+=	devel
+CATEGORIES=	devel
 MASTER_SITES=   ftp://space.mit.edu/pub/davis/slang/
 
 MAINTAINER=     ache@FreeBSD.org

@@ -3,12 +3,12 @@
 # Date created:		21 August 1994
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.6 1995/11/27 04:05:37 asami Exp $
+# $Id: Makefile,v 1.7 1996/06/03 02:17:32 asami Exp $
 #
 
 DISTNAME=	sup
 PKGNAME=	sup-2.0
-CATEGORIES+=	net
+CATEGORIES=	net
 MASTER_SITES=	ftp://freefall.freebsd.org/pub/FreeBSD/LOCAL_PORTS/
 
 MAINTAINER=	gibbs@FreeBSD.org

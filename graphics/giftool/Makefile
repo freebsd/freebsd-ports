@@ -3,12 +3,12 @@
 # Date created:        14 October 1996
 # Whom:                Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1996/10/30 13:44:05 jfitz Exp $
 #
 
 DISTNAME=	giftool
 PKGNAME=        giftool-0.9
-CATEGORIES+=	graphics
+CATEGORIES=	graphics
 MASTER_SITES=   ftp://ftp.huie.hokudai.ac.jp/pub/tool/graphics/
 
 MAINTAINER=	Nakai@Mlab.t.u-tokyo.ac.jp

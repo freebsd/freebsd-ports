@@ -3,11 +3,11 @@
 # Date created:		30 Jul 1996
 # Whom:			searle@longacre.demon.co.uk
 #
-# $Id: Makefile,v 1.5 1996/10/11 22:10:23 chuckr Exp $
+# $Id: Makefile,v 1.6 1996/11/13 12:41:39 asami Exp $
 #
 
 DISTNAME=	qt-1.0
-CATEGORIES+=	x11
+CATEGORIES=	x11
 MASTER_SITES=	ftp://ftp.troll.no/qt/source/
 
 MAINTAINER=	searle@longacre.demon.co.uk

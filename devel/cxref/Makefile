@@ -3,24 +3,24 @@
 # Date created:		23 October 1996
 # Whom:			Thomas Gellekum <tg@freebsd.org>
 #
-# $Id: Makefile,v 1.1.1.1 1996/10/24 07:59:56 tg Exp $
+# $Id: Makefile,v 1.2 1996/10/25 06:11:05 tg Exp $
 #
 
 DISTNAME=	cxref-1.2
 PKGNAME=	cxref-1.2b
-CATEGORIES+=	devel
+CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.demon.co.uk/pub/unix/unix/tools/
 EXTRACT_SUFX=	.tgz
 
 PATCHFILES=	cxref-1.2-1.2a.diff.gz cxref-1.2a-1.2b.diff.gz
 PATCH_SITES=	${MASTER_SITES}
-PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	tg@freebsd.org
 
 WRKSRC=		${WRKDIR}/cxref
 USE_GMAKE=	yes
 ALL_TARGET=	program
+PATCH_DIST_STRIP=	-p1
 
 DOCDIR=		${PREFIX}/share/doc/cxref
 

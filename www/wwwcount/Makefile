@@ -3,7 +3,7 @@
 # Date created:         16 May 1996
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.6 1996/09/11 04:44:19 asami Exp $
+# $Id: Makefile,v 1.7 1996/11/13 12:41:34 asami Exp $
 #
 
 # WWW site: http://www.fccc.edu/users/muquit/Count.html
@@ -12,7 +12,7 @@
 
 DISTNAME=       wwwcount2.3
 PKGNAME=        wwwcount-2.3
-CATEGORIES+=    www
+CATEGORIES=     www
 MASTER_SITES=   http://www.fccc.edu/users/muquit/src/wwwcount2.3/
 
 MAINTAINER=     ache@FreeBSD.ORG

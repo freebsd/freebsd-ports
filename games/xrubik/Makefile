@@ -3,12 +3,12 @@
 # Date created:		20 October 1996
 # Whom:			Yukihiro Nakai <nakai@mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.2 1996/10/15 02:10:18 max Exp $
+# $Id: Makefile,v 1.3 1996/10/15 07:30:48 max Exp $
 #
 
 DISTNAME=	xrubik
 PKGNAME=	xrubik-5.3.2
-CATEGORIES+=	games x11
+CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.iis.u-tokyo.ac.jp/pub1/X/contrib/games/puzzles/
 
 MAINTAINER=	nakai@mlab.t.u-tokyo.ac.jp

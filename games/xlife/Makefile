@@ -3,12 +3,12 @@
 # Date created:         15 March 1995
 # Whom:                 asami
 #
-# $Id: Makefile,v 1.3 1995/04/01 12:45:21 jkh Exp $
+# $Id: Makefile,v 1.4 1995/04/11 00:20:39 asami Exp $
 #
 
 DISTNAME=       xlife
 PKGNAME=	xlife-3.0
-CATEGORIES+=	games
+CATEGORIES=	games
 MASTER_SITES=	ftp://gatekeeper.dec.com/pub/X11/R5-contrib/
 EXTRACT_SUFX=	.tar.Z
 

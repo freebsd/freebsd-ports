@@ -3,12 +3,12 @@
 # Date created:		7 Oct 1996
 # Whom:			pst
 #
-# $Id: Makefile,v 1.2 1996/10/10 05:50:17 pst Exp $
+# $Id: Makefile,v 1.3 1996/10/16 01:36:33 asami Exp $
 #
 
 DISTNAME=	tkgoodstuff4.1
 PKGNAME=	tkgoodstuff-4.1
-CATEGORIES+=	x11
+CATEGORIES=	x11
 MASTER_SITES=	ftp://merv.philosophy.lsa.umich.edu/pub/
 EXTRACT_SUFX=	.tgz
 

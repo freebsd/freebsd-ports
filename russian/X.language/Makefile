@@ -3,12 +3,12 @@
 # Date created:         31 Aug 1995
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.9 1996/10/07 14:34:58 ache Exp $
+# $Id: Makefile,v 1.10 1996/11/15 12:56:57 ache Exp $
 #
 
 DISTNAME=       xrus-2.0-bin
 PKGNAME=        ru-X11-3.2
-CATEGORIES+=    russian x11
+CATEGORIES=     russian x11
 MASTER_SITES=   ftp://ftp.relcom.ru/misc/fonts/cyrillic/xwindows/
 EXTRACT_SUFX=   .tgz
 

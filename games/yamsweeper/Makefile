@@ -3,17 +3,16 @@
 # Date created:		14 Sep 1996
 # Whom:			Hidekazu Kuroki <hidekazu@cs.titech.ac.jp>
 #
-# $Id: Makefile,v 1.1.1.1 1996/09/21 16:56:45 max Exp $
+# $Id: Makefile,v 1.2 1996/09/22 08:55:35 max Exp $
 #
 
 DISTNAME=       yamsweeper-1.9
-CATEGORIES+=	games
+CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.tut.ac.jp/X11/Contrib/Games/
 
 MAINTAINER=	hidekazu@cs.titech.ac.jp
 
 USE_IMAKE=	yes
-
 
 pre-configure:
 	@mv ${WRKSRC}/Imakefile ${WRKSRC}/Imakefile.old

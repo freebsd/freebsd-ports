@@ -3,12 +3,12 @@
 # Date created:         21 November 1995
 # Whom:                 Yoshiro MIHIRA <sanpei@yy.cs.keio.ac.jp>
 #
-# $Id: Makefile,v 1.2 1996/05/20 08:06:55 asami Exp $
+# $Id: Makefile,v 1.3 1996/05/30 08:54:17 asami Exp $
 #
 
 DISTNAME=       dhcp-1.3beta
 PKGNAME=        wide-dhcp-1.3b
-CATEGORIES+=    net
+CATEGORIES=     net
 MASTER_SITES=   ftp://sh.wide.ad.jp/WIDE/free-ware/dhcp/ \
 		ftp://ftp.freebsd.org/pub/FreeBSD/FreeBSD-current/src/lib/libc/stdtime/
 DISTFILES=	dhcp-1.3beta.tar.gz tzfile.h

@@ -3,12 +3,12 @@
 # Date created:			22 Sep 1996
 # Whom:				Masafumi NAKANE <max@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.2 1996/11/05 04:14:42 max Exp $
+# $Id: Makefile,v 1.3 1996/11/13 12:41:28 asami Exp $
 #
 
 DISTNAME=	telnetx+transit.src.940401
 PKGNAME=	telnetx-940401
-CATEGORIES+=	net
+CATEGORIES=	net
 MASTER_SITES=	ftp://freefall.FreeBSD.ORG/pub/FreeBSD/LOCAL_PORTS/ \
 		http://www.sfc.wide.ad.jp/~max/FreeBSD/ports/distfiles/
 

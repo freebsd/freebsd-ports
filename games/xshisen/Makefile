@@ -3,11 +3,11 @@
 # Date created:               9 Oct 1996
 # Whom:                 Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.1.1.1 1996/11/03 21:11:08 jfitz Exp $
+# $Id: Makefile,v 1.2 1996/11/04 12:59:50 jfitz Exp $
 #
 
 DISTNAME=       xshisen-1.35
-CATEGORIES+=	games
+CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.iis.u-tokyo.ac.jp/pub1/X/contrib/games/
 
 MAINTAINER=	Nakai@Mlab.t.u-tokyo.ac.jp

@@ -3,12 +3,12 @@
 # Date created:		29 June 1996
 # Whom:			gena
 #
-# $Id: Makefile,v 1.4 1996/05/08 06:11:12 jkh Exp $
+# $Id: Makefile,v 1.5 1996/07/12 11:38:14 asami Exp $
 #
 
 DISTNAME=	bxform-081
 PKGNAME=	xforms-0.81
-CATEGORIES+=	graphics x11
+CATEGORIES=	graphics x11
 MASTER_SITES=	ftp://laue.phys.uwm.edu/pub/xforms/freeBSD/
 EXTRACT_SUFX=	.tgz
 

@@ -3,7 +3,7 @@
 # Date created:		4. July 1996
 # Whom:			torstenb@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.2 1996/07/07 10:50:48 torstenb Exp $
+# $Id: Makefile,v 1.3 1996/07/12 10:53:34 asami Exp $
 #
 
 DISTNAME=	radius.2.4.21
@@ -16,17 +16,10 @@ RESTRICTED= "use for non-profit, non-commercial purposes on a shareware basis"
 
 NO_WRKSUBDIR=	yes
 INSTALL_TARGET=	install-all
+MAN5=		authfile.5 clients.5 dictionary.5 users.5
+MAN8=		builddbm.8 radcheck.8 radiusd.8 radpwtst.8 rlmadmin.8
 
 pre-install:
-	mkdir -p ${PREFIX}/lib/radius/db ${PREFIX}/lib/radius/acct
-
-.if !defined(NOMANCOMPRESS)
-post-install:
-	gzip -9nf ${PREFIX}/man/man5/authfile.5 ${PREFIX}/man/man5/clients.5 \
-		${PREFIX}/man/man5/dictionary.5 ${PREFIX}/man/man5/users.5 \
-		${PREFIX}/man/man8/builddbm.8 ${PREFIX}/man/man8/radcheck.8 \
-		${PREFIX}/man/man8/radiusd.8 ${PREFIX}/man/man8/radpwtst.8 \
-		${PREFIX}/man/man8/rlmadmin.8
-.endif
+	${MKDIR} ${PREFIX}/lib/radius/db ${PREFIX}/lib/radius/acct
 
 .include <bsd.port.mk>

@@ -3,12 +3,12 @@
 # Date created:         Sun Mar 17 17:59:48 MET 1996
 # Whom:                 Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.2 1996/09/19 03:01:17 andreas Exp $
+# $Id: Makefile,v 1.3 1996/10/19 09:15:56 andreas Exp $
 #
 
 DISTNAME=       mapedit1.5
 PKGNAME=        mapedit-1.5
-CATEGORIES+=	www
+CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.boutell.com/pub/boutell/mapedit/
 EXTRACT_SUFX=	.tar.Z
 

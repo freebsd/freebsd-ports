@@ -3,11 +3,11 @@
 # Date created:				October 26th 1996
 # Whom:					jfitz@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.2 1996/10/28 19:16:36 jfitz Exp $
+# $Id: Makefile,v 1.3 1996/10/30 16:22:51 jfitz Exp $
 #
 
 PKGNAME=	quakeserver-1.01
-CATEGORIES+=	games
+CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.stomped.com/pub/idstuff/quake/ \
 		ftp://ftp.stomped.com/pub/quake/x_linux/ \
 		ftp://ftp1.idsoftware.com/idstuff/quake/ \
@@ -18,7 +18,6 @@ MASTER_SITES=	ftp://ftp.stomped.com/pub/idstuff/quake/ \
 		ftp://PC/games/DOOM/idstuff/quake/ \
 		ftp://ftp.sun.ac.za/pub/msdos/idgames/idstuff/quake/ \
 		ftp://iconz.co.nz/pub/quake/
-
 DISTFILES=	quake101.zip \
 		quake-FreeBSD.tar.gz \
 		intel_linux_quake101.tgz

@@ -3,12 +3,12 @@
 # Date created:		3 May 1995
 # Whom:			joerg
 #
-# $Id: Makefile,v 1.2 1995/05/04 12:02:55 asami Exp $
+# $Id: Makefile,v 1.3 1995/09/23 08:52:40 joerg Exp $
 #
 
 DISTNAME=	xonix-1.4
+CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.inf.tu-dresden.de/pub/people/wunsch/xonix/
-CATEGORIES+=	games
 
 MAINTAINER=	joerg@FreeBSD.org
 

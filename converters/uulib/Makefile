@@ -3,12 +3,12 @@
 # Date Created:		04 Aug 1996
 # Whom:			Tim Vanderhoek <ac199@freenet.hamilton.on.ca>
 #
-# $Id: Makefile,v 1.1.1.1 1996/08/23 06:39:36 tg Exp $
+# $Id: Makefile,v 1.2 1996/09/24 11:41:35 asami Exp $
 #
 
 DISTNAME=	uudeview-0.5.4
 PKGNAME=	uulib-0.5.4
-CATEGORIES+=	devel
+CATEGORIES=	devel
 MASTER_SITES=	http://www.uni-frankfurt.de/~fp/uudeview/Apps/frank/
 
 MAINTAINER=	ac199@freenet.hamilton.on.ca

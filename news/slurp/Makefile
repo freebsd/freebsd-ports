@@ -3,11 +3,11 @@
 # Date created:		30 Jun 1996
 # Whom:			jraynard
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1996/07/27 21:54:11 asami Exp $
 #
 
 DISTNAME=	slurp-1.10
-CATEGORIES+=	news
+CATEGORIES=	news
 MASTER_SITES=	ftp://ftp.demon.co.uk/pub/news/slurp/
 EXTRACT_SUFX=	.tar.Z
 
@@ -16,6 +16,7 @@ MAINTAINER=	jraynard@FreeBSD.ORG
 #RUN_DEPENDS=	${PREFIX}/etc/innd:${PORTSDIR}/news/inn
 
 NO_WRKSUBDIR=	yes
+MAN1=		slurp.1
 
 pre-build:
 	@(cd ${WRKSRC}; cp conf.h conf.h.orig; \
@@ -24,12 +25,9 @@ pre-build:
 	@cp ${FILESDIR}/dbz.* ${WRKSRC}
 
 do-install:
-	mkdir -p ${PREFIX}/news/bin ${PREFIX}/news/lib
+	${MKDIR} ${PREFIX}/news/bin ${PREFIX}/news/lib
 	install -c -o news -g news -m 0555 -s ${WRKSRC}/slurp ${PREFIX}/news/bin/
-	install -c -o man -g man -m 0444 ${WRKSRC}/slurp.1 ${PREFIX}/man/man1
-.if !defined(NOMANCOMPRESS)
-	gzip -9nf ${PREFIX}/man/man1/slurp.1
-.endif
+	${INSTALL_MAN} ${WRKSRC}/slurp.1 ${PREFIX}/man/man1
 	install -c -o news -g news -m 0644 ${WRKSRC}/slurp.sys ${PREFIX}/news/lib/	
 
 .include <bsd.port.mk>

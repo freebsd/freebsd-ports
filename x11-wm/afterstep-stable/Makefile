@@ -3,12 +3,12 @@
 # Date created:		October 29th 1996
 # Whom:			jfitz@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.11 1996/10/09 04:53:23 jfitz Exp $
+# $Id: Makefile,v 1.12 1996/10/29 19:50:11 jfitz Exp $
 #
 
 DISTNAME=	as-10pre1
 PKGNAME=	afterstep-1.0pr1
-CATEGORIES+=	x11
+CATEGORIES=	x11
 MASTER_SITES=	ftp://oak.sfasu.edu/pub/AfterStep/
 
 MAINTAINER=	jfitz@FreeBSD.ORG

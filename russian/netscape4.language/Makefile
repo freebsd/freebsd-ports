@@ -3,11 +3,11 @@
 # Date created:         8 Apr 1996
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.2 1996/11/01 22:13:43 ache Exp $
+# $Id: Makefile,v 1.10 1996/11/07 00:11:45 ache Exp $
 #
 
 PKGNAME=        ru-netscape-3.01
-CATEGORIES+=    russian www x11
+CATEGORIES=     russian www
 
 MAINTAINER=	ache@FreeBSD.ORG
 

@@ -3,11 +3,11 @@
 # Date created:		22 Mar 1996
 # Whom:			mike@binghamton.edu
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1996/03/25 10:12:09 asami Exp $
 #
 
 DISTNAME=	tf-35a16
-CATEGORIES+=	net games
+CATEGORIES=	net games
 MASTER_SITES=	ftp://tf.tcp.com/pub/tinyfugue/ \
 		ftp://ftp.tcp.com/pub/mud/Clients/tf/ \
 		ftp://ftp7.freebsd.org/pub/tf/

@@ -3,11 +3,11 @@
 # Date created:         16 December 1995
 # Whom:                 Yoshiro MIHIRA <sanpei@yy.cs.keio.ac.jp>
 #
-# $Id: Makefile,v 1.1.1.1 1996/06/20 18:54:07 jkh Exp $
+# $Id: Makefile,v 1.2 1996/08/01 04:36:52 asami Exp $
 #
 
 DISTNAME=	swisswatch-0.06
-CATEGORIES+=	x11
+CATEGORIES=	x11
 MASTER_SITES=	ftp://ftp.iij.ad.jp/pub/X/R5contrib/
 EXTRACT_SUFX=	.tar.Z
 

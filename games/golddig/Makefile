@@ -3,12 +3,12 @@
 # Date created:         20 November 1994
 # Whom:                 jmz
 #
-# $Id$
+# $Id: Makefile,v 1.4 1995/04/11 00:20:13 asami Exp $
 #
 
 DISTNAME=	golddig2
 PKGNAME=	golddig-2.0
-CATEGORIES+=	games
+CATEGORIES=	games
 MASTER_SITES=	ftp://qiclab.scn.rain.com/pub/games/
 EXTRACT_SUFX=	.tar.Z
 

@@ -3,12 +3,12 @@
 # Date created:         27 October 1994
 # Whom:                 ljo
 #
-# $Id: Makefile,v 1.8 1995/06/24 11:40:16 asami Exp $
+# $Id: Makefile,v 1.9 1996/03/10 09:00:53 asami Exp $
 #
 
 DISTNAME=	blas
 PKGNAME=	blas-1.0
-CATEGORIES+=	math
+CATEGORIES=	math
 MASTER_SITES=	ftp://netlib.att.com/netlib/blas/
 
 DIST_SUBDIR=	${DISTNAME}

@@ -3,11 +3,11 @@
 # Date Created:		Fri Sep 15 10:04:46 CDT 1995
 # Whom:			james@cs.uwm.edu
 #
-# $Id$
+# $Id: Makefile,v 1.2 1995/10/12 09:19:57 asami Exp $
 #
 
 DISTNAME= 	spigot-1.6
-CATEGORIES+=	graphics
+CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.cs.uwm.edu/pub/FreeBSD/spigot/
 DISTFILES=	spigot.tar.gz
 

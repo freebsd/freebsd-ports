@@ -3,11 +3,11 @@
 # Date created:		20 Jan 1996
 # Whom:			peter
 #
-# $Id: Makefile,v 1.2 1996/03/11 14:17:57 peter Exp $
+# $Id: Makefile,v 1.3 1996/07/22 04:52:15 pst Exp $
 #
 
 DISTNAME=	fvwm-2.0.43
-CATEGORIES+=	x11
+CATEGORIES=	x11
 MASTER_SITES=	ftp://ftp.hpc.uh.edu/pub/fvwm/version-2/
 
 MAINTAINER=	peter@FreeBSD.org

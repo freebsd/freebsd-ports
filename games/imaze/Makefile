@@ -7,7 +7,7 @@
 
 DISTNAME=       imaze
 PKGNAME=	imaze-1.3
-CATEGORIES+=	games
+CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.tu-clausthal.de/pub/unix/games/imaze/ \
 		ftp://ftp.tu-clausthal.de/pub/unix/games/imaze/sounds/
 DISTFILES=	imaze1.3.tar.Z imaze.tar

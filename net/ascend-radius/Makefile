@@ -3,12 +3,12 @@
 # Date created:				August 28th 96
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#   $Id: Makefile,v 1.3 1996/10/18 11:44:20 jfitz Exp $
+#   $Id: Makefile,v 1.4 1996/10/18 11:50:13 jfitz Exp $
 #
 
 DISTNAME=	radius-961015
 PKGNAME=	ascend-radius-961015
-CATEGORIES+=	net
+CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.ascend.com/pub/Software-Releases/Radius/Current/ \
 		ftp://ftp.ascend.com/pub/Software-Releases/Radius/Archive/
 

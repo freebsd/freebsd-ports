@@ -3,12 +3,12 @@
 # Date created:         26 September 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.15 1995/11/22 11:36:56 asami Exp $
+# $Id: Makefile,v 1.16 1996/11/14 08:08:04 ache Exp $
 #
 
 DISTNAME=       iozone
 PKGNAME=	iozone-2.01
-CATEGORIES+=	benchmarks
+CATEGORIES=	benchmarks
 MASTER_SITES=   ftp://ftp.cs.uni-sb.de/pub/others/
 DISTFILES=      iozone-2.01.shar.gz
 

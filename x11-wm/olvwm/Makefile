@@ -8,7 +8,7 @@
 
 DISTNAME=	olvwm4
 PKGNAME=	olvwm-4.1
-CATEGORIES+=	x11
+CATEGORIES=	x11
 MASTER_SITES=	ftp://ftp.x.org/R5contrib/
 DISTFILES=	olvwm4.tar.Z
 

@@ -6,12 +6,12 @@
 # ATTENTION: It not work in > 256 colors modes, please fix it
 # if you can.
 #
-# $Id: Makefile,v 1.1.1.1 1996/09/03 01:33:07 ache Exp $
+# $Id: Makefile,v 1.2 1996/09/11 04:54:11 asami Exp $
 #
 
 DISTNAME=       xfedor
 PKGNAME=        xfedor-1.0
-CATEGORIES+=	x11
+CATEGORIES=	x11
 MASTER_SITES=   ftp://ftp.uni-trier.de/pub/unix/X11/R6/contrib/programs/
 
 LIB_DEPENDS=	Xpm\\.4\\.:${PORTSDIR}/graphics/xpm

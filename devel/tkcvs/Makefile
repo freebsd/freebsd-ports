@@ -3,11 +3,11 @@
 # Date created:         02 Aug 1996
 # Whom:                 shanee@rabbit.augusta.de
 #
-# $Id: Makefile,v 1.5 1996/08/09 21:53:06 chuckr Exp $
+# $Id: Makefile,v 1.6 1996/10/06 09:58:38 markm Exp $
 #
 
 DISTNAME=	tkcvs-6.0
-CATEGORIES+=	devel
+CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.neosoft.com/pub/tcl/NEW/
 
 MAINTAINER=	shanee@rabbit.augusta.de
@@ -15,6 +15,8 @@ MAINTAINER=	shanee@rabbit.augusta.de
 LIB_DEPENDS=	tk41\\.1\\.:${PORTSDIR}/x11/tk41
 
 NO_BUILD=	yes
+
+MAN1=		tkcvs.1 tkdiff.1
 
 do-install:
 	(cd $(WRKSRC)/tkcvs; sh ./doinstall)
@@ -27,10 +29,6 @@ post-install:
 .if !defined(NOPORTDOCS)
 	install -c ${WRKSRC}/README.tkcvs $(PREFIX)/lib/tkcvs/
 	install -c ${WRKSRC}/tkdiff/README $(PREFIX)/lib/tkcvs/README.tkdiff
-.endif
-.if !defined(NOMANCOMPRESS)
-	gzip -9nf $(PREFIX)/man/man1/tkcvs.1
-	gzip -9nf $(PREFIX)/man/man1/tkdiff.1
 .endif
 
 .include <bsd.port.mk>

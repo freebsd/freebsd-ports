@@ -3,12 +3,12 @@
 # Date created:         9 January 1994
 # Whom:                 jmz
 #
-# $Id$
+# $Id: Makefile,v 1.6 1995/04/12 20:32:08 asami Exp $
 #
 
 DISTNAME=	xloadimage
 PKGNAME=	xloadimage-3.03
-CATEGORIES+=	x11
+CATEGORIES=	x11
 MASTER_SITES=	ftp://gatekeeper.dec.com/pub/X11-contrib/
 DISTFILES=	xloadimage.3.03.tar.Z
 

@@ -3,12 +3,12 @@
 # Date created:         19 Aug 1995
 # Whom:                 joerg
 #
-# $Id: Makefile,v 1.2 1995/08/21 09:52:09 asami Exp $
+# $Id: Makefile,v 1.3 1995/09/23 20:10:42 joerg Exp $
 #
 
 DISTNAME=       pacman10
 PKGNAME=	xpacman-1.0
-CATEGORIES+=	games
+CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.nvg.unit.no/pub/pacman/
 EXTRACT_SUFX=	.zip
 

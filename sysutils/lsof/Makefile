@@ -3,7 +3,7 @@
 # Date created:         Sat July 20, 1996
 # Whom:                 David O'Brien (obrien@cs.ucdavis.edu)
 #
-# $Id: Makefile,v 1.1.1.1 1996/11/11 19:42:44 obrien Exp $
+# $Id: Makefile,v 1.2 1996/11/17 02:41:03 obrien Exp $
 #
 
 DISTNAME=	lsof_3.81_W
@@ -21,9 +21,9 @@ WRKSRC=		${WRKDIR}/${SRCBALL_NAME}
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	Configure
 CONFIGURE_ARGS=	-n freebsd
+MAN1=		lsof.1
 
 SRCBALL_NAME=	${DISTNAME:S/_W$//}
-
 
 post-extract:
 	@( cd ${WRKDIR} ; \
@@ -42,11 +42,5 @@ post-extract:
 do-install:
 	${INSTALL} ${COPY} ${STRIP} -o ${BINOWN} -g ${BINGRP} -m 2755 -g kmem ${WRKSRC}/lsof ${PREFIX}/sbin
 	${INSTALL_MAN} ${WRKSRC}/lsof.man ${PREFIX}/man/man1/lsof.1
-
-
-post-install:
-.if !defined(NOMANCOMPRESS)
-	gzip -9nf ${PREFIX}/man/man1/lsof.1
-.endif
 
 .include <bsd.port.mk>

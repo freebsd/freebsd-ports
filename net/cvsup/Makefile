@@ -3,13 +3,12 @@
 # Date created:		7 August 1996
 # Whom:			asami
 #
-# $Id: Makefile,v 1.12 1996/11/01 17:02:06 jdp Exp $
+# $Id: Makefile,v 1.13 1996/11/01 20:30:46 jdp Exp $
 #
 
 DISTNAME=	cvsup-13.5
-CATEGORIES+=	devel
-CATEGORIES+=	net
-MASTER_SITES=	ftp://freefall.freebsd.org/pub/CVSup/
+CATEGORIES=	devel net
+MASTERSITES=	ftp://freefall.freebsd.org/pub/CVSup/
 
 MAINTAINER=	jdp@FreeBSD.org
 

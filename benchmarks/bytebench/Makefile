@@ -3,13 +3,13 @@
 # Date created:         28 December 1995
 # Whom:                 se
 #
-# $Id: Makefile,v 1.3 1996/01/03 00:06:21 se Exp $
+# $Id: Makefile,v 1.4 1996/01/05 16:37:50 se Exp $
 #
 
 DISTNAME=       bytebench-3.1
-EXTRACT_SUFX=	.tar.Z
-CATEGORIES+=	benchmarks
+CATEGORIES=	benchmarks
 MASTER_SITES=   ftp://ftp.inria.fr/system/benchmark/
+EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	se@FreeBSD.org
 

@@ -3,12 +3,12 @@
 # Date created:		21 July 1996
 # Whom:			Tim Vanderhoek <ac199@freenet.hamilton.on.ca>
 #
-# $Id: Makefile,v 1.1.1.1 1996/11/01 08:08:54 asami Exp $
+# $Id: Makefile,v 1.2 1996/11/13 12:41:30 asami Exp $
 #
 
 DISTNAME=	slnr
 PKGNAME=	slnr-2.13
-CATEGORIES+=	news
+CATEGORIES=	news
 MASTER_SITES=	ftp://ftp.uu.net/networking/news/readers/off-line/slnr/ \
 		ftp://ftp.adelaide.edu.au/pub/news/readers/off-line/slnr/
 DISTFILES=	part1.Z part2.Z part3.Z
