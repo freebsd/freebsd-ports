@@ -246,6 +246,7 @@ share/doc/apache/mod/index.html.fr
 share/doc/apache/mod/index.html.html
 share/doc/apache/mod/index.html.ja.jis
 share/doc/apache/mod/mod_access.html
+share/doc/apache/mod/mod_access.html.ja.jis
 share/doc/apache/mod/mod_actions.html
 share/doc/apache/mod/mod_alias.html
 share/doc/apache/mod/mod_asis.html
