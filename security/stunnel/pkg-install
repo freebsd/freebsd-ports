@@ -1,0 +1,41 @@
+#! /bin/sh
+#
+# $FreeBSD$
+# taken from devel/perforce
+
+PATH=/bin:/usr/sbin
+
+STUNNEL_USER=${STUNNEL_USER:-stunnel}
+STUNNEL_GROUP=${STUNNEL_GROUP:-stunnel}
+
+case $2 in
+POST-INSTALL)
+	USER=${STUNNEL_USER}
+	GROUP=${STUNNEL_GROUP}
+
+	if pw group show "${GROUP}" 2>/dev/null; then
+		echo "You already have a group \"${GROUP}\", so I will use it."
+	else
+		if pw groupadd ${GROUP} ; then
+			echo "Added group \"${GROUP}\"."
+		else
+			echo "Adding group \"${GROUP}\" failed..."
+			exit 1
+		fi
+	fi
+
+	if pw user show "${USER}" 2>/dev/null; then
+		echo "You already have a user \"${USER}\", so I will use it."
+	else
+		if pw useradd ${USER} -g ${GROUP} -h - \
+			-d /nonexistent -c "stunnel Daemon" -s /sbin/nologin
+		then
+			echo "Added user \"${USER}\"."
+		else
+			echo "Adding user \"${USER}\" failed..."
+			exit 1
+		fi
+	fi
+
+	;;
+esac

@@ -1,6 +1,6 @@
---- common.h.orig	Wed Oct 31 00:07:31 2001
-+++ common.h	Wed Oct 31 11:07:29 2001
-@@ -174,6 +174,7 @@
+--- src/common.h.orig	Sat Aug 31 08:16:32 2002
++++ src/common.h	Sat Aug 31 08:16:35 2002
+@@ -140,6 +140,7 @@
  #define writesocket(s,b,n)      write((s),(b),(n))
  #define closesocket(s)          close(s)
  #define ioctlsocket(a,b,c)      ioctl((a),(b),(c))
