@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sha1
-PORTVERSION=	1.1
+PORTVERSION=	1.2
 PORTEPOCH=	1
 CATEGORIES=	security ruby
 MASTER_SITES=	http://www.omcl.org/~spcoltri/ruby/
