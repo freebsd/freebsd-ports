@@ -3,7 +3,7 @@
 # Date created:				25 March 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/04/02 03:56:42 hoek Exp $
 #
 
 DISTNAME=		xskewb-5.4.3
@@ -17,9 +17,12 @@ WRKSRC=			${WRKDIR}/xskewb
 USE_IMAKE=		yes
 MAN1=			xskewb.1
 
+# Not configured to use Motif.
+# Optionally edit ${WRKSRC}/Imakefile before build.
+
 do-install:
-	@ ${INSTALL_PROGRAM} ${WRKSRC}/xskewb ${PREFIX}/bin
-	@ ${INSTALL_DATA} ${WRKSRC}/Skewb.ad ${PREFIX}/lib/X11/app-defaults/Skewb
-	@ ${INSTALL_MAN} ${WRKSRC}/xskewb.man ${PREFIX}/man/man1/xskewb.1
+	@${INSTALL_PROGRAM} ${WRKSRC}/xskewb ${PREFIX}/bin
+	@${INSTALL_DATA} ${WRKSRC}/Skewb.ad ${PREFIX}/lib/X11/app-defaults/Skewb
+	@${INSTALL_MAN} ${WRKSRC}/xskewb.man ${PREFIX}/man/man1/xskewb.1
 
 .include <bsd.port.mk>
