@@ -16,7 +16,8 @@ DIST_SUBDIR=	KDE
 MAINTAINER?=	kde@FreeBSD.org
 COMMENT=	Powerful IDE for developing KDE/Qt-based apps
 
-BUILD_DEPENDS=	msgfmt:${PORTSDIR}/devel/gettext
+BUILD_DEPENDS=	cervisia:${PORTSDIR}/devel/kdesdk3 \
+		msgfmt:${PORTSDIR}/devel/gettext
 LIB_DEPENDS=	db4:${PORTSDIR}/databases/db4
 RUN_DEPENDS=	extractrc:${PORTSDIR}/devel/kdesdk3 \
 		gmake:${PORTSDIR}/devel/gmake \
