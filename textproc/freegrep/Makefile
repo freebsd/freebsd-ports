@@ -18,6 +18,8 @@ COMMENT=	An implementation of grep(1) under a BSD-friendly license
 
 LIB_DEPENDS=	iberty.1:${PORTSDIR}/devel/freelibiberty
 
+CFLAGS:=	-I${LOCALBASE}/include/freelibiberty ${CFLAGS}
+
 MAN1=		grep.1 egrep.1 fgrep.1 zgrep.1
 
 post-extract:
