@@ -75,7 +75,10 @@
 #	      third column of a single avail line.
 #
 
-$debug = 0;
+use lib $ENV{CVSROOT};
+use CVSROOT::cfg;
+
+$debug = $cfg::DEBUG;
 $die = '';
 $cvsroot = $ENV{'CVSROOT'};
 $availfile = $cvsroot . "/CVSROOT/avail";
