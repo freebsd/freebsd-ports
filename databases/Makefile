@@ -89,6 +89,7 @@
     SUBDIR += mysql40-scripts
     SUBDIR += mysql40-server
     SUBDIR += mysql41-client
+    SUBDIR += mysql41-scripts
     SUBDIR += mysql41-server
     SUBDIR += mysql50-client
     SUBDIR += mysql50-server
