@@ -16,15 +16,6 @@
 %%RUBY_EXAMPLESDIR%%/qt2/buttongroups/README.orig
 %%RUBY_EXAMPLESDIR%%/qt2/buttongroups/buttongroups_lib.rb
 %%RUBY_EXAMPLESDIR%%/qt2/buttongroups/buttongroups.rb
-%%RUBY_EXAMPLESDIR%%/qt2/canvas/butterfly.png
-%%RUBY_EXAMPLESDIR%%/qt2/canvas/qt-trans.xpm
-%%RUBY_EXAMPLESDIR%%/qt2/canvas/qtlogo.png
-%%RUBY_EXAMPLESDIR%%/qt2/canvas/blendshadow.rb
-%%RUBY_EXAMPLESDIR%%/qt2/canvas/canvas_lib.rb
-%%RUBY_EXAMPLESDIR%%/qt2/canvas/canvas.rb
-%%RUBY_EXAMPLESDIR%%/qt2/canvas/makeimg.rb
-%%RUBY_EXAMPLESDIR%%/qt2/canvas/butterfly.gif
-%%RUBY_EXAMPLESDIR%%/qt2/canvas/butterfly.xpm
 %%RUBY_EXAMPLESDIR%%/qt2/classbrows/classtree.rb
 %%RUBY_EXAMPLESDIR%%/qt2/classbrows/qt2brows3.rb
 %%RUBY_EXAMPLESDIR%%/qt2/classbrows/qt2brows4.rb
@@ -34,9 +25,6 @@
 %%RUBY_EXAMPLESDIR%%/qt2/deleteQObj/test1.rb
 %%RUBY_EXAMPLESDIR%%/qt2/deleteQObj/test2.rb
 %%RUBY_EXAMPLESDIR%%/qt2/deleteQObj/test3.rb
-%%RUBY_EXAMPLESDIR%%/qt2/gear/README.orig
-%%RUBY_EXAMPLESDIR%%/qt2/gear/gear.rb
-%%RUBY_EXAMPLESDIR%%/qt2/gear/gear2.rb
 %%RUBY_EXAMPLESDIR%%/qt2/hello/README.orig
 %%RUBY_EXAMPLESDIR%%/qt2/hello/hello.rb
 %%RUBY_EXAMPLESDIR%%/qt2/hello_ruby/hello.rb
@@ -54,7 +42,6 @@
 %%RUBY_EXAMPLESDIR%%/qt2/helpviewer/htmlviewer.rb
 %%RUBY_EXAMPLESDIR%%/qt2/helpviewer/htmlwindow_lib.rb
 %%RUBY_EXAMPLESDIR%%/qt2/layout/layout.rb
-%%RUBY_EXAMPLESDIR%%/qt2/mdi/Makefile
 %%RUBY_EXAMPLESDIR%%/qt2/mdi/document.xpm
 %%RUBY_EXAMPLESDIR%%/qt2/mdi/fileopen.xpm
 %%RUBY_EXAMPLESDIR%%/qt2/mdi/fileprint.xpm
@@ -66,7 +53,6 @@
 %%RUBY_EXAMPLESDIR%%/qt2/movies/movies.rb
 %%RUBY_EXAMPLESDIR%%/qt2/popup/README
 %%RUBY_EXAMPLESDIR%%/qt2/popup/popup.rb
-%%RUBY_EXAMPLESDIR%%/qt2/qtable/table.rb
 %%RUBY_EXAMPLESDIR%%/qt2/rubyedit/test.ps
 %%RUBY_EXAMPLESDIR%%/qt2/rubyedit/temp.txt
 %%RUBY_EXAMPLESDIR%%/qt2/rubyedit/editcopy.xpm
@@ -84,21 +70,6 @@
 %%RUBY_EXAMPLESDIR%%/qt2/scribble2/qtscribble_ex.rb
 %%RUBY_EXAMPLESDIR%%/qt2/signal/hello_signal.rb
 %%RUBY_EXAMPLESDIR%%/qt2/signal/hello_signal_jp.rb
-%%RUBY_EXAMPLESDIR%%/qt2/texture/Makefile
-%%RUBY_EXAMPLESDIR%%/qt2/texture/README.orig
-%%RUBY_EXAMPLESDIR%%/qt2/texture/gllogo.bmp
-%%RUBY_EXAMPLESDIR%%/qt2/texture/qtlogo.bmp
-%%RUBY_EXAMPLESDIR%%/qt2/texture/texture_rb/book.bmp
-%%RUBY_EXAMPLESDIR%%/qt2/texture/texture_rb/book.gif
-%%RUBY_EXAMPLESDIR%%/qt2/texture/texture_rb/book.xpm
-%%RUBY_EXAMPLESDIR%%/qt2/texture/texture_rb/gllogo.bmp
-%%RUBY_EXAMPLESDIR%%/qt2/texture/texture_rb/globjwin.rb
-%%RUBY_EXAMPLESDIR%%/qt2/texture/texture_rb/gltexobj.rb
-%%RUBY_EXAMPLESDIR%%/qt2/texture/texture_rb/qtlogo.bmp
-%%RUBY_EXAMPLESDIR%%/qt2/texture/texture_rb/texture.rb
-%%RUBY_EXAMPLESDIR%%/qt2/texture/globjwin.rb
-%%RUBY_EXAMPLESDIR%%/qt2/texture/gltexobj.rb
-%%RUBY_EXAMPLESDIR%%/qt2/texture/texture.rb
 %%RUBY_EXAMPLESDIR%%/qt2/widgets/README.orig
 %%RUBY_EXAMPLESDIR%%/qt2/widgets/fileopen.xpm
 %%RUBY_EXAMPLESDIR%%/qt2/widgets/aclock_lib.rb
@@ -123,12 +94,10 @@
 @dirrm %%RUBY_EXAMPLESDIR%%/qt2/action
 @dirrm %%RUBY_EXAMPLESDIR%%/qt2/application_ruby
 @dirrm %%RUBY_EXAMPLESDIR%%/qt2/buttongroups
-@dirrm %%RUBY_EXAMPLESDIR%%/qt2/canvas
 @dirrm %%RUBY_EXAMPLESDIR%%/qt2/classbrows
 @dirrm %%RUBY_EXAMPLESDIR%%/qt2/colorButton
 @dirrm %%RUBY_EXAMPLESDIR%%/qt2/cursor
 @dirrm %%RUBY_EXAMPLESDIR%%/qt2/deleteQObj
-@dirrm %%RUBY_EXAMPLESDIR%%/qt2/gear
 @dirrm %%RUBY_EXAMPLESDIR%%/qt2/hello
 @dirrm %%RUBY_EXAMPLESDIR%%/qt2/hello_ruby
 @dirrm %%RUBY_EXAMPLESDIR%%/qt2/helpviewer
@@ -136,12 +105,9 @@
 @dirrm %%RUBY_EXAMPLESDIR%%/qt2/mdi
 @dirrm %%RUBY_EXAMPLESDIR%%/qt2/movies
 @dirrm %%RUBY_EXAMPLESDIR%%/qt2/popup
-@dirrm %%RUBY_EXAMPLESDIR%%/qt2/qtable
 @dirrm %%RUBY_EXAMPLESDIR%%/qt2/rubyedit
 @dirrm %%RUBY_EXAMPLESDIR%%/qt2/scribble2
 @dirrm %%RUBY_EXAMPLESDIR%%/qt2/signal
-@dirrm %%RUBY_EXAMPLESDIR%%/qt2/texture/texture_rb
-@dirrm %%RUBY_EXAMPLESDIR%%/qt2/texture
 @dirrm %%RUBY_EXAMPLESDIR%%/qt2/widgets/listview
 @dirrm %%RUBY_EXAMPLESDIR%%/qt2/widgets
 @dirrm %%RUBY_EXAMPLESDIR%%/qt2/xform
@@ -161,8 +127,6 @@
 %%RUBY_DOCDIR%%/qt2/tutorial/t13/gamebrd.rb
 %%RUBY_DOCDIR%%/qt2/tutorial/t13/lcdrange.rb
 %%RUBY_DOCDIR%%/qt2/tutorial/t13/t13.rb
-%%RUBY_DOCDIR%%/qt2/tutorial/t14/cannon.cpp.rb
-%%RUBY_DOCDIR%%/qt2/tutorial/t14/gamebrd.cpp.rb
 %%RUBY_DOCDIR%%/qt2/tutorial/t14/testlcd.rb
 %%RUBY_DOCDIR%%/qt2/tutorial/t14/cannon.rb
 %%RUBY_DOCDIR%%/qt2/tutorial/t14/gamebrd.rb
