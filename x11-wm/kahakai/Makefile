@@ -7,6 +7,7 @@
 
 PORTNAME=	kahakai
 PORTVERSION=	0.6.2
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -22,8 +23,6 @@ RUN_DEPENDS=	\
 	${X11BASE}/lib/X11/fonts/artwiz-fonts:${PORTSDIR}/x11-fonts/artwiz-fonts
 
 DEPRECATED=	"Development ceased"
-
-BROKEN=		Broken by python 2.4 update
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
@@ -42,6 +41,10 @@ CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
 		LIBS=${PTHREAD_LIBS}
 
 .include <bsd.port.pre.mk>
+
+.if ${ARCH} == "alpha"
+BROKEN=		"Does not compile on alpha 4.x"
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/tmp/ktest|${X11BASE}|' \
