@@ -126,7 +126,7 @@
 %%EMACS_PACKAGESDIR%%/lisp/wl/elmo-pop3.elc
 %%EMACS_PACKAGESDIR%%/lisp/wl/elmo-sendlog.el
 %%EMACS_PACKAGESDIR%%/lisp/wl/elmo-sendlog.elc
-%%SHIMBUN%%%%EMACS_PACKAGESDIR%%/lisp/wl/elmo-shimbun.el
+%%EMACS_PACKAGESDIR%%/lisp/wl/elmo-shimbun.el
 %%SHIMBUN%%%%EMACS_PACKAGESDIR%%/lisp/wl/elmo-shimbun.elc
 %%EMACS_PACKAGESDIR%%/lisp/wl/elmo-split.el
 %%EMACS_PACKAGESDIR%%/lisp/wl/elmo-split.elc
