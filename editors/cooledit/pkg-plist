@@ -35,6 +35,7 @@ share/cooledit/syntax/mudela.syntax
 share/cooledit/syntax/nroff.syntax
 share/cooledit/syntax/pascal.syntax
 share/cooledit/syntax/perl.syntax
+share/cooledit/syntax/php.syntax
 share/cooledit/syntax/python.syntax
 share/cooledit/syntax/sh.syntax
 share/cooledit/syntax/smalltalk.syntax
