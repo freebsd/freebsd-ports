@@ -15,6 +15,7 @@ EXTRACT_SUFX=	.tar
 MAINTAINER=	roman@xpert.com
 COMMENT=	Standard netcat enhanced with twofish encryption
 
+EXTRACT_AFTER_ARGS=	| pax -r
 WRKSRC=		${WRKDIR}/${PORTNAME}
 ALL_TARGET=	freebsd
 
