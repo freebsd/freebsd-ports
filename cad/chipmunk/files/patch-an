@@ -1,0 +1,37 @@
+--- util/cleancif/Makefile.orig	Wed Mar 12 02:47:24 1997
++++ util/cleancif/Makefile	Tue Sep 21 03:35:20 1999
+@@ -18,7 +18,7 @@
+ #
+ # cleancif makefile
+ 
+-BINDIR=	../../bin
++BINDIR=	%%PREFIX%%/bin
+ 
+ ##
+ ##  (1) Choosing your compiler
+@@ -45,7 +45,7 @@
+ ##
+ 
+ CHIPMUNKCC = gcc
+-CC = $(CHIPMUNKCC)
++CC ?= $(CHIPMUNKCC)
+ 
+ ##
+ ## (2) Adding appropriate flags
+@@ -89,13 +89,13 @@
+ ##   -m68040              : for 68040 and 68060
+ ##
+ 
+-CFLAGS = 
++CFLAGS += -DBSD -DF_OK=0
+ 
+-cleancif:     cleancif.o
++all:     cleancif.o
+ 	$(CC)  cleancif.o -lm -o cleancif
+ 
+ install:    cleancif
+-	cp cleancif $(BINDIR)  
++	install -c -s cleancif $(BINDIR)  
+ 
+ clean:
+ 	-rm -f *.o cleancif

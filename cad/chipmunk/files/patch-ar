@@ -1,0 +1,36 @@
+--- util/spc-tools/sf/Makefile.orig	Wed Mar 12 02:47:29 1997
++++ util/spc-tools/sf/Makefile	Tue Sep 21 03:41:57 1999
+@@ -18,7 +18,7 @@
+ #
+ # sf makefile
+ 
+-BINDIR=	../../../bin
++BINDIR=	%%PREFIX%%/bin
+ 
+ ##
+ ##  (1) Choosing your compiler
+@@ -46,7 +46,7 @@
+ 
+ 
+ CHIPMUNKCC = gcc
+-CC = $(CHIPMUNKCC)
++CC ?= $(CHIPMUNKCC)
+ 
+ ##
+ ## (2) Adding appropriate flags
+@@ -90,13 +90,13 @@
+ ##   -m68040              : for 68040 and 68060
+ ##
+ 
+-CFLAGS = 
++CFLAGS = -DBSD -DF_OK=0
+ 
+ sf:     sf.o hash.o spice.o
+ 	$(CC) sf.o hash.o spice.o  -o sf
+ 
+ install:    sf
+-	cp sf $(BINDIR)  
++	install -c -s sf $(BINDIR)  
+ 
+ clean:
+ 	-rm -f *.o sf

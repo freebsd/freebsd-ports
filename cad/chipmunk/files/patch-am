@@ -1,0 +1,29 @@
+--- util/boxify/trapes/Makefile.orig	Wed Mar 12 02:47:22 1997
++++ util/boxify/trapes/Makefile	Tue Sep 21 05:36:58 1999
+@@ -18,7 +18,7 @@
+ #
+ # cleancif makefile
+ 
+-BINDIR=	../../bin
++BINDIR=	%%PREFIX%%/bin
+ 
+ ##
+ ##  (1) Choosing your compiler
+@@ -45,7 +45,7 @@
+ ##
+ 
+ CHIPMUNKCC = gcc
+-CC = $(CHIPMUNKCC)
++CC ?= $(CHIPMUNKCC)
+ 
+ ##
+ ## (2) Adding appropriate flags
+@@ -89,7 +89,7 @@
+ ##   -m68040              : for 68040 and 68060
+ ##
+   
+-CFLAGS = 
++CFLAGS += -DBSD -DF_OK=0
+ 
+ all:   edges.o findnext.o mates.o delete.o gentrapes.o trapes.o
+ 

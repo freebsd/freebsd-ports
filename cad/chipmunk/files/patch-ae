@@ -1,0 +1,29 @@
+--- log/src/ana/Makefile.orig	Wed Jul 21 04:10:58 1999
++++ log/src/ana/Makefile	Mon Sep 20 06:46:41 1999
+@@ -25,7 +25,7 @@
+ 
+ 
+ LOCINC = ../../../psys/include
+-XINCLUDEDIR = .
++XINCLUDEDIR = %%X11BASE%%/include
+ 
+ ##
+ ##  (1) Choosing your compiler
+@@ -46,7 +46,7 @@
+ CHIPMUNKCC = gcc -O2
+ 
+ 
+-CC = $(CHIPMUNKCC) 
++CC ?= $(CHIPMUNKCC) 
+ 
+ ##
+ ## (2) Adding appropriate flags
+@@ -80,7 +80,7 @@
+ ## 
+   
+ 
+-CFLAGS =  -I$(LOCINC) -I$(XINCLUDEDIR)
++CFLAGS +=  -I$(LOCINC) -I$(XINCLUDEDIR)
+ 
+ ANAOBJ = globals.o nsolver.o main.o inter.o $(GATESOBJ)
+ GATESOBJ = numbers.o mmeter.o iscope.o \

@@ -1,0 +1,19 @@
+--- view/tek2430/Makefile.orig	Wed Mar 12 02:50:18 1997
++++ view/tek2430/Makefile	Mon Sep 20 22:08:14 1999
+@@ -23,12 +23,12 @@
+ # tek2430 makefile
+ 
+ 
+-CC = gcc
+-CFLAGS=  -I../../psys/include -DF_OK=0
++CC ?= gcc
++CFLAGS +=  -I../../psys/include -DF_OK=0
+ LIBP2C = ../../psys/src/libp2c.a 
+ #IEEEDIR = ../../iotech/sun4c/4.1c/ieeeio.o
+-IEEEDIR = /home/auspex/f/sounds/lazzaro/chipmunk/new/sun4c/4.1.1c/ieeeio.o
+-LDFLAGS=$(LIBP2C) $(IEEEDIR) 
++#IEEEDIR = /home/auspex/f/sounds/lazzaro/chipmunk/new/sun4c/4.1.1c/ieeeio.o
++LDFLAGS += $(LIBP2C) $(IEEEDIR) 
+ 
+ OBJS =			\
+ 	tek2430.o	\

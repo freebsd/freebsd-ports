@@ -1,0 +1,16 @@
+--- util/spc-tools/Makefile.orig	Wed Mar 12 02:47:32 1997
++++ util/spc-tools/Makefile	Tue Sep 21 03:38:10 1999
+@@ -11,11 +11,11 @@
+ clean:
+ 	for i in $(PACKAGES) ;\
+  	    do (cd $$i ; echo "Making clean in $$i..."; \
+- 		make  clean); done
++ 		$(MAKE) clean); done
+  
+ install:
+ 	for i in $(PACKAGES) ;\
+ 	    do (cd $$i ; echo "Making install in $$i..."; \
+-		make install); done
++		$(MAKE) install); done
+ 
+  

@@ -1,0 +1,58 @@
+--- until/V1.2/Makefile.orig	Wed Sep 23 07:04:47 1998
++++ until/V1.2/Makefile	Mon Sep 20 07:01:56 1999
+@@ -41,7 +41,8 @@
+ ##
+ 
+ 
+-XINCLUDEDIR = .
++XINCLUDEDIR = %%X11BASE%%/include
++XLIBDIR = %%X11BASE%%/lib
+ 
+ ##
+ ## If X isn't in the library path (the case for many MachTen and Linux 
+@@ -68,7 +69,7 @@
+ ##
+ ## on some systems, -ldl must be added to the following line
+ 
+-OTHERLIBS= -lm
++OTHERLIBS= -lm -lcompat
+ 
+ ##
+ ##  (2) Choosing your compiler
+@@ -98,10 +99,10 @@
+   
+ 
+ CHIPMUNKCC = gcc
+-CC = $(CHIPMUNKCC) 
++CC ?= $(CHIPMUNKCC) 
+ 
+-BINDIR = ../../bin
+-LIBDIR = `pwd`/../../lib
++BINDIR = %%PREFIX%%/bin
++LIBDIR = %%PREFIX%%/share/chipmunk
+ 
+ SYSRC =  $(LIBDIR)/system.untilrc
+ SYSPS =  $(LIBDIR)/pensps.map
+@@ -161,11 +162,11 @@
+ ##
+ 
+   
+-CFLAGS = -I$(LOCINC) -I$(XINCLUDEDIR) \
++CFLAGS += -DBSD -I$(LOCINC) -I$(XINCLUDEDIR) \
+ -DF_OK=0 -DUNTILRC=\"$(SYSRC)\" -DUNTILPSMAP=\"$(SYSPS)\" \
+ -DUNTILHEADER=\"$(SYSHD)\"
+ 
+-LDFLAGS = $(LIBP2C)  $(LIBX11) $(OTHERLIBS)
++LDFLAGS += $(LIBP2C)  $(LIBX11) $(OTHERLIBS) -L$(XLIBDIR)
+ 
+ OBJS = bb_stuff.o cnf_stuff.o  crt_stuff.o data_types.o datawalk.o \
+ dispmod.o ffman.o gr_stuff.o main.o mat_stuff.o menu.o menu_stuff.o \
+@@ -195,7 +196,7 @@
+ ## Until as its moved to bin; non ksh-users may wish to change it back.
+ 
+ install: until
+-	cp until $(BINDIR)/Until
++	install -c -s until $(BINDIR)/Until
+ 	cp pensps.map $(LIBDIR)/pensps.map
+ 	cp system.untilrc $(LIBDIR)/system.untilrc
+ 	cp until.pro  $(LIBDIR)/until.pro

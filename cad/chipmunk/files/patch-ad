@@ -1,0 +1,84 @@
+--- log/src/Makefile.orig	Wed Jul 21 04:10:58 1999
++++ log/src/Makefile	Tue Sep 21 02:57:21 1999
+@@ -45,8 +45,8 @@
+ 
+ CD = cd
+ 
+-LOGLIBDIR = `$(CD) ../../log/lib; pwd`
+-LIBDIR = `$(CD) ../../lib; pwd`
++LOGLIBDIR = %%PREFIX%%/share/chipmunk
++LIBDIR = %%PREFIX%%/share/chipmunk
+ 
+ LOCINC = ../../psys/include
+ 
+@@ -63,9 +63,10 @@
+ ## or some other directory, depending on your installation.
+ ##
+ 
+-XINCLUDEDIR = .
++XINCLUDEDIR = %%X11BASE%%/include
++XLIBDIR = %%X11BASE%%/lib
+ 
+-BINDIR = ../../bin
++BINDIR = %%PREFIX%%/bin
+ LIBP2C = ../../psys/src/libp2c.a
+ 
+ ##
+@@ -91,7 +92,7 @@
+ ##
+ ## on Sun Solaris 2.X, -lsocket -lnsl must be added to OTHERLIBS
+ 
+-OTHERLIBS= -lm 
++OTHERLIBS= -lm -lcompat
+ 
+ 
+ ##
+@@ -110,7 +111,7 @@
+   
+ CHIPMUNKCC = gcc -O2
+ 
+-CC = $(CHIPMUNKCC) 
++CC ?= $(CHIPMUNKCC) 
+ 
+ ##
+ ## (4) Adding appropriate flags
+@@ -145,7 +146,7 @@
+ ##   -m68040              : for 68040 and 68060
+ ## 
+ 
+-CFLAGS =  -I$(LOCINC) -I$(XINCLUDEDIR) -DLOGLIB=\"$(LOGLIBDIR)\" -DF_OK=0
++CFLAGS +=  -DBSD -I$(LOCINC) -I$(XINCLUDEDIR) -DLOGLIB=\"$(LOGLIBDIR)\" -DF_OK=0 -L$(XLIBDIR)
+ 
+ DIGOBJ = logsim.o logdig.o logsimasm.o logsimed.o diggates.o \
+          loghier.o logsimh.o swap.o
+@@ -178,11 +179,12 @@
+ ##
+ 
+ install: all
+-	cp log $(BINDIR)/diglog
++	install -c -s log $(BINDIR)/diglog
+ 	-rm -f $(BINDIR)/analog
+ 	-ln $(BINDIR)/diglog $(BINDIR)/analog
+-	cp loged $(BINDIR)/loged
+-	cp fixfet7 $(BINDIR)/fixfet7
++	install -c -s loged $(BINDIR)
++	install -c fixfet7 $(BINDIR)
++	cp -R ../lib/* $(LOGLIBDIR)
+ 
+ clean:
+ 	-rm -f *.o ana/*.o log loged
+@@ -192,12 +194,12 @@
+ main: log loged
+ 
+ makeana:
+-	($(CD) ana; make $(MFLAGS) grab all)
++	($(CD) ana; $(MAKE) $(MFLAGS) grab all)
+ 
+ 
+ LOGOBJ = log.o $(TOOLOBJ) logstuff.o logdef.o
+ 
+-log: $(LOGOBJ) tooldir.o $(LIBP2C) makeana
++log: $(LOGOBJ) tooldir.o $(LIBP2C)
+ 	$(CC) $(CFLAGS) tooldir.o $(LOGOBJ) $(LIBP2C) $(LIBX11)  \
+ 	$(OTHERLIBS) -o log
+ 

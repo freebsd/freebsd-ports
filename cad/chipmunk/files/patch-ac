@@ -1,0 +1,37 @@
+--- Makefile.orig	Mon Sep 20 06:06:10 1999
++++ Makefile	Mon Sep 20 06:40:16 1999
+@@ -38,10 +38,12 @@
+  		wolcomp \
+  		until/V1.2 \
+  		view
++
++all: makeonly
+  
+ makeonly: lib bin
+ 	for i in $(PACKAGES) ;\
+- 		do (cd $$i ; echo "Making in $$i..."; make $(MFLAGS)); done
++ 		do (cd $$i ; echo "Making in $$i..."; $(MAKE) $(MFLAGS)); done
+  
+ World: lib bin clean install
+ 
+@@ -54,17 +56,17 @@
+ clean:
+ 	for i in $(PACKAGES) ;\
+  	    do (cd $$i ; echo "Making clean in $$i..."; \
+- 		make  clean); done
++ 		$(MAKE) clean); done
+  
+ install:
+ 	for i in $(PACKAGES) ;\
+ 	    do (cd $$i ; echo "Making install in $$i..."; \
+-		make install); done
++		$(MAKE) install); done
+ 
+ create:
+ 	for i in $(PACKAGES) ;\
+ 	    do (cd $$i ; echo "Making create in $$i..."; \
+-		make create); done
++		$(MAKE) create); done
+  
+  
+  

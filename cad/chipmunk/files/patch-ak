@@ -1,0 +1,25 @@
+--- util/Makefile.orig	Wed Mar 12 02:47:21 1997
++++ util/Makefile	Tue Sep 21 21:21:39 1999
+@@ -10,15 +10,20 @@
+  		boxify\
+  		sctomat 
+ 
++all:
++	for i in $(PACKAGES) ;\
++ 	    do (cd $$i ; echo "Making clean in $$i..."; \
++ 		$(MAKE) all); done
++
+ clean:
+ 	for i in $(PACKAGES) ;\
+  	    do (cd $$i ; echo "Making clean in $$i..."; \
+- 		make  clean); done
++ 		$(MAKE) clean); done
+  
+ install:
+ 	for i in $(PACKAGES) ;\
+ 	    do (cd $$i ; echo "Making install in $$i..."; \
+-		make install); done
++		$(MAKE) install); done
+ 
+ dist:
+ 	rm -rf util

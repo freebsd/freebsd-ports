@@ -1,0 +1,58 @@
+--- mosis/Makefile.orig	Wed Aug  3 03:31:44 1994
++++ mosis/Makefile	Tue Sep 21 06:22:09 1999
+@@ -23,6 +23,8 @@
+ #
+ #
+ 
++BINDIR = %%PREFIX%%/bin
++
+ ##
+ ##  (1) Choosing your compiler
+ ##  ---------------------------
+@@ -48,10 +50,11 @@
+ ##
+ 
+ 
+-CC = gcc
++CC ?= gcc
+ 
+ LIBX11 = -lX11
+-XINCLUDEDIR = .
++XINCLUDEDIR = %%X11BASE%%/include
++XLIBDIR = %%X11BASE%%/lib
+ 
+ ##
+ ## (2) Adding appropriate flags
+@@ -91,7 +94,7 @@
+ ## CFLAGS =  -ansi 
+ ##
+ 
+-CFLAGS = -O -I../psys/include -I$(XINCLUDEDIR)
++CFLAGS += -DBSD -DF_OK -I../psys/include -I$(XINCLUDEDIR)
+ 
+ ##
+ ## (3) Library additions
+@@ -99,20 +102,20 @@
+ ##
+ ## on some systems, -ldl must be added to the following line
+ 
+-OTHERLIBS= -lm
++OTHERLIBS= -lm -lcompat
+ 
+ ##
+ ##
+ ##
+ 
+ 
+-LDFLAGS = ../psys/src/libp2c.a  $(OTHERLIBS) $(LIBX11)
++LDFLAGS += ../psys/src/libp2c.a  $(OTHERLIBS) $(LIBX11) -L$(XLIBDIR)
+ 
+ mosis: mosis.o 
+ 	$(CC) -o mosis mosis.o  $(LDFLAGS)
+ 
+ install: mosis
+-	cp mosis ../bin/mosis
++	install -c -s mosis $(BINDIR)
+ 
+ clean:
+ 	rm -f *.o mosis
