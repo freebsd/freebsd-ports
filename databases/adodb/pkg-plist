@@ -87,6 +87,8 @@
 %%ADODB_DIR%%/lang/adodb-ro.inc.php
 %%ADODB_DIR%%/lang/adodb-ru1251.inc.php
 %%ADODB_DIR%%/lang/adodb-sv.inc.php
+%%ADODB_DIR%%/pear/readme.Auth.txt
+%%ADODB_DIR%%/pear/Auth/Container/ADOdb.php
 %%ADODB_DIR%%/perf/perf-db2.inc.php
 %%ADODB_DIR%%/perf/perf-informix.inc.php
 %%ADODB_DIR%%/perf/perf-mssql.inc.php
@@ -112,11 +114,12 @@
 %%ADODB_DIR%%/session/old/crypt.inc.php
 %%ADODB_DIR%%/xsl/convert-0.1-0.2.xsl
 %%ADODB_DIR%%/xsl/convert-0.2-0.1.xsl
+%%ADODB_DIR%%/xsl/remove-0.2.xsl
 %%TESTS%%%%ADODB_DIR%%/tests/benchmark.php
 %%TESTS%%%%ADODB_DIR%%/tests/client.php
 %%TESTS%%%%ADODB_DIR%%/tests/pdo.php
 %%TESTS%%%%ADODB_DIR%%/tests/test-datadict.php
-%%TESTS%%%%ADODB_DIR%%/tests/test-pref.php
+%%TESTS%%%%ADODB_DIR%%/tests/test-perf.php
 %%TESTS%%%%ADODB_DIR%%/tests/test-pgblob.php
 %%TESTS%%%%ADODB_DIR%%/tests/test-php5.php
 %%TESTS%%%%ADODB_DIR%%/tests/test-xmlschema.php
@@ -156,6 +159,9 @@
 @dirrm %%ADODB_DIR%%/datadict
 @dirrm %%ADODB_DIR%%/drivers
 @dirrm %%ADODB_DIR%%/lang
+@dirrm %%ADODB_DIR%%/pear/Auth/Container
+@dirrm %%ADODB_DIR%%/pear/Auth
+@dirrm %%ADODB_DIR%%/pear
 @dirrm %%ADODB_DIR%%/perf
 @dirrm %%ADODB_DIR%%/session/old
 @dirrm %%ADODB_DIR%%/session
