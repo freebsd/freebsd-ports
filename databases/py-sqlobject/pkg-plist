@@ -79,6 +79,33 @@
 %%PYTHON_SITELIBDIR%%/sqlobject/sybase/sybaseconnection.py
 %%PYTHON_SITELIBDIR%%/sqlobject/sybase/sybaseconnection.pyc
 %%PYTHON_SITELIBDIR%%/sqlobject/sybase/sybaseconnection.pyo
+%%PORTDOCS%%%%DOCSDIR%%/Authors.html
+%%PORTDOCS%%%%DOCSDIR%%/Authors.txt
+%%PORTDOCS%%%%DOCSDIR%%/FAQ.html
+%%PORTDOCS%%%%DOCSDIR%%/FAQ.txt
+%%PORTDOCS%%%%DOCSDIR%%/News.html
+%%PORTDOCS%%%%DOCSDIR%%/News.txt
+%%PORTDOCS%%%%DOCSDIR%%/Plan06.html
+%%PORTDOCS%%%%DOCSDIR%%/Plan06.txt
+%%PORTDOCS%%%%DOCSDIR%%/README.txt
+%%PORTDOCS%%%%DOCSDIR%%/SQLBuilder.html
+%%PORTDOCS%%%%DOCSDIR%%/SQLBuilder.txt
+%%PORTDOCS%%%%DOCSDIR%%/SQLObject.html
+%%PORTDOCS%%%%DOCSDIR%%/SQLObject.txt
+%%PORTDOCS%%%%DOCSDIR%%/TODO.txt
+%%PORTDOCS%%%%DOCSDIR%%/default.css
+%%PORTDOCS%%%%EXAMPLESDIR%%/codebits.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/config.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/examplestripper.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/leftjoin.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/people.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/personaddress.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/setup.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/simpleperson.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/styles.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/userrole.py
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%PYTHON_SITELIBDIR%%/sqlobject/sybase
 @dirrm %%PYTHON_SITELIBDIR%%/sqlobject/sqlite
 @dirrm %%PYTHON_SITELIBDIR%%/sqlobject/postgres
