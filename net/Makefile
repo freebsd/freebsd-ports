@@ -86,6 +86,7 @@
     SUBDIR += dlint
     SUBDIR += dnrd
     SUBDIR += dns_balance
+    SUBDIR += dnstracer
     SUBDIR += dnsutl
     SUBDIR += dnswalk
     SUBDIR += doc
