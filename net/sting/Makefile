@@ -11,13 +11,13 @@ CATEGORIES=	net
 MASTER_SITES=	http://www.cs.washington.edu/homes/savage/sting/
 DISTNAME=	sting
 
-MAINTAINER=	kbyanc@posi.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A tool that measures end-to-end TCP connection characteristics
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 500113
-BROKEN=         "Does not compile"
+.if ${OSVERSION} >= 500113 || defined(IPFW2)
+BROKEN=         "Does not work with ipfw2"
 .endif
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
