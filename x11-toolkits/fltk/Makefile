@@ -3,14 +3,14 @@
 # Date created:				11 February 1999
 # Whom:                			Dima Sivachenko <dima@Chg.RU>
 #
-# $Id: Makefile,v 1.3 1999/04/09 19:26:49 billf Exp $
+# $Id: Makefile,v 1.4 1999/04/16 06:15:09 taoka Exp $
 #
 
-DISTNAME=	fltk-1.0.1-source
-PKGNAME=	fltk-1.0.1
+DISTNAME=	fltk-1.0.2-source
+PKGNAME=	fltk-1.0.2
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	ftp://ftp.fltk.org/pub/fltk/${VERSION}/ \
-		ftp://ftp.easysw.com/pub/fltk/${VERSION}/ \
+		ftp://ftp.chg.ru/pub/X11/fltk/${VERSION}/ \
 		ftp://ftp2.easysw.com/pub/fltk/${VERSION}/ \
 		ftp://ftp.northamerica.net/pub/ESP/fltk/${VERSION}/ \
 		ftp://ftp.funet.fi/mirrors/ftp.easysw.com/pub/fltk/${VERSION}/ \
@@ -24,18 +24,14 @@ USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--enable-shared
 CONFIGURE_ENV=	CXXFLAGS="${CFLAGS}"
-WRKSRC=	${WRKDIR}/${PKGNAME}
+WRKSRC=		${WRKDIR}/${PKGNAME}
 USE_X_PREFIX=	yes
-MAN1=	fluid.1
-VERSION=	1.0.1
-
-.if defined(NOPORTDOCS)
-PLIST=	${PKGDIR}/PLIST.nodocs
-.endif
+MAN1=		fluid.1
+VERSION=	1.0.2
 
 post-install:
-	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
-	${INSTALL_MAN} ${WRKSRC}/documentation/fluid.1 \
+	@ ${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
+	@ ${INSTALL_MAN} ${WRKSRC}/documentation/fluid.1 \
 		${PREFIX}/man/man1
 .if !defined(NOPORTDOCS)
 	@ ${MKDIR} ${PREFIX}/share/doc/fltk
