@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gperiodic
-PORTVERSION=	1.3.2
+PORTVERSION=	1.3.3
 CATEGORIES=	biology
 MASTER_SITES=	ftp://ftp.seul.org/pub/gperiodic/
 
