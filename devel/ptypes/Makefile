@@ -22,8 +22,7 @@ PLIST_SUB+=	SHLIB_VER=${SHLIB_VER}
 PTYPES_CFLAGS=	${CFLAGS}
 
 OPTIONS=	DEBUG "Build debug version" off \
-		OPTIMIZED "Enable -O2 optimization" on
-WITH_OPTIMIZED?=	yes
+		OPTIMIZED "Enable -O2 optimization" off
 
 .include <bsd.port.pre.mk>
 
