@@ -13,4 +13,6 @@ lib/libsmpeg-0.3.so.0
 lib/libsmpeg.a
 lib/libsmpeg.la
 lib/libsmpeg.so
+@exec /sbin/ldconfig -m %B
+@unexec /sbin/ldconfig -R
 @dirrm include/smpeg
