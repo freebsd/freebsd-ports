@@ -11,12 +11,12 @@
 %%RUBY_EXAMPLESDIR%%/gtk/browser/rbbr_rb.rb
 %%RUBY_EXAMPLESDIR%%/gtk/browser/rbdump.rb
 @dirrm %%RUBY_EXAMPLESDIR%%/gtk/browser
-%%RUBY_EXAMPLESDIR%%/gtk/gdkimlib/sample1.rb
-%%RUBY_EXAMPLESDIR%%/gtk/gdkimlib/sample2.rb
-%%RUBY_EXAMPLESDIR%%/gtk/gdkimlib/sample3.rb
-%%RUBY_EXAMPLESDIR%%/gtk/gdkimlib/sample4.rb
-%%RUBY_EXAMPLESDIR%%/gtk/gdkimlib/sample5.rb
-@dirrm %%RUBY_EXAMPLESDIR%%/gtk/gdkimlib
+%%IMLIB:%%%%RUBY_EXAMPLESDIR%%/gtk/gdkimlib/sample1.rb
+%%IMLIB:%%%%RUBY_EXAMPLESDIR%%/gtk/gdkimlib/sample2.rb
+%%IMLIB:%%%%RUBY_EXAMPLESDIR%%/gtk/gdkimlib/sample3.rb
+%%IMLIB:%%%%RUBY_EXAMPLESDIR%%/gtk/gdkimlib/sample4.rb
+%%IMLIB:%%%%RUBY_EXAMPLESDIR%%/gtk/gdkimlib/sample5.rb
+%%IMLIB:%%@dirrm %%RUBY_EXAMPLESDIR%%/gtk/gdkimlib
 @dirrm %%RUBY_EXAMPLESDIR%%/gtk
 %%RUBY_DOCDIR%%/gtk/Gdk.html
 %%RUBY_DOCDIR%%/gtk/GdkImlib.html

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gtk
-PORTVERSION= 	0.23
+PORTVERSION=	0.23
 CATEGORIES=	x11-toolkits ruby
 MASTER_SITES=	http://www.ruby-lang.org/gtk/download/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -23,16 +23,18 @@ USE_XLIB=	yes
 USE_GTK=	yes
 WANT_IMLIB=	yes
 
+CONFIGURE_ARGS=	${CONFIG_CMD}
 INSTALL_TARGET=	site-install
 
 .include <bsd.port.pre.mk>
 
 .if defined(HAVE_IMLIB)
 USE_IMLIB=	yes
+PLIST_SUB+=	IMLIB:=""
+CONFIG_CMD=	${IMLIB_CONFIG}
 .else
-PLIST=		${WRKDIR}/PLIST
-pre-install:
-	@${SED} -e '/gdkimlib/d' ${PKGDIR}/pkg-plist > ${PLIST}
+PLIST_SUB+=	IMLIB:="@comment "
+CONFIG_CMD=	${GTK_CONFIG}
 .endif
 
 post-configure:
