@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	sources/gtkglarea/1.99
 DISTNAME=	gtkglarea-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
-MAINTAINER=	marc@informatik.uni-bremen.de
+MAINTAINER=	gnome@FreeBSD.org
 
 LIB_DEPENDS=	gtk-x11-2.0.200:${PORTSDIR}/x11-toolkits/gtk20
 
