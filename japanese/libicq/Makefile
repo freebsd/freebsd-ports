@@ -3,12 +3,12 @@
 # Date Created:			22 Oct 1998
 # Whom:				Seiichirou Hiraoka
 #
-# $Id: Makefile,v 1.1.1.1 1998/11/19 07:33:02 flathill Exp $
+# $Id: Makefile,v 1.2 1999/03/31 11:38:02 flathill Exp $
 #
 
 DISTNAME=	libicq-0.33
 PKGNAME=	ja-libicq-0.33
-CATEGORIES=	japanese devel
+CATEGORIES=	japanese net
 MASTER_SITES=	ftp://ftp.korsoft.com/pub/gicq/
 
 PATCH_SITES=	http://www.freebsd.org/~flathill/distfiles/ \

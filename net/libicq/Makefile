@@ -3,11 +3,11 @@
 # Date Created:				31 Oct 1998
 # Whom:					Seiichirou Hiraoka
 #
-# $Id: Makefile,v 1.2 1998/11/23 06:07:44 asami Exp $
+# $Id: Makefile,v 1.3 1999/03/15 19:59:22 nectar Exp $
 #
 
 DISTNAME=	libicq-0.33
-CATEGORIES=	devel
+CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.korsoft.com/pub/gicq/                        \
 		http://www.nectar.com/distfiles/
 
