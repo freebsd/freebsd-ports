@@ -3,7 +3,7 @@
 # Date created:		25 Oct 1998
 # Whom:			CHOI Junho <junker@jazz.snu.ac.kr>
 #
-# $Id: Makefile,v 1.10 1999/02/12 14:44:30 kuriyama Exp $
+# $Id: Makefile,v 1.11 1999/04/02 03:45:46 steve Exp $
 #
 # based on japanese/netscape4-*
 
@@ -13,6 +13,8 @@ MASTER_SITES=	ftp://jazz.snu.ac.kr/pub/unix/netscape-ko/
 DISTFILES=	${KOREAN_KIT}.tar.gz
 
 MAINTAINER?=	junker@jazz.snu.ac.kr
+
+BROKEN=		"Just repo.copied"
 
 RUN_DEPENDS= \
 	${PREFIX}/bin/${BROWSER}:${PORTSDIR}/www/netscape4-${BROWSER_NAME} \
