@@ -16,7 +16,7 @@ MAINTAINER=	bland@mail.ru
 COMMENT=	C++ interfaces for libbonobo
 
 LIB_DEPENDS=	gtkmm-2.0:${PORTSDIR}/x11-toolkits/gtk--2 \
-		ORBit-2-cpp.5:${PORTSDIR}/devel/orbitcpp
+		ORBit-2-cpp.6:${PORTSDIR}/devel/orbitcpp
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 
 USE_X_PREFIX=	yes
