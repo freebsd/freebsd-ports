@@ -3248,6 +3248,7 @@ id3lib		ports/audio/id3lib
 id3ren		ports/audio/id3ren
 id3tool		ports/audio/id3tool
 id3v2		ports/audio/id3v2
+ida		ports/graphics/ida
 ident2		ports/security/ident2
 identify	ports/security/identify
 idesk		ports/x11/idesk
