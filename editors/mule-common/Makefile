@@ -58,7 +58,7 @@ WRKDIR=	${WRKDIRBASE}/editors/mule/work
 pre-build:
 	@cd ${.CURDIR}/../mule; make
 .else
-BROKEN=		You should build install one of the other mule ports first
+BROKEN=		First you should build install a port for mule except mule-common
 .endif
 .endif
 
@@ -129,13 +129,15 @@ post-build:
 	./temacs -batch -l mule-inst.el $$target
 
 post-install:
+# DOC* must be installed by a port for mule except mule-common
+	${RM} ${PREFIX}/share/mule/19.34/etc/DOC
+	${RM} ${PREFIX}/share/mule/19.34/etc/DOC-19.34.1
 # note that any2ps rcs-checkin are scripts
 .for file in b2m coco ctags emacsclient etags m2ps
 	strip ${PREFIX}/bin/${file}
 .endfor
 	if [ ! -f ${PREFIX}/share/mule/${EMACS_VERSION}/info/dir ]; then \
 	  ${MKDIR} ${PREFIX}/share/mule/${EMACS_VERSION}/info; \
-	  ${SED} -ne '1,/Menu:/p' /usr/share/info/dir > ${PREFIX}/share/mule/${EMACS_VERSION}/info/dir; \
 	fi
 .for info in emacs vip viper forms gnus mh-e cl sc dired-x ediff ccmode message
 	install-info ${PREFIX}/info/${info} ${PREFIX}/info/dir
