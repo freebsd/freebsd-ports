@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	divx4linux
-PORTVERSION=	0.${RELEASE_DATE}
+PORTVERSION=	0.${RELEASE_DATE:S/_/./}
 CATEGORIES=	graphics linux
 MASTER_SITES=	http://download.divx.com/videocodecs/linux/
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/^0.//}
+DISTNAME=	${PORTNAME}-${RELEASE_DATE}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	lioux@FreeBSD.org
