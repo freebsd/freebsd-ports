@@ -39,5 +39,8 @@ share/eboard/basic_w.png
 share/eboard/basic_y.png
 share/eboard/rock.png
 share/eboard/eboard_themes.conf
+share/locale/de/LC_MESSAGES/eboard.mo
+share/locale/es/LC_MESSAGES/eboard.mo
+share/locale/pt_BR/LC_MESSAGES/eboard.mo
 @dirrm share/eboard
 %%PORTDOCS%%@dirrm share/doc/eboard
