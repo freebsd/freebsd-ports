@@ -4,7 +4,7 @@
 # Date created:		15 July 1998
 # Whom:			Liang Tai-hwa <avatar@www.mmlab.cse.yzu.edu.tw>
 #
-# $Id: Makefile,v 1.6 1998/08/09 00:51:22 steve Exp $
+# $Id: Makefile,v 1.7 1998/08/24 01:24:38 steve Exp $
 #
 
 DISTNAME=       pine4.02
@@ -17,6 +17,8 @@ PATCHFILES=	${DISTNAME}A.patch
 PATCH_DIST_STRIP= -p1
 
 MAINTAINER=	avatar@www.mmlab.cse.yzu.edu.tw
+
+BROKEN_ELF=	does not build ELF libs
 
 NO_LATEST_LINK= yes
 
