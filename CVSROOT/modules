@@ -9085,6 +9085,7 @@ pybliographer	ports/misc/pybliographer
 pybook		ports/textproc/pybook
 pychecker	ports/devel/pychecker
 pyching		ports/games/pyching
+pychm		ports/textproc/pychm
 pydance		ports/games/pydance
 pydbdesigner	ports/databases/pydbdesigner
 pyfind		ports/sysutils/pyfind
