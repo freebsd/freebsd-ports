@@ -1,0 +1,93 @@
+--- /tmp/gqmpeg-0.91.1/src/players.c	Sat Mar 13 11:11:39 2004
++++ src/players.c	Mon Jan 10 00:55:40 2005
+@@ -191,6 +191,8 @@
+ 
+ 	sd = g_new0(SongData, 1);
+ 	sd->path = g_strdup(path);
++	if (!g_utf8_validate(sd->path, strlen(sd->path), NULL))
++		sd->path=g_locale_to_utf8(sd->path, strlen(sd->path), NULL, NULL, NULL);
+ 	sd->info_loaded = FALSE;
+ 	sd->flags = 0;
+ 	player_module_get_types(path, &sd->type, &sd->custom, &sd->custom_type, &sd->live);
+--- /tmp/gqmpeg-0.91.1/src/io_mpg123.c	Fri Apr  2 17:02:34 2004
++++ src/io_mpg123.c	Mon Jan 10 01:01:21 2005
+@@ -786,13 +786,13 @@
+ 
+ 		if (mpg123_to_wav_path_enable && mpg123_to_wav_path)
+ 			{
+-			gchar *tmp = remove_extension_from_path(filename_from_path(sd->path));
++			gchar *tmp = remove_extension_from_path(filename_from_path(path_from_utf8(sd->path)));
+ 			buf = g_strconcat(mpg123_to_wav_path, "/", tmp, ext, NULL);
+ 			g_free(tmp);
+ 			}
+ 		else
+ 			{
+-			gchar *tmp = remove_extension_from_path(sd->path);
++			gchar *tmp = remove_extension_from_path(path_from_utf8(sd->path));
+ 			buf = g_strconcat(tmp, ".wav", NULL);
+ 			g_free(tmp);
+ 			}
+@@ -826,13 +826,13 @@
+ 	if (mpg123_extra_is_http(sd))
+ 		{
+ 		gchar *buf;
+-		buf = http_path_ensure_root(sd->path);
++		buf = http_path_ensure_root(path_from_utf8(sd->path));
+ 		strncpy(cmd_arguments[cmd_cnt], buf, cmd_max);
+ 		g_free(buf);
+ 		}
+ 	else
+ 		{
+-		strncpy(cmd_arguments[cmd_cnt], sd->path, cmd_max);
++		strncpy(cmd_arguments[cmd_cnt], path_from_utf8(sd->path), cmd_max);
+ 		}
+ 	cmd_ptr[cmd_cnt] = cmd_arguments[cmd_cnt];
+ 	cmd_cnt++;
+@@ -1080,6 +1080,7 @@
+ 			idd = get_id3_tag(sd->path);
+ 			if (idd)
+ 				{
++
+ 				sd->title = idd->title;
+ 				sd->artist = idd->artist;
+ 				sd->album = idd->album;
+@@ -1087,6 +1088,19 @@
+ 				sd->comment = idd->comment;
+ 				sd->genre = idd->genre_description;
+ 				sd->track = idd->track;
++
++				if (sd->title != NULL && !g_utf8_validate(sd->title, strlen(sd->title), NULL))
++					sd->title=g_locale_to_utf8(sd->title, strlen(sd->title), NULL, NULL, NULL);
++				if (sd->artist != NULL && !g_utf8_validate(sd->artist, strlen(sd->artist), NULL))
++					sd->artist=g_locale_to_utf8(sd->artist, strlen(sd->artist), NULL, NULL, NULL);
++				if (sd->album != NULL && strlen(sd->album) > 0 && !g_utf8_validate(sd->album, strlen(sd->album), NULL))
++					sd->album=g_locale_to_utf8(sd->album, strlen(sd->album), NULL, NULL, NULL);
++				if (sd->year != NULL && !g_utf8_validate(sd->year, strlen(sd->year), NULL))
++					sd->year=g_locale_to_utf8(sd->year, strlen(sd->year), NULL, NULL, NULL);
++				if (sd->comment != NULL && !g_utf8_validate(sd->comment, strlen(sd->comment), NULL))
++					sd->comment=g_locale_to_utf8(sd->comment, strlen(sd->comment), NULL, NULL, NULL);
++				if (sd->genre != NULL && !g_utf8_validate(sd->genre, strlen(sd->genre), NULL))
++					sd->genre=g_locale_to_utf8(sd->genre, strlen(sd->genre), NULL, NULL, NULL);
+ 
+ 				g_free(idd); /* don't free members */
+ 				}
+--- /tmp/gqmpeg-0.91.1/src/mpg_info.c	Sat Mar 13 12:11:21 2004
++++ src/mpg_info.c	Mon Jan 10 01:21:30 2005
+@@ -228,6 +228,17 @@
+ 
+ 	if (d || h)
+ 		{
++		if (d && d->title != NULL && !g_utf8_validate(d->title, strlen(d->title), NULL))
++			d->title=g_locale_to_utf8(d->title, strlen(d->title), NULL, NULL, NULL);
++		if (d && d->artist != NULL && !g_utf8_validate(d->artist, strlen(d->artist), NULL))
++			d->artist=g_locale_to_utf8(d->artist, strlen(d->artist), NULL, NULL, NULL);
++		if (d && d->album != NULL && strlen(d->album) > 0 && !g_utf8_validate(d->album, strlen(d->album), NULL))
++			d->album=g_locale_to_utf8(d->album, strlen(d->album), NULL, NULL, NULL);
++		if (d && d->year != NULL && !g_utf8_validate(d->year, strlen(d->year), NULL))
++			d->year=g_locale_to_utf8(d->year, strlen(d->year), NULL, NULL, NULL);
++		if (d && d->comment != NULL && !g_utf8_validate(d->comment, strlen(d->comment), NULL))
++			d->comment=g_locale_to_utf8(d->comment, strlen(d->comment), NULL, NULL, NULL);
++
+ 		s->title_entry = songinfo_add_entry(vbox1, _("Title"), d ? d->title : NULL,
+ 						    30, G_CALLBACK(data_changed_cb), s);
+ 		s->artist_entry = songinfo_add_entry(vbox1, _("Artist"), d ? d->artist : NULL,
