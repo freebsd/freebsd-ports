@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	esvn
-PORTVERSION=	0.5.5
+PORTVERSION=	0.6.4
 CATEGORIES=	devel
 MASTER_SITES=	http://esvn.umputun.com/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-1
@@ -19,6 +19,7 @@ RUN_DEPENDS=	svn:${PORTSDIR}/devel/subversion
 
 ESVN_DIST=	esvn
 ESVNPRO=	esvn.pro esvn-diff-wrapper.pro
+ESVNDOCS=	html-docs html-docs/common html-docs/common/admon html-docs/common/navig html-docs/images
 
 WRKSRC=		${WRKDIR}/${ESVN_DIST}
 
@@ -32,9 +33,13 @@ CONFIGURE_ARGS=	--qtdir=${X11BASE}
 MAKE_ARGS+=	QTDIR=${X11BASE} \
 		QMAKESPEC=${LOCALBASE}/share/qt/mkspecs/freebsd-g++
 
-PORTDOCS=	AUTHORS ChangeLog README VERSION
-
 .include <bsd.port.pre.mk>
+
+.if exists(${LOCALBASE}/bin/kde-config)
+PLIST_SUB+=	KDE=""
+.else
+PLIST_SUB+=	KDE="@comment "
+.endif
 
 do-configure:
 	@for proj in ${ESVNPRO}; do \
@@ -42,27 +47,20 @@ do-configure:
 	${SETENV} ${CONFIGURE_ENV} ${LOCALBASE}/bin/qmake -spec ${LOCALBASE}/share/qt/mkspecs/freebsd-g++ $${proj}; \
 	done
 
-post-configure:
-.if exists(/boot/modules/nvidia.ko) && ${OSVERSION} > 502122
-	${REINPLACE_CMD} -e 's#-lpthread#-lc_r#' ${WRKSRC}/esvn.mak ${WRKSRC}/esvn-diff-wrapper.mak
-.endif
-
-post-build:
-	${REINPLACE_CMD} -e 's#esvn.png#${PREFIX}/share/pixmaps/esvn.png#' ${WRKSRC}/eSvn.desktop
-
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/esvn ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/esvn-diff-wrapper ${PREFIX}/bin
-	${MKDIR} ${PREFIX}/share/applications ${PREFIX}/share/pixmaps
-	${INSTALL_DATA} ${WRKSRC}/eSvn.desktop ${PREFIX}/share/applications
-	${INSTALL_DATA} ${WRKSRC}/esvn.png ${PREFIX}/share/pixmaps
+.if exists(${LOCALBASE}/bin/kde-config)
+	${INSTALL_DATA} ${WRKSRC}/eSvn.desktop ${LOCALBASE}/share/applnk
+	${INSTALL_DATA} ${WRKSRC}/images/esvn.png ${LOCALBASE}/share/icons/hicolor/48x48/apps
+.endif
 
-post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-	for f in ${PORTDOCS}; do \
-	    ${INSTALL_DATA} ${WRKSRC}/$$f ${DOCSDIR}; \
+	for d in ${ESVNDOCS}; do \
+	    ${MKDIR} ${DOCSDIR}/$$d; \
+	    ${CP} -Rp ${WRKSRC}/$$d/* ${DOCSDIR}/$$d/; \
 	done
-.endif				  
+.endif
 
 .include <bsd.port.post.mk>
