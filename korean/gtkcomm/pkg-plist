@@ -21,6 +21,10 @@ share/gtkcomm/script/chol-login.scr
 share/gtkcomm/script/chol-logout.scr
 share/gtkcomm/script/com-login.scr
 share/gtkcomm/script/dialog.scr
+share/gtkcomm/script/download.scr
+share/gtkcomm/script/down.ascii
+share/gtkcomm/script/down.xdm
+share/gtkcomm/script/flash.scr
 share/gtkcomm/script/hitel-login.scr
 share/gtkcomm/script/local-login.scr
 share/gtkcomm/script/local-logout.scr
