@@ -333,6 +333,7 @@
     SUBDIR += xmms-crystality
     SUBDIR += xmms-faad
     SUBDIR += xmms-fc
+    SUBDIR += xmms-flac
     SUBDIR += xmms-kde
     SUBDIR += xmms-ladspa
     SUBDIR += xmms-liveice
