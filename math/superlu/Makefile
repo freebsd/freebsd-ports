@@ -8,8 +8,8 @@
 PORTNAME=	superlu
 PORTVERSION=	2.0.20030603
 CATEGORIES=	math
-MASTER_SITES=	http://www.nersc.gov/~xiaoye/SuperLU/ \
-		http://www.nersc.gov/~xiaoye/
+MASTER_SITES=	http://crd.lbl.gov/~xiaoye/SuperLU/ \
+		http://crd.lbl.gov/~xiaoye/
 DISTNAME=	${PORTNAME}_2.0
 .ifndef NOPORTDOCS
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} superlu_ug.ps.gz SLU_general.ps.gz simax95.ps.gz
