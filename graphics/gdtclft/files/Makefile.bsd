@@ -25,7 +25,6 @@ CFLAGS		+=-I${PREFIX}/include/tcl${TCL_VER} -I${PREFIX}/include/gd
 CFLAGS		+=-DNDEBUG -Wall -I. -DUSE_TCL_STUBS -I${PREFIX}/include
 CFLAGS		+=-DVERSION=\"${VERSION}\"
 
-MANn		= gdtclft.n
 INTERNALLIB	= don't build the useless static version
 
 all: ${SHLIB_NAME} pkgIndex.tcl

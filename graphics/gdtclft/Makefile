@@ -27,7 +27,9 @@ MAKE_ENV=	TCL_VER=${TCL_VER} MKDIR="${MKDIR}" \
 ALL_TARGET=	all
 
 MANN=		gdtclft.n
-MANCOMPRESSED=	maybe
+
+post-install:
+	${INSTALL_MAN} ${WRKSRC}/${MANN} ${PREFIX}/man/mann/
 
 .include <bsd.port.mk>
 
