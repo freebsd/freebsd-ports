@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.254 1999/04/25 20:47:37 andreas Exp $
+# $Id: Makefile,v 1.255 1999/04/30 17:11:18 taoka Exp $
 #
 
     SUBDIR += SSLtelnet
@@ -85,6 +85,7 @@
     SUBDIR += kdenetwork
     SUBDIR += kdenetwork11
     SUBDIR += kdetelnet
+    SUBDIR += kicq
     SUBDIR += kvirc
     SUBDIR += ksamba
     SUBDIR += ldap
