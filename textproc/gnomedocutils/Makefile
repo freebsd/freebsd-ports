@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	gnomedocutils
-PORTVERSION=	0.1.3
+PORTVERSION=	0.2.0
 CATEGORIES=	textproc gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/gnome-doc-utils/0.1
+MASTER_SITE_SUBDIR=	sources/gnome-doc-utils/0.2
 DISTNAME=	gnome-doc-utils-${PORTVERSION}
 
 MAINTAINER=	gnome@FreeBSD.org
