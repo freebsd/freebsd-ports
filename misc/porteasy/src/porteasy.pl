@@ -34,7 +34,7 @@ use Fcntl;
 use Getopt::Long;
 
 my $VERSION	= "2.7.0";
-my $COPYRIGHT	= "Copyright (c) 2000-2002 Dag-Erling Smørgrav. " +
+my $COPYRIGHT	= "Copyright (c) 2000-2002 Dag-Erling Smørgrav. " .
 		  "All rights reserved.";
 
 # Constants
