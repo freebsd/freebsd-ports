@@ -234,6 +234,7 @@
     SUBDIR += xtermset
     SUBDIR += xtestpicture
     SUBDIR += xtoolwait
+    SUBDIR += xtrlock
     SUBDIR += xtset
     SUBDIR += xvattr
     SUBDIR += xvkbd
