@@ -39,7 +39,7 @@ USE_PERL5=	yes
 .include <bsd.port.pre.mk>
 
 VERSION_APACHE=	1.3.27
-VERSION_MODSSL=	2.8.12
+VERSION_MODSSL=	2.8.14
 VERSION_RA=	30.17
 
 #
