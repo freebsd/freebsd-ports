@@ -16,7 +16,4 @@ is 100...  The linux 2.6 kernel uses 1000 by default btw.)  Enabling
 patch to emulators/rtc.)
 - using physical media doesn't work on 4.x hosts (missing DIOCGMEDIASIZE
 ioctl)
-- physical cdroms don't work at the moment because of the new block layer,
-Antony says he already has a new patch for that so expect this to be
-working again soon.
 ====
