@@ -1,0 +1,27 @@
+@comment $FreeBSD$
+%%PORTDOCS%%%%DOCSDIR%%/read.me
+%%PORTDOCS%%%%DOCSDIR%%/timing.dvi
+%%PORTDOCS%%%%DOCSDIR%%/timing.tex
+%%PORTDOCS%%%%DOCSDIR%%/prozt1.tex
+%%PORTDOCS%%%%DOCSDIR%%/tim0594.upl
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%CLASSDIR%%/timing.sty
+@dirrm %%CLASSDIR%%
+%%MFDIR%%/timing.mf
+%%MFDIR%%/timing1.mf
+%%MFDIR%%/timing1s.mf
+%%MFDIR%%/timing2.mf
+%%MFDIR%%/timing2s.mf
+@dirrm %%MFDIR%%
+%%PKDIR%%/timing1.pk
+%%PKDIR%%/timing1s.pk
+%%PKDIR%%/timing2.pk
+%%PKDIR%%/timing2s.pk
+@dirrm %%PKDIR%%
+%%TFMDIR%%/timing1.tfm
+%%TFMDIR%%/timing1s.tfm
+%%TFMDIR%%/timing2.tfm
+%%TFMDIR%%/timing2s.tfm
+@dirrm %%TFMDIR%%
+@exec %%MKTEXLSR%%
+@unexec %%MKTEXLSR%%
