@@ -15,8 +15,6 @@ DISTNAME=	verilog-${PORTVERSION}
 MAINTAINER=	keichii@FreeBSD.org
 COMMENT=	Icarus Verilog is a Verilog simulation and synthesis tool
 
-BROKEN=		"Does not install"
-
 GNU_CONFIGURE=	yes
 
 USE_BISON=	yes
