@@ -1,32 +1,37 @@
-# New ports collection makefile for:	RAToolSet
+# New ports collection makefile for:	IRRToolSet
 # Date created:				May 4th 1997
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-PORTNAME=	ratoolset
-PORTVERSION=	3.5.8
+PORTNAME=	irrtoolset
+PORTVERSION=	4.7.2
 CATEGORIES=	net tk82
-MASTER_SITES=	ftp://ftp.isi.edu/ra/RAToolSet/
-DISTNAME=	RAToolSet-3.5.8
+MASTER_SITES=	ftp://ftp.ripe.net/tools/IRRToolSet/
+DISTNAME=	IRRToolSet-${PORTVERSION}
 
 MAINTAINER=	oberman@es.net
 
-LIB_DEPENDS=	tk82.1:${PORTSDIR}/x11-toolkits/tk82
+LIB_DEPENDS=	tk83.1:${PORTSDIR}/x11-toolkits/tk83
 
 USE_BISON=	yes
+USE_GMAKE=	yes
 GNU_CONFIGURE=	Yes
-CONFIGURE_ENV=	TCL_TK_INCLUDE_DIR="${PREFIX}/include/tcl8.2:${PREFIX}/include/tk8.2" \
+CONFIGURE_ENV=	TCL_TK_INCLUDE_DIR="${PREFIX}/include/tcl8.3:${PREFIX}/include/tk8.3" \
 		TCL_TK_LIBRARY_DIR=${PREFIX}/lib \
-		TCL_LIBRARY=${PREFIX}/lib/tcl8.2 \
-		TK_LIBRARY=${PREFIX}/lib/tk8.2 \
-		LD_TCL_TK_LIBS="-ltk82 -ltcl82"
+		TCL_LIBRARY=${PREFIX}/lib/tcl8.3 \
+		TK_LIBRARY=${PREFIX}/lib/tk8.3 \
+		LD_TCL_TK_LIBS="-ltk83 -ltcl83"
 
-MAN1=		CIDRAdvisor.1 aoe.1 pmatch.1 prpath.1 RtConfig.1 peval.1 \
-		prcheck.1 roe.1
-MAN8=		prtraceroute.8 relayd.8
+MAN1=		CIDRAdvisor.1 aoe.1 prpath.1 RtConfig.1 peval.1 \
+		roe.1 rpslcheck.1 prtraceroute.1
+MAN3=		librpsl.3
 
-ALL_TARGET=	depend all
+post-patch:
+	@${SED} -i.orig -e 's|#include <malloc.h>|/* #include <malloc.h> */|' \
+		${WRKSRC}/src/irr/birdwhoisc.cc
+
+aLL_TARGET=	depend all
 
 .include <bsd.port.mk>

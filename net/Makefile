@@ -215,6 +215,7 @@
     SUBDIR += ipv6calc
     SUBDIR += ipv6socket_scrub
     SUBDIR += ipw
+    SUBDIR += irrtoolset
     SUBDIR += isc-dhcp3
     SUBDIR += isic
     SUBDIR += jabber
@@ -482,7 +483,6 @@
     SUBDIR += radreport
     SUBDIR += radvd
     SUBDIR += rancid
-    SUBDIR += ratoolset
     SUBDIR += rboot
     SUBDIR += rdesktop
     SUBDIR += rdesktop-devel
