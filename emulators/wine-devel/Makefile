@@ -3,12 +3,12 @@
 # Date created:         Fri Mar 15 23:45:13 MET 1996
 # Whom:			se
 #
-# $Id: Makefile,v 1.22 1996/03/13 19:28:40 se Exp $
+# $Id: Makefile,v 1.23 1996/03/16 00:23:10 se Exp $
 #
 
-DATE=		960314
+DATE=		960414
 DISTNAME=	Wine-${DATE}
-PKGNAME=	wine-96.03.14
+PKGNAME=	wine-96.04.14
 CATEGORIES+=	emulators x11
 MASTER_SITES=	ftp://sunsite.unc.edu/pub/Linux/ALPHA/wine/development/ \
 		ftp://aris.com/pub/linux/ALPHA/Wine/development/ \
