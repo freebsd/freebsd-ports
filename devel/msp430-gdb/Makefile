@@ -44,6 +44,10 @@ MANPAGES=	gdb.1:gdb run.1:sim/common
 BROKEN=		"Configure fails on amd64"
 .endif
 
+.if ${ARCH} == "sparc64"
+BROKEN=		"Fails to link"
+.endif
+
 do-install:
 	@${MKDIR} ${PREFIX}/${PKGNAMEPREFIX:S/-$//}/bin
 .for F in ${BINARIES}
