@@ -14,7 +14,7 @@
 # Maxim Sobolev
 # ----------------------------------------------------------------------------
 #
-# $FreeBSD: /tmp/pcvs/ports/Tools/scripts/distclean.sh,v 1.7 2001-05-17 13:11:18 sobomax Exp $
+# $FreeBSD: /tmp/pcvs/ports/Tools/scripts/distclean.sh,v 1.8 2001-05-17 13:50:59 sobomax Exp $
 #
 # MAINTAINER= sobomax@FreeBSD.org
 
@@ -44,11 +44,11 @@ FN_PORTS=`mktemp -t dclean` || exit 1
 FN_DISTFILES=`mktemp -t dclean` || exit 1
 FN_RESULTS_SCRIPT=`mktemp -t dclean` || exit 1
 
-trap cleanup 1 2 3 4 5 6 7 8 10 11 12 13 14 15 16 20 21 22 23 24 25 26 27 28 \
-	     29 30 21
+trap cleanup 1 2 3 4 5 6 7 8 10 11 12 13 14 15 16 21 22 23 24 25 26 27 28 29 \
+	     30 21
 
 echo -n "Building ports md5 index..."
-find /usr/ports/ -name "distinfo" -or -name "distinfo.i386" -or -name "distinfo.alpha" -type f | xargs cat | grep "^MD5 ("| sort | uniq > $FN_PORTS
+find /usr/ports -name "distinfo" -or -name "distinfo.i386" -or -name "distinfo.alpha" -type f | xargs cat | grep "^MD5 ("| sort | uniq > $FN_PORTS
 echo "Done."
 P_MD5_COUNT=`wc -l $FN_PORTS | sed "s| $FN_PORTS|| ; s| ||g"`
 echo "Found $P_MD5_COUNT md5 entries in your ports directory."
@@ -60,7 +60,7 @@ D_MD5_COUNT=`wc -l $FN_DISTFILES | sed "s| $FN_DISTFILES|| ; s| ||g"`
 echo "Found $D_MD5_COUNT distfile(s) in your distfiles directory."
 
 echo -n "Comparing results..."
-diff -d $FN_DISTFILES $FN_PORTS | grep "^<" | sed 's|.*(|rm -i /usr/ports/distfiles/| ; s|).*||' > $FN_RESULTS_SCRIPT
+diff -d $FN_DISTFILES $FN_PORTS | grep "^<" | sed 's|.*(|rm '$RM_FLAG' /usr/ports/distfiles/| ; s|).*||' > $FN_RESULTS_SCRIPT
 echo "Done."
 R_MD5_COUNT=`wc -l $FN_RESULTS_SCRIPT | sed "s| $FN_RESULTS_SCRIPT|| ; s| ||g"`
 echo "$R_MD5_COUNT distfile(s) doesn't have corresponding md5 entries in ports directory."
