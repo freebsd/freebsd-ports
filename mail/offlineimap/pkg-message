@@ -1,7 +1,11 @@
 ###########################################################################
 # 
 # Please copy sample configuration file from 
-# __EXAMPLESDIR__/offlineimap.conf to ~/.offlineimaprc
-# and edit to suit your needs.
+# /usr/local/share/examples/offlineimap/offlineimap.conf.minimal 
+# to ~/.offlineimaprc and edit to suit your needs.
+#
+# WARNING: if you are upgrading from pre-3.99.6 version, please be sure 
+#          to check the manual for changes in configuration file format 
+#          that could be incompatible with your existing configuration.
 #
 ###########################################################################
