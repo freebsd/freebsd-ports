@@ -83,7 +83,7 @@ post-patch:
 	    's:^(\s*#\s*include\s+<)ssl(/\w+\.h>\s*)$$:$$1openssl$$2:g' \
 	    ${WRKSRC}/*.[ch]
 
-pre-install:
+post-install:
 	@if [ ! -f ${PREFIX}/etc/ssh_config -a \
 	      ! -f ${PREFIX}/etc/sshd_config ]; then \
 		cd ${WRKSRC} && ${MAKE} DESTDIR=${PREFIX} distribution; \
@@ -92,13 +92,10 @@ pre-install:
 		${ECHO_MSG} ">> If this is left over from another version of SSH, you will"; \
 		${ECHO_MSG} ">> need to update it to work with OpenSSH."; \
 	fi
-	@if [ ! -f ${PREFIX}/etc/rc.d/sshd.sh ]; then \
-		${ECHO_MSG} ">> Installing ${PREFIX}/etc/rc.d/sshd.sh startup file."; \
-		${MKDIR} ${PREFIX}/etc/rc.d; \
-		${INSTALL_SCRIPT} ${FILESDIR}/sshd.sh \
-		    ${PREFIX}/etc/rc.d; \
-		${PERL} -pi -e 's:__PREFIX__:${PREFIX}:g' \
-		    ${PREFIX}/etc/rc.d/sshd.sh; \
-	fi
+.if !exists(${PREFIX}/etc/rc.d/sshd.sh)
+	@${ECHO} "#!/bin/sh" > ${PREFIX}/etc/rc.d/sshd.sh
+	@${ECHO} "[ -x ${PREFIX}/sbin/sshd ] && exec ${PREFIX}/sbin/sshd" >> ${PREFIX}/etc/rc.d/sshd.sh
+	@${CHMOD} 0555 ${PREFIX}/etc/rc.d/sshd.sh
+.endif
 
 .include <bsd.port.mk>
