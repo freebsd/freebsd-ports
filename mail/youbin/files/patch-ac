@@ -1,0 +1,33 @@
+diff -c log.c.orig log.c
+*** log.c.orig	Sun Mar 26 20:33:04 1995
+--- log.c	Wed Aug  7 13:31:29 1996
+***************
+*** 31,36 ****
+--- 31,37 ----
+  #include <sys/types.h>
+  #include <netinet/in.h>
+  #include <stdio.h>
++ #include <sys/param.h>
+  
+  #include "youbin.h"
+  #include "server.h"
+***************
+*** 90,97 ****
+  static int  flag_console = ON;      /* Always true. */
+  
+  extern int          errno;
+  extern char         *sys_errlist[];
+! 
+  /*
+   * Initialize.
+   */ 
+--- 91,99 ----
+  static int  flag_console = ON;      /* Always true. */
+  
+  extern int          errno;
++ #if !(defined(BSD) && (BSD >= 199306))
+  extern char         *sys_errlist[];
+! #endif
+  /*
+   * Initialize.
+   */ 
