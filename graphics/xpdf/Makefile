@@ -6,26 +6,29 @@
 #
 
 PORTNAME=	xpdf
-PORTVERSION=	1.00
+PORTVERSION=	1.01
 CATEGORIES=	graphics print
-MASTER_SITES=	ftp://ftp.foolabs.com/pub/xpdf/  \
+MASTER_SITES=	ftp://ftp.foolabs.com/pub/xpdf/ \
 		${MASTER_SITE_TEX_CTAN}
 MASTER_SITE_SUBDIR=	support/xpdf
 
 MAINTAINER=	DougB@FreeBSD.org
 
+BUILD_DEPENDS=	freetype-config:${PORTSDIR}/print/freetype2
 LIB_DEPENDS=	t1.4:${PORTSDIR}/devel/t1lib \
-		ttf.4:${PORTSDIR}/print/freetype
+		freetype.9:${PORTSDIR}/print/freetype2
 
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 USE_XPM=	yes
-USE_AUTOCONF=	yes
-CONFIGURE_ARGS=	--with-gzip --enable-opi		\
-		--with-t1-library=${LOCALBASE}/lib	\
-		--with-t1-includes=${LOCALBASE}/include	\
-		--with-freetype-library=${LOCALBASE}/lib \
-		--with-freetype-includes=${LOCALBASE}/include/freetype1/freetype
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS=	--with-gzip --enable-opi \
+		--with-t1-library="${LOCALBASE}/lib" \
+		--with-t1-includes="${LOCALBASE}/include" \
+		--with-freetype2-library="${LOCALBASE}/lib" \
+		--with-freetype2-includes="${LOCALBASE}/include/freetype2"
 .if defined(A4)
 CONFIGURE_ARGS+=	--enable-a4-paper
 .endif
