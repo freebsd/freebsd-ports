@@ -36,5 +36,4 @@ man/man8/mcserv.8.gz
 @dirrm lib/mc/bin
 @dirrm lib/mc/extfs
 @dirrm lib/mc/term
-@dirrm lib/mc/icons
 @dirrm lib/mc
