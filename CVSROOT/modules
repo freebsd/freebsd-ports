@@ -6398,6 +6398,7 @@ openvmps	ports/net-mgmt/openvmps
 openvpn		ports/security/openvpn
 openvrml	ports/www/openvrml
 openwebmail	ports/mail/openwebmail
+openwebmail-devel	ports/mail/openwebmail-devel
 openzz		ports/devel/openzz
 opera		ports/www/opera
 opera-devel	ports/www/opera-devel
