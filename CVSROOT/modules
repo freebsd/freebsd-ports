@@ -1952,7 +1952,6 @@ ghostview	ports/print/ghostview
 ghtool		ports/net/ghtool
 giblib		ports/graphics/giblib
 gicq		ports/net/gicq
-gide		ports/devel/gide
 gif2png		ports/graphics/gif2png
 gifmerge	ports/graphics/gifmerge
 gifsicle	ports/graphics/gifsicle
