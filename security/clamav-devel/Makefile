@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	clamav
-PORTVERSION=	20031014
+PORTVERSION=	20031020
 CATEGORIES=	security
 MASTER_SITES=	http://clamav.sourceforge.net/snapshot/
 PKGNAMESUFFIX=	-devel
@@ -15,6 +15,7 @@ DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
 MAINTAINER=	rob@debank.tv
 COMMENT=	Command line virus scanner written entirely in C
 
+LIB_DEPENDS=	gmp.6:${PORTSDIR}/math/libgmp4
 RUN_DEPENDS=	lha:${PORTSDIR}/archivers/lha \
 		unarj:${PORTSDIR}/archivers/unarj \
 		unrar:${PORTSDIR}/archivers/unrar \
@@ -32,7 +33,7 @@ INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--with-dbdir=${DATADIR} \
 		--disable-clamav --enable-bigstack
 CFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	${PTHREAD_LIBS}
+LDFLAGS+=	${PTHREAD_LIBS} -L${LOCALBASE}/lib
 CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}"
 
 MAN1=		clamscan.1 freshclam.1 sigtool.1 clamdscan.1 clamav-milter.1
