@@ -95,11 +95,11 @@ share/doc/objc/examples/timeblock.m
 share/doc/objc/examples/varscope.m
 share/doc/objc/examples/postlink.map
 share/doc/objc/examples/Makefile
+share/doc/objc/html/cakit/BigInt.html
 share/doc/objc/html/cakit/CAObject.html
 share/doc/objc/html/cakit/Complex.html
 share/doc/objc/html/cakit/Float.html
 share/doc/objc/html/cakit/Fraction.html
-share/doc/objc/html/cakit/Integer.html
 share/doc/objc/html/cakit/IntegerModp.html
 share/doc/objc/html/cakit/Matrix.html
 share/doc/objc/html/cakit/Monomial.html
