@@ -20,8 +20,10 @@ post-extract:
 	@${CP} -r ${WRKSRC}/gnu-getopt/. ${WRKSRC}
 
 do-install:
-
-	${INSTALL} ${COPY} -o root -g wheel -m 644 ${WRKSRC}/qcam.conf ${PREFIX}/etc
+	${INSTALL} ${COPY} -o root -g wheel -m 644 ${WRKSRC}/qcam.conf ${PREFIX}/etc/qcam.conf.dist
+	if [ ! -e ${PREFIX}/etc/qcam.conf ]; then \
+		${CP} ${PREFIX}/etc/qcam.conf.dist ${PREFIX}/etc/qcam.conf; \
+	fi
 	${INSTALL_PROGRAM} ${WRKSRC}/qcread ${PREFIX}/bin
 
 .include <bsd.port.mk>
