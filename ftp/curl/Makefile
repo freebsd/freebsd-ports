@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	curl
-PORTVERSION=	7.9.8
+PORTVERSION=	7.10.2
 CATEGORIES=	ftp ipv6 www
 MASTER_SITES=	http://curl.haxx.se/download/ \
 		http://download.sourceforge.net/curl/ \
@@ -21,6 +21,7 @@ MAN3=		curl_easy_cleanup.3 curl_easy_duphandle.3 curl_easy_getinfo.3 \
 		curl_easy_init.3 curl_easy_perform.3 curl_easy_setopt.3 \
 		curl_escape.3 curl_unescape.3 \
 		curl_formadd.3 curl_formparse.3 curl_formfree.3 \
+		curl_free.3 \
 		curl_getdate.3 curl_getenv.3 \
 		curl_global_init.3 curl_global_cleanup.3 \
 		curl_mprintf.3 \
@@ -29,7 +30,7 @@ MAN3=		curl_easy_cleanup.3 curl_easy_duphandle.3 curl_easy_getinfo.3 \
 		curl_multi_perform.3 curl_multi_remove_handle.3 \
 		curl_slist_append.3 curl_slist_free_all.3 \
 		curl_strequal.3 curl_strnequal.3 \
-		curl_version.3 \
+		curl_version.3 curl_version_info.3 \
 		libcurl.3 libcurl-multi.3 libcurl-errors.3
 
 INSTALLS_SHLIB=	yes
@@ -56,5 +57,11 @@ USE_BZIP2=	yes
 # I don't know why they would do that, yet.
 test:	build
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} test
+
+.if !defined(NOPORTDOCS)
+post-install:
+	${MKDIR} ${DOCSDIR}
+	${CP} -r ${WRKSRC}/docs/* ${DOCSDIR}/ 
+.endif
 
 .include <bsd.port.mk>
