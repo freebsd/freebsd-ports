@@ -1,0 +1,19 @@
+OMNeT++ is a public-source, component-based, modular and
+open-architecture simulation environment with strong GUI
+support and an embeddable simulation kernel. Its primary
+application area is the simulation of communication
+networks and because of its generic and flexible
+architecture, it has been successfully used in other
+areas like the simulation of IT systems, queueing
+networks, hardware architectures and business processes
+as well. OMNeT++ is rapidly becoming a popular
+simulation platform in the scientific community as well
+as in industrial settings. Several open source
+simulation models have been published, in the field of
+internet simulations (IP, IPv6, MPLS, etc), mobility and
+ad-hoc simulations and other areas.
+
+OMNeT++ is free for academic and non-profit use;
+commercial users must obtain a license from Omnest Global Inc.
+
+WWW: http://www.omnetpp.org/

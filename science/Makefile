@@ -37,6 +37,7 @@
     SUBDIR += mpqc
     SUBDIR += mpqc-mpich
     SUBDIR += oases
+    SUBDIR += omnetpp
     SUBDIR += openbabel
     SUBDIR += ovt
     SUBDIR += p5-Chemistry-Elements
