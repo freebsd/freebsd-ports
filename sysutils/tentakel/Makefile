@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://unc.dl.sourceforge.net/sourceforge/tentakel/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	chopra@soulwax.net
+MAINTAINER=	tdondich@majiknetworks.com
 COMMENT=	sh script to execute commands on parallel hosts via ssh/rsh
 
 NO_BUILD=	yes
