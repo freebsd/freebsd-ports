@@ -33,7 +33,6 @@
     SUBDIR += gcombust
     SUBDIR += gkrellm
     SUBDIR += glload
-    SUBDIR += gnomeadmin
     SUBDIR += gnomecontrolcenter
     SUBDIR += gpart
     SUBDIR += gtar
