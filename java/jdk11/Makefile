@@ -1,24 +1,23 @@
 # New ports collection makefile for:	jdk
 # Version required:     1.0.2
 # Date created:		8 April 1996
-# Whom:			Sujal Patel <smpatel@freebsd.org>
+# Whom:			Sujal Patel <smpatel@freebsd.org> (original)
 #
-# $Id: Makefile,v 1.6 1996/12/08 01:04:18 max Exp $
+# $Id: Makefile,v 1.7 1997/05/18 11:35:57 pgs Exp $
 #
 
-DISTNAME=       jdk
+DISTNAME=	jdk102.11-26
 PKGNAME=	jdk-1.0.2
 CATEGORIES=	lang devel
-MASTER_SITES=   ftp://ftp.javasoft.com/pub/ \
-		ftp://www.blackdown.org/pub/Java/pub/
-DISTFILES=      JDK-1_0_2-solaris2-sparc.tar.Z
+MASTER_SITES=	${MASTER_SITE_LOCAL}
 
-MAINTAINER=	smpatel@freebsd.org
+MAINTAINER=	ports@freebsd.org
 
 NO_CDROM=	"Put copyright on packaging, etc"
+
 NO_WRKSUBDIR=	yes
 
 post-install:
-	@${CAT} ${PKGDIR}/DESCR
+	@${CAT} ${PKGDIR}/MESSAGE
 
 .include <bsd.port.mk>
