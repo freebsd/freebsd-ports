@@ -623,13 +623,6 @@ OSVERSION!=	/usr/sbin/sysctl -n kern.osreldate
 .endif
 .endif
 
-# Special macro for doing in-place file editing using regexps
-.if ${OSVERSION} <= 500033
-REINPLACE_CMD?=	${PERL} -p -i.bak
-.else
-REINPLACE_CMD?=	${SED}  -i.bak
-.endif
-
 # Get the object format.
 .if !defined(PORTOBJFORMAT)
 PORTOBJFORMAT!=	test -x /usr/bin/objformat && /usr/bin/objformat || echo aout
@@ -715,6 +708,17 @@ PATCHDIR?=		${MASTERDIR}/files
 FILESDIR?=		${MASTERDIR}/files
 SCRIPTDIR?=		${MASTERDIR}/scripts
 PKGDIR?=		${MASTERDIR}
+
+# Special macro for doing in-place file editing using regexps
+.if defined(USE_REINPLACE)
+REINPLACE_ARGS?=	-i.bak
+.if ${OSVERSION} <= 500033
+BUILD_DEPENDS+=	${LOCALBASE}/bin/sed_inplace:${PORTSDIR}/textproc/sed_inplace
+REINPLACE_CMD?=	${LOCALBASE}/bin/sed_inplace ${REINPLACE_ARGS}
+.else
+REINPLACE_CMD?=	${SED} ${REINPLACE_ARGS}
+.endif
+.endif
 
 .if defined(USE_IMAKE) && !defined(USE_X_PREFIX)
 USE_X_PREFIX=	yes
