@@ -1,29 +1,17 @@
 
 $FreeBSD$
 
---- configure.orig	Fri Oct 18 19:42:20 2002
-+++ configure	Fri Oct 18 19:52:51 2002
-@@ -2219,9 +2219,6 @@
-   cat > conftest.$ac_ext <<EOF
- #line 2221 "configure"
- #include "confdefs.h"
--#ifdef __cplusplus
--extern "C" void exit(int) throw();
--#endif
+--- configure.orig	Sun Jun  1 16:23:11 2003
++++ configure	Sun Jun  1 16:23:24 2003
+@@ -7381,6 +7381,7 @@
  
- #include <cstdio>
- #include <cstring>
-@@ -2466,9 +2463,6 @@
-   cat > conftest.$ac_ext <<EOF
- #line 2468 "configure"
- #include "confdefs.h"
--#ifdef __cplusplus
--extern "C" void exit(int) throw();
--#endif
+ # This can be used to rebuild libtool when needed
+ LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
++$ac_aux_dir/ltconfig $LIBTOOL_DEPS
  
- #include "paragui.h"
- #include "pgapplication.h"
-@@ -2992,7 +2986,7 @@
+ # Always use our own libtool.
+ LIBTOOL='$(SHELL) $(top_builddir)/libtool'
+@@ -10523,7 +10524,7 @@
  
  
  

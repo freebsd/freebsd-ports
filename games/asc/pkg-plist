@@ -8,10 +8,12 @@ bin/asc_mount
 bin/asc_raw2pcx
 bin/asc_viewid
 bin/asc_weaponguide
+share/asc/asc.gfx
 share/asc/asc_dlg.zip
 share/asc/buildings.con
 share/asc/main.con
 share/asc/mk1.con
 share/asc/trrobj.con
 share/asc/trrobj2.con
+share/asc/units-mk3.con
 @dirrm share/asc

@@ -1,14 +1,14 @@
 
 $FreeBSD$
 
---- source/unix/mapeditor/Makefile.in.orig	Sat Apr 27 23:06:16 2002
-+++ source/unix/mapeditor/Makefile.in	Tue Oct  1 15:41:13 2002
-@@ -98,7 +98,7 @@
- INCLUDES = -I$(top_builddir) -I$(top_src_dir) 			  -I$(top_builddir)/source -I$(top_src_dir)/source
+--- source/unix/mapeditor/Makefile.in.orig	Sun Jun  1 15:21:07 2003
++++ source/unix/mapeditor/Makefile.in	Sun Jun  1 15:21:34 2003
+@@ -113,7 +113,7 @@
  
  
--CXXFLAGS = @CXXFLAGS@ @SDL_CFLAGS@ @SDLMM_CXXFLAGS@ -Dkarteneditor -DFREEMAPZOOM -DNEWKEYB @PARAGUI_CFLAGS@
-+CXXFLAGS = @CXXFLAGS@ @SDL_CFLAGS@ @SDLMM_CXXFLAGS@ -Dkarteneditor -DFREEMAPZOOM -DNEWKEYB @PARAGUI_CFLAGS@ -DPREFIX=\"$(prefix)\"
+ AM_CXXFLAGS = @SDL_CFLAGS@ @SDLMM_CXXFLAGS@ \
+--Dkarteneditor -DFREEMAPZOOM -DNEWKEYB @PARAGUI_CFLAGS@
++-Dkarteneditor -DFREEMAPZOOM -DNEWKEYB @PARAGUI_CFLAGS@ -DPREFIX=\"$(prefix)\"
  
  
  bin_PROGRAMS = asc_mapedit asc_map2pcx
