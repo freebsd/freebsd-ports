@@ -329,10 +329,18 @@ sub change_summary_removed {
 		$rcsfile =~ s|/Attic/|/|;	# Remove 'Attic/' if present.
 
 		if ($rev and $rcsfile) {
-			$rev =~ /(.*)\.([^\.]+)$/;
-			my $oldrev = "$1." . ($2 - 1);
+			$rev =~ /(?:(.*)\.)?([^\.]+)\.([^\.]+)$/;
+			my ($base, $r1, $r2) = ($1, $2, $3);
 
-			my $lines = count_lines_in_revision($file, $oldrev);
+			my $prevrev = "";
+			if ($r2 == 1) {
+				$prevrev = $base;
+			} else {
+				$prevrev = "$base." if $base;
+				$prevrev .= "$r1." . ($r2 - 1);
+			}
+
+			my $lines = count_lines_in_revision($file, $prevrev);
 			$delta = "+0 -$lines";
 		}
 
