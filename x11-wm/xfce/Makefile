@@ -34,6 +34,8 @@ CONFIGURE_ARGS=	--with-conf-dir=${PREFIX}/etc/xfce \
 		--disable-arts \
 		--enable-taskbar
 
+OPTIONS=	XFT "enable anti-aliased font support" off
+
 MAN1=		glob.1 xfbd.1 xfce.1 xfclock.1 xfglob.1 xfgnome.1 xfhelp.1 \
 		xflock.1 xfmountdev.1 xfmouse.1 xfpager.1 xfprint.1 xfrun.1 \
 		xfskin.1 xfsound.1 xfterm.1 xftrash.1 xftree.1 xfumed.1 xfwm.1
@@ -48,14 +50,6 @@ CONFIGURE_ARGS+=	--enable-xft
 CONFIGURE_ARGS+=	--enable-xinerama
 .else
 CONFIGURE_ARGS+=	--disable-xinerama
-.endif
-
-pre-everything::
-.if !defined(WITH_XFT) && ${XFREE86_VERSION} == 4
-	@${ECHO_MSG}
-	@${ECHO_MSG} "If you want to enable anti-aliased font support,"
-	@${ECHO_MSG} "hit Ctrl-C right now and use \"make WITH_XFT=yes\""
-	@${ECHO_MSG}
 .endif
 
 post-patch:
