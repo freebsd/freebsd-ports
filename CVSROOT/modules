@@ -11796,6 +11796,7 @@ zh-hc		ports/chinese/hc
 zh-hztty	ports/chinese/hztty
 zh-iiimf-le-chewing	ports/chinese/iiimf-le-chewing
 zh-iiimf-le-newpy	ports/chinese/iiimf-le-newpy
+zh-iiimf-le-ude	ports/chinese/iiimf-le-ude
 zh-irssi	ports/chinese/irssi
 zh-jis2gb	ports/chinese/jis2gb
 zh-joe		ports/chinese/joe
