@@ -28,3 +28,5 @@ Other devices can be added simply, but will require recompiling.
 Shell escapes and command line substitution.
 
 Output redirection.
+
+WWW: http://www.gnuplot.org/
