@@ -6,14 +6,12 @@
 #
 
 PORTNAME=	chicken
-PORTVERSION=	1.0
+PORTVERSION=	1.9
 CATEGORIES=	lang
 MASTER_SITES=	http://www.call-with-current-continuation.org/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Scheme-to-C compiler
-
-ONLY_FOR_ARCHS=	i386
 
 USE_REINPLACE=	yes
 USE_LIBTOOL=	yes
