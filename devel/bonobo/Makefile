@@ -1,12 +1,12 @@
 # New ports collection makefile for:	bonobo
-# Version required:			0.8
+# Version required:			0.9
 # Date created:				8th October 1999
 # Whom:					Ade Lovett <ade@lovett.com>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	bonobo-0.8
+DISTNAME=	bonobo-0.9
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	unstable/sources/bonobo
