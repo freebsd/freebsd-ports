@@ -22,6 +22,7 @@
     SUBDIR += t3d
     SUBDIR += tclock
     SUBDIR += washerdryer
+    SUBDIR += wmbinclock
     SUBDIR += wmblueclock
     SUBDIR += wmcalclock
     SUBDIR += wmclock
