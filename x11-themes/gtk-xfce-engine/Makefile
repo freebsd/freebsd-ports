@@ -14,6 +14,8 @@ DISTNAME=	gtk-xfce-engine-${PORTVERSION}
 
 MAINTAINER=	olgeni@FreeBSD.org
 
+LIB_DEPENDS=	gtk-x11-2.0.0:${PORTSDIR}/x11-toolkits/gtk20
+
 WRKSRC=		${WRKDIR}/gtk-xfce-engine-${PORTVERSION}
 
 USE_GMAKE=	yes
