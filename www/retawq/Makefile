@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	retawq
-PORTVERSION=	0.1.7
-PORTREVISION=	1
+PORTVERSION=	0.2.4
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -22,6 +21,7 @@ HAS_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--path-archprefix=${PREFIX} --path-prefix=${PREFIX} \
 		--enable-i18n --enable-local-cgi --enable-ipv6
+PORTDOCS=	*
 
 MAN1=		retawq.1
 
@@ -42,15 +42,16 @@ post-configure:
 		 s|_SOCKET_H 0|_SOCKET_H 1|g' ${WRKSRC}/.config
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/retawq ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/docu/retawq.1 ${MANPREFIX}/man/man1
+	@${INSTALL_PROGRAM} ${WRKSRC}/retawq ${PREFIX}/bin
+	@${INSTALL_MAN} ${WRKSRC}/docu/retawq.1 ${MANPREFIX}/man/man1
 .for lang in de es fr pt_BR
-	${INSTALL_DATA} ${WRKSRC}/i18n/${lang}.mo \
+	@${MKDIR} ${PREFIX}/share/locale/${lang}/LC_MESSAGES
+	@${INSTALL_DATA} ${WRKSRC}/i18n/${lang}.mo \
 		${PREFIX}/share/locale/${lang}/LC_MESSAGES/${PORTNAME}.mo
 .endfor
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/docu/*.html ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/docu/*.html ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
