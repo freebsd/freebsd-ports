@@ -3,12 +3,13 @@
 # Date created:        19 Januruary 1997
 # Whom:                Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.4 1997/12/05 12:50:41 vanilla Exp $
+# $Id: Makefile,v 1.5 1997/12/12 06:27:49 vanilla Exp $
 #
 
 DISTNAME=	mlvwm-0.8.5
 CATEGORIES=	x11
-MASTER_SITES=	http://www.bioele.nuee.nagoya-u.ac.jp/member/tak/
+MASTER_SITES=	http://www.bioele.nuee.nagoya-u.ac.jp/member/tak/mlvwm/ \
+		http://www.bioele.nuee.nagoya-u.ac.jp/member/tak/
 DISTFILES=	mlvwm-0.8.5.tar.gz mini-icons.tar.gz
 
 MAINTAINER=	Nakai@Mlab.t.u-tokyo.ac.jp
