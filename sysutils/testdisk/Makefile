@@ -7,6 +7,7 @@
 
 PORTNAME=	testdisk
 PORTVERSION=	5.2
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.cgsecurity.org/
 
