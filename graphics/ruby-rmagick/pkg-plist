@@ -305,10 +305,14 @@
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ex/quantize-m.rb
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ex/quantize-m_after.jpg
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ex/quantize-m_before.jpg
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ex/radial_blur.jpg
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ex/radial_blur.rb
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ex/raise.jpg
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ex/raise.rb
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ex/random_channel_threshold.jpg
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ex/random_channel_threshold.rb
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ex/random_threshold_channel.jpg
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ex/random_threshold_channel.rb
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ex/rectangle.gif
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ex/rectangle.rb
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ex/reduce_noise.jpg
@@ -382,6 +386,8 @@
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ex/transparent_before.gif
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ex/unsharp_mask.jpg
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ex/unsharp_mask.rb
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ex/viewex.gif
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ex/viewex.rb
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ex/wave.jpg
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ex/wave.rb
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/flatten_images.rb.html
@@ -434,8 +440,10 @@
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/preview.rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/qbezierpath.rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/quantize-m.rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/radial_blur.rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/raise.rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/random_channel_threshold.rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/random_threshold_channel.rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/rectangle.rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/reduce_noise.rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/roll.rb.html
@@ -474,6 +482,7 @@
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/transparent.rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/unsharp_mask.rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/usage.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/viewex.rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/wave.rb.html
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/scripts
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/ex/images
