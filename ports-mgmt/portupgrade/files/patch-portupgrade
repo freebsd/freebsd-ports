@@ -1,0 +1,16 @@
+Index: bin/portupgrade
+===================================================================
+RCS file: /home/cvs/pkgtools/bin/portupgrade,v
+retrieving revision 1.220
+diff -u -0 -r1.220 portupgrade
+--- bin/portupgrade	23 Jul 2003 12:23:03 -0000	1.220
++++ bin/portupgrade	8 Feb 2004 08:15:48 -0000
+@@ -1063 +1063 @@
+-  teardown_proc2 = uninstall_pkg(oldpkgname, $uninstall_extra_flags)
++  teardown_proc2 = uninstall_pkg(oldpkgname, logfile, $uninstall_extra_flags)
+@@ -1567 +1567 @@
+-def uninstall_pkg(pkgname, extra_flags = '')
++def uninstall_pkg(pkgname, logfile = nil, extra_flags = '')
+@@ -1624 +1624 @@
+-	  script!(logfile, '/bin/sh', '-c', command)
++	  script!(logfile, '/bin/sh', '-c', command) 
