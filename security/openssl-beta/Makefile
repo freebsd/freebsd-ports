@@ -9,8 +9,7 @@ PORTNAME=	openssl
 .ifdef OPENSSL_SNAPSHOT
 PORTREVISION!=	date -v-1d +%Y%m%d
 .else
-PORTVERSION=	0.9.7b
-PORTREVISION=	1
+PORTVERSION=	0.9.7c
 .endif
 CATEGORIES=	security devel
 .ifdef OPENSSL_SNAPSHOT
@@ -828,9 +827,7 @@ MLINKS=	dgst.1 md4.1 \
 	ui_compat.3 des_read_password.3 \
 	ui_compat.3 des_read_pw.3 \
 	ui_compat.3 des_read_pw_string.3 \
-	des_modes.7 DES.7 \
-	des_modes.7 Modes.7 \
-	des_modes.7 of.7
+	des_modes.7 Modes_of_DES.7
 
 .include <bsd.port.pre.mk>
 
