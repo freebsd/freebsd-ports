@@ -180,6 +180,7 @@
     SUBDIR += no-login
     SUBDIR += npadmin
     SUBDIR += nut
+    SUBDIR += nvclock
     SUBDIR += nwclient
     SUBDIR += nwclient602
     SUBDIR += obliterate
