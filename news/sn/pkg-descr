@@ -1,0 +1,10 @@
+sn a small news system for small sites serving perhaps a few dozen
+newsgroups, and with a slow connection to the internet. It is similar
+to Leafnode. The target user is a home or SOHO with a single modem
+connection to the Internet, maybe running IP masq or similar, and
+serving a few workstations.
+
+WWW:	http://infa.abo.fi/~patrik/sn/
+
+-Andreas Fehlner
+fehlner@gmx.de

@@ -68,6 +68,7 @@
     SUBDIR += slrnconf
     SUBDIR += slrnface
     SUBDIR += slurp
+    SUBDIR += sn
     SUBDIR += suck
     SUBDIR += suck-cnews
     SUBDIR += t-gnus
