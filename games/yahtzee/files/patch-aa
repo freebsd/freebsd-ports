@@ -1,0 +1,22 @@
+*** Makefile.orig	Sun Apr 13 14:17:07 1997
+--- Makefile	Sun Apr 13 14:17:54 1997
+***************
+*** 1,4 ****
+! CFLAGS =
+  
+  OBJ = computer.o main.o
+  
+--- 1,4 ----
+! CFLAGS = -O -DHAS_RENAME
+  
+  OBJ = computer.o main.o
+  
+***************
+*** 13,15 ****
+--- 13,17 ----
+  	rm -f $(OBJ) $(BIN)
+  
+  $(OBJ): yahtzee.h config.h
++ 
++ all:	$(BIN) $(OBJ)
+\ No newline at end of file
