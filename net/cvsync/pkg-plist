@@ -1,0 +1,9 @@
+@comment $FreeBSD$
+bin/cvscan
+bin/cvsync
+bin/cvsyncd
+bin/rcscan
+bin/rcscmp
+%%EXAMPLESDIR%%/cvsync.conf
+%%EXAMPLESDIR%%/cvsyncd.conf
+@dirrm %%EXAMPLESDIR%%
