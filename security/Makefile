@@ -239,6 +239,7 @@
     SUBDIR += ruby-acl
     SUBDIR += ruby-aes
     SUBDIR += ruby-blowfish
+    SUBDIR += ruby-cast_256
     SUBDIR += ruby-hmac
     SUBDIR += ruby-mcrypt
     SUBDIR += ruby-openssl
