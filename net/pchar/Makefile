@@ -10,6 +10,8 @@ PORTNAME=	pchar
 PORTVERSION=	1.4
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.employees.org/~bmah/Software/pchar/
+MASTER_SITES+=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	bmah
 
 MAINTAINER=	bmah@FreeBSD.org
 COMMENT=	Sandia Internet path characterization tool
