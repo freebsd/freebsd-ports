@@ -4,25 +4,17 @@
 #
 # $FreeBSD$
 
-PORTNAME=		kgeography
-PORTVERSION=	0.2
-CATEGORIES=		games kde
+PORTNAME=	kgeography
+PORTVERSION=	0.3
+CATEGORIES=	games kde
 MASTER_SITES=	http://download.berlios.de/kgeography/
 
-MAINTAINER=		ports@FreeBSD.org
-COMMENT=		Geography learning tool
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Geography learning tool
 
-USE_BZIP2=			yes
+USE_BZIP2=	yes
 USE_KDELIBS_VER=	3
-GNU_CONFIGURE=		yes
-USE_GMAKE=			yes
-USE_REINPLACE=		yes
+USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
 
-.include <bsd.port.pre.mk>
-
-EXTRA_PATCHES=	${PORTSDIR}/x11/kde3/files/extrapatch-configure
-
-post-patch:
-	${REINPLACE_CMD} -e "s,xx,," ${WRKSRC}/po/Makefile.in
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
