@@ -7,7 +7,7 @@
 
 PORTNAME=	phppdflib
 PORTVERSION=	2.5
-CATEGORIES=	print php
+CATEGORIES=	print
 MASTER_SITES=	http://www.potentialtech.com/
 EXTRACT_SUFX=	.tbz
 

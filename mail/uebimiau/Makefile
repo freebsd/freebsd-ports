@@ -7,7 +7,7 @@
 
 PORTNAME=	uebimiau
 PORTVERSION=	2.7.2
-CATEGORIES=	mail www php
+CATEGORIES=	mail www
 MASTER_SITES=	http://www.uebimiau.org/downloads/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-any
 
