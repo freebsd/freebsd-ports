@@ -1,5 +1,5 @@
 *** Imakefile.orig	Mon Apr  6 12:59:31 1992
---- Imakefile	Fri Sep 23 18:24:11 1994
+--- Imakefile	Thu Oct  6 08:43:31 1994
 ***************
 *** 1,54 ****
 ! 	SRCS = bitmap.c bonus.c collision.c demo.c draw.c erase.c events.c\
@@ -66,9 +66,9 @@
   
 ! PROGRAMS = jetpack
   
-! BINDIR = /usr/local/bin
-! LIBDIR = /usr/local/lib/jetpack
-! MANDIR = /usr/local/man/man6
+! BINDIR = $(PREFIX)/bin
+! LIBDIR = $(PREFIX)/lib/jetpack
+! MANDIR = $(PREFIX)/man/man6
   
   # These defines override the template defaults. Trash em if you want to
   # use the template locations
@@ -114,4 +114,4 @@
   # man page as jetpack.1, so I install both and remove the bad one.
   install.man:: jetpack.man
 ! 	$(INSTALL) -c $(INSTMANFLAGS) jetpack.man $(MANDIR)/jetpack.6
-! 	@rm -f $(MANDIR)/jetpack.1x
+! 	@rm -f $(MANDIR)/jetpack.1*
