@@ -78,10 +78,13 @@
 #
 # If you want to use the ifdef feature define:
 #  WITH_MUTT_IFDEF_PATCH
+#
+# If you want to have the Maildir mtime patch define:
+#  WITH_MUTT_MAILDIR_MTIME_PATCH
 
 PORTNAME=	mutt-devel
 PORTVERSION=	1.5.6
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES+=	mail ipv6
 .if defined(WITH_MUTT_NNTP)
 CATEGORIES+=	news
@@ -219,6 +222,14 @@ pre-configure::
 .if defined(WITH_MUTT_MAILDIR_HEADER_CACHE)
 pre-configure::
 	@${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-maildir-header-cache
+.endif
+.if defined(WITH_MUTT_MAILDIR_MTIME_PATCH)
+pre-configure::
+.if defined(WITH_MUTT_NNTP)
+	@${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-maildir-mtime-nntp
+.else
+	@${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-maildir-mtime
+.endif
 .endif
 
 .if ! defined(WITHOUT_MUTT_PGP_PATCH)
@@ -401,6 +412,16 @@ post-install:
 	@${ECHO} "Please be aware that this - at the moment - could result in" >> ${PKGMESSAGE}
 	@${ECHO} "incorrect display of message flags if there is another client" >> ${PKGMESSAGE}
 	@${ECHO} "simultaneously using the same mailbox." >> ${PKGMESSAGE}
+	@${ECHO} "====================================================" >> ${PKGMESSAGE}
+.endif
+.if defined(WITH_MUTT_MAILDIR_HEADER_CACHE) && defined(WITH_MUTT_MAILDIR_MTIME_PATCH)
+	@${ECHO} "====================================================" >> ${PKGMESSAGE}
+	@${ECHO} "You have installed ${PORTNAME} with the Maildir header" >> ${PKGMESSAGE}
+	@${ECHO} "cache and the MAILDIR_MTIME_PATCH enabled." >> ${PKGMESSAGE}
+	@${ECHO}  >> ${PKGMESSAGE}
+	@${ECHO} "For this to work you may have to delete your old" >> ${PKGMESSAGE}
+	@${ECHO} "Maildir header cache or otherwise you may face" >> ${PKGMESSAGE}
+	@${ECHO} "an \"Out of memory\" error." >> ${PKGMESSAGE}
 	@${ECHO} "====================================================" >> ${PKGMESSAGE}
 .endif
 .if !defined(BATCH)
