@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	echoping
-PORTVERSION=	5.0.1
+PORTVERSION=	5.1.0
 CATEGORIES=	net ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=		${PORTNAME}
@@ -17,7 +17,7 @@ COMMENT=	A ping-like program that uses tcp and/or http
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-http --enable-icp --enable-smtp --with-ssl \
-		--enable-ttcp --enable-tos
+		--enable-ttcp --enable-tos --enable-priority
 
 MAN1=		echoping.1
 
