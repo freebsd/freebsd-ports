@@ -6,14 +6,16 @@
 #
 
 PORTNAME=	openoffice
-PORTVERSION=	641d
+PORTVERSION=	1.0.0
 CATEGORIES=	editors
 MASTER_SITES=	ftp://sunsite.cnlab-switch.ch/mirror/OpenOffice/${PORTVERSION}/ \
+		http://niihau.student.utwente.nl/openoffice/${PORTVERSION}/ \
 		http://sf1.mirror.openoffice.org/${PORTVERSION}/ \
+		ftp://gd.tuwien.ac.at/office/openoffice/${PORTVERSION}/ \
 		ftp://ftp.cs.man.ac.uk/pub/toby/gpc/ \
 		http://people.freebsd.org/~mbr/distfiles/
-DISTFILES=	oo_${PORTVERSION}_src.tar.bz2 gpc231.tar.Z oo_moz095_i386_FreeBSD-4.tar.gz
-EXTRACT_ONLY=	oo_${PORTVERSION}_src.tar.bz2
+DISTFILES=	OOo_${PORTVERSION}_source.tar.bz2 gpc231.tar.Z oo_moz095_i386_FreeBSD-4.tar.gz
+EXTRACT_ONLY=	OOo_${PORTVERSION}_source.tar.bz2
 
 MAINTAINER=	mbr@FreeBSD.org
 BUILD_DEPENDS=	${LOCALBASE}/lib/libstlport_gcc.so:${PORTSDIR}/devel/stlport
@@ -38,7 +40,7 @@ JAVAVM=         ${JDK13DIR}/bin/java
 
 GNU_CONFIGURE=	yes
 USE_AUTOCONF=	yes
-WRKSRC=	${WRKDIR}/oo_${PORTVERSION}_src/config_office
+WRKSRC=	${WRKDIR}/oo_1.0_src/config_office
 LD_PATH=	${WRKSRC}/../vos/unxfbsd.pro/lib:${WRKSRC}/../ucbhelper/unxfbsd.pro/lib
 
 CONFIGURE_ARGS+=	--with-stlport4-home=${PREFIX} \

@@ -1,12 +1,11 @@
---- ../sysui/unix/office/gnome/gnome-vfs-filetype-registration.cxx	2001/11/01 13:26:23	1.2
-+++ ../sysui/unix/office/gnome/gnome-vfs-filetype-registration.cxx	2002/03/03 19:43:31
-@@ -62,7 +62,9 @@
+--- ../sysui/unix/office/gnome/gnome-vfs-filetype-registration.cxx.orig	Wed Apr 10 21:54:49 2002
++++ ../sysui/unix/office/gnome/gnome-vfs-filetype-registration.cxx	Wed May  1 22:40:02 2002
+@@ -62,7 +62,7 @@
  #include <stdlib.h>
  #include <stdio.h>
  #include <dlfcn.h>
-+#if !defined(FREEBSD)
+-#if !defined(NETBSD)
++#if !(defined NETBSD || defined FREEBSD)
  #include <alloca.h>
-+#endif
+ #endif
  #include <string.h>
- 
- /* 
