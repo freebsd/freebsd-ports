@@ -9,7 +9,7 @@ PORTNAME=	kworldwatch
 PORTVERSION=	0.6
 CATEGORIES=	x11 kde
 MASTER_SITES=	$(MASTER_SITE_KDE)
-MASTER_SITE_SUBDIR= stable/latest/apps/utils
+MASTER_SITE_SUBDIR=	Attic/old/1.1.2/apps/utils
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	scrappy@freebsd.org
