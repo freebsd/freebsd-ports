@@ -5207,6 +5207,7 @@ multisync-syncml	ports/deskutils/multisync-syncml
 multitail	ports/sysutils/multitail
 multivideo	ports/graphics/multivideo
 munin-main	ports/sysutils/munin-main
+munin-node	ports/sysutils/munin-node
 mup		ports/print/mup
 mupad		ports/math/mupad
 muse		ports/sysutils/muse
