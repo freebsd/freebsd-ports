@@ -7,6 +7,7 @@
 
 PORTNAME=	quixote
 PORTVERSION=	0.4.1
+PORTREVISION=	1
 CATEGORIES=	www python
 MASTER_SITES=	http://www.mems-exchange.org/software/files/quixote/
 DISTNAME=	Quixote-${PORTVERSION}
@@ -17,19 +18,24 @@ BUILD_DEPENDS=	${PYDISTUTILS}
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/compiler/__init__.py:${PORTSDIR}/lang/py-compiler
 
 USE_PYTHON=	yes
+PYTHON_SETUP=	${SETENV} ${MAKE_ENV} ${PYTHON_CMD} setup.py
+EXAMPLESDIR=	${PREFIX}/share/examples/${PORTNAME}
 
 do-build:
-	@ cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} \
-	  setup.py build
+	@ cd ${WRKSRC} && ${PYTHON_SETUP} build
 
 pre-install:
 	@ ${SH} ${PKGREQ} INSTALL
 
 do-install:
-	@ cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} \
-	  setup.py install -c -O1 --prefix=${PREFIX}
+	@ cd ${WRKSRC} && ${PYTHON_SETUP} install -c -O1 --prefix=${PREFIX}
 
 post-install:
+	@ ${PYTHON_CMD} ${SCRIPTDIR}/compile_ptl.py \
+	  ${PREFIX}/lib/${PYTHON_VERSION}/site-packages/${PORTNAME}/demo/pages.ptl \
+	  ${PREFIX}/lib/${PYTHON_VERSION}/site-packages/${PORTNAME}/form/form_templates.ptl
+	@ ${MKDIR} ${EXAMPLESDIR}
+	@ ${INSTALL_DATA} ${WRKSRC}/demo/demo.* ${EXAMPLESDIR}
 .if !defined(NOPORTDOCS)
 	@ ${MKDIR} ${DOCSDIR}
 .for docfile in ACKS CHANGES LICENSE README TODO doc/*.txt

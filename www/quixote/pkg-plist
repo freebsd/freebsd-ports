@@ -24,6 +24,7 @@ lib/%%PYTHON_VERSION%%/site-packages/quixote/demo/integer_ui.py
 lib/%%PYTHON_VERSION%%/site-packages/quixote/demo/integer_ui.pyc
 lib/%%PYTHON_VERSION%%/site-packages/quixote/demo/integer_ui.pyo
 lib/%%PYTHON_VERSION%%/site-packages/quixote/demo/pages.ptl
+lib/%%PYTHON_VERSION%%/site-packages/quixote/demo/pages.ptlc
 lib/%%PYTHON_VERSION%%/site-packages/quixote/errors.py
 lib/%%PYTHON_VERSION%%/site-packages/quixote/errors.pyc
 lib/%%PYTHON_VERSION%%/site-packages/quixote/errors.pyo
@@ -37,6 +38,7 @@ lib/%%PYTHON_VERSION%%/site-packages/quixote/form/form.py
 lib/%%PYTHON_VERSION%%/site-packages/quixote/form/form.pyc
 lib/%%PYTHON_VERSION%%/site-packages/quixote/form/form.pyo
 lib/%%PYTHON_VERSION%%/site-packages/quixote/form/form_templates.ptl
+lib/%%PYTHON_VERSION%%/site-packages/quixote/form/form_templates.ptlc
 lib/%%PYTHON_VERSION%%/site-packages/quixote/form/widget.py
 lib/%%PYTHON_VERSION%%/site-packages/quixote/form/widget.pyc
 lib/%%PYTHON_VERSION%%/site-packages/quixote/form/widget.pyo
