@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnomeprint
-PORTVERSION=	0.31
+PORTVERSION=	0.32
 CATEGORIES=	print gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/gnome-print
@@ -24,8 +24,7 @@ USE_PERL5=	yes
 USE_GNOMECTRL=	yes
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include \
-			  `gdk-pixbuf-config --cflags`" \
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 
 pre-patch:
