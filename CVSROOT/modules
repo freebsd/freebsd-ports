@@ -1885,6 +1885,7 @@ foomatic-db-engine	ports/print/foomatic-db-engine
 fooseti		ports/astro/fooseti
 fop		ports/textproc/fop
 forg		ports/net/forg
+forkbomb	ports/benchmarks/forkbomb
 forte		ports/java/forte
 forth		ports/lang/forth
 fortran-utils	ports/devel/fortran-utils
