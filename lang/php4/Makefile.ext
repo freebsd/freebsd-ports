@@ -181,7 +181,7 @@ LIB_DEPENDS+=	mcve.3:${PORTSDIR}/devel/libmcve
 CONFIGURE_ARGS+=--with-mcve=${LOCALBASE} \
                 --with-openssl-dir=${OPENSSLBASE}
 
-LDFLAGS+=       -lcrypto -lssl
+LDFLAGS+=       -L${OPENSSLLIB} -lcrypto -lssl
 USE_OPENSSL=    yes
 .endif
 
@@ -230,7 +230,7 @@ CONFIGURE_ARGS+=--with-unixODBC=${LOCALBASE}
 CONFIGURE_ARGS+=--with-openssl=${OPENSSLBASE} \
 		--with-openssl-dir=${OPENSSLBASE}
 
-LDFLAGS+=	-lcrypto -lssl
+LDFLAGS+=	-L${OPENSSLLIB} -lcrypto -lssl
 USE_OPENSSL=	yes
 .endif
 
@@ -295,7 +295,7 @@ CONFIGURE_ARGS+=--with-snmp=${LOCALBASE} \
 		--with-openssl-dir=${OPENSSLBASE} \
 		--enable-ucd-snmp-hack
 
-LDFLAGS+=       -lcrypto -lssl
+LDFLAGS+=       -L${OPENSSLLIB} -lcrypto -lssl
 USE_OPENSSL=    yes
 
 OPTIONS=	SNMP4 "Use old UCD SNMP instead of the new NET SNMP" off
