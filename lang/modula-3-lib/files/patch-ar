@@ -1,9 +1,8 @@
 This patch modifies m3browser to use the new "m3configvars" package.
 
-Index: m3/m3browser/src/Main.m3
 ===================================================================
---- Main.m3.orig	Mon Feb  5 10:49:57 1996
-+++ Main.m3	Tue Sep 24 15:39:45 1996
+--- m3/m3browser/src/Main.m3.orig	Mon Feb  5 10:49:57 1996
++++ m3/m3browser/src/Main.m3	Tue Sep 24 15:39:45 1996
 @@ -13,13 +13,12 @@
  
  IMPORT Text, Rd, Wr, TextRd, Thread, Time, Fmt, IntRefTbl, IntList;
@@ -33,12 +32,11 @@ Index: m3/m3browser/src/Main.m3
    n_workers        := 3;
    refresh_interval := 30.0d0; (* minutes *)
    start_time       := Time.Now ();
-Index: m3/m3browser/src/m3makefile
 ===================================================================
 RCS file: /home/jdp/m3-cvs/m3/m3browser/src/m3makefile,v
 retrieving revision 1.1.1.1
 diff -u -r1.1.1.1 m3makefile
---- m3/m3browser/src/m3makefile	1996/09/24 05:21:56	1.1.1.1
+--- m3/m3browser/src/m3makefile.orig	1996/09/24 05:21:56	1.1.1.1
 +++ m3/m3browser/src/m3makefile	1996/09/24 05:32:39
 @@ -6,6 +6,7 @@
  

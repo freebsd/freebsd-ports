@@ -1,9 +1,8 @@
 Fix many incorrect things in the Usocket interface for FreeBSD.
 Also make provisions for using SOCKS.
 
-Index: m3/m3core/src/unix/freebsd-2/Usocket.i3
---- Usocket.i3.orig	Sat Jan  7 14:22:22 1995
-+++ Usocket.i3	Thu Oct 24 16:04:43 1996
+--- m3/m3core/src/unix/freebsd-2/Usocket.i3.orig	Sat Jan  7 14:22:22 1995
++++ m3/m3core/src/unix/freebsd-2/Usocket.i3	Thu Oct 24 16:04:43 1996
 @@ -30,28 +30,30 @@
  (*
   * Option flags per-socket.

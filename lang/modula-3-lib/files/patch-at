@@ -1,12 +1,11 @@
 Changes to "m3tohtml" to use the new "m3configvars" package.
 
-Index: m3/m3tohtml/src/Main.m3
 ===================================================================
 RCS file: /home/jdp/m3-cvs/m3/m3tohtml/src/Main.m3,v
 retrieving revision 1.1.1.1
 diff -u -r1.1.1.1 Main.m3
---- Main.m3	1996/09/24 05:22:00	1.1.1.1
-+++ Main.m3	1996/09/24 05:32:40
+--- m3/m3tohtml/src/Main.m3.orig	1996/09/24 05:22:00	1.1.1.1
++++ m3/m3tohtml/src/Main.m3	1996/09/24 05:32:40
 @@ -7,7 +7,7 @@
  MODULE Main;
  
@@ -53,12 +52,11 @@ diff -u -r1.1.1.1 Main.m3
        filename := "derived" & Text.Sub (filename, i);
      END;
      RETURN filename;
-Index: m3/m3tohtml/src/m3makefile
 ===================================================================
 RCS file: /home/jdp/m3-cvs/m3/m3tohtml/src/m3makefile,v
 retrieving revision 1.1.1.2
 diff -u -r1.1.1.2 m3makefile
---- m3/m3tohtml/src/m3makefile	1996/09/24 05:29:00	1.1.1.2
+--- m3/m3tohtml/src/m3makefile.orig	1996/09/24 05:29:00	1.1.1.2
 +++ m3/m3tohtml/src/m3makefile	1996/09/24 05:35:10
 @@ -10,6 +10,7 @@
  % m3_option ("-Y0@/udir/kalsow/pkg/m3/compiler/DS/m3c@-tDS3100@")

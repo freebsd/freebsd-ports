@@ -1,13 +1,12 @@
 Fix some things in the Uin interface for FreeBSD.  Most important is the
 change to "struct_sockaddr_in".
 
-Index: m3/m3core/src/unix/freebsd-2/Uin.i3
 ===================================================================
 RCS file: /home/jdp/m3-cvs/m3/m3core/src/unix/freebsd-2/Uin.i3,v
 retrieving revision 1.1.1.1
 diff -u -r1.1.1.1 Uin.i3
---- Uin.i3	1996/09/24 05:22:00	1.1.1.1
-+++ Uin.i3	1996/09/24 05:32:41
+--- m3/m3core/src/unix/freebsd-2/Uin.i3.orig	1996/09/24 05:22:00	1.1.1.1
++++ m3/m3core/src/unix/freebsd-2/Uin.i3	1996/09/24 05:32:41
 @@ -8,7 +8,7 @@
  
  INTERFACE Uin;

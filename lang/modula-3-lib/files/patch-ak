@@ -1,9 +1,8 @@
 Changes to what is built by default in the FreeBSD port.
 
-Index: m3/src/m3makefile
 ===================================================================
---- m3makefile.orig	Tue Sep 17 16:47:59 1996
-+++ m3makefile	Wed Sep 25 17:14:37 1996
+--- m3/src/m3makefile.orig	Tue Sep 17 16:47:59 1996
++++ m3/src/m3makefile	Wed Sep 25 17:14:37 1996
 @@ -83,6 +83,12 @@
  % requires:
  BuildChunk ("m3core")

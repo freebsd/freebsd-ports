@@ -1,8 +1,7 @@
 Add chflags(2) and fchflags(2) to Ustat.i3.
 
-Index: m3/m3core/src/unix/freebsd-2/Ustat.i3
---- Ustat.i3.orig	Wed Mar 15 16:47:47 1995
-+++ Ustat.i3	Thu Jul 10 18:41:32 1997
+--- m3/m3core/src/unix/freebsd-2/Ustat.i3.orig	Wed Mar 15 16:47:47 1995
++++ m3/m3core/src/unix/freebsd-2/Ustat.i3	Thu Jul 10 18:41:32 1997
 @@ -70,4 +70,26 @@
  
  <*EXTERNAL*> PROCEDURE fstat (fd: int;  buf: struct_stat_star): int;

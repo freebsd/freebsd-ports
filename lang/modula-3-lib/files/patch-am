@@ -3,13 +3,12 @@ are available.  The original algorithm came up with some really ugly
 scaled fonts sometimes, even when an equally suitable unscaled
 alternative was available.
 
-Index: m3/ui/src/xvbt/XScrnFont.m3
 ===================================================================
 RCS file: /home/jdp/m3-cvs/m3/ui/src/xvbt/XScrnFont.m3,v
 retrieving revision 1.1.1.1
 diff -u -r1.1.1.1 XScrnFont.m3
---- XScrnFont.m3	1996/09/24 05:22:01	1.1.1.1
-+++ XScrnFont.m3	1996/09/24 05:32:38
+--- m3/ui/src/xvbt/XScrnFont.m3.orig	1996/09/24 05:22:01	1.1.1.1
++++ m3/ui/src/xvbt/XScrnFont.m3	1996/09/24 05:32:38
 @@ -193,12 +193,16 @@
  
  PROCEDURE FontLookup (orc: FontOracle; name: TEXT): ScrnFont.T

@@ -1,9 +1,8 @@
 Support for SOCKS wrappers in Unix.i3.
 Also add some missing system call declarations.
 
-Index: m3/m3core/src/unix/freebsd-2/Unix.i3
---- Unix.i3.orig	Sat Jan  7 14:41:42 1995
-+++ Unix.i3	Thu Jul 10 18:32:36 1997
+--- m3/m3core/src/unix/freebsd-2/Unix.i3.orig	Sat Jan  7 14:41:42 1995
++++ m3/m3core/src/unix/freebsd-2/Unix.i3	Thu Jul 10 18:32:36 1997
 @@ -84,9 +84,10 @@
  <*EXTERNAL*> PROCEDURE fchmod (fd, mode: mode_t): int;
  (* ok *)

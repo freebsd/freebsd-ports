@@ -8,7 +8,6 @@ core dumps.
 This also adds separate wrapper files for network related functions to the
 m3makefile, for SOCKS support.
 
-Index: m3/m3core/src/runtime/FreeBSD2/m3makefile
 --- m3/m3core/src/runtime/FreeBSD2/m3makefile.orig	Tue Sep 17 16:48:03 1996
 +++ m3/m3core/src/runtime/FreeBSD2/m3makefile	Thu Oct 24 16:11:02 1996
 @@ -13,6 +13,30 @@
@@ -42,9 +41,8 @@ Index: m3/m3core/src/runtime/FreeBSD2/m3makefile
  
  %% s_source (RTStackASM)
  
-Index: m3/m3core/src/runtime/FreeBSD2/malloc.c
---- malloc.c.orig	Mon Jul 28 14:36:20 1997
-+++ malloc.c	Thu Sep  4 22:15:00 1997
+--- m3/m3core/src/runtime/FreeBSD2/malloc.c.orig	Mon Jul 28 14:36:20 1997
++++ m3/m3core/src/runtime/FreeBSD2/malloc.c	Thu Sep  4 22:15:00 1997
 @@ -0,0 +1,1153 @@
 +/*
 + * ----------------------------------------------------------------------------

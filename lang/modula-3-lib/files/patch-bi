@@ -9,9 +9,8 @@ Bug fix from SRC:
     two array types are not assignable if they have different base
     indices, even if they have the same size.
 
-Index: m3/m3front/src/types/ArrayType.m3
---- ArrayType.m3.orig	Tue May 23 15:24:27 1995
-+++ ArrayType.m3	Mon Sep 30 11:12:31 1996
+--- m3/m3front/src/types/ArrayType.m3.orig	Tue May 23 15:24:27 1995
++++ m3/m3front/src/types/ArrayType.m3	Mon Sep 30 11:12:31 1996
 @@ -286,7 +286,9 @@
        a := Reduce (ta);  b := Reduce (tb);
        IF (a = NIL) OR (b = NIL) THEN EXIT END;
@@ -23,9 +22,8 @@ Index: m3/m3front/src/types/ArrayType.m3
        END;
        ta := a.element;
        tb := b.element;
-Index: m3/m3front/src/types/OpenArrayType.m3
---- OpenArrayType.m3.orig	Tue May 23 15:24:22 1995
-+++ OpenArrayType.m3	Mon Sep 30 11:13:12 1996
+--- m3/m3front/src/types/OpenArrayType.m3.orig	Tue May 23 15:24:22 1995
++++ m3/m3front/src/types/OpenArrayType.m3	Mon Sep 30 11:13:12 1996
 @@ -188,7 +188,9 @@
  
      (* peel off the fixed dimensions as long as the sizes are equal *)

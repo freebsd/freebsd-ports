@@ -6,9 +6,8 @@ Fix numerous argument declarations to agree with their prototypes.
 Fix the wrapper for ftruncate so that it deals properly with the 64-bit
 arguments.
 
-Index: m3/m3core/src/runtime/FreeBSD2/RTHeapDepC.c
---- RTHeapDepC.c.orig	Sat Mar 23 14:52:21 1996
-+++ RTHeapDepC.c	Wed Sep 24 08:39:00 1997
+--- m3/m3core/src/runtime/FreeBSD2/RTHeapDepC.c.orig	Sat Mar 23 14:52:21 1996
++++ m3/m3core/src/runtime/FreeBSD2/RTHeapDepC.c	Wed Sep 24 08:39:00 1997
 @@ -80,7 +80,8 @@
  #include <sys/file.h>
  #include <sys/param.h>

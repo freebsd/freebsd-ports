@@ -12,9 +12,8 @@ values for window size while resizing it.
 
 I have sent this patch to DEC SRC.
 
-Index: m3/ui/src/xvbt/XClient.m3
---- XClient.m3.orig	Mon Mar  6 17:44:15 1995
-+++ XClient.m3	Mon Jul 28 13:45:30 1997
+--- m3/ui/src/xvbt/XClient.m3.orig	Mon Mar  6 17:44:15 1995
++++ m3/ui/src/xvbt/XClient.m3	Mon Jul 28 13:45:30 1997
 @@ -520,7 +520,7 @@
        BEGIN
          ur.sh := sh;
