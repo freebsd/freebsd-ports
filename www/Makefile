@@ -574,6 +574,7 @@
     SUBDIR += tidy-devel
     SUBDIR += tidy-lib
     SUBDIR += tinyproxy
+    SUBDIR += trac
     SUBDIR += transproxy
     SUBDIR += turck-mmcache
     SUBDIR += twhttpd

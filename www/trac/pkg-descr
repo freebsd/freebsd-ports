@@ -1,0 +1,21 @@
+Trac uses a minimalistic approach to web-based software project management.
+Our mission; to help developers write great software while staying out of
+the way.  Trac should impose as little as possible on a team's established
+development process and policies.
+
+All aspects of Trac have been designed with one single goal, to simplify
+tracking and communication of software issues, enhancements and monitoring
+overall progress. 
+
+What is Trac?
+
+    * An integrated system for managing software projects
+    * An enhanced wiki
+    * A flexible web-based issue tracker
+    * An interface to the Subversion revision control system
+
+At the core of Trac lies an integrated wiki and issue/bug database.  Using
+wiki markup, all objects managed by Trac can directly link to other
+issues/bug reports, code changesets, documentation and files. 
+
+WWW: http://trac.edgewall.com/
