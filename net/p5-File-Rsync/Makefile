@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	File-Rsync
-PORTVERSION=	0.33
+PORTVERSION=	0.34
 CATEGORIES=	net perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	File
@@ -15,7 +15,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	petef@FreeBSD.org
 COMMENT=	Perl convenience wrapper for the rsync(1) program
 
-RUN_DEPENDS=	rsync:${PORTSDIR}/net/rsync
+BUILD_DEPENDS=	rsync:${PORTSDIR}/net/rsync
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
