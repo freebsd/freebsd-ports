@@ -6,15 +6,17 @@
 #
 
 PORTNAME=	suck
-PORTVERSION=	4.2.5
+PORTVERSION=	4.3.0
 CATEGORIES=	news
-MASTER_SITES=	${MASTER_SITE_SUNSITE}
-MASTER_SITE_SUBDIR=     system/news/transport
+MASTER_SITES=	http://www.sucknews.org/
 
 MAINTAINER=	dinoex@FreeBSD.org
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
+.if defined(SUCK_WITH_SSL) || defined(WITH_SSL)
+USE_OPENSSL=	yes
+.endif
 MAN1=		suck.1 rpost.1 testhost.1 lmove.1
 
 .if defined(NEWSBIN)
@@ -24,6 +26,22 @@ BUILD_DEPENDS+=	${LOCALBASE}/lib/libcnews.a:${PORTSDIR}/news/cnews
 .else
 EXTRA_PATCHES+=	${FILESDIR}/inn2.patch
 BUILD_DEPENDS+=	${LOCALBASE}/news/lib/libinn.a:${PORTSDIR}/news/inn
+.endif
+
+.include <bsd.port.pre.mk>
+
+.if defined(SUCK_WITH_SSL) || defined(WITH_SSL)
+USE_OPENSSL=	yes
+.if ${OSVERSION} < 430000
+OPENSSLBASE=	/usr/local
+OPENSSLDIR=	${OPENSSLBASE}/openssl
+LIB_DEPENDS+=   crypto.2:${PORTSDIR}/security/openssl
+OPENSSLLIB=	${OPENSSLBASE}/lib
+OPENSSLINC=	${OPENSSLBASE}/include
+.endif
+MAKE_ENV+=	SSL_LIB="-lssl -lcrypto"
+MAKE_ENV+=	SSL_DEFS="-I${OPENSSLINC} -DHAVE_LIBSSL"
+MAKE_ENV+=	SSL_LIB_LOC="-L${OPENSSLLIB}"
 .endif
 
 post-patch:
@@ -42,4 +60,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/sample/*.sample ${PREFIX}/share/examples/suck
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
