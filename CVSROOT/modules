@@ -8472,6 +8472,7 @@ pecl-mailparse	ports/mail/pecl-mailparse
 pecl-memcache	ports/databases/pecl-memcache
 pecl-panda	ports/print/pecl-panda
 pecl-pdflib	ports/print/pecl-pdflib
+pecl-radius	ports/net/pecl-radius
 pecl-yaz	ports/net/pecl-yaz
 pecl-zip	ports/archivers/pecl-zip
 pedisassem	ports/devel/pedisassem
