@@ -1,11 +1,11 @@
---- setup.py.orig	Wed Aug  4 11:22:03 2004
-+++ setup.py	Wed Aug  4 11:22:48 2004
-@@ -66,7 +66,7 @@
+--- setup.py.orig	Sat Jan 22 02:42:00 2005
++++ setup.py	Thu Jan 27 17:49:21 2005
+@@ -77,7 +77,7 @@
  data.extend(glob.glob('images/*.ppm'))
  data.append('.matplotlibrc')
  
 -data_files=[('share/matplotlib', data),]
 +data_files=[('share/py-matplotlib', data),]
  
- cxx = glob.glob('CXX/*.cxx')
- cxx.extend(glob.glob('CXX/*.c'))
+ # Figure out which array packages to provide binary support for
+ # and define the NUMERIX value: Numeric, numarray, or both.
