@@ -1,4 +1,39 @@
+bin/pointless
+bin/xml2pll
 etc/pointlessrc
+share/pointless/lib/python/pointless/eps.py
+share/pointless/lib/python/pointless/eps.pyc
+share/pointless/lib/python/pointless/tex.py
+share/pointless/lib/python/pointless/tex.pyc
+share/pointless/lib/python/pointless/metapost.py
+share/pointless/lib/python/pointless/metapost.pyc
+share/pointless/lib/python/pointless/a2pscode.py
+share/pointless/lib/python/pointless/a2pscode.pyc
+share/pointless/lib/python/pointless/unicode.py
+share/pointless/lib/python/pointless/unicode.pyc
+share/pointless/lib/python/pointless/gnuplot.py
+share/pointless/lib/python/pointless/gnuplot.pyc
+share/pointless/lib/python/pointless/libpointless.so
+share/pointless/lib/python/pointless/libpointless.so.0
+share/pointless/lib/python/pointless/libpointless.la
+share/pointless/lib/python/pointless/merger.py
+share/pointless/lib/python/pointless/plfiles.py
+share/pointless/lib/python/pointless/pllcontroller.py
+share/pointless/lib/python/pointless/pllmodules.py
+share/pointless/lib/python/pointless/pllog.py
+share/pointless/lib/python/pointless/pllshared.py
+share/pointless/lib/python/pointless/ploptions.py
+share/pointless/lib/python/pointless/plsetup.py
+share/pointless/lib/python/pointless/pllbasics.py
+share/pointless/lib/python/pointless/merger.pyc
+share/pointless/lib/python/pointless/plfiles.pyc
+share/pointless/lib/python/pointless/pllcontroller.pyc
+share/pointless/lib/python/pointless/pllmodules.pyc
+share/pointless/lib/python/pointless/pllog.pyc
+share/pointless/lib/python/pointless/pllshared.pyc
+share/pointless/lib/python/pointless/ploptions.pyc
+share/pointless/lib/python/pointless/plsetup.pyc
+share/pointless/lib/python/pointless/pllbasics.pyc
 share/pointless/samples/bgtiled.pll
 share/pointless/samples/bgstretched.pll
 share/pointless/samples/code.pll
@@ -9,6 +44,9 @@ share/pointless/samples/koch5.eps
 share/pointless/samples/latex.pll
 share/pointless/samples/mpost.pll
 share/pointless/samples/pointless.png
+share/pointless/samples/pointless.xpm
+share/pointless/samples/shell.pll
+share/pointless/samples/unicode.pll
 share/pointless/samples/vegetative_fog.png
 share/pointless/samples/viewme.pll
 share/pointless/fonts/FreeSans.ttf
@@ -19,28 +57,19 @@ share/pointless/templates/html/index.html
 share/pointless/templates/html/firstsingleshot.html
 share/pointless/templates/html/lastsingleshot.html
 share/pointless/templates/html/singleshot.html
+share/pointless/templates/xml/pointless.css
+share/pointless/templates/xml/pointless.dtd
+share/pointless/templates/xml/pointless.xsl
+share/pointless/templates/xml/pointless2html.xsl
+share/pointless/templates/xml/pointlesshtml.css
 share/pointless/pointless.xpm
 share/pointless/README
-share/pointless/python/modules/code.py
-share/pointless/python/modules/pllbasics.py
-share/pointless/python/modules/eps.py
-share/pointless/python/modules/gnuplot.py
-share/pointless/python/modules/metapost.py
-share/pointless/python/modules/tex.py
-share/pointless/python/merger.py
-share/pointless/python/plfiles.py
-share/pointless/python/pllcontroller.py
-share/pointless/python/pllog.py
-share/pointless/python/pllshared.py
-share/pointless/python/pllmodules.py
-share/pointless/python/ploptions.py
-share/pointless/python/plsetup.py
-share/pointless/python/pointless.py
-bin/pointless
+@dirrm share/pointless/lib/python/pointless
+@dirrm share/pointless/lib/python
+@dirrm share/pointless/lib
 @dirrm share/pointless/samples
 @dirrm share/pointless/fonts
 @dirrm share/pointless/templates/html
+@dirrm share/pointless/templates/xml
 @dirrm share/pointless/templates
-@dirrm share/pointless/python/modules
-@dirrm share/pointless/python
 @dirrm share/pointless
