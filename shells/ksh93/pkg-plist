@@ -4,4 +4,5 @@ bin/ksh93
 @unexec echo "updating /etc/shells"; cp /etc/shells /etc/shells.bak; (grep -v %D/%F /etc/shells.bak) >/etc/shells; rm -f /etc/shells.bak
 share/examples/ksh93/dirs
 share/examples/ksh93/popd
+share/examples/ksh93/pushd
 @dirrm share/examples/ksh93

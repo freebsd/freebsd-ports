@@ -15,7 +15,7 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Official AT&T release of KornShell 93
 
-VERSION=	2003-07-24
+VERSION=	2004-02-29
 RESTRICTED=	"Source recipient must acknowledge license"
 
 NO_WRKSUBDIR=	yes
@@ -29,8 +29,6 @@ INSTALLROOT=	${WRKSRC}/arch/freebsd.${ARCH}
 
 .include <bsd.port.pre.mk>
 
-BROKEN=		"Does not fetch"
-
 .if ${ARCH} == "sparc64"
 BROKEN=		"Does not compile on sparc64"
 .endif
@@ -43,7 +41,7 @@ do-install:
 	${INSTALL_MAN} ${INSTALLROOT}/man/man1/sh.1 \
 	    ${MANPREFIX}/man/man1/ksh93.1
 	${MKDIR} ${PREFIX}/share/examples/ksh93
-.for fun in dirs popd
+.for fun in dirs popd pushd
 	${INSTALL_SCRIPT} ${INSTALLROOT}/fun/${fun} \
 	    ${PREFIX}/share/examples/ksh93/
 .endfor
