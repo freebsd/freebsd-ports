@@ -129,6 +129,7 @@
     SUBDIR += htmldoc
     SUBDIR += htmlsection
     SUBDIR += htmltolatex
+    SUBDIR += ia-aspell
     SUBDIR += id-aspell
     SUBDIR += iiimf-client-lib
     SUBDIR += iiimf-csconv
