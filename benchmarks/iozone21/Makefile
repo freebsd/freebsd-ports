@@ -1,30 +1,25 @@
 # New ports collection makefile for:    iozone
-# Version required:     3.9
+# Version required:     2.01
 # Date created:         26 September 1994
 # Whom:                 jmz
 #
 # $FreeBSD$
 #
 
-DISTNAME=	iozone3_9
-PKGNAME=	iozone-3.9
+DISTNAME=       iozone-2.01
 CATEGORIES=	benchmarks
-MASTER_SITES=	http://www.iozone.org/src/stable/
-EXTRACT_SUFX=	.tar
+MASTER_SITES=   ftp://ftp.cs.uni-sb.de/pub/others/
+EXTRACT_SUFX=	.shar.gz
 
-MAINTAINER=	jmz@FreeBSD.org
+# This site does not allow root@<hostname> password
+FETCH_CMD=      FTP_PASSWORD=portsuser@FreeBSD.org /usr/bin/fetch
 
-WRKSRC=		${WRKDIR}/src
+MAINTAINER=	obrien@FreeBSD.org
 
-MAKEFILE=	makefile
-MAKE_ARGS=	freebsd
-ALL_TARGET=
-
+EXTRACT_CMD=    ( gzcat | awk '{if (/^\#!/) x++} {if(x) print $$0'}| /bin/sh )
+EXTRACT_BEFORE_ARGS=	<
+EXTRACT_AFTER_ARGS=	# empty
+NO_WRKSUBDIR=   YES
 MAN1=		iozone.1
-
-do-install:
-	strip ${WRKSRC}/iozone
-	${INSTALL_PROGRAM} ${WRKSRC}/iozone ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/iozone.1 ${PREFIX}/man/man1
 
 .include <bsd.port.mk>
