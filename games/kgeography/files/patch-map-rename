@@ -1,0 +1,466 @@
+diff -u kgeography/src.orig/askwidget.cpp kgeography/src/askwidget.cpp
+--- kgeography/src.orig/askwidget.cpp	Tue Jul 27 00:17:14 2004
++++ kgeography/src/askwidget.cpp	Thu Dec  2 16:15:02 2004
+@@ -16,7 +16,7 @@
+ #include "askwidget.h"
+ #include "map.h"
+ 
+-askWidget::askWidget(QWidget *parent, map *m, QWidget *w, uint count, bool showLabel) : QWidget(parent), p_map(m), p_count(count)
++askWidget::askWidget(QWidget *parent, kgeomap *m, QWidget *w, uint count, bool showLabel) : QWidget(parent), p_map(m), p_count(count)
+ {
+ 	if (showLabel)
+ 	{
+diff -u kgeography/src.orig/askwidget.h kgeography/src/askwidget.h
+--- kgeography/src.orig/askwidget.h	Tue Jul 27 00:17:14 2004
++++ kgeography/src/askwidget.h	Thu Dec  2 15:53:30 2004
+@@ -15,13 +15,13 @@
+ 
+ class QLabel;
+ 
+-class map;
++class kgeomap;
+ 
+ class askWidget : public QWidget
+ {
+ Q_OBJECT
+ 	public:
+-		askWidget(QWidget *parent, map *m, QWidget *w, uint count, bool showLabel = true);
++		askWidget(QWidget *parent, kgeomap *m, QWidget *w, uint count, bool showLabel = true);
+ 		virtual ~askWidget();
+ 		
+ 		void showAnswersMessageBox();
+@@ -44,7 +44,7 @@
+ 		void questionAnswered(bool wasCorrect);
+ 		void resetAnswers();
+ 	
+-		map *p_map;
++		kgeomap *p_map;
+ 	
+ 	private:
+ 		void updateLabel();
+diff -u kgeography/src.orig/boxasker.cpp kgeography/src/boxasker.cpp
+--- kgeography/src.orig/boxasker.cpp	Tue Jul 27 00:17:14 2004
++++ kgeography/src/boxasker.cpp	Thu Dec  2 16:17:20 2004
+@@ -22,7 +22,7 @@
+ #include "boxasker.h"
+ #include "map.h"
+ 
+-boxAsker::boxAsker(QWidget *parent, map *m, QWidget *w, uint count) : askWidget(parent, m, w, count)
++boxAsker::boxAsker(QWidget *parent, kgeomap *m, QWidget *w, uint count) : askWidget(parent, m, w, count)
+ {
+ 	p_lay = new QVBoxLayout(this);
+ 	
+diff -u kgeography/src.orig/boxasker.h kgeography/src/boxasker.h
+--- kgeography/src.orig/boxasker.h	Tue Jul 27 00:17:14 2004
++++ kgeography/src/boxasker.h	Thu Dec  2 15:54:16 2004
+@@ -23,7 +23,7 @@
+ {
+ Q_OBJECT
+ 	public:
+-		boxAsker(QWidget *parent, map *m, QWidget *w, uint count);
++		boxAsker(QWidget *parent, kgeomap *m, QWidget *w, uint count);
+ 		~boxAsker();
+ 	
+ 	protected:
+diff -u kgeography/src.orig/capitaldivisionasker.cpp kgeography/src/capitaldivisionasker.cpp
+--- kgeography/src.orig/capitaldivisionasker.cpp	Tue Jul 27 00:17:14 2004
++++ kgeography/src/capitaldivisionasker.cpp	Thu Dec  2 16:16:32 2004
+@@ -15,7 +15,7 @@
+ #include "capitaldivisionasker.h"
+ #include "map.h"
+ 
+-capitalDivisionAsker::capitalDivisionAsker(QWidget *parent, map *m, QWidget *w, uint count) : boxAsker(parent, m, w, count)
++capitalDivisionAsker::capitalDivisionAsker(QWidget *parent, kgeomap *m, QWidget *w, uint count) : boxAsker(parent, m, w, count)
+ {
+ 	init();
+ }
+diff -u kgeography/src.orig/capitaldivisionasker.h kgeography/src/capitaldivisionasker.h
+--- kgeography/src.orig/capitaldivisionasker.h	Tue Jul 27 00:17:14 2004
++++ kgeography/src/capitaldivisionasker.h	Thu Dec  2 16:08:56 2004
+@@ -18,7 +18,7 @@
+ class capitalDivisionAsker : public boxAsker
+ {
+ 	public:
+-		capitalDivisionAsker(QWidget *parent, map *m, QWidget *w, uint count);
++		capitalDivisionAsker(QWidget *parent, kgeomap *m, QWidget *w, uint count);
+ 
+ 	protected:
+ 		void nextBoxAskerQuestionHook(QString division, int i, bool isAnswer);
+diff -u kgeography/src.orig/divisioncapitalasker.cpp kgeography/src/divisioncapitalasker.cpp
+--- kgeography/src.orig/divisioncapitalasker.cpp	Tue Jul 27 00:17:14 2004
++++ kgeography/src/divisioncapitalasker.cpp	Thu Dec  2 16:16:55 2004
+@@ -15,7 +15,7 @@
+ #include "divisioncapitalasker.h"
+ #include "map.h"
+ 
+-divisionCapitalAsker::divisionCapitalAsker(QWidget *parent, map *m, QWidget *w, uint count) : boxAsker(parent, m, w, count)
++divisionCapitalAsker::divisionCapitalAsker(QWidget *parent, kgeomap *m, QWidget *w, uint count) : boxAsker(parent, m, w, count)
+ {
+ 	init();
+ }
+diff -u kgeography/src.orig/divisioncapitalasker.h kgeography/src/divisioncapitalasker.h
+--- kgeography/src.orig/divisioncapitalasker.h	Tue Jul 27 00:17:14 2004
++++ kgeography/src/divisioncapitalasker.h	Thu Dec  2 16:09:20 2004
+@@ -16,7 +16,7 @@
+ class divisionCapitalAsker : public boxAsker
+ {
+ 	public:
+-		divisionCapitalAsker(QWidget *parent, map *m, QWidget *w, uint count);
++		divisionCapitalAsker(QWidget *parent, kgeomap *m, QWidget *w, uint count);
+ 
+ 	protected:
+ 		void nextBoxAskerQuestionHook(QString division, int i, bool isAnswer);
+diff -u kgeography/src.orig/divisionflagasker.cpp kgeography/src/divisionflagasker.cpp
+--- kgeography/src.orig/divisionflagasker.cpp	Tue Jul 27 00:17:14 2004
++++ kgeography/src/divisionflagasker.cpp	Thu Dec  2 16:17:51 2004
+@@ -16,7 +16,7 @@
+ #include "divisionflagasker.h"
+ #include "map.h"
+ 
+-divisionFlagAsker::divisionFlagAsker(QWidget *parent, map *m, QWidget *w, uint count) : boxAsker(parent, m, w, count)
++divisionFlagAsker::divisionFlagAsker(QWidget *parent, kgeomap *m, QWidget *w, uint count) : boxAsker(parent, m, w, count)
+ {
+ 	init();
+ }
+diff -u kgeography/src.orig/divisionflagasker.h kgeography/src/divisionflagasker.h
+--- kgeography/src.orig/divisionflagasker.h	Tue Jul 27 00:17:14 2004
++++ kgeography/src/divisionflagasker.h	Thu Dec  2 16:09:43 2004
+@@ -16,7 +16,7 @@
+ class divisionFlagAsker : public boxAsker
+ {
+ 	public:
+-		divisionFlagAsker(QWidget *parent, map *m, QWidget *w, uint count);
++		divisionFlagAsker(QWidget *parent, kgeomap *m, QWidget *w, uint count);
+ 	
+ 	protected:
+ 		void nextBoxAskerQuestionHook(QString division, int i, bool isAnswer);
+diff -u kgeography/src.orig/flagdivisionasker.cpp kgeography/src/flagdivisionasker.cpp
+--- kgeography/src.orig/flagdivisionasker.cpp	Tue Jul 27 00:17:14 2004
++++ kgeography/src/flagdivisionasker.cpp	Thu Dec  2 16:14:32 2004
+@@ -17,7 +17,7 @@
+ #include "flagdivisionasker.h"
+ #include "map.h"
+ 
+-flagDivisionAsker::flagDivisionAsker(QWidget *parent, map *m, QWidget *w, uint count) : boxAsker(parent, m, w, count)
++flagDivisionAsker::flagDivisionAsker(QWidget *parent, kgeomap *m, QWidget *w, uint count) : boxAsker(parent, m, w, count)
+ {
+ 	p_flag = new QWidget(this);
+ 	p_lay -> insertWidget(0, p_flag);
+diff -u kgeography/src.orig/flagdivisionasker.h kgeography/src/flagdivisionasker.h
+--- kgeography/src.orig/flagdivisionasker.h	Tue Jul 27 00:17:14 2004
++++ kgeography/src/flagdivisionasker.h	Thu Dec  2 16:10:07 2004
+@@ -16,7 +16,7 @@
+ class flagDivisionAsker : public boxAsker
+ {
+ 	public:
+-		flagDivisionAsker(QWidget *parent, map *m, QWidget *w, uint count);
++		flagDivisionAsker(QWidget *parent, kgeomap *m, QWidget *w, uint count);
+ 	
+ 	protected:
+ 		void cleanHook();
+diff -u kgeography/src.orig/kgeography.cpp kgeography/src/kgeography.cpp
+--- kgeography/src.orig/kgeography.cpp	Tue Jul 27 00:17:14 2004
++++ kgeography/src/kgeography.cpp	Thu Dec  2 16:12:37 2004
+@@ -232,7 +232,7 @@
+ 	connect(p_move, SIGNAL(toggled(bool)), p_askWidget, SLOT(setMovement(bool)));
+ }
+ 
+-void kgeography::setMap(map *m)
++void kgeography::setMap(kgeomap *m)
+ {
+ 	kgeographySettings *set = kgeographySettings::self();
+ 	set -> setLastMap(m -> getFile());
+diff -u kgeography/src.orig/kgeography.h kgeography/src/kgeography.h
+--- kgeography/src.orig/kgeography.h	Tue Jul 27 00:17:14 2004
++++ kgeography/src/kgeography.h	Thu Dec  2 15:46:29 2004
+@@ -21,7 +21,7 @@
+ class QLabel;
+ class QVBox;
+ 
+-class map;
++class kgeomap;
+ class askWidget;
+ 
+ class kgeography : public KMainWindow
+@@ -44,7 +44,7 @@
+ 	private:
+ 		void putAskWidget();
+ 		void removeOldAskWidget();
+-		void setMap(map *m);
++		void setMap(kgeomap *m);
+ 		
+ 		QHBox *p_bigWidget;
+ 		QVBox *p_rightWidget;
+@@ -59,7 +59,7 @@
+ 		KToggleAction *p_zoom, *p_move;
+ 		QLabel *p_currentMap;
+ 	
+-		map *p_map;
++		kgeomap *p_map;
+ 		askWidget *p_askWidget;
+ };
+ 
+diff -u kgeography/src.orig/map.cpp kgeography/src/map.cpp
+--- kgeography/src.orig/map.cpp	Tue Jul 27 00:17:14 2004
++++ kgeography/src/map.cpp	Thu Dec  2 15:50:06 2004
+@@ -18,13 +18,13 @@
+ #include "division.h"
+ #include "map.h"
+ 
+-map::map()
++kgeomap::kgeomap()
+ {
+ 	p_count = 0;
+ 	p_hasAllFlags = true;
+ }
+ 
+-map::~map()
++kgeomap::~kgeomap()
+ {
+ 	QMap<QRgb, division*>::iterator it;
+ 	it = p_colorMap.begin();
+@@ -36,7 +36,7 @@
+ 	}
+ }
+ 
+-bool map::addDivision(division *c)
++bool kgeomap::addDivision(division *c)
+ {
+ 	bool b;
+ 	if (p_nameMap.find(c -> getName()) == p_nameMap.end() && 
+@@ -52,58 +52,58 @@
+ 	return b;
+ }
+ 
+-void map::setFile(const QString &s)
++void kgeomap::setFile(const QString &s)
+ {
+ 	p_file = s;
+ }
+ 
+-bool map::setMapFile(const QString &s)
++bool kgeomap::setMapFile(const QString &s)
+ {
+ 	p_mapFile = s;
+ 	return QFile::exists(s);
+ }
+ 
+-void map::setName(const QString &s)
++void kgeomap::setName(const QString &s)
+ {
+ 	p_name = s;
+ }
+ 
+-uint map::count() const
++uint kgeomap::count() const
+ {
+ 	return p_count;
+ }
+ 
+-bool map::hasAllFlags() const
++bool kgeomap::hasAllFlags() const
+ {
+ 	return p_hasAllFlags;
+ }
+ 
+-QString map::getDivisionFlagFile(const QString &s) const
++QString kgeomap::getDivisionFlagFile(const QString &s) const
+ {
+ 	return p_nameMap[s] -> getFlagFile();
+ }
+ 
+-QString map::getDivisionCapital(const QString &s) const
++QString kgeomap::getDivisionCapital(const QString &s) const
+ {
+ 	return p_nameMap[s] -> getCapital();
+ }
+ 
+-QString map::getFile() const
++QString kgeomap::getFile() const
+ {
+ 	return p_file;
+ }
+ 
+-QString map::getMapFile() const
++QString kgeomap::getMapFile() const
+ {
+ 	return p_mapFile;
+ }
+ 
+-QString map::getName() const
++QString kgeomap::getName() const
+ {
+ 	return i18n(p_name);
+ }
+ 
+-QString map::getRandomDivision() const
++QString kgeomap::getRandomDivision() const
+ {
+ 	QValueList<division*> aux;
+ 	int i = (int)((float)p_nameMap.size() * kapp -> random() / (RAND_MAX + 1.0));
+@@ -112,7 +112,7 @@
+ 	else return aux[i] -> getName();
+ }
+ 
+-QString map::getWhatIs(QRgb c, bool all) const
++QString kgeomap::getWhatIs(QRgb c, bool all) const
+ {
+ 	QMap<QRgb, division*>::const_iterator it;
+ 	it = p_colorMap.find(c);
+diff -u kgeography/src.orig/map.h kgeography/src/map.h
+--- kgeography/src.orig/map.h	Tue Jul 27 00:17:14 2004
++++ kgeography/src/map.h	Thu Dec  2 15:47:52 2004
+@@ -16,11 +16,11 @@
+ 
+ class division;
+ 
+-class map
++class kgeomap
+ {
+ 	public:
+-		map();
+-		~map();
++		kgeomap();
++		~kgeomap();
+ 		
+ 		bool addDivision(division *d);
+ 		
+diff -u kgeography/src.orig/mapasker.cpp kgeography/src/mapasker.cpp
+--- kgeography/src.orig/mapasker.cpp	Tue Jul 27 00:17:14 2004
++++ kgeography/src/mapasker.cpp	Thu Dec  2 16:15:52 2004
+@@ -19,7 +19,7 @@
+ #include "mapasker.h"
+ #include "mapwidget.h"
+ 
+-mapAsker::mapAsker(QWidget *parent, map *m, QWidget *w, bool asker, uint count) : askWidget(parent, m, w, count, asker), p_popupManager(this), p_asker(asker)
++mapAsker::mapAsker(QWidget *parent, kgeomap *m, QWidget *w, bool asker, uint count) : askWidget(parent, m, w, count, asker), p_popupManager(this), p_asker(asker)
+ {
+ 	QGridLayout *lay = new QGridLayout(this, 2, 2);
+ 	
+diff -u kgeography/src.orig/mapasker.h kgeography/src/mapasker.h
+--- kgeography/src.orig/mapasker.h	Tue Jul 27 00:17:14 2004
++++ kgeography/src/mapasker.h	Thu Dec  2 16:10:44 2004
+@@ -25,7 +25,7 @@
+ {
+ Q_OBJECT
+ 	public:
+-		mapAsker(QWidget *parent, map *m, QWidget *w, bool asker, uint count = 0);
++		mapAsker(QWidget *parent, kgeomap *m, QWidget *w, bool asker, uint count = 0);
+ 	
+ 	protected:
+ 		void clean();
+diff -u kgeography/src.orig/mapchooser.cpp kgeography/src/mapchooser.cpp
+--- kgeography/src.orig/mapchooser.cpp	Tue Jul 27 00:17:14 2004
++++ kgeography/src/mapchooser.cpp	Thu Dec  2 16:13:51 2004
+@@ -23,7 +23,7 @@
+ {
+ 	QHBox *mainHB;
+ 	QStringList list;
+-	map *m;
++	kgeomap *m;
+ 	QWidget *mapArea;
+ 	QGridLayout *mapLay;
+ 	
+@@ -70,9 +70,9 @@
+ 	p_maps.clear();
+ }
+ 
+-map *mapChooser::getMap()
++kgeomap *mapChooser::getMap()
+ {
+-	map *m;
++	kgeomap *m;
+ 	m = p_maps[p_listBox -> currentText()];
+ 	p_maps.remove(p_listBox -> currentText());
+ 	return m;
+@@ -80,7 +80,7 @@
+ 
+ void mapChooser::putImage(const QString &mapName)
+ {
+-	map *m;
++	kgeomap *m;
+ 	m = p_maps[mapName];
+ 	QImage image(m -> getMapFile());
+ 	image = image.smoothScale(300, 225, QImage::ScaleMin);
+--- kgeography/src.orig/mapchooser.h	Tue Jul 27 00:17:14 2004
++++ kgeography/src/mapchooser.h	Thu Dec  2 16:11:24 2004
+@@ -24,7 +24,7 @@
+ 		mapChooser(QWidget *parent);
+ 		~mapChooser();
+ 
+-		map *getMap();
++		kgeomap *getMap();
+ 	
+ 	private slots:
+ 		void putImage(const QString &mapName);
+@@ -33,7 +33,7 @@
+ 		QListBox *p_listBox;
+ 		QWidget *p_image;
+ 		mapReader p_reader;
+-		QDict<map> p_maps;
++		QDict<kgeomap> p_maps;
+ };
+ 
+ #endif
+diff -u kgeography/src.orig/mapparser.cpp kgeography/src/mapparser.cpp
+--- kgeography/src.orig/mapparser.cpp	Tue Jul 27 00:17:14 2004
++++ kgeography/src/mapparser.cpp	Thu Dec  2 15:52:26 2004
+@@ -22,7 +22,7 @@
+ bool mapReader::parseMap(QString path)
+ {
+ 	QString aux;
+-	p_map = new map();
++	p_map = new kgeomap();
+ 	p_map -> setFile(path);
+ 	aux = path.left(path.findRev('/') + 1); // aux = path but without the file name
+ 	mapParser handler(p_map, aux);
+@@ -46,14 +46,14 @@
+ 	return p_error;
+ }
+ 
+-map *mapReader::getMap()
++kgeomap *mapReader::getMap()
+ {
+ 	return p_map;
+ }
+ 
+ /* mapParser */
+ 
+-mapParser::mapParser(map *m, QString &path) : QXmlDefaultHandler(), p_map(m), p_path(path)
++mapParser::mapParser(kgeomap *m, QString &path) : QXmlDefaultHandler(), p_map(m), p_path(path)
+ {
+ }
+ 
+diff -u kgeography/src.orig/mapparser.h kgeography/src/mapparser.h
+--- kgeography/src.orig/mapparser.h	Tue Jul 27 00:17:14 2004
++++ kgeography/src/mapparser.h	Thu Dec  2 15:51:06 2004
+@@ -24,17 +24,17 @@
+ 		
+ 		bool parseMap(QString path);
+ 		QString getError();
+-		map *getMap();
++		kgeomap *getMap();
+ 	
+ 	private:
+ 		QString p_error;
+-		map *p_map;
++		kgeomap *p_map;
+ };
+ 
+ class mapParser : public QXmlDefaultHandler
+ {
+ 	public:
+-		mapParser(map *m, QString &path);
++		mapParser(kgeomap *m, QString &path);
+ 		bool startDocument();
+ 		bool startElement(const QString&, const QString&, const QString&, const QXmlAttributes&);
+ 		bool endElement(const QString &, const QString &name, const QString &);
+@@ -48,7 +48,7 @@
+ 		
+ 		division *p_division;
+ 		int p_red, p_green, p_blue;
+-		map *p_map;
++		kgeomap *p_map;
+ 		bool p_allowChars, p_mapNameSet, p_mapFileSet;
+ 		bool p_divisionNameSet, p_colorSet, p_divisionIgnoreSet, p_flagFileSet, p_capitalSet;
+ 		QString &p_path, p_error, p_contents, p_previousTags;
