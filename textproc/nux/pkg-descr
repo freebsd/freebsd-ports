@@ -1,0 +1,20 @@
+Nux is a small, straightforward, and surprisingly effective open-source
+extension of the XOM XML library. Nux is geared towards versatile embedded
+integration and interchange, in particular for high-throughput server container
+environments (e.g. large-scale Peer-to-Peer messaging network infrastructures
+over high-bandwidth networks, scalable MOMs, etc). But its simplicity also
+makes it useful for client side XML query/transformation workflow pipelines.
+Features include:
+
+- Seamless W3C XQuery support for XOM.
+- Efficient and flexible pools and factories for XQueries, XSL Transforms, as
+  well as Builders that validate against various schema languages, including
+  W3C XML Schemas, DTDs, RELAX NG, Schematron, etc.
+- For simple and complex continuous queries and/or transformations over very
+  large or infinitely long XML input, a convenient streaming path filter API
+  combines full XQuery support with straightforward filtering.
+- Glue for integration with JAXB and for queries over ill-formed HTML.
+- All this is rock-solid, dependable, well documented, and ships in a jar file
+  that weighs just 60 KB.
+
+WWW:	http://dsd.lbl.gov/nux/
