@@ -241,7 +241,6 @@
     SUBDIR += jags
     SUBDIR += jarl
     SUBDIR += javadc
-    SUBDIR += jift
     SUBDIR += jumpgate
     SUBDIR += jwhois
     SUBDIR += kdenetwork3
