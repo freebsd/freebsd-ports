@@ -7,7 +7,7 @@
 
 PORTNAME=	xine
 PORTVERSION=	0.9.8
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	http://xine.sourceforge.net/files/ \
 		${MASTER_SITE_SOURCEFORGE}
