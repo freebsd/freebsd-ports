@@ -17,14 +17,14 @@ PATCH_SITE_SUBDIR=	shige/emacs
 PATCHFILES=		emacs-20.7-linespace-patch.gz
 PATCH_DIST_STRIP=	-p1
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	GNU editing macros
+MAINTAINER?=	ports@FreeBSD.org
+COMMENT?=	GNU editing macros
 
 ONLY_FOR_ARCHS=	i386 alpha
 USE_AUTOCONF_VER=213
 USE_GMAKE=	yes
 EMACS_VER=	20.7
-LATEST_LINK=	emacs20
+LATEST_LINK?=	emacs20
 CONFIGURE_TARGET=	${MACHINE_ARCH}--freebsd
 .if defined(WITHOUT_X11)
 CONFIGURE_ARGS=	--with-x=no --with-pop
