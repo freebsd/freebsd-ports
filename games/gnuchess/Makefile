@@ -6,13 +6,14 @@
 #
 
 PORTNAME=	gnuchess
-PORTVERSION=	5.04
+PORTVERSION=	5.05
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	chess
 
 MAINTAINER=	ports@FreeBSD.org
 
+WRKSRC=	${WRKDIR}/chess
 GNU_CONFIGURE=	yes
 
 .include <bsd.port.mk>
