@@ -25,6 +25,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/fo/apa.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/appendix.autolabel.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/arbortext.extensions.html
+%%PORTDOCS%%%%DOCSDIR%%/fo/article.appendix.title.properties.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/author.othername.in.middle.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/autotoc.label.separator.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/axf.extensions.html
@@ -126,6 +127,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/fo/hyphenate.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/ignore.image.scaling.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/index.html
+%%PORTDOCS%%%%DOCSDIR%%/fo/index.preferred.page.properties.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/informal.object.properties.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/insert.xref.page.number.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/l10n.gentext.default.language.html
@@ -150,6 +152,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/fo/ld-d0e3176.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/ld-d0e3194.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/ld-d0e3195.html
+%%PORTDOCS%%%%DOCSDIR%%/fo/ld-d0e3278.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/line-height.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/linenumbering.everyNth.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/linenumbering.extension.html
@@ -160,6 +163,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/fo/make.index.markup.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/make.single.year.ranges.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/make.year.ranges.html
+%%PORTDOCS%%%%DOCSDIR%%/fo/marker.section.level.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/menuchoice.menu.separator.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/menuchoice.separator.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/monospace.font.family.html
@@ -214,6 +218,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/fo/qandadiv.autolabel.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/refentry.generate.name.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/refentry.generate.title.html
+%%PORTDOCS%%%%DOCSDIR%%/fo/refentry.pagebreak.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/refentry.title.properties.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/refentry.xref.manvolnum.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/region.after.extent.html
@@ -269,6 +274,8 @@
 %%PORTDOCS%%%%DOCSDIR%%/fo/show.comments.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/sidebar.properties.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/stylesheet.result.type.html
+%%PORTDOCS%%%%DOCSDIR%%/fo/subscript.properties.html
+%%PORTDOCS%%%%DOCSDIR%%/fo/superscript.properties.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/symbol.font.family.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/table.border.color.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/table.border.padding.html
@@ -643,6 +650,8 @@
 %%PORTDOCS%%%%DOCSDIR%%/tools/profile-chain.png
 %%PORTDOCS%%%%DOCSDIR%%/tools/profiling.html
 %%PORTDOCS%%%%DOCSDIR%%/warranty.html
+share/nls/POSIX
+share/nls/en_US.US-ASCII
 share/xsl/docbook/VERSION
 share/xsl/docbook/catalog
 share/xsl/docbook/common/ChangeLog
@@ -788,6 +797,7 @@ share/xsl/docbook/extensions/xalan2/com/nwalsh/xalan/Table.java
 share/xsl/docbook/extensions/xalan2/com/nwalsh/xalan/Text.java
 share/xsl/docbook/extensions/xalan2/com/nwalsh/xalan/Verbatim.java
 share/xsl/docbook/extensions/xalan2/com/nwalsh/xalan/package.html
+share/xsl/docbook/extensions/xalan25.jar
 share/xsl/docbook/extensions/xsltproc/python/ChangeLog
 share/xsl/docbook/extensions/xsltproc/python/README
 share/xsl/docbook/extensions/xsltproc/python/cwtest.xml
