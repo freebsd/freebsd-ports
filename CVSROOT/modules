@@ -5018,6 +5018,7 @@ libtlen		ports/polish/libtlen
 libtomcrypt	ports/security/libtomcrypt
 libtool13	ports/devel/libtool13
 libtool15	ports/devel/libtool15
+libtorrent	ports/net/libtorrent
 libtre		ports/textproc/libtre
 libtremor	ports/audio/libtremor
 libtunepimp	ports/audio/libtunepimp
