@@ -29,6 +29,7 @@
     SUBDIR += kallers
     SUBDIR += kermit
     SUBDIR += kpsk
+    SUBDIR += libirman
     SUBDIR += libticables
     SUBDIR += lirc
     SUBDIR += lrzsz
