@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	gsoap
-PORTVERSION=	2.5.2
+PORTVERSION=	2.6
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gsoap2
-DISTNAME=	gsoap-2.5
 
 MAINTAINER=	sem@ciam.ru
 COMMENT=	Generator Tools for Coding SOAP/XML Web Services in C and C++
