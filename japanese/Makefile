@@ -230,6 +230,7 @@
     SUBDIR += pips770
     SUBDIR += pips800
     SUBDIR += pips820_3300
+    SUBDIR += pips900
     SUBDIR += plain2
     SUBDIR += plan
     SUBDIR += platex-common
