@@ -516,7 +516,7 @@ if ($DEBUG) {
   print("files - ", join(":", @files), "\n");
   print("path  - ", join(":", @path), "\n");
   print("dir   - ", $dir, "\n");
-  print("pid    - ", $PID, "\n");
+  print("pid   - ", $PID, "\n");
 }
 
 # Was used for To: lines, still used for commitlogs naming.
