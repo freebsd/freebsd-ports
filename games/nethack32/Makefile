@@ -8,11 +8,13 @@
 PORTNAME=	nethack
 PORTVERSION=	3.2.3
 CATEGORIES=	games
-MASTER_SITES=	ftp://ftp.nethack.org/pub/nethack/nh322/src/ \
-		ftp://ftp.wtower.com/nethack/sources/
-DISTNAME=	nethack-3.2.2
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=     ${PORTNAME}
+DISTNAME=	nethack-322
+EXTRACT_SUFX=	.tgz
 
-PATCH_SITES=	ftp://ftp.nethack.org/pub/nethack/nh323/src/
+PATCH_SITES=	${MASTER_SITE_SOURCEFORGE}
+PATCH_SITE_SUBDIR=	${PORTNAME}
 PATCHFILES=	nh-3.2.2-3.2.3.diff
 
 MAINTAINER=	glewis@FreeBSD.org
