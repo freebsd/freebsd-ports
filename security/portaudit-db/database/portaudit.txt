@@ -10,3 +10,5 @@ ru-apache+mod_ssl<=1.3.31+30.20+2.8.18|http://www.apacheweek.com/features/securi
 dbmail{-mysql,-postgresql}-1.2.8a|http://www.dbmail.org/|remote exploitable buffer overflow|3b9b196e-bd12-11d8-b071-00e08110b673
 smtpproxy<=1.1.3|http://0xbadc0ded.org/advisories/0402.txt|remotely exploitable format string vulnerability|1abf65f9-bc9d-11d8-916c-000347dd607f
 subversion<1.0.5|http://subversion.tigris.org/security/CAN-2004-0413-advisory.txt|remote exploitable buffer overflow in 'svn://' parser|4616bc3b-bd0f-11d8-a252-02e0185c0b53
+imp<3.2.4|http://horde.org/imp/3.2/|XSS hole exploited via the Content-type header of malicious emails|911f1b19-bd20-11d8-84f9-000bdb1444a4
+chora<1.2.2|http://horde.org/chora/|hole in the diff code that allowed malicious input|9e09399d-bd21-11d8-84f9-000bdb1444a4
