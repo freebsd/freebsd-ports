@@ -531,6 +531,8 @@
     SUBDIR += pnews
     SUBDIR += postnuke
     SUBDIR += pound
+    SUBDIR += preferential
+    SUBDIR += preferential-firefox
     SUBDIR += privoxy
     SUBDIR += privoxy+ipv6
     SUBDIR += pserv
