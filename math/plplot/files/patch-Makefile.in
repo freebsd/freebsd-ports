@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Mon Feb  2 20:40:55 2004
++++ Makefile.in	Tue Feb 10 00:55:31 2004
+@@ -835,7 +835,7 @@
+ 
+ info-am:
+ 
+-install-data-am: install-docDATA
++install-data-am:
+ 
+ install-exec-am: install-binSCRIPTS
+ 
