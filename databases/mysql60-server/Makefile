@@ -7,7 +7,7 @@
 
 PORTNAME?=	${MASTERPORTNAME}
 PORTVERSION=	3.23.53
-PORTREVISION?=	3
+PORTREVISION?=	4
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.kernelnotes.de/MySQL/Downloads/MySQL-3.23/ \
@@ -71,6 +71,9 @@ CONFIGURE_ENV+=	PERL=${PERL} \
 CXXFLAGS=	${CFLAGS} -felide-constructors -fno-rtti
 .if ${OSVERSION} >= 400002
 CXXFLAGS+=	-fno-exceptions
+.endif
+.if ${OSVERSION} < 500000
+CONFIGURE_ENV+=	CXX="${CC}"
 .endif
 
 # MySQL-Server part
