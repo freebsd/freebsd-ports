@@ -35,6 +35,9 @@ lib/enfle/plugins/loader/lfg.so.1
 lib/enfle/plugins/loader/mag.la
 lib/enfle/plugins/loader/mag.so
 lib/enfle/plugins/loader/mag.so.1
+lib/enfle/plugins/loader/pic.la
+lib/enfle/plugins/loader/pic.so
+lib/enfle/plugins/loader/pic.so.1
 lib/enfle/plugins/loader/png.la
 lib/enfle/plugins/loader/png.so
 lib/enfle/plugins/loader/png.so.1
