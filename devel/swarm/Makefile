@@ -18,6 +18,8 @@ BUILD_DEPENDS=	emacs:${PORTSDIR}/editors/emacs
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		BLT24.3:${PORTSDIR}/x11-toolkits/blt
 
+BROKEN=		Does not compile
+
 ONLY_FOR_ARCHS=	i386
 
 USE_JAVA=	1.3+

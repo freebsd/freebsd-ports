@@ -19,6 +19,8 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 MAINTAINER=	netchild@FreeBSD.org
 COMMENT=	A lightweight and very featureful GTK+ based e-mail and news client
 
+BROKEN=		Does not compile
+
 THEMEVERSION=	20040525
 THEMEFILE=	sylpheed-iconset-${THEMEVERSION}.tar.gz
 
