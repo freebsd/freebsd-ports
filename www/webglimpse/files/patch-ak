@@ -1,5 +1,5 @@
 --- cgi-bin/webglimpse.orig	Mon Jul 27 22:59:49 1998
-+++ cgi-bin/webglimpse	Tue Nov  3 09:20:24 1998
++++ cgi-bin/webglimpse	Tue Nov  3 13:15:40 1998
 @@ -39,6 +39,9 @@
  # **** **** **** ****    CONFIGURABLE VARIABLES     **** **** **** ****
  # We need some of these to find our libraries, so wrap them in a BEGIN block
@@ -58,6 +58,15 @@
  
  # Ensure that Glimpse is available on this machine
  -x $GLIMPSE_LOC || &err_noglimpse($GLIMPSE_LOC) ;
+@@ -510,7 +528,7 @@
+ 		$charcount = 0;
+ 		if ($fcount>=$maxfiles) {
+ 
+-			print $mOutput->limitMaxFiles($maxfiles);
++			$mOutput->limitMaxFiles($maxfiles);
+ 
+ 			$file = "";
+ # Keep the real # of lines retrieved!  The "at least" message can be in the output module.
 @@ -667,7 +685,7 @@
  sub err_noneighborhood {
  
