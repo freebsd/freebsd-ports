@@ -19,7 +19,7 @@ COMMENT=	The Toolkit for Conceptual Modeling, create diagrams/tables/trees
 RUN_DEPENDS=	fig2dev:${PORTSDIR}/print/transfig
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-
+PKGMESSAGE=	${WRKSRC}/pkg-message
 USE_REINPLACE=	yes
 USE_MOTIF=	yes
 USE_BISON=	yes
@@ -36,7 +36,11 @@ post-patch:
 	@${CHMOD} 0644 ${WRKSRC}/lib/colorrgb.txt
 	@${REINPLACE_CMD} -e 's:gcc:g++:g' ${WRKSRC}/bin/makedepend.sh
 
+post-build:
+	@${CP} pkg-message ${PKGMESSAGE}
+	@${REINPLACE_CMD} -e 's:%%LOCALBASE%%:${PREFIX}:g' ${PKGMESSAGE}
+
 post-install:
-	@${REINPLACE_CMD} -e 's:/usr/local:${PREFIX}:g' ${PKGMESSAGE}
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
