@@ -22,6 +22,9 @@ INSTALL_TARGET=	install
 .if ${OSVERSION} < 400014
 CONFIGURE_ARGS+=--without-ipv6
 .endif
+.if ${OSVERSION} >= 500000
+BUILD_DEPENDS+=	${LOCALBASE}/include/gmp.h:${PORTSDIR}/math/libgmp4
+.endif
 
 MAN1=	lsh_writekey.1 lsh_keygen.1 lsh.1
 MAN5=	DSA.5 secsh.5 SHA.5 SPKI.5
