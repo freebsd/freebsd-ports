@@ -7,7 +7,7 @@
 
 PORTNAME=	spamd
 PORTVERSION=	3.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	http://resources.delphij.net/pf/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -35,7 +35,7 @@ MAN5=		spamd.conf.5
 MAN8=		spamd.8 spamd-setup.8 spamdb.8 spamlogd.8
 
 SAMPLE_SPAMD_CONF=	${PREFIX}/etc/spamd.conf.sample
-SAMPLE_SPAMD_RC=	${PREFIX}/etc/rc.d/spamd.sh
+SAMPLE_SPAMD_RC=	${PREFIX}/etc/rc.d/pf-spamd.sh
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCAL_PFCTL%%|${LOCAL_PFCTL}|;	\
