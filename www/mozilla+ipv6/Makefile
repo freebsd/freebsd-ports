@@ -3,7 +3,7 @@
 # Date created:		31 Mar 1998
 # Whom:			eivind/dima/jseger
 #
-# $Id: Makefile,v 1.25 1998/05/02 17:49:09 jseger Exp $
+# $Id: Makefile,v 1.26 1998/07/22 11:50:31 asami Exp $
 #
 
 DISTNAME=	unix-19980429
@@ -14,6 +14,8 @@ MASTER_SITES=	ftp://mirror.neosoft.com/pub/mozilla/mozilla/source/ \
 		ftp://ftp.mozilla.org/pub/mozilla/source/
 
 MAINTAINER=	jseger@FreeBSD.org
+
+BROKEN_ELF=	library numbers
 
 WRKSRC=		${WRKDIR}/`${ECHO} ${DISTNAME} | ${SED} 's/unix-//'`/mozilla
 USE_GMAKE=	yes
