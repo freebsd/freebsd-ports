@@ -96,6 +96,7 @@
     SUBDIR += moviedb
     SUBDIR += mshell
     SUBDIR += muuz
+    SUBDIR += nsf
     SUBDIR += numchar
     SUBDIR += nwrite
     SUBDIR += orville-write
