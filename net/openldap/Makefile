@@ -7,7 +7,7 @@
 
 PORTNAME=	openldap
 PORTVERSION=	1.2.11
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net databases
 MASTER_SITES=	ftp://ftp.OpenLDAP.org/pub/OpenLDAP/%SUBDIR%/ \
 		ftp://ftp.net.lut.ac.uk/openldap/%SUBDIR%/ \
@@ -25,7 +25,7 @@ MAINTAINER=	lodea@vet.com.au
 
 USE_LIBTOOL=	yes
 
-CONFIGURE_ARGS=	--localstatedir=/var/run \
+CONFIGURE_ARGS=	--localstatedir=/var/db \
 		--enable-shared \
 		--enable-dns
 
