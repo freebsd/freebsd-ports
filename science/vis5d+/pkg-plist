@@ -1,0 +1,32 @@
+bin/comp_to_v5d
+bin/gg3d
+bin/gr3d_to_v5d
+bin/igg3d
+bin/igu3d
+bin/topoinfo
+bin/v5dappend
+bin/v5dedit
+bin/v5dimport
+bin/v5dinfo
+bin/v5dstats
+bin/vis5d
+include/vis5d+/api-config.h
+include/vis5d+/api.h
+include/vis5d+/binio.h
+include/vis5d+/v5d.h
+include/vis5d+/v5df.h
+lib/libv5d.a
+lib/libv5d.la
+lib/libv5d.so
+lib/libv5d.so.2
+lib/libvis5d.a
+lib/libvis5d.la
+lib/libvis5d.so
+lib/libvis5d.so.2
+share/locale/es/LC_MESSAGES/vis5d+.mo
+share/locale/pt_BR/LC_MESSAGES/vis5d+.mo
+share/vis5d+/EARTH.TOPO
+share/vis5d+/OUTLSUPW
+share/vis5d+/OUTLUSAM
+@dirrm include/vis5d+
+@dirrm share/vis5d+
