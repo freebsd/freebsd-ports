@@ -1,0 +1,4 @@
+Ruby-quota is a ruby library to manipulate filesystem quotas.
+
+WWW:	http://kt-www.jaist.ac.jp/~ttate/ruby/ruby-ext.html
+Author:	Takaaki Tateishi <ttate@jaist.ac.jp>
