@@ -249,6 +249,7 @@
     SUBDIR += p5-Text-Glob
     SUBDIR += p5-Text-Graphics
     SUBDIR += p5-Text-Metaphone
+    SUBDIR += p5-Text-Netstring
     SUBDIR += p5-Text-Query
     SUBDIR += p5-Text-Quoted
     SUBDIR += p5-Text-Reflow

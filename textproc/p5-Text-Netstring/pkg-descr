@@ -1,0 +1,8 @@
+The Text::Netstring module gives your perl programs an easy way to
+create and manipulate netstring encoded strings, as used by the QMTP and
+QMPC protocols.
+
+WWW: http://search.cpan.org/dist/Text-Netstring/
+
+James Raftery.
+<james@now.ie>
