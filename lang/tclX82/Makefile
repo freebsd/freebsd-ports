@@ -1,34 +1,25 @@
 # New ports collection makefile for:	tclX
-# Version required:	7.5.2
+# Version required:	8.0.2
 # Date created:		6 February 1996
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.19 1997/10/09 08:19:14 tg Exp $
+# $Id: Makefile,v 1.20 1997/12/24 01:21:39 alex Exp $
 #
 
-DISTNAME=	tclX7.5.2
-PKGNAME=	tclX-7.5.2
-CATEGORIES=	lang tk41
+DISTNAME=	tclX8.0.2
+PKGNAME=	tclX-8.0.2
+CATEGORIES=	lang tcl80 tk80
 MASTER_SITES=	ftp://ftp.neosoft.com/pub/tcl/tclx-distrib/
 
-LIB_DEPENDS=	tk41\\.1:${PORTSDIR}/x11/tk41
+MAINTAINER=	jseger@FreeBSD.ORG
 
-MAINTAINER=	ports@FreeBSD.ORG
+LIB_DEPENDS=	tk80\\.1:${PORTSDIR}/x11/tk80
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/unix
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS= --enable-shared --with-tk
-CONFIGURE_ENV=	PREFIX=${PREFIX}
-MAN3=		CmdWrite.3 Handles.3 Keylist.3 TclCommandWriting.3 \
-		TclXInit.3 Tcl_HandleAlloc.3 Tcl_HandleFree.3 \
-		Tcl_HandleTblInit.3 Tcl_HandleTblRelease.3 \
-		Tcl_HandleTblUseCount.3 Tcl_HandleWalk.3 \
-		Tcl_HandleXlate.3 Tcl_GetKeyedListKeys.3 \
-		Tcl_GetKeyedListField.3 Tcl_SetKeyedListField.3 \
-		Tcl_DeleteKeyedListField.3 Tclx_Init.3 \
-		Tclxcmd_Init.3 TclX_Main.3 Tkx_Init.3 TkX_Main.3
-MANN=		Memory.n TclX.n ckalloc.n memory.n ckfree.n \
-		Tcl_DisplayMemory.n Tcl_InitMemory.n Tcl_ValidateAllMemory.n
+MAN3=   CmdWrite.3 Handles.3 Keylist.3 TclXInit.3
+MANN=   Memory.n TclX.n
 
 post-install:
 	$(INSTALL_MAN) $(WRKSRC)/../doc/CmdWrite.3 $(PREFIX)/man/man3

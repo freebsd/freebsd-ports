@@ -1,12 +1,11 @@
---- ../tk/unix/Makefile.in.orig	Sun Jun 16 07:39:17 1996
-+++ ../tk/unix/Makefile.in	Thu Oct  9 09:57:43 1997
-@@ -67,8 +67,7 @@
+--- ../tk/unix/Makefile.in.ORIG	Sun May  3 18:54:47 1998
++++ ../tk/unix/Makefile.in	Sun May  3 18:55:31 1998
+@@ -85,7 +85,7 @@
  # If a link fails, purge the executable, as some systems leave invalid
  # executables around.
  #
--all: libtkx.a SHLIB_@BUILD_SHARED@ wishx RUNTIME tktest runtest \
--     ${bldbasedir}/tk/tests
-+all: libtkx.a SHLIB_@BUILD_SHARED@ wishx RUNTIME
+-all: wishx RUNTIME tktest
++all: wishx RUNTIME
  
- wishx: tkXAppInit.o libtkx.a ${LIBTK} ${LIBTCLX}
- 	${CC} ${LD_SWITCHES} tkXAppInit.o ${LDLIBS} -o wishx || \
+ static: wishx.static tktest.static
+ 
