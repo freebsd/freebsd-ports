@@ -18,7 +18,9 @@ DISTFILES=	bash-${PORTVERSION:C/\....$//}.tar.gz \
 		bash-doc-${PORTVERSION:C/\....$//}.tar.gz
 .endif
 
-PATCH_SITES=	ftp://ftp.cwru.edu/pub/bash/bash-2.05b-patches/
+PATCH_SITES=	ftp://ftp.cwru.edu/pub/bash/bash-2.05b-patches/ \
+		${MASTER_SITE_LOCAL}
+PATCH_SITE_SUBDIR=	obrien
 PATCHFILES=	bash205b-001 bash205b-002 bash205b-003 bash205b-004
 
 MAINTAINER=	obrien@FreeBSD.org
