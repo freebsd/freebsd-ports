@@ -3,7 +3,7 @@
 # Date created:         26 Dec 1994
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.4 1996/08/28 17:32:38 ache Exp $
+# $Id: Makefile,v 1.5 1996/08/29 15:50:13 ache Exp $
 #
 
 DISTNAME=       lha-114c
@@ -14,6 +14,6 @@ EXTRACT_SUFX=   .tgz
 
 MAINTAINER=     ache@FreeBSD.ORG
 
-RESTRICTED=     "if distributed without network, author must be informed, see DESCR"
+NO_CDROM=       yes # if distributed without network, author must be informed, see DESCR
 
 .include <bsd.port.mk>
