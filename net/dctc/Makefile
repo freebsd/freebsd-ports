@@ -15,12 +15,15 @@ MAINTAINER=	lioux@FreeBSD.org
 
 BUILD_DEPENDS=	makedepend:${PORTSDIR}/devel/makedepend
 LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt \
-		glib-1.3.14:${PORTSDIR}/devel/glib13
+		gthread-2.0.0:${PORTSDIR}/devel/glib20
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=  CPPFLAGS="-I${LOCALBASE}/include \
+		${PTHREAD_CFLAGS} \
 		-I${LOCALBASE}/include/glib-2.0" \
-		LDFLAGS="-L${LOCALBASE}/lib -lgnugetopt -lglib-1.3"
+		LDFLAGS="-L${LOCALBASE}/lib -lgnugetopt \
+		${PTHREAD_LIBS} \
+		-lgthread-2.0"
 
 DOC_DIRS=	Documentation Documentation/DCextensions
 DOC_FILES=      COPYING ChangeLog INSTALL README \
