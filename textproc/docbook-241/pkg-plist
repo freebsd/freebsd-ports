@@ -6,6 +6,8 @@ share/sgml/docbook/2.4.1/dbpool.mod
 share/sgml/docbook/2.4.1/docbook.cat
 share/sgml/docbook/2.4.1/docbook.dcl
 share/sgml/docbook/2.4.1/docbook.dtd
+@unexec %%MKCATALOG%% -q deinstall %%DTD_NAME%%/%%DTD_VERSION%%
 share/sgml/docbook/2.4.1/catalog
+@exec %%MKCATALOG%% -q install %%DTD_NAME%%/%%DTD_VERSION%%
 @dirrm share/sgml/docbook/2.4.1
 @unexec rmdir %D/share/sgml/docbook 2>/dev/null || true
