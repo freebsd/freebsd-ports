@@ -2599,7 +2599,6 @@ gtk-qn-x11-theme	ports/x11-toolkits/gtk-qn-x11-theme
 gtk-qnxtheme	ports/x11-toolkits/gtk-qnxtheme
 gtk-send-pr	ports/sysutils/gtk-send-pr
 gtk-sharp	ports/x11-toolkits/gtk-sharp
-gtk-smooth-engine	ports/x11/gtk-smooth-engine
 gtk-theme-switch ports/x11/gtk-theme-switch
 gtk-xfce-engine	ports/x11-toolkits/gtk-xfce-engine
 gtk-zenith-theme	ports/x11-toolkits/gtk-zenith-theme
