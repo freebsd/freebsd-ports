@@ -4,10 +4,10 @@ local file system for files.
 
 Currently emulated is:
 
-o CPU:286/386 realmode
-o GFX:VGA/EGS/CGA
+o CPU:286/386 realmode/pmode
+o GFX:VGA/EGS/CGA/SVGA/VESA
 o SND:PC-Speaker/Tandy 3-Voice/Adlib/SoundBlaster
 o MSC:Keyboard/Mouse
-o DOS:Director FileSystem/XMS/EMS
+o DOS:Directory FileSystem/XMS/EMS
 
-WWW: http://dosbox.zophar.net/
+WWW: http://dosbox.sourceforge.net/
