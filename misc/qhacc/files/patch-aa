@@ -1,54 +1,16 @@
---- Makefile	Sun Jan  2 20:30:54 2000
-+++ Makefile.new	Thu Feb  3 00:52:21 2000
-@@ -3,11 +3,11 @@
- SYSCONF_CC		= gcc
+--- src/Makefile.in	Wed Apr 12 15:42:26 2000
++++ src/Makefile.in.new	Sat Apr 22 00:41:55 2000
+@@ -94,10 +94,10 @@
+ 		qhaccgrapher.h
  
- # Compiling with support libraries
--SYSCONF_CXXFLAGS_QT	= -I$(QTDIR)/include
-+SYSCONF_CXXFLAGS_QT	= -I$(QTDIR)/include/qt2
  
- # Linking with support libraries
- SYSCONF_LFLAGS_QT	= -L$(QTDIR)/lib
--SYSCONF_LIBS_QT		= -lqt
-+SYSCONF_LIBS_QT		= -lqt2
+-INCLUDES = $(all_includes) -I$(QTDIR)/include
++INCLUDES = $(all_includes) -I$(QTDIR)/include/qt2
+ qhacc_LDFLAGS = -L$(QTDIR)/lib
+-qhacc_LDADD = -lqt
+-MOC = $(QTDIR)/bin/moc
++qhacc_LDADD = -lqt2
++MOC = $(QTDIR)/bin/moc2
  
- # Linking applications
- SYSCONF_LINK		= g++
-@@ -15,7 +15,7 @@
- SYSCONF_LIBS		=
- 
- # Meta-object compiler
--SYSCONF_MOC		= $(QTDIR)/bin/moc
-+SYSCONF_MOC		= $(QTDIR)/bin/moc2
- 
- # Compiling application source
- #SYSCONF_CXXFLAGS	= -pipe -DNO_DEBUG -O2
-@@ -26,12 +26,13 @@
- 
- ####### Compiler, tools and options
- 
--CXX	=	$(SYSCONF_CXX)
--CXXFLAGS=	$(SYSCONF_CXXFLAGS_QT) $(SYSCONF_CXXFLAGS)
--CC	=	$(SYSCONF_CC)
--CFLAGS	=	$(SYSCONF_CFLAGS)
--INCPATH =	
--LFLAGS	=	$(SYSCONF_LFLAGS_QT) $(SYSCONF_LFLAGS_X11) $(SYSCONF_LFLAGS)
-+QTDIR	?=	/usr/X11R6
-+CXX	?=	c++
-+CXXFLAGS?=	-O -pipe
-+CC	?=	cc
-+CFLAGS	?=	-O -pipe
-+INCPATH =	$(SYSCONF_CXXFLAGS_QT)
-+LFLAGS	=	$(CXXFLAGS) $(SYSCONF_LFLAGS_QT) $(SYSCONF_LIBS_QT)
- LIBS	=	$(SYSCONF_LIBS_QT) $(SYSCONF_LIBS_X11) $(SYSCONF_LIBS)
- MOC	=	$(SYSCONF_MOC)
- 
-@@ -80,7 +81,7 @@
- all: $(DESTDIR)$(TARGET)
- 
- $(DESTDIR)$(TARGET): $(OBJECTS) $(OBJMOC) 
--	$(SYSCONF_LINK) $(LFLAGS) -o $(TARGET) $(OBJECTS) $(OBJMOC) $(LIBS)
-+	$(CXX) $(LFLAGS) $(INCPATH) -o $(TARGET) $(OBJECTS) $(OBJMOC)
- 
- moc: $(SRCMOC)
- 
+ CXXFLAGS = -O2 -Wall $(MYFLAGS)
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
