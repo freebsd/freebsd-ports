@@ -80,6 +80,7 @@ libexec/MailScanner/nod32-wrapper.sample
 libexec/MailScanner/norman-autoupdate.sample
 libexec/MailScanner/norman-wrapper.sample
 libexec/MailScanner/panda-wrapper.sample
+libexec/MailScanner/panda-autoupdate.sample
 libexec/MailScanner/rav-autoupdate.sample
 libexec/MailScanner/rav-wrapper.sample
 libexec/MailScanner/sophos-autoupdate.sample
@@ -524,6 +525,7 @@ libexec/MailScanner/vexira-wrapper.sample
 %%PORTDOCS%%%%DOCSDIR%%/poweredby.transtec.gif
 %%PORTDOCS%%%%DOCSDIR%%/phishing.html
 %%PORTDOCS%%%%DOCSDIR%%/phishing.jpg
+%%PORTDOCS%%%%DOCSDIR%%/phishing2.jpg
 %%PORTDOCS%%%%DOCSDIR%%/pressreleases.html
 %%PORTDOCS%%%%DOCSDIR%%/presentations.html
 %%PORTDOCS%%%%DOCSDIR%%/press.html
