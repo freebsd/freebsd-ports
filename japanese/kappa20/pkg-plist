@@ -1,13 +1,17 @@
-lib/X11/fonts/misc/10x20b.pcf.Z
-lib/X11/fonts/misc/10x20m.pcf.Z
-lib/X11/fonts/misc/10x20rkb.pcf.Z
-lib/X11/fonts/misc/10x20rkm.pcf.Z
-lib/X11/fonts/misc/k20b.pcf.Z
-lib/X11/fonts/misc/k20m.pcf.Z
+lib/X11/fonts/local/10x20b.pcf.gz
+lib/X11/fonts/local/10x20m.pcf.gz
+lib/X11/fonts/local/10x20rkb.pcf.gz
+lib/X11/fonts/local/10x20rkm.pcf.gz
+lib/X11/fonts/local/k20b.pcf.gz
+lib/X11/fonts/local/k20m.pcf.gz
 share/doc/kappa20/README
-@exec cd %D/lib/X11/fonts/misc ; mkfontdir
-@exec  echo "Updating misc/fonts.alias"
-@exec cd %D/lib/X11/fonts/misc ; touch fonts.alias ; cp fonts.alias fonts.alias.orig ; (cat fonts.alias.orig ; grep -i -- -kappa- fonts.dir | sed 's/\.pcf\.Z//;s/x20rkm/x20rk/') >fonts.alias ; rm fonts.alias.orig
-@unexec cd %D/lib/X11/fonts/misc ; mkfontdir
-@unexec echo "updating fonts.alias" ; cd %D/lib/X11/fonts/misc ; cp fonts.alias fonts.alias.orig ; grep -v 'kappa' fonts.alias.orig > fonts.alias ; rm fonts.alias.orig
+share/doc/kappa20/fonts.alias.kappa
+@exec if [ ! -d %D/lib/X11/fonts/local ]; then echo '**********************************************************************'; echo '****** '%D"/lib/X11/fonts/local/ doesn't exist."; echo '****** ''Creating '%D'/lib/X11/fonts/local/'; mkdir -p %D/lib/X11/fonts/local/; echo '****** ''Please upgrade your XFree86 to 3.3.3 or upper,'; echo '****** '"or add this directory to your /etc/XF86Config's FontPath entry."; echo '**********************************************************************'; fi
+@exec cd %D/lib/X11/fonts/local ; mkfontdir
+@exec echo "Updating local/fonts.alias"
+@exec touch %D/lib/X11/fonts/local/fonts.alias
+@exec cd %D/lib/X11/fonts/local ; cp fonts.alias fonts.alias.orig ; cat fonts.alias.orig | %%PERL%% -ne 'if ( /^!/ || ( !/[ \t]-kappa-.+--20-/i ) ){ print; }' > fonts.alias ; cat %D/share/doc/kappa20/fonts.alias.kappa >> fonts.alias ; rm fonts.alias.orig
+@unexec cd %D/lib/X11/fonts/local ; mkfontdir
+@unexec echo "updating fonts.alias"
+@unexec cd %D/lib/X11/fonts/local ; cp fonts.alias fonts.alias.orig ; cat fonts.alias.orig | %%PERL%% -ne 'if ( /^!/ || ( !/[ \t]-kappa-.+--20-/i ) ){ print; }' > fonts.alias ; rm fonts.alias.orig
 @dirrm share/doc/kappa20
