@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	tightvnc
-PORTVERSION=	1.2.8
+PORTVERSION=	1.2.9
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	vnc-tight
@@ -17,18 +17,24 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Enhanced version of VNC
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
-RUN_DEPENDS=	${X11BASE}/lib/X11/fonts/misc/10x20.pcf.gz:${PORTSDIR}/x11-fonts/XFree86-4-fontDefaultBitmaps
+
+WRKSRC=		${WRKDIR}/vnc_unixsrc
 
 USE_BZIP2=	yes
-WRKSRC=		${WRKDIR}/vnc_unixsrc
+USE_PERL5=	yes
 USE_IMAKE=	yes
 USE_XPM=	yes
-USE_PERL5=	yes
 ALL_TARGET=	World
 NO_INSTALL_MANPAGES=	yes
 XFREE86_HTML_MAN=	no
 
 MAN1=		Xvnc.1 vncviewer.1 vncpasswd.1 vncconnect.1 vncserver.1
+
+.include <bsd.port.pre.mk>
+
+.if ${XFREE86_VERSION} >= 4
+RUN_DEPENDS+=	${X11BASE}/lib/X11/fonts/misc/10x20.pcf.gz:${PORTSDIR}/x11-fonts/XFree86-4-fontDefaultBitmaps
+.endif
 
 .if exists(${X11BASE}/share/vnc/classes/index.vnc)
 IGNORE=		"vnc has already been installed, please uninstall it first."
@@ -51,4 +57,4 @@ do-install:
 	@${MKDIR} ${DATADIR}/classes
 	${INSTALL_DATA} ${WRKSRC}/classes/*.* ${DATADIR}/classes
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
