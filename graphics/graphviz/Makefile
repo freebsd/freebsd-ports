@@ -24,6 +24,9 @@ MANN=		tcldot.n
 
 DOCDIR=		${PREFIX}/share/doc/graphviz
 
+post-extract:
+	@${CP} ${FILESDIR}/freebsd.generic ${WRKSRC}/makearch
+
 post-install:
 	@${MKDIR} ${DOCDIR}
 	${INSTALL_DATA} ${WRKSRC}/*.htm* ${DOCDIR}
