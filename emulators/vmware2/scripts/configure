@@ -8,6 +8,34 @@ netmask=$VMNET_NETMASK
 title="VMware network options"
 
 get_network_settings() {
+    bridged="NO"
+    /usr/bin/dialog --title "$title" --clear --yesno \
+"\n"\
+"Do you want to use netgraph bridging?\n"\
+    10 50
+    if [ $? -eq 0 ]; then
+	bridged="YES"
+	result=`/usr/bin/dialog --title "$title" --clear --inputbox \
+"\n"\
+"To which interface would you\n"\
+"like to tie the bridge?:"\
+	10 50 "" \
+	2>&1 > /dev/tty`
+	case $? in
+	0)
+	    if [ -z "$result" ]; then
+		return 1
+	    fi
+	    bdg_interface=$result
+	    ;;
+        1)
+	    return 1
+	    ;;
+	esac
+	host_ip=192.168.0.1
+	netmask=255.255.255.0
+    else
+
     result=`/usr/bin/dialog --title "$title" --clear --inputbox \
 "\n"\
 "What will be the IP address of your host\n"\
@@ -46,19 +74,31 @@ get_network_settings() {
 	;;
     esac
     return 0;
+    fi
 }
 
 do_network() {
     while true; do
 	get_network_settings
 
+	if [ "X$bridged" != "XYES" ]; then
 	/usr/bin/dialog --title "Confirmation" --clear --yesno \
 "\n"\
 "Are the following options correct?\n\n"\
-"IP address: $host_ip\n"\
-"Netmask:    $netmask\n"\
+"Configuration: host only\n"\
+"IP address:    $host_ip\n"\
+"Netmask:       $netmask\n"\
 	10 50
 	[ $? -eq 0 ] && return 0
+	else
+		/usr/bin/dialog --title "Confirmation" --clear --yesno \
+"\n"\
+"Are the following options correct?\n\n"\
+"Configuration: bridged\n"\
+"Interface:     $bdg_interface\n"\
+		10 50
+		[ $? -eq 0 ] && return 0
+	fi
 
 	/usr/bin/dialog --title "Confirmation" --clear --yesno \
 "\n"\
@@ -85,12 +125,22 @@ if [ _$BATCH = _ ]; then
 
     if [ $? -eq 0 ]; then
 	networking=1
+	if [ X$bridged = XYES ]; then
+	    /usr/bin/dialog --title "$title" --infobox \
+"\n"\
+"The following options will be used.\n\n"\
+"Configuration: bridged\n"\
+"Interface:     $bdg_interface\n"\
+	    10 50
+	else
 	/usr/bin/dialog --title "$title" --infobox \
 "\n"\
 "The following options will be used.\n\n"\
-"IP address: $host_ip\n"\
-"Netmask:    $netmask\n"\
+"Configuration: host only\n"\
+"IP address:    $host_ip\n"\
+"Netmask:       $netmask\n"\
 	10 50
+	fi
     fi
 else #BATCH
     [ -f ${WRKDIR}/Makefile.inc.net ] && exit 0
@@ -100,6 +150,8 @@ fi #BATCH
 exec > ${WRKDIR}/Makefile.inc.net
 
 echo '#' `date`
+echo VMNET_BRIDGED=$bridged
+echo VMNET_BRIDGED_INTERFACE=$bdg_interface
 echo VMNET_HOST_IP=$host_ip
 echo VMNET_NETMASK=$netmask
 echo VMNET_NETWORKING=$networking
