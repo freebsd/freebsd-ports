@@ -3,7 +3,7 @@
 # Date created:        23 August 1998
 # Whom:                Bill Fumerola <billf@chc-chimes.com>
 #
-# $Id: $
+# $Id: Makefile,v 1.1.1.1 1998/11/16 20:38:21 billf Exp $
 #
 
 DISTNAME=	qcread-0.3
@@ -12,6 +12,8 @@ MASTER_SITES=	ftp://phobos.illtel.denver.co.us/pub/qcread/ \
 		http://phobos.illtel.denver.co.us/pub/qcread/
 
 MAINTAINER=	billf@FreeBSD.ORG
+
+ONLY_FOR_ARCHS=	i386
 
 post-extract:
 
