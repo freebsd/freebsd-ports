@@ -9,7 +9,9 @@ PORTNAME=	cfm
 PORTVERSION=	0.5
 PORTREVISION=	1
 CATEGORIES=	x11-fm
-MASTER_SITES=	http://www.rpi.edu/~mullr/cfm/dist/
+MASTER_SITES=	${MASTER_SITE_LOCAL} \
+		http://www.rpi.edu/~mullr/cfm/dist/
+MASTER_SITE_SUBDIR=	petef
 
 MAINTAINER=	petef@FreeBSD.org
 COMMENT=	Quick Perl/Tk file manager with support for regular expressions
