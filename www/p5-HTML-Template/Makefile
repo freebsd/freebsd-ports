@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	HTML-Template
-PORTVERSION=	2.4
+PORTVERSION=	2.5
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	HTML
@@ -14,10 +14,16 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	kuriyama@FreeBSD.org
 
+BUILD_DEPENDS=	${PERL_INC}/File/Spec.pm:${PORTSDIR}/devel/p5-File-Spec
+RUN_DEPENDS=	${PERL_INC}/File/Spec.pm:${PORTSDIR}/devel/p5-File-Spec
+
 PERL_CONFIGURE=	yes
 
 MAN3=		HTML::Template.3
-
 MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
+PERL_INC=	${PREFIX}/lib/perl5/site_perl/${PERL_VER}
+
+post-patch:
+	${PERL} -i -pe 's@%%PERL_INC%%@${PERL_INC}@' ${WRKSRC}/Template.pm
 
 .include <bsd.port.mk>
