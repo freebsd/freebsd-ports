@@ -6396,6 +6396,7 @@ qtfw		ports/security/qtfw
 qtk		ports/devel/qtk
 qtools		ports/mail/qtools
 qtpkg		ports/sysutils/qtpkg
+qtutils		ports/graphics/qtutils
 quakeforge	ports/games/quakeforge
 quakeserver	ports/games/quakeserver
 quanta		ports/www/quanta
