@@ -97,9 +97,11 @@
     SUBDIR += psgml-xemacs21-mule
     SUBDIR += sam
     SUBDIR += scite
-#   SUBDIR += semi-emacs20
-#   SUBDIR += semi-xemacs21-mule
-    SUBDIR += semi113-emacs
+    SUBDIR += semi
+    SUBDIR += semi-emacs20
+    SUBDIR += semi-xemacs21-mule
+    SUBDIR += semi113
+    SUBDIR += semi113-emacs19
     SUBDIR += semi113-emacs20
     SUBDIR += semi113-mule
     SUBDIR += semi113-xemacs21-mule
