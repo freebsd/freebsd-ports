@@ -6,7 +6,7 @@
  # endif
 -#elif defined(FreeBSDArchitecture) && !defined(AlphaBsdArchitecture)
 +#elif defined(FreeBSDArchitecture)
-+# if defined(i386Architecture)
++# if defined(i386Architecture) || defined(x86_64Architecture)
    IOPERMDEFINES = -DUSE_DEV_IO
 -#else
 -# if defined(AlphaBsdArchitecture)
