@@ -37,12 +37,15 @@ include/sphinx2/s2types.h
 include/sphinx2/sphinxp.h
 include/sphinx2/win32sock.h
 lib/libsphinx2.a
+lib/libsphinx2.la
 lib/libsphinx2.so
 lib/libsphinx2.so.0
 lib/libsphinx2ad.a
+lib/libsphinx2ad.la
 lib/libsphinx2ad.so
 lib/libsphinx2ad.so.0
 lib/libsphinx2fe.a
+lib/libsphinx2fe.la
 lib/libsphinx2fe.so
 lib/libsphinx2fe.so.0
 share/sphinx2/doc/README.bin
@@ -138,3 +141,4 @@ share/sphinx2/model/lm/turtle/turtle.vocab
 @dirrm share/sphinx2/model
 @dirrm share/sphinx2/doc
 @dirrm share/sphinx2
+@dirrm include/sphinx2
