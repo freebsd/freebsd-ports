@@ -1,0 +1,15 @@
+tdir is Yet Another Way To Display Directory Listings.  Output is in
+columnar format with sub-directories listed first, and then a listing
+of the files ordered by their ending "extension" - typically the
+characters following the rightmost '.' in the file name (though this
+can be changed on the command line).
+
+tdir supports recursive directory examination. Total output width as
+well as column width can be set on the command line and tdir will
+autoformat accordingly.
+
+tdir is written in 'python' and requires a reasonably current version
+of the 'python' environment to be present on the system.
+
+- tim
+tundra@tundraware.com
