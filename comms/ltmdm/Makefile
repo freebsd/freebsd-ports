@@ -30,13 +30,15 @@ MAKE_ARGS	= LTMDM_OBJ_VERSION=595
 
 MAKE_ARGS+=	LTMDM_DEV_MAJOR=${LTMDM_DEV_MAJOR}
 MAKE_ARGS+=	LTMDM_OBJ_VERSION=${LTMDM_OBJ_VERSION}
+MAKE_ENV+=	WERROR=
 
 PORTDOCS=	README.TXT README-en.TXT INSTALL.TXT INSTALL-en.TXT
+SYSDIR?=	${SRC_BASE}/sys
 
 RC_SCRIPTS_SUB=PREFIX=${PREFIX} RC_SUBR=${RC_SUBR} MAJOR=${LTMDM_DEV_MAJOR}
 
 pre-fetch:
-.if !exists(${SRC_BASE}/sys/Makefile)
+.if !exists(${SYSDIR}/Makefile)
 	@${ECHO} "*************************************************"; \
 	${ECHO}  "This port requires the kernel source be available"; \
 	${ECHO}  "*************************************************"; \
