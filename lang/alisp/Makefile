@@ -6,38 +6,21 @@
 #
 
 PORTNAME=	alisp
-PORTVERSION=	20040206
+PORTVERSION=	20040924
 CATEGORIES=	lang devel lisp
-MASTER_SITES=	http://t3x.dyndns.org/files/ \
-		http://www.t3x.org/files/
+MASTER_SITES=	http://t3x.dyndns.org/files/
 
 MAINTAINER=	nmh@t3x.org
 COMMENT=	A tail-recursive interpreter for purely symbolic LISP
 
-BUILD_DEPENDS=	tx:${PORTSDIR}/lang/t3x \
-		${LOCALBASE}/t3x/r8/tide:${PORTSDIR}/devel/tide
+BUILD_DEPENDS=	tx:${PORTSDIR}/lang/t3x
 
 MAN7=		alisp.7
 MANCOMPRESSED=	no
 
 MAKE_ENV+=	T3XDIR=${LOCALBASE}/t3x/r8 \
 		BINOWN=${BINOWN} \
-		BINGRP=${BINGRP}
-
-USE_REINPLACE=	yes
-
-post-patch:
-	${REINPLACE_CMD} \
-		-e 's,/usr/local,${PREFIX},g' \
-		${WRKSRC}/Makefile
-	${REINPLACE_CMD} \
-		-e 's,/usr/local,${PREFIX},g' \
-		${WRKSRC}/util/Alisp.sh
-	${REINPLACE_CMD} \
-		-e 's,/usr/local,${PREFIX},g' \
-		${WRKSRC}/cnf/unix.dfl
-	${REINPLACE_CMD} \
-		-e 's,/usr/local,${PREFIX},g' \
-		${WRKSRC}/cnf/unix-1.dfl
+		BINGRP=${BINGRP} \
+		PREFIX=${PREFIX}
 
 .include <bsd.port.mk>
