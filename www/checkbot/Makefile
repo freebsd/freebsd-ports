@@ -13,13 +13,16 @@ MASTER_SITES=	http://degraaff.org/checkbot/ \
 
 MAINTAINER=	wosch@FreeBSD.org
 
-BUILD_DEPENDS=  ${SITE_PERL}/Net/FTP.pm:${PORTSDIR}/net/p5-Net \
-		${SITE_PERL}/Mail/Send.pm:${PORTSDIR}/mail/p5-Mail-Tools \
-		${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww \
-		${SITE_PERL}/${PERL_ARCH}/HTML/Parser.pm:${PORTSDIR}/www/p5-HTML-Parser \
-		${SITE_PERL}/URI.pm:${PORTSDIR}/net/p5-URI
-
 SITE_PERL=	${PREFIX}/lib/perl5/site_perl/${PERL_VER}
+
+BUILD_DEPENDS=  	\
+		${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww \
+ 		${SITE_PERL}/URI.pm:${PORTSDIR}/net/p5-URI \
+		${SITE_PERL}/${PERL_ARCH}/HTML/Parser.pm:${PORTSDIR}/www/p5-HTML-Parser \
+		${SITE_PERL}/Net/FTP.pm:${PORTSDIR}/net/p5-Net \
+		${SITE_PERL}/Mail/Send.pm:${PORTSDIR}/mail/p5-Mail-Tools \
+
+RUN_DEPENDS=    ${BUILD_DEPENDS}
 
 MAN1=		checkbot.1
 USE_PERL5=	YES
