@@ -1,4 +1,13 @@
 bin/xcdroast
+lib/xcdroast-0.98/bin/cdda2wav
+lib/xcdroast-0.98/bin/cddbtool
+lib/xcdroast-0.98/bin/cdrecord
+lib/xcdroast-0.98/bin/mkisofs
+lib/xcdroast-0.98/bin/readcd
+lib/xcdroast-0.98/bin/rmtool
+lib/xcdroast-0.98/bin/vrfytool
+lib/xcdroast-0.98/bin/wavplay
+lib/xcdroast-0.98/bin/xcdrwrap
 lib/xcdroast-0.98/icons/burnproof.gif
 lib/xcdroast-0.98/icons/cddblogo.gif
 lib/xcdroast-0.98/icons/dialog_default.png
@@ -6,19 +15,16 @@ lib/xcdroast-0.98/icons/dialog_error.png
 lib/xcdroast-0.98/icons/dialog_information.png
 lib/xcdroast-0.98/icons/dialog_question.png
 lib/xcdroast-0.98/icons/dialog_warning.png
+lib/xcdroast-0.98/icons/xcdricon.gif
 lib/xcdroast-0.98/icons/xcdrlogo.gif
+lib/xcdroast-0.98/icons/xcdrlogo2.gif
 lib/xcdroast-0.98/lang/lang_extract.sh
 lib/xcdroast-0.98/lang/langhelp.def
 lib/xcdroast-0.98/lang/language.def
 lib/xcdroast-0.98/sound/test.wav
-lib/xcdroast-0.98/bin/cddbtool
-lib/xcdroast-0.98/bin/rmtool
-lib/xcdroast-0.98/bin/vrfytool
-lib/xcdroast-0.98/bin/wavplay
-lib/xcdroast-0.98/bin/xcdrwrap
 @dirrm lib/xcdroast-0.98/bin
 @dirrm lib/xcdroast-0.98/icons
 @dirrm lib/xcdroast-0.98/lang
 @dirrm lib/xcdroast-0.98/sound
 @dirrm lib/xcdroast-0.98
-@unexec /usr/sbin/pw groupdel -n cdwrite
+@unexec /usr/sbin/pw groupdel -n xcdwrite

@@ -1,5 +1,5 @@
---- Makefile.orig	Tue Jul 17 23:46:26 2001
-+++ Makefile	Tue Aug 21 13:07:40 2001
+--- Makefile.orig	Tue Apr 23 21:23:10 2002
++++ Makefile	Fri May 17 16:32:22 2002
 @@ -6,13 +6,13 @@
  # Installation prefix directory:
  
@@ -16,18 +16,19 @@
  
  # for linux
  INSTALL=/usr/bin/install -c
-@@ -23,10 +23,10 @@
+@@ -29,11 +29,11 @@
  
  #---
  
--CFLAGS=-Wall `gtk-config --cflags` `imlib-config --cflags` -DPRE_PREFIX="\"$(PREFIX)\"" -DPRE_LIBDIR="\"$(PRE_LIBDIR)\"" -DCDRTOOLS_PREFIX="\"$(CDRTOOLS_PREFIX)\""
--CFLAGS2=-Wall `glib-config --cflags --libs` -DPRE_PREFIX="\"$(PREFIX)\"" -DPRE_LIBDIR="\"$(PRE_LIBDIR)\"" -DCDRTOOLS_PREFIX="\"$(CDRTOOLS_PREFIX)\""
--LIBS=`gtk-config --libs` `imlib-config --libs` -lgdk_imlib 
+-CFLAGS=-Wall `gtk-config --cflags` `gdk-pixbuf-config --cflags` -DPRE_PREFIX="\"$(PREFIX)\"" -DPRE_LIBDIR="\"$(PRE_LIBDIR)\"" -DCDRTOOLS_PREFIX="\"$(CDRTOOLS_PREFIX)\"" $(EXTRA_CFLAGS)
+-CFLAGS2=-Wall `glib-config --cflags --libs` -DPRE_PREFIX="\"$(PREFIX)\"" -DPRE_LIBDIR="\"$(PRE_LIBDIR)\"" -DCDRTOOLS_PREFIX="\"$(CDRTOOLS_PREFIX)\"" $(EXTRA_CFLAGS)
++CFLAGS=-Wall `${GTK_CONFIG} --cflags` `gdk-pixbuf-config --cflags` -DPRE_PREFIX="\"$(PREFIX)\"" -DPRE_LIBDIR="\"$(PRE_LIBDIR)\"" -DCDRTOOLS_PREFIX="\"$(CDRTOOLS_PREFIX)\"" $(EXTRA_CFLAGS)
++CFLAGS2=-Wall `${GLIB_CONFIG} --cflags --libs` -DPRE_PREFIX="\"$(PREFIX)\"" -DPRE_LIBDIR="\"$(PRE_LIBDIR)\"" -DCDRTOOLS_PREFIX="\"$(CDRTOOLS_PREFIX)\"" $(EXTRA_CFLAGS)
+ 
+-LIBS=`gtk-config --libs` `gdk-pixbuf-config --libs` 
 -TOOLLIBS=`gtk-config --libs`
-+CFLAGS=-Wall `${GTK_CONFIG} --cflags` `${IMLIB_CONFIG} --cflags` -DPRE_PREFIX="\"$(PREFIX)\"" -DPRE_LIBDIR="\"$(PRE_LIBDIR)\"" -DCDRTOOLS_PREFIX="\"$(CDRTOOLS_PREFIX)\""
-+CFLAGS2=-Wall `${GTK_CONFIG} --cflags --libs` -DPRE_PREFIX="\"$(PREFIX)\"" -DPRE_LIBDIR="\"$(PRE_LIBDIR)\"" -DCDRTOOLS_PREFIX="\"$(CDRTOOLS_PREFIX)\""
-+LIBS=`${GTK_CONFIG} --libs` `${IMLIB_CONFIG} --libs` -lgdk_imlib 
++LIBS=`${GTK_CONFIG} --libs` `gdk-pixbuf-config --libs` 
 +TOOLLIBS=`${GTK_CONFIG} --libs`
- CC=gcc
+ CC=cc
  
  OBJ = main.o language.o init.o tools.o xtools.o menus.o setup.o io.o duplicate.o wav_frontend.o wav_id.o create.o

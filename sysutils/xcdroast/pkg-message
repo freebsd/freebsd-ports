@@ -2,7 +2,7 @@
                          ATTENTION!
 
 You must be root to use xcdroast.  To use it as normal user,
-type "make enable-nonroot" in the ports' directory.
+click "enable-nonroot" after starting it at first as root.
 But beware!  This is a security risk!
 It modifies the following files and gives them the
 set-user-ID-on-execution bit:
@@ -12,7 +12,7 @@ readcd(1)
 cdda2wav(1)
 mkisofs(8)
 
-All members of group "cdwrite" are able to run these files
+All members of group "xcdwrite" are able to run these files
 as root.  Usually, these group has no members.
 
 ************************************************************
