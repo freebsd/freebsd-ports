@@ -8,15 +8,13 @@
 PORTNAME=	ntalk
 PORTVERSION=	0.6.3
 CATEGORIES=	net
-MASTER_SITES=	http://network.terramail.pl/files/
+MASTER_SITES=	http://network.terramail.pl/
 
 MAINTAINER=	gslin@ccca.nctu.edu.tw
 
-USE_REINPLACE=	yes
-ALL_TARGET=	${PORTNAME}
-
-post-patch:
-	@${REINPLACE_CMD} -e "s,-lpthread,${PTHREAD_LIBS},g" ${WRKSRC}/Makefile
+do-build:
+	cd ${WRKSRC}; \
+	${CXX} ${CXXFLAGS} -o ntalk ntalk.cpp -lncurses ${PTHREAD_LIBS}
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
