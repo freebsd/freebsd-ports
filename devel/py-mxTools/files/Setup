@@ -1,0 +1,13 @@
+# Build extensions shared:
+*shared*
+#
+
+#
+# mxTools module
+#
+mxTools mxTools.c
+
+#
+# xmap module (provided by Christopher Tavares <tavares@connix.com>)
+#
+xmap xmap.c
