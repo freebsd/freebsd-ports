@@ -1,0 +1,12 @@
+This is a simplified 3D world with alpha-blended objects that look
+kind of like fireworks or sparks. It also has a number of effects
+built in, such as fading, blurring, fire ("heat"), and zooming.
+
+It serves no purpose except to look pretty. The source-code is also
+well-documented, so someone might find it useful in learning SDL
+routines.
+
+WWW: http://www.newbreedsoftware.com/explosions/
+
+- Pete
+petef@databits.net
