@@ -70,6 +70,12 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|%%AUTOMAKE%%|${AUTOMAKE}|g ; \
 		s|%%ACLOCAL%%|${ACLOCAL}|g ; \
 		s|%%AUTOCONF%%|${AUTOCONF}|g' ${WRKSRC}/autogen.sh
+	@${FIND} ${WRKSRC}/ac-helpers -name "*.m4" | ${XARGS} ${REINPLACE_CMD} \
+		's|-ansi||g ; \
+		s|-pedantic||g'
+	@${FIND} ${WRKSRC}/src/config/platforms -name "*.mk" | ${XARGS} \
+		${REINPLACE_CMD} 's|-ansi||g ; \
+		s|-pedantic||g'
 
 pre-configure:
 	@cd ${WRKSRC} && ${TOUCH} NEWS README AUTHORS ChangeLog INSTALL
