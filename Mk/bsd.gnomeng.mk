@@ -209,7 +209,7 @@ libpanel_USE_GNOME_IMPL=gnomelibs
 #
 # .include <bsd.port.pre.mk>
 #
-# .if defined(HAVE_GNOME) && ${HAVE_GNOME:Mfoo}!=""
+# .if ${HAVE_GNOME:Mfoo}!=""
 # ... Do some things ...
 # USE_GNOME=		foo
 # .else
@@ -217,6 +217,7 @@ libpanel_USE_GNOME_IMPL=gnomelibs
 # .endif
 
 _USE_GNOME_SAVED:=${USE_GNOME}
+HAVE_GNOME?=
 .if defined(WANT_GNOME) && !defined(WITHOUT_GNOME)
 . for component in ${_USE_GNOME_ALL}
 .  if exists(${${component}_DETECT}) || defined(WITH_GNOME)
