@@ -1,0 +1,58 @@
+
+$FreeBSD$
+
+--- data/WMWmakerconf	2001/01/12 13:53:53	1.1
++++ data/WMWmakerconf	2001/01/12 13:56:24
+@@ -537,13 +537,13 @@
+       Default = (
+         "~/GNUstep/Library/WindowMaker/Pixmaps",
+         "~/GNUstep/Library/WindowMaker/Backgrounds",
+-        "/usr/share/WindowMaker/Pixmaps",
+-        "/usr/share/WindowMaker/Backgrounds",
+-        "/usr/local/share/WindowMaker/Pixmaps",
+-        "/usr/local/share/WindowMaker/Backgrounds",
+-        "/usr/X11R6/include/X11/pixmaps",
+-        "/usr/local/share/pixmaps",
+-        "/usr/share/pixmaps"
++        "%%X11BASE%%/share/WindowMaker/Pixmaps",
++        "%%X11BASE%%/share/WindowMaker/Backgrounds",
++        "%%LOCALBASE%%/share/WindowMaker/Pixmaps",
++        "%%LOCALBASE%%/share/WindowMaker/Backgrounds",
++        "%%X11BASE%%/include/X11/pixmaps",
++        "%%LOCALBASE%%/share/pixmaps",
++        "%%X11BASE%%/share/pixmaps"
+       );
+       Range = ();
+     };
+@@ -555,13 +555,13 @@
+       Default = (
+         "~/GNUstep/Library/Icons",
+         "~/GNUstep/Library/WindowMaker/Pixmaps",
+-        "/usr/share/WindowMaker/Icons",
+-        "/usr/share/WindowMaker/Pixmaps",
+-        "/usr/local/share/WindowMaker/Icons",
+-        "/usr/local/share/WindowMaker/Pixmaps",
+-        "/usr/X11R6/include/X11/pixmaps",
+-        "/usr/local/share/pixmaps",
+-        "/usr/share/pixmaps"
++        "%%X11BASE%%/share/WindowMaker/Icons",
++        "%%X11BASE%%/share/WindowMaker/Pixmaps",
++        "%%LOCALBASE%%/share/WindowMaker/Icons",
++        "%%LOCALBASE%%/share/WindowMaker/Pixmaps",
++        "%%X11BASE%%/include/X11/pixmaps",
++        "%%LOCALBASE%%/share/pixmaps",
++        "%%X11BASE%%/share/pixmaps"
+       );
+       Range = ();
+     };
+@@ -571,8 +571,8 @@
+       Info = "Wmakerconf searches each of these paths in order for the list of available themes.";
+       Title = "Theme search paths";
+       Default = (
+-        "/usr/share/WindowMaker/Themes",
+-	"/usr/local/share/WindowMaker/Themes",
++        "%%X11BASE%%/share/WindowMaker/Themes",
++	"%%LOCALBASE%%/share/WindowMaker/Themes",
+         "~/GNUstep/Library/WindowMaker/Themes"
+       );
+       Range = ();

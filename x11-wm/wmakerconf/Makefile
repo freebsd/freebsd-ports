@@ -7,6 +7,7 @@
 
 PORTNAME=	wmakerconf
 PORTVERSION= 	2.7
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://ulli.linuxave.net/wmakerconf/
 
@@ -40,5 +41,9 @@ PLIST_SUB+=	GNOME:=""
 .else
 PLIST_SUB+=	GNOME:="@comment "
 .endif
+
+post-configure:
+	@${PERL} -pi -e 's|%%X11BASE%%|${X11BASE}| ; s|%%LOCALBASE%%|${LOCALBASE}|' \
+		${WRKSRC}/data/WMWmakerconf.gettext ${WRKSRC}/data/WMWmakerconf
 
 .include <bsd.port.post.mk>
