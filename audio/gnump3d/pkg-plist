@@ -4,14 +4,28 @@ etc/mp3d.conf
 etc/mp3d/README
 etc/mp3d/default/error.html
 etc/mp3d/default/index.html
+etc/mp3d/default/results.html
 etc/mp3d/default/search.html
 etc/mp3d/default/stats.html
-etc/mp3d/default/results.html
-etc/mp3d/simple/index.html
+etc/mp3d/nausicaa/error.html
+etc/mp3d/nausicaa/index.html
+etc/mp3d/nausicaa/results.html
+etc/mp3d/nausicaa/search.html
+etc/mp3d/nausicaa/stats.html
+etc/mp3d/simple/config.ini
 etc/mp3d/simple/error.html
+etc/mp3d/simple/index.html
+etc/mp3d/simple/results.html
 etc/mp3d/simple/search.html
 etc/mp3d/simple/stats.html
-etc/mp3d/simple/results.html
-@dirrm etc/mp3d/default
+etc/mp3d/split/config.ini
+etc/mp3d/split/error.html
+etc/mp3d/split/index.html
+etc/mp3d/split/results.html
+etc/mp3d/split/search.html
+etc/mp3d/split/stats.html
+@dirrm etc/mp3d/split
 @dirrm etc/mp3d/simple
+@dirrm etc/mp3d/nausicaa
+@dirrm etc/mp3d/default
 @dirrm etc/mp3d
