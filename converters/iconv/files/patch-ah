@@ -1,0 +1,11 @@
+--- iconv_builtin	2000/12/01 10:15:21	1.1
++++ iconv_builtin	2000/12/01 10:15:46
+@@ -83,7 +83,7 @@
+ %builtins = map { $pic = 1 if $_ eq 'PIC'; $_ => $pic } @ARGV;
+ 
+ while (<STDIN>) {
+-	unless (/^([^[:space:]#]+)/) {
++	unless (/^([^\s#]+)/) {
+ 		# line continuation or comment
+ 		print $_ unless $opt_s || !$opt_n || /^#WARNING/;
+ 		next;
