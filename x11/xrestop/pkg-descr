@@ -1,0 +1,6 @@
+Xrestop uses X-Resource extension to provide 'top' like statistics
+of each connected X11 client's server side resource usage. It is
+intendent as a developer tool aid more efficient server resource
+usage and debug server side leakage.
+
+WWW: http://www.freedesktop.org/Software/xrestop/

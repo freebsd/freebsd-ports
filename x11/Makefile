@@ -193,6 +193,7 @@
     SUBDIR += xnodecor
     SUBDIR += xprompt
     SUBDIR += xproto
+    SUBDIR += xrestop
     SUBDIR += xrootconsole
     SUBDIR += xscreensaver
     SUBDIR += xscreensaver-gnome
