@@ -1,0 +1,19 @@
+*** lib/pgp/utils/pgpFileType.c.bak	Sun Aug 10 04:44:33 1997
+--- lib/pgp/utils/pgpFileType.c	Sat Apr 18 22:40:56 1998
+***************
+*** 185,191 ****
+  pgpFileTypeBinary(char const *lang, byte const *buf, unsigned len)
+  	{
+  			unsigned highlimit;
+! 			char c;
+  
+  			if (!len)
+  				 return 1;		/* empty file or error, not a text file */
+--- 185,191 ----
+  pgpFileTypeBinary(char const *lang, byte const *buf, unsigned len)
+  	{
+  			unsigned highlimit;
+! 			unsigned char c;
+  
+  			if (!len)
+  				 return 1;		/* empty file or error, not a text file */
