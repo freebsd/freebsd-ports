@@ -13,6 +13,6 @@
 %%PORTDOCS%%share/doc/amavisd/amavis.txt
 %%PORTDOCS%%@dirrm share/doc/amavisd
 etc/amavisd.conf
-etc/rc.d/amavisd.sh.sample
+etc/rc.d/amavisd.sh
 sbin/amavis
 sbin/amavisd
