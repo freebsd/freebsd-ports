@@ -1,0 +1,23 @@
+bin/oaf-client
+bin/oaf-config
+bin/oaf-run-query
+bin/oafd
+etc/oafConf.sh
+include/liboaf/gnome-factory.h
+include/liboaf/liboaf-version.h
+include/liboaf/liboaf.h
+include/liboaf/oaf.h
+lib/liboaf.a
+lib/liboaf.so
+lib/liboaf.so.0
+@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
+@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
+share/aclocal/oaf.m4
+share/gnome/idl/gnome-factory.idl
+share/gnome/idl/oaf.idl
+share/gnome/oaf/empty.oafinfo
+share/gnome/oaf/oafd.oafinfo
+@unexec rmdir %D/share/gnome/oaf 2>/dev/null || true
+@unexec rmdir %D/share/gnome/idl 2>/dev/null || true
+@unexec rmdir %D/share/gnome 2>/dev/null || true
+@dirrm include/liboaf

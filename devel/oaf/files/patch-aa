@@ -1,0 +1,15 @@
+--- Makefile.in.orig	Wed May 10 02:42:25 2000
++++ Makefile.in	Thu Jun  1 14:21:12 2000
+@@ -95,10 +95,10 @@
+ 
+ EXTRA_DIST = oaf-config.in oaf.m4 oafConf.sh.in oafConf.sh
+ 
+-confexecdir = $(libdir)
++confexecdir = $(sysconfdir)
+ confexec_DATA = oafConf.sh
+ 
+-m4datadir = $(datadir)/aclocal
++m4datadir = $(prefix)/share/aclocal
+ m4data_DATA = oaf.m4
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
