@@ -1,13 +1,13 @@
 # New ports collection makefile for:	py-mxTextTools
-# Version required:	1.1.0
+# Version required:	1.1.1
 # Date created:		12 May 1999
 # Whom:			Thomas Gellekum <tg@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	mxTextTools-1.1.0
-PKGNAME=	py-mxTextTools-1.1.0
+DISTNAME=	mxTextTools-1.1.1
+PKGNAME=	py-mxTextTools-1.1.1
 CATEGORIES=	textproc python
 MASTER_SITES=	http://starship.skyport.net/~lemburg/
 
