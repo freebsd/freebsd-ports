@@ -1,1 +1,11 @@
-GNU Electronic Design Automation
+gEDA stands for GNU Electronic Design Automation (EDA). It is a
+collection of tools for doing schematic capture, circuit simulation,
+printed circuit board layout and any other tasks involving electronic
+circuits. Basically all the tools which are part of gEDA are used to
+automate the design process of electronic circuits. Both analog
+and digital designers use EDA tools to simplify the design process.
+What makes gEDA unique when compared to commercial tools is that
+all the of the source and file specifications are placed under the
+GNU Public License (GPL) version 2.0. These leads to a open (as
+in the no secrets and no surprises type of "open"), flexible,
+extensible, and readily available toolset for doing EDA.
