@@ -89,6 +89,7 @@
     SUBDIR += crossword
     SUBDIR += cryptoslam
     SUBDIR += csmash
+    SUBDIR += ctetris
     SUBDIR += cube
     SUBDIR += cursive
     SUBDIR += d2x

@@ -1,0 +1,8 @@
+ctetris is a beautiful tetris clone, written in C using the ncurses 
+library. It works very fast and efficient, so it should be possible to 
+play it even over a slow remote terminal.
+
+WWW: http://www.sourceforge.com/projects/ctetris/
+
+- Travis Poppe
+tlp@liquidx.org
