@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.138 1998/08/12 14:28:12 kuriyama Exp $
+# $Id: Makefile,v 1.139 1998/08/14 02:08:17 kuriyama Exp $
 #
 
     SUBDIR += Canna
@@ -80,6 +80,7 @@
     SUBDIR += mimekit
     SUBDIR += mmm
     SUBDIR += mnews
+    SUBDIR += mnews-gnspool
     SUBDIR += mtools
     SUBDIR += mule-canna
     SUBDIR += mule-canna+sj3
