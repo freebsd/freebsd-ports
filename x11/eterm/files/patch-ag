@@ -1,0 +1,11 @@
+--- src/feature.h.in.orig	Thu Nov 25 20:50:37 1999
++++ src/feature.h.in	Thu Nov 25 20:50:49 1999
+@@ -380,7 +380,7 @@
+  * may seem to be owned by root.  But if you define this and don't have them,
+  * the utmp and tty stuff could break.  Do some testing.  DO NOT get this one
+  * wrong!  */
+-/* #define HAVE_SAVED_UIDS */
++#define HAVE_SAVED_UIDS
+ 
+ /* Use getgrnam() to determine the group id of TTY_GRP_NAME, and chgrp tty
+  * device files to that group.  This should be ok on SVR4 and Linux systems
