@@ -2,6 +2,7 @@
 #
 
     SUBDIR += AbiWord
+    SUBDIR += MathPlanner
     SUBDIR += aee
     SUBDIR += apel
     SUBDIR += apel-emacs19
