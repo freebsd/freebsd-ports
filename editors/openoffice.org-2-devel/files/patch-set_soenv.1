@@ -1,0 +1,34 @@
+--- set_soenv.1.orig	Tue Nov 20 18:26:33 2001
++++ set_soenv.1	Tue Mar  5 00:12:09 2002
+@@ -954,7 +954,7 @@
+                         $ps.$USR.$LIB.
+                         $ps.$USR_LOCAL.$BIN;
+ }
+-elsif (($platform eq "$Linux") or ($platform eq "$FreeBSD") or ($platform eq "$NetBSD") or ($platform eq "$Tru64") or ($platform eq "$Irix") or ($platform eq "$Irix64"))
++elsif (($platform eq "$Linux") or ($platform eq "$NetBSD") or ($platform eq "$Tru64") or ($platform eq "$Irix") or ($platform eq "$Irix64"))
+ {  $PATH              = $cur_dir.
+                         $ps.'$SOLARVER'.$ds.'$UPD'.$ds.'$INPATH'.$BIN.
+                         $ps.'$SOLARENV'.$ds.'$OUTPATH'.$BIN.
+@@ -968,6 +968,22 @@
+                         $ps.$USR.$BIN.$ds."X11".
+                         $ps.$USR.$LIB;
+ }
++elsif ($platform eq "$FreeBSD")
++{  $PATH              = $cur_dir.
++                        $ps.'$SOLARVER'.$ds.'$UPD'.$ds.'$INPATH'.$BIN.
++                        $ps.'$SOLARENV'.$ds.'$OUTPATH'.$BIN.
++                        $ps.'$SOLARENV'.$BIN.
++                        $ps.'$JAVA_HOME'.$BIN.
++			$ps.$USR_LOCAL.$BIN.
++			$ps.$USR_LOCAL.$ds."sbin";
++
++   $PATH             .= GetCorrectPath($COMPATH, $PERL_PATH, $TCSH_PATH, $compiler);
++
++   $PATH             .= $ps.$USR.$ds."sbin".
++                        $ps.$USR.$BIN.$ds."X11".
++                        $ps.$USR.$LIB;
++}
++
+ elsif ($platform eq "$Winnt")
+ {  $COMPATH_ROOT      = $COMPATH;
+    $COMPATH_ROOT      =~ s/\/vc98$//;
