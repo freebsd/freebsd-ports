@@ -1,0 +1,34 @@
+--- mail/app/mozilla.in.orig	Thu Nov 11 23:14:17 2004
++++ mail/app/mozilla.in	Thu Nov 11 23:15:43 2004
+@@ -218,12 +218,31 @@
+       script_args="$script_args -d $2"
+       shift 2
+       ;;
++    -UILocale)
++      moreargs="$moreargs -UILocale $2"
++      _done_locale="YES"
++      shift 2
++      ;;
++    -UIRegion)
++      if [ -n "${_done_locale}" ]; then
++        moreargs="$moreargs -UIRegion $2"
++      fi
++      shift 2
++      ;;
+     *)
+       moreargs="$moreargs \"$1\""
+       shift 1
+       ;;
+   esac
+ done
++
++if [ ! -n "${_done_locale}" -a -n "${MOZILLA_UILOCALE}" ]; then
++    moreargs="$moreargs -UILocale ${MOZILLA_UILOCALE}"
++    if [ -n "${MOZILLA_UIREGION}" ]; then
++      moreargs="$moreargs -UIRegion ${MOZILLA_UIREGION}"
++    fi
++fi
++unset _done_locale
+ 
+ export MRE_HOME
+ eval "set -- $moreargs"
