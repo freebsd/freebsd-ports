@@ -1,10 +1,11 @@
 @comment $FreeBSD$
 include/shhopt.h
+lib/libshhopt.a
 lib/libshhopt.so
 lib/libshhopt.so.1
-share/doc/libshhopt/CREDITS
-share/doc/libshhopt/README
-share/examples/libshhopt/Makefile
-share/examples/libshhopt/example.c
-@dirrm share/doc/libshhopt
-@dirrm share/examples/libshhopt
+%%PORTDOCS%%share/doc/libshhopt/CREDITS
+%%PORTDOCS%%share/doc/libshhopt/README
+%%PORTDOCS%%share/examples/libshhopt/Makefile
+%%PORTDOCS%%share/examples/libshhopt/example.c
+%%PORTDOCS%%@dirrm share/examples/libshhopt
+%%PORTDOCS%%@dirrm share/doc/libshhopt

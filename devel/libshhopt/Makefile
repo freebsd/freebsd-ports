@@ -7,24 +7,24 @@
 #
 
 PORTNAME=	libshhopt
-PORTVERSION=	1.1.6
+PORTVERSION=	1.1.7
 CATEGORIES=	devel
 MASTER_SITES=	http://shh.thathost.com/pub-unix/files/
 DISTNAME=	shhopt-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
-USE_GMAKE=	yes
+MAKEFILE=	${FILESDIR}/Makefile.lib
 INSTALLS_SHLIB=	yes
 
 post-install:
 .if !defined(NOPORTDOCS)
-	@ ${MKDIR} ${PREFIX}/share/doc/libshhopt
-	@ ${INSTALL_DATA} ${WRKSRC}/CREDITS ${PREFIX}/share/doc/libshhopt
-	@ ${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/libshhopt
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/CREDITS ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+	@${MKDIR} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${FILESDIR}/Makefile ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/example.c ${EXAMPLESDIR}
 .endif
-	@ ${MKDIR} ${PREFIX}/share/examples/libshhopt
-	@ ${INSTALL_DATA} ${FILESDIR}/Makefile ${PREFIX}/share/examples/libshhopt
-	@ ${INSTALL_DATA} ${WRKSRC}/example.c ${PREFIX}/share/examples/libshhopt
 
 .include <bsd.port.mk>
