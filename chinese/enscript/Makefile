@@ -12,13 +12,18 @@ MASTERDIR=	${.CURDIR}/../../print/enscript-letter
 
 MAINTAINER=	keith@FreeBSD.org
 
-RUN_DEPENDS=	ttfm.sh:${PORTSDIR}/chinese/ttfm
+.if defined(WITH_GHOSTSCRIPT_AFPL) && ${WITH_GHOSTSCRIPT_AFPL} == yes
+GSPORT?=	print/ghostscript-afpl
+.else
+GSPORT?=	print/ghostscript-gnu
+.endif
+
+RUN_DEPENDS=	ttfm.sh:${PORTSDIR}/chinese/ttfm \
+		gs:${PORTSDIR}/${GSPORT}
 
 EXTRA_PATCHES=	${.CURDIR}/files/patch-*
 PLIST=		${WRKDIR}/pkg-plist
 PKGMESSAGE=	${.CURDIR}/pkg-message
-
-USE_GHOSTSCRIPT_RUN=	yes
 
 pre-fetch:
 .if !defined(WITH_GHOSTSCRIPT_AFPL) || ${WITH_GHOSTSCRIPT_AFPL} != yes
