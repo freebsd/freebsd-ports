@@ -21,25 +21,4 @@ called version 1.0. Some of the most obvious of these are:
   in compression routines which get used very rarely. 
 - Documentation of code and algorithms is totally missing.
 
-This archive (ha0999.zip) contains this readme, MSDOS executable ha.exe
-and source files for HA 0.999beta. Ha.exe is NOT compiled directly from
-included sources. Some critical parts of it were compiled from hand
-optimized versions of compiler output. It is somewhat faster than "pure
-C" version. 
-
-MSDOS sources are for Borland C 4.0 but older versions of bcc should
-work. Makefile needs some editing as some paths are hardcoded in it.
-UNIX sources are not very generic. I have only tested this using Linux
-on PC and AIX on IBM6000. Only compiler and make utility that I have
-tested are GCC and GNU MAKE.
-
-Porting HA should be fairly easy as all machine specific code is in
-machine.h and machine.c under machine specific directories. Md_funcs.txt
-documents these functions. Examples can be found from pc and nix
-directories.
-
-Email address where I can be reached is "harri.hirvola@vaisala.infonet.com".
-My email addresses have not been very stable and I would not be very 
-surprised if this one too is only valid for some months...
-
-	Harri Hirvola
+Author:	Harri Hirvola <harri.hirvola@vaisala.infonet.com>
