@@ -14,7 +14,7 @@ buildenv () {
 	x5)
 	    ;;
 	*)
-	    echo "buildvars: invalid branch"
+	    echo "buildenv: invalid branch"
 	    exit 1
 	    ;;
     esac
