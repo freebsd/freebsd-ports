@@ -8,7 +8,8 @@
 PORTNAME=	xchat
 PORTVERSION=	0.1
 CATEGORIES=	irc gnome ipv6
-MASTER_SITES=	http://navi.cx/releases/
+MASTER_SITES=	http://navi.cx/releases/ \
+		http://members.chello.nl/~g.mast/distfiles/
 PKGNAMESUFFIX=	-gnome
 DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
 
