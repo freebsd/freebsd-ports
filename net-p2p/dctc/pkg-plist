@@ -1,0 +1,11 @@
+bin/dc_hublist
+bin/dctc
+%%PORTDOCS%%share/doc/dctc/COPYING
+%%PORTDOCS%%share/doc/dctc/ChangeLog
+%%PORTDOCS%%share/doc/dctc/DCextension
+%%PORTDOCS%%share/doc/dctc/INSTALL
+%%PORTDOCS%%share/doc/dctc/README
+%%PORTDOCS%%share/doc/dctc/commands
+%%PORTDOCS%%share/doc/dctc/output
+%%PORTDOCS%%share/doc/dctc/programs
+%%PORTDOCS%%@dirrm share/doc/dctc
