@@ -3,7 +3,7 @@
 # Date created:		19 Apr 1997
 # Whom:			ports@freebsd.org
 #
-# $Id: Makefile,v 1.23 1999/04/08 19:05:44 billf Exp $
+# $Id: Makefile,v 1.24 1999/04/14 00:26:56 scrappy Exp $
 #
 
 DISTNAME=	hylafax-v4.0pl2
@@ -14,9 +14,11 @@ MASTER_SITES=	ftp://ftp.sgi.com/sgi/fax/source/ \
 		ftp://ftp.sisis.de/pub/hylafax/source/
 EXTRACT_SUFX=	-tar.gz
 
-MAINTAINER=	ports@freebsd.org
+PATCH_SITES=	http://www.hylafax.org/patches/
+PATCHFILES=	gcc-2.8.x.patch
+PATCH_DIST_STRIP=	-p1
 
-Y2K=		http://www.hylafax.org/HylaFAQ/Q189.html
+MAINTAINER=	ports@freebsd.org
 
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash2 \
 		${PREFIX}/lib/afm/Courier:${PORTSDIR}/print/afm
@@ -26,12 +28,17 @@ RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash2
 LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff34 \
 		jpeg.9:${PORTSDIR}/graphics/jpeg
 
+DIST_SUBDIR=	hylafax
+
+Y2K=		http://www.hylafax.org/HylaFAQ/Q189.html
+
 USE_GMAKE=	yes
 CONFIGURE_ARGS=	--with-INSTALL="" \
 		--with-MAKE=gmake --with-CC=/usr/bin/cc \
 		--with-LIBTIFF="-L${PREFIX}/lib -ltiff -ljpeg" \
 		--with-TIFFINC="${PREFIX}/include"
 HAS_CONFIGURE=	yes
+
 MAN1=	hylafax.1 faxalter.1 faxcover.1 faxmail.1 faxrm.1 faxstat.1 sendfax.1 \
 	sendpage.1 sgi2fax.1 textfmt.1
 MAN5=	pagesizes.5f typerules.5f \
@@ -52,7 +59,7 @@ post-install:
 	chown uucp ${SUID_EXES}
 	chmod 4555 ${SUID_EXES}
 	@if [ ! -f ${PREFIX}/etc/rc.d/hylafax.sh.sample ]; then	\
-		cp ${FILESDIR}/hylafax.sh.sample ${PREFIX}/etc/rc.d;	\
+		${CP} ${FILESDIR}/hylafax.sh.sample ${PREFIX}/etc/rc.d;	\
 	fi
 	${CAT} ${PKGDIR}/MESSAGE
 
