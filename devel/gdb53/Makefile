@@ -40,6 +40,6 @@ do-install:
 cklatest:
 	ncftpls \
 	    ftp://mirrors.rcn.net/mirrors/sources.redhat.com/${MASTER_SITE_SUBDIR}/  \
-	    | ${GREP} gdb+dejagnu-
+	    | ${GREP} gdb+dejagnu-weekly
 
 .include <bsd.port.mk>
