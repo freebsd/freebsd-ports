@@ -3,7 +3,7 @@
 # Date created:		19 October 1994
 # Whom:			mr
 #
-# $Id: Makefile,v 1.1.1.1 1994/10/25 00:08:30 jkh Exp $
+# $Id: Makefile,v 1.2 1994/11/17 12:59:40 jkh Exp $
 #
 
 DISTNAME=	pcb-1.2.patch_02
@@ -13,6 +13,7 @@ DEPENDS=        ${PORTSDIR}/devel/m4
 MAKE_FLAGS=	-f
 MAKEFILE=	makefile
 USE_IMAKE=
+NO_INSTALL_MANPAGES=	yes
 PREFIX=/usr/X11R6
 PKG_CMD=	pkg_create -N
 
