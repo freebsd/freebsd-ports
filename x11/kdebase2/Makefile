@@ -3,7 +3,7 @@
 # Date created:        28 October 1997
 # Whom:                Stefan Eßer <se@freebsd.org>
 #
-# $Id: Makefile,v 1.28 1999/02/06 23:22:06 se Exp $
+# $Id: Makefile,v 1.29 1999/02/08 22:25:52 se Exp $
 #
 
 DISTNAME=	kdebase-1.1
@@ -29,5 +29,3 @@ MAKE_ENV=	RM=${RM}
 CFLAGS+=	"-I$(PREFIX)/include"
 
 .include <bsd.port.mk>
-
-#CONFIGURE_ARGS+="--with-install-root=/data/kde"

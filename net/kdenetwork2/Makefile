@@ -3,7 +3,7 @@
 # Date created:        28 October 1997
 # Whom:                Stefan Eßer <se@freebsd.org>
 #
-# $Id: Makefile,v 1.27 1999/02/06 23:22:04 se Exp $
+# $Id: Makefile,v 1.28 1999/02/08 22:25:50 se Exp $
 #
 
 DISTNAME=	kdenetwork-1.1
@@ -36,5 +36,3 @@ pre-configure:
 		${LN} -sf $(PREFIX)/include/uu.h $(WRKSRC)/krn/uudeview.h
 
 .include <bsd.port.mk>
-
-#CONFIGURE_ARGS+="--with-install-root=/data/kde"

@@ -3,7 +3,7 @@
 # Date created:        28 October 1997
 # Whom:                Stefan Eßer <se@freebsd.org>
 #
-# $Id: Makefile,v 1.26 1999/02/06 23:22:03 se Exp $
+# $Id: Makefile,v 1.27 1999/02/08 22:25:49 se Exp $
 #
 
 DISTNAME=	kdeutils-1.1
@@ -27,5 +27,3 @@ USE_GMAKE=	yes
 CFLAGS+=	"-I${PREFIX}/include"
 
 .include <bsd.port.mk>
-
-#CONFIGURE_ARGS+="--with-install-root=/data/kde"
