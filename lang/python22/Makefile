@@ -13,14 +13,22 @@ MASTER_SITES=	ftp://www.python.org/pub/python/src/ \
 		ftp://ftp.cwi.nl/pub/python/src/
 EXTRACT_SUFX=	.tgz
 
+PATCH_SITES=	ftp://ftp.kame.net/pub/kame/misc/
+PATCHFILES=	python-152-v6-20000113.diff.gz
+PATCH_DIST_STRIP=	-p1
+
 MAINTAINER=	tg@FreeBSD.org
 
 LIB_DEPENDS=	${TK_DEPENDS}
 
-DIST_SUBDIR=	python
 WRKSRC=		${WRKDIR}/Python-1.5.2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-fpectl --with-libs='-lxpg4'
+.if defined(USE_INET6)
+CONFIGURE_ARGS+=--enable-ipv6
+.else
+CONFIGURE_ARGS+=--disable-ipv6
+.endif
 CONFIGURE_ENV=	OPT="${CFLAGS}"
 INSTALL_TARGET=	install
 PLIST=		${WRKDIR}/PLIST
@@ -54,6 +62,7 @@ WITH_THREADS?=	yes
 LIBC_R!=	/sbin/ldconfig -r | grep c_r || true
 .if ${LIBC_R} != "" && defined(WITH_THREADS) && ${WITH_THREADS} == yes
 CONFIGURE_ARGS+=	--with-thread
+
 CFLAGS+=		-D_THREAD_SAFE
 CONFIGURE_ENV+=		LDFLAGS="-pthread ${LDFLAGS}"
 .endif
@@ -74,6 +83,9 @@ PLIST_GMP=	${PKGDIR}/PLIST.gmp
 WITH_TOOLS?=	yes
 .if defined(WITH_TOOLS) && ${WITH_TOOLS} == yes
 PLIST_TOOLS=	${PKGDIR}/PLIST.Tools
+.endif
+.if defined(USE_INET6)
+PLIST_V6=	${PKGDIR}/PLIST.v6
 .endif
 
 post-extract:
@@ -101,7 +113,7 @@ pre-install:
 	${INSTALL_DATA} ${WRKSRC}/Lib/${platform}/*                    \
 		${PREFIX}/lib/python1.5/${platform}/
 .endfor
-	@sort -r -o ${PLIST} ${PLIST_TK} ${PLIST_GMP} ${PLIST_TOOLS} ${PKGDIR}/PLIST
+	@sort -r -o ${PLIST} ${PLIST_TK} ${PLIST_GMP} ${PLIST_TOOLS} ${PLIST_V6} ${PKGDIR}/PLIST
 
 post-install:
 	strip ${PREFIX}/bin/python
@@ -113,6 +125,9 @@ post-install:
 .if defined(WITH_TOOLS) && ${WITH_TOOLS} == yes
 	@cd ${WRKSRC}; tar cf - Tools | \
 		(cd ${PREFIX}/lib/python1.5; tar xf -)
+.endif
+.if defined(USE_INET6)
+	${INSTALL_DATA} ${WRKSRC}/README.v6 ${PREFIX}/share/doc/python
 .endif
 
 .include <bsd.port.post.mk>

@@ -4,6 +4,7 @@ share/doc/python/COPYRIGHT
 share/emacs/site-lisp/python-mode.el
 include/python1.5/Python.h
 include/python1.5/abstract.h
+include/python1.5/addrinfo.h
 include/python1.5/bitset.h
 include/python1.5/bufferobject.h
 include/python1.5/cStringIO.h
