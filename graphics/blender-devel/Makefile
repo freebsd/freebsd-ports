@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	blender
-PORTVERSION=	2.28c
+PORTVERSION=	2.31a
 CATEGORIES=	graphics games
 MASTER_SITES=	http://download.blender.org/source/
 PKGNAMESUFFIX=	-devel
@@ -23,14 +23,33 @@ USE_LIBTOOL=	yes
 USE_GMAKE=	yes
 USE_PYTHON=	yes
 USE_SDL=	yes
-USE_MESA=	yes
+USE_GL=		yes
 
-CONFIGURE_ARGS=	--disable-oggtest --disable-vorbistest --disable-sdltest
+CONFIGURE_ARGS=	--with-sdl=${LOCALBASE} --disable-oggtest --disable-vorbistest --disable-sdltest
 
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${X11BASE}/include -I${LOCALBASE}/include"
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} ${PTHREAD_CFLAGS} -I${X11BASE}/include -I${LOCALBASE}/include" \
+		LDFLAGS="${LDFLAGS} ${PTHREAD_LIBS} -L${LOCALBASE}/lib -L${X11BASE}/lib"
 
 .if defined(WITH_OPTIMIZED_CFLAGS)
 CFLAGS+=	-O3 -ffast-math
+.endif
+
+.if exists(${LOCALBASE}/lib/libfreetype.so.9) && !defined(WITHOUT_FREETYPE)
+WITH_FREETYPE=	yes
+.endif
+
+.if exists(${LOCALBASE}/lib/libopenal.so) && !defined(WITHOUT_OPENAL)
+WITH_OPENAL=	yes
+.endif
+
+.if defined(WITH_FREETYPE)
+LIB_DEPENDS+=	freetype.9:${PORTSDIR}/print/freetype2
+CONFIGURE_ARGS+=	--with-freetype2=${LOCALBASE}
+.endif
+
+.if defined(WITH_OPENAL)
+LIB_DEPENDS+=	openal.0:${PORTSDIR}/audio/openal
+CONFIGURE_ARGS+=	--enable-openal
 .endif
 
 pre-everything::
@@ -47,21 +66,12 @@ post-patch:
 	@${REINPLACE_CMD} -E -e \
 		's|^program_transform_name.+$$||; \
 		s| -DFreeBSD||; \
-		s|-lSDL|-lSDL-1.1 -L${X11BASE}/lib|' \
+		s|-lSDL|-lSDL-1.1|' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 
 	@${REINPLACE_CMD} -e \
 		's|-Wall||' \
 		${WRKSRC}/source/blender/python/api2_2x/Makefile.in \
 		${WRKSRC}/source/blender/python/Makefile.in
-
-post-configure:
-	@${FIND} ${WRKSRC} -name "Makefile" | \
-		${XARGS} ${REINPLACE_CMD} -e \
-		's|-lesd||; \
-		s|-lsmpeg||; \
-		s|-lvorbisfile||; \
-		s|-lvorbis||; \
-		s|-logg||'
 
 .include <bsd.port.mk>
