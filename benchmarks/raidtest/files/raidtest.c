@@ -322,8 +322,8 @@ raidtest_test(int argc, char *argv[])
 	if (procs == NULL) {
 		close(fdf);
 		close(fdd);
-		errx(EXIT_FAILURE, "Cannot allocate %u bytes of memory.",
-		    sizeof(pid_t) * nprocs);
+		errx(EXIT_FAILURE, "Cannot allocate %zu bytes of memory.",
+		    sizeof(pid_t) * (size_t)nprocs);
 	}
 	iorqs =
 	    malloc((sb.st_size / sizeof(struct iorec)) * sizeof(struct ioreq));
