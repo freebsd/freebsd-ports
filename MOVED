@@ -603,3 +603,4 @@ x11-fonts/fontilus|sysutils/gnomecontrolcenter2|2003-09-18|merged into gnomecont
 misc/stickynotes_applet|x11/gnomeapplets2|2003-09-18|merged into gnomeapplets2
 x11-toolkits/gtk-thinice-engine|x11-toolkits/gnome-themes|2003-09-18|merged into gnome-themes
 korean/qt31|x11-toolkits/qt32|2003-09-19|no need to patch in qt32
+net/zebra-pj|net/quagga|2003-09-28|renamed
