@@ -237,6 +237,7 @@
     SUBDIR += mindguard
     SUBDIR += mirrormagic
     SUBDIR += miscom
+    SUBDIR += monkeybubble
     SUBDIR += moon-buggy
     SUBDIR += moonlander
     SUBDIR += moria

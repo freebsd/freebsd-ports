@@ -1,0 +1,9 @@
+GTK2 Puzzle Bobble clone. With monkeys. Frozen Bubble, but
+with monkeys. It's like a game, except SO MUCH MORE, because
+it has monkeys.
+
+Note that the game seems to want a couple hundred megs of
+memory to start, but once the UI comes up, it only consumes
+about 25MB. We're working on it, but the game plays fine.
+
+WWW: http://monkey-bubble.tuxfamily.org/
