@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.stlport.com/archive/
 PKGNAMESUFFIX=	-${COMPILER}
 DISTNAME=	STLport-${PORTVERSION:S/.b/-b/}
 
-MAINTAINER?=	pmarquis@pobox.com
+MAINTAINER?=	ports@FreeBSD.org
 COMMENT?=	Adaptation of SGI's Standard Template Library
 
 .include <bsd.port.pre.mk>
