@@ -1,10 +1,10 @@
 @comment $FreeBSD$
 bin/picasm
-%%PORTDOCS%%share/doc/picasm/picasm.doc
+%%PORTDOCS%%share/doc/picasm/picasm.txt
 %%PORTDOCS%%@dirrm share/doc/picasm
 %%PORTDOCS%%share/examples/picasm/example.asm
 %%PORTDOCS%%share/examples/picasm/morse.asm
-%%PORTDOCS%%share/examples/picasm/morse.h
-%%PORTDOCS%%share/examples/picasm/pic16c84.h
-%%PORTDOCS%%share/examples/picasm/picmac.h
+%%PORTDOCS%%share/examples/picasm/morse.i
+%%PORTDOCS%%share/examples/picasm/pic16f84.i
+%%PORTDOCS%%share/examples/picasm/picmac.i
 %%PORTDOCS%%@dirrm share/examples/picasm
