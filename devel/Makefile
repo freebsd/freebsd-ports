@@ -429,6 +429,7 @@
     SUBDIR += rinfo
     SUBDIR += robodoc
     SUBDIR += rpc2
+    SUBDIR += rtems-gcc
     SUBDIR += ruby-amstd
     SUBDIR += ruby-byaccr
     SUBDIR += ruby-date2
