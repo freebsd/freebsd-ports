@@ -9,7 +9,7 @@
 
 DISTNAME=	gv-3.5.8
 CATEGORIES=	print
-MASTER_SITES=	ftp://thep.physik.uni-mainz.de/pub/gv/unix/  \
+MASTER_SITES=	ftp://ftpthep.physik.uni-mainz.de/pub/gv/unix/  \
 		${MASTER_SITE_TEX_CTAN}
 MASTER_SITE_SUBDIR=	support/ghostscript/gnu/gv/unix
 
