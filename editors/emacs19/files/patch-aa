@@ -1,30 +1,156 @@
+--- ./man/vip.texi.org	Fri Jun 16 15:31:11 1995
++++ ./man/vip.texi	Tue May 20 01:28:33 1997
+@@ -2,6 +2,10 @@
+ 
+ @setfilename ../info/vip
+ @settitle VIP
++@dircategory The Emacs editor and associated tools
++@direntry
++* VIP: (vip).		A VI-emulation for Emacs.
++@end direntry
+ 
+ @iftex
+ @finalout
 --- ./man/emacs.texi.org	Mon Aug 19 21:15:12 1996
-+++ ./man/emacs.texi	Mon Apr 14 23:08:20 1997
-@@ -49,6 +49,24 @@
++++ ./man/emacs.texi	Tue May 20 01:20:11 1997
+@@ -49,6 +49,11 @@
  @settitle GNU Emacs Manual
  @setfilename ../info/emacs
  @synindex pg cp
 +@dircategory The Emacs editor and associated tools
 +@direntry
 +* Emacs: (emacs).	The extensible self-documenting text editor.
-+* VIP: (vip).		A VI-emulation for Emacs.
-+* VIPER: (viper).       The new VI-emulation mode in Emacs-19.29.
-+* Forms: (forms).	Emacs package for editing data bases
-+			  by filling in forms.
-+* GNUS: (gnus).		The news reader GNUS.
-+* MH-E: (mh-e).		Emacs interface to the MH mail system.
-+* CL: (cl).		Partial Common Lisp support for Emacs Lisp.
-+* SC: (sc).		Supercite lets you cite parts of messages you're 
-+			  replying to, in flexible ways.
-+* Dired-X: (dired-x).   Dired Extra Features.
-+* Ediff: (ediff).	A comprehensive visual interface to diff & patch.
-+* CC mode: (ccmode).	The GNU Emacs mode for editing C, C++, Objective-C
-+			  and Java code.
 +@end direntry
 +
  @c
  @c in general, keep the following line commented out, unless doing a
  @c copy of this manual that will be published.  the manual should go
+--- ./man/viper.texi.org	Wed Aug  7 10:59:45 1996
++++ ./man/viper.texi	Tue May 20 01:29:17 1997
+@@ -4,6 +4,10 @@
+ \input texinfo
+ 
+ @setfilename ../info/viper
++@dircategory The Emacs editor and associated tools
++@direntry
++* VIPER: (viper).	The new VI-emulation mode in Emacs-19.29.
++@end direntry
+ 
+ @iftex
+ @finalout
+--- ./man/forms.texi.org	Sat Mar 23 06:42:27 1996
++++ ./man/forms.texi	Tue May 20 01:22:37 1997
+@@ -9,6 +9,11 @@
+ @syncodeindex vr cp
+ @syncodeindex fn cp
+ @syncodeindex ky cp
++@dircategory The Emacs editor and associated tools
++@direntry
++* Forms: (forms).	Emacs package for editing data bases
++			by filling in forms.
++@end direntry
+ @iftex
+ @finalout
+ @setchapternewpage odd
+--- ./man/gnus.texi.org	Wed Jun 26 14:49:29 1996
++++ ./man/gnus.texi	Tue May 20 01:23:15 1997
+@@ -5,6 +5,11 @@
+ @synindex fn cp
+ @synindex vr cp
+ @synindex pg cp
++@dircategory The Emacs editor and associated tools
++@direntry
++* GNUS: (gnus).		The news reader GNUS.
++@end direntry
++
+ @iftex
+ @finalout
+ @end iftex
+--- ./man/mh-e.texi.org	Sun Aug  4 00:00:29 1996
++++ ./man/mh-e.texi	Tue May 20 01:23:49 1997
+@@ -4,6 +4,10 @@
+ @setfilename ../info/mh-e
+ @settitle mh-e
+ @c %**end of header
++@dircategory The Emacs editor and associated tools
++@direntry
++* MH-E: (mh-e).		Emacs interface to the MH mail system.
++@end direntry
+ 
+ @setchapternewpage odd
+ 
+--- ./man/cl.texi.org	Mon Apr 15 21:36:53 1996
++++ ./man/cl.texi	Tue May 20 01:24:18 1997
+@@ -2,6 +2,12 @@
+ @setfilename ../info/cl
+ @settitle Common Lisp Extensions
+ 
++@dircategory The Emacs editor and associated tools
++@direntry
++* CL: (cl).		Partial Common Lisp support for Emacs Lisp.
++@end direntry
++
++
+ @iftex
+ @finalout
+ @end iftex
+--- ./man/sc.texi.org	Thu Jan  4 12:55:23 1996
++++ ./man/sc.texi	Tue May 20 01:25:13 1997
+@@ -3,6 +3,12 @@
+ @comment %**start of header (This is for running Texinfo on a region.)
+ @setfilename ../info/sc
+ @settitle Supercite Version 3.1 User's Manual
++@dircategory The Emacs editor and associated tools
++@direntry
++* SC: (sc).		Supercite lets you cite parts of messages you're 
++			replying to, in flexible ways.
++@end direntry
++
+ @iftex
+ @finalout
+ @end iftex
+--- ./man/dired-x.texi.org	Thu Jan  4 12:54:19 1996
++++ ./man/dired-x.texi	Tue May 20 01:25:55 1997
+@@ -18,6 +18,11 @@
+ @setfilename ../info/dired-x
+ @c dired-x.el REVISION NUMBER
+ @settitle Dired Extra Version 2 User's Manual
++@dircategory The Emacs editor and associated tools
++@direntry
++* Dired-X: (dired-x).	Dired Extra Features.
++@end direntry
++
+ @iftex
+ @finalout
+ @end iftex
+--- ./man/ediff.texi.org	Fri Jun 21 20:00:04 1996
++++ ./man/ediff.texi	Tue May 20 01:26:29 1997
+@@ -10,6 +10,10 @@
+ @synindex vr cp
+ @synindex fn cp
+ @synindex pg cp
++@dircategory The Emacs editor and associated tools
++@direntry
++* Ediff: (ediff).	A comprehensive visual interface to diff & patch.
++@end direntry
+ @iftex
+ @finalout
+ @end iftex
+--- ./man/cc-mode.texi.org	Sun Aug  4 21:56:21 1996
++++ ./man/cc-mode.texi	Tue May 20 01:27:18 1997
+@@ -9,6 +9,12 @@
+ @settitle     CC-MODE Version 4 Documentation
+ @footnotestyle end
+ 
++@dircategory The Emacs editor and associated tools 
++@direntry 
++* CC mode: (ccmode).	The GNU Emacs mode for editing C, C++, Objective-C
++			and Java code.
++@end direntry
++
+ @comment !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ @comment @setchapternewpage odd !! we don't want blank pages !!
+ @comment %**end of header (This is for running Texinfo on a region)
 --- ./Makefile.in.org	Mon Aug 19 21:12:19 1996
 +++ ./Makefile.in	Tue Apr 15 00:15:28 1997
 @@ -184,7 +184,7 @@

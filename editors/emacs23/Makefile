@@ -3,7 +3,7 @@
 # Date created:		29 October 1994
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.26 1996/11/19 13:14:40 asami Exp $
+# $Id: Makefile,v 1.27 1997/04/18 10:48:33 asami Exp $
 #
 
 DISTNAME=	emacs-19.34b
@@ -18,12 +18,14 @@ STRIP=
 MAN1=		emacs.1 etags.1 ctags.1
 
 post-install:
-	for file in emacs-19.34 emacsclient etags ctags b2m; do \
-	  strip ${PREFIX}/bin/$$file; \
-	done
+.for file in emacs-19.34 emacsclient etags ctags b2m
+	strip ${PREFIX}/bin/${file}
+.endfor
 	if [ ! -f ${PREFIX}/info/dir ]; then \
 	  sed -ne '1,/Menu:/p' /usr/share/info/dir > ${PREFIX}/info/dir; \
 	fi
-	install-info ${PREFIX}/info/emacs ${PREFIX}/info/dir
+.for info in emacs vip viper forms gnus mh-e cl sc dired-x ediff ccmode
+	install-info ${PREFIX}/info/${info} ${PREFIX}/info/dir
+.endfor
 
 .include <bsd.port.mk>
