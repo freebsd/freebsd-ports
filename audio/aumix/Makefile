@@ -6,18 +6,18 @@
 #
 
 PORTNAME=	aumix
-PORTVERSION=	2.7
-PORTREVISION=	1
+PORTVERSION=	2.8
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://jpj.net/~trevor/aumix/ \
 		http://jpj.net/~trevor/aumix/old/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	cpiazza@FreeBSD.org
+MAINTAINER=	trevor@FreeBSD.org
 
 LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 
+USE_BZIP2=	yes
 USE_GNOMENG=	yes
 WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
