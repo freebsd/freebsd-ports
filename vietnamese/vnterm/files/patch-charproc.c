@@ -1,5 +1,5 @@
 --- charproc.c.orig	Mon Aug 21 08:47:46 2000
-+++ charproc.c	Sat Feb 10 05:32:41 2001
++++ charproc.c	Sun Sep  8 16:41:40 2002
 @@ -72,6 +72,10 @@
  #include <X11/Shell.h>
  #endif /* NO_ACTIVE_ICON */
@@ -11,7 +11,19 @@
  /*
   * Check for both EAGAIN and EWOULDBLOCK, because some supposedly POSIX
   * systems are broken and return EWOULDBLOCK when they should return EAGAIN.
-@@ -619,6 +623,10 @@
+@@ -91,9 +95,11 @@
+ 
+ extern XtAppContext app_con;
+ extern Widget toplevel;
++#if 0	/* get these from std headers... */
+ extern void exit();
+ extern char *malloc();
+ extern char *realloc();
++#endif
+ extern fd_set Select_mask;
+ extern fd_set X_mask;
+ extern fd_set pty_mask;
+@@ -619,6 +625,10 @@
  	for( ; ; ) {
  	        switch (parsestate[c = doinput()]) {
  		 case CASE_PRINT:
@@ -22,7 +34,7 @@
  			/* printable characters */
  			top = bcnt > TEXT_BUF_SIZE ? TEXT_BUF_SIZE : bcnt;
  			cp = bptr;
-@@ -656,6 +664,9 @@
+@@ -656,6 +666,9 @@
  			break;
  
  		 case CASE_IGNORE:
@@ -32,7 +44,7 @@
  			/* Ignore character */
  			break;
  
-@@ -666,17 +677,32 @@
+@@ -666,17 +679,32 @@
  
  		 case CASE_BS:
  			/* backspace */
@@ -65,7 +77,7 @@
  			parsestate = esctable;
  			break;
  
-@@ -684,6 +710,11 @@
+@@ -684,6 +712,11 @@
  			/*
  			 * form feed, line feed, vertical tab
  			 */
@@ -77,7 +89,7 @@
  			Index(screen, 1);
  			if (term->flags & LINEFEED)
  				CarriageReturn(screen);
-@@ -695,6 +726,11 @@
+@@ -695,6 +728,11 @@
  
  		 case CASE_TAB:
  			/* tab */
@@ -89,7 +101,7 @@
  			screen->cur_col = TabNext(term->tabs, screen->cur_col);
  			if (screen->cur_col > screen->max_col)
  				screen->cur_col = screen->max_col;
-@@ -762,6 +798,11 @@
+@@ -762,6 +800,11 @@
  
  		 case CASE_ICH:
  			/* ICH */
@@ -101,7 +113,7 @@
  			if((row = param[0]) < 1)
  				row = 1;
  			InsertChar(screen, row);
-@@ -770,6 +811,11 @@
+@@ -770,6 +813,11 @@
  
  		 case CASE_CUU:
  			/* CUU */
@@ -113,7 +125,7 @@
  			if((row = param[0]) < 1)
  				row = 1;
  			CursorUp(screen, row);
-@@ -778,6 +824,11 @@
+@@ -778,6 +826,11 @@
  
  		 case CASE_CUD:
  			/* CUD */
@@ -125,7 +137,7 @@
  			if((row = param[0]) < 1)
  				row = 1;
  			CursorDown(screen, row);
-@@ -786,6 +837,11 @@
+@@ -786,6 +839,11 @@
  
  		 case CASE_CUF:
  			/* CUF */
@@ -137,7 +149,7 @@
  			if((row = param[0]) < 1)
  				row = 1;
  			CursorForward(screen, row);
-@@ -794,6 +850,11 @@
+@@ -794,6 +852,11 @@
  
  		 case CASE_CUB:
  			/* CUB */
@@ -149,7 +161,7 @@
  			if((row = param[0]) < 1)
  				row = 1;
  			CursorBack(screen, row);
-@@ -802,6 +863,11 @@
+@@ -802,6 +865,11 @@
  
  		 case CASE_CUP:
  			/* CUP | HVP */
@@ -161,7 +173,7 @@
  			if((row = param[0]) < 1)
  				row = 1;
  			if(nparam < 2 || (col = param[1]) < 1)
-@@ -821,6 +887,11 @@
+@@ -821,6 +889,11 @@
  
  		 case CASE_ED:
  			/* ED */
@@ -173,7 +185,7 @@
  			switch (param[0]) {
  			 case DEFAULT:
  			 case 0:
-@@ -840,6 +911,11 @@
+@@ -840,6 +913,11 @@
  
  		 case CASE_EL:
  			/* EL */
@@ -185,7 +197,7 @@
  			switch (param[0]) {
  			 case DEFAULT:
  			 case 0:
-@@ -857,6 +933,11 @@
+@@ -857,6 +935,11 @@
  
  		 case CASE_IL:
  			/* IL */
@@ -197,7 +209,7 @@
  			if((row = param[0]) < 1)
  				row = 1;
  			InsertLine(screen, row);
-@@ -865,6 +946,11 @@
+@@ -865,6 +948,11 @@
  
  		 case CASE_DL:
  			/* DL */
@@ -209,7 +221,7 @@
  			if((row = param[0]) < 1)
  				row = 1;
  			DeleteLine(screen, row);
-@@ -873,6 +959,11 @@
+@@ -873,6 +961,11 @@
  
  		 case CASE_DCH:
  			/* DCH */
@@ -221,7 +233,7 @@
  			if((row = param[0]) < 1)
  				row = 1;
  			DeleteChar(screen, row);
-@@ -1092,6 +1183,11 @@
+@@ -1092,6 +1185,11 @@
  
  		 case CASE_NEL:
  			/* NEL */
@@ -233,7 +245,7 @@
  			Index(screen, 1);
  			CarriageReturn(screen);
  			
-@@ -1109,6 +1205,11 @@
+@@ -1109,6 +1207,11 @@
  
  		 case CASE_RI:
  			/* RI */
@@ -245,7 +257,7 @@
  			RevIndex(screen, 1);
  			parsestate = groundtable;
  			break;
-@@ -1460,6 +1561,13 @@
+@@ -1460,6 +1563,13 @@
  	register int	len;
  	register int	n;
  	register int	next_col;
@@ -259,7 +271,7 @@
  
  	switch (charset) {
  	case 'A':	/* United Kingdom set			*/
-@@ -1480,6 +1588,32 @@
+@@ -1480,6 +1590,32 @@
  	default:	/* any character sets we don't recognize*/
  		return;
  	}
