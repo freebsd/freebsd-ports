@@ -8,13 +8,13 @@
 
 PORTNAME=	jpilot
 PORTVERSION=	0.99.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES+=	palm comms
 MASTER_SITES=	http://jpilot.org/
 
 MAINTAINER?=	varju@webct.com
 
-LIB_DEPENDS=	pisock.4:${PORTSDIR}/palm/pilot-link \
+LIB_DEPENDS=	pisock.8:${PORTSDIR}/palm/pilot-link \
 		intl.4:${PORTSDIR}/devel/gettext
 
 USE_GNOMENG=	yes
