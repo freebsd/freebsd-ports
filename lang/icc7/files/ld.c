@@ -76,7 +76,7 @@ main(int argc, char *argv[], char *envp[])
 {
 	size_t i;
 	u_int flags;
-	const char *libc, *libthr, *prefix;
+	const char *libc, *libthr, *icc_localbase;
 	struct arglist al = { 0, NULL };
 
 	flags = 0;
@@ -84,8 +84,8 @@ main(int argc, char *argv[], char *envp[])
 	if (argc == 1)
 		errx(1, "no input files");
 
-	if ((prefix = getenv("PREFIX")) == NULL)
-		errx(1, "can't get PREFIX");
+	if ((icc_localbase = getenv("ICC_LOCALBASE")) == NULL)
+		errx(1, "can't get ICC_LOCALBASE");
 
 #ifdef DEBUG
 	printf("input: ");
@@ -247,7 +247,7 @@ main(int argc, char *argv[], char *envp[])
 			addarg(&al, "-L/usr/lib");
 			if (flags & LDW_CPP) {
 				char *p;
-				asprintf(&p, "-L%s/lib", prefix);
+				asprintf(&p, "-L%s/lib", icc_localbase);
 				if (p == NULL)
 					err(1, NULL);
 				addarg(&al, p);
@@ -273,7 +273,7 @@ main(int argc, char *argv[], char *envp[])
 
 		/* Don't add superfluous -Bstatic. */
 		if (ARGCMP(i, "-Bstatic") && i < argc - 1 &&
-		    (ARGCMP(i + 1, "-lcprts") ||  ARGCMP(i + 1, "-lunwind")))
+		    (ARGCMP(i + 1, "-lcprts") || ARGCMP(i + 1, "-lunwind")))
 			continue;
 
 		/*

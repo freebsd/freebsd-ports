@@ -90,6 +90,7 @@
     SUBDIR += huc
     SUBDIR += hugs
     SUBDIR += icc
+    SUBDIR += icc7
     SUBDIR += ici
     SUBDIR += icon
     SUBDIR += ifc
