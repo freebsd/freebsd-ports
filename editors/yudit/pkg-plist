@@ -1,122 +1,309 @@
-bin/makeumap
+bin/mytool
 bin/uniconv
 bin/uniprint
-bin/stripumap
 bin/yudit
-share/yudit/config/yuditrc
-share/yudit/data/8859_1.bumap
-share/yudit/data/8859_1.umap
-share/yudit/data/8859_2.bumap
-share/yudit/data/8859_3.bumap
-share/yudit/data/8859_4.bumap
-share/yudit/data/8859_5.bumap
-share/yudit/data/8859_7.bumap
-share/yudit/data/8859_9.bumap
-share/yudit/data/Arabic.kmap
-share/yudit/data/ArmenianEast.kmap
-share/yudit/data/ArmenianWest.kmap
-share/yudit/data/BIG5.bumap
-share/yudit/data/BIG5_X11.umap
-share/yudit/data/CP1251.bumap
-share/yudit/data/Chinese-CJ.kmap
-share/yudit/data/Cyrillic.kmap
-share/yudit/data/Czech.kmap
-share/yudit/data/DE-RU.kmap
-share/yudit/data/Danish.kmap
-share/yudit/data/Dutch.kmap
-share/yudit/data/Esperanto.kmap
-share/yudit/data/Ethiopic.kmap
-share/yudit/data/French.kmap
-share/yudit/data/GB2312L.bumap
-share/yudit/data/GB2312R.bumap
-share/yudit/data/Georgian.kmap
-share/yudit/data/German.kmap
-share/yudit/data/Greek.kmap
-share/yudit/data/GreekBible.kmap
-share/yudit/data/GreekMono.kmap
-share/yudit/data/Guarani.kmap
-share/yudit/data/Hangul.kmap
-share/yudit/data/Hangul2.kmap
-share/yudit/data/Hangul3.kmap
-share/yudit/data/Hebrew.kmap
-share/yudit/data/Hungarian.kmap
-share/yudit/data/JIS0201.bumap
-share/yudit/data/JIS0208.bumap
-share/yudit/data/JIS0212.bumap
-share/yudit/data/KOI8_R.bumap
-share/yudit/data/KOI8_R.kmap
-share/yudit/data/KSC5601L.bumap
-share/yudit/data/KSC5601R.bumap
-share/yudit/data/Kana.kmap
-share/yudit/data/Lithuanian.kmap
-share/yudit/data/Mnemonic.kmap
-share/yudit/data/OLD5601.bumap
-share/yudit/data/Polish.kmap
-share/yudit/data/Polytonic.kmap
-share/yudit/data/Russian.kmap
-share/yudit/data/SGML.kmap
-share/yudit/data/Spanish.kmap
-share/yudit/data/TeX.kmap
-share/yudit/data/Thai.kmap
-share/yudit/data/Troff.kmap
-share/yudit/data/Unicode2.kmap
-share/yudit/data/VISCII.bumap
-share/yudit/data/Vietnamese.kmap
-share/yudit/data/VietnameseTelex.kmap
-share/yudit/data/VNtelex.kmap
-share/yudit/data/Welsh.kmap
-share/yudit/data/XKB_iso8859-4.kmap
-share/yudit/help/Config-de.help
-share/yudit/help/Config-fr.help
-share/yudit/help/Config-hu.help
-share/yudit/help/Config-zh_TW.help
-share/yudit/help/Config.help
-share/yudit/help/General-de.help
-share/yudit/help/General-hu.help
-share/yudit/help/General-zh_TW.help
-share/yudit/help/General.help
-share/yudit/help/TestPage.help
-share/yudit/locale/az.utf8/LC_MESSAGES/messages.mo
-share/yudit/locale/da.utf8/LC_MESSAGES/messages.mo
-share/yudit/locale/de.utf8/LC_MESSAGES/messages.mo
-share/yudit/locale/es.utf8/LC_MESSAGES/messages.mo
-share/yudit/locale/fr.utf8/LC_MESSAGES/messages.mo
-share/yudit/locale/hu.utf8/LC_MESSAGES/messages.mo
-share/yudit/locale/it.utf8/LC_MESSAGES/messages.mo
-share/yudit/locale/ja.utf8/LC_MESSAGES/messages.mo
-share/yudit/locale/po.utf8/LC_MESSAGES/messages.mo
-share/yudit/locale/ru.utf8/LC_MESSAGES/messages.mo
-share/yudit/locale/sl.utf8/LC_MESSAGES/messages.mo
-share/yudit/locale/your.utf8/LC_MESSAGES/messages.mo
-share/yudit/locale/zh_TW.utf8/LC_MESSAGES/messages.mo
-@dirrm share/yudit/locale/zh_TW.utf8/LC_MESSAGES
-@dirrm share/yudit/locale/zh_TW.utf8
-@dirrm share/yudit/locale/your.utf8/LC_MESSAGES
-@dirrm share/yudit/locale/your.utf8
-@dirrm share/yudit/locale/sl.utf8/LC_MESSAGES
-@dirrm share/yudit/locale/sl.utf8
-@dirrm share/yudit/locale/ru.utf8/LC_MESSAGES
-@dirrm share/yudit/locale/ru.utf8
-@dirrm share/yudit/locale/po.utf8/LC_MESSAGES
-@dirrm share/yudit/locale/po.utf8
-@dirrm share/yudit/locale/ja.utf8/LC_MESSAGES
-@dirrm share/yudit/locale/ja.utf8
-@dirrm share/yudit/locale/it.utf8/LC_MESSAGES
-@dirrm share/yudit/locale/it.utf8
-@dirrm share/yudit/locale/hu.utf8/LC_MESSAGES
-@dirrm share/yudit/locale/hu.utf8
-@dirrm share/yudit/locale/fr.utf8/LC_MESSAGES
-@dirrm share/yudit/locale/fr.utf8
-@dirrm share/yudit/locale/es.utf8/LC_MESSAGES
-@dirrm share/yudit/locale/es.utf8
-@dirrm share/yudit/locale/de.utf8/LC_MESSAGES 
-@dirrm share/yudit/locale/de.utf8
-@dirrm share/yudit/locale/da.utf8/LC_MESSAGES
-@dirrm share/yudit/locale/da.utf8
-@dirrm share/yudit/locale/az.utf8/LC_MESSAGES
-@dirrm share/yudit/locale/az.utf8
-@dirrm share/yudit/locale
-@dirrm share/yudit/help
+share/yudit/config/yudit.properties
+share/yudit/data/ASCII-IPA.my
+share/yudit/data/Arabic.my
+share/yudit/data/ArabicKeyboard.my
+share/yudit/data/ArabicTranslit.my
+share/yudit/data/ArmenianEast.my
+share/yudit/data/ArmenianWest.my
+share/yudit/data/Azeri.my
+share/yudit/data/Belarusian.my
+share/yudit/data/Ben-Inscript.my
+share/yudit/data/Bengali.my
+share/yudit/data/Bulgarian.my
+share/yudit/data/CS-dead.my
+share/yudit/data/Chinese-CJ.my
+share/yudit/data/Croatian.my
+share/yudit/data/Cyrillic.my
+share/yudit/data/Czech.my
+share/yudit/data/DE-RU.my
+share/yudit/data/Danish.my
+share/yudit/data/Dev-Inscript.my
+share/yudit/data/Dev-Phonetic.my
+share/yudit/data/Devanagari.my
+share/yudit/data/Dutch.my
+share/yudit/data/Esperanto.my
+share/yudit/data/Ethiopic.my
+share/yudit/data/French.my
+share/yudit/data/Georgian.my
+share/yudit/data/German.my
+share/yudit/data/GrandLatin.my
+share/yudit/data/GreekBible.my
+share/yudit/data/GreekMonotonic.my
+share/yudit/data/GreekPolytonic.my
+share/yudit/data/Guarani.my
+share/yudit/data/Guj-Inscript.my
+share/yudit/data/Gujarati.my
+share/yudit/data/Gur-Inscript.my
+share/yudit/data/Gurmukhi.my
+share/yudit/data/Hangul.my
+share/yudit/data/Hangul2.my
+share/yudit/data/Hangul3.my
+share/yudit/data/Hebrew.my
+share/yudit/data/HebrewIsraeli.my
+share/yudit/data/Hungarian-prefix.my
+share/yudit/data/Hungarian.my
+share/yudit/data/Israeli.my
+share/yudit/data/KOI8_R_KEY.my
+share/yudit/data/Kan-Inscript.my
+share/yudit/data/Kana.my
+share/yudit/data/Kanji.my
+share/yudit/data/Kannada.my
+share/yudit/data/Lithuanian.my
+share/yudit/data/Mal-Inscript.my
+share/yudit/data/Malayalam.my
+share/yudit/data/Mnemonic.my
+share/yudit/data/OldHungarian.my
+share/yudit/data/Ori-Inscript.my
+share/yudit/data/Oriya.my
+share/yudit/data/Polish.my
+share/yudit/data/RU-javerty.my
+share/yudit/data/RU-translit.my
+share/yudit/data/Russian-ISO-Translit.my
+share/yudit/data/Russian.my
+share/yudit/data/SGML.my
+share/yudit/data/SK.my
+share/yudit/data/SR-Cyrillic.my
+share/yudit/data/Slovenian.my
+share/yudit/data/Spanish.my
+share/yudit/data/TCVNcombine.my
+share/yudit/data/TCVNkey.my
+share/yudit/data/TIS_620.my
+share/yudit/data/Tam-Inscript.my
+share/yudit/data/Tamil.my
+share/yudit/data/TeX.my
+share/yudit/data/Tel-Inscript.my
+share/yudit/data/Telugu.my
+share/yudit/data/Thai.my
+share/yudit/data/Troff.my
+share/yudit/data/Ukr_Extended.my
+share/yudit/data/Ukrainian.my
+share/yudit/data/Unicode.my
+share/yudit/data/VNtelex.my
+share/yudit/data/Vietnamese.my
+share/yudit/data/VietnameseTelex.my
+share/yudit/data/Welsh.my
+share/yudit/data/Yiddish.my
+share/yudit/data/big-5.my
+share/yudit/data/category.my
+share/yudit/data/cluster.my
+share/yudit/data/cp-1250.my
+share/yudit/data/cp-1251.my
+share/yudit/data/example.my
+share/yudit/data/gb-2312-l.my
+share/yudit/data/gb-2312-r.my
+share/yudit/data/gnome-yudit.png
+share/yudit/data/hanzi.hwd
+share/yudit/data/hiragana.hwd
+share/yudit/data/indic.my
+share/yudit/data/iso-646.my
+share/yudit/data/iso-8859-1.my
+share/yudit/data/iso-8859-15.my
+share/yudit/data/iso-8859-16.my
+share/yudit/data/iso-8859-2.my
+share/yudit/data/iso-8859-3.my
+share/yudit/data/iso-8859-4.my
+share/yudit/data/iso-8859-5.my
+share/yudit/data/iso-8859-6.my
+share/yudit/data/iso-8859-7.my
+share/yudit/data/iso-8859-8.my
+share/yudit/data/iso-8859-9.my
+share/yudit/data/iso-8859e.my
+share/yudit/data/jis-0201.my
+share/yudit/data/jis-0208.my
+share/yudit/data/jis-0212.my
+share/yudit/data/kanji.hwd
+share/yudit/data/katakana.hwd
+share/yudit/data/koi8-c.my
+share/yudit/data/koi8-r.my
+share/yudit/data/koi8-u.my
+share/yudit/data/ksc-5601-l.my
+share/yudit/data/ksc-5601-old.my
+share/yudit/data/ksc-5601-r.my
+share/yudit/data/mik.my
+share/yudit/data/mirroring.my
+share/yudit/data/precompose.my
+share/yudit/data/rovas.my
+share/yudit/data/shape.my
+share/yudit/data/smeTeX.my
+share/yudit/data/tcvn.my
+share/yudit/data/tscii.my
+share/yudit/data/viscii.my
+share/yudit/data/windows-1255.my
+share/yudit/data/wingreek.my
+share/yudit/doc/COPYING.TXT
+share/yudit/doc/FAQ.TXT
+share/yudit/doc/HOWTO-arabic.txt
+share/yudit/doc/HOWTO-configure.txt
+share/yudit/doc/HOWTO-devanagari.txt
+share/yudit/doc/HOWTO-freehand.txt
+share/yudit/doc/HOWTO-japanese.txt
+share/yudit/doc/HOWTO-keymap.txt
+share/yudit/doc/HOWTO-malayalam.txt
+share/yudit/doc/HOWTO-rovasiras.txt
+share/yudit/doc/HOWTO-tamil.txt
+share/yudit/doc/HOWTO-windows.txt
+share/yudit/doc/README.TXT
+share/yudit/doc/TestPage.txt
+share/yudit/doc/UTF-8-demo.txt
+share/yudit/doc/UTF-8-test.txt
+share/yudit/doc/Yudit.bidi.txt
+share/yudit/doc/cz/FAQ.TXT
+share/yudit/doc/de/FAQ.TXT
+share/yudit/doc/es/FAQ.TXT
+share/yudit/doc/fi/FAQ.TXT
+share/yudit/doc/hu/FAQ.TXT
+share/yudit/doc/ja/FAQ.TXT
+share/yudit/doc/my-format.txt
+share/yudit/doc/yi/FAQ.TXT
+share/yudit/fonts/README.TXT
+share/yudit/fonts/yudit.ttf
+share/yudit/locale/ar/LC_MESSAGES/messages.mo
+share/yudit/locale/az/LC_MESSAGES/messages.mo
+share/yudit/locale/bg/LC_MESSAGES/messages.mo
+share/yudit/locale/cz/LC_MESSAGES/messages.mo
+share/yudit/locale/de/LC_MESSAGES/messages.mo
+share/yudit/locale/en/LC_MESSAGES/messages.po
+share/yudit/locale/es/LC_MESSAGES/messages.mo
+share/yudit/locale/fi/LC_MESSAGES/messages.mo
+share/yudit/locale/fr/LC_MESSAGES/messages.mo
+share/yudit/locale/hi/LC_MESSAGES/messages.mo
+share/yudit/locale/hu/LC_MESSAGES/messages.mo
+share/yudit/locale/ja/LC_MESSAGES/messages.mo
+share/yudit/locale/sl/LC_MESSAGES/messages.mo
+share/yudit/locale/sr/LC_MESSAGES/messages.mo
+share/yudit/locale/ta/LC_MESSAGES/messages.mo
+share/yudit/locale/uk/LC_MESSAGES/messages.mo
+share/yudit/locale/yi/LC_MESSAGES/messages.mo
+share/yudit/src/ASCII-IPA.kmap
+share/yudit/src/Arabic.kmap
+share/yudit/src/ArabicKeyboard.kmap
+share/yudit/src/ArabicTranslit.kmap
+share/yudit/src/ArmenianEast.kmap
+share/yudit/src/ArmenianWest.kmap
+share/yudit/src/Azeri.kmap
+share/yudit/src/Belarusian.kmap
+share/yudit/src/Ben-Inscript.kmap
+share/yudit/src/Bengali.kmap
+share/yudit/src/Bulgarian.kmap
+share/yudit/src/CS-dead.kmap
+share/yudit/src/Chinese-CJ.kmap
+share/yudit/src/Croatian.kmap
+share/yudit/src/Cyrillic.kmap
+share/yudit/src/Czech.kmap
+share/yudit/src/DE-RU.kmap
+share/yudit/src/Danish.kmap
+share/yudit/src/Dev-Inscript.kmap
+share/yudit/src/Dev-Phonetic.kmap
+share/yudit/src/Devanagari.kmap
+share/yudit/src/Dutch.kmap
+share/yudit/src/Esperanto.kmap
+share/yudit/src/Ethiopic.kmap
+share/yudit/src/French.kmap
+share/yudit/src/Georgian.kmap
+share/yudit/src/German.kmap
+share/yudit/src/GrandLatin.kmap
+share/yudit/src/GreekBible.kmap
+share/yudit/src/GreekMonotonic.kmap
+share/yudit/src/GreekPolytonic.kmap
+share/yudit/src/Guarani.kmap
+share/yudit/src/Guj-Inscript.kmap
+share/yudit/src/Gujarati.kmap
+share/yudit/src/Gur-Inscript.kmap
+share/yudit/src/Gurmukhi.kmap
+share/yudit/src/Hangul2.kmap
+share/yudit/src/Hangul3.kmap
+share/yudit/src/Hebrew.kmap
+share/yudit/src/HebrewIsraeli.kmap
+share/yudit/src/Hungarian-prefix.kmap
+share/yudit/src/Hungarian.kmap
+share/yudit/src/Israeli.kmap
+share/yudit/src/KOI8_R_KEY.kmap
+share/yudit/src/Kan-Inscript.kmap
+share/yudit/src/Kana.kmap
+share/yudit/src/Kanji.kmap
+share/yudit/src/Kannada.kmap
+share/yudit/src/Lithuanian.kmap
+share/yudit/src/Mal-Inscript.kmap
+share/yudit/src/Malayalam.kmap
+share/yudit/src/Mnemonic.kmap
+share/yudit/src/OldHungarian.kmap
+share/yudit/src/Ori-Inscript.kmap
+share/yudit/src/Oriya.kmap
+share/yudit/src/Polish.kmap
+share/yudit/src/RU-javerty.kmap
+share/yudit/src/RU-translit.kmap
+share/yudit/src/Russian-ISO-Translit.kmap
+share/yudit/src/Russian.kmap
+share/yudit/src/SGML.kmap
+share/yudit/src/SK.kmap
+share/yudit/src/SR-Cyrillic.kmap
+share/yudit/src/Slovenian.kmap
+share/yudit/src/Spanish.kmap
+share/yudit/src/TCVNcombine.kmap
+share/yudit/src/TCVNkey.kmap
+share/yudit/src/Tam-Inscript.kmap
+share/yudit/src/Tamil.kmap
+share/yudit/src/TeX.kmap
+share/yudit/src/Tel-Inscript.kmap
+share/yudit/src/Telugu.kmap
+share/yudit/src/Thai.kmap
+share/yudit/src/Troff.kmap
+share/yudit/src/Unicode.kmap
+share/yudit/src/VNtelex.kmap
+share/yudit/src/Vietnamese.kmap
+share/yudit/src/VietnameseTelex.kmap
+share/yudit/src/Welsh.kmap
+share/yudit/src/Yiddish.kmap
+share/yudit/src/smeTeX.kmap
 @dirrm share/yudit/data
 @dirrm share/yudit/config
+@dirrm share/yudit/fonts
+@dirrm share/yudit/locale/ar/LC_MESSAGES
+@dirrm share/yudit/locale/ar
+@dirrm share/yudit/locale/az/LC_MESSAGES
+@dirrm share/yudit/locale/az
+@dirrm share/yudit/locale/bg/LC_MESSAGES
+@dirrm share/yudit/locale/bg
+@dirrm share/yudit/locale/cz/LC_MESSAGES
+@dirrm share/yudit/locale/cz
+@dirrm share/yudit/locale/de/LC_MESSAGES
+@dirrm share/yudit/locale/de
+@dirrm share/yudit/locale/en/LC_MESSAGES
+@dirrm share/yudit/locale/en
+@dirrm share/yudit/locale/es/LC_MESSAGES
+@dirrm share/yudit/locale/es
+@dirrm share/yudit/locale/fi/LC_MESSAGES
+@dirrm share/yudit/locale/fi
+@dirrm share/yudit/locale/fr/LC_MESSAGES
+@dirrm share/yudit/locale/fr
+@dirrm share/yudit/locale/hi/LC_MESSAGES
+@dirrm share/yudit/locale/hi
+@dirrm share/yudit/locale/hu/LC_MESSAGES
+@dirrm share/yudit/locale/hu
+@dirrm share/yudit/locale/ja/LC_MESSAGES
+@dirrm share/yudit/locale/ja
+@dirrm share/yudit/locale/sl/LC_MESSAGES
+@dirrm share/yudit/locale/sl
+@dirrm share/yudit/locale/sr/LC_MESSAGES
+@dirrm share/yudit/locale/sr
+@dirrm share/yudit/locale/ta/LC_MESSAGES
+@dirrm share/yudit/locale/ta
+@dirrm share/yudit/locale/uk/LC_MESSAGES
+@dirrm share/yudit/locale/uk
+@dirrm share/yudit/locale/yi/LC_MESSAGES
+@dirrm share/yudit/locale/yi
+@dirrm share/yudit/locale
+@dirrm share/yudit/src
+@dirrm share/yudit/doc/de
+@dirrm share/yudit/doc/ja
+@dirrm share/yudit/doc/hu
+@dirrm share/yudit/doc/yi
+@dirrm share/yudit/doc/es
+@dirrm share/yudit/doc/fi
+@dirrm share/yudit/doc/cz
+@dirrm share/yudit/doc
 @dirrm share/yudit
