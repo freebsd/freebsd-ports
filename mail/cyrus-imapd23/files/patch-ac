@@ -1,7 +1,7 @@
 Index: configure
 diff -u configure.orig configure
 --- configure.orig	Sat May 29 03:08:17 2004
-+++ configure	Sat May 29 04:38:20 2004
++++ configure	Sat May 29 06:43:27 2004
 @@ -6551,7 +6551,7 @@
  	    BDB_LIBADD=""
  	fi
@@ -33,6 +33,15 @@ diff -u configure.orig configure
      PERL_CCCDLFLAGS="$cccdlflags"
  
  fi
+@@ -14020,7 +14021,7 @@
+ 
+     if test -n "$SNMP_LIBS" && test -n "$SNMP_PREFIX"; then
+       CPPFLAGS="$CPPFLAGS -I${SNMP_PREFIX}/include"
+-      LIB_UCDSNMP=$SNMP_LIBS
++      LIB_UCDSNMP="$SNMP_LIBS -lwrap"
+ 
+ cat >>confdefs.h <<\_ACEOF
+ #define HAVE_NETSNMP 1
 @@ -14251,7 +14252,7 @@
  #define HAVE_UCDSNMP 1
  _ACEOF

@@ -110,8 +110,23 @@ BUILD_DEPENDS+=	${LOCALBASE}/lib/libdrac.a:${PORTSDIR}/mail/drac
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_SNMP)
+.if !defined(WITH_SNMP_VER) && defined(WITH_SNMP)
+.if exists(${LOCALBASE}/lib/libsnmp.so.6)
+WITH_SNMP_VER=	5
+.elif exists(${LOCALBASE}/lib/libsnmp.so.4)
+WITH_SNMP_VER=	4
+.else
+WITH_SNMP_VER=	5
+.endif
+.endif
+.if defined(WITH_SNMP_VER)
+.if ${WITH_SNMP_VER} == 4
 LIB_DEPENDS+=	snmp.4:${PORTSDIR}/net-mgmt/net-snmp4
+.elif ${WITH_SNMP_VER} == 5
+LIB_DEPENDS+=	netsnmp.6:${PORTSDIR}/net-mgmt/net-snmp
+.else
+BROKEN=		"WITH_SNMP_VER must be 4 or 5"
+.endif
 CONFIGURE_ARGS+=--with-snmp=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=--with-snmp=no

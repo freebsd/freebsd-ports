@@ -1,7 +1,7 @@
 Index: aclocal.m4
 diff -u aclocal.m4.orig aclocal.m4
 --- aclocal.m4.orig	Sat May 29 03:08:14 2004
-+++ aclocal.m4	Sat May 29 04:57:43 2004
++++ aclocal.m4	Sat May 29 07:10:54 2004
 @@ -505,7 +505,7 @@
  	    BDB_LIBADD=""
  	fi
@@ -20,6 +20,15 @@ diff -u aclocal.m4.orig aclocal.m4
                          dblib="no")
  
  	CPPFLAGS=$cmu_save_CPPFLAGS
+@@ -1806,7 +1806,7 @@
+ 
+     if test -n "$SNMP_LIBS" && test -n "$SNMP_PREFIX"; then
+       CPPFLAGS="$CPPFLAGS -I${SNMP_PREFIX}/include"
+-      LIB_UCDSNMP=$SNMP_LIBS
++      LIB_UCDSNMP="$SNMP_LIBS -lwrap"
+       AC_DEFINE(HAVE_NETSNMP,1,[Do we have Net-SNMP support?])
+       AC_SUBST(LIB_UCDSNMP)
+       AC_MSG_RESULT(yes)
 @@ -1834,7 +1834,7 @@
      LIB_UCDSNMP=""
      if test "$with_snmp" != no; then
