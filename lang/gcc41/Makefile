@@ -40,11 +40,7 @@ NOMANCOMPRESS=	yes	# too hard to deal with differences on 5-cur and releng4
 
 .include <bsd.port.pre.mk>
 
-.if ${PORTOBJFORMAT} == "aout"
-CONFIGURE_TARGET=	${ARCH}-portbld-freebsdaout${OSREL}
-.else
 CONFIGURE_TARGET=	${ARCH}-portbld-freebsd${OSREL}
-.endif
 
 GCC_REV=	${PORTVERSION:C/\.0$//}
 #SRCDIR=		${WRKDIR}/gcc-${GCC_REV}
