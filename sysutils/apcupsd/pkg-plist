@@ -5,6 +5,7 @@ sbin/apctest
 %%POWERFL%%sbin/powerflute
 etc/apcupsd/apcupsd.conf.net-master.sample
 etc/apcupsd/apcupsd.conf.net-slave.sample
+etc/apcupsd/apcupsd.conf.sample
 etc/apcupsd/apccontrol
 etc/apcupsd/changeme
 etc/apcupsd/commfailure
@@ -13,8 +14,7 @@ etc/apcupsd/mainsback
 etc/apcupsd/masterconnect
 etc/apcupsd/mastertimeout
 etc/apcupsd/onbattery
-etc/apcupsd/apcupsd.conf.sample
-%%CGI%%etc/apcupsd/cgi/apcupsd.css.sample
+%%CGI%%etc/apcupsd/apcupsd.css.sample
 %%CGI%%etc/apcupsd/cgi/multimon.cgi
 %%CGI%%etc/apcupsd/cgi/upsfstats.cgi
 %%CGI%%etc/apcupsd/cgi/upsimage.cgi
