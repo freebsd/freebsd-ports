@@ -1,3 +1,8 @@
+**************************************************************
+
 Please don't forget to copy and edit configuration files found
-in ${PREFIX}/etc/bforce.END-of-bforce-kst/pkg-message
-exit
+in %%PREFIX%%/%%CONFIGDIR%%.
+
+If you using u-srif, please install lang/python
+
+**************************************************************

@@ -23,6 +23,13 @@ GNU_CONFIGURE=	yes
 
 CONFIGDIR=	etc/fido/bforce
 
+CONTRIBS=	bfha/README bfha/bfha.pl bflan callout.sh outman timesync.tcl \
+		u-srif/conf/report.footer u-srif/conf/report.header u-srif/conf/u-srif.aliases \
+		u-srif/conf/u-srif.conf u-srif/conf/u-srif.dirs u-srif/lib/uconfig.py \
+		u-srif/lib/udbase.py u-srif/lib/ufido.py u-srif/lib/unodestat.py \
+		u-srif/lib/utmpl.py u-srif/lib/uutil.py u-srif/u-srif-index.py \
+		u-srif/u-srif-lookup.py u-srif/u-srif.py
+
 FIXME=		include/bforce.h include/util.h include/logger.h \
 		bforce/bforce.c bforce/conf_proc.c bforce/conf_read.c bforce/daemon.c \
 		bforce/daemon_branch.c bforce/daemon_call.c  bforce/daemon_lines.c \
@@ -56,9 +63,21 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/../examples/bforce.subst ${PREFIX}/${CONFIGDIR}/bforce.subst.sample
 	${INSTALL_DATA} ${WRKSRC}/../examples/freq.aliases ${PREFIX}/${CONFIGDIR}/freq.aliases.sample
 	${INSTALL_DATA} ${WRKSRC}/../examples/freq.dirs ${PREFIX}/${CONFIGDIR}/freq.dirs.sample
+
+	${MKDIR} ${DATADIR} ${DATADIR}/bfha ${DATADIR}/u-srif/conf ${DATADIR}/u-srif/lib
+.for i in ${CONTRIBS}
+	${INSTALL_DATA} ${WRKSRC}/../contrib/${i} ${DATADIR}/${i}
+.endfor
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+.for i in CHANGES CHANGES.kst COPYING README README.kst
+	${INSTALL_DATA} ${WRKSRC}/../${i} ${DOCSDIR}
+.endfor
+.endif
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/bforce ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/bfindex ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/bfstat ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/nlookup ${PREFIX}/bin
+	@${SED} -e 's|%%PREFIX%%|${PREFIX}|' -e 's|%%CONFIGDIR%%|${CONFIGDIR}|' ${PKGMESSAGE}
 
 .include <bsd.port.mk>

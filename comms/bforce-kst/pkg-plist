@@ -7,4 +7,35 @@ bin/nlookup
 %%CONFIGDIR%%/bforce.subst.sample
 %%CONFIGDIR%%/freq.aliases.sample
 %%CONFIGDIR%%/freq.dirs.sample
+%%DATADIR%%/bfha/README
+%%DATADIR%%/bfha/bfha.pl
+%%DATADIR%%/bflan
+%%DATADIR%%/callout.sh
+%%DATADIR%%/outman
+%%DATADIR%%/timesync.tcl
+%%DATADIR%%/u-srif/conf/report.footer
+%%DATADIR%%/u-srif/conf/report.header
+%%DATADIR%%/u-srif/conf/u-srif.aliases
+%%DATADIR%%/u-srif/conf/u-srif.conf
+%%DATADIR%%/u-srif/conf/u-srif.dirs
+%%DATADIR%%/u-srif/lib/uconfig.py
+%%DATADIR%%/u-srif/lib/udbase.py
+%%DATADIR%%/u-srif/lib/ufido.py
+%%DATADIR%%/u-srif/lib/unodestat.py
+%%DATADIR%%/u-srif/lib/utmpl.py
+%%DATADIR%%/u-srif/lib/uutil.py
+%%DATADIR%%/u-srif/u-srif-index.py
+%%DATADIR%%/u-srif/u-srif-lookup.py
+%%DATADIR%%/u-srif/u-srif.py
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES.kst
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.kst
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%CONFIGDIR%%
+@dirrm %%DATADIR%%/u-srif/lib
+@dirrm %%DATADIR%%/u-srif/conf
+@dirrm %%DATADIR%%/u-srif
+@dirrm %%DATADIR%%/bfha
+@dirrm %%DATADIR%%
