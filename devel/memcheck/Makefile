@@ -17,9 +17,4 @@ USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 
-post-patch:
-.for file in memcheck.c tmemcheck.c
-	@${REINPLACE_CMD} -e 's#<malloc.h>#<stdlib.h>#g' ${WRKSRC}/${file}
-.endfor
-
 .include <bsd.port.mk>
