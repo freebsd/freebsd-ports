@@ -34,8 +34,4 @@
 @dirrm %%BBDB_LISPDIR%%
 %%PORTDOCS%%@unexec install-info --delete --section="%%DIRSECTION%%" --entry="%%INFOENTRY%%" %D/info/bbdb.info %D/info/dir
 %%PORTDOCS%%info/bbdb.info
-%%PORTDOCS%%info/bbdb.info-1
-%%PORTDOCS%%info/bbdb.info-2
-%%PORTDOCS%%info/bbdb.info-3
-%%PORTDOCS%%info/bbdb.info-4
 %%PORTDOCS%%@exec install-info --section="%%DIRSECTION%%" --entry="%%INFOENTRY%%" %D/info/bbdb.info %D/info/dir
