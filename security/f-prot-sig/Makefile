@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	f-prot-sig
-PORTVERSION=	20040725
+PORTVERSION=	20040727
 CATEGORIES=	security
-MASTER_SITES=	ftp://ftp.f-prot.com/pub/
+MASTER_SITES=	ftp://ftp.f-prot.com/pub/ \
+		http://updates.f-prot.com/files/
 DISTFILES=	fp-def.zip macrdef2.zip
 DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
