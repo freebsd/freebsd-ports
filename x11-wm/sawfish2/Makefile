@@ -37,10 +37,10 @@ CONFIGURE_ARGS=	--with-readline \
 		--localstatedir=${PREFIX}/share \
 		--datadir=${PREFIX}/share \
 		--enable-capplet \
-		--disable-themer
+		--disable-themer \
+		--with-esd
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=		--with-esd
 CONFIGURE_TARGET=	${ARCH}-pc-freebsd${OSREL:C/\..*//}
 
 post-patch:
