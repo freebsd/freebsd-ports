@@ -4,7 +4,7 @@ SENDMAIL_DIR=/usr/src/contrib/sendmail
 .PATH:  ${SENDMAIL_DIR}/libmilter
 
 CFLAGS+=-I${SENDMAIL_DIR}/src -I${SENDMAIL_DIR}/include
-CFLAGS+=-DNEWDB -DNIS -DMAP_REGEX -DNOT_SENDMAIL
+CFLAGS+=-DNEWDB -DNIS -DMAP_REGEX -DNOT_SENDMAIL -D_FFR_MILTER=1
 
 # User customizations to the sendmail build environment
 CFLAGS+=${SENDMAIL_CFLAGS}
