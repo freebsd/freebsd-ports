@@ -1,0 +1,21 @@
+%%PYTHON_CODECDIR%%/euc_kr.py
+%%PYTHON_CODECDIR%%/euc_kr.pyc
+%%PYTHON_CODECDIR%%/korean/__init__.py
+%%PYTHON_CODECDIR%%/korean/euc2ucs.py
+%%PYTHON_CODECDIR%%/korean/hanja2ucs.py
+%%PYTHON_CODECDIR%%/korean/misc2ucs.py
+%%PYTHON_CODECDIR%%/korean/ucs2euc.py
+%%PYTHON_CODECDIR%%/korean/ucs2hanja.py
+%%PYTHON_CODECDIR%%/korean/ucs2misc.py
+%%PYTHON_CODECDIR%%/korean/ucs2uhc.py
+%%PYTHON_CODECDIR%%/korean/uhc2ucs.py
+%%PYTHON_CODECDIR%%/korean/__init__.pyc
+%%PYTHON_CODECDIR%%/korean/euc2ucs.pyc
+%%PYTHON_CODECDIR%%/korean/hanja2ucs.pyc
+%%PYTHON_CODECDIR%%/korean/misc2ucs.pyc
+%%PYTHON_CODECDIR%%/korean/ucs2euc.pyc
+%%PYTHON_CODECDIR%%/korean/ucs2hanja.pyc
+%%PYTHON_CODECDIR%%/korean/ucs2misc.pyc
+%%PYTHON_CODECDIR%%/korean/ucs2uhc.pyc
+%%PYTHON_CODECDIR%%/korean/uhc2ucs.pyc
+@dirrm %%PYTHON_CODECDIR%%/korean
