@@ -1,17 +1,6 @@
-This is version 2.2 (May 13, 1998) of the ispell dictionary br.ispell for
-brazilian portuguese. It's available here for download as br.ispell-2.2.tar.gz
-, under the terms of the GNU GPL . You can freely redistribute and/or use it
-for spelling checking through ispell . It can also be freely used for other
-purposes, as far as the resulting work remain free. The main page (in
-portuguese) for this dictionary is http://www.ime.usp.br/~ueda/br.ispell . 
+This the br.ispell dictionary for brazilian portuguese. It's
+freely available under the terms of the GNU GPL. You can freely
+redistribute and/or use it for spell checking through ispell
+(http://fmg-www.cs.ucla.edu/ficus-members/geoff/ispell.html).
 
-Current status is good enough to be used for daily needs. This dictionary is
-being developed in a structured way. Verbs are treated apart by a specific
-software, a verb conjugator ( conjugue ). Names are partitioned into semantic
-classes to make vocabulary completion and revision easier. Please send your
-questions and/or comments to ueda@ime.usp.br (Ricardo Ueda Karpischek). 
-
-p.s. You can find another ispell dictionary for portuguese (as spoken in
-Portugal) at http://www.di.uminho.pt/~jj/pln/pln.html .
-
-WWW: http://www.ime.usp.br/~ueda/br.ispell/
+WWW: http://www.ime.usp.br/~ueda/br.ispell
