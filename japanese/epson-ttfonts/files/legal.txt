@@ -1,0 +1,38 @@
+
+Because of licensing restrictions, you must fetch the source distribution
+manually.  Read and accept the End User License Agreement in the
+following URLs, and then download the distfile and put it into
+%%DISTDIR%%/%%DIST_SUBDIR%% manually.
+
+ EULA (in Japanese only):
+  http://www.i-love-epson.co.jp/products/download/dl_chuui.htm
+  http://www.i-love-epson.co.jp/download/printer/driver/win/page/ttf30.htm
+
+ distfile:
+  http://www2.i-love-epson.co.jp/download/printer/driver/win/page/%%DIST_FILE%%
+
+For non-Japanese people:
+
+ This fontset requires the following:
+
+  1) You must have the supported platforms:
+      Microsoft Windows 95/98/Me/2000/XP/Server 2003 Japanese edition
+      Microsoft WindowsNT 3.51/4.0 Japanese edition
+
+  2) You can download/use this fontset for the supported
+     printers only:
+      LP-9800C/9600SPD/9600S/9600/9500C/9500CZ/9400/9300/9200SX/
+      9200S/9200PS2/9200/9100/9000/9000B/9000C/8900/8800CR/8800C/
+      8700PS3/8700/8600FXN/8600FX/8600FN/8600F/8600/8500C/8500/
+      8400FXN/8400FX/8400FN/8400F/8400/8300S/8300F/8300C/8300/
+      8200PS2/8200CPD/8200C/8200/8100/8000SX/8000SE/8000S/8000C/
+      8000/7900/7800C/7700/7500/7100/7000G/7000C/7000/6100/
+      3000C/3000/2500/2400/2200/2000LT/2000C/2000/1900N/1900/
+      1800/1700S/1700/1600/1500S/1500C/1500/1400/1300U/1300/
+      1200/1000/900/800S/800
+
+  3) You can download/use this fontset within Japan only.
+
+  4) Redistribution, commercial use, and/or modification of this fontset
+     are not permitted in any form.
+
