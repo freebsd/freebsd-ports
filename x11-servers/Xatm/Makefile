@@ -1,15 +1,15 @@
 # New ports collection makefile for:	xfs-atm
-# Version required:	3.0.1
 # Date created:		31 Oct 1999
 # Whom:			taguchi@tohoku.iij.ad.jp
 #
 # $FreeBSD$
 #
 
-DISTNAME=	xfs-atm+cid-3.0.1
-PKGNAME=	xfs-atm-3.0.1
+PORTNAME=	xfs-atm
+PORTVERSION= 	3.0.1
 CATEGORIES=	x11
 MASTER_SITES=	http://www.netlab.is.tsukuba.ac.jp/~yokota/archive/
+DISTNAME=	${PORTNAME}+cid-${PORTVERSION}
 
 MAINTAINER=	taguchi@tohoku.iij.ad.jp
 
