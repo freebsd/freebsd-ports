@@ -7,7 +7,7 @@
 
 PORTNAME=	python
 PORTVERSION=	2.2.3
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	lang python ipv6
 MASTER_SITES=	${PYTHON_MASTER_SITES}
 MASTER_SITE_SUBDIR=	${PYTHON_MASTER_SITE_SUBDIR}
@@ -73,14 +73,14 @@ CONFIGURE_ARGS+= --enable-ipv6
 CONFIGURE_ARGS+= --disable-ipv6
 .endif
 
-.if ${OSVERSION} >= 500000
-PLATFORMS=plat-freebsd2 plat-freebsd3 plat-freebsd4
-.elif ${OSVERSION} >= 400000
-PLATFORMS=plat-freebsd2 plat-freebsd3 plat-freebsd5
-.elif ${OSVERSION} >= 300000
-PLATFORMS=plat-freebsd2 plat-freebsd4 plat-freebsd5
-.else
+.if ${OSVERSION} >= 600000
 PLATFORMS=plat-freebsd3 plat-freebsd4 plat-freebsd5
+.elif ${OSVERSION} >= 500000
+PLATFORMS=plat-freebsd3 plat-freebsd4 plat-freebsd6
+.elif ${OSVERSION} >= 400000
+PLATFORMS=plat-freebsd3 plat-freebsd5 plat-freebsd6
+.else
+PLATFORMS=plat-freebsd4 plat-freebsd5 plat-freebsd6
 .endif
 
 pre-patch:
@@ -90,6 +90,9 @@ pre-patch:
 	${REINPLACE_CMD} -e \
 		's|^\(prefixes = .*\)\]$$|\1, "${X11BASE}"]|g' \
 		${WRKSRC}/Lib/site.py
+	${MKDIR} ${WRKSRC}/Lib/plat-freebsd6
+	${CP} ${WRKSRC}/Lib/plat-freebsd5/regen ${WRKSRC}/Lib/plat-freebsd6/
+
 
 pre-su-install:
 .for platform in ${PLATFORMS}
