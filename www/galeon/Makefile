@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	galeon
-PORTVERSION=	1.2.6
-PORTREVISION=	1
+PORTVERSION=	1.2.7
 CATEGORIES=	www gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -19,7 +18,7 @@ BUILD_DEPENDS=	${X11BASE}/include/mozilla${HEADERS_SUFX}/gtkembedmoz/gtkmozembed
 LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
 RUN_DEPENDS=	${X11BASE}/lib/${MOZILLA}/libgtkembedmoz.so:${PORTSDIR}/www/${MOZILLA}
 
-MOZ_CONFIGURE_ARGS=
+MOZ_CONFIGURE_ARGS=--with-mozilla-snapshot="1.1"
 
 .if !defined(WITH_MOZILLA)
 MOZILLA=	mozilla
@@ -33,7 +32,7 @@ MOZ_CONFIGURE_ARGS=	--with-mozilla-snapshot="1.0"
 .if ${WITH_MOZILLA}=="mozilla-devel" || ${WITH_MOZILLA}=="mozilla-embedded-devel"
 MOZILLA=	${WITH_MOZILLA}
 HEADERS_SUFX=	-devel
-MOZ_CONFIGURE_ARGS=	--with-mozilla-snapshot="trunk"
+MOZ_CONFIGURE_ARGS=	--with-mozilla-snapshot="1.2"
 .else
 .if ${WITH_MOZILLA}=="mozilla-embedded"
 MOZILLA=	mozilla-embedded
