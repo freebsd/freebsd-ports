@@ -1,5 +1,5 @@
 --- common.c.orig	Wed Dec 15 06:39:03 1999
-+++ common.c	Thu Mar 16 02:48:06 2000
++++ common.c	Wed Jul 19 10:09:32 2000
 @@ -115,7 +115,7 @@
  #endif
  
@@ -9,40 +9,32 @@
  {
    struct sockaddr_in address;
    int i, s;
-@@ -131,10 +131,12 @@
+@@ -131,9 +131,13 @@
  		 strerror (errno));
      }
  
 +  memset(&address, '\0', sizeof address);
++#if defined(__FreeBSD__) || defined(__OpenBSD__)
 +  address.sin_len = sizeof address;
++#endif
    address.sin_family = PF_INET;
    address.sin_port = htons ((short)port);
 -  address.sin_addr.s_addr = INADDR_ANY;
--  
 +  address.sin_addr = addr;
-+
+   
    if (bind (s, (struct sockaddr *)&address, sizeof (address)) == -1)
      {
-       close (s);
-@@ -153,8 +155,10 @@
+@@ -153,8 +157,12 @@
  int
  set_address (struct sockaddr_in *address, const char *host, int port)
  {
--  address->sin_family = PF_INET;
--  address->sin_port = htons ((short)port);
 +  memset(address, '\0', sizeof *address);
++#if defined(__FreeBSD__) || defined(__OpenBSD__)
 +  address->sin_len = sizeof *address;
-+  address->sin_family = AF_INET;
-+  address->sin_port = htons((u_short)port);
++#endif
+   address->sin_family = PF_INET;
+-  address->sin_port = htons ((short)port);
++  address->sin_port = htons ((u_short)port);
    address->sin_addr.s_addr = inet_addr (host);
  
    if (address->sin_addr.s_addr == INADDR_NONE)
-@@ -334,7 +338,7 @@
-   p = strchr (*name, ':');
-   if (p != NULL)
-     {
--      *port = atoi (p + 1);
-+      *port = atoi(p + 1);
-       *p = '\0';
-     }
- }
