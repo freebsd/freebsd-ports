@@ -53,6 +53,8 @@ LIB_DEPENDS+=	audio:${PORTSDIR}/audio/nas
 .endif
 
 pre-configure:
+	@${REINPLACE_CMD} -e 's|-O2||g' -e 's|-lpthread|${PTHREAD_LIBS}|g' \
+		${WRKSRC}/${CONFIGURE_SCRIPT}
 .if defined(WITHOUT_ESD)
 	${REINPLACE_CMD} -e 's|arts_libesd_include=yes|arts_libesd_include=no|g' \
 		${WRKSRC}/configure
