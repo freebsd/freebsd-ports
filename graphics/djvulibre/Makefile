@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	djvulibre
-PORTVERSION=	3.5.12
+PORTVERSION=	3.5.13
 CATEGORIES=	graphics www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	djvu
@@ -14,26 +14,29 @@ MASTER_SITE_SUBDIR=	djvu
 MAINTAINER=	coop9211@uidaho.edu
 COMMENT=	DjVu viewers, encoders, browser plugin, and utilities
 
-LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg
-
 .ifndef WITHOUT_X11
 USE_X_PREFIX=	yes
 USE_QT_VER=	3
+LIB_DEPENDS+=	jpeg.9:${PORTSDIR}/graphics/jpeg
 .else
 PKGNAMESUFFIX=	-nox11
+LIB_DEPENDS+=	tiff.4:${PORTSDIR}/graphics/tiff
 .endif
 
 USE_ICONV=	yes
-USE_PERL5=	yes
+USE_PERL5_BUILD=yes
 HAS_CONFIGURE=	yes
-CONFIGURE_ENV=	JPEG_CFLAGS=-I"${LOCALBASE}/include" \
-		JPEG_LIBS="-L${LOCALBASE}/lib -ljpeg"
-CONFIGURE_ARGS=	--enable-threads=posix --enable-shared --prefix="${PREFIX}"
+INSTALLS_SHLIB=	yes
+CONFIGURE_ENV=	JPEG_CFLAGS="-I${LOCALBASE}/include" \
+		JPEG_LIBS="-L${LOCALBASE}/lib -ljpeg" \
+		TIFF_CFLAGS="-I${LOCALBASE}/include" \
+		TIFF_LIBS="-L${LOCALBASE}/lib -ltiff"
+CONFIGURE_ARGS=	--enable-threads=pthread --enable-shared --prefix="${PREFIX}"
 
 .ifndef WITHOUT_X11
 CONFIGURE_ENV+=	CXX=${CXX} \
-		PTHREAD_CFLAGS=-pthread \
-		PTHREAD_LIBS=-pthread \
+		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
+		PTHREAD_LIBS="${PTHREAD_LIBS}" \
 		QTLIBS="-L${X11BASE}/lib -lqt-mt"
 .else
 CONFIGURE_ARGS+=--disable-djview
