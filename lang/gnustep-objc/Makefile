@@ -5,11 +5,14 @@
 # $FreeBSD$
 #
 
-MASTERDIR?=	${.CURDIR}/../../lang/gcc32
-
 PKGNAMESUFFIX=		-objc
+
+MAINTAINER=	dinoex@FreeBSD.org
+COMMENT=	GNU Compiler Collection 3.2.2 with threads and shared libs
+
 WANT_SHAREDLIBS=	yes
 WANT_THREADS_SUPPORT=	yes
+MASTERDIR?=	${.CURDIR}/../../lang/gcc32
 INSTALLS_SHLIB=		yes
 LDCONFIG_DIRS=		%%PREFIX%%/lib ${TARGLIB}
 
