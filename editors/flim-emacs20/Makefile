@@ -10,12 +10,9 @@ MAINTAINER=	shige@FreeBSD.org
 # This is a slave port.
 PORTCLASS=	slave
 
-MASTERDIR=	${.CURDIR}/../../editors/flim-emacs
+MASTERDIR=	${.CURDIR}/../../editors/flim
 
 # emacs port setup
 EMACS_PORT_NAME=	emacs20
-
-# use pkg-* files in ${.CURDIR}
-PKGDIR=		${.CURDIR}
 
 .include <${MASTERDIR}/Makefile>
