@@ -6,20 +6,15 @@
 #
 
 PORTNAME=	ttfm
-PORTVERSION=	0.9.3
-PORTREVISION=	3
+PORTVERSION=	0.9.4
 CATEGORIES=	chinese print
-MASTER_SITES=	ftp://freebsd.sinica.edu.tw/pub/keith/ttfm/
+MASTER_SITES=	ftp://freebsd.sinica.edu.tw/pub/statue/ttfm/
 
-MAINTAINER=	keith@FreeBSD.org
+MAINTAINER=	statue@freebsd.sinica.edu.tw
 COMMENT=	A Big5/GB enhanced TrueType Font Manager
 
-.include <bsd.port.pre.mk>
-.if ${XFREE86_VERSION} == 4
 RUN_DEPENDS=	mkfontdir:${PORTSDIR}/x11/XFree86-4-clients
-.endif
-
-USE_FREETYPE=	yes
+LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2
 
 FONTSDIR=	${PREFIX}/share/fonts/TrueType/
 MODULESDIR=	${PREFIX}/share/ttfm/
@@ -33,14 +28,11 @@ do-install:
 .endfor
 	@${INSTALL_MAN} ${WRKSRC}/ttfm.sh.1 ${PREFIX}/man/man1
 	@${MKDIR} ${MODULESDIR}
-.for module in abiword.ttfm gscjk.ttfm xfreetype.ttfm xttfm.ttfm
+.for module in gscjk.ttfm xttfm.ttfm
 	@${INSTALL_SCRIPT} ${WRKSRC}/modules/${module} ${MODULESDIR}
-.endfor
-.for module in chitex.ttfm ghostscript6.ttfm ttf2pk.ttfm xttfm-tcl.ttfm
-	@${INSTALL_SCRIPT} ${WRKSRC}/modules/${module} ${MODULESDIR}/${module}.nop
 .endfor
 	@${MKDIR} ${FONTSDIR}
 
 MAN1=	ttfm.sh.1
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
