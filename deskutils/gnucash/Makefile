@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnucash
-PORTVERSION=	1.4.7
+PORTVERSION=	1.4.8
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	http://www.gnucash.org/pub/gnucash/sources/stable/ \
 		ftp://ftp.gnucash.org/pub/gnucash/sources/stable/ \
@@ -20,7 +20,7 @@ BUILD_DEPENDS=	swig:${PORTSDIR}/devel/SWIG \
 		g-wrap:${PORTSDIR}/devel/g-wrap \
 		eperl:${PORTSDIR}/lang/eperl
 LIB_DEPENDS=	guile.9:${PORTSDIR}/lang/guile
-RUN_DEPENDS=	slib48:${PORTSDIR}/lang/slib \
+RUN_DEPENDS=	${LOCALBASE}/share/slib/Template.scm:${PORTSDIR}/lang/slib \
 		gnuplot:${PORTSDIR}/math/gnuplot \
 		${site_perl}/HTML/Base.pm:${PORTSDIR}/www/p5-HTML \
 		${site_perl}/LWP.pm:${PORTSDIR}/www/p5-libwww
