@@ -1,12 +1,12 @@
 # New ports collection makefile for:	amp
-# Version required:	0.7.3
+# Version required:	0.7.6
 # Date created:		Jun 23 1997
 # Whom:			Vanilla I. Shu <vanilla@MinJe.com.TW>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1997/08/31 22:19:54 max Exp $
 #
 
-DISTNAME=	amp-0.7.3
+DISTNAME=	amp-0.7.6
 CATEGORIES=	audio
 MASTER_SITES=	ftp://ftp.rasip.fer.hr/pub/mpeg/
 EXTRACT_SUFX=	.tgz
@@ -20,6 +20,6 @@ MAN1=		amp.1
 
 do-install:
 	@ ${INSTALL_PROGRAM} ${WRKSRC}/amp ${PREFIX}/bin
-	@ ${INSTALL_DATA} ${WRKSRC}/amp.1 ${PREFIX}/man/man1
+	@ ${INSTALL_MAN} ${WRKSRC}/amp.1 ${PREFIX}/man/man1
 
 .include <bsd.port.mk>
