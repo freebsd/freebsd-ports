@@ -8,6 +8,7 @@ include/fastdb/database.h
 include/fastdb/datetime.h
 include/fastdb/fastdb.h
 include/fastdb/file.h
+include/fastdb/harray.h
 include/fastdb/hashtab.h
 include/fastdb/query.h
 include/fastdb/reference.h
