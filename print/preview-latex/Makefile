@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	preview-latex
-PORTVERSION=	0.7.7
+PORTVERSION=	0.7.8
 CATEGORIES=	print elisp
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR= ${PORTNAME}
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 
-MAINTAINER=	yoichi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	LaTeX previewer on Emacs
 
 BUILD_DEPENDS=	${LOCALBASE}/${EMACS_SITE_LISPDIR}/auctex/latex.el:${PORTSDIR}/print/auctex \
@@ -25,7 +25,7 @@ EMACS_PORT_NAME?=	emacs21
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-emacs=${EMACS_CMD} \
-		--with-lispdir=${PREFIX}/${EMACS_VERSION_SITE_LISPDIR} \
+		--with-lispdir=${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/preview \
 		--with-texmf=${PREFIX}/share/texmf
 CONFIGURE_ARGS+=	--disable-8bit-test
 
