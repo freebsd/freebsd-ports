@@ -1,5 +1,5 @@
 --- src/fe-text/gui-entry.c.orig	Sun Oct 26 13:45:02 2003
-+++ src/fe-text/gui-entry.c	Wed Apr  7 11:08:29 2004
++++ src/fe-text/gui-entry.c	Tue Apr 13 23:27:34 2004
 @@ -68,28 +68,107 @@
          g_free(entry);
  }
@@ -172,11 +172,12 @@
          end_xpos = entry->xpos + entry->width;
  	if (xpos > end_xpos)
                  return;
-@@ -131,7 +215,15 @@
+@@ -131,8 +215,16 @@
  	p = entry->scrstart + pos < entry->text_len ?
  		entry->text + entry->scrstart + pos : empty_str;
  	for (; *p != '\0'; p++) {
 -		xpos += utf8_width(*p);
+-		if (xpos > end_xpos)
 +		if (entry->hidden)
 +			xpos++;
 +		else if(term_type == TERM_TYPE_BIG5)
@@ -186,9 +187,10 @@
 +		else
 +			xpos++;
 +
- 		if (xpos > end_xpos)
++		if (xpos >= end_xpos)
  			break;
  
+ 		if (entry->hidden)
 @@ -285,8 +377,34 @@
  	if (entry->utf8)
  		utf16_to_utf8(entry->text, buf);
