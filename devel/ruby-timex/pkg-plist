@@ -1,0 +1,3 @@
+%%RUBY_SITELIBDIR%%/timex.rb
+%%PORTDOCS%%%%RUBY_DOCDIR%%/timex/timex.html
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/timex

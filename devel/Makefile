@@ -522,6 +522,7 @@
     SUBDIR += ruby-strscan
     SUBDIR += ruby-sysvipc
     SUBDIR += ruby-textbuf
+    SUBDIR += ruby-timex
     SUBDIR += ruby-tzfile
     SUBDIR += ruby-unit
     SUBDIR += rudiments
