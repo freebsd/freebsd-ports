@@ -6,20 +6,18 @@
 #
 
 PORTNAME=	ipa
-PORTVERSION=	1.3
+PORTVERSION=	1.3.1
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.simon.org.ua/ipa/ \
-		http://ipa-system.sourceforge.net/ \
+MASTER_SITES=	http://ipa-system.sourceforge.net/ \
 		http://www.mirrors.wiretapped.net/security/network-monitoring/ipa/ \
 		ftp://ftp.mirrors.wiretapped.net/pub/security/network-monitoring/ipa/ \
-		http://www.outloud.org/ipa/ \
 		http://ipa.it-ss.be/
 
-MAINTAINER=	simon@simon.org.ua
+MAINTAINER=	simon@comsys.ntu-kpi.kiev.ua
 COMMENT=	IP accounting software
 
 NO_PACKAGE=	"Needs to be built uniquely for each host"
-ALL_TARGET=	FreeBSD
+ALL_TARGET=
 .ifdef(NOPORTDOCS)
 MAKE_ENV=	NOPORTDOCS="${NOPORTDOCS}"
 .endif

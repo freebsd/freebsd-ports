@@ -1,5 +1,5 @@
---- Makefile.orig	Mon Oct 28 21:40:37 2002
-+++ Makefile	Mon Oct 28 22:15:47 2002
+--- Makefile.orig	Thu Feb 20 09:06:58 2003
++++ Makefile	Mon Feb 24 23:43:33 2003
 @@ -38,7 +38,7 @@
  #	-Ox   - optimize;
  #	-g    - produce debugging information.
@@ -11,7 +11,7 @@
  # PREFIX - prefix for all below listed paths
 @@ -81,10 +81,10 @@
  #
- # Some INSTALL_* variables
+ # INSTALL_* variables
  #
 -INSTALL_MAN=		${INSTALL} -c -g wheel -o root -m 0444
 -INSTALL_DATA=		${INSTALL} -c -g wheel -o root -m 0444
@@ -24,14 +24,14 @@
  INSTALL_MAN_DIR=	${INSTALL} -d -m 0555 -g wheel -o root
  INSTALL_DATA_DIR=	${INSTALL} -d -m 0555 -g wheel -o root
  
-@@ -247,8 +247,10 @@
+@@ -218,8 +218,10 @@
  .endif
- 	${INSTALL_MAN} man/ru_RU.KOI8-R/ipa.5 man/ru_RU.KOI8-R/ipa.conf.5 ${DSTMANDIR}/ru_SU.KOI8-R/man5
- 	${INSTALL_MAN} man/ru_RU.KOI8-R/ipa.8 man/ru_RU.KOI8-R/ipastat.8 ${DSTMANDIR}/ru_SU.KOI8-R/man8
+ 	${INSTALL_MAN} man/ru_RU.KOI8-R/ipa.5 man/ru_RU.KOI8-R/ipa.conf.5 ${DST_MAN_DIR}/ru_RU.KOI8-R/man5
+ 	${INSTALL_MAN} man/ru_RU.KOI8-R/ipa.8 man/ru_RU.KOI8-R/ipastat.8 ${DST_MAN_DIR}/ru_RU.KOI8-R/man8
 +.if !defined(NOPORTDOCS)
- 	${INSTALL_DATA_DIR} ${DSTEXAMPLEDIR}
- 	${INSTALL_DATA} examples/* ${DSTEXAMPLEDIR}
+ 	${INSTALL_DATA_DIR} ${DST_EXAMPLE_DIR}
+ 	${INSTALL_DATA} examples/* ${DST_EXAMPLE_DIR}
 +.endif
- .if exists(${DSTRCDIR})
- 	${INSTALL_SCRIPT} etc/ipa.sh.sample ${DSTRCDIR}
+ .if exists(${DST_RC_DIR})
+ 	${INSTALL_SCRIPT} etc/ipa.sh.sample ${DST_RC_DIR}
  .else
