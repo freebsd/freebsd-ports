@@ -25,9 +25,8 @@ DATE=		1999121400
 
 .include <bsd.port.pre.mk>
 
-post-patch:
 .if ${ARCH} == "alpha"
-	@(cd ${WRKSRC} && ${PATCH} < ${PATCHDIR}/extra-patch-alpha || ${ECHO})
+EXTRA_PATCHES=	${PATCHDIR}/extra-patch-alpha
 .endif
 
 do-install:
