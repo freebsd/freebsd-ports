@@ -7544,6 +7544,7 @@ sys_dev_vinum	src/sys/dev/vinum
 sys_dev_vn	src/sys/dev/vn
 sys_dev_vx	src/sys/dev/vx
 sys_devfs	src/sys/miscfs/devfs
+sys_geom	src/sys/geom
 sys_gnu		src/sys/gnu
 sys_gnu_ext2fs	src/sys/gnu/ext2fs
 sys_gnu_i386	src/sys/gnu/i386
