@@ -16,6 +16,11 @@ MAINTAINER=	yatt@msc.biglobe.ne.jp
 # If you don't have X11, type "make -DWITHOUT_X11" or uncomment this.
 #WITHOUT_X11=	yes
 
+SLAVEDIRS=	audio/timidity++-emacs
+# rest are included by timidity++-emacs port
+SLAVEDIRS+=	audio/timidity++-gtk audio/timidity++-motif \
+		audio/timidity++-slang audio/timidity++-tcltk \
+		audio/timidity++-xaw audio/timidity++-xskin
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 .if !defined(WITHOUT_X11)
@@ -31,7 +36,7 @@ CONFIGURE_ARGS=	--with-x --enable-ncurses --enable-vt100 \
 		--enable-dynamic --enable-server \
 		--enable-network --enable-spectrogram --enable-wrd
 .else
-CONFIGURE_ARGS= --enable-ncurses --enable-vt100 \
+CONFIGURE_ARGS=	--enable-ncurses --enable-vt100 \
 		--enable-network --disable-spectrogram --disable-wrd
 .endif
 
