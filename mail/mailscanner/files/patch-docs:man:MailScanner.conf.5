@@ -1,12 +1,54 @@
---- ../MailScanner-install-4.38.10.orig/docs/man/MailScanner.conf.5	Tue Feb 15 08:40:50 2005
-+++ docs/man/MailScanner.conf.5	Tue Feb 15 08:49:20 2005
+--- ../MailScanner-install-4.39.6.orig/docs/man/MailScanner.conf.5	Mon Mar 14 23:05:12 2005
++++ docs/man/MailScanner.conf.5	Mon Mar 14 23:05:30 2005
 @@ -1,4 +1,4 @@
 -.TH "MailScanner.conf" "5" "4.38.2" "Julian Field" "Mail"
-+.TH "MailScanner.conf" "5" "4.38.10" "Julian Field" "Mail"
++.TH "MailScanner.conf" "5" "4.39.6" "Julian Field" "Mail"
  .SH "NAME"
  .LP 
  MailScanner.conf \- Main configuration for MailScanner
-@@ -601,6 +601,15 @@
+@@ -562,6 +562,41 @@
+ 
+ .br 
+ ClamAVModule only: monitor each of these files for changes in size to detect when a ClamAV update has happened. This is only used by the "clamavmodule" virus scanner, not the "clamav" scanner setting.
++
++.TP 
++\fBClamAVmodule Maximum Recursion Level\fR
++Default: 5
++.br 
++
++.br 
++ClamAVModule only: The maximum recursion level of archives. This setting *cannot* be the filename of a ruleset, only a simple number.
++
++.TP 
++\fBClamAVmodule Maximum Files\fR
++Default: 100
++.br 
++
++.br 
++ClamAVModule only: The maximum number of files per batch. This setting *cannot* be the filename of a ruleset, only a simple number.
++
++
++.TP 
++\fBClamAVmodule Maximum File Size\fR
++Default: 10000000
++.br 
++
++.br 
++ClamAVModule only: The maximum file of each file (Default = 10MB). This setting *cannot* be the filename of a ruleset, only a simple number.
++
++
++.TP 
++\fB\fRClamAVmodule Maximum Compression Ratio
++Default: 250
++.br 
++
++.br 
++ClamAVModule only: The maximum compression ration of archives. This setting *cannot* be the filename of a ruleset, only a simple number.
++ 
+ .SH "Removing/Logging dangerous or potentially offensive content"
+ .TP 
+ \fBAllow Partial Messages\fR
+@@ -601,6 +636,15 @@
  
  
  .TP 
@@ -22,7 +64,7 @@
  \fBAllow IFrame Tags\fR
  Default: no
  .br 
-@@ -1753,6 +1762,12 @@
+@@ -1753,6 +1797,12 @@
  
  .br 
  Log all occurrences of "Silent Viruses" as defined above? This can only be a simple yes/no value, not a ruleset.

@@ -1,13 +1,104 @@
---- ../MailScanner-install-4.38.10.orig/docs/man/MailScanner.conf.5.html	Tue Feb 15 08:40:50 2005
-+++ docs/man/MailScanner.conf.5.html	Tue Feb 15 08:49:22 2005
+--- ../MailScanner-install-4.39.6.orig/docs/man/MailScanner.conf.5.html	Mon Mar 14 23:05:12 2005
++++ docs/man/MailScanner.conf.5.html	Mon Mar 14 23:05:33 2005
 @@ -1,5 +1,5 @@
  <!-- Creator     : groff version 1.19 -->
 -<!-- CreationDate: Mon Jan 17 15:53:41 2005 -->
-+<!-- CreationDate: Tue Feb 15 08:48:47 2005 -->
++<!-- CreationDate: Mon Mar 14 23:04:48 2005 -->
  <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
  "http://www.w3.org/TR/html4/loose.dtd">
  <html>
-@@ -1761,6 +1761,33 @@
+@@ -1638,6 +1638,90 @@
+ scanner, not the &quot;clamav&quot; scanner setting.</p>
+ </td>
+ </table>
++<!-- INDENTATION -->
++<table width="100%" border=0 rules="none" frame="void"
++       cols="2" cellspacing="0" cellpadding="0">
++<tr valign="top" align="left">
++<td width="11%"></td>
++<td width="89%">
++<p><b>ClamAVmodule Maximum Recursion Level</b></p></td>
++</table>
++<!-- INDENTATION -->
++<table width="100%" border=0 rules="none" frame="void"
++       cols="2" cellspacing="0" cellpadding="0">
++<tr valign="top" align="left">
++<td width="22%"></td>
++<td width="78%">
++<p>Default: 5</p>
++<!-- INDENTATION -->
++<p>ClamAVModule only: The maximum recursion level of
++archives. This setting *cannot* be the filename of a
++ruleset, only a simple number.</p>
++</td>
++</table>
++<!-- INDENTATION -->
++<table width="100%" border=0 rules="none" frame="void"
++       cols="2" cellspacing="0" cellpadding="0">
++<tr valign="top" align="left">
++<td width="11%"></td>
++<td width="89%">
++<p><b>ClamAVmodule Maximum Files</b></p></td>
++</table>
++<!-- INDENTATION -->
++<table width="100%" border=0 rules="none" frame="void"
++       cols="2" cellspacing="0" cellpadding="0">
++<tr valign="top" align="left">
++<td width="22%"></td>
++<td width="78%">
++<p>Default: 100</p>
++<!-- INDENTATION -->
++<p>ClamAVModule only: The maximum number of files per batch.
++This setting *cannot* be the filename of a ruleset, only a
++simple number.</p>
++</td>
++</table>
++<!-- INDENTATION -->
++<table width="100%" border=0 rules="none" frame="void"
++       cols="2" cellspacing="0" cellpadding="0">
++<tr valign="top" align="left">
++<td width="11%"></td>
++<td width="89%">
++<p><b>ClamAVmodule Maximum File Size</b></p></td>
++</table>
++<!-- INDENTATION -->
++<table width="100%" border=0 rules="none" frame="void"
++       cols="2" cellspacing="0" cellpadding="0">
++<tr valign="top" align="left">
++<td width="22%"></td>
++<td width="78%">
++<p>Default: 10000000</p>
++<!-- INDENTATION -->
++<p>ClamAVModule only: The maximum file of each file (Default
++= 10MB). This setting *cannot* be the filename of a ruleset,
++only a simple number.</p>
++</td>
++</table>
++<!-- INDENTATION -->
++<table width="100%" border=0 rules="none" frame="void"
++       cols="2" cellspacing="0" cellpadding="0">
++<tr valign="top" align="left">
++<td width="11%"></td>
++<td width="89%">
++<p>ClamAVmodule Maximum Compression Ratio</p></td>
++</table>
++<!-- INDENTATION -->
++<table width="100%" border=0 rules="none" frame="void"
++       cols="2" cellspacing="0" cellpadding="0">
++<tr valign="top" align="left">
++<td width="22%"></td>
++<td width="78%">
++<p>Default: 250</p>
++<!-- INDENTATION -->
++<p>ClamAVModule only: The maximum compression ration of
++archives. This setting *cannot* be the filename of a
++ruleset, only a simple number.</p>
++</td>
++</table>
+ <a name="Removing/Logging dangerous or potentially offensive content"></a>
+ <h2>Removing/Logging dangerous or potentially offensive content</h2>
+ <!-- INDENTATION -->
+@@ -1761,6 +1845,33 @@
  <tr valign="top" align="left">
  <td width="11%"></td>
  <td width="89%">
@@ -41,7 +132,7 @@
  <p><b>Allow IFrame Tags</b></p></td>
  </table>
  <!-- INDENTATION -->
-@@ -5122,6 +5149,28 @@
+@@ -5122,6 +5233,28 @@
  <p>Log all occurrences of &quot;Silent Viruses&quot; as
  defined above? This can only be a simple yes/no value, not a
  ruleset.</p>
