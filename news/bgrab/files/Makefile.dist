@@ -6,7 +6,7 @@ CXXFLAGS +=	-DFREEBSD
 LIBS	  =	-lncurses
 PREFIX	 ?=	/usr/local
 DEST	  =	$(PREFIX)/bin
-INSTALL	 ?=	install
+INSTALL_PROGRAM ?=	install -c -s -o root -g wheel -m 555
 
 bgrab: $(OBJ) Makefile common.h
 	$(CXX) $(LIBS) -o bgrab $(OBJ)
@@ -15,6 +15,6 @@ clean:
 	rm -f $(OBJ) bgrab 
 
 install: bgrab
-	$(INSTALL) bgrab $(DEST)/bgrab
+	$(INSTALL_PROGRAM) bgrab $(DEST)/bgrab
 
 all: bgrab

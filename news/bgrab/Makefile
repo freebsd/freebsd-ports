@@ -8,15 +8,17 @@
 PORTNAME=	bgrab
 PORTVERSION=	1.3.6
 CATEGORIES=	news
-MASTER_SITES=	http://www.student.dtu.dk/~c960941/bgrab/
-EXTRACT_SUFX=	.tgz
+MASTER_SITES=	http://bgrab.ifip.net/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Binary Grabber - downloads binaries from newsgroups
 
 RUN_DEPENDS=	mmencode:${PORTSDIR}/converters/mmencode
 
-post-extract:
-	@${CP} ${FILESDIR}/Makefile.dist ${WRKSRC}/Makefile
+EXTRACT_AFTER_ARGS=	| ${TAR} -zxf -
+
+USE_BZIP2=	yes
+MAKEFILE=	${FILESDIR}/Makefile.dist
+MAKE_ENV=	INSTALL_PROGRAM="${INSTALL_PROGRAM}"
 
 .include <bsd.port.mk>
