@@ -1,0 +1,11 @@
+--- xklock.c.orig	Tue Jan 23 04:57:50 2001
++++ xklock.c	Tue Jan 23 04:58:35 2001
+@@ -74,7 +74,7 @@
+ #ifdef	SHADOW
+ static	struct	spwd	*user_spwd;
+ #endif
+-static	char	root_password[32], user_password[32];
++static	char	root_password[_PASSWORD_LEN], user_password[_PASSWORD_LEN];
+ static	char	*option_name[] = {
+   "-d",			/*	0	*/
+   "-foreground",	/*	1	*/
