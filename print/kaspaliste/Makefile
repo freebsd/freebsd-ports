@@ -26,4 +26,10 @@ CONFIGURE_ARGS+=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}	\
 			--with-pg-includes=${LOCALBASE}/include \
 			--with-pg-libs=${LOCALBASE}/lib
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "alpha" && ${OSVERSION} >= 502102
+BROKEN=			"Does not compile on alpha >= 5.x"
+.endif
+
+.include <bsd.port.post.mk>

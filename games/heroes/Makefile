@@ -49,6 +49,12 @@ INFO=		heroes
 CPPFLAGS=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS=	-L${LOCALBASE}/lib -lsmpeg ${PTHREAD_LIBS}
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "alpha" && ${OSVERSION} >= 502102
+BROKEN=		"Does not compile on alpha >=5.x"
+.endif
+
 post-patch:
 	@for dir in ${DATASRC} ${SOUNDSRC} ${MUSICSRC}; do \
 		${FIND} $${dir} -name "Makefile*" | ${XARGS} ${RM}; \
@@ -66,4 +72,4 @@ post-install:
 	${MKDIR} ${DATADIR}/mod
 	${INSTALL_DATA} ${MUSICSRC}/*.xm ${MUSICSRC}/sound.conf ${DATADIR}/mod
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
