@@ -1,3 +1,4 @@
+bin/pdbdump
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Palm/.packlist
 lib/perl5/site_perl/%%PERL_VER%%/Palm/Address.pm
 lib/perl5/site_perl/%%PERL_VER%%/Palm/Datebook.pm
