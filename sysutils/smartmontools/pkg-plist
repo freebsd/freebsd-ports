@@ -1,0 +1,21 @@
+@comment $FreeBSD$
+@unexec /bin/echo "===>" Stopping smartd ...
+@unexec /usr/bin/killall smartd 2>/dev/null || true
+etc/smartd.conf.sample
+etc/rc.d/smartd.sh.sample
+sbin/smartctl
+sbin/smartd
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/CHANGELOG
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%%%DOCSDIR%%/WARNINGS
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%EXAMPLESDIR%%/Example1
+%%EXAMPLESDIR%%/Example2
+%%EXAMPLESDIR%%/Example3
+%%EXAMPLESDIR%%/README
+%%EXAMPLESDIR%%/smartd.conf
+@dirrm %%EXAMPLESDIR%%
