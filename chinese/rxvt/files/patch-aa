@@ -54,7 +54,7 @@
  
  install: alldoc
 -	$(INSTALL_DATA) rxvt.1 $(DESTDIR)$(mandir)/$(manprefix)rxvt.$(manext)
-+	$(INSTALL_DATA) rxvt.1 $(DESTDIR)$(mandir)/$(manprefix)crxvt.$(manext)
++	$(INSTALL_DATA) rxvt.1 $(DESTDIR)$(mandir)/$(manprefix)crxvt2.$(manext)
  
  uninstall:
  	-cd $(mandir); $(RMF) $(manprefix)rxvt.$(manext)
