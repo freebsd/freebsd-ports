@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	firebird
-PORTVERSION=	0.6.1
-PORTREVISION=	1
+PORTVERSION=	0.7
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
 MASTER_SITE_SUBDIR=	firebird/releases/${PORTVERSION}
@@ -15,7 +14,7 @@ PKGNAMEPREFIX=	mozilla-
 DISTNAME=	MozillaFirebird-source-${PORTVERSION}
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	Mozilla Firebird is the next generation browser from the mozilla.org project
+COMMENT=	Web browser based on the browser portion of Mozilla
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
@@ -26,23 +25,15 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip \
 		freetype-config:${PORTSDIR}/print/freetype2
 
+CONFIGURE_ENV=	WITH_GTK2=yes
 USE_X_PREFIX=	yes
 
-USE_BZIP2=	yes
+ALL_TARGET=	default
 USE_GMAKE=	yes
+USE_GNOME=	gtk20 libidl
 USE_PERL5=	yes
 USE_REINPLACE=	yes
 HAS_CONFIGURE=	yes
-ALL_TARGET=	default
-
-.if defined(WITH_GTK2)
-USE_GNOME=	gtk20 libidl
-PKGNAMESUFFIX=	-gtk2
-PLIST=		${PKGDIR}/pkg-plist.gtk2
-.else
-USE_GNOME=	gtk12 orbit
-PLIST=		${PKGDIR}/pkg-plist.gtk1
-.endif
 
 NO_MTREE=		yes
 WRKSRC=			${WRKDIR}/mozilla
@@ -80,10 +71,6 @@ CONFIGURE_ENV+=	WITHOUT_XFT=yes
 .else
 LIB_DEPENDS+=	Xft.2:${PORTSDIR}/x11-fonts/Xft
 .endif # !defined(WITHOUT_XFT)
-
-.if defined(WITH_GTK2)
-CONFIGURE_ENV+=	WITH_GTK2=yes
-.endif # defined(WITH_GTK2)
 
 CPPFLAGS+=		-I${X11BASE}/include
 CFLAGS+=		${PTHREAD_CFLAGS}

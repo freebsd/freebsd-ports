@@ -1,6 +1,8 @@
---- config/preprocessor.pl.orig	Wed Jun 18 17:40:48 2003
-+++ config/preprocessor.pl	Wed Jun 18 18:55:28 2003
-@@ -71,15 +71,39 @@
+$FreeBSD$
+
+--- config/preprocessor.pl.orig	Tue Sep  2 17:53:55 2003
++++ config/preprocessor.pl	Sat Oct 18 23:00:35 2003
+@@ -73,16 +73,39 @@
  ########################################################################
  
  package main;
@@ -34,22 +36,22 @@
  
  sub include {
      my($stack, $filename) = @_;
+     my $directory = $stack->{'variables'}->{'DIRECTORY'};
      if ($filename ne '-') {
--        $filename = File::Spec->rel2abs($filename, $stack->{'variables'}->{'DIRECTORY'});
--        my($volume, $directory) = File::Spec->splitpath($filename);
--        local $stack->{'variables'}->{'DIRECTORY'} = File::Spec->catpath($volume, $directory, '');
-+        $filename = rel2abs($filename, $stack->{'variables'}->{'DIRECTORY'});
-+	my ($directory) = dirname($filename);
-+        local $stack->{'variables'}->{'DIRECTORY'} = File::Spec->catdir($directory);
+-        $filename = File::Spec->rel2abs($filename, $directory);
+-        my($volume, $path) = File::Spec->splitpath($filename);
+-        $directory = File::Spec->catpath($volume, $path, '');
++        $filename = rel2abs($filename, $directory);
++        $directory = File::Spec->catdir(File::Basename::dirname($filename));
      }
+     local $stack->{'variables'}->{'DIRECTORY'} = $directory;
      local $stack->{'variables'}->{'FILE'} = $filename;
-     local $stack->{'variables'}->{'LINE'} = 0;
-@@ -372,7 +396,7 @@
+@@ -376,7 +399,7 @@
      my $stack = shift;
      return if $stack->disabled;
      die "argument expected\n" unless @_;
 -    main::include($stack, File::Spec->catpath(File::Spec::Unix->splitpath(@_)));
-+    main::include($stack, File::Spec->catfile(dirname(@_), basename(@_)));
++    main::include($stack, File::Spec->catfile(File::Basename::dirname(@_), File::Basename::basename(@_)));
  }
  
  sub filter {
