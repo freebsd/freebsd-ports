@@ -9,6 +9,7 @@
     SUBDIR += afterstep-stable
     SUBDIR += amaterus
     SUBDIR += amiwm
+    SUBDIR += bbconf
     SUBDIR += bbkeys
     SUBDIR += bbpager
     SUBDIR += blackbox
