@@ -1,0 +1,17 @@
+The gettext lint tools is a collection of tools for checking the validity and
+consistency of PO and POT files. It also includes an experimental glossary
+building tool.
+
+This package includes:
+    * POFileStatus - PO file validator and status reporting
+    * POFileChecker - searchs for common mistakes in PO files
+    * POTFileChecker - searches for common mistakes in POT files
+    * POFileConsistency - PO file consistency checks
+    * POFileConsistencyShell - PO file consistency checks, interactive mode
+    * POFileEquiv - PO file glossary generator
+
+All tools generate XML to the standard output; just run them with a list of PO
+or POT files to check. Some have extra options, run the command with no
+parameters for a short usage message.
+
+WWW: http://mega.ist.utl.pt/~pmmm/gettext-lint/
