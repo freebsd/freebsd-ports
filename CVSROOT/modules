@@ -5335,6 +5335,7 @@ lv-aspell	ports/textproc/lv-aspell
 lwm		ports/x11-wm/lwm
 lwp		ports/devel/lwp
 lws		ports/www/lws
+lxdvdrip	ports/multimedia/lxdvdrip
 lxnb		ports/security/lxnb
 lxsplit		ports/sysutils/lxsplit
 lyntin		ports/net/lyntin
