@@ -28,6 +28,7 @@ RUN_DEPENDS=	gs:${PORTSDIR}/${GSPORT}
 
 USE_GNOME=	gnometarget pkgconfig
 USE_LIBTOOL=	yes
+USE_REINPLACE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 INSTALLS_SHLIB=	yes
 
@@ -44,6 +45,9 @@ pre-everything::
 	@${ECHO_MSG} "      AFPL Postscript interpreter instead of GNU one"
 	@${ECHO_MSG} ""
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|-pedantic||g' ${WRKSRC}/configure
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/pstoedit.1 ${MANPREFIX}/man/man1
