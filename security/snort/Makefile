@@ -16,6 +16,11 @@ COMMENT=	Lightweight network intrusion detection system
 
 LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
 
+OPTIONS=	FLEXRESP "Flexible response to events" off \
+		MYSQL "Enable MySQL support" off \
+		ODBC "Enable ODBC support" off \
+		POSTGRES "Enable PostgreSQL support" off
+
 #USE_GPG=	yes
 #SIG_SUFFIX=	.asc
 USE_REINPLACE=	yes
