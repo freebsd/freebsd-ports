@@ -1,0 +1,12 @@
+--- Makefile.orig	Thu Apr 19 17:00:02 2001
++++ Makefile	Thu Apr 19 17:00:40 2001
+@@ -1,6 +1,6 @@
+-CFLAGS    = `gtk-config --cflags` `gdk-pixbuf-config --cflags`
+-LFLAGS    = `gtk-config --libs gthread` `gdk-pixbuf-config --libs`
+-CC	  = gcc -Wall -g
++CFLAGS    += `${GTK_CONFIG} --cflags` `gdk-pixbuf-config --cflags`
++LFLAGS    = `${GTK_CONFIG} --libs gthread` `gdk-pixbuf-config --libs`
++CC	  = gcc
+ 
+ OBJ = geotrace.o interface.o callbacks.o map.o netgeoclient.o prefs.o
+ 
