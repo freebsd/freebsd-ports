@@ -1,0 +1,7 @@
+CGI::Simple provides a relatively lightweight drop in replacement
+for CGI.pm. It shares an identical OO interface to CGI.pm for
+parameter parsing, file upload, cookie handling and header generation.
+This module is entirely object oriented, however a complete functional
+interface is available by using the CGI::Simple::Standard module.
+
+WWW: http://search.cpan.org/dist/Cgi-Simple

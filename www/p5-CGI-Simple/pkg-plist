@@ -1,0 +1,9 @@
+%%SITE_PERL%%/CGI/Simple.pm
+%%SITE_PERL%%/CGI/Simple/Cookie.pm
+%%SITE_PERL%%/CGI/Simple/Standard.pm
+%%SITE_PERL%%/CGI/Simple/Util.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/Simple/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/Simple
+@unexec rmdir %D/%%SITE_PERL%%/auto/CGI 2>/dev/null || true
+@dirrm %%SITE_PERL%%/CGI/Simple
+@unexec rmdir %D/%%SITE_PERL%%/CGI 2>/dev/null || true

@@ -429,6 +429,7 @@
     SUBDIR += p5-CGI-Response
     SUBDIR += p5-CGI-SSI
     SUBDIR += p5-CGI-Session
+    SUBDIR += p5-CGI-Simple
     SUBDIR += p5-CGI-SpeedyCGI
     SUBDIR += p5-CGI-Untaint
     SUBDIR += p5-CGI-Untaint-email
