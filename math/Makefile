@@ -136,6 +136,7 @@
     SUBDIR += parmetis
     SUBDIR += physcalc
     SUBDIR += ploticus
+    SUBDIR += ploticus-nox11
     SUBDIR += plplot
     SUBDIR += pspp
     SUBDIR += py-fpconst
