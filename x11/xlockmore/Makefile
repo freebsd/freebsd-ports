@@ -3,7 +3,7 @@
 # Date created:		9 November 1994
 # Whom:			smace
 #
-# $Id: Makefile,v 1.33 1998/05/20 07:30:59 tg Exp $
+# $Id: Makefile,v 1.34 1998/06/29 07:55:35 tg Exp $
 #
 
 DISTNAME=       xlockmore-4.11
@@ -33,7 +33,7 @@ MAN1=		xlock.1
 WITH_MESAGL?=	no
 .if ${WITH_MESAGL} == yes
 CONFIGURE_ARGS+=	--with-mesagl
-LIB_DEPENDS+=		GL\\.13:${PORTSDIR}/graphics/Mesa
+LIB_DEPENDS+=		GL\\.13:${PORTSDIR}/graphics/Mesa2
 .else
 CONFIGURE_ARGS+=	--without-mesagl
 .endif
