@@ -23,6 +23,7 @@ USE_REINPLACE=		yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-O2||g;' ${WRKSRC}/${CONFIGURE_SCRIPT}
+	@${RM} ${WRKSRC}/kshowmail/OptionDlg.h ${WRKSRC}/kshowmail/OptionDlg.cpp
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/x11/kde3/Makefile.kde"
