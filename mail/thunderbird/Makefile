@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	thunderbird
-PORTVERSION=	0.8
-PORTREVISION=	3
+PORTVERSION=	0.9
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
 MASTER_SITE_SUBDIR=	thunderbird/releases/${PORTVERSION}
-DISTNAME=	${PORTNAME}-source-${PORTVERSION}
+DISTNAME=	${PORTNAME}-${PORTVERSION}-source
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Mozilla Thunderbird is standalone mail and news that stands above
@@ -151,7 +150,7 @@ pre-install:
 # Overview:  the program installs itself in FAKEDIR, then a list is made of the
 # files and directories in there.  This is the PLIST (packing list) for the
 # package, replacing the traditional pkg-plist file.
-	${RM} -fr ${LOCAL_PREFIX}
+	@${RM} -rf ${FAKEDIR} ${PLIST}
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} \
 		Makefile ${MAKE_ARGS} install
 .for ii in mac win
@@ -185,11 +184,11 @@ post-install:
 	${RM} -f ${PREFIX}/bin/thunderbird-config
 	${LN} -s ${LOCAL_PREFIX}/bin/thunderbird-config \
 		${PREFIX}/bin/thunderbird-config
-	${REINPLACE_CMD} -e 's|${FAKEDIR}|${PREFIX}|g' \
+	${PERL} -pi -e 's|${FAKEDIR}|${PREFIX}|g' \
 		${LOCAL_PREFIX}/bin/thunderbird \
 		${LOCAL_PREFIX}/bin/thunderbird-config
 	${FIND} ${LOCAL_PREFIX}/lib/pkgconfig -type f | ${XARGS} \
-		${REINPLACE_CMD} -e 's|${FAKEDIR}|${PREFIX}|g'
+		${PERL} -pi -e 's|${FAKEDIR}|${PREFIX}|g'
 .if defined(WITH_NEW_ICON)
 	${INSTALL_DATA} ${WRKSRC}/other-licenses/branding/thunderbird/default.xpm \
 		${LOCAL_PREFIX}/lib/${PORTNAME}-${PORTVERSION}/chrome/icons/default/default.xpm
