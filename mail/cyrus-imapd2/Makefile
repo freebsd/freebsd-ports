@@ -51,8 +51,15 @@ BROKEN=		"WITH_BDB_VER must be 3, 4 or 41"
 CONFIGURE_ARGS+=--with-bdb-incdir=${LOCALBASE}/include/db${USE_BDB_VER} \
 		--with-bdb=db${USE_BDB_VER}
 
+.if defined(WITH_SKIPLIST)
+WITH_SKIPLIST_MBOX=	YES
+WITH_SKIPLIST_SEEN=	YES
+.endif
 .if defined(WITH_SKIPLIST_MBOX)
 CONFIGURE_ARGS+=--with-mboxlist-db=skiplist
+.endif
+.if defined(WITH_SKIPLIST_SEEN)
+CONFIGURE_ARGS+=--with-seen-db=skiplist
 .endif
 
 .if defined(WITH_MURDER)
