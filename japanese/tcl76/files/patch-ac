@@ -1,5 +1,5 @@
---- tclConfig.sh.in.ORIG	Mon Feb 10 13:22:37 1997
-+++ tclConfig.sh.in	Mon Feb 10 13:23:28 1997
+--- ./tclConfig.sh.in.orig	Fri Jan 31 09:17:04 1997
++++ ./tclConfig.sh.in	Tue Mar  4 13:13:25 1997
 @@ -20,7 +20,7 @@
  TCL_CC='@CC@'
  
@@ -9,3 +9,12 @@
  
  # The name of the Tcl library (may be either a .a file or a shared library):
  TCL_LIB_FILE=@TCL_LIB_FILE@
+@@ -69,7 +69,7 @@
+ TCL_COMPAT_OBJS='@LIBOBJS@'
+ 
+ # Name of the ranlib program to use.
+-TCL_RANLIB='@RANLIB@'
++TCL_RANLIB=ranlib
+ 
+ # String to pass to linker to pick up the Tcl library from its
+ # build directory.
