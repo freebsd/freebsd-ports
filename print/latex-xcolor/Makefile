@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	latex-xcolor
-PORTVERSION=	1.09
+PORTVERSION=	2.00
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	latex-beamer
@@ -14,9 +14,9 @@ DISTNAME=	${PORTNAME:S/^latex-//}-${PORTVERSION}
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	A LaTeX package for driver-independent color extensions
 
-BUILD_DEPENDS=	mktexlsr:${PORTSDIR}/print/teTeX \
+BUILD_DEPENDS=	mktexlsr:${PORTSDIR}/print/teTeX-base \
 		${TEXMFLOCAL_LSR}:${PORTSDIR}/print/tex-texmflocal
-RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX \
+RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX-base \
 		${TEXMFLOCAL_LSR}:${PORTSDIR}/print/tex-texmflocal
 
 NO_BUILD=	YES
@@ -29,15 +29,10 @@ CLASSDIR=	${TEXMFLOCAL}/tex/latex/${PORTNAME:S/^latex-//}
 WRKSRC=		${WRKDIR}/${PORTNAME:S/^latex-//}
 
 CLASS_FILES=	xcolor.dtx xcolor.ins xcolor.sty
-DOC_FILES=	README 	xcolor.pdf
 
 do-install:
 	${MKDIR} ${PREFIX}/${CLASSDIR}
 	${INSTALL_DATA} ${CLASS_FILES:S@^@${WRKSRC}/@} ${PREFIX}/${CLASSDIR}
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${DOC_FILES:S@^@${WRKSRC}/@} ${DOCSDIR}
-.endif
 
 post-install:
 	${MKTEXLSR}
