@@ -243,6 +243,7 @@
     SUBDIR += glib12
     SUBDIR += glib20
     SUBDIR += global
+    SUBDIR += glrparser
     SUBDIR += glui
     SUBDIR += gmake
     SUBDIR += gnome-vfsmm
