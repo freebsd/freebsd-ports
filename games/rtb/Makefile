@@ -22,6 +22,7 @@ USE_GNOME=	gnometarget gtk20 lthack
 USE_GETOPT_LONG=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL_VER=13
+USE_REINPLACE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \
 		AUTOHEADER="${TRUE}"
@@ -29,11 +30,9 @@ MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \
 CPPFLAGS=	-I${LOCALBASE}/include -DHAVE_DECL_GETOPT
 LDFLAGS=	-L${LOCALBASE}/lib
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502126
-BROKEN=		"Does not compile on FreeBSD >= 5.x"
-.endif
+post-extract:
+	@${REINPLACE_CMD} -e 's/min/Min/; s/max/Max/' ${WRKSRC}/include/Various.h
+	@${REINPLACE_CMD} -E -e 's/\(int\*\)/int\*/' ${WRKSRC}/src/ArenaRealTime.cc
 
 post-install:
 .if !defined(NOPORTDOCS)
@@ -43,4 +42,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/RealTimeBattle.txt ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
