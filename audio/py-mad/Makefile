@@ -21,11 +21,18 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 USE_PYTHON_PREFIX=	yes
 
+
+.include <bsd.port.pre.mk>
+
 post-patch:
 	@${REINPLACE_CMD} 's/^\(.*compile.*\)\?\(.*\)\?\(.*\)$$/\1\2\3/' \
 		${WRKSRC}/setup.py
+.if ${OSVERSION} < 500028
+	@${REINPLACE_CMD} 's/#include <stdint.h>//g' \
+		${WRKSRC}/src/pymadfile.c
+.endif
 
 do-configure:
 	@cd ${WRKSRC} && ${PYTHON_CMD} config_unix.py --prefix ${PREFIX}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
