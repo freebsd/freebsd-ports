@@ -8,9 +8,9 @@
 PORTNAME=	xtu
 PORTVERSION=	1.1
 CATEGORIES=	x11-clocks
-MASTER_SITES=	http://www.rostock.zgdv.de/~runge/xtu/
+MASTER_SITES=	http://core.de/~coto/xtu/
 
-MAINTAINER=	runge@rostock.zgdv.de
+MAINTAINER=	runge@core.de
 
 USE_IMAKE=	yes
 USE_XPM=	yes
