@@ -1,0 +1,57 @@
+# This is included in Apache's httpd.conf for Horde
+
+<Directory /home/httpd/html/horde>
+    Options Indexes FollowSymLinks
+    AllowOverride None
+    order allow,deny
+    allow from all
+    <IfModule mod_php4.c>
+        php_value include_path '/home/httpd/phplib:.'
+        php_flag register_globals On
+        php_flag magic_quotes_gpc Off
+        php_flag track_vars On
+	php_value memory_limit 16M
+    </IfModule>
+</Directory>
+
+<IfModule mod_alias.c>
+    Alias /horde/ "/home/httpd/html/horde/"
+</IfModule>
+#
+# For security, don't serve pages from the Horde configuration and library
+# directories.
+#
+#<Directory "/home/httpd/html/horde/admin">
+#    Order deny,allow
+#    Deny from all
+#</Directory>
+<Directory "/home/httpd/html/horde/config">
+    Order deny,allow
+    Deny from all
+</Directory>
+<Directory "/home/httpd/html/horde/lib">
+    Order deny,allow
+    Deny from all
+</Directory>
+<Directory "/home/httpd/html/horde/locale">
+    Order deny,allow
+    Deny from all
+</Directory>
+<Directory "/home/httpd/html/horde/po">
+    Order deny,allow
+    Deny from all
+</Directory>
+<Directory "/home/httpd/html/horde/scripts">
+    Order deny,allow
+    Deny from all
+</Directory>
+<Directory "/home/httpd/html/horde/templates">
+    Order deny,allow
+    Deny from all
+</Directory>
+<Directory "/home/httpd/html/horde/util">
+    Order deny,allow
+    Deny from all
+</Directory>
+# End of Horde configuration ================
+

@@ -1,0 +1,11 @@
+--- scripts/sql/README.orig	Sat Sep 25 21:55:35 2004
++++ scripts/sql/README	Mon Nov 22 13:19:52 2004
+@@ -77,7 +77,7 @@
+ PostgreSQL
+ ~~~~~~~~~~
+ 
+-# su - postgres  (or whatever your database runs as... usually postgres)
++# su - pgsql  (or whatever your database runs as... usually pgsql)
+ $ psql -d template1 -f create.pgsql.sql
+ 
+ This script will create a "horde" database and a "horde" user.  You
