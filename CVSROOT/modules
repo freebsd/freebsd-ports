@@ -6020,6 +6020,7 @@ p5-Class-DBI-Loader	ports/databases/p5-Class-DBI-Loader
 p5-Class-DBI-Oracle	ports/databases/p5-Class-DBI-Oracle
 p5-Class-DBI-Pager	ports/databases/p5-Class-DBI-Pager
 p5-Class-DBI-Pg		ports/databases/p5-Class-DBI-Pg
+p5-Class-DBI-Plugin-RetrieveAll	databases/p5-Class-DBI-Plugin-RetrieveAll
 p5-Class-DBI-Replication	ports/databases/p5-Class-DBI-Replication
 p5-Class-DBI-SAK	ports/databases/p5-Class-DBI-SAK
 p5-Class-DBI-SQLite	ports/databases/p5-Class-DBI-SQLite
