@@ -1,5 +1,13 @@
 #! /bin/sh
 
+# configure - gs driver preconfiguration, manual driver selection
+# by Andreas Klemm <andreas@FreeBSD.org>
+
+#
+# XXX - needs some rework for gs v 6.50,
+#       therefore currently disabled in Makefile
+#
+
 # driverselection
 /usr/bin/dialog --title "Ghostscript 6 driver configuration" --clear \
 	--checklist "\n\
@@ -45,12 +53,7 @@ Have fun with this new configuration style !     -andreas \n\n\
   "cdjmono"  "HP DeskJet 500/510/520/540C b/w printing" ON \
   "cdj500"   "HP DeskJet 500/540C (same as cdjcolor)" OFF \
   "cdj550"   "HP DeskJet 550C/560C/660C/660Cse" ON \
-  "cdj670"   "HP DeskJet 670/690" OFF \
-  "cdj850"   "HP DeskJet 850/855/870/1100" OFF \
-  "cdj880"   "HP DeskJet 812/815/832/880/882/895/932/970 C (experimental)" OFF \
-  "cdj890"   "HP DeskJet 890" OFF \
   "cdj970"   "HP DeskJet 970, 3rd party" ON \
-  "cdj1600"  "HP DeskJet 1600" OFF \
   "laserjet" "HP LaserJet" ON \
   "ljetplus" "HP LaserJet Plus" ON \
   "ljet2p"   "HP LaserJet IId/IIp/III* with TIFF compression" ON \
@@ -71,7 +74,7 @@ Have fun with this new configuration style !     -andreas \n\n\
   "pjxl300"  "HP PaintJet XL300, DeskJet 1200C color printer, HP CopyJet" ON \
   "pxlmono"  "HP PCL XL black-and-white printers (LaserJet 5 and 6 family)" ON \
   "pxlcolor" "HP PCL XL color printers (none available yet)" ON \
-  "hpdj"     "HP PCL 3+ (DeskJet 500/500C/510/520/540/550C/560C/850C/855C)" ON \
+  "pcl3"     "HP PCL 3+ (DeskJet 500/500C/510/520/540/550C/560C/850C/855C)" ON \
   "ibmpro"   "IBM 9-pin Proprinter" OFF \
   "jetp3852" "IBM Jetprinter ink-jet color (Model #3852)" OFF \
   "imagen"   "Imagen ImPress printers" OFF \

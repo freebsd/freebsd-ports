@@ -84,4 +84,3 @@ ghostscript code anymore.
 -	}
 -	define_int(f, "ARCH_CACHE2_SIZE", bsize >> 1);
 -    }
- 

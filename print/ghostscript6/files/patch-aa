@@ -1,5 +1,5 @@
---- src/unix-gcc.mak	Fri Mar 17 23:13:40 2000
-+++ src/unix-gcc.mak	Wed Jul 19 10:23:42 2000
+--- src/unix-gcc.mak.orig	Mon Sep 25 17:06:28 2000
++++ src/unix-gcc.mak	Tue Jan  9 17:30:58 2001
 @@ -26,14 +26,15 @@
  # source, generated intermediate file, and object directories
  # for the graphics library (GL) and the PostScript/PDF interpreter (PS).
@@ -48,13 +48,13 @@
  JVERSION=6
  
  # Choose whether to use a shared version of the IJG JPEG library (-ljpeg).
-@@ -146,14 +147,14 @@
+@@ -148,14 +148,14 @@
  # You may need to change this if the libpng version changes.
  # See libpng.mak for more information.
  
 -PSRCDIR=libpng
 +PSRCDIR=${LOCALBASE}/include
- PVERSION=10005
+ PVERSION=10008
  
  # Choose whether to use a shared version of the PNG library, and if so,
  # what its name is.
@@ -65,7 +65,7 @@
  LIBPNG_NAME=png
  
  # Define the directory where the zlib sources are stored.
-@@ -165,7 +165,7 @@
+@@ -167,7 +167,7 @@
  # what its name is (usually libz, but sometimes libgz).
  # See gs.mak and Make.htm for more information.
  
@@ -74,7 +74,7 @@
  #ZLIB_NAME=gz
  ZLIB_NAME=z
  
-@@ -180,7 +180,7 @@
+@@ -182,7 +182,7 @@
  
  # Define the name of the C compiler.
  
@@ -83,7 +83,7 @@
  
  # Define the name of the linker for the final link step.
  # Normally this is the same as the C compiler.
-@@ -213,7 +213,7 @@
+@@ -215,7 +215,7 @@
  #   gcc to accept ANSI-style function prototypes and function definitions.
  XCFLAGS=
  
@@ -92,7 +92,7 @@
  
  # Define platform flags for ld.
  # SunOS 4.n may need -Bstatic.
-@@ -222,7 +222,7 @@
+@@ -224,7 +224,7 @@
  #	-R /usr/local/xxx/lib:/usr/local/lib
  # giving the full path names of the shared library directories.
  # XLDFLAGS can be set from the command line.
@@ -101,7 +101,7 @@
  
  LDFLAGS=$(XLDFLAGS) -fno-common
  
-@@ -242,7 +242,7 @@
+@@ -244,7 +244,7 @@
  # All reasonable platforms require -lm, but Rhapsody and perhaps one or
  # two others fold libm into libc and don't require any additional library.
  
@@ -110,7 +110,7 @@
  
  # Define the include switch(es) for the X11 header files.
  # This can be null if handled in some other way (e.g., the files are
-@@ -252,7 +252,7 @@
+@@ -254,7 +254,7 @@
  # Note that x_.h expects to find the header files in $(XINCLUDE)/X11,
  # not in $(XINCLUDE).
  
@@ -119,7 +119,7 @@
  
  # Define the directory/ies and library names for the X11 library files.
  # XLIBDIRS is for ld and should include -L; XLIBDIR is for LD_RUN_PATH
-@@ -264,12 +264,12 @@
+@@ -266,12 +266,12 @@
  # Solaris and other SVR4 systems with dynamic linking probably want
  #XLIBDIRS=-L/usr/openwin/lib -R/usr/openwin/lib
  # X11R6 (on any platform) may need
@@ -135,7 +135,7 @@
  
  # Define whether this platform has floating point hardware:
  #	FPU_TYPE=2 means floating point is faster than fixed point.
-@@ -327,7 +327,7 @@
+@@ -329,7 +329,7 @@
  # Choose the device(s) to include.  See devs.mak for details,
  # devs.mak and contrib.mak for the list of available devices.
  
@@ -144,9 +144,9 @@
  
  #DEVICE_DEVS1=
  #DEVICE_DEVS2=
-@@ -345,27 +345,27 @@
- #DEVICE_DEVS14=
- #DEVICE_DEVS15=
+@@ -352,27 +352,27 @@
+ #DEVICE_DEVS19=
+ #DEVICE_DEVS20=
  
 -DEVICE_DEVS1=$(DD)bmpmono.dev $(DD)bmpgray.dev $(DD)bmpsep1.dev $(DD)bmpsep8.dev $(DD)bmp16.dev $(DD)bmp256.dev $(DD)bmp16m.dev $(DD)bmp32b.dev
 -DEVICE_DEVS2=$(DD)bmpamono.dev $(DD)bmpasep1.dev $(DD)bmpasep8.dev $(DD)bmpa16.dev $(DD)bmpa256.dev $(DD)bmpa16m.dev $(DD)bmpa32b.dev
@@ -193,7 +193,7 @@
  
  # ---------------------------- End of options --------------------------- #
  
-@@ -379,13 +379,13 @@
+@@ -386,13 +386,13 @@
  # detect whether we're running a version of gcc with the const optimization
  # bug.
  
@@ -210,7 +210,7 @@
  CC_LEAF=$(CC_) -fomit-frame-pointer
  # gcc can't use -fomit-frame-pointer with -pg.
  CC_LEAF_PG=$(CC_)
-@@ -412,5 +412,5 @@
+@@ -419,5 +419,5 @@
  include $(GLSRCDIR)/unixinst.mak
  
  # This has to come last so it won't be taken as the default target.
