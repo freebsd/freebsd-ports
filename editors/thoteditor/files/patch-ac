@@ -1,0 +1,11 @@
+--- makes/Makefile.template.orig	Tue May  6 23:55:03 1997
++++ makes/Makefile.template	Fri Feb 12 15:06:58 1999
+@@ -56,7 +56,7 @@
+ # MOTIFLIBS : how to grab Motif at link time.
+ #             X11R6 probably need -lSM -lICE
+ #
+-MOTIFLIBS = -L/usr/X11/lib -lXm -lXt			# generic
++MOTIFLIBS = ${MOTIFLIB} -L/usr/X11/lib -lXt -lXp			# generic
+ #MOTIFLIBS = -L/usr/X11R6/lib -lXm -lXt -lSM -lICE	# Linux
+ #MOTIFLIBS = -L/usr/dt/lib -L/usr/openwin/lib -lXm -lXt	# Solaris
+ #MOTIFLIBS = -L/usr/X11/lib -lXm -lXt			# SunOs

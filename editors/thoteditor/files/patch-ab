@@ -1,0 +1,11 @@
+--- thot/Makefile.in.orig	Fri May 16 07:00:19 1997
++++ thot/Makefile.in	Fri Feb 12 15:11:54 1999
+@@ -13,7 +13,7 @@
+           -I@top_srcdir@/drawlib -I@top_srcdir@/drawlib/f
+ LDFLAGS = @LDFLAGS@ -L../indexlib -L../drawlib -L../tablelib -L../thotlib -L..
+ LIBS	= -lThotIndex -lThotDraw -lThotTable -lThotEditor @IMGLIBS@ \
+-          $(MOTIF_LIBRARIES) -lXm $(X_LIBS) -lXt -lXext $(X_PRE_LIBS) \
++          ${MOTIFLIB} $(X_LIBS) -lXp -lXt -lXext $(X_PRE_LIBS) \
+ 	  -lX11 $(X_EXTRA_LIBS) @LIBS@ @EXTRA_LIBS@ -lm
+ 
+ prefix = @prefix@
