@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	mldonkey
-PORTVERSION=	2.5.4
-PORTREVISION=	1
+PORTVERSION=	2.5.14
 CATEGORIES+=	net
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
-MASTER_SITE_SUBDIR=	${PORTNAME}/release-${PORTVERSION:C/\.(.)$/-\1/}/official
-DISTNAME=	${PORTNAME}-${PORTVERSION:C/\.(.)$/-\1/}
+MASTER_SITE_SUBDIR=	${PORTNAME}
+DISTNAME=	${PORTNAME}-${PORTVERSION:C/\./-/g}
 
 MAINTAINER=	holger@e-gitt.net
 COMMENT?=	A OCAML client for multiple peer-to-peer networks
@@ -20,7 +19,7 @@ BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-pthread --enable-ocamlver=3
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:C/\.(.)$/-\1/}
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:C/\./-/g}
 USE_GMAKE=	yes
 ALL_TARGET=	depend opt
 
@@ -46,8 +45,8 @@ PLIST_SUB+=	CORE=""	GUICORE=""
 .endif
 .endif
 
-DOCFILES=	AUTHORS BUGS ChangeLog FAQ.html \
-		INSTALL TODO ed2k_links.txt
+DOCFILES=	Authors.txt Bugs.txt ChangeLog Developers.txt FAQ.html \
+		Install.txt Readme.txt Todo.txt ed2k_links.txt
 
 pre-everything::
 .if !defined(WITHOUT_GUI) && !defined(WITHOUT_CORE)
