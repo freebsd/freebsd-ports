@@ -12,7 +12,8 @@ CATEGORIES=	news
 MASTER_SITES=	ftp://ftp.cs.tu-berlin.de/pub/net/news/nntpcache/ \
 		ftp://ftp.sbs.de/pub/news/servers/nntpcache/ \
 		ftp://ftp.ntua.gr/pub/net/news/nntpcache/ \
-		ftp://ftp.eos.hokudai.ac.jp/pub/network/news/nntpcache/
+		ftp://ftp.netlab.is.tsukuba.ac.jp/pub/network/news/nntpcache/ \
+		http://public.www.planetmirror.com/pub/nntpcache/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	News caching/anti-spam/server-merging system
