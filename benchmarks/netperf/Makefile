@@ -7,13 +7,14 @@
 
 PORTNAME=	netperf
 PORTVERSION=	2.1.3
+PORTREVISION=	1
 CATEGORIES=	benchmarks ipv6
 MASTER_SITES=	ftp://ftp.cup.hp.com/dist/networking/benchmarks/netperf/%SUBDIR%/
 MASTER_SITE_SUBDIR=. archive
 DISTNAME=	netperf-2.1pl3
 
 PATCH_SITES=	ftp://ftp.kame.net/pub/kame/misc/
-PATCHFILES=	netperf-21pl3-20000721.diff.gz
+PATCHFILES=	netperf-21pl3-20010302.diff.gz
 PATCH_DIST_STRIP=	-p1
 
 MAKEFILE=	makefile
