@@ -1,11 +1,11 @@
 This is the netscape web-surfboard.
-Please read the file `/usr/local/lib/netscape/LICENSE.ko'
+Please read the file `/usr/local/lib/netscape/ko_KR.EUC/LICENSE.ko'
 for the licensing terms.
 
 Korean Netscape Localization(X11) page(written in Korean):
-  http://jazz.snu.ac.kr/~junker/work/netscape-ko/
+
+  http://www.kr.freebsd.org/~cjh/freetime/mozilla/netscape-ko
 
 --
-Ports by CHOI Junho <junker@jazz.snu.ac.kr>
-
-WWW: http://jazz.snu.ac.kr/~junker/work/netscape-ko/
+Ports by CHOI Junho <cjh@kr.freebsd.org>
+WWW: http://www.kr.freebsd.org/~cjh/freetime/mozilla/netscape-ko

@@ -1,61 +1,23 @@
 # New ports collection makefile for: Netscape browser with Korean resources
-# Version required:	4.08
-# Date created:		25 Oct 1998
-# Whom:			CHOI Junho <junker@jazz.snu.ac.kr>
+# Version required:	4.61
+# Date created:		14 Jun 1999
+# Whom:			cjh@kr.freebsd.org
 #
-# $Id: Makefile,v 1.11 1999/04/02 03:45:46 steve Exp $
+# $Id$
 #
-# based on japanese/netscape4-*
 
-DISTNAME=	ko-netscape-${BROWSER}
-CATEGORIES=	korean www
-MASTER_SITES=	ftp://jazz.snu.ac.kr/pub/unix/netscape-ko/
-DISTFILES=	${KOREAN_KIT}.tar.gz
+MASTERDIR=	${.CURDIR}/../netscape4-communicator
 
-MAINTAINER?=	junker@jazz.snu.ac.kr
+MAINTAINER=	cjh@kr.freebsd.org
 
-BROKEN=		"Just repo.copied"
+RUN_DEPENDS=	${PREFIX}/bin/${BROWSER}-${BROWSER_VERSION}:${PORTSDIR}/www/netscape46-${BROWSER}
 
-RUN_DEPENDS= \
-	${PREFIX}/bin/${BROWSER}:${PORTSDIR}/www/netscape4-${BROWSER_NAME} \
-	${X11BASE}/lib/X11/fonts/local/hgm12.pcf.gz:${PORTSDIR}/korean/hanyangfonts \
-	${X11BASE}/lib/X11/fonts/local/mzgt16h1.pcf.gz:${PORTSDIR}/korean/mizifont
+FILESDIR?=	${.CURDIR}/files
 
-NO_BUILD=	yes
-STRIP=
-WRKSRC=		${WRKDIR}/${KOREAN_KIT}
 
-BROWSER=	${BROWSER_NAME}-${BROWSER_VER}
-BROWSER_NAME?=	communicator
-BROWSER_VER=	4.08
-LANG=		ko_KR.EUC
-KOREAN_KIT=	netscape-v408.generic-generic-generic-19981229
-NDIR=		${PREFIX}/lib/netscape
-MAKESCRIPT=	${SED} -e "s;@X11BASE@;${X11BASE};g" \
-			-e "s;@PREFIX@;${PREFIX};g" \
-			-e "s;@NDIR@;${NDIR};g" \
-			-e "s;@RDIR@;${NDIR};g" \
-			-e "s;@BROWSER@;${BROWSER};g" \
-			-e "s;@LANG@;${LANG};g"
-TAR=		/usr/bin/tar
+BROWSER_CMD=	ko-${BROWSER}-46
+BROWSER_VERSION=	4.61
+NETHELP=        nethelp-v451
+KOREAN_KIT=	netscape-korean-kit-v461.19990804
 
-.SILENT:
-
-do-configure:
-	${MAKESCRIPT} ${FILESDIR}/start.sh.in >${WRKDIR}/start.sh
-	${MAKESCRIPT} ${WRKSRC}/Netscape.ad-ko >${WRKSRC}/Netscape
-
-do-install:
-	${INSTALL_DATA} ${FILESDIR}/preferences.js ${NDIR}
-	${MKDIR} ${NDIR}/locale
-	${LN} -sf /usr/share/locale/en_US.ISO_8859-1 ${NDIR}/locale/${LANG}
-	${MKDIR} ${NDIR}/${LANG}
-.for f in Netscape about mail.msg netscape.cfg plugins \
-	  splash LICENSE.ko
-	${INSTALL_DATA} ${WRKSRC}/$f ${NDIR}/${LANG}/
-.endfor
-	${INSTALL_SCRIPT} ${WRKDIR}/start.sh ${PREFIX}/bin/ko-${BROWSER}
-	${LN} -sf ko-${BROWSER} ${PREFIX}/bin/netscape
-	${TAR} -C ${NDIR}/${LANG} -x -z -v -f ${WRKSRC}/nethelp-v403.nif
-
-.include <bsd.port.mk>
+.include "${MASTERDIR}/Makefile"

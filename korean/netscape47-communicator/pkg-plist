@@ -1,122 +1,124 @@
-bin/ko-communicator-4.08
-@exec /bin/ln -sf %f %B/netscape
-lib/netscape/ko_KR.EUC/Netscape
-lib/netscape/ko_KR.EUC/about
-lib/netscape/ko_KR.EUC/mail.msg
-lib/netscape/ko_KR.EUC/nethelp/Back_dep.gif
-lib/netscape/ko_KR.EUC/nethelp/Back_dis.gif
-lib/netscape/ko_KR.EUC/nethelp/Back_sel.gif
-lib/netscape/ko_KR.EUC/nethelp/Back_up.gif
-lib/netscape/ko_KR.EUC/nethelp/Blank.htm
-lib/netscape/ko_KR.EUC/nethelp/Button.js
-lib/netscape/ko_KR.EUC/nethelp/CntData.js
-lib/netscape/ko_KR.EUC/nethelp/CntTool.htm
-lib/netscape/ko_KR.EUC/nethelp/CntTool.js
-lib/netscape/ko_KR.EUC/nethelp/Exit_dep.gif
-lib/netscape/ko_KR.EUC/nethelp/Exit_sel.gif
-lib/netscape/ko_KR.EUC/nethelp/Exit_up.gif
-lib/netscape/ko_KR.EUC/nethelp/Forw_dep.gif
-lib/netscape/ko_KR.EUC/nethelp/Forw_dis.gif
-lib/netscape/ko_KR.EUC/nethelp/Forw_sel.gif
-lib/netscape/ko_KR.EUC/nethelp/Forw_up.gif
-lib/netscape/ko_KR.EUC/nethelp/Header.js
-lib/netscape/ko_KR.EUC/nethelp/IdxData.js
-lib/netscape/ko_KR.EUC/nethelp/IdxFill.htm
-lib/netscape/ko_KR.EUC/nethelp/IdxKey.htm
-lib/netscape/ko_KR.EUC/nethelp/IdxTool.htm
-lib/netscape/ko_KR.EUC/nethelp/IdxTopic.htm
-lib/netscape/ko_KR.EUC/nethelp/Local-1.js
-lib/netscape/ko_KR.EUC/nethelp/NavUI.htm
-lib/netscape/ko_KR.EUC/nethelp/NoJSerr.htm
-lib/netscape/ko_KR.EUC/nethelp/NSHIfrm.htm
-lib/netscape/ko_KR.EUC/nethelp/Prnt_dep.gif
-lib/netscape/ko_KR.EUC/nethelp/Prnt_sel.gif
-lib/netscape/ko_KR.EUC/nethelp/Prnt_up.gif
-lib/netscape/ko_KR.EUC/nethelp/Stack.js
-lib/netscape/ko_KR.EUC/nethelp/Status.htm
-lib/netscape/ko_KR.EUC/nethelp/System.htm
-lib/netscape/ko_KR.EUC/nethelp/System.js
-lib/netscape/ko_KR.EUC/nethelp/ToolUI.htm
-lib/netscape/ko_KR.EUC/nethelp/Tool_dep.gif
-lib/netscape/ko_KR.EUC/nethelp/Tool_sel.gif
-lib/netscape/ko_KR.EUC/nethelp/Tool_up.gif
-lib/netscape/ko_KR.EUC/nethelp/Topic.js
-lib/netscape/ko_KR.EUC/nethelp/Utility.js
-lib/netscape/ko_KR.EUC/nethelp/Wait.gif
-lib/netscape/ko_KR.EUC/nethelp/netscape/shared/collIcon.gif
-lib/netscape/ko_KR.EUC/nethelp/netscape/shared/commIcon.gif
-lib/netscape/ko_KR.EUC/nethelp/netscape/shared/compIcon.gif
-lib/netscape/ko_KR.EUC/nethelp/netscape/shared/confIcon.gif
-lib/netscape/ko_KR.EUC/nethelp/netscape/shared/messIcon.gif
-lib/netscape/ko_KR.EUC/nethelp/netscape/shared/navIcon.gif
-lib/netscape/ko_KR.EUC/nethelp/netscape/shared/netIcon.gif
-lib/netscape/ko_KR.EUC/nethelp/netscape/shared/NetHelp1.css
-lib/netscape/ko_KR.EUC/nethelp/netscape/shared/admnIcon.gif
-lib/netscape/ko_KR.EUC/nethelp/netscape/shared/calIcon.gif
-lib/netscape/ko_KR.EUC/nethelp/netscape/shared/ibmIcon.gif
-lib/netscape/ko_KR.EUC/nethelp/netscape/composer/comp.htm
-lib/netscape/ko_KR.EUC/nethelp/netscape/composer/compHdr.htm
-lib/netscape/ko_KR.EUC/nethelp/netscape/composer/composer.gif
-lib/netscape/ko_KR.EUC/nethelp/netscape/composer/comtlbr2.gif
-lib/netscape/ko_KR.EUC/nethelp/netscape/composer/help.hpf
-lib/netscape/ko_KR.EUC/nethelp/netscape/composer/fmtlbr3.gif
-lib/netscape/ko_KR.EUC/nethelp/netscape/composer/tagicon2.gif
-lib/netscape/ko_KR.EUC/nethelp/netscape/confernc/conf.htm
-lib/netscape/ko_KR.EUC/nethelp/netscape/confernc/confHdr.htm
-lib/netscape/ko_KR.EUC/nethelp/netscape/confernc/confernc.gif
-lib/netscape/ko_KR.EUC/nethelp/netscape/confernc/brws2.gif
-lib/netscape/ko_KR.EUC/nethelp/netscape/confernc/help.hpf
-lib/netscape/ko_KR.EUC/nethelp/netscape/confernc/chat2.gif
-lib/netscape/ko_KR.EUC/nethelp/netscape/confernc/circle2.gif
-lib/netscape/ko_KR.EUC/nethelp/netscape/confernc/eraser2.gif
-lib/netscape/ko_KR.EUC/nethelp/netscape/confernc/fhndtl2.gif
-lib/netscape/ko_KR.EUC/nethelp/netscape/confernc/filex2.gif
-lib/netscape/ko_KR.EUC/nethelp/netscape/confernc/horline2.gif
-lib/netscape/ko_KR.EUC/nethelp/netscape/confernc/line2.gif
-lib/netscape/ko_KR.EUC/nethelp/netscape/confernc/pointer2.gif
-lib/netscape/ko_KR.EUC/nethelp/netscape/confernc/rect2.gif
-lib/netscape/ko_KR.EUC/nethelp/netscape/confernc/txttool2.gif
-lib/netscape/ko_KR.EUC/nethelp/netscape/confernc/whtbd2.gif
-lib/netscape/ko_KR.EUC/nethelp/netscape/home/help.hpf
-lib/netscape/ko_KR.EUC/nethelp/netscape/home/home.gif
-lib/netscape/ko_KR.EUC/nethelp/netscape/home/home.htm
-lib/netscape/ko_KR.EUC/nethelp/netscape/home/homeHdr.htm
-lib/netscape/ko_KR.EUC/nethelp/netscape/navigatr/help.hpf
-lib/netscape/ko_KR.EUC/nethelp/netscape/navigatr/nav.htm
-lib/netscape/ko_KR.EUC/nethelp/netscape/navigatr/navHdr.htm
-lib/netscape/ko_KR.EUC/nethelp/netscape/navigatr/navigatr.gif
-lib/netscape/ko_KR.EUC/nethelp/netscape/netcastr/help.hpf
-lib/netscape/ko_KR.EUC/nethelp/netscape/netcastr/net.htm
-lib/netscape/ko_KR.EUC/nethelp/netscape/netcastr/netHdr.htm
-lib/netscape/ko_KR.EUC/nethelp/netscape/netcastr/netcastr.gif
-lib/netscape/ko_KR.EUC/nethelp/netscape/collabra/discgrps.gif
-lib/netscape/ko_KR.EUC/nethelp/netscape/collabra/coll.htm
-lib/netscape/ko_KR.EUC/nethelp/netscape/collabra/collHdr.htm
-lib/netscape/ko_KR.EUC/nethelp/netscape/collabra/collabra.gif
-lib/netscape/ko_KR.EUC/nethelp/netscape/collabra/help.hpf
-lib/netscape/ko_KR.EUC/nethelp/netscape/messengr/mailbox.gif
-lib/netscape/ko_KR.EUC/nethelp/netscape/messengr/help.hpf
-lib/netscape/ko_KR.EUC/nethelp/netscape/messengr/mess.htm
-lib/netscape/ko_KR.EUC/nethelp/netscape/messengr/messHdr.htm
-lib/netscape/ko_KR.EUC/nethelp/netscape/messengr/messengr.gif
-lib/netscape/ko_KR.EUC/nethelp/netscape/messengr/mpctrl.gif
-@dirrm lib/netscape/ko_KR.EUC/nethelp/netscape/messengr
-@dirrm lib/netscape/ko_KR.EUC/nethelp/netscape/collabra
-@dirrm lib/netscape/ko_KR.EUC/nethelp/netscape/netcastr
-@dirrm lib/netscape/ko_KR.EUC/nethelp/netscape/navigatr
-@dirrm lib/netscape/ko_KR.EUC/nethelp/netscape/home
-@dirrm lib/netscape/ko_KR.EUC/nethelp/netscape/confernc
-@dirrm lib/netscape/ko_KR.EUC/nethelp/netscape/shared
-@dirrm lib/netscape/ko_KR.EUC/nethelp/netscape/composer
-@dirrm lib/netscape/ko_KR.EUC/nethelp/netscape
-@dirrm lib/netscape/ko_KR.EUC/nethelp
-lib/netscape/ko_KR.EUC/netscape.cfg
-lib/netscape/ko_KR.EUC/plugins
-lib/netscape/ko_KR.EUC/splash
-lib/netscape/ko_KR.EUC/LICENSE.ko
-lib/netscape/preferences.js
-@exec /bin/mkdir -p %B/locale
-@exec /bin/ln -sf /usr/share/locale/en_US.ISO_8859-1 %B/locale/ko_KR.EUC
-@unexec rm -f %B/locale/ko_KR.EUC
-@dirrm lib/netscape/locale
-@dirrm lib/netscape/ko_KR.EUC
+bin/ko-communicator-46
+@exec ln -sf %f %B/netscape
+%%NSUBDIR%%/netscape.cfg
+%%NSUBDIR%%/%%LANG%%/Netscape
+%%NSUBDIR%%/%%LANG%%/LICENSE.ko
+%%NSUBDIR%%/%%LANG%%/about
+%%NSUBDIR%%/%%LANG%%/mail.msg
+%%NSUBDIR%%/%%LANG%%/plugins
+%%NSUBDIR%%/%%LANG%%/splash
+@exec mkdir -p %D/%%NSUBDIR%%/locale
+@exec ln -sf /usr/share/locale/en_US.ISO_8859-1 %D/%%NSUBDIR%%/locale/%%LANG%%
+@unexec rm -f %D/%%NSUBDIR%%/locale/%%LANG%%
+@dirrm %%NSUBDIR%%/locale
+%%NSUBDIR%%/%%LANG%%/nethelp/Back_dep.gif
+%%NSUBDIR%%/%%LANG%%/nethelp/Back_dis.gif
+%%NSUBDIR%%/%%LANG%%/nethelp/Back_sel.gif
+%%NSUBDIR%%/%%LANG%%/nethelp/Back_up.gif
+%%NSUBDIR%%/%%LANG%%/nethelp/Blank.htm
+%%NSUBDIR%%/%%LANG%%/nethelp/Button.js
+%%NSUBDIR%%/%%LANG%%/nethelp/CntData.js
+%%NSUBDIR%%/%%LANG%%/nethelp/CntTool.htm
+%%NSUBDIR%%/%%LANG%%/nethelp/CntTool.js
+%%NSUBDIR%%/%%LANG%%/nethelp/Exit_dep.gif
+%%NSUBDIR%%/%%LANG%%/nethelp/Exit_sel.gif
+%%NSUBDIR%%/%%LANG%%/nethelp/Exit_up.gif
+%%NSUBDIR%%/%%LANG%%/nethelp/Forw_dep.gif
+%%NSUBDIR%%/%%LANG%%/nethelp/Forw_dis.gif
+%%NSUBDIR%%/%%LANG%%/nethelp/Forw_sel.gif
+%%NSUBDIR%%/%%LANG%%/nethelp/Forw_up.gif
+%%NSUBDIR%%/%%LANG%%/nethelp/Header.js
+%%NSUBDIR%%/%%LANG%%/nethelp/IdxData.js
+%%NSUBDIR%%/%%LANG%%/nethelp/IdxFill.htm
+%%NSUBDIR%%/%%LANG%%/nethelp/IdxKey.htm
+%%NSUBDIR%%/%%LANG%%/nethelp/IdxTool.htm
+%%NSUBDIR%%/%%LANG%%/nethelp/IdxTopic.htm
+%%NSUBDIR%%/%%LANG%%/nethelp/Local-1.js
+%%NSUBDIR%%/%%LANG%%/nethelp/NavUI.htm
+%%NSUBDIR%%/%%LANG%%/nethelp/NoJSerr.htm
+%%NSUBDIR%%/%%LANG%%/nethelp/NSHIfrm.htm
+%%NSUBDIR%%/%%LANG%%/nethelp/Prnt_dep.gif
+%%NSUBDIR%%/%%LANG%%/nethelp/Prnt_sel.gif
+%%NSUBDIR%%/%%LANG%%/nethelp/Prnt_up.gif
+%%NSUBDIR%%/%%LANG%%/nethelp/Stack.js
+%%NSUBDIR%%/%%LANG%%/nethelp/Status.htm
+%%NSUBDIR%%/%%LANG%%/nethelp/System.htm
+%%NSUBDIR%%/%%LANG%%/nethelp/System.js
+%%NSUBDIR%%/%%LANG%%/nethelp/ToolUI.htm
+%%NSUBDIR%%/%%LANG%%/nethelp/Tool_dep.gif
+%%NSUBDIR%%/%%LANG%%/nethelp/Tool_sel.gif
+%%NSUBDIR%%/%%LANG%%/nethelp/Tool_up.gif
+%%NSUBDIR%%/%%LANG%%/nethelp/Topic.js
+%%NSUBDIR%%/%%LANG%%/nethelp/Utility.js
+%%NSUBDIR%%/%%LANG%%/nethelp/Wait.gif
+%%NSUBDIR%%/%%LANG%%/nethelp/netscape/collabra/coll.htm
+%%NSUBDIR%%/%%LANG%%/nethelp/netscape/collabra/collHdr.htm
+%%NSUBDIR%%/%%LANG%%/nethelp/netscape/collabra/collabra.gif
+%%NSUBDIR%%/%%LANG%%/nethelp/netscape/collabra/discgrps.gif
+%%NSUBDIR%%/%%LANG%%/nethelp/netscape/collabra/help.hpf
+%%NSUBDIR%%/%%LANG%%/nethelp/netscape/collabra/mailbox2.gif
+%%NSUBDIR%%/%%LANG%%/nethelp/netscape/composer/comp.htm
+%%NSUBDIR%%/%%LANG%%/nethelp/netscape/composer/compHdr.htm
+%%NSUBDIR%%/%%LANG%%/nethelp/netscape/composer/composer.gif
+%%NSUBDIR%%/%%LANG%%/nethelp/netscape/composer/comtlbr2.gif
+%%NSUBDIR%%/%%LANG%%/nethelp/netscape/composer/fmtlbr3.gif
+%%NSUBDIR%%/%%LANG%%/nethelp/netscape/composer/help.hpf
+%%NSUBDIR%%/%%LANG%%/nethelp/netscape/composer/tagicon2.gif
+%%NSUBDIR%%/%%LANG%%/nethelp/netscape/home/help.hpf
+%%NSUBDIR%%/%%LANG%%/nethelp/netscape/home/home.gif
+%%NSUBDIR%%/%%LANG%%/nethelp/netscape/home/home.htm
+%%NSUBDIR%%/%%LANG%%/nethelp/netscape/home/homeHdr.htm
+%%NSUBDIR%%/%%LANG%%/nethelp/netscape/messengr/abook.gif
+%%NSUBDIR%%/%%LANG%%/nethelp/netscape/messengr/compbar.gif
+%%NSUBDIR%%/%%LANG%%/nethelp/netscape/messengr/help.hpf
+%%NSUBDIR%%/%%LANG%%/nethelp/netscape/messengr/mailbox.gif
+%%NSUBDIR%%/%%LANG%%/nethelp/netscape/messengr/mailbox2.gif
+%%NSUBDIR%%/%%LANG%%/nethelp/netscape/messengr/mess.htm
+%%NSUBDIR%%/%%LANG%%/nethelp/netscape/messengr/messHdr.htm
+%%NSUBDIR%%/%%LANG%%/nethelp/netscape/messengr/messengr.gif
+%%NSUBDIR%%/%%LANG%%/nethelp/netscape/messengr/mpctrl.gif
+%%NSUBDIR%%/%%LANG%%/nethelp/netscape/messengr/newsgrp.gif
+%%NSUBDIR%%/%%LANG%%/nethelp/netscape/messengr/tabs.gif
+%%NSUBDIR%%/%%LANG%%/nethelp/netscape/navigatr/help.hpf
+%%NSUBDIR%%/%%LANG%%/nethelp/netscape/navigatr/nav.htm
+%%NSUBDIR%%/%%LANG%%/nethelp/netscape/navigatr/navHdr.htm
+%%NSUBDIR%%/%%LANG%%/nethelp/netscape/navigatr/navigatr.gif
+%%NSUBDIR%%/%%LANG%%/nethelp/netscape/news/abook.gif
+%%NSUBDIR%%/%%LANG%%/nethelp/netscape/news/collabra.gif
+%%NSUBDIR%%/%%LANG%%/nethelp/netscape/news/compbar.gif
+%%NSUBDIR%%/%%LANG%%/nethelp/netscape/news/discgrps.gif
+%%NSUBDIR%%/%%LANG%%/nethelp/netscape/news/help.hpf
+%%NSUBDIR%%/%%LANG%%/nethelp/netscape/news/mailbox2.gif
+%%NSUBDIR%%/%%LANG%%/nethelp/netscape/news/news.htm
+%%NSUBDIR%%/%%LANG%%/nethelp/netscape/news/newsgrp.gif
+%%NSUBDIR%%/%%LANG%%/nethelp/netscape/shared/NetHelpm.css
+%%NSUBDIR%%/%%LANG%%/nethelp/netscape/shared/NetHelpu.css
+%%NSUBDIR%%/%%LANG%%/nethelp/netscape/shared/NetHelpw.css
+%%NSUBDIR%%/%%LANG%%/nethelp/netscape/shared/admnIcon.gif
+%%NSUBDIR%%/%%LANG%%/nethelp/netscape/shared/calIcon.gif
+%%NSUBDIR%%/%%LANG%%/nethelp/netscape/shared/collIcon.gif
+%%NSUBDIR%%/%%LANG%%/nethelp/netscape/shared/commIcon.gif
+%%NSUBDIR%%/%%LANG%%/nethelp/netscape/shared/compIcon.gif
+%%NSUBDIR%%/%%LANG%%/nethelp/netscape/shared/confIcon.gif
+%%NSUBDIR%%/%%LANG%%/nethelp/netscape/shared/ibmIcon.gif
+%%NSUBDIR%%/%%LANG%%/nethelp/netscape/shared/messIcon.gif
+%%NSUBDIR%%/%%LANG%%/nethelp/netscape/shared/navIcon.gif
+%%NSUBDIR%%/%%LANG%%/nethelp/netscape/shared/netIcon.gif
+%%NSUBDIR%%/%%LANG%%/nethelp/netscape/trouble/help.hpf
+%%NSUBDIR%%/%%LANG%%/nethelp/netscape/trouble/trouble.htm
+%%NSUBDIR%%/%%LANG%%/nethelp/netwatch.gif
+%%NSUBDIR%%/%%LANG%%/nethelp/picsfail.htm
+%%NSUBDIR%%/%%LANG%%/nethelp/picsfail.jar
+%%NSUBDIR%%/%%LANG%%/nethelp/scraps
+@dirrm %%NSUBDIR%%/%%LANG%%/nethelp/netscape/collabra
+@dirrm %%NSUBDIR%%/%%LANG%%/nethelp/netscape/composer
+@dirrm %%NSUBDIR%%/%%LANG%%/nethelp/netscape/home
+@dirrm %%NSUBDIR%%/%%LANG%%/nethelp/netscape/messengr
+@dirrm %%NSUBDIR%%/%%LANG%%/nethelp/netscape/navigatr
+@dirrm %%NSUBDIR%%/%%LANG%%/nethelp/netscape/news
+@dirrm %%NSUBDIR%%/%%LANG%%/nethelp/netscape/shared
+@dirrm %%NSUBDIR%%/%%LANG%%/nethelp/netscape/trouble
+@dirrm %%NSUBDIR%%/%%LANG%%/nethelp/netscape
+@dirrm %%NSUBDIR%%/%%LANG%%/nethelp
+@dirrm %%NSUBDIR%%/%%LANG%%
+%%NSUBDIR%%/preferences.js
