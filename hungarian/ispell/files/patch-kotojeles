@@ -1,0 +1,11 @@
+--- kotojeles.orig	Mon Nov 18 11:42:11 2002
++++ kotojeles	Mon Nov 18 11:42:18 2002
+@@ -2,7 +2,7 @@
+ #
+ # idegen kiejtésû, és mozaikszavak feldolgozása
+ #
+-function ragoz () {
++ragoz () {
+ cut -f 1 $1 >> magyar.dict
+ cut -f 1 $1 | sed 's/\(.\)o$/\1ó/
+ s/\(.\)ö$/\1õ/

@@ -1,77 +1,51 @@
-*** Makefile.orig	Tue May 21 14:55:37 2002
---- Makefile	Tue May 21 14:58:21 2002
-***************
-*** 4,11 ****
-  
-  magyar.aff: aff.fej aff.alanyi aff.fonev
-  	# ******* magyar ispell ragozási táblázat (magyar.aff) elõállítása *********
-! 	cat aff.fej aff.alanyi aff.fonev aff.fonev.morfo | m4 >magyar.aff
-! 	cat aff.targyas aff.ige_kiv | m4 >>magyar.aff
-  
-  magyar.dict: ige_gen.awk fonev_gen.awk
-  	# ******* magyar ispell alapszótár (magyar.dict) elõállítása *********
---- 4,11 ----
-  
-  magyar.aff: aff.fej aff.alanyi aff.fonev
-  	# ******* magyar ispell ragozási táblázat (magyar.aff) elõállítása *********
-! 	cat aff.fej aff.alanyi aff.fonev aff.fonev.morfo | gm4 >magyar.aff
-! 	cat aff.targyas aff.ige_kiv | gm4 >>magyar.aff
-  
-  magyar.dict: ige_gen.awk fonev_gen.awk
-  	# ******* magyar ispell alapszótár (magyar.dict) elõállítása *********
-***************
-*** 48,65 ****
-  	awk -f melleknev_gen.awk <ige_ando | sed -e 's/$$/\/X/' >>magyar.dict
-  	awk -f melleknev_gen.awk <ige_hato | sed -e 's/$$/\/X/' >>magyar.dict
-  	# egyéb kivételek
-! 	cat kivetelek/igekötõs/* | grep -v ^# | m4 | tr "\t" "\n" | grep -v ^$$ | sed -e 's/$$/\/X/' >>magyar.dict
-! 	cat ragozatlan kivetelek/ragozatlan/* | m4 | grep -v ^# | tr "\t" "\n" >>magyar.dict
-  
-  install:
-! 	# magyar.hash, magyar.aff a helyére, rendszergazdaként adjuk ki!
-! 	! [ -d $(DESTDIR)/usr/lib/ispell/ ] && mkdir /usr/lib/ispell || true
-! 	mv magyar.hash $(DESTDIR)/usr/lib/ispell
-! 	mv magyar.aff $(DESTDIR)/usr/lib/ispell
-! 	# hungarian.hash -> magyar.hash kötés létrehozása
-! 	! [ -f $(DESTDIR)/usr/lib/ispell/hungarian.hash ] && ln -s magyar.hash $(DESTDIR)/usr/lib/ispell/hungarian.hash || true
-! 	# spellhtml és spellhtmlic a helyére
-! 	cp spellhtml/spellhtmlic spellhtml/spellhtml $(DESTDIR)/usr/bin
-  
-  allinstal:
-  	install -D -o root -g root -m 0644 magyar.hash $(DESTDIR)/usr/lib/ispell/hungarian.hash
---- 48,65 ----
-  	awk -f melleknev_gen.awk <ige_ando | sed -e 's/$$/\/X/' >>magyar.dict
-  	awk -f melleknev_gen.awk <ige_hato | sed -e 's/$$/\/X/' >>magyar.dict
-  	# egyéb kivételek
-! 	cat kivetelek/igekötõs/* | grep -v ^# | gm4 | tr "\t" "\n" | grep -v ^$$ | sed -e 's/$$/\/X/' >>magyar.dict
-! 	cat ragozatlan kivetelek/ragozatlan/* | gm4 | grep -v ^# | tr "\t" "\n" >>magyar.dict
-  
-  install:
-! 	##@# magyar.hash, magyar.aff a helyére, rendszergazdaként adjuk ki!
-! 	##@#! [ -d $(DESTDIR)/usr/lib/ispell/ ] && mkdir /usr/lib/ispell || true
-! 	##@#mv magyar.hash $(DESTDIR)/usr/lib/ispell
-! 	##@#mv magyar.aff $(DESTDIR)/usr/lib/ispell
-! 	##@# hungarian.hash -> magyar.hash kötés létrehozása
-! 	##@#! [ -f $(DESTDIR)/usr/lib/ispell/hungarian.hash ] && ln -s magyar.hash $(DESTDIR)/usr/lib/ispell/hungarian.hash || true
-! 	##@# spellhtml és spellhtmlic a helyére
-! 	##@#cp spellhtml/spellhtmlic spellhtml/spellhtml $(DESTDIR)/usr/bin
-  
-  allinstal:
-  	install -D -o root -g root -m 0644 magyar.hash $(DESTDIR)/usr/lib/ispell/hungarian.hash
-***************
-*** 81,87 ****
-  	bin/i2myspell -d magyar.dict >$(dir)hu_HU.dic
-  
-  all: magyar.hash
-! 	make myspell ISPELLDIR=$(CURDIR)/
-  
-  new:
-  	# új modul létrehozása
---- 81,87 ----
-  	bin/i2myspell -d magyar.dict >$(dir)hu_HU.dic
-  
-  all: magyar.hash
-! 	##@#make myspell ISPELLDIR=$(CURDIR)/
-  
-  new:
-  	# új modul létrehozása
+--- Makefile.orig	Wed Nov 20 00:46:09 2002
++++ Makefile	Mon Nov 25 09:49:09 2002
+@@ -12,16 +12,16 @@
+ 
+ magyar.aff: aff.fej aff.alanyi aff.fonev
+ 	# ******* magyar ispell ragozási táblázat (magyar.aff) elõállítása *********
+-	cat aff.fej aff.alanyi aff.fonev aff.fonev.morfo | m4 >magyar.aff
+-	cat aff.targyas aff.ige_kiv | m4 >>magyar.aff
++	cat aff.fej aff.alanyi aff.fonev aff.fonev.morfo | gm4 >magyar.aff
++	cat aff.targyas aff.ige_kiv | gm4 >>magyar.aff
+ 
+ magyar.dict: ige_gen.awk fonev_gen.awk
+ 	# ******* magyar ispell alapszótár (magyar.dict) elõállítása *********
+ 	# szótárak egybemásolása
+-	for i in _alap/*; do j=$$(basename $$i | sed 's/\..*$$//'); cat [A-Z]*/$$j [A-Z]*/$$j.* | \
++	-for i in _alap/*; do j=$$(basename $$i | sed 's/\..*$$//'); cat [A-Z]*/$$j [A-Z]*/$$j.* | \
+ 	    grep -v '#[A-Z]' | \
+ 	    sed 's/[	 ]*#.*$$//' | grep -v '^$$' >$$j; done
+-	for i in _alap/*; do j=$$(basename $$i | sed 's/\..*$$//'); cat [A-Z]*/$$j [A-Z]*/$$j.* | \
++	-for i in _alap/*; do j=$$(basename $$i | sed 's/\..*$$//'); cat [A-Z]*/$$j [A-Z]*/$$j.* | \
+ 	    grep '#$(SPELL)' | \
+ 	    sed 's/[	 ]*#.*$$//' | grep -v '^$$' >>$$j; done
+ 	# igékbõl képzett más szófajú alakok elõállítása
+@@ -67,19 +67,19 @@
+ 	awk -f melleknev_gen.awk <ige_ando | awk -f igekoto_filter.awk >>magyar.dict
+ 	awk -f melleknev_gen.awk <ige_hato | awk -f igekoto_filter.awk >>magyar.dict
+ 	# egyéb kivételek
+-	cat kivetelek/igekötõs/* | grep -v ^# | m4 | tr "\t" "\n" | grep -v ^$$ | sed -e 's/$$/\/X/' >>magyar.dict
+-	cat ragozatlan kivetelek/ragozatlan/* | m4 | grep -v ^# | grep -v "#[A-Z]" | sed 's/[	 ]*#.*$$//' | tr "\t" "\n" >>magyar.dict
+-	cat ragozatlan kivetelek/ragozatlan/* | m4 | grep '#$(SPELL)' | sed 's/[	 ]*#.*$$//' | tr "\t" "\n" >>magyar.dict
++	cat kivetelek/igekötõs/* | grep -v ^# | gm4 | tr "\t" "\n" | grep -v ^$$ | sed -e 's/$$/\/X/' >>magyar.dict
++	cat ragozatlan kivetelek/ragozatlan/* | gm4 | grep -v ^# | grep -v "#[A-Z]" | sed 's/[	 ]*#.*$$//' | tr "\t" "\n" >>magyar.dict
++	cat ragozatlan kivetelek/ragozatlan/* | gm4 | grep '#$(SPELL)' | sed 's/[	 ]*#.*$$//' | tr "\t" "\n" >>magyar.dict
+ 
+ install:
+ 	# magyar.hash, magyar.aff a helyére, rendszergazdaként adjuk ki!
+-	! [ -d $(DESTDIR)/usr/lib/ispell/ ] && mkdir /usr/lib/ispell || true
+-	mv magyar.hash $(DESTDIR)/usr/lib/ispell
+-	mv magyar.aff $(DESTDIR)/usr/lib/ispell
++	##@#! [ -d $(DESTDIR)/usr/lib/ispell/ ] && mkdir /usr/lib/ispell || true
++	##@#mv magyar.hash $(DESTDIR)/usr/lib/ispell
++	##@#mv magyar.aff $(DESTDIR)/usr/lib/ispell
+ 	# hungarian.hash -> magyar.hash kötés létrehozása
+-	! [ -f $(DESTDIR)/usr/lib/ispell/hungarian.hash ] && ln -s magyar.hash $(DESTDIR)/usr/lib/ispell/hungarian.hash || true
++	##@#! [ -f $(DESTDIR)/usr/lib/ispell/hungarian.hash ] && ln -s magyar.hash $(DESTDIR)/usr/lib/ispell/hungarian.hash || true
+ 	# spellhtml és spellhtmlic a helyére
+-	cp spellhtml/spellhtmlic spellhtml/spellhtml $(DESTDIR)/usr/bin
++	##@#cp spellhtml/spellhtmlic spellhtml/spellhtml $(DESTDIR)/usr/bin
+ 
+ 
+ inst:
