@@ -1,2 +1,8 @@
 etc/rc.d/webmin.sh
-@comment lib/webmin content list is automatically generated
+@comment Insert PLIST.lib-webmin here
+@comment -=[ begin PLIST.lib-webmin ]=-
+@comment -=[ end PLIST.lib-webmin ]=-
+@comment upgrade configuration if etc/webmin exists
+@exec [ ! -d %D/etc/webmin ] || echo | nostart=Y %D/lib/webmin/setup.sh
+@comment run interactive setup if not in BATCH mode and no configuration exists
+@exec [ -n "$BATCH" ] || ([ -d %D/etc/webmin ] || nostart=Y %D/lib/webmin/setup.sh)
