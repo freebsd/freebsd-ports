@@ -193,6 +193,7 @@
     SUBDIR += q3server-freezetag
     SUBDIR += q3server-osp
     SUBDIR += q3server-ra3
+    SUBDIR += q3server-ut
     SUBDIR += qcc
     SUBDIR += qix
     SUBDIR += qkmj

@@ -1,0 +1,11 @@
+%%PORTDOCS%%%%Q3DIR%%Homepage.URL
+%%PORTDOCS%%%%Q3DIR%%Manual.URL
+%%PORTDOCS%%%%Q3DIR%%Readme.URL
+%%PORTDOCS%%%%Q3DIR%%description.txt
+%%PORTDOCS%%%%Q3DIR%%links.txt
+%%Q3DIR%%mapcycle.txt
+%%PORTDOCS%%%%Q3DIR%%readme.txt
+%%Q3DIR%%pak0.pk3
+%%Q3DIR%%pak1.pk3
+%%Q3DIR%%pak2.pk3
+@dirrm %%Q3DIR%%
