@@ -1,7 +1,5 @@
 bin/tgif
 bin/prtgif
-man/man1/tgif.1.gz
-man/man1/prtgif.1.gz
 lib/X11/tgif/tgif.Xdefaults
 lib/X11/tgif/tgificon.eps
 lib/X11/tgif/tgificon.obj

@@ -3,7 +3,7 @@
 # Date created:         10 Oct 1996
 # Whom:                 bmc@WillsCreek.COM
 #
-# $Id: Makefile,v 1.4 1997/08/11 08:40:54 tg Exp $
+# $Id: Makefile,v 1.5 1998/07/20 03:41:22 steve Exp $
 #
 
 DISTNAME=	tgif-3.0-p17
@@ -22,5 +22,6 @@ RUN_DEPENDS=	giftopnm:${PORTSDIR}/graphics/netpbm \
 		xpmtoppm:${PORTSDIR}/graphics/netpbm
 
 USE_IMAKE=      yes
+MAN1=		prtgif.1 tgif.1
 
 .include <bsd.port.mk>

@@ -2,7 +2,6 @@ bin/xfig
 lib/X11/xfig/CompKeyDB
 lib/X11/app-defaults/Fig
 lib/X11/app-defaults/Fig-color
-man/man1/xfig.1.gz
 lib/X11/xfig/Libraries/Buildings/barrack.fig
 lib/X11/xfig/Libraries/Buildings/highrise1.fig
 lib/X11/xfig/Libraries/Buildings/highrise2.fig

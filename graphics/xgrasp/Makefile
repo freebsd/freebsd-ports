@@ -3,7 +3,7 @@
 # Date created:         23 July 1995
 # Whom:                 asami
 #
-# $Id: Makefile,v 1.2 1996/11/18 11:29:43 asami Exp $
+# $Id: Makefile,v 1.3 1997/12/25 22:29:27 asami Exp $
 #
 
 DISTNAME=	xgrasp.1.7d
@@ -16,6 +16,8 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	ports@FreeBSD.ORG
 
 USE_IMAKE=	yes
+MAN1=		glib.1 xgrasp.1
+
 NO_WRKSUBDIR=	yes
 
 .include <bsd.port.mk>

@@ -3,7 +3,7 @@
 # Date created:		17 December 1994
 # Whom:			asami
 #
-# $Id: Makefile,v 1.9 1997/12/25 22:29:23 asami Exp $
+# $Id: Makefile,v 1.10 1998/05/25 08:05:14 tg Exp $
 #
 
 DISTNAME=	mpeg_play-2.4
@@ -15,6 +15,7 @@ MAINTAINER=	ports@FreeBSD.ORG
 
 WRKSRC=		${WRKDIR}/mpeg_play
 USE_IMAKE=	yes
+MAN1=		mpeg_play.1
 
 pre-patch:
 	cp ${WRKSRC}/Imakefile.proto ${WRKSRC}/Imakefile
