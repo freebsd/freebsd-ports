@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	splashsetter
-PORTVERSION=	0.6.2
+PORTVERSION=	0.6.3
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	http://webonaut.com/distfiles/${PORTNAME}/
 
@@ -23,11 +23,12 @@ do-build:
 	@${REINPLACE_CMD} -e 's|/usr/X11R6|${X11BASE}|g' \
 		${WRKSRC}/*.py
 	@${FIND} ${WRKSRC} -name '*.bak' -delete
+	@${FIND} ${WRKSRC} -name '*.orig' -delete
 	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}
 	@${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}
 
 do-install:
-	${MKDIR} ${X11BASE}/share/gnome/pixmaps/${PORTNAME}
+	${MKDIR} ${X11BASE}/share/gnome/pixmaps/${PORTNAME}/splash
 	${MKDIR} ${X11BASE}/libexec/${PORTNAME}
 	@${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} \
 		${X11BASE}/libexec/${PORTNAME}/
@@ -37,6 +38,8 @@ do-install:
 		${X11BASE}/share/gnome/applications/
 	@${INSTALL_DATA} ${WRKSRC}/*.svg \
 		${X11BASE}/share/gnome/pixmaps/${PORTNAME}/
+	@${INSTALL_DATA} ${WRKSRC}/*.png \
+		${X11BASE}/share/gnome/pixmaps/${PORTNAME}/splash/
 	@${LN} -sf ${X11BASE}/libexec/${PORTNAME}/${PORTNAME} \
 		${X11BASE}/bin/${PORTNAME}
 
