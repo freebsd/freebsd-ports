@@ -21,10 +21,10 @@ sbin/dbmail-util
 %%MYSQL%%%%DATADIR%%/sql/create_tables_innoDB.mysql
 %%MYSQL%%%%DATADIR%%/sql/migrate_from_1.x_to_2.0.mysql
 %%MYSQL%%%%DATADIR%%/sql/migrate_from_1.x_to_2.0_innodb.mysql
-%%MYSQL%%/lib/dbmail/libmysqldbmail.0
-%%MYSQL%%/lib/dbmail/libmysqldbmail.a
-%%MYSQL%%/lib/dbmail/libmysqldbmail.la
-%%MYSQL%%/lib/dbmail/libmysqldbmail
+%%MYSQL%%lib/dbmail/libmysqldbmail.0
+%%MYSQL%%lib/dbmail/libmysqldbmail.a
+%%MYSQL%%lib/dbmail/libmysqldbmail.la
+%%MYSQL%%lib/dbmail/libmysqldbmail
 %%PGSQL%%%%DATADIR%%/sql/create_tables.pgsql
 %%PGSQL%%%%DATADIR%%/sql/migrate_from_1.x_to_2.0.pgsql
 %%PGSQL%%/lib/dbmail/libpgsqldbmail.0
