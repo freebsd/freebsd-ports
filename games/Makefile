@@ -303,6 +303,7 @@
     SUBDIR += quakeforge
     SUBDIR += quakeserver
     SUBDIR += quit
+    SUBDIR += qwdtools
     SUBDIR += race
     SUBDIR += rfksay
     SUBDIR += robocode
