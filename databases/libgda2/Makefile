@@ -148,7 +148,7 @@ PLIST_SUB+=		ODBC:="@comment "
 .endif
 
 .if !defined(WITHOUT_SQLITE) && defined(WITH_SQLITE)
-LIB_DEPENDS+=		sqlite.2:${PORTSDIR}/databases/sqlite
+LIB_DEPENDS+=		sqlite.2:${PORTSDIR}/databases/sqlite2
 CONFIGURE_ARGS+=	--with-sqlite=${LOCALBASE}
 PLIST_SUB+=		SQLITE:=""
 .else
