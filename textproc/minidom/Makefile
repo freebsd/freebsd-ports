@@ -10,7 +10,7 @@ PORTNAME=	minidom
 PORTVERSION=	0.1.4
 PORTREVISION=	0
 CATEGORIES=	textproc
-MASTER_SITES=	http://www.cs.unibo.it/helm/mml-widget/sources/
+MASTER_SITES=	http://helm.cs.unibo.it/mml-widget/sources/
 
 MAINTAINER=	ports@FreeBSD.org
 
