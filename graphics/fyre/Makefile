@@ -8,9 +8,10 @@
 PORTNAME=	fyre
 PORTVERSION=	0.6
 CATEGORIES=	graphics
-MASTER_SITES=	http://navi.cx/releases/
+MASTER_SITES=	http://www.kerneled.org/files/FreeBSD-ports/ \
+		http://navi.cx/releases/
 
-MAINTAINER=	adamw@FreeBSD.org
+MAINTAINER=	samy@kerneled.org
 COMMENT=	Chaos map rendering system with GTK+-2 interface
 
 USE_BZIP2=	yes
