@@ -3917,6 +3917,7 @@ nas		ports/audio/nas
 nasm		ports/devel/nasm
 nat		ports/net/nat
 natd		src/sbin/natd
+naturalmath	ports/math/naturalmath
 nautilus	ports/x11-fm/nautilus
 nauty		ports/math/nauty
 nawk		ports/lang/nawk
