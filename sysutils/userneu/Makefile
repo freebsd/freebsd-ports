@@ -16,11 +16,9 @@ MAINTAINER=	fehlner@gmx.de
 COMMENT=	Account management and creation tool
 
 RUN_DEPENDS=	\
-    ${SITE_PERL}/Crypt/PasswdMD5.pm:${PORTSDIR}/security/p5-Crypt-PasswdMD5/ \
-    ${SITE_PERL}/Crypt/RandPasswd.pm:${PORTSDIR}/security/p5-Crypt-RandPasswd/ \
-    ${SITE_PERL}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5/
-
-BROKEN=		"Broken dependencies; will be removed after Feb 2"
+    ${SITE_PERL}/Crypt/PasswdMD5.pm:${PORTSDIR}/security/p5-Crypt-PasswdMD5 \
+    ${SITE_PERL}/Crypt/RandPasswd.pm:${PORTSDIR}/security/p5-Crypt-RandPasswd \
+    ${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5
 
 USE_PERL5=	yes
 NO_BUILD=	yes
