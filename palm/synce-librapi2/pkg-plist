@@ -1,0 +1,16 @@
+bin/pcp
+bin/pls
+bin/pmkdir
+bin/pmv
+bin/prm
+bin/prmdir
+bin/prun
+bin/pstatus
+bin/synce-install-cab
+bin/synce-list-programs
+bin/synce-remove-program
+include/rapi.h
+lib/librapi.a
+lib/librapi.la
+lib/librapi.so
+lib/librapi.so.2

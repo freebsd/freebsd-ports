@@ -1,0 +1,6 @@
+SynCE is a project for connecting to devices running Windows CE or Pocket PC.
+Librapi is an open-source implementation that works like RAPI.DLL. The library
+makes it possible to make remote calls on a Windows CE device, including
+installing applications and transferring files.
+
+WWW: http://synce.sourceforge.net/
