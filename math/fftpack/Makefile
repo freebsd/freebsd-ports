@@ -3,7 +3,7 @@
 # Date created:         31 October 1996
 # Whom:                 pgs
 #
-# $Id: Makefile,v 1.2 1997/02/14 09:50:04 asami Exp $
+# $Id: Makefile,v 1.3 1997/07/17 15:12:55 max Exp $
 #
 
 DISTNAME=	fftpack
@@ -19,7 +19,7 @@ IGNOREFILES=	${DISTFILES}
 EXTRACT_BEFORE_ARGS=	-xvf
 
 post-extract:
-	uncompress $(WRKSRC)/*.f.Z
+	gunzip $(WRKSRC)/*.f.gz
 
 pre-build:
 	${RM} $(WRKSRC)/.depend
@@ -28,7 +28,7 @@ pre-build:
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} $(PREFIX)/share/doc/fftlib
-	${CP} $(WRKSRC)/doc.Z $(PREFIX)/share/doc/fftlib/
+	${CP} $(WRKSRC)/doc.gz $(PREFIX)/share/doc/fftlib/
 .endif
 	${LDCONFIG} -m ${PREFIX}/lib
 
