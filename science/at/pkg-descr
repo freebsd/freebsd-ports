@@ -1,0 +1,17 @@
+The Acoustic ToolBox includes four acoustic models:
+
+   BELLHOP: A beam/ray trace code
+
+   KRAKEN:  A normal mode code
+
+   SCOOTER: A finite element FFP code
+
+   SPARC:   A time domain FFP code
+
+A common input structure has been used throughout so that only minor
+modifications are needed to switch from one program to another.
+
+All the models produce shade files which can be processed
+using a common set of plotting routines to plot transmission loss
+vs. range or vs. range and depth.  These plotting routines
+are contained in the GLOBAL directory.
