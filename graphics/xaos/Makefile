@@ -3,7 +3,7 @@
 # Date created:				24 February 1996
 # Whom:					Joseph Koshy <koshy@india.hp.com>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1997/02/28 10:52:50 tg Exp $
 #
 
 DISTNAME=	XaoS-2.2
@@ -21,8 +21,10 @@ MAINTAINER=	ports@FreeBSD.ORG
 
 GNU_CONFIGURE=	yes
 CFLAGS+=	-DHAVE_SYS_PARAM_H \
-		-O6 -m486 -fstrength-reduce -ffast-math -fomit-frame-pointer\
+		-O6 -fstrength-reduce -ffast-math -fomit-frame-pointer\
 		-fforce-mem -fforce-addr -funroll-loops
+
+MAN6=		xaos.6
 
 # We need to supply our own install target as the distribution doesn't
 # supply one by default
@@ -32,7 +34,6 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/xaos.6 ${PREFIX}/man/man6
 
 post-install:
-	strip ${PREFIX}/bin/xaos
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/XaoS
 	${INSTALL_DATA} ${WRKSRC}/doc/tutorial.txt ${PREFIX}/share/doc/XaoS
