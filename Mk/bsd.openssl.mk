@@ -2,10 +2,9 @@
 # Date created:		31 May 2002
 # Whom:			dinoex
 #
-# $FreeBSD: /tmp/pcvs/ports/Mk/bsd.openssl.mk,v 1.10 2003-10-02 19:46:35 dinoex Exp $
+# $FreeBSD: /tmp/pcvs/ports/Mk/bsd.openssl.mk,v 1.11 2003-12-05 08:20:51 dinoex Exp $
 #
-# this substitutes USE_OPENSSL=yes
-# just include this makefile after bsd.ports.pre.mk
+# Use of 'USE_OPENSSL=yes' includes this Makefile after bsd.ports.pre.mk
 #
 # the user/port can now set this options in the makefiles.
 #
