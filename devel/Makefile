@@ -97,6 +97,7 @@
     SUBDIR += c_c++_reference
     SUBDIR += c_parser
     SUBDIR += calibrator
+    SUBDIR += calltree
     SUBDIR += cbrowser
     SUBDIR += cc65
     SUBDIR += ccache
