@@ -204,6 +204,7 @@
     SUBDIR += py-cddb
     SUBDIR += py-id3
     SUBDIR += py-mad
+    SUBDIR += py-musicbrainz
     SUBDIR += py-ogg
     SUBDIR += py-vorbis
     SUBDIR += py-xmms
