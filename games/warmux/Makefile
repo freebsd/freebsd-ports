@@ -17,6 +17,7 @@ COMMENT=	Wormux game
 USE_BZIP2=	yes
 USE_SDL=	sdl
 USE_GETTEXT=	yes
+USE_GNOME=	gnomelibs
 
 LIB_DEPENDS+=	clanGUI-0.7:${PORTSDIR}/devel/clanlib-devel
 LIB_DEPENDS+=	xml\\+\\+-1.0.1:${PORTSDIR}/textproc/libxml++
