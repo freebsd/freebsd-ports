@@ -1,5 +1,18 @@
+bin/btreeop
+bin/gctags
 bin/global
 bin/gtags
-bin/gctags
-bin/btreeop
 bin/htags
+info/global.info
+@exec install-info %D/info/global.info %D/info/dir
+@unexec install-info --delete %D/info/global.info %D/info/dir
+share/doc/global/AUTHORS
+share/doc/global/COPYING
+share/doc/global/ChangeLog
+share/doc/global/FAQ
+share/doc/global/INSTALL
+share/doc/global/LICENSE
+share/doc/global/NEWS
+share/doc/global/README
+share/doc/global/THANKS
+share/doc/global/VERSION
