@@ -1,9 +1,9 @@
 
 $FreeBSD$
 
---- src/video/vgl/SDL_vglevents.c.orig	Wed Jan 24 00:51:13 2001
-+++ src/video/vgl/SDL_vglevents.c	Wed Jan 24 00:51:13 2001
-@@ -0,0 +1,305 @@
+--- src/video/vgl/SDL_vglevents.c.orig	Wed May 23 12:15:22 2001
++++ src/video/vgl/SDL_vglevents.c	Wed May 23 12:54:08 2001
+@@ -0,0 +1,303 @@
 +/*
 +    SDL - Simple DirectMedia Layer
 +    Copyright (C) 1997, 1998, 1999, 2000  Sam Lantinga
@@ -54,8 +54,8 @@ $FreeBSD$
 +static SDL_keysym *TranslateKey(int scancode, SDL_keysym *keysym);
 +
 +static int posted = 0;
-+static int oldx = 0;
-+static int oldy = 0;
++static int oldx = -1;
++static int oldy = -1;
 +static struct mouse_info mouseinfo;
 +
 +/* Ugh, we have to duplicate the kernel's keysym mapping code...
@@ -102,9 +102,7 @@ $FreeBSD$
 +	mouseinfo.operation = MOUSE_GETINFO;
 +	if (ioctl(fd, CONS_MOUSECTL, &mouseinfo) != 0)
 +		return -1;
-+	oldx = mouseinfo.u.data.x;
-+	oldy = mouseinfo.u.data.y;
-+	SDL_PrivateMouseMotion(0, 0, oldx, oldy);
++
 +	return 0;
 +}
 +
