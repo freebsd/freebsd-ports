@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	firefox
-PORTVERSION=	1.0.r1
+PORTVERSION=	1.0.r2
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
-MASTER_SITE_SUBDIR=	${PORTNAME}/releases/1.0rc1
-DISTNAME=	${PORTNAME}-1.0rc1-source
+MASTER_SITE_SUBDIR=	${PORTNAME}/releases/1.0rc2/source
+DISTNAME=	${PORTNAME}-1.0rc2-source
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Web browser based on the browser portion of Mozilla
