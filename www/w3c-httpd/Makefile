@@ -3,14 +3,14 @@
 # Date created:		29 October 1994
 # Whom:			pst
 #
-# $Id: Makefile,v 1.13 1996/11/29 20:02:33 torstenb Exp $
+# $Id: Makefile,v 1.14 1997/01/09 03:07:41 asami Exp $
 #
 
 DISTNAME=	w3c-httpd-3.0A
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.w3.org/pub/httpd/
 
-MAINTAINER=	m230761@ingenieria.ingsala.unal.edu.co 
+MAINTAINER=	pgiffuni@fps.biblos.unal.edu.co
 
 NO_WRKSUBDIR=	yes
 
