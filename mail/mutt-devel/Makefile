@@ -125,9 +125,6 @@ SCRIPTS_ENV=	WRKDIR="${WRKDIR}"
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_MUTT_EDIT_THREADS)
-BROKEN=		"mutt-devel's edit threads patch appears to be broken"
-.endif
 CD_PATCH_VERSION=	1.5.5.1
 CD_IFDEF_PATCH_VERSION=	1.5.4
 .if !defined(VVV_PATCH_VERSION)
@@ -213,6 +210,11 @@ pre-configure::
 	@${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-pgp-dw
 .endif
 
+.if defined(WITH_MUTT_EDIT_THREADS)
+pre-configure::
+	@${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-edit-threads
+.endif
+
 .if defined(WITH_MUTT_LOCALES_FIX)
 CONFIGURE_ARGS+=	--enable-locales-fix
 .endif
@@ -247,7 +249,6 @@ PATCHFILES+=	patch-${VVV_PATCH_VERSION}.vvv.initials.gz:vvv \
 SGML_NEEDED=	yes
 .endif
 .if defined(WITH_MUTT_EDIT_THREADS)
-PATCHFILES+=	patch-${CD_PATCH_VERSION}.cd.edit_threads.9.5:cd
 CONFIGURE_ARGS+=	--enable-imap-edit-threads
 SGML_NEEDED=	yes
 .endif
