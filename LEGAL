@@ -52,8 +52,7 @@ cos-*			ports/java/cos		Special conditions apply for
 						commercial use.
 cosmo/*			ports/games/cosmo	Possible copyright infringement
 cryptix-jce-*		ports/java/cryptix-jce	Testing purpose only.
-crack-5.0		ports/security/crack	Crypto; export-controlled
-cs-0.3			ports/devel/cs		License required for
+cs-0.5			ports/devel/cs		License required for
 						redistribution on CDROM.
 csound			ports/audio/csound	Distribution prohibited; may be
 						used for making commercial
@@ -62,12 +61,11 @@ csound			ports/audio/csound	Distribution prohibited; may be
 csound-manual		ports/audio/csound-manual	same as csound
 dc3play-*		ports/graphics/dc3play	No redistribution due to
 						beta status
-dgd/dgd-1.0.37.tar.gz	ports/net/dgd		License required for commercial
+dgd/dgd-1.*		ports/net/dgd		License required for commercial
 						use as a server, and even for
 						distribution of sources and/or
 						binaries into a corporate
 						environment.
-dgd/1.0.*		ports/net/dgd		ditto
 dgd/2.4.5-for-1.0.37.tgz ports/net/dgd-lpmud	No monetary gain. No point in
 						distributing a package, since
 						it depends on dgd, which has
@@ -103,7 +101,7 @@ glimpse-*		ports/textproc/glimpse	Don't sell for profit
 giftool-*		ports/graphics/giftool	Don't redistribute for profit
 GimpUserManual-*-ps.gz	ports/graphics/gimp-manual-ps	too big
 gnupg-*			ports/security/gnupg	Crypto; export-controlled
-graphviz-1.[234]*	ports/graphics/graphviz	Needs license before fetching
+graphviz-1.*		ports/graphics/graphviz	Needs license before fetching
 hjb3_0-linux.sfx	ports/www/hotjava	Licensed for individual
 						non-commercial use only.
 inn2-*			ports/news/inn2		Copyright file in package
@@ -112,7 +110,6 @@ inn2-*			ports/news/inn2		Copyright file in package
 						done in inn2 sources, which are
 						now maintained by ISC. Otherwise
 						no usage restriction.
-ivs3.4-src.tar.gz	ports/net/ivs		Crypto; export-controlled
 jce-aba-*		ports/java/jce-aba	Crypto; export-controlled
 john-*			ports/security/john	crypt(); export-controlled
 JDK-*			ports/java/jdk		Put copyright on packaging!
@@ -127,7 +124,7 @@ l0phtcrack		ports/security/l0phtcrack	Parts are under GPL, so
 						distributed.  Contains crypto
 						from OpenSSL.
 lsh*			ports/security/lsh	Crypto; export-controlled
-mew-1.70.tar.gz		ports/mail/mew		ITAR export-controlled
+mew-*.tar.gz		ports/mail/mew		ITAR export-controlled
 						(hooks to pgp)
 mindfocus-*		ports/games/mindfocus	contains commercial
 						character data
@@ -140,7 +137,7 @@ msql-*			ports/databases/msql	Not free for commercial org.
 mypaedia		ports/japanese/mypaedia-fpw The original dictionary is not free
 netscape-*-us-*		ports/www/netscape*	Crypto; export-controlled
 netshow-*		ports/graphics/netshow	Commercial software
-nte-1.5a23		ports/mbone/nte		Crypto; export-controlled
+nte-1.*			ports/mbone/nte		Crypto; export-controlled
 openssl-*		ports/security/openssl	Crypto; export/import-controlled
 Crypt-*			ports/security/p5-Crypt-*	Crypto; export-controlled
 perforce-*		ports/devel/perforce	Restricted distribution
@@ -152,13 +149,12 @@ platon-*		ports/biology/platon	US$ 5000 for commercial users,
 prodosemu.*		ports/emulators/prodosemu	Restrictive copyright on the ROM image
 qvplay-*		ports/graphics/qvplay	No redistribution due to
 						beta status
-quake101.zip		ports/games/quakeserver	Shareware
+quake106.zip		ports/games/quakeserver	Shareware
 quakesw-*		ports/games/quakesw	Shareware
 radius*			ports/net/radius	Binary redistribution only,
 						no fee allowed
 rarlnx*			ports/archivers/linux_rar	Only unmodified original package can be distributed
 rkive3.1.tar.gz		ports/news/rkive	Restrictive copyright
-rman-2.4.tar.Z		ports/misc/rman		Restrictive copyright
 rman-3.*		ports/textproc/rman	Don't sell for profit
 rsaref*			ports/security/{rsaref,ssh} Crypto; export-controlled
 rp7_linux20_libc6_i386_*_rpm	ports/audio/linux-realplayer	Redistribution not allowed.
@@ -170,7 +166,7 @@ sharefonts-*		ports/x11-fonts/sharefonts	Shareware.  Cannot be
 						authorization.
 shorten-*		ports/audio/shorten	May not be sold. May not be
 						distributed if modified.
-sim-2.3.tar.gz		ports/emulators/sim	No commercial use
+sim-*.tar.gz		ports/emulators/sim	No commercial use
 socks5-*		ports/net/socks5	No commercial use
 srd			ports/japanese/srd-fpw	The original dictionary is not free
 ssh-*			ports/security/ssh*	Crypto; export-controlled
@@ -180,19 +176,19 @@ apache*-ssl		ports/www/apache12-ssl
 so51a_lnx_01.tar	ports/editors/staroffice5	May not be distributed.
 stonx-*			ports/emulators/stonx	Contains ROM (C) by Atari
 su2-1.3.tar.gz		ports/sysutils/su2	Don't sell for profit.
-swing11.tar.Z		ports/devel/jfc		Don't distribute without
+swing11.tar.Z		ports/java/jfc		Don't distribute without
 						value-added application.
 tcserver*		ports/net/tcserver	Crypto; export-controlled.
 						Non-commercial use only.
 timidity-*		ports/audio/timidity	Uses copyrighted patches.
 tkman-1.7.3.tar.Z	ports/misc/tkman	Restrictive copyright
-tkman-2.{0,1b?}		ports/misc/tkman	Don't sell for profit.
+tkman-2.*		ports/misc/tkman	Don't sell for profit.
 tuc-*			ports/converters/tuc	Author does not allow
 						CD-ROM distribution
 upsmon*			ports/sysutils/upsmon	Redistribute only with
 						original source code.
 uzap.tar.gz             ports/editors/uzap      Restrictive copyright
-vfrb101e.taz		ports/security/vscan	Commercial software
+vbsd407e.tar.Z		ports/security/vscan	Commercial software
 vice-*			ports/emulators/vice	ROMs are copyrighted by
 						Commodore Business Machines
 webcopy.tgz		ports/www/webcopy	Don't sell for profit
@@ -204,7 +200,7 @@ xhime*.tgz		ports/games/xhime	Contains commercial character
 xinvaders-*		ports/games/xinvaders	Don't sell for profit
 xmdiary-*		ports/misc/xmdiary	Don't sell for profit
 xothello-*		ports/games/xothello	Possible trademark infringement
-xrisk-2.13.tar.Z	ports/games/xrisk	Copyright/trademark violation?
+xrisk-*			ports/games/xrisk	Copyright/trademark violation?
 xteddy-*		ports/games/xteddy	Don't sell for profit
 ztelnet-*		ports/net/ztelnet	zmodem code has 
 						restrictive copyright
