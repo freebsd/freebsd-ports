@@ -107,6 +107,7 @@
     SUBDIR += vdesk
     SUBDIR += wdm
     SUBDIR += wmappl
+    SUBDIR += wmblob
     SUBDIR += wmbutton
     SUBDIR += wmcliphist
     SUBDIR += wmdrawer
