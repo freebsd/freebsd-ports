@@ -12,7 +12,6 @@ CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.coda.cs.cmu.edu/pub/coda/src/
 PKGNAMESUFFIX=	-${CODA_SUITE}
 DISTNAME=	coda-${PORTVERSION}
-EXTRACT_SUFX=	.tar.gz
 
 MAINTAINER=	coda@cs.cmu.edu
 
@@ -31,4 +30,10 @@ CONFIGURE_ARGS?=	--sysconfdir=${PREFIX}/etc/rc.d
 CODA_SUITE?=	server
 CODA_VERSION?=	5.3.19
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500037
+BROKEN=		"Does not build"
+.endif
+
+.include <bsd.port.post.mk>
