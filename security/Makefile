@@ -33,6 +33,7 @@
     SUBDIR += digest
     SUBDIR += donkey
     SUBDIR += drweb
+    SUBDIR += drweb-sendmail
     SUBDIR += dsniff
     SUBDIR += fakebo
     SUBDIR += find_ddos
