@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	sodipodi
-PORTVERSION=	0.32
-PORTREVISION=	1
+PORTVERSION=	0.33
 CATEGORIES=	graphics gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -31,6 +30,9 @@ MAN1=		sodipodi.1
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|<malloc.h>|<stdlib.h>|g' \
-		${WRKSRC}/src/helper/action.c
+		${WRKSRC}/src/helper/action.c \
+		${WRKSRC}/src/libarikkei/arikkei-dict.c \
+		${WRKSRC}/src/libarikkei/arikkei-token.c \
+		${WRKSRC}/src/libarikkei/arikkei-strlib.c
 
 .include <bsd.port.mk>
