@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	tex-texmflocal
-PORTVERSION=	1.4
+PORTVERSION=	1.5
 CATEGORIES=	print
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -50,10 +50,10 @@ DIRS=	bibtex/bib bibtex/bst bibtex\
 	fonts/afm fonts/ofm fonts/ovp fonts/ovf \
 	fonts/ocp fonts/pk fonts/tfm fonts/type1 \
 	fonts/source/public fonts/source fonts/vf fonts \
-	metafont metapost \
+	makeindex metafont metapost \
 	jbibtex/bib jbibtex/bst jbibtex\
 	tex/generic/config tex/generic \
-	tex/jadetex tex/latex tex/plain tex\
+	tex/jadetex tex/latex/base tex/latex tex/plain tex\
 	pdftex/config pdftex/latex pdftex/platex pdftex\
 	ptex/plain ptex/platex ptex\
 	web2c xdvi
