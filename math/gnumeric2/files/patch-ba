@@ -1,15 +1,15 @@
---- Makefile.in.orig	Wed Feb 24 03:49:45 1999
-+++ Makefile.in	Wed Feb 24 19:06:37 1999
-@@ -137,7 +137,7 @@
+--- Makefile.in.orig	Fri Jul  9 22:17:31 1999
++++ Makefile.in	Mon Jul 12 16:51:07 1999
+@@ -140,7 +140,7 @@
  perl_val = @perl_val@
  python_val = @python_val@
  
--SUBDIRS = intl po macros libglade plugins src doc
-+SUBDIRS = intl po macros libglade plugins src
+-SUBDIRS = intl po macros plugins src doc icons
++SUBDIRS = intl po macros plugins src icons
  
- EXTRA_DIST =  	gnumeric.desktop README HACKING gnumeric.spec.in 	gnumeric.keys.in gnumeric.mime $(appicon_DATA)
+ EXTRA_DIST =  	gnumeric.desktop README HACKING gnumeric.spec.in 		gnumeric.keys.in gnumeric.mime $(appicon_DATA) 			gnumeric.gnorba
  
-@@ -145,7 +145,7 @@
+@@ -148,7 +148,7 @@
  appicondir = $(datadir)/pixmaps
  appicon_DATA = gnome-gnumeric.png gnome-gnumeric-xl.png
  

@@ -1,29 +1,29 @@
 bin/gnumeric
 etc/CORBA/servers/gnumeric.gnorba
 share/gnome/apps/Applications/gnumeric.desktop
+share/gnome/gnumeric/glade/font-sel.glade
+share/gnome/gnumeric/glade/hf-config.glade
+share/gnome/gnumeric/glade/import.glade
+share/gnome/gnumeric/glade/print.glade
 share/gnome/gnumeric/guile/gnumeric_startup.scm
-share/gnome/gnumeric/perl/startup.pl
-share/gnome/gnumeric/plugins/libcsv.a
 share/gnome/gnumeric/plugins/libcsv.so
-share/gnome/gnumeric/plugins/libcsv.so.0
-share/gnome/gnumeric/plugins/libgnumguile.a
 share/gnome/gnumeric/plugins/libgnumguile.so
-share/gnome/gnumeric/plugins/libgnumguile.so.0
-share/gnome/gnumeric/plugins/libpython.a
+share/gnome/gnumeric/plugins/libhtml.so
 share/gnome/gnumeric/plugins/libpython.so
-share/gnome/gnumeric/plugins/libpython.so.0
-share/gnome/gnumeric/plugins/libstat.a
 share/gnome/gnumeric/plugins/libstat.so
-share/gnome/gnumeric/plugins/libstat.so.0
-share/gnome/gnumeric/plugins/libtext.a
 share/gnome/gnumeric/plugins/libtext.so
-share/gnome/gnumeric/plugins/libtext.so.0
+share/gnome/gnumeric/plugins/libxbase.so
 share/gnome/gnumeric/python/gnumeric_startup.py
+share/gnome/idl/Gnumeric.idl
 share/gnome/mc/templates/gnumeric.desktop
 share/gnome/mime-info/gnumeric.keys
 share/gnome/mime-info/gnumeric.mime
 share/gnome/pixmaps/gnome-gnumeric-xl.png
 share/gnome/pixmaps/gnome-gnumeric.png
+share/gnome/pixmaps/gnumeric/down-right.png
+share/gnome/pixmaps/gnumeric/orient-horizontal.png
+share/gnome/pixmaps/gnumeric/orient-vertical.png
+share/gnome/pixmaps/gnumeric/right-down.png
 share/locale/cs/LC_MESSAGES/gnumeric.mo
 share/locale/de/LC_MESSAGES/gnumeric.mo
 share/locale/en_GB/LC_MESSAGES/gnumeric.mo
@@ -35,7 +35,9 @@ share/locale/es_MX/LC_MESSAGES/gnumeric.mo
 share/locale/es_PA/LC_MESSAGES/gnumeric.mo
 share/locale/es_PE/LC_MESSAGES/gnumeric.mo
 share/locale/es_SV/LC_MESSAGES/gnumeric.mo
+share/locale/fi/LC_MESSAGES/gnumeric.mo
 share/locale/fr/LC_MESSAGES/gnumeric.mo
+share/locale/hr/LC_MESSAGES/gnumeric.mo
 share/locale/hu/LC_MESSAGES/gnumeric.mo
 share/locale/it/LC_MESSAGES/gnumeric.mo
 share/locale/ja/LC_MESSAGES/gnumeric.mo
@@ -45,8 +47,11 @@ share/locale/pl/LC_MESSAGES/gnumeric.mo
 share/locale/pt/LC_MESSAGES/gnumeric.mo
 share/locale/ru/LC_MESSAGES/gnumeric.mo
 share/locale/sk/LC_MESSAGES/gnumeric.mo
+share/locale/sv/LC_MESSAGES/gnumeric.mo
+share/locale/zh_TW.Big5/LC_MESSAGES/gnumeric.mo
+@dirrm share/gnome/pixmaps/gnumeric
 @dirrm share/gnome/gnumeric/python
 @dirrm share/gnome/gnumeric/plugins
-@dirrm share/gnome/gnumeric/perl
 @dirrm share/gnome/gnumeric/guile
+@dirrm share/gnome/gnumeric/glade
 @dirrm share/gnome/gnumeric
