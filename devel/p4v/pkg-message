@@ -1,0 +1,9 @@
+
+Before starting the application, set a P4VRES variable to identify the
+location of the p4v resources directory. For example:
+
+	% setenv P4VRES %%PREFIX%%/share/P4VResources
+
+The application is compiled for FreeBSD 4.4, so be sure to have appropriate
+compatibility libraries (and kernel support, if applicable) installed on
+your system.

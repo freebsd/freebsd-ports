@@ -516,6 +516,7 @@
     SUBDIR += p4api
     SUBDIR += p4db
     SUBDIR += p4delta
+    SUBDIR += p4v
     SUBDIR += p5-Agent
     SUBDIR += p5-Algorithm-Diff
     SUBDIR += p5-Algorithm-Evolutionary
