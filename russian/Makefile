@@ -1,6 +1,5 @@
 # $FreeBSD$
 #
-    SUBDIR += xxkb
 
     SUBDIR += X.language
     SUBDIR += apache13
@@ -22,5 +21,6 @@
     SUBDIR += xcode
     SUBDIR += xcyrBGR
     SUBDIR += xruskb
+    SUBDIR += xxkb
 
 .include <bsd.port.subdir.mk>
