@@ -7,6 +7,7 @@
 
 PORTNAME=	bnbt
 PORTVERSION=	8.1b3
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://bnbt.go-dedicated.com/ \
 		http://www.oook.cz/bsd/distfiles/
@@ -17,16 +18,14 @@ COMMENT=	A C++ BitTorrent Tracker
 
 USE_ZIP=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}/src
-PKGMESSAGE=	${WRKDIR}/pkg-message
 
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 USE_RC_SUBR=	yes
 
-SED_SCRIPT=	-e 's,%%PREFIX%%,${PREFIX},g' \
-		-e 's,%%RC_SUBR%%,${RC_SUBR},g'
+SUB_FILES=	pkg-message bnbt.sh
+SUB_LIST=	RC_SUBR="${RC_SUBR}"
 
-PLIST_FILES=	bin/bnbt
 PORTDOCS=	footer.html header.html lesser.txt readme.txt users.txt
 
 .if defined(WITH_MYSQL)
@@ -46,10 +45,6 @@ post-patch:
 		${WRKSRC}/config.cpp
 	@${REINPLACE_CMD} -e 's|bnbt.cfg|${PREFIX}/etc/${PORTNAME}/bnbt.cfg|' \
 		${WRKSRC}/config.h ${WRKSRC}/config.cpp ${WRKSRC}/tracker.cpp
-
-post-build:
-	@${SED} ${SED_SCRIPT} ${FILESDIR}/bnbt.sh > ${WRKDIR}/bnbt.sh
-	@${SED} ${SED_SCRIPT} ${FILESDIR}/pkg-message.in > ${WRKDIR}/pkg-message
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${ALL_TARGET} ${PREFIX}/bin/bnbt
