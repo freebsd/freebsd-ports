@@ -22,6 +22,7 @@
     SUBDIR += cxterm
     SUBDIR += emacs20
     SUBDIR += enscript
+    SUBDIR += eterm
     SUBDIR += gb2ps
     SUBDIR += gbscript
     SUBDIR += ghostscript6
