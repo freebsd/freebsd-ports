@@ -2,6 +2,9 @@ bin/xslt-config
 bin/xsltproc
 etc/xsltConf.sh
 include/libxslt/attributes.h
+include/libxslt/documents.h
+include/libxslt/extensions.h
+include/libxslt/extra.h
 include/libxslt/functions.h
 include/libxslt/imports.h
 include/libxslt/keys.h
