@@ -4,7 +4,7 @@
  
  pam_ldap_so_SOURCES = pam_ldap.c pam_ldap.h md5.c md5.h
  pam_ldap_so_LDFLAGS = @pam_ldap_so_LDFLAGS@
-+CFLAGS = @CFLAGS@ -DLDAP_CONF_FILE=\"$(sysconfdir)/ldap.conf\"
++CPPFLAGS = @CPPFLAGS@ -DLDAP_CONF_FILE=\"$(sysconfdir)/ldap.conf\"
  
  
  install-exec-local: pam_ldap.so
