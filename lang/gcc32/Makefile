@@ -206,6 +206,10 @@ post-install:
 	${ECHO_CMD} "x!"			>> ${WRKDIR}/ex.script
 	${CP} -p ${TMPPLIST} ${TMPPLIST}.pre-gcc-lib
 	cd ${WRKDIR} ; ex < ex.script
+.if ${ARCH} != "sparc64"
+	# libgcj is built on all platforms except sparc64.
+	${CAT} pkg-plist.libgcj >> ${TMPPLIST}
+.endif
 
 cklatest:
 .for SITE in ftp://gcc.gnu.org/pub/gcc/snapshots/                                   ftp://mirrors.rcn.net/mirrors/sources.redhat.com/gcc/snapshots/
