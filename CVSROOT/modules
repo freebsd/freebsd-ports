@@ -5242,6 +5242,7 @@ lwp		ports/devel/lwp
 lws		ports/www/lws
 lxnb		ports/security/lxnb
 lxsplit		ports/sysutils/lxsplit
+lyntin		ports/net/lyntin
 lynx		ports/www/lynx
 lynx-current	ports/www/lynx-current
 lynx-ssl	ports/www/lynx-ssl
