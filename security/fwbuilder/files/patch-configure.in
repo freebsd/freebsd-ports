@@ -1,0 +1,20 @@
+--- configure.in.old	Thu Dec 18 09:24:41 2003
++++ configure.in	Thu Dec 18 09:24:53 2003
+@@ -281,17 +281,6 @@
+ 
+ AC_DEFINE_UNQUOTED(LIBFWBUILDER_VERSION, "$LIBFWBUILDER_VERSION")
+ 
+-dnl
+-dnl On FreeBSD glib-config is called glib12-config, but standard AM_PATH_GLIB
+-dnl macro does not know it ...
+-dnl
+-case "$build_os" in
+-  freebsd*)
+-   GLIB_CONFIG=/usr/local/bin/glib12-config
+-   ;;
+-esac
+-
+-
+ dnl TODO: remove this once we get rid of the old iptables compiler 
+ dnl  all other modules do not need separate GLIB_CFLAGS and GLIB_LIBS 
+ dnl  macro because we supply the same parameters via libfwbuilder-config
