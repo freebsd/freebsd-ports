@@ -1,0 +1,25 @@
+--- Makefile.orig	Fri Mar 31 03:05:27 2000
++++ Makefile	Sun Apr 16 12:57:25 2000
+@@ -13,10 +13,10 @@
+ CFLAGS	=	-g -DRINGHOME=$(RINGDIR)
+ #INCPATH =	-I/usr/include -I/usr/people/herger/src/qt-2.0.2/include
+ #LFLAGS	=	-L/usr/src/qt-2.0.2/lib -L/usr/lib
+-INCPATH =	-I/usr/include -I$(QTDIR)/include
+-LFLAGS	=	-g -L$(QTDIR)/lib -L/usr/lib -L/usr/X11R6/lib
+-LIBS	=	-lqt -lXext -lX11 -lm
+-MOC	=	moc
++INCPATH =	-I/usr/include -I$(QTDIR)/include/qt2
++LFLAGS	=	-L$(QTDIR)/lib -L/usr/lib -L/usr/X11R6/lib
++LIBS	=	-lqt2 -lXext -lX11 -lm
++MOC	=	moc2
+ 
+ ####### Target
+ 
+@@ -157,3 +157,7 @@
+ 
+ moc_manual.cpp: manual.h
+ 	$(MOC) manual.h -o moc_manual.cpp
++
++install:
++	strip -s xdrawchem
++	install -c -m 755 -o root -g wheel xdrawchem $(X11BASE)/bin/

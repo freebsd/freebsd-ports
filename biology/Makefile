@@ -19,6 +19,7 @@
     SUBDIR += rasmol
     SUBDIR += seaview
     SUBDIR += tinker
+    SUBDIR += xdrawchem
     SUBDIR += xmolwt
 
 .include <bsd.port.subdir.mk>
