@@ -3,7 +3,7 @@
 # Date created:		20 Oct 1996
 # Whom:			Yukihiro Nakai <nakai@mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.2 1997/08/25 14:32:30 itojun Exp $
+# $Id: Makefile,v 1.3 1997/10/17 13:17:14 itojun Exp $
 #
 
 DISTNAME=	txtmerge101
@@ -13,6 +13,8 @@ MASTER_SITES=	ftp://ftp.cs.uni-magdeburg.de/pub/www/xanime/ \
 		ftp://ftp.doc.ic.ac.uk/computing/information-systems/WWW/xanime/
 
 MAINTAINER=	Nakai@Mlab.t.u-tokyo.ac.jp
+
+BROKEN=		build
 
 WRKSRC=		${WRKDIR}/txtmerge
 ALL_TARGET=	txtmerge
