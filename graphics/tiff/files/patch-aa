@@ -93,7 +93,7 @@
 -
 +	${LD} -o libtiff34.@DSOSUF@ -shared -error_unresolved ${OBJS} @LIBJPEG@ @LIBGZ@ -lc -lm
 +FREEBSDdso: ${OBJS}
-+	${LD} -Bshareable -x /usr/lib/c++rt0.o -o libtiff34.@DSOSUF_VERSION@ \
++	${LD} -Bshareable -x ${LIBDIR}/c++rt0.o -o libtiff34.@DSOSUF_VERSION@ \
 +		${OBJS} @LIBJPEG@ @LIBGZ@
 +	touch $@
  
