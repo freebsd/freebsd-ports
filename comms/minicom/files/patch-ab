@@ -1,6 +1,6 @@
---- install.sh.orig	Sun Feb 22 14:59:37 1998
-+++ install.sh	Tue Aug 11 02:57:05 1998
-@@ -29,6 +29,7 @@
+--- install.sh.orig	Tue Apr 21 10:45:42 1998
++++ install.sh	Sun Dec 13 19:07:00 1998
+@@ -24,6 +24,7 @@
  		exit 1
  	fi
  fi
@@ -8,7 +8,7 @@
  
  if test ! -d $2
  then
-@@ -46,8 +47,8 @@
+@@ -41,8 +42,8 @@
  then
  	echo "Installing minicom in $2"
  	cp minicom $2/minicom
@@ -19,63 +19,59 @@
  	chmod 755 $2/minicom
  fi
  
-@@ -59,7 +60,7 @@
+@@ -54,7 +55,7 @@
  	cp $i $2/$i
  	chmod 755 $2/$i
  	chown root $2/$i
 -	chgrp root $2/$i
-+	chgrp bin $2/$i
++	chgrp wheel $2/$i
    fi
  done
  
-@@ -69,7 +70,7 @@
+@@ -64,7 +65,7 @@
  	cp keyserv $1/keyserv
  	chmod 755 $1/keyserv
  	chown root $1/keyserv
 -	chgrp root $1/keyserv
-+	chgrp bin $1/keyserv
++	chgrp wheel $1/keyserv
  fi
  
  echo "Installing manpages in $3"
-@@ -78,7 +79,7 @@
+@@ -73,7 +74,7 @@
  	cp ../man/$i $3
  	chmod 644 $3/$i
  	chown root $3/$i
 -	chgrp root $3/$i
-+	chgrp bin $3/$i
++	chgrp wheel $3/$i
  done
  
  if [ ! -f $1/minicom.users ]
-@@ -86,7 +87,7 @@
+@@ -81,7 +82,7 @@
  	echo "Installing sample config file minicom.users in $1"
  	cp minicom.users $1
  	chown root $1/minicom.users
 -	chgrp root $1/minicom.users
-+	chgrp bin $1/minicom.users
++	chgrp wheel $1/minicom.users
  	chmod 644 $1/minicom.users
  fi
  
-@@ -95,13 +96,13 @@
+@@ -90,13 +91,13 @@
  if test -d $4
  then
  		echo "Installing script demos, docs, & character tables in $4"
 -		cp ../doc/* $4
 +		##cp ../doc/* $4
  		cp -r ../demos $4
--		cp -r ../tables $4
--		chmod 644 $4/* $4/demos/* $4/tables/*
--		chmod a+x $4/demos $4/tables
--		chown root $4/* $4/demos/* $4/tables/*
--		chgrp root $4/* $4/demos/* $4/tables/*
-+		##cp -r ../tables $4
-+		chmod 644 $4/* $4/demos/* ## $4/tables/*
-+		chmod a+x $4/demos ## $4/tables
-+		chown root $4/* $4/demos/* ## $4/tables/*
-+		chgrp bin $4/* $4/demos/* ## $4/tables/*
+ 		cp -r ../tables $4
+ 		chmod -f 644 $4/* $4/demos/* $4/tables/*
+ 		chmod -f a+x $4/demos $4/tables
+ 		chown -f root $4/* $4/demos/* $4/tables/*
+-		chgrp -f root $4/* $4/demos/* $4/tables/*
++		chgrp -f wheel $4/* $4/demos/* $4/tables/*
  else
  	echo "You don't have a $4 directory - script examples not installed."
  fi
-@@ -111,11 +112,12 @@
+@@ -106,11 +107,12 @@
      rm minicom.o
  fi
  	
