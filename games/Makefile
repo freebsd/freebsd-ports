@@ -127,7 +127,6 @@
     SUBDIR += fuhquake
     SUBDIR += galaxis
     SUBDIR += garith
-    SUBDIR += gcompris
     SUBDIR += gcompris2
     SUBDIR += gemdropx
     SUBDIR += ggz-client-libs
