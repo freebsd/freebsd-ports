@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.5 1998/11/18 20:03:35 billf Exp $
+# $Id: Makefile,v 1.6 1998/11/22 14:55:44 sada Exp $
 #
 
     SUBDIR += afterstep
@@ -22,6 +22,7 @@
     SUBDIR += qvwm
     SUBDIR += tvtwm
     SUBDIR += windowmaker
+    SUBDIR += windowmaker-i18n
     SUBDIR += wm2
     SUBDIR += wmx
     SUBDIR += xfce
