@@ -20,6 +20,8 @@ LIB_DEPENDS=	glut.3:${PORTSDIR}/graphics/libglut \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		smpeg.1:${PORTSDIR}/multimedia/smpeg \
 
+BROKEN=		Broken pkg-plist
+
 USE_SDL=	mixer sdl
 USE_FREETYPE=	yes
 USE_REINPLACE=	yes

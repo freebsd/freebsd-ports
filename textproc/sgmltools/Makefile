@@ -22,6 +22,8 @@ BUILD_DEPENDS+=	python:${PORTSDIR}/lang/python \
 RUN_DEPENDS+=	${LOCALBASE}/share/sgml/docbook:${PORTSDIR}/textproc/docbook \
 		${LOCALBASE}/share/sgml/docbook/dsssl:${PORTSDIR}/textproc/dsssl-docbook-modular
 
+BROKEN=		Broken pkg-plist
+
 USE_BZIP2=	yes
 USE_PERL5=	yes
 MAN1=		sgmltools.1

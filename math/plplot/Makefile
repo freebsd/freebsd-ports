@@ -17,6 +17,8 @@ COMMENT=	A scientific plotting package
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd
 
+BROKEN=		Broken pkg-plist
+
 USE_LIBLTDL=	yes
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
