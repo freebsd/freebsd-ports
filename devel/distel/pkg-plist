@@ -23,18 +23,18 @@ share/distel/src/dilber_servant.erl
 share/distel/src/distel.erl
 share/distel/src/distel_ie.erl
 share/distel/src/fdoc.erl
-share/doc/distel/AUTHORS
-share/doc/distel/ChangeLog
-share/doc/distel/NEWS
-share/doc/distel/README
-share/doc/distel/README.ie-session
-share/doc/distel/distel-3.1.pdf
-share/doc/distel/distel-euc.pdf
-share/doc/distel/distel-euc.ps.gz
-share/doc/distel/distel-user-3.3.pdf
-share/doc/distel/distel-user-3.3.ps.gz
-share/doc/distel/emacs-init-snippet.el
-@dirrm share/doc/distel
+%%DOCSDIR%%/AUTHORS
+%%DOCSDIR%%/ChangeLog
+%%DOCSDIR%%/NEWS
+%%DOCSDIR%%/README
+%%DOCSDIR%%/README.ie-session
+%%DOCSDIR%%/distel-3.1.pdf
+%%DOCSDIR%%/distel-euc.pdf
+%%DOCSDIR%%/distel-euc.ps.gz
+%%DOCSDIR%%/distel-user-3.3.pdf
+%%DOCSDIR%%/distel-user-3.3.ps.gz
+%%DOCSDIR%%/emacs-init-snippet.el
+@dirrm %%DOCSDIR%%
 @dirrm share/distel/src
 @dirrm share/distel/ebin
 @dirrm share/distel
