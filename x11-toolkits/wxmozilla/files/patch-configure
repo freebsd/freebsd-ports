@@ -1,0 +1,20 @@
+--- configure.orig	Mon Feb  2 14:55:50 2004
++++ configure	Mon Feb  2 14:56:59 2004
+@@ -10135,7 +10135,7 @@
+ fi
+ 
+ 
+-if test "$build_python" == "yes" ; then
++if test "$build_python" = "yes" ; then
+ 
+ 
+ 
+@@ -10315,7 +10315,7 @@
+ fi
+ 
+ 
+-if test $build_python == yes; then
++if test $build_python = yes; then
+   BUILD_PYTHON_TRUE=
+   BUILD_PYTHON_FALSE='#'
+ else
