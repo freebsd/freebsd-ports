@@ -16,6 +16,8 @@ MASTER_SITES=	${CUPS_MASTER_SITES}
 
 MAINTAINER=	alane@FreeBSD.org
 
+INSTALLS_SHLIB=	yes
+
 pre-install:
 	-@${ECHO_CMD} "===>" Stopping cupsd ...
 	-killall cupsd || true
