@@ -35,7 +35,7 @@
 .Nd fetch and build ports
 .Sh SYNOPSIS
 .Nm porteasy
-.Op Fl abcefhikluVv
+.Op Fl abCceFfhikluVv
 .Op Fl D Ar date
 .Op Fl d Ar dir
 .Op Fl p Ar dir
@@ -50,18 +50,25 @@ automatically, keeping track of dependencies.
 The following options are available:
 .Bl -tag -width Fl
 .It Fl a
-Use the FreeBSD project's anoncvs server as CVS root.
+Use the FreeBSD project's anoncvs server as CVS root directory.
 .It Fl b
 Build the selected ports.
+.It Fl C
+Don't clean port directories after building.
 .It Fl c
 Clean the selected ports.
 .It Fl D Ar date
-Specify a date to use for CVS operations.
+Specify a date to use for
+.Xr cvs 1
+operations.
 .It Fl d Ar dir
 Specify the package database directory (normally
 .Pa /var/db/pkg ) .
 .It Fl e
 Deselect ports that are already installed.
+.It Fl F
+Force installation and registration, even if the port is already
+installed.
 .It Fl f
 Fetch the selected ports.
 .It Fl h
@@ -78,9 +85,12 @@ Specify the ports directory (normally
 .It Fl r Ar dir
 Specify the CVS root directory.
 .It Fl t Ar tag
-Specify a tag to use for CVS operations.
+Specify a tag to use for
+.Xr cvs 1
+operations.
 .It Fl u
-Update all necessary files using CVS.
+Update all necessary files using
+.Xr cvs 1 .
 .It Fl V
 Show the
 .Nm
@@ -88,6 +98,18 @@ version number and exit.
 .It Fl v
 Verbose mode: show more information about what is being done.
 .El
+.Ss Port names
+The port names listed on the command line may be either unqualified or
+fully qualified.
+A fully qualified port name is the path to the port directory relative
+to the root of the ports tree (i.e. the port's category and name
+separated by a slash).
+An unqualified port name is the name of the package built by the
+intended port, or part of that name.
+.Pp
+Unqualified names need to be looked up in the ports index, which is
+usually slightly out of date, so fully qualified names should be used
+whenever possible.
 .Ss Sequence of operation
 This section describes the operations performed by
 .Nm
@@ -96,42 +118,45 @@ and the order in which they are performed.
 .It Update index
 If the
 .Fl u
-option was specified, the index file is updated from CVS.
+option was specified and some unqualified port names were listed on
+the command line, the index file is updated using
+.Xr cvs 1 .
 .It Select ports
-The ports listed on the command line are looked up in the index, using
-simple heuristics to identify incompletely named ports.
+The selection list is initialized with the ports listed on the command
+line, marked as explicit dependencies.
+Any unqualified names are looked up in the index, using simple
+heuristics to identify incompletely named ports.
 If a certain match is not found,
 .Nm
 prints a list of possible matches and exits.
 .Pp
 All direct and indirect dependencies of the ports listed on the
 command line are also selected and marked as dependencies.
+.It Update ports tree and discover dependencies
+If the
+.Fl u
+option was specified, the port directories for all selected ports are
+updated using
+.Xr cvs 1 .
+Each selected port's Makefile is scanned to discover dependencies,
+which are in turn selected and marked as implicit dependencies.
+This process is repeated until no new dependencies are found.
+.It Deselect installed ports
 .Pp
 If the
 .Fl e
 option was specified,
 .Nm
-then checks to see if any of the required ports are already installed;
+checks to see if any of the selected ports are already installed;
 those that are are deselected.
-.Pp
-Selected ports that were specified on the command line are marked as
-explicitly selected, while dependencies are marked as implicitly
-selected.
+This process is not very accurate, as it will not detect if an older
+or alternate version of a selected port is installed.
 .It List selected ports
 If the
 .Fl l
-option was specified, all selected ports are listed.
+option was specified, the fully qualified name and package name of all
+selected ports are listed.
 Explicitly selected ports are indicated with a star.
-.It Update ports tree
-If the
-.Fl u
-option and at least one of the
-.Fl b ,
-.Fl f ,
-.Fl i
-or
-.Fl k
-options was specified, all selected ports are updated from CVS.
 .It Describe selected ports
 If the
 .Fl i
@@ -168,7 +193,7 @@ options was specified,
 runs the
 .Sq fetch
 target on every selected port.
-.It Install ports
+.It Build, install, package, clean ports
 If one or both of the
 .Fl f
 or
@@ -177,45 +202,36 @@ options were specified,
 .Nm
 runs the
 .Sq install
-target on every explicitly selected port.
-Dependencies are handled by the ports system.
-.It Build packages
-If the
-.Fl k
-option was specified,
-.Nm
-runs the
-.Sq package
-target on every explicitly selected port.
-Dependencies are handled by the ports system.
-.It Clean the tree (again)
-If one or both of the
-.Fl f
 or
-.Fl k
-options were specified,
-.Nm
-finally runs the
+.Sq package
+target, followed by the
 .Sq clean
-target on every selected port once it is
-installed and (optionally) its package has been built.
+target (unless the
+.Fl C
+option was specified), on every explicitly selected port.
+.Nm
+lets the ports system handle dependencies on its own, since the
+reported dependencies are sometimes too inclusive.
 .El
 .Sh IMPLEMENTATION NOTES
 There may be a significant difference between what ports are selected
 (and listed if the
 .Fl l
 option is specified) and what ports are actually installed and/or have
-packages built for them, since:
-.Bl -bullet
-.It
-the index file lists all dependencies, including ones that are
-conditional on system configuration or build-time options.
-.It
-implicitly selected ports that are already installed, or somehow pass
-the dependency check (e.g. because an alternate, equivalent port has
-been installed) will be passed over by the ports system, as indeed
-they should.
-.El
+packages built for them, since implicitly selected ports that are
+already installed, or somehow pass the dependency check (e.g. because
+an alternate, equivalent port has been installed) will be passed over
+by the ports system, as indeed they should.
+.Pp
+.Nm
+tries to minimize the number of times
+.Xr cvs 1
+is invoked, since the overhead involved in connecting to a remote
+server is usually quite high (and the user might have to type a
+password every time), but prefers correctness to performance.
+The maximum number of invocations is (2 + NC + NP), where NC and NP
+are the number of distinct categories and ports (including master
+directories and dependencies).
 .Sh FILES
 .Nm
 maintains and operates on a ports tree, normally
