@@ -8530,6 +8530,7 @@ xmms-shn	ports/audio/xmms-shn
 xmms-sid	ports/audio/xmms-sid
 xmms-sndfile	ports/audio/xmms-sndfile
 xmms-sndstretch	ports/audio/xmms-sndstretch
+xmms-speex	ports/audio/xmms-speex
 xmms-tfmx	ports/audio/xmms-tfmx
 xmms-volnorm	ports/audio/xmms-volnorm
 xmms-xvs	ports/graphics/xmms-xvs
