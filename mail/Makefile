@@ -46,6 +46,7 @@
     SUBDIR += mew-xemacs-mule
     SUBDIR += mew-xemacs20
     SUBDIR += mew-xemacs21
+    SUBDIR += mew-xemacs21-mule
     SUBDIR += mh
     SUBDIR += minimalist
     SUBDIR += ml
