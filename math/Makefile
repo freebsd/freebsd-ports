@@ -39,6 +39,7 @@
     SUBDIR += linalg
     SUBDIR += linpack
     SUBDIR += metis
+    SUBDIR += mtrxmath
     SUBDIR += netcdf
     SUBDIR += ngraph
     SUBDIR += ntl

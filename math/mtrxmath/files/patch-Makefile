@@ -1,0 +1,17 @@
+--- Makefile.orig	Sun Jan  7 23:29:11 2001
++++ Makefile	Tue Jan  9 20:43:18 2001
+@@ -1,4 +1,4 @@
+-CFLAGS=-Wall -g
++CFLAGS+=-Wall -g -I${PREFIX}/include
+ 
+ SRCS=add.c  mtrxmath.c  mult.c  sub.c inverse.c
+ 
+@@ -8,7 +8,7 @@
+ all: ${EXE}
+ 
+ ${EXE}: ${OBJS}
+-	${CC} -o $@ ${OBJS}
++	${CC} -o $@ ${OBJS} -L${PREFIX}/lib -lgnugetopt
+ 
+ clean:
+ 	rm -f ${OBJS} ${EXE} *.orig
