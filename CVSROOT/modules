@@ -71,6 +71,7 @@ taginfo		CVSROOT taginfo
 54321		ports/games/54321
 6to4		ports/net/6to4
 6tunnel		ports/net/6tunnel
+9box		ports/x11/9box
 9e		ports/archivers/9e
 9menu		ports/x11-wm/9menu
 9term		ports/x11/9term
