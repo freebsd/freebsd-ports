@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	balsa
-PORTVERSION=	1.3.3
+PORTVERSION=	1.3.4
 CATEGORIES=	mail gnome
 MASTER_SITES=	http://www.theochem.kth.se/~pawsa/balsa/ \
 		ftp://ftp.newton.cx/pub/balsa/
@@ -32,7 +32,6 @@ CONFIGURE_ARGS=	--enable-threads \
 		--with-ssl
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LIBS="-L${LOCALBASE}/lib -liconv"
-CONFIGURE_TARGET=   --target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 
 MAN1=		balsa.1
 
