@@ -1,3 +1,3 @@
-MAN=	dcons.4
+MAN=	dcons.4 dcons_crom.4
 
 .include <bsd.prog.mk>

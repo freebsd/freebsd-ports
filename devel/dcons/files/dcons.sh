@@ -17,6 +17,8 @@ start)
 	case ${dcons_enable:-NO} in
 	[Yy][Ee][Ss])
 		/sbin/kldload ${PREFIX}/lib/dcons/dcons.ko && echo -n ' dcons'
+		/sbin/kldload ${PREFIX}/lib/dcons/dcons_crom.ko && echo -n ' dcons_crom'
+		/usr/sbin/fwcontrol -r
 		;;
 	esac
 	;;
@@ -24,6 +26,7 @@ stop)
 	case ${dcons_enable:-NO} in
 	[Yy][Ee][Ss])
 		/sbin/kldunload dcons & echo -n ' dcons'
+		/sbin/kldunload dcons_crom & echo -n ' dcons_crom'
 		;;
 	esac
 	;;
