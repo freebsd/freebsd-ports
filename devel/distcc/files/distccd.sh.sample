@@ -13,8 +13,8 @@
 # distccd_enable="YES"
 #
 
-distccd_enable="NO"
-distccd_flags="--user distcc --daemon -P %%DISTCCD_PIDFILE%%"
+distccd_enable=${distccd_enable-"NO"}
+distccd_flags=${distccd_flags-"--user distcc --daemon -P %%DISTCCD_PIDFILE%%"}
 
 . %%RC_SUBR%%
 
