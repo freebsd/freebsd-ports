@@ -1,0 +1,11 @@
+--- kdecode/Makefile.in	Wed Feb  9 05:53:23 2000
++++ kdecode/Makefile.in.new	Fri Jun  9 13:27:33 2000
+@@ -175,7 +175,7 @@
+ 
+ kdecode_LDFLAGS = $(all_libraries) $(KDE_RPATH)
+ 
+-kdecode_LDADD = $(LIB_KFILE) -luulib $(LIBCOMPAT) 
++kdecode_LDADD = $(LIB_KFILE) -luu $(LIBCOMPAT) 
+ mkinstalldirs = $(SHELL) $(top_srcdir)/admin/mkinstalldirs
+ CONFIG_HEADER = ../config.h
+ CONFIG_CLEAN_FILES = 

@@ -1,0 +1,46 @@
+bin/kdecode
+bin/krn
+bin/krnconvert
+bin/krnsubsql
+share/doc/HTML/en/krn/index.html
+share/doc/HTML/en/krn/articles.html
+share/doc/HTML/en/krn/groups.html
+share/doc/HTML/en/krn/offline.html
+share/doc/HTML/en/krn/overview.html
+share/doc/HTML/en/krn/gigabase.html
+@dirrm share/doc/HTML/en/krn
+share/apps/krn/toolbar/black-bullet.xpm
+share/apps/krn/toolbar/filemail.xpm
+share/apps/krn/toolbar/previous.xpm
+share/apps/krn/toolbar/right.xpm
+share/apps/krn/toolbar/closed.xpm
+share/apps/krn/toolbar/krnfolder.xpm
+share/apps/krn/toolbar/read.xpm
+share/apps/krn/toolbar/subscr.xpm
+share/apps/krn/toolbar/connected.xpm
+share/apps/krn/toolbar/green-bullet.xpm
+share/apps/krn/toolbar/red-bullet.xpm
+share/apps/krn/toolbar/followup.xpm
+share/apps/krn/toolbar/disconnected.xpm
+share/apps/krn/toolbar/left.xpm
+share/apps/krn/toolbar/reload.xpm
+share/apps/krn/toolbar/tagged.xpm
+share/apps/krn/toolbar/deco.xpm
+share/apps/krn/toolbar/logo.xpm
+share/apps/krn/toolbar/save.xpm
+share/apps/krn/toolbar/fileprint.xpm
+share/apps/krn/toolbar/locked.xpm
+share/apps/krn/toolbar/catch.xpm
+share/apps/krn/toolbar/thumb_up.xpm
+share/apps/krn/toolbar/attach.xpm
+share/apps/krn/toolbar/mailpost.xpm
+share/apps/krn/toolbar/fileforward.xpm
+share/apps/krn/toolbar/send.xpm
+share/apps/krn/toolbar/find.xpm
+share/apps/krn/toolbar/feather_white.xpm
+share/apps/krn/toolbar/pub_key_red.xpm
+share/apps/krn/toolbar/thread.xpm
+share/apps/krn/toolbar/down.xpm
+@dirrm share/apps/krn/toolbar
+@dirrm share/apps/krn
+share/icons/krn.xpm
