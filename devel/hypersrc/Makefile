@@ -7,7 +7,8 @@
 #
 
 PORTNAME=	hypersrc
-PORTVERSION=	5.2.11
+PORTVERSION=	5.3.2
+PORTCOMMENT=	Source code browser
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.jimbrooks.org/hypersrc/%SUBDIR%/
 MASTER_SITE_SUBDIR=	latest old
@@ -18,15 +19,16 @@ RUN_DEPENDS=	exctags:${PORTSDIR}/devel/ctags
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USE_BISON=	yes
+USE_PERL5=	yes
 USE_GNOMENG=	yes
-USE_GNOME=	gnomeprefix gnomelibs
-USE_GMAKE=	yes
+USE_GNOME=	gnomelibs
+USE_BISON=	yes
 USE_REINPLACE=	yes
+USE_GMAKE=	yes
 MAKEFILE=	GNUmakefile
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/bin/ctags|${LOCALBASE}/bin/exctags|g' ${WRKSRC}/Hypersrc.pl
+	@${REINPLACE_CMD} -e 's|"ctags"|"exctags"|g' ${WRKSRC}/Hypersrc.pl
 	@${REINPLACE_CMD} -e 's|"-i +m -x -u"|"-x"|g' ${WRKSRC}/ctags.pl
 
 .include <bsd.port.mk>
