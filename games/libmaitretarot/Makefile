@@ -15,7 +15,7 @@ MAINTAINER=		thierry@FreeBSD.org
 COMMENT=		Core library of MaitreTarot, a Tarot card game
 
 USE_BZIP2=		yes
-USE_LIBTOOL=		yes
+USE_LIBTOOL_VER=	13
 USE_GNOME=		glib20 libxml2 lthack
 INSTALLS_SHLIB=		yes
 

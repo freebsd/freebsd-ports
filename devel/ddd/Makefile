@@ -23,7 +23,7 @@ USE_REINPLACE=	yes
 USE_SIZE=	yes
 USE_XPM=	yes
 USE_MOTIF=	yes
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=13
 
 CFLAGS+=	-Wno-deprecated
 CPPFLAGS+=	-I${LOCALBASE}/include
