@@ -7,7 +7,6 @@
 
 PORTNAME=	inn
 PORTVERSION=	${SNAPSHOT}
-PORTREVISION=	1
 CATEGORIES=	news ipv6
 MASTER_SITES=	http://sheepkiller.nerim.net/ports/${PORTNAME}/ \
 		http://www.cultdeadsheep.org/FreeBSD/ports/download/distfiles/
@@ -18,14 +17,14 @@ MAINTAINER=	sheepkiller@cultdeadsheep.org
 COMMENT=	InterNetNews -- the Internet meets Netnews
 
 BRANCH=		stable
-SNAPSHOT=	20030922
+SNAPSHOT=	20031022
 
 NO_LATEST_LINK=	yes
 USE_GMAKE=	yes
 USE_PERL5=	yes
 USE_OPENSSL=	yes
 
-CONFLICTS=	inn*
+CONFLICTS=	inn-2.4.0* inn-current-*
 
 .if exists(/var/news) && !defined(PACKAGE_BUILDING)
 INN_NEWSSPOOL?=/var/news
@@ -43,14 +42,24 @@ CONFIGURE_ARGS+=	--mandir=${PREFIX}/man \
 			--with-spool-dir=${INN_NEWSSPOOL} \
 			--with-log-dir=${INN_NEWSLOG} \
 			--with-perl \
-			--with-tmp-path=${INN_NEWSSPOOL}/tmp \
+			--with-tmp-dir=${INN_NEWSSPOOL}/tmp \
 			--with-openssl=${OPENSSLBASE} \
 			--enable-ipv6
 
 .if defined(WITH_BERKELEYDB)
-# We don't support other versions for the moment.
-CONFIGURE_ARGS+=	--with-berkeleydb
-LIB_DEPENDS+=		db41:${PORTSDIR}/databases/db41
+CONFIGURE_ARGS+=	--with-berkeleydb=${LOCABASE}
+.    if !defined(WITH_BDB_VER)
+WITH_BDB_VER=	41
+.    endif
+.    if (${WITH_BDB_VER} == 3) || (${WITH_BDB_VER} == 4) || (${WITH_BDB_VER} == 41)
+LIB_DEPENDS+=		db${WITH_BDB_VER}:${PORTSDIR}/databases/db${WITH_BDB_VER}
+.    elif ${WITH_BDB_VER} == 2
+BROKEN=		"Does not compile with db2"
+.    else
+BROKEN=		"Unknown BerkeleyDB version"
+.    endif
+CONFIGURE_ENV+=		DB_VER=db${WITH_BDB_VER}
+CONFIGURE_ARGS+=	--with-berkeleydb=${LOCALBASE}
 .endif
 
 .if defined(WITH_PYTHON)
@@ -88,7 +97,6 @@ DBZ_FILES=		dir hash index
 PLIST_SUB=		SUB_WITH_TAGGED_HASH="@comment "
 PLIST_SUB+=		SUB_WITHOUT_TAGGED_HASH=""
 .endif
-
 
 EXTRA=		CONTRIBUTORS HACKING INSTALL LICENSE MANIFEST NEWS README TODO
 HEADERS=	clibrary.h config.h dbz.h libinn.h storage.h
@@ -139,7 +147,7 @@ post-install:
 	    s+!!PREFIX!!+${PREFIX}+g && ${CHMOD} +x ${PREFIX}/etc/rc.d/innd.sh
 	@${CHOWN} root:news ${PREFIX}/news/bin/auth/passwd/ckpasswd
 	@${CHMOD} 4755 ${PREFIX}/news/bin/auth/passwd/ckpasswd
-	@PKG_PREFIX=${PKG_PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} CHECK-CONF
+	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} CHECK-CONF
 	@(if [ ! -f ${PREFIX}/news/db/history ] ; then \
 	    ${ECHO} 'Creating empty history database...' ; \
 	    cd ${PREFIX}/news/db ; \
