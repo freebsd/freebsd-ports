@@ -6,7 +6,7 @@
 
 PORTNAME=	subversion
 PORTVERSION=	0.32.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://svn.collab.net/tarballs/
 
@@ -137,6 +137,12 @@ post-extract:
 	@${RM} -r ${WRKSRC}/neon
 	@${RM} -r ${WRKSRC}/apr
 	@${RM} -r ${WRKSRC}/apr-util
+
+post-patch:
+.if ${PREFIX} != "/usr"
+	@${REINPLACE_CMD} "s#/etc/subversion#${PREFIX}/etc/subversion#g" ${WRKSRC}/subversion/libsvn_subr/config_file.c
+	@${REINPLACE_CMD} "s#/etc/subversion#${PREFIX}/etc/subversion#g" ${WRKSRC}/subversion/libsvn_subr/config_impl.h
+.endif
 
 .if defined(WITH_MOD_DAV_SVN)
 pre-install:
