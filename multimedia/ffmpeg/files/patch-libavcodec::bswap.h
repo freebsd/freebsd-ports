@@ -4,7 +4,7 @@
  #include <byteswap.h>
  #else
  
-+#if (defined(BSD) && (BSD >= 199103))
++#if (defined(__unix__) || defined(unix)) && !defined(USG)
 +#include <sys/param.h>
 +#endif
 +
