@@ -34,8 +34,8 @@ do-build:
 	(cd ${WRKSRC}/$d && ${SETENV} ${MAKE_ENV} makeme \
 	    ${MAKE_ARGS} ${ALL_TARGET})
 .endfor
-	@${SED} -e 's:/usr/local:${PREFIX}:g'  \
-	    ${.CURDIR}/pkg-message > ${PKGMESSAGE}
+	#@${SED} -e 's:/usr/local:${PREFIX}:g'  \
+	#    ${.CURDIR}/pkg-message > ${PKGMESSAGE}
 
 do-install:
 .for d in etc/conserver etc/console etc/autologin
