@@ -11,8 +11,8 @@ PKGNAME=	ja-kon2-${KONFONT}-0.3
 CATEGORIES=	japanese
 # note kon is only in first directory and fonts are only in second directory
 MASTER_SITES=	ftp://ftp.tut.ac.jp/Linux/Packages/Utils/ \
-		ftp://ftp.xfree86.org/pub/XFree86/3.3.2/untarred/xc/fonts/bdf/misc/ \
-		ftp://ftp.iij.ad.jp/pub/X/XFree86/3.3.2/untarred/xc/fonts/bdf/misc/
+		ftp://ftp.xfree86.org/pub/XFree86/3.3.4/untarred/xc/fonts/bdf/misc/ \
+		ftp://ftp.iij.ad.jp/pub/X/XFree86/3.3.4/untarred/xc/fonts/bdf/misc/
 DISTFILES=	kon2-0.3.tar.gz \
 		k14.bdf 7x14rk.bdf \
 		jiskan16.bdf 8x16rk.bdf
