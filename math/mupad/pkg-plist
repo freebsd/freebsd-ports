@@ -12,9 +12,6 @@ mupad/freebsd/lib/libImlib.so.1.9.13
 mupad/freebsd/lib/libXm.so
 mupad/freebsd/lib/libXm.so.2
 mupad/freebsd/lib/libXm.so.2.1
-mupad/freebsd/lib/libXpm.so
-mupad/freebsd/lib/libXpm.so.4
-mupad/freebsd/lib/libXpm.so.4.11
 mupad/freebsd/lib/libgcc_s.so
 mupad/freebsd/lib/libgcc_s.so.1
 mupad/freebsd/lib/libjpeg.so

@@ -7,6 +7,7 @@
 
 PORTNAME=	mupad
 PORTVERSION=	2.5.3
+PORTREVISION=	1
 CATEGORIES=	math linux
 MASTER_SITES=	ftp://ftp.mupad.de/MuPAD/distrib/unix/
 DISTNAME=	mupad_linux_scilab_253
@@ -15,13 +16,6 @@ DIST_SUBDIR=	mupad
 
 MAINTAINER=	maho@FreeBSD.org
 COMMENT=	A sophisticated computer algebra system
-
-RUN_DEPENDS=	${LINUXBASE}/usr/X11R6/lib/libXm.so.2:${PORTSDIR}/x11-toolkits/linux-openmotif \
-		${LINUXBASE}/usr/lib/libImlib.so.1:${PORTSDIR}/graphics/linux-imlib \
-		${LINUXBASE}/usr/lib/libjpeg.so.62:${PORTSDIR}/graphics/linux-jpeg \
-		${LINUXBASE}/usr/lib/libpng.so.3:${PORTSDIR}/graphics/linux-png \
-		${LINUXBASE}/usr/lib/libtiff.so.3:${PORTSDIR}/graphics/linux-tiff \
-		${LINUXBASE}/usr/lib/libungif.so.4:${PORTSDIR}/graphics/linux-ungif
 
 NO_CDROM=	"unsure to sell for profit"
 
@@ -40,6 +34,8 @@ do-install:
 	@${MKDIR} ${PREFIX}/mupad/share
 	@${MKDIR} ${PREFIX}/mupad/packages
 	@${FIND} ${WRKSRC} -name "*.orig" | ${XARGS} ${RM}
+	@${RM} -rf ${WRKSRC}/packages/scilab/linux
+	@${RM} -rf ${WRKSRC}/linux/lib/libXpm.so*
 	@${RM} -rf ${WRKSRC}/packages/scilab/linux
 	@${RM} -rf ${WRKSRC}/packages/scilab/solaris
 	@${TAR} cf - -C ${WRKSRC}/linux . | ${TAR} xf - -C ${PREFIX}/mupad/freebsd
