@@ -1,0 +1,9 @@
+%%SITE_PERL%%/XML/Parser/Style/Elemental.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Parser/Style/Elemental/.packlist
+@dirrm %%SITE_PERL%%/XML/Parser/Style
+@unexec rmdir %D/%%SITE_PERL%%/XML/Parser 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/XML 2>/dev/null || true
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Parser/Style/Elemental
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Parser/Style
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/XML/Parser 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/XML 2>/dev/null || true
