@@ -3,7 +3,7 @@
 # Date created:		19 August 1997
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.5 1998/02/16 15:58:18 jseger Exp $
+# $Id: Makefile,v 1.6 1998/03/02 02:08:26 jseger Exp $
 #
 
 DISTNAME=	tcl8.1a2
@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://ftp.sunlabs.com/pub/tcl/
 
 MAINTAINER=	jseger@FreeBSD.ORG
 
+NO_LATEST_LINK=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}/unix
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared

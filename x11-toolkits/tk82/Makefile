@@ -3,7 +3,7 @@
 # Date created:		19 August 1997
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.8 1998/02/16 15:59:56 jseger Exp $
+# $Id: Makefile,v 1.9 1998/03/02 02:09:45 jseger Exp $
 #
 
 DISTNAME=	tk8.1a2
@@ -15,6 +15,7 @@ MAINTAINER=	jseger@FreeBSD.ORG
 
 LIB_DEPENDS=	tcl81\\.1\\.0:${PORTSDIR}/lang/tcl81
 
+NO_LATEST_LINK=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}/unix
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared
