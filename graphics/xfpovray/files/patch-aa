@@ -1,0 +1,35 @@
+--- Imakefile.orig	Fri Aug 22 04:39:59 1997
++++ Imakefile	Tue Sep 30 18:43:06 1997
+@@ -5,7 +5,7 @@
+ 
+ XCOMM Root installation directory for xfpovray
+ 
+-XFROOTDIR = /usr/local
++XCOMM XFROOTDIR = /usr/local
+ 
+ 
+ 
+@@ -13,10 +13,10 @@
+ 
+ 
+ XCOMM Directory for xfpovray binary
+-BINDIR = $(XFROOTDIR)/bin
++XCOMM BINDIR = $(XFROOTDIR)/bin
+ 
+ XCOMM Directories for xfpovray help files and icons
+-XFLIBDIR = $(XFROOTDIR)/lib/xfpovray
++XFLIBDIR = $(LIBDIR)/xfpovray
+ XFHELPDIR = $(XFLIBDIR)/help
+ XFICONDIR = $(XFLIBDIR)/icons
+ 
+@@ -69,8 +69,8 @@
+ 	$(TOP)/src/xfpovray_icon.xpm \
+ 	$(TOP)/src/xfpovray_info.xpm
+ 
+-EXTRA_LIBRARIES = -L/usr/local/lib -lforms -lm
+- EXTRA_INCLUDES = -I/usr/local/include -I./flx/flx_return_button
++EXTRA_LIBRARIES = -lxforms -lm
++ EXTRA_INCLUDES = -I./flx/flx_return_button
+   EXTRA_DEFINES = -DSTARTUP_PIXMAP=\"$(XFICONDIR)\" -DHELP_DIR=\"$(XFHELPDIR)\"
+          LDLIBS = $(EXTRA_LIBRARIES) $(XLIB)
+ 

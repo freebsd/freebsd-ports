@@ -1,0 +1,21 @@
+bin/xfpovray
+lib/X11/xfpovray/help/Appendices
+lib/X11/xfpovray/help/Chapter_1
+lib/X11/xfpovray/help/Chapter_2
+lib/X11/xfpovray/help/Chapter_3
+lib/X11/xfpovray/help/Chapter_4
+lib/X11/xfpovray/help/Chapter_5
+lib/X11/xfpovray/help/Chapter_6
+lib/X11/xfpovray/help/Chapter_7
+lib/X11/xfpovray/help/Include_Preview
+lib/X11/xfpovray/help/Introduction
+lib/X11/xfpovray/help/Options
+lib/X11/xfpovray/help/Table_Of_Contents
+lib/X11/xfpovray/help/Templates
+lib/X11/xfpovray/help/help_topics
+lib/X11/xfpovray/icons/xfpovray.xpm
+lib/X11/xfpovray/icons/xfpovray_icon.xpm
+lib/X11/xfpovray/icons/xfpovray_info.xpm
+@dirrm lib/X11/xfpovray/icons
+@dirrm lib/X11/xfpovray/help
+@dirrm lib/X11/xfpovray
