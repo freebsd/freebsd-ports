@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	NetAddr-IP-Find
-PORTVERSION=	0.02
+PORTVERSION=	0.03
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	NetAddr
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	kappa@freebsd.org.ua
+MAINTAINER=	ports@freebsd.org
 COMMENT=	Iterates over all IP addresses in a text similar to Email::Find
 
 RUN_DEPENDS=	${SITE_PERL}/NetAddr/IP.pm:${PORTSDIR}/net/p5-NetAddr-IP
