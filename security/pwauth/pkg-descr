@@ -1,0 +1,5 @@
+Pwauth is an authenticator designed to be used with mod_auth_external
+and the Apache HTTP Daemon to support reasonably secure web authentication
+out of the system password database on most versions of Unix.
+
+WWW: http://www.unixpapa.com/pwauth/

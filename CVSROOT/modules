@@ -8626,6 +8626,7 @@ pv		ports/sysutils/pv
 pvm		ports/net/pvm
 pvm++		ports/net/pvm++
 pvmpov		ports/graphics/pvmpov
+pwauth		ports/security/pwauth
 pwd_unmkdb	ports/sysutils/pwd_unmkdb
 pwebstats	ports/www/pwebstats
 pwg		ports/sysutils/pwg
