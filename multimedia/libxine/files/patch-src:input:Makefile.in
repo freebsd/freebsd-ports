@@ -1,0 +1,41 @@
+--- src/input/Makefile.in.orig	Wed Mar 26 00:50:17 2003
++++ src/input/Makefile.in	Wed Mar 26 00:59:08 2003
+@@ -213,8 +213,8 @@
+ 
+ EXTRA_DIST = input_dvd.c input_vcd.c input_gnome_vfs.c input_rtp.c
+ 
+-@HAVE_DVDNAV_TRUE@SUBDIRS = dvb libreal librtsp libdvdread
+-@HAVE_DVDNAV_FALSE@SUBDIRS = dvb libreal librtsp libdvdread libdvdnav
++@HAVE_DVDNAV_TRUE@SUBDIRS = dvb libreal librtsp
++@HAVE_DVDNAV_FALSE@SUBDIRS = dvb libreal librtsp libdvdnav
+ XINE_LIB = $(top_builddir)/src/xine-engine/libxine.la
+ 
+ 
+@@ -233,15 +233,13 @@
+ 
+ # For DVD
+ @HAVE_DVDNAV_TRUE@DVD_CFLAGS = -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE \
+-@HAVE_DVDNAV_TRUE@  $(DVDNAV_CFLAGS) \
+-@HAVE_DVDNAV_TRUE@  -I$(top_srcdir)/src/input/libdvdread/
++@HAVE_DVDNAV_TRUE@  $(DVDNAV_CFLAGS)
+ 
+ @HAVE_DVDNAV_FALSE@DVD_CFLAGS = -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE \
+-@HAVE_DVDNAV_FALSE@  -I$(top_srcdir)/src/input/libdvdnav/ \
+-@HAVE_DVDNAV_FALSE@  -I$(top_srcdir)/src/input/libdvdread/
++@HAVE_DVDNAV_FALSE@  -I$(top_srcdir)/src/input/libdvdnav/
+ 
+ @HAVE_DVDNAV_TRUE@link_dvdnav = $(DVDNAV_LIBS)
+-@HAVE_DVDNAV_FALSE@link_dvdnav = libdvdnav/libdvdnav.la libdvdread/libdvdread.la
++@HAVE_DVDNAV_FALSE@link_dvdnav = libdvdnav/libdvdnav.la -ldvdread
+ 
+ AM_CFLAGS = $(GNOME_VFS_CFLAGS) $(DVD_CFLAGS) @ANSI_FLAGS@
+ 
+@@ -355,7 +353,7 @@
+ @HAVE_DVDNAV_FALSE@xineplug_inp_dvd_la_DEPENDENCIES = \
+ @HAVE_DVDNAV_FALSE@	$(top_builddir)/src/xine-engine/libxine.la \
+ @HAVE_DVDNAV_FALSE@	libdvdnav/libdvdnav.la \
+-@HAVE_DVDNAV_FALSE@	libdvdread/libdvdread.la
++@HAVE_DVDNAV_FALSE@	-ldvdread
+ am_xineplug_inp_dvd_la_OBJECTS = input_dvd.lo
+ xineplug_inp_dvd_la_OBJECTS = $(am_xineplug_inp_dvd_la_OBJECTS)
+ xineplug_inp_file_la_DEPENDENCIES = \
