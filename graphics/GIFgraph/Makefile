@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	GIFgraph
 
 MAINTAINER=	laskavy@gambit.msk.su
 
-RUN_DEPENDS=	${PREFIX}/lib/perl5/site_perl/${PERL_VER}/i386-freebsd/GD.pm:${PORTSDIR}/graphics/p5-GD
+RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/i386-freebsd/GD.pm:${PORTSDIR}/graphics/p5-GD
 
 USE_PERL5=	YES
 
