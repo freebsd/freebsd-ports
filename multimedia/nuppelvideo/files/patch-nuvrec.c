@@ -1,5 +1,5 @@
---- nuvrec.c.orig	Wed Jul  4 23:59:58 2001
-+++ nuvrec.c	Sun Feb  1 17:31:10 2004
+--- nuvrec.c.orig	Wed Jul  4 23:59:36 2001
++++ nuvrec.c	Thu Oct 28 12:02:27 2004
 @@ -27,14 +27,28 @@
  #include <sys/stat.h>
  #include <sys/time.h>
@@ -31,12 +31,22 @@
  // #define TESTINPUT 1
  // #define TESTSPLIT 1
  #define KEYFRAMEDIST 30
-@@ -47,11 +61,28 @@
+@@ -42,16 +56,38 @@
+ #ifdef TESTSPLIT
+   #define MAXBYTES          20000000
+   #define MAXBYTESFORCE     21000000
++#define SPLIT 1
+ #else
+   #define MAXBYTES       2000000000
    #define MAXBYTESFORCE  2100000000
  #endif
  
 -// we need the BTTV_FIELDNR, so we really know how many frames we lose
 -#define BTTV_FIELDNR            _IOR('v' , BASE_VIDIOCPRIVATE+2, unsigned int)
++#ifndef SPLIT
++#define SPLIT 0
++#endif
++
 +#define PAL 1
 +#define NTSC 2
 +#define SECAM 3
@@ -62,7 +72,7 @@
  int fd;     // output file haendle
  int ostr=0;
  __s8 *strm;
-@@ -71,10 +102,10 @@
+@@ -71,10 +107,10 @@
  unsigned long long audiobytes;
  int effectivedsp;
  int ntsc=0; // default to PAL, this info is only for the video header
@@ -75,7 +85,7 @@
  
  //#define DP(DSTRING) fprintf(stderr, "%s\n", DSTRING);
  #define DP(DSTRING)
-@@ -173,9 +204,6 @@
+@@ -173,9 +209,6 @@
    kill(pid,  9);
    if (recordaudio) kill(pid2, 9);
  
@@ -85,7 +95,7 @@
    if (!quiet) fprintf(stderr, "\n"); // preserve status line
    exit(i);
  }
-@@ -201,24 +229,25 @@
+@@ -201,24 +234,25 @@
      unsigned char *startaudio;
  
      if (init_shm) {
@@ -116,7 +126,25 @@
  
      videobuffer    = (struct vidbuffertype *)sharedbuffer;
      startaudiodesc = (char *)(sharedbuffer + video_buffer_count*sizeof(vidbuffertyp));
-@@ -899,24 +928,6 @@
+@@ -792,7 +826,7 @@
+       // we have no frames in our cycle buffer
+ //fprintf(stderr,"*");
+ 
+-      if (byteswritten > MAXBYTES) {
++      if (SPLIT && byteswritten > MAXBYTES) {
+         actfile++;
+         if (0 != create_nuppelfile(fname, actfile, w, h)) {
+           fprintf(stderr, "cannot open %s-%d.nuv for writing\n", fname, actfile);
+@@ -804,7 +838,7 @@
+       continue;   // check for next frame
+     }
+ 
+-    if (byteswritten > MAXBYTESFORCE) {
++    if (SPLIT && byteswritten > MAXBYTESFORCE) {
+       actfile++;
+       if (0 != create_nuppelfile(fname, actfile, w, h)) {
+         fprintf(stderr, "cannot open %s-%d.nuv for writing\n", fname, actfile);
+@@ -899,24 +933,6 @@
  #ifdef TESTINPUT
    tf+=2; // when reading from files we won't lose frames ;)
  #else
@@ -141,7 +169,7 @@
   // here is the non preferable timecode - drop algorithm - fallback
   if (!usebttv) {
  
-@@ -1073,21 +1084,125 @@
+@@ -1073,21 +1089,125 @@
     exit(-1);
  }
  
@@ -275,7 +303,7 @@
    double  frequency=0.0;
    long v4lfrequency=0;
    int volume = -1;
-@@ -1277,109 +1392,28 @@
+@@ -1277,109 +1397,28 @@
    testinput();
  #else
  

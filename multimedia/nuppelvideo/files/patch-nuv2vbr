@@ -1,0 +1,48 @@
+--- nuv2vbr.orig	Mon Jun 25 21:35:49 2001
++++ nuv2vbr	Thu Oct 28 18:43:41 2004
+@@ -1,23 +1,39 @@
+ #!/bin/sh
+ 
++if [ $# = 0 ]; then
++	echo "Usage: $0 <nuvfile>"
++	exit 1
++fi
++name=${1%.nuv}
++
++retval=0
++for PROG in toolame exportvideo mpeg2enc mplex ; do
++    which -s $PROG || retval=$?
++    if [ $retval -ne 0 ]; then
++	echo "Error: could't find '$PROG' on this system." >&2
++	exit 1
++    fi
++done
++
+ echo "you have choosen to make a VBR MPEG stream"
+ echo "please notice that VBR MPEG streams cannot be burned to"
+ echo "a VCD for use with a DVD player, if you want that use nuv2mpg"
+ echo ""
+ echo "this is only an example script you should edit it to your"
+-echo "quality needs. i'll make a better all purpose mpeg script
++echo "quality needs. i'll make a better all purpose mpeg script"
+ echo "in time. try to play around with -q and -b and read the"
+ echo "mpeg2enc man page!!!"
++echo
+ 
+-nuvplay -e $1.nuv | toolame -s 44100 -b 192 -p 2 -m s /dev/stdin $1.mp2
+-exportvideo $1.nuv "|mpeg2enc -b 1300 -q 7 -G 21 -g 21 -N -o $1.m1v"
+-mplex -V -s 2324 -p 1 -o $1.mpg $1.m1v $1.mp2
++nuvplay -e $name.nuv | toolame -s 44.1 -b 192 -p 2 -m s /dev/stdin $name.mp2
++exportvideo -Y 2 $name.nuv | mpeg2enc -b 1300 -q 7 -G 21 -g 21 -o $name.m1v
++mplex -V -r 2000 -s 2324 -p 1 -o $name.mpg $name.m1v $name.mp2
+ 
+-echo "you can burn your mpg files with cdrecord, simple change the
++echo "you can burn your mpg files with cdrecord, simple change the"
+ echo "device parameter to your cdwriter id and type"
+ echo ""
+ echo "mkdir disk1"
+-echo "mv $1.mpg disk1/"
++echo "mv $name.mpg disk1/"
+ echo "cd disk1/"
+ echo "md5sum * >disk.md5"
+ echo "cd .."

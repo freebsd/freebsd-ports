@@ -1,0 +1,10 @@
+--- nuvedit.orig	Wed Jul  4 13:17:18 2001
++++ nuvedit	Thu Oct 28 14:08:14 2004
+@@ -1,6 +1,6 @@
+ #!/bin/sh
+ # \
+-exec wish "$0" "$@"
++exec wish8.4 "$0" "$@"
+ 
+ 
+ set procfil  {}

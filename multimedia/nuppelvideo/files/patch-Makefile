@@ -1,6 +1,20 @@
---- Makefile.orig	Sat Jul  7 09:08:52 2001
-+++ Makefile	Wed Mar  5 19:10:28 2003
-@@ -19,25 +19,25 @@
+--- Makefile.orig	Sat Jul  7 14:08:52 2001
++++ Makefile	Thu Oct 28 02:47:40 2004
+@@ -1,10 +1,10 @@
+-CC=gcc
++#
+ #CFLAGS= -g -Wall -O3  -mcpu=pentium -march=pentium -funroll-loops -fexpensive-optimizations -finline
+-CFLAGS= -Wall -O3 -DMMX -mcpu=pentium -march=pentium -funroll-loops -fexpensive-optimizations -finline-functions
++#
+ 
+ V4LDIR=/usr/src/linux/drivers/char/
+ COPTS=$(CFLAGS) -I$(V4LDIR)
+-COPTSRT= -O3 -Wall -DMMX -mcpu=pentium -funroll-loops -fexpensive-optimizations -finline-functions
++COPTSRT=$(CFLAGS)
+ 
+ all:   nuvplay nuvrec
+ 
+@@ -19,32 +19,35 @@
  
  
  soxfuncs.o: soxfuncs.c
@@ -25,6 +39,9 @@
  areaDeinterlace.o: areaDeinterlace.h areaDeinterlace.c
 -	$(CC) $(COPTS) -O3 -fexpensive-optimizations -funroll-loops -finline-functions -c areaDeinterlace.c
 +	$(CC) $(COPTS) -c areaDeinterlace.c
++
++memmem.o: memmem.c
++	$(CC) $(COPTS) -c memmem.c
  
  rtjpeg_plugin.o: rtjpeg_plugin.c rtjpeg_plugin.h
 -	$(CC) $(COPTS) -O3 -fexpensive-optimizations -funroll-loops -finline-functions -c rtjpeg_plugin.c
@@ -32,7 +49,16 @@
  
  nuvrec:	nuvrec.c RTjpegN.h RTjpegN.o minilzo.o
  	$(CC) $(COPTS) -o nuvrec minilzo.o RTjpegN.o nuvrec.c
-@@ -52,8 +52,8 @@
+ 
+-nuvplay:nuvplay.c RTjpegN.h areaDeinterlace.o RTjpegN.o XJ.o minilzo.o yuv2rgb_mmx.o rtjpeg_plugin.o resample.o soxfuncs.o
++nuvplay:nuvplay.c RTjpegN.h areaDeinterlace.o RTjpegN.o XJ.o minilzo.o yuv2rgb_mmx.o memmem.o rtjpeg_plugin.o resample.o soxfuncs.o
+ 	$(CC) $(COPTS) -L/usr/X11R6/lib -lm -lXext -o nuvplay RTjpegN.o yuv2rgb_mmx.o \
+-	minilzo.o areaDeinterlace.o XJ.o soxfuncs.o resample.o rtjpeg_plugin.o nuvplay.c
++	minilzo.o areaDeinterlace.o XJ.o soxfuncs.o resample.o memmem.o rtjpeg_plugin.o nuvplay.c
+ 
+ static: rec-s nuvplay
+ 
+@@ -52,8 +55,8 @@
  	$(CC) $(COPTS) -static -o nuvrec minilzo.o RTjpegN.o nuvrec.c
  
  install: nuvrec nuvplay

@@ -1,0 +1,50 @@
+--- nuv2mpg.orig	Mon Jun 25 21:33:41 2001
++++ nuv2mpg	Thu Oct 28 16:30:47 2004
+@@ -1,13 +1,30 @@
+ #!/bin/sh
+ 
++if [ $# = 0 ]; then
++	echo "Usage: $0 <nuvfile>"
++	exit 1
++fi
++name=${1%.nuv}
++
++retval=0
++for PROG in toolame exportvideo mpeg2enc mplex ; do
++    which -s $PROG || retval=$?
++    if [ $retval -ne 0 ]; then
++	echo "Error: could't find '$PROG' on this system." >&2
++	exit 1
++    fi
++done
++
+ echo "you have choosen to make a VCD compliant MPEG stream"
+ echo "please notice that VBR MPEG streams can have the same"
+ echo "visual quality with lower/low bitrates too (like divx)"
+ echo ""
+ 
+-nuvplay -e $1.nuv | toolame -s 44100 -b 224 -p 2 -m s /dev/stdin $1.mp2
+-exportvideo $1.nuv "|mpeg2enc -b 1152 -G 15 -g 15 -N -o $1.m1v"
+-mplex -f 1 -s 2324 -p 1 -o $1.mpg $1.m1v $1.mp2
++nuvplay -e $name.nuv | toolame -s 44.1 -b 224 -p 2 -m s /dev/stdin $name.mp2
++exportvideo -Y 2 $name.nuv | mpeg2enc -f 1 -o $name.m1v
++mplex -f 1 -s 2324 -p 1 -o $name.mpg $name.m1v $name.mp2
++
++which -s vcdimager || exit 2 
+ 
+ echo ""
+ echo "Press enter for making a BIN and CUE file from your MPG file or"
+@@ -15,11 +32,11 @@
+ echo ""
+ read enter 
+ 
+-vcdimager -c $1.cue -b $1.bin $1.mpg
++vcdimager -c $name.cue -b $name.bin $name.mpg
+ 
+ echo "you can burn your bin/cue files with cdrdao, simple change the
+ echo "device parameter to your cdwriter id and type"
+ echo ""
+-echo "cdrdao write --eject --device=0,3,0 $1.cue"
++echo "cdrdao write --eject --device=0,3,0 $name.cue"
+ echo ""
+ echo "have fun"
