@@ -8,8 +8,8 @@
 PORTNAME=	ishido
 PORTVERSION=	1.1
 CATEGORIES=	games
-MASTER_SITES=	ftp://nuxi.ucdavis.edu/pub/misc/ \
-		ftp://ftp.nuxi.com/pub/misc/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	obrien
 
 MAINTAINER=	samorodi@NUXI.com
 COMMENT=	Tile placement game
