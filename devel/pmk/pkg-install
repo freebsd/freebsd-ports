@@ -11,6 +11,9 @@ if [ -f $pmkconf ]; then
 	%%PREFIX%%/sbin/pmksetup
 	mv -f ${pmkconf} ${pmkconf}.dist
 	mv -f ${pmkconf}.bak ${pmkconf}    
+else
+	%%PREFIX%%/sbin/pmksetup
+	cp -fp ${pmkconf} ${pmkconf}.dist
 fi
  
 exit 0
