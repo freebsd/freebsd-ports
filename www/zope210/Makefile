@@ -135,9 +135,9 @@ do-install:
 		-e "s|%%ZOPE_HTTP_PORT%%|${ZOPE_HTTP_PORT}|g" \
 		-e "s|%%ZOPE_FTP_PORT%%|${ZOPE_FTP_PORT}|g" \
 		-e "s|%%ZOPE_MONITOR_PORT%%|${ZOPE_MONITOR_PORT}|g" \
-		< ${FILESDIR}/zope.sh.in > ${PREFIX}/etc/rc.d/zope.sh
-	@${CHMOD} ug+x,o-rwx ${PREFIX}/etc/rc.d/zope.sh
-	@${ECHO} "===>  Done with ${PREFIX}/etc/rc.d/zope.sh."
+		< ${FILESDIR}/zope.sh.in > ${PREFIX}/etc/rc.d/zope.sh.sample
+	@${CHMOD} ug+x,o-rwx ${PREFIX}/etc/rc.d/zope.sh.sample
+	@${ECHO} "===>  Done with ${PREFIX}/etc/rc.d/zope.sh.sample."
 	@${CAT} ${FILESDIR}/Message
 	@${ECHO} "===>   Your Zope base directory is ${ZOPEBASEDIR}."
 	@${ECHO} "===>   The Zope license is in ${ZOPEBASEDIR}/LICENSE.txt."
