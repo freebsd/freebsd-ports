@@ -34,12 +34,6 @@ USE_GMAKE=	yes
 MAN1=		bed.1 xbed.1
 MANCOMPRESSED=	yes
 
-.if defined(WITHOUT_X11)
-CONFIGURE_ARGS+=	--without-x
-PLIST_SUB+=		X11="@comment "
-.else
-PLIST_SUB+=		X11=""
-
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "amd64"
@@ -49,6 +43,12 @@ BROKEN=		"Does not compile on amd64 (missing -fPIC)"
 .if ${ARCH} == "ia64"
 BROKEN=		"Hangs during configure"
 .endif
+
+.if defined(WITHOUT_X11)
+CONFIGURE_ARGS+=	--without-x
+PLIST_SUB+=		X11="@comment "
+.else
+PLIST_SUB+=		X11=""
 
 .if !defined(BATCH) && !defined(PACKAGE_BUILDING)
 pre-configure:
