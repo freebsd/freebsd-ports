@@ -1,6 +1,6 @@
---- configure.orig	Thu Apr 29 13:14:25 2004
-+++ configure	Sat May  1 14:31:21 2004
-@@ -20496,7 +20497,7 @@
+--- configure.orig	Thu Aug 19 23:59:15 2004
++++ configure	Fri Aug 20 00:02:09 2004
+@@ -21542,7 +21542,7 @@
  
  
  cat >>confdefs.h <<_ACEOF
@@ -9,12 +9,30 @@
  _ACEOF
  
      have_gnome=true
-@@ -23717,7 +23718,7 @@
+@@ -25231,7 +25231,7 @@
  
-   PYTHON_PREFIX=${prefix}
+   fi
  
--  PYTHON_EXEC_PREFIX=${exec_prefix}
+-
 +  PYTHON_EXEC_PREFIX=${LOCALBASE}
  
+   PYTHON_PLATFORM=`$PYTHON -c "import sys; print sys.platform"`
  
+@@ -25293,12 +25293,12 @@
+ except:
+         sys.exit(0)
+ sys.exit(0)"
+-if $PYTHON -c "$prog" 1>&5 2>&5
+-  then
++#if $PYTHON -c "$prog" 1>&5 2>&5
++#  then
+     eval "py_cv_mod_$py_mod_var=yes"
+-  else
+-    eval "py_cv_mod_$py_mod_var=no"
+-  fi
++#  else
++#    eval "py_cv_mod_$py_mod_var=no"
++#  fi
+ 
+ fi
  
