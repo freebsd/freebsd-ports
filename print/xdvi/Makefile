@@ -8,8 +8,8 @@ IS_INTERACTIVE=	yes
 .if !defined(BATCH)
 install:
 	@echo "===>  Installing for ${DISTNAME}"
-	@mkdir -p /usr/local/man/man1
-	@mkdir -p /usr/local/bin
+	@mkdir -p ${PREFIX}/man/man1
+	@mkdir -p ${PREFIX}/bin
 	@(cd ${WRKSRC}; ${GMAKE} install.man \
 		MANDIR=${PREFIX}/man/man1 MANSUFFIX=1)
 	@(cd ${WRKSRC}; ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} xdvi.man)
