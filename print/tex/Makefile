@@ -38,6 +38,12 @@ MAN1=		access.1 amstex.1 bibtex.1 dmp.1 dvicopy.1 dvitype.1 eplain.1 \
 INFO=		kpathsea web2c
 MAKE_FLAGS=	fmts= all_mems=
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "ia64"
+BROKEN=		"Segfault during build on ia64"
+.endif
+
 pre-configure:
 	cd ${WRKDIR} && ${FIND} . -name \*.gz | ${XARGS} gunzip -f
 
@@ -65,4 +71,4 @@ post-install:
 	@(cd ${WRKDIR}/lib; ${INSTALL_DATA} *.tex ${PREFIX}/share/texmf/tex)
 	@(cd ${WRKDIR}/base; ${INSTALL_DATA} *.tex ${PREFIX}/share/texmf/tex)
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
