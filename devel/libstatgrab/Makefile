@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libstatgrab
-PORTVERSION=	0.8.2
+PORTVERSION=	0.9
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.mirror.ac.uk/sites/ftp.i-scream.org/pub/i-scream/%SUBDIR%/ \
 		http://www.mirror.ac.uk/sites/ftp.i-scream.org/pub/i-scream/%SUBDIR%/ \
@@ -21,12 +21,12 @@ DIST_SUBDIR=	i-scream
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 USE_LIBTOOL=	yes
-USE_GNOME=	gnomehack pkgconfig
+USE_GNOME=	gnomehack pkgconfig lthack
 
 MAN3=		cpu_percent_usage.3 get_cpu_diff.3 get_cpu_totals.3 \
 		get_diskio_stats.3 get_diskio_stats_diff.3 get_general_stats.3 \
-		get_load_stats.3 get_memory_stats.3 get_network_stats.3 \
-		get_network_stats_diff.3 get_page_stats.3 \
+		get_load_stats.3 get_memory_stats.3 get_network_iface_stats.3 \
+		get_network_stats.3 get_network_stats_diff.3 get_page_stats.3 \
 		get_page_stats_diff.3 get_process_stats.3 get_swap_stats.3 \
 		get_user_stats.3 statgrab.3
 
@@ -46,6 +46,7 @@ PLIST_SUB+=		SAIDAR="@comment "
 PLIST_SUB+=		SAIDAR=""
 .endif
 
+# setgid kmem binaries needed on FreeBSD 4 only
 .if defined(WITHOUT_SETGID_BINARIES)
 CONFIGURE_ARGS+=	--disable-setgid-binaries
 .endif
