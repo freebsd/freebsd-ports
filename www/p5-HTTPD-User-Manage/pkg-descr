@@ -1,10 +1,11 @@
-       This module provides methods for authenticating a user.
-       It uses HTTPD::UserAdmin to lookup passwords in a
-       database.  Subclasses provide methods specific to the
-       authentication mechanism.
+HTTPD-User-Manage is set of Perl modules for managing access control
+with the Apache, NCSA httpd, CERN and Netscape servers (and maybe some
+others).
 
-       Currently, under HTTP/1.0 the only supported
-       authentication mechanism is Basic Authentication.  NCSA
-       Mosaic and NCSA HTTPd understand the proposed Message
-       Digest Authentication, which should make it into the HTTP
-       spec someday.  This module supports both.
+You can install this program as a CGI script to allow remote users to
+change their Web access passwords.  Web administrators can use it to
+remotely add, edit and delete users and their groups.  You can also use
+it from the command line as a nice all-in-one interface to access
+control databases based on text files, DBM files, and SQL databases.
+
+WWW: http://search.cpan.org/dist/HTTPD-User-Manage/
