@@ -1,8 +1,7 @@
-# $Id: Makefile,v 1.30 1995/10/03 11:33:49 asami Exp $
+# $Id: Makefile,v 1.31 1995/10/03 11:45:07 asami Exp $
 #
 
     SUBDIR += acm
-    SUBDIR += astrolog
     SUBDIR += golddig
     SUBDIR += jetpack
     SUBDIR += nethack
