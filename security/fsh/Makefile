@@ -6,12 +6,13 @@
 
 PORTNAME=	fsh
 PORTVERSION=	1.2
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.lysator.liu.se/fsh/
 
 MAINTAINER=	sumikawa@FreeBSD.org
 
-RUN_DEPENDS=	python:${PORTSDIR}/lang/python
+BUILD_DEPENDS=	python:${PORTSDIR}/lang/python
 
 GNU_CONFIGURE=	yes
 
