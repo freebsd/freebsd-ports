@@ -8,7 +8,8 @@
 PORTNAME=	altivore
 PORTVERSION=	0.9.3
 CATEGORIES=	security
-MASTER_SITES=	http://www.networkice.com/altivore/
+MASTER_SITES=	http://www.robertgraham.com/altivore/ \
+		http://www.networkice.com/altivore/
 DISTNAME=	altivore
 EXTRACT_SUFX=	.c
 
