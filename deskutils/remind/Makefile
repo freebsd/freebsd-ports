@@ -8,7 +8,7 @@
 PORTNAME=	remind
 PORTVERSION=	3.0.22
 CATEGORIES=	deskutils
-MASTER_SITES=	http://www.roaringpenguin.com/products/${PORTNAME}/
+MASTER_SITES=	http://www.roaringpenguin.com/penguin/
 DISTNAME=	${PORTNAME}-03.00.22
 
 MAINTAINER=	purple@lewiz.net
