@@ -6,17 +6,13 @@
 #
 
 PORTNAME=	pcal
-PORTVERSION=	4.7
+PORTVERSION=	4.7.1
 CATEGORIES=	print
-MASTER_SITES=	http://www.geocities.com/SunsetStrip/Palms/5555/PS/
-DISTNAME=	${PORTNAME}_${PORTVERSION:S/./_/}_tar_Z
-EXTRACT_SUFX=	.txt
+MASTER_SITES=	http://fronzek.akshor.com/pcal/
 
 MAINTAINER=	mwest@uct.ac.za
 COMMENT=	PostScript calendar program
 
-WRKSRC=		${WRKDIR}/pcal.${PORTVERSION}
-PAPERSIZE?=	A4
 WWWSERVER!=	hostname
 
 MAN1=		pcal.1
@@ -27,13 +23,6 @@ MAKE_ENV+=	PAPERSIZE="${PAPERSIZE}"
 MAKE_ENV+=	CC="${CC}" HOST_CC="${CC}"
 
 ALL_TARGET=	pcal
-
-do-extract:
-	@${RM} -rf ${WRKDIR}
-	@${MKDIR} ${WRKDIR}
-	@(cd ${WRKDIR}; \
-	  uudecode -p ${DISTDIR}/${DISTFILES} | ${TAR} xzf -; \
-	)
 
 pre-install:
 	${MV} ${WRKSRC}/pcal.cgi ${WRKSRC}/pcal.cgi.tmp

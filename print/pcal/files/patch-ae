@@ -1,5 +1,5 @@
---- pcal.man.orig	Thu Dec 21 10:10:45 2000
-+++ pcal.man	Thu Dec 21 10:11:15 2000
+--- pcal.man.orig	Wed Feb  9 18:06:23 2000
++++ pcal.man	Sat May 24 15:37:18 2003
 @@ -443,14 +443,14 @@
  `&#NNN;' (NNN = any three decimal digits) are also supported.  These will
  be propagated intact (be sure to escape the `#' in `&#NNN;') if the output

@@ -1,11 +1,11 @@
---- Makefile.orig	Thu Feb 10 01:06:23 2000
-+++ Makefile	Thu Dec 21 09:40:35 2000
+--- Makefile.orig	Tue Jan  7 10:29:28 2003
++++ Makefile	Sat May 24 15:40:57 2003
 @@ -21,8 +21,8 @@
  
  # Set the configuration variables below to taste.
  
--PCALINIT_CC = /bin/cc			# native compiler
--CC	    = /bin/cc			# cross-compiler (if target != host)
+-PCALINIT_CC = /usr/bin/gcc			# native compiler
+-CC	    = /usr/bin/gcc			# cross-compiler (if target != host)
 +PCALINIT_CC = ${CC}			# native compiler
 +CC	    = ${HOST_CC}		# cross-compiler (if target != host)
  
@@ -24,14 +24,3 @@
  
  OBJECTS = pcal.o exprpars.o moonphas.o pcalutil.o readfile.o writefil.o
  
-@@ -112,6 +112,10 @@
- 	$(D_TEXT) $(D_LINK) $(D_ALINK) $(D_VLINK) \
- 	$(D_HOLIDAY_PRE) $(D_HOLIDAY_POST) $(D_BLANK_STYLE) \
- 	$(D_SEARCH_PCAL_DIR)
-+
-+.if defined(PAPERSIZE) && $(PAPERSIZE) == A4 # default Letter (OK?)
-+COPTS += -DA4PAPER
-+.endif
- 
- $(PCAL):	$(OBJECTS)
- 	$(CC) $(LDFLAGS) -o $(PCAL) $(OBJECTS) -lm
