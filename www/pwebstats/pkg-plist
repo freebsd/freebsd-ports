@@ -1,0 +1,94 @@
+etc/pwebstats/README
+etc/pwebstats/conf/proxy.conf
+etc/pwebstats/conf/pwebstats.conf
+etc/pwebstats/conf/pwebstats.pages
+etc/pwebstats/conf/squid-proxy.conf
+etc/pwebstats/pwebstats
+etc/pwebstats/templates/domains/domains.txt
+etc/pwebstats/templates/footer.html
+etc/pwebstats/templates/images/10.gif
+etc/pwebstats/templates/images/0.gif
+etc/pwebstats/templates/images/1.gif
+etc/pwebstats/templates/images/2.gif
+etc/pwebstats/templates/images/3.gif
+etc/pwebstats/templates/images/4.gif
+etc/pwebstats/templates/images/5.gif
+etc/pwebstats/templates/images/6.gif
+etc/pwebstats/templates/images/7.gif
+etc/pwebstats/templates/images/8.gif
+etc/pwebstats/templates/images/9.gif
+etc/pwebstats/templates/images/Apr.gif
+etc/pwebstats/templates/images/Aug.gif
+etc/pwebstats/templates/images/Dec.gif
+etc/pwebstats/templates/images/Feb.gif
+etc/pwebstats/templates/images/Jan.gif
+etc/pwebstats/templates/images/Jul.gif
+etc/pwebstats/templates/images/Jun.gif
+etc/pwebstats/templates/images/Mar.gif
+etc/pwebstats/templates/images/May.gif
+etc/pwebstats/templates/images/Nov.gif
+etc/pwebstats/templates/images/Oct.gif
+etc/pwebstats/templates/images/Sep.gif
+etc/pwebstats/templates/images/dates/10.gif
+etc/pwebstats/templates/images/dates/0.gif
+etc/pwebstats/templates/images/dates/1.gif
+etc/pwebstats/templates/images/dates/2.gif
+etc/pwebstats/templates/images/dates/3.gif
+etc/pwebstats/templates/images/dates/4.gif
+etc/pwebstats/templates/images/dates/5.gif
+etc/pwebstats/templates/images/dates/6.gif
+etc/pwebstats/templates/images/dates/7.gif
+etc/pwebstats/templates/images/dates/8.gif
+etc/pwebstats/templates/images/dates/9.gif
+etc/pwebstats/templates/images/dates/apr.gif
+etc/pwebstats/templates/images/dates/aug.gif
+etc/pwebstats/templates/images/dates/dec.gif
+etc/pwebstats/templates/images/dates/feb.gif
+etc/pwebstats/templates/images/dates/jan.gif
+etc/pwebstats/templates/images/dates/jul.gif
+etc/pwebstats/templates/images/dates/jun.gif
+etc/pwebstats/templates/images/dates/mar.gif
+etc/pwebstats/templates/images/dates/may.gif
+etc/pwebstats/templates/images/dates/nov.gif
+etc/pwebstats/templates/images/dates/oct.gif
+etc/pwebstats/templates/images/dates/sep.gif
+etc/pwebstats/templates/images/domain_template.gif
+etc/pwebstats/templates/images/growth_template.gif
+etc/pwebstats/templates/images/growth_template_proxy.gif
+etc/pwebstats/templates/images/hourly_template.gif
+etc/pwebstats/templates/images/i_daily.gif
+etc/pwebstats/templates/images/i_monthly.gif
+etc/pwebstats/templates/images/i_quarterly.gif
+etc/pwebstats/templates/images/i_weekly.gif
+etc/pwebstats/templates/images/r_day.gif
+etc/pwebstats/templates/images/r_fortnight.gif
+etc/pwebstats/templates/images/r_month.gif
+etc/pwebstats/templates/images/r_quarter.gif
+etc/pwebstats/templates/images/r_week.gif
+etc/pwebstats/templates/images/r_year.gif
+etc/pwebstats/templates/images/requests_per_day.gif
+etc/pwebstats/templates/images/valid_html.gif
+etc/pwebstats/templates/old-images/0.gif
+etc/pwebstats/templates/old-images/1.gif
+etc/pwebstats/templates/old-images/2.gif
+etc/pwebstats/templates/old-images/3.gif
+etc/pwebstats/templates/old-images/4.gif
+etc/pwebstats/templates/old-images/5.gif
+etc/pwebstats/templates/old-images/6.gif
+etc/pwebstats/templates/old-images/7.gif
+etc/pwebstats/templates/old-images/8.gif
+etc/pwebstats/templates/old-images/9.gif
+etc/pwebstats/utilities/ftp-log-convert
+etc/pwebstats/utilities/log-splitter.pl
+etc/pwebstats/utilities/ns-splitter.pl
+etc/pwebstats/utilities/rotatelogs.sh
+etc/pwebstats/utilities/run-up.sh
+etc/pwebstats/utilities/squid2common.pl
+@dirrm etc/pwebstats/utilities
+@dirrm etc/pwebstats/templates/old-images
+@dirrm etc/pwebstats/templates/images/dates
+@dirrm etc/pwebstats/templates/images
+@dirrm etc/pwebstats/templates/domains
+@dirrm etc/pwebstats/templates
+@dirrm etc/pwebstats/conf
+@dirrm etc/pwebstats

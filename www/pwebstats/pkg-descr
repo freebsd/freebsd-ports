@@ -1,0 +1,5 @@
+pwebstats will analyse a web server log in Common Log Format, or proxy server 
+log, producing a variety of statistics. The output is a series of HTML pages 
+and graphs.
+
+-- HSIN-HSIUNG CHANG <sexbear@tmu.edu.tw>

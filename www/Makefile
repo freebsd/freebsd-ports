@@ -416,6 +416,7 @@
     SUBDIR += privoxy
     SUBDIR += privoxy+ipv6
     SUBDIR += publicfile
+    SUBDIR += pwebstats
     SUBDIR += py-HTMLgen
     SUBDIR += py-albatross
     SUBDIR += py-fcgi
