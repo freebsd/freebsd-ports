@@ -922,14 +922,19 @@ share/doc/docbook-tdg/html/authorblurb.html
 share/doc/docbook-tdg/html/authorgroup.html
 share/doc/docbook-tdg/html/authorinitials.html
 share/doc/docbook-tdg/html/beginpage.html
+share/doc/docbook-tdg/html/bibliocoverage.html
 share/doc/docbook-tdg/html/bibliodiv.html
 share/doc/docbook-tdg/html/biblioentry.html
 share/doc/docbook-tdg/html/bibliography.html
 share/doc/docbook-tdg/html/bibliographyinfo.html
+share/doc/docbook-tdg/html/biblioid.html
 share/doc/docbook-tdg/html/bibliomisc.html
 share/doc/docbook-tdg/html/bibliomixed.html
 share/doc/docbook-tdg/html/bibliomset.html
+share/doc/docbook-tdg/html/bibliorelation.html
 share/doc/docbook-tdg/html/biblioset.html
+share/doc/docbook-tdg/html/bibliosource.html
+share/doc/docbook-tdg/html/blockinfo.html
 share/doc/docbook-tdg/html/blockquote.html
 share/doc/docbook-tdg/html/book.html
 share/doc/docbook-tdg/html/bookinfo.html
@@ -947,6 +952,7 @@ share/doc/docbook-tdg/html/ch05.html
 share/doc/docbook-tdg/html/chapter.html
 share/doc/docbook-tdg/html/chapterinfo.html
 share/doc/docbook-tdg/html/citation.html
+share/doc/docbook-tdg/html/citebiblioid.html
 share/doc/docbook-tdg/html/citerefentry.html
 share/doc/docbook-tdg/html/citetitle.html
 share/doc/docbook-tdg/html/city.html
@@ -975,6 +981,7 @@ share/doc/docbook-tdg/html/contractnum.html
 share/doc/docbook-tdg/html/contractsponsor.html
 share/doc/docbook-tdg/html/contrib.html
 share/doc/docbook-tdg/html/copyright.html
+share/doc/docbook-tdg/html/coref.html
 share/doc/docbook-tdg/html/corpauthor.html
 share/doc/docbook-tdg/html/corpname.html
 share/doc/docbook-tdg/html/country.html
@@ -997,13 +1004,13 @@ share/doc/docbook-tdg/html/epigraph.html
 share/doc/docbook-tdg/html/equation.html
 share/doc/docbook-tdg/html/errorcode.html
 share/doc/docbook-tdg/html/errorname.html
+share/doc/docbook-tdg/html/errortext.html
 share/doc/docbook-tdg/html/errortype.html
 share/doc/docbook-tdg/html/example.html
 share/doc/docbook-tdg/html/exceptionname.html
 share/doc/docbook-tdg/html/fax.html
 share/doc/docbook-tdg/html/fieldsynopsis.html
 share/doc/docbook-tdg/html/figure.html
-share/doc/docbook-tdg/html/figures/100dpi
 share/doc/docbook-tdg/html/figures/admon/caution.png
 share/doc/docbook-tdg/html/figures/admon/important.png
 share/doc/docbook-tdg/html/figures/admon/note.png
@@ -1042,6 +1049,7 @@ share/doc/docbook-tdg/html/figures/rev_3.1.gif
 share/doc/docbook-tdg/html/figures/rev_3.1.png
 share/doc/docbook-tdg/html/figures/rev_4.0.gif
 share/doc/docbook-tdg/html/figures/rev_4.0.png
+share/doc/docbook-tdg/html/figures/rev_4.2.png
 share/doc/docbook-tdg/html/figures/rev_5.0.gif
 share/doc/docbook-tdg/html/figures/rev_5.0.png
 share/doc/docbook-tdg/html/figures/rev_ebnf.gif
@@ -1227,6 +1235,8 @@ share/doc/docbook-tdg/html/pe-l-mix.html
 share/doc/docbook-tdg/html/pe-mix.html
 share/doc/docbook-tdg/html/pe-module.html
 share/doc/docbook-tdg/html/pe-role.html
+share/doc/docbook-tdg/html/personblurb.html
+share/doc/docbook-tdg/html/personname.html
 share/doc/docbook-tdg/html/phone.html
 share/doc/docbook-tdg/html/phrase.html
 share/doc/docbook-tdg/html/pob.html
@@ -1277,6 +1287,8 @@ share/doc/docbook-tdg/html/refsect2.html
 share/doc/docbook-tdg/html/refsect2info.html
 share/doc/docbook-tdg/html/refsect3.html
 share/doc/docbook-tdg/html/refsect3info.html
+share/doc/docbook-tdg/html/refsection.html
+share/doc/docbook-tdg/html/refsectioninfo.html
 share/doc/docbook-tdg/html/refsynopsisdiv.html
 share/doc/docbook-tdg/html/refsynopsisdivinfo.html
 share/doc/docbook-tdg/html/releaseinfo.html
@@ -1356,6 +1368,7 @@ share/doc/docbook-tdg/html/tbody.html
 share/doc/docbook-tdg/html/term.html
 share/doc/docbook-tdg/html/tertiary.html
 share/doc/docbook-tdg/html/tertiaryie.html
+share/doc/docbook-tdg/html/textdata.html
 share/doc/docbook-tdg/html/textobject.html
 share/doc/docbook-tdg/html/tfoot.html
 share/doc/docbook-tdg/html/tgroup.html
