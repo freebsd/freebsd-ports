@@ -610,8 +610,8 @@ MAN3=		Bio::Align::AlignI.3 \
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
-BROKEN=		"Configure fails"
+.if ${PERL_LEVEL} < 500600
+IGNORE=			"This port requires Perl 5.6 or better"
 .endif
 
 # now install all extra stuff (docs, examples, scripts, models)
