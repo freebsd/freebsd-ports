@@ -1,0 +1,8 @@
+Orchard is an innovative, lightweight API for event stream and tree
+views of XML and data represented in XML. Orchard merges the best
+parts of SAX and DOM while greatly simplifying both at the same time.
+
+WWW: http://beauvoir.phil.unc.edu/groves
+
+-- Sergey Skvortsov
+skv@protey.ru
