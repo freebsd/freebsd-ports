@@ -14,6 +14,7 @@ MASTER_SITES=	http://download.adobe.com/pub/adobe/acrobatreader/unix/5.x/ \
 .if ${ARCH} == "i386"
 DISTNAME=	linux-508
 .endif
+CONFLICTS=	acroread-3*
 DIST_SUBDIR=	acroread
 
 MAINTAINER=	trevor@FreeBSD.org
