@@ -1,0 +1,6 @@
+@cd /usr/X11R6
+@owner games
+@mode 555
+bin/xminesweep
+@mode 444
+man/man1/xminesweep.1.gz
