@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cleanfeed
-PORTVERSION=	20011031
+PORTVERSION=	20020501
 CATEGORIES=	news
 MASTER_SITES=	http://www.bofh.it/~md/cleanfeed/
 EXTRACT_SUFX=	.tgz
@@ -21,12 +21,11 @@ BINOWN=		news
 BINGRP=		news
 SHAREOWN=	news
 SHAREGRP=	news
+USE_REINPLACE=	yes
 INSTALL+=	-b
 
 post-patch:
-.for file in cleanfeed cleanfeed.local.sample
-	@${PERL} -pi -e "s,%%PREFIX%%,${PREFIX},g" ${WRKSRC}/${file}
-.endfor
+	@${REINPLACE_CMD} -e 's,/news,${PREFIX}/news,g' ${WRKSRC}/cleanfeed*
 
 do-install:
 .for file in bad_adult_paths bad_cancel_paths bad_hosts bad_paths cleanfeed cleanfeed.local.sample
