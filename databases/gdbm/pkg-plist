@@ -3,3 +3,7 @@ include/gdbm.h
 info/gdbm.info
 @exec install-info %D/info/gdbm.info %D/info/dir
 lib/libgdbm.a
+lib/libgdbm.so
+lib/libgdbm.so.2
+@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
+@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
