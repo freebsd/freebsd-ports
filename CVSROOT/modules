@@ -9425,6 +9425,7 @@ zmtx-zmrx	ports/comms/zmtx-zmrx
 znavigator	ports/www/znavigator
 znibbles	ports/games/znibbles
 zodb		ports/databases/zodb
+zodb3		ports/databases/zodb3
 zombiezapper	ports/security/zombiezapper
 zoneinfo	src/share/zoneinfo
 zoo		ports/archivers/zoo
