@@ -9,7 +9,7 @@
 PORTNAME=	adgali
 PORTVERSION=	0.2.3
 CATEGORIES=	games devel
-MASTER_SITES=	http://savannah.nongnu.org/download/adgali/
+MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org

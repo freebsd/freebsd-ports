@@ -7,7 +7,8 @@
 PORTNAME=	rrdtool_lgpl
 PORTVERSION=	0.2.1
 CATEGORIES=	net python
-MASTER_SITES=	http://savannah.nongnu.org/download/py-rrdtool/py-rrdtool.pkg/${PORTVERSION}/
+MASTER_SITES=	${MASTER_SITE_SAVANNAH}
+MASTER_SITE_SUBDIR=	py-rrdtool/py-rrdtool.pkg/${PORTVERSION}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	py-rrdtool-${PORTVERSION}
 

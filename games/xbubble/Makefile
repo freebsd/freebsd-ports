@@ -7,7 +7,8 @@
 PORTNAME=		xbubble
 PORTVERSION=		0.2
 CATEGORIES=		games
-MASTER_SITES=		http://savannah.nongnu.org/download/xbubble/
+MASTER_SITES=		${MASTER_SITE_SAVANNAH}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=		klaus.goger@reflex.at
 COMMENT=	Bust-A-Move/Puzzle Bubble clone

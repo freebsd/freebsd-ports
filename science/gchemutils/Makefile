@@ -7,7 +7,8 @@
 PORTNAME=	gchemutils
 PORTVERSION=	0.1.7
 CATEGORIES=	science
-MASTER_SITES=	http://savannah.nongnu.org/download/gchemutils/unstable.pkg/${PORTVERSION}/
+MASTER_SITES=	${MASTER_SITE_SAVANNAH}
+MASTER_SITE_SUBDIR=	${PORTNAME}/unstable.pkg/${PORTVERSION}
 DISTNAME=	gnome-chemistry-utils-${PORTVERSION}
 
 MAINTAINER=	pav@oook.cz

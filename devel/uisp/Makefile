@@ -8,7 +8,8 @@
 PORTNAME=	uisp
 PORTVERSION=	20020626
 CATEGORIES=	devel
-MASTER_SITES=	http://savannah.nongnu.org/download/uisp/
+MASTER_SITES=	${MASTER_SITE_SAVANNAH}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	bruno@tinkerbox.org
 COMMENT=	A versatile programmer for atmel AVR microcontrollers

@@ -10,7 +10,8 @@ PORTNAME=	paragui
 PORTVERSION=	1.0.4
 PORTREVISION=	0
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	http://savannah.nongnu.org/download/paragui/stable.pkg/${PORTVERSION}/
+MASTER_SITES=	${MASTER_SITE_SAVANNAH}
+MASTER_SITE_SUBDIR=	${PORTNAME}/stable.pkg/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cross-platform high-level application framework and GUI library

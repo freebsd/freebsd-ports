@@ -8,7 +8,8 @@
 PORTNAME=		python
 PORTVERSION=		0.0.2
 CATEGORIES=		audio www
-MASTER_SITES=		http://savannah.nongnu.org/download/streamtuner/streamtuner-python.pkg/${PORTVERSION}/
+MASTER_SITES=		${MASTER_SITE_SAVANNAH}
+MASTER_SITE_SUBDIR=	streamtuner/${PKGNAMEPREFIX}${PORTNAME}.pkg/${PORTVERSION}
 PKGNAMEPREFIX=		streamtuner-
 DISTNAME=		${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}
 

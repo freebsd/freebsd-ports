@@ -8,7 +8,8 @@
 PORTNAME=	enigma
 PORTVERSION=	0.70
 CATEGORIES=	games
-MASTER_SITES=	http://savannah.nongnu.org/download/enigma/
+MASTER_SITES=	${MASTER_SITE_SAVANNAH}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	edwin@mavetju.org
 COMMENT=	Enigma is a reimplementation of Oxyd, a puzzle game

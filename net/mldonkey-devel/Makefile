@@ -8,7 +8,8 @@
 PORTNAME=	mldonkey
 PORTVERSION=	2.5.3
 CATEGORIES=	net
-MASTER_SITES=	http://savannah.nongnu.org/download/mldonkey/release-${PORTVERSION:C/\.(.)$/-\1/}/official/
+MASTER_SITES=	${MASTER_SITE_SAVANNAH}
+MASTER_SITE_SUBDIR=	${PORTNAME}/release-${PORTVERSION:C/\.(.)$/-\1/}/official
 DISTNAME=	${PORTNAME}-${PORTVERSION:C/\.(.)$/-\1/}.sources
 
 MAINTAINER=	holger@e-gitt.net

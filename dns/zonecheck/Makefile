@@ -8,7 +8,8 @@
 PORTNAME=	zonecheck
 PORTVERSION=	2.0.0b7
 CATEGORIES=	dns ipv6 ruby
-MASTER_SITES=	http://savannah.nongnu.org/download/zonecheck/
+MASTER_SITES=	${MASTER_SITE_SAVANNAH}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	janos.mohacsi@bsd.hu

@@ -8,7 +8,8 @@
 PORTNAME=	bnf
 PORTVERSION=	1.6.9
 CATEGORIES=	devel
-MASTER_SITES=	http://savannah.nongnu.org/download/bnf/
+MASTER_SITES=	${MASTER_SITE_SAVANNAH}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generate C parser given a grammar in BNF notation

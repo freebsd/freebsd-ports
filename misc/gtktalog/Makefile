@@ -8,7 +8,8 @@
 PORTNAME=	gtktalog
 PORTVERSION=	1.0.0
 CATEGORIES=	misc
-MASTER_SITES=	http://savannah.nongnu.org/download/gtktalog/gtktalog.pkg/1.0.0/
+MASTER_SITES=	${MASTER_SITE_SAVANNAH}
+MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTNAME}.pkg/${PORTVERSION}
 
 MAINTAINER=	rael@vectorstar.net
 COMMENT=	GTKtalog is a tool to make disk catalogs

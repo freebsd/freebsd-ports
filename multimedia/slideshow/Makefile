@@ -8,7 +8,8 @@
 PORTNAME=	slideshow
 PORTVERSION=	0.8.0.p5
 CATEGORIES=	multimedia
-MASTER_SITES=	http://savannah.nongnu.org/download/${PORTNAME}/${PORTNAME}.pkg/${PORTVERSION:S/.p/-pre/}/
+MASTER_SITES=	${MASTER_SITE_SAVANNAH}
+MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTNAME}.pkg/${PORTVERSION:S/.p/-pre/}
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.p/-pre/}
 
 MAINTAINER=	stefan@fafoe.narf.at

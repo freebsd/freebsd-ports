@@ -7,7 +7,8 @@
 PORTNAME=	kimagemapeditor
 PORTVERSION=	1.0
 CATEGORIES=	graphics kde
-MASTER_SITES=	http://savannah.nongnu.org/download/kimagemap/
+MASTER_SITES=	${MASTER_SITE_SAVANNAH}
+MASTER_SITE_SUBDIR=	kimagemap
 
 MAINTAINER=	krion@FreeBSD.org
 COMMENT=	KDE-based editor for HTML image maps

@@ -9,7 +9,8 @@ PORTNAME=	OpenEXR
 PORTVERSION=	1.0.5
 PORTREVISION=	3
 CATEGORIES=	graphics devel
-MASTER_SITES=	http://savannah.nongnu.org/download/openexr/${PORTNAME}.pkg/${PORTVERSION}/
+MASTER_SITES=	${MASTER_SITE_SAVANNAH}
+MASTER_SITE_SUBDIR=	openexr/${PORTNAME}.pkg/${PORTVERSION}
 
 MAINTAINER=	nork@FreeBSD.org
 COMMENT=	OpenEXR, a high dynamic-range (HDR) image file format developed by ILM

@@ -8,7 +8,8 @@
 PORTNAME=	gotmail
 PORTVERSION=	0.7.10
 CATEGORIES=	mail perl5
-MASTER_SITES=	http://savannah.nongnu.org/download/gotmail/stable.pkg/${PORTVERSION}/
+MASTER_SITES=	${MASTER_SITE_SAVANNAH}
+MASTER_SITE_SUBDIR=	${PORTNAME}/stable.pkg/${PORTVERSION}
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	erwin@FreeBSD.org

@@ -8,8 +8,9 @@
 PORTNAME=	smtpmail
 PORTVERSION=	0.4.2
 CATEGORIES=	mail
-MASTER_SITES=	http://savannah.nongnu.org/download/${PORTNAME}/smtpmail.pkg/0.4.2/ \
+MASTER_SITES=	${MASTER_SITE_SAVANNAH} \
 		http://voodoo.oberon.net/
+MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTNAME}.pkg/${PORTVERSION}
 
 MAINTAINER=	krion@FreeBSD.org
 COMMENT=	Tool to send the mails over remote smtp server

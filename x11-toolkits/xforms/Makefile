@@ -10,9 +10,10 @@ PORTVERSION=	1.0
 PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	x11-toolkits graphics
-MASTER_SITES=	http://savannah.nongnu.org/download/xforms/stable.pkg/1.0/ \
+MASTER_SITES=	${MASTER_SITE_SAVANNAH} \
 		${MASTER_SITE_LOCAL}
-MASTER_SIDE_SUBDIR=	mikeh
+MASTER_SITE_SUBDIR=	${PORTNAME}/stable.pkg/${PORTVERSION} \
+			mikeh
 USE_REINPLACE=	yes
 REINPLACE_ARGS=	-i ""
 

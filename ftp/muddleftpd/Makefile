@@ -9,7 +9,8 @@
 PORTNAME=	muddleftpd
 PORTVERSION=	1.3.12.1
 CATEGORIES=	ftp
-MASTER_SITES=	http://savannah.nongnu.org/download/muddleftpd/
+MASTER_SITES=	${MASTER_SITE_SAVANNAH}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A new ftp server that can perform a variety of ftp tasks
