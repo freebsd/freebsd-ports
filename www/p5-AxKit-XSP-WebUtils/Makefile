@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	AxKit-XSP-WebUtils
-PORTVERSION=	1.3.90
+PORTVERSION=	1.4
 CATEGORIES=	www
 MASTER_SITES=	http://www.cpan.org/authors/id/M/MS/MSERGEANT/
 PKGNAMEPREFIX=	p5-
