@@ -309,6 +309,7 @@
     SUBDIR += ruby-sqlrelay
     SUBDIR += slony1
     SUBDIR += sqlite
+    SUBDIR += sqlite3
     SUBDIR += sqlrelay
     SUBDIR += sqsh
     SUBDIR += sybase-ocsd
