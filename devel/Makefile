@@ -72,7 +72,6 @@
     SUBDIR += cons
     SUBDIR += cons-test
     SUBDIR += cook
-    SUBDIR += cpp2html
     SUBDIR += cppadvio
     SUBDIR += cproto
     SUBDIR += crossgo32
