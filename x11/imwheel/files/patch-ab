@@ -5,7 +5,7 @@
  struct WinAction *getRC()
  {
 -	char fname[2][1024]={"","/etc/imwheelrc"}, line[1024], *p, *q, winid[1024];
-+	char fname[2][1024]={"",IMWHEELRC}, line[1024], *p, *q, winid[1024];
++	char fname[2][1024]={"","%%PREFIX%%/etc/imwheelrc"}, line[1024], *p, *q, winid[1024];
  	int fi,i;
  	struct WinAction *newwa=NULL;
  	FILE *f=NULL;

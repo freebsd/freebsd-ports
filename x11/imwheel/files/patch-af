@@ -15,10 +15,10 @@
  None,   	Down,   Shift_L|Page_Down
  
  "^rxvt"
--Alt_L,  	Up,		Alt_L|Page_Up
--Alt_L,  	Down,	Alt_L|Page_Down
-+None,	  	Up,	Alt_L|Page_Up
-+None,  		Down,	Alt_L|Page_Down
+-Alt_L,  	Up,		Shift_L|Page_Up
+-Alt_L,  	Down,	Shift_L|Page_Down
++None,	  	Up,	Shift_L|Page_Up
++None,  		Down,	Shift_L|Page_Down
  
  "^XTerm"
 -Alt_L,		Up,		Shift_R|Page_Up
