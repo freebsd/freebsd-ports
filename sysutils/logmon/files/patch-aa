@@ -1,0 +1,79 @@
+diff -ruN ./Frame.cc ../LogMon-0.4.1.fix/Frame.cc
+--- ./Frame.cc	Thu Jan 10 22:16:39 2002
++++ ../LogMon-0.4.1.fix/Frame.cc	Sat Sep  7 13:23:30 2002
+@@ -73,7 +73,7 @@
+ }
+ 
+ // Take a parameter to determine how far back to read.
+-long Frame::findPos(long maxLines=0)
++long Frame::findPos(long maxLines)
+ {
+     long i=-1;
+     long cr_count=0;
+@@ -214,7 +214,7 @@
+     scrollBackOffset = s;
+     return s;
+ }
+-long Frame::incrScrollBack(long s = 1)
++long Frame::incrScrollBack(long s)
+ {
+     // Only scroll up if it's not beyond our starting point.
+     if ( scrollBackOffset + s < (signed)(Screen.size() - (lines-1)) ) 
+@@ -222,7 +222,7 @@
+     return scrollBackOffset;
+ }
+ 
+-long Frame::decrScrollBack( long s = 1)
++long Frame::decrScrollBack( long s )
+ {
+     // Don't scroll past our starting point.
+     // scrollBackOffset min is 0.
+@@ -245,13 +245,13 @@
+     scrollRightOffset = s;
+     return s;
+ }
+-long Frame::incrScrollRight(long s = 1)
++long Frame::incrScrollRight(long s )
+ {
+     scrollRightOffset +=s;
+     return scrollRightOffset;
+ }
+ 
+-long Frame::decrScrollRight(long s = 1)
++long Frame::decrScrollRight(long s )
+ {
+     // Don't scroll past our starting point.
+     if ( scrollRightOffset > 0 ) 
+diff -ruN ./LineManip.cc ../LogMon-0.4.1.fix/LineManip.cc
+--- ./LineManip.cc	Fri Jan 25 20:43:07 2002
++++ ../LogMon-0.4.1.fix/LineManip.cc	Sat Sep  7 13:24:08 2002
+@@ -175,7 +175,7 @@
+ // Scan our config file for lines pertaining to our filename.
+ // i.e. If there are 'ignore' lines for our filename, we add them
+ //      to an array.
+-void LineManip::init(char* fileName, string config="")
++void LineManip::init(char* fileName, string config)
+ {
+     FILE *cf;
+     string confFile;
+diff -ruN ./Util.cc ../LogMon-0.4.1.fix/Util.cc
+--- ./Util.cc	Sun Jul 22 03:37:16 2001
++++ ../LogMon-0.4.1.fix/Util.cc	Sat Sep  7 13:23:52 2002
+@@ -8,7 +8,7 @@
+ extern FILE*ferr;
+ #endif 
+ 
+-void clean_exit(int x=0, char *e="" )
++void clean_exit(int x, char *e )
+ {
+     printf("%s\n",e);
+ #ifdef __DEBUG__
+@@ -19,7 +19,7 @@
+     exit(x);
+ }
+ 
+-void sig_int(int x=0)
++void sig_int(int x)
+ {
+     printf("Recieved signal SIGINT, exiting (%d)",x); 
+     clean_exit(x);
