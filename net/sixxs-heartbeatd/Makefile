@@ -7,7 +7,7 @@
 
 PORTNAME=	sixxs-heartbeatd
 PORTVERSION=	20031026
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.sixxs.net/archive/sixxs/heartbeat/unix/
 DISTNAME=	heartbeat-unix-2003-10-26
