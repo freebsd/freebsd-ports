@@ -1,6 +1,6 @@
---- Local.config.orig	Sun Sep  3 07:02:09 2000
-+++ Local.config	Fri Mar  9 03:26:06 2001
-@@ -141,10 +141,12 @@
+--- Local.config.orig	Mon Oct 28 17:00:32 2002
++++ Local.config	Fri Nov  8 23:14:33 2002
+@@ -151,10 +151,13 @@
  #endif
  
  #if defined(FreeBSDArchitecture)
@@ -18,4 +18,5 @@
 +PNG_INCLUDE  = -I${LOCALBASE}/include
 +PNG_LIB      = -L${LOCALBASE}/lib -Wl,-rpath,${LOCALBASE}/lib -lpng -lz
 +XPM_INCLUDE = -I$(INCDIR)/X11
++SHAREDIR = $(LIBDIR)/xpaint
  #endif

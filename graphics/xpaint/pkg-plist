@@ -1,2 +1,9 @@
 bin/xpaint
 lib/X11/app-defaults/XPaint
+lib/X11/xpaint/help/Help
+lib/X11/xpaint/help/Help_fr
+lib/X11/xpaint/messages/Messages
+lib/X11/xpaint/messages/Messages_fr
+@dirrm lib/X11/xpaint/messages
+@dirrm lib/X11/xpaint/help
+@dirrm lib/X11/xpaint
