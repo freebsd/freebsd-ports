@@ -219,6 +219,7 @@
     SUBDIR += php4-sybase_ct
     SUBDIR += php5-dba
     SUBDIR += php5-dbase
+    SUBDIR += php5-dbx
     SUBDIR += phpmyadmin
     SUBDIR += phppgadmin
     SUBDIR += postgis
