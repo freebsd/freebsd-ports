@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.15
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	An utility used to retrieve information about installed libraries
+COMMENT=	A utility used to retrieve information about installed libraries
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
