@@ -6,7 +6,7 @@
   	struct tm	tm;
   	struct timeval  tvp[2];
   	int	utimes();
-+ #if !defined(__FreeSBD__) && !defined(__OpenBSD__)
++ #if !defined(__FreeBSD__) && !defined(__OpenBSD__)
   	long	tmclock();
 + #endif
   	tm.tm_sec = (time & 31) * 2;

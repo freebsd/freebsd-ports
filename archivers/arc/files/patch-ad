@@ -1,0 +1,72 @@
+--- ./arc.c.orig	Tue Apr 14 18:58:59 1992
++++ ./arc.c	Wed Aug 11 10:21:06 1999
+@@ -76,11 +76,14 @@
+ #if	UNIX
+ #include <sys/types.h>
+ #include <sys/stat.h>
++#include <unistd.h>
+ #endif
+ 
+ #include <string.h>
+ #if BSD
+ #include <strings.h>
++#include <err.h>
++#include <errno.h>
+ #endif
+ 
+ #if	!__STDC__
+@@ -101,6 +104,7 @@
+ static char   **lst;		/* files list */
+ static int	lnum;		/* length of files list */
+ 
++int
+ main(num, arg)			/* system entry point */
+ 	int		num;	/* number of arguments */
+ 	char	       *arg[];	/* pointers to arguments */
+@@ -110,7 +114,7 @@
+ 	VOID		upper();/* case conversion routine */
+ 	char	       *envfind();	/* environment searcher */
+ 	int		n;	/* index */
+-	char	       *arctemp2, *mktemp();
++	char	       *arctemp2;
+ #if	GEMDOS
+ 	VOID		exitpause();
+ 	int		append;
+@@ -219,8 +223,17 @@
+ #endif
+ #if	!MSDOS
+ 	{
+-		static char tempname[] = "AXXXXXX";
+-		strcat(arctemp, mktemp(tempname));
++		static char tempname[] = "AXXXXXX.arc";
++		int fd=-1;
++		strcat(arctemp, tempname);
++		if((fd = mkstemps(arctemp,4)) == -1 ||
++		   (new = fdopen(fd, "w+")) == NULL) {
++			if (fd != -1) {
++				unlink(arctemp);
++				close(fd);
++			}
++			err(1, "can't create temp file %s", arctemp);
++		}
+ 	}
+ #else
+ 	strcat(arctemp, "$ARCTEMP");
+@@ -276,7 +289,7 @@
+ 			keepbak = 1;
+ 
+ 		else if (*a == 'W')	/* suppress warnings */
+-			warn = 0;
++			arcwarn = 0;
+ #if	!DOS
+ 		else if (*a == 'I')	/* image mode, no ASCII/EBCDIC x-late */
+ 			image = !image;
+@@ -401,7 +414,7 @@
+ expandlst(n)			/* expand an indirect reference */
+ 	int		n;	/* number of entry to expand */
+ {
+-	FILE	       *lf, *fopen();	/* list file, opener */
++	FILE	       *lf;	/* list file, opener */
+ 	char		buf[100];	/* input buffer */
+ 	int		x;	/* index */
+ 	char	       *p = lst[n] + 1; /* filename pointer */
