@@ -1,0 +1,38 @@
+--- configure.in.orig	Tue May  1 04:25:49 2001
++++ configure.in	Mon May 14 00:23:17 2001
+@@ -57,7 +57,7 @@
+ AC_DEFINE_UNQUOTED(MSYSLOG_VERSION_STR, "$MSYSLOG_VERSION")dnl
+ echo msyslog version... $MSYSLOG_VERSION
+ 
+-MLIBNAME="libmsyslog.so.$MSYSLOG_VERSION" ;
++MLIBNAME="libmsyslog.so.4" ;
+ AC_DEFINE_UNQUOTED(MLIBNAME_STR, "$MLIBNAME")dnl
+ 
+ MANPAGES="syslog.conf.5 syslogd.8"
+@@ -66,12 +66,12 @@
+ then
+ 	prefix=$ac_default_prefix
+ fi
+-AC_DEFINE_UNQUOTED(INSTALL_LIBDIR, "$prefix/lib/alat")
++AC_DEFINE_UNQUOTED(INSTALL_LIBDIR, "$prefix/lib")
+ 
+ dnl
+ dnl Check needed libs for daemon
+ dnl
+-AC_CHECK_LIB(dl, dlopen, SYSLOGD_LIBS="$SYSLOGD_LIBS -ldl")dnl
++AC_CHECK_LIB(c, dlopen)dnl
+ AC_CHECK_LIB(socket, connect, SYSLOGD_LIBS="$SYSLOGD_LIBS -lsocket")dnl
+ AC_CHECK_LIB(nsl, gethostbyname, SYSLOGD_LIBS="$SYSLOGD_LIBS -lnsl")dnl
+ AC_DEFINE(SYSLOGD_LIBS, $SYSLOGD_LIBS)dnl
+@@ -155,6 +155,11 @@
+ 	AC_DEFINE_UNQUOTED(SYMBOL_PREFIX, "_")dnl
+ 	SHARED_PARAMS="-Bshareable"
+ 	DCCFLAGS="-fPIC"
++elif test "$UNAME" = "FreeBSD" ; then
++	AC_DEFINE(DLOPEN_FLAGS, RTLD_LAZY)dnl
++	SHARED_PARAMS="-Bshareable"
++	DCCFLAGS="-fPIC"
++	SYSLOGD_LIBS="$SYSLOGD_LIBS -Wl,-E"
+ elif test "$UNAME" = "Linux" ; then
+ 	AC_DEFINE(DLOPEN_FLAGS, RTLD_LAZY | RTLD_GLOBAL)dnl
+ 	MAIN_CPPFLAGS="-Xlinker -E";

@@ -82,6 +82,7 @@
     SUBDIR += mkisofs
     SUBDIR += mksunbootcd
     SUBDIR += monitord
+    SUBDIR += msyslog
     SUBDIR += muse
     SUBDIR += no-login
     SUBDIR += npadmin
