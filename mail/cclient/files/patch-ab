@@ -1,5 +1,5 @@
---- src/osdep/unix/Makefile.orig	Wed Apr 11 00:02:06 2001
-+++ src/osdep/unix/Makefile	Sat Apr 14 02:59:26 2001
+--- src/osdep/unix/Makefile.orig	Tue Jul  3 08:02:10 2001
++++ src/osdep/unix/Makefile	Mon Oct  1 10:13:43 2001
 @@ -22,18 +22,18 @@
  
  EXTRAAUTHENTICATORS=
@@ -81,7 +81,7 @@
  
  bsi:	# BSD/i386
  	$(BUILD) `$(CAT) SPECIALS` OS=$@ \
-@@ -762,15 +767,26 @@
+@@ -762,23 +767,35 @@
  
  # Build it!
  
@@ -108,9 +108,11 @@
 +	$(CC) -fpic -DPIC -c $(CFLAGS) ${@:.so=.c} -o $@
 +
  .c.o:
- 	`$(CAT) CCTYPE` -c `$(CAT) CFLAGS` $*.c
+-	`$(CAT) CCTYPE` -c `$(CAT) CFLAGS` $*.c
++	$(CC) -c $(CFLAGS) $*.c
  
-@@ -779,6 +795,7 @@
+ 
+ # Cleanup
  
  clean:
  	sh -c '$(RM) auths.c crexcl.c nfstest.c linkage.[ch] siglocal.c osdep*.[ch] *.o ARCHIVE *FLAGS *TYPE $(ARCHIVE) || true'

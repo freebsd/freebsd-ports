@@ -1,6 +1,6 @@
---- src/ipopd/Makefile.old	Wed Oct 25 01:55:07 2000
-+++ src/ipopd/Makefile	Sun Dec 31 18:23:16 2000
-@@ -19,29 +19,27 @@
+--- src/ipopd/Makefile.orig	Wed Oct 25 01:55:07 2000
++++ src/ipopd/Makefile	Mon Oct  1 03:44:26 2001
+@@ -19,29 +19,25 @@
  
  
  C = ../c-client
@@ -10,15 +10,14 @@
  
  # Get local definitions from c-client directory
  
- CC = `cat $C/CCTYPE`
+-CC = `cat $C/CCTYPE`
 -CFLAGS = -I$C `cat $C/CFLAGS`
 -LDFLAGS = $(CCLIENTLIB) `cat $C/LDFLAGS`
++CFLAGS+=	-DNFSKLUDGE -I$(LOCALBASE)/include/c-client
++LDFLAGS+=	-L$(LOCALBASE)/lib -lc-client4
 +.if defined(WITH_DRAC)
-+CFLAGS = `cat $C/CFLAGS` -DDRAC_AUTH -DETC_DIR=\"$(PREFIX)/etc\"
-+LDFLAGS = `cat $C/LDFLAGS` -ldrac
-+.else
-+CFLAGS = `cat $C/CFLAGS`
-+LDFLAGS = `cat $C/LDFLAGS`
++CFLAGS+=	-DDRAC_AUTH -DETC_DIR=\"$(PREFIX)/etc\"
++LDFLAGS+=	-ldrac
 +.endif
  
  ipopd: ipop2d ipop3d

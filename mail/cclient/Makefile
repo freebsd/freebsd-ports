@@ -6,7 +6,8 @@
 #
 
 PORTNAME=	cclient
-PORTVERSION=	0106191041
+PORTVERSION=	2001
+PORTEPOCH=	1
 CATEGORIES=	mail devel
 MASTER_SITES=	ftp://ftp.cac.washington.edu/imap/ \
 		http://www.freenix.no/~anders/ \
@@ -14,7 +15,7 @@ MASTER_SITES=	ftp://ftp.cac.washington.edu/imap/ \
 		http://mirror.nucba.ac.jp/mirror/ \
 		ftp://ftp.nuug.no/pub/anders/distfiles/
 MASTER_SITE_SUBDIR=	. old
-DISTNAME=	imap-2001.BETA.SNAP-${PORTVERSION}
+DISTNAME=	imap-2001.FINAL
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	anders@fix.no
@@ -25,6 +26,8 @@ ALL_TARGET=	bsf
 MAKE_ARGS+=	SSLTYPE=unix
 USE_OPENSSL=	yes
 .endif
+
+WRKSRC=		${WRKDIR}/imap-2001.RELEASE-CANDIDATE.1
 
 SHLIBBASE=	c-client4
 SHLIBMAJ=	8
@@ -49,10 +52,20 @@ post-patch:
 post-configure:
 	@${ECHO_MSG} ">> The c-client shared library will be named ${SHLIBNAME}"
 
-HEADERS=	dummy.h env.h env_unix.h fdstring.h flstring.h fs.h ftl.h \
-		imap4r1.h linkage.c linkage.h mail.h misc.h nl.h nntp.h \
-		osdep.h pop3.h rfc822.h smtp.h tcp.h utf8.h c-client.h
-PORTREV_H=	${PREFIX}/include/c-client/portrevision.h
+HEADERS=	c-client.h dummy.h env.h env_unix.h fdstring.h flocksim.h \
+		flstring.h fs.h ftl.h imap4r1.h linkage.c linkage.h mail.h \
+		mbox.h mbx.h mh.h misc.h mmdf.h mtx.h mx.h netmsg.h news.h \
+		newsrc.h nl.h nntp.h osdep.h phile.h pop3.h pseudo.h rfc822.h \
+		smtp.h sslio.h tcp.h tcp_unix.h tenex.h unix.h utf8.h
+PORTREV_H=	${WRKDIR}/portrevision.h
+
+post-build:
+	@${ECHO} "#define CCLIENT_PORTVERSION \"${PORTVERSION}\"" >${PORTREV_H}
+.if defined(WITH_SSL)
+	@${ECHO} "#define CCLIENT_SSLENABLED \"yes\"" >>${PORTREV_H}
+.else
+	@${ECHO} "#define CCLIENT_SSLENABLED \"no\"" >>${PORTREV_H}
+.endif
 
 do-install:
 	${MKDIR} ${PREFIX}/include/c-client
@@ -66,16 +79,13 @@ do-install:
 		${PREFIX}/lib/lib${SHLIBBASE}.a
 
 post-install:
-	@${ECHO} "#define CCLIENT_PORTVERSION \"${PORTVERSION}\"" >${PORTREV_H}
+	${INSTALL_DATA} ${PORTREV_H} ${PREFIX}/include/c-client
 .if defined(WITH_SSL)
 	@${ECHO} "================================================================================"
 	@${ECHO} "Warning: You have chosen to include SSL support. Applications/ports that use"
 	@${ECHO} "the cclient library but do not support SSL may stop working or have problems
 	@${ECHO} "linking. Linking explicitly with ssl (-lssl -lcrypto) may or may not help."
 	@${ECHO} "================================================================================"
-	@${ECHO} "#define CCLIENT_SSLENABLED \"yes\"" >>${PORTREV_H}
-.else
-	@${ECHO} "#define CCLIENT_SSLENABLED \"no\"" >>${PORTREV_H}
 .endif
 
 .include <bsd.port.post.mk>

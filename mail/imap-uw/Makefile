@@ -6,7 +6,8 @@
 #
 
 PORTNAME=	imap
-PORTVERSION=	0106191041
+PORTVERSION=	2001
+PORTEPOCH=	1
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.cac.washington.edu/imap/%SUBDIR%/ \
 		ftp://ftp.nuug.no/pub/anders/distfiles/%SUBDIR%/ \
@@ -15,12 +16,8 @@ MASTER_SITES=	ftp://ftp.cac.washington.edu/imap/%SUBDIR%/ \
 		http://mirror.nucba.ac.jp/mirror/imap/%SUBDIR%/ \
 		ftp://ftp.uni-halle.de/pub/mail/pine/%SUBDIR%/
 MASTER_SITE_SUBDIR=	. old
-.if defined(WITH_DRAC)
-PKGNAMESUFFIX=	-uw-drac
-.else
 PKGNAMESUFFIX=	-uw
-.endif
-DISTNAME=	imap-2001.BETA.SNAP-${PORTVERSION}
+DISTNAME=	imap-2001.FINAL
 DISTFILES=	${DISTNAME}.tar.Z imap-utils.tar.Z
 
 MAINTAINER=	anders@fix.no
@@ -29,6 +26,8 @@ LIB_DEPENDS=	c-client4.8:${PORTSDIR}/mail/cclient
 .if defined(WITH_DRAC)
 BUILD_DEPENDS=	${LOCALBASE}/lib/libdrac.a:${PORTSDIR}/mail/drac
 .endif
+
+WRKSRC=		${WRKDIR}/imap-2001.RELEASE-CANDIDATE.1
 
 MAN8=		ipopd.8 imapd.8
 
@@ -121,7 +120,7 @@ post-install:
 .endif
 .if defined(WITH_SSL)
 	@${ECHO} "To create and install a new SSL certificate for imapd and ipop3d, type \"make"
-	@${ECHO} "cert\"."
+	@${ECHO} "cert\". Or install manually in ${PREFIX}/certs."
 	@${ECHO}
 	@${ECHO} "Example inetd config for SSL only services:"
 	@${ECHO}
