@@ -1,0 +1,11 @@
+--- src/z-config.h.orig	Wed Feb 11 05:30:28 1998
++++ src/z-config.h	Sat Sep 18 18:20:32 1999
+@@ -52,7 +52,7 @@
+ /*
+  * OPTION: Use the POSIX "termios" methods in "main-gcu.c"
+  */
+-/* #define USE_TPOSIX */
++#define USE_TPOSIX
+ 
+ /*
+  * OPTION: Use the "termio" methods in "main-gcu.c"
