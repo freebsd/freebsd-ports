@@ -32,6 +32,7 @@ ENTRY(_clone)
 	pushl	%ebp
 	movl	%esp, %ebp
 	pushl	%esi
+	PIC_PROLOGUE
 
 	/*
 	 * Push thread info onto the new thread's stack
@@ -51,7 +52,7 @@ ENTRY(_clone)
 	 * Prepare and execute rfork
 	 */
 	pushl	16(%ebp)
-	pushl	%esi
+	pushl	$0			/* fake return address */
 
 	leal	SYS_rfork, %eax
 	KERNCALL
@@ -64,6 +65,7 @@ ENTRY(_clone)
 	cmpl	$0, %edx
 	jnz	1f
 	addl	$8, %esp
+	PIC_EPILOGUE
 	popl	%esi
 	movl	%ebp, %esp
 	popl	%ebp
@@ -101,10 +103,21 @@ ENTRY(_clone)
 
 	.stabd 68,0,5
 2:	addl	$8, %esp
+	PIC_EPILOGUE
 	popl	%esi
 	movl	%ebp, %esp
 	popl	%ebp
-	jmp	PIC_PLT(HIDENAME(cerror))
+	PIC_PROLOGUE
+	/* Copy of libc .cerror since libc .cerror must be called from libc */
+	pushl	%eax
+	/* The caller must execute the PIC prologue before jumping to cerror. */
+	call	PIC_PLT(CNAME(__error))
+	popl	%ecx
+	PIC_EPILOGUE
+	movl	%ecx,(%eax)
+	movl	$-1,%eax
+	movl	$-1,%edx
+	ret
 
 .stabs "_clone:f67",36,0,6,CNAME(_clone)
 Lfe1:
