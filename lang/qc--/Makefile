@@ -9,14 +9,14 @@
 PORTNAME=	qc--
 PORTVERSION=	20031201
 CATEGORIES=	lang
-MASTER_SITES=	http://www.cminusminus.org/rsync/dist/
+MASTER_SITES=	http://www.cminusminus.org/rsync/dist/ \
+		http://sheepkiller.nerim.net/ports/qc/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Quick C-- Compiler
 
-BROKEN=		"Does not fetch"
-DEPRECATED=	${BROKEN}
+DEPRECATED=	"Uses snapshots and is unmaintained"
 EXPIRATION_DATE=2004-06-18
 
 BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml \
