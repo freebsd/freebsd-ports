@@ -7,7 +7,7 @@
 
 PORTNAME?=	mysql
 PORTVERSION=	4.0.12
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	databases
 MASTER_SITES=	ftp://mysql.secsup.org/pub/software/mysql/Downloads/MySQL-4.0/ \
 		http://mysql.tzone.it/Downloads/MySQL-4.0/ \
@@ -29,7 +29,6 @@ COMMENT?=	Multithreaded SQL database (server)
 
 SLAVEDIRS=	databases/mysql40-client
 DB_DIR?=	/var/db/mysql
-USE_PERL5_RUN=	yes
 USE_LIBTOOL=	yes
 USE_REINPLACE=	yes
 
@@ -94,8 +93,10 @@ CXX=		${CC}
 
 # MySQL-Server part
 .if !defined(CLIENT_ONLY)
+USE_PERL5_RUN=	yes
+
 RUN_DEPENDS=	mysql:${PORTSDIR}/databases/mysql40-client \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Mysql.pm:${PORTSDIR}/databases/p5-Mysql
+		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql
 
 PLIST_SUB=	MYSQL_VERSION=${PORTVERSION}
 
