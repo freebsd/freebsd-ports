@@ -38,7 +38,7 @@ USE_GNOME+=	gdkpixbuf
 .endif
 
 .if defined(WITH_GEOIP)
-LIB_DEPENDS+=	GeoIP.3:${PORTSDIR}/net/GeoIP
+LIB_DEPENDS+=	GeoIP.4:${PORTSDIR}/net/GeoIP
 .else
 CONFIGURE_ARGS+=	--disable-geoip
 .endif
