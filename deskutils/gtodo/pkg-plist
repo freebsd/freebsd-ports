@@ -3,7 +3,10 @@ share/gnome/applications/gtodo.desktop
 share/gnome/pixmaps/gtodo-about.png
 share/gnome/pixmaps/gtodo-edit.png
 share/gnome/pixmaps/gtodo.png
-share/gnome/pixmaps/gtodo_tray.svg
+share/gnome/pixmaps/gtodo_tray.png
 share/locale/cs/LC_MESSAGES/gtodo.mo
+share/locale/de/LC_MESSAGES/gtodo.mo
+share/locale/ja/LC_MESSAGES/gtodo.mo
+share/locale/pl/LC_MESSAGES/gtodo.mo
 share/locale/sr/LC_MESSAGES/gtodo.mo
 share/locale/sr@Latn/LC_MESSAGES/gtodo.mo

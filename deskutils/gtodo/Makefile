@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	gtodo
-PORTVERSION=	0.13.4
+PORTVERSION=	0.13.5
 CATEGORIES=	deskutils gnome
-MASTER_SITES=	http://qball.no-ip.com/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	gtodo
 
 MAINTAINER=	mezz7@cox.net
 COMMENT=	An Gtk2 Todo list manager
