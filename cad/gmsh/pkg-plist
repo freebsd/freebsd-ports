@@ -21,6 +21,7 @@ bin/dxf2geo
 %%PORTDOCS%%%%EXAMPLESDIR%%/demos/antenna.geo
 %%PORTDOCS%%%%EXAMPLESDIR%%/demos/antenna.i1
 %%PORTDOCS%%%%EXAMPLESDIR%%/demos/filter.geo
+%%PORTDOCS%%%%EXAMPLESDIR%%/demos/isosurf.scp
 %%PORTDOCS%%%%EXAMPLESDIR%%/demos/machine.geo
 %%PORTDOCS%%%%EXAMPLESDIR%%/demos/machine.i1
 %%PORTDOCS%%%%EXAMPLESDIR%%/demos/machine.i2
