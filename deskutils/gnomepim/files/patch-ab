@@ -1,21 +1,19 @@
---- gncal/Makefile.in.orig	Mon Mar  1 00:39:07 1999
-+++ gncal/Makefile.in	Wed Mar  3 10:45:10 1999
-@@ -112,11 +112,11 @@
- ZVT_LIBS = @ZVT_LIBS@
- l = @l@
+--- gncal/Makefile.in.orig	Mon Sep 27 16:05:44 1999
++++ gncal/Makefile.in	Mon Oct  4 14:13:16 1999
+@@ -118,9 +118,9 @@
+ 
+ SUBDIRS = doc
  
 -help_base = $(datadir)/gnome/help/cal
-+help_base = $(datadir)/help/gnomecal
- 
- CFLAGS = @CFLAGS@ -Wall
++help_base = $(datadir)/help/cal
  
 -INCLUDES =  	-I$(includedir)						$(GNOME_INCLUDEDIR)				        -DGNOMELOCALEDIR=\""$(datadir)/locale"\"
 +INCLUDES =  	-I$(includedir)						$(GNOME_INCLUDEDIR)				        -DGNOMELOCALEDIR=\""$(prefix)/share/locale"\"
  
  
  bin_PROGRAMS = gnomecal
-@@ -134,7 +134,7 @@
- EXTRA_DIST =  	gncal.desktop		topic.dat		gnome-cal.html		bell.xpm		recur.xpm
+@@ -138,7 +138,7 @@
+ EXTRA_DIST =  	gncal.desktop		bell.xpm		recur.xpm
  
  
 -Productivitydir = $(datadir)/gnome/apps/Applications
@@ -23,38 +21,42 @@
  
  Productivity_DATA = gncal.desktop
  mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
---- gnomecard/Makefile.in.orig	Mon Mar  1 00:39:10 1999
-+++ gnomecard/Makefile.in	Wed Mar  3 10:45:39 1999
-@@ -112,13 +112,13 @@
- ZVT_LIBS = @ZVT_LIBS@
- l = @l@
+@@ -518,7 +518,7 @@
  
--SUBDIRS = help
-+# SUBDIRS = help
+ 
+ install-data-local:
+-	$(mkinstalldirs) $(DESTDIR)$(help_base)/C
++#	$(mkinstalldirs) $(DESTDIR)$(help_base)/C
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+--- gnomecard/Makefile.in.orig	Fri Sep 17 14:40:25 1999
++++ gnomecard/Makefile.in	Fri Sep 24 13:54:54 1999
+@@ -118,9 +118,9 @@
+ 
+ nSUBDIRS = help
  
 -xpmhelp_base = $(datadir)/gnome/help/cal
 +xpmhelp_base = $(datadir)/help/gnomecal
- 
- CFLAGS = @CFLAGS@ -Wall
  
 -INCLUDES =  	-I$(includedir)						$(GNOME_INCLUDEDIR)				        -DGNOMELOCALEDIR=\""$(datadir)/locale"\" 		-I../../gcalendar
 +INCLUDES =  	-I$(includedir)						$(GNOME_INCLUDEDIR)				        -DGNOMELOCALEDIR=\""$(prefix)/share/locale"\" 		-I../../gcalendar
  
  
  bin_PROGRAMS = gnomecard
-@@ -143,7 +143,7 @@
- EXTRA_DIST =  	addr.xpm		addrtool.xpm		cardedit.xpm		cardnew.xpm		cardfind.xpm		email.xpm		expl.xpm		first.xpm		geo.xpm			ident.xpm		last.xpm		org.xpm			sec.xpm			tel.xpm			teltool.xpm		phone.xpm		world.xpm		gnomecard.desktop 	gnomecard.gnorba
+@@ -145,7 +145,7 @@
+ EXTRA_DIST =  	addr.xpm		addrtool.xpm		cardedit.xpm		cardnew.xpm		cardfind.xpm		email.xpm		expl.xpm		first.xpm		geo.xpm			ident.xpm		last.xpm		org.xpm			sec.xpm			tel.xpm			teltool.xpm		phone.xpm		world.xpm		gnome-card.xpm  	gnomecard.desktop 	gnomecard.gnorba
  
  
 -Productivitydir = $(datadir)/gnome/apps/Applications
 +Productivitydir = $(datadir)/apps/Applications
  
  Productivity_DATA = gnomecard.desktop
- mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
---- gnomecard/help/C/Makefile.in.orig	Tue Feb  2 09:10:22 1999
-+++ gnomecard/help/C/Makefile.in	Tue Feb  2 09:10:30 1999
-@@ -112,7 +112,7 @@
- YACC = @YACC@
+ 
+--- gnomecard/help/C/Makefile.in.orig	Mon Sep 27 16:05:53 1999
++++ gnomecard/help/C/Makefile.in	Mon Oct  4 14:18:45 1999
+@@ -116,7 +116,7 @@
+ cxxflags_set = @cxxflags_set@
  l = @l@
  
 -gnomecard_helpdir = $(datadir)/gnome/help/gnomecard/C

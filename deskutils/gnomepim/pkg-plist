@@ -16,14 +16,27 @@ share/gnome/help/gnomecal/C/calsetup.html
 share/gnome/help/gnomecal/C/caluse.html
 share/gnome/help/gnomecal/C/cmdline.html
 share/gnome/help/gnomecal/C/gcal.html
-share/gnome/help/gnomecal/C/ln26.html
+share/gnome/help/gnomecal/C/ln20.html
 share/gnome/help/gnomecal/C/tech.html.html
 share/gnome/help/gnomecal/C/docbook.css
+share/gnome/help/gnomecard/C/description.html
+share/gnome/help/gnomecard/C/dialogs.html
+share/gnome/help/gnomecard/C/display.html
+share/gnome/help/gnomecard/C/docbook.css
+share/gnome/help/gnomecard/C/index.html
+share/gnome/help/gnomecard/C/ln9.html
+share/gnome/help/gnomecard/C/menubar.html
+share/gnome/help/gnomecard/C/recordview.html
+share/gnome/help/gnomecard/C/toolbar.html
+share/gnome/help/gnomecard/C/topic.dat
 share/gnome/idl/gnome-pim.idl
 share/gnome/mime-info/gnome-pim.keys
 share/gnome/pixmaps/gnome-card.xpm
 share/locale/cs/LC_MESSAGES/gnome-pim.mo
+share/locale/da/LC_MESSAGES/gnome-pim.mo
 share/locale/de/LC_MESSAGES/gnome-pim.mo
+share/locale/el/LC_MESSAGES/gnome-pim.mo
+share/locale/en_GB/LC_MESSAGES/gnome-pim.mo
 share/locale/es/LC_MESSAGES/gnome-pim.mo
 share/locale/fi/LC_MESSAGES/gnome-pim.mo
 share/locale/fr/LC_MESSAGES/gnome-pim.mo
@@ -32,10 +45,16 @@ share/locale/hu/LC_MESSAGES/gnome-pim.mo
 share/locale/it/LC_MESSAGES/gnome-pim.mo
 share/locale/ja/LC_MESSAGES/gnome-pim.mo
 share/locale/ko/LC_MESSAGES/gnome-pim.mo
+share/locale/nl/LC_MESSAGES/gnome-pim.mo
 share/locale/no/LC_MESSAGES/gnome-pim.mo
+share/locale/pl/LC_MESSAGES/gnome-pim.mo
 share/locale/pt/LC_MESSAGES/gnome-pim.mo
 share/locale/sv/LC_MESSAGES/gnome-pim.mo
 share/locale/ru/LC_MESSAGES/gnome-pim.mo
+share/locale/wa/LC_MESSAGES/gnome-pim.mo
+share/locale/zh_TW.Big5/LC_MESSAGES/gnome-pim.mo
+@dirrm share/gnome/help/gnomecard/C
+@dirrm share/gnome/help/gnomecard
 @dirrm share/gnome/help/gnomecal/C/images
 @dirrm share/gnome/help/gnomecal/C
 @dirrm share/gnome/help/gnomecal
