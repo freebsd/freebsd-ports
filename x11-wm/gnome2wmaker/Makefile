@@ -7,7 +7,7 @@
 
 PORTNAME=	gnome2wmaker
 PORTVERSION= 	1.2
-CATEGORIES=	x11-toolkits gnome
+CATEGORIES=	x11-wm gnome
 MASTER_SITES=	http://ulli.linuxbox.com/gnome2wmaker/
 
 MAINTAINER=     reg@FreeBSD.org

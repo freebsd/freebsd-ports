@@ -7,7 +7,7 @@
 
 PORTNAME=	apache
 PORTVERSION=	1.3.12
-CATEGORIES=	www russian
+CATEGORIES=	russian www
 MASTER_SITES=	http://www.apache.org/dist/ \
 		ftp://ftp.ccs.neu.edu/net/mirrors/ftp.apache.org/apache/dist/ \
 		ftp://ftp.rge.com/pub/infosystems/apache/dist/ \

@@ -1,23 +1,23 @@
-# New ports collection makefile for: premail
-# Date created:         31 Jan 1997
-# Whom:                 ache
+# New ports collection makefile for:	premail
+# Date created:				31 Jan 1997
+# Whom:					ache
 #
 # $FreeBSD$
 #
 
 PORTNAME=	premail
-PORTVERSION= 	0.46
-CATEGORIES=     security mail
-MASTER_SITES=   ftp://ftp.jpunix.com/pub/remailer-tools/ \
+PORTVERSION=	0.46
+CATEGORIES=	mail security
+MASTER_SITES=	ftp://ftp.jpunix.com/pub/remailer-tools/ \
 		ftp://ftp.kiarchive.ru/pub/unix/crypto/
 
 MAINTAINER=	ache@FreeBSD.org
 
-BUILD_DEPENDS+= pgp:${PORTSDIR}/security/pgp
+BUILD_DEPENDS+=	pgp:${PORTSDIR}/security/pgp
 
-WRKSRC=         ${WRKDIR}/premail
-USE_PERL5=      Yes
-NO_BUILD=       Yes
+WRKSRC=		${WRKDIR}/premail
+USE_PERL5=	yes
+NO_BUILD=	yes
 
 post-patch:
 	cd ${WRKSRC}; \

@@ -7,7 +7,7 @@
 
 PORTNAME=	kdelibs
 PORTVERSION=	1.94
-CATEGORIES=	x11-toolkits
+CATEGORIES=	x11 x11-toolkits
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	unstable/distribution/2.0Beta5/tar/src
 

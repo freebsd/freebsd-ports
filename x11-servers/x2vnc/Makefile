@@ -7,7 +7,7 @@
 
 PORTNAME=	x2vnc
 PORTVERSION= 	1.1
-CATEGORIES=	x11
+CATEGORIES=	x11-servers
 MASTER_SITES=	http://www.hubbe.net/~hubbe/
 
 MAINTAINER=	ade@FreeBSD.org

@@ -7,7 +7,7 @@
 
 PORTNAME=	qstat
 PORTVERSION=	2.3g
-CATEGORIES=	misc
+CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.activesw.com/pub/quake/
 DISTNAME=	qstat23g
 

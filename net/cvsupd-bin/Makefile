@@ -7,7 +7,7 @@
 
 PORTNAME=	cvsupd-bin
 PORTVERSION=	16.1
-CATEGORIES=	devel net
+CATEGORIES=	net devel
 MASTER_SITES=	ftp://ftp.freebsd.org/pub/FreeBSD/development/CVSup/binaries/
 
 MAINTAINER=	jdp@freebsd.org

@@ -7,7 +7,7 @@
 
 PORTNAME=	citrix_ica
 PORTVERSION=	3.0.15
-CATEGORIES=	comms linux
+CATEGORIES=	net comms linux
 MASTER_SITES=  
 DISTNAME=	linux
 EXTRACT_SUFX=	.tar.Z

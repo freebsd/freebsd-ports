@@ -7,7 +7,7 @@
 
 PORTNAME=	ksamba
 PORTVERSION=	0.3.3
-CATEGORIES=	kde net
+CATEGORIES=	net kde
 MASTER_SITES=	$(MASTER_SITE_KDE)
 MASTER_SITE_SUBDIR= unstable/apps/network
 

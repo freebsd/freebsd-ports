@@ -7,7 +7,7 @@
 
 PORTNAME=	bibview
 PORTVERSION=	2.2
-CATEGORIES=	databases print
+CATEGORIES=	print databases
 MASTER_SITES=	${MASTER_SITE_TEX_CTAN}
 MASTER_SITE_SUBDIR= biblio/bibtex/utils/bibview-2.0
 
