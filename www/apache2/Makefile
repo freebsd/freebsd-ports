@@ -135,6 +135,8 @@ IGNORE=			apr is installed and may conflict with apache one\
 				at your own risk)
 .   endif
 PLIST_SUB+=	PORTS_APR=""
+INSTALLS_SHLIB=		yes
+LDCONFIG_DIRS=		%%PREFIX%%/lib/apache2
 .endif
 
 WITH_PTHREAD_LIBS?=	${PTHREAD_LIBS:S/-l//}
@@ -183,6 +185,8 @@ post-patch:
 	@${RM} -f ${WRKSRC}/docs/docroot/*.bak
 	@${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
 		${FILESDIR}/apache.sh > ${WRKDIR}/apache2.sh
+	@${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
+		${FILESDIR}/apache2libs.sh > ${WRKDIR}/apache2libs.sh
 	@${CAT} ${FILESDIR}/config.layout >>${WRKSRC}/config.layout
 	@${RM} -f ${WRKSRC}/docs/manual/index.html.ko.euc-kr
 	@${REINPLACE_CMD} -e 's," PLATFORM ",FreeBSD,' \
@@ -202,10 +206,10 @@ pre-install:
 
 post-install:
 	@${MKDIR} ${PREFIX}/etc/apache2/Includes
-	@if [ ! -f ${PREFIX}/etc/rc.d/apache2.sh ]; then \
-		${ECHO} "Installing ${PREFIX}/etc/rc.d/apache2.sh startup file."; \
-		${INSTALL_SCRIPT} -m 751 ${WRKDIR}/apache2.sh ${PREFIX}/etc/rc.d/apache2.sh; \
-	fi
-	@${CAT} ${PKGMESSAGE}
+	@${ECHO_CMD} "Installing ${PREFIX}/etc/rc.d/apache2.sh startup file."
+	@${INSTALL_SCRIPT} -m 751 ${WRKDIR}/apache2.sh ${PREFIX}/etc/rc.d/apache2.sh
+	@${ECHO_CMD} "Installing ${PREFIX}/etc/rc.d/000.apache2libs.sh startup file."
+	@${INSTALL_SCRIPT} -m 751 ${WRKDIR}/apache2libs.sh ${PREFIX}/etc/rc.d/000.apache2libs.sh
+	@@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
