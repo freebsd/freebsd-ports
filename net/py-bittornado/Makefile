@@ -17,7 +17,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	janos.mohacsi@bsd.hu
 COMMENT?=	An extended BitTorrent peer-to-peer tool for distributing files
 
-CONFLICTS=	py??-*[Bb]it[Tt]orrent*
+CONFLICTS=	py??-*[Bb]it[Tt]ornado* py??-*[Bb]it[Tt]orrent*
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 USE_REINPLACE=	yes
