@@ -1,0 +1,24 @@
+[ excerpt from developer's web site ]
+
+Why yet another version control system? All other version control
+systems require that you keep careful track of the relationships
+between branches so as not have to repeatedly merge the same
+conflicts. Codeville is much more anarchic. It allows you to update
+from or commit to any repository at any time with no unnecessary
+re-merges.
+
+Codeville works by creating an identifier for each change which is
+done, and remembering the list of all changes which have been applied
+to each file and the last change which modified each line in each
+file. When there's a conflict, it checks to see if one of the two
+sides has already been applied to the other one, and if so makes
+the other side win automatically. When there's an actual not
+automatically mergeable version conflict, Codeville behaves in
+almost exactly the same way as CVS.
+
+For subtle but very important reasons Codeville actually versions
+spaces between lines, rather than the lines themselves. If you want
+to know the complete accurate details of how it works, you can look
+at the slides. Beyond that, I suggest reading the source.
+
+WWW: http://www.codeville.org/
