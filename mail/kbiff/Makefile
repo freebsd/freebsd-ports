@@ -7,10 +7,11 @@
 
 PORTNAME=	kbiff
 PORTVERSION=	3.6.1
+PORTREVISION=	1
 CATEGORIES=	mail kde
 MASTER_SITES=	http://devel-home.kde.org/~granroth/kbiff/
 
-MAINTAINER=	tilman@arved.de
+MAINTAINER=	arved@FreeBSD.org
 
 LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 
@@ -18,7 +19,8 @@ USE_KDELIBS_VER=3
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=
-CONFIGURE_ARGS+=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ARGS+=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL} \
+		--disable-fast-perl
 USE_REINPLACE=	yes
 
 post-patch:
