@@ -8722,6 +8722,7 @@ poedit		ports/editors/poedit
 poink		ports/net/poink
 pointless	ports/misc/pointless
 policyd		ports/mail/policyd
+polipo		ports/www/polipo
 polygraph	ports/benchmarks/polygraph
 polymake	ports/math/polymake
 polypaudio	ports/audio/polypaudio
