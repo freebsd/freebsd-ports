@@ -32,7 +32,13 @@ CFLAGS+=       		-static
 
 MAN1=			webjob.1
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64"
+BROKEN=			"Configure fails on amd64"
+.endif
+
 post-install:
 	@${STRIP_CMD} ${PREFIX}/bin/webjob
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

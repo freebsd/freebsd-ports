@@ -25,6 +25,12 @@ USE_REINPLACE=	yes
 CONFIGURE_TARGET=
 CONFIGURE_ARGS+=	--prefix=${LOCALBASE}
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64"
+BROKEN=		"Configure fails on amd64"
+.endif
+
 post-patch:
 .if !defined(NOPORTDOCS)
 	@${REINPLACE_CMD} -Ee \
@@ -34,4 +40,4 @@ post-patch:
 	@${REINPLACE_CMD} -Ee 's|(kallery po) doc|\1|' ${WRKSRC}/Makefile.in
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
