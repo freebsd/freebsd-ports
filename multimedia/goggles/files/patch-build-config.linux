@@ -1,43 +1,52 @@
---- build/config.linux.orig	Mon May 17 06:08:59 2004
-+++ build/config.linux	Mon Jun 28 01:03:04 2004
-@@ -1,17 +1,17 @@
- # General Settings
+--- build/config.linux.orig	Thu Jul  8 04:56:18 2004
++++ build/config.linux	Sun Jul 11 03:20:58 2004
+@@ -2,7 +2,7 @@
  #-------------------------------------------------------------------------------
--CONFIG_DEVICE="/dev/dvd"                  # Initial default dvd device       
-+CONFIG_DEVICE="%%DVDDEVICE%%"                  # Initial default dvd device       
- CONFIG_XV=1                               # Include XV Support 
- CONFIG_DXR3=0                             # Include DXR3 Support
+ CONFIG_XV=${CONFIG_XV:-1}
+ CONFIG_DXR3=${CONFIG_DXR3:-0}
+-CONFIG_DVD_DEVICE="/dev/dvd"
++CONFIG_DVD_DEVICE="%%DVDDEVICE%%"
  
+ # Possible defaults for other platforms.
+ #CONFIG_DVD_DEVICE="/cdrom/cdrom0"                      # Solaris
+@@ -15,13 +15,13 @@
  
- # Search and Install Directories
+ # Search and Installation Directories
  #-------------------------------------------------------------------------------
--FOX_PREFIX="/usr"                         # FOX Installation dir.
--OGLE_PREFIX="/usr"                        # Ogle Installation dir
--GOGGLES_PREFIX="$OGLE_PREFIX"             # Goggles Installation dir -
-+FOX_PREFIX="%%LOCALBASE%%"                         # FOX Installation dir.
-+OGLE_PREFIX="%%LOCALBASE%%"                        # Ogle Installation dir
-+GOGGLES_PREFIX="%%PREFIX%%"             # Goggles Installation dir -
-                                           # Should be the same as ogle 
--X11_PREFIX="/usr/X11R6"                   # X Server Installation dir.
-+X11_PREFIX="%%X11BASE%%"                   # X Server Installation dir.
+-FOX_PREFIX="${FOX_PREFIX:-/usr}"
+-OGLE_PREFIX="${OGLE_PREFIX:-/usr}"
+-GOGGLES_PREFIX="${GOGGLES_PREFIX:-/usr}"
+-XLIB_PREFIX="/usr/X11R6"
+-MENU_FILE_DIR="/usr/share/applications"
+-MENU_ICON_DIR="/usr/share/icons"
+-MENU_LINK_DIR="/usr/share/applnk-mdk/Multimedia/Video"
++FOX_PREFIX="%%LOCALBASE%%"
++OGLE_PREFIX="%%LOCALBASE%%"
++GOGGLES_PREFIX="%%PREFIX%%"
++XLIB_PREFIX="%%X11BASE%%"
++MENU_FILE_DIR="%%PREFIX%%/share/gnome/applications"
++MENU_ICON_DIR="%%PREFIX%%/share/icons"
++MENU_LINK_DIR="%%PREFIX%%/share/applnk-mdk/Multimedia/Video"
  
- # Build Tools
- #-------------------------------------------------------------------------------
-@@ -24,7 +24,7 @@
- #-------------------------------------------------------------------------------
- #CXXFLAGS="-O2 -Wall -ffast-math -finline-functions -fomit-frame-pointer -fexpensive-optimizations"
- CXXFLAGS="-Wall -g"
--CPPFLAGS="-I../include -I$FOX_PREFIX/include/fox-1.2 -I$OGLE_PREFIX/include"
-+CPPFLAGS="-I../include -I$FOX_PREFIX/include/fox-1.2 -I$OGLE_PREFIX/include -I$X11_PREFIX/include"
+ # Libraries we need
+ #----------------------------------------------------------------------------------------------------------------
+@@ -45,7 +45,7 @@
+ fi
+  
+ if [ $CONFIG_XV -eq 1 ] ; then
+-  XV_LIBS="-L${XLIB_PREFIX} -lXext -lXv"
++  XV_LIBS="-L${XLIB_PREFIX}/lib -lXext -lXv"
+   XV_DEFS="-DHAVE_XV"
+ else
+   XV_LIBS=""
+@@ -85,8 +85,8 @@
  
- OGLE_LIBS="-L$OGLE_PREFIX/lib/ogle -Wl,-rpath $OGLE_PREFIX/lib/ogle -ldvdcontrol -lmsgevents"
- OGLE_DEFS=""
-@@ -53,7 +53,7 @@
- 
- LIBS="$LIBS -lXext -lX11"
- 
--#LIBS="$LIBS -lpthread"
-+LIBS="$LIBS %%PTHREADLIBS%%"
- 
- 
+ export CFLAGS="-Wall -O2 -march=i586 -mcpu=i586"
+ export CXXFLAGS="-Wall -O2 -march=i586 -mcpu=i586"
+-export CPPFLAGS="-I../include $OGLE_INCLUDE $FOX_INCLUDE"
+-export LIBS="$OGLE_LIB $XV_LIBS $FOX_LIB"
++export CPPFLAGS="-I../include $OGLE_INCLUDE $FOX_INCLUDE -I%%X11BASE%%/include"
++export LIBS="$OGLE_LIB $XV_LIBS $FOX_LIB %%PTHREADLIBS%%"
+ export DEFS="-DLINUX $DXR3_DEFS $XV_DEFS"
+ #----------------------------------------------------------------------------------------------------------------
  

@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	goggles
-PORTVERSION=	0.7.4
+PORTVERSION=	0.7.4.1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.fifthplanet.net/files/
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/.1//}
 
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	A FOX frontend to the Ogle DVD player
@@ -16,8 +17,6 @@ COMMENT=	A FOX frontend to the Ogle DVD player
 BUILD_DEPENDS=	${LOCALBASE}/lib/ogle/libdvdcontrol.so.11:${PORTSDIR}/multimedia/ogle
 LIB_DEPENDS=	FOX-1.2.6:${PORTSDIR}/x11-toolkits/fox-devel
 RUN_DEPENDS=	ogle:${PORTSDIR}/multimedia/ogle
-
-BROKEN=		Size mismatch
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
@@ -46,9 +45,6 @@ DEFAULT_DVD_DEVICE=/dev/acd0c
 DEFAULT_DVD_DEVICE=/dev/acd0
 .endif
 .endif
-
-post-extract:
-	@cd ${WRKSRC} && ./gb clean
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|make|${GMAKE}|g' ${WRKSRC}/gb
