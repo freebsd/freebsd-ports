@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Log-Procmail
-PORTVERSION=	0.08
+PORTVERSION=	0.09
 CATEGORIES=	mail devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Log
@@ -19,5 +19,14 @@ PERL_CONFIGURE=	yes
 
 MAN1=		mailstat.pl.1
 MAN3=		Log::Procmail.3
+
+.if !defined(NOPORTDOCS)
+PORTDOCS=	Changes
+
+post-install:
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
+	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
+.endif
 
 .include <bsd.port.mk>
