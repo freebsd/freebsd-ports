@@ -14,6 +14,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	A library of procedures for evaluating mathematical functions
 
+LIB_DEPENDS=	guile.15:${PORTSDIR}/lang/guile
+
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV+=	MAKEINFO="/usr/bin/makeinfo --no-split"
