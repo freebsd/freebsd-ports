@@ -1,0 +1,38 @@
+--- Makefile.orig	Fri Apr 19 04:15:27 2002
++++ Makefile	Mon Jul  5 17:23:01 2004
+@@ -9,8 +9,8 @@
+ 
+ # User-definable stuff:
+ 
+-BIN_PREFIX=/usr/local/bin/
+-DATA_PREFIX=/usr/share/bugsquish/
++BIN_PREFIX=${PREFIX}/bin/
++DATA_PREFIX=${PREFIX}/share/bugsquish/
+ 
+ 
+ # Defaults for Linux:
+@@ -19,7 +19,7 @@
+ TARGET_DEF=LINUX
+ 
+ 
+-CFLAGS=-Wall -O2 $(SDL_CFLAGS) -DDATA_PREFIX=\"$(DATA_PREFIX)\" \
++CFLAGS+=-Wall $(SDL_CFLAGS) -DDATA_PREFIX=\"$(DATA_PREFIX)\" \
+         -D$(NOSOUNDFLAG) -D$(TARGET_DEF)
+ 
+ 
+@@ -29,11 +29,11 @@
+ IMAGE=-lSDL_image
+ NOSOUNDFLAG=__SOUND
+ SDL_LIB=$(SDL_LDFLAGS) $(MIXER) $(IMAGE)
+-SDL_CFLAGS := $(shell sdl-config --cflags)
+-SDL_LDFLAGS := $(shell sdl-config --libs)
++SDL_CFLAGS := $(shell sdl11-config --cflags)
++SDL_LDFLAGS := $(shell sdl11-config --libs)
+ 
+-installbin = install -g root -o root -m 755 
+-installdat = install -g root -o root -m 644
++installbin = ${BSD_INSTALL_BIN}
++installdat = ${BSD_INSTALL_DATA}
+ 
+ 
+ # Make commands:

@@ -57,6 +57,7 @@
     SUBDIR += bs
     SUBDIR += bsdtris
     SUBDIR += bsp
+    SUBDIR += bugsquish
     SUBDIR += bugsx
     SUBDIR += burgerspace
     SUBDIR += bzflag
