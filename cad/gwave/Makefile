@@ -13,9 +13,9 @@ MASTER_SITES=	http://geda.seul.org/dist/
 MAINTAINER=	dmlb@dmlb.org
 
 RUN_DEPENDS=	graph:${PORTSDIR}/graphics/plotutils
-LIB_DEPENDS=	geda.15:${PORTSDIR}/cad/libgeda \
-		guile.9:${PORTSDIR}/lang/guile \
-		guilegtk-1.2:${PORTSDIR}/x11-toolkits/guile-gtk
+LIB_DEPENDS=	geda.16:${PORTSDIR}/cad/libgeda \
+		guile.10:${PORTSDIR}/lang/guile \
+		guilegtk-1.2.0:${PORTSDIR}/x11-toolkits/guile-gtk
 
 USE_AUTOCONF=	yes
 USE_GNOMENG=	yes
