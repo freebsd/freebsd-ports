@@ -8,7 +8,7 @@
 PORTNAME=	lookat
 PORTVERSION=	1.4.0
 CATEGORIES=	sysutils
-MASTER_SITES=	http://staf.patat.org/downloads/
+MASTER_SITES=	http://www.wagemakers.be/uploads/37/7/
 DISTNAME=	${PORTNAME}_bekijk-${PORTVERSION}
 
 MAINTAINER=	krion@FreeBSD.org
