@@ -30,7 +30,6 @@
 ^src/share/examples/etc/bsd-style-copyright
 ^src/share/info/dir-tmpl
 ^src/share/man/man0
-^src/share/zoneinfo/Theory
 ^src/sys/boot/common/help.common
 ^src/sys/boot/i386/loader/help.i386
 ^src/sys/contrib/dev/acpica
