@@ -9,17 +9,13 @@
 #
 
 PORTNAME=	ssh
-PORTVERSION=	1.2.27 # Note, 1.2.30 is under a more restrictive license
-PORTREVISION=	3
+PORTVERSION=	1.2.28 # Note, 1.2.30 is under a more restrictive license
+PORTREVISION=	0
 CATEGORIES=	security ipv6
-MASTER_SITES=	ftp://ftp.cs.umn.edu/dept/users/rybski/ \
-		ftp://ftp.net.ohio-state.edu/disk/d/security/ssh/ \
-		ftp://ftp.cronyx.ru/mirror/ssh/old/ \
+MASTER_SITES=	ftp://ftp.tokyonet.ad.jp/pub/security/ssh/old/ \
 		ftp://ftp.nsysu.edu.tw/Unix/Security/ssh/old/ \
-		ftp://ftp.tokyonet.ad.jp/.da0/security/ssh/old/ \
-		ftp://ftp.comp.hkbu.edu.hk/.6/unix/ \
-		ftp://ftp.dei.uc.pt/.disk2/Crypto/SSH/old/
-
+		ftp://ftp.cronyx.ru/mirror/ssh/old/
+	
 MAINTAINER=	ports@FreeBSD.org
 
 USE_AUTOCONF=	YES
@@ -66,13 +62,13 @@ CONFIGURE_ARGS+= --without-idea
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} > 500023
-LIB_DEPENDS+=	gmp.5:${PORTSDIR}/math/libgmp4
+LIB_DEPENDS+=	gmp.3:${PORTSDIR}/math/libgmp-freebsd
 MAKE_ENV+=	GMPINCDIR="${LOCALBASE}/include" \
 		GMPLIBDIR="${LOCALBASE}/lib"
 .endif
 
 .if (${OSVERSION} >= 400016 && !defined(REALLY_WANT_SSH))
-FORBIDDEN=		"OpenSSH is a superior version of SSH which has been included in the FreeBSD base system since 4.0-RELEASE. This port is now deprecated and will be removed at some point in the future. To override this warning set the REALLY_WANT_SSH environment variable and rebuild."
+FORBIDDEN=		"OpenSSH is a superior version of SSH which has been included in the FreeBSD base system since 4.0-RELEASE. This port is now deprecated. To override this warning set the REALLY_WANT_SSH environment variable and rebuild."
 .endif
 
 MAN1=		scp1.1 ssh-add1.1 ssh-agent1.1 ssh-keygen1.1 ssh1.1 \
