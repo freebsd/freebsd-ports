@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.260 1999/05/08 10:32:29 asami Exp $
+# $Id: Makefile,v 1.261 1999/05/09 01:17:10 steve Exp $
 #
 
     SUBDIR += IglooFTP
@@ -27,6 +27,7 @@
     SUBDIR += clusterit
     SUBDIR += cnet
     SUBDIR += coda5_client
+    SUBDIR += coda5_doc
     SUBDIR += coda5_server
     SUBDIR += coda_client
     SUBDIR += coda_doc
