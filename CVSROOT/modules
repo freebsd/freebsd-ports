@@ -798,6 +798,7 @@ chmod		src/bin/chmod
 choparp		ports/net/choparp
 chora		ports/devel/chora
 chord		ports/misc/chord
+chord2html	ports/misc/chord2html
 chordpack	ports/audio/chordpack
 chown		src/usr.sbin/chown
 chpass		src/usr.bin/chpass
