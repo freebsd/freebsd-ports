@@ -23,7 +23,7 @@ COMMENT=	Software to View, Create, Edit and Remap Panoramic Images
 
 RUN_DEPENDS=	${LINUXBASE}/usr/bin/jpegtran:${PORTSDIR}/graphics/linux-jpeg \
 		${LINUXBASE}/usr/bin/tiffcmp:${PORTSDIR}/graphics/linux-tiff \
-		${LINUXBASE}/usr/lib/libpng.so.2:${PORTSDIR}/graphics/linux-png
+		${LINUXBASE}/usr/lib/libpng.so.3:${PORTSDIR}/graphics/linux-png
 
 USE_LINUX=	yes
 NO_BUILD=	yes
