@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnomebreakout
-PORTVERSION=	0.5
+PORTVERSION=	0.5.1
 CATEGORIES=	games gnome
 MASTER_SITES=	http://www.senet.com.au/~alcaron/ \
 		http://linux.tucows.com/files/gnome/entertain/
