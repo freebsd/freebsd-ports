@@ -7,7 +7,7 @@
 
 PORTNAME=	jdk
 PORTVERSION=	${INSTALL_JDK_VERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	java devel
 MASTER_SITES=	#
 PKGNAMEPREFIX=	linux-sun-
@@ -31,12 +31,13 @@ PLIST_SUB+=	T=${APP_HOME:S/^${PREFIX}\///} PORTVERSION=${PORTVERSION}
 
 NO_BUILD=	yes
 USE_LINUX=	yes
-DL_JDK_VERSION=	1.4.1_01
+DL_JDK_VERSION=	1.4.1_02
 INSTALL_JDK_VERSION=	1.4.1
 ONLY_FOR_ARCHS=	i386
 DOWNLOAD_URL?=	http://java.sun.com/webapps/download/Display?BundleId=7143
 PORTTITLE=	Java 2 Development Kit ${INSTALL_JDK_VERSION} for Linux
 APP_HOME=	${PREFIX}/${PKGNAMEPREFIX}${PORTNAME}${INSTALL_JDK_VERSION}
+CPIO?=		/usr/bin/cpio
 
 .include <bsd.port.pre.mk>
 
@@ -51,11 +52,12 @@ post-fetch:
 	@${CHMOD} +x ${DISTDIR}/${DISTFILES}
 
 post-patch:
-	find ${WRKSRC} -name '*.orig' -print | xargs ${RM} -f
+	${FIND} ${WRKSRC} -name '*.orig' -print | xargs ${RM} -f
 
 do-install:
 	${MKDIR} ${APP_HOME}
-	${TAR} -C ${WRKSRC} -cf- . | ${TAR} -C ${APP_HOME} -xpf-
+	cd ${WRKSRC} && ${FIND} . -name '*' -print \
+	  | ${CPIO} -pdmu -R ${LIBOWN}:${LIBGRP} ${APP_HOME}
 	${LOCALBASE}/bin/registervm "${APP_HOME}/bin/java # Linux-Sun-JDK${PORTVERSION}"
 
 .include <bsd.port.post.mk>
