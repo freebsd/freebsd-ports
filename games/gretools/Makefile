@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gretools
-PORTVERSION=	1.2.1
-PORTREVISION=	2
+PORTVERSION=	1.2.2
 CATEGORIES=	games
 MASTER_SITES=	http://theory.cs.iitm.ernet.in/~arvindn/gretools/${PORTVERSION:R}/
 
@@ -19,6 +18,7 @@ USE_PYTHON=	yes
 USE_GNOME=	gnomehack gnometarget gnomeprefix pygnome2
 GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
+USE_GMAKE=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|/usr/bin/python|${PYTHON_CMD}|" \
