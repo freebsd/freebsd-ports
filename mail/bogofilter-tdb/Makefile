@@ -11,7 +11,10 @@ CATEGORIES=	mail
 PKGNAMESUFFIX=	-tdb
 
 MASTERDIR=	${.CURDIR}/../bogofilter
+
 LIB_DEPENDS=	tdb.1:${PORTSDIR}/databases/tdb
+
+CONFLICTS=	bogofilter-0*
 
 CONFIGURE_ARGS=	--with-tdb
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
