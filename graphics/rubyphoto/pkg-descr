@@ -1,0 +1,11 @@
+RubyPhoto is a program for creating image galleries for the web. It
+recurses through a directory tree creating album index files for each
+sub-directory and image index files and thumbnails of specified sizes
+for each image. The generated HTML is completely customisable via
+templates. All configuration and image/album information is supplied
+in XML files.
+
+WWW: http://plig.net/~ture/rubyphoto/
+
+- Munish Chopra
+<mchopra@engmail.uwaterloo.ca>
