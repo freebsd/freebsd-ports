@@ -1,11 +1,13 @@
 bin/al
 bin/ilgac
+bin/cli-unknown-cpp
 bin/cli-unknown-ar
 bin/cli-unknown-gcc
 bin/cli-unknown-ranlib
 bin/cli-unknown-size
 bin/cli-unknown-strip
 bin/clrwrap
+bin/cscc-cpp
 bin/csant
 bin/cscc
 bin/csdoc

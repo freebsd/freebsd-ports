@@ -20,7 +20,7 @@ BUILD_DEPENDS=	treecc:${PORTSDIR}/lang/treecc
 RUN_DEPENDS=	cscc:${PORTSDIR}/lang/pnet-base \
 		csunit:${PORTSDIR}/lang/pnetlib \
 		sqlsharp-pnet:${PORTSDIR}/lang/ml-pnet \
-		${LOCALBASE}/lib/cscc/lib/libc64.dll:${PORTSDIR}/lang/pnetc
+		${LOCALBASE}/lib/cscc/lib/libc.dll:${PORTSDIR}/lang/pnetc
 
 NO_BUILD=	yes
 

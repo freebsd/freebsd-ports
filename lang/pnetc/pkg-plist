@@ -1,7 +1,51 @@
-lib/cscc/lib/libc64.dll
-lib/cscc/lib/libm64.dll
-lib/cscc/lib/1.2.3400.0/libc64.dll
-lib/cscc/lib/1.2.3400.0/libm64.dll
+lib/cscc/lib/1.2.3400.0/libc.dll
+lib/cscc/lib/1.2.3400.0/libm.dll
+lib/cscc/lib/1.2.3400.0/libpthread.dll
+lib/cscc/lib/libc.dll
+lib/cscc/lib/libm.dll
+lib/cscc/lib/libpthread.dll
+share/cscc/include/assembly/Accessibility.h
+share/cscc/include/assembly/Commons.Xml.Relaxng.h
+share/cscc/include/assembly/Custommarshalers.h
+share/cscc/include/assembly/DotGNU.Images.h
+share/cscc/include/assembly/DotGNU.SSL.h
+share/cscc/include/assembly/DotGNU.Terminal.h
+share/cscc/include/assembly/ICSharpCode.SharpZipLib.h
+share/cscc/include/assembly/ISymWrapper.h
+share/cscc/include/assembly/Microsoft.JScript.h
+share/cscc/include/assembly/Microsoft.VisualBasic.h
+share/cscc/include/assembly/Microsoft.VisualC.h
+share/cscc/include/assembly/Microsoft.Vsa.h
+share/cscc/include/assembly/Microsoft.Web.Services.h
+share/cscc/include/assembly/OpenSystem.C.h
+share/cscc/include/assembly/OpenSystem.Platform.h
+share/cscc/include/assembly/PEAPI.h
+share/cscc/include/assembly/System.Configuration.Install.h
+share/cscc/include/assembly/System.Data.ObjectSpaces.h
+share/cscc/include/assembly/System.Data.OracleClient.h
+share/cscc/include/assembly/System.Data.SqlXml.h
+share/cscc/include/assembly/System.Data.h
+share/cscc/include/assembly/System.Design.h
+share/cscc/include/assembly/System.DirectoryServices.h
+share/cscc/include/assembly/System.Drawing.Design.h
+share/cscc/include/assembly/System.Drawing.h
+share/cscc/include/assembly/System.EnterpriseServices.h
+share/cscc/include/assembly/System.Management.h
+share/cscc/include/assembly/System.Messaging.h
+share/cscc/include/assembly/System.Net.IrDA.h
+share/cscc/include/assembly/System.Runtime.Remoting.h
+share/cscc/include/assembly/System.Runtime.Serialization.Formatters.Soap.h
+share/cscc/include/assembly/System.Security.h
+share/cscc/include/assembly/System.ServiceProcess.h
+share/cscc/include/assembly/System.Web.Mobile.h
+share/cscc/include/assembly/System.Web.Services.h
+share/cscc/include/assembly/System.Web.h
+share/cscc/include/assembly/System.Windows.Forms.h
+share/cscc/include/assembly/System.Xml.h
+share/cscc/include/assembly/System.h
+share/cscc/include/assembly/Xsharp.h
+share/cscc/include/assembly/cscompmgd.h
+share/cscc/include/assembly/mscorlib.h
 share/cscc/include/alloca.h
 share/cscc/include/assert.h
 share/cscc/include/bits/libc-lock.h
@@ -17,6 +61,7 @@ share/cscc/include/bits/waitstatus.h
 share/cscc/include/bits/wchar.h
 share/cscc/include/bits/wordsize.h
 share/cscc/include/bits/xopen_lim.h
+share/cscc/include/csharp.h
 share/cscc/include/ctype.h
 share/cscc/include/dirent.h
 share/cscc/include/errno.h
@@ -25,14 +70,19 @@ share/cscc/include/features.h
 share/cscc/include/gmp-mparam.h
 share/cscc/include/gmp.h
 share/cscc/include/gnu/stubs.h
+share/cscc/include/grp.h
 share/cscc/include/ieee754.h
 share/cscc/include/inttypes.h
+share/cscc/include/langinfo.h
 share/cscc/include/limits.h
+share/cscc/include/locale.h
 share/cscc/include/malloc.h
 share/cscc/include/math.h
 share/cscc/include/pthread.h
 share/cscc/include/pwd.h
+share/cscc/include/semaphore.h
 share/cscc/include/setjmp.h
+share/cscc/include/signal.h
 share/cscc/include/stdarg.h
 share/cscc/include/stdbool.h
 share/cscc/include/stddef.h
@@ -45,9 +95,12 @@ share/cscc/include/strings.h
 share/cscc/include/sys/cdefs.h
 share/cscc/include/sys/errno.h
 share/cscc/include/sys/mman.h
+share/cscc/include/sys/param.h
+share/cscc/include/sys/select.h
 share/cscc/include/sys/stat.h
 share/cscc/include/sys/sysmacros.h
 share/cscc/include/sys/types.h
+share/cscc/include/sys/time.h
 share/cscc/include/time.h
 share/cscc/include/unistd.h
 share/cscc/include/varargs.h
@@ -57,6 +110,7 @@ share/cscc/include/xlocale.h
 @unexec rmdir %D/lib/cscc/lib/1.2.3400.0 2> /dev/null || true
 @unexec rmdir %D/lib/cscc/lib 2> /dev/null || true
 @unexec rmdir %D/lib/cscc 2> /dev/null || true
+@dirrm share/cscc/include/assembly
 @dirrm share/cscc/include/bits
 @dirrm share/cscc/include/gnu
 @dirrm share/cscc/include/sys

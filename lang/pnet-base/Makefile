@@ -33,14 +33,14 @@ CONFIGURE_ARGS+=	--disable-optimizations
 .endif
 
 PORTDOCS=	ChangeLog-1 ChangeLog-2 ChangeLog-3 ChangeLog-4 Doxyfile \
-	c_language_abi.html c_users_guide.html embedded.html gtk-sharp.HOWTO \
+	c_language_abi.html embedded.html gtk-sharp.HOWTO \
 	l10n.html libgc_changes.txt pinvoke.html pnet_faq.html pnetasm.texi \
 	unrolling.txt
 INFO=	pnettools
 MAN1=	clrwrap.1 csant.1 cscc.1 csdoc.1 csdoc2hier.1 csdoc2html.1 \
-	csdoc2texi.1 cssrc2html.1 ilalink.1 ilasm.1 ildasm.1 ildd.1 \
-	ilfind.1 ilgac.1 ilheader.1 ilnative.1 ilranlib.1 ilrun.1 ilsize.1 \
-	ilstrip.1 ilverify.1 resgen.1
+	cscc-cpp.1 csdoc2texi.1 cssrc2html.1 ilalink.1 ilasm.1 ildasm.1 \
+	ildd.1 ilfind.1 ilgac.1 ilheader.1 ilnative.1 ilranlib.1 ilrun.1 \
+	ilsize.1 ilstrip.1 ilverify.1 resgen.1
 
 .include "${.CURDIR}/../pnet/Makefile.pnet"
 .include <bsd.port.pre.mk>

@@ -17,6 +17,7 @@ lib/cscc/lib/Microsoft.VisualBasic.dll
 lib/cscc/lib/Microsoft.VisualC.dll
 lib/cscc/lib/Microsoft.Vsa.dll
 lib/cscc/lib/OpenSystem.C.dll
+lib/cscc/lib/OpenSystem.Platform.dll
 lib/cscc/lib/System.Configuration.Install.dll
 lib/cscc/lib/System.Drawing.Postscript.dll
 lib/cscc/lib/System.Drawing.Win32.dll
@@ -57,6 +58,7 @@ lib/cscc/lib/1.2.3400.0/I18N.West.dll
 lib/cscc/lib/1.2.3400.0/I18N.dll
 lib/cscc/lib/1.2.3400.0/ISymWrapper.dll
 lib/cscc/lib/1.2.3400.0/OpenSystem.C.dll
+lib/cscc/lib/1.2.3400.0/OpenSystem.Platform.dll
 lib/cscc/lib/1.2.3400.0/System.Configuration.Install.dll
 lib/cscc/lib/1.2.3400.0/System.Design.dll
 lib/cscc/lib/1.2.3400.0/System.Drawing.Postscript.dll
@@ -91,6 +93,7 @@ lib/cscc/lib/1.2.3400.0/de/Xsharp.resources.dll
 lib/cscc/lib/1.2.3400.0/de/mscorlib.resources.dll
 lib/cscc/lib/1.2.3400.0/ilinstall.exe
 lib/cscc/lib/1.2.3400.0/mscorlib.dll
+lib/cscc/lib/1.2.3400.0/pinvoke.map
 lib/cscc/lib/8.0.1000.0/Microsoft.JScript.dll
 lib/cscc/lib/8.0.1000.0/Microsoft.VisualBasic.dll
 lib/cscc/lib/8.0.1000.0/Microsoft.VisualC.dll
@@ -114,6 +117,7 @@ lib/cscc/lib/ca/mscorlib.resources.dll
 lib/cscc/lib/csunit.exe
 lib/cscc/lib/ilinstall.exe
 lib/cscc/lib/jsrun.exe
+lib/cscc/lib/pinvoke.map
 share/cscc/config/machine.default
 @dirrm lib/cscc/lib/8.0.1000.0/ca
 @dirrm lib/cscc/lib/8.0.1000.0/de
