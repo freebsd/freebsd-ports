@@ -21,25 +21,6 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-html-dir=${PREFIX}/share/doc \
 			--program-prefix="" --localstatedir=/var
 
-# MySQL deps hack
-MYSQL323_LIBVER=10
-MYSQL40_LIBVER=	12
-MYSQL41_LIBVER=	14
-
-.include <bsd.port.pre.mk>
-
-.if defined(WITH_MYSQL_VER)
-MYSQL_VER=	${WITH_MYSQL_VER}
-.elif exists(${LOCALBASE}/lib/mysql/libmysqlclient.so.${MYSQL_323_LIBVER})
-MYSQL_VER=	323
-.elif exists(${LOCALBASE}/lib/mysql/libmysqlclient.so.${MYSQL40_LIBVER})
-MYSQL_VER=	40
-.elif exists(${LOCALBASE}/lib/mysql/libmysqlclient.so.${MYSQL41_LIBVER})
-MYSQL_VER=	41
-.else
-MYSQL_VER=	40
-.endif
-
 .if defined(WITHOUT_SSL)
 CONFIGURE_ARGS+=	--disable-openssl
 .else
@@ -48,7 +29,7 @@ CONFIGURE_ARGS+=	--enable-openssl
 .endif
 
 .if defined(WITH_MYSQL)
-LIB_DEPENDS+=		mysqlclient.${MYSQL${MYSQL_VER}_LIBVER}:${PORTSDIR}/databases/mysql${MYSQL_VER}-client
+USE_MYSQL=		YES
 CONFIGURE_ARGS+=	--enable-mysql
 PLIST_SUB+=		MYSQL=""
 .else
@@ -72,11 +53,8 @@ post-patch:
 	@${ECHO} ""
 	@${ECHO} "      WITHOUT_SSL=yes         Disable SSL support"
 	@${ECHO} "      WITH_MYSQL=yes          Enable MySQL support"
-	@${ECHO} "             - WITH_MYSQL_VER=323   Enable MySQL 3.23 support"
-	@${ECHO} "             - WITH_MYSQL_VER=40    Enable MySQL 4.0 support (default)"
-	@${ECHO} "             - WITH_MYSQL_VER=41    Enable MySQL 4.1 support"
 	@${ECHO} "      WITH_POSTGRES=yes       Enable PostreSQL support"
 	@${ECHO} "*---------------------------------------------------------------------------*"
 	@${ECHO} ""
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
