@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wmcalc
-PORTVERSION=	0.21
+PORTVERSION=	0.3
 CATEGORIES=	math windowmaker
 MASTER_SITES=	http://members.access1.net/ehflora/wmcalc/
 
