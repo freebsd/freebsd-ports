@@ -16,6 +16,8 @@ DISTNAME=	phpeclipse.tidy_${PORTVERSION}preAlpha
 MAINTAINER=	rtdean@cytherianage.net
 COMMENT=	PHP Eclipse HTML tidier plugin for Eclipse IDE Framework
 
+BROKEN=		fix me
+
 RUN_DEPENDS+=	${LOCALBASE}/eclipse/plugins/net.sourceforge.phpeclipse/plugin.xml:${PORTSDIR}/java/phpeclipse
 
 NO_BUILD=	yes
