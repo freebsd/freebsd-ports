@@ -96,6 +96,7 @@
     SUBDIR += ruby-odbc
     SUBDIR += ruby-postgres
     SUBDIR += ruby-sqlrelay
+    SUBDIR += sixpack
     SUBDIR += sqlite
     SUBDIR += sqlrelay
     SUBDIR += sqsh
