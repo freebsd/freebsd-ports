@@ -17,7 +17,8 @@ MAINTAINER=	sobomax@FreeBSD.org
 LIB_DEPENDS=	SDL-1.1.3:${PORTSDIR}/devel/sdl12 \
 		SDL_image.10:${PORTSDIR}/graphics/sdl_image \
 		gnugetopt.1:${PORTSDIR}/devel/libgnugetopt \
-		SDLmm.8:${PORTSDIR}/devel/sdlmm
+		SDLmm.8:${PORTSDIR}/devel/sdlmm \
+		SDL_mixer.2:${PORTSDIR}/audio/sdl_mixer
 .if !exists(/usr/bin/bzip2)
 LIB_DEPENDS+=	bz2.1:${PORTSDIR}/archivers/bzip2
 .endif
