@@ -4,13 +4,16 @@
 # Date created:         2 Feb 1997
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.5 1998/09/16 14:08:47 smace Exp $
+# $Id: Makefile,v 1.6 1998/12/18 17:58:23 sada Exp $
 #
 
 DISTNAME=       rsaref20.1996
 PKGNAME=        rsaref-2.0
 CATEGORIES=     security
-MASTER_SITES=   ftp://utopia.hacktic.nl/pub/replay/pub/crypto/LIBS/rsa/
+MASTER_SITES=   ftp://utopia.hacktic.nl/pub/replay/pub/crypto/LIBS/rsa/ \
+		ftp://ftp.ntua.gr/pub/crypt/mirrors/utopia.hacktic.nl/crypto/LIBS/math/ \
+		ftp://ftp.tuwien.ac.at/opsys/linux/replay.com/crypto/LIBS/math/ \
+		ftp://ftp.nstu.ru/pub/sources/security/crypt/
 EXTRACT_SUFX=   .tar.Z
 
 MAINTAINER=	ache@FreeBSD.ORG
