@@ -21,8 +21,12 @@ LIB_DEPENDS=	SDL-1.1:${PORTSDIR}/devel/sdl12 \
 		SDL_ttf:${PORTSDIR}/graphics/sdl_ttf
 
 SDL_CONFIG=	${LOCALBASE}/bin/sdl11-config
+USE_REINPLACE=	yes
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ENV=	SDL_CONFIG="${SDL_CONFIG}"
+
+post-configure:
+	${REINPLACE_CMD} -e "s/^CC=\"cc\"/CC=\"${CXX}\"/" ${WRKSRC}/libtool
 
 .include <bsd.port.mk>
