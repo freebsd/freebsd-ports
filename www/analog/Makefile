@@ -1,15 +1,15 @@
 # New ports collection makefile for: analog
-# Version required:	1.92b1
+# Version required:     2.11
 # Date created:		October 21st 1996
 # Whom:			jfitz
 #
-# $Id: Makefile,v 1.6 1997/04/19 18:28:20 paul Exp $
+# $Id: Makefile,v 1.7 1997/04/30 00:16:34 paul Exp $
 #
 
-DISTNAME=	analog.1.92.1
-PKGNAME=	analog-1.92.1
+DISTNAME=       analog2.11
+PKGNAME=        analog-2.11
 CATEGORIES=	www
-MASTER_SITES=	http://www.statslab.cam.ac.uk/~sret1/ \
+MASTER_SITES=   http://www.statslab.cam.ac.uk/~sret1/analog/ \
 		http://www.lightside.net/analog/ \
 		http://www.gamesdomain.com/analog/ \
 		http://www.monash.edu.au/mirror/analog/ \
@@ -19,12 +19,33 @@ MASTER_SITES=	http://www.statslab.cam.ac.uk/~sret1/ \
 
 MAINTAINER=	jfitz@freebsd.org
 
-WRKSRC=		${WRKDIR}/analog
-
 do-install:
-	@mkdir -p ${PREFIX}/share/analog
-	@(cd ${WRKSRC}; cp -r Readme.html domains.tab primes.tab images ${PREFIX}/share/analog; cp analog ${PREFIX}/bin)
-	@(cd ${PREFIX}/share/analog; chmod +r *)
-	@strip ${PREFIX}/bin/analog
+	install -d -o ${SHAREOWN} -g ${SHAREGRP} -m 555 \
+		${PREFIX}/share/doc/analog
+	install -d -o ${BINOWN} -g ${BINGRP} -m 755 \
+		${PREFIX}/lib/analog/lang
+	cd ${WRKSRC} && \
+		${INSTALL_DATA} Readme.html Licence \
+		${PREFIX}/share/doc/analog
+	cd ${WRKSRC}/images && \
+		${INSTALL_DATA} * ${PREFIX}/www/icons
+	cd ${WRKSRC}/lang && \
+		${INSTALL_DATA} * ${PREFIX}/lib/analog/lang
+	cd ${WRKSRC} && \
+		${INSTALL_PROGRAM} analog ${PREFIX}/bin
+	cd ${WRKSRC} && \
+	for file in domains.tab primes.tab analog.cfg ; do \
+	    if [ -f ${PREFIX}/lib/analog/$$file ] ; then \
+		${INSTALL_DATA} -m 644 $$file ${PREFIX}/lib/analog/$$file-dist ; \
+	    else \
+		${INSTALL_DATA} -m 644 $$file ${PREFIX}/lib/analog/$$file ; \
+	    fi ; \
+	done
+	cd ${WRKSRC} && make form
+	cd ${WRKSRC} && \
+		${INSTALL_PROGRAM} analform.cgi ${PREFIX}/www/cgi-bin
+	cd ${WRKSRC} && \
+		${INSTALL_DATA} analogform.html \
+		${PREFIX}/share/doc/analog
 
 .include <bsd.port.mk>

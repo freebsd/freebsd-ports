@@ -1,14 +1,33 @@
 bin/analog
-share/analog/Readme.html
-share/analog/domains.tab
-share/analog/primes.tab
-share/analog/images/analogo.gif
-share/analog/images/bar1.gif
-share/analog/images/bar16.gif
-share/analog/images/bar2.gif
-share/analog/images/bar32.gif
-share/analog/images/bar4.gif
-share/analog/images/bar8.gif
-share/analog/images/html2.gif
-@dirrm share/analog/images
-@dirrm share/analog
+share/doc/analog/Readme.html
+share/doc/analog/Licence
+share/doc/analog/analogform.html
+lib/analog/domains.tab
+lib/analog/primes.tab
+lib/analog/analog.cfg
+www/cgi-bin/analform.cgi
+www/icons/analogo.gif
+www/icons/bar1.gif
+www/icons/bar16.gif
+www/icons/bar2.gif
+www/icons/bar32.gif
+www/icons/bar4.gif
+www/icons/bar8.gif
+www/icons/html2.gif
+lib/analog/lang/danisha.lng
+lib/analog/lang/danishh.lng
+lib/analog/lang/englisha.lng
+lib/analog/lang/englishh.lng
+lib/analog/lang/frencha.lng
+lib/analog/lang/frenchh.lng
+lib/analog/lang/germana.lng
+lib/analog/lang/germanh.lng
+lib/analog/lang/italiana.lng
+lib/analog/lang/italianh.lng
+lib/analog/lang/spanisha.lng
+lib/analog/lang/spanishh.lng
+lib/analog/lang/usenga.lng
+lib/analog/lang/usengh.lng
+@dirrm lib/analog/lang
+@dirrm lib/analog
+@dirrm share/doc/analog
