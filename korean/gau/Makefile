@@ -3,13 +3,14 @@
 # Date created:         23 Jul 1998
 # Whom:                 CHOI Junho <cjh@kr.freebsd.org>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/04/01 02:30:04 taoka Exp $
 #
 
 DISTNAME=	gau-0.3.1
 PKGNAME=	ko-gau-0.3.1
 CATEGORIES=	korean comms x11
-MASTER_SITES=	http://pseudo.snu.ac.kr/~hwang/
+MASTER_SITES=	http://pseudo.snu.ac.kr/~hwang/ \
+		ftp://ftp.kr.freebsd.org/pub/FreeBSD-kr/distfiles/
 
 MAINTAINER=	cjh@kr.freebsd.org
 
