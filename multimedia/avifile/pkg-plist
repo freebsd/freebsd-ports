@@ -12,7 +12,6 @@ include/avifile/audiodecoder.h
 include/avifile/audioencoder.h
 include/avifile/avifile.h
 include/avifile/aviplay.h
-include/avifile/avm_output.h
 include/avifile/avm_stl.h
 include/avifile/configfile.h
 include/avifile/cpuinfo.h
@@ -47,6 +46,22 @@ lib/avifile/mjpeg.so
 %%LAME%%lib/avifile/mp3lamebin_audioenc.so
 lib/avifile/mpeg_audiodec.la
 lib/avifile/mpeg_audiodec.so
+lib/avifile/vidix/libgenfb.la
+lib/avifile/vidix/libgenfb.so
+lib/avifile/vidix/libmach64.la
+lib/avifile/vidix/libmach64.so
+lib/avifile/vidix/libmga.la
+lib/avifile/vidix/libmga.so
+lib/avifile/vidix/libmga_crtc2.la
+lib/avifile/vidix/libmga_crtc2.so
+lib/avifile/vidix/libnvidia.la
+lib/avifile/vidix/libnvidia.so
+lib/avifile/vidix/libpm3.la
+lib/avifile/vidix/libpm3.so
+lib/avifile/vidix/libradeon.la
+lib/avifile/vidix/libradeon.so
+lib/avifile/vidix/librage128.la
+lib/avifile/vidix/librage128.so
 %%VORBIS%%lib/avifile/vorbis_audio.la
 %%VORBIS%%lib/avifile/vorbis_audio.so
 %%WIN32%%lib/avifile/win32.la
@@ -64,6 +79,7 @@ lib/libaviplay.so.0
 %%QT%%lib/libqavm.la
 %%QT%%lib/libqavm.so
 %%QT%%lib/libqavm.so.0
+share/aclocal/avifile.m4
 share/avifile/about.ppm
 share/avifile/mute.ppm
 share/avifile/open.ppm
@@ -76,5 +92,6 @@ share/avifile/test.png
 %%PORTDOCS%%share/doc/avifile/README
 %%PORTDOCS%%@dirrm share/doc/avifile
 @dirrm share/avifile
+@dirrm lib/avifile/vidix
 @dirrm lib/avifile
 @dirrm include/avifile
