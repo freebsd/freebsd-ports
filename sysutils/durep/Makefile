@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	durep
-PORTVERSION=	0.8
+PORTVERSION=	0.8.1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.hibernaculum.net/download/
 
