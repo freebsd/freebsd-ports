@@ -1,13 +1,13 @@
 # New ports collection makefile for:    tth
-# Version required:     1.21
+# Version required:     1.30
 # Date created:         19 Feb 1998
 # Whom:                 Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/02/20 08:04:07 tg Exp $
 #
 
 DISTNAME=       tth_C
-PKGNAME=	tth-1.21
+PKGNAME=	tth-1.30
 CATEGORIES=	textproc
 MASTER_SITES=	http://hutchinson.belmont.ma.us/tth/tth-noncom/
 EXTRACT_SUFX=	.tgz
@@ -18,8 +18,7 @@ RUN_DEPENDS=	gs:${PORTSDIR}/print/ghostscript5 \
 		ppmtogif:${PORTSDIR}/graphics/netpbm \
 		latex:${PORTSDIR}/print/teTeX
 
-RESTRICTED=	"No commercial use"
-NO_CDROM=	${RESTRICTED}
+NO_CDROM=	"Don't sell for profit until we have an OK from the author"
 NO_WRKSUBDIR=	yes
 MAN1=		tth.1
 
