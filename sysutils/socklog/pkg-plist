@@ -1,3 +1,4 @@
+bin/socklog-check
 bin/socklog-conf
 bin/socklog
 bin/tryto
@@ -13,6 +14,7 @@ bin/uncat
 %%PORTDOCS%%%%DOCSDIR%%/network.html
 %%PORTDOCS%%%%DOCSDIR%%/notify.html
 %%PORTDOCS%%%%DOCSDIR%%/readme.solaris.html
+%%PORTDOCS%%%%DOCSDIR%%/socklog-check.8.html
 %%PORTDOCS%%%%DOCSDIR%%/socklog-conf.8.html
 %%PORTDOCS%%%%DOCSDIR%%/socklog.8.html
 %%PORTDOCS%%%%DOCSDIR%%/tryto.1.html
