@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ghostscript
-PORTVERSION=	6.51
+PORTVERSION=	6.52
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_GNU} \
 		${MASTER_SITE_SOURCEFORGE} \
@@ -14,7 +14,7 @@ MASTER_SITES=	${MASTER_SITE_GNU} \
 		http://www.gelhaus.net/hp880c/1.4beta/ \
 		http://home.t-online.de/home/Martin.Lottermoser/pcl3dist/ \
 		http://www.harsch.net/Download/ \
-		ftp://mirror.cs.wisc.edu/pub/mirrors/ghost/gnu/gs651/ \
+		ftp://mirror.cs.wisc.edu/pub/mirrors/ghost/gnu/gs652/ \
 		ftp://mirror.cs.wisc.edu/pub/mirrors/ghost/gnu/fonts/
 MASTER_SITE_SUBDIR=	${PORTNAME} gimp-print hpinkjet
 PKGNAMESUFFIX=	-gnu
@@ -86,7 +86,7 @@ HPDJ_MAN1=	gs-hpdj.1
 # additional driver for HP PCL3 Printers, by Martin Lottermoser
 # http://home.t-online.de/home/Martin.Lottermoser/pcl3.html
 PCL3=		pcl3
-PCL3_VERS=	3.2
+PCL3_VERS=	3.3
 PCL3_NAME=	${PCL3}-${PCL3_VERS}
 PCL3_SRC=	${PCL3_NAME}.tar.gz
 PCL3_MAN1=	gs-pcl3.1 pcl3opts.1
@@ -165,10 +165,6 @@ post-extract:
 post-patch:
 	${PERL} -pi -e 's|^DEVICE_DEVS|#DEVICE_DEVS|g' \
 		${WRKSRC}/src/unix-gcc.mak
-	find ${WRKSRC}/src -name '*.[ch]' | xargs ${PERL} -pi -e \
-		's|pputc|stream_putc|g; \
-		 s|pwrite|stream_write|g ; \
-		 s|pputs|stream_puts|g'
 # for HPinkjet driver
 	find ${WRKSRC}/${HPIJS_NAME} -name '*.h' | xargs ${PERL} -pi -e \
 		's|#include <malloc.h>||g; \
@@ -184,7 +180,7 @@ pre-configure:
 		>> ${WRKSRC}/src/contrib.mak
 # for PCL3 driver
 	${ECHO_MSG} ">>>   adding ${PCL3} driver to contrib.mak ..."
-	${CAT} ${WRKSRC}/${PCL3_NAME}/src/contrib.mak-6.50.add \
+	${CAT} ${WRKSRC}/${PCL3_NAME}/src/contrib.mak-6.51.add \
 		>> ${WRKSRC}/src/contrib.mak
 # for gimp-print
 	${ECHO_MSG} ">>>   creating symlinks for ${GPRINT_DESC} ..."
@@ -249,7 +245,7 @@ post-install:
 		${DATADIR}/${PORTVERSION}/hpdj
 .endfor
 # for PCL3 driver
-	${ECHO_MSG} ">>> installing ${PCL3} manpages ..."
+	${ECHO_MSG} ">>>   installing ${PCL3} manpages ..."
 .for i in ${PCL3_MAN1}
 	${INSTALL_MAN} ${WRKSRC}/${PCL3_NAME}/doc/${i} ${PREFIX}/man/man1
 .endfor
