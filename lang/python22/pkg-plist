@@ -248,6 +248,7 @@ lib/python1.5/lib-dynload/cPickle.so
 lib/python1.5/lib-dynload/cStringIO.so
 lib/python1.5/lib-dynload/cursesmodule.so
 lib/python1.5/lib-dynload/dbmmodule.so
+lib/python1.5/lib-dynload/dlmodule.so
 lib/python1.5/lib-dynload/fpectlmodule.so
 lib/python1.5/lib-dynload/fpetestmodule.so
 lib/python1.5/lib-dynload/imageop.so

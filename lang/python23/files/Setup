@@ -321,7 +321,7 @@ curses cursesmodule.c -lncurses -ltermcap
 # it is a highly experimental and dangerous device for calling
 # *arbitrary* C functions in *arbitrary* shared libraries:
 
-#dl dlmodule.c
+dl dlmodule.c
 
 # Modules that provide persistent dictionary-like semantics.  You will
 # probably want to arrange for at least one of them to be available on
