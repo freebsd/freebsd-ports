@@ -6,17 +6,17 @@
 #
 
 PORTNAME=	starterbar
-PORTVERSION=	0.22.1
-PORTREVISION=	2
+PORTVERSION=	0.30
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	http://gdesklets.gnomedesktop.org/files/
 PKGNAMEPREFIX=	gdesklets-
 DISTNAME=	starterbar-desklet-${PORTVERSION}
 
-MAINTAINER=	mezz@FreeBSD.org
+MAINTAINER=	ahze@ahze.net
 COMMENT=	An icon bar for GNOME 2.x where you can put starters into
 
-RUN_DEPENDS=	${X11BASE}/libdata/pkgconfig/gdesklets-core.pc:${PORTSDIR}/deskutils/gdesklets
+RUN_DEPENDS=	${X11BASE}/libdata/pkgconfig/gdesklets-core.pc:${PORTSDIR}/deskutils/gdesklets \
+		${PYTHON_SITELIBDIR}/xdg/__init__.py:${PORTSDIR}/devel/py-xdg
 
 USE_BZIP2=	yes
 USE_PYTHON=	yes
@@ -26,7 +26,7 @@ USE_REINPLACE=	yes
 NAME=		StarterBar
 DATADIR=	${PREFIX}/share/gnome
 PKGMESSAGE=	${WRKDIR}/pkg-message
-LANG=		de fr pt sq sr sr@Latn sv
+LANG=		ca cs de es fr hr nl pt pt_BR sq sr sr@Latn sv
 
 .include <bsd.port.pre.mk>
 
@@ -37,10 +37,7 @@ RUN_DEPENDS+=	uuid:${PORTSDIR}/misc/ossp-uuid
 do-build:
 	@${WRKSRC}/Install_${NAME}_Sensor.bin --nomsg ${WRKSRC}
 	@${PATCH} ${WRKSRC}/${NAME}/Icon.py < ${FILESDIR}/${NAME}::Icon.py
-	@${PATCH} ${WRKSRC}/${NAME}/IconTheme.py < ${FILESDIR}/${NAME}::IconTheme.py
 	@${PATCH} ${WRKSRC}/${NAME}/__init__.py < ${FILESDIR}/${NAME}::__init__.py
-	@${REINPLACE_CMD} -e 's|%%X11BASE%%|${X11BASE}|g' \
-		${WRKSRC}/${NAME}/IconTheme.py
 .if ${OSVERSION} < 500000
 	@${REINPLACE_CMD} -e 's|uuidgen|uuid|g' \
 		${WRKSRC}/${NAME}/IconSet.py
