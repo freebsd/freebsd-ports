@@ -7,7 +7,6 @@
 
 PORTNAME=	cvsweb
 PORTVERSION=	${REV_ZELLER}.${REV_KNU}
-PORTREVISION=	1
 CATEGORIES=	devel www
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	knu
@@ -19,8 +18,8 @@ NO_BUILD=	yes
 USE_PERL5=	yes
 
 # This version of cvsweb is Zeller's version + knu's enhancements.
-REV_ZELLER=	1.103
-REV_KNU=	1.37
+REV_ZELLER=	1.104
+REV_KNU=	1.39
 
 # Specify where your repository belongs.
 # (You can reconfigure it after installation anyway)
