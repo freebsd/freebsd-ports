@@ -6,7 +6,8 @@
 #
 
 PORTNAME=	ezmlm-idx
-PORTVERSION=	0.40	
+PORTVERSION=	0.40
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.ezmlm.org/pub/patches/ \
 		ftp://ftp.rivertown.net/pub/ezmlm/ \
@@ -35,8 +36,15 @@ RUN_DEPENDS=	${QMAIL_DIR}/bin/qmail-send:${PORTSDIR}/mail/qmail
 
 # If WITH_MYSQL is defined, build with MySQL extensions
 .if defined(WITH_MYSQL)
-ALL_TARGET=	it ${LANGUAGE} mysql
+ALL_TARGET=	mysql it ${LANGUAGE}
 LIB_DEPENDS+=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client
+EXTRACT_INCLUDE+=	-I${PREFIX}/include/mysql
+EXTRACT_LIB+=	-L${PREFIX}/lib/mysql -lmysqlclient -lm
+.elif defined(WITH_POSTGRESQL)
+ALL_TARGET=	pgsql it ${LANGUAGE}
+LIB_DEPENDS+=	pq.2:${PORTSDIR}/databases/postgresql7
+EXTRACT_INCLUDE+=	-I${PREFIX}/include/pgsql
+EXTRACT_LIB+=	-L${PREFIX}/lib -lpq -lcrypt
 .else
 ALL_TARGET=	it ${LANGUAGE}
 .endif
@@ -77,11 +85,18 @@ post-patch:
 	@${ECHO} ${PREFIX}/bin > ${WRKSRC}/conf-bin
 	@${ECHO} ${CC} ${CFLAGS} > ${WRKSRC}/conf-cc
 	@${ECHO} ${CC} -s > ${WRKSRC}/conf-ld
+.if defined(WITH_MYSQL)
+	@${ECHO} ${EXTRACT_INCLUDE} > ${WRKSRC}/sub_mysql/conf-sqlcc
+	@${ECHO} ${EXTRACT_LIB} > ${WRKSRC}/sub_mysql/conf-sqlld
+.elif defined(WITH_POSTGRESQL)
+	@${ECHO} ${EXTRACT_INCLUDE} > ${WRKSRC}/sub_pgsql/conf-sqlcc
+	@${ECHO} ${EXTRACT_LIB} > ${WRKSRC}/sub_pgsql/conf-sqlld
+.endif
 	@${ECHO} ${PREFIX}/man > ${WRKSRC}/conf-man
 	@${ECHO} ${QMAIL_DIR} > ${WRKSRC}/conf-qmail
 	@${ECHO} ${PREFIX} > ${WRKDIR}/.PPREFIX
 	@${ECHO} ${QMAIL_DIR} >> ${WRKDIR}/.PPREFIX
-	@${ECHO} ${NOPORTDOCS} ${WITH_MYSQL} >> ${WRKDIR}/.PPREFIX
+	@${ECHO} ${NOPORTDOCS} ${WITH_MYSQL} ${WITH_POSTGRESQL}>> ${WRKDIR}/.PPREFIX
 	@${MV} ${WRKSRC}/idx.h ${WRKSRC}/idx.h.orig
 	@${SED} -e 's#/etc/ezmlm/#'${PREFIX}'/etc/ezmlm/#' \
 		< ${WRKSRC}/idx.h.orig > ${WRKSRC}/idx.h
@@ -93,7 +108,7 @@ post-patch:
 pre-install:
 	@${ECHO} ${PREFIX} > ${WRKDIR}/.IPREFIX
 	@${ECHO} ${QMAIL_DIR} >> ${WRKDIR}/.IPREFIX
-	@${ECHO} ${NOPORTDOCS} ${WITH_MYSQL} >> ${WRKDIR}/.IPREFIX
+	@${ECHO} ${NOPORTDOCS} ${WITH_MYSQL} ${WITH_POSTGRESQL}>> ${WRKDIR}/.IPREFIX
 	@diff ${WRKDIR}/.[PI]PREFIX || (${ECHO} ${DIFF_MSG} && exit 1)
 
 do-install:
