@@ -35,13 +35,13 @@ MAKEFILE=
 MAKE_FLAGS+=		OPTFLAG="${CFLAGS} -I${X11BASE}/include"
 BREAKS_IF_PEDANTIC=	yes
 
-.if defined(WANT_GNUSTEP_XDPS)
+.if defined(WITH_GNUSTEP_XDPS)
 CONFIGURE_ARGS+=	--enable-graphics=xdps --with-name=xdps
 PLIST_SUB+=		BACK=xdps
 PLIST_SUB+=		USE_XLIB="@comment " USE_XDPS="" USE_ART="@comment "
 PKGNAMESUFFIX?=		-xdps
 .else
-.if defined(WANT_GNUSTEP_LIBART)
+.if defined(WITH_GNUSTEP_LIBART)
 LIB_DEPENDS+=		art_lgpl_2:${PORTSDIR}/graphics/libart_lgpl2
 CONFIGURE_ARGS+=	--enable-graphics=art --with-name=art
 PLIST_SUB+=		BACK=art USE_XLIB="@comment "
