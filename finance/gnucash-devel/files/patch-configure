@@ -1,8 +1,5 @@
-
-$FreeBSD$
-
---- configure.orig	Thu Aug 15 08:18:45 2002
-+++ configure	Sun Aug 18 09:35:54 2002
+--- configure.orig	Wed Aug 21 23:07:06 2002
++++ configure	Mon Nov 11 21:54:28 2002
 @@ -5523,6 +5523,7 @@
  
  # This can be used to rebuild libtool when needed
@@ -56,3 +53,21 @@ $FreeBSD$
  	  { echo "configure: error: Berkeley db library required for GnuCash" 1>&2; exit 1; }
  	fi
  	cat >> confdefs.h <<\EOF
+@@ -11329,14 +11330,14 @@
+ 
+ # check for gtkhtml and enable it via HAVE_LIBGTKHTML
+ # if found
+-echo $ac_n "checking for gtk_html_new in -lgtkhtml""... $ac_c" 1>&6
+-echo "configure:11334: checking for gtk_html_new in -lgtkhtml" >&5
++echo $ac_n "checking for gtk_html_new in -lgtkhtml-1.1""... $ac_c" 1>&6
++echo "configure:11334: checking for gtk_html_new in -lgtkhtml-1.1" >&5
+ ac_lib_var=`echo gtkhtml'_'gtk_html_new | sed 'y%./+-%__p_%'`
+ if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
+   ac_save_LIBS="$LIBS"
+-LIBS="-lgtkhtml $GTKHTML_LIBS $LIBS"
++LIBS="-lgtkhtml-1.1 $GTKHTML_LIBS $LIBS"
+ cat > conftest.$ac_ext <<EOF
+ #line 11342 "configure"
+ #include "confdefs.h"
