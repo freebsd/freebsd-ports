@@ -9,10 +9,8 @@
 PORTNAME=	minicom
 PORTVERSION=	2.00.0
 CATEGORIES=	comms
-MASTER_SITES=	${MASTER_SITE_SUNSITE}  \
-		http://www.clinet.fi/~walker/  \
-		http://www.pp.clinet.fi/~walker/
-MASTER_SITE_SUBDIR=	apps/serialcomm/dialout
+MASTER_SITES=	ftp://ftp.nuug.no/pub/anders/distfiles/ \
+		http://atreides.freenix.no/~anders/
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
 
 MAINTAINER=	anders@FreeBSD.org
