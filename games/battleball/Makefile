@@ -9,7 +9,6 @@ PORTNAME=	battleball
 PORTVERSION=	2.1
 CATEGORIES=	games
 MASTER_SITES=	http://home.austin.rr.com/pah/
-
 DISTNAME=	${PORTNAME}.${PORTVERSION:S/.//}.src
 
 MAINTAINER=	ports@FreeBSD.org
@@ -20,12 +19,7 @@ USE_MESA=	yes
 WRKSRC=		${WRKDIR}/battleball-2.1-src
 MAKE_ENV=	PTHREAD_LIBS="${PTHREAD_LIBS}" \
 		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}"
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500113
-BROKEN=         "Does not compile (bad C++ code)"
-.endif
+CFLAGS+=	-Wno-deprecated
 
 do-install:
 	@ ${INSTALL_PROGRAM} ${WRKSRC}/battleball ${PREFIX}/bin
@@ -38,4 +32,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
