@@ -29,7 +29,8 @@ COMMENT=	FSF C/C++-gcc-3.2.3 base-port for RTEMS development
 BROKEN=         "Does not build"
 .endif
 
-LCLTARGET?=	i386-rtems
+RTEMS_ARCH?=	i386
+LCLTARGET=	${RTEMS_ARCH}-rtems
 
 GCCVERSION=	3.2.3
 GCCNAME=	gcc-${GCCVERSION}
@@ -64,6 +65,7 @@ PATCH_WRKSRC=		${WRKDIR}
 PATCH_STRIP=		-p
 
 MAKE_FLAGS=	LANGUAGES="c c++"
+MAKE_ENV=	MACHINE_ARCH=${RTEMS_ARCH}
 
 MAN1=		${LCLTARGET}-gcc.1 ${LCLTARGET}-g++.1 \
 		cpp.1 gcov.1 

@@ -9,5 +9,6 @@ PORTNAME=	gcc
 
 MAINTAINER=	jeh@FreeBSD.org
 
-LCLTARGET=	sparc-rtems
+RTEMS_ARCH=	sparc
+
 .include "${.CURDIR}/../i386-rtems-gcc/Makefile"

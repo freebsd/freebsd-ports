@@ -9,5 +9,6 @@ PORTNAME=	gcc
 
 MAINTAINER=	jeh@FreeBSD.org
 
-LCLTARGET=	powerpc-rtems
+RTEMS_ARCH=	powerpc
+
 .include "${.CURDIR}/../i386-rtems-gcc/Makefile"

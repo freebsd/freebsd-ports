@@ -9,5 +9,6 @@ PORTNAME=	gcc
 
 MAINTAINER=	jeh@FreeBSD.org
 
-LCLTARGET=	mips-rtems
+RTEMS_ARCH=	mips
+
 .include "${.CURDIR}/../i386-rtems-gcc/Makefile"
