@@ -5524,6 +5524,7 @@ p5-Term-ReadKey	ports/devel/p5-Term-ReadKey
 p5-Term-Screen	ports/devel/p5-Term-Screen
 p5-Term-Size	ports/devel/p5-Term-Size
 p5-Test-Harness	ports/devel/p5-Test-Harness
+p5-Test-Inline	ports/devel/p5-Test-Inline
 p5-Test-Simple	ports/devel/p5-Test-Simple
 p5-Text-Autoformat	ports/textproc/p5-Text-Autoformat
 p5-Text-Balanced	ports/textproc/p5-Text-Balanced
