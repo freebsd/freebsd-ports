@@ -27,9 +27,9 @@ bin/icon2gif
 bin/gifcolor
 bin/gifcompose
 bin/gifburst
-include/giflib/getarg.h
-include/giflib/gif_hash.h
-include/giflib/gif_lib.h
+include/getarg.h
+include/gif_hash.h
+include/gif_lib.h
 lib/libgif.a
 lib/libgif.so
 lib/libgif.so.3
@@ -74,5 +74,4 @@ share/doc/giflib/raw2gif.html
 share/doc/giflib/rgb2gif.html
 share/doc/giflib/rle2gif.html
 share/doc/giflib/text2gif.html
-@dirrm include/giflib
 @dirrm share/doc/giflib
