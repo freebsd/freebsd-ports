@@ -6,3 +6,5 @@ Local/Library/Pantomime/TCPSSLConnection.bundle/stamp.make
 @dirrm Local/Library/Pantomime/TCPSSLConnection.bundle/%%GNU_ARCH%%
 @dirrm Local/Library/Pantomime/TCPSSLConnection.bundle/Resources
 @dirrm Local/Library/Pantomime/TCPSSLConnection.bundle
+@dirrm Local/Library/Pantomime
+@dirrm Local/Library
