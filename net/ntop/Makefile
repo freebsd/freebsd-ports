@@ -3,14 +3,13 @@
 # Date created:        10 August 1998
 # Whom:                Bill Fumerola <billf@chc-chimes.com>
 #
-# $Id: Makefile,v 1.7 1998/11/18 11:31:43 asami Exp $
+# $Id: Makefile,v 1.8 1999/05/06 20:47:20 billf Exp $
 #
 
 DISTNAME=	ntop-1.1-src
 PKGNAME=	ntop-1.1
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.unipi.it/pub/local/ntop/source/ \
-		ftp://ftp.ee.lbl.gov/ \
 		http://www.freenix.no/~anders/ \
 		ftp://totem.fix.no/pub/mirrors/misc/
 
