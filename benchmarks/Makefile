@@ -16,6 +16,7 @@
     SUBDIR += postmark
     SUBDIR += pybench
     SUBDIR += rawio
+    SUBDIR += siege
     SUBDIR += tcpblast
     SUBDIR += tmetric
     SUBDIR += ubench
