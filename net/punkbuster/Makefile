@@ -36,7 +36,7 @@ PUNKBUSTER_DATA!=	cd ${PUNKBUSTER_DATA_PORT} && ${MAKE} -V PUNKBUSTER_DATA
 PUNKBUSTER_DATA_DISTFILES!=	cd ${PUNKBUSTER_DATA_PORT} && ${MAKE} -V DISTFILES
 PUNKBUSTER_DOC_DIR=	usr/doc/${PKGNAME}/
 
-pre-everything: pkgmessage-output
+pre-everything:: pkgmessage-output
 
 post-extract:
 .for file in ${PUNKBUSTER_DATA_DISTFILES}
