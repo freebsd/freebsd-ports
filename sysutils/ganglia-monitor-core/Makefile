@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ganglia-monitor-core
-PORTVERSION=	2.5.4
+PORTVERSION=	2.5.5
 CATEGORIES=	sysutils net parallel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	ganglia
@@ -22,8 +22,10 @@ LIB_DEPENDS=	rrd.0:${PORTSDIR}/net/rrdtool
 .endif
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+CPPFLAGS=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
+LDFLAGS=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
+
 .if !defined (WITHOUT_GMETAD)
 CONFIGURE_ARGS+=	--with-gmetad
 .endif
@@ -59,6 +61,7 @@ post-patch:
 	    ${FIX_CONF_FILES}
 	${REINPLACE_CMD} -e "s|/var/lib/ganglia|/var/db/ganglia|g" \
 	    ${FIX_DB_FILES}
+	${REINPLACE_CMD} -e 's|-pthread||g' ${WRKSRC}/configure
 
 # Post-install
 #
