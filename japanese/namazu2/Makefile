@@ -1,13 +1,13 @@
 # New ports collection makefile for:	namazu2
-# Version required:	2.0.1
+# Version required:	2.0.2
 # Date created:		25 February 2000
 # Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	namazu-2.0.1
-PKGNAME=	ja-namazu2-2.0.1
+DISTNAME=	namazu-2.0.2
+PKGNAME=	ja-namazu2-2.0.2
 CATEGORIES=	japanese textproc
 MASTER_SITES=	http://www.namazu.org/stable/
 
@@ -19,7 +19,8 @@ BUILD_DEPENDS=	${PM_BASE}/File/MMagic.pm:${PORTSDIR}/devel/p5-File-MMagic \
 		${PM_BASE}/${PERL_ARCH}/NKF.pm:${PORTSDIR}/japanese/p5-nkf
 RUN_DEPENDS=	${PM_BASE}/File/MMagic.pm:${PORTSDIR}/devel/p5-File-MMagic \
 		${PM_BASE}/${PERL_ARCH}/Text/Kakasi.pm:${PORTSDIR}/japanese/p5-Text-Kakasi \
-		${PM_BASE}/${PERL_ARCH}/NKF.pm:${PORTSDIR}/japanese/p5-nkf
+		${PM_BASE}/${PERL_ARCH}/NKF.pm:${PORTSDIR}/japanese/p5-nkf \
+		xlHtml:${PORTSDIR}/textproc/xlhtml
 
 PM_BASE=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}
 
