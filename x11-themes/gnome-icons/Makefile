@@ -30,7 +30,8 @@ RUN_DEPENDS=	${X11BASE}/share/icons/AquaFusion/index.theme:${PORTSDIR}/x11-theme
 		${X11BASE}/share/icons/Slick/index.theme:${PORTSDIR}/x11-themes/gnome-icons-slick \
 		${X11BASE}/share/icons/Snow-Apple/index.theme:${PORTSDIR}/x11-themes/gnome-icons-snow-apple \
 		${X11BASE}/share/icons/stylish/index.theme:${PORTSDIR}/x11-themes/gnome-icons-stylish \
-		${X11BASE}/share/icons/ximian-south/index.theme:${PORTSDIR}/x11-themes/gnome-icons-ximian-south
+		${X11BASE}/share/icons/ximian-south/index.theme:${PORTSDIR}/x11-themes/gnome-icons-ximian-south \
+		${X11BASE}/share/icons/Lila/index.theme:${PORTSDIR}/x11-themes/gnome-icons-lila
 
 NO_BUILD=	yes
 

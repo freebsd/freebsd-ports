@@ -25,6 +25,7 @@
     SUBDIR += gnome-icons-crystal
     SUBDIR += gnome-icons-gentoo-test
     SUBDIR += gnome-icons-iris
+    SUBDIR += gnome-icons-lila
     SUBDIR += gnome-icons-noia-full
     SUBDIR += gnome-icons-noia-warm
     SUBDIR += gnome-icons-refined
