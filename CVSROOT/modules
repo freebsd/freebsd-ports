@@ -1624,6 +1624,7 @@ gentoo		ports/x11-fm/gentoo
 geomview	ports/graphics/geomview
 geotrace	ports/net/geotrace
 getNAME		src/libexec/getNAME
+geta		ports/net/geta
 getbdf		ports/x11-fonts/getbdf
 getconf		src/usr.bin/getconf
 getfacl		src/bin/getfacl
