@@ -18,6 +18,7 @@
     SUBDIR += libdivxencore
     SUBDIR += libdv
     SUBDIR += libdvdcss
+    SUBDIR += libdvdplay
     SUBDIR += libdvdread
     SUBDIR += libmovtar
     SUBDIR += libmpeg2
