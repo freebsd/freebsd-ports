@@ -8,7 +8,8 @@
 PORTNAME=	buttonbox
 PORTVERSION=	0.03
 CATEGORIES=	x11
-MASTER_SITES=	http://www.sto-kerrig.org/free-software/projects/button-box/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	trevor
 DISTNAME=	${PORTNAME:S/b/B/g}-${PORTVERSION}
 
 MAINTAINER=	trevor@FreeBSD.org
