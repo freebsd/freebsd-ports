@@ -2751,7 +2751,6 @@ jumpgate	ports/net/jumpgate
 junglemonkey	ports/ftp/junglemonkey
 junit		ports/java/junit
 junkbuster	ports/www/junkbuster
-junkbuster-zlib	ports/www/junkbuster-zlib
 junkfilter	ports/mail/junkfilter
 juno-2		ports/graphics/juno-2
 jwhois		ports/net/jwhois
