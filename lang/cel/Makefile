@@ -21,6 +21,12 @@ DOCFILES=	CoreArchitecture.html DefaultProtos Linker.html \
 		Logs.html ProtoLanguage.html README SimpleDataFormat.html \
 		Threads activation.html stackframe structure.html todo.html
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} > 500000
+BROKEN=		"Does not compile"
+.endif
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/vm/cel ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
@@ -30,4 +36,4 @@ do-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
