@@ -22,10 +22,13 @@
 # OUT OF THE USE OF THIS SOFTWARE, EVEN	IF ADVISED OF THE POSSIBILITY OF
 # SUCH DAMAGE.
 #
+# $FreeBSD$
+#
 
 SYS?=		/sys
 NOMAN=		YES
 KMOD=		rtc
+KMODDEPS=	linux
 CDEV_MAJOR?=	202
 DEVNAME= 	${KMOD}
 SRCS=		rtc.c rtc_linux.c vnode_if.h
