@@ -1,0 +1,14 @@
+--- Imakefile.orig	Thu May  7 03:31:13 1998
++++ Imakefile	Wed Nov  1 13:28:45 2000
+@@ -15,9 +15,11 @@
+ 
+ LOCAL_LIBRARIES = $(XLIB)
+ EXTRA_DEFINES = -DLIBNAME=\"$(LIBNAME)\"
++MANSUFFIX=6
+ 
+ ComplexProgramTarget(scavenger)
+ AllTarget(scavserver)
+ NormalProgramTarget(scavserver,scavserver.o,,,)
+ InstallProgram(scavserver,$(LIBNAME))
+ InstallMultipleFlags($(LIB_DATA),$(LIBNAME),-m 644)
++install:: install.man
