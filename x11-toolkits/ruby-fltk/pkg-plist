@@ -1,5 +1,9 @@
 %%RUBY_SITEARCHLIBDIR%%/rubyfltk.so
 %%RUBY_SITELIBDIR%%/fltk.rb
+%%RUBY_SITELIBDIR%%/fltk/drawable.rb
+%%RUBY_SITELIBDIR%%/fltk/listbox.rb
+@dirrm %%RUBY_SITELIBDIR%%/fltk
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/fltk/othello.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/fltk/sample1.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/fltk/sample2.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/fltk/sample3.rb
@@ -7,6 +11,14 @@
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/fltk/sample5.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/fltk/sample6.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/fltk/sample7.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/fltk/sample8.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/fltk/sample9.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/fltk/sample10.rb
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/fltk
+%%PORTDOCS%%%%RUBY_DOCDIR%%/fltk/Changes
+%%PORTDOCS%%%%RUBY_DOCDIR%%/fltk/faq.txt
 %%PORTDOCS%%%%RUBY_DOCDIR%%/fltk/guide.txt
+%%PORTDOCS%%%%RUBY_DOCDIR%%/fltk/reference.txt
+%%PORTDOCS%%%%RUBY_DOCDIR%%/fltk/ja/guide.txt
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/fltk/ja
 %%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/fltk
