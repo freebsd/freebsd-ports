@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nd
-PORTVERSION=	0.7.0
+PORTVERSION=	0.7.1
 CATEGORIES=	www
 MASTER_SITES=	http://www.gohome.org/teranisi/
 
