@@ -9,9 +9,6 @@ libexec/ifmail/iftoss
 libexec/ifmail/ifunpack
 libexec/ifmail/nlpatch
 @dirrm libexec/ifmail
-man/man3/parsedate.3.gz
-man/man8/ifmail.8.gz
-man/man8/iftoss.8.gz
 share/doc/ifmail/README
 share/doc/ifmail/README.ifcico
 share/doc/ifmail/README.ifgate

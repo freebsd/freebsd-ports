@@ -32,8 +32,6 @@ etc/nntpcache/spam.filter
 etc/nntpcache/spamhippo.asc-dist
 etc/rc.d/nntpcached.sh.sample
 include/mmap_results.h
-man/man8/newshound.8.gz
-man/man8/nntpcached.8.gz
 sbin/innreport.sh
 sbin/newshound
 sbin/nntpcached

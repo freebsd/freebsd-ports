@@ -1,5 +1,4 @@
 bin/slnr
-man/man1/slnr.1.gz
 share/doc/slnr/LICENSE
 share/doc/slnr/porting.notes
 share/doc/slnr/soup12.doc
