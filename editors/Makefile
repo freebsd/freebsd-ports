@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.64 1999/01/09 03:19:23 asami Exp $
+# $Id: Makefile,v 1.65 1999/01/16 07:44:10 kuriyama Exp $
 #
 
     SUBDIR += apel-emacs
@@ -29,6 +29,8 @@
     SUBDIR += nvi-perl
     SUBDIR += offix-editor
     SUBDIR += sam
+    SUBDIR += semi-emacs20
+    SUBDIR += semi-emacs20-current
     SUBDIR += staroffice
     SUBDIR += sted
     SUBDIR += textedit
@@ -39,6 +41,8 @@
     SUBDIR += vilearn
     SUBDIR += vim4
     SUBDIR += vim5
+    SUBDIR += wemi-emacs20
+    SUBDIR += wemi-emacs20-current
     SUBDIR += wily
     SUBDIR += wordperfect
     SUBDIR += xcoral
