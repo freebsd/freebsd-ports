@@ -3,11 +3,11 @@
 # Date created:		October 21st 1996
 # Whom:			jfitz
 #
-# $Id: Makefile,v 1.9 1997/05/07 19:51:22 ache Exp $
+# $Id: Makefile,v 1.11 1998/04/09 12:49:01 ache Exp $
 #
 
-DISTNAME=       analog2.90beta4
-PKGNAME=        analog-2.90b4
+DISTNAME=       analog3.0
+PKGNAME=        analog-3.0
 CATEGORIES=	www
 MASTER_SITES=   http://www.statslab.cam.ac.uk/~sret1/analog/ \
 		http://www.lightside.net/analog/ \
