@@ -58,8 +58,10 @@ pre-fetch:
 	@${ECHO} --
 .endif
 
+post-extract:
+	${MV} ${WRKDIR}/chewing ${WRKSRC}/src/Cinput
+
 post-patch:
-	@mv ${WRKDIR}/chewing ${WRKSRC}/src/Cinput
 	@cd ${WRKSRC}/src/Cinput/chewing; ${SH} ./patch_chewing
 
 post-install:
