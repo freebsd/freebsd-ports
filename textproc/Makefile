@@ -99,6 +99,7 @@
     SUBDIR += dtdparse
     SUBDIR += easydiff
     SUBDIR += el-aspell
+    SUBDIR += emacs-wiki
     SUBDIR += enchant
     SUBDIR += eo-aspell
     SUBDIR += eruby
