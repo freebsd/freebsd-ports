@@ -8,6 +8,7 @@ rt3/bin/rt-mailgate
 rt3/bin/webmux.pl
 rt3/etc/RT_Config.pm
 rt3/etc/RT_SiteConfig.pm
+rt3/etc/acl.Informix
 rt3/etc/acl.Oracle
 rt3/etc/acl.Pg
 rt3/etc/acl.mysql
@@ -31,9 +32,11 @@ rt3/lib/RT/Action/Generic.pm
 rt3/lib/RT/Action/LightWeightSendMail.pm
 rt3/lib/RT/Action/Notify.pm
 rt3/lib/RT/Action/NotifyAsComment.pm
+rt3/lib/RT/Action/Notify_Vendor.pm
 rt3/lib/RT/Action/ResolveMembers.pm
 rt3/lib/RT/Action/SendEmail.pm
 rt3/lib/RT/Action/SetPriority.pm
+rt3/lib/RT/Action/SetStatus.pm
 rt3/lib/RT/Action/StallDependent.pm
 rt3/lib/RT/Action/SystemNotify.pm
 rt3/lib/RT/Action/UserDefined.pm
@@ -78,6 +81,7 @@ rt3/lib/RT/GroupMember_Overlay.pm
 rt3/lib/RT/GroupMembers.pm
 rt3/lib/RT/GroupMembers_Overlay.pm
 rt3/lib/RT/Group_Overlay.pm
+rt3/lib/RT/Group_Vendor.pm
 rt3/lib/RT/Groups.pm
 rt3/lib/RT/Groups_Overlay.pm
 rt3/lib/RT/Groups_Vendor.pm
@@ -85,12 +89,14 @@ rt3/lib/RT/Handle.pm
 rt3/lib/RT/I18N.pm
 rt3/lib/RT/I18N/cs.pm
 rt3/lib/RT/I18N/cs.po
+rt3/lib/RT/I18N/da.po
 rt3/lib/RT/I18N/de.po
 rt3/lib/RT/I18N/en.po
 rt3/lib/RT/I18N/es.po
 rt3/lib/RT/I18N/fi.po
 rt3/lib/RT/I18N/fr.po
 rt3/lib/RT/I18N/he.po
+rt3/lib/RT/I18N/hu.po
 rt3/lib/RT/I18N/i_default.pm
 rt3/lib/RT/I18N/it.po
 rt3/lib/RT/I18N/ja.po
@@ -138,6 +144,7 @@ rt3/lib/RT/Scrips.pm
 rt3/lib/RT/Scrips_Overlay.pm
 rt3/lib/RT/Search/ActiveTicketsInQueue.pm
 rt3/lib/RT/Search/Generic.pm
+rt3/lib/RT/Search/OpenTicketsInQueue.pm
 rt3/lib/RT/SearchBuilder.pm
 rt3/lib/RT/SearchBuilder_Vendor.pm
 rt3/lib/RT/StyleGuide.pod
@@ -156,6 +163,7 @@ rt3/lib/RT/Ticket_Vendor.pm
 rt3/lib/RT/Tickets.pm
 rt3/lib/RT/Tickets_Overlay.pm
 rt3/lib/RT/Tickets_Overlay_SQL.pm
+rt3/lib/RT/Tickets_Vendor.pm
 rt3/lib/RT/Transaction.pm
 rt3/lib/RT/Transaction_Overlay.pm
 rt3/lib/RT/Transaction_Vendor.pm
@@ -190,44 +198,23 @@ rt3/lib/t/data/8859-15-message-series/msg4
 rt3/lib/t/data/8859-15-message-series/msg5
 rt3/lib/t/data/8859-15-message-series/msg6
 rt3/lib/t/data/8859-15-message-series/msg7
+rt3/lib/t/data/crashes-file-based-parser
 rt3/lib/t/data/multipart-alternative-with-umlaut
 rt3/lib/t/data/multipart-report
 rt3/lib/t/data/nested-mime-sample
 rt3/lib/t/data/nested-rfc-822
 rt3/lib/t/data/new-ticket-from-iso-8859-1
 rt3/lib/t/data/new-ticket-from-iso-8859-1-full
+rt3/lib/t/data/notes-uuencoded
 rt3/lib/t/data/russian-subject-no-content-type
 rt3/lib/t/data/text-html-in-russian
 rt3/lib/t/data/text-html-with-umlaut
 rt3/lib/t/regression/00placeholder
 rt3/lib/t/regression/mime_tests
+rt3/local/etc/batch_template.txt
+rt3/local/etc/create_topics.pl
 rt3/local/etc/schema.Pg
 rt3/local/etc/schema.mysql
-rt3/local/html/Callbacks/Entry/Ticket/Modify.html/Default
-rt3/local/html/Callbacks/Journal/Elements/Tabs/Default
-rt3/local/html/Callbacks/OverrideGlobalACL/Admin/Queues/GroupRights.html/Default
-rt3/local/html/Callbacks/OverrideGlobalACL/Admin/Queues/Modify.html/Default
-rt3/local/html/Callbacks/OverrideGlobalACL/Admin/Queues/UserRights.html/Default
-rt3/local/html/Callbacks/TabbedUI/Elements/Header/Default
-rt3/local/html/Callbacks/Todo/Elements/Tabs/Default
-rt3/local/html/Callbacks/Workflow/Admin/Elements/EditTemplates/Default
-rt3/local/html/Callbacks/Workflow/Admin/Elements/EditWorkflows/Default
-rt3/local/html/Callbacks/Workflow/Admin/Elements/QueueTabs/Default
-rt3/local/html/Callbacks/Workflow/Admin/Elements/SystemTabs/Default
-rt3/local/html/Callbacks/Workflow/Admin/Global/index.html/Default
-rt3/local/html/Journal/Article.html
-rt3/local/html/Journal/Edit.html
-rt3/local/html/Journal/Elements/Search
-rt3/local/html/Journal/Elements/Tabs
-rt3/local/html/Journal/Post.html
-rt3/local/html/Journal/Show.html
-rt3/local/html/Journal/index.html
-rt3/local/html/Todo/index.html
-rt3/local/po/Journal/zh_cn.po
-rt3/local/po/Journal/zh_tw.po
-rt3/local/po/Todo/zh_cn.po
-rt3/local/po/Todo/zh_tw.po
-rt3/sbin/rt-dump-database
 rt3/sbin/rt-setup-database
 rt3/sbin/rt-test-dependencies
 rt3/share/doc/README
@@ -310,6 +297,16 @@ rt3/share/html/Approvals/Elements/PendingMyApproval
 rt3/share/html/Approvals/Elements/ShowDependency
 rt3/share/html/Approvals/Elements/Tabs
 rt3/share/html/Approvals/index.html
+rt3/share/html/Callbacks/Entry/Ticket/Modify.html/Default
+rt3/share/html/Callbacks/OverrideGlobalACL/Admin/Queues/GroupRights.html/Default
+rt3/share/html/Callbacks/OverrideGlobalACL/Admin/Queues/Modify.html/Default
+rt3/share/html/Callbacks/OverrideGlobalACL/Admin/Queues/UserRights.html/Default
+rt3/share/html/Callbacks/TabbedUI/Elements/Header/Default
+rt3/share/html/Callbacks/Todo/Elements/Tabs/Default
+rt3/share/html/Developer/CronTool.html
+rt3/share/html/Developer/Log/dhandler
+rt3/share/html/Developer/Perldoc.html
+rt3/share/html/Developer/autohandler
 rt3/share/html/Edit/Elements/104Buttons
 rt3/share/html/Edit/Elements/104Header
 rt3/share/html/Edit/Elements/104Top
@@ -323,13 +320,17 @@ rt3/share/html/Edit/Elements/ListButtons
 rt3/share/html/Edit/Elements/MoreStyles
 rt3/share/html/Edit/Elements/NewWindow
 rt3/share/html/Edit/Elements/Page
+rt3/share/html/Edit/Elements/PickUser
 rt3/share/html/Edit/Elements/PickUsers
 rt3/share/html/Edit/Elements/PopFooter
 rt3/share/html/Edit/Elements/PopHeader
 rt3/share/html/Edit/Elements/Postamble
 rt3/share/html/Edit/Elements/Preamble
+rt3/share/html/Edit/Elements/ProcedureOptions
 rt3/share/html/Edit/Elements/PushButton
+rt3/share/html/Edit/Elements/Redirect
 rt3/share/html/Edit/Elements/SelectCustomFieldType
+rt3/share/html/Edit/Elements/SelectQueues
 rt3/share/html/Edit/Elements/SelectTemplate
 rt3/share/html/Edit/Elements/SelectUsers
 rt3/share/html/Edit/Elements/Tab
@@ -365,6 +366,7 @@ rt3/share/html/Edit/Global/Workflow/Owner.html
 rt3/share/html/Edit/Global/Workflow/Top
 rt3/share/html/Edit/Global/Workflow/index.html
 rt3/share/html/Edit/Global/autohandler
+rt3/share/html/Edit/Global/index.html
 rt3/share/html/Edit/Groups/Admin
 rt3/share/html/Edit/Groups/AdminGroups/Add.html
 rt3/share/html/Edit/Groups/AdminGroups/List
@@ -391,6 +393,7 @@ rt3/share/html/Edit/Queues/Category/List
 rt3/share/html/Edit/Queues/Category/Top
 rt3/share/html/Edit/Queues/Category/index.html
 rt3/share/html/Edit/Queues/CustomField/index.html
+rt3/share/html/Edit/Queues/DoSearch
 rt3/share/html/Edit/Queues/Global
 rt3/share/html/Edit/Queues/GroupRight/Add.html
 rt3/share/html/Edit/Queues/GroupRight/index.html
@@ -398,6 +401,7 @@ rt3/share/html/Edit/Queues/List
 rt3/share/html/Edit/Queues/Rights/index.html
 rt3/share/html/Edit/Queues/Scrip/index.html
 rt3/share/html/Edit/Queues/Template/index.html
+rt3/share/html/Edit/Queues/Top
 rt3/share/html/Edit/Queues/UserRight/Add.html
 rt3/share/html/Edit/Queues/UserRight/index.html
 rt3/share/html/Edit/Queues/Workflow/Export.html
@@ -409,6 +413,7 @@ rt3/share/html/Edit/Queues/index.html
 rt3/share/html/Edit/Rights/index.html
 rt3/share/html/Edit/Users/Add.html
 rt3/share/html/Edit/Users/Delegate
+rt3/share/html/Edit/Users/DoSearch
 rt3/share/html/Edit/Users/Group
 rt3/share/html/Edit/Users/Info
 rt3/share/html/Edit/Users/List
@@ -420,6 +425,7 @@ rt3/share/html/Edit/Users/Top
 rt3/share/html/Edit/Users/index.html
 rt3/share/html/Edit/autohandler
 rt3/share/html/Edit/index.html
+rt3/share/html/Edit/styles.css
 rt3/share/html/Elements/BevelBoxRaisedEnd
 rt3/share/html/Elements/BevelBoxRaisedStart
 rt3/share/html/Elements/Callback
@@ -436,6 +442,7 @@ rt3/share/html/Elements/MessageBox
 rt3/share/html/Elements/MyRequests
 rt3/share/html/Elements/MyTickets
 rt3/share/html/Elements/PageLayout
+rt3/share/html/Elements/QueryString
 rt3/share/html/Elements/Quicksearch
 rt3/share/html/Elements/Refresh
 rt3/share/html/Elements/Section
@@ -472,8 +479,8 @@ rt3/share/html/Elements/TitleBoxEnd
 rt3/share/html/Elements/TitleBoxStart
 rt3/share/html/Elements/ViewUser
 rt3/share/html/NoAuth/Logout.html
-rt3/share/html/NoAuth/Pod.html
 rt3/share/html/NoAuth/Reminder.html
+rt3/share/html/NoAuth/auth.js
 rt3/share/html/NoAuth/images/back_home.gif
 rt3/share/html/NoAuth/images/bplogo.gif
 rt3/share/html/NoAuth/images/favicon.png
@@ -484,10 +491,12 @@ rt3/share/html/NoAuth/images/spacer.gif
 rt3/share/html/NoAuth/images/squares_blue.gif
 rt3/share/html/NoAuth/webrt.css
 rt3/share/html/REST/0.0/NoAuth/has_member
+rt3/share/html/REST/0.0/NoAuth/stall_overdue_approvals
 rt3/share/html/REST/1.0/Forms/queue/default
 rt3/share/html/REST/1.0/Forms/queue/ns
 rt3/share/html/REST/1.0/Forms/ticket/attachments
 rt3/share/html/REST/1.0/Forms/ticket/default
+rt3/share/html/REST/1.0/Forms/ticket/history
 rt3/share/html/REST/1.0/Forms/ticket/links
 rt3/share/html/REST/1.0/Forms/user/default
 rt3/share/html/REST/1.0/Forms/user/ns
@@ -532,6 +541,8 @@ rt3/share/html/Ticket/Elements/EditDates
 rt3/share/html/Ticket/Elements/EditLinks
 rt3/share/html/Ticket/Elements/EditPeople
 rt3/share/html/Ticket/Elements/EditWatchers
+rt3/share/html/Ticket/Elements/FindAttachments
+rt3/share/html/Ticket/Elements/LoadTextAttachments
 rt3/share/html/Ticket/Elements/ShowAttachments
 rt3/share/html/Ticket/Elements/ShowBasics
 rt3/share/html/Ticket/Elements/ShowCustomFields
@@ -557,6 +568,7 @@ rt3/share/html/Ticket/ModifyDates.html
 rt3/share/html/Ticket/ModifyLinks.html
 rt3/share/html/Ticket/ModifyPeople.html
 rt3/share/html/Ticket/Update.html
+rt3/share/html/Todo/index.html
 rt3/share/html/User/Delegation.html
 rt3/share/html/User/Elements/DelegateRights
 rt3/share/html/User/Elements/GroupTabs
@@ -565,9 +577,13 @@ rt3/share/html/User/Groups/Members.html
 rt3/share/html/User/Groups/Modify.html
 rt3/share/html/User/Groups/index.html
 rt3/share/html/User/Prefs.html
+rt3/share/html/Work/Approvals/Add.html
+rt3/share/html/Work/Approvals/Batch.html
 rt3/share/html/Work/Approvals/Count.html
 rt3/share/html/Work/Approvals/Display.html
+rt3/share/html/Work/Approvals/Elements/Actions
 rt3/share/html/Work/Approvals/Elements/Approve
+rt3/share/html/Work/Approvals/Elements/ShowApproval
 rt3/share/html/Work/Approvals/Update.html
 rt3/share/html/Work/Approvals/index.html
 rt3/share/html/Work/Copyright.html
@@ -619,7 +635,7 @@ rt3/share/html/Work/Search/TicketHeader
 rt3/share/html/Work/Search/TicketHeaderCell
 rt3/share/html/Work/Search/TicketRow
 rt3/share/html/Work/Search/index.html
-rt3/share/html/Work/Tickets/Attachment
+rt3/share/html/Work/Tickets/Attachment/dhandler
 rt3/share/html/Work/Tickets/Cc
 rt3/share/html/Work/Tickets/Create.html
 rt3/share/html/Work/Tickets/Display.html
@@ -645,6 +661,7 @@ rt3/share/html/Work/Tickets/Elements/ShowContent
 rt3/share/html/Work/Tickets/Elements/ShowCustomField
 rt3/share/html/Work/Tickets/Elements/ShowCustomFieldEntries
 rt3/share/html/Work/Tickets/Elements/ShowCustomFields
+rt3/share/html/Work/Tickets/Elements/ShowHTMLAttr
 rt3/share/html/Work/Tickets/Elements/ShowHints
 rt3/share/html/Work/Tickets/Elements/ShowHistory
 rt3/share/html/Work/Tickets/Elements/ShowLink
@@ -662,7 +679,7 @@ rt3/share/html/Work/Tickets/index.html
 rt3/share/html/Work/autohandler
 rt3/share/html/Work/index.html
 rt3/share/html/autohandler
-rt3/share/html/docs/autohandler
+rt3/share/html/cgi-bin/initdb.cgi
 rt3/share/html/function/ClearDefault.js
 rt3/share/html/function/DynaTD.js
 rt3/share/html/function/MM_findObj.js
@@ -670,7 +687,6 @@ rt3/share/html/function/MM_openBrWindow.js
 rt3/share/html/function/Menu.txt
 rt3/share/html/function/OpenFullWindow.js
 rt3/share/html/function/Pro.js
-rt3/share/html/function/Pro.txt
 rt3/share/html/function/ReportEdit.js
 rt3/share/html/function/Top.js
 rt3/share/html/function/apPopupMenu.class
@@ -771,10 +787,10 @@ rt3/share/html/img/topTransOutDisabled.png
 rt3/share/html/img/top_logo.png
 rt3/share/html/img/topcolorBox.png
 rt3/share/html/index.html
-rt3/share/html/initdb.cgi
 rt3/share/html/l
+rt3/share/html/stylesheet/104.css
+rt3/share/html/stylesheet/gecko.css
 rt3/share/html/stylesheet/style.css
-
 @dirrm rt3/var/session_data
 @dirrm rt3/var/mason_data/obj
 @dirrm rt3/var/mason_data/etc
@@ -786,8 +802,9 @@ rt3/share/html/stylesheet/style.css
 @dirrm rt3/share/html/img
 @dirrm rt3/share/html/function/pix
 @dirrm rt3/share/html/function
-@dirrm rt3/share/html/docs
+@dirrm rt3/share/html/cgi-bin
 @dirrm rt3/share/html/Work/Tickets/Elements
+@dirrm rt3/share/html/Work/Tickets/Attachment
 @dirrm rt3/share/html/Work/Tickets
 @dirrm rt3/share/html/Work/Search
 @dirrm rt3/share/html/Work/Requests
@@ -802,6 +819,7 @@ rt3/share/html/stylesheet/style.css
 @dirrm rt3/share/html/User/Groups
 @dirrm rt3/share/html/User/Elements
 @dirrm rt3/share/html/User
+@dirrm rt3/share/html/Todo
 @dirrm rt3/share/html/Ticket/Elements
 @dirrm rt3/share/html/Ticket/Attachment
 @dirrm rt3/share/html/Ticket
@@ -852,6 +870,24 @@ rt3/share/html/stylesheet/style.css
 @dirrm rt3/share/html/Edit/Global
 @dirrm rt3/share/html/Edit/Elements
 @dirrm rt3/share/html/Edit
+@dirrm rt3/share/html/Developer/Log
+@dirrm rt3/share/html/Developer
+@dirrm rt3/share/html/Callbacks/Todo/Elements/Tabs
+@dirrm rt3/share/html/Callbacks/Todo/Elements
+@dirrm rt3/share/html/Callbacks/Todo
+@dirrm rt3/share/html/Callbacks/TabbedUI/Elements/Header
+@dirrm rt3/share/html/Callbacks/TabbedUI/Elements
+@dirrm rt3/share/html/Callbacks/TabbedUI
+@dirrm rt3/share/html/Callbacks/OverrideGlobalACL/Admin/Queues/UserRights.html
+@dirrm rt3/share/html/Callbacks/OverrideGlobalACL/Admin/Queues/Modify.html
+@dirrm rt3/share/html/Callbacks/OverrideGlobalACL/Admin/Queues/GroupRights.html
+@dirrm rt3/share/html/Callbacks/OverrideGlobalACL/Admin/Queues
+@dirrm rt3/share/html/Callbacks/OverrideGlobalACL/Admin
+@dirrm rt3/share/html/Callbacks/OverrideGlobalACL
+@dirrm rt3/share/html/Callbacks/Entry/Ticket/Modify.html
+@dirrm rt3/share/html/Callbacks/Entry/Ticket
+@dirrm rt3/share/html/Callbacks/Entry
+@dirrm rt3/share/html/Callbacks
 @dirrm rt3/share/html/Approvals/Elements
 @dirrm rt3/share/html/Approvals
 @dirrm rt3/share/html/Admin/Users
@@ -864,40 +900,7 @@ rt3/share/html/stylesheet/style.css
 @dirrm rt3/share/doc
 @dirrm rt3/share
 @dirrm rt3/sbin
-@dirrm rt3/local/po/Todo
-@dirrm rt3/local/po/Journal
 @dirrm rt3/local/po
-@dirrm rt3/local/html/Todo
-@dirrm rt3/local/html/Journal/Elements
-@dirrm rt3/local/html/Journal
-@dirrm rt3/local/html/Callbacks/Workflow/Admin/Global/index.html
-@dirrm rt3/local/html/Callbacks/Workflow/Admin/Global
-@dirrm rt3/local/html/Callbacks/Workflow/Admin/Elements/SystemTabs
-@dirrm rt3/local/html/Callbacks/Workflow/Admin/Elements/QueueTabs
-@dirrm rt3/local/html/Callbacks/Workflow/Admin/Elements/EditWorkflows
-@dirrm rt3/local/html/Callbacks/Workflow/Admin/Elements/EditTemplates
-@dirrm rt3/local/html/Callbacks/Workflow/Admin/Elements
-@dirrm rt3/local/html/Callbacks/Workflow/Admin
-@dirrm rt3/local/html/Callbacks/Workflow
-@dirrm rt3/local/html/Callbacks/Todo/Elements/Tabs
-@dirrm rt3/local/html/Callbacks/Todo/Elements
-@dirrm rt3/local/html/Callbacks/Todo
-@dirrm rt3/local/html/Callbacks/TabbedUI/Elements/Header
-@dirrm rt3/local/html/Callbacks/TabbedUI/Elements
-@dirrm rt3/local/html/Callbacks/TabbedUI
-@dirrm rt3/local/html/Callbacks/OverrideGlobalACL/Admin/Queues/UserRights.html
-@dirrm rt3/local/html/Callbacks/OverrideGlobalACL/Admin/Queues/Modify.html
-@dirrm rt3/local/html/Callbacks/OverrideGlobalACL/Admin/Queues/GroupRights.html
-@dirrm rt3/local/html/Callbacks/OverrideGlobalACL/Admin/Queues
-@dirrm rt3/local/html/Callbacks/OverrideGlobalACL/Admin
-@dirrm rt3/local/html/Callbacks/OverrideGlobalACL
-@dirrm rt3/local/html/Callbacks/Journal/Elements/Tabs
-@dirrm rt3/local/html/Callbacks/Journal/Elements
-@dirrm rt3/local/html/Callbacks/Journal
-@dirrm rt3/local/html/Callbacks/Entry/Ticket/Modify.html
-@dirrm rt3/local/html/Callbacks/Entry/Ticket
-@dirrm rt3/local/html/Callbacks/Entry
-@dirrm rt3/local/html/Callbacks
 @dirrm rt3/local/html
 @dirrm rt3/local/etc
 @dirrm rt3/local
