@@ -1,5 +1,5 @@
---- makefile.std.orig	Mon Apr 21 15:44:23 2003
-+++ makefile.std	Sat Jul  5 18:53:04 2003
+--- makefile.std.orig	Thu Dec 11 12:32:41 2003
++++ makefile.std	Fri Dec 12 11:53:31 2003
 @@ -81,18 +81,19 @@
  # Sysadmins of commercial Unix and/or BSD might prefer this
  #LIBDIR = /usr/local/lib/tome/
@@ -32,7 +32,7 @@
  
  # Profiling options
  # PROFILECOPTS = -pg
-@@ -152,14 +153,12 @@
+@@ -152,12 +153,12 @@
  # including "USE_GETCH" and "USE_CURS_SET".  Note that "config.h" will
  # attempt to "guess" at many of these flags based on your system.
  #
@@ -40,17 +40,15 @@
 -INCLUDES = -I/usr/X11R6/include
 +COPTS = -Wall -g
 +INCLUDES = -I$(X11BASE)/include
- DEFINES = -DUSE_X11 -DUSE_GCU \
+ DEFINES = -DUSE_X11 \
  	-DUSE_EGO_GRAPHICS -DUSE_TRANSPARENCY -DSUPPORT_GAMMA \
  	-DUSE_PRECISE_CMOVIE -DUSE_UNIXSOCK
--LIBS = -lX11 -lcurses -L/usr/X11R6/lib
--
--
+-LIBS = -lX11 -L/usr/X11R6/lib
 +LIBS = -lX11 -lcurses -L$(X11BASE)/lib
  
- ##
- ## Variation -- Only support "main-gtk.c" (not "main-gcu.c, main-x11.c")
-@@ -383,7 +382,7 @@
+ 
+ 
+@@ -383,7 +384,7 @@
  # Compiler options
  #
  
@@ -59,7 +57,7 @@
  
  
  #
-@@ -457,10 +456,12 @@
+@@ -457,10 +458,12 @@
  	[ -d $(DESTDIR)$(LIBDIR) ] || mkdir -p $(DESTDIR)$(LIBDIR)
  	[ -d $(DESTDIR)$(BINDIR) ] || mkdir -p $(DESTDIR)$(BINDIR)
  	cp -r ../lib/* $(DESTDIR)$(LIBDIR)
