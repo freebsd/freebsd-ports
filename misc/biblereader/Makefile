@@ -14,6 +14,8 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A GUI based Bible program for X11
 
+BROKEN=		"Does not fetch"
+
 USE_BZIP2=	yes
 USE_GNOME=	gtk12
 USE_REINPLACE=	yes
