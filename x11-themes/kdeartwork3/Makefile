@@ -19,7 +19,7 @@ COMMENT=	Additional themes, sounds, wallpapers and window styles for KDE
 USE_KDEBASE_VER=3
 PREFIX=		${KDE_PREFIX}
 
-USE_MESA=	yes
+USE_GL=		yes
 USE_BZIP2=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
