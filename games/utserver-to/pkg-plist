@@ -73,20 +73,33 @@
 %%PORTDOCS%%%%UTDIR%%Help/TacticalOps.ico
 %%PORTDOCS%%%%UTDIR%%Help/TacticalOps2.ico
 %%PORTDOCS%%%%UTDIR%%Help/TacticalOps3.ico
+%%PORTDOCS%%%%UTDIR%%Help/TacticalOpsLogo.bmp
 %%UTDIR%%System/TOSystem.int
 %%UTDIR%%System/TOUT.int
+%%UTDIR%%System/TacticalOps.exe
 %%UTDIR%%System/TacticalOps.ini
+%%UTDIR%%System/TacticalOps.int
 %%UTDIR%%System/TacticalOpsLinuxLauncher
 %%UTDIR%%System/TacticalOpsLinuxServer
 %%UTDIR%%System/TacticalOpsLinuxServer2
+%%UTDIR%%System/TacticalOpsMacLauncher.sit
+%%UTDIR%%System/TacticalOpsWinLauncher.bat
+%%UTDIR%%System/TacticalOpsWinLauncherLink.lnk
+%%UTDIR%%System/TacticalOpsWinServer.bat
 %%UTDIR%%System/s_SWAT.int
 %%UTDIR%%TacticalOps/Bind_AmmoWeaponsItems.txt
 %%UTDIR%%TacticalOps/Extra/DefaultINIfile/TacticalOpsLinux.ini
+%%UTDIR%%TacticalOps/Extra/DefaultINIfile/TacticalOpsMac.ini
+%%UTDIR%%TacticalOps/Extra/DefaultINIfile/TacticalOpsMacX.ini
+%%UTDIR%%TacticalOps/Extra/DefaultINIfile/TacticalOpsWindows.ini
+%%UTDIR%%TacticalOps/Extra/GameSpyTab/TacticalOps.qst
+%%UTDIR%%TacticalOps/Extra/GameSpyTab/WARNING.txt
 %%UTDIR%%TacticalOps/Extra/LinuxServerCmd/readme.txt
 %%UTDIR%%TacticalOps/Extra/LinuxServerCmd/ut3.dat
-%%UTDIR%%TacticalOps/History.txt
-%%UTDIR%%TacticalOps/Install.txt
-%%UTDIR%%TacticalOps/License.txt
+%%PORTDOCS%%%%UTDIR%%TacticalOps/History.txt
+%%PORTDOCS%%%%UTDIR%%TacticalOps/Install.txt
+%%PORTDOCS%%%%UTDIR%%TacticalOps/License.txt
+%%UTDIR%%TacticalOps/Maps/CreditsTO.unr
 %%UTDIR%%TacticalOps/Maps/Entry.unr
 %%UTDIR%%TacticalOps/Maps/TO-Blister.unr
 %%UTDIR%%TacticalOps/Maps/TO-Forge.unr
@@ -101,13 +114,17 @@
 %%UTDIR%%TacticalOps/Maps/TO-Resurrection.unr
 %%UTDIR%%TacticalOps/Maps/TO-Scope.unr
 %%UTDIR%%TacticalOps/Maps/TO-Spynet2.unr
+%%UTDIR%%TacticalOps/Maps/TO-Thunderball2.unr
 %%UTDIR%%TacticalOps/Maps/TO-TrainStation.unr
+%%UTDIR%%TacticalOps/Maps/TO-Trooper2.unr
 %%UTDIR%%TacticalOps/Maps/TO-Verdon.unr
 %%UTDIR%%TacticalOps/Music/WarGate.umx
 %%UTDIR%%TacticalOps/Music/Winter.umx
 %%UTDIR%%TacticalOps/Sounds/Bird.uax
 %%UTDIR%%TacticalOps/Sounds/TO-Spinex.uax
 %%UTDIR%%TacticalOps/Sounds/TOsoundpack.uax
+%%UTDIR%%TacticalOps/Sounds/VoiceMaleSF1.uax
+%%UTDIR%%TacticalOps/Sounds/VoiceMaleT1.uax
 %%UTDIR%%TacticalOps/Sounds/bstretzsnds.uax
 %%UTDIR%%TacticalOps/System/ActorResetter.txt
 %%UTDIR%%TacticalOps/System/ActorResetter.u
@@ -118,9 +135,9 @@
 %%UTDIR%%TacticalOps/System/TOSystem.u
 %%UTDIR%%TacticalOps/System/TOUT.u
 %%UTDIR%%TacticalOps/System/s_SWAT.u
-%%UTDIR%%TacticalOps/TO200_Features.txt
-%%UTDIR%%TacticalOps/TO_MappingDoc.txt
-%%UTDIR%%TacticalOps/TacticalOps.txt
+%%PORTDOCS%%%%UTDIR%%TacticalOps/TO_220_Features.txt
+%%PORTDOCS%%%%UTDIR%%TacticalOps/TO_MappingDoc.txt
+%%PORTDOCS%%%%UTDIR%%TacticalOps/TacticalOps.txt
 %%UTDIR%%TacticalOps/Textures/CargoShip.utx
 %%UTDIR%%TacticalOps/Textures/DP_Pack-1.utx
 %%UTDIR%%TacticalOps/Textures/EP_Swt1.utx
@@ -134,6 +151,7 @@
 %%UTDIR%%TacticalOps/Textures/TAconeytex.utx
 %%UTDIR%%TacticalOps/Textures/TO-(c)-text-1.utx
 %%UTDIR%%TacticalOps/Textures/TO-(c)-text-2.utx
+%%UTDIR%%TacticalOps/Textures/TO-AndiTrooper.utx
 %%UTDIR%%TacticalOps/Textures/TO-Desertpack-1.utx
 %%UTDIR%%TacticalOps/Textures/TO-Epic.utx
 %%UTDIR%%TacticalOps/Textures/TO-Neuro1.utx
@@ -144,21 +162,24 @@
 %%UTDIR%%TacticalOps/Textures/UTtech4.utx
 %%UTDIR%%TacticalOps/Textures/Verdon.utx
 %%UTDIR%%TacticalOps/Textures/a3text.utx
+%%UTDIR%%TacticalOps/Textures/apack.utx
 %%UTDIR%%TacticalOps/Textures/richchurch.utx
 %%UTDIR%%TacticalOps/Textures/richrig.utx
 %%UTDIR%%TacticalOps/Textures/terrorist3tex.utx
-%%UTDIR%%Web/TO_defaults_rules.uhtm
-%%UTDIR%%Web/TO_defaults_settings.uhtm
-@dirrm %%UTDIR%%Web
+%%PORTDOCS%%%%UTDIR%%Web/TO_defaults_rules.uhtm
+%%PORTDOCS%%%%UTDIR%%Web/TO_defaults_settings.uhtm
+%%PORTDOCS%%@unexec rmdir %D/%%UTDIR%%Web 2>/dev/null || true
 @dirrm %%UTDIR%%TacticalOps/Textures
 @dirrm %%UTDIR%%TacticalOps/System
 @dirrm %%UTDIR%%TacticalOps/Sounds
 @dirrm %%UTDIR%%TacticalOps/Music
 @dirrm %%UTDIR%%TacticalOps/Maps
 @dirrm %%UTDIR%%TacticalOps/Extra/LinuxServerCmd
+@dirrm %%UTDIR%%TacticalOps/Extra/GameSpyTab
 @dirrm %%UTDIR%%TacticalOps/Extra/DefaultINIfile
 @dirrm %%UTDIR%%TacticalOps/Extra
 @unexec rmdir %D/%%UTDIR%%TacticalOps 2>/dev/null || echo "If you are permanently removing this port, you should do a ``rm -rf ${PKG_PREFIX}/%%UTDIR%%TacticalOps`` to remove any configuration files and logs left." | fmt
+@unexec rmdir %D/%%UTDIR%%System 2>/dev/null || true
 %%PORTDOCS%%@dirrm %%UTDIR%%Help/TO2Manual/manual/Images
 %%PORTDOCS%%@dirrm %%UTDIR%%Help/TO2Manual/manual
 %%PORTDOCS%%@dirrm %%UTDIR%%Help/TO2Manual
