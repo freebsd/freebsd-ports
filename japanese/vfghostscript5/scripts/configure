@@ -106,7 +106,6 @@ Have fun with this new configuration style !     -andreas \n\n\
    "iwlq"     "Apple Imagewriter LQ in 320 x 216 dpi mode" OFF \
    "jetp3852" "IBM Jetprinter ink-jet color (Model #3852)" OFF \
    "laserjet" "HP LaserJet" ON \
-   "lbp8"     "Canon LBP-8II laser printer" OFF \
    "lips2p"   "Canon LIPS II+ laser printer " ON \
    "lips3"    "Canon LIPS III laser printer " ON \
    "lips4"    "Canon LIPSIV laser printer, mono" ON \
@@ -126,7 +125,6 @@ Have fun with this new configuration style !     -andreas \n\n\
    "m8510"    "C.Itoh M8510 printer" OFF \
    "necp6"    "NEC P6/P6+/P60, 360x360 DPI resol" OFF \
    "npdl"     "NEC Printer Description Language (NPDL)" ON \
-   "nwp533"   "Sony Microsystems NWP533 laser printer" OFF \
    "oce9050"  "OCE 9050 printer" OFF \
    "oki182"   "Okidata MicroLine 182" OFF \
    "okiibm"   "Okidata MicroLine IBM-compatible printers" OFF \
@@ -136,8 +134,8 @@ Have fun with this new configuration style !     -andreas \n\n\
    "pjxl"     "HP PaintJet XL color printer" ON \
    "pjxl300"  "HP PaintJet XL300 color printer (also for 1200C)" ON \
    "r4081"    "Ricoh 4081 laser printer" OFF \
-   "nx100f"  "Ricoh Printer Description Language (RPDL) (fixed)" ON \
-   "nx100v"  "Ricoh Printer Description Language (RPDL) (variable)" ON \
+   "nx100f"   "Ricoh Printer Description Language (RPDL) (fixed)" ON \
+   "nx100v"   "Ricoh Printer Description Language (RPDL) (variable)" ON \
    "sj48"     "StarJet 48 inkjet printer" OFF \
    "st800"    "Epson Stylus 800 printer" ON \
    "stcolor"  "Epson Stylus Color" ON \
