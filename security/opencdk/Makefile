@@ -21,6 +21,8 @@ COMMENT=	Open Crypto Development Kit
 
 LIB_DEPENDS=	gcrypt.13:${PORTSDIR}/security/libgcrypt
 
+USE_GPG=	yes
+SIG_SUFFIX=	.sig.asc
 USE_BZIP2=	yes
 USE_LIBTOOL_VER=15
 INSTALLS_SHLIB=	yes
