@@ -79,6 +79,7 @@ System/Makefiles/ld_lib_path.csh
 System/Makefiles/ld_lib_path.sh
 System/Makefiles/library-combo.make
 System/Makefiles/library.make
+System/Makefiles/messages.make
 System/Makefiles/mkinstalldirs
 System/Makefiles/names.make
 System/Makefiles/objc.make
