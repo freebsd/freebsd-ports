@@ -1,0 +1,7 @@
+bin/magiccube4d
+share/doc/magiccube4d/ChangeLog
+share/doc/magiccube4d/Intro.txt
+share/doc/magiccube4d/MagicCube4D-unix.txt
+share/doc/magiccube4d/ideas.txt
+share/doc/magiccube4d/readme-unix.txt
+@dirrm share/doc/magiccube4d
