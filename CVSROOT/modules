@@ -3514,6 +3514,7 @@ matrix		ports/math/matrix
 matrix-kmod	ports/misc/matrix-kmod
 mawk		ports/lang/mawk
 maxima		ports/math/maxima
+mboxgrep	ports/mail/mboxgrep
 mbr		src/sys/boot/i386/mbr
 mbx2mbox	ports/mail/mbx2mbox
 mc		ports/misc/mc
