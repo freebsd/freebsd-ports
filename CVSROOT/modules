@@ -126,6 +126,7 @@ Sockets		ports/net/Sockets
 SpecTcl		ports/devel/SpecTcl
 Tee		ports/sysutils/Tee
 TenDRA		ports/lang/TenDRA
+Terminal	ports/x11/Terminal
 TkTopNetFlows	ports/net-mgmt/TkTopNetFlows
 WWWdb		ports/databases/WWWdb
 WebMagick	ports/www/WebMagick
