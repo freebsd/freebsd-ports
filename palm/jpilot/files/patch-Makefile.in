@@ -1,11 +1,11 @@
---- Makefile.in.orig	Thu Jul 10 15:34:16 2003
-+++ Makefile.in	Sat Jul 12 15:51:43 2003
-@@ -183,7 +183,7 @@
+--- Makefile.in.orig	Sat Feb 28 15:19:48 2004
++++ Makefile.in	Sun Feb 29 17:22:11 2004
+@@ -312,7 +312,7 @@
+ sharedstatedir = @sharedstatedir@
  sysconfdir = @sysconfdir@
  target_alias = @target_alias@
+-SUBDIRS = Expense SyncTime KeyRing docs dialer po m4 empty icons
++SUBDIRS = Expense SyncTime KeyRing dialer po m4 empty
  
--SUBDIRS = intl Expense SyncTime KeyRing docs dialer po m4 empty icons
-+SUBDIRS = intl Expense SyncTime KeyRing dialer po m4 empty
- 
- EXTRA_DIST = reconf autogen.sh ChangeLog \
- 	config.rpath mkinstalldirs \
+ # install the manual docs
+ colordir = $(prefix)/share/$(PACKAGE)
