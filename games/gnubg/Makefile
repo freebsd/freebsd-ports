@@ -20,6 +20,10 @@ EXTRACT_ONLY=	${DISTNAME}.tar.gz
 MAINTAINER=	kaoru@kaisei.org
 COMMENT=	GNU Backgammon
 
+BROKEN=		"Broken pkg-plist"
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2004-04-17
+
 MAN6=	gnubg.6
 
 GNU_CONFIGURE=	yes
