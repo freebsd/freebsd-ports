@@ -7,7 +7,7 @@
 
 PORTNAME=	scriba
 PORTVERSION=	10b21
-PORTREVUSION=	1
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://www.scriptbasic.com/download/
 DISTNAME=	${PORTNAME}-v${PORTVERSION}
@@ -29,12 +29,6 @@ NO_WRKSUBDIR=	yes
 USE_PERL5=	yes
 CFLAGS+=	-fPIC
 MAKE_ENV+=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" PTHREAD_LIBS="${PTHREAD_LIBS}"
-
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "sparc64"
-BROKEN=		"Install fails on sparc64"
-.endif
 
 post-patch:
 .for P in ${PRFXFILES}
@@ -58,4 +52,4 @@ do-install:
 	${WRKSRC}/cftc ${WRKSRC}/scriba.conf.unix.lsp \
 		${PREFIX}/etc/scriba/basic.conf
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
