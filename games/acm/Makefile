@@ -19,10 +19,6 @@ MAN6=		acm.6
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 500113
-BROKEN=         "Does not compile"
-.endif
-
 # Include sound support (Use network audio server (nas))
 .if defined(WITH_SOUND) || (exists(${PREFIX}/lib/libaudio.a) \
 	&& !defined(WITHOUT_SOUND))

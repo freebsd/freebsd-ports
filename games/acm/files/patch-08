@@ -1,0 +1,12 @@
+--- src/interpolate.h~	Tue May 12 05:43:04 1998
++++ src/interpolate.h	Sun May 18 13:25:35 2003
+@@ -31,7 +31,9 @@
+ 
+ #include <math.h>
+ 
++#ifndef __FreeBSD__
+ typedef float float_t;
++#endif
+ 
+ typedef struct {
+ 	float_t   x;				/* upper x value for this interval */
