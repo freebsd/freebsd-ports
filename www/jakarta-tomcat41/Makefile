@@ -6,21 +6,20 @@
 #
 
 PORTNAME=	jakarta-tomcat
-PORTVERSION=	4.1.30
-PORTREVISION=	0
+PORTVERSION=	4.1.31
 CATEGORIES=	www java
-MASTER_SITES=	http://www.apache.org/dist/jakarta/tomcat-4/v${PORTVERSION}/bin/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	znerd
+MASTER_SITES=	${MASTER_SITE_APACHE_JAKARTA}
+MASTER_SITE_SUBDIR=	tomcat-4/v${PORTVERSION}/bin
 
 MAINTAINER=	liukang@bjut.edu.cn
 COMMENT=	Open-source Java web server by Apache, stable 4.1.x branch
 
-USE_JAVA=	1.2+
+USE_JAVA=	yes
+JAVA_VERSION=	1.2+
 NO_BUILD=	YES
 LATEST_LINK=	${APP_SHORTNAME}
 
-MAN1=	tomcat41ctl.1
+MAN1=	${CONTROL_SCRIPT_NAME}.1
 
 MAJOR_VER=	${PORTVERSION:R}
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

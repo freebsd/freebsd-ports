@@ -1,3 +1,11 @@
+@comment $FreeBSD$
+@exec mkdir %D/%%T%%/server || true
+@exec mkdir %D/%%T%%/server/classes || true
+@exec mkdir %D/%%T%%/server/webapps/admin/WEB-INF/classes/org/apache/webapp/admin/filters ||true
+@exec mkdir %D/%%T%%/shared || true
+@exec mkdir %D/%%T%%/shared/classes || true
+@exec mkdir %D/%%T%%/shared/lib || true
+@exec mkdir %D/%%T%%/webapps/tomcat-docs/jk2/printer ||true
 bin/tomcat41ctl
 etc/rc.d/020.jakarta-tomcat41.sh
 %%T%%/LICENSE
@@ -19,6 +27,7 @@ etc/rc.d/020.jakarta-tomcat41.sh
 %%T%%/common/endorsed/xercesImpl.jar
 %%T%%/common/endorsed/xmlParserAPIs.jar
 %%T%%/common/lib/activation.jar
+%%T%%/common/lib/ant-launcher.jar
 %%T%%/common/lib/ant.jar
 %%T%%/common/lib/commons-collections.jar
 %%T%%/common/lib/commons-dbcp-1.1.jar
@@ -43,8 +52,6 @@ etc/rc.d/020.jakarta-tomcat41.sh
 %%T%%/conf/web.xml
 %%T%%/logs/stderr.log
 %%T%%/logs/stdout.log
-@exec mkdir %D/%%T%%/server || true
-@exec mkdir %D/%%T%%/server/classes || true
 %%T%%/server/lib/catalina-ant.jar
 %%T%%/server/lib/catalina.jar
 %%T%%/server/lib/commons-beanutils.jar
@@ -122,7 +129,6 @@ etc/rc.d/020.jakarta-tomcat41.sh
 %%T%%/server/webapps/admin/WEB-INF/classes/org/apache/webapp/admin/defaultcontext/DeleteDefaultContextsAction.class
 %%T%%/server/webapps/admin/WEB-INF/classes/org/apache/webapp/admin/defaultcontext/EditDefaultContextAction.class
 %%T%%/server/webapps/admin/WEB-INF/classes/org/apache/webapp/admin/defaultcontext/SaveDefaultContextAction.class
-@exec mkdir %D/%%T%%/server/webapps/admin/WEB-INF/classes/org/apache/webapp/admin/filters ||true
 %%T%%/server/webapps/admin/WEB-INF/classes/org/apache/webapp/admin/host/AddAliasAction.class
 %%T%%/server/webapps/admin/WEB-INF/classes/org/apache/webapp/admin/host/AddHostAction.class
 %%T%%/server/webapps/admin/WEB-INF/classes/org/apache/webapp/admin/host/AliasForm.class
@@ -367,9 +373,6 @@ etc/rc.d/020.jakarta-tomcat41.sh
 %%T%%/server/webapps/manager/images/tomcat.gif
 %%T%%/server/webapps/manager/images/void.gif
 %%T%%/server/webapps/manager/manager-howto.html
-@exec mkdir %D/%%T%%/shared || true
-@exec mkdir %D/%%T%%/shared/classes || true
-@exec mkdir %D/%%T%%/shared/lib || true
 %%T%%/temp/README.txt
 %%T%%/webapps/ROOT/WEB-INF/web.xml
 %%T%%/webapps/ROOT/index.jsp
@@ -709,6 +712,9 @@ etc/rc.d/020.jakarta-tomcat41.sh
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/warp/package-frame.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/warp/package-summary.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/warp/package-tree.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/core/ApplicationContext.PrivilegedGetInitParameter.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/core/ApplicationContext.PrivilegedGetInitParameterNames.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/core/ApplicationContext.PrivilegedGetNamedDispatcher.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/core/ApplicationContext.PrivilegedGetRequestDispatcher.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/core/ApplicationContext.PrivilegedGetResource.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/core/ApplicationContext.PrivilegedGetResourcePaths.html
@@ -827,6 +833,8 @@ etc/rc.d/020.jakarta-tomcat41.sh
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/realm/package-tree.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/servlets/CGIServlet.CGIEnvironment.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/servlets/CGIServlet.CGIRunner.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/servlets/CGIServlet.HTTPHeaderInputStream.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/servlets/CGIServlet.NameValuePair.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/servlets/CGIServlet.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/servlets/Constants.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/servlets/DefaultServlet.ResourceInfo.html
@@ -1237,6 +1245,10 @@ etc/rc.d/020.jakarta-tomcat41.sh
 %%T%%/webapps/tomcat-docs/jk2/common/AJPv13-extensions-proposal.html
 %%T%%/webapps/tomcat-docs/jk2/common/AJPv13.html
 %%T%%/webapps/tomcat-docs/jk2/common/doccontrib.html
+%%T%%/webapps/tomcat-docs/jk2/common/printer/AJPv13-extensions-proposal.html
+%%T%%/webapps/tomcat-docs/jk2/common/printer/AJPv13.html
+%%T%%/webapps/tomcat-docs/jk2/common/printer/doccontrib.html
+%%T%%/webapps/tomcat-docs/jk2/common/printer/tools.html
 %%T%%/webapps/tomcat-docs/jk2/common/tools.html
 %%T%%/webapps/tomcat-docs/jk2/faq.html
 %%T%%/webapps/tomcat-docs/jk2/images/corner.gif
@@ -1251,6 +1263,12 @@ etc/rc.d/020.jakarta-tomcat41.sh
 %%T%%/webapps/tomcat-docs/jk2/jk/domhowto.html
 %%T%%/webapps/tomcat-docs/jk2/jk/iishowto.html
 %%T%%/webapps/tomcat-docs/jk2/jk/neshowto.html
+%%T%%/webapps/tomcat-docs/jk2/jk/printer/aphowto.html
+%%T%%/webapps/tomcat-docs/jk2/jk/printer/domhowto.html
+%%T%%/webapps/tomcat-docs/jk2/jk/printer/iishowto.html
+%%T%%/webapps/tomcat-docs/jk2/jk/printer/neshowto.html
+%%T%%/webapps/tomcat-docs/jk2/jk/printer/quickhowto.html
+%%T%%/webapps/tomcat-docs/jk2/jk/printer/workershowto.html
 %%T%%/webapps/tomcat-docs/jk2/jk/quickhowto.html
 %%T%%/webapps/tomcat-docs/jk2/jk/workershowto.html
 %%T%%/webapps/tomcat-docs/jk2/jk2/confighowto.html
@@ -1260,10 +1278,22 @@ etc/rc.d/020.jakarta-tomcat41.sh
 %%T%%/webapps/tomcat-docs/jk2/jk2/configweb.html
 %%T%%/webapps/tomcat-docs/jk2/jk2/configwebcom.html
 %%T%%/webapps/tomcat-docs/jk2/jk2/configwebex.html
+%%T%%/webapps/tomcat-docs/jk2/jk2/davhowto.html
 %%T%%/webapps/tomcat-docs/jk2/jk2/installhowto.html
+%%T%%/webapps/tomcat-docs/jk2/jk2/printer/confighowto.html
+%%T%%/webapps/tomcat-docs/jk2/jk2/printer/configtc.html
+%%T%%/webapps/tomcat-docs/jk2/jk2/printer/configtccom.html
+%%T%%/webapps/tomcat-docs/jk2/jk2/printer/configtcex.html
+%%T%%/webapps/tomcat-docs/jk2/jk2/printer/configweb.html
+%%T%%/webapps/tomcat-docs/jk2/jk2/printer/configwebcom.html
+%%T%%/webapps/tomcat-docs/jk2/jk2/printer/configwebex.html
+%%T%%/webapps/tomcat-docs/jk2/jk2/printer/davhowto.html
+%%T%%/webapps/tomcat-docs/jk2/jk2/printer/installhowto.html
+%%T%%/webapps/tomcat-docs/jk2/jk2/printer/vhosthowto.html
 %%T%%/webapps/tomcat-docs/jk2/jk2/vhosthowto.html
+%%T%%/webapps/tomcat-docs/jk2/printer/faq.html
+%%T%%/webapps/tomcat-docs/jk2/printer/index.html
 %%T%%/webapps/tomcat-docs/jk2/style.css
-@exec mkdir %D/%%T%%/webapps/tomcat-docs/jk2/printer ||true
 %%T%%/webapps/tomcat-docs/jndi-datasource-examples-howto.html
 %%T%%/webapps/tomcat-docs/jndi-resources-howto.html
 %%T%%/webapps/tomcat-docs/manager-howto.html
@@ -1472,9 +1502,12 @@ etc/rc.d/020.jakarta-tomcat41.sh
 @dirrm %%T%%/webapps/tomcat-docs/servletapi
 @dirrm %%T%%/webapps/tomcat-docs/printer
 @dirrm %%T%%/webapps/tomcat-docs/jk2/printer
+@dirrm %%T%%/webapps/tomcat-docs/jk2/jk2/printer
 @dirrm %%T%%/webapps/tomcat-docs/jk2/jk2
+@dirrm %%T%%/webapps/tomcat-docs/jk2/jk/printer
 @dirrm %%T%%/webapps/tomcat-docs/jk2/jk
 @dirrm %%T%%/webapps/tomcat-docs/jk2/images
+@dirrm %%T%%/webapps/tomcat-docs/jk2/common/printer
 @dirrm %%T%%/webapps/tomcat-docs/jk2/common
 @dirrm %%T%%/webapps/tomcat-docs/jk2
 @dirrm %%T%%/webapps/tomcat-docs/jasper/docs/api/resources
