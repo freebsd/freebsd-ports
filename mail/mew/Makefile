@@ -1,9 +1,9 @@
 # New ports collection makefile for: Mew
 # Version required:	1.54
-# Date created:		14 December 1996
+# Date created:		30 December 1996
 # Whom:			Kiriyama Kazuhiko <kiri@kiri.toba-cmt.ac.jp>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1996/12/18 05:09:26 asami Exp $
 #
 
 DISTNAME=	mew-1.54
@@ -14,10 +14,12 @@ MAINTAINER=	kiri@kiri.toba-cmt.ac.jp
 
 BUILD_DEPENDS=	emacs:${PORTSDIR}/editors/emacs
 RUN_DEPENDS=	emacs:${PORTSDIR}/editors/emacs \
-		mhmail:${PORTSDIR}/mail/mh \
-		perl:${PORTSDIR}/lang/perl5
+		mhmail:${PORTSDIR}/mail/mh
+
+RESTRICTED=	"Includes non destrubuted encrypted codes(PGP)."
 
 DOCDIR=		${PREFIX}/share/doc/mew
+SAMPLEDIR=	${PREFIX}/share/examples/mew
 
 post-install:
 	@strip ${PREFIX}/bin/mewencode
@@ -28,13 +30,14 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/info/mew.info* ${PREFIX}/info
 	@${INSTALL_SCRIPT} ${FILESDIR}/MH-postproc ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
-	@if [ ! -d ${DOCDIR} ]; then mkdir -p ${DOCDIR}; fi
-	@${CP} ${WRKSRC}/info/*.texi ${DOCDIR}
-.for f in .emacs aliases .mh_profile scan.form
-	${CP}  ${FILESDIR}/${f} ${DOCDIR}
+	@${MKDIR} ${DOCDIR}
+	@${INSTALL_DATA} ${WRKSRC}/info/*.texi ${DOCDIR}
+	@${MKDIR} ${SAMPLEDIR}
+.for f in dot.emacs aliases dot.mh_profile scan.form
+	@${INSTALL_DATA}  ${FILESDIR}/${f} ${SAMPLEDIR}
 .endfor
-	@${INSTALL_SCRIPT} ${FILESDIR}/user-install ${DOCDIR}
+	@${INSTALL_SCRIPT} ${FILESDIR}/user-install ${SAMPLEDIR}
 .endif
-	@/bin/sh ${PKGDIR}/INSTALL ${PKGNAME} POST-INSTALL
+	@${SETENV} PKG_PREFIX=${PREFIX} /bin/sh ${PKGDIR}/INSTALL ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.mk>
