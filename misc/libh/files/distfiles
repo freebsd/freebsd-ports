@@ -207,3 +207,9 @@
 /usr/ports/distfiles/libh-0.2/libh/release/init/system.c
 /usr/ports/distfiles/libh-0.2/libh/release/init/termcap.c
 /usr/ports/distfiles/libh-0.2/libh/release/scripts/setup.tcl
+/usr/ports/distfiles/libh-0.2/libh/release/scripts/cdrominstall.tcl
+/usr/ports/distfiles/libh-0.2/libh/release/scripts/choosedistrib.tcl
+/usr/ports/distfiles/libh-0.2/libh/release/scripts/commonvars.tcl
+/usr/ports/distfiles/libh-0.2/libh/release/scripts/ftpinstall.tcl
+/usr/ports/distfiles/libh-0.2/libh/release/scripts/instmethod.tcl
+/usr/ports/distfiles/libh-0.2/libh/release/scripts/netsetup.tcl
