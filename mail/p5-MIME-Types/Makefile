@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=		MIME-Types
-PORTVERSION=		1.005
+PORTVERSION=		1.09
 CATEGORIES=		mail perl5
 MASTER_SITES=		${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	MIME
@@ -16,7 +16,6 @@ COMMENT=	MIME-Types is a Perl extension for determining MIME types
 
 PERL_CONFIGURE=		YES
 
-MAN3PREFIX=		${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		MIME::Type.3 MIME::Types.3
 
 .include <bsd.port.mk>
