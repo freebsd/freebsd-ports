@@ -124,6 +124,7 @@
     SUBDIR += nocol
     SUBDIR += ns
     SUBDIR += nslint
+    SUBDIR += nsping
     SUBDIR += nstreams
     SUBDIR += ntimelord
     SUBDIR += ntop
