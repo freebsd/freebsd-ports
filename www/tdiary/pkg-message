@@ -1,17 +1,17 @@
 
 =============================================================================
 There is a script to install tDiary in a user directory.
-You can run the script manually as
+This script should be run manually.
 
-  # @@@@PREFIX@@@@/share/examples/tdiary/tdiary-FreeBSD.sh USERid
-    or
-  % @@@@PREFIX@@@@/share/examples/tdiary/tdiary-FreeBSD.sh install
+  # ruby @@@@PREFIX@@@@/share/examples/tdiary/tdiaryinst.rb --user=hoge
+   or
+  % ruby @@@@PREFIX@@@@/share/examples/tdiary/tdiaryinst.rb
 
-There is a document in English under the following directory.
-
+There is a document by English in the following directories.
+  See ...
   @@@@PREFIX@@@@/share/examples/tdiary/misc/i18n/
-
-And, you can find information on the tdiary system at :
+   and
+  Explanation by English of a tDiary system can refer to the following page :
 
   http://tdiary-users.sourceforge.jp/cgi-bin/wiki.cgi?FrontPage_en
 =============================================================================

@@ -7,7 +7,7 @@
 
 PORTNAME=	tdiary
 PORTVERSION=	1.5.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www ruby
 MASTER_SITES=	\
 		${MASTER_SITE_SOURCEFORGE} \
@@ -27,6 +27,8 @@ RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/web/escape_ext.so:${PORTSDIR}/www/ruby-nora
 
 NO_BUILD=	yes
 USE_RUBY=	yes
+RUBY_SHEBANG_FILES=	index.rb update.rb misc/convert2.rb misc/posttdiary.rb misc/plugin/squeeze.rb misc/plugin/weather.rb \
+misc/plugin/windex.rb misc/plugin/a/a_conf.rb misc/plugin/todo/todo.rb misc/plugin/trackback/tb.rb
 
 TDIARYDIR=	${PREFIX}/share/examples/${PORTNAME}
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
@@ -47,8 +49,11 @@ pre-everything::
 	@${ECHO_MSG}
 
 do-install:
-	@if [ -d ${TDIARYDIR} ]; then ${RM} -rf ${TDIARYDIR}; fi
-	${MKDIR} ${TDIARYDIR}
+#	@if [ -d ${TDIARYDIR} ]; then ${RM} -rf ${TDIARYDIR}; fi
+	-${MKDIR} ${TDIARYDIR}
+	@${SED} -e 's,@@@@PREFIX@@@@,${PREFIX},g' \
+		-e 's,@@@@LANG@@@@,${TDIARY_LANG},g' \
+		${FILESDIR}/tdiaryinst.rb.in > ${TDIARYDIR}/tdiaryinst.rb
 	@${SED} -e 's,@@@@PREFIX@@@@,${PREFIX},g' \
 		-e 's,@@@@LANG@@@@,${TDIARY_LANG},g' \
 		${FILESDIR}/tdiary-FreeBSD.sh.in > ${TDIARYDIR}/tdiary-FreeBSD.sh
