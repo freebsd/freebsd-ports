@@ -96,7 +96,7 @@
     SUBDIR += ici
     SUBDIR += icon
     SUBDIR += ifc
-    SUBDIR += ifc8
+    SUBDIR += ifc7
     SUBDIR += intel2gas
     SUBDIR += intercal
     SUBDIR += itcl
