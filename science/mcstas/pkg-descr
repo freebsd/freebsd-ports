@@ -1,0 +1,24 @@
+McStas - Monte Carlo simulation of neutron instruments
+
+McStas is an ongoing project to create a general tool for simulating neutron
+scattering instruments. The project is conducted at Risoe National Laboratory
+in cooperation with the ILL. The Risoe efforts have been funded through
+multiple EU programs. 
+
+McStas is based on a compiler that reads a high-level specification language
+defining the instrument to be simulated and produces C code that performs the
+Monte Carlo Simulation. The system is very fast in use, both when setting up
+the instrument definition and when doing calculations.
+Typical figures are 20000-50000 neutron histories per second on a fast PC. 
+
+McStas supports triple-axis,  time-of-flight instruments, and polarised
+neutrons. It comes with a comprehensive manual and a library of well-tested
+components that include most standard elements of neutron scattering
+instruments, including steady-state and pulsed sources,
+monochromators/analysers, guides, collimators, vanadium and powder samples,
+velocity selectors and choppers, and a variety of detectors. 
+
+WWW: http://neutron.risoe.dk/
+
+- Joerg Pulz
+Joerg.Pulz@frm2.tum.de

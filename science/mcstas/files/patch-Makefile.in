@@ -1,0 +1,13 @@
+--- Makefile.in.orig	Thu Mar  4 20:04:08 2004
++++ Makefile.in	Fri Feb 18 14:45:16 2005
+@@ -96,10 +96,6 @@
+ 	for pgm in $(PERLBIN); do \
+ 	  $(INSTALL_PROGRAM) $$pgm.fixpl $(bindir)/$$pgm; \
+ 	done
+-	if [ -e $(mc_libdir) ]; then \
+-	  echo "Moving your old library dir $(mc_libdir) to $(mc_libdir).`date +%Y%m%d_%H.%M`"; \
+-	  mv -f $(mc_libdir) $(mc_libdir).`date +%Y%m%d_%H.%M`;\
+-        fi;
+ 	for file in `cd lib; ls`; do \
+ 	  if [ -d lib/$$file ]; then \
+ 	    $(srcdir)/mkinstalldirs $(mc_libdir)/$$file; \
