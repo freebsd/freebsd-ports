@@ -3,11 +3,11 @@
 # Date created:		10 August 1998
 # Whom:			Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.2 1998/09/15 11:13:10 asami Exp $
+# $Id: Makefile,v 1.3 1998/09/17 00:32:33 asami Exp $
 
 DISTNAME=	wmtimebomb.6
 PKGNAME=	wmtimebomb-0.1.6
-CATEGORIES=	games
+CATEGORIES=	games windowmaker
 MASTER_SITES=	http://www.gpf.or.th/~mhz/wmtimebomb/
 
 MAINTAINER=	ports@FreeBSD.ORG

@@ -3,11 +3,11 @@
 # Date created:        21 Nov 1998
 # Whom:                Brian Handy <handy@physics.montana.edu>
 #
-# $Id: Makefile,v 1.3 1998/12/10 17:21:44 vanilla Exp $
+# $Id: Makefile,v 1.4 1999/01/10 18:25:02 steve Exp $
 #
 
 DISTNAME=	astime-1.5
-CATEGORIES=	x11-clocks
+CATEGORIES=	x11-clocks windowmaker
 MASTER_SITES=	http://bewoner.dma.be/Albert/linux/software/ \
 		ftp://ftp.tux.org/pub/x/afterstep/apps/astime/ \
 		ftp://ftp.digex.net/.2/wm/AfterStep/apps/astime/ \

@@ -3,11 +3,11 @@
 # Date created:        27 November 1998
 # Whom:                Kris Kennaway <kkennawa@physics.adelaide.edu.au>
 #
-# $Id: Makefile,v 1.2 1998/12/16 04:51:54 flathill Exp $
+# $Id: Makefile,v 1.3 1999/01/04 03:40:03 steve Exp $
 #
 
 DISTNAME=	wmmon-1.0b2
-CATEGORIES=	sysutils
+CATEGORIES=	sysutils windowmaker
 MASTER_SITES=	ftp://ftp.mezaway.org/pub/ \
 		http://www.physics.adelaide.edu.au/~kkennawa/ \
 		ftp://ftp.tecnogi.com/pub/linux/WindowMaker/ \

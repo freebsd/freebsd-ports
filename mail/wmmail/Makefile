@@ -3,11 +3,11 @@
 # Date created:        7 Jun 1998
 # Whom:                rom
 #
-# $Id: Makefile,v 1.5 1998/11/21 07:27:38 steve Exp $
+# $Id: Makefile,v 1.6 1998/11/23 03:29:10 steve Exp $
 #
 
 DISTNAME=	wmmail-0.59
-CATEGORIES=	mail
+CATEGORIES=	mail windowmaker
 MASTER_SITES=	http://earth.gaianet.net/~scorpio/
 
 MAINTAINER=	jim@phrantic.phear.net

@@ -3,12 +3,12 @@
 # Date created:        11 July 1998
 # Whom:                Rich Neswold <rneswold@mcs.net>
 #
-# $Id: Makefile,v 1.3 1998/09/17 00:32:28 asami Exp $
+# $Id: Makefile,v 1.4 1998/12/09 09:59:14 vanilla Exp $
 #
 
 DISTNAME=	wmmixer
 PKGNAME=	wmmixer-1.0b1
-CATEGORIES=	audio
+CATEGORIES=	audio windowmaker
 MASTER_SITES=	http://www.geocities.com/SiliconValley/Vista/2471/
 EXTRACT_SUFX=	.tgz
 

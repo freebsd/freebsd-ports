@@ -3,11 +3,11 @@
 # Date created:		August 13, 1997
 # Whom:			handy@physics.montana.edu
 #
-# $Id: Makefile,v 1.42 1998/12/07 12:05:04 tg Exp $
+# $Id: Makefile,v 1.43 1999/01/18 03:13:33 steve Exp $
 
 DISTNAME=	WindowMaker-0.50.2
 PKGNAME=	windowmaker-0.50.2
-CATEGORIES=	x11-wm
+CATEGORIES=	x11-wm windowmaker
 MASTER_SITES=	ftp://ftp.windowmaker.org/pub/beta/srcs/ \
 		ftp://ftp.io.com/pub/mirror/windowmaker/beta/srcs/ \
 		http://jgo.local.net/cool_downloads/wm/
