@@ -114,6 +114,7 @@
     SUBDIR += jing
     SUBDIR += jrefentry
     SUBDIR += kbedic
+    SUBDIR += kdiff3
     SUBDIR += lacheck
     SUBDIR += latex2html
     SUBDIR += latte

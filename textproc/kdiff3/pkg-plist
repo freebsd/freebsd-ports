@@ -1,0 +1,17 @@
+bin/kdiff3
+share/doc/HTML/en/kdiff3/index.html
+share/doc/HTML/en/kdiff3/triple_diff.png
+share/doc/HTML/en/kdiff3/screenshot_diff.png
+share/doc/HTML/en/kdiff3/screenshot_merge.png
+share/doc/HTML/en/kdiff3/background.png
+share/doc/HTML/en/kdiff3/white_space.png
+share/doc/HTML/en/kdiff3/letter_by_letter.png
+share/doc/HTML/en/kdiff3/open_dialog.png
+share/applnk/Applications/kdiff3.desktop
+share/icons/locolor/32x32/apps/kdiff3.png
+share/icons/locolor/16x16/apps/kdiff3.png
+share/icons/hicolor/32x32/apps/kdiff3.png
+share/icons/hicolor/16x16/apps/kdiff3.png
+share/apps/kdiff3/kdiff3ui.rc
+@dirrm share/doc/HTML/en/kdiff3
+@dirrm share/apps/kdiff3

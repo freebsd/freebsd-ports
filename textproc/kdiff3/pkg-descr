@@ -1,0 +1,12 @@
+KDiff3 is a program that:
+
+    * compares two or three text input files,
+    * shows the differences line by line and character by character (!),
+    * provides an automatic merge-facility and
+    * an integrated editor for comfortable solving of merge-conflicts
+    * and has an intuitive graphical user interface.
+
+WWW: http://kdiff3.sourceforge.net/
+
+Heiner
+h.eichmann@gmx.de
