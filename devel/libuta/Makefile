@@ -7,6 +7,7 @@
 
 PORTNAME=	libuta
 PORTVERSION=	0.4.4
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -35,10 +36,6 @@ SDL11_FILES=	configure uta/color.h uta/event.h uta/keysym.h uta/mutex.h \
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 502102
-FORBIDDEN=	"Links against conflicting thread libraries"
-.endif
-
 .if exists(${LOCALBASE}/lib/libSDL_mixer.so.2)
 WITH_SDL_MIXER=	yes
 .endif
@@ -53,7 +50,10 @@ post-patch:
 .endfor
 
 pre-configure:
-	@${REINPLACE_CMD} -e 's|<freetype/freetype.h>|<freetype1/freetype/freetype.h>|g' \
-		${WRKSRC}/configure ${WRKSRC}/uta/font.h
+	@${REINPLACE_CMD} -e '\
+		s|<freetype/freetype.h>|<freetype1/freetype/freetype.h>|g; \
+		s|-lpthread||g; \
+		s|-lc_r|${PTHREAD_LIBS}|g' \
+			${WRKSRC}/configure ${WRKSRC}/uta/font.h
 
 .include <bsd.port.post.mk>
