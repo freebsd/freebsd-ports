@@ -1,0 +1,8 @@
+==================================
+
+To configure webmin you should run
+the following command as root:
+
+  /usr/local/lib/webmin/setup.sh
+
+==================================
