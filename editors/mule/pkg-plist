@@ -4,16 +4,13 @@
 @exec chmod 777 %D/lib/mule/lock
 @unexec rmdir %D/lib/mule/site-lisp
 @unexec rmdir %D/lib/mule/lock
-@mode 1755
 bin/mule-19.28
-@exec ln -s %D/%F %B/mule
+@exec ln -sf %D/%F %B/mule
 @unexec rm %B/mule
-@mode 555
 bin/any2ps
 bin/b2m
 bin/coco
 bin/m2ps
-@mode 644
 man/man1/coco.1.gz
 man/man1/m2ps.1.gz
 man/man1/mule.1.gz
@@ -127,7 +124,6 @@ lib/mule/19.28/etc/tom.xbm
 lib/mule/19.28/etc/ulimit.hack
 lib/mule/19.28/etc/vipcard.tex
 lib/mule/19.28/etc/yow.lines
-@mode 555
 lib/mule/19.28/i386--freebsd/cvtmail
 lib/mule/19.28/i386--freebsd/digest-doc
 lib/mule/19.28/i386--freebsd/emacsserver
@@ -144,7 +140,6 @@ lib/mule/19.28/i386--freebsd/timer
 lib/mule/19.28/i386--freebsd/vcdiff
 lib/mule/19.28/i386--freebsd/wakeup
 lib/mule/19.28/i386--freebsd/yow
-@mode 644
 lib/mule/19.28/lisp/COPYING
 lib/mule/19.28/lisp/ChangeLog
 lib/mule/19.28/lisp/ChangeLog.1

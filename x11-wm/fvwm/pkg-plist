@@ -1,6 +1,3 @@
-@mode 755
-@owner bin
-@group bin
 bin/fvwm
 bin/xpmroot
 lib/X11/fvwm/GoodStuff
@@ -17,7 +14,6 @@ lib/X11/fvwm/FvwmSaveDesk
 lib/X11/fvwm/FvwmAuto
 lib/X11/fvwm/FvwmWinList
 lib/X11/fvwm/FvwmBanner
-@mode 644
 lib/X11/fvwm/system.fvwmrc
 man/man1/fvwm.1.gz
 man/man1/GoodStuff.1.gz

@@ -1,6 +1,3 @@
-@cd /usr/local
-@owner bin
-@mode 755
 bin/psbook
 bin/psselect
 bin/pstops
@@ -19,7 +16,6 @@ bin/fixwwps
 bin/fixdlsrps 
 bin/extractres 
 bin/includeres
-@mode 644
 man/man1/psbook.1 
 man/man1/psselect.1 
 man/man1/pstops.1 

@@ -1,4 +1,3 @@
-@owner games
 bin/jnethack
 man/man6/dgn_comp.6.gz
 man/man6/lev_comp.6.gz

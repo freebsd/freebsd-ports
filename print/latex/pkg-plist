@@ -1,7 +1,4 @@
-@owner bin
-@mode 755
 bin/latex
-@mode 644
 lib/texmf/fonts/tfm/cmbsy5.tfm
 lib/texmf/fonts/tfm/cmbsy6.tfm
 lib/texmf/fonts/tfm/cmbsy7.tfm

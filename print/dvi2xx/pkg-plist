@@ -1,6 +1,3 @@
-@cd /usr/local
-@owner bin
-@mode 755
 bin/MakeTeXPK
 bin/dvi3812
 bin/dvilj
@@ -8,7 +5,6 @@ bin/dvilj2
 bin/dvilj2p
 bin/dvilj4
 bin/dviljp
-@mode 644
 man/man1/dvi2xx.1
 lib/dvi2xx/2up.sty
 lib/dvi2xx/lj3-filter

@@ -1,8 +1,4 @@
-@cd /usr/local
-@owner bin
-@mode 755
 bin/makeindex
-@mode 644
 lib/texmf/makeindx/din.ist
 lib/texmf/makeindx/icase.ist
 lib/texmf/makeindx/latex.ist
