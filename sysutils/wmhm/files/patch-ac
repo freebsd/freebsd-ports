@@ -1,10 +1,18 @@
---- Makefile.in.orig	Thu May 18 02:11:57 2000
-+++ Makefile.in	Wed Aug  9 14:34:22 2000
-@@ -1,5 +1,6 @@
+--- Makefile.in.orig	Thu May 18 15:11:57 2000
++++ Makefile.in	Sat Aug 12 00:15:10 2000
+@@ -1,11 +1,12 @@
  DEFINES+=       -DHAVE_CONFIG_H
 -CFLAGS+=        -O2 -Wall -I/usr/X11R6/include $(DEFINES)
+-LDFLAGS+=       -lXpm -lXext -lX11 -L/usr/X11R6/lib -lXpm -lm
 +CFLAGS?=	-O2
-+CFLAGS+=        -Wall -I/usr/X11R6/include $(DEFINES)
- LDFLAGS+=       -lXpm -lXext -lX11 -L/usr/X11R6/lib -lXpm -lm
++CFLAGS+=        -I${X11BASE}/include $(DEFINES)
++LDFLAGS+=       -lXpm -lXext -lX11 -L${X11BASE}/lib -lm
  
  HEADERS=        wmhm.h wmgeneral.h operations.h display.h
+ SRCS=           wmhm.c wmgeneral.c operations.c display.c
+ 
+-PREFIX=         /usr/local
++PREFIX?=        /usr/local
+ BINDIR=         $(PREFIX)/bin
+ MANDIR=         $(PREFIX)/man/man
+ 
