@@ -1,0 +1,48 @@
+--- Makefile.in.orig	Mon Mar 15 15:51:08 2004
++++ Makefile.in	Mon Mar 15 15:51:59 2004
+@@ -15,6 +15,7 @@
+ DLL_LIBS = @DLL_LIBS@
+ 
+ OTHER_OBJS = @OTHER_OBJS@
++OTHER_SHOBJS = @OTHER_SHOBJS@
+ 
+ PALIB = libportaudio.a
+ PADLL = @PADLL@
+@@ -25,6 +26,10 @@
+ 	pa_common/pa_convert.o \
+ 	pa_common/pa_lib.o
+ 
++COMMON_SHOBJS = \
++	pa_common/pa_convert.So \
++	pa_common/pa_lib.So
++
+ TESTS = \
+ 	bin/patest_buffer \
+ 	bin/patest_clip \
+@@ -50,8 +55,15 @@
+ 	bin/patest_underflow \
+ 	bin/patest_wire
+ 
++.SUFFIXES: .o .So
++
++.c.So:
++	$(CC) $(CFLAGS) -fPIC -o $*.So -c $?
++
+ OBJS = $(COMMON_OBJS) $(OTHER_OBJS)
+ 
++SHOBJS = $(COMMON_SHOBJS) $(OTHER_SHOBJS)
++
+ all: lib/$(PALIB) lib/$(PADLLV) tests
+ 
+ tests: bin/ $(TESTS)
+@@ -60,8 +72,8 @@
+ 	$(AR) ruv lib/$(PALIB) $(OBJS)
+ 	$(RANLIB) lib/$(PALIB)
+ 
+-lib/$(PADLLV): lib/ $(OBJS) Makefile $(PAINC)
+-	$(CC) $(SHARED_FLAGS) -o lib/$(PADLLV) $(OBJS) $(DLL_LIBS)
++lib/$(PADLLV): lib/ $(SHOBJS) Makefile $(PAINC)
++	$(CC) $(SHARED_FLAGS) -o lib/$(PADLLV) $(SHOBJS) $(DLL_LIBS)
+ 
+ $(TESTS): bin/%: lib/$(PALIB) Makefile $(PAINC) pa_tests/%.c
+ 	$(CC) -o $@ $(CFLAGS) pa_tests/$*.c lib/$(PALIB) $(LIBS)
