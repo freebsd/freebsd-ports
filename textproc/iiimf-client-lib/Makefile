@@ -35,7 +35,7 @@ post-patch:
 		-e "s,-D_POSIX_C_SOURCE=199506L,,g" \
 		-e "s,has_xiccallback=no,has_xiccallback=yes,g" \
 		-e "s,/usr/lib/im,${PREFIX}/lib/im,g" \
-		-e "s,-I\$${IM_INCLUDEDIR},-I${LOCALBASE}/include/iiimf,g" \
+		-e "s,-I\$$(IM_INCLUDEDIR),-I${LOCALBASE}/include/iiimf,g" \
 		${WRKSRC}/${DIR}/configure
 .endfor
 
