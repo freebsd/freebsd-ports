@@ -1,3 +1,4 @@
+bin/appletviewer
 bin/javac
 bin/javadoc
 bin/kaffe
@@ -5,14 +6,15 @@ bin/kaffeh
 include/kaffe/jtypes.h
 include/kaffe/native.h
 include/kaffe/StubPreamble.h
+include/kaffe/java_lang_String.h
 man/man1/kaffe.1.gz
 share/kaffe/license.terms
 lib/libkaffe_agent.so
-lib/libkaffe_agent.so.0.71
+lib/libkaffe_agent.so.0.80
 lib/libkaffe_native.so
-lib/libkaffe_native.so.0.71
+lib/libkaffe_native.so.0.80
 lib/libkaffe_vm.so
-lib/libkaffe_vm.so.0.71
+lib/libkaffe_vm.so.0.80
 lib/libkaffe_net.so
-lib/libkaffe_net.so.0.71
+lib/libkaffe_net.so.0.80
 @exec /sbin/ldconfig -m %B
