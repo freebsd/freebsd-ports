@@ -3,19 +3,15 @@
 # Date created:        7 July 1998
 # Whom:                jkoshy
 #
-# $Id: Makefile,v 1.2 1998/07/20 07:56:58 jkoshy Exp $
+# $Id: Makefile,v 1.3 1998/11/20 08:14:12 jkoshy Exp $
 #
 
 DISTNAME=     110.9.1-bin.x86-unix
 PKGNAME=      smlnj-110.9.1
 CATEGORIES=   lang
 MASTER_SITES= ftp://ftp.research.bell-labs.com/dist/smlnj/working/110.9.1/ \
-	      ftp://rodin.stanford.edu/pub/smlnj/working/110.9.1/ \
-	      ftp://flint.cs.yale.edu/pub/smlnj/working/110.9.1/ \
 	      ftp://ftp.diku.dk/pub/smlnj/working/110.9.1/ \
-	      ftp://ftp.cl.cam.ac.uk/MIRRORED/smlnj/working/110.9.1/ \
 	      ftp://sunsite.doc.ic.ac.uk/computing/programming/languages/ml/smlnj/working/110.9.1/ \
-	      ftp://ftp.ntua.gr/pub/lang/smlnj/working/110.9.1/ \
 	      ftp://compiler.kaist.ac.kr/pub/sml/working/110.9.1/
 DISTFILES=    110.9.1-bin.x86-unix.tar.Z 110.9.1-cm.tar.Z 110.9.1-cml.tar.Z \
 	      110.9.1-config.tar.Z 110.9.1-eXene.tar.Z \
@@ -24,6 +20,14 @@ DISTFILES=    110.9.1-bin.x86-unix.tar.Z 110.9.1-cm.tar.Z 110.9.1-cml.tar.Z \
 	      110.9.1-smlnj-lib.tar.Z
 
 MAINTAINER=   jkoshy@freebsd.org
+
+BROKEN_ELF=   build error
+# Other mirror sites that generally carry only released versions of SML
+# 	ftp://rodin.stanford.edu/pub/smlnj/release/
+# 	ftp://ftp.cl.cam.ac.uk/MIRRORED/smlnj/release/
+# 	ftp://ftp.ntua.gr/pub/lang/smlnj/release/
+# Mirror sites that keep files around in gzipped format
+# 	ftp://flint.cs.yale.edu/pub/smlnj/working/110.9.1/
 
 DIST_SUBDIR=  sml-nj
 NO_WRKSUBDIR= yes
