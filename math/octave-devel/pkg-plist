@@ -1,0 +1,19 @@
+@cwd /usr/local
+lib/octave
+bin/octave
+bin/octave-bug
+bin/octave-1.1.1
+man/man1/octave.1
+info/octave.info
+info/octave.info-1
+info/octave.info-10
+info/octave.info-11
+info/octave.info-2
+info/octave.info-3
+info/octave.info-4
+info/octave.info-5
+info/octave.info-6
+info/octave.info-7
+info/octave.info-8
+info/octave.info-9
+include/octave
