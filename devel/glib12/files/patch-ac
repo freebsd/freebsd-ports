@@ -1,5 +1,14 @@
---- glib-config.in.orig	Sun Sep 20 15:22:58 1998
-+++ glib-config.in	Tue Sep 22 21:04:26 1998
+--- glib-config.in.orig	Wed Sep 16 03:08:07 1998
++++ glib-config.in	Fri Dec 11 21:43:37 1998
+@@ -7,7 +7,7 @@
+ usage()
+ {
+ 	cat <<EOF
+-Usage: glib-config [OPTIONS] [LIBRARIES]
++Usage: glib11d-config [OPTIONS] [LIBRARIES]
+ Options:
+ 	[--prefix[=DIR]]
+ 	[--exec-prefix[=DIR]]
 @@ -83,15 +83,15 @@
  	echo $exec_prefix
  fi
@@ -11,11 +20,11 @@
  	libs=""
  	if test "$lib_glib" = "yes"; then
 -		libs="$libs -lglib"
-+		libs="$libs -lglib11"
++		libs="$libs -lglib11d"
  	fi
  	if test "$lib_gmodule" = "yes"; then
 -		libs="@G_MODULE_LDFLAGS@ -lgmodule $libs @G_MODULE_LIBS@"
-+		libs="@G_MODULE_LDFLAGS@ -lgmodule11 $libs @G_MODULE_LIBS@"
++		libs="@G_MODULE_LDFLAGS@ -lgmodule11d $libs @G_MODULE_LIBS@"
  	fi
  	echo "-L@libdir@ $libs"
  fi
