@@ -8,6 +8,7 @@
 
 PORTNAME=	imlib3d
 PORTVERSION=	0.8.0
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,24 +16,30 @@ DISTNAME=	ImLib3D-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	gsl:${PORTSDIR}/math/gsl \
-		fftw:${PORTSDIR}/math/fftw \
+LIB_DEPENDS=	fftw.2:${PORTSDIR}/math/fftw \
+		gsl.3:${PORTSDIR}/math/gsl \
 		xml2.5:${PORTSDIR}/textproc/libxml2 \
-		gtkmm:${PORTSDIR}/x11-toolkits/gtk-- \
-		gtkgl:${PORTSDIR}/x11-toolkits/gtkglarea \
-		gtkglmm:${PORTSDIR}/x11-toolkits/gtkglarea--
+		gtkglmm.1:${PORTSDIR}/x11-toolkits/gtkglarea--
 
-USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 USE_MESA=	yes
-USE_FREETYPE=	yes
-USE_LIBTOOL=	yes
-CONFIGURE_ENV=	CPPFLAGS="${CXXFLAGS} -I${LOCALBASE}/include -I${LOCALBASE}/include/libxml2/libxml" \
-		LIBS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	--enable-libimx --enable-optimize
+#USE_FREETYPE=	yes
+USE_REINPLACE=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS=	--enable-optimize
 INSTALLS_SHLIB=	yes
 
-post-patch:
-	@${REINPLACE_CMD} -e "s,-lpthread,${PTHREAD_LIBS},g" ${WRKSRC}/configure
+.include <bsd.port.pre.mk>
 
-.include <bsd.port.mk>
+.if ${OSVERSION} < 500000
+#BROKEN=		"does not build with GCC 2.x"
+.endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
+		 s|OPTIMIZE_FLAGS=.*$$|OPTIMIZE_FLAGS=|g ; \
+		 s|<xmlversion.h>|<libxml/xmlversion.h>|g' ${WRKSRC}/configure
+
+.include <bsd.port.post.mk>
