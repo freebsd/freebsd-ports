@@ -3,7 +3,7 @@
 # Date created:		25 May 1998
 # Whom:			Mario S F Ferreira <lioux@gns.com.br> et al.
 #
-# $Id: Makefile,v 1.7 1998/08/20 05:38:19 hoek Exp $
+# $Id: Makefile,v 1.8 1998/12/01 08:36:40 asami Exp $
 #
 
 DISTNAME=	qmail-1.03
@@ -89,7 +89,7 @@ NO_MTREE=	yes
 
 do-configure:
 	@# Create/Check the necessary groups/users
-	@PKG_PREFIX=${PREFIX} /usr/bin/perl ${PKGDIR}/INSTALL
+	@PKG_PREFIX=${PREFIX} ${PERL5} ${PKGDIR}/INSTALL
 	@${ECHO} ${CC} ${CFLAGS} > ${WRKSRC}/conf-cc
 	@${ECHO} ${PREFIX} > ${WRKSRC}/conf-qmail
 
@@ -97,7 +97,7 @@ post-patch: thereal-post-patch
 
 do-install:
 	@# Check again, just in case (ideally should error if not found)
-	@PKG_PREFIX=${PREFIX} /usr/bin/perl ${PKGDIR}/INSTALL
+	@PKG_PREFIX=${PREFIX} ${PERL5} ${PKGDIR}/INSTALL
 	@${MKDIR} ${PREFIX}/${DOCDIR} ${PREFIX}/configure
 	@cd ${WRKSRC} ; ./install
 	@${INSTALL_PROGRAM} ${CONFIGUREFILES} ${PREFIX}/configure
