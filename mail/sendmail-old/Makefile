@@ -16,6 +16,8 @@ DISTNAME=	${PORTNAME}.${PORTVERSION}
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Reliable, highly configurable mail transfer agent with utilities
 
+CONFLICTS?=	courier-0.* postfix-1.* postfix-2.* sendmail-8.12.* sendmail-*-8.12.* \
+		smail-3.* zmailer-2.*
 NO_LATEST_LINK=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 WCONF=		${WRKSRC}/devtools/Site
@@ -39,15 +41,18 @@ LDAP_PORT?=	net/openldap20-client
 
 .if defined(SENDMAIL_WITH_LDAP)
 PKGNAMESUFFIX?=	-ldap
+CONFLICTS+=	sendmail-sasl-8.* sendmail-tls-8.*
 LIB_DEPENDS+=	ldap.2:${PORTSDIR}/${LDAP_PORT}
 LIB_DEPENDS+=	lber.2:${PORTSDIR}/${LDAP_PORT}
 .endif
 .if defined(SENDMAIL_WITH_SASL)
 LIB_DEPENDS+=	sasl.8:${PORTSDIR}/security/cyrus-sasl
 PKGNAMESUFFIX?=	-sasl
+CONFLICTS+=	sendmail-ldap-8.* sendmail-tls-8.*
 .endif
 .if defined(SENDMAIL_WITH_TLS) || defined(WITH_TLS)
 PKGNAMESUFFIX?=	-tls
+CONFLICTS+=	sendmail-sasl-8.* sendmail-ldap-8.*
 .endif
 .if defined(SENDMAIL_WITH_SFIO)
 PKGNAMESUFFIX?=	-sfio
@@ -187,7 +192,7 @@ SITE+=	${FILESDIR}/site.config.m4.local
 .endif
 
 .if exists(${DESTDIR}/etc/mail/mailer.conf) && ${PREFIX} == "/usr"
-pre-everything:
+pre-everything::
 	@${ECHO_CMD} "#"
 	@${ECHO_CMD} "# You can't override the base sendmail this way."
 	@${ECHO_CMD} "# your version FreeBSD use mailwrapper."
