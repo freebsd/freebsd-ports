@@ -1,0 +1,8 @@
+--- /usr/local/bluej/bluej.orig	Mon Feb  4 21:55:16 2002
++++ /usr/local/bluej/bluej	Mon Feb  4 21:55:24 2002
+@@ -1,4 +1,4 @@
+ #!/bin/sh
+ APPBASE=/usr/local/bluej
+ CP=$APPBASE/lib/bluej.jar:$APPBASE/lib/editor.jar:$APPBASE/lib/antlr.jar:$APPBASE/lib/MRJToolkitStubs.zip:/usr/local/linux-jdk1.3.1/lib/tools.jar
+-/usr/local/linux-jdk1.3.1/bin/java -cp $CP -native bluej.Main $*
++/usr/local/linux-jdk1.3.1/bin/java -cp $CP bluej.Main $*

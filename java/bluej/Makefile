@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	bluej
-PORTVERSION=	1.1.5
+PORTVERSION=	1.1.6
 CATEGORIES=	java editors
-MASTER_SITES=	ftp://mars.pscit.monash.edu.au/pub/mik/bluej/ \
+MASTER_SITES=	ftp://ftp.bluej.org/pub/bluej/ \
 		ftp://ftp.monash.edu.au/pub/bluej/ \
 		http://www.metaverse.nl/~ernst/
-DISTNAME=	bluej-115
+DISTNAME=	bluej-116
 EXTRACT_SUFX=	.jar
 
 MAINTAINER=	karlj000@unbc.ca
@@ -33,5 +33,7 @@ do-install:
 	@${ECHO} ${PREFIX}/bluej.  Close the installer when done.
 	@cd ${PREFIX}; ${LOCALBASE}/${MY_JDK}/bin/java -jar ${DISTNAME}${EXTRACT_SUFX}
 	@${RM} -f ${PREFIX}/${DISTNAME}${EXTRACT_SUFX}
+	@${PATCH} ${PREFIX}/bluej/bluej < ${FILESDIR}/bluej.diff
+	@${RM} -f ${PREFIX}/bluej/bluej.orig
 
 .include <bsd.port.mk>
