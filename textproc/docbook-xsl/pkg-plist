@@ -13,7 +13,6 @@
 %%PORTDOCS%%%%DOCSDIR%%/common/common.html
 %%PORTDOCS%%%%DOCSDIR%%/copyright.html
 %%PORTDOCS%%%%DOCSDIR%%/extensions.html
-%%PORTDOCS%%%%DOCSDIR%%/extensions.html.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/fo/admon.graphics.extension.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/admon.graphics.html
@@ -81,6 +80,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/fo/example.properties.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/figure.properties.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/firstterm.only.link.html
+%%PORTDOCS%%%%DOCSDIR%%/fo/footer.column.widths.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/footer.content.properties.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/footer.rule.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/footers.on.blank.pages.html
@@ -119,6 +119,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/fo/glossterm.separation.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/glossterm.width.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/graphic.default.extension.html
+%%PORTDOCS%%%%DOCSDIR%%/fo/header.column.widths.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/header.content.properties.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/header.rule.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/headers.on.blank.pages.html
@@ -153,6 +154,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/fo/ld-d0e3194.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/ld-d0e3195.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/ld-d0e3278.html
+%%PORTDOCS%%%%DOCSDIR%%/fo/ld-d0e3300.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/line-height.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/linenumbering.everyNth.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/linenumbering.extension.html
@@ -293,6 +295,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/fo/table.frame.border.thickness.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/table.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/table.properties.html
+%%PORTDOCS%%%%DOCSDIR%%/fo/table.table.properties.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/tablecolumns.extension.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/target.database.document.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/tex.math.delims.html
@@ -624,7 +627,6 @@
 %%PORTDOCS%%%%DOCSDIR%%/html/xref.title-page.separator.html
 %%PORTDOCS%%%%DOCSDIR%%/html/xref.with.number.and.title.html
 %%PORTDOCS%%%%DOCSDIR%%/htmlhelp.html
-%%PORTDOCS%%%%DOCSDIR%%/htmlhelp.html.html
 %%PORTDOCS%%%%DOCSDIR%%/index.html
 %%PORTDOCS%%%%DOCSDIR%%/jrefhtml.xsl
 %%PORTDOCS%%%%DOCSDIR%%/lib/ChangeLog
@@ -639,7 +641,6 @@
 %%PORTDOCS%%%%DOCSDIR%%/pi/rn02re03.html
 %%PORTDOCS%%%%DOCSDIR%%/pr01.html
 %%PORTDOCS%%%%DOCSDIR%%/publishing.html
-%%PORTDOCS%%%%DOCSDIR%%/publishing.html.html
 %%PORTDOCS%%%%DOCSDIR%%/ref.css
 %%PORTDOCS%%%%DOCSDIR%%/reference.css
 %%PORTDOCS%%%%DOCSDIR%%/reference.html
@@ -657,6 +658,7 @@ share/xsl/docbook/catalog
 share/xsl/docbook/common/ChangeLog
 share/xsl/docbook/common/af.xml
 share/xsl/docbook/common/ar.xml
+share/xsl/docbook/common/autoidx-ng.xsl
 share/xsl/docbook/common/bg.xml
 share/xsl/docbook/common/bn.xml
 share/xsl/docbook/common/ca.xml
@@ -807,6 +809,7 @@ share/xsl/docbook/extensions/xsltproc/python/docbook.pyc
 share/xsl/docbook/extensions/xsltproc/python/xslt.py
 share/xsl/docbook/fo/ChangeLog
 share/xsl/docbook/fo/admon.xsl
+share/xsl/docbook/fo/autoidx-ng.xsl
 share/xsl/docbook/fo/autoidx.xsl
 share/xsl/docbook/fo/autotoc.xsl
 share/xsl/docbook/fo/axf.xsl
@@ -816,6 +819,7 @@ share/xsl/docbook/fo/callout.xsl
 share/xsl/docbook/fo/component.xsl
 share/xsl/docbook/fo/division.xsl
 share/xsl/docbook/fo/docbook.xsl
+share/xsl/docbook/fo/docbookng.xsl
 share/xsl/docbook/fo/ebnf.xsl
 share/xsl/docbook/fo/fo-patch-for-fop.xsl
 share/xsl/docbook/fo/fo-rtf.xsl
@@ -856,6 +860,7 @@ share/xsl/docbook/fo/xep.xsl
 share/xsl/docbook/fo/xref.xsl
 share/xsl/docbook/html/ChangeLog
 share/xsl/docbook/html/admon.xsl
+share/xsl/docbook/html/autoidx-ng.xsl
 share/xsl/docbook/html/autoidx.xsl
 share/xsl/docbook/html/autotoc.xsl
 share/xsl/docbook/html/biblio.xsl
@@ -871,6 +876,7 @@ share/xsl/docbook/html/chunktoc.xsl
 share/xsl/docbook/html/component.xsl
 share/xsl/docbook/html/division.xsl
 share/xsl/docbook/html/docbook.xsl
+share/xsl/docbook/html/docbookng.xsl
 share/xsl/docbook/html/ebnf.xsl
 share/xsl/docbook/html/footnote.xsl
 share/xsl/docbook/html/formal.xsl
@@ -1082,6 +1088,7 @@ share/xsl/docbook/params/equation.properties.xml
 share/xsl/docbook/params/example.properties.xml
 share/xsl/docbook/params/figure.properties.xml
 share/xsl/docbook/params/firstterm.only.link.xml
+share/xsl/docbook/params/footer.column.widths.xml
 share/xsl/docbook/params/footer.content.properties.xml
 share/xsl/docbook/params/footer.rule.xml
 share/xsl/docbook/params/footers.on.blank.pages.xml
@@ -1113,6 +1120,7 @@ share/xsl/docbook/params/glossterm.separation.xml
 share/xsl/docbook/params/glossterm.width.xml
 share/xsl/docbook/params/graphic.default.extension.xml
 share/xsl/docbook/params/graphicsize.extension.xml
+share/xsl/docbook/params/header.column.widths.xml
 share/xsl/docbook/params/header.content.properties.xml
 share/xsl/docbook/params/header.rule.xml
 share/xsl/docbook/params/headers.on.blank.pages.xml
@@ -1327,6 +1335,7 @@ share/xsl/docbook/params/table.frame.border.color.xml
 share/xsl/docbook/params/table.frame.border.style.xml
 share/xsl/docbook/params/table.frame.border.thickness.xml
 share/xsl/docbook/params/table.properties.xml
+share/xsl/docbook/params/table.table.properties.xml
 share/xsl/docbook/params/tablecolumns.extension.xml
 share/xsl/docbook/params/target.database.document.xml
 share/xsl/docbook/params/targets.filename.xml
@@ -1373,6 +1382,7 @@ share/xsl/docbook/template/testtemplate.xml
 share/xsl/docbook/template/titlepage.xsl
 share/xsl/docbook/xhtml/ChangeLog
 share/xsl/docbook/xhtml/admon.xsl
+share/xsl/docbook/xhtml/autoidx-ng.xsl
 share/xsl/docbook/xhtml/autoidx.xsl
 share/xsl/docbook/xhtml/autotoc.xsl
 share/xsl/docbook/xhtml/biblio.xsl
@@ -1388,6 +1398,7 @@ share/xsl/docbook/xhtml/chunktoc.xsl
 share/xsl/docbook/xhtml/component.xsl
 share/xsl/docbook/xhtml/division.xsl
 share/xsl/docbook/xhtml/docbook.xsl
+share/xsl/docbook/xhtml/docbookng.xsl
 share/xsl/docbook/xhtml/ebnf.xsl
 share/xsl/docbook/xhtml/footnote.xsl
 share/xsl/docbook/xhtml/formal.xsl
