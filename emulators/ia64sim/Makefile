@@ -27,6 +27,10 @@ USE_ZIP=	yes
 BROKEN+=		"and does not build with latest gcc"
 .endif
 
+.if ${ARCH} != "i386"
+BROKEN=		"Does not compile on !i386"
+.endif
+
 EXTRACT_BEFORE_ARGS=	-qLa
 WRKSRC=		${WRKDIR}/home/chuck/ia64simcc
 USE_GMAKE=	yes
