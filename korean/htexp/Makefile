@@ -28,8 +28,9 @@ TEXMF=		${PREFIX}/share/texmf
 BROKEN=	"Systems prior to 3.2-RELEASE is out of support"
 .endif
 
+# htexp binary is built on 3.2-RELEASE.
 .if ${OSVERSION} > 400000 && !exists(/usr/lib/compat/libc.so.3)
-BROKEN=		"You should install compat3x distribution"
+LIB_DEPENDS+=	c.3:${PORTSDIR}/misc/compat3x
 .endif
 
 do-build:
