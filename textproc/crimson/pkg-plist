@@ -181,5 +181,3 @@
 %%PORTDOCS%%@dirrm share/doc/java/crimson
 %%PORTDOCS%%@dirrm share/doc/java
 share/java/classes/crimson.jar
-@dirrm share/java/classes
-@dirrm share/java
