@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ethereal
-PORTVERSION=	0.8.13
+PORTVERSION=	0.8.14
 CATEGORIES=	net ipv6
 MASTER_SITES=	ftp://ftp.ethereal.com/pub/ethereal/ \
 		ftp://gd.tuwien.ac.at/infosys/security/ethereal/ \
@@ -14,7 +14,6 @@ MASTER_SITES=	ftp://ftp.ethereal.com/pub/ethereal/ \
 		ftp://the.wiretapped.net/pub/security/packet-sniffing/ethereal/
 
 MAINTAINER=	billf@FreeBSD.org
-FORBIDDEN=	"Remotely exploitable buffer overflow; identical to Security Advisory 00:61"
 
 USE_X_PREFIX=	yes
 USE_GTK=	yes
