@@ -191,6 +191,7 @@
     SUBDIR += ruby-ming
     SUBDIR += ruby-opengl
     SUBDIR += ruby-qt2gl
+    SUBDIR += ruby-tgif
     SUBDIR += s10sh
     SUBDIR += sane-backends
     SUBDIR += sane-frontends

@@ -1,0 +1,9 @@
+%%RUBY_SITEARCHLIBDIR%%/tgif.so
+%%PORTDOCS%%%%RUBY_DOCDIR%%/tgif/README
+%%PORTDOCS%%%%RUBY_DOCDIR%%/tgif/ja/ChangeLog.ja
+%%PORTDOCS%%%%RUBY_DOCDIR%%/tgif/ja/README.ja
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/tgif/ja
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/tgif
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/tgif/test01.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/tgif/test01_ja.rb
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/tgif
