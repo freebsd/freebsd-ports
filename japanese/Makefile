@@ -14,6 +14,7 @@
     SUBDIR += ack
     SUBDIR += acroread-jpnfont
     SUBDIR += addttfont
+    SUBDIR += alias-fonts
     SUBDIR += another-htmllint
     SUBDIR += anthy
     SUBDIR += aterm
