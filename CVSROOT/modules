@@ -5224,6 +5224,7 @@ p5-GtkXmHTML	ports/x11-toolkits/p5-GtkXmHTML
 p5-HTML		ports/www/p5-HTML
 p5-HTML-CalendarMonthSimple	ports/www/p5-HTML-CalendarMonthSimple
 p5-HTML-Clean	ports/www/p5-HTML-Clean
+p5-HTML-Element-Extended	ports/www/p5-HTML-Element-Extended
 p5-HTML-Embperl	ports/www/p5-HTML-Embperl
 p5-HTML-FillInForm	ports/www/p5-HTML-FillInForm
 p5-HTML-Format	ports/textproc/p5-HTML-Format
