@@ -1,0 +1,23 @@
+--- src/mod/share.mod/share.c.orig	Tue Jul 17 23:53:42 2001
++++ src/mod/share.mod/share.c	Fri Nov  2 18:37:15 2001
+@@ -1121,7 +1123,8 @@
+   int i, sock;
+   FILE *f;
+ 
+-  egg_snprintf(s, sizeof s, ".share.%s.%lu.users", botnetnick, now);
++  egg_snprintf(s, sizeof s, "%.100s/.share.%.32s.%lu.users", 
++		tempdir, botnetnick, now);
+   if (!(b_status(idx) & STAT_SHARE)) {
+     dprintf(idx, "s e You didn't ask; you just started sending.\n");
+     dprintf(idx, "s e Ask before sending the userfile.\n");
+@@ -1890,8 +1893,8 @@
+   struct chanuserrec *ch;
+   struct chanset_t *cst;
+ 
+-  egg_snprintf(share_file, sizeof share_file, ".share.%s.%lu", dcc[idx].nick,
+-	       now);
++  egg_snprintf(share_file, sizeof share_file, "%.100s/.share.%.32s.%lu", 
++		tempdir, dcc[idx].nick, now);
+   if (dcc[idx].u.bot->uff_flags & UFF_OVERRIDE) {
+     debug1("NOTE: Sharing aggressively with %s, overriding its local bots.",
+ 	   dcc[idx].nick);

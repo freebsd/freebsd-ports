@@ -10,6 +10,7 @@
     SUBDIR += darkbot
     SUBDIR += dcc
     SUBDIR += dircproxy
+    SUBDIR += eggdrop
     SUBDIR += epic4
     SUBDIR += ezbounce
     SUBDIR += gruftistats
