@@ -75,7 +75,7 @@
 
 PORTNAME=	mutt-devel
 PORTVERSION=	1.5.4
-PORTREVISION?=	2
+PORTREVISION?=	3
 CATEGORIES+=	mail ipv6
 .if defined(WITH_MUTT_NNTP)
 CATEGORIES+=	news
@@ -274,6 +274,10 @@ SCRIPTS_ENV+=	MUTT_PGP_PATCH="yes"
 .endif
 .if ! defined(WITHOUT_MUTT_HTML)
 SCRIPTS_ENV+=	MUTT_HTML="yes"
+.endif
+.if ! defined(WITHOUT_MUTT_QUOTE_PATCH)
+post-patch::
+	${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-quote
 .endif
 
 .if !defined(NOPORTDOCS)

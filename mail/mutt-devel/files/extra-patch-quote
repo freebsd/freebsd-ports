@@ -1,0 +1,11 @@
+--- muttlib.c.orig     Sun Jun  8 10:37:06 2003
++++ muttlib.c  Sun Jun  8 10:37:58 2003
+@@ -1236,7 +1236,7 @@
+	strcpy (buf + j + 1, Quotebuf + j);
+       }
+       else
+-	snprintf (buf, sizeof (buf), "%s%s", s->prefix, Quotebuf);
++	snprintf (buf, sizeof (buf), "%s%s", NONULL(s->prefix), Quotebuf);
+ 
+       state_puts (buf, s);
+     }
