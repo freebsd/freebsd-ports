@@ -3,13 +3,13 @@
 # Date created:         20 Sep 1998
 # Whom:                 msmith
 #
-# $Id: Makefile,v 1.11 1999/07/21 14:55:37 marcel Exp $
+# $Id: Makefile,v 1.12 1999/07/22 17:29:22 msmith Exp $
 #
 
 DISTNAME=       linux
 PKGNAME=	citrix_ica-3.0.15
 CATEGORIES=	comms
-MASTER_SITES=   "Distfile must be fetched manually"
+MASTER_SITES=   
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=     msmith@FreeBSD.ORG
