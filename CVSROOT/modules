@@ -5911,6 +5911,7 @@ perlsh		ports/shells/perlsh
 perltidy	ports/devel/perltidy
 personality	ports/sysutils/personality
 pexts		ports/lang/pexts
+pf		ports/security/pf
 pfaedit		ports/print/pfaedit
 pfe-devel	ports/lang/pfe-devel
 pfinger		ports/net/pfinger
