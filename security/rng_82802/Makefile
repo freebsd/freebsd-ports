@@ -31,4 +31,8 @@ post-deinstall:
 
 PKGDEINSTALL=	${PKGINSTALL}
 
+.if ${OSVERSION} >= 502112
+BROKEN=		"Does not compile on FreeBSD >= 5.x"
+.endif
+
 .include <bsd.port.post.mk>
