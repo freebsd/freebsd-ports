@@ -1,9 +1,33 @@
 bin/xpilot
-bin/xpilot-3.3.1
 bin/xpilots
-bin/xpilots-3.3.1
 bin/xp-replay
-bin/xp-replay-3.3.1
 man/man6/xpilot.6.gz
 man/man6/xpilots.6.gz
-lib/xpilot
+man/man6/xp-replay.6.gz
+lib/xpilot/sounds
+lib/xpilot/defaults
+lib/xpilot/robots
+lib/xpilot/maps/CAMD.map
+lib/xpilot/maps/blood-music2.map
+lib/xpilot/maps/cloudscape.map
+lib/xpilot/maps/doggy.map
+lib/xpilot/maps/fireball.map
+lib/xpilot/maps/fuzz.map
+lib/xpilot/maps/fuzz2.map
+lib/xpilot/maps/globe.map
+lib/xpilot/maps/grandprix.map
+lib/xpilot/maps/pad.map
+lib/xpilot/maps/pit.map
+lib/xpilot/maps/planetx.map
+lib/xpilot/maps/teamball.map
+lib/xpilot/maps/tourmination.map
+lib/xpilot/maps/tournament.map
+lib/xpilot/maps/war.map
+lib/xpilot/textures/ball.xpm
+lib/xpilot/textures/metalite.xpm
+lib/xpilot/textures/moon.xpm
+lib/xpilot/textures/rock4.xpm
+lib/xpilot/textures/volcanic.xpm
+@dirrm lib/xpilot/maps
+@dirrm lib/xpilot/textures
+@dirrm lib/xpilot
