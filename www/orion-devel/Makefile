@@ -7,7 +7,7 @@
 
 PORTNAME=	orion
 PORTVERSION=	1.5.2
-PORTREVISION=	17
+PORTREVISION=	18
 CATEGORIES=	www java
 MASTER_SITES=	http://www.orionserver.com/distributions/ \
 		http://www.atlassian.com/software/orion/downloads/ \
@@ -43,7 +43,7 @@ STDERR_LOG=	${LOG_DIR}/stderr.log
 AUTO_START?=	NO
 STOP_TIMEOUT?=	5
 PID_FILE=	/var/run/${APP_SHORTNAME}.pid
-REPLACE_FILES=	${PORTSDIR}/www/jakarta-tomcat/files/daemonctl.c \
+REPLACE_FILES=	${PORTSDIR}/www/jakarta-tomcat4/files/daemonctl.c \
 		${FILESDIR}/${CONTROL_SCRIPT_NAME}.1 \
 		${FILESDIR}/${STARTUP_SCRIPT_NAME} \
 		${WRKSRC}/config/default-web-site.xml \
