@@ -1,0 +1,20 @@
+--- makefile	Thu Mar 19 02:54:27 1998
++++ /home/andy/tmp/wrk/makefile	Sat Mar 21 16:32:42 1998
+@@ -9,7 +9,7 @@
+ 
+ # Makefile user-definable variables------------------------------------------
+ 
+-CC=gcc
++CC=gcc ${CFLAGS} -I/usr/X11R6/include
+ MATHLIB=-lm
+ 
+ 
+@@ -36,7 +36,7 @@
+ ### uncomment for FreeBSD ###
+ ### --------------------- ###
+ 
+-# XLIB=-L /usr/X11R6/lib -lX11 -lcompat
++XLIB=-L/usr/X11R6/lib -lX11
+ # CFLAGS=-I/usr/X11/include
+ 
+ 
