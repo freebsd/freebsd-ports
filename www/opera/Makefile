@@ -7,7 +7,7 @@
 
 PORTNAME=	opera
 PORTVERSION=	${OPERA_VER}.${OPERA_DATE}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	http://ftp.scarlet.be/pub/opera/unix/freebsd/${OPERA_VER:S/.//}/${OPERA_REL}/en/static/ \
 		ftp://ftp.planetmirror.com/pub/opera/unix/freebsd/${OPERA_VER:S/.//}/${OPERA_REL}/en/static/ \
@@ -46,7 +46,7 @@ NO_BUILD=	yes
 NO_FILTER_SHLIBS=yes
 
 .ifndef(WITHOUT_ASPELL)
-LIB_DEPENDS+=	aspell.15:${PORTSDIR}/textproc/aspell
+LIB_DEPENDS+=	aspell.16:${PORTSDIR}/textproc/aspell
 .endif
 
 .include <bsd.port.pre.mk>

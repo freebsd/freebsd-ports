@@ -7,6 +7,7 @@
 
 PORTNAME=	raspell
 PORTVERSION=	0.1
+PORTREVISION=	1
 CATEGORIES=	textproc ruby
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,7 +18,7 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	A Ruby interface binding to aspell
 
-LIB_DEPENDS=	aspell.15:${PORTSDIR}/textproc/aspell
+LIB_DEPENDS=	aspell.16:${PORTSDIR}/textproc/aspell
 
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes

@@ -268,7 +268,7 @@ CONFIGURE_ARGS+=--enable-posix
 .endif
 
 .if ${PHP_MODNAME} == "pspell"
-LIB_DEPENDS+=	aspell.15:${PORTSDIR}/textproc/aspell
+LIB_DEPENDS+=	aspell.16:${PORTSDIR}/textproc/aspell
 
 CONFIGURE_ARGS+=--with-pspell=${LOCALBASE}
 .endif

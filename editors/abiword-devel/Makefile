@@ -7,6 +7,7 @@
 
 PORTNAME=	AbiWord2
 PORTVERSION=	2.0.10
+PORTREVISION=	1
 CATEGORIES=	editors
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.abisource.com/downloads/Version-${PORTVERSION}/lf/
@@ -65,7 +66,7 @@ GNOME_ENABLED=		yes
 LIB_DEPENDS+=		enchant.2:${PORTSDIR}/textproc/enchant
 CONFIGURE_ARGS+=	--disable-pspell
 .  elif defined(WITH_ASPELL) || exists(${LOCALBASE}/lib/libaspell.so) && !defined(WITH_ENCHANT)
-LIB_DEPENDS+=		aspell.15:${PORTSDIR}/textproc/aspell
+LIB_DEPENDS+=		aspell.16:${PORTSDIR}/textproc/aspell
 CONFIGURE_ARGS+=	--with-pspell=${LOCALBASE} \
 			--disable-enchant
 .  else

@@ -7,7 +7,7 @@
 
 PORTNAME=	gnomespell
 PORTVERSION=	1.0.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	textproc gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/gnome-spell/1.0
@@ -17,7 +17,7 @@ DIST_SUBDIR=	gnome
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A GNOME/Bonobo component for spell checking
 
-LIB_DEPENDS=	aspell.15:${PORTSDIR}/textproc/aspell
+LIB_DEPENDS=	aspell.16:${PORTSDIR}/textproc/aspell
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes

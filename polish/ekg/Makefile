@@ -6,7 +6,7 @@
 
 PORTNAME=		ekg
 PORTVERSION=		1.5
-PORTREVISION=		1
+PORTREVISION=		2
 PORTEPOCH=		1
 CATEGORIES=		polish net
 MASTER_SITES=		http://dev.null.pl/ekg/archive/
@@ -15,7 +15,7 @@ DISTNAME=		${PORTNAME}-${PORTVERSION}
 MAINTAINER=		jacek@combit.com.pl
 COMMENT=		Text-mode Gadu-Gadu client
 
-LIB_DEPENDS=		aspell.15:${PORTSDIR}/polish/aspell
+LIB_DEPENDS=		aspell.16:${PORTSDIR}/polish/aspell
 
 USE_GMAKE=		yes
 GNU_CONFIGURE=		yes

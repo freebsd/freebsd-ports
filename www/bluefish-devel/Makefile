@@ -7,6 +7,7 @@
 
 PORTNAME=	bluefish
 PORTVERSION=	0.13
+PORTREVISION=	1
 CATEGORIES=	www editors
 MASTER_SITES=	http://pkedu.fbt.eitn.wau.nl/~olivier/${DOWNLOAD}/ \
 		ftp://bluefish.advancecreations.com/pub/bluefish/${DOWNLOAD}/ \
@@ -18,7 +19,7 @@ MAINTAINER=	kwm@rainbow-runner.nl
 COMMENT=	HTML editor designed for the experienced web designer
 
 LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre \
-		aspell.15:${PORTSDIR}/textproc/aspell
+		aspell.16:${PORTSDIR}/textproc/aspell
 
 .if !defined(WITHOUT_WEBLINT)
 RUN_DEPENDS+=	weblint:${PORTSDIR}/www/weblint

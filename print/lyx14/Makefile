@@ -7,6 +7,7 @@
 
 PORTNAME=	lyx
 PORTVERSION=	1.3.4
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	ftp://ftp.lyx.org/pub/lyx/stable/ \
 		ftp://planetmirror.com/pub/lyx/stable/ \
@@ -48,7 +49,7 @@ USE_XPM=	yes
 .endif
 
 .if defined(WITH_ASPELL)
-LIB_DEPENDS+=	aspell.15:${PORTSDIR}/textproc/aspell
+LIB_DEPENDS+=	aspell.16:${PORTSDIR}/textproc/aspell
 CONFIGURE_ARGS+=	--with-pspell \
 			--with-pspell-lib="${LOCALBASE}/lib" \
 			--with-pspell-include="${LOCALBASE}/include"
