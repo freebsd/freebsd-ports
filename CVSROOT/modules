@@ -8428,6 +8428,7 @@ srm		ports/security/srm
 srmt		ports/sysutils/srmt
 srp		ports/security/srp
 ss		ports/math/ss
+ssamtse		ports/games/ssamtse
 sscalc		ports/astro/sscalc
 ssed		ports/editors/ssed
 ssh		ports/security/ssh
