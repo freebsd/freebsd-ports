@@ -1,9 +1,14 @@
+@exec mkdir -p %D/var/netsaint/archives
+@exec mkdir -p %D/var/netsaint/rw
+@exec chmod 775 %D/var/netsaint %D/var/netsaint/archives %D/var/netsaint/rw
+@exec chown netsaint:netsaint %D/var/netsaint %D/var/netsaint/archives
+@exec chown nobody:nogroup %D/var/netsaint/rw
 bin/netsaint
-etc/netsaint/commands.cfg
-etc/netsaint/hosts.cfg
-etc/netsaint/netsaint.cfg
-etc/netsaint/nscgi.cfg
-etc/netsaint/resource.cfg
+etc/netsaint/commands.cfg.dist
+etc/netsaint/hosts.cfg.dist
+etc/netsaint/netsaint.cfg.dist
+etc/netsaint/nscgi.cfg.dist
+etc/netsaint/resource.cfg.dist
 etc/rc.d/netsaint.sh
 share/netsaint/docs/about.html
 share/netsaint/docs/addons.html
@@ -167,6 +172,7 @@ share/netsaint/images/logos/mandrake.gd2
 share/netsaint/images/logos/mandrake.gif
 share/netsaint/images/logos/next.gd2
 share/netsaint/images/logos/next.gif
+share/netsaint/images/logos/netsaint.gd2
 share/netsaint/images/logos/ng-switch40.gd2
 share/netsaint/images/logos/ng-switch40.gif
 share/netsaint/images/logos/novell40.gd2
@@ -271,7 +277,7 @@ share/netsaint/stylesheets/status.css
 share/netsaint/stylesheets/statusmap.css
 share/netsaint/stylesheets/tac.css
 share/netsaint/stylesheets/trends.css
-@dirrm etc/netsaint
+@unexec rmdir %D/etc/netsaint 2>/dev/null || true
 @dirrm share/netsaint/docs/developer/images
 @dirrm share/netsaint/docs/developer
 @dirrm share/netsaint/docs/images
@@ -282,6 +288,6 @@ share/netsaint/stylesheets/trends.css
 @dirrm share/netsaint/sbin
 @dirrm share/netsaint/stylesheets
 @dirrm share/netsaint
-@dirrm var/netsaint/archives
-@dirrm var/netsaint
-@dirrm var
+@unexec rmdir %D/var/netsaint/archives 2>/dev/null || true
+@unexec rmdir %D/var/netsaint/rw 2>/dev/null || true
+@unexec rmdir %D/var/netsaint 2>/dev/null || true

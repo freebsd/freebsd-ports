@@ -9,24 +9,6 @@
  ac_help="$ac_help
  --with-netsaint-user=<user> sets user name to run netsaint"
  ac_help="$ac_help
-@@ -117,12 +117,12 @@
- x_includes=NONE
- x_libraries=NONE
- bindir='${exec_prefix}/bin'
--sbindir='${exec_prefix}/sbin'
--libexecdir='${exec_prefix}/libexec'
--datadir='${prefix}/share'
--sysconfdir='${prefix}/etc'
-+sbindir='${exec_prefix}/share/netsaint/sbin'
-+libexecdir='${exec_prefix}/libexec/netsaint'
-+datadir='${prefix}/share/netsaint'
-+sysconfdir='${prefix}/etc/netsaint'
- sharedstatedir='${prefix}/com'
--localstatedir='${prefix}/var'
-+localstatedir='${prefix}/var/netsaint'
- libdir='${exec_prefix}/lib'
- includedir='${prefix}/include'
- oldincludedir='/usr/include'
 @@ -562,9 +562,9 @@
  # Prefer explicitly selected file to automatically selected ones.
  if test -z "$CONFIG_SITE"; then

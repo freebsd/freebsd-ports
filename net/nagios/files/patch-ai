@@ -1,5 +1,5 @@
---- daemon-init.in.orig	Sun Feb 18 22:33:21 2001
-+++ daemon-init.in	Thu Mar  1 22:00:37 2001
+--- daemon-init.in.orig	Sun Feb 18 23:33:21 2001
++++ daemon-init.in	Tue Apr  3 20:58:18 2001
 @@ -68,12 +68,9 @@
  
  
@@ -10,18 +10,18 @@
 -#elif [ -f /etc/init.d/functions ]; then
 -#. /etc/init.d/functions
 -#fi
-+if [ -f /usr/local/etc/netsaint/functions ]; then
-+. /usr/local/etc/netsaint/functions
++if [ -f @sysconfdir@/functions ]; then
++. @sysconfdir@/functions
 +fi
  
  prefix=@prefix@
  exec_prefix=@exec_prefix@
-@@ -92,7 +89,7 @@
+@@ -101,7 +98,7 @@
  
- # Check that netsaint exists.
- test -f $NetsaintBin || exit 0
--
-+        
- # Check that netsaint.cfg exists.
- test -f $NetsaintCfg || exit 0
-           
+ 	start)
+ 		echo "Starting network monitor: netsaint"
+-		su $Netsaint -c "touch $NetsaintVar/netsaint.log $NetsaintSav"
++		su -m $Netsaint -c "touch $NetsaintVar/netsaint.log $NetsaintSav"
+ 		$NetsaintBin -d $NetsaintCfg
+ 		if [ -d $NetsaintLckDir ]; then touch $NetsaintLckDir/$NetsaintLckFile; fi
+ 		sleep 1

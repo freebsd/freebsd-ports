@@ -31,7 +31,7 @@ if( getgrnam( "netsaint" ) ) {
 
 print "netsaint user using uid $nsUID and gid $nsGID\n";
 
-system( "/usr/bin/chpass -a \"netsaint:*:$nsUID:$nsGID\:\:0:0:Netsaint pseudo-user:$ENV{'PREFIX'}/netsaint:/sbin/nologin\"" );
+system( "/usr/bin/chpass -a \"netsaint:*:$nsUID:$nsGID\:\:0:0:Netsaint pseudo-user:/var/netsaint:/sbin/nologin\"" );
 
 sub append_file {
 	local($file,@list) = @_;
