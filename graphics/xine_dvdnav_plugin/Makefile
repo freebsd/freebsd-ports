@@ -16,7 +16,6 @@ DISTNAME=	xine-dvdnav-${PORTVERSION:C/b/beta/}
 MAINTAINER=	nobutaka@FreeBSD.org
 
 LIB_DEPENDS=	xine.0:${PORTSDIR}/graphics/libxine \
-		dvdcss.2:${PORTSDIR}/graphics/libdvdcss \
 		dvdread.2:${PORTSDIR}/graphics/libdvdread
 
 GNU_CONFIGURE=	yes
