@@ -1,13 +1,13 @@
 # New ports collection makefile for:	mailagent
-# Version required:		3.0pl54
+# Version required:		3.0pl56
 # Date created:			23 Sep 1996
 # Whom:				Masafumi NAKANE <max@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.9 1997/01/31 21:46:37 max Exp $
+# $Id: Makefile,v 1.10 1997/03/25 08:23:49 max Exp $
 #
 
-DISTNAME=	mailagent-3.0pl54
-PKGNAME=	mailagent-3.0.54
+DISTNAME=	mailagent-3.0pl56
+PKGNAME=	mailagent-3.0.56
 CATEGORIES=	mail
 MASTER_SITES=	http://www.sfc.wide.ad.jp/~max/FreeBSD/ports/distfiles/ \
 		ftp://freefall.freebsd.org/pub/FreeBSD/LOCAL_PORTS/
