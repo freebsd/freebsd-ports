@@ -1,12 +1,11 @@
 @comment $FreeBSD$
-include/libyahoo2/yahoo2.h
-include/libyahoo2/yahoo2_callbacks.h
-include/libyahoo2/yahoo2_types.h
-include/libyahoo2/yahoo_fn.h
-include/libyahoo2/yahoo_httplib.h
-include/libyahoo2/yahoo_list.h
+include/yahoo2.h
+include/yahoo2_callbacks.h
+include/yahoo2_types.h
+include/yahoo_fn.h
+include/yahoo_httplib.h
+include/yahoo_list.h
 lib/libyahoo2.a
 lib/libyahoo2.so
-lib/libyahoo2.so.8
+lib/libyahoo2.so.9
 libdata/pkgconfig/libyahoo2.pc
-@dirrm include/libyahoo2
