@@ -50,7 +50,7 @@ CATEGORIES=	shells
 MASTER_SITES=	http://www.sublimation.org/scponly/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	mcglk@artlogix.com
+MAINTAINER=	rushani@FreeBSD.org
 COMMENT=	A tiny shell that only permits scp and sftp
 
 MAN8=		scponly.8
