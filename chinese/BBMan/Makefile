@@ -26,10 +26,20 @@ USE_GCC=	3.3
 
 PLIST_FULES=	bin/BBMan
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=		"Does not link on FreeBSD 4.x"
+.endif
+
+.if ${ARCH} == ia64
+BROKEN=		"Hard-codes reference to libc_r"
+.endif
+
 do-build:
 		cd ${WRKSRC} && ${CXX} main.cpp `wxgtk2-2.4-config --libs --cxxflags` -I${LOCALBASE}/include ${CFLAGS} -o BBMan
 
 do-install:
 		${INSTALL_PROGRAM} ${WRKSRC}/BBMan ${PREFIX}/bin/BBMan
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
