@@ -20,16 +20,19 @@ share/gnome/gdeskcal/code/cmdlineparser.py
 share/gnome/gdeskcal/code/configvalues.py
 share/gnome/gdeskcal/code/desktop.py
 share/gnome/gdeskcal/code/errormessage.py
+share/gnome/gdeskcal/code/formats.py
 share/gnome/gdeskcal/code/i18n.py
 share/gnome/gdeskcal/code/icon.py
+share/gnome/gdeskcal/code/planner/cal/CalEvent.py
+share/gnome/gdeskcal/code/planner/cal/Calendar.py
+share/gnome/gdeskcal/code/planner/cal/Date.py
+share/gnome/gdeskcal/code/planner/cal/RRule.py
+share/gnome/gdeskcal/code/planner/cal/Recurrences.py
+share/gnome/gdeskcal/code/planner/cal/__init__.py
 share/gnome/gdeskcal/code/planner/CalEditor.py
-share/gnome/gdeskcal/code/planner/CalEvent.py
-share/gnome/gdeskcal/code/planner/Calendar.py
 share/gnome/gdeskcal/code/planner/Planner.py
 share/gnome/gdeskcal/code/planner/Popup.py
-share/gnome/gdeskcal/code/planner/RecurrenceRule.py
 share/gnome/gdeskcal/code/planner/__init__.py
-share/gnome/gdeskcal/code/planner/caltime.py
 share/gnome/gdeskcal/code/planner/categories.py
 share/gnome/gdeskcal/code/planner/iCalLoader.py
 share/gnome/gdeskcal/code/planner/iCalWriter.py
@@ -70,6 +73,7 @@ share/locale/zh_CN/LC_MESSAGES/gdeskcal.mo
 @dirrm share/gnome/gdeskcal/skins
 @dirrm share/gnome/gdeskcal/data/gfx
 @dirrm share/gnome/gdeskcal/data
+@dirrm share/gnome/gdeskcal/code/planner/cal
 @dirrm share/gnome/gdeskcal/code/planner
 @dirrm share/gnome/gdeskcal/code
 @dirrm share/gnome/gdeskcal
