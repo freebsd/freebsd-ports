@@ -5,7 +5,6 @@ libexec/uvscan/names.dat
 libexec/uvscan/scan.dat
 sbin/update_dat
 share/doc/uvscan/reseller.txt
-share/doc/uvscan/readme.txt
 share/doc/uvscan/packing.lst
 @dirrm libexec/uvscan
 @dirrm share/doc/uvscan

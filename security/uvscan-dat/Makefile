@@ -29,7 +29,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/libexec/uvscan
 .endfor
 	${MKDIR} ${PREFIX}/share/doc/uvscan
-.for file in reseller.txt readme.txt packing.lst
+.for file in reseller.txt packing.lst
 	${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/uvscan
 .endfor
 	${INSTALL_SCRIPT} ${WRKDIR}/update_dat ${PREFIX}/sbin
