@@ -3,9 +3,9 @@ bin/liferea-bin
 lib/liferea/liblihtmlg.la
 lib/liferea/liblihtmlg.so
 lib/liferea/liblihtmlg.so.0
-lib/liferea/liblihtmlm.la
-lib/liferea/liblihtmlm.so
-lib/liferea/liblihtmlm.so.0
+%%MOZ%%lib/liferea/liblihtmlm.la
+%%MOZ%%lib/liferea/liblihtmlm.so
+%%MOZ%%lib/liferea/liblihtmlm.so.0
 lib/liferea/liblihtmlt.la
 lib/liferea/liblihtmlt.so
 lib/liferea/liblihtmlt.so.0
