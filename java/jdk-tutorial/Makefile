@@ -3,7 +3,7 @@
 # Date created:		Tue Mar 23 10:18:20 EET 1999
 # Whom:			Martti Kuparinen <martti.kuparinen@ericsson.com>
 #
-# $Id: Makefile,v 1.1.1.1 1999/04/30 18:16:01 taoka Exp $
+# $Id: Makefile,v 1.2 1999/05/05 15:00:01 taoka Exp $
 #
 
 DISTNAME=	tutorial
@@ -29,6 +29,6 @@ post-install:
 	@${CAT} ${PKGDIR}/MESSAGE
 
 pre-clean:
-	@${RM} -f ${PKGDIR}/MESSAGE
+	@-${RM} -f ${PKGDIR}/MESSAGE
 
 .include <bsd.port.mk>
