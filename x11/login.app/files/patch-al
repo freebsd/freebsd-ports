@@ -1,0 +1,11 @@
+--- config.h	2000/12/13 21:04:54	1.1
++++ config.h	2000/12/13 21:05:08
+@@ -23,7 +23,7 @@
+ #define CONFIG_H
+ 
+ /* xinit */
+-#define XINIT                   "/usr/X11R6/bin/xinit"
++#define XINIT                   "%%X11BASE%%/bin/xinit"
+ 
+ /* Theme directory */
+ #define THEME_DIR		"Themes"

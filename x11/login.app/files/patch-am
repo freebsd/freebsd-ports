@@ -1,0 +1,17 @@
+--- Themes/Linux/Settings	2000/12/13 21:12:32	1.1
++++ Themes/Linux/Settings	2000/12/13 21:12:53
+@@ -15,12 +15,12 @@
+ 
+   MessagePosition = "231, 130";
+   MessageJustification = Center;
+-  MessageFont = "-*-utopia-regular-*-*-*-18-*-*-*-*-*-*-*";
++  MessageFont = "-*-utopia-regular-*-*-*-19-*-*-*-*-*-*-*";
+   MessageColor = "grey20";
+ 
+   HostnamePosition = "450, 80";
+   HostnameJustification = Right;
+-  HostnameFont = "-*-utopia-regular-*-*-*-18-*-*-*-*-*-*-*";
++  HostnameFont = "-*-utopia-regular-*-*-*-19-*-*-*-*-*-*-*";
+   HostnameColor = "grey30";
+ 
+   InputFont = "-*-helvetica-medium-r-*-*-18-*-*-*-*-*-*-*";

@@ -1,0 +1,10 @@
+--- Scripts/Startup.orig	Sat Nov 11 09:24:57 2000
++++ Scripts/Startup	Thu Dec 14 10:38:58 2000
+@@ -1,6 +1,6 @@
+ #!/bin/sh
+ 
+-PATH="/bin:/usr/bin:/usr/local/bin:/usr/X11R6/bin"
++PATH="/bin:/usr/bin:%%LOCALBASE%%/bin:%%X11BASE%%/bin"
+ 
+ #
+ # Set cursor for the root window.

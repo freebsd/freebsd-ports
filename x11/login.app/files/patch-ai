@@ -1,17 +1,24 @@
---- Scripts/Logout.root.orig	Mon Jan 17 18:35:09 2000
-+++ Scripts/Logout.root	Mon Jan 17 18:35:44 2000
-@@ -7,17 +7,17 @@
+--- Scripts/Logout.root.orig	Sat Nov 11 10:49:57 2000
++++ Scripts/Logout.root	Thu Dec 14 10:38:58 2000
+@@ -1,23 +1,23 @@
+ #!/bin/sh
+ 
+-PATH="/sbin:/usr/sbin:/bin:/usr/bin:/usr/local/bin:/usr/X11R6/bin"
++PATH="/sbin:/usr/sbin:/bin:/usr/bin:%%LOCALBASE%%/bin:%%X11BASE%%/bin"
+ 
+ #
+ # Remove the _MOTIF_DRAG_WINDOW property from the root
  # window. This will prevent some Motif applications from
  # crashing the next time they are started.
  #
 -xprop -root -remove _MOTIF_DRAG_WINDOW
-+/usr/X11R6/bin/xprop -root -remove _MOTIF_DRAG_WINDOW
++%%X11BASE%%/bin/xprop -root -remove _MOTIF_DRAG_WINDOW
  
  #
  # Remove user from utmp/wtmp.
  #
 -sessreg -d $USER
-+/usr/X11R6/bin/sessreg -d $USER
++%%X11BASE%%/bin/sessreg -d $USER
  
  #
  # Make root the owner of /dev/console. 
