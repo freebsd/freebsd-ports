@@ -1,6 +1,5 @@
 bin/xbl
 lib/X11/app-defaults/Xbl
-lib/X11/xbl/COPYING
 lib/X11/xbl/Xbl
 lib/X11/xbl/xbl-game.gif
 lib/X11/xbl/xbl-man.html

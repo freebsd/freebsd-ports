@@ -1,5 +1,5 @@
---- Makefile.in.orig	Thu Nov 12 22:57:13 1998
-+++ Makefile.in	Tue Dec  1 09:12:18 1998
+--- Makefile.in.orig	Fri Nov 13 06:57:13 1998
++++ Makefile.in	Thu Mar 22 23:35:00 2001
 @@ -14,7 +14,7 @@
  USE_SETGID=-DUSE_SETGID
  
@@ -89,3 +89,11 @@
  	-if [ "" = "$(USE_SETGID)" ] ; then \
  	     chmod 755  $(BINDIR)/xbl ;\
  	   else \
+@@ -159,7 +154,6 @@
+ 	-mkdir $(SCOREDIR) 2>/dev/null
+ 	$(CP) Xbl.ad  $(RESOURCEDIR)/Xbl ;	chmod 644 $(RESOURCEDIR)/Xbl
+ 	$(CP) Xbl.ad  $(SCOREDIR)/Xbl ;		chmod 644 $(SCOREDIR)/Xbl
+-	$(CP) COPYING  $(SCOREDIR) ;		chmod 444 $(SCOREDIR)/COPYING
+ 	-if [ "" = "$(USE_SETGID)" ] ; then \
+ 	     chmod 777 $(SCOREDIR) ;\
+ 	     chmod 666 $(SCOREDIR)/[1-9]* ;\
