@@ -21,5 +21,6 @@ CONFIGURE_ARGS=	--x-includes=$(X11BASE)/include --x-libraries=$(X11BASE)/lib \
 		--datadir=$(PREFIX)/share --with-qt-moc=${X11BASE}/bin/moc2 \
 		--with-qt-include-dir=${X11BASE}/include/qt2 \
 		--with-qt-library-dir=${X11BASE}/lib
+USE_LIBTOOL=	yes
 
 .include <bsd.port.mk>
