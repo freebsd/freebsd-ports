@@ -19,6 +19,3 @@ osiris/configs/default.windowsserver2003
 osiris/configs/default.windowsxp
 @dirrm osiris/configs
 @dirrm osiris
-%%PORTDOCS%%%%DOCSDIR%%/OsirisUserGuide.pdf
-%%PORTDOCS%%%%DOCSDIR%%/OsirisUserGuide.rtf
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
