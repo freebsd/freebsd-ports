@@ -3,7 +3,7 @@
 # Date created:		6 Apr 1995
 # Whom:			CHOI Junho <junker@jazz.snu.ac.kr>
 #
-# $Id: Makefile,v 1.6 1998/11/21 20:10:55 steve Exp $
+# $Id: Makefile,v 1.7 1998/11/23 07:49:49 asami Exp $
 #
 
 DISTNAME=	netscape-3.04
@@ -17,6 +17,8 @@ MAINTAINER=	junker@jazz.snu.ac.kr
 
 RUN_DEPENDS=	${PREFIX}/bin/netscape:${PORTSDIR}/www/netscape3 \
 		${X11BASE}/lib/X11/fonts/local/hgm12.pcf.gz:${PORTSDIR}/korean/hanyangfonts
+
+BROKEN=		upgrade
 
 DIST_SUBDIR=	netscape3
 NO_WRKSUBDIR=	yes
