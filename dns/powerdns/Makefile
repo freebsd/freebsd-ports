@@ -75,14 +75,16 @@ describe:
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 500000 && defined(POWERDNS_WITH_RECURSOR)
+.if defined(POWERDNS_WITH_RECURSOR)
+USE_GCC=3.2
 CONFIGURE_ARGS+=	--enable-recursor
 PLIST_SUB+=		RECURSOR=""
 .else
 PLIST_SUB+=		RECURSOR="@comment "
 .endif
 
-.if ${OSVERSION} >= 500043 && defined(WITH_LDAP)
+.if defined(WITH_LDAP)
+USE_GCC=3.2
 LIB_DEPENDS+=	ldap.2:${PORTSDIR}/${LDAP_PORT}
 LIB_DEPENDS+=	lber.2:${PORTSDIR}/${LDAP_PORT}
 CONFIGURE_MODULES+=	"ldap"
