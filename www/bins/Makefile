@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bins
-PORTVERSION=	1.1.18
+PORTVERSION=	1.1.20
 CATEGORIES=	www
 MASTER_SITES=	http://jsautret.free.fr/BINS/
 
@@ -90,6 +90,7 @@ WITH_I18N=yes
 # gui
 .ifdef(WITH_GUI)
 RUN_DEPENDS+= \
+	${PBASE}/${PERL_ARCH}/Gnome.pm:x11-toolkits/p5-Gnome \
 	${PBASE}/${PERL_ARCH}/Gtk.pm:${PORTSDIR}/x11-toolkits/p5-Gtk \
 	${PBASE}/${PERL_ARCH}/Gtk/Gdk/ImlibImage.pm:${PORTSDIR}/x11-toolkits/p5-GdkImlib \
 	${PBASE}/${PERL_ARCH}/Gtk/GladeXML.pm:${PORTSDIR}/x11-toolkits/p5-Glade \
