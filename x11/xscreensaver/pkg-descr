@@ -7,7 +7,5 @@ extension, so it is disabled in config.h.  It makes very little
 difference anyway as the saver still watches the keyboard and mouse
 activity.
 
-This is version 1.27.
-
 -Satoshi
 asami@cs.berkeley.edu
