@@ -1,0 +1,13 @@
+*********************************************************************
+
+You will need to read the beginning of ${PREFIX}/bin/tvguide.
+Follow the instructions on how to obtain your ServiceID from the
+tvguide.com website and edit the script accordingly.
+
+If you have already visited tvguide.com using Netscape under FreeBSD,
+you do NOT need to do anything, as the script will automatically
+determine your ServiceID from your ${HOME}/.netscape/cookies file
+(if you have cookies enabled; otherwise you will need to follow the
+steps outlined in the script to obtain your ServiceID).
+
+*********************************************************************
