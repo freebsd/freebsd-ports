@@ -177,17 +177,23 @@ shift @ARGV;
 $cvsroot=$ENV{'CVSROOT'} || "/home/ncvs";
 $directory =~ s,^$cvsroot[/]+,,;
 
-if ($directory =~ /^src\//) {
+if ($directory =~ /^src/) {
 	$check_id = 1;
 }
-#if ($directory =~ /^ports\//) {
+#if ($directory =~ /^ports/) {
 #	$check_id = 2;
 #}
-if ($directory =~ /^src\/contrib\//) {
+if ($directory =~ /^src\/contrib/) {
 	$check_id = 3;
 }
-if ($directory =~ /^src\/crypto\//) {
+if ($directory =~ /^src\/crypto/) {
 	$check_id = 3;
+}
+if ($directory =~ /^src\/release/) {
+	$check_id = 0;
+}
+if ($directory =~ /^src\/etc/) {
+	$check_id = 0;
 }
 #$login = $ENV{'USER'} || getlogin || (getpwuid($<))[0] || sprintf("uid#%d",$<);
 #if ($login eq "peter") {
