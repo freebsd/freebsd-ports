@@ -9,7 +9,8 @@
 PORTNAME=	kisomandel
 PORTVERSION=	0.66
 CATEGORIES=	graphics
-MASTER_SITES=	http://helsteger.supereva.it/kisomandel/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	arved
 
 MAINTAINER=	kde@freebsd.org
 COMMENT=	A fractal rendering program with nice 3d-display in realtime
