@@ -8256,6 +8256,7 @@ vncrypt		ports/security/vncrypt
 vobcopy		ports/sysutils/vobcopy
 vomit		ports/net/vomit
 vorbis-tools	ports/audio/vorbis-tools
+vorbisgain	ports/audio/vorbisgain
 vp		ports/graphics/vp
 vpb2		ports/comms/vpb2
 vpce		ports/emulators/vpce
