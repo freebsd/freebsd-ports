@@ -13,8 +13,8 @@ DISTNAME=	java_cup_v10g
 
 MAINTAINER=	nordwick@xcf.berkeley.edu
 
-BUILD_DEPENDS=	${JAVADIR}/bin/javac:${PORTSDIR}/java/jdk
-RUN_DEPENDS=	${JAVADIR}/bin/java:${PORTSDIR}/java/jdk
+BUILD_DEPENDS=	${JAVADIR}/bin/javac:${PORTSDIR}/java/jdk11
+RUN_DEPENDS=	${JAVADIR}/bin/java:${PORTSDIR}/java/jdk11
 
 JAVASUBDIR=	jdk1.1.8
 JAVADIR=	${PREFIX}/${JAVASUBDIR}

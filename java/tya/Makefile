@@ -14,7 +14,7 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	sobomax@FreeBSD.org
 
-BUILD_DEPENDS=	${JAVADIR}/bin/java:${PORTSDIR}/java/jdk
+BUILD_DEPENDS=	${JAVADIR}/bin/java:${PORTSDIR}/java/jdk11
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/a1/a1./}
 

@@ -14,7 +14,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	kiri@FreeBSD.org
 
-RUN_DEPENDS=	${LOCALBASE}/jdk${JDKVERSION}/bin/java:${PORTSDIR}/java/jdk \
+RUN_DEPENDS=	${LOCALBASE}/jdk${JDKVERSION}/bin/java:${PORTSDIR}/java/jdk11 \
 		${LOCALBASE}/share/java/classes/xerces.jar:${PORTSDIR}/textproc/xerces-j
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/-src//}

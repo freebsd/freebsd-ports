@@ -14,7 +14,7 @@ DISTNAME=	NetRexx
 
 MAINTAINER=	jmcoopr@webmail.bmi.net
 
-RUN_DEPENDS=	${LOCALBASE}/jdk1.1.8/bin/java:${PORTSDIR}/java/jdk \
+RUN_DEPENDS=	${LOCALBASE}/jdk1.1.8/bin/java:${PORTSDIR}/java/jdk11 \
 		${LOCALBASE}/bin/rexx:${PORTSDIR}/lang/rexx-imc
 
 NO_BUILD=	yes

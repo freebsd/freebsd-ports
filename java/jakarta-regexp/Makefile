@@ -12,8 +12,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	dglo@ssec.wisc.edu
 
-BUILD_DEPENDS=	${JAVA_HOME}/bin/javac:${PORTSDIR}/java/jdk12-beta
-RUN_DEPENDS=	${JAVA_HOME}/bin/java:${PORTSDIR}/java/jdk12-beta
+BUILD_DEPENDS=	${JAVA_HOME}/bin/javac:${PORTSDIR}/java/jdk12
+RUN_DEPENDS=	${JAVA_HOME}/bin/java:${PORTSDIR}/java/jdk12
 
 JAVA_HOME?=	${LOCALBASE}/jdk1.2.2
 

@@ -19,8 +19,8 @@ PATCHFILES=	patch-1.12-ranlib \
 MAINTAINER=	obraun@informatik.unibw-muenchen.de
 
 .if defined(WITH_TRACER)
-RUN_DEPENDS=	${LOCALBASE}/jdk1.1.8/bin/java:${PORTSDIR}/java/jdk
-BUILD_DEPENDS=	${LOCALBASE}/jdk1.1.8/bin/javac:${PORTSDIR}/java/jdk
+RUN_DEPENDS=	${LOCALBASE}/jdk1.1.8/bin/java:${PORTSDIR}/java/jdk11
+BUILD_DEPENDS=	${LOCALBASE}/jdk1.1.8/bin/javac:${PORTSDIR}/java/jdk11
 .endif
 
 .include <bsd.port.pre.mk>

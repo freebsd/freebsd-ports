@@ -14,7 +14,7 @@ EXTRACT_SUFX=	.zip
 
 MAINTAINER=	leo@florida.sarang.net
 
-RUN_DEPENDS=	${LOCALBASE}/jdk${JDK_VERSION}/bin/javac:${PORTSDIR}/java/jdk
+RUN_DEPENDS=	${LOCALBASE}/jdk${JDK_VERSION}/bin/javac:${PORTSDIR}/java/jdk11
 
 NO_BUILD=	yes
 USE_ZIP=	yes

@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.ongs.net/yuzu/
 
 MAINTAINER=	daichi@ongs.net
 
-RUN_DEPENDS=	${LOCALBASE}/jdk1.1.8:${PORTSDIR}/java/jdk \
+RUN_DEPENDS=	${LOCALBASE}/jdk1.1.8:${PORTSDIR}/java/jdk11 \
 		${LOCALBASE}/share/java/jfc-1.1.1:${PORTSDIR}/java/jfc
 
 NO_BUILD=	yes
