@@ -2,6 +2,7 @@
 #
 
     SUBDIR += GiNaC
+    SUBDIR += PDL
     SUBDIR += R-a4
     SUBDIR += R-letter
     SUBDIR += abs
