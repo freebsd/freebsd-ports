@@ -23,6 +23,7 @@ RUN_DEPENDS=	${LOCALBASE}/libexec/netsaint/check_netsaint:${PORTSDIR}/net-mgmt/n
 
 USE_PERL5=	yes
 USE_GETOPT_LONG=	yes
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-command-user=netsaint \
 		--with-command-grp=www \
@@ -47,13 +48,18 @@ CONFIGURE_ARGS+=--with-mysql-lib=${LOCALBASE}/lib/mysql \
 .if defined(WITH_POSTGRES)
 POSTGRESQL_PORT?=	databases/postgresql7
 LIB_DEPENDS+=	pq.3:${PORTSDIR}/${POSTGRESQL_PORT}
-CONFIGURE_ARGS+=--with-pgsql-lib=${LOCALBASE}/pgsql \
-		--with-pgsql-inc=${LOCALBASE}/pgsql \
+CONFIGURE_ARGS+=--with-pgsql-lib=${LOCALBASE}/lib \
+		--with-pgsql-inc=${LOCALBASE}/include \
 		--with-pgsql-xdata
 .endif
 
 pre-fetch:
 	@${SH} ${SCRIPTDIR}/checkps
+
+post-patch:
+.if defined(WITH_POSTGRES)
+	@${REINPLACE_CMD} -e 's,pgsql/,,' ${WRKSRC}/xdata/x[cers]ddb.c
+.endif
 
 pre-install:
 	@PKG_PREFIX="${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
