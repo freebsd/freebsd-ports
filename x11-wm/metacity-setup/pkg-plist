@@ -1,6 +1,0 @@
-bin/metacity-setup
-share/gnome/control-center-2.0/capplets/metacity-setup.desktop
-share/gnome/metacity-setup/pixmaps/metacity-setup-icon.png
-share/gnome/pixmaps/metacity-setup-icon.png
-@dirrm share/gnome/metacity-setup/pixmaps
-@dirrm share/gnome/metacity-setup
