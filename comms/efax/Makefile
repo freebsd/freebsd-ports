@@ -12,6 +12,8 @@ MASTER_SITES=	http://shino.pos.to/linux/
 
 MAINTAINER=	mita@FreeBSD.org
 
+FORBIDDEN=	"Buffer overflow yielding setuid uucp"
+
 RUN_DEPENDS=	xloadimage:${PORTSDIR}/x11/xloadimage
 
 USE_GMAKE=	YES
