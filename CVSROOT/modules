@@ -7049,6 +7049,7 @@ pear-Net_Sieve	ports/net/pear-Net_Sieve
 pear-Net_Socket	ports/net/pear-Net_Socket
 pear-Net_URL	ports/net/pear-Net_URL
 pear-PEAR	ports/devel/pear-PEAR
+pear-PHPUnit	ports/devel/pear-PHPUnit
 pear-XML_Parser	ports/devel/pear-XML_Parser
 pear-XML_RPC	ports/devel/pear-XML_RPC
 pear-XML_RSS	ports/devel/pear-XML_RSS
