@@ -1,11 +1,37 @@
 %%RUBY_SITEARCHLIBDIR%%/ldap.so
-%%RUBY_EXAMPLESDIR%%/ldap/test1.rb
-%%RUBY_EXAMPLESDIR%%/ldap/test2.rb
-%%RUBY_EXAMPLESDIR%%/ldap/test3.rb
-%%RUBY_EXAMPLESDIR%%/ldap/test4.rb
-%%RUBY_EXAMPLESDIR%%/ldap/test5.rb
-%%RUBY_EXAMPLESDIR%%/ldap/test6.rb
-%%RUBY_EXAMPLESDIR%%/ldap/test7.rb
+%%RUBY_EXAMPLESDIR%%/ldap/add.rb
+%%RUBY_EXAMPLESDIR%%/ldap/bind.rb
+%%RUBY_EXAMPLESDIR%%/ldap/conf.rb
+%%RUBY_EXAMPLESDIR%%/ldap/delete.rb
+%%RUBY_EXAMPLESDIR%%/ldap/ldif/passwd.ldif
+%%RUBY_EXAMPLESDIR%%/ldap/ldif/referrals.ldif
+%%RUBY_EXAMPLESDIR%%/ldap/ldif/test1.ldif
+%%RUBY_EXAMPLESDIR%%/ldap/modrdn.rb
+%%RUBY_EXAMPLESDIR%%/ldap/openldap1/schema/slapd.at.conf
+%%RUBY_EXAMPLESDIR%%/ldap/openldap1/schema/slapd.oc.conf
+%%RUBY_EXAMPLESDIR%%/ldap/openldap1/slapd.conf
+%%RUBY_EXAMPLESDIR%%/ldap/openldap2/schema/corba.schema
+%%RUBY_EXAMPLESDIR%%/ldap/openldap2/schema/core.schema
+%%RUBY_EXAMPLESDIR%%/ldap/openldap2/schema/cosine.schema
+%%RUBY_EXAMPLESDIR%%/ldap/openldap2/schema/inetorgperson.schema
+%%RUBY_EXAMPLESDIR%%/ldap/openldap2/schema/java.schema
+%%RUBY_EXAMPLESDIR%%/ldap/openldap2/schema/krb5-kdc.schema
+%%RUBY_EXAMPLESDIR%%/ldap/openldap2/schema/misc.schema
+%%RUBY_EXAMPLESDIR%%/ldap/openldap2/schema/nadf.schema
+%%RUBY_EXAMPLESDIR%%/ldap/openldap2/schema/nis.schema
+%%RUBY_EXAMPLESDIR%%/ldap/openldap2/schema/openldap.schema
+%%RUBY_EXAMPLESDIR%%/ldap/openldap2/slapd.conf
+%%RUBY_EXAMPLESDIR%%/ldap/search.rb
+%%RUBY_EXAMPLESDIR%%/ldap/search2.rb
+%%RUBY_EXAMPLESDIR%%/ldap/search3.rb
+%%RUBY_EXAMPLESDIR%%/ldap/test
+%%RUBY_EXAMPLESDIR%%/ldap/test.sh
+@unexec rm -f %D/%%RUBY_EXAMPLESDIR%%/ldap/test.log 2>/dev/null || true
+@dirrm %%RUBY_EXAMPLESDIR%%/ldap/openldap2/schema
+@dirrm %%RUBY_EXAMPLESDIR%%/ldap/openldap2
+@dirrm %%RUBY_EXAMPLESDIR%%/ldap/openldap1/schema
+@dirrm %%RUBY_EXAMPLESDIR%%/ldap/openldap1
+@dirrm %%RUBY_EXAMPLESDIR%%/ldap/ldif
 @dirrm %%RUBY_EXAMPLESDIR%%/ldap
 %%RUBY_DOCDIR%%/ldap/README
 %%RUBY_DOCDIR%%/ldap/README.html
