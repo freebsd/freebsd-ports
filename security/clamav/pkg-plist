@@ -2,6 +2,7 @@ bin/clamscan
 bin/clamdscan
 bin/freshclam
 bin/sigtool
+%%CLAMAV-MILTER:%%sbin/clamav-milter
 sbin/clamd
 include/clamav.h
 lib/libclamav.so.1
