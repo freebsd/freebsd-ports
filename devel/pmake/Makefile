@@ -22,7 +22,11 @@ WRKSRC=		${WRKDIR}/pmake
 MAKEFILE=	makefile
 ALL_TARGET=	pmake
 PMAKE_ENV=	${MAKE_ENV} MAKE=${PREFIX}/bin/pmake
+USE_REINPLACE=	yes
 MAN1=		pmake.1
+
+post-patch:
+	@${REINPLACE_CMD} '/memmove/d' ${WRKSRC}/lib/include/sprite.h
 
 #
 # Define this if you want to build and install with the 'customs'
@@ -30,12 +34,6 @@ MAN1=		pmake.1
 # the plain pmake in ${PREFIX}/bin/pmake.nocustoms.
 #
 #WANT_CUSTOMS=	yes
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502126
-BROKEN=		"Broken by changes to make(1) on FreeBSD >= 5.x"
-.endif
 
 do-install::
 	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} install)
@@ -53,8 +51,8 @@ do-install::
 	@${ECHO_CMD} -e 'customs\t\t8231/udp\t# pmake customs server'>>/etc/services
 .else
 do-install::
-	@(cd ${WRKSRC}/doc; ${SETENV} ${PMAKE_ENV} ${PREFIX}/bin/pmake)
+	@(cd ${WRKSRC}/doc; ${SETENV} ${PMAKE_ENV} ${MAKE})
 	${INSTALL_MAN} ${WRKSRC}/doc/pmake.1 ${PREFIX}/man/man1
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

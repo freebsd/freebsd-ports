@@ -3,7 +3,8 @@
 @@ -19,7 +19,7 @@
  # most of the stuff here is machine independent
  .EXPORT:
- 
+-
++.NOEXPORT:
 -MANDIR		= /usr/local/man
 +MANDIR		= $(PREFIX)/man
  MANEXT1		= 1
