@@ -1,12 +1,12 @@
 # New ports collection makefile for:	diradmin
 # Date created:		24 April 2003
-# Whom:			lewiz <purple@lewiz.info>
+# Whom:			Lewis Thompson <purple@lewiz.net>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	diradmin
-PORTVERSION=	1.3.5
+PORTVERSION=	1.5.1
 CATEGORIES=	net
 MASTER_SITES=	http://diradmin.open-it.org/
 DISTNAME=	directory_administrator-${PORTVERSION}
@@ -14,22 +14,20 @@ DISTNAME=	directory_administrator-${PORTVERSION}
 MAINTAINER=	purple@lewiz.net
 COMMENT=	A smart LDAP directory management tool
 
-LIB_DEPENDS+=	ldap.2:${PORTSDIR}/net/openldap20-client
-#CPPFLAGS+=	-I/usr/src/lib/libcrypt
-
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomelibs
+USE_OPENLDAP=	yes
 CFLAGS+=	-I/usr/src/lib/libcrypt
 
-DOCS=		AUTHORS COPYING CREDITS ChangeLog INSTALL NEWS \
+PORTDOCS=	AUTHORS CREDITS ChangeLog INSTALL NEWS \
        		README TODO
 
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for file in ${DOCS}
+.for file in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
 .endif
