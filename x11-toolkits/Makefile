@@ -51,6 +51,7 @@
     SUBDIR += p5-GdkImlib
     SUBDIR += p5-GdkPixbuf
     SUBDIR += p5-Glade
+    SUBDIR += p5-Gnome
     SUBDIR += p5-Gtk
     SUBDIR += p5-Tcl-Tk
     SUBDIR += p5-Tk
