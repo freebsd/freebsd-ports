@@ -1,4 +1,4 @@
-# New ports collection makefile for:    mnoGoSearch-current
+# New ports collection makefile for:    mnogosearch
 # Date created:         27.01.2001
 # Whom:                 ache
 #
