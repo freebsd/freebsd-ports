@@ -1,6 +1,6 @@
---- Makefile.orig	Tue May 16 16:31:04 2000
-+++ Makefile	Sat May 27 16:54:49 2000
-@@ -1,8 +1,9 @@
+--- Makefile.orig	Wed May 17 00:31:04 2000
++++ Makefile	Thu Jun  8 17:41:26 2000
+@@ -1,8 +1,10 @@
  
  SHELL=/bin/sh
 -CC=gcc
@@ -9,6 +9,70 @@
 -CFLAGS=-Wall -Winline -O2 -fomit-frame-pointer -fno-strength-reduce $(BIGFILES)
 +CFLAGS?=-O2
 +CFLAGS+=-Wall -Winline -fomit-frame-pointer -fno-strength-reduce $(BIGFILES)
++SOFLAGS=-fPIC -fpic -DPIC
  
  OBJS= blocksort.o  \
        huffman.o    \
+@@ -12,10 +14,18 @@
+       decompress.o \
+       bzlib.o
+ 
+-all: libbz2.a bzip2 bzip2recover test
++SO_OBJS= blocksort.so  \
++      huffman.so    \
++      crctable.so   \
++      randtable.so  \
++      compress.so   \
++      decompress.so \
++      bzlib.so
+ 
+-bzip2: libbz2.a bzip2.o
+-	$(CC) $(CFLAGS) -o bzip2 bzip2.o -L. -lbz2
++all: libbz2.so.1 libbz2.a bzip2 bzip2recover test
++
++bzip2: libbz2.so.1 libbz2.a bzip2.o
++	$(CC) $(CFLAGS) -o bzip2 bzip2.o libbz2.a
+ 
+ bzip2recover: bzip2recover.o
+ 	$(CC) $(CFLAGS) -o bzip2recover bzip2recover.o
+@@ -29,6 +39,10 @@
+ 		ranlib libbz2.a ; \
+ 	fi
+ 
++libbz2.so.1: $(SO_OBJS)
++	$(CC) -shared -Wl,-soname -Wl,libbz2.so.1 -o libbz2.so.1 $(SO_OBJS)
++	ln -sf libbz2.so.1 libbz2.so
++
+ test: bzip2
+ 	@cat words1
+ 	./bzip2 -1  < sample1.ref > sample1.rb2
+@@ -69,12 +83,27 @@
+ 	chmod a+r $(PREFIX)/lib/libbz2.a
+ 
+ clean: 
+-	rm -f *.o libbz2.a bzip2 bzip2recover \
++	rm -f *.o *.so libbz2.a libbz2.so.1 bzip2 bzip2recover \
+ 	sample1.rb2 sample2.rb2 sample3.rb2 \
+ 	sample1.tst sample2.tst sample3.tst
+ 
+-blocksort.o: blocksort.c
++blocksort.so: blocksort.c
+ 	@cat words0
++	$(CC) $(CFLAGS) $(SOFLAGS) -c blocksort.c -o blocksort.so
++huffman.so: huffman.c
++	$(CC) $(CFLAGS) $(SOFLAGS) -c huffman.c -o huffman.so
++crctable.so: crctable.c
++	$(CC) $(CFLAGS) $(SOFLAGS) -c crctable.c -o crctable.so
++randtable.so: randtable.c
++	$(CC) $(CFLAGS) $(SOFLAGS) -c randtable.c -o randtable.so
++compress.so: compress.c
++	$(CC) $(CFLAGS) $(SOFLAGS) -c compress.c -o compress.so
++decompress.so: decompress.c
++	$(CC) $(CFLAGS) $(SOFLAGS) -c decompress.c -o decompress.so
++bzlib.so: bzlib.c
++	$(CC) $(CFLAGS) $(SOFLAGS) -c bzlib.c -o bzlib.so
++
++blocksort.o: blocksort.c
+ 	$(CC) $(CFLAGS) -c blocksort.c
+ huffman.o: huffman.c
+ 	$(CC) $(CFLAGS) -c huffman.c
