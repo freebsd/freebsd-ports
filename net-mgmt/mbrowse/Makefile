@@ -20,6 +20,8 @@ LIB_DEPENDS=	snmp.4:${PORTSDIR}/net-mgmt/net-snmp4
 LIB_DEPENDS=	netsnmp.6:${PORTSDIR}/net-mgmt/net-snmp
 .endif
 
+BROKEN=		"Configure fails"
+
 GNU_CONFIGURE=	yes
 PLIST_FILES=	bin/mbrowse
 USE_GNOME=	gtk12
