@@ -1,0 +1,13 @@
+lib/libmlan.a
+include/ownet.h
+bin/atodtst
+bin/counter
+bin/coupler
+bin/fish
+bin/gethumd
+bin/memutil
+bin/mweather
+bin/shaapp
+bin/swtsngl
+bin/temp
+bin/tstfind
