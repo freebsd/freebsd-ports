@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	File-CounterFile
-PORTVERSION=	1.01
+PORTVERSION=	1.02
 CATEGORIES=	misc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	File
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	lars@thegler.dk
 COMMENT=	Perl module for persistent counter class
 
 PERL_CONFIGURE=	yes
