@@ -10,6 +10,7 @@ share/lsof/idrlogin.perl5
 share/lsof/list_NULf.perl5
 share/lsof/list_fields.awk
 share/lsof/list_fields.perl
+share/lsof/shared.perl5
 share/lsof/watch_a_file.perl
 share/lsof/xusers.awk
 @dirrm share/lsof
