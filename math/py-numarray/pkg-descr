@@ -1,0 +1,9 @@
+Numarray is a reimplementation of the original Python Numeric array
+module that provides Python with capbilities similar to Matlab, IDL,
+Octave, APL and other array-based languages. This version is still
+in its early stages and is not yet the official replacement for
+Numeric though we hope it will be before long. It is not fully
+backwards compatible with Numeric, particularly with regard to the
+C API.
+
+WWW: http://stsdas.stsci.edu/numarray
