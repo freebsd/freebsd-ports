@@ -8,3 +8,5 @@ for the search to efficiently cover remote pages linked from your pages.
 (WebGlimpse will collect such remote pages to your disk and index them.)
 Installation, customization (e.g., deciding which pages to collect and
 which ones to index), and maintenance are easy.
+
+WWW: http://webglimpse.net/
