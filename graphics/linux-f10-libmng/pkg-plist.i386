@@ -1,0 +1,4 @@
+usr/lib/libmng.so.1.0.0
+@exec ln -sf %D/usr/lib/libmng.so.1 %D/usr/lib/libmng.1
+@unexec rm -f %D/usr/lib/libmng.so.1
+@unexec rm -f %D/usr/lib/libmng.so.1.0.0
