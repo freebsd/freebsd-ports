@@ -1,0 +1,25 @@
+--- Makefile.orig	Thu Aug  1 18:55:34 2002
++++ Makefile	Mon Aug  5 13:17:41 2002
+@@ -12,11 +12,8 @@
+ #group=-g root
+ 
+ 
+-CC     = gcc
+-CFLAGS = -g -Wall
+-INCDIR = -I/usr/X11R6/include/X11 -I/usr/X11R6/include
+-DESTDIR= /usr/X11R6
+-LIBDIR = -L/usr/X11R6/lib
++INCDIR = -I${X11BASE}/include/X11 -I${X11BASE}/include -I${LOCALBASE}/include
++LIBDIR = -L${X11BASE}/lib -L${LOCALBASE}/lib
+ # for linux
+ LIBS   = -lXpm -lX11 -lXext
+ # for Solaris
+@@ -36,7 +33,7 @@
+ all:	${name}
+ 
+ ${name}: $(OBJS)
+-	$(CC) $(CFLAGS) $(SYSTEM) $(LIBDIR) $(LIBS) $^ -o ${name}
++	$(CC) $(CFLAGS) $(SYSTEM) $(LIBDIR) $(LIBS) $(OBJS) -o ${name}
+ 
+ install: all
+ 	install ${owner} ${group} -s -m 755 ./${name}  ${prefix}/${name}
