@@ -121,7 +121,10 @@ post-install:
 	${MKDIR} -p ${NEWSLIB}/${dir}
 	touch ${NEWSLIB}/${dir}/.keep_me
 .endfor
+	# drop privs on inews because it is insecure
+	${CHMOD} 555 ${NEWSLIB}/bin/inews
 	# make rnews work when getting news via uucp !
-	${CHMOD} 4555 ${NEWSLIB}/bin/rnews
+	${CHMOD} 2555 ${NEWSLIB}/bin/rnews
+
 
 .include <bsd.port.mk>
