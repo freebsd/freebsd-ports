@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	konversation
-PORTVERSION=	0.14
-PORTREVISION=	1
+PORTVERSION=	0.15
 CATEGORIES=	irc kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -23,6 +22,5 @@ USE_GMAKE=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-O2||g' ${WRKSRC}/${CONFIGURE_SCRIPT}
-	@${REINPLACE_CMD} -e 's|xx||g' ${WRKSRC}/po/Makefile.in
 
 .include <bsd.port.mk>
