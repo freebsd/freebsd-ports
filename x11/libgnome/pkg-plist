@@ -1,6 +1,3 @@
-bin/gnome2-db2html
-bin/gnome2-info2html
-bin/gnome2-man2html
 etc/gconf/gconf.xml.defaults/desktop/%gconf.xml
 etc/gconf/gconf.xml.defaults/desktop/gnome/%gconf.xml
 etc/gconf/gconf.xml.defaults/desktop/gnome/accessibility/%gconf.xml
@@ -92,6 +89,9 @@ lib/libgnome-2.so
 lib/libgnome-2.so.0
 libdata/bonobo/servers/GNOME_Moniker_std.server
 libdata/pkgconfig/libgnome-2.0.pc
+libexec/gnome2-db2html
+libexec/gnome2-info2html
+libexec/gnome2-man2html
 share/doc/libgnome/index.html
 share/doc/libgnome/index.sgml
 share/doc/libgnome/libgnome-gnome-config.html
@@ -116,6 +116,8 @@ share/gnome/sgml/docbook/gnome-customization-0.1/gnome-custom.xsl
 share/gnome/sgml/docbook/gnome-customization-0.1/gnome-customization.xsl
 share/gnome/sgml/docbook/gnome-customization-0.1/l10n.xml
 share/locale/az/LC_MESSAGES/libgnome-2.0.mo
+share/locale/bg/LC_MESSAGES/libgnome-2.0.mo
+share/locale/bs/LC_MESSAGES/libgnome-2.0.mo
 share/locale/da/LC_MESSAGES/libgnome-2.0.mo
 share/locale/de/LC_MESSAGES/libgnome-2.0.mo
 share/locale/es/LC_MESSAGES/libgnome-2.0.mo
@@ -144,9 +146,6 @@ share/locale/vi/LC_MESSAGES/libgnome-2.0.mo
 share/locale/wa/LC_MESSAGES/libgnome-2.0.mo
 share/locale/zh_CN/LC_MESSAGES/libgnome-2.0.mo
 share/locale/zh_TW/LC_MESSAGES/libgnome-2.0.mo
-@dirrm share/gnome/sgml/docbook/gnome-customization-0.1
-@dirrm share/gnome/sgml/docbook
-@dirrm share/gnome/sgml
 @dirrm share/doc/libgnome
 @dirrm include/libgnome-2.0/libgnome
 @dirrm include/libgnome-2.0
@@ -204,5 +203,3 @@ share/locale/zh_TW/LC_MESSAGES/libgnome-2.0.mo
 @dirrm etc/gconf/gconf.xml.defaults/desktop/gnome/accessibility
 @dirrm etc/gconf/gconf.xml.defaults/desktop/gnome
 @dirrm etc/gconf/gconf.xml.defaults/desktop
-@unexec /bin/rmdir %D/etc/sound/events 2>/dev/null || /usr/bin/true
-@unexec /bin/rmdir %D/etc/sound 2>/dev/null || /usr/bin/true
