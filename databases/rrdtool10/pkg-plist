@@ -11,6 +11,8 @@ share/doc/rrdtool/README.log2rrd
 share/doc/rrdtool/RRDp.html
 share/doc/rrdtool/RRDs.html
 share/doc/rrdtool/bin_dec_hex.html
+share/doc/rrdtool/cdeftutorial.html
+share/doc/rrdtool/rpntutorial.html
 share/doc/rrdtool/rrdcgi.html
 share/doc/rrdtool/rrdcreate.html
 share/doc/rrdtool/rrddump.html
