@@ -1,0 +1,11 @@
+--- include/freebsd/typedefs_md.h	2000/07/24 07:46:26	1.1
++++ include/freebsd/typedefs_md.h	2000/07/24 07:46:46
+@@ -33,7 +33,7 @@
+ */
+ #define _ILP32
+ 
+-#if (__FreeBSD__ <= 4)
++#if (__FreeBSD__ <= 5)
+ typedef unsigned int uint_t;
+ typedef int int_t;
+ #endif
