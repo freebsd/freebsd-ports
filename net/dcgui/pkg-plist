@@ -23,11 +23,14 @@ share/dcgui/icons/appl/default/fileclose.xpm
 share/dcgui/icons/appl/default/filefind.xpm
 share/dcgui/icons/appl/default/find.xpm
 share/dcgui/icons/appl/default/find_22x22.xpm
+share/dcgui/icons/appl/default/flag_bosnian.xpm
 share/dcgui/icons/appl/default/flag_czech.xpm
 share/dcgui/icons/appl/default/flag_denmark.xpm
+share/dcgui/icons/appl/default/flag_english.xpm
 share/dcgui/icons/appl/default/flag_finland.xpm
 share/dcgui/icons/appl/default/flag_france.xpm
 share/dcgui/icons/appl/default/flag_germany.xpm
+share/dcgui/icons/appl/default/flag_greek.xpm
 share/dcgui/icons/appl/default/flag_hungary.xpm
 share/dcgui/icons/appl/default/flag_iceland.xpm
 share/dcgui/icons/appl/default/flag_italy.xpm
@@ -101,4 +104,3 @@ share/dcgui/translation/dcgui.sv.qm
 @dirrm share/dcgui/icons/appl/default
 @dirrm share/dcgui/icons/appl
 @dirrm share/dcgui/icons
-@dirrm share/dcgui

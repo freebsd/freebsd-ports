@@ -1,4 +1,4 @@
-# New ports collection makefile for:    dclib
+# New ports collection makefile for:    dcgui
 # Date created:                         Wed 10 Jul 2002
 # Whom:	Sverrir Valgeirsson <e96sv@yahoo.se> and
 #	Amar Takhar <verm@drunkmonk.net> et al
@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	dcgui
-PORTVERSION=	0.3.1
+PORTVERSION=	0.3.2
 CATEGORIES=	net
 MASTER_SITES=	http://download.berlios.de/dcgui/
 DISTNAME=	dcgui-qt-${PORTVERSION}
