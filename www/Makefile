@@ -49,6 +49,7 @@
     SUBDIR += cgiwrap
     SUBDIR += checkbot
     SUBDIR += cheetah
+    SUBDIR += cherokee
     SUBDIR += chimera
     SUBDIR += chimera2
     SUBDIR += chtml
