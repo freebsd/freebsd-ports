@@ -6,31 +6,45 @@
 # $FreeBSD$
 #
 
-DISTNAME=	nessus-alpha2-fix4
-PKGNAME=	nessus-a2
+DISTNAME=	nessus-core-0.99.1
+PKGNAME=	nessus-0.99.1
 CATEGORIES=	security
-MASTER_SITES=	ftp://ftp.cis.fed.gov/pub/nessus/nessus-RELEASE/ \
-		ftp://ftp.nessus.org/pub/nessus/nessus-RELEASE/ \
-		ftp://cvs.nessus.org/pub/nessus/nessus-RELEASE/ \
-		ftp://ftp.gwdg.de/pub/linux/misc/nessus/nessus-RELEASE/ \
-		http://ftp.gwdg.de/pub/linux/misc/nessus/nessus-RELEASE/ \
-		ftp://ftp.esiea.fr/pub/mirrors/nessus/nessus-RELEASE/ \
-		ftp://sunsite.cnlab-switch.ch/mirror/nessus/nessus-RELEASE/ \
-		ftp://ftp.chg.ru/pub/security/nessus/nessus-RELEASE/ \
-		ftp://ftp.sekure.net/pub/nessus/nessus-RELEASE/
-EXTRACT_SUFX=	.tgz
+MASTER_SITES=	ftp://ftp.cis.fed.gov/pub/nessus/nessus-${NESSUS_REV}/ \
+		ftp://ftp.nessus.org/pub/nessus/nessus-${NESSUS_REV}/ \
+		ftp://cvs.nessus.org/pub/nessus/nessus-${NESSUS_REV}/ \
+		ftp://ftp.gwdg.de/pub/linux/misc/nessus/nessus-${NESSUS_REV}/ \
+		http://ftp.gwdg.de/pub/linux/misc/nessus/nessus-${NESSUS_REV}/ \
+		ftp://ftp.esiea.fr/pub/mirrors/nessus/nessus-${NESSUS_REV}/ \
+		ftp://sunsite.cnlab-switch.ch/mirror/nessus/nessus-${NESSUS_REV}/ \
+		ftp://ftp.chg.ru/pub/security/nessus/nessus-${NESSUS_REV}/ \
+		ftp://ftp.sekure.net/pub/nessus/nessus-${NESSUS_REV}/
 
 MAINTAINER=	anders@fix.no
 
-LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
+LIB_DEPENDS=	nasl.99:${PORTSDIR}/security/nessus-libnasl \
+		gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
 
+NESSUS_REV=	${DISTNAME:S/nessus-core-//g}
 GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
 
+DIST_SUBDIR=	nessus
+WRKSRC=		${WRKDIR}/nessus-core
+
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	GTKCONFIG="${GTK_CONFIG}"
+CONFIGURE_ENV=  GTKCONFIG="${GTK_CONFIG}"
 MAN1=		nessus.1
+MAN8=		nessusd.8
+
+.include <bsd.port.pre.mk>  
+                            
+.if ${OSVERSION} >= 400001
+BROKEN=		"Can't be built successfully in -CURRENT"
+.endif 
 
 post-install:
-	@${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
+		@${ECHO} "=========================================================="
+		@${ECHO} "Be sure to erase your old /usr/local/share/nessus!"
+		@${ECHO} "The syntax of nessusd.users and nessusd.rules has changed!"
+		@${ECHO} "=========================================================="
 
 .include <bsd.port.mk>

@@ -1,13 +1,16 @@
-Nessus is a security scanner. That is, it's a program which will scan a
-given network and will seek for vulnerabilities which could be exploited
-by some remote intruder. 
+The 'Nessus' Project was started in early 1998, and first released in
+April 1998. At this time, the most complete free security scanner was
+SATAN, which is clearly outdated, and you could see the emergence of
+several commercial ones, that were clearly too expensive.
 
-The Nessus Project was originally started by Renaud Deraison 
-(deraison@worldnet.fr). Many people contributed in many ways to the 
-project, and the Nessus core team is now made up of Alexis de Bernis
-(alexisb@mygale.org), who is the Java specialist, Noam Rathaus 
-(dolittle@isrealmail.com) who is in charge of the Nessus client for
-Windows, and Renaud Deraison who is still here and who is the project 
-leader. 
+The Nessus Security Scanner is not only another security auditing tool. It
+is a security auditing as I think it should be - never trust the version
+number, never trust that a given service is listenning on the good port
+(do all the web servers on earth listen on port 80 ?).
 
-Check the homepage at: http://www.nessus.org/
+The Nessus Security Scanner is free, open-sourced and wants to be easy to
+use. 
+
+WWW: http://www.nessus.org/
+
+PS: To install the lot in one operation, do nessus-plugins first.

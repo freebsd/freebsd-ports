@@ -1,0 +1,35 @@
+--- nessus/preferences.c.orig	Sat Nov 13 18:06:16 1999
++++ nessus/preferences.c	Tue Nov 30 20:49:15 1999
+@@ -24,7 +24,7 @@
+ #include "globals.h"
+ #include "nessus.h"
+ #ifdef ENABLE_CRYPTO_LAYER
+-#include <peks.h>
++#include "peks/peks.h"
+ #endif
+ 
+ static int preferences_new();
+@@ -60,15 +60,6 @@
+ static char * 
+ preferences_get_filename()
+ {
+-#ifdef ENABLE_CRYPTO_LAYER
+-  char *t, *s = peks_get_dirfile (NESSUS_RCFILE);
+-  if (s == 0) 
+-    return 0 ;
+-  /* peks uses another memory management */
+-  t = estrdup (s);
+-  xfree (s);
+-  return t;
+-#else
+   char* home;
+   char * ret;
+   struct passwd * pwd;
+@@ -88,7 +79,6 @@
+    return(ret);
+   } 
+   return(NULL);
+-#endif
+ }
+  
+ static int preferences_new()
