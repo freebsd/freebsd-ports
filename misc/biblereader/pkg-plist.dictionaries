@@ -1,5 +1,5 @@
-share/biblereader/eastons.dict
-share/biblereader/kjv-strongs
-share/biblereader/strongs-greek.dict
-share/biblereader/strongs-hebrew.dict
-share/biblereader/torrey.dict
+%%DATADIR%%/eastons.dict
+%%DATADIR%%/kjv-strongs
+%%DATADIR%%/strongs-greek.dict
+%%DATADIR%%/strongs-hebrew.dict
+%%DATADIR%%/torrey.dict

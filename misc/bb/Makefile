@@ -22,6 +22,9 @@ USE_REINPLACE=		yes
 GNU_CONFIGURE=		yes
 WRKSRC=			${WRKDIR}/bb-1.3.0
 MAN1=			bb.1
+PORTDOCS=		README
+PLIST_FILES=		bin/bb share/bb/bb.s3m share/bb/bb2.s3m share/bb/bb3.s3m
+PLIST_DIRS=		share/bb
 
 pre-patch:
 	@${FIND} ${WRKSRC} -type f | ${XARGS} ${REINPLACE_CMD} -E -e "s@#include +<malloc.h>@#include <stdlib.h>@g"
@@ -29,7 +32,7 @@ pre-patch:
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/${PORTDOCS} ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>

@@ -23,12 +23,14 @@ USE_BISON=	yes
 ALL_TARGET=	boxes
 MAKE_ARGS=	GLOBALCONF=${GLOBALCONF} CFLAGS_ADDTL="${CFLAGS}"
 
-GLOBALCONF=	${PREFIX}/share/boxes/boxes-config
+GLOBALCONF=	${DATADIR}/boxes-config
+PLIST_FILES=	bin/boxes share/boxes/boxes-config
+PLIST_DIRS=	share/boxes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/boxes ${PREFIX}/bin
-	${MKDIR} ${PREFIX}/share/boxes
-	${INSTALL_DATA} ${WRKSRC}/boxes-config ${PREFIX}/share/boxes
-	${INSTALL_MAN} ${WRKSRC}/doc/$(MAN1) ${PREFIX}/man/man1
+	${MKDIR} ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/boxes-config ${DATADIR}
+	${INSTALL_MAN} ${WRKSRC}/doc/${MAN1} ${MAN1PREFIX}/man/man1
 
 .include <bsd.port.mk>

@@ -7,10 +7,9 @@
 
 PORTNAME=	Howto
 PORTVERSION=	1.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	misc
 MASTER_SITES=	ftp://metalab.unc.edu/pub/Linux/docs/HOWTO/other-formats/sgml/ \
-		ftp://metalab.unc.edu/pub/Linux/docs/HOWTO/mini/other-formats/sgml/ \
 		ftp://metalab.unc.edu/pub/Linux/docs/HOWTO/other-formats/docbook/
 DISTFILES=	Linux+FreeBSD.sgml.gz  \
 		DNS-HOWTO.sgml.gz  \
@@ -25,20 +24,22 @@ BUILD_DEPENDS=	sgmlfmt:${PORTSDIR}/textproc/sgmlformat
 
 DIST_SUBDIR=	Howto
 NO_WRKSUBDIR=	yes
+USE_ZIP=		yes
+USE_BZIP2=		yes
 
 do-extract:
 	@${MKDIR} ${WRKSRC}
-	@for file in ${DISTFILES}; do \
-		${CP} ${_DISTDIR}/$$file ${WRKSRC} ; \
-		case $$file in \
+	@for f in ${DISTFILES}; do \
+		${CP} ${_DISTDIR}/$$f ${WRKSRC} ; \
+		case $$f in \
 			*.Z|*.gz) \
-				${GZIP_CMD} -d ${WRKSRC}/$$file ; \
+				${GZIP_CMD} -d ${WRKSRC}/$$f ; \
 				;; \
 			*.zip) \
-				cd ${WRKSRC} && unzip $$file ; \
+				cd ${WRKSRC} && ${UNZIP_CMD} $$f ; \
 				;; \
 			*.bz2) \
-				bzip2 -d ${WRKSRC}/$$file ; \
+				${BZIP2_CMD} -d ${WRKSRC}/$$f ; \
 				;; \
 		esac; \
 	done
@@ -51,10 +52,10 @@ do-build:
 .endfor
 
 do-install:
-	@${MKDIR} ${PREFIX}/share/doc/Howto/HTML
-	@${INSTALL_MAN} ${FILESDIR}/HOWTO-INDEX.html ${PREFIX}/share/doc/Howto
-	@${INSTALL_MAN} ${WRKSRC}/*.html ${PREFIX}/share/doc/Howto/HTML
-	@${INSTALL_MAN} ${WRKSRC}/*.latin1 ${PREFIX}/share/doc/Howto
-	@${INSTALL_MAN} ${WRKSRC}/*.ascii ${PREFIX}/share/doc/Howto
+	@${MKDIR} ${DOCSDIR}/HTML
+	@${INSTALL_MAN} ${FILESDIR}/HOWTO-INDEX.html ${DOCSDIR}
+	@${INSTALL_MAN} ${WRKSRC}/*.html ${DOCSDIR}/HTML
+	@${INSTALL_MAN} ${WRKSRC}/*.latin1 ${DOCSDIR}
+	@${INSTALL_MAN} ${WRKSRC}/*.ascii ${DOCSDIR}
 
 .include <bsd.port.mk>

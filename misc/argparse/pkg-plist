@@ -1,4 +1,4 @@
 bin/argparse
-share/doc/argparse/example/argparse-demo.sh
-@dirrm share/doc/argparse/example
-@dirrm share/doc/argparse
+%%DOCSDIR%%/example/argparse-demo.sh
+@dirrm %%DOCSDIR%%/example
+@dirrm %%DOCSDIR%%

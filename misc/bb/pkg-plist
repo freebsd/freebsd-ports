@@ -1,7 +1,0 @@
-bin/bb
-share/bb/bb.s3m
-share/bb/bb2.s3m
-share/bb/bb3.s3m
-%%PORTDOCS%%share/doc/bb/README
-@dirrm share/bb
-%%PORTDOCS%%@dirrm share/doc/bb

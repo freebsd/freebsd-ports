@@ -69,9 +69,9 @@ pre-install:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/biblereader ${PREFIX}/bin/biblereader
-	${MKDIR} ${PREFIX}/share/biblereader
-	for file in ${DATAFILES}; do \
-		${INSTALL_DATA} $${file} ${PREFIX}/share/biblereader; \
+	${MKDIR} ${DATADIR}
+	for F in ${DATAFILES}; do \
+		${INSTALL_DATA} $${F} ${DATADIR}; \
 	done
 
 .include <bsd.port.mk>
