@@ -14,6 +14,7 @@
     SUBDIR += ctwm
     SUBDIR += enlightenment
     SUBDIR += epplets
+    SUBDIR += evilwm
     SUBDIR += flwm
     SUBDIR += fvwm
     SUBDIR += fvwm2
