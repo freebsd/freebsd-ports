@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.250 1999/04/16 21:47:05 erich Exp $
+# $Id: Makefile,v 1.251 1999/04/18 10:24:12 asami Exp $
 #
 
     SUBDIR += SSLtelnet
@@ -46,7 +46,7 @@
     SUBDIR += dnsutl
     SUBDIR += echoping
     SUBDIR += epic4
-#    SUBDIR += etherboot
+    SUBDIR += etherboot
     SUBDIR += ethereal
     SUBDIR += ezbounce
     SUBDIR += fping
