@@ -46,6 +46,12 @@ PKGNAMESUFFIX=	-mysql
 USE_MYSQL=	yes
 .endif
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "alpha" && ${OSVERSION} >= 502102
+BROKEN=		"Does not compile on alpha 5.x"
+.endif
+
 pre-fetch:
 	@${ECHO} ""
 	@${ECHO} "You may use the following build options:"
@@ -71,4 +77,4 @@ post-install:
 	@${PREFIX}/sbin/mydns --dump-config >${PREFIX}/etc/mydns.conf.sample
 	@${SED} -e 's,%%%PREFIX%%%,${PREFIX},g' ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
