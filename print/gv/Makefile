@@ -1,27 +1,24 @@
 # New ports collection makefile for:	gv
-# Version required:	gv_2_3_b1
+# Version required:	gv_2_7_b5
 # Date created:		16 Apr 1996
 # Whom:			thomas@ghpc8.ihf.rwth-aachen.de
 #
-# $Id: Makefile,v 1.1.1.1 1996/04/17 07:01:09 tg Exp $
+# $Id: Makefile,v 1.2 1996/04/18 07:52:35 tg Exp $
 #
 
-DISTNAME=	gv_2_3_b1
-PKGNAME=	gv-2.3b1
+DISTNAME=	gv_2_7_b5
+PKGNAME=	gv-2.7b5
 CATEGORIES+=	print
-MASTER_SITES=	ftp://iphthf.physik.uni-mainz.de/pub/vms/linux/
+MASTER_SITES=	ftp://iphthf.physik.uni-mainz.de/pub/gv/unix/
 
-MAINTAINER=	thomas@ghpc8.ihf.rwth-aachen.de
+MAINTAINER=	tg@freebsd.org
 
 LIB_DEPENDS=	Xaw3d\\.6\\.:${PORTSDIR}/x11/Xaw3d
-RUN_DEPENDS=	gs:${PORTSDIR}/print/ghostscript
+RUN_DEPENDS=	gs:${PORTSDIR}/print/ghostscript4
 
 PATCH_STRIP=	-p1
 WRKSRC=		${WRKDIR}/gv
 USE_IMAKE=	yes
-
-pre-configure:
-	cp ${FILESDIR}/config.freebsd ${WRKSRC}
 
 .include <bsd.port.mk>
 
