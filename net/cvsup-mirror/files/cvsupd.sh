@@ -5,7 +5,7 @@ if ! PREFIX=$(expr $0 : "\(/.*\)/etc/rc\.d/cvsupd\.sh\$"); then
     exit 1
 fi
 base=${PREFIX}/etc/cvsup
-rundir=/var/tmp
+rundir=/var/run
 out=${rundir}/cvsupd.out
 
 export PATH=/bin:/usr/bin:${PREFIX}/sbin
@@ -19,6 +19,7 @@ cd ${rundir} || exit
 arg=${1:-start}
 case $arg in
 start)
+    (umask 22 && touch ${out}) || exit
     su -f -m ${user} -c \
 	"cvsupd -e -C 100 -l @${facility} -b ${base} -s sup.client" \
 	>>${out} 2>&1;;
