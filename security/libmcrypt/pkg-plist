@@ -1,4 +1,4 @@
-bin/i386--freebsd4.3-libmcrypt-config
+bin/%%CONFIGURE_TARGET%%-libmcrypt-config
 include/mcrypt.h
 lib/libmcrypt.a
 lib/libmcrypt.la
