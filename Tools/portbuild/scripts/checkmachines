@@ -24,37 +24,12 @@ while true; do
   for i in ${arches}; do
     mlist=${buildroot}/${i}/mlist
   
-    unset DISPLAY
-  
-    min=99
     set $(cat $mlist)
-    while [ $# -gt 1 ]; do
+    while [ $# -gt 0 ]; do
       m=$1
-      l=$2
-      if (/usr/local/bin/nc -w 5 $m infoseek > ${buildroot}/${i}/loads/$m < /dev/null); then
-        num=$(awk '{print $1}' ${buildroot}/${i}/loads/$m)
-        if [ "x$num" = "x" ]; then
-  #	logger "checkmachines: file ${buildroot}/${i}/loads/$m is empty"
-  	  num=99
-        fi
-      else
-        # Don't ever want to list machines we couldn't connect to
-        num=999
-      fi
-
-      num=$(($num / $l))
-
-      if [ $num -lt $min ]; then
-        mach=$m
-        min=$num
-      elif [ $num = $min ]; then
-        mach="$mach $m"
-      fi
-
-      shift 2
-
+      lockf ${buildroot}/${i}/queue/.lock ${buildroot}/scripts/pollmachine ${i} ${m}
+      shift 1
     done
-    echo "$mach" > ${buildroot}/${i}/ulist
-
   done
+  sleep 120
 done

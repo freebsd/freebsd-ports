@@ -1,0 +1,53 @@
+#!/bin/sh
+#
+# Choose the least-loaded machine in the queue dir
+# Called with lock held
+# We know that everything in this directory has space for another job
+
+pb=$1
+arch=$2
+branch=$3
+
+qdir=${pb}/${arch}/queue
+
+cd $qdir
+set *
+if [ "$1" = "*" ]; then
+  echo ""
+  exit 1
+fi
+
+min=9999
+while [ $# -gt 0 ]; do
+  m=$1
+  num=$(cat $m)
+  if [ $num -lt $min ]; then
+    mach=$m
+    min=$num
+  elif [ $num -eq $min ]; then
+    mach="${mach} ${m}"
+  fi
+  shift
+done
+
+if [ "$min" = 9999 -o -z "${mach}" ]; then
+  echo ""
+  exit 1
+fi
+
+# Choose highest-priority machine that is free
+mach=$(echo ${mach} | tr -s ' ' '\n' | grep -F -f - ${pb}/${arch}/mlist | head -1)
+
+. ${pb}/${arch}/portbuild.conf
+test -f ${pb}/${arch}/portbuild.${mach} && . ${pb}/${arch}/portbuild.${mach}
+
+# Now that we've found a machine, register our claim in the queue
+if [ "$((${min}+1))" -ge "${maxjobs}" ]; then
+  rm ${mach}
+else
+  echo $(($min+1)) > ${mach}
+fi
+
+# Report to caller
+echo ${mach}
+exit 0
