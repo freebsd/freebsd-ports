@@ -1,17 +1,17 @@
 # New ports collection makefile for:   xcubes
-# Version required:    V5.4.1
+# Version required:    V5.4.4
 # Date created:        12 October 1996
 # Whom:                Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.3 1997/06/13 20:41:53 max Exp $
+# $Id: Makefile,v 1.4 1997/11/25 08:51:17 tg Exp $
 #
 
-DISTNAME=	xcubes-5.4.3
+DISTNAME=	xcubes-5.4.4
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	games/xpuzzles
 
-MAINTAINER=	Nakai@Mlab.t.u-tokyo.ac.jp
+MAINTAINER=	Nakai@technologist.com
 
 WRKSRC=		${WRKDIR}/xcubes
 USE_IMAKE=	yes
