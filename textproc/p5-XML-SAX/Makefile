@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	XML-SAX
-PORTVERSION=	0.02
+PORTVERSION=	0.03
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	XML
@@ -19,8 +19,9 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
-MAN3=		XML::SAX.3 XML::SAX::Base.3 XML::SAX::ParserFactory.3 \
-		XML::SAX::PurePerl.3 XML::SAX::PurePerl::Reader.3
+MAN3=		XML::SAX.3 XML::SAX::Base.3 XML::SAX::Exception.3 \
+		XML::SAX::ParserFactory.3 XML::SAX::PurePerl.3 \
+		XML::SAX::PurePerl::Reader.3
 
 MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
