@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gtk-engines-collection
-PORTVERSION= 	1.4
+PORTVERSION= 	1.5
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -16,21 +16,23 @@ MAINTAINER=	sobomax@FreeBSD.org
 
 # I intentionally did not put gtk-engines in the list below because
 # this package is uterly buggy.
-RUN_DEPENDS=	${THEMESBASE}/libbuffy.so:${PORTSDIR}/x11-toolkits/buffy \
-		${THEMESBASE}/libclean.so:${PORTSDIR}/x11-toolkits/clean-theme-gtk \
-		${THEMESBASE}/libcolorstep.so:${PORTSDIR}/x11-toolkits/colorstep \
-		${THEMESBASE}/libengradient.so:${PORTSDIR}/x11-toolkits/engradient \
-		${THEMESBASE}/libgnomelook.so:${PORTSDIR}/x11-toolkits/gnome-look \
-		${THEMESBASE}/libgtkbe.so:${PORTSDIR}/x11-toolkits/gtkbe \
-		${THEMESBASE}/libicegradient.so:${PORTSDIR}/x11-toolkits/icegradient \
-		${THEMESBASE}/libmac2.so:${PORTSDIR}/x11-toolkits/gtk-Mac2-theme \
-		${THEMESBASE}/libstep.so:${PORTSDIR}/x11-toolkits/gtkstep \
-		${THEMESBASE}/libsteppastel.so:${PORTSDIR}/x11-toolkits/gtkstep-pastel \
-		${THEMESBASE}/libthinice.so:${PORTSDIR}/x11-toolkits/thinice \
-		${THEMESBASE}/libxeno.so:${PORTSDIR}/x11-toolkits/xenophilia \
-		${THEMESBASE}/libwhistler.so:${PORTSDIR}/x11-toolkits/whistlerk
+RUN_DEPENDS=	${THEMESBASE}/libbuffy.so:${THEMESPORTDIR}/buffy \
+		${THEMESBASE}/libclean.so:${THEMESPORTDIR}/clean-theme-gtk \
+		${THEMESBASE}/libcolorstep.so:${THEMESPORTDIR}/colorstep \
+		${THEMESBASE}/libengradient.so:${THEMESPORTDIR}/engradient \
+		${THEMESBASE}/libflat.so:${THEMESPORTDIR}/gtk-flat-theme \
+		${THEMESBASE}/libgnomelook.so:${THEMESPORTDIR}/gnome-look \
+		${THEMESBASE}/libgtkbe.so:${THEMESPORTDIR}/gtkbe \
+		${THEMESBASE}/libicegradient.so:${THEMESPORTDIR}/icegradient \
+		${THEMESBASE}/libmac2.so:${THEMESPORTDIR}/gtk-Mac2-theme \
+		${THEMESBASE}/libstep.so:${THEMESPORTDIR}/gtkstep \
+		${THEMESBASE}/libsteppastel.so:${THEMESPORTDIR}/gtkstep-pastel \
+		${THEMESBASE}/libthinice.so:${THEMESPORTDIR}/thinice \
+		${THEMESBASE}/libxeno.so:${THEMESPORTDIR}/xenophilia \
+		${THEMESBASE}/libwhistler.so:${THEMESPORTDIR}/whistlerk
 
 THEMESBASE=	${X11BASE}/lib/gtk/themes/engines
+THEMESPORTDIR=	${PORTSDIR}/x11-toolkits
 
 NO_BUILD=	yes
 
