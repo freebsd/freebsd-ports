@@ -1,6 +1,15 @@
---- makefile.in.orig	Tue May 25 21:13:02 1999
-+++ makefile.in	Tue May 25 23:27:44 1999
-@@ -407,8 +407,8 @@
+--- makefile.in.orig	Wed Jul 14 20:25:26 1999
++++ makefile.in	Mon Aug  2 06:50:21 1999
+@@ -374,7 +374,7 @@
+ 	chmod 644 $(LIBDIR)/lynx.cfg
+ 	-rm -f $(LIBDIR)/lynx.tmp
+ 	$(SHELL) -c 'for name in COPYING COPYHEADER; do \
+-		cd $(DOCDIR) && ( $(LN_S) $$name $(HELPDIR)/ || cp $$name $(HELPDIR)/ );\
++		cd $(DOCDIR) && cp $$name $(HELPDIR)/;\
+ 		done'
+ 
+ LYHelp.h : LYHelp.hin
+@@ -406,8 +406,8 @@
  	PATH=$(srcdir):$$PATH; export PATH; $(SHELL) -c '$(srcdir)/cfg_defs.sh'
  
  install-cfg : $(LIBDIR)
