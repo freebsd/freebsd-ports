@@ -13,7 +13,7 @@ diff -ru ../../work/linuxthreads-2.2.3/Examples/Makefile ./Examples/Makefile
 diff -ru ../../work/linuxthreads-2.2.3/Makefile ./Makefile
 --- ../../work/linuxthreads-2.2.3/Makefile	Wed Apr 25 21:50:59 2001
 +++ ./Makefile	Thu Jun  7 23:13:52 2001
-@@ -1,128 +1,104 @@
+@@ -1,128 +1,122 @@
 -# Copyright (C) 1996,1997,1998,1999,2000,2001 Free Software Foundation, Inc.
 -# This file is part of the GNU C Library.
 +LIB=lthread
@@ -74,7 +74,7 @@ diff -ru ../../work/linuxthreads-2.2.3/Makefile ./Makefile
 +LD=${LINUXTHREADS_WRAP_LD}
 +.endif
 +
-+AINC = -I${LIBSRC_BASE}/libc/${MACHINE_ARCH} -I${.CURDIR}/sysdeps/${MACHINE_ARCH}
++CFLAGS += -I${LIBSRC_BASE}/libc/${MACHINE_ARCH} -I${.CURDIR}/sysdeps/${MACHINE_ARCH}
 +
 +# Contents of the library.
 +SRCS := attr.c cancel.c clone.S condvar.c errno.c getgr_r.c gethostby_r.c \
@@ -245,6 +245,24 @@ diff -ru ../../work/linuxthreads-2.2.3/Makefile ./Makefile
 -endif
 +
 +.include <bsd.lib.mk>
++
++.if defined(LINUXTHREADS_WRAP_API)
++.c.o:
++	${CC} ${CFLAGS} -c ${.IMPSRC} -o ${.TARGET}
++	@${LD} ${LDFLAGS} -o ${.TARGET}.tmp -x -r ${.TARGET}
++	@mv ${.TARGET}.tmp ${.TARGET}
++ 
++.c.po:
++	${CC} -pg ${CFLAGS} -c ${.IMPSRC} -o ${.TARGET}
++	@${LD} ${LDFLAGS} -o ${.TARGET}.tmp -X -r ${.TARGET}
++	@mv ${.TARGET}.tmp ${.TARGET}
++ 
++.c.So:
++	${CC} ${PICFLAG} -DPIC ${CFLAGS} -c ${.IMPSRC} -o ${.TARGET}
++	@${LD} ${LDFLAGS} -o ${.TARGET}.tmp -x -r ${.TARGET}
++	@mv ${.TARGET}.tmp ${.TARGET}
++.endif
++ 
 diff -ru ../../work/linuxthreads-2.2.3/attr.c ./attr.c
 --- ../../work/linuxthreads-2.2.3/attr.c	Tue Mar 27 04:52:55 2001
 +++ ./attr.c	Thu Jun  7 22:59:29 2001
@@ -392,6 +410,15 @@ diff -ru ../../work/linuxthreads-2.2.3/internals.h ./internals.h
  
  
  /* Global pointers to old or new suspend functions */
+@@ -545,7 +555,7 @@
+ /* Prototypes for compatibility functions.  */
+ extern int __pthread_attr_init_2_1 (pthread_attr_t *__attr);
+ extern int __pthread_attr_init_2_0 (pthread_attr_t *__attr);
+-extern int __pthread_create_2_1 (pthread_t *__restrict __thread,
++extern int __pthread_create_2_1 (pthread_t *__restrict __xthread,
+ 				 const pthread_attr_t *__attr,
+ 				 void *(*__start_routine) (void *),
+ 				 void *__restrict __arg);
 diff -ru ../../work/linuxthreads-2.2.3/join.c ./join.c
 --- ../../work/linuxthreads-2.2.3/join.c	Thu Apr 12 21:02:02 2001
 +++ ./join.c	Thu Jun  7 22:59:29 2001
@@ -1154,6 +1181,24 @@ diff -ru ../../work/linuxthreads-2.2.3/sysdeps/pthread/pthread.h ./sysdeps/pthre
  
  #include <sched.h>
  #include <time.h>
+@@ -160,7 +162,7 @@
+ /* Create a thread with given attributes ATTR (or default attributes
+    if ATTR is NULL), and call function START_ROUTINE with given
+    arguments ARG.  */
+-extern int pthread_create (pthread_t *__restrict __thread,
++extern int pthread_create (pthread_t *__restrict __xthread,
+ 			   __const pthread_attr_t *__restrict __attr,
+ 			   void *(*__start_routine) (void *),
+ 			   void *__restrict __arg) __THROW;
+@@ -588,7 +590,7 @@
+ extern int pthread_setcanceltype (int __type, int *__oldtype) __THROW;
+ 
+ /* Cancel THREAD immediately or at the next possibility.  */
+-extern int pthread_cancel (pthread_t __thread) __THROW;
++extern int pthread_cancel (pthread_t __xthread) __THROW;
+ 
+ /* Test for pending cancellation for the current thread and terminate
+    the thread as per pthread_exit(PTHREAD_CANCELED) if it has been
 diff -ru ../../work/linuxthreads-2.2.3/sysdeps/unix/sysv/linux/bits/local_lim.h ./sysdeps/unix/sysv/linux/bits/local_lim.h
 --- ../../work/linuxthreads-2.2.3/sysdeps/unix/sysv/linux/bits/local_lim.h	Fri Jun  9 19:17:35 2000
 +++ ./sysdeps/unix/sysv/linux/bits/local_lim.h	Thu Jun  7 22:59:29 2001
@@ -1169,7 +1214,7 @@ diff -ru ../../work/linuxthreads-2.2.3/sysdeps/unix/sysv/linux/bits/local_lim.h 
 diff -ru ../../work/linuxthreads-2.2.3/sysdeps/unix/sysv/linux/bits/sigthread.h ./sysdeps/unix/sysv/linux/bits/sigthread.h
 --- ../../work/linuxthreads-2.2.3/sysdeps/unix/sysv/linux/bits/sigthread.h	Thu Aug 31 21:45:04 2000
 +++ ./sysdeps/unix/sysv/linux/bits/sigthread.h	Thu Jun  7 22:59:29 2001
-@@ -29,8 +29,8 @@
+@@ -29,10 +29,10 @@
  /* Modify the signal mask for the calling thread.  The arguments have
     the same meaning as for sigprocmask(2). */
  extern int pthread_sigmask (int __how,
@@ -1179,7 +1224,10 @@ diff -ru ../../work/linuxthreads-2.2.3/sysdeps/unix/sysv/linux/bits/sigthread.h 
 +			    sigset_t *__restrict __oldmask)__THROW;
  
  /* Send signal SIGNO to the given thread. */
- extern int pthread_kill (pthread_t __thread, int __signo) __THROW;
+-extern int pthread_kill (pthread_t __thread, int __signo) __THROW;
++extern int pthread_kill (pthread_t __xthread, int __signo) __THROW;
+ 
+ #endif	/* bits/sigthread.h */
 diff -ru ../../work/linuxthreads-2.2.3/wrapsyscall.c ./wrapsyscall.c
 --- ../../work/linuxthreads-2.2.3/wrapsyscall.c	Wed Apr 25 21:50:59 2001
 +++ ./wrapsyscall.c	Thu Jun  7 22:59:29 2001

@@ -105,7 +105,7 @@ convert (struct hostent *host, struct hostent *result,
   return 0;
 }
 
-#if __FreeBSD__ < 5
+#if __FreeBSD__ < 5 || __FreeBSD__version >= 501101
 struct hostent *
 gethostbyaddr_r (const char *addr, int length, int type,
        struct hostent *result, char *buffer, int buflen,

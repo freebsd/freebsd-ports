@@ -2,8 +2,10 @@
 #include <string.h>
 #include <errno.h>
 #include <pwd.h>
+#include <osreldate.h>
 #include "pthread.h"
 
+#if __FreeBSD_version < 500112
 static pthread_mutex_t getpw_mutex = PTHREAD_MUTEX_INITIALIZER;
 
 static int
@@ -106,3 +108,4 @@ int getpwuid_r (uid_t uid, struct passwd *result,
   pthread_mutex_unlock (&getpw_mutex);
   return retval;
 }
+#endif
