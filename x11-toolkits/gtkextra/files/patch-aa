@@ -1,9 +1,9 @@
 
 $FreeBSD$
 
---- gtkextra/Makefile.in.orig	Thu Jun 28 18:25:32 2001
-+++ gtkextra/Makefile.in	Mon Jul  2 17:45:25 2001
-@@ -123,14 +123,14 @@
+--- gtkextra/Makefile.in.orig	Fri Nov 30 17:28:46 2001
++++ gtkextra/Makefile.in	Wed Dec  5 10:57:22 2001
+@@ -126,14 +126,14 @@
  
  lib_LTLIBRARIES = libgtkextra.la
  libgtkextra_la_SOURCES = $(gtkextra_c_sources)
@@ -11,12 +11,12 @@ $FreeBSD$
 +libgtkextra_la_LDFLAGS =  	-version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE) 	-export-dynamic 	$(shell gtk-config --libs) $(GTKGL_LIBS)
  
  EXTRA_HEADERS =  
- EXTRA_DIST =  $(gtkextra_private_h_sources) gtkextra.def Makefile.win32 makefile.msc sat.xpm sg_small.xpm cloud.xpm suncloud.xpm
+ EXTRA_DIST =  $(gtkextra_private_h_sources) gtkextra.def Makefile.win32 makefile.msc sat.xpm sg_small.xpm cloud.xpm suncloud.xpm testgtkplotdt.in
  
  # test programs, not to be installed
  
--noinst_PROGRAMS = testgtksheet testgtkiconlist testgtkfilesel testgtkplot testgtkfont testrealtime testpolar testgtkplot3d testcontour testbubbles testflux testboxes testimage testpixmap testcharsel
-+noinst_PROGRAMS = #testgtksheet testgtkiconlist testgtkfilesel testgtkplot testgtkfont testrealtime testpolar testgtkplot3d testcontour testbubbles testflux testboxes testimage testpixmap testcharsel
+-noinst_PROGRAMS = testgtksheet testgtkiconlist testgtkfilesel testgtkplot testgtkfont testrealtime testiterator testpolar testgtkplot3d testcontour testbubbles testflux testboxes testimage testpixmap testcharsel testdt testgtkplotdt
++noinst_PROGRAMS = #testgtksheet testgtkiconlist testgtkfilesel testgtkplot testgtkfont testrealtime testiterator testpolar testgtkplot3d testcontour testbubbles testflux testboxes testimage testpixmap testcharsel testdt testgtkplotdt
  DEPS = libgtkextra.la
  LDADDS = libgtkextra.la $(GTK_LIBS)
  
