@@ -1,0 +1,104 @@
+*** configure.orig	Fri Jul  6 23:00:22 2001
+--- configure	Sat Aug 18 22:25:58 2001
+***************
+*** 181,187 ****
+  
+  system_name=`uname -s 2>&1`
+  if [ "$system_name" = "FreeBSD" ]; then
+! _archlibs="-rdynamic -pthread"
+  else
+  _archlibs="-ldl -lpthread"
+  fi
+--- 181,187 ----
+  
+  system_name=`uname -s 2>&1`
+  if [ "$system_name" = "FreeBSD" ]; then
+! _archlibs="-rdynamic ${PTHREAD_LIBS}"
+  else
+  _archlibs="-ldl -lpthread"
+  fi
+***************
+*** 587,593 ****
+  $_cc $_extraincdir $_extralibdir $TMPC -o $TMPO -lvgagl -lvga > /dev/null 2>&1 && _svga=yes
+  
+  if [ "$system_name" = "FreeBSD" ]; then
+! $_cc $TMPC -o $TMPO -pthread > /dev/null 2>&1 || \
+   { echo "Lib pthread not found."; rm -f $TMPC $TMPO $TMPS ; exit 1; }
+  else
+  $_cc $TMPC -o $TMPO -lpthread > /dev/null 2>&1 || \
+--- 587,593 ----
+  $_cc $_extraincdir $_extralibdir $TMPC -o $TMPO -lvgagl -lvga > /dev/null 2>&1 && _svga=yes
+  
+  if [ "$system_name" = "FreeBSD" ]; then
+! $_cc $TMPC -o $TMPO ${PTHREAD_LIBS} > /dev/null 2>&1 || \
+   { echo "Lib pthread not found."; rm -f $TMPC $TMPO $TMPS ; exit 1; }
+  else
+  $_cc $TMPC -o $TMPO -lpthread > /dev/null 2>&1 || \
+***************
+*** 669,675 ****
+  $_cc $TMPC -o $TMPO $_x11libdir -lX11 -lXext -lXxf86vm $_socklib > /dev/null 2>&1 && _vm=yes
+  
+  if [ "$system_name" = "FreeBSD" ]; then
+! $_cc $TMPC -o $TMPO $_x11libdir -lX11 -lXext -lGL -pthread $_socklib > /dev/null 2>&1 && _gl=yes
+  else
+  $_cc $TMPC -o $TMPO $_x11libdir -lX11 -lXext -lGL $_socklib > /dev/null 2>&1 && _gl=yes
+  fi
+--- 669,675 ----
+  $_cc $TMPC -o $TMPO $_x11libdir -lX11 -lXext -lXxf86vm $_socklib > /dev/null 2>&1 && _vm=yes
+  
+  if [ "$system_name" = "FreeBSD" ]; then
+! $_cc $TMPC -o $TMPO $_x11libdir -lX11 -lXext -lGL ${PTHREAD_LIBS} $_socklib > /dev/null 2>&1 && _gl=yes
+  else
+  $_cc $TMPC -o $TMPO $_x11libdir -lX11 -lXext -lGL $_socklib > /dev/null 2>&1 && _gl=yes
+  fi
+***************
+*** 679,685 ****
+  int main( void ) { return 0; }
+  EOF
+  if [ "$system_name" = "FreeBSD" ]; then
+! $_cc $_x11incdir $TMPC -o $TMPO $_x11libdir -lX11 -lXext -lGL -pthread $_socklib > /dev/null 2>&1 || \
+   { _gl=no; echo "GL includes not found!";}
+  else
+  $_cc $TMPC -o $TMPO $_x11libdir -lX11 -lXext -lGL $_socklib > /dev/null 2>&1 || \
+--- 679,685 ----
+  int main( void ) { return 0; }
+  EOF
+  if [ "$system_name" = "FreeBSD" ]; then
+! $_cc $_x11incdir $TMPC -o $TMPO $_x11libdir -lX11 -lXext -lGL ${PTHREAD_LIBS} $_socklib > /dev/null 2>&1 || \
+   { _gl=no; echo "GL includes not found!";}
+  else
+  $_cc $TMPC -o $TMPO $_x11libdir -lX11 -lXext -lGL $_socklib > /dev/null 2>&1 || \
+***************
+*** 1162,1168 ****
+     if [ "$system_name" = "FreeBSD" ]; then
+        # Under XFree86 4.x GL port is poorly designed
+        if [ -r /usr/X11R6/bin/XFree86 ]; then
+!          _gllib='-lGL -pthread'
+        else
+           _gllib='-lGL'
+        fi
+--- 1162,1168 ----
+     if [ "$system_name" = "FreeBSD" ]; then
+        # Under XFree86 4.x GL port is poorly designed
+        if [ -r /usr/X11R6/bin/XFree86 ]; then
+!          _gllib="-lGL ${PTHREAD_LIBS}"
+        else
+           _gllib='-lGL'
+        fi
+***************
+*** 1329,1335 ****
+  # Under FreeBSD (maybe other systems as well?) we have to add to CFLAGS
+  # for MT applications: 
+  if [ "$system_name" = "FreeBSD" ]; then
+! CFLAGS="$CFLAGS -D_THREAD_SAFE"
+  fi
+  
+  # echo 'CFLAGS=$(OPTFLAGS) -Wall -DMPG12PLAY' >> config.mak
+--- 1329,1335 ----
+  # Under FreeBSD (maybe other systems as well?) we have to add to CFLAGS
+  # for MT applications: 
+  if [ "$system_name" = "FreeBSD" ]; then
+! CFLAGS="$CFLAGS ${PTHREAD_CFLAGS}"
+  fi
+  
+  # echo 'CFLAGS=$(OPTFLAGS) -Wall -DMPG12PLAY' >> config.mak

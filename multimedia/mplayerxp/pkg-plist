@@ -1,0 +1,12 @@
+bin/mplayer
+share/doc/mplayer/DGA
+share/doc/mplayer/FREEBSD
+share/doc/mplayer/MPlayer-FAQ
+share/doc/mplayer/OpenDivX
+share/doc/mplayer/README
+share/doc/mplayer/SDL
+share/doc/mplayer/VIDEOCARDS
+share/mplayer/codecs.conf
+share/mplayer/example.conf
+@dirrm share/doc/mplayer
+@dirrm share/mplayer

@@ -1,0 +1,38 @@
+#This perl script links the codec config file
+#and the fonts dir to the user's home dir.
+
+if (-e "$ENV{HOME}/.mplayer/")
+{
+	print "Sorry, you should execute this target without having a .mplayer directory in your homedir.\n";
+	exit 1;
+}
+
+#Determining location of fonts:
+
+@pkg=`pkg_info -Lx mplayer-fonts`;
+print "$prefix[3]";
+$prefix=$pkg[3];
+$prefix=~ s/(.+mplayer).*/$1/;
+chop $prefix;
+
+print "You may choose any of the available language sets:\n\n";
+print "European fonts (e.g. dutch, french, german...) : e\n";
+print "Cyrillic fonts : c\n";
+print "Russian fonts: r\n";
+
+print "Your decision? ";
+chomp ($lang=<STDIN>);
+print "\n";
+
+system "mkdir $ENV{HOME}/.mplayer";
+if ($lang eq "c")
+{
+	system "ln -s $prefix/fonts/cyrillic/ $ENV{HOME}/.mplayer/font";
+}
+elsif ($lang eq "r")
+{
+	system "ln -s $prefix/fonts/koi8r/ $ENV{HOME}/.mplayer/font";
+}
+else {system "ln -s $prefix/fonts/iso/ $ENV{HOME}/.mplayer/font"};
+
+system "ln -s $prefix/codecs.conf $ENV{HOME}/.mplayer/codecs.conf";

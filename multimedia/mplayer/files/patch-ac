@@ -1,0 +1,19 @@
+*** ../MPlayer-0.18pre5.old/loader/config.h	Sat Feb 24 22:30:26 2001
+--- loader/config.h	Fri Aug 17 10:14:46 2001
+***************
+*** 56,62 ****
+  #define HAVE_LIMITS_H 1
+  
+  /* Define if you have the <malloc.h> header file.  */
+! #define HAVE_MALLOC_H 1
+  
+  /* Define if you have the <sys/ioctl.h> header file.  */
+  #define HAVE_SYS_IOCTL_H 1
+--- 56,62 ----
+  #define HAVE_LIMITS_H 1
+  
+  /* Define if you have the <malloc.h> header file.  */
+! /* #undef HAVE_MALLOC_H */
+  
+  /* Define if you have the <sys/ioctl.h> header file.  */
+  #define HAVE_SYS_IOCTL_H 1
