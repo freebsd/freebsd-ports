@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	libxml2
-PORTVERSION=	2.4.17
-PORTREVISION=	1
+PORTVERSION=	2.4.19
 CATEGORIES=	textproc gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/libxml
@@ -20,6 +19,7 @@ LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
 RUN_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
 
 USE_BZIP2=	yes
+USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--with-iconv=${LOCALBASE} \
