@@ -7,6 +7,7 @@
 
 PORTNAME=	libxml2
 PORTVERSION=	2.5.7
+PORTREVISION=	1
 CATEGORIES=	textproc gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/2.5
@@ -22,7 +23,7 @@ RUN_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
-USE_GNOME=	gnomehack
+USE_GNOME=	gnomehack gnometarget
 INSTALLS_SHLIB=	yes
 USE_REINPLACE=	yes
 CONFIGURE_ARGS=	--with-iconv=${LOCALBASE} \
@@ -42,7 +43,9 @@ PLIST_SUB+=	PYTHON:="@comment "
 PKGNAMESUFFIX=	-nopython
 .endif
 
-.if defined(LIBXML_WITHOUT_THREADS)
+.if defined(WITH_THREADS)
+CONFIGURE_ARGS+=	--with-threads
+.else
 CONFIGURE_ARGS+=	--without-threads
 .endif
 
@@ -67,7 +70,7 @@ pre-everything::
 	@${ECHO_MSG} "libxml2 has the following tunables:"
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "		WITHOUT_PYTHON=yes	Turns off Python support"
-	@${ECHO_MSG} "		LIBXML_WITHOUT_THREADS=yes	Turns off pthread support"
+	@${ECHO_MSG} "		WITHOUT_THREADS=yes	Turns off pthread support"
 	@${ECHO_MSG} "		WITH_SCHEMA=yes		Turns on XML Schema support"
 	@${ECHO_MSG} "		WITH_MEM_DEBUG=yes	Turns on memory debugging"
 	@${ECHO_MSG} "		WITH_XMLLINT_HIST=yes	Turns on history for xmllint"
