@@ -47,8 +47,7 @@ post-patch:
 .endif
 
 .if ${PERL_LEVEL} < 500601
-BUILD_DEPENDS=	${SITE_PERL}/File/Spec.pm:${PORTSDIR}/devel/p5-File-Spec
-RUN_DEPENDS=	${BUILD_DEPENDS}
+IGNORE=		This port requires perl 5.6.x or later. Install lang/perl5 then try again
 .endif
 
 .include <bsd.port.post.mk>
