@@ -1,6 +1,5 @@
 @cwd /usr/local
 bin/tracker
 bin/randomize
-bin/splitmod
 etc/compression_methods
-man/man1/tracker.1
+info/tracker.info.gz
