@@ -23,4 +23,15 @@ CONFIGURE_ARGS+=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_GMAKE=	yes
 MAN1=		efax.1 efix.1 fax.1
 
+#klaptop doesn't like alpha because alpha doesn't support apm
+.if ${MACHINE_ARCH} == "alpha"
+post-extract:
+	mv ${WRKSRC}/subdirs ${WRKSRC}/subdirs.orig
+	grep -v klaptopdaemon ${WRKSRC}/subdirs.orig > ${WRKSRC}/subdirs
+
+PLIST_SUB+=	ALPHA_NA="@comment "
+.else
+PLIST_SUB+=	ALPHA_NA=""
+.endif
+
 .include <bsd.port.mk>
