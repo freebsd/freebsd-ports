@@ -1,0 +1,19 @@
+*** ztrack.c	Fri Dec  1 02:34:36 1995
+--- /home/andy/tmp/wrk/ztrack.c	Tue Apr 29 14:20:07 1997
+***************
+*** 9,15 ****
+  #include <unistd.h>
+  #include <fcntl.h>
+  #include <time.h>
+! #include <curses.h>
+  
+  
+  #ifdef HAVE_RANDOM
+--- 9,15 ----
+  #include <unistd.h>
+  #include <fcntl.h>
+  #include <time.h>
+! #include <ncurses.h>
+  
+  
+  #ifdef HAVE_RANDOM
