@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	mod_jk
-PORTVERSION=	1.2.5
-PORTREVISION=	1
+PORTVERSION=	1.2.6
 PORTEPOCH?=	1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_APACHE_JAKARTA}
@@ -40,15 +39,8 @@ APACHE_CONF=	${LOCALBASE}/etc/apache${APACHE2}
 WRKSRC=		${WRKDIR}/jakarta-tomcat-connectors-jk-${PORTVERSION}-src/jk/native
 
 USE_GMAKE=	YES
-USE_LIBTOOL_VER=	13
-USE_AUTOCONF_VER=	253
-USE_AUTOMAKE_VER=	15
-AUTOMAKE_ARGS=	--add-missing
 GNU_CONFIGURE=	YES
 CONFIGURE_ARGS+=	--with-apxs=${APXS}
-
-run-autotools:
-	@cd ${WRKSRC}; ${ACLOCAL}; ${LIBTOOLIZE}
 
 do-install:
 	${APXS} -i -A -n jk ${WRKSRC}/apache-${APACHE_VER}/mod_jk.so
