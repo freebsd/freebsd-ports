@@ -1,0 +1,82 @@
+--- Makefile.in.orig	Thu Jan 10 15:42:13 2002
++++ Makefile.in	Sat Jan 12 02:44:01 2002
+@@ -47,7 +47,7 @@
+ MV		= @MV@
+ RM		= @RM@
+ RMF		= @RM@ -f
+-MKDIR		= @MKDIR@
++MKDIR		= @MKDIR@ -p
+ FIND		= @FIND@
+ XARGS		= @XARGS@
+ LDCONFIG	= @LDCONFIG@
+@@ -59,11 +59,11 @@
+ LEXFLAGS	=
+ 
+ INSTALL		= @INSTALL@
+-INSTALL_PROGRAM	= @INSTALL@ -s -m 755
+-INSTALL_DATA	= @INSTALL@ -m 644
+-INSTALL_HEADER	= @INSTALL@ -m 644
+-INSTALL_LIB	= @INSTALL@ -m 755
+-INSTALL_SCRIPT	= @INSTALL@ -m 755
++INSTALL_PROGRAM	= @INSTALL_PROGRAM@
++INSTALL_DATA	= @INSTALL_DATA@
++INSTALL_HEADER	= @INSTALL_DATA@
++INSTALL_LIB	= @INSTALL_DATA@
++INSTALL_SCRIPT	= @INSTALL_SCRIPT@
+ 
+ INCS_EXTRA	= @XPM_CFLAGS@ @JPEG_CFLAGS@ @PNG_CFLAGS@ @GIF_CFLAGS@ @TIFF_CFLAGS@ @TTF_INCLUDES@
+ INCS_X		= @X_CFLAGS@
+@@ -79,7 +79,7 @@
+ AFTER_MAN_DIR	= @mandir@/man3
+ AFTER_APP_MAN_DIR	= @mandir@/man1
+ AFTER_SHAREDIR	= @datadir@/libAfterImage
+-AFTER_DOC_DIR	= $(AFTER_SHAREDIR)/doc
++AFTER_DOC_DIR	= @datadir@/doc/libAfterImage
+ 
+ all:            @LIBPROG@ $(INSTALLONBUILD) apps
+ 
+@@ -111,10 +111,9 @@
+ install.script:
+ 
+ install.dyn:
+-		$(INSTALL_LIB) $(LIB_SHARED).$(LIBVER) $(LIBDIR)
++		$(INSTALL_LIB) $(LIB_SHARED).$(LIBVERMAJOR) $(LIBDIR)
+ 		$(INSTALL_SCRIPT) afterimage-libs $(AFTER_BIN_DIR)
+-		-@/bin/rm -f $(LIBDIR)/$(LIB_SHARED).$(LIBVERMAJOR) $(LIBDIR)/$(LIB_SHARED)
+-		ln -sf $(LIB_SHARED).$(LIBVER) $(LIBDIR)/$(LIB_SHARED).$(LIBVERMAJOR)
++		-@/bin/rm -f $(LIBDIR)/$(LIB_SHARED)
+ 		ln -sf $(LIB_SHARED).$(LIBVERMAJOR) $(LIBDIR)/$(LIB_SHARED)
+ 		@( \
+ 		 if test `uname` = "Linux"; then \
+@@ -257,11 +256,8 @@
+ $(LIB_SHARED): $(LIB_SHARED).$(LIBVERMAJOR)
+ 	ln -sf $(LIB_SHARED).$(LIBVERMAJOR) $(LIB_SHARED)
+ 
+-$(LIB_SHARED).$(LIBVERMAJOR): $(LIB_SHARED).$(LIBVER)
+-	ln -sf $(LIB_SHARED).$(LIBVER) $(LIB_SHARED).$(LIBVERMAJOR)
+-
+-$(LIB_SHARED).$(LIBVER): $(LIB_OBJS) $(LIB_INCS) config.h
+-	$(CC) -shared -Wl,-soname,$(LIB_SHARED).$(LIBVERMAJOR) -o $(LIB_SHARED).$(LIBVER) \
++$(LIB_SHARED).$(LIBVERMAJOR): $(LIB_OBJS) $(LIB_INCS) config.h
++	$(CC) -shared -Wl,-soname,$(LIB_SHARED).$(LIBVERMAJOR) -o $(LIB_SHARED).$(LIBVERMAJOR) \
+ 	 $(LIB_OBJS)
+ 
+ doc.xref: $(LIB_DOCS)
+@@ -307,8 +303,6 @@
+ 
+ install.doc:
+ 	SRCS=`echo "$(LIB_DOCS) " | sed "s/.h / /g"`; cd doc/html; \
+-	    echo "$(MKDIR) $(AFTER_SHAREDIR)"; \
+-		$(MKDIR) $(AFTER_SHAREDIR); \
+ 	    echo "$(MKDIR) $(AFTER_DOC_DIR)"; \
+ 		$(MKDIR) $(AFTER_DOC_DIR); \
+ 	    echo "$(MKDIR) $(AFTER_DOC_DIR)/html"; \
+@@ -318,7 +312,7 @@
+ 		  $(INSTALL_DATA) $$f $(AFTER_DOC_DIR)/html/$$f; \
+ 		done; cd ../..;
+ 
+-install:	install.lib install.man install.doc install.apps
++install:	install.lib install.man install.apps
+ 
+ 
+ uninstall:	uninstall.lib
