@@ -208,6 +208,7 @@
     SUBDIR += p5-Spreadsheet-WriteExcel
     SUBDIR += p5-String-Scanf
     SUBDIR += p5-String-ShellQuote
+    SUBDIR += p5-String-ShowDiff
     SUBDIR += p5-String-Strip
     SUBDIR += p5-TeX-Hyphen
     SUBDIR += p5-Text-Autoformat
