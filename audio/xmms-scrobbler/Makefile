@@ -5,10 +5,10 @@
 # $FreeBSD$
 
 PORTNAME=	xmms-scrobbler
-PORTVERSION=	0.3.6
-PORTREVISION=	1
+PORTVERSION=	0.3.7
 CATEGORIES=	audio
-MASTER_SITES=	http://static.audioscrobbler.com/plugins/
+MASTER_SITES=	http://static.audioscrobbler.com/plugins/ \
+		http://www.pipian.com/stuffforchat/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XMMS plugin for Audioscrobbler.com
