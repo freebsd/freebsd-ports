@@ -1,0 +1,15 @@
+    The discid home page is located at:
+        http://family.zawodny.com/jzawodn/c/discid/
+
+    There may be bugs in the code as well as in the documentation. If
+    you find either, I'd appreciate a patch or at least a mail message
+    to let me know what's wrong.
+
+    discid has been developed and tested on Linux and FreeBSD.  It may
+    work on other platforms with modification, but I don't know.  If
+    you install it on another platform, I'd like to hear about it. If
+    you develop patches for that platform, I'd REALLY like to hear
+    about it. Send me a note. There's nothing that I know to be
+    platform-dependent in here yet, but you never know.
+
+WWW: http://family.zawodny.com/jzawodn/c/discid/
