@@ -1,0 +1,10 @@
+This is a distribution of NASM, the Netwide Assembler. NASM is a
+prototype general-purpose x86 assembler. It will currently output
+flat-form binary files, a.out, COFF and ELF Unix object files,
+Microsoft Win32 and 16-bit DOS object files, OS/2 object files, the
+as86 object format, and a home-grown format called RDF.
+
+Also included is NDISASM, a prototype x86 binary-file disassembler
+which uses the same instruction table as NASM.    
+
+http://www.cryogen.com/Nasm
