@@ -3,7 +3,7 @@
 # Date created:		19 Apr 1997
 # Whom:			Jun-ichiro itojun Itoh <itojun@itojun.org>
 #
-# $Id: Makefile,v 1.14 1998/05/04 20:22:41 jseger Exp $
+# $Id: Makefile,v 1.15 1998/06/25 22:26:14 asami Exp $
 #
 
 DISTNAME=	hylafax-v4.0pl2
@@ -20,7 +20,7 @@ BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash2 \
 		${PREFIX}/lib/afm/Courier:${PORTSDIR}/print/afm
 # no dependency on ghostscript because we don't know which
 # version the user prefers
-RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
+RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash2
 LIB_DEPENDS=	tiff34\\.1\\.:${PORTSDIR}/graphics/tiff34 \
 		jpeg\\.9\\.:${PORTSDIR}/graphics/jpeg
 
