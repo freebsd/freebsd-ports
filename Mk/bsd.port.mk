@@ -100,12 +100,24 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # These are string variables; you should set them to the reason why
 # they are necessary.
 #
-# RESTRICTED	- Port is restricted (e.g., contains cryptography, etc.).
-# NO_CDROM		- Port may not go on CDROM.
-# NO_PACKAGE	- Port should not be packaged but distfiles can be put on
-#				  ftp sites and CDROMs.
+# RESTRICTED	- Prevent the distribution of distfiles and packages to
+#				  the FTP sites or on CDROM (e.g. forbidden by license
+#				  considerations).
+# NO_CDROM		- Packages and distfiles may not go on CDROM (e.g. must
+#				  not be re-sold) but can go on FTP sites.
+# NO_PACKAGE	- Port should not be packaged for ftp sites or CDROMs,
+#				  but distfiles can be put on ftp sites and CDROMs.
+# FORBIDDEN		- Package build should not be attempted because of
+#				  security vulnerabilities.
+# IGNORE		- Package build should be skipped entirely (e.g.
+#				  because of serious unfixable problems in the build,
+#				  because it cannot be manually fetched, etc).  Error
+#				  logs will not appear on bento, so this should be
+#				  used sparingly.
 # BROKEN_ELF	- Port doesn't build on ELF machines.
-# BROKEN		- Port is broken.
+# BROKEN		- Port is believed to be broken.  Package builds will
+#				  still be attempted on the bento package cluster to
+#				  test this assumption.
 #
 # In addition to RESTRICTED or NO_CDROM, if only a subset of distfiles
 # or patchfiles have redistribution restrictions, set the following
@@ -833,8 +845,6 @@ OPENSSLLIB=		${OPENSSLBASE}/lib
 OPENSSLINC=		${OPENSSLBASE}/include
 MAKE_ENV+=		OPENSSLLIB=${OPENSSLLIB} OPENSSLINC=${OPENSSLINC} \
 				OPENSSLBASE=${OPENSSLBASE} OPENSSLDIR=${OPENSSLDIR}
-### crypto
-#RESTRICTED=		"Contains cryptography."
 .endif
 
 .if defined(EMACS_PORT_NAME)
