@@ -1,0 +1,21 @@
+include/inti-1.0/inti/gtk-sourceview/private/sourcebuffer_p.h
+include/inti-1.0/inti/gtk-sourceview/private/sourcelanguage_p.h
+include/inti-1.0/inti/gtk-sourceview/private/sourceprintjob_p.h
+include/inti-1.0/inti/gtk-sourceview/private/sourcestylescheme_p.h
+include/inti-1.0/inti/gtk-sourceview/private/sourcetag_p.h
+include/inti-1.0/inti/gtk-sourceview/private/sourceview_p.h
+include/inti-1.0/inti/gtk-sourceview/sourcebuffer.h
+include/inti-1.0/inti/gtk-sourceview/sourceiter.h
+include/inti-1.0/inti/gtk-sourceview/sourcelanguage.h
+include/inti-1.0/inti/gtk-sourceview/sourceprintjob.h
+include/inti-1.0/inti/gtk-sourceview/sourcestylescheme.h
+include/inti-1.0/inti/gtk-sourceview/sourcetag.h
+include/inti-1.0/inti/gtk-sourceview/sourcetagstyle.h
+include/inti-1.0/inti/gtk-sourceview/sourceview.h
+include/inti-1.0/inti/inti-sourceview.h
+@dirrm include/inti-1.0/inti/gtk-sourceview/private
+@dirrm include/inti-1.0/inti/gtk-sourceview
+lib/inti-1.0/include/inti-sourceview-config.h
+lib/libinti-sourceview-1.0.so
+lib/libinti-sourceview-1.0.so.0
+libdata/pkgconfig/inti-sourceview-1.0.pc

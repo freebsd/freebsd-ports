@@ -1,0 +1,10 @@
+include/inti-1.0/inti/gconf/changeset.h
+include/inti-1.0/inti/gconf/client.h
+include/inti-1.0/inti/gconf/schema.h
+include/inti-1.0/inti/gconf/value.h
+include/inti-1.0/inti/inti-gconf.h
+@dirrm include/inti-1.0/inti/gconf
+lib/inti-1.0/include/inti-gconf-config.h
+lib/libinti-gconf-1.0.so
+lib/libinti-gconf-1.0.so.6
+libdata/pkgconfig/inti-gconf-1.0.pc

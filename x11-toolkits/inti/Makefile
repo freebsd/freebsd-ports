@@ -21,12 +21,6 @@ CONFIGURE_ENV=	CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS}" \
 		LDFLAGS="${LDFLAGS} ${PTHREAD_LIBS}"
 INSTALLS_SHLIB=	yes
 
-PLIST_FILES=	bin/inti-demo \
-		lib/libinti-1.0.so lib/libinti-1.0.so.9 \
-		lib/inti-1.0/include/inti-config.h \
-		libdata/pkgconfig/inti-1.0.pc
-PLIST_DIRS=	lib/inti-1.0/include lib/inti-1.0
-
 .if !defined(NOPORTDOCS)
 PORTDOCS=	*
 .endif
@@ -45,10 +39,6 @@ post-install:
 	@${FIND} ${EXAMPLESDIR} -type d | ${SORT} -r | \
 		${SED} 's,^${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
 .endif
-	@${FIND} ${PREFIX}/include/inti-1.0 -type f | \
-		${SED} 's,^${PREFIX}/,,' >> ${TMPPLIST}
-	@${FIND} ${PREFIX}/include/inti-1.0 -type d | ${SORT} -r | \
-		${SED} 's,^${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
 	@${FIND} ${PREFIX}/share/gnome/inti -type f | \
 		${SED} 's,^${PREFIX}/,,' >> ${TMPPLIST}
 	@${FIND} ${PREFIX}/share/gnome/inti -type d | ${SORT} -r | \
