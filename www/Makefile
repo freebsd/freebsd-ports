@@ -19,9 +19,10 @@
     SUBDIR += bacon
     SUBDIR += bluefish
     SUBDIR += boa
-    SUBDIR += cgihtml
     SUBDIR += calamaris
     SUBDIR += cgi-lib
+    SUBDIR += cgic
+    SUBDIR += cgihtml
     SUBDIR += cgiparse
     SUBDIR += cgiwrap
     SUBDIR += checkbot

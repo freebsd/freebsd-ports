@@ -1,0 +1,20 @@
+cgic is an ANSI C-language library for the creation of CGI-based World
+Wide Web applications. For basic information about the CGI standard,
+see the CGI documentation at NCSA.
+   
+   cgic performs the following tasks:
+     * Parses form data, correcting for defective and/or inconsistent
+       browsers
+     * Transparently accepts both GET and POST form data
+     * Handles line breaks in form fields in a consistent manner
+     * Provides string, integer, floating-point, and single- and
+       multiple-choice functions to retrieve form data
+     * Provides bounds checking for numeric fields
+     * Loads CGI environment variables into C strings which are always
+       non-null
+     * Provides a way to capture CGI situations for replay in a debugging
+       environment
+       
+cgic should be compatible with any CGI-compliant server environment.
+
+WWW: http://www.boutell.com/cgic/
