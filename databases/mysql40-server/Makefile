@@ -1,15 +1,16 @@
 # ports collection makefile for:	mySQL
-# Version required:			v3.21.29-gamma
-# Date created:				26 Jan 1998
+# Version required:			v3.21.33
+# Date created:				14 Aug 1998
 # Whom:					Josh Tiefenbach <josh@ican.net>
 #
-# $Id: Makefile,v 1.20 1998/03/29 01:31:41 steve Exp $
+# $Id: Makefile,v 1.21 1998/04/29 01:10:01 jseger Exp $
 #
 
-DISTNAME=	mysql-3.21.29-gamma
-PKGNAME=	mysql-3.21.29g
+DISTNAME=	mysql-3.21.33
+PKGNAME=	mysql-3.21.33
 CATEGORIES=	databases
-MASTER_SITES=	http://www.buoy.com/mysql/Downloads/MySQL-3.21/ \
+MASTER_SITES=	http://www.buoy.com/mysql/Downloads/ \
+		http://mysql.bluep.com/Downloads/ \
 		http://mysql.polaris.ca/Downloads/MySQL-3.21/ \
 		http://www.fh-wolfenbuettel.de/ftp/pub/database/mysql/Downloads/MySQL-3.21/ \
 		http://www.tcx.se/Downloads/MySQL-3.21/
@@ -38,7 +39,7 @@ pre-install:
 post-install:
 	${MKDIR} ${PREFIX}/share/mysql/mysql
 	${CP} ${WRKSRC}/data/mysql/*.frm ${PREFIX}/share/mysql/mysql
-	${PREFIX}/bin/mysql_install_db
+	${WRKSRC}/scripts/mysql_install_db
 	@ /usr/bin/killall mysqld
 	@ ${ECHO} "#!/bin/sh" > ${PREFIX}/etc/rc.d/mysql.sh
 	@ ${ECHO} "#" >> ${PREFIX}/etc/rc.d/mysql.sh
