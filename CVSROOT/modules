@@ -6002,6 +6002,7 @@ muttzilla	ports/mail/muttzilla
 muuz		ports/misc/muuz
 mvdsv		ports/games/mvdsv
 mwavem		ports/comms/mwavem
+mx4j		ports/java/mx4j
 mxico		ports/x11/mxico
 mybudget	ports/finance/mybudget
 mydns		ports/dns/mydns
