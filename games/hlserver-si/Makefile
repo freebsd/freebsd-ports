@@ -7,7 +7,8 @@
 
 PORTNAME=	si
 PORTVERSION=	0.97.0p5
-MASTER_SITES=	http://www.lysator.liu.se/amiga/si/ \
+MASTER_SITES=	http://fileplanet.games-world.net/dl/ftp1.gamespy.com/fpnew/action/half-life/modifications/si/ \
+		http://www.lysator.liu.se/amiga/si/ \
 		ftp://212.177.107.155/halflifeitalia/mod/
 #DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g}-linux
 
