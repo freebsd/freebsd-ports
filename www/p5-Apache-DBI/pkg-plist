@@ -1,4 +1,4 @@
-lib/perl5/site_perl/%%PERL_VER%%/Apache/DBI.pm
-lib/perl5/site_perl/%%PERL_VER%%/Apache/AuthDBI.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/DBI/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/DBI
+%%SITE_PERL%%/Apache/DBI.pm
+%%SITE_PERL%%/Apache/AuthDBI.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/DBI/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/DBI
