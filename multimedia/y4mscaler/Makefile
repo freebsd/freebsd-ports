@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	y4mscaler
-PORTVERSION=	0.6.1
+PORTVERSION=	0.6.2
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.mir.com/DMG/Software/
 DISTNAME=	${PKGNAME}-src
