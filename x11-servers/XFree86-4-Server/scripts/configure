@@ -60,7 +60,6 @@ configure () {
 	BuildType1Fonts \
 	BuildCIDFonts \
 	BuildCyrillicFonts \
-	BuildLatin2Fonts \
 	XnestServer \
 	BuildFontServer \
 	XVirtualFramebufferServer \
@@ -77,12 +76,13 @@ configure () {
     echo "#define ModInstall YES" >> $LOCALDEF
     echo "#define XF86Server YES" >> $LOCALDEF
     echo "#define BuildServersOnly YES" >> $LOCALDEF
+    echo "#define BuildXFree86ConfigTools YES" >> $LOCALDEF
     cat >> $LOCALDEF <<END
 #ifndef XF86CardDrivers
 #ifdef i386Architecture
 #define XF86CardDrivers         mga glint nv tga s3virge sis rendition \
                                 neomagic i740 tdfx savage \
-                                cirrus tseng trident chips apm \
+                                cirrus vmware tseng trident chips apm \
                                 GlideDriver fbdev i128 \
                                 ati AgpGartDrivers DevelDrivers ark cyrix \
 				siliconmotion \
@@ -129,5 +129,6 @@ END
     cp -f $LOCALDEF $HOSTDEF
 }
 
+cp ${X11BASE}/lib/X11/config/version.def ${WRKSRC}/config/cf
 configure
 exit 0
