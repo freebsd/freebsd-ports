@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bbkeys
-PORTVERSION=	0.8.5
+PORTVERSION=	0.8.6
 CATEGORIES=	x11-wm
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,19 +15,26 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A keygrabber for the Blackbox window manager
 
 USE_X_PREFIX=	yes
+USE_PERL5=	yes
 GNU_CONFIGURE=	yes
-USE_REINPLACE=	yes
 
 MAN1=		bbkeys.1
 MAN5=		bbkeysrc.5 bbkeys.bb.5
+PORTDOCS=	AUTHORS BUGS ChangeLog NEWS README
+PLIST_FILES=	bin/bbkeys bin/bbkeysconf.pl \
+		share/bbtools/bbkeys.bb share/bbtools/bbkeys.nobb
 
-pre-patch:
+post-patch:
+	@${PERL} -pi -e 's|: install-docDATA|:|g' ${WRKSRC}/Makefile.in
+
+post-install:
 .if !defined(NOPORTDOCS)
-	@${REINPLACE_CMD} -e 's@doc/bbkeys@share/doc/bbkeys@g' \
-		${WRKSRC}/Makefile.in
-.else
-	@${REINPLACE_CMD} -E 's|^docdir|#|; s|^doc_DATA|#|' \
-		${WRKSRC}/Makefile.in
+	@${MKDIR} ${DOCSDIR}
+.for file in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+.endfor
 .endif
+	@${ECHO_CMD} "@unexec rmdir %D/share/bbtools 2>/dev/null || true" \
+		>> ${TMPPLIST}
 
 .include <bsd.port.mk>
