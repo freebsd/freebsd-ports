@@ -3,7 +3,7 @@
 # Date created:		Tue Jun 10 21:58:54 CEST 1997
 # Whom:			Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.12 1997/10/04 14:53:04 andreas Exp $
+# $Id: Makefile,v 1.13 1997/10/09 21:04:40 andreas Exp $
 #
 
 DISTNAME=	ghostscript-5.03
@@ -15,8 +15,8 @@ DISTFILES=	${GS_SOURCES} ${GS_FONTS_STD} ${GS_FONTS_OTHER} \
 
 MAINTAINER=	andreas@FreeBSD.ORG
 
-BUILD_DEPENDS=	/nonexistent:${PORTSDIR}/graphics/jpeg \
-		/nonexistent:${PORTSDIR}/graphics/png \
+BUILD_DEPENDS=	/nonexistent:${PORTSDIR}/graphics/jpeg:extract \
+		/nonexistent:${PORTSDIR}/graphics/png:extract \
 		unzip:${PORTSDIR}/archivers/unzip
 
 MAKE_ENV=	PORTSDIR=${PORTSDIR}
