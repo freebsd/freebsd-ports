@@ -1,6 +1,6 @@
---- autologin/Makefile	Sun Apr 19 03:51:53 1998
-+++ autologin/Makefile	Sun Apr 19 03:54:02 1998
-@@ -7,11 +7,11 @@
+--- autologin/Makefile.orig	Fri Nov 10 22:22:39 2000
++++ autologin/Makefile	Fri Nov 10 22:32:54 2000
+@@ -7,12 +7,12 @@
  #
  
  DESTDIR=
@@ -10,8 +10,19 @@
  INCLUDE=
 -DEBUG=	-g
 -DEFS=	-DPUCC -DSUN5
-+DEBUG=	-O
+-CFLAGS=	${DEBUG} ${DEFS} ${INCLUDE}
++#DEBUG=	-O
 +DEFS=	-DFREEBSD
- CFLAGS=	${DEBUG} ${DEFS} ${INCLUDE}
++CFLAGS+=	${DEBUG} ${DEFS} ${INCLUDE}
  
  GENC=	main.c
+ GENH=	main.h
+@@ -56,7 +56,7 @@
+ 	lint -h ${CDEFS} ${INCLUDE} ${GEN} ${SRC}
+ 
+ install: all
+-	install -c -s -m 755 autologin ${BINDIR}
++	${BSD_INSTALL_PROGRAM} autologin ${BINDIR}
+ 
+ distrib:
+ 	distrib -c ${BINDIR}/autologin	

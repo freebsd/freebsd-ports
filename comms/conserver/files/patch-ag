@@ -29,8 +29,8 @@
  
  install: all dirs FRC
 -	install -c ${PROG} ${LIB}/${PROG}
-+	install -c -o bin -g bin -m 444 ${PROG} ${LIB}
-+	install -c -o bin -g bin -m 444 ${MAN} ${DOC}/conserver.cf.5
++	${BSD_INSTALL_PROG} ${PROG} ${LIB}
++	${BSD_INSTALL_MAN} ${MAN} ${DOC}/conserver.cf.5
  
  lint: FRC
  
