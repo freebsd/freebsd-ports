@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	twisted
-PORTVERSION=	1.0.4
+PORTVERSION=	1.0.5
 CATEGORIES=	devel net python
 MASTER_SITES=	http://twisted.sourceforge.net/ \
 		http://twistedmatrix.com/downloads/
