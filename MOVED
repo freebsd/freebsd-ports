@@ -1289,3 +1289,4 @@ graphics/giram||2004-10-23|build failure
 graphics/ruby-gdchart||2004-10-23|build failure
 hebrew/pine||2004-10-23|contained serious vulnerabilities
 japanese/edict-sdic||2004-10-23|checksum failure
+mail/cyrus|cyrus-imapd22|2004-10-23|contained serious vulnerabilities
