@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	borges
-PORTVERSION=	0.1.1
+PORTVERSION=	0.2.0
 CATEGORIES=	www ruby
 MASTER_SITES=	http://segment7.net/ruby-code/borges/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -21,7 +21,7 @@ USE_RUBY=	yes
 
 NO_BUILD=	yes
 
-DOCS=		CHANGELOG README TODO
+DOCS=		BUGS CHANGELOG README
 EXAMPLES=	data/examples/ruby/borges/*
 
 do-install:

@@ -7,6 +7,7 @@
 %%RUBY_SITELIBDIR%%/borges/Radical.rb
 %%RUBY_SITELIBDIR%%/borges/Renderer.rb
 %%RUBY_SITELIBDIR%%/borges/Session.rb
+%%RUBY_SITELIBDIR%%/borges/TC_LRUCache.rb
 %%RUBY_SITELIBDIR%%/borges/Utilities.rb
 %%RUBY_SITELIBDIR%%/borges/Webrick.rb
 %%RUBY_SITELIBDIR%%/borges/console_ask.rb
@@ -31,7 +32,6 @@
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/train
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/apache
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/BUGS
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/CHANGELOG
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/README
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/TODO
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%
