@@ -13,6 +13,8 @@ include/X11/neXtaw/AsciiTextP.h
 include/X11/neXtaw/Box.h
 include/X11/neXtaw/BoxP.h
 include/X11/neXtaw/Cardinals.h
+include/X11/neXtaw/Clock.h
+include/X11/neXtaw/ClockP.h
 include/X11/neXtaw/Command.h
 include/X11/neXtaw/CommandP.h
 include/X11/neXtaw/Dialog.h
@@ -79,6 +81,8 @@ include/X11/neXtaw/Viewport.h
 include/X11/neXtaw/ViewportP.h
 include/X11/neXtaw/XawImP.h
 include/X11/neXtaw/XawInit.h
-share/doc/neXtaw/README.neXtaw
+share/doc/neXtaw/CHANGES
+share/doc/neXtaw/FAQ
+share/doc/neXtaw/README
 @dirrm include/X11/neXtaw
 @dirrm share/doc/neXtaw
