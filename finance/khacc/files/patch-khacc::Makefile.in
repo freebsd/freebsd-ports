@@ -1,14 +1,5 @@
---- khacc/Makefile.in.orig	Wed Dec 10 22:08:46 2003
-+++ khacc/Makefile.in	Wed Dec 17 01:33:23 2003
-@@ -240,7 +240,7 @@
- bin_PROGRAMS = khacc-gui
- 
- bin_SCRIPTS = khacc
--BUILT_SOURCES = khacc
-+BUILT_SOURCES = khacc.in
- 
- khacc_gui_SOURCES = transeditor.cpp qhaccwidget.cpp qhaccview.cpp qhaccsubsetwin.cpp qhaccscrollview.cpp qhaccreportwriter.cpp qhaccrecwin.cpp qhacclineedits.cpp qhaccjrnlchsr.cpp qhaccgrwin.cpp qhaccgraphpainters.cpp qhaccdialogs.cpp qhaccacctchsr.cpp main.cpp splitdialog.cpp khaccsounder.cpp copystore.cpp guiconstants.cpp 
- 
+--- khacc/Makefile.in.orig	Sun Jan 11 00:08:44 2004
++++ khacc/Makefile.in	Thu Jan 15 22:16:49 2004
 @@ -273,14 +273,13 @@
  # kde_designerdir     Where Qt Designer plugins should go to (new in KDE 3).
  
@@ -43,7 +34,7 @@
 -	khacc_gui-qhaccacctchsr.$(OBJEXT) khacc_gui-main.$(OBJEXT) \
 -	khacc_gui-splitdialog.$(OBJEXT) \
 -	khacc_gui-khaccsounder.$(OBJEXT) khacc_gui-copystore.$(OBJEXT) \
--	khacc_gui-guiconstants.$(OBJEXT)
+-	khacc_gui-guiconstants.$(OBJEXT) khacc_gui-guiutils.$(OBJEXT)
 +am_khacc_gui_OBJECTS = transeditor.$(OBJEXT) qhaccwidget.$(OBJEXT) \
 +	qhaccview.$(OBJEXT) qhaccsubsetwin.$(OBJEXT) \
 +	qhaccscrollview.$(OBJEXT) qhaccreportwriter.$(OBJEXT) \
@@ -52,7 +43,7 @@
 +	qhaccgraphpainters.$(OBJEXT) qhaccdialogs.$(OBJEXT) \
 +	qhaccacctchsr.$(OBJEXT) main.$(OBJEXT) splitdialog.$(OBJEXT) \
 +	khaccsounder.$(OBJEXT) copystore.$(OBJEXT) \
-+	guiconstants.$(OBJEXT)
++	guiconstants.$(OBJEXT) guiutils.$(OBJEXT)
  #>- khacc_gui_OBJECTS = $(am_khacc_gui_OBJECTS)
 -#>+ 18
 +#>+ 12
@@ -71,7 +62,7 @@
 -	khacc_gui-qhaccacctchsr.$(OBJEXT) khacc_gui-main.$(OBJEXT) \
 -	khacc_gui-splitdialog.$(OBJEXT) \
 -	khacc_gui-khaccsounder.$(OBJEXT) khacc_gui-copystore.$(OBJEXT) \
--	khacc_gui-guiconstants.$(OBJEXT)
+-	khacc_gui-guiconstants.$(OBJEXT) khacc_gui-guiutils.$(OBJEXT)
 +khacc_gui_nofinal_OBJECTS = transeditor.$(OBJEXT) qhaccwidget.$(OBJEXT) \
 +	qhaccview.$(OBJEXT) qhaccsubsetwin.$(OBJEXT) \
 +	qhaccscrollview.$(OBJEXT) qhaccreportwriter.$(OBJEXT) \
@@ -80,16 +71,17 @@
 +	qhaccgraphpainters.$(OBJEXT) qhaccdialogs.$(OBJEXT) \
 +	qhaccacctchsr.$(OBJEXT) main.$(OBJEXT) splitdialog.$(OBJEXT) \
 +	khaccsounder.$(OBJEXT) copystore.$(OBJEXT) \
-+	guiconstants.$(OBJEXT)
++	guiconstants.$(OBJEXT) guiutils.$(OBJEXT)
  @KDE_USE_FINAL_FALSE@khacc_gui_OBJECTS = $(khacc_gui_nofinal_OBJECTS)
  @KDE_USE_FINAL_TRUE@khacc_gui_OBJECTS = $(khacc_gui_final_OBJECTS)
  khacc_gui_DEPENDENCIES =
-@@ -333,61 +320,55 @@
+@@ -333,64 +320,55 @@
  DEFAULT_INCLUDES =  -I. -I$(srcdir) -I$(top_builddir)
  depcomp = $(SHELL) $(top_srcdir)/admin/depcomp
  am__depfiles_maybe = depfiles
 -#>- @AMDEP_TRUE@DEP_FILES = ./$(DEPDIR)/khacc_gui-copystore.Po \
 -#>- @AMDEP_TRUE@	./$(DEPDIR)/khacc_gui-guiconstants.Po \
+-#>- @AMDEP_TRUE@	./$(DEPDIR)/khacc_gui-guiutils.Po \
 -#>- @AMDEP_TRUE@	./$(DEPDIR)/khacc_gui-khaccsounder.Po \
 -#>- @AMDEP_TRUE@	./$(DEPDIR)/khacc_gui-main.Po \
 -#>- @AMDEP_TRUE@	./$(DEPDIR)/khacc_gui-qhaccacctchsr.Po \
@@ -106,9 +98,10 @@
 -#>- @AMDEP_TRUE@	./$(DEPDIR)/khacc_gui-qhaccwidget.Po \
 -#>- @AMDEP_TRUE@	./$(DEPDIR)/khacc_gui-splitdialog.Po \
 -#>- @AMDEP_TRUE@	./$(DEPDIR)/khacc_gui-transeditor.Po
--#>+ 37
+-#>+ 39
 -@AMDEP_TRUE@@KDE_USE_FINAL_TRUE@DEP_FILES =   $(DEPDIR)/khacc_gui.all_cpp.P  ./$(DEPDIR)/khacc_gui-copystore.Po \
 -	@AMDEP_TRUE@	./$(DEPDIR)/khacc_gui-guiconstants.Po \
+-	@AMDEP_TRUE@	./$(DEPDIR)/khacc_gui-guiutils.Po \
 -	@AMDEP_TRUE@	./$(DEPDIR)/khacc_gui-khaccsounder.Po \
 -	@AMDEP_TRUE@	./$(DEPDIR)/khacc_gui-main.Po \
 -	@AMDEP_TRUE@	./$(DEPDIR)/khacc_gui-qhaccacctchsr.Po \
@@ -127,6 +120,7 @@
 -	@AMDEP_TRUE@	./$(DEPDIR)/khacc_gui-transeditor.Po
 -@AMDEP_TRUE@@KDE_USE_FINAL_FALSE@DEP_FILES =   ./$(DEPDIR)/khacc_gui-copystore.Po \
 -	@AMDEP_TRUE@	./$(DEPDIR)/khacc_gui-guiconstants.Po \
+-	@AMDEP_TRUE@	./$(DEPDIR)/khacc_gui-guiutils.Po \
 -	@AMDEP_TRUE@	./$(DEPDIR)/khacc_gui-khaccsounder.Po \
 -	@AMDEP_TRUE@	./$(DEPDIR)/khacc_gui-main.Po \
 -	@AMDEP_TRUE@	./$(DEPDIR)/khacc_gui-qhaccacctchsr.Po \
@@ -144,7 +138,7 @@
 -	@AMDEP_TRUE@	./$(DEPDIR)/khacc_gui-splitdialog.Po \
 -	@AMDEP_TRUE@	./$(DEPDIR)/khacc_gui-transeditor.Po
 +#>- @AMDEP_TRUE@DEP_FILES = ./$(DEPDIR)/copystore.Po \
-+#>- @AMDEP_TRUE@	./$(DEPDIR)/guiconstants.Po \
++#>- @AMDEP_TRUE@	./$(DEPDIR)/guiconstants.Po ./$(DEPDIR)/guiutils.Po \
 +#>- @AMDEP_TRUE@	./$(DEPDIR)/khaccsounder.Po ./$(DEPDIR)/main.Po \
 +#>- @AMDEP_TRUE@	./$(DEPDIR)/qhaccacctchsr.Po \
 +#>- @AMDEP_TRUE@	./$(DEPDIR)/qhaccdialogs.Po \
@@ -161,7 +155,7 @@
 +#>- @AMDEP_TRUE@	./$(DEPDIR)/transeditor.Po
 +#>+ 33
 +@AMDEP_TRUE@@KDE_USE_FINAL_TRUE@DEP_FILES =   $(DEPDIR)/khacc_gui.all_cpp.P  ./$(DEPDIR)/copystore.Po \
-+	@AMDEP_TRUE@	./$(DEPDIR)/guiconstants.Po \
++	@AMDEP_TRUE@	./$(DEPDIR)/guiconstants.Po ./$(DEPDIR)/guiutils.Po \
 +	@AMDEP_TRUE@	./$(DEPDIR)/khaccsounder.Po ./$(DEPDIR)/main.Po \
 +	@AMDEP_TRUE@	./$(DEPDIR)/qhaccacctchsr.Po \
 +	@AMDEP_TRUE@	./$(DEPDIR)/qhaccdialogs.Po \
@@ -177,7 +171,7 @@
 +	@AMDEP_TRUE@	./$(DEPDIR)/splitdialog.Po \
 +	@AMDEP_TRUE@	./$(DEPDIR)/transeditor.Po
 +@AMDEP_TRUE@@KDE_USE_FINAL_FALSE@DEP_FILES =   ./$(DEPDIR)/copystore.Po \
-+	@AMDEP_TRUE@	./$(DEPDIR)/guiconstants.Po \
++	@AMDEP_TRUE@	./$(DEPDIR)/guiconstants.Po ./$(DEPDIR)/guiutils.Po \
 +	@AMDEP_TRUE@	./$(DEPDIR)/khaccsounder.Po ./$(DEPDIR)/main.Po \
 +	@AMDEP_TRUE@	./$(DEPDIR)/qhaccacctchsr.Po \
 +	@AMDEP_TRUE@	./$(DEPDIR)/qhaccdialogs.Po \
@@ -195,12 +189,13 @@
  
  #>- CXXCOMPILE = $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) \
  #>- $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS)
-@@ -497,24 +478,27 @@
+@@ -498,25 +476,25 @@
  distclean-compile:
  	-rm -f *.tab.c
  
 -@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/khacc_gui-copystore.Po@am__quote@
 -@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/khacc_gui-guiconstants.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/khacc_gui-guiutils.Po@am__quote@
 -@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/khacc_gui-khaccsounder.Po@am__quote@
 -@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/khacc_gui-main.Po@am__quote@
 -@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/khacc_gui-qhaccacctchsr.Po@am__quote@
@@ -219,6 +214,7 @@
 -@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/khacc_gui-transeditor.Po@am__quote@
 +@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/copystore.Po@am__quote@
 +@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/guiconstants.Po@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/guiutils.Po@am__quote@
 +@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/khaccsounder.Po@am__quote@
 +@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/main.Po@am__quote@
 +@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/qhaccacctchsr.Po@am__quote@
@@ -235,13 +231,10 @@
 +@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/qhaccwidget.Po@am__quote@
 +@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/splitdialog.Po@am__quote@
 +@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/transeditor.Po@am__quote@
-+
-+distclean-depend:
-+	-rm -rf ./$(DEPDIR)
  
  .cpp.o:
  @am__fastdepCXX_TRUE@	if $(CXXCOMPILE) -MT $@ -MD -MP -MF "$(DEPDIR)/$*.Tpo" \
-@@ -549,1032 +533,6 @@
+@@ -551,1089 +529,6 @@
  @AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
  @am__fastdepCXX_FALSE@	$(LTCXXCOMPILE) -c -o $@ `test -f '$<' || echo '$(srcdir)/'`$<
  
@@ -1271,67 +1264,76 @@
 -#>+ 1
 -@am__fastdepCXX_FALSE@	$(LIBTOOL) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(khacc_gui_CXXFLAGS) $(CXXFLAGS) $(KDE_CXXFLAGS) -c -o khacc_gui-guiconstants.lo `test -f 'guiconstants.cpp' || echo '$(srcdir)/'`guiconstants.cpp
 -
+-khacc_gui-guiutils.o: guiutils.cpp
+-#>- @am__fastdepCXX_TRUE@	if $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(khacc_gui_CXXFLAGS) $(CXXFLAGS) -MT khacc_gui-guiutils.o -MD -MP -MF "$(DEPDIR)/khacc_gui-guiutils.Tpo" \
+-#>- @am__fastdepCXX_TRUE@	  -c -o khacc_gui-guiutils.o `test -f 'guiutils.cpp' || echo '$(srcdir)/'`guiutils.cpp; \
+-#>- @am__fastdepCXX_TRUE@	then mv -f "$(DEPDIR)/khacc_gui-guiutils.Tpo" "$(DEPDIR)/khacc_gui-guiutils.Po"; \
+-#>- @am__fastdepCXX_TRUE@	else rm -f "$(DEPDIR)/khacc_gui-guiutils.Tpo"; exit 1; \
+-#>- @am__fastdepCXX_TRUE@	fi
+-#>+ 5
+-@am__fastdepCXX_TRUE@	if $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(khacc_gui_CXXFLAGS) $(CXXFLAGS) $(KDE_CXXFLAGS) -MT khacc_gui-guiutils.o -MD -MP -MF "$(DEPDIR)/khacc_gui-guiutils.Tpo" \
+-	@am__fastdepCXX_TRUE@	  -c -o khacc_gui-guiutils.o `test -f 'guiutils.cpp' || echo '$(srcdir)/'`guiutils.cpp; \
+-	@am__fastdepCXX_TRUE@	then mv -f "$(DEPDIR)/khacc_gui-guiutils.Tpo" "$(DEPDIR)/khacc_gui-guiutils.Po"; \
+-	@am__fastdepCXX_TRUE@	else rm -f "$(DEPDIR)/khacc_gui-guiutils.Tpo"; exit 1; \
+-	@am__fastdepCXX_TRUE@	fi
+-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='guiutils.cpp' object='khacc_gui-guiutils.o' libtool=no @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	depfile='$(DEPDIR)/khacc_gui-guiutils.Po' tmpdepfile='$(DEPDIR)/khacc_gui-guiutils.TPo' @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+-#>- @am__fastdepCXX_FALSE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(khacc_gui_CXXFLAGS) $(CXXFLAGS) -c -o khacc_gui-guiutils.o `test -f 'guiutils.cpp' || echo '$(srcdir)/'`guiutils.cpp
+-#>+ 1
+-@am__fastdepCXX_FALSE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(khacc_gui_CXXFLAGS) $(CXXFLAGS) $(KDE_CXXFLAGS) -c -o khacc_gui-guiutils.o `test -f 'guiutils.cpp' || echo '$(srcdir)/'`guiutils.cpp
+-
+-khacc_gui-guiutils.obj: guiutils.cpp
+-#>- @am__fastdepCXX_TRUE@	if $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(khacc_gui_CXXFLAGS) $(CXXFLAGS) -MT khacc_gui-guiutils.obj -MD -MP -MF "$(DEPDIR)/khacc_gui-guiutils.Tpo" \
+-#>- @am__fastdepCXX_TRUE@	  -c -o khacc_gui-guiutils.obj `if test -f 'guiutils.cpp'; then $(CYGPATH_W) 'guiutils.cpp'; else $(CYGPATH_W) '$(srcdir)/guiutils.cpp'; fi`; \
+-#>- @am__fastdepCXX_TRUE@	then mv -f "$(DEPDIR)/khacc_gui-guiutils.Tpo" "$(DEPDIR)/khacc_gui-guiutils.Po"; \
+-#>- @am__fastdepCXX_TRUE@	else rm -f "$(DEPDIR)/khacc_gui-guiutils.Tpo"; exit 1; \
+-#>- @am__fastdepCXX_TRUE@	fi
+-#>+ 5
+-@am__fastdepCXX_TRUE@	if $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(khacc_gui_CXXFLAGS) $(CXXFLAGS) $(KDE_CXXFLAGS) -MT khacc_gui-guiutils.obj -MD -MP -MF "$(DEPDIR)/khacc_gui-guiutils.Tpo" \
+-	@am__fastdepCXX_TRUE@	  -c -o khacc_gui-guiutils.obj `if test -f 'guiutils.cpp'; then $(CYGPATH_W) 'guiutils.cpp'; else $(CYGPATH_W) '$(srcdir)/guiutils.cpp'; fi`; \
+-	@am__fastdepCXX_TRUE@	then mv -f "$(DEPDIR)/khacc_gui-guiutils.Tpo" "$(DEPDIR)/khacc_gui-guiutils.Po"; \
+-	@am__fastdepCXX_TRUE@	else rm -f "$(DEPDIR)/khacc_gui-guiutils.Tpo"; exit 1; \
+-	@am__fastdepCXX_TRUE@	fi
+-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='guiutils.cpp' object='khacc_gui-guiutils.obj' libtool=no @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	depfile='$(DEPDIR)/khacc_gui-guiutils.Po' tmpdepfile='$(DEPDIR)/khacc_gui-guiutils.TPo' @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+-#>- @am__fastdepCXX_FALSE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(khacc_gui_CXXFLAGS) $(CXXFLAGS) -c -o khacc_gui-guiutils.obj `if test -f 'guiutils.cpp'; then $(CYGPATH_W) 'guiutils.cpp'; else $(CYGPATH_W) '$(srcdir)/guiutils.cpp'; fi`
+-#>+ 1
+-@am__fastdepCXX_FALSE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(khacc_gui_CXXFLAGS) $(CXXFLAGS) $(KDE_CXXFLAGS) -c -o khacc_gui-guiutils.obj `if test -f 'guiutils.cpp'; then $(CYGPATH_W) 'guiutils.cpp'; else $(CYGPATH_W) '$(srcdir)/guiutils.cpp'; fi`
+-
+-khacc_gui-guiutils.lo: guiutils.cpp
+-#>- @am__fastdepCXX_TRUE@	if $(LIBTOOL) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(khacc_gui_CXXFLAGS) $(CXXFLAGS) -MT khacc_gui-guiutils.lo -MD -MP -MF "$(DEPDIR)/khacc_gui-guiutils.Tpo" \
+-#>- @am__fastdepCXX_TRUE@	  -c -o khacc_gui-guiutils.lo `test -f 'guiutils.cpp' || echo '$(srcdir)/'`guiutils.cpp; \
+-#>- @am__fastdepCXX_TRUE@	then mv -f "$(DEPDIR)/khacc_gui-guiutils.Tpo" "$(DEPDIR)/khacc_gui-guiutils.Plo"; \
+-#>- @am__fastdepCXX_TRUE@	else rm -f "$(DEPDIR)/khacc_gui-guiutils.Tpo"; exit 1; \
+-#>- @am__fastdepCXX_TRUE@	fi
+-#>+ 5
+-@am__fastdepCXX_TRUE@	if $(LIBTOOL) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(khacc_gui_CXXFLAGS) $(CXXFLAGS) $(KDE_CXXFLAGS) -MT khacc_gui-guiutils.lo -MD -MP -MF "$(DEPDIR)/khacc_gui-guiutils.Tpo" \
+-	@am__fastdepCXX_TRUE@	  -c -o khacc_gui-guiutils.lo `test -f 'guiutils.cpp' || echo '$(srcdir)/'`guiutils.cpp; \
+-	@am__fastdepCXX_TRUE@	then mv -f "$(DEPDIR)/khacc_gui-guiutils.Tpo" "$(DEPDIR)/khacc_gui-guiutils.Plo"; \
+-	@am__fastdepCXX_TRUE@	else rm -f "$(DEPDIR)/khacc_gui-guiutils.Tpo"; exit 1; \
+-	@am__fastdepCXX_TRUE@	fi
+-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='guiutils.cpp' object='khacc_gui-guiutils.lo' libtool=yes @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	depfile='$(DEPDIR)/khacc_gui-guiutils.Plo' tmpdepfile='$(DEPDIR)/khacc_gui-guiutils.TPlo' @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+-#>- @am__fastdepCXX_FALSE@	$(LIBTOOL) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(khacc_gui_CXXFLAGS) $(CXXFLAGS) -c -o khacc_gui-guiutils.lo `test -f 'guiutils.cpp' || echo '$(srcdir)/'`guiutils.cpp
+-#>+ 1
+-@am__fastdepCXX_FALSE@	$(LIBTOOL) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(khacc_gui_CXXFLAGS) $(CXXFLAGS) $(KDE_CXXFLAGS) -c -o khacc_gui-guiutils.lo `test -f 'guiutils.cpp' || echo '$(srcdir)/'`guiutils.cpp
+-
  mostlyclean-libtool:
  	-rm -f *.lo
  
-@@ -1816,14 +774,12 @@
- 
- #>- clean-am: clean-binPROGRAMS clean-generic clean-libtool mostlyclean-am
- #>+ 1
--clean-am: clean-final  clean-binPROGRAMS clean-generic clean-libtool mostlyclean-am
-+clean-am: clean-metasources clean-final  clean-binPROGRAMS clean-generic clean-libtool mostlyclean-am
- 
- distclean: distclean-recursive
--	-rm -rf ./$(DEPDIR)
- 
--	-rm -f Makefile
--distclean-am: clean-am distclean-compile distclean-generic \
--	distclean-libtool distclean-tags
-+distclean-am: clean-am distclean-compile distclean-depend \
-+	distclean-generic distclean-libtool distclean-tags
- 
- dvi: dvi-recursive
- 
-@@ -1844,9 +800,7 @@
- installcheck-am:
- 
- maintainer-clean: maintainer-clean-recursive
--	-rm -rf ./$(DEPDIR)
- 
--	-rm -f Makefile
- maintainer-clean-am: distclean-am maintainer-clean-generic
- 
- mostlyclean: mostlyclean-recursive
-@@ -1870,13 +824,13 @@
- .PHONY: $(RECURSIVE_TARGETS) CTAGS GTAGS all all-am check check-am clean \
- 	clean-binPROGRAMS clean-generic clean-libtool clean-recursive \
- 	ctags ctags-recursive distclean distclean-compile \
--	distclean-generic distclean-libtool distclean-recursive \
--	distclean-tags distdir dvi dvi-am dvi-recursive info info-am \
--	info-recursive install install-am install-binPROGRAMS \
--	install-binSCRIPTS install-data install-data-am \
--	install-data-local install-data-recursive install-exec \
--	install-exec-am install-exec-recursive install-info \
--	install-info-am install-info-recursive install-man \
-+	distclean-depend distclean-generic distclean-libtool \
-+	distclean-recursive distclean-tags distdir dvi dvi-am \
-+	dvi-recursive info info-am info-recursive install install-am \
-+	install-binPROGRAMS install-binSCRIPTS install-data \
-+	install-data-am install-data-local install-data-recursive \
-+	install-exec install-exec-am install-exec-recursive \
-+	install-info install-info-am install-info-recursive install-man \
- 	install-rcDATA install-recursive install-strip installcheck \
- 	installcheck-am installdirs installdirs-am \
- 	installdirs-recursive maintainer-clean maintainer-clean-generic \
-@@ -1887,7 +841,6 @@
+@@ -1946,7 +841,7 @@
  	uninstall-binSCRIPTS uninstall-info-am uninstall-info-recursive \
  	uninstall-local uninstall-rcDATA uninstall-recursive
  
 -qhacc: khacc.in
++khacc: khacc.in
  
  install-data-local:
  #>- 	$(mkinstalldirs) $(kde_appsdir)/Applications/
-@@ -1925,101 +878,65 @@
+@@ -1984,108 +879,69 @@
  	if test -n "$$LIST"; then \
  	$(XGETTEXT) $$LIST -o $(podir)/khacc.pot; \
  	fi
@@ -1409,6 +1411,9 @@
 -khaccsounder.moc:	khaccsounder.h
 -	$(MOC) $(srcdir)/khaccsounder.h -o khaccsounder.moc
 -
+-guiutils.moc:	guiutils.h
+-	$(MOC) $(srcdir)/guiutils.h -o guiutils.moc
+-
 -$(srcdir)/qhaccwidget.cpp:	qhaccwidget.moc
 -$(srcdir)/qhaccview.cpp:	qhaccview.moc
 -$(srcdir)/qhaccacctchsr.cpp:	qhaccacctchsr.moc
@@ -1422,6 +1427,7 @@
 -$(srcdir)/qhaccjrnlchsr.cpp: qhaccjrnlchsr.moc
 -$(srcdir)/splitdialog.cpp: splitdialog.moc
 -$(srcdir)/khaccsounder.cpp: khaccsounder.moc
+-$(srcdir)/guiutils.cpp: guiutils.moc
 -
 -qhaccwidget.$(OBJEXT):	$(srcdir)/qhaccwidget.cpp qhaccwidget.h
 -	$(CXXCOMPILE) -c $<
@@ -1467,30 +1473,37 @@
  
 -khaccsounder.$(OBJEXT): $(srcdir)/khaccsounder.cpp khaccsounder.h
 -	$(CXXCOMPILE) -c $<
++#>+ 3
++guiutils.moc: $(srcdir)/guiutils.h
++	$(MOC) $(srcdir)/guiutils.h -o guiutils.moc
+ 
+-guiutils.$(OBJEXT):	$(srcdir)/guiutils.cpp guiutils.h
+-	$(CXXCOMPILE) -c $<
 -# Tell versions [3.59,3.63) of GNU make to not export all variables.
 -# Otherwise a system limit (for SysV at least) may be exceeded.
 -.NOEXPORT:
 +#>+ 3
 +clean-metasources:
-+	-rm -f  qhaccjrnlchsr.moc qhaccdialogs.moc qhaccwidget.moc khaccsounder.moc qhaccscrollview.moc qhaccrecwin.moc qhaccview.moc qhaccsubsetwin.moc qhaccgrwin.moc qhaccacctchsr.moc splitdialog.moc qhacclineedits.moc transeditor.moc
++	-rm -f  qhaccjrnlchsr.moc qhaccdialogs.moc qhaccwidget.moc khaccsounder.moc qhaccscrollview.moc qhaccrecwin.moc qhaccview.moc qhaccsubsetwin.moc qhaccgrwin.moc qhaccacctchsr.moc splitdialog.moc qhacclineedits.moc transeditor.moc guiutils.moc
  
  #>+ 2
  docs-am:
-@@ -2032,7 +949,7 @@
+@@ -2098,7 +954,7 @@
  
  
  #>+ 11
--khacc_gui.all_cpp.cpp: $(srcdir)/Makefile.in  $(srcdir)/transeditor.cpp $(srcdir)/qhaccwidget.cpp $(srcdir)/qhaccview.cpp $(srcdir)/qhaccsubsetwin.cpp $(srcdir)/qhaccscrollview.cpp $(srcdir)/qhaccreportwriter.cpp $(srcdir)/qhaccrecwin.cpp $(srcdir)/qhacclineedits.cpp $(srcdir)/qhaccjrnlchsr.cpp $(srcdir)/qhaccgrwin.cpp $(srcdir)/qhaccgraphpainters.cpp $(srcdir)/qhaccdialogs.cpp $(srcdir)/qhaccacctchsr.cpp $(srcdir)/main.cpp $(srcdir)/splitdialog.cpp $(srcdir)/khaccsounder.cpp $(srcdir)/copystore.cpp $(srcdir)/guiconstants.cpp 
-+khacc_gui.all_cpp.cpp: $(srcdir)/Makefile.in  $(srcdir)/transeditor.cpp $(srcdir)/qhaccwidget.cpp $(srcdir)/qhaccview.cpp $(srcdir)/qhaccsubsetwin.cpp $(srcdir)/qhaccscrollview.cpp $(srcdir)/qhaccreportwriter.cpp $(srcdir)/qhaccrecwin.cpp $(srcdir)/qhacclineedits.cpp $(srcdir)/qhaccjrnlchsr.cpp $(srcdir)/qhaccgrwin.cpp $(srcdir)/qhaccgraphpainters.cpp $(srcdir)/qhaccdialogs.cpp $(srcdir)/qhaccacctchsr.cpp $(srcdir)/main.cpp $(srcdir)/splitdialog.cpp $(srcdir)/khaccsounder.cpp $(srcdir)/copystore.cpp $(srcdir)/guiconstants.cpp  qhaccdialogs.moc qhaccjrnlchsr.moc qhaccwidget.moc khaccsounder.moc qhaccscrollview.moc qhaccrecwin.moc qhaccgrwin.moc qhaccsubsetwin.moc qhaccview.moc qhaccacctchsr.moc qhacclineedits.moc splitdialog.moc transeditor.moc
+-khacc_gui.all_cpp.cpp: $(srcdir)/Makefile.in  $(srcdir)/transeditor.cpp $(srcdir)/qhaccwidget.cpp $(srcdir)/qhaccview.cpp $(srcdir)/qhaccsubsetwin.cpp $(srcdir)/qhaccscrollview.cpp $(srcdir)/qhaccreportwriter.cpp $(srcdir)/qhaccrecwin.cpp $(srcdir)/qhacclineedits.cpp $(srcdir)/qhaccjrnlchsr.cpp $(srcdir)/qhaccgrwin.cpp $(srcdir)/qhaccgraphpainters.cpp $(srcdir)/qhaccdialogs.cpp $(srcdir)/qhaccacctchsr.cpp $(srcdir)/main.cpp $(srcdir)/splitdialog.cpp $(srcdir)/khaccsounder.cpp $(srcdir)/copystore.cpp $(srcdir)/guiconstants.cpp $(srcdir)/guiutils.cpp 
++khacc_gui.all_cpp.cpp: $(srcdir)/Makefile.in  $(srcdir)/transeditor.cpp $(srcdir)/qhaccwidget.cpp $(srcdir)/qhaccview.cpp $(srcdir)/qhaccsubsetwin.cpp $(srcdir)/qhaccscrollview.cpp $(srcdir)/qhaccreportwriter.cpp $(srcdir)/qhaccrecwin.cpp $(srcdir)/qhacclineedits.cpp $(srcdir)/qhaccjrnlchsr.cpp $(srcdir)/qhaccgrwin.cpp $(srcdir)/qhaccgraphpainters.cpp $(srcdir)/qhaccdialogs.cpp $(srcdir)/qhaccacctchsr.cpp $(srcdir)/main.cpp $(srcdir)/splitdialog.cpp $(srcdir)/khaccsounder.cpp $(srcdir)/copystore.cpp $(srcdir)/guiconstants.cpp $(srcdir)/guiutils.cpp  qhaccdialogs.moc qhaccjrnlchsr.moc qhaccwidget.moc khaccsounder.moc qhaccscrollview.moc qhaccrecwin.moc qhaccgrwin.moc qhaccsubsetwin.moc qhaccview.moc qhaccacctchsr.moc qhacclineedits.moc splitdialog.moc transeditor.moc guiutils.moc
  	@echo 'creating khacc_gui.all_cpp.cpp ...'; \
  	rm -f khacc_gui.all_cpp.files khacc_gui.all_cpp.final; \
  	echo "#define KDE_USE_FINAL 1" >> khacc_gui.all_cpp.final; \
-@@ -2066,3 +983,31 @@
+@@ -2132,3 +988,33 @@
  #>+ 3
  kde-rpo-clean:
  	-rm -f *.rpo
 +
-+#>+ 27
++#>+ 29
++guiutils.lo: guiutils.moc 
 +qhaccscrollview.lo: qhaccscrollview.moc 
 +splitdialog.lo: splitdialog.moc 
 +qhaccwidget.o: qhaccwidget.moc 
@@ -1509,6 +1522,7 @@
 +qhaccacctchsr.lo: qhaccacctchsr.moc 
 +qhaccjrnlchsr.lo: qhaccjrnlchsr.moc 
 +qhaccrecwin.lo: qhaccrecwin.moc 
++guiutils.o: guiutils.moc 
 +qhacclineedits.o: qhacclineedits.moc 
 +qhaccgrwin.o: qhaccgrwin.moc 
 +khaccsounder.o: khaccsounder.moc 
