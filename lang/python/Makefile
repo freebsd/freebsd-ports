@@ -142,4 +142,6 @@ post-install:
 		(cd ${DEMODIR}; tar xf -)
 .endif
 
+	@${CAT} ${PKGMESSAGE}
+
 .include <bsd.port.post.mk>
