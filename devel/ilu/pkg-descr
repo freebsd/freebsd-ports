@@ -9,16 +9,17 @@ used to define and document interfaces between the modules of
 non-distributed programs.  ILU interfaces can be specified in either
 the OMG's IDL language, or in ILU's Interface Specification Language,
 which allows extensions to the CORBA spec.  Programming languages
-supported in 2.0alpha11 are ANSI C, Common Lisp, Java, and Python;
-rough C++ support is also present.  Operating systems supported in
-2.0alpha11 are all Windows platforms with Win32 and WinSock, and all
-UNIX platforms with BSD sockets and minimal POSIX compliance.
-2.0alpha11 supports interoperability with ONC RPC services, OMG CORBA
-services, World Wide Web HTTP services, and XNS Courier services.
-``Plug-in'' extensibility is provided for RPC message formats, message
-transport schemes, URL schemes, accounting and authorization identity
-types, threading and event loop processing, and various other things.
-ILU is provided free for unrestricted use. 
+supported in 2.0alpha12 are ANSI C, Common Lisp, Java, and Python;
+rough Guile Scheme and C++ support is also present.  Additional ILU
+support for Perl is freely available from outside sources.  Operating
+systems supported in 2.0alpha12 are all Windows platforms with Win32
+and WinSock, and all UNIX platforms with BSD sockets and minimal POSIX
+compliance.  2.0alpha12 supports interoperability with ONC RPC
+services, OMG CORBA services, World Wide Web HTTP services, and XNS
+Courier services.  ``Plug-in'' extensibility is provided for RPC
+message formats, message transport schemes, URL schemes, accounting
+and authorization identity types, threading and event loop processing,
+and various other things.  ILU is provided free for unrestricted use.
 
 FreeBSD port notes:
 - I enabled http protocol support by default.
@@ -27,3 +28,5 @@ FreeBSD port notes:
   I make symbolic links to ${PREFIX}/{bin,man}.
 - The FreeBSD port builds shareds libs for C libraries.
 - jdk-1.1 for FreeBSD works, 1.0.2 is not supported.
+- guile support is diabled. You need guile-1.2 with slib, then
+  remove -"-disable-guile-support" from Makefile to built with guile

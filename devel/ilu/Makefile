@@ -1,17 +1,19 @@
 # New ports collection makefile for: ilu
-# Version required:     2.0alpha11
+# Version required:     2.0alpha12
 # Date created:         29.9.1997
 # Whom:                 cracauer@cons.org "Martin Cracauer"
 #
-# $Id: Makefile,v 1.5 1997/10/07 15:06:37 cracauer Exp $
+# $Id: Makefile,v 1.6 1997/10/09 21:19:41 cracauer Exp $
 #
 
-DISTNAME=       ilu-2.0alpha11
-PKGNAME=	ilu-2.0a11
+DISTNAME=       ilu-2.0alpha12
+PKGNAME=	ilu-2.0a12
 CATEGORIES=     devel
-MASTER_SITES=   ftp://parcftp.xerox.com/pub/ilu/2.0a11/
+MASTER_SITES=   ftp://parcftp.xerox.com/pub/ilu/2.0a12/
 
 MAINTAINER=	cracauer@cons.org
+
+NO_PACKAGE=	Doesn't work with optimization enabled
 
 NO_WRKSUBDIR=   yes
 HAS_CONFIGURE=	yes
@@ -29,15 +31,20 @@ startup_dir=    ${PREFIX}/etc/rc.d
 startup_script= ${startup_dir}/50.ilu.sh
 
 post-install:
-	# Empty dirs
-.if exists(${PREFIX}/ilu/examples/javatest1/javastubs)
-	${RMDIR} ${PREFIX}/ilu/examples/javatest1/javastubs
-.endif
+	# Empty dir, but we really need it
+	${ECHO} @exec ${MKDIR} %D/ilu/lib/binding > ${PLIST}
+	${ECHO} @unexec ${RM} -r %D/ilu/lib/binding >> ${PLIST}
+	${ECHO} @exec chmod 777 %D/ilu/lib/binding >> ${PLIST}
+	${ECHO} @exec ${LDCONFIG} -m %D/ilu/lib >> ${PLIST}
+	# Empty dirs we don't need
 	${RMDIR} ${PREFIX}/ilu/man/man[358]
 	${RMDIR} ${PREFIX}/ilu/lisp
-	(cd ${PREFIX} ; find ilu -type f) > ${PLIST}
+	# this one doesn't always exist, hence the || true
+	# .if exists(${PREFIX} ... doesn't work for me
+	${RMDIR} ${PREFIX}/ilu/examples/javatest1/javastubs || true
+	(cd ${PREFIX} ; find ilu -type f) >> ${PLIST}
 	(cd ${PREFIX} ; find ilu -type d) | ${AWK} '{print "@dirrm " $$1}' \
-		| tail -r >> ${PLIST}
+		| tail -r | ${GREP} -v lib/binding >> ${PLIST}
 	(cd ${PREFIX}/ilu/bin ; for file in * ; do \
 		ln -fs ${PREFIX}/ilu/bin/$$file ${PREFIX}/bin/. ; \
 		${ECHO} @exec ln -fs %D/ilu/bin/$$file %D/bin/. ; \
@@ -48,10 +55,6 @@ post-install:
 		${ECHO} @exec ln -fs %D/ilu/man/man1/$$file %D/man/man1/. ; \
 		${ECHO} @unexec ${RM} %D/man/man1/$$file ; \
 		done) >> ${PLIST}
-	# Empty dir, but we really need it
-	${ECHO} @exec ${MKDIR} %D/ilu/lib/binding >> ${PLIST}
-	${ECHO} @exec chmod 777 %D/ilu/lib/binding >> ${PLIST}
-	${ECHO} @exec ${LDCONFIG} -m %D/ilu/lib >> ${PLIST}
 	${ECHO} etc/rc.d/50.ilu.sh >> ${PLIST}
 	${ECHO} "Installing ${startup_script} file"
 	test -d ${startup_dir} || ${MKDIR} ${startup_dir}
