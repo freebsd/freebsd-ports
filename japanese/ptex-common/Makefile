@@ -3,7 +3,7 @@
 # Date created:		5 Nov 1995
 # Whom:			Hideaki Ohmon <ohmon@sfc.keio.ac.jp>
 #
-# $Id: Makefile,v 1.14 1996/11/13 12:41:09 asami Exp $
+# $Id: Makefile,v 1.15 1997/01/22 04:35:58 max Exp $
 #
 
 DISTNAME=	ptex3.1415.p2.1.4
@@ -103,9 +103,9 @@ pre-install:
 	(echo "(Don't worry about the following \"*** Error code 1\"s)" ; \
 	 exit 1)
 .endif
-	@(cd ${PREFIX}/lib ; tar zxf ${DISTDIR}/lib-6.9.tar.gz)
-	@${RM} -rf ${PREFIX}/lib/texmf/tex/latex2e/base/*
-	@(cd ${PREFIX}/lib ; tar zxf ${DISTDIR}/${LIB_FILE})
+	@tar --exclude 'texmf/tex/latex2e/base/*' -zx -C ${PREFIX}/lib \
+	  -f ${DISTDIR}/lib-6.9.tar.gz
+	@tar -zx -C ${PREFIX}/lib -f ${DISTDIR}/${LIB_FILE}
 
 post-install:
 	@echo -n "Stripping the binary files...."
