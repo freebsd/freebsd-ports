@@ -1,3 +1,8 @@
 bin/scponly
+sbin/scponlyc
 etc/scponly/debuglevel
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/TODO
 @dirrm etc/scponly
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
