@@ -1,0 +1,79 @@
+bin/smokeping
+share/doc/smokeping/CHANGES
+share/doc/smokeping/CONTRIBUTORS
+share/doc/smokeping/COPYING
+share/doc/smokeping/COPYRIGHT
+share/doc/smokeping/README
+share/doc/smokeping/TODO
+share/doc/smokeping/EchoPing.pm.html
+share/doc/smokeping/EchoPing.pm.txt
+share/doc/smokeping/EchoPingChargen.pm.html
+share/doc/smokeping/EchoPingChargen.pm.txt
+share/doc/smokeping/EchoPingDiscard.pm.html
+share/doc/smokeping/EchoPingDiscard.pm.txt
+share/doc/smokeping/EchoPingHttp.pm.html
+share/doc/smokeping/EchoPingHttp.pm.txt
+share/doc/smokeping/EchoPingHttps.pm.html
+share/doc/smokeping/EchoPingHttps.pm.txt
+share/doc/smokeping/EchoPingIcp.pm.html
+share/doc/smokeping/EchoPingIcp.pm.txt
+share/doc/smokeping/EchoPingSmtp.pm.html
+share/doc/smokeping/EchoPingSmtp.pm.txt
+share/doc/smokeping/FPing.pm.html
+share/doc/smokeping/FPing.pm.txt
+share/doc/smokeping/ParseConfig.pm.html
+share/doc/smokeping/ParseConfig.pm.txt
+share/doc/smokeping/Smokeping.pm.html
+share/doc/smokeping/Smokeping.pm.txt
+share/doc/smokeping/base.pm.html
+share/doc/smokeping/base.pm.txt
+share/doc/smokeping/basefork.pm.html
+share/doc/smokeping/basefork.pm.txt
+share/doc/smokeping/basevars.pm.html
+share/doc/smokeping/basevars.pm.txt
+share/doc/smokeping/smokeping.cgi.html
+share/doc/smokeping/smokeping.cgi.txt
+share/doc/smokeping/smokeping.html
+share/doc/smokeping/smokeping.txt
+share/doc/smokeping/smokeping_config.html
+share/doc/smokeping/smokeping_config.txt
+share/doc/smokeping/smokeping_install.html
+share/doc/smokeping/smokeping_install.txt
+@unexec if cmp -s %D/smokeping/etc/basepage.html %D/smokeping/etc/basepage.html.dist; then rm -f %D/smokeping/etc/basepage.html; fi
+smokeping/etc/basepage.html.dist
+@exec [ -f %B/basepage.html ] || cp %B/%f %B/basepage.html
+@unexec if cmp -s %D/smokeping/etc/config %D/smokeping/etc/config.dist; then rm -f %D/smokeping/etc/config; fi
+smokeping/etc/config.dist
+@exec [ -f %B/config ] || cp %B/%f %B/config
+@unexec if cmp -s %D/smokeping/etc/smokemail %D/smokeping/etc/smokemail.dist; then rm -f %D/smokeping/etc/smokemail; fi
+smokeping/etc/smokemail.dist
+@exec [ -f %B/smokemail ] || cp %B/%f %B/smokemail
+@unexec if cmp -s %D/smokeping/etc/config-echoping %D/smokeping/etc/config-echoping.dist; then rm -f %D/smokeping/etc/config-echoping; fi
+smokeping/etc/config-echoping.dist
+@exec [ -f %B/config-echoping ] || cp %B/%f %B/config-echoping
+smokeping/htdocs/smokeping.cgi
+smokeping/lib/Smokeping.pm
+smokeping/lib/probes/FPing.pm
+smokeping/lib/probes/base.pm
+smokeping/lib/probes/EchoPing.pm
+smokeping/lib/probes/EchoPingChargen.pm
+smokeping/lib/probes/EchoPingDiscard.pm
+smokeping/lib/probes/EchoPingHttp.pm
+smokeping/lib/probes/EchoPingHttps.pm
+smokeping/lib/probes/EchoPingIcp.pm
+smokeping/lib/probes/EchoPingSmtp.pm
+smokeping/lib/probes/basefork.pm
+smokeping/lib/probes/basevars.pm
+smokeping/lib/ISG/ParseConfig.pm
+etc/rc.d/smokeping.sh
+@exec mkdir -p %D/smokeping/htdocs/img; chown www:www %D/smokeping/htdocs/img
+@unexec rm -rf %D/smokeping/htdocs/img
+@exec mkdir -p %D/smokeping/var
+@unexec rmdir %D/smokeping/var || true
+@unexec rmdir %D/smokeping/etc || true
+@dirrm smokeping/htdocs
+@dirrm smokeping/lib/probes
+@dirrm smokeping/lib/ISG
+@dirrm smokeping/lib
+@dirrm share/doc/smokeping
+@unexec rmdir %D/smokeping || true
