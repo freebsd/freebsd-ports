@@ -399,6 +399,7 @@
     SUBDIR += tpop3d
     SUBDIR += turba
     SUBDIR += uebimiau
+    SUBDIR += up-imapproxy
     SUBDIR += usendmail
     SUBDIR += vbsfilter
     SUBDIR += vm
