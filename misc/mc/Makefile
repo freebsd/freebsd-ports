@@ -15,15 +15,16 @@ MASTER_SITE_SUBDIR=	utils/file/managers/mc/
 MAINTAINER=	fjoe@FreeBSD.org
 COMMENT=	Midnight Commander, a free Norton Commander Clone
 
-LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=	glib-2.0.200:${PORTSDIR}/devel/glib20 \
+		intl.4:${PORTSDIR}/devel/gettext
+BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
 
 USE_GMAKE=	yes
-USE_GNOMENG=	yes
-USE_GNOME=	glib12
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-samba --with-configdir=${LOCALBASE}/etc \
 		--with-codepagedir=${LOCALBASE}/etc/codepages
+CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 
 .if !defined(WITHOUT_ICONV)
 CONFIGURE_ARGS+=--enable-charset
