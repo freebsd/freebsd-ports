@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	pcre-ocaml
 PKGNAMEPREFIX=	ocaml-
 DISTNAME=	pcre-ocaml-${PORTVERSION}
 
-MAINTAINER=	henrik.motakef@web.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl compatible regular expressions for Objective Caml
 
 BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml \
