@@ -1,21 +1,118 @@
-etc/rc.d/020.orion.sh
 bin/orionctl
-%%T%%/config/database-schemas/hypersonic.xml
-%%T%%/config/database-schemas/ms-access.xml
-%%T%%/config/database-schemas/ms-sql.xml
-%%T%%/config/database-schemas/oracle.xml
-%%T%%/config/database-schemas/postgresql.xml
-%%T%%/config/database-schemas/sapdb.xml
-%%T%%/config/database-schemas/sybase.xml
-%%T%%/config/data-sources.xml
-%%T%%/config/default-web-site.xml
-%%T%%/config/global-web-application.xml
-%%T%%/config/jms.xml
-%%T%%/config/mime.types
-%%T%%/config/principals.xml
-%%T%%/config/rmi.xml
-%%T%%/config/application.xml
-%%T%%/config/server.xml
+etc/rc.d/020.orion.sh
+man/man1/orionctl.1
+%%T%%/applications/news.ear
+%%T%%/applications/atm.ear
+%%T%%/applications/estore-bugs.txt
+%%T%%/applications/estore-install.txt
+%%T%%/applications/estore-orionadapter.jar
+%%T%%/applications/estore-patched.ear
+%%T%%/applications/news-install.txt
+%%T%%/applications/atm-install.txt
+%%T%%/demo/ejb/cart/META-INF/application-client.xml
+%%T%%/demo/ejb/cart/META-INF/ejb-jar.xml
+%%T%%/demo/ejb/cart/META-INF/MANIFEST.MF
+%%T%%/demo/ejb/cart/Cart.class
+%%T%%/demo/ejb/cart/Cart.java
+%%T%%/demo/ejb/cart/CartClient.class
+%%T%%/demo/ejb/cart/CartClient.java
+%%T%%/demo/ejb/cart/CartEJB.class
+%%T%%/demo/ejb/cart/CartEJB.java
+%%T%%/demo/ejb/cart/CartHome.class
+%%T%%/demo/ejb/cart/CartHome.java
+%%T%%/demo/ejb/cart/jndi.properties
+%%T%%/demo/ejb/cart/NotInCartException.class
+%%T%%/demo/ejb/cart/NotInCartException.java
+%%T%%/demo/ejb/cart/orion-cart.jar
+%%T%%/demo/ejb/META-INF/application.xml
+%%T%%/demo/ejb/product/META-INF/application-client.xml
+%%T%%/demo/ejb/product/META-INF/ejb-jar.xml
+%%T%%/demo/ejb/product/META-INF/MANIFEST.MF
+%%T%%/demo/ejb/product/jndi.properties
+%%T%%/demo/ejb/product/orion-product.jar
+%%T%%/demo/ejb/product/Product.class
+%%T%%/demo/ejb/product/Product.java
+%%T%%/demo/ejb/product/product.skeleton
+%%T%%/demo/ejb/product/ProductClient.class
+%%T%%/demo/ejb/product/ProductClient.java
+%%T%%/demo/ejb/product/ProductEJB.class
+%%T%%/demo/ejb/product/ProductEJB.java
+%%T%%/demo/ejb/product/ProductHome.class
+%%T%%/demo/ejb/product/ProductHome.java
+%%T%%/demo/ejb/product/ProductServlet.class
+%%T%%/demo/ejb/product/ProductServlet.java
+%%T%%/demo/ejb/usermanager/META-INF/ejb-jar.xml
+%%T%%/demo/ejb/install.txt
+%%T%%/demo/jms/coffeemaker/META-INF/application-client.xml
+%%T%%/demo/jms/coffeemaker/META-INF/MANIFEST.MF
+%%T%%/demo/jms/coffeemaker/META-INF/orion-application-client.xml
+%%T%%/demo/jms/coffeemaker/CoffeeMachine.class
+%%T%%/demo/jms/coffeemaker/CoffeeMachine.java
+%%T%%/demo/jms/coffeemaker/CoffeeMaker.class
+%%T%%/demo/jms/coffeemaker/CoffeeMaker.java
+%%T%%/demo/jms/coffeemaker/jndi.properties
+%%T%%/demo/jms/jmschat/META-INF/application-client.xml
+%%T%%/demo/jms/jmschat/META-INF/MANIFEST.MF
+%%T%%/demo/jms/jmschat/META-INF/orion-application-client.xml
+%%T%%/demo/jms/jmschat/JMSChat$1.class
+%%T%%/demo/jms/jmschat/JMSChat.class
+%%T%%/demo/jms/jmschat/JMSChat.java
+%%T%%/demo/jms/jmschat/jndi.properties
+%%T%%/demo/jms/coffeemaker.jar
+%%T%%/demo/jms/jmschat.jar
+%%T%%/demo/jms/jmsdemo-readme.txt
+%%T%%/demo/news-app/news-client-source/com/evermind/ejb/NewsClient.class
+%%T%%/demo/news-app/news-client-source/com/evermind/ejb/NewsClient.java
+%%T%%/demo/news-app/news-client-source/com/evermind/ejb/NewsItemClient.class
+%%T%%/demo/news-app/news-client-source/META-INF/application-client.xml
+%%T%%/demo/news-app/news-client-source/META-INF/MANIFEST.MF
+%%T%%/demo/news-app/news-ejb-source/com/evermind/ejb/NewsView.java
+%%T%%/demo/news-app/news-ejb-source/com/evermind/ejb/NewsItem.java
+%%T%%/demo/news-app/news-ejb-source/com/evermind/ejb/NewsItemClient.class
+%%T%%/demo/news-app/news-ejb-source/com/evermind/ejb/NewsItemEJB.class
+%%T%%/demo/news-app/news-ejb-source/com/evermind/ejb/NewsItemEJB.java
+%%T%%/demo/news-app/news-ejb-source/com/evermind/ejb/NewsItemHome.class
+%%T%%/demo/news-app/news-ejb-source/com/evermind/ejb/NewsItemHome.java
+%%T%%/demo/news-app/news-ejb-source/com/evermind/ejb/NewsItemServlet.class
+%%T%%/demo/news-app/news-ejb-source/com/evermind/ejb/NewsItemServlet.java
+%%T%%/demo/news-app/news-ejb-source/com/evermind/ejb/NewsSession.class
+%%T%%/demo/news-app/news-ejb-source/com/evermind/ejb/NewsSession.java
+%%T%%/demo/news-app/news-ejb-source/com/evermind/ejb/NewsSessionEJB.class
+%%T%%/demo/news-app/news-ejb-source/com/evermind/ejb/NewsSessionEJB.java
+%%T%%/demo/news-app/news-ejb-source/com/evermind/ejb/NewsSessionHome.class
+%%T%%/demo/news-app/news-ejb-source/com/evermind/ejb/NewsSessionHome.java
+%%T%%/demo/news-app/news-ejb-source/com/evermind/ejb/NewsView.class
+%%T%%/demo/news-app/news-ejb-source/com/evermind/ejb/NewsItem.class
+%%T%%/demo/news-app/news-ejb-source/META-INF/ejb-jar.xml
+%%T%%/demo/news-app/news-web/WEB-INF/lib/ejbtags.jar
+%%T%%/demo/news-app/news-web/WEB-INF/lib/utiltags.jar
+%%T%%/demo/news-app/news-web/WEB-INF/web.xml
+%%T%%/demo/news-app/news-web/admin/editnews.jsp
+%%T%%/demo/news-app/news-web/admin/editnews_done.jsp
+%%T%%/demo/news-app/news-web/addnews_done.jsp
+%%T%%/demo/news-app/news-web/border.html
+%%T%%/demo/news-app/news-web/checks.jsp
+%%T%%/demo/news-app/news-web/index.html
+%%T%%/demo/news-app/news-web/initviews.jsp
+%%T%%/demo/news-app/news-web/login-error.html
+%%T%%/demo/news-app/news-web/login.html
+%%T%%/demo/news-app/news-web/loginbox.jsp
+%%T%%/demo/news-app/news-web/logout.jsp
+%%T%%/demo/news-app/news-web/news-body.jsp
+%%T%%/demo/news-app/news-web/news.jsp
+%%T%%/demo/news-app/news-web/newsdetail.jsp
+%%T%%/demo/news-app/news-web/newssearch.jsp
+%%T%%/demo/news-app/news-web/usertest.jsp
+%%T%%/demo/news-app/news-web/addnews.jsp
+%%T%%/demo/news-app/META-INF/application.xml
+%%T%%/demo/news-app/news-web.war
+%%T%%/demo/news-app/counter.jar
+%%T%%/demo/news-app/news-client.jar
+%%T%%/demo/news-app/news-ejb.jar
+%%T%%/demo/rmi/RMIApp.class
+%%T%%/demo/rmi/RMIApp.java
+%%T%%/demo/ssl/ssl-sample.ear
+%%T%%/demo/messagelogger.ear
 %%T%%/default-web-app/examples/cal/TableBean.txt
 %%T%%/default-web-app/examples/cal/cal1.txt
 %%T%%/default-web-app/examples/cal/cal2.jsp
@@ -29,11 +126,11 @@ bin/orionctl
 %%T%%/default-web-app/examples/images/code.gif
 %%T%%/default-web-app/examples/images/execute.gif
 %%T%%/default-web-app/examples/images/return.gif
-%%T%%/default-web-app/examples/jsp/include/foo.html
-%%T%%/default-web-app/examples/jsp/include/foo.jsp
-%%T%%/default-web-app/examples/jsp/include/inc.html
-%%T%%/default-web-app/examples/jsp/include/include.jsp
-%%T%%/default-web-app/examples/jsp/include/include.txt
+%%T%%/default-web-app/examples/jsp/jsptoserv/hello.jsp
+%%T%%/default-web-app/examples/jsp/jsptoserv/jsptoservlet.jsp
+%%T%%/default-web-app/examples/jsp/jsptoserv/jts.html
+%%T%%/default-web-app/examples/jsp/jsptoserv/jts.txt
+%%T%%/default-web-app/examples/jsp/jsptoserv/stj.txt
 %%T%%/default-web-app/examples/jsp/checkbox/check.html
 %%T%%/default-web-app/examples/jsp/checkbox/checkresult.jsp
 %%T%%/default-web-app/examples/jsp/checkbox/checkresult.txt
@@ -57,9 +154,11 @@ bin/orionctl
 %%T%%/default-web-app/examples/jsp/forward/fwd.html
 %%T%%/default-web-app/examples/jsp/forward/one.jsp
 %%T%%/default-web-app/examples/jsp/forward/two.html
-%%T%%/default-web-app/examples/jsp/snp/snoop.html
-%%T%%/default-web-app/examples/jsp/snp/snoop.jsp
-%%T%%/default-web-app/examples/jsp/snp/snoop.txt
+%%T%%/default-web-app/examples/jsp/include/foo.html
+%%T%%/default-web-app/examples/jsp/include/foo.jsp
+%%T%%/default-web-app/examples/jsp/include/inc.html
+%%T%%/default-web-app/examples/jsp/include/include.jsp
+%%T%%/default-web-app/examples/jsp/include/include.txt
 %%T%%/default-web-app/examples/jsp/cal/TableBean.txt
 %%T%%/default-web-app/examples/jsp/cal/cal1.txt
 %%T%%/default-web-app/examples/jsp/cal/cal2.jsp
@@ -70,11 +169,6 @@ bin/orionctl
 %%T%%/default-web-app/examples/jsp/cal/JspCalendar.txt
 %%T%%/default-web-app/examples/jsp/cal/login.html
 %%T%%/default-web-app/examples/jsp/cal/cal1.jsp
-%%T%%/default-web-app/examples/jsp/jsptoserv/hello.jsp
-%%T%%/default-web-app/examples/jsp/jsptoserv/jsptoservlet.jsp
-%%T%%/default-web-app/examples/jsp/jsptoserv/jts.html
-%%T%%/default-web-app/examples/jsp/jsptoserv/jts.txt
-%%T%%/default-web-app/examples/jsp/jsptoserv/stj.txt
 %%T%%/default-web-app/examples/jsp/num/numguess.html
 %%T%%/default-web-app/examples/jsp/num/numguess.jsp
 %%T%%/default-web-app/examples/jsp/num/numguess.txt
@@ -88,6 +182,9 @@ bin/orionctl
 %%T%%/default-web-app/examples/jsp/sessions/carts.txt
 %%T%%/default-web-app/examples/jsp/sessions/crt.html
 %%T%%/default-web-app/examples/jsp/sessions/DummyCart.html
+%%T%%/default-web-app/examples/jsp/snp/snoop.html
+%%T%%/default-web-app/examples/jsp/snp/snoop.jsp
+%%T%%/default-web-app/examples/jsp/snp/snoop.txt
 %%T%%/default-web-app/examples/jsp/taglib/loop/META-INF/taglib.tld
 %%T%%/default-web-app/examples/jsp/taglib/loop/taglib/LoopTag.class
 %%T%%/default-web-app/examples/jsp/taglib/loop/taglib/LoopTag.java
@@ -108,16 +205,18 @@ bin/orionctl
 %%T%%/default-web-app/examples/xsl/doc.jsp
 %%T%%/default-web-app/examples/xsl/doc.xml
 %%T%%/default-web-app/examples/xsl/doc.xsl
-%%T%%/default-web-app/WEB-INF/classes/colors/ColorGameBean.class
-%%T%%/default-web-app/WEB-INF/classes/colors/ColorGameBean.java
 %%T%%/default-web-app/WEB-INF/classes/num/NumberGuessBean.class
 %%T%%/default-web-app/WEB-INF/classes/num/NumberGuessBean.java
-%%T%%/default-web-app/WEB-INF/classes/error/Smart.class
-%%T%%/default-web-app/WEB-INF/classes/error/Smart.java
-%%T%%/default-web-app/WEB-INF/classes/sessions/DummyCart.class
-%%T%%/default-web-app/WEB-INF/classes/sessions/DummyCart.java
 %%T%%/default-web-app/WEB-INF/classes/dates/JspCalendar.class
 %%T%%/default-web-app/WEB-INF/classes/dates/JspCalendar.java
+%%T%%/default-web-app/WEB-INF/classes/error/Smart.class
+%%T%%/default-web-app/WEB-INF/classes/error/Smart.java
+%%T%%/default-web-app/WEB-INF/classes/colors/ColorGameBean.class
+%%T%%/default-web-app/WEB-INF/classes/colors/ColorGameBean.java
+%%T%%/default-web-app/WEB-INF/classes/sessions/DummyCart.class
+%%T%%/default-web-app/WEB-INF/classes/sessions/DummyCart.java
+%%T%%/default-web-app/WEB-INF/classes/checkbox/CheckTest.class
+%%T%%/default-web-app/WEB-INF/classes/checkbox/CheckTest.java
 %%T%%/default-web-app/WEB-INF/classes/cal/TableBean.java
 %%T%%/default-web-app/WEB-INF/classes/cal/Entries.java
 %%T%%/default-web-app/WEB-INF/classes/cal/Entry.class
@@ -126,8 +225,7 @@ bin/orionctl
 %%T%%/default-web-app/WEB-INF/classes/cal/JspCalendar.java
 %%T%%/default-web-app/WEB-INF/classes/cal/TableBean.class
 %%T%%/default-web-app/WEB-INF/classes/cal/Entries.class
-%%T%%/default-web-app/WEB-INF/classes/checkbox/CheckTest.class
-%%T%%/default-web-app/WEB-INF/classes/checkbox/CheckTest.java
+%%T%%/default-web-app/WEB-INF/classes/Counter.class
 %%T%%/default-web-app/WEB-INF/classes/Counter.java
 %%T%%/default-web-app/WEB-INF/classes/DateServlet.class
 %%T%%/default-web-app/WEB-INF/classes/DateServlet.java
@@ -164,132 +262,43 @@ bin/orionctl
 %%T%%/default-web-app/WEB-INF/classes/ToJSPServlet.java
 %%T%%/default-web-app/WEB-INF/classes/UpperCaseFilter.class
 %%T%%/default-web-app/WEB-INF/classes/UpperCaseFilter.java
-%%T%%/default-web-app/WEB-INF/classes/BBoardServlet.class
 %%T%%/default-web-app/WEB-INF/classes/URLInfo.class
+%%T%%/default-web-app/WEB-INF/classes/BBoardServlet.class
 %%T%%/default-web-app/WEB-INF/classes/BBoardServlet.java
 %%T%%/default-web-app/WEB-INF/classes/ConfigServlet.class
 %%T%%/default-web-app/WEB-INF/classes/ConfigServlet.java
 %%T%%/default-web-app/WEB-INF/classes/CookieExample.class
 %%T%%/default-web-app/WEB-INF/classes/CookieExample.java
-%%T%%/default-web-app/WEB-INF/classes/Counter.class
 %%T%%/default-web-app/WEB-INF/web.xml
 %%T%%/default-web-app/index.html
-%%T%%/applications/news.ear
-%%T%%/applications/atm.ear
-%%T%%/applications/estore-bugs.txt
-%%T%%/applications/estore-install.txt
-%%T%%/applications/estore-orionadapter.jar
-%%T%%/applications/estore-patched.ear
-%%T%%/applications/news-install.txt
-%%T%%/applications/atm-install.txt
-%%T%%/demo/ejb/cart/META-INF/application-client.xml
-%%T%%/demo/ejb/cart/META-INF/ejb-jar.xml
-%%T%%/demo/ejb/cart/META-INF/MANIFEST.MF
-%%T%%/demo/ejb/cart/Cart.java
-%%T%%/demo/ejb/cart/CartClient.class
-%%T%%/demo/ejb/cart/CartClient.java
-%%T%%/demo/ejb/cart/CartEJB.class
-%%T%%/demo/ejb/cart/CartEJB.java
-%%T%%/demo/ejb/cart/CartHome.class
-%%T%%/demo/ejb/cart/CartHome.java
-%%T%%/demo/ejb/cart/jndi.properties
-%%T%%/demo/ejb/cart/NotInCartException.class
-%%T%%/demo/ejb/cart/NotInCartException.java
-%%T%%/demo/ejb/cart/Cart.class
-%%T%%/demo/ejb/cart/orion-cart.jar
-%%T%%/demo/ejb/META-INF/application.xml
-%%T%%/demo/ejb/product/META-INF/application-client.xml
-%%T%%/demo/ejb/product/META-INF/ejb-jar.xml
-%%T%%/demo/ejb/product/META-INF/MANIFEST.MF
-%%T%%/demo/ejb/product/orion-product.jar
-%%T%%/demo/ejb/product/Product.class
-%%T%%/demo/ejb/product/Product.java
-%%T%%/demo/ejb/product/product.skeleton
-%%T%%/demo/ejb/product/ProductClient.class
-%%T%%/demo/ejb/product/ProductClient.java
-%%T%%/demo/ejb/product/ProductEJB.class
-%%T%%/demo/ejb/product/ProductEJB.java
-%%T%%/demo/ejb/product/ProductHome.class
-%%T%%/demo/ejb/product/ProductHome.java
-%%T%%/demo/ejb/product/ProductServlet.class
-%%T%%/demo/ejb/product/jndi.properties
-%%T%%/demo/ejb/product/ProductServlet.java
-%%T%%/demo/ejb/usermanager/META-INF/ejb-jar.xml
-%%T%%/demo/ejb/install.txt
-%%T%%/demo/jms/coffeemaker/META-INF/application-client.xml
-%%T%%/demo/jms/coffeemaker/META-INF/MANIFEST.MF
-%%T%%/demo/jms/coffeemaker/META-INF/orion-application-client.xml
-%%T%%/demo/jms/coffeemaker/CoffeeMachine.class
-%%T%%/demo/jms/coffeemaker/CoffeeMachine.java
-%%T%%/demo/jms/coffeemaker/CoffeeMaker.class
-%%T%%/demo/jms/coffeemaker/CoffeeMaker.java
-%%T%%/demo/jms/coffeemaker/jndi.properties
-%%T%%/demo/jms/jmschat/META-INF/application-client.xml
-%%T%%/demo/jms/jmschat/META-INF/MANIFEST.MF
-%%T%%/demo/jms/jmschat/META-INF/orion-application-client.xml
-%%T%%/demo/jms/jmschat/JMSChat$1.class
-%%T%%/demo/jms/jmschat/JMSChat.class
-%%T%%/demo/jms/jmschat/JMSChat.java
-%%T%%/demo/jms/jmschat/jndi.properties
-%%T%%/demo/jms/coffeemaker.jar
-%%T%%/demo/jms/jmschat.jar
-%%T%%/demo/jms/jmsdemo-readme.txt
-%%T%%/demo/news-app/news-ejb-source/com/evermind/ejb/NewsView.java
-%%T%%/demo/news-app/news-ejb-source/com/evermind/ejb/NewsItem.java
-%%T%%/demo/news-app/news-ejb-source/com/evermind/ejb/NewsItemClient.class
-%%T%%/demo/news-app/news-ejb-source/com/evermind/ejb/NewsItemEJB.class
-%%T%%/demo/news-app/news-ejb-source/com/evermind/ejb/NewsItemEJB.java
-%%T%%/demo/news-app/news-ejb-source/com/evermind/ejb/NewsItemHome.class
-%%T%%/demo/news-app/news-ejb-source/com/evermind/ejb/NewsItemHome.java
-%%T%%/demo/news-app/news-ejb-source/com/evermind/ejb/NewsItemServlet.class
-%%T%%/demo/news-app/news-ejb-source/com/evermind/ejb/NewsItemServlet.java
-%%T%%/demo/news-app/news-ejb-source/com/evermind/ejb/NewsSession.class
-%%T%%/demo/news-app/news-ejb-source/com/evermind/ejb/NewsSession.java
-%%T%%/demo/news-app/news-ejb-source/com/evermind/ejb/NewsSessionEJB.class
-%%T%%/demo/news-app/news-ejb-source/com/evermind/ejb/NewsSessionEJB.java
-%%T%%/demo/news-app/news-ejb-source/com/evermind/ejb/NewsSessionHome.class
-%%T%%/demo/news-app/news-ejb-source/com/evermind/ejb/NewsSessionHome.java
-%%T%%/demo/news-app/news-ejb-source/com/evermind/ejb/NewsView.class
-%%T%%/demo/news-app/news-ejb-source/com/evermind/ejb/NewsItem.class
-%%T%%/demo/news-app/news-ejb-source/META-INF/ejb-jar.xml
-%%T%%/demo/news-app/news-client-source/com/evermind/ejb/NewsClient.class
-%%T%%/demo/news-app/news-client-source/com/evermind/ejb/NewsClient.java
-%%T%%/demo/news-app/news-client-source/com/evermind/ejb/NewsItemClient.class
-%%T%%/demo/news-app/news-client-source/META-INF/application-client.xml
-%%T%%/demo/news-app/news-client-source/META-INF/MANIFEST.MF
-%%T%%/demo/news-app/news-web/admin/editnews.jsp
-%%T%%/demo/news-app/news-web/admin/editnews_done.jsp
-%%T%%/demo/news-app/news-web/WEB-INF/lib/ejbtags.jar
-%%T%%/demo/news-app/news-web/WEB-INF/lib/utiltags.jar
-%%T%%/demo/news-app/news-web/WEB-INF/web.xml
-%%T%%/demo/news-app/news-web/border.html
-%%T%%/demo/news-app/news-web/checks.jsp
-%%T%%/demo/news-app/news-web/index.html
-%%T%%/demo/news-app/news-web/initviews.jsp
-%%T%%/demo/news-app/news-web/login-error.html
-%%T%%/demo/news-app/news-web/addnews.jsp
-%%T%%/demo/news-app/news-web/loginbox.jsp
-%%T%%/demo/news-app/news-web/logout.jsp
-%%T%%/demo/news-app/news-web/news-body.jsp
-%%T%%/demo/news-app/news-web/news.jsp
-%%T%%/demo/news-app/news-web/newsdetail.jsp
-%%T%%/demo/news-app/news-web/newssearch.jsp
-%%T%%/demo/news-app/news-web/usertest.jsp
-%%T%%/demo/news-app/news-web/login.html
-%%T%%/demo/news-app/news-web/addnews_done.jsp
-%%T%%/demo/news-app/META-INF/application.xml
-%%T%%/demo/news-app/news-web.war
-%%T%%/demo/news-app/news-client.jar
-%%T%%/demo/news-app/news-ejb.jar
-%%T%%/demo/news-app/counter.jar
-%%T%%/demo/rmi/RMIApp.class
-%%T%%/demo/rmi/RMIApp.java
-%%T%%/demo/ssl/ssl-user-registration.jsp
-%%T%%/demo/messagelogger.ear
-%%T%%/persistence/transaction.state
-%%T%%/lib/hsql.jar
+%%T%%/docs/license/hsqldb_lic.txt
+%%T%%/docs/license/Copyright.txt
+%%T%%/docs/license/license.txt
+%%T%%/docs/Readme.txt
 %%T%%/log/stdout.log
 %%T%%/log/stderr.log
+%%T%%/persistence/transaction.state
+%%T%%/config/database-schemas/mimer.xml
+%%T%%/config/database-schemas/ms-access.xml
+%%T%%/config/database-schemas/ms-sql.xml
+%%T%%/config/database-schemas/oracle.xml
+%%T%%/config/database-schemas/postgresql.xml
+%%T%%/config/database-schemas/sapdb.xml
+%%T%%/config/database-schemas/sybase.xml
+%%T%%/config/database-schemas/cloudscape.xml
+%%T%%/config/database-schemas/mckoi.xml
+%%T%%/config/database-schemas/hypersonic.xml
+%%T%%/config/application.xml
+%%T%%/config/data-sources.xml
+%%T%%/config/default-web-site.xml
+%%T%%/config/global-web-application.xml
+%%T%%/config/jms.xml
+%%T%%/config/mime.types
+%%T%%/config/principals.xml
+%%T%%/config/rmi.xml
+%%T%%/config/server.xml
+%%T%%/lib/hsqldb.jar
+%%T%%/mail.jar
 %%T%%/loadbalancer.jar
 %%T%%/jta.jar
 %%T%%/jsse.jar
@@ -298,10 +307,13 @@ bin/orionctl
 %%T%%/jdbc.jar
 %%T%%/jcert.jar
 %%T%%/jaxp.jar
+%%T%%/jaas.jar
 %%T%%/ejbmaker.jar
 %%T%%/ejbassembler.jar
 %%T%%/ejb.jar
+%%T%%/crimson.jar
 %%T%%/earassembler.jar
+%%T%%/connector.jar
 %%T%%/clientassembler.jar
 %%T%%/changes.txt
 %%T%%/autoupdate.properties
@@ -310,59 +322,20 @@ bin/orionctl
 %%T%%/applicationlauncher.jar
 %%T%%/admin.jar
 %%T%%/activation.jar
-%%T%%/Readme.txt
 %%T%%/xerces.jar
-%%T%%/Copyright.txt
+%%T%%/Readme.txt
 %%T%%/xalan.jar
 %%T%%/webappassembler.jar
 %%T%%/taglibassembler.jar
 %%T%%/parser.jar
+%%T%%/orionembedded.jar
 %%T%%/orionconsole.jar
-%%T%%/orion.properties
+%%T%%/orionclient.jar
 %%T%%/orion.jar
+%%T%%/orion.properties
 %%T%%/tools.jar
-%%T%%/mail.jar
-%%T%%/crimson.jar
-%%T%%/jaas.jar
 @dirrm %%T%%/application-deployments
-@dirrm %%T%%/config/database-schemas
-@dirrm %%T%%/config
-@dirrm %%T%%/default-web-app/examples/cal
-@dirrm %%T%%/default-web-app/examples/images
-@dirrm %%T%%/default-web-app/examples/jsp/include
-@dirrm %%T%%/default-web-app/examples/jsp/checkbox
-@dirrm %%T%%/default-web-app/examples/jsp/colors
-@dirrm %%T%%/default-web-app/examples/jsp/dates
-@dirrm %%T%%/default-web-app/examples/jsp/error
-@dirrm %%T%%/default-web-app/examples/jsp/forward
-@dirrm %%T%%/default-web-app/examples/jsp/snp
-@dirrm %%T%%/default-web-app/examples/jsp/cal
-@dirrm %%T%%/default-web-app/examples/jsp/jsptoserv
-@dirrm %%T%%/default-web-app/examples/jsp/num
-@dirrm %%T%%/default-web-app/examples/jsp/plugin/applet
-@dirrm %%T%%/default-web-app/examples/jsp/plugin
-@dirrm %%T%%/default-web-app/examples/jsp/sessions
-@dirrm %%T%%/default-web-app/examples/jsp/taglib/loop/META-INF
-@dirrm %%T%%/default-web-app/examples/jsp/taglib/loop/taglib
-@dirrm %%T%%/default-web-app/examples/jsp/taglib/loop
-@dirrm %%T%%/default-web-app/examples/jsp/taglib
-@dirrm %%T%%/default-web-app/examples/jsp
-@dirrm %%T%%/default-web-app/examples/perl
-@dirrm %%T%%/default-web-app/examples/ssi
-@dirrm %%T%%/default-web-app/examples/xsl
-@dirrm %%T%%/default-web-app/examples
-@dirrm %%T%%/default-web-app/WEB-INF/classes/colors
-@dirrm %%T%%/default-web-app/WEB-INF/classes/num
-@dirrm %%T%%/default-web-app/WEB-INF/classes/error
-@dirrm %%T%%/default-web-app/WEB-INF/classes/sessions
-@dirrm %%T%%/default-web-app/WEB-INF/classes/dates
-@dirrm %%T%%/default-web-app/WEB-INF/classes/cal
-@dirrm %%T%%/default-web-app/WEB-INF/classes/checkbox
-@dirrm %%T%%/default-web-app/WEB-INF/classes
-@dirrm %%T%%/default-web-app/WEB-INF
-@dirrm %%T%%/default-web-app
 @dirrm %%T%%/applications
-@dirrm %%T%%/database
 @dirrm %%T%%/demo/ejb/cart/META-INF
 @dirrm %%T%%/demo/ejb/cart
 @dirrm %%T%%/demo/ejb/META-INF
@@ -376,28 +349,67 @@ bin/orionctl
 @dirrm %%T%%/demo/jms/jmschat/META-INF
 @dirrm %%T%%/demo/jms/jmschat
 @dirrm %%T%%/demo/jms
-@dirrm %%T%%/demo/news-app/news-ejb-source/com/evermind/ejb
-@dirrm %%T%%/demo/news-app/news-ejb-source/com/evermind
-@dirrm %%T%%/demo/news-app/news-ejb-source/com
-@dirrm %%T%%/demo/news-app/news-ejb-source/META-INF
-@dirrm %%T%%/demo/news-app/news-ejb-source
 @dirrm %%T%%/demo/news-app/news-client-source/com/evermind/ejb
 @dirrm %%T%%/demo/news-app/news-client-source/com/evermind
 @dirrm %%T%%/demo/news-app/news-client-source/com
 @dirrm %%T%%/demo/news-app/news-client-source/META-INF
 @dirrm %%T%%/demo/news-app/news-client-source
-@dirrm %%T%%/demo/news-app/news-web/admin
+@dirrm %%T%%/demo/news-app/news-ejb-source/com/evermind/ejb
+@dirrm %%T%%/demo/news-app/news-ejb-source/com/evermind
+@dirrm %%T%%/demo/news-app/news-ejb-source/com
+@dirrm %%T%%/demo/news-app/news-ejb-source/META-INF
+@dirrm %%T%%/demo/news-app/news-ejb-source
 @dirrm %%T%%/demo/news-app/news-web/WEB-INF/classes
 @dirrm %%T%%/demo/news-app/news-web/WEB-INF/lib
 @dirrm %%T%%/demo/news-app/news-web/WEB-INF
+@dirrm %%T%%/demo/news-app/news-web/admin
 @dirrm %%T%%/demo/news-app/news-web
 @dirrm %%T%%/demo/news-app/META-INF
 @dirrm %%T%%/demo/news-app
 @dirrm %%T%%/demo/rmi
 @dirrm %%T%%/demo/ssl
 @dirrm %%T%%/demo
-@dirrm %%T%%/lib
+@dirrm %%T%%/default-web-app/examples/cal
+@dirrm %%T%%/default-web-app/examples/images
+@dirrm %%T%%/default-web-app/examples/jsp/jsptoserv
+@dirrm %%T%%/default-web-app/examples/jsp/checkbox
+@dirrm %%T%%/default-web-app/examples/jsp/colors
+@dirrm %%T%%/default-web-app/examples/jsp/dates
+@dirrm %%T%%/default-web-app/examples/jsp/error
+@dirrm %%T%%/default-web-app/examples/jsp/forward
+@dirrm %%T%%/default-web-app/examples/jsp/include
+@dirrm %%T%%/default-web-app/examples/jsp/cal
+@dirrm %%T%%/default-web-app/examples/jsp/num
+@dirrm %%T%%/default-web-app/examples/jsp/plugin/applet
+@dirrm %%T%%/default-web-app/examples/jsp/plugin
+@dirrm %%T%%/default-web-app/examples/jsp/sessions
+@dirrm %%T%%/default-web-app/examples/jsp/snp
+@dirrm %%T%%/default-web-app/examples/jsp/taglib/loop/META-INF
+@dirrm %%T%%/default-web-app/examples/jsp/taglib/loop/taglib
+@dirrm %%T%%/default-web-app/examples/jsp/taglib/loop
+@dirrm %%T%%/default-web-app/examples/jsp/taglib
+@dirrm %%T%%/default-web-app/examples/jsp
+@dirrm %%T%%/default-web-app/examples/perl
+@dirrm %%T%%/default-web-app/examples/ssi
+@dirrm %%T%%/default-web-app/examples/xsl
+@dirrm %%T%%/default-web-app/examples
+@dirrm %%T%%/default-web-app/WEB-INF/classes/num
+@dirrm %%T%%/default-web-app/WEB-INF/classes/dates
+@dirrm %%T%%/default-web-app/WEB-INF/classes/error
+@dirrm %%T%%/default-web-app/WEB-INF/classes/colors
+@dirrm %%T%%/default-web-app/WEB-INF/classes/sessions
+@dirrm %%T%%/default-web-app/WEB-INF/classes/checkbox
+@dirrm %%T%%/default-web-app/WEB-INF/classes/cal
+@dirrm %%T%%/default-web-app/WEB-INF/classes
+@dirrm %%T%%/default-web-app/WEB-INF
+@dirrm %%T%%/default-web-app
+@dirrm %%T%%/database
+@dirrm %%T%%/docs/license
+@dirrm %%T%%/docs
 @dirrm %%T%%/log
 @dirrm %%T%%/persistence/ejb
 @dirrm %%T%%/persistence
+@dirrm %%T%%/config/database-schemas
+@dirrm %%T%%/config
+@dirrm %%T%%/lib
 @dirrm %%T%%
