@@ -10,7 +10,7 @@ PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://sheepkiller.nerim.net/ports/${PORTNAME}/
 
-MAINTAINER=	arundel@gmx.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Icculus Duke Nukem 3D port for various Operating Systems
 
 BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
