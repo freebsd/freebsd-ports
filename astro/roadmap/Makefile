@@ -24,12 +24,17 @@ INSTALL_WRKSRC=	${WRKSRC}/src
 
 USE_GNOMENG=	yes
 USE_GNOME=	gtk12
+USE_REINPLACE=	yes
 
 BINS=		buildmap buildus dumpmap
 GUI_BINS=	gtkroadmap gtkroadgps
 SCRIPTS=	rdmdownload rdmgetall rdmgenmaps rdmcompare
 DATA=		sprites preferences schema
 DOCS=		AUTHORS BUGS COPYING README TODO
+
+post-patch:
+	@${REINPLACE_CMD} -e 's,-Wall,-Wall -I${PREFIX}/include,g' ${BUILD_WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's,-lpopt,-lpopt -L${PREFIX}/lib,g' ${INSTALL_WRKSRC}/Makefile
 
 do-install:
 .for _GUI_BIN in ${GUI_BINS}
