@@ -1,0 +1,26 @@
+--- src/main/Makefile.in.orig	Sun Apr 23 22:37:43 2000
++++ src/main/Makefile.in	Sun Apr 23 22:45:12 2000
+@@ -109,7 +109,7 @@
+ ARCH_SUBDIRS = beos linux macos win32
+ 
+ # Build a separate library containing the main() entry point.
+-lib_LIBRARIES = libSDLmain.a
++lib_LIBRARIES = libSDLmain-1.1.a
+ 
+ MAINLIB_ARCH_SRCS = SDL_main.c
+ 
+@@ -257,10 +257,10 @@
+ 
+ maintainer-clean-libtool:
+ 
+-libSDLmain.a: $(libSDLmain_a_OBJECTS) $(libSDLmain_a_DEPENDENCIES)
+-	-rm -f libSDLmain.a
+-	$(AR) cru libSDLmain.a $(libSDLmain_a_OBJECTS) $(libSDLmain_a_LIBADD)
+-	$(RANLIB) libSDLmain.a
++libSDLmain-1.1.a: $(libSDLmain_a_OBJECTS) $(libSDLmain_a_DEPENDENCIES)
++	-rm -f libSDLmain-1.1.a
++	$(AR) cru libSDLmain-1.1.a $(libSDLmain_a_OBJECTS) $(libSDLmain_a_LIBADD)
++	$(RANLIB) libSDLmain-1.1.a
+ 
+ mostlyclean-noinstLTLIBRARIES:
+ 

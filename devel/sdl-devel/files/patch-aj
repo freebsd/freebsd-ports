@@ -1,0 +1,20 @@
+--- Makefile.in.orig	Fri Mar 31 08:31:12 2000
++++ Makefile.in	Mon Apr 24 00:29:07 2000
+@@ -113,7 +113,7 @@
+ DIST_SUBDIRS = $(SUBDIRS) docs
+ 
+ # SDL runtime configuration script
+-bin_SCRIPTS = sdl-config
++bin_SCRIPTS = sdl11-config
+ 
+ # All the rest of the distributed files
+ EXTRA_DIST =  	BUGS		        COPYING		        CREDITS		        INSTALL		        README		        README-SDL.txt	        README.Win32	        README.MacOS	        VisualC.html	        VisualC.zip		CWprojects.sea.hqx         MPWmake.sea.hqx	        WhatsNew	        docs.html	        sdl.m4		        autogen.sh	        strip_fPIC.sh
+@@ -121,7 +121,7 @@
+ 
+ # M4 macro file for inclusion with autoconf
+ m4datadir = $(datadir)/aclocal
+-m4data_DATA = sdl.m4
++m4data_DATA = sdl11.m4
+ 
+ # Create a CVS snapshot that people can run update -d on
+ CVSROOT = :pserver:guest@cvs.lokigames.com:/cvs

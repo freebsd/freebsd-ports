@@ -1,0 +1,11 @@
+--- include/Makefile.in.orig	Sun Apr 23 22:34:25 2000
++++ include/Makefile.in	Sun Apr 23 22:34:43 2000
+@@ -106,7 +106,7 @@
+ with_gcc = @with_gcc@
+ with_gnu_ld = @with_gnu_ld@
+ 
+-libSDLincludedir = $(includedir)/SDL
++libSDLincludedir = $(includedir)/SDL11
+ 
+ # Which header files to install
+ libSDLinclude_HEADERS =  	SDL.h				SDL_active.h			SDL_audio.h			SDL_byteorder.h			SDL_cdrom.h			SDL_copying.h			SDL_endian.h			SDL_error.h			SDL_events.h			SDL_joystick.h			SDL_keyboard.h			SDL_keysym.h			SDL_main.h			SDL_mouse.h			SDL_mutex.h			SDL_quit.h			SDL_rwops.h			SDL_syswm.h			SDL_thread.h			SDL_timer.h			SDL_types.h			SDL_version.h			SDL_video.h			begin_code.h			close_code.h
