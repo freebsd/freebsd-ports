@@ -1,0 +1,5 @@
+These scripts may be useful for dialup connections: You can "send" all your
+mails offline (they will be queued by msmtp-enqueue.sh) and really send them
+all later when you are online (by running msmtp-runqueue.sh).
+
+WWW: http://msmtp.sf.net/

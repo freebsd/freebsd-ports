@@ -200,6 +200,7 @@
     SUBDIR += msgconvert
     SUBDIR += msmtp
     SUBDIR += msmtp-devel
+    SUBDIR += msmtpqueue
     SUBDIR += mulberry
     SUBDIR += mutt
     SUBDIR += mutt-devel
