@@ -1,2 +1,3 @@
 bin/yahtzee
 lib/yahtzee/yahtzee.sco
+@dirrm lib/yahtzee

@@ -1,3 +1,4 @@
 bin/xpuyo
 lib/X11/app-defaults/Xpuyo
-shared/doc/xpuyo/README
+share/doc/xpuyo/README
+@dirrm share/doc/xpuyo

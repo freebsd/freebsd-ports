@@ -51,3 +51,4 @@ lib/xrisk/french.mapping
 lib/xrisk/german.mapping
 lib/xrisk/norwegian.mapping
 lib/xrisk/risk.data
+@dirrm lib/xrisk

@@ -51,3 +51,5 @@ share/sokoban/screens/screen.47
 share/sokoban/screens/screen.48
 share/sokoban/screens/screen.49
 share/sokoban/screens/screen.50
+@dirrm share/sokoban/screens
+@dirrm share/sokoban
