@@ -8,10 +8,11 @@
 PORTNAME=	spacearyarya
 PORTVERSION=	1.0.2
 CATEGORIES=	games
-MASTER_SITES=	http://www2.mwnet.or.jp/~fc3srx7/download/
+MASTER_SITES=	http://kxl.hn.org/download/
 DISTNAME=	SpaceAryarya-KXL-${PORTVERSION}
 
 MAINTAINER=	nakai@FreeBSD.org
+COMMENT=	Space Harrier, the ancient video game like game
 
 BUILD_DEPENDS=	${X11BASE}/include/KXL.h:${PORTSDIR}/games/kxl
 
