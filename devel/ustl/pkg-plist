@@ -13,13 +13,17 @@ include/ustl/ualgobase.h
 include/ustl/ubitset.h
 include/ustl/uctralgo.h
 include/ustl/uexception.h
+include/ustl/ufacets.h
 include/ustl/ufunction.h
 include/ustl/uios.h
 include/ustl/uiosfunc.h
 include/ustl/uiterator.h
+include/ustl/ulaalgo.h
 include/ustl/ulimits.h
 include/ustl/ulist.h
+include/ustl/ulocale.h
 include/ustl/umap.h
+include/ustl/umatrix.h
 include/ustl/umemory.h
 include/ustl/umultimap.h
 include/ustl/umultiset.h
@@ -27,16 +31,20 @@ include/ustl/unew.h
 include/ustl/unumeric.h
 include/ustl/upair.h
 include/ustl/upredalgo.h
+include/ustl/uqueue.h
 include/ustl/uset.h
 include/ustl/uspecial.h
 include/ustl/ustack.h
+include/ustl/ustdxept.h
 include/ustl/ustl.h
+include/ustl/ustl.tbff
 include/ustl/ustring.h
 include/ustl/utf8.h
 include/ustl/utuple.h
 include/ustl/utypes.h
 include/ustl/uutility.h
 include/ustl/uvector.h
+@dirrm include/ustl/locale
 @dirrm include/ustl
 include/ustl.h
 lib/libustl.a
