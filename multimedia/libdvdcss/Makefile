@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	libdvdcss
-PORTVERSION=	1.2.5
+PORTVERSION=	1.2.8
 CATEGORIES=	multimedia
 MASTER_SITES=	ftp://ftp.videolan.org/pub/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTVERSION}
@@ -18,8 +18,8 @@ COMMENT=	Portable abstraction library for DVD decryption
 NO_CDROM=	CSS code may violate the DMCA
 
 USE_BZIP2=	yes
-GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+USE_LIBTOOL=	yes
 USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 
