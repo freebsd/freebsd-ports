@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.6 1999/03/31 06:19:09 taoka Exp $
+# $Id: Makefile,v 1.7 1999/04/01 03:06:19 taoka Exp $
 #
 
     SUBDIR += asclock
@@ -9,6 +9,7 @@
     SUBDIR += eyeclock
     SUBDIR += mlclock
     SUBDIR += mouseclock
+    SUBDIR += pclock
     SUBDIR += rclock
     SUBDIR += swisswatch
     SUBDIR += t3d
