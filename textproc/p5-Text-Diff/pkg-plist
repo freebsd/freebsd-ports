@@ -1,0 +1,7 @@
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Text/Diff/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/Text/Diff/Table.pm
+lib/perl5/site_perl/%%PERL_VER%%/Text/Diff.pm
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Text/Diff
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Text 2>/dev/null || true
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Text/Diff
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Text 2>/dev/null || true
