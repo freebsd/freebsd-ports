@@ -79,25 +79,6 @@ CONFIGURE_ENV+=	WITHOUT_XFT=yes
 LIB_DEPENDS+=	Xft2.2:${PORTSDIR}/x11-fonts/Xft
 .endif # !defined(WITHOUT_XFT)
 
-# check for known bad fonts
-.if exists(${X11BASE}/lib/X11/fonts/lfpfonts-var/fonts.dir)
-BAD_FONTS=yes
-.endif # exists(${X11BASE}/lib/X11/fonts/lfpfonts-var/fonts.dir)
-.if exists(${X11BASE}/lib/X11/fonts/lfpfonts-fix/fonts.dir)
-BAD_FONTS=yes
-.endif # exists(${X11BASE}/lib/X11/fonts/lfpfonts-var/fonts.dir)
-
-.if defined(BAD_FONTS) && !defined(WITHOUT_XFT)
-.undef NO_IGNORE
-BROKEN=	You have X fonts installed [lfpfonts*] that cause breakage unless
-BROKEN+=WITHOUT_XFT is set, which turns off AntiAliasing. Please either
-BROKEN+=uninstall the fonts or restart the make with \'make -DWITHOUT_XFT\'.
-BROKEN+=There may be other third party font packages that also cause this
-BROKEN+=breakage. If you find a font port that verifiably causes breakage,
-BROKEN+=please let us know by mailing ${MAINTAINER}. Thank you.
-BROKEN+=NOTE: The Microsoft webfonts port is known to be safe.
-.endif # defined(BAD_FONTS) && !defined(WITHOUT_XFT)
-
 CPPFLAGS+=		-I${X11BASE}/include
 CFLAGS+=		${PTHREAD_CFLAGS}
 LDFLAGS+=		-L${X11BASE}/lib
