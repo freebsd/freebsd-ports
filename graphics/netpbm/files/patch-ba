@@ -1,5 +1,5 @@
---- GNUmakefile.orig	Fri Aug 17 13:34:44 2001
-+++ GNUmakefile	Wed Sep  5 00:00:00 2001
+--- GNUmakefile.orig	Sat Sep 22 01:26:48 2001
++++ GNUmakefile	Wed Oct 10 00:00:00 2001
 @@ -69,7 +69,7 @@
  
  default: $(DEFAULT_TARGET)
@@ -10,13 +10,13 @@
  .PHONY: nonmerge
  nonmerge: $(SUBDIRS)
 @@ -160,10 +160,10 @@
- 
- .PHONY: install.hdr
  install.hdr: $(INSTALLHDRS) $(SRCDIR)/pm_config.h
--	$(INSTALL) -c -m$(INSTALL_PERM_HDR) \
+ # See notes in Makefile.common about how $(INSTALL) varies from one 
+ # platform to another.
+-	$(INSTALL) -c -m $(INSTALL_PERM_HDR) \
 +	${BSD_INSTALL_DATA} \
  	    $(SRCDIR)/pm_config.h $(INSTALLHDRS)
--	$(INSTALL) -c -m$(INSTALL_PERM_HDR) \
+-	$(INSTALL) -c -m $(INSTALL_PERM_HDR) \
 -	    $(SRCDIR)/shhopt/shhopt.h $(INSTALLHDRS)
 +	${BSD_INSTALL_DATA} \
 +	    $(SRCDIR)/shhopt/pm_shhopt.h $(INSTALLHDRS)
