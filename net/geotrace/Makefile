@@ -15,13 +15,12 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ijliao@FreeBSD.org
 
-BROKEN=		"Does not build"
-
+USE_REINPLACE=	yes
 USE_GNOMENG=	yes
-USE_GNOME=	libcapplet
+USE_GNOME=	gdkpixbuf libcapplet
 
 post-patch:
-	@${PERL} -pi -e "s,%%PREFIX%%,${PREFIX},g" ${WRKSRC}/prefs.h
+	@${REINPLACE_CMD} -e "s,%%PREFIX%%,${PREFIX},g" ${WRKSRC}/prefs.h
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/geotrace ${PREFIX}/bin
