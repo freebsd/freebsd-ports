@@ -6,13 +6,14 @@
 
 PORTNAME=	quark
 PORTVERSION=	3.11
+PORTREVISION=	1
 CATEGORIES=	multimedia gnome
 MASTER_SITES=	http://quark.sunsite.dk/
 
 MAINTAINER=	rael@vectorstar.net
 COMMENT=	Quark is an audio player, for geeks, by geeks
 
-LIB_DEPENDS=	xine.7:${PORTSDIR}/multimedia/libxine
+LIB_DEPENDS=	xine.8:${PORTSDIR}/multimedia/libxine
 
 USE_X_PREFIX=	yes
 USE_REINPLACE=	yes

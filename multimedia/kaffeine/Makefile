@@ -6,14 +6,14 @@
 
 PORTNAME=	kaffeine
 PORTVERSION=	0.3.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia kde
 MASTER_SITES=	http://members.chello.at/kaffeine/download/
 
 MAINTAINER=	arved@FreeBSD.org
 COMMENT=	A xine-base multimedia player
 
-LIB_DEPENDS=	xine.7:${PORTSDIR}/multimedia/libxine
+LIB_DEPENDS=	xine.8:${PORTSDIR}/multimedia/libxine
 
 USE_KDELIBS_VER=	3
 USE_GMAKE=		yes
