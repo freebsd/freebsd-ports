@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	System2
-PORTVERSION=	0.83
+PORTVERSION=	0.84
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	System2
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	tobez@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	System2 - like system(), but with STDERR available as well
 
 PERL_CONFIGURE=	yes
