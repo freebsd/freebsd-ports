@@ -1,0 +1,19 @@
+The majority of the web pages of the internet today are 
+much larger than they need to be.  The reason for this is 
+that HTML tends to be stored in a human readable format, with
+indenting, newlines and comments.
+
+However, all of these comments, whitespace etc. are ignored by
+the browser, and needlessly lengthen download times.
+
+Second, many people are using WYSIWYG HTML editors these days.
+This makes creating content easy.  However these editors can
+cause a number of compatibility problems by tying themselves to
+a particular browser or operating system.
+
+The HTML::Clean module encapsulates a number of HTML optimizations
+and cleanups.  The end result is HTML that loads faster, displays
+properly in more browsers.  Think of it as a compiler that
+translates HTML input into optimized machine readable code.
+
+-- Alex Kapranoff <kapr@crosswinds.net>
