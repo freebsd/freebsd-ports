@@ -3,12 +3,12 @@
 # Date created:        11 August 1998
 # Whom:                Bill Fumerola <billf@chc-chimes.com>
 #
-# $Id: Makefile,v 1.2 1998/11/18 21:29:23 billf Exp $
+# $Id: Makefile,v 1.3 1998/11/23 08:37:27 asami Exp $
 #
 
 DISTNAME=	PortScanner-1.0
 PKGNAME=	portscanner-1.0
-CATEGORIES=	net
+CATEGORIES=	net security
 MASTER_SITES=	http://www.ameth.org/~veilleux/ \
 		http://www.FreeBSD.org/~billf/
 
