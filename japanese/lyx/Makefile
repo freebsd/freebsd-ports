@@ -9,10 +9,9 @@ PORTNAME=	lyx
 PORTVERSION=	1.0.3
 CATEGORIES=	japanese print
 MASTER_SITES=	ftp://ftp.lyx.org/pub/lyx/stable/ \
-		ftp://la1ad.uio.no/pub/lyx/ \
-		ftp://alpha.tat.physik.uni-tuebingen.de/pub/lyx/stable/ \
 		ftp://ftp.sdsc.edu/pub/other/lyx/stable/ \
-		http://cgi.din.or.jp/~kawakami/product/LyX/
+		${MASTER_SITE_LOCAL}  
+MASTER_SITE_SUBDIR=	flathill
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		${PORTNAME}-jp-kit0.10b4for${PORTVERSION}.tar.gz
 
