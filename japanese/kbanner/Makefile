@@ -7,12 +7,13 @@
 
 PORTNAME=	kbanner
 PORTVERSION=	2.1
+PORTREVISION=	1
 CATEGORIES=	japanese
 MASTER_SITES=	ftp://ftp.lab.kdd.co.jp/Usenet/fj.sources/1993/oct/
 EXTRACT_SUFX=	.tar.Z
 DISTNAME=	${PORTNAME}${PORTVERSION:R}
 
-MAINTAINER=	sumikawa@kame.net
+MAINTAINER=	sumikawa@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/${PORTNAME}${PORTVERSION}
 ALL_TARGET=	kbanner
