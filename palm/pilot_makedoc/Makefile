@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTNAME=	piloit_makedoc
+PORTNAME=	pilot_makedoc
 PORTVERSION= 	0.7a
 CATEGORIES=	palm textproc
 MASTER_SITES=	ftp://ftp.forth.org/pub/PalmOS/ \
