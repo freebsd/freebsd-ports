@@ -6009,6 +6009,7 @@ psi88		ports/biology/psi88
 psiconv		ports/converters/psiconv
 psim-freebsd	ports/emulators/psim-freebsd
 pslist		ports/sysutils/pslist
+psmark		ports/print/psmark
 psmisc		ports/sysutils/psmisc
 pspell		ports/textproc/pspell
 pspell-ispell	ports/textproc/pspell-ispell
