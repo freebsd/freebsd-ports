@@ -10206,6 +10206,7 @@ xvmixer		ports/audio/xvmixer
 xwatch		ports/sysutils/xwatch
 xwatchwin	ports/x11/xwatchwin
 xwave		ports/audio/xwave
+xwelltris	ports/games/xwelltris
 xwhois		ports/net/xwhois
 xwipower	ports/sysutils/xwipower
 xwit		ports/x11/xwit
