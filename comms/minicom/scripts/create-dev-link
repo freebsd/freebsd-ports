@@ -3,7 +3,7 @@
 #	pre-install script for Minicom port to FreeBSD 2.x
 
 echo ""
-echo "Minicom will be installed mode 4511 (setuid) owner root, and group bin."
+echo "Minicom will be installed mode 4511 (setuid) owner uucp, and group dialer."
 echo ""
 echo -n "Is this ok? [y] "
 	read fooz
