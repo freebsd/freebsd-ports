@@ -1,6 +1,21 @@
 --- src/term.c.orig	Sat Mar 29 04:36:54 1997
-+++ src/term.c	Sun Jul 16 12:50:34 2000
-@@ -209,6 +209,9 @@
++++ src/term.c	Tue Feb 20 23:43:44 2001
+@@ -30,7 +30,13 @@
+ #include	<termio.h>
+ #elif defined(__FreeBSD__)
+ #include      <termios.h>
+-#include      <machine/console.h>
++#include        <osreldate.h>
++#if __FreeBSD_version >= 410000
++#  include      <sys/consio.h>
++#  include      <sys/kbio.h>
++#else
++#  include      <machine/console.h>
++#endif
+ #define termio termios
+ #endif
+ #include	<signal.h>
+@@ -209,6 +215,9 @@
  	}
  	if (FD_ISSET(0, &readFds)) {
  	    i = read(0, buff, BUFSIZ);
@@ -10,7 +25,7 @@
  #if 1
  {
      int k, l;
-@@ -239,7 +242,7 @@
+@@ -239,7 +248,7 @@
  	    PollCursor(TRUE);
  	}
  	if (FD_ISSET(sockFd, &readFds)) SocketInterface(sockFd);
