@@ -10,6 +10,7 @@ bin/xscreensaver-hacks/ant
 bin/xscreensaver-hacks/apollonian
 bin/xscreensaver-hacks/atlantis
 bin/xscreensaver-hacks/attraction
+bin/xscreensaver-hacks/atunnel
 bin/xscreensaver-hacks/barcode
 bin/xscreensaver-hacks/blaster
 bin/xscreensaver-hacks/blitspin
@@ -101,6 +102,7 @@ bin/xscreensaver-hacks/penetrate
 bin/xscreensaver-hacks/penrose
 bin/xscreensaver-hacks/petri
 bin/xscreensaver-hacks/phosphor
+bin/xscreensaver-hacks/piecewise
 bin/xscreensaver-hacks/pipes
 bin/xscreensaver-hacks/polyominoes
 bin/xscreensaver-hacks/popsquares
@@ -173,6 +175,7 @@ share/xscreensaver/config/ant.xml
 share/xscreensaver/config/apollonian.xml
 share/xscreensaver/config/atlantis.xml
 share/xscreensaver/config/attraction.xml
+share/xscreensaver/config/atunnel.xml
 share/xscreensaver/config/barcode.xml
 share/xscreensaver/config/blaster.xml
 share/xscreensaver/config/blitspin.xml
@@ -267,6 +270,7 @@ share/xscreensaver/config/penetrate.xml
 share/xscreensaver/config/penrose.xml
 share/xscreensaver/config/petri.xml
 share/xscreensaver/config/phosphor.xml
+share/xscreensaver/config/piecewise.xml
 share/xscreensaver/config/pipes.xml
 share/xscreensaver/config/polyominoes.xml
 share/xscreensaver/config/popsquares.xml
