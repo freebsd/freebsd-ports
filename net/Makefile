@@ -759,6 +759,7 @@
     SUBDIR += tvark
     SUBDIR += udptunnel
     SUBDIR += ulxmlrpcpp
+    SUBDIR += unfs3
     SUBDIR += unison
     SUBDIR += unix2tcp
     SUBDIR += uplog
