@@ -1,6 +1,10 @@
 PACKAGE		= tls
-VERSION		?= ${PORTVERSION}
-SHLIB_NAME	= lib${PACKAGE}.so.${VERSION:R}
+VERSION		?= ${PORTVERSION:R}
+.ifndef(SHLIB_NAME)
+LIB		= ${PACKAGE}
+SHLIB_MAJOR	= ${VERSION:R}
+SHLIB_MINOR	= ${VERSION:E}
+.endif
 
 SRCS		= tls.c tlsIO.c tlsBIO.c tlsX509.c # fixstrtod.c strncasecmp.c
 
