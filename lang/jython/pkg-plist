@@ -849,10 +849,12 @@ etc/jython.reg
 %%JYTHON_DIR%%/cachedir/packages/packages.idx
 %%JYTHON_DIR%%/cachedir/packages/rt.pkc
 %%JYTHON_DIR%%/cachedir/packages/sunrsasign.pkc
+%%JYTHON_DIR%%/com/ziclix/python/sql/DBApiType.java
 %%JYTHON_DIR%%/com/ziclix/python/sql/DataHandler.java
 %%JYTHON_DIR%%/com/ziclix/python/sql/Fetch.java
 %%JYTHON_DIR%%/com/ziclix/python/sql/FilterDataHandler.java
 %%JYTHON_DIR%%/com/ziclix/python/sql/JDBC20DataHandler.java
+%%JYTHON_DIR%%/com/ziclix/python/sql/Procedure.java
 %%JYTHON_DIR%%/com/ziclix/python/sql/PyConnection.java
 %%JYTHON_DIR%%/com/ziclix/python/sql/PyCursor.java
 %%JYTHON_DIR%%/com/ziclix/python/sql/PyExtendedCursor.java
@@ -985,6 +987,7 @@ etc/jython.reg
 %%JYTHON_DIR%%/org/python/core/PyMethod.java
 %%JYTHON_DIR%%/org/python/core/PyModule.java
 %%JYTHON_DIR%%/org/python/core/PyNone.java
+%%JYTHON_DIR%%/org/python/core/PyNotImplemented.java
 %%JYTHON_DIR%%/org/python/core/PyObject.java
 %%JYTHON_DIR%%/org/python/core/PyProxy.java
 %%JYTHON_DIR%%/org/python/core/PyReflectedConstructor.java
