@@ -1,0 +1,78 @@
+include/libonyx/libonyx.h
+include/libonyx/libonyx_incs.h
+include/libonyx/gcdict.h
+include/libonyx/nx.h
+include/libonyx/nxa.h
+include/libonyx/nxn.h
+include/libonyx/nxo.h
+include/libonyx/nxo_array.h
+include/libonyx/nxo_boolean.h
+include/libonyx/nxo_condition.h
+include/libonyx/nxo_dict.h
+include/libonyx/nxo_file.h
+include/libonyx/nxo_fino.h
+include/libonyx/nxo_hook.h
+include/libonyx/nxo_integer.h
+include/libonyx/nxo_mark.h
+include/libonyx/nxo_mutex.h
+include/libonyx/nxo_name.h
+include/libonyx/nxo_no.h
+include/libonyx/nxo_null.h
+include/libonyx/nxo_operator.h
+include/libonyx/nxo_pmark.h
+include/libonyx/nxo_stack.h
+include/libonyx/nxo_string.h
+include/libonyx/nxo_thread.h
+include/libonyx/systemdict.h
+include/libonyx/libonyx_defs.h
+include/libstash/libstash.h
+include/libstash/libstash_incs.h
+include/libstash/bhp.h
+include/libstash/buf.h
+include/libstash/ch.h
+include/libstash/cnd.h
+include/libstash/dch.h
+include/libstash/mem.h
+include/libstash/mq.h
+include/libstash/mtx.h
+include/libstash/out.h
+include/libstash/pezz.h
+include/libstash/pool.h
+include/libstash/ql.h
+include/libstash/qr.h
+include/libstash/qs.h
+include/libstash/rwl.h
+include/libstash/sma.h
+include/libstash/thd.h
+include/libstash/tsd.h
+include/libstash/xep.h
+include/libstash/libstash_defs.h
+lib/libstash.so
+lib/libstash.so.1
+lib/libstash.a
+lib/libonyx.so
+lib/libonyx.so.1
+lib/libonyx.a
+share/onyx/doc/ps/manual.ps
+share/onyx/doc/pdf/manual.pdf
+share/onyx/doc/html/manual.html
+share/onyx/doc/html/node1.html
+share/onyx/doc/html/node2.html
+share/onyx/doc/html/node3.html
+share/onyx/doc/html/node4.html
+share/onyx/doc/html/node5.html
+share/onyx/doc/html/node6.html
+share/onyx/doc/html/node7.html
+share/onyx/doc/html/img1.png
+share/onyx/doc/html/img2.png
+share/onyx/doc/html/img3.png
+share/onyx/doc/html/manual.css
+share/onyx/doc/html/index.html
+bin/onyx
+@dirrm include/libonyx
+@dirrm include/libstash
+@dirrm share/onyx/doc/ps
+@dirrm share/onyx/doc/pdf
+@dirrm share/onyx/doc/html
+@dirrm share/onyx/doc
+@dirrm share/onyx
