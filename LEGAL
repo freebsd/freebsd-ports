@@ -72,6 +72,7 @@ dnews3			ports/news/dnews	Only free for schools and
 						to put a package on the CD-ROM.
 fmsx-*			ports/emulators/fmsx	Unclear legal status of
 						distributed ROMs.
+fnorb-*			ports/devel/fnorb	Cannot use commercially
 fwtk-*			ports/security/fwtk	No redistribution allowed
 Frisk-*			ports/games/xfrisk	Copyright/trademark violation?
 glimpse-*		ports/textproc/glimpse	Don't sell for profit
