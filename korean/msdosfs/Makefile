@@ -13,7 +13,7 @@ CATEGORIES=	korean
 MASTER_SITES=	http://www.kr.freebsd.org/~cjh/freebsd/msdosfs-ko/ \
 		ftp://ftp.kr.freebsd.org/pub/users/cjh/FreeBSD/ \
 		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=     asami
+MASTER_SITE_SUBDIR=     trevor
 DISTNAME=	${PORTNAME}-ko-20000710
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		mount_msdos-20000701.tar.gz

@@ -10,7 +10,7 @@ PORTVERSION=	0.7
 PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	asami
+MASTER_SITE_SUBDIR=	trevor
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A simple utility managing multiple Window Managers with Qt

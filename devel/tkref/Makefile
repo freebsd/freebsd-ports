@@ -10,7 +10,7 @@ PORTVERSION=	1.01
 CATEGORIES=	devel tk82
 MASTER_SITES=	http://gtcs.com/softdist/ \
 		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	asami/LOCAL_PORTS
+MASTER_SITE_SUBDIR=	trevor
 
 MAINTAINER=	bgingery@gtcs.com
 COMMENT=	A programmer's GUI reference for Tcl/Tk and major packages
