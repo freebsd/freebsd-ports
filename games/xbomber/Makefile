@@ -11,7 +11,7 @@ CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.sonic.net/pub/users/nbs/unix/x/xbomber/
 DISTNAME=	${PORTNAME}.${PORTVERSION}
 
-MAINTAINER=	marcus@marcuscom.com
+MAINTAINER=	marcus@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

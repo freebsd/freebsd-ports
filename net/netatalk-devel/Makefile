@@ -12,7 +12,7 @@ CATEGORIES=	net print
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	netatalk
 
-MAINTAINER=	marcus@marcuscom.com
+MAINTAINER=	marcus@FreeBSD.org
 
 .if defined(WITH_CNID)
 LIB_DEPENDS=	db3.2:${PORTSDIR}/databases/db3
