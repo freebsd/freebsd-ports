@@ -1,0 +1,9 @@
+quakeserver/id1/pak0.pak
+quakeserver/xquake
+quakeserver/README.FreeBSD
+quakeserver/qsrv
+quakeserver/qsrv.expect
+quakeserver/qstat
+quakeserver/qslog
+@dirrm quakeserver/id1
+@dirrm quakeserver
