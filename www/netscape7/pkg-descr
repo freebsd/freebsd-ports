@@ -9,6 +9,9 @@ British region packs, spell-checker, and talkback are enabled.
 Text cannot be typed into the dialogs for saving files or for
 searching within a document.
 
+The Java plugin does not work with linux_base-7, only linux_base-61
+or linux_base-62.
+
 WWW: http://browsers.netscape.com/browsers/6/
 
 Trevor Johnson
