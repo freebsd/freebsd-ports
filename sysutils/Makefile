@@ -159,6 +159,7 @@
     SUBDIR += gupsc
     SUBDIR += hammerhead
     SUBDIR += healthd
+    SUBDIR += hourglass
     SUBDIR += httplog
     SUBDIR += idled
     SUBDIR += installwatch

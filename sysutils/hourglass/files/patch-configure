@@ -1,0 +1,31 @@
+--- configure.orig	Thu Oct  9 20:19:54 2003
++++ configure	Mon Apr 12 16:14:58 2004
+@@ -3114,7 +3114,6 @@
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lpthread  $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ #line $LINENO "configure"
+ /* confdefs.h.  */
+@@ -3161,7 +3160,6 @@
+ #define HAVE_LIBPTHREAD 1
+ _ACEOF
+ 
+-  LIBS="-lpthread $LIBS"
+ 
+ fi
+ 
+@@ -3994,8 +3992,10 @@
+   on_unix='yes' ;
+   on_windows='no' ;;
+ *freebsd*)
+-  LDFLAGS='-llthread -llgcc_r -L/usr/local/lib' ;
+-  CFLAGS='-D_THREAD_SAFE -I/usr/local/include/pthread/linuxthreads' ;
++  CFLAGS_sav=$CFLAGS ;
++  LDFLAGS_sav=$LDFLAGS ;
++  LDFLAGS="$LDFLAGS_sav -llthread -llgcc_r -L%LOCALBASE%/lib" ;
++  CFLAGS="$CFLAGS_sav -D_THREAD_SAFE -I%LOCALBASE%/include/pthread/linuxthreads" ;
+   on_unix='yes' ;
+   on_windows='no' ;;
+ *cygwin*)
