@@ -1,0 +1,5 @@
+cvs2svn is a Python script that converts a CVS repository to a
+Subversion repository. It is designed for one-time conversions, not
+for repeated synchronizations between CVS and Subversion.
+
+WWW: http://cvs2svn.tigris.org/

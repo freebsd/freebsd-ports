@@ -1,0 +1,24 @@
+bin/cvs2svn
+bin/dump-db
+bin/profile-cvs2svn
+bin/show-db
+bin/verify-cvs2svn
+%%PYTHON_SITELIBDIR%%/rcsparse/__init__.py
+%%PYTHON_SITELIBDIR%%/rcsparse/__init__.pyc
+%%PYTHON_SITELIBDIR%%/rcsparse/__init__.pyo
+%%PYTHON_SITELIBDIR%%/rcsparse/common.py
+%%PYTHON_SITELIBDIR%%/rcsparse/common.pyc
+%%PYTHON_SITELIBDIR%%/rcsparse/common.pyo
+%%PYTHON_SITELIBDIR%%/rcsparse/compat.py
+%%PYTHON_SITELIBDIR%%/rcsparse/compat.pyc
+%%PYTHON_SITELIBDIR%%/rcsparse/compat.pyo
+%%PYTHON_SITELIBDIR%%/rcsparse/debug.py
+%%PYTHON_SITELIBDIR%%/rcsparse/debug.pyc
+%%PYTHON_SITELIBDIR%%/rcsparse/debug.pyo
+%%PYTHON_SITELIBDIR%%/rcsparse/default.py
+%%PYTHON_SITELIBDIR%%/rcsparse/default.pyc
+%%PYTHON_SITELIBDIR%%/rcsparse/default.pyo
+%%PYTHON_SITELIBDIR%%/rcsparse/texttools.py
+%%PYTHON_SITELIBDIR%%/rcsparse/texttools.pyc
+%%PYTHON_SITELIBDIR%%/rcsparse/texttools.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/rcsparse
