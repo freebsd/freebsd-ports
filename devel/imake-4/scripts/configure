@@ -23,11 +23,9 @@ if [ $OSVERSION -ge 300000 -a X$HasSecureRPC != "X" ]; then
     echo "#endif"                               >> $F
 fi
 if [ X$HasXdmAuth != "X" ]; then
-    if [ -f $WRKDIR/xc/lib/Xdmcp/Wraphelp.c -o -f $DISTDIR/xc/Wraphelp.c ]; then
-	echo "#ifndef HasXdmAuth"               >> $F
-	echo "#define HasXdmAuth $HasXdmAuth" >> $F
-        echo "#endif"                           >> $F
-    fi
+    echo "#ifndef HasXdmAuth"               >> $F
+    echo "#define HasXdmAuth $HasXdmAuth" >> $F
+    echo "#endif"                           >> $F
 fi
 if [ $OSVERSION -ge 310000 -a X$HasPam != "X" ]; then
     echo "#ifndef HasPam"                       >> $F

@@ -154,6 +154,23 @@ post-install::
 .endif	# !WITH_MATROX_GXX_DRIVER
 .endif
 
+HasXdmAuth?=		DEFAULT
+
+.if ${HasXdmAuth} == DEFAULT || ${HasXdmAuth} == YES
+.if defined(USA_RESIDENT) && ${USA_RESIDENT} == YES
+pre-fetch:
+	@${ECHO}
+	@${ECHO} Assuming that you have fetched a USA-Legal Wraphelp.c.
+.else
+MASTER_SITES+=	ftp://psych.psy.uq.oz.au/pub/X11R5/ \
+		ftp://ftp.internat.freebsd.org/pub/FreeBSD/X11-Crypto/ \
+		ftp://ftp3.za.freebsd.org/pub/FreeBSD/X11-Crypto/
+EXTRACT_ONLY=	X410src-1.tgz
+DISTFILES+=	Wraphelp.c
+IGNOREFILES=	Wraphelp.c
+.endif
+.endif
+
 do-configure:
 	cd ${.CURDIR} && ${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/configure
 
