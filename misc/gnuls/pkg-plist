@@ -3,5 +3,3 @@ bin/dircolors
 bin/gnuls
 bin/linuxls
 bin/vdir
-man/man1/dircolors.1.gz
-man/man1/gnuls.1.gz

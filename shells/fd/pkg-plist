@@ -1,5 +1,4 @@
 bin/fd
 bin/fd-unicd.tbl
-man/ja/man1/fd.1.gz
 share/doc/fd/Guarant
 @dirrm share/doc/fd

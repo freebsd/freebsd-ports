@@ -2,7 +2,6 @@ bin/figlet
 bin/chkfont
 bin/figlist
 bin/showfigfonts
-man/man6/figlet.6.gz
 share/figlet/646-ca.flc
 share/figlet/646-ca2.flc
 share/figlet/646-cn.flc
