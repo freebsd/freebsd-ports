@@ -109,6 +109,7 @@ share/doc/samba/faq/sambafaq.sgml
 share/doc/samba/faq/sambafaq.txt
 share/doc/samba/history
 share/doc/samba/htmldocs/DOMAIN_MEMBER.html
+share/doc/samba/htmldocs/NT_Security.html
 share/doc/samba/htmldocs/lmhosts.5.html
 share/doc/samba/htmldocs/make_smbcodepage.1.html
 share/doc/samba/htmldocs/nmbd.8.html
@@ -120,6 +121,7 @@ share/doc/samba/htmldocs/smbd.8.html
 share/doc/samba/htmldocs/smbpasswd.5.html
 share/doc/samba/htmldocs/smbpasswd.8.html
 share/doc/samba/htmldocs/smbrun.1.html
+share/doc/samba/htmldocs/smbsh.1.html
 share/doc/samba/htmldocs/smbstatus.1.html
 share/doc/samba/htmldocs/smbtar.1.html
 share/doc/samba/htmldocs/swat.8.html
@@ -139,6 +141,7 @@ share/doc/samba/manpages/smbmount.8
 share/doc/samba/manpages/smbpasswd.5
 share/doc/samba/manpages/smbpasswd.8
 share/doc/samba/manpages/smbrun.1
+share/doc/samba/manpages/smbsh.1
 share/doc/samba/manpages/smbstatus.1
 share/doc/samba/manpages/smbtar.1
 share/doc/samba/manpages/smbumount.8
@@ -165,8 +168,8 @@ share/doc/samba/textdocs/HINTS.txt
 share/doc/samba/textdocs/INSTALL.sambatar
 share/doc/samba/textdocs/MIRRORS.txt
 share/doc/samba/textdocs/Macintosh_Clients.txt
-share/doc/samba/textdocs/NT-Guest-Access.txt
 share/doc/samba/textdocs/NTDOMAIN.txt
+share/doc/samba/textdocs/NT_Security.txt
 share/doc/samba/textdocs/NetBIOS.txt
 share/doc/samba/textdocs/OS2-Client-HOWTO.txt
 share/doc/samba/textdocs/PRINTER_DRIVER.txt
@@ -177,6 +180,7 @@ share/doc/samba/textdocs/Printing.txt
 share/doc/samba/textdocs/README.DCEDFS
 share/doc/samba/textdocs/README.jis
 share/doc/samba/textdocs/README.sambatar
+share/doc/samba/textdocs/README.smbmount
 share/doc/samba/textdocs/Recent-FAQs.txt
 share/doc/samba/textdocs/RoutedNetworks.txt
 share/doc/samba/textdocs/SCO.txt
@@ -194,6 +198,7 @@ share/doc/samba/textdocs/WinNT.txt
 share/doc/samba/textdocs/cifsntdomain.txt
 share/doc/samba/textdocs/security_level.txt
 share/doc/samba/yodldocs/DOMAIN_MEMBER.yo
+share/doc/samba/yodldocs/NT_Security.yo
 share/doc/samba/yodldocs/lmhosts.5.yo
 share/doc/samba/yodldocs/make_smbcodepage.1.yo
 share/doc/samba/yodldocs/nmbd.8.yo
@@ -205,6 +210,7 @@ share/doc/samba/yodldocs/smbd.8.yo
 share/doc/samba/yodldocs/smbpasswd.5.yo
 share/doc/samba/yodldocs/smbpasswd.8.yo
 share/doc/samba/yodldocs/smbrun.1.yo
+share/doc/samba/yodldocs/smbsh.1.yo
 share/doc/samba/yodldocs/smbstatus.1.yo
 share/doc/samba/yodldocs/smbtar.1.yo
 share/doc/samba/yodldocs/swat.8.yo
@@ -218,6 +224,7 @@ share/doc/samba/yodldocs/testprns.1.yo
 @dirrm share/doc/samba
 share/swat/help/welcome.html
 share/swat/help/DOMAIN_MEMBER.html
+share/swat/help/NT_Security.html
 share/swat/help/lmhosts.5.html
 share/swat/help/make_smbcodepage.1.html
 share/swat/help/nmbd.8.html
@@ -229,6 +236,7 @@ share/swat/help/smbd.8.html
 share/swat/help/smbpasswd.5.html
 share/swat/help/smbpasswd.8.html
 share/swat/help/smbrun.1.html
+share/swat/help/smbsh.1.html
 share/swat/help/smbstatus.1.html
 share/swat/help/smbtar.1.html
 share/swat/help/swat.8.html
