@@ -3,12 +3,12 @@
 # Date created:		8 March 1995
 # Whom:			Satoshi Asami
 #
-# $Id: Makefile,v 1.6 1995/09/23 10:15:46 asami Exp $
+# $Id: Makefile,v 1.7 1995/10/04 09:41:18 asami Exp $
 #
 
 DISTNAME=	colorls
 PKGNAME=	colorls-2.1
-CATEGORIES+=	utilities
+CATEGORIES+=	misc
 MASTER_SITES=	ftp://ftp.freebsd.org/pub/FreeBSD/FreeBSD-current/src/bin/
 DISTFILES=	ls.tar.gz
 

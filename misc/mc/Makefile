@@ -3,11 +3,11 @@
 # Date created:		15 Jul 1995
 # Whom:			torstenb@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.1.1.1 1995/07/15 23:43:34 torstenb Exp $
+# $Id: Makefile,v 1.2 1995/09/27 22:57:28 torstenb Exp $
 #
 
 DISTNAME=	mc-3.0
-CATEGORIES=	utilities
+CATEGORIES=	misc
 MASTER_SITES=	ftp://prep.ai.mit.edu/pub/gnu/
 
 GNU_CONFIGURE=	YES
