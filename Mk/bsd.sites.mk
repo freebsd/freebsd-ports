@@ -673,7 +673,6 @@ MASTER_SITE_WINDOWMAKER+= \
 MASTER_SITE_XCONTRIB+=	\
 	ftp://crl.dec.com/pub/X11/contrib/%SUBDIR%/ \
 	ftp://ftp.net.ohio-state.edu/pub/X11/contrib/%SUBDIR%/ \
-	ftp://uiarchive.uiuc.edu/pub/ftp/ftp.x.org/contrib/%SUBDIR%/ \
 	ftp://ftp.gwdg.de/pub/x11/x.org/contrib/%SUBDIR%/ \
 	ftp://ftp.duke.edu/pub/X11/contrib/%SUBDIR%/ \
 	ftp://ftp.x.org/contrib/%SUBDIR%/ \
