@@ -1,0 +1,9 @@
+adamem/adamem
+adamem/cvem
+adamem/adamem.snd
+adamem/OS7.rom
+adamem/WP.rom
+adamem/EOS.rom
+@dirrm adamem
+%%PORTDOCS%%share/doc/adamem/adamem.txt
+%%PORTDOCS%%@dirrm share/doc/adamem
