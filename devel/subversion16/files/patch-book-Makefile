@@ -1,6 +1,13 @@
---- doc/book/Makefile.orig	Mon May 19 17:06:16 2003
-+++ doc/book/Makefile	Mon May 19 17:22:14 2003
-@@ -98,7 +98,7 @@
+--- doc/book/Makefile.orig	Fri Feb 20 01:57:40 2004
++++ doc/book/Makefile	Wed Jul  7 19:58:29 2004
+@@ -1,5 +1,5 @@
+ XSLTPROC = xsltproc
+-INSTALL_DIR = $(DESTDIR)/usr/share/doc/subversion
++#INSTALL_DIR = $(DESTDIR)/usr/share/doc/subversion
+ INSTALL = install
+ 
+ ## You shouldn't normally need to edit anything below here.
+@@ -114,7 +114,7 @@
  $(BOOK_INSTALL_DIR):
  	$(INSTALL) -d $(BOOK_INSTALL_DIR)
  
@@ -9,9 +16,9 @@
  	$(INSTALL) -d $(BOOK_INSTALL_DIR)/images
  	$(INSTALL) $(BOOK_HTML_TARGET) $(BOOK_INSTALL_DIR)
  	$(INSTALL) $(BOOK_DIR)/styles.css $(BOOK_INSTALL_DIR)
-@@ -111,10 +111,10 @@
+@@ -126,10 +126,10 @@
  	$(INSTALL) $(BOOK_DIR)/styles.css $(BOOK_INSTALL_DIR)
- 	$(INSTALL) $(BOOK_DIR)/images/*.png $(BOOK_INSTALL_DIR)/images
+ 	$(INSTALL) $(BOOK_IMAGES) $(BOOK_INSTALL_DIR)/images
  
 -install-book-pdf: $(BOOK_PDF_TARGET) $(BOOK_INSTALL_DIR)
 +install-book-pdf:

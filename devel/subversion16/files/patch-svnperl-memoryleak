@@ -1,0 +1,195 @@
+--- subversion/bindings/swig/svn_types.i  (revision 10171)
++++ subversion/bindings/swig/svn_types.i  (revision 10172)
+@@ -316,7 +316,7 @@
+ %typemap(perl5, in) (svn_commit_callback_t callback, void *callback_baton) {
+     $1 = svn_swig_pl_thunk_commit_callback;
+     $2 = (void *)$input;
+-    SvREFCNT_inc($input);
++    svn_swig_pl_hold_ref_in_pool (_global_pool, $input);
+ };
+ 
+ /* -----------------------------------------------------------------------
+--- subversion/bindings/swig/swigutil_pl.c  (revision 10171)
++++ subversion/bindings/swig/swigutil_pl.c  (revision 10172)
+@@ -1385,3 +1385,16 @@ apr_file_t *svn_swig_pl_make_file (SV *f
+     }
+     return apr_file;
+ }
++
++static apr_status_t cleanup_refcnt (void *data)
++{
++    SV *sv = data;
++    SvREFCNT_dec (sv);
++    return APR_SUCCESS;
++}
++
++void svn_swig_pl_hold_ref_in_pool (apr_pool_t *pool, SV *sv)
++{
++    SvREFCNT_inc(sv);
++    apr_pool_cleanup_register (pool, sv, cleanup_refcnt, apr_pool_cleanup_null);
++}
+--- subversion/bindings/swig/swigutil_pl.h  (revision 10171)
++++ subversion/bindings/swig/swigutil_pl.h  (revision 10172)
+@@ -231,6 +231,7 @@ SV *svn_swig_pl_from_stream (svn_stream_
+ /* apr_file_t * */
+ apr_file_t *svn_swig_pl_make_file (SV *file, apr_pool_t *pool);
+ 
++void svn_swig_pl_hold_ref_in_pool (apr_pool_t *pool, SV *sv);
+ 
+ #ifdef __cplusplus
+ }
+--- subversion/bindings/swig/perl/t/5delta.t  (revision 10171)
++++ subversion/bindings/swig/perl/t/5delta.t  (revision 10172)
+@@ -4,27 +4,19 @@ use Test::More tests => 2;
+ require SVN::Core;
+ require SVN::Delta;
+ 
+-SKIP: {
+-    eval { require IO::String };
++my ($srctext, $tgttext, $result) = ('abcd===eflfjgjkx', 'abcd=--ef==lfjffgjx', '');
+ 
+-    skip "IO::String not installed", 2 if $@;
+-    my $srctext = 'abcd===eflfjgjkx';
+-    my $tgttext = 'abcd=--ef==lfjffgjx';
++open my $source, '<', \$srctext;
++open my $target, '<', \$tgttext;
++open my $aresult, '>', \$result;
+ 
+-    my $source = IO::String->new ($srctext);
+-    my $target = IO::String->new ($tgttext);
++my $txstream = SVN::TxDelta::new ($source, $target);
+ 
+-    my $result = '';
+-    my $aresult = IO::String->new (\$result);
++isa_ok ($txstream, '_p_svn_txdelta_stream_t');
++open my $asource, '<', \$srctext;
++my $handle = [SVN::TxDelta::apply ($asource, $aresult, undef, undef)];
+ 
+-    my $txstream = SVN::TxDelta::new ($source, $target);
++SVN::TxDelta::send_txstream ($txstream, @$handle);
+ 
+-    isa_ok ($txstream, '_p_svn_txdelta_stream_t');
+-    my $handle = [SVN::TxDelta::apply (IO::String->new ($srctext),
+-				       $aresult, undef, undef)];
++is ($result, $tgttext, 'delta self test');
+ 
+-    SVN::TxDelta::send_txstream ($txstream, @$handle);
+-
+-    is ($result, $tgttext, 'delta self test');
+-
+-}
+--- subversion/bindings/swig/perl/t/1repos.t  (revision 10171)
++++ subversion/bindings/swig/perl/t/1repos.t  (revision 10172)
+@@ -1,6 +1,6 @@
+ #!/usr/bin/perl -w
+ 
+-use Test::More tests => 5;
++use Test::More tests => 6;
+ use File::Temp qw(tempdir);
+ use File::Path qw(rmtree);
+ use strict;
+@@ -64,15 +64,20 @@ is_deeply (\@history, [['/tags/foo/filea
+ 	   'repos_history');
+ 
+ {
++my $pool = SVN::Pool->new_default;
++my $something = bless {}, 'something';
+ $editor = SVN::Delta::Editor->
+     new (SVN::Repos::get_commit_editor($repos, "file://$repospath",
+-				       '/', 'root', 'FOO', \&committed));
++				       '/', 'root', 'FOO', sub {committed(@_);
++                                                                $something;
++                                                            }));
+ 
+ my $rootbaton = $editor->open_root(2);
+ $editor->delete_entry('tags', 2, $rootbaton);
+ 
+ $editor->close_edit();
+ }
++ok ($main::something_destroyed, 'callback properly destroyed');
+ 
+ cmp_ok($fs->youngest_rev, '==', 3);
+ 
+@@ -80,3 +85,11 @@ END {
+ diag "cleanup";
+ rmtree($repospath);
+ }
++
++package something;
++
++sub DESTROY {
++    $main::something_destroyed++;
++}
++
++1;
+--- subversion/bindings/swig/perl/Delta.pm  (revision 10171)
++++ subversion/bindings/swig/perl/Delta.pm  (revision 10172)
+@@ -143,8 +143,8 @@ sub AUTOLOAD {
+     return unless $_[0]->{_editor};
+     my $class = ref($_[0]);
+     my $func = $AUTOLOAD;
+-    $func =~ s/^${class}::(SUPER::)?//;
+-    return if $func =~ m/^[A-Z]/;
++    $func =~ s/.*:://;
++    return unless $func =~ m/[^A-Z]/;
+ 
+     my %ebaton = ( set_target_revision => 1,
+ 		   open_root => 1,
+--- subversion/bindings/swig/perl/Base.pm  (revision 10171)
++++ subversion/bindings/swig/perl/Base.pm  (revision 10172)
+@@ -7,7 +7,7 @@ SVN::Base - Base class for importing sym
+ =head1 SYNOPSIS
+ 
+     # Load the svn_ra_* functions into the SVN::Ra namespace.
+-    pacakge SVN::Ra;
++    package SVN::Ra;
+     use SVN::Base qw(Ra svn_ra_);
+ 
+     # Load svn_config_t structure accessors in the magic namcespace
+--- subversion/bindings/swig/perl/Ra.pm  (revision 10171)
++++ subversion/bindings/swig/perl/Ra.pm  (revision 10172)
+@@ -63,26 +63,25 @@ require SVN::Client;
+ 
+ my $ralib = init_ra_libs;
+ 
++# Ra methods that returns reporter
++my %reporter = map { $_ => 1 } qw(do_diff do_switch do_status do_update);
+ our $AUTOLOAD;
+ 
+ sub AUTOLOAD {
+     my $class = ref($_[0]);
+-    $AUTOLOAD =~ s/^${class}::(SUPER::)?//;
+-    return if $AUTOLOAD =~ m/^[A-Z]/;
++    my $method = $AUTOLOAD;
++    $method =~ s/.*:://;
++    return unless $method =~ m/[^A-Z]/;
+ 
+     my $self = shift;
+     no strict 'refs';
+ 
+     die "no such method $AUTOLOAD"
+-	unless $self->can("plugin_invoke_$AUTOLOAD");
++	unless $self->can("plugin_invoke_$method");
+ 
+-    my @ret = &{"plugin_invoke_$AUTOLOAD"}(@{$self}{qw/ra session/}, @_,
+-					   $self->{pool});
+-
+-    return $ret[0] unless $#ret;
+-
+-    return ($AUTOLOAD eq 'get_commit_editor') ? @ret :
+-	bless [@ret], 'SVN::Ra::Reporter';
++    my @ret = &{"plugin_invoke_$method"}(@{$self}{qw/ra session/}, @_);
++    return bless [@ret], 'SVN::Ra::Reporter' if $reporter{$method};
++    return $#ret == 0 ? $ret[0] : @ret;
+ }
+ 
+ sub new {
+@@ -106,7 +105,7 @@ sub new {
+                              [SVN::Client::get_username_provider()]);
+     }
+ 
+-    my $pool = $self->{pool} ||= SVN::Core::pool_create(undef);
++    my $pool = $self->{pool} ||= SVN::Pool->new;
+ 
+     $self->{ra} = get_ra_library ($ralib, $self->{url});
+     my $callback = 'SVN::Ra::Callbacks';
