@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rskkserv
-PORTVERSION=	2.91.1
+PORTVERSION=	2.94.0
 CATEGORIES=	japanese ruby
 MASTER_SITES=	http://www.unixuser.org/~ysjj/rskkserv/
 DIST_SUBDIR=	ruby
@@ -14,29 +14,41 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	knu@FreeBSD.org
 
 RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/tcpwrap.so:${PORTSDIR}/security/ruby-tcpwrap \
-		${LOCALBASE}/share/skk/${SKKJISYO}:${SKK_MASTERDIR}
+		${SKKJISYO_BASE}/${SKKJISYO}:${SKK_MASTERDIR}
 
 USE_RUBY=	yes
 
+USE_AUTOCONF=	yes
+USE_GMAKE=	yes
+
+CONFIGURE_ARGS=	--with-ruby="${RUBY}" \
+		--with-dicfile="${SKKJISYO_BASE}/${SKKJISYO}" \
+		--with-cachedir="${SKKJISYO_BASE}" \
+		--with-logdir="/var/log" \
+		--sbindir="${PREFIX}/libexec"
+
 SKKJISYO_SIZE?=	L
-SKKJISYO?=	SKK-JISYO.${SKKJISYO_SIZE}
+SKKJISYO_BASE=	${LOCALBASE}/share/skk
+SKKJISYO=	SKK-JISYO.${SKKJISYO_SIZE}
 SKK_MASTERDIR=	${PORTSDIR}/japanese/skk-jisyo
 
 STARTUP_SCRIPT=	${PREFIX}/etc/rc.d/rskkserv.sh
-MAKE_ARGS=	prefix="${PREFIX}" \
-		skkdicsize="${SKKJISYO_SIZE}" \
-		epwdicbase="${PREFIX}/share/dict" \
-		skkdicbase="${PREFIX}/share/skk" \
-		SKKSERV=rskkserv
+MAKE_ARGS=	SKKSERV=rskkserv
 
 DOCS_EN=	ChangeLog
 DOCS_JA=	README		TODO
 
-pre-patch:
-	${CP} ${WRKSRC}/rskkserv.conf.sample ${WRKSRC}/rskkserv.conf.in
+post-patch:
+	${RUBY} -i -p \
+		-e 'gsub %r:/usr/share/skk:, %q:${SKKJISYO_BASE}:' \
+		-e 'gsub %r:/opt/epwing/(\w+):, %q:${LOCALBASE}/share/dict/\\1-fpw:' \
+		-e 'gsub %r:SKK-JISYO\\.L:, %q:${SKKJISYO}:' \
+		-e 'sub %r%(CACHEDIR\s*=\s*")[^"]*(")%, \
+					     %q%\\1${SKKJISYO_BASE}\\2%' \
+		${WRKSRC}/rskkserv.conf.sample
 
 post-install:
-	${CP} -R ${WRKSRC}/skkserv ${RUBY_SITELIBDIR}/
+	${INSTALL_DATA} ${WRKSRC}/rskkserv.conf.sample ${PREFIX}/etc/
 	@if [ ! -f ${STARTUP_SCRIPT} ]; then \
 		${ECHO} "Installing ${STARTUP_SCRIPT} file."; \
 		${ECHO} "#!/bin/sh" > ${STARTUP_SCRIPT}; \
@@ -44,7 +56,11 @@ post-install:
 		${ECHO} "start)" >> ${STARTUP_SCRIPT}; \
 		${ECHO} "	if [ -f ${PREFIX}/libexec/rskkserv ]; then" >> \
 			${STARTUP_SCRIPT}; \
-		${ECHO} "		${ECHO} -n ' rskkserv'; ${PREFIX}/libexec/rskkserv" >> \
+		${ECHO} "		${ECHO} -n ' rskkserv';" >> \
+		${ECHO} "		if [ ${SKKJISYO_BASE}/${SKKJISYO} -nt ${SKKJISYO_BASE}/${SKKJISYO}.a ]; then" >> \
+		${ECHO} "			${ECHO} -n ' (updading index cache..)'; " >> \
+		${ECHO} "		fi; " >> ${STARTUP_SCRIPT}; \
+		${ECHO} "		${PREFIX}/libexec/rskkserv" >> \
 			${STARTUP_SCRIPT}; \
 		${ECHO} "	fi" >> ${STARTUP_SCRIPT}; \
 		${ECHO} "	;;" >> ${STARTUP_SCRIPT}; \

@@ -1,5 +1,8 @@
 etc/rc.d/rskkserv.sh
 etc/rskkserv.conf
+etc/rskkserv.conf.sample
+%%RUBY_SITEARCHLIBDIR%%/skkserv/skkdic.so
+@dirrm %%RUBY_SITEARCHLIBDIR%%/skkserv
 %%RUBY_SITELIBDIR%%/skkserv/skkdic.rb
 %%RUBY_SITELIBDIR%%/skkserv/logger.rb
 %%RUBY_SITELIBDIR%%/skkserv/ebdic.rb
