@@ -5,13 +5,13 @@
 # $FreeBSD$
 
 PORTNAME=	nhc98
-PORTVERSION=	1.14
+PORTVERSION=	1.14a
 CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.cs.york.ac.uk/pub/haskell/${PORTNAME}/
 DISTNAME=	${PORTNAME}src-${PORTVERSION}
 DIST_SUBDIR=	nhc98
 
-MAINTAINER=	obraun@informatik.unibw-muenchen.de
+MAINTAINER=	obraun@FreeBSD.org
 
 USE_REINPLACE=	yes
 
