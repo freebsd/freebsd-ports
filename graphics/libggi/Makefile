@@ -6,11 +6,12 @@
 #
 
 PORTNAME=	libggi
-PORTVERSION=	2.0b3
+PORTVERSION=	2.0.3
 CATEGORIES=	graphics devel
-MASTER_SITES=	ftp://ftp.ggi-project.org/pub/ggi/ggi/2_0_beta_3/
+MASTER_SITES=	ftp://ftp.ggi-project.org/pub/ggi/ggi/v2.0/
+DISTNAME=	${PORTNAME}-${PORTVERSION}.src
 
-MAINTAINER=	mwest@uct.ac.za
+MAINTAINER=	giffunip@yahoo.com
 COMMENT=	A flexible drawing library
 
 LIB_DEPENDS=	gii.0:${PORTSDIR}/devel/libgii
@@ -18,57 +19,73 @@ LIB_DEPENDS=	gii.0:${PORTSDIR}/devel/libgii
 USE_BZIP2=	yes
 USE_XLIB=	yes
 INSTALLS_SHLIB=	yes
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-gii=${PREFIX}
+WRKSRC=         ${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-MAN3=		ggiCopyBox.3ggi ggiCrossBlit.3ggi ggiDBGetBuffer.3ggi \
-		ggiDrawBox.3ggi ggiDrawHLine.3ggi ggiDrawLine.3ggi \
-		ggiDrawPixel.3ggi ggiDrawVLine.3ggi ggiEventPoll.3ggi \
-		ggiFillscreen.3ggi ggiFlush.3ggi ggiGetPixelFormat.3ggi \
-		ggiGetc.3ggi ggiInit.3ggi ggiMapColor.3ggi ggiOpen.3ggi \
-		ggiPanic.3ggi ggiParseMode.3ggi \
-		ggiPutc.3ggi ggiResourceAcquire.3ggi \
-		ggiSetColorfulPalette.3ggi ggiSetDisplayFrame.3ggi \
-		ggiSetFlags.3ggi ggiSetGCClipping.3ggi \
-		ggiSetGCForeground.3ggi ggiSetGamma.3ggi \
-		ggiSetGraphMode.3ggi ggiSetMode.3ggi ggiSetOrigin.3ggi \
-		ggiSetPalette.3ggi
-MAN6=		cube3d.6
-MAN7=		libggi.7ggi
-MLINKS=		ggiDBGetBuffer.3ggi ggiDBGetNumBuffers.3ggi \
-		ggiDrawBox.3ggi ggiGetBox.3ggi - ggiPutBox.3ggi \
-		ggiDrawHLine.3ggi ggiGetHLine.3ggi - ggiPutHLine.3ggi \
-		ggiDrawPixel.3ggi ggiGetPixel.3ggi - ggiPutPixel.3ggi \
-		ggiDrawVLine.3ggi ggiGetVLine.3ggi - ggiPutVLine.3ggi \
-		ggiEventPoll.3ggi ggiAddEventMask.3ggi - ggiEventRead.3ggi \
-		- ggiEventSend.3ggi - ggiEventsQueued.3ggi \
-		- ggiGetEventMask.3ggi - ggiJoinInputs.3ggi \
-		- ggiRemoveEventMask.3ggi - ggiSetEventMask.3ggi \
-		ggiFlush.3ggi ggiFlushRegion.3ggi ggiGetc.3ggi ggiKbhit.3ggi \
-		ggiInit.3ggi ggiExit.3ggi \
-		ggiMapColor.3ggi ggiPackColors.3ggi - ggiUnmapPixel.3ggi \
-		- ggiUnpackPixels.3ggi \
-		ggiOpen.3ggi ggiClose.3ggi \
-		ggiParseMode.3ggi ggiFPrintMode.3ggi - ggiPrintMode.3ggi \
-		- ggiSPrintMode.3ggi ggiPutc.3ggi ggiPuts.3ggi \
-		ggiResourceAcquire.3ggi ggiResourceMustAcquire.3ggi \
-		- ggiResourceRelease.3ggi \
-		ggiSetDisplayFrame.3ggi ggiGetDisplayFrame.3ggi \
-		- ggiGetReadFrame.3ggi - ggiGetWriteFrame.3ggi \
-		- ggiSetReadFrame.3ggi - ggiSetWriteFrame.3ggi \
-		ggiSetFlags.3ggi ggiAddFlags.3ggi - ggiGetFlags.3ggi \
-		- ggiRemoveFlags.3ggi \
-		ggiSetGCClipping.3ggi ggiGetGCClipping.3ggi \
-		ggiSetGCForeground.3ggi ggiGetGCBackground.3ggi \
-		- ggiGetGCForeground.3ggi - ggiSetGCBackground.3ggi \
-		ggiSetGamma.3ggi ggiGetGamma.3ggi - ggiGetGammaMap.3ggi \
-		- ggiSetGammaMap.3ggi \
-		ggiSetGraphMode.3ggi ggiCheckGraphMode.3ggi \
-		- ggiCheckSimpleMode.3ggi - ggiCheckTextMode.3ggi \
-		- ggiSetSimpleMode.3ggi - ggiSetTextMode.3ggi \
-		ggiSetMode.3ggi ggiCheckMode.3ggi - ggiGetMode.3ggi \
-		ggiSetOrigin.3ggi ggiGetOrigin.3ggi \
-		ggiSetPalette.3ggi ggiGetPalette.3ggi
+MAN1=		cube3d.1 ggiteleserver.1 monitest.1
+MAN3=		ggiCopyBox.3 ggiCrossBlit.3 ggiDBGetBuffer.3 \
+		ggiDrawBox.3 ggiDrawHLine.3 ggiDrawLine.3 \
+		ggiDrawPixel.3 ggiDrawVLine.3 ggiEventPoll.3 \
+		ggiFillscreen.3 ggiFlush.3 ggiGetPixelFormat.3 \
+		ggiGetc.3 ggiInit.3 ggiMapColor.3 ggiOpen.3 \
+		ggiPanic.3 ggiParseMode.3 \
+		ggiPutc.3 ggiResourceAcquire.3 \
+		ggiSetColorfulPalette.3 ggiSetDisplayFrame.3 \
+		ggiSetFlags.3 ggiSetGCClipping.3 \
+		ggiSetGCForeground.3 ggiSetGamma.3 \
+		ggiSetGraphMode.3 ggiSetMode.3 ggiSetOrigin.3 \
+		ggiSetPalette.3 \
+		ggiDetachInput.3 ggiEventSelect.3 \
+		ggiGammaMax.3 ggiGetCharSize.3 ggiGetInput.3 \
+		ggi_color.3 ggi_coord.3 ggi_directbuffer.3 \
+		ggi_graphtype.3 ggi_mode.3 ggi_pixel.3 \
+		ggi_pixelformat.3 ggi_pixellinearbuffer.3 \
+		ggi_pixelplanarbuffer.3 ggi_samplelinearbuffer.3 \
+		ggi_sampleplanarbuffer.3
+MAN7=		libggi.7 \
+		display-aa.7 display-dga.7 display-directx.7 \
+		display-directxnt.7 display-fbdev.7 display-file.7 \
+		display-glide.7 display-memory.7 display-monotext.7 \
+		display-multi.7 display-palemu.7 display-sub.7 \
+		display-svgalib.7 display-tele.7 display-tile.7 \
+		display-trueemu.7 display-vcsa.7 display-vgl.7 \
+		display-x.7
+MLINKS=		ggiDBGetBuffer.3 ggiDBGetNumBuffers.3 \
+		ggiDrawBox.3 ggiGetBox.3 - ggiPutBox.3 \
+		ggiDrawHLine.3 ggiGetHLine.3 - ggiPutHLine.3 \
+		ggiDrawPixel.3 ggiGetPixel.3 - ggiPutPixel.3 \
+		ggiDrawVLine.3 ggiGetVLine.3 - ggiPutVLine.3 \
+		ggiEventPoll.3 ggiAddEventMask.3 - ggiEventRead.3 \
+		- ggiEventSend.3 - ggiEventsQueued.3 \
+		- ggiGetEventMask.3 - ggiJoinInputs.3 \
+		- ggiRemoveEventMask.3 - ggiSetEventMask.3 \
+		ggiFlush.3 ggiFlushRegion.3 ggiGetc.3 ggiKbhit.3 \
+		ggiInit.3 ggiExit.3 \
+		ggiMapColor.3 ggiPackColors.3 - ggiUnmapPixel.3 \
+		- ggiUnpackPixels.3 \
+		ggiOpen.3 ggiClose.3 \
+		ggiParseMode.3 ggiFPrintMode.3 - ggiPrintMode.3 \
+		- ggiSPrintMode.3 ggiPutc.3 ggiPuts.3 \
+		ggiResourceAcquire.3 ggiResourceMustAcquire.3 \
+		- ggiResourceRelease.3 \
+		ggiSetDisplayFrame.3 ggiGetDisplayFrame.3 \
+		- ggiGetReadFrame.3 - ggiGetWriteFrame.3 \
+		- ggiSetReadFrame.3 - ggiSetWriteFrame.3 \
+		ggiSetFlags.3 ggiAddFlags.3 - ggiGetFlags.3 \
+		- ggiRemoveFlags.3 \
+		ggiSetGCClipping.3 ggiGetGCClipping.3 \
+		ggiSetGCForeground.3 ggiGetGCBackground.3 \
+		- ggiGetGCForeground.3 - ggiSetGCBackground.3 \
+		ggiSetGamma.3ggi ggiGetGamma.3 - ggiGetGammaMap.3 \
+		- ggiSetGammaMap.3 \
+		ggiSetGraphMode.3 ggiCheckGraphMode.3 \
+		- ggiCheckSimpleMode.3 - ggiCheckTextMode.3 \
+		- ggiSetSimpleMode.3 - ggiSetTextMode.3 \
+		ggiSetMode.3 ggiCheckMode.3 - ggiGetMode.3 \
+		ggiSetOrigin.3 ggiGetOrigin.3 \
+		ggiSetPalette.3 ggiGetPalette.3
 
 .include <bsd.port.pre.mk>
 
@@ -88,6 +105,5 @@ PLIST_SUB+=	WITH_SVGALIB="@comment "
 
 post-install:
 	@${CP} ${WRKSRC}/libggi.conf ${PREFIX}/etc/ggi/libggi.conf.dist
-	@${CP} ${WRKSRC}/extensions/misc/libggimisc.conf ${PREFIX}/etc/ggi/libggimisc.conf.dist
 
 .include <bsd.port.post.mk>
