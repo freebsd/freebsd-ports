@@ -4,7 +4,7 @@
 # Date created:			  Sat Feb 28, 1998
 # Whom:				  David O'Brien (obrien@FreeBSD.org)
 #
-# $Id: Makefile,v 1.1.1.1 1998/03/02 10:35:04 obrien Exp $
+# $Id: Makefile,v 1.2 1998/03/03 09:53:37 asami Exp $
 #
 
 DISTNAME=	vp-bro-0.3-alpha
@@ -15,6 +15,7 @@ MASTER_SITES=	ftp://ee.lbl.gov/  \
 
 MAINTAINER=     obrien@NUXI.com
 
+NO_PACKAGE=	libbind.a compiled without optimization
 WRKSRC=		${WRKDIR}/bro-0.3
 CONFIGURE_ARGS= --libdir=${PREFIX}/share
 GNU_CONFIGURE=	yes
