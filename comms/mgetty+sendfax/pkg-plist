@@ -1,21 +1,26 @@
 bin/faxspool
 bin/faxq
 bin/faxrm
-bin/faxrunq 
+bin/faxrunq
 bin/g3cat
 bin/g32pbm
-bin/kvg
 bin/newslock
 bin/mg.echo
 bin/pbm2g3
 etc/mgetty+sendfax/dialin.config
-etc/mgetty+sendfax/login.config
+etc/mgetty+sendfax/faxheader
 etc/mgetty+sendfax/faxrunq.config
+etc/mgetty+sendfax/login.config
+etc/mgetty+sendfax/mgetty.config
+etc/mgetty+sendfax/sendfax.config
+@unexec install-info --delete %D/info/mgetty.info %D/info/dir
 info/mgetty.info
 info/mgetty.info-1
 info/mgetty.info-2
 info/mgetty.info-3
 info/mgetty.info-4
+@exec [ -f %D/info/dir ] || sed -ne '1,/Menu:/p' /usr/share/info/dir > %D/info/dir
+@exec install-info %D/info/mgetty.info %D/info/dir
 lib/mgetty+sendfax/cour25.pbm
 lib/mgetty+sendfax/cour25n.pbm
 man/man1/coverpg.1.gz
@@ -35,8 +40,5 @@ man/man8/callback.8.gz
 sbin/mgetty
 sbin/sendfax
 sbin/faxrunqd
-@cd /var/spool
-@exec mkdir -p %D/fax/incoming
-@exec mkdir -p %D/fax/outgoing
-@exec chmod -R 775 %D/fax
-@unexec rm -r %D/fax
+@dirrm etc/mgetty+sendfax
+@dirrm lib/mgetty+sendfax

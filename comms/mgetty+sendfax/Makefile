@@ -3,17 +3,18 @@
 # Date created:         21 September 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.17 1997/04/05 03:55:58 jmz Exp $
+# $Id: Makefile,v 1.18 1997/04/05 16:41:27 jmz Exp $
 #
 
-DISTNAME=	mgetty-1.0.0
+DISTNAME=	mgetty1.1.9-Aug17
+PKGNAME=	mgetty-1.1.9
 CATEGORIES=	comms
 MASTER_SITES=	ftp://ftp.leo.org/pub/comp/networking/communication/modem/mgetty/
-DISTFILES=	mgetty+sendfax-1.0.0.tar.gz
 
 MAINTAINER=	jmz@FreeBSD.org
 
-MAKE_FLAGS=	prefix=${PREFIX} -f 
+WRKSRC=		${WRKDIR}/mgetty-1.1.9
+MAKE_FLAGS=	prefix=${PREFIX} -f
 MAN1=		coverpg.1 fax.1 faxq.1 faxrm.1 faxrunq.1 faxspool.1 \
 		g3cat.1 g32pbm.1 pbm2g3.1
 MAN4=		mgettydefs.4
