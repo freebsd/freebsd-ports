@@ -4292,7 +4292,7 @@ misc.c:
       <package>
         <name>mozilla</name>
         <range><le>1.7.1,2</le></range>
-        <range><ge>1.8,2</ge><le>1.8.a2,2</le></range>
+        <range><ge>1.8.a,2</ge><le>1.8.a2,2</le></range>
       </package>
       <package>
         <name>mozilla-gtk1</name>
@@ -4301,11 +4301,20 @@ misc.c:
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-        <p>A vulnerability has been reported in Mozilla and Firefox,
-          allowing malicious websites to spoof the user interface.</p>
+	<p>The Mozilla project's family of browsers contain a design
+	  flaw that can allow a website to spoof almost perfectly any
+	  part of the Mozilla user interface, including spoofing web
+	  sites for phishing or internal elements such as the "Master
+	  Password" dialog box.  This achieved by manipulating "chrome"
+	  through remote XUL content.  Recent versions of Mozilla have
+	  been fixed to not allow untrusted documents to utilize
+	  "chrome" in this way.</p>
       </body>
     </description>
     <references>
+      <cvename>CAN-2004-0764</cvename>
+      <url>http://bugzilla.mozilla.org/show_bug.cgi?id=22183</url>
+      <url>http://bugzilla.mozilla.org/show_bug.cgi?id=244965</url>
       <url>http://bugzilla.mozilla.org/show_bug.cgi?id=252198</url>
       <url>http://www.nd.edu/~jsmith30/xul/test/spoof.html</url>
       <url>http://secunia.com/advisories/12188</url>
@@ -4314,7 +4323,7 @@ misc.c:
     <dates>
       <discovery>2004-07-19</discovery>
       <entry>2004-07-30</entry>
-      <modified>2004-08-12</modified>
+      <modified>2004-08-15</modified>
     </dates>
   </vuln>
 
