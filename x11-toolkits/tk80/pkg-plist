@@ -1,5 +1,26 @@
 bin/wish8.0
 include/tk8.0/tk.h
+include/tk8.0/unix/tkUnixDefault.h
+include/tk8.0/unix/tkUnixInt.h
+include/tk8.0/unix/tkUnixPort.h
+include/tk8.0/generic/default.h
+include/tk8.0/generic/ks_names.h
+include/tk8.0/generic/tk.h
+include/tk8.0/generic/tk3d.h
+include/tk8.0/generic/tkButton.h
+include/tk8.0/generic/tkCanvas.h
+include/tk8.0/generic/tkColor.h
+include/tk8.0/generic/tkFileFilter.h
+include/tk8.0/generic/tkFont.h
+include/tk8.0/generic/tkInitScript.h
+include/tk8.0/generic/tkInt.h
+include/tk8.0/generic/tkMenu.h
+include/tk8.0/generic/tkMenubutton.h
+include/tk8.0/generic/tkPort.h
+include/tk8.0/generic/tkScale.h
+include/tk8.0/generic/tkScrollbar.h
+include/tk8.0/generic/tkSelect.h
+include/tk8.0/generic/tkText.h
 man/man1/wish.1.gz
 man/man3/FontId.3.gz
 man/man3/GetFont.3.gz
@@ -228,4 +249,6 @@ lib/libtk80.so.1.0
 @dirrm lib/tk8.0/demos
 @dirrm lib/tk8.0/images
 @dirrm lib/tk8.0
+@dirrm include/tk8.0/unix
+@dirrm include/tk8.0/generic
 @dirrm include/tk8.0
