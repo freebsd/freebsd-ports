@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ftpd-tls
-PORTVERSION=	20030520
+PORTVERSION=	20030924
 CATEGORIES=	ftp security
 MASTER_SITES=	ftp://ftp.zeist.de/pub/distfiles/ \
 		ftp://ftp.runestig.com/pub/ftpd-tls/
