@@ -9,10 +9,6 @@ case $2 in
 	echo "==> Post-installation configuration of ${PKGNAME}"
 	echo ""
 	echo "    o you DO need running nameservice to start and run ${PKGNAME}"
-	echo "    o add the following line to /etc/rc.local to start"
-	echo "      ${PKGNAME} automatically:"
-	echo ""
-	echo "		(cd /tmp; exec ${PREFIX:-/usr/local}/bin/RunCache) &"
 	echo ""
 	echo "    o use the ${PKGNAME} proxy and caching WWW Server by"
 	echo "      configuring your WWW Navigator (Netscape, Mosaic,...)"
@@ -25,12 +21,12 @@ case $2 in
 	echo "    ACTUAL locations of cache \"spool\", logfiles, pidfile!"
 	tput me
 	read skip
-	chown root:wheel ${PREFIX:-/usr/local}/etc/squid.conf*
-	chmod 644 ${PREFIX:-/usr/local}/etc/squid.conf*
-	[ -f ${PREFIX:-/usr/local}/etc/squid.conf ] || \
-		cp -fp	${PREFIX:-/usr/local}/etc/squid.conf.default \
-			${PREFIX:-/usr/local}/etc/squid.conf
-	${EDITOR:-vi} ${PREFIX:-/usr/local}/etc/squid.conf
+	chown root:wheel ${PREFIX:-/usr/local}/etc/squid/squid.conf*
+	chmod 644 ${PREFIX:-/usr/local}/etc/squid/squid.conf*
+	[ -f ${PREFIX:-/usr/local}/etc/squid/squid.conf ] || \
+		cp -fp	${PREFIX:-/usr/local}/etc/squid/squid.conf.default \
+			${PREFIX:-/usr/local}/etc/squid/squid.conf
+	${EDITOR:-vi} ${PREFIX:-/usr/local}/etc/squid/squid.conf
 	;;
     *)
 	echo "Unexpected Argument $2!!!"
