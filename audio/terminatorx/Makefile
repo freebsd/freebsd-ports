@@ -5,69 +5,94 @@
 # $FreeBSD$
 
 PORTNAME=	terminatorx
-PORTVERSION=	3.73
+PORTVERSION=	3.80
 CATEGORIES=	audio
-MASTER_SITES=	http://www.terminatorx.cx/
+MASTER_SITES=	http://www.terminatorx.cx/dist/
 DISTNAME=	terminatorX-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Realtime audio synthesizer that allows you to "scratch" on audio data
 
-LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2
 BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
+LIB_DEPENDS=	audiofile.0:${PORTSDIR}/audio/libaudiofile
 
+USE_BZIP2=	yes
 USE_X_PREFIX=	yes
-USE_GNOME=	gnomehier gnomelibs
-CONFIGURE_ARGS+=	--disable-gtk2
-
-.include <bsd.port.pre.mk>
-
-.if !defined(WITHOUT_SOX)
-BUILD_DEPENDS+=		sox:${PORTSDIR}/audio/sox
-CONFIGURE_ARGS+=	--enable-sox
-.endif
-.if !defined(WITHOUT_VORBIS)
-BUILD_DEPENDS+=		oggenc:${PORTSDIR}/audio/vorbis-tools
-CONFIGURE_ARGS+=	--enable-vorbis
-.endif
-.if !defined(WITHOUT_MAD)
-LIB_DEPENDS+=		mad.1:${PORTSDIR}/audio/mad
-CONFIGURE_ARGS+=	--enable-mad
-.endif
-
-GNU_CONFIGURE=	yes
+USE_GNOME=	gnomehier libxml2 gtk20
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
-CONFIGURE_TARGET=
-CONFIGURE_ARGS+=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
+GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS=	--disable-lrdf --with-docdir="${PREFIX}/share/gnome"
+MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \
+		AUTOHEADER="${TRUE}"
 
 MAN1=	terminatorX.1
 
+.if !defined(WITHOUT_MPG123)
+BUILD_DEPENDS+=	mpg123:${PORTSDIR}/audio/mpg123
+.else
+CONFIGURE_ARGS+=	--disable-mpg123
+.endif
+
+.if !defined(WITHOUT_SOX)
+BUILD_DEPENDS+=	sox:${PORTSDIR}/audio/sox
+.else
+CONFIGURE_ARGS+=	--disable-sox
+.endif
+
+.if !defined(WITHOUT_VORBIS)
+BUILD_DEPENDS+=	oggenc:${PORTSDIR}/audio/vorbis-tools
+LIB_DEPENDS+=	vorbis.2:${PORTSDIR}/audio/libvorbis
+.else
+CONFIGURE_ARGS+=	--disable-vorbis
+.endif
+
+.if !defined(WITHOUT_MAD)
+LIB_DEPENDS+=	mad.1:${PORTSDIR}/audio/mad
+.else
+CONFIGURE_ARGS+=	--disable-mad
+.endif
+
 pre-everything::
+.if !defined(WITHOUT_MPG123)
+	@${ECHO_MSG} "You can disable support for mpg123 by defining WITHOUT_MPG123."
+.endif
+
 .if !defined(WITHOUT_SOX)
 	@${ECHO_MSG} "You can disable support for sox by defining WITHOUT_SOX."
 .endif
+
 .if !defined(WITHOUT_VORBIS)
 	@${ECHO_MSG} "You can disable support for vorbis by defining WITHOUT_VORBIS."
 .endif
+
 .if !defined(WITHOUT_MAD)
 	@${ECHO_MSG} "You can disable support for mad by defining WITHOUT_MAD."
 .endif
 
 post-patch:
-	${REINPLACE_CMD} -e "s,function option_info,option_info," ${WRKSRC}/configure
-	${REINPLACE_CMD} -e "s,malloc.h,stdlib.h," ${WRKSRC}/src/main.cc \
-		${WRKSRC}/src/tX_audiofile.cc ${WRKSRC}/src/tX_flash.c \
-		${WRKSRC}/src/tX_seqpar.cc ${WRKSRC}/src/tX_vtt.cc \
-		${WRKSRC}/src/tX_widget.c
+	@${REINPLACE_CMD} -e \
+		's|function option_info|option_info|g' ${WRKSRC}/configure
+	@${GREP} -lR "malloc\.h" ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} -e \
+		's|malloc\.h|stdlib.h|g'
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/terminatorX ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/terminatorX.1 ${MANPREFIX}/man/man1
-	${INSTALL_DATA} ${WRKSRC}/gnome-support/terminatorX-mime.png ${WRKSRC}/gnome-support/terminatorX-app.png ${PREFIX}/share/gnome/pixmaps
-	${INSTALL_DATA} ${WRKSRC}/gnome-support/terminatorX.mime ${WRKSRC}/gnome-support/terminatorX.keys  ${PREFIX}/share/gnome/mime-info
-	${INSTALL_DATA} ${WRKSRC}/gnome-support/terminatorX.desktop ${PREFIX}/share/gnome/apps/Multimedia/terminatorX.desktop
+.for file in terminatorX-app.png terminatorX-mime.png
+	${INSTALL_DATA} ${WRKSRC}/gnome-support/${file} \
+		${PREFIX}/share/gnome/pixmaps
+.endfor
+.for file in terminatorX.mime terminatorX.keys
+	${INSTALL_DATA} ${WRKSRC}/gnome-support/${file} \
+		${PREFIX}/share/gnome/mime-info
+.endfor
+.for file in terminatorX.desktop
+	${INSTALL_DATA} ${WRKSRC}/gnome-support/${file} \
+		${PREFIX}/share/gnome/apps/Multimedia
+.endfor
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
