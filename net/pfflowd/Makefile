@@ -27,6 +27,10 @@ PLIST_FILES=	sbin/pfflowd \
 IGNORE=		"Only for 5.0 and above"
 .endif
 
+.if ${ARCH} != "i386"
+BROKEN=		"Does not compile on !i386"
+.endif
+
 post-patch:
 	${SED} -e 's|@@PREFIX@@|${PREFIX}|g' < ${FILESDIR}/pfflowd.sh.sample \
 		> ${WRKSRC}/pfflowd.sh.sample
