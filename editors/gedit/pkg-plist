@@ -51,7 +51,7 @@ libdata/bonobo/servers/GNOME_Gedit.server
 libdata/pkgconfig/gedit-%%VERSION%%.pc
 share/gnome/application-registry/gedit.applications
 share/gnome/applications/gedit.desktop
-@exec update-desktop-database > /dev/null || /usr/bin/true
+@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 share/gnome/gedit-2/glade/docinfo.glade2
 share/gnome/gedit-2/glade/gedit-encodings-dialog.glade2
 share/gnome/gedit-2/glade/gedit-preferences.glade2
@@ -250,4 +250,4 @@ share/locale/zh_TW/LC_MESSAGES/gedit.mo
 @dirrm include/gedit-%%VERSION%%/gedit/recent-files
 @dirrm include/gedit-%%VERSION%%/gedit
 @dirrm include/gedit-%%VERSION%%
-@unexec update-desktop-database > /dev/null || /usr/bin/true
+@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true

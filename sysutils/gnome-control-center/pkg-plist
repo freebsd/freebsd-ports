@@ -51,7 +51,7 @@ share/gnome/applications/keybinding.desktop
 share/gnome/applications/keyboard.desktop
 share/gnome/applications/themus-theme-applier.desktop
 share/gnome/applications/window-properties.desktop
-@exec update-desktop-database > /dev/null || /usr/bin/true
+@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 share/gnome/control-center-2.0/icons/display-capplet.png
 share/gnome/control-center-2.0/interfaces/acme.glade
 share/gnome/control-center-2.0/interfaces/apply-font.glade
@@ -198,4 +198,4 @@ share/locale/zu/LC_MESSAGES/control-center-2.0.mo
 @unexec rmdir %D/share/gnome/control-center-2.0/icons 2> /dev/null || true
 @dirrm lib/window-manager-settings
 @dirrm include/gnome-window-settings-2.0
-@unexec update-desktop-database > /dev/null || /usr/bin/true
+@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true

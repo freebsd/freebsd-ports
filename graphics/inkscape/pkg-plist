@@ -7,7 +7,7 @@ lib/inkscape/plugins/libgrid.a
 lib/inkscape/plugins/libgrid.so
 lib/inkscape/plugins/libgrid.so.0
 share/gnome/applications/inkscape.desktop
-@exec update-desktop-database > /dev/null || /usr/bin/true
+@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 share/gnome/inkscape/clipart/README
 share/gnome/inkscape/clipart/README-ribbon.txt
 share/gnome/inkscape/clipart/inkscape.logo.svg
@@ -156,4 +156,4 @@ share/locale/zh_CN/LC_MESSAGES/inkscape.mo
 @dirrm share/gnome/inkscape
 @dirrm lib/inkscape/plugins
 @dirrm lib/inkscape
-@unexec update-desktop-database > /dev/null || /usr/bin/true
+@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true

@@ -55,5 +55,5 @@ share/mime/packages/drivel.xml
 @dirrm share/gnome/drivel/languages
 @dirrm share/gnome/drivel/glade
 @dirrm share/gnome/drivel
-@exec update-mime-database %D/share/mime
-@unexec update-mime-database %D/share/mime
+@exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
+@unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime

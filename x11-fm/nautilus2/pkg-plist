@@ -24,7 +24,7 @@ share/gnome/applications/nautilus-folder-handler.desktop
 share/gnome/applications/nautilus-home.desktop
 share/gnome/applications/nautilus.desktop
 share/gnome/applications/network-scheme.desktop
-@exec update-desktop-database > /dev/null || /usr/bin/true
+@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 share/gnome/nautilus/browser.xml
 share/gnome/nautilus/glade/nautilus-bookmarks-window.glade
 share/gnome/nautilus/glade/nautilus-file-management-properties.glade
@@ -187,4 +187,4 @@ share/locale/zu/LC_MESSAGES/nautilus.mo
 @exec /bin/mkdir -p %D/lib/nautilus/extensions-1.0
 @unexec /bin/rmdir %D/lib/nautilus/extensions-1.0 2>/dev/null || /usr/bin/true
 @unexec /bin/rmdir %D/lib/nautilus 2>/dev/null || /usr/bin/true
-@unexec update-desktop-database > /dev/null || /usr/bin/true
+@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true

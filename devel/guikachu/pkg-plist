@@ -82,5 +82,5 @@ share/mime/text/x-rcp.xml
 @dirrm share/gnome/guikachu/glade
 @dirrm share/gnome/guikachu/fonts
 @dirrm share/gnome/guikachu
-@exec update-mime-database %D/share/mime
-@unexec update-mime-database %D/share/mime
+@exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
+@unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime

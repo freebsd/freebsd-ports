@@ -625,5 +625,5 @@ share/mime/packages/gdesklets.xml
 @dirrm lib/gdesklets/Controls/ArrayBuffer
 @dirrm lib/gdesklets/Controls
 @dirrm lib/gdesklets
-@exec update-mime-database %D/share/mime
-@unexec update-mime-database %D/share/mime
+@exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
+@unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime

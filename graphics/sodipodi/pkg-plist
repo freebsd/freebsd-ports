@@ -2,7 +2,7 @@ bin/sodipodi
 lib/sodipodi/extensions/ill2svg.pl
 lib/sodipodi/modules/libxmleditor.so
 share/gnome/applications/sodipodi.desktop
-@exec update-desktop-database > /dev/null || /usr/bin/true
+@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 share/gnome/pixmaps/sodipodi.png
 share/gnome/sodipodi/about.svg
 share/gnome/sodipodi/add.xpm
@@ -220,4 +220,4 @@ share/locale/zh_CN/LC_MESSAGES/sodipodi.mo
 @dirrm lib/sodipodi/modules
 @dirrm lib/sodipodi/extensions
 @dirrm lib/sodipodi
-@unexec update-desktop-database > /dev/null || /usr/bin/true
+@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true

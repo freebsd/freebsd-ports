@@ -12,7 +12,7 @@ share/gnome/applications/seahorse.desktop
 share/gnome/control-center-2.0/capplets/seahorse-pgp-preferences.desktop
 share/gnome/applications/seahorse-pgp-encrypted.desktop
 share/gnome/applications/seahorse-pgp-signature.desktop
-@exec update-desktop-database > /dev/null || /usr/bin/true
+@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 share/gnome/help/seahorse/C/figures/export.png
 share/gnome/help/seahorse/C/figures/file-manager.png
 share/gnome/help/seahorse/C/figures/generate.png
@@ -94,6 +94,6 @@ share/locale/zh_CN/LC_MESSAGES/seahorse.mo
 @dirrm share/gnome/omf/seahorse
 @dirrm share/gnome/seahorse/glade
 @dirrm share/gnome/seahorse
-@exec update-mime-database %D/share/mime
-@unexec update-mime-database %D/share/mime
-@unexec update-desktop-database > /dev/null || /usr/bin/true
+@exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
+@unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
+@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true

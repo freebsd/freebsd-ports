@@ -3,7 +3,7 @@ libdata/bonobo/servers/GNOME_PDF.server
 libexec/gnome-pdf-viewer
 share/gnome/application-registry/gpdf.applications
 share/gnome/applications/gpdf.desktop
-@exec update-desktop-database > /dev/null || /usr/bin/true
+@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 share/gnome/gnome-2.0/ui/gpdf-control-ui.xml
 share/gnome/gnome-2.0/ui/gpdf-window-ui.xml
 share/gnome/gpdf/glade/gpdf-print-progress-dialog.glade
@@ -107,4 +107,4 @@ share/locale/zh_TW/LC_MESSAGES/gpdf.mo
 @dirrm share/gnome/help/gpdf
 @dirrm share/gnome/gpdf/glade
 @dirrm share/gnome/gpdf
-@unexec update-desktop-database > /dev/null || /usr/bin/true
+@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true

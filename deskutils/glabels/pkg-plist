@@ -10,7 +10,7 @@ lib/libglabels.a
 lib/libglabels.so
 lib/libglabels.so.1
 share/gnome/application-registry/glabels.applications
-@exec update-desktop-database > /dev/null || /usr/bin/true
+@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 share/gnome/applications/glabels.desktop
 share/gnome/glabels/dtd/glabels-2.0.dtd
 share/gnome/glabels/glade/object-editor.glade
@@ -69,6 +69,6 @@ share/mime/packages/glabels.xml
 @dirrm share/gnome/glabels/dtd
 @dirrm share/gnome/glabels
 @dirrm include/libglabels
-@exec update-mime-database %D/share/mime
-@unexec update-mime-database %D/share/mime
-@unexec update-desktop-database > /dev/null || /usr/bin/true
+@exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
+@unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
+@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true

@@ -135,5 +135,5 @@ share/mime/packages/gchemutils.xml
 @dirrm share/gnome/doc/gchemutils
 @dirrm share/gnome/doc
 @unexec rmdir %D/share/mime/chemical 2>/dev/null || true
-@exec update-mime-database %D/share/mime
-@unexec update-mime-database %D/share/mime
+@exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
+@unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
