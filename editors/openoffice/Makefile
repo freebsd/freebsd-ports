@@ -573,6 +573,7 @@ post-install:
 	@${LN} -fs ${PREFIX}/bin/openoffice ${PREFIX}/bin/openoffice-setup
 	@${LN} -fs ${PREFIX}/bin/openoffice ${PREFIX}/bin/openoffice-sfax
 	@${LN} -fs ${PREFIX}/bin/openoffice ${PREFIX}/bin/openoffice-simpress
+	@${LN} -fs ${PREFIX}/bin/openoffice ${PREFIX}/bin/openoffice-smath
 	@${LN} -fs ${PREFIX}/bin/openoffice ${PREFIX}/bin/openoffice-spadmin
 	@${LN} -fs ${PREFIX}/bin/openoffice ${PREFIX}/bin/openoffice-sweb
 	@${LN} -fs ${PREFIX}/bin/openoffice ${PREFIX}/bin/openoffice-swriter
