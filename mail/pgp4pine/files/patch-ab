@@ -1,0 +1,11 @@
+--- configure.orig	Fri Jan 14 21:15:10 2000
++++ configure	Mon Feb 28 23:27:54 2000
+@@ -779,7 +779,7 @@
+ 
+ 
+ 
+-CFLAGS=-O
++#CFLAGS=-O
+ # Extract the first word of "gcc", so it can be a program name with args.
+ set dummy gcc; ac_word=$2
+ echo $ac_n "checking for $ac_word""... $ac_c" 1>&6

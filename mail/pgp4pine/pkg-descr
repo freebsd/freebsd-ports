@@ -1,0 +1,5 @@
+pgp4pine is a filter for the mail reader Pine to allow you to sign and/or
+encrypt your mail with PGP version 2, 5 or 6, or GnuPG. It is also usable
+as a general PGP/GnuPG wrapper for working on files.
+
+WWW: http://pgp4pine.flatline.de/
