@@ -141,4 +141,3 @@ share/sane/xsane/xsane-startimage.pnm
 share/sane/xsane/xsane-style.rc
 @dirrm share/sane/xsane/doc
 @dirrm share/sane/xsane
-@dirrm share/sane
