@@ -3176,6 +3176,7 @@ iroffer		ports/irc/iroffer
 irrtoolset	ports/net-mgmt/irrtoolset
 irsim		ports/cad/irsim
 irssi		ports/irc/irssi
+irssistats	ports/irc/irssistats
 isakmpd		ports/security/isakmpd
 isc-dhcp3-client	ports/net/isc-dhcp3-client
 isc-dhcp3-devel	ports/net/isc-dhcp3-devel
