@@ -16,11 +16,11 @@
 -XCOMM FOR Solaris
 -XCOMM EXTRA_LIBRARIES  = -L/usr/local/lib -L/u/grad/mitnits/lib -lforms -lXpm -lm -lnsl
 +XCOMM FOR FreeBSD
-+EXTRA_LIBRARIES  = -lxforms -lXpm -lm
++EXTRA_LIBRARIES  = -lforms -lXpm -lm
  
  
 -EXTRA_INCLUDES = -I/usr/local/include -I/u/grad/mitnits/lib -I.
-+EXTRA_INCLUDES = -I.
++EXTRA_INCLUDES = -I. -I${INCDIR}/X11
  EXTRA_DEFINES =  -DXBACKDROP_DIR=\"$(XBACKDROP_DIR)\"
  LDLIBS = $(EXTRA_LIBRARIES) $(EXTENSIONLIB) $(XLIB)
  

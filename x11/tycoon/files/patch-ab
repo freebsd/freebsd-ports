@@ -7,7 +7,7 @@
 -EXTRA_LIBRARIES  = -L/usr/local/lib -L/users/matar/interu/segel/mitnits/lib -lXpm
 -EXTRA_INCLUDES  = -I/usr/local/include -I/users/matar/interu/segel/mitnits/lib -I.
 +EXTRA_LIBRARIES  = -lXpm
-+EXTRA_INCLUDES  = -I.
++EXTRA_INCLUDES  = -I. -I${INCDIR}/X11
  EXTRA_DEFINES = -DVERSION=\"$(VERSION)\"
  LDLIBS = $(EXTRA_LIBRARIES) $(XAWLIB) $(XMULIB) \
  	$(XTOOLLIB) $(EXTENSIONLIB) $(XLIB) 

@@ -13,15 +13,18 @@ MASTER_SITE_SUBDIR=	X11/desktop
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	xforms:${PORTSDIR}/x11-toolkits/xforms
+LIB_DEPENDS=	forms.1:${PORTSDIR}/x11-toolkits/xforms
 
-USE_REINPLACE=	yes
 USE_IMAKE=	yes
 USE_XPM=	yes
+USE_REINPLACE=	yes
+REINPLACE_ARGS=	-i ""
 
-post-build:
-	${RM} -f ${WRKSRC}/xbackdrop/backdrops/index~ ;\
+post-patch:
+	${RM} -f ${WRKSRC}/xbackdrop/backdrops/index~
 	${REINPLACE_CMD} -e 's,/usr/lib,${PREFIX}/lib,' \
 		${WRKSRC}/xbackdrop/backdrops/index
+	${FIND} ${WRKSRC} -name '*.c' -type f | ${XARGS} ${REINPLACE_CMD} -e \
+		's,FL_REVISION>=80,FL_REVISION >= 80 || FL_VERSION != 0,g'
 
 .include <bsd.port.mk>
