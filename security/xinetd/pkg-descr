@@ -1,0 +1,44 @@
+Xinetd is a replacement for inetd, the internet services daemon.
+
+Xinetd is not just an inetd replacement. Anybody can use it to
+start servers that don't require privileged ports because xinetd
+does not require that the services in its configuration file be
+listed in /etc/services.
+
+Its configuration file has a different format than inetd's one
+and it understands different signals. However the signal-to-action 
+assignment can be changed.
+
+It is a lot better than inetd. Here are the reasons:
+
+1) It can do access control on all services based on:
+   a. address of remote host
+   b. time of access
+
+2) Access control works on all services, whether multi-threaded or
+   single-threaded and for both the TCP and UDP protocols.  All UDP
+   packets can be checked as well as all TCP connections.
+
+3) It provides hard reconfiguration:
+   a. kills servers for services that are no longer in the configuration file
+   b. kills servers that no longer meet the access control criteria
+
+4) It can prevent denial-of-access attacks by
+   a. placing limits on the number of servers for each service (avoids
+      process table overflows)
+   b. placing an upper bound on the number of processes it will fork
+   c. placing limits on the size of log files it creates
+
+5) Extensive logging abilities:
+   a. for every server started it can log:
+      i) the time when the server was started
+      ii) the remote host address
+      iii) who was the remote user (if the other end runs a RFC-931/RFC-1413
+            server)
+      iv) how long the server was running
+      (i, ii and iii can be logged for failed attempts too).
+   b. for some services, if the access control fails, it can
+      log information about the attempted access (for example,
+      it can log the user name and command for the rsh service)
+
+6) No limit on number of server arguments
