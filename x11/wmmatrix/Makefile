@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wmmatrix
-PORTVERSION= 	0.2
+PORTVERSION=	0.2
 CATEGORIES=	x11 windowmaker
 MASTER_SITES=	http://nis-www.lanl.gov/~mgh/WindowMaker/
 DISTNAME=	wmMatrix-${PORTVERSION}

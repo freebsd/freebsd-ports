@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	aterm
-PORTVERSION= 	0.4.0
+PORTVERSION=	0.4.0
 CATEGORIES=	x11
 MASTER_SITES=	http://download.sourceforge.net/aterm/
 

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xmx
-PORTVERSION= 	1.1
+PORTVERSION=	1.1
 CATEGORIES=	x11
 MASTER_SITES=	ftp://ftp.cs.brown.edu/pub/xmx/
 EXTRACT_SUFX=	.tar.Z

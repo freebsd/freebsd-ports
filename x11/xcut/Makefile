@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xcut
-PORTVERSION= 	0.2
+PORTVERSION=	0.2
 CATEGORIES=	x11
 MASTER_SITES=	http://acsys.anu.edu.au/~tpot/xcut/
 

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	kworldwatch
-PORTVERSION= 	0.6
+PORTVERSION=	0.6
 CATEGORIES=	x11 kde
 MASTER_SITES=	$(MASTER_SITE_KDE)
 MASTER_SITE_SUBDIR= stable/latest/apps/utils

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gmessage
-PORTVERSION= 	0.2
+PORTVERSION=	0.2
 CATEGORIES=	x11
 MASTER_SITES=	http://www.math.uni-goettingen.de/dadler/gmessage/
 

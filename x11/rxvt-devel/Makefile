@@ -9,7 +9,7 @@
 # the same distfile.
 
 PORTNAME=	rxvt-devel
-PORTVERSION= 	2.7.5
+PORTVERSION=	2.7.5
 CATEGORIES=	x11
 MASTER_SITES=	ftp://ftp.rxvt.org/pub/rxvt/ \
 		ftp://mason.primenet.com.au/pub/rxvt/ \

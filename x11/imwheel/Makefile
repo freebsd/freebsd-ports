@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	imwheel
-PORTVERSION= 	0.9.7
+PORTVERSION=	0.9.7
 CATEGORIES=	x11
 MASTER_SITES=	http://jcatki.dhs.org/imwheel/files/
 DISTNAME=	${PKGNAME}.nogpm

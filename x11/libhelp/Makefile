@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libhelp
-PORTVERSION= 	1.8.1
+PORTVERSION=	1.8.1
 CATEGORIES=	x11
 MASTER_SITES=	ftp://ftp.informatik.uni-stuttgart.de/pub/libhelp/
 

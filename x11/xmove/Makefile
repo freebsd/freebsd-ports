@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xmove
-PORTVERSION= 	2.0b2
+PORTVERSION=	2.0b2
 CATEGORIES=	x11
 MASTER_SITES=	ftp://ftp.cs.columbia.edu/pub/xmove/
 DISTNAME=	${PORTNAME}.2.0beta2

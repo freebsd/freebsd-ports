@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	login.app
-PORTVERSION= 	2.0.0.a7
+PORTVERSION=	2.0.0.a7
 CATEGORIES=	x11 windowmaker
 MASTER_SITES=	http://wm.current.nu/files/Login.app/ \
 		http://wm.current.nu/files/Login.app/Themes/

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dxpc
-PORTVERSION= 	3.8.0
+PORTVERSION=	3.8.0
 CATEGORIES=	x11
 MASTER_SITES=	http://www.vigor.nu/dxpc/3.8.0/
 

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	blast
-PORTVERSION= 	1.0
+PORTVERSION=	1.0
 CATEGORIES=	x11
 MASTER_SITES=	ftp://hpux.csc.liv.ac.uk/hpux/X11/Demos/blast-1.0/ \
 		ftp://ftp.univie.ac.at/systems/hpux/hpux/X11/Demos/blast-1.0/ \

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wmbutton
-PORTVERSION= 	0.4
+PORTVERSION=	0.4
 CATEGORIES=	x11 windowmaker
 MASTER_SITES=	http://www.cs.mun.ca/~gstarkes/wmaker/dockapps/files/ \
 		${MASTER_SITE_LOCAL}

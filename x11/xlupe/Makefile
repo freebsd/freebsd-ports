@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xlupe
-PORTVERSION= 	1.0
+PORTVERSION=	1.0
 CATEGORIES=	x11
 MASTER_SITES=	http://www.rostock.zgdv.de/~runge/xlupe/
 
