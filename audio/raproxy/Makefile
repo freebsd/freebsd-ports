@@ -1,32 +1,38 @@
-# Ports collection makefile for:  raproxy
-# Version required:     	  3.0b1
-# Date created:			  Sat May 8, 1999
-# Whom:				  Nick Sayer (nsayer@freebsd.org)
+# New ports collection makefile for:	raproxy
+# Version required:	3.0b1
+# Date created:		January 24, 1999
+# Whom:		mi@aldan.algebra.com
 #
 # $FreeBSD$
 #
 
 DISTNAME=	raproxy3.0b1
 PKGNAME=	raproxy-3.0b1
-CATEGORIES=	security net audio
-#EXTRACT_SUFX=	.tar.gz
+CATEGORIES=	audio net
+MASTER_SITES=	http://docs.real.com/proxykit/
 
-MAINTAINER=     nsayer@freebsd.org
+MAINTAINER=	nsayer@freebsd.org
 
+# Get it through http://www.real.com/firewall/fwdload/index.html
+# if the master site does not exists somehow.
 WRKSRC=		${WRKDIR}/raproxy
+ALL_TARGET=	raproxy
 
-RESTRICTED=	"No redistribution allowed."
+RESTRICTED=	License allows only use in a firewall or with RA products.
 
 MAN8=		raproxy.8
 
-.include <bsd.port.pre.mk>
-
-.if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
-IGNORE='Please fill out the form at http://service.real.com/firewall/index.html and place the sources at ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} then run make again'
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/raproxy ${PREFIX}/libexec
+.if !defined(NO_INSTALL_MANPAGES)
+	${INSTALL_MAN} ${WRKSRC}/raproxy.man ${PREFIX}/man/man8/raproxy.8
 .endif
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/raproxy ${PREFIX}/libexec/raproxy
-	${INSTALL_MAN} ${WRKSRC}/raproxy.man ${PREFIX}/man/man8/raproxy.8
+.if !defined(NOPORTDOCS)
+	-${MKDIR} ${PREFIX}/share/doc/raproxy
+	${INSTALL_DATA} ${WRKSRC}/*.html ${WRKSRC}/*.pdf \
+		${PREFIX}/share/doc/raproxy
+.endif
+	-cat ${PKGDIR}/MESSAGE
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -1,50 +1,7 @@
---- raproxy.c.dist	Thu Dec 19 15:53:23 1996
-+++ raproxy.c	Mon Jul 27 11:09:01 1998
-@@ -668,6 +668,7 @@
- {
- 	int		size;
- 	struct sockaddr_in	addr, info;
-+	int	port;
- 
- 	/* setup bind/listen etc for udp backchannel from server */
- 	if ( (serveraudiofd = socket (AF_INET, SOCK_DGRAM, IPPROTO_UDP)) < 0 ) {
-@@ -675,6 +676,15 @@
- 		syslog(LOG_LVL, "raproxy: can't setup socket: %m");
- 		return(-1);		/* Probably out of sockets */
- 	}
-+#ifdef IP_PORTRANGE
-+	port = IP_PORTRANGE_HIGH;
-+	if ( setsockopt(serveraudiofd, IPPROTO_IP, IP_PORTRANGE, (char *) &port,
-+		sizeof(port)) < 0 ) {
-+		syslog(LOG_LVL, "raproxy: can't setsockopt(): %m");
-+		/* syslog error ? */
-+		return(-1);
-+	}
-+#endif
- 	(void) bzero (&addr, sizeof (addr));
- 	addr.sin_family = AF_INET;
- 	/* 
-@@ -1145,6 +1155,7 @@
- {
- 	struct sockaddr_in	addr, info;
- 	int		size;
-+	int		port;
- 
- 	/*
- 	 * allocate/setup socket/fd/port FROM which we'll
-@@ -1155,6 +1166,15 @@
- 		syslog(LOG_LVL, "raproxy: can't setup socket: %m");
- 		return(-1);		/* Probably out of sockets */
- 	}
-+#ifdef IP_PORTRANGE
-+	port = IP_PORTRANGE_HIGH;
-+	if ( setsockopt(serveraudiofd, IPPROTO_IP, IP_PORTRANGE, (char *) &port,
-+		sizeof(port)) < 0 ) {
-+		syslog(LOG_LVL, "raproxy: can't setsockopt(): %m");
-+		/* syslog error ? */
-+		return(-1);
-+	}
-+#endif
- 	(void) bzero (&addr, sizeof (addr));
- 	addr.sin_family = AF_INET;
- 	addr.sin_port = htons(0);
+--- Makefile.orig	Thu Dec 19 19:12:26 1996
++++ Makefile	Sun Jan 24 02:33:30 1999
+@@ -8,2 +8,2 @@
+-CC=	cc
+-CFLAGS= #-DDEBUG -g
++#CC=	cc
++#CFLAGS= #-DDEBUG -g
