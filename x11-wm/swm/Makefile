@@ -6,18 +6,18 @@
 #
 
 PORTNAME=	swm
-PORTVERSION=	1.2.3
+PORTVERSION=	1.2.4
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://www.informatik.hu-berlin.de/~sperling/prog/
 EXTRACT_SUFX=	-src.tgz
 
 MAINTAINER=	trevor@FreeBSD.org
 
-BINS=		swm swmbg swmswitch
+BINS=		swm swmbg swmpanel swmswitch
 DOCDIR=		share/doc/${PORTNAME}
 DOCS=		AUTHORS COMPILE_PARAMS COPYING ChangeLog LIESMICH README \
-		README.iPaq TODO startswm swm.lsm KNOWN-BUGS swm-de.1x
-EXAMPLES=	startswm.default startswm.gnome startswm.kde
+		README.iPaq swm.lsm KNOWN-BUGS swm-de.1x
+EXAMPLES=	startswm.default startswm.gnome startswm.kde startswm.kde1
 MAN1=		swm.1 swmbg.1
 PLIST=		${WRKDIR}/pkg-plist
 SCRIPTS=	startswm.default
