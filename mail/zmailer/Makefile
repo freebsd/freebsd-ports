@@ -7,6 +7,7 @@
 
 PORTNAME=	zmailer
 PORTVERSION=	2.99.51
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.funet.fi/pub/unix/mail/zmailer/src/
 
