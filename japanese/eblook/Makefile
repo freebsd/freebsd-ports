@@ -7,6 +7,7 @@
 
 PORTNAME=	eblook
 PORTVERSION=	1.6.1
+PORTREVISION=	1
 CATEGORIES=	japanese textproc
 MASTER_SITES=	http://openlab.ring.gr.jp/edict/eblook/dist/
 DIST_SUBDIR=	eb
@@ -14,7 +15,7 @@ DIST_SUBDIR=	eb
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Interactive EB interface command for seraching words in electoric dictionaries
 
-LIB_DEPENDS=	eb.7:${PORTSDIR}/japanese/eb
+LIB_DEPENDS=	eb.9:${PORTSDIR}/japanese/eb
 
 GNU_CONFIGURE=		yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
