@@ -170,19 +170,6 @@ diff -rc2 orig-immserv.c immserv.c
 ! #ifndef __FreeBSD__
   /* routine to put process to sleep */
   int usleep( wait)
-diff -rc2 orig-main.c main.c
-*** orig-main.c	Fri Mar  4 19:01:13 1994
---- main.c	Thu Oct 13 21:16:10 1994
-***************
-*** 162,165 ****
---- 162,168 ----
-  	fclose(stdin);
-  	closeall();
-+ #ifndef SIGCLD
-+ #define SIGCLD SIGCHLD
-+ #endif
-  	signal(SIGCLD,SIG_IGN);
-  	Tcl_DeleteInterp(interp);
 diff -rc2 orig-mcl.c mcl.c
 *** orig-mcl.c	Wed Mar  9 18:51:36 1994
 --- mcl.c	Thu Oct 13 21:17:52 1994
