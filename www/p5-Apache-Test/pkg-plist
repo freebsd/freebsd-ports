@@ -1,0 +1,32 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/Test/.packlist
+%%SITE_PERL%%/Apache/Test.pm
+%%SITE_PERL%%/Apache/Test5005compat.pm
+%%SITE_PERL%%/Apache/TestBuild.pm
+%%SITE_PERL%%/Apache/TestClient.pm
+%%SITE_PERL%%/Apache/TestCommon.pm
+%%SITE_PERL%%/Apache/TestCommonPost.pm
+%%SITE_PERL%%/Apache/TestConfig.pm
+%%SITE_PERL%%/Apache/TestConfigC.pm
+%%SITE_PERL%%/Apache/TestConfigParse.pm
+%%SITE_PERL%%/Apache/TestConfigPerl.pm
+%%SITE_PERL%%/Apache/TestHandler.pm
+%%SITE_PERL%%/Apache/TestHarness.pm
+%%SITE_PERL%%/Apache/TestMM.pm
+%%SITE_PERL%%/Apache/TestPerlDB.pm
+%%SITE_PERL%%/Apache/TestReport.pm
+%%SITE_PERL%%/Apache/TestReportPerl.pm
+%%SITE_PERL%%/Apache/TestRequest.pm
+%%SITE_PERL%%/Apache/TestRun.pm
+%%SITE_PERL%%/Apache/TestRunPerl.pm
+%%SITE_PERL%%/Apache/TestSSLCA.pm
+%%SITE_PERL%%/Apache/TestServer.pm
+%%SITE_PERL%%/Apache/TestSmoke.pm
+%%SITE_PERL%%/Apache/TestSmokePerl.pm
+%%SITE_PERL%%/Apache/TestSort.pm
+%%SITE_PERL%%/Apache/TestTrace.pm
+%%SITE_PERL%%/Apache/TestUtil.pm
+%%SITE_PERL%%/Bundle/ApacheTest.pm
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/Test
+@unexec rmdir %D/%%SITE_PERL%%/Apache 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Bundle 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache 2>/dev/null || true
