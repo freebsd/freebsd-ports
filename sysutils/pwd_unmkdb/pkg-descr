@@ -1,0 +1,8 @@
+pwd_unmkdb is a program to do the opposite of pwd_mkdb(8).  That is, to
+give you a textual master.passwd file from a hashed spwd.db database.
+Useful if you delete or corrupt master.passwd, and don't have an
+up-to-date backup.
+
+WWW: http://www.over-yonder.net/~fullermd/projects/pwd_unmkdb/
+
+- Matthew Fuller <fullermd@over-yonder.net>
