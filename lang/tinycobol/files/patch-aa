@@ -1,38 +1,11 @@
---- configure.orig	Sun Oct 20 04:37:38 2002
-+++ configure	Tue Nov  5 16:23:57 2002
-@@ -952,7 +952,7 @@
- 
- ac_ext=c
- ac_cpp='$CPP $CPPFLAGS'
--ac_compile='$CC -c $CFLAGS $CPPFLAGS conftest.$ac_ext >&5'
-+ac_compile='$CC -c $CFLAGS $CPPFLAGS $LDFLAGS conftest.$ac_ext >&5'
- ac_link='$CC -o conftest$ac_exeext $CFLAGS $CPPFLAGS $LDFLAGS conftest.$ac_ext $LIBS >&5'
- ac_compiler_gnu=$ac_cv_c_compiler_gnu
- 
-@@ -4070,7 +4070,7 @@
-   echo $ECHO_N "(cached) $ECHO_C" >&6
- else
-   ac_check_lib_save_LIBS=$LIBS
--LIBS="-ldb  $LIBS"
-+LIBS="-ldb2  $LIBS"
- cat >conftest.$ac_ext <<_ACEOF
- #line 4075 "configure"
- #include "confdefs.h"
-@@ -4679,7 +4679,7 @@
- #define USE_DB 1
- EOF
- 
--  htg_ld_args_db="-ldb"
-+  htg_ld_args_db="-ldb2"
- fi
- 
- if test "${db_version}" = "123" ; then
-@@ -5229,7 +5229,7 @@
- #
- 
+--- configure.orig	Fri Mar  5 11:33:30 2004
++++ configure	Fri Mar  5 11:33:43 2004
+@@ -698,7 +698,7 @@
+ curses_header='ncurses.h'
+ curses_library='ncurses'
  LIBS="-L/usr/lib $M_LIBS"
 -INCLUDES="-I/usr/include -I../lib -I../"
-+INCLUDES="-I/usr/include -I../lib -I../  -I/usr/local/include"
++INCLUDES="-I/usr/include -I/usr/local/include -I../lib -I../"
  
- # set default directories
- #
+ # Check for executable suffix
+ # Set include and libraries paths
