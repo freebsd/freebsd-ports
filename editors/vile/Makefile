@@ -26,6 +26,7 @@ MAINTAINER=	gj@FreeBSD.org
 
 MAKEFILE=	makefile
 GNU_CONFIGURE=	yes
+USE_PERL5=	yes
 MAN1=		vile.1
 
 .if defined(WITH_ALL)
@@ -36,7 +37,6 @@ WITH_PERL=1
 .if defined(WITH_PERL)
 CONFIGURE_ARGS=	--with-perl
 PLIST=		${PKGDIR}/pkg-plist.perl
-USE_PERL5=	yes
 .endif
 
 .if defined(WITH_FILTERS)
