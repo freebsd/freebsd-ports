@@ -7,18 +7,20 @@
 
 PORTNAME=	tkp4
 PORTVERSION=	1.12
-CATEGORIES=	devel tk83
-MASTER_SITES=	http://www.cuug.ab.ca/~macdonal/tkp4/
+CATEGORIES=	devel tk83 tk84
+MASTER_SITES=	http://www.timshel.ca/tkp4/
 
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Tcl/Tk frontends to Perforce's p4
 
-RUN_DEPENDS=	wish8.3:${PORTSDIR}/x11-toolkits/tk83 \
+RUN_DEPENDS=	wish${TCL_VER}:${PORTSDIR}/x11-toolkits/tk${TCL_DVER} \
 		p4:${PORTSDIR}/devel/perforce
 
 NO_BUILD=	yes
 USE_REINPLACE=	yes
 REINPLACE_ARGS=	-i ""
+TCL_VER=	8.4
+TCL_DVER=	${TCL_VER:S/.//}
 
 do-install:
 	${MKDIR} ${DATADIR}
@@ -31,7 +33,7 @@ do-install:
 .include <bsd.port.pre.mk>
 
 post-patch:
-	${REINPLACE_CMD} -e 's|wish|wish8.3|' ${WRKSRC}/tkp4
+	${REINPLACE_CMD} -e 's|wish|wish${TCL_VER}|' ${WRKSRC}/tkp4
 .if defined(PREFIX) && ${PREFIX} != "/usr/local"
 	${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|g' \
 		`${GREP} -Fl /usr/local ${WRKSRC}/*`
