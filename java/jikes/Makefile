@@ -8,7 +8,7 @@
 PORTNAME=	jikes
 PORTVERSION=	1.12
 CATEGORIES=	java
-MASTER_SITES=	http://oss.software.ibm.com/developerworks/opensource/jikes/project/download/v112/
+MASTER_SITES=	http://oss.software.ibm.com/developerworks/opensource/jikes/project/pub/
 
 MAINTAINER=	archie@freebsd.org
 
