@@ -24,6 +24,7 @@
     SUBDIR += bible_names-fpw
     SUBDIR += binder
     SUBDIR += bookview
+    SUBDIR += bugzilla
     SUBDIR += cal.rb
     SUBDIR += cannadic
     SUBDIR += cdrom2

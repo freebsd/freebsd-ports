@@ -3371,6 +3371,7 @@ ja-balsa	ports/japanese/balsa
 ja-bible_names-fpw	ports/japanese/bible_names-fpw
 ja-binder	ports/japanese/binder
 ja-bookview	ports/japanese/bookview
+ja-bugzilla	ports/japanese/bugzilla
 ja-cal.rb	ports/japanese/cal.rb
 ja-cannadic	ports/japanese/cannadic
 ja-cdrom2	ports/japanese/cdrom2
@@ -10477,9 +10478,9 @@ wxgtk2-contrib-common-devel	ports/x11-toolkits/wxgtk2-contrib-common-devel
 wxgtk2-contrib-devel	ports/x11-toolkits/wxgtk2-contrib-devel
 wxgtk2-devel	ports/x11-toolkits/wxgtk2-devel
 wxgtk2-unicode	ports/x11-toolkits/wxgtk2-unicode
-wxgtk2-unicode-devel	ports/x11-toolkits/wxgtk2-unicode-devel
 wxgtk2-unicode-contrib	ports/x11-toolkits/wxgtk2-unicode-contrib
 wxgtk2-unicode-contrib-devel	ports/x11-toolkits/wxgtk2-unicode-contrib-devel
+wxgtk2-unicode-devel	ports/x11-toolkits/wxgtk2-unicode-devel
 wxgtk2-utils-devel	ports/x11-toolkits/wxgtk2-utils-devel
 wxmozilla	ports/x11-toolkits/wxmozilla
 wy60		ports/comms/wy60
