@@ -10,98 +10,53 @@ include/linphone/uglib.h
 include/ortp/ortp-config.h
 include/ortp/ortp.h
 include/ortp/payloadtype.h
-include/ortp/port_fct.h
 include/ortp/rtcp.h
 include/ortp/rtp.h
-include/ortp/rtpmod.h
 include/ortp/rtpport.h
 include/ortp/rtpsession.h
 include/ortp/rtpsignaltable.h
-include/ortp/rtptimer.h
-include/ortp/scheduler.h
 include/ortp/sessionset.h
 include/ortp/str_utils.h
 include/ortp/telephonyevents.h
-include/osipua/bodycontext.h
-include/osipua/bodyhandler.h
-include/osipua/osipdialog.h
-include/osipua/osipmanager.h
-include/osipua/osipua-config.h
-include/osipua/osipua.h
-include/osipua/regctxt.h
-include/osipua/resolver.h
-include/osipua/sdpcontext.h
-include/osipua/sdphandler.h
-include/osipua/utils.h
 lib/liblinphone.a
 lib/liblinphone.so
-lib/liblinphone.so.0
-lib/liblinphonegnome.a
-lib/liblinphonegnome.so
-lib/liblinphonegnome.so.0
-lib/libmediastreamer.a
-lib/libmediastreamer.so
-lib/libmediastreamer.so.0
-lib/libmsspeex.a
-lib/libmsspeex.so
-lib/libmsspeex.so.0
+lib/liblinphone.so.1
 lib/libortp.a
 lib/libortp.so
-lib/libortp.so.0
-lib/libosipalloc.a
-lib/libosipalloc.so
-lib/libosipalloc.so.0
-lib/libosipua.a
-lib/libosipua.so
-lib/libosipua.so.2
+lib/libortp.so.7
 libdata/pkgconfig/linphone.pc
-%%DOCSDIR%%/mediastreamer/book1.html
-%%DOCSDIR%%/mediastreamer/coreapi.html
-%%DOCSDIR%%/mediastreamer/index.sgml
-%%DOCSDIR%%/mediastreamer/mediastreamer-filters.html
-%%DOCSDIR%%/mediastreamer/mediastreamer-msringplayer.html
-%%DOCSDIR%%/mediastreamer/mediastreamer-mssync.html
-%%DOCSDIR%%/mediastreamer/mediastreamer-running-processing-chains.html
-%%DOCSDIR%%/mediastreamer/msfilterimplementations.html
-%%DOCSDIR%%/mediastreamer/userapi.html
-%%DOCSDIR%%/ortp/book1.html
-%%DOCSDIR%%/ortp/index.sgml
-%%DOCSDIR%%/ortp/ortp-library-management-functions.html
-%%DOCSDIR%%/ortp/ortp-multiplexing-sessions-(in-a-one-thread-design).html
-%%DOCSDIR%%/ortp/ortp-rtp-payloads-and-profiles.html
-%%DOCSDIR%%/ortp/ortp-rtpsession-api.html
-%%DOCSDIR%%/ortp/ortp-telephone-events-(rfc2833)-.html
-%%DOCSDIR%%/ortp/ortpapi.html
-%%DOCSDIR%%/osipua/book1.html
-%%DOCSDIR%%/osipua/index.sgml
-%%DOCSDIR%%/osipua/osipcallleg.html
-%%DOCSDIR%%/osipua/osipua--registrationctxt-api-.html
-%%DOCSDIR%%/osipua/osipua-osipcallleg-private-api.html
-%%DOCSDIR%%/osipua/osipua-osipcallleg-public-api.html
-%%DOCSDIR%%/osipua/osipua-osipua-private-api.html
-%%DOCSDIR%%/osipua/osipua-osipua-public-api.html
-%%DOCSDIR%%/osipua/osipua.html
-%%DOCSDIR%%/osipua/registrationctxt.html
+share/doc/linphone/mediastreamer/book1.html
+share/doc/linphone/mediastreamer/coreapi.html
+share/doc/linphone/mediastreamer/mediastreamer-filters.html
+share/doc/linphone/mediastreamer/mediastreamer-msringplayer.html
+share/doc/linphone/mediastreamer/mediastreamer-mssync.html
+share/doc/linphone/mediastreamer/mediastreamer-running-processing-chains.html
+share/doc/linphone/mediastreamer/msfilterimplementations.html
+share/doc/linphone/mediastreamer/userapi.html
+share/doc/linphone/mediastreamer/index.sgml
 %%DATADIR%%/sounds/hello16000.wav
 %%DATADIR%%/sounds/hello8000.wav
 %%DATADIR%%/sounds/ringback.wav
+%%DATADIR%%/sounds/rings/bigben.wav
 %%DATADIR%%/sounds/rings/oldphone.wav
 %%DATADIR%%/sounds/rings/orig.wav
-share/linphonec/linphonec
+%%DATADIR%%/sounds/rings/rock.wav
+%%DATADIR%%/sounds/rings/sweet.wav
+%%DATADIR%%/sounds/rings/synth.wav
+%%DATADIR%%/sounds/rings/tapping.wav
+%%DATADIR%%/sounds/rings/toy.wav
+share/locale/cs/LC_MESSAGES/linphone.mo
 share/locale/de/LC_MESSAGES/linphone.mo
 share/locale/es/LC_MESSAGES/linphone.mo
 share/locale/fr/LC_MESSAGES/linphone.mo
 share/locale/it/LC_MESSAGES/linphone.mo
 share/locale/ja/LC_MESSAGES/linphone.mo
+share/locale/nl/LC_MESSAGES/linphone.mo
 share/locale/pl/LC_MESSAGES/linphone.mo
-@dirrm share/linphonec
+@dirrm share/doc/linphone/mediastreamer
+@dirrm share/doc/linphone
 @dirrm %%DATADIR%%/sounds/rings
 @dirrm %%DATADIR%%/sounds
 @dirrm %%DATADIR%%
-@dirrm %%DOCSDIR%%/osipua
-@dirrm %%DOCSDIR%%/ortp
-@dirrm %%DOCSDIR%%/mediastreamer
-@dirrm %%DOCSDIR%%
-@dirrm include/linphone
-@dirrm include/osipua
 @dirrm include/ortp
+@dirrm include/linphone

@@ -1,11 +1,13 @@
---- oRTP/configure.orig	Thu Nov 20 19:42:24 2003
-+++ oRTP/configure	Fri Nov 21 11:14:07 2003
-@@ -19430,8 +19430,6 @@
- 			CFLAGS="$CFLAGS +DA2.0W +DS2.0"
- 		fi
- 	fi
--else
--	CFLAGS="-O2 -g -Wall"
+--- oRTP/configure.orig	Wed Mar 23 13:35:19 2005
++++ oRTP/configure	Wed Mar 23 13:41:11 2005
+@@ -20712,10 +20712,6 @@
+ 		posixtimer_interval=20000
  fi
  
- build_scheduler=yes
+-if test "$GCC" = "yes" ; then
+-	CFLAGS="$CFLAGS -Werror"
+-fi
+-
+ 
+ cat >>confdefs.h <<_ACEOF
+ #define POSIXTIMER_INTERVAL $posixtimer_interval

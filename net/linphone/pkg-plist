@@ -3,60 +3,15 @@ libdata/bonobo/servers/GNOME_LinphoneApplet.server
 libexec/linphone_applet
 share/gnome/applications/linphone.desktop
 share/gnome/gnome-2.0/ui/GNOME_LinphoneApplet.xml
-share/gnome/help/linphone/C/docbook.css
-share/gnome/help/linphone/C/index.html
-share/gnome/help/linphone/C/params.html
-share/gnome/help/linphone/C/t1.html
-share/gnome/help/linphone/C/x118.html
-share/gnome/help/linphone/C/x121.html
-share/gnome/help/linphone/C/x137.html
-share/gnome/help/linphone/C/x143.html
-share/gnome/help/linphone/C/x167.html
-share/gnome/help/linphone/C/x172.html
-share/gnome/help/linphone/C/x188.html
-share/gnome/help/linphone/C/x26.html
-share/gnome/help/linphone/C/x36.html
-share/gnome/help/linphone/fr/docbook.css
-share/gnome/help/linphone/fr/params.html
-share/gnome/help/linphone/fr/registering.html
-share/gnome/help/linphone/fr/t1.html
-share/gnome/help/linphone/fr/x116.html
-share/gnome/help/linphone/fr/x134.html
-share/gnome/help/linphone/fr/x140.html
-share/gnome/help/linphone/fr/x164.html
-share/gnome/help/linphone/fr/x170.html
-share/gnome/help/linphone/fr/x188.html
-share/gnome/help/linphone/fr/x24.html
-share/gnome/help/linphone/fr/x34.html
-share/gnome/help/linphone/it/docbook.css
-share/gnome/help/linphone/it/params.html
-share/gnome/help/linphone/it/registering.html
-share/gnome/help/linphone/it/t1.html
-share/gnome/help/linphone/it/x116.html
-share/gnome/help/linphone/it/x134.html
-share/gnome/help/linphone/it/x140.html
-share/gnome/help/linphone/it/x164.html
-share/gnome/help/linphone/it/x170.html
-share/gnome/help/linphone/it/x189.html
-share/gnome/help/linphone/it/x24.html
-share/gnome/help/linphone/it/x34.html
-share/gnome/help/linphone/ja/params.html
-share/gnome/help/linphone/ja/t1.html
-share/gnome/help/linphone/ja/x112.html
-share/gnome/help/linphone/ja/x115.html
-share/gnome/help/linphone/ja/x131.html
-share/gnome/help/linphone/ja/x137.html
-share/gnome/help/linphone/ja/x161.html
-share/gnome/help/linphone/ja/x166.html
-share/gnome/help/linphone/ja/x182.html
-share/gnome/help/linphone/ja/x25.html
-share/gnome/help/linphone/ja/x35.html
 share/gnome/pixmaps/linphone/linphone.png
 share/gnome/pixmaps/linphone/linphone2.png
 share/gnome/pixmaps/linphone/linphone2.xpm
+share/gnome/pixmaps/linphone/sip-away.png
+share/gnome/pixmaps/linphone/sip-bifm.png
+share/gnome/pixmaps/linphone/sip-busy.png
+share/gnome/pixmaps/linphone/sip-closed.png
+share/gnome/pixmaps/linphone/sip-online.png
+share/gnome/pixmaps/linphone/sip-otl.png
+share/gnome/pixmaps/linphone/sip-otp.png
+share/gnome/pixmaps/linphone/sip-wfa.png
 @dirrm share/gnome/pixmaps/linphone
-@dirrm share/gnome/help/linphone/ja
-@dirrm share/gnome/help/linphone/it
-@dirrm share/gnome/help/linphone/fr
-@dirrm share/gnome/help/linphone/C
-@dirrm share/gnome/help/linphone

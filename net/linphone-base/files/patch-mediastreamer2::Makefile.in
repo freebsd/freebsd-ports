@@ -1,0 +1,20 @@
+--- mediastreamer2/Makefile.in.orig	Tue Mar 22 00:53:40 2005
++++ mediastreamer2/Makefile.in	Wed Mar 23 17:53:26 2005
+@@ -53,7 +53,7 @@
+ @BUILD_UGLIB_TRUE@am__DEPENDENCIES_2 =  \
+ @BUILD_UGLIB_TRUE@	$(top_builddir)/support/libuglib.la
+ libmediastreamer2_la_DEPENDENCIES = $(am__DEPENDENCIES_1) \
+-	../gsmlib/libgsm.la ../lpc10-1.5/liblpc10.la \
++	../lpc10-1.5/liblpc10.la \
+ 	../oRTP/src/libortp.la $(am__DEPENDENCIES_1) \
+ 	$(am__DEPENDENCIES_2) $(am__DEPENDENCIES_1) \
+ 	$(am__DEPENDENCIES_1)
+@@ -311,7 +311,7 @@
+ 							msringplayer.c msringplayer.h waveheader.h 
+ 
+ libmediastreamer2_la_LIBADD = $(GLIB_LIBS) \
+-							../gsmlib/libgsm.la \
++							-lgsm \
+ 							../lpc10-1.5/liblpc10.la \
+ 							../oRTP/src/libortp.la \
+ 							$(JACK_LIBS)\

@@ -16,7 +16,7 @@ MASTER_SITES=	${LINPHONE_MASTER_SITES}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A web phone that supports SIP protocol
 
-LIB_DEPENDS=	linphone.0:${PORTSDIR}/net/linphone-base
+LIB_DEPENDS=	linphone.1:${PORTSDIR}/net/linphone-base
 
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomehack gnomeprefix gnomepanel
@@ -24,7 +24,8 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
-CONFIGURE_ARGS=	--disable-ipv6
+CONFIGURE_ARGS=	--disable-ipv6 --disable-gtk-doc \
+		--with-speex=${LOCALBASE} --with-osip=${LOCALBASE}
 MAKE_ENV=	SUBDIRS="pixmaps gnome"
 
 MAN1=		linphone.1
@@ -40,14 +41,5 @@ post-install:
 	${INSTALL_MAN} ${WRKSRC}/share/C/linphone.1 ${MANPREFIX}/man/man1
 	${INSTALL_DATA} ${WRKSRC}/share/linphone.desktop \
 		${PREFIX}/share/gnome/applications
-.for lang in C fr it ja
-	@${MKDIR} ${PREFIX}/share/gnome/help/linphone/${lang}
-	${INSTALL_DATA} ${WRKSRC}/share/${lang}/manual/*.html \
-		${PREFIX}/share/gnome/help/linphone/${lang}
-.endfor
-.for lang in C fr it
-	${INSTALL_DATA} ${WRKSRC}/share/${lang}/manual/*.css \
-		${PREFIX}/share/gnome/help/linphone/${lang}
-.endfor
 
 .include <bsd.port.post.mk>

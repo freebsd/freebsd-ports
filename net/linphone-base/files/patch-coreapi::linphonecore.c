@@ -1,10 +1,12 @@
---- coreapi/linphonecore.c.orig	Fri Nov  7 00:27:42 2003
-+++ coreapi/linphonecore.c	Fri Nov 21 11:59:25 2003
-@@ -33,6 +33,7 @@
- #include <sys/socket.h>
- #include <netinet/in.h>
+--- coreapi/linphonecore.c.orig	Thu Mar 17 01:16:55 2005
++++ coreapi/linphonecore.c	Wed Mar 23 13:17:30 2005
+@@ -34,9 +34,7 @@
  #include <arpa/inet.h>
-+#include <netdb.h>  
+ #include <time.h>
  
- #ifdef INET6  
+-#ifdef INET6  
  #include <netdb.h>  
+-#endif
+ 
+ #include "enum.h"
+ 

@@ -18,16 +18,20 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A web phone that supports SIP protocol
 
 LIB_DEPENDS=	gsm.1:${PORTSDIR}/audio/gsm \
+		jack.0:${PORTSDIR}/audio/jack \
+		samplerate.1:${PORTSDIR}/audio/libsamplerate \
 		speex.3:${PORTSDIR}/audio/speex \
-		osip.9:${PORTSDIR}/net/libosip
+		osip2.3:${PORTSDIR}/net/libosip2
 
 USE_GNOME=	glib20 gnomehack gnometarget intlhack pkgconfig
 USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
+USE_LIBTOOL_VER=	15
+LIBTOOLFILES=	configure oRTP/configure
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
-CONFIGURE_ARGS=	--disable-ipv6 --enable-gnome_ui=no \
-		--with-speex=${LOCALBASE} --with-html-dir=${DOCSDIR}
+CONFIGURE_ARGS=	--disable-ipv6 --disable-gtk-doc --enable-gnome_ui=no \
+		--with-speex=${LOCALBASE} --with-osip=${LOCALBASE} \
+		--with-html-dir=${DOCSDIR}
 INSTALLS_SHLIB=	yes
 
 MAN1=		linphonec.1 sipomatic.1
@@ -47,7 +51,5 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/share/*.wav ${DATADIR}/sounds
 	@${MKDIR} ${DATADIR}/sounds/rings
 	${INSTALL_DATA} ${WRKSRC}/share/rings/*.wav ${DATADIR}/sounds/rings
-	@${MKDIR} ${PREFIX}/share/linphonec
-	${INSTALL_DATA} ${WRKSRC}/share/linphonec ${PREFIX}/share/linphonec
 
 .include <bsd.port.post.mk>

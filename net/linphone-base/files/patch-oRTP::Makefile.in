@@ -1,0 +1,11 @@
+--- oRTP/Makefile.in.orig	Tue Mar 22 00:53:54 2005
++++ oRTP/Makefile.in	Wed Mar 23 18:51:57 2005
+@@ -209,7 +209,7 @@
+ #config.h.in and acconfig.h to avoid a bug in automake that prevent them to be included in the
+ #dist...
+ EXTRA_DIST = oRTP.prj   ortp-config.h.in	TODO pkg.list
+-SUBDIRS = src docs build include
++SUBDIRS = src build include
+ @WITH_EPM_TRUE@PKG_NAME = $(PACKAGE)-$(VERSION)-$(RELEASE)
+ all: ortp-config.h
+ 	$(MAKE) $(AM_MAKEFLAGS) all-recursive
