@@ -1,0 +1,26 @@
+# New ports collection makefile for:	poppler
+# Date created:         03 March 2005
+# Whom:                 marcus@FreeBSD.org
+#
+# $FreeBSD$
+#
+
+PORTNAME=	poppler
+PORTVERSION=	0.1.1
+CATEGORIES=	graphics print
+MASTER_SITES=	http://freedesktop.org/~krh/
+
+MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	A PDF rendering library
+
+LIB_DEPENDS=	cairo.1:${PORTSDIR}/graphics/cairo
+
+USE_X_PREFIX=	yes
+USE_GMAKE=	yes
+USE_LIBTOOL_VER=15
+USE_GNOME=	gnomeprefix gnomehack gtk20
+INSTALLS_SHLIB=	yes
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
+
+.include <bsd.port.mk>

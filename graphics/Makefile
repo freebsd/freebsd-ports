@@ -406,6 +406,7 @@
     SUBDIR += pngquant
     SUBDIR += pngrewrite
     SUBDIR += pngwriter
+    SUBDIR += poppler
     SUBDIR += pornview
     SUBDIR += potrace
     SUBDIR += potracegui
