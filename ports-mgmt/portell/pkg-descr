@@ -1,0 +1,10 @@
+portell is a program that allows FreeBSD users to view the description as 
+givin in its pkg-descr file for a specific port. If you want to know what 
+the program "Foo" is, then you can type "portell foo" and portell will 
+find its pkg-descr file and dump it on your display.  
+
+WWW:	http://www.seekrut.com/rk/portell.html
+AUTHOR:	Ryan Kulla <toxicpulse@sbcglobal.net> 
+
+- Michael L. Hostbaek
+   mich@freebsdcluster.org

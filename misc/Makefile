@@ -260,6 +260,7 @@
     SUBDIR += pinfo
     SUBDIR += pl-sms
     SUBDIR += porteasy
+    SUBDIR += portell
     SUBDIR += projectionlib
     SUBDIR += proxyper
     SUBDIR += py-distutils
