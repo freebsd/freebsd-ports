@@ -9,7 +9,8 @@ PORTNAME=	jakarta-tomcat
 PORTVERSION=	4.0.6
 PORTREVISION=	1
 CATEGORIES=	www java
-MASTER_SITES=	http://distfiles.coredump.cn/
+MASTER_SITES=	http://distfiles.coredump.cn/ \
+		ftp://local-distfiles.freebsd.org.cn/pub/china-ports/liukang/
 
 MAINTAINER=	liukang@bjut.edu.cn
 COMMENT=	Open-source Java web server by Apache, stable 4.0.x branch
