@@ -4,13 +4,14 @@
 # Date created:			  Sat Feb 28, 1998
 # Whom:				  David O'Brien (obrien@FreeBSD.org)
 #
-# $Id: Makefile,v 1.8 1998/12/25 02:14:07 obrien Exp $
+# $Id: Makefile,v 1.9 1999/02/13 20:03:59 obrien Exp $
 #
 
 DISTNAME=	vp-bro-0.5-alpha
 PKGNAME=	bro-0.5a
 CATEGORIES=	security net
-MASTER_SITES=	ftp://ee.lbl.gov/
+#MASTER_SITES=	ftp://ee.lbl.gov/
+#see http://www-nrg.ee.lbl.gov/bro-info.html
 
 MAINTAINER=     obrien@FreeBSD.org
 
@@ -19,7 +20,7 @@ RESTRICTED=	"Author wishes Alpha releases not to be distrubted."
 .include <bsd.port.pre.mk>
 
 .if !exists(${DISTDIR}/vp-bro-0.5-alpha${EXTRACT_SUFX})
-IGNORE='Please contact Vern Paxson <vern@ee.lbl.gov> to obtain the obtain the Bro source.  Put it in ${DISTDIR} as vp-bro-0.5-alpha${EXTRACT_SUFX} and run make again'
+IGNORE=is still in alpha test.  Please contact Vern Paxson <vern@ee.lbl.gov> to obtain the obtain the Bro source.  Put it in ${DISTDIR} as ${DISTFILES} and run make again
 .endif
 
 IS_INTERACTIVE=	"manual fetch"
