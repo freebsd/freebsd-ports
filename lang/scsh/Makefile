@@ -7,7 +7,7 @@
 
 PORTNAME=	scsh
 PORTVERSION=	0.6.2
-CATEGORIES=	shells lang
+CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.scsh.net/pub/scsh/0.6/
 
 MAINTAINER=	alex@FreeBSD.org
