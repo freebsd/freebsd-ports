@@ -13,4 +13,6 @@ MASTERDIR=	${.CURDIR}/../../editors/xemacs-devel-mule
 
 CANNA=		yes
 
+BROKEN=		"Aborts during build"
+
 .include	"${MASTERDIR}/Makefile"
