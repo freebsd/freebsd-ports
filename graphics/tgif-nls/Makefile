@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tgif
-PORTVERSION=	4.1.26
+PORTVERSION=	4.1.34
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://bourbon.cs.umd.edu/pub/tgif/ \
 		ftp://ftp.cs.ucla.edu/pub/tgif/
@@ -46,6 +46,6 @@ post-install:
 		  ${INSTALL_DATA} ${DEMO_FILES} ${TGIFDEMO} ;\
 		  ${INSTALL_DATA} ${READMES} ${TGIFDOC} ;\
 		)
-		(cd ${PREFIX}/bin; ${RM} -f tgif-nls; ${LN} -s tgif tgif-nls )
+		${LN} -fs tgif ${PREFIX}/bin/tgif-nls
 
 .include <bsd.port.mk>
