@@ -1,0 +1,3 @@
+To use manued.el, add to your ~/.emacs the following lines:
+
+(autoload 'manued-minor-mode "manued" "manuscript editing mode" t)

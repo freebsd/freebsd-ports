@@ -1,0 +1,11 @@
+Manued is a method for proofreading of manuscripts. It is media
+independent but especially effective for exchanging electronic text
+via E-mail.
+
+Manued.el is an emacs lisp implementation for supporting manued
+method.
+
+WWW: http://www.mpi-sb.mpg.de/~hitoshi/projects/manued/index.shtml
+
+- Kimura Fuyuki
+fuyuki@mj.0038.net
