@@ -1,27 +1,28 @@
---- gdb/sparcnbsd-tdep.c.orig	Sat Aug 31 20:28:37 2002
-+++ gdb/sparcnbsd-tdep.c	Thu Oct 17 06:30:25 2002
-@@ -37,6 +37,8 @@
- #define REG32_OFFSET_Y		(3 * 4)
- #define REG32_OFFSET_GLOBAL	(4 * 4)
- #define REG32_OFFSET_OUT	(12 * 4)
-+#define REG32_SIZE		(20 * 4)
-+#define FPREG32_SIZE		(33 * 4)
+diff -urN gdb/sparcnbsd-tdep.c.orig gdb/sparcnbsd-tdep.c
+--- gdb/sparcnbsd-tdep.c.orig	Sat Oct 19 17:19:17 2002
++++ gdb/sparcnbsd-tdep.c	Sat Oct 19 17:44:47 2002
+@@ -31,20 +31,6 @@
  
- #define REG64_OFFSET_TSTATE	(0 * 8)
- #define REG64_OFFSET_PC		(1 * 8)
-@@ -44,6 +46,11 @@
- #define REG64_OFFSET_Y		(3 * 8)
- #define REG64_OFFSET_GLOBAL	(4 * 8)
- #define REG64_OFFSET_OUT	(12 * 8)
-+#define REG64_SIZE		(36 * 8)
-+#define FPREG64_SIZE		((64 * 4) \
-+				  + 8  /* fsr */ \
-+				  + 4  /* gsr */ \
-+				  + 4) /* pad */
+ #include "solib-svr4.h"
  
+-#define REG32_OFFSET_PSR	(0 * 4)
+-#define REG32_OFFSET_PC		(1 * 4)
+-#define REG32_OFFSET_NPC	(2 * 4)
+-#define REG32_OFFSET_Y		(3 * 4)
+-#define REG32_OFFSET_GLOBAL	(4 * 4)
+-#define REG32_OFFSET_OUT	(12 * 4)
+-
+-#define REG64_OFFSET_TSTATE	(0 * 8)
+-#define REG64_OFFSET_PC		(1 * 8)
+-#define REG64_OFFSET_NPC	(2 * 8)
+-#define REG64_OFFSET_Y		(3 * 8)
+-#define REG64_OFFSET_GLOBAL	(4 * 8)
+-#define REG64_OFFSET_OUT	(12 * 8)
+-
  void
  sparcnbsd_supply_reg32 (char *regs, int regno)
-@@ -375,16 +382,13 @@
+ {
+@@ -375,16 +361,13 @@
  
    if (gdbarch_ptr_bit (current_gdbarch) == 32)
      {
@@ -42,3 +43,21 @@
      }
  
    switch (which)
+@@ -442,7 +425,7 @@
+ 
+   jb_addr = read_register (O0_REGNUM);
+ 
+-  if (target_read_memory (jb_addr + 12, buf, sizeof (buf)))
++  if (target_read_memory (jb_addr + JB32_OFFSET_PC, buf, sizeof (buf)))
+     return 0;
+ 
+   *pc = extract_address (buf, sizeof (buf));
+@@ -458,7 +441,7 @@
+ 
+   jb_addr = read_register (O0_REGNUM);
+ 
+-  if (target_read_memory (jb_addr + 16, buf, sizeof (buf)))
++  if (target_read_memory (jb_addr + JB64_OFFSET_PC, buf, sizeof (buf)))
+     return 0;
+ 
+   *pc = extract_address (buf, sizeof (buf));
