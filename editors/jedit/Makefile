@@ -6,23 +6,21 @@
 #
 
 PORTNAME=	jedit
-PORTVERSION=	3.2.2
+PORTVERSION=	4.0.0
 CATEGORIES=	editors java
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
-		http://members.nbci.com/romainguy/ \
-		http://members.xoom.com/romainguy/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 _DISTNAME=	${PORTNAME}${PORTVERSION:S/.//g}install
 DISTNAME=	${_DISTNAME:S/0install$/install/}
-DISTFILES=	${DISTNAME}.jar swingall.jar
+EXTRACT_SUFX=	.jar
 EXTRACT_ONLY=	
 
 MAINTAINER=	sobomax@FreeBSD.org
 
 BUILD_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper \
-		${LOCALBASE}/etc/javavms:${PORTSDIR}/java/jre
+		${LOCALBASE}/etc/javavms:${PORTSDIR}/java/jdk13
 RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper \
-		${LOCALBASE}/etc/javavms:${PORTSDIR}/java/jre
+		${LOCALBASE}/etc/javavms:${PORTSDIR}/java/jdk13
 
 USE_XLIB=	yes
 NO_BUILD=	yes
@@ -33,9 +31,8 @@ do-configure:
 
 do-install:
 	@${SED} "s|%%PREFIX%%|${PREFIX}| ; s|%%WRKDIR%%|${WRKDIR}|" ${FILESDIR}/instscript | \
-		${SETENV} CLASSPATH=${DISTDIR}/${DISTNAME}.jar:${DISTDIR}/swingall.jar \
+		${SETENV} CLASSPATH=${DISTDIR}/${DISTNAME}.jar \
 		${LOCALBASE}/bin/javavm installer.Install text
-	@${INSTALL_DATA} ${DISTDIR}/swingall.jar ${PREFIX}/share/java/jedit
 	@${INSTALL_SCRIPT} ${WRKDIR}/jedit.sh ${PREFIX}/bin/jedit
 
 .if defined(PARALLEL_PACKAGE_BUILD)
