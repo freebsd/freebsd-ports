@@ -7,6 +7,7 @@
 
 PORTNAME=	webmin
 PORTVERSION=	0.91
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.webmin.com/webmin/updates/ \
 		http://www.webmin.com/webmin/download/
@@ -51,18 +52,6 @@ post-patch:
 		-e "s@/usr/sbin/postmap@${LOCALBASE}/sbin/postmap@" \
 		${WRKSRC}/postfix/config.sed > ${WRKSRC}/postfix/config
 	@${RM} ${WRKSRC}/postfix/config.sed
-
-	@${CP} ${WRKSRC}/postgresql/config ${WRKSRC}/postgresql/config.sed
-	@${SED}	-e "s@^hba_conf=.*@hba_conf=${LOCALBASE}/pgsql/data/pg_hba.conf@" \
-		-e "s@^login=.*@login=pgsql@" \
-		-e "s@^pid_file=.*@pid_file=${LOCALBASE}/pgsql/data/postmaster.pid@" \
-		-e "s@^start_cmd=.*@start_cmd=${LOCALBASE}/etc/rc.d/010.pgsql.sh start@" \
-		-e "s@^stop_cmd=.*@stop_cmd=${LOCALBASE}/etc/rc.d/010.pgsql.sh stop@" \
-		-e "s@^psql=.*@psql=${LOCALBASE}/bin/psql@" \
-		-e "s@^plib=.*@plib=${LOCALBASE}/lib@" \
-		${WRKSRC}/postgresql/config.sed > ${WRKSRC}/postgresql/config
-
-	@${RM} ${WRKSRC}/postgresql/config.sed
 
 	@${CP} ${WRKSRC}/dhcpd/config-freebsd ${WRKSRC}/dhcpd/config-freebsd.sed
 	@${SED}	-e "s@^dhcpd_conf=.*@dhcpd_conf=${LOCALBASE}/etc/dhcpd.conf@" \
