@@ -1,0 +1,14 @@
+#!/bin/sh
+XFLDNAME="-epson-EPSON"
+if [ "$2" != "DEINSTALL" ]; then
+  exit 0
+fi
+FONTDIR=${PKG_PREFIX}/lib/X11/fonts/TrueType
+cd ${FONTDIR}
+sed -e "/${XFLDNAME}/d" fonts.dir > fonts.dir.tmp
+numfonts=$(echo $(cat fonts.dir.tmp | wc -l) - 1 | bc)
+echo ${numfonts} > fonts.dir
+sed -e 1d fonts.dir.tmp >> fonts.dir
+sed -e "/^${XFLDNAME}/d" fonts.alias > fonts.alias.tmp
+mv -f fonts.alias.tmp fonts.alias
+rm -f fonts.dir.tmp
