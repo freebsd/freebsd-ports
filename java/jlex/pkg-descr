@@ -1,0 +1,8 @@
+The JLex utility is based upon the Lex lexical analyzer generator model.
+JLex takes a specification file similar to that accepted by Lex, then
+creates a Java source file for the corresponding lexical analyzer.
+
+WWW: http://www.cs.princeton.edu/~appel/modern/java/JLex/
+
+- Jake
+jake@checker.org

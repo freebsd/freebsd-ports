@@ -1,0 +1,43 @@
+# New ports collection makefile for:	jlex
+# Version required:	1.2.3
+# Date created:		1 June 1999
+# Whom:			jake@checker.org
+#
+# $Id$
+#
+
+DISTNAME=	Main
+PKGNAME=	jlex-1.2.3
+CATEGORIES=	java
+MASTER_SITES=	http://www.cs.princeton.edu/~appel/modern/java/JLex/Archive/1.2.3/
+EXTRACT_SUFX=	.java
+
+MAINTAINER=	jake@checker.org
+
+BUILD_DEPENDS=	${LOCALBASE}/${JAVADIR}/bin/java:${PORTSDIR}/java/jdk
+
+EXTRACT_ONLY=
+
+JAVADIR=	jdk1.1.8
+JAVAC=		${LOCALBASE}/${JAVADIR}/bin/javac
+
+NO_WRKSUBDIR=	yes
+
+PLIST_SUB=	JAVADIR=${JAVADIR}
+
+do-extract:
+	@${RM} -rf ${WRKDIR}
+	@${MKDIR} ${WRKDIR}
+	@${CP} ${DISTDIR}/Main.java ${WRKDIR}
+
+do-build:
+	@${JAVAC} ${WRKDIR}/Main.java
+
+do-install:
+	@${MKDIR} ${PREFIX}/${JAVADIR}/jlex
+	@${INSTALL_SCRIPT} ${WRKDIR}/*.class ${PREFIX}/${JAVADIR}/jlex
+
+post-install:
+	@${CAT} ${PKGMESSAGE} | ${SED} -e s:/usr/local:${PREFIX}: -e s:jdk1.1.8:${JAVADIR}:
+
+.include <bsd.port.mk>
