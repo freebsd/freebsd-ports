@@ -11,9 +11,9 @@ CATEGORIES=		sysutils
 MASTER_SITES=		http://www.gormand.com.au/peters/tools/graft/
 
 MAINTAINER=		handler@grendel.net
-COMMENT=		Manage symlinks to multiple software packages under a single hierarchy
+COMMENT=		Automatically manage symlinks in a directory hierarchy
 
-USE_PERL5_RUN=		true
+USE_PERL5=		yes
 
 PLIST_FILES=		bin/graft
 
