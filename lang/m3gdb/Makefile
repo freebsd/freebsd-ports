@@ -22,6 +22,10 @@ ONLY_FOR_ARCHS=	i386
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not build"
+.endif
+
 .if ${PORTOBJFORMAT} == "aout"
 BROKEN=		does not support a.out systems
 .endif

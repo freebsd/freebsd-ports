@@ -20,6 +20,12 @@ PATCHFILES=	gdb521_xfree-loadmod.diff
 MAINTAINER=	mp@FreeBSD.org
 COMMENT=	GNU GDB 5.2 developmental snapshot
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not build"
+.endif
+
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-suffix=521
@@ -36,4 +42,4 @@ cklatest:
 	    ftp://mirrors.rcn.net/mirrors/sources.redhat.com/${MASTER_SITE_SUBDIR}/  \
 	    | ${GREP} gdb+dejagnu-
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
