@@ -3,7 +3,7 @@
 # Date created:				18 June 1997
 # Whom:					koshy@india.hp.com
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1997/06/27 18:18:48 jfitz Exp $
 #
 
 DISTNAME=	MHonArc2.1
@@ -12,7 +12,7 @@ CATEGORIES=	www mail
 MASTER_SITES=	http://www.oac.uci.edu/indiv/ehood/tar/ \
 		ftp://hhobel.phl.univie.ac.at/MHonArc/
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	koshy@india.hp.com
 
 INSTALL_TARGET=	install-batch
 
