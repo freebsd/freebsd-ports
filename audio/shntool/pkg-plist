@@ -5,6 +5,7 @@ bin/shnfix
 bin/shninfo
 bin/shnjoin
 bin/shnlen
+bin/shnmd5
 bin/shnsplit
 bin/shnstrip
 bin/shntool
