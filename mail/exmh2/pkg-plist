@@ -2,6 +2,7 @@ bin/exmh
 bin/exmh-async
 bin/exmh-bg
 bin/ftp.expect
+lib/exmh-2.0.2/PgpDecryptExpect
 lib/exmh-2.0.2/addr.tcl
 lib/exmh-2.0.2/aliases.tcl
 lib/exmh-2.0.2/app-defaults
