@@ -12,6 +12,7 @@
     SUBDIR += downloader
     SUBDIR += emirror
     SUBDIR += ftpcopy
+    SUBDIR += ftpcube
     SUBDIR += ftpfind
     SUBDIR += ftplocate
     SUBDIR += ftpmirror
