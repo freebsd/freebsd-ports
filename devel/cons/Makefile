@@ -6,7 +6,7 @@
 # $FreeBSD$
 #
 
-DISTNAME=	cons-1.6b1
+DISTNAME=	cons-${CONSVER}
 CATEGORIES=	devel
 MASTER_SITES=	http://www.dsmit.com/cons/ \
 		http://www.telerama.com/~bgarcia/cons/
@@ -16,9 +16,11 @@ MAINTAINER=	rv@fore.com
 
 RUN_DEPENDS=	${PREFIX}/lib/perl5/site_perl/${PERL_VER}/MD5.pm:${PORTSDIR}/security/p5-MD5
 
+CONSVER=	1.7
+
 USE_PERL5=	yes
 NO_BUILD=	yes
-PLIST_SUB=	CONS_VER=1.6b1
+PLIST_SUB=	CONS_VER=${CONSVER}
 
 MAN1=		cons.1
 DOCS=		CHANGES COPYRIGHT INSTALL MANIFEST README RELEASE cons.html
