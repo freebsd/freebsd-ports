@@ -7,8 +7,8 @@
 
 PORTNAME=	xco
 PORTVERSION=	1.3
+PORTREVISION=	1
 CATEGORIES=	x11
-MASTER_SITES=	ftp://ftp.cs.purdue.edu/pub/bingle/
 DISTNAME=	${PORTNAME}
 
 MAINTAINER=	taoka@FreeBSD.org
