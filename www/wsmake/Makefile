@@ -25,6 +25,12 @@ USE_REINPLACE=	yes
 DISTFILES+=	user-manual-html.tar.gz
 .endif
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} != "i386"
+BROKEN=		"Does not compile on !i386"
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's,void\*,char\*,g' ${WRKSRC}/libwsmake/wsUtil.cpp
 
@@ -44,4 +50,4 @@ post-install:
 	${LN} ${DOCSDIR}/user-manual/book1.html ${DOCSDIR}/user-manual/index.html
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

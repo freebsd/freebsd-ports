@@ -27,8 +27,8 @@ INFO=		yap
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "alpha"
-BROKEN=		"Does not compile on alpha"
+.if ${ARCH} != "i386"
+BROKEN=		"Does not compile on !i386"
 .endif
 
 post-extract:

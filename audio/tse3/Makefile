@@ -26,6 +26,10 @@ MAN3=	tse3.3
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} != "i386"
+BROKEN=		"Does not compile on !i386"
+.endif
+
 pre-everything::
 	@${ECHO_MSG}
 	@${ECHO_MSG} -n "checking for SNDCTL_SEQ_GETTIME in sys/soundcard.h... "

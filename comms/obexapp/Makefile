@@ -32,4 +32,8 @@ IGNORE=		Needs -CURRENT from 20 Jan 2004 or later (sdpd)
 ONLY_FOR_ARCHS=	i386
 .endif
 
+.if ${ARCH} != "i386"
+BROKEN=		"Does not compile on !i386"
+.endif
+
 .include <bsd.port.post.mk>
