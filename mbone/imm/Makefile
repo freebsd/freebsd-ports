@@ -3,7 +3,7 @@
 # Date created:		13 October 1994
 # Whom:			wollman
 #
-# $Id: Makefile,v 1.6 1995/11/27 04:04:59 asami Exp $
+# $Id: Makefile,v 1.7 1996/11/07 12:25:45 asami Exp $
 #
 
 DISTNAME=	imm-3.3
@@ -13,6 +13,7 @@ DISTFILES=	imm.src.tar.Z
 
 LIB_DEPENDS=	tk\\.3\\.:${PORTSDIR}/x11/tk
 
+BROKEN=		yes	# depends on tk-3.6
 WRKSRC=		${WRKDIR}/src
 
 .include <bsd.port.mk>

@@ -1,10 +1,10 @@
-# $Id: Makefile,v 1.1.1.1 1996/11/07 12:09:25 asami Exp $
+# $Id: Makefile,v 1.2 1996/11/10 21:31:12 fenner Exp $
 #
 
-    BROKEN += imm
+    SUBDIR += imm
     SUBDIR += mbone_vcr
     SUBDIR += nte
-    BROKEN += nv
+    SUBDIR += nv
     SUBDIR += rtpmon
     SUBDIR += sdr
     SUBDIR += vat
