@@ -1,19 +1,19 @@
 # New ports collection makefile for:	netscape (navigator only)
-# Version required:     4.06
+# Version required:     4.05
 # Date created:         24 Feb 1997
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.21 1998/08/17 22:46:42 asami Exp $
+# $Id: Makefile,v 1.22 1998/08/24 10:05:39 markm Exp $
 #
 
-DISTNAME=       netscape-navigator-4.06
+DISTNAME=       netscape-navigator-4.05
 CATEGORIES=	www
-MASTER_SITES=   ftp://ftp.netscape.com/pub/communicator/4.06/development/english/unix/freebsd/navigator_standalone/
-DISTFILES=      navigator-v406-export.x86-unknown-freebsd.tar.gz
+MASTER_SITES=   ${MASTER_SITE_LOCAL}
+DISTFILES=      navigator-v405-export.x86-unknown-freebsd.tar.gz
 
 MAINTAINER=     asami@FreeBSD.ORG
 
-WRKSRC=		${WRKDIR}/navigator-v406.x86-unknown-freebsd
+WRKSRC=		${WRKDIR}/navigator-v405.x86-unknown-freebsd
 NO_BUILD=       Yes
 
 NDIR=           ${PREFIX}/lib/netscape
@@ -22,7 +22,7 @@ BINDIR=		${PREFIX}/bin
 .if defined(USE_128BIT) && defined(USA_RESIDENT) && ${USA_RESIDENT} == NO
 MASTER_SITES+=	ftp://ftp.fortify.net/pub/Fortify/ \
 		ftp://ftp.za.freebsd.org/pub/Fortify/
-DISTFILES+=	Fortify-1.2.6-unix-x86.tar.gz
+DISTFILES+=	Fortify-1.2.2-unix.tar.gz
 RESTRICTED=     "Contains strong cryptography"
 .endif
 
@@ -35,17 +35,17 @@ pre-extract:
 do-install:
 	cd ${WRKSRC} && yes "" | \
 	    LC_TIME=C MOZILLA_HOME="${NDIR}" ./ns-install
-	${MV} -f ${NDIR}/netscape ${NDIR}/navigator-4.06.bin
-	${INSTALL_SCRIPT} ${WRKSRC}/netscape ${BINDIR}/navigator-4.06
-	ln -sf navigator-4.06 ${BINDIR}/navigator-4
+	${MV} -f ${NDIR}/netscape ${NDIR}/navigator-4.05.bin
+	${INSTALL_SCRIPT} ${WRKSRC}/netscape ${BINDIR}/navigator-4.05
+	ln -sf navigator-4.05 ${BINDIR}/navigator-4
 	ln -sf navigator-4 ${BINDIR}/netscape
 	if [ ! -f ${NDIR}/mailcap ] ; then \
 	    ${INSTALL_DATA} ${FILESDIR}/mailcap ${NDIR}; \
 	fi
 	${RM} -rf ${NDIR}/movemail-src
 .if defined(USE_128BIT) && defined(USA_RESIDENT) && ${USA_RESIDENT} == NO
-	cd ${WRKDIR}/Fortify-1.2.6-unix-x86 && \
-		(${ECHO} yes ; ${ECHO} no) | ./Fortify.sh ${NDIR}/navigator-4.06.bin
+	cd ${WRKDIR}/Fortify-1.2.2-unix && \
+		(${ECHO} yes ; ${ECHO} no) | ./Fortify.sh ${NDIR}/navigator-4.05.bin
 .endif
 	chown -R bin.bin ${NDIR}
 
