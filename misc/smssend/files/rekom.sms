@@ -1,0 +1,25 @@
+## ReKom provider file - www.rekom.ru ##
+# Version 1.00
+# by Ernest Moshkov <erzy@sc.ru>
+# Error codes :
+#  1 -> Bad input phone number
+#  2 -> Error sending message
+
+NbParams 2
+%Tel : The number should be seven-digital with prefix 7902 (For example 7902xxxxxxx)
+%Message Size=160 Convert : Your message
+
+# Sending message
+GetURL http://www.rekom.ru/sms/
+GO
+PostURL http://www.rekom.ru/sms/
+Referer http://www.rekom.ru/sms/
+PostData number=\%Tel%&mess=\%Message%&count=0&send_ok=O%D4%D0%D2%C1%D7%C9%D4%D8
+
+Search сообщение отправлено
+PrintMsg Message successfully sent
+ElseSearch номер введен неверно
+ErrorMsg 1 Bad input phone number!
+Else
+ErrorMsg 2 Error sending message
+GO

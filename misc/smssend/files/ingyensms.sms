@@ -1,0 +1,26 @@
+## SkySMS provider file - www.ingyensms.hu ##
+# Version 1.02
+# by Elso Andras <ea333@freemail.hu>
+# Error codes :
+#  1 -> Error sending message
+
+NbParams 3
+%Provider : Network number: 88-Vodafone, 89-Pannon GSM, 90-Westel, 91-Westel0660)
+%Tel : Hungarian GSM number, 7 digits, eg. 9123456
+%Message Size=130 Convert : Message
+
+# Get the page
+GetURL http://www.ingyensms.hu/sms2/dyn/sms_public_pages.phone_Q
+GO
+# send the message
+PostURL http://www.ingyensms.hu/sms2/dyn/sms_public_pages.phone_A
+Referer http://www.ingyensms.hu/sms2/dyn/sms_public_pages.phone_Q
+PostData p_id=\%Provider%&p_phone=\%Tel%&p_msg=\%Message%&p_response_rq=false
+
+# Search for errors
+Search elküld
+PrintMsg Message successfully sent.
+Else
+ErrorMsg 1 Error sending message.
+GO
+
