@@ -3,7 +3,7 @@
 # Date created:		02 January 1997
 # Whom:			Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.5 1998/06/17 07:17:40 tg Exp $
+# $Id: Makefile,v 1.6 1998/09/28 02:18:41 steve Exp $
 #
 
 DISTNAME=	xgammon-0.98
@@ -14,6 +14,8 @@ EXTRACT_SUFX=	-11.src.rpm
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	tg@FreeBSD.ORG
+
+BROKEN_ELF=	depends on rpm
 
 BUILD_DEPENDS=	rpm2cpio:${PORTSDIR}/misc/rpm
 
