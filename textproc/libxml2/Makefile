@@ -7,6 +7,7 @@
 
 PORTNAME=	libxml2
 PORTVERSION=	2.6.2
+PORTREVISION=	1
 CATEGORIES=	textproc gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/2.6
@@ -78,5 +79,11 @@ pre-everything::
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 		${WRKSRC}/catalog.c ${WRKSRC}/xmlcatalog.c
+
+.if !defined(WITHOUT_PYTHON)
+post-install:
+	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py -l ${PYTHON_SITELIBDIR}
+	@${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py -l ${PYTHON_SITELIBDIR}
+.endif
 
 .include <bsd.port.mk>

@@ -48,7 +48,11 @@ lib/libxml2.a
 lib/libxml2.so
 lib/libxml2.so.5
 %%PYTHON:%%lib/%%PYTHON_VERSION%%/site-packages/drv_libxml2.py
+%%PYTHON:%%lib/%%PYTHON_VERSION%%/site-packages/drv_libxml2.pyc
+%%PYTHON:%%lib/%%PYTHON_VERSION%%/site-packages/drv_libxml2.pyo
 %%PYTHON:%%lib/%%PYTHON_VERSION%%/site-packages/libxml2.py
+%%PYTHON:%%lib/%%PYTHON_VERSION%%/site-packages/libxml2.pyc
+%%PYTHON:%%lib/%%PYTHON_VERSION%%/site-packages/libxml2.pyo
 %%PYTHON:%%lib/%%PYTHON_VERSION%%/site-packages/libxml2mod.so
 libdata/pkgconfig/libxml-2.0.pc
 share/aclocal/libxml.m4
