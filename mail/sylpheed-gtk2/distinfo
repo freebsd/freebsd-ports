@@ -1,2 +1,4 @@
 MD5 (sylpheed-0.9.12-gtk2-20040918.tar.gz) = 6bc29742ae661f08916b648b6cb59250
 SIZE (sylpheed-0.9.12-gtk2-20040918.tar.gz) = 3377968
+MD5 (sylpheed-0.9.12-gtk2-20040918-summary_search_fix.diff.gz) = f5b75703cb3f424c475e8a084c2addda
+SIZE (sylpheed-0.9.12-gtk2-20040918-summary_search_fix.diff.gz) = 838
