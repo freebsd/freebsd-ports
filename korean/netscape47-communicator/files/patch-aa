@@ -1,6 +1,6 @@
---- n	Sun Oct 25 19:04:57 1998
-+++ Netscape.ad-ko	Sun Oct 25 19:05:53 1998
-@@ -83,7 +83,7 @@
+--- Netscape.ad-ko.orig	Sun May 14 20:20:28 2000
++++ Netscape.ad-ko	Sun Jun 25 21:18:27 2000
+@@ -96,7 +96,7 @@
  
  ! This is the directory where Netscape finds external files such as icons.
  !
@@ -9,12 +9,12 @@
  
  ! This resource is the same as the -visual command line option, which selects
  ! an X visual on which the windows should be created.  Legal options are:
-@@ -2932,6 +2932,8 @@
- *openURLDialog*browserToggle.set:		True
- *openURLDialog*XmTextField.columns:		45
- !*openURLDialog.width:				500
-+!*openURLDialog*XmTextField.fontList:\
-+!-adobe-courier-medium-r-*-*-*-120-*-*-*-*-iso8859-*
+@@ -15257,7 +15257,7 @@
+ ! Linux/FreeBSD: set inputMethod to your favorite input method
+ !*inputMethod: hanIM
+ !*inputMethod: Ami
+-*preeditType: overthespot
++!*preeditType: overthespot
+ !*Netscape.preeditType: overthespot
  
- 
- 
+ ! For preventing hangup in Save as...
