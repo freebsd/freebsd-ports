@@ -17,7 +17,7 @@
 # OpenBSD and NetBSD will be accepted.
 #
 # $FreeBSD$
-# $Id: portlint.pl,v 1.49 2004/06/06 17:02:32 marcus Exp $
+# $Id: portlint.pl,v 1.51 2004/06/15 06:23:42 marcus Exp $
 #
 
 use vars qw/ $opt_a $opt_A $opt_b $opt_C $opt_c $opt_h $opt_t $opt_v $opt_M $opt_N $opt_B $opt_V /;
@@ -40,7 +40,7 @@ $portdir = '.';
 # version variables
 my $major = 2;
 my $minor = 6;
-my $micro = 4;
+my $micro = 5;
 
 sub l { '[{(]'; }
 sub r { '[)}]'; }
@@ -289,7 +289,7 @@ foreach my $i (@checker) {
 	} else {
 		my $proc = $checker{$i};
 		&$proc($i) || &perror("Cannot open the file $i\n");
-		if ($proc ne 'checkpatch') {
+		if ($proc ne \&checkpatch) {
 			&checklastline($i)
 				|| &perror("Cannot open the file $i\n");
 		}
@@ -662,10 +662,16 @@ sub checkplist {
 		}
 
 		if ($_ =~ /\.la$/ && $makevar{USE_LIBTOOL_VER} eq '') {
-				&perror("WARN: $file [$.]: installing libtool archives, ".
+			&perror("WARN: $file [$.]: installing libtool archives, ".
 				"please use USE_LIBTOOL_VER in Makefile if possible.  ".
 				"See http://www.FreeBSD.org/gnome/docs/portlint.html ".
 				"for a way to completely eliminate .la files.");
+		}
+
+		if ($_ =~ m|^lib/pkgconfig/[^\.]+.pc$|) {
+			&perror("FATAL: $file [$.]: installing pkg-config files into ".
+				"lib/pkgconfig.  All pkg-config files must be installed ".
+				"into libdata/pkgconfig for them to be found by pkg-config.");
 		}
 
 		if ($_ =~ m|^lib/lib[^\/]+\.so(\.\d+)?$| &&
