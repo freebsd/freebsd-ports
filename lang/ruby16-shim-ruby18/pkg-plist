@@ -15,6 +15,7 @@
 %%RUBY_SITELIBDIR%%/features/ruby18/marshal.rb
 %%RUBY_SITELIBDIR%%/features/ruby18/module.rb
 %%RUBY_SITELIBDIR%%/features/ruby18/numeric.rb
+%%RUBY_SITELIBDIR%%/features/ruby18/object.rb
 %%RUBY_SITELIBDIR%%/features/ruby18/proc.rb
 %%RUBY_SITELIBDIR%%/features/ruby18/process.rb
 %%RUBY_SITELIBDIR%%/features/ruby18/range.rb
