@@ -1,19 +1,11 @@
---- rio107/makefile.orig	Fri Feb 18 11:16:16 2000
-+++ rio107/makefile	Fri Feb 18 11:17:15 2000
-@@ -6,10 +6,15 @@
- #
- ###############################################################################
- 
-+.if ${MACHINE_ARCH} == "alpha"
-+LDADD=	-lio
-+.endif
-+CXXFLAGS?=	-O1
-+
- all: 		rio
- 
- rio:		app.cpp rio.cpp
--		g++ -O1 -o rio app.cpp rio.cpp
-+		${CXX} ${CXXFLAGS} -o rio app.cpp rio.cpp ${LDADD}
- 		chmod +s rio
- 
- clean:
+--- krio/KRioListView.cpp.orig	Fri Feb 18 23:15:00 2000
++++ krio/KRioListView.cpp	Fri Feb 18 23:15:37 2000
+@@ -479,7 +479,7 @@
+ {
+         static char szBuf[ 64 ];
+         struct tm* psDateTime;
+-        psDateTime = localtime( &lValue );
++        psDateTime = localtime( (time_t *)&lValue );
+         if ( !psDateTime )
+                 strcpy( szBuf, "INVALID DATE/TIME" );
+         else

@@ -1,4 +1,9 @@
 bin/krio
-share/applnk/Utilities/krio.kdelnk
-share/icons/krio.xpm
-share/icons/mini/krio.xpm
+share/applnk/Multimedia/krio.kdelnk
+share/doc/HTML/en/krio/index.html
+share/doc/HTML/en/krio/index-1.html
+share/doc/HTML/en/krio/index-2.html
+share/doc/HTML/en/krio/index-3.html
+share/doc/HTML/en/krio/index-4.html
+share/locale/de/LC_MESSAGES/krio.mo
+@dirrm share/doc/HTML/en/krio

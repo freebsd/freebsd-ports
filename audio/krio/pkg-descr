@@ -18,7 +18,7 @@ KRio accesses the hardware directly, therefore it needs to be run as root.
 You also need to know your parallel port's address - standard port addresses
 on PCs are 0x378, 0x3BC and 0x278. 
 
-WWW: http://kyle.13th-floor.org/2.0/krio/index.html
+WWW: http://krio.sourceforge.net/index.php
 
 - Alex
 ak@freenet.co.uk

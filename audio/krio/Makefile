@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	krio
-PORTVERSION=	1999.07.21
+PORTVERSION=	1.0.1
+PORTEPOCH=	1
 CATEGORIES=	audio kde
-MASTER_SITES=	ftp://ftp.13th-floor.org/pub/krio/
-DISTNAME=	Krio-19990721
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=     ${PORTNAME}
 
 MAINTAINER=	ak@freenet.co.uk
 
@@ -17,16 +18,13 @@ LIB_DEPENDS=	kdecore.3:${PORTSDIR}/x11/kdelibs11 \
 		kdeui.3:${PORTSDIR}/x11/kdelibs11 \
 		kfm.3:${PORTSDIR}/x11/kdelibs11 \
 		kfile.3:${PORTSDIR}/x11/kdelibs11
+RUN_DEPENDS=	kdehelp:${PORTSDIR}/x11/kdebase11
 
 USE_QT=		yes
-
-WRKSRC=		${WRKDIR}/Krio
-
-do-install:
-		${MKDIR} ${PREFIX}/share/icons/mini ${PREFIX}/share/applnk/Utilities
-		${INSTALL_PROGRAM} ${WRKSRC}/krio ${PREFIX}/bin/krio
-		${INSTALL_DATA} ${WRKSRC}/icons/krio.xpm ${PREFIX}/share/icons/krio.xpm
-		${INSTALL_DATA} ${WRKSRC}/icons/mini/mini-krio.xpm ${PREFIX}/share/icons/mini/krio.xpm
-		${INSTALL_DATA} ${WRKSRC}/Krio.kdelnk ${PREFIX}/share/applnk/Utilities/krio.kdelnk
+HAS_CONFIGURE=	yes
+CONFIGURE_ARGS=	"--prefix=$(PREFIX)" \
+		"--with-qt-includes=${QTDIR}/include/X11/qt" \
+		"--with-extra-includes=${LOCALBASE}/include" \
+		"--with-extra-libs=${LOCALBASE}/lib"
 
 .include <bsd.port.mk>
