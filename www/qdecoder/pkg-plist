@@ -13,6 +13,7 @@ share/doc/qDecoder/qDecoder.jpg
 @dirrm share/doc/qDecoder
 share/examples/qDecoder/Makefile
 share/examples/qDecoder/arglist.c
+share/examples/qDecoder/download.c
 share/examples/qDecoder/examples.html
 share/examples/qDecoder/fetch.c
 share/examples/qDecoder/multivalue.c
