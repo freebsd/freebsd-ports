@@ -171,7 +171,6 @@
     SUBDIR += kde3-i18n-vi
     SUBDIR += kde3-i18n-xh
     SUBDIR += kde3-i18n-zu
-    SUBDIR += kdeaddons
     SUBDIR += kdeaddons3
     SUBDIR += kdeedu3
     SUBDIR += kdeutils3
