@@ -3,8 +3,10 @@
 # Date created:         Fri Oct 17 13:36:00 CDT 1997
 # Whom:                 hetzels@westbend.net
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/05/29 04:46:49 mph Exp $
 #
+
+BROKEN=		awaiting upgrade after repository copy
 
 DISTNAME=	apache_1.2.6
 PKGNAME=	apache_fp-1.2.6
