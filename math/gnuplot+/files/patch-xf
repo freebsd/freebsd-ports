@@ -1,0 +1,15 @@
+# contour-clipping.991202
+--- contour.c.ORIG	Thu Dec  2 15:15:03 1999
++++ contour.c	Thu Dec  2 15:13:53 1999
+@@ -727,7 +727,11 @@
+ {
+     struct edge_struct *pe_temp = NULL;
+ 
++#if 1
++    if (point0->type == INRANGE && point1->type == INRANGE) {
++#else
+     if (point0->type != UNDEFINED && point1->type != UNDEFINED) {
++#endif
+ 
+ 	pe_temp = (struct edge_struct *)
+ 	    gp_alloc((unsigned long) sizeof(struct edge_struct), "contour edge");

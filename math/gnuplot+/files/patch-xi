@@ -1,0 +1,2118 @@
+# hpgl.diff
+--- term/hpgl.trm.ORIG	Mon Dec 14 18:39:49 1998
++++ term/hpgl.trm	Fri Dec  3 18:32:34 1999
+@@ -35,7 +35,7 @@
+ ]*/
+ 
+ /*
+- * This file is included by ../term.c.
++ * This file is included by ../term.h.
+  *
+  * This terminal driver supports:
+  *  hpgl, hp7550, hp7580b, HP Laserjet III
+@@ -57,6 +57,17 @@
+  * Modified October 1995 Ian MacPhedran to simplify HPGL terminals
+  * Modified January 96 by David Denholm and Emmanuel Bigler for cp850
+  *                               and iso international character sets
++ * Modified February 99 by Jeremy Brenes to give PCL5 terminal optional
++ * multi-pen support (6 pen default), a default 34" plotting width for
++ * use with large color plotters such as the HP Designjet 750C,
++ * various alternative plot sizes, and variable fontsizes;
++ * Also decreased the HPGL terminal's fixed fontsize to make it more
++ * reasonable when plots get scaled to 34"
++ * Modified July 99 by Jeremy Brenes to make extended plot area smaller;
++ * added solid/dashed lines option, additional font types, mixed fonts
++ * Modified November 99 by Jeremy Brenes to add a postscript pointtypes
++ * option, special purpose negative pointtypes, and a pointsize function
++ *
+  */
+ #define HPGL
+ #define PCL
+@@ -96,13 +107,19 @@
+ /* TERM_PUBLIC void HPGL2_reset __PROTO((void)); */
+ TERM_PUBLIC void PCL_reset __PROTO((void));
+ TERM_PUBLIC int HPGL2_justify_text __PROTO((enum JUSTIFY just));
++TERM_PUBLIC int HPGL2_set_font __PROTO((char *font));
++TERM_PUBLIC void HPGL2_point __PROTO((unsigned int x, unsigned int y, int number));
++TERM_PUBLIC void HPGL2_neg_point __PROTO((unsigned int x, unsigned int y, int number));
++TERM_PUBLIC void HPGL2_pointsize __PROTO((double size));
+ #define GOT_HPGL_PROTO
+ #endif /* TERM_PROTO */
+ 
+ #ifndef TERM_PROTO_ONLY
+ #ifdef TERM_BODY
+ /*
+- * The maximum plot size, in plotter units:
++ * The maximum plot size, in plotter units.
++ * Note that the actual size of larger plots may be limited by
++ * available printer memory.
+  */
+ 
+ #define HPGL_PUPI	1016	/* Plotter units per inch */
+@@ -110,14 +127,20 @@
+ #define HPGL_XMAX_A	10000
+ #define HPGL_YMAX_A	7500
+ 
+-#define HPGL_XMAX_B	15200
+-#define HPGL_YMAX_B	10000
++#define HPGL_XMAX_B	13000
++#define HPGL_YMAX_B	7500
++
++#define HPGL_XMAX_C	45333
++#define HPGL_YMAX_C	34000
++
++#define HPGL_XMAX_D	52000
++#define HPGL_YMAX_D	34000
+ 
+ #define HPGL_XMAX	HPGL_XMAX_A
+ #define HPGL_YMAX	HPGL_YMAX_A
+ 
+-#define PCL_XMAX	HPGL_XMAX_A
+-#define PCL_YMAX	(HPGL_YMAX_A-60)
++#define PCL_XMAX	HPGL_XMAX_C
++#define PCL_YMAX	(HPGL_YMAX_C-60)
+ 
+ /*
+  * Tic sizes
+@@ -126,27 +149,40 @@
+ #define HPGL_VTIC	(HPGL_YMAX/70)
+ #define HPGL_HTIC	(HPGL_YMAX/70)
+ 
+-#define PCL_VTIC	(PCL_YMAX/70)
+-#define PCL_HTIC	(PCL_YMAX/70)
++#define PCL_VTIC	((HPGL_YMAX_C-60)/320)
++#define PCL_HTIC	((HPGL_YMAX_C-60)/320)
+ 
+ /*
+  * Font size for HPGL
+  */
+ 
+-#define HPGL_VCHAR	(HPGL_YMAX/100*32/10)	/* 3.2% */
+-#define HPGL_HCHAR	(HPGL_XMAX/100*12/10)	/* 1.2% */
++#define HPGL_VCHAR	(HPGL_YMAX/100*8/10)	/* 0.8% */
++#define HPGL_HCHAR	(HPGL_XMAX/100*3/10)	/* 0.3% */
+ 
+ /*
+  * Font size for HPGL/2
+  */
+ 
+-#define HPGL2_DEF_POINT	14	/* Height of font */
++#define HPGL2_DEF_POINT	12	/* Height of font */
+ 
+ #define HPGL2_DEF_PITCH	(3 * 72 / (HPGL2_DEF_POINT * 2))
+ #define HPGL2_VCHAR	((int) HPGL_PUPI * HPGL2_DEF_POINT / 72)
+ #define HPGL2_HCHAR	(HPGL2_VCHAR * 2 / 3)
+ 
+ /*
++ * Point size for HPGL/2
++ */
++
++static double HPGL2_psize = 1.0;	/* Default point size */
++
++/*
++ * Number of available pointtypes for HPGL/2
++ */
++
++#define  HPGL2_NUM_NOPSPOINTS 6;	/* for nopspoints option */
++#define  HPGL2_NUM_PSPOINTS 75;	/* for pspoints option */
++
++/*
+  * Control constants
+  */
+ 
+@@ -196,15 +232,27 @@
+ 
+ /*
+  * The default font goes first.  Although it is the ugliest,  the
+- * stick font is probably supported by the most devices, so it
+- * becomes the default.
++ * stick font is probably supported by the most devices.
+  */
+ 
+-static struct HPGL2_font_str GPFAR HPGL2_font_table[] =
+-{
++static struct HPGL2_font_str GPFAR HPGL2_font_table[] = {
+     {"u$nivers", "univers", 277, 1, 0.0, HPGL2_DEF_POINT, 0, 0, 4148},
+     {"s$tick", "stick", 277, 0, HPGL2_DEF_PITCH, 0.0, 0, 0, 48},
+-    {"c$g_times", "cg_times", 277, 1, 0.0, HPGL2_DEF_POINT, 0, 0, 4101}
++    {"cg_t$imes", "cg_times", 277, 1, 0.0, HPGL2_DEF_POINT, 0, 0, 4101},
++    {"z$apf_dingbats", "zapf_dingbats", 364, 1, 0.0, HPGL2_DEF_POINT, 0, 0, 4141},
++    {"an$tique_olive", "antique_olive", 277, 1, 0.0, HPGL2_DEF_POINT, 0, 0, 4168},
++    {"ar$ial", "arial", 277, 1, 0.0, HPGL2_DEF_POINT, 0, 0, 16602},
++    {"cou$rier", "courier", 277, 1, 0.0, HPGL2_DEF_POINT, 0, 0, 4099},
++    {"g$aramond_antigua", "garamond_antigua", 277, 1, 0.0, HPGL2_DEF_POINT, 0, 0, 4197},
++    {"l$etter_gothic", "letter_gothic", 277, 1, 0.0, HPGL2_DEF_POINT, 0, 0, 4102},
++    {"cg_o$mega", "cg_omega", 277, 1, 0.0, HPGL2_DEF_POINT, 0, 0, 4113},
++    {"al$bertus", "albertus", 277, 1, 0.0, HPGL2_DEF_POINT, 0, 1, 4362},
++    {"ti$mes_new_roman", "times_new_roman", 277, 1, 0.0, HPGL2_DEF_POINT, 0, 0, 16901},
++    {"cl$arendon", "clarendon", 277, 1, 0.0, HPGL2_DEF_POINT, 4, 3, 4140},
++    {"cor$onet", "coronet", 277, 1, 0.0, HPGL2_DEF_POINT, 1, 0, 4116},
++    {"m$arigold", "marigold", 277, 1, 0.0, HPGL2_DEF_POINT, 0, 0, 4297},
++    {"tr$uetype_symbols", "truetype_symbols", 621, 1, 0.0, HPGL2_DEF_POINT, 0, 0, 16686},
++    {"w$ingdings", "wingdings", 18540, 1, 0.0, HPGL2_DEF_POINT, 1, 0, 31402}
+ };
+ 
+ #define HPGL2_FONTS (sizeof(HPGL2_font_table) / sizeof (struct HPGL2_font_str))
+@@ -215,8 +263,7 @@
+  * most compatable with other HPGL devices.
+  */
+ 
+-static struct PCL_mode_str GPFAR PCL_mode_table[] =
+-{
++static struct PCL_mode_str GPFAR PCL_mode_table[] = {
+     {"l$andscape", "landscape", "\033&l1O", PCL_XMAX, PCL_YMAX},
+     {"p$ortrait", "portrait", "\033&l0O", PCL_YMAX, PCL_XMAX}
+ };
+@@ -225,19 +272,18 @@
+ static struct PCL_mode_str *PCL_mode = &PCL_mode_table[0];
+ 
+ /*
+- * Various line types and widths to distinguish data sets
++ * Various line types and widths to distinguish data sets in monochrome
+  */
+ 
+-static char *HPGL2_lt[] = { "", "4,2", "5,2", "6,2", "7,2", "8,2" },
+-	    *HPGL2_pw[] = { ".15", ".12", ".08" };
++static char *HPGL2_lt[] = { "", ",2", ",2", ",2", ",2", ",2", ",2", ",2" },
++	    *HPGL2_pw[] = { ".24", ".16", ".08"};
+ 
+ #define HPGL2_LINETYPES (sizeof(HPGL2_lt) / sizeof(char *))
+ #define HPGL2_PENWIDTHS (sizeof(HPGL2_pw) / sizeof(char *))
+ 
+ /* encoding vector for cp850 , characters 128 (0200) -> 255 (0377) */
+ 
+-static char hpgl_cp_850[128][4] =
+-{
++static char hpgl_cp_850[128][4] = {
+ 
+ /* 0200 */ "\0164\017",
+ /* 0201 */ "\016O\017",
+@@ -398,8 +444,7 @@
+ 
+ /* encoding vector for iso-8859-1 , characters 128 (0200) -> 255 (0377) */
+ 
+-static char hpgl_iso_8859_1[128][4] =
+-{
++static char hpgl_iso_8859_1[128][4] = {
+ 
+ /* 0200 */ "",
+ /* 0201 */ "",
+@@ -551,8 +596,8 @@
+  * Static variables to keep track of where we are, etc.
+  */
+ 
+-static int HPGL_ang = 0, HPGL_x = UNKNOWN, HPGL_y = UNKNOWN, HPGL_penstate = UNKNOWN, HPGL_pentype
+-= UNKNOWN, HPGL2_in_pe, HPGL2_lost;
++static int HPGL_ang = 0, HPGL_x = UNKNOWN, HPGL_y = UNKNOWN, HPGL_penstate = UNKNOWN, HPGL_pentype, HPGL2_pentype
++    = UNKNOWN, HPGL2_in_pe, HPGL2_lost;
+ 
+ /*
+  * The subroutines, grouped by function for different versions.
+@@ -560,7 +605,8 @@
+ 
+ static int HPGL_numpen, HPGL_eject;
+ 
+-TERM_PUBLIC void HPGL_options()
++TERM_PUBLIC void
++HPGL_options()
+ {
+     HPGL_numpen = 6;		/* default to six pens */
+     HPGL_eject = 0;		/* default to no eject */
+@@ -581,67 +627,156 @@
+     }
+ 
+ 
+-    sprintf(term_options, "%d pens %s", HPGL_numpen,
+-	    HPGL_eject ? "eject" : "noeject");
++    sprintf(term_options, "%d pens %s",
++	    HPGL_numpen, HPGL_eject ? "eject" : "noeject");
+ }
+ 
+-TERM_PUBLIC void HPGL2_options()
++static int HPGL2_color = 1, HPGL2_numpen = 6;	/* default to 6 pen color */
++int HPGL2_dashed = 0;		/* current dashed linetype */
++int HPGL2_solid = 1;		/* default to solid lines */
++int HPGL2_font_num = 0;		/* font from options */
++int HPGL2_font_num_current = 0;	/* current font */
++int pspointset = 0;		/* default to standard point types */
++double HPGL2_point_size = HPGL2_DEF_POINT;	/* pointsize from options */
++double HPGL2_point_size_current = 0;	/* current pointsize */
++
++TERM_PUBLIC void
++HPGL2_options()
+ {
+     struct termentry *t = term;
+     int i;
+-    double point_size;
+-    char tmp_options[MAX_ID_LEN];
+-    if (!END_OF_COMMAND) {
+-	for (i = 0; i < HPGL2_FONTS &&
+-	     !almost_equals(c_token, HPGL2_font_table[i].compare); i++);
+-	if (i < HPGL2_FONTS) {
+-	    HPGL2_font = &HPGL2_font_table[i];
++    char tmp_options[MAX_ID_LEN+1];
++
++    if (!END_OF_COMMAND && almost_equals(c_token, "mono$chrome")) {
++	HPGL2_color = 0;
++	c_token++;
++    } else if (!END_OF_COMMAND && almost_equals(c_token, "col$or")) {
++	HPGL2_color = 1;
++	c_token++;
++	if (!END_OF_COMMAND && isanumber(c_token)) {
++	    HPGL2_numpen = (int) real(&token[c_token].l_val);
++	    if (HPGL2_numpen <= 0) {
++		HPGL2_numpen = 6;
++		int_error("Number of pens must be a positive", c_token);
++	    }
++	    c_token++;
++	}
++    }
++    if (!END_OF_COMMAND && almost_equals(c_token, "sol$id")) {
++	HPGL2_solid = 1;
++	c_token++;
++    } else if (!END_OF_COMMAND && almost_equals(c_token, "das$hed")) {
++	HPGL2_solid = 0;
++	c_token++;
++    }
++    if (!END_OF_COMMAND && almost_equals(c_token, "f$ont")) {
++	c_token++;
++	if (!END_OF_COMMAND) {
++	    for (i = 0; i < HPGL2_FONTS && !almost_equals(c_token, HPGL2_font_table[i].compare); i++);
++	    if (i < HPGL2_FONTS) {
++		HPGL2_font = &HPGL2_font_table[i];
++		HPGL2_font_num = i;
++		HPGL2_font_num_current = HPGL2_font_num;
++	    } else
++		int_error
++		    ("expecting font: stick, cg_times, univers, zapf_dingbats, antique_olive,\narial, courier, garamond_antigua, letter_gothic, cg_omega, albertus,\ntimes_new_roman, clarendon, coronet, marigold, truetype_symbols, or wingdings",
++		     c_token);
++	    c_token++;
+ 	} else
+-	    int_error("expecting font: stick, cg_times, or univers", c_token);
++	    int_error
++		("expecting font: stick, cg_times, univers, zapf_dingbats, antique_olive,\narial, courier, garamond_antigua, letter_gothic, cg_omega, albertus,\ntimes_new_roman, clarendon, coronet, marigold, truetype_symbols, or wingdings",
++		 c_token);
++    }
++    if (!END_OF_COMMAND && almost_equals(c_token, "s$ize")) {
+ 	c_token++;
+ 	if (!END_OF_COMMAND) {
+-	    if ((point_size = real(&token[c_token].l_val)) > 0.0) {
+-		t->v_char = (int) HPGL_PUPI *point_size / 72;
++	    if ((HPGL2_point_size = real(&token[c_token].l_val)) > 0.0) {
++		HPGL2_point_size_current = HPGL2_point_size;
++		t->v_char = (int) HPGL_PUPI *HPGL2_point_size / 72;
+ 		t->h_char = t->v_char * 2 / 3;
+ 		if (HPGL2_font->spacing)
+-		    HPGL2_font->height = point_size;
++		    HPGL2_font->height = HPGL2_point_size;
+ 		else
+-		    HPGL2_font->pitch = 72 * 3 / (point_size * 2);
++		    HPGL2_font->pitch = 72 * 3 / (HPGL2_point_size * 2);
+ 	    } else
+-		int_error("expecting font point size: real number", c_token);
++		int_error("expecting point size: real number", c_token);
+ 	    c_token++;
+-	}
++	} else
++	    int_error("expecting point size: real number", c_token);
+     }
+-    sprintf(tmp_options, " %s", HPGL2_font->name);
++    if (!END_OF_COMMAND && almost_equals(c_token, "n$opspoints")) {
++	c_token++;
++	pspointset = 0;
++    } else if (!END_OF_COMMAND && almost_equals(c_token, "p$spoints")) {
++	c_token++;
++	pspointset = 1;
++    }
++    sprintf(tmp_options, "\ndisplay: %s", HPGL2_color ? "color" : "monochrome");
++    strcat(term_options, tmp_options);
++    if (HPGL2_color == 1) {
++	sprintf(tmp_options, "\npens: %d", HPGL2_numpen);
++	strcat(term_options, tmp_options);
++    }
++    sprintf(tmp_options, "\nlines: %s", HPGL2_solid ? "solid" : "dashed");
++    strcat(term_options, tmp_options);
++    sprintf(tmp_options, "\nfont: %s", HPGL2_font->name);
+     strcat(term_options, tmp_options);
+     if (HPGL2_font->spacing) {
+-	sprintf(tmp_options, " %f",
+-		HPGL2_font->height);
++	sprintf(tmp_options, "\nfont height: %f", HPGL2_font->height);
+ 	strcat(term_options, tmp_options);
+     } else {
+-	sprintf(tmp_options, " %f",
+-		HPGL2_font->pitch);
++	sprintf(tmp_options, "\nfont pitch: %f\n", HPGL2_font->pitch);
+ 	strcat(term_options, tmp_options);
+     }
++    sprintf(tmp_options, "\npoint types: %s", pspointset ? "pspoints" : "nopspoints");
++    strcat(term_options, tmp_options);
+ }
+ 
+-TERM_PUBLIC void PCL_options()
++char *PCL_dim = "noextended";	/* default plotting dimensions */
++
++TERM_PUBLIC void
++PCL_options()
+ {
+     int i;
+-    if (!END_OF_COMMAND) {
+-	for (i = 0; i < PCL_MODES &&
+-	     !almost_equals(c_token, PCL_mode_table[i].compare); i++);
+-	if (i < PCL_MODES)
+-	    PCL_mode = &PCL_mode_table[i];
+-	else
++    if (!END_OF_COMMAND && almost_equals(c_token, "m$ode")) {
++	c_token++;
++	if (!END_OF_COMMAND) {
++	    for (i = 0; i < PCL_MODES && !almost_equals(c_token, PCL_mode_table[i].compare); i++);
++	    if (i < PCL_MODES)
++		PCL_mode = &PCL_mode_table[i];
++	    else
++		int_error("expecting mode: portrait or landscape", c_token);
++	    c_token++;
++	} else
+ 	    int_error("expecting mode: portrait or landscape", c_token);
++    }
++    if (!END_OF_COMMAND && almost_equals(c_token, "ext$ended")) {
++	PCL_mode->xmax = (HPGL_XMAX_D);
++	PCL_mode->ymax = (HPGL_YMAX_D - 60);
++	PCL_dim = "extended";
++	c_token++;
++    } else if (!END_OF_COMMAND && almost_equals(c_token, "noext$ended")) {
++	PCL_mode->xmax = (HPGL_XMAX_C);
++	PCL_mode->ymax = (HPGL_YMAX_C - 60);
++	PCL_dim = "noextended";
++	c_token++;
++    } else if (!END_OF_COMMAND && almost_equals(c_token, "leg$al")) {
++	PCL_mode->xmax = (HPGL_XMAX_B);
++	PCL_mode->ymax = (HPGL_YMAX_B - 60);
++	PCL_dim = "legal";
++	c_token++;
++    } else if (!END_OF_COMMAND && almost_equals(c_token, "let$ter")) {
++	PCL_mode->xmax = (HPGL_XMAX_A);
++	PCL_mode->ymax = (HPGL_YMAX_A - 60);
++	PCL_dim = "letter";
+ 	c_token++;
+     }
+-    sprintf(term_options, " %s", PCL_mode->name);
++    sprintf(term_options, "\nmode: %s\ndimensions: %s", PCL_mode->name, PCL_dim);
+     HPGL2_options();
+ }
+ 
+-TERM_PUBLIC void HPGL_init()
++TERM_PUBLIC void
++HPGL_init()
+ {
+ }
+ 
+@@ -649,7 +784,8 @@
+ {
+ } */
+ 
+-TERM_PUBLIC void PCL_init()
++TERM_PUBLIC void
++PCL_init()
+ {
+     struct termentry *t = term;
+ /*
+@@ -659,9 +795,17 @@
+     fprintf(gpoutfile, "\033E\033&l1X%s\n", PCL_mode->command);
+     t->xmax = PCL_mode->xmax;
+     t->ymax = PCL_mode->ymax;
++/*
++ * Enter HPGL/2 graphics mode
++ * Necessary here to keep the first DI0,1DI1,0 orientation command from being
++ * printed as literal text on the page for some devices. Hopefully this
++ * workaround has no bad consequences elsewhere; omit this line if it does.
++ */
++    fputs("\033%0B", gpoutfile);
+ }
+ 
+-TERM_PUBLIC void HPGL_graphics()
++TERM_PUBLIC void
++HPGL_graphics()
+ {
+     fputs("\033.Y\n\033.I81;;17:\033.N;19:\033.M500:\n", gpoutfile);
+ /*	       1
+@@ -682,7 +826,8 @@
+     HPGL_ang = 0;
+ }
+ 
+-TERM_PUBLIC void HPGL2_graphics()
++TERM_PUBLIC void
++HPGL2_graphics()
+ {
+ /*
+  * IN - Initialize
+@@ -695,8 +840,22 @@
+ 	fprintf(gpoutfile, "4,%f,", HPGL2_font->height);
+     else
+ 	fprintf(gpoutfile, "3,%f,", HPGL2_font->pitch);
+-    fprintf(gpoutfile, "5,%d,6,%d,7,%d\n", HPGL2_font->posture,
+-	    HPGL2_font->stroke_weight, HPGL2_font->typeface);
++    fprintf(gpoutfile, "5,%d,6,%d,7,%d;SS;\n",
++	    HPGL2_font->posture, HPGL2_font->stroke_weight, HPGL2_font->typeface);
++/*
++ * Add a set of user-defined dashed linetypes if the dashed option is
++ * selected. Of course, the UL's below can be edited to user preference.
++ */
++    if (HPGL2_solid == 0) {
++	fprintf(gpoutfile, "UL1,100;\n");
++	fprintf(gpoutfile, "UL2,8,8,9,8,8,9,8,8,9,8,8,9;\n");
++	fprintf(gpoutfile, "UL3,6,6,6,7,6,6,6,7,6,6,6,7,6,6,6,7;\n");
++	fprintf(gpoutfile, "UL4,5,5,5,10,5,5,5,10,5,5,5,10;\n");
++	fprintf(gpoutfile, "UL5,5,5,5,5,5,8,5,5,5,5,5,8,5,5,5,5,5,9;\n");
++	fprintf(gpoutfile, "UL6,8,8,0,9,8,8,0,9,8,8,0,9;\n");
++	fprintf(gpoutfile, "UL7,4,4,4,4,0,4,4,4,4,4,0,4,4,4,4,4,0,4;\n");
++	fprintf(gpoutfile, "UL8,6,6,6,6,6,6,0,6,6,6,6,6,6,6,0,6;\n");
++    }
+ /*
+  * Control variables
+  */
+@@ -706,7 +865,8 @@
+     HPGL_penstate = UP;		/* Pen is up */
+ }
+ 
+-TERM_PUBLIC void PCL_graphics()
++TERM_PUBLIC void
++PCL_graphics()
+ {
+ /*
+  * Enter HPGL/2 graphics mode
+@@ -715,7 +875,8 @@
+     HPGL2_graphics();
+ }
+ 
+-TERM_PUBLIC void HPGL_text()
++TERM_PUBLIC void
++HPGL_text()
+ {
+     if (HPGL_eject == 0) {
+ 	fputs("PUSP0;\033.Z\n\0", gpoutfile);
+@@ -737,7 +898,8 @@
+ }
+ 
+ #if 0				/* not used */
+-void HPGL2_text()
++void
++HPGL2_text()
+ {
+ /*
+  * If in Polyline Encoded command, leave Polyline Encoded command
+@@ -750,10 +912,12 @@
+  * Pen up, park pen
+  */
+     fputs("PUSP0;", gpoutfile);
++    HPGL_penstate = UP;
+ }
+ #endif
+ 
+-TERM_PUBLIC void PCL_text()
++TERM_PUBLIC void
++PCL_text()
+ {
+     if (HPGL2_in_pe) {
+ 	fputs(";\n", gpoutfile);
+@@ -765,7 +929,8 @@
+     fputs("\033%1A\033&l0H\n\0", gpoutfile);
+ }
+ 
+-TERM_PUBLIC void HPGL_linetype(linetype)
++TERM_PUBLIC void
++HPGL_linetype(linetype)
+ int linetype;
+ {
+ /* allow for set number of pens */
+@@ -778,7 +943,8 @@
+     }
+ }
+ 
+-TERM_PUBLIC void HPGL2_linetype(linetype)
++TERM_PUBLIC void
++HPGL2_linetype(linetype)
+ int linetype;
+ {
+ /*
+@@ -788,31 +954,57 @@
+ 	fputs(";\n", gpoutfile);
+ 	HPGL2_in_pe = 0;
+     }
+-/*
+- * Allow for lots of linetypes
+- */
+-    if (linetype >= 0)
+-	linetype = linetype % (HPGL2_LINETYPES * HPGL2_PENWIDTHS);
+-    if (linetype != HPGL_pentype) {
++/* allow for set number of pens for color displays */
++    if (HPGL2_color == 1) {
+ 	if (linetype >= 0) {
+-	    fprintf(gpoutfile, "PW%sLT%s",
+-		    HPGL2_pw[linetype / HPGL2_LINETYPES],
+-		    HPGL2_lt[linetype % HPGL2_LINETYPES]);
+-	} else if (linetype == -2)
+-/*
+- * Borders and tics
+- */
+-	    fprintf(gpoutfile, "PW.2LT");
+-	else if (linetype == -1)
+-/*
+- * Axes and grids
+- */
+-	    fprintf(gpoutfile, "PW.1LT1,.25");
+-	HPGL_pentype = linetype;
++	    if (HPGL2_solid == 0)
++		HPGL2_dashed = linetype % HPGL2_LINETYPES + 1;
++	    linetype = (linetype + 2) % HPGL2_numpen + 1;
++	}
++/* only select pen if necessary */
++	if (linetype != HPGL2_pentype) {
++	    if (linetype >= 0) {
++		if (HPGL2_solid == 0) {
++		    fprintf(gpoutfile, "PU;\nSP%d;\nLT%d;", linetype, HPGL2_dashed);
++		} else
++		    fprintf(gpoutfile, "PU;\nSP%d;\nLT;", linetype);
++/* Borders and Tics */
++	    } else if (linetype == -2) {
++		fprintf(gpoutfile, "PU;\nSP1;\nPW.2LT");
++/* Axes and Grids */
++	    } else if (linetype == -1)
++		fprintf(gpoutfile, "PU;\nSP1;\nPW.2LT1,.25");
++	    HPGL_penstate = UP;
++	    HPGL2_pentype = linetype;
++	}
++/* allow for lots of linetypes for monochrome displays */
++    } else {
++	if (linetype >= 0) {
++	    if (HPGL2_solid == 0)
++		HPGL2_dashed = linetype % HPGL2_LINETYPES + 1;
++	    linetype = linetype % (HPGL2_LINETYPES * HPGL2_PENWIDTHS);
++	}
++/* only select pen if necessary */
++	if (linetype != HPGL2_pentype) {
++	    if (linetype >= 0) {
++		if (HPGL2_solid == 0) {
++		    fprintf(gpoutfile, "PW%sLT%d%s", HPGL2_pw[linetype / HPGL2_LINETYPES], HPGL2_dashed,
++			    HPGL2_lt[linetype % HPGL2_LINETYPES]);
++		} else
++		    fprintf(gpoutfile, "PW%sLT", HPGL2_pw[linetype / HPGL2_LINETYPES]);
++/* Borders and Tics */
++	    } else if (linetype == -2) {
++		fprintf(gpoutfile, "PW.2LT");
++/* Axes and Grids */
++	    } else if (linetype == -1)
++		fprintf(gpoutfile, "PW.1LT1,.25");
++	    HPGL2_pentype = linetype;
++	}
+     }
+ }
+ 
+-TERM_PUBLIC void HPGL_put_text(x, y, str)
++TERM_PUBLIC void
++HPGL_put_text(x, y, str)
+ unsigned int x, y;
+ char *str;
+ {
+@@ -842,7 +1034,8 @@
+ 	fprintf(gpoutfile, "LB%s\003\n", str);
+ }
+ 
+-TERM_PUBLIC void HPGL2_put_text(x, y, str)
++TERM_PUBLIC void
++HPGL2_put_text(x, y, str)
+ unsigned int x, y;
+ char *str;
+ {
+@@ -867,12 +1060,14 @@
+     fprintf(gpoutfile, "LB%s\003\n", str);
+     HPGL2_lost = 1;
+ }
++
+ /*
+  * Some early HPGL plotters (e.g. HP7220C) require the
+  * Pen Up/Down and Pen (move) Absolute commands to be separate.
+  */
+ 
+-TERM_PUBLIC void HPGL_move(x, y)
++TERM_PUBLIC void
++HPGL_move(x, y)
+ unsigned int x, y;
+ {
+     if (HPGL_x != x || HPGL_y != y) {	/* only move if necessary */
+@@ -883,7 +1078,8 @@
+     }
+ }
+ 
+-TERM_PUBLIC void HPGL_vector(x, y)
++TERM_PUBLIC void
++HPGL_vector(x, y)
+ unsigned int x, y;
+ {
+     if (HPGL_penstate != DOWN) {
+@@ -895,7 +1091,8 @@
+     HPGL_y = y;
+ }
+ 
+-TERM_PUBLIC void HPGL2_move(x, y)
++TERM_PUBLIC void
++HPGL2_move(x, y)
+ unsigned int x, y;
+ {
+     register int dx, dy;
+@@ -931,7 +1128,8 @@
+     HPGL_y = y;
+ }
+ 
+-TERM_PUBLIC void HPGL2_vector(x, y)
++TERM_PUBLIC void
++HPGL2_vector(x, y)
+ unsigned int x, y;
+ {
+     register int dx, dy;
+@@ -977,7 +1175,8 @@
+  * Routine to encode position in base 32 or base 64 characters
+  */
+ 
+-TERM_PUBLIC void HPGL2_encode(d)
++TERM_PUBLIC void
++HPGL2_encode(d)
+ register int d;
+ {
+     register int c;
+@@ -993,7 +1192,8 @@
+     } while (d > 0);
+ }
+ 
+-TERM_PUBLIC int HPGL_text_angle(ang)
++TERM_PUBLIC int
++HPGL_text_angle(ang)
+ int ang;
+ {
+     HPGL_ang = ang;
+@@ -1010,7 +1210,8 @@
+     return TRUE;
+ }
+ 
+-TERM_PUBLIC int HPGL2_text_angle(ang)
++TERM_PUBLIC int
++HPGL2_text_angle(ang)
+ int ang;
+ {
+ /*
+@@ -1034,7 +1235,8 @@
+     return TRUE;
+ }
+ 
+-TERM_PUBLIC void HPGL_reset()
++TERM_PUBLIC void
++HPGL_reset()
+ {
+ /*
+  * do nothing
+@@ -1042,7 +1244,8 @@
+ }
+ 
+ #if 0
+-void HPGL2_reset()
++void
++HPGL2_reset()
+ {
+ /*
+  * Park the pen
+@@ -1054,7 +1257,8 @@
+ 
+ #endif
+ 
+-TERM_PUBLIC void PCL_reset()
++TERM_PUBLIC void
++PCL_reset()
+ {
+ /*
+  * Return to PCL mode
+@@ -1063,7 +1267,8 @@
+     fputs("\033%0A\033E\n", gpoutfile);
+ }
+ 
+-TERM_PUBLIC int HPGL2_justify_text(just)
++TERM_PUBLIC int
++HPGL2_justify_text(just)
+ enum JUSTIFY just;
+ {
+ /*
+@@ -1089,6 +1294,1285 @@
+     return 1;
+ }
+ 
++TERM_PUBLIC int
++HPGL2_set_font(font)
++char *font;
++{
++    struct termentry *t = term;
++    char name[MAX_ID_LEN+1];
++    int i, sep, int_size, sep2;
++    double size;
++/*
++ * If in Polyline Encoded command, leave Polyline Encoded command
++ */
++    if (HPGL2_in_pe) {
++	fputs(";\n", gpoutfile);
++	HPGL2_in_pe = 0;
++    }
++/* determine font, use default from options if invalid */
++    sep = strcspn(font, ",");
++    strncpy(name, font, sep);
++    name[sep] = NUL;
++    for (i = 0; i < HPGL2_FONTS; i++) {
++	sep2 = strcspn(HPGL2_font_table[i].compare, "$");
++	if (strncmp(name, HPGL2_font_table[i].compare, sep2) == 0)
++	    break;
++    }
++    if (i >= HPGL2_FONTS)
++	i = HPGL2_font_num;
++/* determine font size, use default from options if invalid */
++    sscanf(&(font[sep + 1]), "%d", &int_size);
++    if (int_size > 0) {
++	size = int_size;
++    } else
++	size = HPGL2_point_size;
++/* apply font changes only if necessary */
++    if (size == HPGL2_point_size_current && i == HPGL2_font_num_current)
++	return FALSE;
++    HPGL2_font = &HPGL2_font_table[i];
++    HPGL2_font_num_current = i;
++    HPGL2_point_size_current = size;
++    t->v_char = (int) HPGL_PUPI *HPGL2_point_size_current / 72;
++    t->h_char = t->v_char * 2 / 3;
++    fprintf(gpoutfile, "SD1,%d,2,%d,",
++	    HPGL2_font->symbol_set, HPGL2_font->spacing);
++    if (HPGL2_font->spacing) {
++	HPGL2_font->height = HPGL2_point_size_current;
++	fprintf(gpoutfile, "4,%f,", HPGL2_font->height);
++    } else {
++	HPGL2_font->pitch = 72 * 3 / (HPGL2_point_size_current * 2);
++	fprintf(gpoutfile, "3,%f,", HPGL2_font->pitch);
++    }
++    fprintf(gpoutfile, "5,%d,6,%d,7,%d;SS;\n",
++	    HPGL2_font->posture,
++	    HPGL2_font->stroke_weight, HPGL2_font->typeface);
++    return TRUE;
++}
++
++TERM_PUBLIC void
++HPGL2_point(x, y, number)
++unsigned int x, y;
++int number;
++{
++    int htic, vtic;
++    if (pspointset) {		/* postscript style points */
++	if (number < 0) {
++	    HPGL2_neg_point(x, y, number);
++	} else {
++	    htic = (int) (HPGL2_psize * PCL_HTIC / 2);
++	    vtic = (int) (HPGL2_psize * PCL_VTIC / 2);
++	    number %= HPGL2_NUM_PSPOINTS;
++	    switch (number) {
++	    case 0:		/* plus */
++		HPGL2_move(x - htic, y);
++		HPGL2_vector(x - htic, y);
++		HPGL2_vector(x + htic, y);
++		HPGL2_move(x, y - vtic);
++		HPGL2_vector(x, y - vtic);
++		HPGL2_vector(x, y + vtic);
++		break;
++	    case 1:		/* X */
++		HPGL2_move(x - htic, y - vtic);
++		HPGL2_vector(x - htic, y - vtic);
++		HPGL2_vector(x + htic, y + vtic);
++		HPGL2_move(x - htic, y + vtic);
++		HPGL2_vector(x - htic, y + vtic);
++		HPGL2_vector(x + htic, y - vtic);
++		break;
++	    case 2:		/* star */
++		HPGL2_move(x - htic, y);
++		HPGL2_vector(x - htic, y);
++		HPGL2_vector(x + htic, y);
++		HPGL2_move(x, y - vtic);
++		HPGL2_vector(x, y - vtic);
++		HPGL2_vector(x, y + vtic);
++		HPGL2_move(x - htic, y - vtic);
++		HPGL2_vector(x - htic, y - vtic);
++		HPGL2_vector(x + htic, y + vtic);
++		HPGL2_move(x - htic, y + vtic);
++		HPGL2_vector(x - htic, y + vtic);
++		HPGL2_vector(x + htic, y - vtic);
++		break;
++	    case 3:		/* hollow square 1 */
++		HPGL2_move(x - (3 * htic / 4), y - (3 * vtic / 4));
++		HPGL2_vector(x + (3 * htic / 4), y - (3 * vtic / 4));
++		HPGL2_vector(x + (3 * htic / 4), y + (3 * vtic / 4));
++		HPGL2_vector(x - (3 * htic / 4), y + (3 * vtic / 4));
++		HPGL2_vector(x - (3 * htic / 4), y - (3 * vtic / 4));
++		HPGL2_move(x, y);
++		HPGL2_vector(x, y);
++		break;
++	    case 4:		/* solid square 1 */
++		HPGL2_move(x - (3 * htic / 4), y - (3 * vtic / 4));
++		fputs(";\n", gpoutfile);
++		HPGL2_in_pe = 0;
++		fprintf(gpoutfile, "RA%.2f,%.2f;EP;\n", ((double) x + (3 * htic / 4)), ((double) y + (3 * vtic / 4)));
++		break;
++	    case 5:		/* hollow circle 1 */
++		HPGL2_move(x, y);
++		HPGL2_vector(x, y);
++		fputs(";\n", gpoutfile);
++		HPGL2_in_pe = 0;
++		fprintf(gpoutfile, "CI%.2f;\n", ((double) 3 * (htic) / 4));
++		break;
++	    case 6:		/* solid circle 1 */
++		HPGL2_move(x, y);
++		fputs(";\n", gpoutfile);
++		HPGL2_in_pe = 0;
++		fprintf(gpoutfile, "WG%.2f,0,360;EP;\n", ((double) 3 * (htic) / 4));
++		break;
++	    case 7:		/* hollow triangle 1 */
++		HPGL2_move(x, y + (3 * vtic / 4));
++		HPGL2_vector(x - (3 * sqrt(3) * htic / 8), y - (3 * vtic / 8));
++		HPGL2_vector(x + (3 * sqrt(3) * htic / 8), y - (3 * vtic / 8));
++		HPGL2_vector(x, y + (3 * vtic / 4));
++		HPGL2_move(x, y);
++		HPGL2_vector(x, y);
++		break;
++	    case 8:		/* solid triangle 1 */
++		HPGL2_move(x, y + (3 * vtic / 4));
++		fputs(";\n", gpoutfile);
++		HPGL2_in_pe = 0;
++		fprintf(gpoutfile, "PM0;\n");
++		HPGL2_vector(x - (3 * sqrt(3) * htic / 8), y - (3 * vtic / 8));
++		HPGL2_vector(x + (3 * sqrt(3) * htic / 8), y - (3 * vtic / 8));
++		HPGL2_vector(x, y + (3 * vtic / 4));
++		fputs(";\n", gpoutfile);
++		HPGL2_in_pe = 0;
++		fprintf(gpoutfile, "PM2;FP;EP;\n");
++		break;
++	    case 9:		/* hollow triangle 2 */
++		HPGL2_move(x, y - (3 * vtic / 4));
++		HPGL2_vector(x - (3 * sqrt(3) * htic / 8), y + (3 * vtic / 8));
++		HPGL2_vector(x + (3 * sqrt(3) * htic / 8), y + (3 * vtic / 8));
++		HPGL2_vector(x, y - (3 * vtic / 4));
++		HPGL2_move(x, y);
++		HPGL2_vector(x, y);
++		break;
++	    case 10:		/* solid triangle 2 */
++		HPGL2_move(x, y - (3 * vtic / 4));
++		fputs(";\n", gpoutfile);
++		HPGL2_in_pe = 0;
++		fprintf(gpoutfile, "PM0;\n");
++		HPGL2_vector(x - (3 * sqrt(3) * htic / 8), y + (3 * vtic / 8));
++		HPGL2_vector(x + (3 * sqrt(3) * htic / 8), y + (3 * vtic / 8));
++		HPGL2_vector(x, y - (3 * vtic / 4));
++		fputs(";\n", gpoutfile);
++		HPGL2_in_pe = 0;
++		fprintf(gpoutfile, "PM2;FP;EP;\n");
++		break;
++	    case 11:		/* hollow diamond 1 */
++		HPGL2_move(x - (3 * htic / 4), y);
++		HPGL2_vector(x, y - (3 * vtic / 4));
++		HPGL2_vector(x + (3 * htic / 4), y);
++		HPGL2_vector(x, y + (3 * vtic / 4));
++		HPGL2_vector(x - (3 * htic / 4), y);
++		HPGL2_move(x, y);
++		HPGL2_vector(x, y);
++		break;
++	    case 12:		/* solid diamond 1 */
++		HPGL2_move(x - (3 * htic / 4), y);
++		fputs(";\n", gpoutfile);
++		HPGL2_in_pe = 0;
++		fprintf(gpoutfile, "PM0;\n");
++		HPGL2_vector(x, y - (3 * vtic / 4));
++		HPGL2_vector(x + (3 * htic / 4), y);
++		HPGL2_vector(x, y + (3 * vtic / 4));
++		HPGL2_vector(x - (3 * htic / 4), y);
++		fputs(";\n", gpoutfile);
++		HPGL2_in_pe = 0;
++		fprintf(gpoutfile, "PM2;FP;EP;\n");
++		break;
++	    case 13:		/* hollow pentagon 1 */
++		HPGL2_move(x, y + (3 * vtic / 4));
++		HPGL2_vector(x - (cos(.1 * acos(-1)) * 3 * htic / 4), y + (sin(.1 * acos(-1)) * 3 * vtic / 4));
++		HPGL2_vector(x - (sin(.2 * acos(-1)) * 3 * htic / 4), y - (cos(.2 * acos(-1)) * 3 * vtic / 4));
++		HPGL2_vector(x + (sin(.2 * acos(-1)) * 3 * htic / 4), y - (cos(.2 * acos(-1)) * 3 * vtic / 4));
++		HPGL2_vector(x + (cos(.1 * acos(-1)) * 3 * htic / 4), y + (sin(.1 * acos(-1)) * 3 * vtic / 4));
++		HPGL2_vector(x, y + (3 * vtic / 4));
++		HPGL2_move(x, y);
++		HPGL2_vector(x, y);
++		break;
++	    case 14:		/* solid pentagon */
++		HPGL2_move(x, y + (3 * vtic / 4));
++		fputs(";\n", gpoutfile);
++		HPGL2_in_pe = 0;
++		fprintf(gpoutfile, "PM0;\n");
++		HPGL2_vector(x - (cos(.1 * acos(-1)) * 3 * htic / 4), y + (sin(.1 * acos(-1)) * 3 * vtic / 4));
++		HPGL2_vector(x - (sin(.2 * acos(-1)) * 3 * htic / 4), y - (cos(.2 * acos(-1)) * 3 * vtic / 4));
++		HPGL2_vector(x + (sin(.2 * acos(-1)) * 3 * htic / 4), y - (cos(.2 * acos(-1)) * 3 * vtic / 4));
++		HPGL2_vector(x + (cos(.1 * acos(-1)) * 3 * htic / 4), y + (sin(.1 * acos(-1)) * 3 * vtic / 4));
++		HPGL2_vector(x, y + (3 * vtic / 4));
++		fputs(";\n", gpoutfile);
++		HPGL2_in_pe = 0;
++		fprintf(gpoutfile, "PM2;FP;EP;\n");
++		break;
++	    case 15:		/* hollow circle 2 */
++		HPGL2_move(x, y + vtic);
++		HPGL2_vector(x, y);
++		fputs(";\n", gpoutfile);
++		HPGL2_in_pe = 0;
++		fprintf(gpoutfile, "CI%d;\n", htic);
++		break;
++	    case 16:		/* semisolid circle 1 */
++		HPGL2_move(x, y);
++		fputs(";\n", gpoutfile);
++		HPGL2_in_pe = 0;
++		fprintf(gpoutfile, "WG%d,0,90;EP;EW%d,90,270;\n", htic, htic);
++		break;
++	    case 17:		/* semisolid circle 2 */
++		HPGL2_move(x, y);
++		fputs(";\n", gpoutfile);
++		HPGL2_in_pe = 0;
++		fprintf(gpoutfile, "WG%d,90,90;EP;EW%d,180,270;\n", htic, htic);
++		break;
++	    case 18:		/* semisolid circle 3 */
++		HPGL2_move(x, y);
++		fputs(";\n", gpoutfile);
++		HPGL2_in_pe = 0;
++		fprintf(gpoutfile, "WG%d,0,180;EP;EW%d,180,180;\n", htic, htic);
++		break;
++	    case 19:		/* semisolid circle 4 */
++		HPGL2_move(x, y);
++		fputs(";\n", gpoutfile);
++		HPGL2_in_pe = 0;
++		fprintf(gpoutfile, "WG%d,180,90;EP;EW%d,270,270;\n", htic, htic);
++		break;
++	    case 20:		/* semisolid circle 5 */
++		HPGL2_move(x, y);
++		fputs(";\n", gpoutfile);
++		HPGL2_in_pe = 0;
++		fprintf(gpoutfile, "WG%d,0,90;EP;EW%d,90,90;WG%d,180,90;EP;EW%d,270,90;\n", htic, htic, htic, htic);
++		break;
++	    case 21:		/* semisolid circle 6 */
++		HPGL2_move(x, y);
++		fputs(";\n", gpoutfile);
++		HPGL2_in_pe = 0;
++		fprintf(gpoutfile, "WG%d,90,180;EP;EW%d,270,180;\n", htic, htic);
++		break;
++	    case 22:		/* semisolid circle 7 */
++		HPGL2_move(x, y);
++		fputs(";\n", gpoutfile);
++		HPGL2_in_pe = 0;
++		fprintf(gpoutfile, "WG%d,0,270;EP;EW%d,270,90;\n", htic, htic);
++		break;
++	    case 23:		/* semisolid circle 8 */
++		HPGL2_move(x, y);
++		fputs(";\n", gpoutfile);
++		HPGL2_in_pe = 0;
++		fprintf(gpoutfile, "WG%d,270,90;EP;EW%d,0,270;\n", htic, htic);
++		break;
++	    case 24:		/* semisolid circle 9 */
++		HPGL2_move(x, y);
++		fputs(";\n", gpoutfile);
++		HPGL2_in_pe = 0;
++		fprintf(gpoutfile, "WG%d,270,180;EP;EW%d,90,180;\n", htic, htic);
++		break;
++	    case 25:		/* semisolid circle 10 */
++		HPGL2_move(x, y);
++		fputs(";\n", gpoutfile);
++		HPGL2_in_pe = 0;
++		fprintf(gpoutfile, "WG%d,90,90;EP;EW%d,180,90;WG%d,270,90;EP;EW%d,0,90;\n", htic, htic, htic, htic);
++		break;
++	    case 26:		/* semisolid circle 11 */
++		HPGL2_move(x, y);
++		fputs(";\n", gpoutfile);
++		HPGL2_in_pe = 0;
++		fprintf(gpoutfile, "WG%d,270,270;EP;EW%d,180,90;\n", htic, htic);
++		break;
++	    case 27:		/* semisolid circle 12 */
++		HPGL2_move(x, y);
++		fputs(";\n", gpoutfile);
++		HPGL2_in_pe = 0;
++		fprintf(gpoutfile, "WG%d,180,180;EP;EW%d,0,180;\n", htic, htic);
++		break;
++	    case 28:		/* semisolid circle 13 */
++		HPGL2_move(x, y);
++		fputs(";\n", gpoutfile);
++		HPGL2_in_pe = 0;
++		fprintf(gpoutfile, "WG%d,180,270;EP;EW%d,90,90;\n", htic, htic);
++		break;
++	    case 29:		/* semisolid circle 14 */
++		HPGL2_move(x, y);
++		fputs(";\n", gpoutfile);
++		HPGL2_in_pe = 0;
++		fprintf(gpoutfile, "WG%d,90,270;EP;EW%d,0,90;\n", htic, htic);
++		break;
++	    case 30:		/* solid circle 2 */
++		HPGL2_move(x, y);
++		fputs(";\n", gpoutfile);
++		HPGL2_in_pe = 0;
++		fprintf(gpoutfile, "WG%d,0,360;EP;\n", htic);
++		break;
++	    case 31:		/* hollow square 2 */
++		HPGL2_move(x - htic, y - vtic);
++		HPGL2_vector(x + htic, y - vtic);
++		HPGL2_vector(x + htic, y + vtic);
++		HPGL2_vector(x - htic, y + vtic);
++		HPGL2_vector(x - htic, y - vtic);
++		HPGL2_move(x, y + vtic);
++		HPGL2_vector(x, y);
++		break;
++	    case 32:		/* semisolid square 1 */
++		HPGL2_move(x, y + vtic);
++		HPGL2_vector(x - htic, y + vtic);
++		HPGL2_vector(x - htic, y - vtic);
++		HPGL2_vector(x + htic, y - vtic);
++		HPGL2_vector(x + htic, y);
++		HPGL2_move(x, y);
++		fputs(";\n", gpoutfile);
++		HPGL2_in_pe = 0;
++		fprintf(gpoutfile, "RA%d,%d;EP;\n", x + htic, y + vtic);
++		break;
++	    case 33:		/* semisolid square 2 */
++		HPGL2_move(x - htic, y);
++		HPGL2_vector(x - htic, y - vtic);
++		HPGL2_vector(x + htic, y - vtic);
++		HPGL2_vector(x + htic, y + vtic);
++		HPGL2_vector(x, y + vtic);
++		HPGL2_move(x - htic, y);
++		fputs(";\n", gpoutfile);
++		HPGL2_in_pe = 0;
++		fprintf(gpoutfile, "RA%d,%d;EP;\n", x, y + vtic);
++		break;
++	    case 34:		/* semisolid square 3 */
++		HPGL2_move(x - htic, y);
++		HPGL2_vector(x - htic, y - vtic);
++		HPGL2_vector(x + htic, y - vtic);
++		HPGL2_vector(x + htic, y);
++		HPGL2_move(x - htic, y);
++		fputs(";\n", gpoutfile);
++		HPGL2_in_pe = 0;
++		fprintf(gpoutfile, "RA%d,%d;EP;\n", x + htic, y + vtic);
++		break;
++	    case 35:		/* semisolid square 4 */
++		HPGL2_move(x, y - vtic);
++		HPGL2_vector(x + htic, y - vtic);
++		HPGL2_vector(x + htic, y + vtic);
++		HPGL2_vector(x - htic, y + vtic);
++		HPGL2_vector(x - htic, y);
++		HPGL2_move(x - htic, y - vtic);
++		fputs(";\n", gpoutfile);
++		HPGL2_in_pe = 0;
++		fprintf(gpoutfile, "RA%d,%d;EP;\n", x, y);
++		break;
++	    case 36:		/* semisolid square 5 */
++		HPGL2_move(x, y - vtic);
++		HPGL2_vector(x + htic, y - vtic);
++		HPGL2_vector(x + htic, y);
++		HPGL2_move(x, y + vtic);
++		HPGL2_vector(x - htic, y + vtic);
++		HPGL2_vector(x - htic, y);
++		HPGL2_move(x - htic, y - vtic);
++		fputs(";\n", gpoutfile);
++		HPGL2_in_pe = 0;
++		fprintf(gpoutfile, "RA%d,%d;EP;\n", x, y);
++		HPGL2_move(x, y);
++		fputs(";\n", gpoutfile);
++		HPGL2_in_pe = 0;
++		fprintf(gpoutfile, "RA%d,%d;EP;\n", x + htic, y + vtic);
++		break;
++	    case 37:		/* semisolid square 6 */
++		HPGL2_move(x, y - vtic);
++		HPGL2_vector(x + htic, y - vtic);
++		HPGL2_vector(x + htic, y + vtic);
++		HPGL2_vector(x, y + vtic);
++		HPGL2_move(x - htic, y - vtic);
++		fputs(";\n", gpoutfile);
++		HPGL2_in_pe = 0;
++		fprintf(gpoutfile, "RA%d,%d;EP;\n", x, y + vtic);
++		break;
++	    case 38:		/* semisolid square 7 */
++		HPGL2_move(x, y - vtic);
++		HPGL2_vector(x + htic, y - vtic);
++		HPGL2_vector(x + htic, y);
++		HPGL2_move(x - htic, y - vtic);
++		fputs(";\n", gpoutfile);
++		HPGL2_in_pe = 0;
++		fprintf(gpoutfile, "RA%d,%d;EP;\n", x, y + vtic);
++		HPGL2_move(x, y);
++		fputs(";\n", gpoutfile);
++		HPGL2_in_pe = 0;
++		fprintf(gpoutfile, "RA%d,%d;EP;\n", x + htic, y + vtic);
++		break;
++	    case 39:		/* semisolid square 8 */
++		HPGL2_move(x + htic, y);
++		HPGL2_vector(x + htic, y + vtic);
++		HPGL2_vector(x - htic, y + vtic);
++		HPGL2_vector(x - htic, y - vtic);
++		HPGL2_vector(x, y - vtic);
++		fputs(";\n", gpoutfile);
++		HPGL2_in_pe = 0;
++		fprintf(gpoutfile, "RA%d,%d;EP;\n", x + htic, y);
++		break;
++	    case 40:		/* semisolid square 9 */
++		HPGL2_move(x, y + vtic);
++		HPGL2_vector(x - htic, y + vtic);
++		HPGL2_vector(x - htic, y - vtic);
++		HPGL2_vector(x, y - vtic);
++		fputs(";\n", gpoutfile);
++		HPGL2_in_pe = 0;
++		fprintf(gpoutfile, "RA%d,%d;EP;\n", x + htic, y + vtic);
++		break;
++	    case 41:		/* semisolid square 10 */
++		HPGL2_move(x - htic, y);
++		HPGL2_vector(x - htic, y - vtic);
++		HPGL2_vector(x, y - vtic);
++		HPGL2_move(x + htic, y);
++		HPGL2_vector(x + htic, y + vtic);
++		HPGL2_vector(x, y + vtic);
++		HPGL2_move(x - htic, y);
++		fputs(";\n", gpoutfile);
++		HPGL2_in_pe = 0;
++		fprintf(gpoutfile, "RA%d,%d;EP;\n", x, y + vtic);
++		HPGL2_move(x, y - vtic);
++		fputs(";\n", gpoutfile);
++		HPGL2_in_pe = 0;
++		fprintf(gpoutfile, "RA%d,%d;EP;\n", x + htic, y);
++		break;
++	    case 42:		/* semisolid square 11 */
++		HPGL2_move(x - htic, y);
++		HPGL2_vector(x - htic, y - vtic);
++		HPGL2_vector(x, y - vtic);
++		fputs(";\n", gpoutfile);
++		HPGL2_in_pe = 0;
++		fprintf(gpoutfile, "RA%d,%d;EP;\n", x + htic, y + vtic);
++		HPGL2_move(x - htic, y);
++		fputs(";\n", gpoutfile);
++		HPGL2_in_pe = 0;
++		fprintf(gpoutfile, "RA%d,%d;EP;\n", x, y + vtic);
++		break;
++	    case 43:		/* semisolid square 12 */
++		HPGL2_move(x + htic, y);
++		HPGL2_vector(x + htic, y + vtic);
++		HPGL2_vector(x - htic, y + vtic);
++		HPGL2_vector(x - htic, y);
++		HPGL2_move(x - htic, y - vtic);
++		fputs(";\n", gpoutfile);
++		HPGL2_in_pe = 0;
++		fprintf(gpoutfile, "RA%d,%d;EP;\n", x + htic, y);
++		break;
++	    case 44:		/* semisolid square 13 */
++		HPGL2_move(x, y + vtic);
++		HPGL2_vector(x - htic, y + vtic);
++		HPGL2_vector(x - htic, y);
++		HPGL2_move(x - htic, y - vtic);
++		fputs(";\n", gpoutfile);
++		HPGL2_in_pe = 0;
++		fprintf(gpoutfile, "RA%d,%d;EP;\n", x + htic, y);
++		HPGL2_move(x, y);
++		fputs(";\n", gpoutfile);
++		HPGL2_in_pe = 0;
++		fprintf(gpoutfile, "RA%d,%d;EP;\n", x + htic, y + vtic);
++		break;
++	    case 45:		/* semisolid square 14 */
++		HPGL2_move(x + htic, y);
++		HPGL2_vector(x + htic, y + vtic);
++		HPGL2_vector(x, y + vtic);
++		HPGL2_move(x - htic, y - vtic);
++		fputs(";\n", gpoutfile);
++		HPGL2_in_pe = 0;
++		fprintf(gpoutfile, "RA%d,%d;EP;\n", x + htic, y);
++		HPGL2_move(x - htic, y);
++		fputs(";\n", gpoutfile);
++		HPGL2_in_pe = 0;
++		fprintf(gpoutfile, "RA%d,%d;EP;\n", x, y + vtic);
++		break;
++	    case 46:		/* solid square 2 */
++		HPGL2_move(x - htic, y - vtic);
++		fputs(";\n", gpoutfile);
++		HPGL2_in_pe = 0;
++		fprintf(gpoutfile, "RA%d,%d;EP;\n", x + htic, y + vtic);
++		break;
++	    case 47:		/* hollow diamond 2 */
++		HPGL2_move(x - htic, y);
++		HPGL2_vector(x, y - vtic);
++		HPGL2_vector(x + htic, y);
++		HPGL2_vector(x, y + vtic);
++		HPGL2_vector(x - htic, y);
++		HPGL2_move(x - (htic / 2), y + (vtic / 2));
++		HPGL2_vector(x, y);
++		break;
++	    case 48:		/* semisolid diamond 1 */
++		HPGL2_move(x - (htic / 2), y + (vtic / 2));
++		HPGL2_vector(x - htic, y);
++		HPGL2_vector(x, y - vtic);
++		HPGL2_vector(x + htic, y);
++		HPGL2_vector(x + (htic / 2), y + (vtic / 2));
++		fputs(";\n", gpoutfile);
++		HPGL2_in_pe = 0;
++		fprintf(gpoutfile, "PM0;\n");
++		HPGL2_vector(x, y + vtic);
++		HPGL2_vector(x - (htic / 2), y + (vtic / 2));
++		HPGL2_vector(x, y);
++		HPGL2_vector(x + (htic / 2), y + (vtic / 2));
++		fputs(";\n", gpoutfile);
++		HPGL2_in_pe = 0;
++		fprintf(gpoutfile, "PM2;FP;EP;\n");
++		break;
++	    case 49:		/* semisolid diamond 2 */
++		HPGL2_move(x - (htic / 2), y - (vtic / 2));
++		HPGL2_vector(x, y - vtic);
++		HPGL2_vector(x + htic, y);
++		HPGL2_vector(x, y + vtic);
++		HPGL2_vector(x - (htic / 2), y + (vtic / 2));
++		fputs(";\n", gpoutfile);
++		HPGL2_in_pe = 0;
++		fprintf(gpoutfile, "PM0;\n");
++		HPGL2_vector(x - htic, y);
++		HPGL2_vector(x - (htic / 2), y - (vtic / 2));
++		HPGL2_vector(x, y);
++		HPGL2_vector(x - (htic / 2), y + (vtic / 2));
++		fputs(";\n", gpoutfile);
++		HPGL2_in_pe = 0;
++		fprintf(gpoutfile, "PM2;FP;EP;\n");
++		break;
++	    case 50:		/* semisolid diamond 3 */
++		HPGL2_move(x - (htic / 2), y - (vtic / 2));
++		HPGL2_vector(x, y - vtic);
++		HPGL2_vector(x + htic, y);
++		HPGL2_vector(x + (htic / 2), y + (vtic / 2));
++		fputs(";\n", gpoutfile);
++		HPGL2_in_pe = 0;
++		fprintf(gpoutfile, "PM0;\n");
++		HPGL2_vector(x - (htic / 2), y - (vtic / 2));
++		HPGL2_vector(x - htic, y);
++		HPGL2_vector(x, y + vtic);
++		HPGL2_vector(x + (htic / 2), y + (vtic / 2));
++		fputs(";\n", gpoutfile);
++		HPGL2_in_pe = 0;
++		fprintf(gpoutfile, "PM2;FP;EP;\n");
++		break;
++	    case 51:		/* semisolid diamond 4 */
++		HPGL2_move(x + (htic / 2), y - (vtic / 2));
++		HPGL2_vector(x + htic, y);
++		HPGL2_vector(x, y + vtic);
++		HPGL2_vector(x - htic, y);
++		HPGL2_vector(x - (htic / 2), y - (vtic / 2));
++		fputs(";\n", gpoutfile);
++		HPGL2_in_pe = 0;
++		fprintf(gpoutfile, "PM0;\n");
++		HPGL2_vector(x, y);
++		HPGL2_vector(x + (htic / 2), y - (vtic / 2));
++		HPGL2_vector(x, y - vtic);
++		HPGL2_vector(x - (htic / 2), y - (vtic / 2));
++		fputs(";\n", gpoutfile);
++		HPGL2_in_pe = 0;
++		fprintf(gpoutfile, "PM2;FP;EP;\n");
++		break;
++	    case 52:		/* semisolid diamond 5 */
++		HPGL2_move(x - (htic / 2), y + (vtic / 2));
++		HPGL2_vector(x - htic, y);
++		HPGL2_vector(x - (htic / 2), y - (vtic / 2));
++		fputs(";\n", gpoutfile);
++		HPGL2_in_pe = 0;
++		fprintf(gpoutfile, "PM0;\n");
++		HPGL2_vector(x, y);
++		HPGL2_vector(x + (htic / 2), y - (vtic / 2));
++		HPGL2_vector(x, y - vtic);
++		HPGL2_vector(x - (htic / 2), y - (vtic / 2));
++		fputs(";\n", gpoutfile);
++		HPGL2_in_pe = 0;
++		fprintf(gpoutfile, "PM2;FP;EP;\n");
++		HPGL2_move(x + (htic / 2), y - (vtic / 2));
++		HPGL2_vector(x + htic, y);
++		HPGL2_vector(x + (htic / 2), y + (vtic / 2));
++		fputs(";\n", gpoutfile);
++		HPGL2_in_pe = 0;
++		fprintf(gpoutfile, "PM0;\n");
++		HPGL2_vector(x, y + vtic);
++		HPGL2_vector(x - (htic / 2), y + (vtic / 2));
++		HPGL2_vector(x, y);
++		HPGL2_vector(x + (htic / 2), y + (vtic / 2));
++		fputs(";\n", gpoutfile);
++		HPGL2_in_pe = 0;
++		fprintf(gpoutfile, "PM2;FP;EP;\n");
++		break;
++	    case 53:		/* semisolid diamond 6 */
++		HPGL2_move(x + (htic / 2), y - (vtic / 2));
++		HPGL2_vector(x + htic, y);
++		HPGL2_vector(x, y + vtic);
++		HPGL2_vector(x - (htic / 2), y + (vtic / 2));
++		fputs(";\n", gpoutfile);
++		HPGL2_in_pe = 0;
++		fprintf(gpoutfile, "PM0;\n");
++		HPGL2_vector(x - htic, y);
++		HPGL2_vector(x, y - vtic);
++		HPGL2_vector(x + (htic / 2), y - (vtic / 2));
++		HPGL2_vector(x - (htic / 2), y + (vtic / 2));
++		fputs(";\n", gpoutfile);
++		HPGL2_in_pe = 0;
++		fprintf(gpoutfile, "PM2;FP;EP;\n");
++		break;
++	    case 54:		/* semisolid diamond 7 */
++		HPGL2_move(x + (htic / 2), y - (vtic / 2));
++		HPGL2_vector(x + htic, y);
++		HPGL2_vector(x + (htic / 2), y + (vtic / 2));
++		fputs(";\n", gpoutfile);
++		HPGL2_in_pe = 0;
++		fprintf(gpoutfile, "PM0;\n");
++		HPGL2_vector(x, y + vtic);
++		HPGL2_vector(x - htic, y);
++		HPGL2_vector(x, y - vtic);
++		HPGL2_vector(x + (htic / 2), y - (vtic / 2));
++		HPGL2_vector(x, y);
++		HPGL2_vector(x + (htic / 2), y + (vtic / 2));
++		fputs(";\n", gpoutfile);
++		HPGL2_in_pe = 0;
++		fprintf(gpoutfile, "PM2;FP;EP;\n");
++		break;
++	    case 55:		/* semisolid diamond 8 */
++		HPGL2_move(x + (htic / 2), y + (vtic / 2));
++		HPGL2_vector(x, y + vtic);
++		HPGL2_vector(x - htic, y);
++		HPGL2_vector(x, y - vtic);
++		HPGL2_vector(x + (htic / 2), y - (vtic / 2));
++		fputs(";\n", gpoutfile);
++		HPGL2_in_pe = 0;
++		fprintf(gpoutfile, "PM0;\n");
++		HPGL2_vector(x, y);
++		HPGL2_vector(x + (htic / 2), y + (vtic / 2));
++		HPGL2_vector(x + htic, y);
++		HPGL2_vector(x + (htic / 2), y - (vtic / 2));
++		fputs(";\n", gpoutfile);
++		HPGL2_in_pe = 0;
++		fprintf(gpoutfile, "PM2;FP;EP;\n");
++		break;
++	    case 56:		/* semisolid diamond 9 */
++		HPGL2_move(x - (htic / 2), y + (vtic / 2));
++		HPGL2_vector(x - htic, y);
++		HPGL2_vector(x, y - vtic);
++		HPGL2_vector(x + (htic / 2), y - (vtic / 2));
++		fputs(";\n", gpoutfile);
++		HPGL2_in_pe = 0;
++		fprintf(gpoutfile, "PM0;\n");
++		HPGL2_vector(x - (htic / 2), y + (vtic / 2));
++		HPGL2_vector(x, y + vtic);
++		HPGL2_vector(x + htic, y);
++		HPGL2_vector(x + (htic / 2), y - (vtic / 2));
++		fputs(";\n", gpoutfile);
++		HPGL2_in_pe = 0;
++		fprintf(gpoutfile, "PM2;FP;EP;\n");
++		break;
++	    case 57:		/* semisolid diamond 10 */
++		HPGL2_move(x + (htic / 2), y + (vtic / 2));
++		HPGL2_vector(x, y + vtic);
++		HPGL2_vector(x - (htic / 2), y + (vtic / 2));
++		fputs(";\n", gpoutfile);
++		HPGL2_in_pe = 0;
++		fprintf(gpoutfile, "PM0;\n");
++		HPGL2_vector(x, y);
++		HPGL2_vector(x - (htic / 2), y - (vtic / 2));
++		HPGL2_vector(x - htic, y);
++		HPGL2_vector(x - (htic / 2), y + (vtic / 2));
++		fputs(";\n", gpoutfile);
++		HPGL2_in_pe = 0;
++		fprintf(gpoutfile, "PM2;FP;EP;\n");
++		HPGL2_move(x - (htic / 2), y - (vtic / 2));
++		HPGL2_vector(x, y - vtic);
++		HPGL2_vector(x + (htic / 2), y - (vtic / 2));
++		fputs(";\n", gpoutfile);
++		HPGL2_in_pe = 0;
++		fprintf(gpoutfile, "PM0;\n");
++		HPGL2_vector(x, y);
++		HPGL2_vector(x + (htic / 2), y + (vtic / 2));
++		HPGL2_vector(x + htic, y);
++		HPGL2_vector(x + (htic / 2), y - (vtic / 2));
++		fputs(";\n", gpoutfile);
++		HPGL2_in_pe = 0;
++		fprintf(gpoutfile, "PM2;FP;EP;\n");
++		break;
++	    case 58:		/* semisolid diamond 11 */
++		HPGL2_move(x - (htic / 2), y - (vtic / 2));
++		HPGL2_vector(x, y - vtic);
++		HPGL2_vector(x + (htic / 2), y - (vtic / 2));
++		fputs(";\n", gpoutfile);
++		HPGL2_in_pe = 0;
++		fprintf(gpoutfile, "PM0;\n");
++		HPGL2_vector(x, y);
++		HPGL2_vector(x - (htic / 2), y - (vtic / 2));
++		HPGL2_vector(x - htic, y);
++		HPGL2_vector(x, y + vtic);
++		HPGL2_vector(x + htic, y);
++		HPGL2_vector(x + (htic / 2), y - (vtic / 2));
++		fputs(";\n", gpoutfile);
++		HPGL2_in_pe = 0;
++		fprintf(gpoutfile, "PM2;FP;EP;\n");
++		break;
++	    case 59:		/* semisolid diamond 12 */
++		HPGL2_move(x + (htic / 2), y + (vtic / 2));
++		HPGL2_vector(x, y + vtic);
++		HPGL2_vector(x - htic, y);
++		HPGL2_vector(x - (htic / 2), y - (vtic / 2));
++		fputs(";\n", gpoutfile);
++		HPGL2_in_pe = 0;
++		fprintf(gpoutfile, "PM0;\n");
++		HPGL2_vector(x + (htic / 2), y + (vtic / 2));
++		HPGL2_vector(x + htic, y);
++		HPGL2_vector(x, y - vtic);
++		HPGL2_vector(x - (htic / 2), y - (vtic / 2));
++		fputs(";\n", gpoutfile);
++		HPGL2_in_pe = 0;
++		fprintf(gpoutfile, "PM2;FP;EP;\n");
++		break;
++	    case 60:		/* semisolid diamond 13 */
++		HPGL2_move(x - (htic / 2), y + (vtic / 2));
++		HPGL2_vector(x - htic, y);
++		HPGL2_vector(x - (htic / 2), y - (vtic / 2));
++		fputs(";\n", gpoutfile);
++		HPGL2_in_pe = 0;
++		fprintf(gpoutfile, "PM0;\n");
++		HPGL2_vector(x, y - vtic);
++		HPGL2_vector(x + htic, y);
++		HPGL2_vector(x, y + vtic);
++		HPGL2_vector(x - (htic / 2), y + (vtic / 2));
++		HPGL2_vector(x, y);
++		HPGL2_vector(x - (htic / 2), y - (vtic / 2));
++		fputs(";\n", gpoutfile);
++		HPGL2_in_pe = 0;
++		fprintf(gpoutfile, "PM2;FP;EP;\n");
++		break;
++	    case 61:		/* semisolid diamond 14 */
++		HPGL2_move(x + (htic / 2), y + (vtic / 2));
++		HPGL2_vector(x, y + vtic);
++		HPGL2_vector(x - (htic / 2), y + (vtic / 2));
++		fputs(";\n", gpoutfile);
++		HPGL2_in_pe = 0;
++		fprintf(gpoutfile, "PM0;\n");
++		HPGL2_vector(x - htic, y);
++		HPGL2_vector(x, y - vtic);
++		HPGL2_vector(x + htic, y);
++		HPGL2_vector(x + (htic / 2), y + (vtic / 2));
++		HPGL2_vector(x, y);
++		HPGL2_vector(x - (htic / 2), y + (vtic / 2));
++		fputs(";\n", gpoutfile);
++		HPGL2_in_pe = 0;
++		fprintf(gpoutfile, "PM2;FP;EP;\n");
++		break;
++	    case 62:		/* solid diamond 2 */
++		HPGL2_move(x - htic, y);
++		fputs(";\n", gpoutfile);
++		HPGL2_in_pe = 0;
++		fprintf(gpoutfile, "PM0;\n");
++		HPGL2_vector(x, y - vtic);
++		HPGL2_vector(x + htic, y);
++		HPGL2_vector(x, y + vtic);
++		HPGL2_vector(x - htic, y);
++		fputs(";\n", gpoutfile);
++		HPGL2_in_pe = 0;
++		fprintf(gpoutfile, "PM2;FP;EP;\n");
++		break;
++	    case 63:		/* hollow square 3 */
++		HPGL2_move(x - (3 * htic / 4), y - (3 * vtic / 4));
++		HPGL2_vector(x + (3 * htic / 4), y - (3 * vtic / 4));
++		HPGL2_vector(x + (3 * htic / 4), y + (3 * vtic / 4));
++		HPGL2_vector(x - (3 * htic / 4), y + (3 * vtic / 4));
++		HPGL2_vector(x - (3 * htic / 4), y - (3 * vtic / 4));
++		break;
++	    case 64:		/* hollow circle 3 */
++		HPGL2_move(x, y);
++		fputs(";\n", gpoutfile);
++		HPGL2_in_pe = 0;
++		fprintf(gpoutfile, "CI%.2f;\n", ((double) 3 * (htic) / 4));
++		break;
++	    case 65:		/* hollow triangle 3 */
++		HPGL2_move(x, y + (3 * vtic / 4));
++		HPGL2_vector(x - (3 * sqrt(3) * htic / 8), y - (3 * vtic / 8));
++		HPGL2_vector(x + (3 * sqrt(3) * htic / 8), y - (3 * vtic / 8));
++		HPGL2_vector(x, y + (3 * vtic / 4));
++		break;
++	    case 66:		/* hollow triangle 4 */
++		HPGL2_move(x, y - (3 * vtic / 4));
++		HPGL2_vector(x - (3 * sqrt(3) * htic / 8), y + (3 * vtic / 8));
++		HPGL2_vector(x + (3 * sqrt(3) * htic / 8), y + (3 * vtic / 8));
++		HPGL2_vector(x, y - (3 * vtic / 4));
++		break;
++	    case 67:		/* hollow diamond 3 */
++		HPGL2_move(x - (3 * htic / 4), y);
++		HPGL2_vector(x, y - (3 * vtic / 4));
++		HPGL2_vector(x + (3 * htic / 4), y);
++		HPGL2_vector(x, y + (3 * vtic / 4));
++		HPGL2_vector(x - (3 * htic / 4), y);
++		break;
++	    case 68:		/* hollow pentagon 2 */
++		HPGL2_move(x, y + (3 * vtic / 4));
++		HPGL2_vector(x - (cos(.1 * acos(-1)) * 3 * htic / 4), y + (sin(.1 * acos(-1)) * 3 * vtic / 4));
++		HPGL2_vector(x - (sin(.2 * acos(-1)) * 3 * htic / 4), y - (cos(.2 * acos(-1)) * 3 * vtic / 4));
++		HPGL2_vector(x + (sin(.2 * acos(-1)) * 3 * htic / 4), y - (cos(.2 * acos(-1)) * 3 * vtic / 4));
++		HPGL2_vector(x + (cos(.1 * acos(-1)) * 3 * htic / 4), y + (sin(.1 * acos(-1)) * 3 * vtic / 4));
++		HPGL2_vector(x, y + (3 * vtic / 4));
++		break;
++	    case 69:		/* opaque square */
++		HPGL2_move(x - htic, y - vtic);
++		fputs(";\n", gpoutfile);
++		HPGL2_in_pe = 0;
++		fprintf(gpoutfile, "FT10,30;RA%d,%d;EP;FT;\n", x + (3 * htic / 4), y + (3 * vtic / 4));
++		break;
++	    case 70:		/* opaque circle */
++		HPGL2_move(x, y);
++		fputs(";\n", gpoutfile);
++		HPGL2_in_pe = 0;
++		fprintf(gpoutfile, "FT10,30;WG%.2f,0,360;EP;FT;\n", ((double) 3 * (htic) / 4));
++		break;
++	    case 71:		/* opaque triangle 1 */
++		HPGL2_move(x, y + (3 * vtic / 4));
++		fputs(";\n", gpoutfile);
++		HPGL2_in_pe = 0;
++		fprintf(gpoutfile, "PM0;\n");
++		HPGL2_vector(x - (3 * sqrt(3) * htic / 8), y - (3 * vtic / 8));
++		HPGL2_vector(x + (3 * sqrt(3) * htic / 8), y - (3 * vtic / 8));
++		HPGL2_vector(x, y + (3 * vtic / 4));
++		fputs(";\n", gpoutfile);
++		HPGL2_in_pe = 0;
++		fprintf(gpoutfile, "PM2;FT10,30;FP;EP;FT;\n");
++		break;
++	    case 72:		/* opaque triangle 2 */
++		HPGL2_move(x, y - (3 * vtic / 4));
++		fputs(";\n", gpoutfile);
++		HPGL2_in_pe = 0;
++		fprintf(gpoutfile, "PM0;\n");
++		HPGL2_vector(x - (3 * sqrt(3) * htic / 8), y + (3 * vtic / 8));
++		HPGL2_vector(x + (3 * sqrt(3) * htic / 8), y + (3 * vtic / 8));
++		HPGL2_vector(x, y - (3 * vtic / 4));
++		fputs(";\n", gpoutfile);
++		HPGL2_in_pe = 0;
++		fprintf(gpoutfile, "PM2;FT10,30;FP;EP;FT;\n");
++		break;
++	    case 73:		/* opaque diamond */
++		HPGL2_move(x - (3 * htic / 4), y);
++		fputs(";\n", gpoutfile);
++		HPGL2_in_pe = 0;
++		fprintf(gpoutfile, "PM0;\n");
++		HPGL2_vector(x, y - (3 * vtic / 4));
++		HPGL2_vector(x + (3 * htic / 4), y);
++		HPGL2_vector(x, y + (3 * vtic / 4));
++		HPGL2_vector(x - (3 * htic / 4), y);
++		fputs(";\n", gpoutfile);
++		HPGL2_in_pe = 0;
++		fprintf(gpoutfile, "PM2;FT10,30;FP;EP;FT;\n");
++		break;
++	    case 74:		/* opaque pentagon */
++		HPGL2_move(x, y + (3 * vtic / 4));
++		fputs(";\n", gpoutfile);
++		HPGL2_in_pe = 0;
++		fprintf(gpoutfile, "PM0;\n");
++		HPGL2_vector(x - (cos(.1 * acos(-1)) * 3 * htic / 4), y + (sin(.1 * acos(-1)) * 3 * vtic / 4));
++		HPGL2_vector(x - (sin(.2 * acos(-1)) * 3 * htic / 4), y - (cos(.2 * acos(-1)) * 3 * vtic / 4));
++		HPGL2_vector(x + (sin(.2 * acos(-1)) * 3 * htic / 4), y - (cos(.2 * acos(-1)) * 3 * vtic / 4));
++		HPGL2_vector(x + (cos(.1 * acos(-1)) * 3 * htic / 4), y + (sin(.1 * acos(-1)) * 3 * vtic / 4));
++		HPGL2_vector(x, y + (3 * vtic / 4));
++		fputs(";\n", gpoutfile);
++		HPGL2_in_pe = 0;
++		fprintf(gpoutfile, "PM2;FT10,30;FP;EP;FT;\n");
++		break;
++	    }
++	}
++    } else {			/* default style points */
++	if (number < 0) {
++	    HPGL2_neg_point(x, y, number);
++	} else {
++	    htic = (int) (HPGL2_psize * PCL_HTIC / 2);
++	    vtic = (int) (HPGL2_psize * PCL_VTIC / 2);
++	    number %= HPGL2_NUM_NOPSPOINTS;
++	    switch (number) {
++	    case 0:		/* diamond */
++		HPGL2_move(x - htic, y);
++		HPGL2_vector(x, y - vtic);
++		HPGL2_vector(x + htic, y);
++		HPGL2_vector(x, y + vtic);
++		HPGL2_vector(x - htic, y);
++		HPGL2_move(x, y);
++		HPGL2_vector(x, y);
++		break;
++	    case 1:		/* plus */
++		HPGL2_move(x - htic, y);
++		HPGL2_vector(x - htic, y);
++		HPGL2_vector(x + htic, y);
++		HPGL2_move(x, y - vtic);
++		HPGL2_vector(x, y - vtic);
++		HPGL2_vector(x, y + vtic);
++		break;
++	    case 2:		/* box */
++		HPGL2_move(x - htic, y - vtic);
++		HPGL2_vector(x - htic, y - vtic);
++		HPGL2_vector(x + htic, y - vtic);
++		HPGL2_vector(x + htic, y + vtic);
++		HPGL2_vector(x - htic, y + vtic);
++		HPGL2_vector(x - htic, y - vtic);
++		HPGL2_move(x, y);
++		HPGL2_vector(x, y);
++		break;
++	    case 3:		/* X */
++		HPGL2_move(x - htic, y - vtic);
++		HPGL2_vector(x - htic, y - vtic);
++		HPGL2_vector(x + htic, y + vtic);
++		HPGL2_move(x - htic, y + vtic);
++		HPGL2_vector(x - htic, y + vtic);
++		HPGL2_vector(x + htic, y - vtic);
++		break;
++	    case 4:		/* triangle */
++		HPGL2_move(x, y + (4 * vtic / 3));
++		HPGL2_vector(x - (4 * htic / 3), y - (2 * vtic / 3));
++		HPGL2_vector(x + (4 * htic / 3), y - (2 * vtic / 3));
++		HPGL2_vector(x, y + (4 * vtic / 3));
++		HPGL2_move(x, y);
++		HPGL2_vector(x, y);
++		break;
++	    case 5:		/* star */
++		HPGL2_move(x - htic, y);
++		HPGL2_vector(x - htic, y);
++		HPGL2_vector(x + htic, y);
++		HPGL2_move(x, y - vtic);
++		HPGL2_vector(x, y - vtic);
++		HPGL2_vector(x, y + vtic);
++		HPGL2_move(x - htic, y - vtic);
++		HPGL2_vector(x - htic, y - vtic);
++		HPGL2_vector(x + htic, y + vtic);
++		HPGL2_move(x - htic, y + vtic);
++		HPGL2_vector(x - htic, y + vtic);
++		HPGL2_vector(x + htic, y - vtic);
++		break;
++	    }
++	}
++    }
++}
++
++/*
++ * This is for special purpose negative point types. If they are not needed,
++ * they should be safely ignorable, but the special pointypes can be omitted
++ * if necessary, leaving only the dot (which is -1).
++ */
++
++TERM_PUBLIC void
++HPGL2_neg_point(x, y, number)
++unsigned int x, y;
++int number;
++{
++    int htic, vtic;
++    htic = (int) (HPGL2_psize * PCL_HTIC / 2);
++    vtic = (int) (HPGL2_psize * PCL_VTIC / 2);
++    switch (number) {
++    case -20:			/* well 18 */
++	HPGL2_move(x - htic, y - vtic);
++	HPGL2_vector(x + htic, y + vtic);
++	HPGL2_move(x, y);
++	fputs(";\n", gpoutfile);
++	HPGL2_in_pe = 0;
++	fprintf(gpoutfile, "CI%.2f;\n", ((double) 3 * (htic) / 4));
++	break;
++    case -19:			/* well 17 */
++	HPGL2_move(x, y - vtic);
++	HPGL2_vector(x, y - (vtic / 2));
++	HPGL2_move(x, y + (vtic / 2));
++	HPGL2_vector(x, y + vtic);
++	HPGL2_move(x, y - vtic);
++	HPGL2_vector(x - (htic / 4), y - (3 * vtic / 4));
++	HPGL2_move(x, y - vtic);
++	HPGL2_vector(x + (htic / 4), y - (3 * vtic / 4));
++	HPGL2_move(x, y);
++	fputs(";\n", gpoutfile);
++	HPGL2_in_pe = 0;
++	fprintf(gpoutfile, "CI%.2f;\n", ((double) (htic) / 2));
++	break;
++    case -18:			/* well 16 */
++	HPGL2_move(x - htic, y);
++	HPGL2_vector(x + htic, y);
++	HPGL2_move(x, y - vtic);
++	HPGL2_vector(x, y + vtic);
++	HPGL2_move(x, y);
++	fputs(";\n", gpoutfile);
++	HPGL2_in_pe = 0;
++	fprintf(gpoutfile, "CI%.2f;\n", ((double) 3 * (htic) / 4));
++	break;
++    case -17:			/* well 15 */
++	HPGL2_move(x - htic, y - vtic);
++	HPGL2_vector(x - (3 * sqrt(2) * htic / 8), y - (3 * sqrt(2) * vtic / 8));
++	HPGL2_move(x + (sqrt(2) * htic / 2), y - (sqrt(2) * vtic / 2));
++	HPGL2_vector(x + (3 * sqrt(2) * htic / 8), y - (3 * sqrt(2) * vtic / 8));
++	HPGL2_move(x + htic, y + vtic);
++	HPGL2_vector(x + (3 * sqrt(2) * htic / 8), y + (3 * sqrt(2) * vtic / 8));
++	HPGL2_move(x - (sqrt(2) * htic / 2), y + (sqrt(2) * vtic / 2));
++	HPGL2_vector(x - (3 * sqrt(2) * htic / 8), y + (3 * sqrt(2) * vtic / 8));
++	HPGL2_move(x - htic, y);
++	HPGL2_vector(x - (3 * htic / 4), y);
++	HPGL2_move(x + (3 * htic / 4), y);
++	HPGL2_vector(x + htic, y);
++	HPGL2_move(x, y - vtic);
++	HPGL2_vector(x, y - (3 * vtic / 4));
++	HPGL2_move(x, y + (3 * vtic / 4));
++	HPGL2_vector(x, y + vtic);
++	HPGL2_move(x, y);
++	fputs(";\n", gpoutfile);
++	HPGL2_in_pe = 0;
++	fprintf(gpoutfile, "EW%.2f,0,180;\n", ((double) 3 * (htic) / 4));
++	fprintf(gpoutfile, "WG%.2f,180,180;EP;\n", ((double) 3 * (htic) / 4));
++	break;
++    case -16:			/* well 14 */
++	HPGL2_move(x - htic, y - vtic);
++	HPGL2_vector(x - (3 * sqrt(2) * htic / 8), y - (3 * sqrt(2) * vtic / 8));
++	HPGL2_move(x + htic, y + vtic);
++	HPGL2_vector(x + (3 * sqrt(2) * htic / 8), y + (3 * sqrt(2) * vtic / 8));
++	HPGL2_move(x - (sqrt(2) * htic / 2), y + (sqrt(2) * vtic / 2));
++	HPGL2_vector(x - (3 * sqrt(2) * htic / 8), y + (3 * sqrt(2) * vtic / 8));
++	HPGL2_move(x - htic, y);
++	HPGL2_vector(x - (3 * htic / 4), y);
++	HPGL2_move(x + (3 * htic / 4), y);
++	HPGL2_vector(x + htic, y);
++	HPGL2_move(x, y + (3 * vtic / 4));
++	HPGL2_vector(x, y + vtic);
++	HPGL2_move(x, y);
++	fputs(";\n", gpoutfile);
++	HPGL2_in_pe = 0;
++	fprintf(gpoutfile, "WG%.2f,0,360;EP;\n", ((double) 3 * (htic) / 4));
++	break;
++    case -15:			/* well 13 */
++	HPGL2_move(x - htic, y - vtic);
++	HPGL2_vector(x - (3 * sqrt(2) * htic / 8), y - (3 * sqrt(2) * vtic / 8));
++	HPGL2_move(x + (sqrt(2) * htic / 2), y - (sqrt(2) * vtic / 2));
++	HPGL2_vector(x + (3 * sqrt(2) * htic / 8), y - (3 * sqrt(2) * vtic / 8));
++	HPGL2_move(x + htic, y + vtic);
++	HPGL2_vector(x + (3 * sqrt(2) * htic / 8), y + (3 * sqrt(2) * vtic / 8));
++	HPGL2_move(x - (sqrt(2) * htic / 2), y + (sqrt(2) * vtic / 2));
++	HPGL2_vector(x - (3 * sqrt(2) * htic / 8), y + (3 * sqrt(2) * vtic / 8));
++	HPGL2_move(x - htic, y);
++	HPGL2_vector(x - (3 * htic / 4), y);
++	HPGL2_move(x + (3 * htic / 4), y);
++	HPGL2_vector(x + htic, y);
++	HPGL2_move(x, y - vtic);
++	HPGL2_vector(x, y - (3 * vtic / 4));
++	HPGL2_move(x, y + (3 * vtic / 4));
++	HPGL2_vector(x, y + vtic);
++	HPGL2_move(x, y);
++	fputs(";\n", gpoutfile);
++	HPGL2_in_pe = 0;
++	fprintf(gpoutfile, "WG%.2f,0,360;EP;\n", ((double) 3 * (htic) / 4));
++	break;
++    case -14:			/* well 12 */
++	HPGL2_move(x - htic, y - vtic);
++	HPGL2_vector(x - (3 * sqrt(2) * htic / 8), y - (3 * sqrt(2) * vtic / 8));
++	HPGL2_move(x + (sqrt(2) * htic / 2), y - (sqrt(2) * vtic / 2));
++	HPGL2_vector(x + (3 * sqrt(2) * htic / 8), y - (3 * sqrt(2) * vtic / 8));
++	HPGL2_move(x + htic, y + vtic);
++	HPGL2_vector(x + (3 * sqrt(2) * htic / 8), y + (3 * sqrt(2) * vtic / 8));
++	HPGL2_move(x - (sqrt(2) * htic / 2), y + (sqrt(2) * vtic / 2));
++	HPGL2_vector(x - (3 * sqrt(2) * htic / 8), y + (3 * sqrt(2) * vtic / 8));
++	HPGL2_move(x - htic, y);
++	HPGL2_vector(x - (3 * htic / 4), y);
++	HPGL2_move(x + (3 * htic / 4), y);
++	HPGL2_vector(x + htic, y);
++	HPGL2_move(x, y - vtic);
++	HPGL2_vector(x, y - (3 * vtic / 4));
++	HPGL2_move(x, y + (3 * vtic / 4));
++	HPGL2_vector(x, y + vtic);
++	HPGL2_move(x, y);
++	fputs(";\n", gpoutfile);
++	HPGL2_in_pe = 0;
++	fprintf(gpoutfile, "CI%.2f;\n", ((double) 3 * (htic) / 4));
++	break;
++    case -13:			/* well 11 */
++	HPGL2_move(x - htic, y - vtic);
++	HPGL2_vector(x - (3 * sqrt(2) * htic / 8), y - (3 * sqrt(2) * vtic / 8));
++	HPGL2_move(x + htic, y + vtic);
++	HPGL2_vector(x + (3 * sqrt(2) * htic / 8), y + (3 * sqrt(2) * vtic / 8));
++	HPGL2_move(x, y);
++	fputs(";\n", gpoutfile);
++	HPGL2_in_pe = 0;
++	fprintf(gpoutfile, "WG%.2f,0,360;EP;\n", ((double) 3 * (htic) / 4));
++	break;
++    case -12:			/* well 10 */
++	HPGL2_move(x + (sqrt(2) * htic / 2), y + (sqrt(2) * vtic / 2));
++	HPGL2_vector(x + (3 * sqrt(2) * htic / 8), y + (3 * sqrt(2) * vtic / 8));
++	HPGL2_move(x - (sqrt(2) * htic / 2), y + (sqrt(2) * vtic / 2));
++	HPGL2_vector(x - (3 * sqrt(2) * htic / 8), y + (3 * sqrt(2) * vtic / 8));
++	HPGL2_move(x - htic, y);
++	HPGL2_vector(x - (3 * htic / 4), y);
++	HPGL2_move(x + (3 * htic / 4), y);
++	HPGL2_vector(x + htic, y);
++	HPGL2_move(x, y - vtic);
++	HPGL2_vector(x, y - (3 * vtic / 4));
++	HPGL2_move(x, y + (3 * vtic / 4));
++	HPGL2_vector(x, y + vtic);
++	HPGL2_move(x, y);
++	fputs(";\n", gpoutfile);
++	HPGL2_in_pe = 0;
++	fprintf(gpoutfile, "EW%.2f,0,180;\n", ((double) 3 * (htic) / 4));
++	fprintf(gpoutfile, "WG%.2f,180,180;EP;\n", ((double) 3 * (htic) / 4));
++	break;
++    case -11:			/* well 9 */
++	HPGL2_move(x + (sqrt(2) * htic / 2), y + (sqrt(2) * vtic / 2));
++	HPGL2_vector(x + (3 * sqrt(2) * htic / 8), y + (3 * sqrt(2) * vtic / 8));
++	HPGL2_move(x - (sqrt(2) * htic / 2), y + (sqrt(2) * vtic / 2));
++	HPGL2_vector(x - (3 * sqrt(2) * htic / 8), y + (3 * sqrt(2) * vtic / 8));
++	HPGL2_move(x - htic, y);
++	HPGL2_vector(x - (3 * htic / 4), y);
++	HPGL2_move(x + (3 * htic / 4), y);
++	HPGL2_vector(x + htic, y);
++	HPGL2_move(x, y - vtic);
++	HPGL2_vector(x, y - (3 * vtic / 4));
++	HPGL2_move(x, y + (3 * vtic / 4));
++	HPGL2_vector(x, y + vtic);
++	HPGL2_move(x, y);
++	fputs(";\n", gpoutfile);
++	HPGL2_in_pe = 0;
++	fprintf(gpoutfile, "CI%.2f;\n", ((double) 3 * (htic) / 4));
++	break;
++    case -10:			/* well 8 */
++	HPGL2_move(x - htic, y);
++	HPGL2_vector(x - (3 * htic / 4), y);
++	HPGL2_move(x + (3 * htic / 4), y);
++	HPGL2_vector(x + htic, y);
++	HPGL2_move(x, y - vtic);
++	HPGL2_vector(x, y - (3 * vtic / 4));
++	HPGL2_move(x, y + (3 * vtic / 4));
++	HPGL2_vector(x, y + vtic);
++	HPGL2_move(x, y);
++	fputs(";\n", gpoutfile);
++	HPGL2_in_pe = 0;
++	fprintf(gpoutfile, "EW%.2f,0,180;\n", ((double) 3 * (htic) / 4));
++	fprintf(gpoutfile, "WG%.2f,180,180;EP;\n", ((double) 3 * (htic) / 4));
++	break;
++    case -9:			/* well 7 */
++	HPGL2_move(x - (sqrt(2) * htic / 2), y - (sqrt(2) * vtic / 2));
++	HPGL2_vector(x - (3 * sqrt(2) * htic / 8), y - (3 * sqrt(2) * vtic / 8));
++	HPGL2_move(x + (sqrt(2) * htic / 2), y - (sqrt(2) * vtic / 2));
++	HPGL2_vector(x + (3 * sqrt(2) * htic / 8), y - (3 * sqrt(2) * vtic / 8));
++	HPGL2_move(x + (sqrt(2) * htic / 2), y + (sqrt(2) * vtic / 2));
++	HPGL2_vector(x + (3 * sqrt(2) * htic / 8), y + (3 * sqrt(2) * vtic / 8));
++	HPGL2_move(x - (sqrt(2) * htic / 2), y + (sqrt(2) * vtic / 2));
++	HPGL2_vector(x - (3 * sqrt(2) * htic / 8), y + (3 * sqrt(2) * vtic / 8));
++	HPGL2_move(x - htic, y);
++	HPGL2_vector(x - (3 * htic / 4), y);
++	HPGL2_move(x + (3 * htic / 4), y);
++	HPGL2_vector(x + htic, y);
++	HPGL2_move(x, y - vtic);
++	HPGL2_vector(x, y - (3 * vtic / 4));
++	HPGL2_move(x, y + (3 * vtic / 4));
++	HPGL2_vector(x, y + vtic);
++	HPGL2_move(x, y);
++	fputs(";\n", gpoutfile);
++	HPGL2_in_pe = 0;
++	fprintf(gpoutfile, "EW%.2f,0,180;\n", ((double) 3 * (htic) / 4));
++	fprintf(gpoutfile, "WG%.2f,180,180;EP;\n", ((double) 3 * (htic) / 4));
++	break;
++    case -8:			/* well 6 */
++	HPGL2_move(x + (sqrt(2) * htic / 2), y + (sqrt(2) * vtic / 2));
++	HPGL2_vector(x + (3 * sqrt(2) * htic / 8), y + (3 * sqrt(2) * vtic / 8));
++	HPGL2_move(x - (sqrt(2) * htic / 2), y + (sqrt(2) * vtic / 2));
++	HPGL2_vector(x - (3 * sqrt(2) * htic / 8), y + (3 * sqrt(2) * vtic / 8));
++	HPGL2_move(x - htic, y);
++	HPGL2_vector(x - (3 * htic / 4), y);
++	HPGL2_move(x + (3 * htic / 4), y);
++	HPGL2_vector(x + htic, y);
++	HPGL2_move(x, y + (3 * vtic / 4));
++	HPGL2_vector(x, y + vtic);
++	HPGL2_move(x, y);
++	fputs(";\n", gpoutfile);
++	HPGL2_in_pe = 0;
++	fprintf(gpoutfile, "WG%.2f,0,360;EP;\n", ((double) 3 * (htic) / 4));
++	break;
++    case -7:			/* well 5 */
++	HPGL2_move(x - (sqrt(2) * htic / 2), y - (sqrt(2) * vtic / 2));
++	HPGL2_vector(x - (3 * sqrt(2) * htic / 8), y - (3 * sqrt(2) * vtic / 8));
++	HPGL2_move(x + (sqrt(2) * htic / 2), y - (sqrt(2) * vtic / 2));
++	HPGL2_vector(x + (3 * sqrt(2) * htic / 8), y - (3 * sqrt(2) * vtic / 8));
++	HPGL2_move(x + (sqrt(2) * htic / 2), y + (sqrt(2) * vtic / 2));
++	HPGL2_vector(x + (3 * sqrt(2) * htic / 8), y + (3 * sqrt(2) * vtic / 8));
++	HPGL2_move(x - (sqrt(2) * htic / 2), y + (sqrt(2) * vtic / 2));
++	HPGL2_vector(x - (3 * sqrt(2) * htic / 8), y + (3 * sqrt(2) * vtic / 8));
++	HPGL2_move(x - htic, y);
++	HPGL2_vector(x - (3 * htic / 4), y);
++	HPGL2_move(x + (3 * htic / 4), y);
++	HPGL2_vector(x + htic, y);
++	HPGL2_move(x, y - vtic);
++	HPGL2_vector(x, y - (3 * vtic / 4));
++	HPGL2_move(x, y + (3 * vtic / 4));
++	HPGL2_vector(x, y + vtic);
++	HPGL2_move(x, y);
++	fputs(";\n", gpoutfile);
++	HPGL2_in_pe = 0;
++	fprintf(gpoutfile, "WG%.2f,0,360;EP;\n", ((double) 3 * (htic) / 4));
++	break;
++    case -6:			/* well 4 */
++	HPGL2_move(x - (sqrt(2) * htic / 2), y - (sqrt(2) * vtic / 2));
++	HPGL2_vector(x - (3 * sqrt(2) * htic / 8), y - (3 * sqrt(2) * vtic / 8));
++	HPGL2_move(x + (sqrt(2) * htic / 2), y - (sqrt(2) * vtic / 2));
++	HPGL2_vector(x + (3 * sqrt(2) * htic / 8), y - (3 * sqrt(2) * vtic / 8));
++	HPGL2_move(x + (sqrt(2) * htic / 2), y + (sqrt(2) * vtic / 2));
++	HPGL2_vector(x + (3 * sqrt(2) * htic / 8), y + (3 * sqrt(2) * vtic / 8));
++	HPGL2_move(x - (sqrt(2) * htic / 2), y + (sqrt(2) * vtic / 2));
++	HPGL2_vector(x - (3 * sqrt(2) * htic / 8), y + (3 * sqrt(2) * vtic / 8));
++	HPGL2_move(x - htic, y);
++	HPGL2_vector(x - (3 * htic / 4), y);
++	HPGL2_move(x + (3 * htic / 4), y);
++	HPGL2_vector(x + htic, y);
++	HPGL2_move(x, y - vtic);
++	HPGL2_vector(x, y - (3 * vtic / 4));
++	HPGL2_move(x, y + (3 * vtic / 4));
++	HPGL2_vector(x, y + vtic);
++	HPGL2_move(x, y);
++	fputs(";\n", gpoutfile);
++	HPGL2_in_pe = 0;
++	fprintf(gpoutfile, "CI%.2f;\n", ((double) 3 * (htic) / 4));
++	break;
++    case -5:			/* well 3 */
++	HPGL2_move(x, y);
++	fputs(";\n", gpoutfile);
++	HPGL2_in_pe = 0;
++	fprintf(gpoutfile, "WG%.2f,0,360;EP;\n", ((double) 3 * (htic) / 4));
++	break;
++    case -4:			/* well 2 */
++	HPGL2_move(x - htic, y);
++	HPGL2_vector(x - (3 * htic / 4), y);
++	HPGL2_move(x + (3 * htic / 4), y);
++	HPGL2_vector(x + htic, y);
++	HPGL2_move(x, y - vtic);
++	HPGL2_vector(x, y - (3 * vtic / 4));
++	HPGL2_move(x, y + (3 * vtic / 4));
++	HPGL2_vector(x, y + vtic);
++	HPGL2_move(x, y);
++	fputs(";\n", gpoutfile);
++	HPGL2_in_pe = 0;
++	fprintf(gpoutfile, "CI%.2f;\n", ((double) 3 * (htic) / 4));
++	break;
++    case -3:			/* well 1 */
++	HPGL2_move(x, y);
++	fputs(";\n", gpoutfile);
++	HPGL2_in_pe = 0;
++	fprintf(gpoutfile, "CI%.2f;\n", ((double) 3 * (htic) / 4));
++	break;
++    case -2:			/* v box */
++	HPGL2_move(x - htic, y);
++	HPGL2_vector(x - (3 * htic / 4), y);
++	HPGL2_move(x + (3 * htic / 4), y);
++	HPGL2_vector(x + htic, y);
++	HPGL2_move(x, y - vtic);
++	HPGL2_vector(x, y - (3 * vtic / 4));
++	HPGL2_move(x, y + (3 * vtic / 4));
++	HPGL2_vector(x, y + vtic);
++	HPGL2_move(x - (3 * htic / 4), y - (3 * vtic / 4));
++	HPGL2_vector(x + (3 * htic / 4), y - (3 * vtic / 4));
++	HPGL2_vector(x + (3 * htic / 4), y + (3 * vtic / 4));
++	HPGL2_vector(x - (3 * htic / 4), y + (3 * vtic / 4));
++	HPGL2_vector(x - (3 * htic / 4), y - (3 * vtic / 4));
++	HPGL2_move(x - (htic / 2), y + (vtic / 2));
++	HPGL2_vector(x, y - (vtic / 2));
++	HPGL2_vector(x + (htic / 2), y + (vtic / 2));
++	break;
++    default:			/* dot */
++	HPGL2_move(x, y);
++	HPGL2_vector(x, y);
++	break;
++	return;
++    }
++}
++
++TERM_PUBLIC void
++HPGL2_pointsize(size)
++double size;
++{
++    HPGL2_psize = (size >= 0 ? size : 1);
++}
++
+ #endif /* TERM_BODY */
+ 
+ #ifdef TERM_TABLE
+@@ -1100,25 +2584,21 @@
+     HPGL_linetype, HPGL_put_text, HPGL_text_angle,
+     null_justify_text, do_point, do_arrow, set_font_null
+ TERM_TABLE_END(hpgl_driver)
+-
+ #undef LAST_TERM
+ #define LAST_TERM hpgl_driver
+-
+     TERM_TABLE_START(pcl5_driver)
+-    "pcl5", "HP LaserJet III [mode] [font] [point]",
++    "pcl5", "HP Designjet 750C, HP Laserjet III/IV, etc. (many options)",
+     PCL_XMAX, PCL_YMAX, HPGL2_VCHAR, HPGL2_HCHAR,
+     PCL_VTIC, PCL_HTIC, PCL_options, PCL_init, PCL_reset,
+     PCL_text, null_scale, PCL_graphics, HPGL2_move, HPGL2_vector,
+     HPGL2_linetype, HPGL2_put_text, HPGL2_text_angle,
+-    HPGL2_justify_text, do_point, do_arrow, set_font_null
++    HPGL2_justify_text, HPGL2_point, do_arrow, HPGL2_set_font,
++    HPGL2_pointsize
+ TERM_TABLE_END(pcl5_driver)
+-
+ #undef LAST_TERM
+ #define LAST_TERM pcl5_driver
+ #endif /* TERM_TABLE */
+-
+ #endif /* TERM_PROTO_ONLY */
+-
+ #ifdef TERM_HELP
+ START_HELP(hpgl)
+ "1 hpgl",
+@@ -1135,9 +2615,9 @@
+ "?term pcl5",
+ "?pcl5",
+ " The `hpgl` driver produces HPGL output for devices like the HP7475A plotter.",
+-" There are two options which can be set---the number of pens and \"eject\", which",
+-" tells the plotter to eject a page when done.  The default is to use 6 pens",
+-" and not to eject the page when done.",
++" There are two options which can be set: the number of pens and `eject`,",
++" which tells the plotter to eject a page when done.  The default is to use 6",
++" pens and not to eject the page when done.",
+ "",
+ " The international character sets ISO-8859-1 and CP850 are recognized via",
+ " `set encoding iso_8859_1` or `set encoding cp850` (see `set encoding` for",
+@@ -1156,15 +2636,42 @@
+ "",
+ " is equivalent to the previous `hp7580b` terminal.",
+ "",
+-" The `pcl5` driver supports the Hewlett-Packard Laserjet III.  It actually uses",
+-" HPGL-2, but there is a name conflict among the terminal devices.  It has",
+-" several options",
++" The `pcl5` driver supports plotters such as the Hewlett-Packard Designjet",
++" 750C, the Hewlett-Packard Laserjet III, and the Hewlett-Packard Laserjet IV.",
++" It actually uses HPGL-2, but there is a name conflict among the terminal",
++" devices.  It has several options which must be specified in the order",
++" indicated below:",
+ "",
+ " Syntax:",
+-"       set terminal pcl5 {<mode>} {<font>} {<fontsize>}",
++"       set terminal pcl5 {mode <mode>} {<plotsize>}",
++"           {{color {<number_of_pens>}} | monochrome} {solid | dashed}",
++"           {font <font>} {size <fontsize>} {pspoints | nopspoints}",
++"",
++" <mode> is `landscape` or `portrait`. <plotsize> is the physical",
++" plotting size of the plot, which is one of the following: `letter` for",
++" standard (8 1/2\" X 11\") displays, `legal` for (8 1/2\" X 14\") displays,",
++" `noextended` for (36\" X 48\") displays (a letter size ratio) or,",
++" `extended` for (36\" X 55\") displays (almost a legal size ratio).",
++" `color` is for multi-pen (i.e. color) plots, and <number_of_pens> is",
++" the number of pens (i.e. colors) used in color plots. `monochrome` is for",
++" one (e.g. black) pen plots. 'solid' draws all lines as solid lines, or",
++" 'dashed' will draw lines with different dashed and dotted line patterns.",
++" <font> is `stick`, `univers`, `cg_times`, `zapf_dingbats`, `antique_olive`,",
++" `arial`, `courier`, `garamond_antigua`, `letter_gothic`, `cg_omega`,",
++" `albertus`, `times_new_roman`, `clarendon`, `coronet`, `marigold`,",
++" `truetype_symbols`, or `wingdings`. <fontsize> is the font size in points.",
++" The point type selection can be the standard default set by specifying",
++" nopspoints, or the same set of point types found in the postscript terminal",
++" by specifying pspoints.",
++"",
++" Note that built-in support of some of these options is printer device",
++" dependendent. For instance, all the fonts are supposedly supported by the HP",
++" Laserjet IV, but only a few (e.g. univers, stick) may be supported by the HP",
++" Laserjet III and the Designjet 750C. Also, color obviously won't work on the",
++" the laserjets since they are monochrome devices.",
+ "",
+-" where <mode> is `landscape`, or `portrait`, <font> is `stick`, `univers`, or",
+-" `cg_times`, and <fontsize> is the size in points.",
++" Defaults: landscape, noextended, color (6 pens), solid, univers, 12 point,",
++"           and nopspoints.",
+ "",
+ " With `pcl5` international characters are handled by the printer; you just put",
+ " the appropriate 8-bit character codes into the text strings.  You don't need",

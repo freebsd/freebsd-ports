@@ -1,0 +1,64 @@
+# dynamic-contour-levels
+--- plot.h.ORIG	Tue Oct 19 14:32:17 1999
++++ plot.h	Thu Dec  9 17:57:06 1999
+@@ -131,7 +131,6 @@
+ #define LEVELS_AUTO		0		/* How contour levels are set */
+ #define LEVELS_INCREMENTAL	1		/* user specified start & incremnet */
+ #define LEVELS_DISCRETE		2		/* user specified discrete levels */
+-#define MAX_DISCRETE_LEVELS   30
+ 
+ #define ANGLES_RADIANS	0
+ #define ANGLES_DEGREES	1
+--- set.c.ORIG	Thu Aug 19 15:36:35 1999
++++ set.c	Thu Dec  9 17:57:06 1999
+@@ -44,6 +44,7 @@
+ #include "stdfn.h"
+ #include "setshow.h"
+ #include "national.h"
++#include "alloc.h"
+ 
+ #define DEF_FORMAT   "%g"	/* default format for tic mark labels */
+ #define SIGNIF (0.01)		/* less than one hundredth of a tic mark */
+@@ -198,7 +199,8 @@
+ int contour_levels = 5;
+ double zero = ZERO;		/* zero threshold, not 0! */
+ int levels_kind = LEVELS_AUTO;
+-double levels_list[MAX_DISCRETE_LEVELS];	/* storage for z levels to draw contours at */
++double *levels_list;	/* storage for z levels to draw contours at */
++int max_levels = 0;	/* contour level capacity, before enlarging */
+ 
+ int dgrid3d_row_fineness = 10;
+ int dgrid3d_col_fineness = 10;
+@@ -611,6 +613,10 @@
+ else if (almost_equals(c_token, MIN)) { AUTO |= 1;    ++c_token; } \
+ else if (almost_equals(c_token, MAX)) { AUTO |= 2;    ++c_token; }
+ 
++    if (max_levels == 0)
++	levels_list = (double *)gp_alloc((max_levels = 5)*sizeof(double), 
++					 "contour levels");
++
+     if (almost_equals(c_token, "ar$row")) {
+ 	c_token++;
+ 	set_arrow();
+@@ -813,6 +819,10 @@
+ 		    if (!equals(c_token, ","))
+ 			int_error("expecting comma to separate discrete levels", c_token);
+ 		    c_token++;
++		    if (i == max_levels)
++			levels_list = gp_realloc(levels_list,
++					(max_levels += 10)*sizeof(double),
++					"contour levels");
+ 		    levels_list[i++] = real(const_express(&a));
+ 		}
+ 		contour_levels = i;
+--- setshow.h.ORIG	Sat Oct  3 21:17:47 1998
++++ setshow.h	Thu Dec  9 17:57:06 1999
+@@ -169,7 +169,7 @@
+ extern int			contour_levels;
+ extern double			zero; /* zero threshold, not 0! */
+ extern int			levels_kind;
+-extern double		levels_list[MAX_DISCRETE_LEVELS];
++extern double			*levels_list;
+ 
+ extern int			dgrid3d_row_fineness;
+ extern int			dgrid3d_col_fineness;

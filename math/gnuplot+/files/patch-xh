@@ -1,0 +1,460 @@
+# png-web216.4
+--- bitmap.c.ORIG	Mon Oct 11 18:10:54 1999
++++ bitmap.c	Thu Dec  2 20:41:29 1999
+@@ -1,5 +1,5 @@
+ #ifndef lint
+-static char *RCSid = "$Id: bitmap.c,v 1.2.2.2 1999/10/11 17:10:54 lhecking Exp $";
++static char *RCSid = "$Id: bitmap.c,v 1.2.2.3 1999/11/30 15:07:49 lhecking Exp $";
+ #endif
+ 
+ /* GNUPLOT - bitmap.c */
+@@ -846,8 +846,6 @@
+ }
+ 
+ 
+-/* Currently unused */
+-#if 1 /* HBB 991008: used by PNG, now */
+ /*
+  * get pixel (x,y) value
+  */
+@@ -857,7 +855,7 @@
+ {
+   register unsigned int row;
+   register unsigned char mask;
+-  register unsigned char value;
++  register unsigned char value = 0;
+   int i;
+ 
+   if (b_rastermode) {
+@@ -876,10 +874,10 @@
+ 		row -= b_psize;
+ 		value <<= 1;
+ 	}
+-    return(value);
+-  }
+-  else
+-  {
++/* HBB 991123: the missing '>>1' was the 'every second color' problem
++ * with PNG in 3.8a...*/
++	return(value>>1);
++  } else {
+ #ifdef BITMAPDEBUG
+     if (b_rastermode)
+       fprintf(stderr, "Warning: getpixel(%d,%d) out of bounds\n",
+@@ -890,7 +888,6 @@
+     return(0);
+   }
+ }
+-#endif /* 0 */
+ 
+ 
+ /*
+--- bitmap.h.ORIG	Wed Sep 29 14:48:16 1999
++++ bitmap.h	Thu Dec  2 20:41:29 1999
+@@ -1,4 +1,4 @@
+-/* $Id: bitmap.h,v 1.1.1.2.2.1 1999/09/29 13:48:16 lhecking Exp $ */
++/* $Id: bitmap.h,v 1.1.1.2.2.2 1999/11/30 15:07:49 lhecking Exp $ */
+ 
+ /* GNUPLOT - bitmap.h */
+ 
+@@ -101,7 +101,7 @@
+ void b_makebitmap __PROTO((unsigned int x, unsigned int y, unsigned int planes));
+ void b_freebitmap __PROTO((void));
+ void b_setpixel __PROTO((unsigned int x, unsigned int y, unsigned int value));
+-/* unused unsigned int b_getpixel __PROTO((unsigned int x, unsigned int y)); */
++unsigned int b_getpixel __PROTO((unsigned int x, unsigned int y));
+ void b_line __PROTO((unsigned int x1, unsigned int y1, unsigned int x2, unsigned int y2));
+ void b_setmaskpixel __PROTO((unsigned int x, unsigned int y, unsigned int value));
+ /* void b_putc __PROTO((unsigned int x, unsigned int y, char c, unsigned int angle)); */
+--- term/png.trm.ORIG	Tue Oct 19 14:31:28 1999
++++ term/png.trm	Thu Dec  2 20:42:20 1999
+@@ -1,5 +1,5 @@
+ /*
+- * $Id: png.trm,v 1.11.2.5 1999/10/19 13:31:28 lhecking Exp $
++ * $Id: png.trm,v 1.11.2.8 1999/11/30 15:08:44 lhecking Exp $
+  *
+  */
+ 
+@@ -42,8 +42,11 @@
+  *  png
+  *
+  * AUTHORS
+- *  Alexander Lehmann	original code,
+- *                      derived from pbm.trm by Russell Lang.
++ *  Alexander Lehmann
++ *                      derived from pbm.trm by Russell Lang
++ *
++ *  Eric S. Raymond    update for pnglib-1.0.3; transparency.
++ *  H.-B. Broeker      fixes to Eric's changes
+  *
+  * send your comments or suggestions to (info-gnuplot@dartmouth.edu).
+  *
+@@ -100,56 +103,97 @@
+ 
+ static int png_font = 1;	/* small font */
+ static int png_mode = 0;	/* 0:monochrome 1:gray 2:color */
++static int png_transparent = 0; /* generate transparent first color */
+ 
+ /* 7=black, 0=white */
+ static int png_gray[] = { 7, 1, 6, 5, 4, 3, 2, 1, 7 };	/* grays  */
+-/* bit3=!intensify, bit2=!red, bit1=!green, bit0=!blue */
+-static int png_color_table[] ={ 15, 8, 3, 5, 6, 4, 2, 1, 11, 13, 14 };	/* colors */
+-static png_color png_palette[16];
++static png_color png_palette[WEB_N_COLORS];
+ 
+ TERM_PUBLIC void
+ PNG_options()
+ {
+-    png_font = 1;	/* small */
+-    png_mode = 0;
++    unsigned short rgb_color[3];
++    int n_colors = 0;
++    char *string;
++    int i;
++
++    rgb_color[0] = 0;
++    rgb_color[1] = 0;
++    rgb_color[2] = 0;
++
++    png_font = 1; /* small */
++    png_mode = 2; /* color */
++    png_transparent = 0;       /* use opaque image background */
+ 
+     term_options[0] = NUL;
+ 
+     while (!END_OF_COMMAND) {
+-	if (almost_equals(c_token, "s$mall"))
+-	    png_font = 1;
+-	else if (almost_equals(c_token, "me$dium"))
+-	    png_font = 2;
+-	else if (almost_equals(c_token, "l$arge"))
+-	    png_font = 3;
+-	else if (almost_equals(c_token, "mo$nochrome"))
+-	    png_mode = 0;
+-	else if (almost_equals(c_token, "g$ray"))
+-	    png_mode = 1;
+-	else if (almost_equals(c_token, "c$olor")
+-		 || almost_equals(c_token, "c$olour"))
+-	    png_mode = 2;
+-	else {
+-	    /* reset to default, since term is already set */
+-	    png_font = 1;
+-	    png_mode = 0;
+-	    int_error("expecting: {small, medium, large}, or {monochrome, gray, color}", c_token);
+-	}
+-	c_token++;
++        if (almost_equals(c_token, "s$mall"))
++            png_font = 1;
++        else if (almost_equals(c_token, "me$dium"))
++            png_font = 2;
++        else if (almost_equals(c_token, "l$arge"))
++            png_font = 3;
++        else if (almost_equals(c_token, "mo$nochrome"))
++            png_mode = 0;
++        else if (almost_equals(c_token, "g$ray"))
++            png_mode = 1;
++        else if (almost_equals(c_token, "c$olor")
++                 || almost_equals(c_token, "c$olour"))
++            png_mode = 2;
++	else if (almost_equals(c_token, "t$ransparent"))
++	    png_transparent = 1;
++	else if (almost_equals(c_token, "not$ransparent"))
++	    png_transparent = 0;
++        else {
++            /* set color */
++            string = input_line + token[c_token].start_index;
++
++            if (string[0] == 'x') {
++                /* HBB 991123: read in as *shorts*, not ints! */
++                if (sscanf(string, "x%2hx%2hx%2hx", &rgb_color[0], &rgb_color[1], &rgb_color[2] ) != 3) {
++                    int_error("invalid color spec, must be xRRGGBB", c_token);
++                }
++            } else
++                int_error("expecting: {small, medium, large},[no]transparent, or {monochrome, gray, color, [xRRGGBB] }", c_token);
++
++            if (n_colors >= WEB_N_COLORS) {
++                int_warn("too many colors, ingoring", c_token);
++		/* Magic number abuse guards against
++		 * "> WEB_N_COLORS warning" scroll fests. */
++		if (!END_OF_COMMAND) {
++		    while (!END_OF_COMMAND)
++			++c_token; --c_token;
++		}
++            } else {
++                web_color_rgbs[n_colors].r = rgb_color[0];
++                web_color_rgbs[n_colors].g = rgb_color[1];
++                web_color_rgbs[n_colors].b = rgb_color[2];
++                n_colors++;
++            }
++        }
++        c_token++;
+     }
+ 
+     /* setup options string */
+ 
++    /* HBB 991008: moved this block to here, so 'transparent' gets
++     * printed out first. Don't print 'notransparent', for now, to
++     * protect older gnuplots. Scripts with 'transparent' in them
++     * won't work as wanted, with older versions, so put it here. */
++    if (png_transparent)
++	strcat(term_options, "transparent");
++
+     switch (png_font) {
+     case 3:
+-	strcat(term_options, "large");
++	strcat(term_options, " large");
+ 	break;
+     case 2:
+-	strcat(term_options, "medium");
++	strcat(term_options, " medium");
+ 	break;
+     case 1:
+     default:
+-	strcat(term_options, "small");
++	strcat(term_options, " small");
+ 	break;
+     }
+ 
+@@ -166,6 +210,13 @@
+ 	break;
+     }
+ 
++    for (i=0; i < n_colors ; i++ ) {
++	sprintf(term_options,"%s x%02x%02x%02x",
++		term_options,
++		web_color_rgbs[i].r,
++		web_color_rgbs[i].g,
++		web_color_rgbs[i].b);
++    }
+ }
+ 
+ 
+@@ -222,7 +273,7 @@
+ 
+     switch (png_mode) {
+     case 2:
+-	numplanes = 4;
++	numplanes = 8;
+ 	break;
+     case 1:
+ 	numplanes = 3;
+@@ -248,15 +299,15 @@
+ TERM_PUBLIC void
+ PNG_text()
+ {
+-    register int x, j, row;
+     png_structp png_ptr;
+     png_infop info_ptr;
+-    register int i, value;
+     png_bytep prow;
+-    int mask, plane1, plane2, plane3, plane4;
+-    int red, green, blue;
+     png_text pngtext, *pngtext_copy;
++    png_byte pal_trans[1];
+     char text[100];
++    register int x, i, j;
++/*    register int row, value; */
++/* int mask, plane1, plane2, plane3, plane4; */
+ 
+     png_ptr = png_create_write_struct(PNG_LIBPNG_VER_STRING, NULL, NULL, NULL);
+     if (!png_ptr) {
+@@ -275,6 +326,7 @@
+ 	b_freebitmap();
+ 	return;
+     }
++    memset(prow,0,sizeof(prow));
+     if (setjmp(png_ptr->jmpbuf)) {
+ 	png_destroy_write_struct(&png_ptr, &info_ptr);
+ 	free(prow);
+@@ -283,7 +335,7 @@
+     }
+ 
+ #ifdef __OLD_PNGLIB__
+-   /* deprecated and no longer necessary */        
++    /* deprecated and no longer necessary */ 
+     png_info_init(info_ptr);
+     png_write_init(png_ptr); */
+ #endif /* __OLD_PNGLIB__ */
+@@ -293,43 +345,48 @@
+     info_ptr->width = b_ysize;
+     info_ptr->height = b_xsize;
+ 
+-    info_ptr->bit_depth = png_mode == 0 ? 1 : 4;
++    info_ptr->bit_depth = png_mode == 0 ? 1 : 8;
+     info_ptr->color_type = png_mode == 2 ? PNG_COLOR_TYPE_PALETTE :
+ 	PNG_COLOR_TYPE_GRAY;
+     if (png_mode == 2) {
+ 	info_ptr->valid |= PNG_INFO_PLTE;
+ 	info_ptr->palette = png_palette;
+-	info_ptr->num_palette = 16;
++	info_ptr->num_palette = sizeof(png_palette)/sizeof(png_palette[0]);
+     }
+     if (png_mode != 0) {
+ 	info_ptr->valid |= PNG_INFO_sBIT;
+ 	if (png_mode == 1) {
+ 	    info_ptr->sig_bit.gray = 3;
+ 	    png_set_shift(png_ptr, &(info_ptr->sig_bit));
+-	} else {
+-	    info_ptr->sig_bit.red = 2;
+-	    info_ptr->sig_bit.green = 2;
+-	    info_ptr->sig_bit.blue = 2;
++	} 
++	else {
++	    /* HBB 991123: we're now using the full 8 bits per color
++	     * component... */
++	    info_ptr->sig_bit.red = 8;
++	    info_ptr->sig_bit.green = 8;
++	    info_ptr->sig_bit.blue = 8;
+ 	}
+     }
++
+     info_ptr->interlace_type = 0;
++
+     if (png_mode == 0)
+ 	png_set_invert_mono(png_ptr);
+ 
+-    if (png_mode == 2)
+-	for (i = 0; i < 16; i++) {
+-	    red = (i & 4) ? 1 : 3;
+-	    green = (i & 2) ? 1 : 3;
+-	    blue = (i & 1) ? 1 : 3;
+-	    if (i & 8) {
+-		red--;
+-		green--;
+-		blue--;
+-	    }
+-	    png_palette[i].red = red * 85;
+-	    png_palette[i].green = green * 85;
+-	    png_palette[i].blue = blue * 85;
++    if (png_mode == 2) {
++	if (png_transparent) {
++	    info_ptr->valid |= PNG_INFO_tRNS;
++	    info_ptr->num_trans = 1;
++	    pal_trans[0] = 0;
++	    info_ptr->trans=pal_trans;
+ 	}
++
++	for (i = 0; i < WEB_N_COLORS; i++) {
++	    png_palette[i].red = web_color_rgbs[i].r;
++	    png_palette[i].green = web_color_rgbs[i].g;
++	    png_palette[i].blue = web_color_rgbs[i].b;
++	}
++    }
+     sprintf(text, "gnuplot %sversion %s patchlevel %s",
+ 	    OS, version, patchlevel);
+ 
+@@ -339,6 +396,13 @@
+     pngtext.text_length = strlen(text);
+ 
+     pngtext_copy = malloc(sizeof(*pngtext_copy));
++    if (!pngtext_copy) {
++	png_destroy_write_struct(&png_ptr, &info_ptr);
++	free(prow);
++	b_freebitmap();
++	return;
++    }
++    memset(pngtext_copy,0,sizeof(pngtext_copy));
+     *pngtext_copy = pngtext;
+     info_ptr->num_text = 1;
+     info_ptr->text = pngtext_copy;
+@@ -353,6 +417,7 @@
+ 
+     /* dump bitmap in raster mode */
+     for (x = b_xsize - 1; x >= 0; x--) {
++#if 0
+ 	row = (b_ysize / 8) - 1;
+ 	for (j = row; j >= 0; j--) {
+ 	    mask = 0x80;
+@@ -382,10 +447,14 @@
+ 		if (png_mode == 1)
+ 		    value = 7 - value;
+ 
+-		prow[(row - j) * 8 + i] = (png_byte) value;
++		prow[(row - j) * 8 + i] = (png_byte) (value & 0xFF) ;
+ 		mask >>= 1;
+ 	    }
+ 	}
++#else
++	for (j=b_ysize - 1; j>= 0; j--)
++	    prow[j] = (png_byte)b_getpixel(j, x);
++#endif
+ 	png_write_rows(png_ptr, &prow, 1);
+     }
+ 
+@@ -395,16 +464,42 @@
+     b_freebitmap();
+ }
+ 
+-
++/* _linetype(lt)  Called to set the line type before text is displayed or
++ * line(s) plotted.  This procedure should select a pen color or line
++ * style if the device has these capabilities.  
++ * lt is an integer from -2 to 0 or greater.  
++ * An lt of -2 is used for the border of the plot.
++ * An lt of -1 is used for the X and Y axes.  
++ * lt 0 and upwards are used for plots 0 and upwards.
++ * If _linetype() is called with lt greater than the available line types, 
++ * it should map it to one of the available line types.
++ * Most drivers provide 9 different linetypes (lt is 0 to 8).
++ */
+ TERM_PUBLIC void
+ PNG_linetype(linetype)
+ int linetype;
+ {
+     switch (png_mode) {
++    /* HBB 991008: this once made the grid lines and axes (-1) look the
++     * same as the borders (-2). That's ugly, IMHO. GIF uses a
++     * dashed line, for this, but libpng doesn't seem able to do
++     * that. But a look into the palette turns up that color 2
++     * is grey, and is currently unused... Let's see: */
+     case 2:
+-	if (linetype >= 9)
+-	    linetype %= 9;
+-	b_setvalue(png_color_table[linetype + 2]);
++
++	if (linetype == -2)
++	    linetype = 1;
++	else if (linetype == -1)
++	    linetype = 2;
++
++	else {
++	    /* HBB 991008: moved the += 3 down, so colors 0, 1, 2 are
++	     * _not_ used by the regular plots, as it should be */
++	    if (linetype >= (WEB_N_COLORS - 3))
++		linetype %= (WEB_N_COLORS - 3);
++	    linetype += 3;
++	}
++	b_setvalue(linetype);
+ 	break;
+     case 1:
+ 	if (linetype >= 7)
+@@ -462,13 +557,26 @@
+ "?png",
+ " The `png` terminal driver supports Portable Network Graphics.  To compile it,",
+ " you will need  the third-party libraries \"libpng\" and \"zlib\"; both are",
+-" available at ftp://ftp.uu.net/graphics/png.  `png` has two options.",
++" available at http://www.cdrom.com/pub/png/.  `png` has four options.",
++"",
++" By default, the `png` terminal driver uses a shared Web-friendy palette.",
+ "",
+ " Syntax:",
+ "       set terminal png {small | medium | large}",
++"                        {transparent | notransparent}",
+ "                        {monochrome | gray | color}",
++"                        {<color0> <color1> <color2> ...}",
++"",
++" `transparent` instructs the driver to generate transparent PNGs.  The first",
++" color will be the transparent one.",
++"",
++" The defaults are small (fontsize) and color.  Default size of the output",
++" is 640*480 pixel. ",
+ "",
+-" The defaults are small (fontsize) and monochrome.  Default size of the output",
+-" is 640*480 pixel."
++" Each color must be of the form 'xrrggbb', where x is the literal character",
++" 'x' and 'rrggbb' are the red, green and blue components in hex.  For example,",
++" 'x00ff00' is green.  The background color is set first, then the border",
++" colors, then the X & Y axis colors, then the plotting colors.  The maximum",
++" number of colors that can be set is currently 99."
+ END_HELP(png)
+ #endif /* TERM_HELP */

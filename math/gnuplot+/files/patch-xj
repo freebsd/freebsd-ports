@@ -1,0 +1,13 @@
+# save-position
+--- misc.c.ORIG	Wed Sep 29 18:17:27 1999
++++ misc.c	Sun Dec  5 21:46:23 1999
+@@ -1006,8 +1006,7 @@
+ FILE *fp;
+ struct position *pos;
+ {
+-    static char *msg[] =
+-    {"first_axes ", "second axes ", "graph ", "screen "};
++    static char *msg[] = { "first ", "second  ", "graph ", "screen " };
+ 
+     assert(first_axes == 0 && second_axes == 1 && graph == 2 && screen == 3);
+ 
