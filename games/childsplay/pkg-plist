@@ -1,0 +1,149 @@
+bin/childsplay
+childsplay/CPConstants.py
+childsplay/utils.py
+childsplay/splash.py
+childsplay/pyassetmlcreator.py
+childsplay/pyassetmlSDL.py
+childsplay/pyassetml.py
+childsplay/letters-trans.py
+childsplay/install.py
+childsplay/childsplay.py
+childsplay/Timer.py
+childsplay/SpriteUtils.py
+childsplay/ConfParser.py
+childsplay/CPMenu.py
+childsplay/version.py
+childsplay/Data/icons/letters.icon.png
+childsplay/Data/icons/memory.icon.png
+childsplay/Data/bluebold.ttf
+childsplay/Data/bluehigh.ttf
+childsplay/Data/boom.wav
+childsplay/Data/bullpen3.ttf
+childsplay/Data/bummer.wav
+childsplay/Data/chpl-icon-48-flat.png
+childsplay/Data/chpl-icon-48.png
+childsplay/Data/chpl-icon-48.xpm
+childsplay/Data/cows.ogg
+childsplay/Data/cowsplash-load.png
+childsplay/Data/cowsplash.png
+childsplay/Data/pointer_mask.xbm
+childsplay/Data/score
+childsplay/Data/wahoo.wav
+childsplay/lib/ConfigData/childsplayrc
+childsplay/lib/MemoryData/cardback.png
+childsplay/lib/MemoryData/cardfront.png
+childsplay/lib/letters.py
+childsplay/lib/memory.py
+childsplay/lib/letters.pyc
+childsplay/lib/memory.pyc
+childsplay/CPConstants.pyc
+childsplay/CPMenu.pyc
+childsplay/ConfParser.pyc
+childsplay/SpriteUtils.pyc
+childsplay/Timer.pyc
+childsplay/childsplay.pyc
+childsplay/install.pyc
+childsplay/letters-trans.pyc
+childsplay/pyassetml.pyc
+childsplay/pyassetmlSDL.pyc
+childsplay/pyassetmlcreator.pyc
+childsplay/splash.pyc
+childsplay/utils.pyc
+childsplay/version.pyc
+share/doc/childsplay/po/fr/childsplay_0.71_fr.po
+share/doc/childsplay/po/da/childsplay_0.71_da.po
+share/doc/childsplay/po/de/childsplay_0.71_de.po
+share/doc/childsplay/po/es/childsplay_0.71_es.po
+share/doc/childsplay/po/wordlist/README.gz
+share/doc/childsplay/po/wordlist/words-en.gz
+share/doc/childsplay/po/wordlist/words-esp.gz
+share/doc/childsplay/po/wordlist/words-fr.gz
+share/doc/childsplay/po/wordlist/words-nl.gz
+share/doc/childsplay/po/wordlist/words-de.gz
+share/doc/childsplay/po/nl/childsplay_0.71_nl.po
+share/doc/childsplay/po/tr/childsplay_0.71_tr.po
+share/doc/childsplay/po/childsplay_0.71.pot
+share/doc/childsplay/copyright
+share/doc/childsplay/changelog.text
+share/doc/childsplay/README.games-module
+share/doc/childsplay/README.develop
+share/doc/childsplay/GPL-2
+share/doc/childsplay/README.rc-files
+share/locale/nl/LC_MESSAGES/childsplay.mo
+share/locale/fr/LC_MESSAGES/childsplay.mo
+share/locale/es/LC_MESSAGES/childsplay.mo
+share/locale/de/LC_MESSAGES/childsplay.mo
+share/locale/da/LC_MESSAGES/childsplay.mo
+share/gnome/assetml/childsplay/childsplay-images/po/Translation.raw
+share/gnome/assetml/childsplay/childsplay-images/MORE_but.png
+share/gnome/assetml/childsplay/childsplay-images/OK_but.png
+share/gnome/assetml/childsplay/childsplay-images/arrow.png
+share/gnome/assetml/childsplay/childsplay-images/balloonsl.png
+share/gnome/assetml/childsplay/childsplay-images/balloonsr.png
+share/gnome/assetml/childsplay/childsplay-images/blue.jpg
+share/gnome/assetml/childsplay/childsplay-images/bluebold.ttf
+share/gnome/assetml/childsplay/childsplay-images/bluehigh.ttf
+share/gnome/assetml/childsplay/childsplay-images/bullpen3.ttf
+share/gnome/assetml/childsplay/childsplay-images/childsplay-images.assetml
+share/gnome/assetml/childsplay/childsplay-images/chpl-icon-48-flat.png
+share/gnome/assetml/childsplay/childsplay-images/chpl-icon-48.png
+share/gnome/assetml/childsplay/childsplay-images/chpl-icon-48.xpm
+share/gnome/assetml/childsplay/childsplay-images/cowsplash-load.png
+share/gnome/assetml/childsplay/childsplay-images/cowsplash.png
+share/gnome/assetml/childsplay/childsplay-images/firework1.png
+share/gnome/assetml/childsplay/childsplay-images/firework2.png
+share/gnome/assetml/childsplay/childsplay-images/hscore.png
+share/gnome/assetml/childsplay/childsplay-images/land.png
+share/gnome/assetml/childsplay/childsplay-images/pointer.png
+share/gnome/assetml/childsplay/childsplay-images/question1.png
+share/gnome/assetml/childsplay/childsplay-images/stop.png
+share/gnome/assetml/childsplay/childsplay-images/tux.png
+share/gnome/assetml/childsplay/childsplay-sounds/po/Translation.raw
+share/gnome/assetml/childsplay/childsplay-sounds/po/nl.po
+share/gnome/assetml/childsplay/childsplay-sounds/Winner2.ogg
+share/gnome/assetml/childsplay/childsplay-sounds/boom.wav
+share/gnome/assetml/childsplay/childsplay-sounds/bummer.wav
+share/gnome/assetml/childsplay/childsplay-sounds/childsplay-sounds.assetml
+share/gnome/assetml/childsplay/childsplay-sounds/cows.ogg
+share/gnome/assetml/childsplay/childsplay-sounds/dealcard1.wav
+share/gnome/assetml/childsplay/childsplay-sounds/level_clear.wav
+share/gnome/assetml/childsplay/childsplay-sounds/music1.ogg
+share/gnome/assetml/childsplay/childsplay-sounds/rocket.wav
+share/gnome/assetml/childsplay/childsplay-sounds/wahoo.wav
+share/gnome/assetml/childsplay/memory-136x136/po/memory-136x136.pot
+share/gnome/assetml/childsplay/memory-136x136/po/nl.po
+share/gnome/assetml/childsplay/memory-136x136/bear.png
+share/gnome/assetml/childsplay/memory-136x136/boat.png
+share/gnome/assetml/childsplay/memory-136x136/bread.png
+share/gnome/assetml/childsplay/memory-136x136/car.png
+share/gnome/assetml/childsplay/memory-136x136/dog.png
+share/gnome/assetml/childsplay/memory-136x136/fish.png
+share/gnome/assetml/childsplay/memory-136x136/grapes.png
+share/gnome/assetml/childsplay/memory-136x136/lion.png
+share/gnome/assetml/childsplay/memory-136x136/memory-136x136.assetml
+share/gnome/assetml/childsplay/memory-136x136/monkey.png
+share/gnome/assetml/childsplay/memory-136x136/plane.png
+share/gnome/assetml/childsplay/memory-136x136/tree.png
+share/gnome/assetml/childsplay/memory-136x136/apple.png
+@dirrm childsplay/Data/icons
+@dirrm childsplay/Data
+@dirrm childsplay/lib/ConfigData
+@dirrm childsplay/lib/MemoryData
+@dirrm childsplay/lib
+@dirrm childsplay
+@dirrm share/doc/childsplay/po/fr
+@dirrm share/doc/childsplay/po/da
+@dirrm share/doc/childsplay/po/de
+@dirrm share/doc/childsplay/po/es
+@dirrm share/doc/childsplay/po/wordlist
+@dirrm share/doc/childsplay/po/nl
+@dirrm share/doc/childsplay/po/tr
+@dirrm share/doc/childsplay/po
+@dirrm share/doc/childsplay
+@dirrm share/gnome/assetml/childsplay/childsplay-images/po
+@dirrm share/gnome/assetml/childsplay/childsplay-images
+@dirrm share/gnome/assetml/childsplay/childsplay-sounds/po
+@dirrm share/gnome/assetml/childsplay/childsplay-sounds
+@dirrm share/gnome/assetml/childsplay/memory-136x136/po
+@dirrm share/gnome/assetml/childsplay/memory-136x136
+@dirrm share/gnome/assetml/childsplay

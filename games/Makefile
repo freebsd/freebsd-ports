@@ -65,6 +65,7 @@
     SUBDIR += cardpics
     SUBDIR += cgoban
     SUBDIR += cgoban2
+    SUBDIR += childsplay
     SUBDIR += chromium
     SUBDIR += circuslinux
     SUBDIR += civ2demo
