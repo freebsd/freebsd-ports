@@ -11,6 +11,12 @@ PORTREVISION?=	2
 CATEGORIES=	deskutils
 MASTER_SITES=	http://logjam.danga.com/download/
 
+.if defined (WITH_EXTRA_PATCH)
+PATCH_SITES=	http://bmp-plugins.berlios.de/misc/patches/
+PATCHFILES=	logjam_link.c.diff
+PATCH_DIST_STRIP=	-p0
+.endif
+
 MAINTAINER=	mike.patterson@unb.ca
 COMMENT=	A GTK2 interface to livejournals, ie www.livejournal.com
 
