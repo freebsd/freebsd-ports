@@ -1,0 +1,159 @@
+--- Makefile.am.orig	Wed Jul 31 00:10:30 2002
++++ Makefile.am	Fri Oct 22 08:46:31 2004
+@@ -8,36 +8,9 @@
+ #----------------------------------------------------------------------
+ # List everything we build; break list into three kinds of executables
+ 
+-# Unattended unit tests
+-TESTS = \
+-	ftp_client_proto_test \
+-	nbbio_test \
+-	Poller_test \
+-	Sked_test
+-
+-# Following tests are not yet unattended
+-HAND_TESTS = \
+-	robouser_test \
+-	ftp_client_pipe_test
+-
+ # Real programs 
+ bin_PROGRAMS = dkftpbench
+ 
+-noinst_PROGRAMS = $(TESTS) $(HAND_TESTS) dklimits Poller_bench profile
+-
+-lib_LIBRARIES = libPoller.a
+-pkginclude_HEADERS = \
+-	Poller.h \
+-	Poller_devpoll.h \
+-	Poller_poll.h \
+-	Poller_select.h \
+-	Poller_sigio.h \
+-	Poller_sigfd.h \
+-	Poller_kqueue.h
+-
+-# No info yet
+-info_TEXINFOS = 
+-
+ EXTRA_DIST = \
+ 	inet_aton.c \
+ 	bakeoff.html \
+@@ -87,16 +60,6 @@
+ # For each thing we build, list its sources, and anything special about
+ # how to build it
+ 
+-libPoller_a_SOURCES = \
+-	Poller.h \
+-	Poller_sigfd.cc \
+-	Poller_sigio.cc \
+-	Poller_poll.cc \
+-	Poller_select.cc \
+-	Poller_devpoll.cc \
+-	Poller_kqueue.cc \
+-	Poller.cc
+-
+ dkftpbench_SOURCES = \
+ 	CHECK.h \
+ 	Poller.h \
+@@ -128,90 +91,6 @@
+ 	Poller.cc \
+ 	Sked.cc
+ 
+-dklimits_SOURCES = \
+-	dklimits.c
+-
+-ftp_client_proto_test_SOURCES = \
+-	dprint.cc \
+-	ftp_client_proto.cc \
+-	ftp_client_proto_test.cc
+-
+-ftp_client_pipe_test_SOURCES = \
+-	dprint.cc \
+-	eclock.cc \
+-	ftp_client_pipe.cc \
+-	ftp_client_pipe_test.cc \
+-	ftp_client_proto.cc \
+-	Poller_poll.cc \
+-	Poller.cc \
+-	nbbio.cc \
+-	Sked.cc
+-
+-nbbio_test_SOURCES = \
+-	dprint.cc \
+-	nbbio.cc \
+-	nbbio_test.cc
+-
+-robouser_test_SOURCES = \
+-	dprint.cc \
+-	eclock.cc \
+-	ftp_client_pipe.cc \
+-	ftp_client_proto.cc \
+-	nbbio.cc \
+-	robouser.cc \
+-	Platoon.cc \
+-	robouser_test.cc \
+-	CHECK.cc \
+-	Poller_poll.cc \
+-	Poller.cc \
+-	Sked.cc
+-
+-Poller_bench_SOURCES = \
+-	dprint.cc \
+-	eclock.cc \
+-	CHECK.cc \
+-	Poller.h \
+-	Poller.cc \
+-	Poller_devpoll.cc \
+-	Poller_devpoll.h \
+-	Poller_poll.h \
+-	Poller_poll.cc \
+-	Poller_bench.cc \
+-	Poller_select.h \
+-	Poller_select.cc \
+-	Poller_sigio.h \
+-	Poller_sigio.cc \
+-	Poller_sigfd.h \
+-	Poller_sigfd.cc \
+-	Poller_kqueue.h \
+-	Poller_kqueue.cc
+-	
+-Poller_test_SOURCES = \
+-	dprint.cc \
+-	CHECK.cc \
+-	eclock.cc \
+-	Poller.h \
+-	Poller.cc \
+-	Poller_sigfd.cc \
+-	Poller_sigfd.h \
+-	Poller_sigio.cc \
+-	Poller_sigio.h \
+-	Poller_devpoll.cc \
+-	Poller_devpoll.h \
+-	Poller_poll.h \
+-	Poller_poll.cc \
+-	Poller_test.cc \
+-	Poller_select.h \
+-	Poller_select.cc \
+-	Poller_kqueue.h \
+-	Poller_kqueue.cc
+-
+-Sked_test_SOURCES = \
+-	dprint.cc \
+-	eclock.cc \
+-	Sked.cc \
+-	Sked_test.cc
+-
+ #------- start of corba.  Not fully autoconfisticated yet ---------
+ 
+ CorbaPlatoon_srv.cc: CorbaPlatoon.idl
+@@ -242,11 +121,6 @@
+ 	/bin/rm -f *.o CorbaPlatoon.hh CorbaPlatoon{_srv,Dyn_srv}.cc
+ 
+ #---- end of corba --------------------------------------------------------
+-
+-#--------------------------------------------------------------------------
+-# Program to do fine-grained profiling of Linux kernel.  From the net...
+-
+-profile_SOURCES = profile.c
+ 
+ #--------------------------------------------------------------------------
+ # Extract documentation from sources.
