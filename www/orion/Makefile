@@ -7,7 +7,7 @@
 
 PORTNAME=	orion
 PORTVERSION=	1.5.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www java
 MASTER_SITES=	http://www.orionserver.com/distributions/ \
 		http://www.atlassian.com/software/orion/downloads/ \
@@ -32,7 +32,7 @@ APP_TITLE=	Orion Server
 APP_SHORTNAME=	${PORTNAME}
 APPCTL_NAME=	${APP_SHORTNAME}ctl
 CTL_SCRIPT=	${PREFIX}/bin/${APPCTL_NAME}
-STARTUP_ORDER?=	020
+STARTUP_ORDER=	020
 RC_SCRIPT=	${PREFIX}/etc/rc.d/${STARTUP_ORDER}.${PORTNAME}.sh
 JAVA_HOME?=	${LOCALBASE}/jdk1.3.1
 JAVA_PORT?=	${PORTSDIR}/java/jdk13
@@ -41,10 +41,8 @@ WITH_JIKES?=	YES
 .if ${WITH_JIKES} == "YES"
 RUN_DEPENDS+=	${JIKES_LOCATION}:${PORTSDIR}/java/jikes
 .endif
-USER_NAME?=	${PORTNAME}
-GROUP_NAME?=	${USER_NAME}
-USER_ID?=	7104
-GROUP_ID?=	${USER_ID}
+USER_NAME=	www
+GROUP_NAME=	www
 PW?=		/usr/sbin/pw
 HTTP_PORT?=	8090
 RMI_PORT?=	23791
@@ -58,16 +56,14 @@ pre-install:
 	@${ECHO} "   Location of JDK:         ${JAVA_HOME}"
 	@${ECHO} "   Location of Java port:   ${JAVA_PORT}"
 	@${ECHO} "   Using Jikes:             ${WITH_JIKES}"
-	@${ECHO} "   Running as (user/group): ${USER_NAME}/${GROUP_NAME} (${USER_ID}:${GROUP_ID})"
+	@${ECHO} "   Running as (user/group): ${USER_NAME}/${GROUP_NAME}"
 	@${ECHO} "   HTTP port:               ${HTTP_PORT}"
 	@${ECHO} "   RMI port:                ${RMI_PORT}"
 	@${ECHO} "   Starting after install:  ${AUTO_START}"
+	PKG_PREFIX=${PREFIX} ${SH} pkg-install ${PKGNAME} PRE-INSTALL
+
 
 do-install:
-	@# Add the group and the user if they do not exist
-	${PW} groupadd -n ${GROUP_NAME} -g ${GROUP_ID} || true
-	${PW} useradd -n ${USER_NAME} -u ${USER_ID} -g ${GROUP_NAME} -c "${APP_TITLE} account" -d ${APP_HOME} -s ${SH} -h - || true
-
 	@# Create the destination directory
 	${MKDIR} ${APP_HOME}
 
