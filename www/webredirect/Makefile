@@ -6,16 +6,18 @@
 #
 
 PORTNAME=	webredirect
-PORTVERSION=	0.1
+PORTVERSION=	0.2
 CATEGORIES=	www
-MASTER_SITES=	ftp://ftp.Raditex.se/pub/kaj/
+MASTER_SITES=	ftp://Raditex.se/pub/kaj/
 
-MAINTAINER=	kaj@Raditex.se
+MAINTAINER=	rasmus@kaj.se
 
 MAN1=		webredirect.1
 
 .include <bsd.port.pre.mk>
 
+do-configure:
+	${TOUCH} ${WRKSRC}/incu/depend.mk && cd ${WRKSRC} && ${MAKE} depend
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/webredirect ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/webredirect.1 ${PREFIX}/man/man1
