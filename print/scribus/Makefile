@@ -21,8 +21,6 @@ MASTER_SITE_SUBDIR=	apps/office
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A comprehensive desktop publishing program
 
-BROKEN=		"Broken pkg-plist"
-
 LIB_DEPENDS=	lcms.1:${PORTSDIR}/graphics/lcms \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		cups.2:${PORTSDIR}/print/cups-base \
@@ -52,6 +50,8 @@ pre-everything::
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g; \
-		s|-O2||g' ${WRKSRC}/configure
+		 s|-O2||g ; \
+		 s|2\.3|${PYTHON_VERSION:S/^python//}|g ; \
+		 s|python2_3|${PYTHON_VERSION:S/./_/}|g' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
