@@ -1,0 +1,18 @@
+Gnut is a text-mode client for the Gnutella distributed network. Gnutella
+is a global file-sharing network similar in many ways to Napster, except
+it has a truly distributed design which does not rely on centralized
+servers. Additionally, all types of file may be shared via gnutella, not
+just MP3 audio files as with Napster.
+
+When you connect to the Gnutella network, your local machine becomes
+a server as well as a client on the network and will start receiving
+queries and traffic from other hosts. This imposes a moderate bandwidth
+penalty on usage, but the impact can be configured.
+
+Users should be aware that Gnutella does not attempt to provide
+anonymity or confidentiality of search requests or transfers, so use for
+illegal purposes is not recommended.
+
+Gnutella homepage: http://gnutella.wego.com/
+
+WWW: http://www.umr.edu/~jjp/
