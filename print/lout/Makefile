@@ -16,8 +16,6 @@ MASTER_SITE_SUBDIR=	support/lout
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	LaTeX like document creation system with PostScript/PDF output
 
-BROKEN=		Broken pkg-plist
-
 USE_GMAKE=	yes
 MAKEFILE=	makefile
 ALL_TARGET=	lout prg2lout
