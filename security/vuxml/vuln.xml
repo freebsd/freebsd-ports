@@ -32,6 +32,34 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="a7bfd423-484f-11d9-a9e7-0001020eed82">
+    <topic>cscope -- symlink attack vulnerability</topic>
+    <affects>
+      <package>
+	<name>cscope</name>
+	<range><lt>15.5_1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>cscope is vulnerable to a symlink attack which could lead
+	  to an attacker overwriting arbitrary files with the
+	  permissions of the user running cscope.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-0996</cvename>
+      <bid>11697</bid>
+      <mlist msgid="20041124025903.9337.qmail@www.securityfocus.com">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=110133485519690</mlist>
+      <mlist msgid="20041118012718.78b07d79.research@rexotec.com">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=110072752707293</mlist>
+      <url>http://sourceforge.net/tracker/index.php?func=detail&amp;aid=1062807&amp;group_id=4664&amp;atid=104664</url>
+    </references>
+    <dates>
+      <discovery>2003-04-03</discovery>
+      <entry>2004-12-07</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="9be819c6-4633-11d9-a9e7-0001020eed82">
     <topic>bnc -- remote code execution</topic>
     <affects>
