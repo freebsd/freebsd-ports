@@ -1,14 +1,41 @@
-StarOffice 5.2 Personal Install How-To
+StarOffice 6.0 Personal Install How-To
 
 Written by:      Darren Wiebe <dkwiebe@hagenhomes.com>
 		 and Martin Blapp <mb@imp.ch>
 
-You will very shortly have finished  a network install of StarOffice 5.2.
-Once that is done exit X11 and run it again as the user that you usually use.
-Then run "make install-user" and do a standard workstation install.
-Change the install path to $HOME/office52. Then add $HOME/office52/ to your path.
+------------------------------------------------------------------
+
+Note that this a a BETA RELEASE of Staroffice6.0
+
+------------------------------------------------------------------
+
+BUGS:
+
+A userinstall is handled unproperly. Staroffice tries to
+write to the wrong location and doesn't handle this properly
+and crashes.
+
+Workaround:
+
+# chmod 777 $PREFIX/staroffice6.0/share/config/registry/instance/org/openoffice/Office
+# chmod +s $PREFIX/staroffice6.0/share/config/registry/instance/org/openoffice/Office
+
+$PREFIX is in most cases "/usr/local". Adding +s on the
+config directory does make if writable for later.
+
+This should only be done as urgent workaround if you don't
+want to work as root and really like to test Staroffice6.0-Beta.
+
+------------------------------------------------------------------
+
+You will very shortly have finished  a network install of
+StarOffice 6.0. Once that is done exit X11 and run it again as
+the user that you usually use. Then run "make install-user" and
+do a standard workstation install. Change the install path to
+$HOME/staroffice6.0. Then add $HOME/staroffice6.0/ to your path.
 
 It will now be ready to use.
 
 Good Luck
 
+------------------------------------------------------------------

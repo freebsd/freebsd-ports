@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Setup state="modified" cfg:package="org.openoffice" xmlns="http://openoffice.org/2000/registry/components/Setup" xmlns:cfg="http://openoffice.org/2000/registry/instance" xmlns:xsi="http://www.w3.org/1999/XMLSchema-instance">
+ <Office state="modified">
+  <ooSetupInstallPath cfg:type="string" state="modified">/root/staroffice6.0/user</ooSetupInstallPath>
+ </Office>
+</Setup>
