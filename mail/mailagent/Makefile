@@ -3,7 +3,7 @@
 # Date created:			23 Sep 1996
 # Whom:				Masafumi NAKANE <max@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.16 1997/05/25 18:29:05 max Exp $
+# $Id: Makefile,v 1.17 1997/06/02 18:33:30 max Exp $
 #
 
 DISTNAME=		mailagent-3.0@56
@@ -14,9 +14,7 @@ MASTER_SITE_SUBDIR=	../../authors/id/RAM/
 
 MAINTAINER=	max@FreeBSD.ORG
 
-RUN_DEPENDS=	perl5.004:${PORTSDIR}/lang/perl5
-BUILD_DEPENDS=	perl5.004:${PORTSDIR}/lang/perl5
-
+USE_PERL5=	yes
 NO_PACKAGE=	"Correct FQDN needs to be hardcoded"
 IS_INTERACTIVE=		yes
 HAS_CONFIGURE=		yes
