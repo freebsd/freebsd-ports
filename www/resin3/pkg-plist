@@ -1,28 +1,32 @@
-%%APP_NAME%%/doc/index.jsp
-%%APP_NAME%%/lib/dom.jar
+%%APP_NAME%%/lib/LICENSE.isorelax
+%%APP_NAME%%/lib/LICENSE.retroweaver
+%%APP_NAME%%/lib/ejb-20.jar
+%%APP_NAME%%/lib/ejb-30.jar
 %%APP_NAME%%/lib/isorelax.jar
+%%APP_NAME%%/lib/j2eedeploy.jar
+%%APP_NAME%%/lib/jaxrpc.jar
 %%APP_NAME%%/lib/jca-15.jar
+%%APP_NAME%%/lib/jms-11.jar
 %%APP_NAME%%/lib/jmx-12.jar
 %%APP_NAME%%/lib/jsdk-24.jar
 %%APP_NAME%%/lib/jstl-11.jar
 %%APP_NAME%%/lib/jta-101.jar
-%%APP_NAME%%/lib/license.jar
 %%APP_NAME%%/lib/portlet-10.jar
+%%APP_NAME%%/lib/resin-jdk15.jar
 %%APP_NAME%%/lib/resin.jar
+%%APP_NAME%%/lib/retroweaver.jar
 %%APP_NAME%%/lib/webutil.jar
+%%APP_NAME%%/webapps/ROOT/index.jsp
 %%APP_NAME%%/webapps/resin-doc.war
-%%APP_NAME%%/libexec/libresin.so
-%%APP_NAME%%/libexec/libresinssl.so
 etc/%%APP_NAME%%/app-default.xml
 etc/rc.d/%%APP_NAME%%.sh
 sbin/%%APP_NAME%%ctl
 %%MOD_DIR%%/mod_caucho.so
 %%APACHE%%@exec %%APXS%% -e -a -n caucho %f
 %%APACHE%%@unexec %%APXS%% -e -A -n caucho %f
-@dirrm %%APP_NAME%%/doc
 @dirrm %%APP_NAME%%/lib
+@dirrm %%APP_NAME%%/webapps/ROOT
 @dirrm %%APP_NAME%%/webapps
-@dirrm %%APP_NAME%%/libexec
 @dirrm %%APP_NAME%%
 @unexec if cmp -s %D/etc/%%APP_NAME%%/resin.xml %D/etc/%%APP_NAME%%/resin.xml-dist; then rm -f %D/etc/%%APP_NAME%%/resin.xml ; else echo If permanently deleting this package, %D/etc/%%APP_NAME%%/resin.xml must be removed manually; fi
 etc/%%APP_NAME%%/resin.xml-dist
