@@ -3,10 +3,10 @@
 # Date created:		Di   5 Mai 1998 21:31:03 CEST
 # Whom:			andreas
 #
-# $Id: Makefile,v 1.2 1998/07/18 15:06:36 andreas Exp $
+# $Id: Makefile,v 1.3 1999/01/07 19:51:11 andreas Exp $
 #
 
-DISTNAME=	ntp-4.0.90h
+DISTNAME=	ntp-4.0.91
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.udel.edu/pub/ntp/testing/
 

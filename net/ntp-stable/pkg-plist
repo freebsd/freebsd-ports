@@ -63,6 +63,7 @@ share/doc/ntp/hints/svr4-dell
 share/doc/ntp/hints/svr4_package
 share/doc/ntp/hints/todo
 share/doc/ntp/hints/vxworks.html
+share/doc/ntp/hints/winnt
 share/doc/ntp/howto.htm
 share/doc/ntp/htmlprimer.htm
 share/doc/ntp/index.htm
@@ -72,7 +73,6 @@ share/doc/ntp/ldisc.htm
 share/doc/ntp/measure.htm
 share/doc/ntp/miscopt.htm
 share/doc/ntp/monopt.htm
-share/doc/ntp/mx4200data.htm
 share/doc/ntp/notes.htm
 share/doc/ntp/ntpd.htm
 share/doc/ntp/ntpdate.htm
@@ -83,7 +83,6 @@ share/doc/ntp/ntptrace.htm
 share/doc/ntp/parsedata.htm
 share/doc/ntp/parsenew.htm
 share/doc/ntp/patches.htm
-share/doc/ntp/pic/9400n.jpg
 share/doc/ntp/pic/alautun4a.gif
 share/doc/ntp/pic/alice11.gif
 share/doc/ntp/pic/alice12.gif
@@ -109,9 +108,6 @@ share/doc/ntp/pic/gps167.jpg
 share/doc/ntp/pic/home.gif
 share/doc/ntp/pic/hornraba.gif
 share/doc/ntp/pic/igclock.gif
-share/doc/ntp/pic/oncore_evalbig.gif
-share/doc/ntp/pic/oncore_remoteant.jpg
-share/doc/ntp/pic/oncore_utplusbig.gif
 share/doc/ntp/pic/panda.gif
 share/doc/ntp/pic/pd_om006.gif
 share/doc/ntp/pic/pd_om011.gif
