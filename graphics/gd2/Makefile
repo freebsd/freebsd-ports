@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gd
-PORTVERSION=	2.0.12
-PORTREVISION=   1
+PORTVERSION=	2.0.15
 CATEGORIES+=	graphics
 MASTER_SITES=	http://www.boutell.com/gd/http/ \
 		ftp://ftp.boutell.com/pub/boutell/gd/ \
@@ -17,63 +16,50 @@ MASTER_SITE_SUBDIR=	graphics/gd
 MAINTAINER?=	ports@FreeBSD.org
 COMMENT?=	A graphics library for fast creation of images
 
-LIB_DEPENDS=	png:${PORTSDIR}/graphics/png \
-		jpeg:${PORTSDIR}/graphics/jpeg \
-		freetype:${PORTSDIR}/print/freetype2
+LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
+		png.5:${PORTSDIR}/graphics/png \
+		freetype.9:${PORTSDIR}/print/freetype2
 
 LATEST_LINK=	gd2
 
-.ifndef WITHOUT_XPM
-# Temporary hack, until X-less XPM building is added to USE_XPM:
-.ifndef WITHOUT_X11
-USE_XPM=	yes
-.else
+MAKE_ENV=	WRKSRC="${WRKSRC}"
+MAKEFILE=	${FILESDIR}/Makefile.bsd
+INSTALLS_SHLIB=	yes
+
+.if defined(WITHOUT_X11)
+PKGNAMESUFFIX=	-nox11
+.if !defined(WITHOUT_XPM)
 LIB_DEPENDS+=	Xpm:${PORTSDIR}/graphics/xpm
 .endif
 .else
-MAKE_ARGS+=	-DWITHOUT_XPM
+USE_XPM=	yes
 .endif
 
-INSTALLS_SHLIB=	yes
-MAKEFILE=	${FILESDIR}/Makefile.bsd
-MAKE_ARGS+=	-j2
-.for v in WRKSRC INSTALL_PROGRAM INSTALL_DATA INSTALL_SCRIPT
-MAKE_ARGS+=	$v="${$v}"
-.endfor
-
-.if defined(HAVE_UNISYS_LICENSE) || \
+.if defined(WITH_LZW) || defined(HAVE_UNISYS_LICENSE) || \
     (defined(USA_RESIDENT) && ${USA_RESIDENT} == "YES")
-WITH_LZW=	yes
+CFLAGS+=	-DLZW_LICENSED
 .endif
 
+.if defined(GD_FONTS)
+USE_PERL5_BUILD=	yes
+SCRIPTS_ENV+=	GD_FONTS="${GD_FONTS}"
+.endif
+
+pre-everything::
 .if !defined(WITH_LZW)
-pre-fetch:
-	@${ECHO_CMD} "************************************************************"
-	@${ECHO_CMD} "*      If you live outside US and Canada, you can define   *"
-	@${ECHO_CMD} "*      WITH_LZW to enable GIF compression support.         *"
-	@${ECHO_CMD} "************************************************************"
+	@${ECHO_MSG} "************************************************************"
+	@${ECHO_MSG} "*      If you live outside US and Canada, you can define   *"
+	@${ECHO_MSG} "*      WITH_LZW to enable GIF compression support.         *"
+	@${ECHO_MSG} "************************************************************"
 .endif
 
 post-extract:
 	@${CP} ${FILESDIR}/g* ${WRKSRC}
 
-post-patch:
-.if !defined(WITH_LZW)
-	@${MV} ${WRKSRC}/gd_gif_out.c ${WRKSRC}/gd_gif_out.c.nogif && \
-		${SED} -e "s|#define LZW_LICENCED||g" \
-			< ${WRKSRC}/gd_gif_out.c.nogif \
-			> ${WRKSRC}/gd_gif_out.c
-.endif
-
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/index.html ${DOCSDIR}
-.endif
-
-.if defined(GD_FONTS)
-USE_PERL5_BUILD=yes
-SCRIPTS_ENV+=	GD_FONTS="${GD_FONTS}"
+	${INSTALL_DATA} ${WRKSRC}/index.html ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
