@@ -8,7 +8,7 @@
 PORTNAME=	autorespond
 PORTVERSION= 	1.0.0
 CATEGORIES=	mail
-MASTER_SITES=	http://www.inter7.com/vpopmail/
+MASTER_SITES=	http://www.vpopmail.cx/
 
 MAINTAINER=	nbm@FreeBSD.org
 
