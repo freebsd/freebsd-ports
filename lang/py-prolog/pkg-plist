@@ -1,0 +1,14 @@
+lib/%%PYTHON_VERSION%%/site-packages/pyprolog/Program.py
+lib/%%PYTHON_VERSION%%/site-packages/pyprolog/Program.pyc
+lib/%%PYTHON_VERSION%%/site-packages/pyprolog/Program.pyo
+lib/%%PYTHON_VERSION%%/site-packages/pyprolog/Term.py
+lib/%%PYTHON_VERSION%%/site-packages/pyprolog/Term.pyc
+lib/%%PYTHON_VERSION%%/site-packages/pyprolog/Term.pyo
+lib/%%PYTHON_VERSION%%/site-packages/pyprolog/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/pyprolog/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/pyprolog/__init__.pyo
+lib/%%PYTHON_VERSION%%/site-packages/pyprolog/string_source.py
+lib/%%PYTHON_VERSION%%/site-packages/pyprolog/string_source.pyc
+lib/%%PYTHON_VERSION%%/site-packages/pyprolog/string_source.pyo
+lib/%%PYTHON_VERSION%%/site-packages/pyprolog/swiplmodule.so
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/pyprolog

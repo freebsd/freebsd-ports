@@ -163,6 +163,7 @@
     SUBDIR += ptoc
     SUBDIR += py-compiler
     SUBDIR += py-mx-base
+    SUBDIR += py-prolog
     SUBDIR += python
     SUBDIR += python-doc-html
     SUBDIR += python-doc-pdf-a4
