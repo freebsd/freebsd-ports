@@ -1,0 +1,20 @@
+Multifile Text encoding Converter 1.3
+
+Converts text from one codepage to another
+using codepage definition files.
+
+Usefull in case of languages where a number
+of codepages exists and chars are encoded
+in one byte (Russian for example).
+
+Comes with win1251/koi8/dos866 codepages.
+
+Examples:
+  mtc -f koi8 -t dos866 doc2print.txt
+  cat doc2print | mtc --from win1251 --to dos866 --silent | lpr -Psmb
+  mtc --from win1251 --to koi8 -s *.html *.ht *.js
+  mtc -f koi8 -t win1251 > z
+
+ftp: ftp://ftp.ipform.ru/pub/ipform/software/
+
+email: info@ipform.ru
