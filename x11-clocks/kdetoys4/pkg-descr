@@ -1,8 +1,1 @@
 KDE provides an integrated X11 based environment, much like CDE.
-
-* This port is RESTRICTED because the applications will *not* work
-* unless you define QT_GIF_AVAILABLE in qt-i18n and recompile it. 
-* It requires a separate license from UNISYS !!
-*
-* See also:
-*  http://corp2.unisys.com/LeadStory/lzwfaq.html

@@ -1,0 +1,39 @@
+--- kmoon/pics/Makefile.in.orig	Tue Aug 24 23:08:20 1999
++++ kmoon/pics/Makefile.in	Mon Aug 30 23:39:51 1999
+@@ -157,7 +157,7 @@
+ x_includes = @x_includes@
+ x_libraries = @x_libraries@
+ 
+-pics_DATA =  	moon1.gif    moon14.gif   moon19.gif   moon22.gif   moon27.gif   	moon5.gif    moon10.gif   moon15.gif   moon23.gif   moon9.gif    	moon28.gif   moon6.gif    moon11.gif   moon16.gif   moon2.gif    	moon24.gif   moon29.gif   moon7.gif    moon12.gif   moon17.gif   	moon20.gif   moon25.gif   moon3.gif    moon8.gif    moon13.gif   	moon18.gif   moon21.gif   moon26.gif   moon4.gif    
++pics_DATA =  	moon1.xpm    moon14.xpm   moon19.xpm   moon22.xpm   moon27.xpm   	moon5.xpm    moon10.xpm   moon15.xpm   moon23.xpm   moon9.xpm    	moon28.xpm   moon6.xpm    moon11.xpm   moon16.xpm   moon2.xpm    	moon24.xpm   moon29.xpm   moon7.xpm    moon12.xpm   moon17.xpm   	moon20.xpm   moon25.xpm   moon3.xpm    moon8.xpm    moon13.xpm   	moon18.xpm   moon21.xpm   moon26.xpm   moon4.xpm    
+ 
+ 
+ picsdir = $(kde_datadir)/kmoon/pics
+@@ -177,6 +177,7 @@
+ GZIP_ENV = --best
+ all: all-redirect
+ .SUFFIXES:
++.SUFFIXES: .gif .xpm
+ $(srcdir)/Makefile.in: Makefile.am $(top_srcdir)/configure.in $(ACLOCAL_M4) 
+ 	cd $(top_srcdir) && $(AUTOMAKE) --foreign --include-deps kmoon/pics/Makefile
+ 
+@@ -284,6 +285,8 @@
+ mostlyclean-generic distclean-generic clean-generic \
+ maintainer-clean-generic clean mostlyclean distclean maintainer-clean
+ 
++.gif.xpm:
++	$(LOCALBASE)/bin/convert $< $@
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+--- kmoon/kmoon.cpp.orig	Fri Aug 27 02:43:57 1999
++++ kmoon/kmoon.cpp	Fri Aug 27 02:44:12 1999
+@@ -97,7 +97,7 @@
+ 
+     for (int i = 1; i <= 29; i++) {
+ 	QString name;
+-	name.sprintf("%s/kmoon/pics/moon%d.gif",
++	name.sprintf("%s/kmoon/pics/moon%d.xpm",
+ 		     KApplication::kde_datadir().data(),
+ 		     i);
+ 	QImage *p = new QImage(name);
