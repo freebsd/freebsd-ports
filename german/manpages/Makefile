@@ -28,6 +28,7 @@ do-build:
 .endif
 
 pre-install:
+	${RM} -rf ${WRKSRC}/${manpages}/debian
 	${FIND} ${WRKSRC}/${manpages} -type f -print | \
 		 ${SED} "s%${WRKSRC}/${manpages}%man/${LANG}%" > ${PLIST}
 
