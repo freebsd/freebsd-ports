@@ -822,15 +822,12 @@ libexec/unlinkd
 libexec/ip_user_check
 libexec/yp_auth
 libexec/pam_auth
-man/man8/pam_auth.8
 libexec/ncsa_auth
 libexec/squid_unix_group
-man/man8/squid_unix_group.8
 sbin/RunAccel
 sbin/RunCache
 sbin/squidclient
 sbin/squid
-man/man8/squid.8
 @exec mkdir -p %D/squid/cache
 @exec chown nobody:nogroup %D/squid/cache
 @exec mkdir -p %D/squid/logs

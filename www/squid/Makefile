@@ -7,31 +7,55 @@
 
 PORTNAME=	squid
 PORTVERSION=	2.5
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www
-MASTER_SITES=  \
+MASTER_SITES=	\
 	ftp://ftp.squid-cache.org/pub/%SUBDIR%/ \
 	ftp://www.unimelb.edu.au/pub/cwis/servers/unix/squid/%SUBDIR%/ \
 	ftp://sunsite.auc.dk/pub/infosystems/squid/%SUBDIR%/ \
 	ftp://ftp.net.lut.ac.uk/squid/%SUBDIR%/ \
 	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/www/squid/&,}
 MASTER_SITE_SUBDIR=	squid-2/STABLE
-DISTNAME=	squid-2.5.STABLE2
-EXTRACT_SUFX=	.tar.gz
+DISTNAME=	squid-2.5.STABLE3
+EXTRACT_SUFX=	.tar.bz2
+DIST_SUBDIR=	squid2.5
 
 PATCH_SITES=	http://www.squid-cache.org/Versions/v2/2.5/bugs/
+PATCHFILES=	squid-2.5.STABLE3-deny_info.patch \
+		squid-2.5.STABLE3-cache_dir_doc.patch \
+		squid-2.5.STABLE3-devnull.patch \
+		squid-2.5.STABLE3-log_quote.patch \
+		squid-2.5.STABLE3-rfc_reference.patch \
+		squid-2.5.STABLE3-external_acl_ident.patch \
+		squid-2.5.STABLE3-gcc-3_3.patch \
+		squid-2.5.STABLE3-carpfactor.patch \
+		squid-2.5.STABLE3-neighbor_type_domain.patch \
+		squid-2.5.STABLE3-header_access_peer.patch \
+		squid-2.5.STABLE3-memwarnsbrk.patch \
+		squid-2.5.STABLE3-hostscomments.patch \
+		squid-2.5.STABLE3-store_check_cachable_stats.patch \
+		squid-2.5.STABLE3-cachePeerPingsSentsnmp.patch \
+		squid-2.5.STABLE3-minimum_retry_timeout.patch \
+		squid-2.5.STABLE3-tcp_reset_leak.patch \
+		squid-2.5.STABLE3-hostheader.patch \
+		squid-2.5.STABLE3-reply_body_max_size.patch \
+		squid-2.5.STABLE3-ie_refresh.patch \
+		squid-2.5.STABLE3-http_reply_access-denied.patch \
+		squid-2.5.STABLE3-SENT_PASV.patch \
+		squid-2.5.STABLE3-peer_digest_not_found_assertion.patch \
+		squid-2.5.STABLE3-round_robin_max_size.patch
+PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	adrian@freebsd.org
 COMMENT=	The successful WWW proxy cache and accelerator
 
-DIST_SUBDIR=	squid2.5
-PATCH_DIST_STRIP= -p1
 GNU_CONFIGURE=	yes
+USE_BZIP2=	yes
 USE_PERL5=	yes
 USE_REINPLACE=	yes
 # Follow the apache port's lead...
 CONFIGURE_ARGS=	--bindir=${PREFIX}/sbin  --sysconfdir=${PREFIX}/etc/squid \
-		--datadir=${PREFIX}/etc/squid/ \
+		--datadir=${PREFIX}/etc/squid \
 		--localstatedir=${PREFIX}/squid \
 		--enable-storeio="ufs diskd null" \
 		--enable-removal-policies="lru heap" \
@@ -39,8 +63,8 @@ CONFIGURE_ARGS=	--bindir=${PREFIX}/sbin  --sysconfdir=${PREFIX}/etc/squid \
 		--enable-external-acl-helpers="ip_user unix_group" \
 		--enable-underscores
 
-STRIP=		# won't install scripts correctly otherwise.
 MAKEFILE=	Makefile
+MAN8=	pam_auth.8 squid_unix_group.8 squid.8
 
 # Some other configure options..
 #  - Compile and use the malloc package from Doug Lea
@@ -101,24 +125,25 @@ MAKEFILE=	Makefile
 #  - accept the illegal '_' character in hostnames.
 #CONFIGURE_ARGS+= --enable-underscores
 #  - Enable control of different heap replacement algorithms at runtime.
-#CONFIGURE_ARGS+= --enable-heap-replacement
+#CONFIGURE_ARGS+= --enable-removal-policies
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|/etc|${PREFIX}/etc|g' ${WRKSRC}/doc/squid.8
 
 post-install:
 #	I don't think many people use the pinger nowadays, and if you
 #	do you'll want squid in its own group so as to restrict access
 #	to it.
 #	cd ${WRKSRC}/src; make install-pinger
-.for file in client squid
-	if [ -f ${PREFIX}/sbin/${file} ] ; then \
-		strip ${PREFIX}/sbin/${file} ; \
+.for sbin_file in client squid
+	if [ -f ${PREFIX}/sbin/${sbin_file} ] ; then \
+		${STRIP_CMD} ${PREFIX}/sbin/${sbin_file} ; \
 	fi
 .endfor
-.for file in cachemgr.cgi dnsserver pinger unlinkd
-	if [ -f ${PREFIX}/libexec/${file} ] ; then \
-		strip ${PREFIX}/libexec/${file} ; \
+.for libexec_file in cachemgr.cgi dnsserver pinger unlinkd
+	if [ -f ${PREFIX}/libexec/${libexec_file} ] ; then \
+		${STRIP_CMD} ${PREFIX}/libexec/${libexec_file} ; \
 	fi
 .endfor
 	@if [ ! -d ${PREFIX}/squid/logs ]; then			\
