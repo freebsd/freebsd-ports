@@ -3,7 +3,7 @@
 # Date created:				26 June 1996
 # Whom:					gpalmer
 #
-# $Id: Makefile,v 1.19 1998/07/10 21:06:22 nectar Exp $
+# $Id: Makefile,v 1.20 1998/08/26 21:20:40 asami Exp $
 #
 
 DISTNAME=	ucd-snmp-3.5
@@ -26,7 +26,7 @@ IS_INTERACTIVE= yes
 
 MAN1=		snmpbulkwalk.1 snmpd.1 snmpdelta.1 snmpget.1 snmpgetnext.1 \
 		snmpnetstat.1 snmpset.1 snmpstatus.1 snmptable.1 snmptest.1 \
-		snmptranslate.1 snmptrap.1 snmpwalk.1
+		snmptranslate.1 snmptrap.1 snmpwalk.1 snmpcmd.1
 MAN3=		mib_api.3 snmp_api.3
 MAN5=		snmpd.conf.5 variables.5
 MAN8=		snmptrapd.8
