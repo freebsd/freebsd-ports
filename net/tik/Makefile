@@ -11,7 +11,7 @@ CATEGORIES=	net tk82
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	tik
 
-MAINTAINER=	dionysos@anti-aol.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Tcl/Tk based AOL Instant Messenger (AIM) Chat Client
 
 RUN_DEPENDS=	tclsh8.2:${PORTSDIR}/lang/tcl82 \
