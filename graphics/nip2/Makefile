@@ -28,8 +28,8 @@ MAN1=		nip.1
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "alpha" || ${ARCH} == "amd64"
-BROKEN=		"Does not compile on alpha or amd64"
+.if ${ARCH} != "i386"
+BROKEN=		"Does not compile on !i386"
 .endif
 
 post-patch:
