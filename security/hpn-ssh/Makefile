@@ -45,6 +45,22 @@ CONFIGURE_ARGS+=	--with-tcp-wrappers
 CONFIGURE_ARGS+=	--disable-suid-ssh
 .endif
 
+.if defined(KRB5_HOME) && exists(${KRB5_HOME})
+PKGNAMESUFFIX=	-gssapi
+CONFLICTS+=	openssh-portable-*
+CONFIGURE_ARGS+=	--with-kerberos5=${KRB5_HOME}
+.else
+CONFLICTS+=	openssh-gssapi-*
+.if !defined(WITHOUT_KERBEROS) && exists(/usr/include/krb5.h)
+CONFIGURE_ARGS+=	--with-kerberos5
+EXTRA_PATCHES+=		${FILESDIR}/gss-serv.c.patch
+.endif
+.endif
+
+.if defined(BATCH)
+EXTRA_PATCHES+=		${FILESDIR}/batch.patch
+.endif
+
 .if defined(OPENSSH_OVERWRITE_BASE)
 WITH_OPENSSL_BASE=	yes
 PKGNAMESUFFIX=	-overwrite-base
@@ -69,22 +85,6 @@ PLIST_SUB+=	BASE="@comment "
 PLIST_SUB+=	EMPTYDIR=${EMPTYDIR}
 CONFIGURE_ARGS+=	--sysconfdir=${ETCSSH}
 CONFIGURE_ARGS+=	--with-privsep-path=${EMPTYDIR}
-
-.if defined(BATCH)
-EXTRA_PATCHES+=		${FILESDIR}/batch.patch
-.endif
-
-.if defined(KRB5_HOME) && exists(${KRB5_HOME})
-PKGNAMESUFFIX=	-gssapi
-CONFLICTS+=	openssh-portable-*
-CONFIGURE_ARGS+=	--with-kerberos5=${KRB5_HOME}
-.else
-CONFLICTS+=	openssh-gssapi-*
-.if !defined(WITHOUT_KERBEROS) && exists(/usr/include/krb5.h)
-CONFIGURE_ARGS+=	--with-kerberos5
-EXTRA_PATCHES+=		${FILESDIR}/gss-serv.c.patch
-.endif
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-ldes||g' ${WRKSRC}/configure
