@@ -9,7 +9,7 @@ CATEGORIES=	chinese
 
 MASTERDIR=	${.CURDIR}/../../editors/joe
 
-PATCH_SITES=	http://freebsd.sinica.edu.tw/~statue/
+PATCH_SITES=	ftp://freebsd.sinica.edu.tw/pub/statue/joe/
 PATCHFILES=	zh-joe-2.8_3-patch
 PATCH_DIST_STRIP=	-p1
 

@@ -9,7 +9,7 @@ PORTNAME=	chitex
 PORTVERSION=	6.1.2p7.8
 CATEGORIES=	chinese
 MASTER_SITES=	ftp://dongpo.math.ncu.edu.tw/tex-archive/local/chitex/chitex/unix/%SUBDIR%/ \
-		http://freebsd.sinica.edu.tw/~statue/chitex/%SUBDIR%/
+		ftp://freebsd.sinica.edu.tw/pub/statue/chitex/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTVERSION}
 DISTFILES=	chitex6121.tar.gz chitex6122.tar.gz moe_kai.ttf.gz \
 		moekai1.tgz moekai2.tgz moekai3.tgz moekatfm.tgz \

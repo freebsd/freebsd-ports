@@ -8,8 +8,8 @@
 PORTNAME=	ttf2pt1
 PORTVERSION=	3.4.0
 CATEGORIES=	chinese print
-MASTER_SITES=	http://download.sourceforge.net/ttf2pt1/ \
-		http://freebsd.sinica.edu.tw/~statue/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME}-chinese-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
