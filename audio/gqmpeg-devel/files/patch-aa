@@ -1,17 +1,21 @@
---- Makefile.orig	Fri Jan 22 07:37:38 1999
-+++ Makefile	Sun Jan 24 03:15:04 1999
-@@ -1,11 +1,8 @@
--
+--- Makefile.orig	Sat Mar 27 21:38:09 1999
++++ Makefile	Tue Mar 30 01:48:05 1999
+@@ -1,13 +1,11 @@
+ 
 -PREFIX=/usr/local
 -
 -GTK_INCLUDE = `gtk-config --cflags`
 -GTK_LIB = `gtk-config --libs`
-+GTK_INCLUDE = `gtk11d-config --cflags`
-+GTK_LIB = `gtk11d-config --libs`
++GTK_INCLUDE = `gtk12-config --cflags`
++GTK_LIB = `gtk12-config --libs`
  IMLIB_INCLUDE = `imlib-config --cflags-gdk`
  IMLIB_LIB = `imlib-config --libs-gdk`
 -CFLAGS = $(GTK_INCLUDE) $(IMLIB_INCLUDE)
+-LDFLAGS = $(GTK_LIB) $(IMLIB_LIB)
+-CC = gcc -Wall $(CFLAGS)
 +CFLAGS += $(GTK_INCLUDE) $(IMLIB_INCLUDE)
- LDFLAGS = $(GTK_LIB) $(IMLIB_LIB)
- CC = gcc -Wall $(CFLAGS) $(SHAPED_HACK)
++LDFLAGS = $(GTK_LIB) $(IMLIB_LIB) -lkvm
++CC += -Wall $(CFLAGS)
+ 
+ GNOME_PREFIX = `gnome-config --prefix`
  
