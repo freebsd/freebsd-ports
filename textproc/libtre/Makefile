@@ -34,6 +34,18 @@ CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .endif
 
+.ifdef WITH_OPTIMIZED_CFLAGS
+CFLAGS+=	-Wuninitialized -ffast-math -finline-functions-fomit-frame-pointer -fexpensive-optimizations -fforce-mem -fforce-addr -O3
+.endif
+
+pre-everything::
+.ifndef(WITH_OPTIMIZED_CFLAGS)
+	@${ECHO_MSG} '===>'
+	@${ECHO_MSG} '===> You can enable extra optimizations by defining WITH_OPTIMIZED_CFLAGS'
+	@${ECHO_MSG} "===> For example, 'make WITH_OPTIMIZED_CFLAGS=yes'"
+.endif
+	@${ECHO_MSG} '===>'
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|^CFLAGS=|#CFLAGS=|g' ${WRKSRC}/configure
 
