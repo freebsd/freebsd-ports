@@ -370,6 +370,6 @@ BUILD_DEPENDS+=		${DEPEND_RUBY_RD2}
 .endif
 
 MASTER_SITE_BACKUP+=	\
-	http://www.iDaemons.org/distfiles/${DIST_SUBDIR}/
+	ftp://ftp.iDaemons.org/pub/distfiles/${DIST_SUBDIR}/
 
 .endif
