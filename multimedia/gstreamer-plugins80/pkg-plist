@@ -77,6 +77,7 @@ lib/gstreamer-%%VERSION%%/libgstfilter.so
 lib/gstreamer-%%VERSION%%/libgstflxdec.so
 lib/gstreamer-%%VERSION%%/libgstgamma.so
 %%GDKPIXBUF%%lib/gstreamer-%%VERSION%%/libgstgdkpixbuf.so
+lib/gstreamer-%%VERSION%%/libgstglimagesink.so
 %%GNOMEVFS%%lib/gstreamer-%%VERSION%%/libgstgnomevfs.so
 lib/gstreamer-%%VERSION%%/libgstgoom.so
 %%GSM%%lib/gstreamer-%%VERSION%%/libgstgsm.so
@@ -198,6 +199,7 @@ share/locale/cs/LC_MESSAGES/gst-plugins-%%VERSION%%.mo
 share/locale/en_GB/LC_MESSAGES/gst-plugins-%%VERSION%%.mo
 share/locale/hu/LC_MESSAGES/gst-plugins-%%VERSION%%.mo
 share/locale/nl/LC_MESSAGES/gst-plugins-%%VERSION%%.mo
+share/locale/sq/LC_MESSAGES/gst-plugins-%%VERSION%%.mo
 share/locale/sr/LC_MESSAGES/gst-plugins-%%VERSION%%.mo
 share/locale/sv/LC_MESSAGES/gst-plugins-%%VERSION%%.mo
 share/locale/uk/LC_MESSAGES/gst-plugins-%%VERSION%%.mo
