@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	asp2php
-PORTVERSION=	0.76.10
+PORTVERSION=	0.76.13
 CATEGORIES=	www
-MASTER_SITES=	http://65.108.58.129/asp2php/
+MASTER_SITES=	http://65.108.58.129/asp2php/ \
+		http://dl.droso.net/ports/
 
 MAINTAINER=	erwin@lansing.dk
 
