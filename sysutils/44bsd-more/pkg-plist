@@ -1,0 +1,6 @@
+bin/44bsd-more
+share/misc/44bsd-more.help
+share/examples/44bsd-more/default.morerc
+share/examples/44bsd-more/less.morerc
+share/examples/44bsd-more/most.morerc
+@dirrm share/examples/44bsd-more
