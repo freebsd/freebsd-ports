@@ -15,6 +15,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S|b|beta|}
 MAINTAINER=	asa@gascom.ru
 COMMENT=	Very advanced network monitoring system
 
+NOT_FOR_ARCHS=	amd64
+
 .ifdef(ZABBIX_AGENT_ONLY)
 PKGNAMESUFFIX=	-agent
 PLIST=		${MASTERDIR}/pkg-plist.agent
