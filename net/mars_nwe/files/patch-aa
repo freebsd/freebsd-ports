@@ -27,9 +27,9 @@ diff -u -r1.1.1.1 -r1.2
  # define PATHNAME_BINDERY "."        /* directory for bindery-files        */
  #else
 -# define FILENAME_NW_INI  "/etc/nwserv.conf"
-+# define FILENAME_NW_INI  "/usr/local/etc/nwserv.conf"
++# define FILENAME_NW_INI  "%%PREFIX%%/etc/nwserv.conf"
                                       /* full name of ini (conf) file       */
 -# define PATHNAME_PROGS   "/usr/sbin" /* where to find the executables     */
-+# define PATHNAME_PROGS   "/usr/local/sbin" /* where to find the executables     */
++# define PATHNAME_PROGS   "%%PREFIX%%/sbin" /* where to find the executables     */
  # define PATHNAME_BINDERY "/var/nwserv/db"  /* directory for bindery-files        */
  #endif

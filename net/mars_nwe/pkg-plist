@@ -1,3 +1,4 @@
+etc/nwserv.conf
 etc/nwserv.conf.example
 etc/rc.d/nwserv.sh
 sbin/nwserv
