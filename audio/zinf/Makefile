@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	zinf
-PORTVERSION=	2.2.2
+PORTVERSION=	2.2.3
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,8 +16,6 @@ COMMENT=	GTK-based MP3 player
 
 LIB_DEPENDS=	id3-3.8.2:${PORTSDIR}/audio/id3lib \
 		musicbrainz.2:${PORTSDIR}/audio/musicbrainz
-
-WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomehier gdkpixbuf
@@ -30,7 +28,7 @@ CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
 CPPFLAGS=	-I${LOCALBASE}/include/freetype1 -I${LOCALBASE}/include \
 		${PTHREAD_CFLAGS}
-LDFLAGS=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
+LDFLAGS=	-L${LOCALBASE}/lib -lintl ${PTHREAD_LIBS}
 
 .include <bsd.port.pre.mk>
 
