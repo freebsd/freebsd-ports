@@ -15,7 +15,7 @@
 # APR_UTIL_WITH_LDAP:		force dependency on OpenLDAP
 
 PORTNAME=	apr
-PORTVERSION=	1.0.0
+PORTVERSION=	1.0.1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.apache.org/dist/apr/
 DISTFILES=	apr-${PORTVERSION}.tar.gz apr-util-${PORTVERSION}.tar.gz
