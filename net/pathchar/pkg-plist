@@ -1,2 +1,4 @@
 bin/pathchar
-share/doc/README.pathchar
+share/doc/pathchar/README.pathchar
+share/doc/pathchar/pathcharnotes.html
+@dirrm share/doc/pathchar
