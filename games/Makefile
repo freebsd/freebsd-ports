@@ -76,6 +76,7 @@
     SUBDIR += gtetrinet
     SUBDIR += gtkabale
     SUBDIR += gtkballs
+    SUBDIR += halflifeserver
     SUBDIR += heretic
     SUBDIR += hex
     SUBDIR += icbm3d
