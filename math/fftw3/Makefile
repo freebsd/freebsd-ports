@@ -98,13 +98,13 @@ post-configure:
 post-build:
 	@${ECHO_MSG} "===>  Building for ${PORTNAME}-${PORTVERSION} (short)"
 	@(cd ${FFTW3F_WRKSRC} && \
-		${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${ALL_TARGET})
+		${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${ALL_TARGET})
 
 do-install:
 	@(cd ${WRKSRC} && \
-		${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${INSTALL_TARGET})
+		${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${INSTALL_TARGET})
 	@(cd ${FFTW3F_WRKSRC} && \
-		${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${FFTW3F_INSTALL_TARGET})
+		${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${FFTW3F_INSTALL_TARGET})
 	@${INSTALL_MAN} ${FFTW3F_WRKSRC}/tools/fftwf-wisdom.1 ${PREFIX}/man/man1
 
 .include <bsd.port.post.mk>
