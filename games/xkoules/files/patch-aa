@@ -7,7 +7,7 @@
 -KOULESDIR		=/usr/bin/X11
 -SOUNDDIR		=/usr/local/lib/koules
 -MANDIR			=/usr/local/man/man6
-+KOULESDIR		=$(LIBEXECDIR)
++KOULESDIR		=$(PREFIX)/libexec
 +SOUNDDIR		=$(PREFIX)/share/xkoules
 +MANSUFFIX		=6
  
