@@ -12,14 +12,14 @@ MASTER_SITES=	http://www.neotokyo.org/illusion/
 
 MAINTAINER=	sk-ports@vegamuse.org
 
+WRKSRC=		${WRKDIR}/wminet.app/wminet
+
 USE_X_PREFIX=	yes
 USE_XPM=	yes
 
-WRKSRC=		${WRKDIR}/wminet.app/wminet
-
-.if !defined(NOPORTDOCS)
 post-install:
-	${MKDIR} ${PREFIX}/share/doc/wminet
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${PREFIX}/share/doc/wminet
 	${INSTALL_MAN} ${WRKSRC}/../HINTS ${PREFIX}/share/doc/wminet
 .endif
 
