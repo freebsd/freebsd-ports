@@ -1,0 +1,11 @@
+If you have the caller id service from your phone provider and your
+modem has caller id capability (accepts AT+VCID=2 or AT#CID=2 commands),
+This port can cause the modem to answer the call giving the caller an
+earful.
+
+I built scud to hopefully remove my phone number from telemarketers'
+phone lists. Don't know if it will work or not, but at least I smile
+each time I hear my phone only ring once.
+
+Create a file: /usr/local/etc/scud.conf to hold command line options
+you want used each time it is started.

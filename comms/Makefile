@@ -26,6 +26,7 @@
     SUBDIR += qico
     SUBDIR += qpage
     SUBDIR += ruby-termios
+    SUBDIR += scud
     SUBDIR += seyon
     SUBDIR += sms_client
     SUBDIR += snooper
