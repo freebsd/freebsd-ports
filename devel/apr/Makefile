@@ -14,10 +14,13 @@
 
 PORTNAME=	apr
 PORTVERSION=	0.9.4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel
-MASTER_SITES=	http://www.apache.org/dist/apr/
-DISTFILES=	apr-${PORTVERSION}.tar.gz apr-util-${PORTVERSION}.tar.gz
+#MASTER_SITES=	http://www.apache.org/dist/apr/
+#DISTFILES=	apr-${PORTVERSION}.tar.gz apr-util-${PORTVERSION}.tar.gz
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	kuriyama
+DISTFILES=	apr-APR_0_9_BRANCH_20040113112838.tar.gz apr-util-APU_0_9_BRANCH_20040113112849.tar.gz
 
 MAINTAINER=	rodrigc@crodrigues.org
 COMMENT=	The Apache Group's Portability Library
@@ -78,6 +81,11 @@ PKGNAMESUFFIX=	-db4
 .endif
 .endif
 .endif
+
+post-extract:
+	cd ${WRKDIR}; \
+	${LN} -s apr-APR_0_9_BRANCH apr-${PORTVERSION}; \
+	${LN} -s apr-util-APU_0_9_BRANCH apr-util-${PORTVERSION}
 
 pre-configure:
 	cd ${WRKDIR}/apr-${PORTVERSION}; ${SETENV} ${SCRIPTS_ENV} ./buildconf
