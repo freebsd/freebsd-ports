@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME}-${W3M_VERSION}
 
 MAINTAINER?=	nobutaka@FreeBSD.org
+COMMENT?=	A pager/text-based WWW browser
 
 LIB_DEPENDS=	gc.1:${PORTSDIR}/devel/boehm-gc
 

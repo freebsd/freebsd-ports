@@ -6,6 +6,7 @@
 #
 
 CATEGORIES=	www
+COMMENT=	A pager/text-based WWW browser with multilingualization support
 
 MASTERDIR=	${.CURDIR}/../../www/w3m
 PKGDIR=		${.CURDIR}

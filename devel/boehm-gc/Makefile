@@ -13,6 +13,7 @@ MASTER_SITES=	http://www.hpl.hp.com/personal/Hans_Boehm/gc/gc_source/
 DISTNAME=	gc${PORTVERSION}
 
 MAINTAINER=	nobutaka@FreeBSD.org
+COMMENT=	Garbage collection and memory leak detection for C and C++
 
 USE_LIBTOOL=	yes
 USE_REINPLACE=	yes

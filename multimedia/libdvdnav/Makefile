@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	dvd
 
 MAINTAINER=	nobutaka@FreeBSD.org
+COMMENT=	The library for the xine-dvdnav plugin
 
 LIB_DEPENDS=	dvdread.2:${PORTSDIR}/multimedia/libdvdread
 

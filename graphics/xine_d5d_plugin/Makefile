@@ -17,6 +17,7 @@ EXTRACT_SUFX=	.tgz
 FORBIDDEN=	Incompatible with the current version of xine
 
 MAINTAINER=	nobutaka@FreeBSD.org
+COMMENT=	A dvd input plugin for xine with menu support
 
 LIB_DEPENDS=	xine.2:${PORTSDIR}/graphics/libxine \
 		dvdread.2:${PORTSDIR}/multimedia/libdvdread

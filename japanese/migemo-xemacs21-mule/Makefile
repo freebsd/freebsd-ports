@@ -6,7 +6,7 @@
 #
 
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
-
+COMMENT=	Japanese incremental search tool for xemacs21-mule
 MASTERDIR=      ${.CURDIR}/../../japanese/migemo
 PKGDIR=         ${.CURDIR}
 PLIST=          ${MASTERDIR}/pkg-plist

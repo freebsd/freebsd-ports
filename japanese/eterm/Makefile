@@ -10,6 +10,7 @@ CATEGORIES=	japanese
 MASTERDIR=      ${.CURDIR}/../../x11/eterm
 
 MAINTAINER=	nobutaka@FreeBSD.org
+COMMENT=	X11 terminal emulator based on rxvt/xterm that supports Japanese
 
 EXTRA_PATCHES=	${.CURDIR}/files/extra-patch-configure.in \
 		${.CURDIR}/files/extra-patch-src:command.c \

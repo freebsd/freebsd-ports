@@ -6,6 +6,7 @@
 #
 
 PKGNAMESUFFIX=	-img
+COMMENT=	A pager/text-based WWW browser with inline image support
 
 MASTERDIR=	${.CURDIR}/../../www/w3m
 PKGDIR=		${.CURDIR}

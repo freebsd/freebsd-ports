@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME}-ui-${PORTVERSION}
 
 MAINTAINER=	nobutaka@FreeBSD.org
+COMMENT=	An X11 multimedia player
 
 LIB_DEPENDS=	xine.3:${PORTSDIR}/graphics/libxine \
 		aa.1:${PORTSDIR}/graphics/aalib \

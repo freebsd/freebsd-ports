@@ -15,6 +15,7 @@ PKGNAMEPREFIX=	lib
 DISTNAME=	${PORTNAME}-lib-1-beta4
 
 MAINTAINER=	nobutaka@FreeBSD.org
+COMMENT=	Libraries for xine multimedia player
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libdjbfft.a:${PORTSDIR}/math/djbfft
 LIB_DEPENDS=	avcodec.0:${PORTSDIR}/multimedia/ffmpeg \

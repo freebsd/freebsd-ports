@@ -6,7 +6,7 @@
 #
 
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
-
+COMMENT=	Japanese incremental search tool for emacs20
 MASTERDIR=      ${.CURDIR}/../../japanese/migemo
 PKGDIR=         ${.CURDIR}
 PLIST=          ${MASTERDIR}/pkg-plist
