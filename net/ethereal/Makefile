@@ -17,6 +17,8 @@ MASTER_SITE_SUBDIR=	. old-versions
 
 MAINTAINER=	billf@FreeBSD.org
 
+FORBIDDEN=	"possible security bug--see <URL:http://www.ethereal.com/appnotes/enpa-sa-00006.html>"
+
 .if !defined(WITHOUT_SNMP)
 LIB_DEPENDS=	snmp.4:${PORTSDIR}/net/net-snmp4
 .endif
