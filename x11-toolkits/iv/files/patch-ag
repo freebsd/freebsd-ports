@@ -1,0 +1,19 @@
+--- src/config/InterViews/arch.def.orig	Sat Dec 12 08:34:52 1992
++++ src/config/InterViews/arch.def	Sun Jan 17 17:48:18 1999
+@@ -385,6 +385,16 @@
+ #define MacroFile InterViews/iv-convex.cf
+ #endif /* __convex__ */
+ 
++#ifdef __FreeBSD__
++#undef freebsd
++#undef FREEBSD
++#define FreeBSDArchitecture
++#define ArchitectureName FREEBSD
++#define architectureName freebsd
++#define MacroIncludeFile <InterViews/iv-freebsd.cf>
++#define MacroFile InterViews/iv-freebsd.cf
++#endif
++
+ #ifndef ArchitectureName
+ XCOMM WARNING: Imakefile not configured; guessing at definitions!!!
+ XCOMM This might mean that BOOTSTRAPCFLAGS was not set when building imake.

@@ -1,0 +1,17 @@
+--- src/include/IV-X11/xwindow.h.orig	Fri Sep 25 07:16:22 1992
++++ src/include/IV-X11/xwindow.h	Sun Jan 17 17:48:20 1999
+@@ -46,8 +46,13 @@
+ class Style;
+ class WindowCursorStack;
+ class WindowTable;
++/*
++ * modified by jj@ldjpc.apana.org.au
++ *
++ * this seems to break the compile...
+ class XDisplay;
+-
++ *
++ */
+ struct WindowOverlayInfo {
+     VisualID id_;
+     long type_;

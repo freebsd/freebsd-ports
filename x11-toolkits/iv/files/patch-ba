@@ -1,0 +1,24 @@
+--- makefile.orig	Sun Jan 17 20:56:19 1999
++++ makefile	Sun Jan 17 20:48:39 1999
+@@ -0,0 +1,21 @@
++CPU=FREEBSD
++
++all: src/Makefile
++	@$(MAKE) $(.MAKEFLAGS) -f Makefile 'CPU=$(CPU)'
++
++# simple but brutal. Will not install to multiple destinations simultaneously.
++install: Makefile
++	@rm -rf installed ${DESTDIR}/usr/local/interviews
++	@mkdir -p ${DESTDIR}/usr/local/interviews
++	@ln -s ${DESTDIR}/usr/local/interviews installed
++	@$(MAKE) $(.MAKEFLAGS) -f Makefile 'CPU=$(CPU)' $@
++
++src/Makefile: Makefile
++	@$(MAKE) Makefiles
++
++Makefile:
++	imake -T "InterViews/template" -I./src/config \
++		-I/usr/X11R6/lib/X11/config -DTOPDIR=. -DCURDIR=.
++
++.DEFAULT: src/Makefile
++	@$(MAKE) $(.MAKEFLAGS) -f Makefile 'CPU=$(CPU)' $@

@@ -1,0 +1,10 @@
+--- src/include/Unidraw/_defines.h.orig	Sat Oct 31 08:22:35 1992
++++ src/include/Unidraw/_defines.h	Sun Jan 17 17:48:20 1999
+@@ -156,7 +156,6 @@
+ #define PadComp _lib_iv(PadComp)
+ #define PadGraphic _lib_iv(PadGraphic)
+ #define PadView _lib_iv(PadView)
+-#define Page _lib_iv(Page)
+ #define PanelControl _lib_iv(PanelControl)
+ #define PanelInteractor _lib_iv(PanelInteractor)
+ #define PasteCmd _lib_iv(PasteCmd)

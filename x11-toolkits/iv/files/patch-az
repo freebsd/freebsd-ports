@@ -1,0 +1,40 @@
+--- src/lib/TIFF/tiffcompat.h.orig	Tue Mar 31 11:31:04 1992
++++ src/lib/TIFF/tiffcompat.h	Sun Jan 17 17:48:20 1999
+@@ -154,7 +154,8 @@
+ #define	lseek	mpw_lseek
+ extern long mpw_lseek(int, long, int);
+ #else
+-extern	long lseek();
++/*changed to the correct one...jj@ldjpc.apana.org.au*/
++extern	off_t lseek();
+ #endif
+ 
+ /*
+@@ -163,8 +164,9 @@
+ #ifndef ReadOK
+ #define	ReadOK(fd, buf, size)	(read(fd, (char *)buf, size) == size)
+ #endif
++/*changed (long) to (off_t) to compile....jj@ldjpc.apana.org.au*/
+ #ifndef SeekOK
+-#define	SeekOK(fd, off)	(lseek(fd, (long)off, L_SET) == (long)off)
++#define	SeekOK(fd, off)	(lseek(fd, (off_t)off, L_SET) == (off_t)off)
+ #endif
+ #ifndef WriteOK
+ #define	WriteOK(fd, buf, size)	(write(fd, (char *)buf, size) == size)
+@@ -202,10 +204,15 @@
+  */
+ #if defined(__STDC__) && !defined(USE_VARARGS)
+ #define	USE_VARARGS	0
++#else 
++#if defined(__FreeBSD__)
++#undef USE_VARARGS
++#define USE_VARARGS     0
++#endif
+ #endif
+ 
+ #if defined(USE_VARARGS)
+-#if USE_VARARGS
++#if USE_VARARGS && !defined(__FreeBSD__)
+ #include <varargs.h>
+ #define	VA_START(ap, parmN)	va_start(ap)
+ #else

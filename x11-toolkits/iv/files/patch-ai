@@ -1,0 +1,41 @@
+--- src/config/InterViews/rules.def.orig	Fri Sep 25 07:06:33 1992
++++ src/config/InterViews/rules.def	Mon Jan 18 21:43:45 1999
+@@ -399,6 +399,30 @@
+ /*
+  * Make a shared library.
+  */
++#if defined(FreeBSDArchitecture)
++#define NormalSunOSSharedLibraryTarget(libname,rev,depobjs,ldobjs)     @@\
++AOUT = Concat(lib,libname.so.rev)                                      @@\
++SHARED_CCFLAGS = SharedCCFlags                                         @@\
++                                                                       @@\
++AllTarget(Concat(lib,libname.so.rev))                                  @@\
++                                                                       @@\
++Concat(lib,libname.so.rev): depobjs                                    @@\
++	@echo "building $@"                                             @@\
++	$(RM) $@~                                                       @@\
++.if defined(PORTOBJFORMAT) && ($(PORTOBJFORMAT) == "elf")              @@\
++	$(CC) -shared  -Wl,-soname,Concat(lib,libname.so.rev) -o $@~ ldobjs @@\
++.else                                                                  @@\
++	$(LD) -o $@~ -Bshareable ldobjs                                 @@\
++.endif                                                                 @@\
++	$(RM) $@                                                        @@\
++	$(MV) $@~ $@                                                    @@\
++.if defined(PORTOBJFORMAT) && ($(PORTOBJFORMAT) == "elf")              @@\
++	$(LN) $@ Concat(lib,libname.so)                                 @@\
++.endif                                                                 @@\
++                                                                       @@\
++clean::                                                                        @@\
++	$(RM) Concat(lib,libname.so.rev)
++#else
+ #ifndef NormalSunOSSharedLibraryTarget
+ #if OSMajorVersion < 5
+ #define NormalSunOSSharedLibraryTarget(libname,rev,depobjs,ldobjs)	@@\
+@@ -434,6 +458,7 @@
+ 									@@\
+ clean::									@@\
+ 	$(RM) Concat(lib,libname.so.rev)
++#endif
+ #endif
+ #endif
+ 

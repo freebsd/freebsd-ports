@@ -1,0 +1,11 @@
+--- src/bin/scripts/remind.cpp.orig	Thu Jun  4 13:37:00 1992
++++ src/bin/scripts/remind.cpp	Sun Jan 17 17:48:18 1999
+@@ -34,7 +34,7 @@
+ ' > $tmp
+ 
+ cat $MacrosFile $RemindersFile \
+-    | /lib/cpp \
++    | /usr/bin/cpp \
+     | egrep -f $tmp \
+     | awk '
+ 	/[0-9][0-9]?:[0-9][0-9]?/ {

@@ -3,16 +3,18 @@
 # Date created:		23.sept.1994
 # Whom:			adam
 #
-# $Id: Makefile,v 1.17 1998/10/15 13:24:08 jseger Exp $
+# $Id: Makefile,v 1.18 1998/12/18 09:40:52 asami Exp $
 #
 
-DISTNAME=	iv-3.1
+DISTNAME=	3.1
+PKGNAME=	iv-3.1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	ftp://interviews.stanford.edu/pub/
-DISTFILES=	3.1.tar.Z
+EXTRACT_SUFX=	.tar.Z
+
+MAINTAINER=	tanimura@naklab.dnj.ynu.ac.jp
 
 USE_XLIB=	yes
-BROKEN_ELF=	yes
 
 DIST_SUBDIR=	iv
 WRKSRC=		${WRKDIR}/iv
@@ -55,10 +57,22 @@ MANN=		Adjuster.n Banner.n BasicDialog.n Border.n Box2_6.n \
 		statevars.n stateviews.n struct.n transfns.n \
 		transforms.n uctrls.n viewcmds.n
 
+.include <bsd.port.pre.mk>
+
+.if ${PORTOBJFORMAT} == "elf"
+IV_LIB_VER=     3
+.else
+IV_LIB_VER=     3.1
+.endif
+
 post-install:
 # need these in ${PREFIX}/lib so that ldconfig can find them
-	ln -fs ../interviews/lib/FREEBSD/libIV.so.3.1 ${PREFIX}/lib
-	ln -fs ../interviews/lib/FREEBSD/libUnidraw.so.3.1 ${PREFIX}/lib
-	${LDCONFIG} -m ${PREFIX}/lib
+	${LN} -fs ../interviews/lib/FREEBSD/libIV.so.${IV_LIB_VER} ${PREFIX}/lib
+	${LN} -fs ../interviews/lib/FREEBSD/libUnidraw.so.${IV_LIB_VER} ${PREFIX}/lib
+.if ${PORTOBJFORMAT} == "elf"
+	${LN} -fs libIV.so.${IV_LIB_VER} ${PREFIX}/lib/libIV.so
+	${LN} -fs libUnidraw.so.${IV_LIB_VER} ${PREFIX}/lib/libUnidraw.so
+.endif
+	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

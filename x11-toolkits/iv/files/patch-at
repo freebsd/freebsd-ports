@@ -1,0 +1,16 @@
+--- src/lib/OS/string.c.orig	Tue Jul 14 02:54:03 1992
++++ src/lib/OS/string.c	Sun Jan 17 17:48:19 1999
+@@ -31,11 +31,13 @@
+  */
+ 
+ extern "C" {
++#ifndef __FreeBSD__
+ #ifndef tolower
+     extern int tolower(int);
+ #endif
+ #ifndef toupper
+     extern int toupper(int);
++#endif
+ #endif
+     extern long int strtol(const char*, char**, int);
+     extern double strtod(const char*, char**);

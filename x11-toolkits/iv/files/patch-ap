@@ -1,0 +1,10 @@
+--- src/include/Unidraw/_undefs.h.orig	Sat Oct 31 08:22:35 1992
++++ src/include/Unidraw/_undefs.h	Sun Jan 17 17:48:20 1999
+@@ -156,7 +156,6 @@
+ #undef PadComp
+ #undef PadGraphic
+ #undef PadView
+-#undef Page
+ #undef PanelControl
+ #undef PanelInteractor
+ #undef PasteCmd

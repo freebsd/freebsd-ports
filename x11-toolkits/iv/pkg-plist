@@ -1,14 +1,20 @@
-@exec ln -fs ../interviews/lib/FREEBSD/libIV.so.3.1 %D/lib
-@exec ln -fs ../interviews/lib/FREEBSD/libUnidraw.so.3.1 %D/lib
-@unexec rm %D/lib/libIV.so.3.1
-@unexec rm %D/lib/libUnidraw.so.3.1
-interviews/config/InterViews/template
+interviews/bin/FREEBSD/alert
+interviews/bin/FREEBSD/cpu
+interviews/bin/FREEBSD/dclock
+interviews/bin/FREEBSD/doc
+interviews/bin/FREEBSD/ibmkmf
+interviews/bin/FREEBSD/ibuild
+interviews/bin/FREEBSD/iclass
+interviews/bin/FREEBSD/idemo
+interviews/bin/FREEBSD/idraw
+interviews/bin/FREEBSD/ifc
+interviews/bin/FREEBSD/ivmkmf
+interviews/bin/FREEBSD/logo
+interviews/bin/FREEBSD/mailbox
+interviews/bin/FREEBSD/remind
 interviews/config/InterViews/TIFF.def
 interviews/config/InterViews/arch.def
 interviews/config/InterViews/gcc.def
-interviews/config/InterViews/local.def
-interviews/config/InterViews/params.def
-interviews/config/InterViews/rules.def
 interviews/config/InterViews/iv-DGUX.cf
 interviews/config/InterViews/iv-Mips.cf
 interviews/config/InterViews/iv-aix.cf
@@ -32,6 +38,10 @@ interviews/config/InterViews/iv-stellar.cf
 interviews/config/InterViews/iv-sun.cf
 interviews/config/InterViews/iv-ultrix.cf
 interviews/config/InterViews/iv-x386.cf
+interviews/config/InterViews/local.def
+interviews/config/InterViews/params.def
+interviews/config/InterViews/rules.def
+interviews/config/InterViews/template
 interviews/config/InterViews/xparams.cf
 interviews/include/Dispatch/_defines.h
 interviews/include/Dispatch/_undefs.h
@@ -50,9 +60,6 @@ interviews/include/Dispatch/rpcregistry.h
 interviews/include/Dispatch/rpcservice.h
 interviews/include/Dispatch/rpcstream.h
 interviews/include/Dispatch/rpcwriter.h
-interviews/include/IV-2_6/_enter.h
-interviews/include/IV-2_6/_leave.h
-interviews/include/IV-2_6/_names.h
 interviews/include/IV-2_6/InterViews/adjuster.h
 interviews/include/IV-2_6/InterViews/alignment.h
 interviews/include/IV-2_6/InterViews/banner.h
@@ -77,7 +84,6 @@ interviews/include/IV-2_6/InterViews/message.h
 interviews/include/IV-2_6/InterViews/minmax.h
 interviews/include/IV-2_6/InterViews/paint.h
 interviews/include/IV-2_6/InterViews/painter.h
-interviews/include/IV-2_6/InterViews/scene.h
 interviews/include/IV-2_6/InterViews/panner.h
 interviews/include/IV-2_6/InterViews/perspective.h
 interviews/include/IV-2_6/InterViews/rubband.h
@@ -86,6 +92,7 @@ interviews/include/IV-2_6/InterViews/rubgroup.h
 interviews/include/IV-2_6/InterViews/rubline.h
 interviews/include/IV-2_6/InterViews/rubrect.h
 interviews/include/IV-2_6/InterViews/rubverts.h
+interviews/include/IV-2_6/InterViews/scene.h
 interviews/include/IV-2_6/InterViews/scrollbar.h
 interviews/include/IV-2_6/InterViews/scroller.h
 interviews/include/IV-2_6/InterViews/sensor.h
@@ -101,6 +108,9 @@ interviews/include/IV-2_6/InterViews/textstyle.h
 interviews/include/IV-2_6/InterViews/tray.h
 interviews/include/IV-2_6/InterViews/viewport.h
 interviews/include/IV-2_6/InterViews/world.h
+interviews/include/IV-2_6/_enter.h
+interviews/include/IV-2_6/_leave.h
+interviews/include/IV-2_6/_names.h
 interviews/include/IV-X11/Xdefs.h
 interviews/include/IV-X11/Xext.h
 interviews/include/IV-X11/Xlib.h
@@ -139,6 +149,57 @@ interviews/include/IV-look/slider.h
 interviews/include/IV-look/smf_kit.h
 interviews/include/IV-look/stepper.h
 interviews/include/IV-look/telltale.h
+interviews/include/InterViews/Bitmaps/big_checkmark.bm
+interviews/include/InterViews/Bitmaps/checkmark.bm
+interviews/include/InterViews/Bitmaps/chkbox.bm
+interviews/include/InterViews/Bitmaps/chkboxBoth.bm
+interviews/include/InterViews/Bitmaps/chkboxChosen.bm
+interviews/include/InterViews/Bitmaps/chkboxHit.bm
+interviews/include/InterViews/Bitmaps/dfast.bm
+interviews/include/InterViews/Bitmaps/dfastMask.bm
+interviews/include/InterViews/Bitmaps/dmover.bm
+interviews/include/InterViews/Bitmaps/dmoverHit.bm
+interviews/include/InterViews/Bitmaps/dmoverMask.bm
+interviews/include/InterViews/Bitmaps/enlarge.bm
+interviews/include/InterViews/Bitmaps/enlargeHit.bm
+interviews/include/InterViews/Bitmaps/enlargeMask.bm
+interviews/include/InterViews/Bitmaps/hand.bm
+interviews/include/InterViews/Bitmaps/handMask.bm
+interviews/include/InterViews/Bitmaps/ldfast.bm
+interviews/include/InterViews/Bitmaps/ldfastMask.bm
+interviews/include/InterViews/Bitmaps/lfast.bm
+interviews/include/InterViews/Bitmaps/lfastMask.bm
+interviews/include/InterViews/Bitmaps/lmover.bm
+interviews/include/InterViews/Bitmaps/lmoverHit.bm
+interviews/include/InterViews/Bitmaps/lmoverMask.bm
+interviews/include/InterViews/Bitmaps/lufast.bm
+interviews/include/InterViews/Bitmaps/lufastMask.bm
+interviews/include/InterViews/Bitmaps/page.bm
+interviews/include/InterViews/Bitmaps/pageBoth.bm
+interviews/include/InterViews/Bitmaps/pageChosen.bm
+interviews/include/InterViews/Bitmaps/pageHit.bm
+interviews/include/InterViews/Bitmaps/radio.bm
+interviews/include/InterViews/Bitmaps/radioBoth.bm
+interviews/include/InterViews/Bitmaps/radioChosen.bm
+interviews/include/InterViews/Bitmaps/radioHit.bm
+interviews/include/InterViews/Bitmaps/radioMask.bm
+interviews/include/InterViews/Bitmaps/rdfast.bm
+interviews/include/InterViews/Bitmaps/rdfastMask.bm
+interviews/include/InterViews/Bitmaps/reducer.bm
+interviews/include/InterViews/Bitmaps/reducerHit.bm
+interviews/include/InterViews/Bitmaps/reducerMask.bm
+interviews/include/InterViews/Bitmaps/rfast.bm
+interviews/include/InterViews/Bitmaps/rfastMask.bm
+interviews/include/InterViews/Bitmaps/rmover.bm
+interviews/include/InterViews/Bitmaps/rmoverHit.bm
+interviews/include/InterViews/Bitmaps/rmoverMask.bm
+interviews/include/InterViews/Bitmaps/rufast.bm
+interviews/include/InterViews/Bitmaps/rufastMask.bm
+interviews/include/InterViews/Bitmaps/ufast.bm
+interviews/include/InterViews/Bitmaps/ufastMask.bm
+interviews/include/InterViews/Bitmaps/umover.bm
+interviews/include/InterViews/Bitmaps/umoverHit.bm
+interviews/include/InterViews/Bitmaps/umoverMask.bm
 interviews/include/InterViews/_defines.h
 interviews/include/InterViews/_enter.h
 interviews/include/InterViews/_leave.h
@@ -216,57 +277,6 @@ interviews/include/InterViews/tile.h
 interviews/include/InterViews/transformer.h
 interviews/include/InterViews/window.h
 interviews/include/InterViews/xymarker.h
-interviews/include/InterViews/Bitmaps/big_checkmark.bm
-interviews/include/InterViews/Bitmaps/checkmark.bm
-interviews/include/InterViews/Bitmaps/chkbox.bm
-interviews/include/InterViews/Bitmaps/chkboxBoth.bm
-interviews/include/InterViews/Bitmaps/chkboxChosen.bm
-interviews/include/InterViews/Bitmaps/chkboxHit.bm
-interviews/include/InterViews/Bitmaps/dfast.bm
-interviews/include/InterViews/Bitmaps/dfastMask.bm
-interviews/include/InterViews/Bitmaps/dmover.bm
-interviews/include/InterViews/Bitmaps/dmoverHit.bm
-interviews/include/InterViews/Bitmaps/dmoverMask.bm
-interviews/include/InterViews/Bitmaps/enlarge.bm
-interviews/include/InterViews/Bitmaps/enlargeHit.bm
-interviews/include/InterViews/Bitmaps/enlargeMask.bm
-interviews/include/InterViews/Bitmaps/hand.bm
-interviews/include/InterViews/Bitmaps/handMask.bm
-interviews/include/InterViews/Bitmaps/ldfast.bm
-interviews/include/InterViews/Bitmaps/ldfastMask.bm
-interviews/include/InterViews/Bitmaps/lfast.bm
-interviews/include/InterViews/Bitmaps/lfastMask.bm
-interviews/include/InterViews/Bitmaps/lmover.bm
-interviews/include/InterViews/Bitmaps/lufast.bm
-interviews/include/InterViews/Bitmaps/lmoverHit.bm
-interviews/include/InterViews/Bitmaps/lmoverMask.bm
-interviews/include/InterViews/Bitmaps/lufastMask.bm
-interviews/include/InterViews/Bitmaps/page.bm
-interviews/include/InterViews/Bitmaps/pageBoth.bm
-interviews/include/InterViews/Bitmaps/pageChosen.bm
-interviews/include/InterViews/Bitmaps/pageHit.bm
-interviews/include/InterViews/Bitmaps/radio.bm
-interviews/include/InterViews/Bitmaps/radioBoth.bm
-interviews/include/InterViews/Bitmaps/radioChosen.bm
-interviews/include/InterViews/Bitmaps/radioHit.bm
-interviews/include/InterViews/Bitmaps/radioMask.bm
-interviews/include/InterViews/Bitmaps/rdfast.bm
-interviews/include/InterViews/Bitmaps/rdfastMask.bm
-interviews/include/InterViews/Bitmaps/reducer.bm
-interviews/include/InterViews/Bitmaps/reducerHit.bm
-interviews/include/InterViews/Bitmaps/reducerMask.bm
-interviews/include/InterViews/Bitmaps/rfast.bm
-interviews/include/InterViews/Bitmaps/rfastMask.bm
-interviews/include/InterViews/Bitmaps/rmover.bm
-interviews/include/InterViews/Bitmaps/rmoverHit.bm
-interviews/include/InterViews/Bitmaps/rmoverMask.bm
-interviews/include/InterViews/Bitmaps/rufast.bm
-interviews/include/InterViews/Bitmaps/rufastMask.bm
-interviews/include/InterViews/Bitmaps/ufast.bm
-interviews/include/InterViews/Bitmaps/ufastMask.bm
-interviews/include/InterViews/Bitmaps/umover.bm
-interviews/include/InterViews/Bitmaps/umoverHit.bm
-interviews/include/InterViews/Bitmaps/umoverMask.bm
 interviews/include/OS/_defines.h
 interviews/include/OS/_undefs.h
 interviews/include/OS/directory.h
@@ -283,6 +293,71 @@ interviews/include/OS/table.h
 interviews/include/OS/table2.h
 interviews/include/OS/types.h
 interviews/include/OS/ustring.h
+interviews/include/Unidraw/Commands/align.h
+interviews/include/Unidraw/Commands/brushcmd.h
+interviews/include/Unidraw/Commands/catcmds.h
+interviews/include/Unidraw/Commands/colorcmd.h
+interviews/include/Unidraw/Commands/command.h
+interviews/include/Unidraw/Commands/data.h
+interviews/include/Unidraw/Commands/datas.h
+interviews/include/Unidraw/Commands/edit.h
+interviews/include/Unidraw/Commands/font.h
+interviews/include/Unidraw/Commands/import.h
+interviews/include/Unidraw/Commands/macro.h
+interviews/include/Unidraw/Commands/nop.h
+interviews/include/Unidraw/Commands/patcmd.h
+interviews/include/Unidraw/Commands/struct.h
+interviews/include/Unidraw/Commands/transforms.h
+interviews/include/Unidraw/Commands/viewcmds.h
+interviews/include/Unidraw/Components/cglue.h
+interviews/include/Unidraw/Components/component.h
+interviews/include/Unidraw/Components/compview.h
+interviews/include/Unidraw/Components/connector.h
+interviews/include/Unidraw/Components/csolver.h
+interviews/include/Unidraw/Components/ellipse.h
+interviews/include/Unidraw/Components/externview.h
+interviews/include/Unidraw/Components/grcomp.h
+interviews/include/Unidraw/Components/grview.h
+interviews/include/Unidraw/Components/gvupdater.h
+interviews/include/Unidraw/Components/line.h
+interviews/include/Unidraw/Components/link.h
+interviews/include/Unidraw/Components/pad.h
+interviews/include/Unidraw/Components/pin.h
+interviews/include/Unidraw/Components/polygon.h
+interviews/include/Unidraw/Components/psformat.h
+interviews/include/Unidraw/Components/psview.h
+interviews/include/Unidraw/Components/rastercomp.h
+interviews/include/Unidraw/Components/rect.h
+interviews/include/Unidraw/Components/slot.h
+interviews/include/Unidraw/Components/spline.h
+interviews/include/Unidraw/Components/stencilcomp.h
+interviews/include/Unidraw/Components/text.h
+interviews/include/Unidraw/Components/vertices.h
+interviews/include/Unidraw/Graphic/damage.h
+interviews/include/Unidraw/Graphic/ellipses.h
+interviews/include/Unidraw/Graphic/geomobjs.h
+interviews/include/Unidraw/Graphic/graphic.h
+interviews/include/Unidraw/Graphic/grblock.h
+interviews/include/Unidraw/Graphic/lines.h
+interviews/include/Unidraw/Graphic/picture.h
+interviews/include/Unidraw/Graphic/polygons.h
+interviews/include/Unidraw/Graphic/pspaint.h
+interviews/include/Unidraw/Graphic/rasterrect.h
+interviews/include/Unidraw/Graphic/splines.h
+interviews/include/Unidraw/Graphic/ulabel.h
+interviews/include/Unidraw/Graphic/ustencil.h
+interviews/include/Unidraw/Graphic/util.h
+interviews/include/Unidraw/Graphic/verts.h
+interviews/include/Unidraw/Tools/connect.h
+interviews/include/Unidraw/Tools/grcomptool.h
+interviews/include/Unidraw/Tools/magnify.h
+interviews/include/Unidraw/Tools/move.h
+interviews/include/Unidraw/Tools/reshape.h
+interviews/include/Unidraw/Tools/rotate.h
+interviews/include/Unidraw/Tools/scale.h
+interviews/include/Unidraw/Tools/select.h
+interviews/include/Unidraw/Tools/stretch.h
+interviews/include/Unidraw/Tools/tool.h
 interviews/include/Unidraw/_defines.h
 interviews/include/Unidraw/_undefs.h
 interviews/include/Unidraw/catalog.h
@@ -320,82 +395,17 @@ interviews/include/Unidraw/umap.h
 interviews/include/Unidraw/unidraw.h
 interviews/include/Unidraw/upage.h
 interviews/include/Unidraw/viewer.h
-interviews/include/Unidraw/Components/cglue.h
-interviews/include/Unidraw/Components/component.h
-interviews/include/Unidraw/Components/compview.h
-interviews/include/Unidraw/Components/connector.h
-interviews/include/Unidraw/Components/csolver.h
-interviews/include/Unidraw/Components/ellipse.h
-interviews/include/Unidraw/Components/externview.h
-interviews/include/Unidraw/Components/grcomp.h
-interviews/include/Unidraw/Components/grview.h
-interviews/include/Unidraw/Components/gvupdater.h
-interviews/include/Unidraw/Components/line.h
-interviews/include/Unidraw/Components/link.h
-interviews/include/Unidraw/Components/pad.h
-interviews/include/Unidraw/Components/pin.h
-interviews/include/Unidraw/Components/polygon.h
-interviews/include/Unidraw/Components/psformat.h
-interviews/include/Unidraw/Components/psview.h
-interviews/include/Unidraw/Components/rastercomp.h
-interviews/include/Unidraw/Components/rect.h
-interviews/include/Unidraw/Components/slot.h
-interviews/include/Unidraw/Components/spline.h
-interviews/include/Unidraw/Components/stencilcomp.h
-interviews/include/Unidraw/Components/text.h
-interviews/include/Unidraw/Components/vertices.h
-interviews/include/Unidraw/Commands/align.h
-interviews/include/Unidraw/Commands/brushcmd.h
-interviews/include/Unidraw/Commands/catcmds.h
-interviews/include/Unidraw/Commands/colorcmd.h
-interviews/include/Unidraw/Commands/command.h
-interviews/include/Unidraw/Commands/data.h
-interviews/include/Unidraw/Commands/datas.h
-interviews/include/Unidraw/Commands/edit.h
-interviews/include/Unidraw/Commands/font.h
-interviews/include/Unidraw/Commands/import.h
-interviews/include/Unidraw/Commands/macro.h
-interviews/include/Unidraw/Commands/nop.h
-interviews/include/Unidraw/Commands/patcmd.h
-interviews/include/Unidraw/Commands/struct.h
-interviews/include/Unidraw/Commands/transforms.h
-interviews/include/Unidraw/Commands/viewcmds.h
-interviews/include/Unidraw/Graphic/damage.h
-interviews/include/Unidraw/Graphic/ellipses.h
-interviews/include/Unidraw/Graphic/geomobjs.h
-interviews/include/Unidraw/Graphic/graphic.h
-interviews/include/Unidraw/Graphic/grblock.h
-interviews/include/Unidraw/Graphic/lines.h
-interviews/include/Unidraw/Graphic/picture.h
-interviews/include/Unidraw/Graphic/polygons.h
-interviews/include/Unidraw/Graphic/pspaint.h
-interviews/include/Unidraw/Graphic/rasterrect.h
-interviews/include/Unidraw/Graphic/splines.h
-interviews/include/Unidraw/Graphic/ulabel.h
-interviews/include/Unidraw/Graphic/ustencil.h
-interviews/include/Unidraw/Graphic/util.h
-interviews/include/Unidraw/Graphic/verts.h
-interviews/include/Unidraw/Tools/connect.h
-interviews/include/Unidraw/Tools/grcomptool.h
-interviews/include/Unidraw/Tools/magnify.h
-interviews/include/Unidraw/Tools/move.h
-interviews/include/Unidraw/Tools/reshape.h
-interviews/include/Unidraw/Tools/rotate.h
-interviews/include/Unidraw/Tools/scale.h
-interviews/include/Unidraw/Tools/select.h
-interviews/include/Unidraw/Tools/stretch.h
-interviews/include/Unidraw/Tools/tool.h
 interviews/lib/FREEBSD/libIV.so.3.1
 interviews/lib/FREEBSD/libUnidraw.so.3.1
 interviews/lib/all/app-defaults/Doc
-interviews/lib/all/app-defaults/InterViews
 interviews/lib/all/app-defaults/Idemo
-interviews/lib/all/doc-samples/intro.doc
-interviews/lib/all/doc-samples/slides.doc
-interviews/lib/all/doc-samples/uist.doc
+interviews/lib/all/app-defaults/InterViews
 interviews/lib/all/doc-samples/car.ips
 interviews/lib/all/doc-samples/flag.oz.ips
+interviews/lib/all/doc-samples/intro.doc
 interviews/lib/all/doc-samples/objects.ips
+interviews/lib/all/doc-samples/slides.doc
+interviews/lib/all/doc-samples/uist.doc
 interviews/lib/all/drawings/car
 interviews/lib/all/drawings/car.bw
 interviews/lib/all/drawings/cis
@@ -404,27 +414,27 @@ interviews/lib/all/drawings/flags
 interviews/lib/all/drawings/pepsi
 interviews/lib/all/drawings/qbf
 interviews/lib/all/drawings/workstation
-interviews/lib/all/ibuild-samples/README
 interviews/lib/all/ibuild-samples/Clock/Clock.c
 interviews/lib/all/ibuild-samples/Clock/Clock.h
 interviews/lib/all/ibuild-samples/Clock/Dial.c
 interviews/lib/all/ibuild-samples/Clock/Dial.h
-interviews/lib/all/ibuild-samples/Clock/clock-main.c
 interviews/lib/all/ibuild-samples/Clock/clock
+interviews/lib/all/ibuild-samples/Clock/clock-main.c
 interviews/lib/all/ibuild-samples/Grapher/Grapher.c
 interviews/lib/all/ibuild-samples/Grapher/Grapher.h
 interviews/lib/all/ibuild-samples/Grapher/Plotter.c
 interviews/lib/all/ibuild-samples/Grapher/Plotter.h
-interviews/lib/all/ibuild-samples/Grapher/grapher-main.c
 interviews/lib/all/ibuild-samples/Grapher/grapher
+interviews/lib/all/ibuild-samples/Grapher/grapher-main.c
 interviews/lib/all/ibuild-samples/Meter/Meter.c
 interviews/lib/all/ibuild-samples/Meter/Meter.h
 interviews/lib/all/ibuild-samples/Meter/meter
 interviews/lib/all/ibuild-samples/Pie/Pie.c
 interviews/lib/all/ibuild-samples/Pie/Pie.h
-interviews/lib/all/ibuild-samples/Pie/pie-main.c
 interviews/lib/all/ibuild-samples/Pie/pie
+interviews/lib/all/ibuild-samples/Pie/pie-main.c
 interviews/lib/all/ibuild-samples/Punidraw/punidraw
+interviews/lib/all/ibuild-samples/README
 interviews/lib/all/ibuild-samples/Sted/OpenDialog.c
 interviews/lib/all/ibuild-samples/Sted/OpenDialog.h
 interviews/lib/all/ibuild-samples/Sted/SaveDialog.c
@@ -437,8 +447,8 @@ interviews/lib/all/ibuild-samples/Sted/sted
 interviews/lib/all/ibuild-samples/Sted/sted-main.c
 interviews/lib/all/ibuild-samples/VMouse/VMouse.c
 interviews/lib/all/ibuild-samples/VMouse/VMouse.h
-interviews/lib/all/ibuild-samples/VMouse/vmouse-main.c
 interviews/lib/all/ibuild-samples/VMouse/vmouse
+interviews/lib/all/ibuild-samples/VMouse/vmouse-main.c
 interviews/lib/all/ibuild-samples/VWork/VWork.c
 interviews/lib/all/ibuild-samples/VWork/VWork.h
 interviews/lib/all/ibuild-samples/VWork/vwork
@@ -504,20 +514,49 @@ interviews/lib/all/styles/slides.sty
 interviews/lib/all/styles/smallpage.sty
 interviews/lib/all/styles/thesis.sty
 interviews/lib/all/styles/times.sty
-interviews/bin/FREEBSD/alert
-interviews/bin/FREEBSD/dclock
-interviews/bin/FREEBSD/doc
-interviews/bin/FREEBSD/ibuild
-interviews/bin/FREEBSD/iclass
-interviews/bin/FREEBSD/idemo
-interviews/bin/FREEBSD/idraw
-interviews/bin/FREEBSD/ifc
-interviews/bin/FREEBSD/logo
-interviews/bin/FREEBSD/mailbox
-interviews/bin/FREEBSD/cpu
-interviews/bin/FREEBSD/ibmkmf
-interviews/bin/FREEBSD/ivmkmf
-interviews/bin/FREEBSD/remind
 interviews/man/refman.PS
-@exec ldconfig -m %D/lib
-@unexec /sbin/ldconfig -R
+lib/libIV.so
+lib/libIV.so.3.1
+lib/libUnidraw.so
+lib/libUnidraw.so.3.1
+@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
+@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
+@dirrm interviews/bin/FREEBSD
+@dirrm interviews/bin
+@dirrm interviews/config/InterViews
+@dirrm interviews/config
+@dirrm interviews/include/Dispatch
+@dirrm interviews/include/IV-2_6/InterViews
+@dirrm interviews/include/IV-2_6
+@dirrm interviews/include/IV-X11
+@dirrm interviews/include/IV-look
+@dirrm interviews/include/InterViews/Bitmaps
+@dirrm interviews/include/InterViews
+@dirrm interviews/include/OS
+@dirrm interviews/include/Unidraw/Commands
+@dirrm interviews/include/Unidraw/Components
+@dirrm interviews/include/Unidraw/Graphic
+@dirrm interviews/include/Unidraw/Tools
+@dirrm interviews/include/Unidraw
+@dirrm interviews/include
+@dirrm interviews/lib/FREEBSD
+@dirrm interviews/lib/all/app-defaults
+@dirrm interviews/lib/all/doc-samples
+@dirrm interviews/lib/all/drawings
+@dirrm interviews/lib/all/ibuild-samples/Clock
+@dirrm interviews/lib/all/ibuild-samples/Grapher
+@dirrm interviews/lib/all/ibuild-samples/Meter
+@dirrm interviews/lib/all/ibuild-samples/Pie
+@dirrm interviews/lib/all/ibuild-samples/Punidraw
+@dirrm interviews/lib/all/ibuild-samples/Sted
+@dirrm interviews/lib/all/ibuild-samples/VMouse
+@dirrm interviews/lib/all/ibuild-samples/VWork
+@dirrm interviews/lib/all/ibuild-samples
+@dirrm interviews/lib/all/images
+@dirrm interviews/lib/all/logos
+@dirrm interviews/lib/all/styles
+@dirrm interviews/lib/all
+@dirrm interviews/lib
+@dirrm interviews/man/mann
+@dirrm interviews/man
+@dirrm interviews

@@ -1,0 +1,12 @@
+--- src/lib/TIFF/tif_write.c.orig	Tue Feb 11 12:06:47 1992
++++ src/lib/TIFF/tif_write.c	Sun Jan 17 17:48:20 1999
+@@ -550,7 +550,8 @@
+ 			}
+ 		} else
+ 			td->td_stripoffset[strip] =
+-			    lseek(tif->tif_fd, 0L, L_XTND);
++			    /*changed 0L to (off_t)0 .. jj@ldjpc.apana.org.au*/
++			    lseek(tif->tif_fd, (off_t)0, L_XTND);
+ 		tif->tif_curoff = td->td_stripoffset[strip];
+ 	}
+ 	if (!WriteOK(tif->tif_fd, data, cc)) {

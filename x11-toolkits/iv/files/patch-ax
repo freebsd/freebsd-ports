@@ -1,0 +1,60 @@
+--- src/lib/TIFF/tif_dirwrite.c.orig	Wed Mar 18 04:09:29 1992
++++ src/lib/TIFF/tif_dirwrite.c	Sun Jan 17 17:48:20 1999
+@@ -177,7 +177,8 @@
+ 	dataoff = tif->tif_diroff + sizeof (short) + dirsize + sizeof (long);
+ 	if (dataoff & 1)
+ 		dataoff++;
+-	(void) lseek(tif->tif_fd, dataoff, L_SET);
++	/* added (off_t) below.....jj@ldjpc.apana.org.au*/
++	(void) lseek(tif->tif_fd, (off_t)(dataoff), L_SET);
+ 	tif->tif_curdir++;
+ 	dir = (TIFFDirEntry *)data;
+ 	/*
+@@ -314,7 +315,8 @@
+ 	/*
+ 	 * Write directory.
+ 	 */
+-	(void) lseek(tif->tif_fd, tif->tif_diroff, L_SET);
++	/*added (off_t) below.....jj@ldjpc.apana.org.au*/
++	(void) lseek(tif->tif_fd, (off_t)(tif->tif_diroff), L_SET);
+ 	dircount = nfields;
+ 	if (!WriteOK(tif->tif_fd, &dircount, sizeof (short))) {
+ 		TIFFError(tif->tif_name, "Error writing directory count");
+@@ -762,13 +764,15 @@
+ 	u_short dircount;
+ 	long nextdir;
+ 
+-	tif->tif_diroff = (lseek(tif->tif_fd, 0L, L_XTND)+1) &~ 1L;
++	/* changed 0L to (off_t)0 below...jj@ldjpc.apana.org.au*/
++	tif->tif_diroff = (lseek(tif->tif_fd, (off_t)0, L_XTND)+1) &~ 1L;
+ 	if (tif->tif_header.tiff_diroff == 0) {
+ 		/*
+ 		 * First directory, overwrite header.
+ 		 */
+ 		tif->tif_header.tiff_diroff = tif->tif_diroff;
+-		(void) lseek(tif->tif_fd, 0L, L_SET);
++		/* changed 0L to (off_t)0 .. jj@ldjpc.apana.org.au*/
++		(void) lseek(tif->tif_fd, (off_t)0, L_SET);
+ 		if (!WriteOK(tif->tif_fd, &tif->tif_header,
+ 		    sizeof (tif->tif_header))) {
+ 			TIFFError(tif->tif_name, "Error writing TIFF header");
+@@ -788,7 +792,8 @@
+ 		}
+ 		if (tif->tif_flags & TIFF_SWAB)
+ 			TIFFSwabShort(&dircount);
+-		lseek(tif->tif_fd, dircount * sizeof (TIFFDirEntry), L_INCR);
++		/*added (off_t) below....jj@ldjpc.apana.org.au*/
++		lseek(tif->tif_fd, (off_t)(dircount * sizeof (TIFFDirEntry)), L_INCR);
+ 		if (!ReadOK(tif->tif_fd, &nextdir, sizeof (nextdir))) {
+ 			TIFFError(module, "Error fetching directory link");
+ 			return (0);
+@@ -796,7 +801,8 @@
+ 		if (tif->tif_flags & TIFF_SWAB)
+ 			TIFFSwabLong((u_long *)&nextdir);
+ 	} while (nextdir != 0);
+-	(void) lseek(tif->tif_fd, -sizeof (nextdir), L_INCR);
++	/*added (off_t) below ... jj@ldjpc.apana.org.au*/
++	(void) lseek(tif->tif_fd, (off_t)(-sizeof (nextdir)), L_INCR);
+ 	if (!WriteOK(tif->tif_fd, &tif->tif_diroff, sizeof (tif->tif_diroff))) {
+ 		TIFFError(module, "Error writing directory link");
+ 		return (0);

@@ -1,0 +1,30 @@
+--- src/include/InterViews/_names.h.orig	Fri Mar 20 06:16:49 1992
++++ src/include/InterViews/_names.h	Sun Jan 17 17:48:20 1999
+@@ -36,6 +36,13 @@
+ #undef Coord
+ #undef Deck
+ #undef Dialog
++#undef RasterRect
++#undef Point
++#undef Line
++#undef Ellipse
++#undef MultiLine
++#undef Polygon
++#undef ClosedBSpline
+ #undef FileBrowser
+ #undef FileChooser
+ #undef Glue
+@@ -68,6 +75,13 @@
+ #define Coord _lib_iv(Coord)
+ #define Deck _lib_iv(Deck)
+ #define Dialog _lib_iv(Dialog)
++#define RasterRect _lib_iv(RasterRect)
++#define Point _lib_iv(Point)
++#define Line _lib_iv(Line)
++#define Ellipse _lib_iv(Ellipse)
++#define MultiLine _lib_iv(MultiLine)
++#define Polygon _lib_iv(Polygon)
++#define ClosedBSpline _lib_iv(ClosedBSpline)
+ #define FileBrowser _lib_iv(FileBrowser)
+ #define FileChooser _lib_iv(FileChooser)
+ #define Glue _lib_iv(Glue)

@@ -1,0 +1,13 @@
+--- src/config/InterViews/iv-freebsd.cf.orig	Sun Jan 17 18:54:17 1999
++++ src/config/InterViews/iv-freebsd.cf	Sun Jan 17 18:12:51 1999
+@@ -0,0 +1,10 @@
++#include <InterViews/xparams.cf>
++#undef CppCmd
++#define CppCmd cpp
++#undef CCDriver
++#define CCDriver /usr/bin/c++
++#undef DependCCFlags
++#define DependCCFlags $(CCDEFINES) $(CCINCLUDES) -I/usr/include/g++
++#undef ExtraCCLdLibs
++#define ExtraCCLdLibs -lg++
++#define SharedCCFlags -fpic

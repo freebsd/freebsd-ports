@@ -1,0 +1,12 @@
+--- src/lib/IV-2_6/painter.c.orig	Wed Feb 12 05:49:44 1992
++++ src/lib/IV-2_6/painter.c	Sun Jan 17 17:48:20 1999
+@@ -39,6 +39,9 @@
+ #include <stdlib.h>
+ #include <string.h>
+ 
++#include <InterViews/_names.h>
++#include <InterViews/_enter.h>
++
+ /*
+  * For reasons of caching, it is important that the attributes
+  * are set to nil (or 0) before being set to their default values.
