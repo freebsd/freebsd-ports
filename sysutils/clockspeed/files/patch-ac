@@ -1,5 +1,5 @@
---- clockspeed.c.orig	Fri Jun 16 23:37:32 2000
-+++ clockspeed.c	Fri Jun 16 23:38:10 2000
+--- clockspeed.c.orig	Tue Oct 13 15:37:28 1998
++++ clockspeed.c	Mon Nov 20 09:06:34 2000
 @@ -83,7 +83,7 @@
    if (deriv <= 0) return;
    if (deriv > 200000000) return; /* 5Hz ticks? be serious */
@@ -18,7 +18,7 @@
  }
  
  void main()
-@@ -136,7 +136,7 @@
+@@ -136,16 +136,16 @@
    if (chdir(auto_home) == -1) _exit(1);
    umask(033);
  
@@ -27,3 +27,15 @@
      r = read(0,buf,sizeof buf);
      if (r == sizeof buf)
        deriv = nano(buf);
+     close(0);
+   }
+ 
+-  if (fifo_make("adjust",0600) == -1) if (errno != error_exist) _exit(1);
+-  if (open_read("adjust") != 0) _exit(1);
+-  if (open_write("adjust") == -1) _exit(1);
++  if (fifo_make("etc/clockspeed/adjust",0600) == -1) if (errno != error_exist) _exit(1);
++  if (open_read("etc/clockspeed/adjust") != 0) _exit(1);
++  if (open_write("etc/clockspeed/adjust") == -1) _exit(1);
+ 
+   now(&first);
+ 

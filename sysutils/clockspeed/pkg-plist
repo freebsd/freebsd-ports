@@ -10,4 +10,5 @@ bin/taiclockd
 @exec mkdir %D/etc/clockspeed
 @unexec rm %D/etc/clockspeed/atto.tmp 2>/dev/null || true
 @unexec rm %D/etc/clockspeed/atto 2>/dev/null || true
+@unexec rm %D/etc/clockspeed/adjust 2>/dev/null || true
 @unexec rmdir %D/etc/clockspeed 2>/dev/null || true
