@@ -1,0 +1,17 @@
+diff -c -r Modules/cursesmodule.c.orig Modules/cursesmodule.c
+*** Modules/cursesmodule.c.orig	Fri Mar 17 04:18:36 1995
+--- Modules/cursesmodule.c	Tue Aug  8 13:31:40 1995
+***************
+*** 145,151 ****
+--- 145,155 ----
+  
+  #include "Python.h"
+  
++ #ifdef __FreeBSD__
++ #include <ncurses.h>
++ #else
+  #include <curses.h>
++ #endif
+  
+  typedef struct {
+  	PyObject_HEAD
