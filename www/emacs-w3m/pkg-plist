@@ -169,7 +169,6 @@
 %%LISPDIR%%/w3m-antenna.el
 %%LISPDIR%%/w3m-antenna.elc
 %%LISPDIR%%/w3m-bitmap.el
-%%EMACS20%%%%LISPDIR%%/w3m-bitmap.elc
 %%LISPDIR%%/w3m-bookmark.el
 %%LISPDIR%%/w3m-bookmark.elc
 %%LISPDIR%%/w3m-bug.el
