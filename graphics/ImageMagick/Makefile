@@ -54,8 +54,8 @@ CONFIGURE_ARGS+= --enable-16bit-pixel
 CONFIGURE_ARGS+= --enable-lzw
 .endif
 
-MAN1=		ImageMagick.1 animate.1 combine.1 convert.1 display.1 \
-		identify.1 import.1 mogrify.1 montage.1
+MAN1=		ImageMagick.1 Magick-config.1 animate.1 combine.1 convert.1 \
+		display.1 identify.1 import.1 mogrify.1 montage.1
 MAN3=		Image::Magick.3
 MAN4=		miff.4
 MAN5=		quantize.5
