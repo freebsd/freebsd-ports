@@ -32,6 +32,27 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="4aec9d58-ce7b-11d8-858d-000d610a3b12">
+    <topic>Format string vulnerability in SSLtelnet</topic>
+    <affects>
+      <package>
+	<name>SSLtelnet</name>
+	<range><le>0.13_1</le></range>
+      </package>
+    </affects>
+    <description>
+      <p>SSLtelnet contains a format string vulnerability that could
+	allow remote code execution and privilege escalation.</p>
+    </description>
+    <references>
+      <url>http://www.idefense.com/</url>
+    </references>
+    <dates>
+      <discovery>2003-04-03</discovery>
+      <entry>2004-07-05</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="76904dce-ccf3-11d8-babb-000854d03344">
     <topic>Pavuk HTTP Location header overflow</topic>
     <affects>
@@ -3774,14 +3795,14 @@ misc.c:
     <topic>GNATS local privilege elevation</topic>
     <affects>
       <package>
-        <name>gnats</name>
-        <range><le>3.113.1_9</le></range>
+	<name>gnats</name>
+	<range><le>3.113.1_9</le></range>
       </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-        <p>GNATS 3.113.1 contains multiple buffer overflows, through which a
-          local attacker could gain elevated privileges on the system.</p>
+	<p>GNATS 3.113.1 contains multiple buffer overflows, through which a
+	  local attacker could gain elevated privileges on the system.</p>
       </body>
     </description>
     <references>
