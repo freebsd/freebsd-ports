@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.xcf.berkeley.edu/pub/xdelta/
 
 MAINTAINER=	jmacd@FreeBSD.org
 
-BUILD_DEPENDS=	${PREFIX}/lib/libgdbm.a:${PORTSDIR}/databases/gdbm
+BUILD_DEPENDS=	${LOCALBASE}/lib/libgdbm.a:${PORTSDIR}/databases/gdbm
 LIB_DEPENDS=	glib12.3:${PORTSDIR}/devel/glib12
 
 GLIB_CONFIG?=	${LOCALBASE}/bin/glib12-config
