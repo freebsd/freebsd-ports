@@ -1700,7 +1700,7 @@ freevrrpd	ports/net/freevrrpd
 freewais-sf	ports/net/freewais-sf
 freeze		ports/archivers/freeze
 fressh		ports/security/fressh
-fribidi		ports/textproc/fribidi
+fribidi		ports/converters/fribidi
 frink		ports/devel/frink
 frodo		ports/emulators/frodo
 from		src/usr.bin/from
