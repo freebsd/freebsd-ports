@@ -5351,6 +5351,7 @@ mod_accesscookie	ports/www/mod_accesscookie
 mod_accounting	ports/www/mod_accounting
 mod_auth_any	ports/www/mod_auth_any
 mod_auth_cookie_mysql	ports/www/mod_auth_cookie_mysql
+mod_auth_cookie_mysql2	ports/www/mod_auth_cookie_mysql2
 mod_auth_external	ports/www/mod_auth_external
 mod_auth_external2	ports/www/mod_auth_external2
 mod_auth_imap	ports/www/mod_auth_imap
