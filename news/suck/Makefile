@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	suck
-PORTVERSION=	4.3.0
+PORTVERSION=	4.3.1
 CATEGORIES=	news
 MASTER_SITES=	http://www.sucknews.org/
 
@@ -19,18 +19,25 @@ EX_SCRIPTS=	get.news.generic get.news.inn perl_kill.pl perl_xover.pl \
 		post_filter.pl put.news put.news.pl put.news.sm put.news.sm.pl
 EX_DATA=	suckkillfile.sample sucknewsrc.sample suckothermsgs.sample
 
-.if defined(NEWSBIN)
+MAKE_ENV+=	CHKHISTORY=chkhistory_db.o
+.if defined(NEWSBIN) && !defined(SUCK_WITH_INN)
 PKGNAMESUFFIX=	-cnews
-EXTRA_PATCHES+=	${FILESDIR}/cnews.patch
+MAKE_ENV+=	DB_TYPE=-DUSE_DBZ DB_LIB=-lcnews
+MAKE_ENV+=	DB_LIB_LOC=-L${LOCALBASE}/lib
+MAKE_ENV+=	INCDIR2=-I${LOCALBASE}/include
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libcnews.a:${PORTSDIR}/news/cnews
 .else
-EXTRA_PATCHES+=	${FILESDIR}/inn2.patch
+MAKE_ENV+=	DB_TYPE="-DUSE_INN23 -DDO_TAGGED_HASH"
+MAKE_ENV+=	DB_LIB="-linn -lstorage"
+MAKE_ENV+=	DB_LIB_LOC=-L${LOCALBASE}/news/lib
+MAKE_ENV+=	DB_INC_LOC=-I${LOCALBASE}/news/include
+MAKE_ENV+=	INCDIR2=-I${LOCALBASE}/include
 BUILD_DEPENDS+=	${LOCALBASE}/news/lib/libinn.a:${PORTSDIR}/news/inn
 .endif
 
 .include <bsd.port.pre.mk>
 
-.if defined(SUCK_WITH_SSL) || defined(WITH_SSL)
+.if !defined(SUCK_WITHOUT_SSL) && !defined(WITHOUT_SSL)
 .include "${PORTSDIR}/security/openssl/Makefile.ssl"
 MAKE_ENV+=	SSL_LIB="-lssl -lcrypto"
 MAKE_ENV+=	SSL_DEFS="-I${OPENSSLINC} -DHAVE_LIBSSL"

@@ -1,0 +1,62 @@
+--- Makefile.in.orig	Thu Sep 19 22:41:45 2002
++++ Makefile.in	Fri Sep 27 07:18:47 2002
+@@ -6,7 +6,7 @@
+ ############################################################################
+ 
+ # Step 1: Define ONE of the CHKHISTORY 
+-CHKHISTORY=@HISTORY@
++#CHKHISTORY=@HISTORY@
+ #CHKHISTORY=chkhistory.o	# use flat file history routine
+ #CHKHISTORY=chkhistory_db.o	# use DB history routine, if you use 
+                                 # DBM, GDBM, NDBM, or DBZ
+@@ -17,7 +17,7 @@
+ # If you are using flat file, you can skip the rest, they don't matter
+ 
+ # Step 2: Define ONE of the Database Types
+-DB_TYPE=@DB_TYPE@
++#DB_TYPE=@DB_TYPE@
+ #DB_TYPE=-DUSE_DBM
+ #DB_TYPE=-DUSE_GDBM	
+ #DB_TYPE=-DUSE_NDBM
+@@ -29,18 +29,20 @@
+ # If you are using INN-2.X, and the compiler complains 
+ # about Undefined Symbols QIOclose QIOopen QIOread
+ # Use the DB_LIB that includes -lstorage
+-DB_LIB=@DB_LIB@
++#DB_LIB=@DB_LIB@
+ #DB_LIB=-ldbm
+ #DB_LIB=-lgdbm
+ #DB_LIB=-lndbm
+ #DB_LIB=-ldbz
+ #DB_LIB=-linn -lstorage	# see note above
+ #DB_LIB=-linn		# INN puts DBZ code in here
++#DB_LIB=-lcnews		# cnews puts DBZ code in here
+ 
+ # Step 4: IF your DB Library/Includes are in a non-standard place, 
+ # define These
+ #DB_INC_LOC=-I/usr/src/inn-2.3/include
+ #DB_LIB_LOC=-L/usr/src/inn-2.3/lib
++#DB_LIB_LOC=-L/usr/local/lib
+ 
+ # Step 5: If you want to use embedded PERL functions as kill routines
+ # define these. 
+@@ -67,8 +69,8 @@
+ #OS2_DEFS=-DEMX
+ 
+ # Step 7: If compiling with SSL uncomment the following
+-SSL_LIB=@SSL_LIB@
+-SSL_DEFS=@SSL_DEFS@
++#SSL_LIB=@SSL_LIB@
++#SSL_DEFS=@SSL_DEFS@
+ #SSL_LIB=-lssl -lcrypto
+ #SSL_DEFS=-I/usr/local/ssl/include -DHAVE_LIBSSL
+ #SSL_LIB_LOC=-L/usr/local/ssl/lib
+@@ -110,7 +112,7 @@
+ @SET_MAKE@
+ 
+ CFLAGS = @CFLAGS@
+-CPPFLAGS = -I. -I$(srcdir) @CPPFLAGS@
++CPPFLAGS = -I. -I$(srcdir) $(INCDIR2) @CPPFLAGS@
+ LDFLAGS = @LDFLAGS@ $(DMALLOC_LD) $(OS2_LD)
+ DEFS = @DEFS@ -DSUCK_VERSION=\"$(VERSION)\" $(DMALLOC_DEFS) $(OS2_DEFS) $(DMALLOC_INC)
+ LIBS = @LIBS@ $(DMALLOC_LIB)
