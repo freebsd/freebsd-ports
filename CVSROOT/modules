@@ -2066,6 +2066,7 @@ gnomeicu	ports/net/gnomeicu
 gnomeicu2	ports/net/gnomeicu2
 gnomekiss	ports/games/gnomekiss
 gnomelibs	ports/x11/gnomelibs
+gnomemag	ports/x11/gnomemag
 gnomemedia	ports/audio/gnomemedia
 gnomemedia2	ports/audio/gnomemedia2
 gnomemeeting	ports/net/gnomemeeting
