@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	mysqltcl
-PORTVERSION=	1.53
+PORTVERSION=	2.14
 CATEGORIES=	databases tcl83
-MASTER_SITES=	http://telia.dl.sourceforge.net/mirrors/mysql/Downloads/Contrib/
+MASTER_SITES=	http://www.xdobry.de/mysqltcl/
 
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	TCL module for accessing MySQL databases based on msqltcl
 
-LIB_DEPENDS=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client \
+LIB_DEPENDS=	mysqlclient:${PORTSDIR}/databases/mysql323-client \
 		${TCL_NODOT}:${PORTSDIR}/lang/${TCL_NODOT}
 
 TCL_VERSION?=	tcl8.3
@@ -30,10 +30,10 @@ do-build:
 do-install:
 	${MKDIR} ${SQL_DIR}
 	${INSTALL_DATA} ${WRKSRC}/${LIB_NAME} ${SQL_DIR}
-	${ECHO} "package ifneeded mysql 1.53 {load ${SQL_DIR}/${LIB_NAME}}" \
+	${ECHO} "package ifneeded mysqltcl ${PORTVERSION} {load ${SQL_DIR}/${LIB_NAME}}" \
 		> ${SQL_DIR}/pkgIndex.tcl
-	${INSTALL_MAN} ${WRKSRC}/${MANN} ${PREFIX}/man/mann
+	${INSTALL_MAN} ${WRKSRC}/doc/${MANN} ${PREFIX}/man/mann
 
 .include <bsd.port.mk>
 
-LIB_NAME!=	${MAKE} -f ${FILESDIR}/Makefile.bsd printname
+LIB_NAME!=	${MAKE} -f ${FILESDIR}/Makefile.bsd -V SHLIB_NAME
