@@ -43,6 +43,7 @@
     SUBDIR += astyle
     SUBDIR += atk
     SUBDIR += atlas
+    SUBDIR += aunit
     SUBDIR += autobook
     SUBDIR += autoconf
     SUBDIR += autoconf213
