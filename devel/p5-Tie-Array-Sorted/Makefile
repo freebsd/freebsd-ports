@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Tie-Array-Sorted
-PORTVERSION=	1.2
+PORTVERSION=	1.3
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Tie
@@ -17,7 +17,8 @@ COMMENT=	A Perl array which is kept sorted
 
 PERL_CONFIGURE=	yes
 
-MAN3=		Tie::Array::Sorted.3
+MAN3=		Tie::Array::Sorted.3 \
+		Tie::Array::Sorted::Lazy.3
 
 .include <bsd.port.pre.mk>
 
