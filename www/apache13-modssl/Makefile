@@ -3,7 +3,7 @@
 # Date created:		Sat Aug 22 12:00:00 CDT 1998
 # Whom:			rse@engelschall.com
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/08/27 16:00:05 rse Exp $
 #
 
 DISTNAME=	apache_${VERSION_APACHE}
@@ -23,7 +23,7 @@ BUILD_DEPENDS=	ssleay:${PORTSDIR}/security/SSLeay \
 RUN_DEPENDS=	ssleay:${PORTSDIR}/security/SSLeay
 
 VERSION_APACHE=	1.3.1
-VERSION_MODSSL=	2.0.5
+VERSION_MODSSL=	2.0.6
 
 RESTRICTED=	"Contains cryptography"
 
