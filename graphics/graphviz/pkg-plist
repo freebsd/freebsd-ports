@@ -1,8 +1,17 @@
+bin/acyclic
+bin/ccomps
+bin/colorize
 bin/dot
 bin/dotty
+bin/gc
+bin/gpr
 bin/lefty
 bin/lneato
 bin/neato
+bin/nop
+bin/sccmap
+bin/tred
+bin/unflatten
 lib/graphviz/demo/dge
 lib/graphviz/demo/dge.README
 lib/graphviz/demo/dge.example1.dot

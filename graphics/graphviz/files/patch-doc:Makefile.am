@@ -1,9 +1,0 @@
---- doc/Makefile.am~	Tue Mar  6 13:57:54 2001
-+++ doc/Makefile.am	Tue Mar  6 14:00:11 2001
-@@ -6,6 +6,4 @@
- 
- DOCS = dotguide.pdf dottyguide.pdf gd.html leftyguide.pdf neatoguide.pdf tcldot.html Dot.ref
- 
--docdir = $(prefix)/doc
--doc_DATA = $(DOCS)
- EXTRA_DIST = $(DOCS)
