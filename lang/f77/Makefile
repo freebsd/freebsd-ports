@@ -3,7 +3,7 @@
 # Date created:				19 JAN 1999
 # Whom:					Steven G. Kargl
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/04/24 22:50:24 obrien Exp $
 #
 
 DISTNAME=	f77-freebsd.0.3
@@ -32,17 +32,15 @@ MAKE_ARGS=	"CFLAGS= ${CFLAGS} -DSUN_FPP \
 		-DF2C_COMMAND='\"${PREFIX}/bin/f2c\"'"
 .endif
 
-.include <bsd.port.pre.mk>
-
-ALL_TARGET=   depend all
-
+ALL_TARGET=	depend all
 MAN1=		${F77NAME}.1
+PLIST=		${WRKDIR}/PLIST
 
 do-install:
-	@echo 'bin/${F77NAME}' > ${PKGDIR}/PLIST
+	@echo 'bin/${F77NAME}' > ${PLIST}
 	${INSTALL_PROGRAM} ${WRKSRC}/f77 ${PREFIX}/bin/${F77NAME}
 	@${SED} -e 's/F77/${F77NAME}/g' -e 's/f77/${F77NAME}/g' \
 	${WRKSRC}/f77.1  > ${WRKSRC}/${F77NAME}.1
 	${INSTALL_MAN} ${WRKSRC}/${F77NAME}.1 ${PREFIX}/man/man1
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
