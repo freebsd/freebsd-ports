@@ -1,26 +1,16 @@
 The following documentation has been installed:
 
-    info 'Exim Overview'	-> Overview of Exim
     info Exim			-> Exim Specification (User Guide)
     info 'Exim Filtering'	-> Exim Filter Specification (for end-users)
 
 In addition, plain text versions of these documents have been installed
 as:
 
-    ${PREFIX}/share/doc/exim/oview.txt
     ${PREFIX}/share/doc/exim/filter.txt
     ${PREFIX}/share/doc/exim/spec.txt
 
-Postscript, PDF and HTML versions of these documents are available in
-the ports tree as:
-
-    ports/mail/exim-doc-postscript
-    ports/mail/exim-doc-pdf
-    ports/mail/exim-doc-html
-
-In addition, a comprehensive FAQ list is available at:
-
-    http://www.exim.org/
+Postscript, PDF, HTML and plain text versions of these documents, as well
+as a comprehensive FAQ list, are available at http://www.exim.org/ .
 
 To run Exim instead of sendmail on startup:
 
