@@ -1,0 +1,39 @@
+--- editor/pnmquant	Tue Dec 16 17:34:11 2003
++++ editor/pnmquant.new	Fri Feb 20 14:31:03 2004
+@@ -13,7 +13,8 @@
+ use Getopt::Long;
+ use File::Temp "tempfile";
+ use File::Spec;
+-use Fcntl ":seek";
++use Fcntl;
++use POSIX qw(SEEK_SET SEEK_CUR SEEK_END);
+ 
+ my ($TRUE, $FALSE) = (1,0);
+ 
+@@ -52,7 +53,7 @@
+     my $infile;
+     my $ncolors = $ARGV[0];
+     
+-    if (!($ncolors =~ m{ ^[[:digit:]]+$ }x ) || $ncolors == 0) {
++    if (!($ncolors =~ m{ ^[\d]+$ }x ) || $ncolors == 0) {
+         print(STDERR 
+               "Number of colors argument '$ncolors' is not a positive " .
+               "integer.\n");
+@@ -111,7 +112,7 @@
+             tell(INFH);  # Avoids bogus "INFH is not referenced" warning
+         }
+     } else {
+-        open(STDIN, "<", $infile) 
++        open(STDIN, "<" . $infile) 
+             or die("Unable to open input file '$infile'.  Errno=$ERRNO");
+     }
+ }
+@@ -152,7 +153,7 @@
+         $spreadOpt = "-spreadbrightness";
+     }
+ 
+-    open(STDOUT, ">", $mapfileSpec);
++    open(STDOUT, ">" . $mapfileSpec);
+ 
+     my $maprc = system("pnmcolormap", $ncolors, $averageOpt, $spreadOpt);
+ 
