@@ -7990,3 +7990,4 @@ dtd2relax	ports/textproc/dtd2relax
 dtdinst		ports/textproc/dtdinst
 p5-IO-Zlib	ports/archivers/p5-IO-Zlib
 p5-HTTPD-Log-Filter	ports/www/p5-HTTPD-Log-Filter
+p5-CGI-SpeedyCGI	ports/www/p5-CGI-SpeedyCGI
