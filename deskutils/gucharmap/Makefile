@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	gucharmap
-PORTVERSION=	0.6.1
+PORTVERSION=	0.8.0
 CATEGORIES=	misc gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.6
+MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.8
 DIST_SUBDIR=	gnome2
 
-MAINTAINER=	marcus@FreeBSD.org
+MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A Unicode/ISO10646 character map and font viewer
 
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
@@ -36,9 +36,5 @@ PKGNAMESUFFIX=	-gnome
 .else
 CONFIGURE_ARGS=	--disable-gnome
 .endif
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
-		s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
 
 .include <bsd.port.post.mk>
