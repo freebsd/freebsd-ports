@@ -1,1 +1,4 @@
+lib/libpam_alreadyloggedin.a
+%%PROFILE%%lib/libpam_alreadyloggedin_p.a
+lib/pam_alreadyloggedin.so
 lib/pam_alreadyloggedin.so.2
