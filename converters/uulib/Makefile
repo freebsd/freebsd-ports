@@ -14,6 +14,8 @@ DISTNAME=	uudeview-${PORTVERSION}
 MAINTAINER=	hoek@FreeBSD.org
 COMMENT=	A library for uu/xx/Base64/BinHex/yEnc de-/encoding
 
+FORBIDDEN=	http://people.freebsd.org/~eik/portaudit/6c7661ff-7912-11d8-9645-0020ed76ef5a.html
+
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 USE_REINPLACE=	yes
