@@ -1,0 +1,26 @@
+--- ./curl-ssl.spec	Mon Oct  9 14:31:37 2000
++++ ./curl-ssl.spec	Mon Oct 16 16:48:22 2000
+@@ -1,4 +1,4 @@
+-%define ver	7.4-pre4
++%define ver	7.4.1
+ %define rel	1
+ %define prefix	/usr
+ 
+@@ -31,7 +31,7 @@
+ 
+ 
+ %prep
+-%setup -n curl-7.4-pre4
++%setup -n curl-7.4.1
+ 
+ 
+ %build
+@@ -74,7 +74,7 @@
+ 
+ 
+ %clean
+-(cd ..; rm -rf curl-7.4-pre4 ${RPM_BUILD_ROOT})
++(cd ..; rm -rf curl-7.4.1 ${RPM_BUILD_ROOT})
+ 
+ 
+ %files -f file-lists
