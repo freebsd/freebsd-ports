@@ -1,11 +1,17 @@
---- star/star.1.orig	Thu May  9 23:35:20 2002
-+++ star/star.1	Tue Jun 11 22:49:17 2002
-@@ -15,7 +15,7 @@
- .if n .ds s sz
- .TH STAR 1 "02/05/09" "J\*org Schilling" "Schily\'s USER COMMANDS"
- .SH NAME
--star \- unique standard tape archiver
-+star, ustar \- unique standard tape archiver
- .SH SYNOPSIS
+diff -bur star/star.1 star-1.5/star/star.1
+--- star/star.1	Fri Feb 25 09:07:00 2005
++++ star/star.1	Fri Feb 25 09:07:43 2005
+@@ -31,13 +31,6 @@
+ ] 
+ .I file1 .\|.\|. filen
+ .br
+-.B "tar\ \ "
+-.I command
+-[
+-.I options
+-] 
+-.I file1 .\|.\|. filen
+-.br
  .B "star\ "
- .I command
+ .B "\-copy\ \ "
+ [

@@ -1,0 +1,22 @@
+diff -bur star/Makefile star/Makefile
+--- star/Makefile	Fri Feb 25 09:17:45 2005
++++ star/Makefile	Fri Feb 25 09:19:03 2005
+@@ -15,7 +15,7 @@
+ INSDIR=		bin
+ TARGET=		star_fat
+ #SYMLINKS=	ustar tar
+-SYMLINKS=	star ustar tar gnutar suntar scpio spax
++SYMLINKS=	star ustar
+ CPPOPTS +=	-D__STAR__
+ CPPOPTS +=	-DSET_CTIME -DFIFO -DUSE_MMAP -DUSE_REMOTE -DUSE_RCMD_RSH
+ #CPPOPTS +=	-DSET_CTIME -DFIFO -DUSE_MMAP
+@@ -44,8 +44,7 @@
+ #LIBS=		-lunos
+ #LIBS=		-lschily -lc /usr/local/lib/gcc-gnulib
+ LIBS=		-ldeflt -lrmt -lschily $(LIB_ACL) $(LIB_ATTR) $(LIB_SOCKET)
+-XMK_FILE=	Makefile.man starformatman.mk scpioman.mk gnutarman.mk \
+-		spaxman.mk suntarman.mk
++XMK_FILE=	Makefile.man starformatman.mk
+ 
+ star_fat.c: star.c
+ 	$(RM) $(RM_FORCE) $@; cp star.c $@
