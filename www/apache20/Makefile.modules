@@ -25,6 +25,7 @@ PKGNAMESUFFIX=	-${SLAVE_PORT_MPM}
 .   if ${WITH_MPM} != "prefork"
 PKGNAMESUFFIX=		-${WITH_MPM:L}
 WITH_THREADS=		yes
+WITH_THREADS_MODULES=	yes
 WITHOUT_MODULES+=	cgi
 .      if ${WITH_MPM:L} == "worker"
 PLIST_SUB+=	PREFORK="@comment " WORKER="" THREADPOOL="@comment "
@@ -96,6 +97,9 @@ CONFIGURE_ARGS+=	--enable-threads
 .   if ${WITH_PTHREAD_LIBS} != "c_r" && ${OSVERSION} > 500023
 CONFIGURE_ENV+=		apr_cv_pthreads_lib=-l${WITH_PTHREAD_LIBS} \
 			apr_cv_pthreads_cflags=${WITH_PTHREAD_CFLAGS}
+.     if ${ARCH} == i386
+CONFIGURE_ARGS+=	--enable-nonportable-atomics
+.     endif
 .  else
 CFLAGS+=		-DFREEBSD_THREAD_HACK
 .   endif
@@ -110,7 +114,8 @@ AUTH_MODULES=		access auth auth_anon auth_dbm auth_digest
 DAV_MODULES=		dav dav_fs
 EXPERIMENTAL_MODULES=	bucketeer case_filter case_filter_in ext_filter charset_lite \
 			optional_hook_export optional_hook_import \
-			optional_fn_import optional_fn_export
+			optional_fn_import optional_fn_export \
+			cache file_cache disk_cache mem_cache
 LDAP_MODULES=		ldap auth_ldap
 MISC_MODULES=		actions alias asis autoindex cache cern_meta \
 			cgi charset_lite deflate dir disk_cache env expires \
@@ -120,7 +125,7 @@ MISC_MODULES=		actions alias asis autoindex cache cern_meta \
 PROXY_MODULES=		proxy proxy_connect proxy_ftp proxy_http
 SSL_MODULES=		ssl
 SUEXEC_MODULES=		suexec
-THREADS_MODULES=	cgid cache file_cache disk_cache mem_cache
+THREADS_MODULES=	cgid
 
 # Work in progress
 SLAVE_PORT_MODULES?=	# If you are porting a slave port for apache2 please define SLAVE_PORT_MODULES

@@ -1,21 +1,11 @@
---- support/apachectl.in.orig	Mon May 27 20:46:01 2002
-+++ support/apachectl.in	Thu Jul 11 21:12:36 2002
-@@ -31,8 +31,8 @@
- HTTPD='@exp_sbindir@/@progname@'
- #
- # pick up any necessary environment variables
--if test -f @exp_bindir@/envvars; then
--  . @exp_bindir@/envvars
-+if test -f @exp_sbindir@/envvars; then
-+  . @exp_sbindir@/envvars
- fi
- #
- # a command that outputs a formatted text version of the HTML at the
-@@ -46,6 +46,7 @@
- #
+--- support/apachectl.in.orig	Thu Sep 16 09:28:54 2004
++++ support/apachectl.in	Thu Sep 16 09:29:14 2004
+@@ -63,7 +63,7 @@
+ ULIMIT_MAX_FILES="@APACHECTL_ULIMIT@"
  # --------------------                              --------------------
  # ||||||||||||||||||||   END CONFIGURATION SECTION  ||||||||||||||||||||
+-
 +eval `limits -e -C daemon` >/dev/null 2>&1
- 
- ERROR=0
- if [ "x$ARGV" = "x" ] ; then 
+ # Set the maximum number of file descriptors allowed per child process.
+ if [ "x$ULIMIT_MAX_FILES" != "x" ] ; then
+     $ULIMIT_MAX_FILES
