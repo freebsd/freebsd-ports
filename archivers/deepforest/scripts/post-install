@@ -3,9 +3,9 @@
 case ${LANGUAGE} in
     Japanese)
 	for f in DeepForest.app; do
-	    ${PERL} -pi -e '
-		s/^(exec[ \t]+)wishstep[^ \t]*([ \t]+.*)$/$1wishstep$ENV{VERSION}jp$2/
-		' ${PREFIX}/JDE/DeepForest/${f}
+	    ${REINPLACE_CMD} -E -e \
+	    	"s/^(exec[[:space:]]+)wishstep[^[:space:]]*([[:space:]]+.*)\$/\1wishstep${VERSION}jp\2/" \
+		${PREFIX}/JDE/DeepForest/${f}
 	done
     ;;
     *)
