@@ -5,11 +5,10 @@
 # $FreeBSD$
 #
 
-PORTNAME=	ucd-snmp
-PORTVERSION=	4.2.5
+PORTNAME=	net-snmp
+PORTVERSION=	5.0.1
 CATEGORIES=	net ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
-		ftp://ucd-snmp.ucdavis.edu/ \
 		ftp://sunsite.cnlab-switch.ch/mirror/ucd-snmp/ \
 		ftp://ftp.win.ne.jp/pub/network/snmp/ucd-snmp/
 MASTER_SITE_SUBDIR= net-snmp
@@ -20,6 +19,7 @@ USE_AUTOCONF_VER=213
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 LIBTOOLFLAGS=	--disable-ltlibs --release-ignore
+NO_LATEST_LINK=	yes
 
 CONFIGURE_ARGS+= --enable-shared --with-mib-modules="host ucd-snmp/diskio" \
 		 --with-gnu-ld --with-libwrap --with-libs="-ldevstat"
@@ -29,12 +29,20 @@ CONFIGURE_ARGS+= --with-defaults --with-sys-contact=nobody@no.where
 IS_INTERACTIVE= yes
 .endif
 
-MAN1=		snmpbulkget.1 snmpbulkwalk.1 snmpcmd.1 snmpconf.1 snmpd.1 \
+MAN1=		mib2c.1 \
+		snmpbulkget.1 snmpbulkwalk.1 snmpcmd.1 snmpconf.1 snmpd.1 \
 		snmpdelta.1 snmpdf.1 snmpget.1 snmpgetnext.1 snmpinform.1 \
 		snmpnetstat.1 snmpset.1 snmpstatus.1 snmptable.1 snmptest.1 \
 		snmptranslate.1 snmptrap.1 snmpusm.1 snmpwalk.1
 MAN3=		add_mibdir.3 add_module_replacement.3 default_store.3 \
 		get_module_node.3 init_mib.3 init_mib_internals.3 mib_api.3 \
+		netsnmp_agent.3 netsnmp_bulk_to_next.3 netsnmp_debug.3 \
+		netsnmp_example_scalar_int.3 netsnmp_handler.3 \
+		netsnmp_instance.3 netsnmp_mib_handler_methods.3 \
+		netsnmp_multiplexer.3 netsnmp_old_api.3 netsnmp_read_only.3 \
+		netsnmp_serialize.3 netsnmp_table.3 netsnmp_table_array.3 \
+		netsnmp_table_data.3 netsnmp_table_dataset.3 \
+		netsnmp_table_iterator.3 netsnmp_todo.3 \
 		print_description.3 print_mib.3 print_objid.3 print_value.3 \
 		print_variable.3 read_all_mibs.3 read_config.3 read_mib.3 \
 		read_module.3 read_module_node.3 read_objid.3 shutdown_mib.3 \
@@ -64,7 +72,7 @@ STARTUP_FILE=	${PREFIX}/etc/rc.d/snmpd.sh
 CONFIGURE_ARGS+= --enable-ipv6
 .endif
 
-SHLIB_VERSION=	4
+SHLIB_VERSION=	5
 PLIST_SUB+=	shlib=${SHLIB_VERSION}
 
 post-patch:
@@ -73,11 +81,8 @@ post-patch:
 post-install:
 	@( cd ${PREFIX}/bin && strip ${BIN} )
 	@( cd ${PREFIX}/sbin && strip ${SBIN} )
-	@( cd ${PREFIX}/include/ucd-snmp && ${CHMOD} 644 * )
+	@( cd ${PREFIX}/include/net-snmp && ${CHMOD} 644 * )
 	@( cd ${PREFIX}/share/snmp/mibs && ${CHMOD} 644 * )
-	@${MKDIR} ${PREFIX}/share/examples/ucd-snmp
-	@for F in ${WRKSRC}/EXAMPLE.conf  ${WRKSRC}/agent/mibgroup/examples/ucdDemoPublic.conf; do \
-		${INSTALL_DATA} $$F ${PREFIX}/share/examples/ucd-snmp ; done
 	@if [ ! -f ${STARTUP_FILE} ]; then \
 		${ECHO} "Creating ${PREFIX}/etc/rc.d/snmpd.sh startup file."; \
 		${INSTALL_SCRIPT} -m 751 ${FILESDIR}/snmpd.sh.sample ${STARTUP_FILE}; \
