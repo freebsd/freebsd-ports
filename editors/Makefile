@@ -12,6 +12,7 @@
     SUBDIR += asedit
     SUBDIR += axe
     SUBDIR += beav
+    SUBDIR += biew
     SUBDIR += bitmap-emacs20
     SUBDIR += bitmap-mule
     SUBDIR += bpatch
