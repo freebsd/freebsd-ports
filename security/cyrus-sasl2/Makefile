@@ -72,8 +72,8 @@ SASLDB_NAME=	sasldb2.db
 .endif
 
 .if defined(WITH_MYSQL_VER)
-.if ${WITH_MYSQL_VER} == 3
 WITH_MYSQL=	YES
+.if ${WITH_MYSQL_VER} == 3
 WANT_MYSQL_VER=	323
 .endif
 .endif
