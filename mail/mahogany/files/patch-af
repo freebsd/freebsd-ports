@@ -25,7 +25,7 @@
  \makeatletter
  
 --- doc/Makefile.sub.orig	Sat Sep 30 12:10:13 2000
-+++ doc/Makefile.sub	Sun Nov 12 17:12:52 2000
++++ doc/Makefile.sub	Thu Feb  1 12:44:15 2001
 @@ -3,12 +3,14 @@
  
  include ../../makeopts
@@ -50,7 +50,7 @@
 -	@$(RM) -r $(DIR)
 -	$(LATEX2HTML) -local_icons -debug $(DIR).htex
 -	cd $(DIR) && ../../../.src/extra/scripts/html2wxhelp > ../wxhelp.map
-+	$(LATEX2HTML) -dir /tmp/$(DIR) -local_icons -debug $(DIR).htex
++	$(LATEX2HTML) -mkdir -dir /tmp/$(DIR) -local_icons -debug $(DIR).htex
 +	cd /tmp/$(DIR) && $(HTML2WXHELP) > wxhelp.map
 +	@(cd /tmp; tar -cpf - ${DIR}) | tar -xf -
 +	@${RM} -r /tmp/$(DIR)

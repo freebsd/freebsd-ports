@@ -7,6 +7,7 @@
 
 PORTNAME=		mahogany
 PORTVERSION=		0.60
+PORTREVISION=		1
 CATEGORIES=		mail python
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	mahogany
@@ -22,6 +23,7 @@ BUILD_DEPENDS+=		latex2html:${PORTSDIR}/textproc/latex2html
 PYTHON_VERSION=		python1.5
 USE_AUTOCONF=		yes
 USE_GMAKE=		yes
+CONFIGURE_ENV+=		OSTYPE=${OPSYS}
 
 INSTALL_TARGET=		install_bin install_locale
 .if !defined(NOPORTDOCS)
