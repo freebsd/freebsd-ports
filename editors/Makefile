@@ -175,7 +175,6 @@
     SUBDIR += xcoral
     SUBDIR += xed
     SUBDIR += xemacs
-    SUBDIR += xemacs-additional-packages
     SUBDIR += xemacs-basic-mule-packages
     SUBDIR += xemacs-comm-packages
     SUBDIR += xemacs-devel
