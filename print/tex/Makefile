@@ -7,6 +7,7 @@
 
 PORTNAME=	tex
 PORTVERSION=	3.14159
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=   ${MASTER_SITE_TEX_CTAN}
 MASTER_SITE_SUBDIR=	systems/web2c
@@ -30,6 +31,7 @@ MAN1=		access.1 amstex.1 bibtex.1 dmp.1 dvicopy.1 dvitype.1 eplain.1 \
 		mktextfm.1 mpost.1 mpto.1 newer.1 omega.1 patgen.1 pdftex.1 \
 		pktogf.1 pktype.1 pltotf.1 pooltype.1 readlink.1 tangle.1 \
 		tex.1 tftopl.1 tie.1 vftovp.1 vptovf.1 weave.1
+INFO=		kpathsea web2c
 MAKE_FLAGS=	fmts= all_mems=
 
 pre-configure:
