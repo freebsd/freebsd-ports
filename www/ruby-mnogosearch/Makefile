@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mnogosearch
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.2
 CATEGORIES=	www databases ruby
 MASTER_SITES=	http://lrn.ru/~mouse/ruby/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
