@@ -38,6 +38,7 @@
     SUBDIR += bugsx
     SUBDIR += 44bsd-hunt
     SUBDIR += CaribbeanStud
+    SUBDIR += burgerspace
     SUBDIR += bzflag
     SUBDIR += cgoban
     SUBDIR += civ2demo
