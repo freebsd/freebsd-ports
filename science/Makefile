@@ -14,6 +14,7 @@
     SUBDIR += gdis
     SUBDIR += ghemical
     SUBDIR += glens
+    SUBDIR += kmovisto
     SUBDIR += libctl
     SUBDIR += libsvm
     SUBDIR += mayavi

@@ -1,0 +1,33 @@
+bin/kmovisto
+%%DOCSDIR%%/images/dialog_appearance.jpg
+%%DOCSDIR%%/images/dialog_atoms.jpg
+%%DOCSDIR%%/images/dialog_bonds.jpg
+%%DOCSDIR%%/images/dialog_directories.jpg
+%%DOCSDIR%%/images/dialog_povray_tab1.jpg
+%%DOCSDIR%%/images/dialog_povray_tab2.jpg
+%%DOCSDIR%%/images/dialog_povray_tab3.jpg
+%%DOCSDIR%%/images/dialog_povray_tab4.jpg
+%%DOCSDIR%%/images/dialog_title.jpg
+%%DOCSDIR%%/images/dialog_vrml_tab1.jpg
+%%DOCSDIR%%/images/dialog_vrml_tab2.jpg
+%%DOCSDIR%%/images/dialog_vrml_tab3.jpg
+%%DOCSDIR%%/images/kmovisto.jpg
+%%DOCSDIR%%/images/kmovisto_3D_anaglyph_rc.jpg
+%%DOCSDIR%%/images/kmovisto_3D_anaglyph_rg.jpg
+%%DOCSDIR%%/images/toolbar.jpg
+%%DOCSDIR%%/images/kmovisto_3D_stereo.jpg
+%%DOCSDIR%%/images/kmovisto_editmode.jpg
+%%DOCSDIR%%/images/kmovisto_flatmode.jpg
+%%DOCSDIR%%/images/povray_sample.jpg
+%%DOCSDIR%%/images/toolbar_anaglyph.jpg
+%%DOCSDIR%%/images/toolbar_editmode.jpg
+%%DOCSDIR%%/index.html
+%%DOCSDIR%%/index-1.html
+%%DOCSDIR%%/index-2.html
+%%DOCSDIR%%/index-3.html
+%%DOCSDIR%%/index-4.html
+%%DOCSDIR%%/index-5.html
+%%DOCSDIR%%/index-6.html
+%%DOCSDIR%%/index-7.html
+@dirrm %%DOCSDIR%%/images
+@dirrm %%DOCSDIR%%
