@@ -5999,7 +5999,6 @@ ruby-interbase	ports/databases/ruby-interbase
 ruby-intl	ports/devel/ruby-intl
 ruby-irc	ports/irc/ruby-irc
 ruby-kde	ports/x11/ruby-kde
-ruby-lapidary	ports/devel/ruby-lapidary
 ruby-ldap	ports/net/ruby-ldap
 ruby-libglade	ports/devel/ruby-libglade
 ruby-libgtop	ports/devel/ruby-libgtop
@@ -6080,6 +6079,7 @@ ruby-tcltklib	ports/lang/ruby-tcltklib
 ruby-tcpsocketpipe	ports/net/ruby-tcpsocketpipe
 ruby-tcpwrap	ports/security/ruby-tcpwrap
 ruby-termios	ports/comms/ruby-termios
+ruby-testunit	ports/devel/ruby-testunit
 ruby-textbuf	ports/devel/ruby-textbuf
 ruby-tgif	ports/graphics/ruby-tgif
 ruby-tk		ports/x11-toolkits/ruby-tk
