@@ -7,6 +7,7 @@
 
 PORTNAME=	inn
 PORTVERSION=	${SNAPSHOT}
+PORTREVISION=	1
 CATEGORIES=	news ipv6
 MASTER_SITES=	http://sheepkiller.nerim.net/ports/${PORTNAME}/ \
 		http://www.cultdeadsheep.org/FreeBSD/ports/download/distfiles/
