@@ -15,7 +15,6 @@ COMMENT=	3-dimensional viewer for star charts
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gtk12
 USE_XPM=	yes
 MAKE_ENV=	DATADIR="${DATADIR}" \

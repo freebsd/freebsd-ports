@@ -21,7 +21,6 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 BUILD_WRKSRC=	${WRKSRC}/src/gtk
 INSTALL_WRKSRC=	${WRKSRC}/src
 
-USE_GNOMENG=	yes
 USE_GNOME=	gtk12
 
 BINS=		buildmap buildus dumpmap
