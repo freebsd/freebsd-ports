@@ -5,27 +5,30 @@
 # $FreeBSD$
 #
 
-PORTNAME=		tux_aqfh
-PORTVERSION=		1.0.10
-CATEGORIES=		games
-MASTER_SITES=		http://tuxaqfh.sourceforge.net/dist/
+PORTNAME=	tux_aqfh
+PORTVERSION=	1.0.13
+CATEGORIES=	games
+MASTER_SITES=	http://tuxaqfh.sourceforge.net/dist/
 
-MAINTAINER=		ports@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
-BUILD_DEPENDS=		${X11BASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib
+BUILD_DEPENDS=	${X11BASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib
 
-GNU_CONFIGURE=		yes
-USE_GMAKE=		yes
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include \
-				  -I${X11BASE}/include \
-				  ${PTHREAD_CFLAGS}" \
-			LIBS="-L${LOCALBASE}/lib -L${X11BASE}/lib \
-			      ${PTHREAD_LIBS}"
-USE_NEWGCC=		yes
-CONFIGURE_ARGS+=	--with-plib=${X11BASE} --bindir=${PREFIX}/bin
-USE_X_PREFIX=		yes
-USE_MESA=		yes
-MAKE_ENV+=		PTHREAD_LIBS="${PTHREAD_LIBS}" \
-			PTHREAD_CFLAGS="${PTHREAD_CFLAGS}"
+USE_X_PREFIX=	yes
+USE_NEWGCC=	yes
+USE_MESA=	yes
+USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
+		LIBS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
+CONFIGURE_ARGS=	--with-plib=${X11BASE}
+
+post-patch:
+	@${PERL} -pi -e 's|-O6|${PTHREAD_CFLAGS}|g ; \
+		 s|-lpthread|${PTHREAD_LIBS}|g ; \
+		 s|datadir/games|datadir|g' ${WRKSRC}/configure
+	@find ${WRKSRC} -name "Makefile.in" | xargs ${PERL} -pi -e \
+		's|\$$\(prefix\)/games|\@bindir\@|g ; \
+		 s|\$$\(datadir\)/games|\$$\(datadir\)|g'
 
 .include <bsd.port.mk>
