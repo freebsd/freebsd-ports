@@ -5,11 +5,12 @@
 # $FreeBSD$
 #
 
-PORTNAME=	bjfilter${PRTYPE}
+PORTNAME=	bjfilter${PRTYPE}${SUFIX_PRTYPE}
 MASTERDIR=	${.CURDIR}/../bjfiltercom
 
 SLAVE_PORT=	yes
 PRTYPE?=	850
+SUFIX_PRTYPE?=	
 
 .include "${MASTERDIR}/Makefile"
 

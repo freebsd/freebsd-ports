@@ -9,10 +9,12 @@ share/doc/bjfiltercom-%%PORTVERSION%%/html/CONTENTS.HTM
 share/doc/bjfiltercom-%%PORTVERSION%%/html/DELETE.HTM
 share/doc/bjfiltercom-%%PORTVERSION%%/html/FAQ.HTM
 share/doc/bjfiltercom-%%PORTVERSION%%/html/IMAGE002.JPG
+share/doc/bjfiltercom-%%PORTVERSION%%/html/IMAGE003.JPG
 share/doc/bjfiltercom-%%PORTVERSION%%/html/IMAGE004.JPG
 share/doc/bjfiltercom-%%PORTVERSION%%/html/IMAGE006.JPG
 share/doc/bjfiltercom-%%PORTVERSION%%/html/IMAGE008.JPG
 share/doc/bjfiltercom-%%PORTVERSION%%/html/IMAGE010.JPG
+share/doc/bjfiltercom-%%PORTVERSION%%/html/IMAGE011.JPG
 share/doc/bjfiltercom-%%PORTVERSION%%/html/IMAGE012.JPG
 share/doc/bjfiltercom-%%PORTVERSION%%/html/IMAGE014.JPG
 share/doc/bjfiltercom-%%PORTVERSION%%/html/IMAGE016.JPG
@@ -26,6 +28,7 @@ share/doc/bjfiltercom-%%PORTVERSION%%/html/WELCOME.HTM
 @dirrm share/doc/bjfiltercom-%%PORTVERSION%%/html
 @dirrm share/doc/bjfiltercom-%%PORTVERSION%%
 @cwd /compat/linux
+usr/lib/bjlib/bjfilter.conf
 usr/lib/bjlib/cnbpname.tbl
 usr/lib/libcnbpcmcm.so.1.0.0
 usr/lib/libcnbphtmg.so.1.0.0
@@ -39,10 +42,8 @@ usr/local/share/printui/black_bar.xpm
 usr/local/share/printui/cyan_bar.xpm
 usr/local/share/printui/locale-table
 usr/local/share/printui/magenta_bar.xpm
-usr/local/share/printui/ui-jpn.glade
-usr/local/share/printui/ui-jpn.res
-usr/local/share/printui/ui-usa.glade
-usr/local/share/printui/ui-usa.res
+usr/local/share/printui/printui.glade
+usr/local/share/printui/printui.res
 usr/local/share/printui/yellow_bar.xpm
 @dirrm usr/lib/bjlib
 @dirrm usr/local/share/printui
