@@ -1,0 +1,13 @@
+lib/common-lisp/cl-ppcre/cmuclfasl/api.fasl
+lib/common-lisp/cl-ppcre/cmuclfasl/closures.fasl
+lib/common-lisp/cl-ppcre/cmuclfasl/convert.fasl
+lib/common-lisp/cl-ppcre/cmuclfasl/lexer.fasl
+lib/common-lisp/cl-ppcre/cmuclfasl/optimize.fasl
+lib/common-lisp/cl-ppcre/cmuclfasl/packages.fasl
+lib/common-lisp/cl-ppcre/cmuclfasl/parser.fasl
+lib/common-lisp/cl-ppcre/cmuclfasl/regex-class.fasl
+lib/common-lisp/cl-ppcre/cmuclfasl/repetition-closures.fasl
+lib/common-lisp/cl-ppcre/cmuclfasl/scanner.fasl
+lib/common-lisp/cl-ppcre/cmuclfasl/specials.fasl
+lib/common-lisp/cl-ppcre/cmuclfasl/util.fasl
+@dirrm lib/common-lisp/cl-ppcre/cmuclfasl
