@@ -1,0 +1,19 @@
+This directory contains two versions of the linuxdoc DTD.
+The first, original.dtd, is the original untouched DTD from the
+SGML-tools version 0.99.13 toolkit.  The second, freebsd.dtd, has
+been slightly modified to (a) remove bogus shortref maps, and (b)
+add a PART element.
+
+Using the supplied catalog file with James Clark's SP parser,
+documents beginning like this:
+
+  <!doctype linuxdoc system>
+
+will automatically use the original DTD, while this:
+
+  <!doctype linuxdoc public "-//FreeBSD//DTD linuxdoc//EN">
+
+will use the FreeBSD DTD.
+
+July 8, 1997
+jfieber@FreeBSD.org
