@@ -1,0 +1,11 @@
+--- smime.c.orig	Thu May  2 01:20:42 2002
++++ smime.c	Fri Jul 26 18:15:19 2002
+@@ -144,7 +144,7 @@
+     {
+       len++;
+       if (!ascii_strcasecmp ((t+len), "p7m"))
+-#if 0
++#if 1
+        return SMIMEENCRYPT;
+ #else
+       /* Not sure if this is the correct thing to do, but 
