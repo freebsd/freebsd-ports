@@ -7,6 +7,7 @@
 
 PORTNAME=	netatalk
 PORTVERSION=	1.5p6
+PORTREVISION=	1
 CATEGORIES=	net print
 MASTER_SITES=   ${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	netatalk
@@ -18,11 +19,11 @@ MAINTAINER=	marcus@marcuscom.com
 LIB_DEPENDS=	wrap.7:${PORTSDIR}/security/tcp_wrapper
 .endif
 
-CONFIGURE_ARGS+=	--with-tcp-wrappers
+CONFIGURE_ARGS+=	--with-tcp-wrappers \
+			--enable-lastdid
 # CONFIGURE_ARGS+=	--disable-admin-group
 # CONFIGURE_ARGS+=	--disable-ddp
 # CONFIGURE_ARGS+=	--with-shadow
-# CONFIGURE_ARGS+=	--enable-lastdid
 .if defined(NETATALK_WITH_PAM)
 CONFIGURE_ARGS+=	--with-pam # broken
 PLIST_SUB+=             NETATALKPAM=""
