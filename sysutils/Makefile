@@ -184,6 +184,7 @@
     SUBDIR += pkg_remove
     SUBDIR += pkg_tree
     SUBDIR += pkill
+    SUBDIR += plconfig
     SUBDIR += pmap
     SUBDIR += portupgrade
     SUBDIR += prips

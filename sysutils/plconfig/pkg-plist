@@ -1,0 +1,3 @@
+bin/plconfig
+%%PORTDOCS%%share/doc/plconfig/README
+%%PORTDOCS%%@dirrm share/doc/plconfig
