@@ -1,8 +1,12 @@
 %%RUBY_SITEARCHLIBDIR%%/gtk.so
 %%RUBY_SITELIBDIR%%/gtkcompat.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gtk/calendar.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gtk/cursor.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gtk/dnd.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gtk/drawing.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gtk/helloworld.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gtk/keyboard_grab.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gtk/pointer_grab.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gtk/browser/gtkbrows.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gtk/browser/rbbr.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gtk/browser/rbbr_gtk.rb
@@ -45,6 +49,7 @@
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gtk/testgtk/dnd.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gtk/testgtk/entry.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gtk/testgtk/filesel.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gtk/testgtk/fontselection.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gtk/testgtk/gammacurve.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gtk/testgtk/graypreview.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gtk/testgtk/handlebox.rb
@@ -91,6 +96,7 @@
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gtk/testim.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gtk/text.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gtk/texthook.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gtk/xbm_cursor.rb
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/gtk/browser
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/gtk/test
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/gtk/testgtk

@@ -28,8 +28,7 @@ USE_IMLIB=	yes
 
 WRKSRC=		${RUBY_GNOME_WRKSRC}/${PORTNAME}
 INSTALL_TARGET=	site-install
-CONFIGURE_ARGS=	--with-glib-config="${GLIB_CONFIG}" \
-		--with-imlib-config="${IMLIB_CONFIG}"
+CONFIGURE_ARGS=	--with-imlib-config="${IMLIB_CONFIG}"
 
 DOCS_EN=	ChangeLog
 

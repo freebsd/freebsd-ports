@@ -19,6 +19,7 @@
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gnome/test-gnome/dateedit.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gnome/test-gnome/dialog.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gnome/test-gnome/file-entry.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gnome/test-gnome/font-picker.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gnome/test-gnome/href.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gnome/test-gnome/icon-entry.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gnome/test-gnome/less.rb
