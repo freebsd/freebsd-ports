@@ -30,12 +30,12 @@
 *** 2214,2218 ****
   for i in $qt_libdirs;
   do
-!   for j in libqt.so libqt.so.1.30 libqt.so.1 libqt.a libqt.sl;
+!   for j in libqt.so libqt.so.1.30 libqt.so.1.31 libqt.so.1 libqt.a libqt.sl;
     do
       if test -r "$i/$j"; then
 --- 2214,2218 ----
   for i in $qt_libdirs;
   do
-!   for j in libqt.so libqt.so.1.30 libqt.so.1.31 libqt.so.1.32 libqt.so.1 libqt.a libqt.sl;
+!   for j in libqt.so libqt.so.1.30 libqt.so.1.31 libqt.so.1.32 libqt.so.1.33 libqt.so.1 libqt.a libqt.sl;
     do
       if test -r "$i/$j"; then
