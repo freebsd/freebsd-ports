@@ -26,7 +26,8 @@ USE_MOTIF=	yes
 USE_MESA=	yes
 INSTALLS_SHLIB=	yes
 USE_REINPLACE=	yes
-PREFIX=		${X11BASE} # not a good manner 
+ONLY_FOR_ARCHES=	i386
+PREFIX=		${X11BASE} # not a good manner
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 MAKE_ENV=	LD_LIBRARY_PATH=${WRKSRC}/lib:${WRKSRC}/libSoXt
