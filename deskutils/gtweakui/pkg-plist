@@ -19,5 +19,3 @@ share/gnome/control-center-2.0/capplets/gtweakui-session.desktop
 share/gnome/control-center-2.0/capplets/gtweakui-nautilus.desktop
 share/gnome/control-center-2.0/capplets/gtweakui-galeon.desktop
 @dirrm share/gnome/gTweakUI
-@dirrm share/gnome/control-center-2.0/capplets
-@dirrm share/gnome/control-center-2.0
