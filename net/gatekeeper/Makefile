@@ -9,7 +9,7 @@ PORTNAME=	gatekeeper
 PORTVERSION=	0.12p
 CATEGORIES=	net
 MASTER_SITES=	http://www.willamowius.de/download/
-DISTNAME=	gk012pre
+DISTNAME=	gk012pre4
 
 MAINTAINER=	roger@freebsd.org
 
