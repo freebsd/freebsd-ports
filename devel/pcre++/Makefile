@@ -13,19 +13,27 @@ MASTER_SITES=	ftp://ftp.daemon.de/scip/Apps/pcre++/
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	pcre:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
 
-USE_LIBTOOL=	yes
-GNU_CONFIGURE=	yes
+PCRE_CONFIG?=	${LOCALBASE}/bin/pcre-config
+
 USE_GMAKE=	yes
+USE_LIBTOOL=	yes
+CONFIGURE_ENV=	CPPFLAGS="`${PCRE_CONFIG} --cflags`" \
+		LDFLAGS="`${PCRE_CONFIG} --libs`"
 INSTALLS_SHLIB=	yes
 
 MAN3=	Pcre.3
 
-.if !defined(NOPORTDOCS)
+post-patch:
+	@${PERL} -pi -e 's|-I/usr/local/include||g ; \
+		 s|-L/usr/local/lib||g' ${WRKSRC}/configure
+	@${PERL} -pi -e 's|-O -g|\@CXXFLAGS\@|g' ${WRKSRC}/Makefile.in
+
 post-install:
+.if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	${CP} -R ${WRKSRC}/doc/html/ ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/html/*.* ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
