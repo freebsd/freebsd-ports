@@ -8,9 +8,6 @@
 # BEFORE: mail imap
 # KEYWORD: FreeBSD shutdown
 #
-# NOTE for FreeBSD 5.0+:
-# If you want this script to start with the base rc scripts
-# move saslauthd1.sh to /etc/rc.d/saslauthd1
 
 prefix=%%PREFIX%%
 
@@ -19,11 +16,10 @@ prefix=%%PREFIX%%
 #	/etc/rc.conf.local
 #	/etc/rc.conf.d/saslauthd1
 #
-# DO NOT CHANGE THESE DEFAULT VALUES HERE 
-#
-saslauthd1_enable="%%ENABLE_SASLAUTHD%%"		# Enable saslauthd
-#saslauthd1_program="${prefix}/sbin/saslauthd1"	# Location of saslauthd1
-saslauthd1_flags="-a pam"			# Flags to saslauthd program
+# DO NOT CHANGE THE DEFAULT VALUES HERE 
+
+saslauthd1_enable=${saslauthd1_enable:-"%%ENABLE_SASLAUTHD%%"}
+saslauthd1_flags=${saslauthd1_flags:-"-a pam}
 
 . %%RC_SUBR%%
 

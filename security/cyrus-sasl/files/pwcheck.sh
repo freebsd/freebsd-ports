@@ -8,9 +8,6 @@
 # BEFORE: mail imap
 # KEYWORD: FreeBSD shutdown
 #
-# NOTE for FreeBSD 5.0+:
-# If you want this script to start with the base rc scripts
-# move cyrus_pwcheck.sh to /etc/rc.d/cyrus_pwcheck
 
 prefix=%%PREFIX%%
 
@@ -19,11 +16,12 @@ prefix=%%PREFIX%%
 #	/etc/rc.conf.local
 #	/etc/rc.conf.d/cyrus_pwcheck
 #
-# DO NOT CHANGE THESE DEFAULT VALUES HERE
-#
-cyrus_pwcheck_enable="%%ENABLE_PWCHECK%%"			# Enable pwcheck daemon
-cyrus_pwcheck_program="${prefix}/sbin/%%PWCHECK%%"	# pwcheck program to use
-							# (pwcheck/pwcheck_pam)
+# DO NOT CHANGE THE DEFAULT VALUES HERE
+
+cyrus_pwcheck_enable=${cyrus_pwcheck_enable:-"%%ENABLE_PWCHECK%%"}
+
+# pwcheck program to use (pwcheck/pwcheck_pam)
+cyrus_pwcheck_program=${cyrus_pwcheck_program:-"${prefix}/sbin/%%PWCHECK%%"}
 
 . %%RC_SUBR%%
 

@@ -72,3 +72,119 @@ How to enable SMTP AUTH with FreeBSD default Sendmail
    The DONT_BLAME_SENDMAIL option GroupReadableSASL[DB]File is needed when you
    are using cyrus-imapd and sendmail on the same server that requires access
    to the sasldb database.
+
+----
+
+To test Authentication with the sendmail server:
+
+   You'll need to install the following PERL ports:
+	converters/p5-MIME-Base64
+	security/p5-Digest-MD5
+	security/p5-Digest-HMAC
+
+   Then use one of the following procedures to test:
+
+   A. PLAIN Mech:
+      1. Create your Base64 encoded username/password.
+
+         #perl -MMIME::Base64 -e 'print encode_base64("username\0username\0password");'
+         dXNlcm5hbWUAdXNlcm5hbWUAcGFzc3dvcmQ=
+
+      2. telnet to port 25 of your sendmail server
+
+      3. send "EHLO <client.host.name>"
+         a. check for "250-AUTH *" in the response
+         b. check that the PLAIN mech is listed.
+
+      4. Send "AUTH PLAIN <Base64 username/password>"
+
+         AUTH PLAIN dXNlcm5hbWUAdXNlcm5hbWUAcGFzc3dvcmQ=
+
+         you should now see the following response from the server:
+
+         235 Authentication successful
+
+      5. Type "QUIT" to close the telnet session to sendmail.
+
+   B. LOGIN Mech:
+      1. Create your Base64 encoded username and password.
+
+         #perl -MMIME::Base64 -e 'print encode_base64("username");'
+         dXNlcm5hbWU=
+         #perl -MMIME::Base64 -e 'print encode_base64("password");'
+         cGFzc3dvcmQ=
+
+      2. telnet to port 25 of your sendmail server
+
+      3. send "EHLO <client.host.name>"
+         a. check for "250-AUTH *" in the response
+         b. check that the LOGIN mech is listed.
+
+      4. Send "AUTH LOGIN", then the base64 encoded username and passwords.
+
+         C: AUTH LOGIN
+	 S: 334 VXNlcm5hbWU6  (base64 encoded "Username:")
+         C: dXNlcm5hbWU=
+         S: 334 UGFzc3dvcmQ6  (base64 encode "Password:")
+         C: cGFzc3dvcmQ=
+         S: 235 2.0.0 OK Authenticated
+
+      5. Type "QUIT" to close the telnet session to sendmail.
+
+   C. DIGEST-MD5 Mech:
+
+      1. telnet to port 25 of your sendmail server
+
+      2. send "EHLO <client.host.name>"
+         a. check for "250-AUTH *" in the response
+         b. check that the DIGEST-MD5 mech is listed.
+
+      3. Send "AUTH DIGEST-MD5"
+
+         C: AUTH DIGEST-MD5
+         S: 334 ?
+
+      4. Calculate the DIGEST-MD5 response (use another telnet, ssh, or X Window)
+
+         ?
+
+      5. Send the DIGEST-MD5 response to the server.
+
+         C: ?
+         S: 235 2.0.0 OK Authenticated
+
+      6. Type "QUIT" to close the telnet session to sendmail.
+
+   D. CRAM-MD5 Mech:
+
+      1. telnet to port 25 of your sendmail server
+
+      2. send "EHLO <client.host.name>"
+         a. check for "250-AUTH *" in the response
+         b. check that the CRAM-MD5 mech is listed.
+
+      3. Send "AUTH CRAM-MD5"
+
+         C: AUTH CRAM-MD5
+         S: 334 PDE4OTYuNjk3MTcwOTUyQHBvc3RvZmZpY2UucmVzdG9uLm1jaS5uZXQ+
+		(base64 encoded timestamp and hostname)
+
+      4. Calculate the CRAM-MD5 response (use another telnet, ssh, or X Window)
+
+         perl '-MDigest::HMAC_MD5 qw(hmac_md5 hmac_md5_hex)' -MMIME::Base64 \
+           -e 'print encode_base64("username " . hmac_md5_hex(decode_base64("<ticket>"),"password"));'
+
+         The "<ticket>" is the response received from the server in step 3.
+
+         (i.e. PDE4OTYuNjk3MTcwOTUyQHBvc3RvZmZpY2UucmVzdG9uLm1jaS5uZXQ+)
+
+         Using the above ticket our CRAM-MD5 response is:
+
+           dXNlcm5hbWUgMDZkMGEzMjVmMDU0NjQ4NjQ2ZTA3MmNkNGZlYjE3YzQ=
+
+      5. Send the CRAM-MD5 response to the server.
+
+         C: dXNlcm5hbWUgMDZkMGEzMjVmMDU0NjQ4NjQ2ZTA3MmNkNGZlYjE3YzQ=
+         S: 235 2.0.0 OK Authenticated
+
+      6. Type "QUIT" to close the telnet session to sendmail.
