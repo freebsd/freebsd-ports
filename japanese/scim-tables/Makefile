@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	scim-tables
-PORTVERSION=	0.4.3
-PORTREVISION=	1
+PORTVERSION=	0.5.1
 CATEGORIES=	japanese
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=scim
@@ -15,7 +14,7 @@ MASTER_SITE_SUBDIR=scim
 MAINTAINER=	ports@freebsd.org
 COMMENT=	SCIM table based Japanese input methods
 
-BUILD_DEPENDS=	scim:${PORTSDIR}/textproc/scim
+BUILD_DEPENDS=	scim-make-table:${PORTSDIR}/textproc/scim-table-imengine
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_X_PREFIX=	yes
@@ -25,7 +24,7 @@ GNU_CONFIGURE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500035
-BROKEN=		scim-make-table is not available for 4.x
+BROKEN=		No working scim-make-table command on 4.x. Install textproc/scim-table-imengine for details
 .endif
 
 post-install:

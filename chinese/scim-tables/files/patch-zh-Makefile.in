@@ -1,0 +1,11 @@
+--- zh/Makefile.in.orig	Tue Mar  1 14:59:32 2005
++++ zh/Makefile.in	Tue Mar  1 14:59:50 2005
+@@ -232,7 +232,7 @@
+ sharedstatedir = @sharedstatedir@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
+-SCIM_MAKE_TABLE = $(top_builddir)/src/scim-make-table
++SCIM_MAKE_TABLE = scim-make-table
+ scim_tables_source = \
+ 		Array30.txt.in		\
+ 		CangJie.txt.in		\
