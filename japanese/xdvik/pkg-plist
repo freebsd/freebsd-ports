@@ -3,11 +3,13 @@ bin/xdvi
 bin/xdvizilla
 libexec/xdviprint
 share/texmf/xdvi/vfontmap
+share/texmf/xdvi/vfontmap.freetype
+share/texmf/xdvi/vfontmap.vflib
 share/texmf/xdvi/xdvi.cfg
 share/texmf/xdvi/xdvipaper.dvi2ps-j
 share/texmf/xdvi/xdvipaper.dvips
 share/texmf/xdvi/xdvipaper.jdvi2kps
-%%PORTDOCS%%%%DOCSDIR%%/CHANGES.xdvik-jp
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES.xdvik-jp.html
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog.xdvik20a-j1.1
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog.xdvik20c-j1.0
 %%PORTDOCS%%%%DOCSDIR%%/FAQ
@@ -29,8 +31,8 @@ share/texmf/xdvi/xdvipaper.jdvi2kps
 %%PORTDOCS%%%%DOCSDIR%%/README.xdvik18f-j1.1p5.patch
 %%PORTDOCS%%%%DOCSDIR%%/README.xdvik20a-j1.1.patch
 %%PORTDOCS%%%%DOCSDIR%%/README.xdvik20c-j1.0+hal2+dvisel
-%%PORTDOCS%%%%DOCSDIR%%/README.xdvik20c-j1.0p1.patch 
-%%PORTDOCS%%%%DOCSDIR%%/README.xdvik-22.15-j1.04.patch  
+%%PORTDOCS%%%%DOCSDIR%%/README.xdvik20c-j1.0p1.patch
+%%PORTDOCS%%%%DOCSDIR%%/README.xdvik-22.15-j1.04.patch
 %%PORTDOCS%%%%DOCSDIR%%/xdvi.icon
 @dirrm share/texmf/xdvi
 @dirrm %%DOCSDIR%%
