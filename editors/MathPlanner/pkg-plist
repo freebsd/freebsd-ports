@@ -1,0 +1,67 @@
+bin/MathPlanner3
+%%DATADIR%%/COPYING
+%%DATADIR%%/ChangeLog
+%%DATADIR%%/Doc.htm
+%%DATADIR%%/Doc/deffn.png
+%%DATADIR%%/Doc/deffn2.png
+%%DATADIR%%/Doc/insert.png
+%%DATADIR%%/Doc/main.png
+%%DATADIR%%/Doc/mult.png
+%%DATADIR%%/Doc/par.png
+%%DATADIR%%/Doc/pii.png
+%%DATADIR%%/Doc/rational.png
+%%DATADIR%%/Doc/sigma.png
+%%DATADIR%%/MPLConfig.txt
+%%DATADIR%%/MathPlanner.desktop
+%%DATADIR%%/MathPlanner_mdk.spec
+%%DATADIR%%/examples/Integral.mpl2
+%%DATADIR%%/examples/OrderOfOperations.mpl2
+%%DATADIR%%/examples/Welcome.mpl2
+%%DATADIR%%/mpl2.desktop
+%%DATADIR%%/pixmaps/Drag.xpm
+%%DATADIR%%/pixmaps/Integ.xpm
+%%DATADIR%%/pixmaps/Loop.xpm
+%%DATADIR%%/pixmaps/Par.xpm
+%%DATADIR%%/pixmaps/ParB.xpm
+%%DATADIR%%/pixmaps/ParC.xpm
+%%DATADIR%%/pixmaps/ParD.xpm
+%%DATADIR%%/pixmaps/Pii.xpm
+%%DATADIR%%/pixmaps/Sigma.xpm
+%%DATADIR%%/pixmaps/configure.png
+%%DATADIR%%/pixmaps/cursor_rect.xpm
+%%DATADIR%%/pixmaps/edit_graph.png
+%%DATADIR%%/pixmaps/editclear.png
+%%DATADIR%%/pixmaps/editcopy.png
+%%DATADIR%%/pixmaps/editcut.png
+%%DATADIR%%/pixmaps/editdelete.png
+%%DATADIR%%/pixmaps/editpaste.png
+%%DATADIR%%/pixmaps/editselectall.png
+%%DATADIR%%/pixmaps/filenew.png
+%%DATADIR%%/pixmaps/fileopen.png
+%%DATADIR%%/pixmaps/fileprint.png
+%%DATADIR%%/pixmaps/filesave.png
+%%DATADIR%%/pixmaps/frame_graph.png
+%%DATADIR%%/pixmaps/frame_image.png
+%%DATADIR%%/pixmaps/frame_text.png
+%%DATADIR%%/pixmaps/gimp.png
+%%DATADIR%%/pixmaps/mathplannerapp.png
+%%DATADIR%%/pixmaps/reload.png
+%%DATADIR%%/pixmaps/text_block.png
+%%DATADIR%%/pixmaps/text_bold.png
+%%DATADIR%%/pixmaps/text_center.png
+%%DATADIR%%/pixmaps/text_italic.png
+%%DATADIR%%/pixmaps/text_left.png
+%%DATADIR%%/pixmaps/text_right.png
+%%DATADIR%%/pixmaps/text_under.png
+%%DATADIR%%/pixmaps/viewmag+.png
+%%DATADIR%%/pixmaps/viewmag-.png
+%%DATADIR%%/ts/mpl_en.ts
+%%DATADIR%%/ts/mpl_fi.qm
+@dirrm %%DATADIR%%/Doc
+@dirrm %%DATADIR%%/examples
+@dirrm %%DATADIR%%/icons/32x32
+@dirrm %%DATADIR%%/icons/64x64
+@dirrm %%DATADIR%%/icons
+@dirrm %%DATADIR%%/pixmaps
+@dirrm %%DATADIR%%/ts
+@dirrm %%DATADIR%%
