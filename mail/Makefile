@@ -75,7 +75,6 @@
     SUBDIR += fetchmail
     SUBDIR += filtermail
     SUBDIR += ftrack
-    SUBDIR += gbiff
     SUBDIR += gbuffy
     SUBDIR += gensig
     SUBDIR += getmail
