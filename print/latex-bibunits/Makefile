@@ -28,12 +28,14 @@ PLIST=		${WRKDIR}/pkg-plist
 TEXMFLOCAL=	share/texmf-local
 TEXMFLOCAL_LSR=	${LOCALBASE}/${TEXMFLOCAL}/ls-R
 MKTEXLSR=	${LOCALBASE}/bin/mktexlsr
-TEX_BIN=	${LOCALBASE}/bin/tex
+TEX_BIN=	${LOCALBASE}/bin/etex
 
 CLASSDIR=	${TEXMFLOCAL}/tex/latex/${PORTNAME:S/^latex-//}
 CLASS_FILES=	bibunits.sty bibunits.ins bibunits.dtx
 
 DOC_FILES=	README bibunits.pdf
+
+IGNORE=		is already included in the teTeX distribution
 
 do-extract:
 	${MKDIR} ${WRKSRC}

@@ -6,6 +6,7 @@
 
 PORTNAME=	latex-booktabs
 PORTVERSION=	1.618.20030328
+PORTREVISION=	0
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_TEX_CTAN}
 MASTER_SITE_SUBDIR=	macros/latex/contrib/booktabs
@@ -33,6 +34,8 @@ CLASSDIR=	${TEXMFLOCAL}/tex/latex/${PORTNAME:S/^latex-//}
 CLASS_FILES=	booktabs.dtx booktabs.ins booktabs.sty
 
 DOC_FILES=	booktabs.pdf
+
+IGNORE=		is already included in the teTeX distribution
 
 pre-install:
 	(for F in ${CLASS_FILES}; do \

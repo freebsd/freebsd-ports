@@ -28,7 +28,7 @@ PLIST_SUB=	TEXMFLOCAL=${TEXMFLOCAL} MKTEXLSR=${MKTEXLSR} \
 TEXMFLOCAL=	share/texmf-local
 TEXMFLOCAL_LSR=	${LOCALBASE}/${TEXMFLOCAL}/ls-R
 MKTEXLSR=	${LOCALBASE}/bin/mktexlsr
-TEX_BIN=	${LOCALBASE}/bin/tex
+TEX_BIN=	${LOCALBASE}/bin/etex
 YES_CMD=	/usr/bin/yes
 CLASSDIR=	${TEXMFLOCAL}/tex/latex/${PORTNAME:S/^latex-//}
 WRKSRC=		${WRKDIR}/${PORTNAME:S/^latex-//}
@@ -36,6 +36,8 @@ WRKSRC=		${WRKDIR}/${PORTNAME:S/^latex-//}
 CLASS_FILES=	layouts.dtx layouts.ins layouts.sty
 
 DOC_FILES=	README layman.pdf layman.tex
+
+IGNORE=		is already included in the teTeX distribution
 
 do-extract:
 	${MKDIR} ${WRKSRC}

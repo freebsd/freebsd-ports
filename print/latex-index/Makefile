@@ -28,7 +28,7 @@ USE_GMAKE=	YES
 TEXMFLOCAL=	share/texmf-local
 TEXMFLOCAL_LSR=	${LOCALBASE}/${TEXMFLOCAL}/ls-R
 MKTEXLSR=	${LOCALBASE}/bin/mktexlsr
-TEX_BIN=	${LOCALBASE}/bin/tex
+TEX_BIN=	${LOCALBASE}/bin/etex
 YES_CMD=	/usr/bin/yes
 CLASSDIR=	${TEXMFLOCAL}/tex/latex/${PORTNAME:S/^latex-//}
 WRKSRC=		${WRKDIR}/${PORTNAME:S/^latex-//}
@@ -40,6 +40,8 @@ CLASS_FILES=	agsmtst.tex autind.sty autind.tex bibref.ist \
 CLASS_ADD_FILES=	index.sty sample.tex
 
 DOC_FILES=	README TODO index.pdf
+
+IGNORE=		is already included in the teTeX distribution
 
 do-extract:
 	${MKDIR} ${WRKSRC}

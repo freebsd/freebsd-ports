@@ -29,13 +29,15 @@ USE_GMAKE=	YES
 TEXMFLOCAL=	share/texmf-local
 TEXMFLOCAL_LSR=	${LOCALBASE}/${TEXMFLOCAL}/ls-R
 MKTEXLSR=	${LOCALBASE}/bin/mktexlsr
-TEX_BIN=	${LOCALBASE}/bin/tex
+TEX_BIN=	${LOCALBASE}/bin/etex
 YES_CMD=	/usr/bin/yes
 CLASSDIR=	${TEXMFLOCAL}/tex/latex/${PORTNAME:S/^latex-//}
 WRKSRC=		${WRKDIR}/${PORTNAME:S/^latex-//}
 
 CLASS_FILES=	caption.dtx caption.sty caption.ins caption2.dtx caption2.sty
 DOC_FILES=	anleitung.pdf anleitung.tex caption.pdf caption2.pdf caption.xml
+
+IGNORE=		is already included in the teTeX distribution
 
 do-extract:
 	${MKDIR} ${WRKSRC}
