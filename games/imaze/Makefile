@@ -14,7 +14,12 @@ DISTFILES=	imaze1.3.tar.Z imaze.tar
 
 MAINTAINER=	kuehn@rz.tu-clausthal.de
 
-.if !defined(HAVE_MOTIF) && !defined(MOTIFLIB)
+.if defined(HAVE_MOTIF) && defined(FORCE_MOTIF)
+.if !defined(MOTIFLIB)
+MOTIFLIB=	-L${X11BASE}/lib -lXm
+.endif
+MAKE_ENV+=	FORCE_MOTIF=${FORCE_MOTIF}
+.else
 LIB_DEPENDS=	xview\\.3\\.2:${PORTSDIR}/x11/xview-lib
 .endif
 
