@@ -15,7 +15,7 @@ MAINTAINER=	brett@peloton.runet.edu
 
 RUN_DEPENDS=	${LOCALBASE}/bin/latex:${PORTSDIR}/print/latex \
 		${LOCALBASE}/bin/dvips:${PORTSDIR}/print/dvips \
-		${LOCALBASE}/bin/gs:${PORTSDIR}/print/ghostscript5 \
+		${LOCALBASE}/bin/gs:${PORTSDIR}/print/ghostscript55 \
 		${LOCALBASE}/bin/anytopnm:${PORTSDIR}/graphics/netpbm
 
 WRKSRC=	${WRKDIR}/latex2html

@@ -13,7 +13,7 @@ DISTFILES=	ppa-${PORTVERSION}.tar.gz
 
 MAINTAINER=	smace@freebsd.org
 
-RUN_DEPENDS=	gs:${PORTSDIR}/print/ghostscript5 \
+RUN_DEPENDS=	gs:${PORTSDIR}/print/ghostscript55 \
 		enscript:${PORTSDIR}/print/enscript-letter
 
 USE_GMAKE=	yes

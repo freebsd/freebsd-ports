@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	apps/doctools
 MAINTAINER=	Ruslan@Shevchenko.Kiev.UA
 
 RUN_DEPENDS=	tex:${PORTSDIR}/print/teTeX \
-		gs:${PORTSDIR}/print/ghostscript5 \
+		gs:${PORTSDIR}/print/ghostscript55 \
 		anytopnm:${PORTSDIR}/graphics/netpbm
 
 GNU_CONFIGURE=	yes
