@@ -8,9 +8,8 @@
 PORTNAME=	tf
 PORTVERSION=	4.0s1
 CATEGORIES=	net games
-MASTER_SITES=	ftp://tf.tcp.com/pub/tinyfugue/ \
-		ftp://laurel.actlab.utexas.edu/pub/tinyfugue/ \
-		ftp://ftp.ci.uminho.pt/pub/mirrors/tinyfugue/
+MASTER_SITES=	http://ftp.tcp.com/pub/mud/Clients/tinyfugue/ \
+		ftp://ftp.minet.uni-jena.de/pub/tf/
 DISTNAME=	tf-40s1
 
 MAINTAINER=	fjoe@FreeBSD.org
