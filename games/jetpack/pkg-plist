@@ -1,8 +1,7 @@
 @cd /usr/X11R6
+@owner games
 @mode 644
 man/man6/jetpack.6.gz
-@owner games
-@mode
-lib/X11/jetpack
+lib/X11/jetpack/jetpack.lev000
 @mode 4755
 bin/jetpack
