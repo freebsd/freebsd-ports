@@ -107,7 +107,7 @@ PLIST_SUB+=	SVGA:="@comment "
 .endif
 
 .if !defined(WITHOUT_VORBIS) && defined(WITH_VORBIS)
-LIB_DEPENDS+=	vorbis.2:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS+=	vorbis.3:${PORTSDIR}/audio/libvorbis
 CONFIGURE_ARGS+=--with-ogg=${LOCALBASE} --with-vorbis=${LOCALBASE}
 PLIST_SUB+=	VORBIS:=""
 .else

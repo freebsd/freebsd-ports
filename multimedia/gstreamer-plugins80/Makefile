@@ -606,7 +606,7 @@ CONFIGURE_ARGS+=	--disable-vorbis \
 			--disable-vorbistest
 PLIST_SUB+=	VORBIS="@comment "
 .else
-LIB_DEPENDS+=	vorbis.2:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS+=	vorbis.3:${PORTSDIR}/audio/libvorbis
 
 CONFIGURE_ARGS+=	--with-vorbis=${LOCALBASE} \
 			--with-vorbis-libraries=${LOCALBASE}/lib \

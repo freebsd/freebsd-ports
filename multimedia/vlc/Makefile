@@ -7,7 +7,7 @@
 
 PORTNAME=	vlc
 PORTVERSION=	0.6.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.videolan.org/pub/videolan/vlc/${PORTVERSION}/
 
@@ -21,8 +21,7 @@ LIB_DEPENDS=	dvdcss.2:${PORTSDIR}/multimedia/libdvdcss \
 		a52.0:${PORTSDIR}/audio/liba52 \
 		intl.5:${PORTSDIR}/devel/gettext \
 		iconv.3:${PORTSDIR}/converters/libiconv \
-		vorbis.2:${PORTSDIR}/audio/libvorbis \
-		ogg.4:${PORTSDIR}/audio/libogg \
+		vorbis.3:${PORTSDIR}/audio/libvorbis \
 		FLAC.5:${PORTSDIR}/audio/flac \
 		faad.0:${PORTSDIR}/audio/faad \
 		wx_gtk2-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk2 \

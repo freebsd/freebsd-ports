@@ -7,7 +7,7 @@
 
 PORTNAME=	mod_musicindex
 PORTVERSION=	0.9.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www audio
 MASTER_SITES=	http://www.esiee.fr/~puffin/musicindex/
 DISTNAME=	libapache-mod-musicindex_${PORTVERSION}
@@ -17,8 +17,7 @@ COMMENT=	Apache module in C implements Perl module Apache::MP3
 
 BUILD_DEPENDS=	${APXS}:${APACHE_PORT}
 RUN_DEPENDS=	${APXS}:${APACHE_PORT}
-LIB_DEPENDS=	ogg.4:${PORTSDIR}/audio/libogg \
-		vorbis.2:${PORTSDIR}/audio/libvorbis \
+LIB_DEPENDS=	vorbis.3:${PORTSDIR}/audio/libvorbis \
 		id3tag.2:${PORTSDIR}/audio/libid3tag \
 		mad.2:${PORTSDIR}/audio/libmad
 

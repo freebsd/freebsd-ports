@@ -429,7 +429,7 @@ PKGNAMESUFFIX=	-esound
 .endif
 
 .if defined(WITH_VORBIS)
-LIB_DEPENDS+=	vorbis.2:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS+=	vorbis.3:${PORTSDIR}/audio/libvorbis
 .endif
 
 .if defined(WITH_REALPLAYER)

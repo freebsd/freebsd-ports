@@ -7,6 +7,7 @@
 
 PORTNAME=	clanlib
 PORTVERSION=	0.7.5.2
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://clanlib.org/~sphair/download/
 DISTNAME=	ClanLib-${PORTVERSION:R}-${PORTVERSION:E}
@@ -61,7 +62,7 @@ USE_MESA=	yes
 PLIST_SUB+=	OPENGL=""
 .endif
 
-.if defined(WITHOUT_LIBMIKMOD)
+.if defined(WITHOUT_MIKMOD)
 CONFIGURE_ARGS+=	--disable-clanMikMod
 PLIST_SUB+=	LIBMIKMOD="@comment "
 .else
@@ -69,11 +70,11 @@ LIB_DEPENDS+=	mikmod.2:${PORTSDIR}/audio/libmikmod
 PLIST_SUB+=	LIBMIKMOD=""
 .endif
 
-.if defined(WITHOUT_LIBVORBIS)
+.if defined(WITHOUT_VORBIS)
 CONFIGURE_ARGS+=	--disable-clanVorbis
 PLIST_SUB+=	LIBVORBIS="@comment "
 .else
-LIB_DEPENDS+=	vorbis.2:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS+=	vorbis.3:${PORTSDIR}/audio/libvorbis
 PLIST_SUB+=	LIBVORBIS=""
 .endif
 
@@ -82,8 +83,8 @@ pre-everything::
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "	WITHOUT_SDL=yes		Turns off SDL support"
 	@${ECHO_MSG} "	WITHOUT_OPENGL=yes	Turns off OpenGL support"
-	@${ECHO_MSG} "	WITHOUT_LIBMIKMOD=yes	Turns off libmikmod support"
-	@${ECHO_MSG} "	WITHOUT_LIBVORBIS=yes	Turns off libvorbis support"
+	@${ECHO_MSG} "	WITHOUT_MIKMOD=yes	Turns off libmikmod support"
+	@${ECHO_MSG} "	WITHOUT_VORBIS=yes	Turns off libvorbis support"
 	@${ECHO_MSG} ""
 
 post-patch:

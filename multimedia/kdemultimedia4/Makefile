@@ -8,7 +8,7 @@
 
 PORTNAME=	kdemultimedia
 PORTVERSION=	${KDE_VERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION}/src
@@ -21,8 +21,7 @@ RUN_DEPENDS+=	xanim:${PORTSDIR}/multimedia/xanim
 LIB_DEPENDS+=	audiofile:${PORTSDIR}/audio/libaudiofile \
 		cdda_paranoia:${PORTSDIR}/audio/cdparanoia \
 		mp3lame:${PORTSDIR}/audio/lame \
-		ogg.4:${PORTSDIR}/audio/libogg \
-		vorbis.2:${PORTSDIR}/audio/libvorbis
+		vorbis.3:${PORTSDIR}/audio/libvorbis
 
 USE_KDELIBS_VER=3
 PREFIX=		${KDE_PREFIX}

@@ -7,7 +7,7 @@
 
 PORTNAME=	freedroid
 PORTVERSION=	1.0.2
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	freedroid
@@ -20,7 +20,7 @@ LIB_DEPENDS=	SDL-1.1:${PORTSDIR}/devel/sdl12 \
 		png:${PORTSDIR}/graphics/png \
 		SDL_image:${PORTSDIR}/graphics/sdl_image \
 		SDL_mixer:${PORTSDIR}/audio/sdl_mixer \
-		vorbis:${PORTSDIR}/audio/libvorbis
+		vorbis.3:${PORTSDIR}/audio/libvorbis
 
 USE_XLIB=	yes
 USE_SDL=	yes

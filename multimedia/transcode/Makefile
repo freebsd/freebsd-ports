@@ -203,7 +203,7 @@ PLIST_SUB+=	WITH_LAME="@comment "
 .endif
 
 .if defined(WITH_OGG)
-LIB_DEPENDS+=	ogg.4:${PORTSDIR}/audio/libogg
+LIB_DEPENDS+=	ogg.5:${PORTSDIR}/audio/libogg
 CONFIGURE_ARGS+=	--with-ogg=yes
 PLIST_SUB+=	WITH_OGG=""
 .else
