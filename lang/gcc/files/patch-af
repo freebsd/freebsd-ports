@@ -6,7 +6,7 @@
  
 +/* Don't use EGCS's normal profiling code -- we have our own fine-grained
 +   basic block profiling.  */
-+#define NO_PROFILE_DATA
++#define NO_PROFILE_COUNTERS
 +
  /* Tell final.c that we don't need a label passed to mcount.  */
  

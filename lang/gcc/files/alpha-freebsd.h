@@ -22,11 +22,7 @@ the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.  */
    This was taken from the NetBSD configuration, and modified
    for FreeBSD/alpha by Hidetoshi Shimokawa <simokawa@FreeBSD.ORG> */
 
-/* $FreeBSD: /tmp/pcvs/ports/lang/gcc/files/Attic/alpha-freebsd.h,v 1.5 1999-10-10 20:28:32 obrien Exp $ */
-
-
-/* Get generic FreeBSD definitions.  */
-#include <freebsd.h>
+/* $FreeBSD: /tmp/pcvs/ports/lang/gcc/files/Attic/alpha-freebsd.h,v 1.6 2000-09-05 16:59:10 obrien Exp $ */
 
 
 #undef OBJECT_FORMAT_COFF
@@ -58,7 +54,7 @@ the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.  */
 #undef CPP_PREDEFINES
 #define CPP_PREDEFINES \
   "-D__alpha__ -D__alpha -D__ELF__ -Acpu(alpha) -Amachine(alpha)"  \
-  CPP_FBSD_PREDEFINES
+  FBSD_CPP_PREDEFINES
 
 #undef CPP_SPEC
 #define CPP_SPEC "%{posix:-D_POSIX_SOURCE}"
@@ -83,7 +79,8 @@ the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.  */
 	fputs ("\tjsr $28,_mcount\n", (FILE))
 
 /* Show that we need a GP when profiling.  */
-#define TARGET_PROFILING_NEEDS_GP
+#undef TARGET_PROFILING_NEEDS_GP
+#define TARGET_PROFILING_NEEDS_GP 1
 
 #undef HAS_INIT_SECTION
 
@@ -108,9 +105,6 @@ the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.  */
 #undef ASM_OUTPUT_SOURCE_LINE
 #define ASM_OUTPUT_SOURCE_LINE(STREAM, LINE)				\
   alpha_output_lineno (STREAM, LINE)
-extern void alpha_output_lineno ();
-
-extern void output_file_directive ();
 
 /* Attach a special .ident directive to the end of the file to identify
    the version of GCC which compiled this code.  The format of the
@@ -298,8 +292,6 @@ do {									\
 
 #undef READONLY_DATA_SECTION
 #define READONLY_DATA_SECTION() const_section ()
-
-extern void text_section ();
 
 #undef CONST_SECTION_FUNCTION
 #define CONST_SECTION_FUNCTION						\
@@ -510,10 +502,6 @@ dtors_section ()							\
 #undef	ENDFILE_SPEC
 #define ENDFILE_SPEC \
   "%{!shared:crtend.o%s} %{shared:crtendS.o%s}"
-
-/* Implicit library calls should use memcpy, not bcopy, etc.  */
-
-#define TARGET_MEM_FUNCTIONS
 
 /* Handle #pragma weak and #pragma pack.  */
 
