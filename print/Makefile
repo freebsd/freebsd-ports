@@ -93,6 +93,7 @@
     SUBDIR += pfaedit
     SUBDIR += pic2fig
     SUBDIR += pips-sc20
+    SUBDIR += pips-sc40
     SUBDIR += pips-sc680_777
     SUBDIR += pips-sc880
     SUBDIR += pips-sc980
