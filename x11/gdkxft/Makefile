@@ -15,7 +15,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@freebsd.org
 COMMENT=	An anti-aliased font support for gtk+
 
-LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
+LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv \
+		Xft.2:${PORTSDIR}/x11-fonts/Xft
 
 USE_X_PREFIX=	yes
 USE_GNOMENG=	yes
@@ -24,7 +25,8 @@ WANT_GNOME=	yes
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib -lgnuregex -liconv"
+CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib -lgnuregex -liconv" \
+		CFLAGS="${CFLAGS} `pkg-config xft --cflags`"
 CONFIGURE_ARGS=	--sbindir=${PREFIX}/bin
 INSTALLS_SHLIB=	yes
 
