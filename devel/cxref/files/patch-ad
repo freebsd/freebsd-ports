@@ -1,6 +1,6 @@
---- Makefile.in.orig	Sun Mar 18 19:29:25 2001
-+++ Makefile.in	Fri May 18 05:53:30 2001
-@@ -28,6 +28,9 @@
+--- src/Makefile.in.orig	Wed Sep  8 01:46:17 2004
++++ src/Makefile.in	Fri Oct  1 20:59:36 2004
+@@ -27,6 +27,9 @@
  # The installation program.
  
  INSTALL=@INSTALL@
@@ -10,7 +10,7 @@
  
  # The C compiler and linker
  
-@@ -121,10 +124,10 @@
+@@ -70,10 +73,10 @@
  
  install : programs
  	[ -d $(bindir) ] || $(INSTALL) -d $(bindir)
@@ -20,7 +20,7 @@
 +	$(INSTALL_SCRIPT) $(srcdir)/cxref-cc $(bindir)
  	[ -d $(mandir)/man1 ] || $(INSTALL) -d $(mandir)/man1
 -	$(INSTALL) -m 644 $(srcdir)/README.man $(mandir)/man1/cxref.1
-+	$(INSTALL_DATA) $(srcdir)/README.man $(mandir)/man1/cxref.1
- 	cd cpp && $(MAKE) install
- 	cd query && $(MAKE) install
++	$(INSTALL_DATA) $(srcdir)/../doc/README.man $(mandir)/man1/cxref.1
  
+ install-win32 : programs
+ 	[ -d $(bindir) ] || $(INSTALL) -d $(bindir)
