@@ -1,12 +1,12 @@
 # New ports collection makefile for:	Fvwm2
-# Version required:	2.2
+# Version required:	2.2.2
 # Date created:		20 Jan 1996
 # Whom:			peter
 #
-# $Id: Makefile,v 1.15 1998/09/17 00:32:57 asami Exp $
+# $Id: Makefile,v 1.16 1999/05/04 22:26:56 steve Exp $
 #
 
-DISTNAME=	fvwm-2.2
+DISTNAME=	fvwm-2.2.2
 CATEGORIES=	x11-wm
 MASTER_SITES=	ftp://ftp.fvwm.org/pub/fvwm/version-2/
 
@@ -17,11 +17,13 @@ LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-MAN1=		FvwmAnimate.1 FvwmAudio.1 FvwmAuto.1 FvwmBacker.1 FvwmBanner.1 \
-		FvwmButtons.1 FvwmCpp.1 FvwmEvent.1 FvwmForm.1 FvwmIconBox.1 \
-		FvwmIconMan.1 FvwmIdent.1 FvwmM4.1 FvwmPager.1 FvwmRearrange.1 \
-		FvwmSave.1 FvwmSaveDesk.1 FvwmScroll.1 FvwmTalk.1 \
-		FvwmWinList.1 fvwm2.1 xpmroot.1
+
+MAN1=	FvwmAudio.1 FvwmBacker.1 FvwmBanner.1 FvwmButtons.1 \
+	FvwmCpp.1 FvwmEvent.1 FvwmForm.1 FvwmIconMan.1 \
+	FvwmIdent.1 FvwmM4.1 FvwmPager.1 FvwmRearrange.1 \
+	FvwmSave.1 FvwmSaveDesk.1 FvwmScroll.1 FvwmTalk.1 \
+	fvwm2.1 xpmroot.1 FvwmAnimate.1 FvwmAuto.1 \
+	FvwmIconBox.1 FvwmWinList.1
 
 post-install:
 	@${MKDIR} ${PREFIX}/lib/X11/fvwm2/pixmaps

@@ -15,11 +15,9 @@ lib/X11/fvwm2/pixmaps/button-horiz.xpm
 lib/X11/fvwm2/pixmaps/button-max.xpm
 lib/X11/fvwm2/pixmaps/button-vert.xpm
 lib/X11/fvwm2/pixmaps/button.xpm
-lib/X11/fvwm2/pixmaps/ccode.icon
 lib/X11/fvwm2/pixmaps/clamp.xpm
 lib/X11/fvwm2/pixmaps/colormap.xpm
 lib/X11/fvwm2/pixmaps/datebook.xpm
-lib/X11/fvwm2/pixmaps/default.xbm
 lib/X11/fvwm2/pixmaps/desk.xpm
 lib/X11/fvwm2/pixmaps/dialog_box.xpm
 lib/X11/fvwm2/pixmaps/doomface.xpm
@@ -29,14 +27,12 @@ lib/X11/fvwm2/pixmaps/exit.xpm
 lib/X11/fvwm2/pixmaps/flow_chart.xpm
 lib/X11/fvwm2/pixmaps/folder2.xpm
 lib/X11/fvwm2/pixmaps/folders.xpm
-lib/X11/fvwm2/pixmaps/fvwm.bitmap
 lib/X11/fvwm2/pixmaps/fvwm.xpm
 lib/X11/fvwm2/pixmaps/fvwm2.xpm
 lib/X11/fvwm2/pixmaps/fvwm2_big.xpm
 lib/X11/fvwm2/pixmaps/fvwm3.xpm
 lib/X11/fvwm2/pixmaps/gnu-animal.xpm
 lib/X11/fvwm2/pixmaps/graphs.xpm
-lib/X11/fvwm2/pixmaps/hcode.icon
 lib/X11/fvwm2/pixmaps/jball.xpm
 lib/X11/fvwm2/pixmaps/jbomb.xpm
 lib/X11/fvwm2/pixmaps/jbook1.xpm
@@ -105,10 +101,8 @@ lib/X11/fvwm2/pixmaps/mini.xpaint.xpm
 lib/X11/fvwm2/pixmaps/mini.xpm
 lib/X11/fvwm2/pixmaps/mini.xterm.xpm
 lib/X11/fvwm2/pixmaps/mini.zircon.xpm
-lib/X11/fvwm2/pixmaps/ocode.icon
 lib/X11/fvwm2/pixmaps/page.xpm
 lib/X11/fvwm2/pixmaps/page2.xpm
-lib/X11/fvwm2/pixmaps/prog.icon
 lib/X11/fvwm2/pixmaps/ps.xpm
 lib/X11/fvwm2/pixmaps/question.xpm
 lib/X11/fvwm2/pixmaps/rbomb.xpm
@@ -138,29 +132,35 @@ lib/X11/fvwm2/pixmaps/xterm-sun.xpm
 lib/X11/fvwm2/pixmaps/xterm.xpm
 lib/X11/fvwm2/pixmaps/xv.xpm
 lib/X11/fvwm2/pixmaps/xv2.xpm
-libexec/fvwm/2.2/FvwmAnimate
-libexec/fvwm/2.2/FvwmAudio
-libexec/fvwm/2.2/FvwmAuto
-libexec/fvwm/2.2/FvwmBacker
-libexec/fvwm/2.2/FvwmBanner
-libexec/fvwm/2.2/FvwmButtons
-libexec/fvwm/2.2/FvwmCascade
-libexec/fvwm/2.2/FvwmCpp
-libexec/fvwm/2.2/FvwmEvent
-libexec/fvwm/2.2/FvwmForm
-libexec/fvwm/2.2/FvwmIconBox
-libexec/fvwm/2.2/FvwmIconMan
-libexec/fvwm/2.2/FvwmIdent
-libexec/fvwm/2.2/FvwmM4
-libexec/fvwm/2.2/FvwmPager
-libexec/fvwm/2.2/FvwmRearrange
-libexec/fvwm/2.2/FvwmSave
-libexec/fvwm/2.2/FvwmSaveDesk
-libexec/fvwm/2.2/FvwmScroll
-libexec/fvwm/2.2/FvwmTalk
-libexec/fvwm/2.2/FvwmTile
-libexec/fvwm/2.2/FvwmWinList
+lib/X11/fvwm2/pixmaps/default.xbm
+lib/X11/fvwm2/pixmaps/fvwm.bitmap
+lib/X11/fvwm2/pixmaps/ccode.icon
+lib/X11/fvwm2/pixmaps/hcode.icon
+lib/X11/fvwm2/pixmaps/ocode.icon
+lib/X11/fvwm2/pixmaps/prog.icon
+libexec/fvwm/2.2.2/FvwmAnimate
+libexec/fvwm/2.2.2/FvwmAudio
+libexec/fvwm/2.2.2/FvwmAuto
+libexec/fvwm/2.2.2/FvwmBacker
+libexec/fvwm/2.2.2/FvwmBanner
+libexec/fvwm/2.2.2/FvwmButtons
+libexec/fvwm/2.2.2/FvwmCpp
+libexec/fvwm/2.2.2/FvwmEvent
+libexec/fvwm/2.2.2/FvwmForm
+libexec/fvwm/2.2.2/FvwmIconBox
+libexec/fvwm/2.2.2/FvwmIconMan
+libexec/fvwm/2.2.2/FvwmIdent
+libexec/fvwm/2.2.2/FvwmM4
+libexec/fvwm/2.2.2/FvwmPager
+libexec/fvwm/2.2.2/FvwmRearrange
+libexec/fvwm/2.2.2/FvwmCascade
+libexec/fvwm/2.2.2/FvwmTile
+libexec/fvwm/2.2.2/FvwmSave
+libexec/fvwm/2.2.2/FvwmSaveDesk
+libexec/fvwm/2.2.2/FvwmScroll
+libexec/fvwm/2.2.2/FvwmTalk
+libexec/fvwm/2.2.2/FvwmWinList
 @dirrm lib/X11/fvwm2/pixmaps
 @dirrm lib/X11/fvwm2
-@dirrm libexec/fvwm/2.2
+@dirrm libexec/fvwm/2.2.2
 @dirrm libexec/fvwm
