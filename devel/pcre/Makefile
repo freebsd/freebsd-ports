@@ -21,6 +21,10 @@ MAINTAINER=	dom@happygiraffe.net
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 
+.if defined(ENABLE_UTF8)
+CONFIGURE_ARGS+= --enable-utf8
+.endif
+
 MAN1=		pcregrep.1 pcretest.1
 MAN3=		pcre.3 pcreposix.3
 
