@@ -1,0 +1,18 @@
+--- ./Library/Implementation/HTString.h.orig	Sun Mar 31 18:52:36 2002
++++ ./Library/Implementation/HTString.h	Sun Mar 31 18:52:50 2002
+@@ -61,14 +61,6 @@
+  */
+ extern char * HTStrMatch        (CONST char * tmpl, CONST char * name);
+ extern char * HTStrCaseMatch    (CONST char * tmpl, CONST char * name);
+-/*
+-
+-Case-insensitive strstr
+-
+-   This works like strstr() but is not case-sensitive.
+-   
+- */
+-extern char * strcasestr (char * s1, char * s2);
+ /*
+ 
+ Strip white space off a string
+ 

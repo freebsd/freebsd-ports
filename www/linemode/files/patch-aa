@@ -1,0 +1,35 @@
+--- ./Library/Implementation/HTString.c.orig	Sun Mar 31 18:52:30 2002
++++ ./Library/Implementation/HTString.c	Sun Mar 31 18:53:07 2002
+@@ -62,32 +62,6 @@
+ }
+ 
+ 
+-/*
+-** strcasestr(s1,s2) -- like strstr(s1,s2) but case-insensitive.
+-*/
+-PUBLIC char * strcasestr (char * s1, char * s2)
+-{
+-    char * ptr = s1;
+-
+-    if (!s1 || !s2 || !*s2) return s1;
+-
+-    while (*ptr) {
+-	if (TOUPPER(*ptr) == TOUPPER(*s2)) {
+-	    char * cur1 = ptr + 1;
+-	    char * cur2 = s2 + 1;
+-	    while (*cur1 && *cur2 && TOUPPER(*cur1) == TOUPPER(*cur2)) {
+-		cur1++;
+-		cur2++;
+-	    }
+-	    if (!*cur2)	return ptr;
+-	}
+-	ptr++;
+-    }
+-    return NULL;
+-}
+-
+-
+-
+ /*	Allocate a new copy of a string, and returns it
+ */
+ PUBLIC char * HTSACopy (char ** dest, CONST char * src)
