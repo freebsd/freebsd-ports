@@ -299,6 +299,7 @@
     SUBDIR += sword-modules
     SUBDIR += tcb
     SUBDIR += team
+    SUBDIR += terraform
     SUBDIR += tet
     SUBDIR += tkcron
     SUBDIR += tkinfo

@@ -1,0 +1,83 @@
+bin/terraform
+%%DOCSDIR%%/FAQ.sgml
+%%DOCSDIR%%/README.sgml
+%%DOCSDIR%%/UsersGuide.sgml
+%%DOCSDIR%%/i18n.txt
+share/gnome/help/terraform/C/faq.html
+share/gnome/help/terraform/C/hacking.html
+share/gnome/help/terraform/C/index.html
+share/gnome/help/terraform/C/mainwindow.png
+share/gnome/help/terraform/C/povray.png
+share/gnome/help/terraform/C/templates.html
+share/gnome/help/terraform/C/terrainwindow.png
+share/gnome/help/terraform/C/topic.dat
+share/gnome/help/terraform/C/tutorial.html
+share/gnome/help/terraform/C/wire.png
+share/gnome/help/terraform/fr/faq.html
+share/gnome/help/terraform/fr/hacking.html
+share/gnome/help/terraform/fr/index.html
+share/gnome/help/terraform/fr/templates.html
+share/gnome/help/terraform/fr/topic.dat
+share/gnome/help/terraform/fr/tutorial.html
+share/locale/fr/LC_MESSAGES/terraform.mo
+share/locale/nl/LC_MESSAGES/terraform.mo
+%%DATADIR%%/image_maps/moon_moon.png
+%%DATADIR%%/image_maps/sky_test_320x180.tga
+%%DATADIR%%/include/atmospheres/earth_fog.inc
+%%DATADIR%%/include/atmospheres/earth_haze_fast.inc
+%%DATADIR%%/include/atmospheres/earth_haze_slow.inc
+%%DATADIR%%/include/atmospheres/fog_ground.inc
+%%DATADIR%%/include/atmospheres/rainbow.inc
+%%DATADIR%%/include/defaults.inc
+%%DATADIR%%/include/earth_textures/earth_canyon_landscape.inc
+%%DATADIR%%/include/earth_textures/earth_desert_landscape.inc
+%%DATADIR%%/include/earth_textures/earth_green_landscape.inc
+%%DATADIR%%/include/earth_textures/earth_mountain_landscape.inc
+%%DATADIR%%/include/generic_land.inc
+%%DATADIR%%/include/generic_river.inc
+%%DATADIR%%/include/river_texture.inc
+%%DATADIR%%/include/skies/earth_regular_sky.inc
+%%DATADIR%%/include/skies/earth_static_sky.inc
+%%DATADIR%%/include/skies/include/clouds_01.inc
+%%DATADIR%%/include/skies/include/clouds_02.inc
+%%DATADIR%%/include/skies/include/clouds_03.inc
+%%DATADIR%%/include/skies/include/clouds_04.inc
+%%DATADIR%%/include/skies/include/clouds_05.inc
+%%DATADIR%%/include/skies/include/clouds_06.inc
+%%DATADIR%%/include/skies/include/clouds_07.inc
+%%DATADIR%%/include/skies/include/lights_standard.inc
+%%DATADIR%%/include/skies/include/lights_toymodel.inc
+%%DATADIR%%/include/skies/include/skycolor_earth.inc
+%%DATADIR%%/include/skies/include/stars_01.inc
+%%DATADIR%%/include/skies/include/stars_02.inc
+%%DATADIR%%/include/skies/include/stars_03.inc
+%%DATADIR%%/include/skies/include/stars_04.inc
+%%DATADIR%%/include/skies/include/stars_05.inc
+%%DATADIR%%/include/skies/include/stars_06.inc
+%%DATADIR%%/include/skies/mapped_sky.inc
+%%DATADIR%%/include/water/earth_water.inc
+%%DATADIR%%/objects/fern.gif
+%%DATADIR%%/objects/fern.inc
+%%DATADIR%%/objects/monolith.inc
+%%DATADIR%%/objects/tree_1.inc
+%%DATADIR%%/objects/tree_2.inc
+%%DATADIR%%/objects/tree_3.inc
+%%DATADIR%%/objects/tree_4.gif
+%%DATADIR%%/objects/tree_4.inc
+%%DATADIR%%/objects/tree_5.gif
+%%DATADIR%%/objects/tree_5.inc
+%%DATADIR%%/objects/tree_6.gif
+%%DATADIR%%/objects/tree_6.inc
+@dirrm %%DOCSDIR%%
+@dirrm share/gnome/help/terraform/C
+@dirrm share/gnome/help/terraform/fr
+@dirrm share/gnome/help/terraform
+@dirrm %%DATADIR%%/image_maps
+@dirrm %%DATADIR%%/include/atmospheres
+@dirrm %%DATADIR%%/include/earth_textures
+@dirrm %%DATADIR%%/include/skies/include
+@dirrm %%DATADIR%%/include/skies
+@dirrm %%DATADIR%%/include/water
+@dirrm %%DATADIR%%/include
+@dirrm %%DATADIR%%/objects
+@dirrm %%DATADIR%%
