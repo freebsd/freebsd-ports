@@ -1,5 +1,10 @@
-This is BLAS 1, 2, and 3 from research.att.com. I cleaned up the makefile
-and created a second() function. This is used by linpack, eispack, and
-lapack.
-BLAS stands for Basic Linear Algebra (System?). It is a Fortran library, but
-can be called from C, C++, or whatever.
+The BLAS (Basic Linear Algebra Subprograms) are high quality "building
+block" routines for performing basic vector and matrix operations. Level 1
+BLAS do vector-vector operations, Level 2 BLAS do matrix-vector operations,
+and Level 3 BLAS do matrix-matrix operations. Because the BLAS are
+efficient, portable, and widely available, they're commonly used in the
+development of high quality linear algebra software, LINPACK and LAPACK for
+example.
+
+A Fortran77 reference implementation of the BLAS is located in the blas
+directory of Netlib.

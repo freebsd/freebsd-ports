@@ -30,6 +30,7 @@ SRCS =	caxpy.f  ccopy.f  cdotc.f  cdotu.f  cgbmv.f  cgemm.f  cgemv.f	\
 	zhpr.f   zhpr2.f  zrotg.f  zscal.f  zswap.f  zsymm.f  zsyr2k.f	\
 	zsyrk.f  ztbmv.f  ztbsv.f  ztpmv.f  ztpsv.f  ztrmm.f  ztrmv.f	\
 	ztrsm.f  ztrsv.f
+
 CLEANFILES+= *.c
 
 .include <bsd.lib.mk>
