@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gdome2
-PORTVERSION=	0.7.2
+PORTVERSION=	0.7.4
 CATEGORIES=	textproc
 MASTER_SITES=	http://gdome2.cs.unibo.it/tarball/
 
