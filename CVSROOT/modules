@@ -6969,6 +6969,7 @@ qconfirm	ports/mail/qconfirm
 qcread		ports/graphics/qcread
 qdecoder	ports/www/qdecoder
 qdraw		ports/graphics/qdraw
+qemacs		ports/editors/qemacs
 qextmdi		ports/devel/qextmdi
 qfsm		ports/cad/qfsm
 qglviewer	ports/graphics/qglviewer
