@@ -266,6 +266,7 @@
     SUBDIR += p5-File-Spec
     SUBDIR += p5-File-Sync
     SUBDIR += p5-File-Tail
+    SUBDIR += p5-File-Temp
     SUBDIR += p5-File-Tools
     SUBDIR += p5-Filter
     SUBDIR += p5-FreezeThaw
