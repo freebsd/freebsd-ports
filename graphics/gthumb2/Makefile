@@ -17,14 +17,10 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	verbophobe@hotmail.com
 COMMENT=	An image viewer and browser for the GNOME 2 environment
 
-LIB_DEPENDS=	gnomeui-2.200:${PORTSDIR}/x11-toolkits/libgnomeui \
-		gnomeprintui-2-2.0:${PORTSDIR}/x11-toolkits/libgnomeprintui
-
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_GNOMENG=	yes
-USE_GNOME=	gnomeprefix gnomehack
+USE_GNOME=	gnomeprefix gnomehack libgnomeui libgnomeprintui
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 USE_REINPLACE=	yes
@@ -33,8 +29,14 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 MAN1=		gthumb.1
 
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_EXIF) || exists(${LOCALBASE}/lib/libexif.so.8)
+LIB_DEPENDS+=	exif.8:${PORTSDIR}/graphics/libexif
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
 		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
