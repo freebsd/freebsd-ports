@@ -196,6 +196,7 @@
     SUBDIR += liteamp
     SUBDIR += lopster
     SUBDIR += lplayer
+    SUBDIR += mBox
     SUBDIR += mac
     SUBDIR += mad
     SUBDIR += madplay
