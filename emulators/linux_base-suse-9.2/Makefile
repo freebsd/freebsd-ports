@@ -93,7 +93,7 @@ RPMFLAGS=		--root ${WRKSRC} --dbpath ${DBPATH} --nodeps \
 			--replacepkgs --ignoreos --ignorearch
 RPMDIR=			${DISTDIR}/${DIST_SUBDIR}
 
-REMOVE_DIRS=		boot dev home root tmp var/tmp usr/local usr/tmp
+REMOVE_DIRS=		boot dev home initrd root tmp var/tmp usr/local usr/tmp
 REMOVE_FILES=		bin/df bin/su etc/exports etc/group etc/localtime \
 			etc/motd etc/passwd etc/printcap etc/services \
 			etc/protocols
