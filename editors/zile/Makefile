@@ -1,0 +1,29 @@
+# New ports collection Makefile for:	zile
+# Date created:		28 September 2000
+# Whom:			jasone
+#
+# $FreeBSD$
+#
+
+PORTNAME=	zile
+PORTVERSION=	1.1
+CATEGORIES=	editors
+MASTER_SITES=	http://web.tiscalinet.it/ssigala/sandro/files/
+
+MAINTAINER=	jasone@freebsd.org
+
+USE_AUTOCONF=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	CPPFLAGS=-I${LOCALBASE}/include LDFLAGS=-L${LOCALBASE}/lib
+
+MAN1=		zile.1
+MANCOMPRESSED=	no
+
+strip_bins := zile
+
+post-install:
+.for bin in ${strip_bins}
+	@strip ${PREFIX}/bin/${bin}
+.endfor
+
+.include <bsd.port.mk>
