@@ -33,6 +33,6 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/freefont/* ${PREFIX}/lib/X11/fonts/freefont
 
 post-install:
-	@${CAT} ${DESCR}
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
