@@ -88,6 +88,7 @@
     SUBDIR += sapphire-themes
     SUBDIR += sawfish2
     SUBDIR += selectwm
+    SUBDIR += skippy
     SUBDIR += swm
     SUBDIR += tpager
     SUBDIR += treewm
