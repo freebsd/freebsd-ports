@@ -1,11 +1,23 @@
-[ excerpt from distribution's README.txt ]
+[ excerpt from developer's web site ]
 
-BitTorrent is a tool for distributing files. It's extremely easy
-to use - downloads are started by clicking on hyperlinks.  Whenever
-more than one person is downloading at once they send pieces of the
-file(s) to each other, thus relieving the central server's bandwidth
-burden. Even with many simultaneous downloads, the upload burden
-on the central server remains quite small, since each new downloader
-introduces new upload capacity.
+This is Kenosis-enabled BitTorrent. Using Kenosis, we've eliminated
+the tracker as a central point of failure for BitTorrent downloads.
+Kenosis-enabled BitTorrent is 100% backwards compatible with existing
+BitTorrent clients.
 
-WWW: http://bittorrent.com/
+Kenosis-BitTorrent uses torrent files which specify a tracker of
+the form http://hash.bt.kenosisp2p.org, where "hash" is the hash
+of the original file.
+
+Kenosis-BitTorrent downloaders will notice that this is a kenosis
+url and use kenosis to find the tracker that is handling this torrent
+file. Standard BitTorrent downloaders try to resolve hash.bt.kenosisp2p.org
+as normal. Our dns server will look up the hash in kenosis and
+return to the client the ip address of the kenosis node that is
+tracking that file. If that tracker becomes unreachable, subsequent
+lookups for that hash will switch automatically to the next available
+Kenosis-enabled tracker.
+
+WWW: http://kenosis.sourceforge.net/
+
+-- lioux@FreeBSD.org

@@ -1,5 +1,5 @@
---- setup.py.orig	Fri Jan 14 22:12:02 2005
-+++ setup.py	Fri Jan 14 22:12:54 2005
+--- setup.py.orig	Fri Jan 14 22:03:18 2005
++++ setup.py	Fri Jan 14 22:03:44 2005
 @@ -9,18 +9,19 @@
  import BitTorrent
  
@@ -16,11 +16,9 @@
 -    packages = ["BitTorrent"],
 +    packages = ["%%KENOSIS-BITTORRENT%%"],
  
--    scripts = ["btdownloadgui.py", "btdownloadheadless.py", "btdownloadlibrary.py", 
-+    scripts = ["btdownloadheadless.py", "btdownloadlibrary.py", 
+     scripts = ["btdownloadgui.py", "btdownloadheadless.py", "btdownloadlibrary.py", 
          "bttrack.py", "btmakemetafile.py", "btlaunchmany.py", "btcompletedir.py",
--        "btdownloadcurses.py", "btcompletedirgui.py", "btlaunchmanycurses.py", 
-+        "btdownloadcurses.py", "btlaunchmanycurses.py", 
+         "btdownloadcurses.py", "btcompletedirgui.py", "btlaunchmanycurses.py", 
          "btmakemetafile.py", "btreannounce.py", "btrename.py", "btshowmetainfo.py",
 +	"btunittest.py",
          "bttest.py"]

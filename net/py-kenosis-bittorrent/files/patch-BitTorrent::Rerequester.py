@@ -9,7 +9,7 @@
  from time import time
  from random import randrange
  from binascii import b2a_hex
-@@ -18,8 +18,7 @@
+@@ -45,8 +45,7 @@
          self.url = ('%s?info_hash=%s&peer_id=%s&port=%s&key=%s' %
              (url, quote(infohash), quote(myid), str(port),
              b2a_hex(''.join([chr(randrange(256)) for i in xrange(4)]))))
@@ -19,12 +19,12 @@
          self.interval = interval
          self.last = None
          self.trackerid = None
-@@ -81,6 +80,8 @@
+@@ -108,6 +107,8 @@
  
      def rerequest(self, url, set):
          try:
 +            if self.ip:
 +                url += '&ip=' + gethostbyname(self.ip)
+             print "opening url %s" % url
              h = urlopen(url)
              r = h.read()
-             h.close()

@@ -1,0 +1,48 @@
+	ATTENTIONATTENTION:
+
+Please make sure that you read
+/usr/local/share/doc/kenosis-BitTorrent/README_KENOSIS.txt.  It
+contains important information about testing and configuring the
+Kenosis enabled BitTorrent client and tracker, and ultimately
+replacing the official client with this version.
+
+Non-Kenosis clients can use Kenosis trackers without a problem AND
+Kenosis clients can disable Kenosis suppport (I am not sure why
+because you can use the non-Kenosis trackers with Kenosis enabled)
+if that is desired.
+
+It is fully compatible with current BitTorrent clients so it will
+work with or without Kenosis support. This is a modified version
+of the official stable BitTorrent distribution version 3.4.2.
+
+In order to make sure this application does not interfere with
+previously installed official BitTorrent clients while users perform
+the transition, the installation has been customized.
+
+The kenosis_BitTorrent python module files can be found under
+
+/usr/local/lib/python2.4/site-packages/kenosis_BitTorrent
+
+and
+
+the BitTorrent scripts under
+
+/usr/local/libexec/kenosis-BitTorrent
+
+If you desire to use the kenosis-BitTorrent instead of the official
+BitTorrent client, you should just place that directory in front
+of PATH
+
+- For sh based shells
+
+$ export PATH="/usr/local/libexec/kenosis-BitTorrent:${PATH}"
+
+- For csh based shells
+
+$ setenv PATH "/usr/local/libexec/kenosis-BitTorrent:${PATH}"
+
+Now, just use BitTorrent as usual. A file containing a copy of this
+message is available as
+
+/usr/local/share/doc/kenosis-BitTorrent/README-FreeBSD.txt
+

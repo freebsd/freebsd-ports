@@ -1,33 +1,45 @@
-# New ports collection makefile for:	BitTorrent
-# Date created:		Sun Mar 16 06:34:12 UTC 2003
+# New ports collection makefile for:	Kenosis enabled BitTorrent
+# Date created:		Thu Jan 13 01:15:19 UTC 2005
 # Whom:			Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-PORTNAME=	BitTorrent
-PORTVERSION=	3.4.2
-PORTREVISION=	4
-PORTEPOCH=	1
+PORTNAME=	kenosis
+PORTVERSION=	${KENOSIS_VERSION}.0.3.4.2
+PORTEPOCH=	2
 CATEGORIES?=	net python
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME:L}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-#DISTNAME=	${PORTNAME}-${PORTVERSION:C/\.(.)$/\1/}
+PKGNAMESUFFIX=	-BitTorrent
+DISTNAME=	${KENOSIS_DISTNAME}
 
 MAINTAINER=	lioux@FreeBSD.org
-COMMENT?=	A peer-to-peer tool for distributing files written in Python
+COMMENT?=	A Kenosis enabled, distributed BitTorrent
+
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/kenosis/__init__.py:${PORTSDIR}/net/py-kenosis
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 USE_REINPLACE=	yes
 
-CONFLICTS=	py??-*[Bb]it[Tt]orrent* py??-*[Bb]it[Tt]ornado* btqueue*
+WRKSRC=		${WRKDIR}/${DISTNAME}/bt
 
-PORTDOCS=	BUILD.windows.txt INSTALL.unix.txt LICENSE.txt \
+DOC_FILES=	\
+		BUILD.windows.txt INSTALL.unix.txt LICENSE.txt \
+		README_KENOSIS.txt \
 		README.txt credits.txt
+PORTDOCS=	\
+		README-FreeBSD.txt \
+		${DOC_FILES}
 
 .include <bsd.port.pre.mk>
+
+#KENOSIS_PORTDIR=	../py-kenosis
+KENOSIS_PORTDIR=	${PORTSDIR}/net/py-kenosis
+KENOSIS_DISTNAME!=	cd ${KENOSIS_PORTDIR} && make -V DISTNAME
+KENOSIS_VERSION!=	cd ${KENOSIS_PORTDIR} && make -V PORTVERSION
 
 .if ${ARCH} != "i386"
 WITHOUT_PSYCO=	yes
@@ -37,9 +49,11 @@ WITHOUT_PSYCO=	yes
 .ifndef(WITHOUT_GUI)
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/wxPython/__init__.py:${PORTSDIR}/x11-toolkits/py-wxPython
 
+EXTRA_PATCHES+=	${FILESDIR}/extra-gui-patch-setup.py
+
 PLIST_FILES+=	\
-		bin/btcompletedirgui.py \
-		bin/btdownloadgui.py
+		libexec/${PORTNAME}${PKGNAMESUFFIX}/btcompletedirgui.py \
+		libexec/${PORTNAME}${PKGNAMESUFFIX}/btdownloadgui.py
 .else
 EXTRA_PATCHES+=	${FILESDIR}/extra-nogui-patch-setup.py
 .endif
@@ -59,9 +73,9 @@ EXTRA_PATCHES+= \
 		${FILESDIR}/extra-psyco-patch-bttrack.py
 
 PLIST_FILES+=	\
-		${PYTHON_SITELIBDIR:S|^${PYTHONBASE}/||}/BitTorrent/PSYCO.py \
-		${PYTHON_SITELIBDIR:S|^${PYTHONBASE}/||}/BitTorrent/PSYCO.pyc \
-		${PYTHON_SITELIBDIR:S|^${PYTHONBASE}/||}/BitTorrent/PSYCO.pyo
+		%%PYTHON_SITELIBDIR%%/${PORTNAME}${PKGNAMESUFFIX:S/^-/_/}/PSYCO.py \
+		%%PYTHON_SITELIBDIR%%/${PORTNAME}${PKGNAMESUFFIX:S/^-/_/}/PSYCO.pyc \
+		%%PYTHON_SITELIBDIR%%/${PORTNAME}${PKGNAMESUFFIX:S/^-/_/}/PSYCO.pyo
 .endif
 
 pre-everything::
@@ -76,7 +90,17 @@ post-patch:
 	@${FIND} ${WRKSRC} -type f | \
 		${XARGS} -x -n 10 \
 		${REINPLACE_CMD} -E \
-		-e 's|/usr/bin/env python2|${LOCALBASE}/bin/python|'
+		-e 's|from[[:space:]]+BitTorrent|from ${PORTNAME}${PKGNAMESUFFIX:S/^-/_/}|' \
+		-e 's|import[[:space:]]+BitTorrent|import ${PORTNAME}${PKGNAMESUFFIX:S/^-/_/}|' \
+		-e 's|from[[:space:]]+ds|from ${PORTNAME}.ds|' \
+		-e 's|/usr/bin/env python|${LOCALBASE}/bin/python|'
+	@${REINPLACE_CMD} -E \
+		-e 's|%%KENOSIS-BITTORRENT%%|${PORTNAME}${PKGNAMESUFFIX:S/^-/_/}|' \
+		${WRKSRC}/${PYSETUP}
+	@${REINPLACE_CMD} -E \
+		-e 's|bt.BitTorrent|${PORTNAME}${PKGNAMESUFFIX:S/^-/_/}|' \
+		-e 's|from[[:space:]]+bt[[:space:]]+||' \
+		${WRKSRC}/btunittest.py
 .ifdef(WITHOUT_GUI)
 	@${REINPLACE_CMD} -E \
 		-e 's|btdownloadgui.py|btdownloadcurses.py|' \
@@ -87,17 +111,27 @@ post-patch:
 	@${ECHO_CMD} 'psyco = 1' > ${WRKSRC}/BitTorrent/PSYCO.py
 .endif
 
+pre-configure:
+	@${MV} ${WRKSRC}/BitTorrent ${WRKSRC}/${PORTNAME}${PKGNAMESUFFIX:S/^-/_/}
+
 post-install:
+	@${CAT} ${PKGMESSAGE}
 .ifndef(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for file in ${PORTDOCS}
+.for file in ${DOC_FILES}
 	@${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
+	@${INSTALL_DATA} ${PKGMESSAGE} ${DOCSDIR}/README-FreeBSD.txt
 .endif
 # set proper permissions
 	@${CHMOD} -R ${SHAREMODE} \
-		${PREFIX}/${PYTHON_SITELIBDIR:S|^${PYTHONBASE}/||}/BitTorrent
-	@${CHMOD} ${SHAREMODE} ${PREFIX}/${PYTHON_SITELIBDIR:S|^${PYTHONBASE}/||}/BitTorrent
-	@${CHMOD} a+x ${PREFIX}/${PYTHON_SITELIBDIR:S|^${PYTHONBASE}/||}/BitTorrent
+		${PREFIX}/${PYTHON_SITELIBDIR:S|^${PYTHONBASE}/||}/${PORTNAME}${PKGNAMESUFFIX:S/^-/_/}
+	@${CHMOD} ${SHAREMODE} \
+		${PREFIX}/${PYTHON_SITELIBDIR:S|^${PYTHONBASE}/||}/${PORTNAME}${PKGNAMESUFFIX:S/^-/_/}
+	@${CHMOD} a+x \
+		${PREFIX}/${PYTHON_SITELIBDIR:S|^${PYTHONBASE}/||}/${PORTNAME}${PKGNAMESUFFIX:S/^-/_/}
 
 .include <bsd.port.post.mk>
+
+DOCSDIR:=	${DOCSDIR:S!${PORTNAME}$!${PORTNAME}${PKGNAMESUFFIX}!}
+PYDISTUTILS_INSTALLARGS:=	${PYDISTUTILS_INSTALLARGS} --install-scripts=${PREFIX}/libexec/${PORTNAME}${PKGNAMESUFFIX}
