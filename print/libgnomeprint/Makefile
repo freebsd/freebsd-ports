@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libgnomeprint
-PORTVERSION=	2.2.1.2
+PORTVERSION=	2.2.1.3
 CATEGORIES=	print gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/2.2
@@ -28,8 +28,9 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 PLIST_SUB=	VERSION=${PORTVERSION}
 
 post-patch:
-	@find ${WRKSRC} -name '*.[ch]' | xargs ${REINPLACE_CMD} -e \
+	@${FIND} ${WRKSRC} -name '*.[ch]' | ${XARGS} ${REINPLACE_CMD} -e \
 		's|<malloc[.]h>|<stdlib.h>|'
+	@${REINPLACE_CMD} -e "/^SUBDIRS =/s|tests||" ${WRKSRC}/Makefile.in
 
 post-install:
 	@${MKDIR} ${PREFIX}/etc/gnome/libgnomeprint-2.0/fonts

@@ -31,6 +31,9 @@ include/libgnomeprint-2.2/libgnomeprint/private/gpa-utils.h
 lib/libgnomeprint-2-2.a
 lib/libgnomeprint-2-2.so
 lib/libgnomeprint-2-2.so.0
+lib/libgnomeprint/%%VERSION%%/modules/libgnomeprintcups.a
+lib/libgnomeprint/%%VERSION%%/modules/libgnomeprintcups.so
+lib/libgnomeprint/%%VERSION%%/modules/libgnomeprintcups.so.0
 lib/libgnomeprint/%%VERSION%%/modules/transports/libgnomeprint-custom.so
 lib/libgnomeprint/%%VERSION%%/modules/transports/libgnomeprint-file.so
 lib/libgnomeprint/%%VERSION%%/modules/transports/libgnomeprint-lpr.so
@@ -45,10 +48,12 @@ share/doc/libgnomeprint-2.2/libgnomeprint-gnome-glyphlist.html
 share/doc/libgnomeprint-2.2/libgnomeprint-gnome-pgl.html
 share/doc/libgnomeprint-2.2/libgnomeprint-gnome-print-config.html
 share/doc/libgnomeprint-2.2/libgnomeprint-gnome-print-job.html
+share/doc/libgnomeprint-2.2/libgnomeprint-gnome-print-master.html
 share/doc/libgnomeprint-2.2/libgnomeprint-gnome-print-paper.html
 share/doc/libgnomeprint-2.2/libgnomeprint-gnome-print-unit.html
 share/doc/libgnomeprint-2.2/libgnomeprint-gnome-print.html
 share/doc/libgnomeprint-2.2/libgnomeprint-gnome-rfont.html
+share/doc/libgnomeprint-2.2/libgnomeprint-question-index.html
 share/doc/libgnomeprint-2.2/libgnomeprint-resources.html
 share/doc/libgnomeprint-2.2/libgnomeprint.html
 share/doc/libgnomeprint-2.2/libgnomeprintunsorted.html
@@ -83,6 +88,8 @@ share/locale/it/LC_MESSAGES/libgnomeprint-2.2.mo
 share/locale/ja/LC_MESSAGES/libgnomeprint-2.2.mo
 share/locale/ko/LC_MESSAGES/libgnomeprint-2.2.mo
 share/locale/lv/LC_MESSAGES/libgnomeprint-2.2.mo
+share/locale/mk/LC_MESSAGES/libgnomeprint-2.2.mo
+share/locale/ml/LC_MESSAGES/libgnomeprint-2.2.mo
 share/locale/mn/LC_MESSAGES/libgnomeprint-2.2.mo
 share/locale/ms/LC_MESSAGES/libgnomeprint-2.2.mo
 share/locale/nl/LC_MESSAGES/libgnomeprint-2.2.mo
@@ -95,6 +102,8 @@ share/locale/ro/LC_MESSAGES/libgnomeprint-2.2.mo
 share/locale/ru/LC_MESSAGES/libgnomeprint-2.2.mo
 share/locale/sk/LC_MESSAGES/libgnomeprint-2.2.mo
 share/locale/sl/LC_MESSAGES/libgnomeprint-2.2.mo
+share/locale/sr/LC_MESSAGES/libgnomeprint-2.2.mo
+share/locale/sr@Latn/LC_MESSAGES/libgnomeprint-2.2.mo
 share/locale/sv/LC_MESSAGES/libgnomeprint-2.2.mo
 share/locale/ta/LC_MESSAGES/libgnomeprint-2.2.mo
 share/locale/tr/LC_MESSAGES/libgnomeprint-2.2.mo
