@@ -3,7 +3,7 @@
 # Date created:        19 March 1997
 # Whom:                Matthew Hunt <mph@pobox.com>
 #
-# $Id: Makefile,v 1.6 1998/10/30 08:35:31 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	c2ps-4.0

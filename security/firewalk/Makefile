@@ -3,7 +3,7 @@
 # Date created:		Sun May 3, 1999
 # Whom:			shipley@dis.org
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=	firewalk-0.99beta

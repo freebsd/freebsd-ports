@@ -3,7 +3,7 @@
 # Date created:		17th February 1997
 # Whom:			Joel Sutton <sutton@aardvark.apana.org.au>
 #
-# $Id: Makefile,v 1.4 1998/08/23 22:10:12 asami Exp $
+# $FreeBSD$
 #
       
 DISTNAME=	dvi2tty

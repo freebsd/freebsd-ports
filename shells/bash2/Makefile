@@ -3,7 +3,7 @@
 # Date created:		21 August 1994
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.36 1999/06/05 22:31:47 mharo Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       bash-2.03

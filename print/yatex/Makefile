@@ -3,7 +3,7 @@
 # Date created:		98/11/17
 # Whom:			Satoshi Taoka <taoka@FreeBSD.org>
 #
-# $Id: Makefile,v 1.9 1999/05/01 04:03:29 taoka Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	yatex1.66

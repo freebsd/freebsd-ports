@@ -3,7 +3,7 @@
 # Date created:         16 Dec 1997
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.4 1997/12/23 07:23:24 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       rispell

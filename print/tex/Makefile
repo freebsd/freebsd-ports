@@ -3,7 +3,7 @@
 # Date created:         29 September 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.35 1999/08/28 02:17:27 mharo Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	web2c-7.1

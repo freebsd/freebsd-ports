@@ -3,7 +3,7 @@
 # Date created:		Mon Jun 28 18:02:04 PDT 1999
 # Whom:			nsayer@freebsd.org
 #
-# $Id: Makefile,v 1.2 1999/06/29 01:03:45 nsayer Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	libmcrypt-2.2

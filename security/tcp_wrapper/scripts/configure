@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $Id$
+# $FreeBSD$
 #
 
 FILES="hosts_access.3 hosts_access.5 tcpd.8 tcpdchk.8 tcpdmatch.8"

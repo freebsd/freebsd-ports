@@ -3,7 +3,7 @@
 # Date created:		19 February 1998
 # Whom:			Kapil Chowksey
 #
-# $Id$
+# $FreeBSD$
 
 DISTNAME=	mpage-2.5
 CATEGORIES=	print

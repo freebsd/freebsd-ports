@@ -3,7 +3,7 @@
 # Date created:         8 Apr 1996
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.15 1998/12/02 05:11:02 asami Exp $
+# $FreeBSD$
 #
 
 PKGNAME=        ru-netscape-3.01

@@ -1,4 +1,4 @@
-@comment $Id: PLIST,v 1.4 1999/02/08 11:58:17 obrien Exp $
+@comment $FreeBSD$
 bin/nmap
 bin/nmapfe
 bin/xnmap

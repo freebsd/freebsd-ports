@@ -3,7 +3,7 @@
 # Date created:         7 Aug 1997
 # Whom:                 eserte@cs.tu-berlin.de
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME= 	dvips2ascii-1.0

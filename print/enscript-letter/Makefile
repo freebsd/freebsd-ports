@@ -3,7 +3,7 @@
 # Date created:			24 Jul, 1997
 # Whom:				kline
 #
-# $Id: Makefile,v 1.7 1998/11/20 04:15:07 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       enscript-1.6.1

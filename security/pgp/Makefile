@@ -5,7 +5,7 @@
 # Date created:         8 Jul 1995
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.28 1999/08/27 22:30:09 mharo Exp $
+# $FreeBSD$
 #
 
 # Pick an initial default, else it doesn't get set in the INDEX.

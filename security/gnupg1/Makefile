@@ -3,7 +3,7 @@
 # Date created:		Sep 30, 1998
 # Whom:			kuriyama@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.14 1999/08/12 15:10:08 kuriyama Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	gnupg-0.9.10

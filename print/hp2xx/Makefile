@@ -3,7 +3,7 @@
 # Date created:         17 Jan 1999
 # Whom:                 Lars Koeller
 #
-# $Id: Makefile,v 1.1.1.1 1999/01/26 03:30:26 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	hp2xx-3.20-png

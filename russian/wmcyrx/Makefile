@@ -3,7 +3,7 @@
 # Date created:		04 Janyary 1999
 # Whom:			Sergey Osokin aka oZZ <ozz@FreeBSD.org.ru>
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=       cyrx2.0

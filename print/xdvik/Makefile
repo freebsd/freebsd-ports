@@ -3,7 +3,7 @@
 # Date created:        26 Feb 1998
 # Whom:                Kentaro Inagaki <JBD01226@niftyserve.ne.jp>
 #
-# $Id: Makefile,v 1.3 1998/10/13 04:07:18 jseger Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xdvik-20a

@@ -3,7 +3,7 @@
 # Date created:		20 June 1998
 # Whom:			Stephane Legrand
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=		bugs-1.8.1

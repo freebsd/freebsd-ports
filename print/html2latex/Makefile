@@ -3,7 +3,7 @@
 # Date created:         29-March-1996
 # Whom:                 joerg
 #
-# $Id: Makefile,v 1.4 1996/11/17 08:44:41 obrien Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	html2latex-0.9c

@@ -3,7 +3,7 @@
 # Date created:		11 Jan 1999
 # Whom:			Dom Mitchell <dom@myrddin.demon.co.uk>
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=	l0pht-watch

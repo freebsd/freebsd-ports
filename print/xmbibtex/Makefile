@@ -3,7 +3,7 @@
 # Date created:				06 Nov 1997
 # Whom:					Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.5 1998/02/18 15:45:29 tg Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xmbibtex-1.5

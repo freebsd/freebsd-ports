@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.94 1999/06/28 19:50:55 cpiazza Exp $
+# $FreeBSD$
 #
 
     SUBDIR += a2ps-a4

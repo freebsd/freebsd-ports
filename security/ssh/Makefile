@@ -3,7 +3,7 @@
 # Date created:		30 Jul 1995
 # Whom:			torstenb@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.78 1999/08/09 17:12:44 markm Exp $
+# $FreeBSD$
 #
 # Maximal ssh package requires YES values for
 # USE_PERL, USE_TCPWRAP

@@ -3,7 +3,7 @@
 # Date created:         1 May 1995
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.9 1997/11/10 04:32:08 ache Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       d1489-1.4

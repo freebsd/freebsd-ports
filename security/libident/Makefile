@@ -3,7 +3,7 @@
 # Date created:		9 October 1995
 # Whom:			torstenb@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.6 1998/01/25 20:42:37 torstenb Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	libident-0.22

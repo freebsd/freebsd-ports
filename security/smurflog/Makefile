@@ -3,7 +3,7 @@
 # Date created:				7/06/1998
 # Whom:					nectar@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.6 1999/01/07 18:32:45 nectar Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	smurflog-2.1

@@ -3,7 +3,7 @@
 # Date created:         31 Aug 1995
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.23 1999/08/22 23:33:18 mharo Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       ru-X11-3.3

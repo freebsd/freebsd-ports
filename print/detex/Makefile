@@ -4,7 +4,7 @@
 # Date created:			  Mon Feb 17, 1997
 # Whom:				  David O'Brien (obrien@NUXI.com)
 #
-# $Id: Makefile,v 1.1.1.1 1997/03/25 10:53:08 obrien Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	detex-2.6

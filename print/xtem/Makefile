@@ -3,7 +3,7 @@
 # Date created:         01 June 1997
 # Whom:                 Peter Cornelius <pc@inr.fzk.de>
 #
-# $Id: Makefile,v 1.6 1998/10/12 18:16:47 jseger Exp $
+# $FreeBSD$
 
 DISTNAME=	xtem_texmenu.6.18
 PKGNAME=	xtem-6.18

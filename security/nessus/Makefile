@@ -3,7 +3,7 @@
 # Date created:		1 May 1999
 # Whom:			Anders Nordby <anders@fix.no>
 #
-# $Id: Makefile,v 1.1.1.1 1999/05/17 10:26:38 foxfair Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	nessus-alpha2-fix4

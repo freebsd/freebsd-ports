@@ -3,7 +3,7 @@
 # Date created:         21 September 1994
 # Whom:                 jmz & David O'Brien (obrien@cs.ucdavis.edu)
 #
-# $Id: Makefile,v 1.18 1998/11/20 04:15:15 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	psutils-p17

@@ -3,7 +3,7 @@
 # Date created:				21 August 1998
 # Whom:					Yukihiro Nakai <Nakai@technologist.com>
 #
-# $Id: Makefile,v 1.9 1999/08/22 04:01:03 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	ggv-0.51

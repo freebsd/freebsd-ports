@@ -4,7 +4,7 @@
 # Date created:			  Tue Aug 04, 1998
 # Whom:				  David O'Brien (obrien@NUXI.com)
 #
-# $Id: Makefile,v 1.17 1999/04/07 19:00:04 fenner Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	nmap-2.2-BETA4

@@ -3,7 +3,7 @@
 # Date created:		Tue Jun 10 21:58:54 CEST 1997
 # Whom:			Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.33 1999/05/15 01:14:34 andreas Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	ghostscript-5.50

@@ -3,7 +3,7 @@
 # Date created:				29 August 1996
 # Whom:					oly
 #
-# $Id: Makefile,v 1.4 1998/06/04 04:11:55 vanilla Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	cops.1.04

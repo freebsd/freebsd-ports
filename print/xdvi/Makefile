@@ -3,7 +3,7 @@
 # Date created:         1 October 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.24 1998/10/20 01:48:37 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xdvi-20

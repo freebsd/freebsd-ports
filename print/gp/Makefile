@@ -3,7 +3,7 @@
 # Date created:		15 April 1997
 # Whom:			Kiriyama Kazuhiko<kiri@kiri.toba-cmt.ac.jp>
 #
-# $Id: Makefile,v 1.11 1998/11/20 04:39:06 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	GP-2.5p2

@@ -3,7 +3,7 @@
 # Date created:					May 2 97
 # Whom:						jfitz
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=      	swatch-2.2

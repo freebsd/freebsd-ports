@@ -3,7 +3,7 @@
 # Date created:         9 july 1995
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.22 1999/06/15 16:05:56 jmz Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       musixtex-T97

@@ -3,7 +3,7 @@
 # Date created:		22 August 1994
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.23 1999/08/22 19:00:00 mharo Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       tcsh-6.09

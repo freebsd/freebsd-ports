@@ -3,7 +3,7 @@
 # Date created:		5 December 1996
 # Whom:			Bernd Rosauer <br@netland.inka.de>
 #
-# $Id: Makefile,v 1.32 1999/08/25 14:25:38 tg Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	teTeX-1.0.6

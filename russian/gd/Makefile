@@ -3,7 +3,7 @@
 # Date created:         17 Aug 1998
 # Whom:                 gsm@infosite.ru
 #
-# $Id: Makefile,v 1.1.1.1 1998/12/05 14:10:52 kuriyama Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       gd1.3

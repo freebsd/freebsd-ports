@@ -3,7 +3,7 @@
 # Date created:			  Sat May 8, 1999
 # Whom:				  Nick Sayer (nsayer@freebsd.org)
 #
-# $Id: Makefile,v 1.2 1999/05/09 17:45:58 nsayer Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	raproxy3.0b1

@@ -3,7 +3,7 @@
 # Date created:         2 October 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.15 1999/08/22 18:59:47 mharo Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	texinfo

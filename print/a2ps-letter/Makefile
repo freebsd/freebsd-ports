@@ -3,7 +3,7 @@
 # Date created:         15 July 1998
 # Whom:                 Chuck Robey (chuckr@freebsd.org)
 #
-# $Id: Makefile,v 1.26 1999/04/17 16:12:02 chuckr Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	a2ps-4.12

@@ -3,7 +3,7 @@
 # Date created:		11 December 1998
 # Whom:			giffunip
 #
-# $Id: Makefile,v 1.32 1999/02/03 11:11:56 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	ghostscript-5.10

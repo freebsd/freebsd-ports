@@ -3,7 +3,7 @@
 # Date created:		9 August 1996
 # Whom:			chuckr@freebsd.org
 #
-# $Id: Makefile,v 1.22 1998/10/03 21:34:09 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	transfig.3.2.1

@@ -3,7 +3,7 @@
 # Date created:		24 Mar 1999
 # Whom:			CHOI Junho <cjh@kr.freebsd.org>
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=	magicfilter-1.2

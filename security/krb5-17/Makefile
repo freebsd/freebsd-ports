@@ -3,7 +3,7 @@
 # Date created:				6/5/1998
 # Whom:					nectar@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.11 1999/08/22 18:59:53 mharo Exp $
+# $FreeBSD$
 #
 
 DISTNAME=		krb5-1.0.6

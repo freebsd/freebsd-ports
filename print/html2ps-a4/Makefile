@@ -3,7 +3,7 @@
 # Date created:		Sat Nov 22 12:54:50 CET 1997
 # Whom:			andreas
 #
-# $Id: Makefile,v 1.7 1999/03/31 20:21:49 billf Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	html2ps-1.0b1

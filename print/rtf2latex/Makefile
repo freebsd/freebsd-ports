@@ -3,7 +3,7 @@
 # Date created:         25 Jan 1995
 # Whom:                 Thomas Gellekum <tg@FreeBSD.org>
 #
-# $Id: Makefile,v 1.6 1997/08/26 07:12:18 tg Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	rtf2LaTeX.1.5

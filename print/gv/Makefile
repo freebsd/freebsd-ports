@@ -4,7 +4,7 @@
 # Date created:		16 Apr 1996
 # Whom:			tg@freebsd.org
 #
-# $Id: Makefile,v 1.19 1998/10/20 01:48:37 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	gv-3.5.8

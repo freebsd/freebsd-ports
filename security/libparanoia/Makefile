@@ -3,7 +3,7 @@
 # Date created:				1 Jan 1999
 # Whom:					Alexandre Snarskii <snar@paranoia.ru>
 #
-# $Id: Makefile,v 1.1.1.1 1999/04/10 13:12:12 jseger Exp $
+# $FreeBSD$
 
 DISTNAME=	libparanoia-1.3
 CATEGORIES=	security

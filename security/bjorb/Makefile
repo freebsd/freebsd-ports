@@ -3,7 +3,7 @@
 # Date created:		May 16, 1998
 # Whom:			issei@jp.FreeBSD.ORG
 #
-# $Id: Makefile,v 1.5 1999/03/26 08:51:51 dirk Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	bjorb-0.5.5p1

@@ -3,7 +3,7 @@
 # Date created:		14 Jan 1998
 # Whom:			Igor Vinokurov <igor@zynaps.ru>
 #
-# $Id: Makefile,v 1.1.1.1 1998/12/06 12:19:18 flathill Exp $
+# $FreeBSD$
 
 DISTNAME=	xruskb-1.9.3
 CATEGORIES=	russian x11

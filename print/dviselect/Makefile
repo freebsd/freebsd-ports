@@ -3,7 +3,7 @@
 # Date created:         12 October 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.12 1998/10/12 12:45:44 jseger Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	dviselect

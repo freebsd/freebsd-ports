@@ -3,7 +3,7 @@
 # Date created:         Jul, 15, 1997
 # Whom:                 cracauer@cons.org "Martin Cracauer"
 #
-# $Id: Makefile,v 1.8 1999/05/31 04:52:27 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	scsh-0.5.1

@@ -3,7 +3,7 @@
 # Date created:		31 Mar 1997
 # Whom:			Joe Greco <jgreco@ns.sol.net>
 #
-# $Id: Makefile,v 1.4 1998/12/01 08:33:29 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       tripwire-1.2

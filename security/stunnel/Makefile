@@ -3,7 +3,7 @@
 # Date created:		Mon Jan 11 11:53:54 EET 1999
 # Whom:			Martti Kuparinen <martti.kuparinen@ericsson.com>
 #
-# $Id: Makefile,v 1.5 1999/06/06 16:54:51 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	stunnel-3.3

@@ -3,7 +3,7 @@
 # Date created:			Mon Mai 10 1999
 # Whom:				domi@saargate.de
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=	gpasman-1.1.3

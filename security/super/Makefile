@@ -4,7 +4,7 @@
 # Date created:			  Fri Mar 18, 1997
 # Whom:				  David O'Brien (obrien@NUXI.com)
 #
-# $Id: Makefile,v 1.10 1999/02/26 13:00:44 obrien Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	super-3.12.1

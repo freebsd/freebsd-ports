@@ -3,7 +3,7 @@
 # Date created:		Tue Jun 23 00:19:55 MET DST 1999
 # Whom:			Juergen Lock <nox@jelal.kn-bremen.de>
 #
-# $Id: Makefile,v 1.1.1.1 1999/06/28 19:49:58 cpiazza Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	cdlabelgen-1.5.0

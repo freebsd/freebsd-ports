@@ -3,7 +3,7 @@
 # Date created:         Sun Aug 13 12:36:14 CDT 1995
 # Whom:                 erich@rrnet.com
 #
-# $Id: Makefile,v 1.21 1999/08/07 21:10:50 mharo Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	cu-sudo.v1.5.9p4

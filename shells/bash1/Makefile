@@ -4,7 +4,7 @@
 # Date created:		21 August 1994
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.30 1999/03/30 01:31:42 obrien Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       bash-1.14.7

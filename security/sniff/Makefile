@@ -3,7 +3,7 @@
 # Date created:		7 December 1998
 # Whom:			Rick & Samu
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=	sniff-1.0

@@ -3,7 +3,7 @@
 # Date created:				05/20/1999
 # Whom:					nectar@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.1.1.1 1999/05/28 21:01:50 nectar Exp $
+# $FreeBSD$
 #
 
 DISTNAME=		esh-0.8

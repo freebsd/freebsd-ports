@@ -3,7 +3,7 @@
 # Date created:				October 21st 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-# $Id: Makefile,v 1.12 1998/09/15 21:31:53 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	PGP-0.3a
