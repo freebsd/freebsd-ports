@@ -1,0 +1,14 @@
+--- genclr.c	Sat Aug  8 16:53:59 1998
++++ /home/andy/tmp/wrk/genclr.c	Fri May 14 20:28:35 1999
+@@ -281,7 +281,11 @@
+      */
+     fp = emitopen (cfile, argv);
+     fprintf (fp, "\
++#ifdef __FreeBSD__\n\
++#include <ncurses.h>\n\
++#else\n\
+ #include <curses.h>\n\
++#endif\n\
+ #include <stdio.h>\n\
+ #include <stdlib.h>\n\
+ 

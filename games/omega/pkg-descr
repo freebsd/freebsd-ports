@@ -1,0 +1,20 @@
+omega is a complex rogue-style game of dungeon exploration.  Unlike
+other such games, there are a number of ways to "win", depending on
+various actions taken during play. The ways you can get your name on
+the hiscore board include becoming the highest ranked head of a guild,
+sect, college, etc., as well as gaining the most points figured from
+possessions and experience. The game (via the oracle) may impose some
+structure on your exploration, but you need not follow all of the
+oracle's advice. There *is* a "total winner" status, by the way.
+
+omega offers a richness of playing detail that goes beyond a simple
+game like rogue. However, the majority of gameplay is very similar to
+rogue, hack, ultrarogue, larn, and other such games. The player is
+represented by the highlighted "@" symbol, objects and terrain
+features are represented by non-alphabetic symbols, monsters are
+represented by the various upper and lower case letters, and other
+humans are represented by a non-highlighted "@". It is recommended
+that the novice read the man pages for rogue or some other such game
+and perhaps play a few games before playing omega. 
+
+WWW: http://dolphin.openprojects.net/Omega/

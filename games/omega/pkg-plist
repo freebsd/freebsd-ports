@@ -1,0 +1,65 @@
+@owner games
+@group games
+@mode 4711
+bin/omega
+@mode 666
+share/omega/omega.hi
+share/omega/omega.log
+@mode 600
+share/omega/omegahi.bak
+@mode
+share/doc/omega/buglist.txt
+share/doc/omega/compile.all
+share/doc/omega/omega.txt
+share/doc/omega/readme.1st
+share/doc/omega/readme3
+share/doc/omega/readme4
+share/omega/abyss.dat
+share/omega/abyss.txt
+share/omega/arena.dat
+share/omega/circle.dat
+share/omega/city.dat
+share/omega/country.dat
+share/omega/court.dat
+share/omega/dlair.dat
+share/omega/help1.txt
+share/omega/help10.txt
+share/omega/help11.txt
+share/omega/help12.txt
+share/omega/help13.txt
+share/omega/help2.txt
+share/omega/help3.txt
+share/omega/help4.txt
+share/omega/help5.txt
+share/omega/help6.txt
+share/omega/help7.txt
+share/omega/help8.txt
+share/omega/help9.txt
+share/omega/home1.dat
+share/omega/home2.dat
+share/omega/home3.dat
+share/omega/intro.txt
+share/omega/lgpl.txt
+share/omega/license.txt
+share/omega/maze1.dat
+share/omega/maze2.dat
+share/omega/maze3.dat
+share/omega/maze4.dat
+share/omega/misle.dat
+share/omega/motd.txt
+share/omega/scroll1.txt
+share/omega/scroll2.txt
+share/omega/scroll3.txt
+share/omega/scroll4.txt
+share/omega/speak.dat
+share/omega/temple.dat
+share/omega/thanks.txt
+share/omega/update.txt
+share/omega/village1.dat
+share/omega/village2.dat
+share/omega/village3.dat
+share/omega/village4.dat
+share/omega/village5.dat
+share/omega/village6.dat
+@dirrm share/doc/omega
+@dirrm share/omega
