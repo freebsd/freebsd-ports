@@ -15,6 +15,8 @@ COMMENT=	A flight simulator for X11
 
 USE_XLIB=	yes
 GNU_CONFIGURE=	yes
+USE_PERL5_BUILD=yes
+
 MAN6=		acm.6
 
 .include <bsd.port.pre.mk>
