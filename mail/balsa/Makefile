@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	balsa
-PORTVERSION=	2.2.6
-PORTREVISION=	2
+PORTVERSION=	2.3.0
 CATEGORIES=	mail gnome
 MASTER_SITES=	http://www.theochem.kth.se/~pawsa/balsa/
 DISTNAME=	balsa-${PORTVERSION}
@@ -60,5 +59,8 @@ CONFIGURE_ARGS+=	--with-ldap
 post-patch:
 	@${REINPLACE_CMD} -e 's|stdint.h|inttypes.h|g' \
 		${WRKSRC}/libbalsa/mailbox_imap.c
+
+post-install:
+	-@gtk-update-icon-cache ${X11BASE}/share/icons/hicolor
 
 .include <bsd.port.post.mk>
