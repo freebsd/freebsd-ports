@@ -1,0 +1,18 @@
+--- bind/cpp/Makefile.in.orig	Tue Jun 29 00:34:15 1999
++++ bind/cpp/Makefile.in	Sat Jul 17 12:22:41 1999
+@@ -24,13 +24,13 @@
+ exec_prefix = @exec_prefix@
+ 
+ PDFLIB = @PDFLIB@
+-CXXFLAGS = -c -g @DEFS@ @CCSHARED@ -I../../pdflib
++CXXFLAGS = -c @DEFS@ -I../../pdflib
+ LDFLAGS = -L../../pdflib
+ 
+ .SUFFIXES: .cpp
+ 
+ .cpp.o:
+-	$(CXX) $(CXXFLAGS) $(DEFINES) $<
++	$(CXX) $(CFLAGS) $(CXXFLAGS) $(DEFINES) $<
+ 
+ # ----------------------------------
+ 

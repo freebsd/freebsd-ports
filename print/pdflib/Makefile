@@ -1,39 +1,36 @@
 # New ports collection makefile for:	pdflib
-# Version required:	0.6
+# Version required:	2.0
 # Date created:		Mon Jan 18 17:03:33 CET 1999
-# Whom:			Dirk Froemberg <dirk@FreeBSD.ORG>
+# Whom:			Dirk Froemberg <dirk@FreeBSD.org>
 #
-# $Id: Makefile,v 1.1.1.1 1999/01/20 14:49:12 dirk Exp $
+# $Id: Makefile,v 1.2 1999/05/19 21:45:53 dirk Exp $
 #
 
-DISTNAME=	pdflib-0.6
+DISTNAME=	pdflib-2.0
 CATEGORIES=	print
-MASTER_SITES=	http://www.ifconnection.de/~tm/software/pdflib/ \
+MASTER_SITES=	http://www.ifconnection.de/~tm/pdflib/ \
 		http://www.physik.TU-Berlin.DE/~ibex/ports/distfiles/
 
-MAINTAINER=	dirk@FreeBSD.ORG
+MAINTAINER=	dirk@FreeBSD.org
 
 RUN_DEPENDS=	${PREFIX}/lib/afm/Courier:${PORTSDIR}/print/afm
 LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff34 \
 		jpeg.9:${PORTSDIR}/graphics/jpeg
 
-USE_GMAKE=	yes
-MAKEFILE=	makefile.gcc
-MAKE_ENV=	CC=${CC}
-
-pre-build:
-	${SED} -e "s#!!PREFIX!!#${PREFIX}#" < ${WRKSRC}/pdf.h > ${WRKSRC}/pdf.h.tmp
-	${MV} ${WRKSRC}/pdf.h.tmp ${WRKSRC}/pdf.h
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--with-perl5=${PERL} \
+		--with-tiff=${PREFIX} \
+		--with-jpeg=${PREFIX} \
+		--with-zlib=/usr
 
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/libpdf.a ${PREFIX}/lib
-.for prg in imagepdf pdfclock pdfdemo pdfgraph text2pdf
-	${INSTALL_PROGRAM} ${WRKSRC}/${prg} ${PREFIX}/bin
-.endfor
-	${INSTALL_DATA} ${WRKSRC}/pdf.h ${PREFIX}/include
+	${INSTALL_DATA} ${WRKSRC}/pdflib/libpdf.so.2 ${PREFIX}/lib
+	${LN} -s libpdf.so.2 ${PREFIX}/lib/libpdf.so
+	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
+	${INSTALL_DATA} ${WRKSRC}/pdflib/pdflib.h ${PREFIX}/include
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/pdflib
-	${INSTALL_DATA} ${WRKSRC}/PDFlib-0.6.pdf ${PREFIX}/share/doc/pdflib
+	${INSTALL_DATA} ${WRKSRC}/doc/* ${PREFIX}/share/doc/pdflib
 .endif
 
 .include <bsd.port.mk>
