@@ -6,28 +6,36 @@
 #
 
 PORTNAME=	glpk
-PORTVERSION=	3.0.1
+PORTVERSION=	3.0.2
 CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_GNU} \
 		http://people.freebsd.org/~demon/distfiles/
 MASTER_SITE_SUBDIR=	glpk
-.if !defined(NOPORTDOCS)
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DOCFILES}
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
-.endif
 
 MAINTAINER=	demon@FreeBSD.org
 
+.if !defined(NOPORTDOCS)
+BUILD_DEPENDS=	texi2dvi:${PORTSDIR}/print/teTeX
+.endif
+
 GNU_CONFIGURE=	yes
 
-DOCFILES=	glpk_lr-1.1.1.ps.gz glpk_sm.ps.gz glpk_ug-1.1.1.ps.gz
+DOCFILES=	guide language libref simplex
+
+post-build:
+.if !defined(NOPORTDOCS)
+	for file in ${DOCFILES} ; do \
+		cd ${WRKSRC} && ${LOCALBASE}/bin/texi2dvi doc/$$file.texinfo ; \
+		${LOCALBASE}/bin/dvips -o ${WRKSRC}/$$file.ps \
+		${WRKSRC}/$$file.dvi ; \
+	done
+.endif
 
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	for file in ${DOCFILES} ; do \
-		${INSTALL_DATA} ${DISTDIR}/$$file ${DOCSDIR} ; \
-		${GUNZIP_CMD} ${DOCSDIR}/$$file ; \
+		${INSTALL_DATA} ${WRKSRC}/$$file.ps ${DOCSDIR} ; \
 	done
 .endif
 
