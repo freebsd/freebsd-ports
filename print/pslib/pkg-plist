@@ -1,7 +1,6 @@
 include/libps/pslib-mp.h
 include/libps/pslib.h
 include/libps/psversion.h
-@dirrm include/libps
 lib/libps.a
 lib/libps.so
 lib/libps.so.2
@@ -11,3 +10,4 @@ share/locale/de/LC_MESSAGES/pslib.mo
 %%DATADIR%%/exectime.ps
 %%DATADIR%%/grid.ps
 @dirrm %%DATADIR%%
+@dirrm include/libps
