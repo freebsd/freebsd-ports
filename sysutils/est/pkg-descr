@@ -1,0 +1,7 @@
+This is a driver for the Enhanced SpeedStep feature in Intel Pentium M
+processors.
+
+WWW: http://www.daemonology.net/freebsd-est/
+
+- Colin Percival
+cperciva@daemonology.net

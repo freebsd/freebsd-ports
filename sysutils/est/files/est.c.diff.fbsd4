@@ -1,0 +1,27 @@
+--- est.c.orig	Thu Aug 26 22:51:42 2004
++++ est.c	Thu Aug 26 22:53:59 2004
+@@ -33,7 +33,7 @@
+ #include <sys/sysctl.h>
+ #include <sys/module.h>
+ #include <sys/kernel.h>
+-#include <sys/pcpu.h>
++#include <sys/proc.h>
+ 
+ typedef struct {
+ 	int mhz;
+@@ -566,13 +566,13 @@
+ 
+ 	switch (what) {
+ 	case MOD_LOAD:
+-		err = kernel_sysctlbyname(curthread, "hw.model", hwmodel,
++		err = kernel_sysctlbyname(curproc, "hw.model", hwmodel,
+ 		    &modellen, NULL, 0, NULL);
+ 		if (err)
+ 			return err;
+ 
+ 		ncpulen = sizeof(ncpu);
+-		err = kernel_sysctlbyname(curthread, "hw.ncpu", &ncpu,
++		err = kernel_sysctlbyname(curproc, "hw.ncpu", &ncpu,
+ 		    &ncpulen, NULL, 0, NULL);
+ 		if (err)
+ 			return err;

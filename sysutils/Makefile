@@ -110,6 +110,7 @@
     SUBDIR += eject
     SUBDIR += enteruser
     SUBDIR += eroaster
+    SUBDIR += est
     SUBDIR += etcmerge
     SUBDIR += eventwatcher
     SUBDIR += extipl
