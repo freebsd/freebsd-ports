@@ -5674,6 +5674,7 @@ nss_ldap	ports/net/nss_ldap
 nstreams	ports/net-mgmt/nstreams
 ntalk		ports/net/ntalk
 nte		ports/mbone/nte
+ntfsprogs	ports/sysutils/ntfsprogs
 ntl		ports/math/ntl
 ntop		ports/net/ntop
 ntp-devel	ports/net/ntp-devel
