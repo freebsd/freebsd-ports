@@ -7,6 +7,7 @@
 
 PORTNAME=	lyx
 PORTVERSION=	1.2.1
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	ftp://ftp.lyx.org/pub/lyx/stable/ \
 		ftp://ftp.sdsc.edu/pub/other/lyx/stable/ \
@@ -28,12 +29,15 @@ USE_GMAKE=	yes
 USE_AUTOMAKE_VER=	15
 AUTOMAKE=	${WRKSRC}/autogen.sh
 AUTOCONF=	${TRUE}
-CONFIGURE_ARGS=	--with-extra-lib="${X11BASE}/lib ${LOCALBASE}/lib"
+CONFIGURE_ARGS=	--with-extra-lib="${LOCALBASE}/lib" \
+		--with-extra-inc="${LOCALBASE}/include"
 MAN1=		lyx.1 reLyX.1
 
 .if defined(WITH_ASPELL)
 LIB_DEPENDS+=	aspell.15:${PORTSDIR}/textproc/aspell
-CONFIGURE_ARGS+=	--with-pspell
+CONFIGURE_ARGS+=	--with-pspell \
+			--with-pspell-lib="${LOCALBASE}/lib" \
+			--with-pspell-include="${LOCALBASE}/include"
 .endif
 
 .if defined(WITH_ISPELL)
@@ -60,7 +64,7 @@ post-extract:
 
 post-patch:
 	@${FIND} ${WRKSRC} -name "configure.in" | ${XARGS} ${REINPLACE_CMD} -e \
-                's|AC_CHECK_LIB(c,|AC_CHECK_FUNC(|g ; \
-                 s|^INSTALL_SCRIPT=|#INSTALL_SCRIPT=|g'
+		's|AC_CHECK_LIB(c,|AC_CHECK_FUNC(|g ; \
+		 s|^INSTALL_SCRIPT=|#INSTALL_SCRIPT=|g'
 
 .include <bsd.port.mk>
