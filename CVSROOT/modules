@@ -1753,6 +1753,7 @@ fo-aspell	ports/textproc/fo-aspell
 fold		src/usr.bin/fold
 fontconfig	ports/x11-fonts/fontconfig
 fontedit	ports/sysutils/fontedit
+foobillard	ports/games/foobillard
 fooseti		ports/astro/fooseti
 fop		ports/textproc/fop
 fore_dnld	src/sbin/atm/fore_dnld
