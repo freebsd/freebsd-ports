@@ -4,7 +4,7 @@
 # Date created:         Mon Nov 18, 1996
 # Whom:                 David O'Brien (obrien@cs.ucdavis.edu)
 #
-# $Id: Makefile,v 1.2 1996/11/25 01:26:24 obrien Exp $
+# $Id: Makefile,v 1.3 1996/11/26 06:46:40 asami Exp $
 #
 
 DISTNAME=	MaRS-2.1
@@ -32,8 +32,6 @@ MAN1=		mars.1
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/mars ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/man/man1/mars.1 ${PREFIX}/man/man1
-
-post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/mars
 	@chmod a+rx ${PREFIX}/share/doc/mars
