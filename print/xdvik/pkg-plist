@@ -1,8 +1,21 @@
+@comment $FreeBSD$
+bin/t1mapper
 bin/xdvi
-bin/gsftopk
-share/texmf/dvips/render.ps
-share/doc/xdvi/ChangeLog
-share/doc/xdvi/README
-share/doc/xdvi/xdvi.FAQ
-@dirrm share/doc/xdvi
-@unexec rmdir %D/share/texmf/dvips 2> /dev/null || true
+bin/xdvi-xaw.bin
+bin/xdvi.bin
+bin/xdvizilla
+%%TEXMFDIR%%/xdvi/XDvi
+%%TEXMFDIR%%/xdvi/xdvi.cfg
+%%TEXMFDIR%%/xdvi/pixmaps/toolbar.xpm
+%%TEXMFDIR%%/xdvi/pixmaps/toolbar2.xpm
+@dirrm %%TEXMFDIR%%/xdvi/pixmaps
+%%PORTDOCS%%%%DOCSDIR%%/BUGS
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.CVS
+%%PORTDOCS%%%%DOCSDIR%%/README_maintainer
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@exec %%MKTEXLSR%%
+@unexec %%MKTEXLSR%%
