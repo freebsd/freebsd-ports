@@ -1,5 +1,5 @@
---- config.orig	Wed Mar 26 22:09:15 2003
-+++ config	Wed Mar 26 21:37:27 2003
+--- config.orig	Thu Mar 20 12:44:31 2003
++++ config	Sun Jul  6 04:39:01 2003
 @@ -392,7 +392,7 @@
  # we fallback to whatever cc does on the system
  GCCVER=`(gcc -dumpversion) 2>/dev/null`
@@ -18,3 +18,11 @@
  fi
  GCCVER=${GCCVER:-0}
  if [ "$SYSTEM" = "HP-UX" ];then
+@@ -642,6 +642,7 @@
+   alpha*-*-freebsd*) OUT="FreeBSD-alpha" ;;
+   sparc64-*-freebsd*) OUT="FreeBSD-sparc64" ;;
+   ia64-*-freebsd*) OUT="FreeBSD-ia64" ;;
++  amd64-*-freebsd*) OUT="FreeBSD-amd64" ;;
+   *-freebsd[3-9]*) OUT="FreeBSD-elf" ;;
+   *-freebsd[1-2]*) OUT="FreeBSD" ;;
+   *86*-*-netbsd) OUT="NetBSD-x86" ;;
