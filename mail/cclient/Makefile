@@ -18,7 +18,7 @@ MASTER_SITE_SUBDIR=	. old
 DISTNAME=	imap-2001a
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	anders@fix.no
+MAINTAINER=	anders@FreeBSD.org
 
 INSTALLS_SHLIB=	yes
 ALL_TARGET=	bsf

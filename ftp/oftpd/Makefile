@@ -12,7 +12,7 @@ CATEGORIES=	ftp
 MASTER_SITES=	http://www.time-travellers.org/oftpd/ \
 		http://www.freenix.no/~anders/
 
-MAINTAINER=	anders@fix.no
+MAINTAINER=	anders@FreeBSD.org
 
 GNU_CONFIGURE=	yes
 

@@ -15,7 +15,7 @@ MASTER_SITES=	ftp://ftp.cc.umanitoba.ca/src/ \
 DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	anders@fix.no
+MAINTAINER=	anders@FreeBSD.org
 
 .if defined(WITH_POSTFIX_DB3)
 LIB_DEPENDS+=	db3.2:${PORTSDIR}/databases/db3

@@ -11,7 +11,7 @@ CATEGORIES=	security databases
 MASTER_SITES=	http://download.sourceforge.net/pam-mysql/ \
 		http://www.freenix.no/~anders/
 
-MAINTAINER=	anders@fix.no
+MAINTAINER=	anders@FreeBSD.org
 
 LIB_DEPENDS=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client
 

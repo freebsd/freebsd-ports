@@ -20,7 +20,7 @@ PKGNAMESUFFIX=	-uw
 DISTNAME=	imap-2001a
 DISTFILES=	${DISTNAME}.tar.Z imap-utils.tar.Z
 
-MAINTAINER=	anders@fix.no
+MAINTAINER=	anders@FreeBSD.org
 
 LIB_DEPENDS=	c-client4.8:${PORTSDIR}/mail/cclient
 .if defined(WITH_DRAC)

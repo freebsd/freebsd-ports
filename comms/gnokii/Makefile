@@ -13,7 +13,7 @@ CATEGORIES=	comms
 MASTER_SITES=	ftp://ftp.gnokii.org/pub/gnokii/ \
 		ftp://urtica.linuxnews.pl/pub/people/pkot/gnokii/
 
-MAINTAINER=	anders@fix.no
+MAINTAINER=	anders@FreeBSD.org
 
 LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext
 
