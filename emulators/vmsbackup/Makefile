@@ -2,7 +2,7 @@
 # Version required:	3.0
 # Date created:		18 Apr 1994
 # Whom:			Jonathan M. Bresler (jmb)
-# $Id$
+# $Id: Makefile,v 1.6 1996/11/12 02:17:03 obrien Exp $
 #
 
 DISTNAME=	vmsbackup
@@ -11,7 +11,7 @@ CATEGORIES=	emulators sysutils
 MASTER_SITES=	ftp://ftp.cs.uni-sb.de/pub/utils/
 # slightly different version
 # MASTER_SITES+=	ftp://ftp.uni-passau.de/pub/unix/system/backup/
-EXTRACT_SUFX=	.tar.Z
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	jmb@FreeBSD.org
 
