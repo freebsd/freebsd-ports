@@ -1,0 +1,12 @@
+This is SJ3 1.5.11, a X11 frontend for a Japanese input method SJ3.
+This system developed by Sony Corporation.
+SJ3 is composed of Kana-Kanji conversion server(sj3serv), 
+Kana-Kanji conversion client for terminal(sj3) and Kana-Kanji
+conversion library(sj3lib).
+To use SJXA, it is necessary to install SJ3.
+
+This also include many patches for FreeBSD ports on SJ3.
+If there are any problem in this patches, please know me via E-mail.
+
+Hidekazu Kuroki
+(hidekazu@cs.titech.ac.jp)
