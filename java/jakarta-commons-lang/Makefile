@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	commons-lang
-PORTVERSION=	1.0.1
+PORTVERSION=	2.0
 CATEGORIES=	java
-MASTER_SITES=	http://jakarta.apache.org/builds/jakarta-commons/release/${PORTNAME}/v${PORTVERSION}/
+MASTER_SITES=	${MASTER_SITE_APACHE_JAKARTA}
+MASTER_SITE_SUBDIR=	commons/lang/source
 PKGNAMEPREFIX=	jakarta-
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
@@ -19,7 +20,7 @@ BUILD_DEPENDS=	${ANT}:${PORTSDIR}/devel/apache-ant
 
 USE_JAVA=	1.2+
 
-WRKSRC=		${WRKDIR}/${DISTNAME}/lang
+WRKSRC=		${WRKDIR}/${DISTNAME}
 PLIST_SUB+=	T=${TARGET_DIR:S/^${PREFIX}\///}
 ANT?=		${LOCALBASE}/bin/ant
 .if defined(NOPORTDOCS)
@@ -31,9 +32,6 @@ JAVASHAREDIR=	${PREFIX}/share/java
 JARDIR=		${JAVASHAREDIR}/classes
 JARFILE=	${PORTNAME}-${PORTVERSION}.jar
 DESTJARFILE=	${PORTNAME}.jar
-
-post-patch:
-	@${CP} ${WRKSRC}/LICENSE.txt ${WRKSRC}/../LICENSE
 
 do-build:
 	@cd ${WRKSRC} && ${ANT} ${ANT_TARGET}
