@@ -4,15 +4,18 @@
 %%ADODB_DIR%%/adodb-ado_mssql.inc.php
 %%ADODB_DIR%%/adodb-cryptsession.php.sample
 %%ADODB_DIR%%/adodb-csv.inc.php
+%%ADODB_DIR%%/adodb-csvlib.inc.php
 %%ADODB_DIR%%/adodb-db2.inc.php
 %%ADODB_DIR%%/adodb-errorhandler.inc.php
 %%ADODB_DIR%%/adodb-errorpear.inc.php
 %%ADODB_DIR%%/adodb-fbsql.inc.php
 %%ADODB_DIR%%/adodb-ibase.inc.php
+%%ADODB_DIR%%/adodb-lib.inc.php
 %%ADODB_DIR%%/adodb-mssql.inc.php
 %%ADODB_DIR%%/adodb-mysql.inc.php
 %%ADODB_DIR%%/adodb-mysqlt.inc.php
 %%ADODB_DIR%%/adodb-oci8.inc.php
+%%ADODB_DIR%%/adodb-oci8po.inc.php
 %%ADODB_DIR%%/adodb-odbc.inc.php
 %%ADODB_DIR%%/adodb-odbc_mssql.inc.php
 %%ADODB_DIR%%/adodb-odbc_oracle.inc.php
@@ -27,6 +30,8 @@
 %%ADODB_DIR%%/adodb.gif
 %%ADODB_DIR%%/adodb.inc.php
 %%ADODB_DIR%%/adodb.png
+%%ADODB_DIR%%/adodb2.gif
+%%ADODB_DIR%%/adodb2.png
 %%ADODB_DIR%%/crypt.inc.php
 %%ADODB_DIR%%/server.php.sample
 %%ADODB_DIR%%/tohtml.inc.php
