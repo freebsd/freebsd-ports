@@ -1,30 +1,50 @@
---- src/Makefile.in.orig	Wed Nov 20 20:27:27 2002
-+++ src/Makefile.in	Sat Dec 28 06:35:54 2002
-@@ -146,14 +146,14 @@
+--- src/Makefile.in.orig	Fri Oct 24 00:22:46 2003
++++ src/Makefile.in	Sun Nov  2 14:10:46 2003
+@@ -101,8 +101,8 @@
+ LY_HFILES := kimwy.h
+ LY_TFILE := kimwy.output
+ LY_OBJS := $(LY_CFILES:cc=o)
+-GETOPT_CFILES := getopt.h getopt.c getopt1.c
+-GETOPT_OBJS := getopt.o getopt1.o
++#GETOPT_CFILES := getopt.h getopt.c getopt1.c
++#GETOPT_OBJS := getopt.o getopt1.o
+ DF_HFILES := defs.h defs.hh
+ ERRMSG_CC_FILE := errmsg.inc
+ 
+@@ -160,20 +160,20 @@
  #YCFLAGS += -DMYLEXDEBUG
  #YCFLAGS += -DYYDEBUG=1 -DMYLEXDEBUG
  DEFINES := -DARCH=$(ARCH) @hashset@
 -CXXFLAGS := -g
--CXXFLAGSOPT := -O2\ -s
-+CXXFLAGS := @CXXFLAGS@
-+#CXXFLAGSOPT := -O2\ -s
+-CXXFLAGSOPT := -O2
++#CXXFLAGS := -g
++CXXFLAGSOPT := @CXXFLAGS@ @CPPFLAGS@
  CFLAGS := $(CXXFLAGS) -DHAVE_CONFIG_H -I.
  
  ifneq (,$(findstring ++,$(CXX)))
  # -ansi should be here but it's buggy (and should be called -iso anyway)
 -CXXFLAGS := -Wall -Wno-unused -Wno-uninitialized -g
--CXXFLAGSOPT := $(CXXFLAGSOPT)\ -Os
-+CXXFLAGS += -Wall -Wno-unused -Wno-uninitialized
-+#CXXFLAGSOPT := $(CXXFLAGSOPT)\ -Os
+-CXXFLAGSOPT := $(CXXFLAGSOPT)\ -s\ -Os
++#CXXFLAGS := -Wall -Wno-unused -Wno-uninitialized -g
++#CXXFLAGSOPT := $(CXXFLAGSOPT)\ -s\ -Os
    ifeq "$(WARN)" "y"
      CXXFLAGS += -Wold-style-cast -Weffc++
    endif
-@@ -189,7 +189,7 @@
+ endif
+ override CXXFLAGS += $(INCLUDES) $(DEFINES)
+-LIBS := @PYLIBS@
++LIBS := @PYLIBS@ @LDFLAGS@
+ PYCFLAGS := @PYCFLAGS@
+ LINT_CFLAGS := $(INCLUDES) $(GENDEFINES)
+ MALLOC_LDFLAGS := $(ANY_ARCH_MALLOC_LDFLAGS)
+@@ -202,8 +202,8 @@
+ 	cp $(MAKERUNDIR)/$(CONFIGFILE) $(CONFIGFILE); \
  	touch tstamp.kc ; \
  	$(MAKE) -e -f $(MAKERUNDIR)/Makefile \
- 		MAKERUNDIR=$(MAKERUNDIR) \
+-		MAKERUNDIR=$(MAKERUNDIR) \
 -		CXXFLAGS=$(CXXFLAGSOPT) \
-+		CXXFLAGS="$(CXXFLAGS)" \
++		MAKERUNDIR="$(MAKERUNDIR)" \
++		CXXFLAGS="$(CXXFLAGSOPT)" \
  		$(BOOTSTRAPTARGET)
  
  s1:
