@@ -349,6 +349,7 @@
     SUBDIR += nemesis
     SUBDIR += net-http
     SUBDIR += netatalk
+    SUBDIR += netatalk-devel
     SUBDIR += netboot
     SUBDIR += netcat
     SUBDIR += netdude
