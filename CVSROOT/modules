@@ -9585,6 +9585,7 @@ sipsak		ports/net/sipsak
 sirc		ports/irc/sirc
 sircd		ports/irc/sircd
 sisc		ports/lang/sisc
+sisctrl		ports/x11/sisctrl
 sitebar		ports/www/sitebar
 sitecopy	ports/www/sitecopy
 sitescooper	ports/palm/sitescooper
