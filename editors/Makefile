@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.50 1998/03/18 10:21:44 obrien Exp $
+# $Id: Makefile,v 1.51 1998/04/19 05:16:59 mph Exp $
 #
 
     SUBDIR += asedit
@@ -18,6 +18,7 @@
     SUBDIR += nedit
     SUBDIR += nvi-m17n
     SUBDIR += nvi-perl
+    SUBDIR += offix-editor
     SUBDIR += staroffice
     SUBDIR += textedit
     SUBDIR += thoteditor
