@@ -13,9 +13,19 @@ share/doc/HTML/en/kpictorial/screenshot_solved.png
 share/doc/HTML/en/kpictorial/index.docbook
 share/doc/HTML/en/kpictorial/index.cache.bz2
 share/doc/HTML/en/kpictorial/common
+@dirrm share/apps/kpictorial/icons/hicolor/32x32/actions
+@dirrm share/apps/kpictorial/icons/hicolor/32x32
+@dirrm share/apps/kpictorial/icons/hicolor
+@dirrm share/apps/kpictorial/icons
 @dirrm share/doc/HTML/en/kpictorial
 @dirrm share/apps/kpictorial
+@unexec rmdir %D/share/icons/hicolor/16x16/apps 2>/dev/null || true
 @unexec rmdir %D/share/icons/hicolor/16x16 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/32x32/apps 2>/dev/null || true
 @unexec rmdir %D/share/icons/hicolor/32x32 2>/dev/null || true
+@unexec rmdir %D/share/icons/locolor/16x16/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/locolor/16x16 2>/dev/null || true
+@unexec rmdir %D/share/icons/locolor/32x32/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/locolor/32x32 2>/dev/null || true
 @unexec rmdir %D/share/icons/locolor 2>/dev/null || true
 @unexec rmdir %D/share/applnk/Games 2>/dev/null || true
