@@ -112,10 +112,6 @@ OPTIONS=XFT "Enable Xft font anti-aliasing" on \
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "amd64"
-BROKEN=	 	"Coredump during build on amd64"
-.endif
-
 .if ${ARCH} == "ia64" || ${ARCH} == "alpha"
 BROKEN=		"Does not compile on ia64 or alpha"
 .endif

@@ -31,10 +31,6 @@ PKGDEINSTALL=	${PKGINSTALL}
 BROKEN=		"Need working <wctype.h>"
 .endif
 
-.if ${ARCH} == "amd64"
-BROKEN=		"Coredump during build on amd64"
-.endif
-
 post-install:
 	@${FIND} ${PREFIX}/lib/ocaml/site-lib/${PORTNAME} -type f | \
 		${SED} "s,^${PREFIX}/,," >> ${TMPPLIST}
