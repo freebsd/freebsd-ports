@@ -1,10 +1,11 @@
-# $Id: Makefile,v 1.22 1998/06/10 09:43:10 tg Exp $
+# $Id: Makefile,v 1.23 1998/06/16 19:16:34 mph Exp $
 #
 
     SUBDIR += agrep
     SUBDIR += c2html
     SUBDIR += catdoc
     SUBDIR += docbook
+    SUBDIR += docproj
     SUBDIR += dsssl-docbook-modular
     SUBDIR += glimpse
     SUBDIR += html
