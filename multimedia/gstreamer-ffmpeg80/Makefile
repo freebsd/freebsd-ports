@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gstreamer
-PORTVERSION=	0.8.0
-PORTREVISION=	2
+PORTVERSION=	0.8.1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://gstreamer.freedesktop.org/src/gst-ffmpeg/
 PKGNAMESUFFIX=	-ffmpeg
@@ -24,18 +23,21 @@ USE_REINPLACE=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack \
 		gnomeprefix
-GNU_CONFIGURE=	yes
+USE_LIBTOOL_VER=15
 CONFIGURE_ENV=	PKG_CONFIG=${PKG_CONFIG} \
 		CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
 PLIST_SUB=	\
 		VERSION="${GST_VERSION}"
-INSTALLS_SHLIB=	yes
 
 PKG_CONFIG?="${LOCALBASE}/bin/pkg-config"
 GST_VERSION=${PORTVERSION:C/..$//}
 
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+EXTRA_PATCHES=	${PATCHDIR}/extra-patch-gst-libs_ext_ffmpeg_libavformat_nut.c
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -E -e \
@@ -44,6 +46,7 @@ post-patch:
 
 post-install:
 # register plugins
-	-@${X11BASE}/bin/gst-register-${GST_VERSION} 2>/dev/null
+	-@${X11BASE}/bin/gst-register-${GST_VERSION} \
+		--gst-registry=${PREFIX}/share/gnome/cache/gstreamer-${GST_VERSION}/registry.xml 2>/dev/null
 
 .include <bsd.port.post.mk>
