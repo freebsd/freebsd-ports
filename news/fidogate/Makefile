@@ -11,7 +11,6 @@ CATEGORIES=	news mail
 MASTER_SITES=	ftp://ftp.fidogate.org/pub/fidogate/ \
 		ftp://ftp.fu-berlin.de/unix/news/fidogate/ \
 		http://www.fidogate.org/pub/fidogate/
-
 MASTER_SITE_SUBDIR=	system/fido
 
 MAINTAINER=	dirk.meyer@dinoex.sub.org
