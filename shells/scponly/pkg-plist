@@ -1,8 +1,15 @@
 bin/scponly
+@exec echo "Updating /etc/shells"; cp /etc/shells /etc/shells.bak; (grep -v %D/%F /etc/shells.bak; echo %D/%F) >/etc/shells; rm -f /etc/shells.bak
+@unexec echo "Updating /etc/shells"; cp /etc/shells /etc/shells.bak; (grep -v %D/%F /etc/shells.bak) >/etc/shells; rm -f /etc/shells.bak
 %%SCPONLY_CHROOT%%sbin/scponlyc
+%%SCPONLY_CHROOT%%@exec cp /etc/shells /etc/shells.bak; (grep -v %D/%F /etc/shells.bak; echo %D/%F) >/etc/shells; rm -f /etc/shells.bak
+%%SCPONLY_CHROOT%%@unexec cp /etc/shells /etc/shells.bak; (grep -v %D/%F /etc/shells.bak) >/etc/shells; rm -f /etc/shells.bak
+%%SCPONLY_CHROOT%%%%EXAMPLESDIR%%/setup_chroot.sh
+%%SCPONLY_CHROOT%%%%EXAMPLESDIR%%/config.h
 etc/scponly/debuglevel
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 @dirrm etc/scponly
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%SCPONLY_CHROOT%%@dirrm %%EXAMPLESDIR%%
