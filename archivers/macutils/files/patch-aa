@@ -1,0 +1,31 @@
+*** makefile.orig	Mon Apr 14 16:15:21 1997
+--- makefile	Mon Apr 14 16:34:14 1997
+***************
+*** 1,5 ****
+! SHELL =	/bin/sh
+! BINDIR =	/ufs/dik/tmpbin
+  # Use the following flags on the CF macro definition as needed.
+  #
+  # -DBSD if you are on a BSD system
+--- 1,4 ----
+! SHELL =		/bin/sh
+  # Use the following flags on the CF macro definition as needed.
+  #
+  # -DBSD if you are on a BSD system
+***************
+*** 24,30 ****
+  #
+  # -DAPPLEDOUBLE if you want to be able to use an AppleDouble file system
+  #
+! CF =	-DBSD -DTYPES_H -DDIRENT_H -DTERMIOS_H -DNODOT -DAPPLEDOUBLE
+  
+  all:
+  	(cd crc; make CF='$(CF)')
+--- 23,29 ----
+  #
+  # -DAPPLEDOUBLE if you want to be able to use an AppleDouble file system
+  #
+! CF = -DBSD -DTYPES_H -DDIRENT_H -DTERMIOS_H -DAUFSPLUS 
+  
+  all:
+  	(cd crc; make CF='$(CF)')
