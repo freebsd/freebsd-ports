@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mysql++
-PORTVERSION=	1.7.27
+PORTVERSION=	1.7.28
 CATEGORIES=	databases devel
 MASTER_SITES=	http://tangentsoft.net/mysql++/releases/
 
