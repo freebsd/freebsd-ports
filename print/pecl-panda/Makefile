@@ -17,6 +17,8 @@ DIST_SUBDIR=	PECL
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	A PECL extension to create PDF documents
 
+BROKEN=		Configure fails
+
 LIB_DEPENDS=	panda.0:${PORTSDIR}/print/panda
 
 USE_PHP=	yes
