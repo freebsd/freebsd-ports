@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	GD-Barcode
-PORTVERSION=	1.14
+PORTVERSION=	1.15
 CATEGORIES=	graphics perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	GD
@@ -20,7 +20,6 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
-MAN3PREFIX=	${LOCALBASE}/lib/perl5/${PERL_VERSION}
 MAN3=		GD::Barcode.3 \
 		GD::Barcode::COOP2of5.3 \
 		GD::Barcode::Code39.3 \
@@ -31,6 +30,7 @@ MAN3=		GD::Barcode.3 \
 		GD::Barcode::Industrial2of5.3 \
 		GD::Barcode::Matrix2of5.3 \
 		GD::Barcode::NW7.3 \
+		GD::Barcode::QRcode.3 \
 		GD::Barcode::UPCA.3 \
 		GD::Barcode::UPCE.3
 
