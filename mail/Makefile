@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.14 1995/08/26 07:32:25 asami Exp $
+# $Id: Makefile,v 1.15 1995/09/28 16:48:45 ache Exp $
 #
 
     SUBDIR += elm
@@ -11,5 +11,6 @@
     SUBDIR += popper
     SUBDIR += procmail
     SUBDIR += smail
+    SUBDIR += xfmail
 
 .include <bsd.port.subdir.mk>
