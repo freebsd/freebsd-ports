@@ -19,6 +19,8 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libpvm3.a:${PORTSDIR}/net/pvm
 RUN_DEPENDS=	${BUILD_DEPENDS}
 LIB_DEPENDS=	tk84.1:${PORTSDIR}/x11-toolkits/tk84
 
+USE_REINPLACE=	yes
+
 WRKSRC=		${WRKDIR}/xpvm
 PVM_ROOT?=	${LOCALBASE}/lib/pvm
 MAKE_ENV+=	PVM_ROOT=${PVM_ROOT} XPVM_ROOT=${WRKSRC}
@@ -31,6 +33,10 @@ pre-everything::
 	@${ECHO_MSG} "If your PVM is not installed in the default directory,"
 	@${ECHO_MSG} "please define PVM_ROOT=/path/to/your/pvm."
 	@${ECHO_MSG}
+
+post-patch:
+	@cd ${WRKSRC} && ${REINPLACE_CMD} -e 's/malloc.h/stdlib.h/' \
+	   src/xpvm.h tracer/trclib.h
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/FREEBSD/xpvm ${PREFIX}/bin
