@@ -3,18 +3,12 @@ helper which was reported by iDefense on the 07th June 2004.
 Original advisory:
 <http://www.idefense.com/application/poi/display?id=107&type=vulnerabilities&flashstatus=false>
 CVE-ID: CAN-2004-0541
-Patch obtained from:
+Patch and correction obtained from:
 <http://www.squid-cache.org/~wessels/patch/libntlmssp.c.patch>
-The patch was slightly modified by me (tmseck@netcologne.de) to make
-it apply cleanly to the FreeBSD port.
+<http://www.squid-cache.org/bugs/show_bug.cgi?id=998>
 
-Index: libntlmssp.c
-===================================================================
-RCS file: /server/cvs-server/squid/squid/helpers/ntlm_auth/SMB/libntlmssp.c,v
-retrieving revision 1.7
-diff -u -3 -p -u -r1.7 libntlmssp.c
---- helpers/ntlm_auth/SMB/libntlmssp.c	30 Nov 2001 09:50:28 -0000	1.7
-+++ helpers/ntlm_auth/SMB/libntlmssp.c	20 May 2004 22:31:33 -0000
+--- helpers/ntlm_auth/SMB/libntlmssp.c.orig	Fri Nov 30 10:50:06 2001
++++ helpers/ntlm_auth/SMB/libntlmssp.c	Fri Jun 18 13:17:35 2004
 @@ -161,7 +161,10 @@ make_challenge(char *domain, char *domai
  #define min(A,B) (A<B?A:B)
  
@@ -36,7 +30,7 @@ diff -u -3 -p -u -r1.7 libntlmssp.c
      char *domain = credentials;
      char *user;
      lstring tmp;
-@@ -215,8 +218,13 @@ ntlm_check_auth(ntlm_authenticate * auth
+@@ -215,6 +218,11 @@ ntlm_check_auth(ntlm_authenticate * auth
  	ntlm_errno = NTLM_LOGON_ERROR;
  	return NULL;
      }
@@ -46,11 +40,8 @@ diff -u -3 -p -u -r1.7 libntlmssp.c
 +	return NULL;
 +    }
      memcpy(domain, tmp.str, tmp.l);
--    user = domain + tmp.l;
-+    user = domain + tmp.l + 1;
+     user = domain + tmp.l;
      *user++ = '\0';
- 
- /*      debug("fetching user name\n"); */
 @@ -226,20 +234,30 @@ ntlm_check_auth(ntlm_authenticate * auth
  	ntlm_errno = NTLM_LOGON_ERROR;
  	return NULL;

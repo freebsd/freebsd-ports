@@ -29,7 +29,7 @@
 
 PORTNAME=	squid
 PORTVERSION=	2.5.5
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	www
 MASTER_SITES=	\
 		ftp://ftp.squid-cache.org/pub/%SUBDIR%/ \
@@ -218,7 +218,7 @@ CONFIGURE_ARGS+=	--enable-pf-transparent
 .if ${OSVERSION} < 502106
 pf_includedir=	${LOCALBASE}/include/pf
 BUILD_DEPENDS+=	${pf_includedir}/net/pfvar.h:${PORTSDIR}/security/pf
-CFLAGS+=	"-I${pf_includedir}"
+CFLAGS+=	-I${pf_includedir}
 EXTRA_PATCHES+=	${WRKDIR}/pf_from_ports.patch
 .endif
 .endif
@@ -284,18 +284,16 @@ CONFIGURE_ENV+=		CFLAGS="${CFLAGS}" \
 
 pre-patch:
 # Check whether we need to create the extra patch that makes pf(4)
-# visible for squid's configure script:
+# visible to squid's configure script:
 .if defined(pf_includedir)
 	@${SED} -e 's|%%PF_INCLUDEDIR%%|${pf_includedir}|g' \
 	    -e 's|%%PF_AC_INCLUDEPATH%%|${pf_includedir:S,/,_,g}|g' \
-	    ${FILESDIR}/pf_from_ports.patch.in >${WRKDIR}/pf_from_ports.patch
+	    ${PATCHDIR}/pf_from_ports.patch.in >${WRKDIR}/pf_from_ports.patch
 .endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|/etc|${PREFIX}/etc|g' ${WRKSRC}/doc/squid.8
-
-pre-configure:
 	@${REINPLACE_CMD} -e 's|%%SQUID_UID%%|${SQUID_UID}|g' \
 	    -e 's|%%SQUID_GID%%|${SQUID_GID}|g' ${WRKSRC}/src/cf.data.pre
 
@@ -348,10 +346,10 @@ changeuser:
 .if ${SQUID_UID:L} == nobody
 	@${ECHO_CMD} "'nobody' is a system user, you do not need to execute"; \
 	${ECHO_CMD} "this target!"
-	exit 1
+	${FALSE}
 .endif
 	@if [ `${ID} -u` -ne 0 ]; \
-	then ${ECHO_CMD} "Sorry, you must be root to use this target."; exit 1; fi; \
+	then ${ECHO_CMD} "Sorry, you must be root to use this target."; ${FALSE}; fi; \
 	current_uid=`id -u ${SQUID_UID}`; \
 	current_gid=`pw groupshow ${SQUID_GID}|cut -f 3 -d :`; \
 	${ECHO_CMD} "I will remove this user:"; \
