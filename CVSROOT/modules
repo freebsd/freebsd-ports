@@ -3148,6 +3148,7 @@ lex		src/usr.bin/lex
 lexter		ports/games/lexter
 lfhex		ports/editors/lfhex
 lfm		ports/sysutils/lfm
+lfpfonts-fix	ports/x11-fonts/lfpfonts-fix
 lfs_cleanerd	src/libexec/lfs_cleanerd
 lftp		ports/ftp/lftp
 lfview		ports/graphics/lfview
