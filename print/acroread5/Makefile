@@ -44,7 +44,7 @@ do-install:
 
 post-install:
 	${REINPLACE_CMD} 's:Linux):FreeBSD|Linux):g' ${PREFIX}/Acrobat5/bin/acroread
-	-@/compat/linux/usr/bin/strip ${PREFIX}/Acrobat5/Reader/intellinux/bin/acroread
+	-@${LINUXBASE}/usr/bin/strip ${PREFIX}/Acrobat5/Reader/intellinux/bin/acroread
 	@brandelf -t Linux ${PREFIX}/Acrobat5/Reader/intellinux/bin/acroread
 	${REINPLACE_CMD} 's:OSF1):FreeBSD|OSF1):g' ${PREFIX}/Acrobat5/bin/acroread
 	@cd ${PREFIX}/Acrobat5/bin && \
