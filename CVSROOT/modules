@@ -5923,6 +5923,7 @@ py-rijndael	ports/security/py-rijndael
 py-ro		ports/devel/py-ro
 py-rrdpipe	ports/net/py-rrdpipe
 py-rrdtool	ports/net/py-rrdtool
+py-rt		ports/net/py-rt
 py-rxp		ports/textproc/py-rxp
 py-scientific	ports/math/py-scientific
 py-serial	ports/comms/py-serial
