@@ -8,8 +8,7 @@
 PORTNAME=	xwhois
 PORTVERSION=	0.4.2
 CATEGORIES=	net
-MASTER_SITES=	http://c64.org/~nr/xwhois/dist/ \
-		ftp://sangis.kalix.net/pub/nr/xwhois/
+MASTER_SITES=	http://c64.org/~nr/xwhois/dist/
 
 MAINTAINER=	billf@FreeBSD.org
 COMMENT=	A GTK-based frontend to the whois service (RFC954)
