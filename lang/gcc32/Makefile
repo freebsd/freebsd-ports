@@ -20,7 +20,7 @@ DISTFILES=	gcc-core-${PORTVERSION}${EXTRACT_SUFX} \
 		gcc-java-${PORTVERSION}${EXTRACT_SUFX} \
 		gcc-objc-${PORTVERSION}${EXTRACT_SUFX}
 
-MAINTAINER?=	gerald@FreeBSD.org
+MAINTAINER?=	ports@FreeBSD.org
 COMMENT?=	GNU Compiler Collection 3.2.3
 
 LATEST_LINK?=	gcc32${PKGNAMESUFFIX}
@@ -33,11 +33,9 @@ CONFIGURE_SCRIPT=	../${SRCDIR:C/${WRKDIR}//}/configure
 USE_GCC=	X
 NOMANCOMPRESS=	yes	# too hard to deal with differences on 5-cur and releng4
 
-.include <bsd.port.pre.mk>
+ONLY_FOR_ARCHS=	i386
 
-.if ${ARCH} == "amd64"
-BROKEN= "Configure broken due to renaming this architecture from x86_84."
-.endif
+.include <bsd.port.pre.mk>
 
 .if ${PORTOBJFORMAT} == "aout"
 CONFIGURE_TARGET=	${ARCH}-portbld-freebsdaout${OSREL}
