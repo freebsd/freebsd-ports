@@ -1,11 +1,19 @@
 bin/gmpc
-share/gmpc/tray.png
-share/gmpc/media-play.png
-share/gmpc/media-pause.png
-share/gmpc/media-next.png
-share/gmpc/media-prev.png
 share/gmpc/gmpc-tray.png
-share/gmpc/media-stop.png
 share/gmpc/gmpc.png
+share/gmpc/media-album.png
+share/gmpc/media-artist.png
+share/gmpc/media-audiofile.png
+share/gmpc/media-next.png
+share/gmpc/media-pause.png
+share/gmpc/media-play.png
+share/gmpc/media-prev.png
+share/gmpc/media-stop.png
+share/gmpc/media-stream.png
+share/gmpc/player-repeat.png
+share/gmpc/player-shuffle.png
 share/gmpc/gmpc.glade
+share/gmpc/playlist.glade
+share/gmpc/open-location.glade
+share/gmpc/add-browser.glade
 @dirrm share/gmpc
