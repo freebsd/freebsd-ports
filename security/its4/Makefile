@@ -17,7 +17,6 @@ HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--datadir=${PREFIX}/share/its4
 MAN1=		its4.1
-RESTRICTED=	"For non-commercial use only"
 
 .include <bsd.port.pre.mk>
 
