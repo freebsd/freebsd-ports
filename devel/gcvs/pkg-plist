@@ -60,6 +60,7 @@ share/gcvs/cvs2cl.tcl
 share/gcvs/cvsignore_add.tcl
 share/gcvs/cvsignore_remove.tcl
 share/gcvs/startup.tcl
+share/gcvs/pixmaps/about.xpm
 share/gcvs/pixmaps/add.xpm
 share/gcvs/pixmaps/addb.xpm
 share/gcvs/pixmaps/addfile.xpm
