@@ -1,0 +1,15 @@
+most is a pager (like less) that displays, one windowful at a time,
+the contents of a file on a terminal.  It pauses after each windowful
+and prints the following on the window status line: the screen, the
+file name, current line number, and the percentage of the file so far
+displayed.
+
+In addition to displaying ordinary text files, most can also display
+binary files as well as files with arbitrary ascii characters.  As an
+option, autosensing of binary files can be disabled (via the -k
+option), thereby allowing one to browse files encoded in a different
+language (Japanese, Korean, Chinese, etc).
+
+  web site: http://space.mit.edu/%7Edavis/most.html
+  ftp site: ftp://space.mit.edu/pub/davis/most
+maintainer: Richard Hwang <rhwang@bigpanda.com>
