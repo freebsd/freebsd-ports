@@ -80,6 +80,7 @@
     SUBDIR += cronolog
     SUBDIR += curly
     SUBDIR += cvsweb-converters
+    SUBDIR += daedalus
     SUBDIR += daemontools
     SUBDIR += daemontools53
     SUBDIR += dar

@@ -1,0 +1,6 @@
+Daedalus is a monitor/restart daemon written in ruby
+which has an extremely flexible regex-based interface
+for determining whether or not a process is running.
+
+- Kelley Reynolds
+kelley@insidesystems.net

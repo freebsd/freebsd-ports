@@ -1,0 +1,10 @@
+
+IMPORTANT NOTE:
+===============
+
+To use daedalus, be sure to include
+
+daedalus_enable="YES"
+
+in rc.conf
+
