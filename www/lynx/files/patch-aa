@@ -1,8 +1,8 @@
-*** WWW/Library/Implementation/HTTCP.c.orig	Thu Jul 28 02:36:45 1994
---- WWW/Library/Implementation/HTTCP.c	Sun Nov  6 15:47:34 1994
+*** WWW/Library/Implementation/HTTCP.c.orig	Sat Dec  3 01:31:23 1994
+--- WWW/Library/Implementation/HTTCP.c	Thu Dec 15 06:43:22 1994
 ***************
-*** 82,89 ****
---- 82,91 ----
+*** 83,90 ****
+--- 83,92 ----
   #ifndef VMS
   #ifndef NeXT
   #ifndef THINK_C
@@ -14,7 +14,7 @@
   #endif	/* NeXT */
   #endif  /* VMS */
 ***************
-*** 190,196 ****
+*** 192,198 ****
   #endif
   #define ER_NO_TRANS_DONE
   #endif
@@ -22,7 +22,7 @@
   	    strerror(errno));
   #define ER_NO_TRANS_DONE
   #endif
---- 192,198 ----
+--- 194,200 ----
   #endif
   #define ER_NO_TRANS_DONE
   #endif
@@ -31,7 +31,7 @@
   #define ER_NO_TRANS_DONE
   #endif
 *** WWW/Library/Implementation/CommonMakefile.orig	Sun May 29 06:11:42 1994
---- WWW/Library/Implementation/CommonMakefile	Sun Nov  6 15:47:36 1994
+--- WWW/Library/Implementation/CommonMakefile	Thu Dec 15 06:43:22 1994
 ***************
 *** 63,69 ****
   # in which this makefile is, not the pwd.  This screws up the 
@@ -49,35 +49,8 @@
   
   # XMOsAIC hack is only for server to cope with xmosaic kludge for mmedia
   #
-*** WWW/Library/Implementation/tcp.h.orig	Fri Jul 29 02:37:49 1994
---- WWW/Library/Implementation/tcp.h	Sun Nov  6 16:21:29 1994
-***************
-*** 339,346 ****
-  #define INCLUDES_DONE
-  #endif  /* Normal includes */
-  
-  /* Interactive UNIX for i386 and i486 -- Thanks to jeffrey@itm.itm.org */
-! #ifdef i386
-  #include <net/errno.h>
-  #include <sys/types.h>
-  #include <sys/tty.h>
---- 339,352 ----
-  #define INCLUDES_DONE
-  #endif  /* Normal includes */
-  
-+ #ifdef __FreeBSD__
-+ #include <unistd.h>
-+ #include <limits.h>
-+ #define USE_DIRENT	/* sys V style directory open */
-+ #endif
-+ 
-  /* Interactive UNIX for i386 and i486 -- Thanks to jeffrey@itm.itm.org */
-! #if defined(i386) && !defined(__FreeBSD__)
-  #include <net/errno.h>
-  #include <sys/types.h>
-  #include <sys/tty.h>
-*** WWW/Library/Implementation/HTFile.c.orig	Fri Jun 17 22:13:48 1994
---- WWW/Library/Implementation/HTFile.c	Sun Nov  6 16:24:57 1994
+*** WWW/Library/Implementation/HTFile.c.orig	Sat Dec  3 01:31:21 1994
+--- WWW/Library/Implementation/HTFile.c	Thu Dec 15 06:43:23 1994
 ***************
 *** 541,547 ****
 --- 541,551 ----
@@ -93,7 +66,7 @@
       int		ngroups;			/* The number of groups  */
       struct stat	fileStatus;
 *** WWW/Library/freebsd/Makefile.orig	Thu Jul 14 09:32:44 1994
---- WWW/Library/freebsd/Makefile	Sun Nov  6 16:19:41 1994
+--- WWW/Library/freebsd/Makefile	Thu Dec 15 06:43:23 1994
 ***************
 *** 8,14 ****
   ASIS_MACH = i386/FreeBSD
@@ -107,7 +80,7 @@
   ASIS_MACH = i386/FreeBSD
   
   
-! CFLAGS = -O -DDEBUG
+! CFLAGS += -DDEBUG
   LFLAGS =
   CC = cc
   
@@ -507,27 +480,27 @@
   
 ! .include "$(WWW)/Library/Implementation/CommonMakefile"
   
-*** src/LYMain.c.orig	Sat Aug 13 00:22:45 1994
---- src/LYMain.c	Sun Nov  6 15:47:39 1994
+*** src/LYMain.c.orig	Sat Dec  3 01:31:17 1994
+--- src/LYMain.c	Thu Dec 15 06:43:24 1994
 ***************
-*** 13,19 ****
-  #include "LYrcFile.h"
-  #include "LYKeymap.h"
+*** 17,23 ****
+  #include <lib$routines.h>
+  #endif /* VMS */
   
 ! #ifdef SUN
   #include<locale.h>
   #endif /* SUN */
   
---- 13,19 ----
-  #include "LYrcFile.h"
-  #include "LYKeymap.h"
+--- 17,23 ----
+  #include <lib$routines.h>
+  #endif /* VMS */
   
 ! #if defined(SUN) || defined(__FreeBSD__)
   #include<locale.h>
   #endif /* SUN */
   
 ***************
-*** 132,138 ****
+*** 153,159 ****
       atexit(LYLeaks);
   #endif /* LY_FIND_LEAKS */
   
@@ -535,7 +508,7 @@
       /* SUN specific support for international characters. */
       setlocale(LC_ALL, "");
   #endif /* SUN */
---- 132,138 ----
+--- 153,159 ----
       atexit(LYLeaks);
   #endif /* LY_FIND_LEAKS */
   
@@ -543,8 +516,8 @@
       /* SUN specific support for international characters. */
       setlocale(LC_ALL, "");
   #endif /* SUN */
-*** Makefile.orig	Wed Aug 10 01:20:49 1994
---- Makefile	Sun Nov  6 15:49:43 1994
+*** Makefile.orig	Sat Dec  3 01:31:11 1994
+--- Makefile	Thu Dec 15 07:01:45 1994
 ***************
 *** 10,24 ****
   ##change the next line if you want the lynx man file installed somewhere
@@ -579,49 +552,49 @@
   
   #set the relative location of the WWW library Implementation directory, 
 ***************
-*** 41,47 ****
-  # If you are not, then you should edit the generic: entry below.
-  #
+*** 82,90 ****
+  univell: unixware
   
-! all:  
-  	@echo
-  	@echo "Please run make with one of the following arguments"
-  	@echo "aix32      -- for RS/6000 running AIX 3.2"
---- 41,49 ----
-  # If you are not, then you should edit the generic: entry below.
-  #
+  # Set SITE_LYDEFS to one or more of the defines for the WWW Library:
+! SITE_LYDEFS = # -DDIRED_SUPPORT
+  # Set SITE_DEFS to one or more of the defines for lynx below:
+! SITE_DEFS = # -DDIRED_SUPPORT -DOK_OVERRIDE
   
-! all: freebsd
-! 
-! run:
-  	@echo
-  	@echo "Please run make with one of the following arguments"
-  	@echo "aix32      -- for RS/6000 running AIX 3.2"
+  # if you are compiling on a previously unsupported system, modify
+  # this generic entry!!
+--- 82,90 ----
+  univell: unixware
+  
+  # Set SITE_LYDEFS to one or more of the defines for the WWW Library:
+! SITE_LYDEFS = -DDIRED_SUPPORT
+  # Set SITE_DEFS to one or more of the defines for lynx below:
+! SITE_DEFS = -DDIRED_SUPPORT -DOK_TAR -DOK_GZIP -DOK_OVERRIDE
+  
+  # if you are compiling on a previously unsupported system, modify
+  # this generic entry!!
 ***************
-*** 141,149 ****
-  		WWWLIB="../WWW/Library/mips/libwww.a"
+*** 149,156 ****
   
   freebsd:
-! 	cd WWW/Library/freebsd; make LYFLAGS=""
-! 	cd src; make all CC="cc" MCFLAGS="-O -DUNIX -DNO_KEYPAD -I../$(WWWINC)"\
+  	cd WWW/Library/freebsd; make LYFLAGS="$(SITE_LYDEFS)"
+! 	cd src; make all CC="cc" MCFLAGS="-O -DUNIX -DNO_KEYPAD -I../$(WWWINC) $(SITE_DEFS)"\
 ! 		LIBS="-lcurses -ltermcap $(WAISLIB)" \
   		WWWLIB="../WWW/Library/freebsd/libwww.a"
   
   # Tested on DN 3500 & 4500's running Domain O/S 10.4 BSD
---- 143,153 ----
-  		WWWLIB="../WWW/Library/mips/libwww.a"
+--- 149,158 ----
   
   freebsd:
-! 	cd WWW/Library/freebsd; make LYFLAGS="-DDIRED_SUPPORT"
-! 	cd src; make all CC="cc" MCFLAGS="-O -DNCURSES -DNO_TTYTYPE\
-! 		-DFANCY_CURSES -DNO_CUSERID -DUNIX -I../$(WWWINC)\
-! 		-DDIRED_SUPPORT -DOK_TAR -DOK_GZIP -DOK_OVERRIDE"\
-! 		LIBS="-lncurses -lmytinfo -ltermcap $(WAISLIB)" \
-  		WWWLIB="../WWW/Library/freebsd/libwww.a"
+  	cd WWW/Library/freebsd; make LYFLAGS="$(SITE_LYDEFS)"
+! 	cd src; make all MCFLAGS="$(CFLAGS) -DNCURSES -DNO_TTYTYPE \
+! 		-DFANCY_CURSES -DNO_CUSERID -DUNIX -I../$(WWWINC) \
+! 		$(SITE_DEFS)" \
+! 		LIBS="-lncurses -lmytinfo $(WAISLIB)" \
+    		WWWLIB="../WWW/Library/freebsd/libwww.a"
   
   # Tested on DN 3500 & 4500's running Domain O/S 10.4 BSD
-*** userdefs.h.orig	Sat Aug 13 00:16:08 1994
---- userdefs.h	Sun Nov  6 15:47:40 1994
+*** userdefs.h.orig	Sat Dec  3 01:31:11 1994
+--- userdefs.h	Thu Dec 15 07:17:29 1994
 ***************
 *** 183,189 ****
 --- 183,193 ----
@@ -637,13 +610,14 @@
   
   /**************************
 ***************
-*** 499,505 ****
---- 503,513 ----
+*** 599,605 ****
+--- 603,614 ----
   #define LYNX_NAME "Lynx"
-  #define LYNX_VERSION "2.3.1 BETA"
+  #define LYNX_VERSION "2.3.6 BETA"
   #ifndef MAXINT
 + #ifdef __FreeBSD__
-+ #include <values.h>
++ #include <limits.h>
++ #define MAXINT INT_MAX
 + #else
   #define MAXINT 2147483647
 + #endif

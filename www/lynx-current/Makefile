@@ -1,13 +1,14 @@
 # New ports collection makefile for:    lynx
-# Version required:     2.3.1
-# Date created:         5 Nov 1994
+# Version required:     2.3.6
+# Date created:         15 Dec 1994
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.1.1.1 1994/10/23 01:26:28 torstenb Exp $
+# $Id: Makefile,v 1.2 1994/11/06 16:26:30 ache Exp $
 #
 
-DISTNAME=       lynx2-3-1
+DISTNAME=       lynx2-3-6
 EXTRACT_SUFX=   .tar.Z
-MASTER_SITES=   ftp://stat1.cc.ukans.edu/pub/lynx/
+MASTER_SITES=   ftp://ukanaix.cc.ukans.edu/pub/lynx/lynx2-3-6/
+ALL_TARGET=     freebsd
 
 .include <bsd.port.mk>
