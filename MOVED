@@ -1389,3 +1389,4 @@ x11-themes/lila-xffm||2005-02-02|don't work with new xfce4
 x11-themes/lila-xfce4-panel||2005-02-02|don't work with new xfce4
 print/teTeX-latex2e||2005-02-06|obsolete by new teTeX-texmf
 emulators/qcl|science/qcl|2005-02-10|moved to better category
+security/rng_82802||2005-02-14|obsolete
