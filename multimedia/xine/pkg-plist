@@ -186,6 +186,12 @@ share/xine/skins/xinetic/SliderVPad.png
 share/xine/skins/xinetic/SmallArrowDown.png
 share/xine/skins/xinetic/SmallArrowUp.png
 share/xine/skins/xinetic/skinconfig
+@dirrm man/es/man1
+@dirrm man/es
+@dirrm man/fr/man1
+@dirrm man/fr
+@dirrm man/pl/man1
+@dirrm man/pl
 @dirrm share/xine/skins/lcd
 @dirrm share/xine/skins/pitt
 @dirrm share/xine/skins/xinetic

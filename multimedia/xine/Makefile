@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xine
-PORTVERSION=	0.9.6
+PORTVERSION=	0.9.7
 CATEGORIES=	graphics
 MASTER_SITES=	http://xine.sourceforge.net/files/ \
 		${MASTER_SITE_SOURCEFORGE}
@@ -15,14 +15,13 @@ DISTNAME=	${PORTNAME}-ui-${PORTVERSION}
 
 MAINTAINER=	nobutaka@FreeBSD.org
 
-LIB_DEPENDS=	xine.5:${PORTSDIR}/graphics/libxine \
+LIB_DEPENDS=	xine.0:${PORTSDIR}/graphics/libxine \
 		aa.1:${PORTSDIR}/graphics/aalib \
 		png.5:${PORTSDIR}/graphics/png \
 		intl.1:${PORTSDIR}/devel/gettext
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_AUTOMAKE=	yes
 USE_X_PREFIX=	yes
 USE_IMLIB=	yes
 USE_LIBTOOL=	yes
@@ -31,7 +30,7 @@ CONFIGURE_ENV=	CFLAGS="-I${LOCALBASE}/include" \
 			CPPFLAGS="-I${LOCALBASE}/include" \
 			LIBS="-L${LOCALBASE}/lib"
 
-MANLANG=	"" fr pl
+MANLANG=	"" es fr pl
 MAN1=		aaxine.1 xine.1
 
 .include <bsd.port.pre.mk>
@@ -50,6 +49,7 @@ post-configure:
 
 post-install:
 	@${CP} ${PREFIX}/man/man1/aaxine.1 ${PREFIX}/man/fr/man1/aaxine.1
+	@${CP} ${PREFIX}/man/man1/aaxine.1 ${PREFIX}/man/es/man1/aaxine.1
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
