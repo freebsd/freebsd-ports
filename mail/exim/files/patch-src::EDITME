@@ -1,5 +1,5 @@
---- src/EDITME.orig	Mon Aug 18 14:52:52 2003
-+++ src/EDITME	Mon Aug 18 17:34:17 2003
+--- src/EDITME.orig	Mon Sep 15 12:47:55 2003
++++ src/EDITME	Sat Sep 20 17:08:19 2003
 @@ -98,7 +98,7 @@
  # /usr/local/sbin. The installation script will try to create this directory,
  # and any superior directories, if they do not exist.
@@ -35,7 +35,7 @@
  
  # Many sites define a user called "exim", with an appropriate default group,
  # and use
-@@ -265,6 +265,7 @@
+@@ -267,6 +267,7 @@
  # LDAP_LIB_TYPE=OPENLDAP2
  # LDAP_LIB_TYPE=NETSCAPE
  # LDAP_LIB_TYPE=SOLARIS
@@ -43,20 +43,20 @@
  
  # If you don't set any of these, Exim assumes the original University of
  # Michigan (OpenLDAP 1) library.
-@@ -277,8 +278,10 @@
- # don't need to set LOOKUP_INCLUDE if the relevant directories are already
- # specified in INCLUDE.
+@@ -280,8 +281,10 @@
+ # specified in INCLUDE. The settings below are just examples; -lpq is for
+ # PostgreSQL, -lgds is for Interbase.
  
 -# LOOKUP_INCLUDE=-I /usr/local/ldap/include -I /usr/local/mysql/include -I /usr/local/pgsql/include
--# LOOKUP_LIBS=-L/usr/local/lib -lldap -llber -lmysqlclient -lpq
-+INCLUDE=-IXX_PREFIX_XX/include XX_DB_INCLUDES_XX
+-# LOOKUP_LIBS=-L/usr/local/lib -lldap -llber -lmysqlclient -lpq -lgds
++INCLUDE=-IXX_LOCALBASE_XX/include XX_DB_INCLUDES_XX
 +LOOKUP_INCLUDE=XX_MYSQL_INCLUDE_XX XX_PGSQL_INCLUDE_XX XX_LDAP_INCLUDE_XX
 +LOOKUP_LIBS=XX_MYSQL_LIBS_XX XX_PGSQL_LIBS_XX XX_LDAP_LIBS_XX
 +DBMLIB=XX_DB_LIBS_XX
  
- 
  #------------------------------------------------------------------------------
-@@ -289,7 +292,7 @@
+ # Compiling the Exim monitor: If you want to compile the Exim monitor, a
+@@ -291,7 +294,7 @@
  # files are defaulted in the OS/Makefile-Default file, but can be overridden in
  # local OS-specific make files.
  
@@ -65,7 +65,24 @@
  
  
  
-@@ -393,7 +396,7 @@
+@@ -332,6 +335,7 @@
+ 
+ # ALT_CONFIG_PREFIX=/some/directory/
+ # ALT_CONFIG_PREFIX=/some/directory/exim.conf-
++ALT_CONFIG_PREFIX=XX_PREFIX_XX/etc/exim/
+ 
+ 
+ #------------------------------------------------------------------------------
+@@ -376,7 +380,7 @@
+ # one that is set in the headers_charset option. The default setting is
+ # defined by this setting:
+ 
+-HEADERS_CHARSET="ISO-8859-1"
++HEADERS_CHARSET="XX_DEFAULT_CHARSET_XX"
+ 
+ # If you are going to make use of $header_xxx expansions in your configuration
+ # file, or if your users are going to use them in filter files, and the normal
+@@ -448,7 +452,7 @@
  # SUPPORT_TLS=yes
  
  # Uncomment this setting if you are using OpenSSL
@@ -74,7 +91,7 @@
  
  # Uncomment these settings if you are using GnuTLS
  # USE_GNUTLS=yes
-@@ -444,7 +447,7 @@
+@@ -499,7 +503,7 @@
  # Once you have done this, "make install" will build the info files and
  # install them in the directory you have defined.
  
@@ -83,7 +100,7 @@
  
  
  #------------------------------------------------------------------------------
-@@ -457,7 +460,7 @@
+@@ -512,7 +516,7 @@
  # %s. This will be replaced by one of the strings "main", "panic", or "reject"
  # to form the final file names. Some installations may want something like this:
  
@@ -92,7 +109,7 @@
  
  # which results in files with names /var/log/exim_mainlog, etc. The directory
  # in which the log files are placed must exist; Exim does not try to create
-@@ -594,12 +597,20 @@
+@@ -649,12 +653,20 @@
  #
  # USE_TCP_WRAPPERS=yes
  # CFLAGS=-O -I/usr/local/include
@@ -115,7 +132,7 @@
  #------------------------------------------------------------------------------
  # The default action of the exim_install script (which is run by "make
  # install") is to install the Exim binary with a unique name such as
-@@ -841,7 +852,7 @@
+@@ -896,7 +908,7 @@
  # (process id) to a file so that it can easily be identified. The path of the
  # file can be specified here. Some installations may want something like this:
  
