@@ -23,6 +23,8 @@ BUILD_DEPENDS=		rpm:${PORTSDIR}/archivers/rpm
 NO_CDROM=		yes
 RESTRICTED=		"Binary redistribution restrictions in effect"
 
+BROKEN=			"Incorrect distinfo"
+
 USE_LINUX_PREFIX=	yes
 LDCONFIG_LINUX=		${LINUXBASE}/sbin/ldconfig
 
