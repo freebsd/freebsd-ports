@@ -3,6 +3,7 @@ lib/perl5/site_perl/%%PERL_VER%%/Class/Tom/Encode/Base64.pm
 lib/perl5/site_perl/%%PERL_VER%%/Class/Tom/Code.pm
 lib/perl5/site_perl/%%PERL_VER%%/Class/Tom.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Class/Tom/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Class/Tom
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/Class/Tom/Encode
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/Class/Tom
 @unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Class 2>/dev/null || true

@@ -15,3 +15,5 @@ lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/X11/Protocol/.packlist
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/X11/Protocol/Ext
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/X11/Protocol/Connection
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/X11/Protocol
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/X11 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/X11 2>/dev/null || true
