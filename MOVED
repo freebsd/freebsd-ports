@@ -1047,5 +1047,3 @@ net/papaya||2004-04-19|removed broken port
 www/scoop||2004-04-19|removed port with broken dependencies
 math/R-letter|math/R-project|2004-04-20|renamed
 math/R-a4|math/R-project|2004-04-20|slave port removed
-irc/pure-xemacs-devel-mule|irc/pure-xemacs21-mule|2004-04-21|was for xemacs-21.4
-irc/irchat-pj-xemacs-devel-mule|irc/irchat-pj-xemacs21-mule|2004-04-21|was for xemacs-21.4
