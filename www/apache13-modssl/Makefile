@@ -53,7 +53,7 @@ VERSION_MODSSL=	2.8.10
 
 USE_PERL5=	yes
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	--prefix=${PREFIX} \
+CONFIGURE_ARGS+=--prefix=${PREFIX} \
 		--server-uid=www \
 		--server-gid=www \
 		--with-perl=${PERL} \
