@@ -6,16 +6,16 @@
 #
 
 PORTNAME=	ircservices
-PATCHLEVEL=	22
 PORTVERSION=	5.0.${PATCHLEVEL}
-PORTREVISION=	1
 CATEGORIES=	irc
 MASTER_SITES=	ftp://ftp.ircservices.za.net/pub/ircservices/ \
 		ftp://ftp.esper.net/ircservices/
-PATCH_SITES=	${MASTER_SITES}
 DISTNAME=	${PORTNAME}-5.0.0
+
+PATCHLEVEL=	23
+PATCH_SITES=	${MASTER_SITES}
 PATCHFILES!=	/usr/bin/jot -s " " -w ${DISTNAME:C/[0-9]*$//}%d.diff.gz  \
-                        ${PATCHLEVEL} 1 ${PATCHLEVEL}
+			${PATCHLEVEL} 1 ${PATCHLEVEL}
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	ale@FreeBSD.org
@@ -27,13 +27,7 @@ USE_GMAKE=	yes
 
 DIST_SUBDIR=	${PORTNAME}
 
-CONFIGURE_ARGS=	-prefix ${PREFIX} -cflags "${CFLAGS}" -cc "${CC}"
-
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "amd64" || ${ARCH} == "ia64"
-BROKEN=		"Does not compile on amd64 or ia64 (missing -fPIC)"
-.endif
+CONFIGURE_ARGS=	-prefix ${PREFIX} -cflags "${CFLAGS} -fPIC" -cc "${CC}"
 
 post-install:
 	@${ECHO_CMD} "Installing ${PREFIX}/etc/rc.d/ircservices.sh.sample startup file."
@@ -44,4 +38,4 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/docs/*.html ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
