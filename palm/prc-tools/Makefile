@@ -16,10 +16,14 @@ DISTFILES=	${DISTNAME}.tar.gz \
 		binutils-2.12.1.tar.bz2 gdb-5.0.tar.bz2 gcc-2.95.3.tar.bz2
 EXTRACT_ONLY=	binutils-2.12.1.tar.bz2 gdb-5.0.tar.bz2 gcc-2.95.3.tar.bz2
 
-MAINTAINER=	linimon@lonesome.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=		Collection of tools supporting C and C++ programming for Palm OS
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/autoheader:${PORTSDIR}/devel/autoconf
+
+# it is unknown whether it could actually be made to work elsewhere,
+# but right now it does not.
+ONLY_FOR_ARCHS=	i386
 
 USE_BZIP2=	YES
 USE_BISON=	YES
