@@ -1,6 +1,7 @@
 # $FreeBSD$
 #
 
+    SUBDIR += coldsync
     SUBDIR += gnomepilot
     SUBDIR += imgvtopgm
     SUBDIR += isilo
