@@ -1,0 +1,11 @@
+--- snprintfv/snprintfv/Makefile.in.orig	Mon Mar 12 01:31:49 2001
++++ snprintfv/snprintfv/Makefile.in	Mon Mar 12 01:31:59 2001
+@@ -43,7 +43,7 @@
+ AUTOMAKE = @AUTOMAKE@
+ AUTOHEADER = @AUTOHEADER@
+ 
+-INSTALL = @INSTALL@
++INSTALL = /usr/bin/install -c -o root -g wheel
+ INSTALL_PROGRAM = @INSTALL_PROGRAM@ $(AM_INSTALL_PROGRAM_FLAGS)
+ INSTALL_DATA = @INSTALL_DATA@
+ INSTALL_SCRIPT = @INSTALL_SCRIPT@

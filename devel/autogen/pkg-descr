@@ -1,0 +1,17 @@
+AutoGen is a tool designed for generating program files that contain
+repetitive text with varied substitutions. Its goal is to simplify the
+maintenance of programs that contain large amounts of repetitious text.
+This is especially valuable if there are several blocks of such text that
+must be kept synchronized. 
+
+One common example is the problem of maintaining the code required for
+processing program options. Processing options requires a minimum of four
+different constructs be kept in proper order in different places in your
+program. You need at least: 
+
+   1. The flag character in the flag string, 
+   2. code to process the flag when it is encountered, 
+   3. a global state variable or two, and 
+   4. a line in the usage text. 
+
+WWW: http://autogen.sourceforge.net/

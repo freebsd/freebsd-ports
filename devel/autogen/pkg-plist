@@ -1,0 +1,30 @@
+bin/autogen
+bin/autoopts-config
+bin/columns
+bin/getdefs
+include/options.h
+@unexec install-info --delete %D/info/autogen.info %D/info/dir
+@unexec install-info --delete %D/info/snprintfv.info %D/info/dir
+info/autogen.info
+info/snprintfv.info
+@exec install-info %D/info/autogen.info %D/info/dir
+@exec install-info %D/info/snprintfv.info %D/info/dir
+lib/libguileopts.a
+lib/libguileopts.so
+lib/libguileopts.so.0
+lib/libopts.a
+lib/libopts.so
+lib/libopts.so.9
+lib/libsnprintfv.a
+share/aclocal/autoopts.m4
+share/autogen/aginfo.tpl
+share/autogen/agman1.tpl
+share/autogen/fsm.tpl
+share/autogen/optcode.tpl
+share/autogen/opthead.tpl
+share/autogen/options.tpl
+share/autogen/optlib.tpl
+share/autogen/optmain.tpl
+share/autogen/schemedef.scm
+share/autogen/stdoptions.def
+@dirrm share/autogen

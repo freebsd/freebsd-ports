@@ -1,0 +1,11 @@
+--- autoopts/Makefile.in.orig	Mon Mar 12 00:03:38 2001
++++ autoopts/Makefile.in	Mon Mar 12 00:04:02 2001
+@@ -101,7 +101,7 @@
+ 
+ MAINTAINERCLEANFILES = Makefile.in
+ 
+-INCLUDES = -I$(top_srcdir)/snprintfv -I$(top_srcdir) 		-I$(top_builddir)/snprintfv -I$(top_builddir) -I.
++INCLUDES = -I$(top_srcdir)/snprintfv -I$(top_srcdir) 		-I$(top_builddir)/snprintfv -I$(top_builddir) -I. `guile-config compile`
+ 
+ 
+ pkgdata_DATA =          aginfo.tpl    agman1.tpl    optcode.tpl   opthead.tpl   options.tpl          optlib.tpl    optmain.tpl   stdoptions.def
