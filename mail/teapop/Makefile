@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	teapop
-PORTVERSION= 	0.26
+PORTVERSION= 	0.27
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.toontown.org/pub/teapop/ \
 		http://www.toontown.org/pub/teapop/
-DISTNAME=	${PORTNAME}-latest
 
 MAINTAINER=	jim@FreeBSD.org
 
@@ -18,7 +17,10 @@ MAINTAINER=	jim@FreeBSD.org
 LIB_DEPENDS=	pq.2:${PORTSDIR}/databases/postgresql7
 .endif
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+.if defined(WITH_MYSQL)
+LIB_DEPENDS=	mysqlclient.6:${PORTSDIR}/databases/mysql322-client
+.endif
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=		--enable-flock
 
@@ -32,6 +34,10 @@ CONFIGURE_ARGS+=	--disable-vpop
 
 .if defined(WITH_PGSQL)
 CONFIGURE_ARGS+=	--with-pgsql=${PREFIX}/pgsql
+.endif
+
+.if defined(WITH_MYSQL)
+CONFIGURE_ARGS+=	--with-mysql=${PREFIX}
 .endif
 
 MAN8=		teapop.8
