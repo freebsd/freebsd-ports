@@ -43,8 +43,8 @@ MAN3=	RkCloseRoma.3 RkCvtEuc.3 RkCvtHan.3 RkCvtHira.3 RkCvtKana.3 \
 MANCOMPRESSED=	no
 XFREE86_HTML_MAN=	no
 
-MLINKS=		uilibs.3 XKanjiControl.3  uilibs.3 XLookupKanjiString.3 \
-		uilibs.3 jrKanjiControl.3  uilibs.3 jrKanjiString.3
+MLINKS=		uilib.3 XKanjiControl.3  uilib.3 XLookupKanjiString.3 \
+		uilib.3 jrKanjiControl.3  uilib.3 jrKanjiString.3
 
 STARTUP_SCRIPT=	${PREFIX}/etc/rc.d/canna.sh
 
