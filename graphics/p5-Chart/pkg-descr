@@ -1,0 +1,11 @@
+This module is an attempt to build a general purpose graphing module
+that is easily modified and expanded. I borrowed most of the API from
+Martien Verbruggen's GIFgraph module. I liked most of GIFgraph, but I
+thought it was to difficult to modify, and it was missing a few things
+that I needed, most notably legends. So I decided to write a new module
+from scratch, and I've designed it from the bottom up to be easy to
+modify. Like GIFgraph, Chart::* uses Lincoln Stein's GD module for all
+of its graphics primitives calls.
+
+- Vanilla
+vanilla@FreeBSD.ORG
