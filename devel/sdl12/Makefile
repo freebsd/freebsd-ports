@@ -41,7 +41,8 @@ DISPLAY_MSG=	${DO_NADA}
 USE_XLIB=	yes
 .endif
 .if !defined(WITHOUT_ESOUND)
-USE_ESOUND=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	esound
 .endif
 .if defined(WITHOUT_GL)
 CONFIGURE_ARGS+=--disable-video-opengl

@@ -18,7 +18,8 @@ BROKEN=		"Does not build"
 
 LIB_DEPENDS=	gd.2:${PORTSDIR}/graphics/gd
 
-USE_GNOMELIBS=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gnomelibs
 USE_XLIB=	yes
 USE_PYTHON=	yes
 USE_LIBTOOL=	yes

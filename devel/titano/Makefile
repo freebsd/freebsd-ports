@@ -19,7 +19,8 @@ LIB_DEPENDS=	gtkeditor.0:${PORTSDIR}/x11-toolkits/libgtkeditor
 WRKSRC=		${WRKDIR}/${DISTNAME:S/b//}
 
 USE_REINPLACE=	yes
-USE_GNOMELIBS=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gnomelibs
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes

@@ -34,7 +34,8 @@ BROKEN=		"Needs someone to test with Qt2 support as Qt1 is gone."
 INSTALLS_SHLIB=	yes
 USE_NEWGCC=	yes
 USE_GMAKE=	yes
-USE_GTK=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gtk12
 USE_AUTOCONF=	yes
 CONFIGURE_ARGS=	--with-qt --with-gtk --with-tcl --disable-mini-stl \
 		--enable-static --enable-shared

@@ -21,7 +21,8 @@ LIB_DEPENDS=	gal:${PORTSDIR}/x11-toolkits/gal \
 BROKEN=	"Needs more work on the dependency chain"
 NO_BUILD=	yes
 
-USE_GNOMELIBS=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gnomelibs
 USE_PYTHON=	yes
 
 do-install:	# empty
