@@ -9,7 +9,9 @@ bin/esdmon
 bin/esdplay
 bin/esdrec
 bin/esdsample
-etc/esd.conf
+@unexec if cmp -s %D/etc/esd.conf %D/etc/esd.conf.default; then rm -f %D/etc/esd.conf; fi
+etc/esd.conf.default
+@exec [ -f %B/esd.conf ] || cp %B/%f %B/esd.conf
 include/esd.h
 lib/libesd.a
 lib/libesd.so
