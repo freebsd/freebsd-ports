@@ -1,14 +1,33 @@
---- sys/freebsd/Makefile.orig	Fri Sep 18 05:19:27 1998
-+++ sys/freebsd/Makefile	Tue Nov 24 14:12:32 1998
-@@ -1,6 +1,6 @@
+--- sys/freebsd/Makefile.orig	Thu Feb  4 08:38:12 1999
++++ sys/freebsd/Makefile	Mon Mar  8 09:24:52 1999
+@@ -1,9 +1,14 @@
  # FreeBSD specific defines, passed to subdirectories.
+-#DEFS= -DBSD4_4 -DSENDFILE_FLAVOR_BSD
  DEFS=	-DBSD4_4
 -OPTOPTS=	-O2
++.if defined(USE_SENDFILE)
++DEFS+=	-DSENDFILE_FLAVOR_BSD
++.endif
++.if defined(USE_CNID)
++DEFS+=	-DUSE_CNID
++.endif
 +#OPTOPTS=	-O2
  CC=	gcc
- INSTALL=	install
+-INSTALL=	install
++#INSTALL=	install
  AFPLIBS=	-lcrypt -lrpcsvc
-@@ -23,7 +23,8 @@
+ ADDLIBS=	
+ 
+@@ -11,7 +16,7 @@
+ 
+ oops:
+ 	@echo "Read README again.  Don't type 'make' here."
+-	@exit 1
++	@exit 64
+ 
+ all:	${ALL}
+ 
+@@ -28,7 +33,8 @@
  FRC:
  
  install :
@@ -18,7 +37,7 @@
  	for i in ${ALL}; \
  	    do (cd $$i; ${MAKE} ${MFLAGS} CC="${CC}" \
  		ADDLIBS="${ADDLIBS}" DEFS="${DEFS}" OPTOPTS="${OPTOPTS}" \
-@@ -32,17 +33,21 @@
+@@ -37,17 +43,21 @@
  		AFSDIR="${AFSDIR}" KRBDIR="${KRBDIR}" AFPLIBS="${AFPLIBS}" \
  		INSTALL="${INSTALL}" $@); \
  	done

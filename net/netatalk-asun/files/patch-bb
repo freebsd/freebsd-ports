@@ -6,6 +6,6 @@
  is typically started at boot time, out of
 -.B /etc/rc.
 +.B :ETCDIR:/rc.d/netatalk.sh .
- It first reads from it's configuration file,
+ It first reads from its configuration file,
  .BR :ETCDIR:/atalkd.conf .
  If there is no configuration file,

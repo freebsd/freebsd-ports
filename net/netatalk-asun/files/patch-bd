@@ -1,6 +1,6 @@
---- config/afpd.conf.orig	Sat May  2 05:01:11 1998
-+++ config/afpd.conf	Tue Nov 24 04:05:13 1998
-@@ -1,33 +1,59 @@
+--- config/afpd.conf.orig	Thu Dec 17 19:39:06 1998
++++ config/afpd.conf	Mon Mar  1 23:51:24 1999
+@@ -1,35 +1,63 @@
  #
 -# Format of lines in this file:
 +# CONFIGURATION FOR AFPD
@@ -28,6 +28,8 @@
 -#	        address (binds a server to a specific address)
 -#		port (has to be specified if more than one tcp server
 -#                    is to be served)
+-#               tickleval (sets the tickle interval in seconds)
+-#		uampath, nlspath
 -#		
 -# Order of precedence:
 -#	options in afpd.conf > command-line options > built-in options
@@ -54,7 +56,7 @@
 +#     -[no]randnum
 +#     -[no]rand2num  [Don't] Allow Random Number or Two-Way Random Number
 +#                    exchange for transmitting the password (see below)
-+#     -authall       Allow all of the above
++#     -authall       Allow cleartxt and guest
 +#
 +#   Password Options:
 +#     -[no]savepassword   [Don't] Allow clients to save password locally
@@ -72,6 +74,10 @@
 +#                         (same as -u on command line)
 +#     -[no]uservol        [Don't] Read the user's volume file
 +#
++#     -nlspath            Prepend this path to each code page filename
++#                         in volume options (see afpd.8, default 
++#                         :RESDIR:/nls/netatalk).
++#
 +#   Miscellaneous:
 +#     -guestname "user"   Specifies the user name for the guest login
 +#                         (default "nobody", same as -g on command line)
@@ -87,7 +93,7 @@
  # Some examples:
  #
  #	The simplest case is to not have an afpd.conf.
-@@ -45,4 +71,3 @@
+@@ -47,4 +75,3 @@
  #		"Guest Volume" -nocleartxt -loginmesg "Welcome guest!"
  #		"User Volume" -noguest -port 12000
  #		"special" -notcp -defaultvol <path> -systemvol <path>

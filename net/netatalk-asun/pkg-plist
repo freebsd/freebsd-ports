@@ -22,6 +22,7 @@ include/atalk/aep.h
 include/atalk/afp.h
 include/atalk/asp.h
 include/atalk/atp.h
+include/atalk/cnid.h
 include/atalk/compat.h
 include/atalk/ddp.h
 include/atalk/dsi.h
