@@ -27,7 +27,8 @@ PLIST_SUB=	GNOME_PILOT="@comment "
 USE_X_PREFIX=	yes
 USE_BISON=	yes
 USE_GMAKE=	yes
-USE_GNOME=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gnomeprefix gnomehack gnomelibs libcapplet
 USE_LIBTOOL=	yes
 
 CPPFLAGS=	-I${LOCALBASE}/include
@@ -50,14 +51,15 @@ pre-extract:
 .endif
 	@${ECHO_MSG}
 
-pre-patch:
-	@${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
+post-patch:
+	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
 		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
-	@find ${WRKSRC} -name "Makefile.in*" | xargs ${PERL} -pi -e \
-		's|\$\(datadir\)/gnome/|\$\(datadir\)/|g ; \
-		 s|\$\(datadir\)/locale|\$\(prefix\)/share/locale|g'
 .for file in vcc.y vobject.c
-	@${PERL} -pi -e "s/malloc.h/stdlib.h/g" ${WRKSRC}/libversit/${file}
+	@${REINPLACE_CMD} -e "s/malloc[.]h/stdlib.h/g" ${WRKSRC}/libversit/${file}
 .endfor
+
+pre-install:
+	${MKDIR} ${PREFIX}//share/gnome/help/gnomecard/C \
+		${PREFIX}/share/gnome/help/gnomecard/eu
 
 .include <bsd.port.mk>
