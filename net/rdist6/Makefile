@@ -3,7 +3,7 @@
 # Date created:		19 August 1995
 # Whom:			peter
 #
-# $Id: Makefile,v 1.15 1998/10/14 00:10:17 jseger Exp $
+# $Id: Makefile,v 1.16 1998/11/11 05:37:29 asami Exp $
 #
 
 DISTNAME=	rdist-6.1.4
@@ -15,10 +15,6 @@ MASTER_SITES=	http://www.magnicomp.com/download/rdist/ \
 MAINTAINER=	peter@FreeBSD.org
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 300000
-BROKEN=         MOUNT_NFS undeclared
-.endif
 
 # To avoid confusion with /usr/bin/rdist, you may prefer otherwise.
 RDIST_NAME?=	rdist6
