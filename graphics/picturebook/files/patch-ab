@@ -38,31 +38,31 @@
 -  --explode=fname  explode a AVI file into frame.*
 -  -h               show usage
 -
-+	printf("\
-+VAIO PCG-C1XS capture program\
-+Copyright 2000 tridge@linuxcare.com\
-+For the latest version see http://samba.org/picturebook/\
-+\
-+capture <options>\
-+  -o outfile       set output filename\
-+  -q quality       set compressed image quality (1-10  default 8)\
-+  -P               capture as a PPM file\
-+  -V captime       capture an avi video for the specified number of seconds\
-+  -O               turn off camera afterwards\
-+  -4               use 1:4 sub-sampling\
-+  -s               go into \"snap\" mode\
-+  -r rate          set framerate in frames per second\
-+  -j               display input from jogger/buttons etc\
-+  --brightness=n   set brightness\
-+  --contrast=n     set contrast\
-+  --hue=n          set hue\
-+  --color=n        set color\
-+  --sharpness=n    set sharpness\
-+  --agc=n          set agc\
-+  --picture=n      set picture\
-+  --explode=fname  explode a AVI file into frame.*\
-+  -h               show usage\
-+\
++	printf("\n\
++VAIO PCG-C1XS capture program\n\
++Copyright 2000 tridge@linuxcare.com\n\
++For the latest version see http://samba.org/picturebook/\n\
++\n\
++capture <options>\n\
++  -o outfile       set output filename\n\
++  -q quality       set compressed image quality (1-10  default 8)\n\
++  -P               capture as a PPM file\n\
++  -V captime       capture an avi video for the specified number of seconds\n\
++  -O               turn off camera afterwards\n\
++  -4               use 1:4 sub-sampling\n\
++  -s               go into \"snap\" mode\n\
++  -r rate          set framerate in frames per second\n\
++  -j               display input from jogger/buttons etc\n\
++  --brightness=n   set brightness\n\
++  --contrast=n     set contrast\n\
++  --hue=n          set hue\n\
++  --color=n        set color\n\
++  --sharpness=n    set sharpness\n\
++  --agc=n          set agc\n\
++  --picture=n      set picture\n\
++  --explode=fname  explode a AVI file into frame.*\n\
++  -h               show usage\n\
++\n\
  ");
  
  }
