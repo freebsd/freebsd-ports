@@ -142,6 +142,7 @@ include/php/ext/xml/expat/ascii.h
 include/php/ext/xml/expat/asciitab.h
 include/php/ext/xml/expat/expat.h
 include/php/ext/xml/expat/iasciitab.h
+include/php/ext/xml/expat/internal.h
 include/php/ext/xml/expat/latin1tab.h
 include/php/ext/xml/expat/nametab.h
 include/php/ext/xml/expat/utf8tab.h

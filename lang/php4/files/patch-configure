@@ -1,6 +1,6 @@
---- configure.orig	Thu Jun 19 00:06:29 2003
-+++ configure	Sat Jun 28 16:45:44 2003
-@@ -597,6 +597,8 @@
+--- configure.orig	Thu Jul 31 00:51:41 2003
++++ configure	Thu Jul 31 08:56:35 2003
+@@ -616,6 +616,8 @@
  ac_help="$ac_help
    --enable-gd-jis-conv      GD: Enable JIS-mapped Japanese font support."
  ac_help="$ac_help
@@ -9,7 +9,7 @@
    --with-gettext[=DIR]    Include GNU gettext support."
  ac_help="$ac_help
    --with-gmp              Include GNU MP support"
-@@ -28224,6 +28226,31 @@
+@@ -29141,6 +29143,31 @@
  
  
  
@@ -41,7 +41,7 @@
  
  
  
-@@ -28248,7 +28275,7 @@
+@@ -29293,7 +29320,7 @@
                   libgd/gd_io_file.c libgd/gd_ss.c libgd/gd_io_ss.c libgd/gd_png.c libgd/gd_jpeg.c \
                   libgd/gdxpm.c libgd/gdfontt.c libgd/gdfonts.c libgd/gdfontmb.c libgd/gdfontl.c \
                   libgd/gdfontg.c libgd/gdtables.c libgd/gdft.c libgd/gdcache.c libgd/gdkanji.c \
@@ -50,7 +50,7 @@
                   libgd/xbm.c"
  
    for ac_func in fabsf floorf
-@@ -28323,6 +28350,11 @@
+@@ -29368,6 +29395,11 @@
    fi
  
    
@@ -62,7 +62,7 @@
    if test "$PHP_JPEG_DIR" != "no"; then
  
      for i in /usr /usr/local $PHP_JPEG_DIR; do
-@@ -29724,6 +29756,9 @@
+@@ -31077,6 +31109,9 @@
  
    cat >> confdefs.h <<\EOF
  #define HAVE_GD_BUNDLED 1
@@ -72,7 +72,7 @@
  EOF
  
    cat >> confdefs.h <<\EOF
-@@ -29774,6 +29809,14 @@
+@@ -31127,6 +31162,14 @@
      GDLIB_CFLAGS="$GDLIB_CFLAGS -DJISX0208"
    fi
  
@@ -87,10 +87,10 @@
  else
  
   if test "$PHP_GD" != "no"; then
-@@ -32275,6 +32318,60 @@
-   
-   save_old_LDFLAGS=$LDFLAGS
-   LDFLAGS=" -L$GD_LIB $GD_SHARED_LIBADD  $LDFLAGS"
+@@ -35474,6 +35517,137 @@
+     esac
+   done
+ 
 +  echo $ac_n "checking for gdImageGifAnimBegin in -lgd""... $ac_c" 1>&6
 +echo "configure:32250: checking for gdImageGifAnimBegin in -lgd" >&5
 +ac_lib_var=`echo gd'_'gdImageGifAnimBegin | sed 'y%./+-%__p_%'`
@@ -126,32 +126,109 @@
 +fi
 +if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
 +  echo "$ac_t""yes" 1>&6
-+  
++
 +    LDFLAGS=$save_old_LDFLAGS
++    ext_shared=$save_ext_shared
 +    cat >> confdefs.h <<\EOF
 +#define HAVE_GD_GIF_ANIM 1
 +EOF
 +
-+  
++
 +else
 +  echo "$ac_t""no" 1>&6
 +
 +    LDFLAGS=$save_old_LDFLAGS
++    ext_shared=$save_ext_shared
 +    unset ac_cv_func_gd
-+    
-+  
++
++
 +fi
 +
-+  
++
 +  save_old_LDFLAGS=$LDFLAGS
-+  LDFLAGS=" -L$GD_LIB $GD_SHARED_LIBADD  $LDFLAGS"
++  ac_stuff=" -L$GD_LIB $GD_SHARED_LIBADD "
++
++  save_ext_shared=$ext_shared
++  ext_shared=yes
++
++  for ac_i in $ac_stuff; do
++    case $ac_i in
++    -l*)
++      ac_ii=`echo $ac_i|cut -c 3-`
++
++
++  case $ac_ii in
++  c|c_r|pthread*) ;;
++  *)
++    if test "$ext_shared" = "yes"; then
++        LDFLAGS="$LDFLAGS -l$ac_ii"
++    else
++
++
++  case $ac_ii in
++  c|c_r|pthread*) ;;
++  *)
++      LIBS="$LIBS -l$ac_ii"
++   ;;
++  esac
++
++
++    fi
++   ;;
++  esac
++
++
++    ;;
++    -L*)
++      ac_ii=`echo $ac_i|cut -c 3-`
++
++  if test "$ac_ii" != "/usr/lib"; then
++
++  if test -z "$ac_ii" || echo "$ac_ii" | grep '^/' >/dev/null ; then
++    ai_p=$ac_ii
++  else
++
++    ep_dir="`echo $ac_ii|sed 's%/*[^/][^/]*/*$%%'`"
++
++    ep_realdir="`(cd \"$ep_dir\" && pwd)`"
++    ai_p="$ep_realdir/`basename \"$ac_ii\"`"
++  fi
++
++
++      if test "$ext_shared" = "yes"; then
++        LDFLAGS="$ld_runpath_switch$ai_p -L$ai_p $LDFLAGS"
++      else
++
++
++
++  unique=`echo $ai_p|sed 's/[^a-zA-Z0-9]/_/g'`
++
++  cmd="echo $ac_n \"\$LIBPATH$unique$ac_c\""
++  if test -n "$unique" && test "`eval $cmd`" = "" ; then
++    eval "LIBPATH$unique=set"
++
++    test -n "$ld_runpath_switch" && LDFLAGS="$LDFLAGS $ld_runpath_switch$ai_p"
++    LDFLAGS="$LDFLAGS -L$ai_p"
++    PHP_RPATHS="$PHP_RPATHS $ai_p"
++
++  fi
++
++
++      fi
++
++  fi
++
++    ;;
++    esac
++  done
++
    echo $ac_n "checking for gdCacheCreate in -lgd""... $ac_c" 1>&6
- echo "configure:32280: checking for gdCacheCreate in -lgd" >&5
+ echo "configure:35479: checking for gdCacheCreate in -lgd" >&5
  ac_lib_var=`echo gd'_'gdCacheCreate | sed 'y%./+-%__p_%'`
-@@ -54325,8 +54422,8 @@
+@@ -58977,8 +59151,8 @@
    
    echo $ac_n "checking Oracle version""... $ac_c" 1>&6
- echo "configure:54328: checking Oracle version" >&5
+ echo "configure:58980: checking Oracle version" >&5
 -  if test -s "$ORACLE_DIR/orainst/unix.rgs"; then
 -  	ORACLE_VERSION=`grep '"ocommon"' $ORACLE_DIR/orainst/unix.rgs | sed 's/  */:/g' | cut -d: -f 6 | cut -c 2-4`
 +  if test -s "$ORACLE_DIR/ocommon/install/partial.prd"; then
@@ -159,7 +236,7 @@
  	test -z "$ORACLE_VERSION" && ORACLE_VERSION=7.3
    elif test -f $ORACLE_DIR/lib/libclntsh.$SHLIB_SUFFIX_NAME.9.0; then
      ORACLE_VERSION=9.0
-@@ -56589,6 +56686,102 @@
+@@ -60270,6 +60444,102 @@
  	    
  
    if test "$ext_shared" = "yes"; then
@@ -262,7 +339,7 @@
      ORACLE_SHARED_LIBADD="-lnlsrtl3 $ORACLE_SHARED_LIBADD"
      if test -n "$ORACLE_DIR/lib"; then
        
-@@ -71130,29 +71323,6 @@
+@@ -76670,29 +76940,6 @@
    else
      
    
@@ -292,7 +369,7 @@
    case ct in
    c|c_r|pthread*) ;;
    *) 
-@@ -71176,52 +71346,7 @@
+@@ -76716,52 +76963,7 @@
  
      
    
@@ -346,7 +423,7 @@
    
      
    save_old_LDFLAGS=$LDFLAGS
-@@ -71291,37 +71416,6 @@
+@@ -76907,38 +77109,6 @@
  
      
    
@@ -354,6 +431,7 @@
 -  echo "$ac_t""no" 1>&6
 -
 -    LDFLAGS=$save_old_LDFLAGS
+-    ext_shared=$save_ext_shared
 -    unset ac_cv_func_tcl
 -     
 -      
@@ -384,7 +462,7 @@
  fi
  
    
-@@ -84252,10 +84346,7 @@
+@@ -90711,10 +90881,7 @@
  CXXFLAGS="$CXXFLAGS $standard_libtool_flag"
  
  all_targets='$(OVERALL_TARGET) $(PHP_MODULES) $(PHP_CLI_TARGET)'
