@@ -67,11 +67,18 @@ BROKEN=		"Kernel source files required"
 .include "${WRKDIRPREFIX}${.CURDIR}/work/Makefile.inc.net"
 .endif
 
+.if ${OSVERSION} < 500023
+VMNET1_MINOR=  0x00010001
+.else
+VMNET1_MINOR=  0x00800001
+.endif
+
 SCRIPTS_ENV+=	LINUXBASE="${LINUXBASE}" \
 		VMNET_HOST_IP="${VMNET_HOST_IP}" \
-		VMNET_NETMASK="${VMNET_NETMASK}"
+		VMNET_NETMASK="${VMNET_NETMASK}" \
+		VMNET1_MINOR="${VMNET1_MINOR}"
 MAKE_ARGS=	KMODDIR="${VMDIR}/lib/modules"
-PLIST_SUB=	LINUXBASE="${LINUXBASE}"
+PLIST_SUB=	LINUXBASE="${LINUXBASE}" VMNET1_MINOR="${VMNET1_MINOR}"
 
 post-extract:
 .for m in ${MODULES}
@@ -125,6 +132,7 @@ post-patch:
 	${CAT} ${FILESDIR}/hostif_c.patch | (cd ${WRKSRC} && patch) > /dev/null 2>&1
 	${CAT} ${FILESDIR}/vm_types_h.patch | (cd ${WRKSRC} && patch) > /dev/null 2>&1
 .endif
+	${CAT} ${FILESDIR}/vmnet-only+Makefile.patch | (cd ${WRKSRC} && patch) > /dev/null 2>&1
 
 setoptions:
 	${SED} 	-e 's;@@PREFIX@@;${PREFIX};' \
@@ -182,10 +190,6 @@ pre-install: setoptions
 
 post-install:
 	${LN} -sf ${PREFIX}/etc/vmware /etc/
-.if ${OSVERSION} >= 500100
-	${RM} -f ${LINUXBASE}/dev/vmnet1
-	${LN} -sf /dev/vmnet1 ${LINUXBASE}/dev/vmnet1
-.endif
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>

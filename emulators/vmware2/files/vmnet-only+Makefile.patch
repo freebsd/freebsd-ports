@@ -1,0 +1,18 @@
+--- vmnet-only/freebsd/Makefile.orig	Sun Apr 13 11:38:03 2003
++++ vmnet-only/freebsd/Makefile	Sun Apr 13 11:38:47 2003
+@@ -63,15 +63,5 @@
+ 	echo -n >/dev/${IFACE}
+ 	-ifconfig ${IFACE} inet ${IFADDR} netmask 255.255.255.0
+ 
+-afterinstall: device
+-
+-device:
+-	rm -f /dev/${DEVNAME}* 
+-	ln -s /dev/${DEVNAME}0 /dev/${DEVNAME}
+-	for d in ${NDEVICES}; do \
+-	mknod /dev/${DEVNAME}$$d c ${CDEV_MAJOR} `expr 65536 + $$d`; \
+-	done
+-
+-
+ .include <bsd.kmod.mk>
+ 
