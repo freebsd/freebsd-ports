@@ -3,7 +3,7 @@
 # Date created:				4 May 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.2 1998/07/23 15:37:05 asami Exp $
+# $Id: Makefile,v 1.3 1998/07/27 00:33:11 steve Exp $
 #
 
 DISTNAME=	EZWGL-1.39
@@ -143,8 +143,8 @@ do-install:
 	@ ${INSTALL_DATA} ${WRKSRC}/include/EZ.h ${PREFIX}/include
 	@ ${INSTALL_DATA} ${WRKSRC}/lib/libEZ.a ${PREFIX}/lib
 	@ ${INSTALL_DATA} ${WRKSRC}/lib/libEZ.so.1.3 ${PREFIX}/lib
-	@ ln -s ${PREFIX}/lib/libEZ.so.1.3 ${PREFIX}/lib/libEZ.so
-	@ ln -s ${PREFIX}/lib/libEZ.so.1.3 ${PREFIX}/lib/libEZ.so.1
+	@ ln -sf ${PREFIX}/lib/libEZ.so.1.3 ${PREFIX}/lib/libEZ.so
+	@ ln -sf ${PREFIX}/lib/libEZ.so.1.3 ${PREFIX}/lib/libEZ.so.1
 .for file in ${MAN3}
 	@ ${INSTALL_MAN} ${WRKSRC}/man3/${file} ${PREFIX}/man/man3
 	@ ${RM} ${WRKSRC}/man3/${file}
@@ -248,7 +248,7 @@ do-install:
 	EZ_WorkAreaInsertItemAfter.3 EZ_WorkAreaInsertItemBefore.3 \
 	EZ_WorkAreaInsertItemUsingIdx.3 EZ_WorkAreaRearrange.3 \
 	EZ_WorkAreaSelectItem.3 EZ_WorkAreaSelectItemUsingIdx.3 EZ_ZeroMatrix.3
-	@ cd ${WRKSRC}/man3; ln -s ${PREFIX}/man/man3/`ls -l ${file} | ${AWK} '{print $$11}'`.gz ${PREFIX}/man/man3/${file}.gz
+	@ cd ${WRKSRC}/man3; ln -sf ${PREFIX}/man/man3/`ls -l ${file} | ${AWK} '{print $$11}'`.gz ${PREFIX}/man/man3/${file}.gz
 	@ ${RM} ${WRKSRC}/man3/${file}
 .endfor
 	@ ${MKDIR} ${PREFIX}/share/examples/EZ
@@ -259,7 +259,7 @@ do-install:
 .if !defined(NOPORTDOCS)
 	@ ${MKDIR} ${PREFIX}/share/doc/EZ
 	@ ${INSTALL_DATA} ${WRKSRC}/LICENSE ${PREFIX}/share/doc/EZ
-	@ cd ${WRKSRC}; tar cf - html ps | (cd ${PREFIX}/share/doc/EZ; tar xf - )
+	@ cd ${WRKSRC}; tar cf - html ps | (cd ${PREFIX}/share/doc/EZ; tar --unlink -xf - )
 .endif
 
 .include <bsd.port.mk>
