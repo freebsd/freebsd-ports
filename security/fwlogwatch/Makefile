@@ -8,10 +8,11 @@
 
 PORTNAME=	fwlogwatch
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.kybs.de/boris/sw/
 
-MAINTAINER=	jim@corebsd.or.id
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A packet filter and firewall log analyzer
 
 USE_GETTEXT=	yes
