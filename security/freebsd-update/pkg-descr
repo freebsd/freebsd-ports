@@ -1,0 +1,7 @@
+This is the client half of the FreeBSD Update system; it fetches and
+applies binary security updates.
+
+WWW: http://www.daemonology.net/freebsd-update/
+
+- Colin Percival
+cperciva@daemonology.net
