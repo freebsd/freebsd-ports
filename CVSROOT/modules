@@ -3353,6 +3353,7 @@ kaffe		ports/java/kaffe
 kallery		ports/graphics/kallery
 kannel		ports/www/kannel
 kappdock	ports/x11-wm/kappdock
+kaptain		ports/devel/kaptain
 kaskade		ports/cad/kaskade
 kawa		ports/lang/kawa
 kb2mb2		ports/x11/kb2mb2
