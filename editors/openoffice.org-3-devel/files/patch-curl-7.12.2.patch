@@ -1,0 +1,86 @@
+#i 43986#
+
+version number of curl for FreeBSD is somewhat odd.
+we need libcurl.so.3.0.0 not libcurl.so.3
+# ls unxfbsd.pro/lib/
+libcurl.so*             libcurl.so.3*
+after applying this pach
+# ls unxfbsd.pro/lib/
+libcurl.so*             libcurl.so.3.0.0*
+
+Index: curl-7.12.2.patch
+===================================================================
+RCS file: /cvs/external/curl/curl-7.12.2.patch,v
+retrieving revision 1.4
+diff -u -r1.4 curl-7.12.2.patch
+--- curl/curl-7.12.2.patch	27 Jan 2005 11:11:50 -0000	1.4
++++ curl/curl-7.12.2.patch	3 Mar 2005 11:57:27 -0000
+@@ -304,3 +304,68 @@
+      * Check the current list of connections to see if we can
+      * re-use an already existing one or if we have to create a
+      * new one.
++*** misc/curl-7.12.2/ltmain.sh	Mon Aug  9 20:12:17 2004
++--- misc/build/curl-7.12.2/ltmain.sh	Thu Mar  3 20:52:09 2005
++***************
++*** 2915,2926 ****
++  	  # which has an extra 1 added just for fun
++  	  #
++  	  case $version_type in
++! 	  darwin|linux|osf|windows)
++  	    current=`expr $number_major + $number_minor`
++  	    age="$number_minor"
++  	    revision="$number_revision"
++  	    ;;
++! 	  freebsd-aout|freebsd-elf|sunos)
++  	    current="$number_major"
++  	    revision="$number_minor"
++  	    age="0"
++--- 2915,2926 ----
++  	  # which has an extra 1 added just for fun
++  	  #
++  	  case $version_type in
++! 	  darwin|linux|osf|windows|freebsd-aout|freebsd-elf)
++  	    current=`expr $number_major + $number_minor`
++  	    age="$number_minor"
++  	    revision="$number_revision"
++  	    ;;
++! 	  sunos)
++  	    current="$number_major"
++  	    revision="$number_minor"
++  	    age="0"
++***************
++*** 2990,3005 ****
++  	  verstring="-compatibility_version $minor_current -current_version $minor_current.$revision"
++  	  ;;
++  
++- 	freebsd-aout)
++- 	  major=".$current"
++- 	  versuffix=".$current.$revision";
++- 	  ;;
++- 
++- 	freebsd-elf)
++- 	  major=".$current"
++- 	  versuffix=".$current";
++- 	  ;;
++- 
++  	irix | nonstopux)
++  	  major=`expr $current - $age + 1`
++  
++--- 2990,2995 ----
++***************
++*** 3022,3028 ****
++  	  versuffix="$major.$revision"
++  	  ;;
++  
++! 	linux)
++  	  major=.`expr $current - $age`
++  	  versuffix="$major.$age.$revision"
++  	  ;;
++--- 3012,3018 ----
++  	  versuffix="$major.$revision"
++  	  ;;
++  
++! 	linux|freebsd-aout|freebsd-elf)
++  	  major=.`expr $current - $age`
++  	  versuffix="$major.$age.$revision"
++  	  ;;
