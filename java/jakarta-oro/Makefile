@@ -28,13 +28,13 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/jakarta-oro-${PORTVERSION}.jar ${LOCALBASE}/share/java/classes/jakarta-oro.jar
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	@(cd ${WRKSRC}/doc/api && ${TAR} -c -f - .) \
+	@(cd ${WRKSRC}/docs/api && ${TAR} -c -f - .) \
 		| (cd ${DOCSDIR} && ${TAR} --unlink -x -f -)
 	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR}
 	@cd ${PREFIX} \
-		&& find share/doc/jakarta-oro -type f -print >> ${PLIST}
+		&& ${FIND} share/doc/jakarta-oro -type f -print >> ${PLIST}
 	@cd ${PREFIX} \
-		&& find share/doc/jakarta-oro -type d -print | sort -r | \
+		&& ${FIND} share/doc/jakarta-oro -type d -print | sort -r | \
 		${SED} "s,^,@dirrm ,g" >> ${PLIST}
 .endif
 
