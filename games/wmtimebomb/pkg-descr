@@ -4,3 +4,5 @@ Mine sweeper like game for WindowMaker.
 Usage: wmtimebomb -t <time> -b <bombs> -x <width> -y <height> -s -c -h
 -s will start timebomb with clock in its title
 -c will start timebomb with counter in its title
+
+WWW: http://www.maliwan.org/wmtimebomb.shtml
