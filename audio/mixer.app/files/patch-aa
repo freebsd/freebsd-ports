@@ -1,0 +1,9 @@
+--- Imakefile.bak	Sun Sep 24 01:19:13 2000
++++ Imakefile	Sun Sep 24 01:19:32 2000
+@@ -12,5 +12,5 @@
+ SRCS = Main.cc Mixer.cc Xpm.cc
+ OBJS = Main.o Mixer.o Xpm.o
+ 
+-ComplexProgramTarget(Mixer)
++ComplexProgramTargetNoMan(Mixer)
+ 
