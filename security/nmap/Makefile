@@ -6,7 +6,7 @@
 # $FreeBSD$
 #
 
-PORTNAME=	nmap
+PORTNAME?=	nmap
 PORTVERSION=	2.54.b22
 CATEGORIES=	security
 MASTER_SITES=	http://www.insecure.org/nmap/dist/  \
@@ -27,10 +27,9 @@ CFLAGS+=	-DDLT_RAW=12 # for obsoleted <net/bpf.h>
 .endif
 MAN1=		nmap.1
 
-post-extract:
-	@${RM} -rf ${WRKSRC}/libpcap*
-
+.if !target(post-install)
 post-install:
 	@strip ${PREFIX}/bin/nmap
+.endif
 
 .include <bsd.port.post.mk>
