@@ -12,7 +12,7 @@ MAINTAINER=	girgen@pingpong.net
 
 POSTGRESQL_SUBPORT=	YES
 POSTGRESQL_PORT?=	databases/postgresql7
-.include <${PORTSDIR}/${POSTGRESQL_PORT}/Makefile>
+.include <${.CURDIR}/../../${POSTGRESQL_PORT}/Makefile>
 DISTFILES=	postgresql-docs-${PORTVERSION}${EXTRACT_SUFX}
 .undef GNU_CONFIGURE
 NO_BUILD=	YES
