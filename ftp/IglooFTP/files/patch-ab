@@ -50,7 +50,7 @@
  	@echo "#define COMPILE_BY \"`whoami`\"" >> version.h
  	@echo "#define COMPILE_HOST \"`hostname`\"" >> version.h
 -	@echo "#define GTK_VERSION \"GTK+ `gtk-config --version`\"" >> version.h
-+	@echo "#define GTK_VERSION \"GTK+ `gtk12-config --version`\"" >> version.h
++	@echo "#define GTK_VERSION \"GTK+ `$(GTK_CONFIG) --version`\"" >> version.h
  	@echo "#define CC_VERSION \"`$(CC) -v 2>&1 | tail -1`\"">>version.h
  	@echo "#define CODE_LINES \"`cat *.c *.h | grep -ch -e \"[[:alpha:]|[:punct:]]\"`\"">>version.h
  
