@@ -6,16 +6,16 @@
 #
 
 PORTNAME=	apache
-PKGNAMESUFFIX=	_fp
 PORTVERSION=	1.3.27
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_APACHE_HTTPD} \
 		http://www.freebsd.org/gifs/:powerlogo \
 		http://www.microsoft.com/frontpage/images/:fplogo
+PKGNAMESUFFIX=	_fp
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 DISTFILES=	${APACHE} powerlogo.gif:powerlogo createdwFP.gif:fplogo
 
-MAINTAINER=	hetzels@westbend.net
+MAINTAINER=	freebsd-maintainer@westbend.net
 COMMENT=	The Apache webserver with MS Frontpage Module
 
 #PATCH_SITES=	${MASTER_SITE_APACHE_HTTPD}
