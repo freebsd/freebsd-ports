@@ -58,6 +58,7 @@
     SUBDIR += ghostscript-gnu-cjk
     SUBDIR += ghostscript-gnu-nox11
     SUBDIR += ghostview
+    SUBDIR += gimp-print
     SUBDIR += gnomeprint
     SUBDIR += gp
     SUBDIR += gsfonts
