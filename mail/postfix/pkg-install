@@ -83,6 +83,13 @@ if [ x"$2" = xPRE-INSTALL ]; then
 fi
 
 if [ x"$2" = xPOST-INSTALL ]; then
+        if [ ! -f ${PKG_PREFIX}/etc/postfix/main.cf ]; then
+                cp ${PKG_PREFIX}/etc/postfix/sample-main.cf ${PKG_PREFIX}/etc/postfix/main.cf
+        fi
+        if [ ! -f ${PKG_PREFIX}/etc/postfix/master.cf ]; then
+                cp ${PKG_PREFIX}/etc/postfix/sample-master.cf ${PKG_PREFIX}/etc/postfix/master.cf
+        fi
+
 	sh ${PKG_PREFIX}/etc/postfix/post-install tempdir=/tmp \
 	 config_directory=${PKG_PREFIX}/etc/postfix \
 	 daemon_directory=${PKG_PREFIX}/libexec/postfix \
