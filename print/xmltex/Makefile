@@ -7,7 +7,7 @@
 
 PORTNAME=		xmltex
 PORTVERSION=		1.9
-PORTREVISION=		2
+PORTREVISION=		3
 CATEGORIES=		print
 MASTER_SITES=		ftp://ftp.ctan.org/tex-archive/%SUBDIR%/ \
 			${MASTER_SITE_TEX_CTAN}
@@ -18,11 +18,13 @@ DIST_SUBDIR=		${PORTNAME}
 MAINTAINER=		hrs@FreeBSD.org
 COMMENT=		A non-validating XML parser, written in TeX
 
-BUILD_DEPENDS=		latex:${PORTSDIR}/print/teTeX \
-			${TEXMFLOCAL_LSR}:${PORTSDIR}/print/tex-texmflocal
+BUILD_DEPENDS=		${TEXMFLOCAL_LSR}:${PORTSDIR}/print/tex-texmflocal \
+			${LOCALBASE}/${TEXMF}/LICENSE.texmf:${PORTSDIR}/print/teTeX-texmf \
+			latex:${PORTSDIR}/print/teTeX-base
 LIB_DEPENDS=		png.5:${PORTSDIR}/graphics/png
-RUN_DEPENDS=		tex:${PORTSDIR}/print/teTeX \
-			${TEXMFLOCAL_LSR}:${PORTSDIR}/print/tex-texmflocal
+RUN_DEPENDS=		${TEXMFLOCAL_LSR}:${PORTSDIR}/print/tex-texmflocal \
+			${LOCALBASE}/${TEXMF}/LICENSE.texmf:${PORTSDIR}/print/teTeX-texmf \
+			latex:${PORTSDIR}/print/teTeX-base
 
 .include <bsd.port.pre.mk>
 
@@ -68,6 +70,7 @@ do-install:
 .endif
 
 post-install:
+	${LN} -s -f ${LOCALBASE}/bin/latex ${PREFIX}/bin/xmltex
 	${MKTEXLSR}
 
 .include <bsd.port.post.mk>
