@@ -1,8 +1,13 @@
---- Makefile.in.orig	Mon May  1 22:44:54 2000
-+++ Makefile.in	Wed May  3 14:44:53 2000
-@@ -110,7 +110,7 @@
+--- Makefile.in.orig	Thu May 18 02:27:35 2000
++++ Makefile.in	Tue Jun 13 17:15:02 2000
+@@ -111,11 +111,11 @@
+ cxxflags_set = @cxxflags_set@
+ l = @l@
  
- EXTRA_DIST = autogen.sh CREDITS ChangeLog pan.desktop pan.spec pan.png
+-SUBDIRS = macros po intl uulib pan docs
++SUBDIRS = macros po intl pan docs
+ 
+ EXTRA_DIST = CREDITS ChangeLog pan.desktop pan.spec pan.png
  
 -Productivitydir = $(datadir)/gnome/apps/Internet
 +Productivitydir = $(datadir)/apps/Internet
