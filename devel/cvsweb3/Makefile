@@ -19,7 +19,7 @@ USE_PERL5=	yes
 
 # This version of cvsweb is Zeller's version + knu's enhancements.
 REV_ZELLER=	1.94
-REV_KNU=	1.15
+REV_KNU=	1.17
 
 # Specify where your repository belongs.
 # (You can reconfigure it after installation anyway)
@@ -54,7 +54,7 @@ do-install:
 	cd ${WRKSRC}/icons && ${INSTALL_DATA} * ${PREFIX}/${ICONSDIR}/cvsweb/
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/cvsweb
-	cd ${WRKSRC} && ${INSTALL_DATA} INSTALL README README.knu TODO ${PREFIX}/share/doc/cvsweb/
+	cd ${WRKSRC} && ${INSTALL_DATA} ChangeLog INSTALL README README.knu TODO ${PREFIX}/share/doc/cvsweb/
 .endif
 
 post-install:
