@@ -1,6 +1,6 @@
 --- Makefile.orig	Thu Oct 10 01:08:21 2002
 +++ Makefile	Tue Jun 17 22:23:11 2003
-@@ -12,28 +12,28 @@
+@@ -12,30 +12,30 @@
  # (Note: not all options are available for all platforms).
  # quake2 (uses OSS for sound, cdrom ioctls for cd audio) is automatically built.
  # game$(ARCH).so is automatically built.
@@ -16,9 +16,12 @@
 -BUILD_ROGUE=NO		# game$(ARCH).so for rogue (see README.r for details)
 -BUILD_JOYSTICK=YES	# build in joystick support
 -BUILD_ARTS=NO		# build in support for libaRts sound.
+-BUILD_ALSA=NO		# build in support for ALSA (default sound on 2.6)
 -BUILD_DEDICATED=NO	# build a dedicated quake2 server
--BUILD_AA=YES		# build the ascii soft renderer.
--BUILD_QMAX=YES		# build the fancier GL graphics
+-BUILD_AA=NO		# build the ascii soft renderer.
+-BUILD_QMAX=NO		# build the fancier GL graphics
+-BUILD_RETEXTURE=NO	# build a version supporting retextured graphics
+-BUILD_REDBLUE=NO	# build a red-blue 3d glasses renderer...
 +#BUILD_SDLQUAKE2=YES	# sdlquake2 executable (uses SDL for cdrom and sound)
 +#BUILD_SVGA=NO		# SVGAlib driver. Seems to work fine.
 +#BUILD_X11=YES		# X11 software driver. Works somewhat ok.
@@ -31,10 +34,12 @@
 +#BUILD_ROGUE=NO		# game$(ARCH).so for rogue (see README.r for details)
 +#BUILD_JOYSTICK=YES	# build in joystick support
 +#BUILD_ARTS=NO		# build in support for libaRts sound.
++#BUILD_ALSA=NO		# build in support for ALSA (default sound on 2.6)
 +#BUILD_DEDICATED=NO	# build a dedicated quake2 server
-+#BUILD_AA=YES		# build the ascii soft renderer.
-+#BUILD_QMAX=YES		# build the fancier GL graphics
- 
++#BUILD_AA=NO		# build the ascii soft renderer.
++#BUILD_QMAX=NO		# build the fancier GL graphics
++#BUILD_RETEXTURE=NO	# build a version supporting retextured graphics
++#BUILD_REDBLUE=NO	# build a red-blue 3d glasses renderer...
  STATICSDL=NO
 -SDLDIR=/usr/local/lib
 +SDLDIR=${PREFIX}/lib
@@ -46,7 +51,7 @@
  
  # (hopefully) end of configurable options
  
-@@ -50,47 +50,11 @@
+@@ -52,55 +52,11 @@
  endif
  endif
  
@@ -54,13 +59,15 @@
  
 -# this nice line comes from the linux kernel makefile
 -ARCH := $(shell uname -m | sed -e s/i.86/i386/ -e s/sun4u/sparc/ -e s/sparc64/sparc/ -e s/arm.*/arm/ -e s/sa110/arm/ -e s/alpha/axp/)
-+RELEASE_CFLAGS=	$(BASE_CFLAGS) $(OPTIMIZED_CFLAGS)
++RELEASE_CFLAGS=$(BASE_CFLAGS) $(OPTIMIZED_CFLAGS)
  
+-ifneq ($(ARCH),x86_64)
 -ifneq ($(ARCH),i386)
 -ifneq ($(ARCH),axp)
 -ifneq ($(ARCH),ppc)
 -ifneq ($(ARCH),sparc)
 -$(error arch $(ARCH) is currently not supported)
+-endif
 -endif
 -endif
 -endif
@@ -84,29 +91,35 @@
 -endif
 -
 -ifeq ($(ARCH),i386)
--RELEASE_CFLAGS=$(BASE_CFLAGS) -O2 -ffast-math -funroll-loops -malign-loops=2 \
--	-malign-jumps=2 -malign-functions=2 -g
+-RELEASE_CFLAGS=$(BASE_CFLAGS) -O2 -ffast-math -funroll-loops -falign-loops=2 \
+-	-falign-jumps=2 -falign-functions=2 -fno-strict-aliasing
 -# compiler bugs with gcc 2.96 and 3.0.1 can cause bad builds with heavy opts.
 -#RELEASE_CFLAGS=$(BASE_CFLAGS) -O6 -m486 -ffast-math -funroll-loops \
 -#	-fomit-frame-pointer -fexpensive-optimizations -malign-loops=2 \
 -#	-malign-jumps=2 -malign-functions=2
 -endif
 -
--VERSION=3.21+rCVS
-+VERSION=3.21+r0.15
+-ifeq ($(ARCH),x86_64)
+-_LIB := 64
+-RELEASE_CFLAGS=$(BASE_CFLAGS) -O2 -ffast-math -funroll-loops \
+-	-fomit-frame-pointer -fexpensive-optimizations -fno-strict-aliasing
+-endif
+-
+-VERSION=3.21+r0.16
++VERSION=3.21+r0.16.2
  
  MOUNT_DIR=src
  
-@@ -108,7 +72,7 @@
+@@ -118,7 +74,7 @@
  ROGUE_DIR=$(MOUNT_DIR)/rogue
  NULL_DIR=$(MOUNT_DIR)/null
  
 -BASE_CFLAGS=-Wall -pipe -Dstricmp=strcasecmp
 +BASE_CFLAGS=-Wall -pipe -Dstricmp=strcasecmp $(CFLAGS)
  ifeq ($(HAVE_IPV6),YES)
- BASE_CFLAGS+= -DHAVE_IPV6 -DHAVE_SIN6_LEN
- NET_UDP=net_udp6
-@@ -127,7 +91,13 @@
+ BASE_CFLAGS+= -DHAVE_IPV6
+ ifeq ($(OSTYPE),FreeBSD)
+@@ -144,7 +100,13 @@
  BASE_CFLAGS+=$(shell artsc-config --cflags)
  endif
  
@@ -121,16 +134,16 @@
   BASE_CFLAGS+=-DC_ONLY
  endif
  
-@@ -144,20 +114,22 @@
- LDFLAGS+=$(shell artsc-config --libs)
+@@ -166,20 +128,22 @@
  endif
+ 
  
 -SVGALDFLAGS=-lvga
 +SVGALDFLAGS=-L${PREFIX}/lib -lvga
 +SVGACFLAGS=-I${PREFIX}/include
  
 -XCFLAGS=-I/usr/X11R6/include
--XLDFLAGS=-L/usr/X11R6/lib -lX11 -lXext -lXxf86dga -lXxf86vm
+-XLDFLAGS=-L/usr/X11R6/lib$(_LIB) -lX11 -lXext -lXxf86dga -lXxf86vm
 -AALDFLAGS=-lm -laa
 +XCFLAGS=-I${X11BASE}/include
 +XLDFLAGS=-L${X11BASE}/lib -lX11 -lXext -lXxf86dga -lXxf86vm
@@ -140,8 +153,8 @@
 -SDLCFLAGS=$(shell sdl-config --cflags)
 +SDLCFLAGS=$(shell sdl11-config --cflags)
  ifeq ($(strip $(STATICSDL)),YES)
--	SDLLDFLAGS += -L/usr/X11R6/lib -Wl,-Bstatic $(SDLDIR)/libSDL.a
-+	SDLLDFLAGS += -L${X11BASE}/lib -Wl,-Bstatic $(SDLDIR)/libSDL.a
+-	SDLLDFLAGS += -L/usr/X11R6/lib$(_LIB) -Wl,-Bstatic $(SDLDIR)/libSDL.a
++	SDLLDFLAGS += -L${X11BASE}/lib$(_LIB) -Wl,-Bstatic $(SDLDIR)/libSDL.a
  	SDLLDFLAGS += $(SDLDIR)/libesd.a $(SDLDIR)/libartsc.a -Wl,-Bdynamic
  	SDLLDFLAGS += -lpthread -lX11 -lXext -lXxf86dga -lXxf86vm -lXv \
  		-lXinerama
@@ -151,14 +164,14 @@
  endif
  
  ifeq ($(strip $(BUILD_JOYSTICK)),YES)
-@@ -168,15 +140,16 @@
+@@ -190,15 +154,16 @@
  FXGLLDFLAGS=-L/usr/local/glide/lib -L/usr/X11/lib -L/usr/local/lib \
  	-L/usr/X11R6/lib -lX11 -lXext -lGL -lvga
  
 -GLXCFLAGS=-I/usr/X11R6/include -DOPENGL
--GLXLDFLAGS=-L/usr/X11R6/lib -lX11 -lXext -lXxf86dga -lXxf86vm
+-GLXLDFLAGS=-L/usr/X11R6/lib$(_LIB) -lX11 -lXext -lXxf86dga -lXxf86vm
 +GLXCFLAGS=-I${X11BASE}/include -DOPENGL
-+GLXLDFLAGS=-L${X11BASE}/lib -lX11 -lXext -lXxf86dga -lXxf86vm
++GLXLDFLAGS=-L${X11BASE}/lib$(_LIB) -lX11 -lXext -lXxf86dga -lXxf86vm
  
  SDLGLCFLAGS=$(SDLCFLAGS) -DOPENGL
  SDLGLLDFLAGS=$(SDLLDFLAGS)
@@ -172,7 +185,7 @@
  REF_GL_DIR = $(MOUNT_DIR)/ref_candygl
  CL_FX = cl_fxmax.c
  else
-@@ -192,7 +165,7 @@
+@@ -214,7 +179,7 @@
  DO_DED_CC=$(CC) $(CFLAGS) -DDEDICATED_ONLY -o $@ -c $<
  DO_DED_DEBUG_CC=$(CC) $(DEBUG_CFLAGS) -DDEDICATED_ONLY -o $@ -c $<
  DO_SHLIB_CC=$(CC) $(CFLAGS) $(SHLIBCFLAGS) -o $@ -c $<
@@ -181,7 +194,7 @@
  DO_AS=$(CC) $(CFLAGS) -DELF -x assembler-with-cpp -o $@ -c $<
  DO_SHLIB_AS=$(CC) $(CFLAGS) $(SHLIBCFLAGS) -DELF -x assembler-with-cpp -o $@ -c $<
  
-@@ -202,10 +175,42 @@
+@@ -224,10 +189,42 @@
  
  .PHONY : targets build_debug build_release clean clean-debug clean-release clean2
  
@@ -225,7 +238,7 @@
  ifeq ($(strip $(BUILD_CTFDLL)),YES)
   TARGETS += $(BUILDDIR)/ctf/game$(ARCH).$(SHLIBEXT)
  endif
-@@ -218,126 +223,6 @@
+@@ -240,152 +237,6 @@
   TARGETS += $(BUILDDIR)/rogue/game$(ARCH).$(SHLIBEXT)
  endif
  
@@ -319,6 +332,32 @@
 - endif
 -endif # ARCH sparc
 -
+-ifeq ($(ARCH),x86_64)
+- ifeq ($(strip $(BUILD_SDLQUAKE2)),YES)
+-  TARGETS += $(BUILDDIR)/sdlquake2
+- endif
+-
+- ifeq ($(strip $(BUILD_SVGA)),YES)
+-  $(warning Warning: SVGA not supported for $(ARCH))
+- endif
+-
+- ifeq ($(strip $(BUILD_SOFTX)),YES)
+-  $(warning Warning: Software X Renderer not supported for $(ARCH))
+- endif
+-
+- ifeq ($(strip $(BUILD_GLX)),YES)
+-  TARGETS += $(BUILDDIR)/ref_glx.$(SHLIBEXT)
+- endif
+-
+- ifeq ($(strip $(BUILD_FXGL)),YES)
+-  $(warning Warning: FXGL not currently supported for $(ARCH))
+- endif
+-
+- ifeq ($(strip $(BUILD_SDLGL)),YES)
+-  TARGETS += $(BUILDDIR)/ref_sdlgl.$(SHLIBEXT)
+- endif
+-endif # ARCH x86_64
+-
 -ifeq ($(ARCH),i386)
 - ifeq ($(strip $(BUILD_SDLQUAKE2)),YES)
 -  TARGETS += $(BUILDDIR)/sdlquake2
@@ -352,7 +391,7 @@
  ifeq ($(strip $(BUILD_AA)),YES)
  	TARGETS += $(BUILDDIR)/ref_softaa.$(SHLIBEXT)
  endif
-@@ -437,10 +322,11 @@
+@@ -493,10 +344,11 @@
  	$(BUILDDIR)/client/snd_sdl.o
  
  ifeq ($(ARCH),i386)
@@ -365,34 +404,15 @@
  endif
  
  $(BUILDDIR)/quake2 : $(QUAKE2_OBJS) $(QUAKE2_LNX_OBJS) $(QUAKE2_AS_OBJS)
-@@ -626,7 +512,7 @@
-        $(BUILDDIR)/ded/q_shlinux.o \
-        $(BUILDDIR)/ded/sys_linux.o \
-        $(BUILDDIR)/ded/glob.o \
--       $(BUILDDIR)/ded/net_udp.o \
-+       $(BUILDDIR)/ded/$(NET_UDP).o \
-        $(BUILDDIR)/ded/q_shared.o \
-        $(BUILDDIR)/ded/pmove.o \
-        $(BUILDDIR)/ded/cl_null.o \
-@@ -701,6 +587,9 @@
- $(BUILDDIR)/ded/net_udp.o :    $(LINUX_DIR)/net_udp.c
- 	$(DO_DED_CC)
- 
-+$(BUILDDIR)/ded/net_udp6.o :   $(LINUX_DIR)/net_udp6.c
-+	$(DO_DED_CC)
-+
- $(BUILDDIR)/ded/cd_null.o :    $(NULL_DIR)/cd_null.c
- 	$(DO_DED_CC)
- 
-@@ -1525,6 +1414,7 @@
- 	$(BUILDDIR)/ref_soft/glob.o
+@@ -1588,6 +1440,7 @@
+ endif
  
  ifeq ($(ARCH),i386)
 +ifneq ($(strip $(NO_X86_ASM)),YES)
  REF_SOFT_OBJS += \
  	$(BUILDDIR)/ref_soft/r_aclipa.o \
  	$(BUILDDIR)/ref_soft/r_draw16.o \
-@@ -1538,6 +1428,7 @@
+@@ -1601,6 +1454,7 @@
  	$(BUILDDIR)/ref_soft/r_varsa.o \
  	$(BUILDDIR)/ref_soft/sys_dosa.o
  endif
@@ -400,7 +420,7 @@
  
  REF_SOFT_SVGA_OBJS = \
  	$(BUILDDIR)/ref_soft/rw_svgalib.o \
-@@ -1667,10 +1558,10 @@
+@@ -1732,10 +1586,10 @@
  	$(DO_SHLIB_AS)
  
  $(BUILDDIR)/ref_soft/rw_svgalib.o :   $(LINUX_DIR)/rw_svgalib.c
@@ -413,7 +433,7 @@
  
  $(BUILDDIR)/ref_soft/rw_x11.o :       $(LINUX_DIR)/rw_x11.c
  	$(DO_SHLIB_CC) $(XCFLAGS)
-@@ -1679,10 +1570,10 @@
+@@ -1750,10 +1604,10 @@
  	$(DO_SHLIB_CC) $(SDLCFLAGS)
  
  $(BUILDDIR)/ref_soft/rw_aa.o :       $(LINUX_DIR)/rw_aa.c

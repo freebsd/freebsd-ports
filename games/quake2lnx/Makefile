@@ -6,19 +6,29 @@
 #
 
 PORTNAME=	quake2lnx
-PORTVERSION=	0.15
-PORTREVISION=	2
+PORTVERSION=	0.16.2
 CATEGORIES=	games
-MASTER_SITES=	http://www.icculus.org/quake2/files/:src \
-		http://freebsd.nsu.ru/distfiles/q2/:pak
+MASTER_SITES=	http://www.icculus.org/quake2/files/:icc \
+		ftp://ftp.idsoftware.com/idstuff/quake2/:id
 DISTNAME=	quake2-r${PORTVERSION}
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:src
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:icc
 .if defined(WITH_EYECANDY)
-DISTFILES+=	maxpak.pak:pak
+DISTFILES+=	maxpak.pak:icc
 .endif
-.if defined(WITH_SHAREWARE_DATA)
-DISTFILES+=	pak0.pak:pak \
-		players.tgz:pak
+.if defined(WITH_RETEXTURE)
+. for i in 10 11 12 13 14 16 17 19
+DISTFILES+=	pak${i}.pak:icc
+. endfor
+.endif
+.if defined(WITH_SHAREWARE_DATA) || defined(WITH_MANUAL)
+DISTFILES+=	q2-314-demo-x86.exe:id
+EXTRACT_DEPENDS+=	unzip:${PORTSDIR}/archivers/unzip
+.endif
+.if defined(WITH_XATRIX)
+DISTFILES+=	source/xatrixsrc320.shar.Z:id
+.endif
+.if defined(WITH_ROGUE)
+DISTFILES+=	source/roguesrc320.shar.Z:id
 .endif
 DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
@@ -47,7 +57,7 @@ PLIST_SUB+=	SVGA="@comment "
 .endif
 
 .if defined(WITH_SDLCLIENT) || defined(WITH_SDL) || defined(WITH_SDLGL) \
-	|| ${HAVE_SDL:Msdl}!=""
+	|| ${HAVE_SDL:Msdl} != ""
 . if !(defined(WITHOUT_SDLCLIENT) && defined(WITHOUT_SDL) \
 	&& defined(WITHOUT_SDLGL))
 USE_SDL=	sdl
@@ -142,6 +152,24 @@ PLIST_SUB+=	GAME=""
 PLIST_SUB+=	GAME="@comment "
 .endif
 
+.if defined(WITH_XATRIX)
+MAKE_ARGS+=	BUILD_XATRIX=YES
+Q2MP+=		xatrix
+IS_INTERACTIVE=	yes
+PLIST_SUB+=	XATRIX=""
+.else
+PLIST_SUB+=	XATRIX="@comment "
+.endif
+
+.if defined(WITH_ROGUE)
+MAKE_ARGS+=	BUILD_ROGUE=YES
+Q2MP+=		rogue
+IS_INTERACTIVE=	yes
+PLIST_SUB+=	ROGUE=""
+.else
+PLIST_SUB+=	ROGUE="@comment "
+.endif
+
 .if defined(WITH_CTF)
 MAKE_ARGS+=	BUILD_CTFDLL=YES
 PLIST_SUB+=	CTF=""
@@ -158,6 +186,17 @@ PLIST_SUB+=	SHAREWARE="@comment "
 ###                        #
 ## MISCELLANEOUS TUNABLES ##
 #                        ###
+
+.if defined(WITH_RETEXTURE)
+MAKE_ARGS+=	BUILD_RETEXTURE=YES
+PLIST_SUB+=	RETEX=""
+.else
+PLIST_SUB+=	RETEX="@comment "
+.endif
+
+.if defined(WITH_REDBLUE)
+MAKE_ARGS+=	BUILD_REDBLUE=YES
+.endif
 
 .if defined(WITH_JOYSTICK)
 MAKE_ARGS+=	BUILD_JOYSTICK=YES
@@ -181,6 +220,12 @@ MAKE_ARGS+=	OPTIMIZED_CFLAGS="-O9 -pipe -s -ffast-math -funroll-loops -fomit-fra
 MAKE_ARGS+=	NO_X86_ASM=YES
 .endif
 
+.if defined(WITH_MANUAL)
+PLIST_SUB+=	MANUAL=""
+.else
+PLIST_SUB+=	MANUAL="@comment "
+.endif
+
 ###                            #
 ## END OF CONFIGURATION KNOBS ##
 #                            ###
@@ -189,14 +234,14 @@ pre-everything::
 .if ${ARCH} == "i386" && !(defined(WITH_SVGA) || exists(${LOCALBASE}/lib/libvga.so.1))
 	@${ECHO_MSG} "Define WITH_SVGA to build SVGA driver"
 .endif
-.if !(defined(WITH_SDL) || ${HAVE_SDL:Msdl}!="")
+.if !(defined(WITH_SDL) || ${HAVE_SDL:Msdl} != "")
 	@${ECHO_MSG} "Define WITH_SDL to build SDL software driver"
 .endif
-.if !(defined(WITH_SDLGL) || ${HAVE_SDL:Msdl}!="")
+.if !(defined(WITH_SDLGL) || ${HAVE_SDL:Msdl} != "")
 	@${ECHO_MSG} "Define WITH_SDLGL to build SDL OpenGL driver"
 .endif
-.if !(defined(WITH_SDLCLIENT) || ${HAVE_SDL:Msdl}!="")
-	@${ECHO_MSG} "Define WITH_SDLCLIENT to build executable that uses SDL for cdrom and sound"
+.if !(defined(WITH_SDLCLIENT) || ${HAVE_SDL:Msdl} != "")
+	@${ECHO_MSG} "Define WITH_SDLCLIENT to build executable that uses SDL for CDROM and sound"
 .endif
 .if !(defined(WITH_AA) || exists(${LOCALBASE}/lib/libaa.so.1))
 	@${ECHO_MSG} "Define WITH_AA to build ASCII software renderer"
@@ -222,8 +267,23 @@ pre-everything::
 .if !defined(WITH_CTF)
 	@${ECHO_MSG} "Define WITH_CTF to build Capture The Flag mod"
 .endif
+.if !defined(WITH_XATRIX)
+	@${ECHO_MSG} "Define WITH_XATRIX to install \"The Reckoning\" (Xatrix) mission pack .so"
+.endif
+.if !defined(WITH_ROGUE)
+	@${ECHO_MSG} "Define WITH_ROGUE to install the \"Ground Zero\" (Rogue) mission pack .so"
+.endif
 .if !defined(WITH_SHAREWARE_DATA)
 	@${ECHO_MSG} "Define WITH_SHAREWARE_DATA to install demo version game data"
+.endif
+.if !defined(WITH_MANUAL)
+	@${ECHO_MSG} "Define WITH_MANUAL to install the official Quake II HTML manual"
+.endif
+.if !defined(WITH_RETEXTURE)
+	@${ECHO_MSG} "Define WITH_RETEXTURE to enable support of retextured graphics"
+.endif
+.if !defined(WITH_REDBLUE)
+	@${ECHO_MSG} "Define WITH_REDBLUE to enable red-blue 3D glasses rendering"
 .endif
 .if !defined(WITH_JOYSTICK)
 	@${ECHO_MSG} "Define WITH_JOYSTICK to enable joystick support"
@@ -241,14 +301,27 @@ pre-everything::
 	@${ECHO_MSG} "Define WITHOUT_X86_ASM to disable x86 assembly code"
 .endif
 
+ALL_TARGET=	build_release
 TGTDIR=		${WRKSRC}/release${ARCH}
+
+post-extract:
+.if defined(WITH_XATRIX) || defined(WITH_ROGUE)
+. for mp in ${Q2MP}
+	@${MKDIR} ${WRKSRC}/src/${mp}
+	@(cd ${WRKSRC}/src/${mp} && ${GUNZIP_CMD} -c \
+		${DISTDIR}/${DIST_SUBDIR}/source/${mp}src320.shar.Z > \
+		${mp}src320.shar && ${SH} ./${mp}src320.shar)
+	@${REINPLACE_CMD} -e 's/__ $$/&|| defined __FreeBSD__/' \
+		${WRKSRC}/src/${mp}/q_shared.c
+. endfor
+.endif
+.if defined(WITH_ROGUE)
+	@${REINPLACE_CMD} -e '/^#include <nan.h>/d' ${WRKSRC}/src/rogue/g_local.h
+.endif
+	@${REINPLACE_CMD} -e 's|/dev/js|/dev/joy|' ${WRKSRC}/src/linux/joystick.c
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%%%BASEDIR%%%%|${DATADIR}|' ${WRKSRC}/src/qcommon/files.c
-
-do-build:
-	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} \
-	${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} build_release)
 
 PLIST_SUB+=	ARCH="${ARCH}"
 
@@ -263,20 +336,54 @@ do-install:
 .if !defined(WITHOUT_GAME)
 	${INSTALL_PROGRAM} ${TGTDIR}/game${ARCH}.so ${DATADIR}/baseq2
 .endif
+.if defined(WITH_XATRIX) || defined(WITH_ROGUE)
+. for mp in ${Q2MP}
+	@${MKDIR} ${DATADIR}/${mp}
+	${INSTALL_PROGRAM} ${TGTDIR}/${mp}/game${ARCH}.so ${DATADIR}/${mp}
+. endfor
+.endif
 .if defined(WITH_CTF)
 	@${MKDIR} ${DATADIR}/ctf
 	${INSTALL_PROGRAM} ${TGTDIR}/ctf/game${ARCH}.so ${DATADIR}/ctf
 .endif
 .if defined(WITH_SHAREWARE_DATA)
-	${INSTALL_DATA} ${DISTDIR}/${PORTNAME}/pak0.pak ${DATADIR}/baseq2
-	${GUNZIP_CMD} -c ${DISTDIR}/${PORTNAME}/players.tgz | ${TAR} -C ${DATADIR}/baseq2 -xf -
+	@${MKDIR} ${DATADIR}/baseq2/players
+	${UNZIP_CMD} -oj -d ${DATADIR}/baseq2/players/female \
+		${DISTDIR}/${DIST_SUBDIR}/q2-314-demo-x86.exe \
+		Install/Data/baseq2/players/female/\*
+	${UNZIP_CMD} -oj -d ${DATADIR}/baseq2/players/male \
+		${DISTDIR}/${DIST_SUBDIR}/q2-314-demo-x86.exe \
+		Install/Data/baseq2/players/male/\*
+	${UNZIP_CMD} -oj -d ${DATADIR}/baseq2 \
+		${DISTDIR}/${DIST_SUBDIR}/q2-314-demo-x86.exe \
+		Install/Data/baseq2/pak0.pak
+.endif
+.if defined(WITH_RETEXTURE)
+. for i in 10 11 12 13 14 16 17 19
+	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/pak${i}.pak ${DATADIR}/baseq2
+. endfor
 .endif
 .if defined(WITH_EYECANDY)
-	${INSTALL_DATA} ${DISTDIR}/${PORTNAME}/maxpak.pak ${DATADIR}/baseq2
+	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/maxpak.pak ${DATADIR}/baseq2
 .endif
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/src/docs/README ${DOCSDIR}/README.320
+	${INSTALL_DATA} ${WRKSRC}/src/docs/joystick.txt ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/src/docs/quake2.3dfxgl ${DOCSDIR}
+. if defined(WITH_MANUAL)
+	${UNZIP_CMD} -oj -d ${DOCSDIR}/quake2_manual \
+		${DISTDIR}/${DIST_SUBDIR}/q2-314-demo-x86.exe \
+		Install/Data/DOCS/quake2_manual/\* \
+		-x Install/Data/DOCS/quake2_manual/images\*
+	${UNZIP_CMD} -oj -d ${DOCSDIR}/quake2_manual/images \
+		${DISTDIR}/${DIST_SUBDIR}/q2-314-demo-x86.exe \
+		Install/Data/DOCS/quake2_manual/images\*
+	${UNZIP_CMD} -oj -d ${DOCSDIR} \
+		${DISTDIR}/${DIST_SUBDIR}/q2-314-demo-x86.exe \
+		Install/Data/DOCS/Manual.html
+. endif
 .endif
 
 post-install:
