@@ -52,7 +52,6 @@
     SUBDIR += chimera2
     SUBDIR += chtml
     SUBDIR += comclear
-    SUBDIR += comline
     SUBDIR += crawl
     SUBDIR += css-mode.el
     SUBDIR += dansguardian
