@@ -8,7 +8,7 @@
 PORTNAME=	elftoaout
 PORTVERSION=	2.3
 CATEGORIES=	devel
-MASTER_SITES=	ftp://sunsite.mff.cuni.cz/OS/Linux/Sparc/local/elftoaout/
+MASTER_SITES=	# dead
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
