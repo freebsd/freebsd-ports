@@ -27,6 +27,7 @@ BUILD_DEPENDS=		gm4:${PORTSDIR}/devel/m4
 
 KERBEROSV_URL=		http://web.mit.edu/network/kerberos-form.html
 USE_GMAKE=		yes
+USE_PERL5_BUILD=	yes
 INSTALLS_SHLIB=		yes
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS?=	--enable-shared
