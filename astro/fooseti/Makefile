@@ -7,6 +7,7 @@
 
 PORTNAME=	fooseti
 PORTVERSION=	0.6.5
+PORTREVISION=	1
 CATEGORIES=	astro
 MASTER_SITES=	http://www-personal.engin.umich.edu/~agorski/fooseti/
 
