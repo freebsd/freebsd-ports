@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dctc
-PORTVERSION=	0.83.6
+PORTVERSION=	0.83.8
 CATEGORIES=	net
 MASTER_SITES=	http://unixpages.org/distfiles/ \
 		http://ac2i.tzo.com/dctc/
@@ -32,6 +32,7 @@ MANCOMPRESSED=	no
 
 MAN1=	dctc.1
 
+DCTC_BINS=	dctc dctc_cmd
 DOC_DIRS=	Documentation Documentation/DCextensions
 DOC_FILES=      COPYING ChangeLog INSTALL README \
 		KNOWN_BUGS TODO \
@@ -101,6 +102,8 @@ do-install:
 		${PREFIX}/share/${PORTNAME}
 	@${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${MANPREFIX}/man/man1
 	@${INSTALL_PROGRAM} ${WRKSRC}/src/hublist ${PREFIX}/bin/dc_hublist
-	@${INSTALL_PROGRAM} ${WRKSRC}/src/dctc ${PREFIX}/bin
+.for file in ${DCTC_BINS}
+	@${INSTALL_PROGRAM} ${WRKSRC}/src/${file} ${PREFIX}/bin
+.endfor
 
 .include <bsd.port.mk>

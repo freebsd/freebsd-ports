@@ -1,5 +1,6 @@
 bin/dc_hublist
 bin/dctc
+bin/dctc_cmd
 share/dctc/GDLjoiner
 %%PORTDOCS%%share/doc/dctc/COPYING
 %%PORTDOCS%%share/doc/dctc/ChangeLog
