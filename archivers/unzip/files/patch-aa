@@ -15,7 +15,7 @@
  	@echo 'NOTE:  use bsd target for non-Intel FreeBSD compiles (if any).'
 -	$(MAKE) unzips CC=gcc LD=gcc AS=gcc\
 -	 CF="-O3 -Wall -I. -DASM_CRC -DUNIX -DBSD $(LOC)"\
-+	$(MAKE) unzips CC=$(CC) LD=$(CC) AS=$(CC)\
++	$(MAKE) unzips CC="$(CC)" LD="$(CC)" AS="$(CC)"\
 +	 CF="-Wall -I. -DASM_CRC -DUNIX -DBSD $(LOC)"\
  	 AF="-Di386 $(AF)" CRC32=crc_gcc
  
