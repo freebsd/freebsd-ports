@@ -44,6 +44,7 @@
     SUBDIR += parmetis
     SUBDIR += plplot
     SUBDIR += pspp
+    SUBDIR += py-gnuplot
     SUBDIR += py-scientific
     SUBDIR += pygist
     SUBDIR += rcalc
