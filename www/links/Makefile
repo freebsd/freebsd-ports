@@ -17,6 +17,7 @@ MAINTAINER=	demon@FreeBSD.org
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--enable-javascript --with-ssl --without-svgalib
+CONFIGURE_ENV+=	CPPFLAGS='-I${LOCALBASE}/include' LDFLAGS='-L${LOCALBASE}/lib'
 
 USE_OPENSSL=	yes
 USE_BZIP2=	yes
