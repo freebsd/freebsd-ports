@@ -1,0 +1,3 @@
+@cwd /usr/local
+bin/bash
+man/man1/bash.1
