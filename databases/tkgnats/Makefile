@@ -3,10 +3,10 @@
 # Date created:		Sa  18 Apr 1998 10:12:20 CEST
 # Whom:			andreas
 #
-# $Id: Makefile,v 1.3 1998/08/07 23:56:13 asami Exp $
+# $Id: Makefile,v 1.4 1998/08/17 00:52:40 steve Exp $
 #
 
-DISTNAME=	tkgnats-3.0.5
+DISTNAME=	tkgnats-3.0.6
 CATEGORIES=	databases tk80
 MASTER_SITES=	http://www.cuug.ab.ca/~macdonal/tkgnats/
 
