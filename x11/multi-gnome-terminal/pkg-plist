@@ -1,209 +1,207 @@
 bin/multi-gnome-terminal
 etc/CORBA/servers/multi-gnome-terminal.gnorba
 sbin/mgt-pty-helper
-share/gnome/pixmaps/mgt/multignometerm.png
-share/gnome/pixmaps/mgt/arrow_right2.png
-share/gnome/pixmaps/mgt/arrow_left2.png
-share/gnome/pixmaps/mgt/panel-folder.png
-share/gnome/pixmaps/mgt/gnome-notepad.png
-share/gnome/gnome/help/multi-gnome-terminal/C/index.html
-share/gnome/gnome/help/multi-gnome-terminal/C/stylesheet-images/caution.gif
-share/gnome/gnome/help/multi-gnome-terminal/C/stylesheet-images/home.gif
-share/gnome/gnome/help/multi-gnome-terminal/C/stylesheet-images/important.gif
-share/gnome/gnome/help/multi-gnome-terminal/C/stylesheet-images/next.gif
-share/gnome/gnome/help/multi-gnome-terminal/C/stylesheet-images/note.gif
-share/gnome/gnome/help/multi-gnome-terminal/C/stylesheet-images/prev.gif
-share/gnome/gnome/help/multi-gnome-terminal/C/stylesheet-images/tip.gif
-share/gnome/gnome/help/multi-gnome-terminal/C/stylesheet-images/toc-blank.gif
-share/gnome/gnome/help/multi-gnome-terminal/C/stylesheet-images/toc-minus.gif
-share/gnome/gnome/help/multi-gnome-terminal/C/stylesheet-images/toc-plus.gif
-share/gnome/gnome/help/multi-gnome-terminal/C/stylesheet-images/up.gif
-share/gnome/gnome/help/multi-gnome-terminal/C/stylesheet-images/warning.gif
-share/gnome/gnome/help/multi-gnome-terminal/C/gnome-terminal.sgml
-share/gnome/gnome/help/multi-gnome-terminal/C/authors.html
-share/gnome/gnome/help/multi-gnome-terminal/C/classes.html
-share/gnome/gnome/help/multi-gnome-terminal/C/config.html
-share/gnome/gnome/help/multi-gnome-terminal/C/environment.html
-share/gnome/gnome/help/multi-gnome-terminal/C/license.html
-share/gnome/gnome/help/multi-gnome-terminal/C/ln9.html
-share/gnome/gnome/help/multi-gnome-terminal/C/menus.html
-share/gnome/gnome/help/multi-gnome-terminal/C/options.html
-share/gnome/gnome/help/multi-gnome-terminal/C/pointerusage.html
-share/gnome/gnome/help/multi-gnome-terminal/C/usage.html
-share/gnome/gnome/help/multi-gnome-terminal/C/docbook.css
-share/gnome/gnome/help/multi-gnome-terminal/C/topic.dat
-share/gnome/gnome/help/multi-gnome-terminal/de/index.html
-share/gnome/gnome/help/multi-gnome-terminal/de/stylesheet-images/caution.gif
-share/gnome/gnome/help/multi-gnome-terminal/de/stylesheet-images/home.gif
-share/gnome/gnome/help/multi-gnome-terminal/de/stylesheet-images/important.gif
-share/gnome/gnome/help/multi-gnome-terminal/de/stylesheet-images/next.gif
-share/gnome/gnome/help/multi-gnome-terminal/de/stylesheet-images/note.gif
-share/gnome/gnome/help/multi-gnome-terminal/de/stylesheet-images/prev.gif
-share/gnome/gnome/help/multi-gnome-terminal/de/stylesheet-images/tip.gif
-share/gnome/gnome/help/multi-gnome-terminal/de/stylesheet-images/toc-blank.gif
-share/gnome/gnome/help/multi-gnome-terminal/de/stylesheet-images/toc-minus.gif
-share/gnome/gnome/help/multi-gnome-terminal/de/stylesheet-images/toc-plus.gif
-share/gnome/gnome/help/multi-gnome-terminal/de/stylesheet-images/up.gif
-share/gnome/gnome/help/multi-gnome-terminal/de/stylesheet-images/warning.gif
-share/gnome/gnome/help/multi-gnome-terminal/de/gnome-terminal.sgml
-share/gnome/gnome/help/multi-gnome-terminal/de/authors.html
-share/gnome/gnome/help/multi-gnome-terminal/de/classes.html
-share/gnome/gnome/help/multi-gnome-terminal/de/config.html
-share/gnome/gnome/help/multi-gnome-terminal/de/environment.html
-share/gnome/gnome/help/multi-gnome-terminal/de/ln11.html
-share/gnome/gnome/help/multi-gnome-terminal/de/menus.html
-share/gnome/gnome/help/multi-gnome-terminal/de/options.html
-share/gnome/gnome/help/multi-gnome-terminal/de/pointerusage.html
-share/gnome/gnome/help/multi-gnome-terminal/de/usage.html
-share/gnome/gnome/help/multi-gnome-terminal/de/docbook.css
-share/gnome/gnome/help/multi-gnome-terminal/de/topic.dat
-share/gnome/gnome/help/multi-gnome-terminal/da/index.html
-share/gnome/gnome/help/multi-gnome-terminal/da/topic.dat
-share/gnome/gnome/help/multi-gnome-terminal/da/stylesheet-images/caution.png
-share/gnome/gnome/help/multi-gnome-terminal/da/stylesheet-images/important.png
-share/gnome/gnome/help/multi-gnome-terminal/da/stylesheet-images/note.png
-share/gnome/gnome/help/multi-gnome-terminal/da/stylesheet-images/tip.png
-share/gnome/gnome/help/multi-gnome-terminal/da/stylesheet-images/warning.png
-share/gnome/gnome/help/multi-gnome-terminal/da/stylesheet-images/caution.gif
-share/gnome/gnome/help/multi-gnome-terminal/da/stylesheet-images/home.gif
-share/gnome/gnome/help/multi-gnome-terminal/da/stylesheet-images/important.gif
-share/gnome/gnome/help/multi-gnome-terminal/da/stylesheet-images/next.gif
-share/gnome/gnome/help/multi-gnome-terminal/da/stylesheet-images/note.gif
-share/gnome/gnome/help/multi-gnome-terminal/da/stylesheet-images/prev.gif
-share/gnome/gnome/help/multi-gnome-terminal/da/stylesheet-images/tip.gif
-share/gnome/gnome/help/multi-gnome-terminal/da/stylesheet-images/toc-blank.gif
-share/gnome/gnome/help/multi-gnome-terminal/da/stylesheet-images/toc-minus.gif
-share/gnome/gnome/help/multi-gnome-terminal/da/stylesheet-images/toc-plus.gif
-share/gnome/gnome/help/multi-gnome-terminal/da/stylesheet-images/up.gif
-share/gnome/gnome/help/multi-gnome-terminal/da/stylesheet-images/warning.gif
-share/gnome/gnome/help/multi-gnome-terminal/da/gnome-terminal.sgml
-share/gnome/gnome/help/multi-gnome-terminal/da/authors.html
-share/gnome/gnome/help/multi-gnome-terminal/da/classes.html
-share/gnome/gnome/help/multi-gnome-terminal/da/config.html
-share/gnome/gnome/help/multi-gnome-terminal/da/emulation.html
-share/gnome/gnome/help/multi-gnome-terminal/da/environment.html
-share/gnome/gnome/help/multi-gnome-terminal/da/ln9.html
-share/gnome/gnome/help/multi-gnome-terminal/da/menus.html
-share/gnome/gnome/help/multi-gnome-terminal/da/options.html
-share/gnome/gnome/help/multi-gnome-terminal/da/pointerusage.html
-share/gnome/gnome/help/multi-gnome-terminal/da/terminal.html
-share/gnome/gnome/help/multi-gnome-terminal/da/termtech.html
-share/gnome/gnome/help/multi-gnome-terminal/da/docbook.css
-share/gnome/gnome/help/multi-gnome-terminal/es/index.html
-share/gnome/gnome/help/multi-gnome-terminal/es/stylesheet-images/caution.gif
-share/gnome/gnome/help/multi-gnome-terminal/es/stylesheet-images/home.gif
-share/gnome/gnome/help/multi-gnome-terminal/es/stylesheet-images/important.gif
-share/gnome/gnome/help/multi-gnome-terminal/es/stylesheet-images/next.gif
-share/gnome/gnome/help/multi-gnome-terminal/es/stylesheet-images/note.gif
-share/gnome/gnome/help/multi-gnome-terminal/es/stylesheet-images/prev.gif
-share/gnome/gnome/help/multi-gnome-terminal/es/stylesheet-images/tip.gif
-share/gnome/gnome/help/multi-gnome-terminal/es/stylesheet-images/toc-blank.gif
-share/gnome/gnome/help/multi-gnome-terminal/es/stylesheet-images/toc-minus.gif
-share/gnome/gnome/help/multi-gnome-terminal/es/stylesheet-images/toc-plus.gif
-share/gnome/gnome/help/multi-gnome-terminal/es/stylesheet-images/up.gif
-share/gnome/gnome/help/multi-gnome-terminal/es/stylesheet-images/warning.gif
-share/gnome/gnome/help/multi-gnome-terminal/es/gnome-terminal.sgml
-share/gnome/gnome/help/multi-gnome-terminal/es/authors.html
-share/gnome/gnome/help/multi-gnome-terminal/es/classes.html
-share/gnome/gnome/help/multi-gnome-terminal/es/config.html
-share/gnome/gnome/help/multi-gnome-terminal/es/environment.html
-share/gnome/gnome/help/multi-gnome-terminal/es/ln17.html
-share/gnome/gnome/help/multi-gnome-terminal/es/menus.html
-share/gnome/gnome/help/multi-gnome-terminal/es/options.html
-share/gnome/gnome/help/multi-gnome-terminal/es/pointerusage.html
-share/gnome/gnome/help/multi-gnome-terminal/es/usage.html
-share/gnome/gnome/help/multi-gnome-terminal/es/docbook.css
-share/gnome/gnome/help/multi-gnome-terminal/es/topic.dat
-share/gnome/gnome/help/multi-gnome-terminal/it/index.html
-share/gnome/gnome/help/multi-gnome-terminal/it/topic.dat
-share/gnome/gnome/help/multi-gnome-terminal/it/stylesheet-images/caution.png
-share/gnome/gnome/help/multi-gnome-terminal/it/stylesheet-images/important.png
-share/gnome/gnome/help/multi-gnome-terminal/it/stylesheet-images/note.png
-share/gnome/gnome/help/multi-gnome-terminal/it/stylesheet-images/tip.png
-share/gnome/gnome/help/multi-gnome-terminal/it/stylesheet-images/warning.png
-share/gnome/gnome/help/multi-gnome-terminal/it/stylesheet-images/caution.gif
-share/gnome/gnome/help/multi-gnome-terminal/it/stylesheet-images/home.gif
-share/gnome/gnome/help/multi-gnome-terminal/it/stylesheet-images/important.gif
-share/gnome/gnome/help/multi-gnome-terminal/it/stylesheet-images/next.gif
-share/gnome/gnome/help/multi-gnome-terminal/it/stylesheet-images/note.gif
-share/gnome/gnome/help/multi-gnome-terminal/it/stylesheet-images/prev.gif
-share/gnome/gnome/help/multi-gnome-terminal/it/stylesheet-images/tip.gif
-share/gnome/gnome/help/multi-gnome-terminal/it/stylesheet-images/toc-blank.gif
-share/gnome/gnome/help/multi-gnome-terminal/it/stylesheet-images/toc-minus.gif
-share/gnome/gnome/help/multi-gnome-terminal/it/stylesheet-images/toc-plus.gif
-share/gnome/gnome/help/multi-gnome-terminal/it/stylesheet-images/up.gif
-share/gnome/gnome/help/multi-gnome-terminal/it/stylesheet-images/warning.gif
-share/gnome/gnome/help/multi-gnome-terminal/it/gnome-terminal.sgml
-share/gnome/gnome/help/multi-gnome-terminal/it/authors.html
-share/gnome/gnome/help/multi-gnome-terminal/it/classes.html
-share/gnome/gnome/help/multi-gnome-terminal/it/config.html
-share/gnome/gnome/help/multi-gnome-terminal/it/emulation.html
-share/gnome/gnome/help/multi-gnome-terminal/it/environment.html
-share/gnome/gnome/help/multi-gnome-terminal/it/ln12.html
-share/gnome/gnome/help/multi-gnome-terminal/it/menus.html
-share/gnome/gnome/help/multi-gnome-terminal/it/options.html
-share/gnome/gnome/help/multi-gnome-terminal/it/pointerusage.html
-share/gnome/gnome/help/multi-gnome-terminal/it/terminal.html
-share/gnome/gnome/help/multi-gnome-terminal/it/docbook.css
-share/gnome/gnome/help/multi-gnome-terminal/no/index.html
-share/gnome/gnome/help/multi-gnome-terminal/no/topic.dat
-share/gnome/gnome/help/multi-gnome-terminal/no/stylesheet-images/caution.png
-share/gnome/gnome/help/multi-gnome-terminal/no/stylesheet-images/important.png
-share/gnome/gnome/help/multi-gnome-terminal/no/stylesheet-images/note.png
-share/gnome/gnome/help/multi-gnome-terminal/no/stylesheet-images/tip.png
-share/gnome/gnome/help/multi-gnome-terminal/no/stylesheet-images/warning.png
-share/gnome/gnome/help/multi-gnome-terminal/no/stylesheet-images/caution.gif
-share/gnome/gnome/help/multi-gnome-terminal/no/stylesheet-images/home.gif
-share/gnome/gnome/help/multi-gnome-terminal/no/stylesheet-images/important.gif
-share/gnome/gnome/help/multi-gnome-terminal/no/stylesheet-images/next.gif
-share/gnome/gnome/help/multi-gnome-terminal/no/stylesheet-images/note.gif
-share/gnome/gnome/help/multi-gnome-terminal/no/stylesheet-images/prev.gif
-share/gnome/gnome/help/multi-gnome-terminal/no/stylesheet-images/tip.gif
-share/gnome/gnome/help/multi-gnome-terminal/no/stylesheet-images/toc-blank.gif
-share/gnome/gnome/help/multi-gnome-terminal/no/stylesheet-images/toc-minus.gif
-share/gnome/gnome/help/multi-gnome-terminal/no/stylesheet-images/toc-plus.gif
-share/gnome/gnome/help/multi-gnome-terminal/no/stylesheet-images/up.gif
-share/gnome/gnome/help/multi-gnome-terminal/no/stylesheet-images/warning.gif
-share/gnome/gnome/help/multi-gnome-terminal/no/gnome-terminal.sgml
-share/gnome/gnome/help/multi-gnome-terminal/no/authors.html
-share/gnome/gnome/help/multi-gnome-terminal/no/classes.html
-share/gnome/gnome/help/multi-gnome-terminal/no/config.html
-share/gnome/gnome/help/multi-gnome-terminal/no/emulation.html
-share/gnome/gnome/help/multi-gnome-terminal/no/environment.html
-share/gnome/gnome/help/multi-gnome-terminal/no/ln9.html
-share/gnome/gnome/help/multi-gnome-terminal/no/menus.html
-share/gnome/gnome/help/multi-gnome-terminal/no/options.html
-share/gnome/gnome/help/multi-gnome-terminal/no/pointerusage.html
-share/gnome/gnome/help/multi-gnome-terminal/no/terminal.html
-share/gnome/gnome/help/multi-gnome-terminal/no/termtech.html
-share/gnome/gnome/help/multi-gnome-terminal/no/docbook.css
-share/gnome/gnome/apps/System/multi-gnome-terminal.desktop
-share/gnome/gnome-terminal/glade/multi-gnome-terminal.glade
-share/gnome/gnome-terminal/glade/edit_cmd.glade
-share/gnome/idl/MultiTerminal.idl
-share/gnome/omf/mgt/gnome-terminal-C.omf
-share/gnome/omf/mgt/gnome-terminal-de.omf
-share/gnome/omf/mgt/gnome-terminal-es.omf
-@dirrm share/gnome/pixmaps/mgt
-@dirrm share/gnome/gnome/help/multi-gnome-terminal/C/stylesheet-images
-@dirrm share/gnome/gnome/help/multi-gnome-terminal/C/figures
-@dirrm share/gnome/gnome/help/multi-gnome-terminal/C
-@dirrm share/gnome/gnome/help/multi-gnome-terminal/de/stylesheet-images
-@dirrm share/gnome/gnome/help/multi-gnome-terminal/de/figures
-@dirrm share/gnome/gnome/help/multi-gnome-terminal/de
-@dirrm share/gnome/gnome/help/multi-gnome-terminal/da/stylesheet-images
-@dirrm share/gnome/gnome/help/multi-gnome-terminal/da/figures
-@dirrm share/gnome/gnome/help/multi-gnome-terminal/da
-@dirrm share/gnome/gnome/help/multi-gnome-terminal/es/stylesheet-images
-@dirrm share/gnome/gnome/help/multi-gnome-terminal/es/figures
-@dirrm share/gnome/gnome/help/multi-gnome-terminal/es
-@dirrm share/gnome/gnome/help/multi-gnome-terminal/it/stylesheet-images
-@dirrm share/gnome/gnome/help/multi-gnome-terminal/it/figures
-@dirrm share/gnome/gnome/help/multi-gnome-terminal/it
-@dirrm share/gnome/gnome/help/multi-gnome-terminal/no/stylesheet-images
-@dirrm share/gnome/gnome/help/multi-gnome-terminal/no/figures
-@dirrm share/gnome/gnome/help/multi-gnome-terminal/no
-@dirrm share/gnome/gnome/help/multi-gnome-terminal
-@dirrm share/gnome/gnome/help
-@dirrm share/gnome/gnome/apps/System
-@dirrm share/gnome/omf/mgt
+share/pixmaps/mgt/multignometerm.png
+share/pixmaps/mgt/arrow_right2.png
+share/pixmaps/mgt/arrow_left2.png
+share/pixmaps/mgt/panel-folder.png
+share/pixmaps/mgt/gnome-notepad.png
+share/gnome/help/multi-gnome-terminal/C/index.html
+share/gnome/help/multi-gnome-terminal/C/stylesheet-images/caution.gif
+share/gnome/help/multi-gnome-terminal/C/stylesheet-images/home.gif
+share/gnome/help/multi-gnome-terminal/C/stylesheet-images/important.gif
+share/gnome/help/multi-gnome-terminal/C/stylesheet-images/next.gif
+share/gnome/help/multi-gnome-terminal/C/stylesheet-images/note.gif
+share/gnome/help/multi-gnome-terminal/C/stylesheet-images/prev.gif
+share/gnome/help/multi-gnome-terminal/C/stylesheet-images/tip.gif
+share/gnome/help/multi-gnome-terminal/C/stylesheet-images/toc-blank.gif
+share/gnome/help/multi-gnome-terminal/C/stylesheet-images/toc-minus.gif
+share/gnome/help/multi-gnome-terminal/C/stylesheet-images/toc-plus.gif
+share/gnome/help/multi-gnome-terminal/C/stylesheet-images/up.gif
+share/gnome/help/multi-gnome-terminal/C/stylesheet-images/warning.gif
+share/gnome/help/multi-gnome-terminal/C/gnome-terminal.sgml
+share/gnome/help/multi-gnome-terminal/C/authors.html
+share/gnome/help/multi-gnome-terminal/C/classes.html
+share/gnome/help/multi-gnome-terminal/C/config.html
+share/gnome/help/multi-gnome-terminal/C/environment.html
+share/gnome/help/multi-gnome-terminal/C/license.html
+share/gnome/help/multi-gnome-terminal/C/ln9.html
+share/gnome/help/multi-gnome-terminal/C/menus.html
+share/gnome/help/multi-gnome-terminal/C/options.html
+share/gnome/help/multi-gnome-terminal/C/pointerusage.html
+share/gnome/help/multi-gnome-terminal/C/usage.html
+share/gnome/help/multi-gnome-terminal/C/docbook.css
+share/gnome/help/multi-gnome-terminal/C/topic.dat
+share/gnome/help/multi-gnome-terminal/de/index.html
+share/gnome/help/multi-gnome-terminal/de/stylesheet-images/caution.gif
+share/gnome/help/multi-gnome-terminal/de/stylesheet-images/home.gif
+share/gnome/help/multi-gnome-terminal/de/stylesheet-images/important.gif
+share/gnome/help/multi-gnome-terminal/de/stylesheet-images/next.gif
+share/gnome/help/multi-gnome-terminal/de/stylesheet-images/note.gif
+share/gnome/help/multi-gnome-terminal/de/stylesheet-images/prev.gif
+share/gnome/help/multi-gnome-terminal/de/stylesheet-images/tip.gif
+share/gnome/help/multi-gnome-terminal/de/stylesheet-images/toc-blank.gif
+share/gnome/help/multi-gnome-terminal/de/stylesheet-images/toc-minus.gif
+share/gnome/help/multi-gnome-terminal/de/stylesheet-images/toc-plus.gif
+share/gnome/help/multi-gnome-terminal/de/stylesheet-images/up.gif
+share/gnome/help/multi-gnome-terminal/de/stylesheet-images/warning.gif
+share/gnome/help/multi-gnome-terminal/de/gnome-terminal.sgml
+share/gnome/help/multi-gnome-terminal/de/authors.html
+share/gnome/help/multi-gnome-terminal/de/classes.html
+share/gnome/help/multi-gnome-terminal/de/config.html
+share/gnome/help/multi-gnome-terminal/de/environment.html
+share/gnome/help/multi-gnome-terminal/de/ln11.html
+share/gnome/help/multi-gnome-terminal/de/menus.html
+share/gnome/help/multi-gnome-terminal/de/options.html
+share/gnome/help/multi-gnome-terminal/de/pointerusage.html
+share/gnome/help/multi-gnome-terminal/de/usage.html
+share/gnome/help/multi-gnome-terminal/de/docbook.css
+share/gnome/help/multi-gnome-terminal/de/topic.dat
+share/gnome/help/multi-gnome-terminal/da/index.html
+share/gnome/help/multi-gnome-terminal/da/topic.dat
+share/gnome/help/multi-gnome-terminal/da/stylesheet-images/caution.png
+share/gnome/help/multi-gnome-terminal/da/stylesheet-images/important.png
+share/gnome/help/multi-gnome-terminal/da/stylesheet-images/note.png
+share/gnome/help/multi-gnome-terminal/da/stylesheet-images/tip.png
+share/gnome/help/multi-gnome-terminal/da/stylesheet-images/warning.png
+share/gnome/help/multi-gnome-terminal/da/stylesheet-images/caution.gif
+share/gnome/help/multi-gnome-terminal/da/stylesheet-images/home.gif
+share/gnome/help/multi-gnome-terminal/da/stylesheet-images/important.gif
+share/gnome/help/multi-gnome-terminal/da/stylesheet-images/next.gif
+share/gnome/help/multi-gnome-terminal/da/stylesheet-images/note.gif
+share/gnome/help/multi-gnome-terminal/da/stylesheet-images/prev.gif
+share/gnome/help/multi-gnome-terminal/da/stylesheet-images/tip.gif
+share/gnome/help/multi-gnome-terminal/da/stylesheet-images/toc-blank.gif
+share/gnome/help/multi-gnome-terminal/da/stylesheet-images/toc-minus.gif
+share/gnome/help/multi-gnome-terminal/da/stylesheet-images/toc-plus.gif
+share/gnome/help/multi-gnome-terminal/da/stylesheet-images/up.gif
+share/gnome/help/multi-gnome-terminal/da/stylesheet-images/warning.gif
+share/gnome/help/multi-gnome-terminal/da/gnome-terminal.sgml
+share/gnome/help/multi-gnome-terminal/da/authors.html
+share/gnome/help/multi-gnome-terminal/da/classes.html
+share/gnome/help/multi-gnome-terminal/da/config.html
+share/gnome/help/multi-gnome-terminal/da/emulation.html
+share/gnome/help/multi-gnome-terminal/da/environment.html
+share/gnome/help/multi-gnome-terminal/da/ln9.html
+share/gnome/help/multi-gnome-terminal/da/menus.html
+share/gnome/help/multi-gnome-terminal/da/options.html
+share/gnome/help/multi-gnome-terminal/da/pointerusage.html
+share/gnome/help/multi-gnome-terminal/da/terminal.html
+share/gnome/help/multi-gnome-terminal/da/termtech.html
+share/gnome/help/multi-gnome-terminal/da/docbook.css
+share/gnome/help/multi-gnome-terminal/es/index.html
+share/gnome/help/multi-gnome-terminal/es/stylesheet-images/caution.gif
+share/gnome/help/multi-gnome-terminal/es/stylesheet-images/home.gif
+share/gnome/help/multi-gnome-terminal/es/stylesheet-images/important.gif
+share/gnome/help/multi-gnome-terminal/es/stylesheet-images/next.gif
+share/gnome/help/multi-gnome-terminal/es/stylesheet-images/note.gif
+share/gnome/help/multi-gnome-terminal/es/stylesheet-images/prev.gif
+share/gnome/help/multi-gnome-terminal/es/stylesheet-images/tip.gif
+share/gnome/help/multi-gnome-terminal/es/stylesheet-images/toc-blank.gif
+share/gnome/help/multi-gnome-terminal/es/stylesheet-images/toc-minus.gif
+share/gnome/help/multi-gnome-terminal/es/stylesheet-images/toc-plus.gif
+share/gnome/help/multi-gnome-terminal/es/stylesheet-images/up.gif
+share/gnome/help/multi-gnome-terminal/es/stylesheet-images/warning.gif
+share/gnome/help/multi-gnome-terminal/es/gnome-terminal.sgml
+share/gnome/help/multi-gnome-terminal/es/authors.html
+share/gnome/help/multi-gnome-terminal/es/classes.html
+share/gnome/help/multi-gnome-terminal/es/config.html
+share/gnome/help/multi-gnome-terminal/es/environment.html
+share/gnome/help/multi-gnome-terminal/es/ln17.html
+share/gnome/help/multi-gnome-terminal/es/menus.html
+share/gnome/help/multi-gnome-terminal/es/options.html
+share/gnome/help/multi-gnome-terminal/es/pointerusage.html
+share/gnome/help/multi-gnome-terminal/es/usage.html
+share/gnome/help/multi-gnome-terminal/es/docbook.css
+share/gnome/help/multi-gnome-terminal/es/topic.dat
+share/gnome/help/multi-gnome-terminal/it/index.html
+share/gnome/help/multi-gnome-terminal/it/topic.dat
+share/gnome/help/multi-gnome-terminal/it/stylesheet-images/caution.png
+share/gnome/help/multi-gnome-terminal/it/stylesheet-images/important.png
+share/gnome/help/multi-gnome-terminal/it/stylesheet-images/note.png
+share/gnome/help/multi-gnome-terminal/it/stylesheet-images/tip.png
+share/gnome/help/multi-gnome-terminal/it/stylesheet-images/warning.png
+share/gnome/help/multi-gnome-terminal/it/stylesheet-images/caution.gif
+share/gnome/help/multi-gnome-terminal/it/stylesheet-images/home.gif
+share/gnome/help/multi-gnome-terminal/it/stylesheet-images/important.gif
+share/gnome/help/multi-gnome-terminal/it/stylesheet-images/next.gif
+share/gnome/help/multi-gnome-terminal/it/stylesheet-images/note.gif
+share/gnome/help/multi-gnome-terminal/it/stylesheet-images/prev.gif
+share/gnome/help/multi-gnome-terminal/it/stylesheet-images/tip.gif
+share/gnome/help/multi-gnome-terminal/it/stylesheet-images/toc-blank.gif
+share/gnome/help/multi-gnome-terminal/it/stylesheet-images/toc-minus.gif
+share/gnome/help/multi-gnome-terminal/it/stylesheet-images/toc-plus.gif
+share/gnome/help/multi-gnome-terminal/it/stylesheet-images/up.gif
+share/gnome/help/multi-gnome-terminal/it/stylesheet-images/warning.gif
+share/gnome/help/multi-gnome-terminal/it/gnome-terminal.sgml
+share/gnome/help/multi-gnome-terminal/it/authors.html
+share/gnome/help/multi-gnome-terminal/it/classes.html
+share/gnome/help/multi-gnome-terminal/it/config.html
+share/gnome/help/multi-gnome-terminal/it/emulation.html
+share/gnome/help/multi-gnome-terminal/it/environment.html
+share/gnome/help/multi-gnome-terminal/it/ln12.html
+share/gnome/help/multi-gnome-terminal/it/menus.html
+share/gnome/help/multi-gnome-terminal/it/options.html
+share/gnome/help/multi-gnome-terminal/it/pointerusage.html
+share/gnome/help/multi-gnome-terminal/it/terminal.html
+share/gnome/help/multi-gnome-terminal/it/docbook.css
+share/gnome/help/multi-gnome-terminal/no/index.html
+share/gnome/help/multi-gnome-terminal/no/topic.dat
+share/gnome/help/multi-gnome-terminal/no/stylesheet-images/caution.png
+share/gnome/help/multi-gnome-terminal/no/stylesheet-images/important.png
+share/gnome/help/multi-gnome-terminal/no/stylesheet-images/note.png
+share/gnome/help/multi-gnome-terminal/no/stylesheet-images/tip.png
+share/gnome/help/multi-gnome-terminal/no/stylesheet-images/warning.png
+share/gnome/help/multi-gnome-terminal/no/stylesheet-images/caution.gif
+share/gnome/help/multi-gnome-terminal/no/stylesheet-images/home.gif
+share/gnome/help/multi-gnome-terminal/no/stylesheet-images/important.gif
+share/gnome/help/multi-gnome-terminal/no/stylesheet-images/next.gif
+share/gnome/help/multi-gnome-terminal/no/stylesheet-images/note.gif
+share/gnome/help/multi-gnome-terminal/no/stylesheet-images/prev.gif
+share/gnome/help/multi-gnome-terminal/no/stylesheet-images/tip.gif
+share/gnome/help/multi-gnome-terminal/no/stylesheet-images/toc-blank.gif
+share/gnome/help/multi-gnome-terminal/no/stylesheet-images/toc-minus.gif
+share/gnome/help/multi-gnome-terminal/no/stylesheet-images/toc-plus.gif
+share/gnome/help/multi-gnome-terminal/no/stylesheet-images/up.gif
+share/gnome/help/multi-gnome-terminal/no/stylesheet-images/warning.gif
+share/gnome/help/multi-gnome-terminal/no/gnome-terminal.sgml
+share/gnome/help/multi-gnome-terminal/no/authors.html
+share/gnome/help/multi-gnome-terminal/no/classes.html
+share/gnome/help/multi-gnome-terminal/no/config.html
+share/gnome/help/multi-gnome-terminal/no/emulation.html
+share/gnome/help/multi-gnome-terminal/no/environment.html
+share/gnome/help/multi-gnome-terminal/no/ln9.html
+share/gnome/help/multi-gnome-terminal/no/menus.html
+share/gnome/help/multi-gnome-terminal/no/options.html
+share/gnome/help/multi-gnome-terminal/no/pointerusage.html
+share/gnome/help/multi-gnome-terminal/no/terminal.html
+share/gnome/help/multi-gnome-terminal/no/termtech.html
+share/gnome/help/multi-gnome-terminal/no/docbook.css
+share/gnome/apps/System/multi-gnome-terminal.desktop
+share/gnome-terminal/glade/multi-gnome-terminal.glade
+share/gnome-terminal/glade/edit_cmd.glade
+share/idl/MultiTerminal.idl
+share/omf/mgt/gnome-terminal-C.omf
+share/omf/mgt/gnome-terminal-de.omf
+share/omf/mgt/gnome-terminal-es.omf
+@dirrm share/pixmaps/mgt
+@dirrm share/gnome/help/multi-gnome-terminal/C/stylesheet-images
+@dirrm share/gnome/help/multi-gnome-terminal/C/figures
+@dirrm share/gnome/help/multi-gnome-terminal/C
+@dirrm share/gnome/help/multi-gnome-terminal/de/stylesheet-images
+@dirrm share/gnome/help/multi-gnome-terminal/de/figures
+@dirrm share/gnome/help/multi-gnome-terminal/de
+@dirrm share/gnome/help/multi-gnome-terminal/da/stylesheet-images
+@dirrm share/gnome/help/multi-gnome-terminal/da/figures
+@dirrm share/gnome/help/multi-gnome-terminal/da
+@dirrm share/gnome/help/multi-gnome-terminal/es/stylesheet-images
+@dirrm share/gnome/help/multi-gnome-terminal/es/figures
+@dirrm share/gnome/help/multi-gnome-terminal/es
+@dirrm share/gnome/help/multi-gnome-terminal/it/stylesheet-images
+@dirrm share/gnome/help/multi-gnome-terminal/it/figures
+@dirrm share/gnome/help/multi-gnome-terminal/it
+@dirrm share/gnome/help/multi-gnome-terminal/no/stylesheet-images
+@dirrm share/gnome/help/multi-gnome-terminal/no/figures
+@dirrm share/gnome/help/multi-gnome-terminal/no
+@dirrm share/gnome/help/multi-gnome-terminal
+@dirrm share/omf/mgt

@@ -22,6 +22,8 @@ USE_GTK=        yes
 USE_GNOME=      yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
+# The distribution Makefile.in files append "/gnome" to --datadir
+CONFIGURE_ARGS+=	--datadir=${PREFIX}/share
 
 MAN1=		multi-gnome-terminal.1
 
