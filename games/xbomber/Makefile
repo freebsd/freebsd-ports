@@ -7,45 +7,29 @@
 
 PORTNAME=	xbomber
 PORTVERSION=	0.8
-CATEGORIES=     games
-MASTER_SITES=   ftp://ftp.sonic.net/pub/users/nbs/unix/x/xbomber/
-DISTNAME=       ${PORTNAME}.${PORTVERSION}
+CATEGORIES=	games
+MASTER_SITES=	ftp://ftp.sonic.net/pub/users/nbs/unix/x/xbomber/
+DISTNAME=	${PORTNAME}.${PORTVERSION}
 
-MAINTAINER=     jclarke@cisco.com
+MAINTAINER=	jclarke@cisco.com
+
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_X_PREFIX=	yes
-WRKSRC=         ${WRKDIR}/xbomber
 MAKEFILE=	makefile
 
 do-install:
-	${MKDIR} ${PREFIX}/lib/xbomber/
-	${INSTALL_PROGRAM} ${WRKSRC}/xbomber ${PREFIX}/lib/xbomber/
-
-	${MKDIR} ${PREFIX}/lib/xbomber/bitmaps/
-	${INSTALL_DATA} ${WRKSRC}/bitmaps/* ${PREFIX}/lib/xbomber/bitmaps/
-
-	${MKDIR} ${PREFIX}/lib/xbomber/jungle/
-	${INSTALL_DATA} ${WRKSRC}/jungle/* ${PREFIX}/lib/xbomber/jungle/
-
-	${MKDIR} ${PREFIX}/lib/xbomber/levels/
-	${INSTALL_DATA} ${WRKSRC}/levels/* ${PREFIX}/lib/xbomber/levels/
-
-	${MKDIR} ${PREFIX}/lib/xbomber/pixmaps/
-	${INSTALL_DATA} ${WRKSRC}/pixmaps/* ${PREFIX}/lib/xbomber/pixmaps/
-
-	${MKDIR} ${PREFIX}/lib/xbomber/sounds/
-	${MKDIR} ${PREFIX}/lib/xbomber/sounds/numbers/
-	${INSTALL_DATA} ${WRKSRC}/sounds/*.au ${PREFIX}/lib/xbomber/sounds/
-	${INSTALL_DATA} ${WRKSRC}/sounds/numbers/*.au ${PREFIX}/lib/xbomber/sounds/numbers/
-	${MKDIR} ${PREFIX}/share/xbomber/
+	${INSTALL_PROGRAM} ${WRKSRC}/xbomber ${PREFIX}/bin
+	@${MKDIR} ${PREFIX}/share/xbomber
+	${TAR} -C ${WRKSRC} -cf - bitmaps jungle levels pixmaps sounds | \
+		${TAR} -C ${PREFIX}/share/xbomber --unlink -xf -
+	@find ${PREFIX}/share/xbomber | xargs ${CHOWN} ${SHAREOWN}:${SHAREGRP}
+	@find ${PREFIX}/share/xbomber -type f | xargs ${CHMOD} ${SHAREMODE}
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${PREFIX}/share/doc/xbomber
 .for file in README.txt LEVELS.txt SOUND.txt GRAPHICS.txt
-	${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/xbomber/
+	${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/xbomber
 .endfor
-
-	${MKDIR} ${PREFIX}/bin; \
-	${ECHO} "#!/bin/sh" > ${PREFIX}/bin/xbomber; \
-	${ECHO} "cd ${PREFIX}/lib/xbomber" >> ${PREFIX}/bin/xbomber; \
-	${CAT} ${SCRIPTDIR}/xbomber.sh >> ${PREFIX}/bin/xbomber; \
-	${CHMOD} 0755 ${PREFIX}/bin/xbomber
+.endif
 
 .include <bsd.port.mk>
