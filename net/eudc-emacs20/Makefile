@@ -8,7 +8,7 @@
 PORTNAME=	eudc
 PORTVERSION=	1.30b
 CATEGORIES=	net mail elisp
-MASTER_SITES=	http://lspwww.epfl.ch/~figueire/Software/eudc/
+MASTER_SITES=	http://diwww.epfl.ch/~figueire/Software/eudc/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 
 MAINTAINER=	ports@FreeBSD.org
