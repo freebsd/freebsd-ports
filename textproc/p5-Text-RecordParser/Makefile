@@ -24,7 +24,7 @@ MAN3=		Text::RecordParser.3
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500601
-IGNORE=		"requires perl 5.6.x or later. Install lang/perl5 and try again"
+EXTRA_PATCHES=	${PATCHDIR}/5.005-RecordParser.pm
 .endif
 
 .include <bsd.port.post.mk>
