@@ -1,5 +1,5 @@
 bin/epic
-bin/epic-EPIC4-2000
+bin/epic-EPIC4pre2.600
 libexec/wserv
 share/epic/help/1_General/away
 share/epic/help/1_General/describe
@@ -873,6 +873,7 @@ share/epic/script/fe
 share/epic/script/files
 share/epic/script/functions
 share/epic/script/genalias
+share/epic/script/grep
 share/epic/script/global
 share/epic/script/guh
 share/epic/script/imap
@@ -917,6 +918,7 @@ share/epic/script/tc
 share/epic/script/time
 share/epic/script/tls
 share/epic/script/utime
+share/epic/script/vi-binds
 share/epic/script/webster
 share/epic/script/window
 @dirrm share/epic/script

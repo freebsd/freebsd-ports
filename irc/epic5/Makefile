@@ -6,19 +6,19 @@
 #
 
 PORTNAME=	epic4
-PORTVERSION=	2000
+PORTVERSION=	pre2.600
 CATEGORIES=	irc
 MASTER_SITES=	ftp://ftp.epicsol.org/pub/epic/EPIC4-BETA/ \
-		ftp://mirror.pipex.net/pub/epic/EPIC4-BETA/ \
-		ftp://totem.fix.no/pub/mirrors/epic/EPIC4-BETA/ \
-		ftp://ftp.sanyusan.se/pub/epic/EPIC4-BETA/
-DISTFILES=	epic4-2000.tar.gz epic4pre2-help.tar.gz
+		ftp://ftp.sanyusan.se/pub/epic/EPIC4-BETA/ \
+		ftp://totem.fix.no/pub/mirrors/epic/EPIC4-BETA/
+DISTFILES=	epic4pre2.600.tar.gz epic4pre2-help.tar.gz
 
-MAINTAINER=	anders@sanyusan.se
+MAINTAINER=	anders@codefactory.se
 
 DIST_SUBDIR=	epic4
 
-EXTRACT_ONLY=	epic4-2000.tar.gz
+EXTRACT_ONLY=	epic4pre2.600.tar.gz
+WRKSRC=         ${WRKDIR}/epic4pre2.600
 GNU_CONFIGURE=	yes
 
 MAN1=		epic.1
