@@ -4,10 +4,6 @@ Virtual Game Boy is the Nintendo GameBoy(tm) emulator on X-Window.
 
 	vgb /usr/X11R6/share/VGB/CART.GB
 
-  If you want to know what the cartidge file is, type as:
-
-	gblist <cartridge file>
-
   You buy the cartridges. GameBoy software is copyrighted and still sold. 
 Therefore, its distribution is an act of piracy. Nothing prohibits you 
 from backing up a cartridge you own and playing it on the emulator though.
@@ -21,36 +17,3 @@ GameBoy-related archives with technical and other info are located at:
 
                   http://www.freeflight.com/fms/GameBoy/
                   ftp://ftp.komkon.org/pub/GameBoy/
-
-Usage: vgb [-option1 [-option2...]] <filename>
-<filename> = name of file to load as cartridge [CART.GB]
-[-option]   =
-  -verbose <level>    - Select debugging messages [5]
-                        0 - Silent           1 - Startup messages
-                        2 - Illegal writes   4 - Illegal CPU ops
-                        8 - Bank switching
-  -vperiod <period>   - Set VBlank interrupts period [69905 cycles]
-  -uperiod <period>   - Number of interrupts per screen update [2]
-  -help               - Print this help page
-  -cheat <GG code>    - Activate a GameGenie cheat
-  -delay/-nodelay     - Delay/don't delay line interrupts [-nodelay]
-  -crc/-nocrc         - Check/don't check cartridge CRC [-crc]
-  -autoa/-noautoa     - Autofire/No autofire for button A [-noautoa]
-  -autob/-noautob     - Autofire/No autofire for button B [-noautob]
-  -logsnd <filename>  - Write soundtrack to a file [off]
-  -trap <address>     - Trap execution when PC reaches address [FFFFh]
-  -saver/-nosaver     - Save/don't save CPU when inactive [-saver]
-  -colorN <name>      - Change color #N [white,#989898,#585858,black]
-  -bcolorN <name>     - Change background color #N [same]
-  -scolorN <name>     - Change sprite color #N [same]
-  -wcolorN <name>     - Change window color #N [same]
-
-Keyboard bindings:
-  [SPACE] - A button (also: A,S,D,F,G,H,J,K,L)
-  [LALT]  - B button (also: Z,X,C,V,B,N,M)
-  [TAB]   - SELECT button
-  [ENTER] - START button
-  [ESC]   - Quit emulation (also: [F12])
-
-  [F1]    - Go into built-in debugger
-  [F2]    - Show LCD controller registers
