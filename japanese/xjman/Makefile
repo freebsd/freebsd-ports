@@ -33,7 +33,7 @@ post-extract:
 .for sec in ${MANSECS}
 	(cd ${WRKSRC}/man${sec}; \
 	for f in *.${sec}x; do ${CP} $$f $${f%x}; done; \
-	${REINPLACE_CMD} -e 's/^(\.so .*)x$$/$$1/' *.${sec})
+	${REINPLACE_CMD} -e 's/^\(\.so .*\)x$$/$$1/' *.${sec})
 .endfor
 
 post-build:
