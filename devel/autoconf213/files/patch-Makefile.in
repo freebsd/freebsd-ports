@@ -1,5 +1,14 @@
 --- Makefile.in.orig	Sun Feb 27 11:18:10 2000
-+++ Makefile.in	Mon Mar 18 21:10:20 2002
++++ Makefile.in	Sat Oct 12 19:40:56 2002
+@@ -49,7 +49,7 @@
+ 
+ # Directory in which to install library files.
+ datadir = @datadir@
+-acdatadir = $(datadir)/autoconf
++acdatadir = $(datadir)/autoconf213
+ 
+ # Directory in which to install documentation info files.
+ infodir = @infodir@
 @@ -68,7 +68,7 @@
  DISTFILES = AUTHORS COPYING ChangeLog ChangeLog.1 INSTALL \
  	Makefile.in NEWS README TODO $(M4FILES) \
@@ -22,6 +31,15 @@
  	$(MAKEINFO) -I$(srcdir) $(srcdir)/autoconf.texi --no-split --output=$@
  
  INSTALL: install.texi
+@@ -119,7 +119,7 @@
+ standards.info: standards.texi make-stds.texi
+ 	$(MAKEINFO) -I$(srcdir) $(srcdir)/standards.texi --no-split --output=$@
+ 
+-dvi: autoconf.dvi @standards_dvi@
++dvi: autoconf.dvi
+ 
+ autoconf.dvi: autoconf.texi
+ 	$(TEXI2DVI) $(srcdir)/autoconf.texi
 @@ -141,7 +141,7 @@
  
  install: all $(M4FILES) acconfig.h installdirs install-info
