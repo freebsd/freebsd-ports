@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Mail-Box
-PORTVERSION=	1.321
+PORTVERSION=	1.322
 CATEGORIES=	mail perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Mail
@@ -40,6 +40,6 @@ MAN3=		Mail::Box.3 \
 
 post-patch:
 	${PERL} -pi -e 's/^our\s+([\$$\@]\w+)/use vars qw($$1);$$1/' \
-		${WRKSRC}/Message.pm ${WRKSRC}/Message/Body.pm
+		${WRKSRC}/Message.pm
 
 .include <bsd.port.mk>
