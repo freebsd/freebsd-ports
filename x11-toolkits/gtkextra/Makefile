@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gtkextra
-PORTVERSION= 	0.99.10
+PORTVERSION= 	0.99.11
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://magnet.fsu.edu/~feiguin/gtk/src/
 DISTNAME=	${PORTNAME:S/gtk/gtk+/}-${PORTVERSION}
