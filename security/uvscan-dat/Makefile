@@ -26,12 +26,12 @@ do-configure:
 
 do-install:
 	${MKDIR} ${PREFIX}/libexec/uvscan
-.for file in clean.dat internet.dat names.dat scan.dat
-	${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/libexec/uvscan
+.for filename in clean.dat internet.dat names.dat scan.dat
+	${INSTALL_DATA} ${WRKSRC}/${filename} ${PREFIX}/libexec/uvscan
 .endfor
 	${MKDIR} ${PREFIX}/share/doc/uvscan
-.for file in reseller.txt packing.lst
-	${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/uvscan
+.for filename in reseller.txt packing.lst
+	${INSTALL_DATA} ${WRKSRC}/${filename} ${PREFIX}/share/doc/uvscan
 .endfor
 	${INSTALL_SCRIPT} ${WRKDIR}/update_dat ${PREFIX}/sbin
 	@${CAT} ${PKGMESSAGE}
