@@ -3,7 +3,7 @@
 # Date created:				6/5/1998
 # Whom:					n@nectar.com
 #
-# $Id: Makefile,v 1.1.1.1 1998/07/06 02:28:39 nectar Exp $
+# $Id: Makefile,v 1.2 1998/07/06 23:35:59 nectar Exp $
 #
 
 DISTNAME=		krb5-1.0.5
@@ -66,7 +66,7 @@ MAN8=			krb5kdc.8 kadmin.8 kadmin.local.8 kdb5_util.8 \
 WRKSRC=			${WRKDIR}/${DISTNAME}/src
 RECONF_COOKIE=		${WRKDIR}/.reconf_done
 README_KRB5=		README.KRB5-1.0.5
-AWK_SCRIPT=		'(/1) Change into the directory/) { if (match($$0, "dist/[0-9]+")) print substr($$0, RSTART, RLENGTH) }'
+AWK_SCRIPT=		'(/1\) Change into the directory/) { if (match($$0, "dist/[0-9]+")) print substr($$0, RSTART, RLENGTH) }'
 
 WANT_HTML?=		YES
 HTML_DOC_DIR=		${WRKDIR}/${DISTNAME}/doc
