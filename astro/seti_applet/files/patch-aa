@@ -1,24 +1,24 @@
---- src/seti_applet.c.orig	Wed Jul 19 07:18:22 2000
-+++ src/seti_applet.c	Wed Jul 19 07:19:05 2000
-@@ -1352,7 +1352,7 @@
- 		g_free ( sa.setidir );
+--- src/seti_applet.c.orig	Tue Oct  3 11:05:06 2000
++++ src/seti_applet.c	Tue Oct  3 11:06:23 2000
+@@ -1442,7 +1442,7 @@
+ 		g_free ( sa.seti_dir );
  	}
  	gnome_config_push_prefix ( path );
--	sa.setidir = gnome_config_get_string ( "setiapplet/setidir=/usr/local/seti" );
-+	sa.setidir = gnome_config_get_string ( "setiapplet/setidir=/var/db/setiathome" );
- 	sa.updateinterval = gnome_config_get_int ( "setiapplet/updateinterval=3" );
- 	sa.fileupdateinterval = gnome_config_get_int ( "setiapplet/fileupdateinterval=120" );
- 	sa.showcpu = gnome_config_get_int ( "setiapplet/showcpu=1" );
-@@ -1370,10 +1370,10 @@
- 		g_free ( sa.extraparams );
+-	sa.seti_dir = gnome_config_get_string ( "setiapplet/setidir=/usr/local/seti" );
++	sa.seti_dir = gnome_config_get_string ( "setiapplet/setidir=/var/db/setiathome" );
+ 	sa.update_interval = gnome_config_get_int ( "setiapplet/updateinterval=3" );
+ 	sa.file_update_interval = gnome_config_get_int ( "setiapplet/fileupdateinterval=120" );
+ 
+@@ -1460,10 +1460,10 @@
+ 		g_free ( sa.extra_params );
  	}
- 	sa.extraparams = gnome_config_get_string ( "setiapplet/extraparams=");
--	sa.separateexedir = gnome_config_get_int ( "setiapplet/separateexedir=0" );
-+	sa.separateexedir = gnome_config_get_int ( "setiapplet/separateexedir=1" );
- 	if ( sa.separateexedir == TRUE )
+ 	sa.extra_params = gnome_config_get_string ( "setiapplet/extraparams=");
+-	sa.separate_exe_dir = gnome_config_get_int ( "setiapplet/separateexedir=0" );
++	sa.separate_exe_dir = gnome_config_get_int ( "setiapplet/separateexedir=1" );
+ 	if ( sa.separate_exe_dir == TRUE )
  	{
--		sa.setiexedir = gnome_config_get_string ( "setiapplet/setiexedir" );
-+		sa.setiexedir = gnome_config_get_string ( "setiapplet/setiexedir=/usr/local/bin" );
+-		sa.seti_exe_dir = gnome_config_get_string ( "setiapplet/setiexedir" );
++		sa.seti_exe_dir = gnome_config_get_string ( "setiapplet/setiexedir=/usr/local/bin" );
  	}
- 	sa.launchonstart = gnome_config_get_int ( "setiapplet/launchonstart=0" );
+ 	sa.launch_on_start = gnome_config_get_int ( "setiapplet/launchonstart=0" );
  	gnome_config_pop_prefix();

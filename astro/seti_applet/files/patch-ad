@@ -1,0 +1,10 @@
+--- src/seti_control.c.orig	Thu Oct 12 16:29:42 2000
++++ src/seti_control.c	Thu Oct 12 16:29:53 2000
+@@ -20,6 +20,7 @@
+ #include <unistd.h>
+ #include <signal.h>
+ #include <stdlib.h>
++#include <fcntl.h>
+ 
+ #include <glibtop.h>
+ #include <glibtop/procstate.h>
