@@ -1,0 +1,7 @@
+lib/perl5/man/man3/Crypt::DES.3.gz
+lib/perl5/site_perl/Crypt/DES.pm
+lib/perl5/site_perl/Crypt/DES.pod
+lib/perl5/site_perl/i386-freebsd/auto/Crypt/DES/DES.bs
+lib/perl5/site_perl/i386-freebsd/auto/Crypt/DES/DES.so
+lib/perl5/site_perl/i386-freebsd/auto/Crypt/DES/.packlist
+@dirrm lib/perl5/site_perl/i386-freebsd/auto/Crypt/DES
