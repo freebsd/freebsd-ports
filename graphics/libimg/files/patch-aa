@@ -1,0 +1,24 @@
+--- configure.orig	Thu Nov 19 03:50:52 1998
++++ configure	Sun Feb 21 00:53:23 1999
+@@ -978,8 +978,8 @@
+     TCL_INC_DIR=${TCL_TOP_DIR}/include
+ elif test -d ${TCL_EXEC_PREFIX}/include -a -f ${TCL_EXEC_PREFIX}/include/tcl.h; then
+     TCL_INC_DIR=${TCL_EXEC_PREFIX}/include
+-elif test -d ${TCL_EXEC_PREFIX}/include -a -f ${TCL_EXEC_PREFIX}/include/tcl.h; then
+-    TCL_INC_DIR=${TCL_EXEC_PREFIX}/include
++elif test -d ${TCL_EXEC_PREFIX}/include -a -f ${TCL_EXEC_PREFIX}/include/tcl8.0/tcl.h; then
++    TCL_INC_DIR=${TCL_EXEC_PREFIX}/include/tcl8.0
+ else
+     TCL_INC_DIR=$prefix/include
+ fi
+@@ -1091,8 +1091,8 @@
+     TK_INC_DIR=${TK_TOP_DIR}/include
+ elif test -d ${TK_EXEC_PREFIX}/include -a -f ${TK_EXEC_PREFIX}/include/tk.h; then
+     TK_INC_DIR=${TK_EXEC_PREFIX}/include
+-elif test -d ${TK_EXEC_PREFIX}/include -a -f ${TK_EXEC_PREFIX}/include/tk.h; then
+-    TK_INC_DIR=${TK_EXEC_PREFIX}/include
++elif test -d ${TK_EXEC_PREFIX}/include -a -f ${TK_EXEC_PREFIX}/include/tk8.0/tk.h; then
++    TK_INC_DIR=${TK_EXEC_PREFIX}/include/tk8.0
+ else
+     TK_INC_DIR=$prefix/include
+ fi
