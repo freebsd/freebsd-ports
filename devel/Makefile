@@ -14,6 +14,7 @@
     SUBDIR += automake
     SUBDIR += bcc
     SUBDIR += boehm-gc
+    SUBDIR += bonobo
     SUBDIR += cccc
     SUBDIR += cdecl
     SUBDIR += cdk
