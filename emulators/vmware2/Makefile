@@ -27,7 +27,7 @@ PATCHFILES=	vmmon-freebsd-0.95.tar.gz \
 MAINTAINER=	freebsd-emulation@FreeBSD.org
 
 RUN_DEPENDS=	${LINUX_DIR}/lib/libc.so.6:${PORTSDIR}/emulators/linux_base \
-		/dev/rtc:${PORTSDIR}/emulators/rtc
+		${LINUX_DIR}/dev/rtc:${PORTSDIR}/emulators/rtc
 
 RESTRICTED=	"Not sure if we can redistribute it"
 
