@@ -6,16 +6,17 @@
 #
 
 PORTNAME=	svgalib
-PORTVERSION=	1.4.2
-PORTREVISION=	1
+PORTVERSION=	1.4.3
+PORTREVISION=	0
 CATEGORIES=	graphics devel
 MASTER_SITES=	http://www.svgalib.org/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	danfe@regency.nsu.ru
 COMMENT=	A low level console graphics library
 
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
+MANCOMPRESSED=	yes
 
 ALL_TARGET=	shared static
 
@@ -29,7 +30,7 @@ BROKEN=		"3.* isn't supported - please upgrade to use the port"
 
 .for i in 1 2 3 4 5 6 7 8 9
 .if exists(${FILESDIR}/man${i})
-MAN${i}!=	/bin/cat ${FILESDIR}/man${i}
+MAN${i}!=	${CAT} ${FILESDIR}/man${i}
 .endif
 .endfor
 
