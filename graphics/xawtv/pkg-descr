@@ -1,7 +1,5 @@
 This is a _simple_ xaw-based TV Program which uses the bttv driver or
 video4linux (included in 2.1.x).  Copy Policy is GNU GPL.
 
-WWW: http://www.strusel007.de/linux/xawtv/
+WWW: http://bytesex.org/xawtv/
 
-- George Reid
-greid@ukug.uk.freebsd.org

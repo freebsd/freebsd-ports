@@ -1,0 +1,19 @@
+--- src/Makefile.in.orig	Thu Dec 13 13:15:07 2001
++++ src/Makefile.in	Mon Jan 14 20:36:59 2002
+@@ -124,12 +124,14 @@
+ install-dirs:
+ 	$(INSTALL_DIR) $(bindir)
+ 	$(INSTALL_DIR) $(resdir)/app-defaults
+-	$(INSTALL_DIR) $(resdir)/de/app-defaults
++	for lang in $(LANG); do \
++	  $(INSTALL_DIR) $(resdir)/$$lang/app-defaults;\
++	done
+ 
+ install-common:
+ 	$(INSTALL_DIR) $(bindir)
+ 	$(INSTALL_DIR) $(resdir)/app-defaults
+-	$(INSTALL_PROGRAM) $(srcdir)/subtitles $(bindir)
++	$(INSTALL_DATA) -m 555 $(srcdir)/subtitles $(bindir)
+ 	$(INSTALL_PROGRAM) -s xawtv-remote $(bindir)
+ 	$(INSTALL_PROGRAM) -s streamer $(bindir)
+ 	$(INSTALL_PROGRAM) -s v4lctl $(bindir)

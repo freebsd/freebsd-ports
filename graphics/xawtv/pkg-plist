@@ -1,16 +1,26 @@
 bin/alevtd
 bin/dump-mixers
+bin/ntsc-cc
 bin/propwatch
 bin/record
 bin/rootv
 bin/scantv
 bin/showriff
 bin/streamer
+bin/subtitles
+bin/ttv
 bin/v4lctl
 bin/webcam
 bin/xawtv
 bin/xawtv-remote
-lib/X11/app-defaults/Xawtv
-lib/X11/fonts/misc/led-koi8.pcf.gz
-lib/X11/fonts/misc/led-latin1.pcf.gz
-lib/X11/fonts/misc/led-latin2.pcf.gz
+@cwd %%X11BASE%%
+lib/X11/app-defaults/MoTV
+lib/X11/fonts/misc/led-iso8859-1.pcf.gz
+lib/X11/fonts/misc/led-iso8859-2.pcf.gz
+lib/X11/fonts/misc/led-koi8-r.pcf.gz
+lib/X11/de/app-defaults/MoTV
+lib/X11/it/app-defaults/MoTV
+@dirrm lib/X11/de/app-defaults
+@dirrm lib/X11/de
+@dirrm lib/X11/it/app-defaults     
+@dirrm lib/X11/it
