@@ -1,0 +1,21 @@
+This port installs the GUI frontend for the XBone. The GUI is written
+as a set of XML pages and required Apache web server to run. The
+following is a detailed description of the XBone taken from XBone
+port.
+
+The X-Bone dynamically deploys and manages Internet overlays to reduce
+configuration effort and increase network component sharing. The
+X-Bone discovers, configures, and monitors network resources to create
+overlays over existing IP networks. Overlays are useful for deploying
+overlapping virtual networks on shared infrastructure and for
+simplifying topology.
+
+The X-Bone's two-layer IP in IP tunneled overlays support existing
+applications and unmodified routing, multicast, and DNS services in
+unmodified host operating systems. This two-layer scheme uniquely
+supports node revisitation and recursive overlays, which is critical
+for fault tolerance and dynamic relocation. The X-Bone uses multicast
+to simplify resource discovery, and provides secure deployment as well
+as secure overlays (VPNs).
+
+WWW:	http://www.isi.edu/xbone/
