@@ -196,7 +196,7 @@ if [ $answ = NO ]; then
   echo "#undef BuildXInputExt" >> $F
   echo "#define BuildXInputExt		NO" >> $F
 else
-  echo "#define XInputDrivers dynapro elo2300 elographics magellan microtouch \
+  echo "#define XInputDrivers mouse dynapro elo2300 elographics magellan microtouch \
         mutouch spaceorb wacom"  >> $F
 # XXX broken in 3.9.18
 #  if [ X${MACHINE} != X"alpha" ]; then
