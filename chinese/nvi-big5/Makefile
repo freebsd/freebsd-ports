@@ -5,15 +5,14 @@
 # $FreeBSD$
 #
 
+CATEGORIES=	chinese editors
 PKGNAMESUFFIX=	-big5
 
 MASTERDIR=	${.CURDIR}/../../editors/nvi-m17n
-COMMENT=	${.CURDIR}/pkg/COMMENT
-
-.include "${MASTERDIR}/Makefile"
-
-CATEGORIES=	chinese editors
 
 MAINTAINER=	itojun@itojun.org
 
+COMMENT=	${.CURDIR}/pkg/COMMENT
 CONFIGURE_ARGS+=	--enable-multibyte=big5 --program-prefix=n
+
+.include "${MASTERDIR}/Makefile"
