@@ -18,9 +18,8 @@ include/neon/nsocket.h
 include/neon/string_utils.h
 include/neon/uri.h
 lib/libneon.a
-lib/libneon.la
 lib/libneon.so
-lib/libneon.so.11
+lib/libneon.so.12
 %%PORTDOCS%%share/doc/neon/using-neon.txt
 %%PORTDOCS%%@dirrm share/doc/neon
 @dirrm include/neon

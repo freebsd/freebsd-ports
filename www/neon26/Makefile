@@ -6,25 +6,21 @@
 #
 
 PORTNAME=	neon
-PORTVERSION=	0.11.0
+PORTVERSION=	0.12.0
 CATEGORIES=	www
 MASTER_SITES=	http://www.webdav.org/neon/
 
 MAINTAINER=	olgeni@FreeBSD.org
 
-LIB_DEPENDS=	expat:${PORTSDIR}/textproc/expat \
-		xml:${PORTSDIR}/textproc/libxml
+LIB_DEPENDS=	xml.5:${PORTSDIR}/textproc/libxml
 
 .ifndef NO_OPENSSL
 USE_OPENSSL=	yes
 .endif
 
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-ssl=${OPENSSLBASE} --with-expat=${PREFIX}/include/xml \
-		--with-extra-libs=${PREFIX}/lib
-
-ALL_TARGET=	all
-INSTALL_TARGET=	install
+USE_LIBTOOL=	yes
+CONFIGURE_ARGS=	--with-ssl=${OPENSSLBASE} \
+		--enable-xml
 
 .ifndef NOPORTDOCS
 post-install:
