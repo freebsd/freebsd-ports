@@ -10,7 +10,7 @@ CATEGORIES=	chinese
 MASTERDIR=	${.CURDIR}/../../graphics/dia
 
 PATCH_SITES=	http://www.sinica.edu.tw/~jihuang/
-PATCHFILES=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}.diff.gz
+PATCHFILES=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}-big5.diff.gz
 
 MD5_FILE=	${.CURDIR}/distinfo
 
