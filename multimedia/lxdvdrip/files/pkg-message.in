@@ -1,0 +1,3 @@
+To use this program, copy one of
+%%LOCALBASE%%/etc/lxdvdrip.conf.{DE,EN,FR} to
+$HOME/.lxdvdrip.conf
