@@ -7,10 +7,13 @@ include/oop-www.h
 include/oop.h
 lib/liboop-adns.a
 lib/liboop-adns.so
-lib/liboop-adns.so.2
+lib/liboop-adns.so.3
 lib/liboop-glib.a
 lib/liboop-glib.so
 lib/liboop-glib.so.1
+lib/liboop-glib2.a
+lib/liboop-glib2.so
+lib/liboop-glib2.so.0
 lib/liboop-rl.a
 lib/liboop-rl.so
 lib/liboop-rl.so.0
@@ -23,3 +26,5 @@ lib/liboop-www.so.0
 lib/liboop.a
 lib/liboop.so
 lib/liboop.so.4
+libdata/pkgconfig/liboop-glib2.pc
+libdata/pkgconfig/liboop.pc
