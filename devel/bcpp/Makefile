@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	bcpp
-PORTVERSION=	1.8
-PORTREVISION=	1
+PORTVERSION=	20020518
 CATEGORIES=	devel
 MASTER_SITES=	ftp://invisible-island.net/bcpp/
-DISTNAME=	bcpp-20020518
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	buchanon@msu.edu
