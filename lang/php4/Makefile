@@ -20,8 +20,8 @@
 #
 
 PORTNAME=	php4
-PORTVERSION=	4.3.3.r1
-PORTREVISION=	1
+PORTVERSION=	4.3.3.r2
+PORTREVISION=	0
 CATEGORIES?=	lang devel www
 MASTER_SITES=	http://www.php.net/distributions/ \
 		http://it.php.net/distributions/ \
@@ -98,6 +98,7 @@ CONFLICTS=	php4-4* php4-cgi-4* mod_php4-4*
 CONFLICTS=	php4-4* php4-cli-4* php4-cgi-4*
 .endif
 .endif
+CONFLICTS+=	php5-5* php5-cli-5* mod_php5-5* php5-cgi-5*
 
 .if defined(WITHOUT_APACHE)
 CONFIGURE_ARGS+=--enable-discard-path
@@ -411,12 +412,10 @@ CONFIGURE_ARGS+=--with-ming=${LOCALBASE}
 .if defined(WITH_MYSQL)
 .if exists(${LOCALBASE}/lib/mysql/libmysqlclient.so.10)
 LIB_DEPENDS+=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client
-.else
-.if exists(${LOCALBASE}/lib/mysql/libmysqlclient.so.14)
+.elif exists(${LOCALBASE}/lib/mysql/libmysqlclient.so.14)
 LIB_DEPENDS+=	mysqlclient.14:${PORTSDIR}/databases/mysql41-client
 .else
 LIB_DEPENDS+=	mysqlclient.12:${PORTSDIR}/databases/mysql40-client
-.endif
 .endif
 CONFIGURE_ARGS+=--with-mysql=${LOCALBASE}
 .endif
@@ -434,8 +433,14 @@ CONFIGURE_ARGS+=--with-ncurses=${NCURSESBASE}
 .if defined(WITH_OPENLDAP)
 .if exists(${LOCALBASE}/lib/libldap.so.1)
 LIB_DEPENDS+=	ldap.1:${PORTSDIR}/net/openldap12
-.else
+.elif exists(${LOCALBASE}/lib/libldap.la)
+.if exists(${LOCALBASE}/bin/ldapwhoami)
 LIB_DEPENDS+=	ldap.2:${PORTSDIR}/net/openldap21
+.else
+LIB_DEPENDS+=	ldap.2:${PORTSDIR}/net/openldap20
+.endif
+.else
+LIB_DEPENDS+=	ldap.2:${PORTSDIR}/net/openldap22
 .endif
 CONFIGURE_ARGS+=--with-ldap=${LOCALBASE}
 .endif
