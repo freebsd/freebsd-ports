@@ -41,14 +41,10 @@ EXTRA_PATCHES=	${PATCHDIR}/extra-patch-aa-ogi
 RESTRICTED=	no-commercial-use
 .endif
 
+FESTIVAL_ARCH=	${MACHINE_ARCH:S/i386/ix86/}
+USE_GCC=	2.95
 .if defined (WITH_OGI)
 PLIST=		${WRKDIR}/pkg-plist
-.endif
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500113
-BROKEN=		"Does not build"
 .endif
 
 WRKSRC=		${WRKDIR}
@@ -99,29 +95,32 @@ pre-fetch:
 .endif
 
 pre-patch:
-	${CP} ${SPEECHTOOLS}/config/config-dist ${SPEECHTOOLS}/config/config && \
+	${CP} ${SPEECHTOOLS}/config/config-dist ${SPEECHTOOLS}/config/config &&\
 		${CHMOD} u+w ${SPEECHTOOLS}/config/config
 	${CP} ${FESTIVAL}/config/config-dist ${FESTIVAL}/config/config && \
 		${CHMOD} u+w ${FESTIVAL}/config/config
 
+.include <bsd.port.pre.mk>
+
 post-patch:
-	${CP} ${FILESDIR}/top-Makefile ${WRKSRC}/Makefile
-	${CP} ${FILESDIR}/FreeBSD.mak ${SPEECHTOOLS}/config/systems/FreeBSD.mak
-.for arch in alpha ix86
+.if ${OSVERSION} >= 500113
+.for ii in compilers/gcc27.mak config config-dist
+	@${MV} ${SPEECHTOOLS}/config/${ii} ${SPEECHTOOLS}/config/${ii}.orig
+	@${SED} -e "s:= gcc:= gcc295:g" < ${SPEECHTOOLS}/config/${ii}.orig \
+		> ${SPEECHTOOLS}/config/${ii}
+.endfor
+.endif
+	@${CP} ${FILESDIR}/top-Makefile ${WRKSRC}/Makefile
+	@${CP} ${FILESDIR}/FreeBSD.mak ${SPEECHTOOLS}/config/systems/FreeBSD.mak
 .for i in 4 5
-	${LN} -fs ${SPEECHTOOLS}/config/systems/ix86_FreeBSD3.3.mak \
-		${SPEECHTOOLS}/config/systems/${arch}_FreeBSD3.${i}.mak
+	@${LN} -fs ${SPEECHTOOLS}/config/systems/ix86_FreeBSD3.3.mak \
+		${SPEECHTOOLS}/config/systems/${FESTIVAL_ARCH}_FreeBSD3.${i}.mak
 .endfor
+.for ii in 4 5
+.for jj in 1 2 3 4 5 6 7 8 9 10 11
+	@${LN} -fs ${SPEECHTOOLS}/config/systems/ix86_FreeBSD4.0.mak \
+	${SPEECHTOOLS}/config/systems/${FESTIVAL_ARCH}_FreeBSD${ii}.${jj}.mak
 .endfor
-.for arch in alpha ix86
-.for i in 1 2 3 4 5 6 7 8 9
-	${LN} -fs ${SPEECHTOOLS}/config/systems/ix86_FreeBSD4.0.mak \
-		${SPEECHTOOLS}/config/systems/${arch}_FreeBSD4.${i}.mak
-.endfor
-.endfor
-.for arch in alpha ix86
-	${CP} ${SPEECHTOOLS}/config/systems/ix86_FreeBSD4.0.mak \
-		${SPEECHTOOLS}/config/systems/${arch}_FreeBSD5.0.mak
 .endfor
 
 pre-install:
@@ -131,10 +130,10 @@ pre-install:
 
 do-install:
 	${MKDIR} ${FHOME}/lib/voices/english/
-	${MKDIR}  ${FHOME}/lib/voices/spanish/
+	${MKDIR} ${FHOME}/lib/voices/spanish/
 	${MKDIR} ${FHOME}/lib/dicts
 	${CHMOD} -R u+w,a+r,og-w ${FESTIVAL}/lib
-	find ${FESTIVAL}/lib -type d -print0| xargs -0 ${CHMOD} 755
+	${FIND} ${FESTIVAL}/lib -type d -print0 | xargs -0 ${CHMOD} 755
 	cd ${FESTIVAL} && ${CP} -pPR lib examples ${FHOME}
 	${RM} -rf ${FHOME}/lib/etc/*FreeBSD*
 	${INSTALL_PROGRAM} ${FESTIVAL}/lib/etc/*FreeBSD*/audsp ${PREFIX}/libexec
