@@ -125,6 +125,8 @@ lib/libnoatunui.la
 lib/libnoatunui.so
 lib/libnoatunvoiceprint.la
 lib/libnoatunvoiceprint.so
+%%OGGVORBIS:%%lib/liboggarts.la
+%%OGGVORBIS:%%lib/liboggarts.so
 lib/libsplitplaylist.la
 lib/libsplitplaylist.so
 lib/libworkman.la
@@ -174,6 +176,7 @@ lib/mcop/Arts/Synth_XFADE.mcopclass
 lib/mcop/Arts/VBox.mcopclass
 lib/mcop/Arts/Widget.mcopclass
 lib/mcop/Arts/mpg123PlayObject.mcopclass
+%%OGGVORBIS:%%lib/mcop/Arts/oggPlayObject.mcopclass
 lib/mcop/ExtraStereo.mcopclass
 lib/mcop/ExtraStereoGuiFactory.mcopclass
 lib/mcop/Noatun/Equalizer.mcopclass
@@ -203,6 +206,8 @@ lib/mcop/mpg123arts.mcopclass
 lib/mcop/mpg123arts.mcoptype
 lib/mcop/noatunarts.mcopclass
 lib/mcop/noatunarts.mcoptype
+%%OGGVORBIS:%%lib/mcop/oggarts.mcopclass
+%%OGGVORBIS:%%lib/mcop/oggarts.mcoptype
 lib/noatun.la
 lib/noatun.so
 share/applnk/Multimedia/aktion.desktop

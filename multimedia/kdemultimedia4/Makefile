@@ -24,6 +24,26 @@ CONFIGURE_ARGS+=--with-qt-includes=${X11BASE}/include/qt2 \
 USE_GMAKE=	yes
 MAKE_ENV=	${CONFIGURE_ENV}
 
+.include <bsd.port.pre.mk>
+
+.if exists(${LOCALBASE}/include/ogg/ogg.h) \
+    || exists(${LOCALBASE}/include/vorbis/vorbisfile.h)
+WITH_OGGVORBIS=	yes
+.endif
+
+.if defined(WITH_OGGVORBIS) && ${WITH_OGGVORBIS} == yes
+LIB_DEPENDS+=	ogg.2:${PORTSDIR}/audio/libogg \
+		vorbis.0:${PORTSDIR}/audio/libvorbis
+PLIST_SUB+=	OGGVORBIS:=""
+.else
+PLIST_SUB+=	OGGVORBIS:="@comment "
+pre-everything::
+	@${ECHO_MSG}
+	@${ECHO_MSG} "If you want to compile with ogg/vorbis support,"
+	@${ECHO_MSG} "hit Ctrl-C right now and use \"make WITH_OGGVORBIS=yes\""
+	@${ECHO_MSG}
+.endif
+
 pre-configure:
 	${PERL} -pi -e "s@all_includes=\"@all_includes=\"-I/usr/include @g" ${WRKSRC}/acinclude.m4 ${WRKSRC}/aclocal.m4
 	${PERL} -pi -e 's,kscd_compile=no,kscd_compile=yes,g; \
@@ -43,4 +63,4 @@ post-install:
 	@${ECHO_MSG} " # ${CHMOD} 666 /dev/racd0c"
 	@${ECHO_MSG}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
