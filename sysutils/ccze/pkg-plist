@@ -1,0 +1,26 @@
+bin/ccze
+bin/ccze-cssdump
+etc/cczerc-sample
+include/ccze.h
+lib/ccze/apm.so
+lib/ccze/distcc.so
+lib/ccze/exim.so
+lib/ccze/fetchmail.so
+lib/ccze/ftpstats.so
+lib/ccze/httpd.so
+lib/ccze/icecast.so
+lib/ccze/oops.so
+lib/ccze/php.so
+lib/ccze/postfix.so
+lib/ccze/procmail.so
+lib/ccze/proftpd.so
+lib/ccze/squid.so
+lib/ccze/sulog.so
+lib/ccze/super.so
+lib/ccze/syslog.so
+lib/ccze/ulogd.so
+lib/ccze/vsftpd.so
+lib/ccze/xferlog.so
+@unexec rmdir %D/lib/ccze 2>/dev/null || true
+%%PORTDOCS%%%%DOCSDIR%%/FAQ
+%%PORTDOCS%%@dirrm share/doc/ccze
