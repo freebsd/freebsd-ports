@@ -1,3 +1,4 @@
 share/xmakemol/elements
+bin/xmake_anim.pl
 bin/xmakemol
 @dirrm share/xmakemol
