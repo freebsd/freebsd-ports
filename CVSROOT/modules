@@ -9505,6 +9505,7 @@ tn-aspell	ports/textproc/tn-aspell
 tn5250		ports/net/tn5250
 tnef		ports/converters/tnef
 tnef2txt	ports/textproc/tnef2txt
+tnftp		ports/ftp/tnftp
 tnftpd		ports/ftp/tnftpd
 tnt		ports/devel/tnt
 tochnog		ports/cad/tochnog
