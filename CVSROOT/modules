@@ -6852,6 +6852,7 @@ sdf		ports/textproc/sdf
 sdiff		src/gnu/usr.bin/sdiff
 sdl12		ports/devel/sdl12
 sdl_gfx		ports/graphics/sdl_gfx
+sdl_gui		ports/x11-toolkits/sdl_gui
 sdl_image	ports/graphics/sdl_image
 sdl_ldbad	ports/devel/sdl_ldbad
 sdl_mixer	ports/audio/sdl_mixer
