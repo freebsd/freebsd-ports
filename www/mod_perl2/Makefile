@@ -13,8 +13,8 @@ MASTER_SITE_SUBDIR=	Apache
 
 MAINTAINER=	vanilla@FreeBSD.org
 
-BUILD_DEPENDS=	${LOCALBASE}/sbin/apxs:${PORTSDIR}/www/apache13
-RUN_DEPENDS=	${LOCALBASE}/sbin/apxs:${PORTSDIR}/www/apache13
+BUILD_DEPENDS=	${LOCALBASE}/sbin/apxs:${APACHE_PORT}
+RUN_DEPENDS=	${LOCALBASE}/sbin/apxs:${APACHE_PORT}
 
 USE_PERL5=	YES
 
@@ -35,6 +35,7 @@ MAN3=		Apache.3 Apache::Constants.3  Apache::ExtUtils.3 \
 		mod_perl_tuning.3
 MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 PERLSITEDIR=	${PREFIX}/lib/perl5/site_perl/${PERL_VER}
+APACHE_PORT?=	${PORTSDIR}/www/apache13
 
 .include <bsd.port.pre.mk>
 
