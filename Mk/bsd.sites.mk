@@ -208,6 +208,7 @@ MASTER_SITE_GNU+=	\
 	ftp://ftp.mirror.ac.uk/sites/ftp.gnu.org/gnu/%SUBDIR%/ \
 	ftp://sunsite.org.uk/Mirrors/ftp.gnu.org/pub/gnu/%SUBDIR%/ \
 	ftp://ftp.informatik.hu-berlin.de/pub/gnu/%SUBDIR%/ \
+	ftp://ftp.informatik.rwth-aachen.de/pub/mirror/ftp.gnu.org/pub/gnu/%SUBDIR%/ \
 	ftp://ftp.rediris.es/mirror/gnu/%SUBDIR%/ \
 	ftp://ftp.lip6.fr/pub/gnu/%SUBDIR%/ \
 	ftp://ftp.tuwien.ac.at/linux/gnu/gnusrc/%SUBDIR%/ \
@@ -289,6 +290,7 @@ MASTER_SITE_MOZILLA+= \
 	ftp://sunsite.utk.edu/pub/netscape-source/%SUBDIR%/ \
 	ftp://ftp.informatik.uni-bonn.de/pub/www/mozilla/%SUBDIR%/ \
 	ftp://ftp-stud.fht-esslingen.de/pub/Mirrors/ftp.mozilla.org/pub/%SUBDIR%/ \
+	ftp://ftp.informatik.rwth-aachen.de/pub/mirror/ftp.mozilla.org/pub/%SUBDIR%/ \
 	ftp://ftp.funet.fi/pub/mirrors/ftp.mozilla.org/pub/%SUBDIR%/ \
 	ftp://ftp.sunsite.kth.se/archive/www/ftp.mozilla.org/%SUBDIR%/ \
 	ftp://ftp2.sinica.edu.tw/pub3/www/mozilla/%SUBDIR%/ \
