@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.ossp.org/pkg/lib/mm/
 
 MAINTAINER=	rse@engelschall.com
 
+USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
 
