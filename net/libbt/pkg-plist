@@ -1,3 +1,6 @@
+bin/btcheck
+bin/btget
+bin/btlist
 include/libbt/benc.h
 include/libbt/bitset.h
 include/libbt/bterror.h
