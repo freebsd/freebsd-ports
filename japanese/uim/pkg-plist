@@ -12,6 +12,7 @@ lib/libuim.a
 lib/libuim.la
 lib/libuim.so
 lib/libuim.so.0
+lib/pkgconfig/uim.pc
 %%GNOME%%libexec/uim-helper-applet
 %%PORTDOCS%%%%DOCSDIR_JA%%/README.ja
 %%PORTDOCS%%%%DOCSDIR%%/README

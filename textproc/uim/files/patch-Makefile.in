@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Wed Dec 10 23:28:20 2003
++++ Makefile.in	Wed Dec 10 23:29:10 2003
+@@ -198,7 +198,7 @@
+ @GTK2_TRUE@gtk_entry_CFLAGS = @GTK2_CFLAGS@
+ 
+ uim_agent_SOURCES = agent.c
+-uim_agent_LDADD = uim/libuim.la
++uim_agent_LDADD = uim/libuim.la -liconv
+ 
+ ACLOCAL_AMFLAGS = -I m4
+ subdir = .
