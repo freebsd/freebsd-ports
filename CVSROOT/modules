@@ -118,6 +118,7 @@ Sather		ports/lang/Sather
 SpecTcl		ports/devel/SpecTcl
 Tee		ports/sysutils/Tee
 TenDRA		ports/lang/TenDRA
+WMxmms		ports/multimedia/WMxmms
 WebMagick	ports/www/WebMagick
 XFree86		ports/x11/XFree86
 XFree86-4	ports/x11/XFree86-4
