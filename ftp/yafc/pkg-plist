@@ -1,2 +1,5 @@
 bin/yafc
+@unexec install-info --delete %D/info/yafc.info %D/info/dir
+info/yafc.info
+@exec install-info %D/info/yafc.info %D/info/dir
 share/locale/sv/LC_MESSAGES/yafc.mo
