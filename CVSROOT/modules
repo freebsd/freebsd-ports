@@ -9615,7 +9615,7 @@ x48		ports/emulators/x48
 x86info		ports/sysutils/x86info
 xabacus		ports/games/xabacus
 xalan-c		ports/textproc/xalan-c
-xalan-j		ports/java/xalan-j
+xalan-j		ports/textproc/xalan-j
 xalarm		ports/x11-clocks/xalarm
 xanim		ports/multimedia/xanim
 xaniroc		ports/x11/xaniroc
