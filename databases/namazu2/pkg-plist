@@ -1,46 +1,95 @@
+bin/bnamazu
+bin/gcnmz
+bin/kwnmz
+bin/mailutime
 bin/mknmz
 bin/namazu
-namazu/bin/clnmz
-namazu/bin/gcnmz
-namazu/bin/gtnmz
-namazu/bin/mailutime
-namazu/bin/mknmz
-namazu/bin/namazu
-namazu/bin/rvnmz
-namazu/bin/vfnmz
-namazu/bin/wdnmz
-namazu/contrib/MHonArc-Japanize-patch-1.6.gz
-namazu/contrib/NamazuJAVA.030.tar.gz
-namazu/contrib/bnamazu
-namazu/contrib/namazu.el-1999.05.10.gz
-namazu/contrib/pnamazu-98.12.16.tgz
-namazu/contrib/tknamazu-1.11.tar.gz
-namazu/doc/en/README.en
-namazu/doc/en/intro.html
-namazu/doc/en/manual.html
-namazu/doc/ja/FAQ.html
-namazu/doc/ja/README.ja
-namazu/doc/ja/history.html
-namazu/doc/ja/intro.html
-namazu/doc/ja/lynxcgi.html
-namazu/doc/ja/manual.html
-namazu/doc/ja/nmz_files.txt
-namazu/doc/ja/security.html
-namazu/doc/COPYING
-namazu/doc/ChangeLog
-namazu/doc/ToDo
-namazu/lib/NMZ.body.en
-namazu/lib/NMZ.body.ja
-namazu/lib/NMZ.foot.en
-namazu/lib/NMZ.foot.ja
-namazu/lib/NMZ.head.en
-namazu/lib/NMZ.head.ja
-namazu/lib/namazu.conf-dist
-@dirrm namazu/bin
-@dirrm namazu/contrib
-@dirrm namazu/doc/en
-@dirrm namazu/doc/ja
-@dirrm namazu/doc
-@dirrm namazu/index
-@dirrm namazu/lib
-@dirrm namazu
+bin/nmz-config
+bin/nmzgrep
+bin/rfnmz
+bin/vfnmz
+etc/namazu/mknmzrc-sample
+etc/namazu/namazurc-sample
+@dirrm etc/namazu
+include/namazu/codeconv.h
+include/namazu/field.h
+include/namazu/hlist.h
+include/namazu/i18n.h
+include/namazu/idxname.h
+include/namazu/l10n-ja.h
+include/namazu/libnamazu.h
+include/namazu/parser.h
+include/namazu/query.h
+include/namazu/re.h
+include/namazu/regex.h
+include/namazu/search.h
+include/namazu/util.h
+include/namazu/var.h
+include/namazu/wakati.h
+@dirrm include/namazu
+lib/libnmz.a
+lib/libnmz.la
+lib/libnmz.so.3
+@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
+@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
+libexec/namazu.cgi
+share/locale/ja/LC_MESSAGES/namazu.mo
+share/locale/ja_JP.SJIS/LC_MESSAGES/namazu.mo
+share/namazu/doc/en/manual.html
+@dirrm share/namazu/doc/en
+share/namazu/doc/ja/manual.html
+share/namazu/doc/ja/nmz.html
+share/namazu/doc/ja/tips.html
+share/namazu/doc/ja/tutorial.html
+@dirrm share/namazu/doc/ja
+share/namazu/doc/namazu.css
+@dirrm share/namazu/doc
+share/namazu/etc/CREDITS
+share/namazu/etc/ChangeLog.1
+share/namazu/etc/INSTALL-ja
+share/namazu/etc/README-ja
+share/namazu/etc/namazu.png
+share/namazu/etc/namazu.spec
+share/namazu/etc/namazu.spec.in
+@dirrm share/namazu/etc
+share/namazu/filter/bzip2.pl
+share/namazu/filter/compress.pl
+share/namazu/filter/gfilter.pl
+share/namazu/filter/gzip.pl
+share/namazu/filter/hnf.pl
+share/namazu/filter/html.pl
+share/namazu/filter/ichitaro456.pl
+share/namazu/filter/mailnews.pl
+share/namazu/filter/man.pl
+share/namazu/filter/mhonarc.pl
+share/namazu/filter/msword.pl
+share/namazu/filter/oleexcel.pl
+share/namazu/filter/olemsword.pl
+share/namazu/filter/olepowerpoint.pl
+share/namazu/filter/pdf.pl
+share/namazu/filter/rfc.pl
+share/namazu/filter/tex.pl
+@dirrm share/namazu/filter
+share/namazu/pl/codeconv.pl
+share/namazu/pl/conf.pl
+share/namazu/pl/gettext.pl
+share/namazu/pl/nmzidx.pl
+share/namazu/pl/seed.pl
+share/namazu/pl/usage.pl
+share/namazu/pl/util.pl
+share/namazu/pl/var.pl
+share/namazu/pl/wakati.pl
+@dirrm share/namazu/pl
+share/namazu/template/NMZ.body
+share/namazu/template/NMZ.body.ja
+share/namazu/template/NMZ.foot
+share/namazu/template/NMZ.foot.ja
+share/namazu/template/NMZ.head
+share/namazu/template/NMZ.head.ja
+share/namazu/template/NMZ.result.normal
+share/namazu/template/NMZ.result.normal.ja
+share/namazu/template/NMZ.result.short
+share/namazu/template/NMZ.result.short.ja
+share/namazu/template/NMZ.tips
+share/namazu/template/NMZ.tips.ja
+@dirrm share/namazu/template
