@@ -13,10 +13,10 @@ MASTER_SITES=	http://www.xs4all.nl/~ripley/XmHTML/dist/
 
 MAINTAINER=	Lars.Koeller@Uni-Bielefeld.de
 
-BUILD_DEPENDS=	libtool:${PORTSDIR}/devel/libtool
 LIB_DEPENDS=	png.4:${PORTSDIR}/graphics/png \
 		jpeg.9:${PORTSDIR}/graphics/jpeg
 
+USE_LIBTOOL=	yes
 USE_MOTIF=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes

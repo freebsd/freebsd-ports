@@ -12,8 +12,7 @@ MASTER_SITES=	ftp://gdal.velocet.ca/pub/outgoing/
 
 MAINTAINER=	aa8vb@nc.rr.com
 
-BUILD_DEPENDS=	libtool:${PORTSDIR}/devel/libtool
-
+USE_LIBTOOL=	yes
 ALL_TARGET=	lib
 INSTALLS_SHLIB=	yes
 

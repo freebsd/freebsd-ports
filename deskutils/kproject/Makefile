@@ -12,8 +12,7 @@ MASTER_SITES=	$(MASTER_SITE_KDE)
 MASTER_SITE_SUBDIR= unstable/apps/office
 EXTRACT_SUFX=	.tgz
 
-BUILD_DEPENDS=	libtool:${PORTSDIR}/devel/libtool
-
+USE_LIBTOOL=	yes
 USE_KDELIBS_VER=1
 WRKSRC=		${WRKDIR}/kproject
 
