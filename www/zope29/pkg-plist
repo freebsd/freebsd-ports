@@ -82,7 +82,6 @@ etc/rc.d/zope.sh
 %%ZOPEBASEDIR%%/ZServer/medusa/status_handler.pyc
 %%ZOPEBASEDIR%%/ZServer/medusa/test_logger.py
 %%ZOPEBASEDIR%%/ZServer/medusa/test_logger.pyc
-%%ZOPEBASEDIR%%/access
 %%ZOPEBASEDIR%%/doc/CHANGES.txt
 %%ZOPEBASEDIR%%/doc/CREDITS.txt
 %%ZOPEBASEDIR%%/doc/DEBUGGING.txt
@@ -1474,8 +1473,6 @@ etc/rc.d/zope.sh
 %%ZOPEBASEDIR%%/pcgi/Test/.cvsignore
 %%ZOPEBASEDIR%%/pcgi/Test/README.parseinfo
 %%ZOPEBASEDIR%%/pcgi/Test/parseinfo
-%%ZOPEBASEDIR%%/pcgi/Test/parseinfo.o
-%%ZOPEBASEDIR%%/pcgi/Test/pcgi-wrapper.o
 %%ZOPEBASEDIR%%/pcgi/Util/README
 %%ZOPEBASEDIR%%/pcgi/Util/killpcgi.py
 %%ZOPEBASEDIR%%/pcgi/Util/killpcgi.pyc
@@ -1494,9 +1491,7 @@ etc/rc.d/zope.sh
 %%ZOPEBASEDIR%%/pcgi/install-sh
 %%ZOPEBASEDIR%%/pcgi/manifest
 %%ZOPEBASEDIR%%/pcgi/parseinfo.c
-%%ZOPEBASEDIR%%/pcgi/parseinfo.o
 %%ZOPEBASEDIR%%/pcgi/pcgi-wrapper.c
-%%ZOPEBASEDIR%%/pcgi/pcgi-wrapper.o
 %%ZOPEBASEDIR%%/pcgi/pcgi.h
 %%ZOPEBASEDIR%%/pcgi/pcgi_publisher.py
 %%ZOPEBASEDIR%%/pcgi/pcgi_publisher.pyc

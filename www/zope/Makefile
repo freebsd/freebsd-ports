@@ -53,13 +53,13 @@ PLIST_SUB=	ZOPEBASEDIR=${SZOPEBASEDIR} \
 		WEBBASEDIR=${WEBBASEDIR}
 
 # I decided to consider the whole souce tree to be part of the package
-# since in there, Zope can live on its own. It does leave some *.o files
-# around (about four), but I can use Zope's own building mechanism.
-do-install:	#
+# since in there, Zope can live on its own. I can use Zope's own building
+# mechanism.
+do-install:
 	@if [ -e ${ZOPEBASEDIR}/var/Data.fs ] ; then \
-		${ECHO} "Saving existing Database to /tmp/Data.fs.BAK." ; \
-		${MV} ${ZOPEBASEDIR}/var/Data.fs /tmp/Data.fs.BAK ; \
-		fi
+		${ECHO} "Saving existing Database to ${ZOPEBASEDIR}/var/Data.fs.preserve." ; \
+		${MV} ${ZOPEBASEDIR}/var/Data.fs ${ZOPEBASEDIR}/var/Data.fs.preserve; \
+	fi
 	@#
 	@${MKDIR} ${ZOPEBASEDIR}
 	@${ECHO} "===>   Please be patient, some builds need their time."
@@ -76,6 +76,8 @@ do-install:	#
 		${ECHO} "#! ${CGIBINDIR}/pcgi-wrapper" > Zope.cgi ; \
 		${CAT} Zope.cgi.orig >> Zope.cgi ; \
 		${RM} Zope.cgi.orig )
+	@(cd ${ZOPEBASEDIR}/pcgi/Test && ${RM} *.o)
+	@(cd ${ZOPEBASEDIR}/pcgi && ${RM} *.o)
 	@#
 	@${MKDIR} ${CGIBINDIR}
 	@(cd ${ZOPEBASEDIR} ; \
@@ -88,11 +90,17 @@ do-install:	#
 	@${CHOWN} ${NOBODY_USER} ${ZOPEBASEDIR}/var
 	@${CHOWN} ${NOBODY_USER} ${ZOPEBASEDIR}/var/*
 	@${RM} ${ZOPEBASEDIR}/var/.cvsignore
+	@if [ -e ${ZOPEBASEDIR}/var/Data.fs.preserve ] ; then \
+		${ECHO} "Restoring existing Database from ${ZOPEBASEDIR}/var/Data.fs.preserve." ; \
+		${MV} ${ZOPEBASEDIR}/var/Data.fs.preserve ${ZOPEBASEDIR}/var/Data.fs; \
+	fi
 	@#
-	@${ECHO} "===>   Setting user/password to zopemaster/test..."
-	@(cd ${ZOPEBASEDIR} && \
-		${PYTHON_CMD} zpasswd.py -u zopemaster \
-			-p test -e CLEARTEXT access )
+	@if [ ! -f ${ZOPEBASEDIR}/access ]; then \
+		${ECHO} "===>   Setting user/password to zopemaster/test..."; \
+		(cd ${ZOPEBASEDIR} && \
+			${PYTHON_CMD} zpasswd.py -u zopemaster \
+				-p test -e CLEARTEXT access ); \
+	fi
 	@#
 	@${CHOWN} ${NOBODY_USER} ${ZOPEBASEDIR}/access
 	@#
@@ -113,12 +121,5 @@ do-install:	#
 	@${ECHO} "===>   The Zope license is in ${ZOPEBASEDIR}/LICENSE.txt."
 	@${ECHO} "===>   For Apache changes see ${APACHE_CONFDIR}/apache.conf.Zope-Changes."
 	@${ECHO} "===>   Zope.cgi and pcgi-wrapper live in ${CGIBINDIR}."
-
-#pre-deinstall:	# Save Database contents. I expect /tmp to have sufficient
-#		# space to hold it for the time being.
-#		@if [ -e ${ZOPEBASEDIR}/var/Data.fs ] ; then \
-#			${ECHO} "Saving existing Database to /tmp/Data.fs.bak." ; \
-#			${MV} ${ZOPEBASEDIR}/var/Data.fs /tmp/Data.fs.bak ; \
-#			fi
 
 .include <bsd.port.mk>
