@@ -1,4 +1,3 @@
-
     VMSBACKUP reads VMS BACKUP tapes.
 
     Main features:
@@ -7,4 +6,3 @@
 	can preserve directory structure.
 	excludes vms specific files (eg executables and objects).
 	converts vms version numbering semicolons to colons.
-
