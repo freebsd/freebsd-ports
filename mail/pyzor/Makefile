@@ -8,6 +8,7 @@
 
 PORTNAME=	pyzor
 PORTVERSION=	0.4.0
+PORTREVISION=	1
 CATEGORIES=	mail python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -18,5 +19,10 @@ COMMENT=	A collaborative, networked system to detect and block spam
 USE_BZIP2=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
+USE_REINPLACE=		yes
+
+post-patch:
+	${REINPLACE_CMD} -e "s,/usr/bin/python2,${PYTHON_CMD}," \
+		${WRKSRC}/scripts/pyzor ${WRKSRC}/scripts/pyzord
 
 .include <bsd.port.mk>
