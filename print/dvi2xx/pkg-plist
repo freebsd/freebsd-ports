@@ -11,3 +11,4 @@ lib/dvi2xx/sample2.tex
 lib/dvi2xx/graybox.sty
 lib/dvi2xx/printcap.sample
 lib/dvi2xx/testpage.tex
+@dirrm lib/dvi2xx

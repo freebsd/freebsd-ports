@@ -13,3 +13,6 @@ share/texmf/makeindx/german/digit.ist
 share/texmf/makeindx/german/special.ist
 share/texmf/makeindx/german/umlaut.ist
 share/texmf/makeindx/german/wb.ist
+@dirrm share/texmf/makeindx/english
+@dirrm share/texmf/makeindx/german
+@dirrm share/texmf/makeindx
