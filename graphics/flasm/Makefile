@@ -6,10 +6,12 @@
 #
 
 PORTNAME=	flasm
-PORTVERSION=	1.4
+PORTVERSION=	1.41
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.nowrap.de/
-DISTNAME=	flasm14src
+#MASTER_SITES=	http://www.nowrap.de/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	kuriyama
+DISTNAME=	flasm141src
 
 MAINTAINER=	kuriyama@FreeBSD.org
 
