@@ -1,12 +1,12 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/.packlist
-%%SITE_PERL%%/CGI/Util.pm
+%%SITE_PERL%%/CGI.pm
+%%SITE_PERL%%/CGI/Apache.pm
 %%SITE_PERL%%/CGI/Carp.pm
+%%SITE_PERL%%/CGI/Cookie.pm
 %%SITE_PERL%%/CGI/Fast.pm
 %%SITE_PERL%%/CGI/Pretty.pm
 %%SITE_PERL%%/CGI/Push.pm
-%%SITE_PERL%%/CGI/Cookie.pm
 %%SITE_PERL%%/CGI/Switch.pm
-%%SITE_PERL%%/CGI/Apache.pm
-%%SITE_PERL%%/CGI.pm
+%%SITE_PERL%%/CGI/Util.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/.packlist
 @unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI 2>/dev/null || true
 @unexec rmdir %D/%%SITE_PERL%%/CGI 2>/dev/null || true
