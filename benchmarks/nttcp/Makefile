@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	nttcp
-PORTVERSION=	1.45
+PORTVERSION=	1.47
 CATEGORIES=	net benchmarks
-MASTER_SITES=	http://users.leo.org/~bartel/nttcp/ \
+MASTER_SITES=	http://www.leo.org/~bartel/nttcp/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	billf
 
