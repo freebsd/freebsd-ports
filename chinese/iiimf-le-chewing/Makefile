@@ -14,7 +14,7 @@ DISTFILES=	iiimf-chewing.tgz
 MAINTAINER=	kcwu@csie.org
 COMMENT=	IIIMF Chewing engine, an intelligent Chinese phonetic input method
 
-LIB_DEPENDS=	chewing.1:${PORTSDIR}/chinese/libchewing
+LIB_DEPENDS=	chewing.2:${PORTSDIR}/chinese/libchewing
 BUILD_DEPENDS=	${LOCALBASE}/include/iiimf/iml/SunIM.h:${PORTSDIR}/textproc/iiimf-headers
 RUN_DEPENDS=	${LOCALBASE}/lib/im/htt:${PORTSDIR}/textproc/iiimf-server
 
