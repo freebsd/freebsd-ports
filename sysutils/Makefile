@@ -84,6 +84,7 @@
     SUBDIR += diskusage
     SUBDIR += dmidecode
     SUBDIR += doconfig
+    SUBDIR += dt
     SUBDIR += du2ps
     SUBDIR += dump9660
     SUBDIR += duplicity
