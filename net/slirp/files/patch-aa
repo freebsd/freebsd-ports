@@ -10,7 +10,7 @@
  
  install.man:
 -	cp slirp.man $(MANDIR)/slirp.$(MANEXT)
-+	install -c -s -m 644 slirp.man $(MANDIR)/slirp.$(MANEXT)
++	install -c -m 644 slirp.man $(MANDIR)/slirp.$(MANEXT)
  
  objclean:
  	rm -f $(OBJ)
