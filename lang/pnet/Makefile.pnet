@@ -8,11 +8,48 @@ PNET_MASTER_SITES=	${MASTER_SITE_GNU} \
 			http://www.southern-storm.com.au/download/
 PNET_MASTER_SITE_SUBDIR=	dotgnu/pnet/
 
-
 ILSTRIP_CMD=	${LOCALBASE}/bin/ilstrip
+ILRUN_CMD=	${LOCALBASE}/bin/ilrun
 
 .if defined(WITH_OPTIMIZED_CSFLAGS)
-CSFLAGS=-O2
+CSFLAGS+=-O2
+.endif
+
+.if defined(PNET_STRAP_BIN) || defined(PNET_STRAP_SBIN)
+
+PNET_STRAP_SUFX?=	.exe
+PNET_BIN_WRKDIR?=	${WRKDIR}/PNET_STRAP/bin
+PNET_SBIN_WRKDIR?=	${WRKDIR}/PNET_STRAP/sbin
+
+.for strap in ${PNET_STRAP_BIN}
+PLIST_FILES+=	bin/${strap}
+.endfor
+.for strap in ${PNET_STRAP_SBIN}
+PLIST_FILES+=	sbin/${strap}
+.endfor
+
+pre-patch: pnet-strap
+pnet-strap:
+	@${MKDIR} ${PNET_BIN_WRKDIR}
+	@${MKDIR} ${PNET_SBIN_WRKDIR}
+
+.for strap in ${PNET_STRAP_BIN}
+	@${ECHO_CMD} "#!${SH}" >> ${PNET_BIN_WRKDIR}/${strap}
+	@${ECHO_CMD} "${ILRUN_CMD} ${ILRUN_FLAGS} ${PREFIX}/bin/${strap}${PNET_STRAP_SUFX}" >> ${PNET_BIN_WRKDIR}/${strap}
+.endfor
+.for strap in ${PNET_STRAP_SBIN}
+	@${ECHO_CMD} -n "#!${SH}" >> ${PNET_SBIN_WRKDIR}/${strap}
+	@${EHCO_CMD} -n "${ILRUN_CMD} ${ILRUN_FLAGS} ${PREFIX}/sbin/${strap}${PNET_STRAP_SUFX}" >> ${PNET_SBIN_WRKDIR}/${strap}
+.endfor
+
+post-install: pnet-strap-install
+pnet-strap-install:
+.for strap in ${PNET_STRAP_BIN}
+	@${INSTALL_SCRIPT} ${PNET_BIN_WRKDIR}/${strap} ${PREFIX}/bin
+.endfor
+.for strap in ${PNET_STRAP_SBIN}
+	@${INSTALL_SCRIPT} ${PNET_SBIN_WRKDIR}/${strap} ${PREFIX}/sbin
+.endfor
 .endif
 
 pre-everything:: post-everything
