@@ -1,0 +1,34 @@
+# New ports collection makefile for:	texi2html
+# Version required:	1.51
+# Date created:		5 Nov 1997
+# Whom:			Ian Vaudrey <i.vaudrey@cableinet.co.uk>
+#
+# $Id$
+#
+
+DISTNAME=	texi2html
+PKGNAME=	texi2html-1.51
+CATEGORIES=	textproc
+MASTER_SITES=	http://wwwcn.cern.ch/dci/texi2html/ \
+		ftp://ftp.scc.ru/pub/unix/
+EXTRACT_SUFX=	.shar.Z
+
+MAINTAINER=	i.vaudrey@cableinet.co.uk
+
+EXTRACT_CMD=	uncompress
+EXTRACT_BEFORE_ARGS=	-c
+EXTRACT_AFTER_ARGS=	| sh
+NO_WRKSUBDIR=	yes
+NO_CONFIGURE=	yes
+NO_BUILD=	yes
+
+MAN1=		texi2html.1
+
+post-extract:
+	@cd ${WRKSRC}; split -l 1881 texi2html texi2html.
+
+do-install:
+	${INSTALL_SCRIPT} ${WRKDIR}/texi2html.aa ${PREFIX}/bin/texi2html
+	${INSTALL_MAN} ${WRKDIR}/texi2html.ab ${PREFIX}/man/man1/${MAN1}
+
+.include <bsd.port.mk>
