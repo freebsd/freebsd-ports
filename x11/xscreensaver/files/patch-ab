@@ -1,6 +1,6 @@
---- configure.orig	Sat Oct 25 00:47:18 2003
-+++ configure	Sun Nov  9 23:11:47 2003
-@@ -2572,7 +2572,7 @@
+--- configure.orig	Thu Feb 26 17:37:55 2004
++++ configure	Sat Mar  6 23:51:07 2004
+@@ -2574,7 +2574,7 @@
    if test -n "$GCC"; then
      echo "$as_me:$LINENO: result: Turning on gcc compiler warnings." >&5
  echo "${ECHO_T}Turning on gcc compiler warnings." >&6
@@ -9,7 +9,7 @@
      OBJCC="$OBJCC -Wall"
      # supposedly gcc 3.4 will have "-Wdeclaration-after-statement"
      # and then perhaps we can do without -pedantic?
-@@ -13323,7 +13323,7 @@
+@@ -13491,7 +13491,7 @@
        ok="yes"
        pkg_check_version gtk+       1.2     ; ac_gtk_version_string="$vers"
        pkg_check_version glib       1.0
@@ -18,7 +18,7 @@
        have_gtk="$ok"
  
        # Now check for Gnome...
-@@ -18603,13 +18603,13 @@
+@@ -19014,13 +19014,13 @@
  # Now that we know whether we have Gnome, we can decide where the XML
  # config files get installed.
  #

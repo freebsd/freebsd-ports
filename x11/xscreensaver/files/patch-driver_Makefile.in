@@ -1,7 +1,7 @@
---- driver/Makefile.in.orig	Thu Aug 14 02:52:11 2003
-+++ driver/Makefile.in	Sun Sep  7 16:02:47 2003
-@@ -121,7 +121,7 @@
- 		  test-apm   test-fade   xdpyinfo
+--- driver/Makefile.in.orig	Thu Feb 26 17:37:56 2004
++++ driver/Makefile.in	Sat Mar  6 23:51:07 2004
+@@ -125,7 +125,7 @@
+ 		  test-apm   test-fade   test-xinerama   xdpyinfo
  
  MOTIF_LIBS	= @MOTIF_LIBS@ @XPM_LIBS@ $(XMU_LIBS)
 -GTK_LIBS	= @GTK_LIBS@ $(XMU_LIBS)
@@ -9,7 +9,7 @@
  XML_LIBS	= @XML_LIBS@
  
  XDPMS_LIBS	= @XDPMS_LIBS@
-@@ -219,8 +219,6 @@
+@@ -234,8 +234,6 @@
  EXTRAS		= README Makefile.in XScreenSaver.ad.in xscreensaver.pam \
  		  xscreensaver-demo.glade xscreensaver-demo.glade2 \
  		  xscreensaver-demo.glade2p \
@@ -18,7 +18,7 @@
  		  xscreensaver.kss.in \
  		  .gdbinit
  VMSFILES	= compile_axp.com compile_decc.com link_axp.com link_decc.com \
-@@ -454,107 +452,6 @@
+@@ -464,107 +462,6 @@
   $$e ""									     ;\
  	  fi ;								\
  	fi
