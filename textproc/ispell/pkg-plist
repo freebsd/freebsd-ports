@@ -8,7 +8,6 @@ bin/sq
 bin/tryaffix
 bin/unsq
 share/emacs/site-lisp/ispell.el
-share/emacs/site-lisp/ispell.elc
 lib/american.hash
 lib/americanmed+.hash
 lib/english.aff
