@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mailfront
-PORTVERSION=	0.86
+PORTVERSION=	0.87
 CATEGORIES=	mail
 MASTER_SITES=	http://untroubled.org/mailfront/
 
