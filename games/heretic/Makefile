@@ -12,7 +12,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://www.raven-games.com/linuxheretic/heretic/src/ \
 		http://www.raven-games.com/linuxheretic/wad/
 .if !defined(NO_WAD)
-DISTFILES+=	heretic_share.wad.gz
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} heretic_share.wad.gz
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 .endif
 
@@ -21,11 +21,15 @@ MAINTAINER=	will@FreeBSD.org
 FETCH_BEFORE_ARGS+=	-b
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-ALL_TARGET=	fastx11
 MAKE_ENV=	WANT_OGL="no" WANT_OGL_FULLSCREEN="no" WANT_NICE_OGL="no"
-BINARY=		xaheretic
 .if !defined(NO_WAD)
 PLIST=		${PKGDIR}/PLIST.nowad
+.endif
+ALL_TARGET=	x11
+BINARY=		xheretic
+.if defined(WANT_FASTX11)
+BINARY=		xaheretic
+ALL_TARGET=	fastx11
 .endif
 
 do-install:
