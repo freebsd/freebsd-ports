@@ -11,20 +11,20 @@ CATEGORIES?=	databases
 MASTER_SITES=	http://freebsd.sean.chittenden.org/ports/ \
 		http://people.freebsd.org/~seanc/ports/
 PKGNAMESUFFIX=	-devel
+DIST_SUBDIR=	postgresql
 
 MAINTAINER?=	seanc@FreeBSD.org
 COMMENT=	Development snapshots of PostgreSQL's latest features
-
-DIST_SUBDIR=	postgresql
 
 USE_BZIP2=	YES
 USE_GMAKE=	YES
 USE_PERL5_BUILD=	YES
 GNU_CONFIGURE=	YES
 
+WRKSRC=		${WRKDIR}/postgresql-${PORTVERSION}
 .if defined(POSTGRESQL_SUBPORT)
 ## the POSTGRESQL_SUBPORTS use this port's distinfo
-MD5_FILE=	${.CURDIR}/../postgresql7/distinfo
+MD5_FILE=	${.CURDIR}/../postgresql-devel/distinfo
 .else
 
 ## POSTGRESQL_SUBPORTS stops here
