@@ -7108,6 +7108,7 @@ ratfor		ports/lang/ratfor
 ratmenu		ports/x11-wm/ratmenu
 ratpoison	ports/x11-wm/ratpoison
 rats		ports/security/rats
+rawdog		ports/news/rawdog
 rawio		ports/benchmarks/rawio
 rawrec		ports/audio/rawrec
 ray++		ports/graphics/ray++
