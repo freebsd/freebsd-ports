@@ -3,7 +3,7 @@
 # Date created:		16 May 1999
 # Whom:			Jun Kuriyama <kuriyama@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.2 1999/05/24 12:16:07 kuriyama Exp $
+# $Id: Makefile,v 1.3 1999/06/10 00:18:47 steve Exp $
 #
 
 DISTNAME=	xml4j_2_0_9
@@ -21,7 +21,7 @@ RESTRICTED=	"License prohibites distribute."
 NO_BUILD=	YES
 PLIST_SUB=	JAVASUBDIR=${JAVASUBDIR}
 
-JAVASUBDIR=	jdk1.1.7
+JAVASUBDIR=	jdk1.1.8
 JFCSUBDIR=	swing-1.1
 DIR=		${PREFIX}/share/java
 
