@@ -15,6 +15,8 @@ DIST_SUBDIR=	snow
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	Half-Life mod Snow War full server package for Linux
 
+IGNORE=		Current version is not available for Linux yet
+
 USE_ZIP=	yes
 
 slaveport-post-extract:
