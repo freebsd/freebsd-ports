@@ -30,6 +30,12 @@ BATIK_HOME=	${PREFIX}/batik
 ANT_ALL_TARGET+=	html
 .endif
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=		"Does not compile on 4.x"
+.endif
+
 do-build:
 	@cd ${WRKSRC} && ${ANT} ${ANT_ALL_TARGET}
 
@@ -41,4 +47,4 @@ do-install:
 	@${FIND} ${BATIK_HOME} -type d | ${SORT} -r | \
 		${SED} -e "s,^${PREFIX}/,@dirrm ," >> ${TMPPLIST}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

@@ -20,6 +20,12 @@ DOC_FILES=	AUTHORS COPYING COPYRIGHT NEWS README \
 		README_BUCCANEER TODO manual.tex
 MAN6=		freebooters.6 buccaneer.6
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=		"Does not compile on 4.x"
+.endif
+
 do-configure:
 	${REINPLACE_CMD} -e 's,%%PREFIX%%,${PREFIX},g' ${WRKSRC}/sdl_setup.cc
 	${REINPLACE_CMD} -e 's,%%PREFIX%%,${PREFIX},g' ${WRKSRC}/tools.cc
@@ -31,4 +37,4 @@ post-install:
 	cd ${WRKSRC}/doc/ && ${INSTALL_DATA} ${DOC_FILES} ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
