@@ -6,12 +6,14 @@
 #
 
 PORTNAME=	wmconfig
-PORTVERSION=	1.2.1
+PORTVERSION=	1.2.2
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://www.arrishq.net/downloads/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Menu generation tool for X window managers
+
+RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84
 
 USE_BZIP2=	yes
 USE_GETOPT_LONG=	yes

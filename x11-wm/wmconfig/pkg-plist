@@ -1,4 +1,5 @@
 bin/wmconfig
+bin/wmconfig_launcher
 etc/wmconfig/Applications
 etc/wmconfig/Astronomy
 etc/wmconfig/Desktop
