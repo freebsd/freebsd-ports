@@ -37,7 +37,7 @@ MAN1=		cfclient.1
 
 .if ${HAVE_GNOME:Mgtk12}!=""
 USE_GNOME+=	gtk12
-MAN1=		gcfclient.1
+MAN1+=		gcfclient.1
 .else
 CONFIGURE_ARGS+=	--disable-gtk
 .endif
