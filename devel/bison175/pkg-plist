@@ -1,6 +1,5 @@
 @comment $FreeBSD$
 bin/bison
-lib/charset.alias
 share/bison/bison.hairy
 share/bison/bison.simple
 @unexec install-info --delete %D/info/bison.info %D/info/dir
