@@ -1,0 +1,4 @@
+PerlMenu is a simple module that uses the Curses package to render
+menus on the terminal.
+
+WWW: http://www.ait.iastate.edu/perlmenu/
