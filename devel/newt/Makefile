@@ -6,29 +6,21 @@
 #
 
 PORTNAME=	newt
-PORTVERSION=	${RPMVERSION}.${RPMREVISION}
+PORTVERSION=	0.50.39
 CATEGORIES=	devel
-MASTER_SITES=	http://www.silug.org/%SUBDIR%/ \
-		ftp://ftp.redhat.com/%SUBDIR%/ \
-		http://ftp.dulug.duke.edu/%SUBDIR%/ 
-MASTER_SITE_SUBDIR=	pub/redhat/linux/rawhide/SRPMS/SRPMS
-DISTNAME=	${PORTNAME}-${RPMVERSION}-${RPMREVISION}
-EXTRACT_SUFX=	.src.rpm
+MASTER_SITES=	${MASTER_SITE_LOCAL} \
+		# ftp://ftp.redhat.com/pub/redhat/linux/rawhide/SRPMS/SRPMS/
+MASTER_SITE_SUBDIR=	perky
 PKGNAMESUFFIX=	${PYTHONSUFFIX}${TCLSUFFIX}
 
 MAINTAINER=	perky@FreeBSD.org
 
-BUILD_DEPENDS=	rpm2cpio:${PORTSDIR}/archivers/rpm
 LIB_DEPENDS=	slang.1:${PORTSDIR}/devel/libslang \
 		popt.0:${PORTSDIR}/devel/popt
 
-RPMVERSION=	0.50.36
-RPMREVISION=	1
-WRKSRC=		${WRKDIR}/newt-${RPMVERSION}
-
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
-VERSION=	0.50
+VERSION=	50
 TCL_VERSION?=	tcl8.3
 TCL_NODOT=	${TCL_VERSION:S/.//}
 MAKE_ENV+=	VERSION=${VERSION} CC=${CC} PCFLAGS="${CFLAGS}" TCLVERSION="${TCL_VERSION}"
@@ -53,12 +45,6 @@ PLIST_SUB+=	TCLOPT=""
 .else
 PLIST_SUB+=	TCLOPT="@comment "
 .endif
-
-do-extract:
-	@${RM} -rf ${WRKDIR}
-	@${MKDIR} ${WRKDIR}
-	@${LOCALBASE}/bin/rpm2cpio ${_DISTDIR}${DISTFILES} | (cd ${WRKDIR};${CPIO} -i)
-	@${TAR} xfz ${WRKSRC}.tar.gz -C ${WRKDIR}
 
 .if !defined(WITHOUT_PYTHON)
 post-build:
