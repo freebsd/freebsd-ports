@@ -1,0 +1,7 @@
+Radreport is a perl script for parsing radius logs.
+While distributed by Lucent RABU, it is contributed software. Radreport has
+no active maintainer and is truly open source software: if you need an extra
+feature, hack it in yourself.
+
+  -Kelly
+   kbyanc@posi.net
