@@ -7,9 +7,13 @@
 
 PORTNAME=	wfa
 PORTVERSION=	3.3
-MASTER_SITES=	ftp://flanders.worldogl.com/wfa/ \
+MASTER_SITES=	ftp://ftp.ogl.org/pub/q3/wfa/ \
 		ftp://urgentfury.org/pub/quake3/ \
-		http://www.thunderdome.ws/files/quake3/mods/wfa_33/linux-mac/
+		http://wfa.themelon.net/wfa/ \
+		ftp://mirror1.planetice.net/pub/wfa/ \
+		ftp://mirror2.planetice.net/pub/wfa/ \
+		http://www.quakeshit.com/files/ \
+		ftp://ftp2.extreme-players.de/q3/mod/wfa/
 DISTFILES=	WFA_Media_v33.zip WFA_MapPack1_v33.zip \
 		WFA_MapPack2_v33.zip
 
