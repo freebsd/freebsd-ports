@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	groupuserfolder
-PORTVERSION=	3.0.b1
+PORTVERSION=	3.1.1
 CATEGORIES=	www zope
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	collective
 PKGNAMEPREFIX=	zope-
-DISTNAME=	GroupUserFolder-3.0Beta1
+DISTNAME=	GroupUserFolder-${PORTVERSION}
 
 MAINTAINER=	kaeru@inigo-tech.com
 COMMENT=	GroupUserFolder product for Zope
