@@ -7,6 +7,7 @@
 
 PORTNAME=	tagtool
 PORTVERSION=	0.11.1
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -18,13 +19,17 @@ LIB_DEPENDS=	id3-3.8.3:${PORTSDIR}/audio/id3lib \
 		vorbis.3:${PORTSDIR}/audio/libvorbis
 
 USE_X_PREFIX=	yes
-USE_LIBTOOL_VER=15
+USE_GNOME=	gnomehier libglade2
+USE_REINPLACE=	yes
 USE_GMAKE=	yes
+USE_LIBTOOL_VER=	15
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
-CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
-USE_GNOME=	libglade2
+CPPFLAGS=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
+LDFLAGS=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
-DATADIR=	share/tagtool
+post-patch:
+	@${REINPLACE_CMD} -e 's|(datadir)/pixmaps|(datadir)/gnome/pixmaps|g' \
+		${WRKSRC}/pixmaps/Makefile.in
 
 .include <bsd.port.mk>
