@@ -12,6 +12,7 @@
     SUBDIR += Xg
     SUBDIR += arkpandora
     SUBDIR += artwiz-aleczapka
+    SUBDIR += artwiz-aleczapka-se
     SUBDIR += artwiz-fonts
     SUBDIR += bdfresize
     SUBDIR += bitmap-fonts
