@@ -6,21 +6,19 @@
 #
 
 PORTNAME=	formulator
-PORTVERSION=	1.6.2
+PORTVERSION=	1.8.0
 CATEGORIES=	www zope
-MASTER_SITES=	http://zope.org/Members/infrae/Formulator/Formulator-${PORTVERSION}/
+MASTER_SITES=	http://www.infrae.com/download/Formulator/${PORTVERSION}/
 PKGNAMEPREFIX=	zope-
 DISTNAME=	Formulator-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	x@Vex.Net
+MAINTAINER=	x@vex.net
 COMMENT=	HTML form generatation and validation system for Zope
 
 USE_PYTHON=		yes
 USE_ZOPE=		yes
 DIST_SUBDIR=	zope
-
-CONFLICTS=	plone-*
 
 ZOPEPRODUCTNAME=	Formulator
 

@@ -41,6 +41,7 @@
 %%ZOPEPRODUCTDIR%%/Formulator/FieldRegistry.py
 %%ZOPEPRODUCTDIR%%/Formulator/Form.py
 %%ZOPEPRODUCTDIR%%/Formulator/FormToXML.py
+%%ZOPEPRODUCTDIR%%/Formulator/FormulatorFormFile.py
 %%ZOPEPRODUCTDIR%%/Formulator/HISTORY.txt
 %%ZOPEPRODUCTDIR%%/Formulator/HelperFields.py
 %%ZOPEPRODUCTDIR%%/Formulator/INSTALL.txt
@@ -53,13 +54,15 @@
 %%ZOPEPRODUCTDIR%%/Formulator/StandardFields.py
 %%ZOPEPRODUCTDIR%%/Formulator/tests/README.txt
 %%ZOPEPRODUCTDIR%%/Formulator/tests/__init__.py
+%%ZOPEPRODUCTDIR%%/Formulator/tests/framework.py
+%%ZOPEPRODUCTDIR%%/Formulator/tests/runalltests.py
 %%ZOPEPRODUCTDIR%%/Formulator/tests/test_Form.py
-%%ZOPEPRODUCTDIR%%/Formulator/tests/test_all.py
 %%ZOPEPRODUCTDIR%%/Formulator/tests/test_serialize.py
 %%ZOPEPRODUCTDIR%%/Formulator/tests/test_validators.py
 %%ZOPEPRODUCTDIR%%/Formulator/tests/__init__.pyc
+%%ZOPEPRODUCTDIR%%/Formulator/tests/framework.pyc
+%%ZOPEPRODUCTDIR%%/Formulator/tests/runalltests.pyc
 %%ZOPEPRODUCTDIR%%/Formulator/tests/test_Form.pyc
-%%ZOPEPRODUCTDIR%%/Formulator/tests/test_all.pyc
 %%ZOPEPRODUCTDIR%%/Formulator/tests/test_serialize.pyc
 %%ZOPEPRODUCTDIR%%/Formulator/tests/test_validators.pyc
 %%ZOPEPRODUCTDIR%%/Formulator/TALESField.py
@@ -69,6 +72,7 @@
 %%ZOPEPRODUCTDIR%%/Formulator/XMLObjects.py
 %%ZOPEPRODUCTDIR%%/Formulator/XMLToForm.py
 %%ZOPEPRODUCTDIR%%/Formulator/__init__.py
+%%ZOPEPRODUCTDIR%%/Formulator/helpers.py
 %%ZOPEPRODUCTDIR%%/Formulator/homepage.html
 %%ZOPEPRODUCTDIR%%/Formulator/refresh.txt
 %%ZOPEPRODUCTDIR%%/Formulator/version.txt
@@ -94,6 +98,14 @@
 %%ZOPEPRODUCTDIR%%/Formulator/www/RangedIntegerField.gif
 %%ZOPEPRODUCTDIR%%/Formulator/www/StringField.gif
 %%ZOPEPRODUCTDIR%%/Formulator/www/TextAreaField.gif
+%%ZOPEPRODUCTDIR%%/Formulator/i18n/__init__.py
+%%ZOPEPRODUCTDIR%%/Formulator/i18n/dummymessageid.py
+%%ZOPEPRODUCTDIR%%/Formulator/i18n/formulatormessageid.py
+%%ZOPEPRODUCTDIR%%/Formulator/i18n/__init__.pyc
+%%ZOPEPRODUCTDIR%%/Formulator/i18n/dummymessageid.pyc
+%%ZOPEPRODUCTDIR%%/Formulator/i18n/formulatormessageid.pyc
+%%ZOPEPRODUCTDIR%%/Formulator/i18n/formulator.pot
+%%ZOPEPRODUCTDIR%%/Formulator/i18n/formulator-nl.po
 %%ZOPEPRODUCTDIR%%/Formulator/DummyField.pyc
 %%ZOPEPRODUCTDIR%%/Formulator/Errors.pyc
 %%ZOPEPRODUCTDIR%%/Formulator/FSForm.pyc
@@ -102,6 +114,7 @@
 %%ZOPEPRODUCTDIR%%/Formulator/FieldRegistry.pyc
 %%ZOPEPRODUCTDIR%%/Formulator/Form.pyc
 %%ZOPEPRODUCTDIR%%/Formulator/FormToXML.pyc
+%%ZOPEPRODUCTDIR%%/Formulator/FormulatorFormFile.pyc
 %%ZOPEPRODUCTDIR%%/Formulator/HelperFields.pyc
 %%ZOPEPRODUCTDIR%%/Formulator/ListTextAreaField.pyc
 %%ZOPEPRODUCTDIR%%/Formulator/MethodField.pyc
@@ -114,8 +127,10 @@
 %%ZOPEPRODUCTDIR%%/Formulator/XMLObjects.pyc
 %%ZOPEPRODUCTDIR%%/Formulator/XMLToForm.pyc
 %%ZOPEPRODUCTDIR%%/Formulator/__init__.pyc
+%%ZOPEPRODUCTDIR%%/Formulator/helpers.pyc
 @dirrm %%ZOPEPRODUCTDIR%%/Formulator/dtml
 @dirrm %%ZOPEPRODUCTDIR%%/Formulator/help
+@dirrm %%ZOPEPRODUCTDIR%%/Formulator/i18n
 @dirrm %%ZOPEPRODUCTDIR%%/Formulator/tests
 @dirrm %%ZOPEPRODUCTDIR%%/Formulator/www
 @dirrm %%ZOPEPRODUCTDIR%%/Formulator
