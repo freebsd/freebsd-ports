@@ -6,15 +6,16 @@
 #
 
 PORTNAME=		mixxx
-PORTVERSION=		1.3.2
+PORTVERSION=		1.4
 CATEGORIES=		audio
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
+DISTFILES=		${PORTNAME}-${PORTVERSION}a${EXTRACT_SUFX}
 
 MAINTAINER=		jylefort@brutele.be
 COMMENT=		A DJ mixing application
 
-BUILD_DEPENDS=		bash:${PORTSDIR}/shells/bash2 \
+BUILD_DEPENDS=		bash:${PORTSDIR}/shells/bash \
 			qmake:${PORTSDIR}/devel/qmake
 LIB_DEPENDS=		samplerate:${PORTSDIR}/audio/libsamplerate \
 			portaudio:${PORTSDIR}/audio/portaudio \
@@ -32,24 +33,20 @@ CONFIGURE_WRKSRC=	${WRKSRC}/src
 BUILD_WRKSRC=		${WRKSRC}/src
 INSTALL_WRKSRC=		${WRKSRC}/src
 
-CONFIGURE_ENV=		QTDIR="${X11BASE}" \
-			QMAKESPEC="freebsd-g++" \
-			NOPORTDOCS="${NOPORTDOCS}"
+CONFIGURE_ENV=		QTDIR="${X11BASE}" QMAKESPEC="freebsd-g++"
 MAKE_ENV=		QTDIR="${X11BASE}"
 
 .include <bsd.port.pre.mk>
 
 CONFIGURE_ARGS=		--prefix=${PREFIX}
 
-.if ${OSVERSION} >= 502126
-BROKEN=			"Does not compile on FreeBSD >= 5.x"
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} \
-		-e 's|@LOCALBASE@|${LOCALBASE}|g' \
-		-e 's|@X11BASE@|${X11BASE}|g' \
-		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT} \
+		-e 's|/bin/bash|${LOCALBASE}&| ; \
+		    s|$$QTDIR/bin/qmake|${LOCALBASE}/bin/qmake|g' \
+		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
+	@${REINPLACE_CMD} \
+		-e 's|system( ld|& -shared -L${LOCALBASE}/lib -L${X11BASE}/lib|' \
 		${CONFIGURE_WRKSRC}/check.qbas
 
 .if !defined(NOPORTDOCS)
