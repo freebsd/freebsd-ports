@@ -1,18 +1,13 @@
---- Configure.orig	Tue Mar  4 04:19:32 1997
-+++ Configure	Sun Apr 20 15:20:38 1997
-@@ -203,18 +203,20 @@
+--- Configure.orig	Thu Apr  3 10:16:13 1997
++++ Configure	Thu Jun 26 20:13:51 1997
+@@ -206,18 +206,21 @@
  
  #---------------------------------------------------------------------------
  
--if(not(-f $config_pm) && $have_old && not($opt_d))
+-if(!-f $config_pm && $have_old && !$opt_d)
 - {
 -  $msg = <<EDQ;
--
--Ah, I see you already have installed libnet before.
--
--Do you want to modify/update your configuration (y|n) ?
--EDQ
-+#if(not(-f $config_pm) && $have_old && not($opt_d))
++#if(!-f $config_pm && $have_old && !$opt_d)
 +# {
 +#  $msg = <<EDQ;
 +#
@@ -24,7 +19,13 @@
 +# $opt_d = 1
 +#	unless get_bool($msg,0);
 +# }
++#
  
+-Ah, I see you already have installed libnet before.
+-
+-Do you want to modify/update your configuration (y|n) ?
+-EDQ
+-
 - $opt_d = 1
 -	unless get_bool($msg,0);
 - }
@@ -32,17 +33,17 @@
  
  #---------------------------------------------------------------------------
  
-@@ -231,7 +233,8 @@
+@@ -234,7 +237,8 @@
  Do you want me to perform hostname lookups (y|n) ?
  EDQ
  
--$cfg{'test_exist'} = get_bool($msg, $cfg{'test_exist'});
-+#$cfg{'test_exist'} = get_bool($msg, $cfg{'test_exist'});
+-$cfg{'test_exist'} = get_bool($msg, $oldcfg{'test_exist'});
++#$cfg{'test_exist'} = get_bool($msg, $oldcfg{'test_exist'});
 +$cfg{'test_exist'} = 1;
  
  print <<EDQ unless $cfg{'test_exist'};
  
-@@ -246,71 +249,54 @@
+@@ -249,71 +253,72 @@
  
  #---------------------------------------------------------------------------
  
@@ -65,19 +66,24 @@
  
  $msg = 'Enter a list of avaliable NNTP hosts :';
  
--$def = $cfg{'nntp_hosts'} ||
+-$def = $oldcfg{'nntp_hosts'} ||
 -	[ default_hostname($ENV{NNTPSERVER},$ENV{NEWSHOST},'news') ];
--
--$cfg{'nntp_hosts'} = get_host_list($msg,$def);
++#$def = $oldcfg{'nntp_hosts'} ||
++#	[ default_hostname($ENV{NNTPSERVER},$ENV{NEWSHOST},'news') ];
++
 +$cfg{'nntp_hosts'} = [ default_hostname($ENV{NNTPSERVER},$ENV{NEWSHOST},'news') ];
+ 
+-$cfg{'nntp_hosts'} = get_host_list($msg,$def);
  
  #---------------------------------------------------------------------------
  
  $msg = 'Enter a list of avaliable SMTP hosts :';
  
--$def = $cfg{'smtp_hosts'} ||
+-$def = $oldcfg{'smtp_hosts'} ||
 -	[ default_hostname(split(/:/,$ENV{SMTPHOSTS} || ""), 'mailhost') ];
--
++#$def = $oldcfg{'smtp_hosts'} ||
++#	[ default_hostname(split(/:/,$ENV{SMTPHOSTS} || ""), 'mailhost') ];
+ 
 -$cfg{'smtp_hosts'} = get_host_list($msg,$def);
 +$cfg{'smtp_hosts'} = [ default_hostname(split(/:/,$ENV{SMTPHOSTS} || ""), 'mailhost') ];
  
@@ -85,8 +91,9 @@
  
  $msg = 'Enter a list of avaliable POP3 hosts :';
  
--$def = $cfg{'pop3_hosts'} || [];
--
+-$def = $oldcfg{'pop3_hosts'} || [];
++# $def = $oldcfg{'pop3_hosts'} || [];
+ 
 -$cfg{'pop3_hosts'} = get_host_list($msg,$def);
 +$cfg{'pop3_hosts'} = [];
  
@@ -94,8 +101,9 @@
  
  $msg = 'Enter a list of avaliable SNPP hosts :';
  
--$def = $cfg{'snpp_hosts'} || [];
--
+-$def = $oldcfg{'snpp_hosts'} || [];
++# $def = $oldcfg{'snpp_hosts'} || [];
+ 
 -$cfg{'snpp_hosts'} = get_host_list($msg,$def);
 +$cfg{'snpp_hosts'} = [];
  
@@ -103,9 +111,11 @@
  
  $msg = 'Enter a list of avaliable PH Hosts   :'  ;
  
--$def = $cfg{'ph_hosts'} ||
+-$def = $oldcfg{'ph_hosts'} ||
 -	[ default_hostname('dirserv') ];
--
++#$def = $oldcfg{'ph_hosts'} ||
++#	[ default_hostname('dirserv') ];
+ 
 -$cfg{'ph_hosts'}   =  get_host_list($msg,$def);
 +$cfg{'ph_hosts'}   =  [ default_hostname('dirserv') ];
  
@@ -113,8 +123,9 @@
  
  $msg = 'Enter a list of avaliable TIME Hosts   :'  ;
  
--$def = $cfg{'time_hosts'} || [];
--
+-$def = $oldcfg{'time_hosts'} || [];
++# $def = $oldcfg{'time_hosts'} || [];
+ 
 -$cfg{'time_hosts'} = get_host_list($msg,$def);
 +$cfg{'time_hosts'} = [];
  
@@ -122,25 +133,27 @@
  
  $msg = 'Enter a list of avaliable DAYTIME Hosts   :'  ;
  
--$def = $cfg{'daytime_hosts'} || $cfg{'time_hosts'};
--
+-$def = $oldcfg{'daytime_hosts'} || $oldcfg{'time_hosts'};
++# $def = $oldcfg{'daytime_hosts'} || $oldcfg{'time_hosts'};
+ 
 -$cfg{'daytime_hosts'} = get_host_list($msg,$def);
 +$cfg{'daytime_hosts'} = [];
  
  #---------------------------------------------------------------------------
  
-@@ -326,9 +312,7 @@
+@@ -329,9 +334,9 @@
  FTP proxy hostname :
  EDQ
  
--$cfg{'ftp_firewall'} ||= $ENV{FTP_FIREWALL};
--
--$cfg{'ftp_firewall'} = get_hostname($msg,$cfg{'ftp_firewall'});
+-$def = $oldcfg{'ftp_firewall'} || $ENV{FTP_FIREWALL};
++# $def = $oldcfg{'ftp_firewall'} || $ENV{FTP_FIREWALL};
+ 
+-$cfg{'ftp_firewall'} = get_hostname($msg,$def);
 +$cfg{'ftp_firewall'} = $ENV{FTP_FIREWALL};
  
  #---------------------------------------------------------------------------
  
-@@ -349,28 +333,23 @@
+@@ -352,37 +357,36 @@
  
  #---------------------------------------------------------------------------
  
@@ -165,40 +178,40 @@
  
  $msg = "\nShould all FTP connections via a firewall/proxy be passive (y|n) ?";
  
--$cfg{'ftp_ext_passive'} ||= 0;
+-$def = $oldcfg{'ftp_ext_passive'} || 0;
 -
--$cfg{'ftp_ext_passive'} = get_bool($msg,$cfg{'ftp_ext_passive'});
--
--
--$cfg{'ftp_int_passive'} ||= 0;
+-$cfg{'ftp_ext_passive'} = get_bool($msg,$def);
++# $def = $oldcfg{'ftp_ext_passive'} || 0;
+ 
 +$cfg{'ftp_ext_passive'} = 0;
+ 
+-$def = $oldcfg{'ftp_int_passive'} || 0;
++# $def = $oldcfg{'ftp_int_passive'} || 0;
  
  $msg = "\nShould all other FTP connections be passive (y|n) ?";
  
--$cfg{'ftp_int_passive'} = get_bool($msg,$cfg{'ftp_int_passive'});
+-$cfg{'ftp_int_passive'} = get_bool($msg,$def);
 +$cfg{'ftp_int_passive'} = 0;
  
  
  #---------------------------------------------------------------------------
-@@ -385,10 +364,10 @@
-   $cfg{'inet_domain'} = Net::Domain::hostdomain();
-  }
  
--$ans = Prompt("\nWhat is your local internet domain name :",
--		$cfg{'inet_domain'});
-+#$ans = Prompt("\nWhat is your local internet domain name :",
-+#		$cfg{'inet_domain'});
+-$def = $oldcfg{'inet_domain'} || $ENV{LOCALDOMAIN};
++# $def = $oldcfg{'inet_domain'} || $ENV{LOCALDOMAIN};
+ 
+-$ans = Prompt("\nWhat is your local internet domain name :",$def);
++# $ans = Prompt("\nWhat is your local internet domain name :",$def);
  
 -$cfg{'inet_domain'} = ($ans =~ /(\S+)/)[0];
 +$cfg{'inet_domain'} = "";
  
  #---------------------------------------------------------------------------
  
-@@ -404,7 +383,7 @@
+@@ -398,7 +402,7 @@
  Do you want me to run these tests (y|n) ?
  EDQ
  
--$cfg{'test_hosts'} = get_bool($msg,$cfg{'test_hosts'});
+-$cfg{'test_hosts'} = get_bool($msg,$oldcfg{'test_hosts'});
 +$cfg{'test_hosts'} = 0;
  
  #---------------------------------------------------------------------------
