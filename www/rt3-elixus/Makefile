@@ -22,4 +22,7 @@ DESCR=		${.CURDIR}/pkg-descr
 PLIST=		${.CURDIR}/pkg-plist
 WRKSRC=		${WRKDIR}/rt
 
+do-patch:
+	${TRUE}
+
 .include "${MASTERDIR}/Makefile"
