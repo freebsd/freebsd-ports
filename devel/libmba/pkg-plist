@@ -1,3 +1,4 @@
+include/mba/cfg.h
 include/mba/domnode.h
 include/mba/hashmap.h
 include/mba/hexdump.h
@@ -6,6 +7,7 @@ include/mba/mbs.h
 include/mba/msgno.h
 include/mba/profile.h
 include/mba/stack.h
-@dirrm include/mba
+lib/libmba.a
 lib/libmba.so
 lib/libmba.so.%%SHLIB_MAJOR%%
+@dirrm include/mba

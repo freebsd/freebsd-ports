@@ -4,4 +4,4 @@ like interface that can load and store XML files for simple XML processing, a
 module for managing error codes and associated messages across separate C
 libraries, and more.
 
-WWW: http://users.erols.com/mballen/libmba/
+WWW: http://www.erols.com/~mballen/libmba/
