@@ -7,27 +7,29 @@
 #
 
 PORTNAME=	gcc
-PORTVERSION=	2.95.2
+PORTVERSION=	2.95.3.test1
 CATEGORIES=	lang java
-MASTER_SITES=	ftp://egcs.cygnus.com/pub/egcs/releases/${DISTNAME}/  \
+MASTER_SITES=	ftp://ftp.freesoftware.com/pub/sourceware/gcc/releases/gcc-2.95.3-prerelease/  \
+		ftp://ftp.freesoftware.com/pub/sourceware/gcc/releases/${DISTNAME}/  \
+		ftp://egcs.cygnus.com/pub/egcs/releases/${DISTNAME}/  \
 		ftp://ftp.ninemoons.com/pub/mirrors/egcs/releases/${DISTNAME}/ \
 		ftp://ftp.iij.ad.jp/pub/egcs/releases/${DISTNAME}/  \
 		ftp://ftp.yggdrasil.com/mirrors/site/egcs.cygnus.com/pub/egcs/releases/${DISTNAME}/  \
 		ftp://ftp.fu-berlin.de/unix/languages/egcs/releases/${DISTNAME}/
 MASTER_SITE_SUBDIR=	gcc
-DISTFILES=	gcc-core-${GCC_REV}${EXTRACT_SUFX} \
-		gcc-g++-${GCC_REV}${EXTRACT_SUFX} \
-		gcc-g77-${GCC_REV}${EXTRACT_SUFX} \
-		gcc-java-${GCC_REV}${EXTRACT_SUFX} \
-		gcc-objc-${GCC_REV}${EXTRACT_SUFX}
+DISTFILES=	gcc-core-${GCC_REV}.test1${EXTRACT_SUFX} \
+		gcc-g++-${GCC_REV}.test1${EXTRACT_SUFX} \
+		gcc-g77-${GCC_REV}.test1${EXTRACT_SUFX} \
+		gcc-java-${GCC_REV}.test1${EXTRACT_SUFX} \
+		gcc-objc-${GCC_REV}.test1${EXTRACT_SUFX}
 
 MAINTAINER=	obrien@FreeBSD.org
 
-USE_BZIP2=	yes
+#USE_BZIP2=	yes
 
 .include <bsd.port.pre.mk>
 
-GCC_REV=	${DISTNAME:S/gcc-//g}
+GCC_REV=	${DISTNAME:S/gcc-//g:S/.test1//g}
 LIBSTDCPP_REV=	2100
 
 .if ${PORTOBJFORMAT} == "elf"
@@ -78,7 +80,7 @@ post-install:
 		${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${GCC_REV}/cc1 \
 		${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${GCC_REV}/cc1obj \
 		${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${GCC_REV}/cc1plus \
-		${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${GCC_REV}/cpp \
+		${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${GCC_REV}/cpp0 \
 		${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${GCC_REV}/collect2 \
 		${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${GCC_REV}/f771 ; \
 	do \
