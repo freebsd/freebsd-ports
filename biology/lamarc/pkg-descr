@@ -1,0 +1,13 @@
+LAMARC (Likelihood Analysis with Metropolis Algorithm using Random
+Coalescence) is a package of programs for computing population parameters
+such as population size, population growth rate and migration rates.  It does
+this by using likelihoods for samples of data (sequences, microsatellites,
+and electrophoretic polymorphisms) from populations.
+
+This port does not contain anything by itself; it is a "meta-port" which
+installs the four packages that make up LAMARC:  Coalesce, Fluctuate, Migrate
+and Recombine.
+
+WWW: http://evolution.genetics.washington.edu/lamarc.html
+
+-- Johann Visagie <wjv@FreeBSD.org>
