@@ -1,0 +1,22 @@
+SYNOPSIS
+         use Convert::UU qw(uudecode uuencode);
+         $encoded_string = uuencode($string,[$filename],[$mode]);
+         ($string,$filename,$mode) = uudecode($string);
+         $string = uudecode($string); # in scalar context
+
+
+DESCRIPTION
+       uuencode() takes as the first argument a scalar that is to
+       be uuencoded. Alternatively a filehandle may be passed
+       that must be opened for reading. It returns the uuencoded
+       string including begin and end. Second and third argument
+       are optional and specify filename and mode. If unspecified
+       these default to "uuencode.uu" and 644.
+
+       uudecode() takes a string as argument which will be
+       uudecoded. If the argument is a filehandle this will be
+       read instead. Leading and trailing garbage will be
+       ignored. The function returns the uudecoded string for the
+       first begin/end pair. In array context it returns an array
+       whose first element is the uudecoded string, the second is
+       the filename and the third is the mode.
