@@ -10,7 +10,7 @@
 #
 
 DISTNAME=       ssh-1.2.27
-CATEGORIES=	security net
+CATEGORIES=	security net ipv6
 MASTER_SITES=	ftp://ftp.cs.hut.fi/pub/ssh/
 
 MAINTAINER=	torstenb@FreeBSD.org
