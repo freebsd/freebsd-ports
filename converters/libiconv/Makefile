@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libiconv
-PORTVERSION= 	1.3
+PORTVERSION= 	1.4
 CATEGORIES=	converters devel
 MASTER_SITES=	ftp://ftp.ilog.fr/pub/Users/haible/gnu/
 

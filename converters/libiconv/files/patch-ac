@@ -1,20 +1,20 @@
---- man/Makefile.in.orig	Tue Jul 18 09:52:08 2000
-+++ man/Makefile.in	Tue Jul 18 09:53:20 2000
+--- man/Makefile.in.orig	Fri Sep 15 11:32:20 2000
++++ man/Makefile.in	Mon Nov 20 18:49:09 2000
 @@ -30,7 +30,7 @@
- 	if [ ! -d $(prefix) ] ; then mkdir $(prefix) ; fi
- 	if [ ! -d $(mandir) ] ; then mkdir $(mandir) ; fi
- 	if [ ! -d $(mandir)/man3 ] ; then mkdir $(mandir)/man3 ; fi
--	cd $(srcdir) && for f in *.3 ; do echo $(INSTALL_DATA) $$f $(mandir)/man3/$$f ; $(INSTALL_DATA) $$f $(mandir)/man3/$$f ; done
-+	cd $(srcdir) && for f in *.3 ; do echo $(INSTALL_DATA) $$f $(mandir)/man3/g$$f ; $(INSTALL_DATA) $$f $(mandir)/man3/g$$f ; done
+ 	if [ ! -d $(DESTDIR)$(prefix) ] ; then mkdir $(DESTDIR)$(prefix) ; fi
+ 	if [ ! -d $(DESTDIR)$(mandir) ] ; then mkdir $(DESTDIR)$(mandir) ; fi
+ 	if [ ! -d $(DESTDIR)$(mandir)/man3 ] ; then mkdir $(DESTDIR)$(mandir)/man3 ; fi
+-	cd $(srcdir) && for f in *.3 ; do echo $(INSTALL_DATA) $$f $(DESTDIR)$(mandir)/man3/$$f ; $(INSTALL_DATA) $$f $(DESTDIR)$(mandir)/man3/$$f ; done
++	cd $(srcdir) && for f in *.3 ; do echo $(INSTALL_DATA) $$f $(DESTDIR)$(mandir)/man3/g$$f ; $(INSTALL_DATA) $$f $(DESTDIR)$(mandir)/man3/g$$f ; done
  
  installdirs : force
- 	if [ ! -d $(prefix) ] ; then mkdir $(prefix) ; fi
+ 	if [ ! -d $(DESTDIR)$(prefix) ] ; then mkdir $(DESTDIR)$(prefix) ; fi
 @@ -38,7 +38,7 @@
- 	if [ ! -d $(mandir)/man3 ] ; then mkdir $(mandir)/man3 ; fi
+ 	if [ ! -d $(DESTDIR)$(mandir)/man3 ] ; then mkdir $(DESTDIR)$(mandir)/man3 ; fi
  
  uninstall : force
--	cd $(srcdir) && for f in *.3 ; do echo $(RM) $(mandir)/man3/$$f ; $(RM) $(mandir)/man3/$$f ; done
-+	cd $(srcdir) && for f in *.3 ; do echo $(RM) $(mandir)/man3/g$$f ; $(RM) $(mandir)/man3/g$$f ; done
+-	cd $(srcdir) && for f in *.3 ; do echo $(RM) $(DESTDIR)$(mandir)/man3/$$f ; $(RM) $(DESTDIR)$(mandir)/man3/$$f ; done
++	cd $(srcdir) && for f in *.3 ; do echo $(RM) $(DESTDIR)$(mandir)/man3/g$$f ; $(RM) $(DESTDIR)$(mandir)/man3/g$$f ; done
  
  check :
  
