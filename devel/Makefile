@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.22 1996/07/10 08:12:38 asami Exp $
+# $Id: Makefile,v 1.23 1996/07/11 17:36:25 ache Exp $
 #
 
     SUBDIR += SWIG
@@ -18,6 +18,7 @@
     SUBDIR += mkmf
     SUBDIR += mprof
     SUBDIR += noweb
+    SUBDIR += tkcvs
     SUBDIR += xxgdb
 
 .include <bsd.port.subdir.mk>
