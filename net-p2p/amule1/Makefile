@@ -12,10 +12,12 @@ CATEGORIES=	net
 MASTER_SITES=	http://download.berlios.de/amule/
 
 MAINTAINER=	ganael.laplanche@martymac.com
-COMMENT=	Just another eMule P2P Client
+COMMENT=	The all-platform eMule p2p client
 
 LIB_DEPENDS=	wx_gtk2-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk2 \
 		curl.3:${PORTSDIR}/ftp/curl
+
+CONFLICTS=	aMule-devel-*
 
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomehier gnomehack gnomeprefix
