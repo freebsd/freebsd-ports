@@ -19,6 +19,8 @@ COMMENT=	Powerful programmer\'s text editor written in Java
 
 RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper
 
+CONFLICTS=	jedit-4.3*
+
 USE_JAVA=	yes
 JAVA_VERSION=	1.3+
 
