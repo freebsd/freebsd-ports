@@ -1,0 +1,6 @@
+lib/gtk/themes/engines/libmac2.so
+share/themes/Mac2/ICON.png
+share/themes/Mac2/README.html
+share/themes/Mac2/gtk/gtkrc
+@dirrm share/themes/Mac2/gtk
+@dirrm share/themes/Mac2
