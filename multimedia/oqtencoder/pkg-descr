@@ -1,0 +1,13 @@
+[ from developer's readme ]
+OQTEncoder is just here to show how simple it is to realize an
+encoder using OpenQuicktime... It is simple, new and doesn't have
+a lot of functionality but it shoud soon be better and it's already
+usable ;)
+
+Just launch it without options and it will explain you how to use
+it ;). Here follows a simple example to encode any mpeg file using
+the great program mpeg2dec from Aaron Holzman:
+
+ 	mpeg2dec -s -o pgmpipe test.mpg  | oqtencoder -V jpeg test.mov
+
+WWW: http://openquicktime.sourceforge.net/

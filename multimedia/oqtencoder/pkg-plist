@@ -1,0 +1,3 @@
+bin/oqtencoder
+%%PORTDOCS%%share/doc/OQTEncoder/readme
+%%PORTDOCS%%@dirrm share/doc/OQTEncoder
