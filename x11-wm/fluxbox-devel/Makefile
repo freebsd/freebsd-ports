@@ -122,7 +122,6 @@ post-patch:
 
 post-install:
 .ifndef (NOPORTDOCS)
-post-install:
 	@${MKDIR} ${DOCSDIR}
 .for i in ${DOCS}
 	@${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
