@@ -8,7 +8,7 @@
 
 PORTNAME=	bochs
 PORTVERSION=	2.0.2
-PORTEPOCH=	1
+PORTEPOCH=	2
 CATEGORIES=	emulators
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -28,7 +28,8 @@ GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--disable-split-hd \
 		--enable-all-optimizations \
-		--with-x11
+		--with-x11 \
+		--enable-pci
 
 CFLAGS+=	-fno-rtti -fno-exceptions -fomit-frame-pointer
 
