@@ -33,12 +33,21 @@ bin/rmdtopvf
 bin/vm
 bin/voctopvf
 bin/wavtopvf
-etc/mgetty+sendfax/dialin.config
-etc/mgetty+sendfax/faxheader
-etc/mgetty+sendfax/faxrunq.config
+@unexec if cmp -s %D/etc/mgetty+sendfax/dialin.config %D/etc/mgetty+sendfax/dialin.config.dist; then rm -f %D/etc/mgetty+sendfax/dialin.config; fi
+etc/mgetty+sendfax/dialin.config.dist
+@exec if [ ! -f %D/etc/mgetty+sendfax/dialin.config ]; then cp %B/%f %D/etc/mgetty+sendfax/dialin.config; fi
+@unexec if cmp -s %D/etc/mgetty+sendfax/faxheader %D/etc/mgetty+sendfax/faxheader.dist; then rm -f %D/etc/mgetty+sendfax/faxheader; fi
+etc/mgetty+sendfax/faxheader.dist
+@exec if [ ! -f %D/etc/mgetty+sendfax/faxheader ]; then cp %B/%f %D/etc/mgetty+sendfax/faxheader; fi
+@unexec if cmp -s %D/etc/mgetty+sendfax/faxrunq.config %D/etc/mgetty+sendfax/faxrunq.config.dist; then rm -f %D/etc/mgetty+sendfax/faxrunq.config; fi
+etc/mgetty+sendfax/faxrunq.config.dist
+@exec if [ ! -f %D/etc/mgetty+sendfax/faxrunq.config ]; then cp %B/%f %D/etc/mgetty+sendfax/faxrunq.config; fi
+@unexec if cmp -s %D/etc/mgetty+sendfax/faxspool.rules %D/etc/mgetty+sendfax/faxspool.rules.sample; then rm -f %D/etc/mgetty+sendfax/faxspool.rules; fi
 etc/mgetty+sendfax/faxspool.rules.sample
-etc/mgetty+sendfax/login.config
-@unexec rm -f %D/etc/mgetty+sendfax/faxheader %D/etc/mgetty+sendfax/mgetty.config* %D/etc/mgetty+sendfax/sendfax.config*
+@exec if [ ! -f %D/etc/mgetty+sendfax/faxspool.rules ]; then cp %B/%f %D/etc/mgetty+sendfax/faxspool.rules; fi
+@unexec if cmp -s %D/etc/mgetty+sendfax/login.config %D/etc/mgetty+sendfax/login.config.dist; then rm -f %D/etc/mgetty+sendfax/login.config; fi
+etc/mgetty+sendfax/login.config.dist
+@exec if [ ! -f %D/etc/mgetty+sendfax/login.config ]; then cp %B/%f %D/etc/mgetty+sendfax/login.config; fi
 @unexec install-info --delete %D/info/mgetty.info %D/info/dir
 info/mgetty.info
 @exec install-info %D/info/mgetty.info %D/info/dir
@@ -48,5 +57,5 @@ sbin/faxrunqd
 sbin/mgetty
 sbin/sendfax
 sbin/vgetty
-@dirrm etc/mgetty+sendfax
+@unexec rmdir %D/etc/mgetty+sendfax 2>/dev/null || true
 @dirrm lib/mgetty+sendfax

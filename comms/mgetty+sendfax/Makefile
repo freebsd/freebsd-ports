@@ -36,8 +36,17 @@ MAN8=		callback.8 \
 pre-install:
 	@(cd ${WRKSRC}/doc; ${MAKE} manpages)
 
-.if !defined(BATCH)
 post-install:
+	@${CP} ${PREFIX}/etc/mgetty+sendfax/dialin.config \
+		${PREFIX}/etc/mgetty+sendfax/dialin.config.dist
+	@${CP} ${PREFIX}/etc/mgetty+sendfax/faxheader \
+		${PREFIX}/etc/mgetty+sendfax/faxheader.dist
+	@${CP} ${PREFIX}/etc/mgetty+sendfax/faxrunq.config \
+		${PREFIX}/etc/mgetty+sendfax/faxrunq.config.dist
+	@${CP} ${PREFIX}/etc/mgetty+sendfax/login.config \
+		${PREFIX}/etc/mgetty+sendfax/login.config.dist
+	@install-info ${PREFIX}/info/mgetty.info ${PREFIX}/info/dir
+.if !defined(BATCH)
 	@(cd ${PKGDIR}; export PKG_PREFIX=${PREFIX}; ${PERL5} ${PKGINSTALL} _ POST-INSTALL)
 .endif
 
