@@ -1,9 +1,8 @@
-# $Id: Makefile,v 1.20 1997/01/06 15:30:40 peter Exp $
+# $Id: Makefile,v 1.21 1997/01/17 14:36:36 max Exp $
 #
 
     SUBDIR += cnews
     SUBDIR += inn
-    SUBDIR += inn-current
     SUBDIR += knews
     SUBDIR += nn
     SUBDIR += nn-current
