@@ -12,6 +12,7 @@
     SUBDIR += astyle
     SUBDIR += autoconf
     SUBDIR += automake
+    SUBDIR += avltree
     SUBDIR += bcc
     SUBDIR += bison
     SUBDIR += boehm-gc

@@ -1,0 +1,11 @@
+--- Makefile.orig	Sun Jan 23 15:00:51 2000
++++ Makefile	Sun Jan 23 15:00:56 2000
+@@ -3,7 +3,7 @@
+ # Date created:		13 January 2000
+ # Whom:			Bill Ross <bross@nas.nasa.gov> <ross@cgl.ucsf.edu>
+ #
+-CC=	cc
++CC?=	cc
+ 
+ all:		libavltree.a
+ 

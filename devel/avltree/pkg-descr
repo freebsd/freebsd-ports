@@ -1,0 +1,24 @@
+AVLtree is a small, malloc-based, in-memory index package generally
+like B-trees and hash tables.
+
+The interface resembles that of the BPLUS (B-tree) index package.
+
+Index creation options are:
+
+  - fixed-length binary keys OR variable-length string keys
+  - unique OR duplicate keys
+  - with duplicate keys:
+      standard (void *) pointers for each key OR
+      instance-counting (saves time and memory)
+
+Key insert/search time is O(log N).  References:
+
+Adelson-Velskii, G. M., and E. M. Landis.
+  "An Algorithm for the Organization of Information."
+  Soviet Math. Doclady 3, 1962, pp. 1259-1263.
+Knuth, D. E.
+  The Art of Computer Programming, Volume 3: Sorting and Searching
+  (2nd printing).  Addison-Wesley, 1975, pp. 451-468.
+
+AVLtree was written by Gregory Tseytin, tseyting@acm.org.
+Port-ified by Bill Ross, bross@nas.nasa.gov and ross@cgl.ucsf.edu.
