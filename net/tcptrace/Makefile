@@ -18,8 +18,9 @@ ALL_TARGET=	tcptrace
 
 MAN1=		tcptrace.1
 
-DOCFILES=	ARGS BUGS CHANGES COPYRIGHT FAQ README README.mailing_list \
-		README.modules README.tput_graphs WWW dot_tcptracerc.sample
+DOCFILES=	ARGS CHANGES COPYING COPYRIGHT FAQ README README.mailing_list \
+		README.modules README.tput_graphs THANKS WWW \
+		dot_tcptracerc.sample
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/tcptrace ${PREFIX}/bin
