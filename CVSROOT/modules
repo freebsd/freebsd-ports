@@ -3261,6 +3261,7 @@ kappdock	ports/x11-wm/kappdock
 kaptain		ports/devel/kaptain
 karamba		ports/deskutils/karamba
 kaskade		ports/cad/kaskade
+katalog		ports/misc/katalog
 kawa		ports/lang/kawa
 kb2mb2		ports/x11/kb2mb2
 kbarcode	ports/graphics/kbarcode
@@ -3433,6 +3434,7 @@ ko-texinfo	ports/korean/texinfo
 ko-uniksc	ports/korean/uniksc
 kobodeluxe	ports/games/kobodeluxe
 koffice-kde3	ports/editors/koffice-kde3	
+konversation	ports/irc/konversation
 konverse	ports/net/konverse
 konwert		ports/converters/konwert
 kopete		ports/net/kopete
@@ -5803,6 +5805,7 @@ pharmacy	ports/devel/pharmacy
 phex		ports/net/phex
 phluid		ports/x11-wm/phluid
 phoenix		ports/www/phoenix
+phoon		ports/astro/phoon
 photopc		ports/graphics/photopc
 php-dbg		ports/devel/php-dbg
 php-dyn		ports/www/php-dyn
