@@ -2,22 +2,25 @@
 #
 # $FreeBSD$
 #
-# OpenSLP daemon.
+# PROVIDE: slpd
+# REQUIRE: DAEMON
+# KEYWORD: FreeBSD
 #
-if ! test -x %%PREFIX%%/sbin/slpd
-then
-#	exit 0
-fi
-case $1 in
-start)
-	echo -n ' slpd'
-	%%PREFIX%%/sbin/slpd
-	;;
-stop)
-	killall slpd
-	;;
-*)
-	echo "Usage: $0: [ start | stop ]" 2>&1
-	exit 65
-	;;
-esac
+# Add the following line to /etc/rc.conf to enable slpd:
+#
+# slpd_enable="YES"
+#
+
+slpd_enable="NO"
+slpd_flags="-p /var/run/slpd.pid"
+
+. %%RC_SUBR%%
+
+name=slpd
+rcvar=`set_rcvar`
+
+command=%%PREFIX%%/sbin/slpd
+pidfile="/var/run/${name}.pid"
+
+load_rc_config ${name}
+run_rc_command "$1"
