@@ -98,6 +98,8 @@ esac
 
 # Main ()
 
+unset JAVA_HOME
+
 # First check if JAVAVM environment variable is set
 if [ x"${JAVAVM}" != x"" ]; then
     tryrunVM "${JAVAVM}" "${ARGS}"
