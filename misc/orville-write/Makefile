@@ -10,7 +10,7 @@ PORTVERSION=	2.53
 CATEGORIES=	misc
 MASTER_SITES=	http://www.wwnet.net/~janc/software/
 
-MAINTAINER=	howardjp@wam.umd.edu
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Advanced replacement for write/mesg
 
 MAN1=	amin.1 helpers.1 huh.1 mesg.1 write.1

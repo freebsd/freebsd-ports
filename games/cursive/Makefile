@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://puck.nether.net/pub/janc/
 DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=   .tgz
 
-MAINTAINER=	howardjp@wam.umd.edu
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Create ASCII character cursive handwriting
 
 MAN6=		cursive.6
