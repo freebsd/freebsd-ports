@@ -1,0 +1,9 @@
+sbin/chkrootkit
+sbin/chklastlog
+sbin/chkwtmp
+sbin/ifpromisc
+share/doc/chkrootkit/COPYRIGHT
+share/doc/chkrootkit/README
+share/doc/chkrootkit/README.chklastlog
+share/doc/chkrootkit/README.chkwtmp
+@dirrm share/doc/chkrootkit

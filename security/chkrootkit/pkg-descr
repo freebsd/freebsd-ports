@@ -1,0 +1,18 @@
+Chkrootkit is a tool to locally check for signs of a rootkit.  It
+contains:
+ 
+ * chkrootkit: a shell script that checks system binaries for
+   rootkit modification.
+ * ifpromisc.c: checks if the network interface is in promiscuous
+   mode.
+ * chklastlog.c: checks for lastlog deletions.
+ * chkwtmp.c: checks for wtmp deletions.
+ 
+The following rootkits and worms are currently detected: Solaris
+rootkit, FreeBSD rootkit, lrk3, lrk4, lrk5, lrk6, t0rn, some lrk
+variants, Ambient's Rootkit for Linux (ARK), Ramen Worm,
+rh[67]-shaper, RSHA and Romanian rootkit.
+ 
+Nelson Murilo <nelson@pangeia.com.br>
+
+WWW: http://www.chkrootkit.org.br

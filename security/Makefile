@@ -15,6 +15,7 @@
     SUBDIR += calife
     SUBDIR += cfs
     SUBDIR += checkpassword
+    SUBDIR += chkrootkit
     SUBDIR += chrootuid
     SUBDIR += cksfv
     SUBDIR += cops
