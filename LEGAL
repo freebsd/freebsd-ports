@@ -109,8 +109,6 @@ fasta2*			ports/biology/fasta	May not be sold or incorporated
 						into a commercial product
 fasta3*			ports/biology/fasta3	May not be sold or incorporated
 						into a commercial product
-fbm*			ports/math/fbm		Research or educational purpose
-						only
 fmsx-*			ports/emulators/fmsx	Unclear legal status of
 						distributed ROMs.
 freefonts		ports/x11-fonts/freefonts	Some of the fonts are
