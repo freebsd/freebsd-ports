@@ -1,0 +1,10 @@
+memchan is an  extension library to the script language  tcl, as created
+by  John Ousterhout.  It provides  two new  channel types  for in-memory
+channels and the appropriate commands for their creation.
+
+They are useful to transfer large  amounts of data between procedures or
+interpreters, and  additionally provide an easy  interface to on-the-fly
+generation of code too. No need to set  or append to a string, just do a
+simple puts.
+
+WWW:	http://www.oche.de/~akupries/soft/memchan/

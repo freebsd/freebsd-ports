@@ -1,0 +1,17 @@
+lib/tcl%%TCLV%%/memchan/libmemchan%%TCLVND%%.so.1
+lib/tcl%%TCLV%%/memchan/pkgIndex.tcl
+@dirrm lib/tcl%%TCLV%%/memchan
+share/doc/memchan/img/up.gif
+share/doc/memchan/memchan_ack.html
+share/doc/memchan/memchan_bdist.html
+share/doc/memchan/memchan_cmac.html
+share/doc/memchan/memchan_cmds.html
+share/doc/memchan/memchan_compile.html
+share/doc/memchan/memchan_ctea.html
+share/doc/memchan/memchan_cunix.html
+share/doc/memchan/memchan_cwin.html
+share/doc/memchan/index.html
+share/doc/memchan/memchan_where.html
+share/doc/memchan/sitemap.html
+@dirrm share/doc/memchan/img/
+@dirrm share/doc/memchan/
