@@ -1,6 +1,7 @@
 # $FreeBSD$
 #
     SUBDIR += gnucash
+    SUBDIR += gnucash-docs
     SUBDIR += khacc
     SUBDIR += libofx
     SUBDIR += openhbci
