@@ -21,8 +21,7 @@ EXTRACT_ONLY=	Lapackpp1_1a.tgz
 MAINTAINER=	maho@FreeBSD.org
 COMMENT=	Linear Algebra PACKage in C++, a wrapper for LAPACK
 
-LIB_DEPENDS=	lapack:${PORTSDIR}/math/lapack \
-		atlas:${PORTSDIR}/math/atlas
+LIB_DEPENDS=	atlas:${PORTSDIR}/math/atlas
 
 WRKSRC=		${WRKDIR}/Lapackpp1.1a
 
