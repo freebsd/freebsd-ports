@@ -8,7 +8,8 @@
 PORTNAME=	nail
 PORTVERSION=	10.7
 CATEGORIES=	mail
-MASTER_SITES=	http://nail.berlios.de/archive/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	BSD mail utility with MIME extensions
