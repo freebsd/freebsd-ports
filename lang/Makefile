@@ -168,6 +168,7 @@
     SUBDIR += ruby-ri
     SUBDIR += ruby-tcltklib
     SUBDIR += ruby-usersguide
+    SUBDIR += ruby16-shim-ruby18
     SUBDIR += ruby_r
     SUBDIR += ruby_r-devel
     SUBDIR += ruby_static

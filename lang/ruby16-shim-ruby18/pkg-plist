@@ -1,0 +1,50 @@
+@comment features/ruby18
+%%RUBY_SITEARCHLIBDIR%%/features/ruby18/file.so
+%%RUBY_SITEARCHLIBDIR%%/features/ruby18/io.so
+@dirrm %%RUBY_SITEARCHLIBDIR%%/features/ruby18
+@dirrm %%RUBY_SITEARCHLIBDIR%%/features
+%%RUBY_SITELIBDIR%%/features/ruby18.rb
+%%RUBY_SITELIBDIR%%/features/ruby18/array.rb
+%%RUBY_SITELIBDIR%%/features/ruby18/base.rb
+%%RUBY_SITELIBDIR%%/features/ruby18/dir.rb
+%%RUBY_SITELIBDIR%%/features/ruby18/enumerable.rb
+%%RUBY_SITELIBDIR%%/features/ruby18/file.rb
+%%RUBY_SITELIBDIR%%/features/ruby18/hash.rb
+%%RUBY_SITELIBDIR%%/features/ruby18/io.rb
+%%RUBY_SITELIBDIR%%/features/ruby18/kernel.rb
+%%RUBY_SITELIBDIR%%/features/ruby18/marshal.rb
+%%RUBY_SITELIBDIR%%/features/ruby18/module.rb
+%%RUBY_SITELIBDIR%%/features/ruby18/numeric.rb
+%%RUBY_SITELIBDIR%%/features/ruby18/proc.rb
+%%RUBY_SITELIBDIR%%/features/ruby18/process.rb
+%%RUBY_SITELIBDIR%%/features/ruby18/range.rb
+%%RUBY_SITELIBDIR%%/features/ruby18/regexp.rb
+%%RUBY_SITELIBDIR%%/features/ruby18/string.rb
+%%RUBY_SITELIBDIR%%/features/ruby18/struct.rb
+%%RUBY_SITELIBDIR%%/features/ruby18/symbol.rb
+%%RUBY_SITELIBDIR%%/features/ruby18/thread.rb
+%%RUBY_SITELIBDIR%%/features/ruby18/time.rb
+@dirrm %%RUBY_SITELIBDIR%%/features/ruby18
+@dirrm %%RUBY_SITELIBDIR%%/features
+@comment dl
+%%RUBY_SITEARCHLIBDIR%%/dl.so
+%%RUBY_SITELIBDIR%%/dl/import.rb
+%%RUBY_SITELIBDIR%%/dl/struct.rb
+%%RUBY_SITELIBDIR%%/dl/types.rb
+%%RUBY_SITELIBDIR%%/dl/win32.rb
+@dirrm %%RUBY_SITELIBDIR%%/dl
+@comment racc-runtime
+%%RUBY_SITEARCHLIBDIR%%/racc/cparse.so
+@dirrm %%RUBY_SITEARCHLIBDIR%%/racc
+%%RUBY_SITELIBDIR%%/racc/parser.rb
+@dirrm %%RUBY_SITELIBDIR%%/racc
+@comment stringio
+%%RUBY_SITEARCHLIBDIR%%/stringio.so
+@comment strscan
+%%RUBY_SITEARCHLIBDIR%%/strscan.so
+@comment others
+%%RUBY_SITELIBDIR%%/benchmark.rb
+%%RUBY_SITELIBDIR%%/fileutils.rb
+%%RUBY_SITELIBDIR%%/pp.rb
+%%RUBY_SITELIBDIR%%/prettyprint.rb
+%%RUBY_SITELIBDIR%%/tsort.rb
