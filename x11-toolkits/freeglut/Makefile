@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		freeglut
-PORTVERSION=		2.0.0
+PORTVERSION=		2.0.1
 CATEGORIES=		x11-toolkits
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -33,14 +33,14 @@ REINPLACE_ARGS=	-i ""
 DOCS=	download.html freeglut.html freeglut_logo.png		\
 	freeglut_user_interface.html index.html ogl_sm.png	\
 	progress.html structure.html
-BINS=	fractals fractals_random lorenz one
+BINS=	Fractals Fractals_random Lorenz One
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|/usr/X11R6|${X11BASE}|g"	\
 			-e "s|/usr/local|${LOCALBASE}|g"	\
 		${WRKSRC}/aclocal.m4
 .for fract in /fractals.c _random/fractals_random.c
-	${REINPLACE_CMD} -e "s|/usr/local|${PREFIX}|g"	\
+	@${REINPLACE_CMD} -e "s|/usr/local|${PREFIX}|g"	\
 		${WRKSRC}/progs/demos/Fractals${fract}
 .endfor
 
@@ -55,13 +55,10 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/progs/demos/Fractals/fractals.dat	\
 		${EXAMPLESDIR}
 .for FILE in ${BINS}
-	@${MV} ${PREFIX}/bin/${FILE} ${EXAMPLESDIR}
+	@${INSTALL_PROGRAM} ${WRKSRC}/progs/demos/${FILE}/.libs/${FILE:L} \
+		${EXAMPLESDIR}
 .endfor
 	@${ECHO_MSG} "===> Examples installed in ${EXAMPLESDIR}."
-.else
-.for FILE in ${BINS}
-	@${RM} ${PREFIX}/bin/${FILE}
-.endfor
 .endif
 	@${ECHO_MSG}
 	@${CAT} ${PKGMESSAGE} |	\
