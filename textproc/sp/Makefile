@@ -15,12 +15,6 @@ MAINTAINER=	chuckr@FreeBSD.org
 USE_SUBMAKE=	yes
 INSTALLS_SHLIB=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500035
-BROKEN=		"Does not compile on 5.0"
-.endif
-
 post-install:
 	$(MKDIR) $(PREFIX)/include/sp
 	$(MKDIR) $(PREFIX)/share/doc/sp
@@ -28,4 +22,4 @@ post-install:
 	for file in $(WRKSRC)/include/*;do $(INSTALL_DATA) $$file $(PREFIX)/include/sp;done
 	for file in $(WRKSRC)/doc/*;do $(INSTALL_DATA) $$file $(PREFIX)/share/doc/sp;done
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

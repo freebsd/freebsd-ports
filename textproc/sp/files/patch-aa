@@ -1,17 +1,12 @@
-*** include/config.h.orig	Wed Jun 12 11:56:06 1996
---- include/config.h	Tue Oct 15 17:08:09 1996
-***************
-*** 7,12 ****
---- 7,18 ----
-  #define SP_INCLUDE_UNISTD_H
-  #define SP_POSIX_FILENAMES
-  
-+ #if (defined(__FreeBSD__) || defined(__NetBSD__) || defined(__OpenBSD__))
-+ #define SP_HAVE_LOCALE
-+ #define SP_HAVE_SOCKET
-+ #define SP_MULTI_BYTE
-+ #endif
-+ 
-  #ifdef __GNUG__
-  // It's not missing, but it pulls in libg++
-  #define SP_NEW_H_MISSING
+--- include/config.h.orig	Wed Oct 13 07:02:46 1999
++++ include/config.h	Wed Feb  5 23:27:11 2003
+@@ -29,6 +29,9 @@
+ #define SP_NO_STD_NAMESPACE
+ #undef SP_NEW_H_MISSING
+ #endif
++#if __GNUC__ > 2
++#undef SP_NO_STD_NAMESPACE
++#endif
+ 
+ #endif /* __GNUG__ */
+ 
