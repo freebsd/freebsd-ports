@@ -7,8 +7,9 @@
 
 PORTNAME=	Mail-SpamAssassin
 PORTVERSION=    2.11
+PORTREVISION=	1
 CATEGORIES=	mail perl5
-MASTER_SITES=   http://www.spamassassin.org/released/ \
+MASTER_SITES=   http://spamassassin.org/released/ \
 		${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Mail
 PKGNAMEPREFIX=	p5-
