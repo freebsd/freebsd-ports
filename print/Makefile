@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.75 1998/12/13 03:13:17 kuriyama Exp $
+# $Id: Makefile,v 1.76 1998/12/24 12:13:55 jseger Exp $
 #
 
     SUBDIR += a2ps-a4
@@ -52,6 +52,7 @@
     SUBDIR += p5-FreeType
     SUBDIR += p5-FreeTypeWrapper
     SUBDIR += pbm2ppa
+    SUBDIR += perlftlib
     SUBDIR += pkfonts118
     SUBDIR += pkfonts240
     SUBDIR += pkfonts300
