@@ -1,15 +1,48 @@
+@comment dig /var/spool/nntpcache
+@exec mkdir -p /var/spool/nntpcache
+bin/confused
+bin/mmap_tests
+etc/nntpcache/VERSION
+@exec cp %D/%F /var/spool/nntpcache
+@exec chown -R news.news /var/spool/nntpcache
+@exec chmod 700 /var/spool/nntpcache
+@exec chmod 600 /var/spool/nntpcache/VERSION
+etc/nntpcache/automoose1.asc-dist
+etc/nntpcache/cancelmoose.asc-dist
+etc/nntpcache/clewis.asc-dist
+etc/nntpcache/cosmo.roadkill.asc-dist
+etc/nntpcache/dsr.asc-dist
+etc/nntpcache/jem.asc-dist
+etc/nntpcache/jeremy.asc-dist
+etc/nntpcache/msfc-anti-mmf-2.asc-dist
+etc/nntpcache/newshound.conf-dist
 etc/nntpcache/nntpcache.access-dist
 etc/nntpcache/nntpcache.config-dist
 etc/nntpcache/nntpcache.servers-dist
+etc/nntpcache/pubring.pgp-dist
+etc/nntpcache/rbraver.asc-dist
+etc/nntpcache/red.asc-dist
+etc/nntpcache/roberto.asc-dist
+etc/nntpcache/snowhare.asc-dist
 etc/nntpcache/spam.filter
-etc/nntpcache/pubring.pgp
-etc/nntpcache/VERSION
-etc/nntpcache/newshound.conf
-@unexec rm -rf etc/nntpcache
-etc/rc.d/nntpcached.sh
-bin/confused
-sbin/nntpcached
-sbin/newshound
-man/man8/nntpcached.8.gz
+etc/nntpcache/spamhippo.asc-dist
+etc/rc.d/nntpcached.sh.sample
+include/mmap_results.h
 man/man8/newshound.8.gz
+man/man8/nntpcached.8.gz
+sbin/newshound
+sbin/nntpcached
+share/doc/nntpcache/AUTHORS
+share/doc/nntpcache/ChangeLog
+share/doc/nntpcache/FAQ
+share/doc/nntpcache/FAQ.html
+share/doc/nntpcache/HACKING
+share/doc/nntpcache/INSTALL
+share/doc/nntpcache/LICENSING
+share/doc/nntpcache/NEWS
+share/doc/nntpcache/README
+share/doc/nntpcache/README.INN
+share/doc/nntpcache/VERSION
+@dirrm etc/nntpcache
+@dirrm share/doc/nntpcache
 @unexec rm -rf /var/spool/nntpcache
