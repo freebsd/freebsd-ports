@@ -184,6 +184,7 @@
     SUBDIR += wmmount
     SUBDIR += wmpccard
     SUBDIR += wmtop
+    SUBDIR += wmzazof
     SUBDIR += xbatt
     SUBDIR += xbattbar
     SUBDIR += xcdroast

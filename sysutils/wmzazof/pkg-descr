@@ -1,0 +1,8 @@
+wmzazof is a very simple WindowMaker dockapp that displays the uptime
+(hours, minutes or days), free mem (kB) and used mem (kB). Two modes
+exist for mem used and mem free: with or without cache. At startup
+the dockapp is in uptime mode hours, mem free with cache and mem used
+without cache. 
+
+WWW: http://www.zazof.org/wmzazof/
+Author: Jef De Geeter <jef@zazof.org>
