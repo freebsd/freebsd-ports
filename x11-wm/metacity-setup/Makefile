@@ -6,29 +6,25 @@
 #
 
 PORTNAME=	metacity-setup
-PORTVERSION=	0.2
+PORTVERSION=	0.3.1
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://plastercast.tzo.com/~plastercast/Projects/ \
 		http://www.marcuscom.com/downloads/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	marcus
-DISTNAME=	Metacity-setup-${PORTVERSION}
 
 MAINTAINER=	marcus@FreeBSD.org
 
 LIB_DEPENDS=	gnomeui-2.0:${PORTSDIR}/x11-toolkits/libgnomeui
 
-WRKSRC=	${WRKDIR}/Metacity-setup
-
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_AUTOMAKE=	yes
-AUTOMAKE_ARGS=	--add-missing
 USE_LIBTOOL=	yes
 CONFIGURE_ARGS= --localstatedir=${PREFIX}/share/gnome \
 		--datadir=${PREFIX}/share/gnome
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
+CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 
 pre-patch:
 	@${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
@@ -37,8 +33,8 @@ pre-patch:
 		's|\$\(datadir\)/gnome/|\$\(datadir\)/|g ; \
 		 s|\$\(datadir\)/locale|\$\(prefix\)/share/locale|g'
 
-pre-configure:
-	${RM} -f ${WRKSRC}/install-sh ${WRKSRC}/COPYING ${WRKSRC}/INSTALL \
-		${WRKSRC}/mkinstalldirs ${WRKSRC}/missing
+post-patch:
+	@${PERL} -pi -e 's|\%\%X11BASE\%\%|${X11BASE}|g' \
+		${WRKSRC}/src/callbacks.c
 
 .include <bsd.port.mk>
