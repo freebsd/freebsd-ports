@@ -89,6 +89,7 @@
     SUBDIR += jmf
     SUBDIR += jmp
     SUBDIR += jode
+    SUBDIR += jomp
     SUBDIR += jre
     SUBDIR += jsdk
     SUBDIR += jump
