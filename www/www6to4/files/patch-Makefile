@@ -1,0 +1,13 @@
+*** Makefile.orig	Fri Mar 22 00:24:37 2002
+--- Makefile	Fri Mar 22 00:25:17 2002
+***************
+*** 6,11 ****
+--- 6,13 ----
+  
+  OBJS = www6to4.o parsers.c loaders.o socket.o
+  
++ all: $(PROG)
++ 
+  $(PROG): $(OBJS)
+  	$(CC) $(CFLAGS) -o $(PROG) $(OBJS) $(LDFLAGS)
+  

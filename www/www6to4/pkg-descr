@@ -1,0 +1,10 @@
+This is a little WWW-proxy that can communicate over both IPv4 and IPv6. It's
+primary use is as stub-proxy between a IPv4-only browser and the rest of the
+(v4 and v6) Internet. This proxy is meant to run on a client machine as
+frontend to an IPv4-only browser and not to serve a large number of clients.
+If you need the latter you're much better off with a full-fledged proxy like
+squid.
+
+This program is based on same code copyrighted by the Junkbusters Corp.
+
+WWW: http://www.vermicelli.pasta.cs.uit.no/ipv6/software.html

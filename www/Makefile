@@ -416,6 +416,7 @@
     SUBDIR += wmnetselect
     SUBDIR += wn
     SUBDIR += wsmake
+    SUBDIR += www6to4
     SUBDIR += wwwcount
     SUBDIR += wwwoffle
     SUBDIR += wwwstat
