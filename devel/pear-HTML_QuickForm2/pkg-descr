@@ -1,0 +1,15 @@
+The HTML_QuickForm package provides methods for dynamically create, validate
+and render HTML forms.
+
+Features:
+* More than 20 ready-to-use form elements.
+* XHTML compliant generated code.
+* Numerous mixable and extendable validation rules.
+* Automatic server-side validation and filtering.
+* On request javascript code generation for client-side validation.
+* File uploads support.
+* Total customization of form rendering.
+* Support for external template engines (ITX, Sigma, Flexy, Smarty).
+* Pluggable elements, rules and renderers extensions.
+
+WWW: http://pear.php.net/package/HTML_QuickForm
