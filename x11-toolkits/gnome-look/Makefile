@@ -1,0 +1,25 @@
+# New ports collection makefile for:	gnome-look
+# Date Created:				10 June 2000
+# Whom:				 	Maxim Sobolev <sobomax@FreeBSD.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	gnome-look
+PORTVERSION=	0.1.3
+CATEGORIES=	x11-toolkits
+MASTER_SITES=	http://download.sourceforge.net/gnome-look/
+
+MAINTAINER=	sobomax@FreeBSD.org
+
+LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
+
+USE_X_PREFIX=	yes
+USE_LIBTOOL=	yes
+USE_GMAKE=	yes
+
+GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
+
+CONFIGURE_ENV=	GTK_CONFIG="${GTK_CONFIG}"
+
+.include <bsd.port.mk>
