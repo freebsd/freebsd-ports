@@ -1,4 +1,7 @@
 %%SITE_PERL%%/mach/auto/Test/Class/.packlist
 %%SITE_PERL%%/Test/Class.pm
+%%SITE_PERL%%/Test/Class.pod
+%%SITE_PERL%%/Test/Class/MethodInfo.pm
+@dirrm %%SITE_PERL%%/Test/Class
 @dirrm %%SITE_PERL%%/mach/auto/Test/Class
 @unexec rmdir %D/%%SITE_PERL%%/Test 2>/dev/null || true
