@@ -19,8 +19,11 @@ USE_GNOME=	gtk12
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \ #-I${LOCALBASE}/include/libEMF"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+#future support for EMF
+#CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/libEMF" \
+#		LDFLAGS="-L${LOCALBASE}/lib"
 #CONFIGURE_ARGS= --enable-emf=yes
 
 MAN1=	chemtool.1 cht.1
