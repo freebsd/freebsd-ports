@@ -3,13 +3,13 @@
 # Date created:         7 Mar 1996
 # Whom:                 se
 #
-# $Id: Makefile,v 1.1 1996/03/08 11:45:10 se Exp $
+# $Id: Makefile,v 1.2 1996/03/09 23:50:05 asami Exp $
 #
 
 DISTNAME=       DHCPD-BETA-0
 PKGNAME=	isc-dhcp-b0
 CATEGORIES+=	net
-MASTER_SITES=   ftp://www.isc.org/pub/dhcp/
+MASTER_SITES=   ftp://ftp.vix.com/pub/dhcp/
 
 MAINTAINER=	se@FreeBSD.ORG
 
