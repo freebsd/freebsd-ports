@@ -1,0 +1,35 @@
+lib/perl5/man/man3/Mail::Address.3.gz
+lib/perl5/man/man3/Mail::Cap.3.gz
+lib/perl5/man/man3/Mail::Field.3.gz
+lib/perl5/man/man3/Mail::Header.3.gz
+lib/perl5/man/man3/Mail::Internet.3.gz
+lib/perl5/man/man3/Mail::MIME.3.gz
+lib/perl5/man/man3/Mail::Mailer.3.gz
+lib/perl5/man/man3/Mail::Send.3.gz
+lib/perl5/man/man3/Mail::Util.3.gz
+lib/perl5/site_perl/Mail/Address.pm
+lib/perl5/site_perl/Mail/Alias.pm
+lib/perl5/site_perl/Mail/Cap.pm
+lib/perl5/site_perl/Mail/Field.pm
+lib/perl5/site_perl/Mail/Field/Date.pm
+lib/perl5/site_perl/Mail/Header.pm
+lib/perl5/site_perl/Mail/Header.pm.html
+lib/perl5/site_perl/Mail/Internet.pm
+lib/perl5/site_perl/Mail/MIME.pm
+lib/perl5/site_perl/Mail/Mailer.pm
+lib/perl5/site_perl/Mail/Send.pm
+lib/perl5/site_perl/Mail/Util.pm
+lib/perl5/site_perl/auto/Mail/Internet/add_signature.al
+lib/perl5/site_perl/auto/Mail/Internet/autosplit.ix
+lib/perl5/site_perl/auto/Mail/Internet/nntppost.al
+lib/perl5/site_perl/auto/Mail/Internet/reply.al
+lib/perl5/site_perl/auto/Mail/Internet/sign.al
+lib/perl5/site_perl/auto/Mail/Internet/smtpsend.al
+lib/perl5/site_perl/auto/Mail/Util/autosplit.ix
+lib/perl5/site_perl/auto/Mail/Util/mailaddress.al
+lib/perl5/site_perl/auto/Mail/Util/maildomain.al
+lib/perl5/site_perl/auto/Mail/Util/read_mbox.al
+lib/perl5/site_perl/i386-freebsd/auto/Mail/.packlist
+@dirrm lib/perl5/site_perl/auto/Mail/Util
+@dirrm lib/perl5/site_perl/auto/Mail/Internet
+@dirrm lib/perl5/site_perl/i386-freebsd/auto/Mail
