@@ -6906,6 +6906,7 @@ ruby-erb	ports/textproc/ruby-erb
 ruby-esound	ports/audio/ruby-esound
 ruby-evas	ports/graphics/ruby-evas
 ruby-fam	ports/devel/ruby-fam
+ruby-fcgi	ports/www/ruby-fcgi
 ruby-filelock	ports/devel/ruby-filelock
 ruby-flex_rb	ports/devel/ruby-flex_rb
 ruby-fltk	ports/x11-toolkits/ruby-fltk
