@@ -65,37 +65,6 @@ DISTFILES=	browser.xpi \
 DISTFILES!=	${CAT} ${WRKDIRPREFIX}${.CURDIR}/work/xpi/components.conf
 .endif
 
-checksum:
-.if !defined(REAL_EXTRACT)
-	@cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} fetch
-.endif
-	@if [ ! -f ${MD5_FILE} ]; then \
-		${ECHO_MSG} ">> No MD5 checksum file."; \
-	else \
-		(cd ${DISTDIR}; OK="true"; \
-		  for file in ${_CKSUMFILES}; do \
-			if [ -r $$file ]; then \
-				CKSUM=`${MD5} < $$file`; \
-				CKSUM2=`${GREP} "^MD5 ($$file)" ${MD5_FILE} | ${AWK} '{print $$4}'`; \
-				if [ "$$CKSUM2" = "" ]; then \
-					${ECHO_MSG} ">> No checksum recorded for $$file."; \
-					OK="false"; \
-				elif ${EXPR} "$$CKSUM2" : ".*$$CKSUM" > /dev/null; then \
-					${ECHO_MSG} ">> Checksum OK for $$file."; \
-			else \
-					${ECHO_MSG} ">> Checksum mismatch for $$file."; \
-					OK="false"; \
-				fi; \
-			fi; \
-		  done; \
-		  if [ "$$OK" != "true" ]; then \
-			${ECHO_MSG} "Make sure the Makefile and distinfo file (${MD5_FILE})"; \
-			${ECHO_MSG} "are up to date.  If you are absolutely sure you want to override this"; \
-			${ECHO_MSG} "check, type \"make NO_CHECKSUM=yes [other args]\"."; \
-			exit 1; \
-		  fi) ; \
-	fi
-
 do-extract:
 	${MKDIR} ${WRKSRC}
 .for i in ${DISTFILES}
