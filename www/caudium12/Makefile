@@ -7,14 +7,11 @@
 
 PORTNAME=	caudium12
 PORTVERSION=	1.2.32
-PORTREVISION=	0
 CATEGORIES=	www
-MASTER_SITES=	ftp://ftp.oav.net/caudium/source/	\
-		ftp://ftp.caudium.net/caudium/source/ \
-		ftp://ftp.oav.net/pkg_freebsd/distfiles/ \
-		http://grendel.firewall.com/caudium-pkg/ \
+MASTER_SITES=	ftp://ftp.caudium.net/caudium/source/ \
+		ftp://ftp.us.caudium.net/pub/caudium/source/ \
 		ftp://ftp.oav.net/caudium/source/old/ \
-		ftp://ftp.caudium.net/caudium/snapshot/1.2/
+		ftp://ftp.us.caudium.net/pub/caudium/source/
 DISTNAME=	caudium-${PORTVERSION}
 
 MAINTAINER=	kiwi@oav.net
@@ -33,7 +30,7 @@ PIKEVERSION=	7.2.570
 #SH=		${PREFIX}/bin/bash
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--without-debug --with-PiXSL --prefix=${PREFIX} \
-		 --with-pike=${LOCALBASE}/bin/pike
+		 --with-pike=${LOCALBASE}/pike/${PIKEVERSION}/bin/pike
 
 USE_GMAKE=	yes
 
