@@ -7699,6 +7699,7 @@ php4-filepro	ports/databases/php4-filepro
 php4-ftp	ports/ftp/php4-ftp
 php4-gd		ports/graphics/php4-gd
 php4-gettext	ports/devel/php4-gettext
+php4-gmp	ports/math/php4-gmp
 php4-horde	ports/lang/php4-horde
 php4-iconv	ports/converters/php4-iconv
 php4-imap	ports/mail/php4-imap
