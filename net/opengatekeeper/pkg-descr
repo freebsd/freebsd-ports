@@ -1,7 +1,7 @@
 OpenGatekeeper is a H323 GateKeeper based on the OpenH323 project.
 It is released with the MPL (Mozilla Public Licence)
 
-A H323 Gateway manages multiple H323 clients on a network
+A H323 Gatekeeper manages multiple H323 clients on a network
 and provides a nice user name to IP mapping.
 
 As it follows the H323 standard, it is compatible with H323
