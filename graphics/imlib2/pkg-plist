@@ -1,8 +1,8 @@
 include/X11/imlib.h
+etc/imlib/im_palette.pal
+etc/imlib/imrc
 lib/libIm.a
-lib/libIm.so.3.7
+lib/libIm.so.4.0
 @exec ldconfig -m %B
-lib/X11/enlightenment/im_palette.pal
-lib/X11/enlightenment/imrc
-man/man3/imlib.3x.gz
-@dirrm lib/X11/enlightenment
+man/man3/imlib.3.gz
+@dirrm etc/imlib

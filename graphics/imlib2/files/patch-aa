@@ -1,50 +1,151 @@
---- Imakefile.orig	Thu Nov 13 08:41:48 1997
-+++ Imakefile	Thu Nov 13 13:37:47 1997
-@@ -3,28 +3,30 @@
- /*#define UseEtcX11	 /* */
- 
- /* change this if the INSTALL script didn't get it right */
--CONVERT_DIR=/usr/local/bin
--NETPBM_DIR=/usr/local/bin
-+CONVERT_DIR=/usr/X11R6/bin
-+NETPBM_DIR=/usr/X11R6/bin
-+JPEG_DIR=/usr/local/bin
- 
- /* change these if you don't like them */
--INCDIR=/usr/X11/include/X11/
--LIBDIR=/usr/X11/lib/
--MANDIR=/usr/X11/man/man3/
-+INCDIR=/usr/X11R6/include/X11/
-+LIBDIR=/usr/X11R6/lib/
-+MANDIR=/usr/X11R6/man/man3/
- 
- LIBNAME=Im
--LIBREV=0.7
-+LIBREV=3.7
- 
- #ifdef UseEtcX11
- ETCDIR=/etc/X11/$(LIBNAME)
- #else
--ETCDIR=/etc
-+ETCDIR=/usr/X11R6/lib/X11/enlightenment
- #endif /* def UseEtcX11 */
- 
- CNFDIR = $(ETCDIR)
- 
- DEFINES = -DSYSTEM_IMRC=\"$(ETCDIR)/imrc\" \
-           -DCONVERT_PATH=\"$(CONVERT_DIR)\" \
--	  -DNETPBM_PATH=\"$(NETPBM_DIR)\"
-+	  -DNETPBM_PATH=\"$(NETPBM_DIR)\" \
-+	  -DJPEG_PATH=\"$(JPEG_DIR)\"
- 
- SRCS = load.c rend.c misc.c colors.c cache.c
- OBJS = load.o rend.o misc.o colors.o cache.o
-@@ -72,7 +74,7 @@
- CNFSRC = ./sys_conf
- CNFS = $(CNFSRC)/imrc 
- PALS = $(CNFSRC)/im_palette.pal
--CNFFLAGS = -m 0644 -o root -g root
-+CNFFLAGS = -m 0644 -o root -g wheel
- InstallMultipleFlags($(CNFS) $(PALS),$(CNFDIR),$(CNFFLAGS))
- 
- DependTarget()
+*** Imlib.tmpl.orig	Tue Nov 25 08:18:26 1997
+--- Imlib.tmpl	Thu Nov 27 04:17:35 1997
+***************
+*** 5,18 ****
+  XCOMM	----------------------------
+  XCOMM	The root directory of where the installation will put include and lib.
+  
+! IMLROOT	= /usr/X11
+  
+  XCOMM	imlib custom configuration file
+  XCOMM	--------------------------------
+  XCOMM	Change the following to where you would like imrc and imlib.pal 
+  XCOMM	to be loaded
+  
+! CNFDIR = /etc
+  
+  XCOMM	Location of the NetPBM Utilities
+  XCOMM	--------------------------------
+--- 5,18 ----
+  XCOMM	----------------------------
+  XCOMM	The root directory of where the installation will put include and lib.
+  
+! IMLROOT	= ${X11BASE}
+  
+  XCOMM	imlib custom configuration file
+  XCOMM	--------------------------------
+  XCOMM	Change the following to where you would like imrc and imlib.pal 
+  XCOMM	to be loaded
+  
+! CNFDIR = ${X11BASE}/etc/imlib
+  
+  XCOMM	Location of the NetPBM Utilities
+  XCOMM	--------------------------------
+***************
+*** 25,31 ****
+  #ifdef	SunArchitecture
+  NETPBM_DIR = /usr/openwin/bin
+  #else
+! NETPBM_DIR = /usr/local/bin
+  #endif
+  
+  XCOMM	Location of the IJG JPEG Utilities
+--- 25,31 ----
+  #ifdef	SunArchitecture
+  NETPBM_DIR = /usr/openwin/bin
+  #else
+! NETPBM_DIR = ${X11BASE}/bin
+  #endif
+  
+  XCOMM	Location of the IJG JPEG Utilities
+***************
+*** 33,39 ****
+  XCOMM	imlib needs convert and djpeg from the IJG.  This is the location
+  XCOMM	of those files.
+  
+! CONVERT_DIR = /usr/local/bin
+  JPEG_DIR = /usr/local/bin
+  
+  XCOMM	JPEG Library Support
+--- 33,39 ----
+  XCOMM	imlib needs convert and djpeg from the IJG.  This is the location
+  XCOMM	of those files.
+  
+! CONVERT_DIR = ${X11BASE}/bin
+  JPEG_DIR = /usr/local/bin
+  
+  XCOMM	JPEG Library Support
+***************
+*** 41,47 ****
+  XCOMM	imlib can use the IJG JPEG library (libjpeg) directly.  If you
+  XCOMM	wish to compile this in, set this to YES.
+  
+! #define DoJPEG  NO
+  
+  XCOMM   PNG Library Support
+  XCOMM   --------------------
+--- 41,47 ----
+  XCOMM	imlib can use the IJG JPEG library (libjpeg) directly.  If you
+  XCOMM	wish to compile this in, set this to YES.
+  
+! #define DoJPEG  YES
+  
+  XCOMM   PNG Library Support
+  XCOMM   --------------------
+***************
+*** 49,62 ****
+  XCOMM	If you wish to compile this in, set this to YES.
+  XCOMM	[NOTE:  This library requires libz be availabel too.]
+  
+! #define DoPNG  NO
+  
+  XCOMM   TIFF Library Support
+  XCOMM   --------------------
+  XCOMM   imlib can use the TIFF library (libtiff) directly.  If you
+  XCOMM   wish to compile this in, set this to YES.
+  
+! #define DoTIFF  NO
+  
+  XCOMM	Shared Library Support
+  XCOMM	----------------------
+--- 49,62 ----
+  XCOMM	If you wish to compile this in, set this to YES.
+  XCOMM	[NOTE:  This library requires libz be availabel too.]
+  
+! #define DoPNG  YES
+  
+  XCOMM   TIFF Library Support
+  XCOMM   --------------------
+  XCOMM   imlib can use the TIFF library (libtiff) directly.  If you
+  XCOMM   wish to compile this in, set this to YES.
+  
+! #define DoTIFF  YES
+  
+  XCOMM	Shared Library Support
+  XCOMM	----------------------
+***************
+*** 94,100 ****
+  
+  XCOMM   GNU C v2.xxx flags
+  #if HasGcc2
+! USR_FLAGS = -Wall -pedantic
+  
+  XCOMM   Solaris v2.6 or Solaris v2.x
+  #elif defined(HasSunC) || defined(SunArchitecture) && defined(SVR4)    
+--- 94,100 ----
+  
+  XCOMM   GNU C v2.xxx flags
+  #if HasGcc2
+! USR_FLAGS += -Wall -pedantic
+  
+  XCOMM   Solaris v2.6 or Solaris v2.x
+  #elif defined(HasSunC) || defined(SunArchitecture) && defined(SVR4)    
+*** Imakefile.orig	Tue Nov 25 08:38:34 1997
+--- Imakefile	Thu Nov 27 04:14:06 1997
+***************
+*** 21,27 ****
+  XCOMM   Library we are building and the revision
+  
+  IMLLIBNAME=Im
+! IMLLIBREV=0.11
+  
+  XCOMM	These are the directories we are going to also run imake and make in.
+  XCOMM	IHaveSubdirs tells imake to actually look at $(SUBDIRS)
+--- 21,27 ----
+  XCOMM   Library we are building and the revision
+  
+  IMLLIBNAME=Im
+! IMLLIBREV=4.0
+  
+  XCOMM	These are the directories we are going to also run imake and make in.
+  XCOMM	IHaveSubdirs tells imake to actually look at $(SUBDIRS)
