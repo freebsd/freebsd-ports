@@ -1,5 +1,7 @@
-# $Id: Makefile,v 1.10 1994/11/20 22:48:00 ats Exp $
+# $Id: Makefile,v 1.11 1994/11/23 07:24:02 jkh Exp $
 #
-SUBDIR=	Sather expect forth itcl logo p2c scm tcl tclX
+# forth's master site is unavailable to sites outside Germany.
+
+SUBDIR=	Sather expect itcl logo p2c scm tcl tclX
 
 .include <bsd.port.subdir.mk>
