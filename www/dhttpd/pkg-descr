@@ -1,0 +1,7 @@
+dhttpd is a secure and efficient personal HTTP server. It does not need a
+permanent IP address and can be run from a user account on high ports. Among
+its features, dhttpd supports caching, customized error messages, low profile
+memory usage, little hard disk space, highly portable code, and easy setup.
+dhttpd is the perfect solution for the minimalist in all of us.
+
+WWW: http://uts.cc.utexas.edu/~foxx/dhttpd/
