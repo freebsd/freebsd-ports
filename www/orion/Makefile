@@ -7,7 +7,7 @@
 
 PORTNAME=	orion
 PORTVERSION=	1.5.2
-PORTREVISION=	14
+PORTREVISION=	15
 CATEGORIES=	www java
 MASTER_SITES=	http://www.orionserver.com/distributions/ \
 		http://www.atlassian.com/software/orion/downloads/ \
@@ -44,7 +44,10 @@ AUTO_START?=	NO
 PID_FILE=	/var/run/${APP_SHORTNAME}.pid
 REPLACE_FILES=	${FILESDIR}/daemonctl.c \
 		${FILESDIR}/${CONTROL_SCRIPT_NAME}.1 \
-		${FILESDIR}/${STARTUP_SCRIPT_NAME}
+		${FILESDIR}/${STARTUP_SCRIPT_NAME} \
+		${WRKSRC}/config/default-web-site.xml \
+		${WRKSRC}/config/rmi.xml
+WRKDIR?=	work
 
 .include <bsd.port.pre.mk>
 
@@ -69,25 +72,6 @@ do-install:
 	@${RM} -f `${FIND} ${WRKSRC} -name '*.bat'` `${FIND} ${WRKSRC} -name '*.orig'`
 	@${ECHO_CMD} " [ DONE ]"
 
-	@${ECHO_CMD} -n ">> Creating destination directory..."
-	@${MKDIR} ${APP_HOME}
-	@${MKDIR} ${APP_HOME}/application-deployments
-	@${ECHO_CMD} " [ DONE ]"
-
-	@${ECHO_CMD} -n ">> Copying files to destination directory..."
-	@${CP} -R ${WRKSRC}/* ${APP_HOME}
-	@${ECHO_CMD} " [ DONE ]"
-
-	@${ECHO_CMD} -n ">> Configuring HTTP server port..."
-	@${SED} -e "/port=\"80\"/s//port=\"${HTTP_PORT}\"/" \
-	${WRKSRC}/config/default-web-site.xml > ${APP_HOME}/config/default-web-site.xml
-	@${ECHO_CMD} " [ DONE ]"
-
-	@${ECHO_CMD} -n ">> Configuring RMI server port..."
-	@${SED} -e "/<rmi-server>/s//<rmi-server host=\"\[ALL\]\" port=\"${RMI_PORT}\">/" \
-	${WRKSRC}/config/rmi.xml > ${APP_HOME}/config/rmi.xml
-	@${ECHO_CMD} " [ DONE ]"
-
 .for f in ${REPLACE_FILES}
 	@${ECHO_CMD} -n ">> Customizing `basename $f`..."
 	@${SED} \
@@ -97,6 +81,7 @@ do-install:
 	-e "/%%CONTROL_SCRIPT%%/s//${CONTROL_SCRIPT:S/\//\\\//g}/g" \
 	-e "/%%CONTROL_SCRIPT_NAME%%/s//${CONTROL_SCRIPT_NAME}/g" \
 	-e "/%%GROUP%%/s//${GROUP}/g" \
+	-e "/%%HTTP_PORT%%/s//${HTTP_PORT}/g" \
 	-e "/%%JAVA_CMD%%/s//bin\/java/g" \
 	-e "/%%JAVA_HOME%%/s//${JAVA_HOME:S/\//\\\//g}/g" \
 	-e "/%%JAR_FILE%%/s//${APP_SHORTNAME}.jar/g" \
@@ -108,10 +93,21 @@ do-install:
 	-e "/%%STDOUT_LOG%%/s//${STDOUT_LOG:S/\//\\\//g}/g" \
 	-e "/%%PREFIX%%/s//${PREFIX:S/\//\\\//g}/g" \
 	-e "/%%PID_FILE%%/s//${PID_FILE:S/\//\\\//g}/g" \
+	-e "/%%RMI_PORT%%/s//${RMI_PORT}/g" \
 	-e "/%%USER%%/s//${USER}/g" \
 	$f > ${WRKDIR}/`basename $f`
 	@${ECHO_CMD} " [ DONE ]"
 .endfor
+
+	@${ECHO_CMD} -n ">> Creating destination directory..."
+	@${MKDIR} ${APP_HOME}
+	@${MKDIR} ${APP_HOME}/application-deployments
+	@${ECHO_CMD} " [ DONE ]"
+
+	@${ECHO_CMD} -n ">> Copying files to destination directory..."
+	@${CP} -R ${WRKSRC}/* ${APP_HOME}
+	@${CP} ${WRKDIR}/default-web-site.xml ${WRKDIR}/rmi.xml ${APP_HOME}/config
+	@${ECHO_CMD} " [ DONE ]"
 
 .if defined(WITH_JIKES) && ${WITH_JIKES} == "YES"
 	@${ECHO_CMD} -n ">> Configuring Jikes support..."

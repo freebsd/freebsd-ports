@@ -1,0 +1,11 @@
+--- config/rmi.xml.orig	Sat Mar 30 13:17:25 2002
++++ config/rmi.xml	Sat Mar 30 13:17:59 2002
+@@ -1,7 +1,7 @@
+ <?xml version="1.0"?>
+ <!DOCTYPE rmi-server PUBLIC "Orion RMI-server" "http://www.orionserver.com/dtds/rmi-server.dtd">
+ 
+-<rmi-server>	
++<rmi-server host="[ALL]" port="%%RMI_PORT%%">
+ 	<!-- A remote server connection example -->
+ 	<!-- <server host="the.remote.server.com" username="adminUser" password="123abc" /> -->
+ 
