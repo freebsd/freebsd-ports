@@ -5,54 +5,65 @@ bin/nsc
 bin/pyroc
 bin/rns
 bin/xnsc
-lib/%%PYTHON_VERSION%%/site-packages/Pyro/EventService/Clients.py
-lib/%%PYTHON_VERSION%%/site-packages/Pyro/EventService/Clients.pyc
-lib/%%PYTHON_VERSION%%/site-packages/Pyro/EventService/Clients.pyo
-lib/%%PYTHON_VERSION%%/site-packages/Pyro/EventService/Server.py
-lib/%%PYTHON_VERSION%%/site-packages/Pyro/EventService/Server.pyc
-lib/%%PYTHON_VERSION%%/site-packages/Pyro/EventService/Server.pyo
-lib/%%PYTHON_VERSION%%/site-packages/Pyro/EventService/__init__.py
-lib/%%PYTHON_VERSION%%/site-packages/Pyro/EventService/__init__.pyc
-lib/%%PYTHON_VERSION%%/site-packages/Pyro/EventService/__init__.pyo
-lib/%%PYTHON_VERSION%%/site-packages/Pyro/__init__.py
-lib/%%PYTHON_VERSION%%/site-packages/Pyro/__init__.pyc
-lib/%%PYTHON_VERSION%%/site-packages/Pyro/__init__.pyo
-lib/%%PYTHON_VERSION%%/site-packages/Pyro/configuration.py
-lib/%%PYTHON_VERSION%%/site-packages/Pyro/configuration.pyc
-lib/%%PYTHON_VERSION%%/site-packages/Pyro/configuration.pyo
-lib/%%PYTHON_VERSION%%/site-packages/Pyro/constants.py
-lib/%%PYTHON_VERSION%%/site-packages/Pyro/constants.pyc
-lib/%%PYTHON_VERSION%%/site-packages/Pyro/constants.pyo
-lib/%%PYTHON_VERSION%%/site-packages/Pyro/core.py
-lib/%%PYTHON_VERSION%%/site-packages/Pyro/core.pyc
-lib/%%PYTHON_VERSION%%/site-packages/Pyro/core.pyo
-lib/%%PYTHON_VERSION%%/site-packages/Pyro/errors.py
-lib/%%PYTHON_VERSION%%/site-packages/Pyro/errors.pyc
-lib/%%PYTHON_VERSION%%/site-packages/Pyro/errors.pyo
-lib/%%PYTHON_VERSION%%/site-packages/Pyro/naming.py
-lib/%%PYTHON_VERSION%%/site-packages/Pyro/naming.pyc
-lib/%%PYTHON_VERSION%%/site-packages/Pyro/naming.pyo
-lib/%%PYTHON_VERSION%%/site-packages/Pyro/nsc.py
-lib/%%PYTHON_VERSION%%/site-packages/Pyro/nsc.pyc
-lib/%%PYTHON_VERSION%%/site-packages/Pyro/nsc.pyo
-lib/%%PYTHON_VERSION%%/site-packages/Pyro/protocol.py
-lib/%%PYTHON_VERSION%%/site-packages/Pyro/protocol.pyc
-lib/%%PYTHON_VERSION%%/site-packages/Pyro/protocol.pyo
-lib/%%PYTHON_VERSION%%/site-packages/Pyro/pyroc.py
-lib/%%PYTHON_VERSION%%/site-packages/Pyro/pyroc.pyc
-lib/%%PYTHON_VERSION%%/site-packages/Pyro/pyroc.pyo
-lib/%%PYTHON_VERSION%%/site-packages/Pyro/util.py
-lib/%%PYTHON_VERSION%%/site-packages/Pyro/util.pyc
-lib/%%PYTHON_VERSION%%/site-packages/Pyro/util.pyo
-lib/%%PYTHON_VERSION%%/site-packages/Pyro/xnsc.py
-lib/%%PYTHON_VERSION%%/site-packages/Pyro/xnsc.pyc
-lib/%%PYTHON_VERSION%%/site-packages/Pyro/xnsc.pyo
-@dirrm lib/%%PYTHON_VERSION%%/site-packages/Pyro/EventService
-@dirrm lib/%%PYTHON_VERSION%%/site-packages/Pyro
+%%PYTHON_SITELIBDIR%%/Pyro/EventService/Clients.py
+%%PYTHON_SITELIBDIR%%/Pyro/EventService/Clients.pyc
+%%PYTHON_SITELIBDIR%%/Pyro/EventService/Clients.pyo
+%%PYTHON_SITELIBDIR%%/Pyro/EventService/Server.py
+%%PYTHON_SITELIBDIR%%/Pyro/EventService/Server.pyc
+%%PYTHON_SITELIBDIR%%/Pyro/EventService/Server.pyo
+%%PYTHON_SITELIBDIR%%/Pyro/EventService/__init__.py
+%%PYTHON_SITELIBDIR%%/Pyro/EventService/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Pyro/EventService/__init__.pyo
+%%PYTHON_SITELIBDIR%%/Pyro/__init__.py
+%%PYTHON_SITELIBDIR%%/Pyro/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Pyro/__init__.pyo
+%%PYTHON_SITELIBDIR%%/Pyro/configuration.py
+%%PYTHON_SITELIBDIR%%/Pyro/configuration.pyc
+%%PYTHON_SITELIBDIR%%/Pyro/configuration.pyo
+%%PYTHON_SITELIBDIR%%/Pyro/constants.py
+%%PYTHON_SITELIBDIR%%/Pyro/constants.pyc
+%%PYTHON_SITELIBDIR%%/Pyro/constants.pyo
+%%PYTHON_SITELIBDIR%%/Pyro/core.py
+%%PYTHON_SITELIBDIR%%/Pyro/core.pyc
+%%PYTHON_SITELIBDIR%%/Pyro/core.pyo
+%%PYTHON_SITELIBDIR%%/Pyro/errors.py
+%%PYTHON_SITELIBDIR%%/Pyro/errors.pyc
+%%PYTHON_SITELIBDIR%%/Pyro/errors.pyo
+%%PYTHON_SITELIBDIR%%/Pyro/ext/__init__.py
+%%PYTHON_SITELIBDIR%%/Pyro/ext/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Pyro/ext/__init__.pyo
+%%PYTHON_SITELIBDIR%%/Pyro/ext/remote.py
+%%PYTHON_SITELIBDIR%%/Pyro/ext/remote.pyc
+%%PYTHON_SITELIBDIR%%/Pyro/ext/remote.pyo
+%%PYTHON_SITELIBDIR%%/Pyro/ext/remote_nons.py
+%%PYTHON_SITELIBDIR%%/Pyro/ext/remote_nons.pyc
+%%PYTHON_SITELIBDIR%%/Pyro/ext/remote_nons.pyo
+%%PYTHON_SITELIBDIR%%/Pyro/naming.py
+%%PYTHON_SITELIBDIR%%/Pyro/naming.pyc
+%%PYTHON_SITELIBDIR%%/Pyro/naming.pyo
+%%PYTHON_SITELIBDIR%%/Pyro/nsc.py
+%%PYTHON_SITELIBDIR%%/Pyro/nsc.pyc
+%%PYTHON_SITELIBDIR%%/Pyro/nsc.pyo
+%%PYTHON_SITELIBDIR%%/Pyro/protocol.py
+%%PYTHON_SITELIBDIR%%/Pyro/protocol.pyc
+%%PYTHON_SITELIBDIR%%/Pyro/protocol.pyo
+%%PYTHON_SITELIBDIR%%/Pyro/pyroc.py
+%%PYTHON_SITELIBDIR%%/Pyro/pyroc.pyc
+%%PYTHON_SITELIBDIR%%/Pyro/pyroc.pyo
+%%PYTHON_SITELIBDIR%%/Pyro/util.py
+%%PYTHON_SITELIBDIR%%/Pyro/util.pyc
+%%PYTHON_SITELIBDIR%%/Pyro/util.pyo
+%%PYTHON_SITELIBDIR%%/Pyro/xnsc.py
+%%PYTHON_SITELIBDIR%%/Pyro/xnsc.pyc
+%%PYTHON_SITELIBDIR%%/Pyro/xnsc.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/Pyro/ext
+@dirrm %%PYTHON_SITELIBDIR%%/Pyro/EventService
+@dirrm %%PYTHON_SITELIBDIR%%/Pyro
 %%PORTDOCS%%share/doc/py-ro/1-intro.html
-%%PORTDOCS%%share/doc/py-ro/10-services.html
-%%PORTDOCS%%share/doc/py-ro/11-changes.html
-%%PORTDOCS%%share/doc/py-ro/11-changes-archive.html
+%%PORTDOCS%%share/doc/py-ro/10-errors.html
+%%PORTDOCS%%share/doc/py-ro/11-services.html
+%%PORTDOCS%%share/doc/py-ro/12-changes-archive.html
+%%PORTDOCS%%share/doc/py-ro/12-changes.html
 %%PORTDOCS%%share/doc/py-ro/2-concepts.html
 %%PORTDOCS%%share/doc/py-ro/3-install.html
 %%PORTDOCS%%share/doc/py-ro/4-usage.html
@@ -60,7 +71,7 @@ lib/%%PYTHON_VERSION%%/site-packages/Pyro/xnsc.pyo
 %%PORTDOCS%%share/doc/py-ro/6-implementation.html
 %%PORTDOCS%%share/doc/py-ro/7-features.html
 %%PORTDOCS%%share/doc/py-ro/8-example.html
-%%PORTDOCS%%share/doc/py-ro/9-errors.html
+%%PORTDOCS%%share/doc/py-ro/9-security.html
 %%PORTDOCS%%share/doc/py-ro/LICENSE
 %%PORTDOCS%%share/doc/py-ro/PyroManual.html
 %%PORTDOCS%%share/doc/py-ro/index.html
@@ -86,11 +97,14 @@ lib/%%PYTHON_VERSION%%/site-packages/Pyro/xnsc.pyo
 %%PORTDOCS%%share/examples/py-ro/agent2/client.py
 %%PORTDOCS%%share/examples/py-ro/agent2/serv/server.py
 %%PORTDOCS%%share/examples/py-ro/agent2/serv/shop.py
+%%PORTDOCS%%share/examples/py-ro/attributes/Person.py
 %%PORTDOCS%%share/examples/py-ro/attributes/Readme.txt
-%%PORTDOCS%%share/examples/py-ro/attributes/attrs_proxy.py
 %%PORTDOCS%%share/examples/py-ro/attributes/client.py
 %%PORTDOCS%%share/examples/py-ro/attributes/server.py
-%%PORTDOCS%%share/examples/py-ro/attributes/t.py
+%%PORTDOCS%%share/examples/py-ro/authenticate/NSSecEx.py
+%%PORTDOCS%%share/examples/py-ro/authenticate/Readme.txt
+%%PORTDOCS%%share/examples/py-ro/authenticate/client.py
+%%PORTDOCS%%share/examples/py-ro/authenticate/server.py
 %%PORTDOCS%%share/examples/py-ro/autoreconnect/Readme.txt
 %%PORTDOCS%%share/examples/py-ro/autoreconnect/client.py
 %%PORTDOCS%%share/examples/py-ro/autoreconnect/server.py
@@ -99,15 +113,27 @@ lib/%%PYTHON_VERSION%%/site-packages/Pyro/xnsc.pyo
 %%PORTDOCS%%share/examples/py-ro/benchmark/client.py
 %%PORTDOCS%%share/examples/py-ro/benchmark/server.py
 %%PORTDOCS%%share/examples/py-ro/callback/Readme.txt
-%%PORTDOCS%%share/examples/py-ro/callback/client.py
-%%PORTDOCS%%share/examples/py-ro/callback/server.py
+%%PORTDOCS%%share/examples/py-ro/callback/b2_client.py
+%%PORTDOCS%%share/examples/py-ro/callback/b2_server.py
+%%PORTDOCS%%share/examples/py-ro/callback/bounce_client.py
+%%PORTDOCS%%share/examples/py-ro/callback/bounce_server.py
+%%PORTDOCS%%share/examples/py-ro/callback/bouncer.py
+%%PORTDOCS%%share/examples/py-ro/callback/bouncer2.py
 %%PORTDOCS%%share/examples/py-ro/callback/shout.py
+%%PORTDOCS%%share/examples/py-ro/callback/shout_client.py
+%%PORTDOCS%%share/examples/py-ro/callback/shout_server.py
 %%PORTDOCS%%share/examples/py-ro/chatbox-ES/Readme.txt
 %%PORTDOCS%%share/examples/py-ro/chatbox-ES/client.py
 %%PORTDOCS%%share/examples/py-ro/chatbox-ES/server.py
 %%PORTDOCS%%share/examples/py-ro/chatbox-non-ES/Readme.txt
 %%PORTDOCS%%share/examples/py-ro/chatbox-non-ES/client.py
 %%PORTDOCS%%share/examples/py-ro/chatbox-non-ES/server.py
+%%PORTDOCS%%share/examples/py-ro/circle/Readme.txt
+%%PORTDOCS%%share/examples/py-ro/circle/chain.py
+%%PORTDOCS%%share/examples/py-ro/circle/client.py
+%%PORTDOCS%%share/examples/py-ro/circle/servA.py
+%%PORTDOCS%%share/examples/py-ro/circle/servB.py
+%%PORTDOCS%%share/examples/py-ro/circle/servC.py
 %%PORTDOCS%%share/examples/py-ro/countingcars/Client.py
 %%PORTDOCS%%share/examples/py-ro/countingcars/Readme.txt
 %%PORTDOCS%%share/examples/py-ro/countingcars/Server.py
@@ -143,24 +169,41 @@ lib/%%PYTHON_VERSION%%/site-packages/Pyro/xnsc.pyo
 %%PORTDOCS%%share/examples/py-ro/noNS/client.py
 %%PORTDOCS%%share/examples/py-ro/noNS/client2.py
 %%PORTDOCS%%share/examples/py-ro/noNS/server.py
+%%PORTDOCS%%share/examples/py-ro/quickstart-noNS/Readme.txt
+%%PORTDOCS%%share/examples/py-ro/quickstart-noNS/client.py
+%%PORTDOCS%%share/examples/py-ro/quickstart-noNS/object.py
+%%PORTDOCS%%share/examples/py-ro/quickstart-noNS/server.py
 %%PORTDOCS%%share/examples/py-ro/quickstart/Readme.txt
 %%PORTDOCS%%share/examples/py-ro/quickstart/client.py
 %%PORTDOCS%%share/examples/py-ro/quickstart/object.py
 %%PORTDOCS%%share/examples/py-ro/quickstart/pyrorun
-%%PORTDOCS%%share/examples/py-ro/quickstart/remote.py
 %%PORTDOCS%%share/examples/py-ro/quickstart/server.py
 %%PORTDOCS%%share/examples/py-ro/simple/Readme.txt
 %%PORTDOCS%%share/examples/py-ro/simple/client.py
 %%PORTDOCS%%share/examples/py-ro/simple/server.py
 %%PORTDOCS%%share/examples/py-ro/simple/tst.py
+%%PORTDOCS%%share/examples/py-ro/ssl/Readme.txt
+%%PORTDOCS%%share/examples/py-ro/ssl/certs/ca.pem
+%%PORTDOCS%%share/examples/py-ro/ssl/certs/client.pem
+%%PORTDOCS%%share/examples/py-ro/ssl/certs/server.pem
+%%PORTDOCS%%share/examples/py-ro/ssl/client.py
+%%PORTDOCS%%share/examples/py-ro/ssl/server.py
 %%PORTDOCS%%share/examples/py-ro/stockquotes/Client.py
 %%PORTDOCS%%share/examples/py-ro/stockquotes/MClient.py
 %%PORTDOCS%%share/examples/py-ro/stockquotes/Readme.txt
 %%PORTDOCS%%share/examples/py-ro/stockquotes/Server.py
+%%PORTDOCS%%share/examples/py-ro/stresstest/Readme.txt
+%%PORTDOCS%%share/examples/py-ro/stresstest/consumer.py
+%%PORTDOCS%%share/examples/py-ro/stresstest/naming.py
+%%PORTDOCS%%share/examples/py-ro/stresstest/producer.py
 %%PORTDOCS%%share/examples/py-ro/testclient.py
 %%PORTDOCS%%share/examples/py-ro/testserver.py
+%%PORTDOCS%%@dirrm share/examples/py-ro/stresstest
 %%PORTDOCS%%@dirrm share/examples/py-ro/stockquotes
+%%PORTDOCS%%@dirrm share/examples/py-ro/ssl/certs
+%%PORTDOCS%%@dirrm share/examples/py-ro/ssl
 %%PORTDOCS%%@dirrm share/examples/py-ro/simple
+%%PORTDOCS%%@dirrm share/examples/py-ro/quickstart-noNS
 %%PORTDOCS%%@dirrm share/examples/py-ro/quickstart
 %%PORTDOCS%%@dirrm share/examples/py-ro/noNS
 %%PORTDOCS%%@dirrm share/examples/py-ro/naming
@@ -173,11 +216,13 @@ lib/%%PYTHON_VERSION%%/site-packages/Pyro/xnsc.pyo
 %%PORTDOCS%%@dirrm share/examples/py-ro/exceptions
 %%PORTDOCS%%@dirrm share/examples/py-ro/denyhosts
 %%PORTDOCS%%@dirrm share/examples/py-ro/countingcars
+%%PORTDOCS%%@dirrm share/examples/py-ro/circle
 %%PORTDOCS%%@dirrm share/examples/py-ro/chatbox-non-ES
 %%PORTDOCS%%@dirrm share/examples/py-ro/chatbox-ES
 %%PORTDOCS%%@dirrm share/examples/py-ro/callback
 %%PORTDOCS%%@dirrm share/examples/py-ro/benchmark
 %%PORTDOCS%%@dirrm share/examples/py-ro/autoreconnect
+%%PORTDOCS%%@dirrm share/examples/py-ro/authenticate
 %%PORTDOCS%%@dirrm share/examples/py-ro/attributes
 %%PORTDOCS%%@dirrm share/examples/py-ro/agent2/serv
 %%PORTDOCS%%@dirrm share/examples/py-ro/agent2/agent
