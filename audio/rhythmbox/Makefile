@@ -7,7 +7,7 @@
 
 PORTNAME=	rhythmbox
 PORTVERSION=	0.8.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.8
@@ -17,8 +17,6 @@ MAINTAINER=	marcus@freebsd.org
 COMMENT=	Audio player for the Gnome 2 desktop environment
 
 LIB_DEPENDS=	musicbrainz.4:${PORTSDIR}/audio/libmusicbrainz \
-		FLAC.5:${PORTSDIR}/audio/flac \
-		mad.2:${PORTSDIR}/audio/libmad \
 		id3tag.2:${PORTSDIR}/audio/libid3tag
 
 USE_BZIP2=	yes
@@ -26,6 +24,7 @@ USE_X_PREFIX=	yes
 INSTALLS_OMF=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack intlhack gnomeprefix libgnomeui
+WANT_GSTREAMER=	yes
 USE_LIBTOOL_VER=15
 CONFIGURE_ARGS=	--enable-nautilus-menu
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib -L${X11BASE}/lib -lm" \
@@ -40,19 +39,21 @@ OPTIONS=	XINE "Use xine backend instead of GStreamer" off \
 .include <bsd.port.pre.mk>
 
 .ifdef (WITH_XINE)
-LIB_DEPENDS+=		xine.12:${PORTSDIR}/multimedia/libxine
+LIB_DEPENDS+=		xine.12:${PORTSDIR}/multimedia/libxine \
+			FLAC.5:${PORTSDIR}/audio/flac \
+			mad.2:${PORTSDIR}/audio/libmad
 CONFIGURE_ARGS+=	--with-player=xine
 WITH_MONKEYMEDIA=	yes
 .else
 CONFIGURE_ARGS+=	--with-player=gstreamer
-USE_GNOME+=		gstreamerplugins
+USE_GSTREAMER+=		flac mad gnomevfs
 .endif
 
 .ifdef (WITH_MONKEYMEDIA)
 CONFIGURE_ARGS+=	--with-metadata=monkeymedia
 .else
 CONFIGURE_ARGS+=	--with-metadata=gstreamer
-USE_GNOME+=		gstreamerplugins
+USE_GSTREAMER+=		flac mad gnomevfs
 .endif
 
 .ifdef (WITH_IPOD)
@@ -64,20 +65,28 @@ WITH_VORBIS=	yes
 .endif
 
 .ifdef (WITH_VORBIS)
+.ifndef (WITH_XINE)
+USE_GSTREAMER+=		vorbis
+.else
 LIB_DEPENDS+=		vorbis.3:${PORTSDIR}/audio/libvorbis
+.endif
 .else
 CONFIGURE_ARGS+=	--disable-vorbis --disable-vorbistest
 .endif
 
-pre-everything::
-.if !defined(WITH_XINE)
-	@${ECHO_MSG}
-	@${ECHO_MSG} "You must have gstreamer-plugins built with MAD support!"
-	@${ECHO_MSG}
+.if !defined(WITH_XINE) && defined(WITH_FAAD)
+USE_GSTREAMER+=		faad
 .endif
+
+pre-everything::
 .if !defined(WITH_VORBIS)
 	@${ECHO_MSG}
 	@${ECHO_MSG} "Define WITH_VORBIS to enable Vorbis support"
+	@${ECHO_MSG}
+.endif
+.if !defined(WITH_XINE) && !defined(WITH_FAAD)
+	@${ECHO_MSG}
+	@${ECHO_MSG} "Define WITH_FAAD to enable Faad support"
 	@${ECHO_MSG}
 .endif
 

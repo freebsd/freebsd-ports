@@ -7,6 +7,7 @@
 
 PORTNAME=	tunesbrowser
 PORTVERSION=	0.2.0
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://craz.net/programs/itunes/files/
 
@@ -20,7 +21,8 @@ BROKEN=		Incomplete pkg-plist
 USE_BZIP2=	yes
 USE_INC_LIBTOOL_VER=15
 USE_X_PREFIX=	yes
-USE_GNOME=	libglade2 gstreamerplugins gnometarget gnomehack gnomeprefix
+USE_GNOME=	libglade2 gnometarget gnomehack gnomeprefix
+USE_GSTREAMER=	mad
 
 DATADIR=	${PREFIX}/share/gnome/${PORTNAME}
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	gnomemedia2
 PORTVERSION=	2.8.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/gnome-media/2.8
@@ -26,7 +26,8 @@ INSTALLS_SHLIB=	yes
 USE_REINPLACE=	yes
 GNOME_DESKTOP_VERSION=2
 USE_GNOME=	gnomeprefix gnomehack intlhack gnomehier gnomedesktop \
-		gail gstreamerplugins
+		gail
+USE_GSTREAMER=	esound cdparanoia
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 

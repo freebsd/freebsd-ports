@@ -7,6 +7,7 @@
 
 PORTNAME=	gnomeapplets2
 PORTVERSION=	2.8.2
+PORTREVISION=	1
 CATEGORIES=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/gnome-applets/2.8
@@ -26,7 +27,8 @@ USE_GMAKE=	yes
 USE_REINPLACE=	yes
 GNOME_DESKTOP_VERSION=2
 USE_GNOME=	gnomehier gnomeprefix gnomehack intlhack gnomepanel \
-		gstreamerplugins gail
+		gail
+USE_GSTREAMER=	yes
 USE_LIBTOOL_VER=15
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
