@@ -1,13 +1,13 @@
 # New ports collection makefile for:	qhacc
-# Version required:	0.2.8
+# Version required:	0.3.1
 # Date created:		28 Dec 1999
 # Whom:			Will Andrews <andrews@technologist.com>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	qhacc_0.2.8
-PKGNAME=	qhacc-0.2.8
+DISTNAME=	qhacc_0.3.1
+PKGNAME=	qhacc-0.3.1
 CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.ostrich-emulators.cx/qhacc/
 
