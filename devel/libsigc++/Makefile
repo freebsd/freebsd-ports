@@ -6,10 +6,13 @@
 #
 
 PORTNAME=	libsigc++
-PORTVERSION=	1.0.3
+PORTVERSION=	1.0.4
 CATEGORIES=	devel gnome
-MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	stable/sources/libsigc++
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
+		${MASTER_SITE_GNOME}
+MASTER_SITE_SUBDIR=	libsigc \
+			stable/sources/libsigc++
+			
 #DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
@@ -17,6 +20,11 @@ MAINTAINER=	gnome@FreeBSD.org
 USE_LIBTOOL=	yes
 USE_NEWGCC=	yes
 INSTALLS_SHLIB=	yes
+USE_REINPLACE=	yes
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' \
+		${WRKSRC}/configure
 
 post-install:
 .if !defined(NOPORTDOCS)
