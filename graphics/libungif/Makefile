@@ -3,7 +3,7 @@
 # Date created:		03 May 1997
 # Whom:			Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.1.1.1 1997/05/05 12:33:44 tg Exp $
+# $Id: Makefile,v 1.2 1997/09/24 06:55:01 tg Exp $
 #
 
 DISTNAME=	giflib-3.0
@@ -17,6 +17,12 @@ post-install:
 	@${MKDIR} ${PREFIX}/share/doc/giflib
 	@${INSTALL_DATA} ${WRKSRC}/doc/* ${PREFIX}/share/doc/giflib
 .endif
-	@${LDCONFIG} -m ${PREFIX}/lib
+	@${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>
+
+.if ${PORTOBJFORMAT} == "elf"
+GIFLIB=	libgif.so.3
+.else
+GIFLIB=	libgif.so.3.0
+.endif
