@@ -12,13 +12,14 @@ MASTER_SITES=	http://math.nist.gov/scimark2/
 PKGNAMESUFFIX=	-java
 DISTNAME=	${PORTNAME}src
 
-MAINTAINER=	thierry@pompo.net
+MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	A Java benchmark for scientific and numerical computing
 
 WRKSRC=		${WRKDIR}
 USE_ZIP=	yes
 
-USE_JAVA=	1.2+
+USE_JAVA=	yes
+JAVA_VERSION=	1.2+
 USE_JIKES=	NO
 NEED_JAVAC=	yes
 JAVAC_OPTS?=	-O
@@ -29,6 +30,7 @@ SMDIR=		${PREFIX}/${LSMDIR}
 SMSH=		${PORTNAME}${PKGNAMESUFFIX}
 
 PLIST_SUB=	SMDIR=${LSMDIR}
+PKGMESSAGE=	${WRKSRC}/pkg-message
 
 do-build:
 	cd ${WRKSRC} && ${JAVAC} ${JAVAC_OPTS} commandline.java
@@ -36,20 +38,15 @@ do-build:
 
 do-install:
 	@${MKDIR} ${SMDIR}
-	@${CP} -Rp ${WRKSRC}/jnt ${SMDIR}
+	@${CP} -R ${WRKSRC}/jnt ${SMDIR}
 	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${SMDIR}
 	@${ECHO} "#!/bin/sh" > ${WRKSRC}/${SMSH}
 	@${ECHO} "cd ${SMDIR} && ${JAVA} jnt.scimark2.commandline" '$$1' >> ${WRKSRC}/${SMSH}
 	@${INSTALL_SCRIPT} ${WRKSRC}/${SMSH} ${PREFIX}/bin
 
 post-install:
-	@${ECHO} "*****************************************************************************"
-	@${ECHO} ""
-	@${ECHO} " Just run ${SMSH} or ${SMSH} -large"
-	@${ECHO} ""
-	@${ECHO} " The first SciMark number reported is the composite score, followed by the an"
-	@${ECHO} " approximate Mflop rate for each kernel."
-	@${ECHO} ""
-	@${ECHO} "*****************************************************************************"
+	@${SED} -e 's|%%SMSH%%|${SMSH}|g' ${FILESDIR}/pkg-message.in	\
+		> ${PKGMESSAGE}
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
