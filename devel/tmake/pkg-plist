@@ -97,6 +97,10 @@ share/tmake/qnx-g++/app.t
 share/tmake/qnx-g++/lib.t
 share/tmake/qnx-g++/subdirs.t
 share/tmake/qnx-g++/tmake.conf
+share/tmake/qws/linux-arm-g++/app.t
+share/tmake/qws/linux-arm-g++/lib.t
+share/tmake/qws/linux-arm-g++/subdirs.t
+share/tmake/qws/linux-arm-g++/tmake.conf
 share/tmake/qws/linux-generic-g++/app.t
 share/tmake/qws/linux-generic-g++/lib.t
 share/tmake/qws/linux-generic-g++/subdirs.t
@@ -219,6 +223,7 @@ share/tmake/win32/subdirs.t
 @dirrm share/tmake/osf1-cxx
 @dirrm share/tmake/osf1-g++
 @dirrm share/tmake/qnx-g++
+@dirrm share/tmake/qws/linux-arm-g++
 @dirrm share/tmake/qws/linux-generic-g++
 @dirrm share/tmake/qws/linux-mips-g++
 @dirrm share/tmake/qws/linux-x86-g++
