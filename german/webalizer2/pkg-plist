@@ -1,14 +1,16 @@
-bin/de-webalizer
-etc/de-webalizer.conf-dist
-share/doc/de-webalizer/CHANGES
-share/doc/de-webalizer/COPYING
-share/doc/de-webalizer/Copyright
-share/doc/de-webalizer/INSTALL
-share/doc/de-webalizer/README
-share/doc/de-webalizer/country-codes.txt
-share/doc/de-webalizer/webalizer.LSM
-@dirrm share/doc/de-webalizer
-share/examples/de-webalizer/msfree.gif
-share/examples/de-webalizer/sample.conf
-share/examples/de-webalizer/webalizer.gif
-@dirrm share/examples/de-webalizer
+bin/%%PKGNAMEPREFIX%%webalizer
+@unexec rm -f %B/%%PKGNAMEPREFIX%%webazolver
+etc/%%PKGNAMEPREFIX%%webalizer.conf-dist
+share/doc/%%PKGNAMEPREFIX%%webalizer/CHANGES
+share/doc/%%PKGNAMEPREFIX%%webalizer/COPYING
+share/doc/%%PKGNAMEPREFIX%%webalizer/Copyright
+share/doc/%%PKGNAMEPREFIX%%webalizer/DNS.README
+share/doc/%%PKGNAMEPREFIX%%webalizer/INSTALL
+share/doc/%%PKGNAMEPREFIX%%webalizer/README
+share/doc/%%PKGNAMEPREFIX%%webalizer/README.FIRST
+share/doc/%%PKGNAMEPREFIX%%webalizer/country-codes.txt
+@dirrm share/doc/%%PKGNAMEPREFIX%%webalizer
+share/examples/%%PKGNAMEPREFIX%%webalizer/msfree.png
+share/examples/%%PKGNAMEPREFIX%%webalizer/sample.conf
+share/examples/%%PKGNAMEPREFIX%%webalizer/webalizer.png
+@dirrm share/examples/%%PKGNAMEPREFIX%%webalizer
