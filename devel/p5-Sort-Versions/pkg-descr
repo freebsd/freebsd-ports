@@ -1,0 +1,21 @@
+       Sort::Versions allows easy sorting of mixed non-numeric
+       and numeric strings, like the "version numbers" that many
+       shared library systems and revision control packages use.
+       This is quite useful if you are trying to deal with shared
+       libraries. It can also be applied to applications that
+       intersperse variable-width numeric fields within text.
+       Other applications can undoubtedly be found.
+
+       For an explanation of the algorithm, it's simplest to look
+       at these examples:
+
+         1.1   <  1.2
+         1.1a  <  1.2
+         1.1   <  1.1.1
+         1.1   <  1.1a
+         1.1.a <  1.1a
+         1     <  a
+         a     <  b
+         1     <  2
+         1     <  0002
+         1.5   <  1.06
