@@ -133,12 +133,24 @@ LIB_DEPENDS+=		mp3lame.0:${PORTSDIR}/audio/lame
 CONFIGURE_ARGS+=	--enable-mp3lame
 .endif
 ## optimization
-.ifdef(WITH_OPTIMIZED_CFLAGS)
+.if ${OSVERSION} > 502124
+.	ifdef(WITH_OPTIMIZED_CFLAGS)
+CONFIGURE_ARGS+=	--extra-cflags="-fPIC -DPIC -I${LOCALBASE}/include \
+			-I${X11BASE}/include \
+			-ffast-math -fomit-frame-pointer -fno-unit-at-a-time" \
+			--extra-ldflags="-L${LOCALBASE}/lib -L${X11BASE}/lib -lm"
+.	else
+CONFIGURE_ARGS+=	--extra-cflags="-fPIC -DPIC -I${LOCALBASE}/include \
+			-I${X11BASE}/include -fno-unit-at-a-time" \
+			--disable-opts \
+			--extra-ldflags="-L${LOCALBASE}/lib -L${X11BASE}/lib -lm "
+.	endif
+.else
 CONFIGURE_ARGS+=	--extra-cflags="-fPIC -DPIC -I${LOCALBASE}/include \
 			-I${X11BASE}/include \
 			-ffast-math -fomit-frame-pointer" \
 			--extra-ldflags="-L${LOCALBASE}/lib -L${X11BASE}/lib -lm"
-.else
+.	else
 CONFIGURE_ARGS+=	--extra-cflags="-fPIC -DPIC -I${LOCALBASE}/include \
 			-I${X11BASE}/include" \
 			--disable-opts \
