@@ -134,27 +134,31 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%RUBY_ELISPDIR%%/.keep_me
 @unexec rmdir %D/%%RUBY_ELISPDIR%% 2>/dev/null || true
 @unexec rmdir %D/lib/ruby 2>/dev/null || true
+%%PORTDOCS%%%%RUBY_DOCDIR%%/COPYING
+%%PORTDOCS%%%%RUBY_DOCDIR%%/COPYING.ja
+%%PORTDOCS%%%%RUBY_DOCDIR%%/LEGAL
 %%PORTDOCS%%%%RUBY_DOCDIR%%/NEWS
 %%PORTDOCS%%%%RUBY_DOCDIR%%/README
-%%PORTDOCS%%%%RUBY_DOCDIR%%/README.jp
+%%PORTDOCS%%%%RUBY_DOCDIR%%/README.ja
 %%PORTDOCS%%%%RUBY_DOCDIR%%/README.EXT
-%%PORTDOCS%%%%RUBY_DOCDIR%%/README.EXT.jp
+%%PORTDOCS%%%%RUBY_DOCDIR%%/README.EXT.ja
 %%PORTDOCS%%%%RUBY_DOCDIR%%/forwardable.rd
-%%PORTDOCS%%%%RUBY_DOCDIR%%/forwardable.rd.jp
+%%PORTDOCS%%%%RUBY_DOCDIR%%/forwardable.rd.ja
 %%PORTDOCS%%%%RUBY_DOCDIR%%/shell.rd
-%%PORTDOCS%%%%RUBY_DOCDIR%%/shell.rd.jp
+%%PORTDOCS%%%%RUBY_DOCDIR%%/shell.rd.ja
 %%PORTDOCS%%%%RUBY_DOCDIR%%/etc/etc.txt
-%%PORTDOCS%%%%RUBY_DOCDIR%%/etc/etc.txt.jp
-%%PORTDOCS%%%%RUBY_DOCDIR%%/irb/irb-tools.rd.jp
+%%PORTDOCS%%%%RUBY_DOCDIR%%/etc/etc.txt.ja
+%%PORTDOCS%%%%RUBY_DOCDIR%%/irb/irb-tools.rd.ja
 %%PORTDOCS%%%%RUBY_DOCDIR%%/irb/irb.rd
-%%PORTDOCS%%%%RUBY_DOCDIR%%/irb/irb.rd.jp
+%%PORTDOCS%%%%RUBY_DOCDIR%%/irb/irb.rd.ja
 %%PORTDOCS%%%%RUBY_DOCDIR%%/md5/md5.txt
-%%PORTDOCS%%%%RUBY_DOCDIR%%/md5/md5.txt.jp
+%%PORTDOCS%%%%RUBY_DOCDIR%%/md5/md5.txt.ja
 %%PORTDOCS%%%%RUBY_DOCDIR%%/pty/README
-%%PORTDOCS%%%%RUBY_DOCDIR%%/pty/README.jp
+%%PORTDOCS%%%%RUBY_DOCDIR%%/pty/README.ja
 %%PORTDOCS%%%%RUBY_DOCDIR%%/pty/README.expect
-%%PORTDOCS%%%%RUBY_DOCDIR%%/pty/README.expect.jp
+%%PORTDOCS%%%%RUBY_DOCDIR%%/pty/README.expect.ja
 %%PORTDOCS%%%%RUBY_DOCDIR%%/readline/README
+%%PORTDOCS%%%%RUBY_DOCDIR%%/readline/README.ja
 %%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/etc
 %%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/irb
 %%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/md5
