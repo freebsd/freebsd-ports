@@ -4337,6 +4337,7 @@ p5-Class-Delegation	ports/devel/p5-Class-Delegation
 p5-Class-Fields	ports/devel/p5-Class-Fields
 p5-Class-Loader	ports/devel/p5-Class-Loader
 p5-Class-MethodMaker	ports/devel/p5-Class-MethodMaker
+p5-Class-ObjectTemplate	ports/devel/p5-Class-ObjectTemplate
 p5-Class-Singleton	ports/devel/p5-Class-Singleton
 p5-Class-Tom	ports/devel/p5-Class-Tom
 p5-Compress-Zlib	ports/archivers/p5-Compress-Zlib
