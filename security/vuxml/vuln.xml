@@ -32,6 +32,55 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="efa1344b-5477-11d9-a9e7-0001020eed82">
+    <topic>ethereal -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>ethereal</name>
+	<name>ethereal-lite</name>
+	<name>tethereal</name>
+	<name>tethereal-lite</name>
+	<range><lt>0.10.8</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>An Ethreal Security Advisories reports:</p>
+	<blockquote cite="http://www.ethereal.com/appnotes/enpa-sa-00016.html">
+	  <p>Issues have been discovered in the following protocol
+	    dissectors:</p>
+	  <ul>
+	    <li>Matthew Bing discovered a bug in DICOM dissection that
+	      could make Ethereal crash.</li>
+	    <li>An invalid RTP timestamp could make Ethereal hang and
+	      create a large temporary file, possibly filling
+	      available disk space.</li>
+	    <li>The HTTP dissector could access previously-freed
+	      memory, causing a crash.</li>
+	    <li>Brian Caswell discovered that an improperly formatted
+	      SMB packet could make Ethereal hang, maximizing CPU
+	      utilization.</li>
+	  </ul>
+	  <p>Impact: It may be possible to make Ethereal crash or run
+	    arbitrary code by injecting a purposefully malformed
+	    packet onto the wire or by convincing someone to read a
+	    malformed packet trace file.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-1139</cvename>
+      <cvename>CAN-2004-1140</cvename>
+      <cvename>CAN-2004-1141</cvename>
+      <cvename>CAN-2004-1142</cvename>
+      <url>http://www.ethereal.com/appnotes/enpa-sa-00016.html</url>
+    </references>
+    <dates>
+      <discovery>2004-12-14</discovery>
+      <entry>2004-12-23</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="e3e266e9-5473-11d9-a9e7-0001020eed82">
     <topic>xpdf -- buffer overflow vulnerability</topic>
     <affects>
