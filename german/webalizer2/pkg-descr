@@ -1,0 +1,23 @@
+What is The Webalizer?
+----------------------
+
+The Webalizer is a web server log file analysis program which produces
+usage statistics in HTML format for viewing with a browser.  The results
+are presented in both columnar and graphical format, which facilitates
+interpretation.  Yearly, monthly, daily and hourly usage statistics are
+presented, along with the ability to display usage by site, URL, referrer,
+user agent (browser) and country (user agent and referrer are only
+available if your web server procduces Combined log format files).
+
+The Webalizer supports CLF (common log format) log files, as well as
+Combined log formats as defined by NCSA and others, and variations
+of these which it attempts to handle intelligently.
+
+Keywords:      Web Analysis, Log Analysis, Usage Statistics, Linux, Unix 
+Author:        Bradford L. Barrett 
+Maintained-by: Bradford L. Barrett 
+Primary-site:  http://www.mrunix.net/webalizer/ 
+Alternate-site:
+Original-site: ftp://www.mrunix.net/pub/webalizer/
+Platforms:     Linux, SCO, other UNIX's 
+Copying-policy: GPL
