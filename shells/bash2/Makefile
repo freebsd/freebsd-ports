@@ -3,7 +3,7 @@
 # Date created:		21 August 1994
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.28 1998/04/28 05:09:46 ache Exp $
+# $Id: Makefile,v 1.29 1998/05/16 11:39:19 ache Exp $
 #
 
 DISTNAME=       bash-2.02
@@ -20,7 +20,7 @@ GNU_CONFIGURE=	Yes
 MAN1=		bash.1 bashbug.1
 
 pre-install:
-	if [ ! -s ${PREFIX}/info/dir ]; then \
+	if [ ! -s ${PREFIX}/info/dir -a -f /usr/share/info/dir ]; then \
 	  ${SED} -ne '1,/Menu:/p' /usr/share/info/dir > ${PREFIX}/info/dir; \
 	fi
 

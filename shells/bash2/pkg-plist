@@ -4,10 +4,13 @@ bin/bash
 bin/bashbug
 man/man1/bash.1.gz
 man/man1/bashbug.1.gz
+@unexec install-info --delete %D/info/bash.info %D/info/dir
 info/bash.info
+@exec [ -f %D/info/dir -o ! -f /usr/share/info/dir ] || sed -ne '1,/Menu:/p' /usr/share/info/dir > %D/info/dir
 share/doc/bash/article.ps.gz
 share/doc/bash/bashref.ps.gz
 share/doc/bash/bash.html
 share/doc/bash/bashref.html
 share/doc/bash/bashref_toc.html
 share/doc/bash/article.txt
+@dirrm share/doc/bash
