@@ -1,0 +1,18 @@
+include/avcall.h
+include/callback.h
+include/trampoline.h
+include/trampoline_r.h
+include/vacall.h
+include/vacall_r.h
+lib/libavcall.a
+lib/libavcall.la
+lib/libcallback.a
+lib/libcallback.la
+lib/libtrampoline.a
+lib/libvacall.a
+share/html/avcall.html
+share/html/callback.html
+share/html/trampoline.html
+share/html/trampoline_r.html
+share/html/vacall.html
+@dirrm share/html
