@@ -7,8 +7,8 @@ share/squeak/3.0/System.so
 share/squeak/3.0/inisqueak
 share/squeak/3.0/squeak
 share/squeak/3.0/squeak.map
-share/squeak/Squeak3.0final.changes
-share/squeak/Squeak3.0final.image
+share/squeak/Squeak3.0.changes
+share/squeak/Squeak3.0.image
 share/squeak/SqueakV3.sources
 @dirrm share/squeak/3.0
 @dirrm share/squeak
