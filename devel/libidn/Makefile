@@ -31,14 +31,6 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 INFO=	libidn
 
-.if exists(${LOCALBASE}/bin/emacs)
-PLIST_SUB+=	EMACS="" EMACSDIR=share/emacs
-.elif exists(${LOCALBASE}/bin/xemacs)
-PLIST_SUB+=	EMACS="" EMACSDIR=lib/xemacs
-.else
-PLIST_SUB+=	EMACS="@comment " EMACSDIR=""
-.endif
-
 .if !defined(WITHOUT_NLS)
 USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
