@@ -19,7 +19,7 @@ LIB_DEPENDS=	icq.0:${PORTSDIR}/net/libicq
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 USE_GNOMENG=	yes
-USE_GNOME=	gtk12
+USE_GNOME=	gtk12 gnomehack
 WANT_GNOME=	yes
 USE_REINPLACE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
@@ -28,7 +28,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 .include <bsd.port.pre.mk>
 
 .if ${HAVE_GNOME:Mgnomelibs}!=""
-USE_GNOME+=	gnomeprefix gnomehack gnomelibs
+USE_GNOME+=	gnomeprefix gnomelibs
 PKGNAMESUFFIX=	-gnome
 PLIST_SUB=	DATADIR="share/gnome"
 .else
