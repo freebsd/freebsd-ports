@@ -8,7 +8,7 @@
 PORTNAME=	zmysqlda
 PORTVERSION=	2.0.8
 CATEGORIES=	www databases zope
-MASTER_SITES=	http://www.zope.org/Members/adustman/Products/ZMySQLDA/ \
+MASTER_SITES=	http://www.zope.org/Members/adustman/Products/ZMySQLDA/${PORTVERSION}/ \
 		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	mysql-python
 PKGNAMEPREFIX=	zope-
