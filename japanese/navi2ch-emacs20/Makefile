@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	navi2ch
-PORTVERSION=	010728
-PORTREVISION=	2
+PORTVERSION=	010901
 CATEGORIES=	japanese www elisp
 MASTER_SITES=	http://www.geocities.co.jp/SiliconValley-Oakland/7673/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
