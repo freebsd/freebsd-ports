@@ -18,6 +18,7 @@ COMMENT=	English-Chinese dictionary
 
 USE_MOTIF=	yes
 
+NO_LATEST_LINK=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
