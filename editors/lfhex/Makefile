@@ -15,6 +15,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Large file hex editor
 
 USE_QT_VER=	3
+USE_BISON=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	QTDIR="${QT_PREFIX}"
