@@ -5,16 +5,14 @@
 # $FreeBSD$
 
 PORTNAME=		basket
-PORTVERSION=		0.3.3
-PORTREVISION=	1
+PORTVERSION=		0.4.0
 CATEGORIES=		deskutils kde
-MASTER_SITES=		http://www.brueffer.de/distfiles/
+MASTER_SITES=		http://les83plus.free.fr/sebastien.laout/basket/downloads/
 
 MAINTAINER=		markus@FreeBSD.org
 COMMENT=		Desktop organization tool
 
-WRKSRC=			${WRKDIR}/${PORTNAME}-0.3.2
-USE_SIZE=		yes
+WRKSRC=			${WRKDIR}/${PORTNAME}-0.4
 USE_KDELIBS_VER=	3
 USE_GMAKE=		yes
 GNU_CONFIGURE=		yes
