@@ -1,67 +1,26 @@
-%%T%%/src/examples/org/znerd/xmlenc/examples/simple/Main.java
-%%T%%/src/main/org/znerd/xmlenc/SevenBitXMLEncoder.java
-%%T%%/src/main/org/znerd/xmlenc/UnicodeXMLEncoder.java
-%%T%%/src/main/org/znerd/xmlenc/XMLEncoder.java
-%%T%%/src/tests/org/znerd/xmlenc/tests/AllTests.java
-%%T%%/src/tests/org/znerd/xmlenc/tests/XMLEncoderTests.java
-%%T%%/build/src/main/org/znerd/xmlenc/SevenBitXMLEncoder.java
-%%T%%/build/src/main/org/znerd/xmlenc/UnicodeXMLEncoder.java
-%%T%%/build/src/main/org/znerd/xmlenc/XMLEncoder.java
-%%T%%/build/classes/main/org/znerd/xmlenc/SevenBitXMLEncoder.class
-%%T%%/build/classes/main/org/znerd/xmlenc/UnicodeXMLEncoder.class
-%%T%%/build/classes/main/org/znerd/xmlenc/XMLEncoder.class
-%%T%%/build/apidocs/org/znerd/xmlenc/class-use/SevenBitXMLEncoder.html
-%%T%%/build/apidocs/org/znerd/xmlenc/class-use/UnicodeXMLEncoder.html
-%%T%%/build/apidocs/org/znerd/xmlenc/class-use/XMLEncoder.html
-%%T%%/build/apidocs/org/znerd/xmlenc/package-use.html
-%%T%%/build/apidocs/org/znerd/xmlenc/package-summary.html
-%%T%%/build/apidocs/org/znerd/xmlenc/package-tree.html
-%%T%%/build/apidocs/org/znerd/xmlenc/package-frame.html
-%%T%%/build/apidocs/org/znerd/xmlenc/SevenBitXMLEncoder.html
-%%T%%/build/apidocs/org/znerd/xmlenc/UnicodeXMLEncoder.html
-%%T%%/build/apidocs/org/znerd/xmlenc/XMLEncoder.html
-%%T%%/build/apidocs/overview-tree.html
-%%T%%/build/apidocs/index-all.html
-%%T%%/build/apidocs/deprecated-list.html
-%%T%%/build/apidocs/allclasses-frame.html
-%%T%%/build/apidocs/index.html
-%%T%%/build/apidocs/packages.html
-%%T%%/build/apidocs/serialized-form.html
-%%T%%/build/apidocs/package-list
-%%T%%/build/apidocs/help-doc.html
-%%T%%/build/apidocs/stylesheet.css
-%%T%%/build/xmlenc.jar
-%%T%%/build.xml
-@dirrm %%T%%/src/examples/org/znerd/xmlenc/examples/simple
-@dirrm %%T%%/src/examples/org/znerd/xmlenc/examples
-@dirrm %%T%%/src/examples/org/znerd/xmlenc
-@dirrm %%T%%/src/examples/org/znerd
-@dirrm %%T%%/src/examples/org
-@dirrm %%T%%/src/examples
-@dirrm %%T%%/src/main/org/znerd/xmlenc
-@dirrm %%T%%/src/main/org/znerd
-@dirrm %%T%%/src/main/org
-@dirrm %%T%%/src/main
-@dirrm %%T%%/src/tests/org/znerd/xmlenc/tests
-@dirrm %%T%%/src/tests/org/znerd/xmlenc
-@dirrm %%T%%/src/tests/org/znerd
-@dirrm %%T%%/src/tests/org
-@dirrm %%T%%/src/tests
-@dirrm %%T%%/src
-@dirrm %%T%%/build/src/main/org/znerd/xmlenc
-@dirrm %%T%%/build/src/main/org/znerd
-@dirrm %%T%%/build/src/main/org
-@dirrm %%T%%/build/src/main
-@dirrm %%T%%/build/src
-@dirrm %%T%%/build/classes/main/org/znerd/xmlenc
-@dirrm %%T%%/build/classes/main/org/znerd
-@dirrm %%T%%/build/classes/main/org
-@dirrm %%T%%/build/classes/main
-@dirrm %%T%%/build/classes
-@dirrm %%T%%/build/apidocs/org/znerd/xmlenc/class-use
-@dirrm %%T%%/build/apidocs/org/znerd/xmlenc
-@dirrm %%T%%/build/apidocs/org/znerd
-@dirrm %%T%%/build/apidocs/org
-@dirrm %%T%%/build/apidocs
-@dirrm %%T%%/build
-@dirrm %%T%%
+share/doc/xmlenc/org/znerd/xmlenc/class-use/XMLEncoder.html
+share/doc/xmlenc/org/znerd/xmlenc/class-use/UnicodeXMLEncoder.html
+share/doc/xmlenc/org/znerd/xmlenc/class-use/SevenBitXMLEncoder.html
+share/doc/xmlenc/org/znerd/xmlenc/package-use.html
+share/doc/xmlenc/org/znerd/xmlenc/package-summary.html
+share/doc/xmlenc/org/znerd/xmlenc/package-tree.html
+share/doc/xmlenc/org/znerd/xmlenc/package-frame.html
+share/doc/xmlenc/org/znerd/xmlenc/SevenBitXMLEncoder.html
+share/doc/xmlenc/org/znerd/xmlenc/UnicodeXMLEncoder.html
+share/doc/xmlenc/org/znerd/xmlenc/XMLEncoder.html
+share/doc/xmlenc/serialized-form.html
+share/doc/xmlenc/packages.html
+share/doc/xmlenc/package-list
+share/doc/xmlenc/overview-tree.html
+share/doc/xmlenc/index.html
+share/doc/xmlenc/index-all.html
+share/doc/xmlenc/help-doc.html
+share/doc/xmlenc/deprecated-list.html
+share/doc/xmlenc/stylesheet.css
+share/doc/xmlenc/allclasses-frame.html
+share/java/classes/xmlenc.jar
+@dirrm share/doc/xmlenc/org/znerd/xmlenc/class-use
+@dirrm share/doc/xmlenc/org/znerd/xmlenc
+@dirrm share/doc/xmlenc/org/znerd
+@dirrm share/doc/xmlenc/org
+@dirrm share/doc/xmlenc
