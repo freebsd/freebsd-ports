@@ -1,0 +1,11 @@
+share/java/mindterm/CHANGES
+share/java/mindterm/COPYING
+share/java/mindterm/FAQ
+share/java/mindterm/FEATURES
+share/java/mindterm/PLATFORMS
+share/java/mindterm/TODO
+share/java/mindterm/mindterm.jar
+share/java/mindterm/mindterm-ssh.html
+@dirrm share/java/mindterm
+@unexec rmdir %D/share/java || true
+
