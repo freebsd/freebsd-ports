@@ -374,6 +374,7 @@
     SUBDIR += p5-Algorithm-Permute
     SUBDIR += p5-Alias
     SUBDIR += p5-AppConfig
+    SUBDIR += p5-AppConfig-Std
     SUBDIR += p5-B-Graph
     SUBDIR += p5-BSD-Resource
     SUBDIR += p5-BSD-stat

@@ -1,0 +1,9 @@
+AppConfig::Std is a Perl module that provides a set of standard
+configuration variables and command-line switches.  It is implemented
+as a subclass of AppConfig; AppConfig provides a general mechanism for
+handling global configuration variables.
+
+WWW: http://search.cpan.org/search?dist=AppConfig-Std
+
+- Kimura Fuyuki
+fuyuki@hadaly.org
