@@ -1,5 +1,5 @@
 --- sysdeps/freebsd/procmap.c.orig	Mon Nov 26 17:37:59 2001
-+++ sysdeps/freebsd/procmap.c	Fri Nov  1 18:48:52 2002
++++ sysdeps/freebsd/procmap.c	Thu Nov  7 18:33:32 2002
 @@ -33,7 +33,11 @@
  #include <sys/proc.h>
  #include <sys/resource.h>
@@ -35,7 +35,7 @@
  		      (char *) &vmspace, sizeof (vmspace)) != sizeof (vmspace))
  		glibtop_error_io_r (server, "kvm_read (vmspace)");
  
-@@ -244,18 +253,23 @@
+@@ -244,6 +253,15 @@
  			      &vnode, sizeof (vnode)) != sizeof (vnode))
  			glibtop_error_io_r (server, "kvm_read (vnode)");
  
@@ -49,18 +49,20 @@
 +		}
 +#else
  		if ((vnode.v_type != VREG) || (vnode.v_tag != VT_UFS) ||
-+#endif
  		    !vnode.v_data) continue;
  
- 		if (kvm_read (server->machine.kd,
- 			      (unsigned long) vnode.v_data,
+@@ -252,13 +270,9 @@
  			      &inode, sizeof (inode)) != sizeof (inode))
  			glibtop_error_io_r (server, "kvm_read (inode)");
--
+ 
 -		if (kvm_read (server->machine.kd,
 -			      (unsigned long) vnode.v_mount,
 -			      &mount, sizeof (mount)) != sizeof (mount))
 -			glibtop_error_io_r (server, "kvm_read (mount)");
- 
+-
  		maps [i-1].inode  = inode.i_number;
  		maps [i-1].device = inode.i_dev;
++#endif
+ #endif
+ 	} while (entry.next != first);
+ 
