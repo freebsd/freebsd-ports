@@ -6,14 +6,13 @@
 #
 
 PORTNAME=	smarty
-PORTVERSION=	2.6.2
-PORTREVISION=	1
+PORTVERSION=	2.6.3
 CATEGORIES=	www
 MASTER_SITES=	http://smarty.php.net/distributions/ \
 		http://smarty.php.net/distributions/manual/en/:manual
 DISTFILES=	Smarty-${PORTVERSION}${EXTRACT_SUFX}
 .if !defined(NOPORTDOCS)
-DISTFILES+=	Smarty-2.6.2-docs${EXTRACT_SUFX}:manual
+DISTFILES+=	Smarty-${PORTVERSION}-docs${EXTRACT_SUFX}:manual
 .endif
 
 MAINTAINER=	zaa@ulstu.ru
