@@ -2,12 +2,13 @@
 # Date created:        22 July 2002
 # Whom:                Yukihiro Nakai <nakai@FreeBSD.org>
 #
-# $Id: Makefile,v 1.16 2004/12/10 07:09:02 tmclau02 Exp $
+# $Id: Makefile,v 1.17 2005/01/09 23:53:24 mezz7 Exp $
 # $FreeBSD$
 #
 
 PORTNAME=	mono
 PORTVERSION=	1.0.5
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://www.go-mono.com/archive/${PORTVERSION}/
 
@@ -48,5 +49,8 @@ IGNORE=	"Does not work on 5.X before 503000"
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%X11BASE%%|${X11BASE}|g' \
 		${WRKSRC}/mono/metadata/assembly.c
+
+pre-su-install:
+	${MKDIR} ${X11BASE}/lib/mono/gac
 
 .include <bsd.port.post.mk>
