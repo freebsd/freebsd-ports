@@ -1,3 +1,8 @@
 #!/bin/sh
 
+if [ -z "${CHARSET}" ]; then
+	CHARSET=iso-8859-1
+	export CHARSET
+fi
+
 exec %%PREFIX%%/apps/ROX-Filer/AppRun "$@"
