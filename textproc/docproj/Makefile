@@ -31,7 +31,7 @@ RUN_DEPENDS=	instant:${PORTSDIR}/textproc/sgmlformat \
 		${PREFIX}/bin/scr2png:${PORTSDIR}/graphics/scr2png \
 		${PREFIX}/bin/scr2txt:${PORTSDIR}/textproc/scr2txt
 
-.if defined(WITH_OPENJADE) || ${MACHINE_ARCH} == "alpha"
+.if defined(WITH_OPENJADE) || ${MACHINE_ARCH} != "i386"
 RUN_DEPENDS+=	openjade:${PORTSDIR}/textproc/openjade
 .else
 RUN_DEPENDS+=	jade:${PORTSDIR}/textproc/jade

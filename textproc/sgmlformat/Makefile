@@ -19,7 +19,7 @@ MAINTAINER=	kuriyama@FreeBSD.org
 
 .include <bsd.port.pre.mk>
 
-.if ${MACHINE_ARCH} == "alpha"
+.if ${MACHINE_ARCH} != "i386"
 WITH_OPENJADE=	yes
 .endif
 
