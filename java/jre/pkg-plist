@@ -41,9 +41,7 @@ jre%%JRE_VERSION%%/lib/i386/green_threads/libjpeg.so
 jre%%JRE_VERSION%%/lib/i386/green_threads/libmath.so
 jre%%JRE_VERSION%%/lib/i386/green_threads/libmmedia.so
 jre%%JRE_VERSION%%/lib/i386/green_threads/libnet.so
-jre%%JRE_VERSION%%/lib/i386/green_threads/libshujit.so
 jre%%JRE_VERSION%%/lib/i386/green_threads/libsysresource.so
-jre%%JRE_VERSION%%/lib/i386/green_threads/libtya.so
 jre%%JRE_VERSION%%/lib/i386/green_threads/libzip.so
 jre%%JRE_VERSION%%/lib/psfont.properties.ja
 jre%%JRE_VERSION%%/lib/rt.jar
