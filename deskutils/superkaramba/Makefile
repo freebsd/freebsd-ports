@@ -33,8 +33,6 @@ USE_REINPLACE=		yes
 
 CONFIGURE_ARGS+=	--with-pythondir=${PYTHON_INCLUDEDIR}
 
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
-
 pre-everything::
 .if !defined(WITH_XMMS)
 	@${ECHO_MSG} "You can enable XMMS support by defining WITH_XMMS."
@@ -44,8 +42,7 @@ pre-everything::
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-O2 ||g' ${WRKSRC}/${CONFIGURE_SCRIPT}
+	@${REINPLACE_CMD} -e 's|-O2 ||g; s|-lpthread|${PTHREAD_LIBS}|g' \
+		${WRKSRC}/${CONFIGURE_SCRIPT}
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/x11/kde3/Makefile.kde"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
