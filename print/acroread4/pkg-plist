@@ -1,68 +1,75 @@
-Acrobat3/Browsers/netscape
-Acrobat3/Browsers/intellinux/nppdf.so
-Acrobat3/Fonts/AcroRead.upr
-Acrobat3/Fonts/AdobeSansMM
-Acrobat3/Fonts/AdobeSansMM.MMM
-Acrobat3/Fonts/AdobeSerifMM
-Acrobat3/Fonts/AdobeSerifMM.MMM
-Acrobat3/Fonts/Courier
-Acrobat3/Fonts/Courier-Bold
-Acrobat3/Fonts/Courier-BoldOblique
-Acrobat3/Fonts/Courier-Oblique
-Acrobat3/Fonts/Helvetica
-Acrobat3/Fonts/Helvetica-Bold
-Acrobat3/Fonts/Helvetica-BoldOblique
-Acrobat3/Fonts/Helvetica-Oblique
-Acrobat3/Fonts/Symbol
-Acrobat3/Fonts/Times-Bold
-Acrobat3/Fonts/Times-BoldItalic
-Acrobat3/Fonts/Times-Italic
-Acrobat3/Fonts/Times-Roman
-Acrobat3/Fonts/ZapfDingbats
-Acrobat3/Reader/AcroVersion
-Acrobat3/Reader/Acrobat.pdf
-Acrobat3/Reader/License.pdf
-Acrobat3/Reader/MapTypes.pdf
-Acrobat3/Reader/ReadMe
-Acrobat3/Reader/ReadMe302
-Acrobat3/Reader/help/reader.pdf
-Acrobat3/Reader/intellinux/app-defaults/AcroRead
-Acrobat3/Reader/intellinux/bin/acroread
-Acrobat3/Reader/intellinux/lib/XKeysymDB
-Acrobat3/Reader/intellinux/lib/libagm.so
-Acrobat3/Reader/intellinux/lib/libagm.so.2.0
-Acrobat3/Reader/intellinux/lib/libpfs.so
-Acrobat3/Reader/intellinux/lib/libpfs.so.2.5
-Acrobat3/Reader/intellinux/lib/libreadcore.so
-Acrobat3/Reader/intellinux/lib/libreadcore.so.3.0
-Acrobat3/Reader/intellinux/plug_ins/AFString.js
-Acrobat3/Reader/intellinux/plug_ins/AForm.js
-Acrobat3/Reader/intellinux/plug_ins/AcroForm.api
-Acrobat3/Reader/intellinux/plug_ins/Highlight.api
-Acrobat3/Reader/intellinux/plug_ins/ewh.api
-Acrobat3/Reader/intellinux/plug_ins/wwwlink.api
-Acrobat3/Reader/res/splashScreen11R.xbm
-Acrobat3/Reader/res/splashScreen18R.xpm
-Acrobat3/Reader/res/splashScreen21.xbm
-Acrobat3/Reader/res/splashScreen28.xpm
-Acrobat3/bin/acroread
-bin/acroread
-@exec ln -sf ../../Fonts %D/Acrobat3/Reader/intellinux/fonts
-@unexec rm -f %D/Acrobat3/Reader/intellinux/fonts
-@exec ln -sf ../../res %D/Acrobat3/Reader/intellinux/res
-@unexec rm -f %D/Acrobat3/Reader/intellinux/res
+Acrobat4/Browsers/netscape
+Acrobat4/Browsers/intellinux/nppdf.so
+Acrobat4/Resource/Font/Arial
+Acrobat4/Resource/Font/Arial-Bold
+Acrobat4/Resource/Font/Arial-BoldItalic
+Acrobat4/Resource/Font/Arial-Italic
+Acrobat4/Resource/Font/Fonts14.upr
+Acrobat4/Resource/Font/TimesNewRoman
+Acrobat4/Resource/Font/TimesNewRoman-Bold
+Acrobat4/Resource/Font/TimesNewRoman-BoldItalic
+Acrobat4/Resource/Font/TimesNewRoman-Italic
+Acrobat4/Resource/Font/AdobeSansMM
+Acrobat4/Resource/Font/AdobeSansMM.MMM
+Acrobat4/Resource/Font/AdobeSerifMM
+Acrobat4/Resource/Font/AdobeSerifMM.MMM
+Acrobat4/Resource/Font/Courier
+Acrobat4/Resource/Font/Courier-Bold
+Acrobat4/Resource/Font/Courier-BoldOblique
+Acrobat4/Resource/Font/Courier-Oblique
+Acrobat4/Resource/Font/Symbol
+Acrobat4/Resource/Font/ZapfDingbats
+Acrobat4/Reader/AcroVersion
+Acrobat4/Reader/Acrobat.pdf
+Acrobat4/Reader/License.pdf
+Acrobat4/Reader/MapTypes.pdf
+Acrobat4/Reader/ReadMe
+Acrobat4/Reader/help/reader.pdf
+Acrobat4/Reader/intellinux/app-defaults/AcroRead
+Acrobat4/Reader/intellinux/bin/acroread
+Acrobat4/Reader/intellinux/lib/XKeysymDB
+Acrobat4/Reader/intellinux/lib/libAGM.so
+Acrobat4/Reader/intellinux/lib/libAGM.so.3.0
+Acrobat4/Reader/intellinux/lib/libCoolType.so
+Acrobat4/Reader/intellinux/lib/libCoolType.so.1.0
+Acrobat4/Reader/intellinux/lib/libICC.so
+Acrobat4/Reader/intellinux/lib/libICC.so.1.0
+Acrobat4/Reader/intellinux/lib/libreadcore.so
+Acrobat4/Reader/intellinux/lib/libreadcore.so.4.0
+Acrobat4/Reader/intellinux/optional/ConfigSuite.api
+Acrobat4/Reader/intellinux/optional/Exerciser.api
+Acrobat4/Reader/intellinux/optional/GeneralSuite.api
+Acrobat4/Reader/intellinux/optional/MiscSuite.api
+Acrobat4/Reader/intellinux/plug_ins/AFString.js
+Acrobat4/Reader/intellinux/plug_ins/AForm.js
+Acrobat4/Reader/intellinux/plug_ins/AcroForm.api
+Acrobat4/Reader/intellinux/plug_ins/Highlight.api
+Acrobat4/Reader/intellinux/plug_ins/ewh.api
+Acrobat4/Reader/intellinux/plug_ins/wwwlink.api
+Acrobat4/Reader/res/splashScreen11R.xbm
+Acrobat4/Reader/res/splashScreen18R.xpm
+Acrobat4/Reader/res/splashScreen21.xbm
+Acrobat4/Reader/res/splashScreen28.xpm
+Acrobat4/bin/acroread
+bin/acroread4
+@exec ln -sf ../../Resource/Font/ %D/Acrobat4/Reader/intellinux/fonts
+@unexec rm -f %D/Acrobat4/Reader/intellinux/fonts
+@exec ln -sf ../../res %D/Acrobat4/Reader/intellinux/res
+@unexec rm -f %D/Acrobat4/Reader/intellinux/res
 @exec echo "Be sure to read the license agreement in"
-@exec echo "%D/Acrobat3/Reader/License.pdf"
-@dirrm Acrobat3/bin
-@dirrm Acrobat3/Reader/res
-@dirrm Acrobat3/Reader/intellinux/plug_ins
-@dirrm Acrobat3/Reader/intellinux/lib
-@dirrm Acrobat3/Reader/intellinux/bin
-@dirrm Acrobat3/Reader/intellinux/app-defaults
-@dirrm Acrobat3/Reader/intellinux
-@dirrm Acrobat3/Reader/help
-@dirrm Acrobat3/Reader
-@dirrm Acrobat3/Fonts
-@dirrm Acrobat3/Browsers/intellinux
-@dirrm Acrobat3/Browsers
-@dirrm Acrobat3
+@exec echo "%D/Acrobat4/Reader/License.pdf"
+@dirrm Acrobat4/bin
+@dirrm Acrobat4/Reader/res
+@dirrm Acrobat4/Reader/intellinux/optional
+@dirrm Acrobat4/Reader/intellinux/plug_ins
+@dirrm Acrobat4/Reader/intellinux/lib
+@dirrm Acrobat4/Reader/intellinux/bin
+@dirrm Acrobat4/Reader/intellinux/app-defaults
+@dirrm Acrobat4/Reader/intellinux
+@dirrm Acrobat4/Reader/help
+@dirrm Acrobat4/Reader
+@dirrm Acrobat4/Resource/Font
+@dirrm Acrobat4/Resource
+@dirrm Acrobat4/Browsers/intellinux
+@dirrm Acrobat4/Browsers
+@dirrm Acrobat4
