@@ -1738,6 +1738,7 @@ frabs		ports/games/frabs
 fractorama	ports/graphics/fractorama
 fragroute	ports/security/fragroute
 fragrouter	ports/security/fragrouter
+frantk		ports/x11-toolkits/frantk
 freebirth	ports/audio/freebirth
 freebsd-uucp	ports/net/freebsd-uucp
 freecell-solver	ports/games/freecell-solver
