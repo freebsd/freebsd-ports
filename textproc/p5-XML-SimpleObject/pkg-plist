@@ -1,6 +1,8 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/SimpleObject/.packlist
 %%SITE_PERL%%/XML/SimpleObject.pm
+%%SITE_PERL%%/XML/SimpleObject/Enhanced.pm
 %%SITE_PERL%%/XML/ex.pl
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/SimpleObject
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/SimpleObject 2>/dev/null || true
 @unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/XML/SimpleObject 2>/dev/null || true
 @unexec rmdir %D/%%SITE_PERL%%/XML 2>/dev/null || true
