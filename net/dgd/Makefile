@@ -63,7 +63,7 @@ ${_PATCH_COOKIE}: ${PATCHLIST}
 	fi
 	@touch -f ${_PATCH_COOKIE};
 
-install: all
+install: build
 	@chown -R mud.mud ${WRKDIR}/dgd
 	@tar -C ${WRKDIR} -cf - `grep '^dgd/' pkg/PLIST` \
 		| tar -C /usr/local -xpf -

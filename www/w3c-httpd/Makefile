@@ -3,7 +3,7 @@
 # Date created:		29 October 1994
 # Whom:			pst
 #
-# $Id: Makefile,v 1.2 1995/04/01 12:47:46 jkh Exp $
+# $Id: Makefile,v 1.3 1995/04/15 05:41:21 asami Exp $
 #
 
 DISTNAME=	WWW
@@ -14,7 +14,7 @@ CATEGORIES+=	networking
 
 WWW_ROOT=	${PREFIX}/www
 
-install:
+install: build
 	-mkdir ${WWW_ROOT} \
 	       ${WWW_ROOT}/data ${WWW_ROOT}/cgi-bin ${WWW_ROOT}/htbin
 	cd ${WRKSRC}/server_root; pax -rw * ${WWW_ROOT}
