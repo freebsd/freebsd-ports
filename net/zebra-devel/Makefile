@@ -17,7 +17,7 @@ MASTER_SITES=	ftp://ftp.zebra.org/pub/zebra/ \
 		ftp://ftp.crc.ca/pub/packages/network/zebra/ \
 		ftp://ftp.pop-pr.rnp.br/pub/GNU/ftp.zebra.org/zebra/
 
-MAINTAINER=	andreas_and_joe@tao.org.uk
+MAINTAINER=	joe@tao.org.uk
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--sysconfdir=${PREFIX}/etc/zebra
