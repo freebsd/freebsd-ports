@@ -1,4 +1,4 @@
-# New ports collection makefile for:    blender-static
+# New ports collection makefile for:    blender
 # Date created:         14 November 2000
 # Whom:                 Jimmy Olgeni <olgeni@uli.it>
 #
@@ -13,17 +13,28 @@ DISTNAME=	blender${PORTVERSION}-freebsd-3.4-i386-static
 
 MAINTAINER=	olgeni@FreeBSD.org
 
-NO_CDROM=	"Commercial distribution prohibited"
-
 USE_X_PREFIX=	YES
-
-do-build:
-	@echo "This is an install only port."
+NO_CDROM=	"Commercial distribution prohibited"
+NO_BUILD=	YES
+ONLY_FOR_ARCHS=	i386
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/blender ${PREFIX}/bin
 	${MKDIR} ${PREFIX}/share/doc/blender
+	${MKDIR} ${PREFIX}/lib/blender/plugins/texture \
+		${PREFIX}/lib/blender/plugins/sequence
+.for SEQ in blur.so scatter.so showzbuf.so
+	${INSTALL_PROGRAM} ${WRKSRC}/plugins/sequence/${SEQ} \
+		${PREFIX}/lib/blender/plugins/sequence
+.endfor
+.for TEXT in clouds2.so tiles.so
+	${INSTALL_PROGRAM} ${WRKSRC}/plugins/texture/${TEXT} \
+		${PREFIX}/lib/blender/plugins/texture
+.endfor
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${PREFIX}/share/doc/blender
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/blender
 	${INSTALL_DATA} ${WRKSRC}/copyright.txt ${PREFIX}/share/doc/blender
+.endif
 
 .include <bsd.port.mk>
