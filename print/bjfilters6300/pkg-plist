@@ -1,0 +1,16 @@
+bin/bjs6300ps
+bin/bjs6300raw
+libexec/bjfilters6300/filters6300
+libexec/bjfilters6300/filters6300_gui
+libexec/bjfilters6300/setup
+libexec/bjfilters6300/scripts/en.lc
+libexec/bjfilters6300/scripts/ja.lc
+@dirrm libexec/bjfilters6300/scripts
+@dirrm libexec/bjfilters6300
+@cwd /compat/linux
+usr/lib/bjlib/cnb_1130.tbl
+usr/lib/libcnbpo113.so
+usr/lib/libcnbpo113.so.1.0.0
+@dirrm usr/lib/bjlib
+@exec /compat/linux/sbin/ldconfig ; true
+@unexec /compat/linux/sbin/ldconfig ; true
