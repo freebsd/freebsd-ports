@@ -8,8 +8,8 @@
 PORTNAME=	gnupg-idea
 PORTVERSION=	1.0.3
 CATEGORIES=	security
-MASTER_SITES=	ftp://ftp.gnupg.org/pub/gcrypt/%SUBDIR%/ \
-		http://www.gnupg.dk/contrib-dk/ \
+MASTER_SITES=	ftp://ftp.gnupg.org/gcrypt/%SUBDIR%/ \
+		http://www.gnupg.dk/contrib-dk/:idea \
 		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/gnupg/&,}
 MASTER_SITE_SUBDIR=	contrib
 DISTFILES=	# later
@@ -41,7 +41,7 @@ pre-fetch:
 
 .if ${USA_RESIDENT} == NO || defined(MAKE_IDEA)
 CONTRIB=	idea rsa
-DISTFILES=	idea.c.gz rsa.c
+DISTFILES=	idea.c.gz:idea rsa.c
 EXTRACT_ONLY=	idea.c.gz
 .else
 CONTRIB=	rsa
