@@ -7,7 +7,8 @@
 PORTNAME=	gchempaint
 PORTVERSION=	0.3.5
 CATEGORIES=	science
-MASTER_SITES=	http://savannah.nongnu.org/download/gchempaint/unstable.pkg/${PORTVERSION}/
+MASTER_SITES=	${MASTER_SITE_SAVANNAH}
+MASTER_SITE_SUBDIR=	${PORTNAME}/unstable.pkg/${PORTVERSION}
 
 MAINTAINER=	pav@oook.cz
 COMMENT=	2D chemical structures editor for GNOME 2

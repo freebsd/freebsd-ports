@@ -9,7 +9,8 @@ PORTNAME=	ifile
 PORTVERSION=	1.3.2
 PORTREVISION=	1
 CATEGORIES=	mail textproc
-MASTER_SITES=	http://savannah.nongnu.org/download/ifile/default.pkg/${PORTVERSION}/
+MASTER_SITES=	${MASTER_SITE_SAVANNAH}
+MASTER_SITE_SUBDIR=	${PORTNAME}/default.pkg/${PORTVERSION}
 
 MAINTAINER=	david+ports@bushong.net
 COMMENT=	An application of machine learning to e-mail filtering

@@ -9,7 +9,8 @@ PORTNAME=	avr-libc
 PORTVERSION=	2003.09.09
 CATEGORIES=	devel
 # Currently still snapshots, not yet officially released again.
-#MASTER_SITES=	http://savannah.nongnu.org/download/avr-libc/
+#MASTER_SITES=	${MASTER_SITE_SAVANNAH}
+#MASTER_SITE_SUBDIR=	${PORTNAME}
 MASTER_SITES=	http://people.freebsd.org/~joerg/
 
 MAINTAINER=	joerg@freebsd.org

@@ -10,8 +10,9 @@ PORTNAME=	MuSE
 PORTVERSION=	0.8.1
 PORTREVISION=	1
 CATEGORIES=	audio
-MASTER_SITES=	http://savannah.nongnu.org/download/muse/ \
+MASTER_SITES=	${MASTER_SITE_SAVANNAH} \
 		http://muse.dyne.org/releases/
+MASTER_SITE_SUBDIR=	muse
 DISTNAME=	MuSE-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org

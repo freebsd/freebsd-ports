@@ -9,7 +9,8 @@
 PORTNAME=	bobot++
 PORTVERSION=	1.99.2
 CATEGORIES=	irc
-MASTER_SITES=	http://savannah.nongnu.org/download/bobotpp/stable.pkg/${PORTVERSION}/
+MASTER_SITES=	${MASTER_SITE_SAVANNAH}
+MASTER_SITE_SUBDIR=	bobotpp/stable.pkg/${PORTVERSION}
 DISTNAME=	Bobot++-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org

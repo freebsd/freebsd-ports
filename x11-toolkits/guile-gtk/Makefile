@@ -8,7 +8,8 @@
 PORTNAME=	guile-gtk
 PORTVERSION=	0.31
 CATEGORIES=	x11-toolkits scheme
-MASTER_SITES=	http://savannah.nongnu.org/download/guile-gtk/
+MASTER_SITES=	${MASTER_SITE_SAVANNAH}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME}-1.2-${PORTVERSION}
 
 MAINTAINER=	gnome@FreeBSD.org

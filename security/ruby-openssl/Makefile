@@ -8,7 +8,8 @@
 PORTNAME=	openssl
 PORTVERSION=	0.2.0.p2
 CATEGORIES=	security ruby
-MASTER_SITES=	http://savannah.nongnu.org/download/rubypki/
+MASTER_SITES=	${MASTER_SITE_SAVANNAH}
+MASTER_SITE_SUBDIR=	rubypki
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	ossl-${PORTVERSION:S/.p/-pre/}
 EXTRACT_SUFX=	.tgz

@@ -8,7 +8,8 @@
 PORTNAME=	spamass-milter
 PORTVERSION=	0.2.0
 CATEGORIES=	mail
-MASTER_SITES=	http://savannah.nongnu.org/download/spamass-milt/
+MASTER_SITES=	${MASTER_SITE_SAVANNAH}
+MASTER_SITE_SUBDIR=	spamass-milt
 
 MAINTAINER=	ab@astralblue.net
 COMMENT=	Sendmail Milter (mail filter) for SpamAssassin

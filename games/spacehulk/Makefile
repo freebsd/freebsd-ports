@@ -8,7 +8,8 @@ PORTNAME=	spacehulk
 PORTVERSION=	1.4.5
 PORTREVISION=	1
 CATEGORIES=	games kde
-MASTER_SITES=	http://savannah.nongnu.org/download/${PORTNAME}/main.pkg/${PORTVERSION}/
+MASTER_SITES=	${MASTER_SITE_SAVANNAH}
+MASTER_SITE_SUBDIR=	${PORTNAME}/main.pkg/${PORTVERSION}
 
 MAINTAINER=	krion@FreeBSD.org
 COMMENT=	Science-fiction board game in the world of Warhammer 40000

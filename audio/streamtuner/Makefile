@@ -8,7 +8,8 @@
 PORTNAME=		streamtuner
 PORTVERSION=		0.10.1
 CATEGORIES=		audio www
-MASTER_SITES=		http://savannah.nongnu.org/download/streamtuner/streamtuner.pkg/${PORTVERSION}/
+MASTER_SITES=		${MASTER_SITE_SAVANNAH}
+MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTNAME}.pkg/${PORTVERSION}
 
 MAINTAINER=		jylefort@brutele.be
 COMMENT=		A GTK+ stream directory browser

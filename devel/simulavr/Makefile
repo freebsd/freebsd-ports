@@ -8,7 +8,8 @@
 PORTNAME=	simulavr
 PORTVERSION=	0.1.1
 CATEGORIES=	devel
-MASTER_SITES=	http://savannah.nongnu.org/download/simulavr/
+MASTER_SITES=	${MASTER_SITE_SAVANNAH}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	joerg@FreeBSD.org
 COMMENT=	A simulator for AVR microcontrollers

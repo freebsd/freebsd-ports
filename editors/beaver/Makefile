@@ -9,7 +9,8 @@ PORTNAME=		beaver
 PORTVERSION=		0.3.1
 PORTREVISION=		1
 CATEGORIES=		editors
-MASTER_SITES=		http://savannah.nongnu.org/download/beaver/
+MASTER_SITES=		${MASTER_SITE_SAVANNAH}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=		jylefort@brutele.be
 COMMENT=		A programmer's text editor for GTK+ 2.0

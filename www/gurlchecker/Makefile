@@ -8,7 +8,8 @@
 PORTNAME=	gurlchecker
 PORTVERSION=	0.6.2
 CATEGORIES=	www gnome
-MASTER_SITES=	http://savannah.nongnu.org/download/gurlchecker/stable/0.6/
+MASTER_SITES=	${MASTER_SITE_SAVANNAH}
+MASTER_SITE_SUBDIR=	${PORTNAME}/stable/0.6
 
 MAINTAINER=	einekoai@chello.nl
 COMMENT=	A Gnome program to check a page/website for broken links

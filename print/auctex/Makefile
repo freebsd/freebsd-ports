@@ -8,9 +8,10 @@
 PORTNAME=		auctex
 PORTVERSION=		11.13
 CATEGORIES=		print elisp
-MASTER_SITES=		http://savannah.nongnu.org/download/auctex/stable.pkg/${PORTVERSION}/ \
+MASTER_SITES=		${MASTER_SITE_SAVANNAH} \
 			http://wuarchive.wustl.edu/mirrors/gnu/auctex/ \
 			http://mirror.telentente.com/pub/gnu/auctex/
+MASTER_SITE_SUBDIR=	${PORTNAME}/stable.pkg/${PORTVERSION}
 
 MAINTAINER=		ports@FreeBSD.org
 COMMENT=	Integrated environment for writing LaTeX using GNU Emacs

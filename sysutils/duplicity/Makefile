@@ -8,7 +8,8 @@
 PORTNAME=	duplicity
 PORTVERSION=	0.4.0
 CATEGORIES=	sysutils
-MASTER_SITES=	http://savannah.nongnu.org/download/duplicity/
+MASTER_SITES=	${MASTER_SITE_SAVANNAH}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	gh@ghaering.de

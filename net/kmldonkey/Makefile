@@ -8,8 +8,8 @@
 PORTNAME=	kmldonkey
 PORTVERSION=	0.9.1
 CATEGORIES=	net kde
-MASTER_SITES=	http://savannah.nongnu.org/download/kmldonkey/unstable.pkg/%SUBDIR%/
-MASTER_SITE_SUBDIR=	${PORTVERSION}
+MASTER_SITES=	${MASTER_SITE_SAVANNAH}
+MASTER_SITE_SUBDIR=	${PORTNAME}/unstable.pkg/${PORTVERSION}
 
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	KDE integration for MLDonkey eDonkey P2P client
