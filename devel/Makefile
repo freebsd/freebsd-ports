@@ -18,6 +18,8 @@
     SUBDIR += boehm-gc
     SUBDIR += bonobo
     SUBDIR += bugbuddy
+    SUBDIR += c_c++_reference
+    SUBDIR += c_c++_reference-i18n
     SUBDIR += cccc
     SUBDIR += cdecl
     SUBDIR += cdk
