@@ -3,7 +3,7 @@
 # Date created:         17 Sep 96 
 # Whom:                 jmacd@cs.berkeley.edu
 #
-# $Id: Makefile,v 1.15 1998/10/13 23:09:20 jseger Exp $
+# $Id: Makefile,v 1.16 1998/11/11 02:03:40 asami Exp $
 #
 
 DISTNAME=       STk-3.1.1
@@ -14,6 +14,7 @@ MAINTAINER=	jmacd@FreeBSD.ORG
 
 BROKEN_ELF=	yes
 
+USE_XLIB=	yes
 PATCH_STRIP=      -p1
 GNU_CONFIGURE=	yes
 MAKE_FLAGS=  	"prefix=${PREFIX}" -f
