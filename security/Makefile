@@ -32,6 +32,7 @@
     SUBDIR += ddos_scan
     SUBDIR += digest
     SUBDIR += donkey
+    SUBDIR += drweb
     SUBDIR += dsniff
     SUBDIR += fakebo
     SUBDIR += find_ddos
