@@ -1,0 +1,4 @@
+The Digest::MD5::M4p module is cloned from the Digest::MD5 module
+to support a variant Apple iTunes implementation of the MD5 algorithm.
+
+WWW: http://search.cpan.org/dist/Digest-MD5-M4p/
