@@ -1,0 +1,12 @@
+*** webcopy.src.bak	Sat Jun  8 20:42:14 1996
+--- webcopy.src	Sun Jan 25 01:04:21 1998
+***************
+*** 474,480 ****
+      }
+      socket(S,&PF_INET,&SOCK_STREAM,$local_prot) || die "$0: socket: $!\n"; #P4
+      socket(S,PF_INET,SOCK_STREAM,$local_prot) || die "$0: socket: $!\n"; #P5
+-     bind(S,$local_sock) || die "$0: bind: $!\n";
+      connect(S,$remote_sock) || return(901,"$!",0);
+      $_=select(S); $|=1; select($_);
+      if ($verbose>3) {
+--- 474,479 ----
