@@ -44,4 +44,7 @@ pre-configure:
 	@cd ${WRKSRC} && ${TOUCH} NEWS README AUTHORS ChangeLog
 	@cd ${WRKSRC}/ac-helpers && ${RM} -f install-sh mkinstalldirs missing
 
+post-install:
+	@${CAT} ${PKGMESSAGE}
+
 .include <bsd.port.mk>
