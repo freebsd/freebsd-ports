@@ -1,0 +1,11 @@
+--- configure.orig	Thu Apr  8 04:19:41 2004
++++ configure	Sat Jun 12 16:07:07 2004
+@@ -9619,6 +9619,8 @@
+ 
+ fi
+ 
++CFLAGS="$X_CFLAGS $CFLAGS"
++CPPFLAGS="$X_CFLAGS $CPPFLAGS"
+ 
+ if test x"$have_x" = xyes; then
+ 
