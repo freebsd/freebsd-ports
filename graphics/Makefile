@@ -311,6 +311,7 @@
     SUBDIR += pngcheck
     SUBDIR += pngcrush
     SUBDIR += pngquant
+    SUBDIR += pngrewrite
     SUBDIR += pngwriter
     SUBDIR += pornview
     SUBDIR += potrace
