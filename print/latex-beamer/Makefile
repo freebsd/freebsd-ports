@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	latex-beamer
-PORTVERSION=	2.01
+PORTVERSION=	2.10
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -21,7 +21,7 @@ RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX \
 		${TEXMFLOCAL_LSR}:${PORTSDIR}/print/tex-texmflocal
 
 NO_BUILD=	YES
-PLIST_SUB=	MKTEXLSR=${MKTEXLSR} CLASSDIR=${CLASSDIR}
+PLIST=		${WRKDIR}/pkg-plist
 
 TEXMFLOCAL=	share/texmf-local
 TEXMFLOCAL_LSR=	${LOCALBASE}/${TEXMFLOCAL}/ls-R
@@ -29,127 +29,109 @@ MKTEXLSR=	${LOCALBASE}/bin/mktexlsr
 CLASSDIR=	${TEXMFLOCAL}/tex/latex/${PORTNAME:S/^latex-//}
 WRKSRC=		${WRKDIR}/${PORTNAME:S/^latex-//}
 
-CLASS_FILES=	art/beamericonarticle.eps
-CLASS_FILES+=	art/beamericonarticle.pdf
-CLASS_FILES+=	art/beamericonarticle.tex
-CLASS_FILES+=	art/beamericonarticle.20.eps
-CLASS_FILES+=	art/beamericonarticle.20.pdf
-CLASS_FILES+=	art/beamericonbook.eps
-CLASS_FILES+=	art/beamericonbook.pdf
-CLASS_FILES+=	art/beamericonbook.tex
-CLASS_FILES+=	art/beamericonbook.20.pdf
-CLASS_FILES+=	art/beamericonbook.20.eps
-CLASS_FILES+=	base/beamer.cls
-CLASS_FILES+=	base/beamerbasearticle.sty
-CLASS_FILES+=	base/beamerbaseboxes.sty
-CLASS_FILES+=	base/beamerbasecolor.sty
-CLASS_FILES+=	base/beamerbasecompatibility.sty
-CLASS_FILES+=	base/beamerbasedecode.sty
-CLASS_FILES+=	base/beamerbasefont.sty
-CLASS_FILES+=	base/beamerbaseframe.sty
-CLASS_FILES+=	base/beamerbaseframecomponents.sty
-CLASS_FILES+=	base/beamerbaselocalstructure.sty
-CLASS_FILES+=	base/beamerbasemodes.sty
-CLASS_FILES+=	base/beamerbasemisc.sty
-CLASS_FILES+=	base/beamerbasenotes.sty
-CLASS_FILES+=	base/beamerbasenavigation.sty
-CLASS_FILES+=	base/beamerbaseoverlay.sty
-CLASS_FILES+=	base/beamerbaseoptions.sty
-CLASS_FILES+=	base/beamerbasesection.sty
-CLASS_FILES+=	base/beamerbasetemplates.sty
-CLASS_FILES+=	base/beamerbasetitle.sty
-CLASS_FILES+=	base/beamerbasetoc.sty
-CLASS_FILES+=	themes/beamerthemebars.sty
-CLASS_FILES+=	themes/beamerthemeboxes.sty
-CLASS_FILES+=	themes/beamerthemeclassic.sty
-CLASS_FILES+=	themes/beamerthemelined.sty
-CLASS_FILES+=	themes/beamerthemeplain.sty
-CLASS_FILES+=	themes/beamerthemeshadow.sty
-CLASS_FILES+=	themes/beamerthemesidebardark.sty
-CLASS_FILES+=	themes/beamerthemesidebardarktab.sty
-CLASS_FILES+=	themes/beamerthemesidebar.sty
-CLASS_FILES+=	themes/beamerthemesidebartab.sty
-CLASS_FILES+=	themes/beamerthemesplit.sty
-CLASS_FILES+=	themes/beamerthemetreebars.sty
-CLASS_FILES+=	themes/beamerthemetree.sty
-CLASS_FILES+=	examples/beamerexample1.pdf
-CLASS_FILES+=	examples/beamerexample1.tex
-CLASS_FILES+=	examples/beamerexample2.article.pdf
-CLASS_FILES+=	examples/beamerexample2.article.tex
-CLASS_FILES+=	examples/beamerexample2.beamer.pdf
-CLASS_FILES+=	examples/beamerexample2.beamer.tex
-CLASS_FILES+=	examples/beamerexample3.pdf
-CLASS_FILES+=	examples/beamerexample3.tex
-CLASS_FILES+=	examples/beamerexample4.pdf
-CLASS_FILES+=	examples/beamerexample4.tex
-CLASS_FILES+=	examples/beamerexample5.pdf
-CLASS_FILES+=	examples/beamerexample5.tex
-CLASS_FILES+=	examples/beamerexample6.pdf
-CLASS_FILES+=	examples/beamerexample6.tex
-CLASS_FILES+=	examples/beamer-computer.jpg
-CLASS_FILES+=	examples/beamer-computerred.jpg
-CLASS_FILES+=	examples/beamer-computer-mask.jpg
-CLASS_FILES+=	examples/beamer-g4.jpg
-CLASS_FILES+=	examples/beamer-g4red.jpg
-CLASS_FILES+=	examples/beamer-g4-mask.jpg
-CLASS_FILES+=	examples/beamer-ram.jpg
-CLASS_FILES+=	examples/beamer-ram-mask.jpg
-CLASS_FILES+=	examples/beamer-tu-logo.jpg
-CLASS_FILES+=	examples/beamer-ur-logo.jpg
-CLASS_FILES+=	examples/beamer-tu-logo-mask.jpg
-CLASS_FILES+=	examples/beamer-ur-logo-mask.jpg
-CLASS_FILES+=	lyx/examples/beamerlyxexample1.lyx
-CLASS_FILES+=	lyx/examples/beamerlyxexample1.pdf
-CLASS_FILES+=	lyx/examples/beamer-icsi-logo.pdf
-CLASS_FILES+=	lyx/examples/beamer-knight1.png
-CLASS_FILES+=	lyx/examples/beamer-knight1-mask.png
-CLASS_FILES+=	lyx/examples/beamer-knight2.png
-CLASS_FILES+=	lyx/examples/beamer-knight2-mask.png
-CLASS_FILES+=	lyx/examples/beamer-knight3.png
-CLASS_FILES+=	lyx/examples/beamer-knight3-mask.png
-CLASS_FILES+=	lyx/examples/beamer-knight4.png
-CLASS_FILES+=	lyx/examples/beamer-knight4-mask.png
-CLASS_FILES+=	lyx/layouts/beamer.layout
-CLASS_FILES+=	lyx/templates/beamerpresentation.lyx
+CLASS_SUBDIRS=	art base emulation/examples emulation themes emacs examples \
+		lyx/examples lyx/layouts lyx/templates lyx
+CLASS_FILES=	art/beamericonarticle.eps art/beamericonarticle.pdf \
+		art/beamericonarticle.tex art/beamericonarticle.20.eps \
+		art/beamericonarticle.20.pdf art/beamericonbook.eps \
+		art/beamericonbook.pdf art/beamericonbook.tex \
+		art/beamericonbook.20.pdf art/beamericonbook.20.eps \
+		base/beamer.cls base/beamerbasearticle.sty \
+		base/beamerbaseboxes.sty base/beamerbasecolor.sty \
+		base/beamerbasecompatibility.sty base/beamerbasedecode.sty \
+		base/beamerbasefont.sty base/beamerbaseframe.sty \
+		base/beamerbaseframecomponents.sty base/beamerbaselocalstructure.sty \
+		base/beamerbasemodes.sty base/beamerbasemisc.sty \
+		base/beamerbasenotes.sty base/beamerbasenavigation.sty \
+		base/beamerbaseoverlay.sty base/beamerbaseoptions.sty \
+		base/beamerbasesection.sty base/beamerbasetemplates.sty \
+		base/beamerbasetheorems.sty base/beamerbasetitle.sty \
+		base/beamerbasetoc.sty \
+		emulation/beamerprosper.sty emulation/beamerseminar.sty \
+		emulation/examples/beamerexample-haprosper.pdf \
+		emulation/examples/beamerexample-haprosper.tex \
+		emulation/examples/beamerexample-seminar.pdf \
+		emulation/examples/beamerexample-seminar.tex \
+		themes/beamerthemebars.sty themes/beamerthemeboxes.sty \
+		themes/beamerthemeclassic.sty themes/beamerthemelined.sty \
+		themes/beamerthemeplain.sty themes/beamerthemeshadow.sty \
+		themes/beamerthemesidebardark.sty \
+		themes/beamerthemesidebardarktab.sty \
+		themes/beamerthemesidebar.sty themes/beamerthemesidebartab.sty \
+		themes/beamerthemesplit.sty themes/beamerthemetreebars.sty \
+		themes/beamerthemetree.sty emacs/beamer.el \
+		examples/beamerexample1.pdf examples/beamerexample1.tex \
+		examples/beamerexample2.article.pdf \
+		examples/beamerexample2.article.tex \
+		examples/beamerexample2.beamer.pdf \
+		examples/beamerexample2.beamer.tex examples/beamerexample2.tex \
+		examples/beamerexample3.pdf examples/beamerexample3.tex \
+		examples/beamerexample4.pdf examples/beamerexample4.tex \
+		examples/beamerexample5.pdf examples/beamerexample5.tex \
+		examples/beamerexample6.pdf examples/beamerexample6.tex \
+		examples/beamer-computer.jpg examples/beamer-computerred.jpg \
+		examples/beamer-computer-mask.jpg examples/beamer-g4.jpg \
+		examples/beamer-g4red.jpg examples/beamer-g4-mask.jpg \
+		examples/beamer-ram.jpg examples/beamer-ram-mask.jpg \
+		examples/beamer-tu-logo.jpg examples/beamer-ur-logo.jpg \
+		examples/beamer-tu-logo-mask.jpg examples/beamer-ur-logo-mask.jpg \
+		lyx/examples/beamerlyxexample1.lyx \
+		lyx/examples/beamerlyxexample1.pdf \
+		lyx/examples/beamer-icsi-logo.pdf \
+		lyx/examples/beamer-knight1.png \
+		lyx/examples/beamer-knight1-mask.png \
+		lyx/examples/beamer-knight2.png \
+		lyx/examples/beamer-knight2-mask.png \
+		lyx/examples/beamer-knight3.png \
+		lyx/examples/beamer-knight3-mask.png \
+		lyx/examples/beamer-knight4.png \
+		lyx/examples/beamer-knight4-mask.png \
+		lyx/layouts/beamer.layout \
+		lyx/templates/beamerpresentation.lyx
 
-DOC_FILES+=	AUTHORS ChangeLog FILES INSTALL
-DOC_FILES+=	README TODO
-DOC_FILES+=	doc/beameruserguide.pdf
-DOC_FILES+=	doc/beameruserguide.tex
-DOC_FILES+=	doc/themebars.pdf
-DOC_FILES+=	doc/themebars2.pdf
-DOC_FILES+=	doc/themeboxes.pdf
-DOC_FILES+=	doc/themeboxes2.pdf
-DOC_FILES+=	doc/themeclassic.pdf
-DOC_FILES+=	doc/themeclassic2.pdf
-DOC_FILES+=	doc/themelined.pdf
-DOC_FILES+=	doc/themelined2.pdf
-DOC_FILES+=	doc/themeplain.pdf
-DOC_FILES+=	doc/themeplain2.pdf
-DOC_FILES+=	doc/themeshadow.pdf
-DOC_FILES+=	doc/themeshadow2.pdf
-DOC_FILES+=	doc/themesidebar.pdf
-DOC_FILES+=	doc/themesidebar2.pdf
-DOC_FILES+=	doc/themesidebardark.pdf
-DOC_FILES+=	doc/themesidebardark2.pdf
-DOC_FILES+=	doc/themesidebardarktab.pdf
-DOC_FILES+=	doc/themesidebardarktab2.pdf
-DOC_FILES+=	doc/themesidebartab.pdf
-DOC_FILES+=	doc/themesidebartab2.pdf
-DOC_FILES+=	doc/themesplit.pdf
-DOC_FILES+=	doc/themesplit2.pdf
-DOC_FILES+=	doc/themesplitcondensed.pdf
-DOC_FILES+=	doc/themesplitcondensed2.pdf
-DOC_FILES+=	doc/themetree.pdf
-DOC_FILES+=	doc/themetree2.pdf
-DOC_FILES+=	doc/themetreebars.pdf
-DOC_FILES+=	doc/themetreebars2.pdf
+DOC_FILES+=	AUTHORS ChangeLog FILES INSTALL README TODO \
+		doc/beameruserguide.pdf doc/beameruserguide.tex \
+		doc/themebars.pdf doc/themebars2.pdf \
+		doc/themeboxes.pdf doc/themeboxes2.pdf \
+		doc/themeclassic.pdf doc/themeclassic2.pdf \
+		doc/themelined.pdf doc/themelined2.pdf \
+		doc/themeplain.pdf doc/themeplain2.pdf \
+		doc/themeshadow.pdf doc/themeshadow2.pdf \
+		doc/themesidebar.pdf doc/themesidebar2.pdf \
+		doc/themesidebardark.pdf doc/themesidebardark2.pdf \
+		doc/themesidebardarktab.pdf doc/themesidebardarktab2.pdf \
+		doc/themesidebartab.pdf doc/themesidebartab2.pdf \
+		doc/themesplit.pdf doc/themesplit2.pdf \
+		doc/themesplitcondensed.pdf doc/themesplitcondensed2.pdf \
+		doc/themetree.pdf doc/themetree2.pdf \
+		doc/themetreebars.pdf doc/themetreebars2.pdf
+
+pre-install:
+	${RM} -f ${PLIST}
+	${TOUCH} ${PLIST}
+.if !defined(NOPORTDOCS)
+	(for file in ${DOC_FILES}; do \
+		${ECHO_CMD} "${DOCSDIR:S,^${PREFIX}/,,}/$${file}"; \
+		done; \
+		${ECHO_CMD} "@dirrm ${DOCSDIR:S,^${PREFIX}/,,}/doc"; \
+		${ECHO_CMD} "@dirrm ${DOCSDIR:S,^${PREFIX}/,,}";) >> ${PLIST}
+.endif
+	(for file in ${CLASS_FILES}; do \
+		${ECHO_CMD} "${CLASSDIR}/$${file}"; \
+		done; \
+		for D in ${CLASS_SUBDIRS:S,^,/,g} "" ; do \
+			${ECHO_CMD} "@dirrm ${CLASSDIR}$${D}"; \
+		done; \
+		${ECHO_CMD} '@exec ${MKTEXLSR}'; \
+		${ECHO_CMD} '@unexec ${MKTEXLSR}' ) >> ${PLIST}
 
 do-install:
 	${MKDIR} ${PREFIX}/${CLASSDIR}
-.for D in art base themes examples lyx/examples lyx/layouts lyx/templates
+.for D in ${CLASS_SUBDIRS}
 	${MKDIR} ${PREFIX}/${CLASSDIR}/${D}
-	${INSTALL_DATA} ${CLASS_FILES:M${D}/*:S@^@${WRKSRC}/@} ${PREFIX}/${CLASSDIR}/${D}
+.if ${CLASS_FILES:M${D}/*:N${D}/*/*} != ""
+	${INSTALL_DATA} ${CLASS_FILES:M${D}/*:N${D}/*/*:S@^@${WRKSRC}/@} ${PREFIX}/${CLASSDIR}/${D}
+.endif
 .endfor
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
