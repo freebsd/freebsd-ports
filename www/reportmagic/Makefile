@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	reportmagic
-PORTVERSION=	2.10
+PORTVERSION=	2.13
 CATEGORIES=	www
 MASTER_SITES=	http://www.reportmagic.com/	\
 		http://www.reportmagic.org.uk/	\
