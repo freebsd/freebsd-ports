@@ -11,7 +11,7 @@ CATEGORIES=	deskutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	obraun@FreeBSD.org
 COMMENT=	Text-based contact management software
 
 USE_BISON=	yes
