@@ -27,6 +27,8 @@ ONLY_FOR_ARCHS=	i386
 # Recommended ONLY for benchmarks.
 # CFLAGS=-march=pentiumpro -O6 -finline-functions -fomit-frame-pointer -funroll-loops -fexpensive-optimizations -foptimize-register-move -ffast-math -fdefer-pop -mfancy-math-387
 
+.include <bsd.port.pre.mk>
+
 pre-fetch:
 .if !defined(WITH_THREADS)
 	@${ECHO_MSG} "set WITH_THREADS to compile with linuxthreads."
@@ -34,7 +36,11 @@ pre-fetch:
 MAKE_ENV+=	"USE_MT=no"
 .else
 MAKE_ENV+=	"USE_MT=yes"
+.if ${OSVERSION} >= 500035
+LIB_DEPENDS=	lthread.3:${PORTSDIR}/devel/linuxthreads
+.else
 LIB_DEPENDS=	lthread.2:${PORTSDIR}/devel/linuxthreads
+.endif
 .endif
 
 do-install:
@@ -49,4 +55,4 @@ do-install:
 		${PREFIX}/share/doc/gogo/cdda2mp3.gogo.ja
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
