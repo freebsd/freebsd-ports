@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.144 1998/06/04 02:38:32 mph Exp $
+# $Id: Makefile,v 1.145 1998/06/07 11:13:05 dburr Exp $
 #
 
     SUBDIR += 3dc
@@ -35,6 +35,7 @@
     SUBDIR += golddig
     SUBDIR += icbm3d
     SUBDIR += imaze
+    SUBDIR += ishido
     SUBDIR += jetpack
     SUBDIR += jzip
     SUBDIR += kdegames
