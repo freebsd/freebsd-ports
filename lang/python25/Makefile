@@ -3,7 +3,7 @@
 # Date created:         08 August 1995
 # Whom:                 jkh
 #
-# $Id: Makefile,v 1.4 1996/01/18 10:18:36 jkh Exp $
+# $Id: Makefile,v 1.5 1996/05/11 23:34:13 jkh Exp $
 #
 
 DISTNAME=       python1.3
@@ -21,7 +21,7 @@ WRKSRC=		${WRKDIR}/Python-1.3
 HAS_CONFIGURE=	yes
 
 MAKE_FLAGS+=	'OPT=${CFLAGS}'
-INSTALL_TARGET=	install libinstall maninstall
+INSTALL_TARGET=	install libinstall maninstall inclinstall
 
 post-configure:
 	cp ${FILESDIR}/Setup ${WRKSRC}/Modules
