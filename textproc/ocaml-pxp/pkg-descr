@@ -1,0 +1,21 @@
+PXP is a validating XML parser for OCaml. It strictly complies
+to the XML-1.0 standard.
+
+The parser is simple to call, usually only one statement (function
+call) is sufficient to parse an XML document and to represent it
+as object tree.
+
+Once the document is parsed, it can be accessed using a class
+interface. The interface allows arbitrary access including
+transformations. One of the features of the document representation
+is its polymorphic nature; it is simple to add custom methods to
+the document classes. Furthermore, the parser can be configured
+such that different XML elements are represented by objects created
+from different classes. This is a very powerful feature, because
+it simplifies the structure of programs processing XML documents.
+
+
+WWW: http://www.ocaml-programming.de/programming/pxp.html
+
+- Stephane Legrand
+  <stephane@freebsd.org>
