@@ -5,9 +5,11 @@ share/a2ps/ps/bw.pro
 share/a2ps/ps/bold.pro
 share/a2ps/ps/gray.pro
 share/a2ps/ps/color.pro
+share/a2ps/ps/fixed.pro
 share/a2ps/ps/gray2.pro
 share/a2ps/ps/matrix.pro
 share/a2ps/ps/diff.pro
+share/a2ps/ps/ul.pro
 share/a2ps/ps/base.ps
 share/a2ps/ps/ehandler.ps
 share/a2ps/ps/a2ps.hdr
@@ -46,6 +48,8 @@ share/a2ps/ogonkify/latin3.enc
 share/a2ps/ogonkify/latin4.enc
 share/a2ps/ogonkify/latin5.enc
 share/a2ps/ogonkify/latin6.enc
+share/a2ps/ogonkify/latin7.enc
+share/a2ps/ogonkify/latin9.enc
 share/a2ps/ogonkify/cp1250.enc
 share/a2ps/ogonkify/ogonki.enc
 share/a2ps/ogonkify/mac.enc
@@ -86,42 +90,62 @@ share/locale/sv/LC_MESSAGES/a2ps.mo
 share/locale/tr/LC_MESSAGES/a2ps.mo
 share/a2ps/sheets/sheets.map
 share/a2ps/sheets/ada.ssh
+share/a2ps/sheets/asn1.ssh
+share/a2ps/sheets/autoconf.ssh
+share/a2ps/sheets/awk.ssh
+share/a2ps/sheets/b.ssh
+share/a2ps/sheets/bc.ssh
 share/a2ps/sheets/c.ssh
 share/a2ps/sheets/caml.ssh
 share/a2ps/sheets/card.ssh
+share/a2ps/sheets/cidl.ssh
 share/a2ps/sheets/clisp.ssh
 share/a2ps/sheets/cpp.ssh
 share/a2ps/sheets/csh.ssh
+share/a2ps/sheets/cxx.ssh
 share/a2ps/sheets/dc_shell.ssh
 share/a2ps/sheets/eiffel.ssh
 share/a2ps/sheets/elisp.ssh
 share/a2ps/sheets/fortran.ssh
 share/a2ps/sheets/gnuc.ssh
+share/a2ps/sheets/haskell.ssh
 share/a2ps/sheets/html.ssh
 share/a2ps/sheets/java.ssh
+share/a2ps/sheets/js.ssh
 share/a2ps/sheets/lex.ssh
+share/a2ps/sheets/lout.ssh
 share/a2ps/sheets/mail.ssh
 share/a2ps/sheets/make.ssh
+share/a2ps/sheets/maple.ssh
+share/a2ps/sheets/mly.ssh
 share/a2ps/sheets/modula2.ssh
 share/a2ps/sheets/modula3.ssh
 share/a2ps/sheets/oberon.ssh
 share/a2ps/sheets/objc.ssh
+share/a2ps/sheets/ocaml.ssh
 share/a2ps/sheets/pascal.ssh
 share/a2ps/sheets/perl.ssh
+share/a2ps/sheets/pov.ssh
 share/a2ps/sheets/pre.ssh
 share/a2ps/sheets/pretex.ssh
 share/a2ps/sheets/scheme.ssh
+share/a2ps/sheets/sed.ssh
+share/a2ps/sheets/shell.ssh
+share/a2ps/sheets/sml.ssh
 share/a2ps/sheets/ssh.ssh
 share/a2ps/sheets/symbols.ssh
 share/a2ps/sheets/tcl.ssh
 share/a2ps/sheets/tclx.ssh
 share/a2ps/sheets/tcsh.ssh
 share/a2ps/sheets/texscript.ssh
+share/a2ps/sheets/tiger.ssh
 share/a2ps/sheets/tk.ssh
 share/a2ps/sheets/udiff.ssh
+share/a2ps/sheets/vba.ssh
 share/a2ps/sheets/vtcl.ssh
 share/a2ps/sheets/wdiff.ssh
 share/a2ps/sheets/yacc.ssh
+share/a2ps/sheets/xs.ssh
 share/a2ps/sheets/68000.ssh
 share/a2ps/sheets/a2psrc.ssh
 share/a2ps/sheets/chlog.ssh
@@ -179,6 +203,7 @@ share/a2ps/encoding/iso5.edf
 share/a2ps/encoding/iso7.edf
 share/a2ps/encoding/iso9.edf
 share/a2ps/encoding/iso10.edf
+share/a2ps/encoding/iso13.edf
 share/a2ps/encoding/iso15.edf
 share/a2ps/encoding/koi8.edf
 share/a2ps/encoding/mac.edf
@@ -218,9 +243,7 @@ share/a2ps/afm/pzdr.afm
 share/a2ps/ppd/README
 share/a2ps/ppd/level1.ppd
 share/a2ps/ppd/level2.ppd
-share/emacs/site-lisp/a2ps-print.el
 share/emacs/site-lisp/a2ps.el
-share/emacs/site-lisp/make-regexp.el
 @unexec rmdir %D/share/emacs/site-lisp 2>/dev/null || true
 @unexec rmdir %D/share/emacs 2>/dev/null || true
 bin/a2ps
@@ -263,36 +286,3 @@ lib/liba2ps.a
 @dirrm share/a2ps/sheets
 @dirrm share/a2ps/encoding
 @dirrm share/a2ps
-@dirrm share/locale/ca/LC_MESSAGES
-@dirrm share/locale/ca
-@dirrm share/locale/cs/LC_MESSAGES
-@dirrm share/locale/cs
-@dirrm share/locale/da/LC_MESSAGES
-@dirrm share/locale/da
-@dirrm share/locale/de/LC_MESSAGES
-@dirrm share/locale/de
-@dirrm share/locale/es/LC_MESSAGES
-@dirrm share/locale/es
-@dirrm share/locale/fr/LC_MESSAGES
-@dirrm share/locale/fr
-@dirrm share/locale/it/LC_MESSAGES
-@dirrm share/locale/it
-@dirrm share/locale/ko/LC_MESSAGES
-@dirrm share/locale/ko
-@dirrm share/locale/nl/LC_MESSAGES
-@dirrm share/locale/nl
-@dirrm share/locale/no/LC_MESSAGES
-@dirrm share/locale/no
-@dirrm share/locale/pl/LC_MESSAGES
-@dirrm share/locale/pl
-@dirrm share/locale/pt/LC_MESSAGES
-@dirrm share/locale/pt
-@dirrm share/locale/ru/LC_MESSAGES
-@dirrm share/locale/ru
-@dirrm share/locale/sl/LC_MESSAGES
-@dirrm share/locale/sl
-@dirrm share/locale/sv/LC_MESSAGES
-@dirrm share/locale/sv
-@dirrm share/locale/tr/LC_MESSAGES
-@dirrm share/locale/tr
-@dirrm share/locale
