@@ -300,6 +300,7 @@
     SUBDIR += wide-dhcp
     SUBDIR += wmnet
     SUBDIR += xarchie
+    SUBDIR += xbone
     SUBDIR += xferstats
     SUBDIR += xicq
     SUBDIR += xipmsg

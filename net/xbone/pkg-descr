@@ -1,0 +1,15 @@
+X-Bone dynamically deploys and manages Internet overlays to reduce 
+their configuration effort and increase network component sharing. 
+X-Bone discovers, configures, and monitors network resources to 
+create overlays over existing IP networks. 
+
+X-Bone uses two-layer IP in IP tunneled overlays and supports existing 
+applications and unmodified routing, multicast, and DNS services in 
+unmodified operating systems. X-Bone also support IPSec within overlays.
+
+Full details can be found on the web at:
+
+WWW:	http://www.isi.edu/xbone/
+
+- Joe Touch, Project Leader, X-Bone group, USC/ISI
+  touch@isi.edu; the group can be reached at xbone@isi.edu
