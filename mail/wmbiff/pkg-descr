@@ -1,6 +1,6 @@
 wmbiff is a dock app that displays the total number of messages or the
 number of unread messages in different mailboxes.  It supports up to 5
-mailboxes.  It is also possible to xecute user-defined commands on new
+mailboxes.  It is also possible to execute user-defined commands on new
 mail arrival (for example, play a .wav file).
 
 WWW:	http://ccat.elect.ru:8100/wmbiff/
