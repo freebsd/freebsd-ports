@@ -7,6 +7,7 @@
 
 PORTNAME=	mad_fcl
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.atm.tut.fi/mad/download/
 DISTNAME=	${PORTNAME}_v${PORTVERSION}_src
@@ -22,6 +23,9 @@ USE_REINPLACE=	yes
 CFLAGS+=	${PTHREAD_CFLAGS}
 
 DOC_FILES=	fdt-example.xml flute-sdp-example.sdp
+
+PORTDOCS=	${DOC_FILES} README.TXT
+PLIST_FILES=	bin/flute
 
 pre-patch:
 	# Fixing the end-of-lines:

@@ -1,5 +1,0 @@
-bin/flute
-%%PORTDOCS%%%%DOCSDIR%%/fdt-example.xml
-%%PORTDOCS%%%%DOCSDIR%%/flute-sdp-example.sdp
-%%PORTDOCS%%%%DOCSDIR%%/README.TXT
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
