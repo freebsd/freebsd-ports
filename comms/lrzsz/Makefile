@@ -4,9 +4,9 @@
 # Date created:         29 Sept 1996
 # Whom:                 David O'Brien <obrien@cs.ucdavis.edu>
 #
-# $Id: Makefile,v 1.2 1996/11/17 03:00:55 obrien Exp $
+# $Id: Makefile,v 1.3 1997/02/03 06:53:42 obrien Exp $
 
-DISTNAME=	lrzsz-0.12.14
+DISTNAME=	lrzsz-0.12.16
 CATEGORIES=	comms
 MASTER_SITES=	ftp://ftp.ihg.uni-duisburg.de/uwe/
 
