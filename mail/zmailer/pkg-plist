@@ -1,11 +1,175 @@
-@unexec /bin/rm -f %D/bin/vacation
-etc/rc.d/zmailer.sh.sample
+etc/zmailer/db/proto/aliases.md5
+etc/zmailer/db/proto/fqdnaliases.md5
+etc/zmailer/db/proto/fqdnroutes.md5
+etc/zmailer/db/proto/dbases.conf.md5
+etc/zmailer/db/proto/localnames.md5
+etc/zmailer/db/proto/routes.md5
+etc/zmailer/db/proto/smtp-policy.mx.md5
+etc/zmailer/db/proto/smtp-policy.src.md5
+etc/zmailer/db/proto/smtp-policy.relay.md5
+etc/zmailer/db/proto/userdb.md5
+etc/zmailer/db/proto/kill-headers.md5
+etc/zmailer/db/aliases
+etc/zmailer/db/fqdnaliases
+etc/zmailer/db/fqdnroutes
+etc/zmailer/db/dbases.conf
+etc/zmailer/db/localnames
+etc/zmailer/db/routes
+etc/zmailer/db/smtp-policy.mx
+etc/zmailer/db/smtp-policy.src
+etc/zmailer/db/smtp-policy.relay
+etc/zmailer/db/userdb
+etc/zmailer/db/kill-headers
+etc/zmailer/db/otherservers.zmsh
+etc/zmailer/db/fqdnaliasesldap.zmsh
+etc/zmailer/db/expired.zmsh
+etc/zmailer/db/userdb.zmsh
+etc/zmailer/db/userdb.db
+etc/zmailer/db/newsgroup.zmsh
+etc/zmailer/db/fqdnaliases.zmsh
+etc/zmailer/db/fqdnaliases.db
+etc/zmailer/db/fullnamemap.zmsh
+etc/zmailer/db/aliases.zmsh
+etc/zmailer/db/aliases.db
+etc/zmailer/db/routesdb.zmsh
+etc/zmailer/db/routes.db
+etc/zmailer/db/fqdnroutes.zmsh
+etc/zmailer/db/iproutesdb.zmsh
+etc/zmailer/db/thishost.zmsh
+etc/zmailer/db/localnames.db
+etc/zmailer/db/smtp-policy.dat
+etc/zmailer/db/smtp-policy.db
+etc/zmailer/forms/proto/bitnetgw.md5
+etc/zmailer/forms/proto/bounce.md5
+etc/zmailer/forms/proto/database.md5
+etc/zmailer/forms/proto/delivery.md5
+etc/zmailer/forms/proto/envelope.md5
+etc/zmailer/forms/proto/expansion.md5
+etc/zmailer/forms/proto/header.md5
+etc/zmailer/forms/proto/headerwarn.md5
+etc/zmailer/forms/proto/ip-number.md5
+etc/zmailer/forms/proto/localhost.md5
+etc/zmailer/forms/proto/loopexceeded.md5
+etc/zmailer/forms/proto/nonewsgroup.md5
+etc/zmailer/forms/proto/norealname.md5
+etc/zmailer/forms/proto/norecipients.md5
+etc/zmailer/forms/proto/nosuchuser.md5
+etc/zmailer/forms/proto/unresolvable.md5
+etc/zmailer/forms/proto/vms-in-pros.md5
+etc/zmailer/forms/proto/wrongname.md5
+etc/zmailer/forms/bitnetgw
+etc/zmailer/forms/bounce
+etc/zmailer/forms/database
+etc/zmailer/forms/delivery
+etc/zmailer/forms/envelope
+etc/zmailer/forms/expansion
+etc/zmailer/forms/header
+etc/zmailer/forms/headerwarn
+etc/zmailer/forms/ip-number
+etc/zmailer/forms/localhost
+etc/zmailer/forms/loopexceeded
+etc/zmailer/forms/nonewsgroup
+etc/zmailer/forms/norealname
+etc/zmailer/forms/norecipients
+etc/zmailer/forms/nosuchuser
+etc/zmailer/forms/unresolvable
+etc/zmailer/forms/vms-in-pros
+etc/zmailer/forms/wrongname
+etc/zmailer/proto/scheduler.conf.md5
+etc/zmailer/proto/sm.conf.md5
+etc/zmailer/proto/smtpserver.conf.md5
+etc/zmailer/proto/scheduler.auth.md5
+etc/zmailer/proto/smtp-tls.conf.md5
+etc/zmailer/proto/router.cf.md5
+etc/zmailer/cf/proto/SMTP+UUCP.cf.md5
+etc/zmailer/cf/proto/trusted.cf.md5
+etc/zmailer/cf/proto/standard.cf.md5
+etc/zmailer/cf/proto/server.cf.md5
+etc/zmailer/cf/proto/rrouter.cf.md5
+etc/zmailer/cf/proto/process.cf.md5
+etc/zmailer/cf/proto/p-uucp.cf.md5
+etc/zmailer/cf/proto/p-usenet.cf.md5
+etc/zmailer/cf/proto/p-smtp.cf.md5
+etc/zmailer/cf/proto/p-routes.cf.md5
+etc/zmailer/cf/proto/p-ldap.cf.md5
+etc/zmailer/cf/proto/p-iproutes.cf.md5
+etc/zmailer/cf/proto/p-ean.cf.md5
+etc/zmailer/cf/proto/p-bitnet.cf.md5
+etc/zmailer/cf/proto/map.cf.md5
+etc/zmailer/cf/proto/i-uucp.cf.md5
+etc/zmailer/cf/proto/i-smtp.cf.md5
+etc/zmailer/cf/proto/i-routes.cf.md5
+etc/zmailer/cf/proto/i-iproutes.cf.md5
+etc/zmailer/cf/proto/i-bitnet.cf.md5
+etc/zmailer/cf/proto/fuzzy-aliases.cf.md5
+etc/zmailer/cf/proto/fqdnalias.cf.md5
+etc/zmailer/cf/proto/debug.cf.md5
+etc/zmailer/cf/proto/crossbar.cf.md5
+etc/zmailer/cf/proto/consist.cf.md5
+etc/zmailer/cf/proto/canon.cf.md5
+etc/zmailer/cf/proto/aliases2.cf.md5
+etc/zmailer/cf/proto/aliases.cf.md5
+etc/zmailer/cf/proto/aliases-new.cf.md5
+etc/zmailer/cf/proto/UToronto.cf.md5
+etc/zmailer/cf/proto/UTdefault.cf.md5
+etc/zmailer/cf/proto/UTGPU.cf.md5
+etc/zmailer/cf/proto/UTAI.cf.md5
+etc/zmailer/cf/proto/TELE-FI.cf.md5
+etc/zmailer/cf/proto/SMTP.cf.md5
+etc/zmailer/cf/proto/tryme.cf.md5
+etc/zmailer/cf/SMTP+UUCP.cf
+etc/zmailer/cf/trusted.cf
+etc/zmailer/cf/standard.cf
+etc/zmailer/cf/server.cf
+etc/zmailer/cf/rrouter.cf
+etc/zmailer/cf/process.cf
+etc/zmailer/cf/p-uucp.cf
+etc/zmailer/cf/p-usenet.cf
+etc/zmailer/cf/p-smtp.cf
+etc/zmailer/cf/p-routes.cf
+etc/zmailer/cf/p-ldap.cf
+etc/zmailer/cf/p-iproutes.cf
+etc/zmailer/cf/p-ean.cf
+etc/zmailer/cf/p-bitnet.cf
+etc/zmailer/cf/map.cf
+etc/zmailer/cf/i-uucp.cf
+etc/zmailer/cf/i-smtp.cf
+etc/zmailer/cf/i-routes.cf
+etc/zmailer/cf/i-iproutes.cf
+etc/zmailer/cf/i-bitnet.cf
+etc/zmailer/cf/fuzzy-aliases.cf
+etc/zmailer/cf/fqdnalias.cf
+etc/zmailer/cf/debug.cf
+etc/zmailer/cf/crossbar.cf
+etc/zmailer/cf/consist.cf
+etc/zmailer/cf/canon.cf
+etc/zmailer/cf/aliases2.cf
+etc/zmailer/cf/aliases.cf
+etc/zmailer/cf/aliases-new.cf
+etc/zmailer/cf/UToronto.cf
+etc/zmailer/cf/UTdefault.cf
+etc/zmailer/cf/UTGPU.cf
+etc/zmailer/cf/UTAI.cf
+etc/zmailer/cf/TELE-FI.cf
+etc/zmailer/cf/SMTP.cf
+etc/zmailer/cf/tryme.cf
+etc/zmailer/scheduler.conf
+etc/zmailer/sm.conf
+etc/zmailer/smtpserver.conf
+etc/zmailer/scheduler.auth
+etc/zmailer/smtp-tls.conf
+etc/zmailer/router.cf
 etc/zmailer/db/proto/aliases
 etc/zmailer/db/proto/fqdnaliases
-etc/zmailer/db/proto/routes
+etc/zmailer/db/proto/fqdnroutes
+etc/zmailer/db/proto/dbases.conf
 etc/zmailer/db/proto/localnames
+etc/zmailer/db/proto/routes
+etc/zmailer/db/proto/smtp-policy.mx
 etc/zmailer/db/proto/smtp-policy.src
 etc/zmailer/db/proto/smtp-policy.relay
+etc/zmailer/db/proto/userdb
+etc/zmailer/db/proto/kill-headers
 etc/zmailer/forms/proto/bitnetgw
 etc/zmailer/forms/proto/bounce
 etc/zmailer/forms/proto/database
@@ -20,64 +184,116 @@ etc/zmailer/forms/proto/loopexceeded
 etc/zmailer/forms/proto/nonewsgroup
 etc/zmailer/forms/proto/norealname
 etc/zmailer/forms/proto/norecipients
+etc/zmailer/forms/proto/nosuchuser
 etc/zmailer/forms/proto/unresolvable
 etc/zmailer/forms/proto/vms-in-pros
 etc/zmailer/forms/proto/wrongname
 etc/zmailer/proto/scheduler.conf
 etc/zmailer/proto/sm.conf
 etc/zmailer/proto/smtpserver.conf
+etc/zmailer/proto/scheduler.auth
+etc/zmailer/proto/smtp-tls.conf
 etc/zmailer/proto/router.cf
+etc/zmailer/guides/aliases
+etc/zmailer/guides/virtusers
+etc/zmailer/guides/smtpauth-login-pam-support
+etc/zmailer/guides/smtp-policy
+etc/zmailer/guides/smtp-msa-mode
+etc/zmailer/guides/smtp-etrn
+etc/zmailer/guides/scheduler-ta-protocol
+etc/zmailer/guides/relations
+etc/zmailer/guides/procmail
+etc/zmailer/guides/porting
+etc/zmailer/guides/openssl
+etc/zmailer/guides/offline-operation
+etc/zmailer/guides/lists
+etc/zmailer/guides/libmalloc
+etc/zmailer/guides/ldap.doc
+etc/zmailer/guides/etrn-cluster
+etc/zmailer/guides/db
+etc/zmailer/guides/cyrus-imap
+etc/zmailer/guides/cookbook
+etc/zmailer/guides/configure
+etc/zmailer/guides/changes
+etc/zmailer/guides/zmsh
 etc/zmailer/zmailer.conf
-etc/zmailer/mail.conf.sample
-etc/zmailer/cf/SMTP+UUCP.cf
-etc/zmailer/cf/standard.cf
-etc/zmailer/cf/server.cf
-etc/zmailer/cf/rrouter.cf
-etc/zmailer/cf/process.cf
-etc/zmailer/cf/p-uucp.cf
-etc/zmailer/cf/p-usenet.cf
-etc/zmailer/cf/p-smtp.cf
-etc/zmailer/cf/p-routes.cf
-etc/zmailer/cf/p-iproutes.cf
-etc/zmailer/cf/p-ean.cf
-etc/zmailer/cf/p-bitnet.cf
-etc/zmailer/cf/map.cf
-etc/zmailer/cf/i-uucp.cf
-etc/zmailer/cf/i-smtp.cf
-etc/zmailer/cf/i-routes.cf
-etc/zmailer/cf/i-iproutes.cf
-etc/zmailer/cf/i-bitnet.cf
-etc/zmailer/cf/fuzzy-aliases.cf
-etc/zmailer/cf/fqdnalias.cf
-etc/zmailer/cf/debug.cf
-etc/zmailer/cf/crossbar.cf
-etc/zmailer/cf/UTAI.cf
-etc/zmailer/cf/consist.cf
-etc/zmailer/cf/canon.cf
-etc/zmailer/cf/aliases2.cf
-etc/zmailer/cf/aliases.cf
-etc/zmailer/cf/aliases-with-listserv-support.cf
-etc/zmailer/cf/aliases-new.cf
-etc/zmailer/cf/UToronto.cf
-etc/zmailer/cf/UTdefault.cf
-etc/zmailer/cf/UTGPU.cf
-etc/zmailer/cf/TELE-FI.cf
-etc/zmailer/cf/SMTP.cf
-etc/zmailer/cf/trusted.cf
+etc/zmailer/ChangeLog
+etc/zmailer/config.status
+etc/zmailer/cf/proto/SMTP+UUCP.cf
+etc/zmailer/cf/proto/trusted.cf
+etc/zmailer/cf/proto/standard.cf
+etc/zmailer/cf/proto/server.cf
+etc/zmailer/cf/proto/rrouter.cf
+etc/zmailer/cf/proto/process.cf
+etc/zmailer/cf/proto/p-uucp.cf
+etc/zmailer/cf/proto/p-usenet.cf
+etc/zmailer/cf/proto/p-smtp.cf
+etc/zmailer/cf/proto/p-routes.cf
+etc/zmailer/cf/proto/p-ldap.cf
+etc/zmailer/cf/proto/p-iproutes.cf
+etc/zmailer/cf/proto/p-ean.cf
+etc/zmailer/cf/proto/p-bitnet.cf
+etc/zmailer/cf/proto/map.cf
+etc/zmailer/cf/proto/i-uucp.cf
+etc/zmailer/cf/proto/i-smtp.cf
+etc/zmailer/cf/proto/i-routes.cf
+etc/zmailer/cf/proto/i-iproutes.cf
+etc/zmailer/cf/proto/i-bitnet.cf
+etc/zmailer/cf/proto/fuzzy-aliases.cf
+etc/zmailer/cf/proto/fqdnalias.cf
+etc/zmailer/cf/proto/debug.cf
+etc/zmailer/cf/proto/crossbar.cf
+etc/zmailer/cf/proto/consist.cf
+etc/zmailer/cf/proto/canon.cf
+etc/zmailer/cf/proto/aliases2.cf
+etc/zmailer/cf/proto/aliases.cf
+etc/zmailer/cf/proto/aliases-new.cf
+etc/zmailer/cf/proto/UToronto.cf
+etc/zmailer/cf/proto/UTdefault.cf
+etc/zmailer/cf/proto/UTGPU.cf
+etc/zmailer/cf/proto/UTAI.cf
+etc/zmailer/cf/proto/TELE-FI.cf
+etc/zmailer/cf/proto/SMTP.cf
+etc/zmailer/cf/proto/tryme.cf
 etc/zmailer/vacation.msg
+etc/zmailer/mail.conf.sample
+@exec mkdir -p %D/etc/zmailer/lists
+@exec mkdir -p %D/etc/zmailer/fqlists
+@exec mkdir -p %D/etc/zmailer/forms/bak
+@exec mkdir -p %D/etc/zmailer/cf/fc
+@dirrm etc/zmailer/db/proto
+@dirrm etc/zmailer/db
+@dirrm etc/zmailer/lists
+@dirrm etc/zmailer/fqlists
+@dirrm etc/zmailer/forms/bak
+@dirrm etc/zmailer/forms/proto
+@dirrm etc/zmailer/forms
+@dirrm etc/zmailer/guides
+@dirrm etc/zmailer/proto
+@dirrm etc/zmailer/cf/fc
+@dirrm etc/zmailer/cf/proto
+@dirrm etc/zmailer/cf
+@dirrm etc/zmailer/bak
+@dirrm etc/zmailer
+@unexec /bin/rm -f %D/bin/vacation
+etc/rc.d/zmailer.sh.sample
 lib/libzmailer.a
 sbin/autoanswer.pl
 sbin/bitbucket
 sbin/dblook
+sbin/getmxrr-test
 sbin/mailq
 sbin/mailrm
 sbin/make-incore.sh
 sbin/makedb
 sbin/manual-expirer
+sbin/manual-rerouter
 sbin/mboxpath
+sbin/md5sum
 sbin/mprobe
 sbin/newaliases
 sbin/newdb
+sbin/newdbprocessor
 sbin/newfqdnaliases
 sbin/policy-builder.sh
 sbin/post-install
@@ -87,6 +303,7 @@ sbin/router
 sbin/scheduler
 sbin/sendmail
 sbin/smtpserver
+sbin/smtpserver-log-parser.pl
 @unexec /bin/rm -f %D/sbin/vacation
 sbin/vacation.exe
 sbin/vacation.sh
@@ -97,143 +314,14 @@ sbin/ta/expirer
 sbin/ta/hold
 sbin/ta/listexpand
 sbin/ta/mailbox
+sbin/ta/reroute
 sbin/ta/sm
 sbin/ta/smtp
 include/zmailer.h
-@exec mkdir -p %D/etc/zmailer/lists/
-@exec mkdir -p %D/etc/zmailer/fqlists/
-@exec mkdir -p %D/etc/zmailer/forms/bak/
-@exec mkdir -p %D/etc/zmailer/cf/fc/
-@exec mkdir -p %D/etc/zmailer/bak/
-@exec mkdir -p /var/spool/postoffice/deferred
-@exec mkdir -p /var/spool/postoffice/freezer
-@exec mkdir -p /var/spool/postoffice/postman
-@exec mkdir -p /var/spool/postoffice/public
-@exec mkdir -p /var/spool/postoffice/queue/A
-@exec mkdir -p /var/spool/postoffice/queue/B
-@exec mkdir -p /var/spool/postoffice/queue/C
-@exec mkdir -p /var/spool/postoffice/queue/D
-@exec mkdir -p /var/spool/postoffice/queue/E
-@exec mkdir -p /var/spool/postoffice/queue/F
-@exec mkdir -p /var/spool/postoffice/queue/G
-@exec mkdir -p /var/spool/postoffice/queue/H
-@exec mkdir -p /var/spool/postoffice/queue/I
-@exec mkdir -p /var/spool/postoffice/queue/J
-@exec mkdir -p /var/spool/postoffice/queue/K
-@exec mkdir -p /var/spool/postoffice/queue/L
-@exec mkdir -p /var/spool/postoffice/queue/M
-@exec mkdir -p /var/spool/postoffice/queue/N
-@exec mkdir -p /var/spool/postoffice/queue/O
-@exec mkdir -p /var/spool/postoffice/queue/P
-@exec mkdir -p /var/spool/postoffice/queue/Q
-@exec mkdir -p /var/spool/postoffice/queue/R
-@exec mkdir -p /var/spool/postoffice/queue/S
-@exec mkdir -p /var/spool/postoffice/queue/T
-@exec mkdir -p /var/spool/postoffice/queue/U
-@exec mkdir -p /var/spool/postoffice/queue/V
-@exec mkdir -p /var/spool/postoffice/queue/W
-@exec mkdir -p /var/spool/postoffice/queue/X
-@exec mkdir -p /var/spool/postoffice/queue/Y
-@exec mkdir -p /var/spool/postoffice/queue/Z
-@exec mkdir -p /var/spool/postoffice/router
-@exec mkdir -p /var/spool/postoffice/transport/A
-@exec mkdir -p /var/spool/postoffice/transport/B
-@exec mkdir -p /var/spool/postoffice/transport/C
-@exec mkdir -p /var/spool/postoffice/transport/D
-@exec mkdir -p /var/spool/postoffice/transport/E
-@exec mkdir -p /var/spool/postoffice/transport/F
-@exec mkdir -p /var/spool/postoffice/transport/G
-@exec mkdir -p /var/spool/postoffice/transport/H
-@exec mkdir -p /var/spool/postoffice/transport/I
-@exec mkdir -p /var/spool/postoffice/transport/J
-@exec mkdir -p /var/spool/postoffice/transport/K
-@exec mkdir -p /var/spool/postoffice/transport/L
-@exec mkdir -p /var/spool/postoffice/transport/M
-@exec mkdir -p /var/spool/postoffice/transport/N
-@exec mkdir -p /var/spool/postoffice/transport/O
-@exec mkdir -p /var/spool/postoffice/transport/P
-@exec mkdir -p /var/spool/postoffice/transport/Q
-@exec mkdir -p /var/spool/postoffice/transport/R
-@exec mkdir -p /var/spool/postoffice/transport/S
-@exec mkdir -p /var/spool/postoffice/transport/T
-@exec mkdir -p /var/spool/postoffice/transport/U
-@exec mkdir -p /var/spool/postoffice/transport/V
-@exec mkdir -p /var/spool/postoffice/transport/W
-@exec mkdir -p /var/spool/postoffice/transport/X
-@exec mkdir -p /var/spool/postoffice/transport/Y
-@exec mkdir -p /var/spool/postoffice/transport/Z
-@dirrm etc/zmailer/db/proto
-@dirrm etc/zmailer/db
-@dirrm etc/zmailer/lists
-@dirrm etc/zmailer/fqlists
-@dirrm etc/zmailer/forms/proto
-@dirrm etc/zmailer/forms/bak
-@dirrm etc/zmailer/forms
-@dirrm etc/zmailer/proto
-@dirrm etc/zmailer/bak
-@dirrm etc/zmailer/cf/fc
-@dirrm etc/zmailer/cf
-@dirrm etc/zmailer
-@dirrm sbin/bak
 @dirrm sbin/ta
 @cwd /var/spool
-@dirrm postoffice/transport/Z
-@dirrm postoffice/transport/Y
-@dirrm postoffice/transport/X
-@dirrm postoffice/transport/W
-@dirrm postoffice/transport/V
-@dirrm postoffice/transport/U
-@dirrm postoffice/transport/T
-@dirrm postoffice/transport/S
-@dirrm postoffice/transport/R
-@dirrm postoffice/transport/Q
-@dirrm postoffice/transport/P
-@dirrm postoffice/transport/O
-@dirrm postoffice/transport/N
-@dirrm postoffice/transport/M
-@dirrm postoffice/transport/L
-@dirrm postoffice/transport/K
-@dirrm postoffice/transport/J
-@dirrm postoffice/transport/I
-@dirrm postoffice/transport/H
-@dirrm postoffice/transport/G
-@dirrm postoffice/transport/F
-@dirrm postoffice/transport/E
-@dirrm postoffice/transport/D
-@dirrm postoffice/transport/C
-@dirrm postoffice/transport/B
-@dirrm postoffice/transport/A
-@dirrm postoffice/transport
-@dirrm postoffice/router
-@dirrm postoffice/queue/Z
-@dirrm postoffice/queue/Y
-@dirrm postoffice/queue/X
-@dirrm postoffice/queue/W
-@dirrm postoffice/queue/V
-@dirrm postoffice/queue/U
-@dirrm postoffice/queue/T
-@dirrm postoffice/queue/S
-@dirrm postoffice/queue/R
-@dirrm postoffice/queue/Q
-@dirrm postoffice/queue/P
-@dirrm postoffice/queue/O
-@dirrm postoffice/queue/N
-@dirrm postoffice/queue/M
-@dirrm postoffice/queue/L
-@dirrm postoffice/queue/K
-@dirrm postoffice/queue/J
-@dirrm postoffice/queue/I
-@dirrm postoffice/queue/H
-@dirrm postoffice/queue/G
-@dirrm postoffice/queue/F
-@dirrm postoffice/queue/E
-@dirrm postoffice/queue/D
-@dirrm postoffice/queue/C
-@dirrm postoffice/queue/B
-@dirrm postoffice/queue/A
-@dirrm postoffice/queue
-@dirrm postoffice/public
-@dirrm postoffice/postman
-@dirrm postoffice/freezer
 @dirrm postoffice/deferred
+@dirrm postoffice/freezer
+@dirrm postoffice/postman
+@dirrm postoffice/public
 @dirrm postoffice

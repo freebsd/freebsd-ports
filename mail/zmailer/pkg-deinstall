@@ -1,0 +1,12 @@
+#!/bin/sh
+if [ "$2" = DEINSTALL ]; then
+cd /var/spool/postoffice
+for d in transport queue; do
+  for i in A B C D E F G H I J K L M N O P Q R S T U V W X Y Z; do for j in A B C D E F G H I J K L M N O P Q R S T U V W X Y Z; do rmdir $d/$i/$j; done; rmdir $d/$i; done
+rmdir $d; done
+for d in router TLSsrvrcache TLSclntcache; do
+ for i in A B C D E F G H I J K L M N O P Q R S T U V W X Y Z; do
+  rmdir $d/$i; done;
+ rmdir $d
+done
+fi

@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	zmailer
-PORTVERSION=	2.99.51
-PORTREVISION=	1
+PORTVERSION=	2.99.56
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.funet.fi/pub/unix/mail/zmailer/src/
 
@@ -16,7 +15,7 @@ COMMENT=	A fully functional fast, robust SMTP server and transport agent
 
 CONFLICTS=	courier-0.* postfix-1.* postfix-2.* sendmail-8.* sendmail-*-8.* smail-3.*
 GNU_CONFIGURE=	yes
-USE_GCC=	2.95
+USE_PERL5=	yes
 
 .if defined(WITH_SSL)
 USE_OPENSSL=	YES
@@ -25,8 +24,13 @@ CONFIGURE_ARGS=	--with-openssl
 CONFIGURE_ARGS=	--without-openssl
 .endif
 
+.include <bsd.port.pre.mk>
+
+.if ( ${OSVERSION} >= 500000 )
+EXTRA_PATCHES=	${FILESDIR}/extra-patch-EAI_NODATA
+.endif
+
 CONFIGURE_ARGS+=--prefix=${PREFIX}/ \
-		--with-bundled-libresolv \
 		--with-mailbin=${PREFIX}/sbin \
 		--with-mailbox=/var/mail \
 		--with-logdir=/var/log/mail \
@@ -41,15 +45,19 @@ CONFIGURE_ARGS+=--prefix=${PREFIX}/ \
 		--with-vacationpath=${PREFIX}/bin/vacation \
 		--includedir=${PREFIX}/include \
 		--libdir=${PREFIX}/lib \
+		--mandir=${PREFIX}/man \
 		--with-ta-mmap
 
-MAN1=		rmail.1 vacation.1 zmailer.1 zmsh.1 mboxpath.1 ssl.1 mailq.1 \
-		mailrm.1 newaliases.1
-MAN3=		zmailer.3
-MAN5=		aliases.5
-MAN8=		hold.8 router.8 scheduler.8 sendmail.8 sm.8 smtp.8 \
-		smtpserver.8 mprobe.8 expirer.8 errormail.8 mailbox.8 \
-		manual-expirer.8
+MAN1=		rmail.1zm vacation.1zm zmailer.1zm zmsh.1zm mboxpath.1zm mailq.1zm \
+		mailrm.1zm newaliases.1zm
+MAN3=		zmailer.3zm
+MAN5=		aliases.5zm
+MAN8=		hold.8zm router.8zm scheduler.8zm sendmail.8zm sm.8zm smtp.8zm \
+		smtpserver.8zm mprobe.8zm expirer.8zm errormail.8zm mailbox.8zm \
+		manual-expirer.8zm
+
+PKGMESSAGE=	${WRKDIR}/MESSAGE
+PKGINSTALL=	${WRKDIR}/pkg-install
 
 # local variable
 # this pipe is run before bsd.port.mk is brought in - therefore it is
@@ -58,7 +66,6 @@ DOMAIN!=	/bin/hostname | /usr/bin/sed -e "s:^"`/bin/hostname -s`\.*::g
 .if (${DOMAIN} == "")
 DOMAIN=		"mydomain.com"
 .endif
-PKGMESSAGE=	${WRKDIR}/MESSAGE
 
 post-configure:
 	${SED} -e s:@PREFIX@:${PREFIX}:g -e s:@PORTSDIR@:${PORTSDIR}:g \
@@ -68,8 +75,9 @@ post-install:
 	@${INSTALL_SCRIPT} ${FILESDIR}/zmailer.sh.sample \
 		 ${PREFIX}/etc/rc.d/zmailer.sh.sample
 
-	${CAT} ${PKGMESSAGE} | ${SED} -e s:@PREFIX@:${PREFIX}:g \
-		-e s:@PORTSDIR@:${PORTSDIR}:g
+	@${SED} -e 's,%%PREFIX%%,${PREFIX},' ${FILESDIR}/pkg-install.in > \
+		${PKGINSTALL}
+	@${SETENV} PREFIX="${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 # set up the initial mail.conf with reasonable settings.
 	@${ECHO_CMD} "# Where am I?" > ${PREFIX}/etc/zmailer/mail.conf.sample
@@ -115,4 +123,4 @@ replace:
 		${LN} -s ${PREFIX}/sbin/rmail /bin/rmail; \
 	fi
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

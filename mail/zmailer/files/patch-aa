@@ -1,20 +1,35 @@
---- configure.in.orig	Mon Jul 19 00:38:50 1999
-+++ configure.in	Sun Sep 29 01:34:20 2002
-@@ -936,7 +936,7 @@
- AC_SUBST(AUTHLIB)
- AC_CHECK_HEADERS(security/pam_appl.h shadow.h)
- if test "$ac_cv_header_security_pam_appl_h" = "yes"; then
--    AUTHLIB="-lpam -ldl"
-+    AUTHLIB="-lpam"
- else
-     if test "$ac_cv_header_shadow_h" = "yes"; then
- 	AUTHLIB="-lshadow"
-@@ -956,7 +956,7 @@
-     AC_MSG_RESULT([%%% AIEEE!  NO  <netinet/in.h>  HEADER ?!])
- fi
+--- configure.orig	Fri Dec 26 10:29:15 2003
++++ configure	Fri Dec 26 10:33:26 2003
+@@ -280,6 +280,7 @@
+ # Factoring default headers for most tests.
+ ac_includes_default="\
+ #include <stdio.h>
++#include <sys/param.h>
+ #if HAVE_SYS_TYPES_H
+ # include <sys/types.h>
+ #endif
+@@ -20317,7 +20318,7 @@
+ cat >>conftest.$ac_ext <<_ACEOF
+ /* end confdefs.h.  */
  
--AC_TRY_COMPILE([#include <sys/socket.h>],[socklen_t sl = 2;],
-+AC_TRY_COMPILE([#include <sys/types.h> #include <sys/socket.h>],[socklen_t sl = 2;],
- 	AC_DEFINE(HAVE_SOCKLEN_T))
+-#include <sys/types.h>
++#include <sys/param.h>
+ #include <sys/mount.h>
+ #include <sys/fs_types.h>
+ int
+@@ -20493,6 +20494,7 @@
+ cat confdefs.h >>conftest.$ac_ext
+ cat >>conftest.$ac_ext <<_ACEOF
+ /* end confdefs.h.  */
++#include <sys/param.h>
+ #include <sys/mount.h>
  
- AC_ARG_WITH(ipv6,[  --with-ipv6              Have IPv6 in system, and want to use it],
+ _ACEOF
+@@ -20539,6 +20541,7 @@
+ /* end confdefs.h.  */
+ 
+ #include <sys/fs_types.h>
++#include <sys/param.h>
+ #include <sys/mount.h>
+ _ACEOF
+ if { (eval echo "$as_me:$LINENO: \"$ac_cpp conftest.$ac_ext\"") >&5

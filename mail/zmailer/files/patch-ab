@@ -1,54 +1,10 @@
---- configure.orig	Mon Jul 19 00:48:10 1999
-+++ configure	Sun Sep 29 01:36:22 2002
-@@ -94,6 +94,8 @@
-   --with-getpwnam-library=\"-L.. -l..\"
-                             Linking options for non-std getpwnam() libraries"
- ac_help="$ac_help
-+  --with-openssl            Use openssl"
-+ac_help="$ac_help
-   --with-openssl-prefix=/dir/path (defines both include and lib)"
- ac_help="$ac_help
-   --with-openssl-include=/dir/incl/path"
-@@ -4661,7 +4663,7 @@
- done
- 
- if test "$ac_cv_header_security_pam_appl_h" = "yes"; then
--    AUTHLIB="-lpam -ldl"
-+    AUTHLIB="-lpam"
- else
-     if test "$ac_cv_header_shadow_h" = "yes"; then
- 	AUTHLIB="-lshadow"
-@@ -4723,6 +4725,7 @@
- cat > conftest.$ac_ext <<EOF
- #line 4725 "configure"
- #include "confdefs.h"
-+#include <sys/types.h>
- #include <sys/socket.h>
- int main() {
- socklen_t sl = 2;
-@@ -7847,6 +7850,9 @@
- 
- 
- 
-+# Check whether we are using openssl.
-+if test "x$with_openssl" != xno; then
-+
- # Check whether --with-openssl-prefix or --without-openssl-prefix was given.
- if test "${with_openssl_prefix+set}" = set; then
-   withval="$with_openssl_prefix"
-@@ -7929,12 +7935,13 @@
-     OPENSSLPREFIX="/usr"
-     OPENSSLINCL=""
-     if test -f "$OPENSSLPREFIX/lib/libssl.so" ; then
--      OPENSSLLIB="$OPENSSLPREFIX/lib/libssl.so $OPENSSLPREFIX/lib/libcrypto.so"
-+      OPENSSLLIB="$OPENSSLPREFIX/lib/libssl.so $OPENSSLPREFIX/lib/libcrypto.so \$(EXTRA_SSL_LIBS)"
-     else
--      OPENSSLLIB="$OPENSSLPREFIX/lib/libssl.a $OPENSSLPREFIX/lib/libcrypto.a"
-+      OPENSSLLIB="$OPENSSLPREFIX/lib/libssl.a $OPENSSLPREFIX/lib/libcrypto.a \$(EXTRA_SSL_LIBS)"
-     fi
-     echo "$ac_t""You have OpenSSL version 0.9.3a (or newer) at system root!" 1>&6
-   fi
-+fi
- fi
- 
- 
+--- transports/smtp/getmxrr.c.orig	Mon Jun 23 12:04:35 2003
++++ transports/smtp/getmxrr.c	Fri Dec 26 11:30:58 2003
+@@ -416,7 +416,6 @@
+ 	      break;
+ 	    case EAI_NONAME:
+ 	    case EAI_FAIL:
+-	    case EAI_NODATA:
+ 	    case EAI_SERVICE:
+ 	    default:
+ 	      break;
