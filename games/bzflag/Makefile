@@ -7,6 +7,7 @@
 
 PORTNAME=	bzflag
 PORTVERSION=	2.0.0
+PORTREVISION=   1
 CATEGORIES=	games
 # SourceForge mirroring for BZFlag-2 is broken at the moment
 #MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -18,7 +19,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}.20050117
 MAINTAINER=	chuck@pkix.net
 COMMENT=	A multiplayer 3D tank battle game
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/curl-config:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	curl.3:${PORTSDIR}/ftp/curl
 
 USE_BZIP2=	yes
 USE_SDL=	yes
