@@ -10,8 +10,8 @@ PORTVERSION=	0.60
 PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://cr.yp.to/libtai/ \
-		ftp://mirror.pipex.net/pub/qmail/ \
-		ftp://ftp.rifkin.technion.ac.il/pub/qmail/
+		ftp://ftp.sunsite.auc.dk/disk1/qmail/ \
+		ftp://ftp.task.gda.pl/mirror/mirror.qmail.org/koobera/pub/software/
 
 MAINTAINER=	lioux@FreeBSD.org
 
