@@ -16,7 +16,7 @@ that is Inlined into distributed modules (like on the CPAN) will get
 compiled when the module is installed, so the end user will never notice
 the compilation time.
 
-WWW: http://search.cpan.org/search?dist=Inline
+WWW: http://search.cpan.org/dist/Inline/
 
 -- Sergey Skvortsov
-skv@protey.ru
+skv@FreeBSD.org
