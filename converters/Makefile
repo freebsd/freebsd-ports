@@ -5,6 +5,7 @@
     SUBDIR += btoa
     SUBDIR += fconv
     SUBDIR += i18ntools
+    SUBDIR += iconv
     SUBDIR += ish
     SUBDIR += kdesupport11
     SUBDIR += kdesupport11-i18n
