@@ -9,8 +9,7 @@ PORTVERSION=	0.7.20
 PORTREVISION=	3
 CATEGORIES=	multimedia
 MASTER_SITES=	http://download.videolan.org/pub/videolan/vlc/0.8.1/contrib/ \
-		http://www.vcdimager.org/pub/vcdimager/vcdimager-0.7_UNSTABLE/ \
-MASTER_SITE_SUBDIR=	${PORTNAME}
+		http://www.vcdimager.org/pub/vcdimager/vcdimager-0.7_UNSTABLE/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	"GNU VCDImager/VCDRip -- The GNU VideoCD Image Maker/Ripping Tool"
