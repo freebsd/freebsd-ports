@@ -8,7 +8,7 @@
 
 DISTNAME=	kmikmod-2.04
 CATEGORIES=	audio kde
-MASTER_SITES=	http://myy.helia.fi/~anttiner/
+MASTER_SITES=	http://people.FreeBSD.org/~tom/distfiles/
 
 MAINTAINER=	tom@FreeBSD.org
 
