@@ -1999,6 +1999,7 @@ gxanim		ports/graphics/gxanim
 gxditview	ports/textproc/gxditview
 gxedit		ports/editors/gxedit
 gxmlviewer	ports/textproc/gxmlviewer
+gxset		ports/x11/gxset
 gyroscope	ports/x11/gyroscope
 gzip		src/gnu/usr.bin/gzip
 h2n		ports/net/h2n
