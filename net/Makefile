@@ -201,7 +201,6 @@
     SUBDIR += icqlib
     SUBDIR += icqlib0
     SUBDIR += icqnix
-    SUBDIR += icradius
     SUBDIR += icukrell
     SUBDIR += ip-tun
     SUBDIR += ip6_int
@@ -357,7 +356,6 @@
     SUBDIR += p5-File-Rsync
     SUBDIR += p5-Frontier-RPC
     SUBDIR += p5-Geo-IP
-    SUBDIR += p5-IC-Radius
     SUBDIR += p5-IO-Interface
     SUBDIR += p5-IO-Socket-Multicast
     SUBDIR += p5-JUNOScript
@@ -481,7 +479,6 @@
     SUBDIR += qadsl
     SUBDIR += qtella
     SUBDIR += queso
-    SUBDIR += radius
     SUBDIR += radiusclient
     SUBDIR += radiusd-cistron
     SUBDIR += radreport
@@ -628,7 +625,6 @@
     SUBDIR += xprobe
     SUBDIR += xsmbrowser
     SUBDIR += xtraceroute
-    SUBDIR += xtradius
     SUBDIR += xwhois
     SUBDIR += yaz
     SUBDIR += yaz++

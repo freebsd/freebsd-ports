@@ -1,3 +1,0 @@
-radiusd is a server that handles access-requests for user authentication
-from radius clients. These clients may be terminal servers, Network
-Access Servers or other RADIUS servers.
