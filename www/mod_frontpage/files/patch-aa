@@ -1,5 +1,5 @@
---- DSO/Makefile.PL.orig        Tue Jul 24 23:01:08 2001
-+++ DSO/Makefile.PL             Tue Jul 24 23:02:58 2001
+--- DSO/Makefile.PL.orig	Tue Mar 20 13:38:00 2001
++++ DSO/Makefile.PL	Fri Jan 18 13:58:44 2002
 @@ -4,26 +4,7 @@
  # You can use it according to the Apache licence
  # Please send modifications to: <jmdault@mandrakesoft.com> so other
@@ -28,6 +28,36 @@
  print "\nLet's see if it's a valid httpd...";
  $_=`$thechoice -v`;
  if (/Server version:/) { print " YES!\n"; 
+@@ -56,23 +37,23 @@
+ open(FILE,"$httpdconf") or die "Can't find $httpdconf!\n";
+ print "Reading httpd.conf...\n";
+ while(<FILE>) {
+-    if (/^User (\w*)/) {
++    if (!$user && /^User (\w*)/) {
+ 	$user=$1;
+     }
+-    if (/^Group (\w*)/) {
++    if (!$group && /^Group (\w*)/) {
+ 	$group=$1;
+     }
+-    if (/^UserDir (\w*)/) {
++    if (!$userdir && /^UserDir (\w*)/) {
+ 	$userdir=$1;
+     }
+-    if (/^ServerRoot (\S*)/) {
++    if (!serverroot && /^ServerRoot (\S*)/) {
+ 	$serverroot=$1;
+     }
+-    if (/^ErrorLog (\S*)/) {
++    if (!$errorlog && /^ErrorLog (\S*)/) {
+ 	$errorlog=$1;
+ 	$errorlog=~ s/error_log/fpexec_log/;
+     }
+-    if (/^DocumentRoot (\S*)/) {
++    if (!$documentroot && /^DocumentRoot (\S*)/) {
+ 	$documentroot=$1;
+     }
+ }
 @@ -91,12 +72,10 @@
  }
  print "DocumentRoot: $documentroot\n";
