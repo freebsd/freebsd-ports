@@ -1,0 +1,35 @@
+bin/make_method
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/RPC/XML/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/Apache/RPC/Server.pm
+lib/perl5/site_perl/%%PERL_VER%%/Apache/RPC/status.xpl
+lib/perl5/site_perl/%%PERL_VER%%/RPC/XML.pm
+lib/perl5/site_perl/%%PERL_VER%%/RPC/XML/Client.pm
+lib/perl5/site_perl/%%PERL_VER%%/RPC/XML/Parser.pm
+lib/perl5/site_perl/%%PERL_VER%%/RPC/XML/Server.pm
+lib/perl5/site_perl/%%PERL_VER%%/RPC/XML/identity.xpl
+lib/perl5/site_perl/%%PERL_VER%%/RPC/XML/introspection.xpl
+lib/perl5/site_perl/%%PERL_VER%%/RPC/XML/listMethods.xpl
+lib/perl5/site_perl/%%PERL_VER%%/RPC/XML/methodHelp.xpl
+lib/perl5/site_perl/%%PERL_VER%%/RPC/XML/methodSignature.xpl
+lib/perl5/site_perl/%%PERL_VER%%/RPC/XML/multicall.xpl
+lib/perl5/site_perl/%%PERL_VER%%/RPC/XML/status.xpl
+lib/perl5/site_perl/%%PERL_VER%%/auto/RPC/XML/Server/add_default_methods.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/RPC/XML/Server/add_methods_in_dir.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/RPC/XML/Server/autosplit.ix
+lib/perl5/site_perl/%%PERL_VER%%/auto/RPC/XML/Server/call.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/RPC/XML/Server/dispatch.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/RPC/XML/Server/get_method.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/RPC/XML/Server/load_XPL_file.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/RPC/XML/Server/method_to_ref.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/RPC/XML/Server/post_configure_hook.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/RPC/XML/Server/pre_loop_hook.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/RPC/XML/Server/process_request.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/RPC/XML/Server/server_loop.al
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Apache/RPC
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/RPC/XML
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/auto/RPC/XML/Server
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/auto/RPC/XML
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/RPC/XML
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/RPC 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/auto/RPC 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/RPC 2>/dev/null || true
