@@ -43,9 +43,9 @@ ALL_TARGET=	freebsd
 BINGRP=		kmem
 .if defined(WITH_SENSOR)
 BINOWN=		root
-BINMODE=	4111
+BINMODE=	4511
 .else
-BINMODE=	2111
+BINMODE=	2511
 .endif
 
 MAKE_ENV+=	LOCALEDIR=${PREFIX}/share/locale
