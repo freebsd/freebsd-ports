@@ -109,7 +109,8 @@ OPTIONS=XFT "Enable Xft font anti-aliasing" on \
 	XMLTERM "Enable the XMLTerm module" on \
 	JAVASCRIPT_DEBUGGER "Enable the DTD and JavaScript debuggers" off \
 	OPTIMIZED_CFLAGS "Enable -O2 optimizations" off \
-	SMB "Enable smb:// URI support using gnomevfs" off
+	SMB "Enable smb:// URI support using gnomevfs" off \
+	MENU_ENTRY "Add mozilla to the GNOME menu" off
 
 .include <bsd.port.pre.mk>
 
@@ -264,6 +265,9 @@ post-patch:
 		< ${MASTERDIR}/pkg-install.in > ${PKGINSTALL}
 	@${SED} -e 's|%%MOZDIR%%|${PREFIX}/lib/${MOZILLA}|g' \
 		< ${MASTERDIR}/pkg-deinstall.in > ${PKGDEINSTALL}
+	@${SED} -e 's|%%PREFIX%%|${PREFIX}|g' \
+		< ${FILESDIR}/mozilla.desktop.in > \
+		${WRKDIR}/mozilla.desktop
 
 pre-configure:
 	@if [ -n "`${PKG_INFO} -xI '^bind[0-9]*-base-[0-9]'`" ]; then \
@@ -303,6 +307,9 @@ pre-install:
 	${ECHO_CMD} lib/${MOZILLA}/mozilla-config >> ${PLIST}
 .if !defined(WITHOUT_MAILNEWS)
 	@${CP} -RL ${WRKSRC}/dist/bin/defaults/isp ${FAKEDIR}/lib/${MOZILLA}/defaults
+.endif
+.if defined(WITH_MENU_ENTRY)
+	${ECHO_CMD} share/gnome/applications/mozilla.desktop >> ${PLIST}
 .endif
 	cd ${FAKEDIR}/lib/${MOZILLA} && ${FIND} -s * -type f -o -type l | \
 		${SED} -e 's:^:lib/${MOZILLA}/:' >> ${PLIST} \
@@ -353,6 +360,10 @@ do-install:
 	${CHMOD} 755 ${PREFIX}/include/${MOZILLA}
 	cd ${FAKEDIR}/include/mozilla && ${FIND} . | \
 		${CPIO} -pdm -L -R ${LIBOWN}:${LIBGRP} ${PREFIX}/include/${MOZILLA}
+.if defined(WITH_MENU_ENTRY)
+	${INSTALL_DATA} ${WRKDIR}/mozilla.desktop \
+		${PREFIX}/share/gnome/applications
+.endif
 
 post-install:
 	@${CHMOD} -R u-w ${PREFIX}/lib/${MOZILLA}/components
