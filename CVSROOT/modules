@@ -528,6 +528,7 @@ bibletime	ports/misc/bibletime
 bibletime-doc	ports/misc/bibletime-doc
 bibtex2html	ports/textproc/bibtex2html
 bibview		ports/print/bibview
+bicom		ports/archivers/bicom
 bicyclerepair	ports/devel/bicyclerepair
 bidiv		ports/textproc/bidiv
 bidwatcher	ports/misc/bidwatcher
@@ -8347,6 +8348,7 @@ xmerl		ports/textproc/xmerl
 xmess		ports/emulators/xmess
 xmfract		ports/graphics/xmfract
 xmhtml		ports/x11-toolkits/xmhtml
+xmill		ports/archivers/xmill
 xmille		ports/games/xmille
 xmine		ports/games/xmine
 xminehunter	ports/games/xminehunter
