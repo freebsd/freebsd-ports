@@ -18,6 +18,8 @@ COMMENT=	Tools for testing the ATM subsystem
 LIB_DEPENDS=	tcl84.1:${PORTSDIR}/lang/tcl84
 
 BROKEN=		Broken pkg-plist
+EXPIRATION_DATE=2005-02-18
+DEPRECATED=	${BROKEN}
 
 USE_GMAKE=	yes
 USE_LIBTOOL_VER=13

@@ -18,6 +18,8 @@ ONLY_FOR_ARCHS=	i386
 USE_LINUX=	yes
 
 BROKEN=		"Does not install"
+EXPIRATION_DATE=2005-02-18
+DEPRECATED=	${BROKEN}
 
 # Local variables
 #

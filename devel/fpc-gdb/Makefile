@@ -26,15 +26,11 @@ PATCHFILES=	gdb521.dif gdb521_xfree-loadmod.diff
 MAINTAINER=	coop9211@uidaho.edu
 COMMENT=	GNU GDB 5.2.1 modified for Free Pascal
 
+BROKEN=		"Does not compile"
+EXPIRATION_DATE=2005-02-18
+DEPRECATED=	${BROKEN}
+
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=		"Does not compile on 4.x"
-.endif
-
-.if ${OSVERSION} > 502112
-BROKEN=		"Does not compile on FreeBSD >= 5.x"
-.endif
 
 NO_LATEST_LINK=	yes
 USE_GMAKE=	yes

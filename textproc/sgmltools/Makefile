@@ -23,6 +23,8 @@ RUN_DEPENDS+=	${LOCALBASE}/share/sgml/docbook:${PORTSDIR}/textproc/docbook \
 		${LOCALBASE}/share/sgml/docbook/dsssl:${PORTSDIR}/textproc/dsssl-docbook-modular
 
 BROKEN=		Broken pkg-plist
+EXPIRATION_DATE=2005-02-18
+DEPRECATED=	${BROKEN}
 
 USE_BZIP2=	yes
 USE_PERL5=	yes

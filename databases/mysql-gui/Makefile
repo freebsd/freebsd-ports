@@ -26,6 +26,8 @@ LIB_DEPENDS=	mysqlpp.2:${PORTSDIR}/databases/mysql++ \
 PATCH_DEPENDS=	${X11BASE}/include/FL/Fl_Editor.H:${PORTSDIR}/x11-toolkits/fl_editor
 
 BROKEN=		Does not build with new mysql++, use mysql-administrator \(GNOME\) or mysql-navigator \(KDE\) instead
+EXPIRATION_DATE=2005-02-18
+DEPRECATED=	${BROKEN}
 
 USE_GCC=	3.3
 USE_GETTEXT=	yes

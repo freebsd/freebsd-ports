@@ -17,5 +17,7 @@ MASTERDIR=	${.CURDIR}/../../editors/ooodict-all
 RDEP=		${PORTSDIR}/polish/openoffice-1.0
 
 BROKEN=		"Checksum mismatch"
+EXPIRATION_DATE=2005-02-18
+DEPRECATED=	${BROKEN}
 
 .include "${MASTERDIR}/Makefile"

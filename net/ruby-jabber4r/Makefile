@@ -16,6 +16,8 @@ MAINTAINER=	knu@FreeBSD.org
 COMMENT=	A Ruby library to connect to an existing Jabber account
 
 BROKEN=		Does not build
+EXPIRATION_DATE=2005-02-18
+DEPRECATED=	${BROKEN}
 
 USE_RUBY=	yes
 USE_RUBY_FEATURES=	rexml

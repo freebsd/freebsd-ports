@@ -20,6 +20,8 @@ MAINTAINER=	java@FreeBSD.ORG
 COMMENT=	Eclipse Language Pack Feature
 
 IGNORE=		Requires update to 3.0
+EXPIRATION_DATE=2005-02-18
+DEPRECATED=	"${IGNORE}"
 
 RUN_DEPENDS=	${LOCALBASE}/bin/eclipse:${PORTSDIR}/java/eclipse
 

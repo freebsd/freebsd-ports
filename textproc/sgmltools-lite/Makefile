@@ -22,6 +22,8 @@ RUN_DEPENDS+=	${LOCALBASE}/share/sgml/docbook:${PORTSDIR}/textproc/docbook \
 		${LOCALBASE}/share/sgml/docbook/dsssl:${PORTSDIR}/textproc/dsssl-docbook-modular
 
 BROKEN=		Broken pkg-plist
+EXPIRATION_DATE=2005-02-18
+DEPRECATED=	${BROKEN}
 
 MAN1=		sgmltools-lite.1
 GNU_CONFIGURE=	yes

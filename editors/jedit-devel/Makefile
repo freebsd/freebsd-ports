@@ -18,7 +18,9 @@ EXTRACT_ONLY=
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Powerful programmer's text editor written in Java
 
-IGNORE=		"marked as IGNORE: editors/jedit is the latest version"
+IGNORE=		marked as IGNORE: editors/jedit is the latest version
+EXPIRATION_DATE=2005-02-18
+DEPRECATED=	"${IGNORE}"
 
 USE_JAVA=	1.3+
 

@@ -18,6 +18,8 @@ COMMENT=	GNOME H323 Video Conferencing program, similar to NetMeeting
 BUILD_DEPENDS=  ${NONEXISTENT}:${PORTSDIR}/net/openh323:build
 
 BROKEN=		"Does not build"
+EXPIRATION_DATE=2005-02-18
+DEPRECATED=	${BROKEN}
 
 # note, we do not want to clean openh323, otherwise it has to build
 # it all over again which can take several hours.

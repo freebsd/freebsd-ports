@@ -28,6 +28,8 @@ RUN_DEPENDS=	${LINUXBASE}${X11BASE}/lib/libMesaGL.so.3:${PORTSDIR}/graphics/linu
 SPDBV=	SPDBV
 
 IGNORE=		is incompatible with new x11-toolkits/linux-openmotif 2.2.4
+EXPIRATION_DATE=2005-02-18
+DEPRECATED=	"${IGNORE}"
 
 WRKSRC=		${WRKDIR}/SPDBV_DISTRIBUTION
 

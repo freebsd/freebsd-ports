@@ -23,6 +23,8 @@ LIB_DEPENDS=	curl.3:${PORTSDIR}/ftp/curl
 RUN_DEPENDS=	rexx:${PORTSDIR}/lang/rexx-regina
 
 BROKEN=		"Build fails"
+EXPIRATION_DATE=2005-02-18
+DEPRECATED=	${BROKEN}
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-rexx=regina

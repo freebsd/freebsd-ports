@@ -22,13 +22,9 @@ COMMENT=	GNU GDB 5.2.1 debugger
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
-BROKEN=		"Does not compile on 4.x"
-.endif
-
-.if ${OSVERSION} > 502112
-BROKEN=		"Does not compile on FreeBSD >= 5.x"
-.endif
+BROKEN=		"Does not compile"
+EXPIRATION_DATE=2005-02-18
+DEPRECATED=	${BROKEN}
 
 .if ${ARCH} == "amd64"
 BROKEN=		"Configure fails on amd64"

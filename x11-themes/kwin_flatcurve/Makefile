@@ -15,7 +15,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Bluecurve style window decoration for KDEs WM
 
 BROKEN=		"Does not build with KDE 3.2"
-IGNORE=		${BROKEN}
+EXPIRATION_DATE=2005-02-18
+DEPRECATED=	${BROKEN}
 
 USE_KDEBASE_VER=	3
 WRKSRC=		${WRKDIR}/flatcurve-${PORTVERSION}

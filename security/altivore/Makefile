@@ -19,6 +19,8 @@ RESTRICTED=	License does not allow redistribution in any form\
 		(source, code or otherwise)
 
 BROKEN=		Unfetchable
+EXPIRATION_DATE=2005-02-18
+DEPRECATED=	${BROKEN}
 
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes

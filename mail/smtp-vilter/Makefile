@@ -16,6 +16,8 @@ MAINTAINER?=	ports@FreeBSD.org
 COMMENT?=	spam/virus filter infrastructure
 
 BROKEN=		"Checksum mismatch"
+EXPIRATION_DATE=2005-02-18
+DEPRECATED=	${BROKEN}
 
 MAKEFILE=	Makefile.freebsd
 

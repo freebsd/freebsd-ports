@@ -21,6 +21,8 @@ BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Date/Calc.pm:${PORTSDIR}/devel/p5-Date
 		xsltproc:${PORTSDIR}/textproc/libxslt
 
 BROKEN=		"fails self-tests during build"
+EXPIRATION_DATE=2005-02-18
+DEPRECATED=	${BROKEN}
 
 # KTJView currently doesn't compile
 #OPTIONS=	KTJVIEW "Build KDE KTJView program (Requires KDE)" off

@@ -19,6 +19,8 @@ MAINTAINER=	seanc@FreeBSD.org
 COMMENT=	Ruby interface to UCD-SNMP library
 
 IGNORE=		is unusable, cf. ports/47957
+EXPIRATION_DATE=2005-02-18
+DEPRECATED=	"${IGNORE}"
 
 LIB_DEPENDS=	snmp.4:${PORTSDIR}/net-mgmt/net-snmp4
 

@@ -21,6 +21,8 @@ RUN_DEPENDS=	${LOCALBASE}/share/pear/Crypt/CBC.php:${PORTSDIR}/security/pear-Cry
 		${QMAIL_DIR}/bin/qmail-start:${PORTSDIR}/mail/qmail
 
 BROKEN=		Size mismatch
+EXPIRATION_DATE=2005-02-18
+DEPRECATED=	${BROKEN}
 
 USE_PHP=	session mysql sockets gd
 QMAIL_DIR?=	/var/qmail

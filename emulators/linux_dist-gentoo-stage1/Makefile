@@ -16,6 +16,8 @@ COMMENT=	Files from Gentoo distribution, for Linux compatibility
 
 BROKEN=		incorrect packing list
 RESTRICTED=	"binaries licensed under GNU GPL without accompanying source"
+EXPIRATION_DATE=2005-02-18
+DEPRECATED=	${BROKEN}
 
 ONLY_FOR_ARCHS=	alpha amd64 ia64 i386 sparc64
 

@@ -17,6 +17,8 @@ MAINTAINER=	rmiya@cc.hirosaki-u.ac.jp
 COMMENT=	Display molecular orbitals and electron densities in 2D and 3D
 
 BROKEN=		"Checksum mismatch"
+EXPIRATION_DATE=2005-02-18
+DEPRECATED=	${BROKEN}
 
 USE_XLIB=	yes
 

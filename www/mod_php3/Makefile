@@ -21,6 +21,8 @@ MAINTAINER=	apache@FreeBSD.org
 COMMENT?=	PHP3 module for Apache
 
 BROKEN=		"Conflicting dependencies (mysql 3.x and 4.x)"
+EXPIRATION_DATE=2005-02-18
+DEPRECATED=	${BROKEN}
 
 .if !defined(STANDALONE)
 USE_APACHE=	yes

@@ -21,6 +21,8 @@ BUILD_DEPENDS=	korganizer:${PORTSDIR}/deskutils/kdepim3
 LIB_DEPENDS=	kofficecore.2:${PORTSDIR}/editors/koffice-kde3
 
 BROKEN=		"Does not compile"
+EXPIRATION_DATE=2005-02-18
+DEPRECATED=	${BROKEN}
 
 USE_KDELIBS_VER=3
 USE_BZIP2=	yes

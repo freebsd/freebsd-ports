@@ -24,6 +24,8 @@ COMMENT=	A Ruby binding for ImageMagick
 LIB_DEPENDS=	Magick.7:${PORTSDIR}/graphics/ImageMagick
 
 BROKEN=		"Does not compile"
+EXPIRATION_DATE=2005-02-18
+DEPRECATED=	${BROKEN}
 
 USE_BZIP2=	yes
 USE_RUBY=	yes

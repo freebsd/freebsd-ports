@@ -23,6 +23,8 @@ COMMENT=	Linux HOW-TOs modified for applicablity on FreeBSD
 BUILD_DEPENDS=	sgmlfmt:${PORTSDIR}/textproc/sgmlformat
 
 BROKEN=		Size mismatch
+EXPIRATION_DATE=2005-02-18
+DEPRECATED=	${BROKEN}
 
 DIST_SUBDIR=	Howto
 NO_WRKSUBDIR=	yes

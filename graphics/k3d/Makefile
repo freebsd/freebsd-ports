@@ -51,6 +51,8 @@ BROKEN=		"Does not compile on FreeBSD >= 5.x"
 .if ${OSVERSION} < 500000
 BROKEN=		"Does not compile on FreeBSD 4.x"
 .endif
+EXPIRATION_DATE=2005-02-18
+DEPRECATED=	"Does not compile"
 
 post-install:
 .for dir in ${PREFIX}/include/k3d ${PREFIX}/share/k3d ${PREFIX}/lib/k3d

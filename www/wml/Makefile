@@ -18,6 +18,8 @@ COMMENT=	Website META Language, webdesign toolkit for HTML generation
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 
 BROKEN=		Does not compile
+EXPIRATION_DATE=2005-02-18
+DEPRECATED=	${BROKEN}
 
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes

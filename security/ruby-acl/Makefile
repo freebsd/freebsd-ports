@@ -16,6 +16,8 @@ MAINTAINER=	knu@FreeBSD.org
 COMMENT=	Ruby module to provide Access Control List checks
 
 BROKEN=		Does not build
+EXPIRATION_DATE=2005-02-18
+DEPRECATED=	${BROKEN}
 
 USE_RUBY=	yes
 

@@ -14,6 +14,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A free AFS client implementation
 
 BROKEN=		"Does not build"
+EXPIRATION_DATE=2005-02-18
+DEPRECATED=	${BROKEN}
 
 USE_XLIB=	yes
 

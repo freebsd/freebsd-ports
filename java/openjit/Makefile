@@ -16,6 +16,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A high-performance reflective Java Just-In-Time (JIT) bytecode compiler
 
 BROKEN=		"Configure fails with diablo-jdk13"
+EXPIRATION_DATE=2005-02-18
+DEPRECATED=	${BROKEN}
 
 # Only native JDKs are allowed.  Default is java/diablo-jdk13
 .if defined(WITH_JDK13)

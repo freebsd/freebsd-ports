@@ -23,6 +23,8 @@ RUBY_SETUP=	install.rb
 NO_BUILD=	yes
 
 BROKEN=		Incorrect pkg-plist
+EXPIRATION_DATE=2005-02-18
+DEPRECATED=	${BROKEN}
 
 do-install:
 	cd ${WRKSRC}; ${RUBY} ${RUBY_SETUP}

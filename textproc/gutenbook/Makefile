@@ -22,6 +22,8 @@ RUN_DEPENDS=	zip:${PORTSDIR}/archivers/zip \
 		${site_perl}/URI/URL.pm:${PORTSDIR}/net/p5-URI
 
 BROKEN=		Checksum mismatch
+EXPIRATION_DATE=2005-02-18
+DEPRECATED=	${BROKEN}
 
 site_perl=	${SITE_PERL}
 

@@ -21,5 +21,7 @@ USE_OPENSSL=	YES
 MAN3=		sectok.3
 
 IGNORE=		produces a broken package (dangling symlink)
+EXPIRATION_DATE=2005-02-18
+DEPRECATED=	"${IGNORE}"
 
 .include <bsd.port.mk>

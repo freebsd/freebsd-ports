@@ -14,7 +14,9 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/.p/pl/}
 MAINTAINER=	sec@42.org
 COMMENT=	Extended version of wm2 - A simple window manager for X
 
-IGNORE=		"Contains severe bug, will be fixed by maintainer"
+IGNORE=		contains a severe bug, which will be fixed by the maintainer
+EXPIRATION_DATE=2005-02-18
+DEPRECATED=	"${IGNORE}"
 
 USE_X_PREFIX=	yes
 USE_XPM=	yes

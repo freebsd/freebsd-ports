@@ -17,6 +17,8 @@ MAINTAINER=	mike@skew.org
 COMMENT=	A collection of Python tools for XML processing and object database management
 
 IGNORE=		has a broken pkg-plist that removes dozens of files not installed by this port.
+EXPIRATION_DATE=2005-02-18
+DEPRECATED=	"${IGNORE}"
 
 BUILD_DEPENDS=	${PYXML}
 RUN_DEPENDS=	${PYXML}

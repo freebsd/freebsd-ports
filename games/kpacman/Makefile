@@ -25,6 +25,8 @@ CONFIGURE_ARGS+=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
 
 BROKEN=		"Does not compile"
+EXPIRATION_DATE=2005-02-18
+DEPRECATED=	${BROKEN}
 
 post-patch:
 	${REINPLACE_CMD} -e "s,-lqt,-lqt-mt ${PTHREAD_LIBS}," ${WRKSRC}/configure

@@ -57,6 +57,8 @@ BASEPACKAGES=	adduser apt-utils apt base-config base-files base-passwd \
 		telnet textutils util-linux util-linux-locales whiptail
 
 BROKEN=		"Does not build"
+EXPIRATION_DATE=2005-02-18
+DEPRECATED=	${BROKEN}
 
 post-extract:
 	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/util-linux-locales_2.11n-7_all.deb \

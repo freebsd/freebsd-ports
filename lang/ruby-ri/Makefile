@@ -17,6 +17,8 @@ MAINTAINER=	knu@FreeBSD.org
 COMMENT=	Ruby Interactive reference
 
 BROKEN=		Does not build
+EXPIRATION_DATE=2005-02-18
+DEPRECATED=	${BROKEN}
 
 USE_RUBY=	yes
 

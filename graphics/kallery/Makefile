@@ -18,6 +18,8 @@ COMMENT=	An image gallery generator for KDE
 LIB_DEPENDS=	Magick.7:${PORTSDIR}/graphics/ImageMagick
 
 BROKEN=		Checksum mismatch
+EXPIRATION_DATE=2005-02-18
+DEPRECATED=	${BROKEN}
 
 USE_KDELIBS_VER=3
 USE_BZIP2=	yes
