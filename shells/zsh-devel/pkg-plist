@@ -32,6 +32,7 @@ bin/zsh-%%ZSH_VER%%
 %%NO_STATIC%%lib/zsh/%%ZSH_VER%%/zsh/complete.so
 %%NO_STATIC%%lib/zsh/%%ZSH_VER%%/zsh/complist.so
 %%NO_STATIC%%lib/zsh/%%ZSH_VER%%/zsh/computil.so
+%%NO_STATIC%%lib/zsh/%%ZSH_VER%%/zsh/datetime.so
 %%NO_STATIC%%lib/zsh/%%ZSH_VER%%/zsh/deltochar.so
 %%NO_STATIC%%lib/zsh/%%ZSH_VER%%/zsh/example.so
 %%NO_STATIC%%lib/zsh/%%ZSH_VER%%/zsh/files.so
@@ -51,6 +52,7 @@ bin/zsh-%%ZSH_VER%%
 %%NO_STATIC%%lib/zsh/%%ZSH_VER%%/zsh/zleparameter.so
 %%NO_STATIC%%lib/zsh/%%ZSH_VER%%/zsh/zprof.so
 %%NO_STATIC%%lib/zsh/%%ZSH_VER%%/zsh/zpty.so
+%%NO_STATIC%%lib/zsh/%%ZSH_VER%%/zsh/zselect.so
 %%NO_STATIC%%lib/zsh/%%ZSH_VER%%/zsh/zutil.so
 share/examples/zsh/zlogin
 share/examples/zsh/zshenv
@@ -111,6 +113,7 @@ share/examples/zsh/zshrc
 %%ZSHFUNC_SUBDIR%%/_dd
 %%ZSHFUNC_SUBDIR%%/_deb_packages
 %%ZSHFUNC_SUBDIR%%/_debchange
+%%ZSHFUNC_SUBDIR%%/_debfoster
 %%ZSHFUNC_SUBDIR%%/_default
 %%ZSHFUNC_SUBDIR%%/_describe
 %%ZSHFUNC_SUBDIR%%/_description
@@ -143,6 +146,7 @@ share/examples/zsh/zshrc
 %%ZSHFUNC_SUBDIR%%/_fakeroot
 %%ZSHFUNC_SUBDIR%%/_fc
 %%ZSHFUNC_SUBDIR%%/_fetchmail
+%%ZSHFUNC_SUBDIR%%/_figlet 
 %%ZSHFUNC_SUBDIR%%/_file_descriptors
 %%ZSHFUNC_SUBDIR%%/_file_systems
 %%ZSHFUNC_SUBDIR%%/_files
@@ -175,8 +179,10 @@ share/examples/zsh/zshrc
 %%ZSHFUNC_SUBDIR%%/_imagemagick
 %%ZSHFUNC_SUBDIR%%/_in_vared
 %%ZSHFUNC_SUBDIR%%/_init_d
+%%ZSHFUNC_SUBDIR%%/_irssi
 %%ZSHFUNC_SUBDIR%%/_ispell
 %%ZSHFUNC_SUBDIR%%/_java
+%%ZSHFUNC_SUBDIR%%/_java_class
 %%ZSHFUNC_SUBDIR%%/_jobs
 %%ZSHFUNC_SUBDIR%%/_jobs_bg
 %%ZSHFUNC_SUBDIR%%/_jobs_builtin
@@ -185,12 +191,14 @@ share/examples/zsh/zshrc
 %%ZSHFUNC_SUBDIR%%/_kill
 %%ZSHFUNC_SUBDIR%%/_killall
 %%ZSHFUNC_SUBDIR%%/_kld
+%%ZSHFUNC_SUBDIR%%/_larch
 %%ZSHFUNC_SUBDIR%%/_last
 %%ZSHFUNC_SUBDIR%%/_limit
 %%ZSHFUNC_SUBDIR%%/_limits
 %%ZSHFUNC_SUBDIR%%/_links
 %%ZSHFUNC_SUBDIR%%/_list
 %%ZSHFUNC_SUBDIR%%/_loadkeys
+%%ZSHFUNC_SUBDIR%%/_locales
 %%ZSHFUNC_SUBDIR%%/_logical_volumes
 %%ZSHFUNC_SUBDIR%%/_look
 %%ZSHFUNC_SUBDIR%%/_lp
@@ -215,6 +223,7 @@ share/examples/zsh/zshrc
 %%ZSHFUNC_SUBDIR%%/_message
 %%ZSHFUNC_SUBDIR%%/_mh
 %%ZSHFUNC_SUBDIR%%/_modutils
+%%ZSHFUNC_SUBDIR%%/_mondo
 %%ZSHFUNC_SUBDIR%%/_most_recent_file
 %%ZSHFUNC_SUBDIR%%/_mount
 %%ZSHFUNC_SUBDIR%%/_mozilla
@@ -223,9 +232,11 @@ share/examples/zsh/zshrc
 %%ZSHFUNC_SUBDIR%%/_mutt
 %%ZSHFUNC_SUBDIR%%/_my_accounts
 %%ZSHFUNC_SUBDIR%%/_mysql_utils
+%%ZSHFUNC_SUBDIR%%/_mysqldiff
 %%ZSHFUNC_SUBDIR%%/_ncftp
 %%ZSHFUNC_SUBDIR%%/_nedit
 %%ZSHFUNC_SUBDIR%%/_net_interfaces
+%%ZSHFUNC_SUBDIR%%/_netcat
 %%ZSHFUNC_SUBDIR%%/_netscape
 %%ZSHFUNC_SUBDIR%%/_newsgroups
 %%ZSHFUNC_SUBDIR%%/_next_label
@@ -252,6 +263,7 @@ share/examples/zsh/zshrc
 %%ZSHFUNC_SUBDIR%%/_perl_modules
 %%ZSHFUNC_SUBDIR%%/_perldoc
 %%ZSHFUNC_SUBDIR%%/_physical_volumes
+%%ZSHFUNC_SUBDIR%%/_pick_variant
 %%ZSHFUNC_SUBDIR%%/_pids
 %%ZSHFUNC_SUBDIR%%/_pine
 %%ZSHFUNC_SUBDIR%%/_ports
@@ -276,8 +288,11 @@ share/examples/zsh/zshrc
 %%ZSHFUNC_SUBDIR%%/_rsync
 %%ZSHFUNC_SUBDIR%%/_ruby
 %%ZSHFUNC_SUBDIR%%/_samba
+%%ZSHFUNC_SUBDIR%%/_sccs
 %%ZSHFUNC_SUBDIR%%/_sched
 %%ZSHFUNC_SUBDIR%%/_sep_parts
+%%ZSHFUNC_SUBDIR%%/_service
+%%ZSHFUNC_SUBDIR%%/_services
 %%ZSHFUNC_SUBDIR%%/_set
 %%ZSHFUNC_SUBDIR%%/_set_command
 %%ZSHFUNC_SUBDIR%%/_setopt
@@ -306,6 +321,7 @@ share/examples/zsh/zshrc
 %%ZSHFUNC_SUBDIR%%/_terminals
 %%ZSHFUNC_SUBDIR%%/_tex
 %%ZSHFUNC_SUBDIR%%/_texi
+%%ZSHFUNC_SUBDIR%%/_texinfo
 %%ZSHFUNC_SUBDIR%%/_tiff
 %%ZSHFUNC_SUBDIR%%/_tilde
 %%ZSHFUNC_SUBDIR%%/_tilde_files
@@ -324,6 +340,7 @@ share/examples/zsh/zshrc
 %%ZSHFUNC_SUBDIR%%/_user_at_host
 %%ZSHFUNC_SUBDIR%%/_users
 %%ZSHFUNC_SUBDIR%%/_users_on
+%%ZSHFUNC_SUBDIR%%/_valgrind
 %%ZSHFUNC_SUBDIR%%/_value
 %%ZSHFUNC_SUBDIR%%/_values
 %%ZSHFUNC_SUBDIR%%/_vared
@@ -398,6 +415,7 @@ share/examples/zsh/zshrc
 %%ZSHFUNC_SUBDIR%%/compinstall
 %%ZSHFUNC_SUBDIR%%/copy-earlier-word
 %%ZSHFUNC_SUBDIR%%/cycle-completion-positions
+%%ZSHFUNC_SUBDIR%%/down-line-or-beginning-search
 %%ZSHFUNC_SUBDIR%%/edit-command-line
 %%ZSHFUNC_SUBDIR%%/getjobs
 %%ZSHFUNC_SUBDIR%%/harden
@@ -426,9 +444,11 @@ share/examples/zsh/zshrc
 %%ZSHFUNC_SUBDIR%%/prompt_zefram_setup
 %%ZSHFUNC_SUBDIR%%/promptinit
 %%ZSHFUNC_SUBDIR%%/promptnl
+%%ZSHFUNC_SUBDIR%%/relative
 %%ZSHFUNC_SUBDIR%%/run-help
 %%ZSHFUNC_SUBDIR%%/smart-insert-last-word
 %%ZSHFUNC_SUBDIR%%/tetris
+%%ZSHFUNC_SUBDIR%%/up-line-or-beginning-search
 %%ZSHFUNC_SUBDIR%%/zcalc
 %%ZSHFUNC_SUBDIR%%/zed
 %%NO_STATIC%%%%ZSHFUNC_SUBDIR%%/zfanon
