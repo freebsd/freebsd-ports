@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	librsvg2
-PORTVERSION=	2.0.0
+PORTVERSION=	2.0.1
 CATEGORIES=	graphics gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	2.0.0/releases/gnome-2.0-desktop-final
+MASTER_SITE_SUBDIR=	2.0.0/sources/${PORTNAME:S/2$//}
 DIST_SUBDIR=	gnome2
 DISTNAME=	librsvg-${PORTVERSION}
 
