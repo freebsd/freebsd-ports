@@ -3,7 +3,7 @@
 # Date created:		11 January 1995
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.11 1997/04/28 14:54:34 obrien Exp $
+# $Id: Makefile,v 1.12 1997/07/17 15:12:41 max Exp $
 #
 
 DISTNAME=	malloc-1.18
@@ -12,6 +12,8 @@ CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.cs.toronto.edu/pub/moraes/
 
 MAINTAINER=	obrien@FreeBSD.org
+
+MANUAL_PACKAGE_BUILD=	installs malloc.h
 
 post-install:
 	${LDCONFIG} -m ${PREFIX}/lib
