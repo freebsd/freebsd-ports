@@ -1,0 +1,10 @@
+This is a program designed initially to speed up writing tapes on remote
+tape drives, but may be used as a general pipe buffering utility.
+Note: You must have SYSVSHM support in FreeBSD kernel.
+
+The program splits itself into two processes.  The first process reads
+(and reblocks) from stdin into a shared memory buffer.  The second
+writes from the shared memory buffer to stdout.  Doing it this way
+means that the writing side effectly sits in a tight write loop and
+doesn't have to wait for input.  Similarly for the input side.  It is
+this waiting that slows down other reblocking processes, like dd.
