@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Mail-SpamAssassin
-PORTVERSION=	2.55
+PORTVERSION=	2.60
 CATEGORIES=	mail perl5
 MASTER_SITES=	http://spamassassin.org/released/ \
 		${MASTER_SITE_PERL_CPAN}
@@ -35,7 +35,8 @@ RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5
 
 PERL_CONFIGURE=	yes
 CONFIGURE_ARGS+=	SYSCONFDIR="${PREFIX}/etc" \
-			RUN_RAZOR1_TESTS="no" RUN_RAZOR2_TESTS="no"
+			RUN_RAZOR_TESTS="no" RUN_RAZOR2_TESTS="no" \
+			CONTACT_ADDRESS="the administrator of that system"
 
 MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Mail::SpamAssassin.3 Mail::SpamAssassin::PerMsgStatus.3 \
