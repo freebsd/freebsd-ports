@@ -7,6 +7,16 @@ time you update your ports collection, before attempting any port
 upgrades.
 
 
+20050406:
+  AFFECTS: users of databases/mysql50-server
+  AUTHOR: ale@FreeBSD.org
+
+  The base database directory can now be set and changed in rc.conf (default:
+  /var/db/mysql). If you used to set DB_DIR to a different value during port
+  compilation, you must specify it via the new "mysql_dbdir" rc variable.
+  In addition, the "mysqllimits_enable" and "mysqllimits_args" variables
+  have been replaced by "mysql_limits" for consistency.
+
 20050403:
   AFFECTS: users of net/tac_plus4
   AUTHOR: marcus@FreeBSD.org
