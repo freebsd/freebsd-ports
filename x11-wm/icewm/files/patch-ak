@@ -1,6 +1,6 @@
---- src/aapm.cc.orig	Tue Oct  9 23:54:03 2001
-+++ src/aapm.cc	Tue Feb 19 14:39:19 2002
-@@ -23,6 +23,13 @@
+--- src/aapm.cc.orig	Sat Jan  4 01:25:45 2003
++++ src/aapm.cc	Mon Jan  6 19:00:50 2003
+@@ -26,6 +26,13 @@
  #include <string.h>
  #include <stdio.h>
  
@@ -11,24 +11,24 @@
 +#include <machine/apm_bios.h>
 +#endif
 +
- #ifdef CONFIG_APPLET_APM
- 
  YColor *YApm::apmBg = 0;
-@@ -32,8 +39,12 @@
- extern YPixmap *taskbackPixmap;
+ YColor *YApm::apmFg = 0;
+ YFont *YApm::apmFont = 0;
+@@ -47,8 +54,12 @@
+ 
  
  void ApmStr(char *s, bool Tool) {
 +#ifdef __FreeBSD__
 +    struct apm_info ai;
 +#else
-     char buf[45];
+     char buf[80];
 -    int len, i, fd = open("/proc/apm", O_RDONLY);
 +#endif
 +    int len, i, fd = open(APMDEV, O_RDONLY);
      char driver[16];
      char apmver[16];
      int apmflags;
-@@ -45,9 +56,27 @@
+@@ -60,9 +71,27 @@
      char units[16];
  
      if (fd == -1) {
@@ -57,7 +57,7 @@
      len = read(fd, buf, sizeof(buf) - 1);
      close(fd);
  
-@@ -61,10 +90,11 @@
+@@ -76,10 +105,11 @@
          static int error = 1;
          if (error) {
              error = 0;

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	icewm
-PORTVERSION=	1.2.0
+PORTVERSION=	1.2.7
 CATEGORIES=	x11-wm
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -14,17 +14,16 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	nakai@FreeBSD.org
 COMMENT=	Window Manager designed for speed, usability and consistency
 
-BUILD_DEPENDS=	autoconf:${PORTSDIR}/devel/autoconf
 LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 
 USE_X_PREFIX=	yes
 WANT_GNOME=	yes
 USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	--enable-i18n --enable-nls \
+USE_AUTOCONF_VER=	253
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
+CONFIGURE_ARGS=	--disable-xfreetype \
 		--with-cfgdir=${PREFIX}/share/icewm \
 		--with-libdir=${PREFIX}/share/icewm \
 		--with-kdedatadir=${LOCALBASE}/share \
@@ -40,6 +39,7 @@ CONFIGURE_ARGS+=	--with-imlib --without-xpm --with-gnome-menus \
 			--enable-guievents --with-icesound=esound
 INSTALL_TARGET=		install install-gnome
 PLIST_SUB+=	ESOUND=""
+PKGNAMESUFFIX=	-gnome
 .else
 USE_XPM=	yes
 CONFIGURE_ARGS+=	--without-imlib --with-xpm --without-gnome-menus
@@ -51,9 +51,6 @@ PLIST_SUB+=	ESOUND=""
 PLIST_SUB+=	ESOUND="@comment "
 .endif
 .endif
-
-pre-configure:
-	@cd ${CONFIGURE_WRKSRC} && ${LOCALBASE}/bin/autoconf
 
 post-install:
 	${INSTALL_DATA} ${FILESDIR}/bsd-daemon.xpm ${DATADIR}/taskbar
