@@ -1,23 +1,26 @@
-# ex:ts=8
-# New ports collection makefile for:	star
-# Date created:		Thu May  1 20:28:44 CEST 1997
-# Whom:			Andreas Klemm <andreas@klemm.gtn.com>
+# New ports collection makefile for:	star-devel
+# Date created:				19.06.2004 22:27:00 CEST
+# Whom:					Martin Matuska <martin@tradex.sk>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	star
-PORTVERSION=	1.4.3
-PORTREVISION=	1
+PORTVERSION=	1.5.a.41
 CATEGORIES=	archivers
-MASTER_SITES=	ftp://ftp.berlios.de/pub/star/
+MASTER_SITES=	ftp://ftp.berlios.de/pub/star/alpha/
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/.a./a/}
 
-MAINTAINER=	olgeni@FreeBSD.org
+MAINTAINER=	martin@tradex.sk
 COMMENT=	Unique standard tape archiver with many enhancements
+
+CONFLICTS=	star-1.4*
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:C/.a.*//g}
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-MAKE_ENV=	MAKEPROG=${GMAKE} CCOM=${CC}
+MAKE_ENV=	MAKEPROG=${GMAKE} CCOM=${CC} LANG=C
 MAN1=		star.1
 MLINKS=		star.1 ustar.1
 
