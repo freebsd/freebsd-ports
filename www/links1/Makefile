@@ -20,6 +20,7 @@ COMMENT=	Lynx-like text WWW browser
 GNU_CONFIGURE=	yes
 
 USE_OPENSSL=	yes
+NO_LATEST_LINK=	yes
 
 MAN1=		links.1
 
