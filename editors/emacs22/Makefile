@@ -3,10 +3,10 @@
 # Date created:		29 October 1994
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.17 1995/06/26 09:13:58 asami Exp $
+# $Id: Makefile,v 1.18 1995/12/01 09:34:40 asami Exp $
 #
 
-DISTNAME=	emacs-19.30
+DISTNAME=	emacs-19.31
 CATEGORIES+=	editors
 MASTER_SITES=	ftp://prep.ai.mit.edu/pub/gnu/
 
@@ -19,7 +19,7 @@ post-install:
 	gzip -9nf ${PREFIX}/man/man1/emacs.1
 	gzip -9nf ${PREFIX}/man/man1/etags.1
 	gzip -9nf ${PREFIX}/man/man1/ctags.1
-	for file in emacs-19.30 emacsclient etags ctags b2m; do \
+	for file in emacs-19.31 emacsclient etags ctags b2m; do \
 	  strip ${PREFIX}/bin/$$file; \
 	done
 
