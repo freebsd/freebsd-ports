@@ -22,7 +22,7 @@ LIB_DEPENDS=	pisock.8:${PORTSDIR}/palm/pilot-link
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomeprefix gnomehack gnomehier gnomepanel
+USE_GNOME=	gnomeprefix gnomehack gnomehier gnomepanel intlhack
 USE_LIBTOOL_VER=15
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--with-pisock=${LOCALBASE}
