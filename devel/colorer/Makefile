@@ -16,8 +16,7 @@ DISTNAME=	Colorer-take5.beta2
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A syntax highlighting and text parsing library
 
-BUILD_DEPENDS=	${ANT}:${PORTSDIR}/devel/apache-ant \
-		fop:${PORTSDIR}/textproc/fop \
+BUILD_DEPENDS=	fop:${PORTSDIR}/textproc/fop \
 		${LOCALBASE}/share/xsl/docbook/catalog:${PORTSDIR}/textproc/docbook-xsl \
 		${LOCALBASE}/share/docbook-xsd/docbook.xsd:${PORTSDIR}/textproc/docbook-xsd \
 		${LOCALBASE}/share/mathml-xsd/mathml2.xsd:${PORTSDIR}/textproc/mathml-xsd \
@@ -26,25 +25,18 @@ BUILD_DEPENDS=	${ANT}:${PORTSDIR}/devel/apache-ant \
 USE_BZIP2=	yes
 USE_REINPLACE=	yes
 USE_JAVA=	1.4+
+USE_ANT=	yes
 NEED_JAVAC=	yes
-ANT?=		${LOCALBASE}/bin/ant
-ANT_TARGET?=	library-linux
+ALL_TARGET?=	library-linux
 USE_GMAKE=	yes
 PLIST_FILES=	bin/colorer lib/libcolorer.so
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502126
-BROKEN=		"Does not compile on FreeBSD >= 5.x"
-.endif
-
-do-build:
-	@(cd ${WRKSRC} && \
-          ${SETENV} JAVA_HOME=${JAVA_HOME} ${ANT} ${ANT_TARGET} ; \
-	  cd distr/Colorer-take5-linux.beta2 ; \
-	  ${REINPLACE_CMD} -e "s|make -C|${GMAKE} -C|" Makefile.in ; \
-	  ${CHMOD} +x configure && ${SETENV} ${CONFIGURE_ENV} ./configure ; \
-	  ${GMAKE} ${PORTNAME} \
+post-build:
+	@(cd ${WRKSRC}/distr/Colorer-take5-linux.beta2 ; \
+	${REINPLACE_CMD} -e "s|make -C|${GMAKE} -C|" Makefile.in ; \
+	${REINPLACE_CMD} -e "s|-O3|${CFLAGS}|" src/shared/makefile.colorer.gcc ; \
+	${CHMOD} +x configure && ${SETENV} ${CONFIGURE_ENV} ./configure ; \
+	${GMAKE} ${PORTNAME} \
 	)
 
 do-install:
@@ -82,4 +74,4 @@ do-install:
 		${SED} 's,^${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
