@@ -1,17 +1,17 @@
 # New ports collection makefile for:	fnlib
-# Version required:	0.4
+# Version required:	0.5
 # Date created:		23 June 1997
 # Whom:			brett@peloton.physics.montana.edu
 #
 # $FreeBSD$
 #
 
-DISTNAME=	fnlib-0.4
+DISTNAME=	fnlib-0.5
 CATEGORIES=	graphics
-MASTER_SITES=	http://mirror.nucba.ac.jp/mirror/enlightenment/enlightenment/ \
-		ftp://ftp.leirianet.pt/pub/X11/enlightenment/enlightenment/ \
-		ftp://ftp.dti.ad.jp/pub/X/enlightenment/enlightenment/ \
-		ftp://mirror.nucba.ac.jp/mirror/enlightenment/enlightenment/
+MASTER_SITES=	http://mirror.nucba.ac.jp/mirror/enlightenment/enlightenment/libs/ \
+		ftp://ftp.leirianet.pt/pub/X11/enlightenment/enlightenment/libs/ \
+		ftp://ftp.dti.ad.jp/pub/X/enlightenment/enlightenment/libs/ \
+		ftp://mirror.nucba.ac.jp/mirror/enlightenment/enlightenment/libs/
 
 MAINTAINER=	vanilla@FreeBSD.org
 
