@@ -3,25 +3,26 @@
 # Date Created:		3 Jul 1996
 # Whom:			Tim Vanderhoek <ac199@hwcn.org>
 #
-# $Id: Makefile,v 1.6 1998/09/25 10:05:07 asami Exp $
+# $Id: Makefile,v 1.7 1998/09/28 02:14:24 steve Exp $
 #
 
 DISTNAME=	tvp-0.9.7.1
 CATEGORIES=	games tk80
 MASTER_SITES=	http://www3.sympatico.ca/john.vanderhoek/tim/src/president/
 
-MAINTAINER=	hoek@FreeBSD.ORG
+MAINTAINER=	hoek@FreeBSD.org
 
-# If you comment this out, the port should automatically use whichever
-# version of tk you have installed, or, lacking all versions, it will
-# build only the ANSI and terminal interfaces (not the nice X interface).
+# Comment-out this (and CFLAGS) to compile only the CLI and ansi interfaces
 LIB_DEPENDS=	tk80.1:${PORTSDIR}/x11-toolkits/tk80
 
 GNU_CONFIGURE=		yes
-CONFIGURE_ARGS=		--enable-tcl-dir=${PREFIX}/lib \
-			--enable-carddir=${PREFIX}/share/games/tvp
+CONFIGURE_ARGS=		--enable-carddir=${PREFIX}/share/games/tvp
+# Comment-out this (and LIB_DEPENDS) to compile only the CLI and ansi interfaces
+CFLAGS+=		-lX11 -lm -ltcl80 -ltk80 \
+			-L ${LOCALBASE}/lib -L ${X11BASE}/lib
 
 MAN6=	tvp.6
+MLINKS=	tvp.6 xprez.6 - aprez.6 - prez.6
 
 DOCFILES=	aprez.txt libass.txt president.txt prez.txt xprez.txt
 
@@ -35,6 +36,6 @@ post-install:
 	${INSTALL_MAN} ${FILESDIR}/tvp.6 ${PREFIX}/man/man6/tvp.6
 	a='${PREFIX}/share/doc/tvp/' perl -pi -e 's/TOKEN/$$ENV{a}/' \
 		${PREFIX}/man/man6/tvp.6
-	strip ${PREFIX}/bin/aprez ${PREFIX}/bin/prez
+	strip ${PREFIX}/bin/aprez ${PREFIX}/bin/prez ${PREFIX}/bin/xpwish
 
 .include <bsd.port.mk>
