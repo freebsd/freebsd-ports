@@ -1,0 +1,8 @@
+include/libmng.h
+include/libmng_conf.h
+include/libmng_types.h
+lib/libmng.a
+lib/libmng.la
+lib/libmng.so.%%SHLIB_VER%%
+@exec ln -sf %f %B/libmng.so
+@unexec rm -f %B/libmng.so

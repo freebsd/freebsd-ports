@@ -99,6 +99,7 @@
     SUBDIR += libflash
     SUBDIR += libggi
     SUBDIR += libimg
+    SUBDIR += libmng
     SUBDIR += libmorph
     SUBDIR += libungif
     SUBDIR += libwmf
