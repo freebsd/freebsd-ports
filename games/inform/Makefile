@@ -25,6 +25,7 @@ NO_WRKSUBDIR=	yes
 
 EXTRACT_ONLY=	inform621_source.zip
 USE_ZIP=	yes
+BUILD_DEPENDS=	unzip:/usr/ports/archivers/unzip
 
 # I can hardly believe it, but the ".c" and ".h" extensions are
 # not present on the source files.
