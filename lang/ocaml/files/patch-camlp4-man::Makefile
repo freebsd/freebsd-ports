@@ -1,15 +1,19 @@
---- camlp4/man/Makefile.orig	Wed Sep 26 10:32:50 2001
-+++ camlp4/man/Makefile	Sun Feb 10 23:45:36 2002
-@@ -16,12 +16,6 @@
+--- camlp4/man/Makefile.orig	Fri Jul 19 16:53:49 2002
++++ camlp4/man/Makefile	Fri Aug  2 00:07:34 2002
+@@ -14,14 +14,8 @@
+ get_promote:
+ 
  install:
- 	-$(MKDIR) $(MANDIR)
- 	-cp $(TARGET) $(MANDIR)/.
--	-cd $(MANDIR); rm -f camlp4o.1; ln -s $(TARGET) camlp4o.1
--	-cd $(MANDIR); rm -f camlp4r.1; ln -s $(TARGET) camlp4r.1
--	-cd $(MANDIR); rm -f mkcamlp4.1; ln -s $(TARGET) mkcamlp4.1
--	-cd $(MANDIR); rm -f ocpp.1; ln -s $(TARGET) ocpp.1
--	-cd $(MANDIR); rm -f camlp4o.opt.1; ln -s $(TARGET) camlp4o.opt.1
--	-cd $(MANDIR); rm -f camlp4r.opt.1; ln -s $(TARGET) camlp4r.opt.1
+-	-$(MKDIR) $(MANDIR)/man1
+-	-cp $(TARGET) $(MANDIR)/man1/.
+-	-cd $(MANDIR)/man1; rm -f camlp4o.1; ln -s $(TARGET) camlp4o.1
+-	-cd $(MANDIR)/man1; rm -f camlp4r.1; ln -s $(TARGET) camlp4r.1
+-	-cd $(MANDIR)/man1; rm -f mkcamlp4.1; ln -s $(TARGET) mkcamlp4.1
+-	-cd $(MANDIR)/man1; rm -f ocpp.1; ln -s $(TARGET) ocpp.1
+-	-cd $(MANDIR)/man1; rm -f camlp4o.opt.1; ln -s $(TARGET) camlp4o.opt.1
+-	-cd $(MANDIR)/man1; rm -f camlp4r.opt.1; ln -s $(TARGET) camlp4r.opt.1
++	-$(MKDIR) $(MANDIR)
++	-cp $(TARGET) $(MANDIR)/.
  
  camlp4.1: camlp4.1.tpl
  	sed -e "s'LIBDIR'$(LIBDIR)'g" camlp4.1.tpl > camlp4.1
