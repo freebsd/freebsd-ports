@@ -247,7 +247,6 @@
     SUBDIR += gettext
     SUBDIR += getxml
     SUBDIR += gindent
-    SUBDIR += glade
     SUBDIR += glade2
     SUBDIR += glademm
     SUBDIR += glg
