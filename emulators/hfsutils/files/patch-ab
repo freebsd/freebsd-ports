@@ -1,28 +1,23 @@
---- Makefile.in.orig	Fri Feb 20 06:24:05 1998
-+++ Makefile.in	Wed Mar 11 23:20:22 1998
-@@ -42,7 +42,7 @@
- HARDLINK =	ln -f
+--- Makefile.in.orig	Sun Oct 25 00:08:19 1998
++++ Makefile.in	Sun Oct 25 00:12:11 1998
+@@ -64,7 +64,8 @@
  
- CC =		@CC@
--INCLUDES =	@CPPFLAGS@ -Ilibhfs @TCL_INCLUDES@ @TK_INCLUDES@
-+INCLUDES =	@CPPFLAGS@ -Ilibhfs -I/usr/X11R6/include @TCL_INCLUDES@ @TK_INCLUDES@
- DEFINES =	@DEFS@
- LIBOBJS =	@LIBOBJS@
- LIBS =		@LIBS@
-@@ -125,13 +125,16 @@
+ CLITARGETS =	hattrib hcd hcopy hdel hdir hformat hls hmkdir hmount hpwd  \
+ 		hrename hrmdir humount hvol
+-TCLTARGETS =	hfssh hfs
++TCLTARGETS =	hfssh
++TCLSCRIPTS =	hfs
+ TKTARGETS =	xhfs
+ 
+ LIBHFS =	libhfs/libhfs.a
+@@ -129,9 +130,13 @@
+ 		$(BININSTALL) $$file "$(BINDEST)/.";  \
  	done
  
- install_tcl :: all_tcl
--	for file in $(TCLTARGETS); do  \
--		$(BININSTALL) $$file "$(BINDEST)/.";  \
--	done
-+#	for file in $(TCLTARGETS); do  \
-+#		$(BININSTALL) $$file "$(BINDEST)/.";  \
-+#	done
++	for file in $(TCLSCRIPTS); do  \
++		$(LIBINSTALL) $$file "$(BINDEST)/.";  \
++	done
 +
-+	$(BININSTALL) hfssh "$(BINDEST)/.";
-+	$(LIBINSTALL) hfs "$(BINDEST)/.";
- 
  	if [ -f "$(BINDEST)/hfs" ]; then  \
  		sed -e '1d' "$(BINDEST)/hfs" > "$(BINDEST)/hfs.new";  \
 -		$(BININSTALL) "$(BINDEST)/hfs.new" "$(BINDEST)/hfs";  \
