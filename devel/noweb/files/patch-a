@@ -55,3 +55,20 @@ diff -cr Makefile.orig Makefile
   
   # change WEAVE if you want a different version of noweave to be installed
   WEAVE=noweave		
+***************
+*** 96,102 ****
+  	rm -f $(CATDIR)/nountangle.$(MANEXT).gz
+  	(cd $(CATDIR); ln notangle.$(MANEXT).gz nountangle.$(MANEXT).gz)
+  install-tex:
+! 	-mkdir $(TEXINPUTS) 2>/dev/null
+  	cp tex/nwmac.tex tex/noweb.sty $(TEXINPUTS)
+  
+  checkin:
+--- 96,102 ----
+  	rm -f $(CATDIR)/nountangle.$(MANEXT).gz
+  	(cd $(CATDIR); ln notangle.$(MANEXT).gz nountangle.$(MANEXT).gz)
+  install-tex:
+! 	-mkdir -p $(TEXINPUTS) 2>/dev/null
+  	cp tex/nwmac.tex tex/noweb.sty $(TEXINPUTS)
+  
+  checkin:
