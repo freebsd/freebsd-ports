@@ -25,6 +25,7 @@ include/fox/FXDQuat.h
 include/fox/FXDVec.h
 include/fox/FXDataTarget.h
 include/fox/FXDebugTarget.h
+include/fox/FXDelegator.h
 include/fox/FXDial.h
 include/fox/FXDialogBox.h
 include/fox/FXDict.h
@@ -43,7 +44,6 @@ include/fox/FXFont.h
 include/fox/FXFontDialog.h
 include/fox/FXFontSelector.h
 include/fox/FXFrame.h
-include/fox/FXId.h
 include/fox/FXGIFIcon.h
 include/fox/FXGIFImage.h
 include/fox/FXGLCanvas.h
@@ -63,7 +63,9 @@ include/fox/FXHeader.h
 include/fox/FXHorizontalFrame.h
 include/fox/FXIcon.h
 include/fox/FXIconList.h
+include/fox/FXId.h
 include/fox/FXImage.h
+include/fox/FXImageView.h
 include/fox/FXJPEGIcon.h
 include/fox/FXJPEGImage.h
 include/fox/FXLabel.h
@@ -95,9 +97,9 @@ include/fox/FXProgressBar.h
 include/fox/FXQuat.h
 include/fox/FXRadioButton.h
 include/fox/FXRange.h
+include/fox/FXRecentFiles.h
 include/fox/FXRegion.h
 include/fox/FXRegistry.h
-include/fox/FXRecentFiles.h
 include/fox/FXRootWindow.h
 include/fox/FXScrollArea.h
 include/fox/FXScrollWindow.h
@@ -118,6 +120,8 @@ include/fox/FXTable.h
 include/fox/FXText.h
 include/fox/FXTextField.h
 include/fox/FXToggleButton.h
+include/fox/FXToolbar.h
+include/fox/FXToolbarShell.h
 include/fox/FXToolbarTab.h
 include/fox/FXTooltip.h
 include/fox/FXTopWindow.h
@@ -141,47 +145,48 @@ include/fox/xincs.h
 lib/libFOX.a
 lib/libFOX.so
 lib/libFOX.so.%%LIBVER%%
+share/fox/html/bigpenguin.png
+share/fox/html/cfdrc.png
+share/fox/html/cfdrclogo.png
 share/fox/html/draganddrop.html
 share/fox/html/faq.html
 share/fox/html/focus.html
 share/fox/html/fonts.html
 share/fox/html/foreword.html
 share/fox/html/fox.html
+share/fox/html/foxback.png
+share/fox/html/foxlogo.png
 share/fox/html/guiupdate.html
 share/fox/html/icons.html
 share/fox/html/introduction.html
 share/fox/html/layout.html
 share/fox/html/messages.html
-share/fox/html/oldfox.html
-share/fox/html/platforms.html
-share/fox/html/registry.html
-share/fox/html/serialization.html
-share/fox/html/widgets.html
-share/fox/html/win32.html
-share/fox/html/bigpenguin.png
-share/fox/html/cfdrc.png
-share/fox/html/foxback.png
-share/fox/html/foxlogo.png
 share/fox/html/nasafan.png
+share/fox/html/oldfox.html
 share/fox/html/opengl_logo.png
 share/fox/html/owl-anim.png
 share/fox/html/pathfinder.png
 share/fox/html/pcboard.png
+share/fox/html/platforms.html
 share/fox/html/progress.png
+share/fox/html/registry.html
 share/fox/html/scribble.png
+share/fox/html/serialization.html
 share/fox/html/sgitextedit.png
 share/fox/html/tb-paste.png
 share/fox/html/textedit.png
 share/fox/html/textedit2.png
+share/fox/html/widgets.html
 share/fox/html/win32-libraries.png
 share/fox/html/win32-linkoutput.png
 share/fox/html/win32-postbuild.png
 share/fox/html/win32-preprocessor.png
 share/fox/html/win32-project.png
 share/fox/html/win32-tooloptions.png
+share/fox/html/win32.html
 share/fox/html/wintextedit.png
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
+@exec /sbin/ldconfig -m %B
+@unexec /sbin/ldconfig -R
 @dirrm include/fox
 @dirrm share/fox/html
 @dirrm share/fox
