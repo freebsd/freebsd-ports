@@ -1,0 +1,24 @@
+Simple Sequences
+
+You can create a sequence from an outline.  Type something like this:
+
+At Home.Wash Car
+    Garage.retrieve bucket
+    Kitchen.prepare bucket
+        Kitchen.pour soap in bucket
+        Kitchen.fill bucket
+    Garage.get sponge
+    Garage.open door
+    Driveway.apply soapy water
+    Driveway.empty bucket
+    Garage.close door
+    Garage.replace bucket
+
+Then do this:
+
+    genericseq.pl UML::Sequence::SimpleSeq inputfile | seq2svg.pl > output.svg
+
+
+WWW: http://search.cpan.org/search?dist=UML-Sequence
+
+Author: Phil Crow <philcrow2000@yahoo.com>
