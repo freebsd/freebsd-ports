@@ -1,0 +1,5 @@
+This is a suite of helper programs which create daemontools service
+directories for the various qmail utilities.
+
+Author:		Tetsu Ushijima
+WWW:		http://www.din.or.jp/~ushijima/qmail-conf.html
