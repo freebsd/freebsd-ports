@@ -189,6 +189,7 @@ lib/asterisk/modules/app_chanisavail.so
 lib/asterisk/modules/app_controlplayback.so
 lib/asterisk/modules/app_cut.so
 lib/asterisk/modules/app_db.so
+lib/asterisk/modules/app_devstate.so
 lib/asterisk/modules/app_dial.so
 lib/asterisk/modules/app_directory.so
 lib/asterisk/modules/app_disa.so
@@ -213,6 +214,7 @@ lib/asterisk/modules/app_milliwatt.so
 lib/asterisk/modules/app_mp3.so
 lib/asterisk/modules/app_nbscat.so
 lib/asterisk/modules/app_parkandannounce.so
+lib/asterisk/modules/app_pickup.so
 lib/asterisk/modules/app_playback.so
 lib/asterisk/modules/app_privacy.so
 lib/asterisk/modules/app_qcall.so
@@ -221,6 +223,7 @@ lib/asterisk/modules/app_random.so
 lib/asterisk/modules/app_read.so
 lib/asterisk/modules/app_record.so
 lib/asterisk/modules/app_sayunixtime.so
+lib/asterisk/modules/app_segfault.so
 lib/asterisk/modules/app_senddtmf.so
 lib/asterisk/modules/app_sendtext.so
 lib/asterisk/modules/app_setcallerid.so
