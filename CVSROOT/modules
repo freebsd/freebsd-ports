@@ -8818,7 +8818,6 @@ zh-libtabe	ports/chinese/libtabe
 zh-linux-gtk	ports/chinese/linux-gtk
 zh-linux-netscape47-communicator	ports/chinese/linux-netscape47-communicator
 zh-linux-netscape47-navigator	ports/chinese/linux-netscape47-navigator
-zh-linux_locale	ports/chinese/linux_locale
 zh-lunar	ports/chinese/lunar
 zh-metalist	ports/chinese/metalist
 zh-mkisofs	ports/chinese/mkisofs
