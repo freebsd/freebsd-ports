@@ -25,7 +25,7 @@ USE_GMAKE=	yes
 
 WRKSRC=		${WRKDIR}/mozilla
 LOCAL_SRCDIR?=	www/mozilla
-LOCAL_SUBDIR?=	lib/mozilla-gtk2
+LOCAL_SUBDIR?=	lib/mozilla
 LOCAL_PREFIX=	${PREFIX}/${LOCAL_SUBDIR}
 
 COMPONENTS=	ipc.xpt enigmime.xpt libenigmime.so enigmail.xpt enigmail.js enigprefs-service.js
