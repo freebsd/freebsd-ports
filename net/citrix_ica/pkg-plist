@@ -1,15 +1,18 @@
-@unexec if [ -f %D/lib/netscape-linux/mime.types ]; then (/bin/cat %D/lib/netscape-linux/mime.types | /usr/bin/grep -v "application/x-ica" > %D/lib/netscape-linux/mime.types.tmp; mv %D/lib/netscape-linux/mime.types.tmp %D/lib/netscape-linux/mime.types); fi
-@unexec if [ -f %D/lib/netscape-linux/mailcap ]; then (/bin/cat %D/lib/netscape-linux/mailcap | /usr/bin/grep -v "application/x-ica" > %D/lib/netscape-linux/mailcap.tmp; /bin/mv %D/lib/netscape-linux/mailcap.tmp %D/lib/netscape-linux/mailcap); fi
-@unexec if [ -e %D/lib/netscape-linux/plugins/npica.so ]; then (/bin/rm %D/lib/netscape-linux/plugins/npica.so); fi
+@unexec for dir in /usr/local/libexec/netscape /usr/local/libexec/netscape-linux /usr/local/netscape /usr/local/netscape-linux /usr/local/lib/netscape /usr/local/lib/netscape-linux %%MOZILLA_HOME%% %D/lib/netscape-linux; do if [ -f ${dir}/mime.types ]; then (/bin/cat ${dir}/mime.types | /usr/bin/grep -v "application/x-ica" > ${dir}/mime.types.tmp; mv ${dir}/mime.types.tmp ${dir}/mime.types); fi ; done
+@unexec for dir in /usr/local/libexec/netscape /usr/local/libexec/netscape-linux /usr/local/netscape /usr/local/netscape-linux /usr/local/lib/netscape /usr/local/lib/netscape-linux %%MOZILLA_HOME%% %D/lib/netscape-linux; do if [ -f ${dir}/mailcap ]; then (/bin/cat ${dir}/mailcap | /usr/bin/grep -v "application/x-ica" > ${dir}/mailcap.tmp; /bin/mv ${dir}/mailcap.tmp ${dir}/mailcap); fi ; done
+@unexec for dir in /usr/local/libexec/netscape /usr/local/libexec/netscape-linux /usr/local/netscape /usr/local/netscape-linux /usr/local/lib/netscape /usr/local/lib/netscape-linux %%MOZILLA_HOME%% %D/lib/netscape-linux; do if [ -e ${dir}/plugins/npica.so ]; then (/bin/rm ${dir}/plugins/npica.so); fi ; done
 ICAClient/.config/appsrv.ini
 ICAClient/.config/keyboard.ini
 ICAClient/.config/module.ini
 ICAClient/.config/wfclient.ini
+ICAClient/libctxssl.so
 ICAClient/Npica
 ICAClient/Npica.ad
+ICAClient/CHARICONV.DLL
 ICAClient/PDCRYPT1.DLL
 ICAClient/PDCRYPT2.DLL
-ICAClient/SSL.DLL
+ICAClient/TW1.DLL
+ICAClient/VDCM.DLL
 ICAClient/VDSCARD.DLL
 ICAClient/Wfcmgr
 ICAClient/Wfcmgr.ad
@@ -23,11 +26,9 @@ ICAClient/desktop/wfcmgr.desktop
 ICAClient/desktop/Citrix_PNA.desktop
 ICAClient/eula.txt
 ICAClient/help/index.htm
-ICAClient/icons/ica16.xpm
-ICAClient/icons/ica32.xpm
-ICAClient/icons/ica48.xpm
-ICAClient/icons/ica64.xpm
-ICAClient/icons/pn32.xpm
+ICAClient/icons/citrix16.xpm
+ICAClient/icons/citrix32.xpm
+ICAClient/icons/citrix48.xpm
 ICAClient/install.txt
 ICAClient/keyboard/age2.kbd
 ICAClient/keyboard/agex2.kbd
@@ -61,6 +62,7 @@ ICAClient/keyboard/hpusps2.kbd
 ICAClient/keyboard/ibm.kbd
 ICAClient/keyboard/keyboard.ini
 ICAClient/keyboard/linux.kbd
+ICAClient/keyboard/linux-ja.kbd
 ICAClient/keyboard/mac101.kbd
 ICAClient/keyboard/ncdn-101.kbd
 ICAClient/keyboard/ncdn-102.kbd
@@ -118,6 +120,7 @@ bin/wfcmgr
 bin/wfica
 @dirrm ICAClient/.config
 @dirrm ICAClient/cache/zlcache
+@unexec find %D/ICAClient/cache/ -type f -exec rm {} \; 2>&1 >/dev/null || true
 @dirrm ICAClient/cache
 @dirrm ICAClient/config
 @dirrm ICAClient/desktop

@@ -1,6 +1,6 @@
---- linuxx86/hinst.orig	Thu May 22 12:30:28 2003
-+++ linuxx86/hinst	Mon Aug 11 16:52:05 2003
-@@ -2132,10 +2132,34 @@
+--- linuxx86/hinst.orig	Fri May  7 14:44:44 2004
++++ linuxx86/hinst	Fri Jun  4 17:44:53 2004
+@@ -2142,10 +2142,34 @@
  #
  ###############################################################################
  
@@ -37,7 +37,7 @@
  PLUGIN_NAME=npica.so
  PLUGIN_CLASS=ICAClObj.class
  MAILCAP_FILE=mailcap
-@@ -2206,36 +2230,29 @@
+@@ -2218,36 +2242,29 @@
  
  netscape_integrate()
  {
@@ -83,7 +83,7 @@
  
      # Create utility script files in install root.
      create_wfica_script
-@@ -2866,37 +2883,6 @@
+@@ -2878,55 +2895,6 @@
      echo "$BINDIR"
  }
  
@@ -100,6 +100,24 @@
 -    PROGS="netscape mozilla"
 -    DIST_BIN_DIR=""
 -    STANDARD_DIRS="/usr/local/netscape /usr/local/mozilla"
+-
+-    case $op_system in
+-       SunOS) if
+-                 /usr/bin/pkginfo -q $SOLARIS_PACKAGE_NAME
+-              then
+-                 relocation_base=`/usr/bin/pkginfo -r $SOLARIS_PACKAGE_NAME`
+-                 STANDARD_DIRS="$STANDARD_DIRS $relocation_base/$SOLARIS_PACKAGE_DIRECTORY"
+-
+-                 # N.B. the Netscape 7 packages for SOLARIS 9 have an extended installation path built-in!
+-                 case `uname -r` in
+-                    5.9) STANDARD_DIRS="$STANDARD_DIRS $relocation_base/dt/appconfig/$SOLARIS_PACKAGE_DIRECTORY"
+-                         ;;
+-                    *)   ;;
+-                 esac
+-              fi;;
+-       *) ;;
+-    esac
+-
 -    for d in `echo $PATH | sed "s/:/ /g"` $STANDARD_DIRS
 -    do
 -	echo $d
@@ -121,12 +139,12 @@
  BROWSER_LIST_KEY="BROWSER_DIR"
  ################################################################################
  #
-@@ -3119,6 +3105,8 @@
- wfcmgr_NAME='Citrix ICA Client'
- DEFAULT_DT_TARGET_DIRS="/usr/share/applications \
-                         /usr/share/applnk/Applications \
-+			/usr/local/share/applnk/Internet \
-+			/usr/local/share/applnk/Networking \
+@@ -3151,6 +3119,8 @@
+ wfcmgr_ja_NAME='Citrix ICA クライアント'
+ 
+ DEFAULT_GNOME_TARGET_DIRS="/usr/share/applications \
++                           /usr/local/share/applnk/Internet \
++                           /usr/local/share/applnk/Networking \
+                            /etc/opt/gnome/SuSE/Internet"
+ DEFAULT_KDE_TARGET_DIRS="/usr/share/applnk/Applications \
                          /usr/share/applnk-redhat/Internet \
-                         /usr/share/applnk-mdk/Networking"
- DEFAULT_DT_FOLDER="Applications"
