@@ -285,10 +285,12 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       <mlist msgid="20041027233907.A3678@netdirect.ca">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=109898111915661</mlist>
       <url>http://rus.members.beeb.net/xzgv.html</url>
       <url>http://www.svgalib.org/rus/zgv/</url>
+      <cvename>CAN-2004-0994</cvename>
+      <url>http://www.idefense.com/application/poi/display?id=160&amp;type=vulnerabilities&amp;flashstatus=false</url>
     </references>
     <dates>
       <discovery>2004-10-26</discovery>
-      <entry>2005-01-18</entry>
+      <entry>2005-01-21</entry>
     </dates>
   </vuln>
 
