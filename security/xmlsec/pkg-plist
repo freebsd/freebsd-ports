@@ -27,3 +27,4 @@ lib/libxmlsec.a
 lib/libxmlsec.so
 lib/libxmlsec.so.0
 lib/pkgconfig/xmlsec.pc
+@unexec rmdir %D/lib/pkgconfig 2>/dev/null || true
