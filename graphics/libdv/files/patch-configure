@@ -1,0 +1,11 @@
+--- configure.orig	Sun Jun 24 22:49:16 2001
++++ configure	Mon Nov 19 15:33:53 2001
+@@ -6381,7 +6381,7 @@
+   HOST_X86_FALSE=
+ fi
+ 
+-REQUIRES='glib >= 1.2.4 gtk+ >= 1.2.4'
++REQUIRES='gtk >= 1.2.4'
+ 
+   succeeded=no
+ 
