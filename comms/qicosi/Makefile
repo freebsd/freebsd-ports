@@ -35,8 +35,8 @@ do-install:
 
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/qico
-	${INSTALL_MAN} ${WRKSRC}/FAQ ${PREFIX}/share/doc/qico/FAQ.ru
-	${INSTALL_MAN} ${WRKSRC}/README ${PREFIX}/share/doc/qico/README.ru
+	${INSTALL_DATA} ${WRKSRC}/FAQ ${PREFIX}/share/doc/qico/FAQ.ru
+	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/qico/README.ru
 .endif
 
 .include <bsd.port.mk>
