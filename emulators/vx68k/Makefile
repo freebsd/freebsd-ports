@@ -17,7 +17,7 @@ COMMENT=	A virtual machine that emulates a Sharp X68000
 
 LIB_DEPENDS=	vm68k.4:${PORTSDIR}/emulators/libvm68k
 
-USE_MESA=	yes
+USE_GL=		yes
 USE_GNOME=	gtk12
 USE_LIBTOOL=	yes
 USE_REINPLACE=	yes
@@ -28,7 +28,7 @@ CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 MAN1=	vx68k.1
 
 CPPFLAGS=	-I${LOCALBASE}/include -I${X11BASE}/include ${PTHREAD_CFLAGS}
-LDFLAGS=	-L${LOCALBASE}/lib -L${X11BASE}/lib -lGL -lGLU -lglut \
+LDFLAGS=	-L${LOCALBASE}/lib -L${X11BASE}/lib -lGL -lGLU \
 		${PTHREAD_LIBS}
 
 post-patch:
