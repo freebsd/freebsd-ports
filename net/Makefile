@@ -157,13 +157,13 @@
     SUBDIR += geotrace
     SUBDIR += ggsd
     SUBDIR += gicq
+    SUBDIR += gift
     SUBDIR += gift-fasttrack
     SUBDIR += gift-gnutella
     SUBDIR += gift-openft
     SUBDIR += giftcurs
     SUBDIR += gini
     SUBDIR += ginsu
-    SUBDIR += gift
     SUBDIR += gkrellm_snmp
     SUBDIR += gkrellmmultiping2
     SUBDIR += gkrellmqst
