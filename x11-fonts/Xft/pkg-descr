@@ -1,0 +1,10 @@
+The current version of Xft (2.0) provides a client-side font API for X 
+applications. It uses Fontconfig to select fonts and the X protocol for 
+rendering them. When available, Xft uses the Render extension to accelerate 
+text drawing. When Render is not available, Xft uses the core protocol to draw 
+client-side glyphs. This provides completely compatible support of client-side 
+fonts for all X servers. 
+
+-- keithp
+
+WWW: http://fontconfig.org/

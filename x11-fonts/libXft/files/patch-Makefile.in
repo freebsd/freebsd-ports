@@ -1,0 +1,71 @@
+--- Makefile.in.orig	Sun Oct  6 17:20:05 2002
++++ Makefile.in	Sun Oct  6 17:24:38 2002
+@@ -60,11 +60,10 @@
+ # programs
+ BINDIR=$(bindir)
+ # include files
+-INCLUDEDIR=$(includedir)/X11/Xft
++INCLUDEDIR=$(includedir)/X11/Xft2
+ 
+-LIBBASE=libXft.so
+-LIBFILE=$(LIBBASE).@PACKAGE_MAJOR@.@PACKAGE_MINOR@
+-LIBMAJOR=$(LIBBASE).@PACKAGE_MAJOR@
++LIBBASE=libXft2.so
++LIBFILE=$(LIBBASE).@PACKAGE_MAJOR@
+ 
+ LIBS=@LIBS@
+ 
+@@ -109,7 +108,7 @@
+ .c.@OBJEXT@:
+ 	$(CC) $(CFLAGS) $(DSO_PIC_CFLAGS) -c $< -o $@
+ 	
+-all:: $(LIBFILE) $(LIBMAJOR) $(LIBBASE)
++all:: $(LIBFILE) $(LIBBASE)
+ 
+ #
+ # Build the library
+@@ -118,13 +117,9 @@
+ 	rm -f $@
+ 	$(MKSHLIB) $(OBJS) $(LIBS)
+ 
+-$(LIBMAJOR): $(LIBFILE)
+-	rm -f  $@
+-	$(LN_S) $(LIBFILE) $(LIBMAJOR)
+-
+-$(LIBBASE): $(LIBMAJOR)
++$(LIBBASE): $(LIBFILE)
+ 	rm -f $@
+-	$(LN_S) $(LIBMAJOR) $(LIBBASE)
++	$(LN_S) $(LIBFILE) $(LIBBASE)
+ 
+ $(OBJS): $(HEADERS)
+ 
+@@ -151,19 +146,15 @@
+ # install library
+ #
+ 
+-install:: $(DESTDIR)$(LIBDIR)/$(LIB) $(DESTDIR)$(LIBDIR)/$(LIBMAJOR) 
++install:: $(DESTDIR)$(LIBDIR)/$(LIB)
+ install:: $(DESTDIR)$(LIBDIR)/$(LIBBASE)
+ 
+ $(DESTDIR)$(LIBDIR)/$(LIBFILE): $(LIBFILE)
+ 	$(INSTALL_PROGRAM) $< $(DESTDIR)$(LIBDIR)
+ 
+-$(DESTDIR)$(LIBDIR)/$(LIBMAJOR): $(DESTDIR)$(LIBDIR)/$(LIBFILE)
+-	rm -f  $@
+-	$(LN_S) $(LIBFILE) $(DESTDIR)$(LIBDIR)/$(LIBMAJOR)
+-
+-$(DESTDIR)$(LIBDIR)/$(LIBBASE): $(DESTDIR)$(LIBDIR)/$(LIBMAJOR)
++$(DESTDIR)$(LIBDIR)/$(LIBBASE): $(DESTDIR)$(LIBDIR)/$(LIBFILE)
+ 	rm -f  $@
+-	$(LN_S) $(LIBMAJOR) $(DESTDIR)$(LIBDIR)/$(LIBBASE)
++	$(LN_S) $(LIBFILE) $(DESTDIR)$(LIBDIR)/$(LIBBASE)
+ 
+ #
+ # install xft-config script
+@@ -200,4 +191,4 @@
+ # delete generated files
+ #
+ clean::
+-	rm -f $(LIBFILE) $(LIBMAJOR) $(LIBBASE) $(OBJS)
++	rm -f $(LIBFILE) $(LIBFILE) $(LIBBASE) $(OBJS)
