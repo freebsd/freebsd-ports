@@ -1,6 +1,6 @@
-diff -ur work.orig/sablevm-native-library-1.0.3/src/Makefile.am work/sablevm-native-library-1.0.3/src/Makefile.am
---- work.orig/sablevm-native-library-1.0.3/src/Makefile.am	Sun Jul 28 17:14:15 2002
-+++ work/sablevm-native-library-1.0.3/src/Makefile.am	Sun Aug 18 17:26:09 2002
+diff -ur work.orig/sablevm-native-library-1.0.4/src/Makefile.am work/sablevm-native-library-1.0.4/src/Makefile.am
+--- work.orig/sablevm-native-library-1.0.4/src/Makefile.am	Sun Jul 28 17:14:15 2002
++++ work/sablevm-native-library-1.0.4/src/Makefile.am	Sun Aug 18 17:26:09 2002
 @@ -44,5 +44,4 @@
  	java-io \
  	java-lang \

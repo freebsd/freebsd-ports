@@ -1,6 +1,6 @@
-diff -ur work.orig/sablevm-1.0.3/configure work/sablevm-1.0.3/configure
---- work.orig/sablevm-1.0.3/configure	Wed Aug 14 22:34:00 2002
-+++ work/sablevm-1.0.3/configure	Sat Aug 17 21:14:52 2002
+diff -ur work.orig/sablevm-1.0.4/configure work/sablevm-1.0.4/configure
+--- work.orig/sablevm-1.0.4/configure	Wed Aug 14 22:34:00 2002
++++ work/sablevm-1.0.4/configure	Sat Aug 17 21:14:52 2002
 @@ -7989,67 +7992,6 @@
    echo -n
  else
