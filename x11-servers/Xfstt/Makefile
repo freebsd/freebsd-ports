@@ -11,7 +11,7 @@ CATEGORIES=	x11-servers
 MASTER_SITES=	$(MASTER_SITE_SUNSITE)
 MASTER_SITE_SUBDIR=	X11/fonts
 
-MAINTAINER=	rip@pinetec.co.za
+MAINTAINER=	ports@FreeBSD.org
 
 USE_X_PREFIX=	yes
 MAN1=		xfstt.1
