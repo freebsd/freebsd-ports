@@ -1,0 +1,23 @@
+--- set_soenv.in.orig	Sat Oct 19 12:16:51 2002
++++ set_soenv.in	Sat Oct 19 12:17:36 2002
+@@ -933,6 +933,9 @@
+ elsif ($platform eq "$FreeBSD")
+ {  $LD_LIBRARY_PATH   = $cur_dir.
+                         $ps.'$SOLARENV'.$ds.'$INPATH'.$LIB.
++                        $ps.$JRELIBDIR.
++                        $ps.$JRETOOLKITDIR.
++                        $ps.$JRETHREADDIR.
+                         $ps.$par_dir.$LIB.
+ 			$ps_STLPORT_LIB.
+                         $ps.'$SOLARVER'.$ds.'$UPD'.$ds.'$INPATH'.$LIB;
+@@ -1092,6 +1095,10 @@
+                         $ps.'$SOLARVER'.$ds.'$UPD'.$ds.'$INPATH'.$BIN.
+                         $ps.'$SOLARENV'.$ds.'$OUTPATH'.$BIN.
+                         $ps.'$SOLARENV'.$BIN;
++   if ( $JAVA_HOME ne "" )
++   {
++      $PATH .=          $ps.'$JAVA_HOME'.$BIN;
++   }
+ 
+    $PATH             .= $ps.$oldPATH;
+ }
