@@ -17,22 +17,20 @@ CONFLICTS=	courier-0.* postfix-1.* postfix-2.* sendmail-8.* sendmail-*-8.* smail
 GNU_CONFIGURE=	yes
 USE_PERL5=	yes
 
-BROKEN=		Incomplete pkg-plist
-
-.include <bsd.port.pre.mk>
-
-.if ( ${PERL_LEVEL} < 500600 )
-IGNORE=	"This port requires perl 5.006 or better"
-.endif
-
 .if defined(WITH_SSL)
-USE_OPENSSL=	YES
+USE_OPENSSL=	yes
 CONFIGURE_ARGS=	--with-openssl
 .else
 CONFIGURE_ARGS=	--without-openssl
 .endif
 
-.if ( ${OSVERSION} >= 500000 )
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500600
+IGNORE=	"This port requires perl 5.006 or better"
+.endif
+
+.if ${OSVERSION} >= 500000
 EXTRA_PATCHES=	${FILESDIR}/extra-patch-EAI_NODATA
 .endif
 
@@ -56,11 +54,12 @@ CONFIGURE_ARGS+=--prefix=${PREFIX}/ \
 
 MAN1=		rmail.1zm vacation.1zm zmailer.1zm zmsh.1zm mboxpath.1zm mailq.1zm \
 		mailrm.1zm newaliases.1zm
-MAN3=		zmailer.3zm
-MAN5=		aliases.5zm
+MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
+MAN3=		ZMailer::mailq.3
+MAN5=		aliases.5zm mailq-m.5zm zdbases.conf.5zm zmailer.conf.5zm
 MAN8=		hold.8zm router.8zm scheduler.8zm sendmail.8zm sm.8zm smtp.8zm \
 		smtpserver.8zm mprobe.8zm expirer.8zm errormail.8zm mailbox.8zm \
-		manual-expirer.8zm
+		manual-expirer.8zm manual-rerouter.8zm reroute.8zm
 
 PKGMESSAGE=	${WRKDIR}/MESSAGE
 PKGINSTALL=	${WRKDIR}/pkg-install

@@ -318,7 +318,14 @@ sbin/ta/reroute
 sbin/ta/sm
 sbin/ta/smtp
 include/zmailer.h
+man/man3/zmailer.3zm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/perllocal.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/ZMailer/mailq/.packlist
+%%SITE_PERL%%/ZMailer/mailq.pm
 @dirrm sbin/ta
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/ZMailer/mailq
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/ZMailer
+@dirrm %%SITE_PERL%%/ZMailer
 @cwd /var/spool
 @dirrm postoffice/deferred
 @dirrm postoffice/freezer
