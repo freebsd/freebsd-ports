@@ -2,7 +2,6 @@ This is Linux version of RAR which is a general purpose archiving
 and compression program.  It offers significantly improved compression
 ratios comparing with other competitors.
 
-This is *shareware*.
-Please read texts in /usr/local/share/doc/rar/ and the homepage.
+Also UNRAR could be installed with this port. 
 
 WWW: http://www.rarsoft.com/rar_archiver.htm
