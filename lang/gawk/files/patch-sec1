@@ -1,7 +1,6 @@
-diff -ur gawk-3.0.6.orig/doc/gawk.texi gawk-3.0.6/doc/gawk.texi
---- doc/gawk.texi.orig	Tue Aug  8 02:57:43 2000
-+++ doc/gawk.texi	Sun May 27 04:30:53 2001
-@@ -16550,8 +16550,7 @@
+--- doc/gawk.texi~	Wed Jul 11 01:44:15 2001
++++ doc/gawk.texi	Wed Jul 11 01:47:18 2001
+@@ -20336,8 +20336,7 @@
  arranges to clean up any temporary files on program exit or upon an
  interrupt.
  
@@ -9,47 +8,46 @@ diff -ur gawk-3.0.6.orig/doc/gawk.texi gawk-3.0.6/doc/gawk.texi
 -@c 2e: or something as similar as possible.
 +@c 2e: For the temporary file handling, use mktemp with $@{TMPDIR:-/tmp@}.
  
- The next part loops through all the command line arguments.
- There are several cases of interest.
-@@ -16576,7 +16575,7 @@
- @itemx --file
- @itemx --file=
- @itemx -Wfile=
--The file name is saved to the temporary file @file{/tmp/ig.s.$$} with an
-+The file name is saved to a temporary file with an
+ The next part loops through all the command-line arguments.
+ There are several cases of interest:
+@@ -20358,13 +20357,13 @@
+ These are saved and passed on to @command{gawk}.
+ 
+ @item -f@r{,} --file@r{,} --file=@r{,} -Wfile=
+-The @value{FN} is saved to the temporary file @file{/tmp/ig.s.$$} with an
++The @value{FN} is saved to a temporary file with an
  @samp{@@include} statement.
- The @code{sed} utility is used to remove the leading option part of the
+ The @command{sed} utility is used to remove the leading option part of the
  argument (e.g., @samp{--file=}).
-@@ -16584,7 +16583,7 @@
- @item --source
- @itemx --source=
- @itemx -Wsource=
+ 
+ @item --source@r{,} --source=@r{,} -Wsource=
 -The source text is echoed into @file{/tmp/ig.s.$$}.
 +The source text is echoed into a temporary file.
  
- @item --version
- @itemx -Wversion
-@@ -16596,16 +16595,11 @@
- or @samp{-Wsource}, were supplied, then the first non-option argument
- should be the @code{awk} program.  If there are no command line
- arguments left, @code{igawk} prints an error message and exits.
+ @item --version@r{,} -Wversion
+ @command{igawk} prints its version number, runs @samp{gawk --version}
+@@ -20375,17 +20374,12 @@
+ or @option{-Wsource} arguments are supplied, then the first non-option argument
+ should be the @command{awk} program.  If there are no command-line
+ arguments left, @command{igawk} prints an error message and exits.
 -Otherwise, the first argument is echoed into @file{/tmp/ig.s.$$}.
 +Otherwise, the first argument is echoed into a temporary file.
- 
  In any case, after the arguments have been processed,
--@file{/tmp/ig.s.$$} contains the complete text of the original @code{awk}
+-@file{/tmp/ig.s.$$} contains the complete text of the original @command{awk}
 -program.
--
--The @samp{$$} in @code{sh} represents the current process ID number.
--It is often used in shell programs to generate unique temporary file
--names.  This allows multiple users to run @code{igawk} without worrying
--that the temporary file names will clash.
 +the complete text of the original @code{awk} program
 +is contained in a temporary file.
  
- @cindex @code{sed} utility
- Here's the program:
-@@ -16620,13 +16614,25 @@
+ @cindex @command{sed} utility
+-@cindex stream editor
+-The @samp{$$} in @command{sh} represents the current process ID number.
+-It is often used in shell programs to generate unique temporary @value{FN}s.
+-This allows multiple users to run @command{igawk} without worrying
+-that the temporary @value{FN}s will clash.
+ The program is as follows:
+ 
+ @cindex @code{igawk.sh} program
+@@ -20400,6 +20394,18 @@
  # Arnold Robbins, arnold@@gnu.org, Public Domain
  # July 1993
  
@@ -57,17 +55,18 @@ diff -ur gawk-3.0.6.orig/doc/gawk.texi gawk-3.0.6/doc/gawk.texi
 +# Jarno Huuskonen and Solar Designer, still Public Domain
 +# May 2001
 +
-+if [ ! -x /bin/mktemp ]; then
++if [ ! -x /usr/bin/mktemp ]; then
 +    echo "$0 needs mktemp to create temporary files."
 +    exit 1
 +fi
 +
-+STEMPFILE=`/bin/mktemp $@{TMPDIR:-/tmp@}/igawk.s.XXXXXX` || exit 1
-+ETEMPFILE=`/bin/mktemp $@{TMPDIR:-/tmp@}/igawk.e.XXXXXX` || exit 1
++STEMPFILE=`/usr/bin/mktemp $@{TMPDIR:-/tmp@}/igawk.s.XXXXXX` || exit 1
++ETEMPFILE=`/usr/bin/mktemp $@{TMPDIR:-/tmp@}/igawk.e.XXXXXX` || exit 1
 +
- if [ "$1" = debug ]
- then
-     set -x
+ @c endfile
+ @end ignore
+ @c file eg/prog/igawk.sh
+@@ -20409,7 +20415,7 @@
      shift
  else
      # cleanup on exit, hangup, interrupt, quit, termination
@@ -76,7 +75,7 @@ diff -ur gawk-3.0.6.orig/doc/gawk.texi gawk-3.0.6/doc/gawk.texi
  fi
  
  while [ $# -ne 0 ] # loop over arguments
-@@ -16643,28 +16649,28 @@
+@@ -20426,26 +20432,26 @@
  
      -[vF]*) opts="$opts '$1'" ;;
  
@@ -84,44 +83,43 @@ diff -ur gawk-3.0.6.orig/doc/gawk.texi gawk-3.0.6/doc/gawk.texi
 +    -f)     echo @@include "$2" >> $STEMPFILE
              shift;;
  
- @group
      -f*)    f=`echo "$1" | sed 's/-f//'`
 -            echo @@include "$f" >> /tmp/ig.s.$$ ;;
 +            echo @@include "$f" >> $STEMPFILE ;;
- @end group
  
      -?file=*)    # -Wfile or --file
              f=`echo "$1" | sed 's/-.file=//'`
 -            echo @@include "$f" >> /tmp/ig.s.$$ ;;
 +            echo @@include "$f" >> $STEMPFILE ;;
  
-     -?file)    # get arg, $2
+     -?file)      # get arg, $2
 -            echo @@include "$2" >> /tmp/ig.s.$$
 +            echo @@include "$2" >> $STEMPFILE
              shift;;
  
-     -?source=*)    # -Wsource or --source
+     -?source=*)  # -Wsource or --source
              t=`echo "$1" | sed 's/-.source=//'`
 -            echo "$t" >> /tmp/ig.s.$$ ;;
 +            echo "$t" >> $STEMPFILE ;;
  
-     -?source)  # get arg, $2
+     -?source)    # get arg, $2
 -            echo "$2" >> /tmp/ig.s.$$
 +            echo "$2" >> $STEMPFILE
              shift;;
  
      -?version)
-@@ -16679,19 +16685,19 @@
+@@ -20460,7 +20466,7 @@
      shift
  done
  
 -if [ ! -s /tmp/ig.s.$$ ]
 +if [ ! -s $STEMPFILE ]
  then
+ @group
      if [ -z "$1" ]
-     then
-          echo igawk: no program! 1>&2
+@@ -20469,12 +20475,12 @@
           exit 1
+ @end group
      else
 -        echo "$1" > /tmp/ig.s.$$
 +        echo "$1" > $STEMPFILE
@@ -132,29 +130,29 @@ diff -ur gawk-3.0.6.orig/doc/gawk.texi gawk-3.0.6/doc/gawk.texi
 -# at this point, /tmp/ig.s.$$ has the program
 +# at this point, $STEMPFILE has the program
  @c endfile
- @c @end group
  @end example
-@@ -16776,7 +16782,7 @@
- @end group
+ 
+@@ -20553,7 +20559,7 @@
+ @c endfile
  @end example
  
 -The stack is initialized with @code{ARGV[1]}, which will be @file{/tmp/ig.s.$$}.
 +The stack is initialized with @code{ARGV[1]}, which will be @file{$STEMPFILE}.
  The main loop comes next.  Input lines are read in succession. Lines that
  do not start with @samp{@@include} are printed verbatim.
- 
-@@ -16825,7 +16831,7 @@
- @group
+ If the line does start with @samp{@@include}, the @value{FN} is in @code{$2}.
+@@ -20599,7 +20605,7 @@
+         @}
          close(input[stackptr])
      @}
 -@}' /tmp/ig.s.$$ > /tmp/ig.e.$$
 +@}' $STEMPFILE > $ETEMPFILE
- @end group
  @c endfile
- @c @end group
-@@ -16852,7 +16858,7 @@
+ @end example
+ 
+@@ -20625,7 +20631,7 @@
+ 
  @example
- @c @group
  @c file eg/prog/igawk.sh
 -eval gawk -f /tmp/ig.e.$$ $opts -- "$@@"
 +eval gawk -f $ETEMPFILE $opts -- "$@@"

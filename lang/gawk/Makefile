@@ -5,17 +5,16 @@
 # $FreeBSD$
 
 PORTNAME=	gawk
-PORTVERSION=	3.0.6
+PORTVERSION=	3.1.0
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	gawk
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	dd@FreeBSD.org
 
 GNU_CONFIGURE=		yes
-CONFIGURE_ARGS=		--program-prefix=g \
-			--enable-bitops \
+CONFIGURE_ARGS=		--enable-bitops \
 			--enable-non-decimal-data
-MAN1= gawk.1
+MAN1= gawk.1 igawk.1
 
 .include <bsd.port.mk>
