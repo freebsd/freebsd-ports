@@ -30,6 +30,9 @@ MAN1=		xfig.1
 INSTALL_TARGET=	install install.all
 .endif
 
+post-extract:
+	@${CP} ${WRKSRC}/Doc/xfig.man ${WRKSRC}
+
 pre-fetch:
 .if !defined(WITHOUT_GHOSTSCRIPT)
 	@${ECHO_MSG} "To build this port without Ghostscript support,"

@@ -1,5 +1,5 @@
 --- Imakefile.orig	Wed May 30 03:32:11 2001
-+++ Imakefile	Tue Jun  5 22:59:37 2001
++++ Imakefile	Tue Jun 26 00:25:33 2001
 @@ -47,8 +47,8 @@
  
  #ifdef USEJPEG
@@ -70,3 +70,17 @@
  I18N_SRC = w_i18n.c
  I18N_OBJ = w_i18n.o
  #endif
+@@ -237,11 +237,13 @@
+ 		$(HAVE_NO_STRCASECMP) \
+ 		$(NEED_STRERROR)
+ 
++/*
+ #ifdef InstallManPage
+ #undef InstallManPage
+ #endif
+ #define InstallManPage(file,dest)                                       @@\
+ InstallManPageLong(Doc/file,dest,file)
++*/
+ 
+ #ifdef USESMALLICONS
+ DUSESMALLICONS = -DUSE_SMALL_ICONS
