@@ -10,7 +10,7 @@ PORTVERSION=	0.5.6
 CATEGORIES=	net multimedia
 MASTER_SITES=	http://download.videolan.org/pub/videolan/vls/${PORTVERSION}/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ahze@ahze.net
 COMMENT=	An X11 video streaming client/server solution
 
 LIB_DEPENDS=	dvbpsi.3:${PORTSDIR}/multimedia/libdvbpsi
