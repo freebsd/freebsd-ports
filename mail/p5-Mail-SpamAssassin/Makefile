@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	Mail-SpamAssassin
-PORTVERSION=	2.63
-PORTREVISION=	2
+PORTVERSION=	2.64
 CATEGORIES=	mail perl5
-MASTER_SITES=	http://spamassassin.org/released/ \
-		${MASTER_SITE_PERL_CPAN}
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Mail
 PKGNAMEPREFIX=	p5-
 
@@ -43,6 +41,7 @@ MAN3=		Mail::SpamAssassin.3 Mail::SpamAssassin::PerMsgStatus.3 \
 MAN1=		spamd.1 spamassassin.1 spamc.1 sa-learn.1
 
 DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
+DATADIR=	${PREFIX}/share/spamassassin
 
 USE_RC_SUBR=	yes
 SED_SCRIPT=	-e 's|%%PREFIX%%|${PREFIX}|g' \
