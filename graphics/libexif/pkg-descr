@@ -1,0 +1,7 @@
+This library allows metadata that is written to files on a digital camera to be
+ read.  This library will be required for the gphoto2 port.
+
+WWW: http://sourceforge.net/projects/libexif/
+
+- Peter Schmiedeskamp
+pschmied@qwest.net
