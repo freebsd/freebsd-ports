@@ -1,11 +1,11 @@
 bin/lostirc
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
-%%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/TODO
-share/gnome/apps/Internet/lostirc.desktop
+share/gnome/applications/lostirc.desktop
 share/gnome/pixmaps/lostirc.png
 share/locale/da/LC_MESSAGES/lostirc.mo
+share/locale/fr/LC_MESSAGES/lostirc.mo
 %%PORTDOCS%%@dirrm %%DOCSDIR%%

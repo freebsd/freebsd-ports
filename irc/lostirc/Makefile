@@ -6,49 +6,34 @@
 #
 
 PORTNAME=	lostirc
-PORTVERSION=	0.3.2
-PORTREVISION=	3
+PORTVERSION=	0.4.4
 CATEGORIES=	irc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://demian.dyndns.org/src/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	LostIRC is a simple and minimal IRC client for X
+COMMENT=	A simple and minimal IRC client for X
 
-LIB_DEPENDS=	gtkmm-2:${PORTSDIR}/x11-toolkits/gtk--2
+LIB_DEPENDS=	gtkmm-2.4.1:${PORTSDIR}/x11-toolkits/gtkmm24
 
 USE_X_PREFIX=	yes
-USE_GNOME=	gnomehack gnometarget gnomehier
+USE_GNOME=	gnomehack gnomeprefix gnometarget
+USE_GCC=	3.4
 USE_REINPLACE=	yes
-USE_LIBTOOL_VER=15
+GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--disable-kde
 
-MAN1=	lostirc.1
-
-DOCS=	AUTHORS COPYING ChangeLog TODO README INSTALL
-
-.include <bsd.port.pre.mk>
-
-post-patch:
-	${REINPLACE_CMD} -E "s@^(Gnomedir = ).*@\1${PREFIX}/share/gnome/apps/Internet@" ${WRKSRC}/Makefile.am
-	${REINPLACE_CMD} -E "s@(Gnomedir = ).*@\1${PREFIX}/share/gnome/apps/Internet@" ${WRKSRC}/Makefile.in
-	${REINPLACE_CMD} -E "s@^(pixmapdir = ).*@\1${PREFIX}/share/gnome/pixmaps@" ${WRKSRC}/Makefile.am
-	${REINPLACE_CMD} -E "s@(pixmapdir = ).*@\1${PREFIX}/share/gnome/pixmaps@" ${WRKSRC}/Makefile.in
-	${REINPLACE_CMD} -e 's|_nl_domain_bindings|libintl_nl_domain_bindings|' ${WRKSRC}/configure
-
-pre-install:
-	${REINPLACE_CMD} -E 's|mkinstalldirs = $(SHELL) $(MKINSTALLDIRS)|mkinstalldirs = $(SHELL) `case "$(MKINSTALLDIRS)" in /*) "${ECHO} $(MKINSTALLDIRS)" ;; *) "${ECHO} $(top_builddir)/$(MKINSTALLDIRS)" ;; esac`|g' ${WRKSRC}/intl/Makefile
-	${REINPLACE_CMD} -E 's|mkinstalldirs = $(SHELL) $(MKINSTALLDIRS)|mkinstalldirs = $(SHELL) `case "$(MKINSTALLDIRS)" in /*) "${ECHO} $(MKINSTALLDIRS)" ;; *) "${ECHO} $(top_builddir)/$(MKINSTALLDIRS)" ;; esac`|g' ${WRKSRC}/po/Makefile
+MAN1=		lostirc.1
 
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for f in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
+.for file in AUTHORS ChangeLog TODO README INSTALL
+	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
