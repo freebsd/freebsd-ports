@@ -1,6 +1,12 @@
---- Makefile.orig	Mon Jul  6 00:55:11 1998
-+++ Makefile	Tue Jul  4 21:47:21 2000
-@@ -11,15 +11,15 @@
+--- Makefile.orig	Sat Mar  2 21:32:42 2002
++++ Makefile	Wed May  8 21:34:35 2002
+@@ -5,33 +5,29 @@
+ VERMIN		= 1
+ VERPAT		= 2
+ VERSION		= $(VERMAJ).$(VERMIN).$(VERPAT)
+-COMPILED_DATE	= `date '+%Y-%m-%d %H:%M:%S'`
+-COMPILED_BY	= `whoami`
+ 
  ###########################################################################
  
  # where are shhmsg and shhopt?
@@ -17,13 +23,15 @@
 -INSTALL		= install -m 644
 -INSTALLPROG	= install -s -m 755
 -MKDIRP		= install -d -m 755
+-
+-DEFINES		= -DVERSION=\"$(VERSION)\" \
+-		  "-DCOMPILED_DATE=\"$(COMPILED_DATE)\"" \
+-		  "-DCOMPILED_BY=\"$(COMPILED_BY)\""
 +INSTALL		= ${BSD_INSTALL_DATA}
 +INSTALLPROG	= ${BSD_INSTALL_PROGRAM}
 +MKDIRP		= mkdir -p
- 
- DEFINES		= -DVERSION=\"$(VERSION)\" \
- 		  "-DCOMPILED_DATE=\"$(COMPILED_DATE)\"" \
-@@ -27,11 +27,11 @@
++
++DEFINES		= -DVERSION=\"$(VERSION)\"
  
  ###########################################################################
  
