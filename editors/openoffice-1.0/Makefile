@@ -32,6 +32,9 @@ LANG_EXT=01
 .endif
 .if defined(LANG_PKGNAME)
 PKGNAMEPREFIX=	${LANG_PKGNAME}-
+.if defined(LANG_SUFFIX)
+PKGNAMESUFFIX=	-${LANG_SUFFIX}
+.endif
 
 #
 # LANG_CONFIGURE_ARG is missing for the german port
