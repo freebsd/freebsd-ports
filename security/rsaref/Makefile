@@ -22,7 +22,13 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	kris@FreeBSD.ORG
 
 WRKSRC=		${WRKDIR}/source
-RESTRICTED=	"Crypto"
+RESTRICTED=	"Contains cryptography"
+
+pre-extract:
+.if !defined(BATCH) && !defined(PACKAGE_BUILDING)
+	/usr/bin/more -e files/LICENSE.english
+	/usr/bin/dialog --yesno "Do you accept the terms of the RSAREF license agreement and wish to proceed with the build?" 8 40 || ${FALSE}
+.endif
 
 pre-configure:
 	${CP} ${FILESDIR}/Makefile ${WRKSRC}

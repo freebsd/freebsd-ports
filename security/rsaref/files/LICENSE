@@ -1,0 +1,137 @@
+RSA LABORATORIES RSAREF 2.0 PROGRAM LICENSE AGREEMENT
+
+RSA LABORATORIES, A DIVISION OF RSA DATA SECURITY, INC. ("RSA")
+GRANTS YOU A LICENSE AS FOLLOWS TO THE "RSAREF" PROGRAM:
+
+1.   LICENSE. RSA grants you a non-exclusive, non-transferable,
+     perpetual (subject to the conditions of Section 8) license for
+     the "RSAREF" program (the "Program") and its associated
+     documentation, subject to all of the following terms and
+     conditions:
+
+     a.   to use the Program on any computer;
+
+     b.   to make copies of the Program for back-up purposes;
+
+     c.   to modify the Program in any manner for porting or
+          performance improvement purposes (subject to Section 2) or
+          to incorporate the Program into other computer programs for
+          your own personal or internal use, provided that you provide
+          RSA with a copy of any such modification or Application
+          Program by electronic mail, and grant RSA a perpetual,
+          royalty-free license to use and distribute such
+          modifications and Application Programs on the terms set
+          forth in this Agreement.
+
+     d.   to copy and distribute the Program and Application Programs
+          in accordance with the limitations set forth in Section 2.
+
+"Application Programs" are programs which incorporate all or any
+portion of the Program in any form. The restrictions imposed on
+Application Programs in this Agreement shall not apply to any
+software which, through the mere aggregation on distribution media,
+is co-located or stored with the Program.
+
+2.   LIMITATIONS ON LICENSE.
+
+     a.   RSA owns the Program and its associated documentation and
+          all copyrights therein. You may only use, copy, modify and
+          distribute the Program as expressly provided for in this
+          Agreement. You must reproduce and include this Agreement,
+          RSA's copyright notices and disclaimer of warranty on any
+          copy and its associated documentation. The Program and any
+          Application programs must be distributed with their source
+          code.
+
+     b.   The Program may not be used directly for revenue-generating
+          purposes. You may not:
+
+          (i)  use the Program to provide services to others for which
+               you are compensated in any manner;
+
+          (ii) license or otherwise distribute any Application Program
+               in any manner that generates income to you, including
+               without limitation any income on account of license
+               fees, royalties, maintenance fees and upgrade fees; and
+
+          (iii) license or otherwise distribute any Application
+               Program without the express written acknowledgment of
+               the end user that the Program will not be used in
+               connection with any revenue-generating activity of the
+               end user.
+
+          Nothing in this paragraph prohibits you from using the
+          Program or any Application Program solely for internal
+          purposes on the premises of a business which is engaged in
+          revenue-generating activities.
+
+     c.   The Program, if modified, must carry prominent notices
+          stating that changes have been made, and the dates of any
+          such changes. 
+
+     d.   Prior permission from RSA in writing is required for any
+          modifications that access the Program through ways other
+          than the published Program interface or for modifications to
+          the Program interface. (See the "What is it? RSAREF Supports
+          the Following Algorithms" and "What You Can (and Cannot) Do
+          With RSAREF," paragraph 4, all incorporated herein by
+          reference, for details.) RSA will grant all reasonable
+          requests for permission to make such modifications.
+
+3.   NO RSA OBLIGATION. You are solely responsible for all of your
+     costs and expenses incurred in connection with the distribution
+     of the Program or any Application Program hereunder, and RSA
+     shall have no liability, obligation or responsibility therefor.
+     RSA shall have no obligation to provide maintenance, support,
+     upgrades or new releases to you or to any distributee of the
+     Program or any Application Program.
+
+4.   NO WARRANTY OF PERFORMANCE. THE PROGRAM AND ITS ASSOCIATED
+     DOCUMENTATION ARE LICENSED "AS IS" WITHOUT WARRANTY AS TO THEIR
+     PERFORMANCE, MERCHANTABILITY OR FITNESS FOR ANY PARTICULAR
+     PURPOSE. THE ENTIRE RISK AS TO THE RESULTS AND PERFORMANCE OF
+     THE PROGRAM IS ASSUMED BY YOU AND YOUR DISTRIBUTEES. SHOULD THE
+     PROGRAM PROVE DEFECTIVE, YOU AND YOUR DISTRIBUTEES (AND NOT RSA)
+     ASSUME THE ENTIRE COST OF ALL NECESSARY SERVICING, REPAIR OR
+     CORRECTION.
+
+5.   LIMITATION OF LIABILITY. EXCEPT AS EXPRESSLY PROVIDED FOR IN
+     SECTION 6 HEREINUNDER, NEITHER RSA NOR ANY OTHER PERSON WHO HAS
+     BEEN INVOLVED IN THE CREATION, PRODUCTION, OR DELIVERY OF THE
+     PROGRAM SHALL BE LIABLE TO YOU OR TO ANY OTHER PERSON FOR ANY
+     DIRECT, INCIDENTAL OR CONSEQUENTIAL DAMAGES, EVEN IF RSA HAS BEEN
+     ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
+
+6.   Nothing in this agreement shall be construed as a representation
+     or warranty against infringement of any third party rights based
+     on use of the program.
+
+7.   RSAREF is a non-commercial publication of cryptographic
+     techniques. Portions of RSAREF have been published in the
+     International Security Handbook and the August 1992 issue of Dr.
+     Dobb's Journal. Privacy applications developed with RSAREF may be
+     subject to export controls. If you are located in the United
+     States and develop such applications, you are advised to consult
+     with the State Department's Office of Defense Trade Controls.
+
+8.   TERM. The license granted hereunder is effective until
+     terminated. You may terminate it at any time by destroying the
+     Program and its associated documentation. The termination of your
+     license will not result in the termination of the licenses of any
+     distributees who have received rights to the Program through you
+     so long as they are in compliance with the provisions of this
+     license.
+
+9.   GENERAL
+
+     a.   This Agreement shall be governed by the laws of the State of
+          California.
+
+     b.   Address all correspondence regarding this license to RSA's
+          electronic mail address <rsaref-administrator@rsa.com>, or
+          to
+
+               RSA Laboratories
+               ATTN: RSAREF Administrator
+               100 Marine Parkway, Suite 500
+               Redwood City, CA  94065
