@@ -7198,9 +7198,9 @@ p5-XML-Node	ports/textproc/p5-XML-Node
 p5-XML-NodeFilter	ports/textproc/p5-XML-NodeFilter
 p5-XML-Parser	ports/textproc/p5-XML-Parser
 p5-XML-Parser-EasyTree	ports/textproc/p5-XML-Parser-EasyTree
-p5-XML-Parser-Style-Elemental	ports/textproc/p5-Parser-Style-Elemental
+p5-XML-Parser-Style-Elemental	ports/textproc/p5-XML-Parser-Style-Elemental
 p5-XML-Quote	ports/textproc/p5-XML-Quote
-p5-XML-RAI	ports/textproc/p5-RAI
+p5-XML-RAI	ports/textproc/p5-XML-RAI
 p5-XML-RSS	ports/textproc/p5-XML-RSS
 p5-XML-RSS-JavaScript	ports/textproc/p5-XML-RSS-JavaScript
 p5-XML-RSS-Parser	ports/textproc/p5-XML-RSS-Parser
