@@ -1,0 +1,11 @@
+--- contrib/mysqld-watcher.pl~	Mon Dec 17 20:38:32 2001
++++ contrib/mysqld-watcher.pl	Mon Dec 17 20:38:41 2001
+@@ -40,7 +40,7 @@
+ #
+ # mail transfer agent.  this should probably really be converted to a Param().
+ #
+-my $mta_program = "/usr/lib/sendmail -t -ODeliveryMode=deferred";
++my $mta_program = "/usr/sbin/sendmail -t -ODeliveryMode=deferred";
+ 
+ # and STDIN is where we get the info about running threads
+ #
