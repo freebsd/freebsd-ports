@@ -1,0 +1,11 @@
+Embedding tests allows tests to be placed near the code its testing.
+This is a nice supplement to the traditional .t files.
+It's like XUnit, Perl-style.
+
+Test::Tutorial is just documentation. To actually get anything done you
+use pod2test. Read the Test::Inline::Tutoral, really. 
+
+Author: Michael G Schwern <schwern@pobox.com> 
+WWW: http://search.cpan.org/search?dist=Test-Inline
+
+--Erwin Lansing <erwin@lansing.dk>

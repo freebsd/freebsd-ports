@@ -1,0 +1,12 @@
+bin/pod2test
+lib/perl5/site_perl/%%PERL_VER%%/Test/Inline/Tutorial.pod
+lib/perl5/site_perl/%%PERL_VER%%/Test/Inline.pm
+lib/perl5/site_perl/%%PERL_VER%%/Pod/Tests.pm
+lib/perl5/site_perl/%%PERL_VER%%/Pod/Tests/Tutorial.pod
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Test/Inline/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Test/Inline
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Test 2>/dev/null || true
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Test/Inline
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Test 2>/dev/null || true
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Pod/Tests
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Pod 2>/dev/null || true
