@@ -1,0 +1,6 @@
+PL/Tcl allows you to write PostgreSQL stored functions and procedures
+in Tcl.
+
+This software is part of the standard PostgreSQL distribution.
+
+WWW: http://www.postgresql.org/

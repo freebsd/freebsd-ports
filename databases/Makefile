@@ -94,6 +94,7 @@
     SUBDIR += postgresql-jdbc
     SUBDIR += postgresql-odbc
     SUBDIR += postgresql-plruby
+    SUBDIR += postgresql-pltcl
     SUBDIR += postgresql7
     SUBDIR += pxtools
     SUBDIR += py-MySQL
