@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	AMF-Perl
-PORTVERSION=	0.12
+PORTVERSION=	0.14
 CATEGORIES=	www devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../../authors/id/S/SI/SIMONF
@@ -23,6 +23,9 @@ MAN3=		AMF::Perl.3 AMF::Perl::App::Executive.3 \
 		AMF::Perl::IO::OutputStream.3 AMF::Perl::IO::Serializer.3 \
 		AMF::Perl::Sql::MysqlRecordSet.3 AMF::Perl::Util::Object.3 \
 		AMF::Perl::Util::RemotingService.3
+
+post-patch:
+	@${PERL} -pi -e 's/=(?==head)//g' ${WRKSRC}/lib/AMF/Perl.pm
 
 post-configure:
 # dirty hack to deceive irritable pod2man
