@@ -1,0 +1,14 @@
+--- samples/sample.actxrc.orig	Mon Feb 22 11:57:44 1999
++++ samples/sample.actxrc	Mon Feb 22 11:58:14 1999
+@@ -6,9 +6,9 @@
+ 
+ Actx*titleOfMenu: ONE  - for Bright Season -
+ 
+-Actx*xpmDir: /usr/local/lib/ActX
++Actx*xpmDir: %%ACTXDIR%%
+ 
+-!Actx*sndDir: /usr/local/lib/ActX/wav
++!Actx*sndDir: %%ACTXDIR%%/wav
+ 
+ !Actx*sndCom: /usr/local/bin/wavplay -q %s
+ 
