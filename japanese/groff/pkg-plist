@@ -1,5 +1,3 @@
-@cwd /usr/local
-@mode 555
 bin/groff
 bin/gtroff
 bin/gtbl
@@ -23,7 +21,6 @@ bin/psbb
 bin/afmtodit
 bin/grog
 bin/gnroff
-@mode 444
 man/man1/groff.1.gz
 man/man1/gtroff.1.gz
 man/man1/gtbl.1.gz
@@ -54,7 +51,6 @@ man/man1/grog.1.gz
 man/man1/gnroff.1.gz
 man/man7/groff_mm.7.gz
 man/man7/groff_mmse.7.gz
-@mode 444
 share/groff/eign
 share/groff/tmac/hyphen.us
 share/groff/tmac/tmac.an

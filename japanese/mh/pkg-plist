@@ -1,4 +1,3 @@
-@cwd /usr/local
 @mode 755
 bin/ali
 bin/anno
