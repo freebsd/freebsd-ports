@@ -9,13 +9,12 @@ PORTNAME=	hlds
 PORTVERSION=	3.1.0.6
 PORTREVISION=	2
 CATEGORIES=	games linux
-MASTER_SITES=	http://ftp1download.gamespy.com/fileplanet/fpnew/action/half-life/official/ \
-		ftp://ftp.fasta.fh-dortmund.de/gdi/halflife/server/linux/ \
-		http://fileplanet.games-world.net/dl/ftp1.gamespy.com/fpnew/action/half-life/official/ \
-		ftp://fileplanet.blueyonder.co.uk/ftp1.gamespy.com/fpnew/action/half-life/official/ \
+MASTER_SITES=	http://games.velocity.net/files/Halflife/ \
 		ftp://ftp.gmd.de/people/cla/hl/hl-newest/linux/ \
-		ftp://ftp.fh-rosenheim.de/pub/games/halflife/servers/ \
-		ftp://ftp.icsmedia.de/pub/games/halflife/hl_server/
+		ftp://ftp.icsmedia.de/pub/games/halflife/hl_server/ \
+		http://ftp1download.gamespy.com/fileplanet/fpnew/action/half-life/official/ \
+		http://fileplanet.games-world.net/dl/ftp1.gamespy.com/fpnew/action/half-life/official/ \
+		ftp://ftp.fh-rosenheim.de/pub/games/halflife/servers/
 DISTNAME=	hlds_l3106
 
 MAINTAINER=	pat@databits.net

@@ -8,6 +8,7 @@
 PORTNAME=	firearms
 PORTVERSION=	2.5
 MASTER_SITES=	http://absurd.ranney.com/fa/ \
+		http://fileplanet.games-world.net/dl/ftp1.gamespy.com/action/half-life/modifications/firearms/ \
 		http://ftp1download.gamespy.com/fileplanet/action/half-life/modifications/firearms/
 DISTNAME=	fa_rc25_linux_full
 
