@@ -3,7 +3,7 @@
 # Date created:		18 November 1997
 # Whom:			brett@peloton.physics.montana.edu
 #
-# $Id: Makefile,v 1.7 1998/10/07 16:13:47 msmith Exp $
+# $Id: Makefile,v 1.8 1998/10/12 21:50:12 jseger Exp $
 #
 
 DISTNAME=	cooledit-3.7.4
@@ -14,8 +14,6 @@ MASTER_SITE_SUBDIR=	apps/editors/X
 MAINTAINER=	brett@peloton.physics.montana.edu
 
 LIB_DEPENDS=    Xpm.4:${PORTSDIR}/graphics/xpm
-
-BROKEN_ELF=	library names
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-mail-author --disable-static

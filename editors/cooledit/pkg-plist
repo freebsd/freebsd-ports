@@ -7,9 +7,11 @@ bin/coolmessage
 bin/coollistbox
 bin/coolquery
 bin/coolinput
-lib/libCw.so.1.0
-lib/libCw.so
 lib/libCw.la
+lib/libCw.so
+lib/libCw.so.1
+@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
+@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 lib/coolicon/browse.xpm
 lib/coolicon/cooledit.xpm
 lib/coolicon/coolicon.config
