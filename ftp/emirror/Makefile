@@ -14,6 +14,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A full features FTP-mirroring software with nice logfiles
 
 USE_PYTHON=	yes
 GNU_CONFIGURE=	yes

@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://ftp.ibiblio.org/pub/X11/contrib/applications/ \
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Ftp shell under X Window System
 
 FORBIDDEN=	Remotely exploitable buffer overflow
 

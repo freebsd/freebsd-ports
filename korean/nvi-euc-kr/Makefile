@@ -8,11 +8,11 @@
 PKGNAMESUFFIX=	-euckr
 
 MASTERDIR=	${.CURDIR}/../../editors/nvi-m17n
-COMMENTFILE=	${.CURDIR}/pkg-comment
 
 CATEGORIES=	korean editors
 
 MAINTAINER=	ports@freebsd.org
+COMMENT=	A clone of vi/ex, with multilingual patch, default settings for euc-kr
 
 CONFIGURE_ARGS=        --enable-multibyte=euc-kr --program-prefix=n
 

@@ -13,6 +13,7 @@ MASTER_SITES=	http://la-samhna.de/hsftp/ \
 MASTER_SITE_SUBDIR=	system/network/file-transfer
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	FTP emulator that uses ssh to transport commands/data
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-readline

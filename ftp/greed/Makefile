@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.public.asu.edu/~arturner/greed/
 DISTNAME=	greed.81p
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A utility for downloading files with resume capabilities
 
 ALL_TARGET=	freebsd
 WRKSRC=		${WRKDIR}/greed.81p

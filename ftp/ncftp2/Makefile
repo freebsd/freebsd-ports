@@ -11,6 +11,7 @@ CATEGORIES=	ftp
 MASTER_SITES=	ftp://ftp.ncftp.com/ncftp/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	FTP replacement with advanced user interface
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_func_getmaxyx=yes ac_cv_lib_readline=yes

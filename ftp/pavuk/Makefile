@@ -16,6 +16,7 @@ DISTNAME=	${PORTNAME}-0.9pl28
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	HTTP, FTP and Gopher mirroring tool
 
 LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 

@@ -8,13 +8,13 @@
 PKGNAMESUFFIX=	-iso2022jp
 
 MASTERDIR=	${.CURDIR}/../../editors/nvi-m17n
-COMMENTFILE=	${.CURDIR}/pkg-comment
 
 LIB_DEPENDS=	canna.1:${PORTSDIR}/japanese/Canna
 
 CATEGORIES=	japanese editors
 
 MAINTAINER=	ports@freebsd.org
+COMMENT=	Clone of vi/ex, with multilingual patch, default settings for iso-2022-jp
 
 CONFIGURE_ARGS=        --enable-multibyte=iso-2022-jp --program-prefix=n --enable-canna
 

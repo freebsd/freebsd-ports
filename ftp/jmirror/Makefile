@@ -12,6 +12,7 @@ MASTER_SITES=	http://galileo.spaceports.com/~jharris/distfiles/ \
 		ftp://ftp.ruin.org/pub/All/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	FTP mirroring program written in PERL (REQUIRES PERL5,Net::FTP)
 
 RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Net/FTP.pm:${PORTSDIR}/net/p5-Net
 

@@ -16,6 +16,7 @@ DISTFILES=	xgs050.tgz ROM01.ZIP
 EXTRACT_ONLY=	xgs050.tgz
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Apple IIGS emulator stable release
 
 BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 

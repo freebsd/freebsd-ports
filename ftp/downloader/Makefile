@@ -17,6 +17,7 @@ MASTER_SITES=	http://www.krasu.ru/soft/chuchelo/files/ \
 DISTNAME=	d4x-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Program for downloading via ftp or http with GUI
 
 LIB_DEPENDS=	gtk-x11-2.0.200:${PORTSDIR}/x11-toolkits/gtk20
 

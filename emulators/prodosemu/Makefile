@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://apple2.caltech.edu/pub/apple2/emulators/
 DISTNAME=	${PORTNAME}.v${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A text based Apple IIe ProDOS emulator
 
 NO_PACKAGE=	yes
 RESTRICTED=	apple.rom copyright is owned by Apple and cannot be distributed.

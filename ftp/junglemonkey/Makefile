@@ -13,6 +13,7 @@ MASTER_SITES=	http://www.junglemonkey.net/src/
 DISTNAME=	jm-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A distributed file sharing program for GNOME
 
 LIB_DEPENDS=	gnet.1:${PORTSDIR}/net/gnet
 

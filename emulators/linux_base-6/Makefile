@@ -20,6 +20,7 @@ PATCH_SITE_SUBDIR=	updates/6.2/en/os/${MACHINE_ARCH} \
 PATCHFILES=		${UPDATES}
 
 MAINTAINER=		ports@FreeBSD.org
+COMMENT=	The base set of packages needed in Linux mode
 
 BUILD_DEPENDS=		rpm:${PORTSDIR}/archivers/rpm
 

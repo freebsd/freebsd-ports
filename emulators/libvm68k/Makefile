@@ -13,6 +13,7 @@ CATEGORIES=	emulators
 MASTER_SITES=	ftp://ftp.hypercore.co.jp/vx68k/${PORTNAME}-${PORTVERSION:R}/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	M68000 virtual machine library
 
 USE_LIBTOOL=	yes
 LIBTOOLFLAGS=	--disable-ltlibs --release-ignore

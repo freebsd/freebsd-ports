@@ -11,8 +11,8 @@ PKGNAMESUFFIX=	-big5
 MASTERDIR=	${.CURDIR}/../../editors/nvi-m17n
 
 MAINTAINER=	ports@freebsd.org
+COMMENT=	A clone of vi/ex, with multilingual patch, default settings for big5
 
-COMMENTFILE=	${.CURDIR}/pkg-comment
 CONFIGURE_ARGS+=	--enable-multibyte=big5 --program-prefix=n
 
 .include "${MASTERDIR}/Makefile"

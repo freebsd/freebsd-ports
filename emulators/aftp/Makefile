@@ -14,6 +14,7 @@ DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@freebsd.org
+COMMENT=	A ftp-like shell for accessing Apple II disk images
 
 MAN1=		aftp.1
 

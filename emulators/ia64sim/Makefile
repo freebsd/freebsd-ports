@@ -15,6 +15,7 @@ MASTER_SITES=	http://www.pacificsites.com/~ccrayne/  \
 DISTFILES=	${PORTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	IA64 simulator (Intel(R) Architecture 64)
 
 EXTRACT_BEFORE_ARGS=	-qLa
 WRKSRC=		${WRKDIR}/home/chuck/ia64simcc

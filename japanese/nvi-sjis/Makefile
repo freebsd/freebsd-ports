@@ -8,13 +8,13 @@
 PKGNAMESUFFIX=	-sjis
 
 MASTERDIR=	${.CURDIR}/../../editors/nvi-m17n
-COMMENTFILE=	${.CURDIR}/pkg-comment
 
 LIB_DEPENDS=	canna.1:${PORTSDIR}/japanese/Canna
 
 CATEGORIES=	japanese editors
 
 MAINTAINER=	ports@freebsd.org
+COMMENT=	A clone of vi/ex, with multilingual patch, default settings for sjis
 
 CONFIGURE_ARGS=        --enable-multibyte=sjis --program-prefix=n --enable-canna
 

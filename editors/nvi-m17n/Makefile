@@ -16,7 +16,8 @@ DISTNAME=	nvi-1.79
 PATCH_SITES=	ftp://ftp.foretune.co.jp/pub/tools/nvi-m17n/
 PATCHFILES=	nvi-1.79.m17n-20011024.diff.gz
 
-MAINTAINER?=   ports@FreeBSD.org
+MAINTAINER?=	ports@FreeBSD.org
+COMMENT?=	A clone of vi/ex, with multilingual patch, no default settings
 
 PATCH_DIST_ARGS=	-d ${WRKSRC}/.. --forward --quiet -E -p0 -f
 WRKSRC=		${WRKDIR}/${DISTNAME}/build
