@@ -7,7 +7,7 @@
 
 PORTNAME=	dynamag
 PORTVERSION=	1.1
-CATEGORIES=	x11
+CATEGORIES=	x11 accessibility
 MASTER_SITES=	ftp://trace.wisc.edu/pub/access_utils/unix/
 DISTNAME=	unwindows
 EXTRACT_SUFX=	.tar.Z

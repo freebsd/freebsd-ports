@@ -9,7 +9,7 @@
 
 PORTNAME=	festvox-kal8
 PORTVERSION=	1.4.0
-CATEGORIES=	audio
+CATEGORIES=	audio accessibility
 MASTER_SITES=	${MASTER_SITE_FESTIVAL}
 MASTER_SITE_SUBDIR=	1.4.1
 DISTNAME=	festvox_kallpc8k

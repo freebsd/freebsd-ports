@@ -9,7 +9,7 @@
 
 PORTNAME=	festogi-spanish
 PORTVERSION=	2.0
-CATEGORIES=	audio
+CATEGORIES=	audio accessibility
 MASTER_SITES=	${MASTER_SITE_FESTIVAL_OGI}
 DISTNAME=	OGIspanish-2.0
 DIST_SUBDIR=	festival

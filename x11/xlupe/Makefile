@@ -7,7 +7,7 @@
 
 PORTNAME=	xlupe
 PORTVERSION=	1.1
-CATEGORIES=	x11
+CATEGORIES=	x11 accessibility
 MASTER_SITES=	http://www.core.de/~coto/projects/xlupe/
 
 MAINTAINER=	ports@FreeBSD.org

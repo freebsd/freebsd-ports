@@ -7,7 +7,7 @@
 
 PORTNAME=	rsynth
 PORTVERSION=	2.0
-CATEGORIES=	audio
+CATEGORIES=	audio accessibility
 MASTER_SITES=	ftp://svr-ftp.eng.cam.ac.uk/pub/comp.speech/synthesis/
 
 MAINTAINER=	ports@FreeBSD.org

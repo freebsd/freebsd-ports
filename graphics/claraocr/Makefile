@@ -8,7 +8,7 @@
 PORTNAME=	claraocr
 PORTVERSION=	0.9.9
 PORTREVISION?=	1
-CATEGORIES=	graphics
+CATEGORIES=	graphics accessibility
 MASTER_SITES=	ftp://carroll.cac.psu.edu/pub/linux/distributions/mandrake-devel/projects/claraocr/ \
 		ftp://ftp.wtfo.com/pub/linux/Mandrake-devel/projects/claraocr/ \
 		ftp://gd.tuwien.ac.at/pub/linux/Mandrake-devel/projects/claraocr/ \
