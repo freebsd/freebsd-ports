@@ -3,12 +3,12 @@
 # Date created:         11 March 1997
 # Whom:                 joerg
 #
-# $Id: Makefile,v 1.2 1997/04/30 03:18:09 asami Exp $
+# $Id: Makefile,v 1.3 1998/05/26 09:37:27 joerg Exp $
 #
 
 DISTNAME=       xtestpicture-1.2
 CATEGORIES=	x11
-MASTER_SITES=   ${MASTER_SITE_LOCAL}
+MASTER_SITES=   ftp://ftp.interface-business.de/pub/outgoing/
 
 MAINTAINER=     joerg@FreeBSD.org
 
