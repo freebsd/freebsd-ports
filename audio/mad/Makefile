@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	mad
-PORTVERSION=	0.13.0b
-PORTREVISION=	1
+PORTVERSION=	0.14.1b
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://ftp.mars.org/pub/mpeg/
@@ -22,7 +21,7 @@ PLIST_SUB+=     PORTVERSION="${PORTVERSION}"
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB= yes
-LIBTOOLFILES=	configure libmad/configure
+LIBTOOLFILES=	configure libmad/configure libid3tag/configure
 CONFIGURE_ARGS=	--enable-shared \
 		--disable-debugging \
 		--enable-sso \
