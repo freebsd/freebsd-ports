@@ -10,6 +10,8 @@ PORTNAME=	bsdi-netscape-${BROWSER}
 
 MAINTAINER=	trevor@FreeBSD.org
 
+FORBIDDEN= 	"buffer overflow when processing HTML forms, reported by Michal Zalewski--example at http://people.freebsd.org/~trevor/hostile-page.htm" 
+
 ONLY_FOR_ARCHS=	i386
 
 NETSCAPE_DIST_ARCH=	unsupported/bsdi21
