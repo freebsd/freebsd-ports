@@ -7,7 +7,7 @@
 #  A version of malloc/free/realloc written by Doug Lea and released to the 
 #  public domain. 
 #
-#  preliminary VERSION 2.5.3b
+#  preliminary VERSION 2.6.5
 #
 #  working version; unreleased.
 #
@@ -24,7 +24,7 @@ VERSION=2.6
 LIBMALLOC=libdlmalloc.a
 LIBSMALLOC=libdlmalloc.so.${VERSION}
 
-SRCS = malloc-2.6.4.c
+SRCS = malloc-2.6.5.c
 
 OBJS = $(SRCS:.c=.o)
 SOBJS = $(SRCS:.c=.so)
