@@ -1,17 +1,19 @@
-If you want to re-build with your own customization, 
-define `DONOTUSE_ORIGINALBINARY', such as:
-  % make DONOTUSE_ORIGINALBINARY=yes
-
 Visualizing the results of molecular orbital calculations
-  MO program:  gaussian, gamess, mopac
-  display molecule in 3D:  geo-opt, single-point, 
-      nomal mode ... animation
-  density:  contour plot, 3D view
-      electron density, MO coefficient
-
+ 1) MO program:  gaussian, gamess, mopac, etc.
+ 2) display molecule in 3D:  geo-opt, single-point, nomal mode (animation)
+ 3) density:  contour plot or 3D view for electron density and MO coefficient
 Everything what you want about MO calculation can be seen.
 
 WWW: http://www.caos.kun.nl/~schaft/molden/molden.html
+
+You must set the environmental variable ether ORIGINALBINARY=yes or 
+MYBINARY=yes. The latter will be used for building up your own binary, 
+which is specially customized.
+web site, shown above.
+
+Acknowledgement:  Porting to 4.0-CURRENT (__FreeBSD_version == 400005) 
+and later versions have been assisted greatly by Glenn Johnson 
+<gjohnson@nola.srrc.usda.gov>, thanks a lot !
 
 --
 rmiya

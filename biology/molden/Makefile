@@ -6,58 +6,67 @@
 #
 
 PORTNAME=	molden
-PORTVERSION=	3.4
+PORTVERSION=	3.6
 CATEGORIES=	biology
 MASTER_SITES=	ftp://ftp.caos.kun.nl/pub/molgraph/molden/
-MASTER_SITES+=	ftp://ftp.caos.kun.nl/pub/molgraph/molden/bin/
-DISTFILES=	${PORTNAME}${PORTVERSION}.tar.Z ${PORTNAME}${PORTVERSION}-freebsd
-EXTRACT_ONLY=	molden3.4.tar.Z
+DISTNAME=	${PORTNAME}${PORTVERSION}
+EXTRACT_SUFX=	.tar.Z
+EXTRACT_ONLY=	${PORTNAME}${PORTVERSION}.tar.Z
+
+PATCH_SITES=	ftp://ftp.caos.kun.nl/pub/molgraph/molden/bin/
+PATCHFILES=	${PORTNAME}${PORTVERSION}-freebsd
 
 MAINTAINER=	rmiya@cc.hirosaki-u.ac.jp
 
-RESTRICTED=     "free for academic, non profit usage; do not re-distribute source and executable"
+RESTRICTED=	"free for academic, non profit usage;"
+NO_CDROM=	"Do not re-distribute source and executable."
+NO_PACKAGE=	"Though the source codes is accessible, the author is hoping for distribution in an original binary form."
+MAKEFILE=	${WRKSRC}/makefile
 
-WRKSRC=		${WRKDIR}/${PORTNAME}${PORTVERSION}
+.include <bsd.port.pre.mk>
 
-.if ${MACHINE_ARCH} == "alpha"
-DONOTUSE_ORIGINALBINARY=	yes
-.endif
+post-configure:
+	@${ECHO_MSG} "********************"
+	@${ECHO_MSG} "**  If you want to use a larger MOLDEN,"
+	@${ECHO_MSG} "**  edit change_parameter, change_parameter.sh"
+	@${ECHO_MSG} "**  or utils/*, and run them before building it."
+	@${ECHO_MSG} "********************"
 
 pre-build:
-.if defined(DONOTUSE_ORIGINALBINARY)
-	(cd ${WRKSRC}; ${CP} makefile Makefile)
-	(cd ${WRKSRC}; ./change_parameter)
+.if defined(ORIGINALBINARY)
 	@${ECHO_MSG} "********************"
-	@${ECHO_MSG} "**  re-build with customizations"
-	@${ECHO_MSG} "**  maxorb: 256 -> 1024"
-	@${ECHO_MSG} "**  maxatm: 150 -> 300"
+	@${ECHO_MSG} "**  using original binary"
+	@${ECHO_MSG} "********************"
+.elif defined(MYBINARY)
+	@${ECHO_MSG} "********************"
+	@${ECHO_MSG} "**  re-build your own MOLDEN"
 	@${ECHO_MSG} "********************"
 .else
 	@${ECHO_MSG} "********************"
-	@${ECHO_MSG} "**  using original binary"
+	@${ECHO_MSG} "**  set ORIGINALBINARY=yes or MYBINARY=yes"
 	@${ECHO_MSG} "********************"
 .endif
 
 do-build:
-.if defined(DONOTUSE_ORIGINALBINARY)
-	(cd ${WRKSRC};${MAKE})
+.if defined(ORIGINALBINARY)
+	${CP}  ${DISTDIR}/${PORTNAME}${PORTVERSION}-freebsd ${WRKSRC}/molden
+.elif defined(MYBINARY)
+	(cd ${WRKSRC} && ${MAKE})
 .else
-	${CP} ${DISTDIR}/${PORTNAME}${PORTVERSION}-freebsd ${WRKSRC}/molden
-.endif
-
-pre-install:
-	${RM} -rf ${PREFIX}/share/doc/molden
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/molden
-	${MKDIR} ${PREFIX}/share/doc/molden/doc
-	${MKDIR} ${PREFIX}/share/doc/molden/test
+	@${ECHO_MSG} "********************"
+	@${ECHO_MSG} "**  set ORIGINALBINARY=yes or MYBINARY=yes"
+	@${ECHO_MSG} "********************"
 .endif
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/molden ${PREFIX}/bin/
 .if !defined(NOPORTDOCS)
-	${INSTALL_DATA} ${WRKSRC}/doc/* ${PREFIX}/share/doc/molden/doc
-	${INSTALL_DATA} ${WRKSRC}/test/* ${PREFIX}/share/doc/molden/test
+	${MKDIR} ${PREFIX}/share/doc/molden
+	${MKDIR} ${PREFIX}/share/molden/test
+	${MKDIR} ${PREFIX}/share/molden/utils
+	${INSTALL_DATA} ${WRKSRC}/doc/* ${PREFIX}/share/doc/molden
+	${INSTALL_DATA} ${WRKSRC}/test/* ${PREFIX}/share/molden/test
+	${INSTALL_DATA} ${WRKSRC}/utils/* ${PREFIX}/share/molden/utils
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
