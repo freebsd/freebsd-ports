@@ -52,10 +52,12 @@ SORT?=		/usr/bin/sort
 Q3SERVER_PORT=	${.CURDIR}/../q3server
 PKGMESSAGE!=	cd ${Q3SERVER_PORT} && ${MAKE} -V PKGMESSAGE
 
-.if defined(HAS_WIERDPATCHES)
+.if defined(HAS_WIERDPATCHES) && defined(DISTFILES)
 post-extract:
+.for files in ${DISTFILES:S/${EXTRACT_ONLY}//}
 	@cd ${WRKSRC} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} \
-		${_DISTDIR}/${DISTFILES:S/${EXTRACT_ONLY}//}
+		${DISTDIR}/${DIST_SUBDIR}/${files}
+.endfor
 .endif
 
 pre-patch:
