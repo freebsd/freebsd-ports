@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fvwm
-PORTVERSION=	2.3.8
+PORTVERSION=	2.3.19
 CATEGORIES=	x11-wm
 MASTER_SITES=	ftp://ftp.fvwm.org/pub/fvwm/version-2/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
