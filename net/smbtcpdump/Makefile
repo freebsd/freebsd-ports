@@ -4,7 +4,7 @@
 # Date created:				11th Feb 1995
 # Whom:					gpalmer
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/06/02 18:30:18 obrien Exp $
 #
 
 DISTNAME=	tcpdump-3.2.1
@@ -17,6 +17,11 @@ PATCH_SITES=	ftp://samba.anu.edu.au/pub/samba/tcpdump-smb/
 PATCHFILES=	tcpdump-3.2.1-smb-diffs.gz
 
 MAINTAINER=	obrien@FreeBSD.org
+
+OSVERSION!=     sysctl -n kern.osreldate
+.if ${OSVERSION} >= 300000
+BROKEN=         T_GID undeclared
+.endif
 
 GNU_CONFIGURE=	yes
 ALL_TARGET=	depend tcpdump
