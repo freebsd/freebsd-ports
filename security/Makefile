@@ -105,6 +105,7 @@
     SUBDIR += nettle
     SUBDIR += nmap
     SUBDIR += nmapfe
+    SUBDIR += nofgpg
     SUBDIR += nss
     SUBDIR += oidentd
     SUBDIR += op
