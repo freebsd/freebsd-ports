@@ -8,7 +8,8 @@
 
 PORTNAME=	gcc-ooo
 PORTVERSION=	3.4.1
-CATEGORIES=	lang java
+PORTREVISION=	1
+CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_GCC} \
 		${MASTER_SITE_LOCAL}
 DISTFILES=	\
@@ -42,7 +43,10 @@ CONFIGURE_TARGET=	x86_64-portbld-freebsd${OSREL}
 .else
 CONFIGURE_TARGET=	${ARCH}-portbld-freebsd${OSREL}
 .endif
-WITHOUT_LIBJAVA=	yes
+
+.if ${OSVERSION} > 502101
+EXTRA_PATCHES=  ${FILESDIR}/extrapatch-gcc__config__freebsd-spec.h
+.endif
 
 SRCDIR=		${WRKDIR}/gcc-${PORTVERSION}
 PATCH_WRKSRC=	${SRCDIR}
@@ -73,18 +77,8 @@ MAN1=		cpp${SUFFIX}.1 \
 MAN7=		fsf-funding.7 gfdl.7 gpl.7
 INFO=		cpp cppinternals gcc gccinstall gccint
 
-.if defined(WITHOUT_LIBJAVA)
-CONFIGURE_ARGS+=	--disable-libgcj
-PLIST_SUB+=	LIBJAVA="@comment "
-.else
-PLIST_SUB+=	LIBJAVA=""
-.endif
-
 pre-everything::
 	@${ECHO_MSG} "Making GCC ${DISTNAME:S/^gcc-//} for ${OPSYS} ${OSREL}  target=${CONFIGURE_TARGET}"
-.if defined(WITHOUT_LIBJAVA)
-	@${ECHO_MSG} "(without libgcj)"
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|\(const char version_string.*\)";|\1 [FreeBSD]";|' \
@@ -104,8 +98,7 @@ check: build
 	cd ${WRKSRC}; export RUNTESTFLAGS='--target_board ''unix{-pthread}'''; ${GMAKE} -sk check
 
 post-install: fake-manpages
-.for f in c++ gcc g++ cpp gcov ${CONFIGURE_TARGET}-gcc ${CONFIGURE_TARGET}-g++ gcj gcjh gij jv-scan jcf-dump jv-convert jar grepjar rmic rmiregistry
-	# gij and jv-convert, for example, are not built on all platforms.
+.for f in c++ gcc g++ cpp gcov ${CONFIGURE_TARGET}-gcc ${CONFIGURE_TARGET}-g++
 	if [ -e ${PREFIX}/bin/${f}${SUFFIX} ]; then \
 	  ${STRIP_CMD} ${PREFIX}/bin/${f}${SUFFIX}; \
 	fi
@@ -120,12 +113,11 @@ post-install: fake-manpages
 	${MV} -f ${PREFIX}/lib/${f}.* ${TARGLIB}
 .endfor
 #	-${MV} -f ${PREFIX}/lib/ieee ${TARGLIB}
-#	-${MV} -f ${PREFIX}/lib/libgcj.* ${TARGLIB}
 	${RM} -f ${PREFIX}/lib/libiberty.a
 	${RM} -f ${TARGLIB}/*.la
-	# Handle target libraries and GCJ include files.
+	# Handle target libraries.
 	${RM} -f ${WRKDIR}/PLIST.lib
-.for d in ${TARGLIB:S/^${PREFIX}\///} include/gcj include/gnu include/java include/javax
+.for d in ${TARGLIB:S/^${PREFIX}\///} include/gnu
 	cd ${PREFIX} ; if [ -d $d ]; then \
 	    ${FIND} $d -type f -o -type l >>${WRKDIR}/PLIST.lib ;\
 	    ${FIND} $d -type d | ${SORT} -r \
@@ -140,11 +132,6 @@ post-install: fake-manpages
 	${ECHO_CMD} "x!"			>> ${WRKDIR}/ex.script
 	${CP} -p ${TMPPLIST} ${TMPPLIST}.pre
 	cd ${WRKDIR} ; ex < ex.script
-
-cklatest:
-.for SITE in ftp://gcc.gnu.org/pub/gcc/snapshots/                                   ftp://mirrors.rcn.net/mirrors/sources.redhat.com/gcc/snapshots/
-	@-ncftpls -l ${SITE} | ${GREP} 'LATEST.*3\.4'
-.endfor
 
 fake-manpages:
 	# man pages can only be generated if Perl >= 5.6 is installed, so
