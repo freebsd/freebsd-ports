@@ -1,0 +1,15 @@
+--- makefile.orig	Sat Nov 22 01:56:59 1997
++++ makefile	Mon Apr 27 00:42:53 1998
+@@ -10,10 +10,10 @@
+ # X Window version: November 5, 1997 - November 21, 1997
+ 
+ 
+-CC=gcc
++CC+=${CFLAGS} -I$(X11BASE)/include -DPREFIX=\"${PREFIX}\"
+ POSTPROCESS=strip
+ 
+-XLIB=-lX11
++XLIB=-L$(X11BASE)/lib -lX11 -lcompat
+ # XLIB=-L/usr/openwin/lib -lX11
+ # XLIB=-L/usr/X11/lib -lX11
+ 
