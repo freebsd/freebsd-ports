@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sendmail
-PORTVERSION=	8.11.3
+PORTVERSION=	8.11.4
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.sendmail.org/pub/sendmail/
 DISTNAME=	${PORTNAME}.${PORTVERSION}
@@ -31,16 +31,20 @@ PLIST=		${WRKDIR}/.PLIST.more
 
 .if defined(SENDMAIL_WITH_TLS)
 USE_OPENSSL=	yes
+PKGNAMESUFFIX=	-tls
 .endif
 .if defined(SENDMAIL_WITH_SASL)
 LIB_DEPENDS+=	sasl.8:${PORTSDIR}/security/cyrus-sasl
+PKGNAMESUFFIX=	-sasl
 .endif
 .if defined(SENDMAIL_WITH_SFIO)
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libsfio.a:${PORTSDIR}/devel/sfio
+PKGNAMESUFFIX=	-sfio
 .endif
 .if defined(SENDMAIL_WITH_LDAP)
 LIB_DEPENDS+=	ldap.2:${PORTSDIR}/net/openldap2
 LIB_DEPENDS+=	lber.2:${PORTSDIR}/net/openldap2
+PKGNAMESUFFIX=	-ldap
 .endif
 
 .if exists(${DESTDIR}/etc/mail/mailer.conf)
