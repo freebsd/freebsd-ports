@@ -85,8 +85,10 @@ pre-fetch:
 	@${FALSE}
 .endif
 
+.if !target(qt-pre-configure)
 qt-pre-configure:
 	@true
+.endif
 
 pre-configure: qt-pre-configure
 	${PERL} -pi -e "s,gcc,${CC},g; s,g\+\+,${CXX},g; \
@@ -109,6 +111,7 @@ post-configure:
 
 # Add hack to bring in support for GL.  The last line is necessary to ensure that
 # one can rebuild with the same tree and get the same results.
+.if !target(do-build)
 do-build:
 	(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${ALL_TARGET})
 .if !defined(WANT_STATIC)
@@ -121,6 +124,7 @@ do-build:
 	${CP} ${WRKSRC}/lib/libqt2.so.4 ${WRKSRC}/lib/libqtgl.so.4
 	${CP} ${WRKSRC}/lib/libqt2-real.so.4 ${WRKSRC}/lib/libqt2.so.4
 	${CP} ${WRKSRC}/src/Makefile.orig ${WRKSRC}/src/Makefile
+.endif
 .endif
 
 # XXX: This target looks like crap now.
