@@ -26,7 +26,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 #PATCHFILES=	${DISTNAME}-patch1
 #PATCH_DIST_STRIP=	-d ${WRKSRC}/source
 
-MAINTAINER=	anders@codefactory.se
+MAINTAINER=	anders@hack.org
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes

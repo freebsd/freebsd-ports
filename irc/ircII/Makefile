@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.warped.com/pub/ircII/ \
 		ftp://ircftp.au.eterna.com.au/pub/ircII/ \
 		ftp://ftp.plig.net/pub/ircII/
 
-MAINTAINER=	anders@codefactory.se
+MAINTAINER=	anders@hack.org
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	IRCLIB=${PREFIX}/share/irc

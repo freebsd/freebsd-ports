@@ -1,6 +1,6 @@
 # New ports collection makefile for:	oregano
 # Date created:			19 Feb 2001
-# Whom:				Anders Andersson <anders@codefactory.se>
+# Whom:				Anders Andersson <anders@hack.org>
 #
 # $FreeBSD$
 #
@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	cad
 MASTER_SITES=	ftp://ftp.codefactory.se/pub/CodeFactory/software/oregano/
 
-MAINTAINER=	anders@codefactory.se
+MAINTAINER=	anders@hack.org
 
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
