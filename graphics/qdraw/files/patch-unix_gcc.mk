@@ -1,6 +1,6 @@
 --- make/unix_gcc.mk.orig	Fri Jul 28 20:54:11 2000
 +++ make/unix_gcc.mk	Fri Jan 26 07:05:06 2001
-@@ -34,12 +34,18 @@
+@@ -34,12 +34,20 @@
  GCCPATH=	/usr
  GCC=		cc
 +ifneq "${freebsd}" "34"
