@@ -1,1 +1,3 @@
 %%RUBY_SITELIBDIR%%/GServer.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gserver/HttpEchoServer.rb
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/gserver
