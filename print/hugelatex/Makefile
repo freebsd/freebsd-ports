@@ -16,8 +16,6 @@ DISTFILES=		# none
 MAINTAINER=		murray@FreeBSD.org
 COMMENT=	LaTeX format files with large limits
 
-BROKEN=		"Bad pkg-plist"
-
 BUILD_DEPENDS=		tex:${PORTSDIR}/print/teTeX
 
 NO_BUILD=		yes
