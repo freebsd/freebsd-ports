@@ -19,5 +19,6 @@ CONFLICTS=	bind-8.* bind84-8.* bind9-9.* bind9-dlz-* bind9-sdb-mysql-* skalibs-*
 NO_WRKSUBDIR=	yes
 
 MAN1=		host.1
+PLIST_FILES=	bin/host
 
 .include <bsd.port.mk>

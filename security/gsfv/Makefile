@@ -16,6 +16,7 @@ MASTER_SITE_SUBDIR=	ijliao
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Create or verify Simple File Verification (SFV) checksum files
 
+PLIST_FILES=	bin/gsfv
 USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
 

@@ -19,6 +19,7 @@ COMMENT=	Afterstep clock with some language extentions
 USE_IMAKE=	yes
 USE_XPM=	yes
 MAN1=		asclock.1
+PLIST_FILES=	bin/asclock
 
 pre-configure:
 	(cd ${WRKSRC}; \

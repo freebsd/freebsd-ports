@@ -18,6 +18,7 @@ COMMENT=	Splits an ISO 11172-1 into its components
 NO_WRKSUBDIR=	yes
 MAKEFILE=	makefile
 MAN1=		splitmpeg.1
+PLIST_FILES=	bin/splitmpeg
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/splitmpeg ${PREFIX}/bin

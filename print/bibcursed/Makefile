@@ -19,7 +19,8 @@ COMMENT=	A simple curses-based editor for BibTeX bibliography files
 WRKSRC=		${WRKDIR}/${PORTNAME}
 MAKEFILE=	Makefile.ncurses
 
-MAN1=	bibcursed.1
+MAN1=		bibcursed.1
+PLIST_FILES=	bin/bibcursed
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bibcursed ${PREFIX}/bin

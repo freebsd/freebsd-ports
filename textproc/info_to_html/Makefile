@@ -16,6 +16,7 @@ COMMENT=	Translate GNU info files into HTML pages
 
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Compress/Zlib.pm:${PORTSDIR}/archivers/p5-Compress-Zlib
 
+PLIST_FILES=	bin/info_to_html
 USE_PERL5=	yes
 NO_BUILD=	yes
 

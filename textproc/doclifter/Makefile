@@ -17,7 +17,8 @@ COMMENT=	Translates documents written in troff macros to DocBook
 USE_PYTHON=	yes
 NO_BUILD=	yes
 
-MAN1=	doclifter.1
+MAN1=		doclifter.1
+PLIST_FILES=	bin/doclifter
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/doclifter ${PREFIX}/bin

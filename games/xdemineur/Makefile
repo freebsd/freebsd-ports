@@ -18,5 +18,6 @@ COMMENT=	Another minesweeper game for the X Window System
 USE_IMAKE=	yes
 USE_XPM=	yes
 MAN1=		xdemineur.1
+PLIST_FILES=	bin/xdemineur
 
 .include <bsd.port.mk>

@@ -18,5 +18,6 @@ COMMENT=	Set the root window to the moon in its current phase
 USE_IMAKE=	yes
 
 MAN1=		xphoon.1
+PLIST_FILES=	bin/xphoon
 
 .include <bsd.port.mk>

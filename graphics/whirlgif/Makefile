@@ -17,6 +17,7 @@ COMMENT=	A tool for making GIF animations
 NO_WRKSUBDIR=	yes
 
 MAN1=		whirlgif.1
+PLIST_FILES=	bin/whirlgif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/whirlgif ${PREFIX}/bin

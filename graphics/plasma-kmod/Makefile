@@ -17,6 +17,7 @@ COMMENT=	A plasma-effect screensaver kernel module
 .if !exists(/usr/src/sys/dev/syscons/syscons.h)
 IGNORE=		"Requires kernel source (/usr/src/sys) to build"
 .endif
+PLIST_FILES=	lib/plasma_saver.ko
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/plasma_saver.ko ${PREFIX}/lib

@@ -14,6 +14,7 @@ MASTER_SITES=	http://math.smsu.edu/~erik/files/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An image viewer for X
 
+PLIST_FILES=	bin/vp
 USE_SDL=	image
 USE_GETOPT_LONG=yes
 USE_LIBTOOL=	yes

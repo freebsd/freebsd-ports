@@ -17,6 +17,7 @@ COMMENT=	Watches what you are doing and whether you're hostile or not
 WRKSRC=		${WRKDIR}/xeyes
 USE_IMAKE=	yes
 MAN1=		xgolgo.1
+PLIST_FILES=	bin/xgolgo
 
 post-patch:
 	@${CP} ${WRKSRC}/xeyes.man ${WRKSRC}/xgolgo.man

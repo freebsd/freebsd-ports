@@ -16,5 +16,6 @@ COMMENT=	Tool startup utility for X11
 
 USE_IMAKE=	yes
 MAN1=		xtoolwait.1
+PLIST_FILES=	bin/xtoolwait
 
 .include <bsd.port.mk>

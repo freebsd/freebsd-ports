@@ -15,6 +15,7 @@ DISTNAME=	stars-1.0-ss-11.00
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Star field demo
 
+PLIST_FILES=	bin/stars
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_X_PREFIX=	yes
 

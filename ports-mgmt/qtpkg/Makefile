@@ -17,6 +17,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Qt based package removal tool
 MAKE_ENV=	LIBS="-lqt-mt ${PTHREAD_LIBS}" CFLAGS="${PTHREAD_CFLAGS}"
 
+PLIST_FILES=	sbin/qtpkg
 USE_QT_VER=	3
 
 do-install:

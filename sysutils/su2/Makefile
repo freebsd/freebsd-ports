@@ -17,6 +17,7 @@ NO_CDROM=	"Don't sell for profit"
 USE_REINPLACE=	yes
 
 MAN1=		su2.1
+PLIST_FILES=	bin/su2
 
 post-patch:
 	${REINPLACE_CMD} -e 's,/etc/super,${PREFIX}/etc/super,g' ${WRKSRC}/su2.man

@@ -19,6 +19,7 @@ COMMENT=	Python mhash module
 
 LIB_DEPENDS=	mhash:${PORTSDIR}/security/mhash
 
+PLIST_FILES=	lib/%%PYTHON_VERSION%%/site-packages/mhash.so
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 USE_REINPLACE=	yes

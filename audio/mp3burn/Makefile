@@ -22,6 +22,7 @@ NO_BUILD=	yes
 USE_REINPLACE=	yes
 MAN1=		mp3burn.1
 MANCOMPRESSED=	no
+PLIST_FILES=	bin/mp3burn
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/bin/perl|${PERL}|' ${WRKSRC}/mp3burn

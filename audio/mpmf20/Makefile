@@ -16,6 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	File transfer tool for the MPMan MP-F20 portable MP3-player
 
 MAKEFILE=	makefile
+PLIST_FILES=	bin/mpmf20
 
 .include <bsd.port.pre.mk>
 

@@ -14,7 +14,8 @@ MASTER_SITES=	http://pornin.nerim.net/ucpp/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A C preprocessor and lexer
 
-MAN1=	ucpp.1
+MAN1=		ucpp.1
+PLIST_FILES=	bin/ucpp
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin

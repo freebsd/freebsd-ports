@@ -17,6 +17,7 @@ COMMENT=	Recieve faxes using sound card and radio
 
 LIB_DEPENDS=	Xaw3d.${XAWVER}:${PORTSDIR}/x11-toolkits/Xaw3d
 
+PLIST_FILES=	bin/acfax
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_REINPLACE=	yes

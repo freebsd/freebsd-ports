@@ -16,5 +16,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Util to rotate your mail/news signature
 
 MAN1=		sigrot.1
+PLIST_FILES=	bin/sigrot
 
 .include <bsd.port.mk>

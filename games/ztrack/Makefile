@@ -19,6 +19,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS} -DHAVE_RANDOM"
 ALL_TARGET=	ztrack
 MAN6=		ztrack.6
+PLIST_FILES=	bin/ztrack
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ztrack ${PREFIX}/bin/ztrack

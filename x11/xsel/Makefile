@@ -25,7 +25,8 @@ NO_WRKSUBDIR=	yes
 CFLAGS+=	`${GTK_CONFIG} --cflags`
 LDFLAGS+=	`${GTK_CONFIG} --libs` -lXt -lXaw
 
-MAN1=	xsel.1
+MAN1=		xsel.1
+PLIST_FILES=	bin/xsel
 
 do-build:
 	(cd ${WRKSRC} && ${CC} ${CFLAGS} xsel.c -o xsel ${LDFLAGS})

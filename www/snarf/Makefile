@@ -15,7 +15,8 @@ COMMENT=	Another small command-line URL (http/ftp/gopher/finger) fetcher
 
 GNU_CONFIGURE=	yes
 
-MAN1=	snarf.1
+MAN1=		snarf.1
+PLIST_FILES=	bin/snarf
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/snarf ${PREFIX}/bin/

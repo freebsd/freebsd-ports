@@ -15,6 +15,7 @@ COMMENT=	ICMP active OS fingerprint scanner
 
 GNU_CONFIGURE=	yes
 
-MAN1=	xprobe.1
+MAN1=		xprobe.1
+PLIST_FILES=	bin/xprobe
 
 .include <bsd.port.mk>

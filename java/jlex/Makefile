@@ -16,6 +16,7 @@ EXTRACT_ONLY=	#
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A lexical analyzer generator, written for Java, in Java
 
+PLIST_FILES=	%%JAVAJARDIR%%/jlex.jar
 USE_JAVA=	1.1+
 NEED_JAVAC=	yes
 NO_WRKSUBDIR=	yes

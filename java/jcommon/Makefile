@@ -15,6 +15,7 @@ MASTER_SITE_SUBDIR=	jfreechart
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A collection of useful classes used by JFreeChart and JFreeReport
 
+PLIST_FILES=	share/java/classes/jcommon.jar
 USE_JAVA=	1.2+
 NO_BUILD=	yes
 

@@ -16,5 +16,6 @@ COMMENT=	A comprehensive filesystem mirroring program
 
 MAN1=		cpdup.1
 MANCOMPRESSED=	yes
+PLIST_FILES=	bin/cpdup
 
 .include <bsd.port.mk>

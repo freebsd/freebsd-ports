@@ -17,6 +17,7 @@ COMMENT=	A utility to harvest URLs from a given start point
 USE_LIBTOOL=	yes
 CONFIGURE_ARGS+=	--disable-shared --enable-static
 MAN1=		scout.1
+PLIST_FILES=	bin/scout
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/scout ${PREFIX}/bin/

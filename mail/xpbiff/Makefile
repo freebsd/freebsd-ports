@@ -19,6 +19,7 @@ COMMENT?=	A replacement for xbiff that handles popup window with mail header
 USE_IMAKE=	yes
 USE_XPM=	yes
 NO_INSTALL_MANPAGES=	yes
+PLIST_FILES=	bin/xpbiff
 WRKSRC=		${WRKDIR}/xpbiff
 
 .if defined(PREFIX) && ${PREFIX} != ${LOCALBASE}

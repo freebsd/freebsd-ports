@@ -20,6 +20,7 @@ LIB_DEPENDS=	rrd:${PORTSDIR}/net/rrdtool
 
 USE_PYTHON=	yes
 NO_BUILD=	yes
+PLIST_FILES=	lib/%%PYTHON_VERSION%%/site-packages/RRDpipe.py
 
 do-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/RRDpipe.py ${PYTHON_SITELIBDIR}

@@ -16,5 +16,6 @@ COMMENT=	A program to link multiple X and VNC servers together
 
 USE_IMAKE=	yes
 MAN1=		x2vnc.1
+PLIST_FILES=	bin/x2vnc
 
 .include <bsd.port.mk>

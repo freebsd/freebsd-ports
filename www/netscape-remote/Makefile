@@ -18,6 +18,7 @@ COMMENT=	Utility to pass commands to running netscape process
 USE_XLIB=	yes
 DIST_SUBDIR=	netscape-remote
 NO_WRKSUBDIR=   yes
+PLIST_FILES=	bin/netscape-remote
 
 do-extract:
 	@${MKDIR} ${WRKDIR}

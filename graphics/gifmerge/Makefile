@@ -15,6 +15,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A tool for making a GIF Animation
 
 NO_WRKSUBDIR=	yes
+PLIST_FILES=	bin/gifmerge
 
 do-build:
 	cd ${WRKSRC} && ${CC} ${CFLAGS} -o gifmerge gifmerge.c

@@ -20,6 +20,7 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 ALL_TARGET=	txt2man.1
 INSTALL_TARGET=	install prefix=${PREFIX}
 
-MAN1=	txt2man.1
+MAN1=		txt2man.1
+PLIST_FILES=	bin/txt2man
 
 .include <bsd.port.mk>

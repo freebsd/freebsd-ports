@@ -15,6 +15,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A curses-based tool for creating and solving the cryptograms
 
+PLIST_FILES=	bin/cryptoslam
 USE_REINPLACE=  yes
 
 .include <bsd.port.pre.mk>

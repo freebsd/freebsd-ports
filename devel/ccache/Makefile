@@ -15,5 +15,6 @@ COMMENT=	A tool to minimize the compile time of C programs
 
 GNU_CONFIGURE=	yes
 MAN1=		ccache.1
+PLIST_FILES=	bin/ccache
 
 .include <bsd.port.mk>

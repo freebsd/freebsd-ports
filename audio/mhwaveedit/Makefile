@@ -28,6 +28,7 @@ CONFIGURE_ARGS=	--without-sdl
 .if defined(WITH_DOUBLE_SAMPLES)
 CONFIGURE_ARGS+=	--with-double-samples
 .endif
+PLIST_FILES=	bin/mhwaveedit
 
 pre-everything::
 	@${ECHO_MSG} ""

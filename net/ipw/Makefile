@@ -15,5 +15,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A "whois" replacement that automatically queries several databases
 
 NO_WRKSUBDIR=	yes
+PLIST_FILES=	bin/ipw
 
 .include <bsd.port.mk>

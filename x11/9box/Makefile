@@ -15,6 +15,7 @@ MASTER_SITES=	http://freesoftware.fsf.org/download/9box/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	9box can "pack" windows inside itself
 
+PLIST_FILES=	bin/9box
 USE_REINPLACE=	yes
 USE_XLIB=	yes
 USE_X_PREFIX=	yes

@@ -16,6 +16,7 @@ MASTER_SITE_SUBDIR=	trevor
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An easy to use gtk program for configuring Xbindkeys
 
+PLIST_FILES=	bin/xbindkeys_config
 USE_GNOME=	gtk12
 USE_REINPLACE=	yes
 MAKE_ENV=	CC="${CC} ${CFLAGS}"

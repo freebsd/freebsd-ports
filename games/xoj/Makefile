@@ -18,5 +18,6 @@ COMMENT=	O. J. Simpson Simulator root window demo
 USE_XPM=	yes
 USE_IMAKE=	yes
 NO_INSTALL_MANPAGES=	yes
+PLIST_FILES=	bin/xoj
 
 .include <bsd.port.mk>

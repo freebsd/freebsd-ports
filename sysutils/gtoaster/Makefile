@@ -22,6 +22,7 @@ RUN_DEPENDS=	cdrecord:${PORTSDIR}/sysutils/cdrtools \
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+PLIST_FILES=	bin/gtoaster
 USE_X_PREFIX=	yes
 WANT_GNOME=	yes
 USE_GNOME=	gnomehack gnometarget gtk12

@@ -24,6 +24,7 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
 MAN1=		aspostit.1
+PLIST_FILES=	bin/aspostit
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/aspostit ${PREFIX}/bin/

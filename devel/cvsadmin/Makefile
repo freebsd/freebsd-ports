@@ -17,7 +17,8 @@ COMMENT=	A simple program to administrate users of a CVS repository
 
 GNU_CONFIGURE=	yes
 
-MAN1=	cvsadmin.1
+MAN1=		cvsadmin.1
+PLIST_FILES=	bin/cvsadmin
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/man/cvsadmin.1 ${MANPREFIX}/man/man1

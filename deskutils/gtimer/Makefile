@@ -21,6 +21,7 @@ USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 
 MAN1=		gtimer.1
+PLIST_FILES=	bin/gtimer
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|malloc\.h|stdlib.h|g' \

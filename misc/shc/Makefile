@@ -15,7 +15,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A shell script "encoder"
 
-MAN1=	shc.1
+MAN1=		shc.1
+PLIST_FILES=	bin/shc
 
 do-build:
 	@cd ${WRKSRC} && ${CC} ${CFLAGS} -o shc shc.c

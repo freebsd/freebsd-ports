@@ -16,6 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple program for outgoing SMTP delivery
 
 NO_WRKSUBDIR=	yes
+PLIST_FILES=	bin/nbsmtp
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/nbsmtp ${PREFIX}/bin/

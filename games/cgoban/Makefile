@@ -24,6 +24,7 @@ CONFIGURE_ENV=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \
 		AUTOHEADER="${TRUE}"
 
 MAN6=		cgoban.6
+PLIST_FILES=	bin/cgoban
 
 post-patch:
 	${REINPLACE_CMD} -e 's|/usr/bin/gnugo|${LOCALBASE}/bin/gnugo|' ${WRKSRC}/src/cgoban.c

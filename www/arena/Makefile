@@ -17,6 +17,7 @@ COMMENT=	Experimental HTML 3 browser, supports math and style sheets
 LIB_DEPENDS+=	jpeg.9:${PORTSDIR}/graphics/jpeg
 LIB_DEPENDS+=	png.5:${PORTSDIR}/graphics/png
 
+PLIST_FILES=	bin/arena
 USE_XLIB=	yes
 WRKSRC=		${WRKDIR}/WWW
 

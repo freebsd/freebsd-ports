@@ -23,5 +23,6 @@ GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install install.man
 
 MAN1=		asapm.1
+PLIST_FILES=	bin/asapm
 
 .include <bsd.port.mk>

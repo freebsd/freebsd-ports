@@ -18,5 +18,6 @@ COMMENT=	Generate C parser given a grammar in BNF notation
 GNU_CONFIGURE=	yes
 
 INFO=		bnf
+PLIST_FILES=	bin/bnf
 
 .include <bsd.port.mk>

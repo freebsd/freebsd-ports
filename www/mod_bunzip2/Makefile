@@ -13,6 +13,7 @@ DISTNAME=		${PORTNAME}
 MAINTAINER=		ports@FreeBSD.org
 COMMENT=	Apache module for server-side decompression of bzip2 files
 
+PLIST_FILES=		libexec/apache/mod_bunzip2.so
 USE_APACHE=		yes
 USE_BZIP2=		yes
 WRKSRC=			${WRKDIR}/${PORTNAME}-2

@@ -18,6 +18,7 @@ USE_BZIP2=	yes
 
 NO_WRKSUBDIR=	yes
 MAN1=		44bsd-rdist.1
+PLIST_FILES=	bin/44bsd-rdist
 
 post-extract:
 	cd ${WRKSRC} ; co RCS/*,v

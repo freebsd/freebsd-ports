@@ -17,5 +17,6 @@ COMMENT=	A multi-radix calculator for x11
 
 USE_IMAKE=	yes
 MAN1=		hexcalc.1
+PLIST_FILES=	bin/hexcalc
 
 .include <bsd.port.mk>

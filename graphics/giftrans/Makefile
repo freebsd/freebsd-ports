@@ -19,6 +19,7 @@ NO_WRKSUBDIR=	yes
 USE_REINPLACE=	yes
 
 MAN1=		giftrans.1
+PLIST_FILES=	bin/giftrans
 
 do-extract:
 	@${MKDIR} ${WRKSRC}

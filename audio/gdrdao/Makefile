@@ -18,5 +18,6 @@ RUN_DEPENDS=	cdrdao:${PORTSDIR}/sysutils/cdrdao
 
 USE_GNOME=	gnomeprefix gnomelibs
 GNU_CONFIGURE=	yes
+PLIST_FILES=	bin/gdrdao
 
 .include <bsd.port.mk>

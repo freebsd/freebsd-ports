@@ -20,6 +20,7 @@ RUN_DEPENDS=	${LOCALBASE}/libexec/gnushogix:${PORTSDIR}/games/gnushogi
 USE_X_PREFIX=	yes
 MAKEFILE=	Makefile.custom
 MAN6=		xshogi.6
+PLIST_FILES=	bin/xshogi
 
 post-configure:
 	@${ECHO_CMD} "DISTDIR=${WRKDIR}" >> ${WRKSRC}/${MAKEFILE}

@@ -14,6 +14,7 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mahjongg
 
+PLIST_FILES=	bin/xmj
 USE_IMAKE=	yes
 
 .include <bsd.port.mk>

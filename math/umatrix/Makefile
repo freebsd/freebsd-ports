@@ -15,5 +15,6 @@ COMMENT=	Simple matrix package
 
 GNU_CONFIGURE=	yes
 MAN1=		umatrix.1
+PLIST_FILES=	bin/umatrix
 
 .include <bsd.port.mk>

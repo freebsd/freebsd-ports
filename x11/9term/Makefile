@@ -21,5 +21,6 @@ NO_WRKSUBDIR=	yes
 USE_X_PREFIX=	yes
 MAKE_ENV=	SAMDIR=${WRKDIRPREFIX}${.CURDIR}/../../editors/sam/work
 MAN1=		9term.1
+PLIST_FILES=	bin/9term
 
 .include <bsd.port.mk>

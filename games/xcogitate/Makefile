@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	mph
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A logic game with board and stones
 
+PLIST_FILES=	bin/xcogitate
 USE_X_PREFIX=	yes
 USE_XPM=	yes
 WRKSRC=		${WRKDIR}/XCOGITATE_SOURCE

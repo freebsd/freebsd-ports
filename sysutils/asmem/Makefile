@@ -17,6 +17,7 @@ USE_X_PREFIX=	yes
 USE_XPM=	yes
 GNU_CONFIGURE=	yes
 MAN1=		asmem.1
+PLIST_FILES=	bin/asmem
 
 do-install:
 	${INSTALL_PROGRAM} -g kmem -m 2755 ${WRKSRC}/asmem ${PREFIX}/bin

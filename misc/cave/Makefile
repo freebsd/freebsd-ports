@@ -19,7 +19,8 @@ COMMENT=	Character Animation Viewer for Everyone
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-prefix=""
 
-MAN1=	cave.1
+MAN1=		cave.1
+PLIST_FILES=	bin/cave
 
 pre-build:
 	${CP} ${WRKSRC}/doc/cave.man ${WRKSRC}/doc/cave.1

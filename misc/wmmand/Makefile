@@ -13,6 +13,7 @@ DISTNAME=	wmMand-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A DockApp mandelbrot explorer
 
+PLIST_FILES=	bin/wmMand
 WRKSRC=		${WRKDIR}/${DISTNAME}/wmMand
 
 USE_X_PREFIX=	yes

@@ -21,6 +21,7 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 MAKE_ARGS=	-DUSE_JPEG -DUSE_TIFF -DUSE_PNG
 
 MAN1=		dc20ctrl.1
+PLIST_FILES=	bin/dc20ctrl
 
 do-install:
 	${INSTALL_PROGRAM} -g dialer -m 02755 ${WRKSRC}/dc20ctrl ${PREFIX}/bin

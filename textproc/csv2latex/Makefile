@@ -18,6 +18,7 @@ COMMENT=	Converts a well formed csv file to a LaTeX document
 
 USE_GETOPT_LONG=	yes
 NO_WRKSUBDIR=	yes
+PLIST_FILES=	bin/csv2latex
 EXTRACT_CMD=	${CP}
 EXTRACT_BEFORE_ARGS=	#
 EXTRACT_AFTER_ARGS=	.

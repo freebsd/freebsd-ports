@@ -16,6 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK+ frontend to SETI@Home
 
 GNU_CONFIGURE=	yes
+PLIST_FILES=	bin/fooseti
 USE_GETTEXT=	yes
 USE_GNOME=	gtk12
 

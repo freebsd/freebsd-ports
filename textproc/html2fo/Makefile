@@ -15,6 +15,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	HTML to xsl:fo converter
 
+PLIST_FILES=	bin/html2fo
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}"

@@ -15,6 +15,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Quine-McCluskey Logic Simplifier
 
+PLIST_FILES=	bin/qmls
 USE_LIBTOOL=	yes
 GNU_CONFIGURE=	yes
 

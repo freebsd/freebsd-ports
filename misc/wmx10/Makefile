@@ -16,6 +16,7 @@ COMMENT=	Remote control for X10 devices
 
 LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
 
+PLIST_FILES=	bin/wmx10
 WRKSRC=		${WRKDIR}/wmx10.app/wmx10
 
 USE_GMAKE=	yes

@@ -26,6 +26,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 INFO=		dvipng
+PLIST_FILES=	bin/dvipng
 
 post-install:
 	@${STRIP_CMD} ${PREFIX}/bin/dvipng

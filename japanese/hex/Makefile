@@ -17,6 +17,7 @@ COMMENT=	A hexadecimal dump tool which handles Japanese
 
 MANLANG=	ja
 MAN1=		hex.1
+PLIST_FILES=	bin/hex
 
 do-build:
 	cd ${WRKSRC}; ${CXX} ${CXXFLAGS} hex.cc -o hex

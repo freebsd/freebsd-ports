@@ -20,6 +20,7 @@ EXTRACT_CMD=	${GZCAT}
 EXTRACT_BEFORE_ARGS=	# None
 EXTRACT_AFTER_ARGS=	> ${WRKSRC}/uk.phone
 NO_BUILD=	yes
+PLIST_FILES=	share/misc/uk.phone
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/uk.phone ${PREFIX}/share/misc

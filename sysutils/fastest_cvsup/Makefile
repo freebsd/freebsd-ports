@@ -18,5 +18,6 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-H
 USE_PERL5=	yes
 
 MAN7=		fastest_cvsup.7
+PLIST_FILES=	bin/fastest_cvsup
 
 .include <bsd.port.mk>

@@ -15,6 +15,7 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Horrible eyes looking at your mouse cursor
 
+PLIST_FILES=	bin/xeyes+
 USE_IMAKE=	yes
 USE_XPM=	yes
 

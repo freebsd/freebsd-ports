@@ -25,7 +25,8 @@ CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 MAKEFILE=	GNUmakefile
 ALL_TARGET=	# empty
 
-MAN1=	catdvi.1
+MAN1=		catdvi.1
+PLIST_FILES=	bin/catdvi
 
 CPPFLAGS=	-I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib

@@ -16,6 +16,7 @@ DISTNAME=	python-${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python module to find the checksum of files
 
+PLIST_FILES=	lib/%%PYTHON_VERSION%%/site-packages/fchksum.so
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 GNU_CONFIGURE=	yes

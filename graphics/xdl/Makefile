@@ -16,5 +16,6 @@ COMMENT=	Display DL animations on an X screen
 
 USE_X_PREFIX=	yes
 MAN1=		xdl.1
+PLIST_FILES=	bin/xdl
 
 .include <bsd.port.mk>

@@ -17,6 +17,7 @@ COMMENT=	Web of trust statistics and pathfinder
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/PIL.pth:${PORTSDIR}/graphics/py-imaging
 
+PLIST_FILES=	bin/wotsap
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_PYTHON=	yes
 NO_BUILD=	yes

@@ -20,6 +20,7 @@ COMMENT=	Phil Cockroft's Basic Interpreter (previously Rabbit Basic)
 ALL_TARGET=	freebsd
 MAKEFILE=	makefile
 MAN1=		pbasic.1
+PLIST_FILES=	bin/pbasic
 
 do-configure:
 	-cd ${WRKSRC} ; ${RM} -rf termio m68000 msdos vax pyramid ns32000 \

@@ -22,6 +22,7 @@ USE_GMAKE=	yes
 PORTDOCS=	CoreArchitecture.html DefaultProtos Linker.html \
 		Logs.html ProtoLanguage.html README SimpleDataFormat.html \
 		Threads activation.html stackframe structure.html todo.html
+PLIST_FILES=	bin/cel
 
 .include <bsd.port.pre.mk>
 

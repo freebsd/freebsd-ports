@@ -18,6 +18,7 @@ EXTRACT_ONLY=	sgrep-1.92a.tar.gz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python wrappers for Sgrep
 
+PLIST_FILES=	%%PYTHON_SITELIBDIR%%/sgreplib.so
 SGREP_VER=	1.92a
 WRKSRC=		${WRKDIR}/sgrep-${SGREP_VER}
 GNU_CONFIGURE=	yes

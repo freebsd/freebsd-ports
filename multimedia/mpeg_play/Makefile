@@ -17,6 +17,7 @@ COMMENT=	A program to play mpeg movies on X displays
 WRKSRC=		${WRKDIR}/mpeg_play
 USE_IMAKE=	yes
 MAN1=		mpeg_play.1
+PLIST_FILES=	bin/mpeg_play
 
 pre-patch:
 	${CP} ${WRKSRC}/Imakefile.proto ${WRKSRC}/Imakefile

@@ -14,6 +14,7 @@ MAINTAINER=		ports@FreeBSD.org
 COMMENT=		A command-line attachment mailer
 
 NO_BUILD=		yes
+PLIST_FILES=		bin/biabam
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/biabam ${PREFIX}/bin

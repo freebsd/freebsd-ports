@@ -18,5 +18,6 @@ ALL_TARGET=	ack
 
 MANLANG=	ja
 MAN1=		ack.1
+PLIST_FILES=	bin/ack
 
 .include <bsd.port.mk>

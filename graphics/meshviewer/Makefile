@@ -16,6 +16,7 @@ COMMENT=	Mesh Viewer
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
 
+PLIST_FILES=	bin/mview
 USE_QT_VER=	3
 USE_GL=		yes
 MAKE_ENV=	MOC="${MOC}" \

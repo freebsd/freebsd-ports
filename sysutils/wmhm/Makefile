@@ -21,6 +21,7 @@ WRKSRC=		${WRKDIR}/wmhm/wmhm
 GNU_CONFIGURE=	yes
 MAN8=		wmhm.8
 MANCOMPRESSED=	yes
+PLIST_FILES=	bin/wmhm
 
 post-install:
 	${STRIP_CMD} ${PREFIX}/bin/wmhm

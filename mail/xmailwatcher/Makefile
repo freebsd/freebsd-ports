@@ -15,6 +15,7 @@ MAINTAINER=		ports@FreeBSD.org
 COMMENT=	Mailbox checker which displays sender and subject lines of mails
 
 MAN1=			xmailwatcher.1
+PLIST_FILES=		bin/xmailwatcher
 USE_IMAKE=		yes
 
 post-install:

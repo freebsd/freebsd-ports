@@ -15,6 +15,7 @@ COMMENT=	A clock dockapp that shows the date, time, and internet time
 
 WRKSRC=		${WRKDIR}/wmitime/wmitime
 
+PLIST_FILES=	bin/wmitime
 USE_X_PREFIX=	yes
 USE_XPM=	yes
 

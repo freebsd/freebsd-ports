@@ -17,6 +17,7 @@ USE_XPM=	YES
 USE_X_PREFIX=	YES
 
 MAN1=		wmrecord.1
+PLIST_FILES=	bin/wmrecord
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/wmrecord ${PREFIX}/bin

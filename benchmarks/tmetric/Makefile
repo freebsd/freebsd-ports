@@ -16,6 +16,7 @@ COMMENT=	A bandwidth measurement tool
 
 HAS_CONFIGURE=	yes
 ALL_TARGET=	${PORTNAME}
+PLIST_FILES=	sbin/tmetric
 USE_BZIP2=	yes
 USE_REINPLACE=	yes
 

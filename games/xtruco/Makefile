@@ -15,6 +15,7 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple version for X Window of the famous card game Super Truco
 
+PLIST_FILES=	bin/xtruco
 USE_X_PREFIX=	yes
 
 do-install:

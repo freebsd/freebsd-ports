@@ -17,6 +17,8 @@ COMMENT=	A simple epplet that contains several buttons used to launch programs
 
 LIB_DEPENDS=	epplet.1:${PORTSDIR}/x11-wm/libepplet
 
+PLIST_FILES=	bin/E-Buttons.epplet
+
 WRKSRC=		${WRKDIR}/E-buttons
 
 USE_X_PREFIX=	yes

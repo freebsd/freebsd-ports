@@ -19,6 +19,7 @@ COMMENT=	Reads VMS BACKUP tapes
 
 MAN1=		vmsbackup.1
 MANCOMPRESSED=	yes
+PLIST_FILES=	bin/vmsbackup
 
 MAKE_FLAGS=	BINDIR=${PREFIX}/bin MANDIR=${PREFIX}/man/man1 -f
 

@@ -18,6 +18,7 @@ COMMENT=	Phoon displays the phase of the moon
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_REINPLACE=	yes
 MAN1=		phoon.1
+PLIST_FILES=	bin/phoon
 
 pre-patch:
 	@${REINPLACE_CMD} -e 's|gmtoff = !!!;||g' \

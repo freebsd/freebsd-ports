@@ -14,6 +14,7 @@ MASTER_SITES=	http://www.cse.iitk.ac.in/users/dbera/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multi Threaded Wget
 
+PLIST_FILES=	bin/mget
 USE_GETOPT_LONG=	yes
 CFLAGS+=	-DHAS_HERROR -DHAVE_GETOPT_LONG -DHAVE_INET_NTOP -DHAVE_IPV6 \
 		${PTHREAD_CFLAGS:S/"//g}

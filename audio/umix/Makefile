@@ -20,6 +20,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 MAN1=		umix.1
+PLIST_FILES=	bin/umix
 
 post-patch:
 	@${REINPLACE_CMD} -e \

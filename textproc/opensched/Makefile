@@ -20,5 +20,6 @@ BUILD_DEPENDS=	latex:${PORTSDIR}/print/teTeX
 USE_GMAKE=	yes
 
 MAN1=		opensched.1
+PLIST_FILES=	bin/opensched
 
 .include <bsd.port.mk>

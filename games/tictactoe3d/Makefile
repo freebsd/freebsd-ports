@@ -14,6 +14,7 @@ DISTNAME=	ttt3d
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	This is a simple "3D" tic tac toe game
 
+PLIST_FILES=	bin/tictactoe3d
 WRKSRC=		${WRKDIR}/ttt3d
 
 USE_GMAKE=	yes

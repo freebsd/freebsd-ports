@@ -18,5 +18,6 @@ NO_WRKSUBDIR=	yes
 
 USE_IMAKE=	yes
 MAN6=		xmountains.6
+PLIST_FILES=	bin/xmountains
 
 .include <bsd.port.mk>

@@ -17,6 +17,7 @@ COMMENT=	A versatile ncurses-based hex editor
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
-MAN1=	hexcurse.1
+MAN1=		hexcurse.1
+PLIST_FILES=	bin/hexcurse
 
 .include <bsd.port.mk>

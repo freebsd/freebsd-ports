@@ -18,6 +18,7 @@ COMMENT=	Convert a yacc grammar to syntax diagrams
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/spark.py:${PORTSDIR}/devel/py-spark
 
+PLIST_FILES=	bin/showgrammar
 EXTRACT_CMD=	${CP}
 EXTRACT_BEFORE_ARGS=
 EXTRACT_AFTER_ARGS=	${WRKSRC}

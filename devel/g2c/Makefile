@@ -16,6 +16,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Glade to C translator
 
+PLIST_FILES=	bin/g2c
 USE_REINPLACE=	yes
 USE_GNOME=	gtk12 gnomehack libxml orbit
 WANT_GNOME=	yes

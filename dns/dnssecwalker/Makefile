@@ -22,7 +22,8 @@ NO_BUILD=	yes
 
 CONFLICTS=	walker-1.*
 
-MAN1=	walker.1
+MAN1=		walker.1
+PLIST_FILES=	bin/walker
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/walker ${PREFIX}/bin

@@ -15,6 +15,7 @@ MASTER_SITE_SUBDIR=	apps/asmon
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A swallowable applet monitors the CPU usage, memory and swap, etc
 
+PLIST_FILES=	bin/asmon
 USE_X_PREFIX=	yes
 
 .include <bsd.port.pre.mk>

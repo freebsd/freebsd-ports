@@ -16,6 +16,7 @@ COMMENT=	The classic space-age stock trading game
 
 ALL_TARGET=	# empty
 MAN6=		starlanes.6
+PLIST_FILES=	bin/starlanes
 
 post-extract:
 	@${RM} ${WRKSRC}/starlanes

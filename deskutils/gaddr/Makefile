@@ -14,6 +14,7 @@ MASTER_SITES=	http://www.cse.unl.edu/~cluening/gaddr/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A GTK (and optionally, GNOME) address book
 
+PLIST_FILES=	bin/gaddr
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk12

@@ -15,6 +15,7 @@ COMMENT=	A variation of the unix command cal
 
 USE_PERL5=	yes
 NO_BUILD=	yes
+PLIST_FILES=	bin/mencal
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/mencal ${PREFIX}/bin

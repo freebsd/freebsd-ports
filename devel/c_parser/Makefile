@@ -15,6 +15,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A C99 Parser
 
 NO_WRKSUBDIR=	yes
+PLIST_FILES=	bin/c_parser
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/c_parser ${PREFIX}/bin

@@ -20,7 +20,8 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-1.2/GDK.py:${PORTSDIR}/x11-toolkits/py-gtk
 USE_REINPLACE=	yes
 USE_PYTHON=	yes
 NO_BUILD=	yes
-MAN1=	clarence.1
+MAN1=		clarence.1
+PLIST_FILES=	bin/clarence
 
 post-patch:
 	@${REINPLACE_CMD} -e "s,#!/usr/bin/python,#!/usr/bin/env python,g" ${WRKSRC}/clarence.py

@@ -24,7 +24,8 @@ RUN_DEPENDS=	zip:${PORTSDIR}/archivers/zip \
 USE_GMAKE=	yes
 MAKE_ARGS=	OPTS=""
 
-MAN1=	mmail.1
+MAN1=		mmail.1
+PLIST_FILES=	bin/mmail
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/mm ${PREFIX}/bin/mmail

@@ -14,6 +14,7 @@ MASTER_SITES=	http://googolplex.sourceforge.net/source/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Query Google, parse it and returns the result as a list
 
+PLIST_FILES=	lib/%%PYTHON_VERSION%%/site-packages/googolplex.py
 USE_PYTHON=	yes
 NO_BUILD=	yes
 

@@ -15,6 +15,7 @@ MASTER_SITES=	http://www.ka9q.net/code/cpuid/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	CPU identification utility
 
+PLIST_FILES=	bin/cpuid
 USE_REINPLACE=	yes
 ONLY_FOR_ARCHS=	i386
 USE_GMAKE=	yes

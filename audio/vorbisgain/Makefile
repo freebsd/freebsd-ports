@@ -23,7 +23,8 @@ CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-MAN1=	vorbisgain.1
+MAN1=		vorbisgain.1
+PLIST_FILES=	bin/vorbisgain
 
 pre-configure:
 	@${CHMOD} +x ${WRKSRC}/configure

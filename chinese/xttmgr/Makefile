@@ -15,4 +15,6 @@ COMMENT=	A Big5/GB enhanced TrueType Font Manager
 
 BUILD_DEPENDS=	freetype-config:${PORTSDIR}/print/freetype2
 
+PLIST_FILES=	bin/xttmgr
+
 .include <bsd.port.mk>

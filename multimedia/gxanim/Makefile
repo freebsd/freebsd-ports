@@ -18,6 +18,7 @@ COMMENT=	Graphical front end to Xanim
 
 RUN_DEPENDS=	xanim:${PORTSDIR}/multimedia/xanim
 
+PLIST_FILES=	bin/gxanim
 WRKSRC=	${WRKDIR}/gxanim-${PORTVERSION}
 
 USE_BZIP2=	yes

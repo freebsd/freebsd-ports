@@ -23,6 +23,7 @@ CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-MAN1=	ipdf.1
+MAN1=		ipdf.1
+PLIST_FILES=	bin/ipdf
 
 .include <bsd.port.mk>

@@ -13,6 +13,7 @@ MASTER_SITES=	http://soupnazi.org/FreeBSD/ports/distfiles/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A dockable pager for Window Maker
 
+PLIST_FILES=	bin/wmcp
 USE_X_PREFIX=	yes
 USE_XPM=	yes
 ALL_TARGET=	clean wmcp

@@ -17,6 +17,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A ftp-like shell for accessing Apple II disk images
 
 MAN1=		aftp.1
+PLIST_FILES=	bin/aftp
 
 post-install:
 	${INSTALL_MAN} ${FILESDIR}/aftp.1 ${PREFIX}/man/man1

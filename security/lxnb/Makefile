@@ -15,6 +15,8 @@ DISTFILES=	linux-netbus-client-v${PORTVERSION}.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	NetBus client
 
+PLIST_FILES=	bin/lxnb
+
 pre-build:
 	rm -f ${WRKSRC}/lxnetbus
 

@@ -17,6 +17,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Converts .dms Amiga disk images to uncompressed .adf images
 
 NO_WRKSUBDIR=	yes
+PLIST_FILES=	bin/undms
 
 do-extract:
 	${MKDIR} ${WRKDIR}

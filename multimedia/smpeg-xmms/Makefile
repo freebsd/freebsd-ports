@@ -20,6 +20,7 @@ COMMENT=	A mpeg video plugin for XMMS
 LIB_DEPENDS=	smpeg.1:${PORTSDIR}/multimedia/smpeg \
 		xmms.4:${PORTSDIR}/multimedia/xmms
 
+PLIST_FILES=	lib/xmms/Input/libsmpeg_xmms.so
 USE_X_PREFIX=	yes
 USE_SDL=	sdl
 USE_GNOME=	gnomehack gtk12

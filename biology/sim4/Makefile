@@ -17,6 +17,7 @@ COMMENT=	An algorithm for aligning expressed DNA with genomic sequences
 WRKSRC=		${WRKDIR}/sim4.${PORTVERSION:S/./-/g}
 
 ALL_TARGET=	sim4
+PLIST_FILES=	bin/sim4
 
 do-install:
 	@ ${INSTALL_PROGRAM} ${WRKSRC}/sim4 ${PREFIX}/bin

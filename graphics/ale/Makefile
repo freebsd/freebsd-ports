@@ -18,6 +18,7 @@ PATCH_DIST_ARGS=	-p1 -d ${PATCH_WRKSRC}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Anti-Lamenessing Engine
 
+PLIST_FILES=	bin/ale
 USE_GMAKE=	yes
 
 .if !defined(WITHOUT_IMAGEMAGICK)

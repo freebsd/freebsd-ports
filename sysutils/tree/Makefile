@@ -16,5 +16,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Display a tree-view of directories with optional color or HTML output
 
 MAN1=		tree.1
+PLIST_FILES=	bin/tree
 
 .include <bsd.port.mk>

@@ -20,5 +20,6 @@ GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 MAN1=		anteater.1
+PLIST_FILES=	bin/anteater
 
 .include <bsd.port.mk>

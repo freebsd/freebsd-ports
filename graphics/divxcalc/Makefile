@@ -22,6 +22,7 @@ USE_QT_VER=	3
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+PLIST_FILES=	bin/divxcalc
 
 pre-configure:
 	@cd ${WRKSRC} && ${GMAKE} -f admin/Makefile.common

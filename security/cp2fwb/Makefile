@@ -18,6 +18,7 @@ COMMENT=	Checkpoint FW1 to Firewall Builder ruleset converter
 RUN_DEPENDS=	${SITE_PERL}/XML/Writer.pm:${PORTSDIR}/textproc/p5-XML-Writer \
 		${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5
 
+PLIST_FILES=	bin/cp2fwbuilder
 USE_PERL5=	yes
 NO_BUILD=	yes
 

@@ -25,6 +25,7 @@ CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
 MAN6=		wmpuzzle.6
+PLIST_FILES=	bin/wmpuzzle
 
 CPPFLAGS=	-I${X11BASE}/include -DBSD
 LDFLAGS=	-L${X11BASE}/lib

@@ -23,6 +23,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 MAN1=		vomit.1
+PLIST_FILES=	bin/vomit
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-O2 -Wall -g|@CFLAGS@|g' ${WRKSRC}/Makefile.in

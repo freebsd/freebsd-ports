@@ -22,6 +22,7 @@ XML2_CONFIG?=	${LOCALBASE}/bin/xml2-config
 WRKSRC=		${WRKDIR}/${PORTNAME}/src
 MAKEFILE=	makefile
 MAKE_ENV=	XML2_CONFIG="${XML2_CONFIG}"
+PLIST_FILES=	bin/lsm
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/lsm ${PREFIX}/bin

@@ -17,5 +17,6 @@ COMMENT=	Manipulate the file headers in tar archive files in various ways
 GNU_CONFIGURE=	yes
 
 MAN1=	tardy.1
+PLIST_FILES=	bin/tardy
 
 .include <bsd.port.mk>

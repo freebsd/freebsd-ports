@@ -17,6 +17,7 @@ COMMENT=	Tool for testing network IDS implementations
 
 GNU_CONFIGURE=	yes
 
-MAN8=	fragrouter.8
+MAN8=		fragrouter.8
+PLIST_FILES=	sbin/fragrouter
 
 .include <bsd.port.mk>

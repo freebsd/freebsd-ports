@@ -15,5 +15,6 @@ COMMENT=	Simple SMTP client
 
 GNU_CONFIGURE=	yes
 MAN1=		smtpclient.1
+PLIST_FILES=	bin/smtpclient
 
 .include <bsd.port.mk>

@@ -16,6 +16,7 @@ DISTNAME=	${PORTNAME}-source-dgtk_${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Another GTK-based mp3 player
 
+PLIST_FILES=	bin/replay
 USE_X_PREFIX=	yes
 USE_GNOME=	gtk12 esound
 GNU_CONFIGURE=	yes

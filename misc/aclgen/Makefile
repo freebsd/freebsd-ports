@@ -18,6 +18,7 @@ NO_WRKSUBDIR=	YES
 MAKEFILE=	${FILESDIR}/Makefile
 
 MAN1=		aclgen.1
+PLIST_FILES=	bin/aclgen
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/aclgen ${PREFIX}/bin

@@ -26,6 +26,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		XML_CONFIG="${XML_CONFIG}"
 
 MAN1=		dia2code.1
+PLIST_FILES=	bin/dia2code
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|#include <malloc.h>||' ${WRKSRC}/dia2code/dia2code.h

@@ -22,5 +22,6 @@ MAKE_ENV=	QTCPPFLAGS="${QTCPPFLAGS} ${PTHREAD_CFLAGS}" \
 		QTCFGLIBS="${QTCFGLIBS} ${PTHREAD_LIBS}"
 
 MAN1=		blackjack.1
+PLIST_FILES=	bin/blackjack
 
 .include <bsd.port.mk>

@@ -41,6 +41,7 @@ MAKE_ENV+=	HAVE_NAS=${HAVE_NAS}
 .endif
 
 MAN1=		mpg123.1
+PLIST_FILES=	bin/mpg123
 
 .include <bsd.port.pre.mk>
 

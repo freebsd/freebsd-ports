@@ -16,5 +16,6 @@ COMMENT=	An implementation of System V's pg pager
 MAKEFILE=	makefile
 
 MAN1=		pg.1
+PLIST_FILES=	bin/pg
 
 .include <bsd.port.mk>

@@ -19,6 +19,7 @@ COMMENT=	A Python module which provides Movable Type XML-RPC connectivity
 
 USE_PYTHON=	yes
 NO_BUILD=	yes
+PLIST_FILES=	%%PYTHON_SITELIBDIR%%/PyMT.py
 
 do-install:
 	@${INSTALL_DATA} ${WRKSRC}/PyMT.py ${PYTHON_SITELIBDIR}

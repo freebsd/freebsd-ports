@@ -15,5 +15,6 @@ MAINTAINER=		ports@FreeBSD.org
 COMMENT=	Locks a terminal
 
 MAN1=			vlock.1
+PLIST_FILES=	bin/vlock
 
 .include <bsd.port.mk>

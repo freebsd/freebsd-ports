@@ -22,5 +22,6 @@ DIST_SUBDIR=	${PORTNAME}
 NO_WRKSUBDIR=	yes
 USE_IMAKE=	yes
 NO_INSTALL_MANPAGES=	yes
+PLIST_FILES=	bin/xskyroot
 
 .include <bsd.port.mk>

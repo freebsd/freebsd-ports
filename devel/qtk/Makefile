@@ -17,6 +17,7 @@ COMMENT=	A neat development tool for various languages
 
 RUN_DEPENDS=	${LOCALBASE}/bin/wish8.2:${PORTSDIR}/x11-toolkits/tk82
 
+PLIST_FILES=	bin/qtk
 USE_REINPLACE=	yes
 EXTRACT_CMD=	${CP}
 EXTRACT_BEFORE_ARGS=	# empty

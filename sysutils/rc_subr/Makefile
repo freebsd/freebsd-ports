@@ -16,6 +16,7 @@ COMMENT=	Common startup and shutdown subroutines used by scripts
 NO_BUILD=	yes
 
 MAN8=		rc.subr.8
+PLIST_FILES=	etc/rc.subr
 
 do-install:
 	${INSTALL_DATA} -m 644 ${WRKSRC}/rc.subr ${PREFIX}/etc/

@@ -27,6 +27,7 @@ EXTRACT_CMD=	${CP}
 EXTRACT_BEFORE_ARGS=	#
 EXTRACT_AFTER_ARGS=	${WRKSRC}/${PORTNAME}
 NO_BUILD=	yes
+PLIST_FILES=	bin/mp32ogg
 
 post-patch:
 	@${PERL} -pi -e "s,%%LOCALBASE%%,${LOCALBASE},g" ${WRKSRC}/mp32ogg

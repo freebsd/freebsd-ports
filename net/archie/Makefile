@@ -17,5 +17,6 @@ COMMENT=	Prospero client for the archie service
 
 WRKSRC=		${WRKDIR}/archie-1.4.1-FIX
 MAN1=		archie.1
+PLIST_FILES=	bin/archie
 
 .include <bsd.port.mk>

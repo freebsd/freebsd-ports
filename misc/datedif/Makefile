@@ -16,6 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Calculates the number of days between two dates
 
 ALL_TARGET=
+PLIST_FILES=	bin/datedif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/datedif ${PREFIX}/bin

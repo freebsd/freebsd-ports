@@ -28,6 +28,7 @@ MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" \
 		LIBS="-lical -lXpm"
 
 MAN1=		wmCalendar.1
+PLIST_FILES=	bin/wmCalendar
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/wmCalendar ${PREFIX}/bin

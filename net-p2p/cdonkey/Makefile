@@ -18,6 +18,7 @@ COMMENT=	An open and free core client for the eDonkey protocol
 
 LIB_DEPENDS=	db3.3:${PORTSDIR}/databases/db3
 
+PLIST_FILES=	bin/cDonkey
 USE_BZIP2=	yes
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes

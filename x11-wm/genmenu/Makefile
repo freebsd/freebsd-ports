@@ -16,6 +16,7 @@ COMMENT=	Generating menus for Bbox, Fbox, Obox, WM and E
 
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash2
 
+PLIST_FILES=	bin/genmenu
 USE_REINPLACE=	yes
 NO_BUILD=	yes
 

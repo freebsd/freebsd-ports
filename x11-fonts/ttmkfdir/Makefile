@@ -18,6 +18,7 @@ COMMENT=	Create fonts.scale file for use with TrueType font server
 BUILD_DEPENDS=	libtool13:${PORTSDIR}/devel/libtool13
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2
 
+PLIST_FILES=	bin/ttmkfdir
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GETOPT_LONG=yes

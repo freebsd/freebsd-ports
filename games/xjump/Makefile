@@ -16,6 +16,7 @@ COMMENT=	A simple X game where one tries to jump up as many levels as possible
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/_/-/g}
 
+PLIST_FILES=	bin/xjump
 USE_X_PREFIX=	yes
 USE_XPM=	yes
 MAKE_ARGS=	CC="${CC} ${CFLAGS}" RECORD_FILE="/var/games/xjump.record" \

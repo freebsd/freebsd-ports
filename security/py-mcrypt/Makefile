@@ -19,6 +19,7 @@ COMMENT=	A comprehensive Python interface to the mcrypt library
 
 LIB_DEPENDS=	mcrypt:${PORTSDIR}/security/libmcrypt
 
+PLIST_FILES=	lib/%%PYTHON_VERSION%%/site-packages/mcrypt.so
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 USE_REINPLACE=	yes

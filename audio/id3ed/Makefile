@@ -16,6 +16,7 @@ COMMENT=	An id3 tag editor for mp3 files
 GNU_CONFIGURE=	yes
 
 MAN1=		id3ed.1
+PLIST_FILES=	bin/id3ed
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/id3ed ${PREFIX}/bin
