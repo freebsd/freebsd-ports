@@ -1,0 +1,10 @@
+--------------- Please note: ---------------
+Make sure you have ${PREFIX}/bin in your PATH and
+${PREFIX}/lib as well as ${PREFIX}/share/squeak/3.4-1
+in your LD_LIBRARY_PATH.
+
+In order to be able to make use of squeak you need
+to have an image and a changes file in your working
+directory as well as access to a source file.
+Please see the inisqueak(1) manpage for details.
+--------------- Thanks for listening. ---------------
