@@ -7304,6 +7304,7 @@ p5-WWW-IMDb	ports/www/p5-WWW-IMDb
 p5-WWW-Link	ports/www/p5-WWW-Link
 p5-WWW-Mechanize	ports/www/p5-WWW-Mechanize
 p5-WWW-Mechanize-FormFiller	ports/devel/p5-WWW-Mechanize-FormFiller
+p5-WWW-Mechanize-Shell	ports/www/p5-WWW-Mechanize-Shell
 p5-WWW-Robot	ports/www/p5-WWW-Robot
 p5-WWW-Search	ports/www/p5-WWW-Search
 p5-WWW-Search-AltaVista	ports/www/p5-WWW-Search-AltaVista
