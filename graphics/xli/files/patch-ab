@@ -1,0 +1,13 @@
+--- xli.c.orig	Wed Feb  9 14:53:35 2000
++++ xli.c	Mon Mar 26 10:37:35 2001
+@@ -369,8 +369,8 @@
+ 				winheight = globals.dinfo.height;
+ 
+ 			if (!images[0].ats) {
+-				atx = (winwidth - inew->width) / 2;
+-				aty = (winheight - inew->height) / 2;
++				atx = (int)(winwidth - inew->width) / 2;
++				aty = (int)(winheight - inew->height) / 2;
+ 			}
+ 			/* use clip to put border around image */
+ 			itmp = clip(inew, -atx, -aty, winwidth, winheight,
