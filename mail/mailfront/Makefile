@@ -13,7 +13,7 @@ MASTER_SITES=	http://untroubled.org/${PORTNAME}/
 MAINTAINER=	sergei@FreeBSD.org
 COMMENT=	Mail server network protocol front-ends
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libbg-unix.a:${PORTSDIR}/devel/bglibs \
+BUILD_DEPENDS=	${LOCALBASE}/lib/libbg.a:${PORTSDIR}/devel/bglibs \
 		${LOCALBASE}/lib/libcvm-client.a:${PORTSDIR}/security/cvm
 
 QMAIL_ROOT?=	/var/qmail
