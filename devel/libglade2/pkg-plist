@@ -1,4 +1,4 @@
-bin/libglade-convert
+%%PYTHON%%bin/libglade-convert
 include/libglade-2.0/glade/glade-build.h
 include/libglade-2.0/glade/glade-init.h
 include/libglade-2.0/glade/glade-parser.h
