@@ -13,16 +13,12 @@ case "$1" in
 start)
 	if [ -x ${PREFIX}/sbin/sentinel -a -f ${PREFIX}/etc/sentinel.cf ]
 	then
-		if [ -f ${SOCKET} ]
-		then
-			killall sentinel
-			rm -f $SOCKET
-		fi
+		rm -f ${SOCKET}
 		${PREFIX}/sbin/sentinel -c ${PREFIX}/etc/sentinel.cf -p unix:${SOCKET} -d && echo -n ' sentinel'
 	fi
 	;;
 stop)
-		if [ -f ${SOCKET} ]
+		if [ -e ${SOCKET} ]
 		then
 			killall sentinel
 		fi
