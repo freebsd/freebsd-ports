@@ -22,7 +22,7 @@ GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 USE_GNOMENG=	yes
 WANT_GNOME=	yes
-CONFIGURE_ARGS=	--enable-nasm
+CONFIGURE_ARGS=	--enable-nasm --enable-mp3rtp
 
 .include <bsd.port.pre.mk>
 
