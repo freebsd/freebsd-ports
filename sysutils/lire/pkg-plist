@@ -652,7 +652,6 @@ share/perl5/Lire/WWW/UserAgent/OS.pm
 share/perl5/Lire/WWW/UserAgent/Robot.pm
 share/perl5/Lire/WeekCalculator.pm
 share/perl5/Lire/XMLSpecContainer.pm
-share/perl5/Time/Timezone.pm
 share/lire/defaults/lire.xml
 share/lire/config-spec/lire.xml
 
