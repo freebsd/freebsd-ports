@@ -732,7 +732,6 @@ bonnie++	ports/benchmarks/bonnie++
 bonobo		ports/devel/bonobo
 bonobo-conf	ports/devel/bonobo-conf
 boodler		ports/audio/boodler
-bookcase	ports/misc/bookcase
 bookmarkbridge	ports/www/bookmarkbridge
 boost		ports/devel/boost
 bopm		ports/irc/bopm
@@ -10314,6 +10313,7 @@ tei-xsl-fo	ports/textproc/tei-xsl-fo
 tei-xsl-html	ports/textproc/tei-xsl-html
 teknap		ports/audio/teknap
 telbook		ports/misc/telbook
+tellico		ports/misc/tellico
 telnetx		ports/net/telnetx
 telserv		ports/net/telserv
 tempcontrol	ports/misc/tempcontrol
