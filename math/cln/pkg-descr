@@ -1,0 +1,20 @@
+CLN is a library for computations with all kinds of numbers. It has a
+rich set of number classes: 
+
+   - Integers (with unlimited precision),
+   - Rational numbers,
+   - Floating-point numbers:
+        Short float,
+        Single float,
+        Double float,
+        Long float (with unlimited precision),
+   - Complex numbers,
+   - Modular integers (integers modulo a fixed integer),
+   - Univariate polynomials.
+
+The subtypes of the complex numbers among these are exactly the types
+of numbers known to the Common Lisp language. Therefore CLN can be used
+for Common Lisp implementations, giving `CLN' another meaning: it
+becomes an abbreviation of "Common Lisp Numbers". 
+
+WWW: http://clisp.cons.org/~haible/packages-cln.html
