@@ -1,0 +1,24 @@
+bin/interop2html
+%%PORTDOCS%%%%EXAMPLESDIR%%/alanbushTest.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/cardClient.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/cardServer.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/fortuneTest.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/guidTest.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/itimeTest.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/newsTest.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/quoteTest.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/storageTest.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/translateTest.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/weatherTest.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/whoisTest.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/wordFindTest.py
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%%%DOCSDIR%%/attrs.txt
+%%PORTDOCS%%%%DOCSDIR%%/complexTypes.txt
+%%PORTDOCS%%%%DOCSDIR%%/quickstart.txt
+%%PORTDOCS%%%%DOCSDIR%%/simpleTypes.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@cwd %%LOCALBASE%%
+%%PYTHON_SITELIBDIR%%/SOAP.py
+%%PYTHON_SITELIBDIR%%/SOAP.pyc
+%%PYTHON_SITELIBDIR%%/SOAP.pyo
