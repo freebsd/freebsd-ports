@@ -320,7 +320,6 @@
     SUBDIR += xenmenu
     SUBDIR += xgas
     SUBDIR += xless
-    SUBDIR += xmms-pipe
     SUBDIR += xosd
     SUBDIR += xpns
     SUBDIR += xquote
