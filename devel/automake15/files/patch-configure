@@ -1,0 +1,7 @@
+--- configure.orig	Wed Aug 22 22:49:52 2001
++++ configure	Wed Feb 11 01:01:24 2004
+@@ -795,3 +795,3 @@
+ # Define the identity of the package.
+-PACKAGE=automake
++PACKAGE=automake15
+ VERSION=1.5
