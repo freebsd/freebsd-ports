@@ -1,11 +1,5 @@
 bin/ssleay
 etc/ssleay.conf
-lib/libssl.a
-@exec ranlib %D/%F
-lib/libcrypto.a
-@exec ranlib %D/%F
-lib/libRSAglue.a
-@exec ranlib %D/%F
 include/asn1.h
 include/txt_db.h
 include/stack.h
@@ -34,3 +28,9 @@ include/buffer.h
 include/bn.h
 include/asn1_mac.h
 include/x509.h
+lib/libssl.a
+@exec ranlib %D/%F
+lib/libcrypto.a
+@exec ranlib %D/%F
+lib/libRSAglue.a
+@exec ranlib %D/%F
