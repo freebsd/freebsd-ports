@@ -1,20 +1,35 @@
---- Makefile.in.orig	Sun Sep 17 10:44:32 2000
-+++ Makefile.in	Tue Sep 19 13:38:09 2000
+--- Makefile.in.orig	Sun Oct  1 15:33:56 2000
++++ Makefile.in	Tue Oct  3 10:13:43 2000
 @@ -122,3 +122,3 @@
  
 -libxml_la_LDFLAGS = -version-info @LIBXML_VERSION_INFO@
 +libxml_la_LDFLAGS = -version-info 5:0:0
  
-@@ -161,3 +161,3 @@
+@@ -163,3 +163,3 @@
  
 -confexecdir = $(libdir)
 +confexecdir = $(sysconfdir)
  confexec_DATA = xmlConf.sh
-@@ -784,3 +784,3 @@
+@@ -207,3 +207,3 @@
+ NROFF = nroff
+-DATA =  $(confexec_DATA) $(pkgconfig_DATA)
++DATA =  $(confexec_DATA)
+ 
+@@ -803,3 +803,3 @@
+ 
+-install-data-am: install-man install-pkgconfigDATA install-xmlincHEADERS
++install-data-am: install-man install-xmlincHEADERS
+ install-data: install-data-recursive
+@@ -814,3 +814,3 @@
  uninstall: uninstall-recursive
 -all-am: Makefile $(LTLIBRARIES) $(PROGRAMS) $(SCRIPTS) $(MANS) $(DATA) \
 +all-am: Makefile $(LTLIBRARIES) $(SCRIPTS) $(MANS) $(DATA) \
  		$(HEADERS) config.h
+@@ -824,3 +824,3 @@
+ 		$(DESTDIR)$(mandir)/man4 $(DESTDIR)$(confexecdir) \
+-		$(DESTDIR)$(pkgconfigdir) $(DESTDIR)$(xmlincdir)
++		$(DESTDIR)$(xmlincdir)
+ 
 --- doc/Makefile.in.orig	Thu Feb 25 13:01:51 1999
 +++ doc/Makefile.in	Tue Mar  2 20:39:23 1999
 @@ -89,7 +89,7 @@
