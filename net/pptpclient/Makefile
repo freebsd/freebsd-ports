@@ -14,7 +14,7 @@ DISTFILES=	pptp-linux-1.0.3-1.tar.gz
 
 MAINTAINER=	thomas@cuivre.fr.eu.org
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libgnugetopt.a:${PORTSDIR}/devel/libgnugetopt
+LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
 
 MAKE_ARGS=	DEBUG="" \
 		INCLUDE="-I${LOCALBASE}/include" \
