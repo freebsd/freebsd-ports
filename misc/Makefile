@@ -182,6 +182,7 @@
     SUBDIR += lifelines
     SUBDIR += lile
     SUBDIR += logsurfer
+    SUBDIR += lr
     SUBDIR += lv
     SUBDIR += magicpoint
     SUBDIR += man.el
