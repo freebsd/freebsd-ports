@@ -30,7 +30,13 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 .if ${PERL_LEVEL} < 500702
-BUILD_DEPENDS+= ${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple
+BUILD_DEPENDS+=	${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple
+.endif
+
+.if ${PERL_LEVEL} < 500600
+post-patch:
+	${PERL} -pi -e '$$_="" if /^use warnings/;' \
+		${WRKSRC}/lib/DBIx/ContextualFetch.pm
 .endif
 
 .include <bsd.port.post.mk>
