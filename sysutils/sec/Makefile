@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sec
-PORTVERSION=	2.1.11
+PORTVERSION=	2.2.0
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	simple-evcorr
@@ -23,8 +23,7 @@ DOCS=		ChangeLog README convert.pl itostream.c
 
 post-patch:
 	${REINPLACE_CMD} -e \
-	's|${PORTNAME}.pl|${PORTNAME}|g' \
-		${WRKSRC}/${PORTNAME}.pl.man
+	's|${PORTNAME}.pl|${PORTNAME}|g' ${WRKSRC}/${PORTNAME}.pl.man
 
 do-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/sec.pl ${PREFIX}/bin/${PORTNAME}
