@@ -1,3 +1,4 @@
+@comment Generated 20021007 on wwweasel.geeksrus.net by AlanE@FreeBSD.org.
 bin/appletproxy
 bin/chooser
 bin/conttest
@@ -106,6 +107,8 @@ include/ksgrd/TimerSettings.h
 include/kwin/client.h
 include/kwin/kwinbutton.h
 include/kwin/options.h
+%%KERAMIK%%include/kwin/placement.h
+%%KERAMIK%%include/kwin/popupinfo.h
 include/kwin/workspace.h
 lib/appletproxy.la
 lib/appletproxy.so
@@ -301,6 +304,10 @@ lib/kde3/kwin_icewm_config.la
 lib/kde3/kwin_icewm_config.so
 lib/kde3/kwin_kde1.la
 lib/kde3/kwin_kde1.so
+%%KERAMIK%%lib/kde3/kwin_keramik.la
+%%KERAMIK%%lib/kde3/kwin_keramik.so
+%%KERAMIK%%lib/kde3/kwin_keramik_config.la
+%%KERAMIK%%lib/kde3/kwin_keramik_config.so
 lib/kde3/kwin_kstep.la
 lib/kde3/kwin_kstep.so
 lib/kde3/kwin_kwmtheme.la
@@ -1326,6 +1333,7 @@ share/apps/kwin/icewm-themes/titleIS.xpm
 share/apps/kwin/icewm-themes/titleIT.xpm
 share/apps/kwin/icewm.desktop
 share/apps/kwin/kde1.desktop
+%%KERAMIK%%share/apps/kwin/keramik.desktop
 share/apps/kwin/kstep.desktop
 share/apps/kwin/laptop.desktop
 share/apps/kwin/modernsystem.desktop
@@ -2543,12 +2551,9 @@ share/wallpapers/kde_passion.jpg
 share/wallpapers/kdm_bg.jpg
 share/wallpapers/only_k.jpg
 share/wallpapers/triplegears.jpg
-@exec /bin/mkdir -p %D/share/templates/.source/emptydir
-@exec /bin/mkdir -p %D/share/templates/.source/emptydir
-@exec /bin/mkdir -p %D/share/templates/.source/emptydir
-@exec /bin/mkdir -p %D/share/fonts/override
-@exec /bin/mkdir -p %D/share/fonts/override
 @exec /bin/mkdir -p %D/share/apps/kscreensaver
+@exec /bin/mkdir -p %D/share/fonts/override
+@exec /bin/mkdir -p %D/share/templates/.source/emptydir
 @dirrm share/wallpapers
 @dirrm share/templates/.source/emptydir
 @dirrm share/templates/.source
@@ -2556,7 +2561,10 @@ share/wallpapers/triplegears.jpg
 @dirrm share/sounds
 @dirrm share/services/useragentstrings
 @dirrm share/services/searchproviders
+@dirrm share/services/kded
 @dirrm share/mimelnk/print
+@dirrm share/mimelnk/application
+@dirrm share/mimelnk
 @dirrm share/locale/l10n/za
 @dirrm share/locale/l10n/ye
 @dirrm share/locale/l10n/vn
@@ -2659,10 +2667,23 @@ share/wallpapers/triplegears.jpg
 @dirrm share/icons/locolor/16x16/apps
 @dirrm share/icons/locolor/16x16
 @dirrm share/icons/locolor
+@dirrm share/icons/hicolor/48x48/filesystems
 @dirrm share/icons/hicolor/48x48/apps
+@dirrm share/icons/hicolor/48x48
+@dirrm share/icons/hicolor/32x32/filesystems
+@dirrm share/icons/hicolor/32x32/devices
 @dirrm share/icons/hicolor/32x32/apps
+@dirrm share/icons/hicolor/32x32/actions
+@dirrm share/icons/hicolor/32x32
+@dirrm share/icons/hicolor/22x22/actions
+@dirrm share/icons/hicolor/22x22
+@dirrm share/icons/hicolor/16x16/filesystems
+@dirrm share/icons/hicolor/16x16/devices
+@dirrm share/icons/hicolor/16x16/apps
+@dirrm share/icons/hicolor/16x16/actions
+@dirrm share/icons/hicolor/16x16
+@dirrm share/icons/hicolor
 @dirrm share/fonts/override
-@dirrm share/fonts
 @dirrm share/doc/HTML/en/kwrite
 @dirrm share/doc/HTML/en/ksysguard
 @dirrm share/doc/HTML/en/kpager
@@ -2686,6 +2707,8 @@ share/wallpapers/triplegears.jpg
 @dirrm share/doc/HTML/en/kcontrol
 @dirrm share/doc/HTML/en/kate
 @dirrm share/doc/HTML/en/kaddressbook
+@dirrm share/doc/HTML/en
+@dirrm share/doc/HTML
 @dirrm share/config/kdm
 @dirrm share/apps/naughtyapplet/pics
 @dirrm share/apps/naughtyapplet
@@ -2787,9 +2810,11 @@ share/wallpapers/triplegears.jpg
 @dirrm share/apps/kdeprintfax
 @dirrm share/apps/kdeprint_part
 @dirrm share/apps/kdeprint/template
+@dirrm share/apps/kdeprint
 @dirrm share/apps/kdcop
 @dirrm share/apps/kcontrol/pics
 @dirrm share/apps/kcontrol
+@dirrm share/apps/kconf_update
 @dirrm share/apps/kcmusb
 @dirrm share/apps/kcmlocale/pics
 @dirrm share/apps/kcmlocale
@@ -2818,6 +2843,7 @@ share/wallpapers/triplegears.jpg
 @dirrm share/apps/kate/icons/hicolor/16x16
 @dirrm share/apps/kate/icons/hicolor
 @dirrm share/apps/kate/icons
+@dirrm share/apps/kate
 @dirrm share/apps/kappfinder/apps/WordProcessing
 @dirrm share/apps/kappfinder/apps/Utilities/XUtilities
 @dirrm share/apps/kappfinder/apps/Utilities
@@ -2887,6 +2913,6 @@ share/wallpapers/triplegears.jpg
 @dirrm share/applnk/Development
 @dirrm share/applnk/Applications
 @dirrm share/applnk/.hidden
-@dirrm share/applnk
 @dirrm include/kwin
 @dirrm include/ksgrd
+@dirrm include/kate
