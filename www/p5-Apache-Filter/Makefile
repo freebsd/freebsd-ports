@@ -15,15 +15,14 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ports@freebsd.org
 COMMENT=	Perl module to alter the output of previous handlers
 
-BROKEN=		Does not build
-
-BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/mod_perl.pm:${PORTSDIR}/www/mod_perl
+RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/mod_perl.pm:${PORTSDIR}/www/mod_perl
+BUILD_DEPENDS=	${RUN_DEPENDS} \
+		${SITE_PERL}/Apache/Test.pm:${PORTSDIR}/www/p5-Apache-Test
 
 PERL_CONFIGURE=	yes
 INSTALL_TARGET=	pure_install
 
 MAN3=		Apache::Filter.3 Apache::PerlRunFilter.3 \
 		Apache::RegistryFilter.3
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.mk>
