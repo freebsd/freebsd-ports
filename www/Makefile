@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.134 1999/06/30 22:01:26 kuriyama Exp $
+# $Id: Makefile,v 1.135 1999/07/01 23:38:57 sada Exp $
 #
 
     SUBDIR += Mosaic         # requires Motif
@@ -90,6 +90,7 @@
     SUBDIR += swish-e
     SUBDIR += thttpd
     SUBDIR += tidy
+    SUBDIR += tinyproxy
     SUBDIR += transproxy
     SUBDIR += vrweb
     SUBDIR += w3
