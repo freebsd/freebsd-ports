@@ -7,7 +7,7 @@ The Standard Template Library is a C++ library of container
 classes, algorithms, and iterators providing many of the basic
 algorithms and data structures of computer science.
 
-WWW: http://www.sgi.com/Technology/STL/
+WWW: http://www.sgi.com/tech/stl/
 
 -- 
 Josh Gilliam                    <josh@quick.net>
