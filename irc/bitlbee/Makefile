@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bitlbee
-PORTVERSION=	0.90
+PORTVERSION=	0.90a
 CATEGORIES=	irc
 MASTER_SITES=	http://get.bitlbee.org/src/
 
