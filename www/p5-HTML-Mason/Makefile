@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	HTML-Mason
-PORTVERSION=	0.87
+PORTVERSION=	0.89
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	HTML
@@ -16,17 +16,15 @@ MAINTAINER=	dsh@vlink.ru
 
 RUN_DEPENDS=	${SITE_PERL}/MLDBM.pm:${PORTSDIR}/databases/p5-MLDBM
 
+PERL_CONFIGURE=	yes
 SITE_PERL=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/
-USE_PERL5=	yes
 MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 MAN3=		Bundle::HTML::Mason.3 HTML::Mason.3 HTML::Mason::Admin.3 \
 		HTML::Mason::ApacheHandler.3 HTML::Mason::Commands.3 \
 		HTML::Mason::Component.3 HTML::Mason::Components.3 \
 		HTML::Mason::Devel.3 HTML::Mason::Interp.3 \
-		HTML::Mason::Parser.3 HTML::Mason::Request.3
-
-do-configure:
-	@cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PERL5} Makefile.PL
+		HTML::Mason::MethodMaker.3 HTML::Mason::Parser.3 \
+		HTML::Mason::Request.3
 
 .include <bsd.port.mk>
