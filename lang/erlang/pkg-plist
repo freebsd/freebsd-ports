@@ -1,10 +1,6 @@
-bin/ear
-bin/ecc
-bin/elink
 bin/erl
 bin/erl_call
 bin/erlc
-bin/escript
 @comment Insert PLIST.lib-erlang here
 @comment -=[ begin PLIST.lib-erlang ]=-
 @comment -=[ end PLIST.lib-erlang ]=-
