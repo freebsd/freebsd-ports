@@ -1,0 +1,18 @@
+--- make_it.orig	Thu Jan 13 22:50:01 2000
++++ make_it	Wed Feb 13 16:21:44 2002
+@@ -50,7 +50,14 @@
+                 CC='gcc'
+                 CF='-O2 -fomit-frame-pointer -DUSE_RANDOM -DUSE_VT100 -DLINES=25'
+                 LF='';;
+-
++	NetBSD|FreeBSD|Darwin)
++		echo "Making Powwow for $OS"
++		CC='gcc'
++		CF='-O2 -pipe -DUSE_SGTTY -DBSD_LIKE -DUSE_RANDOM -DUSE_REGEXP'
++		if [ ! -z "$POWWOW_DIR" ]; then
++		  CF="$CF -DPOWWOW_DIR=\\\"$POWWOW_DIR\\\""
++		fi
++	 	;;
+ 	*)
+ 		echo 'UNSUPPORTED OS!!! Trying with defaults.';;
+ esac

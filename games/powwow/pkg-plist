@@ -1,0 +1,4 @@
+bin/powwow
+%%DATADIR%%/powwow.doc
+%%DATADIR%%/powwow.help
+@dirrm %%DATADIR%%
