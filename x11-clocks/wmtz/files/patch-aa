@@ -5,7 +5,7 @@
  LIBDIR = -L/usr/X11R6/lib
  LIBS   = -lXpm -lXext -lX11 -lm
 -FLAGS = -O2 
-+CFLAGS = -Wall -O2 
++CFLAGS ?= -Wall -O2 
  OBJS =	wmtz.o \
  		../wmgeneral/wmgeneral.o \
  		../wmgeneral/misc.o \
