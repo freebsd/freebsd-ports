@@ -1,7 +1,0 @@
-sbin/ip.pl
-sbin/neoupdate.pl
-etc/neoupdate.conf
-etc/yi.conf
-%%NOPORTDOCS%%share/doc/neoupdate/neoupdate.cron
-%%NOPORTDOCS%%share/doc/neoupdate/readme.txt
-%%NOPORTDOCS%%@dirrm share/doc/neoupdate
