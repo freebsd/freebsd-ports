@@ -92,6 +92,7 @@ MAN3=	MP4.3 MP4AddAudioTrack.3 MP4AddHintTrack.3 MP4AddODTrack.3 \
 # Build fix
 .if ${OSVERSION} >= 502100
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-lib::sdp::sdp_decode.c
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-player::src::codec::mp3::mp3_file.cpp
 .else
 USE_GCC=	3.4
 .endif
