@@ -1,0 +1,3 @@
+include/trio.h
+include/triop.h
+lib/libtrio.a

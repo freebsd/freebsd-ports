@@ -488,6 +488,7 @@
     SUBDIR += tkcvs
     SUBDIR += tkref
     SUBDIR += tmake
+    SUBDIR += trio
     SUBDIR += tvision
     SUBDIR += uclmmbase
     SUBDIR += ucpp
