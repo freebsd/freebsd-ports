@@ -3,7 +3,7 @@
 # Date created:         Wed Feb  1 01:51:59 PST 1995
 # Whom:                 hsu
 #
-# $Id: Makefile,v 1.3 1995/04/15 05:44:23 asami Exp $
+# $Id: Makefile,v 1.4 1995/04/16 21:24:37 asami Exp $
 #
 
 DISTNAME =	gofer230a
@@ -14,10 +14,8 @@ MASTER_SITES =	ftp://cs.nott.ac.uk/nott-fp/languages/haskell/gofer/
 WRKSRC = ${WRKDIR}/src
 LIBDIR = ${PREFIX}/lib/Gofer
 
-install: build
+do-install:
 	-mkdir -p ${LIBDIR}
-	-mkdir -p ${PREFIX}/man/man1
-	-mkdir -p ${PREFIX}/bin
 	install -c -m 444 ${WRKDIR}/*.prelude ${LIBDIR}
 	install -c -m 444 ${WRKDIR}/src/prelude.h ${LIBDIR}
 	install -c -m 444 ${WRKDIR}/src/gofc.h ${LIBDIR}

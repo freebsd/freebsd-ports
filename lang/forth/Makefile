@@ -3,7 +3,7 @@
 # Date created:         23 November 1994
 # Whom:                 mr
 #
-# $Id: Makefile,v 1.4 1995/04/15 05:44:33 asami Exp $
+# $Id: Makefile,v 1.5 1995/04/22 12:12:26 jkh Exp $
 #
 
 #This is pfe Version 0.9.9
@@ -15,8 +15,8 @@ CATEGORIES+=	languages
 MASTER_SITES=	ftp://sunsite.unc.edu/pub/languages/forth/
 
 pre-install:
-	@mkdir -p ${PREFIX}/man/man1
 	@cp ${WRKSRC}/pfe.1 ${PREFIX}/man/man1/pfe.1
+	@gzip -9nf ${PREFIX}/man/man1/pfe.1
 
 .include <bsd.port.mk>
 
