@@ -6136,6 +6136,7 @@ mvdsv		ports/games/mvdsv
 mwavem		ports/comms/mwavem
 mx4j		ports/java/mx4j
 mxico		ports/x11/mxico
+mxp		ports/science/mxp
 mybudget	ports/finance/mybudget
 mydns		ports/dns/mydns
 mymoon		ports/astro/mymoon
