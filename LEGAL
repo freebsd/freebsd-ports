@@ -49,6 +49,11 @@ cryptix-jce-*		ports/java/cryptix-jce	Testing purpose only.
 crack-5.0		ports/security/crack	Crypto; export-controlled
 cs-0.3			ports/devel/cs		License required for
 						redistribution on CDROM.
+csound			ports/audio/csound	Distribution prohibited; may be
+						used for making commercial
+						music but other commercial use
+						is prohibited.
+csound-manual		ports/audio/csound-manual	same as csound
 dc3play-*		ports/graphics/dc3play	No redistribution due to
 						beta status
 dgd/dgd-1.0.37.tar.gz	ports/net/dgd		License required for commercial
