@@ -7,10 +7,13 @@
 
 PORTNAME=	evolution
 PORTVERSION=	1.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	mail gnome
-MASTER_SITES=	${MASTER_SITE_GNOME}
+MASTER_SITES=	http://www.sleepycat.com/update/3.1.17/ \
+		${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	unstable/sources/evolution
+DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
+		db-3.1.17.tar.gz
 
 MAINTAINER=	gnome@FreeBSD.org
 
@@ -28,12 +31,13 @@ USE_X_PREFIX=	yes
 USE_GNOME=	yes
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-db3-libs=${LOCALBASE}/lib \
+CONFIGURE_ARGS=	--with-db3-libs=${DB3_WRKSRC} \
+		--with-db3-includes=${DB3_WRKSRC} \
 		--with-html-dir=${PREFIX}/share/gnome/html \
 		--with-openssl-includes=${OPENSSLBASE}/include \
 		--with-openssl-libs=${OPENSSLBASE}/lib \
 		--with-pisock=${LOCALBASE}/pilot --enable-pilot-conduits=yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+CONFIGURE_ENV=	CPPFLAGS="-I${DB3_WRKSRC} -I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 
 PLIST_SUB=	VERSION=${PORTVERSION}
@@ -48,8 +52,31 @@ pre-patch:
 		xargs ${PERL} -pi -e 's|(["<])iconv.h|\1giconv.h|g'
 	@find ${WRKSRC} -type f -name "*.[ch]" | xargs ${GREP} -l '<db.h>' | \
 		xargs ${PERL} -pi -e 's|<db.h>|<db3/db.h>|g'
-	@find ${WRKSRC} -type f -name "*.[ch]" | xargs ${GREP} -l 'wrong DB3' | \
-		xargs ${PERL} -pi -e 's|.*wrong DB3.*||'
+
+# DB3 stuff. Ugly, I know, but that's life.
+DB3_WRKSRC=	${WRKDIR}/db-3.1.17/build_unix
+DB3_CONFIGURE_SCRIPT=	../dist/configure
+DB3_CONFIGURE_ARGS=	--enable-compat185 \
+			--enable-dump185 --enable-cxx \
+			--enable-static \
+			--disable-dynamic \
+			--prefix=${PREFIX} \
+			--includedir=${PREFIX}/include/db3 \
+			--target=${ARCH}-unknown-freebsd${OSREL}
+
+pre-configure:
+	@(cd ${DB3_WRKSRC} && \
+	    ${SETENV} CC="${CC}" CXX="${CXX}" \
+	    CFLAGS="${CFLAGS}" CXXFLAGS="${CXXFLAGS}" \
+	    INSTALL="/usr/bin/install -c -o ${BINOWN} -g ${BINGRP}" \
+	    INSTALL_DATA="${INSTALL_DATA}" \
+	    INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
+	    INSTALL_SCRIPT="${INSTALL_SCRIPT}" \
+	    ${DB3_CONFIGURE_ENV} ./${DB3_CONFIGURE_SCRIPT} ${DB3_CONFIGURE_ARGS})
+	@(cd ${DB3_WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${ALL_TARGET})
+	@${RM} -f ${DB3_WRKSRC}/db3
+	@${LN} -s . ${DB3_WRKSRC}/db3
+# End of the DB3 stuff
 
 post-install:
 	@find ${PREFIX}/share/gnome/evolution/default_user -type f | \
