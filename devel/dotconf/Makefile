@@ -7,24 +7,19 @@
 #
 
 PORTNAME=	dotconf
-PORTVERSION=	1.0.7
+PORTVERSION=	1.0.8
 CATEGORIES=	devel
-MASTER_SITES=	http://www.azzit.de/dotconf/download/
+MASTER_SITES=	http://www.azzit.de/dotconf/download/v1.0/
 
 MAINTAINER=	ports@FreeBSD.org
 
-USE_GMAKE=	yes
-USE_LIBTOOL=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 INSTALLS_SHLIB=	yes
-
-EXAMPLESDIR=	${PREFIX}/share/examples/${PORTNAME}
 
 pre-patch:
 	@${PERL} -pi -e 's|-Wall -g||' ${WRKSRC}/configure
 	@${PERL} -pi -e 's|-release $(LT_RELEASE)||' ${WRKSRC}/src/Makefile.in
-
-pre-build:
-	@${LN} -sf ${LOCALBASE}/bin/libtool ${WRKSRC}/libtool
 
 post-install:
 .if !defined(NOPORTDOCS)
