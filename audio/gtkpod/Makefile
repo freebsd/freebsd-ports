@@ -56,9 +56,6 @@ pre-everything::
 	@${ECHO_MSG}
 .endif
 
-post-patch:
-	@${CP} ${FILESDIR}/systems.h ${WRKSRC}/src
-
 pre-configure:
 # install locale correctly (share dir instead of lib dir)
 	@${REINPLACE_CMD} -e 's|DATADIRNAME=lib|DATADIRNAME=share|' \
