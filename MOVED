@@ -993,3 +993,4 @@ x11-toolkits/libgnomeprintui20||2004-03-23|removed obsolete port
 textproc/whitespace.el||2004-03-24|removed obsolete port
 editors/openoffice-1.1-sl-SL|editors/openoffice-1.1-sl-SI|2004-03-25|correct ISO code
 www/webcpp|textproc/webcpp|2004-03-25|moved to textproc category
+x11-toolkits/eel||2004-03-25|removed obsolete port
