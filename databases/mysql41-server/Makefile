@@ -6,8 +6,8 @@
 #
 
 PORTNAME?=	mysql
-PORTVERSION=	4.1.1
-PORTREVISION?=	2
+PORTVERSION=	4.1.2
+PORTREVISION?=	0
 CATEGORIES=	databases
 MASTER_SITES=	ftp://planetmirror.com/pub/mysql/Downloads/MySQL-4.1/ \
 		http://www.softagency.co.jp/MySQL/Downloads/MySQL-4.1/ \
@@ -32,6 +32,7 @@ DB_DIR?=	/var/db/mysql
 USE_GNOME=	lthack
 USE_LIBTOOL_VER=	13
 USE_REINPLACE=	yes
+USE_GMAKE=	yes
 
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--localstatedir=${DB_DIR} \
@@ -67,7 +68,7 @@ CONFIGURE_ARGS+=--with-mysqld-ldflags=-all-static
 
 .include <bsd.port.pre.mk>
 
-.if ${MACHINE_ARCH} == "i386"
+.if ${ARCH} == "i386"
 CONFIGURE_ARGS+=--enable-assembler --with-berkeley-db
 .endif
 .if defined(WITH_LINUXTHREADS)
@@ -110,7 +111,8 @@ LATEST_LINK=	mysql41-server
 
 CONFLICTS=	mysql-server-3.* mysql-server-4.[02-9].* mysql-server-5.*
 
-PLIST_SUB=	DB_DIR=${DB_DIR}
+PLIST_SUB=	DB_DIR=${DB_DIR} \
+		VER=${PORTVERSION}-alpha
 
 MAN1=		isamchk.1 isamlog.1 mysqld.1 \
 		mysqld_safe.1 perror.1 replace.1
@@ -129,6 +131,8 @@ pre-fetch:
 	@${ECHO} "	DB_DIR=directory	Set alternate directory for database files"
 	@${ECHO} "				(default is /var/db/mysql)."
 	@${ECHO} "	WITH_LINUXTHREADS=yes	Use the linuxthreads pthread library."
+	@${ECHO} "	WITH_PROC_SCOPE_PTH=yes	Use process scope threads"
+	@${ECHO} "				(try it if you use libpthread)."
 	@${ECHO} "	OVERWRITE_DB=yes	Re-initialize default databases."
 	@${ECHO} "	BUILD_OPTIMIZED=yes	Enable compiler optimizations"
 	@${ECHO} "				(use it if you need speed)."
@@ -141,7 +145,10 @@ post-patch:
 	@${REINPLACE_CMD} -e "s|bin_SCRIPTS =|bin_SCRIPTS = @server_scripts@ mysql_create_system_tables|g" ${WRKSRC}/scripts/Makefile.in
 	@${REINPLACE_CMD} -e "s|dist_pkgdata_DATA =|dist_pkgdata_DATA = fill_help_tables.sql|g" ${WRKSRC}/scripts/Makefile.in
 	@${REINPLACE_CMD} -e "s|man_MANS =|man_MANS = ${MAN1}|g" ${WRKSRC}/man/Makefile.in
-	@${REINPLACE_CMD} -e "s|install: install-am|install:|g" ${WRKSRC}/include/Makefile.in
+	@${REINPLACE_CMD} -e "s|install-data-am: install-pkgincludeHEADERS|install-data-am:|g" ${WRKSRC}/include/Makefile.in
+.if defined(WITH_PROC_SCOPE_PTH)
+	@${REINPLACE_CMD} -e "s|PTHREAD_SCOPE_SYSTEM|PTHREAD_SCOPE_PROCESS|g" ${WRKSRC}/sql/mysqld.cc
+.endif
 
 post-build:
 	@${SED} "s|%%DB_DIR%%|${DB_DIR}|g" ${PKGDIR}/pkg-install > ${WRKDIR}/pkg-install
@@ -191,6 +198,9 @@ post-patch:
 	@${REINPLACE_CMD} -e "s|bin_SCRIPTS =|bin_SCRIPTS = mysql_config mysql_fix_privilege_tables mysqlbug|g" ${WRKSRC}/scripts/Makefile.in
 	@${REINPLACE_CMD} -e "s|dist_pkgdata_DATA =|dist_pkgdata_DATA = mysql_fix_privilege_tables.sql|g" ${WRKSRC}/scripts/Makefile.in
 	@${REINPLACE_CMD} -e "s|man_MANS =|man_MANS = ${MAN1}|g" ${WRKSRC}/man/Makefile.in
+.if defined(WITH_PROC_SCOPE_PTH)
+	@${REINPLACE_CMD} -e "s|PTHREAD_SCOPE_SYSTEM|PTHREAD_SCOPE_PROCESS|g" ${WRKSRC}/tools/mysqlmanager.c
+.endif
 
 post-install:
 	@${SED} "s|%%PREFIX%%|${PREFIX}|g" < ${FILESDIR}/mysql-client.sh > ${PREFIX}/etc/rc.d/000.mysql-client.sh
