@@ -1,0 +1,20 @@
+--- ../php3/configure.orig	Sat May 22 21:38:24 1999
++++ ../php3/configure	Fri May 28 01:04:36 1999
+@@ -4657,7 +4657,7 @@
+ 				IMAP_LIBS="${apxs_runpath_switch}$IMAP_DIR/lib' -L$IMAP_DIR/lib -limap"
+ #           for FreeBSD
+ 			elif test -f $IMAP_DIR/lib/libc-client4.a; then
+-				IMAP_LIBS="${apxs_runpath_switch}$IMAP_DIR/lib' -L$IMAP_DIR/lib -lc-client4"
++				IMAP_LIBS="$IMAP_DIR/lib/libc-client4.a"
+ 			elif test ! -f $IMAP_DIR/lib/libc-client.a; then
+ 				if test ! -f $IMAP_DIR/lib/libc-client4.so; then
+ 					{ echo "configure: error: You need to copy or link $IMAP_DIR/lib/c-client.a to $IMAP_DIR/lib/libc-client.a" 1>&2; exit 1; }
+@@ -4672,7 +4672,7 @@
+ 				IMAP_LIBS="-L$IMAP_DIR/lib -limap"
+ #           for FreeBSD
+ 			elif test -f $IMAP_DIR/lib/libc-client4.a; then
+-				IMAP_LIBS="${apxs_runpath_switch}$IMAP_DIR/lib' -L$IMAP_DIR/lib -lc-client4"
++				IMAP_LIBS="$IMAP_DIR/lib/libc-client4.a"
+ 			elif test ! -f $IMAP_DIR/lib/c-client.a; then
+ 				if test ! -f $IMAP_DIR/lib/libc-client4.so; then
+ 					{ echo "configure: error: could not find c-client.a in $IMAP_DIR/lib !" 1>&2; exit 1; }
