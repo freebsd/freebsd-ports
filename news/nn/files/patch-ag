@@ -1,6 +1,11 @@
---- Makefile.orig	Thu Dec  6 19:56:18 2001
-+++ Makefile	Thu Dec  6 19:57:58 2001
-@@ -22,12 +22,12 @@
+--- Makefile.orig	Mon Jul  2 06:54:34 2001
++++ Makefile	Sun Oct 27 16:54:54 2002
+@@ -18,17 +18,16 @@
+ #
+ # Use /lib/cpp or /usr/ccs/lib/cpp for CPP on Solaris or SVR4 machines.
+ 
+-CC =		gcc
++CC ?=		gcc
  CPP =		$(CC) -E
  #CPP =		/lib/cpp
  #CFLAGS =	-O2 # -g # -I/usr/local/lib/malloc-debug -DMALLOC_FUNC_CHECK
@@ -11,9 +16,18 @@
  #-Wpointer-arith -Wcast-qual -Wcast-align -Wconversion \
  #-Waggregate-return -Wmissing-prototypes -Wnested-externs
 -#LDFLAGS =	-s # -lmalloc # /usr/local/lib/malloc-debug/libmalloc.a
+-MAKE =		make
 +LDFLAGS =	-s # -lmalloc # /usr/local/lib/malloc-debug/libmalloc.a
- MAKE =		make
  
+ 
+ SHELL = /bin/sh
+@@ -63,6 +62,7 @@
+ 	    -e '/^#/d' \
+ 	    -e '/^[ \f	]$$/d' \
+ 	    -e '/^[ \/]*[*]/d' | \
++	    unexpand | \
+ 	sed -n -e '/^..*$$/p' > ymakefile
+ 	rm -f MF.c
  
 @@ -97,3 +97,5 @@
  man/nn.1.D: man/nn.1
