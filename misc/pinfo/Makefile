@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	pinfo
-PORTVERSION=	0.6.5
-PORTREVISION=	1
+PORTVERSION=	0.6.5p2
 CATEGORIES=	misc
 MASTER_SITES=	http://zeus.polsl.gliwice.pl/~pborys/stable-version/
 
