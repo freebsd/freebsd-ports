@@ -258,6 +258,7 @@
     SUBDIR += mips-rtems-gcj
     SUBDIR += mips-rtems-objc
     SUBDIR += mipsel-linux-binutils
+    SUBDIR += mipsel-linux-egcs
     SUBDIR += mipsel-linux-kernel-headers
     SUBDIR += mkcmd
     SUBDIR += mkmf
