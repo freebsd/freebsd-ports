@@ -8,9 +8,10 @@
 
 DISTNAME=	wmtune-1.0
 CATEGORIES=	audio windowmaker
-MASTER_SITES=	http://www.soren.org/linux/wmtune/dl/ \
-		http://www.rostock.zgdv.de/~runge/radio/ \
-		http://www.fxp.org/~jedgar/distfiles/
+MASTER_SITES=	http://www.fxp.org/~jedgar/distfiles/ \
+		http://www.soren.org/linux/wmtune/dl/ \
+		http://www.rostock.zgdv.de/~runge/radio/
+		
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		${WMTUNE_DIFF}
 
@@ -28,7 +29,7 @@ PATCH_ARGS	=-p0 -d ${WRKDIR}
 
 .if !defined(USE_RADIOTRACK)
 WMTUNE_DIFF=	wmtune.diff.gz
-pre-patch:
+pre-fetch:
 	@${ECHO}
 	@${ECHO} "To enable support for RadioTrack radio cards,"
 	@${ECHO} "define USE_RADIOTRACK (make USE_RADIOTRACK=yes)."
