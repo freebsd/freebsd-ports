@@ -11,8 +11,6 @@ CATEGORIES=	x11 kde
 MASTER_SITES=	$(MASTER_SITE_KDE)
 MASTER_SITE_SUBDIR= unstable/apps/admin
 
-MAINTAINER=	josh@quick.net
-
 LIB_DEPENDS=	kdecore.2:${PORTSDIR}/x11/kdelibs11 \
 		kdeui.2:${PORTSDIR}/x11/kdelibs11 \
 		kfm.2:${PORTSDIR}/x11/kdelibs11 \

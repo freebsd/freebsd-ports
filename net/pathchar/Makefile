@@ -13,8 +13,6 @@ MASTER_SITES=	ftp://ftp.ee.lbl.gov/pathchar/  \
 		http://www.caida.org/Tools/Pathchar/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} pathcharnotes.html
 
-MAINTAINER=	josh@quick.net
-
 ONLY_FOR_ARCHS=	i386
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 

@@ -12,8 +12,6 @@ CATEGORIES=	devel
 MASTER_SITES=	http://corp.metabyte.com/~fbp/stl/ \
 		ftp://maroon.webmaster.com/pub/STLport/
 
-MAINTAINER=	josh@quick.net
-
 NO_WRKSUBDIR=	yes
 GNU_CONFIGURE=	yes
 NO_BUILD=	yes

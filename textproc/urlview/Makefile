@@ -17,8 +17,6 @@ MASTER_SITES=	ftp://ftp.cs.hmc.edu/pub/me/ \
 PATCH_SITES=	http://feeding.frenzy.com/~rainking/
 PATCHFILES=	urlview.diff
 
-MAINTAINER=	josh@quick.net
-
 GNU_CONFIGURE=	yes
 MAN1=		urlview.1
 
