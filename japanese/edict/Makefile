@@ -32,7 +32,7 @@ SRCFILES=	xjdic23.tgz
 DOCFILES=	edict_doc.txt edict_doc.html edicth.doc \
 		enamdict_doc.txt enamdict_doc.html jddict.doc \
 		j_places.inf kanjidic.doc kanjd212.doc ediclsd3.rme \
-		lawgldoc.new lingdic.txt geodic.doc aviation.doc \
+		lawgldoc.new lingdic.txt geodic.doc aviation.txt \
 		findic.doc mktdic.doc compverb.doc 4jwords.doc \
 		concrete.doc
 
