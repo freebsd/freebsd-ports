@@ -1,18 +1,6 @@
---- client/scripts/freebsd.orig	Fri Mar 16 00:16:49 2001
-+++ client/scripts/freebsd	Thu Mar 22 02:42:13 2001
-@@ -1,5 +1,11 @@
- #!/bin/sh
- 
-+if [ -x /usr/bin/logger ]; then
-+	LOGGER="/usr/bin/logger -s -p user.notice -t dhclient"
-+else
-+	LOGGER=echo
-+fi
-+
- make_resolv_conf() {
-   echo search $new_domain_name >/etc/resolv.conf
-   for nameserver in $new_domain_name_servers; do
-@@ -10,17 +16,17 @@
+--- client/scripts/freebsd.orig	Thu Mar 22 07:59:28 2001
++++ client/scripts/freebsd	Sat Mar 24 04:50:11 2001
+@@ -16,17 +16,17 @@
  # Must be used on exit.   Invokes the local dhcp client exit hooks, if any.
  exit_with_hooks() {
    exit_status=$1
@@ -34,70 +22,21 @@
    # allow the local script to abort processing of this state
    # local script must set exit_status variable to nonzero.
    if [ $exit_status -ne 0 ]; then
-@@ -29,11 +35,10 @@
+@@ -35,11 +35,11 @@
  fi
  
  if [ x$new_network_number != x ]; then
--   echo New Network Number: $new_network_number
-+   $LOGGER "New Network Number: $new_network_number"
+-   $LOGGER New Network Number: $new_network_number
++  $LOGGER "New Network Number: $new_network_number"
  fi
  
  if [ x$new_broadcast_address != x ]; then
-- echo New Broadcast Address: $new_broadcast_address
+- $LOGGER New Broadcast Address: $new_broadcast_address
++  $LOGGER "New Broadcast Address: $new_broadcast_address"
    new_broadcast_arg="broadcast $new_broadcast_address"
  fi
  if [ x$old_broadcast_address != x ]; then
-@@ -77,6 +82,7 @@
-      [ x$current_hostname = x$old_host_name ]; then
-     if [ x$current_hostname = x ] || \
-        [ x$new_host_name != x$old_host_name ]; then
-+      $LOGGER "New Hostname: $new_host_name"
-       hostname $new_host_name
-     fi
-   fi
-@@ -93,24 +99,31 @@
-       route delete default $router >/dev/null 2>&1
-     done
-     if [ "$old_static_routes" != "" ]; then
--      set $old_static_routes
-+      set -- $old_static_routes
-       while [ $# -gt 1 ]; do
- 	route delete $1 $2
- 	shift; shift
-       done
-     fi
--    arp -n -a | sed -n -e 's/^.*(\(.*\)) at .*$/arp -n -d \1/p' |sh
-+    arp -n -a | sed -n -e 's/^.*(\(.*\)) at .*$/arp -d \1/p' |sh
-   fi
-   if [ x$old_ip_address = x ] || [ x$old_ip_address != x$new_ip_address ] || \
-      [ x$reason = xBOUND ] || [ x$reason = xREBOOT ]; then
-     eval "ifconfig $interface inet $new_ip_address $new_netmask_arg \
- 					$new_broadcast_arg $medium"
-+    $LOGGER "New IP Address($interface): $new_ip_address"
-+    $LOGGER "New Subnet Mask($interface): $new_subnet_mask"
-+    $LOGGER "New Broadcast Address($interface): $new_broadcast_address"
-+    if [ "$new_routers" != "" ]; then
-+      $LOGGER "New Routers: $new_routers"
-+    fi
-     route add $new_ip_address 127.1 >/dev/null 2>&1
-     for router in $new_routers; do
-       route add default $router >/dev/null 2>&1
-     done
-     if [ "$new_static_routes" != "" ]; then
--      set $new_static_routes
-+      $LOGGER "New Static Routes: $new_static_routes"
-+      set -- $new_static_routes
-       while [ $# -gt 1 ]; do
- 	route add $1 $2
- 	shift; shift
-@@ -138,13 +151,13 @@
-       route delete default $router >/dev/null 2>&1
-     done
-     if [ "$old_static_routes" != "" ]; then
--      set $old_static_routes
-+      set -- $old_static_routes
-       while [ $# -gt 1 ]; do
- 	route delete $1 $2
+@@ -158,7 +158,7 @@
  	shift; shift
        done
      fi
@@ -106,46 +45,3 @@
  						|sh >/dev/null 2>&1
    fi
    if [ x$alias_ip_address != x ]; then
-@@ -161,9 +174,13 @@
-   fi
-   eval "ifconfig $interface inet $new_ip_address $new_netmask_arg \
- 					$new_broadcast_arg $medium"
-+  $LOGGER "New IP Address($interface): $new_ip_address"
-+  $LOGGER "New Subnet Mask($interface): $new_subnet_mask"
-+  $LOGGER "New Broadcast Address($interface): $new_broadcast_address"
-   sleep 1
-   if [ "$new_routers" != "" ]; then
--    set $new_routers
-+    $LOGGER "New Routers: $new_routers"
-+    set -- $new_routers
-     if ping -q -c 1 $1; then
-       if [ x$new_ip_address != x$alias_ip_address ] && \
- 			[ x$alias_ip_address != x ]; then
-@@ -174,9 +191,9 @@
-       for router in $new_routers; do
- 	route add default $router >/dev/null 2>&1
-       done
--      set $new_static_routes
-+      set -- $new_static_routes
-       while [ $# -gt 1 ]; do
--	route add $0 $1
-+	route add $1 $2
- 	shift; shift
-       done
-       make_resolv_conf
-@@ -188,13 +205,13 @@
-     route delete default $router >/dev/null 2>&1
-   done
-   if [ "$old_static_routes" != "" ]; then
--    set $old_static_routes
-+    set -- $old_static_routes
-     while [ $# -gt 1 ]; do
-       route delete $1 $2
-       shift; shift
-     done
-   fi
--  arp -n -a | sed -n -e 's/^.*(\(.*\)) at .*$/arp -n -d \1/p' \
-+  arp -n -a | sed -n -e 's/^.*(\(.*\)) at .*$/arp -d \1/p' \
- 							|sh >/dev/null 2>&1
-   exit_with_hooks 1
- fi

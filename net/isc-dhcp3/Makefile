@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	dhcp
-PORTVERSION=	3.0.b2.22
+PORTVERSION=	3.0.b2.23
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.isc.org/isc/dhcp/
 PKGNAMEPREFIX=	isc-
@@ -46,6 +46,7 @@ ETC_DIR=	${PREFIX}/etc
 RCD_DIR=	${PREFIX}/etc/rc.d
 DOC_DIR=	${PREFIX}/share/doc/${PKGBASE}
 VARDB_DIR=	/var/db
+VARRUN_DIR=	/var/run
 
 STRIP?=		strip
 
