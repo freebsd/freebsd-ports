@@ -23,8 +23,6 @@ INSTALL_TARGET=	site-install
 # MIT license
 DOCS=		ChangeLog LICENSE README
 
-BROKEN=		Checksum mismatch
-
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_MODDOCDIR}
