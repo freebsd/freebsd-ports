@@ -66,6 +66,7 @@
     SUBDIR += clusterit
     SUBDIR += cnd
     SUBDIR += cnet
+    SUBDIR += coccinella
     SUBDIR += coda5_client
     SUBDIR += coda5_doc
     SUBDIR += coda5_server
