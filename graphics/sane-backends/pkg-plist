@@ -266,10 +266,10 @@ sbin/saned
 %%PORTDOCS%%share/doc/sane/plustek/Plustek-USB.txt
 %%PORTDOCS%%share/doc/sane/plustek/VERSION0
 %%PORTDOCS%%share/doc/sane/plustek/VERSION1
-%%PORTDOCS%%share/doc/sane/sane-backends.html
 %%PORTDOCS%%share/doc/sane/sane-backends-external.html
-%%PORTDOCS%%share/doc/sane/sane-mfgs.html
+%%PORTDOCS%%share/doc/sane/sane-backends.html
 %%PORTDOCS%%share/doc/sane/sane-mfgs-external.html
+%%PORTDOCS%%share/doc/sane/sane-mfgs.html
 %%PORTDOCS%%share/doc/sane/sceptre/s1200.txt
 %%PORTDOCS%%share/doc/sane/teco/teco1.txt
 %%PORTDOCS%%share/doc/sane/teco/teco2.txt
@@ -303,24 +303,24 @@ sbin/saned
 %%PORTDOCS%%share/doc/sane/umax/umax.CHANGES
 %%PORTDOCS%%share/doc/sane/umax/umax.FAQ
 %%PORTDOCS%%share/doc/sane/umax/umax.TODO
-share/locale/bg/LC_MESSAGES/sane-backends.mo
-share/locale/cs/LC_MESSAGES/sane-backends.mo
-share/locale/da/LC_MESSAGES/sane-backends.mo
-share/locale/de/LC_MESSAGES/sane-backends.mo
-share/locale/es/LC_MESSAGES/sane-backends.mo
-share/locale/fr/LC_MESSAGES/sane-backends.mo
-share/locale/it/LC_MESSAGES/sane-backends.mo
-share/locale/nl/LC_MESSAGES/sane-backends.mo
-share/locale/no/LC_MESSAGES/sane-backends.mo
-share/locale/pt/LC_MESSAGES/sane-backends.mo
-share/locale/ru/LC_MESSAGES/sane-backends.mo
-share/locale/sv/LC_MESSAGES/sane-backends.mo
+%%NLS%%share/locale/bg/LC_MESSAGES/sane-backends.mo
+%%NLS%%share/locale/cs/LC_MESSAGES/sane-backends.mo
+%%NLS%%share/locale/da/LC_MESSAGES/sane-backends.mo
+%%NLS%%share/locale/de/LC_MESSAGES/sane-backends.mo
+%%NLS%%share/locale/es/LC_MESSAGES/sane-backends.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/sane-backends.mo
+%%NLS%%share/locale/it/LC_MESSAGES/sane-backends.mo
+%%NLS%%share/locale/nl/LC_MESSAGES/sane-backends.mo
+%%NLS%%share/locale/no/LC_MESSAGES/sane-backends.mo
+%%NLS%%share/locale/pt/LC_MESSAGES/sane-backends.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/sane-backends.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/sane-backends.mo
 @exec mkdir %D/share/sane
 @exec mkdir %D/share/sane/gt68xx
 @unexec rmdir %D/share/sane/gt68xx 2>/dev/null || true
 @unexec rmdir %D/share/sane 2>/dev/null || true
-%%PORTDOCS%%@dirrm share/doc/sane/u12
 %%PORTDOCS%%@dirrm share/doc/sane/umax
+%%PORTDOCS%%@dirrm share/doc/sane/u12
 %%PORTDOCS%%@dirrm share/doc/sane/teco
 %%PORTDOCS%%@dirrm share/doc/sane/sceptre
 %%PORTDOCS%%@dirrm share/doc/sane/plustek
