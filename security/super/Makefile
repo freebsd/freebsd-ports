@@ -4,7 +4,7 @@
 # Date created:			  Fri Mar 18, 1997
 # Whom:				  David O'Brien (obrien@NUXI.com)
 #
-# $Id: Makefile,v 1.9 1999/02/19 02:33:45 obrien Exp $
+# $Id: Makefile,v 1.10 1999/02/26 13:00:44 obrien Exp $
 #
 
 DISTNAME=	super-3.12.1
@@ -18,7 +18,7 @@ MAINTAINER=     obrien@FreeBSD.org
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} <= 300000
-BROKEN=	'/usr/include/prot.h parse error'         
+BROKEN=	'/usr/include/prot.h parse error'
 .endif
 
 GNU_CONFIGURE=	yes
