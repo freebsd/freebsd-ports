@@ -155,6 +155,7 @@
     SUBDIR += p5-Math-Random-MT
     SUBDIR += p5-Math-Round
     SUBDIR += p5-Math-SimpleVariable
+    SUBDIR += p5-Math-Spline
     SUBDIR += p5-Math-TrulyRandom
     SUBDIR += p5-MatrixReal
     SUBDIR += p5-NetCDF
