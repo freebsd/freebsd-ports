@@ -7,7 +7,7 @@
 
 PORTNAME=	flowscan
 PORTVERSION=    1.006
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net
 MASTER_SITES=	http://net.doit.wisc.edu/~plonka/FlowScan/
 DISTFILES=	FlowScan-${PORTVERSION}.tar.gz
@@ -34,7 +34,7 @@ pre-install:
 
 post-install:
 	@ ${INSTALL_SCRIPT} ${FILESDIR}/flowscan.sh \
-		 /usr/local/etc/rc.d/flowscan.sh.sample
+		 /usr/local/etc/rc.d/cflowd-flowscan.sh.sample
 .for i in	CampusIO.cf Napster_subnets.boulder SubNetIO.cf flowscan.cf \
 		local_nets.boulder our_subnets.boulder
 	@ ${INSTALL_DATA} ${WRKSRC}/cf/${i} \
