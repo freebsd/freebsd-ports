@@ -1,0 +1,22 @@
+bin/_bqueue
+bin/bqueue
+bin/bsmtp
+bin/cbsmtp
+bin/crsmtp
+bin/rcsmtp
+bin/rgsmtp
+bin/rsmtp
+libexec/batcher
+libexec/bsmtp
+libexec/rsmtp
+libexec/transmitter.c-cbsmtp
+libexec/transmitter.c-rcsmtp
+libexec/transmitter.g-rcsmtp
+libexec/transmitter.g-rgsmtp
+libexec/transmitter.n-rsmtp
+share/doc/bsmtp/README
+share/sendmail/bsmtp.m4
+@dirrm share/doc/bsmtp
+@dirrm share/sendmail
+@exec mkdir -pm 770 /var/spool/bsmtp; chown uucp:uucp /var/spool/bsmtp
+@unexec rmdir /var/spool/bsmtp || true

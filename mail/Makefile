@@ -8,6 +8,7 @@
     SUBDIR += balsa
     SUBDIR += bbmail
     SUBDIR += biffer
+    SUBDIR += bsmtp
     SUBDIR += bulk_mailer
     SUBDIR += cclient
     SUBDIR += cclient-maildir
