@@ -27,6 +27,10 @@ MAKE_ENV=	CC="${CC}" CXX="${CXX}" CFLAGS="${CFLAGS}" \
 USE_ZIP=	YES
 WRKSRC=		${WRKDIR}/release
 
+.if exists(/usr/lib/libusb.a)
+MAKE_ENV+=	USB_JOYSTICK_SUPPORT=yes
+.endif
+
 ONLY_FOR_ARCHS=	i386 alpha
 
 .if ${MACHINE_ARCH} == alpha
