@@ -19,6 +19,7 @@
     SUBDIR += bibcard
     SUBDIR += bibview
     SUBDIR += bjfilter850
+    SUBDIR += bjfilter850ug
     SUBDIR += bjfilter860
     SUBDIR += bjfilter870
     SUBDIR += bjfiltercom
