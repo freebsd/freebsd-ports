@@ -1,17 +1,17 @@
 
 $FreeBSD$
 
---- embedding/config/basebrowser-unix.orig	Wed Nov 21 00:21:59 2001
-+++ embedding/config/basebrowser-unix	Tue Jan 15 15:26:55 2002
+--- embedding/config/basebrowser-unix.orig	Thu Feb  7 23:50:19 2002
++++ embedding/config/basebrowser-unix	Tue Mar 12 17:06:08 2002
 @@ -119,6 +119,7 @@
  
  ; layout
  components/libgkcontent.so
-+libmoz_art_lgpl.so                   
++libmoz_art_lgpl.so
+ res/dtd/*
  components/libgklayout.so                   
  components/libhtmlpars.so                 
- components/libgkview.so                   
-@@ -196,12 +197,12 @@
+@@ -203,12 +204,12 @@
  components/unicharutil.xpt
  components/libchardet.so
  ; optional - on english only systems

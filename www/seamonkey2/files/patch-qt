@@ -1,11 +1,11 @@
 
 $FreeBSD$
 
---- configure.orig	Wed Dec 12 10:12:41 2001
-+++ configure	Tue Dec 25 15:21:43 2001
-@@ -6186,6 +6186,9 @@
- os2*)
-     LIBS=
+--- configure.orig	Thu Mar  7 07:56:55 2002
++++ configure	Tue Mar 12 17:15:06 2002
+@@ -6279,6 +6279,9 @@
+ # for stuff like -lXshm
+     CPPFLAGS="${CPPFLAGS} ${X_CFLAGS}"
      ;;
 +freebsd*)
 +    CPPFLAGS="${CPPFLAGS} ${X_CFLAGS}"
@@ -13,16 +13,7 @@ $FreeBSD$
  esac
  for ac_hdr in sys/byteorder.h compat.h getopt.h
  do
-@@ -7357,8 +7360,6 @@
- 	if test $? -eq 0; then
- 		if test -z "`egrep -i '(unrecognize|unknown)' conftest.out | grep pthread`" && test -z "`egrep -i '(error|incorrect)' conftest.out`" ; then
- 			ac_cv_have_dash_pthread=yes
--			CFLAGS="$CFLAGS -pthread"
--			CXXFLAGS="$CXXFLAGS -pthread"
- 		fi
- 	fi
- 	rm -f conftest*
-@@ -7392,7 +7393,7 @@
+@@ -7512,7 +7515,7 @@
  EOF
  
  						if test "$ac_cv_have_dash_pthread" = "yes"; then
@@ -31,7 +22,7 @@ $FreeBSD$
  			else
  				_PTHREAD_LDFLAGS="-lc_r"
  			fi
-@@ -9839,7 +9840,7 @@
+@@ -9954,7 +9957,7 @@
      fi
      MOC=$HOST_MOC
  
