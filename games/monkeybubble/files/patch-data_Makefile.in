@@ -1,0 +1,11 @@
+--- data/Makefile.in.orig	Thu Jan  1 20:37:25 2004
++++ data/Makefile.in	Thu Jan  1 20:37:35 2004
+@@ -323,7 +323,7 @@
+ 
+ install-data-local:
+ 	if test -z "$(DESTDIR)" ; then \
+-		for p in $(schema_DATA) ; do \
++		for p in $(schemas_DATA) ; do \
+ 			GCONF_CONFIG_SOURCE=$(GCONF_SCHEMA_CONFIG_SOURCE) $(GCONFTOOL) --makefile-install-rule $(srcdir)/$$p; \
+ 		done \
+ 	fi
