@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mailgraph
-PORTVERSION=	1.2
+PORTVERSION=	1.4
 CATEGORIES=	mail
 MASTER_SITES=	http://people.ee.ethz.ch/~dws/software/mailgraph/pub/
 
@@ -16,7 +16,6 @@ COMMENT=	A RRDtool frontend for Postfix statistics
 RUN_DEPENDS=	${SITE_PERL}/RRDp.pm:${PORTSDIR}/net/rrdtool	\
 		${SITE_PERL}/File/Tail.pm:${PORTSDIR}/devel/p5-File-Tail
 
-SITE_PERL=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}
 NO_BUILD=	yes
 
 STARTUP_SCRIPT=	mailgraph.sh.sample
@@ -30,7 +29,7 @@ do-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/${FILE} ${PREFIX}/www/cgi-bin/
 .endfor
 	@${INSTALL_SCRIPT} ${WRKSRC}/${STARTUP_SCRIPT} ${PREFIX}/etc/rc.d/
-	@${SETENV} ${SCRIPTS_ENV} WWWUSER=${WWWUSER} ${SH} ${PKGINSTALL}
+	@${SETENV} ${SCRIPTS_ENV} ${SH} ${PKGINSTALL}
 	@${CHOWN} www:www ${PREFIX}/www/cgi-bin/
 
 .include <bsd.port.mk>
