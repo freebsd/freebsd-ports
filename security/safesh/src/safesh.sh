@@ -1,7 +1,12 @@
 #!/bin/sh
 
-HOST=$1
 AKEYS=${HOME}/.safesh/
+# Use username as supplied on the command line if user@host syntax is used,
+# otherwise use the presently active username
+USER=`whoami`
+USER=`echo $1 | sed  -e "/^[^@]*\$/s/.*/$USER/" -e "/@/s/\\(.*\\)@.*/\\1/"`
+# Use hostname as supplied on commandline, without username
+HOST=`echo $1 | sed -e 's/.*@//' | tr A-Z a-z`
 
 # MY eXit
 myx() {
@@ -31,17 +36,18 @@ fi
 #
 shift 2> /dev/null;
 
-if [ ! -d $AKEYS/$HOST ]; then
-	mkdir -p $AKEYS/$HOST || myx "Unable to create $AKEYS/$HOST"
+HOSTDIR=$AKEYS/$USER@${HOST}-22
+if [ ! -d $HOSTDIR ]; then
+	mkdir -p $HOSTDIR || myx "Unable to create $HOSTDIR"
 fi
 
-if [ ! -e $AKEYS/$HOST/id_dsa ]; then
-	ssh-keygen -t dsa -f $AKEYS/$HOST/id_dsa || myx "Unable to create $AKEYS/$HOST/id_dsa"
+if [ ! -e $HOSTDIR/id_dsa ]; then
+	ssh-keygen -t dsa -f $HOSTDIR/id_dsa || myx "Unable to create $HOSTDIR/id_dsa"
 fi
 
-# We now have a key in $AKEYS/$HOST/id_dsa
+# We now have a key in $HOSTDIR/id_dsa
 
-ACTIVEAGENT=$AKEYS/$HOST/activeagent-`hostname`
+ACTIVEAGENT=$HOSTDIR/activeagent-`hostname`
 if [ -e $ACTIVEAGENT.sh ]; then
 	. $ACTIVEAGENT.sh || myx "Unable to read $ACTIVEAGENT.sh"
 fi
@@ -59,10 +65,13 @@ fi
 # We now have a live agent, possibly without any keys in it
 
 
-for i in $HOST $(cat ${AKEYS}/$HOST/extra_keys 2> /dev/null); do
-	tmp=`normalizehost $i`
-	if [ -f $AKEYS/$HOST/$tmp ]; then
-		IDENTITY=$AKEYS/$HOST/$tmp
+for i in $USER@${HOST}-22 `cat $HOSTDIR/extra_keys 2> /dev/null`; do
+	tmpuser=`echo $i | sed  -e "/^[^@]*\$/s/.*/$USER/" -e "/@/s/\\(.*\\)@.*/\\1/"`
+	tmpport=`echo $i | sed -e '/-\([0-9][0-9]*\)/!s/$/-22/' -e 's/.*-\([0-9][0-9]*\)/\1/'`
+	tmphost=`echo $1 | sed -e 's/.*@\(.*\)//' -e 's/-[0-9][0-9]*$//' | tr A-Z a-z`
+	tmp=$USER@`normalizehost $tmphost`-$tmpport
+	if [ -f $HOSTDIR/$tmp ]; then
+		IDENTITY=$HOSTDIR/$tmp
 	elif [ -d $AKEYS/$tmp/ ]; then
 		if ! [ -f $AKEYS/$tmp/id_dsa -a -r $AKEYS/$tmp/id_dsa ]; then
 			myx "Missing key for $tmp"
@@ -88,7 +97,7 @@ if [ "${KEYLIST}" != "" ]; then
 fi
 
 if [ "$1" = "" ]; then
-	exec ssh $HOST
+	exec ssh $USER@$HOST
 else
 	exec ssh "$@"
 fi

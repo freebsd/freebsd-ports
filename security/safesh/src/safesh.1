@@ -53,10 +53,10 @@ When run,
 .It
 Normalizes the hostname you are talking about, using the $HOME/.safesh/map file.
 .It
-Checks if the host has an ssh dsa key in $HOME/.safesh, and creates one using 
+Checks if the user and host has an ssh dsa key in $HOME/.safesh, and creates one using 
 .Xr ssh-keygen 1
 if it does not.
-The DSA key is stored in $HOME/.safesh/$HOST/dsa_id.
+The DSA key is stored in $HOME/.safesh/$USER@$HOST-$PORT/dsa_id.
 You will be asked for a passphrase when the key is created.
 Note that if you use the same passphrase for all
 .Nm
@@ -69,7 +69,7 @@ Checks if you have the
 for this host running, and starts it if not.
 .It
 Checks what keys you are supposed to have active when connecting to this host
-(the key for the host and any keys listed in $HOME/.safesh/$HOST/extra_keys),
+(the key for the host and any keys listed in $HOME/.safesh/$USER@$HOST-$PORT/extra_keys),
 and which of these are missing from the active agent.
 .It
 If any identities were missing from the agent, it executes
@@ -78,7 +78,7 @@ to add them to the agent.
 .It
 Executes
 .Xr ssh 1
-with either $HOST or the extra command line supplied by the user.
+with either $USER@$HOST or the extra command line supplied by the user.
 .El
 
 .Sh BASIC CONCEPT DESCRIPTION
@@ -100,9 +100,6 @@ do authentication forwarding to it.
 .Bl -tag -width "$HOME/.safesh" -compact
 .It Pa $HOME
 is replaced with the path your home directory,
-$HOST is replaced with the name of the host you are
-.Xr ssh 1 ing
-to,
 .It Pa $HOST
 is replaced with the name of the host you are running
 .Nm
@@ -131,6 +128,18 @@ $AUTHTARGET is a machine you are
 to
 .Pa from
 $HOST.
+The format of $AUTHTARGET is <user>@<somehost>-<someport>, where <user>
+defaults to the username you run
+.Nm
+as, and <someport> default to 22 (and it is not possible to set anything
+else at this time.)
+.It Pa $USER
+is replaced with The username used on $HOST; defaults to the same as the
+username you have on $YOURHOST, but will be different if you do safesh
+user@host instead of just safesh host.
+.It Pa $PORT
+The port used on $HOST.
+Presently always 22.
 .El
 
 .Sh FILES
@@ -142,7 +151,7 @@ Directory containing information for
 .It Pa $HOME/.safesh/map
 Mapping file for
 .Nm ,
-describing how to map names to their canonical form.
+describing how to map host names to their canonical form.
 This is usually used to map short names to their long form.
 The format of the file is one mapping per line, what it is mapped from as the
 first word, what it is mapped to as the second.
@@ -152,26 +161,26 @@ the name of the host as the first parameter, and the name of the host with a
 period (.) at the end as the second parameter.
 E.g, "freefall.freebsd.org freefall.freebsd.org."
 
-.It Pa $HOME/.safesh/$HOST/
+.It Pa $HOME/.safesh/$USER@$HOST-$PORT/
 Directory with data for a particular hostname.
 Automatically generated on first connect to a host with
 .Nm .
 
-.It Pa $HOME/.safesh/$HOST/dsa_id
-Private key for use against $HOST.
+.It Pa $HOME/.safesh/$USER@$HOST-$PORT/dsa_id
+Private key for use to authenticate as $USER@$HOST.
 Automatically generated on first connect to a host with
 .Nm .
 
-.It Pa $HOME/.safesh/$HOST/dsa_id.pub
-Public key for use by $HOST.
-To connect to $HOST using 
+.It Pa $HOME/.safesh/$USER@$HOST-$PORT/dsa_id.pub
+Public key for use by $HOST to authenticate $USER.
+To connect to $HOST as $USER using 
 .Nm
 without giving a password, add the contents of this file
 to the end of $HOME/.ssh/authorized_keys2.
 Automatically generated on first connect to a host with
 .Nm .
 
-.It Pa $HOME/.safesh/$HOST/$AUTHTARGET
+.It Pa $HOME/.safesh/$USER@$HOST-$PORT/$AUTHTARGET
 Private key for use when $HOST authenticates towards $AUTHTARGET.
 This is used in preference to $HOME/.safesh/$AUTHTARGET/dsa_id for authentication
 forwarding through $HOST to $AUTHTARGET.
@@ -202,17 +211,20 @@ Public key corresponding to the private key described above.
 
 .It Pa $HOME/.safesh/$HOST/extra_keys
 List of extra keys to make available for this host.
-Each line in the file is first attempted matched against the host database in
-$HOME/.safesh/.
-If a key exists here, 
+Each line in the file is first attempted matched against the host/user/port
+database in $HOME/.safesh/.
+Username and/or port is added if just the hostname is specified extra_keys, and
+the hostname is always normalized using the map file.
+If a key exists in $HOME/.safesh/, 
 .Nm
 attempts to add that.
-Otherwise, it first tries to look for a file of this name relative to /, then
+Otherwise, it first tries to look for the line as a file relative to /, then
 relative to $HOME.
 If it does not find either of these,
 .Nm
 will exit with an error message.
-If it finds one, it will add it.
+If it finds one, it will add it using
+.Xr ssh-add 1 .
 
 .It Pa $HOME/.safesh/$HOST/activeagent-$YOURHOST.sh
 Bourne shell (see
