@@ -142,3 +142,4 @@ lib/libatalk.a
 lib/libatalk.la
 share/aclocal/netatalk.m4
 share/netatalk/pagecount.ps
+@dirrm share/netatalk
