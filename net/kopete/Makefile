@@ -29,7 +29,8 @@ post-patch:
 		${WRKSRC}/kopete/libkopete/ui/kopetewindow.cpp \
 		${WRKSRC}/kopete/libkopete/kopeteprefs.cpp \
 		${WRKSRC}/kopete/libkopete/kopeteprefs.h \
-		${WRKSRC}/kopete/protocols/icq_new/icqchangestatus.cpp \
+		${WRKSRC}/kopete/protocols/icq_new/icqchangestatus.cpp
+	${REINPLACE_CMD} -e 's,= 305,= 306,' \
 		${WRKSRC}/kopete/protocols/irc/ircmessage.cpp
 
 .include <bsd.port.pre.mk>
