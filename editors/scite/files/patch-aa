@@ -1,5 +1,8 @@
---- makefile.orig	Tue Nov  5 17:36:21 2002
-+++ makefile	Tue Nov  5 17:39:53 2002
+
+$FreeBSD$
+
+--- makefile.orig	Thu Feb  6 10:52:36 2003
++++ makefile	Thu Feb  6 10:56:10 2003
 @@ -10,34 +10,34 @@
  
  # For the Gnome desktop stuff to work, prefix must point to where Gnome thinks it is.
@@ -39,7 +42,7 @@
  
  .cxx.o:
 -	$(CC) `gtk-config --cflags` $(CXXFLAGS) -c $< -o $@
-+	$(CC) $(shell $(GTK_CONFIG) --cflags) $(shell $(GLIB_CONFIG) --libs gthread) $(CXXFLAGS) -c $< -o $@
++	$(CC) $(shell $(GTK_CONFIG) --cflags) $(CXXFLAGS) -c $< -o $@
  
  all: $(PROG)
  
@@ -48,7 +51,7 @@
  
  deps:
 -	$(CC) -MM `gtk-config --cflags` $(CXXFLAGS) *.cxx ../src/*.cxx >deps.mak
-+	$(CC) -MM `$(GTK_CONFIG) --cflags` `$(GLIB_CONFIG) --libs gthread)` $(CXXFLAGS) *.cxx ../src/*.cxx >deps.mak
++	$(CC) -MM `$(GTK_CONFIG) --cflags` $(CXXFLAGS) *.cxx ../src/*.cxx >deps.mak
  
  # make should be run in ../../scintilla/gtk to compile all the lexers.
  LEXEROBJS=$(wildcard ../../scintilla/gtk/Lex*.o)

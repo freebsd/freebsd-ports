@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	scintilla
-PORTVERSION=	1.49
+PORTVERSION=	1.50
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.scintilla.org/
@@ -24,9 +24,6 @@ USE_GNOMENG=	yes
 USE_GNOME=	gtk12
 INSTALLS_SHLIB=	yes
 MAKEFILE=	makefile
-
-post-extract:
-	@${PERL} -pi -e  's|\x0d||' ${WRKSRC}/../include/*.h
 
 do-install:
 	${MKDIR} ${PREFIX}/include/scintilla
