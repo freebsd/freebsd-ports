@@ -1,0 +1,9 @@
+PyBook is a Project Gutenberg e-texts reader written in python. 
+
+Features:
+   * search by author/title/both
+   * browse full book list
+   * choose a random book
+   * autobookmarks book you're reading (if using vim as a viewer)
+
+WWW: http://silmarill.org/pybook/
