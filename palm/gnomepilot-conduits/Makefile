@@ -6,17 +6,18 @@
 #
 
 PORTNAME=	gnomepilot-conduits
-PORTVERSION=	0.8
+PORTVERSION=	0.9
 CATEGORIES=	palm comms gnome
-MASTER_SITES=	http://www.eskil.org/gnome-pilot/download/tarballs/ \
-		${MASTER_SITE_GNOME}
+MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	unstable/sources/gnome-pilot-conduits
 DISTNAME=	gnome-pilot-conduits-${PORTVERSION}
+DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 
 LIB_DEPENDS=	gpilotd.1:${PORTSDIR}/palm/gnomepilot
 
+USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 USE_GNOMECTRL=	yes
