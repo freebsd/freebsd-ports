@@ -1,6 +1,6 @@
---- Makefile.in.orig	Wed Jul  8 12:40:39 1998
-+++ Makefile.in	Sun Sep 13 12:38:43 1998
-@@ -294,12 +294,17 @@
+--- Makefile.in.orig	Wed Jul  8 09:40:39 1998
++++ Makefile.in	Wed Oct  7 19:11:37 1998
+@@ -294,14 +294,19 @@
  SHELL = /bin/sh
  
  GMPDIR 		= gmp-2.0.2-ssh-2
@@ -20,14 +20,17 @@
 +ZLIBDEP		= $(ZLIBINCDIR)/libz.a
 +ZLIBLIBS	= -lz
  
- RSAREFDIR	= rsaref2
+-RSAREFDIR	= rsaref2
++RSAREFDIR	= ${PORTSDIR}/security/rsaref/work
  RSAREFSRCDIR 	= $(RSAREFDIR)/source
+ 
+ X_CFLAGS	= @X_CFLAGS@
 @@ -404,7 +409,7 @@
  	$(CC) -o rfc-pg rfc-pg.o
  
  .c.o:
 -	$(CC) -c -I. $(KERBEROS_INCS) -I$(srcdir)/$(GMPDIR) -I$(srcdir)/$(ZLIBDIR) $(DEFS) -DHOST_KEY_FILE=\"$(HOST_KEY_FILE)\" -DHOST_CONFIG_FILE=\"$(HOST_CONFIG_FILE)\" -DSERVER_CONFIG_FILE=\"$(SERVER_CONFIG_FILE)\" -DSSH_PROGRAM=\"$(SSH_PROGRAM)\" -DETCDIR=\"$(etcdir)\" -DPIDDIR=\"$(piddir)\" -DSSH_BINDIR=\"$(bindir)\" -DTIS_MAP_FILE=\"$(TIS_MAP_FILE)\" $(CFLAGS) $(X_CFLAGS) $<
-+	$(CC) -c -I. $(KERBEROS_INCS) -I$(srcdir)/$(GMPINCDIR) -I$(srcdir)/$(ZLIBINCDIR) $(DEFS) -DHOST_KEY_FILE=\"$(HOST_KEY_FILE)\" -DHOST_CONFIG_FILE=\"$(HOST_CONFIG_FILE)\" -DSERVER_CONFIG_FILE=\"$(SERVER_CONFIG_FILE)\" -DSSH_PROGRAM=\"$(SSH_PROGRAM)\" -DETCDIR=\"$(etcdir)\" -DPIDDIR=\"$(piddir)\" -DSSH_BINDIR=\"$(bindir)\" -DTIS_MAP_FILE=\"$(TIS_MAP_FILE)\" $(CFLAGS) $(X_CFLAGS) $<
++	$(CC) -c -I. $(KERBEROS_INCS) -I../../../rsaref/work -I$(srcdir)/$(GMPINCDIR) -I$(srcdir)/$(ZLIBINCDIR) $(DEFS) -DHOST_KEY_FILE=\"$(HOST_KEY_FILE)\" -DHOST_CONFIG_FILE=\"$(HOST_CONFIG_FILE)\" -DSERVER_CONFIG_FILE=\"$(SERVER_CONFIG_FILE)\" -DSSH_PROGRAM=\"$(SSH_PROGRAM)\" -DETCDIR=\"$(etcdir)\" -DPIDDIR=\"$(piddir)\" -DSSH_BINDIR=\"$(bindir)\" -DTIS_MAP_FILE=\"$(TIS_MAP_FILE)\" $(CFLAGS) $(X_CFLAGS) $<
  
  sshd: $(SSHD_OBJS) $(GMPDEP) $(RSAREFDEP) $(ZLIBDEP)
  	-rm -f sshd
