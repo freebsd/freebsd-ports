@@ -1,6 +1,6 @@
---- Makefile.orig	Sat Dec  8 14:11:42 2001
-+++ Makefile	Sat Dec  8 14:13:19 2001
-@@ -147,7 +147,7 @@
+--- Makefile.orig	Tue Nov  5 01:19:13 2002
++++ Makefile	Thu Nov 28 00:11:51 2002
+@@ -148,7 +148,7 @@
  # std	system standard (typically passwd file), determined by port
  # two	try alternative (defined by CHECKPWALT), then std
  
@@ -9,7 +9,7 @@
  
  
  # SSL type.  Defines whether or not SSL support is on this system
-@@ -212,12 +212,12 @@
+@@ -215,12 +215,12 @@
  #	gradually-increasing intervals, starting at 2800-2900, and becoming
  #	permanent at 48,300.
  
@@ -24,7 +24,7 @@
  
  
  # Special make flags (e.g. to override make environment variables)
-@@ -253,13 +253,7 @@
+@@ -256,13 +256,7 @@
  
  # Make the IMAP Toolkit
  
@@ -39,8 +39,28 @@
  
  SPECIALS:
  	echo $(SPECIALS) > SPECIALS
-@@ -374,7 +368,7 @@
- 	$(TOOLS)/$@ "$(LN)" src/imapd imapd
+@@ -396,9 +390,6 @@
+ 	@echo + In order to rectify this problem, you MUST build with:
+ 	@echo ++ SSLTYPE=$(SSLTYPE).nopwd
+ 	@echo +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+-	@echo
+-	@echo Do you want to continue this build anyway?  Type y or n please:
+-	@$(SH) -c 'read x; case "$$x" in y) exit 0;; *) exit 1;; esac'
+ 
+ sslnone:
+ 	@echo +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+@@ -411,9 +402,6 @@
+ 	@echo ++ SSLTYPE=nopwd
+ 	@echo + You must also have OpenSSL or equivalent installed.
+ 	@echo +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+-	@echo
+-	@echo Do you want to continue this build anyway?  Type y or n please:
+-	@$(SH) -c 'read x; case "$$x" in y) exit 0;; *) exit 1;; esac'
+ 
+ 
+ # C compiler types
+@@ -434,7 +422,7 @@
+ 	$(TOOLS)/$@ "$(LN)" src/tmail tmail
  	$(LN) $(TOOLS)/$@ .
  
 -build:	OSTYPE rebuild rebuildclean bundled
