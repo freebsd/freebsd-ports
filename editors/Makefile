@@ -69,6 +69,7 @@
     SUBDIR += le
     SUBDIR += led
     SUBDIR += leim20
+    SUBDIR += lfhex
     SUBDIR += lpe
     SUBDIR += manedit
     SUBDIR += mg

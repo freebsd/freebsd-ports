@@ -1,0 +1,17 @@
+Lfhex - Large file hex editor.
+
+Features:
+   - Low memory usage with respect to filesize. Opening a 2gig file requires
+     only ~1.4megs of additional memory.
+   - Fast load times.
+   - Fast save times.
+   - Infinite undo/redo.
+   - Conversion dialog
+   - Search function.
+   - Shows modified regions in alternate color.
+   - Scalable working area. Resize can use as much screen as you give it.
+   - Multiple editing modes (can switch on the fly)
+   - Runtime configurable bytes per column.
+   - binary comparison user interface
+
+WWW: http://typedef.dnsalias.org/
