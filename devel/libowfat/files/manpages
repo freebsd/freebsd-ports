@@ -152,8 +152,10 @@ iob_addfile.3 \
 iob_addfile_close.3 \
 iob_adds.3 \
 iob_adds_free.3 \
+iob_free.3 \
 iob_new.3 \
 iob_prefetch.3 \
+iob_reset.3 \
 iob_send.3 \
 iob_write.3 \
 iopause.3 \
