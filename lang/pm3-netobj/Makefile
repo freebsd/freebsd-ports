@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTVERSION=	pm3-netobj
+PORTNAME=	pm3-netobj
 PORTVERSION=	1.1.13
 CATEGORIES=	lang
 DISTFILES=
