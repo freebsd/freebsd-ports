@@ -1,5 +1,5 @@
---- programs/Xserver/hw/xfree86/os-support/bsd/alpha_video.c.orig	Tue Oct 29 15:19:13 2002
-+++ programs/Xserver/hw/xfree86/os-support/bsd/alpha_video.c	Tue Mar  4 16:28:04 2003
+--- programs/Xserver/hw/xfree86/os-support/bsd/alpha_video.c.orig	Tue Oct 29 16:19:13 2002
++++ programs/Xserver/hw/xfree86/os-support/bsd/alpha_video.c	Sat Feb 21 00:26:25 2004
 @@ -33,7 +33,10 @@
  #include <sys/param.h>
  #ifndef __NetBSD__
@@ -33,3 +33,12 @@
  }
  
  void
+@@ -475,7 +480,7 @@
+ writeSparse32(int Value, pointer Base, register unsigned long Offset);
+ 
+ #ifdef __FreeBSD__
+-extern int sysarch(int, char *);
++extern int sysarch(int, void *);
+ #endif
+ 
+ struct parms {
