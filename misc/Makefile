@@ -109,7 +109,6 @@
     SUBDIR += videotext
     SUBDIR += viz
     SUBDIR += wmcp
-    SUBDIR += wmfire
     SUBDIR += wmmand
     SUBDIR += wmstock
     SUBDIR += wmweather
