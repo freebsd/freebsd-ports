@@ -17,6 +17,7 @@ MASTER_SITE_SUBDIR=	gdb/releases
 MAINTAINER=	mp@FreeBSD.org
 COMMENT=	GNU GDB 5.3 developmental snapshot
 
+LATEST_LINK=	gdb53
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
