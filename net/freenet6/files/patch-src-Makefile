@@ -1,5 +1,14 @@
---- src/Makefile.orig	Sat Sep  8 01:52:26 2001
-+++ src/Makefile	Thu Oct 11 13:01:53 2001
+--- src/Makefile.orig	Thu Dec  6 06:06:55 2001
++++ src/Makefile	Tue Oct 22 22:50:38 2002
+@@ -11,7 +11,7 @@
+ INC=.
+ BIN=../bin
+ 
+-CC=gcc -g -I$(INC) -Wall
++CC+=$(CFLAGS) -g -I$(INC) -Wall
+ 
+ pre-clean:
+ 	@if [ -f $(BIN)/tspc.conf ]; then rm -f $(BIN)/tspc.conf; fi
 @@ -22,7 +22,7 @@
  	@echo Installing tspc
  	mkdir -p $(install_bin)
