@@ -11,11 +11,6 @@ can handle up to 435,000 64-byte packets a second.
 
 WWW: http://www.pdos.lcs.mit.edu/click/
 
-This port of click runs only as a user mode process on FreeBSD.
-Kernel implementations run on Linux.  There is a move afoot to
-port this code tot the FreeBSD kernel as well.  See the mailing
-list (available via the web page) for more information.
-
 George V. Neville-Neil
 
 gnn@neville-neil.com

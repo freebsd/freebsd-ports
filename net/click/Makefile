@@ -1,12 +1,12 @@
-# New ports collection makefile for:   click
-# Date created:        27 June 2001
+# Updated ports collection makefile for:   click
+# Date created:        3 Nov 2001
 # Whom:                gnn
 #
 # $FreeBSD$
 #
 
 PORTNAME=	click
-PORTVERSION=	1.2.1
+PORTVERSION=	1.2.3
 CATEGORIES=	net
 MASTER_SITES=	http://www.pdos.lcs.mit.edu/click/
 
@@ -39,11 +39,11 @@ MANN=	FTPPortMapper.n ARPFaker.n ARPQuerier.n ARPResponder.n \
 	BandwidthRatedUnqueue.n CheckCRC32.n CheckLength.n CheckPaint.n \
 	Classifier.n CompareBlock.n Counter.n DelayShaper.n DelayUnqueue.n \
 	Discard.n DiscardNoFree.n DriverManager.n DropBroadcasts.n DRRSched.n \
-	Error.n FrontDropQueue.n HashDemux.n HashSwitch.n Idle.n \
+	Error.n FrontDropQueue.n HashSwitch.n Idle.n \
 	InfiniteSource.n Meter.n MSQueue.n Null.n PushNull.n PullNull.n \
 	Null1.n Null2.n Null3.n Null4.n Null5.n Null6.n Null7.n Null8.n \
 	Paint.n PaintTee.n PeekHandlers.n PokeHandlers.n Print.n PrioSched.n \
-	ProbSplitter.n PullSwitch.n PullToPush.n Queue.n QuitWatcher.n \
+	ProbSplitter.n PullSwitch.n Queue.n QuitWatcher.n \
 	RandomBitErrors.n RandomLossage.n RandomSource.n RatedSource.n \
 	RatedSplitter.n RatedUnqueue.n RED.n RoundRobinSched.n \
 	RoundRobinSwitch.n ScheduleInfo.n SetCRC32.n SetTimestamp.n Shaper.n \
@@ -52,8 +52,8 @@ MANN=	FTPPortMapper.n ARPFaker.n ARPQuerier.n ARPResponder.n \
 	Switch.n Tee.n PullTee.n TimedSink.n TimedSource.n Unqueue.n \
 	Unqueue2.n Unstrip.n CheckTCPHeader.n CheckUDPHeader.n \
 	DynamicUDPIPEncap.n IPRewriter.n SetTCPChecksum.n TCPRewriter.n \
-	UDPIPEncap.n ChatterSocket.n ControlSocket.n FromBPF.n FromDevice.u.n \
-	FromDump.n KernelTap.n KernelHandlerProxy.n PrintOld.n ToBPF.n \
+	UDPIPEncap.n ChatterSocket.n ControlSocket.n FromDevice.u.n \
+	FromDump.n KernelTap.n KernelHandlerProxy.n PrintOld.n \
 	ToDevice.u.n ToDump.n elements.n
 
 CONFDIR=	${PREFIX}/etc/click/conf
