@@ -58,6 +58,7 @@
     SUBDIR += chtml
     SUBDIR += cl-lml
     SUBDIR += cl-lml-clisp
+    SUBDIR += cl-lml-sbcl
     SUBDIR += comclear
     SUBDIR += crawl
     SUBDIR += css-mode.el
