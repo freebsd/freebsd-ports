@@ -7,7 +7,7 @@
 
 PORTNAME=	less+iso
 PORTVERSION=	358.254
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	japanese
 MASTER_SITES=	http://www.io.com/~kazushi/less/ \
 		${MASTER_SITE_LOCAL}
@@ -24,6 +24,7 @@ PATCHFILES=	${DISTNAME}-iso${PORTVERSION:E}.patch.gz
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	sf@FreeBSD.org
+COMMENT=	Less + zcat + ISO-2022 - a pager similar to more and pg
 
 USE_AUTOCONF=	yes
 GNU_CONFIGURE=	yes
