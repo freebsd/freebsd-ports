@@ -1,0 +1,24 @@
+--- Makefile	Tue Oct  2 12:00:00 2001
++++ Makefile.new	Wed Dec 19 03:03:27 2001
+@@ -5,12 +5,17 @@
+ #OPTFLAGS = -g
+ CC = gcc
+ CFLAGS = -Wall `libnet-config --defines` $(OPTFLAGS) $(INCLUDES)
+-LDLIBS = `libnet-config --libs` -lpcap
+-INCLUDES = -I/usr/include/pcap
++LOCALBASE=/usr/local
++PREFIX=/usr/local
++LDLIBS = `libnet-config --libs` -L$(LOCALBASE)/lib -lpcap
++INCLUDES = -I$(LOCALBASE)/include
+ 
+-LaBrea:	LaBrea.o
++LaBrea:	LaBrea.c
+ 
+-LaBrea.o: LaBrea.c
++#LaBrea.o: LaBrea.c
+ 
+ clean:
+ 	rm -f *.o core LaBrea
++
++install:
++	@install -c -g wheel -o root -m 755 LaBrea $(PREFIX)/bin

@@ -77,6 +77,7 @@
     SUBDIR += kssh
     SUBDIR += l0pht-watch
     SUBDIR += l0phtcrack
+    SUBDIR += labrea
     SUBDIR += libident
     SUBDIR += libmcrypt
     SUBDIR += libparanoia
