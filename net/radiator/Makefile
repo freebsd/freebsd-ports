@@ -21,9 +21,7 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 USE_PERL5=	yes
 PERL_CONFIGURE=	yes
 
-NO_PACKAGE=	"Commercial software"
-NO_CDROM=	${NO_PACKAGE}
-RESTRICTED=	${NO_PACKAGE}
+RESTRICTED=	"Commercial software"
 
 .include <bsd.port.pre.mk>
 .if !exists(${DISTDIR}/${DIST_SUBDIR}/${DISTFILES})
