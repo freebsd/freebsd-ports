@@ -2,6 +2,7 @@
 %%RUBY_SITELIBDIR%%/RMagick.rb
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ChangeLog
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/README.txt
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RMagick/adaptive_threshold.rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/RMagick/add_noise.rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/RMagick/affine.rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/RMagick/affine_transform.rb.html
@@ -18,6 +19,7 @@
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/RMagick/cbezier4.rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/RMagick/cbezier5.rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/RMagick/cbezier6.rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RMagick/channel_threshold.rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/RMagick/charcoal.rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/RMagick/chop.rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/RMagick/circle.rb.html
@@ -47,6 +49,8 @@
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/RMagick/emboss.rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/RMagick/enhance.rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/RMagick/equalize.rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RMagick/ex/adaptive_threshold.jpg
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RMagick/ex/adaptive_threshold.rb
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/RMagick/ex/add_noise.jpg
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/RMagick/ex/add_noise.rb
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/RMagick/ex/affine.gif
@@ -79,6 +83,8 @@
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/RMagick/ex/cbezier5.rb
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/RMagick/ex/cbezier6.gif
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/RMagick/ex/cbezier6.rb
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RMagick/ex/channel_threshold.jpg
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RMagick/ex/channel_threshold.rb
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/RMagick/ex/charcoal.jpg
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/RMagick/ex/charcoal.rb
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/RMagick/ex/chop.jpg
@@ -208,6 +214,7 @@
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/RMagick/ex/images/Snake.wmf
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/RMagick/ex/images/Violin.jpg
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/RMagick/ex/images/model.miff
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RMagick/ex/images/notimplemented.gif
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/RMagick/ex/images/rmagick.gif
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/RMagick/ex/images/small.tif
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/RMagick/ex/images/smile.miff
@@ -215,6 +222,8 @@
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/RMagick/ex/implode.rb
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/RMagick/ex/level.jpg
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/RMagick/ex/level.rb
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RMagick/ex/level_channel.jpg
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RMagick/ex/level_channel.rb
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/RMagick/ex/line.gif
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/RMagick/ex/line.rb
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/RMagick/ex/map.jpg
@@ -286,6 +295,8 @@
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/RMagick/ex/roundrect.rb
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/RMagick/ex/rubyname.gif
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/RMagick/ex/rubyname.rb
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RMagick/ex/sample.jpg
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RMagick/ex/sample.rb
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/RMagick/ex/scale.gif
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/RMagick/ex/scale.rb
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/RMagick/ex/segment.jpg
@@ -331,6 +342,8 @@
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/RMagick/ex/texturefill.rb
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/RMagick/ex/threshold.jpg
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/RMagick/ex/threshold.rb
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RMagick/ex/thumbnail.jpg
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RMagick/ex/thumbnail.rb
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/RMagick/ex/to_blob.gif
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/RMagick/ex/to_blob.rb
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/RMagick/ex/translate.gif
@@ -361,6 +374,7 @@
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/RMagick/index.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/RMagick/info.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/RMagick/level.rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RMagick/level_channel.rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/RMagick/line.rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/RMagick/magick.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/RMagick/map.rb.html
@@ -397,6 +411,7 @@
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/RMagick/roundrect.rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/RMagick/rubymgen.css
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/RMagick/rubyname.rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RMagick/sample.rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/RMagick/scale.rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/RMagick/segment.rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/RMagick/shade.rb.html
@@ -420,6 +435,7 @@
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/RMagick/texture_floodfill.rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/RMagick/texturefill.rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/RMagick/threshold.rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RMagick/thumbnail.rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/RMagick/to_blob.rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/RMagick/translate.rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/RMagick/transparent.rb.html
