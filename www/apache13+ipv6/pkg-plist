@@ -57,7 +57,6 @@ include/apache/xml/xmlrole.h
 include/apache/xml/xmltok.h
 include/apache/xml/xmltok_impl.h
 libexec/apache/httpd.exp
-libexec/apache/libproxy.so
 libexec/apache/mod_auth_anon.so
 libexec/apache/mod_auth_db.so
 libexec/apache/mod_cern_meta.so
