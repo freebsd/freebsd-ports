@@ -1,11 +1,18 @@
---- Makefile.in.orig	Fri Jan  3 19:03:10 2003
-+++ Makefile.in	Fri Jan  3 19:04:08 2003
-@@ -71,7 +71,7 @@
- am__quote = @am__quote@
- install_sh = @install_sh@
+
+$FreeBSD$
+
+--- Makefile.in.orig	Mon Oct 13 16:58:56 2003
++++ Makefile.in	Mon Oct 13 16:59:12 2003
+@@ -417,10 +417,10 @@
  
--mandir = @MANDIR@
-+mandir = @prefix@/man
  
- AUTOMAKE_OPTIONS = foreign dist-zip
+ debug:
+-        $(MAKE) all CFLAGS="@DEBUG@"
++	$(MAKE) all CFLAGS="@DEBUG@"
  
+ profile:
+-        $(MAKE) all CFLAGS="@PROFILE@"
++	$(MAKE) all CFLAGS="@PROFILE@"
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.

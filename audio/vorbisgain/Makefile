@@ -7,30 +7,24 @@
 #
 
 PORTNAME=	vorbisgain
-PORTVERSION=	0.32
+PORTVERSION=	0.34
 CATEGORIES=	audio
-MASTER_SITES=	${MASTER_SITE_DEBIAN}
-MASTER_SITE_SUBDIR=	pool/main/v/vorbisgain
-DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
+MASTER_SITES=	http://users.pandora.be/sjeng/ftp/vorbis/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Calculates a percieved sound level of an Ogg Vorbis file
+COMMENT=	Calculates the perceived sound level of an Ogg Vorbis file
 
-LIB_DEPENDS=	ogg.4:${PORTSDIR}/audio/libogg \
-		vorbis.2:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS=	vorbis.2:${PORTSDIR}/audio/libvorbis
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-
-USE_REINPLACE=	yes
-USE_GMAKE=	yes
+USE_ZIP=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -lm -logg -lvorbis -lvorbisfile"
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 MAN1=	vorbisgain.1
 
-post-patch:
-	@${REINPLACE_CMD} -e "s,-ldir,," ${WRKSRC}/configure
+pre-configure:
+	@${CHMOD} +x ${WRKSRC}/configure
 
 .include <bsd.port.mk>
