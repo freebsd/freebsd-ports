@@ -7385,6 +7385,7 @@ rplay		ports/audio/rplay
 rpm		ports/archivers/rpm
 rpm2cpio	ports/archivers/rpm2cpio
 rprint		ports/print/rprint
+rpy		ports/math/rpy
 rqm		ports/mbone/rqm
 rrdtool		ports/net/rrdtool
 rscheme		ports/lang/rscheme
