@@ -245,7 +245,9 @@ do-install:
 	@cd ${WRKSRC} ; ./install
 	${INSTALL_PROGRAM} ${CONFIGUREPROGS} ${PREFIX}/configure
 	${INSTALL_SCRIPT} ${CONFIGUREFILES} ${PREFIX}/configure
-	${INSTALL_SCRIPT} ${BOOTFILES} ${PREFIX}/boot
+.for i in ${BOOTFILES}
+	${INSTALL_SCRIPT} ${WRKDIR}/${i:T} ${PREFIX}/boot
+.endfor
 .for i in 1 5 7 8
 	@${MKDIR} ${PREFIX}/man/man$i
 .for j in ${MAN${i}}
@@ -283,9 +285,12 @@ do-install:
 # Ugh...  ;-)
 thereal-post-patch:
 .for i in ${BOOTFILES}
-	@if [ `dirname $i` != ${FILESDIR} ] ; \
+	@if  [ -f ${i}.sh ] ; \
 	then \
-		${PERL} -pi.orig -ne 's!^(exec)!case "\$$1" in\nstart)\n\t\1!;s!(qmail)$$!\1\&\n\texit 0\n\t;;\nstop)\n\texec killall qmail-send\n\t;;\n*)\n\t${ECHO} "Usage: `basename \$$0` {start|stop}" >&2\n\texit 64\n\t;;\nesac!' $i.sh ; \
+		${PERL} -p -ne 's!QMAIL/!${PREFIX}/!;s!^(exec)!case "\$$1" in\nstart)\n\t\1!;s!(qmail)$$!\1\&\n\texit 0\n\t;;\nstop)\n\texec killall qmail-send\n\t;;\n*)\n\t${ECHO} "Usage: `basename \$$0` {start|stop}" >&2\n\texit 64\n\t;;\nesac!' $i.sh > ${WRKDIR}/${i:T} ; \
+	elif [ -f ${i} ] ; \
+	then \
+		${PERL} -p -ne 's!QMAIL/!${PREFIX}/!;s!^(exec)!case "\$$1" in\nstart)\n\t\1!;s!(qmail)$$!\1\&\n\texit 0\n\t;;\nstop)\n\texec killall qmail-send\n\t;;\n*)\n\t${ECHO} "Usage: `basename \$$0` {start|stop}" >&2\n\texit 64\n\t;;\nesac!' $i > ${WRKDIR}/${i:T} ; \
 	fi
 .endfor
 	@${SED} s!/var/qmail/!${PREFIX}/!g ${FILESDIR}/mailer.conf.sample > \
