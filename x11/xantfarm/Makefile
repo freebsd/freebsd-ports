@@ -12,7 +12,7 @@ CATEGORIES=	x11
 MASTER_SITES=	ftp://ftp.kuis.kyoto-u.ac.jp/Linux/JG/other-sources/
 DISTFILES=	xantfarm23oct91.tar.gz
 
-MAINTAINER=	nacai@iname.com
+MAINTAINER=	nakai@FreeBSD.org
 
 USE_IMAKE=	yes
 MAN1=		xantfarm.1
