@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.47 1997/09/06 22:29:51 wosch Exp $
+# $Id: Makefile,v 1.48 1997/09/13 14:07:08 ache Exp $
 #
 
     SUBDIR += adcomplain
@@ -18,6 +18,7 @@
     SUBDIR += metamail
     SUBDIR += mew
     SUBDIR += mh
+    SUBDIR += mmr
     SUBDIR += movemail
     SUBDIR += mutt
     SUBDIR += mutt.with_pgp
