@@ -343,6 +343,7 @@
     SUBDIR += p5-Xmms
     SUBDIR += p5-libvorbis
     SUBDIR += p5-tagged
+    SUBDIR += paman
     SUBDIR += pd
     SUBDIR += phatbeat
     SUBDIR += pimp3
