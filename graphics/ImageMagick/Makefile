@@ -7,6 +7,7 @@
 
 PORTNAME=	ImageMagick
 PORTVERSION=	5.3.7
+PORTREVISION=	1
 CATEGORIES=	graphics perl5
 MASTER_SITES=	http://imagemagick.sourceforge.net/http/ \
 		ftp://ftp.yggdrasil.com/mirrors/site/ftp.simplesystems.org/pub/%SUBDIR%/ \
@@ -48,7 +49,7 @@ USE_AUTOCONF=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--enable-shared --with-perl=${PERL5} \
-		--without-gslib --without-hdf
+		--without-gslib --without-hdf --without-wmf
 INSTALLS_SHLIB=	yes
 
 MAN1=		ImageMagick.1 Magick++-config.1 Magick-config.1 \
@@ -94,7 +95,6 @@ RUN_DEPENDS+=	gs:${PORTSDIR}/print/ghostscript-gnu-nox11
 CONFIGURE_ARGS+=	--without-x --without-wmf
 PLIST_SUB+=	X11='@comment '
 .else
-LIB_DEPENDS+=	wmf.1:${PORTSDIR}/graphics/libwmf
 BUILD_DEPENDS+=	gs:${PORTSDIR}/print/ghostscript-gnu
 RUN_DEPENDS+=	gs:${PORTSDIR}/print/ghostscript-gnu
 USE_XLIB=	yes
