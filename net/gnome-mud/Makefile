@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	gnome-mud
-PORTVERSION=	0.10.2
+PORTVERSION=	0.10.4
 CATEGORIES=	net gnome
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	amcl
+MASTER_SITES=	${MASTER_SITE_GNOME}
+MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:R}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK-based MUD client with triggers, aliases, colors, etc
@@ -24,10 +24,12 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+MAKE_ARGS=	INTLTOOL_MERGE="${LOCALBASE}/bin/intltool-merge"
 
-MAN1=	gnome-mud.1
+MAN6=		gnome-mud.6
 
 post-patch:
-	@cd ${WRKSRC}/doc && ${LN} -sf gnome-mud.6 gnome-mud.1
+	@${REINPLACE_CMD} -e \
+		's|prefix)/games|prefix)/bin|g' ${WRKSRC}/src/Makefile.in
 
 .include <bsd.port.mk>
