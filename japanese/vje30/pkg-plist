@@ -1,4 +1,4 @@
-@unexec for f in %%BINSTUFF%%; do rm %%X11BASE%%/bin/$f; done
+@unexec for f in %%BINSTUFF%%; do rm %D/bin/$f; done
 etc/rc.d/vje.sh
 etc/vje30/vje.cfg
 vje30/acc/default.kig
@@ -236,7 +236,7 @@ vje30/bin/vjeacc.jar
 @dirrm vje30/env
 @dirrm vje30/lib
 @dirrm vje30
-@exec for f in %%BINSTUFF%%; do ln -fs %D/vje30/bin/$f %%X11BASE%%/bin/$f; done
+@exec for f in %%BINSTUFF%%; do ln -fs %D/vje30/bin/$f %D/bin/$f; done
 @exec chmod a+w %D/vje30/dic/vjed95m.dic
 @exec chmod a+x %D/etc/rc.d/vje.sh
 @unexec cp -Pp /etc/services /etc/services.bak ; grep -vw '^vjed' /etc/services.bak > /etc/services
