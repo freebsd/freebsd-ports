@@ -1,5 +1,14 @@
---- doc.org	Sun Nov 28 17:21:08 1999
-+++ doc	Sun Nov 28 17:22:36 1999
+--- doc.orig	Fri Aug  7 22:49:48 1998
++++ doc	Thu Apr 15 20:19:47 2004
+@@ -40,7 +40,7 @@
+ 
+ ######## alias to DiG Version 2.0 (if not in path)
+ ##
+-# alias dig '/nfs/u5/hotz/bin.sun3/dig'
++alias dig '/usr/bin/dig'
+ 
+ 
+ ######## Differences in 'tr' program
 @@ -65,7 +65,7 @@
  ## Note: Make *sure* you keep the trailing slash on the directory
  ##  name, otherwise doc won't work right.
