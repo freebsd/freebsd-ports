@@ -23,7 +23,7 @@
 
 PORTNAME=	squid
 PORTVERSION=	2.5.4
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	www
 MASTER_SITES=	\
 		ftp://ftp.squid-cache.org/pub/%SUBDIR%/ \
@@ -76,7 +76,18 @@ PATCHFILES=	squid-2.5.STABLE4-reconfigure_message.patch \
 		squid-2.5.STABLE4-ntlm_auth_popups.patch \
 		squid-2.5.STABLE4-ldap_group-S.patch \
 		squid-2.5.STABLE4-ipcache_purge.patch \
-		squid-2.5.STABLE4-cache_peer_access_ntlm.patch
+		squid-2.5.STABLE4-cache_peer_access_ntlm.patch \
+		squid-2.5.STABLE4-wbinfo_group.patch \
+		squid-2.5.STABLE4-SMB_ntlm_auth.patch \
+		squid-2.5.STABLE4-miss_access_internal.patch \
+		squid-2.5.STABLE4-squidclient_auth.patch \
+		squid-2.5.STABLE4-authfixes.patch \
+		squid-2.5.STABLE4-arp-FreeBSD.patch \
+		squid-2.5.STABLE4-deny_info_reply.patch \
+		squid-2.5.STABLE4-authfixes2.patch \
+		squid-2.5.STABLE4-reply_body_max_size.patch \
+		squid-2.5.STABLE4-digest-abort.patch \
+		squid-2.5.STABLE4-ntlm_auth_user_hash_pointer-leak.patch
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	tmseck@netcologne.de
