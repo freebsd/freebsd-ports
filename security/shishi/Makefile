@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	shishi
-PORTVERSION=	0.0.15
-PORTREVISION=	3
+PORTVERSION=	0.0.16
 CATEGORIES=	security
 MASTER_SITES=	http://josefsson.org/${PORTNAME}/releases/
 
