@@ -90,6 +90,7 @@
     SUBDIR += monitord
     SUBDIR += msyslog
     SUBDIR += muse
+    SUBDIR += ndir
     SUBDIR += no-login
     SUBDIR += npadmin
     SUBDIR += nut
