@@ -5,12 +5,13 @@
 # $FreeBSD$
 
 PORTNAME=	gnu-radius
-PORTVERSION=	0.96.4
+PORTVERSION=	1.0
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	radius
+DISTNAME=       radius-1.0
 
-MAINTAINER=	lance@evitel.net
+MAINTAINER=	lance@merlin.net.ua
 COMMENT=	GNU RADIUS server
 
 #MAKEFILE=	Makefile
@@ -18,6 +19,7 @@ COMMENT=	GNU RADIUS server
 USE_SUBMAKE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	# empty
 
 MAN1=		radgrep.1 radlast.1 raduse.1 radwho.1
 MAN8=		builddbm.8 radctl.8 radiusd.8 radping.8 radzap.8
