@@ -2,13 +2,13 @@ bin/cactid
 @unexec if cmp -s %D/etc/cactid.conf %D/%%EXAMPLESDIR%%/cactid.conf; then rm -f %D/etc/cactid.conf; fi
 %%EXAMPLESDIR%%/cactid.conf
 @exec [ -f %D/etc/cactid.conf ] || cp %D/%%EXAMPLESDIR%%/httpd-std.conf %D/etc/cactid.conf
-include/cactid.h
-include/common.h
-include/locks.h
-include/nft_popen.h
-include/php.h
-include/poller.h
-include/snmp.h
-include/sql.h
-include/util.h
+include/cactid/cactid.h
+include/cactid/common.h
+include/cactid/locks.h
+include/cactid/nft_popen.h
+include/cactid/php.h
+include/cactid/poller.h
+include/cactid/snmp.h
+include/cactid/sql.h
+include/cactid/util.h
 @dirrm %%EXAMPLESDIR%%
