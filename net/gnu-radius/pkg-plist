@@ -1,3 +1,4 @@
+@unexec %D/etc/rc.d/radiusd.sh forcestop 2>/dev/null || true
 bin/builddbm
 bin/radgrep
 bin/radlast
@@ -5,6 +6,9 @@ bin/radping
 bin/radtest
 bin/radwho
 bin/radzap
+sbin/radauth
+sbin/radctl
+sbin/radiusd
 etc/raddb/access.deny
 etc/raddb/client.conf
 etc/raddb/clients
@@ -14,6 +18,7 @@ etc/raddb/dict/ascend.vs
 etc/raddb/dict/cisco
 etc/raddb/dict/compat
 etc/raddb/dict/livingston
+etc/raddb/dict/microsoft
 etc/raddb/dict/standard
 etc/raddb/dict/tunnel
 etc/raddb/dict/usr
@@ -21,36 +26,52 @@ etc/raddb/dict/voip
 etc/raddb/dictionary
 etc/raddb/hints
 etc/raddb/huntgroups
+etc/raddb/nas.rc
 etc/raddb/naslist
 etc/raddb/nastypes
-etc/raddb/nas.rc
 etc/raddb/realms
 etc/raddb/sqlserver
 etc/raddb/users
-etc/rc.d/gnu-radius.sh
-@unexec install-info --delete %D/info/radius.info %D/info/dir
-info/radius.info
-info/radius.info-1
-info/radius.info-2
-info/radius.info-3
-info/radius.info-4
-info/radius.info-5
-info/radius.info-6
-info/radius.info-7
-@exec install-info %D/info/radius.info %D/info/dir
-sbin/radauth
-sbin/radctl
-sbin/radiusd
+etc/rc.d/radiusd.sh
+@dirrm etc/raddb/dict
+@dirrm etc/raddb
+include/radius/argcv.h
+include/radius/argp.h
+include/radius/dictionary.h
+include/radius/envar.h
+include/radius/getopt.h
+include/radius/list.h
+include/radius/md4.h
+include/radius/md5.h
+include/radius/mem.h
+include/radius/obstack.h
+include/radius/radargp.h
+include/radius/raddbm.h
+include/radius/radius.h
+include/radius/radpaths.h
+include/radius/radscm.h
+include/radius/radutmp.h
+include/radius/sha1.h
+include/radius/symtab.h
+include/radius/types.h
+@dirrm include/radius
+lib/libgnuradius.a
+lib/libgnuradius.la
+lib/libgnuradius.so
+lib/libgnuradius.so.0
+share/locale/ca/LC_MESSAGES/radius.mo
 share/locale/es/LC_MESSAGES/radius.mo
 share/locale/pl/LC_MESSAGES/radius.mo
 share/locale/ru/LC_MESSAGES/radius.mo
 %%GUILE%%share/radius/guile-procedures.txt
-share/radius/1.2/scheme/boot.scm
-share/radius/1.2/scheme/ttl.scm
-share/radius/1.2/rewrite/checknas.rw
-share/radius/1.2/rewrite/log-hook.rw
-@dirrm etc/raddb/dict
-@dirrm etc/raddb
+share/radius/1.2.95/rewrite/checknas.rw
+share/radius/1.2.95/rewrite/log-hook.rw
+share/radius/1.2.95/rewrite/nas-ip.rw
+@dirrm share/radius/1.2.95/scheme
+@dirrm share/radius/1.2.95/rewrite
+@dirrm share/radius/1.2.95/modules
+@dirrm share/radius/1.2.95
+@dirrm share/radius
 @unexec rm -f /var/run/radiusd.pid
 @unexec rm -rf /var/log/radius
 @unexec echo "Leaving /var/run/radutmp, /var/log/radwtmp and /var/log/radstat alone."
