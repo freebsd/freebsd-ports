@@ -4036,6 +4036,7 @@ mars		ports/cad/mars
 mars_nwe	ports/net/mars_nwe
 mastergear	ports/emulators/mastergear
 match		ports/astro/match
+matchbox	ports/x11-wm/matchbox
 mathopd		ports/www/mathopd
 matrix		ports/math/matrix
 matrix-kmod	ports/misc/matrix-kmod
