@@ -21,7 +21,7 @@ WRKSRC=         ${WRKDIR}/${DISTNAME}/opt/drweb/clients/sources/drwebdc
 INST_PREFIX=	${PREFIX}/${PORTNAME}
 DOC_DIR=	${PREFIX}/share/doc/drweb-sendmail
 
-.if !exists( /usr/include/libmilter/mfapi.h ) || !exists( ${LOCALBASE}/include/libmilter/mfapi.h )
+.if !exists( /usr/include/libmilter/mfapi.h ) && !exists( ${LOCALBASE}/include/libmilter/mfapi.h )
 IGNORE=	"requires libmilter installed. Upgrade your FreeBSD system or sendmail package/port"
 .endif
 
