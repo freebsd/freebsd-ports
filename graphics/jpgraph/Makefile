@@ -18,7 +18,7 @@ NO_BUILD=	yes
 
 .include <bsd.port.pre.mk>
 
-.if !exists(${LOCALBASE}/bin/php) && !exists(${LOCALBASE}/libexec/apache/libphp4.so)
+.if !exists(${LOCALBASE}/bin/php) && !exists(${LOCALBASE}/libexec/apache/libphp4.so) && !exists(${LOCALBASE}/libexec/apache2/libphp4.so)
 BROKEN=	"need PHP 4.04 or above"
 .endif
 
