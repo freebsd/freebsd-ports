@@ -16,7 +16,7 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	knu@FreeBSD.org
 
 BUILD_DEPENDS=	gimptool:${.CURDIR}/../gimp1
-LIB_DEPENDS=	gimp.1:${.CURDIR}/../gimp1
+LIB_DEPENDS=	gimp.2:${.CURDIR}/../gimp1
 RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/gtk.so:${PORTSDIR}/x11-toolkits/ruby-gtk
 
 USE_RUBY=	yes
