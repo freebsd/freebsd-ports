@@ -47,6 +47,7 @@
     SUBDIR += pwm
     SUBDIR += qlwm
     SUBDIR += qvwm
+    SUBDIR += ratmenu
     SUBDIR += ratpoison
     SUBDIR += sapphire
     SUBDIR += sapphire-themes

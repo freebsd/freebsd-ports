@@ -1,0 +1,18 @@
+--- Makefile.orig	Wed Sep 26 14:36:26 2001
++++ Makefile	Fri Oct  5 13:16:05 2001
+@@ -5,12 +5,9 @@
+ 
+ PROG   = ratmenu
+ 
+-PREFIX=/usr/local
+-MANDIR=$(PREFIX)/man
+-
+-CC     = gcc
+-LIBS   = -L/usr/X11R6/lib -lX11
+-CFLAGS = -Os -Wall -ansi -pedantic
++MANDIR = $(PREFIX)/man
++CFLAGS += -I$(X11BASE)/include
++LIBS = -L$(X11BASE)/lib -lX11
+ 
+ $(PROG): $(PROG).c
+ 	$(CC) $(CFLAGS) $< $(LIBS) -o $@
