@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	portupgrade
-PORTVERSION=	20010607b
+PORTVERSION=	20010611
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		http://www.iDaemons.org/distfiles/
@@ -16,6 +16,7 @@ DISTNAME=	pkgtools-${PORTVERSION}
 MAINTAINER=	knu@FreeBSD.org
 
 RUN_DEPENDS=	${RUBY_SITELIBDIR}/optparse.rb:${PORTSDIR}/devel/ruby-optparse \
+		${RUBY_SITEARCHLIBDIR}/fnmatch.so:${PORTSDIR}/devel/ruby-fnmatch \
 		${LOCALBASE}/sbin/pkg_tarup:${PORTSDIR}/misc/pkg_tarup
 
 USE_RUBY=	yes
