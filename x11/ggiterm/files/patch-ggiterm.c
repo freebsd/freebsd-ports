@@ -1,21 +1,20 @@
-diff -ruN ../ggiterm-0.5.1.bak/ggiterm.c ./ggiterm.c
---- ../ggiterm-0.5.1.bak/ggiterm.c	Mon Oct 20 18:04:02 2003
-+++ ./ggiterm.c	Mon Oct 20 18:05:09 2003
-@@ -18,13 +18,10 @@
- #include <signal.h>
+--- ggiterm.c.orig	Fri Oct 22 11:32:34 2004
++++ ggiterm.c	Sun Dec  5 23:39:35 2004
+@@ -38,6 +38,8 @@
  
- /* for forkpty */
--#ifdef HAVE_FORKPTY
--/* forkpty is in libc */
--#include <util.h>
--#else
--/* forkpty is in libutil */
--#include <pty.h>
--#endif /* HAVE_FORKPTY */
-+#include <libutil.h>
-+
-+/* for struct winsize */
-+#include <termios.h>
+ /* for openpty() */
+ #include <sys/ioctl.h> /* some systems (BSD) need it even with OPENPTY_HEADER */
++/* for pid_t, strangely not included by OPENPTY_HEADER */
++#include <sys/types.h>
+ #ifdef OPENPTY_HEADER
+ # include OPENPTY_HEADER
+ #else
+@@ -52,8 +54,6 @@
+ # include <utmp.h>
+ #endif
  
- /* for strcmp */
- #include <string.h>
+-/* for pid_t, strangely not included by OPENPTY_HEADER */
+-#include <sys/types.h>
+ /* for execve, read, write */
+ #include <unistd.h>
+ 
