@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xlockmore
-PORTVERSION= 	4.16.1
+PORTVERSION= 	4.17
 CATEGORIES=	x11
 MASTER_SITES=	ftp://ftp.tux.org/pub/tux/bagleyd/xlockmore/ \
 		${MASTER_SITE_XCONTRIB}
@@ -17,7 +17,7 @@ MAINTAINER=	tg@FreeBSD.org
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS= --without-gl --without-motif --without-sx \
 		--without-editres --without-dtsaver --without-rplay \
-		--without-nas --without-gtk #--enable-customization
+		--without-nas --without-gtk --without-esound
 .if defined(MAKE_KERBEROS4)
 CONFIGURE_ARGS+= --enable-kerberos4
 .endif
@@ -40,6 +40,14 @@ CONFIGURE_ARGS+=	--with-mesagl
 USE_MESA=	yes
 .else
 CONFIGURE_ARGS+=	--without-mesagl
+.endif
+
+XFREE86VERSION!= /usr/bin/awk '/\#define XFree86Version/ {print $$3}' \
+				${X11BASE}/lib/X11/config/xfree86.cf
+
+.if ${XFREE86VERSION} >= 4000
+post-configure:
+	${PERL} -pi -e 's/-lXdpms//g' ${WRKSRC}/modes/Makefile
 .endif
 
 .include <bsd.port.post.mk>
