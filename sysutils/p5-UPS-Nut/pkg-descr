@@ -1,0 +1,2 @@
+Module UPS::Nut implements an object oriented interface to the Network
+UPS Tools upsd.  
