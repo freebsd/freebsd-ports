@@ -3,7 +3,7 @@
 # Date created:        15 Jun 1998
 # Whom:                Kentaro Inagaki <inagaki@tg.rim.or.jp>
 #
-# $Id: Makefile,v 1.7 1999/06/16 12:40:59 taoka Exp $
+# $Id: Makefile,v 1.8 1999/06/16 17:05:11 taoka Exp $
 #
 
 DISTNAME=	xdvik-22.05b
@@ -11,11 +11,11 @@ PKGNAME=	ja-vfxdvik-22.05b
 CATEGORIES=	japanese print
 MASTER_SITES=	ftp://ftp.iij.ad.jp/pub/TeX/CTAN/dviware/xdvik/ \
 		ftp://ftp.ipc.chiba-u.ac.jp/pub/pub.yamaga/xdvik-22/ \
-		ftp://ftp.ascii.co.jp/pub/TeX/ascii-ptex/ptex218/web2c/ \
+		ftp://ftp.ascii.co.jp/pub/TeX/ascii-ptex/ptex218/ \
 		ftp://ftp.tex.ac.uk/tex-archive/dviware/xdvik/ \
 		${MASTER_SITE_LOCAL}
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ptex/plib-1.4-euc.tar.gz \
-	xdvik-22.02-j1.02.patch.gz
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} plib-1.4-euc.tar.gz \
+		xdvik-22.02-j1.02.patch.gz
 
 #PATCH_SITES=	ftp://ftp.ipc.chiba-u.ac.jp/pub/pub.yamaga/xdvik-22/ \
 #		${MASTER_SITE_LOCAL}
@@ -26,6 +26,7 @@ MAINTAINER=	inagaki@tg.rim.or.jp
 
 LIB_DEPENDS=	VFlib2.24:${PORTSDIR}/japanese/vflib
 
+DIST_SUBDIR=	ptex
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 USE_GMAKE=YES
@@ -113,11 +114,11 @@ pre-fetch:
 	${ECHO} "************************************************************")
 
 post-extract:
-	@${TAR} -C ${WRKDIR}/ -zxf ${DISTDIR}/ptex/plib-1.4-euc.tar.gz \
+	@${TAR} -C ${WRKDIR}/ -zxf ${DISTDIR}/${DIST_SUBDIR}/plib-1.4-euc.tar.gz \
 		texmf/fonts/tfm/ptex
 
 pre-patch:
-	@${GZCAT} ${DISTDIR}/xdvik-22.02-j1.02.patch.gz | ${PATCH} ${PATCH_ARGS} -d ${WRKSRC} 2> /dev/null || exit 0
+	@${GZCAT} ${DISTDIR}/${DIST_SUBDIR}/xdvik-22.02-j1.02.patch.gz | ${PATCH} ${PATCH_ARGS} -d ${WRKSRC} 2> /dev/null || exit 0
 
 post-patch:
 	@${CAT} ${FILESDIR}/zeit.c.diff | ${PATCH} ${PATCH_ARGS} -d ${WRKSRC}
