@@ -13,5 +13,7 @@ L10NHELP=	helpcontent_${LANG_EXT}_unix.tgz
 LANG_CONFIGURE_ARG=	FREN
 MASTERDIR=	${.CURDIR}/../../editors/openoffice-1.0
 
+BROKEN=		"Unfetchable"
+
 NO_LATEST_LINK=	yes
 .include "${MASTERDIR}/Makefile"

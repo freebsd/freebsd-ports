@@ -15,5 +15,7 @@ RUN_DEPENDS+=	${X11BASE}/lib/X11/fonts/TrueType/kochi-mincho-subst.ttf:${PORTSDI
 
 L10NHELP=       helpcontent_${LANG_EXT}_unix.tgz
 
+BROKEN=		"Unfetchable"
+
 NO_LATEST_LINK=	yes
 .include "${MASTERDIR}/Makefile"
