@@ -7,7 +7,7 @@
 
 PORTNAME=	doc++
 PORTVERSION=	3.4.10
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	docpp
@@ -21,7 +21,7 @@ RUN_DEPENDS=	tex:${PORTSDIR}/print/teTeX \
 .if defined(WITH_GHOSTSCRIPT_AFPL) && ${WITH_GHOSTSCRIPT_AFPL} == yes
 RUN_DEPENDS+=	gs:${PORTSDIR}/print/ghostscript-afpl
 .else
-RUN_DEPENDS+=	gs:${PORTSDIR}/print/ghostscript-afpl
+RUN_DEPENDS+=	gs:${PORTSDIR}/print/ghostscript-gnu
 .endif
 
 GNU_CONFIGURE=	yes
