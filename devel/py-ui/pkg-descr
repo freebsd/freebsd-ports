@@ -1,0 +1,16 @@
+PyUI is a user interface library written entirely in the high-level language
+python. It has a modular implementation that allows the drawing and event
+input to be performed by pluggable "renderers". This makes PyUI very portable
+and scalable. It can run in environments from hardware accelerated 3D surfaces
+to regular desktop windows. PyUI was originally targeted as a User Interface
+for games, but it has evolved into a more general UI toolkit with
+applicability outside of games.
+
+The goal of pyui is that is be very simple to use and that the implementation
+be kept as simple as possible. Some lessons learned from Extreme Programming
+are being applied to the development process. The current state of PyUI is no
+longer exactly simple as it evolves towards being a fully features GUI
+toolkit, but the development methodology has been successful in keeping the
+code stable and usable throughout its life so far.
+
+WWW: http://pyui.sourceforge.net/
