@@ -5633,6 +5633,7 @@ pam_tacplus	src/lib/libpam/modules/pam_tacplus
 pam_unix	src/lib/libpam/modules/pam_unix
 paml		ports/biology/paml
 pan		ports/news/pan
+pan2		ports/news/pan2
 pancho		ports/net/pancho
 panda		ports/print/panda
 panel--		ports/x11-toolkits/panel--
