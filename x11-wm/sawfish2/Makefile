@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	sawfish2
-PORTVERSION=	2002.05.24
+PORTVERSION=	2002.06.11
 CATEGORIES=	x11-wm
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	pre-gnome2/releases/gnome-2.0-desktop-20020607
+MASTER_SITE_SUBDIR=	pre-gnome2/releases/gnome-2.0-desktop-rc1
 DISTNAME=	sawfish-${PORTVERSION:S/./-/g}
 DIST_SUBDIR=	gnome2
 
@@ -25,7 +25,6 @@ PLIST_SUB=	GNUHOST=${GNUHOST} VERSION=2.0.pre1
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_IMLIB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-readline \
 		--localstatedir=${PREFIX}/share \

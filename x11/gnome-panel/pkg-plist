@@ -10,8 +10,6 @@ etc/gconf/gconf.xml.defaults/schemas/apps/clock_applet/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/clock_applet/prefs/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/fish_applet/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/fish_applet/prefs/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/mailcheck_applet/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/mailcheck_applet/prefs/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/pager_applet/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/pager_applet/prefs/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/panel/%gconf.xml
@@ -94,33 +92,6 @@ share/gnome/help/mailcheck/C/figures/mailcheck-properties-mailcheck.png
 share/gnome/help/mailcheck/C/figures/mailcheck_applet.png
 share/gnome/help/mailcheck/C/legal.xml
 share/gnome/help/mailcheck/C/mailcheck.xml
-share/gnome/help/panel/C/figures/controlcenter_icon.png
-share/gnome/help/panel/C/figures/drawerprop_dialog.png
-share/gnome/help/panel/C/figures/footprint_icon.png
-share/gnome/help/panel/C/figures/four_hide_button.png
-share/gnome/help/panel/C/figures/gnome_panel.png
-share/gnome/help/panel/C/figures/gnometerminal_icon.png
-share/gnome/help/panel/C/figures/help_icon.png
-share/gnome/help/panel/C/figures/launcherprop1_dialog.png
-share/gnome/help/panel/C/figures/launcherprop2_dialog.png
-share/gnome/help/panel/C/figures/lockscreen_icon.png
-share/gnome/help/panel/C/figures/logout_icon.png
-share/gnome/help/panel/C/figures/menu_panel.png
-share/gnome/help/panel/C/figures/netscape_icon.png
-share/gnome/help/panel/C/figures/open_drawer.png
-share/gnome/help/panel/C/figures/panel_object_popup_menu.png
-share/gnome/help/panel/C/figures/panelprop_dialog.png
-share/gnome/help/panel/C/figures/runprogram_dialog.png
-share/gnome/help/panel/C/figures/runprogram_icon.png
-share/gnome/help/panel/C/figures/sample_applet.png
-share/gnome/help/panel/C/figures/statusdock2_button.png
-share/gnome/help/panel/C/figures/statusdock_button.png
-share/gnome/help/panel/C/figures/swallapp_dialog.png
-share/gnome/help/panel/C/figures/swallow_applet.png
-share/gnome/help/panel/C/figures/tasklist_applet.png
-share/gnome/help/panel/C/figures/typical_menu.png
-share/gnome/help/panel/C/legal.xml
-share/gnome/help/panel/C/panel.xml
 share/gnome/help/window-list/C/figures/window_list_applet.png
 share/gnome/help/window-list/C/figures/window_list_group.png
 share/gnome/help/window-list/C/legal.xml
@@ -132,7 +103,6 @@ share/gnome/idl/gnome-panel-2.0/GNOME_Panel.idl
 share/gnome/omf/gnome-panel/clock-C.omf
 share/gnome/omf/gnome-panel/fish-applet-2-C.omf
 share/gnome/omf/gnome-panel/mailcheck-C.omf
-share/gnome/omf/gnome-panel/panel-C.omf
 share/gnome/omf/gnome-panel/window-list-C.omf
 share/gnome/omf/gnome-panel/workspace-switcher-C.omf
 share/gnome/panel/gnome-panel-preferences.glade
@@ -203,9 +173,6 @@ share/locale/zh_TW/LC_MESSAGES/gnome-panel-2.0.mo
 @dirrm share/gnome/help/window-list/C/figures
 @dirrm share/gnome/help/window-list/C
 @dirrm share/gnome/help/window-list
-@dirrm share/gnome/help/panel/C/figures
-@dirrm share/gnome/help/panel/C
-@dirrm share/gnome/help/panel
 @dirrm share/gnome/help/mailcheck/C/figures
 @dirrm share/gnome/help/mailcheck/C
 @dirrm share/gnome/help/mailcheck
@@ -215,6 +182,7 @@ share/locale/zh_TW/LC_MESSAGES/gnome-panel-2.0.mo
 @dirrm share/gnome/help/clock/C/figures
 @dirrm share/gnome/help/clock/C
 @dirrm share/gnome/help/clock
+@dirrm share/gnome/gen_util
 @dirrm share/gnome/gnome-panel/glade
 @dirrm share/gnome/gnome-panel
 @dirrm share/gnome/control-center-2.0/capplets
@@ -250,8 +218,6 @@ share/locale/zh_TW/LC_MESSAGES/gnome-panel-2.0.mo
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/panel
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/pager_applet/prefs
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/pager_applet
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/mailcheck_applet/prefs
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/mailcheck_applet
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/clock_applet/prefs
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/clock_applet
 @dirrm etc/gconf/gconf.xml.defaults/apps/panel/global

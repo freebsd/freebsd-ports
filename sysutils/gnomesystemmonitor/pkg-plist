@@ -23,9 +23,10 @@ share/gnome/help/gnome-system-monitor/C/figures/systemMonitor.png
 share/gnome/help/gnome-system-monitor/C/figures/viewMenu.png
 share/gnome/help/gnome-system-monitor/C/gnome-system-monitor.xml
 share/gnome/help/gnome-system-monitor/C/legal.xml
-share/gnome/omf/gnome-core/gnome-system-monitor-C.omf
+share/gnome/omf/gnome-system-monitor/gnome-system-monitor-C.omf
 share/gnome/pixmaps/procman.png
 share/locale/az/LC_MESSAGES/gnome-system-monitor.mo
+share/locale/ca/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/da/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/de/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/es/LC_MESSAGES/gnome-system-monitor.mo

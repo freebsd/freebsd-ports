@@ -27,6 +27,12 @@ share/gnome/applications/gdmsetup.desktop
 share/gnome/capplets/gdmphotosetup.desktop
 share/gnome/gdm/gdmchooser.glade
 share/gnome/gdm/gdmsetup.glade
+share/gnome/gdm/themes/happygnome/GdmGreeterTheme.desktop
+share/gnome/gdm/themes/happygnome/background.svg
+share/gnome/gdm/themes/happygnome/gnome-logo.png
+share/gnome/gdm/themes/happygnome/happygnome.xml
+share/gnome/gdm/themes/happygnome/options.png
+share/gnome/gdm/themes/happygnome/screenshot.png
 share/gnome/gdm/themes/circles/GdmGreeterTheme.desktop
 share/gnome/gdm/themes/circles/background.svg
 share/gnome/gdm/themes/circles/circles.xml
@@ -76,6 +82,7 @@ share/locale/uk/LC_MESSAGES/gdm-2.4.mo
 share/locale/vi/LC_MESSAGES/gdm-2.4.mo
 share/locale/zh_CN/LC_MESSAGES/gdm-2.4.mo
 share/locale/zh_TW/LC_MESSAGES/gdm-2.4.mo
+@dirrm share/gnome/gdm/themes/happygnome
 @dirrm share/gnome/gdm/themes/circles
 @dirrm share/gnome/gdm/themes
 @dirrm share/gnome/gdm

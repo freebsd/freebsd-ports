@@ -1,7 +1,6 @@
 bin/nautilus
 bin/nautilus-adapter
 bin/nautilus-content-loser
-bin/nautilus-hardware-view
 bin/nautilus-music-view
 bin/nautilus-sample-content-view
 bin/nautilus-sidebar-loser
@@ -56,7 +55,6 @@ lib/libnautilus.so.2
 libdata/bonobo/servers/Nautilus_ComponentAdapterFactory_std.server
 libdata/bonobo/servers/Nautilus_Control_throbber.server
 libdata/bonobo/servers/Nautilus_View_content-loser.server
-libdata/bonobo/servers/Nautilus_View_hardware.server
 libdata/bonobo/servers/Nautilus_View_history.server
 libdata/bonobo/servers/Nautilus_View_music.server
 libdata/bonobo/servers/Nautilus_View_notes.server
