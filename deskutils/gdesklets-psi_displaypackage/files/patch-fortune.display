@@ -1,0 +1,11 @@
+--- fortune.display.orig	Fri Nov 21 22:11:34 2003
++++ fortune.display	Fri Nov 21 22:11:43 2003
+@@ -6,7 +6,7 @@
+ 		version="0.2.1"
+ 		description="Themable fortune (needs the Theme,FontSelector,ExternalInterval sensors)"/>
+ 	
+-	<sensor id="fortune" module="ExternalInterval,fortune|fmt -w 35|iconv -t=UTF-8,Fortune refresh,60000"/>
++	<sensor id="fortune" module="ExternalInterval,fortune|fmt -w 35|iconv -t UTF-8,Fortune refresh,60000"/>
+ 	<sensor id="FS" module="FontSelector,1,Sans 8,white"/>
+ 	<sensor id="THbg" module="Theme,Psi-Disp-Themes,backgrounds"/>
+ 	<sensor id="THb" module="Theme,Psi-Disp-Themes,borders"/>
