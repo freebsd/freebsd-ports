@@ -12,7 +12,7 @@ MASTER_SITES=	http://glload.netpedia.net/source/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	vanilla
 
-MAINTAINER=	vanilla@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gl base load monitor
 
 PLIST_FILES=	bin/glload

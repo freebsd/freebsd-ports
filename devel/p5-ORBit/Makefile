@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	../by-authors/id/H/HR/HROGERS
 PKGNAMEPREFIX=	p5-
 DISTNAME=	CORBA-ORBit-${PORTVERSION}
 
-MAINTAINER=	vanilla@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The perl binding for ORBit
 
 BUILD_DEPENDS=	${SITE_PERL}/Error.pm:${PORTSDIR}/lang/p5-Error

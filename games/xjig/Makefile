@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	games
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	vanilla@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Jigsaw puzzle game for X11
 
 USE_XLIB=	yes

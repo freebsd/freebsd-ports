@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	emulators tk84
 MASTER_SITES=	ftp://ftp.mars.org/pub/hfs/
 
-MAINTAINER=	vanilla@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Yet Another HFS Utility
 
 LIB_DEPENDS=	tk84.1:${PORTSDIR}/x11-toolkits/tk84
