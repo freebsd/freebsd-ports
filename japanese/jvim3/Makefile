@@ -1,18 +1,17 @@
 # New ports collection makefile for:    jvim3
-# Version required:     3.0-j1.3d
-# Date created:         97/10/30
+# Version required:     3.0-j1.3i
+# Date created:         98/11/17
 # Whom:                 Satoshi TAOKA <taoka@infonets.hiroshima-u.ac.jp>
 #
-# $Id: Makefile,v 1.4 1998/10/28 09:27:46 asami Exp $
+# $Id: Makefile,v 1.5 1998/10/31 07:06:01 kuriyama Exp $
 #
 
 DISTNAME=	vim
-PKGNAME?=	ja-jvim-3.0.1.3d
+PKGNAME?=	ja-jvim-3.0.1.3i
 CATEGORIES=	japanese editors
 MASTER_SITES=	ftp://dutepp0.et.tudelft.nl/pub/Unix/Editors/ \
-		http://www.freebsd.org/~kuriyama/distfiles/ \
-		http://spock.vector.co.jp/authors/VA003457/vim/vim3/1.3d/
-DISTFILES=	vim-3.0.tar.gz jvim.1.3d.tar.gz
+		http://hp.vector.co.jp/authors/VA003457/vim/vim3/1.3i/
+DISTFILES=	vim-3.0.tar.gz ${JPATCH}
 
 MAINTAINER=	taoka@infonets.hiroshima-u.ac.jp
 
@@ -22,15 +21,13 @@ BUILD_DEPENDS=	${BUILD_INPUT_METHOD}
 NO_LATEST_LINK=	YES	# waiting for jgrep, jfold, jcat
 PATCHDIR=	${.CURDIR}/../jvim3/patches
 FILESDIR=	${.CURDIR}/../jvim3/files
-.if !defined(WNN6)
-## For Wnn6 we use a local PLIST
 PLIST=		${.CURDIR}/../jvim3/pkg/PLIST
-.endif
 EXTRACT_ONLY=	vim-3.0.tar.gz
 MAKEFILE=	makjunix.mak
 MAN1=		jvim3.1
 
-VERSION=	3.0.1.3d
+VERSION=	3.0.1.3i
+JPATCH=		jvim.1.3i.tar.gz
 PLIST_SUB=	VERSION=${VERSION}
 PORT_DOCDIR=	${PREFIX}/share/doc/ja-jvim-${VERSION}
 # -DUSE_X11 is the cause of a problem treating Japanese
@@ -92,7 +89,7 @@ FEPOPT+=	-DFEPCTRL
 .endif
 
 post-extract:
-	${EXTRACT_CMD} -C ${WRKSRC} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/jvim.1.3d.tar.gz
+	${EXTRACT_CMD} -C ${WRKSRC} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/${JPATCH}
 
 pre-patch:
 	cd ${WRKSRC}; ${PATCH} ${PATCH_DIST_ARGS} < ${WRKSRC}/jvim.diff
@@ -108,11 +105,12 @@ do-install:
 	if [ -e ${PREFIX}/etc/jvim3rc ]; then \
 		${MV} ${PREFIX}/etc/jvim3rc ${PREFIX}/etc/jvim3rc.bak; \
 	fi
-	${ECHO} "set fepctrl" > ${PREFIX}/etc/jvim3rc
+	${INSTALL_PROGRAM} ${WRKSRC}/src/grep/grep ${PREFIX}/bin/jgrep
+	${ECHO} "set fepctrl onewredraw" > ${PREFIX}/etc/jvim3rc
 .if !defined(NOPORTDOCS)
 .if defined(PORT_DOCDIR)
 	${MKDIR} ${PORT_DOCDIR}
-	for file in differen.doc readme.doc uganda.jp \
+	for file in fj.txt differen.doc readme.doc uganda.jp \
 			fepctrl.doc tutor/tutor.j; do \
 		${INSTALL_DATA} ${WRKSRC}/doc.j/$$file ${PORT_DOCDIR}; \
 	done
