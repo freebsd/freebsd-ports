@@ -3,7 +3,7 @@
 # Date created:		09-Sep-1997
 # Whom:			Ralf S. Engelschall <rse@engelschall.com>
 #
-# $Id: Makefile,v 1.24 1998/08/25 11:18:06 rse Exp $
+# $Id: Makefile,v 1.25 1998/09/15 21:31:58 asami Exp $
 #
 
 DISTNAME=	wml-1.6.7
@@ -14,6 +14,11 @@ MASTER_SITES=	http://www.engelschall.com/sw/wml/distrib/ \
 		ftp://ftp.hyperreal.org/software/engelschall/wml/
 
 MAINTAINER=	rse@engelschall.com
+
+OSVERSION!=     sysctl -n kern.osreldate
+.if ${OSVERSION} >= 300000
+BROKEN=         perl
+.endif
 
 USE_PERL5=	yes
 HAS_CONFIGURE=	yes
