@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	R
-PORTVERSION=	1.7.0
+PORTVERSION=	1.7.1
 CATEGORIES=	math
 MASTER_SITES=	http://cran.r-project.org/src/base/ \
 		ftp://cran.r-project.org/pub/R/src/base/ \
@@ -26,13 +26,18 @@ MAINTAINER=	vangyzen@stat.duke.edu
 COMMENT=	A language for statistical computing and graphics
 
 LIB_DEPENDS=	tcl84:${PORTSDIR}/lang/tcl84 \
-		tk84:${PORTSDIR}/x11-toolkits/tk84
+		tk84:${PORTSDIR}/x11-toolkits/tk84 \
+		jpeg.9:${PORTSDIR}/graphics/jpeg \
+		png.5:${PORTSDIR}/graphics/png \
+		pcre.0:${PORTSDIR}/devel/pcre \
+		lapack.3:${PORTSDIR}/math/lapack
 
 GNU_CONFIGURE=	yes
 USE_XLIB=	yes
 USE_PERL5=	yes
 CONFIGURE_ENV=	R_PAPERSIZE=${PAPERSIZE} \
 		INSTALL_DATA="${INSTALL} ${COPY} ${_SHROWNGRP} -m 644"
+CONFIGURE_ARGS=       --with-lapack
 
 PAPERSIZE?=	letter
 .if ${PAPERSIZE} != letter && ${PAPERSIZE} != a4
