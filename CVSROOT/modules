@@ -4194,7 +4194,6 @@ libglademm	ports/devel/libglademm
 libglut		ports/graphics/libglut
 libgmp-freebsd	ports/math/libgmp-freebsd
 libgmp4		ports/math/libgmp4
-libgnetwork	ports/net/libgnetwork
 libgnome	ports/x11/libgnome
 libgnomecanvas	ports/graphics/libgnomecanvas
 libgnomecanvasmm	ports/graphics/libgnomecanvasmm
