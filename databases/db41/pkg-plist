@@ -32,6 +32,7 @@ share/doc/db3/api_c/db_open.html
 share/doc/db3/api_c/db_put.html
 share/doc/db3/api_c/db_remove.html
 share/doc/db3/api_c/db_rename.html
+share/doc/db3/api_c/db_set_append_recno.html
 share/doc/db3/api_c/db_set_bt_minkey.html
 share/doc/db3/api_c/db_set_cachesize.html
 share/doc/db3/api_c/db_set_errcall.html
@@ -42,6 +43,7 @@ share/doc/db3/api_c/db_set_h_ffactor.html
 share/doc/db3/api_c/db_set_h_nelem.html
 share/doc/db3/api_c/db_set_lorder.html
 share/doc/db3/api_c/db_set_pagesize.html
+share/doc/db3/api_c/db_set_q_extentsize.html
 share/doc/db3/api_c/db_set_re_delim.html
 share/doc/db3/api_c/db_set_re_len.html
 share/doc/db3/api_c/db_set_re_pad.html
@@ -64,12 +66,16 @@ share/doc/db3/api_c/env_set_data_dir.html
 share/doc/db3/api_c/env_set_errcall.html
 share/doc/db3/api_c/env_set_errpfx.html
 share/doc/db3/api_c/env_set_feedback.html
+share/doc/db3/api_c/env_set_flags.html
 share/doc/db3/api_c/env_set_lg_bsize.html
 share/doc/db3/api_c/env_set_lg_dir.html
 share/doc/db3/api_c/env_set_lg_max.html
 share/doc/db3/api_c/env_set_lk_conflicts.html
 share/doc/db3/api_c/env_set_lk_detect.html
 share/doc/db3/api_c/env_set_lk_max.html
+share/doc/db3/api_c/env_set_lk_max_lockers.html
+share/doc/db3/api_c/env_set_lk_max_locks.html
+share/doc/db3/api_c/env_set_lk_max_objects.html
 share/doc/db3/api_c/env_set_mp_mmapsize.html
 share/doc/db3/api_c/env_set_mutexlocks.html
 share/doc/db3/api_c/env_set_pageyield.html
@@ -161,8 +167,9 @@ share/doc/db3/sleepycat/license.html
 share/doc/db3/sleepycat/contact.html
 share/doc/db3/ref/java/compat.html
 share/doc/db3/ref/java/conf.html
+share/doc/db3/ref/java/faq.html
 share/doc/db3/ref/java/program.html
-share/doc/db3/ref/am/verify.html
+share/doc/db3/ref/am/close.html
 share/doc/db3/ref/am/count.html
 share/doc/db3/ref/am/curclose.html
 share/doc/db3/ref/am/curdel.html
@@ -179,10 +186,12 @@ share/doc/db3/ref/am/opensub.html
 share/doc/db3/ref/am/ops.html
 share/doc/db3/ref/am/partial.html
 share/doc/db3/ref/am/put.html
+share/doc/db3/ref/am/stability.html
 share/doc/db3/ref/am/stat.html
 share/doc/db3/ref/am/sync.html
 share/doc/db3/ref/am/upgrade.html
-share/doc/db3/ref/am/close.html
+share/doc/db3/ref/am/verify.html
+share/doc/db3/ref/upgrade/process.html
 share/doc/db3/ref/upgrade.3.0/xa.html
 share/doc/db3/ref/upgrade.3.0/cxx.html
 share/doc/db3/ref/upgrade.3.0/db.html
@@ -209,18 +218,20 @@ share/doc/db3/ref/upgrade.3.0/memp_stat.html
 share/doc/db3/ref/upgrade.3.0/open.html
 share/doc/db3/ref/upgrade.3.0/rmw.html
 share/doc/db3/ref/upgrade.3.0/stat.html
+share/doc/db3/ref/upgrade.3.0/toc.html
 share/doc/db3/ref/upgrade.3.0/txn_begin.html
 share/doc/db3/ref/upgrade.3.0/txn_commit.html
 share/doc/db3/ref/upgrade.3.0/txn_stat.html
 share/doc/db3/ref/upgrade.3.0/value_set.html
 share/doc/db3/ref/upgrade.3.0/close.html
-share/doc/db3/ref/am_conf/select.html
+share/doc/db3/ref/am_conf/bt_compare.html
 share/doc/db3/ref/am_conf/bt_minkey.html
 share/doc/db3/ref/am_conf/bt_prefix.html
 share/doc/db3/ref/am_conf/bt_recnum.html
 share/doc/db3/ref/am_conf/byteorder.html
 share/doc/db3/ref/am_conf/cachesize.html
 share/doc/db3/ref/am_conf/dup.html
+share/doc/db3/ref/am_conf/extentsize.html
 share/doc/db3/ref/am_conf/h_ffactor.html
 share/doc/db3/ref/am_conf/h_hash.html
 share/doc/db3/ref/am_conf/h_nelem.html
@@ -231,7 +242,7 @@ share/doc/db3/ref/am_conf/pagesize.html
 share/doc/db3/ref/am_conf/re_source.html
 share/doc/db3/ref/am_conf/recno.html
 share/doc/db3/ref/am_conf/renumber.html
-share/doc/db3/ref/am_conf/bt_compare.html
+share/doc/db3/ref/am_conf/select.html
 share/doc/db3/ref/arch/script.html
 share/doc/db3/ref/arch/bigpic.html
 share/doc/db3/ref/arch/progmodel.html
@@ -239,7 +250,7 @@ share/doc/db3/ref/arch/apis.html
 share/doc/db3/ref/arch/utilities.html
 share/doc/db3/ref/arch/bigpic.gif
 share/doc/db3/ref/arch/smallpic.gif
-share/doc/db3/ref/build_unix/ultrix.html
+share/doc/db3/ref/build_unix/aix.html
 share/doc/db3/ref/build_unix/conf.html
 share/doc/db3/ref/build_unix/flags.html
 share/doc/db3/ref/build_unix/freebsd.html
@@ -250,12 +261,13 @@ share/doc/db3/ref/build_unix/irix.html
 share/doc/db3/ref/build_unix/linux.html
 share/doc/db3/ref/build_unix/notes.html
 share/doc/db3/ref/build_unix/osf1.html
+share/doc/db3/ref/build_unix/qnx.html
 share/doc/db3/ref/build_unix/sco.html
 share/doc/db3/ref/build_unix/shlib.html
 share/doc/db3/ref/build_unix/solaris.html
 share/doc/db3/ref/build_unix/sunos.html
 share/doc/db3/ref/build_unix/test.html
-share/doc/db3/ref/build_unix/aix.html
+share/doc/db3/ref/build_unix/ultrix.html
 share/doc/db3/ref/build_vxworks/faq.html
 share/doc/db3/ref/build_vxworks/intro.html
 share/doc/db3/ref/build_vxworks/notes.html
@@ -281,9 +293,13 @@ share/doc/db3/ref/env/open.html
 share/doc/db3/ref/env/region.html
 share/doc/db3/ref/env/remote.html
 share/doc/db3/ref/env/create.html
+share/doc/db3/ref/intro/data.html
+share/doc/db3/ref/intro/dbis.html
+share/doc/db3/ref/intro/dbisnot.html
 share/doc/db3/ref/intro/distrib.html
-share/doc/db3/ref/intro/do.html
+share/doc/db3/ref/intro/need.html
 share/doc/db3/ref/intro/products.html
+share/doc/db3/ref/intro/terrain.html
 share/doc/db3/ref/intro/what.html
 share/doc/db3/ref/intro/where.html
 share/doc/db3/ref/install/file.html
@@ -294,16 +310,18 @@ share/doc/db3/ref/upgrade.2.0/convert.html
 share/doc/db3/ref/upgrade.2.0/disk.html
 share/doc/db3/ref/upgrade.2.0/intro.html
 share/doc/db3/ref/upgrade.2.0/system.html
-share/doc/db3/ref/lock/twopl.html
+share/doc/db3/ref/upgrade.2.0/toc.html
+share/doc/db3/ref/lock/am_conv.html
 share/doc/db3/ref/lock/cam_conv.html
 share/doc/db3/ref/lock/config.html
 share/doc/db3/ref/lock/dead.html
 share/doc/db3/ref/lock/intro.html
+share/doc/db3/ref/lock/max.html
 share/doc/db3/ref/lock/nondb.html
 share/doc/db3/ref/lock/notxn.html
 share/doc/db3/ref/lock/page.html
 share/doc/db3/ref/lock/stdmode.html
-share/doc/db3/ref/lock/am_conv.html
+share/doc/db3/ref/lock/twopl.html
 share/doc/db3/ref/log/config.html
 share/doc/db3/ref/log/intro.html
 share/doc/db3/ref/log/limits.html
@@ -321,7 +339,9 @@ share/doc/db3/ref/program/errorret.html
 share/doc/db3/ref/program/extending.html
 share/doc/db3/ref/program/mt.html
 share/doc/db3/ref/program/namespace.html
+share/doc/db3/ref/program/recimp.html
 share/doc/db3/ref/program/runtime.html
+share/doc/db3/ref/program/scope.html
 share/doc/db3/ref/program/version.html
 share/doc/db3/ref/program/appsignals.html
 share/doc/db3/ref/refs/bdb_usenix.ps
@@ -345,31 +365,39 @@ share/doc/db3/ref/simple_tut/keydata.html
 share/doc/db3/ref/simple_tut/open.html
 share/doc/db3/ref/simple_tut/put.html
 share/doc/db3/ref/simple_tut/close.html
+share/doc/db3/ref/tcl/faq.html
 share/doc/db3/ref/tcl/intro.html
 share/doc/db3/ref/tcl/error.html
 share/doc/db3/ref/tcl/program.html
 share/doc/db3/ref/tcl/using.html
+share/doc/db3/ref/test/faq.html
 share/doc/db3/ref/test/run.html
 share/doc/db3/ref/transapp/writetest.txt
 share/doc/db3/ref/transapp/app.html
 share/doc/db3/ref/transapp/archival.html
 share/doc/db3/ref/transapp/checkpoint.html
+share/doc/db3/ref/transapp/cursor.html
+share/doc/db3/ref/transapp/data_open.html
 share/doc/db3/ref/transapp/deadlock.html
+share/doc/db3/ref/transapp/env_open.html
 share/doc/db3/ref/transapp/filesys.html
+share/doc/db3/ref/transapp/inc.html
 share/doc/db3/ref/transapp/intro.html
-share/doc/db3/ref/transapp/recimp.html
+share/doc/db3/ref/transapp/logfile.html
+share/doc/db3/ref/transapp/put.html
+share/doc/db3/ref/transapp/read.html
 share/doc/db3/ref/transapp/reclimit.html
 share/doc/db3/ref/transapp/recovery.html
-share/doc/db3/ref/transapp/routine.html
 share/doc/db3/ref/transapp/term.html
 share/doc/db3/ref/transapp/throughput.html
+share/doc/db3/ref/transapp/transapp.txt
+share/doc/db3/ref/transapp/why.html
 share/doc/db3/ref/transapp/admin.html
 share/doc/db3/ref/txn/config.html
 share/doc/db3/ref/txn/intro.html
 share/doc/db3/ref/txn/limits.html
 share/doc/db3/ref/txn/nested.html
 share/doc/db3/ref/txn/other.html
-share/doc/db3/ref/txn/stability.html
 share/doc/db3/ref/xa/config.html
 share/doc/db3/ref/xa/faq.html
 share/doc/db3/ref/xa/intro.html
@@ -389,7 +417,20 @@ share/doc/db3/ref/upgrade.3.1/set_tx_recover.html
 share/doc/db3/ref/upgrade.3.1/sysmem.html
 share/doc/db3/ref/upgrade.3.1/tcl.html
 share/doc/db3/ref/upgrade.3.1/tmp.html
+share/doc/db3/ref/upgrade.3.1/toc.html
 share/doc/db3/ref/upgrade.3.1/btstat.html
+share/doc/db3/ref/upgrade.3.2/callback.html
+share/doc/db3/ref/upgrade.3.2/db_dump.html
+share/doc/db3/ref/upgrade.3.2/disk.html
+share/doc/db3/ref/upgrade.3.2/handle.html
+share/doc/db3/ref/upgrade.3.2/incomplete.html
+share/doc/db3/ref/upgrade.3.2/intro.html
+share/doc/db3/ref/upgrade.3.2/mutexlock.html
+share/doc/db3/ref/upgrade.3.2/notfound.html
+share/doc/db3/ref/upgrade.3.2/renumber.html
+share/doc/db3/ref/upgrade.3.2/set_flags.html
+share/doc/db3/ref/upgrade.3.2/toc.html
+share/doc/db3/ref/upgrade.3.2/tx_recover.html
 share/doc/db3/ref/pindex.src
 share/doc/db3/ref/toc.html
 share/doc/db3/api_cxx/cxx_pindex.html
@@ -406,6 +447,7 @@ share/doc/db3/api_cxx/db_open.html
 share/doc/db3/api_cxx/db_put.html
 share/doc/db3/api_cxx/db_remove.html
 share/doc/db3/api_cxx/db_rename.html
+share/doc/db3/api_cxx/db_set_append_recno.html
 share/doc/db3/api_cxx/db_set_bt_minkey.html
 share/doc/db3/api_cxx/db_set_cachesize.html
 share/doc/db3/api_cxx/db_set_errcall.html
@@ -416,6 +458,7 @@ share/doc/db3/api_cxx/db_set_h_ffactor.html
 share/doc/db3/api_cxx/db_set_h_nelem.html
 share/doc/db3/api_cxx/db_set_lorder.html
 share/doc/db3/api_cxx/db_set_pagesize.html
+share/doc/db3/api_cxx/db_set_q_extentsize.html
 share/doc/db3/api_cxx/db_set_re_delim.html
 share/doc/db3/api_cxx/db_set_re_len.html
 share/doc/db3/api_cxx/db_set_re_pad.html
@@ -438,12 +481,16 @@ share/doc/db3/api_cxx/env_set_data_dir.html
 share/doc/db3/api_cxx/env_set_errcall.html
 share/doc/db3/api_cxx/env_set_errpfx.html
 share/doc/db3/api_cxx/env_set_feedback.html
+share/doc/db3/api_cxx/env_set_flags.html
 share/doc/db3/api_cxx/env_set_lg_bsize.html
 share/doc/db3/api_cxx/env_set_lg_dir.html
 share/doc/db3/api_cxx/env_set_lg_max.html
 share/doc/db3/api_cxx/env_set_lk_conflicts.html
 share/doc/db3/api_cxx/env_set_lk_detect.html
 share/doc/db3/api_cxx/env_set_lk_max.html
+share/doc/db3/api_cxx/env_set_lk_max_lockers.html     
+share/doc/db3/api_cxx/env_set_lk_max_locks.html       
+share/doc/db3/api_cxx/env_set_lk_max_objects.html
 share/doc/db3/api_cxx/env_set_mp_mmapsize.html
 share/doc/db3/api_cxx/env_set_mutexlocks.html
 share/doc/db3/api_cxx/env_set_pageyield.html
@@ -573,13 +620,18 @@ share/doc/db3/api_java/db_open.html
 share/doc/db3/api_java/db_put.html
 share/doc/db3/api_java/db_remove.html
 share/doc/db3/api_java/db_rename.html
+share/doc/db3/api_java/db_set_append_recno.html
+share/doc/db3/api_java/db_set_bt_compare.html
 share/doc/db3/api_java/db_set_bt_minkey.html
+share/doc/db3/api_java/db_set_bt_prefix.html
 share/doc/db3/api_java/db_set_cachesize.html
+share/doc/db3/api_java/db_set_dup_compare.html
 share/doc/db3/api_java/db_set_errcall.html
 share/doc/db3/api_java/db_set_errpfx.html
 share/doc/db3/api_java/db_set_feedback.html
 share/doc/db3/api_java/db_set_flags.html
 share/doc/db3/api_java/db_set_h_ffactor.html
+share/doc/db3/api_java/db_set_h_hash.html
 share/doc/db3/api_java/db_set_h_nelem.html
 share/doc/db3/api_java/db_set_lorder.html
 share/doc/db3/api_java/db_set_pagesize.html
@@ -587,6 +639,7 @@ share/doc/db3/api_java/db_set_re_delim.html
 share/doc/db3/api_java/db_set_re_len.html
 share/doc/db3/api_java/db_set_re_pad.html
 share/doc/db3/api_java/db_set_re_source.html
+share/doc/db3/api_java/db_set_q_extentsize.html
 share/doc/db3/api_java/db_stat.html
 share/doc/db3/api_java/db_sync.html
 share/doc/db3/api_java/db_upgrade.html
@@ -605,12 +658,16 @@ share/doc/db3/api_java/env_set_data_dir.html
 share/doc/db3/api_java/env_set_errcall.html
 share/doc/db3/api_java/env_set_errpfx.html
 share/doc/db3/api_java/env_set_feedback.html
+share/doc/db3/api_java/env_set_flags.html
 share/doc/db3/api_java/env_set_lg_bsize.html
 share/doc/db3/api_java/env_set_lg_dir.html
 share/doc/db3/api_java/env_set_lg_max.html
 share/doc/db3/api_java/env_set_lk_conflicts.html
 share/doc/db3/api_java/env_set_lk_detect.html
 share/doc/db3/api_java/env_set_lk_max.html
+share/doc/db3/api_java/env_set_lk_max_lockers.html
+share/doc/db3/api_java/env_set_lk_max_locks.html
+share/doc/db3/api_java/env_set_lk_max_objects.html
 share/doc/db3/api_java/env_set_mp_mmapsize.html
 share/doc/db3/api_java/env_set_mutexlocks.html
 share/doc/db3/api_java/env_set_pageyield.html
@@ -623,6 +680,7 @@ share/doc/db3/api_java/env_strerror.html
 share/doc/db3/api_java/env_set_tas_spins.html
 share/doc/db3/api_java/env_set_tmp_dir.html
 share/doc/db3/api_java/env_set_tx_max.html
+share/doc/db3/api_java/env_set_tx_recover.html
 share/doc/db3/api_java/env_set_tx_timestamp.html
 share/doc/db3/api_java/env_set_verbose.html
 share/doc/db3/api_java/env_version.html
@@ -685,6 +743,7 @@ share/doc/db3/index.html
 @dirrm share/doc/db3/ref/java
 @dirrm share/doc/db3/ref/am
 @dirrm share/doc/db3/ref/upgrade.3.0
+@dirrm share/doc/db3/ref/upgrade
 @dirrm share/doc/db3/ref/am_conf
 @dirrm share/doc/db3/ref/arch
 @dirrm share/doc/db3/ref/build_unix
@@ -713,6 +772,7 @@ share/doc/db3/index.html
 @dirrm share/doc/db3/ref/txn
 @dirrm share/doc/db3/ref/xa
 @dirrm share/doc/db3/ref/upgrade.3.1
+@dirrm share/doc/db3/ref/upgrade.3.2
 @dirrm share/doc/db3/ref
 @dirrm share/doc/db3/api_cxx
 @dirrm share/doc/db3/utility
