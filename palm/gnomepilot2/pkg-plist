@@ -44,8 +44,6 @@ share/gnome/gnome-pilot/glade/pilot-applet.glade
 share/gnome/idl/gnome-pilot.idl
 share/gnome/mime-info/palm.keys
 share/gnome/mime-info/palm.mime
-share/gnome/oaf/gpilot-applet.oafinfo
-share/gnome/oaf/gpilotd.oafinfo
 share/gnome/pixmaps/gnome-palm-conduit.png
 share/gnome/pixmaps/gnome-palm.png
 share/gnome/pixmaps/sync_broken.png
