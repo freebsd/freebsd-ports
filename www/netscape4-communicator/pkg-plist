@@ -1,4 +1,4 @@
-bin/communicator-4.07
+bin/communicator-4.08
 @exec ln -sf %f %B/communicator-4
 @exec ln -sf communicator-4 %B/netscape
 @unexec rm -f %B/netscape
@@ -178,7 +178,7 @@ lib/netscape/spell/pen4s324.dat
 lib/netscape/spell/netscape.dic
 lib/netscape/vreg
 lib/netscape/registry
-lib/netscape/communicator-4.07.bin
+lib/netscape/communicator-4.08.bin
 lib/netscape/mailcap
 @dirrm lib/netscape/spell
 @dirrm lib/netscape/plugins
