@@ -1,0 +1,25 @@
+
+$FreeBSD$
+
+--- config/Makefile.freebsd.orig
++++ config/Makefile.freebsd
+@@ -1,15 +1,15 @@
+ NAME = $(GLEW_NAME)
+-CC = cc
+-LD = ld
++CC ?= cc
++LD ?= ld
+ ifneq (undefined, $(origin GLEW_MX))
+ CFLAGS.EXTRA = -DGLEW_MX
+ endif
+ LDFLAGS.SO = -shared -soname $(LIB.SONAME)
+-LDFLAGS.EXTRA = -L/usr/X11R6/lib
++LDFLAGS.EXTRA = -L${X11BASE}/lib
+ LDFLAGS.GL = -lXmu -lXi -lGLU -lGL -lXext -lX11
+ LDFLAGS.STATIC = -Wl,-Bstatic
+ LDFLAGS.DYNAMIC = -Wl,-Bdynamic
+-CFLAGS.EXTRA += -I/usr/X11R6/include
++CFLAGS.EXTRA += -I${X11BASE}/include -fPIC
+ NAME = GLEW
+ WARN = -Wall -W
+ POPT = -O2
