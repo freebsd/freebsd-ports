@@ -3,7 +3,7 @@
 # Date created:         1 October 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.16 1995/06/20 07:46:44 asami Exp $
+# $Id: Makefile,v 1.17 1995/11/22 13:18:35 asami Exp $
 #
 
 DISTNAME=	xdvi-20
@@ -15,6 +15,7 @@ EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	jmz@FreeBSD.org
 
+DIST_SUBDIR=	xdvi	# to share distfiles with japanese/xdvi
 USE_IMAKE=	yes
 USE_GMAKE=	yes
 IS_INTERACTIVE=	yes
