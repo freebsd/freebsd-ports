@@ -1,5 +1,7 @@
 usr/bin/fetch
 usr/bin/find2perl
+usr/bin/install-info
+usr/bin/makeinfo
 usr/bin/miniperl
 usr/bin/perl
 usr/bin/perl5

@@ -1,1 +1,3 @@
+usr/bin/install-info
+usr/bin/makeinfo
 usr/lib/libc_r.so.4

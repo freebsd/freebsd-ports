@@ -1,2 +1,4 @@
-usr/lib/libc_r.so.4
 usr/bin/fetch
+usr/bin/install-info
+usr/bin/makeinfo
+usr/lib/libc_r.so.4
