@@ -66,5 +66,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/readme.txt ${PREFIX}/share/doc/wdic-fpw
 .endif
 
-
 .include <bsd.port.mk>
