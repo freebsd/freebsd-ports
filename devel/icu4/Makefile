@@ -12,7 +12,7 @@ MASTER_SITES=	http://oss.software.ibm.com/developerworks/opensource/icu/project/
 EXTRACT_SUFX=   .tgz
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	International Components for Unicode (from IBM)
+COMMENT=	International Components for Unicode (from IBM)(old version)
 
 WRKSRC=		${WRKDIR}/${PORTNAME}/source
 GNU_CONFIGURE=	yes
@@ -22,4 +22,10 @@ CONFIGURE_ARGS+=--disable-shared --enable-static
 CONFIGURE_ENV=	CXXFLAGS="-O3"
 CONFIGURE_ENV+= CFLAGS="-O3"
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "ia64" || ${MACHINE_ARCH} == "sparc64"
+IGNORE=		"does not build on this architecture, use devel/icu2 instead"
+.endif
+
+.include <bsd.port.post.mk>
