@@ -24,6 +24,12 @@ WRKSRC=		${WRKDIR}/encore/src
 
 LIB_VERSION=	0
 
+.ifndef(NOPROFILE)
+PLIST_SUB=	NOPROFILE=''
+.else
+PLIST_SUB=	NOPROFILE='@comment '
+.endif
+
 post-extract:
 	@${CP} ${FILESDIR}/Makefile ${WRKSRC}
 
