@@ -41,8 +41,10 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       </package>
     </affects>
     <description>
-      <p>SSLtelnet contains a format string vulnerability that could
-	allow remote code execution and privilege escalation.</p>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>SSLtelnet contains a format string vulnerability that could
+	  allow remote code execution and privilege escalation.</p>
+      </body>
     </description>
     <references>
       <url>http://www.idefense.com/</url>
