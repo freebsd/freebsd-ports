@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pmacct
-PORTVERSION=	0.7.0
+PORTVERSION=	0.7.1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.ba.cnr.it/~paolo/pmacct/
 
@@ -29,6 +29,10 @@ PLIST_SUB+=	WITH_PGSQL=""
 .else
 CONFIGURE_ARGS+=	--disable-pgsql
 PLIST_SUB+=	WITH_PGSQL="@comment "
+.endif
+
+.if defined(WITH_MMAP)
+CONFIGURE_ARGS+=--enable-mmap
 .endif
 
 GNU_CONFIGURE=	yes
