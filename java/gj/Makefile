@@ -1,0 +1,45 @@
+# New ports collection makefile for:	gj-jdk12
+# Date created:		2003-05-26
+# Whom:			Volker Stolz <stolz@i2.informatik.rwth-aachen.de>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	gj-${JDKSUBDIR}
+PORTVERSION=	0.6m
+CATEGORIES=	java
+MASTER_SITES=	http://www.cis.unisa.edu.au/~pizza/gj/Distribution/
+DISTNAME=	gjdist${GJDIST}
+
+MAINTAINER=	stolz@i2.informatik.rwth-aachen.de
+COMMENT=	Extension of the Java programming language that supports generic types
+
+WRKSRC=		${WRKDIR}/gj
+
+NO_BUILD=	YES
+
+.if defined(GJ_WITH_JDK11)
+GJDIST=		1.1
+USE_JAVA=	1.1
+BINSUFX=	11
+.else
+GJDIST=		1.2
+USE_JAVA=	1.2+
+.endif
+
+JDKSUBDIR=	jdk${GJDIST}
+PLIST_SUB+=	JDKSUBDIR=${JDKSUBDIR}
+
+do-install:
+	${MKDIR} ${PREFIX}/lib/gj/${JDKSUBDIR}
+	${TAR} cf - -C ${WRKSRC}/classes . | ${TAR} xf - -C ${PREFIX}/lib/gj/${JDKSUBDIR}
+	${SED}	-e s/@JDKSUBDIR@/${JDKSUBDIR}/ \
+		-e 's+@PREFIX@+'${PREFIX}'+' \
+		-e 's+@JAVA_HOME@+'${JAVA_HOME}'+' \
+		<${FILESDIR}/gjc.in >${WRKDIR}/gjc
+	${INSTALL_SCRIPT} ${WRKDIR}/gjc ${PREFIX}/bin/gjc${BINSUFX}
+.for f in gjcr gj
+	${LN} -sf ${PREFIX}/bin/gjc${BINSUFX} ${PREFIX}/bin/${f}${BINSUFX}
+.endfor
+
+.include <bsd.port.mk>
