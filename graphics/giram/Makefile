@@ -16,8 +16,6 @@ COMMENT=	Giram is Really A Modeller
 
 RUN_DEPENDS=	povray:${PORTSDIR}/graphics/povray31
 
-BROKEN=		"Fails to patch"
-
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
@@ -39,7 +37,7 @@ PKGNAMESUFFIX=	-gnome
 CONFIGURE_ARGS+=--disable-gnome
 .endif
 
-pre-patch:
+post-patch:
 	@${REINPLACE_CMD} -e \
 		's|-lpthread|${PTHREAD_LIBS:S/"//g}|g ; \
 		 s|DATADIRNAME=lib|DATADIRNAME=share|g ; \
