@@ -25,7 +25,7 @@ MAN1=		advzip.1 advpng.1 advmng.1 advdef.1
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 502126
-BROKEN=		does not compile with gcc 3.4
+USE_GCC=	3.3
 .endif
 
 .include <bsd.port.post.mk>
