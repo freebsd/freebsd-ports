@@ -17,6 +17,9 @@ COMMENT=	An userland smbfs --- SMB to NFS protocols converter
 
 MAN8=		smbmount.8
 
+PLIST_FILES=	sbin/shlight sbin/unshlight
+PORTDOCS=	*
+
 post-extract:
 	@${MKDIR} ${WRKDIR}/unshlight
 	@${CP} ${FILESDIR}/unshlight.c ${WRKDIR}/unshlight
@@ -29,9 +32,9 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/shlight ${PREFIX}/sbin
 	${INSTALL_PROGRAM} ${WRKDIR}/unshlight/unshlight ${PREFIX}/sbin
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/Sharity-Light
-	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/Sharity-Light/README
-	${INSTALL_DATA} ${WRKSRC}/FAQ.txt ${PREFIX}/share/doc/Sharity-Light/FAQ
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}/README
+	${INSTALL_DATA} ${WRKSRC}/FAQ.txt ${DOCSDIR}/FAQ
 .endif
 	${INSTALL_MAN} ${WRKSRC}/smbmount.8 ${PREFIX}/man/man8
 
