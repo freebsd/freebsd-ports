@@ -1,11 +1,9 @@
-bin/alevtd
 bin/dump-mixers
 bin/motv
 bin/ntsc-cc
 bin/propwatch
 bin/record
 bin/rootv
-bin/scantv
 bin/showriff
 bin/streamer
 bin/subtitles
@@ -22,21 +20,28 @@ lib/xawtv/snd-oss.so
 lib/xawtv/write-avi.so
 @dirrm lib/xawtv
 man/es/man1/fbtv.1
+man/es/man1/rootv.1
 man/es/man1/scantv.1
+man/es/man1/streamer.1
+man/es/man1/subtitles.1
+man/es/man1/ttv.1
+man/es/man1/v4lctl.1
+man/es/man1/xawtv-remote.1
 man/es/man1/xawtv.1
-@dirrm man/es/man1
 man/es/man5/xawtvrc.5
+man/es/man8/v4l-conf.8
+man/fr/man1/xawtv.1
+@dirrm man/fr/man1
+@dirrm man/fr
+@dirrm man/es/man8
 @dirrm man/es/man5
+@dirrm man/es/man1
 @dirrm man/es
 @cwd %%X11BASE%%
 lib/X11/app-defaults/MoTV
-lib/X11/fonts/misc/led-iso8859-1.pcf.gz
-lib/X11/fonts/misc/led-iso8859-15.pcf.gz
-lib/X11/fonts/misc/led-iso8859-2.pcf.gz
-lib/X11/fonts/misc/led-koi8-r.pcf.gz
 lib/X11/de/app-defaults/MoTV
 lib/X11/it/app-defaults/MoTV
-@dirrm lib/X11/de/app-defaults
-@dirrm lib/X11/de
 @dirrm lib/X11/it/app-defaults     
 @dirrm lib/X11/it
+@dirrm lib/X11/de/app-defaults
+@dirrm lib/X11/de
