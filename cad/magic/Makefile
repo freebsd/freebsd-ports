@@ -3,7 +3,7 @@
 # Date created:         18 Dec 1994
 # Whom:                 swallace
 #
-# $Id: Makefile,v 1.7 1995/04/24 09:09:52 asami Exp $
+# $Id: Makefile,v 1.8 1995/07/29 08:49:36 asami Exp $
 #
 
 DISTNAME=       magic-6.4.4
@@ -13,14 +13,54 @@ EXTRACT_SUFX=   .tar.Z
 
 USE_GMAKE=	yes
 
-do-install:
-	@(cd ${WRKSRC}; ${MAKE} PREFIX=${PREFIX} ${MAKE_FLAGS} ${MAKEFILE} ${INSTALL_TARGET})
-	@(cd ${PREFIX}; chmod 555 bin/magic bin/ext2dlys bin/ext2sim bin/fsleeper bin/magicusage bin/net2ir bin/extcheck bin/X11Helper)
-	@(cd ${PREFIX}; chmod 444 man/man8/prleak.8 man/man8/prleak.8 man/man1/ext2dlys.1 man/man1/ext2spice.1 man/man1/extcheck.1 man/man1/magic.1 man/man1/magicusage.1 man/man1/grsunprog.1 man/man1/ext2sim.1 man/man1/net2ir.1 man/man1/rsleeper.1 man/man1/sim2spice.1 man/man1/sleeper.1 man/man1/fsleeper.1 man/man5/cmap.5 man/man5/displays.5 man/man5/dlys.5 man/man5/sim.5 man/man5/dstyle.5 man/man5/ext.5 man/man5/glyphs.5 man/man5/magic.5 man/man5/net.5 man/man3/mpack.3 man/man3/dqueue.3 man/man3/extflat.3 man/man3/geometry.3 man/man3/hash.3 man/man3/heap.3 man/man3/libmalloc.3 man/man3/list.3 man/man3/magicutils.3 man/man3/malloc.3 man/man3/path.3 man/man3/runstats.3 man/man3/set.3 man/man3/show.3 man/man3/stack.3 man/man3/string.3 lib/mpack.h lib/libmpack.a)
-	@(cd ${PREFIX}; chmod -R a+rX,go-w lib/magic)
-	@(cd ${PREFIX}; strip bin/magic bin/ext2dlys bin/ext2sim bin/fsleeper bin/magicusage bin/net2ir bin/extcheck bin/X11Helper)
-	@(cd ${PREFIX}; chown bin.bin bin/magic bin/ext2dlys bin/ext2sim bin/fsleeper bin/magicusage bin/net2ir bin/extcheck bin/X11Helper)
-	@(cd ${PREFIX}; chown bin.bin man/man8/prleak.8 man/man8/prleak.8 man/man1/ext2dlys.1 man/man1/ext2spice.1 man/man1/extcheck.1 man/man1/magic.1 man/man1/magicusage.1 man/man1/grsunprog.1 man/man1/ext2sim.1 man/man1/net2ir.1 man/man1/rsleeper.1 man/man1/sim2spice.1 man/man1/sleeper.1 man/man1/fsleeper.1 man/man5/cmap.5 man/man5/displays.5 man/man5/dlys.5 man/man5/sim.5 man/man5/dstyle.5 man/man5/ext.5 man/man5/glyphs.5 man/man5/magic.5 man/man5/net.5 man/man3/mpack.3 man/man3/dqueue.3 man/man3/extflat.3 man/man3/geometry.3 man/man3/hash.3 man/man3/heap.3 man/man3/libmalloc.3 man/man3/list.3 man/man3/magicutils.3 man/man3/malloc.3 man/man3/path.3 man/man3/runstats.3 man/man3/set.3 man/man3/show.3 man/man3/stack.3 man/man3/string.3 lib/mpack.h lib/libmpack.a)
-	@(cd ${PREFIX}; chown -R bin.bin lib/magic)
+BINS=	magic ext2dlys ext2sim fsleeper magicusage net2ir extcheck X11Helper
+MAN1=	ext2dlys.1 ext2spice.1 extcheck.1 magic.1 magicusage.1		\
+	grsunprog.1 ext2sim.1 net2ir.1 rsleeper.1 sim2spice.1 sleeper.1	\
+	fsleeper.1
+MAN3=	mpack.3 dqueue.3 extflat.3 geometry.3 hash.3 heap.3 libmalloc.3	\
+	list.3 magicutils.3 malloc.3 path.3 runstats.3 set.3 show.3	\
+	stack.3 string.3
+MAN5=	cmap.5 displays.5 dlys.5 sim.5 dstyle.5 ext.5 glyphs.5 magic.5 net.5
+MAN8=	prleak.8
+
+post-install:
+.for f in ${BINS}
+	@chmod ${BINMODE} ${PREFIX}/bin/$f
+	@chown ${BINOWN}.${BINGRP} ${PREFIX}/bin/$f
+	@strip ${PREFIX}/bin/$f
+.endfor
+.for f in ${MAN1}
+	@chmod ${MANMODE} ${PREFIX}/man/man1/$f
+	@chown ${MANOWN}.${MANGRP} ${PREFIX}/man/man1/$f
+.if !defined(NOMANCOMPRESS)
+	@gzip -9nf ${PREFIX}/man/man1/$f
+.endif
+.endfor
+.for f in ${MAN3}
+	@chmod ${MANMODE} ${PREFIX}/man/man3/$f
+	@chown ${MANOWN}.${MANGRP} ${PREFIX}/man/man3/$f
+.if !defined(NOMANCOMPRESS)
+	@gzip -9nf ${PREFIX}/man/man3/$f
+.endif
+.endfor
+.for f in ${MAN5}
+	@chmod ${MANMODE} ${PREFIX}/man/man5/$f
+	@chown ${MANOWN}.${MANGRP} ${PREFIX}/man/man5/$f
+.if !defined(NOMANCOMPRESS)
+	@gzip -9nf ${PREFIX}/man/man5/$f
+.endif
+.endfor
+.for f in ${MAN8}
+	@chmod ${MANMODE} ${PREFIX}/man/man8/$f
+	@chown ${MANOWN}.${MANGRP} ${PREFIX}/man/man8/$f
+.if !defined(NOMANCOMPRESS)
+	@gzip -9nf ${PREFIX}/man/man8/$f
+.endif
+.endfor
+	@chmod -R a+rX,go-w ${PREFIX}/lib/magic
+	@chown -R ${SHAREOWN}.${SHAREGRP} ${PREFIX}/lib/magic
+	@chmod ${SHAREMODE} ${PREFIX}/lib/mpack.h ${PREFIX}/lib/libmpack.a
+	@chown ${SHAREOWN}.${SHAREGRP} ${PREFIX}/lib/mpack.h		\
+	  ${PREFIX}/lib/libmpack.a
 
 .include <bsd.port.mk>
