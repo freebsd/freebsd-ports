@@ -1,5 +1,5 @@
---- Makefile.orig	Wed Apr 11 13:54:00 2001
-+++ Makefile	Thu Apr 19 20:32:08 2001
+--- Makefile.orig	Thu Jan 24 18:55:33 2002
++++ Makefile	Mon Apr  8 04:08:24 2002
 @@ -10,7 +10,7 @@
  ##----------------------------------------------------------------------
  
@@ -35,7 +35,7 @@
  
  ##----------------------------------------------------------------------
  ##  BELOW THIS LINE ON YOUR OWN RISK!
-@@ -118,7 +121,7 @@
+@@ -120,7 +123,7 @@
  # 	$(ELC) hilit-LaTeX.el         # Doesn't compile without X
  
  install-lisp:	some
@@ -44,7 +44,7 @@
  	if [ -f $(lispdir)/tex-site.el ]; \
  	then \
  	    echo "Leaving old tex-site.el alone."; \
-@@ -126,17 +129,17 @@
+@@ -128,17 +131,17 @@
  	    sed -e 's#@AUCDIR#$(aucdir)/#' tex-site.el \
  	    > $(lispdir)/tex-site.el ; \
          fi
@@ -65,10 +65,10 @@
  	                                else true; fi ; \
  	    touch $(aucdir)/auto/.nosearch ; \
  	else \
-@@ -196,9 +199,9 @@
+@@ -198,9 +201,9 @@
  	-(cd style; auc add `echo $(STYLESRC) | sed -e s@style/@@g` )
- 	auc commit -m 'Release_$(TAG)'
- 	auc tag release_`echo $(TAG) | sed -e 's/[.]/_/g'`
+ 	cvs commit -m 'Release_$(TAG)'
+ 	cvs tag release_`echo $(TAG) | sed -e 's/[.]/_/g'`
 -	mkdir auctex-$(TAG) 
 -	mkdir auctex-$(TAG)/style
 -	mkdir auctex-$(TAG)/doc 
