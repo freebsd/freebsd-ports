@@ -4,7 +4,7 @@
 # Date created:			  Sun Mar 09, 1997
 # Whom:				  David O'Brien (obrien@FreeBSD.org)
 #
-# $Id: Makefile,v 1.2 1997/01/25 18:08:40 obrien Exp $
+# $Id: Makefile,v 1.1.1.1 1997/03/09 21:34:25 obrien Exp $
 #
 
 DISTNAME=	ucfjohn3
@@ -14,6 +14,8 @@ MASTER_SITES=	http://www.false.com/security/john/
 EXTRACT_SUFX=	.zip
 
 MAINTAINER=     obrien@NUXI.com
+
+RESTRICTED=	"contains crypto (crypt())"
 
 BUILD_DEPENDS=  unzip:${PORTSDIR}/archivers/unzip
 
