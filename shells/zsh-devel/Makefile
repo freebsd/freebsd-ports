@@ -20,12 +20,10 @@ DISTNAME=	${PORTNAME}-${ZSH_VER}-dev-${ZSH_DEV_REV}
 
 MAINTAINER=	shige@FreeBSD.org
 
-FORBIDDEN=	"The main zsh port (ports/shells/zsh) has been upgraded to 4.x.  It is highly advised that you use that port instead of this one"
-
 USE_AUTOCONF=	yes
 
 ZSH_VER=	4.1.0
-ZSH_DEV_REV=	4
+ZSH_DEV_REV=	5
 ZSHFUNC_SUBDIR=	share/zsh/${ZSH_VER}-dev-${ZSH_DEV_REV}/functions
 NO_LATEST_LINK=	yes
 
