@@ -485,3 +485,10 @@ x11-toolkits/ruby-fltk||2003-08-07|port was marked broken for 3 months with no f
 x11-wm/scwm||2003-08-07|port was marked broken for 3 months with no fix submitted
 chinese/cce||2003-08-07|port contains a security vulnerability and is no longer developed
 net/ruby-romp||2003-08-08|discontinued
+audio/ruby-qt2sound||2003-08-09|obsolete
+graphics/ruby-qt2gl||2003-08-09|obsolete
+textproc/ruby-qt2xml||2003-08-09|obsolete
+x11-toolkits/ruby-qt2||2003-08-09|obsolete
+x11-toolkits/ruby-qt2canvas||2003-08-09|obsolete
+x11-toolkits/ruby-qt2iconview||2003-08-09|obsolete
+x11-toolkits/ruby-qt2table||2003-08-09|obsolete

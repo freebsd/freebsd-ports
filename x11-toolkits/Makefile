@@ -164,10 +164,6 @@
     SUBDIR += ruby-gtk
     SUBDIR += ruby-gtk2
     SUBDIR += ruby-pango
-    SUBDIR += ruby-qt2
-    SUBDIR += ruby-qt2canvas
-    SUBDIR += ruby-qt2iconview
-    SUBDIR += ruby-qt2table
     SUBDIR += ruby-tk
     SUBDIR += scintilla
     SUBDIR += sdl_gui
