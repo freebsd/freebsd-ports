@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	ptkei
-PORTVERSION=	1.14.0
-PORTEPOCH=	1
+PORTVERSION=	1.16.0
 CATEGORIES=	games
 MASTER_SITES=	http://www.lfmm.org/ptkei/
 
-MAINTAINER=	darius@dons.net.au
+MAINTAINER=	pgfb@imp.ch
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter \
 		${PYTHON_SITELIBDIR}/Pmw/__init__.py:${PORTSDIR}/x11-toolkits/pmw

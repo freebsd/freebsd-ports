@@ -4,21 +4,23 @@ share/ptkei/TkOption
 share/ptkei/TkOption.w32
 share/ptkei/TkOption.x11
 share/ptkei/connect.emp
+share/ptkei/empire.py
+share/ptkei/empire.pyc
+share/ptkei/first.emp
+share/ptkei/start.emp
+share/ptkei/doc/BUGS
 share/ptkei/doc/CREDITS
 share/ptkei/doc/README.html
 share/ptkei/doc/TIPS.html
 share/ptkei/doc/TODO
 share/ptkei/doc/commands.html
 share/ptkei/doc/gui.html
-share/ptkei/doc/pics/login.gif
-share/ptkei/doc/pics/map.gif
-share/ptkei/doc/pics/mover.gif
-share/ptkei/doc/pics/queue.gif
-share/ptkei/doc/pics/status.gif
-share/ptkei/doc/pics/wread.gif
-share/ptkei/empire.py
-share/ptkei/empire.pyc
-share/ptkei/first.emp
+share/ptkei/doc/pics/login.png
+share/ptkei/doc/pics/map.png
+share/ptkei/doc/pics/mover.png
+share/ptkei/doc/pics/queue.png
+share/ptkei/doc/pics/status.png
+share/ptkei/doc/pics/wread.png
 share/ptkei/scripts/README
 share/ptkei/scripts/bundlepmw.py
 share/ptkei/scripts/bundlepmw.pyc
@@ -71,7 +73,6 @@ share/ptkei/src/empText.py
 share/ptkei/src/empText.pyc
 share/ptkei/src/empTk.py
 share/ptkei/src/empTk.pyc
-share/ptkei/start.emp
 @dirrm share/ptkei/src
 @dirrm share/ptkei/scripts
 @dirrm share/ptkei/doc/pics
