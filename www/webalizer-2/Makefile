@@ -7,14 +7,14 @@
 
 PORTNAME=	webalizer
 PORTVERSION=	2.1.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.mrunix.net/pub/webalizer/
 DISTNAME=	${PORTNAME}-2.01-06-src
 
 MAINTAINER=	ache@FreeBSD.org
 
-LIB_DEPENDS=	gd.1:${PORTSDIR}/graphics/gd
+LIB_DEPENDS=	gd.2:${PORTSDIR}/graphics/gd
 
 NO_LATEST_LINK=	yes
 USE_BZIP2=	yes

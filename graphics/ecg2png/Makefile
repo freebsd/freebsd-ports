@@ -7,12 +7,13 @@
 
 PORTNAME=	ecg2png
 PORTVERSION=	0.30
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://www.cardiothink.com/pub/
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	gd.1:${PORTSDIR}/graphics/gd
+LIB_DEPENDS=	gd.2:${PORTSDIR}/graphics/gd
 
 USE_QT2=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}

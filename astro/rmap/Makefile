@@ -7,12 +7,13 @@
 
 PORTNAME=	rmap
 PORTVERSION=	1.2
+PORTREVISION=	1
 CATEGORIES=	astro
 MASTER_SITES=	http://www.reza.net/rmap/
 
 MAINTAINER=	trevor@FreeBSD.org
 
-LIB_DEPENDS=	gd.1:${PORTSDIR}/graphics/gd \
+LIB_DEPENDS=	gd.2:${PORTSDIR}/graphics/gd \
 		gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
 
 MAN1=		rmap.1

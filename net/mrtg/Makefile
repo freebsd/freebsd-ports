@@ -7,6 +7,7 @@
 
 PORTNAME=	mrtg
 PORTVERSION=	2.9.7
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://ee-staff.ethz.ch/~oetiker/webtools/mrtg/pub/ \
 		${MASTER_SITE_RINGSERVER}
@@ -14,7 +15,7 @@ MASTER_SITE_SUBDIR=	net/mrtg
 
 MAINTAINER=	demon@FreeBSD.org
 
-LIB_DEPENDS=	gd.1:${PORTSDIR}/graphics/gd
+LIB_DEPENDS=	gd.2:${PORTSDIR}/graphics/gd
 
 USE_PERL5=	YES
 MAKE_ENV+=	PERL=${PERL}

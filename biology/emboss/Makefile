@@ -7,6 +7,7 @@
 
 PORTNAME=	emboss
 PORTVERSION=	1.9.1
+PORTREVISION=	1
 CATEGORIES=	biology
 MASTER_SITES=	ftp://ftp.uk.embnet.org/pub/EMBOSS/ \
 		ftp://ftp.no.embnet.org/pub/EMBOSS/ \
@@ -18,7 +19,7 @@ EXTRACT_ONLY=	${PORTNAME:U}-${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	johann@egenetics.com
 
-LIB_DEPENDS=	gd.1:${PORTSDIR}/graphics/gd \
+LIB_DEPENDS=	gd.2:${PORTSDIR}/graphics/gd \
 		png.4:${PORTSDIR}/graphics/png
 
 USE_GMAKE=	yes

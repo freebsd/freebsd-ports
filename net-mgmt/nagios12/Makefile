@@ -7,12 +7,13 @@
 
 PORTNAME=	netsaint
 PORTVERSION=	0.0.6
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://netsaint.sourceforge.net/download/
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	gd.1:${PORTSDIR}/graphics/gd \
+LIB_DEPENDS=	gd.2:${PORTSDIR}/graphics/gd \
 		gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
 # no run depends due to circular reference
 #RUN_DEPENDS=	${LOCALBASE}/libexec/netsaint/check_netsaint:${PORTSDIR}/net/netsaint-plugins

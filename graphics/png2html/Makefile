@@ -7,13 +7,14 @@
 
 PORTNAME=	png2html
 PORTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.engr.mun.ca/~holden/
 
 MAINTAINER=	jedgar@fxp.org
 
 LIB_DEPENDS=	png.4:${PORTSDIR}/graphics/png \
-		gd.1:${PORTSDIR}/graphics/gd
+		gd.2:${PORTSDIR}/graphics/gd
 
 do-configure:
 		@${MV} ${WRKSRC}/Makefile ${WRKSRC}/Makefile.orig

@@ -7,6 +7,7 @@
 
 PORTNAME=	tgd
 PORTVERSION=	1.2c
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://probe.nalusda.gov/pub/treegenes/ \
 		ftp://dendrome.ucdavis.edu/pub/tgd/
@@ -14,7 +15,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	mharo@FreeBSD.org
 
-LIB_DEPENDS=	gd.1:${PORTSDIR}/graphics/gd
+LIB_DEPENDS=	gd.2:${PORTSDIR}/graphics/gd
 
 BROKEN=	gd changes
 FORBIDDEN=	author hadn\'t had time to update for gd changes
