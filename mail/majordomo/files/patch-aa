@@ -1,5 +1,5 @@
---- Makefile.orig	Wed Aug 27 08:56:21 1997
-+++ Makefile	Sat Jul 10 23:28:11 1999
+--- Makefile.orig	Tue Jan 18 15:01:17 2000
++++ Makefile	Mon Jul 23 03:35:47 2001
 @@ -13,22 +13,22 @@
  #
   
@@ -28,6 +28,18 @@
  
  # These set the permissions for all installed files and executables (except
  # the wrapper), respectively.  Some sites may wish to make these more
+@@ -40,9 +40,9 @@
+ # If your system is POSIX (e.g. Sun Solaris, SGI Irix 5 and 6, Dec Ultrix MIPS,
+ # BSDI or other 4.4-based BSD, Linux) use the following four lines.  Do not
+ # change these values!
+-WRAPPER_OWNER = root
++WRAPPER_OWNER = $(W_USER)
+ WRAPPER_GROUP = $(W_GROUP)
+-WRAPPER_MODE = 4755
++WRAPPER_MODE = 4550
+ POSIX = -DPOSIX_UID=$(W_USER) -DPOSIX_GID=$(W_GROUP)
+ # Otherwise, if your system is NOT POSIX (e.g. SunOS 4.x, SGI Irix 4,
+ # HP DomainOS) then comment out the above four lines and uncomment
 @@ -62,11 +62,11 @@
  # parent process, and without the leading "W_" in the variable names) gets
  # passed to processes run by "wrapper"

@@ -28,6 +28,21 @@ manually:
 
 	  define(`ALIAS_FILE',/etc/aliases,/usr/local/majordomo/aliases.majordomo')
 
+	- consider using ports/mail/tlb to process your deliveries if you
+	  want to hide your outgoing aliases.  This way you can prevent people
+	  from evading restrictions for posting to your lists.
+
+	- the user executing the commands of your local aliases must be added
+	  to your majordom group to be able to execute the setuid wrapper
+	  script. Sendmail does this as daemon by default, which is already
+	  added. The postfix port uses nobody by default, which should be
+	  changed to another user if your users can execute commands as user
+	  nobody (Apache/CGI comes to mind). Postfix does not do initgroups()
+	  properly, so you need to chgrp the wrapper script to the
+	  default_privs user (this may apply for other MTAs as well) for it
+	  to work. It is important that you do this and not just make wrapper
+	  executable for all; you are increasing the chances of it getting
+	  exploited if you do.
 
 Enjoy Majordomo!
 
