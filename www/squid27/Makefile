@@ -26,7 +26,6 @@ MAINTAINER=	adrian@freebsd.org
 
 DIST_SUBDIR=	squid2.5
 PATCH_DIST_STRIP= -p0
-USE_PERL5=	yes
 GNU_CONFIGURE=	yes
 USE_PERL5=	yes
 USE_REINPLACE=	yes
