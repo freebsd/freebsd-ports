@@ -10,11 +10,12 @@
 .Op Ar options
 .Sh DESCRIPTION
 .Nm
-is the UNIX version of the SETI@home client. It downloads radio telescope
-data from a network server, analyzes the data looking for signals of
-extraterrestrial origin, and uploads results to the server, repeating this
-cycle indefinitely. See http://setiahome.ssl.berkeley.edu for more
-information.
+is the UNIX version of the 
+.Tn SETI@home
+client. It downloads radio telescope data from a network server, analyzes
+the data looking for signals of extraterrestrial origin, and uploads results
+to the server, repeating this cycle indefinitely. See
+http://setiahome.ssl.berkeley.edu for more information.
 .Pp
 The first time you run
 .Nm
@@ -24,25 +25,30 @@ program subsequently.
 .Pp
 After this you can run
 .Nm
-in the background, and direct its output to /dev/null if you like.
+in the background, and direct its output to
+.Pa /dev/null
+if you like.
 .Pp
 .Nm
 can be freely aborted and restarted. It saves its state in files,
 and will pick up where it left off.
 .Pp
-If you wish
-.Nm
-to be started automatically, you may wish to setup a cron job.  The supplied
-script "set_cron_job" will create a script for running setiathome and add it
-to your crontab.  To use it, change to your
-.Nm
-directory and type "./set_cron_job" at the prompt.  For more information on
-cron jobs see the crontab(1) manual page.
-.Pp
 .Nm
 requires about 0.5\ MBytes of disk space in it's working directory, and about
 12\ MBytes of memory. If you have ample physical memory, it's work load
 should be almost undetectable.
+.Pp
+This port to FreeBSD includes a start-up script (usually found in
+.Pa /usr/local/etc/rc.d/setiathome.sh )
+that starts
+.Nm
+at system start-up. You can also use this script to set up a working
+directory
+.Pa ( /var/db/setiathome ) ,
+and lets you register with or login to
+.Tn SETI@home
+by calling it with the argument
+.Li register .
 .Sh OPTIONS
 .Bl -tag -width indent
 .It Fl login
@@ -57,23 +63,30 @@ Set "nice" priority to
 (default 1);
 .It Fl email
 Send email (to login email address) on errors. Useful if you run in
-background directed to /dev/null.
+background directed to
+.Pa /dev/null .
 .El
 .Pp
 .Sh FILES
-The program generates several files with .txt extension
-in the directory from which it's run.
-These should not be modified.
+The program generates several files with 
+.Pa .txt
+extension in the directory from which it's run. These should not be
+modified.
 .Pp
 If you want to run multiple instances of setiathome
 (on a multiprocessor machine, or on multiple machines
 that share a filesystem) each one must be run
 in a different directory.
 .Pp
-setiathome uses a lock file (lock.txt) to prevent
-multiple instances from running in the same directory.
+setiathome uses a lock file 
+.Pa ( lock.txt )
+to prevent multiple instances from running in the same directory.
 .Sh AUTHORS
-SETI@home was developed by David Anderson, Jeff Cobb, Charlie
-Fenton, David Gedye, Kyle Granger, Eric Korpela, Matt Lebofsky,
-Peter Leiser, Brad Silen, Woody Sullivan, and Dan Werthimer.
+.Tn SETI@home
+was developed by
+.An David Anderson , Jeff Cobb , Charlie Fenton , David Gedye ,
+.An Kyle Granger , Eric Korpela , Matt Lebofsky , Peter Leiser , 
+.An Brad Silen , Woody Sullivan , 
+and
+.An Dan Werthimer .
 .Pp
