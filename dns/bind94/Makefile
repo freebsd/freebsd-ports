@@ -5,8 +5,14 @@
 # $FreeBSD$
 #
 
+# I stay very aware of developments with BIND in general, and with
+# BIND 9 in particular. I frequently delay updating this port from
+# a known-stable version due to concerns about stability of a newer
+# version. If you are concerned about using the most recent ISC
+# release you can generally build it cleanly from the source - Doug
+
 PORTNAME=	bind
-PORTVERSION=	9.1.3rc1
+PORTVERSION=	9.1.3
 CATEGORIES=	net ipv6
 MASTER_SITES=	ftp://ftp.isc.org/isc/bind9/${PORTVERSION}/ \
 		ftp://ftp.sunet.se/pub/network/isc/bind9/${PORTVERSION}/ \
