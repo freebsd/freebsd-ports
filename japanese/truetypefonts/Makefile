@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	truetypefonts
-PORTVERSION=	2001.03.06
+PORTVERSION=	2001.08.18
 CATEGORIES=	japanese x11-fonts
 MASTER_SITES=	ftp://ftp.debian.org/debian/pool/main/t/ttf-xtt/
-DISTNAME=	ttf-xtt_0.${PORTVERSION:S/.//g}-9
+DISTNAME=	ttf-xtt_0.${PORTVERSION:S/.//g}-1
 
 MAINTAINER=	ports@FreeBSD.org
 
