@@ -4,13 +4,38 @@
 # $FreeBSD$
 #
 
- o Dovecot currently will not allow users with a user or group id of 0
-   to login. Because of this you will not be able to open root's
-   mailbox, or any of the mailboxes of users in the wheel group. This is
-   intended as a security feature, and isn't an issue on Linux because
-   the concept of wheel is not enforced by GNU su.
+-> 2003/06/28 (NEW)
 
-  + 2003/04/15
+ o The authentication mechanism is different on FreeBSD 4 and 5.
+   For the default configuration set the following variables in
+   your dovecot.conf according to your version of FreeBSD.
+
+  + FreeBSD 4 (DEFAULT)
+
+    auth_passdb = passwd
+    auth_user = dovecot-auth
+
+  + FreeBSD 5
+
+    auth_passdb = pam *
+    auth_user = root
+
+-> 2003/04/15
+
+ o Dovecot will not allow users with a user or group id of 0 to
+   login. Because of this you will not be able to open root's
+   mailbox, or any of the mailboxes of users in the wheel group.
+
+  + 2003/06/28 (NEW)
+     Dovecot now has four configuration variables which allow you to
+     set the high and low boundaries for acceptable user and group ids.
+     You still can not login to root's mailbox with Dovecot however.
+     The default configuration which comes with the port is now
+     configured to accept connections from users in the wheel group,
+     my patch which added the allow_zero_gid variable below has been
+     removed. Update your configurations to match.
+
+  + 2003/04/15 (DEPRECIATED)
      It is now possible to change this behavior to allow wheel users to
      check their mailboxes with Dovecot. Add the following line to your
      dovecot.conf:
@@ -48,11 +73,14 @@
    The variables you will want to set in dovecot.conf to allow a SSL
    secured POP3 and IMAP service are:
 
-    + protocols = imap imaps pop3 pop3s
-    + ssl_disable = no
+    protocols = imap imaps pop3 pop3s
+    ssl_disable = no
 
    You may wish to also change the following variables to reflect the
    location of SSL certificates on your system.
    
-    + ssl_cert_file = /var/dovecot/ssl/certs/imapd.pem
-    + ssl_key_file = /var/dovecot/ssl/private/imapd.pem
+    ssl_cert_file = /var/dovecot/ssl/certs/imapd.pem
+    ssl_key_file = /var/dovecot/ssl/private/imapd.pem
+
+Thanks,
+Dominic Marks <dominic.marks@btinternet.com>
