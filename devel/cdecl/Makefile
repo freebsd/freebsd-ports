@@ -9,8 +9,8 @@
 PORTNAME=	cdecl
 PORTVERSION=	2.5
 CATEGORIES=	devel
-MASTER_SITES=	ftp://ftp.netsw.org/softeng/lang/c/tools/cdecl/ \
-		ftp://metalab.unc.edu/pub/linux/devel/lang/c/
+MASTER_SITES=	${MASTER_SITE_SUNSITE}
+MASTER_SITE_SUBDIR=	devel/lang/c
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Explains complicated C/C++ declarations in plain English
@@ -18,6 +18,8 @@ COMMENT=	Explains complicated C/C++ declarations in plain English
 ALL_TARGET=	${PORTNAME}
 MAN1=		cdecl.1
 MLINKS=		cdecl.1 c++decl.1
+PORTDOCS=	testset testset++
+PLIST_FILES=	bin/cdecl bin/c++decl
 
 post-install:
 .if !defined(NOPORTDOCS)
