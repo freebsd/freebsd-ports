@@ -9,4 +9,6 @@ filling out required field.  HTML::FillInForm can be used to redisplay
 the HTML form with all the form elements containing the submitted
 info.
 
+WWW: http://search.cpan.org/search?dist=HTML-FillInForm
+
 -- Alex Kapranoff <kapr@crosswinds.net>
