@@ -29,7 +29,7 @@ do-build:
 	cd ${WRKSRC}/embedding/config && ${SETENV} ${MAKE_ENV} ${GMAKE} \
 		${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${ALL_TARGET}
 	(cd ${WRKSRC}/dist/bin && \
-	  ${ENV} LD_LIBRARY_PATH=${WRKSRC}/dist/Embed \
+	  ${SETENV} LD_LIBRARY_PATH=${WRKSRC}/dist/Embed \
 		MOZILLA_FIVE_HOME=${WRKSRC}/dist/Embed ./regxpcom)
 	find ${WRKSRC}/dist/Embed -name "*.so" | xargs strip
 
