@@ -15,10 +15,8 @@
 # Extensively hacked for FreeBSD by Peter Wemm <peter@netplex.com.au>,
 #  with parts stolen from Greg Woods <woods@most.wierd.com> version.
 #
-# Lightly hacked by Mark Murray to allow it to work unmodified
-#  on both the master repository (freefall) and the international
-#  crypto repository (internat).
-#
+# Extensively cleaned up and re-worked to use an external configuration
+# file by Josef Karthauser <joe@tao.org.uk>.
 
 require 5.003;		# might work with older perl5
 

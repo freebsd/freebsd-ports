@@ -19,10 +19,8 @@ my $MINCVSVERSION = "1090900";	# 1.9.9p0
 #
 use Sys::Hostname;			# get hostname() function
 my $hostname = hostname();
-if ($hostname !~ /^freefall.freebsd.org$/ &&
-    $hostname !~ /^internat.freebsd.org$/) {
+if ($hostname !~ /^freefall.freebsd.org$/) {
 	print "Please commit on Freefall!\n";
-	print "(or Internat for crypto.)\n";
 	exit 1;
 }
 

@@ -35,17 +35,11 @@ $MAIL_BRANCH_HDR  = "X-FreeBSD-CVS-Branch";
 my $hostname = `/bin/hostname`;
 die "Can't determine hostname!\n" if $? >> 8;
 chomp $hostname;
-if ($hostname =~ /^(freefall|internat)\.freebsd\.org$/i) {
+if ($hostname =~ /^freefall\.freebsd\.org$/i) {
 	my $meister;
 
 	$MAILADDRS='cvs-committers@FreeBSD.org cvs-all@FreeBSD.org';
-	if ($1 =~ /freefall/i) {
-		$meister = 'peter@FreeBSD.org';
-	} else {
-		$meister = 'markm@FreeBSD.org';
-		$MAILBANNER = "FreeBSD International Crypto Repository";
-	}
-	$MAILADDRS = $meister if $DEBUG;
+	$MAILADDRS = 'cvs@FreeBSD.org' if $DEBUG;
 }
 
 
