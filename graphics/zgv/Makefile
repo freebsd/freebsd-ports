@@ -20,6 +20,7 @@ LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
 		png.5:${PORTSDIR}/graphics/png
 
 ONLY_FOR_ARCHS=	i386
+USE_GETOPT_LONG=yes
 USE_GMAKE=	yes
 ALL_TARGET=	all info
 
