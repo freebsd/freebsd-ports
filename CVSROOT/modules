@@ -6776,6 +6776,7 @@ pftpd		ports/ftp/pftpd
 pg		ports/misc/pg
 pgaccess	ports/databases/pgaccess
 pgadmin3	ports/databases/pgadmin3
+pgbash		ports/databases/pgbash
 pgdriver	ports/www/pgdriver
 pgen		ports/mail/pgen
 pglogd		ports/www/pglogd
