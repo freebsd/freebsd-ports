@@ -9,8 +9,7 @@
 PORTNAME=	mawk
 PORTVERSION=	1.3.3
 CATEGORIES=	lang
-MASTER_SITES=	ftp://ftp.fu-berlin.de/pub/unix/languages/mawk/ \
-		http://dl.droso.net/ports/
+MASTER_SITES=	http://dl.droso.net/ports/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	erwin@lansing.dk
@@ -21,7 +20,8 @@ ALL_TARGET=
 
 MAN1=		mawk.1
 
-pre-configure:
-	${PERL} -pi.orig -e 's:/usr/local:${PREFIX}:' ${WRKSRC}/config.user
+do-install:
+	@${INSTALL_PROGRAM} ${WRKSRC}/mawk ${PREFIX}/bin
+	@${INSTALL_MAN} ${WRKSRC}/man/mawk.1 ${PREFIX}/man/man1
 
 .include <bsd.port.mk>
