@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Sat May  6 01:10:00 2000
++++ Makefile.in	Sat May  6 01:10:12 2000
+@@ -196,7 +196,7 @@
+ 
+ man_MANS = gimp.1 gimptool.1 gimprc.5
+ 
+-m4datadir = $(datadir)/aclocal
++m4datadir = $(prefix)/share/aclocal
+ m4data_DATA = gimp.m4
+ 
+ scriptdata = 

@@ -593,8 +593,8 @@ share/gimp/gradients/Coffee
 share/gimp/gradients/Cold_Steel
 share/gimp/gradients/Cold_Steel_2
 share/gimp/gradients/Crown_molding
-share/gimp/gradients/Dark_1
 share/gimp/gradients/Danish_flag
+share/gimp/gradients/Dark_1
 share/gimp/gradients/Deep_Sea
 share/gimp/gradients/Default
 share/gimp/gradients/Flare_Glow_Angular_1
@@ -1311,8 +1311,8 @@ share/gimp/tips/gimp_tips.ja.txt
 share/gimp/tips/gimp_tips.ko.txt
 share/gimp/tips/gimp_tips.pl.txt
 share/gimp/tips/gimp_tips.ru.txt
-share/gimp/tips/gimp_tips.uk.txt
 share/gimp/tips/gimp_tips.txt
+share/gimp/tips/gimp_tips.uk.txt
 share/gimp/unitrc
 share/gimp/user_install
 share/locale/ca/LC_MESSAGES/gimp-libgimp.mo
