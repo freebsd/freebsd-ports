@@ -25,6 +25,7 @@ RUN_DEPENDS=	${BUILD_DEPENDS} \
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500600
+RUN_DEPENDS+=	${SITE_PERL}/File/Spec.pm:${PORTSDIR}/devel/p5-File-Spec
 RUN_DEPENDS+=	${SITE_PERL}/Pod/Usage.pm:${PORTSDIR}/textproc/p5-PodParser
 BUILD_DEPENDS+=	${SITE_PERL}/Pod/Usage.pm:${PORTSDIR}/textproc/p5-PodParser
 .endif
