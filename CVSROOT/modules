@@ -3541,6 +3541,7 @@ mew-xemacs21-mule	ports/mail/mew-xemacs21-mule
 mew2-emacs20	ports/mail/mew2-emacs20
 mew2-xemacs21	ports/mail/mew2-xemacs21
 mew2-xemacs21-mule	ports/mail/mew2-xemacs21-mule
+mfcns		projects/mfcns
 mg		ports/editors/mg
 mgapdesk	ports/x11/mgapdesk
 mgdiff		ports/textproc/mgdiff
