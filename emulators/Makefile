@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.15 1997/10/29 09:10:31 tg Exp $
+# $Id: Makefile,v 1.16 1997/10/31 09:16:07 tg Exp $
 #
 
     SUBDIR += aftp
@@ -16,6 +16,7 @@
     SUBDIR += pcemu
     SUBDIR += prodosemu
     SUBDIR += sim6811
+    SUBDIR += snes9x
     SUBDIR += spim
     SUBDIR += stella
     SUBDIR += stonx
