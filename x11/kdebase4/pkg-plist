@@ -301,7 +301,6 @@ share/applnk/Applications/.directory
 share/applnk/Development/designer.desktop
 share/applnk/Editors/.directory
 share/applnk/Editors/kwrite.desktop
-share/applnk/Editors/xedit.desktop
 share/applnk/Games/.directory
 share/applnk/Graphics/.directory
 share/applnk/Help.desktop
@@ -408,7 +407,6 @@ share/applnk/System/ScreenSavers/KSlip.desktop
 share/applnk/System/ScreenSavers/KSpace.desktop
 share/applnk/System/ScreenSavers/KSwarm.desktop
 share/applnk/System/ScreenSavers/KVm.desktop
-share/applnk/System/ScreenSavers/Worm.desktop
 share/applnk/System/kappfinder.desktop
 share/applnk/System/kfmclient.desktop
 share/applnk/System/klegacyimport.desktop
@@ -419,20 +417,15 @@ share/applnk/System/konsolesu.desktop
 share/applnk/System/ksysguard.desktop
 share/applnk/Toys/.directory
 share/applnk/Toys/ktip.desktop
-share/applnk/Toys/xeyes.desktop
 share/applnk/Utilities/.directory
 share/applnk/Utilities/klipper.desktop
 share/applnk/Utilities/kpager.desktop
 share/applnk/Utilities/passwd.desktop
-share/applnk/Utilities/xcalc.desktop
 share/applnk/Utilities/xclipboard.desktop
 share/applnk/Utilities/xclock.desktop
 share/applnk/Utilities/xconsole.desktop
-share/applnk/Utilities/xload.desktop
 share/applnk/Utilities/xmag.desktop
 share/applnk/Utilities/xterm.desktop
-share/applnk/WordProcessing/.directory
-share/applnk/WordProcessing/xdvi.desktop
 share/apps/clockapplet/pics/lcd.png
 share/apps/drkonqi/debuggers/gdbrc
 share/apps/drkonqi/pics/konqi.png
@@ -769,7 +762,6 @@ share/apps/kicker/wallpapers/green_line.png
 share/apps/kicker/wallpapers/rail.png
 share/apps/kio_info/kde-info2html
 share/apps/kio_info/kde-info2html.conf
-share/apps/klaptopdaemon/icons/locolor/16x16/actions/modified.png
 share/apps/kmenuedit/icons/hicolor/22x22/actions/menu_new.png
 share/apps/kmenuedit/icons/hicolor/32x32/actions/menu_new.png
 share/apps/kmenuedit/icons/locolor/16x16/actions/menu_new.png
