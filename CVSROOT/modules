@@ -7632,6 +7632,7 @@ psgml-emacs20	ports/editors/psgml-emacs20
 psgml-mule	ports/editors/psgml-mule
 psgml-xemacs21-mule	ports/editors/psgml-xemacs21-mule
 psi		ports/net/psi
+psi3		ports/science/psi3
 psi88		ports/biology/psi88
 psiconv		ports/converters/psiconv
 psim-freebsd	ports/emulators/psim-freebsd
