@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	robocode
-PORTVERSION=	0.95
+PORTVERSION=	0.97.3
 CATEGORIES=	games java
-MASTER_SITES=	ftp://paladin.adtech.internet.ibm.com/pub/robocode/
+MASTER_SITES=	ftp://dragon.adtech.internet.ibm.com/pub/robocode/
 DISTNAME=	setup
 EXTRACT_SUFX=	.jar
 
