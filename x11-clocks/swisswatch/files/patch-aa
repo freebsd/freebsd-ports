@@ -1,0 +1,11 @@
+--- Imakefile.org	Sat Dec 16 19:10:12 1995
++++ Imakefile	Sat Dec 16 18:59:27 1995
+@@ -1,7 +1,7 @@
+ #ifdef ContribRules
+ ContribRules
+ #endif
+-DEFINES = ExtensionDefines
++DEFINES = ExtensionDefines -DSHAPE
+ SRCS = swisswatch.c SwissWatch.c Hand.c Mark.c HandOrMark.c TableConvert.c
+ OBJS = swisswatch.o SwissWatch.o Hand.o Mark.o HandOrMark.o TableConvert.o
+ DEPLIBS = $(DEPXTOOLLIB) $(DEPXMULIB) $(DEPEXTENSIONLIB) $(DEPXLIB)
