@@ -32,8 +32,6 @@ UNZIP?=	${PREFIX}/bin/unzip
 ANT?=	${LOCALBASE}/bin/ant
 TCSH?=	/bin/tcsh
 
-IGNORE=	"Work In Progress for 1.1.1"
-
 USE_GNOME=	orbit gtk12
 
 .include <bsd.port.pre.mk>
@@ -107,13 +105,13 @@ COMMENT=	Integrated wordprocessor/dbase/spreadheet/drawing/chart/browser
 # The JDK dependency needs to be at the first place, so all
 # following dependencies use the same JDK.
 #
-BUILD_DEPENDS+= ${JAVAVM}:${PORTSDIR}/java/jdk14
-BUILD_DEPENDS+= zip:${PORTSDIR}/archivers/zip
-BUILD_DEPENDS+=	unzip:${PORTSDIR}/archivers/unzip
-BUILD_DEPENDS+=	${ANT}:${PORTSDIR}/devel/apache-ant
-BUILD_DEPENDS+=	${X11BASE}/lib/libgdk-x11-2.0.so:${PORTSDIR}/x11-toolkits/gtk20
-BUILD_DEPENDS+= ${X11BASE}/lib/libX11.so:${PORTSDIR}/x11/XFree86-4-libraries
-BUILD_DEPENDS+= ${X11BASE}/lib/libXft.so:${PORTSDIR}/x11-fonts/Xft
+BUILD_DEPENDS+= ${JAVAVM}:${PORTSDIR}/java/jdk14 \
+		zip:${PORTSDIR}/archivers/zip \
+		unzip:${PORTSDIR}/archivers/unzip \
+		${ANT}:${PORTSDIR}/devel/apache-ant \
+		${X11BASE}/lib/libgdk-x11-2.0.so:${PORTSDIR}/x11-toolkits/gtk20 \
+		${X11BASE}/lib/libX11.so:${PORTSDIR}/x11/XFree86-4-libraries \
+		${X11BASE}/lib/libXft.so:${PORTSDIR}/x11-fonts/Xft
 .if !defined(DISPLAY)
 BUILD_DEPENDS+= Xvfb:${PORTSDIR}/x11-servers/XFree86-4-VirtualFramebufferServer
 .endif
@@ -385,9 +383,6 @@ post-patch:
 		done; \
 	fi;
 .endif
-	@${ECHO_MSG} "===>  Find old malloc.h defines and fix them in ${PKGNAME} source"
-	@${FIND} ${WRKSRC}/.. | ${EGREP} "\.(cxx|h|c)$$" | ${XARGS} \
-		${PERL} -pi -e "s|<malloc.h>|<stdlib.h>|g"
 
 fix-kdewrappers:
 # 	@${PERL} -pi -e 's|"Exec", "\\"\<progpath\>/program/|"Exec", "\\"${PREFIX}/bin/openoffice_${RELEASE_NR}-|' \
