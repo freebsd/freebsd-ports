@@ -1,17 +1,14 @@
---- Xbgi/makefile	Thu Jun 26 14:43:30 1997
-+++ /home/andy/tmp/wrk/Xbgi/makefile	Mon Dec  8 17:01:03 1997
-@@ -44,12 +44,12 @@
- LIB = ../libXbgi.a
+--- main.h	Wed Jun  3 13:20:28 1998
++++ /home/andy/tmp/wrk/main.h	Wed Oct 28 22:12:08 1998
+@@ -37,7 +37,11 @@
  
- CC = gcc
--CCFLAGS = -O2 -g
-+CFLAGS+= -I/usr/X11R6/include
- AR = ar
- ARFLAGS = rc
+ #define CALL_GRAPH_FILE     "call.grp"
+ #define RECURSIVE_PROC_FILE "recur.prc"
++#ifdef PREFIX
++#define CONFIG_FILE         PREFIX "/etc/ptoc.cfg"
++#else
+ #define CONFIG_FILE         "ptoc.cfg"
++#endif
  
- .c.o:
--	$(CC) $(CCFLAGS) -c $<
-+	$(CC) $(CFLAGS) -c $<
- 
- ../libXbgi.a: $(OBJ)
- 	$(AR) $(ARFLAGS) $(LIB) $(OBJ)
+ extern bool  use_call_graph;
+ extern bool  pio_init;
