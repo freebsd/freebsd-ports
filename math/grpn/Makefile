@@ -8,9 +8,9 @@
 PORTNAME=	grpn
 PORTVERSION=	1.1.1
 CATEGORIES=	math
-MASTER_SITES=	http://wilkins.ne.mediaone.net/grpn/
+MASTER_SITES=	http://lashwhip.com/grpn/
 
-MAINTAINER=	jedgar@fxp.org
+MAINTAINER=	jedgar@FreeBSD.org
 
 USE_X_PREFIX=	yes
 USE_GTK=	yes
