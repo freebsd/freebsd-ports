@@ -1,0 +1,11 @@
+diff -urN nbd-2.6.orig/nbd-server.c nbd-2.6/nbd-server.c
+--- nbd-2.6.orig/nbd-server.c	Thu Oct 16 15:08:17 2003
++++ nbd-server.c	Sun Dec 14 23:48:10 2003
+@@ -53,6 +53,7 @@
+ #include <sys/stat.h>
+ #include <sys/wait.h>		/* wait */
+ #include <sys/ioctl.h>
++#include <sys/param.h>
+ #include <sys/mount.h>		/* For BLKGETSIZE */
+ #include <signal.h>		/* sigaction */
+ #include <netinet/tcp.h>

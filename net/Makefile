@@ -359,6 +359,7 @@
     SUBDIR += napshare
     SUBDIR += nast
     SUBDIR += nat
+    SUBDIR += nbd-server
     SUBDIR += nbtscan
     SUBDIR += nc
     SUBDIR += nc6
