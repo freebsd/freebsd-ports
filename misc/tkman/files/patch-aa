@@ -1,150 +1,99 @@
-*** Makefile.orig	Fri Dec 30 23:25:05 1994
---- Makefile	Mon Feb 27 00:19:20 1995
-***************
-*** 36,58 ****
-  # (pathname should be less than 25 or so characters)
-  #               1         2     |if name meets or passes vertical bar,
-  #      1234567890123456789012345|the wish path is too long
-! WISH = /usr/sww/X11/bin/wish
-  
-  # the executable `tkman' is placed in BINDIR
-  # this should be a directory that's in your bin PATH
-! BINDIR = /home/auspex/h/bair/phelps/bin
-  
-  # directory in which to place the manual page.  The help information
-  # is maintained in HTML, from which the [tn]roff version is automatically
-  # generated using RosettaMan.
-! MANDIR = /home/auspex/h/bair/phelps/man/man1
-  
-  
-  # # # MACHINE DEPENDENCIES # # #
-  
-! manformat = {tbl | neqn | nroff -man | col}
-  # alternatively
-! #manformat = {groff -Tascii -te -mandoc -l}
-  # Ultrix users should uncomment the following line
-  #manformat = {tbl | nroff -man | col}
-  
---- 36,58 ----
-  # (pathname should be less than 25 or so characters)
-  #               1         2     |if name meets or passes vertical bar,
-  #      1234567890123456789012345|the wish path is too long
-! WISH = /usr/local/bin/wish
-  
-  # the executable `tkman' is placed in BINDIR
-  # this should be a directory that's in your bin PATH
-! BINDIR = /usr/local/bin
-  
-  # directory in which to place the manual page.  The help information
-  # is maintained in HTML, from which the [tn]roff version is automatically
-  # generated using RosettaMan.
-! MANDIR = /usr/local/man/man1
-  
-  
-  # # # MACHINE DEPENDENCIES # # #
-  
-! # manformat = {tbl | neqn | nroff -man | col}
-  # alternatively
-! manformat = {groff -Tascii -te -mandoc}
-  # Ultrix users should uncomment the following line
-  #manformat = {tbl | nroff -man | col}
-  
-***************
-*** 111,119 ****
-  # so how can you lose?
-  
-  # by default on
-! glimpse = glimpse
-  # IF YOU DON'T WANT TO BOTHER WITH GLIMPSE, you can disable it
-! #glimpse = ""
-  # give the full path, if you'd like
-  #glimpse = /usr/sww/bin/glimpse
-  # variations (refer to the Glimpse manual page)
---- 111,119 ----
-  # so how can you lose?
-  
-  # by default on
-! #glimpse = glimpse
-  # IF YOU DON'T WANT TO BOTHER WITH GLIMPSE, you can disable it
-! glimpse = ""
-  # give the full path, if you'd like
-  #glimpse = /usr/sww/bin/glimpse
-  # variations (refer to the Glimpse manual page)
-***************
-*** 163,169 ****
-  # (`-debug' option), obtain the problemmatic glimpseindex command,
-  # and make sure it works when executed by hand.
-  
-! glimpseindex = glimpseindex
-  # IF YOU DON'T WANT TO BOTHER WITH GLIMPSE, DISABLE IT HERE *ALSO*
-  #glimpseindex = ""
-  # produce a larger index (6-9% of source text) allowing faster search w/"-o"
---- 163,169 ----
-  # (`-debug' option), obtain the problemmatic glimpseindex command,
-  # and make sure it works when executed by hand.
-  
-! #glimpseindex = glimpseindex
-  # IF YOU DON'T WANT TO BOTHER WITH GLIMPSE, DISABLE IT HERE *ALSO*
-  #glimpseindex = ""
-  # produce a larger index (6-9% of source text) allowing faster search w/"-o"
-***************
-*** 180,186 ****
-  
-  # default MANPATH to use if user doesn't have
-  # a MANPATH environment variable set
-! manpathdef = /usr/man:/usr/local/man
-  #manpathdef = /usr/man:/usr/local/man:/usr/sww/man:/usr/sww/X11/man
-  
-  
---- 180,186 ----
-  
-  # default MANPATH to use if user doesn't have
-  # a MANPATH environment variable set
-! manpathdef = /usr/share/man:/usr/local/man
-  #manpathdef = /usr/man:/usr/local/man:/usr/sww/man:/usr/sww/X11/man
-  
-  
-***************
-*** 216,227 ****
-  
-  # if you don't want to RosettaMan (rman) in your PATH, make the name fully qualified
-  # (that's probably a good idea if tkman is installed on a central server)
-! rman = rman
-  #rman = /home/orodruin/h/bair/phelps/bin/alpha/rman
-  
-! manprint = {tbl | eqn | troff -man}
-  # alternatives
-! #manprint = {groff -man -Tps -te}
-  #manprint = {tbl | eqn | psroff -man}
-  #manprint = {groff -Tascii -te}
-  # printing string for preformatted pages without [tn]roff source
---- 216,227 ----
-  
-  # if you don't want to RosettaMan (rman) in your PATH, make the name fully qualified
-  # (that's probably a good idea if tkman is installed on a central server)
-! rman = /usr/local/bin/rman
-  #rman = /home/orodruin/h/bair/phelps/bin/alpha/rman
-  
-! #manprint = {tbl | eqn | troff -man}
-  # alternatives
-! manprint = {groff -man -Tps -te}
-  #manprint = {tbl | eqn | psroff -man}
-  #manprint = {groff -Tascii -te}
-  # printing string for preformatted pages without [tn]roff source
-***************
-*** 322,328 ****
-  	$(CP) tkman $(BINDIR)
-  	chmod +x $(BINDIR)/tkman
-  	$(CP) tkman.1 $(MANDIR)
-! 	@echo 'You also need RosettaMan to run TkMan.'
-  
-  test: dox tkman
-  	cp tkman $(BINDIR)
---- 322,328 ----
-  	$(CP) tkman $(BINDIR)
-  	chmod +x $(BINDIR)/tkman
-  	$(CP) tkman.1 $(MANDIR)
-! #	@echo 'You also need RosettaMan to run TkMan.'
-  
-  test: dox tkman
-  	cp tkman $(BINDIR)
+--- ./Makefile.org	Fri Aug 18 17:07:54 1995
++++ ./Makefile	Fri Aug 18 23:03:50 1995
+@@ -35,28 +35,28 @@
+ ### you need to localize the paths on these lines
+ 
+ # Tk's wish MUST be compiled with Tcl 7.4/Tk 4.0 or later versions
+-WISH = /usr/sww/tcl-7.4b4/bin/wish
++#WISH = /usr/sww/tcl-7.4b4/bin/wish
+ #WISH = /home/orodruin/h/bair/phelps/bin/alpha/wish
+-#WISH = /usr/local/bin/wish
++WISH = /usr/local/bin/wish4.0
+ 
+ # the executable `tkman' is placed in BINDIR
+ # this should be a directory that's in your bin PATH
+-BINDIR = /home/auspex/h/bair/phelps/bin
+-#BINDIR = /usr/local/bin
++#BINDIR = /home/auspex/h/bair/phelps/bin
++BINDIR = /usr/local/bin
+ 
+ # directory in which to place the manual page.  The help information
+ # is maintained in HTML, from which the [tn]roff version is 
+ # automatically generated.
+-MANDIR = /home/auspex/h/bair/phelps/man/man1
++#MANDIR = /home/auspex/h/bair/phelps/man/man1
+ #MANDIR = /usr/sww/X11/man/man1
+-#MANDIR = /usr/local/man/man1
++MANDIR = /usr/local/man/man1
+ 
+ 
+ # # # MACHINE DEPENDENCIES # # #
+ 
+-manformat = {tbl | neqn | nroff -man | col}
++#manformat = {tbl | neqn | nroff -man | col}
+ # alternatively
+-#manformat = {groff -Tascii -te -mandoc}
++manformat = {groff -Tascii -te -mandoc}
+ # Ultrix users should uncomment the following line
+ #manformat = {tbl | nroff -man | col}
+ 
+@@ -120,10 +120,10 @@
+ # so how can you lose?
+ 
+ # BY DEFAULT ON
+-glimpse = glimpse
++#glimpse = glimpse
+ # IF YOU DON'T WANT TO BOTHER WITH GLIMPSE, you can disable it here
+ # ALSO DISABLE GLIMPSEINDEX BELOW
+-#glimpse = ""
++glimpse = ""
+ # give the full path, if you'd like
+ #glimpse = /usr/sww/bin/glimpse
+ # variations (refer to the Glimpse manual page)
+@@ -150,9 +150,9 @@
+ # (`-debug' option), obtain the problemmatic glimpseindex command,
+ # and make sure it works when executed by hand.
+ 
+-glimpseindex = glimpseindex
++#glimpseindex = glimpseindex
+ # IF YOU DON'T WANT TO BOTHER WITH GLIMPSE, DISABLE IT HERE *ALSO*
+-#glimpseindex = ""
++glimpseindex = ""
+ # produce a larger index ("7-9%" of source text) allowing faster search w/"-o"
+ # Need -o or -b if using -N above.
+ #glimpseindex = "glimpseindex -o"
+@@ -170,7 +170,7 @@
+ # default MANPATH to use if user doesn't have a MANPATH environment variable set.
+ # Leave this empty to have TkMan calculate a MANPATH based on a users PATH
+ # (like Perl man does).
+-manpathdef = ""
++manpathdef = /usr/share/man:/usr/local/man:/usr/X11R6/man
+ #manpathdef = /usr/man:/usr/local/man
+ #manpathdef = /usr/man:/usr/local/man:/usr/sww/man:/usr/sww/X11/man
+ # for SGI
+@@ -223,13 +223,13 @@
+ 
+ # if you don't want to RosettaMan (rman) in your PATH, make the name fully qualified
+ # (that's probably a good idea if tkman is installed on a central server)
+-rman = rman
++rman = /usr/local/bin/rman
+ #rman = /home/orodruin/h/bair/phelps/bin/alpha/rman
+ 
+-manprint = {tbl | eqn | troff -man -t | lpr -t}
++#manprint = {tbl | eqn | troff -man -t | lpr -t}
+ # alternatives
+ #manprint = {tbl | eqn | psroff -man}
+-#manprint = {groff -man -Tps -te -l}
++manprint = {groff -man -Tps -te -l}
+ #manprint = {groff -man -Tascii -te -l}
+ # printing string for preformatted pages without [tn]roff source
+ catprint = lpr
+@@ -330,7 +330,7 @@
+ 	$(CP) tkman $(BINDIR)
+ 	chmod +x $(BINDIR)/tkman
+ 	$(CP) tkman.1 $(MANDIR)
+-	@echo 'You also need RosettaMan to run TkMan.'
++#	@echo 'You also need RosettaMan to run TkMan.'
+ 
+ test: dox tkman
+ 	cp tkman $(BINDIR)
