@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dtdinst
-PORTVERSION=	2001.12.03
+PORTVERSION=	2002.07.24
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.thaiopensource.com/dtdinst/
 DISTNAME=	${PORTNAME}
@@ -14,7 +14,7 @@ DISTFILES=	${JARFILE} dtdinst2rng.xsl index.html copying.txt
 DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=
 
-MAINTAINER=	fuyuki@mj.0038.net
+MAINTAINER=	fuyuki@hadaly.org
 
 USE_JAVA=	1.1+
 NO_BUILD_DEPENDS_JAVA=	yes
