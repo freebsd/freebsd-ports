@@ -5,5 +5,5 @@ etc/nntpcache/spam.filter
 etc/rc.d/nntpcached.sh
 sbin/nntpcached
 man/man8/nntpcache.8.gz
-@dirrm %D/etc/nntpcache
+@dirrm etc/nntpcache
 @unexec rm -rf /var/spool/nntpcache
