@@ -81,6 +81,7 @@
     SUBDIR += wdiff
     SUBDIR += word2x
     SUBDIR += wordnet
+    SUBDIR += xhtml
     SUBDIR += xlhtml
     SUBDIR += xls2xml
     SUBDIR += xml4j
