@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	dict
-PORTVERSION=	1.7.1
+PORTVERSION=	1.8.0
 CATEGORIES=	textproc
 MASTER_SITES=	ftp://ftp.dict.org/pub/dict/
 DISTNAME=	${PORTNAME}d-${PORTVERSION}
@@ -16,7 +16,8 @@ MAINTAINER=	dd@FreeBSD.org
 
 USE_BISON=	yes
 USE_REINPLACE=	yes
-GNU_CONFIGURE=	yes
+USE_LIBTOOL=	yes
+CFLAGS+=	-I${PREFIX}/include
 CONFIGURE_ARGS=	--without-local-zlib --with-cflags="${CFLAGS}" \
 		--with-etcdir=${PREFIX}/etc
 USE_GMAKE=	yes
