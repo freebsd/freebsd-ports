@@ -1,0 +1,11 @@
+--- Imakefile.orig	Tue Apr 27 12:27:54 1999
++++ Imakefile	Tue Apr 27 12:28:19 1999
+@@ -11,7 +11,7 @@
+ 
+ DEFINES = -DSHAPE
+ INCLUDES = -I$(INCROOT)/X11
+-SYS_LIBRARIES = -lXm -lXpm $(XTOOLLIB) -lXext $(XLIB) -lm
++SYS_LIBRARIES = -lXm -lXpm $(XTOOLLIB) -lXext $(XLIB) -lm ${MOTIFLIB}
+ DEPLIBS = 
+ 
+ SRCS =	account.c askuser.c calendar.c color.c drawing.c \
