@@ -1,6 +1,5 @@
 %%PORTDOCS%%www/phpnuke/ADDONS-MODULES
 %%PORTDOCS%%www/phpnuke/BLOCKS
-%%PORTDOCS%%www/phpnuke/BUGS
 %%PORTDOCS%%www/phpnuke/CHANGES
 %%PORTDOCS%%www/phpnuke/README
 %%PORTDOCS%%www/phpnuke/TODO
@@ -16,6 +15,7 @@ www/phpnuke/html/admin/case/case.filemanager.php
 www/phpnuke/html/admin/case/case.links.php
 www/phpnuke/html/admin/case/case.messages.php
 www/phpnuke/html/admin/case/case.modules.php
+www/phpnuke/html/admin/case/case.newsletter.php
 www/phpnuke/html/admin/case/case.polls.php
 www/phpnuke/html/admin/case/case.referers.php
 www/phpnuke/html/admin/case/case.reviews.php
@@ -36,6 +36,7 @@ www/phpnuke/html/admin/links/links.faq.php
 www/phpnuke/html/admin/links/links.filemanager.php
 www/phpnuke/html/admin/links/links.messages.php
 www/phpnuke/html/admin/links/links.modules.php
+www/phpnuke/html/admin/links/links.newsletter.php
 www/phpnuke/html/admin/links/links.onlygod.php
 www/phpnuke/html/admin/links/links.reviews.php
 www/phpnuke/html/admin/links/links.sections.php
@@ -55,6 +56,7 @@ www/phpnuke/html/admin/modules/index.html
 www/phpnuke/html/admin/modules/links.php
 www/phpnuke/html/admin/modules/messages.php
 www/phpnuke/html/admin/modules/modules.php
+www/phpnuke/html/admin/modules/newsletter.php
 www/phpnuke/html/admin/modules/polls.php
 www/phpnuke/html/admin/modules/referers.php
 www/phpnuke/html/admin/modules/reviews.php
@@ -109,11 +111,11 @@ www/phpnuke/html/images/admin/filemanager/touch.gif
 www/phpnuke/html/images/admin/filemanager/webpage.gif
 www/phpnuke/html/images/admin/filemanager/webscript.gif
 www/phpnuke/html/images/admin/index.html
-www/phpnuke/html/images/admin/lego.tif
 www/phpnuke/html/images/admin/links.gif
 www/phpnuke/html/images/admin/messages.gif
 www/phpnuke/html/images/admin/modules.gif
 www/phpnuke/html/images/admin/newpoll.gif
+www/phpnuke/html/images/admin/newsletter.gif
 www/phpnuke/html/images/admin/postnew.gif
 www/phpnuke/html/images/admin/preferences.gif
 www/phpnuke/html/images/admin/referer.gif
@@ -123,8 +125,6 @@ www/phpnuke/html/images/admin/submissions.gif
 www/phpnuke/html/images/admin/topicsman.gif
 www/phpnuke/html/images/admin/users.gif
 www/phpnuke/html/images/articles/index.html
-www/phpnuke/html/images/articles/tribute.gif
-www/phpnuke/html/images/articles/yans.gif
 www/phpnuke/html/images/banners/index.html
 www/phpnuke/html/images/blackpixel.gif
 www/phpnuke/html/images/blue.gif
@@ -607,6 +607,58 @@ www/phpnuke/html/search.php
 www/phpnuke/html/sections.php
 www/phpnuke/html/stats.php
 www/phpnuke/html/submit.php
+www/phpnuke/html/themes/3D-Fantasy/blocks.html
+www/phpnuke/html/themes/3D-Fantasy/center_right.html
+www/phpnuke/html/themes/3D-Fantasy/footer.html
+www/phpnuke/html/themes/3D-Fantasy/header.html
+www/phpnuke/html/themes/3D-Fantasy/images/backdot.gif
+www/phpnuke/html/themes/3D-Fantasy/images/down-left.gif
+www/phpnuke/html/themes/3D-Fantasy/images/down-left2.gif
+www/phpnuke/html/themes/3D-Fantasy/images/down-left3.gif
+www/phpnuke/html/themes/3D-Fantasy/images/down-right.gif
+www/phpnuke/html/themes/3D-Fantasy/images/down-right2.gif
+www/phpnuke/html/themes/3D-Fantasy/images/down-right3.gif
+www/phpnuke/html/themes/3D-Fantasy/images/down.gif
+www/phpnuke/html/themes/3D-Fantasy/images/down2.gif
+www/phpnuke/html/themes/3D-Fantasy/images/down3.gif
+www/phpnuke/html/themes/3D-Fantasy/images/left.gif
+www/phpnuke/html/themes/3D-Fantasy/images/left2.gif
+www/phpnuke/html/themes/3D-Fantasy/images/left3.gif
+www/phpnuke/html/themes/3D-Fantasy/images/leftbar.gif
+www/phpnuke/html/themes/3D-Fantasy/images/logo.jpg
+www/phpnuke/html/themes/3D-Fantasy/images/mainbar.gif
+www/phpnuke/html/themes/3D-Fantasy/images/middle-left.gif
+www/phpnuke/html/themes/3D-Fantasy/images/middle-right.gif
+www/phpnuke/html/themes/3D-Fantasy/images/middle.gif
+www/phpnuke/html/themes/3D-Fantasy/images/right.gif
+www/phpnuke/html/themes/3D-Fantasy/images/right2.gif
+www/phpnuke/html/themes/3D-Fantasy/images/right3.gif
+www/phpnuke/html/themes/3D-Fantasy/images/rightbar.gif
+www/phpnuke/html/themes/3D-Fantasy/images/up-left.gif
+www/phpnuke/html/themes/3D-Fantasy/images/up-left2.gif
+www/phpnuke/html/themes/3D-Fantasy/images/up-right.gif
+www/phpnuke/html/themes/3D-Fantasy/images/up-right2.gif
+www/phpnuke/html/themes/3D-Fantasy/images/up.gif
+www/phpnuke/html/themes/3D-Fantasy/images/up2.gif
+www/phpnuke/html/themes/3D-Fantasy/index.html
+www/phpnuke/html/themes/3D-Fantasy/left_center.html
+www/phpnuke/html/themes/3D-Fantasy/story_home.html
+www/phpnuke/html/themes/3D-Fantasy/story_page.html
+www/phpnuke/html/themes/3D-Fantasy/style/index.html
+www/phpnuke/html/themes/3D-Fantasy/style/style.css
+www/phpnuke/html/themes/3D-Fantasy/tables.php
+www/phpnuke/html/themes/3D-Fantasy/theme.php
+www/phpnuke/html/themes/DeviantArt/images/index.html
+www/phpnuke/html/themes/DeviantArt/images/leftbar.gif
+www/phpnuke/html/themes/DeviantArt/images/logo.gif
+www/phpnuke/html/themes/DeviantArt/images/mainbar.gif
+www/phpnuke/html/themes/DeviantArt/images/pixel.gif
+www/phpnuke/html/themes/DeviantArt/images/rightbar.gif
+www/phpnuke/html/themes/DeviantArt/images/search-button.gif
+www/phpnuke/html/themes/DeviantArt/index.html
+www/phpnuke/html/themes/DeviantArt/style/index.html
+www/phpnuke/html/themes/DeviantArt/style/style.css
+www/phpnuke/html/themes/DeviantArt/theme.php
 www/phpnuke/html/themes/ExtraLite/images/leftbar.gif
 www/phpnuke/html/themes/ExtraLite/images/logo.gif
 www/phpnuke/html/themes/ExtraLite/images/mainbar.gif
@@ -723,22 +775,11 @@ www/phpnuke/html/themes/Traditional/index.html
 www/phpnuke/html/themes/Traditional/style/index.html
 www/phpnuke/html/themes/Traditional/style/style.css
 www/phpnuke/html/themes/Traditional/theme.php
-www/phpnuke/html/themes/deviantNuke/images/index.html
-www/phpnuke/html/themes/deviantNuke/images/leftbar.gif
-www/phpnuke/html/themes/deviantNuke/images/logo.gif
-www/phpnuke/html/themes/deviantNuke/images/mainbar.gif
-www/phpnuke/html/themes/deviantNuke/images/pixel.gif
-www/phpnuke/html/themes/deviantNuke/images/rightbar.gif
-www/phpnuke/html/themes/deviantNuke/images/search-button.gif
-www/phpnuke/html/themes/deviantNuke/index.html
-www/phpnuke/html/themes/deviantNuke/style/index.html
-www/phpnuke/html/themes/deviantNuke/style/style.css
-www/phpnuke/html/themes/deviantNuke/theme.php
 www/phpnuke/html/themes/index.html
 www/phpnuke/html/top.php
 www/phpnuke/html/topics.php
 www/phpnuke/html/ultramode.txt
-www/phpnuke/html/upgrades/README.1ST
+www/phpnuke/html/upgrades/readme.1st
 www/phpnuke/html/upgrades/upgrade1-25.php
 www/phpnuke/html/upgrades/upgrade2-25.php
 www/phpnuke/html/upgrades/upgrade25-35.php
@@ -749,15 +790,13 @@ www/phpnuke/html/upgrades/upgrade44-50.php
 www/phpnuke/html/upgrades/upgrade50-51.php
 www/phpnuke/html/upgrades/upgrade51-52.php
 www/phpnuke/html/upgrades/upgrade52-53.php
+www/phpnuke/html/upgrades/upgrade53-531.php
 www/phpnuke/html/user.php
 www/phpnuke/html/viewpmsg.php
 www/phpnuke/html/voteinclude.php
 www/phpnuke/sql/nuke.sql
 @dirrm www/phpnuke/sql
 @dirrm www/phpnuke/html/upgrades
-@dirrm www/phpnuke/html/themes/deviantNuke/style
-@dirrm www/phpnuke/html/themes/deviantNuke/images
-@dirrm www/phpnuke/html/themes/deviantNuke
 @dirrm www/phpnuke/html/themes/Traditional/style
 @dirrm www/phpnuke/html/themes/Traditional/images
 @dirrm www/phpnuke/html/themes/Traditional
@@ -776,6 +815,12 @@ www/phpnuke/sql/nuke.sql
 @dirrm www/phpnuke/html/themes/ExtraLite/style
 @dirrm www/phpnuke/html/themes/ExtraLite/images
 @dirrm www/phpnuke/html/themes/ExtraLite
+@dirrm www/phpnuke/html/themes/DeviantArt/style
+@dirrm www/phpnuke/html/themes/DeviantArt/images
+@dirrm www/phpnuke/html/themes/DeviantArt
+@dirrm www/phpnuke/html/themes/3D-Fantasy/style
+@dirrm www/phpnuke/html/themes/3D-Fantasy/images
+@dirrm www/phpnuke/html/themes/3D-Fantasy
 @dirrm www/phpnuke/html/themes
 @dirrm www/phpnuke/html/modules/Web_Links
 @dirrm www/phpnuke/html/modules/Members_List
