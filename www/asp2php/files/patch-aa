@@ -1,0 +1,68 @@
+--- Makefile	Fri Jun 30 12:30:49 2000
++++ Makefile.new	Thu Jun 29 15:50:22 2000
+@@ -1,24 +1,25 @@
+-
+-default:
+-	gcc -c general.c
+-	gcc -c conditionals.c
+-	gcc -c database.c
+-	gcc -c mysql.c
+-	gcc -c sybase.c
+-	gcc -c odbc.c
+-	gcc -c oracle.c
+-	gcc -c postgres.c
+-	gcc -c evalelement.c
+-	gcc -c gettoken.c
+-	gcc -c html.c
+-	gcc -c loops.c
+-	gcc -c session.c
+-	gcc -o asp2php asp2php.c conditionals.o database.o \
++CC		?= cc
++GTK_CONFIG	?= gtk12-config
++INSTALL_PROGRAM	?= install -c -s -o root -g wheel -m 755
++
++all:
++	$(CC) -c general.c
++	$(CC) -c conditionals.c
++	$(CC) -c database.c
++	$(CC) -c mysql.c
++	$(CC) -c sybase.c
++	$(CC) -c odbc.c
++	$(CC) -c oracle.c
++	$(CC) -c postgres.c
++	$(CC) -c evalelement.c
++	$(CC) -c gettoken.c
++	$(CC) -c html.c
++	$(CC) -c loops.c
++	$(CC) -c session.c
++	$(CC) -o asp2php asp2php.c conditionals.o database.o \
+ 		evalelement.o gettoken.o html.o loops.o mysql.o\
+ 		sybase.o odbc.o oracle.o postgres.o session.o general.o
+-	gcc -o unipiss unipiss.c html.o
+-	@echo ""
+-	@echo "Done!  You may type: make gtkasp2php for the optional GUI now"
++	$(CC) -o unipiss unipiss.c html.o
+ 
+ clean:
+ 	@if [ -e database.o ]; then rm *.o; fi;
+@@ -28,15 +29,11 @@
+ 	@echo "Clean!"
+ 
+ gtkasp2php: gtkasp2php.c
+-	gcc -o gtkasp2php gtkasp2php.c `gtk-config --cflags` `gtk-config --libs`
++	$(CC) -o gtkasp2php gtkasp2php.c `$(GTK_CONFIG) --cflags` `$(GTK_CONFIG) --libs`
+ 
+ install:
+-	cp asp2php /usr/local/bin
+-	cp unipiss /usr/local/bin
+-
+-	@echo "asp2php installed in /usr/local/bin"
+-	@echo "unipiss installed in /usr/local/bin"
+-	@echo "gtk2asp2php: Use from current directory"
+-
+-
++	$(INSTALL_PROGRAM) asp2php $(PREFIX)/bin
++	$(INSTALL_PROGRAM) unipiss $(PREFIX)/bin
+ 
++install-gtk:
++	$(INSTALL_PROGRAM) gtkasp2php $(PREFIX)/bin

@@ -1,0 +1,3 @@
+bin/asp2php
+bin/unipiss
+%%WANT_GTK%%bin/gtkasp2php
