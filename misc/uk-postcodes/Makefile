@@ -8,8 +8,8 @@
 PORTNAME=       postcodes
 PORTVERSION=	1.0
 CATEGORIES=	misc
-MASTER_SITES=   ${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	wosch/src asami/LOCAL_PORTS
+MASTER_SITES=   ftp://ftp.Awfulhak.org/pub/uk-postcodes/ \
+		http://people.FreeBSD.org/~brian/uk-postcodes/
 PKGNAMEPREFIX=	uk-
 DISTFILES=	uk.postcodes.gz
 
