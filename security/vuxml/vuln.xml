@@ -32,6 +32,31 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="28ab7ddf-61ab-11d9-a9e7-0001020eed82">
+    <topic>dillo -- format string vulnerability</topic>
+    <affects>
+      <package>
+	<name>dillo</name>
+	<range><lt>0.8.3_1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>dillo contains a format string vulnerability which could
+	  lead to execution of arbitrary code simply by viewing a web
+	  page or opening a HTML file.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2005-0012</cvename>
+      <url>http://bugs.gentoo.org/show_bug.cgi?id=76665</url>
+    </references>
+    <dates>
+      <discovery>2005-01-04</discovery>
+      <entry>2005-01-08</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="f92e1bbc-5e18-11d9-839a-0050da134090">
     <topic>tnftp -- mget does not check for directory escapes</topic>
     <affects>
