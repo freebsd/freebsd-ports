@@ -1,13 +1,24 @@
 %%RUBY_SITELIBDIR%%/cvs.rb
-%%RUBY_SITELIBDIR%%/cvs/cache.rb
-%%RUBY_SITELIBDIR%%/cvs/flex.rb
 %%RUBY_SITELIBDIR%%/cvs/local.rb
 %%RUBY_SITELIBDIR%%/cvs/parser.rb
-%%RUBY_SITELIBDIR%%/cvs/rcs.rb
 %%RUBY_SITELIBDIR%%/cvs/remote.rb
-%%RUBY_SITELIBDIR%%/cvs/revision.rb
-%%RUBY_SITELIBDIR%%/cvs/tempdir.rb
+%%RUBY_SITELIBDIR%%/diff.rb
+%%RUBY_SITELIBDIR%%/diff/contours.rb
+%%RUBY_SITELIBDIR%%/diff/editscript.rb
+%%RUBY_SITELIBDIR%%/diff/rcsdiff.rb
+%%RUBY_SITELIBDIR%%/diff/shortestpath.rb
+%%RUBY_SITELIBDIR%%/diff/speculative.rb
+%%RUBY_SITELIBDIR%%/diff/subsequence.rb
+%%RUBY_SITELIBDIR%%/rcs.rb
+%%RUBY_SITELIBDIR%%/rcs/annotate.rb
+%%RUBY_SITELIBDIR%%/rcs/flex.rb
+%%RUBY_SITELIBDIR%%/rcs/parser.rb
+%%RUBY_SITELIBDIR%%/rcs/revision.rb
+%%RUBY_SITELIBDIR%%/rcs/text.rb
+%%RUBY_SITELIBDIR%%/tempdir.rb
 @dirrm %%RUBY_SITELIBDIR%%/cvs
+@dirrm %%RUBY_SITELIBDIR%%/diff
+@dirrm %%RUBY_SITELIBDIR%%/rcs
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/cvs/viztree
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/cvs/reviz/list_repositories.rsp
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/cvs/reviz/log.rsp
@@ -24,5 +35,6 @@
 %%PORTDOCS%%%%RUBY_DOCDIR%%/cvs/README
 %%PORTDOCS%%%%RUBY_DOCDIR%%/cvs/TODO
 %%PORTDOCS%%%%RUBY_DOCDIR%%/cvs/cvs.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/cvs/diff.html
 %%PORTDOCS%%%%RUBY_DOCDIR%%/cvs/tempdir.html
 %%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/cvs
