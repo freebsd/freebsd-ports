@@ -24,6 +24,7 @@
     SUBDIR += prc-tools-binutils
     SUBDIR += prc-tools-gcc
     SUBDIR += syncal
+    SUBDIR += syncmal
     SUBDIR += txt2pdbdoc
     SUBDIR += xcopilot
 
