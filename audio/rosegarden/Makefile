@@ -3,7 +3,7 @@
 # Date created:		04 Aug 1996
 # Whom:			shanee@augusta.de
 #
-# $Id: Makefile,v 1.8 1999/07/11 20:52:07 cpiazza Exp $
+# $Id: Makefile,v 1.9 1999/07/11 20:53:13 cpiazza Exp $
 #
 
 DISTNAME=	rosegarden-2.1
@@ -26,6 +26,7 @@ CONFIGURE_ARGS=	--with-tclincl=${LOCALBASE}/include/tcl8.0/
 CONFIGURE_ENV=	LIBS="-L${PREFIX}/lib"
 
 do-install:
+	@${MKDIR} ${PREFIX}/lib/X11/app-defaults
 	@( \
 	 cd ${WRKSRC} ; ${SETENV} PREFIX="${PREFIX}" ./do-install \
 	)
