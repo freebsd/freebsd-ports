@@ -1,5 +1,5 @@
 #!/bin/sh
-# $FreeBSD: /tmp/pcvs/ports/mail/postfix20/scripts/Attic/configure.postfix,v 1.6 2001-03-26 04:43:28 kuriyama Exp $
+# $FreeBSD: /tmp/pcvs/ports/mail/postfix20/scripts/Attic/configure.postfix,v 1.7 2001-05-21 06:52:08 kuriyama Exp $
 
 if [ -f ${WRKDIRPREFIX}${CURDIR}/Makefile.inc ]; then
 	exit
@@ -10,24 +10,10 @@ tempfile=`mktemp -t checklist`
 if [ "${BATCH}" = "yes" ]; then
 	set \"PCRE\"
 else
-	# IPv6 patches are broken on alpha
-	if [ `uname -m` = "alpha" ]; then
-		/usr/bin/dialog --title "Postfix configuration options" --clear \
+	/usr/bin/dialog --title "Postfix configuration options" --clear \
 			--checklist "\n\
 Please select desired options:" -1 -1 16 \
-PCRE		"Perl Compatible Regular Expressions" ON \
-SASL		"Cyrus SASL (Simple Authentication and Security Layer)" OFF \
-DB3		"Berkeley DB3 (required if SASL also built with DB3)" OFF \
-MySQL		"MySQL map lookups" OFF \
-OpenLDAP	"OpenLDAP map lookups" OFF \
-Test		"SMTP/LMTP test server and generator" OFF \
-TLS		"Secure Sockets Layer and Transport Layer Security" OFF \
-2> $tempfile
-	else
-		/usr/bin/dialog --title "Postfix configuration options" --clear \
-			--checklist "\n\
-Please select desired options:" -1 -1 16 \
-PCRE		"Perl Compatible Regular Expressions" ON \
+PCRE		"Perl Compatible Regular Expressions" OFF \
 SASL		"Cyrus SASL (Simple Authentication and Security Layer)" OFF \
 DB3		"Berkeley DB3 (required if SASL also built with DB3)" OFF \
 MySQL		"MySQL map lookups" OFF \
@@ -36,7 +22,6 @@ Test		"SMTP/LMTP test server and generator" OFF \
 TLS		"Secure Sockets Layer and Transport Layer Security" OFF \
 IPv6		"IPv6 support" OFF \
 2> $tempfile
-	fi
 
 	retval=$?
 
@@ -93,8 +78,8 @@ while [ "$1" ]; do
 			echo "BIN1+=		tlsmgr"
 			echo "POSTFIX_CCARGS+=	-DHAS_SSL -I/usr/include/openssl"
 			echo "POSTFIX_AUXLIBS+=	-lssl -lcrypto"
-			echo "DISTFILES+=	\${DISTNAME}.tar.gz pfixtls-0.7.0-20010228-0.9.6.tar.gz"
-			echo "EXTRA_PATCHES+=	\${WRKDIR}/pfixtls-0.7.0-20010228-0.9.6/pfixtls.diff"
+			echo "DISTFILES+=	\${DISTNAME}.tar.gz pfixtls-0.7.2-20010228-pl02-0.9.6a.tar.gz"
+			echo "EXTRA_PATCHES+=	\${WRKDIR}/pfixtls-0.7.2-20010228-pl02-0.9.6a/pfixtls.diff"
 			echo "PATCH_STRIP=	-p1"
 			SUB_TLS=""
 			;;
@@ -120,12 +105,20 @@ while [ "$1" ]; do
 			SUB_TEST=""
 			;;
 		\"IPv6\")
+			if [ `uname -m` != "i386" ]; then
+				/usr/bin/dialog --msgbox "IPv6 patch currently only supported on i386!" 5 60 > /dev/stderr
+				rm -f ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
+				exit 1
+			fi
+			if [ X$SUB_TLS = "X" ]; then
+				/usr/bin/dialog --msgbox "IPv6 and TLS patch cannot be used simultaneously!" 5 60 > /dev/stderr
+				rm -f ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
+				exit 1
+			fi
 			echo "PATCH_SITES+=	ftp://ftp.kame.net/pub/kame/misc/"
 			echo "PATCH_SITES+=	\${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/kame/misc/&,}"
-			echo "PATCHFILES+=	postfix-20010225snap-v6-20010228a.diff.gz"
-			echo ""
-			echo "pre-patch:"
-			echo "	cd \${WRKSRC} && ln -s . postfix"
+			echo "PATCHFILES+=	postfix-20010228pl02-v6-20010503a.diff.gz"
+			echo "PATCH_DIST_STRIP= -p1"
 			echo ""
 			;;
 		*)
