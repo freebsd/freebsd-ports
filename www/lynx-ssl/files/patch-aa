@@ -15,7 +15,7 @@
  # ability to make SSL connections.
 -SSL_DIR= /usr/local/ssl
 -SSL_LIBS= -L$(SSL_DIR)/lib -lssl -lcrypto
-+SSL_DIR= /usr/local
++SSL_DIR= $(prefix)
 +SSL_LIBS= -L$(SSL_DIR)/lib -lssl -lcrypto ${EXTRA_SSL_LIBS}
  SSL_DEFINES= -I$(SSL_DIR)/include -DUSE_SSL
  
