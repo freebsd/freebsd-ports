@@ -1,13 +1,13 @@
 # New ports collection makefile for:	polygraph
-# Version required:	1.0p6
+# Version required:	1.2.0
 # Date created:         3 March 1999
 # Whom:                 Dima Sivachenko <dima@chg.ru>
 #
-# $Id: Makefile,v 1.1.1.1 1999/04/14 20:31:57 billf Exp $
+# $Id: Makefile,v 1.2 1999/04/26 18:21:23 mharo Exp $
 #
 
-DISTNAME=	polygraph-1.1p0-src
-PKGNAME=	polygraph-1.1p0
+DISTNAME=	polygraph-1.2.0-src
+PKGNAME=	polygraph-1.2.0
 CATEGORIES=	benchmarks www
 MASTER_SITES=	http://polygraph.ircache.net/sources/	\
 		http://www.chg.ru/~dima/
