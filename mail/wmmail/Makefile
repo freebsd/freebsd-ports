@@ -3,14 +3,14 @@
 # Date created:        7 Jun 1998
 # Whom:                rom
 #
-# $Id: Makefile,v 1.4 1998/10/20 01:43:07 steve Exp $
+# $Id: Makefile,v 1.5 1998/11/21 07:27:38 steve Exp $
 #
 
 DISTNAME=	wmmail-0.59
 CATEGORIES=	mail
 MASTER_SITES=	http://earth.gaianet.net/~scorpio/
 
-MAINTAINER=	rom_glsa@ein-hashofet.co.il
+MAINTAINER=	jim@phrantic.phear.net
 
 LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
 
