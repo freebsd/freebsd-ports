@@ -16,7 +16,7 @@ DISTNAME=	pylibnet-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
-BUILD_DEPENDS=	swig:${PORTSDIR}/devel/SWIG \
+BUILD_DEPENDS=	${LOCALBASE}/bin/swig1.1:${PORTSDIR}/devel/swig11 \
 		${LOCALBASE}/lib/libnet.a:${PORTSDIR}/net/libnet
 
 USE_REINPLACE=	yes
