@@ -6,20 +6,23 @@
 #
 
 PORTNAME=	autoconvert
-PORTVERSION=	0.3.5
+PORTVERSION=	0.3.8
 CATEGORIES=	chinese
-MASTER_SITES=	http://www.linuxfocus.org/~yu.guanghui/ \
-		ftp://ftp.dlut.edu.cn/pub/PEOPLE/saka/
+MASTER_SITES=	ftp://banyan.dlut.edu.cn/pub/PEOPLE/saka/ \
+		http://www.csie.nctu.edu.tw/~yinjieh/
 
 MAINTAINER=	yinjieh@csie.nctu.edu.tw
 
-WRKSRC=		${WRKDIR}/autoconvert
+LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/autob5 ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/autogb ${PREFIX}/bin
+	${INSTALL_DATA} ${WRKSRC}/lib/libhz.a ${PREFIX}/lib
+	${INSTALL_DATA} ${WRKSRC}/lib/libhz.so.0.0 ${PREFIX}/lib/libhz.so.0
+	cd ${PREFIX}/lib; ${LN} -sf libhz.so.0 libhz.so
 	${MKDIR} ${PREFIX}/share/autoconvert
-.for i in ChangeLog GPL LICENSE Readme TODO Version hz.txt procmailrc.example shed.big5 shed.gb
+.for i in ChangeLog GPL LICENSE Readme TODO Thanks Version hz.txt procmailrc.example shed.big5 shed.gb shed.uni shed.utf7 shed.utf8
 	${INSTALL_DATA} ${WRKSRC}/$i ${PREFIX}/share/autoconvert
 .endfor
 
