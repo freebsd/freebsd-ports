@@ -8,13 +8,11 @@
 PORTNAME=	clex
 PORTVERSION=	3.10
 CATEGORIES=	misc
-MASTER_SITES=	http://www.clex.sk/download/
+MASTER_SITES=	http://freebsdcluster.org/~mich/software/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	mich@FreeBSD.org
 COMMENT=	A commandline file manager
-
-BROKEN=		Unfetchable
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
