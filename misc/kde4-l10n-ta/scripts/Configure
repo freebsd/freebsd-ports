@@ -7,14 +7,13 @@ if [ "${LINGUAS}" ]; then
 	set `echo $LINGUAS`
 else
 if [ "${BATCH}" ]; then
-	set \"az\" \"bg\" \"ca\" \"cs\" \"da\" \"el\" \"en_GB\" \"eo\" \"es\" \"et\" \"fi\" \"he\" \"hu\" \"is\" \"it\" \"lt\" \"lv\" \"mt\" \"nl\" \"no_NY\" \"pl\" \"pt\" \"ro\" \"sk\" \"sl\" \"sr\" \"sv\" \"ta\" \"tr\"
+	set \"az\" \"bg\" \"cs\" \"da\" \"el\" \"en_GB\" \"eo\" \"es\" \"et\" \"fi\" \"he\" \"hu\" \"is\" \"it\" \"lt\" \"lv\" \"mt\" \"nl\" \"no_NY\" \"pl\" \"pt\" \"ro\" \"sk\" \"sl\" \"sr\" \"sv\" \"ta\" \"tr\"
 else
 	/usr/bin/dialog --title "Select languages" --clear \
 		--checklist "\n\
 Please select desired languages:" -1 -1 16 \
 az		"Azerbaijani Turkish" OFF \
 bg		"Bulgarisch" OFF \
-ca		"Canada" OFF \
 cs		"Czech" OFF \
 da		"Danish" OFF \
 nl		"Dutch" OFF \
@@ -29,7 +28,6 @@ hu		"Hungarian" OFF \
 is		"Icelandic" OFF \
 it		"Italian" OFF \
 ja		"Japanese" ON \
-ko		"Korean" ON \
 lt		"Lithuanian" ON \
 lv		"Latvian" ON \
 mt		"Maltese" ON \
