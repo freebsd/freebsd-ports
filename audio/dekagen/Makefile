@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dekagen
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.2
 CATEGORIES=	audio
 MASTER_SITES=	ftp://ftp.ibiblio.org/pub/linux/apps/sound/convert/
 
@@ -33,8 +33,20 @@ RUN_DEPENDS+=	cdparanoia:${PORTSDIR}/audio/cdparanoia
 MAN1=		dekagen.1
 MANCOMPRESSED=	yes
 PLIST_FILES=	bin/dekagen
+USE_REINPLACE=	yes
 
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+DEFAULT_CDROM_DEVICE?=	/dev/acd0c
+.else
+DEFAULT_CDROM_DEVICE?=	/dev/acd0
+.endif
+
+post-patch:
+	@${REINPLACE_CMD} -e \
+	's|/dev/cdrom|${DEFAULT_CDROM_DEVICE}|' \
+	${WRKSRC}/dekagen
 
 NO_BUILD=	Shell Script
 do-install:
