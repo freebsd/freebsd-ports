@@ -6,25 +6,32 @@
 #
 
 PORTNAME=	portaudio
-PORTVERSION=	18
+PORTVERSION=	18.1
 CATEGORIES=	audio
 MASTER_SITES=	http://www.portaudio.com/archives/
-DISTNAME=	${PORTNAME}_v${PORTVERSION}
+DISTNAME=	${PORTNAME}_v${PORTVERSION:S/./_/}
 
-MAINTAINER=	michaelnottebrock@gmx.net
+MAINTAINER=	lofi@freebsd.org
 COMMENT=	Portable cross-platform Audio API
 
 USE_REINPLACE=	yes
 USE_ZIP=	yes
 USE_GMAKE=	yes
-MAKEFILE=	Makefile.linux
-ALL_TARGET=	sharedlib
-PLIST_SUB=	SHLIB_VERSION=${SHLIB_VERSION}
+GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
+NO_FILTER_SHLIBS=yes
 
-SHLIB_VERSION=	0
+pre-everything::
+.if !defined(WITH_PATESTS)
+	@${ECHO_MSG}
+	@${ECHO_MSG} "You can additionally build portaudio's testsuite by defining WITH_PATESTS."
+	@${ECHO_MSG}
+PLIST_SUB+=	WITH_PATESTS="@comment "
+.else
+PLIST_SUB+=	WITH_PATESTS=""
+.endif
 
-post-patch:
+pre-patch:
 # replace \r\n with \n
 # replace <malloc.h> with <stdlib.h>
 	@${FIND} ${WRKSRC} -type f \
@@ -32,20 +39,20 @@ post-patch:
 			${REINPLACE_CMD} -E \
 				-e 's|||' \
 				-e 's|malloc.h|stdlib.h|' \
-				-e 's|machine\/soundcard.h|sys\/soundcard.h|'
+				-e 's|machine\/soundcard.h|sys\/soundcard.h|' \
+				-e 's|-lpthread|${PTHREAD_LIBS}|'
+pre-configure:
+# Make configure executable
+	@${CHMOD} +x ${WRKSRC}/configure
 
-# C{C,FLAGS} and PREFIX safeness
-	@${REINPLACE_CMD} -E \
-		-e 's|gcc|${CC} ${CFLAGS}|' \
-		-e 's|^CFLAGS.*$$||' \
-		${BUILD_WRKSRC}/${MAKEFILE}
+.if !defined(WITH_PATESTS)
+post-configure:
+	@${REINPLACE_CMD} -e 's|tests$$||' ${WRKSRC}/Makefile
+.endif
 
-do-install:
-	@${INSTALL_DATA} ${WRKSRC}/pa_common/portaudio.h \
-		${PREFIX}/include
-	@${INSTALL_DATA} ${WRKSRC}/pa_unix_oss/libportaudio.so \
-		${PREFIX}/lib
-	@${LN} -sf libportaudio.so \
-		${PREFIX}/lib/libportaudio.so.${SHLIB_VERSION}
+.if defined(WITH_PATESTS)
+post-install:
+	@${INSTALL_PROGRAM} ${WRKSRC}/bin/* ${PREFIX}/bin
+.endif
 
 .include <bsd.port.mk>
