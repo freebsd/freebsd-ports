@@ -4,3 +4,7 @@ dialog.  Various properties for the widget can also be set.  Widgets
 may be mapped to variables so that you can control them once the
 dialog is launched.  After the dialog is created on the screen, the
 files for the dialog are created.  
+
+qtarch version 1.4-4 contains a QtArch widget module for KDE 1.1.
+
+WWW: http://www.primenet.com/~jtharris/qtarch/
