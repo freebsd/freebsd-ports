@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	pan2
-PORTVERSION=	0.13.3
-PORTREVISION=	1
+PORTVERSION=	0.13.3.90
 CATEGORIES=	news gnome
 MASTER_SITES=	http://pan.rebelbase.com/download/releases/${PORTVERSION}/SOURCE/ \
 		http://pan.rebelbase.com/download/obsolete/${PORTVERSION}/SOURCE/ \
@@ -18,9 +17,11 @@ DISTNAME=	${PORTNAME:S/2$//}-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	Threaded GNOME 2 newsreader based on Agent for Windows
 
 LIB_DEPENDS=	gtkspell.0:${PORTSDIR}/textproc/gtkspell2 \
-		xml2.5:${PORTSDIR}/textproc/libxml2
+		xml2.5:${PORTSDIR}/textproc/libxml2 \
+		gnet-glib2.7:${PORTSDIR}/net/gnet-glib2
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
@@ -35,8 +36,10 @@ CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
-		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|[(]libdir[)]/locale|(prefix)/share/locale|g' \
-		${WRKSRC}/po/Makefile.in.in
+		 s|DATADIRNAME=lib|DATADIRNAME=share|g ; \
+		 s|gnet-config|gnet-glib2-config|g ; \
+		 s|gnet/gnet\.h|gnet-glib2/gnet.h|g' ${WRKSRC}/configure
+	@${FIND} ${WRKSRC} -name "*.[ch]" | ${XARGS} ${REINPLACE_CMD} -e \
+		's|gnet/gnet\.h|gnet-glib2/gnet.h|g'
 
 .include <bsd.port.mk>
