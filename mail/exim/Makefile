@@ -38,7 +38,7 @@ DISTFILES+=	sa-exim-${SA_EXIM_VERSION}.tar.gz:sa_exim
 
 EXIM_VERSION=	4.44
 EXISCAN_VERSION=28
-SA_EXIM_VERSION=4.1
+SA_EXIM_VERSION=4.2
 
 IGNOREFILES=	FAQ.txt.bz2
 
@@ -159,16 +159,16 @@ PLIST_SUB=	EXIM_VERSION="${EXIM_VERSION}-${PORTREVISION}" \
 
 # Define WITH_OPENLDAP or WITH_OPENLDAP_VER to link against libldap.
 # Define WITH_OPENLDAP_VER to specify a particular version of
-# OpenLDAP to use. Valid values are currently 21 and 22.
+# OpenLDAP to use. Valid values are currently 21, 22 and 23.
 # Defining WITH_OPENLDAP_VER implies WITH_OPENLDAP.
 # Exim also supports NETSCAPE and SOLARIS7 lookup types, but no
 # client libraries exist for these in the ports tree.
 #WITH_OPENLDAP=		yes
-#WITH_OPENLDAP_VER=	21
+#WITH_OPENLDAP_VER=	22
 
 # WITH_BDB_VER is the version of the Berkeley DB library to use, and
 # may be 1, which corresponds to version 1.85 in the base system, 4,
-# 41 or 42 which depends on the databases/db4[12] ports.
+# 41, 42 or 43 which depends on the databases/db4[123] ports.
 WITH_BDB_VER?=1
 
 # When Exim is decoding MIME "words" in header lines it converts any foreign
@@ -345,8 +345,12 @@ LIB_DEPENDS+=	db41.1:${PORTSDIR}/databases/db41
 DB_LIBS=	-L${LOCALBASE}/lib -ldb-4.2
 DB_INCLUDES=	-I${LOCALBASE}/include/db42
 LIB_DEPENDS+=	db-4.2.2:${PORTSDIR}/databases/db42
+.elif (${WITH_BDB_VER} == 43)
+DB_LIBS=	-L${LOCALBASE}/lib -ldb-4.3
+DB_INCLUDES=	-I${LOCALBASE}/include/db43
+LIB_DEPENDS+=	db-4.3.0:${PORTSDIR}/databases/db43
 .else
-BROKEN=		WITH_BDB_VER must be either 1, 4, 41 or 42
+BROKEN=		WITH_BDB_VER must be either 1, 4, 41, 42 or 43
 .endif
 SEDLIST+=	-e 's,XX_DB_LIBS_XX,${DB_LIBS},' \
 		-e 's,XX_DB_INCLUDES_XX,${DB_INCLUDES},'
@@ -580,7 +584,6 @@ do-configure:
 	@${CP} ${WRKDIR}/sa-exim-${SA_EXIM_VERSION}/sa-exim.c ${WRKSRC}/Local
 	@{ \
 	    ${ECHO_CMD} "char *version=\"${SA_EXIM_VERSION}\";"; \
-	    ${ECHO_CMD} "#define DLOPEN_LOCAL_SCAN	1"; \
 	    ${ECHO_CMD} "#define SPAMC_LOCATION		\"${LOCALBASE}/bin/spamc\""; \
 	    ${ECHO_CMD} "#define SPAMASSASSIN_CONF	\"${PREFIX}/etc/exim/sa-exim.conf\""; \
 	} > ${WRKSRC}/Local/sa-exim.h
