@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTVERSION=	9632
+PORTVERSION=	10053
 PORTREVISION=	0
 MASTER_SITES=	http://p4.elixus.org/hist/
 PKGNAMESUFFIX=	-elixus
@@ -13,6 +13,7 @@ PKGNAMESUFFIX=	-elixus
 COMMENT=	An industrial-grade ticketing system with elixus.org patches
 
 BUILD_DEPENDS=	${SITE_PERL}/Data/ShowTable.pm:${PORTSDIR}/devel/p5-Data-ShowTable \
+		${SITE_PERL}/Test/MockObject.pm:${PORTSDIR}/devel/p5-Test-MockObject \
 		${SITE_PERL}/YAML.pm:${PORTSDIR}/textproc/p5-YAML
 
 MASTERDIR=	${.CURDIR}/../../www/rt3
