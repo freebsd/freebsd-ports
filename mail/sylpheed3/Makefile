@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sylpheed
-PORTVERSION=	0.8.6
+PORTVERSION=	0.8.8
 PORTREVISION=	0
 CATEGORIES=	mail ipv6
 MASTER_SITES=	http://sylpheed.good-day.net/sylpheed/
@@ -22,7 +22,8 @@ USE_REINPLACE=	yes
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LIBS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
-CONFIGURE_ARGS=	--enable-ipv6 --prefix=${PREFIX} --with-included-gettext
+CONFIGURE_ARGS=	--enable-ipv6 --prefix=${PREFIX} --with-included-gettext \
+		--program-transform-name=''
 
 .include <bsd.port.pre.mk>
 
