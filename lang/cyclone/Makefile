@@ -10,14 +10,14 @@
 PORTNAME=	cyclone
 PORTVERSION=	0.2
 CATEGORIES=	lang
-MASTER_SITES=	http://www.cs.cornell.edu/projects/cyclone/ \
-		http://www.research.att.com/projects/cyclone/
+MASTER_SITES=	http://www.cs.cornell.edu/projects/cyclone/software/
+#	XXX When this port is upgaded to 0.3, uncomment the following
+#	line, etc.
+#		http://www.research.att.com/projects/cyclone/software/
 DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.gz \
 		${PORTNAME}-${PORTVERSION}-docs.tar.gz
 
 MAINTAINER=	ports@geeksrus.net
-
-BROKEN=	"The maintainer will update this to 0.3 ASAP"
 
 USE_GMAKE=	yes
 NO_PACKAGE=	'Neither CC nor CFLAGS safe.'
