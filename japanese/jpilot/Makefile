@@ -8,7 +8,7 @@
 MASTERDIR=	${.CURDIR}/../../palm/jpilot
 COMMENT=	${.CURDIR}/pkg/COMMENT
 
-CATEGORIES=	japanese
+CATEGORIES=	japanese palm comms
 
 MAINTAINER=	sumikawa@FreeBSD.org
 
