@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	anthy
-PORTVERSION=	4300b
+PORTVERSION=	4700
 CATEGORIES=	japanese
-MASTER_SITES=	http://downloads.sourceforge.jp/anthy/5332/:anthy
+MASTER_SITES=	http://downloads.sourceforge.jp/anthy/6621/:anthy
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:anthy
 DIST_SUBDIR=	anthy
 
