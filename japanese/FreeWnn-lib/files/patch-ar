@@ -1,0 +1,24 @@
+--- ../Xsi.org/Wnn/jserver/Makefile.in	Tue Mar 21 02:34:04 2000
++++ Wnn/jserver/Makefile.in	Thu Aug 31 09:54:43 2000
+@@ -83,17 +83,19 @@
+ 
+ jserver: $(OBJS)
+ 	$(RM) $@
+-	$(CCLINK) -o $@ $(LDOPTIONS) $(OBJS) @LIBS@
++	$(LIBTOOL) $(CCLINK) -o $@ $(LDOPTIONS) $(OBJS) @LIBS@
+ 
+ clean::
+ 	$(RM) jserver
++	$(RM) -r .libs
++	$(RM) *.lo *.la
+ 
+ instserver:: install
+ 
+ install:: jserver
+ 	@if [ -d $(DESTDIR)$(JWNNBINDIR) ]; then set +x; \
+ 	else (set -x; $(MKDIRHIER) $(DESTDIR)$(JWNNBINDIR)); fi
+-	$(INSTALL) $(INSTALLFLAGS) $(INSTPGMFLAGS) $(LOCAL_INSTFLAGS) jserver $(DESTDIR)$(JWNNBINDIR)/jserver
++	$(LIBTOOL) $(INSTALL) $(INSTALLFLAGS) $(INSTPGMFLAGS) $(LOCAL_INSTFLAGS) jserver $(DESTDIR)$(JWNNBINDIR)/jserver
+ 
+ $(OBJ0) : $(SRC0)
+ 	$(CC) -c $(CFLAGS) $(SERVERINITDEF) $(FORKDEF) $(SOLINGERDEFS) ./`basename $@ .o`.c

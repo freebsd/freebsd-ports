@@ -1,105 +1,94 @@
---- kWnn/jlib/Imakefile.orig	Wed Aug 17 10:11:40 1994
-+++ kWnn/jlib/Imakefile	Tue Jan  5 23:06:15 1999
-@@ -3,5 +3,9 @@
- XCOMM
-+XCOMM For Mule, add sources (yincoding.c py_table.c zy_table.c) 1
-+XCOMM   -- S. Taoka
-+XCOMM
- #define DoNormalLib YES
-+#define DoSharedLib YES
+--- ../Xsi.org/cWnn/jutil/Makefile.in	Sun Jan 30 14:54:49 2000
++++ cWnn/jutil/Makefile.in	Thu Aug 31 10:07:33 2000
+@@ -108,65 +108,69 @@
  
- #include <Library.tmpl>
+ all:: $(PROGRAMS)
  
-@@ -10,7 +14,9 @@
- LINKS = getopt.c jl.c js.c wnnerrmsg.c
-     JLIBDEFINES = -DWRITE_CHECK
-        INCLUDES = -I$(KWNNINCLUDESRC) -I$(TOP)
--        DEFINES = $(KWNNDEFINES) $(KWNNLANGDEF) $(JLIBDEFINES)
-+        DEFINES = $(KWNNDEFINES) $(KWNNLANGDEF) $(CWNNLANGDEF) $(JLIBDEFINES)
-+XCOMM						# for Mule
-+XCOMM						#   -- S. Taoka
-    INSTALLFLAGS = $(INSTBINFLAGS)
-        LINTLIBS = 
- 
-@@ -28,6 +34,15 @@
- OBJ4= strings.o
- SRC5= $(KWNNETCSRC)/bcopy.c
- OBJ5= bcopy.o
-+SRC6= $(KWNNETCSRC)/yincoding.c
-+XCOMM for Mule
-+XCOMM   -- S. Taoka
-+OBJ6= yincoding.o
-+SRC7= $(KWNNETCSRC)/py_table.c
-+OBJ7= py_table.o
-+SRC8= $(KWNNETCSRC)/zy_table.c
-+OBJ8= zy_table.o
++clean::
++	$(RM) -r .libs
++	$(RM) *.lo *.la
 +
- LOCAL_RKSRCS= $(KWNNROMKANSRC)/rk_bltinfn.c \
- 	$(KWNNROMKANSRC)/rk_main.c \
- 	$(KWNNROMKANSRC)/rk_modread.c \
-@@ -40,13 +55,26 @@
- 	$(KWNNROMKANSRC)/rk_read.o \
- 	$(KWNNROMKANSRC)/rk_vars.o
+ catod: $(OBJATOD)
+ 	$(RM) $@
+-	$(CCLINK) -o $@ $(LDOPTIONS) $(OBJATOD) @LIBS@
++	$(LIBTOOL) $(CCLINK) -o $@ $(LDOPTIONS) $(OBJATOD) @LIBS@
  
--LOCAL_ETCSRCS = $(SRC4) $(SRC5)
--LOCAL_ETCOBJS = $(OBJ4) $(OBJ5)
-+UNSHARED_LOCAL_RKOBJS= $(KWNNROMKANSRC)/unshared/rk_bltinfn.o \
-+	$(KWNNROMKANSRC)/unshared/rk_main.o \
-+	$(KWNNROMKANSRC)/unshared/rk_modread.o \
-+	$(KWNNROMKANSRC)/unshared/rk_read.o \
-+	$(KWNNROMKANSRC)/unshared/rk_vars.o
-+
-+LOCAL_ETCSRCS = $(SRC4) $(SRC5) $(SRC6) $(SRC7) $(SRC8)
-+LOCAL_ETCOBJS = $(OBJ4) $(OBJ5) $(OBJ6) $(OBJ7) $(OBJ8)
- SRCS= $(SRC1) $(SRC3) $(LOCAL_ETCSRCS)
- OBJS= $(OBJ1) $(OBJ3) $(LOCAL_ETCOBJS) $(LOCAL_RKOBJS)
-+UNSHAREDOBJS= $(OBJ1) $(OBJ3) $(LOCAL_ETCOBJS) $(UNSHARED_LOCAL_RKOBJS)
-+
-+SOKWNN4LIBREV=1.0
+ clean::
+ 	$(RM) catod
  
- LibraryObjectRule()
-+#if DoSharedLib
-+AllTarget($(OBJS) libkwnn.a libkwnn4.so.$(SOKWNN4LIBREV))
-+#else
- AllTarget($(OBJS) libkwnn.a)
-+#endif
+ catof: $(OBJATOF)
+ 	$(RM) $@
+-	$(CCLINK) -o $@ $(LDOPTIONS) $(OBJATOF) @LIBS@
++	$(LIBTOOL) $(CCLINK) -o $@ $(LDOPTIONS) $(OBJATOF) @LIBS@
  
- includes:: $(LINKS)
+ clean::
+ 	$(RM) catof
  
-@@ -65,11 +93,19 @@
+ cwnntouch: $(OBJTOUCH)
+ 	$(RM) $@
+-	$(CCLINK) -o $@ $(LDOPTIONS) $(OBJTOUCH) @LIBS@
++	$(LIBTOOL) $(CCLINK) -o $@ $(LDOPTIONS) $(OBJTOUCH) @LIBS@
  
- NormalLintTarget($(SRC2))
+ clean::
+ 	$(RM) cwnntouch
  
--NormalLibraryTarget(kwnn,$(OBJS))
-+#if DoSharedLib
-+SharedLibraryTarget(kwnn4,$(SOKWNN4LIBREV),$(OBJS),.,.)
-+#endif
-+
-+UnsharedLibraryTarget(kwnn,$(UNSHAREDOBJS),unshared,..)
- LintLibraryTarget(kwnn,$(SRCS))
+ cdicsort: $(OBJSORT)
+ 	$(RM) $@
+-	$(CCLINK) -o $@ $(LDOPTIONS) $(OBJSORT)
++	$(LIBTOOL) $(CCLINK) -o $@ $(LDOPTIONS) $(OBJSORT)
  
- instlib:: install
+ clean::
+ 	$(RM) cdicsort
  
-+#if DoSharedLib
-+InstallSharedLibrary(kwnn4,$(SOKWNN4LIBREV),$(WNNLIBDIR))
-+#endif
-+
- InstallLibrary(kwnn,$(WNNLIBDIR))
+ cdtoa: $(OBJDTOA)
+ 	$(RM) $@
+-	$(CCLINK) -o $@ $(LDOPTIONS) $(OBJDTOA) @LIBS@
++	$(LIBTOOL) $(CCLINK) -o $@ $(LDOPTIONS) $(OBJDTOA) @LIBS@
  
- #if ProfileLibJlib
-@@ -77,9 +113,12 @@
- InstallLibrary(kwnn_p,$(WNNLIBDIR))
- #endif
+ clean::
+ 	$(RM) cdtoa
  
--WnnSpecialObjectRule($(OBJ3),$(SRC3),$(KWNNETCSRC),)
--WnnSpecialObjectRule($(OBJ4),$(SRC4),$(KWNNETCSRC),)
--WnnSpecialObjectRule($(OBJ5),$(SRC5),$(KWNNETCSRC),)
-+WnnSpecialSharedObjectRule($(OBJ3),$(SRC3),$(KWNNETCSRC),)
-+WnnSpecialSharedObjectRule($(OBJ4),$(SRC4),$(KWNNETCSRC),)
-+WnnSpecialSharedObjectRule($(OBJ5),$(SRC5),$(KWNNETCSRC),)
-+WnnSpecialSharedObjectRule($(OBJ6),$(SRC6),$(KWNNETCSRC),)
-+WnnSpecialSharedObjectRule($(OBJ7),$(SRC7),$(KWNNETCSRC),)
-+WnnSpecialSharedObjectRule($(OBJ8),$(SRC8),$(KWNNETCSRC),)
+-cwnnstat: $(OBJSTAT) $(CWNNJLIB)
++cwnnstat: $(OBJSTAT) @DEPCWNNJLIB@
+ 	$(RM) $@
+-	$(CCLINK) -o $@ $(LDOPTIONS) $(OBJSTAT) $(CWNNJLIB) @LIBS@
++	$(LIBTOOL) $(CCLINK) -o $@ $(LDOPTIONS) $(OBJSTAT) $(CWNNJLIB) @LIBS@
  
- $(LOCAL_RKOBJS) : $(LOCAL_RKSRCS)
- 	@case '${MFLAGS}' in *[ik]*) set +e;; esac; \
+ clean::
+ 	$(RM) cwnnstat
+ 
+-cwnnkill: $(OBJKILL) $(CWNNJLIB)
++cwnnkill: $(OBJKILL) @DEPCWNNJLIB@
+ 	$(RM) $@
+-	$(CCLINK) -o $@ $(LDOPTIONS) $(OBJKILL) $(CWNNJLIB) @LIBS@
++	$(LIBTOOL) $(CCLINK) -o $@ $(LDOPTIONS) $(OBJKILL) $(CWNNJLIB) @LIBS@
+ 
+ clean::
+ 	$(RM) cwnnkill
+ 
+-cwddel: $(OBJWDDEL) $(CWNNJLIB)
++cwddel: $(OBJWDDEL) @DEPCWNNJLIB@
+ 	$(RM) $@
+-	$(CCLINK) -o $@ $(LDOPTIONS) $(OBJWDDEL) $(CWNNJLIB) @LIBS@
++	$(LIBTOOL) $(CCLINK) -o $@ $(LDOPTIONS) $(OBJWDDEL) $(CWNNJLIB) @LIBS@
+ 
+ clean::
+ 	$(RM) cwddel
+ 
+-cwdreg: $(OBJWDREG) $(CWNNJLIB)
++cwdreg: $(OBJWDREG) @DEPCWNNJLIB@
+ 	$(RM) $@
+-	$(CCLINK) -o $@ $(LDOPTIONS) $(OBJWDREG) $(CWNNJLIB) @LIBS@
++	$(LIBTOOL) $(CCLINK) -o $@ $(LDOPTIONS) $(OBJWDREG) $(CWNNJLIB) @LIBS@
+ 
+ clean::
+ 	$(RM) cwdreg
+@@ -324,7 +328,7 @@
+ 	@for flag in ${MAKEFLAGS} ''; do \
+ 	case "$$flag" in *=*) ;; *[i]*) set +e;; esac; done; \
+ 	for i in $(PROGRAMS); do \
+-	(set -x; $(INSTALL) $(INSTALLFLAGS)  $$i $(DESTDIR)$(CWNNBINDIR)); \
++	(set -x; $(LIBTOOL) $(INSTALL) $(INSTALLFLAGS)  $$i $(DESTDIR)$(CWNNBINDIR)); \
+ 	done
+ 
+ $(OBJ1) : $(SRC1)

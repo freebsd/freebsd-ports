@@ -1,0 +1,76 @@
+--- kWnn/jlib/Makefile.in.orig	Tue Mar 21 01:21:12 2000
++++ kWnn/jlib/Makefile.in	Fri Sep  1 01:32:41 2000
+@@ -86,11 +86,13 @@
+ 
+ .c.o:
+ 	$(RM) $@
+-	$(CC) -c $(CFLAGS) $(_NOOP_) $*.c
++	$(LIBTOOL) $(CC) -c $(CFLAGS) $(_NOOP_) $*.c
+ 
+ clean::
++	$(RM) -r .libs
++	$(RM) *.lo *.la
+ 
+-all:: $(LINKS) $(OBJS) libkwnn.a
++all:: $(LINKS) $(OBJS) libkwnn.la
+ 
+ includes:: $(LINKS)
+ 
+@@ -158,12 +160,10 @@
+ lint1:
+ 	$(LINT) $(LINTFLAGS) $(FILE) $(LINTLIBS)
+ 
+-all:: libkwnn.a
++all:: libkwnn.la
+ 
+-libkwnn.a: $(OBJS) $(EXTRALIBRARYDEPS)
+-	$(RM) $@
+-	$(AR) $@ $(OBJS)
+-	$(RANLIB) $@
++libkwnn.la: $(OBJS) $(EXTRALIBRARYDEPS)
++	$(LIBTOOL) $(CC) -o $@ $(OBJS:.o=.lo) -rpath $(DESTDIR)$(WNNLIBDIR) -version-info $(KWNNJLIBVERSION)
+ 
+ lintlib:: llib-lkwnn.ln
+ 
+@@ -173,32 +173,31 @@
+ 
+ instlib:: install
+ 
+-install:: libkwnn.a
++install:: libkwnn.la
+ 	@if [ -d $(DESTDIR)$(WNNLIBDIR) ]; then set +x; \
+ 	else (set -x; $(MKDIRHIER) $(DESTDIR)$(WNNLIBDIR)); fi
+-	$(INSTALL) $(INSTALLFLAGS) $(INSTLIBFLAGS) libkwnn.a $(DESTDIR)$(WNNLIBDIR)
+-	$(RANLIB) $(RANLIBINSTFLAGS) $(DESTDIR)$(WNNLIBDIR)/libkwnn.a
++	$(LIBTOOL) $(INSTALL) $(INSTALLFLAGS) $(INSTLIBFLAGS) libkwnn.la $(DESTDIR)$(WNNLIBDIR)
+ 
+ $(OBJ3) : $(SRC3)
+-	$(CC) -c $(CFLAGS)  $(KWNNETCSRC)/`basename $@ .o`.c
++	$(LIBTOOL) $(CC) -c $(CFLAGS)  $(KWNNETCSRC)/`basename $@ .o`.c
+ 
+ $(OBJ4) : $(SRC4)
+-	$(CC) -c $(CFLAGS)  $(KWNNETCSRC)/`basename $@ .o`.c
++	$(LIBTOOL) $(CC) -c $(CFLAGS)  $(KWNNETCSRC)/`basename $@ .o`.c
+ 
+ $(OBJ5) : $(SRC5)
+-	$(CC) -c $(CFLAGS)  $(KWNNETCSRC)/`basename $@ .o`.c
++	$(LIBTOOL) $(CC) -c $(CFLAGS)  $(KWNNETCSRC)/`basename $@ .o`.c
+ 
+ $(OBJ6) : $(SRC6)
+-	$(CC) -c $(CFLAGS)  $(KWNNETCSRC)/`basename $@ .o`.c
++	$(LIBTOOL) $(CC) -c $(CFLAGS)  $(KWNNETCSRC)/`basename $@ .o`.c
+ 
+ $(OBJ7) : $(SRC7)
+-	$(CC) -c $(CFLAGS)  $(KWNNETCSRC)/`basename $@ .o`.c
++	$(LIBTOOL) $(CC) -c $(CFLAGS)  $(KWNNETCSRC)/`basename $@ .o`.c
+ 
+ $(OBJ8) : $(SRC8)
+-	$(CC) -c $(CFLAGS)  $(KWNNETCSRC)/`basename $@ .o`.c
++	$(LIBTOOL) $(CC) -c $(CFLAGS)  $(KWNNETCSRC)/`basename $@ .o`.c
+ 
+ $(OBJ9) : $(SRC9)
+-	$(CC) -c $(CFLAGS)  $(KWNNETCSRC)/`basename $@ .o`.c
++	$(LIBTOOL) $(CC) -c $(CFLAGS)  $(KWNNETCSRC)/`basename $@ .o`.c
+ 
+ $(LOCAL_RKOBJS) : $(LOCAL_RKSRCS)
+ 	@case '${MFLAGS}' in *[ik]*) set +e;; esac; 	cd $(KWNNROMKANSRC); echo "making all in $(KWNNROMKANSRC)"; 	$(MAKE) 'CDEBUGFLAGS=$(CDEBUGFLAGS)' $(MFLAGS)

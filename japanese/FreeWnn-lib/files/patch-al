@@ -1,20 +1,11 @@
---- ./Wnn/jlib.V3/jlib.h.orig	Tue Sep 17 06:30:30 1991
-+++ ./Wnn/jlib.V3/jlib.h	Fri Sep  5 21:37:24 1997
-@@ -51,12 +51,14 @@
- /*
- 	Nihongo	Henkan	Library Header File
- */
--/*
- #include <setjmp.h>
--*/
--
+--- Wnn/pubdicplus/Makefile.in.~1~	Sun Jan 30 12:49:35 2000
++++ Wnn/pubdicplus/Makefile.in	Tue Aug 29 09:25:58 2000
+@@ -37,7 +37,7 @@
+            ATOD = $(WNNJUTILSRC)/atod
+            ATOF = $(WNNJUTILSRC)/atof
+        WNNTOUCH = $(WNNJUTILSRC)/wnntouch
+-          HINSI = $(WNNJDSRC)/hinsi.data
++          HINSI = @HINSI_DATA@
+        FZK_FLAG =
  
- #define	w_char	unsigned short
-+#ifndef WCHAR_T
-+#define wchar_t	w_char
-+#define wchar	w_char
-+#define WCHAR_T
-+#endif 
- 
- #define JLIB
- 
+ LINKS = Version bio.hd bio.u chimei.hd chimei.u computer.hd  computer.u fzk.attr fzk.con fzk.fzkattr fzk.jirattr  fzk.jircon fzk.master fzk.shuutan jinmei.hd jinmei.u  kihon.hd kihon.u koyuu.hd koyuu.u setsuji.hd setsuji.u  special.hd special.u symbol.hd symbol.u tankan.hd tankan.u

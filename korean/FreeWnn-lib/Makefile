@@ -1,16 +1,14 @@
-# New ports collection makefile for:	Wnn for Korea
-# Date created:		20 July 1997
-# Whom:			Satoshi Taoka <taoka@FreeBSD.org>
+# New ports collection makefile for:	libraries of FreeWnn
+# Date created:		00/08/25
+# Whom:			Satoshi TAOKA <taoka@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
+PKGNAMESUFFIX=	-lib
 CATEGORIES=	korean
-
-## COMMENT, DESCR, PLIST is used in a local 'pkg' directory
-MASTERDIR=	${.CURDIR}/../../japanese/Wnn
-COMMENT=	${.CURDIR}/pkg/COMMENT
-DESCR=		${.CURDIR}/pkg/DESCR
-PLIST=		${.CURDIR}/pkg/PLIST
+MASTERDIR=	${.CURDIR}/../../japanese/FreeWnn-lib
+PKGDIR=		${.CURDIR}/pkg
+WNN=		kWnn
 
 .include "${MASTERDIR}/Makefile"

@@ -1,175 +1,127 @@
-# New ports collection makefile for:	Wnn for Japanese
-# Date created:		20 July 1997
-# Whom:			Satoshi Taoka <taoka@FreeBSD.org>
+# New ports collection makefile for:    FreeWnn for Japanese
+# Date created:     20 July 1997
+# Whom:         Satoshi Taoka <taoka@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-PORTNAME=	Wnn
-PORTVERSION=	4.2
-CATEGORIES?=	japanese
-MASTER_SITES=	ftp://ftp.u-tokyo.ac.jp/pub/Japanese/Wnn/ \
-		ftp://ftp.wg.omron.co.jp/pub/Wnn/dic/pubdic+/ \
-		http://www.infonets.hiroshima-u.ac.jp/~taoka/FreeBSD/Wnn/
-DISTNAME=	${PORTNAME}${PORTVERSION}
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		${WNN_EXTRA_PATCH}
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
+PORTNAME=	FreeWnn
+PORTVERSION=	${WMMVERSION:S/-/./}
+CATEGORIES?=    japanese
+MASTER_SITES=   ftp://ftp.freewnn.org/pub/FreeWnn/ \
+		ftp://ftp.etl.go.jp/pub/FreeWnn/alpha/
+PKGNAMESUFFIX?=	-lib
+DISTNAME=	${PORTNAME}-${WMMVERSION}
 
-MAINTAINER=	taoka@FreeBSD.org
+MAINTAINER=     taoka@FreeBSD.org
 
-BUILD_DEPENDS=	imake:${PORTSDIR}/devel/imake-4
+WRKSRC=         ${WRKDIR}/${DISTNAME}/Xsi
+ALL_TARGET=	includes all
+INSTALL_TARGET=	install install.man
+GNU_CONFIGURE=  yes
+USE_AUTOCONF=	yes
+USE_LIBTOOL=	yes
 
-USE_XLIB=	yes
-INSTALLS_SHLIB=	yes
-PATCHDIR=	${.CURDIR}/../../japanese/Wnn/patches
-FILESDIR=	${.CURDIR}/../../japanese/Wnn/files
-PKGDIR=		${.CURDIR}/../../japanese/Wnn/pkg
-WRKSRC=		${WRKDIR}/Xsi
+WMMVERSION=	1.1.1-a017
 
-WNN_EXTRA_PATCH= ${DISTNAME}.patch-981201.tar.gz
-MAKE_ENV+=	 PATH=/usr/bin:$${PATH} PORT_IMAKE_DEFINES='${WNN_DEF}'
-
-.if defined(BATCH)
-BATCH=	yes	# make sure it's not empty
-.endif
-
-.include <bsd.port.pre.mk>
-
-.if ${PKGNAMEPREFIX} == ja-
-DISTFILES+=	pubdic+.tar.gz pubdic+-fix01.gz pubdic+.diff pubdic+.special.diff
-PORT_DOCDIR=	${PREFIX}/share/doc/ja-Wnn
-DOC_FROM=	${WRKSRC}/Wnn
-BuildWnn=	YES
-BuildJlibV3=	YES
-LOCAL_MAN_LANG=	ja
-SHARED_LIB=	libwnn4
+WNN?=		Wnn
+.if (${PKGNAMESUFFIX} == -lib)
+CONFIGURE_ARGS=	--enable-server=no
+## I must use MLINKS, but ....
+NOMANCOMPRESS=	yes
 .else
-BuildWnn=	NO
+CONFIGURE_ARGS=	--enable-libraries=no
 .endif
-.if ${PKGNAMEPREFIX} == zh-
-PORT_DOCDIR=	${PREFIX}/share/doc/zh-Wnn
-DOC_FROM=	${WRKSRC}/cWnn
-BuildCWnn=	YES
-SHARED_LIB=	libcwnn4
+
+.if (${WNN} == Wnn)
+CONFIGURE_ARGS+= --enable-cWnn=no --enable-kWnn=no
+MANLANG=        ja
+CONFIGURE_ARGS+= --mandir=${PREFIX}/man/ja
+.if (${PKGNAMESUFFIX} == -lib)
+MAN3= jl_bun_suu.3 jl_c_zenkouho.3 jl_close.3 jl_connect.3 jl_connect_lang.3 \
+    jl_dai_top.3 jl_dic_add.3 jl_dic_add_e.3 jl_dic_comment_set.3 \
+    jl_dic_comment_set_e.3 jl_dic_delete.3 jl_dic_delete_e.3 jl_dic_list.3 \
+    jl_dic_list_e.3 jl_dic_save.3 jl_dic_save_all.3 jl_dic_save_all_e.3 \
+    jl_dic_save_e.3 jl_dic_use.3 jl_dic_use_e.3 jl_disconnect.3 jl_env.3 \
+    jl_env_get.3 jl_env_set.3 jl_env_sticky.3 jl_env_sticky_e.3 \
+    jl_env_un_sticky.3 jl_env_un_sticky_e.3 jl_fuzokugo_get.3 \
+    jl_fuzokugo_get_e.3 jl_fuzokugo_set.3 jl_fuzokugo_set_e.3 jl_get_kanji.3 \
+    jl_get_yomi.3 jl_get_zenkouho_kanji.3 jl_hinsi_dicts.3 jl_hinsi_dicts_e.3 \
+    jl_hinsi_list.3 jl_hinsi_list_e.3 jl_hinsi_name.3 jl_hinsi_name_e.3 \
+    jl_hinsi_number.3 jl_hinsi_number_e.3 jl_inspect.3 jl_isconnect.3 \
+    jl_isconnect_e.3 jl_jiri_len.3 jl_kanji_len.3 jl_kill.3 jl_next.3 \
+    jl_next_dai.3 jl_nobi_conv.3 jl_open.3 jl_open_lang.3 jl_param_get.3 \
+    jl_param_get_e.3 jl_param_set.3 jl_param_set_e.3 jl_previous.3 \
+    jl_previous_dai.3 jl_ren_conv.3 jl_set_env_wnnrc.3 jl_set_jikouho.3 \
+    jl_set_jikouho_dai.3 jl_tan_conv.3 jl_update_hindo.3 jl_word_add.3 \
+    jl_word_add_e.3 jl_word_comment_set.3 jl_word_comment_set_e.3 \
+    jl_word_delete.3 jl_word_delete_e.3 jl_word_info.3 jl_word_info_e.3 \
+    jl_word_search.3 jl_word_search_by_env.3 jl_word_search_by_env_e.3 \
+    jl_word_search_e.3 jl_word_use.3 jl_word_use_e.3 jl_yomi_len.3 \
+    jl_zenkouho.3 jl_zenkouho_bun.3 jl_zenkouho_dai.3 jl_zenkouho_daip.3 \
+    jl_zenkouho_suu.3 js_access.3 js_close.3 js_connect.3 js_dic_add.3 \
+    js_dic_delete.3 js_dic_file_create.3 js_dic_file_create_client.3 \
+    js_dic_info.3 js_dic_list.3 js_dic_list_all.3 js_dic_use.3 js_disconnect.3 \
+    js_env_exist.3 js_env_list.3 js_env_sticky.3 js_env_un_sticky.3 \
+    js_file_comment_set.3 js_file_discard.3 js_file_info.3 js_file_list.3 \
+    js_file_list_all.3 js_file_loaded.3 js_file_loaded_local.3 \
+    js_file_password_set.3 js_file_read.3 js_file_receive.3 js_file_remove.3 \
+    js_file_remove_client.3 js_file_send.3 js_file_stat.3 js_file_write.3 \
+    js_fuzokugo_get.3 js_fuzokugo_set.3 js_get_lang.3 js_hindo_file_create.3 \
+    js_hindo_file_create_client.3 js_hindo_set.3 js_hinsi_dicts.3 \
+    js_hinsi_list.3 js_hinsi_name.3 js_hinsi_number.3 js_hinsi_table_set.3 \
+    js_isconnect.3 js_kanren.3 js_kantan_dai.3 js_kantan_sho.3 \
+    js_kanzen_dai.3 js_kanzen_sho.3 js_kill.3 js_mkdir.3 js_open.3 \
+    js_open_lang.3 js_param_get.3 js_param_set.3 js_set_lang.3 \
+    js_version.3 js_who.3 js_word_add.3 js_word_comment_set.3 \
+    js_word_delete.3 js_word_info.3 js_word_search.3 js_word_search_by_env.3 \
+    msg_close.3 msg_get.3 msg_open.3 romkan_clear.3 romkan_dispmode.3 \
+    romkan_getc.3 romkan_init.3 romkan_next.3 romkan_ungetc.3
 .else
-BuildCWnn=	NO
+#BUILD_DEPENDS=	${LOCALBASE}/lib/libwnn.a:${PORTSDIR}/japanese/FreeWnn-lib
+#RUN_DEPENDS=	${LOCALBASE}/lib/wnn/ja_JP/jserverrc:${PORTSDIR}/japanese/FreeWnn-lib
+LIB_DEPENDS=	wnn.0:${PORTSDIR}/japanese/FreeWnn-lib
+CONFIGURE_ARGS+= --with-libwnn=-lwnn --with-wnn-libraries="${PREFIX}/lib"
+MAN1= atod.1 atof.1 dtoa.1 jserver.1 oldatonewa.1 uum.1 wddel.1 wdreg.1 \
+	wnnkill.1 wnnstat.1 wnntouch.1
+MAN4= 2a_ctrl.4 2b_romkana.4 cvt_key_tbl.4 fzk.data.4 fzk.u.4 hinsi_data.4 \
+	jserverrc.4 mode.4 serverdefs.4 ujis_dic.4 uumkey.4 uumrc.4 wnnenvrc.4
+MAN5= pubdic.5 usr_dic.5
 .endif
-.if ${PKGNAMEPREFIX} == ko-
-# kWnn has no manual.
-BuildKWnn=	YES
-SHARED_LIB=	libkwnn4
-.else
-BuildKWnn=	NO
+.elif (${WNN} == cWnn)
+CONFIGURE_ARGS+=	--enable-Wnn=no --enable-kWnn=no
+.if (${PKGNAMESUFFIX} == -server)
+#BUILD_DEPENDS=	${LOCALBASE}/lib/libcwnn.a:${PORTSDIR}/chinese/FreeWnn-lib
+#RUN_DEPENDS=	${LOCALBASE}/lib/wnn/zh_CN/cserverrc:${PORTSDIR}/chinese/FreeWnn-lib
+LIB_DEPENDS=	cwnn.0:${PORTSDIR}/chinese/FreeWnn-lib
+MAN1= cserver.1 cuum.1 cwnnkill.1 cwnnstat.1 catod.1 catof.1 cdicsort.1 \
+	cdtoa.1 cwddel.1 cwdreg.1 cwnntouch.1
+MAN4= cst_end.4 cwnn.4 cenv.4 ckey.4
+CONFIGURE_ARGS+= --with-libcwnn=-lcwnn --with-cwnn-libraries="${PREFIX}/lib"
 .endif
-BuildXwnmo=	YES
-# pubdic+
-PUBDICPDIR=	${WRKSRC}/pubdic+
-WDICS=	bio.u computer.u kihon.u setsuji.u tankan.u \
-	chimei.u jinmei.u koyuu.u symbol.u special.u
-ATOD=	${WRKSRC}/Wnn/jutil/atod -h ${WRKSRC}/Wnn/jd/hinsi.data
-#WNN_DEF+=	-DBuildPubdic=NO
-# TOPDIR should be a full path provided we build a shared library.
-WNN_DEF+=	-DTOPDIR=${WRKSRC}
+.elif (${WNN} == kWnn)
+CONFIGURE_ARGS+=	--enable-Wnn=no --enable-cWnn=no
+.if (${PKGNAMESUFFIX} == -server)
+#BUILD_DEPENDS=	${LOCALBASE}/lib/libkwnn.a:${PORTSDIR}/korean/FreeWnn-lib
+#RUN_DEPENDS=	${LOCALBASE}/lib/wnn/ko_KR/kserverrc:${PORTSDIR}/korean/FreeWnn-lib
+LIB_DEPENDS=	kwnn.0:${PORTSDIR}/korean/FreeWnn-lib
+CONFIGURE_ARGS+= --with-libkwnn=-lkwnn --with-kwnn-libraries="${PREFIX}/lib"
+.endif
+.endif
 
 post-extract:
-	${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} \
-		${_DISTDIR}${WNN_EXTRA_PATCH} ${EXTRACT_AFTER_ARGS} \
-		-C ${WRKSRC}
-	${LN} -sf Project.tmpl ${WRKSRC}/config/X11.tmpl
-.if ${PKGNAMEPREFIX} == ja-
-	${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}pubdic+.tar.gz ${EXTRACT_AFTER_ARGS} -C ${WRKSRC}
-.endif
+	${CP} ${LOCALBASE}/share/libtool/libltdl/aclocal.m4 ${WRKSRC}
+	${CP} ${LOCALBASE}/share/autoconf/config.sub ${WRKSRC}
+	${CP} ${LOCALBASE}/share/autoconf/config.guess ${WRKSRC}
 
-pre-patch:
-	cd ${WRKSRC}; ${PATCH} ${PATCH_DIST_ARGS} < ${WRKSRC}/Wnn-patch-01Dec98
-
-#### pubdic+
-.if ${PKGNAMEPREFIX} == ja-
-post-patch:
-	cd ${PUBDICPDIR}; \
-	${GZCAT} ${_DISTDIR}pubdic+-fix01.gz | ${PATCH} --quiet; \
-	${PATCH} --quiet < ${_DISTDIR}pubdic+.diff; \
-	${PATCH} --quiet < ${_DISTDIR}pubdic+.special.diff
-.endif
-
-pre-configure:
-	for file in ${WRKSRC}/config/Project.tmpl \
-		${WRKSRC}/Contrib/dic/gerodic/Makefile; do \
-	  ${MV} $$file $$file.orig2; \
-	  ${SED} -e 's!^\([ ]*PREFIX = \).*$$!\1${PREFIX}!' \
-		-e 's!%%LOCAL_MAN_LANG%%!${LOCAL_MAN_LANG}!' \
-		-e 's!%%BuildWnn%%!${BuildWnn}!' \
-		-e 's!%%BuildCWnn%%!${BuildCWnn}!' \
-		-e 's!%%BuildKWnn%%!${BuildKWnn}!' \
-		-e 's!%%BuildXwnmo%%!${BuildXwnmo}!' \
-		-e 's!%%BuildJlibV3%%!${BuildJlibV3}!' \
-		$$file.orig2 > $$file; \
-	done
-
-do-configure:
-	 (cd ${WRKSRC}; \
-	 imake -DUseInstalled -I${WRKSRC}/config \
-		 -I${X11BASE}/lib/X11/config -DTOPDIR=${WRKSRC}; \
-	 ${MAKE} Makefiles; \
-	 ${MAKE} clean; \
-	 ${MAKE} includes; \
-	 ${MAKE} depend )
-
-pre-build:
-#### pubdic+
-.if ${PKGNAMEPREFIX} == ja-
-	cd ${PUBDICPDIR}; ${XMKMF}; ${MAKE} wnn; \
-	cd ${WRKSRC}/Pubdic; \
-	for file in ${WDICS}; do \
-		${MV} -f $$file $$file.org; \
-		${MV} ../pubdic+/$$file . ; \
-		hdfile=`echo $$file | ${SED} 's/\\.u/.hd/'`; \
-		${MV} -f $$hdfile $$hdfile.org; \
-		${SED} 's,(pubdic),(pubdic+),' $$hdfile.org > $$hdfile; \
-	done
-.endif
-
-# These are necesary because this package uses a different Makefile for
-#  building and installing etc.
-#do-build:
-#	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} Makefile.inst World)
-
-#### gerodic
-.if ${PKGNAMEPREFIX} == ja-
-post-build:
-	cd ${WRKSRC}/Contrib/dic/gerodic; \
-	${ATOD} -h ${WRKSRC}/Pubdic/hinsi.data g-jinmei.dic < g-jinmei.u
-.endif
-
+.if (${PKGNAMESUFFIX} == -server)
 pre-install:
-	@${SETENV} BATCH=${BATCH} \
-		${SH} ${PKGDIR}/INSTALL ${PKGNAME} PRE-INSTALL
+	${SETENV} BATCH=${BATCH} \
+	${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 post-install:
-#### gerodic
-.if ${PKGNAMEPREFIX} == ja-
-	cd ${WRKSRC}/Contrib/dic/gerodic; \
-	make all install
+	${SETENV} PKG_PREFIX=${PREFIX} \
+	${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 .endif
-####
-# This package uses imake's "install.man" target to install man pages but
-#  I can't define USE_IMAKE because it doesn't involve xmkmf
-	@cd ${WRKSRC}; ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} install.man
-	@${SETENV} PKG_PREFIX=${PREFIX} \
-		${SH} ${PKGDIR}/INSTALL ${PKGNAME} POST-INSTALL
-.if !defined(NOPORTDOCS)
-.if defined(PORT_DOCDIR)
-	${MKDIR} ${PORT_DOCDIR}
-	@(cd ${DOC_FROM}; tar cvf - manual manual.en | \
-		(cd ${PORT_DOCDIR}; tar xf -))
-	@${CHOWN} -R bin.bin ${PORT_DOCDIR}
-.endif
-.endif
-### for the shared libray
-	if [ X"${PORTOBJFORMAT}" != Xelf ]; then \
-		${LN} -sf ${SHARED_LIB}.so.1.0 \
-			${X11BASE}/lib/${SHARED_LIB}.so; \
-	fi
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -1,0 +1,19 @@
+--- ../Xsi.org/kWnn/jserver/Makefile.in	Tue Mar 21 01:21:12 2000
++++ kWnn/jserver/Makefile.in	Thu Aug 31 09:54:43 2000
+@@ -90,13 +90,15 @@
+ 
+ clean::
+ 	$(RM) kserver
++	$(RM) -r .libs
++	$(RM) *.lo *.la
+ 
+ instserver:: install
+ 
+ install:: kserver
+ 	@if [ -d $(DESTDIR)$(KWNNBINDIR) ]; then set +x; \
+ 	else (set -x; $(MKDIRHIER) $(DESTDIR)$(KWNNBINDIR)); fi
+-	$(INSTALL) $(INSTALLFLAGS) $(INSTPGMFLAGS) $(LOCAL_INSTFLAGS) kserver $(DESTDIR)$(KWNNBINDIR)/kserver
++	$(LIBTOOL) $(INSTALL) $(INSTALLFLAGS) $(INSTPGMFLAGS) $(LOCAL_INSTFLAGS) kserver $(DESTDIR)$(KWNNBINDIR)/kserver
+ 
+ includes:: $(HDRS) $(SRC0) $(SRC1)
+ 
