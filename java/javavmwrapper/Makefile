@@ -9,7 +9,7 @@
 
 PORTNAME=	javavmwrapper
 PORTVERSION=	2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	java
 MASTER_SITES=	# none
 DISTFILES=	# none
@@ -46,7 +46,7 @@ do-install:
 	${LN} -sf ${PREFIX}/bin/javavm ${PREFIX}/bin/checkvms
 
 post-install:
-	${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGDIR}/pkg-install ${PKGNAME} \
+	${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} \
 		POST-INSTALL
 
 .include <bsd.port.mk>
