@@ -7,6 +7,7 @@
 
 PORTNAME=	p0f
 PORTVERSION=	2.0.3
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://lcamtuf.coredump.cx/p0f/
 EXTRACT_SUFX=	.tgz
@@ -33,7 +34,9 @@ do-install:
 .endfor
 	${INSTALL_SCRIPT} ${WRKSRC}/p0frep ${PREFIX}/bin
 	${MKDIR} ${PREFIX}/etc/p0f
-	${INSTALL_DATA} ${WRKSRC}/p0f.fp ${PREFIX}/etc/p0f
+.for ii in . a. r.
+	${INSTALL_DATA} ${WRKSRC}/p0f${ii}fp ${PREFIX}/etc/p0f/
+.endfor
 	${INSTALL_MAN} ${WRKSRC}/p0f.1 ${MANPREFIX}/man/man1/
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
@@ -47,7 +50,9 @@ pre-install:
 .for ii in p0f p0frep p0fq sendack sendack2 sendsyn
 	${ECHO_CMD} bin/${ii} >> ${PLIST}
 .endfor
-	${ECHO_CMD} etc/p0f/p0f.fp	>> ${PLIST}
+.for ii in . a. r.
+	${ECHO_CMD} etc/p0f/p0f${ii}fp	>> ${PLIST}
+.endfor
 	${ECHO_CMD} "@dirrm etc/p0f" >> ${PLIST}
 .if !defined(NOPORTDOCS)
 .for i in ${DOCFILES}
