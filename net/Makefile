@@ -344,6 +344,8 @@
     SUBDIR += minisapserver
     SUBDIR += mldonkey
     SUBDIR += mldonkey-core
+    SUBDIR += mldonkey-core-devel
+    SUBDIR += mldonkey-devel
     SUBDIR += mldonkey-gui
     SUBDIR += mldonkey-perlreactor
     SUBDIR += mldonkey-serverspy
