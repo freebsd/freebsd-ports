@@ -1,9 +1,9 @@
-%%PORTDOCS%%share/doc/jonah/CHANGES
-%%PORTDOCS%%share/doc/jonah/COPYING
-%%PORTDOCS%%share/doc/jonah/CREDITS
-%%PORTDOCS%%share/doc/jonah/HELP
-%%PORTDOCS%%share/doc/jonah/INSTALL
-%%PORTDOCS%%share/doc/jonah/README
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/CREDITS
+%%PORTDOCS%%%%DOCSDIR%%/HELP
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/README
 %%JONAHDIR%%/backend.php
 %%JONAHDIR%%/channels.php
 %%JONAHDIR%%/config/channels.php
@@ -65,7 +65,7 @@ etc/horde/httpd.conf.jonah
 @dirrm %%JONAHDIR%%/templates/index
 @dirrm %%JONAHDIR%%/templates
 @dirrm %%JONAHDIR%%
-%%PORTDOCS%%@dirrm share/doc/jonah
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @unexec if cmp -s %D/www/horde/config/registry.php %D/www/horde/config/registry.php.afterJonah; then rm -f %D/www/horde/config/registry.php.afterJonah; mv %D/www/horde/config/registry.php.beforeJonah %D/www/horde/config/registry.php; fi
 @unexec if cmp -s %D/www/horde/config/horde.php %D/www/horde/config/horde.php.afterJonah; then rm -f %D/www/horde/config/horde.php.afterJonah; mv %D/www/horde/config/horde.php.beforeJonah %D/www/horde/config/horde.php; fi
 @unexec if cmp -s %D/etc/php.standalone/php.ini %D/etc/php.standalone/php.ini.afterJonah; then rm -f %D/etc/php.standalone/php.ini.afterJonah; mv %D/etc/php.standalone/php.ini.beforeJonah %D/etc/php.standalone/php.ini; fi

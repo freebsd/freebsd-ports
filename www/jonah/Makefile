@@ -17,9 +17,10 @@ COMMENT=	Jonah is a portal and content collection system
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 RUN_DEPENDS=	${LOCALBASE}/www/horde/index.php:${PORTSDIR}/www/horde2 \
-		${LOCALBASE}/bin/php:${PORTSDIR}/www/mod_php4
+		${LOCALBASE}/bin/php:${PORTSDIR}/lang/php4-horde
 
-IS_INTERACTIVE=	'need to build php4 with XML support.'
+IGNORE=		"Does not run with Horde 2.x"
+
 NO_BUILD=	yes
 USE_REINPLACE=	yes
 
@@ -46,7 +47,7 @@ HORDE_CNF=	${HORDEDIR}/config/horde.php
 PHPSA_INI=	${PHPSADIR}/php.ini
 
 pre-install:
-	@if ! ${LDCONFIG} -r | ${GREP} -q -e "expat.2"; then \
+	@if ! ${LDCONFIG} -r | ${GREP} -q -e "expat.5"; then \
 	    ${ECHO_MSG} "" ; \
 	    ${ECHO_MSG} "Please configure PHP with XML support." ; \
 	    ${ECHO_MSG} "" ; \
