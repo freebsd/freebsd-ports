@@ -5,8 +5,12 @@
 # $FreeBSD$
 #
 
+PORTREVISION=	1
+
 MAINTAINER=	fjoe@FreeBSD.org
 COMMENT=	The wxWidgets GUI toolkit contributed libraries (devel version, Unicode)
+
+CONFLICTS=	wxgtk2-unicode-contrib-devel-2.5.2*
 
 WXGTK_FLAVOR=	gtk2-unicode-contrib
 MASTERDIR=	${.CURDIR}/../wxgtk2-devel
