@@ -14,10 +14,10 @@
 -	MOZILLA_HOME=/usr/local/mozilla
 -elif [ -f /usr/lib/mozilla/libgtkembedmoz.so ]; then 
 -	MOZILLA_HOME=/usr/lib/mozilla
-+elif [ -f %%LOCALBASE%%/lib/mozilla/libgtkembedmoz.so ]; then 
-+	MOZILLA_HOME=%%LOCALBASE%%/lib/mozilla
-+elif [ -f %%X11BASE%%/lib/mozilla/libgtkembedmoz.so ]; then 
-+	MOZILLA_HOME=%%X11BASE%%/lib/mozilla
++elif [ -f %%LOCALBASE%%/lib/%%MOZILLA%%/libgtkembedmoz.so ]; then 
++	MOZILLA_HOME=%%LOCALBASE%%/lib/%%MOZILLA%%
++elif [ -f %%X11BASE%%/lib/%%MOZILLA%%/libgtkembedmoz.so ]; then 
++	MOZILLA_HOME=%%X11BASE%%/lib/%%MOZILLA%%
  else 
  	echo "Cannot find mozilla installation directory. Please set MOZILLA_FIVE_HOME to your mozilla directory"
  	exit	
