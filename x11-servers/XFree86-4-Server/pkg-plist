@@ -3,7 +3,7 @@ bin/XFree86
 %%XIE:%%bin/joycal
 bin/kbd_mode
 bin/pcitweak
-bin/scanpci
+%%ALPHA_NA%%bin/scanpci
 bin/xf86cfg
 bin/xf86config
 lib/X11/app-defaults/XF86Cfg
@@ -153,7 +153,7 @@ lib/modules/input/mouse_drv.o
 %%XIE:%%lib/modules/input/summa_drv.o
 %%XIE:%%lib/modules/input/void_drv.o
 %%XIE:%%lib/modules/input/wacom_drv.o
-lib/modules/libafb.a
+%%ALPHA_NA%%lib/modules/libafb.a
 lib/modules/libcfb.a
 lib/modules/libcfb16.a
 lib/modules/libcfb24.a
