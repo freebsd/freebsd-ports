@@ -1,0 +1,32 @@
+#!/bin/sh
+#
+# $Id$
+#
+if [ -d /var/spool/news ] && [ ! -d /var/news ]
+then
+	NEWSSPOOL=/var/spool/news
+else
+	NEWSSPOOL=/var/news
+fi
+
+if [ -z $PROBLEMSDIR ]
+then
+	echo Warning: PROBLEMSDIR undefined, using \"/usenet\" as default
+	echo "         this will only be used if you do not specify"
+	echo "         the PROBLEMS path variable inside the configuration"
+	echo "         file ($PREFIX/lib/rkive/rkive.cf)"
+	PROBLEMSDIR=/usenet
+fi
+
+cat >/tmp/tmp.rkive.sed.$$ << --EOF--
+s+!!NEWSSPOOL!!+$NEWSSPOOL+g
+s+!!PREFIX!!+$PREFIX+g
+s+!!PROBLEMSDIR!!+$PROBLEMSDIR+g
+--EOF--
+
+mv ${WRKSRC}/rkive.h ${WRKSRC}/rkive.h.old
+sed <${WRKSRC}/rkive.h.old >${WRKSRC}/rkive.h -f /tmp/tmp.rkive.sed.$$
+
+rm -f /tmp/tmp.inn.sed.$$
+
+

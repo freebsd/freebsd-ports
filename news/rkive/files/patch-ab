@@ -1,0 +1,108 @@
+*** rkive.h.orig	Mon Jul  3 20:04:07 1995
+--- rkive.h	Mon Jul  3 20:13:25 1995
+***************
+*** 12,19 ****
+  ** appropriate values are not in the configuration file.
+  */
+  
+! #define OWNER    0
+! #define GROUP    3
+  #define MODES    0444
+  #define DIR_MODE 0755         /* directory creation modes */
+  
+--- 12,19 ----
+  ** appropriate values are not in the configuration file.
+  */
+  
+! #define OWNER    8
+! #define GROUP    8
+  #define MODES    0444
+  #define DIR_MODE 0755         /* directory creation modes */
+  
+***************
+*** 26,32 ****
+  #define SUBJECT_LINE
+  
+  #ifdef SUBJECT_LINE
+! #define MAIL        "/usr/ucb/Mail"	/* mail program to use */
+  # ifdef NOTDEF
+  #  define MAIL        "/usr/local/bin/elm"
+  #  define MAIL        "/usr/bin/mailx" 	 /* mail program to use */
+--- 26,32 ----
+  #define SUBJECT_LINE
+  
+  #ifdef SUBJECT_LINE
+! #define MAIL        "/usr/bin/Mail"	/* mail program to use */
+  # ifdef NOTDEF
+  #  define MAIL        "/usr/local/bin/elm"
+  #  define MAIL        "/usr/bin/mailx" 	 /* mail program to use */
+***************
+*** 50,74 ****
+  ** (config) file.
+  */
+  
+! #define PROBLEMS_DIR "/usenet/problems"
+  
+  /*
+  ** Home directory for news
+  */
+  
+! #define SPOOLDIR     "/usr/spool/news"
+  
+  /*
+  ** Temporary file creation directory
+  */
+  
+! #define TMP_DIR     "/usr/tmp"
+  
+  /*
+  ** Location of the default rkive configuration file.
+  */
+  
+! #define LOCATION     "/usr/local/lib/rkive/rkive.cf"
+  
+  /*
+  ** Defines to control the handling of repostings.
+--- 50,74 ----
+  ** (config) file.
+  */
+  
+! #define PROBLEMS_DIR "!!PROBLEMSDIR!!"
+  
+  /*
+  ** Home directory for news
+  */
+  
+! #define SPOOLDIR     "!!NEWSSPOOL!!"
+  
+  /*
+  ** Temporary file creation directory
+  */
+  
+! #define TMP_DIR     "/var/tmp"
+  
+  /*
+  ** Location of the default rkive configuration file.
+  */
+  
+! #define LOCATION     "!!PREFIX!!/lib/rkive/rkive.cf"
+  
+  /*
+  ** Defines to control the handling of repostings.
+***************
+*** 139,145 ****
+  ** per archived article.
+  */
+  
+! #define REDUCE_HEADERS
+  
+  /*
+  ** The following define specifies a default format for generating
+--- 139,145 ----
+  ** per archived article.
+  */
+  
+! #undef  REDUCE_HEADERS
+  
+  /*
+  ** The following define specifies a default format for generating

@@ -1,0 +1,180 @@
+*** Makefile.orig	Mon Jul  3 20:49:16 1995
+--- Makefile	Mon Jul  3 20:55:31 1995
+***************
+*** 77,89 ****
+  # Define your favorite C compiler here...
+  #
+  #CC=insight
+! CC=cc
+  
+  #
+  # Compilation flags..
+  #
+! FLAGS=-g 
+! CFLAGS=$(SFLAGS) $(FLAGS) $(NNTPFLAGS) 
+  
+  #
+  # Yacc flags for compilation of match.y
+--- 77,89 ----
+  # Define your favorite C compiler here...
+  #
+  #CC=insight
+! #CC=cc
+  
+  #
+  # Compilation flags..
+  #
+! #FLAGS=-g 
+! #CFLAGS=$(SFLAGS) $(FLAGS) $(NNTPFLAGS) 
+  
+  #
+  # Yacc flags for compilation of match.y
+***************
+*** 104,126 ****
+  #
+  ACCESSLIB=
+  
+! LDFLAGS=$(EXOSLIBS) $(ACCESSLIB)
+  
+  #
+  # If your system requires additional libraries or if you wish to
+  # use shared libraries, add the -l declarations to LIBS below such
+  # as -lc_s
+  #
+! LIBS=
+  
+  I = /usr/include
+  LP=lpr
+  PR=nl -n
+  NROFF=nroff
+! BINDIR=/usr/local/bin
+! RKIVEDIR=/usr/local/lib/rkive
+! MAN1=/usr/man/man1
+! MAN5=/usr/man/man5
+  
+  MANS=	$(MAN1)/article.1 \
+  	$(MAN1)/rkive.1 \
+--- 104,126 ----
+  #
+  ACCESSLIB=
+  
+! #LDFLAGS=$(EXOSLIBS) $(ACCESSLIB)
+  
+  #
+  # If your system requires additional libraries or if you wish to
+  # use shared libraries, add the -l declarations to LIBS below such
+  # as -lc_s
+  #
+! #LIBS=
+  
+  I = /usr/include
+  LP=lpr
+  PR=nl -n
+  NROFF=nroff
+! BINDIR=${PREFIX}/bin
+! RKIVEDIR=${PREFIX}/lib/rkive
+! MAN1=${PREFIX}/man/man1
+! MAN5=${PREFIX}/man/man5
+  
+  MANS=	$(MAN1)/article.1 \
+  	$(MAN1)/rkive.1 \
+***************
+*** 158,164 ****
+  		$(GETOPTO) $(TMPNAMO) $(STRDUPO)
+  
+  SRCS =		$(ARTICLE_SRCS) $(CKCONFIG_SRCS) $(ARCHIVE_SRCS) match.y
+! 		$(GETOPTC) $(STRDUPC) $(TMPNAMC)
+  
+  
+  INSTALLED_PROGS=\
+--- 158,164 ----
+  		$(GETOPTO) $(TMPNAMO) $(STRDUPO)
+  
+  SRCS =		$(ARTICLE_SRCS) $(CKCONFIG_SRCS) $(ARCHIVE_SRCS) match.y
+! #		$(GETOPTC) $(STRDUPC) $(TMPNAMC)
+  
+  
+  INSTALLED_PROGS=\
+***************
+*** 168,183 ****
+  
+  PROGS = article ckconfig rkive
+  
+! all: $(PROGS) $(MANS) $(SCRIPTS)
+  #all: $(PROGS) 
+  
+  $(MANS):
+  	cp `basename $@` $@
+  	chmod 444 $@
+  
+! install: $(MANS) $(SCRIPTS) $(INSTALLED_PROGS)
+! 	@echo "Type \"make cf\" if you wish to have rkive.cf installed."
+! 	@echo "Beware: It will overwrite any existing rkive.cf file."
+  
+  #install: $(INSTALLED_PROGS)
+  
+--- 168,197 ----
+  
+  PROGS = article ckconfig rkive
+  
+! #all: $(PROGS) $(MANS) $(SCRIPTS)
+  #all: $(PROGS) 
++ all: article ckconfig rkive
+  
+  $(MANS):
+  	cp `basename $@` $@
+  	chmod 444 $@
+  
+! install: # $(MANS) $(SCRIPTS) $(INSTALLED_PROGS)
+! #	@echo "Type \"make cf\" if you wish to have rkive.cf installed."
+! #	@echo "Beware: It will overwrite any existing rkive.cf file."
+! 	install -c -s -m 555 -o bin -g bin article ${PREFIX}/bin/article
+! 	mkdir -p ${PREFIX}/lib/rkive
+! 	install -c -s -m 555 -o bin -g bin ckconfig ${PREFIX}/bin/ckconfig
+! 	install -c -s -m 555 -o bin -g bin rkive ${PREFIX}/bin/rkive
+! 	install -c -m 444 -o bin -g bin article.1 rkive.1 ckconfig.1 \
+! 		ckconfig.1 ${PREFIX}/man/man1/
+! 	install -c -m 444 -o bin -g bin rkive.5 ${PREFIX}/man/man5/rkive.5
+! 	install -c -m 644 -o root -g wheel rkive.cf \
+! 		${PREFIX}/lib/rkive/rkive.cf.sample
+! 	install -c -m 755 -o bin -g bin update_netdocs \
+! 		${PREFIX}/lib/rkive/update_netdocs
+! 	gzip -9nf ${PREFIX}/man/man1/article.1 ${PREFIX}/man/man1/rkive.1 \
+! 		${PREFIX}/man/man1/ckconfig.1 ${PREFIX}/man/man5/rkive.5
+  
+  #install: $(INSTALLED_PROGS)
+  
+***************
+*** 334,340 ****
+  
+  strdup.o: ./port/strdup.c
+  	$(CC) $(CFLAGS) $(TARGET_ARCH) -c ./port/strdup.c
+!  
+  tmpnam.o: ./port/tmpnam.c
+  	$(CC) $(CFLAGS) $(TARGET_ARCH) -c ./port/tmpnam.c
+  
+--- 348,354 ----
+  
+  strdup.o: ./port/strdup.c
+  	$(CC) $(CFLAGS) $(TARGET_ARCH) -c ./port/strdup.c
+! 
+  tmpnam.o: ./port/tmpnam.c
+  	$(CC) $(CFLAGS) $(TARGET_ARCH) -c ./port/tmpnam.c
+  
+***************
+*** 343,349 ****
+  
+  nntpclnt.o: $(NNTPSRCDIR)/nntpclnt.c
+  	$(CC) $(CFLAGS) $(TARGET_ARCH) -c $(NNTPSRCDIR)/nntpclnt.c
+!  
+  match.o: match.y article.h
+  
+  #
+--- 357,363 ----
+  
+  nntpclnt.o: $(NNTPSRCDIR)/nntpclnt.c
+  	$(CC) $(CFLAGS) $(TARGET_ARCH) -c $(NNTPSRCDIR)/nntpclnt.c
+! 
+  match.o: match.y article.h
+  
+  #
