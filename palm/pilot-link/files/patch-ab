@@ -21,64 +21,64 @@
  # Extract the first word of "ranlib", so it can be a program name with args.
 @@ -2643,5 +2643,5 @@
  if test "x$with_tcl" = "xyes" || test "x$with_tcl" = "x" ; then
- 	for tcl_path in /usr/local/tcl8.0 /usr/local/tcl7.6 /usr/local/tcl7.5 /usr/local /usr /usr/local/tcl7.4; do
+ 	for tcl_path in /usr/local/tcl8.2 /usr/local/tcl8.0 /usr/local/tcl7.6 /usr/local/tcl7.5 /usr/local /usr /usr/local/tcl7.4; do
 -		if test -f $tcl_path/lib/tclConfig.sh; then
-+		if test -f $tcl_path/lib/tcl8.0/tclConfig.sh; then
++		if test -f $tcl_path/lib/tcl8.2/tclConfig.sh; then
  			with_tcl=$tcl_path; break
  		elif test -f $tcl_path/lib/itcl/tclConfig.sh; then
 @@ -2684,5 +2684,5 @@
  	echo "$ac_t""not used" 1>&6
  else
 -	tclConfig="$with_tcl/lib$itcl/tclConfig.sh"
-+	tclConfig="$with_tcl/lib/tcl8.0$itcl/tclConfig.sh"
++	tclConfig="$with_tcl/lib/tcl8.2$itcl/tclConfig.sh"
  	if test ! -f $tclConfig; then
  		echo "$ac_t""Unable to find tclConfig.sh" 1>&6
 @@ -2690,5 +2690,5 @@
  		. $tclConfig
  		echo "$ac_t""version $TCL_VERSION from $tclConfig" 1>&6
 -		TCL_INC="-I$TCL_PREFIX/include$itcl"
-+		TCL_INC="-I$TCL_PREFIX/include/tcl8.0$itcl"
++		TCL_INC="-I$TCL_PREFIX/include/tcl8.2$itcl"
  		TCL_BIN="$TCL_EXEC_PREFIX/bin"
  		TCLLIBS="$TCL_LIB_SPEC $TCL_LIBS"
 @@ -2701,5 +2701,5 @@
  		if test "x$with_itcl" = "xyes" || test "x$with_itcl" = "x"; then
  			for itcl_path in $with_tcl; do
 -				if test -f $itcl_path/lib$itcl/itclConfig.sh; then
-+				if test -f $itcl_path/lib/tcl8.0$itcl/itclConfig.sh; then
++				if test -f $itcl_path/lib/tcl8.2$itcl/itclConfig.sh; then
  					with_itcl=$itcl_path; break
  				fi
 @@ -2719,5 +2719,5 @@
  			echo "$ac_t""not used" 1>&6
  		else
 -			itclConfig="$with_itcl/lib$itcl/itclConfig.sh"
-+			itclConfig="$with_itcl/lib/tcl8.0$itcl/itclConfig.sh"
++			itclConfig="$with_itcl/lib/tcl8.2$itcl/itclConfig.sh"
  			if test ! -f $itclConfig; then
  				echo "$ac_t""Unable to find itclConfig.sh" 1>&6
 @@ -2725,5 +2725,5 @@
  				. $itclConfig
  				echo "$ac_t""version $ITCL_VERSION from $itclConfig" 1>&6
 -				ITCL_INC="-I$TK_PREFIX/include$itcl"
-+				ITCL_INC="-I$TK_PREFIX/include/tcl8.0$itcl"
++				ITCL_INC="-I$TK_PREFIX/include/tcl8.2$itcl"
  				#TK_BIN="$TK_EXEC_PREFIX/bin"
  				#TKLIBS="$TK_LIB_SPEC $TCL_LIB_SPEC $TK_LIBS"
 @@ -2743,5 +2743,5 @@
  		if test "x$with_tk" = "xyes" || test "x$with_tk" = "x"; then
  			for tk_path in $with_tcl; do
 -				if test -f $tk_path/lib$itcl/tkConfig.sh; then
-+				if test -f $tk_path/lib/tk8.0$itcl/tkConfig.sh; then
++				if test -f $tk_path/lib/tk8.2$itcl/tkConfig.sh; then
  					with_tk=$tk_path; break
  				fi
 @@ -2761,5 +2761,5 @@
  			echo "$ac_t""not used" 1>&6
  		else
 -			tkConfig="$with_tk/lib$itcl/tkConfig.sh"
-+			tkConfig="$with_tk/lib/tk8.0$itcl/tkConfig.sh"
++			tkConfig="$with_tk/lib/tk8.2$itcl/tkConfig.sh"
  			if test ! -f $tkConfig; then
  				echo "$ac_t""Unable to find tkConfig.sh" 1>&6
 @@ -2767,5 +2767,5 @@
  				. $tkConfig
  				echo "$ac_t""version $TK_VERSION from $tkConfig" 1>&6
 -				TK_INC="-I$TK_PREFIX/include$itcl"
-+				TK_INC="-I$TK_PREFIX/include/tk8.0$itcl"
++				TK_INC="-I$TK_PREFIX/include/tk8.2$itcl"
  				TK_BIN="$TK_EXEC_PREFIX/bin"
  				TKLIBS="$TK_LIB_SPEC $TCL_LIB_SPEC $TK_LIBS"

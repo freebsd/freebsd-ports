@@ -7,13 +7,14 @@
 
 DISTNAME=	pilot-link.0.9.3
 PKGNAME=	pilot-link-0.9.3
-CATEGORIES=	palm comms tk80
+CATEGORIES=	palm comms tk82
 MASTER_SITES=	ftp://ryeham.ee.ryerson.ca/pub/PalmOS/
 
 MAINTAINER=	dima@freebsd.org
 
-LIB_DEPENDS=	tk80.1:${PORTSDIR}/x11-toolkits/tk80
+LIB_DEPENDS=	tk82.1:${PORTSDIR}/x11-toolkits/tk82
 
+USE_LIBTOOL=	yes
 USE_PERL5=	yes
 PREFIX=		${LOCALBASE}/pilot
 GNU_CONFIGURE=	yes

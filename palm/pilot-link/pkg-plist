@@ -68,7 +68,6 @@ include/pi-todo.hxx
 include/pi-version.h
 lib/libpicc.a
 lib/libpisock.a
-lib/libpisock.la
 lib/libpisock.so
 lib/libpisock.so.3.1
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %D/lib
