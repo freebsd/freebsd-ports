@@ -7,7 +7,7 @@
 
 PORTNAME=	inn
 PORTVERSION=	2.4.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	news ipv6
 MASTER_SITES=	${MASTER_SITE_ISC}
 MASTER_SITE_SUBDIR=	inn
@@ -20,6 +20,8 @@ USE_GMAKE=	yes
 USE_PERL5=	yes
 USE_OPENSSL=	yes
 
+CONFLICTS=	inn-*
+
 .if exists(/var/news) && !defined(PACKAGE_BUILDING)
 INN_NEWSSPOOL?=/var/news
 .elif exists(/var/spool/news) && !defined(PACKAGE_BUILDING)
@@ -30,18 +32,44 @@ INN_NEWSSPOOL?=${PREFIX}/news/spool
 INN_NEWSLOG?=/var/log/news
 
 HAS_CONFIGURE=		yes
+CONFIGURE_ENV+=		LOCALBASE=${LOCALBASE}
 CONFIGURE_ARGS+=	--mandir=${PREFIX}/man \
 			--prefix=${PREFIX}/news \
 			--with-spool-dir=${INN_NEWSSPOOL} \
 			--with-log-dir=${INN_NEWSLOG} \
 			--with-perl \
 			--with-tmp-path=${INN_NEWSSPOOL}/tmp \
-			--with-openssl \
+			--with-openssl=${OPENSSLBASE} \
 			--enable-ipv6
+
+.if defined(WITH_BERKELEYDB)
+# We don't support other versions for the moment.
+CONFIGURE_ARGS+=	--with-berkeleydb
+LIB_DEPENDS+=		db4:${PORTSDIR}/databases/db4
+.endif
 
 .if defined(WITH_PYTHON)
 USE_PYTHON=		YES
 CONFIGURE_ARGS+=	--with-python
+.endif
+
+.if defined(WITH_TCL)
+USE_REINPLACE=		yes
+CONFIGURE_ARGS+=	--with-tcl=${LOCALBASE}
+BUILD_DEPENDS+=		${LOCALBASE}/include/tcl8.3/tcl.h:${PORTSDIR}/lang/tcl83
+.endif
+
+.if defined (WITH_MAXSOCKET)
+CONFIGURE_ARGS+=	--with-max-sockets=${WITH_MAXSOCKET}
+.endif
+
+.if defined(WITH_KEYWORDS)
+CONFIGURE_ARGS+=	--enable-keywords
+.endif
+
+.if defined(WITH_SASL)
+CONFIGURE_ARGS+=	--with-sasl=${LOCALBASE}
+LIB_DEPENDS+=		sasl2:${PORTSDIR}/security/cyrus-sasl2
 .endif
 
 .if defined(WITH_TAGGED_HASH)
@@ -55,6 +83,7 @@ DBZ_FILES=		dir hash index
 PLIST_SUB=		SUB_WITH_TAGGED_HASH="@comment "
 PLIST_SUB+=		SUB_WITHOUT_TAGGED_HASH=""
 .endif
+
 
 EXTRA=		CONTRIBUTORS HACKING INSTALL LICENSE MANIFEST NEWS README TODO
 HEADERS=	clibrary.h config.h dbz.h libinn.h storage.h
@@ -81,6 +110,14 @@ MAN8=	actsync.8 actsyncd.8 archive.8 auth_smb.8 batcher.8 buffchan.8 \
 	radius.8 rc.news.8 scanlogs.8 send-nntp.8 send-uucp.8 sendinpaths.8 \
 	tally.control.8 tdx-util.8 writelog.8
 
+.include <bsd.port.pre.mk>
+
+post-patch:
+.if defined(WITH_TCL)
+	@${REINPLACE_CMD} -e 's!<tcl.h>!<tcl8.3/tcl.h>!' ${WRKSRC}/innd/innd.h
+	@${REINPLACE_CMD} -e 's!-ltcl!-ltcl83!' ${WRKSRC}/configure
+.endif
+
 post-install:
 	${MKDIR} ${INN_NEWSSPOOL}
 .if !defined(NOPORTDOCS)
@@ -97,6 +134,7 @@ post-install:
 	    s+!!PREFIX!!+${PREFIX}+g && ${CHMOD} +x ${PREFIX}/etc/rc.d/innd.sh
 	@${CHOWN} root:news ${PREFIX}/news/bin/auth/passwd/ckpasswd
 	@${CHMOD} 4755 ${PREFIX}/news/bin/auth/passwd/ckpasswd
+	@PKG_PREFIX=${PKG_PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} CHECK-CONF
 	@(if [ ! -f ${PREFIX}/news/db/history ] ; then \
 	    ${ECHO} 'Creating empty history database...' ; \
 	    cd ${PREFIX}/news/db ; \
@@ -110,4 +148,4 @@ post-install:
 	fi)
 	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

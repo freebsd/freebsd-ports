@@ -1,0 +1,88 @@
+--- site/Makefile.orig	Sat Jul 12 21:11:02 2003
++++ site/Makefile	Sun Sep 21 12:53:00 2003
+@@ -23,29 +23,29 @@
+ PATH_NNRPAUTH           = ${PATHFILTER}/nnrpd_auth.pl
+ PATH_NNRPYAUTH          = ${PATHFILTER}/nnrpd_auth.py
+ 
+-PATH_CONFIG		= ${PATHETC}/inn.conf
+-PATH_CONTROLCTL		= ${PATHETC}/control.ctl
+-PATH_EXPIRECTL		= ${PATHETC}/expire.ctl
+-PATH_INNDHOSTS		= ${PATHETC}/incoming.conf
+-PATH_MODERATORS		= ${PATHETC}/moderators
+-PATH_DISTPATS		= ${PATHETC}/distrib.pats
+-PATH_NEWSFEEDS		= ${PATHETC}/newsfeeds
+-PATH_READERSCONF	= ${PATHETC}/readers.conf
+-PATH_NNRPDTRACK		= ${PATHETC}/nnrpd.track
+-PATH_SCHEMA		= ${PATHETC}/overview.fmt
+-PATH_NNTPPASS		= ${PATHETC}/passwd.nntp
+-PATH_CTLWATCH		= ${PATHETC}/innwatch.ctl
+-PATH_ACTSYNC_IGN	= ${PATHETC}/actsync.ign
+-PATH_ACTSYNC_CFG	= ${PATHETC}/actsync.cfg
+-PATH_MOTD		= ${PATHETC}/motd.news
+-PATH_STORAGECONF	= ${PATHETC}/storage.conf
+-PATH_CYCBUFFCONFIG	= ${PATHETC}/cycbuff.conf
+-PATH_INNFEEDCTL		= ${PATHETC}/innfeed.conf
+-PATH_BUFFINDEXED	= ${PATHETC}/buffindexed.conf
+-PATH_RADIUS_CONF	= ${PATHETC}/radius.conf
+-PATH_OVDB_CONF		= ${PATHETC}/ovdb.conf
+-PATH_SASL_CONF		= ${PATHETC}/sasl.conf
+-PATH_SUBSCRIPTIONS	= ${PATHETC}/subscriptions
++PATH_CONFIG		= ${PATHETC}/inn.conf.dist
++PATH_CONTROLCTL		= ${PATHETC}/control.ctl.dist
++PATH_EXPIRECTL		= ${PATHETC}/expire.ctl.dist
++PATH_INNDHOSTS		= ${PATHETC}/incoming.conf.dist
++PATH_MODERATORS		= ${PATHETC}/moderators.dist
++PATH_DISTPATS		= ${PATHETC}/distrib.pats.dist
++PATH_NEWSFEEDS		= ${PATHETC}/newsfeeds.dist
++PATH_READERSCONF	= ${PATHETC}/readers.conf.dist
++PATH_NNRPDTRACK		= ${PATHETC}/nnrpd.track.dist
++PATH_SCHEMA		= ${PATHETC}/overview.fmt.dist
++PATH_NNTPPASS		= ${PATHETC}/passwd.nntp.dist
++PATH_CTLWATCH		= ${PATHETC}/innwatch.ctl.dist
++PATH_ACTSYNC_IGN	= ${PATHETC}/actsync.ign.dist
++PATH_ACTSYNC_CFG	= ${PATHETC}/actsync.cfg.dist
++PATH_MOTD		= ${PATHETC}/motd.news.dist
++PATH_STORAGECONF	= ${PATHETC}/storage.conf.dist
++PATH_CYCBUFFCONFIG	= ${PATHETC}/cycbuff.conf.dist
++PATH_INNFEEDCTL		= ${PATHETC}/innfeed.conf.dist
++PATH_BUFFINDEXED	= ${PATHETC}/buffindexed.conf.dist
++PATH_RADIUS_CONF	= ${PATHETC}/radius.conf.dist
++PATH_OVDB_CONF		= ${PATHETC}/ovdb.conf.dist
++PATH_SASL_CONF		= ${PATHETC}/sasl.conf.dist
++PATH_SUBSCRIPTIONS	= ${PATHETC}/subscriptions.dist
+ 
+ PATH_ACTIVE		= ${PATHDB}/active
+ PATH_ACTIVE_TIMES	= ${PATHDB}/active.times
+@@ -71,8 +71,8 @@
+ 	$D$(PATH_NEWSFEEDS) $D$(PATH_INNDHOSTS) \
+ 	$D$(PATH_NNRPDTRACK) $D$(PATH_NNTPPASS) \
+ 	$D$(PATH_CONFIG) $D$(PATH_MODERATORS) \
+-	$D$(PATH_CONTROLCTL) $D$(PATH_EXPIRECTL) $D$(PATHETC)/nntpsend.ctl \
+-	$D$(PATHETC)/innreport.conf \
++	$D$(PATH_CONTROLCTL) $D$(PATH_EXPIRECTL) $D$(PATHETC)/nntpsend.ctl.dist \
++	$D$(PATHETC)/innreport.conf.dist \
+ 	$D$(PATH_CTLWATCH) $D$(PATH_DISTPATS) $D$(PATH_SCHEMA) \
+ 	$D$(PATH_ACTSYNC_CFG) $D$(PATH_ACTSYNC_IGN) \
+ 	$D$(PATH_MOTD) $D$(PATH_STORAGECONF) \
+@@ -81,7 +81,7 @@
+ 	$D$(PATH_PERL_FILTER_INND) $D$(PATH_PERL_FILTER_NNRPD) \
+ 	$D$(PATH_PYTHON_FILTER_INND) $D$(PATH_PYTHON_INN_MODULE) \
+ 	$D$(PATH_TCL_STARTUP) $D$(PATH_TCL_FILTER) \
+-	$D$(PATH_NNRPAUTH) $D$(PATHETC)/news2mail.cf $D$(PATH_READERSCONF) \
++	$D$(PATH_NNRPAUTH) $D$(PATHETC)/news2mail.cf.dist $D$(PATH_READERSCONF) \
+ 	$D$(PATH_RADIUS_CONF) $D$(PATH_NNRPYAUTH) $D$(PATH_OVDB_CONF) \
+ 	$D$(PATH_SASL_CONF) $D$(PATH_SUBSCRIPTIONS)
+ 
+@@ -170,9 +170,9 @@
+ $D$(PATH_MODERATORS):	moderators	; $(COPY_RPUB) $? $@
+ $D$(PATH_DISTPATS):	distrib.pats	; $(COPY_RPUB) $? $@
+ $D$(PATH_NNTPPASS):	passwd.nntp	; $(COPY_RPRI) $? $@
+-$D$(PATHETC)/nntpsend.ctl: nntpsend.ctl	; $(COPY_RPUB) $? $@
+-$D$(PATHETC)/news2mail.cf: news2mail.cf	; $(COPY_RPUB) $? $@
+-$D$(PATHETC)/innreport.conf: innreport.conf	; $(COPY_RPUB) $? $@
++$D$(PATHETC)/nntpsend.ctl.dist: nntpsend.ctl	; $(COPY_RPUB) $? $@
++$D$(PATHETC)/news2mail.cf.dist: news2mail.cf	; $(COPY_RPUB) $? $@
++$D$(PATHETC)/innreport.conf.dist: innreport.conf	; $(COPY_RPUB) $? $@
+ $D$(PATH_STORAGECONF): storage.conf	; $(COPY_RPUB) $? $@
+ $D$(PATH_CYCBUFFCONFIG): cycbuff.conf	; $(COPY_RPUB) $? $@
+ $D$(PATH_BUFFINDEXED): buffindexed.conf	; $(COPY_RPUB) $? $@
