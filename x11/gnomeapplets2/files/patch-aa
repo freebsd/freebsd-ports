@@ -12,7 +12,7 @@
  *irix*) CDROM_HOST=irix; CDROM_LIBS="-lcdaudio -lmediad -lds";cd_device_path="/dev/cdrom";;
  *linux*) CDROM_HOST=linux;cd_device_path="/dev/cdrom";;
  *netbsd*) CDROM_HOST=netbsd;cd_device_path="/dev/rcd0";;
-+*freebsd*) CDROM_HOST=freebsd;cd_device_path="dev/acd0c";;
++*freebsd*) CDROM_HOST=freebsd;cd_device_path="/dev/acd0c";;
  *solaris*) CDROM_HOST=solaris;cd_device_path="/vol/dev/aliases/cdrom0";cdplayer_type_sun=true;;
  esac
  case "$host" in
