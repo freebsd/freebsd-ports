@@ -7,6 +7,7 @@
 
 PORTNAME=	unixODBC
 PORTVERSION=	2.2.9
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://www.unixodbc.org/
 
@@ -37,7 +38,7 @@ CONFIGURE_ARGS+=	--disable-gui
 PLIST_SUB=	GUI:="@comment "
 .endif
 
-.if defined(WITH_PTHREAD) || defined(WITH_GUI)
+.if !defined(WITHOUT_THREADS) || defined(WITH_GUI)
 CONFIGURE_ARGS+=	--enable-threads=yes
 .else
 CONFIGURE_ARGS+=	--enable-threads=no
