@@ -4,6 +4,3 @@ This extension aims to provide a simple and optimized event loop for a
 broad class of applications.
 
 WWW: http://search.cpan.org/dist/Event/
-
--- Sergey Skvortsov
-skv@FreeBSD.org

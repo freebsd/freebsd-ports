@@ -4,6 +4,8 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Event/EventAPI.h
 %%SITE_PERL%%/%%PERL_ARCH%%/Event/MakeMaker.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Event/Watcher.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Event/generic.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Event/generic.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Event/group.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Event/idle.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Event/io.pm
