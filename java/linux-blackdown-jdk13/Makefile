@@ -21,7 +21,6 @@ COMMENT=	Blackdown Java Development Kit 1.3 for Linux
 
 FORBIDDEN=	Vulnerabilities in the browser plugin
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/javavm:${PORTSDIR}/java/javavmwrapper
 RUN_DEPENDS=	${LOCALBASE}/bin/javavm:${PORTSDIR}/java/javavmwrapper
 
 WRKSRC=		${WRKDIR}/j2sdk${PORTVERSION}
