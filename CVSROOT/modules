@@ -8096,6 +8096,7 @@ pips-sc85_86s	ports/print/pips-sc85_86s
 pips-sp2100_2200	ports/print/pips-sp2100_2200
 pips-spr200_210	ports/print/pips-spr200_210
 pips-spr300_310	ports/print/pips-spr300_310
+pips-spr800	ports/print/pips-spr800
 pips2200	ports/print/pips2200
 pips3000	ports/print/pips3000
 pips3300	ports/print/pips3300
