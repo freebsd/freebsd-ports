@@ -1,11 +1,19 @@
 bin/rgettext
 %%RUBY_SITELIBDIR%%/gettext.rb
-%%RUBY_SITELIBDIR%%/mo.rb
+%%RUBY_SITELIBDIR%%/gettext/locale.rb
+%%RUBY_SITELIBDIR%%/gettext/locale_default.rb
+%%RUBY_SITELIBDIR%%/gettext/locale_table_win32.rb
+%%RUBY_SITEARCHLIBDIR%%/gettext/_locale.so
+@dirrm %%RUBY_SITEARCHLIBDIR%%/gettext
+%%RUBY_SITELIBDIR%%/gettext/locale_win32.rb
+%%RUBY_SITELIBDIR%%/gettext/mo.rb
+@dirrm %%RUBY_SITELIBDIR%%/gettext
 share/locale/ja/LC_MESSAGES/rgettext.mo
 @unexec rmdir -p %D/share/locale/ja/LC_MESSAGES 2>/dev/null || true
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gettext/hello.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gettext/hello2.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gettext/hellogtk.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gettext/hellogtk_utf8.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gettext/hello_noop.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gettext/hellotk.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gettext/locale/ja/LC_MESSAGES/hello.mo
