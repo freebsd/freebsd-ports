@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	perldap
-PORTVERSION=	1.4
+PORTVERSION=	1.4.1
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
 MASTER_SITE_SUBDIR=	directory/perldap
@@ -16,7 +16,7 @@ MAINTAINER=	paul@FreeBSD.org
 
 LIB_DEPENDS=	ldap.1:${PORTSDIR}/net/ldapsdk
 
-WRKSRC=		${WRKDIR}/perldap-1.4
+WRKSRC=		${WRKDIR}/$(PORTNAME)-$(PORTVERSION)
 MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Mozilla::LDAP::Conn.3 \
 			Mozilla::LDAP::LDIF.3 \
