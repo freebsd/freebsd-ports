@@ -107,6 +107,7 @@
     SUBDIR += superkaramba
     SUBDIR += taskjuggler
     SUBDIR += teapot
+    SUBDIR += treeline
     SUBDIR += tuxcards
     SUBDIR += wmpinboard
     SUBDIR += xcalendar
