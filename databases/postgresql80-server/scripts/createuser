@@ -10,8 +10,8 @@ if( $> ) {
 	exit 1;
 } 
 
-if( getpwnam( "postgres" ) ) {
-	( $null, $null, $pgUID ) = getpwnam( "postgres" );
+if( getpwnam( "pgsql" ) ) {
+	( $null, $null, $pgUID ) = getpwnam( "pgsql" );
 } else {
 	$pgUID = 70;
 	while( getpwuid( $pgUID ) ) {
@@ -19,20 +19,20 @@ if( getpwnam( "postgres" ) ) {
 	}
 }
 
-if( getgrnam( "postgres" ) ) {
-	( $null, $null, $pgGID ) = getgrnam( "postgres" );
+if( getgrnam( "pgsql" ) ) {
+	( $null, $null, $pgGID ) = getgrnam( "pgsql" );
 } else {
 	$pgGID = 70;
 	while( getgrgid( $pgGID ) ) {
 		$pgGID++;
 	}
-	&append_file( "/etc/group", "postgres:*:$pgGID:" );
+	&append_file( "/etc/group", "pgsql:*:$pgGID:" );
 }
 
-print "postgres user using uid $pgUID\n";
-print "postgres user using gid $pgGID\n";
+print "pgsql user using uid $pgUID\n";
+print "pgsql user using gid $pgGID\n";
 
-system( "/usr/bin/chpass -a \"postgres:*:$pgUID:$pgGID::0:0:Postgres95 pseudo-user:$ENV{'PREFIX'}/postgres95:/bin/sh\"" );
+system( "/usr/bin/chpass -a \"pgsql:*:$pgUID:$pgGID::0:0:PostgreSQL pseudo-user:$ENV{'PREFIX'}/pgsql:/bin/sh\"" );
 
 sub append_file {
 	local($file,@list) = @_;
