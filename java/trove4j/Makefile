@@ -5,48 +5,40 @@
 # $FreeBSD$
 
 PORTNAME=	trove4j
-PORTVERSION=	1.0.2
-PORTREVISION=	1
-CATEGORIES=	java
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+PORTVERSION=	1.1b3
+CATEGORIES=	java devel
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	trove4j
 DISTNAME=	trove-${PORTVERSION}
-COMMENT=	GNU Trove: High performance collections for Java
 
 MAINTAINER=	herve.quiroz@esil.univ-mrs.fr
+COMMENT=	GNU Trove: High performance collections for Java
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.3+
 JAVA_RUN=	jdk
-NO_BUILD=	YES
-
-PORT_JARFILE=		trove.jar
-JAVA_WRKLIBDIR=		${WRKSRC}/lib
-JAVA_WRKDOCSDIR=	${WRKSRC}/javadocs
-PLIST_SUB+=		JAVAJARDIR=${JAVAJARDIR:S/^${PREFIX}\///}
+NO_BUILD=	yes
 
 .if !defined(NOPORTDOCS)
-PORTDOCS=	AUTHORS ChangeLog LICENSE.txt README-license.txt README.txt javadocs
+PORTDOCS=	javadocs AUTHORS ChangeLog LICENSE.txt README-license.txt README.txt
 .endif
+JARFILE=	trove.jar
+PLIST_FILES+=	${JAVAJARDIR:S,^${PREFIX}/,,}/${JARFILE}
 
 do-install:
-	@${ECHO_CMD} -n ">> Installing JAR file..."
+	@${ECHO_MSG} -n ">> Installing JAR as ${JAVAJARDIR}/${JARFILE}..."
 	@${MKDIR} ${JAVAJARDIR}
-	@cd ${JAVA_WRKLIBDIR} && ${INSTALL_DATA} ${PORT_JARFILE} ${JAVAJARDIR}
-	@${ECHO_CMD} " [DONE]"
+	@${CP} ${WRKSRC}/lib/${JARFILE} ${JAVAJARDIR}/
+	@${ECHO_MSG} " [ DONE ]"
 .if !defined(NOPORTDOCS)
-	@${ECHO_CMD} -n ">> Installing documentation..."
-	@cd ${JAVA_WRKDOCSDIR} && ${FIND} . -type d -exec ${MKDIR} ${DOCSDIR}/javadocs/{} ";"
-	@cd ${JAVA_WRKDOCSDIR} && ${FIND} . -type f -exec ${INSTALL_MAN} ${JAVA_WRKDOCSDIR}/{} ${DOCSDIR}/javadocs/{} ";"
-	@${INSTALL_MAN} ${WRKSRC}/AUTHORS ${DOCSDIR}/AUTHORS
-	@${INSTALL_MAN} ${WRKSRC}/ChangeLog ${DOCSDIR}/ChangeLog
-	@${INSTALL_MAN} ${WRKSRC}/LICENSE.txt ${DOCSDIR}/LICENSE.txt
-	@${INSTALL_MAN} ${WRKSRC}/README-license.txt ${DOCSDIR}/README-license.txt
-	@${INSTALL_MAN} ${WRKSRC}/README.txt ${DOCSDIR}/README.txt
-	@${ECHO_CMD} " [DONE]"
+	@${ECHO_MSG} -n ">> Installing documentation..."
+	@${MKDIR} ${DOCSDIR}
+.for DOCFILE in ${PORTDOCS}
+	@${CP} -r ${WRKSRC}/${DOCFILE} ${DOCSDIR}/
+	@${ECHO_MSG} -n " ${DOCFILE}"
+.endfor
+	@${CHOWN} -h -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR}
+	@${ECHO_MSG} " [ DONE ]"
 .endif
-
-post-install:
-	@${ECHO_CMD} "${PORTNAME}-${PORTVERSION} installed as ${JAVAJARDIR}/${PORT_JARFILE}"
 
 .include <bsd.port.mk>
