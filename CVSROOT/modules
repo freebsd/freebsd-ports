@@ -1975,6 +1975,7 @@ gate		ports/editors/gate
 gatekeeper	ports/net/gatekeeper
 gauche		ports/lang/gauche
 gauche-gdbm	ports/databases/gauche-gdbm
+gauche-gl	ports/graphics/gauche-gl
 gauche-gtk	ports/x11-toolkits/gauche-gtk
 gaussian98	ports/biology/gaussian98
 gawk		ports/lang/gawk
