@@ -5,6 +5,7 @@
     SUBDIR += XFree86-4-NestServer
     SUBDIR += XFree86-4-PrintServer
     SUBDIR += XFree86-4-Server
+    SUBDIR += XFree86-4-Server-snap
     SUBDIR += XFree86-4-VirtualFramebufferServer
     SUBDIR += Xfstt
     SUBDIR += XttXF86srv-3DLabs
