@@ -5361,6 +5361,7 @@ meld		ports/textproc/meld
 memcached	ports/databases/memcached
 memcheck	ports/devel/memcheck
 memdump		ports/sysutils/memdump
+memfetch	ports/sysutils/memfetch
 memgrep		ports/sysutils/memgrep
 memtest		ports/sysutils/memtest
 memtest86	ports/sysutils/memtest86
