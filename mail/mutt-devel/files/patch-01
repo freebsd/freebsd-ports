@@ -1,6 +1,6 @@
---- configure.in.orig	Thu Nov  8 23:39:59 2001
-+++ configure.in	Mon Nov 26 20:29:39 2001
-@@ -569,7 +569,7 @@
+--- configure.in.orig	Thu May  2 01:21:49 2002
++++ configure.in	Wed Jul 17 17:08:49 2002
+@@ -591,7 +591,7 @@
          then
            if test "$with_sasl" != "yes"
            then
@@ -8,3 +8,13 @@
 +            CPPFLAGS="$CPPFLAGS -I$with_sasl/include/sasl"
              LDFLAGS="$LDFLAGS -L$with_sasl/lib"
            fi
+ 
+@@ -644,7 +644,7 @@
+ fi])
+ 
+ if test x$GCC = xyes -a $mutt_cv_warnings = yes; then
+-        CFLAGS="-Wall -pedantic $CFLAGS"
++        CFLAGS="-Wall $CFLAGS"
+ fi
+ 
+ AC_ARG_ENABLE(nfs-fix, [  --enable-nfs-fix           Work around an NFS with broken attributes caching ],

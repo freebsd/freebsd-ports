@@ -49,10 +49,13 @@
 #
 # If you want to enable the pgp_outlook_compat function for use with pgp define:
 #  WITH_MUTT_PGP_OUTLOOK_PATCH
+#
+# If you want to use the rethreading functions define:
+#  WITH_MUTT_EDIT_THREADS
 
 PORTNAME=	mutt-devel
 PORTVERSION=	1.5.1
-#PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES+=	mail
 .if defined(WITH_MUTT_NNTP)
 CATEGORIES+=	news
@@ -86,6 +89,10 @@ PATCH_SITES+=	http://www.mutt.org.ua/download/mutt-${PATCH_VERSION}/ \
 		http://www2.mutt.org.ua/download/mutt-${PATCH_VERSION}/ \
 		ftp://ftp.mutt.org.ua/pub/mutt/mutt-${PATCH_VERSION}/ \
 		ftp://ftp2.mutt.org.ua/pub/mutt/mutt-${PATCH_VERSION}/
+.endif
+
+.if defined(WITH_MUTT_EDIT_THREADS)
+PATCH_SITES+=	http://cedricduval.free.fr/download/mutt/
 .endif
 
 # XXX
@@ -187,6 +194,10 @@ CONFIGURE_ARGS+=	--enable-nntp
 PATCHFILES+=	patch-${PATCH_VERSION}.vvv.initials.gz \
 		patch-${PATCH_VERSION}.vvv.quote.gz
 .endif
+.if defined(WITH_MUTT_EDIT_THREADS)
+PATCHFILES+=	patch-${PATCH_VERSION}.cd.edit_threads.9.2
+CONFIGURE_ARGS+=	--enable-imap-edit-threads
+.endif
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/i$//}
 MAN1=		flea.1 mutt.1 mutt_dotlock.1 muttbug.1
@@ -225,7 +236,7 @@ PLIST_SUB+=	SUB_ADD_C="@comment "
 PLIST_SUB+=	SUB_ADD_D="@comment "
 PLIST_SUB+=	SUB_ADD_E="@comment "
 PLIST_SUB+=	SUB_ADD_F="@comment "
-PLIST_SUB+=	SUB_PGP_A="@comment "
+PLIST_SUB+=	SUB_PATCHES="@comment "
 .elif defined(WITH_MUTT_COMPRESSED_FOLDERS) && defined(WITH_MUTT_NNTP) && \
 	!defined(WITH_MUTT_QUOTE_PATCH)
 PLIST_SUB+=	SUB_ADD_F=""
@@ -235,7 +246,7 @@ PLIST_SUB+=	SUB_ADD_C="@comment "
 PLIST_SUB+=	SUB_ADD_D="@comment "
 PLIST_SUB+=	SUB_ADD_E="@comment "
 PLIST_SUB+=	SUB_ADD_G="@comment "
-PLIST_SUB+=	SUB_PGP_A="@comment "
+PLIST_SUB+=	SUB_PATCHES="@comment "
 .elif defined(WITH_MUTT_COMPRESSED_FOLDERS) && !defined(WITH_MUTT_NNTP) && \
 	defined(WITH_MUTT_QUOTE_PATCH)
 PLIST_SUB+=	SUB_ADD_C=""
@@ -245,7 +256,7 @@ PLIST_SUB+=	SUB_ADD_D="@comment "
 PLIST_SUB+=	SUB_ADD_E="@comment "
 PLIST_SUB+=	SUB_ADD_F="@comment "
 PLIST_SUB+=	SUB_ADD_G="@comment "
-PLIST_SUB+=	SUB_PGP_A="@comment "
+PLIST_SUB+=	SUB_PATCHES="@comment "
 .elif defined(WITH_MUTT_COMPRESSED_FOLDERS) && !defined(WITH_MUTT_NNTP) && \
 	!defined(WITH_MUTT_QUOTE_PATCH)
 PLIST_SUB+=	SUB_ADD_B=""
@@ -255,7 +266,7 @@ PLIST_SUB+=	SUB_ADD_D="@comment "
 PLIST_SUB+=	SUB_ADD_E="@comment "
 PLIST_SUB+=	SUB_ADD_F="@comment "
 PLIST_SUB+=	SUB_ADD_G="@comment "
-PLIST_SUB+=	SUB_PGP_A="@comment "
+PLIST_SUB+=	SUB_PATCHES="@comment "
 .elif !defined(WITH_MUTT_COMPRESSED_FOLDERS) && defined(WITH_MUTT_NNTP) && \
 	defined(WITH_MUTT_QUOTE_PATCH)
 PLIST_SUB+=	SUB_ADD_E=""
@@ -265,7 +276,7 @@ PLIST_SUB+=	SUB_ADD_C="@comment "
 PLIST_SUB+=	SUB_ADD_D="@comment "
 PLIST_SUB+=	SUB_ADD_F="@comment "
 PLIST_SUB+=	SUB_ADD_G="@comment "
-PLIST_SUB+=	SUB_PGP_A="@comment "
+PLIST_SUB+=	SUB_PATCHES="@comment "
 .elif !defined(WITH_MUTT_COMPRESSED_FOLDERS) && defined(WITH_MUTT_NNTP) && \
 	!defined(WITH_MUTT_QUOTE_PATCH)
 PLIST_SUB+=	SUB_ADD_D=""
@@ -275,7 +286,7 @@ PLIST_SUB+=	SUB_ADD_C="@comment "
 PLIST_SUB+=	SUB_ADD_E="@comment "
 PLIST_SUB+=	SUB_ADD_F="@comment "
 PLIST_SUB+=	SUB_ADD_G="@comment "
-PLIST_SUB+=	SUB_PGP_A="@comment "
+PLIST_SUB+=	SUB_PATCHES="@comment "
 .elif !defined(WITH_MUTT_COMPRESSED_FOLDERS) && !defined(WITH_MUTT_NNTP) && \
 	defined(WITH_MUTT_QUOTE_PATCH)
 PLIST_SUB+=	SUB_ADD_A=""
@@ -285,7 +296,7 @@ PLIST_SUB+=	SUB_ADD_D="@comment "
 PLIST_SUB+=	SUB_ADD_E="@comment "
 PLIST_SUB+=	SUB_ADD_F="@comment "
 PLIST_SUB+=	SUB_ADD_G="@comment "
-PLIST_SUB+=	SUB_PGP_A="@comment "
+PLIST_SUB+=	SUB_PATCHES="@comment "
 .elif !defined(WITH_MUTT_COMPRESSED_FOLDERS) && !defined(WITH_MUTT_NNTP) && \
 	!defined(WITH_MUTT_QUOTE_PATCH)
 PLIST_SUB+=	SUB_ADD_A="@comment "
@@ -295,7 +306,7 @@ PLIST_SUB+=	SUB_ADD_D="@comment "
 PLIST_SUB+=	SUB_ADD_E="@comment "
 PLIST_SUB+=	SUB_ADD_F="@comment "
 PLIST_SUB+=	SUB_ADD_G="@comment "
-PLIST_SUB+=	SUB_PGP_A="@comment "
+PLIST_SUB+=	SUB_PATCHES=""
 .else # patches
 PLIST_SUB+=	SUB_ADD_A="@comment "
 PLIST_SUB+=	SUB_ADD_B="@comment "
@@ -304,7 +315,7 @@ PLIST_SUB+=	SUB_ADD_D="@comment "
 PLIST_SUB+=	SUB_ADD_E="@comment "
 PLIST_SUB+=	SUB_ADD_F="@comment "
 PLIST_SUB+=	SUB_ADD_G="@comment "
-PLIST_SUB+=	SUB_PGP_A=""
+PLIST_SUB+=	SUB_PATCHES=""
 .endif
 .else # HTML
 PLIST_SUB+=	SUB_HTML="@comment "
@@ -315,7 +326,7 @@ PLIST_SUB+=	SUB_ADD_D="@comment "
 PLIST_SUB+=	SUB_ADD_E="@comment "
 PLIST_SUB+=	SUB_ADD_F="@comment "
 PLIST_SUB+=	SUB_ADD_G="@comment "
-PLIST_SUB+=	SUB_PGP_A="@comment "
+PLIST_SUB+=	SUB_PATCHES="@comment "
 .endif
 .else 	# NOPORTDOCS
 PLIST_SUB+=	SUB_HTML="@comment "
@@ -327,14 +338,24 @@ PLIST_SUB+=	SUB_ADD_D="@comment "
 PLIST_SUB+=	SUB_ADD_E="@comment "
 PLIST_SUB+=	SUB_ADD_F="@comment "
 PLIST_SUB+=	SUB_ADD_G="@comment "
-PLIST_SUB+=	SUB_PGP_A="@comment "
+PLIST_SUB+=	SUB_PATCHES="@comment "
 post-patch::
 	${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-nodoc-contrib
 .endif
-.if defined(WITH_MUTT_PGP_OUTLOOK_PATCH)
+.if defined(WITH_MUTT_PGP_OUTLOOK_PATCH) && !defined(WITH_MUTT_EDIT_THREADS)
 PLIST_SUB+=	SUB_PGP=""
 .else
 PLIST_SUB+=	SUB_PGP="@comment "
+.endif
+.if defined(WITH_MUTT_EDIT_THREADS) && !defined(WITH_MUTT_PGP_OUTLOOK_PATCH)
+PLIST_SUB+=	SUB_THREAD=""
+.else
+PLIST_SUB+=	SUB_THREAD="@comment "
+.endif
+.if defined(WITH_MUTT_EDIT_THREADS) && defined(WITH_MUTT_PGP_OUTLOOK_PATCH)
+PLIST_SUB+=	SUB_THREAD_PGP=""
+.else
+PLIST_SUB+=	SUB_THREAD_PGP="@comment "
 .endif
 .if ${SGML_USED} == yes
 BUILD_DEPENDS+=	sgmlfmt:${PORTSDIR}/textproc/sgmlformat
