@@ -2187,6 +2187,7 @@ gnomeapplets2	ports/x11/gnomeapplets2
 gnomeattacks	ports/games/gnomeattacks
 gnomeaudio2	ports/audio/gnomeaudio2
 gnomebasic	ports/lang/gnomebasic
+gnomeblog	ports/deskutils/gnomeblog
 gnomebreakout	ports/games/gnomebreakout
 gnomebuild	ports/devel/gnomebuild
 gnomecanvas	ports/graphics/gnomecanvas
