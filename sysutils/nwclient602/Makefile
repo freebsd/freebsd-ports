@@ -7,7 +7,7 @@
 
 PORTNAME=	nwclient
 PORTVERSION=	6.0.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.feral.com/pub/networker/freebsd/freebsd_40/
 DISTNAME=	nwclient-${PORTVERSION}-freebsd-${ARCH}
