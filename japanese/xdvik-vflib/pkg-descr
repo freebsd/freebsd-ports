@@ -1,14 +1,15 @@
 
 Japanese dvi file previewer for X.
-(xdvik-20a + xdvik20a-j1.1p15)
+(xdvik-20c + xdvik20c-j1.0p0d)
 
     1. support dvi file of ASCII Japanese TeX(and pTeX) and NTT jTeX.
-    2. require METAFONT and VFlib(vector font library).
-    3. require kpathsearch libraries version 3.0 (search library)
+    2. require METAFONT and VFlib (vector font library).
+    3. require kpathsearch libraries version 3.2 (search library)
     4. support Color dvi file.
-       (but not support color anti-aliasing.so this mode is ugly preview!)
-    5. built-in EPS preview(need to any ghostscript)
-    6. print out from this program(use lpr).
+       (but not support color anti-aliasing. so this mode is ugly preview!)
+    5. built-in EPS preview (need to any ghostscript)
+    6. print out from this program (use lpr).
+    7. convert dvi -> ps (default use japanese/dvipsk).
 
 - Kentarou Inagaki
-JBD01226@niftyserve.ne.jp
+inagaki@tg.rim.or.jp

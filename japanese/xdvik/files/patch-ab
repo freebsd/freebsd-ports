@@ -1,11 +1,64 @@
---- xdvik/Makefile.in.orig	Fri Jan 30 00:37:19 1998
-+++ xdvik/Makefile.in	Fri Jan 30 00:45:39 1998
-@@ -16,7 +16,7 @@
- # define NOVFONTMAP when you don't use "vfontmap"
- # define VI_KEY when you use VI_KEY
- # define SMALL_PANEL when you use SMALL_PANEL
--XDEFS= -DA4 -DNOTEXXET -DVI_KEY -DPTEX -DCOLOR
-+XDEFS= -DA4 -DNOTEXXET -DVI_KEY -DPTEX -DCOLOR -DSMALL_PANEL -DSHRINK=\"7\" -DBDPI=300
- 
- FILTOPTTBLDIR = $(texmf)/xdvi
- 
+*** xdvik/Makefile.in.orig	Sun Jun 28 12:02:02 1998
+--- xdvik/Makefile.in	Sun Jun 28 12:02:25 1998
+***************
+*** 16,22 ****
+  # define NOVFONTMAP when you don't use "vfontmap"
+  # define VI_KEY when you use VI_KEY
+  # define SMALL_PANEL when you use SMALL_PANEL
+! XDEFS= -DA4 -DNOTEXXET -DVI_KEY -DPTEX -DCOLOR
+  
+  FILTOPTTBLDIR = $(texmf)/xdvi
+  
+--- 16,22 ----
+  # define NOVFONTMAP when you don't use "vfontmap"
+  # define VI_KEY when you use VI_KEY
+  # define SMALL_PANEL when you use SMALL_PANEL
+! XDEFS= -DA4 -DNOTEXXET -DVI_KEY -DPTEX -DCOLOR -DSHRINK=\"7\" -DBDPI=300 -DSMALL_PANEL
+  
+  FILTOPTTBLDIR = $(texmf)/xdvi
+  
+***************
+*** 55,61 ****
+    paper.o tategaki.o vfontmap.o \
+    $(ALLOCA)
+  
+! program = xdvi.bin
+  programs = $(program)
+  
+  default all: $(programs) xdvi.1 
+--- 55,61 ----
+    paper.o tategaki.o vfontmap.o \
+    $(ALLOCA)
+  
+! program = xdvi
+  programs = $(program)
+  
+  default all: $(programs) xdvi.1 
+***************
+*** 87,99 ****
+  install-exec: $(programs)
+  	$(SHELL) $(top_srcdir)/../mkinstalldirs $(bindir)
+  	for p in $(programs); do $(INSTALL_LIBTOOL_PROG) $(bindir) $$p; done
+- 	$(INSTALL_SCRIPT) $(srcdir)/xdvi-sh $(scriptdir)/xdvi
+  uninstall-exec:
+! 	for p in $(programs) xdvi; do rm -f $(bindir)/$$p; done
+  
+  install-data: xdvi.1 
+  	$(SHELL) $(top_srcdir)/../mkinstalldirs $(mandir) 
+! 	$(SHELL) $(top_srcdir)/../mkinstalldirs $(mandir) $(psheaderdir) $(FILTOPTBLDIR)
+  	$(INSTALL_DATA) xdvi.1 $(mandir)/xdvi.$(manext)
+  	$(INSTALL_DATA) xdvipaper.dvi2ps-j $(FILTOPTTBLDIR)/xdvipaper.dvi2ps-j
+  	$(INSTALL_DATA) xdvipaper.dvips $(FILTOPTTBLDIR)/xdvipaper.dvips
+--- 87,98 ----
+  install-exec: $(programs)
+  	$(SHELL) $(top_srcdir)/../mkinstalldirs $(bindir)
+  	for p in $(programs); do $(INSTALL_LIBTOOL_PROG) $(bindir) $$p; done
+  uninstall-exec:
+! 	for p in $(programs) ; do rm -f $(bindir)/$$p; done
+  
+  install-data: xdvi.1 
+  	$(SHELL) $(top_srcdir)/../mkinstalldirs $(mandir) 
+! 	$(SHELL) $(top_srcdir)/../mkinstalldirs $(mandir) $(psheaderdir) $(FILTOPTTBLDIR)
+  	$(INSTALL_DATA) xdvi.1 $(mandir)/xdvi.$(manext)
+  	$(INSTALL_DATA) xdvipaper.dvi2ps-j $(FILTOPTTBLDIR)/xdvipaper.dvi2ps-j
+  	$(INSTALL_DATA) xdvipaper.dvips $(FILTOPTTBLDIR)/xdvipaper.dvips
