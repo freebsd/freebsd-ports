@@ -1,8 +1,10 @@
 bin/friskserver
 bin/risk
 bin/xfrisk
-lib/X11/app-defaults/XFrisk
-lib/X11/xfrisk/Help.risk
-lib/X11/xfrisk/Countries.risk
-lib/X11/xfrisk/World.risk
-@dirrm lib/X11/xfrisk
+bin/aiDummy
+bin/aiConway
+bin/aiColson
+lib/xfrisk/World.risk
+lib/xfrisk/Countries.risk
+lib/xfrisk/Help.risk
+@dirrm lib/xfrisk
