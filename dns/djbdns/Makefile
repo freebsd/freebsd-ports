@@ -8,7 +8,8 @@
 PORTNAME=	dnscache
 PORTVERSION=	1.00
 CATEGORIES=	net
-MASTER_SITES=	http://cr.yp.to/dnscache/
+MASTER_SITES=	http://cr.yp.to/dnscache/ \
+		ftp://cr.yp.to/dnscache/
 
 MAINTAINER=	nbm@FreeBSD.org
 
