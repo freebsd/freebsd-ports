@@ -44,7 +44,7 @@ OO.org does need $LANG to be set to a suitable value.
 If it is not already set, a default value is chosen.
 Some old X-Servers before XFree86 4.2 do not like the
 western locale with Euro symbol (ISO_8859-15).
-You should ignore the waring message then or upgrade to
+You should ignore the warning message then or upgrade to
 to a more recent X-server.
 
 If you have chosen US-ASCII as locale, you cannot load
