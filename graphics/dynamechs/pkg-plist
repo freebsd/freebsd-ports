@@ -29,9 +29,6 @@ include/dynamechs/dm/dmSystem.hpp
 include/dynamechs/dm/dmTime.h
 include/dynamechs/dm/dmTreadmill.hpp
 include/dynamechs/dm/dmZScrewTxLink.hpp
-include/dynamechs/dmu/dmLoadFile.h
-include/dynamechs/dmu/dmu.h
-include/dynamechs/dmu/glLoadModels.h
 include/dynamechs/dmGL/dmGL.h
 include/dynamechs/dmGL/dmGLCamera.hpp
 include/dynamechs/dmGL/dmGLFlyCamera.hpp
@@ -39,10 +36,13 @@ include/dynamechs/dmGL/dmGLMouse.hpp
 include/dynamechs/dmGL/dmGLPolarCamera.hpp
 include/dynamechs/dmGL/dmGLPolarCamera_yup.hpp
 include/dynamechs/dmGL/dmGLPolarCamera_zup.hpp
-@dirrm include/dynamechs/dm
+include/dynamechs/dmu/dmLoadFile.h
+include/dynamechs/dmu/dmu.h
+include/dynamechs/dmu/glLoadModels.h
+lib/libdm.so
+lib/libdmGL.so
+lib/libdmu.so
 @dirrm include/dynamechs/dmu
 @dirrm include/dynamechs/dmGL
+@dirrm include/dynamechs/dm
 @dirrm include/dynamechs
-lib/libdm.so
-lib/libdmu.so
-lib/libdmGL.so

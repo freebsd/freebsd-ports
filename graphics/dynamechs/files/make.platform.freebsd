@@ -1,0 +1,25 @@
+CXXFLAGS += -D_BOOL -c -fPIC -D_POSIX_C_SOURCE=199506L -I/$(OPENGLINCDIR)
+# -pthreads
+DEPENDFLAGS := $(CXXFLAGS)
+
+LDFLAGS += -fPIC -L/$(OPENGLLIBDIR) -L${X11BASE}/lib -lX11 -lm -l$(MESA)GLU -l$(MESA)GL
+LDGLUT := -lglut
+
+# CXX := g++
+LINKER := $(CXX)
+SHLINKER := $(CXX)
+
+SHLKFLAG := -shared -fPIC
+
+space :=
+OBJNAMEARG := -o $(space)
+EXENAMEARG := -o $(space)
+SHLNAMEARG := -o $(space)
+LINKDIRARG := -L
+LINKLIBARG := -l
+LINKLIBSFX :=
+
+LIBSFX := so
+LIBPFX := lib
+EXESFX := 
+OBJSFX := o
