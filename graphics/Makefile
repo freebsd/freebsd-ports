@@ -92,6 +92,7 @@
     SUBDIR += graphviz
     SUBDIR += gridpix
     SUBDIR += gsculpt
+    SUBDIR += gthumb
     SUBDIR += gtkdps
     SUBDIR += gtkfig
     SUBDIR += gtkgraph

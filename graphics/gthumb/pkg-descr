@@ -1,0 +1,8 @@
+This is a port of gThumb, a fast and small image browser and viewer.
+It creates thumbnailes, caches them and has support for most popular
+image formats.
+For further information see:
+WWW: http://gthumb.sourceforge.net
+
+-Harry
+H@Schmalzbauer.de
