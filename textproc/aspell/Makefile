@@ -72,10 +72,10 @@ DESCR=		${.CURDIR}/pkg-descr
 
 CONF_DICT_ENV=	ASPELL="${PREFIX}/bin/aspell"	\
 		WORD_LIST_COMPRESS="${PREFIX}/bin/word-list-compress"
-AVAIL_DICT=	af az be bg bn br ca cs cy da de de-alt el en eo es et fa fi fo fr \
-		ga gd gl gv he hr hsb hu ia id is it la lt lv mi mk mn ms mt nb nl \
-		nn ny pl pt qu ro ru rw sc sk sl sv sw ta tet tl tn tr uk uz vi wa \
-		yi zu
+AVAIL_DICT=	af am az be bg bn br ca cs cy da de de-alt el en eo es et fa fi fo	\
+		fr ga gd gl gv he hr hsb hu ia id is it la lt lv mi mk mn ms mt nb	\
+		nds nl nn ny or pl pt qu ro ru rw sc sk sl sv sw ta tet tl tn tr uk	\
+		uz vi wa yi zu
 DICT_SUFFIX=	.tar.bz2
 
 .include <bsd.port.pre.mk>
@@ -112,6 +112,7 @@ DICTS+=		${LG}
 	@${ECHO_MSG} '* You can add further dictionaries:                     *'
 	@${ECHO_MSG} '*                                 Use make-flag:        *'
 	@${ECHO_MSG} '*  - Afrikaans                    ASPELL_AF=yes         *'
+	@${ECHO_MSG} '*  - Amharic                      ASPELL_AM=yes         *'
 	@${ECHO_MSG} '*  - Azerbaijani                  ASPELL_AZ=yes         *'
 	@${ECHO_MSG} '*  - Belarusian                   ASPELL_BE=yes         *'
 	@${ECHO_MSG} '*  - Bengali                      ASPELL_BN=yes         *'
@@ -143,6 +144,7 @@ DICTS+=		${LG}
 	@${ECHO_MSG} '*  - Latin                        ASPELL_LA=yes         *'
 	@${ECHO_MSG} '*  - Latvian                      ASPELL_LV=yes         *'
 	@${ECHO_MSG} '*  - Lithuanian                   ASPELL_LT=yes         *'
+	@${ECHO_MSG} '*  - Low Saxon                    ASPELL_NDS=yes        *'
 	@${ECHO_MSG} '*  - Macedonian                   ASPELL_MK=yes         *'
 	@${ECHO_MSG} '*  - Maori                        ASPELL_MI=yes         *'
 	@${ECHO_MSG} '*  - Malay                        ASPELL_MS=yes         *'
@@ -152,6 +154,7 @@ DICTS+=		${LG}
 	@${ECHO_MSG} '*  - Norwegian Bokmal             ASPELL_NB=yes         *'
 	@${ECHO_MSG} '*  - Norwegian Nynorsk            ASPELL_NN=yes         *'
 	@${ECHO_MSG} '*  - Nyanja (Chichewa)            ASPELL_NY=yes         *'
+	@${ECHO_MSG} '*  - Oriya                        ASPELL_OR=yes         *'
 	@${ECHO_MSG} '*  - Persian (Farsi)              ASPELL_FA=yes         *'
 	@${ECHO_MSG} '*  - Polish                       ASPELL_PL=yes         *'
 	@${ECHO_MSG} '*  - Portuguese                   ASPELL_PT=yes         *'
