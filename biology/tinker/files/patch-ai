@@ -1,0 +1,5 @@
+--- ../bench/bench-2.run.orig	Tue Jan  9 14:29:26 2001
++++ ../bench/bench-2.run	Tue Jan  9 14:29:33 2001
+@@ -1 +1 @@
+-../bin/timer bench-2 1 y
++timer bench-2 1 y

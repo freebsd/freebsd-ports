@@ -1,0 +1,7 @@
+--- ../bench/bench-4.run.orig	Tue Jan  9 14:29:59 2001
++++ ../bench/bench-4.run	Tue Jan  9 14:30:14 2001
+@@ -1,3 +1,3 @@
+ cp bench-4.dyn0 bench-4.dyn
+-time ../bin/dynamic bench-4 1000 1.0 10.0 2 298.0
++time dynamic bench-4 1000 1.0 10.0 2 298.0
+ rm bench-4.dyn

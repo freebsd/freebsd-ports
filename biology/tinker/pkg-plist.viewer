@@ -40,6 +40,9 @@ bin/testlight
 bin/testrot
 bin/timer
 bin/timerot
+bin/tview-8
+bin/tview-16
+bin/tview-32
 bin/vibrate
 bin/vibrot
 bin/xtalfit
@@ -146,6 +149,7 @@ share/tinker/params/smooth.prm
 share/tinker/params/smoothaa.prm
 share/tinker/params/tinker.prm
 share/tinker/params/water.prm
+share/tinker/rasmol/rasmol.hlp
 share/tinker/test/README
 share/tinker/test/ala20.key
 share/tinker/test/ala20.xyz
@@ -390,5 +394,6 @@ share/tinker/tinker.txt
 @dirrm share/examples/tinker
 @dirrm share/tinker/bench
 @dirrm share/tinker/params
+@dirrm share/tinker/rasmol
 @dirrm share/tinker/test
 @dirrm share/tinker
