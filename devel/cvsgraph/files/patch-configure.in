@@ -1,0 +1,36 @@
+--- configure.in.orig	Fri Feb 23 14:53:13 2001
++++ configure.in	Sat Feb 24 18:58:31 2001
+@@ -11,18 +11,18 @@
+ 
+ dnl Extra libraries 'with'-options
+ AC_ARG_WITH(gd,[  --with-gd=DIR           location of the gd lib/inc],
+-		[LDFLAGS="${LDFLAGS} -L${withval}"
+-		CFLAGS="${CFLAGS} -I${withval}"
++		[LDFLAGS="${LDFLAGS} -L${withval}/lib"
++		CFLAGS="${CFLAGS} -I${withval}/include/gd"
+ 		])
+ 
+ AC_ARG_WITH(z,[  --with-z=DIR            location of zlib lib/inc],
+-		[LDFLAGS="${LDFLAGS} -L${withval}"
+-		CFLAGS="${CFLAGS} -I${withval}"
++		[LDFLAGS="${LDFLAGS} -L${withval}/lib"
++		CFLAGS="${CFLAGS} -I${withval}/include"
+ 		])
+ 
+ AC_ARG_WITH(png,[  --with-png=DIR          location of png lib/inc],
+-		[LDFLAGS="${LDFLAGS} -L${withval}"
+-		CFLAGS="${CFLAGS} -I${withval}"
++		[LDFLAGS="${LDFLAGS} -L${withval}/lib"
++		CFLAGS="${CFLAGS} -I${withval}/include"
+ 		])
+ 
+ LDFLAGS="${LDFLAGS} -lgd"
+@@ -73,7 +73,7 @@
+ dnl Make sure the header is here
+ AC_CHECK_HEADER( gd.h,[ have_gd_h="yes" ],[ have_gd_h="no" ])
+ 
+-if test $have_gd_h != "yes"; then
++if test $have_gd_h = "bogus"; then
+ echo
+ 	echo "** The GD library is required for CvsGraph to function."
+ 	echo "   Get it from http://www.boutell.com, compile it and"
