@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.omronsoft.co.jp/pub/Wnn6/sdk_source/
 
 MAINTAINER=	taoka@FreeBSD.org
 
-BUILD_DEPENDS=	imake:${PORTSDIR}/x11/XFree86
+BUILD_DEPENDS=	imake:${PORTSDIR}/devel/imake
 
 WRKSRC=		${WRKDIR}/src/contrib/im/Xsi
 DOCDIR=		${PREFIX}/share/doc/ja-Wnn6-lib

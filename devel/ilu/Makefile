@@ -19,7 +19,7 @@ PATCHFILES=	${DISTNAME}-patches.html.gz
 
 MAINTAINER=	cracauer@cons.org
 
-BUILD_DEPENDS=	imake:${PORTSDIR}/x11/XFree86
+BUILD_DEPENDS=	imake:${PORTSDIR}/devel/imake
 
 # The FreeBSD port uses its own shared library patches. The native
 # ILU support is incomplete and disabled here.

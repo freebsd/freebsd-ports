@@ -16,7 +16,7 @@ EXTRACT_ONLY=	Uum4.109.tar.gz
 
 MAINTAINER=	kiri@pis.toba-cmt.ac.jp
 
-BUILD_DEPENDS=	imake:${PORTSDIR}/x11/XFree86
+BUILD_DEPENDS=	imake:${PORTSDIR}/imake
 LIB_DEPENDS=	canna.1:${PORTSDIR}/japanese/Canna
 
 MANLANG=	ja

@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://ftp.nec.co.jp/pub/Canna/Canna32/
 
 MAINTAINER=	max@FreeBSD.org
 
-BUILD_DEPENDS=	imake:${PORTSDIR}/x11/XFree86
+BUILD_DEPENDS=	imake:${PORTSDIR}/devel/imake
 
 ALL_TARGET=	canna
 INSTALL_TARGET=	install install.man
