@@ -7,6 +7,7 @@
 
 PORTNAME=	epiphany
 PORTVERSION=	0.9.1
+PORTREVISION=	1
 CATEGORIES=	www gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}${PKGNAMESUFFIX}/0.9
@@ -25,7 +26,7 @@ RUN_DEPENDS=	epiphany:${PORTSDIR}/www/epiphany \
 MOZILLA=	mozilla
 HEADERS_SUFX=
 
-MOZ_CONFIGURE_ARGS=	--with-mozilla-snapshot="1.6"
+MOZ_CONFIGURE_ARGS=	--with-mozilla-snapshot="1.7"
 
 .if !defined(WITH_MOZILLA)
 MOZILLA=	mozilla
@@ -34,7 +35,7 @@ HEADERS_SUFX=
 .if ${WITH_MOZILLA}=="mozilla-devel" || ${WITH_MOZILLA}=="mozilla-devel-gtk2"
 MOZILLA=	mozilla-devel
 HEADERS_SUFX=	-devel
-MOZ_CONFIGURE_ARGS=	--with-mozilla-snapshot="1.7rc3"
+MOZ_CONFIGURE_ARGS=	--with-mozilla-snapshot="1.8a"
 .else
 MOZILLA=	mozilla
 HEADERS_SUFX=
