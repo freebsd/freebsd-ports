@@ -1,0 +1,6 @@
+This module implements most of strptime(3), the POSIX function that is the
+reverse of strftime(3), for DateTime. While strftime takes a DateTime and a
+pattern and returns a string, strptime takes a string and a pattern and returns
+the DateTime object associated.
+
+WWW: http://datetime.perl.org/
