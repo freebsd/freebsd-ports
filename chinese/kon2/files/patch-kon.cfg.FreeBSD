@@ -1,0 +1,10 @@
+--- kon.cfg.FreeBSD.orig	Mon May  5 04:38:23 2003
++++ kon.cfg.FreeBSD	Mon May  5 04:38:41 2003
+@@ -116,6 +116,7 @@
+ # Startup command definition (usually font loading commands are specified)
+ bdf-zcat16:@@KON16FONT@@
+ 	gzip -cd @@PREFIX@@/share/fonts/bdf/kc15f.bdf.gz | /usr/local/bin/fld -t bdf -n
++	gzip -cd @@PREFIX@@/share/fonts/bdf/gbkst16.bdf.gz | /usr/local/bin/fld -t bdf -n
+ 	gzip -cd @@PREFIX@@/share/fonts/bdf/8x16rk.bdf.gz | /usr/local/bin/fld -t bdf -n
+ bdf-zcat14:@@KON14FONT@@
+ 	gzip -cd @@PREFIX@@/share/fonts/bdf/k14.bdf.gz | /usr/local/bin/fld -t bdf -n
