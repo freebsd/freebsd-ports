@@ -1,0 +1,11 @@
+--- bin/razor-report.orig	Sat Dec 29 07:57:44 2001
++++ bin/razor-report	Sat Dec 29 07:58:23 2001
+@@ -99,7 +99,7 @@
+ instead of computing one from mail content. When called with C<--sig>,
+ C<razor-report> will not attempt to read from STDIN. Usage:
+  
+-  razor-report -d -sig a8a3d545adb73f9733675571ffeaf10cba87745b
++  razor-report C<-d> -sig a8a3d545adb73f9733675571ffeaf10cba87745b
+ 
+ =item C<-conf=filename>
+ 
