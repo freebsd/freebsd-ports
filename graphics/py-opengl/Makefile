@@ -20,6 +20,8 @@ RUN_DEPENDS=	python:${PORTSDIR}/lang/python \
 		${NUMPYDIR}/Numeric.py:${PORTSDIR}/math/numpy
 LIB_DEPENDS=	GL.14:${PORTSDIR}/graphics/Mesa3
 
+BROKEN=		"Does not compile"
+
 ALL_TARGET=	default
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
