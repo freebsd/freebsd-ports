@@ -10,7 +10,7 @@ PORTVERSION=   0.7.2
 CATEGORIES=    devel
 MASTER_SITES=  http://home.arcor.de/hfvogt/
 
-MAINTAINER=	david@realityrift.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An Ada-binding to the X Window System and *tif
 
 BUILD_DEPENDS= gnatmake:${PORTSDIR}/lang/gnat

@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.adapower.net/booch/download/
 DISTNAME=       bc-html-${PORTVERSION}
 EXTRACT_SUFX=   .zip
 
-MAINTAINER=     david@realityrift.com
+MAINTAINER=     ports@FreeBSD.org
 COMMENT=	Manual for adabooch
 
 USE_ZIP=        yes
