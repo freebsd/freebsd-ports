@@ -18,9 +18,9 @@ The pgsql user's home dir is /usr/local/pgsql by default, but can be
 changed with for example chpass(1). Datadir defaults to ~pgsql/data,
 but can be changed by modifying the ~pgsql/.profile script.
 
-As always, you *must* dump existing databases before stopping and
-removing your old postgresql, as part of the update.  This is *NOT*
-done by this port!
+As always, backup your data before upgrading. If the upgrade leads to
+a higher minor revision (i.e. 7.0.x -> 7.1.x), a dump and restore of
+all databases is required. This is *NOT* done by the port!
 
 ======================================================================
 

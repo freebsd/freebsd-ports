@@ -154,10 +154,10 @@ share/doc/postgresql/html/libpqpp-notify.html
 share/doc/postgresql/html/lisp.html
 share/doc/postgresql/html/ln11330.html
 share/doc/postgresql/html/ln1274.html
-share/doc/postgresql/html/ln15168.html
+share/doc/postgresql/html/ln15181.html
 share/doc/postgresql/html/ln24.html
-share/doc/postgresql/html/ln24997.html
-share/doc/postgresql/html/ln37163.html
+share/doc/postgresql/html/ln25010.html
+share/doc/postgresql/html/ln37176.html
 share/doc/postgresql/html/ln8.html
 share/doc/postgresql/html/lo-funcs.html
 share/doc/postgresql/html/lo-implementation.html
@@ -334,7 +334,9 @@ share/doc/postgresql/html/release-7-0-1.html
 share/doc/postgresql/html/release-7-0-2.html
 share/doc/postgresql/html/release-7-0-3.html
 share/doc/postgresql/html/release-7-0.html
+share/doc/postgresql/html/release-7-1.html
 share/doc/postgresql/html/release-7-1-1.html
+share/doc/postgresql/html/release-7-1-2.html
 share/doc/postgresql/html/release.html
 share/doc/postgresql/html/relmodel-formal.html
 share/doc/postgresql/html/relmodel-oper.html
@@ -472,7 +474,6 @@ share/doc/postgresql/html/user.html
 share/doc/postgresql/html/wal-configuration.html
 share/doc/postgresql/html/wal-implementation.html
 share/doc/postgresql/html/wal.html
-share/doc/postgresql/html/x14501.html
 share/doc/postgresql/html/xact-read-committed.html
 share/doc/postgresql/html/xact-serializable.html
 share/doc/postgresql/html/xaggr.html
