@@ -4681,6 +4681,7 @@ p5-Chatbot-Eliza	ports/misc/p5-Chatbot-Eliza
 p5-Chemistry-Elements	ports/science/p5-Chemistry-Elements
 p5-Class-Accessor	ports/devel/p5-Class-Accessor
 p5-Class-Contract	ports/devel/p5-Class-Contract
+p5-Class-DBI	ports/databases/p5-Class-DBI
 p5-Class-Data-Inheritable	ports/devel/p5-Class-Data-Inheritable
 p5-Class-Date	ports/devel/p5-Class-Date
 p5-Class-Delegation	ports/devel/p5-Class-Delegation
