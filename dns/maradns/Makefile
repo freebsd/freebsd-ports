@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.maradns.org/download/ \
 		http://maradns.glou.net/download/ \
 		http://maradns.3va.net/download/
 
-MAINTAINER=	clement@FreeBSD.org
+MAINTAINER=	alex@kapranoff.ru
 COMMENT=	DNS server with focus on security and simplicity
 
 USE_REINPLACE=	yes
