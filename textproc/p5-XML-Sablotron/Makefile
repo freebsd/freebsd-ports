@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	XML-Sablotron
-PORTVERSION=	0.90
+PORTVERSION=	0.95
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN} \
 		http://download-2.gingerall.cz/download/sablot/
@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	skv@FreeBSD.org
 
-LIB_DEPENDS=	sablot.68:${PORTSDIR}/textproc/sablotron \
+LIB_DEPENDS=	sablot.69:${PORTSDIR}/textproc/sablotron \
 		iconv.3:${PORTSDIR}/converters/libiconv
 
 PERL_CONFIGURE=	yes
