@@ -21,13 +21,12 @@ Java_Include_MAINTAINER=	znerd@FreeBSD.org
 # There are the following stages:
 #
 # Stage 1: Define constants
-# Stage 2: Check the local ports tree
-# Stage 3: Deal with JAVA_HOME if it is already set
-# Stage 4: Determine which JDK ports are installed
-# Stage 5: Decide the exact JDK version if only a minimum version is specified
-# Stage 6: Decide the exact JDK to use
-# Stage 7: Define all settings for the port to use
-# Stage 8: Add any dependencies if necessary
+# Stage 2: Deal with JAVA_HOME if it is already set
+# Stage 3: Determine which JDK ports are installed
+# Stage 4: Decide the exact JDK version if only a minimum version is specified
+# Stage 5: Decide the exact JDK to use
+# Stage 6: Define all settings for the port to use
+# Stage 7: Add any dependencies if necessary
 #
 
 .	if defined(USE_JAVA)
@@ -72,50 +71,7 @@ _DEPEND_JIKES=	${_JIKES_PATH}:${PORTSDIR}/java/jikes
 
 
 #-----------------------------------------------------------------------------
-# Stage 2: Check the local ports tree
-#
-
-.		if !exists(${PORTSDIR}/${_JAVA_PORT_FREEBSD_1_1}/Makefile)
-.BEGIN:
-	@${ECHO} "${Java_Include}: Unable to find JDK 1.1 for FreeBSD port at ${_JAVA_PORT_FREEBSD_1_1} Please update your ports tree.";
-	@${FALSE}
-.		elif !exists(${PORTSDIR}/${_JAVA_PORT_FREEBSD_1_2}/Makefile)
-.BEGIN:
-	@${ECHO} "${Java_Include}: Unable to find JDK 1.2 for FreeBSD port at ${_JAVA_PORT_FREEBSD_1_2} Please update your ports tree.";
-	@${FALSE}
-.		elif !exists(${PORTSDIR}/${_JAVA_PORT_FREEBSD_1_3}/Makefile)
-.BEGIN:
-	@${ECHO} "${Java_Include}: Unable to find JDK 1.3 for FreeBSD port at ${_JAVA_PORT_FREEBSD_1_3} Please update your ports tree.";
-	@${FALSE}
-.		elif !exists(${PORTSDIR}/${_JAVA_PORT_BLACKDOWN_LINUX_1_2}/Makefile)
-.BEGIN:
-	@${ECHO} "${Java_Include}: Unable to find Blackdown JDK 1.2 for Linux port at ${_JAVA_PORT_BLACKDOWN_LINUX_1_2} Please update your ports tree.";
-	@${FALSE}
-.		elif !exists(${PORTSDIR}/${_JAVA_PORT_BLACKDOWN_LINUX_1_3}/Makefile)
-.BEGIN:
-	@${ECHO} "${Java_Include}: Unable to find Blackdown JDK 1.3 for Linux port at ${_JAVA_PORT_BLACKDOWN_LINUX_1_3} Please update your ports tree.";
-	@${FALSE}
-.		elif !exists(${PORTSDIR}/${_JAVA_PORT_IBM_LINUX_1_3}/Makefile)
-.BEGIN:
-	@${ECHO} "${Java_Include}: Unable to find IBM JDK 1.3 for Linux port at ${_JAVA_PORT_IBM_LINUX_1_3} Please update your ports tree.";
-	@${FALSE}
-.		elif !exists(${PORTSDIR}/${_JAVA_PORT_SUN_LINUX_1_2}/Makefile)
-.BEGIN:
-	@${ECHO} "${Java_Include}: Unable to find Sun JDK 1.2 for Linux port at ${_JAVA_PORT_SUN_LINUX_1_2} Please update your ports tree.";
-	@${FALSE}
-.		elif !exists(${PORTSDIR}/${_JAVA_PORT_SUN_LINUX_1_3}/Makefile)
-.BEGIN:
-	@${ECHO} "${Java_Include}: Unable to find Sun JDK 1.3 for Linux port at ${_JAVA_PORT_SUN_LINUX_1_3} Please update your ports tree.";
-	@${FALSE}
-.		elif !exists(${PORTSDIR}/${_JAVA_PORT_SUN_LINUX_1_4}/Makefile)
-.BEGIN:
-	@${ECHO} "${Java_Include}: Unable to find Sun JDK 1.4 for Linux port at ${_JAVA_PORT_SUN_LINUX_1_4} Please update your ports tree.";
-	@${FALSE}
-.		endif
-
-
-#-----------------------------------------------------------------------------
-# Stage 3: Determine which JDK ports are installed
+# Stage 2: Determine which JDK ports are installed
 #
 
 .		undef HAVE_JAVA_FREEBSD_1_1
@@ -158,7 +114,7 @@ HAVE_JAVA_SUN_LINUX_1_4=	YES
 
 
 #-----------------------------------------------------------------------------
-# Stage 4: Deal with JAVA_HOME if it is already set
+# Stage 3: Deal with JAVA_HOME if it is already set
 #
 
 # See if JAVA_HOME points to a known JDK. If it does, then undefine JAVA_HOME
@@ -192,7 +148,7 @@ JAVA_HOME=	${_JAVA_HOME}
 
 
 #-----------------------------------------------------------------------------
-# Stage 5: Decide the exact JDK version if only a minimum version is specified
+# Stage 4: Decide the exact JDK version if only a minimum version is specified
 #
 
 # If USE_JAVA is 1.1+, 1.2+, 1.3+ or 1.4+, then set it to 1.1, 1.2, 1.3 or
@@ -264,7 +220,7 @@ USE_JAVA=	1.4
 
 
 #-----------------------------------------------------------------------------
-# Stage 6: Decide the exact JDK to use
+# Stage 5: Decide the exact JDK to use
 #
 
 # Apply different settings for different values of USE_JAVA.
@@ -376,7 +332,7 @@ JAVA_PORT=		${_JAVA_PORT_SUN_LINUX_1_4}
 
 
 #-----------------------------------------------------------------------------
-# Stage 7: Define all settings for the port to use
+# Stage 6: Define all settings for the port to use
 
 # At this stage both JAVA_HOME and JAVA_PORT are definitely given a value.
 
@@ -442,7 +398,7 @@ JAVA_CLASSES=	${JAVA_HOME}/jre/lib/rt.jar
 
 
 #-----------------------------------------------------------------------------
-# Stage 8: Add any dependencies if necessary
+# Stage 7: Add any dependencies if necessary
 
 # Possibly add Jikes to the dependencies
 .		if defined(JAVAC) && (${JAVAC} == ${_JIKES_PATH})
