@@ -56,7 +56,7 @@
 ! 		pass_ok ? "" : " (required)"));
       }
 + #else
-+     if (strcmp(crypt(p->pop_parm[1], pw->pw_passwd)))
++     if (strcmp(crypt(p->pop_parm[1], pw->pw_passwd), pw->pw_passwd))
 + 	goto error;
 + #endif
   
