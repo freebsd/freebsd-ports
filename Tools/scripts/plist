@@ -42,29 +42,51 @@ class Mtree
 		@paths = []
 		@curlevel = []
 		@strip = strip.to_i
-		@cont = false
+		@curline = ''
+		@global_settings = {}
 		self
 	end
 	def parse_line(line)
 		line.chomp!
-		spline = line.split
-		oldcont = @cont
-		@cont = line[-1, 1] == "\\"
-		case spline[0]
-		when nil
-		when /^[\/#]/
-			# ignore "command" lines and comments
-		when '..'
-			if oldcont
-				raise 'continued line has a .. directive?!'
+		if line.empty? || line[0, 1] == '#'
+			return
+		end
+		if line[-1, 1] == "\\"
+			@curline.concat(line[0..-2])
+			next
+		end
+		line = @curline + line
+		@curline = ''
+		case line[/\S.+/]
+		when /^\/(\S+)/
+			case $1
+			when 'set'
+				$'.split.each {|setting|
+					key, value, = setting.split(/=/)
+					@global_settings[key] = value
+				}
+			when 'unset'
+				$'.split.each {|setting| @global_settings.delete(setting)}
+			else
+				raise "invalid command \"#{$1}\""
 			end
+		when '..'
 			if @curlevel.pop.nil?
 				raise '".." with no previous directory'
 			end
 		else
-			if !oldcont
-				@curlevel.push(spline[0])
-				@paths.push(@curlevel.dup)
+			spline = line.split()
+			path = spline[0]
+			settings = @global_settings.dup
+			if spline.size > 1
+				spline[1..-1].each {|setting|
+					key, value, = setting.split(/=/)
+					settings[key] = value
+				}
+			end
+			@paths.push(@curlevel + [path])
+			if settings['type'] == nil || settings['type'] == 'dir'
+				@curlevel.push(path)
 			end
 		end
 		self
