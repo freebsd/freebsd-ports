@@ -14,8 +14,7 @@ DISTFILES=	edith1.55.common.tar.gz \
 
 MAINTAINER=	chris@unixpages.org
 
-RUN_DEPENDS=	${LINUXBASE}/sbin/ldconfig:${PORTSDIR}/emulators/linux_base
-
+USE_LINUX=	yes
 ONLY_FOR_ARCHS=	i386
 
 NO_CDROM=	"Redistribution not allowed"
