@@ -1,9 +1,6 @@
-
-$FreeBSD$
-
---- configure.orig	Mon Jan 28 16:26:32 2002
-+++ configure	Mon Jan 28 16:34:25 2002
-@@ -1260,10 +1260,10 @@
+--- configure.orig	Mon Apr 29 12:37:16 2002
++++ configure	Mon Apr 29 12:44:17 2002
+@@ -1249,10 +1249,10 @@
  
  # The aliases save the names the user supplied, while $host etc.
  # will get canonicalized.
@@ -16,18 +13,35 @@ $FreeBSD$
 +#    NONENONEs,x,x, &&
 +#  program_prefix=${target_alias}-
  
- # Extract the first word of "dc", so it can be a program name with args.
- set dummy dc; ac_word=$2
-@@ -1580,9 +1580,9 @@
+ LIBGTOP_MAJOR_VERSION=1
+ LIBGTOP_MINOR_VERSION=90
+@@ -1526,9 +1526,9 @@
  
  # libtool versioning
  LT_RELEASE=$LIBGTOP_MAJOR_VERSION.$LIBGTOP_MINOR_VERSION
 -LT_CURRENT=`expr $LIBGTOP_MICRO_VERSION - $LIBGTOP_INTERFACE_AGE`
 -LT_REVISION=$LIBGTOP_INTERFACE_AGE
 -LT_AGE=`expr $LIBGTOP_BINARY_AGE - $LIBGTOP_INTERFACE_AGE`
-+LT_CURRENT=1
++LT_CURRENT=2
 +LT_REVISION=0
 +LT_AGE=0
  LT_VERSION_INFO='-version-info ${LT_CURRENT}:${LT_REVISION}:${LT_AGE}'
  
- if test x = y; then
+ ACLOCAL_FLAGS="$ACLOCAL_FLAGS -I ."
+@@ -7491,6 +7491,7 @@
+ 
+ # This can be used to rebuild libtool when needed
+ LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
++$ac_aux_dir/ltconfig $LIBTOOL_DEPS
+ 
+ # Always use our own libtool.
+ LIBTOOL='$(SHELL) $(top_builddir)/libtool'
+@@ -15688,7 +15689,7 @@
+ 
+ if test x$libgtop_need_server = xyes ; then
+    sysdeps_suid_lib="\$(top_builddir)/sysdeps/\$(sysdeps_dir)/libgtop_sysdeps_suid-2.0.la"
+-   server_programs='libgtop_server'
++   server_programs='libgtop_server2'
+ else
+    sysdeps_suid_lib=
+    server_programs=

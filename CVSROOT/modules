@@ -3464,6 +3464,7 @@ libgnumalloc	src/lib/libgnumalloc
 libgrass5	ports/graphics/libgrass5
 libgtkeditor	ports/x11-toolkits/libgtkeditor
 libgtop		ports/devel/libgtop
+libgtop2	ports/devel/libgtop2
 libh		ports/misc/libh
 libhash		ports/devel/libhash
 libhelp		ports/x11/libhelp
