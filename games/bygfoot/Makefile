@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bygfoot
-PORTVERSION=	1.6.3
+PORTVERSION=	1.8.0
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,9 +17,13 @@ COMMENT=	Football (soccer) management game
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_GNOME=	gtk20 gnometarget
+USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 
 MAN6=		bygfoot.6
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|/bin/bash|${LOCALBASE}/bin/bash|' ${WRKSRC}/b-u/bygfoot-update
 
 .include <bsd.port.mk>
