@@ -1,8 +1,0 @@
-eclipse/plugins/net.sourceforge.phpeclipse.tidy/icons/obj16/jtidy.gif
-eclipse/plugins/net.sourceforge.phpeclipse.tidy/jtidy.jar
-eclipse/plugins/net.sourceforge.phpeclipse.tidy/plugin.properties
-eclipse/plugins/net.sourceforge.phpeclipse.tidy/plugin.xml
-@dirrm eclipse/plugins/net.sourceforge.phpeclipse.tidy/icons/obj16
-@dirrm eclipse/plugins/net.sourceforge.phpeclipse.tidy/icons
-@dirrm eclipse/plugins/net.sourceforge.phpeclipse.tidy
-
