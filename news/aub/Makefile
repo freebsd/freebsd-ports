@@ -4,7 +4,7 @@
 # Date created:			  Sun Oct 12, 1997
 # Whom:				  David O'Brien (obrien@cs.ucdavis.edu)
 #
-# $Id: Makefile,v 1.2 1997/01/25 18:08:40 obrien Exp $
+# $Id: Makefile,v 1.1.1.1 1997/10/13 07:02:37 obrien Exp $
 #
 
 DISTNAME=	aub
@@ -17,6 +17,7 @@ DISTFILES=	aub aub.1 BUG_FIXES
 
 MAINTAINER=	obrien@FreeBSD.ORG
 
+DIST_SUBDIR=	aub
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 MAN1=		aub.1
@@ -31,9 +32,9 @@ pre-configure:
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/aub ${PREFIX}/bin
-	${INSTALL_MAN} ${DISTDIR}/aub.1 ${PREFIX}/man/man1
+	${INSTALL_MAN} ${DISTDIR}/${DIST_SUBDIR}/aub.1 ${PREFIX}/man/man1
 	${MKDIR} ${PREFIX}/share/doc/aub
-	${INSTALL_MAN} ${DISTDIR}/BUG_FIXES ${PREFIX}/share/doc/aub
+	${INSTALL_MAN} ${DISTDIR}/${DIST_SUBDIR}/BUG_FIXES ${PREFIX}/share/doc/aub
 
 #
 # There is a patch to aub to run with perl5.
