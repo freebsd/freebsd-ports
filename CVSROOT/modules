@@ -11647,6 +11647,7 @@ zope-plonelanguagetool	ports/www/zope-plonelanguagetool
 zope-proxyindex	ports/www/zope-proxyindex
 zope-silva	ports/www/zope-silva
 zope-silvaviews	ports/www/zope-silvaviews
+zope-soapmethod	ports/www/zope-soapmethod
 zope-ttwtype	ports/www/zope-ttwtype
 zope-xmlwidgets	ports/www/zope-xmlwidgets
 zope-zmysqlda	ports/www/zope-zmysqlda
