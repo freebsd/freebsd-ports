@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	offlineimap
-PORTVERSION=	3.99.15
+PORTVERSION=	3.99.17
 CATEGORIES=	mail python
 MASTER_SITES=	http://gopher.quux.org:70/devel/offlineimap/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -15,6 +15,7 @@ MAINTAINER=	sergei@kolobov.com
 COMMENT=	Powerful IMAP/Maildir synchronization and reader support
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+PKGMESSAGE=	${WRKDIR}/pkg-message
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
@@ -31,6 +32,8 @@ post-install:
 .endif
 	@${MKDIR} ${EXAMPLESDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${EXAMPLES} ${EXAMPLESDIR}
-	@${SED} -e 's!%%EXAMPLESDIR%%!${EXAMPLESDIR}!' < ${PKGMESSAGE}
+	@${SED} -e 's!%%EXAMPLESDIR%%!${EXAMPLESDIR}!' \
+		${MASTERDIR}/pkg-message > ${PKGMESSAGE}
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
