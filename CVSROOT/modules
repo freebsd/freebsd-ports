@@ -3245,6 +3245,7 @@ kmamerun	ports/emulators/kmamerun
 kmerlin		ports/net/kmerlin
 kmess		ports/net/kmess
 kmldonkey	ports/net/kmldonkey
+kmplayer	ports/multimedia/kmplayer
 knews		ports/news/knews
 knights		ports/games/knights
 knocker		ports/security/knocker
