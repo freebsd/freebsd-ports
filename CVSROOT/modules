@@ -4176,6 +4176,7 @@ ko-uniksc	ports/korean/uniksc
 ko-unzip	ports/korean/unzip
 kobodeluxe	ports/games/kobodeluxe
 koctave		ports/math/koctave
+kodos		ports/devel/kodos
 koffice-i18n	ports/misc/koffice-i18n
 koffice-i18n-af	ports/misc/koffice-i18n-af
 koffice-i18n-bg	ports/misc/koffice-i18n-bg
