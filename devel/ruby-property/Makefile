@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	property
-PORTVERSION= 	19990308
+PORTVERSION=	19990308
 CATEGORIES=	devel ruby
 MASTER_SITES=	http://www.ueda.info.waseda.ac.jp/~igarashi/ruby/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}

@@ -7,7 +7,7 @@
 
 PORTNAME=	astyle
 PORTVERSION=	1.11.6
-CATEGORIES= 	devel textproc
+CATEGORIES=	devel textproc
 MASTER_SITES=	ftp://astyle.sourceforge.net/pub/astyle/stable/src/\
 		http://www.gelemna.org/ports/
 DISTNAME=	${PORTNAME}_${PORTVERSION}_src

@@ -166,7 +166,7 @@ DOCS=		ANNOUNCE INSTALL NEWS README TO-DO doc/html/announce.html \
 		doc/hackguide.doc doc/html/hackguide.html \
 		doc/html/index.html doc/ncurses-intro.doc \
 		doc/html/ncurses-intro.html
-EXAMPLES= 	Makefile README blue.c bs.6 bs.c cardfile.c cardfile.dat \
+EXAMPLES=	Makefile README blue.c bs.6 bs.c cardfile.c cardfile.dat \
 		ditto.c dots.c filter.c firework.c firstlast.c gdc.6 \
 		gdc.c hanoi.c hashtest.c knight.c lrtest.c ncurses.c \
 		newdemo.c railroad.c rain.c tclock.c test.priv.h \
