@@ -1,22 +1,44 @@
---- Makefile.orig	Mon Feb  1 15:55:30 1999
-+++ Makefile	Wed Jan  5 14:31:02 2000
-@@ -1,6 +1,7 @@
+--- Makefile.orig	Tue Feb  2 06:55:30 1999
++++ Makefile	Thu Aug 10 22:05:20 2000
+@@ -1,8 +1,8 @@
 -CC     = gcc
 -CFLAGS = -O2 -Wall
 -INCDIR = -I/usr/X11R6/include/X11
+-DESTDIR= /usr/X11R6
+-LIBDIR = -L/usr/X11R6/lib
 +CC     ?= gcc
 +CFLAGS ?= -O2
-+CFLAGS += -Wall
-+INCDIR = -I/usr/X11R6/include
- DESTDIR= /usr/X11R6
- LIBDIR = -L/usr/X11R6/lib
++INCDIR = -I${X11BASE}/include
++DESTDIR= ${PREFIX}
++LIBDIR = -L${X11BASE}/lib
  # for linux
-@@ -12,7 +13,7 @@
+ LIBS   = -lXpm -lX11 -lXext
+ # for Solaris
+@@ -12,14 +12,14 @@
  
  
  .c.o:
 -	$(CC) $(CFLAGS) -D$(shell echo `uname -s`) -c $< -o $*.o $(INCDIR)
-+	$(CC) $(CFLAGS) -c $< -o $*.o $(INCDIR)
++	$(CC) $(CFLAGS) -D$(OPSYS) -c $< -o $@ $(INCDIR)
  
  
  all:	wmGrabImage.o wmGrabImage
+ 
+ wmGrabImage.o: wmGrabImage_master.xpm wmGrabImage_mask.xbm
+ wmGrabImage:	$(OBJS) 
+-	$(CC) $(CFLAGS) $(SYSTEM) -o wmGrabImage $^ $(INCDIR) $(LIBDIR) $(LIBS)
++	$(CC) $(CFLAGS) $(SYSTEM) -o wmGrabImage $(OBJS) $(LIBDIR) $(LIBS)
+ 
+ clean:
+ 	for i in $(OBJS) ; do \
+@@ -28,7 +28,7 @@
+ 	rm -f wmGrabImage
+ 
+ install:: wmGrabImage
+-	install -s -m 0755 wmGrabImage $(DESTDIR)/bin
+-	install    -m 0755 GrabImage $(DESTDIR)/bin
+-	install    -m 0644 wmGrabImage.1 $(DESTDIR)/man/man1 
++	${BSD_INSTALL_PROGRAM} wmGrabImage $(DESTDIR)/bin
++	${BSD_INSTALL_SCRIPT} GrabImage $(DESTDIR)/bin
++	${BSD_INSTALL_MAN} wmGrabImage.1 $(DESTDIR)/man/man1 
+ 
