@@ -1,6 +1,6 @@
-lib/gauche/%%VERSION%%/%%TARGET%%/gauche-gl.so
-lib/gauche/%%VERSION%%/%%TARGET%%/gauche-glut.so
-lib/gauche/%%VERSION%%/%%TARGET%%/gauche-math3d.so
+lib/gauche/%%VERSION%%/%%TARGET%%/libgauche-gl.so
+lib/gauche/%%VERSION%%/%%TARGET%%/libgauche-glut.so
+lib/gauche/%%VERSION%%/%%TARGET%%/libgauche-math3d.so
 lib/gauche/%%VERSION%%/include/gauche/math3d.h
 share/gauche/%%VERSION%%/lib/gl.scm
 share/gauche/%%VERSION%%/lib/gl/glut.scm
