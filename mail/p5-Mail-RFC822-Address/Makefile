@@ -1,0 +1,25 @@
+# New ports collection makefile for:	p5-Mail-RFC822-Address
+# Date created:		18 May 2003
+# Whom:			Simon Barner <barner@in.tum.de>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	Mail-RFC822-Address
+PORTVERSION=	0.3
+CATEGORIES=	mail perl5
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
+MASTER_SITE_SUBDIR=	Mail
+PKGNAMEPREFIX=	p5-
+
+MAINTAINER=	mharo@FreeBSD.org
+COMMENT=	Perl5 module to validate RFC822 conformance of email adresses
+
+PERL_CONFIGURE=	yes
+
+INSTALL_TARGET=	pure_site_install
+
+MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
+MAN3=		Mail::RFC822::Address.3
+
+.include <bsd.port.mk>
