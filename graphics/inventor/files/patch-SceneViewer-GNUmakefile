@@ -1,0 +1,13 @@
+*** apps/demos/SceneViewer/GNUmakefile.orig	Thu Jan  2 15:06:49 2003
+--- apps/demos/SceneViewer/GNUmakefile	Thu Jan  2 15:07:07 2003
+***************
+*** 6,11 ****
+--- 6,13 ----
+  
+  CXXFILES = SceneViewer.c++ SoSceneViewer.c++ SvManipList.c++
+  
++ CXXFLAGS += -DXTSTRINGDEFINES
++ 
+  LLDOPTS += -L../../samples/widgets
+  
+  LLDLIBS = -lInventorWidget -lInventor -lInventorXt

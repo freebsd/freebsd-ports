@@ -1,0 +1,15 @@
+*** lib/GNUmakefile	Sat Dec 14 18:23:15 2002
+--- lib/GNUmakefile.new	Sat Dec 14 17:30:19 2002
+***************
+*** 10,15 ****
+--- 10,19 ----
+          -lX11 -lm \
+          -lGLU -lGL
+  
++ ifeq ($(usingFreeBSD), 1)
++ LLDLIBS += -lXext -liconv
++ endif
++ 
+  OBJECTS = \
+  	./database/src/sb/projectors/SbProjectors.o \
+  	./database/src/sb/Sb.o \

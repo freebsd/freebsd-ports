@@ -148,6 +148,7 @@
     SUBDIR += imlib2
     SUBDIR += imlib2_loaders
     SUBDIR += imlib3d
+    SUBDIR += inventor
     SUBDIR += ipe
     SUBDIR += irit
     SUBDIR += isreal
