@@ -1,9 +1,13 @@
 sbin/apcsmart
-sbin/genericups
-sbin/optiups
+sbin/bestfort
 sbin/bestups
-sbin/ups-trust425+625
 sbin/fentonups
+sbin/genericups
+sbin/ipt-anzen
+sbin/mustekups                       
+sbin/optiups
+sbin/ups-trust425+625
+sbin/victronups
 sbin/upsc
 sbin/upscmd
 sbin/upslog
@@ -17,6 +21,4 @@ etc/nut/upsd.conf.sample
 etc/nut/upsmon.conf.sample
 etc/nut/upsset.passwd.sample
 etc/rc.d/upsd.sh.sample
-@dirrm cgi-bin
 @dirrm etc/nut
-@dirrm misc

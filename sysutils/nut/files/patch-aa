@@ -1,30 +1,38 @@
-diff -ru ../431/clients/Makefile.in ./clients/Makefile.in
---- ../431/clients/Makefile.in	Mon Feb 14 09:39:16 2000
-+++ ./clients/Makefile.in	Mon Mar  6 17:29:46 2000
-@@ -57,10 +57,10 @@
- distclean: clean
+diff -ur ../440/Makefile.in ./Makefile.in
+--- ../440/Makefile.in	Mon Jun 12 06:48:07 2000
++++ ./Makefile.in	Tue Jul 18 11:51:25 2000
+@@ -5,7 +5,7 @@
+ BASEPATH = $(INSTALLROOT)@prefix@
+ CONFPATH = $(INSTALLROOT)@sysconfdir@
+ CGIPATH = $(INSTALLROOT)@CGIPATH@
+-INSTALLDIRS=$(CONFPATH) $(CGIPATH) $(MODELPATH) $(BASEPATH)/bin $(BASEPATH)/misc
++INSTALLDIRS=$(CONFPATH) $(CGIPATH) $(MODELPATH) $(BASEPATH)/bin
+ 
+ STATEPATH = $(INSTALLROOT)@STATEPATH@
+ SUBDIRS = common models server clients
+diff -ur ../440/clients/Makefile.in ./clients/Makefile.in
+--- ../440/clients/Makefile.in	Fri Jul 14 05:55:41 2000
++++ ./clients/Makefile.in	Mon Jul 17 17:48:29 2000
+@@ -57,7 +57,7 @@
  
  install: all
--	$(INSTALLCMD) -m $(INSTALLMODE) $(PROGS) $(BASEPATH)/bin
-+	$(INSTALLCMD) -m $(INSTALLMODE) $(PROGS) $(BASEPATH)/sbin
+ 	@for f in $(PROGS) ; do \
+-		$(INSTALLCMD) -m $(INSTALLMODE) $$f $(BASEPATH)/bin; \
++		$(INSTALLCMD) -m $(INSTALLMODE) $$f $(BASEPATH)/sbin; \
+ 	done
  
  install-cgi: cgi
--	$(INSTALLCMD) -m $(INSTALLMODE) $(CGIPROGS) $(BASEPATH)/cgi-bin
-+	$(INSTALLCMD) -m $(INSTALLMODE) $(CGIPROGS) $(BASEPATH)/share/nut/cgi
- 
- install-misc: upsfetch.o
- 	$(INSTALLCMD) upsfetch.[oh] $(BASEPATH)/misc
-diff -ru ../431/conf/Makefile.in ./conf/Makefile.in
---- ../431/conf/Makefile.in	Mon Feb 14 09:08:01 2000
-+++ ./conf/Makefile.in	Mon Mar  6 17:30:39 2000
-@@ -12,17 +12,9 @@
+diff -ur ../440/conf/Makefile.in ./conf/Makefile.in
+--- ../440/conf/Makefile.in	Mon May  8 04:17:20 2000
++++ ./conf/Makefile.in	Mon Jul 17 17:49:43 2000
+@@ -13,17 +13,9 @@
  
  install:
  	@for f in $(SECFILES) ; do \
 -		if [ -f $(CONFPATH)/$$f ]; then \
 -			echo "Preserving existing config file: $$f"; \
 -		else \
--			$(INSTALLCMD) -m 0600 $$f $(BASEPATH)/etc; \
+-			$(INSTALLCMD) -m 0600 $$f $(CONFPATH); \
 -		fi; \
 +		$(INSTALLCMD) -m 0600 $$f $(CONFPATH)/$$f.sample; \
  	done
@@ -33,25 +41,31 @@ diff -ru ../431/conf/Makefile.in ./conf/Makefile.in
 -		if [ -f $(CONFPATH)/$$f ]; then \
 -			echo "Preserving existing config file: $$f"; \
 -		else \
--			$(INSTALLCMD) -m 0644 $$f $(BASEPATH)/etc; \
+-			$(INSTALLCMD) -m 0644 $$f $(CONFPATH); \
 -		fi; \
 +		$(INSTALLCMD) -m 0644 $$f $(CONFPATH)/$$f.sample; \
  	done
-diff -ru ../431/models/Makefile.in ./models/Makefile.in
---- ../431/models/Makefile.in	Fri Feb 11 03:14:25 2000
-+++ ./models/Makefile.in	Mon Mar  6 17:29:46 2000
-@@ -36,4 +36,4 @@
- distclean: clean
+diff -ur ../440/models/Makefile.in ./models/Makefile.in
+--- ../440/models/Makefile.in	Fri Jul 14 05:27:27 2000
++++ ./models/Makefile.in	Tue Jul 18 10:59:01 2000
+@@ -20,9 +20,7 @@
+ # in the future ala the Linux "make config" process...
+ 
+ $(PROGS): upscommon.o ../include/shared.h ../common/common.o
+-
+-.c:
+-	$(CC) $(CFLAGS) -o $* $*.c upscommon.o ../common/common.o
++	$(CC) $(CFLAGS) -o $* $*.c upscommon.o @SERLIBS@ ../common/common.o
+ 
+ #
+ # Housekeeping stuff
+diff -ur ../440/server/Makefile.in ./server/Makefile.in
+--- ../440/server/Makefile.in	Fri Jul 14 05:30:40 2000
++++ ./server/Makefile.in	Mon Jul 17 17:51:19 2000
+@@ -24,5 +24,5 @@
  
  install: all
--	$(INSTALLCMD) -m $(INSTALLMODE) $(PROGS) $(BASEPATH)/bin
-+	$(INSTALLCMD) -m $(INSTALLMODE) $(PROGS) $(BASEPATH)/sbin
-diff -ru ../431/server/Makefile.in ./server/Makefile.in
---- ../431/server/Makefile.in	Fri Feb 11 03:18:22 2000
-+++ ./server/Makefile.in	Mon Mar  6 17:29:46 2000
-@@ -22,4 +22,4 @@
- distclean: clean
- 
- install: all
--	$(INSTALLCMD) $(PROGS) $(BASEPATH)/bin
-+	$(INSTALLCMD) $(PROGS) $(BASEPATH)/sbin
+ 	@for f in $(PROGS) ; do \
+-		$(INSTALLCMD) $$f $(BASEPATH)/bin; \
++		$(INSTALLCMD) $$f $(BASEPATH)/sbin; \
+ 	done
