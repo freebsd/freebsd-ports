@@ -23,10 +23,6 @@ RUN_DEPENDS=	${LINUXBASE}/lib/libc-2.3.2.so:${PORTSDIR}/emulators/linux_base-8 \
 USE_X_PREFIX=	yes
 USE_ZIP=	yes
 NO_WRKSUBDIR=	yes
-
-BROKEN=		"Inconsistent dependencies"
-DEPRECATED=	"This port will be removed on April 16 if it is still broken at that time."
-
 ONLY_FOR_ARCHS=	i386
 
 # Linux binary should not be stripped by INSTALL_PROGRAM
