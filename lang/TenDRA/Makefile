@@ -16,6 +16,8 @@ MASTER_SITES=	ftp://alph.dera.gov.uk/pub/TenDRA/ \
 
 MAINTAINER=	obrien@FreeBSD.org
 
+BROKEN=		"Does not build"
+
 .include <bsd.port.pre.mk>
 
 ONLY_FOR_ARCHS=	i386
