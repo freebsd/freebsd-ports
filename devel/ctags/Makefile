@@ -11,6 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SUNSITE}\
 		http://fly.hiwaay.net/~darren/archives/ \
 		http://people.FreeBSD.org/~jkoshy/PORTS/
+MASTER_SITE_SUBDIR=	devel/lang/c
 
 MAINTAINER=	jkoshy@FreeBSD.org
 
