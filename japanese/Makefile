@@ -332,6 +332,7 @@
     SUBDIR += wine
     SUBDIR += word
     SUBDIR += wordnet-fpw
+    SUBDIR += wwasw-fpw
     SUBDIR += xchat
     SUBDIR += xdvik-vflib
     SUBDIR += xdvik-vflib-pk118
