@@ -148,6 +148,7 @@
     SUBDIR += wmblob
     SUBDIR += wmbutton
     SUBDIR += wmcliphist
+    SUBDIR += wmctrl
     SUBDIR += wmdrawer
     SUBDIR += wmessage
     SUBDIR += wmfstatus
