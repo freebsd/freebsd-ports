@@ -26,6 +26,8 @@ INSTALLS_SHLIB=	yes
 
 .if ${OSVERSION} >= 502000
 BROKEN=		"Does not compile"
+.else
+BROKEN=		"Broken pkg-plist"
 .endif
 
 do-install:
