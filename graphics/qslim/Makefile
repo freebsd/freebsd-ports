@@ -33,15 +33,7 @@ CPPFLAGS=	-I${LOCALBASE}/include -I${X11BASE}/include \
 		-I${X11BASE}/include/X11 ${PTHREAD_CFLAGS}
 LDFLAGS=	-L${LOCALBASE}/lib -L${X11BASE}/lib ${PTHREAD_LIBS}
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} > 500034
 CFLAGS+=	-DMIX_ANSI_IOSTREAMS -fpermissive
-.endif
-
-.if ${OSVERSION} >= 501000
-BROKEN=		"Does not compile on FreeBSD ${OSVERSION}"
-.endif
 
 post-extract:
 	@${RM} -f ${WRKSRC}/mixkit/src/getopt.h
@@ -61,4 +53,4 @@ do-install:
 	@${MKDIR} ${PREFIX}/include/mixkit
 	${INSTALL_DATA} ${WRKSRC}/mixkit/src/*.h ${PREFIX}/include/mixkit
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
