@@ -7,7 +7,7 @@
 
 PORTNAME=	pdss
 PORTVERSION=	2.52.21
-#PORTREVISION=	1
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.icot.or.jp/ifs/symbolic-proc/unix/
 DISTNAME=	${PORTNAME}

@@ -2,18 +2,21 @@ Index: compiler/Makefile
 ===================================================================
 RCS file: /ext/cvs/PDSS/compiler/Makefile,v
 retrieving revision 1.1.1.1
-retrieving revision 1.1.1.1.2.2
-diff -u -r1.1.1.1 -r1.1.1.1.2.2
+diff -u -u -r1.1.1.1 Makefile
 --- compiler/Makefile	11 Jun 2002 16:11:13 -0000	1.1.1.1
-+++ compiler/Makefile	5 Sep 2002 08:26:56 -0000	1.1.1.1.2.2
++++ compiler/Makefile	12 Dec 2002 01:43:33 -0000
 @@ -1,3 +1,5 @@
 +COMPILERDIR = ${PDSSROOT}/compiler
 +
  PDSSCMP	= ../pdsscmp +s
  PDSSASM	= ../emulator/pdssasm
  PARA	=
-@@ -8,6 +10,8 @@
- all: $(PARA)	$(COMPILER)
+@@ -5,9 +7,11 @@
+ COMPILER = blt.sav com.sav comp.sav mrb.sav norm.sav outp.sav reader.sav \
+ 	   reg.sav macarg.sav macro.sav mactbl.sav struct.sav
+ 
+-all: $(PARA)	$(COMPILER)
++all: $(PARA)
  
  install:
 +	${BSD_INSTALL_DIR} ${COMPILERDIR}

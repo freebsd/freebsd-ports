@@ -2,10 +2,9 @@ Index: debug_utl/Makefile
 ===================================================================
 RCS file: /ext/cvs/PDSS/debug_utl/Makefile,v
 retrieving revision 1.1.1.1
-retrieving revision 1.1.1.1.2.2
-diff -u -r1.1.1.1 -r1.1.1.1.2.2
+diff -u -u -r1.1.1.1 Makefile
 --- debug_utl/Makefile	11 Jun 2002 16:11:12 -0000	1.1.1.1
-+++ debug_utl/Makefile	5 Sep 2002 08:26:56 -0000	1.1.1.1.2.2
++++ debug_utl/Makefile	12 Dec 2002 01:43:56 -0000
 @@ -1,3 +1,6 @@
 +DUTLDIR = ${PDSSROOT}/debug_utl
 +DUTLSRCDIR = ${PDSSSHARE}/debug_utl
@@ -13,8 +12,12 @@ diff -u -r1.1.1.1 -r1.1.1.1.2.2
  PDSSCMP	= ../pdsscmp
  PDSSASM	= ../emulator/pdssasm
  PARA	=
-@@ -8,7 +11,10 @@
- all: $(PARA)	$(DUTIL)
+@@ -5,10 +8,13 @@
+ DUTIL	= mpimos_xref.sav mpimos_xref_table.sav \
+ 	  mpimos_pretty_printer.sav mpimos_varchk.sav
+ 
+-all: $(PARA)	$(DUTIL)
++all: $(PARA)
  
  install:
 -
