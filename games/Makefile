@@ -9,6 +9,7 @@
     SUBDIR += adom
     SUBDIR += affenspiel
     SUBDIR += agm
+    SUBDIR += amphetamine
     SUBDIR += an
     SUBDIR += angband
     SUBDIR += antipolix
