@@ -4,7 +4,7 @@
  *
  * Daemon control program.
  *
- * $FreeBSD: /tmp/pcvs/ports/www/jakarta-tomcat41/files/Attic/daemonctl.c,v 1.5 2002-04-08 21:50:22 znerd Exp $
+ * $FreeBSD: /tmp/pcvs/ports/www/jakarta-tomcat41/files/Attic/daemonctl.c,v 1.6 2002-05-08 22:00:04 znerd Exp $
  */
 
 #include <assert.h>
@@ -36,6 +36,7 @@
 #define ERR_ALREADY_RUNNING					6
 #define ERR_NOT_RUNNING						7
 #define ERR_CHDIR_TO_APP_HOME				8
+#define ERR_ACCESS_JAR_FILE					17
 #define ERR_STDOUT_LOGFILE_OPEN				9
 #define ERR_STDERR_LOGFILE_OPEN				10
 #define ERR_FORK_FAILED						11
@@ -368,6 +369,15 @@ void start(void) {
 		fprintf(stderr, "%%CONTROL_SCRIPT_NAME%%: Unable to access directory %%APP_HOME%%: ");
 		perror(NULL);
 		exit(ERR_CHDIR_TO_APP_HOME);
+	}
+
+	/* See if the JAR file exists */
+	result = access("%%APP_HOME%%/%%JAR_FILE%%", R_OK);
+	if (result < 0) {
+		printf(" [ FAILED ]\n");
+		fprintf(stderr, "%%CONTROL_SCRIPT_NAME%%: Unable to access JAR file %%APP_HOME%%/%%JAR_FILE%%: ");
+		perror(NULL);
+		exit(ERR_ACCESS_JAR_FILE);
 	}
 
 	/* Open the stdout log file */
