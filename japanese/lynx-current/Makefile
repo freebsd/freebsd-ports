@@ -3,7 +3,7 @@
 # Date created:         10 August 1998
 # Whom:                 Shigeyuki FUKUSHIMA <shige@kuis.kyoto-u.ac.jp>
 #
-# $Id: Makefile,v 1.1.1.1 1998/08/10 23:41:24 kuriyama Exp $
+# $Id: Makefile,v 1.2 1998/08/25 11:12:13 jkoshy Exp $
 #
 
 DISTNAME=       lynx2.8.1dev.22
@@ -12,6 +12,8 @@ CATEGORIES=	japanese www
 MASTER_SITES=   ftp://sol.slcc.edu/pub/lynx/current/
 
 MAINTAINER=	shige@kuis.kyoto-u.ac.jp
+
+BROKEN=		fetch
 
 NO_LATEST_LINK=	YES
 WRKSRC=         ${WRKDIR}/lynx2-8-1
