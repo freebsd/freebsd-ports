@@ -305,13 +305,6 @@ static int debug;			/* controlled by dbzdebug() */
 #define	Debug(args)	;
 #endif
 
-/* externals used */
-extern char *malloc();
-extern char *calloc();
-extern void free();		/* ANSI C; some old implementations say int */
-extern int atoi();
-extern long atol();
-
 /* misc. forwards */
 static long hash();
 static void crcinit();
