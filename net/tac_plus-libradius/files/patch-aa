@@ -1,0 +1,95 @@
+*** Makefile	Wed Mar 21 09:33:15 2001
+--- ../pkg/tac_plus.new/Makefile	Mon Jan 21 15:51:28 2002
+***************
+*** 33,41 ****
+  CPPFLAGS = 
+  CFLAGS = $(CPPFLAGS) -g -O2
+  LDFLAGS = 
+! OSLIBS = -lldap -lldap -lc -lcrypt -lresolv -lnsl -llber -lcrypt -lc 
+! DEFINES = -DUSE_LDAP 
+! OS= -DLINUX -DGLIBC
+  # For AIX
+  # See /usr/lpp/bos/bsdport on your system for details of how to define bsdcc
+  # CC=bsdcc
+--- 33,41 ----
+  CPPFLAGS = 
+  CFLAGS = $(CPPFLAGS) -g -O2
+  LDFLAGS = 
+! OSLIBS = -lc -lcrypt -lcrypt -lc -I/usr/local/include -L/usr/local/lib -lradius
+! DEFINES = -DUSE_RADIUS 
+! OS= 
+  # For AIX
+  # See /usr/lpp/bos/bsdport on your system for details of how to define bsdcc
+  # CC=bsdcc
+***************
+*** 52,58 ****
+  #OSLIBS=-lsocket -lnsl
+  
+  # For FreeBSD
+! # OS=-DFREEBSD
+  # You may also need to add:
+  # OSLIBS=-lcrypt
+  # NOTE: If you want your password encryption to be compatible with
+--- 52,58 ----
+  #OSLIBS=-lsocket -lnsl
+  
+  # For FreeBSD
+! OS=-DFREEBSD
+  # You may also need to add:
+  # OSLIBS=-lcrypt
+  # NOTE: If you want your password encryption to be compatible with
+***************
+*** 108,114 ****
+  # End of customisable section of Makefile
+  #
+  
+! CFLAGS = $(DEBUG) $(OPT_FLAGS) $(DEFINES) $(INCLUDES) $(FLAGS) $(OS) $(PIDFILE) $(LDFLAGS) $(DB)
+  
+  HFILES = expire.h parse.h regmagic.h md5.h regexp.h tac_plus.h 
+  
+--- 108,115 ----
+  # End of customisable section of Makefile
+  #
+  
+! 
+! CFLAGS = $(DEBUG) $(OPT_FLAGS) $(DEFINES) $(INCLUDES) $(FLAGS) $(OS) $(PIDFILE) $(LDFLAGS) $(DB) -I/usr/local/include -L/usr/local/lib
+  
+  HFILES = expire.h parse.h regmagic.h md5.h regexp.h tac_plus.h 
+  
+***************
+*** 117,123 ****
+  	packet.c report.c sendauth.c tac_plus.c utils.c pw.c hash.c \
+  	parse.c regexp.c programs.c enable.c pwlib.c default_fn.c \
+  	skey_fn.c default_v0_fn.c sendpass.c maxsess.c tac_pam.c \
+! 	db.c db_null.c db_mysql.c ldap.c
+  
+  OBJS = $(SRCS:.c=.o)
+  
+--- 118,126 ----
+  	packet.c report.c sendauth.c tac_plus.c utils.c pw.c hash.c \
+  	parse.c regexp.c programs.c enable.c pwlib.c default_fn.c \
+  	skey_fn.c default_v0_fn.c sendpass.c maxsess.c tac_pam.c \
+! 	db.c db_null.c db_mysql.c radius.c
+! 
+! # add ldap.c and also define USE_LDAP to enable LDAP support
+  
+  OBJS = $(SRCS:.c=.o)
+  
+***************
+*** 154,160 ****
+  install:
+  	cp tac_plus ${prefix}/sbin
+  	cp tac_plus.1 ${prefix}/man/man8/tac_plus.8
+! 	cp tac_plus.cfg /etc
+  
+  depend:
+  	makedepend $(CFLAGS) $(SRCS)
+--- 157,164 ----
+  install:
+  	cp tac_plus ${prefix}/sbin
+  	cp tac_plus.1 ${prefix}/man/man8/tac_plus.8
+! 	cp tac_plus.cfg ${prefix}/etc/tac_plus
+! 	cp radius.example ${prefix}/etc/tac_plus
+  
+  depend:
+  	makedepend $(CFLAGS) $(SRCS)

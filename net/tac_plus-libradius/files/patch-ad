@@ -1,0 +1,27 @@
+*** parse.c	Fri Mar 16 09:14:21 2001
+--- ../../tac_plus.F5.0.0.alpha/parse.c	Sun Jan 20 19:46:42 2002
+***************
+*** 99,104 ****
+--- 99,107 ----
+  #ifdef USE_LDAP
+      declare ("ldap", S_ldap);
+  #endif
++ #ifdef USE_RADIUS
++     declare ("radius",S_radius);
++ #endif
+      declare("member", S_member);
+      declare("message", S_message);
+      declare("name", S_name);
+***************
+*** 177,182 ****
+--- 180,189 ----
+  #ifdef USE_LDAP
+      case S_ldap:
+        return ("ldap");
++ #endif
++ #ifdef USE_RADIUS
++     case S_radius:
++       return ("radius");
+  #endif
+     case S_expires:
+  	return ("expires");

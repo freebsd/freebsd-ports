@@ -1,0 +1,11 @@
+*** parse.h	Fri Mar 16 09:18:44 2001
+--- ../../tac_plus.F5.0.0.alpha/parse.h	Sat Jan 19 23:55:09 2002
+***************
+*** 85,87 ****
+--- 85,90 ----
+  #ifdef USE_LDAP
+  #define S_ldap            46
+  #endif /* LDAP */
++ #ifdef USE_RADIUS
++ #define S_radius	  47
++ #endif /* radius */

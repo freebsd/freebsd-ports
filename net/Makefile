@@ -530,6 +530,7 @@
     SUBDIR += suckblow
     SUBDIR += sup
     SUBDIR += svnc
+    SUBDIR += tac_plus-libradius
     SUBDIR += tac_plus4
     SUBDIR += tas
     SUBDIR += tcpcat

@@ -1,0 +1,38 @@
+*** pwlib.c	Fri Mar 16 14:42:54 2001
+--- ../../tac_plus.F5.0.0.alpha/pwlib.c	Sat Jan 19 23:22:07 2002
+***************
+*** 40,45 ****
+--- 40,49 ----
+  #include "ldap.h"
+  #endif /* LDAP */
+  
++ #ifdef USE_RADIUS
++ #include "radius.h"
++ #endif
++ 
+  /* Generic password verification routines for des, file and cleartext
+     passwords */
+  
+***************
+*** 166,171 ****
+--- 170,189 ----
+  #ifdef USE_LDAP
+  	case (S_ldap):
+          if (ldap_verify(name, passwd, file)==1) {
++             data->status = TAC_PLUS_AUTHEN_STATUS_FAIL;
++             return (0);
++         } else {
++             data->status = TAC_PLUS_AUTHEN_STATUS_PASS;
++         }
++         exp_date = NULL;
++         set_expiration_status(exp_date, data);
++         return (data->status == TAC_PLUS_AUTHEN_STATUS_PASS);	 
++         break; 
++ #endif
++ 
++ #ifdef USE_RADIUS
++ 	case (S_radius):
++ 	if (radius_verify(name,passwd,file)==1) {
+              data->status = TAC_PLUS_AUTHEN_STATUS_FAIL;
+              return (0);
+          } else {

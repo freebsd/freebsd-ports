@@ -1,0 +1,17 @@
+*** config.c	Fri Mar 16 10:04:27 2001
+--- ../../tac_plus.F5.0.0.alpha/config.c	Sun Jan 20 19:49:48 2002
+***************
+*** 603,608 ****
+--- 603,614 ----
+  		authen_default_method = sym_code;
+  		break;
+  #endif
++ #ifdef USE_RADIUS
++ 		case S_radius:
++ 		fprintf(stderr,"sym_code=%i, radius\n",sym_code);
++ 		authen_default_method = sym_code;
++                 break;
++ #endif
+                  
+   
+  		default:

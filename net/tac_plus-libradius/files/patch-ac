@@ -1,0 +1,19 @@
+*** do_acct.c	Mon Dec 18 17:58:02 2000
+--- do_acct.c	Sat Jan 19 15:22:46 2002
+***************
+*** 159,165 ****
+  #endif
+      entry.ut_time = utime;
+  
+!     wtmpfd = open(wtmpfile, O_CREAT | O_WRONLY | O_APPEND | O_SYNC, 0644);	
+      if (wtmpfd < 0) {
+  	report(LOG_ERR, "Can't open wtmp file %s -- %s",
+  	       wtmpfile, sys_errlist[errno]);
+--- 159,165 ----
+  #endif
+      entry.ut_time = utime;
+  
+!     wtmpfd = open(wtmpfile, O_CREAT | O_WRONLY | O_APPEND , 0644);	
+      if (wtmpfd < 0) {
+  	report(LOG_ERR, "Can't open wtmp file %s -- %s",
+  	       wtmpfile, sys_errlist[errno]);
