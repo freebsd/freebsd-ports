@@ -7,6 +7,7 @@
 
 PORTNAME=	gcc
 PORTVERSION=	${GCCVERSION}.${PATCHVERSION}
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEWARE}
@@ -53,19 +54,20 @@ CONFIGURE_ARGS=	--target=${PKGNAMEPREFIX:S/-$//} \
 		--disable-java-awt --without-x \
 		--enable-java-gc=boehm --disable-libgcj-debug \
 		--enable-interpreter --enable-hash-synchronization \
-		--without-newlib
+		--without-newlib \
+		--with-gxx-include-dir=${PREFIX}/${PKGNAMEPREFIX:S/-$//}/include/c++/${GCCVERSION}
 MAKE_ENV=	PATH=${PREFIX}/bin:${PATH}
 LIBTOOLFILES=	configure gcc/configure
-INFO=		fastjar
-MAN1=		${PKGNAMEPREFIX}gcc.1 ${PKGNAMEPREFIX}g++.1 ${PKGNAMEPREFIX}g77.1  \
-		cpp.1 gcov.1 ${PKGNAMEPREFIX}gcj.1 gcjh.1 gij.1 grepjar.1 jar.1 \
-		jcf-dump.1 jv-convert.1 jv-scan.1 rmic.1 rmiregistry.1
-MAN7=		fsf-funding.7 gfdl.7 gpl.7
+MAN1=		${PKGNAMEPREFIX}gcc.1 ${PKGNAMEPREFIX}g++.1 ${PKGNAMEPREFIX}g77.1 \
+		${PKGNAMEPREFIX}gcj.1 ${PKGNAMEPREFIX}grepjar.1 ${PKGNAMEPREFIX}jar.1 \
+		${PKGNAMEPREFIX}cpp.1 ${PKGNAMEPREFIX}gcov.1 ${PKGNAMEPREFIX}jcf-dump.1 \
+		${PKGNAMEPREFIX}jv-convert.1 ${PKGNAMEPREFIX}jv-scan.1 ${PKGNAMEPREFIX}rmic.1 \
+		${PKGNAMEPREFIX}rmiregistry.1 ${PKGNAMEPREFIX}gcjh.1 ${PKGNAMEPREFIX}gij.1
 
 PLIST_SUB+=	PORTVERSION=${PORTVERSION} GCC_TARG=${PKGNAMEPREFIX:S/-$//} \
 		GCC_REV=${GCCVERSION}
 
-BINARIES=	gcc cpp g++ g77 gcov gcj gcjh jcf-dump jv-scan
+BINARIES=	gcc cpp g++ g77 gcov gcj gcjh jcf-dump jv-scan grepjar jar
 
 post-configure:
 	@${PERL} -pi.bak -e 's,^(TARGET_CONFIGDIRS\s*=\s*).+$$,\1libstdc++-v3 libf2c libobjc mingw,' ${WRKSRC}/Makefile
