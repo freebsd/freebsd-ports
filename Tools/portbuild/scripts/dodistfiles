@@ -1,0 +1,17 @@
+#!/bin/sh
+
+distdir=$1
+while true; do
+  if cd ${distdir}/.pbtmp >/dev/null 2>&1; then
+    set *
+    while [ $# -gt 0 ]; do
+      if [ -e $1/.done ]; then
+	rm -f $1/.done
+        tar -C $1 -cf - . | tar -C ${distdir} -xpf -
+        rm -rf $1
+      fi
+      shift
+    done
+  fi
+  sleep 600
+done
