@@ -9,7 +9,7 @@
      .d_flags =     D_TRACKCLOSE
 +#else
 +    .d_version =   D_VERSION, 
-+    .d_flags =     D_NEEDGIANT
++    .d_flags =     D_NEEDGIANT|D_TRACKCLOSE
 +#endif 
  #endif
  };
