@@ -36,6 +36,7 @@
 #include <sys/time.h>
 #include <sys/resource.h>
 #include <unistd.h>
+#include <errno.h>
 #include "pthread.h"
 #include "internals.h"
 
@@ -49,6 +50,15 @@ int _sched_get_priority_max(int policy);
 int _sched_get_priority_min(int policy);
 int _sched_rr_get_interval(pid_t pid, struct timespec *interval);
 
+int __sched_setparam(pid_t pid, const struct sched_param *param);
+int __sched_setscheduler(pid_t pid, int policy,
+                         const struct sched_param *param);
+int __sched_getscheduler(pid_t pid);
+int __sched_get_priority_max(int policy);
+int __sched_get_priority_min(int policy);
+int __sched_getparam(pid_t pid, struct sched_param *param);
+int __sched_rr_get_interval(pid_t pid, struct timespec *interval);
+	
 extern int _posix_priority_scheduling;
 
 int
@@ -59,16 +69,6 @@ sched_yield(void)
 	else
 	      syscall(SYS_yield);
 	return(0);
-}
-
-/* Draft 4 yield */
-void
-pthread_yield(void)
-{
-	if (_posix_priority_scheduling)
-	      _sched_yield();
-	else
-	      syscall(SYS_yield);
 }
 
 #ifdef HAVE_FIXED_SCHED_FUNCTIONS
