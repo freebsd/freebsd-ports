@@ -6571,6 +6571,7 @@ tmetric		ports/benchmarks/tmetric
 tn3270		src/usr.bin/tn3270
 tn5250		ports/net/tn5250
 tnef		ports/converters/tnef
+tnef2txt	ports/textproc/tnef2txt
 togl		ports/graphics/togl
 toolbox		ports/x11-wm/toolbox
 tools		src/tools
