@@ -1,7 +1,9 @@
 bin/crimson
 share/crimson/title.bmp
 share/crimson/levels/ArmsRace.lev
-share/crimson/levels/TheGreatBattle.lev
+share/crimson/levels/Foxhole.lev
+share/crimson/levels/GreatBattle.lev
+share/crimson/levels/IslandHoppers.lev
 share/crimson/levels/Uprising.lev
 share/crimson/sound/ask.wav
 share/crimson/sound/clicked.wav
