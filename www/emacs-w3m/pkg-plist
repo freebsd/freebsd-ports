@@ -38,6 +38,12 @@
 %%SHIMBUN%%%%LISPDIR%%/sb-bbdb-ml.elc
 %%SHIMBUN%%%%LISPDIR%%/sb-cnet.el
 %%SHIMBUN%%%%LISPDIR%%/sb-cnet.elc
+%%SHIMBUN%%%%LISPDIR%%/sb-debian-jp.el
+%%SHIMBUN%%%%LISPDIR%%/sb-debian-jp.elc
+%%SHIMBUN%%%%LISPDIR%%/sb-debian.el
+%%SHIMBUN%%%%LISPDIR%%/sb-debian.elc
+%%SHIMBUN%%%%LISPDIR%%/sb-digiko.el
+%%SHIMBUN%%%%LISPDIR%%/sb-digiko.elc
 %%SHIMBUN%%%%LISPDIR%%/sb-ding.el
 %%SHIMBUN%%%%LISPDIR%%/sb-ding.elc
 %%SHIMBUN%%%%LISPDIR%%/sb-f1express.el

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	emacs-w3m
-PORTVERSION=	1.2.3
+PORTVERSION=	1.2.4
 CATEGORIES=	www elisp
 MASTER_SITES=	http://emacs-w3m.namazu.org/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
@@ -97,8 +97,8 @@ SHIMBUN=	"@comment "
 BUILD_DEPENDS+=	${FLIM_COOKIE}:${FLIM_PORT}
 RUN_DEPENDS+=		${FLIM_COOKIE}:${FLIM_PORT}
 .endif
-BUILD_DEPENDS+=	w3m:${PORTSDIR}/www/w3m
-RUN_DEPENDS+=		w3m:${PORTSDIR}/www/w3m
+BUILD_DEPENDS+=	w3m:${PORTSDIR}/www/w3m-m17n
+RUN_DEPENDS+=		w3m:${PORTSDIR}/www/w3m-m17n
 
 .if !defined(HAVE_FLIM)
 pre-fetch:
