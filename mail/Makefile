@@ -136,7 +136,9 @@
     SUBDIR += librfc822
     SUBDIR += libspf
     SUBDIR += libspf-alt
+    SUBDIR += libspf2
     SUBDIR += libsrs
+    SUBDIR += libsrs2
     SUBDIR += listmanager
     SUBDIR += lmtp2nntp
     SUBDIR += lmtpd
