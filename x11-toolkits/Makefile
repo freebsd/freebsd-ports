@@ -108,6 +108,7 @@
     SUBDIR += libgnomeui
     SUBDIR += libgnomeuimm
     SUBDIR += libgtkeditor
+    SUBDIR += libgtk-java
     SUBDIR += libj2dplot
     SUBDIR += libjparser
     SUBDIR += libjsearch
