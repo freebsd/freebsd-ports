@@ -12,12 +12,7 @@ bin/wlock
 etc/rc.d/sendfiled.sh
 etc/sendfile.cf
 etc/sendfile.deny
-man/man1/fetchfile.1.gz
-man/man1/receive.1.gz
-man/man1/sendfile.1.gz
-man/man1/sendmsg.1.gz
-man/man7/fetchfile.7.gz
-man/man8/sendfiled.8.gz
+man/man1/utf7decode.1.gz
 sbin/sendfiled
 
 @exec mkdir -p /var/spool/sendfile/OUTGOING /var/spool/sendfile/LOG

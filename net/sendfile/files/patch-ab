@@ -1,6 +1,14 @@
---- develop/install.orig	Fri Apr 17 13:47:44 1998
-+++ develop/install	Fri May 22 19:51:13 1998
-@@ -162,13 +162,6 @@
+--- develop/install.orig	Sat Jul 11 14:02:38 1998
++++ develop/install	Sun Aug 16 17:41:15 1998
+@@ -80,7 +80,6 @@
+   make_man fetchfile 7 $manmisc
+   make_man sendfiled 8 $manadmin
+   cp doc/wlock.1 doc/utf7encode.1 $MANDIR/man1
+-  (cd $MANDIR/man1; ln -s utf7encode.1 utf7decode.1 2>/dev/null)
+ }
+ 
+ SYSTEM=$1
+@@ -164,13 +163,6 @@
  
  EOD
  echo 'If you are satisfied with these defaults, then type "ok" now:'
@@ -14,7 +22,7 @@
  
  umask 022
  
-@@ -259,7 +252,6 @@
+@@ -261,7 +253,6 @@
      echo "saft	487/tcp		# simple asynchronous file transfer" | niload services .
    else
      echo "configuring $SERVICES"
@@ -22,7 +30,7 @@
      echo "saft	487/tcp		# simple asynchronous file transfer" >>$SERVICES
    fi
  fi
-@@ -272,8 +264,6 @@
+@@ -274,8 +265,6 @@
    fi
    RESTART=true
    echo "configuring $INETDCONF"
@@ -31,7 +39,7 @@
    echo "saft	stream	tcp	nowait	root	$SFD" >>$INETDCONF
  fi
  
-@@ -337,15 +327,11 @@
+@@ -339,15 +328,11 @@
  EOD
  fi
  
