@@ -8,7 +8,7 @@ $FreeBSD$
  	-$(mkinstalldirs) $(DESTDIR)$(scoredir)
  	-touch $(DESTDIR)$(scoredir)/gnome-breakout.scores
 -	-chown games.games $(DESTDIR)$(scoredir)/gnome-breakout.scores
-+	-chown root.games $(DESTDIR)$(scoredir)/gnome-breakout.scores
++	-chown root:games $(DESTDIR)$(scoredir)/gnome-breakout.scores
  	-chmod 0664 $(DESTDIR)$(scoredir)/gnome-breakout.scores
  	-chgrp games $(DESTDIR)$(bindir)/gnome-breakout && chmod 2755 $(DESTDIR)$(bindir)/gnome-breakout
  

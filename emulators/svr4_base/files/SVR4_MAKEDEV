@@ -62,7 +62,7 @@ all)
 
 ptmx)
 	mknod $i		c 103 10
-	chown bin.bin $i
+	chown bin:bin $i
 	chmod 666 $i
 	;;
 
@@ -76,7 +76,7 @@ pts*)
 	esac
 
 	mkdir >/dev/null 2>&1 pts
-	chown bin.bin pts
+	chown bin:bin pts
 	chmod 755 pts
 	if [ -n "$name" ]; then
 		j=`expr $unit \* 16`
@@ -91,45 +91,45 @@ pts*)
 
 tcp)
 	mknod $i		c 103 35
-	chown bin.bin $i
+	chown bin:bin $i
 	chmod 666 $i
 	;;
 
 
 udp)
 	mknod udp		c 103 36
-	chown bin.bin $i
+	chown bin:bin $i
 	chmod 666 $i
 	;;
 
 rawip)
 	mknod $i		c 103 37
-	chown bin.bin $i
+	chown bin:bin $i
 	chmod 666 $i
 	;;
 
 ticlts)
 	mknod $i		c 103 38
-	chown bin.bin $i
+	chown bin:bin $i
 	chmod 666 $i
 	;;
 
 ticotsord)
 	mknod $i		c 103 39
-	chown bin.bin $i
+	chown bin:bin $i
 	chmod 666 $i
 	;;
 
 ticots)
 	mknod $i		c 103 40
-	chown bin.bin $i
+	chown bin:bin $i
 	chmod 666 $i
 	;;
 
 
 wabi)
 	mknod $i		c 2 2	# /dev/null
-	chown bin.bin $i
+	chown bin:bin $i
 	chmod 666 $i
 	;;
 

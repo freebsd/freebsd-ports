@@ -25,7 +25,7 @@
 +scripts/mkinstalldirs 0755    $INST_DIR/share/msql/misc
 +scripts/mkinstalldirs 0755    $INST_DIR/share/msql/www
 +scripts/mkinstalldirs 0755    $INST_DIR/share/msql/makegen
-+/usr/sbin/chown -R msql.msql /var/db/msqldb /var/spool/msql
++/usr/sbin/chown -R msql:msql /var/db/msqldb /var/spool/msql
 +scripts/mkinstalldirs 0755    $INST_DIR/lib/msql
 +scripts/mkinstalldirs 0755    $INST_DIR/libexec/msql
  

@@ -125,7 +125,7 @@
  	chmod 755 $(DOCDIR)
  	chmod 755 $(DOCDIR)/*
  	chmod 644 $(DOCDIR)/*/*
-+	chown -R bin.bin $(DOCDIR)
++	chown -R bin:bin $(DOCDIR)
  
  installfr:
  	@echo ""
