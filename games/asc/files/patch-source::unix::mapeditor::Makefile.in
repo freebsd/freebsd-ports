@@ -1,8 +1,8 @@
 
 $FreeBSD$
 
---- source/unix/mapeditor/Makefile.in	2001/05/22 19:36:17	1.1
-+++ source/unix/mapeditor/Makefile.in	2001/05/22 19:39:11
+--- source/unix/mapeditor/Makefile.in.orig	Tue Aug 28 16:26:40 2001
++++ source/unix/mapeditor/Makefile.in	Mon Sep  3 17:34:12 2001
 @@ -76,15 +76,15 @@
  SGML2MAN = @SGML2MAN@
  VERSION = @VERSION@
@@ -12,13 +12,13 @@ $FreeBSD$
  
  bin_PROGRAMS = asc_mapedit asc_map2pcx
  
- asc_mapedit_SOURCES = edevents.cpp edgen.cpp edglobal.cpp edmain.cpp edselfnt.cpp edmisc.cpp weather.cpp typen.cpp strtmesg.cpp stack.cpp spfst.cpp sgstream.cpp pd.cpp palette.cpp newfont.cpp misc.cpp loadpcxc.cpp loaders.cpp loadbi3.cpp dlg_box.cpp dialog.cpp basestrm.cpp basegfx.cpp attack.cpp CLoadable.cpp Property.cpp PropertyGroup.cpp gameoptions.cpp Named.cpp buildingtype.cpp vehicletype.cpp containerbase.cpp mapalgorithms.cpp viewcalculation.cpp gamemap.cpp password.cpp password_dialog.cpp research.cpp mapdisplay.cpp ascstring.cpp graphicset.cpp vehicle.cpp buildings.cpp networkdata.cpp resourcenet.cpp
--asc_mapedit_LDADD = ../../sdl/libsdl.a ../../libs/triangul/libtriangul.a -lSDL -lpthread @LDADDLIBBZ2@
-+asc_mapedit_LDADD = ../../sdl/libsdl.a ../../libs/triangul/libtriangul.a @LDADDLIBBZ2@
+ asc_mapedit_SOURCES = edevents.cpp edgen.cpp edglobal.cpp edmain.cpp edselfnt.cpp edmisc.cpp weather.cpp typen.cpp strtmesg.cpp stack.cpp spfst.cpp sgstream.cpp pd.cpp palette.cpp newfont.cpp misc.cpp loadpcxc.cpp loaders.cpp loadbi3.cpp dlg_box.cpp dialog.cpp basestrm.cpp basegfx.cpp attack.cpp CLoadable.cpp Property.cpp PropertyGroup.cpp gameoptions.cpp Named.cpp buildingtype.cpp vehicletype.cpp containerbase.cpp mapalgorithms.cpp viewcalculation.cpp gamemap.cpp password.cpp password_dialog.cpp research.cpp mapdisplay.cpp ascstring.cpp graphicset.cpp vehicle.cpp buildings.cpp networkdata.cpp resourcenet.cpp textfileparser.cpp terraintype.cpp objecttype.cpp textfiletags.cpp itemrepository.cpp
+-asc_mapedit_LDADD = ../../sdl/libsdl.a ../../libs/triangul/libtriangul.a -lSDL -lpthread -lSDL_image -lSDLmm @LDADDLIBBZ2@
++asc_mapedit_LDADD = ../../sdl/libsdl.a ../../libs/triangul/libtriangul.a -lSDL_image -lSDLmm @LDADDLIBBZ2@
  
- asc_map2pcx_SOURCES = map2pcx.cpp weather.cpp typen.cpp strtmesg.cpp stack.cpp spfst.cpp sgstream.cpp pd.cpp palette.cpp newfont.cpp misc.cpp loadpcxc.cpp loaders.cpp loadbi3.cpp dlg_box.cpp dialog.cpp basestrm.cpp basegfx.cpp attack.cpp CLoadable.cpp Property.cpp PropertyGroup.cpp gameoptions.cpp Named.cpp buildingtype.cpp vehicletype.cpp containerbase.cpp mapalgorithms.cpp viewcalculation.cpp gamemap.cpp password.cpp password_dialog.cpp research.cpp mapdisplay.cpp ascstring.cpp graphicset.cpp vehicle.cpp buildings.cpp networkdata.cpp resourcenet.cpp
--asc_map2pcx_LDADD = ../../sdl/libsdl.a ../../libs/triangul/libtriangul.a -lSDL -lpthread -lSDL_image @LDADDLIBBZ2@
-+asc_map2pcx_LDADD = ../../sdl/libsdl.a ../../libs/triangul/libtriangul.a -lSDL_image @LDADDLIBBZ2@
+ asc_map2pcx_SOURCES = map2pcx.cpp weather.cpp typen.cpp strtmesg.cpp stack.cpp spfst.cpp sgstream.cpp pd.cpp palette.cpp newfont.cpp misc.cpp loadpcxc.cpp loaders.cpp loadbi3.cpp dlg_box.cpp dialog.cpp basestrm.cpp basegfx.cpp attack.cpp CLoadable.cpp Property.cpp PropertyGroup.cpp gameoptions.cpp Named.cpp buildingtype.cpp vehicletype.cpp containerbase.cpp mapalgorithms.cpp viewcalculation.cpp gamemap.cpp password.cpp password_dialog.cpp research.cpp mapdisplay.cpp ascstring.cpp graphicset.cpp vehicle.cpp buildings.cpp networkdata.cpp resourcenet.cpp textfileparser.cpp terraintype.cpp objecttype.cpp textfiletags.cpp itemrepository.cpp
+-asc_map2pcx_LDADD = ../../sdl/libsdl.a ../../libs/triangul/libtriangul.a -lSDL -lpthread -lSDL_image -lSDLmm @LDADDLIBBZ2@
++asc_map2pcx_LDADD = ../../sdl/libsdl.a ../../libs/triangul/libtriangul.a -lSDL_image -lSDLmm @LDADDLIBBZ2@
  mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
  CONFIG_HEADER = ../../../config.h
  CONFIG_CLEAN_FILES = 
