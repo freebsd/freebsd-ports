@@ -1,0 +1,6 @@
+Applets components for the Gnome Desktop Environment
+
+For more information about Gnome on FreeBSD,
+please refer to ${PORTSDIR}/x11/gnome/pkg/DESCR
+
+WWW: http://www.gnome.org/
