@@ -1,0 +1,15 @@
+The standard distribution of Apache does not provide adequate means for user
+tracking, and this module provides them. What it actually does: 
+
++ if the user has provided the cookie header with the correct cookie-name,
+   the module writes this cookie in notes with the name uid_got (accordingly,
+   then it may be written to the log); 
+
++ if the user has arrived without the required cookie, the module issues the
+   SetCookie header for him/her and writes the cookie thus issued in notes
+   with the name uid_set (and this may also be written to the log); 
+
++ if built-in P3P support is included, the P3P header is also issued as the
+   Set-Cookie header is issued. 
+
+WWW: http://www.lexa.ru/programs/mod-uid-eng.html
