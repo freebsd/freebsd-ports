@@ -13,6 +13,7 @@ DISTNAME=	xgobi
 EXTRACT_SUFX=	.sh.gz
 
 MAINTAINER=	tonym@biolateral.com.au
+COMMENT=	Graphical data visualisation tool
 
 NO_CDROM=	"Restrictive copyright (do not sell for profit)"
 

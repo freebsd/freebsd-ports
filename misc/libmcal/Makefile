@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} mcaldrivers-0.9.tar.gz
 
 MAINTAINER=	thierry@pompo.net
+COMMENT=	Modular Calendar Access Library
 
 LIB_DEPENDS=	ltdl.1:${PORTSDIR}/devel/libtool
 

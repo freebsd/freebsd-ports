@@ -11,6 +11,7 @@ CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.eboai.org/pub/users/chip/
 
 MAINTAINER=	chip@chocobo.cx
+COMMENT=	A simple mail counter, useful for multiple mailfiles
 
 RUN_DEPENDS=	${SITE_PERL}/Term/ANSIColor.pm:${PORTSDIR}/devel/p5-Term-ANSIColor
 

@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://ftp.qualcomm.com/eudora/servers/unix/password/
 DISTNAME=	pwserve-4
 
 MAINTAINER=	andrew@ugh.net.au
+COMMENT=	A server to allow users to change their password from within Eudora
 
 EXTRACT_CMD=	/bin/cat
 EXTRACT_SUFX=	

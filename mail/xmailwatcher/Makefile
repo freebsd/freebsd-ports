@@ -12,6 +12,7 @@ MASTER_SITES=		http://www.dcs.ed.ac.uk/home/gdmr/X11/
 DISTNAME=		xmailwatcher
 
 MAINTAINER=		harry_newton@telinco.co.uk
+COMMENT=	Mailbox checker which displays sender and subject lines of mails
 
 MAN1=			xmailwatcher.1
 USE_IMAKE=		yes

@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Mail
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	erwin@lansing.dk
+COMMENT=	Perl module to parse daily newsletters from freshmeat.net
 
 BUILD_DEPENDS=	${SITE_PERL}/Mail/Internet.pm:${PORTSDIR}/mail/p5-Mail-Tools
 RUN_DEPENDS=	${BUILD_DEPENDS}

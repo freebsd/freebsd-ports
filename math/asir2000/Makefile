@@ -14,6 +14,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${ASIR_DOC}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	saito@asir.org
+COMMENT=	The system Risa/Asir is a general computer algebra system
 
 WRKSRC=		${WRKDIR}/asir2000
 PREFIX?=	${LOCALBASE}

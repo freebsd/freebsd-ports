@@ -17,6 +17,7 @@ MASTER_SITE_SUBDIR=	mailfilter
 DISTNAME=	mailfilter-${PORTVERSION}
 
 MAINTAINER=	harry_newton@telinco.co.uk
+COMMENT=	Filter mail on a pop3 server: saves downloading spam
 
 LIB_DEPENDS=	intl:${PORTSDIR}/devel/gettext \
 		iconv:${PORTSDIR}/converters/libiconv \

@@ -13,6 +13,7 @@ MASTER_SITES=	http://www.unicom.com/sw/xtail/ \
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	gmarco@giovannelli.it
+COMMENT=	Watches the growth of files or directories
 
 HAS_CONFIGURE=	yes
 

@@ -13,6 +13,7 @@ DISTNAME=	stat
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	mwm@mired.org
+COMMENT=	A statistics package designed for use with the Unix shell
 
 NO_PACKAGE=	"License does not allow redistribution of binaries"
 RESTRICTED=	"Gary Pearlman requires that users agree to his license to \

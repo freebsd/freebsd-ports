@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://ftp.jedsoft.org/pub/davis/most/ \
 		ftp://ftp.uni-stuttgart.de/pub/unix/misc/slang/most/
 
 MAINTAINER=	rhwang@bigpanda.com
+COMMENT=	A pager (like less) which has support for windows and binary files
 
 LIB_DEPENDS=	slang.1:${PORTSDIR}/devel/libslang
 

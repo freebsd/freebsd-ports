@@ -14,6 +14,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:C/.(.{8})$/-\1/}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	holger@e-gitt.net
+COMMENT=	AVI player/converter with numerous codecs, including MPEG-4(DivX ;-))
 
 BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
 

@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.ceti.pl/~miki/komputery/download/sms/
 PKGNAMEPREFIX=	pl-
 
 MAINTAINER=	doc@lublin.t1.pl
+COMMENT=	Send SMS to cellular phones in Poland (Idea, ERA, Plus)
 
 LIB_DEPENDS=	gdbm.3:${PORTSDIR}/databases/gdbm
 

@@ -12,6 +12,7 @@ CATEGORIES=	mail www
 MASTER_SITES=	ftp://rucus.ru.ac.za/pub/mail/ezmlm/
 
 MAINTAINER=	guy-ezmlm@rucus.ru.ac.za
+COMMENT=	CGI script that lets you manage ezmlm-idx mailing lists through the web
 
 BUILD_DEPENDS=	${LOCALBASE}/${EZMLM_DIR}/bin/ezmlm-idx:${PORTSDIR}/mail/ezmlm-idx \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Mail/Ezmlm.pm:${PORTSDIR}/mail/p5-Mail-Ezmlm

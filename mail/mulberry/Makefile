@@ -16,6 +16,7 @@ DISTCRYPTO=	MulberryS${EXTRACT_SUFX}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	yds@CoolRat.org
+COMMENT=	A scalable high-performance GUI internet Mail User Agent
 
 USE_LINUX=	yes
 NO_BUILD=	yes

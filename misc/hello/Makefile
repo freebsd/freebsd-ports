@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	hello
 DISTNAME=	hello-1.3
 
 MAINTAINER=	shipley@dis.org
+COMMENT=	A utility for saying hello to the world and read email
 
 WRKSRC=		${WRKDIR}/hello-1.3
 

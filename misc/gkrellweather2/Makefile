@@ -13,6 +13,7 @@ MASTER_SITES=	http://kmlinux.fjfi.cvut.cz/~makovick/gkrellm/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	jylefort@brutele.be
+COMMENT=	GKrellWeather is a weather plugin for GKrellM
 
 BUILD_DEPENDS=	${X11BASE}/include/gkrellm2/gkrellm.h:${PORTSDIR}/sysutils/gkrellm2
 RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm2 \

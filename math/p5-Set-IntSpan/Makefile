@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Set
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	croyle@gelemna.org
+COMMENT=	Manages sets of integers
 
 PERL_CONFIGURE=	yes
 

@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Business
 PKGNAMEPREFIX=		p5-
 
 MAINTAINER=		svenasse@polaris.ca
+COMMENT=	Perl extension for International Standard Serial Numbers
 
 PERL_CONFIGURE=		yes
 

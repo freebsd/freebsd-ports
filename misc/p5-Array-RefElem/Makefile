@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Array
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	svenasse@polaris.ca
+COMMENT=	Set up array elements as aliases
 
 PERL_CONFIGURE=	yes
 

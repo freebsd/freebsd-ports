@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.bmsi.com/python/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	seva@sevasoft.kiev.ua
+COMMENT=	Python interface to sendmail-8.1x milter API
 
 .if !exists(/usr/lib/libmilter.so)
 LIB_DEPENDS=	milter.2:${PORTSDIR}/mail/sendmail

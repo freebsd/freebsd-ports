@@ -12,6 +12,7 @@ CATEGORIES=	mail python
 MASTER_SITES=	http://www.qcc.ca/~charlesc/software/queue_repair/
 
 MAINTAINER=	sergei@kolobov.com
+COMMENT=	A qmail queue diagnostic and repair tool
 
 .if !defined(WITHOUT_QMAIL_PORT)
 RUN_DEPENDS=	${QMAIL_DIR}/bin/qmail-send:${PORTSDIR}/mail/qmail

@@ -15,6 +15,7 @@ MASTER_SITE_SUBDIR=	Date
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	shell@shellhung.org
+COMMENT=	Perl module for calculating time differences
 
 PERL_CONFIGURE=	yes
 

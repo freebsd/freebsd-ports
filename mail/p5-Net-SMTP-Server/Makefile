@@ -14,6 +14,7 @@ PKGNAMEPREFIX=	p5-
 DISTNAME=	SMTP-Server-${PORTVERSION}
 
 MAINTAINER=	erwin@lansing.dk
+COMMENT=	A native Perl SMTP Server
 
 RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Net/SMTP.pm:${PORTSDIR}/net/p5-Net \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Net/DNS.pm:${PORTSDIR}/net/p5-Net-DNS

@@ -10,6 +10,7 @@ CATEGORIES=	mail
 MASTER_SITES=	http://www.i2pi.com/smunge/
 
 MAINTAINER=	midom@dammit.lt
+COMMENT=	Funneling POP3 proxy server
 
 LIB_DEPENDS=	ldap:${PORTSDIR}/net/openldap
 

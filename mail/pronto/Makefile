@@ -10,6 +10,7 @@ CATEGORIES=	mail perl5
 MASTER_SITES=	http://muhri.net/pronto/
 
 MAINTAINER=	killer@prosalg.no
+COMMENT=	A Mail Client for Gnome/Gtk written in Perl
 
 BUILD_DEPENDS=\
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Gtk.pm:${PORTSDIR}/x11-toolkits/p5-Gtk \

@@ -11,6 +11,7 @@ CATEGORIES=	misc
 MASTER_SITES=	http://www.generalconcepts.com/resources/software/
 
 MAINTAINER=	jsellens@generalconcepts.com
+COMMENT=	An alternative to ls(1)
 
 MAN1=		lc.1
 

@@ -12,6 +12,7 @@ MASTER_SITES=	http://galileo.spaceports.com/~jharris/distfiles/ \
 		ftp://samurai.ruin.org/pub/All/
 
 MAINTAINER=	jmrobins@samurai.ruin.org
+COMMENT=	A simple, easy-to-use mail filtering program written in perl
 
 MAN1=		mailfilter.1 mail.filter.1
 

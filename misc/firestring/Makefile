@@ -15,6 +15,7 @@ DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	-${PORTVERSION}.tar.gz
 
 MAINTAINER=	dean@odyssey.apana.org.au
+COMMENT=	A library to make string handling easier in C
 
 HAS_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes

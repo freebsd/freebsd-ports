@@ -11,6 +11,7 @@ CATEGORIES=	mail
 MASTER_SITES=	http://smarden.org/qconfirm/
 
 MAINTAINER=	sergei@kolobov.com
+COMMENT=	Request delivery confirmation for mail message under qmail
 
 WRKSRC=		${WRKDIR}/mail/${DISTNAME}/src
 ALL_TARGET=	default

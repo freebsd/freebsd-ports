@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	utilities
 
 MAINTAINER=	shanee@augusta.de
+COMMENT=	View and manipulate contents of a tar file
 
 USE_MOTIF=	yes
 USE_IMAKE=	yes

@@ -12,6 +12,7 @@ CATEGORIES=	misc
 MASTER_SITES=	http://www.hadess.net/files/software/uf-view/
 
 MAINTAINER=	mcgee@wam.umd.edu
+COMMENT=	A gTK+ viewer for the User Friendly and several other popular comics
 
 LIB_DEPENDS=    gnomevfs-2.0:${PORTSDIR}/devel/gnomevfs2 \
 		gtk-x11-2.0.200:${PORTSDIR}/x11-toolkits/gtk20 \

@@ -12,6 +12,7 @@ MASTER_SITES=	http://bsltwr.dnsalias.org/ftp/pub/gmime/ \
 		http://spruce.sourceforge.net/gmime/sources/
 
 MAINTAINER=	baskruit@bsltwr.dnsalias.org
+COMMENT=	Library (written in C) for parsing and creating messages using MIME
 
 USE_X_PREFIX=	YES
 GNU_CONFIGURE=  YES

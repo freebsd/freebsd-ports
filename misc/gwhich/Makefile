@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.xs4all.nl/~carlo17/which/
 DISTNAME=	which-${PORTVERSION}
 
 MAINTAINER=	jeremy@external.org
+COMMENT=	GNU Which - Everything you never wanted in a which
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS= --program-prefix=g

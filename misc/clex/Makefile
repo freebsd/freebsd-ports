@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
 
 MAINTAINER=	mich@freebsdcluster.org
+COMMENT=	A commandline file manager
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 GNU_CONFIGURE=	yes

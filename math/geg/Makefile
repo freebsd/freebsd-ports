@@ -13,6 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SUNSITE} \
 MASTER_SITE_SUBDIR=	science/visualization/plotting
 
 MAINTAINER=	domi@saargate.de
+COMMENT=	Visualise multiple 2D-functions of one variable
 
 USE_X_PREFIX=	yes
 USE_GNOMENG=	yes

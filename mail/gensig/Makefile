@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.geekthing.com/~robf/ware/gensig/ \
 		http://www.ooblick.com/software/gensig/
 
 MAINTAINER=	arensb+freebsd-ports@ooblick.com
+COMMENT=	A random .signature generator
 
 GNU_CONFIGURE=	yes
 

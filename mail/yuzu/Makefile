@@ -12,6 +12,7 @@ CATEGORIES=	mail
 MASTER_SITES=	http://www.ongs.net/yuzu/
 
 MAINTAINER=	daichi@ongs.net
+COMMENT=	A nicer mail user agent powered by JavaMail and JFC/Swing
 
 RUN_DEPENDS=	${LOCALBASE}/jdk1.1.8:${PORTSDIR}/java/jdk11 \
 		${LOCALBASE}/share/java/jfc-1.1.1:${PORTSDIR}/java/jfc

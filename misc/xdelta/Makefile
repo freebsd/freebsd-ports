@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	c9710216@atlas.newcastle.edu.au
+COMMENT=	A diff/patch utility for binary files
 
 USE_GNOMENG=	yes
 USE_GNOME=	glib12

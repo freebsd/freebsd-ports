@@ -14,5 +14,6 @@ DISTNAME=      libpst_0.4.1
 EXTRACT_SUFX=  .tgz
 
 MAINTAINER=    natey@natey.com
+COMMENT=	A tool for converting Outlook .pst files to Unix mbox format
 
 .include <bsd.port.mk>

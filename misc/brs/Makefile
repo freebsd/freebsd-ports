@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	apps/religion
 DISTNAME=	brs.4.00.l1
 
 MAINTAINER=	user@unknown.nu
+COMMENT=	An interactive King James Bible
 
 WRKSRC=	       ${WRKDIR}/bible
 ALL_TARGET=

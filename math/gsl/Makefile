@@ -16,6 +16,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 .endif
 
 MAINTAINER=	vlad@reid.ru
+COMMENT=	The GNU Scientific Library - mathematical libs
 
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes

@@ -14,6 +14,7 @@ PKGNAMEPREFIX=	p5-
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	svenasse@polaris.ca
+COMMENT=	Validate International Securities Identification Numbers
 
 BUILD_DEPENDS=	${SITE_PERL}/Locale/Country.pm:${PORTSDIR}/misc/p5-Locale-Codes
 RUN_DEPENDS=	${BUILD_DEPENDS}

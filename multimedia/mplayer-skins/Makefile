@@ -18,6 +18,7 @@ EXTRACT_ONLY=
 DIST_SUBDIR=	mplayer
 
 MAINTAINER=	riggs@rrr.de
+COMMENT=	Skins for MPlayer's Graphical User Interface (GUI)
 
 USE_SUBMAKE=	yes
 USE_BZIP2=	yes

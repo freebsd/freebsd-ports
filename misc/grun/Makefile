@@ -11,6 +11,7 @@ CATEGORIES=	misc
 MASTER_SITES=	http://www.brettnacher.org/users/dominik/FreeBSD/
 
 MAINTAINER=	domi@saargate.de
+COMMENT=	Gtk-launcher similar to the Windows(tm) "Run..." dialog
 
 USE_X_PREFIX=	yes
 USE_GNOMENG=	yes

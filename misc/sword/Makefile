@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://ftp.crosswire.org/pub/sword/source/v1.5/ \
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	wvengen@stack.nl
+COMMENT=	A project framework for manipulating Bible texts
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

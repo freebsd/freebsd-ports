@@ -11,6 +11,7 @@ CATEGORIES=	misc
 MASTER_SITES=	http://www.whizkidtech.net/fports/
 
 MAINTAINER=	adam@whizkidtech.net
+COMMENT=	A tool which displays one or more files as a single line of text
 
 MAN1=		felis.1
 

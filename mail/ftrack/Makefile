@@ -12,6 +12,7 @@ MASTER_SITES=	http://gonza.bizhost.ru/ports/
 DISTNAME=	ftr${PORTVERSION:S/.//g}s
 
 MAINTAINER=	gonza@techline.ru
+COMMENT=	FTN Messages tracker
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libsmapi.a:${PORTSDIR}/mail/smapi
 

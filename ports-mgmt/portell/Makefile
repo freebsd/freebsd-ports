@@ -13,6 +13,7 @@ DISTNAME=	${PORTNAME}
 DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	mich@freebsdcluster.org
+COMMENT=	Quick display of FreeBSD port descriptions
 
 USE_PYTHON=	YES
 NO_BUILD=	YES

@@ -13,6 +13,7 @@ MASTER_SITES=	${MASTER_SITE_XCONTRIB} \
 MASTER_SITE_SUBDIR=	applications
 
 MAINTAINER=	conrads@home.com
+COMMENT=	An X11 viewer for text files.  Useful as an add-on tool for other apps
 
 USE_IMAKE=	yes
 MAN1=		xless.1

@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	system/mail/misc
 DISTNAME=	${PORTNAME}_v${PORTVERSION}
 
 MAINTAINER=	marijn@stack.nl
+COMMENT=	Util to rotate your mail/news signature
 
 MAN1=		sigrot.1
 

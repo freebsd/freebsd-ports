@@ -13,6 +13,7 @@ MASTER_SITES=	http://www.massey.ac.nz/~lgrosz/vecfem/downloads/
 DISTNAME=	vem
 
 MAINTAINER=	Ralf Becker <ralf@akk.org>
+COMMENT=	Program to solve non-linear boundary value problems
 
 .ifdef MPI
 BUILD_DEPENDS=	${LOCALBASE}/mpich/bin/mpif77:${PORTSDIR}/net/mpich

@@ -13,6 +13,7 @@ MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR= sh-utils
 
 MAINTAINER=	cyrille.lefevre@laposte.net
+COMMENT=	The FSF's versions of date(1), expr(1), test(1), etc
 
 # Global variables
 #

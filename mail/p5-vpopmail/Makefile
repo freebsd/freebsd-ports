@@ -14,6 +14,7 @@ MASTER_SITES=	http://www.cpan.dk/CPAN/modules/by-authors/id/S/SS/SSCANLON/ \
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	james@now.ie
+COMMENT=	Perl module to provide access to vpopmail API
 
 VPOPMAIL_PORT?=	mail/vpopmail
 

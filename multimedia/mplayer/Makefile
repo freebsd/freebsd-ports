@@ -159,6 +159,7 @@ MASTER_SITES=	http://www1.mplayerhq.hu/MPlayer/releases/ \
 DISTNAME=	MPlayer-0.90rc4
 
 MAINTAINER=	riggs@rrr.de
+COMMENT=	High performance media player/encoder supporting many formats
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		iconv.3:${PORTSDIR}/converters/libiconv

@@ -15,6 +15,7 @@ DIST_SUBDIR=	sword_modules
 EXTRACT_ONLY=	# empty
 
 MAINTAINER=	wvengen@stack.nl
+COMMENT=	Bible, lexicon and commentary modules for SWORD
 
 LIB_DEPENDS=	sword.1:${PORTSDIR}/misc/sword
 

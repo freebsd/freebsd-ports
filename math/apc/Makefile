@@ -11,6 +11,7 @@ CATEGORIES=	math
 MASTER_SITES= 	http://members.global2000.net/~eagriff/
 
 MAINTAINER=	eric@talesfromthereal.com
+COMMENT=	An xforms based Auto Payment Calculator
 
 LIB_DEPENDS=	forms.1:${PORTSDIR}/x11-toolkits/xforms
 

@@ -12,6 +12,7 @@ MASTER_SITES=	#
 DISTNAME=	susv2
 
 MAINTAINER=	corecode@corecode.ath.cx
+COMMENT=	Single UNIX Specification Version 2
 
 RESTRICTED=	"Redistribution of the documents is not permitted"
 

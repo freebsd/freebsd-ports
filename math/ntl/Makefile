@@ -11,6 +11,7 @@ CATEGORIES=	math
 MASTER_SITES=	http://www.shoup.net/ntl/
 
 MAINTAINER=	matthiasb@acm.org
+COMMENT=	Victor Shoup's Number Theory Library
 
 LIB_DEPENDS=	gmp.6:${PORTSDIR}/math/libgmp4
 

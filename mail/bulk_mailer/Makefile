@@ -11,6 +11,7 @@ CATEGORIES=	mail
 MASTER_SITES=	ftp://cs.utk.edu/pub/moore/bulk_mailer/
 
 MAINTAINER=	dlowe@saturn5.com
+COMMENT=	Speeds delivery to mailing lists by sorting & batching addresses
 
 GNU_CONFIGURE=	YES
 CONFIGURE_ARGS=	--cache-file=/dev/null

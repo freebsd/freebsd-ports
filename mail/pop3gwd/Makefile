@@ -14,6 +14,7 @@ MASTER_SITES=	http://www.go.dlr.de/linux/src/			\
 		ftp://ftp.win.ne.jp/pub/network/mail/pop/
 
 MAINTAINER=	jonny@jonny.eng.br
+COMMENT=	App-level proxy for Mail retrieval behind Firewalls
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

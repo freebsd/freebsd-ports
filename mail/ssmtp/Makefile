@@ -15,6 +15,7 @@ DISTNAME=	ssmtp_2.38-9
 IGNORE=		configures the hostname at compiletime instead of installtime
 
 MAINTAINER=	ns88@k.pl
+COMMENT=	Sendmail alternative for small routers (only for outgoing mail)
 
 WRKSRC=		${WRKDIR}/ssmtp-2.38
 USE_GMAKE=	true

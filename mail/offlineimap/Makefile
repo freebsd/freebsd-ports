@@ -13,6 +13,7 @@ MASTER_SITES=	http://gopher.quux.org:70/devel/offlineimap/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	sergei@kolobov.com
+COMMENT=	Powerful IMAP/Maildir synchronization and reader support
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 PKGMESSAGE=	${WRKDIR}/pkg-message

@@ -30,6 +30,7 @@ PATCHFILES=	# see below.
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	cyrille.lefevre@laposte.net
+COMMENT=	A once-popular mail user agent, unofficial clone
 
 LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
 

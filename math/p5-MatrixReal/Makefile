@@ -13,6 +13,7 @@ PKGNAMEPREFIX=	p5-
 DISTNAME=	Math-${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	sander@haldjas.folklore.ee
+COMMENT=	A perl module implementing a Matrix of Reals
 
 PERL_CONFIGURE=	YES
 

@@ -11,6 +11,7 @@ CATEGORIES=	mail
 MASTER_SITES=	http://www.ex-parrot.com/~chris/tpop3d/
 
 MAINTAINER=	chris@shagged.org
+COMMENT=	Virtual-domain capable POP3 server supporting MySQL auth
 
 # mysql authentication
 .if !defined(WITHOUT_MYSQL)

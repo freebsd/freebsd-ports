@@ -16,6 +16,7 @@ MASTER_SITES=	http://www.tuxedo.org/~esr/fetchmail/ \
 		ftp://ftp.ccil.org/pub/esr/fetchmail/
 
 MAINTAINER=	ve@sci.fi
+COMMENT=	Batch mail retrieval utility for IMAP/POP2/POP3/APOP/KPOP/ETRN/ODMR
 
 LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 .if defined(WITH_X11)

@@ -14,6 +14,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-static
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	user@unknown.nu
+COMMENT=	An X11 genealogy program
 
 RUN_DEPENDS=	/compat/linux/lib/libc.so.6:${PORTSDIR}/emulators/linux_base
 

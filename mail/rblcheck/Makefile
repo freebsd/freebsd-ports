@@ -13,6 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	moro@remus.dti.ne.jp
+COMMENT=	Command-line interface to Paul Vixie's RBL filter
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

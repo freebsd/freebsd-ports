@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://ftp.ugh.net.au/pub/unix/newmail/ \
 		http://ftp.megamirror.com/pub/ugh/unix/newmail/
 
 MAINTAINER=	andrew@ugh.net.au
+COMMENT=	A tool for checking for new mail in multiple mail boxes
 
 WRKSRC=		${WRKDIR}/newmail
 

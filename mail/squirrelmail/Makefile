@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	squirrelmail
 
 MAINTAINER=	simond@irrelevant.org
+COMMENT=	A webmail system which accesses mail over IMAP
 
 .if defined(WITH_APACHE2)
 RUN_DEPENDS+=	${LOCALBASE}/libexec/apache2/libphp4.so:${PORTSDIR}/www/mod_php4

@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.spinnaker.de/debian/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	mwest@uct.ac.za
+COMMENT=	Set of tools for use with mutt's external mail address query feature
 
 BUILD_DEPENDS=	abook:${PORTSDIR}/mail/abook \
 		gpg:${PORTSDIR}/security/gnupg

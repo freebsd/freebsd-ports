@@ -11,6 +11,7 @@ CATEGORIES=     misc
 MASTER_SITES=   http://home.in.tum.de/~vidalrod/ports/
 
 MAINTAINER=     vidalrod@in.tum.de
+COMMENT=	A graphical disk space viewer for X
 
 LIB_DEPENDS=    xview.3:${PORTSDIR}/x11-toolkits/xview
 

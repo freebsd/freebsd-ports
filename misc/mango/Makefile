@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=mango
 DIST_SUBDIR=	KDE
 
 MAINTAINER=	roland.jesse@gmx.net
+COMMENT=	A recipe management software
 
 .if defined(WITH_KDE)
 LIB_DEPENDS+=	kextmdi.2:${PORTSDIR}/devel/qextmdi

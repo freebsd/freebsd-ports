@@ -11,6 +11,7 @@ CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp3.za.freebsd.org/pub/popd/
 
 MAINTAINER=	ianf@za.uu.net
+COMMENT=	Very fast, highly configurable POP3 server (fully RFC1939 compliant)
 
 MAN5=	popd.conf.5
 MAN8=	popd.8

@@ -13,6 +13,7 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=		shoemaker@softhome.net
+COMMENT=	A bible interface utilizing the sword framework
 
 LIB_DEPENDS=		sword.1:${PORTSDIR}/misc/sword
 BUILD_DEPENDS=		aspell:${PORTSDIR}/textproc/aspell

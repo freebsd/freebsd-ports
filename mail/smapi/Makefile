@@ -11,6 +11,7 @@ CATEGORIES=	mail
 MASTER_SITES=	http://gonza.nm.ru/ports/
 
 MAINTAINER=	gonza@techline.ru
+COMMENT=	Modified Squish MSGAPI
 
 WRKSRC=		${WRKDIR}/smapi
 MAKEFILE=	makefile.bsd

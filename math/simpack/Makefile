@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.cis.ufl.edu/pub/simdigest/tools/
 DISTFILES=	SimPack3.tar.Z
 
 MAINTAINER=	rssh@cki.ipri.kiev.ua
+COMMENT=	SimPack & Sim++ libraries and tools for simulatiom modelling
 
 BUILD_DEPENDS=	imake:${PORTSDIR}/devel/imake-4
 

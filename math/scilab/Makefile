@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://ftp.inria.fr/INRIA/Projects/Meta2/Scilab/distributions/
 EXTRACT_SUFX=	.src.tar.gz
 
 MAINTAINER=	js@jeannot.org
+COMMENT=	A free Matlab clone by INRIA & ENPC
 
 LIB_DEPENDS=	Xaw3d.${XAWVER}:${PORTSDIR}/x11-toolkits/Xaw3d
 BUILD_DEPENDS=	pvm:${PORTSDIR}/net/pvm \

@@ -14,6 +14,7 @@ DISTNAME=	Eval${PORTVERSION}
 EXTRACT_SUFX=	.lha
 
 MAINTAINER=	eserte@cs.tu-berlin.de
+COMMENT=	A full featured floating point expression evaluator
 
 BUILD_DEPENDS=	lha:${PORTSDIR}/archivers/lha
 

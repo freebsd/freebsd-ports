@@ -13,6 +13,7 @@ MASTER_SITES=	http://www.shrubbery.org.za/peq/
 # Please look at the WWW site in pkg-descr for more information - edwin 20021227
 
 MAINTAINER=	gordon@shrubbery.org.za
+COMMENT=	Fortune like program
 
 USE_QT_VER=	1
 

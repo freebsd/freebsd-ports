@@ -17,6 +17,7 @@ MASTER_SITES=	ftp://ftp.horde.org/pub/imp/				\
 		ftp://ftp.pt.horde.org/pub/horde-ftp/imp/
 
 MAINTAINER=	thierry@pompo.net
+COMMENT=	A webmail system which accesses mail over IMAP
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 

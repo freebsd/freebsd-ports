@@ -14,6 +14,7 @@ DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	kaz@kobe1995.net
+COMMENT=	Verify mail address
 
 WRKSRC=		${WRKDIR}
 MAN1=		vrfy.1

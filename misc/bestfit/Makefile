@@ -11,6 +11,7 @@ CATEGORIES=	misc
 MASTER_SITES=	http://www.student.lu.se/~nbi98oli/src/
 
 MAINTAINER=	enderle@mdn.de
+COMMENT=	Optimally choose files to be put on a CD (or other media)
 
 MAN1=		bestfit.1
 MANCOMPRESSED=	no

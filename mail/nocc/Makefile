@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	sysadmin@alexdupre.com
+COMMENT=	A web-based e-mail system which access POP3 and IMAP mail servers
 
 RUN_DEPENDS=	${LOCALBASE}/bin/php-config:${PORTSDIR}/www/mod_php4
 

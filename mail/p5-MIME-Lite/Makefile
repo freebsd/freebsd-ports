@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	MIME
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	veers@disturbed.net
+COMMENT=	A simple interface for creating (not parsing!) MIME messages
 
 PERL_CONFIGURE=	YES
 

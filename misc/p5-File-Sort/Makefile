@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	File
 PKGNAMEPREFIX=		p5-
 
 MAINTAINER=		svenasse@polaris.ca
+COMMENT=	Sort a file or merge sort multiple files
 
 PERL_CONFIGURE=		yes
 

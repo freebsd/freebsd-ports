@@ -10,6 +10,7 @@ CATEGORIES=	misc
 MASTER_SITES=	http://jl.photodex.com/dog/
 
 MAINTAINER=	rooneg@electricjellyfish.net
+COMMENT=	Dog writes the contents of each given file, URL, or stdin
 
 USE_GMAKE=	yes
 ALL_TARGET=	dog

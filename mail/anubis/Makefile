@@ -24,6 +24,7 @@ MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	sergei@kolobov.com
+COMMENT=	Outgoing SMTP mail processor
 
 LIB_DEPENDS=	gnugetopt:${PORTSDIR}/devel/libgnugetopt
 

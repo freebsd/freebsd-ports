@@ -14,6 +14,7 @@ MASTER_SITES=	ftp://ftp.xmms.org/xmms/1.2.x/ \
 		ftp://ftp.sunet.se/pub/multimedia/xmms/1.2.x/
 
 MAINTAINER?=	esk@ira.uka.de
+COMMENT?=	X Multimedia System --- An audio player with a Winamp GUI
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes

@@ -23,6 +23,7 @@ PKGNAMESUFFIX=	-${PAPERSIZE}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	maurice@serc.rmit.edu.au
+COMMENT=	A language for statistical computing and graphics
 
 LIB_DEPENDS=	tcl84:${PORTSDIR}/lang/tcl84 \
 		tk84:${PORTSDIR}/x11-toolkits/tk84

@@ -13,6 +13,7 @@ MASTER_SITES=	http://gkrellm.luon.net/files/
 DISTNAME=	gkrellm-mailwatch-${PORTVERSION}
 
 MAINTAINER=	jylefort@brutele.be
+COMMENT=	GKrellM mailwatch plugin
 
 BUILD_DEPENDS=	${X11BASE}/include/gkrellm2/gkrellm.h:${PORTSDIR}/sysutils/gkrellm2
 RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm2

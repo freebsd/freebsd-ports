@@ -12,6 +12,7 @@ MASTER_SITE_SUBDIR=	MIME
 PKGNAMEPREFIX=		p5-
 
 MAINTAINER=		killer@prosalg.no
+COMMENT=	MIME-Types is a Perl extension for determining MIME types
 
 NO_WRKSUBDIR=		YES
 PERL_CONFIGURE=		YES

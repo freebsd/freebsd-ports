@@ -12,6 +12,7 @@ MASTER_SITES=	http://savannah.nongnu.org/download/${PORTNAME}/${PORTNAME}.pkg/${
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.p/-pre/}
 
 MAINTAINER=	e0026813@stud3.tuwien.ac.at
+COMMENT=	A slideshow presentation tool to write slides in Python or XML
 
 LIB_DEPENDS=	SDL_ttf.3:${PORTSDIR}/graphics/sdl_ttf \
 		SDL_image.10:${PORTSDIR}/graphics/sdl_image \

@@ -11,6 +11,7 @@ CATEGORIES=	mail
 MASTER_SITES=	http://savannah.nongnu.org/download/spamass-milt/
 
 MAINTAINER=	ab@astralblue.net
+COMMENT=	Sendmail Milter (mail filter) for SpamAssassin
 
 BUILD_DEPENDS=	spamc:${PORTSDIR}/mail/p5-Mail-SpamAssassin \
 		autoconf:${PORTSDIR}/devel/autoconf

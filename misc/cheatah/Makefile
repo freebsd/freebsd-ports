@@ -13,6 +13,7 @@ CATEGORIES=	misc
 DISTFILES=
 
 MAINTAINER=	wvengen@stack.nl
+COMMENT=	Temporary gtk GUI to the SWORD project
 
 BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/misc/sword:extract
 LIB_DEPENDS=	sword.1:${PORTSDIR}/misc/sword

@@ -12,6 +12,7 @@ CATEGORIES=	misc
 MASTER_SITES=	http://www.dwheeler.com/sloccount/
 
 MAINTAINER=	freaky@aagh.net
+COMMENT=	Counts physical Source Lines of Code (SLOC)
 
 USE_PERL5=	yes
 

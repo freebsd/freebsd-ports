@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://ftp.fftw.org/pub/fftw/ \
 		ftp://pm.cse.rmit.edu.au/pub/dsp/fftw/
 
 MAINTAINER=	Lars.Koeller@Uni-Bielefeld.DE
+COMMENT=	Fast C routines to compute the Discrete Fourier Transform
 
 .include <bsd.port.pre.mk>
 

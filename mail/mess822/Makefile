@@ -14,6 +14,7 @@ MASTER_SITES=	http://cr.yp.to/software/ \
 		ftp://mirror.pipex.net/pub/unix/mail/qmail/
 
 MAINTAINER=	drs@rucus.ru.ac.za
+COMMENT=	RFC 822 mail message parsing library and rewriting utilities
 
 RUN_DEPENDS=	${QMAIL_DIR}/bin/qmail-send:${PORTSDIR}/mail/qmail
 

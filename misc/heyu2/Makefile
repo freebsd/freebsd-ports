@@ -13,6 +13,7 @@ DISTNAME=	x10_heyu
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	plambert@plambert.net
+COMMENT=	Control a CM11A interface from the command line
 
 IS_INTERACTIVE=	yes
 ALL_TARGET=	heyu

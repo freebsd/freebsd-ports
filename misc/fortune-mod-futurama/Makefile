@@ -11,6 +11,7 @@ CATEGORIES=	misc
 MASTER_SITES=	http://www.netmeister.org/apps/
 
 MAINTAINER=	stolz@i2.informatik.rwth-aachen.de
+COMMENT=	Compilation of quotes from the TV series "Futurama"
 
 NO_BUILD=	yes
 

@@ -14,6 +14,7 @@ MASTER_SITES=	http://solidpop3d.pld.org.pl/ \
 DISTNAME=	solid-pop3d-${PORTVERSION}
 
 MAINTAINER=	drkangel@drkangel.org
+COMMENT=	SolidPop3 POP3 daemon (fully RFC1939 compliant)
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-pam --enable-apop --enable-bulletins \

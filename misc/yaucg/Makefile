@@ -11,6 +11,7 @@ CATEGORIES=	misc
 MASTER_SITES=	http://home.balcab.ch/joelle.wiesmann/secuserv/
 
 MAINTAINER=	gslin@ccca.nctu.edu.tw
+COMMENT=	A bash Script which will get you the today's Userfriendly.org Picture
 
 RUN_DEPENDS=	wget:${PORTSDIR}/ftp/wget \
 		bash:${PORTSDIR}/shells/bash2

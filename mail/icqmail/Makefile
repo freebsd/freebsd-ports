@@ -13,6 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	never@nevermind.kiev.ua
+COMMENT=	A simple ICQ->Email gateway
 
 IGNORE=		"Does not work with newer version of protocol"
 

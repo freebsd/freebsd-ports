@@ -12,6 +12,7 @@ CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.funet.fi/pub/unix/mail/zmailer/src/
 
 MAINTAINER=	veers@disturbed.net
+COMMENT=	A fully functional fast, robust SMTP server and transport agent
 
 GNU_CONFIGURE=	yes
 
