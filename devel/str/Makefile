@@ -6,16 +6,15 @@
 #
 
 PORTNAME=	str
-PORTVERSION=	0.9.8
+PORTVERSION=	0.9.9
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.ossp.org/pkg/lib/str/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generic String Library
 
-HAS_CONFIGURE=	yes
+USE_LIBTOOL_VER=	15
 INSTALLS_SHLIB=	yes
-CONFIGURE_ARGS=	--prefix=${PREFIX}
 
 MAN1=		str-config.1
 MAN3=		str.3
