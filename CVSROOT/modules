@@ -5229,6 +5229,7 @@ nrpe		ports/net/nrpe
 nrpep		ports/net/nrpep
 ns		ports/net/ns
 nsc		ports/net/nsc
+nsc2ke		ports/math/nsc2ke
 nsca		ports/net/nsca
 nscache		ports/www/nscache
 nsd		ports/dns/nsd
