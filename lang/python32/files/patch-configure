@@ -1,0 +1,10 @@
+--- configure.orig	Sun Jan 20 15:31:22 2002
++++ configure	Sun Jan 20 15:56:58 2002
+@@ -6980,6 +6980,7 @@
+ #line 6981 "configure"
+ #include "confdefs.h"
+ #include <stdio.h>
++#include <wchar.h>
+ main()
+ {
+   FILE *f=fopen("conftestval", "w");
