@@ -1,0 +1,43 @@
+Index: server/src/TreeComp.m3
+===================================================================
+RCS file: /home/cvsupcvs/cvsup/server/src/TreeComp.m3,v
+retrieving revision 1.76
+diff -u -r1.76 TreeComp.m3
+--- server/src/TreeComp.m3	4 Mar 2003 19:26:17 -0000	1.76
++++ server/src/TreeComp.m3	25 Mar 2005 19:34:43 -0000
+@@ -662,21 +662,20 @@
+ 		type := FileInfo.Type.Live);
+ 	    END;
+ 	| CVTree.FileType.AtticFile =>
+-	    WITH atticPath = SupMisc.AtticName(path) DO
+-	      IF attr.fileType = FileAttr.FileType.File
+-	      AND SupMisc.IsRCS(path) THEN
+-		IF m.sfr.fileFilter.test(atticPath) THEN
+-		  RETURN NEW(FileInfo.T,
+-		    name := path,
+-		    attr := attr,
+-		    type := FileInfo.Type.Dead);
+-		END;
+-	      ELSE  (* Non-RCS file in the Attic?! *)
+-		WITH fullPath = SupMisc.CatPath(m.sfr.serverPrefix, atticPath)
+-		DO
+-		  Warning(m.treeComp,
+-		    "Non-RCS file \"" & fullPath & "\" in Attic");
+-		END;
++	    IF attr.fileType = FileAttr.FileType.File
++	    AND SupMisc.IsRCS(path) THEN
++	      IF m.sfr.fileFilter.test(path) THEN
++		RETURN NEW(FileInfo.T,
++		  name := path,
++		  attr := attr,
++		  type := FileInfo.Type.Dead);
++	      END;
++	    ELSE  (* Non-RCS file in the Attic?! *)
++	      WITH fullPath = SupMisc.CatPath(m.sfr.serverPrefix,
++		SupMisc.AtticName(path))
++	      DO
++		Warning(m.treeComp,
++		  "Non-RCS file \"" & fullPath & "\" in Attic");
+ 	      END;
+ 	    END;
+ 	| CVTree.FileType.DirUp =>
