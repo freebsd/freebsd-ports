@@ -8400,6 +8400,7 @@ unison		ports/net/unison
 units		src/usr.bin/units
 unix-connect	ports/german/unix-connect
 unix2dos	ports/converters/unix2dos
+unix2tcp	ports/net/unix2tcp
 unixODBC	ports/databases/unixODBC
 unixstat	ports/math/unixstat
 unlzx		ports/archivers/unlzx
