@@ -15,6 +15,8 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
 MAINTAINER=	arved@FreeBSD.org
 COMMENT=	"General purpose crypto library based on code used in GnuPG"
 
+LIB_DEPENDS=	gpg-error.1:${PORTSDIR}/security/libgpg-error
+
 USE_REINPLACE=	yes
 USE_PERL5=	yes
 USE_LIBTOOL_VER=13
