@@ -1,0 +1,71 @@
+--- Makefile.in.orig	Fri Feb 25 18:43:09 2005
++++ Makefile.in	Fri Feb 25 18:43:21 2005
+@@ -26,7 +26,7 @@
+ %.lo: %.c
+ 	${LIBTOOL} --mode=compile ${CC} -c -o $@ $^ ${CFLAGS}
+ 
+-src/libchm.la: src/chm_lib.lo src/lzx.lo
++src/libchm.la: src/chm_lib.lo src/lzx.lo src/az_chmlib_add.lo
+ 	${LIBTOOL} --mode=link ${CC} -o $@ $^ ${LDFLAGS} -rpath ${INSTALLPREFIX}/lib
+ 
+ install: src/libchm.la
+ 
+
+patch-az_chmlib_add.c
+--- /dev/null	Fri Feb 25 18:33:00 2005
++++ src/az_chmlib_add.c	Fri Feb 25 18:29:45 2005
+@@ -0,0 +1,54 @@
++#include <string.h>
++#include "chm_lib.h"
++
++/*
++ * callback function for enumerate API
++ */
++int _get_name(struct chmFile *h,
++              chmUnitInfo *ui,
++              void *context)
++{
++    int i;
++    
++    
++    chm_dir *dirp = (chm_dir *)context;
++
++    dirp->info=realloc(dirp->info,(dirp->nentries+1)*sizeof (char*));
++    
++    dirp->info[dirp->nentries] = malloc(sizeof(ui->path));
++    strcpy(dirp->info[dirp->nentries], ui->path);
++
++    dirp->nentries++;
++    return CHM_ENUMERATOR_CONTINUE;
++}
++
++chm_dir get_names(struct chmFile *h)
++//note: you should free() dir.info and all dir.info[i] in caller
++{
++    chm_dir dir;
++    
++    dir.nentries=0;
++    dir.info = NULL;
++    
++    if (! chm_enumerate(h,
++                        CHM_ENUMERATE_ALL,
++                        _get_name,
++                        (void *)&dir))
++	printf("   *** ERROR ***\n");
++
++    return dir;
++}
++
++
++int main()
++{
++    int i;
++    
++    struct chmFile *h = chm_open("/home/az/new/txt/chm/reg.chm");
++    chm_dir dir=get_names(h);
++    for(i=0;i<dir.nentries;i++)
++	printf("%d: %s\n",i,dir.info[i]);
++    
++    return 0;
++}
++
