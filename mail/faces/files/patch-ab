@@ -1,0 +1,415 @@
+diff -c -N ../faces/compface/Makefile ./compface/Makefile
+*** ../faces/compface/Makefile	Thu Oct 24 03:28:06 1991
+--- ./compface/Makefile	Tue Dec 10 20:23:40 1996
+***************
+*** 24,80 ****
+  
+  BINDIR		= /usr/local/bin
+  LIBDIR		= /usr/local/lib
+! MANDIR		= /usr/manl
+  
+  NAME		= compface
+  UNNAME		= uncompface
+  EXECUTABLE	= $(BINDIR)/$(NAME)
+  UNEXECUTABLE	= $(BINDIR)/$(UNNAME)
+  LIBNAME		= lib$(NAME).a
+! LIBRARY		= $(LIBDIR)/$(LIBNAME)
+  MAN1DIR		= $(MANDIR)/man1
+  MAN3DIR		= $(MANDIR)/man3
+  OBJECTS		= arith.o file.o compress.o gen.o uncompface.o
+  SOURCES		= compface.c uncompface.o arith.c file.c compress.c gen.c \
+  		  cmain.c uncmain.c
+  HDRS		= compface.h data.h
+  OTHERS		= README $(NAME).1 $(NAME).3 Makefile
+  
+! CC		= cc
+  CDEFS		= $(SYSV)
+! CCOMP		= -g
+  CFLAGS		= $(CDEFS) $(CCOMP)
+  
+! all:		$(NAME) $(UNNAME)
+  
+! $(NAME) :	cmain.o compface.o $(LIBNAME)
+! 		$(CC) $(CFLAGS) -o $(NAME) cmain.o compface.o $(LIBNAME)
+  
+  $(UNNAME) :	uncmain.o $(LIBNAME)
+! 		$(CC) $(CFLAGS) -o $(UNNAME) uncmain.o $(LIBNAME)
+! 
+! $(LIBNAME) :	$(OBJECTS)
+! 		ar rc $(LIBNAME) $(OBJECTS)
+! 		-ranlib $(LIBNAME)
+  
+  lint :
+  		lint -abchx $(SOURCES)
+  
+  clean :
+! 		rm -f *.o *.a *.sh core a.out $(NAME) $(UNNAME)
+  
+  install :	$(NAME) $(UNNAME) $(LIBNAME)
+! 		-cp $(NAME) $(EXECUTABLE)
+! 		strip $(EXECUTABLE)
+! 		-cp $(UNNAME) $(UNEXECUTABLE)
+! 		strip $(UNEXECUTABLE)
+! 		-cp $(NAME).1 $(MAN1DIR)
+! 		rm -f $(MAN1DIR)/$(UNNAME).1
+! 		-ln $(MAN1DIR)/$(NAME).1 $(MAN1DIR)/$(UNNAME).1
+! 		-cp $(LIBNAME) $(LIBRARY)
+! 		-cp $(NAME).3 $(MAN3DIR)
+! 		rm -f $(MAN3DIR)/$(UNNAME).3
+! 		-ln $(MAN3DIR)/$(NAME).3 $(MAN3DIR)/$(UNNAME).3
+  
+  shar :
+  		shar.script $(OTHERS) $(HDRS) $(SOURCES) > $(NAME).sh
+--- 24,82 ----
+  
+  BINDIR		= /usr/local/bin
+  LIBDIR		= /usr/local/lib
+! MANDIR		= /usr/local/man
+  
+  NAME		= compface
+  UNNAME		= uncompface
+  EXECUTABLE	= $(BINDIR)/$(NAME)
+  UNEXECUTABLE	= $(BINDIR)/$(UNNAME)
+  LIBNAME		= lib$(NAME).a
+! SHLIB_MAJOR	= 1
+! SHLIB_MINOR	= 6
+! LIB		= $(NAME)
+! NOPROFILE	= ''
+! LIBRARY		= $(LIBDIR)
+  MAN1DIR		= $(MANDIR)/man1
+  MAN3DIR		= $(MANDIR)/man3
+  OBJECTS		= arith.o file.o compress.o gen.o uncompface.o
+  SOURCES		= compface.c uncompface.o arith.c file.c compress.c gen.c \
+  		  cmain.c uncmain.c
++ SRCS		= arith.c file.c compress.c gen.c uncompface.c
+  HDRS		= compface.h data.h
+  OTHERS		= README $(NAME).1 $(NAME).3 Makefile
+  
+! CC		= cc
+  CDEFS		= $(SYSV)
+! CCOMP		= -pipe -O2
+  CFLAGS		= $(CDEFS) $(CCOMP)
+  
+! all:		lib$(NAME).a lib$(NAME).so.$(SHLIB_MAJOR).$(SHLIB_MINOR) $(NAME) $(UNNAME) 
+  
+! $(NAME) :	cmain.o compface.o
+! 		$(CC) $(CFLAGS) -o $(NAME) cmain.o compface.o -L./ -lcompface
+  
+  $(UNNAME) :	uncmain.o $(LIBNAME)
+! 		$(CC) $(CFLAGS) -o $(UNNAME) uncmain.o -L./ -lcompface
+  
+  lint :
+  		lint -abchx $(SOURCES)
+  
+  clean :
+! 		rm -f *.o *po *so *.a *.so.* *.sh core a.out $(NAME) $(UNNAME)
+  
+  install :	$(NAME) $(UNNAME) $(LIBNAME)
+! 		install -c -s -o bin -m 755 $(NAME) $(EXECUTABLE)
+! 		install -c -s -o bin -m 755 $(UNNAME) $(UNEXECUTABLE)
+! 		install -c -g bin -o bin -m 444 $(NAME).1 $(MAN1DIR)
+! 		-gzip -f $(MAN1DIR)/$(NAME).1
+! 		-rm -f $(MAN1DIR)/$(UNNAME).1*
+! 		-ln $(MAN1DIR)/$(NAME).1.gz $(MAN1DIR)/$(UNNAME).1.gz
+! 		install -c -o bin -m 444 $(LIBNAME) $(LIBRARY)
+! 		install -c -o bin -m 444 lib$(NAME).so.$(SHLIB_MAJOR).$(SHLIB_MINOR) $(LIBRARY)
+! 		install -c -g bin -o bin -m 444 $(NAME).3 $(MAN3DIR)
+! 		-gzip -f $(MAN3DIR)/$(NAME).3
+! 		rm -f $(MAN3DIR)/$(UNNAME).3*
+! 		-ln $(MAN3DIR)/$(NAME).3.gz $(MAN3DIR)/$(UNNAME).3.gz
+  
+  shar :
+  		shar.script $(OTHERS) $(HDRS) $(SOURCES) > $(NAME).sh
+***************
+*** 88,90 ****
+--- 90,94 ----
+  gen.o:		gen.c compface.h data.h
+  uncmain.o:	uncmain.c compface.h data.h
+  uncompface.o:	uncompface.c compface.h data.h
++ 
++ .include <bsd.lib.mk>
+\ No newline at end of file
+diff -c -N ../faces/compface/Makefile.old ./compface/Makefile.old
+*** ../faces/compface/Makefile.old	Thu Jan  1 01:00:00 1970
+--- ./compface/Makefile.old	Tue Dec 10 16:20:24 1996
+***************
+*** 0 ****
+--- 1,95 ----
++ #
++ #  Compface - 48x48x1 image compression and decompression
++ #
++ #  Copyright (c) James Ashton - Sydney University - June 1990.
++ #
++ #  Written 11th November 1989.
++ #
++ #  Permission is given to distribute these sources, as long as the
++ #  copyright messages are not removed, and no monies are exchanged. 
++ #
++ #  No responsibility is taken for any errors on inaccuracies inherent
++ #  either to the comments or the code of this program, but if reported
++ #  to me, then an attempt will be made to fix them.
++ 
++ # SYSV is expected to be overridden by the calling Makefile.
++ #--------------------------------------------------------------------------
++ #  If you are running on a Unix System V machine, then you should uncomment
++ #  the next definition.
++ #
++ #SYSV           = -DSYSV32
++ #--------------------------------------------------------------------------
++ # BINDIR, LIBDIR, and MANDIR are expected to be overridden by the
++ # calling Makefile
++ 
++ BINDIR		= /usr/local/bin
++ LIBDIR		= /usr/local/lib
++ MANDIR		= /usr/manl
++ 
++ NAME		= compface
++ UNNAME		= uncompface
++ EXECUTABLE	= $(BINDIR)/$(NAME)
++ UNEXECUTABLE	= $(BINDIR)/$(UNNAME)
++ LIBNAME		= lib$(NAME).a
++ LIBRARY		= $(LIBDIR)
++ MAN1DIR		= $(MANDIR)/man1
++ MAN3DIR		= $(MANDIR)/man3
++ OBJECTS		= arith.o file.o compress.o gen.o uncompface.o
++ SOURCES		= compface.c uncompface.o arith.c file.c compress.c gen.c \
++ 		  cmain.c uncmain.c
++ HDRS		= compface.h data.h
++ OTHERS		= README $(NAME).1 $(NAME).3 Makefile
++ 
++ CC		= cc
++ CDEFS		= $(SYSV)
++ CCOMP		= -pipe -O2
++ CFLAGS		= $(CDEFS) $(CCOMP) -L/usr/local/lib
++ 
++ all:		$(NAME) $(UNNAME) lib$(NAME).so.1.6
++ 
++ $(NAME) :	cmain.o compface.o
++ 		$(CC) $(CFLAGS) -o $(NAME) cmain.o compface.o -lcompface
++ 
++ $(UNNAME) :	uncmain.o $(LIBNAME)
++ 		$(CC) $(CFLAGS) -o $(UNNAME) uncmain.o -lcompface
++ 
++ $(LIBNAME) :	$(OBJECTS)
++ 		ar rc $(LIBNAME) $(OBJECTS)
++ 		-ranlib $(LIBNAME)
++ 		-rm -f $(OBJECTS)
++ 		make lib$(NAME).so.1.6 CCOMP='-pipe -O2 -fpic'
++ 
++ lib$(NAME).so.1.6: $(OBJECTS)
++ 		ld -Bshareable -o $@ $(OBJECTS)
++ 		-rm -f $(OBJECTS)
++ 
++ lint :
++ 		lint -abchx $(SOURCES)
++ 
++ clean :
++ 		rm -f *.o *.a *.so.* *.sh core a.out $(NAME) $(UNNAME)
++ 
++ install :	$(NAME) $(UNNAME) $(LIBNAME)
++ 		install -c -s -o bin -m 755 $(NAME) $(EXECUTABLE)
++ 		install -c -s -o bin -m 755 $(UNNAME) $(UNEXECUTABLE)
++ 		install -c -g man -o man -m 444 $(NAME).1 $(MAN1DIR)
++ 		-rm -f $(MAN1DIR)/$(UNNAME).1
++ 		-ln $(MAN1DIR)/$(NAME).1 $(MAN1DIR)/$(UNNAME).1
++ 		install -c -o bin -m 444 $(LIBNAME) $(LIBRARY)
++ 		install -c -o bin -m 444 lib$(NAME).so.1.6 $(LIBRARY)
++ 		install -c -g man -o man -m 444 $(NAME).3 $(MAN3DIR)
++ 		rm -f $(MAN3DIR)/$(UNNAME).3
++ 		-ln $(MAN3DIR)/$(NAME).3 $(MAN3DIR)/$(UNNAME).3
++ 
++ shar :
++ 		shar.script $(OTHERS) $(HDRS) $(SOURCES) > $(NAME).sh
++ 		compress $(NAME).sh
++ 
++ arith.o:	arith.c compface.h data.h
++ cmain.o:	cmain.c compface.h data.h
++ compface.o:	compface.c compface.h data.h
++ compress.o:	compress.c compface.h data.h
++ file.o:		file.c compface.h data.h
++ gen.o:		gen.c compface.h data.h
++ uncmain.o:	uncmain.c compface.h data.h
++ uncompface.o:	uncompface.c compface.h data.h
+diff -c -N ../faces/compface/compface.1 ./compface/compface.1
+*** ../faces/compface/compface.1	Fri Mar 15 06:10:29 1991
+--- ./compface/compface.1	Tue Dec 10 17:28:10 1996
+***************
+*** 12,17 ****
+--- 12,19 ----
+  .LP
+  .B uncompface
+  [
++ .B \-X
++ ] [
+  .I infile
+  [
+  .I outfile
+***************
+*** 25,31 ****
+  face image files.
+  .I uncompface
+  is an inverse filter which performs an inverse transformation with no
+! loss of data.
+  The algorithm used is highly tuned for its purpose and achieves better
+  than a five to one compression ratio on average.
+  Arguments operate identically for both programmes.
+--- 27,33 ----
+  face image files.
+  .I uncompface
+  is an inverse filter which performs an inverse transformation with no
+! loss of data. 
+  The algorithm used is highly tuned for its purpose and achieves better
+  than a five to one compression ratio on average.
+  Arguments operate identically for both programmes.
+***************
+*** 56,61 ****
+--- 58,69 ----
+  .I compface
+  averages less than 200 characters.
+  The average number of output lines is three.
++ .SH OPTIONS
++ .TP 12
++ .B \-X
++ The same as
++ .I uncompface
++ | ikon2xbm. Usefull for exmh!
+  .SH DIAGNOSTICS
+  Exit status is normally 0.
+  Possible errors include IO errors when opening, reading or writing
+diff -c -N ../faces/compface/file.c ./compface/file.c
+*** ../faces/compface/file.c	Wed Jun 19 08:29:13 1991
+--- ./compface/file.c	Wed Dec 11 09:25:17 1996
+***************
+*** 15,20 ****
+--- 15,22 ----
+  
+  #include "compface.h"
+  
++ int xbitmap=0;
++ 
+  void
+  BigRead(fbuf)
+  register char *fbuf;
+***************
+*** 127,136 ****
+--- 129,147 ----
+  {
+  	register char *s, *t;
+  	register int i, bits, digits, words;
++ 	extern int xbitmap;
++ 	int digsperword = DIGSPERWORD;
++ 	int wordsperline = WORDSPERLINE;
+  
+  	s = F;
+  	t = fbuf;
+  	bits = digits = words = i = 0;
++ 	if (xbitmap) {
++ 		sprintf(t,"#define noname_width 48\n#define noname_height 48\nstatic char noname_bits[] = {\n ");
++ 		while (*t) t++;
++ 		digsperword = 2;
++ 		wordsperline = 15;
++ 	}
+  	while (s < F + PIXELS)
+  	{
+  		if ((bits == 0) && (digits == 0))
+***************
+*** 138,162 ****
+  			*(t++) = '0';
+  			*(t++) = 'x';
+  		}
+! 		if (*(s++))
+! 			i = i * 2 + 1;
+! 		else
+! 			i *= 2;
+  		if (++bits == BITSPERDIG)
+  		{
+! 			*(t++) = *(i + HexDigits);
+  			bits = i = 0;
+! 			if (++digits == DIGSPERWORD)
+  			{
+  				*(t++) = ',';
+  				digits = 0;
+! 				if (++words == WORDSPERLINE)
+  				{
+  					*(t++) = '\n';
+  					words = 0;
+  				}
+  			}
+  		}
+  	}
+  	*(t++) = '\0';
+  }
+--- 149,191 ----
+  			*(t++) = '0';
+  			*(t++) = 'x';
+  		}
+! 		if (xbitmap) {
+! 			if (*(s++))
+! 				i = (i >> 1) | 0x8;
+! 			else
+! 				i >>= 1;
+! 		}
+! 		else {
+! 			if (*(s++))
+! 				i = i * 2 + 1;
+! 			else
+! 				i *= 2;
+! 		}
+  		if (++bits == BITSPERDIG)
+  		{
+! 			if (xbitmap) {
+! 				t++;
+! 				t[-(digits & 1) * 2] = *(i + HexDigits);
+! 			}
+! 			else *(t++) = *(i + HexDigits);
+  			bits = i = 0;
+! 			if (++digits == digsperword)
+  			{
++ 				if (xbitmap && (s >= F + PIXELS)) break;
+  				*(t++) = ',';
+  				digits = 0;
+! 				if (++words == wordsperline)
+  				{
+  					*(t++) = '\n';
++ 					if (xbitmap) *(t++) = ' ';
+  					words = 0;
+  				}
+  			}
+  		}
++ 	}
++ 	if (xbitmap) {
++ 		sprintf(t, "}\n");
++ 		while (*t) t++;
+  	}
+  	*(t++) = '\0';
+  }
+diff -c -N ../faces/compface/uncmain.c ./compface/uncmain.c
+*** ../faces/compface/uncmain.c	Thu Oct 24 03:28:07 1991
+--- ./compface/uncmain.c	Wed Dec 11 09:27:47 1996
+***************
+*** 18,23 ****
+--- 18,25 ----
+  #include <fcntl.h>
+  #include "compface.h"
+  
++ extern int xbitmap;
++ 
+  /* the buffer is longer than needed to handle sparse input formats */
+  #define FACEBUFLEN 2048
+  char fbuf[FACEBUFLEN];
+***************
+*** 59,64 ****
+--- 61,73 ----
+    while (**argv)
+      if (*((*argv)++) == '/')
+        cmdname = *argv;               /* find the command's basename */
++ 
++   if (argc > 1 && !strcmp(argv[1], "-X"))
++     {
++       xbitmap++;
++       argc--;
++       argv++;
++     }
+  
+    if (argc > 3)
+      {
