@@ -11,6 +11,7 @@
     SUBDIR += a2dev
     SUBDIR += acpicatools
     SUBDIR += adabroker
+    SUBDIR += agenda-headers
     SUBDIR += ald
     SUBDIR += allegro
     SUBDIR += amulet
