@@ -23,7 +23,7 @@
   
   # Makefile.0 - mark, don't (re)move this, a sed script needs it
   
-+ .if defined(PACKAGE_BUILDING)
++ .if defined(BATCH)
 + LOCKINGTEST=/tmp .
 + .else
   LOCKINGTEST=__defaults__
