@@ -1,5 +1,5 @@
---- man/man8/atalkd.8.orig	Mon Sep  7 23:25:57 1998
-+++ man/man8/atalkd.8	Mon Sep  7 23:26:21 1998
+--- man/man8/atalkd.8.orig	Thu Feb  4 08:28:28 1999
++++ man/man8/atalkd.8	Mon Mar 22 22:48:22 1999
 @@ -19,7 +19,7 @@
  .BR ping (8)).
  .B atalkd
@@ -9,3 +9,10 @@
  It first reads from its configuration file,
  .BR :ETCDIR:/atalkd.conf .
  If there is no configuration file,
+@@ -121,3 +121,6 @@
+ configuration file
+ .SH BUGS
+ On some systems, atalkd can not be restarted.
++This is not an issue with FreeBSD.
++.SH SEE ALSO
++atalk(4).

@@ -1,0 +1,25 @@
+--- man/man4/atalk.4.orig	Tue May 20 19:35:43 1997
++++ man/man4/atalk.4	Mon Mar 22 22:53:41 1999
+@@ -1,10 +1,12 @@
+-.TH ATALK 4F "17 Dec 1991" "netatalk 1.2"
++.TH ATALK 4 "17 Dec 1991" "netatalk 1.2"
+ .SH NAME
+ atalk \- AppleTalk protocol family
+ .SH SYNOPSIS
+ .B #include <sys/types.h>
+ .br
+ .B #include <netatalk/at.h>
++.LP
++.B options NETATALK
+ .SH DESCRIPTION
+ The AppleTalk protocol family is a collection of protocols layered
+ above the Datagram Delivery Protocol (DDP), and using AppleTalk address
+@@ -12,6 +14,8 @@
+ (DDP), SOCK_RDM (ATP), and SOCK_SEQPACKET (ASP). Currently, only DDP is
+ implemented in the kernel; ATP and ASP are implemented in user level
+ libraries; and ADSP is planned.
++.LP
++To be available, AppleTalk support must be compiled into the kernel.
+ .SH ADDRESSING
+ AppleTalk addresses are three byte quantities, stored in network
+ byte order. The include file
