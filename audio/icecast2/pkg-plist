@@ -1,28 +1,3 @@
-etc/icecast/conf/groups.aut.dist
-etc/icecast/conf/icecast.conf.dist
-etc/icecast/conf/mounts.aut.dist
-etc/icecast/conf/users.aut.dist
-etc/icecast/templates/306.html
-etc/icecast/templates/400.html
-etc/icecast/templates/403.html
-etc/icecast/templates/404.html
-etc/icecast/templates/504.html
-etc/icecast/templates/admin.html
-etc/icecast/templates/admin_change.html
-etc/icecast/templates/admin_describe.html
-etc/icecast/templates/alias_add.html
-etc/icecast/templates/alias_del.html
-etc/icecast/templates/bodytag.html
-etc/icecast/templates/footer.html
-etc/icecast/templates/header.html
-etc/icecast/templates/info.html
-etc/icecast/templates/list_directory.html
-etc/icecast/templates/manual.html
-etc/icecast/templates/mountlist.html
-etc/icecast/templates/statistics.html
-sbin/icecast
-share/doc/icecast/manual.html
-@dirrm etc/icecast/conf
-@dirrm etc/icecast/templates
-@dirrm etc/icecast
-@dirrm share/doc/icecast
+bin/icecast
+%%PORTDOCS%%share/doc/icecast2/icecast.xml
+%%PORTDOCS%%@dirrm share/doc/icecast2

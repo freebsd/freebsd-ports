@@ -5,40 +5,51 @@
 # $FreeBSD$
 #
 
-PORTNAME=	icecast
-PORTVERSION=	1.3.12
-PORTREVISION=	1
+PORTNAME=	icecast2
+PORTVERSION=	20021112
 CATEGORIES=	audio net
-MASTER_SITES=	http://www.icecast.org/releases/
+MASTER_SITES=	http://tigress.com/lofi/\
+		http://lofi.dyndns.org/
+DISTNAME=	icecast-devel-${PORTVERSION}
 
-MAINTAINER=	zach@pabst.bendnet.com
+MAINTAINER=	michaelnottebrock@gmx.net
 
-HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-libwrap
+LIB_DEPENDS=	ogg.4:${PORTSDIR}/audio/libogg \
+		shout.3:${PORTSDIR}/audio/libshout2 \
+		vorbis.2:${PORTSDIR}/audio/libvorbis
+
+AUTOMAKE_ARGS=	--add-missing
+AUTOMAKE_ENV=	CFLAGS="${PTHREAD_CFLAGS} -I${LOCALBASE}/include" \
+		LDFLAGS="${PTHREAD_LIBS} -L${LOCALBASE}/lib"
+CONFIGURE_ARGS=	--disable-oggtest --disable-vorbistest --disable-shouttest
+CONFIGURE_ENV=	CFLAGS="${PTHREAD_CFLAGS} -I${LOCALBASE}/include" \
+		LDFLAGS="${PTHREAD_LIBS} -L${LOCALBASE}/lib"
+USE_AUTOMAKE=	yes
+USE_GMAKE=	yes
+USE_LIBTOOL=	yes
 USE_REINPLACE=	yes
 
-pre-patch:
-	@${REINPLACE_CMD} -e 's|<history.h>|<readline/history.h>|' \
-		-e 's|<readline.h>|<readline/readline.h>|' \
-		${WRKSRC}/src/admin.c
-	@${REINPLACE_CMD} -e 's|#undef HAVE_HISTORY_H|#undef HAVE_READLINE_HISTORY_H|g' \
-		${WRKSRC}/config.h.in
+WRKSRC=		${WRKDIR}/icecast
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/src/icecast ${PREFIX}/sbin
-	${MKDIR} ${PREFIX}/etc/icecast/conf
-	${MKDIR} ${PREFIX}/etc/icecast/templates
-.for CONF in groups.aut.dist icecast.conf.dist mounts.aut.dist users.aut.dist
-	${INSTALL_DATA} ${WRKSRC}/conf/${CONF} ${PREFIX}/etc/icecast/conf
-.endfor
-.for TEMPL in 306.html 400.html 403.html 404.html 504.html bodytag.html info.html \
-	      list_directory.html mountlist.html statistics.html admin_describe.html \
-	      admin.html alias_add.html manual.html alias_del.html header.html \
-	      footer.html admin_change.html
-	${INSTALL_DATA} ${WRKSRC}/templates/${TEMPL} ${PREFIX}/etc/icecast/templates
-.endfor
-	${MKDIR} ${PREFIX}/share/doc/icecast/
-	${INSTALL_DATA} ${WRKSRC}/doc/manual.html ${PREFIX}/share/doc/icecast/
-	@${CAT} ${PKGMESSAGE} | ${SED} -e 's,%%PREFIX%%,${PREFIX},g'
+post-configure:
+	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|' ${WRKSRC}/src/Makefile
+	@${REINPLACE_CMD} -e 's|-O20|${CFLAGS}|' ${WRKSRC}/conf/Makefile \
+						${WRKSRC}/doc/Makefile \
+						${WRKSRC}/src/avl/Makefile \
+						${WRKSRC}/src/log/Makefile \
+						${WRKSRC}/src/net/Makefile \
+						${WRKSRC}/src/httpp/Makefile \
+						${WRKSRC}/src/thread/Makefile \
+						${WRKSRC}/src/timing/Makefile \
+						${WRKSRC}/src/Makefile \
+						${WRKSRC}/web/Makefile \
+						${WRKSRC}/win32/res/Makefile \
+						${WRKSRC}/win32/Makefile \
+						${WRKSRC}/Makefile
+post-install:
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/conf/icecast.xml ${DOCSDIR}
+.endif
 
 .include <bsd.port.mk>
