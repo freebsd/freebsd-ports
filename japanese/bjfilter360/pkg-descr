@@ -10,26 +10,27 @@ WWW: http://www.canon-sales.co.jp/drv-upd/linux/bjlinux100.html
      file:/usr/local/share/doc/bjfiltercom-1.1_1/html/FAQ.HTM
 
 And then this port has filters filter360 and filter360_gui which are
-useful to print out more than one page. If you use it, you add the
-next entry into /etc/printcap.
+useful to print out more than one page. If you use it and connect it
+via "ulpt", you add the next entry into /etc/printcap.
 
 bjfilter360|Canon BJ F360:\
-        :lp=/dev/lpt0:\
+        :lp=/dev/ulpt0:\
         :sh:\
         :if=/usr/local/libexec/bjfilter360/filter360:\
         :sd=/var/spool/lpd/bjfilter360:\
         :mx#0:\
         :lf=/var/log/lpd-errs
-bjfilter360_gui|Canon BJ F360 with GUI:\
-        :lp=/dev/lpt0:\
+bjfilter360_gui|Canon BJ F360 with GUI and Japanese messages:\
+        :lp=/dev/ulpt0:\
         :sh:\
         :if=/usr/local/libexec/ja-bjfilter360/filter360_gui:\
         :sd=/var/spool/lpd/bjfilter360_gui:\
         :mx#0:\
         :lf=/var/log/lpd-errs
 
-Notice: If you use filter360_gui then the host which you are using
-have to run X and be the printer saver (connected the printer Canon BJ).
+Notice: If you use filter360_gui in the printer server, for example
+hostA then you have to run X, execute "xhost hostA" and execute "lpr" on
+the host which you are using.
 
 *********************************************************************
 To run with Japanese messages, you should execute with "env LANG=ja_JP"
