@@ -8,12 +8,12 @@
 #
 
 PORTNAME=	kodos
-PORTVERSION=	2.4.2
+PORTVERSION=	2.4.5
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	dryice@liu.com.cn
 COMMENT=	The Python Regular Expression Debugger
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/qt.so:${PORTSDIR}/x11-toolkits/py-qt
