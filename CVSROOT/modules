@@ -1112,6 +1112,7 @@ cyrus-sasl2	ports/security/cyrus-sasl2
 cyrus-sasl2-saslauthd	ports/security/cyrus-sasl2-saslauthd
 da-aspell	ports/textproc/da-aspell
 da-ooodict-DK	ports/editors/ooodict-da_DK
+daaplib		ports/audio/daaplib
 dact		ports/archivers/dact
 dadadodo	ports/textproc/dadadodo
 daemontools	ports/sysutils/daemontools
