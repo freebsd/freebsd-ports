@@ -1,0 +1,138 @@
+--- libaf/af_format.c.orig	Sat Aug  7 20:30:05 2004
++++ libaf/af_format.c	Sat Aug  7 20:32:03 2004
+@@ -15,8 +15,13 @@
+ 
+ // Integer to float conversion through lrintf()
+ #ifdef HAVE_LRINTF
++#ifdef __FreeBSD__
++#include <math.h>
++#define lrintf(x) rintf(x)
++#else
+ #define __USE_ISOC99 1
+ #include <math.h>
++#endif
+ #else
+ #define lrintf(x) ((int)(x))
+ #endif
+--- libavcodec/faandct.c.orig	Sat Aug  7 20:45:54 2004
++++ libavcodec/faandct.c	Sat Aug  7 20:46:18 2004
+@@ -29,6 +29,21 @@
+ #include "dsputil.h"
+ #include "faandct.h"
+ 
++#include "config.h"
++
++// Integer to float conversion through lrintf()
++#ifdef HAVE_LRINTF
++#ifdef __FreeBSD__
++#include <math.h>
++#define lrintf(x) rintf(x)
++#else
++#define __USE_ISOC99 1
++#include <math.h>
++#endif
++#else
++#define lrintf(x) ((int)(x))
++#endif
++
+ #define FLOAT float
+ #ifdef FAAN_POSTSCALE
+ #    define SCALE(x) postscale[x]
+--- libavcodec/mpegaudiodec.c.orig	Sat Aug  7 20:43:50 2004
++++ libavcodec/mpegaudiodec.c	Sat Aug  7 20:44:23 2004
+@@ -27,6 +27,21 @@
+ #include "mpegaudio.h"
+ #include "dsputil.h"
+ 
++#include "config.h"
++
++// Integer to float conversion through lrintf()
++#ifdef HAVE_LRINTF
++#ifdef __FreeBSD__
++#include <math.h>
++#define lrintf(x) rintf(x)
++#else
++#define __USE_ISOC99 1
++#include <math.h>
++#endif
++#else
++#define lrintf(x) ((int)(x))
++#endif
++
+ /*
+  * TODO:
+  *  - in low precision mode, use more 16 bit multiplies in synth filter
+--- libavcodec/mpegvideo.c.orig	Sat Aug  7 20:41:35 2004
++++ libavcodec/mpegvideo.c	Sat Aug  7 20:42:36 2004
+@@ -38,6 +38,21 @@
+ //#undef NDEBUG
+ //#include <assert.h>
+ 
++#include "config.h"
++
++// Integer to float conversion through lrintf()
++#ifdef HAVE_LRINTF
++#ifdef __FreeBSD__
++#include <math.h>
++#define lrintf(x) rintf(x)
++#else
++#define __USE_ISOC99 1
++#include <math.h>
++#endif
++#else
++#define lrintf(x) ((int)(x))
++#endif
++
+ #ifdef CONFIG_ENCODERS
+ static void encode_picture(MpegEncContext *s, int picture_number);
+ #endif //CONFIG_ENCODERS
+--- libavcodec/wmadec.c.orig	Sat Aug  7 20:47:09 2004
++++ libavcodec/wmadec.c	Sat Aug  7 20:47:30 2004
+@@ -34,6 +34,21 @@
+ #include "avcodec.h"
+ #include "dsputil.h"
+ 
++#include "config.h"
++
++// Integer to float conversion through lrintf()
++#ifdef HAVE_LRINTF
++#ifdef __FreeBSD__
++#include <math.h>
++#define lrintf(x) rintf(x)
++#else
++#define __USE_ISOC99 1
++#include <math.h>
++#endif
++#else
++#define lrintf(x) ((int)(x))
++#endif
++
+ /* size of blocks */
+ #define BLOCK_MIN_BITS 7
+ #define BLOCK_MAX_BITS 11
+--- libmpcodecs/vf_qp.c.orig	Sat Aug  7 20:26:22 2004
++++ libmpcodecs/vf_qp.c	Sat Aug  7 20:33:45 2004
+@@ -19,10 +19,22 @@
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <string.h>
+-#include <math.h>
+ #include <inttypes.h>
+ 
+ #include "../config.h"
++
++// Integer to float conversion through lrintf()
++#ifdef HAVE_LRINTF
++#ifdef __FreeBSD__
++#include <math.h>
++#define lrintf(x) rintf(x)
++#else
++#define __USE_ISOC99 1
++#include <math.h>
++#endif
++#else
++#define lrintf(x) ((int)(x))
++#endif
+ 
+ #ifdef USE_LIBAVCODEC
+ 
