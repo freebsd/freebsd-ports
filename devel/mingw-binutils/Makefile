@@ -18,6 +18,8 @@ DIST_SUBDIR=	mingw
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	FSF binutils-2.11.90 for Windows cross-development
 
+CONFLICTS=	libbfd-[0-9]*
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-20011113
 
 USE_GETTEXT=	yes
@@ -43,15 +45,15 @@ MAN1=	i386-mingw32msvc-addr2line.1 \
 	i386-mingw32msvc-windres.1
 
 post-install:
-	@for file in \
+	@for f in \
 	  addr2line ar as c++filt dlltool gasp ld nm \
 	  objcopy objdump ranlib size strings strip windres; \
 	do \
-	  ${STRIP_CMD} ${PREFIX}/bin/i386-mingw32msvc-$${file}; \
+	  ${STRIP_CMD} ${PREFIX}/bin/i386-mingw32msvc-$${f}; \
 	done
-	@for file in ar as dlltool ld nm ranlib strip; \
+	@for f in ar as dlltool ld nm ranlib strip; \
 	do \
-	  ${STRIP_CMD} ${PREFIX}/i386-mingw32msvc/bin/$${file}; \
+	  ${STRIP_CMD} ${PREFIX}/i386-mingw32msvc/bin/$${f}; \
 	done
 
 .include <bsd.port.mk>
