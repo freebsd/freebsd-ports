@@ -7755,6 +7755,7 @@ php5-cli	ports/lang/php5-cli
 php5-dba	ports/databases/php5-dba
 php5-dbase	ports/databases/php5-dbase
 php5-dbx	ports/databases/php5-dbx
+php5-dio	ports/devel/php5-dio
 php5-filepro	ports/databases/php5-filepro
 php5-gd		ports/graphics/php5-gd
 php5-iconv	ports/converters/php5-iconv
