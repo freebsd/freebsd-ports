@@ -21,6 +21,7 @@ MAINTAINER=	mbr@FreeBSD.org
 FETCH_DEPENDS=	${LINUXBASE}/usr/X11R6/lib/libXrender.so.1.0:${PORTSDIR}/emulators/linux_base-7
 BUILD_DEPENDS=	${LINUXBASE}/usr/X11R6/lib/libXrender.so.1.0:${PORTSDIR}/emulators/linux_base-7
 
+BROKEN=		"SUN beta program for 6.0 has been closed. Distfile is not available anymore"
 USE_BZIP2=	yes
 ONLY_FOR_ARCHS=	i386
 NO_CDROM=	'Must be downloaded direct from Sun via www interface'
