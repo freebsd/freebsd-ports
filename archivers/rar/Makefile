@@ -4,13 +4,14 @@
 # Date created:         15 May 1996
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.13 1999/04/11 10:52:53 simokawa Exp $
+# $Id: Makefile,v 1.14 1999/04/17 14:41:34 ache Exp $
 #
 
 DISTNAME=       rarbsd
 PKGNAME=        rar-2.02
 CATEGORIES=	archivers
-MASTER_SITES=   ftp://ftp.rarsoft.com/pub/rar/
+MASTER_SITES=   ftp://ftp.rarsoft.com/pub/rar/ \
+		ftp://ftp.cdrom.com/pub/sac/pack/
 EXTRACT_SUFX=   .sfx
 
 MAINTAINER=     ache@FreeBSD.ORG
