@@ -12,7 +12,7 @@ MASTER_SITES=	http://fish.sekure.us/xchat/
 PKGNAMEPREFIX=	xchat-
 DISTNAME=	FiSH-xchat.v${DISTVERSION}-source
 
-MAINTAINER=	lioux@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An encryption plugin for XChat
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libmiracl.a:${PORTSDIR}/math/miracl
