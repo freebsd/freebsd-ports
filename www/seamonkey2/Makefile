@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	mozilla
-PORTVERSION=	1.1
-PORTREVISION=	2
+PORTVERSION=	1.2a
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_MOZILLA} \
-		http://people.FreeBSD.org/~marcus/:local
+		http://people.FreeBSD.org/~sobomax/:local
 MASTER_SITE_SUBDIR=	mozilla/releases/${PORTNAME}${PORTVERSION:S/.rc/rc/}/src \
 		marcus/:local
 DISTFILES=	${PORTNAME}-source-${PORTVERSION:S/.rc/rc/}${EXTRACT_SUFX} \
@@ -33,6 +32,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 WITHOUT_CHATZILLA=	"Contains a buffer overflow reported at http://online.securityfocus.com/archive/1/270249"
 
 EXTRACT_AFTER_ARGS=	| tar -xf - -X ${FILESDIR}/tar-exclude
+USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_PERL5=	yes
 USE_GMAKE=	yes
@@ -60,6 +60,7 @@ CONFIGURE_ARGS=					\
 		--disable-tests			\
 		--disable-xterm-updates		\
 		--enable-xinerama		\
+		--enable-xft 			\
 		--with-system-jpeg=${LOCALBASE}	\
 		--with-system-mng=${LOCALBASE}	\
 		--with-system-png=${LOCALBASE}	\
