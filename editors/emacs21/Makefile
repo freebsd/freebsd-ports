@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	emacs
-PORTVERSION=	21.1
-PORTREVISION=	6
+PORTVERSION=	21.2
 CATEGORIES=	editors ipv6
 MASTER_SITES=		${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -25,8 +24,8 @@ USE_XPM=	yes
 .endif
 
 .if defined(WITH_MENUBAR_FONTSET)
-PATCH_SITES=		http://www.nijino.com/ari/patches/
-PATCHFILES=		emacs-21.1-fontset-20011109.patch.gz
+PATCH_SITES=		http://www.nijino.com/ari/emacs/
+PATCHFILES=		emacs-21.1-fontset.patch
 PATCH_DIST_STRIP=	-p1
 .endif
 
