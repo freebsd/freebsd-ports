@@ -1,2 +1,15 @@
 bin/kp
-lib/kp
+lib/kp/bit_saddy.h
+lib/kp/bit_smiley.h
+lib/kp/cursor.tcl
+lib/kp/entry.tcl
+lib/kp/file.tcl
+lib/kp/filter.tcl
+lib/kp/help.tcl
+lib/kp/keyboard.tcl
+lib/kp/main.tcl
+lib/kp/menu.tcl
+lib/kp/options.tcl
+lib/kp/smileys.tcl
+lib/kp/status.tcl
+@dirrm lib/kp
