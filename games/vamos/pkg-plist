@@ -42,15 +42,19 @@ info/vamos.info
 @exec install-info %D/info/vamos.info %D/info/dir
 lib/libvamos-body.a
 lib/libvamos-body.la
+lib/libvamos-body.so
 lib/libvamos-body.so.0
 lib/libvamos-geometry.a
 lib/libvamos-geometry.la
+lib/libvamos-geometry.so
 lib/libvamos-geometry.so.0
 lib/libvamos-track.a
 lib/libvamos-track.la
+lib/libvamos-track.so
 lib/libvamos-track.so.0
 lib/libvamos-world.a
 lib/libvamos-world.la
+lib/libvamos-world.so
 lib/libvamos-world.so.0
 share/vamos/sounds/engine.wav
 share/vamos/sounds/tire_squeal.wav
