@@ -65,12 +65,14 @@ include/gstreamer-%%VERSION%%/gst/gstxml.h
 include/gstreamer-%%VERSION%%/gst/putbits/putbits.h
 lib/gstreamer-%%VERSION%%/libgstautoplugcache.so
 lib/gstreamer-%%VERSION%%/libgstautoplugger.so
+lib/gstreamer-%%VERSION%%/libgstbasicgthreadscheduler.so
 lib/gstreamer-%%VERSION%%/libgstbasicomegascheduler.so
 lib/gstreamer-%%VERSION%%/libgstbasicwingoscheduler.so
 lib/gstreamer-%%VERSION%%/libgstbytestream.so
 lib/gstreamer-%%VERSION%%/libgstelements.so
 lib/gstreamer-%%VERSION%%/libgstgetbits.so
 lib/gstreamer-%%VERSION%%/libgstindexers.so
+lib/gstreamer-%%VERSION%%/libgstoptgthreadscheduler.so
 lib/gstreamer-%%VERSION%%/libgstoptomegascheduler.so
 lib/gstreamer-%%VERSION%%/libgstoptscheduler.so
 lib/gstreamer-%%VERSION%%/libgstoptwingoscheduler.so
@@ -87,6 +89,7 @@ lib/libgstreamer-%%VERSION%%.so
 lib/libgstreamer-%%VERSION%%.so.%%SHLIB_VERSION%%
 libdata/pkgconfig/gstreamer-%%VERSION%%.pc
 libdata/pkgconfig/gstreamer-control-%%VERSION%%.pc
+share/aclocal/gst-element-check-%%VERSION%%.m4
 @unexec rm %D/share/gnome/cache/gstreamer-%%VERSION%%/registry.xml 2>/dev/null || true
 @dirrm share/gnome/cache/gstreamer-%%VERSION%%
 @unexec rmdir %D/share/gnome/cache 2>/dev/null || true
