@@ -1,9 +1,19 @@
 #!/bin/sh
 
+prog=$(realpath $0) || exit 1
+dir=${prog%/*}
+PREFIX=${dir%/etc/rc.d}
+
+if [ ."$dir" = ."$prog" -o ."$PREFIX" = ."$dir" ]
+then
+	echo "$0: Cannot determine the PREFIX" >&2
+	exit 1
+fi
+
 case $1 in
 start)
-	if [ -x /usr/local/sbin/arpwatch -a -d /usr/local/arpwatch ]; then
-		/usr/local/sbin/arpwatch && echo -n ' arpwatch'
+	if [ -x "$PREFIX"/sbin/arpwatch -a -d "$PREFIX"/arpwatch ]; then
+		"$PREFIX"/sbin/arpwatch && echo -n ' arpwatch'
 	fi
 	;;
 stop)

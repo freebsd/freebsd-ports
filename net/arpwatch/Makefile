@@ -15,6 +15,7 @@ DISTNAME=	arpwatch-2.1a10
 
 MAINTAINER=	brian@Awfulhak.org
 
+GNU_CONFIGURE=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--quiet
 INSTALL_TARGET=	install install-man
