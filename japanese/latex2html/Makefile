@@ -19,7 +19,7 @@ PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	ixtl@utmc.or.jp
 
-RUN_DEPENDS=	platex:${PORTSDIR}/japanese/platex-euc \
+RUN_DEPENDS=	platex:${PORTSDIR}/japanese/ptex-euc \
 		dvips:${PORTSDIR}/japanese/dvipsk-vflib \
 		gs:${PORTSDIR}/japanese/vfghostscript55 \
 		anytopnm:${PORTSDIR}/graphics/netpbm \
