@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fastest_cvsup
-PORTVERSION=	0.2.4
+PORTVERSION=	0.2.6
 CATEGORIES=	sysutils
 MASTER_SITES=	http://fastest-cvsup.sourceforge.net/download/
 
@@ -16,11 +16,6 @@ RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Time/HiRe
 
 USE_PERL5=	yes
 
-MAN7=	fastest_cvsup.7
-
-post-patch:
-	@${PERL} -pi -e 's|__PREFIX__|${PREFIX}|g ; \
-		s|__INSTALL_MAN__|${INSTALL_MAN}|g ; \
-		s|__INSTALL_SCRIPT__|${INSTALL_SCRIPT}|g' ${WRKSRC}/Makefile
+MAN7=		fastest_cvsup.7
 
 .include <bsd.port.mk>
