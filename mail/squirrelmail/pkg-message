@@ -1,0 +1,9 @@
+
+You now need to add an alias to apache's httpd.conf pointing to
+%%PREFIX%%/squirrelmail/ in order to access SquirrelMail from your
+web browser, or create a VirtualHost with DocumentRoot set to that
+directory.
+
+In order to do your administrative configuration you need to 
+cd %%PREFIX%%/squirrelmail && ./configure
+SquirrelMail will not work until this has been done.
