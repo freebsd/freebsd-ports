@@ -1,4 +1,4 @@
-bin/communicator-4.5
+bin/communicator-4.51
 @exec ln -sf %f %B/communicator-4
 @exec ln -sf communicator-4 %B/netscape
 @unexec rm -f %B/netscape
@@ -8,7 +8,7 @@ bin/communicator-4.5
 %%NDIRBASE%%/README
 %%NDIRBASE%%/XKeysymDB
 %%NDIRBASE%%/bookmark.htm
-%%NDIRBASE%%/communicator-4.5.bin
+%%NDIRBASE%%/communicator-4.51.bin
 %%NDIRBASE%%/java/classes/aix/font.properties
 %%NDIRBASE%%/java/classes/aix/font.properties.cs
 %%NDIRBASE%%/java/classes/aix/font.properties.hu

@@ -1,15 +1,15 @@
 # New ports collection makefile for:	netscape (communicator suite)
-# Version required:     4.5
+# Version required:     4.5*
 # Date created:         24 Feb 1997
 # Whom:                 thepish
 #
-# $Id: Makefile,v 1.36 1999/01/06 04:18:16 simokawa Exp $
+# $Id: Makefile,v 1.37 1999/01/13 04:00:09 scrappy Exp $
 #
 
-DISTNAME=	communicator-v45-export.x86-unknown-freebsd
-PKGNAME=	netscape-communicator-4.5
+DISTNAME=       communicator-v451-export.x86-unknown-freebsd
+PKGNAME=        netscape-communicator-4.51
 CATEGORIES=	www
-MASTER_SITES=	ftp://ftp.netscape.com/pub/communicator/4.5/english/unix/unsupported/freebsd/complete_install/
+MASTER_SITES=   ftp://ftp.netscape.com/pub/communicator/4.51/english/unix/unsupported/freebsd/complete_install/
 # DISTFILES must be set to begin with so USE_128BIT can add on to it.
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
@@ -20,15 +20,15 @@ Y2K=		http://home.netscape.com/products/year2000/faq/client.html
 ONLY_FOR_ARCHS=	i386
 
 NO_LATEST_LINK=	yes
-WRKSRC=		${WRKDIR}/communicator-v45.x86-unknown-freebsd
+WRKSRC=         ${WRKDIR}/communicator-v451.x86-unknown-freebsd
 NO_BUILD=	Yes
 PLIST_SUB=	NDIRBASE=${NDIRBASE}
 NO_FILTER_SHLIBS=yes
 
-NDIRBASE=	netscape-4.5
+NDIRBASE=       netscape-4.51
 NDIR=		${PREFIX}/${NDIRBASE}
 BINDIR=		${PREFIX}/bin
-NBIN=		communicator-4.5.bin
+NBIN=           communicator-4.51.bin
 
 .if defined(USE_128BIT)
 MASTER_SITES+=	ftp://ftp.fortify.net/pub/Fortify/ \
@@ -48,9 +48,9 @@ post-configure:
 do-install:
 	cd ${WRKSRC} && \
 		yes "" | LC_TIME=C MOZILLA_HOME="${NDIR}" ./ns-install
-	${MV} -f ${NDIR}/netscape ${NDIR}/communicator-4.5.bin
-	${INSTALL_SCRIPT} ${WRKSRC}/netscape ${BINDIR}/communicator-4.5
-	${LN} -sf communicator-4.5 ${BINDIR}/communicator-4
+	${MV} -f ${NDIR}/netscape ${NDIR}/communicator-4.51.bin
+	${INSTALL_SCRIPT} ${WRKSRC}/netscape ${BINDIR}/communicator-4.51
+	${LN} -sf communicator-4.51 ${BINDIR}/communicator-4
 	${LN} -sf communicator-4 ${BINDIR}/netscape
 	if [ ! -f ${NDIR}/mailcap ] ; then \
 		${INSTALL_DATA} ${FILESDIR}/mailcap ${NDIR}; \
@@ -58,7 +58,7 @@ do-install:
 	${RM} -rf ${NDIR}/movemail-src
 .if defined(USE_128BIT)
 	cd ${WRKDIR}/Fortify-1.3.2-unix-x86 && \
-		(${ECHO} yes ; ${ECHO} no ; ${ECHO} no) | ./Fortify.sh ${NDIR}/communicator-4.5.bin
+		(${ECHO} yes ; ${ECHO} no ; ${ECHO} no) | ./Fortify.sh ${NDIR}/communicator-4.51.bin
 .endif
 	chown -R ${BINOWN}.${BINGRP} ${NDIR}
 
