@@ -17,7 +17,7 @@ DISTNAME=	JToolBar_source-${PORTVERSION}
 
 MAINTAINER=	lioux@linf.unb.br
 
-BUILD_DEPENDS=	nonexistent:${JXPORT}:configure \
+BUILD_DEPENDS=	${NONEXISTENT}:${JXPORT}:configure \
 		makemake:${JXPORT}
 LIB_DEPENDS=	jx-1_5_3.1:${JXPORT} \
 		jtree-1_1_7.1:${PORTSDIR}/x11-toolkits/libjtree
@@ -61,15 +61,16 @@ EXTRALIB_PREFIX=		${PREFIX}/lib/jx
 EXTRALIBDIRS=			lib make
 EXTRALIBFILES_MAKE_WRKSRC=	include/make
 EXTRALIBFILES_MAKE_FILES=	jtoolbar_constants
+
+.include <bsd.port.pre.mk>
+
 # main jx distribution port wrksrc
 JXPORT=		${PORTSDIR}/x11-toolkits/jx
-JXPORT_WRKSRC=	${JXPORT}/work/JX-1.5.3
+JXPORT_WRKSRC!=	cd ${JXPORT} && ${MAKE} -V WRKSRC
 # main jx distribution files needed for building
 COPY_JXDIRS=		include
 COPY_JXFILES=		Makefile
 JX_MAKE_CONSTANTS=	jtree_constants
-
-.include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 300000
 ALL_TARGET=	freebsd3.x

@@ -14,14 +14,12 @@ DISTNAME=	J2DPlot_source-${PORTVERSION}
 
 MAINTAINER=	lioux@linf.unb.br
 
-BUILD_DEPENDS=	nonexistent:${JXPORT}:configure \
+BUILD_DEPENDS=	${NONEXISTENT}:${JXPORT}:configure \
 		makemake:${JXPORT}
 LIB_DEPENDS=	jx-1_5_3.1:${JXPORT} \
 		jparser-1_1_8.1:${PORTSDIR}/x11-toolkits/libjparser
 
 WRKSRC=		${WRKDIR}/JX-1.5.3
-
-INSTALLS_SHLIB=	yes
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
@@ -34,6 +32,7 @@ PLIST_SUB=	PORTNAME="${PORTNAME}" \
 		LIBVERSION="${LIBVERSION}" \
 		EXTRALIBFILES_MAKE_FILES="${EXTRALIBFILES_MAKE_FILES}" \
 		INCLUDEDIR="${INCLUDEDIR}"
+INSTALLS_SHLIB=	yes
 
 # Make environment
 PORTINCLUDES=	-I${X11BASE}/include/jcore -I${X11BASE}/include/jx \
@@ -56,14 +55,15 @@ EXTRALIB_PREFIX=		${PREFIX}/lib/jx
 EXTRALIBDIRS=			lib make
 EXTRALIBFILES_MAKE_WRKSRC=	include/make
 EXTRALIBFILES_MAKE_FILES=	j2dplot_constants
+
+.include <bsd.port.pre.mk>
+
 # main jx distribution port wrksrc
 JXPORT=		${PORTSDIR}/x11-toolkits/jx
-JXPORT_WRKSRC=	${JXPORT}/work/JX-1.5.3
+JXPORT_WRKSRC!=	cd ${JXPORT} && ${MAKE} -V WRKSRC
 # main jx distribution files needed for building
 COPY_JXDIRS=		include
 COPY_JXFILES=		Makefile
-
-.include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 300000
 ALL_TARGET=	freebsd3.x
