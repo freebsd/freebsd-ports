@@ -18,7 +18,6 @@ LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
 
 USE_IMAKE=	yes
 USE_XPM=	yes
-NO_INSTALL_MANPAGES=	yes
 
 post-patch:
 .for file in system.wmmount.eg system.wmmount.sh
