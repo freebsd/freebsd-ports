@@ -49,6 +49,7 @@ ecartis/templates/admin-userinfo.lsc
 ecartis/README.LISTS
 ecartis/README.DIGEST
 ecartis/README.ANTISPAM
+ecartis/README.CVS
 ecartis/README
 ecartis/NOTE
 ecartis/LICENSE
@@ -66,4 +67,5 @@ ecartis/ecartis.aliases.dist
 @dirrm ecartis/scripts
 @dirrm ecartis/queue
 @dirrm ecartis/modules
+@dirrm ecartis/documentation
 @dirrm ecartis

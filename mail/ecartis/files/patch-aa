@@ -1,5 +1,5 @@
---- Makefile.orig	Sun Jun 17 22:13:03 2001
-+++ Makefile	Sun Jun 17 22:14:19 2001
+--- Makefile.dist      Sat Apr 27 02:26:56 2002
++++ Makefile   Sat Apr 27 09:35:52 2002
 @@ -6,8 +6,8 @@
  # they should be set.  All of them are conditional on options set in this
  # file, so it should be relatively easy to determine which branch is correct
@@ -37,16 +37,18 @@
  endif
  
  # Warning-level flags.  Under SunOS (4 and 5), this NEEDS TO BE BLANK.
-@@ -134,7 +133,7 @@
+@@ -134,9 +133,7 @@
  #
  # It appears that IRIX is also rather stupid, and may require this
  # to be removed.
 -WFLAGS=-Wall -Werror
+-# Uncomment this to build with gdb symbols (comment above line)
+-#WFLAGS=-ggdb -Wall -Werror
 +WFLAGS:=${CFLAGS}
  
  # Now set up the initial command line.  SUNOS_5 makes this a bit wierd.
  ifndef SUNOS_5
-@@ -321,6 +320,7 @@
+@@ -327,6 +324,7 @@
  install: targets
  	cp build/ecartis ${BINDIR}
  	chmod ug+s ${BINDIR}/ecartis
