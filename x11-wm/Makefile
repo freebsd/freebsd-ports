@@ -28,7 +28,7 @@
     SUBDIR += piewm
     SUBDIR += qvwm
     SUBDIR += sapphire
-    SUBDIR += sawmill
+    SUBDIR += sawfish
     SUBDIR += scwm
     SUBDIR += toolbox
     SUBDIR += tvtwm
