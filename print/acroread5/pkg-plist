@@ -45,3 +45,5 @@ Acrobat3/Reader/res/splashScreen21.xbm
 Acrobat3/Reader/res/splashScreen28.xpm
 Acrobat3/bin/acroread
 bin/acroread
+@exec echo "Be sure to read the license agreement in"
+@exec echo "%D/Acrobat3/Reader/License.pdf"

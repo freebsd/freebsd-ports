@@ -1,14 +1,5 @@
 --- INSTALL.orig	Thu Nov  7 00:04:53 1996
-+++ INSTALL	Sat Nov 16 15:30:26 1996
-@@ -67,7 +67,7 @@
-     exit 1
-   fi
- 
--  if [ -z "$PAGER" ] || [ "`type $PAGER`" = "$PAGER not found" ] ; then
-+  if [ -z "$PAGER" ] || [ "`$PAGER`" = "$PAGER not found" ] ; then
-     if [ "`type more`" != "more not found" ] ; then
-       command=more
-     elif [ "`type pg`" != "pg not found" ] ; then
++++ INSTALL	Wed Nov 20 17:37:14 1996
 @@ -117,6 +117,8 @@
      if [ "$i" -a -f "$i" ] ; then
          if [ `uname -s` = "Linux" ] ; then
@@ -18,6 +9,15 @@
          else
            size=`ls -lLon "$i" | ( read perm links owner size date ; echo $size )`
          fi
+@@ -486,7 +488,7 @@
+   SearchPlatformTar="$3"
+   CustomPlatformTar="$4"
+ 
+-  OutputLicense "$ReadLicense"
++#  OutputLicense "$ReadLicense"
+   ReadLicense=""
+ 
+   PrintRequiredFree "$ReadTar" "$SearchTar" "$CustomTar" \
 @@ -559,7 +561,7 @@
    *) ScriptDirectory="$CurrentDirectory"/"$ScriptDirectory" ;;
  esac
