@@ -7,6 +7,7 @@
 
 PORTNAME=	gdome
 PORTVERSION=	0.3
+PORTREVISION=	1
 CATEGORIES=	textproc ruby
 MASTER_SITES=	http://download.berlios.de/libgdome-ruby/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -16,7 +17,7 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	A Ruby extension that wraps around gdome2
 
-LIB_DEPENDS=	gdome.7:${PORTSDIR}/textproc/gdome2
+LIB_DEPENDS=	gdome.8:${PORTSDIR}/textproc/gdome2
 
 USE_BZIP2=	yes
 
