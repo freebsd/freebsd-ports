@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	nagios-plugins
-PORTVERSION=	1.4.0.a3
-PORTREVISION=	1
+PORTVERSION=	1.4.0.b1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	nagiosplug
-DISTNAME=	nagios-plugins-1.4.0-alpha3
+DISTNAME=	nagios-plugins-1.4-beta1
 
 MAINTAINER=	blaz@si.FreeBSD.org
 COMMENT=	Plugins for nagios
@@ -101,6 +100,15 @@ USE_AUTOMAKE_VER=	19
 USE_AUTOCONF_VER=	259
 USE_GMAKE=	yes
 USE_PERL5=	yes
+USE_REINPLACE=	yes
+
+post-patch:
+.for file in check_by_ssh.c check_disk.c check_http.c check_load.c \
+	check_mrtgtraf.c check_nagios.c check_pgsql.c check_ping.c \
+	check_procs.c check_snmp.c check_ssh.c check_swap.c check_time.c \
+	check_users.c utils.c
+	@${REINPLACE_CMD} -e 's|setlocale (LC_ALL, "");|setlocale (LC_ALL, ""); setlocale(LC_NUMERIC, "C");|g' ${WRKSRC}/plugins/${file}
+.endfor
 
 pre-configure:
 	@(cd ${CONFIGURE_WRKSRC} && ${SETENV} ${AUTOMAKE_ENV} ${ACLOCAL} \
