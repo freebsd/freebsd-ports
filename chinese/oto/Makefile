@@ -24,7 +24,8 @@ USE_REINPLACE=	yes
 CPPFLAGS=	-I${LOCALBASE}/include
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LIBS="-L${LOCALBASE}/lib -liconv"
 
-.include <bsd.port.pre.mk>
 post-patch:
-	@${FIND} ${WRKSRC}/src/ -name "*" | ${XARGS} ${REINPLACE_CMD} -e 's,stdint.h,inttypes.h,'
-.include <bsd.port.post.mk>
+	@${FIND} ${WRKSRC}/src/ -type f -print0 | \
+	    ${XARGS} -0 ${REINPLACE_CMD} -e 's,stdint.h,inttypes.h,'
+
+.include <bsd.port.mk>
