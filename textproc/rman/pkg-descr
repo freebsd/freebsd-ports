@@ -1,0 +1,4 @@
+RosettaMan takes formatted man pages from most of the popular flavours
+of UN*X and transforms them into any of a number of source formats. It
+can produce ASCII-only, section headers-only, TkMan, [tn]roff, Ensemble,
+SGML, HTML, LaTeX, RTF, Perl 5 POD.
