@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bbconf
-PORTVERSION=	1.2
+PORTVERSION=	1.4
 CATEGORIES=	x11-wm
 MASTER_SITES=   http://bbconf.sourceforge.net/code/
 
