@@ -1,7 +1,7 @@
-*** Makefile.orig	Sat May 25 00:20:04 2002
---- Makefile	Sat May 25 00:21:51 2002
+*** Makefile.orig	Thu May 30 08:54:51 2002
+--- Makefile	Fri Oct 11 06:57:42 2002
 *************** ifndef OPENH323DIR
-*** 13,26 ****
+*** 16,26 ****
   OPENH323DIR=$(HOME)/openh323
   endif
   
@@ -9,14 +9,11 @@
 ! H323_LIBDIR	= ${OPENH323DIR}/lib
 ! H323_LIB	= h323_$(PLATFORM_TYPE)_$(OBJ_SUFFIX)
   
-! LDFLAGS		= -L$(H323_LIBDIR)
-! LDLIBS		= -l$(H323_LIB)
+! STDCCFLAGS := -DLDAP_HAS_CACHE -I${H323_INCDIR} -DPTRACING#-DPASN_NOPRINT
+  #-DLDAP_HAS_CACHE : do not use ldap-cache (alpha)
   
-! STDCCFLAGS := -I${H323_INCDIR} -DPTRACING  #-DPASN_NOPRINT
-  
-  
-  ifndef PWLIBDIR
---- 13,26 ----
+  # use destination analysis list
+--- 16,28 ----
   OPENH323DIR=$(HOME)/openh323
   endif
   
@@ -24,21 +21,41 @@
 ! ##H323_LIBDIR	= ${OPENH323DIR}/lib
 ! ##H323_LIB	= h323_$(PLATFORM_TYPE)_$(OBJ_SUFFIX)
   
-! ##LDFLAGS		= -L$(H323_LIBDIR)
-! ##LDLIBS		= -l$(H323_LIB)
+! ##STDCCFLAGS := -I${H323_INCDIR} -DPTRACING#-DPASN_NOPRINT
+! 
+! STDCCFLAGS := -DLDAP_HAS_CACHE
+  #-DLDAP_HAS_CACHE : do not use ldap-cache (alpha)
   
-! ##STDCCFLAGS := -I${H323_INCDIR} -DPTRACING  #-DPASN_NOPRINT
-  
-  
-  ifndef PWLIBDIR
-*************** ifndef PWLIBDIR
-*** 28,33 ****
---- 28,35 ----
+  # use destination analysis list
+*************** endif
+*** 142,155 ****
+  endif
   endif
   
-  include $(PWLIBDIR)/make/ptlib.mak
-+ include $(OPENH323DIR)/openh323u.mak
-+ 
+! LDFLAGS		+= -L$(H323_LIBDIR)
+! LDLIBS		+= -l$(H323_LIB)
   
+  ifndef PWLIBDIR
+  PWLIBDIR=$(HOME)/pwlib
+  endif
   
-  # Extra dependencies
+! include $(PWLIBDIR)/make/ptlib.mak
+  
+  ifdef HAS_LEVEL_TWO_LDAPAPI
+  TARGET_LIBS += $(LDAP_LIB)
+--- 144,158 ----
+  endif
+  endif
+  
+! #LDFLAGS		+= -L$(H323_LIBDIR)
+! #LDLIBS		+= -l$(H323_LIB)
+  
+  ifndef PWLIBDIR
+  PWLIBDIR=$(HOME)/pwlib
+  endif
+  
+! #include $(PWLIBDIR)/make/ptlib.mak
+! include $(OPENH323DIR)/openh323u.mak
+  
+  ifdef HAS_LEVEL_TWO_LDAPAPI
+  TARGET_LIBS += $(LDAP_LIB)
