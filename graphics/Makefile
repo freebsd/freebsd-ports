@@ -339,6 +339,7 @@
     SUBDIR += py-opengl
     SUBDIR += py-paint
     SUBDIR += q-graph
+    SUBDIR += qcamview
     SUBDIR += qcread
     SUBDIR += qglviewer
     SUBDIR += qiv

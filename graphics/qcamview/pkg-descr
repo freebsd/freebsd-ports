@@ -1,0 +1,17 @@
+Logitech Quickcam Express USB Utilities for NetBSD/FreeBSD
+
+1. What is it?
+	qcamshot ... simple image capture program (output stdout PPM file)
+	qcamview ... sequential image capture program like animation(about 3fps)
+
+	Programs are required Linux device driver source. Those programs are 
+	not device driver. They are image capture programs via ugen(4).
+
+2. What cameras are supported?
+
+	Vendor	Device	Product Name(Sensor name)
+	------	------	----------------------------------
+	0x046d	0x0870  Qcam Express QV-30(HDCS1000)
+	0x046d	0x0870  Qcam for Notebook QV-300N(HDCS1020)	
+
+WWW: http://www2.starcat.ne.jp/~takam/bsd/NetBSD.html#qcam
