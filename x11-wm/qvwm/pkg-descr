@@ -1,5 +1,5 @@
 Qvwm, The most win95-like x11 window manager.
-Q for qvwm means number 9, v means 5 in roman.
+q for qvwm means number 9, v means 5 in roman.
 
 This is a standalone window manager, not patched to any other.
 Qvwm requires xpm library and share extention.
