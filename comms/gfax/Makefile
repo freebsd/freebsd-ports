@@ -11,7 +11,7 @@ PORTREVISION=	3
 CATEGORIES=	comms print gnome
 MASTER_SITES=	http://gfax.cowlug.org/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bsd-sharp-list@forge.novell.com
 COMMENT=	A GNOME-2.x C# pop-up fax manager
 
 BUILD_DEPENDS=	${X11BASE}/lib/mono/gtk-sharp/gtk-sharp.dll:${PORTSDIR}/x11-toolkits/gtk-sharp \
