@@ -7,6 +7,7 @@
 
 PORTNAME=	kronolith
 PORTVERSION=	0.0.3.011209
+PORTREVISION=	1
 CATEGORIES=	deskutils www
 MASTER_SITES=	http://pompo.net/horde/kronolith/
 
@@ -56,6 +57,8 @@ do-install:
 	@${CP} -p ${FILESDIR}/httpd.conf.kronolith ${HORDE_INC}
 	@${PERL} -pi -e "s:/home/httpd/html/horde/kronolith:${KRONOLITHDIR}:g" \
 		${HORDE_INC}/httpd.conf.kronolith
+	@${PERL} -pi -e "s://UNCOMMENTWHENINSTKRONOLITH::" \
+		${HORDEDIR}/config/registry.php
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for FILE in ${DOCS}

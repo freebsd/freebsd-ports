@@ -7,9 +7,9 @@
 
 PORTNAME=	turba
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	mail www
 MASTER_SITES=	ftp://ftp.horde.org/pub/turba/tarballs/
-DISTNAME=	${PORTNAME}-${PORTVERSION}-RC3
 
 MAINTAINER=	thierry@thomas.as
 
@@ -96,8 +96,8 @@ pre-install:
 do-install:
 	@${MKDIR}  ${TURBADIR}
 	@${CP} -Rp ${WRKSRC}/config ${WRKSRC}/graphics ${WRKSRC}/lib ${TURBADIR}
-	@${CP} -Rp ${WRKSRC}/locale ${WRKSRC}/scripts ${WRKSRC}/templates ${TURBADIR}
-	@${CP} -Rp ${WRKSRC}/po ${TURBADIR}
+	@${CP} -Rp ${WRKSRC}/locale ${WRKSRC}/scripts ${TURBADIR}
+	@${CP} -Rp ${WRKSRC}/templates ${WRKSRC}/po ${TURBADIR}
 	@${CP} -p  ${WRKSRC}/*.php ${TURBADIR}
 .for FILE in ${CONFFILE}
 	@if [ ! -f ${CONFDIR}/${FILE} ]; then \
@@ -107,7 +107,10 @@ do-install:
 	@${CHOWN} -R www:www ${TURBADIR}
 	@${CHMOD} -R o-rwx ${CONFDIR}
 	@${CP} -p ${FILESDIR}/httpd.conf.turba ${HORDE_INC}
-	@${PERL} -pi -e "s:/home/httpd/html/horde/turba:${TURBADIR}:g" ${HORDE_INC}/httpd.conf.turba
+	@${PERL} -pi -e "s:/home/httpd/html/horde/turba:${TURBADIR}:g" \
+		${HORDE_INC}/httpd.conf.turba
+	@${PERL} -pi -e "s://UNCOMMENTWHENINSTTURBA::" \
+		${HORDEDIR}/config/registry.php
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for FILE in ${DOCS}

@@ -1,14 +1,14 @@
---- config/sources.php.dist.orig	Sun Nov  4 01:42:12 2001
-+++ config/sources.php.dist	Sun Nov 18 17:25:08 2001
-@@ -83,21 +83,25 @@
-     'title' => 'Local SQL',
+--- config/sources.php.dist.orig	Tue Jan  1 13:58:34 2002
++++ config/sources.php.dist	Thu Jan  3 18:04:12 2002
+@@ -92,21 +92,25 @@
+     'title' => 'My Addressbook',
      'type' => 'sql',
      'params' => array(
 -        'phptype' => 'pgsql',
 -        'hostspec' => '',
 -        'username' => '',
 -        'password' => '',
-+//      'phptype' => 'pgsql',
++//        'phptype' => 'pgsql',
 +        'phptype' => 'mysql',
 +        'hostspec' => 'localhost',
 +        'username' => 'hordemgr',
@@ -18,18 +18,18 @@
 -        'tty' => '',
 -        'port' => '5432',
 -        'protocol' => 'unix',
-+//      'tty' => '',
++//        'tty' => '',
 +// Default port: 5432 for pgsql (PostGres), 3306 for mysql
-+//      'port' => '5432',
-+//      'port' => '3306',
-+//      'protocol' => 'unix',
++//        'port' => '5432',
++//        'port' => '3306',
++//        'protocol' => 'unix',
          'table' => 'turba_objects'
      ),
      'map' => array(
          '__key' => 'object_id',
          '__owner' => 'owner_id',
-     	'name' => 'object_name',
-+    	'alias' => 'object_alias',
-     	'email' => 'object_email',
-     	'homeAddress' => 'object_homeAddress',
-     	'workAddress' => 'object_workAddress',
+         'name' => 'object_name',
++        'alias' => 'object_alias',
+         'email' => 'object_email',
+         'homeAddress' => 'object_homeAddress',
+         'workAddress' => 'object_workAddress',

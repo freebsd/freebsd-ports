@@ -7,10 +7,10 @@
 
 PORTNAME=	horde
 PORTVERSION=	2.0
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.horde.org/pub/horde/tarballs/
 PKGNAMESUFFIX=	-devel
-DISTNAME=	${PORTNAME}-${PORTVERSION}-RC3
 
 MAINTAINER=	thierry@thomas.as
 
@@ -34,8 +34,8 @@ RUN_DEPENDS+=	${LOCALBASE}/libexec/apache/libssl.so:${PORTSDIR}/www/apache13-mod
 RUN_DEPENDS+=	${LOCALBASE}/libexec/apache/libphp4.so:${PORTSDIR}/www/mod_php4
 
 NO_BUILD=	yes
-DOCS=		COPYING README docs/CHANGES docs/CODING_STANDARDS docs/CREDITS \
-		docs/HELP docs/INSTALL docs/LISTS docs/SOURCE
+DOCS=		COPYING README docs/CHANGES docs/CODING_STANDARDS \
+		docs/CONTRIBUTING docs/CREDITS docs/HACKING docs/INSTALL
 CONFFILE=	html.php lang.php mime_drivers.php mime_mapping.php \
 		motd.php registry.php
 
@@ -94,13 +94,17 @@ do-install:
 			${CONFDIR}/horde.php ; \
 		${PERL} -pi -e "s:/tmp/horde.log:${LOG_FILE}:g" ${CONFDIR}/horde.php ; \
 	fi
+	@${PERL} -pi -e "s:/etc/mpasswd:${LOCALBASE}/etc/mpasswd:g" \
+		${HORDEDIR}/lib/Auth/mcal.php
 .for FILE in ${CONFFILE}
 	@if [ ! -f ${CONFDIR}/${FILE} ]; then \
 	  ${CP} ${CONFDIR}/${FILE}.dist ${CONFDIR}/${FILE} ; \
 	fi
 .endfor
 	@${CP} ${WRKSRC}/scripts/set_perms.sh ${HORDESBIN}/horde_set_perms.sh
-	@${PERL} -pi -e "s:UPDATED_BY_THE_PORT:${HORDEDIR}/:g" ${HORDESBIN}/horde_set_perms.sh
+	@${PERL} -pi -e "s:UPDATED_BY_THE_PORT:${HORDEDIR}/:g" \
+		${HORDESBIN}/horde_set_perms.sh
+	@${CHMOD} u+x ${HORDESBIN}/horde_set_perms.sh
 	@(if [ -f ${APACHE_CONF} ] ; then \
 	    ${MKDIR} ${HORDE_INC} ; \
 	    ${CP} -p ${FILESDIR}/httpd.conf.horde ${HORDE_INC} ; \

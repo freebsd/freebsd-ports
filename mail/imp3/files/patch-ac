@@ -1,0 +1,11 @@
+--- config/prefs.php.dist.orig	Sun Dec 23 18:24:39 2001
++++ config/prefs.php.dist	Thu Jan  3 20:57:38 2002
+@@ -444,7 +444,7 @@
+ 
+ // addressbook(s) to use when expanding addresses
+ $_prefs['search_sources'] = array(
+-    'value' => '',
++    'value' => 'localsql',
+     'locked' => false,
+     'shared' => false,
+     'type' => 'implicit'
