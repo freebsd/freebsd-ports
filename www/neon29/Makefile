@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	neon
-PORTVERSION=	0.12.0
+PORTVERSION=	0.15.0
 CATEGORIES=	www
 MASTER_SITES=	http://www.webdav.org/neon/
 
@@ -20,7 +20,9 @@ USE_OPENSSL=	yes
 
 USE_LIBTOOL=	yes
 CONFIGURE_ARGS=	--with-ssl=${OPENSSLBASE} \
-		--enable-xml
+		--enable-xml \
+		--enable-shared \
+		--with-libxml1
 
 .ifndef NOPORTDOCS
 post-install:
