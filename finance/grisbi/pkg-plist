@@ -22,6 +22,7 @@ bin/grisbi
 %%PORTDOCS%%%%DOCSDIR%%/help/fr/translation.html
 %%NLS%%share/locale/de/LC_MESSAGES/grisbi.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/grisbi.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/grisbi.mo
 %%DATADIR%%/pixmaps/addresses.png
 %%DATADIR%%/pixmaps/banks.png
 %%DATADIR%%/pixmaps/currencies.png
@@ -47,7 +48,5 @@ bin/grisbi
 @dirrm %%DATADIR%%/pixmaps
 @dirrm %%DATADIR%%
 %%NLS%%@unexec rmdir %D/share/locale/de/LC_MESSAGES 2>/dev/null || true
-%%NLS%%@unexec rmdir %D/share/locale/de 2>/dev/null || true
 %%NLS%%@unexec rmdir %D/share/locale/fr/LC_MESSAGES 2>/dev/null || true
-%%NLS%%@unexec rmdir %D/share/locale/fr 2>/dev/null || true
-%%NLS%%@unexec rmdir %D/share/locale 2>/dev/null || true
+%%NLS%%@unexec rmdir %D/share/locale/pt_BR/LC_MESSAGES 2>/dev/null || true
