@@ -1,6 +1,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/gputils.lyx
 %%PORTDOCS%%%%DOCSDIR%%/gputils.pdf
 %%PORTDOCS%%%%DOCSDIR%%/gputils.ps
+bin/gpal
 bin/gpasm
 bin/gplink
 bin/gpdasm
