@@ -17,6 +17,6 @@ LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 
 GNU_CONFIGURE=	yes
 USE_GNOMENG=	yes
-uSE_GNOME=	gtk12
+USE_GNOME=	gtk12
 
 .include <bsd.port.mk>
