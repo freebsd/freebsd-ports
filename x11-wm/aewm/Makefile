@@ -13,8 +13,6 @@ MASTER_SITES=	http://www.red-bean.com/~decklin/aewm/
 MAINTAINER=	trevor@FreeBSD.org
 COMMENT=	ICCCM-compliant window manager based on 9wm
 
-BROKEN=		"Does not compile, will be removed after Feb 2"
-
 GTKCLIENTS=	aemenu-gtk aepanel-gtk
 XAWCLIENTS=	set-gnome-pda \
 		aesession \
@@ -29,18 +27,18 @@ USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 WANT_GNOME=	yes
 USE_REINPLACE=	yes
-REINPLACE_ARGS=	-i'' -E
+REINPLACE_ARGS=	-i '' -E
 
 .include <bsd.port.pre.mk>
 .if ${HAVE_GNOME:Mgtk20}!=""
-USE_GNOME+=    gtk20
-PKGNAMESUFFIX= -gtk
+USE_GNOME+=	gtk20
+PKGNAMESUFFIX=	-gtk
 .endif
 
 do-patch:
 	${REINPLACE_CMD} 's:/etc/X11/aewm/aewmrc:${PREFIX}/etc/aewmrc:g' \
 		${WRKSRC}/src/aewm.h
-	${REINPLACE_CMD} 's:\+make:\+gmake:g' ${WRKSRC}/Makefile
+	${REINPLACE_CMD} 's:clients::g' ${WRKSRC}/Makefile
 .if ${HAVE_GNOME:Mgtk20}!=""
 	${REINPLACE_CMD} 's:gtk-config:${GTK_CONFIG}:g' \
 		${WRKSRC}/clients/Makefile
