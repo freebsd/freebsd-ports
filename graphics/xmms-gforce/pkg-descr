@@ -1,0 +1,11 @@
+G-Force is a music visualisation eye candy program by Andy O'Meara
+for WinAmp.
+
+The Unix/X11 port of G-Force was done by Boris Gjenero <bgjenero at 
+sympatico dot ca>.
+
+Note: This looks great but it's slow in big windows.
+
+WWW: http://www.mnsi.net/~bgjenero/gforce/
+
+- Alexander Langer <alex@FreeBSD.org>
