@@ -9,11 +9,8 @@ PORTNAME=	apsfilter
 PORTVERSION=	5.4.2
 CATEGORIES=	print
 MASTER_SITES=	http://www.apsfilter.org/download/
-#last patches are broken because of an error in make-release
-#after moving it to www area ...
-#am working on this
-#PATCH_SITES=	http://www.apsfilter.org/download/
-#PATCHFILES=	diff-5.4.2-09.08.2000-23:56:30.gz
+PATCH_SITES=	http://www.apsfilter.org/download/
+PATCHFILES=	diff-5.4.2-13.08.2000.gz
 
 MAINTAINER=	andreas@FreeBSD.org
 
