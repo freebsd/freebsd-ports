@@ -2,7 +2,7 @@ lib/perl5/site_perl/%%PERL_VER%%/Lingua/Romkan.pm
 lib/perl5/site_perl/%%PERL_VER%%/Lingua/kanrom.pl
 lib/perl5/site_perl/%%PERL_VER%%/Lingua/romkan.pl
 lib/perl5/site_perl/%%PERL_VER%%/Lingua/romrom.pl
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/Lingua/Romkan/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Lingua/Romkan/.packlist
 %%EMACS_LIBDIR%%/site-lisp/migemo.el
 %%EMACS_LIBDIR%%/site-lisp/migemo.elc
 share/doc/migemo/english-1.png
@@ -34,7 +34,7 @@ share/migemo/migemo-cache.pl
 share/migemo/migemo-dict
 share/migemo/migemo.pl
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/Lingua
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/Lingua/Romkan
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/Lingua
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Lingua/Romkan
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Lingua
 @dirrm share/doc/migemo
 @dirrm share/migemo
