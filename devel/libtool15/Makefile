@@ -6,8 +6,8 @@
 #
 
 PORTNAME?=	libtool
-PORTVERSION=	1.5.2
-PORTREVISION?=	1
+PORTVERSION=	1.5.6
+PORTREVISION?=	0
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	libtool
@@ -52,9 +52,6 @@ post-install:
 	${MKDIR} ${PREFIX}/libexec/libtool${BUILD_VERSION}
 .for i in libtool libtoolize
 	${LN} -sf ${PREFIX}/bin/${i}${BUILD_VERSION} ${PREFIX}/libexec/libtool${BUILD_VERSION}/${i}
-.endfor
-.for i in config.guess config.sub
-	${MV} ${PREFIX}/share/libtool${BUILD_VERSION}/${i}${BUILD_VERSION} ${PREFIX}/share/libtool${BUILD_VERSION}/${i}
 .endfor
 .endif
 
