@@ -7,6 +7,9 @@ share/gnome/gdeskcal/code/CalWindow.py
 share/gnome/gdeskcal/code/Config.py
 share/gnome/gdeskcal/code/ConfigFormatLoader.py
 share/gnome/gdeskcal/code/ConfigLoader.py
+share/gnome/gdeskcal/code/FileWatcher.py
+share/gnome/gdeskcal/code/GlassWindow.py
+share/gnome/gdeskcal/code/ListBox.py
 share/gnome/gdeskcal/code/Menu.py
 share/gnome/gdeskcal/code/Navigation.py
 share/gnome/gdeskcal/code/Observable.py
@@ -18,9 +21,27 @@ share/gnome/gdeskcal/code/configvalues.py
 share/gnome/gdeskcal/code/desktop.py
 share/gnome/gdeskcal/code/errormessage.py
 share/gnome/gdeskcal/code/i18n.py
+share/gnome/gdeskcal/code/icon.py
+share/gnome/gdeskcal/code/planner/CalEditor.py
+share/gnome/gdeskcal/code/planner/CalEvent.py
+share/gnome/gdeskcal/code/planner/Calendar.py
+share/gnome/gdeskcal/code/planner/Planner.py
+share/gnome/gdeskcal/code/planner/Popup.py
+share/gnome/gdeskcal/code/planner/RecurrenceRule.py
+share/gnome/gdeskcal/code/planner/__init__.py
+share/gnome/gdeskcal/code/planner/caltime.py
+share/gnome/gdeskcal/code/planner/categories.py
+share/gnome/gdeskcal/code/planner/iCalLoader.py
+share/gnome/gdeskcal/code/planner/iCalWriter.py
+share/gnome/gdeskcal/code/sfrmapper.py
 share/gnome/gdeskcal/code/values.py
 share/gnome/gdeskcal/data/config.xml
 share/gnome/gdeskcal/data/format.xml
+share/gnome/gdeskcal/data/gfx/business.png
+share/gnome/gdeskcal/data/gfx/favorites.png
+share/gnome/gdeskcal/data/gfx/icon.png
+share/gnome/gdeskcal/data/gfx/misc.png
+share/gnome/gdeskcal/data/gfx/phone.png
 share/gnome/gdeskcal/gdeskcal
 share/gnome/gdeskcal/skins/default/bg.png
 share/gnome/gdeskcal/skins/default/bg.xcf
@@ -47,6 +68,8 @@ share/locale/zh_CN/LC_MESSAGES/gdeskcal.mo
 @dirrm share/gnome/gdeskcal/skins/default
 @dirrm share/gnome/gdeskcal/skins/big_and_simple
 @dirrm share/gnome/gdeskcal/skins
+@dirrm share/gnome/gdeskcal/data/gfx
 @dirrm share/gnome/gdeskcal/data
+@dirrm share/gnome/gdeskcal/code/planner
 @dirrm share/gnome/gdeskcal/code
 @dirrm share/gnome/gdeskcal
