@@ -302,6 +302,7 @@
     SUBDIR += radiusclient
     SUBDIR += radiusd-cistron
     SUBDIR += radreport
+    SUBDIR += radvd
     SUBDIR += ratoolset
     SUBDIR += rboot
     SUBDIR += rdesktop

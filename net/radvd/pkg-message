@@ -1,0 +1,9 @@
+
+-----------------------------------------------
+Example of the radvd config file is located at:
+
+        (/usr/local/etc/radvd.conf.example)
+
+Also refer to: `man radvd.conf`
+-----------------------------------------------
+
