@@ -1,27 +1,36 @@
-# New ports collection makefile for:    GNU finger
-# Date created:         20 June 1996
-# Whom:                 Yoshiro MIHIRA <sanpei@yy.cs.keio.ac.jp>
+# New ports collection makefile for:	GNU finger
+# Date created:				20 June 1996
+# Whom:					Yoshiro MIHIRA <sanpei@yy.cs.keio.ac.jp>
 #
 # $FreeBSD$
 #
 
-PORTNAME=	gnu-finger
+PORTNAME=	finger
 PORTVERSION=	1.37
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	finger
-DISTNAME=	finger-1.37
+PKGNAMEPREFIX=	gnu-
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNU version of finger
 
-.include <bsd.port.pre.mk>
-
 CONFLICTS=	pfinger-0.*
 
-.if ${OSVERSION} >= 500000
-BROKEN=		does not compile on 5.x
-.endif
+USE_REINPLACE=	yes
+
+post-patch:
+	${REINPLACE_CMD} -e 's,DEFS="$$DEFS -D_ANSI_SOURCE",,' \
+		${WRKSRC}/configure
+	${REINPLACE_CMD} -e 's,extern char \*sys_errlist,//extern char \*sys_errlist,' \
+		${WRKSRC}/lib/os.c ${WRKSRC}/lib/error.c
+	${REINPLACE_CMD} -e 's,longjmperror (),void longjmperror (void),' \
+		${WRKSRC}/lib/error.c
+	${REINPLACE_CMD} -e 's,\, sys_nerr,,' \
+		${WRKSRC}/lib/error.c
+	${REINPLACE_CMD} -e 's,char \*source,const char \*source,' \
+		${WRKSRC}/lib/savedir.c
 
 HAS_CONFIGURE=	yes
 INSTALL_TARGET=	server
@@ -35,4 +44,4 @@ post-install:
 	@${ECHO_CMD} "GNU.finger.server.hostname" > ${PREFIX}/etc/fingerdir/serverhost.sample
 	@${ECHO_CMD} "mail.spool.server.hostname" > ${PREFIX}/etc/fingerdir/mailhost.sample
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
