@@ -8019,6 +8019,7 @@ vsftpd		ports/ftp/vsftpd
 vshnu		ports/shells/vshnu
 vsound		ports/audio/vsound
 vtcl		ports/devel/vtcl
+vte		ports/x11-toolkits/vte
 vterrain-apps	ports/graphics/vterrain-apps
 vterrain-sdk	ports/graphics/vterrain-sdk
 vtk		ports/math/vtk
