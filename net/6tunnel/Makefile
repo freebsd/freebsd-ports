@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://amba.bydg.pdi.net/pub/wojtekka/ \
 		ftp://atlantis.bsd-fr.org/pub/ipv6/tools/ \
 		http://rencade.raphit.net/~vt/
 
-MAINTAINER=	vt@bsd-fr.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	TCP proxy for application that don't speak IPv6
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
