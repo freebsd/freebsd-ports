@@ -79,9 +79,11 @@ lib/libpspell.so.16
 %%DATADIR%%/email.amf
 %%DATADIR%%/html.amf
 %%DATADIR%%/none.amf
+%%DATADIR%%/nroff.amf
 %%DATADIR%%/perl.amf
 %%DATADIR%%/sgml.amf
 %%DATADIR%%/tex.amf
+%%DATADIR%%/texinfo.amf
 %%DATADIR%%/url.amf
 %%NLS%%share/locale/be/LC_MESSAGES/aspell.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/aspell.mo
