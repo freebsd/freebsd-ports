@@ -1,0 +1,11 @@
+Language tags are a formalism, described in RFC 1766, for declaring
+what language form (language and possibly dialect) a given chunk of
+information is in.
+
+This library provides functions for common tasks involving language
+tags (notably the extraction of them, comparing them, and testing the
+formal validity of them) as is needed in a variety of protocols and
+applications.
+
+--dima
+dima@Chg.RU
