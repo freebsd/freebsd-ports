@@ -1,0 +1,11 @@
+--- lib/GL/mesa/src/drv/Imakefile.orig	Sun Aug 18 16:59:00 2002
++++ lib/GL/mesa/src/drv/Imakefile	Sun Aug 18 16:59:14 2002
+@@ -5,7 +5,7 @@
+ #define IHaveSubdirs
+ #define PassCDebugFlags
+ 
+-SUBDIRS = common r200 radeon
++SUBDIRS = common DriDrivers
+ 
+ MakeSubdirs($(SUBDIRS))
+ DependSubdirs($(SUBDIRS))

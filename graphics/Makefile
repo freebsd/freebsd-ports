@@ -40,6 +40,7 @@
     SUBDIR += divxcalc
     SUBDIR += djvulibre
     SUBDIR += dore
+    SUBDIR += dri-devel
     SUBDIR += drm-kmod
     SUBDIR += dtv
     SUBDIR += dumpmpeg

@@ -1,0 +1,53 @@
+--- config/cf/host.def.orig	Thu Jul 18 12:23:07 2002
++++ config/cf/host.def	Wed Aug 21 10:21:01 2002
+@@ -2,17 +2,17 @@
+  * Set this for each DRI branch.  It will be appended to the XFree86 version
+  * information.
+  */
+-#define XFree86CustomVersion "DRI trunk"
++#define XFree86CustomVersion "DRI trunk: dri-devel-20020820"
+ 
+-#define DefaultGcc2AxpOpt -O2 -mcpu=ev6
+-#define DefaultGcc2PpcOpt -O2 -mcpu=750
+-#define DefaultGcc2i386Opt -O2
++#define DefaultGcc2AxpOpt ${FBSDCFLAGS}
++#define DefaultGcc2PpcOpt ${FBSDCFLAGS}
++#define DefaultGcc2i386Opt ${FBSDCFLAGS}
+ #if defined(AlphaArchitecture)
+-#  define LibraryCDebugFlags -O2 -mcpu=ev6
++#  define LibraryCDebugFlags ${FBSDCFLAGS}
+ #elif defined(PpcArchitecture)
+-#  define LibraryCDebugFlags -O2 -mcpu=750
++#  define LibraryCDebugFlags ${FBSDCFLAGS}
+ #else
+-#  define LibraryCDebugFlags -O2
++#  define LibraryCDebugFlags ${FBSDCFLAGS}
+ #endif
+ 
+ #define BuildXFree86ConfigTools YES
+@@ -25,14 +25,11 @@
+ #else
+ 
+ #define XF86CardDrivers tdfx i810 mga ati glint vga
+-#define DriDrivers tdfx mga i810 r128 radeon gamma i830 /* sis ffb */
++#define DriDrivers i810 i830 r128 radeon r200 /* sis ffb */
+ 
+ #endif
+ 
+-#define GccWarningOptions -Wall -Wpointer-arith -Wstrict-prototypes \
+-                          -Wmissing-prototypes -Wmissing-declarations \
+-                          -Wnested-externs
+-#define DefaultCCOptions -ansi GccWarningOptions -pipe -g
++#define DefaultCCOptions -g
+ 
+ #define NormalLibGlx NO
+ 
+@@ -63,7 +60,7 @@
+ /* #define ProjectRoot /usr/X11R6-DRI */
+ 
+ /* Optionally turn this on to force the kernel modules to build */
+-#define BuildXF86DRM YES
++#define BuildXF86DRM NO
+ 
+ #define XF86AFB NO
+ 
