@@ -6054,6 +6054,7 @@ pfinger		ports/net/pfinger
 pflogsumm	ports/mail/pflogsumm
 pftpd		ports/ftp/pftpd
 pg		ports/misc/pg
+pgaccess	ports/databases/pgaccess
 pgcc		ports/lang/pgcc
 pgdriver	ports/www/pgdriver
 pgen		ports/mail/pgen
