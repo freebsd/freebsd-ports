@@ -1,0 +1,11 @@
+trans - Character Encoding Converter Generator Package
+
+Currently there are 72 different Character Encoding Description Files
+supplied with this package, not counting the 13 *.net files, which are
+modified Character Encoding Description Files. All but 13 of the above
+mentioned files describe 8-bit Character Encodings/Sets.
+
+It covers ISO 646, many IBM Codepages for MS-DOS, Microsoft Windows
+Codepages, ISO 8859-x, HP, Adobe, Apple Macintosh, Atari, NeXTSTEP
+Character Encodings, a few EBCDIC Encodings, koi8-r and a few more...
+

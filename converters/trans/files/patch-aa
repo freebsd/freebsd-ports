@@ -1,0 +1,75 @@
+*** Makefile.orig	Sat Jul  1 04:10:00 1995
+--- Makefile	Mon May  6 17:19:27 1996
+***************
+*** 30,49 ****
+  #
+  # CC      = bcc
+  # CC      = cl
+! CC      = gcc
+  #
+  # COPTS are the options (if any) for compilation
+  #
+  # COPTS   = -c -ml
+  # COPTS   = -c -AL
+! # COPTS   = -c -DNO_STRUPR -O2
+! COPTS   = -c -ansi -Wall -DNO_STRUPR -DNO_STRDUP -O2
+  #
+  # LOPTS are linker options (if any)
+  #
+  # LOPTS   =
+  # LOPTS   = /F 4000
+  LOPTS   = -o
+  #
+  # OBJLIB is the collection of independend object files
+  #
+--- 30,53 ----
+  #
+  # CC      = bcc
+  # CC      = cl
+! # CC      = gcc
+  #
+  # COPTS are the options (if any) for compilation
+  #
+  # COPTS   = -c -ml
+  # COPTS   = -c -AL
+! COPTS   = ${CFLAGS} -c -Wall -DNO_STRUPR
+! # COPTS   = -c -ansi -Wall -DNO_STRUPR -DNO_STRDUP -O2
+  #
+  # LOPTS are linker options (if any)
+  #
+  # LOPTS   =
+  # LOPTS   = /F 4000
+  LOPTS   = -o
++ 
++ PREFIX  = /usr/local
++ LIBDIR  = ${PREFIX}/lib/trans
++ 
+  #
+  # OBJLIB is the collection of independend object files
+  #
+***************
+*** 62,68 ****
+  #
+  
+  install:
+! 	cp $(ALL) /usr/local/bin
+  
+  #
+  ###############################################################################
+--- 66,81 ----
+  #
+  
+  install:
+! 	$(INSTALL) -s -c -m $(BINMODE) -o $(BINOWN) -g $(BINGRP) $(ALL) ${PREFIX}/bin
+! 	for i in $(ALL); do \
+! 		$(INSTALL) -c -m $(MANMODE) -o $(MANOWN) -g $(MANGRP) $$i.man ${PREFIX}/man/cat1/$$i.1; \
+! 	done
+! 	-mkdir -p ${LIBDIR}/tables ${LIBDIR}/xlt ${LIBDIR}/doc
+! 	$(INSTALL) -c -m $(BINMODE) -o $(BINOWN) -g $(BINGRP) checkall mkbintab mklist ${LIBDIR}
+! 	$(INSTALL) -c -m $(SHAREMODE) -o $(SHAREOWN) -g $(SHAREGRP) iso10646 encoding.lis bin/trans.[ch] bin/trans.man ${LIBDIR}
+! 	cd tables; $(INSTALL) -c -m $(SHAREMODE) -o $(SHAREOWN) -g $(SHAREGRP) * ${LIBDIR}/tables
+! 	cd xlt; $(INSTALL) -c -m $(SHAREMODE) -o $(SHAREOWN) -g $(SHAREGRP) * ${LIBDIR}/xlt
+! 	cd doc; $(INSTALL) -c -m $(SHAREMODE) -o $(SHAREOWN) -g $(SHAREGRP) * ${LIBDIR}/doc
+  
+  #
+  ###############################################################################
