@@ -1,0 +1,38 @@
+*************************************************************************
+	    _  _____ _____ _____ _   _ _____ ___ ___  _   _ 	
+	   / \|_   _|_   _| ____| \ | |_   _|_ _/ _ \| \ | |
+	  / _ \ | |   | | |  _| |  \| | | |  | | | | |  \| |
+	 / ___ \| |   | | | |___| |\  | | |  | | |_| | |\  |
+	/_/   \_\_|   |_| |_____|_| \_| |_| |___\___/|_| \_|
+
+
+	Please proceed with the installation by following these steps:
+
+	1. Please create/adjust the configuration file
+
+	%%PREFIX%%/etc/mailscanner-mrtg/mailscanner-mrtg.conf
+
+
+	2. mailscanner-mrtg will run without snmpd but in order to
+	see all statistics you should install the net-snmp 
+	daemon located at %%PORTSDIR%%/net/net-snmp
+
+	3. Moreover make sure your crontab calls mailscanner-mrtg every
+	five Minutes:
+
+	0-59/5 * * * * root %%LOCALBASE%%/bin/mrtg %%PREFIX%%/etc/mailscanner-mrtg/mailscanner-mrtg.cfg
+
+	4. Configure your Apache server to correctly show the mailscanner-mrtg pages. E.g:
+
+	<VirtualHost *:80>
+	ServerAdmin yourname@yourcompany.com
+	DocumentRoot %%WWWBASE%%/mailscanner-mrtg
+	Alias /mailscanner-mrtg "%%WWWBASE%%/mailscanner-mrtg/"
+	</VirtualHost>
+
+
+	File locations:
+	mailscanner-mrtg configuration --> %%PREFIX%%/etc/mailscanner-mrtg
+	HTML files --> %%WWWBASE%%/mailscanner-mrtg
+
+*************************************************************************
