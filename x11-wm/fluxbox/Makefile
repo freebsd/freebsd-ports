@@ -7,14 +7,14 @@
 
 PORTNAME=	fluxbox
 PORTVERSION=	0.1.14
-PORTREVISION=   2
+PORTREVISION=	2
 CATEGORIES=	x11-wm
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 .if defined(WITH_REMEMBER)
-PATCH_SITES=    http://www.bugfactory.org/~gav/fluxbox/
-PATCH_DIST_STRIP=   -p1
+PATCH_SITES=	http://www.bugfactory.org/~gav/fluxbox/
+PATCH_DIST_STRIP=	-p1
 PATCHFILES=	remember-0.1.14-7.gz
 .endif
 
@@ -49,9 +49,9 @@ CONFIGURE_ARGS+=	--enable-xinerama
 .endif
 
 .if defined(WITH_WINSNAP)
-PATCH_SITES+=   http://www.raisdorf.net/files/FreeBSD/
-PATCH_DIST_STRIP=   -p1
-PATCHFILES+=    winsnap-0.1.14.patch
+PATCH_SITES+=	http://www.raisdorf.net/files/FreeBSD/
+PATCH_DIST_STRIP=	-p1
+PATCHFILES+=	winsnap-0.1.14.patch
 .endif
 
 MAN1=		fluxbox.1
