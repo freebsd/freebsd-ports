@@ -1,6 +1,18 @@
---- nfs/syscalls.c.orig	Thu Oct 11 14:20:28 2001
-+++ nfs/syscalls.c	Thu Oct 11 14:20:33 2001
-@@ -56,7 +56,16 @@
+--- nfs/syscalls.c.orig	Tue Jun 30 12:24:56 1998
++++ nfs/syscalls.c	Tue Nov 18 16:52:35 2003
+@@ -12,8 +12,10 @@
+ #define NFSCLIENT
+ #include "syshdr.h"
+ #include <rpc/rpc.h>
+-#if !(defined HP || defined IRIX)
++#if !(defined HP || defined IRIX || __FreeBSD_version >= 501113) 
+ #include "nfs_prot.h"
++#else
++#include <nfs/nfsproto.h>
+ #endif
+ #include <netdb.h>
+ #include <arpa/inet.h>
+@@ -56,7 +58,16 @@
  #define NFSX_V2FH 32
  #ifdef BSD4_4_LITE2
  #	include <nfs/rpcv2.h>
