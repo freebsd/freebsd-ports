@@ -8,4 +8,4 @@ include/v3d/v3dmp.h
 include/v3d/v3dtex.h
 @dirrm include/v3d
 lib/libv3d.so
-lib/libv3d.so.0.1.7
+lib/libv3d.so.0.1.14
