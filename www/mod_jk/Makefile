@@ -15,7 +15,7 @@ MASTER_SITES=	http://jakarta.apache.org/builds/jakarta-tomcat/release/v${PORTVER
 MASTER_SITE_SUBDIR=	znerd
 DISTNAME=	jakarta-tomcat-${PORTVERSION}-src
 
-MAINTAINER=	znerd@FreeBSD.org
+MAINTAINER=	parv_fm@emailgroups.net
 COMMENT=	Apache module for Tomcat 3
 
 BROKEN=		"Broken dependency"
