@@ -40,10 +40,26 @@ INSTDB.INS=	${PREFIX}/office52/program/instdb.ins
 SUNSOLVE=	${WRKDIR}/109939-02
 ADABAS_DIST=	soa-5_2-ga-bin-linux-en.bin
 SIZE!=		/bin/df -k . | /usr/bin/tail -n 1 | /usr/bin/awk '{print $$4}'
+LINPROCFS!=	mount | grep linprocfs | awk '{print $1}'
 
 .include <bsd.port.pre.mk>
 
 pre-fetch:
+.if ${LINPROCFS}
+	@${ECHO}
+	@${ECHO} Check if linprocfs is running: YES
+.else
+	@${ECHO} -----------------------------------------------------------
+	@${ECHO}
+	@${ECHO} Staroffice setup needs a running linprocfs, which is not
+	@${ECHO} activated on your system. Please read the linprocfs(5)
+	@${ECHO} manpage and add the following line to /etc/fstab:
+	@${ECHO}
+	@${ECHO} linproc /compat/linux/proc linprocfs rw 0 0
+	@${ECHO}
+	@${ECHO} -----------------------------------------------------------
+	@${FALSE}
+.endif
 .if ${OSVERSION} < 410000
 	@${ECHO}
 	@${ECHO} OS-VERSION ${OSVERSION}
