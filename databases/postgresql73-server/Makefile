@@ -6,19 +6,18 @@
 #
 
 PORTNAME=	postgresql
-PORTVERSION=	7.0
+PORTVERSION=	7.0.2
 CATEGORIES=	databases
-MASTER_SITES=	ftp://ftp.postgresql.org/pub/source/v7.0/ \
-		ftp://ftp.de.postgresql.org/source/v7.0/ \
-		ftp://ftp.iodynamics.com/pub/mirror/postgresql/source/v7.0/ \
-		ftp://ftp.digex.net/pub/packages/database/postgresql/source/v7.0/ \
-		ftp://ftp.sunet.se/pub/unix/databases/relational/postgresql/source/v7.0/
-DISTFILES=	$(PORTNAME)-$(PORTVERSION).base.tar.gz \
-		$(PORTNAME)-$(PORTVERSION).support.tar.gz
-#		$(PORTNAME)-$(PORTVERSION).test.tar.gz
-.if !defined(NOPORTDOCS)
-DISTFILES+=	$(PORTNAME)-$(PORTVERSION).docs.tar.gz
-.endif
+MASTER_SITES=	ftp://ftp.postgresql.org/pub/%SUBDIR%/ \
+		ftp://ftp.de.postgresql.org/%SUBDIR%/ \
+		ftp://ftp.iodynamics.com/pub/mirror/postgresql/%SUBDIR%/ \
+		ftp://ftp.digex.net/pub/packages/database/postgresql/%SUBDIR%/ \
+		ftp://ftp.sunet.se/pub/unix/databases/relational/postgresql/%SUBDIR%/
+MASTER_SITE_SUBDIR=	source/v${PORTVERSION}
+DISTFILES=	${PORTNAME}-${PORTVERSION}.base${EXTRACT_SUFX} \
+		${PORTNAME}-${PORTVERSION}.support${EXTRACT_SUFX} \
+		${PORTNAME}-${PORTVERSION}.docs${EXTRACT_SUFX}
+#		${PORTNAME}-${PORTVERSION}.test${EXTRACT_SUFX}
 DIST_SUBDIR=	postgresql
 
 MAINTAINER=	andreas@FreeBSD.org
@@ -29,16 +28,19 @@ BROKEN=		doesn\'t build on the alpha yet
 
 Y2K=		http://www.postgresql.org/y2k.html
 
+INSTALLS_SHLIB=	YES
+LDCONFIG_DIRS=	%%PREFIX%%/pgsql
+
 # if you want to use the tcl/tk frontend pgaccess, then you need to build
 # postgresql with tcl support by typing: make -DWITH_TCL
 .if defined(WITH_TCL)
-TCL_INCDIR=	${LOCALBASE}/include/tcl8.2
-TK_INCDIR=	${LOCALBASE}/include/tk8.2
+TCL_INCDIR=	${LOCALBASE}/include/tcl8.3
+TK_INCDIR=	${LOCALBASE}/include/tk8.3
 MAKE_ENV=	TCL_INCDIR=${TCL_INCDIR}
-CONFIGURE_ENV=	WISH=${LOCALBASE}/bin/wish8.2
-LIB_DEPENDS=	tcl82.1:${PORTSDIR}/lang/tcl82 \
-		tk82.1:${PORTSDIR}/x11-toolkits/tk82
-CONFIGURE_TCL=	--with-tcl --with-tclconfig="${LOCALBASE}/lib/tcl8.2 ${LOCALBASE}/lib/tk8.2"
+CONFIGURE_ENV=	WISH=${LOCALBASE}/bin/wish8.3
+LIB_DEPENDS=	tcl83.1:${PORTSDIR}/lang/tcl83 \
+		tk83.1:${PORTSDIR}/x11-toolkits/tk83
+CONFIGURE_TCL=	--with-tcl --with-tclconfig="${LOCALBASE}/lib/tcl8.3 ${LOCALBASE}/lib/tk8.3"
 .endif
 
 # if you want to disable the multibyte support, type:
@@ -197,19 +199,23 @@ post-install:
 	@ ${CHOWN} -R pgsql:pgsql ${PREFIX}/pgsql
 	@ ${ECHO} 'Initializing PostgreSQL Databases - this may take a few minutes...'
 	@ ${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/pgsql/lib
-	@ su -l pgsql -c 'PATH=${PREFIX}/pgsql/bin:${PATH} ${PREFIX}/pgsql/bin/initdb --pglib=${PREFIX}/pgsql/lib --pgdata=${PREFIX}/pgsql/data'
+	@ su -l pgsql -c 'PATH=${PREFIX}/pgsql/bin:${PATH} LD_LIBRARY_PATH=${PREFIX}/pgsql/lib ${PREFIX}/pgsql/bin/initdb --pglib=${PREFIX}/pgsql/lib --pgdata=${PREFIX}/pgsql/data'
 	@ ${SED} -e "s=!!PREFIX!!=${PREFIX}=g" < ${FILESDIR}/pgsql.sh.tmpl \
 		> ${PREFIX}/etc/rc.d/pgsql.sh
 	@ ${CHMOD} 554 ${PREFIX}/etc/rc.d/pgsql.sh
 	@ ${CHOWN} root.pgsql ${PREFIX}/etc/rc.d/pgsql.sh
 	@ ${INSTALL_DATA} ${FILESDIR}/post-install-notes ${PREFIX}/pgsql
+.if defined(WITHOUT_MULTIBYTE)
+	@${CP} ${TMPPLIST} ${TMPPLIST}.nomulti
+	@${GREP} -v pgsql/bin/pg_encoding ${TMPPLIST}.nomulti > ${TMPPLIST}
+.endif
 .if defined(WITH_TCL)
 	@${CP} ${TMPPLIST} ${TMPPLIST}.notcl
 	@${CAT} ${PKGDIR}/PLIST.tcl ${TMPPLIST}.notcl > ${TMPPLIST}
 	@${RM} ${TMPPLIST}.notcl
 .endif
 .if defined(WITH_JDBC)
-	@ ${MKDIR} -m 0555 ${PREFIX}/share/java
+	@ ${MKDIR} -m 0555 ${PREFIX}/share/java/classes
 	@ ${INSTALL_DATA} ${WRKSRC}/interfaces/jdbc/postgresql.jar \
 			  ${PREFIX}/share/java/classes/postgresql.jar
 	@ ${ECHO_MSG} "---------------------------------------------------------"
@@ -239,7 +245,7 @@ post-install:
 	${INSTALL_MAN} ${WRKDIR}/${DISTNAME}/doc/FAQ* ${PREFIX}/share/doc/pgsql
 	${INSTALL_MAN} ${WRKDIR}/${DISTNAME}/doc/README* ${PREFIX}/share/doc/pgsql
 	${INSTALL_MAN} ${WRKDIR}/${DISTNAME}/doc/TODO ${PREFIX}/share/doc/pgsql
-	${INSTALL_MAN} ${WRKDIR}/${DISTNAME}/doc/*ps.gz ${PREFIX}/share/doc/pgsql
+#	${INSTALL_MAN} ${WRKDIR}/${DISTNAME}/doc/*ps.gz ${PREFIX}/share/doc/pgsql
 .endif
 .if !defined(BATCH)
 	@ more -e ${FILESDIR}/post-install-notes
