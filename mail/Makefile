@@ -341,6 +341,7 @@
     SUBDIR += qmailadmin-devel
     SUBDIR += qmailanalog
     SUBDIR += qmailmrtg7
+    SUBDIR += qmrtg
     SUBDIR += qpopper
     SUBDIR += qscan
     SUBDIR += qsf

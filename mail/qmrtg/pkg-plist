@@ -1,0 +1,18 @@
+bin/qmrtg-bytes
+bin/qmrtg-concurrency
+bin/qmrtg-deliveries
+bin/qmrtg-errors
+bin/qmrtg-queue
+bin/qmrtg-smtpop
+bin/qmrtg.sh
+bin/qmrtgsync.sh
+etc/qmrtg.conf.sample
+%%PORTDOCS%%%%DOCSDIR%%/FAQ.txt
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE.txt
+%%PORTDOCS%%%%DOCSDIR%%/README.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%PORTDOCS%%%%EXAMPLESDIR%%/mrtg.cfg
+%%PORTDOCS%%%%EXAMPLESDIR%%/qmrtg.conf.sample
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+@exec mkdir -p /var/db/qmrtg
+@unexec rm -rf /var/db/qmrtg
