@@ -1,0 +1,10 @@
+--- kxicq/engine/kxmessage.cpp.orig	Sat Nov 11 00:24:55 2000
++++ kxicq/engine/kxmessage.cpp	Wed Mar 28 11:19:33 2001
+@@ -100,6 +100,7 @@
+   tw << size;  
+   file.at(file.size());
+   QTextStream t ( &file );
++  t.setEncoding(QTextStream::Locale);
+   kxMessageInfoStruct *info;
+   info=new kxMessageInfoStruct;
+   info->uin=_uin;

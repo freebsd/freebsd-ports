@@ -1,0 +1,64 @@
+--- acinclude.m4.orig	Sun Mar  4 17:23:28 2001
++++ acinclude.m4	Thu Apr  5 16:06:32 2001
+@@ -804,9 +804,9 @@
+ AC_REQUIRE([KDE_USE_QT])
+ kde_qt_was_given=yes
+ if test -z "$LIBQT"; then
+-  LIBQT="-lqt"
++  LIBQT="-lqt2"
+   kde_qt_was_given=no
+-  kde_int_qt="-lqt"
++  kde_int_qt="-lqt2"
+ else
+   kde_int_qt="$LIBQT"
+ fi
+--- aclocal.m4.orig	Sun Mar  4 17:23:29 2001
++++ aclocal.m4	Thu Apr  5 16:06:47 2001
+@@ -815,9 +815,9 @@
+ AC_REQUIRE([KDE_USE_QT])
+ kde_qt_was_given=yes
+ if test -z "$LIBQT"; then
+-  LIBQT="-lqt"
++  LIBQT="-lqt2"
+   kde_qt_was_given=no
+-  kde_int_qt="-lqt"
++  kde_int_qt="-lqt2"
+ else
+   kde_int_qt="$LIBQT"
+ fi
+--- configure.orig	Sun Mar  4 17:23:32 2001
++++ configure	Thu Apr  5 16:07:10 2001
+@@ -5049,9 +5049,9 @@
+ 
+ kde_qt_was_given=yes
+ if test -z "$LIBQT"; then
+-  LIBQT="-lqt"
++  LIBQT="-lqt2"
+   kde_qt_was_given=no
+-  kde_int_qt="-lqt"
++  kde_int_qt="-lqt2"
+ else
+   kde_int_qt="$LIBQT"
+ fi
+--- kxicq/Makefile.am.orig	Sun Mar  4 17:25:54 2001
++++ kxicq/Makefile.am	Thu Apr  5 16:07:44 2001
+@@ -17,7 +17,7 @@
+ 		-lX11 $\
+ 		-lpng -lz -lm\
+ 		-ljpeg\
+-		-lqt $ $ -lXext $ $\
++		-lqt2 $ $ -lXext $ $\
+ 		-lkdecore\
+ 		-lkdeui\
+ 		-lkfile
+--- kxicq/Makefile.in.orig	Sun Mar  4 17:29:43 2001
++++ kxicq/Makefile.in	Thu Apr  5 16:07:31 2001
+@@ -202,7 +202,7 @@
+ bin_PROGRAMS = kxicq
+ 
+ kxicq_LDFLAGS = $(all_libraries)
+-kxicq_LDADD =  		$(top_srcdir)/kxicq/widgets/libwidgets.a 		$(top_srcdir)/kxicq/widgets/checklistbox/libchecklistbox.a 		$(top_srcdir)/kxicq/engine/libengine.a 		$(top_srcdir)/kxicq/ui/libui.a 		-lX11 $ 		-lpng -lz -lm 		-ljpeg 		-lqt $ $ -lXext $ $ 		-lkdecore 		-lkdeui 		-lkfile
++kxicq_LDADD =  		$(top_srcdir)/kxicq/widgets/libwidgets.a 		$(top_srcdir)/kxicq/widgets/checklistbox/libchecklistbox.a 		$(top_srcdir)/kxicq/engine/libengine.a 		$(top_srcdir)/kxicq/ui/libui.a 		-lX11 $ 		-lpng -lz -lm 		-ljpeg 		-lqt2 $ $ -lXext $ $ 		-lkdecore 		-lkdeui 		-lkfile
+ 
+ LDFLAGS = 
+ INCLUDES = $(all_includes) 		-I$(top_srcdir)/ 		-I$(top_srcdir)/kxicq 		-I$(top_srcdir)/kxicq/ui 		-I$(top_srcdir)/kxicq/engine 		-I$(top_srcdir)/kxicq/widgets 		-I$(top_srcdir)/kxicq/widgets/checklistbox

@@ -147,6 +147,7 @@
     SUBDIR += kmud
     SUBDIR += ksamba
     SUBDIR += kxicq
+    SUBDIR += kxicq2
     SUBDIR += lambdamoo
     SUBDIR += ldapmodule
     SUBDIR += ldapsdk
