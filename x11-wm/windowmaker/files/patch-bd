@@ -5,7 +5,7 @@
  wprefsdir = @wprefsdir@
  
 -SUBDIRS = wrlib WINGs src util po WindowMaker wmlib test WPrefs.app doc 	contrib
-+SUBDIRS = wrlib WINGs src util po WindowMaker wmlib test WPrefs.app doc 	contrib \
++SUBDIRS = wrlib WINGs src util po WindowMaker wmlib WPrefs.app doc 	contrib \
 +		libwmfun-0.0.3/libwmfun
  
  
