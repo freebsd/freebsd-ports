@@ -1,16 +1,16 @@
 # New ports collection makefile for:	spruce
 # Version required:   	0.4.5
 # Date created:		05 June 1999
-# Whom:			Chris Piazza <cpiazza@home.net>
+# Whom:			Chris Piazza <cpiazza@FreeBSD.org>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/06/11 08:29:14 taoka Exp $
 #
 
 DISTNAME=	spruce-0.4.5
 CATEGORIES=	mail
 MASTER_SITES=	http://www.xtorshun.org/spruce/
 
-MAINTAINER=	cpiazza@home.net
+MAINTAINER=	cpiazza@FreeBSD.org
 
 LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
 

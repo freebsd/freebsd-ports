@@ -1,16 +1,16 @@
 # New ports collection makefile for: 	greed
 # Version required:	0.801
 # Date created:		13 April 1999
-# Whom:			Chris Piazza <cpiazza@home.net>
+# Whom:			Chris Piazza <cpiazza@FreeBSD.org>
 #
-# $Id: Makefile,v 1.7 1999/05/09 16:26:03 steve Exp $
+# $Id: Makefile,v 1.8 1999/06/12 07:09:08 mharo Exp $
 #
 
 DISTNAME=	greed-0.801
 CATEGORIES=	net
 MASTER_SITES=	http://www.public.asu.edu/~arturner/greed/
 
-MAINTAINER=	cpiazza@home.net
+MAINTAINER=	cpiazza@FreeBSD.org
 
 MANCOMPRESSED=	yes
 MAN1=		greed.1

@@ -1,9 +1,9 @@
 # New ports collection makefile for:  	x3arth
 # Version required:	1.1
 # Date created:		15 April 1999
-# Whom:			Chris Piazza <cpiazza@home.net>
+# Whom:			Chris Piazza <cpiazza@FreeBSD.org>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/04/16 07:18:32 flathill Exp $
 #
 
 DISTNAME=	x3arth-1.1
@@ -11,7 +11,7 @@ CATEGORIES=	astro
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	X11/desktop
 
-MAINTAINER=	cpiazza@home.net
+MAINTAINER=	cpiazza@FreeBSD.org
 
 RUN_DEPENDS=	${LOCALBASE}/bin/tclsh8.0:${PORTSDIR}/lang/tcl80 \
 		${X11BASE}/bin/xv:${PORTSDIR}/graphics/xv
