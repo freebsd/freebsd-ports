@@ -19,7 +19,7 @@ PATCH_SITES=	http://www-jlc.kek.jp/~fujiik/mklinux/Packages/dr3/JRPMS/ical/SOURC
 PATCHFILES=	ical-2.2-jp1.patch
 PATCH_DIST_STRIP=	-p1
 
-MAINTAINER=	mutoh@info.nara-k.ac.jp
+MAINTAINER=	tmutoh@mx10.freecom.ne.jp
 
 LIB_DEPENDS=	tk80jp:${PORTSDIR}/japanese/tk80
 

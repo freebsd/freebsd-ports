@@ -10,7 +10,7 @@ PORTVERSION=	2.1
 CATEGORIES=	mbone
 MASTER_SITES=	http://www-mice.cs.ucl.ac.uk/multimedia/software/relate-ui/${PORTVERSION}/
 
-MAINTAINER=	mutoh@info.nara-k.ac.jp
+MAINTAINER=	tmutoh@mx10.freecom.ne.jp
 
 LIB_DEPENDS=	tk82:${PORTSDIR}/x11-toolkits/tk82
 RUN_DEPENDS=	rat30:${PORTSDIR}/mbone/rat30 \
