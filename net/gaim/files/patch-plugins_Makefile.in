@@ -1,9 +1,9 @@
---- plugins/Makefile.in.orig	Sat Apr  3 02:52:47 2004
-+++ plugins/Makefile.in	Sat Apr  3 02:53:02 2004
-@@ -160,9 +160,9 @@
- install_sh = @install_sh@
- perlpath = @perlpath@
- sedpath = @sedpath@
+--- plugins/Makefile.in.orig	Sun May 30 17:53:41 2004
++++ plugins/Makefile.in	Sun May 30 17:54:22 2004
+@@ -285,9 +285,9 @@
+ target_cpu = @target_cpu@
+ target_os = @target_os@
+ target_vendor = @target_vendor@
 -DIST_SUBDIRS = docklet gevolution gaim-remote gestures perl ssl tcl ticker
 +DIST_SUBDIRS = docklet gaim-remote gestures perl ssl tcl ticker
  
