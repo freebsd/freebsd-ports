@@ -6,13 +6,34 @@
 # $FreeBSD$
 #
 
+PORTNAME=	qt-${DB}-plugin
+PORTVERSION=	3.3.1
+CATEGORIES=	databases
+MASTER_SITES=	ftp://ftp.trolltech.com/qt/source/      \
+		ftp://ftp.silug.org/pub/qt/             \
+		ftp://ftp.bero.org/pub/qt/              \
+		ftp://ftp.planetmirror.com.au/pub/trolltech/qt/
+DISTNAME=	qt-x11-free-${PORTVERSION}
+DIST_SUBDIR=	KDE
+
 MAINTAINER=	kde@freebsd.org
 COMMENT=	A plugin for QT to connect to PostgreSQL-Databases
 
-LIB_DEPENDS+=	pq:${PORTSDIR}/databases/postgresql7
-
 DB=		psql
 
-DESCR=		${PORTSDIR}/databases/qt-pgsql-plugin/pkg-descr
+LIB_DEPENDS+=	pq:${PORTSDIR}/databases/postgresql7 \
+		qt-mt:${PORTSDIR}/x11-toolkits/qt33
 
-.include "../qt-mysql-plugin/Makefile.dbplugin"
+USE_BZIP2=	yes
+PLUGIN=		plugins/src/sqldrivers/${DB}
+DRIVER=		src/sql/drivers/${DB}
+EXTRACT_AFTER_ARGS?=| ${TAR} -xf - ${DISTNAME}/${PLUGIN} \
+		${DISTNAME}/${DRIVER} ${DISTNAME}/src/sql/drivers/cache
+MAKEFILE=	${FILESDIR}/Makefile.bsd
+MAKE_ENV+=	DB="${DB}" DRIVER="${DRIVER}" PLUGIN="${PLUGIN}" \
+		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
+		PTHREAD_LIBS="${PTHREAD_LIBS}"
+USE_X_PREFIX=	yes
+PLIST_SUB=	DB=${DB}
+
+.include <bsd.port.mk>
