@@ -112,6 +112,7 @@
     SUBDIR += timidity++-xskin
     SUBDIR += tosha
     SUBDIR += tracker
+    SUBDIR += vorbis
     SUBDIR += waveplay
     SUBDIR += wavplay
     SUBDIR += wmcdplay
