@@ -372,6 +372,7 @@
     SUBDIR += p5-Time-Period
     SUBDIR += p5-TimeDate
     SUBDIR += p5-TraceFuncs
+    SUBDIR += p5-VCS-CVS
     SUBDIR += patch
     SUBDIR += pccts
     SUBDIR += pcl-cvs-emacs

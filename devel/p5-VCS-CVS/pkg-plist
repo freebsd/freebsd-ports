@@ -1,0 +1,5 @@
+lib/perl5/site_perl/%%PERL_VER%%/VCS/CVS.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/VCS/CVS/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/VCS
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/VCS/CVS
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/VCS
