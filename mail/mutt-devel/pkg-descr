@@ -1,5 +1,16 @@
 Mutt -- "The Mongrel of Mail User Agents" (part Elm, part Pine, part mh,
-part everything else) is an interactive screen-oriented mailer program
-that supersedes Elm, Pine, mail and mailx.
+part slrn, part everything else) is an interactive screen-oriented mailer
+program that supersedes Elm, Pine, mail and mailx.
+
+Features include color support, message threading, MIME support (including
+RFC1522 support for encoded headers), customizable key bindings, POP3,
+Delivery Status Notification (DSN) support, and PGP/MIME.
+
+Warning, this is beta software.  While it is farily stable and quite
+usable, core dumps do happen.  Use at your own risk.  New versions are
+usually released every Friday.
+
+Homepage:		http://www.cs.hmc.edu/~me/mutt/
+Mutt User Information:	http://www.math.fu-berlin.de/~guckes/mutt/
 
 	-- David	(obrien@cs.ucdavis.edu)
