@@ -1,0 +1,20 @@
+9e is a program to explose Plan9 archives. You can do whatever you
+like with the source so long as you clearly indicate all modifications
+and the author responsible for each.
+
+Usage Summary:
+
+   $9e [options] <file> ...
+
+Options:
+
+    -h: dump headers only 
+    -v: dump file names and sizes while extracting 
+    -r: specify alternate root directory 
+    -?: help 
+
+If no file is named on the command line, standard input is assumed.
+Note that the input file must be a decompressed archive (decompress
+with gzip). 
+
+WWW: http://www.eecs.harvard.edu/~wkj/Software/9e/
