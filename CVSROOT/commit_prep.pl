@@ -5,9 +5,9 @@
 #
 # Perl filter to handle pre-commit checking of files.  This program
 # records the last directory where commits will be taking place for
-# use by the log_accumulate script.  For new file, it forcing the
+# use by the log_accum.pl script.  For new files, it forces the
 # existence of a RCS "Id" keyword in the first ten lines of the file.
-# For existing files, it checks version number in the "Id" line to
+# For existing files, it checks the version number in the "Id" line to
 # prevent losing changes because an old version of a file was copied
 # into the direcory.
 #
