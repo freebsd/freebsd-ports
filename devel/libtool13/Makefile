@@ -17,7 +17,6 @@ MAINTAINER=	ade@FreeBSD.org
 COMMENT=	Generic shared library support script (version 1.3)
 
 DEPRECATED=	Please use devel/libtool15 instead
-EXPIRATION_DATE=31st December 2004
 
 BUILD_VERSION=	13
 PLIST_SUB=	BUILD_VERSION=${BUILD_VERSION}
@@ -28,16 +27,6 @@ CONFIGURE_ARGS=	--disable-ltdl-install \
 CONFIGURE_ENV=	PREFIX=${PREFIX} PACKAGE=libtool${BUILD_VERSION}
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_REINPLACE=	yes
-
-.if defined(USE_LIBTOOL) || defined(USE_LIBTOOL_VER)
-pre-everything::
-	@${ECHO} ===========================================================
-	@${ECHO} "You have 'USE_LIBTOOL' or 'USE_LIBTOOL_VER' variables"
-	@${ECHO} "defined either in environment or in make(1) arguments."
-	@${ECHO} "Please undefine them and try again."
-	@${ECHO} ===========================================================
-	@${FALSE}
-.endif # defined(USE_LIBTOOL) || defined(USE_LIBTOOL_VER)
 
 post-patch:
 	@(cd ${WRKSRC}/doc && \

@@ -26,16 +26,6 @@ CONFIGURE_ENV=	PREFIX=${PREFIX} PACKAGE=libtool${BUILD_VERSION}
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_REINPLACE=	yes
 
-.if defined(USE_LIBTOOL) || defined(USE_LIBTOOL_VER)
-pre-everything::
-	@${ECHO} ===========================================================
-	@${ECHO} "You have 'USE_LIBTOOL' or 'USE_LIBTOOL_VER' variables"
-	@${ECHO} "defined either in environment or in make(1) arguments."
-	@${ECHO} "Please undefine them and try again."
-	@${ECHO} ===========================================================
-	@${FALSE}
-.endif # defined(USE_LIBTOOL) || defined(USE_LIBTOOL_VER)
-
 post-patch:
 	@(cd ${WRKSRC}/doc && \
 		${RM} -f *.info* && \

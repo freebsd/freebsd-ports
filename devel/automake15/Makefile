@@ -17,10 +17,9 @@ MAINTAINER=	ade@FreeBSD.org
 COMMENT=	GNU Standards-compliant Makefile generator (version 1.5)
 
 DEPRECATED=	Please use devel/automake18 instead
-EXPIRATION_DATE=31st December 2004
 
-WANT_AUTOCONF_VER=yes
-WANT_AUTOCONF_RUN=253
+WANT_AUTOCONF_VER=253
+WANT_AUTOCONF_RUN=yes
 BUILD_VERSION=	15
 PLIST_SUB=	BUILD_VERSION=${BUILD_VERSION}
 LATEST_LINK=	automake${BUILD_VERSION}
@@ -30,16 +29,6 @@ CONFIGURE_ENV=	AUTOCONF=autoconf253 AUTOHEADER=autoheader253 MAKEINFO=makeinfo
 CONFIGURE_ARGS=	--program-suffix=${BUILD_VERSION}
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_REINPLACE=	yes
-
-.if defined(USE_AUTOMAKE) || defined(USE_AUTOMAKE_VER)
-pre-everything::
-	@${ECHO} ===========================================================
-	@${ECHO} "You have 'USE_AUTOMAKE' or 'USE_AUTOMAKE_VER' variables"
-	@${ECHO} "defined either in environment or in make(1) arguments."
-	@${ECHO} "Please undefine them and try again."
-	@${ECHO} ===========================================================
-	@${FALSE}
-.endif # defined(USE_AUTOMAKE) || defined(USE_AUTOMAKE_VER)
 
 post-patch:
 	@(cd ${WRKSRC} && \
