@@ -13,6 +13,7 @@ MASTER_SITES=	http://balsa.gnome.org/ \
 		ftp://ftp.newton.cx/pub/balsa/
 
 MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	A mail reader for the GNOME desktop
 
 LIB_DEPENDS=	ldap.2:${PORTSDIR}/net/openldap2 \
 		aspell.15:${PORTSDIR}/textproc/aspell \
