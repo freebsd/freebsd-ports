@@ -23,7 +23,7 @@ USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 
-PLIST_FILES=	bin/selectwm
+PLIST_FILES=	bin/selectwm share/locale/fr/LC_MESSAGES/selectwm.mo
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,-O2,${CFLAGS},g' ${WRKSRC}/configure
