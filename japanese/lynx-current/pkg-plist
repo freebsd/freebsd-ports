@@ -1,11 +1,14 @@
 bin/lynx
-etc/lynx.cfg
+etc/lynx.cfg.sample
+@unexec rm -f %D/etc/lynx.cfg
 lib/lynx_help/Lynx_users_guide.html
 lib/lynx_help/about_lynx.html
+lib/lynx_help/keystrokes/alt_edit_help.html
 lib/lynx_help/keystrokes/bookmark_help.html
 lib/lynx_help/keystrokes/cookie_help.html
 lib/lynx_help/keystrokes/dired_help.html
 lib/lynx_help/keystrokes/edit_help.html
+lib/lynx_help/keystrokes/environments.html
 lib/lynx_help/keystrokes/follow_help.html
 lib/lynx_help/keystrokes/gopher_types_help.html
 lib/lynx_help/keystrokes/history_help.html
@@ -15,6 +18,7 @@ lib/lynx_help/keystrokes/option_help.html
 lib/lynx_help/keystrokes/other_help.html
 lib/lynx_help/keystrokes/print_help.html
 lib/lynx_help/keystrokes/scrolling_help.html
+lib/lynx_help/keystrokes/test_display.html
 lib/lynx_help/keystrokes/visited_help.html
 lib/lynx_help/keystrokes/xterm_help.html
 lib/lynx_help/lynx-dev.html
@@ -25,6 +29,7 @@ share/doc/lynx/COPYHEADER
 share/doc/lynx/COPYING
 share/doc/lynx/PROBLEMS
 share/doc/lynx/README
+share/doc/lynx/samples/cernrules.txt
 share/doc/lynx/samples/jumpsUnix.html
 share/doc/lynx/samples/jumpsVMS.html
 share/doc/lynx/samples/lynx-keymaps
