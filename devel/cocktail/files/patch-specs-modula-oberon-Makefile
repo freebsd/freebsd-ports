@@ -1,6 +1,6 @@
---- ../../work/cocktail-9309//./specs/modula/oberon/Makefile	Tue Feb 15 14:29:03 1994
-+++ ./specs/modula/oberon/Makefile	Wed Mar 31 23:09:51 2004
-@@ -8,14 +8,15 @@
+--- /usr/ports/devel/cocktail/work/cocktail-9309//./specs/modula/oberon/Makefile	Tue Feb 15 14:29:03 1994
++++ ./specs/modula/oberon/Makefile	Wed Aug 25 11:42:24 2004
+@@ -8,14 +8,16 @@
  	lpp -xzj oberon.pars;
  
  oberon.rex:	oberon.scan Scanner.rpp
@@ -16,6 +16,9 @@
 +	$(LALR) -d -p Parser.lalr;
  
  clean:
- 	rm -f Scanner.m? Parser.m? ParserDrv.mi ParserDrv
- 	rm -f core *.[dimor] _Debug oberon.rex Parser.lalr Scanner.rpp *.bak
+-	rm -f Scanner.m? Parser.m? ParserDrv.mi ParserDrv
+-	rm -f core *.[dimor] _Debug oberon.rex Parser.lalr Scanner.rpp *.bak
++	-rm -f Scanner.m? Parser.m? ParserDrv.mi ParserDrv
++	-rm -f $(STDCLEAN) 
++	-rm -f   *.[dimor] _Debug oberon.rex Parser.lalr Scanner.rpp *.bak
 +.include "../../Makefile.inc" 

@@ -1,6 +1,6 @@
---- ../../work/cocktail-9309//./puma/m2c/Makefile	Tue Feb 15 14:25:55 1994
-+++ ./puma/m2c/Makefile	Wed Mar 31 22:35:05 2004
-@@ -1,39 +1,31 @@
+--- /usr/ports/devel/cocktail/work/cocktail-9309//./puma/m2c/Makefile	Tue Feb 15 14:25:55 1994
++++ ./puma/m2c/Makefile	Thu Aug  5 18:49:29 2004
+@@ -1,39 +1,32 @@
 -BIN	= $(HOME)/bin
 -LIB	= $(HOME)/lib
 -OPT	= -O
@@ -48,8 +48,9 @@
  
 -# SYSTEM_	= SYSTEM_.o
 +clean:
-+	rm -f core *.o
-+	rm -f puma
++	-rm -f $(STDCLEAN) 
++	-rm -f   *.o
++	-rm -f puma
  
  lint:
 -	lint -I$(REUSE) *.c
@@ -57,7 +58,7 @@
  
  
  # HEAD
-@@ -140,18 +132,3 @@
+@@ -140,18 +133,3 @@
  	Parser.o	\
  	$(CLIBS)
  

@@ -1,5 +1,5 @@
---- ../../work/cocktail-9309//./reuse/m2c/Makefile	Tue Feb 15 14:26:46 1994
-+++ ./reuse/m2c/Makefile	Wed Mar 31 22:35:06 2004
+--- /usr/ports/devel/cocktail/work/cocktail-9309//./reuse/m2c/Makefile	Tue Feb 15 14:26:46 1994
++++ ./reuse/m2c/Makefile	Fri Sep 10 13:36:04 2004
 @@ -1,9 +1,6 @@
 -OPT	= -O
 -UNIX	= UNIX
@@ -13,7 +13,7 @@
  SYSTEM	= rSystem.o
  
  OBJS	= Checks.o DynArray.o General.o Heap.o IO.o Idents.o Layout.o \
-@@ -13,12 +10,21 @@
+@@ -13,12 +10,22 @@
  CLIBS	= Arguments.o SYSTEM_.o
  
  
@@ -28,18 +28,41 @@
 +all	: $(REUSE) 
  
 -all	: $(CLIBS)
-+test:	DynArrDrv IODrv Main rMemoryDrv RelDrv SetsDrv SysIODrv ErrorsDrv
++test:	DynArrDrv IODrv Main rMemoryDrv RelDrv SetsDrv SetsDrv2 SysIODrv ErrorsDrv
 +
 +clean	: cleantest
-+	rm -f core *.o
-+	rm -f $(REUSE)
++	-rm -f $(STDCLEAN) 
++	-rm -f   *.o
++	-rm -f $(REUSE)
 +
 +cleantest:
-+	rm -f Main.o DynArrDrv IODrv Main rMemoryDrv RelDrv SetsDrv SysIODrv ErrorsDrv
++	-rm -f Main.o DynArrDrv IODrv Main rMemoryDrv RelDrv SetsDrv SetsDrv2 SysIODrv ErrorsDrv t
  
  # HEAD
  
-@@ -308,190 +314,27 @@
+@@ -221,7 +228,7 @@
+ 
+ sources	: Sets.c
+ Sets.o	: Sets.c Sets.h
+-Sets.o	: General.h
++Sets.o	: SYSTEM_.h General.h
+ Sets.o	: DynArray.h
+ Sets.o	: IO.h
+ 
+@@ -240,6 +247,12 @@
+ SetsDrv.o	: Sets.h
+ SetsDrv.o	: IO.h
+ 
++sources	: SetsDrv2.c
++all	: SetsDrv2
++SetsDrv2.o	: SetsDrv2.c
++SetsDrv2.o	: Sets.h
++SetsDrv2.o	: IO.h
++
+ sources	: Sort.h
+ 
+ sources	: Sort.c
+@@ -308,190 +321,30 @@
  
  SYSTEM_.o	: SYSTEM_.c SYSTEM_.h
  
@@ -208,36 +231,44 @@
 -	rMemory.o	\
 -	General.o	\
 -	$(CLIBS)
-+DynArrDrv: $(SYSTEM) $(REUSE) DynArrDrv.o
-+	$(CC) $(CFLAGS) -o DynArrDrv DynArrDrv.o $(REUSE) 
- 
+-
 -# TAIL
-+ErrorsDrv: $(SYSTEM) $(REUSE) ErrorsDrv.o
-+	$(CC) $(CFLAGS) -o ErrorsDrv ErrorsDrv.o $(REUSE)
- 
+-
 -clean	:
 -	rm -f core *.o
-+IODrv: $(SYSTEM) $(REUSE) IODrv.o
-+	$(CC) $(CFLAGS) -o IODrv IODrv.o $(REUSE)
- 
+-
 -CLEAN	: clean
 -	rm -f libreuse.a
-+Main: $(SYSTEM) $(REUSE) Main.o
-+	$(CC) $(CFLAGS) -o Main Main.o $(REUSE)
- 
+-
 -cleanc	:
 -	rm -f Main.o DynArrDrv IODrv Main rMemoryDrv RelDrv SetsDrv SysIODrv ErrorsDrv
+-
+-.SUFFIXES: .md .mi .h .c .o
++DynArrDrv: $(SYSTEM) $(REUSE) DynArrDrv.o
++	$(CC) $(CFLAGS) -o DynArrDrv DynArrDrv.o $(REUSE) 
++
++ErrorsDrv: $(SYSTEM) $(REUSE) ErrorsDrv.o
++	$(CC) $(CFLAGS) -o ErrorsDrv ErrorsDrv.o $(REUSE)
++
++IODrv: $(SYSTEM) $(REUSE) IODrv.o
++	$(CC) $(CFLAGS) -o IODrv IODrv.o $(REUSE)
++
++Main: $(SYSTEM) $(REUSE) Main.o
++	$(CC) $(CFLAGS) -o Main Main.o $(REUSE)
++
 +rMemoryDrv: $(SYSTEM) $(REUSE) rMemoryDrv.o
 +	$(CC) $(CFLAGS) -o rMemoryDrv rMemoryDrv.o $(REUSE)
- 
--.SUFFIXES: .md .mi .h .c .o
++
 +RelDrv: $(SYSTEM) $(REUSE) RelDrv.o
 +	$(CC) $(CFLAGS) -o RelDrv  RelDrv.o $(REUSE)
++
++SetsDrv: $(SYSTEM) SetsDrv.o $(REUSE)
++	$(CC) $(CFLAGS) -o SetsDrv SetsDrv.o $(REUSE)
  
 -.mi.c:
 -	mtc2 $(M2FLAGS) $*.mi;
-+SetsDrv: $(SYSTEM) SetsDrv.o $(REUSE)
-+	$(CC) $(CFLAGS) -o SetsDrv SetsDrv.o $(REUSE)
++SetsDrv2: $(SYSTEM) SetsDrv2.o $(REUSE)
++	$(CC) $(CFLAGS) -o SetsDrv2 SetsDrv2.o $(REUSE)
  
 -.md.h:
 -	mtc2 $(M2FLAGS) $*.md;

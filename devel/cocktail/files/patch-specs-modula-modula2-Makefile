@@ -1,6 +1,6 @@
---- ../../work/cocktail-9309//./specs/modula/modula2/Makefile	Tue Feb 15 14:28:58 1994
-+++ ./specs/modula/modula2/Makefile	Wed Mar 31 23:08:24 2004
-@@ -10,14 +10,15 @@
+--- /usr/ports/devel/cocktail/work/cocktail-9309//./specs/modula/modula2/Makefile	Tue Feb 15 14:28:58 1994
++++ ./specs/modula/modula2/Makefile	Wed Aug 25 11:42:24 2004
+@@ -10,14 +10,16 @@
  	lpp -xzj modula.pars;
  
  modula.rex:	modula.scan Scanner.rpp
@@ -16,6 +16,9 @@
 +	$(LALR) -d -p Parser.lalr;
  
  clean:
- 	rm -f Scanner.m? Parser.m? ParserDrv.mi *.bak
- 	rm -f core *.[dimor] _Debug ParserDrv modula.rex Parser.lalr Scanner.rpp
+-	rm -f Scanner.m? Parser.m? ParserDrv.mi *.bak
+-	rm -f core *.[dimor] _Debug ParserDrv modula.rex Parser.lalr Scanner.rpp
++	-rm -f Scanner.m? Parser.m? ParserDrv.mi *.bak
++	-rm -f $(STDCLEAN) 
++	-rm -f   *.[dimor] _Debug ParserDrv modula.rex Parser.lalr Scanner.rpp
 +.include "../../Makefile.inc" 

@@ -1,6 +1,6 @@
---- ../../work/cocktail-9309//./cg/m2c/Makefile	Tue Feb 15 14:21:05 1994
-+++ ./cg/m2c/Makefile	Wed Mar 31 22:35:04 2004
-@@ -1,46 +1,37 @@
+--- /usr/ports/devel/cocktail/work/cocktail-9309//./cg/m2c/Makefile	Tue Feb 15 14:21:05 1994
++++ ./cg/m2c/Makefile	Thu Aug  5 18:48:42 2004
+@@ -1,46 +1,38 @@
 -BIN	= $(HOME)/bin
 -LIB	= $(HOME)/lib
 -OPT	= -O
@@ -42,7 +42,7 @@
 +
 +install:	cg cg.sh lpp $(DESTLIB)/cg
 +	if test $(DESTLIB) = $(DESTBIN); then echo error: DESTBIN = DESTLIB; false; else true; fi
-+	sed "s;LIB;$(DESTLIB);g" < cg.sh > $(DESTBIN)/cg
++	$(SED) "s;LIB;$(DESTLIB);g" < cg.sh > $(DESTBIN)/cg
 +	cp $(DESTBIN)/cg $(DESTBIN)/ag
 +	cp $(DESTBIN)/cg $(DESTBIN)/ast
 +	chmod a+rx $(DESTBIN)/cg $(DESTBIN)/ast $(DESTBIN)/ag
@@ -63,8 +63,9 @@
  
 -# SYSTEM_	= SYSTEM_.o
 +clean:
-+	rm -f core *.o
-+	rm -f cg lpp
++	-rm -f $(STDCLEAN) 
++	-rm -f   *.o
++	-rm -f cg lpp
  
  lint:
 -	lint -I$(REUSE) *.c
@@ -73,7 +74,7 @@
  
  # HEAD
  
-@@ -431,18 +422,3 @@
+@@ -431,18 +423,3 @@
  	Tree.o	\
  	$(CLIBS)
  

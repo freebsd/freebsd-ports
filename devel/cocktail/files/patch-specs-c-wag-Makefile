@@ -1,14 +1,18 @@
---- ../../work/cocktail-9309//./specs/c/wag/Makefile	Tue Feb 15 14:28:50 1994
-+++ ./specs/c/wag/Makefile	Wed Mar 31 23:07:19 2004
-@@ -1,7 +1,3 @@
+--- /usr/ports/devel/cocktail/work/cocktail-9309//./specs/c/wag/Makefile	Tue Feb 15 14:28:50 1994
++++ ./specs/c/wag/Makefile	Wed Aug 25 12:03:56 2004
+@@ -1,7 +1,7 @@
 -LIB	= $(HOME)/lib
 -INCDIR	= $(LIB)/include
 -CFLAGS	= -I$(INCDIR)
 -CC	= cc
++ROOTDIR= ../../..
++.include "../../Makefile.inc"
++
++CFLAGS = $(TCFLAGS) -I $(TMPINC)
  
  SOURCES	= Scanner.h Scanner.c Parser.h Parser.c Tree.h Tree.c Semantics.h Semantics.c \
  	  Types.h Types.c ICode.h ICode.c ICodeInter.h ICodeInter.c minilax.c
-@@ -9,8 +5,8 @@
+@@ -9,38 +9,38 @@
  OBJS	= minilax.o Scanner.o Parser.o Tree.o Types.o Semantics.o ICode.o ICodeInter.o
  
  all:	minilax
@@ -18,9 +22,12 @@
 +	time ./minilax < in1
  
  minilax:	$(OBJS)
- 	$(CC) $(CFLAGS) -o minilax $(OBJS) $(LIB)/libreuse.a -lm
-@@ -19,28 +15,28 @@
- 	lpp -cxzj minilax.pars;
+-	$(CC) $(CFLAGS) -o minilax $(OBJS) $(LIB)/libreuse.a -lm
++	$(CC) $(CFLAGS) -o minilax $(OBJS) -L $(TMPLIB)  -l reuse  -lm
+ 
+ Scanner.rpp Parser.lalr:	minilax.pars
+-	lpp -cxzj minilax.pars;
++	$(LPP) -cxzj minilax.pars;
  
  minilax.rex:	minilax.scan Scanner.rpp
 -	rpp < minilax.scan > minilax.rex;
@@ -56,7 +63,7 @@
  
  Scanner.o:	Scanner.h
  Parser.o:	Parser.h Tree.h Scanner.h
-@@ -54,36 +50,34 @@
+@@ -54,36 +54,34 @@
  	lint $(CFLAGS) -u *.c
  
  test:	$(SOURCES)
@@ -99,12 +106,13 @@
  
  clean:
 -	rm -f Scanner.? Parser.? Tree.? Semantics.? Types.? ICode.? *.TS yy*.w *.o
-+	rm -f Scanner.? Parser.? Tree.? Semantics.? 
-+	rm -f Types.? ICode.? *.TS yy*.w *.o
- 	rm -f core _Debug minilax *Tab minilax.rex Parser.lalr Scanner.rpp
- 
--.SUFFIXES:	.c .o
+-	rm -f core _Debug minilax *Tab minilax.rex Parser.lalr Scanner.rpp
 -
+-.SUFFIXES:	.c .o
++	-rm -f Scanner.? Parser.? Tree.? Semantics.? 
++	-rm -f Types.? ICode.? *.TS yy*.w *.o
++	-rm -f $(STDCLEAN) 
++	-rm -f   _Debug minilax *Tab minilax.rex Parser.lalr Scanner.rpp
+ 
 -.c.o:
 -	$(CC) $(CFLAGS) -c $*.c
-+.include "../../../Makefile.inc" 

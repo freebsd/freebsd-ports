@@ -1,6 +1,6 @@
---- ../../work/cocktail-9309//./specs/modula/modula2.ell/Makefile	Tue Feb 15 14:29:00 1994
-+++ ./specs/modula/modula2.ell/Makefile	Wed Mar 31 23:08:43 2004
-@@ -5,10 +5,11 @@
+--- /usr/ports/devel/cocktail/work/cocktail-9309//./specs/modula/modula2.ell/Makefile	Tue Feb 15 14:29:00 1994
++++ ./specs/modula/modula2.ell/Makefile	Wed Aug 25 11:42:24 2004
+@@ -5,10 +5,12 @@
  	echo p ParserDrv  | mc
  
  Scanner.md Scanner.mi ScannerDrv.mi:	modula.rex
@@ -12,5 +12,7 @@
 +	$(ELL) -dip modula.ell;
  
  clean:
- 	rm -f *Drv *.m? *.[dimor] _Debug core *.bak
+-	rm -f *Drv *.m? *.[dimor] _Debug core *.bak
++	-rm -f $(STDCLEAN) 
++	-rm -f  *Drv *.m? *.[dimor] _Debug  *.bak
 +.include "../../Makefile.inc" 

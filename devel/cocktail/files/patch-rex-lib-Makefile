@@ -1,0 +1,12 @@
+--- /usr/ports/devel/cocktail/work/cocktail-9309//./rex/lib/Makefile	Tue Feb 15 14:27:27 1994
++++ ./rex/lib/Makefile	Thu Aug  5 18:49:04 2004
+@@ -1,7 +1,8 @@
+ all:	ScanDrv.mod Scanner.def Scanner.mod Source.def Source.mod
+ 
+ clean:
+-	rm -f core *.def *.mod
++	-rm -f $(STDCLEAN) 
++	-rm -f   *.def *.mod
+ 
+ .SUFFIXES:	.def .mod .md .mi
+ 

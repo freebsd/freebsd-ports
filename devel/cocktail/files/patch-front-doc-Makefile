@@ -1,5 +1,5 @@
---- ../../work/cocktail-9309//./front/doc/Makefile	Tue Feb 15 14:23:21 1994
-+++ ./front/doc/Makefile	Wed Mar 31 22:35:04 2004
+--- /usr/ports/devel/cocktail/work/cocktail-9309//./front/doc/Makefile	Tue Feb 15 14:23:21 1994
++++ ./front/doc/Makefile	Thu Aug  5 18:48:59 2004
 @@ -1,17 +1,18 @@
  # $Id: Makefile,v 2.8 1993/08/24 13:19:11 grosch rel $
  
@@ -27,8 +27,10 @@
  
  bnf.cat:	bnf.1
  	nroff -man < bnf.1 | col > bnf.cat
-@@ -25,3 +26,4 @@
+@@ -24,4 +25,5 @@
+ 	troff -man lalr.1
  
  clean:
- 	rm -f bnf.cat lalr.cat
+-	rm -f bnf.cat lalr.cat
++	-rm -f bnf.cat lalr.cat
 +

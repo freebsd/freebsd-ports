@@ -1,6 +1,6 @@
---- ../../work/cocktail-9309//./rex/m2c/Makefile	Tue Feb 15 14:27:51 1994
-+++ ./rex/m2c/Makefile	Wed Mar 31 22:59:41 2004
-@@ -1,34 +1,28 @@
+--- /usr/ports/devel/cocktail/work/cocktail-9309//./rex/m2c/Makefile	Tue Feb 15 14:27:51 1994
++++ ./rex/m2c/Makefile	Thu Aug  5 18:49:05 2004
+@@ -1,34 +1,29 @@
 -BIN	= $(HOME)/bin
 -LIB	= $(HOME)/lib
 -OPT	= -O
@@ -46,12 +46,13 @@
 +	sh -c "if test ! -d $(DESTLIB)/rex; then mkdir -p $(DESTLIB)/rex; else true; fi"
  
 +clean:
-+	rm -f core *.o
-+	rm -f rex
++	-rm -f $(STDCLEAN) 
++	-rm -f   *.o
++	-rm -f rex
  
  # HEAD
  
-@@ -198,18 +192,3 @@
+@@ -198,18 +193,3 @@
  	Scanner.o	\
  	$(CLIBS)
  

@@ -1,6 +1,6 @@
---- ../../work/cocktail-9309//./estra/m2c/Makefile	Tue Feb 15 14:23:01 1994
-+++ ./estra/m2c/Makefile	Wed Mar 31 22:35:04 2004
-@@ -1,36 +1,27 @@
+--- /usr/ports/devel/cocktail/work/cocktail-9309//./estra/m2c/Makefile	Tue Feb 15 14:23:01 1994
++++ ./estra/m2c/Makefile	Thu Aug  5 18:48:55 2004
+@@ -1,36 +1,28 @@
 -BIN	= $(HOME)/bin
 -LIB	= $(HOME)/lib
 -OPT	= -O
@@ -47,12 +47,13 @@
 +	sh -c "if test ! -d $(DESTLIB)/estra; then mkdir -p $(DESTLIB)/estra; else true; fi"
  
 +clean:
-+	rm -f core *.o
-+	rm -f estra
++	-rm -f $(STDCLEAN) 
++	-rm -f   *.o
++	-rm -f estra
  
  # HEAD
  
-@@ -232,18 +223,3 @@
+@@ -232,18 +224,3 @@
  	CodeM2.o	\
  	$(CLIBS)
  

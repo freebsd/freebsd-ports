@@ -1,5 +1,5 @@
---- ../../work/cocktail-9309//./rex/src/Makefile	Tue Feb 15 14:27:41 1994
-+++ ./rex/src/Makefile	Wed Mar 31 22:58:56 2004
+--- /usr/ports/devel/cocktail/work/cocktail-9309//./rex/src/Makefile	Tue Feb 15 14:27:41 1994
++++ ./rex/src/Makefile	Thu Aug  5 18:49:04 2004
 @@ -30,7 +30,7 @@
  	echo p rex | mc -d $(MLIB)
  
@@ -55,4 +55,22 @@
 +	$(SED) 's/@/rexId/' < ../../front/src/Id.mi > rexIdDrv.mi
  	echo p rexIdDrv | mc -d $(MLIB)
  	mv rexIdDrv rexId
+ 
+@@ -101,13 +101,14 @@
+ 	sh -c "if test ! -d $(LIB)/Id; then mkdir -p $(LIB)/Id; else true; fi"
+ 
+ cleanId:
+-	rm -f rexId*
++	-rm -f rexId*
+ 
+ clean:	cleanId
+-	rm -f core *.[dimor] *.def *.mod *.sym ERRORS LISTING _Debug rex *.bak
++	-rm -f $(STDCLEAN) 
++	-rm -f   *.[dimor] *.def *.mod *.sym ERRORS LISTING _Debug rex *.bak
+ 
+ CLEAN:	clean
+-	rm -f $(SOURCES)
++	-rm -f $(SOURCES)
+ 
+ .SUFFIXES:	.def .mod .md .mi
  

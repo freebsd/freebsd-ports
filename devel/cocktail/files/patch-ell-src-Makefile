@@ -1,5 +1,14 @@
---- ../../work/cocktail-9309//./ell/src/Makefile	Tue Feb 15 14:22:52 1994
-+++ ./ell/src/Makefile	Wed Mar 31 22:43:34 2004
+--- /usr/ports/devel/cocktail/work/cocktail-9309//./ell/src/Makefile	Tue Feb 15 14:22:52 1994
++++ ./ell/src/Makefile	Thu Aug  5 18:48:54 2004
+@@ -31,7 +31,7 @@
+ ell:	$(GENDEFS) $(GENIMPS) ell_boot
+ 
+ ell_boot:	$(DEFS) $(IMPS) ell.mi
+-	rm -f ell
++	-rm -f ell
+ 	echo p ell | mc -d ../../common/src -d ../../reuse/src
+ 
+ install:	ell ell.sh ErrorTab $(LIB)/ell
 @@ -48,13 +48,13 @@
  	sh -c "if test ! -d $(LIB)/ell; then mkdir -p $(LIB)/ell; else true; fi"
  
@@ -17,3 +26,17 @@
  
  Semantics.md Semantics.mi:	Sem.estra
  	estra $(ESTRA) Sem.estra;
+@@ -75,10 +75,11 @@
+ 	cd ../m2c; rm -f *.m[id]
+ 
+ clean:
+-	rm -f core ERRORS LISTING *.[dimor] ell convert *.bak
++	-rm -f $(STDCLEAN) 
++	-rm -f   ERRORS LISTING *.[dimor] ell convert *.bak
+ 
+ CLEAN:	clean
+-	rm -f $(SOURCES)
++	-rm -f $(SOURCES)
+ 
+ .SUFFIXES:	.MI .mi
+ 

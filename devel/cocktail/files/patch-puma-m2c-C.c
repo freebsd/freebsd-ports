@@ -1,5 +1,5 @@
---- ../../work/cocktail-9309//./puma/m2c/C.c	Tue Feb 15 14:26:00 1994
-+++ ./puma/m2c/C.c	Wed Mar 31 22:35:05 2004
+--- /usr/ports/devel/cocktail/work/cocktail-9309//./puma/m2c/C.c	Tue Feb 15 14:26:00 1994
++++ ./puma/m2c/C.c	Thu Aug  5 18:49:27 2004
 @@ -1558,7 +1558,7 @@
            IO_WriteS(Tree_f, (STRING)"_Exit) () = yyExit;", 19L);
            IO_WriteNl(Tree_f);

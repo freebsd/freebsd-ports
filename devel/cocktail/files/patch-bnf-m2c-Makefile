@@ -1,6 +1,6 @@
---- ../../work/cocktail-9309//./bnf/m2c/Makefile	Tue Feb 15 14:20:39 1994
-+++ ./bnf/m2c/Makefile	Wed Mar 31 22:35:03 2004
-@@ -1,36 +1,26 @@
+--- /usr/ports/devel/cocktail/work/cocktail-9309//./bnf/m2c/Makefile	Tue Feb 15 14:20:39 1994
++++ ./bnf/m2c/Makefile	Thu Aug  5 18:48:26 2004
+@@ -1,36 +1,27 @@
 -BIN	= $(HOME)/bin
 -LIB	= $(HOME)/lib
 -OPT	= -O
@@ -49,12 +49,13 @@
  
  
 +clean:
-+	rm -f core *.o bnf
++	-rm -f $(STDCLEAN) 
++	-rm -f   *.o bnf
 +
  # HEAD
  
  sources	: ArgCheck.h
-@@ -62,18 +52,3 @@
+@@ -62,18 +53,3 @@
  	ArgCheck.o	\
  	$(CLIBS)
  

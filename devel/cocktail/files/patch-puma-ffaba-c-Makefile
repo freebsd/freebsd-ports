@@ -1,25 +1,42 @@
---- ../../work/cocktail-9309//./puma/ffaba-c/Makefile	Tue Feb 15 14:26:16 1994
-+++ ./puma/ffaba-c/Makefile	Wed Mar 31 22:35:05 2004
-@@ -1,13 +1,9 @@
+--- /usr/ports/devel/cocktail/work/cocktail-9309//./puma/ffaba-c/Makefile	Tue Feb 15 14:26:16 1994
++++ ./puma/ffaba-c/Makefile	Thu Aug  5 18:49:29 2004
+@@ -1,28 +1,28 @@
 -LIB	= $(HOME)/lib
 -INCDIR	= $(LIB)/include
 -CFLAGS	= -I$(INCDIR)
 -CC	= cc -O
++ROOTDIR = ../..
++.include "../../Makefile.inc"
  
- all:	main
+-all:	main
++CFLAGS += -I $(TMPINC)
++
++test all:	main
  	time main
  
  main:	ProTest.o Compiler.o
 -	cc -o main Compiler.o ProTest.o $(LIB)/libreuse.a
-+	$(CC) -o main Compiler.o ProTest.o $(LIB)/libreuse.a
++	$(CC) -o main Compiler.o ProTest.o $(TMPLIB)/libreuse.a
  
  ProTest.o:	ProTest.h
  Compiler.o:	ProTest.h
-@@ -24,5 +20,5 @@
+ 
+ ProTest.h ProTest.c ProTest.TS: ffaba.ast
+-	cg -cdi4 ffaba.ast
++	 $(CG) -cdi4 ffaba.ast
+ 
+ Compiler.h Compiler.c: ffaba.puma ProTest.TS
+-	puma -cdip ffaba.puma
++	$(PUMA) -cdip ffaba.puma
+ 
+ lint:	ProTest.h ProTest.c Compiler.h Compiler.c
+ 	lint $(CFLAGS) *.c
+ 
  clean:
- 	rm -f core Compiler.* ProTest.* yy*.w main
+-	rm -f core Compiler.* ProTest.* yy*.w main
++	-rm -f $(STDCLEAN) 
++	-rm -f   Compiler.* ProTest.* yy*.w main
++
  
 -.c.o:
 -	$(CC) $(CFLAGS) -c $*.c;
-+.include "../../Makefile.inc"
-+

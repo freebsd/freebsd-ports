@@ -1,6 +1,6 @@
---- ../../work/cocktail-9309//./specs/modula/ada/Makefile	Tue Feb 15 14:28:56 1994
-+++ ./specs/modula/ada/Makefile	Wed Mar 31 23:07:56 2004
-@@ -7,14 +7,16 @@
+--- /usr/ports/devel/cocktail/work/cocktail-9309//./specs/modula/ada/Makefile	Tue Feb 15 14:28:56 1994
++++ ./specs/modula/ada/Makefile	Wed Aug 25 11:42:24 2004
+@@ -7,14 +7,17 @@
  	lpp -xzj ada.pars;
  
  ada.rex:	ada.scan Scanner.rpp
@@ -16,7 +16,10 @@
 +	$(LALR) -d -p -cs Parser.lalr;
  
  clean:
- 	rm -f Scanner.m? Parser.m? ParserDrv.mi ParserDrv
- 	rm -f core *.[dimor] _Debug ada.rex Parser.lalr Scanner.rpp *.bak
+-	rm -f Scanner.m? Parser.m? ParserDrv.mi ParserDrv
+-	rm -f core *.[dimor] _Debug ada.rex Parser.lalr Scanner.rpp *.bak
++	-rm -f Scanner.m? Parser.m? ParserDrv.mi ParserDrv
++	-rm -f $(STDCLEAN) 
++	-rm -f   *.[dimor] _Debug ada.rex Parser.lalr Scanner.rpp *.bak
 +
 +.include "../../Makefile.inc" 

@@ -1,6 +1,6 @@
---- ../../work/cocktail-9309//./ell/m2c/Makefile	Tue Feb 15 14:22:40 1994
-+++ ./ell/m2c/Makefile	Wed Mar 31 22:35:04 2004
-@@ -1,37 +1,26 @@
+--- /usr/ports/devel/cocktail/work/cocktail-9309//./ell/m2c/Makefile	Tue Feb 15 14:22:40 1994
++++ ./ell/m2c/Makefile	Thu Aug  5 18:48:53 2004
+@@ -1,37 +1,27 @@
 -BIN	= $(HOME)/bin
 -LIB	= $(HOME)/lib
 -OPT	= -O
@@ -48,12 +48,13 @@
  
 -# SYSTEM_	= SYSTEM_.o
 +clean:
-+	rm -f core *.o
-+	rm -f ell
++	-rm -f $(STDCLEAN) 
++	-rm -f   *.o
++	-rm -f ell
  
  # HEAD
  
-@@ -239,18 +228,3 @@
+@@ -239,18 +229,3 @@
  	CodeC.o	\
  	$(CLIBS)
  

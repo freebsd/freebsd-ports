@@ -1,8 +1,11 @@
---- ../../work/cocktail-9309//./puma/ffaba-m/Makefile	Tue Feb 15 14:26:15 1994
-+++ ./puma/ffaba-m/Makefile	Wed Mar 31 22:35:05 2004
-@@ -12,3 +12,5 @@
+--- /usr/ports/devel/cocktail/work/cocktail-9309//./puma/ffaba-m/Makefile	Tue Feb 15 14:26:15 1994
++++ ./puma/ffaba-m/Makefile	Thu Aug  5 18:49:29 2004
+@@ -11,4 +11,7 @@
+ 	puma -dip ffaba.puma
  
  clean:
- 	rm -f core Compiler.* ProTest.* main.[mor] main
+-	rm -f core Compiler.* ProTest.* main.[mor] main
++	-rm -f $(STDCLEAN) 
++	-rm -f   Compiler.* ProTest.* main.[mor] main
 +
 +.include "../../Makefile.inc" 
