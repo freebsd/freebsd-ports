@@ -24,12 +24,6 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 MAN1=		lftp.1
 
-.if defined(NOPORTDOCS)
-NODOCS=	"@comment "
-.endif
-
-PLIST_SUB=	NOPORTDOCS=${NODOCS}
-
 pre-patch:
 	@${PERL} -pi -e 's|-lpthread|-pthread|g ; \
 		s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
