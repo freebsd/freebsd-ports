@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	kasablanca
-PORTVERSION=	0.4.0.1
-PORTREVISION=	1
+PORTVERSION=	0.4.0.2
 CATEGORIES=	ftp kde
 MASTER_SITES=	http://download.berlios.de/kasablanca/
 
