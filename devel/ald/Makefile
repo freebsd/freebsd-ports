@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ald
-PORTVERSION=	0.0.16
+PORTVERSION=	0.0.17
 CATEGORIES=	devel
 MASTER_SITES=	http://ellipse.mcs.drexel.edu/source/
 
