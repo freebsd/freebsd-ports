@@ -1,0 +1,52 @@
+*** malloc-2.5.3b.c.orig	Sun Mar 26 10:50:54 1995
+--- malloc-2.5.3b.c	Fri Apr  7 19:21:29 1995
+***************
+*** 271,276 ****
+--- 271,278 ----
+  
+  /* preliminaries */
+  
++ #include <sys/param.h>
++ 
+  #ifndef __STD_C
+  #ifdef __STDC__
+  #define	__STD_C		1
+***************
+*** 1365,1373 ****
+  }
+  
+  
+- 
+  /* Derivatives */
+  
+  #if __STD_C
+  Void_t* valloc(size_t bytes)
+  #else
+--- 1367,1375 ----
+  }
+  
+  
+  /* Derivatives */
+  
++ #if 0
+  #if __STD_C
+  Void_t* valloc(size_t bytes)
+  #else
+***************
+*** 1394,1400 ****
+    while (sz-- > 0) *q++ = 0;
+    return p;
+  }
+! 
+  #if __STD_C
+  void cfree(Void_t *mem)
+  #else
+--- 1396,1402 ----
+    while (sz-- > 0) *q++ = 0;
+    return p;
+  }
+! #endif
+  #if __STD_C
+  void cfree(Void_t *mem)
+  #else
+
