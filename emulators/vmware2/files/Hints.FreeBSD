@@ -1,6 +1,65 @@
-Here lists some useful hints on using VMware on FreeBSD.
+Here is a list of some useful hints on using VMware on FreeBSD.
 
-- Raw disk may not work.  Use virtual disk instead.
+- Full screen mode does not work. Don't do it.
+
+- Raw disk may not work.  Use virtual or plain disk instead.
+
+- The vmware-mount.pl utility does not work. If you want to mount
+the "disk" while vmware is not running, you must use plain disks
+instead of virtual ones. Set up a 63 sector file as an "mbr"
+section, then a file for each partition on the "plain" disk.
+To mount the "disk", use vnconfig -c /dev/vn__ file and
+then mount the vn device.
+
+If you are setting up a plain disk as a workaround for the broken
+raw disks, you will need to set up the disk description file
+by hand, as the wizard will complain. Here is a sample one:
+
+DRIVETYPE	ide
+CYLINDERS	16383
+HEADS		16
+SECTORS		63
+ACCESS "/path/disk.mbr" 0 63
+ACCESS "/dev/rad0s1" 63 4192902
+RDONLY "/dev/null" 4192965 12305790
+
+The geometry must be the physical geometry reported by the disk.
+grep ad0 /var/run/dmesg.boot and look for the 3 numbers in the
+brackets. They are the C/H/S.
+
+In the example above, "disk.mbr" is file used to keep a replacement
+MBR for the disk. You can use dd if=/dev/rad0 bs=1b count=63 of=mbr
+to create it if you like. The reason is so that the guest's decision
+about which OS you booted last is different than the host's (this is
+for the FreeBSD boot manager). You can also feel free to replace
+the MBR with the standard boot manager if you like. fdisk(8) and a vn
+device can help with this, though you will have to be sure and
+supply the correct geometry to fdisk(8) since the vn device won't
+support those calls. This time it's the BIOS "fake" geometry.
+Watch out!
+
+As you can see, the 1st partition simply is a FreeBSD slice device.
+The first number after the filename is the offset in blocks where the
+given file starts in the plain disk. The last number on the line is
+the length of the block. If you are using a file, its length must
+be equal to this number * 512.
+
+The last entry is an example of how to block out partitions you don't
+want vmware to mess with. Why do this instead of simply making the
+C/H/S numbers for the disk smaller? Because then the guest's BIOS
+might not make the same choices about the "fake" geometry to use,
+which would prevent the OS from booting in most cases.
+
+You might be able to follow the same procedure to make SCSI drives
+work. It is slightly less likely to work as SCSI vendors often
+differ as to how they set up BIOS geometries. Your raw device
+must end up having the same BIOS geometry as a Bustek SCSI
+controller, which is the device vmware virtually supplies as the
+host adapter.
+
+- It is a good idea to disconnect removable media devices (CDROMs
+and Floppies and the like) from the "guest" either when they are
+empty or when you're about to eject the media.
 
 - Under FreeBSD, floppy device should be configured as follows:
 
@@ -16,5 +75,11 @@ memory.
 e.g.
 	ln -s /usr/tmp /compat/linux/tmp
 
+Also, be very careful if /tmp/ is a tmpfs partition. vmware
+creates a file that is about 25% larger than the guest's RAM size,
+unlinks it and does mmap on it. Such a large, active file in
+tmpfs can lead to deadlocks.
+
 -- 
 Akinori -Aki- MUSHA <knu@idaemons.org>
+Nick Sayer <nsayer@freebsd.org>
