@@ -62,7 +62,7 @@ pre-everything::
 	fi
 
 post-install:
-.if !defined(NOPORTSDOCS)
+.if !defined(NOPORTDOCS)
 	@${INSTALL} -d -o ${SHAREOWN} -g ${SHAREGRP} -m 0555 ${DOCSDIR}
 .for ext in html pdf ppt ps txt gif jpg png
 	for i in `ls ${WRKSRC}/HOWTO | ${GREP} "\.${ext}$$"`; \

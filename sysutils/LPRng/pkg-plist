@@ -18,13 +18,13 @@ sbin/lpc
 sbin/lpd
 sbin/lprng_certs
 sbin/lprng_index_certs
-share/doc/LPRng/LISA98.ppt
-share/doc/LPRng/LPRng-HOWTO.html
-share/doc/LPRng/LPRng-HOWTO.pdf
-share/doc/LPRng/LPRng.jpg
-share/doc/LPRng/LPRngT-L.jpg
-share/doc/LPRng/LPRngT-S.jpg
-share/doc/LPRng/license.txt
-share/doc/LPRng/rfc1179.txt
-share/doc/LPRng/y2k.txt
-@dirrm  share/doc/LPRng
+%%PORTDOCS%%%%DOCSDIR%%/LISA98.ppt
+%%PORTDOCS%%%%DOCSDIR%%/LPRng-HOWTO.html
+%%PORTDOCS%%%%DOCSDIR%%/LPRng-HOWTO.pdf
+%%PORTDOCS%%%%DOCSDIR%%/LPRng.jpg
+%%PORTDOCS%%%%DOCSDIR%%/LPRngT-L.jpg
+%%PORTDOCS%%%%DOCSDIR%%/LPRngT-S.jpg
+%%PORTDOCS%%%%DOCSDIR%%/license.txt
+%%PORTDOCS%%%%DOCSDIR%%/rfc1179.txt
+%%PORTDOCS%%%%DOCSDIR%%/y2k.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
