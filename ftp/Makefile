@@ -67,6 +67,7 @@
     SUBDIR += p5-POE-Component-Client-FTP
     SUBDIR += paraget
     SUBDIR += pavuk
+    SUBDIR += pear-Net_FTP
     SUBDIR += pftpd
     SUBDIR += php4-curl
     SUBDIR += php4-ftp

@@ -1,0 +1,27 @@
+# Ports collection makefile for:  pear-Net_FTP
+# Date created:			  06 January 2005
+# Whom:				  Antonio Carlos Venancio Junior (<antonio@inf.ufsc.br>)
+#
+# $FreeBSD$
+#
+
+PORTNAME=	Net_FTP
+PORTVERSION=	1.3.0
+CATEGORIES=	ftp pear
+DISTNAME=	${PORTNAME}-${PORTVERSION}RC2
+
+MAINTAINER=	antonio@php.net
+COMMENT=	PEAR OO interface to the PHP FTP functions plus some additions
+
+BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear-PEAR
+RUN_DEPENDS=	${BUILD_DEPENDS}
+
+USE_PHP=	ftp
+
+FILES=		Net/FTP.php Net/FTP/Observer.php
+EXAMPLES=	extensions.ini index.php observer.php
+_EXAMPLESDIR=	example
+
+.include <bsd.port.pre.mk>
+.include "${PORTSDIR}/devel/pear-PEAR/Makefile.common"
+.include <bsd.port.post.mk>
