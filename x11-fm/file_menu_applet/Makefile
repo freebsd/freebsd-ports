@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	file_menu_applet
-PORTVERSION=	0.4
+PORTVERSION=	0.5
 CATEGORIES=	x11-fm gnome
 MASTER_SITES=	http://www.zoned.net:8000/~xkahn/file_menu_applet/
 
