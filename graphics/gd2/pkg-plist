@@ -6,15 +6,14 @@ bin/gdtopng
 bin/pngtogd
 bin/pngtogd2
 bin/webpng
-include/gd/gd.h
-include/gd/gd_io.h
-include/gd/gdcache.h
-include/gd/gdfontg.h
-include/gd/gdfontl.h
-include/gd/gdfontmb.h
-include/gd/gdfonts.h
-include/gd/gdfontt.h
+include/gd.h
+include/gd_io.h
+include/gdcache.h
+include/gdfontg.h
+include/gdfontl.h
+include/gdfontmb.h
+include/gdfonts.h
+include/gdfontt.h
 lib/libgd.a
 lib/libgd.so
 lib/libgd.so.3.0
-@dirrm include/gd
