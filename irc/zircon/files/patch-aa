@@ -1,0 +1,11 @@
+--- installer/unix.tcl.orig	Sat Sep 20 20:47:35 1997
++++ installer/unix.tcl	Sat Sep 20 20:47:37 1997
+@@ -228,7 +228,7 @@
+ proc getCC {} {
+     global CC GCC SCflag CFlags Type SLDflag share scflags
+     switch {} $CC {} default return
+-    set CFlags -O
++    set CFlags {-O -I/usr/local/include/tcl8.0}
+     catch {set CFlags $cflags($Type)}
+     switch BSDI $Type {
+ 	set CC gcc2
