@@ -12,7 +12,7 @@ PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://www.cs.berkeley.edu/~lazzaro/sa/
 DISTNAME=	${PORTNAME}
-DIST_SUBDIR=	${PKGNAME}
+DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A translator that converts MP4-SA files into efficient C programs
@@ -22,8 +22,6 @@ USE_REINPLACE=	yes
 USE_BISON=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}/src
 ALL_TARGET=	# empty
-
-BROKEN=		"Distinfo incorrect"
 
 post-patch:
 	@${REINPLACE_CMD} -e "s,^CFLAGS,#CFLAGS,g" ${WRKSRC}/Makefile
