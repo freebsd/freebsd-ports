@@ -1,0 +1,9 @@
+bin/pr-new
+bin/pr-update
+bin/testport
+%%DATADIR%%/send-pr.template
+@dirrm %%DATADIR%%
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
