@@ -1,0 +1,10 @@
+--- configure.orig	Sat Nov 20 13:52:01 2004
++++ configure	Sat Nov 20 13:52:12 2004
+@@ -3623,6 +3623,7 @@
+   *-*-freebsd3*) platform_name="FreeBSD";  os_version="3";;
+   *-*-freebsd4*) platform_name="FreeBSD";  os_version="4";;
+   *-*-freebsd5*) platform_name="FreeBSD";  os_version="5";;
++  *-*-freebsd6*) platform_name="FreeBSD";  os_version="6";;
+   *-*-sco*)      platform_name="OSR5";     os_version="5";;
+   *-*-cygwin*)   platform_name="Cygwin";   os_version="2";;
+ esac
