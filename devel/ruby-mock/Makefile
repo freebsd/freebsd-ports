@@ -6,17 +6,17 @@
 #
 
 PORTNAME=	mock
-PORTVERSION=	1.0
+PORTVERSION=	1.1
 CATEGORIES=	devel ruby
 MASTER_SITES=	http://www.b13media.com/dev/ruby/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
-EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
 
 RUN_DEPENDS=	${RUBY_SITELIBDIR}/runit/error.rb:${.CURDIR}/../ruby-unit
 
+USE_BZIP2=	yes
 USE_RUBY=	yes
 
 NO_BUILD=	yes
