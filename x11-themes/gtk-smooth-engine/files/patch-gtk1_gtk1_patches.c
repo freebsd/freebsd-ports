@@ -1,14 +1,25 @@
---- gtk1/gtk1_patches.c.orig	Sat Jan  3 18:40:36 2004
-+++ gtk1/gtk1_patches.c	Sat Jan  3 18:41:07 2004
-@@ -1197,6 +1197,7 @@
+--- gtk1/gtk1_patches.c.orig	Sun Oct 17 02:18:35 2004
++++ gtk1/gtk1_patches.c	Sun Oct 17 02:21:21 2004
+@@ -934,6 +934,8 @@
+     slider_length = SCALE_SLIDER_LENGTH(widget->style);    
+   }
+ 
++  
++
+   _scale_calc_request (widget, slider_width, slider_length, stepper_size, trough_border, stepper_spacing, &range_rect);
+ 
+   requisition->width = MAX(requisition->width, range_rect.width);
+@@ -1214,7 +1216,8 @@
    GtkRange *range;
    gint slider_width, slider_length, stepper_size, trough_border, stepper_spacing;
    GdkRectangle range_rect;
+-    
 +  int size1, size2;
-     
++  
    g_return_if_fail (widget != NULL);
    g_return_if_fail (GTK_IS_SCROLLBAR (widget));
-@@ -1212,8 +1213,8 @@
+   g_return_if_fail (requisition != NULL);
+@@ -1229,8 +1232,8 @@
      slider_length = SCROLLBAR_MIN_SLIDER_LENGTH(widget->style);    
    }
  
