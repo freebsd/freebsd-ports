@@ -38,8 +38,9 @@ PLIST_SUB+=	T=${APP_HOME:S/^${PREFIX}\///}
 CPIO?=		/usr/bin/cpio
 
 post-patch:
-	${FIND} ${WRKSRC} \( -name '*.orig' -o -name '.*.orig' \) -print \
-	  | xargs ${RM} -f && \
+	${FIND} ${WRKSRC} \( -name '*.orig' -o -name '.*.orig' \) -delete
+	${CP} ${FILESDIR}/arch ${WRKSRC}/bin/
+	${CHMOD} a+rx ${WRKSRC}/bin/arch
 	${CHMOD} a+r ${WRKSRC}/README.linux
 
 do-install:

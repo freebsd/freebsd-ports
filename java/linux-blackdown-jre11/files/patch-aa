@@ -1,5 +1,7 @@
---- bin/.java_wrapper.orig	Fri Sep 12 19:54:03 2003
-+++ bin/.java_wrapper	Fri Sep 12 19:54:43 2003
+$FreeBSD$
+
+--- bin/.java_wrapper.orig	Mon Sep 18 18:08:12 2000
++++ bin/.java_wrapper	Mon Sep 29 11:21:39 2003
 @@ -7,19 +7,19 @@
  
  # Set up default variable values if not supplied by the user.
@@ -24,3 +26,20 @@
  
  # The default THREADS_TYPE is "green_threads".  To change the default change
  # the setting of the DEFAULT_THREADS_FLAG variable.  The only valid values 
+@@ -87,8 +87,15 @@
+ 
+ export CLASSPATH
+ 
+-LD_LIBRARY_PATH="$JAVA_HOME/lib/${ARCH}/$THREADS_TYPE:$LD_LIBRARY_PATH"
++if [ "x${LD_LIBRARY_PATH}" != "x" ]; then
++    LD_LIBRARY_PATH="$JAVA_HOME/lib/${ARCH}/$THREADS_TYPE:$LD_LIBRARY_PATH"
++else
++    LD_LIBRARY_PATH="$JAVA_HOME/lib/${ARCH}/$THREADS_TYPE"
++fi
+ export LD_LIBRARY_PATH
++
++PATH="$JAVA_HOME/bin:$PATH"
++export PATH
+ 
+ XFILESEARCHPATH="$JAVA_HOME/lib/locale/%L/%T/%N%C%S:$JAVA_HOME/lib/locale/%l/%T/%N%C%S:$JAVA_HOME/lib/locale/%T/%N%C%S:$JAVA_HOME/lib/locale/%L/%T/%N%S:$JAVA_HOME/lib/locale/%l/%T/%N%S:$JAVA_HOME/lib/locale/%T/%N%S:$XFILESEARCHPATH:%D"
+ export XFILESEARCHPATH

@@ -1,5 +1,7 @@
---- bin/jre.orig	Tue Sep 19 02:08:12 2000
-+++ bin/jre	Fri Sep 12 20:00:46 2003
+$FreeBSD$
+
+--- bin/jre.orig	Mon Sep 18 18:08:12 2000
++++ bin/jre	Mon Sep 29 11:16:16 2003
 @@ -6,7 +6,7 @@
  export THREADS_TYPE
  
@@ -26,3 +28,20 @@
  	PRG="$newprg"
      done
  
+@@ -58,8 +58,15 @@
+ fi
+ export CLASSPATH
+ 
+-LD_LIBRARY_PATH="$JAVA_HOME/lib/${ARCH}/$THREADS_TYPE:$LD_LIBRARY_PATH"
++if [ "x${LD_LIBRARY_PATH}" != "x" ]; then
++    LD_LIBRARY_PATH="$JAVA_HOME/lib/${ARCH}/$THREADS_TYPE:$LD_LIBRARY_PATH"
++else
++    LD_LIBRARY_PATH="$JAVA_HOME/lib/${ARCH}/$THREADS_TYPE"
++fi
+ export LD_LIBRARY_PATH
++
++PATH="$JAVA_HOME/bin:$PATH"
++export PATH
+ 
+ XFILESEARCHPATH="$JAVA_HOME/lib/locale/%L/%T/%N%C%S:$JAVA_HOME/lib/locale/%l/%T/%N%C%S:$JAVA_HOME/lib/locale/%T/%N%C%S:$JAVA_HOME/lib/locale/%L/%T/%N%S:$JAVA_HOME/lib/locale/%l/%T/%N%S:$JAVA_HOME/lib/locale/%T/%N%S:$XFILESEARCHPATH:%D"
+ export XFILESEARCHPATH
