@@ -1,0 +1,104 @@
+*** Makefile.orig	Fri Sep  8 10:19:18 1995
+--- Makefile	Fri Sep  8 11:12:39 1995
+***************
+*** 5,15 ****
+  # SRCDIR should be a path to the directory that will hold fractint.hlp
+  # You will have to copy fractint.hlp to SRCDIR and make it world readable.
+  # SRCDIR should also hold the .par, .frm, etc. files
+! SRCDIR = /usr/local/bin/X11/fractint
+  # BINDIR is where you put your X11 binaries
+! BINDIR = /usr/local/bin/X11
+  # MANDIR is where you put your chapter 1 man pages
+! MANDIR = /user/local/man/man1
+  
+  #SRCDIR = /users/shirriff/fractfiles
+  #BINDIR = /users/shirriff/fractfiles
+--- 5,15 ----
+  # SRCDIR should be a path to the directory that will hold fractint.hlp
+  # You will have to copy fractint.hlp to SRCDIR and make it world readable.
+  # SRCDIR should also hold the .par, .frm, etc. files
+! SRCDIR = ${PREFIX}/lib/fractint
+  # BINDIR is where you put your X11 binaries
+! BINDIR = ${PREFIX}/bin
+  # MANDIR is where you put your chapter 1 man pages
+! MANDIR = ${PREFIX}/man/man1
+  
+  #SRCDIR = /users/shirriff/fractfiles
+  #BINDIR = /users/shirriff/fractfiles
+***************
+*** 32,38 ****
+  #     prompts2.c to "#else".
+  #
+  
+! #NOBSTRING = -DNOBSTRING
+  #HAVESTRI = -DHAVESTRI
+  #DEBUG adds some sanity checking but will slow xfractint down
+  #DEBUG = -DEBUG
+--- 32,38 ----
+  #     prompts2.c to "#else".
+  #
+  
+! NOBSTRING = -DNOBSTRING
+  #HAVESTRI = -DHAVESTRI
+  #DEBUG adds some sanity checking but will slow xfractint down
+  #DEBUG = -DEBUG
+***************
+*** 56,62 ****
+  #For Solaris, use CFLAGS = -I. -I/usr/openwin/include $(DEFINES) -g
+  
+  #CFLAGS = -I. -D_CONST $(DEFINES)
+! CFLAGS = -I. $(DEFINES) -g
+  
+  # Gcc is often the only compiler that works for this
+  # For HPUX, use CC = cc -Aa -D_HPUX_SOURCE
+--- 56,62 ----
+  #For Solaris, use CFLAGS = -I. -I/usr/openwin/include $(DEFINES) -g
+  
+  #CFLAGS = -I. -D_CONST $(DEFINES)
+! CFLAGS = -I. $(DEFINES) -O2 -m486 -I/usr/X11R6/include
+  
+  # Gcc is often the only compiler that works for this
+  # For HPUX, use CC = cc -Aa -D_HPUX_SOURCE
+***************
+*** 72,78 ****
+  # For 386BSD, add -L/usr/X386/lib to LIBS
+  # For Apollo, change -lX11 to -L/usr/X11/libX11
+  # For Solaris, add -L/usr/openwin/lib
+! LIBS = -lX11 -lm -lcurses -ltermcap
+  
+  # HPUX fixes thanks to David Allport, Bill Broadley, and R. Lloyd.
+  # AIX fixes thanks to David Sanderson & Elliot Jaffe.
+--- 72,78 ----
+  # For 386BSD, add -L/usr/X386/lib to LIBS
+  # For Apollo, change -lX11 to -L/usr/X11/libX11
+  # For Solaris, add -L/usr/openwin/lib
+! LIBS = -lX11 -lm -lcurses -ltermcap -L/usr/X11R6/lib
+  
+  # HPUX fixes thanks to David Allport, Bill Broadley, and R. Lloyd.
+  # AIX fixes thanks to David Sanderson & Elliot Jaffe.
+***************
+*** 147,152 ****
+--- 147,154 ----
+  .SUFFIXES:
+  .SUFFIXES: .o .c .s .h
+  
++ all:	xfractint
++ 
+  xfractint: fractint.hlp .WAIT $(OBJS)
+  	$(CC) -o xfractint $(CFLAGS) $(OBJS) $(LIBS)
+  	strip xfractint
+***************
+*** 164,169 ****
+--- 166,177 ----
+  	cp xfractint $(BINDIR)/xfractint
+  	strip $(BINDIR)/xfractint
+  	chmod a+x $(BINDIR)/xfractint
++ 	if [ ! -d $(SRCDIR) ]; then \
++ 		echo "Making $(SRCDIR)"; \
++ 		mkdir $(SRCDIR); \
++ 		chmod 755 $(SRCDIR); \
++ 		else true; \
++ 	fi;
+  	cp fractint.hlp $(PARFILES) $(FRMFILES) $(IFSFILES) $(LFILES) $(MAPFILES) $(SRCDIR)
+  	(cd $(SRCDIR); chmod a+r fractint.hlp $(PARFILES) $(FRMFILES) $(IFSFILES) $(LFILES) $(MAPFILES) )
+  	cp xfractint.man $(MANDIR)/xfractint.1
