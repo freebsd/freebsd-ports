@@ -1,9 +1,17 @@
-lib/%%PYTHON_VERSION%%/site-packages/logging.py
-lib/%%PYTHON_VERSION%%/site-packages/logging.pyc
-lib/%%PYTHON_VERSION%%/site-packages/logging.pyo
-%%PORTDOCS%%share/examples/py-logging/README.txt
+%%PYTHON_SITELIBDIR%%/logging/__init__.py
+%%PYTHON_SITELIBDIR%%/logging/__init__.pyc
+%%PYTHON_SITELIBDIR%%/logging/__init__.pyo
+%%PYTHON_SITELIBDIR%%/logging/config.py
+%%PYTHON_SITELIBDIR%%/logging/config.pyc
+%%PYTHON_SITELIBDIR%%/logging/config.pyo
+%%PYTHON_SITELIBDIR%%/logging/handlers.py
+%%PYTHON_SITELIBDIR%%/logging/handlers.pyc
+%%PYTHON_SITELIBDIR%%/logging/handlers.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/logging
 %%PORTDOCS%%share/examples/py-logging/app.py
-%%PORTDOCS%%share/examples/py-logging/default.css
+%%PORTDOCS%%share/examples/py-logging/critical.ini
+%%PORTDOCS%%share/examples/py-logging/debug.ini
+%%PORTDOCS%%share/examples/py-logging/error.ini
 %%PORTDOCS%%share/examples/py-logging/events.xml
 %%PORTDOCS%%share/examples/py-logging/log_test.py
 %%PORTDOCS%%share/examples/py-logging/log_test0.py
@@ -22,6 +30,7 @@ lib/%%PYTHON_VERSION%%/site-packages/logging.pyo
 %%PORTDOCS%%share/examples/py-logging/log_test20.py
 %%PORTDOCS%%share/examples/py-logging/log_test21.py
 %%PORTDOCS%%share/examples/py-logging/log_test22.py
+%%PORTDOCS%%share/examples/py-logging/log_test3.ini
 %%PORTDOCS%%share/examples/py-logging/log_test3.py
 %%PORTDOCS%%share/examples/py-logging/log_test4.py
 %%PORTDOCS%%share/examples/py-logging/log_test5.py
@@ -33,7 +42,11 @@ lib/%%PYTHON_VERSION%%/site-packages/logging.pyo
 %%PORTDOCS%%share/examples/py-logging/logconf.py
 %%PORTDOCS%%share/examples/py-logging/logging.dtd
 %%PORTDOCS%%share/examples/py-logging/logging.xml
+%%PORTDOCS%%share/examples/py-logging/logrecv.ini
 %%PORTDOCS%%share/examples/py-logging/logrecv.py
 %%PORTDOCS%%share/examples/py-logging/myapp.py
 %%PORTDOCS%%share/examples/py-logging/mymodule.py
+%%PORTDOCS%%share/examples/py-logging/stderr.exp
+%%PORTDOCS%%share/examples/py-logging/stdout.exp
+%%PORTDOCS%%share/examples/py-logging/warn.ini
 %%PORTDOCS%%@dirrm share/examples/py-logging
