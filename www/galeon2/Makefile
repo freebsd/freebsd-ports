@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	galeon
-PORTVERSION=	0.7.7a
+PORTVERSION=	0.8
 CATEGORIES=	www gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://ftp.FreeBSD.org/pub/FreeBSD/ports/local-distfiles/sobomax/
@@ -18,8 +18,6 @@ LIB_DEPENDS=	glade.4:${PORTSDIR}/devel/libglade
 RUN_DEPENDS=	${X11BASE}/lib/${MOZILLA}/libgtkembedmoz.so:${PORTSDIR}/www/${MOZILLA}
 
 WITH_FULL_MOZILLA=	"I donno why, but it doesn't work with M18-embedded"
-
-WRKSRC=		${WRKDIR}/${DISTNAME:S/a$//}
 
 .if !defined(WITH_FULL_MOZILLA)
 MOZILLA=	mozilla-embedded
