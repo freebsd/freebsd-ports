@@ -17,14 +17,14 @@ share/gnome/gdesklets/Sensors/SysInfo/gfx/cpu.png
 share/gnome/gdesklets/Sensors/SysInfo/gfx/hdd.png
 share/gnome/gdesklets/Sensors/SysInfo/gfx/memory.png
 share/gnome/gdesklets/Sensors/SysInfo/gfx/network.png
-share/gnome/gdesklets/Sensors/SysInfo/locale/de/LC_MESSAGES/gdesklets.mo
-share/gnome/gdesklets/Sensors/SysInfo/locale/es/LC_MESSAGES/gdesklets.mo
-share/gnome/gdesklets/Sensors/SysInfo/locale/fr/LC_MESSAGES/gdesklets.mo
-share/gnome/gdesklets/Sensors/SysInfo/locale/pt/LC_MESSAGES/gdesklets.mo
-share/gnome/gdesklets/Sensors/SysInfo/locale/sq/LC_MESSAGES/gdesklets.mo
-share/gnome/gdesklets/Sensors/SysInfo/locale/sr/LC_MESSAGES/gdesklets.mo
-share/gnome/gdesklets/Sensors/SysInfo/locale/sr@Latn/LC_MESSAGES/gdesklets.mo
-share/gnome/gdesklets/Sensors/SysInfo/locale/sv/LC_MESSAGES/gdesklets.mo
+share/gnome/gdesklets/Sensors/SysInfo/locale/de/LC_MESSAGES/sysinfo-sensor.mo
+share/gnome/gdesklets/Sensors/SysInfo/locale/es/LC_MESSAGES/sysinfo-sensor.mo
+share/gnome/gdesklets/Sensors/SysInfo/locale/fr/LC_MESSAGES/sysinfo-sensor.mo
+share/gnome/gdesklets/Sensors/SysInfo/locale/pt/LC_MESSAGES/sysinfo-sensor.mo
+share/gnome/gdesklets/Sensors/SysInfo/locale/sq/LC_MESSAGES/sysinfo-sensor.mo
+share/gnome/gdesklets/Sensors/SysInfo/locale/sr/LC_MESSAGES/sysinfo-sensor.mo
+share/gnome/gdesklets/Sensors/SysInfo/locale/sr@Latn/LC_MESSAGES/sysinfo-sensor.mo
+share/gnome/gdesklets/Sensors/SysInfo/locale/sv/LC_MESSAGES/sysinfo-sensor.mo
 @dirrm share/gnome/gdesklets/Sensors/SysInfo/gfx
 @dirrm share/gnome/gdesklets/Sensors/SysInfo/locale/de/LC_MESSAGES
 @dirrm share/gnome/gdesklets/Sensors/SysInfo/locale/de
