@@ -1,3 +1,4 @@
 bin/rshell
-man/man1/rshell.1.gz
 share/dot.rshellrc
+@exec ln -f %D/bin/rshell %D/bin/rcopy
+@unexec rm %D/bin/rcopy
