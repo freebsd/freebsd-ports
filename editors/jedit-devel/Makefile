@@ -23,6 +23,7 @@ USE_JAVA=	yes
 JAVA_VERSION=	1.4+
 
 CONFLICTS=	jedit-4.2*
+NO_LATEST_LINK=	yes
 
 USE_XLIB=	yes
 NO_BUILD=	yes
