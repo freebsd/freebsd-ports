@@ -2740,6 +2740,7 @@ jext		ports/editors/jext
 jfc		ports/java/jfc
 jftpgw		ports/ftp/jftpgw
 jgnat		ports/lang/jgnat
+jgnat-doc-html	ports/lang/jgnat-doc-html
 jgraph		ports/graphics/jgraph
 jgv		ports/graphics/jgv
 jift		ports/net/jift
