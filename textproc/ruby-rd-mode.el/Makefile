@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rd-mode.el
-PORTVERSION=	0.6.8
+PORTVERSION=	0.6.10
 CATEGORIES=	textproc ruby elisp
 MASTER_SITES=	# none
 PKGNAMEPREFIX=	ruby-	# not ${RUBY_PKGNAMEPREFIX} since this is not version specific
@@ -31,9 +31,6 @@ do-extract:
 	${LN} -sf `cd ${.CURDIR}/../ruby-rdtool && ${MAKE} -V WRKSRC`/utils ${WRKSRC}
 
 do-install:
-	${MKDIR} ${RUBY_ELISPDIR}
-	${MKDIR} ${EMACSLISPDIR}
-	${MKDIR} ${XEMACSLISPDIR}
 .for f in ${ELISP_FILES}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_ELISPDIR}/
 	${LN} -sf ${RUBY_ELISPDIR}/${f} ${EMACSLISPDIR}/
