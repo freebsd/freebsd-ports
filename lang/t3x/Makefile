@@ -6,15 +6,15 @@
 #
 
 PORTNAME=	t3x
-PORTVERSION=	6.10.5
+PORTVERSION=	7.0.3
 CATEGORIES=	lang devel
 MASTER_SITES= 	http://www.not-compatible.org/files/ \
 		http://www.t3x.org/files/
-DISTNAME=	t3x-6A5
+DISTNAME=	t3x-${PORTVERSION:S/.//g}
 
 MAINTAINER=	nmh@t3x.org
 
 do-configure:
-	@(cd ${WRKSRC}/ports/FreeBSD.elf; ./Config boot)
+	@(cd ${WRKSRC}/ports/freebsd-386-elf; ./Config boot)
 
 .include <bsd.port.mk>
