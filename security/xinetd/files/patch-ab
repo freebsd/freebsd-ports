@@ -1,5 +1,5 @@
---- Makefile.in.orig	Mon Oct 18 13:27:18 1999
-+++ Makefile.in	Fri Nov 12 17:45:17 1999
+--- Makefile.in.orig	Wed Aug 16 01:32:49 2000
++++ Makefile.in	Sat Nov 11 14:45:15 2000
 @@ -32,26 +32,24 @@
  		LIBS="$(LIBS)" \
  		"DEFS=$(PROG_DEFS)" \
@@ -9,11 +9,11 @@
  
  makelibs:
  	for lib in $(MANDATORY_LIBS) ; do \
--		( cd libs/src/$$lib ; make install "INSTALL=$(INSTALL_CMD)" "DEFS=$(LIB_DEFS)" RANLIB=true "CC=$(CC)" DEBUG=-O ) \
-+		( cd libs/src/$$lib ; make install "INSTALL=$(INSTALL_CMD)" "DEFS=$(LIB_DEFS)" RANLIB=true "CC=$(CC)" "DEBUG=$(CLAGS)" ) \
+-		( cd libs/src/$$lib ; make install "INSTALL=$(INSTALL_CMD)" "DEFS=$(LIB_DEFS)" RANLIB=$(RANLIB) "CC=$(CC)" DEBUG=-O ) \
++		( cd libs/src/$$lib ; make install "INSTALL=$(INSTALL_CMD)" "DEFS=$(LIB_DEFS)" RANLIB=$(RANLIB) "CC=$(CC)" "DEBUG=$(CFLAGS)" ) \
  	; done
  
- install:
+ install: build
  	for i in $(DAEMONDIR) $(BINDIR) $(MANDIR)/man5 $(MANDIR)/man8 ; do \
  	   test -d $$i || mkdir -p $$i ; done
  	$(INSTALL_CMD) -m 755 xinetd/xinetd $(DAEMONDIR)

@@ -1,6 +1,6 @@
---- xinetd/child.c.orig	Sun Apr 30 16:13:07 2000
-+++ xinetd/child.c	Sun Apr 30 16:13:47 2000
-@@ -320,7 +320,7 @@
+--- xinetd/child.c.orig	Wed Aug 16 01:42:39 2000
++++ xinetd/child.c	Sat Nov 11 14:48:54 2000
+@@ -318,7 +318,7 @@
  										"(%s service) %s", program_name, SC_ID( scp ) ) ;
  			
  #ifdef INET6
