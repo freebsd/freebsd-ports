@@ -83,6 +83,7 @@
     SUBDIR += freepwing
     SUBDIR += fumeikai-fpw
     SUBDIR += gal
+    SUBDIR += gauche-kakasi
     SUBDIR += gawk
     SUBDIR += gd
     SUBDIR += ghostscript-gnu-jpnfont
