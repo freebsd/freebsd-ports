@@ -13,9 +13,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-1
 
 MAINTAINER=	sverrir@hem.passagen.se
 
-BROKEN=		"Does not configure"
-
-BUILD_DEPENS=	autoconf:${PORTSDIR}/devel/autoconf
+BUILD_DEPENDS=	autoconf:${PORTSDIR}/devel/autoconf
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:S/-1//}
 USE_BZIP2=	yes
