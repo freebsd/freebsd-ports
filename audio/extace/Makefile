@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	extace
-PORTVERSION=	1.3.2
+PORTVERSION=	1.4.5
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	eXtace
@@ -20,6 +20,7 @@ USE_IMLIB=	yes
 USE_ESOUND=	yes
 WANT_GNOME=	yes
 USE_LIBTOOL=	yes
+CONFIGURE_ARGS=	--disable-alsa
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -DHAVE_LIBFFTW" \
 		LIBS="-L${LOCALBASE}/lib"
 
@@ -30,6 +31,8 @@ USE_GNOME=	yes
 .endif
 
 pre-patch:
+	@${PERL} -pi -e 's|-lpthread|-pthread|g ; \
+		s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
 	@find ${WRKSRC} -name "Makefile.in" | xargs ${PERL} -pi -e \
 		's|\$$\(datadir\)/gnome/|\$$\(datadir\)/|g'
 
