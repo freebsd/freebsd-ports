@@ -3,7 +3,7 @@
 # Date created:		Dec 28 1998
 # Whom:			Lars Koeller <lkoeller@cc.fh-lippe.de>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/03/18 08:41:40 taoka Exp $
 #
 
 DISTNAME=	grace-5.0.1
@@ -32,7 +32,7 @@ LIB_DEPENDS=	Xbae.6:${PORTSDIR}/x11-toolkits/xbae 	\
 		tiff.4:${PORTSDIR}/graphics/tiff34
 
 USE_X_PREFIX=	YES
-REQUIRE_MOTIF=	YES
+REQUIRES_MOTIF=	YES
 HAS_CONFIGURE=	YES
 CONFIGURE_ARGS=	-prefix=${X11BASE} \
 	--enable-extra-incpath=${X11BASE}/include/X11:${LOCALBASE}/include:${LOCALBASE}/include/tiff34:${LOCALBASE}/include/gd \
