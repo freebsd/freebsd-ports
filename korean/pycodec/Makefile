@@ -6,29 +6,17 @@
 #
 
 PORTNAME=	pycodec
-PORTVERSION=	1.4
+PORTVERSION=	2.0b2
 CATEGORIES=	korean python converters
-MASTER_SITES=	ftp://people.linuxkorea.co.kr/pub/Python/ \
-		ftp://ftp2.python.or.kr/pub/FreeBSD/ports/distfiles/ \
-		ftp://www3.kr.freebsd.org/pub/FreeBSD/ports/distfiles/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	koco
 DISTNAME=	KoreanCodecs-${PORTVERSION}
 
 MAINTAINER=	perky@fallin.lv
 
 USE_PYTHON=	yes
-PYTHON_CODECDIR=${PYTHON_LIBDIR}/encodings
-PLIST_SUB+=	PYTHON_CODECDIR=${PYTHON_CODECDIR:S,^${LOCALBASE}/,,g}
-
-# Since there's only one popular encoding in korea,
-# this codec doesn't install into site-packages like ja-pycodec
-# for using like unicode("KANADARA", "euc-kr")
-do-build:
-	${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}
-
-do-install:
-	${INSTALL_DATA} ${WRKSRC}/euc_kr.py* ${WRKSRC}/uhc.py* \
-		${PYTHON_CODECDIR}/
-	${MKDIR} ${PYTHON_CODECDIR}/korean
-	${INSTALL_DATA} ${WRKSRC}/korean/* ${PYTHON_CODECDIR}/korean
+PLIST_SUB+=	PYTHON_SITELIBDIR=${PYTHON_SITELIBDIR:S,^${LOCALBASE}/,,g}
+MAKEFILE=	misc/Makefile.FreeBSD
+MAKE_ENV=	PORTSDIR="${PORTSDIR}"
 
 .include <bsd.port.mk>
