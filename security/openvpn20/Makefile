@@ -17,6 +17,8 @@ COMMENT=	Secure IP/Ethernet tunnel daemon
 
 LIB_DEPENDS=	lzo.1:${PORTSDIR}/archivers/lzo
 
+CONFLICTS=	openvpn-devel-*
+
 GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
