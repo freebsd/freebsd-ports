@@ -1,0 +1,11 @@
+--- imap/Makefile.in.orig	Thu Mar 13 10:23:01 1997
++++ imap/Makefile.in	Wed Oct  8 13:56:57 1997
+@@ -34,7 +34,7 @@
+ CYRUS_USER=@cyrus_user@
+ CYRUS_GROUP=@cyrus_group@
+ 
+-DEFS = @DEFS@
++DEFS = @DEFS@ -DCONFIG_FILENAME=\"$(prefix)/etc/imapd.conf\"
+ CPPFLAGS = -I. -I$(srcdir) -I$(srcdir)/../lib -I$(srcdir)/../et @CPPFLAGS@ 
+ LIBS = @LIBS@ 
+ DEPLIBS = ../et/libcom_err.a ../lib/libcyrus.a @DEPLIBS@

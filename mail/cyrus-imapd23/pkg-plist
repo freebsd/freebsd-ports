@@ -62,12 +62,6 @@ share/doc/cyrus/install
 share/doc/cyrus/overview
 share/doc/cyrus/quota-extension
 share/doc/cyrus/server-design
-@dirrm etc/imap/user
-@dirrm etc/imap/quota
-@dirrm etc/imap/proc
-@dirrm etc/imap/log
-@dirrm etc/imap/msg
-@dirrm etc/imap
 @dirrm include/cyrus
 @dirrm cyrus/bin
 @dirrm cyrus

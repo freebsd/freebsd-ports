@@ -1,0 +1,13 @@
+--- imap/config.c.orig	Sat Dec 21 02:08:11 1996
++++ imap/config.c	Wed Oct  8 13:56:58 1997
+@@ -23,7 +23,9 @@
+ 
+ extern int errno;
+ 
+-#define CONFIG_FILENAME "/etc/imapd.conf"
++#if !defined(CONFIG_FILENAME)
++	#define CONFIG_FILENAME "/etc/imapd.conf"
++#endif
+ 
+ struct configlist {
+     char *key;
