@@ -1,4 +1,6 @@
 bin/opera
+etc/opera6rc
+etc/opera6rc.fixed
 share/doc/opera/LICENSE
 share/doc/opera/help
 share/opera/bin/opera
