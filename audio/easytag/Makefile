@@ -7,21 +7,26 @@
 #
 
 PORTNAME=	easytag
-PORTVERSION=	0.15
+PORTVERSION=	0.17
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext \
-		id3:${PORTSDIR}/audio/id3lib
+LIB_DEPENDS=	id3-3.7.13:${PORTSDIR}/audio/id3lib \
+		vorbis.1:${PORTSDIR}/audio/libvorbis
 
 USE_GTK=	yes
-USE_GMAKE=	yes
-MAKE_ENV=	CFLAGS="${CFLAGS}"
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 post-patch:
-	@${PERL} -pi -e "s,gtk-config,${GTK_CONFIG},g" ${WRKSRC}/Makefile
+	@${PERL} -pi -e 's|`gtk-config |`\$$GTK_CONFIG |g ; \
+		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
+	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${PERL} -pi -e \
+		's|^gnome_menu|#gnome_menu|g ; \
+		 s|^icon|#icon|g'
 
 .include <bsd.port.mk>
