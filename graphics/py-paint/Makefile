@@ -20,11 +20,13 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 USE_FREETYPE=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
+USE_REINPLACE=	yes
 PLIST_SUB+=	PYTHON_SITELIBDIR=${PYTHON_SITELIBDIR:S,^${LOCALBASE}/,,g} \
 		SHARE_SUBDIR=${SHARE_SUBDIR}
 SHARE_SUBDIR=	${PKGNAMEPREFIX}${PORTNAME}
 
-INC_DIRS=	["${LOCALBASE}/include/freetype1","${LOCALBASE}/include","${X11BASE}/include","${LOCALBASE}/include/freetype1/freetype"]
+INC_DIRS=	["${LOCALBASE}/include/freetype1","${LOCALBASE}/include", \
+		 "${X11BASE}/include","${LOCALBASE}/include/freetype1/freetype"]
 LIB_DIRS=	["${LOCALBASE}/lib","${X11BASE}/lib"]
 TMPSUFFIX=	.temp
 EXAMPLES=	test_bar.py test_paint.py testpie.py
@@ -32,8 +34,8 @@ EXAMPLES=	test_bar.py test_paint.py testpie.py
 .include <bsd.port.pre.mk>
 
 post-patch:
-	${PERL} -pi -e 's@^(.*libraries.*)$$@\1include_dirs=${INC_DIRS},library_dirs=${LIB_DIRS},@g' \
-		${WRKSRC}/setup.py
+	${REINPLACE_CMD} -e 's@^\(.*libraries.*\)$$@\1include_dirs=${INC_DIRS},\
+		library_dirs=${LIB_DIRS},@g' ${WRKSRC}/setup.py
 
 .if !defined(NOPORTDOCS)
 post-install:
