@@ -19,6 +19,8 @@ DISTFILES=		MesaLib-${PORTVERSION}${EXTRACT_SUFX} \
 MAINTAINER=		mastake@msel.t.u-tokyo.ac.jp
 COMMENT=	A graphics library similar to SGI's OpenGL, used from Linux programs
 
+BROKEN=		"Inconsistent dependencies (installs both linux_base-6.x and 7.x, which conflict)"
+
 BUILD_DEPENDS=	${LINUXBASE}/lib/ld-linux.so.2:${PORTSDIR}/emulators/linux_base \
 		${LINUXBASE}/usr/bin/gcc:${PORTSDIR}/devel/linux_devtools-6
 
