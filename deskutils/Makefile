@@ -13,6 +13,7 @@
     SUBDIR += gaddr
     SUBDIR += gcal
     SUBDIR += gdeskcal
+    SUBDIR += gdeskcal-skins
     SUBDIR += gemcal
     SUBDIR += genius
     SUBDIR += glabels
