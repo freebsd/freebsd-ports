@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	4g8
-PORTVERSION=	0.9b
+PORTVERSION=	1.0
 CATEGORIES=	net
 MASTER_SITES=	http://forgate.sourceforge.net/downloads/
 EXTRACT_SUFX=	.tgz
