@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	pcsc-lite
-PORTVERSION=	1.0.2.b5
+PORTVERSION=	1.1.1
 CATEGORIES=	devel security
 MASTER_SITES=	http://www.linuxnet.com/middleware/files/
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/b/beta/}
+DISTNAME=	${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	toni@ants.at
+MAINTAINER=	toni@soth.at
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
@@ -19,19 +19,20 @@ USE_LIBTOOL=	yes
 LIBTOOLFILES+=	build/aclocal.m4
 
 INSTALLS_SHLIB=	yes
-CONFIGURE_ARGS+=	--enable-syslog --enable-daemon \
-			--enable-runpid=/var/run/pcscd.pid
+CONFIGURE_ARGS+=	--enable-debug \
+			--enable-syslog \
+			--enable-runpid=/var/run/pcscd.pid \
+			--enable-confdir=${PREFIX}/etc \
+			--disable-threadsafe
 PKGMESSAGE=	${WRKDIR}/pkg-message
-
-post-patch:
-	@${PERL} -pi -e 's,SUBDIRS = src etc doc,SUBDIRS = src,' \
-		${WRKSRC}/Makefile.in
+MAN8=		pcscd.8
 
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/README.DAEMON ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/pcsc-lite-0.8.7.pdf ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/muscle-api-1.3.0.pdf ${DOCSDIR}
 .endif
 	${INSTALL_DATA} ${WRKSRC}/etc/reader.conf \
 		${PREFIX}/etc/reader.conf.sample
