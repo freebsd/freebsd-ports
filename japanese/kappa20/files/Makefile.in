@@ -46,7 +46,8 @@ nk20b-1.bdf: k20b.bdf newjis.diff
 
 fonts.alias: Makefile.dist
 	${SED} -n '/^.*echo \(.*\) >>.*$$/ s//\1/p' $> > $@
-	egrep -iv '^(-kappa-[^ 	]*--20-|(v?k|a|r)20[mb][ 	]|(ipa-)?10x20[mb][ 	]|10x20(rk|L[2-9])[mb][ 	])' ${PREFIX}/${FONTSDIR}/fonts.alias >> fonts.alias || true
+	${SED} -n '/^.*echo \(.*\) >>.*$$/ s//\1/p' $> | ${SED} 's/-r-/-i-/g;s/\(^[^-][^ 	]*\) /\1i /' >> $@
+	egrep -iv '^(-kappa-[^ 	]*--20-|(v?k|a|r)20[mb]i?[ 	]|(ipa-)?10x20[mb]i?[ 	]|10x20(rk|L[2-9])[mb]i?[ 	])' ${PREFIX}/${FONTSDIR}/fonts.alias >> fonts.alias || true
 
 install:
 	mkdir -p ${PREFIX}/${FONTSDIR}

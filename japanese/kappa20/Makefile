@@ -36,10 +36,6 @@ post-extract:
 	(cd ${WRKSRC} ; ${MV} Makefile Makefile.dist)
 	${CP} ${FILESDIR}/Makefile.in ${WRKSRC}/Makefile
 
-pre-install:
-	@${SETENV} PKG_PREFIX=${PREFIX} \
-		${SH} ${PKGREQ} ${PKGNAME} INSTALL
-
 post-install:
 	@(cd ${PREFIX}/${FONTSDIR} ; mkfontdir)
 .if !defined(NOPORTDOCS)
