@@ -15,11 +15,12 @@ DISTNAME=	python-ldap-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An LDAP module for python, for OpenLDAP2
 
-LIB_DEPENDS=	ldap.2:${PORTSDIR}/net/openldap20
+LIB_DEPENDS=	ldap.2:${PORTSDIR}/${LDAP_PORT}
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME:S=-src==}
+LDAP_PORT=	net/openldap20-client
 
 #class = OpenLDAP2
 #library_dirs = /usr/local/openldap2/lib
