@@ -1,0 +1,4 @@
+MySQL::Diff is Perl module for comparing the table structure
+of two MySQL databases
+
+WWW: http://adamspiers.org/computing/mysqldiff/
