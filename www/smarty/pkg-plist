@@ -55,6 +55,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/manual/caching.multiple.caches.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/chapter.debugging.console.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/config.files.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/constant.smarty.core.dir.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/getting.started.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/index.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/installation.html
@@ -186,28 +187,28 @@
 %%DATADIR%%/Smarty.class.php
 %%DATADIR%%/Smarty_Compiler.class.php
 %%DATADIR%%/debug.tpl
-%%DATADIR%%/core/core.assemble_plugin_filepath.php
-%%DATADIR%%/core/core.assign_smarty_interface.php
-%%DATADIR%%/core/core.create_dir_structure.php
-%%DATADIR%%/core/core.display_debug_console.php
-%%DATADIR%%/core/core.get_include_path.php
-%%DATADIR%%/core/core.get_microtime.php
-%%DATADIR%%/core/core.get_php_resource.php
-%%DATADIR%%/core/core.is_secure.php
-%%DATADIR%%/core/core.is_trusted.php
-%%DATADIR%%/core/core.load_plugins.php
-%%DATADIR%%/core/core.load_resource_plugin.php
-%%DATADIR%%/core/core.process_cached_inserts.php
-%%DATADIR%%/core/core.process_compiled_include.php
-%%DATADIR%%/core/core.read_cache_file.php
-%%DATADIR%%/core/core.rm_auto.php
-%%DATADIR%%/core/core.rmdir.php
-%%DATADIR%%/core/core.run_insert_handler.php
-%%DATADIR%%/core/core.smarty_include_php.php
-%%DATADIR%%/core/core.write_cache_file.php
-%%DATADIR%%/core/core.write_compiled_include.php
-%%DATADIR%%/core/core.write_compiled_resource.php
-%%DATADIR%%/core/core.write_file.php
+%%DATADIR%%/internals/core.assemble_plugin_filepath.php
+%%DATADIR%%/internals/core.assign_smarty_interface.php
+%%DATADIR%%/internals/core.create_dir_structure.php
+%%DATADIR%%/internals/core.display_debug_console.php
+%%DATADIR%%/internals/core.get_include_path.php
+%%DATADIR%%/internals/core.get_microtime.php
+%%DATADIR%%/internals/core.get_php_resource.php
+%%DATADIR%%/internals/core.is_secure.php
+%%DATADIR%%/internals/core.is_trusted.php
+%%DATADIR%%/internals/core.load_plugins.php
+%%DATADIR%%/internals/core.load_resource_plugin.php
+%%DATADIR%%/internals/core.process_cached_inserts.php
+%%DATADIR%%/internals/core.process_compiled_include.php
+%%DATADIR%%/internals/core.read_cache_file.php
+%%DATADIR%%/internals/core.rm_auto.php
+%%DATADIR%%/internals/core.rmdir.php
+%%DATADIR%%/internals/core.run_insert_handler.php
+%%DATADIR%%/internals/core.smarty_include_php.php
+%%DATADIR%%/internals/core.write_cache_file.php
+%%DATADIR%%/internals/core.write_compiled_include.php
+%%DATADIR%%/internals/core.write_compiled_resource.php
+%%DATADIR%%/internals/core.write_file.php
 %%DATADIR%%/plugins/block.textformat.php
 %%DATADIR%%/plugins/compiler.assign.php
 %%DATADIR%%/plugins/function.assign_debug_info.php
@@ -255,6 +256,6 @@
 %%DATADIR%%/plugins/shared.make_timestamp.php
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/manual
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%DATADIR%%/core
+@dirrm %%DATADIR%%/internals
 @dirrm %%DATADIR%%/plugins
 @dirrm %%DATADIR%%
