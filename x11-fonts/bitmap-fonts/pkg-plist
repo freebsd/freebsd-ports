@@ -1,1 +1,4 @@
-%%FONTSDIR%%/%%BITMAP_FONT%%.pcf.gz
+%%FONTSDIR%%/etl6x12-bitmap.pcf.gz
+%%FONTSDIR%%/etl7x14-bitmap.pcf.gz
+%%FONTSDIR%%/etl8x16-bitmap.pcf.gz
+%%FONTSDIR%%/etl12x24-bitmap.pcf.gz

@@ -1,5 +1,5 @@
 # New ports collection makefile for:	bitmap-font
-# Version required:	8.0
+# Version required:	8.1
 # Date created:		23 September 1998
 # Whom:			Shigeyuki FUKUSHIMA <shige@FreeBSD.org>
 #
@@ -14,8 +14,8 @@ MASTER_SITES=	ftp://ftp.jpl.org/pub/elisp/bitmap/
 MAINTAINER=	shige@FreeBSD.org
 
 # distfile version
-BITMAP_VER=	8.0
-BITMAP_FONT=	etl8x16-bitmap
+BITMAP_VER=	8.1
+BITMAP_FONT=	etl6x12-bitmap etl7x14-bitmap etl8x16-bitmap etl12x24-bitmap
 FONTSDIR=	lib/X11/fonts/local
 PKGINSTALL=     ${WRKDIR}/INSTALL
 PKGDEINSTALL=   ${WRKDIR}/DEINSTALL
@@ -24,12 +24,14 @@ USE_X_PREFIX=	yes
 
 BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11/XFree86
 
-PLIST_SUB=	FONTSDIR=${FONTSDIR} BITMAP_FONT=${BITMAP_FONT}
+PLIST_SUB=	FONTSDIR=${FONTSDIR}
 
 do-build:
-	@(cd ${WRKSRC}; \
-	  bdftopcf ${BITMAP_FONT}.bdf > ${BITMAP_FONT}.pcf ; \
-	  ${GZIP_CMD} ${BITMAP_FONT}.pcf ; \
+	@(cd ${WRKSRC}/font; \
+	    for i in ${BITMAP_FONT} ; do \
+	        bdftopcf $${i}.bdf > $${i}.pcf ; \
+	        ${GZIP_CMD} $${i}.pcf ; \
+	    done ; \
 	)
 	@for file in INSTALL DEINSTALL; do \
 		${SED} -e 's,%%FONTSDIR%%,${FONTSDIR},g' \
@@ -42,8 +44,10 @@ pre-install:
 		${SH} ${PKGDIR}/REQ ${PKGNAME} INSTALL
 
 do-install:
-	@(cd ${WRKSRC}; \
-	  ${INSTALL_DATA} ${BITMAP_FONT}.pcf.gz ${PREFIX}/${FONTSDIR} ; \
+	@(cd ${WRKSRC}/font; \
+	    for i in ${BITMAP_FONT} ; do \
+	        ${INSTALL_DATA} $${i}.pcf.gz ${PREFIX}/${FONTSDIR} ; \
+	    done ; \
 	)
 
 post-install:
