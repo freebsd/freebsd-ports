@@ -8,8 +8,9 @@
 PORTNAME=	ucblogo
 PORTVERSION=	5.1
 CATEGORIES=	lang
-MASTER_SITES=	${MASTER_SITE_GNU} \
-		ftp://anarres.cs.berkeley.edu/pub/ucblogo/
+MASTER_SITES= 	${MASTER_SITE_GNU} \
+		ftp://ftp.cs.berkeley.edu/pub/ucblogo/
+MASTER_SITE_SUBDIR=non-gnu/ucblogo
 
 .if defined(EMACS_LOGO_MODE)
 BUILD_DEPENDS=  emacs:${PORTSDIR}/editors/emacs
