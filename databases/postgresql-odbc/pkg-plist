@@ -1,9 +1,5 @@
-%%IODBC%%lib/libpsqlodbc.so
-%%IODBC%%lib/libpsqlodbc.a
-%%IODBC%%lib/libpsqlodbc.so.0
-%%UNIXODBC%%lib/libodbcpsql.so
-%%UNIXODBC%%lib/libodbcpsql.a
-%%UNIXODBC%%lib/libodbcpsql.so.0
+lib/psqlodbc.so
+lib/psqlodbc.la
 share/postgresql/odbc.sql
 share/postgresql/odbc-drop.sql
-@unexec rmdir %D/share/postgresql 2>/dev/null || true
+@dirrm share/psqlodbc
