@@ -7507,6 +7507,7 @@ p5-VCS-CVS	ports/devel/p5-VCS-CVS
 p5-Validate-Net	ports/net/p5-Validate-Net
 p5-Video-Info	ports/multimedia/p5-Video-Info
 p5-Video-OpenQuicktime	ports/multimedia/p5-Video-OpenQuicktime
+p5-W3C-LogValidator	ports/www/p5-W3C-LogValidator
 p5-WDDX		ports/textproc/p5-WDDX
 p5-WWW-Automate	ports/www/p5-WWW-Automate
 p5-WWW-Babelfish	ports/www/p5-WWW-Babelfish
