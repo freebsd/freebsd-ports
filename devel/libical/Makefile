@@ -13,10 +13,9 @@ MASTER_SITES=	http://osdn.dl.sourceforge.net/sourceforge/freeassociation/
 
 MAINTAINER=	joe@zircon.seattle.wa.us
 
-BUILD_DEPENDS=	perl:${PORTSDIR}/lang/perl5
-
 USE_LIBTOOL=	yes
 USE_GMAKE=	yes
+USE_PERL5_BUILD=yes
 INSTALLS_SHLIB=	yes
 
 .if !defined(WITHOUT_PYTHON)
