@@ -1,0 +1,11 @@
+--- kpilot/libpilot/Makefile.orig	Tue Nov  3 18:48:04 1998
++++ kpilot/libpilot/Makefile	Tue Nov  3 18:48:16 1998
+@@ -43,7 +43,7 @@
+ 
+ all: libpisock.la
+ install: libpisock.la
+-	cp _libs/* $(KDEDIR)/lib
++	cp .libs/* $(KDEDIR)/lib
+ 
+ libpisock.a: $(OBJS)
+ 	$(RM) libpisock.a
