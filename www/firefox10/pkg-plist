@@ -191,7 +191,6 @@ include/mozilla-1.2b/content/nsITextAreaElement.h
 include/mozilla-1.2b/content/nsITextContent.h
 include/mozilla-1.2b/content/nsITextControlElement.h
 include/mozilla-1.2b/content/nsITransformMediator.h
-include/mozilla-1.2b/content/nsITransformObserver.h
 include/mozilla-1.2b/content/nsIWyciwygChannel.h
 include/mozilla-1.2b/content/nsIXBLBinding.h
 include/mozilla-1.2b/content/nsIXBLBindingAttachedHandler.h
@@ -203,6 +202,9 @@ include/mozilla-1.2b/content/nsIXBLService.h
 include/mozilla-1.2b/content/nsIXMLContent.h
 include/mozilla-1.2b/content/nsIXMLContentSink.h
 include/mozilla-1.2b/content/nsIXMLDocument.h
+include/mozilla-1.2b/content/nsIXSLTException.h
+include/mozilla-1.2b/content/nsIXSLTProcessor.h
+include/mozilla-1.2b/content/nsIXSLTProcessorObsolete.h
 include/mozilla-1.2b/content/nsImageMapUtils.h
 include/mozilla-1.2b/content/nsLayoutAtomList.h
 include/mozilla-1.2b/content/nsLayoutAtoms.h
@@ -602,6 +604,7 @@ include/mozilla-1.2b/inspector/inIScreenCapturer.h
 include/mozilla-1.2b/inspector/inISearchObserver.h
 include/mozilla-1.2b/inspector/inISearchProcess.h
 include/mozilla-1.2b/intl/nsIStringBundle.h
+include/mozilla-1.2b/intl/nsIStringBundleOverride.h
 include/mozilla-1.2b/jar/nsIJAR.h
 include/mozilla-1.2b/jar/nsIZipReader.h
 include/mozilla-1.2b/jar/zipfile.h
@@ -1114,6 +1117,8 @@ include/mozilla-1.2b/plugin/nsPluginsCID.h
 include/mozilla-1.2b/plugin/nsplugin.h
 include/mozilla-1.2b/plugin/nsplugindefs.h
 include/mozilla-1.2b/plugin/nspluginroot.h
+include/mozilla-1.2b/png/png.h
+include/mozilla-1.2b/png/pngconf.h
 include/mozilla-1.2b/pref/nsIPref.h
 include/mozilla-1.2b/pref/nsIPrefBranch.h
 include/mozilla-1.2b/pref/nsIPrefBranchInternal.h
@@ -1404,6 +1409,7 @@ include/mozilla-1.2b/xpcom/nsDirectoryService.h
 include/mozilla-1.2b/xpcom/nsDirectoryServiceDefs.h
 include/mozilla-1.2b/xpcom/nsDirectoryServiceUtils.h
 include/mozilla-1.2b/xpcom/nsDoubleHashtable.h
+include/mozilla-1.2b/xpcom/nsEmbedString.h
 include/mozilla-1.2b/xpcom/nsEnumeratorUtils.h
 include/mozilla-1.2b/xpcom/nsError.h
 include/mozilla-1.2b/xpcom/nsEscape.h
@@ -1564,6 +1570,7 @@ include/mozilla-1.2b/xpcom/xptcall.h
 include/mozilla-1.2b/xpcom/xptcstubsdecl.inc
 include/mozilla-1.2b/xpcom/xptcstubsdef.inc
 include/mozilla-1.2b/xpcom/xptinfo.h
+include/mozilla-1.2b/xpconnect/XPCIDispatch.h
 include/mozilla-1.2b/xpconnect/mozIJSSubScriptLoader.h
 include/mozilla-1.2b/xpconnect/nsIJSContextStack.h
 include/mozilla-1.2b/xpconnect/nsIJSRuntimeService.h
@@ -2054,6 +2061,7 @@ lib/pkgconfig/mozilla-nspr.pc
 lib/pkgconfig/mozilla-nss.pc
 lib/pkgconfig/mozilla-xpcom.pc
 share/aclocal/nspr.m4
+share/idl/mozilla-1.2b/XPCIDispatch.idl
 share/idl/mozilla-1.2b/domstubs.idl
 share/idl/mozilla-1.2b/gfx2types.idl
 share/idl/mozilla-1.2b/gfxIFormats.idl
@@ -2407,7 +2415,6 @@ share/idl/mozilla-1.2b/nsIDocumentCharsetInfo.idl
 share/idl/mozilla-1.2b/nsIDocumentLoader.idl
 share/idl/mozilla-1.2b/nsIDocumentLoaderFactory.idl
 share/idl/mozilla-1.2b/nsIDocumentStateListener.idl
-share/idl/mozilla-1.2b/nsIDocumentTransformer.idl
 share/idl/mozilla-1.2b/nsIDownload.idl
 share/idl/mozilla-1.2b/nsIDownloadManager.idl
 share/idl/mozilla-1.2b/nsIDownloadProgressListener.idl
@@ -2739,6 +2746,7 @@ share/idl/mozilla-1.2b/nsIStreamLoader.idl
 share/idl/mozilla-1.2b/nsIStreamProvider.idl
 share/idl/mozilla-1.2b/nsIStreamProviderProxy.idl
 share/idl/mozilla-1.2b/nsIStringBundle.idl
+share/idl/mozilla-1.2b/nsIStringBundleOverride.idl
 share/idl/mozilla-1.2b/nsIStringService.idl
 share/idl/mozilla-1.2b/nsIStringStream.idl
 share/idl/mozilla-1.2b/nsISupports.idl
@@ -2770,7 +2778,6 @@ share/idl/mozilla-1.2b/nsITransactionList.idl
 share/idl/mozilla-1.2b/nsITransactionListener.idl
 share/idl/mozilla-1.2b/nsITransactionManager.idl
 share/idl/mozilla-1.2b/nsITransferable.idl
-share/idl/mozilla-1.2b/nsITransformObserver.idl
 share/idl/mozilla-1.2b/nsITransport.idl
 share/idl/mozilla-1.2b/nsITransportSecurityInfo.idl
 share/idl/mozilla-1.2b/nsITreeBoxObject.idl
@@ -2832,6 +2839,9 @@ share/idl/mozilla-1.2b/nsIXPIProgressDialog.idl
 share/idl/mozilla-1.2b/nsIXPTLoader.idl
 share/idl/mozilla-1.2b/nsIXRemoteClient.idl
 share/idl/mozilla-1.2b/nsIXRemoteService.idl
+share/idl/mozilla-1.2b/nsIXSLTException.idl
+share/idl/mozilla-1.2b/nsIXSLTProcessor.idl
+share/idl/mozilla-1.2b/nsIXSLTProcessorObsolete.idl
 share/idl/mozilla-1.2b/nsIXULBrowserWindow.idl
 share/idl/mozilla-1.2b/nsIXULSortService.idl
 share/idl/mozilla-1.2b/nsIXULTemplateBuilder.idl
@@ -3011,6 +3021,7 @@ share/idl/mozilla-1.2b/xpcjsid.idl
 @dirrm share/idl/mozilla-1.2b
 @dirrm share/idl
 @dirrm share/aclocal
+@dirrm share
 @dirrm lib/pkgconfig
 @dirrm lib/mozilla-1.2b/searchplugins
 @dirrm lib/mozilla-1.2b/res/throbber
@@ -3292,6 +3303,7 @@ share/idl/mozilla-1.2b/xpcjsid.idl
 @dirrm lib/mozilla-1.2b/chrome/US
 @dirrm lib/mozilla-1.2b/chrome
 @dirrm lib/mozilla-1.2b
+@dirrm lib
 @dirrm include/mozilla-1.2b/xultmpl
 @dirrm include/mozilla-1.2b/xuldoc
 @dirrm include/mozilla-1.2b/xulapp
@@ -3339,6 +3351,7 @@ share/idl/mozilla-1.2b/xpcjsid.idl
 @dirrm include/mozilla-1.2b/prefmigr
 @dirrm include/mozilla-1.2b/prefetch
 @dirrm include/mozilla-1.2b/pref
+@dirrm include/mozilla-1.2b/png
 @dirrm include/mozilla-1.2b/plugin
 @dirrm include/mozilla-1.2b/pippki
 @dirrm include/mozilla-1.2b/pipnss
@@ -3401,5 +3414,7 @@ share/idl/mozilla-1.2b/xpcjsid.idl
 @dirrm include/mozilla-1.2b/appcomps
 @dirrm include/mozilla-1.2b/accessibility
 @dirrm include/mozilla-1.2b
+@dirrm include
+@dirrm bin
 @unexec /bin/rm %%X11BASE%%/bin/phoenix || true
 @unexec /bin/rm %%X11BASE%%/bin/phoenix-config || true
