@@ -7,6 +7,7 @@
 
 PORTNAME=	base
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	news mail
 DISTNAME=	huskybase-${PORTVERSION}-src
 
