@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	shttpd
-PORTVERSION=	1.0
+PORTVERSION=	1.3
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	shttpd
-DISTNAME=	httpd.c
+DISTNAME=	shttpd_${PORTVERSION}.c
 EXTRACT_SUFX=
 EXTRACT_ONLY=	#none
 
@@ -21,13 +21,19 @@ NO_WRKSUBDIR=	yes
 DIST_SUBDIR=	${PORTNAME}
 MAN1=		shttpd.1
 
+.if defined(WITHOUT_SSL)
+PKGNAMESUFFIX=	-nossl
+.else
+CFLAGS+=	-DWITH_SSL -I/usr/include/openssl -lssl -lcrypto
+.endif
+
 PLIST_FILES=	bin/shttpd
 
 post-extract:
-	${CP} ${DISTDIR}/${DIST_SUBDIR}/httpd.c ${WRKSRC}/
+	${CP} ${DISTDIR}/${DIST_SUBDIR}/${DISTNAME} ${WRKSRC}/
 
 do-build:
-	${CC} ${CFLAGS} -o ${WRKSRC}/shttpd ${WRKSRC}/httpd.c
+	${CC} ${CFLAGS} -o ${WRKSRC}/shttpd ${WRKSRC}/${DISTNAME}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/shttpd ${PREFIX}/bin
