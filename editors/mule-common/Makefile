@@ -7,18 +7,13 @@
 
 PORTNAME=	mule-common
 PORTVERSION=	${MULE_VERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	editors japanese
-MASTER_SITES=	ftp://etlport.etl.go.jp/pub/mule/ \
-		ftp://ftp.mei.co.jp/archive/free/gnu/emacs/Mule/ \
-		ftp://ftp.iij.ad.jp/pub/misc/mule/ \
+MASTER_SITES=	ftp://ftp.m17n.org/pub/mule/ \
+		ftp://ftp.jaist.ac.jp/pub/GNU/mule/ \
 		http://www.infonets.hiroshima-u.ac.jp/~taoka/FreeBSD/mule/
-DISTFILES=	emacs-${EMACS_VERSION}b${EXTRACT_SUFX} \
+DISTFILES=	mule-${MULE_VERSION}-${EMACS_VERSION}.tar.gz \
 		mule-${MULE_VERSION}-${EMACS_VERSION}.patch-981002.tar.gz
-
-PATCH_SITES=	ftp://etlport.etl.go.jp/pub/mule/
-PATCHFILES=	mule-${MULE_VERSION:S/.//}-${EMACS_VERSION:S/.//}-alpha01.diff.gz
-PATCH_DIST_STRIP= -p1
 
 MAINTAINER=	taoka@FreeBSD.org
 
@@ -52,7 +47,7 @@ WRKDIR?=	${WRKDIRBASE}/${dir}/work
 MULEPKG?=	${dir:S,editors/,,:S,chinese/,zh-,:S,japanese/,ja-,:S,korean/,ko-,}-${PORTVERSION}${_SUF1}${_SUF2}
 .endif
 .endfor
-WRKSRC=		${WRKDIR}/emacs-${EMACS_VERSION}
+WRKSRC=		${WRKDIR}/mule-${MULE_VERSION}-${EMACS_VERSION}
 STARTUP_SCRIPT=	${PREFIX}/etc/rc.d/mule.sh
 
 .if !defined(WRKDIR)
@@ -96,7 +91,6 @@ ELC_DIR=	../lisp
 #   MEW_ORG_PATCH: apply mew's patches to original mule (http://www.mew.org)
 #   MEW_PATCH: apply mew's patch after apply Mr. Katayama's patches
 post-extract:
-	${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/mule-${MULE_VERSION}-${EMACS_VERSION}.patch-981002.tar.gz ${EXTRACT_AFTER_ARGS} -C ${WRKDIR}
 	${CP} ${FILESDIR}/unexfreebsd.c ${WRKSRC}/src
 .if !defined(ORIGINAL) && !defined(MEW_ORG_PATCH)
 	${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${WRKDIR}/takana-${EMACS_VERSION}.tar.gz ${EXTRACT_AFTER_ARGS} -C ${WRKDIR}
