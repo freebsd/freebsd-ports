@@ -6,6 +6,7 @@ lib/xchat/plugins/perl.so
 share/gnome/apps/Internet/xchat.desktop
 share/gnome/pixmaps/xchat.png
 share/locale/am/LC_MESSAGES/xchat.mo
+share/locale/ca/LC_MESSAGES/xchat.mo
 share/locale/de/LC_MESSAGES/xchat.mo
 share/locale/el/LC_MESSAGES/xchat.mo
 share/locale/es/LC_MESSAGES/xchat.mo
