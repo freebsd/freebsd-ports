@@ -14,6 +14,8 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Small text based maze game
+
 WRKSRC=		${WRKDIR}/blocks
 MAKEFILE=	makefile
 ALL_TARGET=	block bed

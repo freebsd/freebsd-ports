@@ -12,6 +12,8 @@ MASTER_SITES=	http://www.asahi-net.or.jp/~xg2k-hys/
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Digital camera downloading tool for Casio QV series
+
 WRKSRC=		${WRKDIR}/QVplay095/obj/FreeBSD
 
 GNU_CONFIGURE=	yes

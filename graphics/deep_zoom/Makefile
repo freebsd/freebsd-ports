@@ -13,6 +13,8 @@ MASTER_SITES=	http://members.rogers.com/rowley-c/deep_zoom/
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Generate very highly zoomed fractals
+
 BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
 LIB_DEPENDS=	Imlib2:${PORTSDIR}/graphics/imlib2 \
 		gmp.6:${PORTSDIR}/math/libgmp4

@@ -15,6 +15,8 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	network backup client to NetWorker servers
+
 NO_BUILD=	yes
 
 post-patch:

@@ -13,6 +13,8 @@ MASTER_SITES=	http://www.esperanto.org.uy/programoj/angle/
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Mozilla/HtmlDoc/Netscape Postscript Filter
+
 LIB_DEPENDS=	iconv:${PORTSDIR}/converters/libiconv \
 		freetype:${PORTSDIR}/print/freetype2
 

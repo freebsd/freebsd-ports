@@ -13,6 +13,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	A graphical background manager for the Blackbox window manager
+
 RUN_DEPENDS=	xv:${PORTSDIR}/graphics/xv \
 		blackbox:${PORTSDIR}/x11-wm/blackbox
 

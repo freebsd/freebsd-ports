@@ -13,6 +13,8 @@ DISTNAME=	Glasteriods
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	3D Asteroids game for X Window System
+
 MAKEFILE=	Makefile.FreeBSD
 
 WRKSRC=		${WRKDIR}/Glasteroids

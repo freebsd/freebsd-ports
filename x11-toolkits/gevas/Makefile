@@ -13,6 +13,8 @@ MASTER_SITE_SUBDIR=	enlightenment
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	GTK+ bindings for Evas canvas library
+
 LIB_DEPENDS=	evas.6:${PORTSDIR}/graphics/evas
 
 USE_GNOMENG=	yes

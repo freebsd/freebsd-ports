@@ -14,6 +14,8 @@ MASTER_SITE_SUBDIR=	dejagnu
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Automated program/system tester
+
 RUN_DEPENDS=	expect:${PORTSDIR}/lang/expect
 
 USE_GMAKE=	yes

@@ -18,6 +18,8 @@ DISTFILES=	w3c-libwww-4.0D.tar.gz \
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	W3C Command Line WWW Tool
+
 USE_REINPLACE=	yes
 
 WRKSRC=		${WRKDIR}/WWW

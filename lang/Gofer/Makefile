@@ -13,6 +13,8 @@ DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	A lazy functional language
+
 WRKSRC=		${WRKDIR}/src
 LIBDIR=		${PREFIX}/lib/Gofer
 MAN1=		gofer.1

@@ -12,6 +12,8 @@ MASTER_SITES=	http://people.nl.linux.org/~diz/playmidi/
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	MIDI player
+
 IS_INTERACTIVE=	YES	# asks what devices you want to support
 HAS_CONFIGURE=	YES
 CONFIGURE_SCRIPT=	Configure

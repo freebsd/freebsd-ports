@@ -15,6 +15,8 @@ DISTNAME=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	The classic cat-and-mouse
+
 NO_WRKSUBDIR=	yes
 USE_IMAKE=	yes
 MAN6=		xneko.6

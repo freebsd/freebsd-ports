@@ -14,6 +14,8 @@ DISTNAME=	${PORTNAME}
 
 MAINTAINER=	ports@freebsd.org
 
+PORTCOMMENT=	Utilities for Apple Macintosh files
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 MAKEFILE=	makefile
 

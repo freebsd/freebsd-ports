@@ -14,6 +14,8 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	The dos based 'fractint' with an X/Motif front end
+
 USE_MOTIF=	yes
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes

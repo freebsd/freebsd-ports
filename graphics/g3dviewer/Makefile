@@ -13,6 +13,8 @@ MASTER_SITES=	http://madsworld.exhome.de/downloads/
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	A 3D file viewer for GTK+
+
 LIB_DEPENDS=	gtkgl:${PORTSDIR}/x11-toolkits/gtkglarea
 
 USE_GNOMENG=	yes

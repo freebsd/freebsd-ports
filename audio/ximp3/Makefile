@@ -14,6 +14,8 @@ MASTER_SITE_SUBDIR=	apps/sound/players/mp3
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	A simple console MP3 player
+
 GNU_CONFIGURE=	yes
 
 .include <bsd.port.mk>

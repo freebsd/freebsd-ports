@@ -14,6 +14,8 @@ DISTNAME=	FC++.${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Functional Programming in C++
+
 NO_BUILD=	yes
 
 do-install:

@@ -16,6 +16,8 @@ PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	adamw@FreeBSD.org
 
+PORTCOMMENT=	APM monitor for the Blackbox slit
+
 USE_X_PREFIX=	yes
 USE_GNOMENG=	yes
 USE_GNOME=	gtk12

@@ -14,6 +14,8 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	An X-based interface to the Berkeley mail program
+
 USE_IMAKE=	yes
 USE_XPM=	yes
 MAN1=		xmail.1

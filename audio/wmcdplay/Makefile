@@ -14,6 +14,8 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	A CD player for the WindowMaker dock
+
 WRKSRC=		${WRKDIR}/wmcdplay
 
 USE_IMAKE=	yes

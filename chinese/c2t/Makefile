@@ -19,6 +19,8 @@ DISTFILES=	c2t.tar.gz TONEPY.tit
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Translates GB/Big5 encoding to tone pinyin
+
 NO_WRKSUBDIR=	yes
 EXTRACT_ONLY=	c2t.tar.gz
 MAN1=		c2t.1

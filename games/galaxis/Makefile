@@ -12,6 +12,8 @@ MASTER_SITES=	http://www.tuxedo.org/~esr/galaxis/
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Clone of the nifty little Macintosh game
+
 ALL_TARGET=	# empty
 MAN6=		galaxis.6
 

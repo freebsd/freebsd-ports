@@ -13,6 +13,8 @@ MASTER_SITES=	ftp://ftp.uni-bremen.de/pub/mirrors/sunsite/system/status/ps/ \
 
 MAINTAINER=	ports@FreeBSD.Org
 
+PORTCOMMENT=	A port of the Linux pstree, killall and pidof commands
+
 INSTALL_TARGET=	install-all
 MAN1=		pidof.1 pstree.1 killall.1
 WRKSRC=		${WRKDIR}/psmisc

@@ -13,6 +13,8 @@ MASTER_SITE_SUBDIR=	sntop
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Monitor status of network nodes using fping
+
 RUN_DEPENDS=	${LOCALBASE}/sbin/fping:${PORTSDIR}/net/fping
 
 GNU_CONFIGURE=	yes

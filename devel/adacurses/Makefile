@@ -14,6 +14,8 @@ DISTNAME=		ncurses-${PORTVERSION}
 
 MAINTAINER=		ports@FreeBSD.org
 
+PORTCOMMENT=	Curses library for Ada
+
 BUILD_DEPENDS=		gnat:${PORTSDIR}/lang/gnat
 
 .include <bsd.port.pre.mk>

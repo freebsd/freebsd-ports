@@ -13,6 +13,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	A C/C++ documentation generator
+
 USE_PERL5=	yes
 NO_BUILD=	yes
 

@@ -13,6 +13,8 @@ MASTER_SITE_SUBDIR=	applications
 
 MAINTAINER=		ports@FreeBSD.org
 
+PORTCOMMENT=		Mailbox checker with sound and animation for X Window System
+
 USE_REINPLACE=		yes
 USE_IMAKE=		yes
 USE_XPM=		yes

@@ -12,6 +12,8 @@ MASTER_SITES=	http://www.jeton.or.jp/users/toru/www/orgsoft/nspmod/	\
 		${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	apps/sound/players
 
+PORTCOMMENT=	MOD/S3M/MTM tracker that does it\'s own DSP, uses VoxWare v2.90+
+
 MAN1=		nspmod.1
 
 do-install:

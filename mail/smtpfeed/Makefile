@@ -12,6 +12,8 @@ MASTER_SITES=	ftp://ftp.kyoto.wide.ad.jp/pub/mail/smtpfeed/
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	SMTP Fast Exploding External Deliverer for Sendmail
+
 RUN_DEPENDS=	${LOCALBASE}/sbin/sendmail:${PORTSDIR}/mail/sendmail
 
 NO_PACKAGE=	"complex configuration for sendmail.cf needed"

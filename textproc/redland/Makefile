@@ -16,6 +16,8 @@ MASTER_SITE_SUBDIR=	librdf
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	A high-level interface for RDF
+
 LIB_DEPENDS=	db2.0:${PORTSDIR}/databases/db2 \
 		gdbm.2:${PORTSDIR}/databases/gdbm \
 		expat.4:${PORTSDIR}/textproc/expat2 \

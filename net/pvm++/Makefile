@@ -16,6 +16,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME:S:+:-plus:g}
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	A C++-Library for PVM
+
 BUILD_DEPENDS=	${LOCALBASE}/bin/pvm:${PORTSDIR}/net/pvm
 
 GNU_CONFIGURE=	yes

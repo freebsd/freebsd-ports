@@ -14,6 +14,8 @@ DISTNAME=	psh-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	New shell made entirely out of a Perl script
+
 PERL_CONFIGURE=	yes
 USE_REINPLACE=	yes
 

@@ -13,6 +13,8 @@ DISTNAME=	${PKGNAME}-src
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	An MPEG-I statistics gatherer
+
 MAN1=		mpeg_stat.1
 MANCOMPRESSED=	yes
 

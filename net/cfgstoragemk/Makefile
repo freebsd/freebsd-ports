@@ -14,6 +14,8 @@ DISTNAME=	cfgstoragemaker-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	MRTG configuration generator for storage monitoring via SNMP
+
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes

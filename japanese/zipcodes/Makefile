@@ -14,6 +14,8 @@ EXTRACT_SUFX=	.lzh
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Japanese zipcode tables. includes both 3/5 and 7 digits form
+
 BUILD_DEPENDS=	lha:${PORTSDIR}/archivers/lha \
 		nkf:${PORTSDIR}/japanese/nkf
 

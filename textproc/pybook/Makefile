@@ -13,6 +13,8 @@ MASTER_SITES=	http://silmarill.org/pybook/
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	A Project Gutenberg e-texts reader
+
 USE_REINPLACE=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes

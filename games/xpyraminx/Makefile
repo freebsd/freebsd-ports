@@ -13,6 +13,8 @@ MASTER_SITE_SUBDIR=	games/xpuzzles
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Pyraminx puzzle for X Window System
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_IMAKE=	yes
 MAN1=		xpyraminx.1

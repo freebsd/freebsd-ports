@@ -16,6 +16,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}_unixsrc
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Enhanced version of VNC
+
 LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg
 
 USE_BZIP2=	yes

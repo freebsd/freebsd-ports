@@ -13,6 +13,8 @@ MASTER_SITES=	http://graphics.cs.uiuc.edu/~garland/dist/
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	SlimKit Surface Modeling Tools
+
 LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt \
 		png.5:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff \

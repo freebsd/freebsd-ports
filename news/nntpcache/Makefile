@@ -14,6 +14,8 @@ MASTER_SITES=	ftp://ftp.nntpcache.org/pub/nntpcache/ \
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	News caching/anti-spam/server-merging system
+
 BUILD_DEPENDS=	automake:${PORTSDIR}/devel/automake
 .if defined(WITH_LDAP) && !defined(WITH_LDAP2)
 LIB_DEPENDS+=	ldap.1:${PORTSDIR}/net/openldap

@@ -15,6 +15,8 @@ DISTNAME=	nat10
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	NetBIOS Auditing Tool / Security Kit
+
 WRKSRC=		${WRKDIR}/${DISTNAME}
 MAN1=		nat.1 nbaudit.1
 

@@ -15,6 +15,8 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	A Cryptographic Toolkit for Python
+
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 

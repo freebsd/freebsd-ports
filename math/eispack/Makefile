@@ -14,6 +14,8 @@ DISTFILES=	${SRCS:.f=.f.gz}
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Eigenvalue system package
+
 LIB_DEPENDS=	blas.1:${PORTSDIR}/math/blas
 
 DIST_SUBDIR=	${PORTNAME}

@@ -15,6 +15,8 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	GP is a set of small utilities to manipulate DNA sequences
+
 LIB_DEPENDS=	gd.2:${PORTSDIR}/graphics/gd \
 		png.5:${PORTSDIR}/graphics/png
 

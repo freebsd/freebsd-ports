@@ -13,6 +13,8 @@ MASTER_SITES=	http://tiefighter.et.tudelft.nl/~arthur/cvsd/
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	cvs pserver daemon
+
 LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
 
 USE_REINPLACE=	yes

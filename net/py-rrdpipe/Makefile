@@ -15,6 +15,8 @@ DISTNAME=	PyRRDpipe-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Portable Python module to access RRDTool files via pipes
+
 LIB_DEPENDS=	rrd:${PORTSDIR}/net/rrdtool
 
 USE_PYTHON=	yes

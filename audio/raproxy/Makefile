@@ -14,6 +14,8 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	ports@freebsd.org
 
+PORTCOMMENT=	Progressive Networks\' RealAudio Proxy Kit 3.0 beta 1
+
 # Get it through http://www.real.com/firewall/fwdload/index.html
 # if the master site does not exists somehow.
 WRKSRC=		${WRKDIR}/raproxy

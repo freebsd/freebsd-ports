@@ -13,6 +13,8 @@ MASTER_SITES=	http://ftp.rge.com/pub/mail/ml/ \
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	An X11 IMAP client
+
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 USE_IMAKE=	yes
 USE_MOTIF=	yes

@@ -14,6 +14,8 @@ MASTER_SITE_SUBDIR=	stb/netatalk
 
 MAINTAINER=	ports@freebsd.org
 
+PORTCOMMENT=	MacIP Gateway to allow IP-access from AppleTalk-only networks
+
 BROKEN=		"Does not build"
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libatalk.a:${PORTSDIR}/net/netatalk \

@@ -13,6 +13,8 @@ MASTER_SITE_SUBDIR=	ade
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	XFree86 a.out compatibility libraries
+
 ONLY_FOR_ARCHS=	i386
 
 NO_BUILD=	yes

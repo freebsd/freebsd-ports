@@ -13,6 +13,8 @@ MASTER_SITE_SUBDIR=	udeproject
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Small, fast, compact windowmanager
+
 LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext \
 		jpeg.9:${PORTSDIR}/graphics/jpeg
 

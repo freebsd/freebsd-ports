@@ -12,6 +12,8 @@ MASTER_SITES=	http://www.dokidoki.ne.jp/home2/shinmaru/mahjong/
 
 MAINTAINER=	ports@freebsd.org
 
+PORTCOMMENT=	Japanese version of a four player mahjong game
+
 USE_X_PREFIX=	YES
 USE_XPM=	yes
 

@@ -13,6 +13,8 @@ MASTER_SITE_SUBDIR=	steve
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	A Web Mirroring Program
+
 NO_PACKAGE=	"This program cannot be distributed if modified in any way"
 NO_CDROM=	"Don't sell for profit without written permission"
 ALL_TARGET=

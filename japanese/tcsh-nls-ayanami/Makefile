@@ -9,6 +9,8 @@ CATALOGNAME=	ayanami
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Japanese NLS catalog for TCSH. ("Ayanami Rei" taste)
+
 MASTERDIR=	${.CURDIR}/../tcsh-nls-generic
 PKGDIR=		${.CURDIR}
 PLIST=		${MASTERDIR}/pkg-plist

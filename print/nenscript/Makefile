@@ -13,6 +13,8 @@ MASTER_SITES=	http://risacher.posixnap.net/nenscript/ \
 
 MAINTAINER=	ports@FreeBSD.Org
 
+PORTCOMMENT=	A clone of the proprietary enscript program from Adobe Systems
+
 USE_BZIP2=	yes
 
 MAKEFILE=	makefile

@@ -13,6 +13,8 @@ MASTER_SITES=	http://www.finik.net/files/ \
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	An audio mixer for the WindowMaker dock
+
 USE_GMAKE=	yes
 USE_XPM=	yes
 USE_X_PREFIX=	yes

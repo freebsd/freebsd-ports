@@ -15,6 +15,8 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	A multiplayer 3D tank battle game
+
 USE_XLIB=	yes
 USE_MESA=	yes
 USE_REINPLACE=	yes

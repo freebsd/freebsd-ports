@@ -16,6 +16,8 @@ DIST_SUBDIR=	bdb
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	The Berkeley DB package, revision 4
+
 #PATCH_SITES=	${MASTER_SITES}
 #PATCHFILES=	patch.${PORTVERSION}.1 patch.${PORTVERSION}.2
 #PATCH_DIST_STRIP= -d ${WRKDIR}/${DISTNAME}

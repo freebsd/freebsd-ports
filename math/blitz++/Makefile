@@ -14,6 +14,8 @@ DISTNAME=	blitz-${PORTVERSION:S/b/beta/}
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	A C++ class library for scientific computing
+
 LIB_DEPENDS=	blas:${PORTSDIR}/math/blas
 
 USE_REINPLACE=	yes

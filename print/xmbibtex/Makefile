@@ -13,6 +13,8 @@ MASTER_SITE_SUBDIR=	apps/tex
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	A reference manager based on the BibTeX file format
+
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 
 USE_MOTIF=	yes

@@ -16,6 +16,8 @@ DISTNAME=	GDGraph-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Graph plotting module for perl5
+
 BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/GD.pm:${PORTSDIR}/graphics/p5-GD \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/GD/Text/Align.pm:${PORTSDIR}/graphics/p5-GD-TextUtil
 RUN_DEPENDS=	${BUILD_DEPENDS}

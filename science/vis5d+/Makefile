@@ -15,6 +15,8 @@ MASTER_SITE_SUBDIR=	vis5d
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	An OpenGL-based volumetric visualization program for scientific datasets
+
 BUILD_DEPENDS=	${LOCALBASE}/lib/libmix.a:${PORTSDIR}/graphics/qslim \
 		convert:${PORTSDIR}/graphics/ImageMagick
 LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv \

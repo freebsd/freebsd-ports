@@ -14,6 +14,8 @@ DISTFILES=		${PORTNAME}-src${EXTRACT_SUFX}
 
 MAINTAINER=		ports@FreeBSD.org
 
+PORTCOMMENT=		Logical game: problems with packets in cave
+
 WRKSRC=			${WRKDIR}/sokoban
 ALL_TARGET=
 

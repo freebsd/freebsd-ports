@@ -14,6 +14,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	DarkIce is an IceCast, IceCast2 and ShoutCast live audio streamer
+
 LIB_DEPENDS=	mp3lame.0:${PORTSDIR}/audio/lame \
 		vorbis.2:${PORTSDIR}/audio/libvorbis
 

@@ -15,6 +15,8 @@ DISTNAME=	${PORTNAME}.${PORTVERSION}.full
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	A drawing program for X11
+
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
 		Xaw3d.${XAWVER}:${PORTSDIR}/x11-toolkits/Xaw3d

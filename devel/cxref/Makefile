@@ -15,6 +15,8 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	C program cross-referencing & documentation tool
+
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 

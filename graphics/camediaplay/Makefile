@@ -14,6 +14,8 @@ MASTER_SITES=	ftp://ftp.itojun.org/pub/digi-cam/C-400L/unix/ \
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Digital camera downloading tool for Epson/Sanyo/Olympus/Agfa camera
+
 WRKSRC=		${WRKDIR}/${PORTNAME}/build
 
 USE_REINPLACE=	yes

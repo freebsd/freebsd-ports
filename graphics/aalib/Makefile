@@ -15,6 +15,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/.r/rc/}
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	An ascii art library
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-1.4.0
 USE_REINPLACE=	yes
 USE_LIBTOOL=	yes

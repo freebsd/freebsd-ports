@@ -16,6 +16,8 @@ DISTFILES=	hc-30.tar.gz  hc-supp.tab
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Hanzi Converter -- converts between GB and BIG-5 codes
+
 USE_REINPLACE=	yes
 WRKSRC=		${WRKDIR}/hc3
 EXTRACT_ONLY=	hc-30.tar.gz

@@ -13,6 +13,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	A secure (encrypted) remote shell compatible with ssh 2.0
+
 RESTRICTED=	"Crypto; export-controlled"
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install

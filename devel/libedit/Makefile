@@ -12,6 +12,8 @@ MASTER_SITES=	http://www.canonware.com/download/libedit/
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Command line editing library
+
 USE_AUTOCONF=	yes
 CONFIGURE_ARGS=	--disable-readline
 INSTALLS_SHLIB=	yes

@@ -13,6 +13,8 @@ DISTNAME=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Auto detect encoding and convert to koi8, CP-1251 or cp866
+
 USE_BZIP2=	yes
 
 do-install:

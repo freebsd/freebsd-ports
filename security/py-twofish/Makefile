@@ -16,6 +16,8 @@ DISTNAME=	twofishmodule-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Twofish cryptographic module for Python
+
 USE_PYTHON=	yes
 GNU_CONFIGURE=	yes
 

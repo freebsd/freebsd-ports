@@ -14,6 +14,8 @@ MASTER_SITE_SUBDIR=	apps/misc
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Highly customizable, text-based menu generator
+
 ALL_TARGET=	# empty
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-sys-config=${PREFIX}/etc/xenmenurc \

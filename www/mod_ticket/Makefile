@@ -14,6 +14,8 @@ EXTRACT_SUFX=	.c
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Apache module for a digitally signed ticket in URL
+
 BUILD_DEPENDS=	${APXS}:${APACHE_PORT}
 RUN_DEPENDS=	${APXS}:${APACHE_PORT}
 

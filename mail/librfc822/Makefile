@@ -13,6 +13,8 @@ MASTER_SITES=	http://cryp.to/librfc822/
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	A complete parser for RFC822 addresses
+
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/rfc822.hh ${PREFIX}/include
 	${INSTALL_DATA} ${WRKSRC}/librfc822.a ${PREFIX}/lib

@@ -13,6 +13,8 @@ EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	CD player for X
+
 USE_IMAKE=	yes
 MAN1=		xcdplayer.1
 

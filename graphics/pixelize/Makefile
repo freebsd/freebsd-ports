@@ -16,6 +16,8 @@ MASTER_SITE_SUBDIR=	apps/graphics/misc
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Use many scaled down images to try to duplicate another image
+
 USE_REINPLACE=	yes
 USE_GNOMENG=	yes
 USE_GNOME=	gtk12 imlib

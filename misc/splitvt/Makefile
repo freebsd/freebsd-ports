@@ -13,6 +13,8 @@ MASTER_SITES=	http://www.devolution.com/~slouken/projects/splitvt/
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Run two shells in a split window/terminal
+
 HAS_CONFIGURE=		yes
 ALL_TARGET=
 MAN1=			splitvt.1

@@ -12,6 +12,8 @@ MASTER_SITES=	http://www.devolution.com/~slouken/projects/mmr/
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Curses based MIME Mail Reader
+
 ALL_TARGET=	# empty
 
 do-install:

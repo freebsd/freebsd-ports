@@ -14,6 +14,8 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Database of acronyms and abbreviations
+
 NO_BUILD=	yes
 USE_REINPLACE=	yes
 

@@ -12,6 +12,8 @@ MASTER_SITES=	http://www.engelschall.com/sw/smtpclient/distrib/
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Simple SMTP client
+
 GNU_CONFIGURE=	yes
 MAN1=		smtpclient.1
 

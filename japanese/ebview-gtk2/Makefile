@@ -13,6 +13,8 @@ MASTER_SITE_SUBDIR= ${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Electronic Book Viewer
+
 LIB_DEPENDS=	eb.6:${PORTSDIR}/japanese/eb
 
 USE_GNOMENG=	yes

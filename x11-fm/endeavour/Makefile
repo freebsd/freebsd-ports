@@ -14,6 +14,8 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	A graphical file manager and image viewer aimed towards new users
+
 USE_REINPLACE=	yes
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes

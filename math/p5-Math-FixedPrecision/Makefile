@@ -14,6 +14,8 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Perl module that provides decimal math without floating point errors
+
 USE_ZIP=	yes
 
 .include <bsd.port.pre.mk>

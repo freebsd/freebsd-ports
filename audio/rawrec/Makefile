@@ -17,6 +17,8 @@ MASTER_SITE_SUBDIR=	apps/sound/recorders \
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	A utility to record and playback raw audio data
+
 LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src

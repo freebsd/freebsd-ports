@@ -14,6 +14,8 @@ MASTER_SITE_SUBDIR=	apps/sound/editors
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Interactively select and save sections of an audio file
+
 RUN_DEPENDS=	sox:${PORTSDIR}/audio/sox \
 		rawplay:${PORTSDIR}/audio/rawrec \
 		oggenc:${PORTSDIR}/audio/vorbis-tools \

@@ -13,6 +13,8 @@ MASTER_SITES=	http://lrn.ru/~osgene/files/
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Console font editor
+
 GNU_CONFIGURE=	yes
 
 MANCOMPRESSED=	no

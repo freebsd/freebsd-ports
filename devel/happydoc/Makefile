@@ -15,6 +15,8 @@ DISTNAME=	HappyDoc_r${PORTVERSION:S/./_/g}
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	A tool for extracting documentation from Python source code
+
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME:S/_r/-r/}

@@ -10,6 +10,8 @@ PORTVERSION=	2.54
 CATEGORIES=	japanese textproc
 MASTER_SITES=	ftp://ftp.nec.co.jp/pub/packages/plain2/
 
+PORTCOMMENT=	A text converter from plain to any format
+
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 ALL_TARGET=	plain2
 

@@ -12,6 +12,8 @@ MASTER_SITES=   http://www.csn.ul.ie/~airlied/pam_smb/devel/
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	NetBIOS domain logon PAM module
+
 USE_AUTOCONF_VER=213
 USE_GMAKE=	yes
 USE_PERL5=	yes

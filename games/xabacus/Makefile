@@ -14,6 +14,8 @@ MASTER_SITE_SUBDIR=	applications
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Abacus for X Window System
+
 WRKSRC=		${WRKDIR}/xabacus
 USE_MOTIF=	yes
 USE_X_PREFIX=	yes

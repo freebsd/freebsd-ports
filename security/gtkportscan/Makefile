@@ -13,6 +13,8 @@ MASTER_SITE_SUBDIR=	cpiazza
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	A simple port scanner that prints out open ports
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_GNOMENG=	yes

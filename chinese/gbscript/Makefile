@@ -19,6 +19,8 @@ DISTFILES=	gbscript-1.11.tar.gz cclib.24
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Converts GB simplified Chinese text to PostScript
+
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAKEFILE=	makefile
 CFLAG+=		-DPROLOGUE_PATH=\"${PREFIX}/share/chinese/gb\"

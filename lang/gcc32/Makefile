@@ -30,6 +30,8 @@ PATCHFILES=	port_gcc32_${SNAPDATE}.diff
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	GNU Compiler Collection 3.1 (inprogress version)
+
 NO_CDROM=	'dated material'
 LATEST_LINK=	gcc32
 

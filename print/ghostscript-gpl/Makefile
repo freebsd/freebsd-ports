@@ -51,6 +51,8 @@ EXTRACT_ONLY=	${GS_SRCS}
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	AFPL Postscript interpreter version 7
+
 BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/graphics/jpeg:extract
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 

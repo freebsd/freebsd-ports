@@ -13,6 +13,8 @@ MASTER_SITE_SUBDIR=	applications
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	X11 front-end program for the archie network search service
+
 USE_IMAKE=	yes
 USE_GMAKE=	yes
 MAN1=		xarchie.1

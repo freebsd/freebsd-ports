@@ -14,6 +14,8 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@freebsd.org
 
+PORTCOMMENT=	Cleans up HTML code for web browsers, not humans
+
 PERL_CONFIGURE=	yes
 
 MAN1=		htmlclean.1

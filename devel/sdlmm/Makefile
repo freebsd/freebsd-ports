@@ -15,6 +15,8 @@ DISTNAME=	SDLmm-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	A C++ Wrapper for the SDL (Simple DirectMedia Layer)
+
 LIB_DEPENDS=	SDL-1.1.4:${PORTSDIR}/devel/sdl12
 
 SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config

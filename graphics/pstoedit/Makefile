@@ -13,6 +13,8 @@ MASTER_SITES=	http://home.t-online.de/home/helga.glunz/wglunz/pstoedit/
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Convert PostScript to other vector graphic formats
+
 BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig \
 		gs:${PORTSDIR}/print/ghostscript-gnu
 LIB_DEPENDS=	Magick++.5:${PORTSDIR}/graphics/ImageMagick \

@@ -15,6 +15,8 @@ EXTRACT_ONLY=	scm5d6.zip slib2d4.zip
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	A scheme interpreter
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_REINPLACE=	yes

@@ -13,6 +13,8 @@ DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}u
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Ish/uuencode/Base64 converter
+
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/ja/aish

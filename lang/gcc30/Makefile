@@ -19,6 +19,8 @@ DISTFILES=	gcc-core-${GCC_REV}${EXTRACT_SUFX} \
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	GNU Compiler Collection 3.0.
+
 LATEST_LINK=	gcc30
 
 USE_BZIP2=	yes

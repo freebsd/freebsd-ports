@@ -13,6 +13,8 @@ MASTER_SITE_SUBDIR=	sharutils
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Allow packing and unpacking of shell archives
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-prefix=g --disable-uucode --disable-nls
 INSTALL_TARGET=	install install-man

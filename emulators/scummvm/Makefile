@@ -15,6 +15,8 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	adamw@FreeBSD.org
 
+PORTCOMMENT=	Free implementation of LucasArts S.C.U.M.M. interpreter
+
 LIB_DEPENDS=	SDL-1.1.4:${PORTSDIR}/devel/sdl12
 
 USE_GMAKE=	yes

@@ -16,6 +16,8 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	The "Sensible" Unix Password Cracker
+
 WRKSRC=		${WRKDIR}/c50a
 
 pre-configure:

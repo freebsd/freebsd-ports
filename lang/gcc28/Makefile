@@ -19,6 +19,8 @@ PATCHFILES=	bounds-checking-2.8.1-1.01.tar.gz
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	GNU Compiler Collection 2.8
+
 NO_CDROM=	'old version, not worth the cost in real estate'
 
 LATEST_LINK=	gcc28

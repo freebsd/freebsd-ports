@@ -13,6 +13,8 @@ DISTFILES=	${DISTNAME}-demo.tgz ${DISTNAME}-doc.tgz ${DISTNAME}-src.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	The EZ Widget and Graphics Library
+
 LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
 		png.5:${PORTSDIR}/graphics/png
 

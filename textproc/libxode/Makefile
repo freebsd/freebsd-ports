@@ -14,6 +14,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	An XML library which wraps expat
+
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 

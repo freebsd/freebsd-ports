@@ -12,6 +12,8 @@ MASTER_SITES=	http://www.NeoSoft.com/tcl/ftparchive/sorted/comm/tkhylafax-3.0b2/
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	A tcl/tk interface to Sam Leffler's fax package
+
 RUN_DEPENDS=	wish8.2:${PORTSDIR}/x11-toolkits/tk82 \
 		sendfax:${PORTSDIR}/comms/hylafax \
 		gs:${PORTSDIR}/print/ghostscript-gnu \

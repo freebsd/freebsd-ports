@@ -15,6 +15,8 @@ EXTRACT_SUFX=	.Z
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Extracts .lzx archives from Amiga systems
+
 NO_WRKSUBDIR=		yes
 
 do-extract:

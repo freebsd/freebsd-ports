@@ -13,6 +13,8 @@ MASTER_SITES=	http://www.aditus.nu/jpgraph/downloads/
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Draw both "quick and dirty" graphs with a minimum of code
+
 NO_BUILD=	yes
 
 .include <bsd.port.pre.mk>

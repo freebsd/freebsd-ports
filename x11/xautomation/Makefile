@@ -14,6 +14,8 @@ MASTER_SITES=	http://hoopajoo.net/static/projects/
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Control X from the command line for scripts
+
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 
 USE_XLIB=	yes

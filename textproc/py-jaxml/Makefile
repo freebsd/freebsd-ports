@@ -14,6 +14,8 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	A Python module to generate XML easily
+
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 

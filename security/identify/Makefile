@@ -12,6 +12,8 @@ MASTER_SITES=	ftp://ftp.lysator.liu.se/pub/ident/tools/
 
 MAINTAINER=	ports@freebsd.org
 
+PORTCOMMENT=	Client side ident protocol daemon wrapper
+
 BUILD_DEPENDS=	${LOCALBASE}/lib/libident.a:${PORTSDIR}/security/libident
 
 do-install:

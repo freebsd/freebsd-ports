@@ -29,6 +29,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:R}-${PORTVERSION:E}
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Image processing tools (interactive optional--misc/display conflict)
+
 BUILD_DEPENDS=	freetype-config:${PORTSDIR}/print/freetype2	# XXX
 LIB_DEPENDS=	jasper.4:${PORTSDIR}/graphics/jasper \
 		jbig.1:${PORTSDIR}/graphics/jbigkit \

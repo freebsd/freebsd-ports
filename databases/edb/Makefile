@@ -13,6 +13,8 @@ MASTER_SITE_SUBDIR=	enlightenment
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Enlightenment Database Library
+
 USE_LIBTOOL=	yes
 USE_GNOMENG=	yes
 USE_GNOME=	gtk12

@@ -15,6 +15,8 @@ DISTNAME=	QuantLib-${PORTVERSION}-src
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	A comprehensive software framework for quantitative finance
+
 WRKSRC=		${WRKDIR}/QuantLib-${PORTVERSION}
 
 USE_REINPLACE=	yes

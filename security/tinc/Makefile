@@ -17,6 +17,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/p/pre/}
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	A Virtual Private Network (VPN) daemon
+
 LIB_DEPENDS=	intl:${PORTSDIR}/devel/gettext
 
 USE_OPENSSL=	yes

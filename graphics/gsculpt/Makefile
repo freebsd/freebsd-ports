@@ -15,6 +15,8 @@ DISTNAME=	gSculpt-${PORTVERSION}-src
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	An Opensource 3D modelling application
+
 WRKSRC=		${WRKDIR}/gSculpt-${PORTVERSION}
 USE_REINPLACE=	yes
 USE_GNOMENG=	yes

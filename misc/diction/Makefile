@@ -12,6 +12,8 @@ MASTER_SITES=	http://www.moria.de/~michael/diction/
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	GNU diction and style
+
 USE_AUTOCONF=	yes
 
 MAN1=		diction.1 style.1

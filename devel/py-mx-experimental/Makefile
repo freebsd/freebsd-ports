@@ -16,6 +16,8 @@ DISTNAME=	egenix-${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	The eGenix mx Extensions - EXPERIMENTAL Package
+
 BUILD_DEPENDS=	${PREFIX}/include/gmp.h:${PORTSDIR}/math/libgmp4
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/mx/BeeBase/BeeBase.py:${PORTSDIR}/lang/py-mx-base
 

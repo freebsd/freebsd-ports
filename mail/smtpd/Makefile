@@ -16,6 +16,8 @@ PATCHFILES=	patch-smtpd-2.0-RBL.gz
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Obtuse smtpd/smtpfwdd, part of the Juniper firewall toolkit
+
 RUN_DEPENDS=	${LOCALBASE}/sbin/sendmail:${PORTSDIR}/mail/sendmail-old
 
 #  Directory where smtpd will chroot to, and put the received mail

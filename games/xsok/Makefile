@@ -14,6 +14,8 @@ EXTRACT_SUFX=	-src.tar.gz
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	A generic Sokoban game for X11
+
 USE_IMAKE=	yes
 USE_XPM=	yes
 MAN6=		xsok.6

@@ -13,6 +13,8 @@ MASTER_SITES=	ftp://ftp.toontown.org/pub/teapop/ \
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Yet another RFC1939 compliant POP3 server
+
 .if defined(WITH_PGSQL)
 LIB_DEPENDS=	pq.2:${PORTSDIR}/databases/postgresql7
 .endif

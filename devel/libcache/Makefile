@@ -12,6 +12,8 @@ MASTER_SITES=	http://www.afro-productions.com/libcache/
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	C library that allows a programmer to parse sentences easier
+
 INSTALLS_SHLIB=	yes
 
 pre-build:

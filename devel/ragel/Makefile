@@ -13,6 +13,8 @@ MASTER_SITES=	http://www.essemage.com/ragel/
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Compile regular languages into executable C/C++ code
+
 USE_REINPLACE=	yes
 USE_BISON=	yes
 USE_GMAKE=	yes

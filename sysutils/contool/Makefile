@@ -13,6 +13,8 @@ MASTER_SITE_SUBDIR=	nsayer
 
 MAINTAINER=	ports@freebsd.org
 
+PORTCOMMENT=	Console tool for openlook
+
 LIB_DEPENDS=	xview.3:${PORTSDIR}/x11-toolkits/xview
 
 NO_CDROM=	"source code cannot be sold, nor can you incorporate the source code into a product which is subsequently sold"

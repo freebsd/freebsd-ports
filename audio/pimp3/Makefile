@@ -12,6 +12,8 @@ MASTER_SITES=	http://unixpages.org/distfiles/
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Rate your mp3s for a randomized playlist you will actually like
+
 RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123 \
 		${PYTHON_SITELIBDIR}/gdbm.so:${PORTSDIR}/databases/py-gdbm
 

@@ -13,6 +13,8 @@ DISTNAME=	handbase_desktop_${PORTVERSION:S/./_/}.i386-any-linux2.0
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Converts HanDBase database to CSV, and vice versa
+
 BUILD_DEPENDS=	${LINUXBASE}/usr/bin/strip:${PORTSDIR}/devel/linux_devtools-7
 
 USE_LINUX=	yes

@@ -14,6 +14,8 @@ DISTNAME=	${PORTNAME}-2.1.2-20
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	The Matrix Template Library
+
 GNU_CONFIGURE=	yes
 
 .include <bsd.port.mk>

@@ -12,6 +12,8 @@ MASTER_SITES=	ftp://ftp.gnupg.org/gcrypt/alpha/gpa/
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	This is a graphical frontend for the GNU Privacy Guard
+
 BUILD_DEPENDS=	gpg:${PORTSDIR}/security/gnupg
 
 USE_X_PREFIX=	yes

@@ -17,6 +17,8 @@ PATCH_DIST_STRIP=	-d ${WRKDIR}/${DISTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	A caching web proxy server
+
 OOPSVERSION=	1.5.22
 OOPSDATE=	20020519
 

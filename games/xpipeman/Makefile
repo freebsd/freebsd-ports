@@ -15,6 +15,8 @@ EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Connect the pipes to stop the leaks
+
 # LP64 issues
 ONLY_FOR_ARCHS=	i386
 

@@ -14,6 +14,8 @@ MASTER_SITE_SUBDIR=	bash
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	The GNU Borne Again Shell
+
 NO_LATEST_LINK=	yes
 WRKSRC=	${WRKDIR}/${DISTNAME}
 # Don't compress manpages or .so not works.

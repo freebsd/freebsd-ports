@@ -13,6 +13,8 @@ MASTER_SITES=	ftp://prtr-13.ucsc.edu/pub/libungif/ \
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Tools and library routines for working with GIF images
+
 INSTALLS_SHLIB=	yes
 
 USE_LIBTOOL=	yes

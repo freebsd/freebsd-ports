@@ -14,6 +14,8 @@ DISTNAME=	xfrac310
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	The Unix port of fractint
+
 USE_REINPLACE=	yes
 USE_ZIP=	yes
 USE_XLIB=	yes

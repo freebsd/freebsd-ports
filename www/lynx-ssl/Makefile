@@ -5,6 +5,8 @@
 # $FreeBSD$
 #
 
+PORTCOMMENT=	A non-graphical, text-based https-enabled World-Wide Web client
+
 PKGNAMESUFFIX =	-ssl
 
 MASTERDIR=	${.CURDIR}/../lynx

@@ -15,6 +15,8 @@ EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	A challenging double decked solitaire game
+
 USE_IMAKE=	yes
 INSTALL_TARGET=	install install.doc
 MAN1=		spider.1

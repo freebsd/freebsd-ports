@@ -12,6 +12,8 @@ MASTER_SITES=	http://mattfischer.com/wmstock/src/
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Cool WindowMaker Dockapp that shows stock ticker(s)
+
 USE_X_PREFIX=	yes
 USE_XPM=	yes
 

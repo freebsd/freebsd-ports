@@ -13,6 +13,8 @@ MASTER_SITES=	http://membres.lycos.fr/mdcrack/download/
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Bruteforce password MD5 hashes
+
 ALL_TARGET=	little
 
 .include <bsd.port.mk>

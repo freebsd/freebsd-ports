@@ -13,6 +13,8 @@ EXTRACT_SUFX=	-patched-src.tar.gz
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	A program to play mpeg movies on X displays
+
 WRKSRC=		${WRKDIR}/mpeg_play
 USE_IMAKE=	yes
 MAN1=		mpeg_play.1

@@ -12,6 +12,8 @@ MASTER_SITES=	http://www.goof.com/pcg/marc/data/
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	A tool for managing x11 cut-buffers
+
 USE_IMAKE=	yes
 MAN1=		xcb.1
 

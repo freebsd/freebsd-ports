@@ -12,6 +12,8 @@ DISTNAME=	wmSpaceWeather-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	A DockApp that shows the weather at geosynchronous orbit
+
 WRKSRC=		${WRKDIR}/${DISTNAME}/wmSpaceWeather
 
 USE_X_PREFIX=	yes

@@ -13,6 +13,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	A complex rogue-style game of dungeon exploration
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 ALL_TARGET=	# empty
 MAN6=		omega.6

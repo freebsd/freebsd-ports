@@ -17,6 +17,8 @@ EXTRACT_SUFX=	.c
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	A telnet server analogous to the unix talk command
+
 NO_WRKSUBDIR=	yes
 
 do-extract:

@@ -13,6 +13,8 @@ MASTER_SITES=	http://cyberelk.net/tim/data/rfbproxy/stable/
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	A simple tool for recording VNC sessions
+
 LIB_DEPENDS=	gnugetopt:${PORTSDIR}/devel/libgnugetopt
 
 GNU_CONFIGURE=	yes

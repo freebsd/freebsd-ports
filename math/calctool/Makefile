@@ -14,6 +14,8 @@ MASTER_SITE_SUBDIR=	nsayer
 
 MAINTAINER=	ports@freebsd.org
 
+PORTCOMMENT=	A multi-GUI (text, X, xview, NeWS, sunview) calculator program
+
 USE_X_PREFIX=	yes
 MAN1=		calctool.1
 

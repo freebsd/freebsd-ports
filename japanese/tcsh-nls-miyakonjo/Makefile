@@ -9,6 +9,8 @@ CATALOGNAME=	miyakonjo
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Japanese NLS catalog for TCSH. ("Miyakonjo" taste)
+
 MASTERDIR=	${.CURDIR}/../tcsh-nls-generic
 PKGDIR=		${.CURDIR}
 PLIST=		${MASTERDIR}/pkg-plist

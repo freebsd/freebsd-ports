@@ -16,6 +16,8 @@ DISTNAME=	Xtheater-${PORTVERSION:S/.p/-pre/}
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	MPEG-1 player in GTK+ capable of playing MPEG-1 format streams
+
 LIB_DEPENDS=	SDL-1.1.4:${PORTSDIR}/devel/sdl12 \
 		smpeg.1:${PORTSDIR}/graphics/smpeg
 

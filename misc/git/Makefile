@@ -13,6 +13,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	GNU Interactive Tools - a file system browser for UNIX systems
+
 GNU_CONFIGURE=	YES
 MAN1=		git.1 gitaction.1 gitkeys.1 gitmount.1 \
 		gitrgrep.1 gitunpack.1

@@ -15,6 +15,8 @@ DISTNAME=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	X window mille bourne game
+
 WRKSRC=		${WRKDIR}/Mille
 
 USE_IMAKE=	yes

@@ -14,6 +14,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	A parser generator from FSF, (mostly) compatible with Yacc
+
 LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 

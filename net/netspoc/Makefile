@@ -13,6 +13,8 @@ MASTER_SITES=	http://download.berlios.de/netspoc/
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	A Network Security Policy Compiler
+
 USE_PERL5=	yes
 NO_BUILD=	yes
 

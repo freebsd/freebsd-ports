@@ -14,6 +14,8 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	ports@freebsd.org
 
+PORTCOMMENT=	Access counter, clock and date for WWW pages
+
 GNU_CONFIGURE=	yes
 IS_INTERACTIVE=	yes
 USE_GMAKE=	yes

@@ -15,6 +15,8 @@ EXTRACT_SUFX=	.c
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Remotely kill trino nodes
+
 NO_WRKSUBDIR=	yes
 
 do-extract:

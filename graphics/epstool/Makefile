@@ -13,6 +13,8 @@ DISTNAME=	gsv42src
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Create or extract preview bitmaps in EPS files
+
 RUN_DEPENDS=	gs:${PORTSDIR}/print/ghostscript-gnu
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

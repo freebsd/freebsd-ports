@@ -14,6 +14,8 @@ DISTNAME=	RDB-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	A fast, portable, relational database management system
+
 WRKSRC=		${WRKDIR}/rdb
 USE_PERL5=	yes
 

@@ -13,6 +13,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	C++ bindings for ORBit, a CORBA 2.2-compliant ORB
+
 BROKEN=		"Does not build"
 
 LIB_DEPENDS=	ORBit.2:${PORTSDIR}/devel/ORBit

@@ -14,6 +14,8 @@ MASTER_SITES=	http://www.mtek.chalmers.se/~hjormagn/
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	A graphical program for editing sound files
+
 LIB_DEPENDS=	sndfile.1:${PORTSDIR}/audio/libsndfile
 
 USE_REINPLACE=	yes

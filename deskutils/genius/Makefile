@@ -12,6 +12,8 @@ MASTER_SITES=	http://ftp.5z.com/pub/genius/
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Arbitrary precision calculator for Gnome Desktop Environment
+
 LIB_DEPENDS=	gmp.3:${PORTSDIR}/math/libgmp-freebsd
 
 USE_REINPLACE=	yes

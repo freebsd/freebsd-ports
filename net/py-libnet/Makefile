@@ -16,6 +16,8 @@ DISTNAME=	pylibnet-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Python module for the libnet packet construction library
+
 BUILD_DEPENDS=	${LOCALBASE}/bin/swig1.1:${PORTSDIR}/devel/swig11 \
 		${LOCALBASE}/lib/libnet.a:${PORTSDIR}/net/libnet
 

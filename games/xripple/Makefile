@@ -18,6 +18,8 @@ MASTER_SITES=	ftp://crydee.sai.msu.ru/zeus/X11/contrib/ \
 		ftp://ftp.pconline.com/users/gjerde/enlightenment/
 DISTNAME=	${PORTNAME}
 
+PORTCOMMENT=	X program to make bottom of screen ripple like a pool of water
+
 USE_IMAKE=	yes
 ALL_TARGET=	xripple
 

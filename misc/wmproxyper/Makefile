@@ -13,6 +13,8 @@ DISTNAME=	WMProxyPer-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Displays Distributed.net Personal Proxy current status and progress
+
 LIB_DEPENDS=	dockapp.1:${PORTSDIR}/x11-wm/libdockapp
 
 USE_GMAKE=	yes

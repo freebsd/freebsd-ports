@@ -14,6 +14,8 @@ MASTER_SITE_SUBDIR=	fame
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	A simple video encoder
+
 LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt \
 		fame-0.9.0:${PORTSDIR}/graphics/libfame
 

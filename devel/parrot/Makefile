@@ -14,6 +14,8 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	The Parrot GUI Builder
+
 USE_PYTHON=	yes
 NO_BUILD=	yes
 

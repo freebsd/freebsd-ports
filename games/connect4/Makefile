@@ -16,6 +16,8 @@ EXTRACT_SUFX=	.Z
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	A curses version of the classic game
+
 BUILD_DEPENDS=	gunshar:${PORTSDIR}/archivers/gshar+gunshar
 
 EXTRACT_CMD=		${GZCAT}

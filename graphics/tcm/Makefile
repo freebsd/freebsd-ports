@@ -14,6 +14,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}.src
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	The Toolkit for Conceptual Modeling, create diagrams/tables/trees
+
 USE_BISON=	yes
 USE_MOTIF=	yes
 USE_GMAKE=	yes

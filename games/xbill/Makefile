@@ -15,6 +15,8 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Save your computers from the evil clutches of Bill
+
 USE_IMAKE=	yes
 USE_XPM=	yes
 MAN1=		xbill.1

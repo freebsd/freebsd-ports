@@ -13,6 +13,8 @@ MASTER_SITES=	http://linuxberg.ii.net/files/gnome/network/ \
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Samba configuration tool for X Window System
+
 USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	yes

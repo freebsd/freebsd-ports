@@ -13,6 +13,8 @@ MASTER_SITES=	http://www.inf.tu-dresden.de/~al10/stowES/download/
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	stow Enhancement Script
+
 RUN_DEPENDS=	stow:${PORTSDIR}/sysutils/stow
 .if !exists(/usr/bin/bzip2)
 RUN_DEPENDS+=	bzip2:${PORTSDIR}/archivers/bzip2

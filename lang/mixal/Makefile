@@ -14,6 +14,8 @@ MASTER_SITES=	http://www.tuxedo.org/~esr/retro/ \
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Assembler and interpreter for Donald Knuth\'s mythical MIX computer
+
 ALL_TARGET=
 
 DOCDIR=		${PREFIX}/share/doc/mix

@@ -13,6 +13,8 @@ MASTER_SITE_SUBDIR=	kfem
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	A language for the Finite Element Method
+
 USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes

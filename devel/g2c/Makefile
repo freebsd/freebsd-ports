@@ -14,6 +14,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Glade to C translator
+
 BROKEN=		"Configure fails"
 
 USE_REINPLACE=	yes

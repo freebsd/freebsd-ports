@@ -12,6 +12,8 @@ MASTER_SITES=		ftp://ftp.cold.org/pub/brandon/
 
 MAINTAINER=		ports@FreeBSD.org
 
+PORTCOMMENT=		Kernel 'config' wrapper ala Digital Unix\'s doconfig
+
 MAN8=			autokernconf.8 doconfig.8
 
 WRKSRC=			${WRKDIR}/doconfig

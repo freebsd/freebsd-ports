@@ -15,6 +15,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}.src
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Easy to use FTP client for X Window System
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
 
 USE_X_PREFIX=	yes

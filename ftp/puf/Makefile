@@ -14,6 +14,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	A parallel HTTP downloader similar to wget
+
 GNU_CONFIGURE=	yes
 
 MAN1=		puf.1

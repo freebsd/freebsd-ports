@@ -14,6 +14,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	NETwork DUmp data Displayer and Editor for tcpdump tracefiles
+
 LIB_DEPENDS=	intl:${PORTSDIR}/devel/gettext \
 		iconv:${PORTSDIR}/converters/libiconv \
 		ltdl:${PORTSDIR}/devel/libtool

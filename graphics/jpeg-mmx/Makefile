@@ -17,6 +17,8 @@ DISTNAME=	jpegsrc.v${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	IJG\'s jpeg compression utilities
+
 WRKSRC=		${WRKDIR}/jpeg-6b
 
 USE_LIBTOOL=	yes

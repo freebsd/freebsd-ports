@@ -13,6 +13,8 @@ DISTNAME=	cii11
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Library from "C Interfaces and Implementations" by David Hanson
+
 NO_WRKSUBDIR=	yes
 
 MAKEFILE=	makefile

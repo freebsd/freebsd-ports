@@ -16,6 +16,8 @@ MASTER_SITE_SUBDIR=	graphics/gd
 
 MAINTAINER?=	ports@FreeBSD.org
 
+PORTCOMMENT=	A graphics library for fast creation of images
+
 LIB_DEPENDS=	png:${PORTSDIR}/graphics/png \
 		jpeg:${PORTSDIR}/graphics/jpeg \
 		freetype:${PORTSDIR}/print/freetype2

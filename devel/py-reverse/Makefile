@@ -15,6 +15,8 @@ DISTNAME=	py${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	A set of tools for reverse engineering Python code
+
 BUILD_DEPENDS=	${PYXML}
 RUN_DEPENDS=	${BUILD_DEPENDS}
 

@@ -16,6 +16,8 @@ DISTNAME=	gmp-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	A free library for arbitrary precision arithmetic
+
 USE_REINPLACE=	yes
 USE_LIBTOOL=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}

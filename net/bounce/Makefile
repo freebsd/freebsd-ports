@@ -17,6 +17,8 @@ EXTRACT_SUFX=	.c
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Bounce tcp connections to another machine/port
+
 NO_WRKSUBDIR=	yes
 
 do-extract:

@@ -15,6 +15,8 @@ EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Watch a window on another X server
+
 MAN1=		xwatchwin.1
 
 USE_IMAKE=	yes

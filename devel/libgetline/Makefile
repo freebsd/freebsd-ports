@@ -13,6 +13,8 @@ DISTNAME=	${PORTNAME}-39-src
 
 MAINTAINER=	ports@FreeBSD.Org
 
+PORTCOMMENT=	A small, portable, and easy to use command line library
+
 MAN3=		getline.3
 
 WRKSRC=		${WRKDIR}/getline-39

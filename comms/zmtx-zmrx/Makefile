@@ -18,6 +18,8 @@ EXTRACT_SUFX=	.shar.gz
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Receive/Send files via ZMODEM protocol.  (unrestrictive)
+
 EXTRACT_CMD=	zcat
 EXTRACT_BEFORE_ARGS=
 EXTRACT_AFTER_ARGS=	|sh

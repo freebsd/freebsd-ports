@@ -13,6 +13,8 @@ DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	ANSI C library for CGI programming
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 MAKEFILE=	${FILESDIR}/Makefile.lib
 INSTALLS_SHLIB=	yes

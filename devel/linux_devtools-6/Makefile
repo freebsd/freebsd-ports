@@ -26,6 +26,8 @@ PATCHFILES=
 
 MAINTAINER=		ports@FreeBSD.org
 
+PORTCOMMENT=		Packages needed for doing development in Linux mode
+
 BUILD_DEPENDS=		rpm:${PORTSDIR}/archivers/rpm
 RUN_DEPENDS=		\
 	${PREFIX}/etc/redhat-release:${PORTSDIR}/emulators/linux_base-6

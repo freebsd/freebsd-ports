@@ -13,6 +13,8 @@ MASTER_SITES=	http://www.roqe.org/stan/
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Generate several statisical information of a stream
+
 GNU_CONFIGURE=	yes
 
 MAN1=	stan.1

@@ -17,6 +17,8 @@ EXTRACT_SUFX=	-src.tar.gz
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Collect information from all over the Internet
+
 USE_REINPLACE=	yes
 USE_PERL5=	yes
 

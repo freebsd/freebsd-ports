@@ -13,6 +13,8 @@ MASTER_SITE_SUBDIR=	utilities
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Tool startup utility for X11
+
 USE_IMAKE=	yes
 MAN1=		xtoolwait.1
 

@@ -12,6 +12,8 @@ MASTER_SITES=	http://vento.pi.tu-berlin.de/ppm2fli/
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Utilities to merge PPM files into animated FLI and backwards
+
 USE_REINPLACE=	yes
 
 MAN1=	ppm2fli.1 unflick.1

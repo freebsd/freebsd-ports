@@ -14,6 +14,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	A small utility used to generate code from a Dia diagram
+
 LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2
 
 XML_CONFIG=	${LOCALBASE}/bin/xml2-config

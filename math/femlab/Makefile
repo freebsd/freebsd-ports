@@ -14,6 +14,8 @@ DISTFILES=	femlab-2d-v${PORTVERSION}.tar.gz
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Interactive program for solving partial differential equations in 2D
+
 BUILD_DEPENDS=	${X11BASE}/lib/libsx.a:${PORTSDIR}/x11/libsx
 
 USE_REINPLACE=	yes

@@ -15,6 +15,8 @@ DISTFILES=	Ftptool${PORTVERSION}.tar.gz
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Graphic ftp shell based on xview
+
 LIB_DEPENDS=	xview.3:${PORTSDIR}/x11-toolkits/xview
 
 USE_IMAKE=	yes

@@ -14,6 +14,8 @@ MASTER_SITE_SUBDIR=	system/network/file-transfer
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	FTP emulator that uses ssh to transport commands/data
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-readline
 MAKEFILE=	makefile

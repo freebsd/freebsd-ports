@@ -17,6 +17,8 @@ PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	GNU grep + multi-byte extension
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-prefix=j --disable-nls
 

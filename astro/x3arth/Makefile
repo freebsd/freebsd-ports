@@ -13,6 +13,8 @@ MASTER_SITE_SUBDIR=	X11/desktop
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Updates X root window with satellit views of earth
+
 IGNORE=		"FTP directory format changed, can no longer fetch images"
 
 RUN_DEPENDS=	${LOCALBASE}/bin/tclsh8.2:${PORTSDIR}/lang/tcl82 \

@@ -14,6 +14,8 @@ EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Display GL animations on X screen
+
 USE_IMAKE=	yes
 MAN1=		glib.1 xgrasp.1
 

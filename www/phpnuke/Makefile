@@ -14,6 +14,8 @@ DISTNAME=	PHP-Nuke-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	An automated website package to distribute and manage content
+
 LIB_DEPENDS=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client
 .if defined(WITH_PHP3)
 RUN_DEPENDS+=	${LOCALBASE}/libexec/apache/libphp3.so:${PORTSDIR}/www/mod_php3

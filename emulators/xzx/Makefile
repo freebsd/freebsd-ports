@@ -13,6 +13,8 @@ DISTNAME=	${PORTNAME}-pro-${PORTVERSION}-eval
 
 MAINTAINER=	adamw@FreeBSD.org
 
+PORTCOMMENT=	ZX Spectrum (48K/128K/+3) Emulator for X11
+
 # xmkmf is used in configure script
 BUILD_DEPENDS=	xmkmf:${PORTSDIR}/devel/imake-4
 

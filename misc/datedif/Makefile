@@ -14,6 +14,8 @@ DISTNAME=	${PORTNAME}-0.9.1-4
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Calculates the number of days between two dates
+
 ALL_TARGET=
 
 do-install:

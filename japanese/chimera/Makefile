@@ -19,6 +19,8 @@ PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	X/Athena World-Wide Web client + Japanese patch
+
 PREV_VERSION=	${PORTVERSION:S/p1/p0/}
 
 USE_IMAKE=	yes

@@ -13,6 +13,8 @@ DISTNAME=	${PORTNAME}.${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	"Inter-Continental Ballistic Missiles, 3D" - 3D game of defense
+
 WRKSRC=		${WRKDIR}/icbm3d
 USE_X_PREFIX=	yes
 MAKEFILE=	makefile

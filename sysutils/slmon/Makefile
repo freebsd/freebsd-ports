@@ -14,6 +14,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	S-Lang System Monitor
+
 LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext \
 		gnugetopt.1:${PORTSDIR}/devel/libgnugetopt \
 		gtop.1:${PORTSDIR}/devel/libgtop \

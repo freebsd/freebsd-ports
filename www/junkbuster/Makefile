@@ -21,6 +21,8 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	An HTTP proxy server that eliminates ads
+
 USE_REINPLACE=	yes
 
 ALL_TARGET=	# yes, an empty target.

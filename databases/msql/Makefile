@@ -12,6 +12,8 @@ CATEGORIES=	databases
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	The Mini SQL server, version 2
+
 INSTALLS_SHLIB= YES
 USE_PERL5=	YES
 

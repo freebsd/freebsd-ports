@@ -14,6 +14,8 @@ EXTRACT_SUFX=	# empty
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	A neat development tool for various languages
+
 RUN_DEPENDS=	${LOCALBASE}/bin/wish8.2:${PORTSDIR}/x11-toolkits/tk82
 
 USE_REINPLACE=	yes

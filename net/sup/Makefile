@@ -14,6 +14,8 @@ DISTNAME=	sup
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	CMU\'s Software Update Protocol package
+
 MAN1=		sup.1
 MAN8=		supservers.8
 

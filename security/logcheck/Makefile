@@ -13,6 +13,8 @@ DISTNAME=	logsentry-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Auditing tool for system logs on Unix boxes
+
 USE_REINPLACE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 PKGMESSAGE=	${WRKDIR}/MESSAGE

@@ -13,6 +13,8 @@ MASTER_SITES=	http://www.gtoal.com/wordgames/anagrams/${DISTNAME}/
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Fast anagram generator
+
 USE_REINPLACE=	yes
 MAKE_ENV+=	DEFS=-DDEFDICT=\\\"/usr/share/dict/words\\\"
 ALL_TARGET=	with-getopt

@@ -12,6 +12,8 @@ MASTER_SITES=	http://www.canonware.com/download/onyx/
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Embeddable stack-based threaded interpreted language
+
 BUILD_DEPENDS=	cook:${PORTSDIR}/devel/cook
 LIB_DEPENDS=	edit.5:${PORTSDIR}/devel/libedit
 

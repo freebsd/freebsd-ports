@@ -14,6 +14,8 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.Org
 
+PORTCOMMENT=	Tool for transferring files to and from the Diamond Rio .mp3 player
+
 WRKSRC=		${WRKDIR}/rio107
 MAKEFILE=	makefile
 

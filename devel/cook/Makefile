@@ -12,6 +12,8 @@ MASTER_SITES=	http://www.canb.auug.org.au/~millerp/cook/
 
 MAINTAINER=	ports@freebsd.org
 
+PORTCOMMENT=	Like make(1), but more powerful and clean
+
 LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 
 GNU_CONFIGURE=	yes

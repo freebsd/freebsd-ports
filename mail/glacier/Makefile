@@ -13,6 +13,8 @@ MASTER_SITES=	http://linuxberg.tele.net/files/gnome/network/
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Another GNOME mail user agent
+
 USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes

@@ -14,6 +14,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	HTML to xsl:fo converter
+
 USE_REINPLACE=	yes
 
 post-patch:

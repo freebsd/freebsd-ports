@@ -13,6 +13,8 @@ MASTER_SITE_SUBDIR=	games
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Time Trek - like game for X Window System
+
 USE_IMAKE=	yes
 NO_INSTALL_MANPAGES=	yes
 

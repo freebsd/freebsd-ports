@@ -14,6 +14,8 @@ FORBIDDEN=	"Remotely exploitable buffer overflow. See ports/net/freeradius for c
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	A variant of Cistron RADIUS, but with a MySQL backend
+
 MAKEFILE=	Makefile.BSD
 
 .if defined(WITH_CGI)

@@ -12,6 +12,8 @@ MASTER_SITES=	http://omnibus.ruf.uni-freiburg.de/~gritter/archive/nail/
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	BSD mail utility with MIME extensions
+
 LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
 
 GNU_CONFIGURE=	yes

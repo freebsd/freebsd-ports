@@ -14,6 +14,8 @@ MASTER_SITE_SUBDIR=	sapphire
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	The C++ version of aewm
+
 USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes

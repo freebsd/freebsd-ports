@@ -16,6 +16,8 @@ MASTER_SITES=	ftp://alph.dera.gov.uk/pub/TenDRA/ \
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	A portable but mostly-unsupported C/C++ compiler
+
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} > 500000

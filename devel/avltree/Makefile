@@ -11,6 +11,8 @@ MASTER_SITES=	ftp://odin.compchem.ucsf.edu/pub/amber/
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	An in-memory index w/ binary and string keys and key counts
+
 MAN3=		avltree.3
 MANCOMPRESSED=	yes
 

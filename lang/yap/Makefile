@@ -15,6 +15,8 @@ DISTNAME=	Yap-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	A high-performance Prolog compiler
+
 LIB_DEPENDS=	gmp.6:${PORTSDIR}/math/libgmp4
 
 GNU_CONFIGURE=	yes

@@ -15,6 +15,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:R}-${PORTVERSION:E}.src
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Source code browsing on UNIX-like operating systems
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
 
 USE_REINPLACE=	yes

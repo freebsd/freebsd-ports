@@ -15,6 +15,8 @@ DISTFILES=	cdk.tar.gz
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Curses Development Kit for speedy development of full screen programs
+
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 ALL_TARGET=	default

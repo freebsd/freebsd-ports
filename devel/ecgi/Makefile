@@ -14,6 +14,8 @@ DISTNAME=	lib${PORTNAME}_${PORTVERSION}.orig
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	A library for the creation of CGI-based Web applications
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USE_REINPLACE=	yes

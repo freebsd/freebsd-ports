@@ -15,6 +15,8 @@ DISTNAME=	oases_Mar-28-2002
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Ocean Acoustics and Seismic Exploration Synthesis
+
 WRKSRC=		${WRKDIR}/Oases_export
 
 USE_XLIB=	yes

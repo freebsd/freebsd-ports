@@ -12,6 +12,8 @@ MASTER_SITES=	http://www.cnm-vra.com/micah/garith/
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Arithmetic quiz program for X Window System
+
 ALL_TARGET=	# empty
 USE_X_PREFIX=	yes
 USE_GNOMENG=	yes

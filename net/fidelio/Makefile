@@ -14,6 +14,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	A GNOME client for Hotline
+
 LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext \
 		xml2.5:${PORTSDIR}/textproc/libxml2
 

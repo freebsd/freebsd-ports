@@ -15,6 +15,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	A static source code checker for C++
+
 USE_PYTHON=	yes
 USE_LIBTOOL=	yes
 USE_REINPLACE=	yes

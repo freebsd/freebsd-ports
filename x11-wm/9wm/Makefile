@@ -13,6 +13,8 @@ MASTER_SITES=	http://sources.isc.org/X/window-managers/ \
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	An 8 1/2-like Window Manager for X
+
 USE_IMAKE=	yes
 MAN1=		9wm.1
 

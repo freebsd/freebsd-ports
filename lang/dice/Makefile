@@ -15,6 +15,8 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	adamw@FreeBSD.org
 
+PORTCOMMENT=	DICE - The Amiga/embedded/generic 68000 C compiler
+
 USE_REINPLACE=	yes
 
 post-patch:

@@ -14,6 +14,8 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	A perl module implementing an optimized, accurate neural network mesh
+
 USE_ZIP=	yes
 NO_WRKSUBDIR=	yes
 PERL_CONFIGURE=	yes
