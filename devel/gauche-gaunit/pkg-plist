@@ -1,10 +1,14 @@
-share/gauche/site/lib/test/assertions.scm
-share/gauche/site/lib/test/autorunner.scm
-share/gauche/site/lib/test/ui.scm
-share/gauche/site/lib/test/ui/gtk.scm
-share/gauche/site/lib/test/ui/text.scm
 share/gauche/site/lib/test/unit.scm
-@unexec rmdir %D/share/gauche/site/lib/test/ui 2>/dev/null || true
+share/gauche/site/lib/test/unit/assertions.scm
+share/gauche/site/lib/test/unit/autorunner.scm
+share/gauche/site/lib/test/unit/base.scm
+share/gauche/site/lib/test/unit/common.scm
+share/gauche/site/lib/test/unit/result.scm
+share/gauche/site/lib/test/unit/ui.scm
+share/gauche/site/lib/test/unit/ui/gtk.scm
+share/gauche/site/lib/test/unit/ui/text.scm
+@dirrm share/gauche/site/lib/test/unit/ui
+@dirrm share/gauche/site/lib/test/unit
 @unexec rmdir %D/share/gauche/site/lib/test 2>/dev/null || true
 @unexec rmdir %D/share/doc/gauche 2>/dev/null || true
 %%EXAMPLESDIR%%/site-lisp/run-test.el
