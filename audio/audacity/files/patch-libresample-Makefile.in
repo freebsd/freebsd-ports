@@ -1,0 +1,11 @@
+--- lib-src/libresample/Makefile.in.orig	Tue Dec  2 19:46:02 2003
++++ lib-src/libresample/Makefile.in	Tue Dec  2 19:46:25 2003
+@@ -6,7 +6,7 @@
+ CC = @CC@
+ CFLAGS = @CFLAGS@ -Wall
+ 
+-LIBS = @LIBS@ -lm
++LIBS = @LDFLAGS@ @LIBS@ -lm
+ 
+ AR = @AR@
+ RANLIB = @RANLIB@
