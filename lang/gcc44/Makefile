@@ -26,6 +26,7 @@ DISTFILES=	\
 
 MAINTAINER=	obrien@FreeBSD.org
 
+LATEST_LINK=	gcc31
 NO_CDROM=	'dated material'
 
 .if defined(NETWINDER_SS)
@@ -52,8 +53,10 @@ CONFIGURE_TARGET=	${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_TARGET=	${ARCH}-portbld-freebsdaout${OSREL}
 .endif
 
-GCC_REV=	${PORTVERSION:C/\.0$//}
-SRCDIR=		${WRKDIR}/gcc-${GCC_REV}
+#GCC_REV=	${PORTVERSION:C/\.0$//}
+GCC_REV=	3.1
+#SRCDIR=		${WRKDIR}/gcc-${GCC_REV}
+SRCDIR=		${WRKDIR}/gcc-${SNAPVER}
 WRKSRC=		${WRKDIR}/build
 TARGLIB=	${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${GCC_REV}
 PLIST_SUB=	GCC_REV=${GCC_REV} GNU_HOST=${CONFIGURE_TARGET}  \
