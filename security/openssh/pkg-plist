@@ -7,13 +7,6 @@ bin/ssh-keygen
 etc/rc.d/sshd.sh
 etc/ssh_config
 etc/sshd_config
-man/man1/scp.1.gz
-man/man1/slogin.1.gz
-man/man1/ssh-add.1.gz
-man/man1/ssh-agent.1.gz
-man/man1/ssh-keygen.1.gz
-man/man1/ssh.1.gz
-man/man8/sshd.8.gz
 sbin/sshd
 @exec if [ ! -f %D/etc/ssh_host_key ]; then echo ">> Generating a secret RSA host key."; %D/bin/ssh-keygen -N "" -f %D/etc/ssh_host_key; fi
 @exec if [ ! -f %D/etc/ssh_host_dsa_key ]; then echo ">> Generating a secret DSA host key."; %D/bin/ssh-keygen -d -N "" -f %D/etc/ssh_host_dsa_key; fi
