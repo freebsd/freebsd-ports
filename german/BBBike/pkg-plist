@@ -87,7 +87,7 @@ BBBike/cgi/wapbbbike.cgi
 BBBike/cgi/README
 BBBike/cgi/runbbbikecgi
 BBBike/cgi/httpi
-BBBike/cgi/tinyhttpd			experimentell (fuer Win32)
+BBBike/cgi/tinyhttpd
 BBBike/data/.modified
 BBBike/data/Berlin.coords.data
 BBBike/data/ampeln
