@@ -3187,8 +3187,8 @@ ja-onew-canna+wnn7	ports/japanese/onew-canna+wnn7
 ja-onew-freewnn	ports/japanese/onew-freewnn
 ja-onew-wnn6	ports/japanese/onew-wnn6
 ja-onew-wnn7	ports/japanese/onew-wnn7
-ja-openoffice	ports/japanese/openoffice
-ja-openoffice-devel	ports/japanese/openoffice-devel
+ja-openoffice-1.0	ports/japanese/openoffice-1.0
+ja-openoffice-1.1	ports/japanese/openoffice-1.1
 ja-openoffice-templates	ports/japanese/openoffice-templates
 ja-otojiro-fpw	ports/japanese/otojiro-fpw
 ja-p5-Date-Japanese-Era	ports/japanese/p5-Date-Japanese-Era
