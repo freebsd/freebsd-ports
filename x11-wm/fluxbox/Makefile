@@ -18,12 +18,6 @@ PATCH_DIST_STRIP=   -p1
 PATCHFILES=	remember-0.1.14-4.gz
 .endif
 
-.if defined(WITH_WINSNAP)
-PATCH_SITES+=   http://www.raisdorf.net/files/FreeBSD/
-PATCH_DIST_STRIP=   -p1
-PATCHFILES+=    winsnap-0.1.14.patch
-.endif
-
 MAINTAINER=	hendrik@scholz.net
 
 RUN_DEPENDS=	bsetbg:${PORTSDIR}/x11-wm/boxtools \
@@ -49,9 +43,19 @@ CONFIGURE_ARGS+=	--enable-kde
 CONFIGURE_ARGS+=	--enable-xinerama
 .endif
 
-MAN1=		fluxbox.1
-
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500000
+.undef WITH_WINSNAP
+.endif
+
+.if defined(WITH_WINSNAP)
+PATCH_SITES+=   http://www.raisdorf.net/files/FreeBSD/
+PATCH_DIST_STRIP=   -p1
+PATCHFILES+=    winsnap-0.1.14.patch
+.endif
+
+MAN1=		fluxbox.1
 
 .if ${HAVE_GNOME:Mgnomelibs}!="" || defined(PACKAGE_BUILDING)
 CONFIGURE_ARGS+=	--enable-gnome
@@ -72,6 +76,7 @@ pre-everything:
 .endif
 .if !defined(WITH_WINSNAP)
 	@${ECHO_CMD} "WITH_WINSNAP	- Enable the unofficial window snapping patch"
+	@${ECHO_CMD} "            	  (does not work on -current)"
 .endif
 	@${ECHO_CMD} ""
 
