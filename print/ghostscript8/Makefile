@@ -50,7 +50,7 @@ MLINKS=		gslp.1 gsbj.1 \
 		ps2ps.1 eps2eps.1
 
 .if defined(A4)
-CFLAGS+=	-DA4
+MAKE_ENV+=	A4=${A4}
 .endif
 
 .if !defined(WITHOUT_X11)
