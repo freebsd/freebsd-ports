@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	cssed
-PORTVERSION=	0.2.1
+PORTVERSION=	0.3.0
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,20 +17,16 @@ COMMENT=	An application to help CSS style sheets creation and maintenance
 
 LIB_DEPENDS=	expat.5:${PORTSDIR}/textproc/expat2
 
-USE_ICONV=	yes
-USE_GETTEXT=	yes
+USE_X_PREFIX=	yes
 USE_GNOME=	gtk20
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-PLIST_FILES=	bin/cssed share/locale/es/LC_MESSAGES/cssed.mo share/locale/fr/LC_MESSAGES/cssed.mo
 MAN1=	cssed.1
 
-post-install:
-	@${FIND} ${DATADIR} ! -type d | \
-		${SED} 's,^${PREFIX}/,,' >> ${TMPPLIST}
-	@${FIND} ${DATADIR} -type d | ${SORT} -r | \
-		${SED} 's,^${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
+post-patch:
+	@${REINPLACE_CMD} -e 's|(libdir)/pkgconfig|(prefix)/libdata/pkgconfig|' ${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>
