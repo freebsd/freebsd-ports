@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Data-TreeDumper
-PORTVERSION=	0.15
+PORTVERSION=	0.16
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Data
@@ -28,10 +28,10 @@ PERL_CONFIGURE=	yes
 
 .if ${PERL_LEVEL} < 500600
 post-patch:
-	${PERL} -pi -e 's/^our (\S+)/use vars q{$$1};$$1/g;' \
+	@${PERL} -pi -e 's/^our (\S+)/use vars q{$$1};$$1/g;' \
 		-e '$$_ = "" if /warnings|5.006/;' \
 		-e 's/}\(/}->(/g;' \
-		-e '$$_ .= "->" if $$. == 428;' \
+		-e '$$_ .= "->" if $$. == 442;' \
 		${WRKSRC}/TreeDumper.pm
 .endif
 

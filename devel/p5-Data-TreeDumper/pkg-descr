@@ -1,9 +1,31 @@
 Data::Dumper and other modules do a great job at dumping data structures.
 Their output, however, often takes more brain power to understand than the
-data itself. When dumping big amounts of data, the output can be overwhelming
+data itself. When dumping large amounts of data, the output can be overwhelming
 and it's difficult to see the relationship between each piece of the dumped
 data.  Data::TreeDumper also dumps data in a tree-like fashion but hopefully
 in a format more easily understood.
+
+Data::TreeDumper also gives one extraordinary control over output and
+provides for custom filtering of and iteration over data structures.
+
+Unfiltered output example:
+title:
+  |- A [H1]
+  |  |- a [H2]
+  |  |- bbbbbb = CODE(0x8139fa0) [C3]
+  |  |- c123 [C4 -> C3]
+  |  `- d [R5]
+  |     `- REF(0x8139fb8) [R5 -> C3]
+  |- ARRAY [A6]
+  |  |- 0 [S7] = elment_1
+  |  |- 1 [S8] = element_2
+  |  `- 2 [S9] = element_3
+  `- C [H10]
+     `- b [H11]
+        `- a [H12]
+           |- a [H13]
+           |- b = CODE(0x81ab130) [C14]
+           `- c [S15] = 42
 
 WWW: http://search.cpan.org/dist/Data-TreeDumper/
 Author: Khemir Nadim ibn Hamouda <nadim@khemir.net>
