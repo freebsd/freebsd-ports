@@ -8,7 +8,8 @@
 PORTNAME=	fxtv
 PORTVERSION=	1.02
 CATEGORIES=	graphics
-MASTER_SITES=	http://people.freebsd.org/~rhh/fxtv/
+MASTER_SITES=		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	rhh
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	aa8vb@nc.rr.com
