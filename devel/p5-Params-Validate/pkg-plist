@@ -1,0 +1,7 @@
+lib/perl5/site_perl/%%PERL_VER%%/Params/Validate/Heavy.pm
+lib/perl5/site_perl/%%PERL_VER%%/Params/Validate.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Params/Validate/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Params/Validate
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Params
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Params/Validate
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Params
