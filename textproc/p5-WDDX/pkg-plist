@@ -1,0 +1,16 @@
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/WDDX/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/WDDX.pm
+lib/perl5/site_perl/%%PERL_VER%%/WDDX/Array.pm
+lib/perl5/site_perl/%%PERL_VER%%/WDDX/Binary.pm
+lib/perl5/site_perl/%%PERL_VER%%/WDDX/Boolean.pm
+lib/perl5/site_perl/%%PERL_VER%%/WDDX/Datetime.pm
+lib/perl5/site_perl/%%PERL_VER%%/WDDX/Null.pm
+lib/perl5/site_perl/%%PERL_VER%%/WDDX/Number.pm
+lib/perl5/site_perl/%%PERL_VER%%/WDDX/Parser.pm
+lib/perl5/site_perl/%%PERL_VER%%/WDDX/Recordset.pm
+lib/perl5/site_perl/%%PERL_VER%%/WDDX/String.pm
+lib/perl5/site_perl/%%PERL_VER%%/WDDX/Struct.pm
+%%PORTDOCS%%share/doc/WDDX/Changes
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/WDDX
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/WDDX
+%%PORTDOCS%%@dirrm share/doc/WDDX
