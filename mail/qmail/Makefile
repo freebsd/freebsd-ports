@@ -19,7 +19,9 @@ DISTNAME=	${PORTNAME}-${QMAIL_VERSION}
 # Patch necessary to cope with non-RFC >512 dns entries
 # Since AOL has been using those, the problem has skyrocketed from minor to
 # groundzero. qmail being RFC compliant need to be "fixed" to work with those
-PATCH_SITES?=	http://www.ckdhr.com/ckd/
+PATCH_SITES?=	http://www.ckdhr.com/ckd/ \
+		${MASTER_SITE_LOCAL}
+PATCH_SITE_SUBDIR?=	lioux
 PATCHFILES?=	qmail-103.patch
 PATCH_DIST_STRIP+=	-p1
 
