@@ -101,6 +101,7 @@
     SUBDIR += libXres
     SUBDIR += libXtrans
     SUBDIR += libXv
+    SUBDIR += libXxf86
     SUBDIR += libcapplet
     SUBDIR += libdnd
     SUBDIR += libgnome

@@ -1,0 +1,9 @@
+lib/libXxf86dga.a
+lib/libXxf86dga.so
+lib/libXxf86dga.so.1
+lib/libXxf86misc.a
+lib/libXxf86misc.so
+lib/libXxf86misc.so.1
+lib/libXxf86vm.a
+lib/libXxf86vm.so
+lib/libXxf86vm.so.1

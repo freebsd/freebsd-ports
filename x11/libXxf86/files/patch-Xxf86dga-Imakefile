@@ -1,0 +1,30 @@
+--- Xxf86dga/Imakefile.orig	Sat May  8 16:30:52 2004
++++ Xxf86dga/Imakefile	Sat May  8 16:33:56 2004
+@@ -1,20 +1,19 @@
+ XCOMM $XdotOrg: xc/lib/Xxf86dga/Imakefile,v 1.1.4.2.4.2 2004/03/05 12:46:31 eich Exp $
+ XCOMM $XFree86: xc/lib/Xxf86dga/Imakefile,v 3.6 2003/05/05 20:42:30 tsi Exp $
+ 
+-#define DoNormalLib NormalLibXxf86dga
+-#define DoSharedLib SharedLibXxf86dga
+-#define DoExtraLib SharedLibXxf86dga
+-#define DoDebugLib DebugLibXxf86dga
+-#define DoProfileLib ProfileLibXxf86dga
++#define DoNormalLib YES
++#define DoSharedLib YES
++#define DoExtraLib YES
++#define DoDebugLib NO
++#define DoProfileLib NO
+ #define LibName Xxf86dga
+ #define SoRev SOXXF86DGAREV
++SOXXF86DGAREV = 1.0
+ #define LibHeaders NO
+ 
+ #include <Threads.tmpl>
+ 
+-#ifdef SharedXxf86dgaReqs
+-REQUIREDLIBS = SharedXxf86dgaReqs
+-#endif
++REQUIREDLIBS = $(LDPRELIB) $(XLIB)
+ 
+ XF86DGASRCS = XF86DGA.c XF86DGA2.c
+ XF86DGAOBJS = XF86DGA.o XF86DGA2.o
