@@ -1,4 +1,8 @@
 bin/lphoto
+%%PYTHON_SITELIBDIR%%/Lphoto/CDR.py
+%%PYTHON_SITELIBDIR%%/Lphoto/CDR.pyc
+%%PYTHON_SITELIBDIR%%/Lphoto/CDROM.py
+%%PYTHON_SITELIBDIR%%/Lphoto/CDROM.pyc
 %%PYTHON_SITELIBDIR%%/Lphoto/LICENSE.GPL
 %%PYTHON_SITELIBDIR%%/Lphoto/LPixmapPushButton.py
 %%PYTHON_SITELIBDIR%%/Lphoto/LPixmapPushButton.pyc
@@ -12,6 +16,8 @@ bin/lphoto
 %%PYTHON_SITELIBDIR%%/Lphoto/albumlist.pyc
 %%PYTHON_SITELIBDIR%%/Lphoto/backtick.py
 %%PYTHON_SITELIBDIR%%/Lphoto/backtick.pyc
+%%PYTHON_SITELIBDIR%%/Lphoto/cdrecord.py
+%%PYTHON_SITELIBDIR%%/Lphoto/cdrecord.pyc
 %%PYTHON_SITELIBDIR%%/Lphoto/config.py
 %%PYTHON_SITELIBDIR%%/Lphoto/config.pyc
 %%PYTHON_SITELIBDIR%%/Lphoto/dragobjects.py
@@ -22,6 +28,8 @@ bin/lphoto
 %%PYTHON_SITELIBDIR%%/Lphoto/email.pyc
 %%PYTHON_SITELIBDIR%%/Lphoto/export.py
 %%PYTHON_SITELIBDIR%%/Lphoto/export.pyc
+%%PYTHON_SITELIBDIR%%/Lphoto/glshow.py
+%%PYTHON_SITELIBDIR%%/Lphoto/glshow.pyc
 %%PYTHON_SITELIBDIR%%/Lphoto/html.py
 %%PYTHON_SITELIBDIR%%/Lphoto/html.pyc
 %%PYTHON_SITELIBDIR%%/Lphoto/images/buttonadd.png
@@ -38,6 +46,8 @@ bin/lphoto
 %%PYTHON_SITELIBDIR%%/Lphoto/images/icon.png
 %%PYTHON_SITELIBDIR%%/Lphoto/images/importcamera.png
 %%PYTHON_SITELIBDIR%%/Lphoto/images/labelstar.png
+%%PYTHON_SITELIBDIR%%/Lphoto/images/lphoto.png
+%%PYTHON_SITELIBDIR%%/Lphoto/images/lphoto_48.png
 %%PYTHON_SITELIBDIR%%/Lphoto/images/servicedesktop.png
 %%PYTHON_SITELIBDIR%%/Lphoto/images/serviceemail.png
 %%PYTHON_SITELIBDIR%%/Lphoto/images/servicehtml.png
@@ -78,16 +88,26 @@ bin/lphoto
 %%PYTHON_SITELIBDIR%%/Lphoto/preferences.pyc
 %%PYTHON_SITELIBDIR%%/Lphoto/printer.py
 %%PYTHON_SITELIBDIR%%/Lphoto/printer.pyc
+%%PYTHON_SITELIBDIR%%/Lphoto/shellprocess.py
+%%PYTHON_SITELIBDIR%%/Lphoto/shellprocess.pyc
 %%PYTHON_SITELIBDIR%%/Lphoto/slideshow.py
 %%PYTHON_SITELIBDIR%%/Lphoto/slideshow.pyc
+%%PYTHON_SITELIBDIR%%/Lphoto/templates/flash/resources/index.html
+%%PYTHON_SITELIBDIR%%/Lphoto/templates/flash/resources/lphotos.swf
+%%PYTHON_SITELIBDIR%%/Lphoto/templates/flash/template.py
+%%PYTHON_SITELIBDIR%%/Lphoto/templates/flash/template.pyc
 %%PYTHON_SITELIBDIR%%/Lphoto/templates/standard/resources/lphoto.gif
 %%PYTHON_SITELIBDIR%%/Lphoto/templates/standard/template.py
 %%PYTHON_SITELIBDIR%%/Lphoto/templates/standard/template.pyc
 %%PYTHON_SITELIBDIR%%/Lphoto/templates/standard/template.xsl
 %%PYTHON_SITELIBDIR%%/Lphoto/utils.py
 %%PYTHON_SITELIBDIR%%/Lphoto/utils.pyc
+%%PYTHON_SITELIBDIR%%/Lphoto/vcd.py
+%%PYTHON_SITELIBDIR%%/Lphoto/vcd.pyc
 @dirrm %%PYTHON_SITELIBDIR%%/Lphoto/templates/standard/resources
 @dirrm %%PYTHON_SITELIBDIR%%/Lphoto/templates/standard
+@dirrm %%PYTHON_SITELIBDIR%%/Lphoto/templates/flash/resources
+@dirrm %%PYTHON_SITELIBDIR%%/Lphoto/templates/flash
 @dirrm %%PYTHON_SITELIBDIR%%/Lphoto/templates
 @dirrm %%PYTHON_SITELIBDIR%%/Lphoto/images
 @dirrm %%PYTHON_SITELIBDIR%%/Lphoto
