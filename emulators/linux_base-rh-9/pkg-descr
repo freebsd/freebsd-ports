@@ -1,6 +1,0 @@
-The linux_base port contains a selection of the packages from a minimal
-Red Hat Linux installation. These packages, in conjunction with the linux
-module, form the basis of the linux compatibility environment.
-
-- Marcel
-marcel@FreeBSD.org

@@ -1,7 +1,0 @@
---- src/gtkhtml.c.orig	Thu Oct 19 04:04:22 2000
-+++ src/gtkhtml.c	Fri Oct 20 10:40:47 2000
-@@ -2625,3 +2625,3 @@
- 
--	rcfile = g_strconcat ((from_share ? PREFIX "/share/gtkhtml/" : gnome_util_user_home ()),
-+	rcfile = g_strconcat ((from_share ? PREFIX "/share/gnome/gtkhtml/" : gnome_util_user_home ()),
- 			      (from_share ? "" : "/.gnome/"), name, NULL);

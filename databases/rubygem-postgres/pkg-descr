@@ -1,5 +1,0 @@
-This is an extention module to access PostgreSQL database from Ruby.
-This library works with PostgreSQL 6.4/6.5 and 7.0.
-
-Author:	Noboru Saitou <noborus@mb.kcom.ne.jp>
-WWW:	http://webclub.kcom.ne.jp/mb/noborus/postgres/index.html

@@ -1,9 +1,0 @@
---- lib/Makefile.am.orig	Thu Jul 20 21:35:02 2000
-+++ lib/Makefile.am	Fri Sep 15 20:56:28 2000
-@@ -53,5 +53,5 @@
- EXTRA_libsasl_la_SOURCES = db_none.c db_ndbm.c db_gdbm.c db_berkeley.c db_testw32.c
- libsasl_la_LDFLAGS = -version-info $(sasl_version)
- libsasl_la_DEPENDENCIES = $(SASL_DB_BACKEND) @LTLIBOBJS@
--libsasl_la_LIBADD = @LTLIBOBJS@ $(SASL_DB_BACKEND) $(SASL_DB_LIB) $(SASL_DL_LIB) $(PLAIN_LIBS)
-+libsasl_la_LIBADD = @LTLIBOBJS@ $(SASL_DB_BACKEND) $(SASL_DB_LIB) $(SASL_DL_LIB) $(PLAIN_LIBS) ${LIB_LDAP} ${LIB_MYSQL}
- # PLAIN_LIBS are linked in for sasl_checkpass

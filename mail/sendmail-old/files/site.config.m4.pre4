@@ -1,1 +1,0 @@
-define(`confCCOPTS',`-DCMDDIR="\"%%PREFIX%%/libexec/sm.bin\"" -DPATH="\"/bin:/usr/bin\""')

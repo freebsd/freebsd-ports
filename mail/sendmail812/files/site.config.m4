@@ -1,7 +1,0 @@
-define(`confEBINDIR',`%%PREFIX%%/libexec')
-define(`confMANROOT',`%%PREFIX%%/man/cat')
-define(`confMANROOTMAN',`%%PREFIX%%/man/man')
-define(`confMBINDIR',`%%PREFIX%%/sbin')
-define(`confSBINDIR',`%%PREFIX%%/sbin')
-define(`confUBINDIR',`%%PREFIX%%/bin')
-define(`confCCOPTS',`-DCMDDIR="\"%%PREFIX%%/libexec/sm.bin\"" -DPATH="\"/bin:/usr/bin\""')

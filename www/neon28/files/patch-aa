@@ -1,8 +1,0 @@
---- example/nbrowse/main.c	Sun Jul 16 15:58:00 2000
-+++ example/nbrowse/main.c	Fri Oct 13 10:32:01 2000
-@@ -50,3 +50,4 @@
- #include <uri.h>
--#include <xalloc.h>
-+#define xmalloc malloc
-+#define xstrdup strdup
- 
