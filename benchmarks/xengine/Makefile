@@ -30,5 +30,6 @@ post-install:
 	@mkdir -p $(PREFIX)/share/doc/xengine
 	@install -c $(WRKSRC)/README $(PREFIX)/share/doc/xengine
 .endif
+	@${ECHO} "BTW: 1067 RPMs with P100, Winner 2000PRO/X, resol: 1152x900"
 
 .include <bsd.port.mk>
