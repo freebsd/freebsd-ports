@@ -7,6 +7,7 @@
 
 PORTNAME=	mydns
 PORTVERSION=	0.9.10
+PORTREVISION=	1
 CATEGORIES=	net databases
 MASTER_SITES=	http://mydns.bboy.net/download/
 
@@ -14,7 +15,7 @@ MAINTAINER=	simond@irrelevant.org
 COMMENT=	DNS server designed to utilize the MySQL database
 
 LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext \
-		iconv.3:${PORTSDIR}/converters/iconv
+		iconv.3:${PORTSDIR}/converters/libiconv
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-confdir=${PREFIX}/etc
@@ -29,22 +30,17 @@ DOCS=		AUTHORS COPYING ChangeLog NEWS QUICKSTART README TODO
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 500113
-BROKEN=         "Installation fails"
-.endif
-
 .if defined (WITH_PGSQL)
 LIB_DEPENDS=	pq.3:${PORTSDIR}/databases/postgresql7
 CONFIGURE_ARGS+=--without-mysql
 PKGNAMESUFFIX=	-pg
 .else
-#LIB_DEPENDS=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client
 CONFIGURE_ARGS+=--without-pgsql
 PKGNAMESUFFIX=	-mysql
 .if exists(${LOCALBASE}/lib/mysql/libmysqlclient.so.10)
-LIB_DEPENDS=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client
+LIB_DEPENDS+=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client
 .else
-LIB_DEPENDS=	mysqlclient.12:${PORTSDIR}/databases/mysql40-client
+LIB_DEPENDS+=	mysqlclient.12:${PORTSDIR}/databases/mysql40-client
 .endif
 .endif
 
