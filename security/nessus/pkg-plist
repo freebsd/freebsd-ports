@@ -2,8 +2,8 @@ bin/nessus
 bin/nessus-fetch
 bin/nessus-mkcert-client
 bin/nessus-mkrand
-@unexec if cmp -s %D/etc/nessus/nessusd.conf.dist %D/etc/nessus/nessusd.conf; then rm -f %D/etc/nessus/nessusd.conf; fi
-@unexec if cmp -s %D/etc/nessus/nessusd.rules.dist %D/etc/nessus/nessusd.rules; then rm -f %D/etc/nessus/nessusd.rules; fi
+@unexec if cmp -s %D/etc/nessus/nessusd.conf.dist %D/etc/nessus/nessusd.conf; then rm -f %D/etc/nessus/nessusd.conf 2> /dev/null; fi || true
+@unexec if cmp -s %D/etc/nessus/nessusd.rules.dist %D/etc/nessus/nessusd.rules; then rm -f %D/etc/nessus/nessusd.rules 2> /dev/null; fi || true
 etc/nessus/nessusd.conf.dist
 etc/nessus/nessusd.rules.dist
 @exec if [ ! -f %D/etc/nessus/nessusd.conf ]; then cp -p %D/etc/nessus/nessusd.conf.dist %D/etc/nessus/nessusd.conf; fi
@@ -26,7 +26,7 @@ sbin/nessusd
 @exec mkdir -p %D/var/nessus/jobs
 @exec mkdir -p %D/var/nessus/logs
 @exec mkdir -p %D/var/nessus/users
-@unexec if [ ! -s %D/var/nessus/logs/nessusd.messages ]; then rm %D/var/nessus/logs/nessusd.messages; fi
+@unexec if [ ! -s %D/var/nessus/logs/nessusd.messages ]; then rm %D/var/nessus/logs/nessusd.messages 2> /dev/null; fi || true
 @unexec rmdir %D/var/nessus/jobs 2>/dev/null || true
 @unexec rmdir %D/var/nessus/logs 2>/dev/null || true
 @unexec rmdir %D/var/nessus/users 2>/dev/null || true
