@@ -22,7 +22,7 @@ MAINTAINER=	dirk@FreeBSD.ORG
 
 Y2K=		http://www.php.net/y2k.php3
 
-VERSION_APACHE=	1.3.3
+VERSION_APACHE=	1.3.4
 VERSION_PHP3=	3.0.6
 
 #
@@ -31,6 +31,7 @@ VERSION_PHP3=	3.0.6
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS= \
+		 --with-layout=GNU \
 		 --sysconfdir=${PREFIX}/etc/apache \
 		 --includedir=${PREFIX}/include/apache \
 		 --logfiledir=/var/log \

@@ -80,7 +80,7 @@ while [ "$1" ]; do
 			;;
 		\"modssl\")
 			cat << EOF >> ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
-PKGNAME=	apache-php\${VERSION_PHP3}-\${VERSION_APACHE}+mod_ssl-\${VERSION_MODSSL}
+PKGNAME=	apache-php3-\${VERSION_APACHE}+mod_ssl-\${VERSION_MODSSL}
 MASTER_SITES+=	http://www.engelschall.com/sw/mod_ssl/distrib/ \\
 		ftp://ftp.engelschall.com/sw/mod_ssl/ \\
 		ftp://ftp.nvg.ntnu.no/pub/unix/mod_ssl/ \\
@@ -98,7 +98,7 @@ BUILD_DEPENDS+=	ssleay:\${PORTSDIR}/security/openssl \\
 		\${PREFIX}/lib/libcrypto.a:\${PORTSDIR}/security/openssl
 RUN_DEPENDS+=	ssleay:\${PORTSDIR}/security/openssl
 
-VERSION_MODSSL=	2.1.6
+VERSION_MODSSL=	2.1.7
 
 RESTRICTED=	"Contains cryptography"
 
