@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	tinyca
-PORTVERSION=	0.4.9
+PORTVERSION=	0.5.2
 CATEGORIES=	security net
 MASTER_SITES=	http://tinyca.sm-zone.net/
 
 MAINTAINER=	Janos.Mohacsi@bsd.hu
 COMMENT=	Simple graphical interface to manage a small Certification Authority
 
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Tk.pm:${PORTSDIR}/x11-toolkits/p5-Tk \
+RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Gnome.pm:${PORTSDIR}/x11-toolkits/p5-Gnome \
 		${SITE_PERL}/${PERL_ARCH}/Locale/gettext.pm:${PORTSDIR}/devel/p5-Locale-gettext \
 		zip:${PORTSDIR}/archivers/zip
 
