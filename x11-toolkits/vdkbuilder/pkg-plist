@@ -7,6 +7,7 @@ include/vdkb/gtkcombobox.h
 include/vdkb/gtkextext.h
 include/vdkb/highlight.h
 include/vdkb/input.h
+include/vdkb/regex.h
 include/vdkb/vdkb.h
 include/vdkb/vdkb_about.h
 include/vdkb/vdkb_calendar.h
@@ -159,6 +160,7 @@ share/vdkb/res/saveprj.gif
 share/vdkb/res/step1.0.gif
 share/vdkb/res/step2.gif
 share/vdkb/res/step3.gif
+share/vdkb/res/tokens.db
 share/vdkb/res/tutor1.htm
 share/vdkb/res/tutor2.htm
 share/vdkb/res/tutor3.htm
@@ -176,5 +178,5 @@ share/vdkb/res/vdkobject.htm
 share/vdkb/res/vdkpaned.htm
 share/vdkb/res/vdkscrolled.htm
 share/vdkb/res/wi1.gif
-@dirrm include/vdkb
 @dirrm share/vdkb/res
+@dirrm share/vdkb

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	vdk
-PORTVERSION=	1.2.1
+PORTVERSION=	1.2.2
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://download.sourceforge.net/vdkbuilder/
 
