@@ -5668,6 +5668,7 @@ pdumpfs		ports/sysutils/pdumpfs
 peacock		ports/www/peacock
 pear		ports/devel/pear
 pedisassem	ports/devel/pedisassem
+peeper		ports/x11/peeper
 pen		ports/net/pen
 pengpong	ports/games/pengpong
 penguin-command	ports/games/penguin-command
