@@ -17,7 +17,7 @@ LIB_DEPENDS=	gd.1:${PORTSDIR}/graphics/gd
 
 NO_LATEST_LINK=	yes
 
-WEBALIZER_LANG= german
+WEBALIZER_LANG?=	german
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--enable-dns \
