@@ -42,6 +42,7 @@ LIB_DEPENDS+=	mikmod.2:${PORTSDIR}/audio/libmikmod
 INPUT_PLUGINS+=	mikmod
 PLIST_SUB+=	MIKMODPLUGIN:=""
 .else
+CONFIGURE_ARGS+=	--disable-mikmod
 PLIST_SUB+=	MIKMODPLUGIN:="@comment "
 .endif
 
@@ -50,6 +51,7 @@ LIB_DEPENDS+=	vorbis.2:${PORTSDIR}/audio/libvorbis
 INPUT_PLUGINS+=	vorbis
 PLIST_SUB+=	VORBISPLUGIN:=""
 .else
+CONFIGURE_ARGS+=	--disable-vorbis
 PLIST_SUB+=	VORBISPLUGIN:="@comment "
 .endif
 
@@ -63,6 +65,7 @@ PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-esound
 PKGNAMESUFFIX=	-esound
 .endif
 .else
+CONFIGURE_ARGS+=	--disable-esd
 PLIST_SUB+=	ESDPLUGIN:="@comment "
 .endif
 
@@ -75,7 +78,7 @@ PKGNAMESUFFIX=	-gnome
 .endif
 PLIST_SUB+=	DATADIR="share/gnome"
 .else
-CONFIGURE_ARGS=	--without-gnome
+CONFIGURE_ARGS+=	--without-gnome
 PLIST_SUB+=	DATADIR="share"
 .endif
 
