@@ -179,7 +179,7 @@ bin/%%BROWSER%%-%%BROWSER_VER%%
 %%NSUBDIR%%/spell/pen4s324.dat
 %%NSUBDIR%%/vreg
 @dirrm %%NSUBDIR%%/spell
-@dirrm %%NSUBDIR%%/plugins
+@unexec rmdir %D/%%NSUBDIR%%/plugins 2>/dev/null || true
 @dirrm %%NSUBDIR%%/nethelp/netscape/trouble
 @dirrm %%NSUBDIR%%/nethelp/netscape/shared
 @dirrm %%NSUBDIR%%/nethelp/netscape/news

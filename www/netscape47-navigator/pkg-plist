@@ -140,7 +140,7 @@ bin/navigator-%%BROWSER_VER%%
 %%NSUBDIR%%/plugins/libnullplugin.so
 %%NSUBDIR%%/registry
 %%NSUBDIR%%/vreg
-@dirrm %%NSUBDIR%%/plugins
+@unexec rmdir %D/%%NSUBDIR%%/plugins 2>/dev/null || true
 @dirrm %%NSUBDIR%%/nethelp/netscape/shared
 @dirrm %%NSUBDIR%%/nethelp/netscape/navigatr
 @dirrm %%NSUBDIR%%/nethelp/netscape/home
