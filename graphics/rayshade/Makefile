@@ -6,42 +6,48 @@
 #
 
 PORTNAME=	rayshade
-PORTVERSION=	4.0
+PORTVERSION=	4.0.6
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://graphics.stanford.edu/pub/rayshade/	\
 		ftp://ftp.princeton.edu/pub/Graphics/rayshade.4.0/
 DISTNAME=	${PORTNAME}.${PORTVERSION}
 EXTRACT_SUFX=	.tar.Z
+.ifndef NOPORTDOCS
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} guide.ps.Z
+.endif
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An extensible system for creating ray-traced images
 
 BUILD_DEPENDS=	$(LOCALBASE)/lib/librle.a:${PORTSDIR}/graphics/urt
 
+DIST_SUBDIR=	rayshade
+
+WRKSRC=		${WRKDIR}/${PORTNAME}.4.0
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	Configure
-CONFIGURE_ARGS+=	< ${WRKDIR}/config.ans
 ALL_TARGET=
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500113
-BROKEN=         "Does not compile"
-.endif
-
+.if defined (BATCH) || defined(PACKAGE_BUILDING)
+USE_REINPLACE=	yes
+CONFIGURE_ARGS=	< ${WRKDIR}/config.ans
 pre-configure:
-	$(SED) -e "s,@CFLAGS@,${CFLAGS}," < ${FILESDIR}/config.ans > \
-		${WRKDIR}/config.ans
+	@${MKDIR} ${PREFIX}/bin
+	${CP} ${FILESDIR}/config.ans ${WRKDIR}/config.ans
+	${REINPLACE_CMD} -e "s,@CFLAGS@,${CFLAGS},g ; \
+			     s,@CC@,${CC},g ; \
+			     s,@LOCALBASE@,${LOCALBASE},g ; \
+			     s,@PREFIX@,${PREFIX},g" ${WRKDIR}/config.ans
+.endif
 
 do-install:
 	$(INSTALL_PROGRAM) $(WRKSRC)/rayshade/rayshade $(PREFIX)/bin
-# THIS ARE NOT USED BY ANY PORT
-#	$(INSTALL_DATA) $(WRKSRC)/libray/libray.a $(PREFIX)/lib
-#	$(INSTALL_DATA) $(WRKSRC)/libshade/libshade.a $(PREFIX)/lib
-	$(MKDIR) $(PREFIX)/share/doc/rayshade
-	$(INSTALL_DATA) $(WRKSRC)/Doc/Guide/* $(PREFIX)/share/doc/rayshade
-	$(INSTALL_DATA) $(WRKSRC)/Doc/quickref.txt $(PREFIX)/share/doc/rayshade
+.ifndef NOPORTDOCS
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/guide.ps.Z ${DOCSDIR}
 	$(MKDIR) $(PREFIX)/share/examples/rayshade
 	$(INSTALL_DATA) $(WRKSRC)/Examples/* $(PREFIX)/share/examples/rayshade
+.endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
