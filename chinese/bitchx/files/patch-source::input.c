@@ -1,5 +1,5 @@
---- source/input.c~	Sun Jul  7 04:33:05 2002
-+++ source/input.c	Mon Jan  8 01:09:28 2001
+--- source/input.c~	Tue Aug  5 20:43:47 2003
++++ source/input.c	Tue Aug  5 20:43:49 2003
 @@ -94,6 +94,7 @@
  #define MIN_CHAR 		INPUT_BUFFER[MIN_POS]
  #define PREV_CHAR 		INPUT_BUFFER[THIS_POS-1]
@@ -155,3 +155,44 @@
  	update_input(UPDATE_JUST_CURSOR);
  }
  
+@@ -791,11 +865,17 @@
+ 			THIS_CHAR = key;
+ 			NEXT_CHAR = 0;
+ 			ADD_TO_INPUT(ptr);
+-			if (termfeatures & TERM_CAN_INSERT)
+-				term_insert(key);
++			if (termfeatures & TERM_CAN_INSERT) {
++				if ( check_my_role(THIS_POS) == MY_ROLE_ENG) term_insert(key);
++				else if (check_my_role(THIS_POS) == MY_ROLE_LO) {term_cursor_left(); term_insert(PREV_CHAR); term_insert(key); }
++				if (NEXT_CHAR)
++				    display_flag = UPDATE_FROM_CURSOR;
++			}
+ 			else
+ 			{
+-				term_putchar(key);
++				if ( check_my_role(THIS_POS) == MY_ROLE_ENG) term_putchar(key);
++				else if (check_my_role(THIS_POS) == MY_ROLE_LO) {term_cursor_left(); term_putchar(PREV_CHAR); term_putchar(key);}
++
+ 				if (NEXT_CHAR)
+ 				    display_flag = UPDATE_FROM_CURSOR;
+ 				else
+@@ -806,7 +886,8 @@
+ 		{
+ 			THIS_CHAR = key;
+ 			NEXT_CHAR = 0;
+-			term_putchar(key);
++			if ( check_my_role(THIS_POS) == MY_ROLE_ENG) term_putchar(key);
++			else if (check_my_role(THIS_POS) == MY_ROLE_LO) {term_cursor_left(); term_putchar(PREV_CHAR); term_putchar(key);}
+ 		}
+ 	}
+ 	else
+@@ -814,7 +895,8 @@
+ 		if (THIS_CHAR == 0)
+ 			NEXT_CHAR = 0;
+ 		THIS_CHAR = key;
+-		term_putchar(key);
++		if ( check_my_role(THIS_POS) == MY_ROLE_ENG) term_putchar(key);
++		else if (check_my_role(THIS_POS) == MY_ROLE_LO) {term_cursor_left(); term_putchar(PREV_CHAR); term_putchar(key);}
+ 	}
+ 	
+ 	if (!THIS_POS)
