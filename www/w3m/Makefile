@@ -6,18 +6,17 @@
 #
 
 PORTNAME=	w3m
-PORTVERSION?=	${W3M_VER}
+PORTVERSION=	0.1.9
 CATEGORIES+=	www ipv6
-MASTER_SITES=	ftp://ei5nazha.yz.yamagata-u.ac.jp/w3m/dev/ \
-		ftp://ftp.firedrake.org/w3m/dev/ \
-		http://www.instinct.org/~pgl/w3m/dev/ \
-		http://grilli.net/mirrors/w3m/download/dev/
+MASTER_SITES=	ftp://ei5nazha.yz.yamagata-u.ac.jp/w3m/ \
+		ftp://ftp.firedrake.org/w3m/ \
+		http://www.instinct.org/~pgl/w3m/ \
+		http://grilli.net/mirrors/w3m/download/
 
 MAINTAINER=	nobutaka@nobutaka.com
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libgc.a:${PORTSDIR}/devel/boehm-gc
 
-W3M_VER=	0.1.7
 WRKSRC=		${WRKDIR}/${PORTNAME}
 MAN1=		w3m.1
 MANLANG=	""
@@ -37,10 +36,9 @@ SED_CMD+=	-e "s,undef INET6,define INET6,g"
 .endif
 
 .if defined(JAPANESE)
-SED_CMD+=	-e "s,undef JAPANESE,define JAPANESE,g" \
-		-e "s,w3mhelp_en.html,w3mhelp_ja.html,g"
+SED_CMD+=	-e "s,undef JAPANESE,define JAPANESE,g"
 MANLANG+=	ja
-DOCS_JP=	${DOCS} HISTORY HISTORY.kokb README.keymap README.kokb \
+DOCS_JP=	${DOCS} HISTORY.kokb README.keymap README.kokb \
 		README.menu
 .endif
 
@@ -48,7 +46,8 @@ DOCS_JP=	${DOCS} HISTORY HISTORY.kokb README.keymap README.kokb \
 SSL_CFLAGS=	-I${OPENSSLINC}/openssl -I${OPENSSLINC}
 SSL_LIBS=	-L${OPENSSLLIB} -lssl -lcrypto
 
-SED_CMD+=	-e "s,undef USE_SSL,define USE_SSL,g"
+SED_CMD+=	-e "s,undef USE_SSL,define USE_SSL,g" \
+		-e "s,undef USE_SSL_VERIFY, define USE_SSL_VERIFY,g"
 
 .if defined(OPENSSL_RSAREF)
 EXTRA_SSL_LIBS=	-lRSAglue -lrsaref
@@ -67,15 +66,15 @@ post-install:
 .if !defined(NOPORTDOCS)
 .if defined(JAPANESE)
 	@${MKDIR} ${PREFIX}/share/doc/ja/w3m
-	@(cd ${WRKSRC}/doc-jp; \
+	@cd ${WRKSRC}/doc-jp; \
 	for i in ${DOCS_JP} ; do \
 		${INSTALL_DATA} $$i ${PREFIX}/share/doc/ja/w3m/ ; \
-	done)
+	done
 .endif
-	@(cd ${WRKSRC}/doc; \
+	@cd ${WRKSRC}/doc; \
 	for i in ${DOCS} ; do \
 		${INSTALL_DATA} $$i ${PREFIX}/share/doc/w3m/ ; \
-	done)
+	done
 .endif
 	@${INSTALL_MAN} ${WRKSRC}/doc/w3m.1 ${PREFIX}/man/man1
 .if defined(JAPANESE)

@@ -1,15 +1,18 @@
---- rc.c.orig	Fri Jan 28 09:46:07 2000
-+++ rc.c	Fri Jan 28 18:58:17 2000
-@@ -540,13 +540,3 @@
-   Strcat_charp(file, base);
-   return expandName(file->ptr);
+--- rc.c.orig	Sat Apr 22 06:47:16 2000
++++ rc.c	Sat Apr 22 06:47:24 2000
+@@ -762,16 +762,3 @@
+     Strcat_charp(file, base);
+     return expandName(file->ptr);
  }
 -
--char *
+-char           *
 -helpFile(char *base)
 -{
--    Str file = Strnew_charp(HELP_DIR);
--    
+-#ifdef __EMX__
+-    Str             file = Strnew_charp(get_os2_dft("W3M_HELP_DIR", HELP_DIR));
+-#else				/* not __EMX__ */
+-    Str             file = Strnew_charp(HELP_DIR);
+-#endif				/* not __EMX__ */
 -    Strcat_char(file, '/');
 -    Strcat_charp(file, base);
 -    return expandName(file->ptr);
