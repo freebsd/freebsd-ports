@@ -38,6 +38,7 @@ USE_GMAKE=	yes
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix="${PREFIX}" --enable-standard-datadir
+CONFIGURE_ENV=	CPPFLAGS=-Wno-deprecated
 
 PLIST_SUB=	CGIDIR="${CGIDIR}" ICONSDIR="${ICONSDIR}"
 
