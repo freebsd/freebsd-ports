@@ -1,12 +1,12 @@
 # New ports collection makefile for:	Hermes
-# Version required:			1.2.5
 # Date created:				29 April 1999
 # Whom:					Andrey Zakhvatov
 #
 # $FreeBSD$
 #
 
-DISTNAME=	Hermes-1.2.5
+PORTNAME=	Hermes
+PORTVERSION=	1.2.5
 CATEGORIES=	graphics
 MASTER_SITES=	http://hermes.terminal.at/files/
 

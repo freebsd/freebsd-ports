@@ -1,12 +1,12 @@
 # New ports collection makefile for:	camediaplay
-# Version required:	19991202
 # Date created:		2 May 1997
 # Whom:			Jun-ichiro itojun Itoh <itojun@itojun.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	camediaplay-19991202
+PORTNAME=	camediaplay
+PORTVERSION=	19991202
 CATEGORIES=	graphics
 MASTER_SITES=   ftp://ftp.itojun.org/pub/digi-cam/C-400L/unix/ \
 		ftp://ftp.digipri.co.jp/pub/free-software/Olympus/C-400L/unix/

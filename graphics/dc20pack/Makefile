@@ -1,12 +1,12 @@
 # New ports collection makefile for:	dc20pack
-# Version required:	1.0
 # Date created:		Jul 31 1999
 # Whom:			Maurice Castro <maurice@serc.rmit.edu.au>
 #
 # $FreeBSD$
 #
 
-DISTNAME=		dc20pack-1.0
+PORTNAME=		dc20pack
+PORTVERSION=		1.0
 CATEGORIES=		graphics
 MASTER_SITES=		${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	apps/graphics/capture

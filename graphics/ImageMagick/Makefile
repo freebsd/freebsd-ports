@@ -1,12 +1,12 @@
 # New ports collection makefile for:	ImageMagick
-# Version required:     5.1.1
 # Date created:		15 November 1994
 # Whom:			torstenb
 #
 # $FreeBSD$
 #
 
-DISTNAME=       ImageMagick-5.1.1
+PORTNAME=	ImageMagick
+PORTVERSION=	5.1.1
 CATEGORIES=	graphics perl5
 MASTER_SITES=	http://people.FreeBSD.org/~asami/distfiles/ \
 		ftp://ftp.wizards.dupont.com/pub/ImageMagick/ \
@@ -31,7 +31,7 @@ BUILD_DEPENDS=  bzip2:${PORTSDIR}/archivers/bzip2 \
 		mpeg2decode:${PORTSDIR}/graphics/mpeg2codec \
 		gs:${PORTSDIR}/print/ghostscript55
 
-MAN1=   ImageMagick.1 animate.1 combine.1 convert.1 display.1 identify.1 \
+MAN1=	ImageMagick.1 animate.1 combine.1 convert.1 display.1 identify.1 \
 	import.1 mogrify.1 montage.1
 MAN3=	Image::Magick.3
 MAN4=	miff.4
@@ -45,8 +45,8 @@ CONFIGURE_ARGS= --prefix=${PREFIX} --enable-shared --with-perl=${PERL5} \
 CONFIGURE_ARGS+= --enable-lzw
 .endif
 USE_PERL5=	YES
-USE_XLIB=       YES
-CONFIGURE_ENV=  LDFLAGS="$(LDFLAGS) -L${WRKSRC}/magick/.libs"
+USE_XLIB=	YES
+CONFIGURE_ENV=	LDFLAGS="$(LDFLAGS) -L${WRKSRC}/magick/.libs"
 
 pre-configure:
 	${RM} -f ${WRKSRC}/config.cache

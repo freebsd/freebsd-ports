@@ -1,12 +1,12 @@
 # New ports collection makefile for:	fbm
-# Version required:	1.2
 # Date created:		21 January 1998
 # Whom:			giffunip@asme.org
 #
 # $FreeBSD$
 #
 
-DISTNAME=	fbm-1.2
+PORTNAME=	fbm
+PORTVERSION=	1.2
 CATEGORIES=	graphics
 MASTER_SITES=		${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	apps/graphics/convert

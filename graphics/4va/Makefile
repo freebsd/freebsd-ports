@@ -1,12 +1,12 @@
 # New ports collection makefile for:	4va
-# Version required:	1.21
 # Date created:		26 July 1998
 # Whom:			Malte Lance <malte.lance@gmx.net>
 #
 # $FreeBSD$
 #
 
-DISTNAME=		4va-1.21
+PORTNAME=		4va
+PORTVERSION=		1.21
 CATEGORIES=		graphics
 MASTER_SITES=		${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	apps/graphics/hacks/X

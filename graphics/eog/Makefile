@@ -1,12 +1,12 @@
 # New ports collection makefile for:	eog
-# Version required:	0.2
 # Date created:		5th October 1999
 # Whom:			Ade Lovett <ade@lovett.com>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	eog-0.2
+PORTNAME=	eog
+PORTVERSION=	0.2
 CATEGORIES=	graphics gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/eog
