@@ -6,15 +6,14 @@
 #
 
 PORTNAME=	libbonoboui
-PORTVERSION=	2.2.0.1
-PORTREVISION=	1
+PORTVERSION=	2.2.2
 CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/2.2
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	GUI frontend to the libbonobo component of GNOME2
+COMMENT=	GUI frontend to the libbonobo component of GNOME 2
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
@@ -25,5 +24,9 @@ USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
+		s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
