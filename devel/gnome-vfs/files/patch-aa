@@ -1,14 +1,5 @@
 --- configure.orig	Mon Apr 19 15:48:25 2004
 +++ configure	Mon Apr 19 16:27:55 2004
-@@ -1527,7 +1527,7 @@
- LIBGNOMEVFS_MAJOR_VERSION=2
- LIBGNOMEVFS_MINOR_VERSION=6
- LIBGNOMEVFS_MICRO_VERSION=1
--LIBGNOMEVFS_INTERFACE_AGE=0
-+LIBGNOMEVFS_INTERFACE_AGE=1
- # If you need a modifier for the version number.
- # Normally empty, but can be used to make "fixup" releases.
- LIBGNOMEVFS_EXTRAVERSION=
 @@ -22815,6 +22815,8 @@
  if eval "test \"\${$as_ac_var+set}\" = set"; then
    echo $ECHO_N "(cached) $ECHO_C" >&6
