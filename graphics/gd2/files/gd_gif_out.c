@@ -8,8 +8,6 @@
 ** Wrapper functions for GIF output.
 */
 
-#define LZW_LICENCED
-
 void gdImageGifToSink(gdImagePtr im, gdSinkPtr outSink)
 {
         gdIOCtx   *out = gdNewSSCtx(NULL,outSink);
