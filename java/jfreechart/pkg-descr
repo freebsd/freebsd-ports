@@ -1,0 +1,12 @@
+ JFreeChart is a free Java class library for generating charts, including:
+    * pie charts;
+    * bar charts (regular and stacked, with an optional 3D effect);
+    * line and area charts;
+    * scatter plots and bubble charts;
+    * time series, high/low/open/close charts and candle stick charts;
+    * combination charts;
+    * Pareto charts;
+    * Gantt charts;
+    * wind plots, meter charts and symbol charts.
+
+WWW: http://www.jfree.org/jfreechart/
