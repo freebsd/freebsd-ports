@@ -252,6 +252,7 @@ agenda-libs	ports/devel/agenda-libs
 agenda-snow-libs	ports/devel/agenda-snow-libs
 agenda-static-libs	ports/devel/agenda-static-libs
 aget		ports/net/aget
+agg		ports/graphics/agg
 aggregate	ports/net-mgmt/aggregate
 agide		ports/devel/agide
 agrep		ports/textproc/agrep
