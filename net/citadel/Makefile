@@ -7,6 +7,7 @@
 
 PORTNAME=	citadel
 PORTVERSION=	5.80
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://uncensored.citadel.org/pub/citadel/ \
 		ftp://ftp.tux.org/pub/net/citadel/ \
@@ -16,14 +17,12 @@ DISTNAME=	${PORTNAME}-ux-${PORTVERSION}
 MAINTAINER=	brian@shadowcom.net
 COMMENT=	Citadel/UX Communications Server
 
-BROKEN=		"Does not install/package"
-NO_PACKAGE=	"Infinite loop"
-
 LIB_DEPENDS=    gdbm:${PORTSDIR}/databases/gdbm
 
 WRKSRC=		${WRKDIR}/citadel
 GNU_CONFIGURE=  yes
 USE_GMAKE=      yes
+CONFIGURE_ARGS=	--with-gdbm=${LOCALBASE}
 
 post-install:
 	${STRIP} ${PREFIX}/bin/aidepost

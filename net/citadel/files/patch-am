@@ -1,0 +1,9 @@
+--- sysdep_decls.h.orig	Sun Mar 30 22:59:49 2003
++++ sysdep_decls.h	Sun Mar 30 23:00:41 2003
+@@ -24,4 +24,6 @@
+ void CtdlRedirectOutput(FILE *fp, int sock);
+ 
+ extern int num_sessions;
++#ifndef		__SYSDEP_C__
+ extern int time_to_die;
++#endif
