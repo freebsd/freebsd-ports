@@ -16,17 +16,11 @@ COMMENT=	A Chinese <-> English dictd words database
 
 BUILD_DEPENDS=  ${LOCALBASE}/bin/dictzip:${PORTSDIR}/chinese/dictd
 
-HAS_CONFIGURE=	yes
+USE_LIBTOOL=	yes
 USE_GMAKE=	yes
 USE_PERL5_BUILD=yes
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500113
-BROKEN=         "Does not build"
-.endif
-
 post-install:
-	@${CAT} ${PKGMESSAGE}
+	@${SED} -e 's,PREFIX,${PREFIX},g' ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
