@@ -3751,7 +3751,7 @@ libol		ports/devel/libol
 libole2		ports/devel/libole2
 liboop		ports/devel/liboop
 libosip		ports/net/libosip
-libpanel	ports/x11/libpanel
+port_libpanel	ports/x11/libpanel
 libparanoia	ports/security/libparanoia
 libpdel		ports/devel/libpdel
 libpst		ports/mail/libpst
