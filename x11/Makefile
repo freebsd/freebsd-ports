@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.256 1999/04/11 12:54:17 jseger Exp $
+# $Id: Makefile,v 1.257 1999/04/27 13:22:27 taoka Exp $
 #
 
     SUBDIR += 9term
@@ -91,6 +91,7 @@
     SUBDIR += xloadimage
     SUBDIR += xlockmore
     SUBDIR += xlogout
+    SUBDIR += xlupe
     SUBDIR += xmangekyou
     SUBDIR += xmascot
     SUBDIR += xmold
