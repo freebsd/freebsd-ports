@@ -1,0 +1,13 @@
+--- Makefile.orig	Thu Apr 22 15:58:11 1999
++++ Makefile	Sat Jun  5 11:25:41 1999
+@@ -11,8 +11,8 @@
+ OBJS = gtkcombobox.o gtkbordercombo.o gtkcolorcombo.o gtksheetentry.o \
+        gtksheet.o 
+ 
+-LIBDIRS = $(shell gtk-config --libs)
+-CFLAGS = -Wall $(shell gtk-config --cflags)
++LIBDIRS = `$(GTK_CONFIG) --libs`
++CFLAGS = -Wall `$(GTK_CONFIG) --cflags`
+ 
+ all:    demo libGtkSheet.a 
+ 

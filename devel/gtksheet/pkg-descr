@@ -1,0 +1,22 @@
+GtkSheet is a matrix widget for GTK+. It consists of an scrollable grid of
+cells where you can allocate text which can be edited interactively. It is
+also a container subclass, allowing you to display buttons, curves, pixmaps
+and any other widget in it. You can also set many attributes as: border,
+foreground and background color, text justification, and more. GtkSheet comes
+also with an extra set of useful widgets and a demo program showing all of
+them interacting in a spreadsheet-like GUI. 
+
+This distribution includes the following set of widgets:
+
+* GtkSheet
+* GtkSheetEntry
+* GtkComboBox
+* GtkColorCombo
+* GtkBorderCombo
+
+and a demo program showing their features. 
+
+WWW : http://www.ifir.edu.ar/grupos/gtk/
+
+- Ying-Chieh Liao
+  ijliao@csie.nctu.edu.tw
