@@ -1,0 +1,5 @@
+%%RUBY_SITEARCHLIBDIR%%/mingc.so
+%%RUBY_SITELIBDIR%%/ming.rb
+%%RUBY_EXAMPLESDIR%%/ming/shape.rb
+%%RUBY_EXAMPLESDIR%%/ming/test.rb
+@dirrm %%RUBY_EXAMPLESDIR%%/ming
