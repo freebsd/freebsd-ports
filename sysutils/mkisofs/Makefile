@@ -6,16 +6,11 @@
 #
 
 PORTNAME=	mkisofs
-PORTVERSION=	1.12.1
+PORTVERSION=	1.13
 CATEGORIES=	sysutils
-MASTER_SITES=	ftp://ftp.fokus.gmd.de/pub/unix/cdrecord/ \
-		ftp://ftp.gwdg.de/pub/linux/misc/cdrecord/ \
-		ftp://ftp.cs.tu-berlin.de/pub/misc/cdrecord/
-DISTNAME=	cdrecord-1.8.1
-
-PATCH_SITES=	${MASTER_SITE_LOCAL}
-PATCH_SITE_SUBDIR=	dirk
-PATCHFILES=	apple_driver.patch
+MASTER_SITES=	ftp://ftp.fokus.gmd.de/pub/unix/cdrecord/mkisofs/ \
+		ftp://ftp.gwdg.de/pub/linux/misc/cdrecord/mkisofs/ \
+		ftp://ftp.cs.tu-berlin.de/pub/misc/cdrecord/mkisofs/
 
 MAINTAINER=	dirk@FreeBSD.org
 
@@ -29,17 +24,20 @@ post-extract:
 		${WRKSRC}/RULES/alpha-freebsd-cc.rul
 .endif
 
+post-build:
+	@(cd ${WRKSRC}/mkisofs; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} apple_driver)
+
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/mkisofs/OBJ/${ARCH}-freebsd-cc/mkisofs ${PREFIX}/bin
-	@${INSTALL_PROGRAM} ${WRKSRC}/mkhybrid/OBJ/${ARCH}-freebsd-cc/mkhybrid ${PREFIX}/bin
-	@${INSTALL_PROGRAM} ${WRKSRC}/mkhybrid/OBJ/${ARCH}-freebsd-cc/apple_driver ${PREFIX}/bin
+	@${LN} ${PREFIX}/bin/mkisofs ${PREFIX}/bin/mkhybrid
+	@${INSTALL_PROGRAM} ${WRKSRC}/mkisofs/apple_driver ${PREFIX}/bin
 	@${INSTALL_PROGRAM} ${WRKSRC}/mkisofs/diag/OBJ/${ARCH}-freebsd-cc/devdump ${PREFIX}/bin
 	@${INSTALL_PROGRAM} ${WRKSRC}/mkisofs/diag/OBJ/${ARCH}-freebsd-cc/isodump ${PREFIX}/bin
 	@${INSTALL_PROGRAM} ${WRKSRC}/mkisofs/diag/OBJ/${ARCH}-freebsd-cc/isoinfo ${PREFIX}/bin
 	@${INSTALL_PROGRAM} ${WRKSRC}/mkisofs/diag/OBJ/${ARCH}-freebsd-cc/isovfy ${PREFIX}/bin
 	@${INSTALL_MAN} ${WRKSRC}/mkisofs/mkisofs.8 ${PREFIX}/man/man8
-	@${INSTALL_MAN} ${WRKSRC}/mkhybrid/mkhybrid.8 ${PREFIX}/man/man8
-	@${INSTALL_MAN} ${WRKSRC}/mkhybrid/apple_driver.8 ${PREFIX}/man/man8
+	@${INSTALL_MAN} ${WRKSRC}/mkisofs/mkhybrid.8 ${PREFIX}/man/man8
+	@${INSTALL_MAN} ${WRKSRC}/mkisofs/apple_driver.8 ${PREFIX}/man/man8
 	@${INSTALL_MAN} ${WRKSRC}/mkisofs/diag/isoinfo.8 ${PREFIX}/man/man8
 
 .include <bsd.port.mk>
