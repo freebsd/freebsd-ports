@@ -11,10 +11,11 @@ CATEGORIES=	sysutils windowmaker
 MASTER_SITES=	${MASTER_SITE_WINDOWMAKER}
 MASTER_SITE_SUBDIR=	contrib/srcs/utils
 
-MAINTAINER=	kushn@mail.kar.net
+MAINTAINER=	anders@fix.no
 
 USE_IMAKE=	yes
 USE_XPM=	yes
 NO_INSTALL_MANPAGES=	yes
+ALL_TARGET=	wmavgload
 
 .include <bsd.port.mk>
