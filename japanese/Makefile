@@ -208,6 +208,7 @@
     SUBDIR += monafonts
     SUBDIR += mozilla-jlp
     SUBDIR += mozilla-jlp-devel
+    SUBDIR += mplusfonts
     SUBDIR += msdosfs
     SUBDIR += mtools
     SUBDIR += muggy
