@@ -7,13 +7,10 @@
 #
 
 PORTNAME=	cdpr
-PORTVERSION=	1.0.8
+PORTVERSION=	2.0.0
 CATEGORIES=	net
-MASTER_SITES=	http://freebsdcluster.org/~mich/software/ \
-		http://www.monkeymental.com/mmfiles/ \
-		${MASTER_SITE_LOCAL}
+MASTER_SITES=	http://www.monkeymental.com/mmfiles/
 MASTER_SITE_SUBDIR=	${PORTNAME}
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	mich@FreeBSD.org
 COMMENT=	Cisco Discovery Protocol Reporter
@@ -24,7 +21,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib -lpcap
 DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
 
 do-build:
-	(cd ${WRKSRC} && ${CC} ${CFLAGS} ${LDFLAGS} -o ${PORTNAME} ${PORTNAME}.c)
+	(cd ${WRKSRC} && ${CC} ${CFLAGS} ${LDFLAGS} -o ${PORTNAME} ${PORTNAME}.c cdprs.c conffile.c)
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/${PORTNAME}
