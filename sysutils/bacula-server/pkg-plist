@@ -1,35 +1,33 @@
-%%SERVER%%share/bacula/query.sql
+%%DATADIR%%/bacula/query.sql
 etc/rc.d/bacula.sh.sample
-%%SERVER%%sbin/chio-bacula
-%%SERVER%%sbin/bacula-dir
-sbin/bacula-fd
-%%SERVER%%sbin/bacula-sd
-%%SERVER%%sbin/bextract
-%%SERVER%%sbin/bcopy
-%%SERVER%%sbin/bls
-%%SERVER%%sbin/bscan
-%%SERVER%%sbin/btape
-sbin/bconsole
+sbin/chio-bacula
+sbin/bacula-dir
+sbin/bacula-sd
+sbin/bcopy
+sbin/bextract
+sbin/bls
+sbin/bscan
+sbin/btape
 %%WXCONS%%sbin/wx-console
 %%GNOMECONS%%sbin/gnome-console
-%%SERVER%%sbin/dbcheck
-%%SERVER%%sbin/bsmtp
-%%SERVER%%share/bacula/mtx-changer
-%%SERVER%%share/bacula/create_bacula_database
-%%SERVER%%share/bacula/create_%%DBTYPE%%_database
-%%SERVER%%share/bacula/drop_bacula_database
-%%SERVER%%share/bacula/drop_%%DBTYPE%%_database
-%%SERVER%%share/bacula/drop_bacula_tables
-%%SERVER%%share/bacula/drop_%%DBTYPE%%_tables
-%%SERVER%%share/bacula/grant_bacula_privileges
-%%SERVER%%share/bacula/grant_%%DBTYPE%%_privileges
-%%SERVER%%share/bacula/make_bacula_tables
-%%SERVER%%share/bacula/make_%%DBTYPE%%_tables
-%%SERVER%%share/bacula/update_bacula_tables
-%%SERVER%%share/bacula/update_%%DBTYPE%%_tables
-%%SERVER%%share/bacula/delete_catalog_backup
-%%SERVER%%share/bacula/make_catalog_backup
-%%SERVER%%@dirrm share/bacula
+sbin/dbcheck
+sbin/bsmtp
+%%DATADIR%%/mtx-changer
+%%DATADIR%%/create_bacula_database
+%%DATADIR%%/create_%%DBTYPE%%_database
+%%DATADIR%%/drop_bacula_database
+%%DATADIR%%/drop_%%DBTYPE%%_database
+%%DATADIR%%/drop_bacula_tables
+%%DATADIR%%/drop_%%DBTYPE%%_tables
+%%DATADIR%%/grant_bacula_privileges
+%%DATADIR%%/grant_%%DBTYPE%%_privileges
+%%DATADIR%%/make_bacula_tables
+%%DATADIR%%/make_%%DBTYPE%%_tables
+%%DATADIR%%/update_bacula_tables
+%%DATADIR%%/update_%%DBTYPE%%_tables
+%%DATADIR%%/delete_catalog_backup
+%%DATADIR%%/make_catalog_backup
+@dirrm %%DATADIR%%
 @unexec /usr/bin/killall badula-sd > /dev/null 2>&1 || true
 @unexec /usr/bin/killall bacula-dir > /dev/null 2>&1 || true
 @exec mkdir -p %%BACULA_DIR%%
