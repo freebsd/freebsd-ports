@@ -1,0 +1,27 @@
+bin/rrdtool
+bin/rrdcgi
+bin/log2rrd.pl
+share/rrdtool/examples/piped-demo.pl
+share/rrdtool/examples/shared-demo.pl
+share/rrdtool/examples/cgi-demo.cgi
+share/doc/rrdtool/README.log2rrd
+share/doc/rrdtool/RRDp.html
+share/doc/rrdtool/RRDs.html
+share/doc/rrdtool/bin_dec_hex.html
+share/doc/rrdtool/rrdcgi.html
+share/doc/rrdtool/rrdcreate.html
+share/doc/rrdtool/rrddump.html
+share/doc/rrdtool/rrdfetch.html
+share/doc/rrdtool/rrdgraph.html
+share/doc/rrdtool/rrdlast.html
+share/doc/rrdtool/rrdresize.html
+share/doc/rrdtool/rrdrestore.html
+share/doc/rrdtool/rrdtool.html
+share/doc/rrdtool/rrdtune.html
+share/doc/rrdtool/rrdtutorial.html
+share/doc/rrdtool/rrdupdate.html
+lib/perl5/site_perl/%%PERL_VER%%/RRDp.pm
+lib/perl5/site_perl/%%PERL_VER%%/RRDs.pm
+@dirrm share/rrdtool/examples
+@dirrm share/rrdtool
+@dirrm share/doc/rrdtool
