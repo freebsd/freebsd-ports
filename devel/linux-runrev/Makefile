@@ -61,6 +61,8 @@ post-patch:
 	@${SED} -e "s|%%PREFIX%%|${DATADIR}|" ${FILESDIR}/wrapper.sh > \
 		${WRKDIR}/wrapper.sh
 
+.include <bsd.port.pre.mk>
+
 do-install:
 	@${MKDIR} ${DATADIR}
 #	@${TAR} -C ${WRKSRC} -cf - . | ${TAR} -C ${DATADIR} --unlink -xf -
@@ -104,4 +106,4 @@ do-install:
 # install wrapper
 	@${INSTALL_SCRIPT} ${WRKDIR}/wrapper.sh ${PREFIX}/bin/revolution
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
