@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bnc
-PORTVERSION=	2.6.2
+PORTVERSION=	2.8.2
 CATEGORIES=	irc
 MASTER_SITES=	http://www.psn.net/~andrews/dist/
 DISTNAME=	${PORTNAME}${PORTVERSION}
