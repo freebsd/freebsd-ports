@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bbpager
-PORTVERSION=	0.2.8
+PORTVERSION=	0.3.0
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://bbtools.windsofstorm.net/sources/
 
