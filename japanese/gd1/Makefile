@@ -3,7 +3,7 @@
 # Date created:				19 Aug 1998
 # Whom:					ichiro@ichiro.org
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/09/10 14:17:47 kuriyama Exp $
 #
 
 DISTNAME=	gd1.3
@@ -31,8 +31,12 @@ do-install:
 		${INSTALL} -c -o bin -g bin -m 555 ${WRKSRC}/$$i \
 			${PREFIX}/lib; \
 	done
-	(cd ${PREFIX}/lib; ${LN} -sf libgd.so.1.3 libgd.so.1; \
-		${LN} -sf libgd.so.1 libgd.so)
+	if [ "${PORTOBJFORMAT}" = "aout" ]; then \
+		(cd ${PREFIX}/lib; ${LN} -sf libgd.so.1.3 libgd.so); \
+	else \
+		(cd ${PREFIX}/lib; ${MV} -sf libgd.so.1.3 libgd.so.1; \
+		${LN} -sf libgd.so.1 libgd.so); \
+	fi
 	for i in gddemo giftogd webgif; do \
 	${INSTALL} -c -o bin -g bin -m 755 ${WRKSRC}/$$i \
 		${PREFIX}/bin; \
@@ -47,6 +51,6 @@ do-install:
 	done
 
 post-install:
-	${LDCONFIG} -m ${PREFIX}/lib
+	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>
