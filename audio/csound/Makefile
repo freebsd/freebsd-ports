@@ -7,6 +7,7 @@
 
 PORTNAME=	csound
 PORTVERSION=	4.08
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	ftp://ftp.maths.bath.ac.uk/pub/dream/newest/
 DISTFILES=	Csound.tar.gz
