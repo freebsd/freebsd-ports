@@ -1,11 +1,15 @@
 --- Makefile.PL.orig	Tue Mar 12 22:07:07 2002
-+++ Makefile.PL	Thu May 16 12:21:00 2002
-@@ -9,14 +9,28 @@
++++ Makefile.PL	Mon Sep  9 21:28:36 2002
+@@ -9,14 +9,32 @@
  # FP extensions 5.0 from Martin Blapp <mbr@freebsd.org>
  #
  
 -$flavor=`uname`;
 -if (-e "/etc/mandrake-release") {$flavor="Mandrake";}
++use Symbol;
++use POSIX qw(:errno_h);
++use Cwd;
++
 +$prefix= $ENV{PREFIX};
 +if (!$prefix) {
 +	$prefix = "/usr/local/";
@@ -34,7 +38,31 @@
      print "If you don't know, enter the word 'findit'. I will try to look\n";
      print "for you... but it will take a few minutes.\n";
      print "Your choice: ";
-@@ -121,8 +135,8 @@
+@@ -109,20 +127,27 @@
+     $errorlog="$serverroot/$errorlog";
+     print "$errorlog\n";
+ }
+-print "DocumentRoot: $documentroot\n";
++$documentroot =~ s/"$//;
++$documentroot =~ s/^"//;
++$documentroot = realpath($documentroot);
++print "DocumentRoot: ($documentroot)\n";
+ 
+-$_=`ls -dln $documentroot|cut -c 17-30`;
+-if (/^(\d*)(\s*)(\d*)/) {
+-    $uid=$1; $gid=$3;
+-    print "Content uid $uid, gid $gid\n";
++($dev,$ino,$mode,$nlink,$uid,$gid,$rdev,$size,$atime,$mtime,
++$ctime,$blksize,$blocks) = stat $documentroot;
++
++if ($dev != 0 && $ino != 0) {
++	print "Content uid $uid, gid $gid\n";
++} else {
++	print "Could not get UID and GID of DocumentRoot\n";
++	exit;
+ }
+ 
+ #
  # Check the user for sanity
  # Should be 48 for Mandrake, 80 for BSD
  
@@ -45,7 +73,7 @@
  } else { $defaultid=99; }
  
  if ($uid < $defaultid) {
-@@ -158,11 +172,12 @@
+@@ -158,11 +183,40 @@
  $_=~ s|\$\(fpexec_logexec\)|$errorlog|;
  $_=~ s|\$\(fpexec_userdir\)|$userdir|;
  $_=~ s|\$\(fpexec_docroot\)|$documentroot|;
@@ -61,3 +89,31 @@
  print MAKF $_;
  }
  
++sub realpath($) {
++	my $dir = shift;
++	unless (-d $dir) {
++		if (-e $dir) {
++			$! = ENOTDIR;
++		} else {
++			$! = ENOENT;
++		}
++		return;
++	}
++	my $realpath;
++	my $pipe = gensym();
++	my $pid = open($pipe, "-|");
++	defined $pid or return;
++	if ($pid) {
++		$realpath = <$pipe>;
++		if (length $realpath) {
++			return $realpath;
++		} else {
++			$! = EINVAL;
++			return;
++		}
++	} else {
++		chdir $dir or die $!;
++		print cwd();
++		exit;
++	}
++}
