@@ -1,5 +1,5 @@
 --- Makefile.orig	Mon Dec  6 00:45:08 1999
-+++ Makefile	Wed Jan 31 14:58:33 2001
++++ Makefile	Sat Apr 19 16:12:07 2003
 @@ -1,16 +1,17 @@
 -
 -CFLAGS=-O2 -Wall -fomit-frame-pointer -malign-functions=0
@@ -23,7 +23,7 @@
 +	cp ./etc/wb0/wb0.config ${PREFIX}/etc/
 +	cp ./data/* ${PREFIX}/share/wb0/
 +	echo "path ${PREFIX}/share/wb0/" >>${PREFIX}/etc/wb0.config
-+	chmod a+s ${PREFIX}/bin/wb0
++	chmod u+s ${PREFIX}/bin/wb0
 +	chown root:wheel ${LOCALBASE}/bin/wb0
  
  pkfont: pkfont.c
