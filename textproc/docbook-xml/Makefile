@@ -40,7 +40,7 @@ do-install:
 	done
 
 post-install:
-	@${XMLCATMGR} -sc ${CATALOG_PORTS_SGML} add CATALOG ${DOCBOOKDIR}/docbook.cat
-	@${XMLCATMGR} -c ${CATALOG_PORTS_XML} add nextCatalog ${DOCBOOKDIR}/catalog.xml
+	@-${XMLCATMGR} -sc ${CATALOG_PORTS_SGML} add CATALOG ${DOCBOOKDIR}/docbook.cat
+	@-${XMLCATMGR} -c ${CATALOG_PORTS_XML} add nextCatalog ${DOCBOOKDIR}/catalog.xml
 
 .include <bsd.port.mk>
