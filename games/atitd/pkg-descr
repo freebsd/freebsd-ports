@@ -1,0 +1,23 @@
+The Linux "A Tale in the Desert" (ATITD) client.
+A Massively Multiplayer Online Roleplaying Game (MMORPG) by eGenesis.
+
+A free 24 hour demo period is provided for new users to evaluate this game.
+
+System Requirements:
+
+	Required:
+		Pentium 400
+		192Mb Ram
+		3D Accelerator
+	Recommended:
+		Pentium 700+
+		256Mb Ram
+		GeForce video card
+
+- NVIDIA users may have to reinstall the nvidia-driver port as installing
+  this port may cause the linux_dri port to be installed.  Alternately move
+  the /compat/linux/usr/X11R6/lib/libGL.so.* libraries out of the way.
+- DRI users may experience problems whose solution may be a more up to date
+  version of MesaGL (ports/graphics/mesagl).
+
+WWW: http://www.atitd.com/

@@ -1,0 +1,39 @@
+#!/bin/sh
+
+PATH=/bin:/usr/sbin
+
+if [ -n "${PACKAGE_BUILDING}" ]; then
+        exit 0
+fi
+
+case $2 in
+DEINSTALL)
+	rm -fr ${PKG_PREFIX}/games/atitd
+
+	;;
+
+POST-DEINSTALL)
+	PW=/usr/sbin/pw
+	USER=atitd
+	GROUP=atitd
+
+	echo -n "Checking for group '$GROUP'... "
+
+	if ! ${PW} groupshow $GROUP >/dev/null 2>&1; then
+		echo "doesn't exist."
+	else
+		echo "deleting."
+		${PW} groupdel -n ${GROUP}
+	fi
+
+	echo -n "Checking for user '$USER'... "
+
+	if ! ${PW} usershow $USER >/dev/null 2>&1; then
+		echo "doesn't exist."
+	else
+		echo "deleting."
+		${PW} userdel -n ${USER}
+	fi
+
+	;;
+esac
