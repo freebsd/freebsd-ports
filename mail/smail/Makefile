@@ -19,9 +19,6 @@ COMMENT=	A program used for receiving and delivering mail
 CONFLICTS=	bsmtp-*
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libident.a:${PORTSDIR}/security/libident
-.if !exists(/usr/include/tcpd.h)
-LIB_DEPENDS=	wrap.7:${PORTSDIR}/security/tcp_wrapper
-.endif
 
 CONFLICTS=	courier-0.* postfix-1.* postfix-2.* sendmail-8.* sendmail-*-8.* zmailer-2.*
 INSTALL_TARGET=	install installman
