@@ -1,7 +1,7 @@
-# $Id: Makefile,v 1.18 1995/02/10 08:07:59 gpalmer Exp $
+# $Id: Makefile,v 1.19 1995/02/12 21:13:29 hsu Exp $
 
-#Broken - expect
+#Broken - expect, tclX
 
-SUBDIR=	Gofer STk Sather forth gcl logo p2c schemetoc scm smalltalk tcl tclX
+SUBDIR=	Gofer STk Sather forth gcl logo p2c schemetoc scm smalltalk tcl
 
 .include <bsd.port.subdir.mk>
