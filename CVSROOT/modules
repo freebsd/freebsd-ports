@@ -269,6 +269,7 @@ amanda-server	ports/misc/amanda-server
 amaterus	ports/x11-wm/amaterus
 amavis-perl	ports/security/amavis-perl
 amavisd		ports/security/amavisd
+amavisd-new	ports/security/amavisd-new
 amaya		ports/www/amaya
 amcl		ports/net/amcl
 amd		src/usr.sbin/amd
