@@ -17,7 +17,7 @@ BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
 LIB_DEPENDS=	musicbrainz.1:${PORTSDIR}/audio/musicbrainz \
 		ORBit.2:${PORTSDIR}/devel/ORBit \
 		gdk_pixbuf.2:${PORTSDIR}/graphics/gdk-pixbuf \
-		freetype.9:${PORTSDIR}/print/freetype2
+		ttf.4:${PORTSDIR}/print/freetype
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_BZIP2=	yes
