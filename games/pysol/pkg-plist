@@ -786,7 +786,6 @@ share/pysol/html/intro.html
 share/pysol/html/news.html
 share/pysol/html/rules.html
 share/pysol/html/rules/8x8.html
-share/pysol/html/rules/abacus.html
 share/pysol/html/rules/acesup.html
 share/pysol/html/rules/achtmalacht.html
 share/pysol/html/rules/alaska.html
@@ -816,8 +815,6 @@ share/pysol/html/rules/casinoklondike.html
 share/pysol/html/rules/castlesinspain.html
 share/pysol/html/rules/chameleon.html
 share/pysol/html/rules/chessboard.html
-share/pysol/html/rules/chinesediscipline.html
-share/pysol/html/rules/chinesesolitaire.html
 share/pysol/html/rules/citadel.html
 share/pysol/html/rules/concentration.html
 share/pysol/html/rules/congress.html
@@ -869,7 +866,6 @@ share/pysol/html/rules/grandfathersclock.html
 share/pysol/html/rules/grandmothersgame.html
 share/pysol/html/rules/grasshopper.html
 share/pysol/html/rules/greatwall.html
-share/pysol/html/rules/griffon.html
 share/pysol/html/rules/groundforadivorce.html
 share/pysol/html/rules/gypsy.html
 share/pysol/html/rules/hexaklon.html
@@ -900,12 +896,10 @@ share/pysol/html/rules/memory8x5.html
 share/pysol/html/rules/midshipman.html
 share/pysol/html/rules/milligancell.html
 share/pysol/html/rules/milliganharp.html
-share/pysol/html/rules/mississippi.html
 share/pysol/html/rules/missmilligan.html
 share/pysol/html/rules/montana.html
 share/pysol/html/rules/montecarlo.html
 share/pysol/html/rules/napoleon.html
-share/pysol/html/rules/napoleonsexile.html
 share/pysol/html/rules/neighbour.html
 share/pysol/html/rules/numberten.html
 share/pysol/html/rules/numerica.html
@@ -928,8 +922,6 @@ share/pysol/html/rules/pokersquare.html
 share/pysol/html/rules/ponytail.html
 share/pysol/html/rules/pyramid.html
 share/pysol/html/rules/quadrangle.html
-share/pysol/html/rules/queenie.html
-share/pysol/html/rules/rachel.html
 share/pysol/html/rules/rainbow.html
 share/pysol/html/rules/rainfall.html
 share/pysol/html/rules/rankandfile.html
@@ -942,8 +934,6 @@ share/pysol/html/rules/relaxedseahaventowers.html
 share/pysol/html/rules/relaxedspider.html
 share/pysol/html/rules/royalcotillion.html
 share/pysol/html/rules/royaleast.html
-share/pysol/html/rules/rushdike.html
-share/pysol/html/rules/russianpoint.html
 share/pysol/html/rules/russiansolitaire.html
 share/pysol/html/rules/samuri.html
 share/pysol/html/rules/scorpion.html
