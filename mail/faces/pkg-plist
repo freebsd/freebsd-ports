@@ -2,6 +2,10 @@ bin/faces
 lib/X11/app-defaults/Faces
 bin/compface
 bin/uncompface
+bin/ikon2xbm
+bin/xbm2ikon
+bin/xbmcut48
+bin/xbmsize48
 include/compface.h
 lib/libcompface.a
 lib/libcompface.so

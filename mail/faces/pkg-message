@@ -1,0 +1,26 @@
+**************************************************
+NOTE:
+
+For generating faces out of xbm files you must use
+the following helper filters:
+
+    xbm2ikon
+
+and perhaps
+
+    xbmsize48 or xbmcut48
+
+e.g.
+
+    1) generate a 48x48x1 xbm file
+    2) cat <file.xbm> | xbm2ikon > file.ikon
+    3) compface file.ikon > file.face
+
+And the other way arround to display a face
+
+Note uncompface -X is the same as
+
+   uncompface | ikon2xbm
+
+useful for exmh!
+**************************************************
