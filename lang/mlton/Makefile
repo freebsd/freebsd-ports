@@ -21,6 +21,8 @@ EXTRACT_ONLY=	${SRC_DIST}
 MAINTAINER=	MLton@mlton.org
 COMMENT=	An optimizing Standard ML compiler
 
+BROKEN=		Size mismatch
+
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash2		\
 		hevea:${PORTSDIR}/textproc/hevea 	\
 		latex:${PORTSDIR}/print/teTeX
