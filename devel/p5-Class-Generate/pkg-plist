@@ -1,0 +1,6 @@
+lib/perl5/site_perl/%%PERL_VER%%/Class/Generate.pm
+lib/perl5/site_perl/%%PERL_VER%%/Class/Generate.pod
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Class/Generate/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Class
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Class/Generate
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Class

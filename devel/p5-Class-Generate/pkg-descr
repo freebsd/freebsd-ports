@@ -1,0 +1,10 @@
+Class::Generate is a Perl5 module to simplify creating class
+hierarchies.  It offers typed or untyped scalar, array, and hash
+members, required members, private members, methods (both
+instance and class), and other common features of object-
+oriented software development.  Of course, you can implement all
+these things without a special module, but doing it via
+Class::Generate is much, much more concise.  And futhermore,
+it's much less error prone: if you are using Perl's -w flag,
+Class::Generate will catch many class specification and usage
+errors.
