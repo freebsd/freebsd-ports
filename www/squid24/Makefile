@@ -1,13 +1,13 @@
 # New ports collection makefile for:	squid
-# Version required:	1.2-beta8
+# Version required:	1.2-beta10
 # Date created:		Thu Nov  7 00:53:18 WST 1996
 # Whom:			Peter Wemm <peter@freebsd.org>
 #
-# $Id: Makefile,v 1.34 1997/11/01 11:10:35 peter Exp $
+# $Id: Makefile,v 1.35 1997/12/06 12:27:32 peter Exp $
 #
 
-DISTNAME=	squid-1.2.beta8
-PKGNAME=	squid-1.2b8
+DISTNAME=	squid-1.2.beta10
+PKGNAME=	squid-1.2b10
 CATEGORIES=	www
 MASTER_SITES=  \
 	ftp://squid.nlanr.net/pub/squid-1.2.beta/ \
@@ -17,32 +17,17 @@ MASTER_SITES=  \
 EXTRACT_SUFX=	-src.tar.gz
 
 PATCH_SITES+=   http://squid.nlanr.net/Squid/1.2.beta/
-PATCHFILES+=    1.2.beta8.patches
+PATCHFILES+=    1.2.beta10.patches
 
 MAINTAINER=	peter@freebsd.org
 
-DIST_SUBDIR=	squid1.2b8
+DIST_SUBDIR=	squid1.2b10
 GNU_CONFIGURE=	yes
 # Follow the apache port's lead...
 CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc/squid --bindir=${PREFIX}/sbin \
 		--libexecdir=${PREFIX}/sbin --localstatedir=${PREFIX}/squid
 STRIP=		# won't install scripts correctly othervise.
 MAKEFILE=	makefile
-
-# If you need to set any of these options, read the source and uncomment
-# these if appropriate.
-#MAKE_ENV+=	HOST_OPT="-DCACHEMGR_HOSTNAME=\"getfullhostname()\""
-#MAKE_ENV+=	ICMP_OPT="-DUSE_ICMP=1"
-#MAKE_ENV+=	DELAY_HACK="-DDELAY_HACK=1"
-#MAKE_ENV+=	USERAGENT_OPT="-DUSE_USERAGENT_LOG=1"
-#MAKE_ENV+=	KILL_PARENT_OPT="-DKILL_PARENT_OPT"
-# do NOT define both USE_SPLAY_TREE and USE_BIN_TREE at the same time!
-#MAKE_ENV+=	USE_SPLAY_TREE="-DUSE_SPLAY_TREE"
-#MAKE_ENV+=	USE_BIN_TREE="-DUSE_BIN_TREE"
-#MAKE_ENV+=	ALARM_UPDATES_TIME="-DALARM_UPDATES_TIME=1"
-#MAKE_ENV+=	STORE_KEY_SHA="-DSTORE_KEY_SHA=1"
-#MAKE_ENV+=	STORE_KEY_MD5="-DSTORE_KEY_MD5=1"
-#MAKE_ENV+=	USE_ASYNC_IO="-DUSE_ASYNC_IO=1"
 
 # To turn on SNMP, uncomment these three.  I'm not sure how this works,
 # I think you need some sort of snmp multiplexor if you run another snmp
@@ -51,6 +36,23 @@ MAKEFILE=	makefile
 #MAKE_ENV+=	SQUID_MIB="mib.txt"
 #MAKE_ENV+=	SQUID_SNMP_LIBS="-L../snmplib -lsnmp"
 
+# Some other configure options..
+# - Use hash function as store index, instead of URL (trades CPU for memory)
+#CONFIGURE_ARGS+= --enable-hashkey=sha
+#CONFIGURE_ARGS+= --enable-hashkey=md5
+#  - Use ASYNC disk I/O (Requires pthreads, probably doesn't work yet)
+#CONFIGURE_ARGS+= --enable-async-io
+
+# There are several other configurable options in ${WRKSRC}/src/options.h[.in]
+# CACHEMGR_HOSTNAME	- alternate method for cachemgr.cgi to get hostname
+# USE_ICMP 1		- enable ICMP pings (using pinger) for selecting hosts.
+# DELAY_HACK 1		- see code.
+# USE_USERAGENT_LOG 1	- log user agents
+# KILL_PARENT_OPT 1	- kill parent (such as runcache) on SIGTERM etc.
+# USE_SPLAY_TREE 1	- use splay or binary trees for storing and searching
+# USE_BIN_TREE 1	  the in-memory cache contents table.
+# ALARM_UPDATES_TIME 1	- optimize gettimeofday calls (default on)
+# USE_ARP_ACL 1		- enable ethernet hardware address ACL's
 
 post-install:
 	cd ${WRKSRC}/src; make install-pinger
