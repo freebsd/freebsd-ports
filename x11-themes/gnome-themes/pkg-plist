@@ -1,4 +1,5 @@
 lib/gtk-2.0/2.2.0/engines/libcrux-engine.so
+lib/gtk-2.0/2.2.0/engines/libhcengine.so
 lib/gtk-2.0/2.2.0/engines/liblighthouseblue.so
 lib/gtk-2.0/2.2.0/engines/libmist.so
 share/eazel-engine/arrow_down-spinner.png
@@ -939,6 +940,7 @@ share/locale/fa/LC_MESSAGES/gnome-themes.mo
 share/locale/fi/LC_MESSAGES/gnome-themes.mo
 share/locale/fr/LC_MESSAGES/gnome-themes.mo
 share/locale/he/LC_MESSAGES/gnome-themes.mo
+share/locale/hi/LC_MESSAGES/gnome-themes.mo
 share/locale/hu/LC_MESSAGES/gnome-themes.mo
 share/locale/id/LC_MESSAGES/gnome-themes.mo
 share/locale/it/LC_MESSAGES/gnome-themes.mo
@@ -958,6 +960,8 @@ share/locale/ru/LC_MESSAGES/gnome-themes.mo
 share/locale/sk/LC_MESSAGES/gnome-themes.mo
 share/locale/sl/LC_MESSAGES/gnome-themes.mo
 share/locale/sq/LC_MESSAGES/gnome-themes.mo
+share/locale/sr/LC_MESSAGES/gnome-themes.mo
+share/locale/sr@Latn/LC_MESSAGES/gnome-themes.mo
 share/locale/sv/LC_MESSAGES/gnome-themes.mo
 share/locale/th/LC_MESSAGES/gnome-themes.mo
 share/locale/tr/LC_MESSAGES/gnome-themes.mo
