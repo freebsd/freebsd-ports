@@ -9,6 +9,7 @@ bin/mogrify
 bin/montage
 bin/xtp
 include/magick/PreRvIcccm.h
+include/magick/api.h
 include/magick/classify.h
 include/magick/compress.h
 include/magick/config.h
