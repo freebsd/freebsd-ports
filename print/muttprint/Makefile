@@ -49,7 +49,7 @@ INSTALL_TARGET=install-with-doc
 
 pre-everything::
 	@${ECHO}
-	@${ECHO} Set PAPERSIZE=A4 if you need that paper size.
+	@${ECHO} Set PAPERSIZE=a4 if you need that paper size.
 	@${ECHO} Set WITH_CUPS=yes if you want to use CUPS.
 	@${ECHO}
 
