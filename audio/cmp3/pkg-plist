@@ -1,2 +1,5 @@
 bin/cmp3
 bin/rnmp3
+share/doc/cmp3/README
+share/doc/cmp3/sample.cmp3rc
+@dirrm share/doc/cmp3
