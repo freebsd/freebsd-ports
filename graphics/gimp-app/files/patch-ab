@@ -1,13 +1,13 @@
---- plug-ins/common/url.c.orig	Tue Feb  1 16:09:01 2000
-+++ plug-ins/common/url.c	Sat Feb 19 13:51:36 2000
-@@ -158,8 +158,8 @@
-     }
-   else if (pid == 0)
-     {
--      execlp ("wget", "wget", filename, "-O", tmpname, NULL);
--      g_message ("url: exec failed: wget: %s\n", g_strerror(errno));
-+      execlp ("fetch", "fetch", filename, "-p -o", tmpname, NULL);
-+      g_message ("url: exec failed: fetch: %s\n", g_strerror(errno));
+--- plug-ins/common/url.c.orig	Wed Jun  7 21:46:43 2000
++++ plug-ins/common/url.c	Mon Jun 26 12:20:54 2000
+@@ -187,8 +187,8 @@
+       dup (p[1]);
+       close (p[1]);
+       putenv ("LC_ALL=C");  /* produce deterministic output */
+-      execlp ("wget", "wget", "-T", TIMEOUT, filename, "-O", tmpname, NULL);
+-      g_message ("url: exec() failed: wget: %s", g_strerror (errno));
++      execlp ("fetch", "fetch", "-T", TIMEOUT, filename, "-p", "-o", tmpname, NULL);
++      g_message ("url: exec() failed: fetch: %s", g_strerror(errno));
        g_free (tmpname);
-       _exit(127);
+       _exit (127);
      }
