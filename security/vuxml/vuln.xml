@@ -32,6 +32,33 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="553224e7-4325-11d9-a3d5-000c6e8f12ef">
+    <topic>jabberd -- remote buffer overflow vulnerability</topic>
+    <affects>
+      <package>
+	<name>jabberd</name>
+	<range><ge>2.*</ge><le>2.0.4</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Caused by improper bounds-checking of username
+	  and password in the C2S module, it is possible
+	  for an attacker to cause a remote buffer overflow.
+	  The server directly handles the userinput with
+	  SQL backend functions - malicious input may lead
+	  to buffer overflow.</p>
+      </body>
+    </description>
+    <references>
+      <mlist msgid="41A3FEE1.5030701@0x557.org">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=110144303826709</mlist>
+    </references>
+    <dates>
+      <discovery>2004-11-24</discovery>
+      <entry>2004-11-30</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="cdf14b68-3ff9-11d9-8405-00065be4b5b6">
     <topic>Open Dc Hub -- remote buffer overflow vulnerability</topic>
     <affects>
