@@ -1,0 +1,10 @@
+Mp3ck is a portable utility for checking the consistency of MPEG
+Layer 2 or 3 streams or files.  The primary accent of the check is
+on the seamless flow of frames and tags since most MPEG defects
+introduced by aborted network transfers manifest theirselves in its
+breakage.
+
+WWW: http://mp3ck.sourceforge.net/
+
+- Yar Tikhiy
+yar@FreeBSD.org
