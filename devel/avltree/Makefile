@@ -7,7 +7,7 @@
 PORTNAME=	avltree
 PORTVERSION=	1.1
 CATEGORIES=	devel
-MASTER_SITES=	ftp://odin.compchem.ucsf.edu/pub/amber/
+MASTER_SITES=	# disappeared in 2001
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An in-memory index w/ binary and string keys and key counts
