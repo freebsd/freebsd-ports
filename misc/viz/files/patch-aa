@@ -1,0 +1,91 @@
+--- Makefile.patched	Sat Mar  8 18:07:20 1997
++++ Makefile	Sat Mar  8 18:08:02 1997
+@@ -1,42 +1,30 @@
+ #######
+-# Where the executable goes
+-BINDIR=/usr/local/bin
+-
+-#######
+-# Man pages
+-
+-MANDIR=/usr/local/man/man1
+-MANEXT=1
+-
+-#######
+ # CC
+-CC=gcc
++CC=cc
+ 
+ #######
+ # Define's
+ # Define STRINGS if <strings.h> is to be used in place of <string.h>
+ # Define NOMEM if <memory.h> isn't available.
+ # Define EBCDIC if that character set is used.
+-DEFS =  -D_HPUX_SOURCE # -DNOMEM -DSTRINGS # -DEBCDIC
++DEFS = # -D_HPUX_SOURCE # -DNOMEM -DSTRINGS # -DEBCDIC
+ 
++#######
+ # Sizes of shorts, ints, longs.  (This has to be a #define: the sizeof
+ # operator isn't sufficient because we need to use the sizes in the argument
+ # to a #if expression.)
+ SIZES = -DL_SHORT=2 -DL_INT=4 -DL_LONG=4
+ 
+-
+ #######
+ # CFLAGS
+ # Always keep $(DEFS) and $(SIZES) in CFLAGS
+-CFLAGS = -O $(DEFS) $(SIZES)
++CFLAGS+= $(DEFS) $(SIZES)
+ 
+ #######
+ # LDFLAGS,LDLIBS
+-
+ LDFLAGS=
+ LDLIBS=
+ 
+-
+ ####################################################################
+ # You shouldn't have to modify anything below this line.
+ ####################################################################
+@@ -89,15 +77,13 @@
+ 	$(CC) $(CFLAGS) -c inviz_num.c
+ 
+ install: viz inviz
+-	cp viz $(BINDIR) && chmod 755 $(BINDIR)/viz
+-	cp inviz $(BINDIR) && chmod 755 $(BINDIR)/inviz
+-	cp viz.1 $(MANDIR)/viz.$(MANEXT) && \
+-		chmod 644 $(MANDIR)/viz.$(MANEXT)
+-	cp inviz.1 $(MANDIR)/inviz.$(MANEXT) && \
+-		chmod 644 $(MANDIR)/inviz.$(MANEXT)
++	install -c -s -m 755 viz $(PREFIX)/bin/viz
++	install -c -s -m 755 inviz $(PREFIX)/bin/inviz
++	install -c -m 644 viz.1 $(PREFIX)/man/man1/viz.1
++	install -c -m 644 inviz.1 $(PREFIX)/man/man1/inviz.1
+ 
+ clean:
+-	rm -f *.o viz inviz y.tab.c y.tab.h
++	rm -f *.o viz inviz y.tab.c y.tab.h vizgrammar.c
+ 
+ # Because of the wide variation in shar commands, the shar arguments
+ # used below sticks to a minimal set, and we generate various shar file
+--- viz.c.patched	Sat Mar  8 18:07:20 1997
++++ viz.c	Sat Mar  8 18:07:26 1997
+@@ -55,14 +55,17 @@
+ #define VIZ_MAIN
+ #include "viz.h"
+ 
++#ifndef _SYS_ERRNO_H_
+ extern errno;
+ extern int sys_nerr;
+ extern char *sys_errlist[];
++#endif
+ 
+-
++#ifndef _STDLIB_H_
+ extern char *malloc();
+ extern optind, opterr;
+ extern char *optarg;
++#endif
+ 
+ char *prog;
+ struct Format Fmt = {
