@@ -1,0 +1,5 @@
+FSP is a set of programs that implements a public-access archive
+similar to an anonymous-FTP archive.  It is not meant to be a
+replacement for ftp; it is only meant to do what anonymous-ftp
+does, but in a manner more acceptible to the provider of the
+service and more friendly to the clients. 
