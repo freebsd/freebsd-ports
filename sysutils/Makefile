@@ -30,6 +30,7 @@
     SUBDIR += eject
     SUBDIR += ffsrecov
     SUBDIR += flexbackup
+    SUBDIR += fontedit
     SUBDIR += fortunelock
     SUBDIR += gcombust
     SUBDIR += gkrellm
