@@ -166,6 +166,7 @@
     SUBDIR += libdvdnav
     SUBDIR += libdvdread
     SUBDIR += libexif
+    SUBDIR += libexif-gtk
     SUBDIR += libfame
     SUBDIR += libflash
     SUBDIR += libfpx
