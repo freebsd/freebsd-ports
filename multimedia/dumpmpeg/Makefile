@@ -16,12 +16,10 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ijliao@FreeBSD.org
 COMMENT=	Dump frames from mpeg movies
 
-LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12 \
-		smpeg:${PORTSDIR}/multimedia/smpeg
+LIB_DEPENDS=	smpeg:${PORTSDIR}/multimedia/smpeg
 
-SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	SDL_CONFIG=${SDL_CONFIG}
+USE_SDL=	sdl
 
 MAN1=		dumpmpeg.1
 PLIST_FILES=	bin/dumpmpeg

@@ -15,11 +15,9 @@ MASTER_SITES=	http://people.freenet.de/for_Ki/
 MAINTAINER=	ijliao@FreeBSD.org
 COMMENT=	An MPEG-1 video player
 
-LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12 \
-		smpeg:${PORTSDIR}/multimedia/smpeg
+LIB_DEPENDS=	smpeg:${PORTSDIR}/multimedia/smpeg
 
-SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	SDL_CONFIG=${SDL_CONFIG}
+USE_SDL=	sdl
 
 .include <bsd.port.mk>

@@ -15,21 +15,18 @@ MASTER_SITE_SUBDIR=	mjpeg
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	Supports reading/writing of MJPEG video in YUV 4:2:2 JPEG
 
-LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12 \
-		jpeg.9:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
 
+USE_SDL=	sdl
 USE_GNOME=	gtk12
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 USE_SIZE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS= --with-m4data-prefix=${PREFIX}/share
-CONFIGURE_ENV=  SDL_CONFIG="${SDL_CONFIG}" \
-		LOCALBASE="${LOCALBASE}"
+CONFIGURE_ENV=  LOCALBASE="${LOCALBASE}"
 MAKE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS=${PTHREAD_LIBS}
-
-SDL_CONFIG?=    ${LOCALBASE}/bin/sdl11-config
 
 .include <bsd.port.pre.mk>
 
