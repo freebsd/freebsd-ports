@@ -37,6 +37,8 @@ MAKE_ENV=		SDL_CONFIG="${LOCALBASE}/bin/sdl11-config"
 MAKE_ARGS=		ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" \
 			AUTOMAKE="${TRUE}" AUTOHEADER="${TRUE}"
 
+BROKEN=		"Does not compile"
+
 pre-configure:
 	@cd ${WRKSRC}/scripts && ${PERL} createAMMakefile.pl
 	@cd ${WRKSRC} && aclocal
