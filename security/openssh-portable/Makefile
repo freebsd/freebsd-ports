@@ -36,6 +36,12 @@ CONFIGURE_ARGS+=	--with-pam
 CONFIGURE_ARGS+=	--with-tcp-wrappers
 .endif
 
+.if defined(OPENSSH_OVERWRITE_BASE)
+PREFIX=		/usr
+CONFIGURE_ARGS+=	--mandir=${PREFIX}/share/man \
+		--sysconfdir=/etc/ssh --localstatedir=/var \
+.endif
+
 .if defined(BATCH)
 EXTRA_PATCHES+=		${FILESDIR}/batch.patch
 .endif
