@@ -18,12 +18,13 @@ yesno () {
 F=$WRKDIR/.config
 configure () {
 rm -f $F
+
 cat <<END
  Which servers do you wish to build, you can save a lot of disk space
  by only compiling the server you will be using.  It will also save you
  considerable compile time.
 END
-servers="SVGA VGA16 VGA16Dual Mono MonoDual S3 I8514 Mach8 Mach32 Mach64 P9000 AGX  W32"
+servers="SVGA VGA16 VGA16Dual Mono MonoDual S3 S3V I8514 Mach8 Mach32 Mach64 P9000 AGX  W32 I128"
 for i in $servers; do
   yesno "Do you want to build the $i server? [YES] "
   echo "#undef XF86${i}Server"           >>$F
@@ -38,17 +39,22 @@ if [ $answ != none ]; then
   echo "#define ServerToInstall		XF86_$answ" >>$F
 fi
 
+echo
+yesno "Do you want to build Xvfb? [YES] "
+echo "#define XVirtualFramebufferServer $answ" >>$F
+
 cat >> $F <<END
-#define XF86SvgaDrivers		et4000 et3000 pvga1 gvga ati tvga8900 cirrus \
-				ncr77c22 compaq oak mx al2101 ali cl64xx \
-				video7 chips generic
+#define XF86SvgaDrivers		nv et4000 et3000 pvga1 gvga ati sis tvga8900 \
+				cirrus ncr77c22 mga oak al2101 ali cl64xx \
+				video7 chips ark mx realtek apm generic
 
-#define XF86Vga16Drivers	et4000 ncr77c22 ati tvga8900 oak cl64xx generic
+#define XF86Vga16Drivers	et4000 et3000 ncr77c22 ati sis tvga8900 oak \
+				cl64xx generic 
 
-#define XF86Vga2Drivers		et4000 et3000 pvga1 gvga ati tvga8900 cirrus \
-				ncr77c22 compaq oak cl64xx generic
- 
-#define XF86MonoDrivers		hgc1280 sigma apollo hercules
+#define XF86Vga2Drivers		et4000 et3000 pvga1 gvga ati sis tvga8900 \
+				cirrus ncr77c22 oak cl64xx generic
+
+#define XF86MonoDrivers		hgc1280 sigma apollo
 
 #define XF86W32Drivers		et4000w32
 
@@ -62,18 +68,23 @@ cat <<END
  on a first time build.
 END
 yesno "Install xdm config? [YES] "
-echo "#undef InstallXdmConfig" >> $F
-echo "#define InstallXdmConfig	$answ" >> $F
+if [ $answ = YES ]; then
+  echo "#define InstallXdmConfig	$answ" >> $F
+fi
 yesno "Install xinit config? [YES] "
-echo "#undef InstallXinitConfig" >> $F
-echo "#define InstallXinitConfig $answ" >> $F
+if [ $answ = YES ]; then
+  echo "#define InstallXinitConfig $answ" >> $F
+fi
+yesno "Install xfs config? [YES] "
+if [ $answ = YES ]; then
+  echo "#define InstallFSConfig $answ" >> $F
+fi
 
 yesno "Do you want to include support for the FontServer? [YES] "
 echo "#undef BuildFontServer" >>$F
 echo "#define  BuildFontServer $answ" >>$F
 echo "#undef InstallFSConfig" >>$F
 echo "#define   InstallFSConfig $answ" >>$F
-echo "#define   BuildCyrillicFonts NO" >>$F
 
 cat <<'END'
  Do you want to Build Fonts (Usually you only want to build and install
@@ -84,6 +95,14 @@ yesno "Build fonts? [YES] "
 if [ $answ = NO ]; then
   echo "#define BuildFonts		NO" >> $F
 fi
+yesno "Build the servers with Extended input devices? [YES] "
+if [ $answ = NO ]; then
+  echo "#undef BuildXInputExt" >> $F
+  echo "#define BuildXInputExt		NO" >> $F
+else
+  echo "#define JoystickSupport		YES" >> $F
+fi
+
 yesno "Build PEX? [YES] "
 if [ $answ = NO ]; then
   echo "#define BuildPexExt		NO" >> $F
@@ -94,6 +113,10 @@ if [ $answ = NO ]; then
 fi
 echo
 
+echo "Build static libraries in addition to shared libraries? [YES] "
+if [ $answ = YES ]; then
+  echo "#define ForceNormalLib		YES" >> $F
+fi
 cat <<'END'
 
  MIT supplies an authentication mechanism that relies upon DES, this is
@@ -117,10 +140,10 @@ cat <<'END'
 
 END
 yesno "Do you want to enable XDM-AUTHORIZATION-1 support? [YES] "
+cpwh=NO
 if [ $answ = YES ]; then
     WH=$WRKDIR/xc/lib/Xdmcp/Wraphelp.c
 
-    cpwh=NO
     if [ -f $WH ] ; then
 	echo "==> $WH found in source distribution."
     elif [ -f $X11FIXES/Wraphelp.c ] ; then
@@ -130,135 +153,23 @@ if [ $answ = YES ]; then
 	echo "==> Wraphelp.c found in files directory, copying to source tree."
 	cpwh=$FILESDIR/Wraphelp.c
     else
-	echo "==> Wraphelp.c not found, DES support NOT enabled."
-	cpwh=NO
-    fi
-else
-    cpwh=NO
-fi
-echo "#undef	HadXdmAuth"			>> $F
-echo "#define	HasXdmAuth		$answ"	>> $F
-
-cat <<'END'
-
- Additional support for Kerberos V4 is available should you chose to
- install it.  If you choose to install the Kerberos V4 patches, you
- will also be asked if you want to enable Kerberos V4 support.
-
-END
-
-if [ ! -f /usr/lib/libkrb.a ]; then
-    echo "No kerberos library in /usr/lib. Kerberos V4 support disabled."
-    k4patch=NO
-else
-    yesno "Do you want to add the Kerberos V4 support patches? [YES] "
-    k4patch=$answ
-    if [ $k4patch = YES ] ; then
-      echo
-      yesno "Do you want to enable Kerberos V4 support? [YES] "
-      echo "#undef	HasKrb4" >>$F
-      echo "#define	HasKrb4 $answ" >>$F
+      echo "==> Wraphelp.c not found, DES support NOT enabled."
+      cpwh=NO
     fi
 fi
+if [ $cpwh != NO ]; then
+  echo "#define	HasXdmAuth		$answ"	>> $F
+fi
+
 echo
 echo "End of configuration questions. No more user input required"
 echo
 }
 
-if [ -f $WRKDIR/.cdrom ]; then
-  X11FIXES=`cat $WRKDIR/.cdrom`
-  echo -n 'Where is the "xc" directory on the cdrom? [/cdrom] '
-  read X11R6; if [ X$X11R6 = X ]; then X11R6=/cdrom; fi
-  if [ ! -d $X11R6/xc/config/cf ]; then 
-    echo "Can't find X11R6 in $X11R6"
-    exit 1
-  fi
-
-  yesno "Is your cdrom distibution already patched? [y] ";
-  if [ $answ = YES ]; then
-    echo -n "What is the patchlevel of the distribution? [3] ";
-    read pl; if [ X$pl = X ]; then pl=3; fi
-    pl=`expr $pl + 1`
-    if [ $pl -lt 10 ]; then pl=0$pl; fi
-  else
-    pl=01
-  fi
-  ok=0
-  err=0
-  for i in 01 02 03 04 05 06 07 08 09 10 11 12; do
-    if [ $i = $pl ]; then ok=1; fi
-    if [ $ok = 1 ]; then
-      if [ ! -f $X11FIXES/fix-$i ]; then
-         echo "can't find $X11FIXES/fix-$i !!!"
-         err=1
-      fi
-      if [ $i = 10 ]; then
-         if [ ! -f $X11FIXES/fix10fonts.Z ]; then
-           echo "can't find $X11FIXES/fix10fonts.Z !!!"
-           err=1    
-         fi
-      fi
-      if [ $i = 11 ]; then
-        if [ ! -f $X11FIXES/XFree86-3.1.1.tar.gz ]; then
-           echo "can't find $X11FIXES/XFree86-3.1.1.tar.gz !!!"
-           err=1
-        fi
-      fi 
-    fi
-  done
-  if [ ! -f $X11FIXES/XFree86-3.1.2.diff.gz ]; then
-     echo "can't find $X11FIXES/XFree86-3.1.2.diff.gz !!!"
-     err=1
-  fi
-  if [ ! -f $X11FIXES/3.1.2-3.1.2-S.diff.gz ]; then
-     echo "can't find $X11FIXES/3.1.2-3.1.2-S.diff.gz !!!"
-     err=1
-  fi
-  if [ $err = 1 ]; then exit 1; fi
-  configure
-  echo "==> building the tree"
-  (cd $WRKDIR; sh $FILESDIR/maketree $X11R6)
-else
-  X11FIXES=`cat $WRKDIR/.ftp`
-  pl=12
-  configure
-fi
+configure
 
 if [ X$cpwh != XNO ]; then
   cp $cpwh $WH
-fi
-
-echo -n "==> applying XC patches"
-ok=0
-for i in 01 02 03 04 05 06 07 08 09 10 11 12; do
-  if [ $i = $pl ]; then ok=1; fi
-  if [ $ok = 1 ]; then
-    echo -n .;
-    patch -d $WRKSRC --forward --quiet -E -p1 < $X11FIXES/fix-$i
-    if [ $i = 10 ]; then
-      zcat  $X11FIXES/fix10fonts.Z | patch -d $WRKSRC --forward --quiet -E -p1
-    fi
-    if [ $i = 11 ]; then
-      rm -rf $WRKDIR/xc/programs/Xserver/hw/xfree86
-      (cd $WRKDIR; gunzip -c $X11FIXES/XFree86-3.1.1.tar.gz | tar xpf -)
-    fi
-    if [ $i = 12 ]; then
-      rm -f $WRKDIR/xc/lib/Xt/Shell.h
-      rm -f $WRKDIR/xc/lib/StringDefs.h
-      rm -f $WRKDIR/xc/lib/StringDefs.c
-    fi
-  fi
-done
-echo 
-echo "==> applying XFree86 patches"
-zcat $X11FIXES/XFree86-3.1.2.diff.gz | patch -d $WRKSRC --forward --quiet -E -p1
-zcat $X11FIXES/3.1.2-3.1.2-S.diff.gz | patch -d $WRKSRC --forward --quiet -E -p1
-
-if [ $k4patch = YES ] ; then
-    echo
-    echo "==> applying Kerberos-V4 support patch"
-    cat $FILESDIR/kerberos4.diffs | \
-	patch -d $WRKSRC --forward --quiet -E -p1
 fi
 
 cat $F >>  $WRKSRC/config/cf/xf86site.def
@@ -268,11 +179,10 @@ cd $WRKSRC/config/cf/ || exit 1;
 version=`uname -r`
 set `echo $version|sed -e 's/\./ /g' -e 's/-/ /g'`
 mv FreeBSD.cf FreeBSD.cf.old
-sed -e "s/2.0.5/$version/"                       \
-    -e "s/OSMajorVersion *2/OSMajorVersion $1/"  \
-    -e "s/OSMinorVersion *0/OSMinorVersion $2/"  \
-    -e "s/OSTeenyVersion *5/OSTeenyVersion $3/"  \
-    -e "s/UseGnuMalloc.*YES/UseGnuMalloc  NO/" \
+sed -e "s/2.1.5/$version/"                       \
+    -e "s/#define OSMajorVersion.*2/#define OSMajorVersion $1/"  \
+    -e "s/#define OSMinorVersion.*1/#define OSMinorVersion $2/"  \
+    -e "s/#define OSTeenyVersion.*5/#define OSTeenyVersion $3/"  \
     <FreeBSD.cf.old >FreeBSD.cf
 
 exit 0
