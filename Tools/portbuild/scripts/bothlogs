@@ -1,0 +1,51 @@
+#!/bin/sh
+
+# prints out logs that are in dir1 and in dir2
+
+if [ $# != 2 ]; then
+  echo "usage: $0 dir1 dir2"
+  exit 1
+fi
+
+here=$(pwd)
+dir1=$1
+dir2=$2
+fdir1=$here/$dir1
+fdir2=$here/$dir2
+ldir2=$(cd $fdir2; cd ../logs; pwd)
+
+of=$here/$dir1+$dir2.html
+
+echo "<html><head><title>Logs that are in both $dir1 and $dir2</title>" >$of
+echo "<h1>Logs that are in both $dir1 and $dir2</h1>" >>$of
+echo "</head><body>" >>$of
+
+cd $fdir1
+
+set *.log
+
+if [ $# = 1 -a "x$1" = "x*.log" ]; then
+  echo "No errors" >>$of
+else
+  num=0
+  echo "<table border=1>" >>$of
+  echo "<tr><th>Log</th></tr>" >>$of
+  while [ $# -gt 0 ]; do
+    if [ -f ${ldir2}/$1 -a -f ${fdir2}/$1 ]; then
+      echo -n "<tr><td>" >>$of
+      echo -n "<a href=\"$dir1/index.html#$1\">" >>$of
+      echo -n $(basename $1 .log) >>$of
+      echo -n "</a>" >>$of
+      echo "</td></tr>" >>$of
+      num=$(($num + 1))
+    fi
+    shift
+  done
+  echo "</table><br>" >> $of
+  echo "$num errors<br>" >> $of
+fi
+
+echo "<hr>" >> $of
+echo "<a href=\"../\">back to top</a>" >> $of
+
+echo "</body></html>" >>$of
