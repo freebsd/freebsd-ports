@@ -19,7 +19,10 @@ COMMENT=	Understand can parse a Ada project helping reverse engineer it
 
 RUN_DEPENDS=	${LINUXBASE}/usr/X11R6/lib/libXrender.so.1:${PORTSDIR}/x11/linux-XFree86-libs
 
-BROKEN=		Unfetchable
+BROKEN=		Unfetchable, outdated, new version requires support contract
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=	2005-05-01
+RESTRICTED=	Commercial software
 
 ONLY_FOR_ARCHS=	i386
 NO_WRKSUBDIR=	yes
