@@ -6,7 +6,7 @@ bin/safe_finger
 bin/try-from
 lib/libwrap.a
 @exec ranlib %D/%F
-lib/libwrap.so.7.6
+lib/libwrap.so.7
 @exec /sbin/ldconfig -m %B
 @unexec /sbin/ldconfig -R
 etc/inetd.conf.wrapped.sample
