@@ -29,6 +29,5 @@ do-install:
 .for file in cdbmake-12 cdbmake-sv
 	${INSTALL_SCRIPT} ${WRKSRC}/${file} ${PREFIX}/bin
 .endfor
-	${INSTALL_DATA} ${WRKSRC}/cdb.h ${PREFIX}/include
 
 .include <bsd.port.mk>
