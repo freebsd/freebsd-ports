@@ -1,15 +1,15 @@
-AS offers the possibility to generate code for totally different
-processors. At the moment the following processor families are
+ASL offers the possibility to generate code for totally different
+processors. Currently, the following processor families are
 implemented:
 
- - Motorola 68000..68030,683xx inkl. Koprozessor und MMU
+ - Motorola 68000..68030,683xx incl. math co-processor and MMU
  - Motorola DSP56000
  - Motorola/IBM MPC601/MPC505/PPC403
- - Motorola 6800, 6805, 6809, 68(HC)11 sowie Hitachi 6301
+ - Motorola 6800, 6805, 6809, 68(HC)11, as well as Hitachi 6301
  - Hitachi 6309
  - Hitachi H8
  - Hitachi SH7000/7600
- - Rockwell 6502 und 65(S)C02
+ - Rockwell 6502 and 65(S)C02
  - CMD 65816
  - Mitsubishi MELPS-740
  - Mitsubishi MELPS-7700
@@ -38,6 +38,6 @@ implemented:
  - Texas Instruments TMS320C3x
  - Texas Instruments TMS370xxx
  - NEC uPD 78(C)1x
- - NEC uPD 75xxx (alias 75K0)
+ - NEC uPD 75xxx (a.k.a. 75K0)
 
 WWW: http://john.ccac.rwth-aachen.de:8000/as/
