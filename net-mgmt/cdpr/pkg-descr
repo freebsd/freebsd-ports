@@ -5,5 +5,8 @@ help network/system administrators find out about the equipment that i
 a machine is connected to. This is done by capturing and decoding a 
 Cisco Discovery Protocol (CDP) packet.
 
+AUTHOR:		Lance O'Connor <lance@monkeymental.com>
+WWW:		http://www.monkeymental.com/nuke/
+
 	- Michael L. Hostbaek
 	mich@freebsdcluster.org
