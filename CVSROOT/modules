@@ -6754,6 +6754,7 @@ usr.sbin	src/usr.sbin
 usrbin_global	src/usr.bin/global
 utah-glx	ports/graphics/utah-glx
 utf8conv	ports/converters/utf8conv
+utftpd		ports/net/utftpd
 utserver	ports/games/utserver
 utserver-asu	ports/games/utserver-asu
 utserver-to	ports/games/utserver-to
