@@ -22,13 +22,12 @@ fi
 
 case $1 in
 start)
-	touch /var/run/radiusd.pid
-	chown nobody:nobody /var/run/radiusd.pid
-
 	"$PREFIX"/sbin/radiusd $RADIUSD_FLAGS && echo -n " radiusd"
 	;;
 stop)
-	killall radiusd && echo -n ' radiusd'
+	if [ -f /var/run/radiusd/radiusd.pid ]; then
+		kill `cat /var/run/radiusd/radiusd.pid` && echo -n ' radiusd'
+	fi
 	;;
 *)
 	echo "Usage: `basename $0` {start|stop}" >&2
