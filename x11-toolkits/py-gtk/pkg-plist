@@ -2,44 +2,48 @@ bin/pygtk-codegen-1.2
 include/pygtk/pygdkimlib.h
 include/pygtk/pygdkpixbuf.h
 include/pygtk/pygtk.h
-lib/%%PYTHON_VERSION%%/site-packages/GDK.py
-lib/%%PYTHON_VERSION%%/site-packages/GDK.pyc
-lib/%%PYTHON_VERSION%%/site-packages/GDK.pyo
-lib/%%PYTHON_VERSION%%/site-packages/GTK.py
-lib/%%PYTHON_VERSION%%/site-packages/GTK.pyc
-lib/%%PYTHON_VERSION%%/site-packages/GTK.pyo
-lib/%%PYTHON_VERSION%%/site-packages/GdkImlib.py
-lib/%%PYTHON_VERSION%%/site-packages/GdkImlib.pyc
-lib/%%PYTHON_VERSION%%/site-packages/GdkImlib.pyo
-lib/%%PYTHON_VERSION%%/site-packages/GtkExtra.py
-lib/%%PYTHON_VERSION%%/site-packages/GtkExtra.pyc
-lib/%%PYTHON_VERSION%%/site-packages/GtkExtra.pyo
-lib/%%PYTHON_VERSION%%/site-packages/_gdkimlibmodule.so
-lib/%%PYTHON_VERSION%%/site-packages/_gtkglmodule.so
-lib/%%PYTHON_VERSION%%/site-packages/_gtkmodule.so
-lib/%%PYTHON_VERSION%%/site-packages/_libglademodule.so
-lib/%%PYTHON_VERSION%%/site-packages/gdkpixbufmodule.so
-lib/%%PYTHON_VERSION%%/site-packages/gtk.py
-lib/%%PYTHON_VERSION%%/site-packages/gtk.pyc
-lib/%%PYTHON_VERSION%%/site-packages/gtk.pyo
-lib/%%PYTHON_VERSION%%/site-packages/gtkgl.py
-lib/%%PYTHON_VERSION%%/site-packages/gtkgl.pyc
-lib/%%PYTHON_VERSION%%/site-packages/gtkgl.pyo
-lib/%%PYTHON_VERSION%%/site-packages/libglade.py
-lib/%%PYTHON_VERSION%%/site-packages/libglade.pyc
-lib/%%PYTHON_VERSION%%/site-packages/libglade.pyo
-lib/%%PYTHON_VERSION%%/site-packages/pyglade/__init__.py
-lib/%%PYTHON_VERSION%%/site-packages/pyglade/__init__.pyc
-lib/%%PYTHON_VERSION%%/site-packages/pyglade/__init__.pyo
-lib/%%PYTHON_VERSION%%/site-packages/pyglade/build.py
-lib/%%PYTHON_VERSION%%/site-packages/pyglade/build.pyc
-lib/%%PYTHON_VERSION%%/site-packages/pyglade/build.pyo
-lib/%%PYTHON_VERSION%%/site-packages/pyglade/style.py
-lib/%%PYTHON_VERSION%%/site-packages/pyglade/style.pyc
-lib/%%PYTHON_VERSION%%/site-packages/pyglade/style.pyo
-lib/%%PYTHON_VERSION%%/site-packages/pyglade/xmlparse.py
-lib/%%PYTHON_VERSION%%/site-packages/pyglade/xmlparse.pyc
-lib/%%PYTHON_VERSION%%/site-packages/pyglade/xmlparse.pyo
+%%PYTHON_SITELIBDIR%%/gtk-1.2/GDK.py
+%%PYTHON_SITELIBDIR%%/gtk-1.2/GDK.pyc
+%%PYTHON_SITELIBDIR%%/gtk-1.2/GDK.pyo
+%%PYTHON_SITELIBDIR%%/gtk-1.2/GTK.py
+%%PYTHON_SITELIBDIR%%/gtk-1.2/GTK.pyc
+%%PYTHON_SITELIBDIR%%/gtk-1.2/GTK.pyo
+%%PYTHON_SITELIBDIR%%/gtk-1.2/GdkImlib.py
+%%PYTHON_SITELIBDIR%%/gtk-1.2/GdkImlib.pyc
+%%PYTHON_SITELIBDIR%%/gtk-1.2/GdkImlib.pyo
+%%PYTHON_SITELIBDIR%%/gtk-1.2/GtkExtra.py
+%%PYTHON_SITELIBDIR%%/gtk-1.2/GtkExtra.pyc
+%%PYTHON_SITELIBDIR%%/gtk-1.2/GtkExtra.pyo
+%%PYTHON_SITELIBDIR%%/gtk-1.2/_gdkimlibmodule.so
+%%PYTHON_SITELIBDIR%%/gtk-1.2/_gtkglmodule.so
+%%PYTHON_SITELIBDIR%%/gtk-1.2/_gtkmodule.so
+%%PYTHON_SITELIBDIR%%/gtk-1.2/_libglademodule.so
+%%PYTHON_SITELIBDIR%%/gtk-1.2/gdkpixbufmodule.so
+%%PYTHON_SITELIBDIR%%/gtk-1.2/gtk.py
+%%PYTHON_SITELIBDIR%%/gtk-1.2/gtk.pyc
+%%PYTHON_SITELIBDIR%%/gtk-1.2/gtk.pyo
+%%PYTHON_SITELIBDIR%%/gtk-1.2/gtkgl.py
+%%PYTHON_SITELIBDIR%%/gtk-1.2/gtkgl.pyc
+%%PYTHON_SITELIBDIR%%/gtk-1.2/gtkgl.pyo
+%%PYTHON_SITELIBDIR%%/gtk-1.2/libglade.py
+%%PYTHON_SITELIBDIR%%/gtk-1.2/libglade.pyc
+%%PYTHON_SITELIBDIR%%/gtk-1.2/libglade.pyo
+%%PYTHON_SITELIBDIR%%/gtk-1.2/pyglade/__init__.py
+%%PYTHON_SITELIBDIR%%/gtk-1.2/pyglade/__init__.pyc
+%%PYTHON_SITELIBDIR%%/gtk-1.2/pyglade/__init__.pyo
+%%PYTHON_SITELIBDIR%%/gtk-1.2/pyglade/build.py
+%%PYTHON_SITELIBDIR%%/gtk-1.2/pyglade/build.pyc
+%%PYTHON_SITELIBDIR%%/gtk-1.2/pyglade/build.pyo
+%%PYTHON_SITELIBDIR%%/gtk-1.2/pyglade/style.py
+%%PYTHON_SITELIBDIR%%/gtk-1.2/pyglade/style.pyc
+%%PYTHON_SITELIBDIR%%/gtk-1.2/pyglade/style.pyo
+%%PYTHON_SITELIBDIR%%/gtk-1.2/pyglade/xmlparse.py
+%%PYTHON_SITELIBDIR%%/gtk-1.2/pyglade/xmlparse.pyc
+%%PYTHON_SITELIBDIR%%/gtk-1.2/pyglade/xmlparse.pyo
+%%PYTHON_SITELIBDIR%%/pygtk.pth
+%%PYTHON_SITELIBDIR%%/pygtk.py
+%%PYTHON_SITELIBDIR%%/pygtk.pyc
+%%PYTHON_SITELIBDIR%%/pygtk.pyo
 share/doc/py-gtk/MAPPING
 share/examples/py-gtk/gl/README
 share/examples/py-gtk/gl/cone.py
@@ -122,5 +126,6 @@ share/pygtk/1.2/defs/libglade.defs
 @dirrm share/examples/py-gtk/gl
 @dirrm share/examples/py-gtk
 @dirrm share/doc/py-gtk
-@dirrm lib/%%PYTHON_VERSION%%/site-packages/pyglade
+@dirrm %%PYTHON_SITELIBDIR%%/gtk-1.2/pyglade
+@dirrm %%PYTHON_SITELIBDIR%%/gtk-1.2
 @dirrm include/pygtk
