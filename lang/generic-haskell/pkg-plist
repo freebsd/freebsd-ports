@@ -1,0 +1,54 @@
+bin/gh
+lib/generic-haskell/Bounds.ghi
+lib/generic-haskell/Bounds.ghs
+lib/generic-haskell/Collect.ghi
+lib/generic-haskell/Collect.ghs
+lib/generic-haskell/Compare.ghi
+lib/generic-haskell/Compare.ghs
+lib/generic-haskell/Datatypes.ghi
+lib/generic-haskell/Datatypes.ghs
+lib/generic-haskell/DeepSeq.ghi
+lib/generic-haskell/DeepSeq.ghs
+lib/generic-haskell/Eq.ghi
+lib/generic-haskell/Eq.ghs
+lib/generic-haskell/GHPrelude.ghi
+lib/generic-haskell/GHPrelude.ghs
+lib/generic-haskell/GHPrelude.hs
+lib/generic-haskell/Map.ghi
+lib/generic-haskell/Map.ghs
+lib/generic-haskell/MapM.ghi
+lib/generic-haskell/MapM.ghs
+lib/generic-haskell/Prelude.ghi
+lib/generic-haskell/ReadShow.ghi
+lib/generic-haskell/ReadShow.ghs
+lib/generic-haskell/Reduce.ghi
+lib/generic-haskell/Reduce.ghs
+lib/generic-haskell/Table.ghi
+lib/generic-haskell/Table.ghs
+lib/generic-haskell/ZipWith.ghi
+lib/generic-haskell/ZipWith.ghs
+lib/generic-haskell/Exts/IOExts.ghi
+lib/generic-haskell/Exts/IORef.ghi
+lib/generic-haskell/Exts/Pretty.ghi
+lib/generic-haskell/Std/Array.ghi
+lib/generic-haskell/Std/CPUTime.ghi
+lib/generic-haskell/Std/Char.ghi
+lib/generic-haskell/Std/Complex.ghi
+lib/generic-haskell/Std/IO.ghi
+lib/generic-haskell/Std/Ix.ghi
+lib/generic-haskell/Std/List.ghi
+lib/generic-haskell/Std/Locale.ghi
+lib/generic-haskell/Std/Maybe.ghi
+lib/generic-haskell/Std/Monad.ghi
+lib/generic-haskell/Std/Numeric.ghi
+lib/generic-haskell/Std/Prelude.ghi
+lib/generic-haskell/Std/Random.ghi
+lib/generic-haskell/Std/Ratio.ghi
+lib/generic-haskell/Std/System.ghi
+lib/generic-haskell/Std/Time.ghi
+%%PORTDOCS%%share/doc/generic-haskell/GHUsersGuide.pdf
+%%PORTDOCS%%share/doc/generic-haskell/RELEASE
+%%PORTDOCS%%@dirrm share/doc/generic-haskell
+@dirrm lib/generic-haskell/Exts
+@dirrm lib/generic-haskell/Std
+@dirrm lib/generic-haskell

@@ -55,6 +55,7 @@
     SUBDIR += gcc32
     SUBDIR += gcc33
     SUBDIR += gcl
+    SUBDIR += generic-haskell
     SUBDIR += gforth
     SUBDIR += ghc
     SUBDIR += ghc-doc
