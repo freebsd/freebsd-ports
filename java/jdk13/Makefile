@@ -175,8 +175,6 @@ pre-everything:
 	@${ECHO_MSG} "To use the browser plugin with HotSpot you will need to set the"
 	@${ECHO_MSG} "THREADS_FLAG environment variable when running the browser, e.g."
 	@${ECHO_MSG} "    setenv THREADS_FLAG native"
-	@${ECHO_MSG} "Compiling HotSpot into the JDK will also currently make the"
-	@${ECHO_MSG} "Classic VM unusable."
 	@${ECHO_MSG} ""
 .endif
 
