@@ -10,7 +10,7 @@ PORTVERSION=	1.0.0
 CATEGORIES=	mbone
 MASTER_SITES=	http://www-mice.cs.ucl.ac.uk/multimedia/software/rqm/1.0.0/
 
-MAINTAINER=	fenner@FreeBSD.Org
+MAINTAINER=	fenner@FreeBSD.org
 COMMENT=	A graphical RTP quality monitor
 
 LIB_DEPENDS=	tk82.1:${PORTSDIR}/x11-toolkits/tk82
@@ -30,4 +30,10 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/rqm
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=		"Does not compile on FreeBSD ${OSVERSION}"
+.endif
+
+.include <bsd.port.post.mk>
