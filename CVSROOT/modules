@@ -1104,6 +1104,7 @@ dclib		ports/net/dclib
 dclock		ports/x11-clocks/dclock
 dctc		ports/net/dctc
 dctc-gui	ports/net/dctc-gui
+dctc-gui-qt	ports/net/dctc-gui-qt
 dd		src/bin/dd
 ddc		ports/net/ddc
 ddclient	ports/net/ddclient
