@@ -1,0 +1,22 @@
+--- makefile.orig	Mon Oct 20 23:21:59 2003
++++ makefile	Tue Mar  9 13:42:15 2004
+@@ -140,7 +140,6 @@
+ install: $(MAINLIB) $(PKG)
+ 	install -d $(LIBDIR)/imports/Graphics/UI/Port
+ 	install -d $(LIBDIR)/include/port
+-	install -d $(LIBDIR)/doc/html/port
+ 	install -m 644 src/include/HsPort.h $(LIBDIR)/include/port
+ 	install -m 644 $(HOUTDIR)/*.hi $(LIBDIR)/imports/Graphics/UI
+ 	install -m 644 $(HOUTDIR)/Port/*.hi $(LIBDIR)/imports/Graphics/UI/Port
+@@ -150,7 +149,10 @@
+ 	$(RM) $(LIBDIR)/include/port/HsPort.h
+ 	$(RM) $(LIBDIR)/$(MAINOBJ)
+ 	$(HCPKG) -u -g -i $(PKG)
+-	install -m 644 doc/*.html doc/*.css doc/*.gif doc/*.haddock $(LIBDIR)/doc/html/port
++
++install-doc:
++	install -d ${DOCSDIR}
++	${INSTALL_DATA} doc/*.html doc/*.css doc/*.gif doc/*.haddock ${DOCSDIR}
+ 
+ $(MAINLIB): $(HOBJS) $(COBJS) $(STUBSTUBOBJS)
+ 	  $(RM) $(MAINLIB)
