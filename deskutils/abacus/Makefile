@@ -7,6 +7,7 @@
 
 PORTNAME=	abacus
 PORTVERSION=	0.9.13
+PORTREVISION=	1
 CATEGORIES=	deskutils
 MASTER_SITES=	http://www-cad.eecs.berkeley.edu/HomePages/aml/abacus/ \
 		http://tahoe.inesc.pt/~aml/abacus/
@@ -24,7 +25,7 @@ LIB_DEPENDS=	tcl82.1:${PORTSDIR}/lang/tcl82 \
 USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-MAKE_ENV=	CXX="${CXX}" CXXFLAGS="${CXXFLAGS}"
+MAKE_ENV=	CXX="${CXX}" CXXFLAGS="${CXXFLAGS} -Wno-deprecated"
 ALL_TARGET=	dep tcl_interf/nxlc
 
 MAN1=		abacus.1
@@ -57,10 +58,4 @@ do-install:
 	@${MKDIR} ${PREFIX}/share/examples/abacus
 	${INSTALL_DATA} ${WRKSRC}/regressive/* ${PREFIX}/share/examples/abacus
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} > 501101
-BROKEN=		not compatible with gcc33
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
