@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	srp
-PORTVERSION=	1.7.4
+PORTVERSION=	1.7.5
 CATEGORIES=	security net
-MASTER_SITES=	http://www-cs-students.stanford.edu/~tjw/srp/source/
+MASTER_SITES=	http://www-cs-students.stanford.edu/~tjw/srp/source/ \
+		http://srp.stanford.edu/source/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Secure Remote Password protocol library, TELNET, and FTP
