@@ -3,16 +3,17 @@
 # Date created:         Wed Jul 31 21:59:42 CDT 1996
 # Whom:                 erich@FreeBSD.org
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1996/08/01 20:22:28 erich Exp $
 #
 
 DISTNAME=	splitmpg
-
+PKGNAME=	splitmpg-1.0
 CATEGORIES+=	graphics
 MASTER_SITES=	ftp://ftp.ecel.uwa.edu.au/users/michael/
-NO_WRKSUBDIR=	yes
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	erich@FreeBSD.org
+
+NO_WRKSUBDIR=	yes
 
 .include <bsd.port.mk>
