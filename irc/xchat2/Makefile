@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xchat2
-PORTVERSION=	2.4.2
+PORTVERSION=	2.4.3
 CATEGORIES=	irc gnome ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://xchat.org/files/source/2.4/
@@ -20,7 +20,7 @@ USE_X_PREFIX=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack gtk20
-GNU_CONFIGURE=	yes
+USE_LIBTOOL_VER=15
 USE_REINPLACE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
