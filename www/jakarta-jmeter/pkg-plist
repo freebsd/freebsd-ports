@@ -54,7 +54,6 @@ bin/jmeter
 %%T%%/docs/images/screenshots/gen-controller/ftp-request.gif
 %%T%%/docs/images/screenshots/gen-controller/http-request.png
 %%T%%/docs/images/screenshots/gen-controller/jdbc-request.gif
-%%T%%/docs/images/screenshots/http-config/.xvpics/http-config-example.png
 %%T%%/docs/images/screenshots/http-config/auth-manager-example1a.gif
 %%T%%/docs/images/screenshots/http-config/auth-manager-example1b.gif
 %%T%%/docs/images/screenshots/http-config/header-manager-example1a.gif
@@ -69,7 +68,6 @@ bin/jmeter
 %%T%%/docs/images/screenshots/jdbc-config/jdbc-db-conn-pool.gif
 %%T%%/docs/images/screenshots/jdbc-config/jdbc-db-login.gif
 %%T%%/docs/images/screenshots/jdbc-config/jdbc-sql-query.gif
-%%T%%/docs/images/screenshots/.xvpics/modification.png
 %%T%%/docs/images/screenshots/function_helper_dialog.png
 %%T%%/docs/images/screenshots/gauss_random_timer.gif
 %%T%%/docs/images/screenshots/graph_full_results.gif
@@ -147,7 +145,6 @@ bin/jmeter
 %%T%%/docs/usermanual/build-web-test-plan.html
 %%T%%/docs/usermanual/component_reference.html
 %%T%%/docs/usermanual/functions.html
-%%T%%/docs/usermanual/get-started.html
 %%T%%/docs/usermanual/glossary.html
 %%T%%/docs/usermanual/index.html
 %%T%%/docs/usermanual/intro.html
@@ -218,7 +215,6 @@ bin/jmeter
 %%T%%/printable_docs/usermanual/build-web-test-plan.html
 %%T%%/printable_docs/usermanual/component_reference.html
 %%T%%/printable_docs/usermanual/functions.html
-%%T%%/printable_docs/usermanual/get-started.html
 %%T%%/printable_docs/usermanual/glossary.html
 %%T%%/printable_docs/usermanual/index.html
 %%T%%/printable_docs/usermanual/intro.html
@@ -259,10 +255,8 @@ share/nls/en_US.US-ASCII
 @dirrm %%T%%/docs/images/screenshots/ftp-config
 @dirrm %%T%%/docs/images/screenshots/ftptest
 @dirrm %%T%%/docs/images/screenshots/gen-controller
-@dirrm %%T%%/docs/images/screenshots/http-config/.xvpics
 @dirrm %%T%%/docs/images/screenshots/http-config
 @dirrm %%T%%/docs/images/screenshots/jdbc-config
-@dirrm %%T%%/docs/images/screenshots/.xvpics
 @dirrm %%T%%/docs/images/screenshots
 @dirrm %%T%%/docs/images
 @dirrm %%T%%/docs/usermanual
