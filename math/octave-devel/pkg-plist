@@ -1,71 +1,19 @@
-bin/octave-bug
 bin/mkoctfile
-include/octave-%%OCTAVE_VERSION%%/config.h
-include/octave-%%OCTAVE_VERSION%%/f77-fcn.h
-include/octave-%%OCTAVE_VERSION%%/lo-error.h
-include/octave-%%OCTAVE_VERSION%%/Bounds.h
-include/octave-%%OCTAVE_VERSION%%/CollocWt.h
-include/octave-%%OCTAVE_VERSION%%/DAE.h
-include/octave-%%OCTAVE_VERSION%%/DAEFunc.h
-include/octave-%%OCTAVE_VERSION%%/DASSL.h
-include/octave-%%OCTAVE_VERSION%%/FEGrid.h
-include/octave-%%OCTAVE_VERSION%%/LinConst.h
-include/octave-%%OCTAVE_VERSION%%/LP.h
-include/octave-%%OCTAVE_VERSION%%/LPsolve.h
-include/octave-%%OCTAVE_VERSION%%/LSODE.h
-include/octave-%%OCTAVE_VERSION%%/NLConst.h
-include/octave-%%OCTAVE_VERSION%%/NLEqn.h
-include/octave-%%OCTAVE_VERSION%%/NLFunc.h
-include/octave-%%OCTAVE_VERSION%%/NLP.h
-include/octave-%%OCTAVE_VERSION%%/ODE.h
-include/octave-%%OCTAVE_VERSION%%/ODEFunc.h
-include/octave-%%OCTAVE_VERSION%%/Objective.h
-include/octave-%%OCTAVE_VERSION%%/QP.h
-include/octave-%%OCTAVE_VERSION%%/Quad.h
-include/octave-%%OCTAVE_VERSION%%/Range.h
-include/octave-%%OCTAVE_VERSION%%/base-de.h
-include/octave-%%OCTAVE_VERSION%%/base-min.h
-include/octave-%%OCTAVE_VERSION%%/byte-swap.h
-include/octave-%%OCTAVE_VERSION%%/cmd-hist.h
-include/octave-%%OCTAVE_VERSION%%/data-conv.h
-include/octave-%%OCTAVE_VERSION%%/dbleBessel.h
-include/octave-%%OCTAVE_VERSION%%/dir-ops.h
-include/octave-%%OCTAVE_VERSION%%/file-ops.h
-include/octave-%%OCTAVE_VERSION%%/getopt.h
-include/octave-%%OCTAVE_VERSION%%/idx-vector.h
-include/octave-%%OCTAVE_VERSION%%/lo-ieee.h
-include/octave-%%OCTAVE_VERSION%%/lo-mappers.h
-include/octave-%%OCTAVE_VERSION%%/lo-specfun.h
-include/octave-%%OCTAVE_VERSION%%/lo-utils.h
-include/octave-%%OCTAVE_VERSION%%/mach-info.h
-include/octave-%%OCTAVE_VERSION%%/oct-alloc.h
-include/octave-%%OCTAVE_VERSION%%/oct-cmplx.h
-include/octave-%%OCTAVE_VERSION%%/oct-glob.h
-include/octave-%%OCTAVE_VERSION%%/oct-math.h
-include/octave-%%OCTAVE_VERSION%%/oct-term.h
-include/octave-%%OCTAVE_VERSION%%/pathsearch.h
-include/octave-%%OCTAVE_VERSION%%/prog-args.h
-include/octave-%%OCTAVE_VERSION%%/statdefs.h
-include/octave-%%OCTAVE_VERSION%%/str-vec.h
-include/octave-%%OCTAVE_VERSION%%/sun-utils.h
-include/octave-%%OCTAVE_VERSION%%/sysdir.h
-include/octave-%%OCTAVE_VERSION%%/Array.h
-include/octave-%%OCTAVE_VERSION%%/Array2.h
-include/octave-%%OCTAVE_VERSION%%/Array3.h
-include/octave-%%OCTAVE_VERSION%%/DiagArray2.h
+bin/octave
+bin/octave-%%OCTAVE_VERSION%%
+bin/octave-bug
 include/octave-%%OCTAVE_VERSION%%/Array-flags.h
 include/octave-%%OCTAVE_VERSION%%/Array-idx.h
+include/octave-%%OCTAVE_VERSION%%/Array.cc
+include/octave-%%OCTAVE_VERSION%%/Array.h
 include/octave-%%OCTAVE_VERSION%%/Array2-idx.h
+include/octave-%%OCTAVE_VERSION%%/Array2.cc
+include/octave-%%OCTAVE_VERSION%%/Array2.h
 include/octave-%%OCTAVE_VERSION%%/Array3-idx.h
-include/octave-%%OCTAVE_VERSION%%/MArray-defs.h
-include/octave-%%OCTAVE_VERSION%%/MArray.h
-include/octave-%%OCTAVE_VERSION%%/MArray2.h
-include/octave-%%OCTAVE_VERSION%%/MDiagArray2.h
-include/octave-%%OCTAVE_VERSION%%/Matrix.h
-include/octave-%%OCTAVE_VERSION%%/base-lu.h
-include/octave-%%OCTAVE_VERSION%%/mx-base.h
-include/octave-%%OCTAVE_VERSION%%/mx-defs.h
-include/octave-%%OCTAVE_VERSION%%/mx-ext.h
+include/octave-%%OCTAVE_VERSION%%/Array3.cc
+include/octave-%%OCTAVE_VERSION%%/Array3.h
+include/octave-%%OCTAVE_VERSION%%/BaseSLList.h
+include/octave-%%OCTAVE_VERSION%%/Bounds.h
 include/octave-%%OCTAVE_VERSION%%/CColVector.h
 include/octave-%%OCTAVE_VERSION%%/CDiagMatrix.h
 include/octave-%%OCTAVE_VERSION%%/CMatrix.h
@@ -79,13 +27,59 @@ include/octave-%%OCTAVE_VERSION%%/CmplxQR.h
 include/octave-%%OCTAVE_VERSION%%/CmplxQRP.h
 include/octave-%%OCTAVE_VERSION%%/CmplxSCHUR.h
 include/octave-%%OCTAVE_VERSION%%/CmplxSVD.h
+include/octave-%%OCTAVE_VERSION%%/CollocWt.h
+include/octave-%%OCTAVE_VERSION%%/DAE.h
+include/octave-%%OCTAVE_VERSION%%/DAEFunc.h
+include/octave-%%OCTAVE_VERSION%%/DASSL.h
+include/octave-%%OCTAVE_VERSION%%/DLList.h
+include/octave-%%OCTAVE_VERSION%%/DiagArray2.cc
+include/octave-%%OCTAVE_VERSION%%/DiagArray2.h
 include/octave-%%OCTAVE_VERSION%%/EIG.h
+include/octave-%%OCTAVE_VERSION%%/FEGrid.h
+include/octave-%%OCTAVE_VERSION%%/LP.h
+include/octave-%%OCTAVE_VERSION%%/LPsolve.h
+include/octave-%%OCTAVE_VERSION%%/LSODE.h
+include/octave-%%OCTAVE_VERSION%%/LinConst.h
+include/octave-%%OCTAVE_VERSION%%/MArray-defs.h
+include/octave-%%OCTAVE_VERSION%%/MArray.cc
+include/octave-%%OCTAVE_VERSION%%/MArray.h
+include/octave-%%OCTAVE_VERSION%%/MArray2.cc
+include/octave-%%OCTAVE_VERSION%%/MArray2.h
+include/octave-%%OCTAVE_VERSION%%/MDiagArray2.cc
+include/octave-%%OCTAVE_VERSION%%/MDiagArray2.h
+include/octave-%%OCTAVE_VERSION%%/Map.h
+include/octave-%%OCTAVE_VERSION%%/Matrix.h
+include/octave-%%OCTAVE_VERSION%%/NLConst.h
+include/octave-%%OCTAVE_VERSION%%/NLEqn.h
+include/octave-%%OCTAVE_VERSION%%/NLFunc.h
+include/octave-%%OCTAVE_VERSION%%/NLP.h
+include/octave-%%OCTAVE_VERSION%%/ODE.h
+include/octave-%%OCTAVE_VERSION%%/ODEFunc.h
+include/octave-%%OCTAVE_VERSION%%/Objective.h
+include/octave-%%OCTAVE_VERSION%%/Pix.h
+include/octave-%%OCTAVE_VERSION%%/QP.h
+include/octave-%%OCTAVE_VERSION%%/Quad.h
+include/octave-%%OCTAVE_VERSION%%/Range.h
+include/octave-%%OCTAVE_VERSION%%/SLList.h
+include/octave-%%OCTAVE_VERSION%%/SLStack.h
+include/octave-%%OCTAVE_VERSION%%/Stack.h
+include/octave-%%OCTAVE_VERSION%%/base-de.h
+include/octave-%%OCTAVE_VERSION%%/base-lu.cc
+include/octave-%%OCTAVE_VERSION%%/base-lu.h
+include/octave-%%OCTAVE_VERSION%%/base-min.h
+include/octave-%%OCTAVE_VERSION%%/builtins.h
+include/octave-%%OCTAVE_VERSION%%/byte-swap.h
 include/octave-%%OCTAVE_VERSION%%/chMatrix.h
+include/octave-%%OCTAVE_VERSION%%/cmd-hist.h
+include/octave-%%OCTAVE_VERSION%%/config.h
 include/octave-%%OCTAVE_VERSION%%/dColVector.h
 include/octave-%%OCTAVE_VERSION%%/dDiagMatrix.h
 include/octave-%%OCTAVE_VERSION%%/dMatrix.h
 include/octave-%%OCTAVE_VERSION%%/dRowVector.h
+include/octave-%%OCTAVE_VERSION%%/data-conv.h
+include/octave-%%OCTAVE_VERSION%%/data.h
 include/octave-%%OCTAVE_VERSION%%/dbleAEPBAL.h
+include/octave-%%OCTAVE_VERSION%%/dbleBessel.h
 include/octave-%%OCTAVE_VERSION%%/dbleCHOL.h
 include/octave-%%OCTAVE_VERSION%%/dbleDET.h
 include/octave-%%OCTAVE_VERSION%%/dbleGEPBAL.h
@@ -95,114 +89,53 @@ include/octave-%%OCTAVE_VERSION%%/dbleQR.h
 include/octave-%%OCTAVE_VERSION%%/dbleQRP.h
 include/octave-%%OCTAVE_VERSION%%/dbleSCHUR.h
 include/octave-%%OCTAVE_VERSION%%/dbleSVD.h
-include/octave-%%OCTAVE_VERSION%%/Array.cc
-include/octave-%%OCTAVE_VERSION%%/Array2.cc
-include/octave-%%OCTAVE_VERSION%%/Array3.cc
-include/octave-%%OCTAVE_VERSION%%/DiagArray2.cc
-include/octave-%%OCTAVE_VERSION%%/MArray.cc
-include/octave-%%OCTAVE_VERSION%%/MArray2.cc
-include/octave-%%OCTAVE_VERSION%%/MDiagArray2.cc
-include/octave-%%OCTAVE_VERSION%%/base-lu.cc
-@exec /bin/ln -s %D/include/octave-%%OCTAVE_VERSION%% %D/include/octave
-@unexec /bin/rm -f %D/include/octave
-bin/octave
-bin/octave-%%OCTAVE_VERSION%%
-libexec/octave/%%OCTAVE_VERSION%%/exec/i386-unknown-freebsd/info-emacs-info
-libexec/octave/%%OCTAVE_VERSION%%/exec/i386-unknown-freebsd/info-emacs-octave-help
-libexec/octave/ls-R
-@dirrm libexec/octave/%%OCTAVE_VERSION%%/exec/i386-unknown-freebsd
-@dirrm libexec/octave/%%OCTAVE_VERSION%%/exec
-@dirrm libexec/octave/%%OCTAVE_VERSION%%/oct/i386-unknown-freebsd
-@dirrm libexec/octave/%%OCTAVE_VERSION%%/oct
-@dirrm libexec/octave/%%OCTAVE_VERSION%%
-@dirrm libexec/octave/site/exec/i386-unknown-freebsd
-@dirrm libexec/octave/site/exec
-@dirrm libexec/octave/site/oct/i386-unknown-freebsd
-@dirrm libexec/octave/site/oct
-@dirrm libexec/octave/site
-@dirrm libexec/octave
-include/octave-%%OCTAVE_VERSION%%/builtins.h
-include/octave-%%OCTAVE_VERSION%%/data.h
-include/octave-%%OCTAVE_VERSION%%/defun.h
+include/octave-%%OCTAVE_VERSION%%/defaults.h
 include/octave-%%OCTAVE_VERSION%%/defun-dld.h
 include/octave-%%OCTAVE_VERSION%%/defun-int.h
+include/octave-%%OCTAVE_VERSION%%/defun.h
+include/octave-%%OCTAVE_VERSION%%/dir-ops.h
 include/octave-%%OCTAVE_VERSION%%/dirfns.h
 include/octave-%%OCTAVE_VERSION%%/dynamic-ld.h
 include/octave-%%OCTAVE_VERSION%%/error.h
+include/octave-%%OCTAVE_VERSION%%/f77-fcn.h
 include/octave-%%OCTAVE_VERSION%%/file-io.h
+include/octave-%%OCTAVE_VERSION%%/file-ops.h
 include/octave-%%OCTAVE_VERSION%%/fn-cache.h
+include/octave-%%OCTAVE_VERSION%%/getopt.h
 include/octave-%%OCTAVE_VERSION%%/gripes.h
 include/octave-%%OCTAVE_VERSION%%/help.h
+include/octave-%%OCTAVE_VERSION%%/idx-vector.h
 include/octave-%%OCTAVE_VERSION%%/input.h
 include/octave-%%OCTAVE_VERSION%%/lex.h
+include/octave-%%OCTAVE_VERSION%%/lo-error.h
+include/octave-%%OCTAVE_VERSION%%/lo-ieee.h
+include/octave-%%OCTAVE_VERSION%%/lo-mappers.h
+include/octave-%%OCTAVE_VERSION%%/lo-specfun.h
+include/octave-%%OCTAVE_VERSION%%/lo-utils.h
 include/octave-%%OCTAVE_VERSION%%/load-save.h
+include/octave-%%OCTAVE_VERSION%%/mach-info.h
 include/octave-%%OCTAVE_VERSION%%/mappers.h
-include/octave-%%OCTAVE_VERSION%%/oct.h
+include/octave-%%OCTAVE_VERSION%%/mx-base.h
+include/octave-%%OCTAVE_VERSION%%/mx-defs.h
+include/octave-%%OCTAVE_VERSION%%/mx-ext.h
+include/octave-%%OCTAVE_VERSION%%/oct-alloc.h
+include/octave-%%OCTAVE_VERSION%%/oct-cmplx.h
+include/octave-%%OCTAVE_VERSION%%/oct-conf.h
 include/octave-%%OCTAVE_VERSION%%/oct-fstrm.h
+include/octave-%%OCTAVE_VERSION%%/oct-glob.h
+include/octave-%%OCTAVE_VERSION%%/oct-gperf.h
 include/octave-%%OCTAVE_VERSION%%/oct-hist.h
 include/octave-%%OCTAVE_VERSION%%/oct-iostrm.h
 include/octave-%%OCTAVE_VERSION%%/oct-map.h
+include/octave-%%OCTAVE_VERSION%%/oct-math.h
 include/octave-%%OCTAVE_VERSION%%/oct-obj.h
 include/octave-%%OCTAVE_VERSION%%/oct-prcstrm.h
 include/octave-%%OCTAVE_VERSION%%/oct-procbuf.h
 include/octave-%%OCTAVE_VERSION%%/oct-stdstrm.h
 include/octave-%%OCTAVE_VERSION%%/oct-stream.h
 include/octave-%%OCTAVE_VERSION%%/oct-strstrm.h
-include/octave-%%OCTAVE_VERSION%%/pager.h
-include/octave-%%OCTAVE_VERSION%%/parse.h
-include/octave-%%OCTAVE_VERSION%%/pathlen.h
-include/octave-%%OCTAVE_VERSION%%/pr-output.h
-include/octave-%%OCTAVE_VERSION%%/procstream.h
-include/octave-%%OCTAVE_VERSION%%/pt-base.h
-include/octave-%%OCTAVE_VERSION%%/pt-cmd.h
-include/octave-%%OCTAVE_VERSION%%/pt-const.h
-include/octave-%%OCTAVE_VERSION%%/pt-exp-base.h
-include/octave-%%OCTAVE_VERSION%%/pt-exp.h
-include/octave-%%OCTAVE_VERSION%%/pt-fcn.h
-include/octave-%%OCTAVE_VERSION%%/pt-fvc-base.h
-include/octave-%%OCTAVE_VERSION%%/pt-fvc.h
-include/octave-%%OCTAVE_VERSION%%/pt-mat.h
-include/octave-%%OCTAVE_VERSION%%/pt-misc.h
-include/octave-%%OCTAVE_VERSION%%/pt-mvr-base.h
-include/octave-%%OCTAVE_VERSION%%/pt-mvr.h
-include/octave-%%OCTAVE_VERSION%%/pt-plot.h
-include/octave-%%OCTAVE_VERSION%%/pt-pr-code.h
-include/octave-%%OCTAVE_VERSION%%/pt-walk.h
-include/octave-%%OCTAVE_VERSION%%/sighandlers.h
-include/octave-%%OCTAVE_VERSION%%/symtab.h
-include/octave-%%OCTAVE_VERSION%%/syscalls.h
-include/octave-%%OCTAVE_VERSION%%/sysdep.h
-include/octave-%%OCTAVE_VERSION%%/systime.h
-include/octave-%%OCTAVE_VERSION%%/syswait.h
-include/octave-%%OCTAVE_VERSION%%/token.h
-include/octave-%%OCTAVE_VERSION%%/toplev.h
-include/octave-%%OCTAVE_VERSION%%/unwind-prot.h
-include/octave-%%OCTAVE_VERSION%%/utils.h
-include/octave-%%OCTAVE_VERSION%%/variables.h
-include/octave-%%OCTAVE_VERSION%%/version.h
-include/octave-%%OCTAVE_VERSION%%/xdiv.h
-include/octave-%%OCTAVE_VERSION%%/xpow.h
-include/octave-%%OCTAVE_VERSION%%/BaseSLList.h
-include/octave-%%OCTAVE_VERSION%%/DLList.h
-include/octave-%%OCTAVE_VERSION%%/Map.h
-include/octave-%%OCTAVE_VERSION%%/Pix.h
-include/octave-%%OCTAVE_VERSION%%/SLList.h
-include/octave-%%OCTAVE_VERSION%%/SLStack.h
-include/octave-%%OCTAVE_VERSION%%/Stack.h
-include/octave-%%OCTAVE_VERSION%%/ov-re-mat.h
-include/octave-%%OCTAVE_VERSION%%/ov-cx-mat.h
-include/octave-%%OCTAVE_VERSION%%/ov-ch-mat.h
-include/octave-%%OCTAVE_VERSION%%/ov-struct.h
-include/octave-%%OCTAVE_VERSION%%/ov-scalar.h
-include/octave-%%OCTAVE_VERSION%%/ov-range.h
-include/octave-%%OCTAVE_VERSION%%/ov-complex.h
-include/octave-%%OCTAVE_VERSION%%/ov-va-args.h
-include/octave-%%OCTAVE_VERSION%%/ov-colon.h
-include/octave-%%OCTAVE_VERSION%%/ov-base.h
-include/octave-%%OCTAVE_VERSION%%/ov-str-mat.h
-include/octave-%%OCTAVE_VERSION%%/ov.h
-include/octave-%%OCTAVE_VERSION%%/ov-typeinfo.h
-include/octave-%%OCTAVE_VERSION%%/ops.h
+include/octave-%%OCTAVE_VERSION%%/oct-term.h
+include/octave-%%OCTAVE_VERSION%%/oct.h
 include/octave-%%OCTAVE_VERSION%%/op-cm-cm.h
 include/octave-%%OCTAVE_VERSION%%/op-cm-cs.h
 include/octave-%%OCTAVE_VERSION%%/op-cm-m.h
@@ -220,14 +153,92 @@ include/octave-%%OCTAVE_VERSION%%/op-s-cs.h
 include/octave-%%OCTAVE_VERSION%%/op-s-m.h
 include/octave-%%OCTAVE_VERSION%%/op-s-s.h
 include/octave-%%OCTAVE_VERSION%%/op-str-str.h
-include/octave-%%OCTAVE_VERSION%%/defaults.h
-include/octave-%%OCTAVE_VERSION%%/oct-conf.h
-include/octave-%%OCTAVE_VERSION%%/oct-gperf.h
-@dirrm include/octave-%%OCTAVE_VERSION%%
+include/octave-%%OCTAVE_VERSION%%/ops.h
+include/octave-%%OCTAVE_VERSION%%/ov-base.h
+include/octave-%%OCTAVE_VERSION%%/ov-ch-mat.h
+include/octave-%%OCTAVE_VERSION%%/ov-colon.h
+include/octave-%%OCTAVE_VERSION%%/ov-complex.h
+include/octave-%%OCTAVE_VERSION%%/ov-cx-mat.h
+include/octave-%%OCTAVE_VERSION%%/ov-range.h
+include/octave-%%OCTAVE_VERSION%%/ov-re-mat.h
+include/octave-%%OCTAVE_VERSION%%/ov-scalar.h
+include/octave-%%OCTAVE_VERSION%%/ov-str-mat.h
+include/octave-%%OCTAVE_VERSION%%/ov-struct.h
+include/octave-%%OCTAVE_VERSION%%/ov-typeinfo.h
+include/octave-%%OCTAVE_VERSION%%/ov-va-args.h
+include/octave-%%OCTAVE_VERSION%%/ov.h
+include/octave-%%OCTAVE_VERSION%%/pager.h
+include/octave-%%OCTAVE_VERSION%%/parse.h
+include/octave-%%OCTAVE_VERSION%%/pathlen.h
+include/octave-%%OCTAVE_VERSION%%/pathsearch.h
+include/octave-%%OCTAVE_VERSION%%/pr-output.h
+include/octave-%%OCTAVE_VERSION%%/procstream.h
+include/octave-%%OCTAVE_VERSION%%/prog-args.h
+include/octave-%%OCTAVE_VERSION%%/pt-base.h
+include/octave-%%OCTAVE_VERSION%%/pt-cmd.h
+include/octave-%%OCTAVE_VERSION%%/pt-const.h
+include/octave-%%OCTAVE_VERSION%%/pt-exp-base.h
+include/octave-%%OCTAVE_VERSION%%/pt-exp.h
+include/octave-%%OCTAVE_VERSION%%/pt-fcn.h
+include/octave-%%OCTAVE_VERSION%%/pt-fvc-base.h
+include/octave-%%OCTAVE_VERSION%%/pt-fvc.h
+include/octave-%%OCTAVE_VERSION%%/pt-mat.h
+include/octave-%%OCTAVE_VERSION%%/pt-misc.h
+include/octave-%%OCTAVE_VERSION%%/pt-mvr-base.h
+include/octave-%%OCTAVE_VERSION%%/pt-mvr.h
+include/octave-%%OCTAVE_VERSION%%/pt-plot.h
+include/octave-%%OCTAVE_VERSION%%/pt-pr-code.h
+include/octave-%%OCTAVE_VERSION%%/pt-walk.h
+include/octave-%%OCTAVE_VERSION%%/sighandlers.h
+include/octave-%%OCTAVE_VERSION%%/statdefs.h
+include/octave-%%OCTAVE_VERSION%%/str-vec.h
+include/octave-%%OCTAVE_VERSION%%/sun-utils.h
+include/octave-%%OCTAVE_VERSION%%/symtab.h
+include/octave-%%OCTAVE_VERSION%%/syscalls.h
+include/octave-%%OCTAVE_VERSION%%/sysdep.h
+include/octave-%%OCTAVE_VERSION%%/sysdir.h
+include/octave-%%OCTAVE_VERSION%%/systime.h
+include/octave-%%OCTAVE_VERSION%%/syswait.h
+include/octave-%%OCTAVE_VERSION%%/token.h
+include/octave-%%OCTAVE_VERSION%%/toplev.h
+include/octave-%%OCTAVE_VERSION%%/unwind-prot.h
+include/octave-%%OCTAVE_VERSION%%/utils.h
+include/octave-%%OCTAVE_VERSION%%/variables.h
+include/octave-%%OCTAVE_VERSION%%/version.h
+include/octave-%%OCTAVE_VERSION%%/xdiv.h
+include/octave-%%OCTAVE_VERSION%%/xpow.h
+@unexec /bin/rm -f %D/include/octave
+@exec /bin/ln -sf %D/include/octave-%%OCTAVE_VERSION%% %D/include/octave
+@unexec install-info --delete --defentry='* Octave: (octave).    Interactive language for numerical computations.' %D/info/octave.info %D/info/dir
+@unexec install-info --delete --defentry='* LibOctave: (liboctave).      C++ class library for Octave.' %D/info/liboctave.info %D/info/dir
+info/octave.info
+info/octave.info-1
+info/octave.info-2
+info/octave.info-3
+info/octave.info-4
+info/octave.info-5
+info/octave.info-6
+info/octave.info-7
+info/octave.info-8
+info/octave.info-9
+info/octave.info-10
+info/octave.info-11
+info/octave.info-12
+info/liboctave.info
+info/liboctave.info-1
+info/liboctave.info-2
+info/liboctave.info-3
+@exec install-info --defentry='* Octave: (octave).    Interactive language for numerical computations.' %D/octave.info %D/info/dir
+@exec install-info --defentry='* LibOctave: (liboctave).      C++ class library for Octave.' %D/liboctave.info %D/info/dir
 lib/octave-%%OCTAVE_VERSION%%/libcruft.a
 lib/octave-%%OCTAVE_VERSION%%/liboctave.a
 lib/octave-%%OCTAVE_VERSION%%/liboctinterp.a
-@dirrm lib/octave-%%OCTAVE_VERSION%%
+@unexec /bin/rm -f %D/lib/octave
+@exec /bin/ln -sf %D/lib/octave-%%OCTAVE_VERSION%% %D/lib/octave
+libexec/octave/%%OCTAVE_VERSION%%/exec/%%GNU_HOST%%/info-emacs-info
+libexec/octave/%%OCTAVE_VERSION%%/exec/%%GNU_HOST%%/info-emacs-octave-help
+libexec/octave/ls-R
+share/octave/%%OCTAVE_VERSION%%/imagelib/default.img
 share/octave/%%OCTAVE_VERSION%%/m/audio/lin2mu.m
 share/octave/%%OCTAVE_VERSION%%/m/audio/loadaudio.m
 share/octave/%%OCTAVE_VERSION%%/m/audio/mu2lin.m
@@ -307,7 +318,6 @@ share/octave/%%OCTAVE_VERSION%%/m/image/ocean.m
 share/octave/%%OCTAVE_VERSION%%/m/image/rgb2ind.m
 share/octave/%%OCTAVE_VERSION%%/m/image/rgb2ntsc.m
 share/octave/%%OCTAVE_VERSION%%/m/image/saveimage.m
-share/octave/%%OCTAVE_VERSION%%/imagelib/default.img
 share/octave/%%OCTAVE_VERSION%%/m/io/printf.m
 share/octave/%%OCTAVE_VERSION%%/m/io/puts.m
 share/octave/%%OCTAVE_VERSION%%/m/linear-algebra/commutation_matrix.m
@@ -423,7 +433,6 @@ share/octave/%%OCTAVE_VERSION%%/m/special-matrix/sylvester_matrix.m
 share/octave/%%OCTAVE_VERSION%%/m/special-matrix/toeplitz.m
 share/octave/%%OCTAVE_VERSION%%/m/special-matrix/vander.m
 share/octave/%%OCTAVE_VERSION%%/m/startup/octaverc
-share/octave/site/m/startup/octaverc
 share/octave/%%OCTAVE_VERSION%%/m/statistics/corrcoef.m
 share/octave/%%OCTAVE_VERSION%%/m/statistics/cov.m
 share/octave/%%OCTAVE_VERSION%%/m/statistics/gls.m
@@ -457,13 +466,27 @@ share/octave/%%OCTAVE_VERSION%%/m/time/asctime.m
 share/octave/%%OCTAVE_VERSION%%/m/time/clock.m
 share/octave/%%OCTAVE_VERSION%%/m/time/ctime.m
 share/octave/%%OCTAVE_VERSION%%/m/time/date.m
-share/octave/ls-R
 share/octave/doc/Octave-FAQ.ps
-share/octave/doc/octave.ps
 share/octave/doc/liboctave.ps
+share/octave/doc/octave.ps
 share/octave/doc/refcard-a4.ps
 share/octave/doc/refcard-legal.ps
 share/octave/doc/refcard-letter.ps
+share/octave/ls-R
+share/octave/site/m/startup/octaverc
+@dirrm include/octave-%%OCTAVE_VERSION%%
+@dirrm lib/octave-%%OCTAVE_VERSION%%
+@dirrm libexec/octave/%%OCTAVE_VERSION%%/exec/%%GNU_HOST%%
+@dirrm libexec/octave/%%OCTAVE_VERSION%%/exec
+@dirrm libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%
+@dirrm libexec/octave/%%OCTAVE_VERSION%%/oct
+@dirrm libexec/octave/%%OCTAVE_VERSION%%
+@dirrm libexec/octave/site/exec/%%GNU_HOST%%
+@dirrm libexec/octave/site/exec
+@dirrm libexec/octave/site/oct/%%GNU_HOST%%
+@dirrm libexec/octave/site/oct
+@dirrm libexec/octave/site
+@dirrm libexec/octave
 @dirrm share/octave/%%OCTAVE_VERSION%%/imagelib
 @dirrm share/octave/%%OCTAVE_VERSION%%/m/audio
 @dirrm share/octave/%%OCTAVE_VERSION%%/m/control
@@ -490,24 +513,3 @@ share/octave/doc/refcard-letter.ps
 @dirrm share/octave/site
 @dirrm share/octave/doc
 @dirrm share/octave
-@unexec install-info --delete --defentry='* Octave: (octave).    Interactive language for numerical computations.' %D/info/octave.info %D/info/dir
-@unexec install-info --delete --defentry='* LibOctave: (liboctave).      C++ class library for Octave.' %D/info/liboctave.info %D/info/dir
-info/octave.info
-info/octave.info-1
-info/octave.info-2
-info/octave.info-3
-info/octave.info-4
-info/octave.info-5
-info/octave.info-6
-info/octave.info-7
-info/octave.info-8
-info/octave.info-9
-info/octave.info-10
-info/octave.info-11
-info/octave.info-12
-info/liboctave.info
-info/liboctave.info-1
-info/liboctave.info-2
-info/liboctave.info-3
-@exec install-info --defentry='* Octave: (octave).    Interactive language for numerical computations.' %D/octave.info %D/info/dir
-@exec install-info --defentry='* LibOctave: (liboctave).      C++ class library for Octave.' %D/liboctave.info %D/info/dir

@@ -1,0 +1,12 @@
+--- configure.orig	Thu May 21 20:16:26 1998
++++ configure	Wed May 12 16:34:24 1999
+@@ -5875,6 +5875,9 @@
+ 
+ unwind-prot.o: unwind-prot.cc 
+ 	$(CXX) -c $(CPPFLAGS) $(CXXFLAGS_NO_PT_FLAGS) $<
++ 
++xdiv.o: xdiv.cc 
++	$(CXX) -c $(CPPFLAGS) $(CXXFLAGS_NO_PT_FLAGS) $<
+ 
+ EOF
+   ;;

@@ -1,0 +1,11 @@
+--- doc/liboctave/Makefile.in.orig	Wed May 12 13:10:19 1999
++++ doc/liboctave/Makefile.in	Wed May 12 13:04:51 1999
+@@ -42,7 +42,7 @@
+ .PHONY: all
+ 
+ liboctave.info: $(TEXINFO) ../conf.texi
+-	-makeinfo -I$(srcdir) -I$(srcdir)/.. $(srcdir)/liboctave.texi
++	-makeinfo --force -I$(srcdir) -I$(srcdir)/.. $(srcdir)/liboctave.texi
+ 
+ liboctave.dvi: $(TEXINFO) ../conf.texi
+ 	-TEXINPUTS="$(srcdir):$(srcdir)/..:$(TEXINPUTS):" ; \
