@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	uconv
-PORTVERSION=	0.4.9
+PORTVERSION=	0.4.10
 CATEGORIES=	japanese converters ruby
 MASTER_SITES=	http://www.yoshidam.net/
 DIST_SUBDIR=	ruby
