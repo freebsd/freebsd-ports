@@ -6,27 +6,24 @@
 #
 
 PORTNAME=	rubix
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.2
 CATEGORIES=	games
 MASTER_SITES=	http://sed.free.fr/rubix/
 
 MAINTAINER=	ports@FreeBSD.org
 
-USE_GMAKE=	yes
-MAKE_ENV=	GMAKE=${GMAKE}
 USE_X_PREFIX=	yes
+USE_GMAKE=	yes
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/rubix ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/rubix ${PREFIX}/bin
 	@${MKDIR} ${PREFIX}/share/rubix
-	@${INSTALL_DATA} ${WRKSRC}/module.xm ${PREFIX}/share/rubix
+	${INSTALL_DATA} ${WRKSRC}/module.xm ${PREFIX}/share/rubix
 .if !defined(NOPORTDOCS)
-.for DOC in AUTHORS BUGS INSTALL NOISE README TODO
-	@${INSTALL_DATA} ${WRKSRC}/${DOC} ${PREFIX}/share/rubix
+.for file in AUTHORS BUGS INSTALL NOISE README TODO
+	@${MKDIR} ${PREFIX}/share/doc/rubix
+	${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/rubix
 .endfor
-	@${ECHO}
-	@${ECHO} "Docs are installed in ${PREFIX}/share/rubix."
-	@${ECHO}
 .endif
 
 .include <bsd.port.mk>
