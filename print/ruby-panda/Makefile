@@ -17,7 +17,7 @@ MAINTAINER=	knu@FreeBSD.org
 
 LIB_DEPENDS=	panda.0:${PORTSDIR}/print/panda \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
-		png.4:${PORTSDIR}/graphics/png \
+		png.5:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff
 
 USE_RUBY=	yes

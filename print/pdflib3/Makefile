@@ -14,7 +14,7 @@ MAINTAINER=	billf@FreeBSD.org
 
 RUN_DEPENDS=	${LOCALBASE}/lib/afm/Courier:${PORTSDIR}/print/afm
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
-		png.4:${PORTSDIR}/graphics/png
+		png.5:${PORTSDIR}/graphics/png
 
 RESTRICTED=	"many odd restrictions on usage and distribution"
 INSTALLS_SHLIB=	yes
