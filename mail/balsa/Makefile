@@ -6,18 +6,19 @@
 #
 
 PORTNAME=	balsa
-PORTVERSION=	1.2.3
+PORTVERSION=	1.3.0
 CATEGORIES=	mail gnome
 MASTER_SITES=	http://www.theochem.kth.se/~pawsa/balsa/ \
 		ftp://ftp.newton.cx/pub/balsa/
 
 MAINTAINER=	gnome@FreeBSD.org
 
-LIB_DEPENDS=	esmtp.5:${PORTSDIR}/mail/libesmtp \
-		ldap.2:${PORTSDIR}/net/openldap2 \
+LIB_DEPENDS=	ldap.2:${PORTSDIR}/net/openldap2 \
 		aspell.11:${PORTSDIR}/textproc/aspell \
 		pcre.0:${PORTSDIR}/devel/pcre
-RUN_DEPENDS=	${LOCALBASE}/bin/ispell:${PORTSDIR}/textproc/ispell
+BUILD_DEPENDS=	${LOCALBASE}/bin/libesmtp-config:${PORTSDIR}/mail/libesmtp
+RUN_DEPENDS=	${LOCALBASE}/bin/ispell:${PORTSDIR}/textproc/ispell \
+		${LOCALBASE}/bin/libesmtp-config:${PORTSDIR}/mail/libesmtp
 
 USE_X_PREFIX=	yes
 USE_GNOME=	yes
@@ -29,12 +30,12 @@ CONFIGURE_ARGS=	--enable-threads \
 		--enable-ldap \
 		--disable-more-warnings \
 		--with-ssl
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LIBS="-L${LOCALBASE}/lib -lgiconv"
 
 MAN1=		balsa.1
 
-pre-patch:
+post-patch:
 	@${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
 		 s|DATADIRNAME=lib|DATADIRNAME=share|g ; \
 		 s|-liconv|-lgiconv|g ; s|iconv_open|libiconv_open|g ; \
