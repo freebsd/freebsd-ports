@@ -1,17 +1,18 @@
 # New ports collection makefile for:	expect
-# Version required:	5.22.0
-# Date created:		10 March 1997
+# Version required:	5.25
+# Date created:		17 Oct 1997
 # Whom:			taguchi
 #
-# $Id: Makefile,v 1.2 1997/03/25 08:01:45 obrien Exp $
+# $Id: Makefile,v 1.3 1997/09/14 21:34:35 max Exp $
 #
 
 FILESDIR=	${.CURDIR}/../../lang/expect/files
 
+NO_MAN_INSTALL=	yes
 .include "${.CURDIR}/../../lang/expect/Makefile"
 
-PKGNAME=	ja-expect-5.22.0
-CATEGORIES=	japanese
+PKGNAME=	ja-expect-5.25
+CATEGORIES=	japanese lang
 
 MAINTAINER=	taguchi@tohoku.iij.ad.jp
 
@@ -22,3 +23,6 @@ CONFIGURE_ARGS=	--enable-shared --with-tclconfig=${PREFIX}/lib/tcl7.6jp \
 		--with-tkconfig=${PREFIX}/lib/tk4.2jp \
 		--with-tclinclude=${PREFIX}/include/tcl7.6jp \
 		--with-tkinclude=${PREFIX}/include/tk4.2jp
+
+test:
+	@(cd ${WRKSRC}; make test)

@@ -1,5 +1,5 @@
---- fixcat.ORIG	Mon Mar 10 18:13:20 1997
-+++ fixcat	Mon Mar 10 18:15:06 1997
+--- fixcat.ORIG	Fri Oct 17 10:08:26 1997
++++ fixcat	Fri Oct 17 10:08:38 1997
 @@ -1,4 +1,4 @@
 -#!expect --
 +#!expectjp --
