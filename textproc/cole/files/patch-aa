@@ -1,0 +1,40 @@
+--- oledecod.c.orig	Thu Nov  4 14:11:11 1999
++++ oledecod.c	Thu Nov  4 14:16:20 1999
+@@ -39,7 +39,7 @@
+ #include <stdarg.h>
+ #include <stdlib.h>
+ #include <string.h>
+-#include <malloc.h>
++#include <stdlib.h>
+ #include <ctype.h>
+ #include <sys/types.h>
+ #include <assert.h>
+@@ -575,10 +575,12 @@
+ 
+   /* reorder subtrees, if there's any */
+   if (node->dir != 0xffffffffUL)
++    {
+     if (node->dir > num_of_pps || !pps_list[node->dir].name[0])
+       return 0;
+     else if (!reorder_pps_tree (&pps_list[node->dir], level + 1))
+       return 0;
++    }
+ 
+   /* reorder next-link subtree, saving the most next link visited */
+   if (node->next != 0xffffffffUL)
+@@ -593,6 +595,7 @@
+ 
+   /* move the prev child to the next link and reorder it, if there's any */
+   if (node->previous != 0xffffffffUL)
++    {
+     if (node->previous > num_of_pps || !pps_list[node->previous].name[0])
+       return 0;
+     else
+@@ -602,6 +605,7 @@
+ 	if (!reorder_pps_tree (&pps_list[*last_next_link_visited], level))
+ 	  return 0;
+       }
++    }
+ 
+   return 1;
+ }
