@@ -115,6 +115,7 @@
     SUBDIR += grande
     SUBDIR += greed
     SUBDIR += gru
+    SUBDIR += grubinvaders
     SUBDIR += gshisen
     SUBDIR += gtetrinet
     SUBDIR += gtkabale
