@@ -1,8 +1,8 @@
 $FreeBSD$
 
---- Coro/Makefile.PL.orig	Mon Jan 27 10:25:21 2003
-+++ Coro/Makefile.PL	Mon Jan 27 10:27:04 2003
-@@ -24,62 +24,15 @@ if ($^O =~ /win32/i or $^O =~ /cygwin/) 
+--- Coro/Makefile.PL.orig	Tue Dec 16 11:11:52 2003
++++ Coro/Makefile.PL	Tue Dec 16 11:14:33 2003
+@@ -31,58 +31,15 @@ if ($^O =~ /win32/i or $^O =~ /cygwin/) 
     $iface = "s";
  }
  
@@ -23,10 +23,8 @@ $FreeBSD$
 -
 -EOF
 -
--print "Do you want to enable C context sharing (y/n) [y]? ";
--
--if (<> !~ /^\s*n/i) {
-+if (1 || <> !~ /^\s*n/i) {
+-if (prompt ("Do you want to enable C context sharing (y/n)", "y") !~ /^\s*n/i) {
++if (1 || prompt ("Do you want to enable C context sharing (y/n)", "y") !~ /^\s*n/i) {
     print "\nExperimental context sharing enabled.\n\n";
     $DEFINE .= " -DCORO_LAZY_STACK";
  }
@@ -50,7 +48,7 @@ $FreeBSD$
 -
 -l  Older GNU/Linux systems (glibc-2.1 and below) need this hack. Since it is
 -   very linux-specific it is also quite fast for newer versions; when it
--   works, that is...
+-   works, that is (currently x86 only)...
 -
 -i  IRIX. For some reason, SGI really does not like to follow the unix
 -   standard (does that surprise you?), so this workaround might be needed
@@ -59,11 +57,9 @@ $FreeBSD$
 -EOF
 -
  retry:
--   print "Use which implementation,\n",
--         "<s>etjmp/longjump, <u>context, <i>rix or <l>inux [$iface]? ";
  
--   my $r = <>;
-+   my $r = "s" || <>;
+-   my $r = prompt "Use which implementation,\n" .
++   my $r = 's' || prompt "Use which implementation,\n" .
+                   "<s>etjmp/longjump, <u>context, <i>rix or <l>inux?",
+                   $iface;
     $iface = lc $1 if $r =~ /(\S)/;
- 
-    if ($iface eq "u") {
