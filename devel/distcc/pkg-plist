@@ -3,7 +3,7 @@ bin/distcc
 bin/distccmon-text
 %%WITH_GNOME%%bin/distccmon-gnome
 sbin/distccd
-etc/rc.d/distccd.sh.sample
+etc/rc.d/distccd.sh
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
 %%PORTDOCS%%%%DOCSDIR%%/NEWS

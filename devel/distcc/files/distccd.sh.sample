@@ -3,23 +3,26 @@
 # $FreeBSD$
 #
 
-if ! PREFIX=$(expr $0 : "\(/.*\)/etc/rc\.d/$(basename $0)\$"); then
-    echo "$0: Cannot determine the PREFIX" >&2
-    exit 1
-fi
+# PROVIDE: distccd
+# REQUIRE: NETWORKING
+# KEYWORD: FreeBSD shutdown
 
-case "$1" in
-start)
-	[ -x ${PREFIX}/sbin/distccd ] && \
-		${PREFIX}/sbin/distccd -P /var/run/distccd.pid \
-		--user distcc --daemon && echo -n ' distcc'
-	;;
-stop)
-	kill -TERM `cat /var/run/distccd.pid` && echo -n ' distcc'
-	;;
-*)
-	echo "Usage: `basename $0` { start | stop }" >&2
-	;;
-esac
+#
+# Add the following lines to /etc/rc.conf to enable distccd:
+#
+# distccd_enable="YES"
+#
 
-exit 0
+distccd_enable="NO"
+distccd_flags="--user distcc --daemon -P %%DISTCCD_PIDFILE%%"
+
+. %%RC_SUBR%%
+
+name=distccd
+rcvar=`set_rcvar`
+
+command=%%PREFIX%%/sbin/${name}
+pidfile=%%DISTCCD_PIDFILE%%
+
+load_rc_config ${name}
+run_rc_command "$1"

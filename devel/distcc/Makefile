@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	distcc
-PORTVERSION=	2.14
+PORTVERSION=	2.16
 CATEGORIES=	devel
 MASTER_SITES=	http://distcc.samba.org/ftp/distcc/
 
@@ -15,11 +15,13 @@ COMMENT=	Distribute compilation of C(++) code acrosss machines on a network
 
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
 
+USE_RC_SUBR=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 WANT_GNOME=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
+DISTCCD_PIDFILE=/var/run/distccd.pid
 
 OPTIONS=	GNOME "Build GUI monitor based on GNOME" Off \
 		GTK "Build GUI monitor based on GTK" Off
@@ -46,6 +48,9 @@ DOC_FILES=	AUTHORS INSTALL NEWS README \
 		doc/protocol-2.txt doc/reporting-bugs.txt
 
 pre-install:
+	@${SED} -e 's|%%PREFIX%%|${PREFIX}|; s|%%RC_SUBR%%|${RC_SUBR}|; \
+		s|%%DISTCCD_PIDFILE%%|${DISTCCD_PIDFILE}|' \
+		${FILESDIR}/distccd.sh.sample >${WRKDIR}/distccd.sh
 	@${SETENV} ${SCRIPTS_ENV} PKG_PREFIX="${PREFIX}" \
 		${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
@@ -56,12 +61,12 @@ do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/distccmon-gnome ${PREFIX}/bin
 .endif
 	@${INSTALL_PROGRAM} ${WRKSRC}/distccd ${PREFIX}/sbin
-	@${INSTALL_SCRIPT} -m 751 ${FILESDIR}/distccd.sh.sample \
-		${PREFIX}/etc/rc.d/distccd.sh.sample
+	@${INSTALL_SCRIPT} -m 751 ${WRKDIR}/distccd.sh \
+		${PREFIX}/etc/rc.d/distccd.sh
 
 post-install: install-doc install-man
-	@${TOUCH} /var/run/distccd.pid
-	@${CHOWN} distcc:distcc /var/run/distccd.pid
+	@${TOUCH} ${DISTCCD_PIDFILE}
+	@${CHOWN} distcc:distcc ${DISTCCD_PIDFILE}
 	@${CAT} ${PKGMESSAGE}
 
 install-doc:
