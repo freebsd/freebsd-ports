@@ -4835,6 +4835,7 @@ libstatgrab	ports/devel/libstatgrab
 libstocks	ports/finance/libstocks
 libstrfunc	ports/devel/libstrfunc
 libstroke	ports/devel/libstroke
+libsvg		ports/graphics/libsvg
 libsvm		ports/science/libsvm
 libsx		ports/x11/libsx
 libtai		ports/devel/libtai
