@@ -18,5 +18,3 @@ does require a separate program.  For better 8-1/2 emulation, you should
 obtain Matthew Farrow's "9term" program (ftp://ftp.cs.su.oz.au/matty/unicode),
 version 1.6 or later (earlier versions don't cooperate with 9wm in
 implementing "hold mode").  Of course, you can run xterm under 9wm as well.
-
-WWW: http://dhog.g7.org/dhog/9wm.html
