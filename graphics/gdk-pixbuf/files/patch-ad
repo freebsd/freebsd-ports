@@ -1,0 +1,16 @@
+--- gdk-pixbuf-config.in.orig	Tue Jan 11 12:52:12 2000
++++ gdk-pixbuf-config.in	Fri Jan 28 10:37:30 2000
+@@ -42,11 +42,11 @@
+       if test @includedir@ != /usr/include ; then
+         includes=-I@includedir@
+       fi
+-      echo $includes `gtk-config --cflags`
++      echo $includes `@GTK_CONFIG@ --cflags`
+       ;;
+     --libs)
+       libdirs=-L@libdir@
+-      echo $libdirs -lgdk_pixbuf -lart_lgpl `gtk-config --libs` -lm
++      echo $libdirs -lgdk_pixbuf -lart_lgpl `@GTK_CONFIG@ --libs` -lm
+       ;;
+     *)
+       echo "${usage}" 1>&2
