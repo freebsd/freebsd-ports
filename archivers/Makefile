@@ -30,6 +30,7 @@
     SUBDIR += ppunpack
     SUBDIR += rar
     SUBDIR += ruby-zlib
+    SUBDIR += sectar
     SUBDIR += unace
     SUBDIR += unadf
     SUBDIR += unarj
