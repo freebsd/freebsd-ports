@@ -1,0 +1,9 @@
+Little GTK+ enabled Perl companion to eDonkey and the ed2k GTK+ GUI
+to ease the process of adding files to the download queue using
+ed2k:// links. It was designed for better ed2k:// URL handling
+within Gnome (especially Galeon) but might be used for any other
+purpose. It is quite too few code to take care on drafting out a
+license, so regard it as GPLed software.
+
+Author: Veit Wahlich <cru@ircnet.de>
+WWW: http://ircnet.de/home/cru/ed2k_urlslave/
