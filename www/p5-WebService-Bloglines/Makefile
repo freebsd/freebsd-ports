@@ -1,0 +1,27 @@
+# ex:ts=8
+# Ports collection makefile for:	WebService::Bloglines
+# Date created:			Nov 3, 2004
+# Whom:				ijliao
+#
+# $FreeBSD$
+#
+
+PORTNAME=	WebService-Bloglines
+PORTVERSION=	0.02
+CATEGORIES=	www perl5
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
+MASTER_SITE_SUBDIR=	WebService
+PKGNAMEPREFIX=	p5-
+
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Easy-to-use Interface for Bloglines Web Services
+
+BUILD_DEPENDS=	${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww \
+		${SITE_PERL}/XML/RSS.pm:${PORTSDIR}/textproc/p5-XML-RSS
+RUN_DEPENDS=	${BUILD_DEPENDS}
+
+PERL_CONFIGURE=	yes
+
+MAN3=	WebService::Bloglines.3
+
+.include <bsd.port.mk>
