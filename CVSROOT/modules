@@ -2100,7 +2100,7 @@ freenet6	ports/net/freenet6
 freeradius	ports/net/freeradius
 freeride	ports/devel/freeride
 freesbie	ports/sysutils/freesbie
-freesci		ports/emulators/freesci
+freesci		ports/games/freesci
 freescope	ports/devel/freescope
 freesweep	ports/games/freesweep
 freetds		ports/databases/freetds
