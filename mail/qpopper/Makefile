@@ -23,6 +23,7 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	lioux@FreeBSD.org
 
 USE_AUTOCONF=	yes
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LIBS="-lmd -lutil -L${LOCALBASE}/lib" \
 		OS_DEFS="-DSETPROCTITLE ${OS_DEFS}"
@@ -149,13 +150,14 @@ RSAGLUE+=	-lRSAglue
 
 post-patch:
 	@${RM} -f ${WRKSRC}/popper/md5.h
-	@${PERL} -pi -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/man/*
+	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/man/*
 .if defined(WITH_POPPASSD)
-	@${PERL} -pi -ne "s|/usr/bin/smbpasswd|${LOCALBASE}/bin/smbpasswd|" \
+	@${REINPLACE_CMD} -e 's|/usr/bin/smbpasswd|${LOCALBASE}/bin/smbpasswd|' \
 		${WRKSRC}/password/poppassd.c
 .endif
 .if defined(WITHOUT_U_OPTION)
-	@${PERL} -pi -e 's|(getopt \(.+?)u|\1|' ${WRKSRC}/popper/main.c
+	@${REINPLACE_CMD} -E -e 's|(getopt \(.+)u|\1|' \
+		${WRKSRC}/popper/main.c
 .endif
 
 pre-configure:
