@@ -11,4 +11,4 @@ Java2html offers the following features:
     - gzips http output for browsers to save bandwidth (only in CGI mode)
     - documentation and manpage included
 
-Homepage:  http://user.cs.tu-berlin.de/~schintke/x2html/index.html
+WWW: http://user.cs.tu-berlin.de/~schintke/x2html/
