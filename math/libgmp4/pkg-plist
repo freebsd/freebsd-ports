@@ -1,8 +1,13 @@
 include/gmp.h
+include/gmpxx.h
 lib/libgmp.a
 lib/libgmp.la
 lib/libgmp.so
 lib/libgmp.so.5
+lib/libgmpxx.a
+lib/libgmpxx.la
+lib/libgmpxx.so
+lib/libgmpxx.so.3
 @unexec install-info --delete %D/info/gmp %D/info/dir
 info/gmp.info
 info/gmp.info-1

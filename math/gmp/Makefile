@@ -8,6 +8,7 @@
 
 PORTNAME=	libgmp
 PORTVERSION=	4.0.1
+PORTREVISION=	1
 CATEGORIES=	math devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	gmp
@@ -16,12 +17,8 @@ DISTNAME=	gmp-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 
 USE_LIBTOOL=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--enable-cxx
 INSTALLS_SHLIB=	yes
-
-post-patch:
-	@${PERL} -pi -e "s/--tag=CC//g" ${WRKSRC}/mpn/Makefile.in
-
-pre-configure:
-	@${LN} -fs ${LOCALBASE}/bin/libtool ${WRKSRC}
 
 .include <bsd.port.mk>
