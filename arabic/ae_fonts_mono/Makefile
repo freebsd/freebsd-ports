@@ -7,7 +7,7 @@
 
 PORTNAME=		ae_fonts_mono
 PORTVERSION=		1.0
-CATEGORIES=		x11-fonts
+CATEGORIES=		arabic
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	arabeyes
 DISTNAME=		ae_fonts_mono

@@ -145,7 +145,6 @@
     SUBDIR += kcd
     SUBDIR += kde3-i18n
     SUBDIR += kde3-i18n-af
-    SUBDIR += kde3-i18n-ar
     SUBDIR += kde3-i18n-az
     SUBDIR += kde3-i18n-bg
     SUBDIR += kde3-i18n-bs
@@ -190,7 +189,6 @@
     SUBDIR += kenny
     SUBDIR += koffice-i18n
     SUBDIR += koffice-i18n-af
-    SUBDIR += koffice-i18n-ar
     SUBDIR += koffice-i18n-bs
     SUBDIR += koffice-i18n-cs
     SUBDIR += koffice-i18n-da

@@ -704,3 +704,9 @@ x11-toolkits/wxgtk-devel|x11-toolkits/wxgtk|2003-11-10|renamed
 net/lmule||2003-11-10|project has been abadoned in favor of net/xmule
 net/kxicq-devel||2003-11-13|unmaintained, better KDE ICQ clients available
 editors/ghex|editors/ghex2|2003-11-15|ghex2 holds the latest stable version
+x11-fonts/ae_fonts_mono|arabic/ae_fonts_mono|2003-11-15|Moved to new arabic category
+x11-fonts/ae_fonts_ttf|arabic/ae_fonts_ttf|2003-11-15|Moved to new arabic category
+x11-fonts/khotot|arabic/khotot|2003-11-15|Moved to new arabic category
+x11-fonts/kacst_fonts|arabic/kacst_fonts|2003-11-15|Moved to new arabic category
+misc/kde3-i18n-ar|arabic/kde3-i18n|2003-11-15|Moved to new arabic category
+misc/koffice-i18n-ar|arabic/koffice-i18n|2003-11-15|Moved to new arabic category

@@ -9,8 +9,6 @@
     SUBDIR += XFree86-4-fontScalable
     SUBDIR += Xft
     SUBDIR += Xg
-    SUBDIR += ae_fonts_mono
-    SUBDIR += ae_fonts_ttf
     SUBDIR += artwiz-fonts
     SUBDIR += bdfresize
     SUBDIR += bitmap-fonts
@@ -24,8 +22,6 @@
     SUBDIR += gfe
     SUBDIR += intlfonts
     SUBDIR += jmk-x11-fonts
-    SUBDIR += kacst_fonts
-    SUBDIR += khotot
     SUBDIR += lfpfonts-fix
     SUBDIR += lfpfonts-var
     SUBDIR += mkbold
