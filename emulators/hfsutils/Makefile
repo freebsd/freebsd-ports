@@ -3,18 +3,17 @@
 # Date Created:		7 Sep 1997
 # Whom:			Vanilla I. Shu <vanilla@MinJe.com.TW>
 #
-# $Id: Makefile,v 1.6 1998/03/12 08:05:26 vanilla Exp $
+# $Id: Makefile,v 1.7 1998/03/21 02:25:03 asami Exp $
 #
 
 DISTNAME=	hfsutils-3.2
 CATEGORIES=	emulators tk81
-MASTER_SITES=	ftp://ftp.ps.ucl.ac.uk/pub/mkhfs/
+MASTER_SITES=	ftp://ftp.ps.ucl.ac.uk/pub/mkhfs/ \
+		http://www.freebsd.org/~vanilla/
 
 MAINTAINER=	vanilla@FreeBSD.ORG
 
 LIB_DEPENDS=	tk81\\.1\\.:${PORTSDIR}/x11/tk81
-
-BROKEN=		fetch
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-tcl --with-tcl-libs=${PREFIX}/lib --with-tk --with-tk-libs=${PREFIX}/lib
