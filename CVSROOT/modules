@@ -3883,6 +3883,7 @@ libwww		ports/www/libwww
 libxalloc	ports/devel/libxalloc
 libxfce4gui	ports/x11-toolkits/libxfce4gui
 libxfce4mcs	ports/x11/libxfce4mcs
+libxfce4util	ports/x11/libxfce4util
 libxine		ports/multimedia/libxine
 libxklavier	ports/x11/libxklavier
 libxml		ports/textproc/libxml
