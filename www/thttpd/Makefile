@@ -25,6 +25,8 @@ USE_REINPLACE=	yes
 MAN1=		makeweb.1 htpasswd.1
 MAN8=		thttpd.8 redirect.8 ssi.8 syslogtocern.8
 
+.include <bsd.port.pre.mk>
+
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/thttpd ${PREFIX}/sbin/
 	@${INSTALL_MAN} ${WRKSRC}/thttpd.8 ${PREFIX}/man/man8
@@ -73,6 +75,9 @@ post-install:
 	@${CAT} ${PKGMESSAGE}
 
 post-configure: config-message
+.if ${OSVERSION} > 502101
+	@cd ${WRKSRC} && patch < ${PATCHDIR}/extra-patch-config.h
+.endif
 
 post-build: config-message
 
@@ -84,4 +89,4 @@ config-message:
 	@${ECHO} ""
 	@${ECHO} "====================================================================="
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
