@@ -3,7 +3,7 @@
 # Date created:         5 October 1995
 # Whom:                 Yoshiro MIHIRA <sanpei@yy.cs.keio.ac.jp>
 #
-# $Id: Makefile,v 1.9 1997/09/15 00:04:00 max Exp $
+# $Id: Makefile,v 1.10 1998/09/03 22:49:17 max Exp $
 #
 
 DISTNAME=       elvis-1.8
@@ -17,7 +17,7 @@ PATCHFILES=     jelvis1.8p4-j1.1.tar.Z
 
 MAINTAINER=     sanpei@yy.cs.keio.ac.jp
 
-LIB_DEPENDS=	canna\\.1\\.:${PORTSDIR}/japanese/Canna
+LIB_DEPENDS=	canna.1:${PORTSDIR}/japanese/Canna
 
 NO_WRKSUBDIR=	yes
 PATCH_DIST_STRIP=       -p1

@@ -3,7 +3,7 @@
 # Date created:		6 July 1997
 # Whom:			Satoshi Taoka <taoka@infonets.hiroshima-u.ac.jp>
 #
-# $Id: Makefile,v 1.30 1997/09/10 08:49:29 asami Exp $
+# $Id: Makefile,v 1.31 1998/05/02 21:07:09 max Exp $
 #
 
 DISTNAME=	mule-2.3
@@ -40,7 +40,7 @@ STRIP=
 INSTALL_TARGET=	install-arch-dep
 
 .if defined(CANNA)
-LIB_INPUT_METHOD+=	canna\\.1\\.:${PORTSDIR}/japanese/Canna
+LIB_INPUT_METHOD+=	canna.1:${PORTSDIR}/japanese/Canna
 WITH_INPUT_METHOD+=	--canna --canna-libraries=${PREFIX}/lib \
 		--canna-includes=${PREFIX}/include
 .endif

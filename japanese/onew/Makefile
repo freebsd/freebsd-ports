@@ -3,7 +3,7 @@
 # Date created:		5 Sep 1997
 # Whom:			Satoshi TAOKA <taoka@infonets.hiroshima-u.ac.jp>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/07/08 14:29:29 kuriyama Exp $
 #
 
 DISTNAME=	jvim2.0r+onew2.2.10
@@ -31,7 +31,7 @@ WNN4=			yes
 # LIB_DEPENDS, etc.
 .if defined(CANNA)
 INPUT_METHOD+=		canna
-LIB_INPUT_METHOD+=	canna\\.1\\.:${PORTSDIR}/japanese/Canna
+LIB_INPUT_METHOD+=	canna.1:${PORTSDIR}/japanese/Canna
 JPLIB+=			-lcanna
 .endif
 .if defined(WNN4)

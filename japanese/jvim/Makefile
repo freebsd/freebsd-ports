@@ -3,7 +3,7 @@
 # Date created:		5 Sep 1997
 # Whom:			Satoshi TAOKA <taoka@infonets.hiroshima-u.ac.jp>
 #
-# $Id: Makefile,v 1.2 1998/09/02 22:34:23 max Exp $
+# $Id: Makefile,v 1.3 1998/09/09 16:07:12 max Exp $
 #
 
 DISTNAME=	jvim2.0r+onew2.2.10
@@ -28,7 +28,7 @@ WRKSRC=		${WRKDIR}/jvim2.0r
 # LIB_DEPENDS, etc.
 .if defined(CANNA)
 INPUT_METHOD+=		canna
-LIB_INPUT_METHOD+=	canna\\.1\\.:${PORTSDIR}/japanese/Canna
+LIB_INPUT_METHOD+=	canna.1:${PORTSDIR}/japanese/Canna
 JPLIB+=			-lcanna
 .endif
 .if defined(WNN4)
