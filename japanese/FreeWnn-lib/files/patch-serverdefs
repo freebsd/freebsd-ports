@@ -1,0 +1,24 @@
+--- Wnn/jd/serverdefs.orig	Tue May 20 13:56:08 2003
++++ Wnn/jd/serverdefs	Tue May 20 13:56:46 2003
+@@ -30,12 +30,12 @@
+ ;
+ 
+ ;lang_name	machine_name	unix_domain_socket_name	service_name	port_num
+-ja_JP		jserver		/tmp/jd_sockV4		wnn4		22273
+-japanese	jserver		/tmp/jd_sockV4		wnn4		22273
+-nihongo		jserver		/tmp/jd_sockV4		wnn4		22273
+-zh_CN		cserver		/tmp/cd_sockV4		wnn4_Cn		22289
+-zhongwen	cserver		/tmp/cd_sockV4		wnn4_Cn		22289
+-zh_TW		tserver		/tmp/td_sockV4		wnn4_Tw		22321
+-taiwanese	tserver		/tmp/td_sockV4		wnn4_Tw		22321
+-ko_KR		kserver		/tmp/kd_sockV4		wnn4_Kr		22305
+-korean		kserver		/tmp/kd_sockV4		wnn4_Kr		22305
++ja_JP		localhost	/tmp/jd_sockV4		wnn4		22273
++japanese	localhost	/tmp/jd_sockV4		wnn4		22273
++nihongo		localhost	/tmp/jd_sockV4		wnn4		22273
++zh_CN		localhost	/tmp/cd_sockV4		wnn4_Cn		22289
++zhongwen	localhost	/tmp/cd_sockV4		wnn4_Cn		22289
++zh_TW		localhost	/tmp/td_sockV4		wnn4_Tw		22321
++taiwanese	localhost	/tmp/td_sockV4		wnn4_Tw		22321
++ko_KR		localhost	/tmp/kd_sockV4		wnn4_Kr		22305
++korean		localhost	/tmp/kd_sockV4		wnn4_Kr		22305
