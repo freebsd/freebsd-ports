@@ -1,0 +1,6 @@
+bin/jam
+share/doc/jam/Jam.html
+share/doc/jam/Jambase.html
+share/doc/jam/Jamfile.html
+share/doc/jam/Jamlang.html
+@dirrm share/doc/jam
