@@ -442,6 +442,7 @@ share/gnome/evolution/views/tasks/galview.xml
 %%PILOT:%%share/gnome/gnome-pilot/conduits/e-address.conduit
 %%PILOT:%%share/gnome/gnome-pilot/conduits/e-calendar.conduit
 %%PILOT:%%share/gnome/gnome-pilot/conduits/e-todo.conduit
+share/gnome/help/evolution/C/LEGALNOTICE.html
 share/gnome/help/evolution/C/access.html
 share/gnome/help/evolution/C/apx-fdl.html
 share/gnome/help/evolution/C/apx-gloss.html
@@ -506,7 +507,6 @@ share/gnome/help/evolution/C/importing-mail-from-clients.html
 share/gnome/help/evolution/C/index.html
 share/gnome/help/evolution/C/install.html
 share/gnome/help/evolution/C/introduction.html
-share/gnome/help/evolution/C/ln20.html
 share/gnome/help/evolution/C/menuref.html
 share/gnome/help/evolution/C/organization.html
 share/gnome/help/evolution/C/other-help.html
