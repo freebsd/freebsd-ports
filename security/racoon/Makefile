@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	racoon
-PORTVERSION=	20000719a
+PORTVERSION=	20001017b
 CATEGORIES=	security net
 MASTER_SITES=	ftp://ftp.kame.net/pub/kame/misc/
 
@@ -34,5 +34,11 @@ pre-patch:
 
 pre-configure:
 	(cd ${WRKSRC}/../libipsec; make)
+
+post-install:
+	@if [ -z `/sbin/sysctl -a | ${GREP} -q ipsec && echo ipsec` ]; then \
+	    ${ECHO_MSG} "WARNING: IPsec feature is disabled on this host"; \
+	    ${ECHO_MSG} "         You must build the kernel if you want to run racoon on the host"; \
+	fi ;
 
 .include <bsd.port.mk>

@@ -4,8 +4,8 @@
  
  cat >> $CONFIG_STATUS <<EOF
  
--CONFIG_FILES=\${CONFIG_FILES-"Makefile samples/psk.txt samples/racoon.conf samples/remote.conf"}
-+CONFIG_FILES=\${CONFIG_FILES-"Makefile samples/psk.txt samples/racoon.conf samples/remote.conf racoon.8"}
+-CONFIG_FILES=\${CONFIG_FILES-"Makefile samples/psk.txt samples/racoon.conf"}
++CONFIG_FILES=\${CONFIG_FILES-"Makefile samples/psk.txt samples/racoon.conf racoon.8"}
  EOF
  cat >> $CONFIG_STATUS <<\EOF
  for ac_file in .. $CONFIG_FILES; do if test "x$ac_file" != x..; then
