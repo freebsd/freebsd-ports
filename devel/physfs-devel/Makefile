@@ -17,5 +17,6 @@ USE_LIBTOOL=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 CONFIGURE_ARGS=	--program-transform-name=''
+INSTALLS_SHLIB=	yes
 
 .include <bsd.port.mk>
