@@ -1,6 +1,6 @@
---- plug-ins/common/url.c	Sun Nov  7 19:24:37 1999
-+++ plug-ins/common/url.c.new	Sun Nov  7 19:26:39 1999
-@@ -151,8 +151,8 @@
+--- plug-ins/common/url.c.orig	Tue Feb  1 16:09:01 2000
++++ plug-ins/common/url.c	Sat Feb 19 13:51:36 2000
+@@ -158,8 +158,8 @@
      }
    else if (pid == 0)
      {

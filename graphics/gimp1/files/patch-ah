@@ -1,6 +1,6 @@
---- configure.orig	Wed Oct  6 14:00:22 1999
-+++ configure	Tue Oct 12 13:37:31 1999
-@@ -3471,7 +3471,11 @@
+--- configure.orig	Fri Feb 11 10:32:12 2000
++++ configure	Sat Feb 19 13:51:36 2000
+@@ -3480,7 +3480,11 @@
    cat conftest.$ac_ext >&5
    rm -rf conftest*
    CATOBJEXT=.mo
@@ -13,7 +13,7 @@
  fi
  rm -f conftest*
  		INSTOBJEXT=.mo
-@@ -7108,7 +7112,7 @@
+@@ -7017,7 +7021,7 @@
  fi
  
  gimpdatadir=$datadir/gimp
@@ -22,7 +22,7 @@
  localedir='${prefix}/${DATADIRNAME}/locale'
  
  brushdata=`ls -1 $srcdir/data/brushes | grep -v Makefile`
-@@ -8513,10 +8517,6 @@
+@@ -8561,10 +8565,6 @@
      top_srcdir="$ac_dots$ac_given_srcdir" ;;
    esac
  
