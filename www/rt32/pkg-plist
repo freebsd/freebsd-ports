@@ -5,15 +5,21 @@ rt3/bin/mason_handler.svc
 rt3/bin/rt
 rt3/bin/rt-crontool
 rt3/bin/rt-mailgate
+rt3/bin/standalone_httpd
 rt3/bin/webmux.pl
 rt3/etc/RT_Config.pm
+rt3/etc/RT_SiteConfig.pm
+rt3/etc/acl.Informix
 rt3/etc/acl.Oracle
 rt3/etc/acl.Pg
+rt3/etc/acl.Sybase
 rt3/etc/acl.mysql
 rt3/etc/initialdata
+rt3/etc/schema.Informix
 rt3/etc/schema.Oracle
 rt3/etc/schema.Pg
 rt3/etc/schema.SQLite
+rt3/etc/schema.Sybase
 rt3/etc/schema.mysql
 rt3/lib/RT.pm
 rt3/lib/RT.pm.in
@@ -36,6 +42,10 @@ rt3/lib/RT/Attachment.pm
 rt3/lib/RT/Attachment_Overlay.pm
 rt3/lib/RT/Attachments.pm
 rt3/lib/RT/Attachments_Overlay.pm
+rt3/lib/RT/Attribute.pm
+rt3/lib/RT/Attribute_Overlay.pm
+rt3/lib/RT/Attributes.pm
+rt3/lib/RT/Attributes_Overlay.pm
 rt3/lib/RT/Base.pm
 rt3/lib/RT/CachedGroupMember.pm
 rt3/lib/RT/CachedGroupMember_Overlay.pm
@@ -46,6 +56,7 @@ rt3/lib/RT/Condition/BeforeDue.pm
 rt3/lib/RT/Condition/Generic.pm
 rt3/lib/RT/Condition/Overdue.pm
 rt3/lib/RT/Condition/OwnerChange.pm
+rt3/lib/RT/Condition/PriorityChange.pm
 rt3/lib/RT/Condition/PriorityExceeds.pm
 rt3/lib/RT/Condition/QueueChange.pm
 rt3/lib/RT/Condition/StatusChange.pm
@@ -72,12 +83,15 @@ rt3/lib/RT/Handle.pm
 rt3/lib/RT/I18N.pm
 rt3/lib/RT/I18N/cs.pm
 rt3/lib/RT/I18N/cs.po
+rt3/lib/RT/I18N/da.po
 rt3/lib/RT/I18N/de.po
 rt3/lib/RT/I18N/en.po
+rt3/lib/RT/I18N/en_malkovich.po
 rt3/lib/RT/I18N/es.po
 rt3/lib/RT/I18N/fi.po
 rt3/lib/RT/I18N/fr.po
 rt3/lib/RT/I18N/he.po
+rt3/lib/RT/I18N/hu.po
 rt3/lib/RT/I18N/i_default.pm
 rt3/lib/RT/I18N/it.po
 rt3/lib/RT/I18N/ja.po
@@ -89,10 +103,12 @@ rt3/lib/RT/I18N/zh_cn.po
 rt3/lib/RT/I18N/zh_tw.po
 rt3/lib/RT/Interface/CLI.pm
 rt3/lib/RT/Interface/Email.pm
+rt3/lib/RT/Interface/Email/Auth/GnuPG.pm
 rt3/lib/RT/Interface/Email/Auth/MailFrom.pm
 rt3/lib/RT/Interface/Email/Filter/SpamAssassin.pm
 rt3/lib/RT/Interface/REST.pm
 rt3/lib/RT/Interface/Web.pm
+rt3/lib/RT/Interface/Web/Handler.pm
 rt3/lib/RT/Link.pm
 rt3/lib/RT/Link_Overlay.pm
 rt3/lib/RT/Links.pm
@@ -165,12 +181,15 @@ rt3/lib/t/data/8859-15-message-series/msg4
 rt3/lib/t/data/8859-15-message-series/msg5
 rt3/lib/t/data/8859-15-message-series/msg6
 rt3/lib/t/data/8859-15-message-series/msg7
+rt3/lib/t/data/crashes-file-based-parser
 rt3/lib/t/data/multipart-alternative-with-umlaut
 rt3/lib/t/data/multipart-report
 rt3/lib/t/data/nested-mime-sample
 rt3/lib/t/data/nested-rfc-822
 rt3/lib/t/data/new-ticket-from-iso-8859-1
 rt3/lib/t/data/new-ticket-from-iso-8859-1-full
+rt3/lib/t/data/notes-uuencoded
+rt3/lib/t/data/rt-send-cc
 rt3/lib/t/data/russian-subject-no-content-type
 rt3/lib/t/data/text-html-in-russian
 rt3/lib/t/data/text-html-with-umlaut
@@ -193,9 +212,7 @@ rt3/share/html/Admin/Elements/GroupTabs
 rt3/share/html/Admin/Elements/Header
 rt3/share/html/Admin/Elements/ListGlobalCustomFields
 rt3/share/html/Admin/Elements/ListGlobalScrips
-rt3/share/html/Admin/Elements/ModifyQueue
 rt3/share/html/Admin/Elements/ModifyTemplate
-rt3/share/html/Admin/Elements/ModifyUser
 rt3/share/html/Admin/Elements/QueueRightsForUser
 rt3/share/html/Admin/Elements/QueueTabs
 rt3/share/html/Admin/Elements/SelectCustomFieldType
@@ -209,10 +226,12 @@ rt3/share/html/Admin/Elements/SelectScrip
 rt3/share/html/Admin/Elements/SelectScripAction
 rt3/share/html/Admin/Elements/SelectScripCondition
 rt3/share/html/Admin/Elements/SelectSingleOrMultiple
+rt3/share/html/Admin/Elements/SelectStage
 rt3/share/html/Admin/Elements/SelectTemplate
 rt3/share/html/Admin/Elements/SelectUsers
 rt3/share/html/Admin/Elements/SystemTabs
 rt3/share/html/Admin/Elements/Tabs
+rt3/share/html/Admin/Elements/ToolTabs
 rt3/share/html/Admin/Elements/UserTabs
 rt3/share/html/Admin/Global/CustomField.html
 rt3/share/html/Admin/Global/CustomFields.html
@@ -239,8 +258,9 @@ rt3/share/html/Admin/Queues/Template.html
 rt3/share/html/Admin/Queues/Templates.html
 rt3/share/html/Admin/Queues/UserRights.html
 rt3/share/html/Admin/Queues/index.html
+rt3/share/html/Admin/Tools/Configuration.html
+rt3/share/html/Admin/Tools/index.html
 rt3/share/html/Admin/Users/Modify.html
-rt3/share/html/Admin/Users/Prefs.html
 rt3/share/html/Admin/Users/index.html
 rt3/share/html/Admin/index.html
 rt3/share/html/Approvals/Display.html
@@ -254,6 +274,7 @@ rt3/share/html/Elements/BevelBoxRaisedStart
 rt3/share/html/Elements/Callback
 rt3/share/html/Elements/Checkbox
 rt3/share/html/Elements/CreateTicket
+rt3/share/html/Elements/EditLinks
 rt3/share/html/Elements/Error
 rt3/share/html/Elements/Footer
 rt3/share/html/Elements/GotoTicket
@@ -265,8 +286,11 @@ rt3/share/html/Elements/MessageBox
 rt3/share/html/Elements/MyRequests
 rt3/share/html/Elements/MyTickets
 rt3/share/html/Elements/PageLayout
+rt3/share/html/Elements/QueryString
+rt3/share/html/Elements/QuickCreate
 rt3/share/html/Elements/Quicksearch
 rt3/share/html/Elements/Refresh
+rt3/share/html/Elements/ScrubHTML
 rt3/share/html/Elements/Section
 rt3/share/html/Elements/SelectAttachmentField
 rt3/share/html/Elements/SelectBoolean
@@ -277,6 +301,7 @@ rt3/share/html/Elements/SelectDateRelation
 rt3/share/html/Elements/SelectDateType
 rt3/share/html/Elements/SelectEqualityOperator
 rt3/share/html/Elements/SelectGroups
+rt3/share/html/Elements/SelectLang
 rt3/share/html/Elements/SelectLinkType
 rt3/share/html/Elements/SelectMatch
 rt3/share/html/Elements/SelectNewTicketQueue
@@ -290,15 +315,15 @@ rt3/share/html/Elements/SelectTicketTypes
 rt3/share/html/Elements/SelectUsers
 rt3/share/html/Elements/SelectWatcherType
 rt3/share/html/Elements/SetupSessionCookie
-rt3/share/html/Elements/ShadedBox
-rt3/share/html/Elements/ShadedInputRow
-rt3/share/html/Elements/ShadedRow
+rt3/share/html/Elements/ShowLink
+rt3/share/html/Elements/ShowLinks
 rt3/share/html/Elements/SimpleSearch
 rt3/share/html/Elements/Submit
 rt3/share/html/Elements/Tabs
+rt3/share/html/Elements/TicketList
+rt3/share/html/Elements/TitleBox
 rt3/share/html/Elements/TitleBoxEnd
 rt3/share/html/Elements/TitleBoxStart
-rt3/share/html/Elements/ViewUser
 rt3/share/html/NoAuth/Logout.html
 rt3/share/html/NoAuth/Reminder.html
 rt3/share/html/NoAuth/images/back_home.gif
@@ -314,6 +339,7 @@ rt3/share/html/REST/1.0/Forms/queue/default
 rt3/share/html/REST/1.0/Forms/queue/ns
 rt3/share/html/REST/1.0/Forms/ticket/attachments
 rt3/share/html/REST/1.0/Forms/ticket/default
+rt3/share/html/REST/1.0/Forms/ticket/history
 rt3/share/html/REST/1.0/Forms/ticket/links
 rt3/share/html/REST/1.0/Forms/user/default
 rt3/share/html/REST/1.0/Forms/user/ns
@@ -326,12 +352,27 @@ rt3/share/html/REST/1.0/search/ticket
 rt3/share/html/REST/1.0/ticket/comment
 rt3/share/html/REST/1.0/ticket/link
 rt3/share/html/REST/1.0/ticket/merge
+rt3/share/html/Search/Build.html
 rt3/share/html/Search/Bulk.html
-rt3/share/html/Search/Elements/PickRestriction
-rt3/share/html/Search/Elements/TicketHeader
-rt3/share/html/Search/Elements/TicketHeaderCell
+rt3/share/html/Search/Edit.html
+rt3/share/html/Search/Elements/BuildFormatString
+rt3/share/html/Search/Elements/DisplayOptions
+rt3/share/html/Search/Elements/EditFormat
+rt3/share/html/Search/Elements/EditSearches
+rt3/share/html/Search/Elements/NewListActions
+rt3/share/html/Search/Elements/PickBasics
+rt3/share/html/Search/Elements/PickCFs
+rt3/share/html/Search/Elements/PickCriteria
+rt3/share/html/Search/Elements/SearchPrivacy
+rt3/share/html/Search/Elements/SelectAndOr
+rt3/share/html/Search/Elements/SelectLinks
+rt3/share/html/Search/Elements/SelectPersonType
+rt3/share/html/Search/Elements/SelectSearchObject
+rt3/share/html/Search/Elements/SelectSearchesForObjects
 rt3/share/html/Search/Elements/TicketRow
-rt3/share/html/Search/Listing.html
+rt3/share/html/Search/Results.html
+rt3/share/html/Search/Results.rdf
+rt3/share/html/Search/Results.tsv
 rt3/share/html/SelfService/Attachment/dhandler
 rt3/share/html/SelfService/Closed.html
 rt3/share/html/SelfService/Create.html
@@ -353,17 +394,18 @@ rt3/share/html/Ticket/Elements/EditBasics
 rt3/share/html/Ticket/Elements/EditCustomField
 rt3/share/html/Ticket/Elements/EditCustomFields
 rt3/share/html/Ticket/Elements/EditDates
-rt3/share/html/Ticket/Elements/EditLinks
 rt3/share/html/Ticket/Elements/EditPeople
 rt3/share/html/Ticket/Elements/EditWatchers
+rt3/share/html/Ticket/Elements/FindAttachments
+rt3/share/html/Ticket/Elements/LoadTextAttachments
+rt3/share/html/Ticket/Elements/PreviewScrips
 rt3/share/html/Ticket/Elements/ShowAttachments
 rt3/share/html/Ticket/Elements/ShowBasics
 rt3/share/html/Ticket/Elements/ShowCustomFields
 rt3/share/html/Ticket/Elements/ShowDates
 rt3/share/html/Ticket/Elements/ShowDependencies
+rt3/share/html/Ticket/Elements/ShowGroupMembers
 rt3/share/html/Ticket/Elements/ShowHistory
-rt3/share/html/Ticket/Elements/ShowLink
-rt3/share/html/Ticket/Elements/ShowLinks
 rt3/share/html/Ticket/Elements/ShowMemberOf
 rt3/share/html/Ticket/Elements/ShowMembers
 rt3/share/html/Ticket/Elements/ShowMessageHeaders
@@ -373,6 +415,8 @@ rt3/share/html/Ticket/Elements/ShowReferences
 rt3/share/html/Ticket/Elements/ShowRequestor
 rt3/share/html/Ticket/Elements/ShowSummary
 rt3/share/html/Ticket/Elements/ShowTransaction
+rt3/share/html/Ticket/Elements/ShowTransactionAttachments
+rt3/share/html/Ticket/Elements/ShowUserEntry
 rt3/share/html/Ticket/Elements/Tabs
 rt3/share/html/Ticket/History.html
 rt3/share/html/Ticket/Modify.html
@@ -380,7 +424,11 @@ rt3/share/html/Ticket/ModifyAll.html
 rt3/share/html/Ticket/ModifyDates.html
 rt3/share/html/Ticket/ModifyLinks.html
 rt3/share/html/Ticket/ModifyPeople.html
+rt3/share/html/Ticket/ShowEmailRecord.html
 rt3/share/html/Ticket/Update.html
+rt3/share/html/Tools/Elements/Tabs
+rt3/share/html/Tools/MyDay.html
+rt3/share/html/Tools/Offline.html
 rt3/share/html/User/Delegation.html
 rt3/share/html/User/Elements/DelegateRights
 rt3/share/html/User/Elements/GroupTabs
@@ -402,6 +450,8 @@ rt3/share/html/l
 @dirrm rt3/share/html/User/Groups
 @dirrm rt3/share/html/User/Elements
 @dirrm rt3/share/html/User
+@dirrm rt3/share/html/Tools/Elements
+@dirrm rt3/share/html/Tools
 @dirrm rt3/share/html/Ticket/Elements
 @dirrm rt3/share/html/Ticket/Attachment
 @dirrm rt3/share/html/Ticket
@@ -425,6 +475,7 @@ rt3/share/html/l
 @dirrm rt3/share/html/Approvals/Elements
 @dirrm rt3/share/html/Approvals
 @dirrm rt3/share/html/Admin/Users
+@dirrm rt3/share/html/Admin/Tools
 @dirrm rt3/share/html/Admin/Queues
 @dirrm rt3/share/html/Admin/Groups
 @dirrm rt3/share/html/Admin/Global
@@ -435,6 +486,8 @@ rt3/share/html/l
 @dirrm rt3/share
 @dirrm rt3/sbin
 @dirrm rt3/local/po
+@dirrm rt3/local/lib/RT
+@dirrm rt3/local/lib
 @dirrm rt3/local/html
 @dirrm rt3/local/etc
 @dirrm rt3/local
@@ -444,6 +497,7 @@ rt3/share/html/l
 @dirrm rt3/lib/t
 @dirrm rt3/lib/RT/URI
 @dirrm rt3/lib/RT/Search
+@dirrm rt3/lib/RT/Interface/Web
 @dirrm rt3/lib/RT/Interface/Email/Filter
 @dirrm rt3/lib/RT/Interface/Email/Auth
 @dirrm rt3/lib/RT/Interface/Email
