@@ -56,6 +56,8 @@ do-install:
 
 post-install:
 	@${ECHO} "##########################################################################"
+	@${ECHO} "Do not worry if you see 'volume_adjust: SOUND_MIXER_WRITE_IGAIN failed: No such device or address' errors from skype, the skype sound code is overly verbose in this regard. It would be enough to print it only once." | fmt
+	@${ECHO} "##########################################################################"
 	@${ECHO} "Known good soundcards for the use with Skype:"
 	@${ECHO} " - SiS 7012 (snd_ich) based ones"
 	@${ECHO} " - CMedia CMI8738 (snd_cmi) based ones"
