@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	uae
-PORTVERSION=	0.8.15
-PORTREVISION=	1
+PORTVERSION=	0.8.18
 CATEGORIES=	emulators
 MASTER_SITES=	ftp://ftp.freiburg.linux.de/pub/uae/sources/develop/ \
 		http://www.users.globalnet.co.uk/~simd/
@@ -16,19 +15,28 @@ MAINTAINER=	simond@irrelevant.org
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-sound
+CONFIGURE_ARGS=	--enable-sound --enable-vidmode --enable-dga --disable-ui
 USE_XLIB=	yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/uae ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/readdisk ${PREFIX}/bin
-	@${MKDIR} ${PREFIX}/share/doc/uae
-	${INSTALL_DATA} ${WRKSRC}/docs/COMPATIBILITY ${PREFIX}/share/doc/uae
-	${INSTALL_DATA} ${WRKSRC}/docs/CREDITS ${PREFIX}/share/doc/uae
-	${INSTALL_DATA} ${WRKSRC}/docs/FAQ ${PREFIX}/share/doc/uae
-	${INSTALL_DATA} ${WRKSRC}/docs/NEWS ${PREFIX}/share/doc/uae
-	${INSTALL_DATA} ${WRKSRC}/docs/README ${PREFIX}/share/doc/uae
-	${INSTALL_DATA} ${WRKSRC}/docs/README.PROGRAMMERS ${PREFIX}/share/doc/uae
-	${INSTALL_DATA} ${WRKSRC}/docs/unix/README ${PREFIX}/share/doc/uae/README.unix
+	@${MKDIR} ${PREFIX}/share/uae
+	${INSTALL_DATA} ${WRKSRC}/docs/COMPATIBILITY ${PREFIX}/share/uae
+	${INSTALL_DATA} ${WRKSRC}/docs/CREDITS ${PREFIX}/share/uae
+	${INSTALL_DATA} ${WRKSRC}/docs/FAQ ${PREFIX}/share/uae
+	${INSTALL_DATA} ${WRKSRC}/docs/NEWS ${PREFIX}/share/uae
+	${INSTALL_DATA} ${WRKSRC}/docs/README ${PREFIX}/share/uae
+	${INSTALL_DATA} ${WRKSRC}/docs/README.PROGRAMMERS ${PREFIX}/share/uae
+	${INSTALL_DATA} ${WRKSRC}/docs/unix/README ${PREFIX}/share/uae/README.unix
+	@${MKDIR} ${PREFIX}/share/uae/amiga
+	${INSTALL_DATA} ${WRKSRC}/amiga/mousehack ${PREFIX}/share/uae/amiga/
+	${INSTALL_DATA} ${WRKSRC}/amiga/timehack ${PREFIX}/share/uae/amiga/
+	${INSTALL_DATA} ${WRKSRC}/amiga/transdisk ${PREFIX}/share/uae/amiga/
+	${INSTALL_DATA} ${WRKSRC}/amiga/transrom ${PREFIX}/share/uae/amiga/
+	${INSTALL_DATA} ${WRKSRC}/amiga/uae-control ${PREFIX}/share/uae/amiga/
+	${INSTALL_DATA} ${WRKSRC}/amiga/uae-control.info ${PREFIX}/share/uae/amiga/
+	${INSTALL_DATA} ${WRKSRC}/amiga/uae_rcli ${PREFIX}/share/uae/amiga/
+	${INSTALL_DATA} ${WRKSRC}/amiga/uaectrl ${PREFIX}/share/uae/amiga/
 
 .include <bsd.port.mk>

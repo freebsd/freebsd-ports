@@ -1,10 +1,19 @@
 bin/uae
 bin/readdisk
-share/doc/uae/COMPATIBILITY
-share/doc/uae/CREDITS
-share/doc/uae/FAQ
-share/doc/uae/NEWS
-share/doc/uae/README
-share/doc/uae/README.unix
-share/doc/uae/README.PROGRAMMERS
-@dirrm share/doc/uae
+share/uae/COMPATIBILITY
+share/uae/CREDITS
+share/uae/FAQ
+share/uae/NEWS
+share/uae/README
+share/uae/README.unix
+share/uae/README.PROGRAMMERS
+share/uae/amiga/mousehack
+share/uae/amiga/timehack
+share/uae/amiga/transdisk
+share/uae/amiga/transrom
+share/uae/amiga/uae-control
+share/uae/amiga/uae-control.info
+share/uae/amiga/uae_rcli
+share/uae/amiga/uaectrl
+@dirrm share/uae/amiga
+@dirrm share/uae
