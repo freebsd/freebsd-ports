@@ -1,0 +1,70 @@
+#!/bin/sh
+here=$(pwd)
+. ${here}/mkbindist.conf
+chrootdir=/var/chroot
+tmpdir=${here}/tmp
+# just in case
+umount -f ${tmpdir}/usr/src 2>/dev/null
+rm -rf ${tmpdir} 2>/dev/null
+if [ -d ${tmpdir} ]; then
+  chflags -R noschg ${tmpdir}
+  rm -rf ${tmpdir}
+fi
+mkdir -p ${tmpdir}
+if [ "${ftp}" != 0 ]; then
+  rm -rf bindist/ftp
+  mkdir -p bindist/ftp
+  cd bindist/ftp
+  for i in ${ftpdists}; do
+    /usr/bin/ftp -a "ftp://${ftpserver}/pub/FreeBSD/snapshots/i386/${rel}/$i.??"
+  done
+  cd ${here}
+fi
+cd ${tmpdir}
+if [ "${useworld}" = 1 ]; then
+  (cd ${chrootdir}; find -dx . | \
+    grep -v -E '^./usr/(X11R6|local|obj|opt|ports|src)' | \
+    grep -v '^./home' | \
+    grep -v '^./var/db/pkg' | \
+    cpio -dump ${tmpdir})
+else
+  for i in ${ftpdists}; do
+    cat ${here}/bindist/ftp/$(basename $i).?? | tar --unlink -xzpf -
+  done
+fi
+rm -rf $(cat ${here}/bindist/delete)
+mkdir -p $(cat ${here}/bindist/dirlist)
+(cd ${here}/bindist/files; find -dx . | cpio -dump ${tmpdir})
+#echo "HAVE_MOTIF=t" >> etc/make.conf
+#echo "MOTIF_STATIC=t" >> etc/make.conf
+#echo "LOADER_TFTP_SUPPORT=YES" >> etc/make.conf
+date '+%Y%m%d' > var/db/port.mkversion
+#if [ -f kernel.GENERIC -a ! -f kernel ]; then
+#  mv kernel.GENERIC kernel
+#fi
+rm -f kernel.GENERIC
+rm -f /usr/lib/aout/lib*_p.a
+mkdir ${tmpdir}/var/run
+chroot ${tmpdir} /sbin/ldconfig /usr/lib
+chroot ${tmpdir} /sbin/ldconfig -aout /usr/lib/aout
+#sed -e "s/%%KERNEL%%/${kernel}/g" ${here}/dokernel > ${tmpdir}/dokernel
+mount localhost:${here}/src ${tmpdir}/usr/src
+sleep 5
+chroot ${tmpdir} sh -c "cd /usr/src/sys/i386/conf && config ${kernel} && cd /sys/compile/${kernel} && make depend && make all install"
+#chroot ${tmpdir} sh -c "cd /usr/src/sys/boot && make obj && make depend && make all install"
+umount -f ${tmpdir}/usr/src
+rm -rf ${tmpdir}/kernel.old ${tmpdir}/modules.old ${tmpdir}/boot/kernel.old
+if [ -f ${here}/src/etc/MAKEDEV ]; then
+  cp ${here}/src/etc/MAKEDEV ${tmpdir}/dev
+else
+  cp ${here}/src/etc/etc.$(uname -m)/MAKEDEV ${tmpdir}/dev
+fi
+mkdir -p ${here}/tarballs
+tar cf ${here}/tarballs/bindist.tar.new .
+mv -f ${here}/tarballs/bindist.tar.new ${here}/tarballs/bindist.tar
+cd ${here}
+rm -rf ${tmpdir} 2>/dev/null
+if [ -d ${tmpdir} ]; then
+  chflags -R noschg ${tmpdir}
+  rm -rf ${tmpdir}
+fi
