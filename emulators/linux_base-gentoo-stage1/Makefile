@@ -24,7 +24,7 @@ USE_BZIP2=	y
 
 .if (${ARCH} == "amd64")
 LATEST_LINK=	${PORTNAME:C/linux_base/linux32_base/}
-ARCH=	i386
+ARCH=		i386
 .endif
 
 .if (${ARCH} == "alpha")
@@ -45,6 +45,7 @@ DIST_SUBDIR=	gentoo-linux
 MD5_FILE=	${MASTERDIR}/distinfo.${ARCH}
 PLIST=		${WRKDIR}/pkg-plist
 PREFIX=		${LINUXBASE}
+NO_MTREE=	y
 NO_FILTER_SHLIBS=y
 CONFLICTS=	linux_base-6* linux_base-7* linux_base-8* linux_base-debian*
 
@@ -54,7 +55,7 @@ do-build:
 		> ${WRKDIR}/tarball-contents
 	${GREP} -v '/$$' ${WRKDIR}/tarball-contents >> ${PLIST}
 	${GREP} '/$$' ${WRKDIR}/tarball-contents | ${SED} -e "s:^:@dirrm :g" \
-		| ${GREP} -v '@dirrm etc/' | ${SORT} -r >> ${PLIST}
+		| ${SORT} -r >> ${PLIST}
 
 do-install:
 	@${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
