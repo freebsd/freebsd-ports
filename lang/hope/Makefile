@@ -7,6 +7,7 @@
 
 PORTNAME=	hope
 PORTVERSION=	0.0
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://www.soi.city.ac.uk/~ross/Hope/
 DISTNAME=	${PORTNAME}
@@ -28,10 +29,6 @@ USE_GMAKE=	yes
 MAN1=		hope.1
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500113
-BROKEN=         "Does not install"
-.endif
 
 pre-fetch:
 .if !defined(WITH_DOCS)
