@@ -17,8 +17,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Bug-tracking system developed by Mozilla Project
 
 LIB_DEPENDS=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client
-RUN_DEPENDS=	${PERL_SITEDIR}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI \
-		${PERL_SITEDIR}/${PERL_ARCH}/Mysql.pm:${PORTSDIR}/databases/p5-Mysql \
+RUN_DEPENDS=	${PERL_SITEDIR}/${PERL_ARCH}/Mysql.pm:${PORTSDIR}/databases/p5-Mysql \
 		${PERL_SITEDIR}/Date/Parse.pm:${PORTSDIR}/devel/p5-TimeDate \
 		${PERL_SITEDIR}/${PERL_ARCH}/Template.pm:${PORTSDIR}/www/p5-Template-Toolkit \
 		${PERL_SITEDIR}/Text/Wrap.pm:${PORTSDIR}/textproc/p5-Text-Tabs+Wrap

@@ -17,7 +17,6 @@ BUILD_DEPENDS=	${LOCALBASE}/sbin/apxs:${APACHE_PORT}
 RUN_DEPENDS=	${LOCALBASE}/sbin/apxs:${APACHE_PORT}					\
 		${LOCALBASE}/libexec/mysqld:${PORTSDIR}/databases/mysql323-server	\
 		${LOCALBASE}/bin/htmldoc:${PORTSDIR}/textproc/htmldoc			\
-		${PBASE}/${PERL_ARCH}/Bundle/DBI.pm:${PORTSDIR}/databases/p5-DBI	\
 		${PBASE}/${PERL_ARCH}/Mysql.pm:${PORTSDIR}/databases/p5-Mysql		\
 		${PBASE}/Tie/IxHash.pm:${PORTSDIR}/devel/p5-Tie-IxHash
 
