@@ -1,9 +1,9 @@
---- src/Makefile.orig	Wed Oct 27 13:21:26 2004
-+++ src/Makefile	Wed Oct 27 13:23:01 2004
-@@ -44,16 +44,16 @@
- 	   -resource:gui/default.layout,default.layout    
+--- src/Makefile.orig	Sun Nov 28 04:02:39 2004
++++ src/Makefile	Sun Nov 28 04:06:32 2004
+@@ -49,12 +49,12 @@
  
- bless.exe: $(GUI_SRC) $(BB_SRC) $(GUI_DRAWERS_SRC)  $(GUI_AREAS_SRC) $(GUI_DIALOGS_SRC) $(UTIL_SRC)
+ 
+ bless.exe: $(GUI_SRC) $(BB_SRC) $(GUI_DRAWERS_SRC) $(GUI_AREAS_SRC) $(GUI_DIALOGS_SRC) $(UTIL_SRC) $(MISC_DEPS)
 -	$(MCS) -g -o bless.exe -t:exe -r:nunit.framework  $(RESOURCES) -pkg:gtk-sharp -pkg:glade-sharp \
 +	$(MCS) -g -o bless.exe -t:exe -r:nunit.framework  $(RESOURCES) $(shell pkg-config --libs gtk-sharp glade-sharp) \
  	$(GUI_SRC) $(BB_SRC) $(GUI_DRAWERS_SRC)  $(GUI_AREAS_SRC) $(GUI_DIALOGS_SRC) $(UTIL_SRC)
@@ -15,15 +15,3 @@
  
  install: bless.exe 
  	install -c -d $(PREFIX)/lib/bless
--	install -c bless.exe /usr/local/lib/bless
-+	install -c bless.exe $(PREFIX)/lib/bless
- 	echo "mono $(PREFIX)/lib/bless/bless.exe \"\$$@\"" > bless
- 	install -c -d $(PREFIX)/bin
- 	install -c bless $(PREFIX)/bin
-@@ -63,4 +63,4 @@
- 	rm -rf $(PREFIX)/lib/bless
- 	rm $(PREFIX)/bin/bless
- clean:
--	rm -rf $(DLLS)
-\ No newline at end of file
-+	rm -rf $(DLLS)
