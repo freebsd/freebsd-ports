@@ -5,3 +5,5 @@ file handle stdout, it can be used in WWW applications to push images
 to a browser. It was born out of a desire to learn the gd graphics
 library and Perl simultaneously (but it can be used with any scripting
 language). 
+
+WWW: http://dendrome.ucdavis.edu/tgd/tgd.html
