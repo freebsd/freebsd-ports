@@ -52,6 +52,7 @@ Amaya/amaya/Timeline.en
 Amaya/amaya/TimelineP.PRS
 Amaya/amaya/TimelineT.TRA
 Amaya/amaya/TimelineTX.TRA
+Amaya/amaya/Topics.conf
 Amaya/amaya/XLink.STR
 Amaya/amaya/XLink.en
 Amaya/amaya/XLinkP.PRS
@@ -98,6 +99,12 @@ Amaya/amaya/toggle.gif
 Amaya/annotlib/Annot.STR
 Amaya/annotlib/AnnotP.PRS
 Amaya/annotlib/AnnotT.TRA
+Amaya/annotlib/Topics.STR
+Amaya/annotlib/Topics.en
+Amaya/annotlib/TopicsP.PRS
+Amaya/annotlib/closed.png
+Amaya/annotlib/open.png
+Amaya/annotlib/selected.gif
 Amaya/applis/bin/amaya
 @exec ln -sf %D/%F %D/bin/amaya
 @unexec rm -f %D/bin/amaya
@@ -348,19 +355,6 @@ Amaya/doc/html/accessibility_in_amaya/about_producing_accessible_content.html.es
 Amaya/doc/html/accessibility_in_amaya/accessibility_in_amaya.html
 Amaya/doc/html/accessibility_in_amaya/accessibility_in_amaya.html.de
 Amaya/doc/html/accessibility_in_amaya/accessibility_in_amaya.html.es
-Amaya/doc/html/attaching_annotations/About_Reading_Annotations.html.de
-Amaya/doc/html/attaching_annotations/About_Storing_Local_Annotations.html.de
-Amaya/doc/html/attaching_annotations/About_Storing_Remote_Annotations.html.de
-Amaya/doc/html/attaching_annotations/Annotation_Issues.html.de
-Amaya/doc/html/attaching_annotations/Annotation_Menu.html.de
-Amaya/doc/html/attaching_annotations/Configuring_Annotation_Settings.html.de
-Amaya/doc/html/attaching_annotations/Configuring_Icons.html.de
-Amaya/doc/html/attaching_annotations/Creating_an_Annotation.html.de
-Amaya/doc/html/attaching_annotations/Loading_and_Presenting_Annotations.html.de
-Amaya/doc/html/attaching_annotations/Moving_Annotations.html.de
-Amaya/doc/html/attaching_annotations/Navigating_Annotations.html.de
-Amaya/doc/html/attaching_annotations/Replying_To_Annotations.html.de
-Amaya/doc/html/attaching_annotations/What_is_an_Annotation.html.de
 Amaya/doc/html/attaching_annotations/about_reading_annotations.html
 Amaya/doc/html/attaching_annotations/about_reading_annotations.html.de
 Amaya/doc/html/attaching_annotations/about_reading_annotations.html.es
@@ -403,6 +397,8 @@ Amaya/doc/html/attaching_annotations/replying_to_annotations.html.es
 Amaya/doc/html/attaching_annotations/what_is_an_annotation.html
 Amaya/doc/html/attaching_annotations/what_is_an_annotation.html.de
 Amaya/doc/html/attaching_annotations/what_is_an_annotation.html.es
+Amaya/doc/html/bookmarks.html
+Amaya/doc/html/bookmarks.html.es
 Amaya/doc/html/browsing/about_access_keys.html
 Amaya/doc/html/browsing/about_access_keys.html.de
 Amaya/doc/html/browsing/about_access_keys.html.es
@@ -466,9 +462,6 @@ Amaya/doc/html/editing_documents/creating_new_documents.html.es
 Amaya/doc/html/editing_documents/the_transform_command.html
 Amaya/doc/html/editing_documents/the_transform_command.html.de
 Amaya/doc/html/editing_documents/the_transform_command.html.es
-Amaya/doc/html/editing_iso-latin-1_characters/about_optional_multikey_support.html
-Amaya/doc/html/editing_iso-latin-1_characters/about_optional_multikey_support.html.de
-Amaya/doc/html/editing_iso-latin-1_characters/about_optional_multikey_support.html.es
 Amaya/doc/html/editing_iso-latin-1_characters/about_standard_multikey_support.html
 Amaya/doc/html/editing_iso-latin-1_characters/about_standard_multikey_support.html.de
 Amaya/doc/html/editing_iso-latin-1_characters/about_standard_multikey_support.html.es
@@ -769,6 +762,11 @@ Amaya/doc/images/annotationwindow-es.png
 Amaya/doc/images/annotationwindow.png
 Amaya/doc/images/annotorp.png
 Amaya/doc/images/background-de.png
+Amaya/doc/images/bmbprop.png
+Amaya/doc/images/bmmenu.png
+Amaya/doc/images/bmtprop.png
+Amaya/doc/images/bmview1.png
+Amaya/doc/images/bmview2.png
 Amaya/doc/images/browser_preferences-de.png
 Amaya/doc/images/browsing_preferences-es.png
 Amaya/doc/images/browsing_preferences.png
@@ -776,6 +774,7 @@ Amaya/doc/images/cache_preferences-de.png
 Amaya/doc/images/cache_preferences-es.png
 Amaya/doc/images/cache_preferences.png
 Amaya/doc/images/check.gif
+Amaya/doc/images/closed.png
 Amaya/doc/images/code.gif
 Amaya/doc/images/color-de.png
 Amaya/doc/images/color_preferences-de.png
@@ -815,6 +814,7 @@ Amaya/doc/images/linkwindow.png
 Amaya/doc/images/localfilter-es.png
 Amaya/doc/images/localfilter.png
 Amaya/doc/images/math_palette-de.png
+Amaya/doc/images/open.png
 Amaya/doc/images/printoptions_w32-de.png
 Amaya/doc/images/profiles_preferences-de.png
 Amaya/doc/images/profiles_preferences-es.png

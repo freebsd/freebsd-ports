@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	amaya
-PORTVERSION=	8.0
+PORTVERSION=	8.1b
 CATEGORIES=	www
 MASTER_SITES=	http://www.w3.org/Amaya/Distribution/ \
 		ftp://ftp.w3.org/pub/amaya/ \
@@ -28,7 +28,7 @@ COMMENT=	The W3C's testbed web editor/browser
 
 WRKSRC=		${WRKDIR}/Amaya/obj
 
-USE_GNOME=	imlib
+USE_GNOME=	gnometarget imlib
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
