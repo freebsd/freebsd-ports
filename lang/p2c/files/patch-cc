@@ -1,22 +1,24 @@
-*** src/Makefile.orig	Wed Dec 15 14:55:32 1999
---- src/Makefile	Wed Dec 15 14:56:48 1999
-***************
-*** 37,44 ****
-  #MANFILE = p2c.man.inst
-  
-  # Compiler options
-! CC = cc                    # you may wish to use gcc here instead
-! OPT = # -O		   # uncomment this for optimization
-  DEB = # -g		   # uncomment this for debugging
-  DEFS =			   # place other -D types of things here
-  CFLAGS = $(OPT) $(DEB) $(DEFS)
---- 37,44 ----
-  #MANFILE = p2c.man.inst
-  
-  # Compiler options
-! CC ?= cc                    # you may wish to use gcc here instead
-! OPT = $(CFLAGS)		   # uncomment this for optimization
-  DEB = # -g		   # uncomment this for debugging
-  DEFS =			   # place other -D types of things here
-  CFLAGS = $(OPT) $(DEB) $(DEFS)
-
+--- src/Makefile.orig	Wed Dec  8 06:36:48 1993
++++ src/Makefile	Tue Apr 13 02:12:49 2004
+@@ -24,8 +24,8 @@
+ BINDIR = ..
+ LIBDIR = ../home
+ MANDIR = ../home
+-MANFILE = p2c.cat          # human-readable manual (for cat.1)
+-#MANFILE = p2c.man.inst    # uncompressed nroff source (for man.1)
++#MANFILE = p2c.cat          # human-readable manual (for cat.1)
++MANFILE = p2c.man.inst    # uncompressed nroff source (for man.1)
+ #MANFILE = p2c.man.Z       # compressed nroff source (for man.1.Z)
+ 
+ # Directories (public version)
+@@ -37,8 +37,8 @@
+ #MANFILE = p2c.man.inst
+ 
+ # Compiler options
+-CC = cc                    # you may wish to use gcc here instead
+-OPT = # -O		   # uncomment this for optimization
++CC ?= cc                    # you may wish to use gcc here instead
++OPT = $(CFLAGS)		   # uncomment this for optimization
+ DEB = # -g		   # uncomment this for debugging
+ DEFS =			   # place other -D types of things here
+ CFLAGS = $(OPT) $(DEB) $(DEFS)
