@@ -1,0 +1,42 @@
+--- src/cobfusc/cobfusc.c.orig	Wed Mar 26 07:58:16 1997
++++ src/cobfusc/cobfusc.c	Fri Aug 11 15:36:09 2000
+@@ -342,25 +342,31 @@
+ 		/*
+ 		 * Convert the string to uppercase.
+ 		 */
+-		while (*p)
+-			*p = toupper(*p++);
++		while (*p) {
++			*p = toupper(*p);
++			p++;
++		}
+ 		break;
+ 	case 2:
+ 		/*
+ 		 * Convert the string to lowercase.
+ 		 */
+-		while (*p)
+-			*p = tolower(*p++);
++		while (*p) {
++			*p = tolower(*p);
++			p++;
++		}
+ 		break;
+ 	default:
+ 		/*
+ 		 * Convert the string to random case.
+ 		 */
+-		while (*p)
++		while (*p) {
+ 			if (RANDOM(2) == 1)
+-				*p = toupper(*p++);
++				*p = toupper(*p);
+ 			else
+-				*p = tolower(*p++);
++				*p = tolower(*p);
++			p++;
++		}
+ 	}
+ 
+ 	return buf;
+
