@@ -17,9 +17,9 @@ CONFIGURE_ENV+=	LDFLAGS="-Wl,-E"
 
 .include <bsd.port.pre.mk>
 
-#.if ${MACHINE_ARCH} == "alpha"
-#BROKEN=		bus errors on unaligned accesses in scshvm
-#.endif
+.if ${MACHINE_ARCH} != "i386"
+BROKEN=		"fails to install on ${MACHINE_ARCH}"
+.endif
 
 GNU_CONFIGURE=	yes
 
