@@ -23,6 +23,7 @@ sbin/zoneserver
 %%PORTDOCS%%share/doc/maradns/en/misc/credits.txt
 %%PORTDOCS%%share/doc/maradns/en/misc/faq.html
 %%PORTDOCS%%share/doc/maradns/en/misc/faq.txt
+%%PORTDOCS%%share/doc/maradns/en/misc/files.txt
 %%PORTDOCS%%share/doc/maradns/en/misc/recursive-case-insensitive
 %%PORTDOCS%%share/doc/maradns/en/misc/spammers/azmalink.net
 %%PORTDOCS%%share/doc/maradns/en/misc/spammers/hiddenonline/google.search
@@ -54,7 +55,6 @@ sbin/zoneserver
 %%PORTDOCS%%share/doc/maradns/fr/tutorial/man.zoneserver.html
 %%PORTDOCS%%share/doc/maradns/fr/tutorial/recursive.html
 %%PORTDOCS%%share/doc/maradns/fr/tutorial/tutorial.html
-%%PORTDOCS%%share/doc/maradns/old.changelog
 %%PORTDOCS%%@dirrm share/doc/maradns/fr/tutorial
 %%PORTDOCS%%@dirrm share/doc/maradns/fr
 %%PORTDOCS%%@dirrm share/doc/maradns/en/tutorial
