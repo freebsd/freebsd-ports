@@ -1,5 +1,5 @@
---- Makefile.orig	Thu Jun 18 19:44:09 1998
-+++ Makefile	Thu Nov 26 12:36:44 1998
+--- Makefile.orig	Thu Jun 18 13:44:09 1998
++++ Makefile	Tue May 30 10:05:47 2000
 @@ -1,17 +1,18 @@
  OBJ     = libapm.o bios.o smi.o
  PROGRAM = libapm
@@ -24,7 +24,7 @@
  
 -CFLAGS = -O2 #-DLIBRETTO -DDEBUG
 +#DEFS= -DLIBRETTO -DDEBUG
-+CFLAGS = -pipe -O $(DEFS)
++CFLAGS += $(DEFS)
 +
 +all:	$(PROGRAM)
  
