@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	msgconvert
-PORTVERSION=	20040520
+PORTVERSION=	20040531
 CATEGORIES=	mail perl5
 MASTER_SITES=	http://www.webonaut.com/distfiles/
 DISTNAME=	${PORTNAME}-${PORTVERSION}.pl
