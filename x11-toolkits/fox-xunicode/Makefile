@@ -12,8 +12,6 @@ PORTREVISION=	1
 
 MAINTAINER=	knu@FreeBSD.org
 
-BROKEN=		"Broken by fox update"
-
 COMMENT=	${.CURDIR}/pkg-comment
 
 WITH_XUNICODE=	yes
