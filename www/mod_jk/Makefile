@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_APACHE_JAKARTA}
 MASTER_SITE_SUBDIR=	jakarta-tomcat-connectors/jk/release/v${PORTVERSION}/src
 DISTNAME=	jakarta-tomcat-connectors-jk-${PORTVERSION}-src
 
-MAINTAINER=	parv_fm@emailgroups.net
+MAINTAINER=	girgen@pingpong.net
 COMMENT=	Apache JK module for Tomcat
 
 BUILD_DEPENDS=	${APXS}:${APACHE_PORT}
