@@ -1,9 +1,9 @@
 # ports collection makefile for:	AliceSoft System 3.5 on X
-# Version required:	BETA
+# Version required:	1.0.1
 # Date created:		24 Oct 1998
 # Whom:			Seiichirou Hiraoka
 #
-# $Id: Makefile,v 1.10 1999/02/02 16:20:37 flathill Exp $
+# $Id: Makefile,v 1.11 1999/02/11 13:50:29 flathill Exp $
 #
 
 DISTNAME=	xsystem35-1.0.1
