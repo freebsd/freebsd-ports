@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	Crypt
 
 MAINTAINER=	markm@FreeBSD.org
 
-RUN_DEPENDS=      ${PREFIX}/lib/perl5/site_perl/5.005/i386-freebsd/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5
+RUN_DEPENDS=      ${LOCALBASE}/lib/perl5/site_perl/5.005/i386-freebsd/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5
 
 RESTRICTED=	"Crypto; export-controlled"
 
