@@ -6,6 +6,7 @@
     SUBDIR += db3
     SUBDIR += dbf2mysql
     SUBDIR += dbmetrix
+    SUBDIR += dbtool
     SUBDIR += dbview
     SUBDIR += edb
     SUBDIR += fastdb
