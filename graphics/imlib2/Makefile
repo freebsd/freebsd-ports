@@ -34,7 +34,7 @@ INSTALLS_SHLIB=	yes
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_MMX) && (${ARCH} == "i386")
-CONFIGURE_ARGS=	--enable-mmx
+CONFIGURE_ARGS+=	--enable-mmx
 .endif
 
 .include <bsd.port.post.mk>
