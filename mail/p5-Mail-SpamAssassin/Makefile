@@ -7,7 +7,7 @@
 
 PORTNAME=	Mail-SpamAssassin
 PORTVERSION=	2.01
-PORTREVISION=	1
+PORTREVISION=   2
 CATEGORIES=	mail perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Mail
@@ -26,6 +26,9 @@ MAN3=		Mail::SpamAssassin.3 Mail::SpamAssassin::PerMsgStatus.3 \
 		Mail::SpamAssassin::SMTP::SmartHost.3
 MAN1PREFIX=	${PREFIX}
 MAN1=		spamd.1 spamassassin.1 spamc.1
+
+post-patch:
+	@find ${WRKSRC} -type f -name "*.orig" -exec rm -f "{}" ";"
 
 .if !defined(NOPORTDOCS)
 post-install:
