@@ -20,7 +20,7 @@ LIB_DEPENDS=	xine.9:${PORTSDIR}/multimedia/libxine \
 		aa.1:${PORTSDIR}/graphics/aalib \
 		png.5:${PORTSDIR}/graphics/png
 
-FORBIDDEN:	http://people.freebsd.org/~eik/portaudit/fde53204-7ea6-11d8-9645-0020ed76ef5a.html
+FORBIDDEN=	http://people.freebsd.org/~eik/portaudit/fde53204-7ea6-11d8-9645-0020ed76ef5a.html
 
 USE_GETTEXT=	yes
 USE_X_PREFIX=	yes
