@@ -10,5 +10,5 @@ bin/newsq
 %%PORTDOCS%%share/doc/newsx/TODO
 %%PORTDOCS%%@dirrm share/doc/newsx
 @dirrm news/spool/inhosts
-@dirrm news/spool
-@dirrm news
+@unexec rmdir %D/news/spool 2> /dev/null || true
+@unexec rmdir %D/news 2> /dev/null || true
