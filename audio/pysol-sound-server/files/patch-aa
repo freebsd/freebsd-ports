@@ -1,13 +1,18 @@
---- configure.orig	Tue Feb  1 01:08:47 2000
-+++ configure	Tue Feb  1 01:13:24 2000
-@@ -5,8 +5,8 @@
- SDL_CFLAGS=`$SDL_CONFIG --cflags`
- SDL_LIBS=`$SDL_CONFIG --libs`
+--- configure.orig	Tue Jan 25 13:35:32 2000
++++ configure	Mon Apr 24 14:48:53 2000
+@@ -1,12 +1,12 @@
+ #! /bin/sh
  
--SMPEG_CFLAGS=""
+-SDL_CONFIG="sdl-config"
++SDL_CONFIG="sdl11-config"
+ SDL_VERSION=`$SDL_CONFIG --version`
+ SDL_CFLAGS=`$SDL_CONFIG --cflags`
+-SDL_LIBS=`$SDL_CONFIG --libs`
++SDL_LIBS=`$SDL_CONFIG --libs | sed 's/-pthread//'`
+ 
+ SMPEG_CFLAGS=""
 -SMPEG_LIBS="-lsmpeg"
-+SMPEG_CFLAGS="-I""$X11BASE""/include"
-+SMPEG_LIBS="-L""$X11BASE""/lib -lsmpeg"
++SMPEG_LIBS="-lsmpeg -lgcc_r"
  
  sed -e "s|@SDL_VERSION@|$SDL_VERSION|g" -e "s|@SDL_CFLAGS@|$SDL_CFLAGS|g" -e "s|@SDL_LIBS@|$SDL_LIBS|g" -e "s|@SMPEG_CFLAGS@|$SMPEG_CFLAGS|g" -e "s|@SMPEG_LIBS@|$SMPEG_LIBS|g" < Setup.pre.in > Setup.in
  

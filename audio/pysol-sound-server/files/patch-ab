@@ -1,0 +1,44 @@
+--- Setup.pre.in.orig	Wed Feb  2 19:51:32 2000
++++ Setup.pre.in	Mon Apr 24 14:25:40 2000
+@@ -9,7 +9,7 @@
+ CFLAGS = $(EXTRA_CFLAGS) $(CFLAGS__$(CC)) -I$(INCLUDEPY) -I$(EXECINCLUDEPY) $(DEFS)
+ 
+ CFLAGS__gcc = -Wall -O2 -finline-functions -ffast-math
+-EXTRA_CFLAGS = -I$(srcdir) -I$(srcdir)/mikmod $(SDL_CFLAGS) $(SMPEG_CFLAGS)
++EXTRA_CFLAGS = $(SDL_CFLAGS) -I$(srcdir) $(SMPEG_CFLAGS)
+ 
+ SMPEG_LIBS = @SMPEG_LIBS@
+ SMPEG_CFLAGS = @SMPEG_CFLAGS@
+@@ -19,31 +19,6 @@
+ pysolsoundserver \
+ 	command.c \
+ 	module.c \
+-	mixer/mixer.c \
+-	mixer/music.c \
+-	mixer/wavestream.c \
+-	mikmod/drv_nos.c \
+-	mikmod/drv_sdl.c \
+-	mikmod/load_it.c \
+-	mikmod/load_mod.c \
+-	mikmod/load_s3m.c \
+-	mikmod/load_xm.c \
+-	mikmod/mdreg.c \
+-	mikmod/mdriver.c \
+-	mikmod/mloader.c \
+-	mikmod/mlreg.c \
+-	mikmod/mlutil.c \
+-	mikmod/mmalloc.c \
+-	mikmod/mmerror.c \
+-	mikmod/mmio.c \
+-	mikmod/mplayer.c \
+-	mikmod/munitrk.c \
+-	mikmod/mwav.c \
+-	mikmod/npertab.c \
+-	mikmod/sloader.c \
+-	mikmod/virtch.c \
+-	mikmod/virtch2.c \
+-	mikmod/virtch_common.c \
+ # *** Uncomment and edit to reflect where your SDL library is:
+-	@SDL_LIBS@ @SMPEG_LIBS@
++	@SDL_LIBS@ -lSDL_mixer @SMPEG_LIBS@
+ 
