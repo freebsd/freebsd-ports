@@ -19,6 +19,7 @@ RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash2 \
 
 OPTIONS=	ANTIDRUG "Already included in SA 3.0" off \
 		BOGUS_VIRUS "Catch 'collateral spam' caused by viruses" on \
+		CURL "Use curl to download rule files" off \
 		EVILNUMBERS "Phone numbers, PO boxes, ... from spam " on \
 		RANDOM "Detects spamware mistakes like: %RANDOM_WORD" on \
 		SARE "Installs safe SARE rules" on \
@@ -37,6 +38,10 @@ SPAMASS_FILES+=	ANTIDRUG
 
 .if defined(WITH_BOGUS_VIRUS)
 SPAMASS_FILES+=	BOGUSVIRUS
+.endif
+
+.if defined(WITH_CURL)
+RUN_DEPENDS+=	curl:${PORTSDIR}/ftp/curl
 .endif
 
 .if defined(WITH_EVILNUMBERS)
