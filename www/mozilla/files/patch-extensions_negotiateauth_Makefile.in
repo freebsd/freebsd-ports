@@ -1,12 +1,20 @@
---- extensions/negotiateauth/Makefile.in.orig	Tue Apr 13 12:19:44 2004
-+++ extensions/negotiateauth/Makefile.in	Tue Apr 13 12:19:53 2004
-@@ -68,8 +68,8 @@
+--- extensions/negotiateauth/Makefile.in.orig	Mon Jul 12 15:18:06 2004
++++ extensions/negotiateauth/Makefile.in	Sat Dec 18 16:10:49 2004
+@@ -64,7 +64,6 @@
  		$(NULL)
  
  EXTRA_DSO_LDOPTS = \
 -		$(MOZ_COMPONENT_LIBS) \
- 		$(GSSAPI_LIBS) \
-+		$(MOZ_COMPONENT_LIBS) \
  		$(NULL)
  
- # make sure this component is never statically linked into the main
+ ifneq (,$(GSSAPI_LIBS))
+@@ -81,6 +80,9 @@
+ # to install GSSAPI libraries in order to use the rest of mozilla ;-)
+ FORCE_SHARED_LIB  = 1
+ endif
++
++EXTRA_DSO_LDOPTS = \
++		   $(MOZ_COMPONENT_LIBS)
+ 
+ ifeq ($(OS_ARCH),WINNT)
+ LOCAL_INCLUDES	  = -DUSE_SSPI

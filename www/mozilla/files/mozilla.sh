@@ -6,6 +6,22 @@ LOCATION='new-tab'
 
 cd $MOZILLA_DIR                                     || exit 1
 
+# LANG, MOZILLA_UILOCALE, MOZILLA_REGION
+if [ -n "$LANG" -a ! -n "${MOZILLA_UILOCALE}" ]; then
+    _locale="${LANG%%.*}"
+    if [ "${_locale}" != "en_US" -a "${_locale}" != "C" ]; then
+	_region="${_locale##*_}"
+	_locale="${_locale%_*}"
+	[ -r chrome/${_locale}-${_region}.jar ] && \
+	    MOZILLA_EXEC="${MOZILLA_EXEC} -UILocale ${_locale}-${_region}"
+    fi
+elif [ -n "${MOZILLA_UILOCALE}" ]; then
+    MOZILLA_EXEC="${MOZILLA_EXEC} -UILocale ${MOZILLA_UILOCALE}"
+    if [ -n "${MOZILLA_UIREGION}" ]; then
+	MOZILLA_EXEC="${MOZILLA_EXEC} -UIRegion ${MOZILLA_UIREGION}"
+    fi
+fi
+
 case $1 in
     -browser)
     	REMOTE_COMMAND="xfeDoCommand (openBrowser)"

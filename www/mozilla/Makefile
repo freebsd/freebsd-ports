@@ -6,18 +6,17 @@
 #
 
 PORTNAME?=	mozilla
-PORTVERSION=	1.7.3
-PORTREVISION?=	3
+PORTVERSION=	1.7.5
 PORTEPOCH?=	2
 CATEGORIES?=	www
 MASTER_SITES=	${MASTER_SITE_MOZILLA} \
 		${MASTER_SITE_LOCAL:S/$/:local/}
-MASTER_SITE_SUBDIR=	mozilla/releases/${PORTNAME}${PORTVERSION}/src \
+MASTER_SITE_SUBDIR=	mozilla/releases/${PORTNAME}${PORTVERSION}/source \
 			adamw/:local
 DISTFILES=	${PORTNAME}-source-${PORTVERSION}${EXTRACT_SUFX}
-.if !defined(WITH_CAIRO_RENDER)
-DISTFILES+=	libart_lgpl${EXTRACT_SUFX}:local
-.endif
+#.if !defined(WITH_CAIRO_RENDER)
+#DISTFILES+=	libart_lgpl${EXTRACT_SUFX}:local
+#.endif
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	The open source, standards compliant web browser
@@ -35,12 +34,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 MOZILLA?=	mozilla
 MOZ_SUFX?=
 
-.if defined(WITH_GTK1)
-PKGNAMESUFFIX=	-gtk1
-USE_GNOME=	gtk12 orbit
-.else
 USE_GNOME=	gtk20 libidl
-.endif
 
 LATEST_LINK=	${MOZILLA}
 EXTRACT_AFTER_ARGS=	| ${TAR} -xf - --exclude */CVS/* \
@@ -91,11 +85,7 @@ CONFIGURE_ENV=	LOCALBASE=${LOCALBASE}
 PKGINSTALL=	${WRKDIR}/pkg-install
 PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
 
-.if defined(WITH_GTK1)
-CONFIGURE_ARGS+=	--enable-default-toolkit=gtk
-.else
 CONFIGURE_ARGS+=	--enable-default-toolkit=gtk2
-.endif
 
 ESD_LIB=	libesd.so.2
 FREETYPE_LIB=	libfreetype.so.9
@@ -254,6 +244,8 @@ post-patch:
 		${WRKSRC}/js/src/Makefile.in
 	@${REINPLACE_CMD} -E -e 's|libesd\.so\.[0-9]+|${ESD_LIB}|g' \
 		${WRKSRC}/widget/src/gtk2/nsSound.cpp
+	@${REINPLACE_CMD} -E -e 's|libcups\.so\.[0-9]+|libcups.no|g' \
+		${WRKSRC}/gfx/src/gtk/nsDeviceContextSpecG.cpp
 	@${REINPLACE_CMD} -e '/accessibility.typeaheadfind.enablesound/s/true/false/' \
 		${WRKSRC}/modules/libpref/src/init/all.js
 	@${REINPLACE_CMD} -e 's|<iconv.h>|\"${LOCALBASE}/include/iconv.h\"|g' \
@@ -304,8 +296,9 @@ pre-install:
 				break; \
 			fi; \
 		done; \
-		${ECHO_CMD} @dirrm lib/browser_plugins >> ${PLIST} ; \
 	fi
+	${ECHO_CMD} lib/browser_plugins/.${PORTNAME}.keep >> ${PLIST}
+	${ECHO_CMD} "@unexec ${RMDIR} %D/lib/browser_plugins 2>/dev/null || ${TRUE}" >> ${PLIST}
 	${ECHO_CMD} lib/${MOZILLA}/mozilla >> ${PLIST}
 	${ECHO_CMD} lib/${MOZILLA}/mozilla-config >> ${PLIST}
 .if !defined(WITHOUT_MAILNEWS)
@@ -339,6 +332,7 @@ do-install:
 	if [ ! -d ${PREFIX}/lib/browser_plugins ]; then \
 		${MKDIR} ${PREFIX}/lib/browser_plugins ; \
 	fi
+	${TOUCH} -f ${PREFIX}/lib/browser_plugins/.${PORTNAME}.keep
 	if [ ! -L ${PREFIX}/lib/browser_plugins/libjavaplugin_oji.so ]; then \
 		for jpi in ${JPI_LIST}; do \
 			if [ -f $${jpi} ]; then \
