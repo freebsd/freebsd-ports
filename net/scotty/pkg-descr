@@ -4,7 +4,7 @@
 
 scotty is a tcl extension which allows to set up TCP and UDP
 connections, to send various ICMP packets, to query the domain name
-system (DNS), to check clock screw using the NTP protocol and to query
+system (DNS), to check clock skew using the NTP protocol and to query
 various SUN RPC services (like rstat and mountd).
 
 Included in this package is an interface to SNMPv1 and SNMPv2. The
@@ -24,7 +24,7 @@ inspect the MIB hierarchy.
 
 More information is available via WWW under the URL:
 
-        http://www.cs.tu-bs.de/ibr/projects/nm/scotty/
+        http://wwwhome.cs.utwente.nl/~schoenw/scotty/
 
 If you have problems installing scotty or if you have made any changes
 to run scotty on your hardware or if you have found any bugs, please
