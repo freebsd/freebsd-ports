@@ -1,11 +1,9 @@
 #!/bin/sh
 
-if [ "$2" != "PRE-INSTALL" ]; then
-    exit 0
-fi
+if [ "$2" = "PRE-INSTALL" ]; then
 
-USER?=clamav
-GROUP?=clamav
+USER=clamav
+GROUP=clamav
 
 if ! pw groupshow "$GROUP" 2>/dev/null 1>&2; then
 	if pw groupadd $GROUP; then
@@ -27,4 +25,14 @@ if ! pw usershow "$USER" 2>/dev/null 1>&2; then
                 exit 1
         fi
 fi
+fi
+
+if [ "$2" = "POST-INSTALL" ]; then
+        chown -R clamav:clamav ${PKG_PREFIX}/share/clamav
+fi
+
+if [ "$2" != "POST-INSTALL" ] && [ "$2" != "PRE-INSTALL" ]; then
+	exit 0
+fi
+
 exit 0

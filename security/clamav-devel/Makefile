@@ -9,7 +9,9 @@ PORTNAME=	clamav
 PORTVERSION=	0.54
 PORTREVISION=	1
 CATEGORIES=	security
-MASTER_SITES=	http://clamav.elektrapro.com/stable/
+MASTER_SITES=	http://clamav.elektrapro.com/stable/ \
+		http://clamav.essentkabel.com/stable/
+
 
 MAINTAINER=	markun@onohara.to
 COMMENT=	Command line virus scanner written entirely in C
@@ -36,12 +38,13 @@ MAN8=		clamd.8
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 500000
-EXTRA_PATCHES=	${FILESDIR}/patch5-*
-.endif
-
 pre-install:
-	@${ECHO} "==>  Creating custom user to run clamav..."
-#	${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
+	@${ECHO} "===>   Creating custom user to run clamav..."
+	${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
+
+post-install:
+	@${ECHO} "===>   Setting permissions..."
+	@${SETENV} PKG_PREFIX=${PREFIX} ${sh} \
+	${SH} ${PKGINSTALL} ${PREFIX} POST-INSTALL
 
 .include <bsd.port.post.mk>
