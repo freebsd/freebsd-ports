@@ -13,7 +13,7 @@ MASTER_SITES=	http://arch.comp.kyutech.ac.jp/~matsu/my_products/gtk/race/
 MAINTAINER=	nox@jelal.kn-bremen.de
 
 LIB_DEPENDS=	MesaGL.14:${PORTSDIR}/graphics/Mesa3 \
-		gif.3:${PORTSDIR}/graphics/giflib \
+		gif.5:${PORTSDIR}/graphics/giflib \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		tcl80.1:${PORTSDIR}/lang/tcl80
 
