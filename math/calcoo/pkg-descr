@@ -5,7 +5,7 @@ other calculator programs are:
 * Bitmapped button labels and display digits to improve readability.
 * No double-function buttons.
 * Undo/redo buttons.
-* Copy/pase interaction with X clipboard.
+* Copy/paste interaction with X clipboard.
 * Both RPN (reverse Polish notation) and "standard" modes are available.
 * Tick marks to separate thousands.                                  
 
