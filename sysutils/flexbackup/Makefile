@@ -1,6 +1,6 @@
 # New ports collection makefile for:    flexbackup
 # Date created:         Wed Nov  3 17:58:26 MST 1999
-# Whom:                 John Reynolds <jjreynold@home.com>
+# Whom:                 John Reynolds <johnjen@reynoldsnet.org>
 #
 # $FreeBSD$
 #
@@ -9,11 +9,10 @@ PORTNAME=	flexbackup
 PORTVERSION=	0.9.8
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.bluecherry.net/~edwinh/flexbackup/tarball/ \
-		http://members.home.com/flexbackup/tarball/ \
 		${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	system/backup
 
-MAINTAINER=	jjreynold@home.com
+MAINTAINER=	johnjen@reynoldsnet.org
 
 RUN_DEPENDS=	afio:${PORTSDIR}/sysutils/afio \
 		buffer:${PORTSDIR}/misc/buffer
