@@ -20,10 +20,16 @@
 #
 
 PORTNAME=	php4
-PORTVERSION=	4.3.2.r4
+PORTVERSION=	4.3.2
 CATEGORIES?=	lang devel www
-MASTER_SITES=	http://downloads.php.net/jani/ \
-		http://www.gufi.org/~alex/php/
+MASTER_SITES=	http://www.php.net/distributions/ \
+		http://it.php.net/distributions/ \
+		http://fi.php.net/distributions/ \
+		http://de.php.net/distributions/ \
+		http://gr.php.net/distributions/ \
+		http://fr.php.net/distributions/ \
+		http://es.php.net/distributions/ \
+		http://se.php.net/distributions/
 .if defined(WITHOUT_CLI) && !defined(WITHOUT_APACHE)
 PKGNAMEPREFIX=	mod_
 .else
@@ -35,7 +41,7 @@ PKGNAMESUFFIX=	-cli
 .endif
 .endif
 .endif
-DISTNAME=	php-${PORTVERSION:S/.r/RC/}
+DISTNAME=	php-${PORTVERSION}
 
 MAINTAINER?=	sysadmin@alexdupre.com
 COMMENT=	PHP Scripting Language (Apache Module and CLI)
