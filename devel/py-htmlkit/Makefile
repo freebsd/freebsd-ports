@@ -16,6 +16,8 @@ DISTNAME=		HtmlKit
 MAINTAINER=		kbyanc@posi.net
 COMMENT=	Python package that assists in the dynamic generation of HTML content
 
+BROKEN=		"Does not install"
+
 USE_PYTHON=		yes
 PLIST_SUB=		PYTHON_SITELIBDIR=${PYTHON_SITELIBDIR:S/^${LOCALBASE}\///g}
 NO_BUILD=		yes

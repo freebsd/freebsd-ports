@@ -15,6 +15,8 @@ PKGNAMESUFFIX=	-devel
 MAINTAINER?=	seanc@FreeBSD.org
 COMMENT=	Development snapshots of PostgreSQL's latest features
 
+BROKEN=		"Does not install"
+
 DIST_SUBDIR=	postgresql
 
 USE_BISON=	YES
