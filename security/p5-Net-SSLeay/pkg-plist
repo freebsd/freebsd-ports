@@ -31,19 +31,19 @@ lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/SSLeay/want_nothing.al
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/SSLeay/want_read.al
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/SSLeay/want_write.al
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/SSLeay/.packlist
-%%PORTDOCS%%/share/examples/p5-Net-SSLeay/bulk.pl
-%%PORTDOCS%%/share/examples/p5-Net-SSLeay/callback.pl
-%%PORTDOCS%%/share/examples/p5-Net-SSLeay/get_authenticated_page.pl
-%%PORTDOCS%%/share/examples/p5-Net-SSLeay/get_page.pl
-%%PORTDOCS%%/share/examples/p5-Net-SSLeay/https-proxy-snif.pl
-%%PORTDOCS%%/share/examples/p5-Net-SSLeay/makecert.pl
-%%PORTDOCS%%/share/examples/p5-Net-SSLeay/minicli.pl
-%%PORTDOCS%%/share/examples/p5-Net-SSLeay/req.conf
-%%PORTDOCS%%/share/examples/p5-Net-SSLeay/ssl-inetd-serv.pl
-%%PORTDOCS%%/share/examples/p5-Net-SSLeay/ssl_diff.pl
-%%PORTDOCS%%/share/examples/p5-Net-SSLeay/sslcat.pl
-%%PORTDOCS%%/share/examples/p5-Net-SSLeay/sslecho.pl
-%%PORTDOCS%%/share/examples/p5-Net-SSLeay/stdio_bulk.pl
+%%PORTDOCS%%share/examples/p5-Net-SSLeay/bulk.pl
+%%PORTDOCS%%share/examples/p5-Net-SSLeay/callback.pl
+%%PORTDOCS%%share/examples/p5-Net-SSLeay/get_authenticated_page.pl
+%%PORTDOCS%%share/examples/p5-Net-SSLeay/get_page.pl
+%%PORTDOCS%%share/examples/p5-Net-SSLeay/https-proxy-snif.pl
+%%PORTDOCS%%share/examples/p5-Net-SSLeay/makecert.pl
+%%PORTDOCS%%share/examples/p5-Net-SSLeay/minicli.pl
+%%PORTDOCS%%share/examples/p5-Net-SSLeay/req.conf
+%%PORTDOCS%%share/examples/p5-Net-SSLeay/ssl-inetd-serv.pl
+%%PORTDOCS%%share/examples/p5-Net-SSLeay/ssl_diff.pl
+%%PORTDOCS%%share/examples/p5-Net-SSLeay/sslcat.pl
+%%PORTDOCS%%share/examples/p5-Net-SSLeay/sslecho.pl
+%%PORTDOCS%%share/examples/p5-Net-SSLeay/stdio_bulk.pl
 %%PORTDOCS%%@dirrm share/examples/p5-Net-SSLeay
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/SSLeay
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Net/SSLeay
