@@ -1,0 +1,10 @@
+Compu's Messenger is a multi-platform MSN Messenger
+(though it works best on unix platform). It has support
+for getting the user list from the server, block lists,
+chats with more than two users, emotional icons, HTTP
+proxy and logging facility.
+
+WWW: http://msn.compucreations.com/
+
+- Sergio Jimenez Romero
+jimromse@eupmt.es
