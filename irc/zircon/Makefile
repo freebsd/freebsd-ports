@@ -3,10 +3,10 @@
 # Date created:		19 Aug 1995
 # Whom:			jkh / pst
 #
-# $Id: Makefile,v 1.19 1997/11/15 20:25:09 pst Exp $
+# $Id: Makefile,v 1.20 1997/11/19 02:48:59 asami Exp $
 #
 
-DISTNAME=	zircon-1.18.71
+DISTNAME=	zircon-1.18.79
 CATEGORIES=	net tk80
 MASTER_SITES=	ftp://catless.ncl.ac.uk/pub/
 
