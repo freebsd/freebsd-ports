@@ -1,25 +1,12 @@
 bin/wpd2html
 bin/wpd2raw
 bin/wpd2text
-lib/libwpd-1.a
-lib/pkgconfig/libwpd-1.pc
+include/libwpd-1/libwpd/WPDocument.h
+include/libwpd-1/libwpd/WPXHLListenerImpl.h
 include/libwpd-1/libwpd/libwpd.h
 include/libwpd-1/libwpd/libwpd_support.h
-include/libwpd-1/libwpd/WPXHLListener.h
-include/libwpd-1/libwpd/WPXHLListenerImpl.h
-include/libwpd-1/libwpd/WPXLLListener.h
-include/libwpd-1/libwpd/WPXParser.h
-include/libwpd-1/libwpd/WP6Parser.h
-include/libwpd-1/libwpd/WP6HLListener.h
-include/libwpd-1/libwpd/WP6Header.h
-include/libwpd-1/libwpd/WP60Header.h
-include/libwpd-1/libwpd/WP61Header.h
-include/libwpd-1/libwpd/WP6LLListener.h
-include/libwpd-1/libwpd/WPXHeader.h
-include/libwpd-1/libwpd/WP6FileStructure.h
-include/libwpd-1/libwpd/WP6PrefixDataPacket.h
-include/libwpd-1/libwpd/WP6FontDescriptorPacket.h
-include/libwpd-1/libwpd/WP6DefaultInitialFontPacket.h
-@exec mkdir -p %D/include/libwpd-1/libwpd
+lib/libwpd-1.so
+lib/libwpd-1.so.7
+lib/pkgconfig/libwpd-1.pc
 @dirrm include/libwpd-1/libwpd
 @dirrm include/libwpd-1
