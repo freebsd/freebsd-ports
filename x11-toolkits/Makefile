@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.8 1998/11/08 17:17:15 eivind Exp $
+# $Id: Makefile,v 1.9 1998/11/17 08:07:13 tg Exp $
 #
 
     SUBDIR += FWF
@@ -21,6 +21,7 @@
     SUBDIR += qt
     SUBDIR += qt133
     SUBDIR += qt140
+    SUBDIR += qt141
     SUBDIR += slingshot
     SUBDIR += tix
     SUBDIR += tk41
