@@ -1,5 +1,7 @@
-Version 2.3.11 of the Berkeley DB library. This version uses an incompatible
-underlying database than v1.85 and a different API. Utilities are included in
-the distribution to convert v1.85 databases to v2.3.11
+Version 2.3.11 of the Berkeley DB library. This version uses an
+incompatible underlying database format than v1.85 and a different
+standard API. Utilities are included in the distribution to convert
+v1.85 databases to v2.3.11, and a backwards compatible API is provided to
+maintain compatibility with programs using the v1.85 interface.
 
 For more information, refer to http://www.sleepycat.com
