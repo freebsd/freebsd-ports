@@ -29,7 +29,7 @@ CONFIGURE_ARGS+=	--with-iconv-library=${LOCALBASE}/lib \
 			--with-iconv-includes=${LOCALBASE}/include
 .endif
 
-LIB_DEPENDS=	Xft.2:${PORTSDIR}/x11-fonts/Xft
+LIB_DEPENDS=	Xft.2:${PORTSDIR}/x11-fonts/libXft
 RUN_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 
 .if defined(WITH_STROKE)
