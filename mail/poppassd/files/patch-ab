@@ -40,7 +40,7 @@
 +    "Changing local password for *\nOld Password:",
      "Changing password for * on *.\nOld password:",
      "Changing NIS password for * on *.\nOld password:",
-+    "Changing NIS password for * on *.\nOld Password:",
++    "Changing NIS password for *\nOld Password:",
      "Changing password for *\n*'s Old password:",
      ""};
  
