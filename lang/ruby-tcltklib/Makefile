@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	tcltklib
-PORTVERSION=	${RUBY_VERSION}
+PORTVERSION=	${RUBY_PORTVERSION}
 CATEGORIES+=	lang x11-toolkits ruby tcl${TCL_VERSION} tk${TK_VERSION}
 MASTER_SITES=	${MASTER_SITE_RUBY}
-#MASTER_SITE_SUBDIR=	${RUBY_VER}
-DISTNAME=	ruby-${PORTVERSION}
+MASTER_SITE_SUBDIR=	${RUBY_VER}
+DISTNAME=	${RUBY_DISTNAME}
 DIST_SUBDIR=	ruby
 
 MAINTAINER?=	knu@FreeBSD.org
@@ -24,7 +24,7 @@ USE_XLIB=	yes
 
 MD5_FILE=	${PORTSDIR}/lang/ruby/distinfo
 
-WRKSRC=		${WRKDIR}/${DISTNAME}/ext/tcltklib
+WRKSRC=		${RUBY_WRKSRC}/ext/tcltklib
 CONFIGURE_ARGS=	--with-tcllib="${TCL_LIB}" --with-tklib="${TK_LIB}" \
 		--with-tcl-lib="${LOCALBASE}/lib/${TCL_DIR}" \
 		--with-tk-lib="${LOCALBASE}/lib/${TK_DIR}" \
