@@ -19,13 +19,15 @@ MAN1=		cmatrix.1
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
+PORTDOCS=	ChangeLog README TODO
+PLIST_FILES=	bin/cmatrix
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/cmatrix ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/cmatrix.1 ${PREFIX}/man/man1
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for f in ChangeLog README TODO
+.for f in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
 .endfor
 .endif
