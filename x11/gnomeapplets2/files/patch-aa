@@ -1,5 +1,5 @@
---- configure.orig	Tue Aug 27 14:17:28 2002
-+++ configure	Tue Aug 27 14:20:19 2002
+--- configure.orig	Fri Sep 13 15:58:55 2002
++++ configure	Wed Sep 18 01:18:40 2002
 @@ -6994,6 +6994,7 @@
  
  # This can be used to rebuild libtool when needed
@@ -8,6 +8,15 @@
  
  # Always use our own libtool.
  LIBTOOL='$(SHELL) $(top_builddir)/libtool'
+@@ -10518,7 +10519,7 @@
+   echo "$as_me: failed program was:" >&5
+ cat conftest.$ac_ext >&5
+ CATOBJEXT=.mo
+-	         DATADIRNAME=lib
++	         DATADIRNAME=share
+ fi
+ rm -f conftest.$ac_objext conftest$ac_exeext conftest.$ac_ext
+ 	      INSTOBJEXT=.mo
 @@ -10765,6 +10766,7 @@
  *irix*) CDROM_HOST=irix; CDROM_LIBS="-lcdaudio -lmediad -lds";cd_device_path="/dev/cdrom";;
  *linux*) CDROM_HOST=linux;cd_device_path="/dev/cdrom";;
@@ -37,3 +46,19 @@
  
  	;;
    *-*-linux*)
+@@ -11494,13 +11510,13 @@
+ ACLOCAL="$ACLOCAL $ACLOCAL_FLAGS"
+ 
+ cat >>confdefs.h <<EOF
+-#define GNOME_ICONDIR "${prefix}/share/pixmaps"
++#define GNOME_ICONDIR "${datadir}/pixmaps"
+ EOF
+ 
+ #defined the below to enable help to work for applets
+ 
+ cat >>confdefs.h <<EOF
+-#define DATADIR "${prefix}/share"
++#define DATADIR "${datadir}"
+ EOF
+ 
+ cat >>confdefs.h <<EOF
