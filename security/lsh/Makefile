@@ -16,7 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A secure (encrypted) remote shell compatible with ssh 2.0
 
 BUILD_DEPENDS+=	${LOCALBASE}/include/gmp.h:${PORTSDIR}/math/libgmp4 \
-		${LOCALBASE}/share/slib/require.scm:${PORTSDIR}/lang/slib
+		${LOCALBASE}/share/guile/slibcat:${PORTSDIR}/devel/slib-guile
 LIB_DEPENDS+=	oop:${PORTSDIR}/devel/liboop
 
 GNU_CONFIGURE=	yes
