@@ -1,0 +1,12 @@
+include/sst1vid.h
+include/3dfx.h
+include/glide.h
+include/texus.h
+include/glidesys.h
+include/glideutl.h
+include/gump.h
+include/linutil.h
+lib/libglide2x.so
+lib/libtexus.so
+bin/test-glide
+@exec /compat/linux/sbin/ldconfig ; true
