@@ -3,13 +3,13 @@
 # Date created:		19 Sept. 1997
 # Whom:			Pedro Giffuni
 #
-# $Id: Makefile,v 1.6 1998/12/09 00:19:05 steve Exp $
+# $Id: Makefile,v 1.7 1999/06/22 17:51:51 steve Exp $
 #
 
 DISTNAME=	3.1.1
 PKGNAME=	kaskade-3.1.1
 CATEGORIES=	cad
-MASTER_SITES=	ftp://elib.zib-berlin.de/pub/kaskade/3.x/
+MASTER_SITES=	ftp://ftp.zib.de/pub/kaskade/3.x/
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	giffunip@asme.org
