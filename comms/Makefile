@@ -15,6 +15,7 @@
     SUBDIR += mlan
     SUBDIR += mserver
     SUBDIR += plp
+    SUBDIR += qico
     SUBDIR += qpage
     SUBDIR += seyon
     SUBDIR += snooper

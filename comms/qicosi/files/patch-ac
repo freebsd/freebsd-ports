@@ -1,0 +1,20 @@
+--- src/Makefile.orig	Sat Mar 18 10:12:29 2000
++++ src/Makefile	Sat Mar 18 12:02:56 2000
+@@ -3,7 +3,7 @@
+ #
+ include	../CONFIG
+ 
+-STRIP=0
++STRIP=1
+ #DEFS   += -DEMSI_LOG # log emsi in /tmp/emsi.log
+ #DEFS   += -DH_DEBUG # Hydra
+ #DEFS   += -DZ_DEBUG # ZModem
+@@ -14,7 +14,7 @@
+ #DEFS   += -DY_DEBUG #-DYYERROR_VERBOSE=1 -DYYDEBUG=100
+ 
+ DEFS    += -DSHELL=\"$(SHELL)\" -DCONFIG=\"$(CONF)\"
+-CFLAGS	= $(DEFS) -Wall -m486 -O2 -D_GNU_SOURCE=1 -D_BSD_SOURCE=1
++CFLAGS	+= $(DEFS)
+ ifeq (1,$(STRIP))
+ IFLAGS  = -s
+ else
