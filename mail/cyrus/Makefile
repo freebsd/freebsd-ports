@@ -7,7 +7,7 @@
 
 PORTNAME=	cyrus
 PORTVERSION=	1.6.24
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail tcl82
 MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/ \
 		ftp://ftp.hanse.de/sites/transit/mirror/ftp.andrew.cmu.edu/pub/cyrus-mail/
@@ -45,6 +45,7 @@ DOCS=	README acl-extension anoncvs bugs changes copyrights install \
 	mailing-list overview quota-extension server-design
 HTDOCS=	anoncvs bugs changes index install mailing-list overview \
 	questions readme sieve-protocol sieve
+
 post-install:
 		@ ${MV} ${PREFIX}/cyrus/bin/quota ${PREFIX}/cyrus/bin/cyrquota
 .if !defined(NOPORTDOCS)
@@ -78,12 +79,13 @@ post-install:
 		${CHMOD} 640 ${PREFIX}/etc/imap/mailboxes
 		${CHOWN} cyrus:cyrus ${PREFIX}/etc/imap/mailboxes
 		@${ECHO} "@exec ${MKDIR} %D/etc/imap" >>${TMPPLIST}
+		@${ECHO} "@unexec if [ ! -s %D/etc/imap/mailboxes ]; then ${RM} %D/etc/imap/mailboxes; fi" >>${TMPPLIST}
 .for dir in user quota proc log msg
 		@${ECHO} "@exec ${MKDIR} %D/etc/imap/${dir}" >>${TMPPLIST}
-		@${ECHO} "@dirrm etc/imap/${dir}" >>${TMPPLIST}
+		@${ECHO} "@unexec rmdir %D/etc/imap/${dir} 2>/dev/null || true" >>${TMPPLIST}
 .endfor
-		@${ECHO} "@dirrm etc/imap" >>${TMPPLIST}
-		@${ECHO} "@exec ${CP} /dev/null %D/etc/imap/mailboxes" >>${TMPPLIST}
+		@${ECHO} "@unexec rmdir %D/etc/imap 2>/dev/null || true" >>${TMPPLIST}
+		@${ECHO} "@exec ${TOUCH} %D/etc/imap/mailboxes" >>${TMPPLIST}
 		@${ECHO} "@exec ${CHOWN} -R cyrus:cyrus %D/etc/imap" >>${TMPPLIST}
 		@${ECHO} "@exec ${CHMOD} -R g-w,o= %D/etc/imap" >>${TMPPLIST}
 		@${ECHO} "@mode u=rwx,go=" >>${TMPPLIST}
