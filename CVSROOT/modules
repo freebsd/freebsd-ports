@@ -329,6 +329,7 @@ aop		ports/games/aop
 ap-utils	ports/net-mgmt/ap-utils
 apache-ant	ports/devel/apache-ant
 apache-contrib	ports/www/apache-contrib
+apache-forrest	ports/www/apache-forrest
 apache-jserv	ports/www/apache-jserv
 apache-soap	ports/net/apache-soap
 apache13	ports/www/apache13
