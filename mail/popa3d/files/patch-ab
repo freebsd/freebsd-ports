@@ -1,13 +1,14 @@
---- Makefile.orig	Tue Feb  1 06:56:46 2000
-+++ Makefile	Sun Feb  6 13:31:49 2000
+--- Makefile.orig	Mon Jan 31 22:56:46 2000
++++ Makefile	Sat Feb 19 08:43:33 2000
 @@ -1,9 +1,9 @@
 -CC = gcc
 +CC?= gcc
  LD = gcc
  RM = rm -f
- CFLAGS = -c -Wall -O2 -fomit-frame-pointer
+-CFLAGS = -c -Wall -O2 -fomit-frame-pointer
 -LDFLAGS = -s
 -#LDFLAGS = -s -lcrypt
++CFLAGS+= -c -Wall
 +#LDFLAGS = -s
 +LDFLAGS = -s -lcrypt
  
