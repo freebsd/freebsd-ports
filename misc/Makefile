@@ -314,6 +314,7 @@
     SUBDIR += pbs
     SUBDIR += pdfmap
     SUBDIR += pdmenu
+    SUBDIR += pear-Services_Weather
     SUBDIR += peq
     SUBDIR += pg
     SUBDIR += phraze
