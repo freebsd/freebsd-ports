@@ -1,5 +1,5 @@
---- install.sh.orig	Fri Dec 10 06:49:32 2004
-+++ install.sh	Tue Dec 14 17:26:29 2004
+--- install.sh.orig	Fri Feb  4 17:20:39 2005
++++ install.sh	Fri Feb  4 17:38:04 2005
 @@ -761,10 +761,9 @@
      case "${machine}:${os}" in
  	i[3456]86:Linux|x86_64:Linux|i[3456]86:FreeBSD|i[3456]86:NetBSD|i[3456]86:OpenBSD)
@@ -45,7 +45,7 @@
          if test -f \"\${INIJAVA}/libjava.so\"; then OPERA_JAVA_DIR=\"\${INIJAVA}\"; fi
      fi
  fi
-@@ -873,47 +876,16 @@
+@@ -873,52 +876,16 @@
  
  if test ! \"\${OPERA_JAVA_DIR}\"; then
  
@@ -58,6 +58,10 @@
 +    PREFIXES=\"%%LOCALBASE%%\"
  
      for SUNJAVA in \\
+-	jre1.5.0_01 \\
+-	jdk1.5.0_01/jre \\
+-	j2re1.4.2_06 \\
+-	j2sdk1.4.2_06/jre \\
 -	j2re1.4.2_04 \\
 -	j2sdk1.4.2_04/jre \\
 -	j2re1.4.2_03 \\
@@ -79,6 +83,7 @@
 -	j2se/1.4/jre \\
 -	j2se/1.3/jre \\
 -	j2se/jre \\
+-	jre1.3.1_15 \\
 -	jre1.3.1_02 \\
 -	jre1.3.1_01 \\
 -	j2re1.3.1 \\
@@ -101,7 +106,7 @@
  	; do
  	for PREFIX in \${PREFIXES}; do
  	    if test -f \"\${PREFIX}/\${SUNJAVA}/lib/${wrapper_sunjava_machine}/libjava.so\"; then OPERA_JAVA_DIR=\"\${PREFIX}/\${SUNJAVA}/lib/${wrapper_sunjava_machine}\" && break; fi
-@@ -962,11 +934,8 @@
+@@ -967,11 +934,8 @@
  
  # Acrobat Reader
  for BINDIR in \\
@@ -115,7 +120,7 @@
      ; do
      if test -d \${BINDIR} ; then PATH=\${PATH}:\${BINDIR}; fi
  done
-@@ -1004,7 +973,7 @@
+@@ -1009,7 +973,7 @@
  };
  
  // Opera package classes get all permissions
@@ -124,7 +129,7 @@
  	permission java.security.AllPermission;
  };
  
-@@ -1076,7 +1045,7 @@
+@@ -1077,7 +1041,7 @@
      chop "${OPERADESTDIR}" "str_localdirshare"
      chop "${OPERADESTDIR}" "str_localdirplugin"
  
@@ -133,7 +138,7 @@
  
      # Executable
  	debug_msg 1 "Executable"
-@@ -1111,7 +1080,7 @@
+@@ -1112,7 +1076,7 @@
  
  	#cp $cpv $cpf wrapper.sh $wrapper_dir/opera
  	generate_wrapper
@@ -142,7 +147,7 @@
  
      # Documentation
  	debug_msg 1 "Documentation"
-@@ -1210,27 +1179,6 @@
+@@ -1214,27 +1178,6 @@
  	mkdir $mkdirv $mkdirp $plugin_dir/
  	chmod $chmodv 755 $plugin_dir
  
@@ -170,7 +175,7 @@
  	if test -f plugins/operamotifwrapper-3
  	    then
  		cp $cpv $cpf plugins/operamotifwrapper-3 $plugin_dir/
-@@ -1238,13 +1186,6 @@
+@@ -1242,13 +1185,6 @@
  		plugin_support='yes'
  	fi
  
@@ -184,7 +189,7 @@
  	if test -f plugins/libnpp.so
  	    then
  		cp $cpv $cpf plugins/libnpp.so $plugin_dir/
-@@ -1282,8 +1223,9 @@
+@@ -1286,8 +1222,9 @@
  	if test -z "${OPERADESTDIR}"; then
  
  	# System wide configuration files
@@ -195,7 +200,7 @@
  	    echo
  	    echo "System wide configuration files:"
  	    echo "  $config_dir/opera6rc"
-@@ -1295,6 +1237,7 @@
+@@ -1299,6 +1236,7 @@
  		cp $cpv $cpf config/opera6rc $config_dir
  		cp $cpv $cpf config/opera6rc.fixed $config_dir
  	    fi
@@ -203,7 +208,7 @@
  	else
  	    echo
  	    echo "User \"${USERNAME}\" does not have write access to $config_dir"
-@@ -1305,12 +1248,12 @@
+@@ -1309,12 +1247,12 @@
  	fi
  
       # Shorcuts and Icons
@@ -220,7 +225,7 @@
  
  	fi # OPERADESTDIR
  
-@@ -1355,13 +1298,13 @@
+@@ -1359,13 +1297,13 @@
  {
      # arg1 = location
  
@@ -238,7 +243,7 @@
  Terminal=0
  Type=Application'
  
-@@ -1439,74 +1382,39 @@
+@@ -1443,74 +1381,39 @@
  
      debug_msg 1 "in gnome()"
  
@@ -341,7 +346,7 @@
  }
  
  kde()
-@@ -1515,39 +1423,31 @@
+@@ -1519,39 +1422,31 @@
  
      debug_msg 1 "in kde()"
  
