@@ -21,4 +21,5 @@ ONLY_FOR_ARCHS=	i386 alpha
 BROWSER=	navigator
 INFILE_HEAD=	'Navigator,4.7.0.19990915'
 
+PRE_MK_INCLUDED=	yes
 .include "${.CURDIR}/../netscape47-communicator/Makefile"

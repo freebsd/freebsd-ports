@@ -48,4 +48,5 @@ do-build:
 	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ./build bsf EXTRAAUTHENTICATORS=ssl)
 .endif
 
+PRE_MK_INCLUDED=	yes
 .include "${MASTERDIR}/Makefile"
