@@ -24,7 +24,8 @@ INSTALLS_SHLIB=	yes
 
 CONFIGURE_TARGET=
 CONFIGURE_ARGS+=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-
 GNU_CONFIGURE=	yes
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+EXTRA_PATCHES=	${PORTSDIR}/x11/kde3/files/extrapatch-old_configure
+.include <bsd.port.post.mk>
