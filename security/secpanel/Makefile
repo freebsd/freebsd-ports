@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	secpanel
-PORTVERSION=	0.31
+PORTVERSION=	0.32
 CATEGORIES=	security
-MASTER_SITES=	http://www2.wiwi.uni-marburg.de/~leich/soft/secpanel/
+MASTER_SITES=	http://www.pingx.net/secpanel/
 
 MAINTAINER=	petef@FreeBSD.org
 
@@ -27,7 +27,8 @@ post-patch:
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/src/bin/secpanel ${PREFIX}/bin
 	@${MKDIR} ${PREFIX}/share/secpanel
-.for file in gui.tcl listserver.tcl secpanel.dist secpanel.wait
+.for file in default.config default.profile gui.tcl listserver.tcl \
+	secpanel.dist secpanel.wait
 	${INSTALL_SCRIPT} ${WRKSRC}/src/lib/secpanel/${file} ${PREFIX}/share/secpanel
 .endfor
 	@${MKDIR} ${PREFIX}/share/secpanel/images
