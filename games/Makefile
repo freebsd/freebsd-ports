@@ -143,6 +143,7 @@
     SUBDIR += xdemineur
     SUBDIR += xdigger
     SUBDIR += xdino
+    SUBDIR += xeji
     SUBDIR += xemeraldia
     SUBDIR += xevil
     SUBDIR += xeyesplus
