@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	qcad
-PORTVERSION=	1.4.6
+PORTVERSION=	1.4.7
 CATEGORIES=	cad
 MASTER_SITES=	http://www.qcad.org/archives/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src

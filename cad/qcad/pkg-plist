@@ -28,6 +28,8 @@ bin/qcad
 %%PORTDOCS%%share/doc/qcad/en/img/createarcsparallel.png
 %%PORTDOCS%%share/doc/qcad/en/img/createarcspoints.png
 %%PORTDOCS%%share/doc/qcad/en/img/createcircles.png
+%%PORTDOCS%%share/doc/qcad/en/img/createcircles2.png
+%%PORTDOCS%%share/doc/qcad/en/img/createcircles3.png
 %%PORTDOCS%%share/doc/qcad/en/img/createdimsalign.png
 %%PORTDOCS%%share/doc/qcad/en/img/createdimsangle.png
 %%PORTDOCS%%share/doc/qcad/en/img/createdimsarrow.png
@@ -70,6 +72,7 @@ bin/qcad
 %%PORTDOCS%%share/doc/qcad/en/img/editbevel.png
 %%PORTDOCS%%share/doc/qcad/en/img/editclip.png
 %%PORTDOCS%%share/doc/qcad/en/img/editcut.png
+%%PORTDOCS%%share/doc/qcad/en/img/editcut2.png
 %%PORTDOCS%%share/doc/qcad/en/img/editdelete.png
 %%PORTDOCS%%share/doc/qcad/en/img/editlayer.png
 %%PORTDOCS%%share/doc/qcad/en/img/editmirror.png
@@ -402,6 +405,7 @@ share/qcad/xpm/editbevel.xpm
 share/qcad/xpm/editclip.xpm
 share/qcad/xpm/editcopy.xpm
 share/qcad/xpm/editcut.xpm
+share/qcad/xpm/editcut2.xpm
 share/qcad/xpm/editdelete.xpm
 share/qcad/xpm/editlayer.xpm
 share/qcad/xpm/editmirror.xpm
@@ -541,6 +545,7 @@ share/qcad/xpm/zoomtopage.xpm
 share/qcad/xpm/zoomwindow.xpm
 %%PORTDOCS%%@exec ln -sf %D/share/doc/qcad %D/share/qcad/doc
 %%PORTDOCS%%@unexec rm -f %D/share/qcad/doc
+@exec mkdir %D/share/qcad/libraries/3rd/roll
 @dirrm share/qcad/xpm
 @dirrm share/qcad/messages
 @dirrm share/qcad/libraries/templates/pt
