@@ -1,3 +1,8 @@
-lib/perl5/site_perl/5.005/LJ/Cache.pm
-lib/perl5/site_perl/5.005/auto/LJ/Cache/autosplit.ix
-@dirrm lib/perl5/site_perl/5.005/auto/LJ/Cache/
+lib/perl5/site_perl/%%PERL_VER%%/auto/LJ/Cache/autosplit.ix
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/LJ/Cache/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/LJ/Cache.pm
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/auto/LJ/Cache
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/LJ/Cache
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/auto/LJ 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/LJ 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/LJ 2>/dev/null || true

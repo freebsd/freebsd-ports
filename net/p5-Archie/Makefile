@@ -21,10 +21,8 @@ NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 
 do-install:
-		@ ${CP} ${WRKDIR}/Archie.pm ${WRKDIR}/Archie-1.5.pm
-		@ ${MKDIR} ${PREFIX}/lib/perl5/site_perl
-		@ ${INSTALL_DATA} ${WRKDIR}/Archie-1.5.pm ${PREFIX}/lib/perl5/site_perl/
-		@ ${LN} -sf ${PREFIX}/lib/perl5/site_perl/Archie-1.5.pm ${PREFIX}/lib/perl5/site_perl/Archie.pm
-		@ ${INSTALL_DATA} ${WRKDIR}/archie_gateway ${PREFIX}/lib/perl5/site_perl/
+		@ ${MKDIR} ${PREFIX}/lib/perl5/site_perl/${PERL_VER}
+		@ ${INSTALL_DATA} ${WRKDIR}/Archie.pm ${PREFIX}/lib/perl5/site_perl/${PERL_VER}/
+		@ ${INSTALL_SCRIPT} ${WRKDIR}/archie_gateway ${PREFIX}/bin/
 
 .include <bsd.port.mk>
