@@ -1,20 +1,20 @@
 # New ports collection makefile for:	ascend-radius
-# Version required:			960919 (v1.16)
+# Version required:			961015 (v1.16)
 # Date created:				August 28th 96
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#   $Id: Makefile,v 1.2 1996/09/25 05:12:44 asami Exp $
+#   $Id: Makefile,v 1.3 1996/10/18 11:44:20 jfitz Exp $
 #
 
-DISTNAME=	rad0919
-PKGNAME=	ascend-radius-960919
+DISTNAME=	radius-961015
+PKGNAME=	ascend-radius-961015
 CATEGORIES+=	net
 MASTER_SITES=	ftp://ftp.ascend.com/pub/Software-Releases/Radius/Current/ \
 		ftp://ftp.ascend.com/pub/Software-Releases/Radius/Archive/
 
 MAINTAINER=	jfitz@FreeBSD.ORG
 
-WRKPREFIX=	radius-960919/radius-1.16-ascend
+WRKPREFIX=	radius-961015/radius-1.16-ascend
 WRKSRC=		${WRKDIR}/${WRKPREFIX}/ascendd
 
 ALL_TARGET=	all dbm
