@@ -7,7 +7,7 @@
 
 PORTNAME=	cdrdao
 PORTVERSION=	1.1.7
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	sysutils audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -23,7 +23,7 @@ WANT_GNOME=	yes
 
 MAN1=		cdrdao.1
 
-MAKE_ENV=	COPTX="-DBSD_SCSI_SENSE_BUG"
+MAKE_ENV=	CCOM=${CC} COPTX="-DBSD_SCSI_SENSE_BUG"
 
 .include <bsd.port.pre.mk>
 
@@ -83,9 +83,9 @@ pre-everything::
 	@${ECHO_MSG} ""
 
 post-extract:
-.if ${MACHINE_ARCH} != "i386"
+.if ${MACHINE_ARCH} != "i386" || ${CC} != "cc"
 	@(cd ${WRKSRC}/scsilib/RULES; \
-	  ${LN} -sf i386-freebsd-cc.rul ${MACHINE_ARCH}-freebsd-cc.rul)
+	  ${LN} -sf i386-freebsd-cc.rul ${MACHINE_ARCH}-freebsd-${CC}.rul)
 .endif
 
 post-patch:
