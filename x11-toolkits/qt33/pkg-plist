@@ -265,6 +265,7 @@ include/qt2/qxt.h
 lib/libqgl.a
 lib/libqt2.so
 lib/libqt2.so.3
+lib/libqxt.a
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 share/doc/qt2/ANNOUNCE
@@ -573,6 +574,8 @@ share/doc/qt2/html/qfileiconprovider.html
 share/doc/qt2/html/qfileinfo-h.html
 share/doc/qt2/html/qfileinfo-members.html
 share/doc/qt2/html/qfileinfo.html
+share/doc/qt2/html/qfilepreview-members.html
+share/doc/qt2/html/qfilepreview.html
 share/doc/qt2/html/qfocusdata-h.html
 share/doc/qt2/html/qfocusdata-members.html
 share/doc/qt2/html/qfocusdata.html
@@ -1142,6 +1145,8 @@ share/doc/qt2/html/qvaluestack-h.html
 share/doc/qt2/html/qvaluestack-members.html
 share/doc/qt2/html/qvaluestack.html
 share/doc/qt2/html/qvariant-h.html
+share/doc/qt2/html/qvariant-members.html
+share/doc/qt2/html/qvariant.html
 share/doc/qt2/html/qvbox-h.html
 share/doc/qt2/html/qvbox-m.png
 share/doc/qt2/html/qvbox-members.html
