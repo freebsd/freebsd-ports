@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Mail-Mbox-MessageParser
-PORTVERSION=	1.20
+PORTVERSION=	1.21.1
 CATEGORIES=	mail perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Mail
@@ -20,6 +20,7 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Storable.pm:${PORTSDIR}/devel/p5-Storab
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
+CONFIGURE_ARGS+=	</dev/null
 
 MAN3=		Mail::Mbox::MessageParser.3 \
 		Mail::Mbox::MessageParser::Cache.3 \
