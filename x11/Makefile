@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.233 1998/09/06 06:39:08 vanilla Exp $
+# $Id: Makefile,v 1.234 1998/09/09 07:16:26 tg Exp $
 #
 
     SUBDIR += XFree86
@@ -43,7 +43,6 @@
     SUBDIR += rxvt
     SUBDIR += sxpc
     SUBDIR += tkgoodstuff
-    SUBDIR += ttmkfdir
     SUBDIR += tycoon
     SUBDIR += wdm
     SUBDIR += x3270
