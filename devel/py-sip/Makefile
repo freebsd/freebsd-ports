@@ -8,7 +8,9 @@ PORTNAME=	sip
 PORTVERSION=	4.2
 PORTREVISION=
 CATEGORIES=	devel python
-MASTER_SITES=	http://www.river-bank.demon.co.uk/download/sip/
+MASTER_SITES=	http://www.river-bank.demon.co.uk/download/sip/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=lofi
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	danny@ricin.com
