@@ -51,6 +51,7 @@ CONFIGURE_ARGS+= -debug
 USE_MESA=	yes
 PLIST_SUB+=	OPENGL=""
 PKGNAMESUFFIX=	-opengl
+BROKEN=	"Using WITH_OPENGL causes DRI to fail in mysterious ways"
 .else
 PKGMESSAGE=${NONEXISTENT}
 PLIST_SUB+=	OPENGL="@comment "
