@@ -1,11 +1,8 @@
-Introduction:
+Nitpicker is a free IP Flow Accounter.
+It started because the commercial accounting software was just not fast,
+precise and reliable enough to fit a today's ISP / MSP requirements. 
 
- Nitpicker is simple, Nitpicker is efficient, Nitpicker is Open Source.
- Nitpicker is the free IP Flow Accounter.
- It started because the commercial accounting software was just not fast,
- precise and reliable enough to fit a today's ISP / MSP requirements. 
-
-Here are some of the large benefits of nitpicker above other accounting software: 
+Here are some of the large benefits of nitpicker: 
  - It is 100% free
  - It is Public Domain.
  - It is designed for speed
@@ -13,18 +10,4 @@ Here are some of the large benefits of nitpicker above other accounting software
  - It consumes minimal processor power
  - It also runs with little memory
  
-
-Description:
-
- Nitpicker is (currently) running under *BSD and Linux.
- It is designed for the berkley packet filter (BPF).
- (Sun Solaris(c) packet filter is currently examined).
- Linux doesn't have a device like the bpf,
- so you need to have libpcap ( Notice: We strongly recommend using *BSD )
- Nitpicker accesses the raw ethernet frames and reads the header informations. 
- Nitpicker will write the flows into a file when there are n flows in the savequeue.
- They are moved there after n seconds passed since the flowstart
- (This prevents never-ending flows like news to be written too) 
-
- The flowfile is called flow.<unixtimestamp>.u At the end of a dumping period,
- the .u files will be renamed to *.s, and new .u files will be created 
+WWW: http://www.nitpicker.de/
