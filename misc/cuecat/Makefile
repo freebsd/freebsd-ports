@@ -8,7 +8,7 @@
 PORTNAME=	cuecat
 PORTVERSION=	1.1
 CATEGORIES=	misc python
-MASTER_SITES=	http://www.mired.org/downloads/
+MASTER_SITES=	http://mired.org:8080/downloads/
 
 MAINTAINER=	mwm@mired.org
 COMMENT=	Tools for decoding and using the output of a :Cue:Cat(TM) wand scanner
