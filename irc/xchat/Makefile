@@ -45,6 +45,7 @@ CONFIGURE_ARGS+=	--enable-socks
 
 .if defined(WITH_GNOME)
 CONFIGURE_ARGS+=	--enable-gnome
+PLIST_SUB+=		GNOME:=""
 .if defined(WITH_PANEL)
 CONFIGURE_ARGS+=	--enable-panel
 .else
@@ -52,16 +53,13 @@ CONFIGURE_ARGS+=	--disable-panel
 .endif
 .else
 CONFIGURE_ARGS+=	--disable-gnome
+PLIST_SUB+=		GNOME:="@comment "
 .endif
 
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			GTK_CONFIG="${GTK_CONFIG}" \
 			GLIB_CONFIG="${GLIB_CONFIG}" \
 			LIBS="-L${LOCALBASE}/lib"
-
-.if defined(WITH_GNOME)
-PLIST=			${PKGDIR}/PLIST.gnome
-.endif
 
 post-install:
 	@strip ${PREFIX}/bin/xchat

@@ -14,6 +14,9 @@ share/doc/xchat/xchat-9.html
 share/doc/xchat/xchat-10.html
 share/doc/xchat/README
 share/doc/xchat/ChangeLog
+%%GNOME:%%share/gnome/apps/Internet/xchat.desktop
+%%GNOME:%%share/gnome/pixmaps/xchat.png
+%%GNOME:%%share/gnome/pixmaps/xchat_wm.png
 share/locale/cs/LC_MESSAGES/xchat.mo
 share/locale/da/LC_MESSAGES/xchat.mo
 share/locale/de/LC_MESSAGES/xchat.mo
