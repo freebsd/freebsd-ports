@@ -6,15 +6,15 @@
 #
 
 PORTNAME=	twander
-PORTVERSION=	3.135
+PORTVERSION=	3.146
 CATEGORIES=	x11-fm
 MASTER_SITES=	http://www.tundraware.com/Software/twander/
 
 MAINTAINER=	twander@tundraware.com
 COMMENT=	A Better Filesystem Browser
 
-BUILD_DEPENDS=${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter
-RUN_DEPENDS=${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter
+BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter
 
 USE_PYTHON=	yes
 
@@ -28,6 +28,5 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
 .endfor
 .endif
-
 
 .include <bsd.port.mk>

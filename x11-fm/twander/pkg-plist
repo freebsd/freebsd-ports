@@ -1,10 +1,10 @@
 bin/twander.py
-%%PORTDOCS%%share/doc/twander/READ-1ST.txt
-%%PORTDOCS%%share/doc/twander/WHATSNEW.txt
-%%PORTDOCS%%share/doc/twander/twander-license.txt
-%%PORTDOCS%%share/doc/twander/.twander
-%%PORTDOCS%%share/doc/twander/twander.html
-%%PORTDOCS%%share/doc/twander/twander.pdf
-%%PORTDOCS%%share/doc/twander/twander.ps
-%%PORTDOCS%%share/doc/twander/twander.txt
-%%PORTDOCS%%@dirrm share/doc/twander
+%%PORTDOCS%%%%DOCSDIR%%/READ-1ST.txt
+%%PORTDOCS%%%%DOCSDIR%%/WHATSNEW.txt
+%%PORTDOCS%%%%DOCSDIR%%/twander-license.txt
+%%PORTDOCS%%%%DOCSDIR%%/.twander
+%%PORTDOCS%%%%DOCSDIR%%/twander.html
+%%PORTDOCS%%%%DOCSDIR%%/twander.pdf
+%%PORTDOCS%%%%DOCSDIR%%/twander.ps
+%%PORTDOCS%%%%DOCSDIR%%/twander.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
