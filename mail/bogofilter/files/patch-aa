@@ -1,0 +1,48 @@
+Index: tests/bogofilter/t.robx
+===================================================================
+RCS file: /cvsroot/bogofilter/bogofilter/tests/bogofilter/Attic/t.robx,v
+retrieving revision 1.12
+diff -u -r1.12 t.robx
+--- ./tests/bogofilter/t.robx	3 Feb 2003 13:44:21 -0000	1.12
++++ ./tests/bogofilter/t.robx	3 Mar 2003 23:56:57 -0000
+@@ -12,6 +12,8 @@
+ #	 robx.YYYYMMDD:
+ #		tests   - directory containing individual output files
+ 
++set -x
++
+ : ${srcdir=.}
+ relpath="`pwd`/../.."
+ NODB=1 . ${srcdir}/../t.frame
+@@ -38,8 +40,8 @@
+ stats_in_header=Y
+ EOF
+ 
+-$BOGOFILTER -r -s < ${SYSTEST}/inputs/spam.mbx
+-$BOGOFILTER -r -n < ${SYSTEST}/inputs/good.mbx
++$BOGOFILTER -C -r -s < ${SYSTEST}/inputs/spam.mbx
++$BOGOFILTER -C -r -n < ${SYSTEST}/inputs/good.mbx
+ 
+ if [ ! -z "$RUN_FROM_MAKE" ] ; then
+     $BOGOUTIL -R $TMPDIR
+@@ -52,7 +54,8 @@
+ 
+ [ ! -z "$BF_SAVEDIR" ] && . ${srcdir}/../t.save
+ 
+-RESULT=`$BOGOUTIL -w $TMPDIR .ROBX | $AWK '/.ROBX/ { print $2; }'`
++PRINT="`$BOGOUTIL -w $TMPDIR .ROBX`"
++RESULT=`echo "$PRINT" | $AWK '/.ROBX/ { print $2; }'`
+ 
+ WANT="252685"
+ 
+@@ -62,4 +65,9 @@
+ #   $BOGOFILTER -x ml -vvv -r -n < ${SYSTEST}/inputs/good.mbx > ${TMPDIR}/good.txt
+ fi
+ 
+-test $RESULT = "$WANT"
++if test $RESULT = "$WANT" ; then
++    :
++else
++    echo "ROBX difference: got $RESULT, wanted $WANT"
++    exit 1
++fi
