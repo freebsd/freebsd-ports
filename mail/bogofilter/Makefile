@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	bogofilter
-PORTVERSION=	0.15.13.1
-PORTREVISION=	0
+PORTVERSION=	0.15.13.2
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,19 +16,28 @@ COMMENT=	"Fast, teachable, learning spam detector"
 
 # There is a sibling port, bogofilter-tdb, which presets different
 # values for some of our variables
+WITH_DB_VER?=	4
+.if ${WITH_DB_VER} == 42
+LIB_DEPENDS?=	db-4.2.2:${PORTSDIR}/databases/db42
+libs=		-ldb-4.2
+.else
+WITH_DB_VER=	4
 LIB_DEPENDS?=	db4.0:${PORTSDIR}/databases/db4
+libs=		-ldb4
+.endif
 
 LIB_DEPENDS+=	gsl.5:${PORTSDIR}/math/gsl
 
 CONFLICTS?=	bogofilter-tdb* bogofilter-qdbm*
 
+USE_BZIP2=	yes
 USE_REINPLACE=	yes
 USE_PERL5_RUN=	yes
 GNU_CONFIGURE=	yes
 PATCH_STRIP=	-p1
 CONFIGURE_ARGS+=	--sysconfdir=${PREFIX}/etc
-CONFIGURE_ENV?=	CPPFLAGS="-I${LOCALBASE}/include/db4" \
-		LDFLAGS="-L${LOCALBASE}/lib" LIBS="-ldb4"
+CONFIGURE_ENV?=	CPPFLAGS="-I${LOCALBASE}/include/db${WITH_DB_VER}" \
+		LDFLAGS="-L${LOCALBASE}/lib" LIBS="${libs}"
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 MAN1=		bogofilter.1 bogoutil.1 bogoupgrade.1 bogolexer.1 bogotune.1
 
@@ -38,6 +46,15 @@ post-patch:
 		${WRKSRC}/contrib/randomtrain \
 		${WRKSRC}/contrib/scramble \
 		${WRKSRC}/contrib/trainbogo.sh
+	${REINPLACE_CMD} -e "s/0.15.13.1/0.15.13.2/" ${WRKSRC}/src/version.c
+
+.if !defined(PKGNAMESUFFIX) && ${WITH_DB_VER} != 42
+pre-everything::
+	@${ECHO} ""
+	@${ECHO} "Use -DWITH_DB_VER=42 to link against db42 instead of the default db4"
+	@${ECHO} ""
+.endif
+	
 
 post-build::
 	cd ${WRKSRC} && make check SHELL=${SH}
