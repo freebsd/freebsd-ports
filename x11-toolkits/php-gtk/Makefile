@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	php-gtk
-PORTVERSION=	0.5.2
-PORTREVISION=	3
+PORTVERSION=	1.0.0
+PORTREVISION=	0
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://gtk.php.net/distributions/ \
 		http://document-root.de/mirror/php-gtk/
@@ -15,22 +15,11 @@ MASTER_SITES=	http://gtk.php.net/distributions/ \
 MAINTAINER=	kiesel@schlund.de
 COMMENT=	An extension to use gtk in PHP-applications
 
-BROKEN=		"Conflicting dependencies: php4-cli and php4; will be removed after Feb 2"
-
-.include <bsd.port.pre.mk>
-.include "${.CURDIR}/../../lang/php4/bsd.php.mk"
-
-# Port does only build with automake-1.4 and
-# automake-1.5 installed - what a mess
-BUILD_DEPENDS=	automake:${PORTSDIR}/devel/automake \
-		automake14:${PORTSDIR}/devel/automake14 \
-		autoconf:${PORTSDIR}/devel/autoconf \
-		autoconf213:${PORTSDIR}/devel/autoconf213 \
-		php:${PORTSDIR}/lang/php4-cli
-
 # Don't call autoconf directly, ./buildconf does this
 GNU_CONFIGURE=	yes
 USE_LIBTOOL=	yes
+WANT_AUTOMAKE_VER=	15
+WANT_AUTOCONF_VER=	253
 LIBTOOLFILES=	# none
 WANT_PHP_CLI=	yes
 USE_PHPIZE=	yes
@@ -38,6 +27,10 @@ USE_AUTOCONF=	no
 USE_GMAKE=	yes
 USE_PERL5_BUILD=yes
 USE_GNOME=	gtk12
+INSTALLS_SHLIB=	yes
+
+.include <bsd.port.pre.mk>
+.include "${.CURDIR}/../../lang/php4/bsd.php.mk"
 
 # Fix environment for self contained extensions
 ENVSCE=		-DHAVE_PHP_GTK=1 -DCOMPILE_DL_PHP_GTK=1	\
@@ -74,14 +67,14 @@ PLIST_SUB+=	GDKPIXBUF="@comment "
 USE_GNOME+=	gtkhtml
 CONFIGURE_ARGS+=	--enable-gtkhtml
 ENVSCE+=	-DHAVE_HTML=1 -I${X11BASE}/include/gal-1.0 # -DPHP_GTK_COMPILE_DL_GTKHTML=1 -DGTKHTML_HAVE_GCONF=1 -I${X11BASE}/include/gal-1.0
-PLIST_SUB+=     GTKHTML=""
+PLIST_SUB+=	GTKHTML=""
 .else
 PLIST_SUB+=	GTKHTML="@comment "
 .endif
 
 PLIST_SUB+=	PHPEXTDIR="${PHP_EXT_DIR}"
 
-CONFIGURE_ENV=  CPPFLAGS="${ENVSCE}"
+CONFIGURE_ENV=	CPPFLAGS="${ENVSCE}"
 
 USE_REINPLACE=	yes
 REINPLACE_ARGS=	-i ""

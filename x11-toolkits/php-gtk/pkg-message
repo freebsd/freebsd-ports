@@ -1,7 +1,7 @@
 The port has now been installed. Be sure to adjust the config-file
-in e.g. /usr/local/etc/php.gtk/php.ini.
+in e.g. ${PREFIX}/etc/php.gtk/php.ini.
 Eventually, you must set the correct 'extension_dir'-path in php.ini.
 
 For convenience put something like
-"alias gtkphp='php -c /usr/local/etc/php.gtk/'"
+"alias gtkphp='php -c ${PREFIX}/etc/php.gtk/'"
 in your .profile.
