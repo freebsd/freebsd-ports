@@ -68,8 +68,8 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/drweb-smf ${PREFIX}/sbin
 	${INSTALL_DATA} ${WRKSRC}/../sendmail/readme.sendmail ${DOC_DIR}
 	${INSTALL_DATA} ${WRKSRC}/../sendmail/readme.sendmail.rus ${DOC_DIR}
-	${SED} 's#!!PREFIX!!#${PREFIX}#' < ${FILESDIR}/drweb-smf.sh >${WRKSRC}/drwebsmf.sh
-	${INSTALL_SCRIPT} ${WRKSRC}/drweb-smf.sh ${PREFIX}/etc/rc.d
+	${SED} 's#!!PREFIX!!#${PREFIX}#' < ${FILESDIR}/drweb-smf.sh >${WRKSRC}/drweb-smf.sh
+	${INSTALL_SCRIPT} ${WRKSRC}/drweb-smf.sh ${PREFIX}/etc/rc.d/drwebsmf.sh
 	@${CAT} pkg-message
 
 .include <bsd.port.post.mk>
