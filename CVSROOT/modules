@@ -7928,6 +7928,7 @@ quark		ports/multimedia/quark
 quasi88		ports/emulators/quasi88
 quat		ports/graphics/quat
 quat-gui	ports/graphics/quat-gui
+queequeg	ports/textproc/queequeg
 quelcom		ports/audio/quelcom
 queso		ports/net/queso
 queue-repair	ports/mail/queue-repair
