@@ -1,0 +1,10 @@
+The Multilingual Input Method - Egg V4
+
+This enables you to input Multilingual Characters.
+
+Tamago is only coded by emacs lisp.
+
+This input method is working with various translation servers 
+(i.e. jserver, cserver, tserver, Wnn6, SJ3 ver 1 and ver 2).
+
+WWW: http://www.m17n.org/tamago/
