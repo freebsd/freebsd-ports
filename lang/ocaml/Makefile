@@ -6,29 +6,43 @@
 #
 
 PORTNAME=	ocaml
-PORTVERSION=	2.04
+PORTVERSION=	3.00
 CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.inria.fr/lang/caml-light/ \
 		ftp://ftp.kurims.kyoto-u.ac.jp/pub/lang/caml-light/
 DISTFILES=	${PKGNAME}.tar.gz ${DOCFILES}
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}-refman.html${EXTRACT_SUFX}
 
 MAINTAINER=	ortmann@isl.net
 
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}-refman.html${EXTRACT_SUFX}
+.if defined(WITH_TK)
+PLIST_SUB+=     LABLTK:=""
+LIB_DEPENDS=    tk82.1:${PORTSDIR}/x11-toolkits/tk82
+.else
+PLIST_SUB+=     LABLTK:="@comment "
+.endif
+
 USE_XLIB=	yes
 HAS_CONFIGURE=	yes
-#USE_GMAKE=	yes
 ALL_TARGET=	world bootstrap opt ocamlc.opt ocamlopt.opt
 
 .if ${MACHINE_ARCH} != "i386"
-PLIST=		${PKGDIR}/PLIST.noprof
+PLIST_SUB+=     PROF:="@comment "
+.else
+PLIST_SUB+=     PROF:=""
 .endif
 
 MAN1=		ocaml.1 ocamlc.1 ocamlcp.1 ocamldep.1 ocamllex.1 \
 		ocamlopt.1 ocamlprof.1 ocamlrun.1 ocamlyacc.1 ocamlmktop.1 \
 		ocamlc.opt.1 ocamlopt.opt.1
 
-CONFIGURE_ENV=	PREFIX=${PREFIX} X11BASE=${X11BASE} BATCH=${BATCH}
+CONFIGURE_ARGS=	-prefix ${PREFIX} \
+		-x11include ${X11BASE}/include \
+		-x11lib ${X11BASE}/lib
+
+.if defined(WITH_TK)
+CONFIGURE_ARGS+= -tkdefs "-I${PREFIX}/include/tcl8.2 -I${PREFIX}/include/tk8.2"
+.endif
 
 .if !defined(NOPORTDOCS)
 DOCFILES=	${DISTNAME}-refman.html.tar.gz ${DISTNAME}-refman.ps.gz
