@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	wnn7egg
-PORTVERSION=	1.01
+PORTVERSION=	1.02
 #PORTREVISION=	1
 CATEGORIES=	japanese elisp
 MASTER_SITES=	ftp://ftp.omronsoft.co.jp/pub/Wnn7/client/lisp/
-DISTNAME=	wnn7-elisp-1.01-1
+DISTNAME=	wnn7-elisp-el-1.02-1
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	taoka@FreeBSD.org
