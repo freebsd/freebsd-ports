@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	zipcodes
-PORTVERSION=	20040430
+PORTVERSION=	20040730
 CATEGORIES=	japanese misc
 MASTER_SITES=	http://dist.bsdlab.org/
-DISTFILES=	ken_all-${PORTVERSION}.lzh jigyosyo-20040506.lzh
+DISTFILES=	ken_all-${PORTVERSION}.lzh jigyosyo-${PORTVERSION}.lzh
 
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Japanese zipcode tables. includes both 3/5 and 7 digits form
