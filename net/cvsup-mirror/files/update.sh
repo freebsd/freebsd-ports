@@ -40,6 +40,8 @@ cd ${rundir} || exit
 
 colldir=sup.client
 startup=${PREFIX}/etc/rc.d
+eval chome=~${cuser}
+cmd="env HOME=${chome} cvsup"
 options="-1gL 1 -b ${base} -c ${colldir}"
 
 umask 2
@@ -47,16 +49,17 @@ ok=yes
 if [ ${host_crypto} = ${host} ]; then
     echo "Updating from ${host}"
     su -m ${cuser} -c \
-	"cvsup ${options} -h ${host} ${base}/supfile" || ok=no
+	"${cmd} ${options} -h ${host} ${base}/supfile" || ok=no
 else
     if [ -d ${base}/prefixes/FreeBSD-crypto.cvs ]; then
 	echo "Updating from ${host_crypto}"
 	su -m ${cuser} -c \
-	    "cvsup ${options} -h ${host_crypto} ${base}/supfile.crypto" || ok=no
+	    "${cmd} ${options} -h ${host_crypto} ${base}/supfile.crypto" ||\
+		ok=no
     fi
     echo "Updating from ${host}"
     su -m ${cuser} -c \
-	"cvsup ${options} -h ${host} ${base}/supfile.non-crypto" || ok=no
+	"${cmd} ${options} -h ${host} ${base}/supfile.non-crypto" || ok=no
 fi
 
 if [ ${ok} = yes ]; then
