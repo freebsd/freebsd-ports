@@ -14,6 +14,8 @@ EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ache@freebsd.org
 
+FORBIDDEN=	"Remote buffer overflow yielding gid mail"
+
 # Set POPD_YOUBIN_SUPPORT variable in the environment to enable
 # youbin support.
 #
