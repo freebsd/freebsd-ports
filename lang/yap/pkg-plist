@@ -180,13 +180,10 @@ share/Yap/clpr/nfr.yap
 share/Yap/logtalk/logtalk.pl
 share/Yap/logtalk/yap430.config
 lib/Yap/random.so
-lib/Yap/regcomp.so
-lib/Yap/regerror.so
-lib/Yap/regexec.so
 lib/Yap/regexp.so
-lib/Yap/regfree.so
 lib/Yap/startup
 lib/Yap/sys.so
+lib/Yap/yap2swi.so
 lib/libYap.a
 @dirrm include/Yap
 @dirrm share/Yap/chr/examples
@@ -198,5 +195,5 @@ lib/libYap.a
 @dirrm share/Yap/clpqr
 @dirrm share/Yap/clpr
 @dirrm share/Yap/logtalk
-@dirrm share/Yap/
+@dirrm share/Yap
 @dirrm lib/Yap
