@@ -13,14 +13,12 @@ MASTER_SITES=	http://people.ee.ethz.ch/~oetiker/webtools/rrdtool/pub/
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Round Robin Database Tools
 
-LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
-
 USE_PERL5=	yes
 MAKE_ENV+=	PERL=${PERL}
 
 USE_LIBTOOL_VER=13
 INSTALLS_SHLIB=	yes
-CONFIGURE_ARGS=	--enable-shared --enable-local-zlib --enable-local-libpng \
+CONFIGURE_ARGS=	--enable-shared --enable-local-zlib \
 		--program-transform-name=''
 CONFIGURE_ENV=	PERL=${PERL}
 CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
