@@ -37,8 +37,6 @@ MAKE_ARGS=	GTK1=yes
 
 MAN1=		scite.1
 
-BROKEN=		"Does not compile"
-
 pre-everything::
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "SciTE has the following tunable option(s):"
