@@ -7,7 +7,7 @@
 
 PORTNAME?=	qt
 PORTVERSION?=	3.0.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES?=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/3.0/src
@@ -47,5 +47,17 @@ ALL_TARGET=	symlinks sub-src sub-tools
 .if ${MACHINE_ARCH} == "alpha"
 CFLAGS+=	-O0
 .endif
+
+# The following target is necessary if qt30 is installed at the
+# time the port build is started; it is related to the Makefiles
+# having dependencies on these (installed) .prl files. --AlanE
+pre-install:
+	@${INSTALL_DATA} ${WRKSRC}/lib/*.prl ${PREFIX}/lib
+
+# no reason to install CVS dirs
+post-install:
+	@-${RM} -fr ${PREFIX}/doc/html/CVS
+	@-${RM} -fr ${PREFIX}/templates/CVS
+	@-${RM} -fr ${PREFIX}/mkspecs/CVS ${PREFIX}/mkspecs/*/CVS
 
 .include <bsd.port.post.mk>
