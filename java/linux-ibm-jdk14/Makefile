@@ -8,7 +8,6 @@
 PORTNAME=	jdk
 PORTVERSION=	${JDK_VERSION}
 CATEGORIES=	java
-MASTER_SITES=	# https://www6.software.ibm.com/dl/lxdk/lxdk-p/
 PKGNAMEPREFIX=	linux-ibm-
 DISTNAME=	IBMJava2-SDK-14
 EXTRACT_SUFX=	.tgz
