@@ -1,6 +1,6 @@
 bin/wish8.0jp
 lib/libtk80jp.a
-lib/libtk80jp.so.1.2
+lib/libtk80jp.so.1.4
 lib/libtk80jp.so
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R

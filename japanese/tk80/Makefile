@@ -3,17 +3,16 @@
 # Date created:		26 Dec 1997
 # Whom:			taguchi@tohoku.iij.ad.jp
 #
-# $Id: Makefile,v 1.8 1998/11/02 03:47:50 steve Exp $
+# $Id: Makefile,v 1.9 1998/11/14 09:43:17 asami Exp $
 #
 
-DISTNAME=	tk8.0.3
-PKGNAME=	ja-tk-8.0.3
+DISTNAME=	tk8.0.4
+PKGNAME=	ja-tk-8.0.4
 CATEGORIES=	japanese x11-toolkits tk80
 MASTER_SITES=	ftp://ftp.scriptics.com/pub/tcl/tcl8_0/
 
 PATCH_SITES=	ftp://ftp.sra.co.jp/pub/lang/tcl/jp/
-PATCHFILES=	tk8.0.3jp1.1.patch.gz \
-		tk8.0.3jp1.1-1.1fix1.patch.gz
+PATCHFILES=	tk8.0.4jp1.3.patch.gz
 
 MAINTAINER=	taguchi@tohoku.iij.ad.jp
 
@@ -53,7 +52,7 @@ post-install:
 .endif
 	@${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 .if ${PORTOBJFORMAT} == "aout"
-	${LN} -sf libtk80jp.so.1.2 ${PREFIX}/lib/libtk80jp.so
+	${LN} -sf libtk80jp.so.1.4 ${PREFIX}/lib/libtk80jp.so
 .endif
 	@${CAT}	${PKGDIR}/MESSAGE
 
