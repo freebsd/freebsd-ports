@@ -293,6 +293,7 @@ share/locale/sk/LC_MESSAGES/gaim.mo
 share/locale/sr/LC_MESSAGES/gaim.mo
 share/locale/sr@Latn/LC_MESSAGES/gaim.mo
 share/locale/sv/LC_MESSAGES/gaim.mo
+share/locale/vi/LC_MESSAGES/gaim.mo
 share/locale/zh_CN/LC_MESSAGES/gaim.mo
 share/locale/zh_TW/LC_MESSAGES/gaim.mo
 @dirrm share/gnome/sounds/gaim
