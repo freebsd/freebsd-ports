@@ -1,0 +1,9 @@
+Iperf is a tool for measuring maximum TCP and UDP bandwidth,
+reminiscent of ttcp and nettest. It has been written to overcome
+the shortcomings of those aging tools. Iperf can also test UDP
+bandwidth, loss, and jitter.
+
+WWW: http://dast.nlanr.net/Projects/Iperf/
+
+- Pete
+petef@databits.net

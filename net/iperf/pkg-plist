@@ -1,0 +1,8 @@
+bin/iperf
+%%PORTDOCS%%share/doc/iperf/README
+%%PORTDOCS%%share/doc/iperf/index.html
+%%PORTDOCS%%share/doc/iperf/jperf.gif
+%%PORTDOCS%%share/doc/iperf/lib.html
+%%PORTDOCS%%share/doc/iperf/release.html
+%%PORTDOCS%%share/doc/iperf/ui_license.html
+%%PORTDOCS%%@dirrm share/doc/iperf
