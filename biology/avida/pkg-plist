@@ -4,6 +4,10 @@ share/avida/creature.heads
 share/avida/creature.heads.new
 share/avida/genesis
 share/avida/genesis.heads
+share/avida/genesis.heads.orig
+share/avida/genesis.heads.presed
+share/avida/genesis.orig
+share/avida/genesis.presed
 share/avida/inst_set.19.short
 share/avida/inst_set.24.base
 share/avida/inst_set.26.heads.new
