@@ -1,0 +1,10 @@
+From the home page:
+ wxPython is a Python extension module that encapsulates the wxWindows
+ GUI classes. Currently it is only available for the Win32 and GTK
+ ports of wxWindows, but as soon as the other ports are brought up to
+ the same level as Win32 and GTK, it should be fairly trivial to enable
+ wxPython to be used with the new GUI.
+
+WWW:http://alldunn.com/wxPython/
+
+Jacques Vidrine <nectar@FreeBSD.ORG>
