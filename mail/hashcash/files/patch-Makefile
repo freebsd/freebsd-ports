@@ -1,0 +1,16 @@
+--- Makefile.orig	Fri Sep 26 07:28:03 2003
++++ Makefile	Sun Feb  1 18:23:29 2004
+@@ -1,10 +1,9 @@
+ HC_VERS = 0.28
+-INSTALL_PATH = /usr/local/bin
+-MAN_INSTALL_PATH = /usr/share/man/man1
++INSTALL_PATH = ${PREFIX}/bin
++MAN_INSTALL_PATH = ${PREFIX}/man/man1
+ MAKEDEPEND = makedepend
+-COPT = -O3
+ LDFLAGS = $(CARCH)
+-CFLAGS = $(COPT) $(CWARN) $(CARCH)
++CFLAGS += $(CWARN) $(CARCH)
+ EXES = hashcash sha1 sha1test
+ INSTALL = /usr/bin/install
+ POD2MAN = pod2man
