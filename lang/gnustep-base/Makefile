@@ -42,6 +42,12 @@ BREAKS_IF_PEDANTIC=	yes
 PLIST_SUB+=	MAJORVERSION=${PORTVERSION:C/([0-9]).*/\1/1}
 PLIST_SUB+=	LOCALBASE=${LOCALBASE}
 
+.if defined(WITHOUT_OPENSSL)
+CONFIGURE_ARGS+=	--disable-openssl
+.else
+USE_OPENSSL=	yes
+.endif
+
 .include <bsd.port.pre.mk>
 
 TARGLIB!=	(cd ${PORTSDIR}/${GNUSTEP_OBJC_PORT} && make -V TARGLIB)
