@@ -5,13 +5,15 @@
 # $FreeBSD$
 #
 
-PKGNAMESUFFIX =	-ssl
+PKGNAMESUFFIX=	-ssl
 
 COMMENT=	A non-graphical, text-based World-Wide Web client with SSL support
 
 MASTERDIR=	${.CURDIR}/../lynx
 DESCR=		${.CURDIR}/pkg-descr
 
-.include "${MASTERDIR}/Makefile"
+CONFIGURE_ARGS+=	--with-ssl
 
-CONFIGURE_ARGS+= --with-ssl
+CONFLICTS=	lynx-2* lynx-current*
+
+.include "${MASTERDIR}/Makefile"
