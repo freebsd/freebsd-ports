@@ -1,6 +1,6 @@
---- sys/unix/Makefile.src.orig	Fri Jun 20 21:14:30 2003
-+++ sys/unix/Makefile.src	Fri Jun 20 21:18:33 2003
-@@ -147,19 +147,28 @@
+--- sys/unix/Makefile.src.orig	Mon Feb  9 12:10:20 2004
++++ sys/unix/Makefile.src	Mon Feb  9 12:11:52 2004
+@@ -149,19 +149,29 @@
  # directories.  The ones given below is the usual spot for linux systems.
  # The paths are for glibconfig.h and gnomesupport.h respectively.
  #
@@ -21,19 +21,20 @@
 +ifeq ("$(GRAPHICS)","GNOME_GRAPHICS")
 +CFLAGS += -DGNOME_GRAPHICS ${CPPFLAGS}
 +endif
- LFLAGS =
++
+ LFLAGS = 
  
  # The Qt and Be window systems are written in C++, while the rest of
- # NetHack is standard C.  If using Qt, uncomment the LD line here to get
+ # NetHack is standard C.  If using Qt, uncomment the LINK line here to get
  # the C++ libraries linked in.
 -CXXFLAGS = $(CFLAGS) -I. -I$(QTDIR)/include
 -CXX=g++
 +CXXFLAGS += -I. -I../include ${QTCPPFLAGS}
 +#CXX=g++
- #LD=g++
- 
- # flags for IPv6 support
-@@ -223,7 +232,26 @@
+ #LINK=g++
+ #	For cross-compiling, eg. with gcc on Linux (see also CC further up):
+ #CXX=arm-linux-g++
+@@ -228,7 +238,26 @@
  #
  #
  WINSRC = $(WINTTYSRC)
@@ -60,7 +61,7 @@
  
  # on some systems the termcap library is in -ltermcap or -lcurses
  # on 386 Xenix, the -ltermlib tputs() seems not to work; use -lcurses instead
-@@ -243,19 +271,19 @@
+@@ -248,19 +277,19 @@
  #
  # libraries for X11
  # If USE_XPM is defined in config.h, you will also need -lXpm here.
@@ -83,7 +84,7 @@
  #
  # libraries for Gem port
  WINGEMLIB = -le_gem -lgem
-@@ -264,6 +292,15 @@
+@@ -269,6 +298,15 @@
  WINBELIB = -lbe
  
  WINLIB = $(WINTTYLIB)
@@ -99,16 +100,7 @@
  
  # any other strange libraries your system needs (for Sysunix only -- the more
  # specialized targets should already be right)
-@@ -297,7 +334,7 @@
- 
- # make NetHack
- #JP by issei(96/5/27)
--GAME     = jnethack
-+GAME     = %%HACKNAME%%
- # GAME     = nethack.prg
- 
- # if you defined RANDOM in unixconf.h/tosconf.h since your system did not come
-@@ -473,13 +510,13 @@
+@@ -478,13 +516,13 @@
  
  # Qt windowport meta-object-compiler output
  qt_kde0.moc: ../include/qt_kde0.h

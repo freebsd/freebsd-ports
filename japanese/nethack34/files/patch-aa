@@ -1,11 +1,11 @@
---- include/config.h.orig	Fri Dec 20 02:09:41 2002
-+++ include/config.h	Fri Dec 20 02:09:42 2002
-@@ -248,7 +248,7 @@
- #  ifdef __APPLE__
- #    define HACKDIR "jnethackdir"	/* nethack directory */
- #  else
--#    define HACKDIR "/usr/games/lib/jnethackdir"
-+#    define HACKDIR "%%HACKDIR%%"
- #  endif
+--- include/config.h.orig	Mon Feb  9 11:56:31 2004
++++ include/config.h	Mon Feb  9 11:59:57 2004
+@@ -222,7 +222,7 @@
+  * otherwise it will be the current directory.
+  */
+ # ifndef HACKDIR
+-#  define HACKDIR "/usr/games/lib/jnethackdir"
++#  define HACKDIR "%%HACKDIR%%"
  # endif
  
+ /*
