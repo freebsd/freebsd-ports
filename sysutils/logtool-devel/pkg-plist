@@ -1,21 +1,30 @@
 bin/logtool
-bin/logtail
-etc/logtool/logtool.conf
-etc/logtool/green
-etc/logtool/yellow
-etc/logtool/include
-etc/logtool/exclude
-etc/logtool/logtool.conf.dist
-etc/logtool/exclude.dist
-etc/logtool/green.dist
-etc/logtool/include.dist
-etc/logtool/yellow.dist
-%%PORTDOCS%%share/doc/logtool/scripts/monitor.logs.sh
-%%PORTDOCS%%share/doc/logtool/scripts/README
-%%PORTDOCS%%share/doc/logtool/scripts/cronjob.emailreport.sh
-%%PORTDOCS%%share/doc/logtool/scripts/cronjob.genwebpage.sh
-%%PORTDOCS%%share/doc/logtool/scripts/logtool_logcheck.sh
-%%PORTDOCS%%share/doc/logtool/logtool.txt
-@dirrm etc/logtool
-%%PORTDOCS%%@dirrm share/doc/logtool/scripts
-%%PORTDOCS%%@dirrm share/doc/logtool
+%%PORTDOCS%%%%DOCSDIR%%/CREDITS 
+%%PORTDOCS%%%%DOCSDIR%%/Changes 
+%%PORTDOCS%%%%DOCSDIR%%/README 
+%%PORTDOCS%%%%DOCSDIR%%/TODO 
+%%PORTDOCS%%%%DOCSDIR%%/logtool.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%EXAMPLESDIR%%/scripts/README
+%%EXAMPLESDIR%%/scripts/cronjob.emailreport.sh
+%%EXAMPLESDIR%%/scripts/cronjob.genwebpage.sh
+%%EXAMPLESDIR%%/scripts/logtool_logcheck.sh
+%%EXAMPLESDIR%%/scripts/monitor.logs.sh
+@dirrm %%EXAMPLESDIR%%/scripts
+%%EXAMPLESDIR%%/blue
+%%EXAMPLESDIR%%/brightblue
+%%EXAMPLESDIR%%/brightcyan
+%%EXAMPLESDIR%%/brightgreen
+%%EXAMPLESDIR%%/brightmagenta
+%%EXAMPLESDIR%%/brightred
+%%EXAMPLESDIR%%/brightwhite
+%%EXAMPLESDIR%%/brightyellow
+%%EXAMPLESDIR%%/cyan
+%%EXAMPLESDIR%%/exclude
+%%EXAMPLESDIR%%/green
+%%EXAMPLESDIR%%/include
+%%EXAMPLESDIR%%/logtool.conf
+%%EXAMPLESDIR%%/magenta
+%%EXAMPLESDIR%%/white
+%%EXAMPLESDIR%%/yellow
+@dirrm %%EXAMPLESDIR%%
