@@ -19,12 +19,11 @@ MAINTAINER=	erwin@lansing.dk
 RUN_DEPENDS=	${LOCALBASE}/bin/gs:${PORTSDIR}/print/ghostscript-gnu
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
+USE_REINPLACE=	yes
 
 pre-patch:
 .for file in goo/Makefile xpdf/Makefile
-	@${MV} ${WRKSRC}/${file} ${WRKSRC}/${file}.orig
-	@${SED} -e "s|-O2||; s|-g||" ${WRKSRC}/${file}.orig \
-		> ${WRKSRC}/${file}
+	${REINPLACE_CMD} -e "s|-O2||; s|-g||" ${WRKSRC}/${file}
 .endfor
 
 do-install:
