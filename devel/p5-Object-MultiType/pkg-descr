@@ -1,0 +1,4 @@
+This module return an object that works like a Hash, Array 
+and Scalar object at the same time.
+
+WWW: http://search.cpan.org/search?dist=Object-MultiType
