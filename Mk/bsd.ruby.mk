@@ -184,6 +184,10 @@ CONFIGURE_TARGET=	# empty
 
 RUBY_CONFIGURE_ARGS+=	--target="${RUBY_ARCH}" --program-prefix=""
 
+.if ${OSVERSION} >= 501000
+.undef RUBY_WITH_PTHREAD
+.endif
+
 .if defined(RUBY_WITH_PTHREAD)
 RUBY_CONFIGURE_ARGS+=	--with-libc_r=yes
 RUBY_R=			_r
