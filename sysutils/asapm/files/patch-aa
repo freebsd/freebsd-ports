@@ -1,14 +1,21 @@
---- Makefile.orig	Wed Aug 12 11:37:44 1998
-+++ Makefile	Wed Aug 12 11:37:50 1998
-@@ -1,8 +1,8 @@
+--- Makefile.orig	Fri Oct 16 10:05:01 1998
++++ Makefile	Fri Oct 16 10:05:57 1998
+@@ -1,14 +1,14 @@
  #-----------------------------------------------------
  # The locations where this program should be installed
--INSTALL_X_DIR=/usr/local/bin
--OLD_INSTALL_X_DIR=/usr/X11R6/bin
--MAN_DIR=/usr/X11R6/man/man1
-+INSTALL_X_DIR=${PREFIX}/bin
-+OLD_INSTALL_X_DIR=${PREFIX}/bin
+-INSTALL_DIR=/usr/local/bin
+-MAN_DIR=/usr/local/man/man1
++INSTALL_DIR=${PREFIX}/bin
 +MAN_DIR=${PREFIX}/man/man1
  
  # The location and names of the X11 libraries
- LDIR = -L/usr/X11R6/lib
+-LDIR = -L/usr/X11R6/lib
++LDIR = -L${PREFIX}/lib
+ LIBS = -lXpm -lX11
+ 
+ # The include path to the X11 files
+-C_INCLUDE = -I. -I/usr/X11R6/include
++C_INCLUDE = -I. -I${PREFIX}/include
+ 
+ #-----------------------------------------------------
+ CC = gcc
