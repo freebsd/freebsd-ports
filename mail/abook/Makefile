@@ -15,24 +15,18 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	leeym@FreeBSD.org
 COMMENT=	An addressbook program with mutt mail client support
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 400000
-LIB_DEPENDS=	ncurses.5:${PORTSDIR}/devel/ncurses
-.endif
-
 GNU_CONFIGURE=	yes
 
 MAN1=		abook.1
 MAN5=		abookrc.5
-DOCS=		ANNOUNCE AUTHORS BUGS COPYING ChangeLog FAQ README THANKS TODO
+DOCS=		ANNOUNCE AUTHORS BUGS COPYING ChangeLog FAQ INSTALL NEWS README THANKS TODO
 
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for file in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+.for f in ${DOCS}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
