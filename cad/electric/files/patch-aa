@@ -1,9 +1,14 @@
-This patch teaches it to respect our CFLAGS, the install
-program and where to find the X11 header files. Besides,
-it tells it a little bit about hier(7)
-
---- Makefile.in.orig	Tue Mar 21 19:44:46 2000
-+++ Makefile.in	Thu May  4 02:16:35 2000
+--- Makefile.in.orig	Tue Mar 21 19:44:24 2000
++++ Makefile.in	Wed Nov  1 03:49:14 2000
+@@ -14,7 +14,7 @@
+ ############################################### X WIDGET SELECTION ############
+ ##### If using Motif/Lesstif widgets, uncomment the next two lines
+ TIFFLAGS = -DUSETIF
+-XTLIBS = -lXm @XMULIB@ -lXt
++XTLIBS = ${MOTIFLIB} @XMULIB@ -lXt
+ 
+ ##### If using Athena widgets, uncomment the next line
+ # XTLIBS = -lXaw @XMULIB@ -lXt
 @@ -356,18 +356,19 @@
  BUILDOPTS = $(DEBUG)
  BUILDDIR = obj
@@ -38,15 +43,16 @@ it tells it a little bit about hier(7)
  	$(INSTALL_PROGRAM) electric @bindir@/electric
 -	$(INSTALL_DATA) lib/* $(prefix)/electric/lib
 -	$(INSTALL_DATA) lib/.cadrc $(prefix)/electric/lib
-+	$(INSTALL_DATA) lib/*.help @datadir@/electric/lib
-+	$(INSTALL_DATA) lib/*.mac @datadir@/electric/lib
-+	$(INSTALL_DATA) lib/*.txt @datadir@/electric/lib
-+	$(INSTALL_DATA) lib/.cadrc @datadir@/electric/lib
- 
+-
 -$(prefix)/electric:
 -	mkdir $(prefix)/electric
 -$(prefix)/electric/lib:
 -	mkdir $(prefix)/electric/lib
++	$(INSTALL_DATA) lib/*.help @datadir@/electric/lib
++	$(INSTALL_DATA) lib/*.mac @datadir@/electric/lib
++	$(INSTALL_DATA) lib/*.txt @datadir@/electric/lib
++	$(INSTALL_DATA) lib/.cadrc @datadir@/electric/lib
++
 +@datadir@/electric:
 +	$(INSTALL_DIR) @datadir@/electric
 +@datadir@/electric/lib:
