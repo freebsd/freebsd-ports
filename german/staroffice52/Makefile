@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTNAME=	de-staroffice
+PORTNAME=	staroffice
 PORTVERSION=	5.1a
 CATEGORIES=	editors linux
 MASTER_SITES=	ftp://ftp.hagenhomes.com/pub/  \

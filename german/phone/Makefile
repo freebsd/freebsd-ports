@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTNAME=	de-phone
+PORTNAME=	phone
 PORTVERSION=	1.0
 CATEGORIES=	german misc
 MASTER_SITES=	http://www.de.freebsd.org/~wosch/src/
