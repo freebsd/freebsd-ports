@@ -1,19 +1,18 @@
 ====
 FreeBSD host notes:
 - needs to run as root in order to use /dev/tap* networking (why?)
-- slirp (usermode networking) still has a dhcp problem at least for
-FreeSBIE guests even with the fix now in cvs, to use it you have to
-manually do:
-	ifconfig ed0 10.0.2.15
-	route add default 10.0.2.2
+- slirp (usermode networking) is fixed now in cvs, on FreeSBIE guests
+you still have to manually do:
 	echo nameserver 10.0.2.3 >/etc/resolv.conf
-(traffic to address 10.0.2.2 is routed to 127.1 on the host)
-- seems to have a timer problem (time sleep 1 takes 49 seconds
-and booting sleeps for minutes at the acd0 probe), but only on
-_some_ guest systems (FreeSBIE, knoppix 3.4 with 2.6 kernel.)
-knoppix 3.4 with the 2.4 kernel and an installed 5.2.1 guest system
-work ok (this also doesn't happen with linux as host.)  And enabling
-/dev/rtc doesn't help either... (not included since it needs a
+but i've been told that that's normal. (and you have to wait a bit
+for dhclient to do its thing; traffic to address 10.0.2.2 is routed
+to 127.1 on the host)
+- expect timer problems when guest kernel HZ is > hosts
+(for example time sleep 1 takes 49 seconds and booting sleeps for
+minutes at the acd0 probe with a FreeSBIE guest, thats because
+the FreeSBIE kernel is built with HZ=5000, and FreeBSD's default
+is 100...  The linux 2.6 kernel uses 1000 by default btw.)  Enabling
+/dev/rtc doesn't seem to help either (not included since it needs a
 patch to emulators/rtc.)
 - using physical media doesn't work on 4.x hosts (missing DIOCGMEDIASIZE
 ioctl)
