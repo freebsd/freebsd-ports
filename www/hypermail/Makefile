@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	hypermail
-PORTVERSION=	2.1.6
+PORTVERSION=	2.1.8
 CATEGORIES=	www mail
 MASTER_SITES=	http://isc.hypermail.org/dist/
 

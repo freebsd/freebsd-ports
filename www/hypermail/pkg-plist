@@ -1,11 +1,12 @@
 bin/hypermail
 bin/msg2archive
 bin/rdmsg
-%%PORTDOCS%%share/doc/hypermail/customizing.html
-%%PORTDOCS%%share/doc/hypermail/hmrc.html
-%%PORTDOCS%%share/doc/hypermail/images/hr.yellow.gif
-%%PORTDOCS%%share/doc/hypermail/hypermail-faq.html
-%%PORTDOCS%%share/doc/hypermail/images/hypermail.gif
-%%PORTDOCS%%share/doc/hypermail/hypermail.html
-%%PORTDOCS%%@dirrm share/doc/hypermail/images
-%%PORTDOCS%%@dirrm share/doc/hypermail
+%%PORTDOCS%%%%DOCSDIR%%/archive_search.html
+%%PORTDOCS%%%%DOCSDIR%%/customizing.html
+%%PORTDOCS%%%%DOCSDIR%%/hmrc.html
+%%PORTDOCS%%%%DOCSDIR%%/hr.yellow.png
+%%PORTDOCS%%%%DOCSDIR%%/hypermail-faq.html
+%%PORTDOCS%%%%DOCSDIR%%/hypermail.html
+%%PORTDOCS%%%%DOCSDIR%%/hypermail.png
+%%PORTDOCS%%%%DOCSDIR%%/stars.png
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
