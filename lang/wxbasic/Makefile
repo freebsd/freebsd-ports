@@ -15,12 +15,13 @@ DISTNAME=	wxsource-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	wx_gtk.2:${PORTSDIR}/x11-toolkits/wxgtk
+LIB_DEPENDS=	wx_gtk.2:${PORTSDIR}/x11-toolkits/wxgtk-devel
 
-USE_MESA=	yes
 NO_WRKSUBDIR=	yes
-MAKEFILE=	makefile.unx
+
+USE_BISON=	yes
 USE_GMAKE=	yes
+MAKEFILE=	makefile.unx
 CFLAGS+=	${PTHREAD_CFLAGS}
 LIBS+=		-lglut -lGL -lGLU -lwx_gtk_gl ${PTHREAD_LIBS}
 MAKE_ENV=	CXXFLAGS="${CXXFLAGS}" LIBS="${LIBS}"
@@ -35,5 +36,11 @@ pre-build:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/wxbasic ${PREFIX}/bin
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/readme.txt ${DOCSDIR}
+	@${MKDIR} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/*.wx ${EXAMPLESDIR}
+.endif
 
 .include <bsd.port.mk>
