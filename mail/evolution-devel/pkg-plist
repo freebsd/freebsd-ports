@@ -114,7 +114,6 @@ include/camel/camel-stream-fs.h
 include/camel/camel-stream-mem.h
 include/camel/camel-stream-null.h
 include/camel/camel-stream.h
-include/camel/camel-tcp-stream-openssl.h
 include/camel/camel-tcp-stream-raw.h
 include/camel/camel-tcp-stream-ssl.h
 include/camel/camel-tcp-stream.h
@@ -1159,6 +1158,8 @@ share/locale/sl/LC_MESSAGES/evolution.mo
 share/locale/sv/LC_MESSAGES/evolution.mo
 share/locale/tr/LC_MESSAGES/evolution.mo
 share/locale/uk/LC_MESSAGES/evolution.mo
+share/locale/zh_CN/LC_MESSAGES/evolution.mo
+share/locale/zh_TW/LC_MESSAGES/evolution.mo
 @dirrm share/gnome/omf/evolution
 @dirrm share/gnome/libical-evolution/zoneinfo/Pacific
 @dirrm share/gnome/libical-evolution/zoneinfo/Indian
