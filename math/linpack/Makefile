@@ -3,25 +3,21 @@
 # Date created:         31 October 1994
 # Whom:                 ljo
 #
-# $Id: Makefile,v 1.7 1995/04/28 13:35:39 jkh Exp $
+# $Id: Makefile,v 1.8 1995/06/24 11:40:37 asami Exp $
 #
 
 DISTNAME=	linpack
 PKGNAME=	linpack-1.0
-
-DISTDIR=${PORTSDIR}/distfiles/${DISTNAME}
 CATEGORIES+=	math
 MASTER_SITES=	ftp://netlib.att.com/netlib/linpack/
-.if defined(MASTER_SITE_OVERRIDE)
-MASTER_SITES:= ${MASTER_SITE_OVERRIDE}/linpack/
-.undef MASTER_SITE_OVERRIDE
-.endif
+
+DIST_SUBDIR=	${DISTNAME}
 
 EXTRACT_CMD=${.CURDIR}/scripts/uncomp
 EXTRACT_SUFX=.Z
 EXTRACT_ARGS= ${WRKDIR}
 
-WRKSRC=${WRKDIR}
+NO_WRKSUBDIR=	yes
 
 SRCS =	cchdc.f cchdd.f cchex.f cchud.f cgbco.f cgbdi.f cgbfa.f cgbsl.f \
 	cgeco.f cgedi.f cgefa.f cgesl.f cgtsl.f chico.f chidi.f chifa.f \

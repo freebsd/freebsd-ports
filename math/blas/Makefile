@@ -3,26 +3,21 @@
 # Date created:         27 October 1994
 # Whom:                 ljo
 #
-# $Id: Makefile,v 1.7 1995/05/03 02:22:18 asami Exp $
+# $Id: Makefile,v 1.8 1995/06/24 11:40:16 asami Exp $
 #
 
 DISTNAME=	blas
 PKGNAME=	blas-1.0
-CATEGORIES=	math
-
-DISTDIR=${PORTSDIR}/distfiles/${DISTNAME}
-
+CATEGORIES+=	math
 MASTER_SITES=	ftp://netlib.att.com/netlib/blas/
-.if defined(MASTER_SITE_OVERRIDE)
-MASTER_SITES:= ${MASTER_SITE_OVERRIDE}/blas/
-.undef MASTER_SITE_OVERRIDE
-.endif
+
+DIST_SUBDIR=	${DISTNAME}
 
 EXTRACT_CMD=${.CURDIR}/scripts/uncomp
 EXTRACT_SUFX=.Z
 EXTRACT_ARGS= ${WRKDIR}
 
-WRKSRC=${WRKDIR}
+NO_WRKSUBDIR=	yes
 
 SRCS =	caxpy.f cblas1.f cblas2.f ccopy.f cdotc.f cdotu.f cgbmv.f cgemv.f \
 	cgerc.f cgeru.f chbmv.f chemv.f cher.f cher2.f chpmv.f chpr.f \
