@@ -1,6 +1,6 @@
 #
 #	Makefile for ports/mail/elm (FreeBSD)
-#	$Id: $
+#	$Id: Makefile,v 1.1.1.1 1994/10/14 21:59:03 jkh Exp $
 #
 
 # Distribution stuff
@@ -17,10 +17,5 @@ IS_INTERACTIVE=	is_set
 
 # Packaging
 NO_PACKAGE=	is_set
-# PKGDIR=	pkg
-
-pre-configure:
-	@echo "===> Running pre-configure target for ${DISTNAME}"
-	@sh ${SCRIPTDIR}/preconf ${PORTSDIR} ${.CURDIR} ${WRKSRC}
 
 .include <bsd.port.mk>
