@@ -1,0 +1,26 @@
+--- Makefile.orig	Tue Mar 28 22:23:58 2000
++++ Makefile	Fri Apr  7 12:21:53 2000
+@@ -19,16 +19,16 @@
+ ########## CHOOSE YOUR ARCHITECTURE:    (NOTE: also see bplaysrc/Makefile!)
+ 
+ # For Linux (and maybe others), use these:
+-CFLAGS = -Wall -O2 -DTURBO_MEDIAN -DTURBO_BUFFER
+-DEPS = $(OBJS) makebplay
+-LIBS = -lncurses -lm
+-COPY_A = -a
+-
+-# For FreeBSD (and maybe others), use these:
+ #CFLAGS = -Wall -O2 -DTURBO_MEDIAN -DTURBO_BUFFER
+ #DEPS = $(OBJS) makebplay
+ #LIBS = -lncurses -lm
+-#COPY_A = -p
++#COPY_A = -a
++
++# For FreeBSD (and maybe others), use these:
++CFLAGS += -Wall -DTURBO_MEDIAN -DTURBO_BUFFER
++DEPS = $(OBJS) makebplay
++LIBS = -lncurses -lm
++COPY_A = -p
+ 
+ # For IRIX (and maybe others), use these:
+ #CFLAGS = -Wall -O2 -DTURBO_MEDIAN -DTURBO_BUFFER -DSWAP_ENDIAN -DOLD_CURSES

@@ -1,0 +1,23 @@
+This is version 1.5 of GramoFile, released February 15, 1999. With this
+program you can record audio of (for example) gramophone records, process
+the signal and listen to the results. Because sound files of the
+.WAV-format are used, it is possible to exchange the files with many other
+programs. Cdrecord(1) can burn CD-Recordables of these, so you can make
+CDs with the music of your favorite records.  The user interface of
+GramoFile has a windows-like look-and-feel, making it fairly easy to use.
+
+One of the most important parts of GramoFile is the ability to process
+digital audio signals. Through the application of several filters it is
+possible to accomplish a significant reduction of disturbances like ticks
+and scratches.
+
+Another interesting feature is the track splitting. Just make one .wav file
+of an entire side of an record and GramoFile will detect where the individual
+tracks are located. This happens fully automatically, without need to set
+any options. More experienced users may fine-tune the algorithm, or change
+the detected track starts and ends, but generally that will not be
+necessary. Track-times are saved in an editable (plaintext) .tracks file,
+that will be used during the signal processing to produce one processed
+.wav file for each individual track.
+
+WWW: http://cardit.et.tudelft.nl/~card06/
