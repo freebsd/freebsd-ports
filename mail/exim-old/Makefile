@@ -6,15 +6,16 @@
 #
 
 PORTNAME=	exim
-PORTVERSION=	3.32
+PORTVERSION=	3.33
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.csx.cam.ac.uk/pub/software/email/exim/ \
 		http://www.exim.org/ftp/ \
 		ftp://ftp.is.co.za/networking/mail/transport/exim/
-DISTFILES=	exim-3.32.tar.gz exim-texinfo-3.30.tar.gz
+DISTFILES=	exim-3.33.tar.bz2 exim-texinfo-3.30.tar.bz2
 
 MAINTAINER=	sheldonh@FreeBSD.org
 
+USE_BZIP2=	yes
 USE_PERL5=	yes
 
 MAKE_ENV+=	OSTYPE=${OPSYS} ARCHTYPE=${MACHINE_ARCH}
