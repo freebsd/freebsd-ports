@@ -3,7 +3,7 @@
 # Date Created:				31 Oct 1998
 # Whom:					Seiichirou Hiraoka
 #
-# $Id: Makefile,v 1.3 1999/03/15 19:59:22 nectar Exp $
+# $Id: Makefile,v 1.4 1999/05/08 00:24:25 taoka Exp $
 #
 
 DISTNAME=	libicq-0.33
@@ -13,9 +13,11 @@ MASTER_SITES=	ftp://ftp.korsoft.com/pub/gicq/                        \
 
 MAINTAINER=	flathill@FreeBSD.ORG
 
-LIB_DEPENDS=	glib12.1:${PORTSDIR}/devel/glib12
+LIB_DEPENDS=	glib12.2:${PORTSDIR}/devel/glib12
 
-GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	GLIB_CONFIG="${PREFIX}/bin/glib12-config"
+GLIB_CONFIG?=	${LOCALBASE}/bin/glib12-config
+
+USE_LIBTOOL=	yes
+CONFIGURE_ENV=	GLIB_CONFIG="${GLIB_CONFIG}"
 
 .include <bsd.port.mk>

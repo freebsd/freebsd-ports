@@ -3,7 +3,7 @@
 # Date Created:			22 Oct 1998
 # Whom:				Seiichirou Hiraoka
 #
-# $Id: Makefile,v 1.2 1999/03/31 11:38:02 flathill Exp $
+# $Id: Makefile,v 1.3 1999/05/08 00:24:18 taoka Exp $
 #
 
 DISTNAME=	libicq-0.33
@@ -18,10 +18,12 @@ PATCH_DIST_STRIP= -p1
 
 MAINTAINER=	flathill@FreeBSD.ORG
 
-LIB_DEPENDS=    glib12.1:${PORTSDIR}/devel/glib12
+LIB_DEPENDS=    glib12.2:${PORTSDIR}/devel/glib12
+
+GLIB_CONFIG?=	${LOCALBASE}/bin/glib12-config
 
 GNU_CONFIGURE=  yes
-CONFIGURE_ENV=  GLIB_CONFIG="${PREFIX}/bin/glib12-config"
+CONFIGURE_ENV=  GLIB_CONFIG="${GLIB_CONFIG}"
 
 post-install:
 	@${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
