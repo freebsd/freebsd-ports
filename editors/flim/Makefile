@@ -20,7 +20,7 @@ MAINTAINER?=	shige@FreeBSD.org
 PORTCLASS?=	master
 
 # distfile version
-FLIM_VER=	${FLIM_TRUNK}.4
+FLIM_VER=	${FLIM_TRUNK}.5
 FLIM_TRUNK=	1.14
 # document install directory by install-doc target
 FLIMDOCDIR?=	share/doc/flim

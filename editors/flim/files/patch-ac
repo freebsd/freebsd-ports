@@ -3,36 +3,11 @@
 @@ -2,6 +2,10 @@
  @c Generated automatically from mime-en.sgml by sinfo 3.7.
  @setfilename mime-en.info
- @settitle{FLIM 1.12 Reference Manual about MIME Features}
+ @settitle{FLIM 1.14 Reference Manual about MIME Features}
 +@dircategory The Emacs editor and associated tools 
 +@direntry 
 +* mime-en: (mime-en).		MIME features for GNU Emacs. (English)
 +@end direntry 
  @titlepage
- @title FLIM 1.12 Reference Manual about MIME Features
+ @title FLIM 1.14 Reference Manual about MIME Features
  @author MORIOKA Tomohiko <morioka@@jaist.ac.jp>
-@@ -1545,13 +1549,13 @@
- @example
- (0) cvs login
- 
--    % cvs -d :pserver:anonymous@cvs.m17n.org:/cvs/root login
-+    % cvs -d :pserver:anonymous@@cvs.m17n.org:/cvs/root login
- 
-     CVS password: [CR] # NULL string
- 
- (1) checkout
- 
--    % cvs -d :pserver:anonymous@cvs.m17n.org:/cvs/root checkout
-+    % cvs -d :pserver:anonymous@@cvs.m17n.org:/cvs/root checkout
- 	checkout [-r TAG] flim
- @end example
- 
-@@ -1560,7 +1564,7 @@
- 
- @itemize @bullet
- @item
-- <cvs@cvs.m17n.org>
-+ <cvs@@cvs.m17n.org>
- @end itemize
- 
- @noindent
