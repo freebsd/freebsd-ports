@@ -7,10 +7,10 @@
 #
 
 PORTNAME=	avinfo
-PORTVERSION=	0.7.3
+PORTVERSION=	0.7.4
 CATEGORIES=	multimedia
-MASTER_SITES=	http://anime.org.ru/soft/avinfo/
-DISTNAME=	${PORTNAME}-${PORTVERSION}.src
+MASTER_SITES=	http://shounen.ru/soft/avinfo/
+DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A utility for displaying AVI header information
