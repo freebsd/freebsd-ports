@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	libsocket++
-PORTVERSION=	1.12.9
+PORTVERSION=	1.12.10
 CATEGORIES=	net
 MASTER_SITES=	http://www.hstraub.at/linux/downloads/src/
 DISTNAME=	socket++-${PORTVERSION}
