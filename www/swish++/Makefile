@@ -29,6 +29,12 @@ MAN3=	WWW.3
 MAN4=	swish++.conf.4 swish++.index.4
 MAN8=	searchd.8 searchmonitor.8
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502126
+BROKEN=		"Does not compile on FreeBSD >= 5.x"
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e '/^#error/d' ${WRKSRC}/config.h
 .for file in searchd searchmonitor
@@ -41,4 +47,4 @@ pre-install:
 post-install:
 	${INSTALL_SCRIPT} ${FILESDIR}/swish++.sh ${PREFIX}/etc/rc.d
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
