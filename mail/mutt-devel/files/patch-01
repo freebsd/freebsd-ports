@@ -1,5 +1,14 @@
---- configure.in.orig	Tue Jul 24 23:27:40 2001
-+++ configure.in	Wed Jul 25 07:51:00 2001
+--- configure.in.orig	Thu Nov  8 23:39:59 2001
++++ configure.in	Mon Nov 26 20:29:39 2001
+@@ -569,7 +569,7 @@
+         then
+           if test "$with_sasl" != "yes"
+           then
+-            CPPFLAGS="$CPPFLAGS -I$with_sasl/include"
++            CPPFLAGS="$CPPFLAGS -I$with_sasl/include/sasl"
+             LDFLAGS="$LDFLAGS -L$with_sasl/lib"
+           fi
+ 
 @@ -674,7 +674,7 @@
          mutt_save_LIBS="$LIBS"
          LIBS="$LIBS $LIBICONV"
