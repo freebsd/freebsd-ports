@@ -1,15 +1,15 @@
---- Makefile.orig	Mon Aug 30 15:33:00 1999
-+++ Makefile	Thu Sep  2 18:42:00 1999
+--- Makefile.orig	Mon Sep 13 14:03:56 1999
++++ Makefile	Sat Sep 18 12:42:20 1999
 @@ -1,6 +1,6 @@
 -CFLAGS=-O3 -s
-+CFLAGS?=-O3 -Wall -s
++CFLAGS?=-O3 -s
  TARGET=geekcode
 -CC=gcc
 +CC?=gcc
  
  SRCFILES = gc_appearance.c    \
             gc_computers.c     \
-@@ -24,14 +24,14 @@
+@@ -26,15 +26,15 @@
  	rm -f $(TARGET) $(LIBFILES)
  
  geekcode:
@@ -19,6 +19,7 @@
 -	gcc $(CFLAGS) -c gc_lifestyle.c
 -	gcc $(CFLAGS) -c gc_politics.c
 -	gcc $(CFLAGS) -c gc_type.c
+-	gcc $(CFLAGS) -c gc_consoleio.c
 -	gcc $(CFLAGS) -c geekcode.c
 -	gcc $(CFLAGS) -o $(TARGET) $(LIBFILES)
 +	${CC} $(CFLAGS) -c gc_appearance.c
@@ -27,6 +28,7 @@
 +	${CC} $(CFLAGS) -c gc_lifestyle.c
 +	${CC} $(CFLAGS) -c gc_politics.c
 +	${CC} $(CFLAGS) -c gc_type.c
++	${CC} $(CFLAGS) -c gc_consoleio.c
 +	${CC} $(CFLAGS) -c geekcode.c
 +	${CC} $(CFLAGS) -o $(TARGET) $(LIBFILES)
  
