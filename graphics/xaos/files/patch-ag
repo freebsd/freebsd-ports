@@ -1,0 +1,30 @@
+--- src/ui/ui-drv/x11/xlib.c--	Thu Mar  5 03:19:12 1998
++++ src/ui/ui-drv/x11/xlib.c	Fri Jul  3 16:49:25 1998
+@@ -19,6 +19,9 @@
+  * along with this program; if not, write to the Free Software
+  * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+  */
++#if defined(HAVE_SYS_PARAM_H)
++#include <sys/param.h>
++#endif
+ #include "aconfig.h"
+ #ifdef X11_DRIVER
+ #include <X11/Xlib.h>
+@@ -26,7 +29,9 @@
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <string.h>
++#if (!defined(BSD) || (BSD < 199506))
+ #include <malloc.h>
++#endif
+ #include "xlib.h"
+ #ifdef AMIGA
+ #define XFlush(x) while(0)
+@@ -230,6 +235,7 @@
+   XDestroyImage (d->image[0]);
+   XDestroyImage (d->image[1]);
+ }
++#undef	MAX
+ #define MAX(x,y) ((x)>(y)?(x):(y))
+ 
+ 

@@ -1,111 +1,352 @@
---- mktable.c--	Wed Jan 22 16:38:33 1997
-+++ mktable.c	Mon Feb 24 14:37:28 1997
-@@ -20,10 +20,15 @@
-  * along with this program; if not, write to the Free Software
+--- src/engine/blur.c--	Thu Mar  5 03:19:12 1998
++++ src/engine/blur.c	Fri Jul  3 15:39:10 1998
+@@ -1,5 +1,10 @@
++#if defined(HAVE_SYS_PARAM_H)
++#include <sys/param.h>
++#endif
+ #ifndef _plan9_
++#if (!defined(BSD) || (BSD < 199506))
+ #include <malloc.h>
++#endif
+ #include <string.h>
+ #include <math.h>
+ #include <config.h>
+@@ -294,6 +299,7 @@
+ }
+ #define AMOUNT 0.005
+ #define DIV 1000.0
++#undef MAX
+ #define MAX 800*1000		/*after 800 frames should be OK */
+ static int
+ doit (struct filter *f, int flags, int time1)
+--- src/engine/btrace.c--	Thu Mar  5 03:19:12 1998
++++ src/engine/btrace.c	Fri Jul  3 16:24:08 1998
+@@ -1,5 +1,12 @@
++#if defined(HAVE_SYS_PARAM_H)
++#include <sys/param.h>
++#endif
+ #ifndef _plan9_
++#if (!defined(BSD) || (BSD < 199506))
+ #include <malloc.h>
++#else
++#include <stdlib.h>
++#endif
+ #include <math.h>
+ #include <stdio.h>
+ #include <string.h>
+--- src/engine/dither.c--	Fri Jul  3 14:15:34 1998
++++ src/engine/dither.c	Fri Jul  3 15:36:23 1998
+@@ -13,8 +13,13 @@
+  * Note that quite interesting alg. is for preparing dithering table at
+  * fixedcolor displays.
+  */
++#if defined(HAVE_SYS_PARAM_H)
++#include <sys/param.h>
++#endif
+ #ifndef _plan9_
++#if (!defined(BSD) || (BSD < 199506))
+ #include <malloc.h>
++#endif
+ #include <config.h>
+ #include <stdio.h>
+ #include <string.h>
+@@ -31,6 +36,7 @@
+ #include <filter.h>
+ #include <fractal.h>
+ #include <xthread.h>
++#undef MSIZE
+ #define MSIZE 8
+ static int matrix[MSIZE][MSIZE] =
+ {
+--- src/engine/edge.c--	Thu Mar  5 03:19:12 1998
++++ src/engine/edge.c	Fri Jul  3 14:16:28 1998
+@@ -2,8 +2,15 @@
+  * This is very simple filter - it initializes smalliter image and then
+  * does an simple edge detection algo on it.
+  */
++#if defined(HAVE_SYS_PARAM_H)
++#include <sys/param.h>
++#endif
+ #ifndef _plan9_
++#if (!defined(BSD) || (BSD < 199506))
+ #include <malloc.h>
++#else
++#include <stdlib.h>
++#endif
+ #include <stdio.h>		/*for NULL */
+ #else
+ #include <u.h>
+--- src/engine/edge2.c--	Thu Mar  5 03:19:12 1998
++++ src/engine/edge2.c	Fri Jul  3 14:17:40 1998
+@@ -2,8 +2,15 @@
+  * This is very simple filter - it initializes smalliter image and then
+  * does an simple edge detection algo on it.
+  */
++#if defined(HAVE_SYS_PARAM_H)
++#include <sys/param.h>
++#endif
+ #ifndef _plan9_
++#if (!defined(BSD) || (BSD < 199506))
+ #include <malloc.h>
++#else
++#include <stdlib.h>
++#endif
+ #include <stdio.h>		/*for NULL */
+ #else
+ #include <u.h>
+--- src/engine/emboss.c--	Thu Mar  5 03:19:12 1998
++++ src/engine/emboss.c	Fri Jul  3 14:11:39 1998
+@@ -1,5 +1,12 @@
++#if defined(HAVE_SYS_PARAM_H)
++#include <sys/param.h>
++#endif
+ #ifndef _plan9_
++#if (!defined(BSD) || (BSD < 199506))
+ #include <malloc.h>
++#else
++#include <stdlib.h>
++#endif
+ #include <stdio.h>
+ #else
+ #include <u.h>
+--- src/engine/fractal.c--	Fri Jul  3 14:05:20 1998
++++ src/engine/fractal.c	Fri Jul  3 17:24:31 1998
+@@ -20,15 +20,21 @@
   * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
   */
-+#ifdef	HAVE_SYS_PARAM_H
+ /*#define STATISTICS */
++#if defined(HAVE_SYS_PARAM_H)
 +#include <sys/param.h>
 +#endif
- #include <stdio.h>
- #include <ctype.h>
- #include <stdlib.h>
-+#if (!defined(BSD) || (BSD < 199506))
- #include <malloc.h>
-+#endif
- #include "mktable.h"
- #include "config.h"
- #ifdef CURSES_DRIVER
-@@ -395,7 +400,11 @@
- #define postoparams(pos,i1,i2,i3,i4) \
-   ((i1)=(pos)>>12),((i2)=((pos)>>8)&15),((i3)=((pos)>>4)&15),((i4)=((pos))&15)
- 
-+#ifdef isset
-+#undef isset
-+#endif
- #define isset(n,i) (((i)&1<<(n))!=0)
-+
- #define canset(n,i) (!isset(n,i)&&isset(n+1,i))
- static int width = 8;
- void values(int c, int *v1, int *v2, int *v3, int *v4)
---- timers.c--	Mon Jan 27 13:15:55 1997
-+++ timers.c	Mon Feb 24 14:33:42 1997
-@@ -25,11 +25,18 @@
+ #ifdef _plan9_
+ #include <u.h>
  #include <libc.h>
+ #include <stdio.h>
  #else
- #include "aconfig.h"
-+#ifdef	HAVE_SYS_PARAM_H
-+#include <sys/param.h>
-+#endif
-+#if (!defined(BSD) || (BSD < 199506))
- #include <malloc.h>
-+#endif
  #include <stdio.h>
- #include <unistd.h>
- #ifndef _MAC
-+#if (!defined(BSD) || (BSD < 199506))
+-#ifndef _MAC
++#if (!defined(_MAC) && (!defined(BSD) || (BSD < 199506)))
  #include <malloc.h>
-+#endif
  #endif
- #ifdef HAVE_SETITIMER
- #include <signal.h>
---- ui_curses.c--	Mon Feb 24 14:21:41 1997
-+++ ui_curses.c	Mon Feb 24 12:57:00 1997
-@@ -21,9 +21,14 @@
-  */
- #include "aconfig.h"
- #ifdef CURSES_DRIVER
-+#ifdef	HAVE_SYS_PARAM_H
-+#include <sys/param.h>
++#if (defined(BSD) && (BSD >= 199506))
++#include <stdlib.h>
 +#endif
- #include <stdio.h>
- #include <stdlib.h>
-+#if (!defined(BSD) || (BSD < 199506))
- #include <malloc.h>
-+#endif
- #include <signal.h>
- #include <sys/stat.h>
- #include <unistd.h>
---- xlib.c--	Mon Feb 24 14:21:54 1997
-+++ xlib.c	Mon Feb 24 14:34:38 1997
-@@ -26,7 +26,12 @@
- #include <stdio.h>
- #include <stdlib.h>
+ #include <aconfig.h>
  #include <string.h>
-+#ifdef	HAVE_SYS_PARAM_H
-+#include <sys/param.h>
+ #include <config.h>
+@@ -50,16 +56,21 @@
+ #include <timers.h>
+ #ifdef __GNUC__
+ #ifdef __i386__
++#ifdef __linux__
+ #ifndef PC_64
+ #include <i386/ctrl87.h>
+ #endif
+ #endif
+ #endif
 +#endif
-+#if (!defined(BSD) || (BSD < 199506))
- #include <malloc.h>
+ #ifdef __alpha__
+ #ifdef __linux__
+ #include <asm/fpu.h>
+ #endif
+ #endif
++#if (defined(BSD) && (BSD >= 199506))
++#include <floatingpoint.h>
 +#endif
- #include "xlib.h"
- #ifdef AMIGA
- #define XFlush(x) while(0)
-@@ -264,7 +269,9 @@
-     XDestroyImage(d->image[0]);
-     XDestroyImage(d->image[1]);
+ #ifndef M_PI
+ #define M_PI 3.1415
+ #endif
+@@ -335,9 +346,11 @@
+ 
+ #ifdef __GNUC__
+ #ifdef __i386__
++#ifdef __linux__
+   _control87 (PC_64 | MCW_EM | MCW_RC, MCW_PC | MCW_EM | MCW_RC);
+ #endif
+ #endif
++#endif
+ #ifdef __alpha__
+ #ifdef __linux__
+   extern void ieee_set_fp_control(unsigned long);
+@@ -352,6 +365,11 @@
+     /*fcr &= ~(FPINEX | FPOVFL | FPUNFL | FPZDIV);*/
+     setfcr (fcr);
+   }
++#endif
++#ifdef BSD
++  /* ignore all possible exceptions */
++  (void) fpsetmask(~(FP_X_INV | FP_X_OFL | FP_X_UFL | FP_X_DZ | 
++		FP_X_IMP | FP_X_DNML));
+ #endif
+   new_ctxt = (fractal_context *) calloc (sizeof (fractal_context), 1);
+   if (new_ctxt == NULL)
+--- src/engine/i386.c--	Thu Mar  5 03:19:12 1998
++++ src/engine/i386.c	Fri Jul  3 17:48:38 1998
+@@ -1,4 +1,4 @@
+-
++#ifdef __linux__
+ /*
+  * ctrl87.c
+  */
+@@ -211,6 +211,7 @@
+     }
+   return _to;
  }
-+#ifndef	MAX
- #define MAX(x,y) ((x)>(y)?(x):(y))
-+#endif
- 
- 
- xdisplay *xalloc_display(char *s, int x, int y, xlibparam * params)
---- zoom.c--	Mon Feb 24 12:49:33 1997
-+++ zoom.c	Mon Feb 24 12:56:18 1997
-@@ -25,10 +25,15 @@
- #include <libc.h>
- #include <stdio.h>
- #else
-+#ifdef	HAVE_SYS_PARAM_H
-+#include <sys/param.h>
-+#endif
- #include <stdlib.h>
- #include <stdio.h>
- #ifndef _MAC
-+#if (!defined(BSD) || (BSD < 199506))
- #include <malloc.h>
 +#endif
  #endif
- #include "aconfig.h"
- #ifdef HAVE_LIMITS_H
+ #endif
+ #endif
+--- src/engine/interlace.c--	Thu Mar  5 03:19:12 1998
++++ src/engine/interlace.c	Fri Jul  3 14:21:21 1998
+@@ -1,5 +1,12 @@
++#if defined(HAVE_SYS_PARAM_H)
++#include <sys/param.h>
++#endif
+ #ifndef _plan9_
++#if (!defined(BSD) || (BSD < 199506))
+ #include <malloc.h>
++#else
++#include <stdlib.h>
++#endif
+ #include <stdio.h>		/*for NULL */
+ #include <string.h>		/*for memcpy */
+ #else
+--- src/engine/itersmall.c--	Thu Mar  5 03:19:12 1998
++++ src/engine/itersmall.c	Fri Jul  3 14:22:29 1998
+@@ -1,5 +1,10 @@
++#if defined(HAVE_SYS_PARAM_H)
++#include <sys/param.h>
++#endif
+ #ifndef _plan9_
++#if (!defined(BSD) || (BSD < 199506))
+ #include <malloc.h>
++#endif
+ #include <config.h>
+ #ifdef HAVE_ALLOCA_H
+ #include <alloca.h>
+--- src/engine/julia.c--	Thu Mar  5 03:19:12 1998
++++ src/engine/julia.c	Fri Jul  3 14:24:57 1998
+@@ -1,3 +1,6 @@
++#if defined(HAVE_SYS_PARAM_H)
++#include <sys/param.h>
++#endif
+ #ifdef _plan9_
+ #include <u.h>
+ #include <stdio.h>
+@@ -5,7 +8,9 @@
+ #else
+ #include <math.h>
+ #include <string.h>
++#if (!defined(BSD) || (BSD < 199506))
+ #include <malloc.h>
++#endif
+ #include <stdio.h>
+ #include <stdlib.h>
+ #endif
+--- src/engine/palettef.c--	Thu Mar  5 03:19:12 1998
++++ src/engine/palettef.c	Fri Jul  3 14:09:38 1998
+@@ -1,5 +1,12 @@
++#if defined(HAVE_SYS_PARAM_H)
++#include <sys/param.h>
++#endif
+ #ifndef _plan9_
++#if (!defined(BSD) || (BSD < 199506))
+ #include <malloc.h>
++#else
++#include <stdlib.h>
++#endif
+ #include <stdio.h>
+ #else
+ #include <u.h>
+--- src/engine/rotate.c--	Thu Mar  5 03:19:12 1998
++++ src/engine/rotate.c	Fri Jul  3 16:24:16 1998
+@@ -4,12 +4,19 @@
+  * 'E' menu.
+  * It is used to implement fast rotation mode
+  */
++#if defined(HAVE_SYS_PARAM_H)
++#include <sys/param.h>
++#endif
+ #ifndef _plan9_
+ #include <string.h>
+ #include <limits.h>
+ #include <archaccel.h>
+ #include <math.h>
++#if (!defined(BSD) || (BSD < 199506))
+ #include <malloc.h>
++#else
++#include <stdlib.h>
++#endif
+ #else
+ #include <u.h>
+ #include <libc.h>
+--- src/engine/star.c--	Fri Jul  3 14:12:59 1998
++++ src/engine/star.c	Fri Jul  3 14:51:59 1998
+@@ -1,5 +1,10 @@
++#if defined(HAVE_SYS_PARAM_H)
++#include <sys/param.h>
++#endif
+ #ifndef _plan9_
++#if (!defined(BSD) || (BSD < 199506))
+ #include <malloc.h>
++#endif
+ #include <config.h>
+ #include <limits.h>
+ #ifdef HAVE_ALLOCA_H
+--- src/engine/stereogram.c--	Thu Mar  5 03:19:12 1998
++++ src/engine/stereogram.c	Fri Jul  3 14:22:55 1998
+@@ -1,5 +1,10 @@
++#if defined(HAVE_SYS_PARAM_H)
++#include <sys/param.h>
++#endif
+ #ifndef _plan9_
++#if (!defined(BSD) || (BSD < 199506))
+ #include <malloc.h>
++#endif
+ #include <config.h>
+ #ifdef HAVE_ALLOCA_H
+ #include <alloca.h>
+--- src/engine/subwindow.c--	Fri Jul  3 14:24:23 1998
++++ src/engine/subwindow.c	Fri Jul  3 14:23:57 1998
+@@ -1,5 +1,12 @@
++#if defined(HAVE_SYS_PARAM_H)
++#include <sys/param.h>
++#endif
+ #ifndef _plan9_
++#if (!defined(BSD) || (BSD < 199506))
+ #include <malloc.h>
++#else
++#include <stdlib.h>
++#endif
+ #include <stdio.h>		/*for NULL */
+ #include <string.h>		/*for memcpy */
+ #else
+--- src/engine/zoom.c--	Thu Mar  5 03:19:12 1998
++++ src/engine/zoom.c	Fri Jul  3 16:24:03 1998
+@@ -20,6 +20,9 @@
+  * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+  */
+ /*#define DRAW */
++#if defined(HAVE_SYS_PARAM_H)
++#include <sys/param.h>
++#endif
+ #ifdef _plan9_
+ #include <u.h>
+ #include <libc.h>
+@@ -27,7 +30,7 @@
+ #else
+ #include <stdlib.h>
+ #include <stdio.h>
+-#ifndef _MAC
++#if (!defined(_MAC) && (!defined(BSD) || (BSD < 199506)))
+ #include <malloc.h>
+ #endif
+ #ifdef __EMX__
+@@ -61,6 +64,7 @@
+ #include "calculate.h"		/*an inlined calulate function */
+ 
+ #define ASIZE 16
++#undef ALIGN
+ #define ALIGN(x) (((x)+ASIZE-1)&(~(ASIZE-1)))
+ static int nsymetrized;
+ static unsigned char *tmpdata, *tmpdata1;

@@ -1,0 +1,67 @@
+--- src/include/i386/__math.h--	Thu Mar  5 03:19:12 1998
++++ src/include/i386/__math.h	Fri Jul  3 13:59:51 1998
+@@ -179,7 +179,7 @@
+   __asm __volatile__
+     ("fldl	%%st(0)\n\t"
+      "frndint			# int(x)\n\t"
+-     "fxch\n\t"
++     "fxch	%%st(1)\n\t"
+      "fsub	%%st(1)		# fract(x)\n\t"
+      "f2xm1			# 2^(fract(x)) - 1\n\t"
+      : "=t" (__value), "=u" (__exponent) : "0" (__x));
+@@ -254,7 +254,7 @@
+      "fmul	%%st(1)		# x * log2(e)\n\t"			      \
+      "fstl	%%st(1)\n\t"						      \
+      "frndint			# int(x * log2(e))\n\t"			      \
+-     "fxch\n\t"								      \
++     "fxch	%%st(1)\n\t"						      \
+      "fsub	%%st(1)		# fract(x * log2(e))\n\t"		      \
+      "f2xm1			# 2^(fract(x * log2(e))) - 1\n\t"	      \
+      "fscale			# 2^(x * log2(e)) - 2^(int(x * log2(e)))\n\t" \
+@@ -275,7 +275,7 @@
+      "fmul	%%st(1)		# x * log2(e)\n\t"			      \
+      "fstl	%%st(1)\n\t"						      \
+      "frndint			# int(x * log2(e))\n\t"			      \
+-     "fxch\n\t"								      \
++     "fxch	%%st(1)\n\t"						      \
+      "fsub	%%st(1)		# fract(x * log2(e))\n\t"		      \
+      "f2xm1			# 2^(fract(x * log2(e))) - 1\n\t"	      \
+      : "=t" (__value), "=u" (__exponent) : "0" (__x));			      \
+@@ -350,7 +350,7 @@
+     ("fmul	%%st(1)		# y * log2(x)\n\t"
+      "fst	%%st(1)\n\t"
+      "frndint			# int(y * log2(x))\n\t"
+-     "fxch\n\t"
++     "fxch	%%st(1)\n\t"
+      "fsub	%%st(1)		# fract(y * log2(x))\n\t"
+      "f2xm1			# 2^(fract(y * log2(x))) - 1\n\t"
+      : "=t" (__value), "=u" (__exponent) : "0" (__y), "1" (__value));
+@@ -380,8 +380,8 @@
+ __inline_mathop (cos, "fcos")
+ 
+ __inline_mathop (atan, "fld1; fpatan")
+-__inline_mathop (log, "fldln2; fxch; fyl2x")
+-__inline_mathop (log10, "fldlg2; fxch; fyl2x")
++__inline_mathop (log, "fldln2; fxch %%st(1); fyl2x")
++__inline_mathop (log10, "fldlg2; fxch %%st(1); fyl2x")
+ 
+ __inline_mathcode (asin, __x, return __atan2l (__x, __sqrtl (1.0 - __x * __x)))
+ __inline_mathcode (acos, __x, return __atan2l (__sqrtl (1.0 - __x * __x), __x))
+@@ -441,7 +441,7 @@
+ /* Optimized versions for some non-standardized functions.  */
+ #if defined __USE_ISOC9X || defined __USE_MISC
+ 
+-__inline_mathop(log2, "fld1; fxch; fyl2x")
++__inline_mathop(log2, "fld1; fxch %%st(1); fyl2x")
+ 
+ __inline_mathcode (expm1, __x, __expm1_code)
+ 
+@@ -456,7 +456,7 @@
+   else
+     __asm __volatile__
+       ("fldln2\n\t"
+-       "fxch\n\t"
++       "fxch %%st(1)\n\t"
+        "fyl2xp1"
+        : "=t" (__value) : "0" (__x));
+   return __value)

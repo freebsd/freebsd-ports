@@ -1,0 +1,10 @@
+--- src/include/ui_helper.h--	Thu Mar  5 03:19:12 1998
++++ src/include/ui_helper.h	Fri Jul  3 16:05:50 1998
+@@ -217,6 +217,7 @@
+ 
+ #define uih_needrecalculate(context) ((context)->recalculatemode)
+ #define uih_needdisplay(context) ((context)->display)
++#undef MAX
+ #define MAX(a,b) ((a)>(b)?(a):(b))
+ #define uih_newimage(c) (((c)->recalculatemode=MAX((c)->recalculatemode,UIH_NEW_IMAGE)))
+ #define uih_animate_image(c) ((c)->recalculatemode=MAX((c)->recalculatemode,UIH_ANIMATION))
