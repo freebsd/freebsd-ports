@@ -8,7 +8,7 @@
 PORTNAME=	merlin
 PORTVERSION=	1.0
 CATEGORIES=	games
-MASTER_SITES=	http://outoften.doc.ic.ac.uk/~np2/software/download/
+MASTER_SITES=	http://www-dse.doc.ic.ac.uk/~np2/software/download/
 DISTNAME=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
@@ -19,14 +19,15 @@ NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 USE_X_PREFIX=	yes
 
-post-extract:
-	@ ${MV} ${WRKSRC}/merlin.tcl ${WRKSRC}/merlin
+post-patch:
+	@${SED} -e "s:%%LOCALBASE%%:${LOCALBASE}:g" \
+		${WRKSRC}/merlin.tcl > ${WRKSRC}/merlin
 
 do-install:
-	@ ${INSTALL_SCRIPT} ${WRKSRC}/${DISTNAME} ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/merlin ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
-	@ ${MKDIR} ${PREFIX}/share/doc/merlin
-	@ ${INSTALL_DATA} ${WRKSRC}/merlin.README.txt ${PREFIX}/share/doc/merlin/README
+	@${MKDIR} ${PREFIX}/share/doc/merlin
+	${INSTALL_DATA} ${WRKSRC}/merlin.README.txt ${PREFIX}/share/doc/merlin/README
 .endif
 
 .include <bsd.port.mk>
