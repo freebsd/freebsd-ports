@@ -26,14 +26,26 @@ USE_OPENSSL=	yes
 MAN1=		rdesktop.1
 ALL_TARGET=
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500023
+BUILD_DEPENDS=	${PREFIX}/include/gmp.h:${PORTSDIR}/math/libgmp-freebsd
+RUN_DEPENDS=	${PREFIX}/include/gmp.h:${PORTSDIR}/math/libgmp-freebsd
+.endif
+
 do-patch:
 	@${EXTRACT_CMD} -dc ${_DISTDIR}/${PATCHFILES} | \
 		${PATCH} ${PATCH_DIST_ARGS}
+.if ${OSVERSION} >= 500023
+	@${PERL} -pi.orig -e 's:-O2.*-Wall:${CFLAGS} -I${PREFIX}/include:g' \
+		${WRKSRC}/Makefile
+.else
 	@${PERL} -pi.orig -e 's:-O2.*-Wall:${CFLAGS}:g' ${WRKSRC}/Makefile
+.endif
 	@${PERL} -pi.orig -e 's:/usr/X11R6/:${X11BASE}/:g' ${WRKSRC}/Makefile
 	@${PERL} -pi.orig -e 's:^PREFIX.*:PREFIX=${PREFIX}:g' ${WRKSRC}/Makefile
 	@${PERL} -pi.orig -e 's:^install.*:install\: rdesktop:g' ${WRKSRC}/Makefile
 	@${PERL} -pi.orig -e 's:^.*\(INSTALL\) rdp-srvr.*::g' ${WRKSRC}/Makefile
 	@${PERL} -pi.orig -e 's:<endian.h>:<machine/endian.h>:g' ${WRKSRC}/rdesktop.h
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
