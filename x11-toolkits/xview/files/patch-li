@@ -1168,39 +1168,6 @@ diff -rc ../old/xview3.2p1-X11R6/lib/libxview/notify/ndet_read.c ./lib/libxview/
   {
       int             ndelay;
       Notify_error    return_code;
-diff -rc ../old/xview3.2p1-X11R6/lib/libxview/notify/ntfy.h ./lib/libxview/notify/ntfy.h
-*** ../old/xview3.2p1-X11R6/lib/libxview/notify/ntfy.h	Tue Jun 29 01:18:14 1993
---- ./lib/libxview/notify/ntfy.h	Sun Nov 20 13:39:05 1994
-***************
-*** 22,27 ****
---- 22,31 ----
-  #include <sys/rusage.h>
-  #endif
-  #include <sys/resource.h>
-+ #if (defined(BSD) && (BSD >= 199103))
-+ #include <sys/wait.h>
-+ #include <sys/signal.h>
-+ #endif
-  #include <xview/notify.h>
-  
-  /*
-***************
-*** 149,155 ****
-   */
-  typedef	struct ntfy_wait3_data {
-  	int	pid;			/* Process waiting for */
-! #ifndef SVR4
-  	union	wait status;		/* Return value from wait3 */
-  #else SVR4
-  	int 	status;		/* Return value from wait3 */
---- 153,159 ----
-   */
-  typedef	struct ntfy_wait3_data {
-  	int	pid;			/* Process waiting for */
-! #if !defined(SVR4) && !(defined(BSD) && (BSD >= 199103))
-  	union	wait status;		/* Return value from wait3 */
-  #else SVR4
-  	int 	status;		/* Return value from wait3 */
 diff -rc ../old/xview3.2p1-X11R6/lib/libxview/notify/ntfy_test.c ./lib/libxview/notify/ntfy_test.c
 *** ../old/xview3.2p1-X11R6/lib/libxview/notify/ntfy_test.c	Tue Jun 29 01:18:12 1993
 --- ./lib/libxview/notify/ntfy_test.c	Sun Nov 20 13:39:05 1994
