@@ -1,0 +1,15 @@
+This module provides an object that matches a data source against a
+query expression.
+
+Query expressions are compiled into an internal form when a new object
+is created or the `prepare' method is called; they are not recompiled on
+each match.
+
+The class provided by this module uses four packages to process the
+query. The query parser parses the question and calls a query expression
+builder (internal form of the question). The optimizer is then called to
+reduce the complexity of the expression. The solver applies the
+expression on a data source. 
+
+-Anton
+<tobez@tobez.org>
