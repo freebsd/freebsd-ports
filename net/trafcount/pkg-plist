@@ -1,0 +1,3 @@
+bin/trafcount
+etc/rc.d/trafcount.sh
+libexec/trafcount.ko

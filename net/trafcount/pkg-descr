@@ -1,0 +1,3 @@
+Trafcount is a loadable kernel module that provides you the option to
+measure the total amount of bandwidth that is consumed by each of
+your users.
