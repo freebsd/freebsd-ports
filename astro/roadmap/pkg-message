@@ -7,4 +7,9 @@ The instructions for downloading and installing the necessary
 TIGER data are located in:
 
      %%DOCSDIR%%/README
+
+Make sure that you either have a program called flite (a voice synthesizer)
+or disable (mute) audio throught the menu. Other voice synthesizer can 
+be used, like festival
+
 ------------------------------------------------------------------

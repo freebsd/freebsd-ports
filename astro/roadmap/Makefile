@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	roadmap
-PORTVERSION=	0.14
+PORTVERSION=	1.0.r6
 CATEGORIES=	astro
 MASTER_SITES=	http://roadmap.saignon.net/roadmap/
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	${PORTNAME}_${PORTVERSION:S/./_/}_src
+DISTNAME=	${PORTNAME}_1_0rc6_src
 
 MAINTAINER=	nick@netdot.net
 COMMENT=	Vector-based GPS moving map
@@ -18,10 +18,12 @@ COMMENT=	Vector-based GPS moving map
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
-BUILD_WRKSRC=	${WRKSRC}/src/gtk
+BUILD_WRKSRC=	${WRKSRC}/src
 INSTALL_WRKSRC=	${WRKSRC}/src
 
 USE_GNOME=	gtk12
+
+USE_GMAKE=yes
 
 BINS=		buildmap buildus dumpmap
 GUI_BINS=	gtkroadmap gtkroadgps
