@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	janos.mohacsi@dante.org.uk
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/IO/Interface.pm:${PORTSDIR}/net/p5-IO-Interface
+BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/IO/Interface.pm:${PORTSDIR}/net/p5-IO-Interface
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 MAN3=		IO::Socket::Multicast.3
