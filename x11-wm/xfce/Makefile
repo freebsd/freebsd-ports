@@ -6,14 +6,13 @@
 #
 
 PORTNAME=	xfce
-PORTVERSION=	3.8.14c
-PORTREVISION=	1
+PORTVERSION=	3.8.16
 CATEGORIES=	x11-wm
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.xfce.org/archive/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	nakai@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	audiofile.0:${PORTSDIR}/audio/libaudiofile \
 		iconv.3:${PORTSDIR}/converters/libiconv \
@@ -57,8 +56,11 @@ pre-everything::
 .endif
 
 pre-patch:
-	@${PERL} -pi -e \
-		's|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
+	@${PERL} -pi -e 's|=aclocal|=${TRUE}|g ; \
+		 s|=autoconf|=${TRUE}|g ; \
+		 s|=automake|=${TRUE}|g ; \
+		 s|=autoheader|=${TRUE}|g ; \
+		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
 	@${PERL} -pi -e 's|gtk-config|${GTK_CONFIG:T}|g' ${WRKSRC}/xfce/setup.c
 	@${PERL} -pi -e 's|xfplay|internal|g' ${WRKSRC}/other/xfsoundrc.in
 
