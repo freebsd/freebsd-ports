@@ -10,7 +10,9 @@ PORTVERSION=	1.5.0.b3
 PORTREVISION=	1
 CATEGORIES=	devel java
 MASTER_SITES=	http://jakarta.apache.org/builds/${PORTNAME}/release/v${ANT_VERSION}/bin/ \
-		http://www.metaverse.nl/~ernst/
+		http://www.metaverse.nl/~ernst/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	znerd
 DISTNAME=	${PORTNAME}-${ANT_VERSION}-bin
 DIST_SUBDIR=	jakarta
 
