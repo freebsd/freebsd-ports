@@ -1,14 +1,14 @@
-lib/perl5/site_perl/%%PERL_VER%%/Spreadsheet/WriteExcel.pm
-lib/perl5/site_perl/%%PERL_VER%%/Spreadsheet/WriteExcel/BIFFwriter.pm
-lib/perl5/site_perl/%%PERL_VER%%/Spreadsheet/WriteExcel/Big.pm
-lib/perl5/site_perl/%%PERL_VER%%/Spreadsheet/WriteExcel/Format.pm
-lib/perl5/site_perl/%%PERL_VER%%/Spreadsheet/WriteExcel/Formula.pm
-lib/perl5/site_perl/%%PERL_VER%%/Spreadsheet/WriteExcel/OLEwriter.pm
-lib/perl5/site_perl/%%PERL_VER%%/Spreadsheet/WriteExcel/Utility.pm
-lib/perl5/site_perl/%%PERL_VER%%/Spreadsheet/WriteExcel/Workbook.pm
-lib/perl5/site_perl/%%PERL_VER%%/Spreadsheet/WriteExcel/WorkbookBig.pm
-lib/perl5/site_perl/%%PERL_VER%%/Spreadsheet/WriteExcel/Worksheet.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Spreadsheet/WriteExcel/.packlist
+%%SITE_PERL%%/Spreadsheet/WriteExcel.pm
+%%SITE_PERL%%/Spreadsheet/WriteExcel/BIFFwriter.pm
+%%SITE_PERL%%/Spreadsheet/WriteExcel/Big.pm
+%%SITE_PERL%%/Spreadsheet/WriteExcel/Format.pm
+%%SITE_PERL%%/Spreadsheet/WriteExcel/Formula.pm
+%%SITE_PERL%%/Spreadsheet/WriteExcel/OLEwriter.pm
+%%SITE_PERL%%/Spreadsheet/WriteExcel/Utility.pm
+%%SITE_PERL%%/Spreadsheet/WriteExcel/Workbook.pm
+%%SITE_PERL%%/Spreadsheet/WriteExcel/WorkbookBig.pm
+%%SITE_PERL%%/Spreadsheet/WriteExcel/Worksheet.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Spreadsheet/WriteExcel/.packlist
 %%PORTDOCS%%%%DOCSDIR%%/WriteExcel.html
 %%PORTDOCS%%%%DOCSDIR%%/examples.html
 %%PORTDOCS%%%%DOCSDIR%%/index.html
@@ -78,7 +78,7 @@ lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Spreadsheet/WriteExcel/.pack
 %%PORTDOCS%%%%EXAMPLESDIR%%/writemany.pl
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Spreadsheet/WriteExcel
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Spreadsheet 2>/dev/null || true
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Spreadsheet/WriteExcel
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Spreadsheet 2>/dev/null || true
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Spreadsheet/WriteExcel
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Spreadsheet 2>/dev/null || true
+@dirrm %%SITE_PERL%%/Spreadsheet/WriteExcel
+@unexec rmdir %D/%%SITE_PERL%%/Spreadsheet 2>/dev/null || true
