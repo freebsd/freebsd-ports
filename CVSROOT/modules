@@ -3468,6 +3468,7 @@ libregex	src/gnu/lib/libregex
 librep		ports/lang/librep
 libresolv	src/lib/libresolv
 libretto-config	ports/sysutils/libretto-config
+librfc822	ports/mail/librfc822
 librkinit	src/eBones/lib/librkinit
 librpcsvc	src/lib/librpcsvc
 librsvg		ports/graphics/librsvg
