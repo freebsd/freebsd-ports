@@ -175,7 +175,6 @@
     SUBDIR += glade--
     SUBDIR += glg
     SUBDIR += glib12
-    SUBDIR += glib13
     SUBDIR += glib20
     SUBDIR += global
     SUBDIR += glui
