@@ -1,0 +1,7 @@
+bin/mimedump
+include/firemime.h
+lib/libfiremime.a
+lib/libfiremime.so
+lib/libfiremime.so.0
+lib/libfiremime.so.0.9
+lib/libfiremime.so.0.9.4
