@@ -7,7 +7,7 @@
 
 PORTNAME=	Server
 PORTVERSION=	4.3.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-servers
 MASTER_SITES=	${MASTER_SITE_XFREE:S/$/:x/} \
 		${MASTER_SITE_LOCAL:S/$/:local/}
@@ -32,7 +32,8 @@ DIST_SUBDIR=		xc
 WRKSRC=			${WRKDIR}/xc
 PATCHDIR=		${.CURDIR}/../../x11/XFree86-4-libraries/files
 .for pf in patch-savage-pci-id patch-alpha_video.c patch-Pci.h patch-radeondri \
-	patch-r128_driver.c patch-mga_driver.c patch-xkbInit.c
+	patch-r128_driver.c patch-mga_driver.c patch-xkbInit.c patch-radeon_dri.c \
+	patch-mga_dri.c patch-nv_driver.c patch-nv_setup.c patch-int10-generic.c
 EXTRA_PATCHES+=		${FILESDIR}/${pf}
 .endfor
 SCRIPTS_ENV=		OSVERSION=${OSVERSION} \
@@ -73,6 +74,7 @@ MAN3=			XF86VidMode.3 \
 MAN4=			citron.4 \
 			dynapro.4 \
 			elographics.4 \
+			fbdevhw.4 \
 			glint.4 \
 			kbd.4 \
 			keyboard.4 \
@@ -80,8 +82,10 @@ MAN4=			citron.4 \
 			microtouch.4 \
 			mouse.4 \
 			mutouch.4 \
+			nsc.4 \
 			nv.4 \
 			r128.4 \
+			radeon.4 \
 			rendition.4 \
 			s3virge.4 \
 			savage.4 \
