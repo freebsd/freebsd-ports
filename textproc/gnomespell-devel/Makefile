@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	gnomespell
-PORTVERSION=	0.5
+PORTVERSION=	1.0.3
 CATEGORIES=	textproc gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/gnome-spell/0.5
+MASTER_SITE_SUBDIR=	sources/gnome-spell/1.0
 DISTNAME=	gnome-spell-${PORTVERSION}
 DIST_SUBDIR=	gnome
 
@@ -22,10 +22,11 @@ USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_PERL5=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomeprefix gnomehack libglade gal libcapplet
+USE_GNOME=	gnomeprefix gnomehack libbonoboui
 USE_LIBTOOL=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
+PLIST_SUB=	VERSION=${PORTVERSION}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
