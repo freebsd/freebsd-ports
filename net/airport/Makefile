@@ -7,6 +7,7 @@
 
 PORTNAME=	airport
 PORTVERSION=	1.4
+PORTREVISION=	1
 CATEGORIES=	net java
 MASTER_SITES=	http://edge.mcs.drexel.edu/GICL/people/sevy/airport/
 DISTFILES=	configurator_${PORTVERSION:S/.//}${EXTRACT_SUFX}
@@ -30,8 +31,12 @@ NO_BUILD=	yes
 
 do-install:
 	@cd ${WRKSRC}; \
-		${MKDIR} ${PREFIX}/share/airport; \
-		${CP} -r ${WRKSRC}/* ${PREFIX}/share/airport; \
+		${MKDIR} ${PREFIX}/share/doc/airport/helpdocs; \
+		${MKDIR} ${PREFIX}/share/java; \
+		${INSTALL_DATA} ${WRKSRC}/*jar ${PREFIX}/share/java; \
+		${CP} ${WRKSRC}/AUTHORS ${PREFIX}/share/doc/airport; \
+		${CP} ${WRKSRC}/COPYING ${PREFIX}/share/doc/airport; \
+		${CP} -r ${WRKSRC}/helpdocs/* ${PREFIX}/share/doc/airport/helpdocs; \
 		${SED} \
 			-e s,%%PREFIX%%,${PREFIX},g \
 			-e s/%%JFC_VERSION%%/${JFC_VERSION}/ \
