@@ -7,12 +7,15 @@
 #
 
 PORTNAME=	mdk
-PORTVERSION=	1.0.1
-PORTREVISION=	2
+PORTVERSION=	1.1
+PORTREVISION=	0
 CATEGORIES=	lang gnome
-MASTER_SITES=	${MASTER_SITE_GNU} \
-		${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	${MASTER_SITE_GNU:S/$/:gnu/} \
+		${MASTER_SITE_SOURCEFORGE:S/$/:sf/}
+MASTER_SITE_SUBDIR=	${PORTNAME}/v${PORTVERSION}/:gnu \
+			${PORTNAME}/:sf
+DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}:gnu \
+		${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}:sf
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MIX Development Kit offers an emulation of MIX and MIXAL
@@ -21,24 +24,13 @@ LIB_DEPENDS=	guile.15:${PORTSDIR}/lang/guile
 
 USE_GETTEXT=	yes
 USE_ICONV=	yes
-USE_REINPLACE=	yes
 USE_GETOPT_LONG=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	glib12 gtk12 libglade gnomehack gnomehier gnomeprefix
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib" \
-		MAKEINFO="makeinfo --no-split"
+		LDFLAGS="-L${LOCALBASE}/lib"
 
-.include <bsd.port.pre.mk>
+INFO=	mdk
 
-post-extract:
-	@${RM} -f ${WRKSRC}/doc/*.info*
-
-post-patch:
-.if ${OSVERSION} < 500028
-	@${REINPLACE_CMD} 's/#include <stdint.h>//g' \
-		${WRKSRC}/mixlib/mix_scanner.c
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
