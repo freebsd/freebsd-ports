@@ -6,30 +6,49 @@
 #
 
 PORTNAME=	bluefish
-PORTVERSION=	0.8.20030207
+PORTVERSION=	0.9
 CATEGORIES=	www editors
-MASTER_SITES=	http://pkedu.fbt.eitn.wau.nl/~olivier/snapshots/ \
-		ftp://bluefish.advancecreations.com/pub/bluefish/snapshots/ \
-		http://bluefish.mrball.net/snapshots/ \
-		ftp://ftp.ratisbona.com/pub/bluefish/snapshots/ \
-		http://bluefish.shellhung.org/snapshots/
-DISTNAME=	${PORTNAME}-gtk2port-2003-02-07
-EXTRACT_SUFX=	.tgz
+MASTER_SITES=	http://pkedu.fbt.eitn.wau.nl/~olivier/${DOWNLOAD}/ \
+		ftp://bluefish.advancecreations.com/pub/bluefish/${DOWNLOAD}/ \
+		http://bluefish.mrball.net/${DOWNLOAD}/ \
+		ftp://ftp.ratisbona.com/pub/bluefish/${DOWNLOAD}/ \
+		http://bluefish.shellhung.org/${DOWNLOAD}/
 
 MAINTAINER=	einekoai@chello.nl
+COMMENT=	HTML editor designed for the experienced web designer
 
 LIB_DEPENDS=	gtk-x11-2.0.200:${PORTSDIR}/x11-toolkits/gtk20 \
 		pcre.0:${PORTSDIR}/devel/pcre \
 		aspell.15:${PORTSDIR}/textproc/aspell
 RUN_DEPENDS=	weblint:${PORTSDIR}/www/weblint
 
-WRKSRC=		${WRKDIR}/bluefish-gtk2
+DOWNLOAD=	downloads
 NO_LATEST_LINK=	yes
+USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_PERL5_BUILD=	yes
 USE_X_PREFIX=	yes
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+.include <bsd.port.pre.mk>
 
-.include <bsd.port.mk>
+# Turns debugging output on
+.if defined(WITH_DEBUG)
+CONFIGURE_ARGS+=	--with-debugging-output
+.endif
+
+pre-everything::
+.if !defined(WITH_DEBUG)
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "WITH_DEBUG=yes for debug support"
+.endif
+
+post-patch:
+# Make sure bluefish.desktop is installed
+	@${REINPLACE_CMD} \
+		-e 's|/usr|${PREFIX}|g;' \
+		${WRKSRC}/data/Makefile.in
+
+.include <bsd.port.post.mk>
