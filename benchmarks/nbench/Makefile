@@ -1,17 +1,17 @@
 # New ports collection makefile for:	nbench
-# Version required:			2.1
 # Date created:				17 December 1997
 # Whom:					Andrey Zakhvatov
 #
 # $FreeBSD$
 #
 
-DISTNAME=		nbench-byte-2.1
-PKGNAME=		nbench-2.1
+PORTNAME=		nbench
+PORTVERSION=		2.1
 CATEGORIES=		benchmarks
 MASTER_SITES=		ftp://ftp.tux.org/pub/tux/mayer/ \
 			${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	system/benchmark
+DISTNAME=		nbench-byte-2.1
 
 MAINTAINER=		ports@FreeBSD.org
 

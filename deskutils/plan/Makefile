@@ -1,5 +1,4 @@
 # New ports collection makefile for:	plan
-# Version required:			1.8.2
 # Date created:				14 April 1996
 # Whom:	Daniel Eischen <deischen@iworks.InterWorks.org>
 #
@@ -7,7 +6,8 @@
 #
 # Also update	ports/japanese/plan/ (ja-plan) when this port is updated
 
-DISTNAME=	plan-1.8.2
+PORTNAME=	plan
+PORTVERSION=	1.8.2
 CATEGORIES=	deskutils
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}  \
 		ftp://ftp.fu-berlin.de/pub/unix/graphics/plan/

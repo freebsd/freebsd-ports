@@ -1,17 +1,17 @@
 # New ports collection makefile for:	lmbench
-# Version required:	1.1
 # Date created:		6 May 1995
 # Whom:			asami
 #
 # $FreeBSD$
 #
 
-DISTNAME=	lmbench
-PKGNAME=	lmbench-1.1
+PORTNAME=	lmbench
+PORTVERSION=	1.1
 CATEGORIES=	benchmarks
 MASTER_SITES=	ftp://ftp.deva.net/pub/sources/system/benchmarks/ \
 		ftp://ftp.kuis.kyoto-u.ac.jp/misc/benchmarks/ \
 		ftp://ftp.netlab.is.tsukuba.ac.jp/pub/utils/benchmark/
+DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	fenner@FreeBSD.org

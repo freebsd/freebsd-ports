@@ -1,16 +1,16 @@
 # New ports collection makefile for:	xopps
-# Version required:	1.13
 # Date created:		1 Ag 1997
 # Whom:			Pedro Giffuni (orig)
 #
 # $FreeBSD$
 #
 
-DISTNAME=	xopps.1.13
-PKGNAME=	xopps-1.13
+PORTNAME=	xopps
+PORTVERSION=	1.13
 CATEGORIES=	deskutils
 MASTER_SITES=	ftp://ftp.weird.com/pub/mirror/ \
 		ftp://devvax.jpl.nasa.gov/pub/xopps/
+DISTNAME=	${PORTNAME}.${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 

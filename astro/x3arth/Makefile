@@ -1,12 +1,12 @@
 # New ports collection makefile for:  	x3arth
-# Version required:	1.1
 # Date created:		15 April 1999
 # Whom:			Chris Piazza <cpiazza@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	x3arth-1.1
+PORTNAME=	x3arth
+PORTVERSION=	1.1
 CATEGORIES=	astro tcl82
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	X11/desktop

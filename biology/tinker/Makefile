@@ -1,15 +1,15 @@
 # New ports collection makefile for:   tinker
-# Version required:    3.7
 # Date Created:                26 August 1998
 # Whom:                        Glenn Johnson
 #
 # $FreeBSD$
 #
 
-DISTNAME=	tinker
-PKGNAME=	tinker-3.7
+PORTNAME=	tinker
+PORTVERSION=	3.7
 CATEGORIES=	biology
 MASTER_SITES=	ftp://dasher.wustl.edu/pub/
+DISTNAME=	${PORTNAME}
 
 MAINTAINER=	gjohnson@nola.srrc.usda.gov
 

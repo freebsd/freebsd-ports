@@ -1,12 +1,12 @@
 # New ports collection makefile for:	xengine
-# Version required:	pl1
 # Date created:		17 January 1997
 # Whom:			FURUSAWA,Kazuhisa <furusawa@com.cs.osakafu-u.ac.jp>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	xengine-1.0.1
+PORTNAME=	xengine
+PORTVERSION=	1.0.1
 CATEGORIES=	benchmarks
 MASTER_SITES=	ftp://ftp.lab.kdd.co.jp/Usenet/comp.sources.x/volume09/xengine/
 DISTFILES=	part01.z patch1.z

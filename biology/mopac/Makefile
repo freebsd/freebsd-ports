@@ -1,13 +1,12 @@
 # New ports collection makefile for:  mopac
-# Version required:  7
 # Date created:  1997-04-23
 # Whom:	 Ryo MIYAMOTO <rmiya@cc.hirosaki-u.ac.jp>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	mopac7
-PKGNAME=	mopac-7.02
+PORTNAME=	mopac
+PORTVERSION=	7.02
 CATEGORIES=	biology
 MASTER_SITES=	ftp://ftp.ccl.net/pub/chemistry/software/SOURCES/FORTRAN/mopac7_sources/
 DISTFILES=	mopac7.tar.Z  mopac7-man.tar.Z

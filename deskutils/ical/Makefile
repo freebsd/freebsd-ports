@@ -1,12 +1,12 @@
 # New ports collection makefile for:    ical
-# Version required:     2.2
 # Date created:         Mon Aug 28 13:35:31 CDT 1995
 # Whom:                 erich@rrnet.com
 #
 # $FreeBSD$
 #
 
-DISTNAME=	ical-2.2
+PORTNAME=	ical
+PORTVERSION=	2.2
 CATEGORIES=	deskutils tk82
 MASTER_SITES=	http://www.research.digital.com/SRC/personal/Sanjay_Ghemawat/ical/icalbins/
 

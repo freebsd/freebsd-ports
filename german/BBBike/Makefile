@@ -1,12 +1,12 @@
 # New ports collection makefile for:	BBBike
-# Version required:	2.x
 # Date created:		Fri Aug 14 15:32:26 CEST 1998
 # Whom:			Slaven Rezic <eserte@cs.tu-berlin.de>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	BBBike-2.48
+PORTNAME=	BBBike
+PORTVERSION=	2.48
 CATEGORIES=	german
 MASTER_SITES=	http://pub.cs.tu-berlin.de/src/BBBike/
 

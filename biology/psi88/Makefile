@@ -1,15 +1,15 @@
 # New ports collection makefile for:	Psi88
-# Version required:	88-1.0
 # Date created:		1998-11-11
 # Whom:			Ryo MIYAMOTO
 #
 # $FreeBSD$
 #
 
-DISTNAME=	psi88
-PKGNAME=	psi88-1.0
+PORTNAME=	psi88
+PORTVERSION=	1.0
 CATEGORIES=	biology
 MASTER_SITES=	ftp://ftp.ccl.net/pub/chemistry/software/SOURCES/FORTRAN/psi88/
+DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	rmiya@cc.hirosaki-u.ac.jp

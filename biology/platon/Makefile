@@ -1,15 +1,15 @@
 # New ports collection makefile for:	platon
-# Version required:	Version 07-apr-99
 # Date created:		1999-04-22
 # Whom:			Ryo MIYAMOTO <rmiya@cc.hirosaki-u.ac.jp>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	platon
-PKGNAME=	platon-070499
+PORTNAME=	platon
+PORTVERSION=	1999.04.07
 CATEGORIES=	biology
 MASTER_SITES=	ftp://xraysoft.chem.ruu.nl/pub/unix/
+DISTNAME=	platon
 
 MAINTAINER=	rmiya@cc.hirosaki-u.ac.jp
 

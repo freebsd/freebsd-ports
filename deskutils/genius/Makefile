@@ -1,12 +1,12 @@
 # New ports collection makefile for:	genius
-# Version required:			0.4.6
 # Date created:				1 May 1999
 # Whom:					Andrey Zakhvatov
 #
 # $FreeBSD$
 #
 
-DISTNAME=	genius-0.4.6
+PORTNAME=	genius
+PORTVERSION=	0.4.6
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	http://ftp.5z.com/pub/genius/
 

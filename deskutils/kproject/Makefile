@@ -1,12 +1,12 @@
 # New ports collection makefile for:   kproject
-# Version required:    Beta4
 # Date created:        23 May 1998
 # Whom:                Hans Petter Bieker <hanspb@persbraten.vgs.no>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	kproject-0.1
+PORTNAME=	kproject
+PORTVERSION=	0.1
 CATEGORIES=	deskutils kde
 MASTER_SITES=	$(MASTER_SITE_KDE)
 MASTER_SITE_SUBDIR= unstable/apps/office
