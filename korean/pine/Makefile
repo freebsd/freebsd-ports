@@ -21,6 +21,8 @@ PATCHFILES=	pico-3.96-hangul.patch
 
 MAINTAINER=	cjh@FreeBSD.org
 
+FORBIDDEN=	"Remotely exploitable buffer overflows."
+
 MAKE_ENV=	FILESDIR=${FILESDIR}
 MAN1= 		pine.1 pico.1 pilot.1
 

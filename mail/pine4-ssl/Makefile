@@ -18,6 +18,8 @@ MASTER_SITES=	ftp://ftp.cac.washington.edu/pine/ \
 DISTNAME=	pine4+ssl-1.4
 DISTFILES=	pine4.21${EXTRACT_SUFX}
 
+FORBIDDEN=	"Remotely exploitable buffer overflows."
+
 PATCH_SITES=	http://www.kfu.com/~nsayer/encryption/software/
 PATCHFILES=	${DISTNAME}${EXTRACT_SUFX}
 

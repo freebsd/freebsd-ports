@@ -19,6 +19,8 @@ PATCH_SITES=	${MASTER_SITE_PORTS_JP}
 
 MAINTAINER=	max@FreeBSD.org
 
+FORBIDDEN=	"Remotely exploitable buffer overflows."
+
 BROKEN_ELF=	yes
 
 INSTALLS_SHLIB=	yes
