@@ -141,6 +141,7 @@
     SUBDIR += kdegraphics2
     SUBDIR += kdegraphics3
     SUBDIR += kisomandel
+    SUBDIR += kludge3d
     SUBDIR += kuickshow
     SUBDIR += landscape
     SUBDIR += lcms
