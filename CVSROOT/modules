@@ -8066,6 +8066,7 @@ pips820		ports/print/pips820
 pips880		ports/print/pips880
 pips900		ports/print/pips900
 pipsecd		ports/net/pipsecd
+pipsv500	ports/print/pipsv500
 pircbot		ports/irc/pircbot
 pisg		ports/irc/pisg
 pixelize	ports/graphics/pixelize
