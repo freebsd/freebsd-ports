@@ -1,12 +1,19 @@
 bin/gendiff
 bin/rpm
-bin/find-requires
-bin/find-provides
 bin/rpm2cpio
 include/rpm/rpmlib.h
 include/rpm/dbindex.h
 include/rpm/header.h
 lib/librpm.a
-share/misc/rpmrc
-share/misc/rpmpopt
+@unexec rm %D/lib/rpmrc
++@unexec rm %D/lib/rpmpopt
+lib/rpm/mkinstalldirs
+lib/rpm/find-provides
+lib/rpm/find-requires
+lib/rpm/rpmrc
+lib/rpm/rpmpopt
+lib/rpm/freshen.sh
+lib/rpm/find-lang.sh
 @dirrm include/rpm
+@dirrm lib/rpm
+
