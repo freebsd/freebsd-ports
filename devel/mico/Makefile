@@ -110,6 +110,10 @@ MAN8=		ird.8 micod.8 nsd.8
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 502125
+BROKEN=	Does not build with gcc 3.4
+.endif
+
 post-extract:
 	@${TAR} xzf ${DISTDIR}/doc-html.tar.gz -C ${WRKDIR}
 

@@ -51,6 +51,10 @@ PKGNAMESUFFIX?=	-notao
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 502125
+BROKEN=	Does not build with gcc 3.4
+.endif
+
 post-patch:
 	@${SED} -e "s#%%CFLAGS%%#${CFLAGS}#;s#%%PREFIX%%#${PREFIX}#; \
 	           s#%%PTHREAD_CFLAGS%%#${PTHREAD_CFLAGS}#; \
