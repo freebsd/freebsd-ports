@@ -37,30 +37,30 @@ libexec/etc2ps
 libexec/papd
 libexec/psa
 libexec/psf
+libexec/filters/ifmpap
+libexec/filters/ifmpaprev
+libexec/filters/ifpap
+libexec/filters/ifpaprev
+libexec/filters/ifwmpap
+libexec/filters/ifwmpaprev
+libexec/filters/ifwpap
+libexec/filters/ifwpaprev
+libexec/filters/ofmpap
+libexec/filters/ofpap
+libexec/filters/ofwmpap
+libexec/filters/ofwpap
+libexec/filters/tfmpap
+libexec/filters/tfmpaprev
+libexec/filters/tfpap
+libexec/filters/tfpaprev
+libexec/filters/tfwmpap
+libexec/filters/tfwmpaprev
+libexec/filters/tfwpap
+libexec/filters/tfwpaprev
+@dirrm libexec/filters
 share/examples/netatalk/atalkd.conf
 share/examples/netatalk/papd.conf
 @dirrm share/examples/netatalk
-share/filters/ifmpap
-share/filters/ifmpaprev
-share/filters/ifpap
-share/filters/ifpaprev
-share/filters/ifwmpap
-share/filters/ifwmpaprev
-share/filters/ifwpap
-share/filters/ifwpaprev
-share/filters/ofmpap
-share/filters/ofpap
-share/filters/ofwmpap
-share/filters/ofwpap
-share/filters/tfmpap
-share/filters/tfmpaprev
-share/filters/tfpap
-share/filters/tfpaprev
-share/filters/tfwmpap
-share/filters/tfwmpaprev
-share/filters/tfwpap
-share/filters/tfwpaprev
-@dirrm share/filters
 share/pagecount.ps
 @comment	Remove man page aliases
 @unexec rm -f %D/man/man1/hqx2bin.1*
