@@ -21,6 +21,7 @@ USE_GMAKE=	yes
 USE_REINPLACE=	yes
 REINPLACE_ARGS= # empty
 USE_XLIB=	yes
+ONLY_FOR_ARCHS=	i386
 
 MAN1=		zhcon.1
 
