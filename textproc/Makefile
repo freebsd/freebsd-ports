@@ -228,6 +228,7 @@
     SUBDIR += p5-Lingua-PT-Stemmer
     SUBDIR += p5-Lingua-Preferred
     SUBDIR += p5-Lingua-Stem
+    SUBDIR += p5-Lingua-Stem-It
     SUBDIR += p5-MARC
     SUBDIR += p5-NetAddr-IP-Find
     SUBDIR += p5-Number-Format
