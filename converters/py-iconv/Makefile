@@ -8,9 +8,8 @@ PORTNAME=	iconv
 PORTVERSION=	1.0
 PORTREVISION=	1
 CATEGORIES=	converters python
-MASTER_SITES=	ftp://people.linuxkorea.co.kr/pub/Python/ \
-		http://cvsup3.kr.freebsd.org/~perky/distfiles/ \
-		http://www3.kr.freebsd.org/~perky/distfiles/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	perky
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DIST_SUBDIR=	python
 
