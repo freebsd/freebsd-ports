@@ -5960,6 +5960,7 @@ physcalc	ports/math/physcalc
 piano		src/games/piano
 pib		ports/sysutils/pib
 pic2fig		ports/print/pic2fig
+picasm		ports/devel/picasm
 pico		ports/editors/pico
 picobsd		src/release/picobsd
 picprog		ports/devel/picprog
