@@ -1,0 +1,24 @@
+# New ports collection Makefile for: 	xmms-ladspa
+# Date created:			11 May 2002
+# Whom:				Tilman Linneweh <freebsdports@arved.de
+#
+# $FreeBSD$
+
+PORTNAME=	xmms-ladspa
+PORTVERSION=	0.3
+CATEGORIES=	audio
+MASTER_SITES=	http://www.ecs.soton.ac.uk/~njl98r/code/ladspa/
+DISTNAME=	xmms_ladspa-${PORTVERSION}
+
+MAINTAINER=	freebsdports@arved.de
+
+LIB_DEPENDS=	xmms.3:${PORTSDIR}/audio/xmms
+
+USE_X_PREFIX=	yes
+USE_GTK=	yes
+WRKSRC=		${WRKDIR}/xmms_ladspa
+
+do-install:
+	@${INSTALL_DATA} ${WRKSRC}/ladspa.so ${PREFIX}/lib/xmms/Effect/
+
+.include <bsd.port.mk>
