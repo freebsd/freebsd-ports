@@ -18,7 +18,7 @@ MASTER_SITE_SUBDIR=	. old-versions
 MAINTAINER=	billf@FreeBSD.org
 
 .if !defined(WITHOUT_SNMP)
-LIB_DEPENDS=	snmp.5:${PORTSDIR}/net/net-snmp
+LIB_DEPENDS=	snmp.4:${PORTSDIR}/net/net-snmp4
 .endif
 
 .if !defined(WITHOUT_X11)
