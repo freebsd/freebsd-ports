@@ -1,14 +1,20 @@
---- Makefile.org	Sat Oct  9 16:27:58 1999
-+++ Makefile	Sat Oct  9 16:13:45 1999
-@@ -113,9 +113,9 @@
- #	必ず、「サウンド無し」を指定してください。
+--- Makefile.orig	Fri Sep 26 13:09:01 2003
++++ Makefile	Tue Oct  7 21:15:28 2003
+@@ -142,7 +142,7 @@
+ #	動作確認が取れているのは、freebsd/linux のみです
  
- #-------------------------------- サウンド無し
--SD = nosound
-+# SD = nosound
- #-------------------------------- サウンド有り ( IRIXで、dmedia package を使用)
--# SD = sound
-+SD = sound
- #-------------------------------- IRIX で、al package のサウンドを使う場合
- # SD = al_sound
- #--------------------------------
+ #---------------------- FreeBSD
+-# ARCH = freebsd
++ARCH = freebsd
+ #---------------------- Linux
+ # ARCH = linux
+ #---------------------- NetBSD
+@@ -166,7 +166,7 @@
+ #---------------------- BeOS on Intel
+ # ARCH = beos
+ #---------------------- generic unix, no sound
+-ARCH = generic
++# ARCH = generic
+ 
+ 
+ 
