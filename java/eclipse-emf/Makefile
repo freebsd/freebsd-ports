@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	emf
-PORTVERSION=	2.0.0
+PORTVERSION=	2.0.1
 CATEGORIES=	java devel
-MASTER_SITES=	http://download.eclipse.org/tools/emf/downloads/drops/2.0/R200406280827/
+MASTER_SITES=	http://download.eclipse.org/tools/emf/downloads/drops/2.0.1/M200408040957/
 PKGNAMEPREFIX=	eclipse-
-DISTNAME=	emf-sdo-xsd-SDK-${PORTVERSION}
+DISTNAME=	emf-sdo-xsd-SDK-M200408040957
 DIST_SUBDIR=	eclipse
 
 MAINTAINER=	alex@FreeBSD.ORG
