@@ -10645,6 +10645,7 @@ smtpmap		ports/security/smtpmap
 smtpproxy	ports/mail/smtpproxy
 smtprc		ports/mail/smtprc
 smtpscan	ports/security/smtpscan
+smtptrapd	ports/mail/smtptrapd
 smurflog	ports/security/smurflog
 smv		ports/devel/smv
 sn		ports/news/sn
