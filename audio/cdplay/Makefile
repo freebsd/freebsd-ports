@@ -8,7 +8,8 @@
 PORTNAME=	cdplay
 PORTVERSION=	0.92
 CATEGORIES=	audio
-MASTER_SITES=	ftp://ftp.one.sci.fi/pub/cdplay/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	dannyboy
 
 MAINTAINER=	anttik@iki.fi
 
