@@ -1,6 +1,6 @@
 This module automagically generates accessor/mutators for your class.
 
-WWW: http://search.cpan.org/search?dist=Class-Accessor
+WWW: http://search.cpan.org/dist/Class-Accessor/
 
 -- Sergey Skvortsov
 skv@FreeBSD.org
