@@ -8342,6 +8342,7 @@ pear-DB		ports/databases/pear-DB
 pear-DB_DataObject	ports/databases/pear-DB_DataObject
 pear-DB_DataObject_FormBuilder	ports/databases/pear-DB_DataObject_FormBuilder
 pear-DB_Pager	ports/databases/pear-DB_Pager
+pear-DB_QueryTool	ports/databases/pear-DB_QueryTool
 pear-Date	ports/devel/pear-Date
 pear-File	ports/sysutils/pear-File
 pear-File_Find	ports/sysutils/pear-File_Find
