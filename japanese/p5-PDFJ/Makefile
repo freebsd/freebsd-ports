@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	PDFJ
-PORTVERSION=	0.6
-PORTREVISION=	1
+PORTVERSION=	0.71
 CATEGORIES=	japanese perl5
 MASTER_SITES=	http://hp1.jonex.ne.jp/%7Enakajima.yasushi/archives/
 
@@ -17,6 +16,7 @@ COMMENT=	PDFJ module provides methods to generate Japanese PDF file
 USE_ZIP=	YES
 PERL_CONFIGURE=	YES
 WRKSRC=		${WRKDIR}
+EXTRACT_BEFORE_ARGS=	-qo -a
 
 .include <bsd.port.pre.mk>
 
