@@ -34,7 +34,7 @@ SAMPLE_CONFIG=	${SAMBA_CONFDIR}/smb.conf.default
 DOCSDIR=	${PREFIX}/share/doc/samba
 
 NO_LATEST_LINK=	yes
-GNU_CONFIGURE=	yes
+USE_AUTOCONF=	yes
 CONFIGURE_ARGS=	--libdir=${SAMBA_CONFDIR} \
 		--localstatedir=${VARDIR} --with-swatdir=${PREFIX}/share/swat \
 		--with-sambabook=${PREFIX}/share/swat/using_samba \
@@ -45,6 +45,8 @@ CONFIGURE_ARGS=	--libdir=${SAMBA_CONFDIR} \
 
 .if defined(KRB5_HOME) && exists(${KRB5_HOME})
 CONFIGURE_ARGS+=	--with-krb5=${KRB5_HOME}
+.else
+CONFIGURE_ARGS+=	--with-krb5=no
 .endif
 
 .if defined(WITH_CUPS)
