@@ -6,7 +6,6 @@
 #
 
 CATEGORIES=	japanese
-PORTREVISION=	1
 
 MAINTAINER=	katsu@iec.hiroshima-u.ac.jp
 
