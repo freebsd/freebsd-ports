@@ -164,6 +164,7 @@
     SUBDIR += nmh
     SUBDIR += noattach
     SUBDIR += nocc
+    SUBDIR += nohtml
     SUBDIR += nullmailer
     SUBDIR += offlineimap
     SUBDIR += openwebmail
