@@ -208,7 +208,6 @@ i386-mingw32msvc/lib/libddraw.a
 i386-mingw32msvc/lib/libdinput.a
 i386-mingw32msvc/lib/libdlcapi.a
 i386-mingw32msvc/lib/libdplayx.a
-i386-mingw32msvc/lib/libsetupapi.a
 i386-mingw32msvc/lib/libdsetup.a
 i386-mingw32msvc/lib/libdsound.a
 i386-mingw32msvc/lib/libdxguid.a
@@ -260,6 +259,7 @@ i386-mingw32msvc/lib/librpcrt4.a
 i386-mingw32msvc/lib/libscrnsave.a
 i386-mingw32msvc/lib/libscrnsavw.a
 i386-mingw32msvc/lib/libsecur32.a
+i386-mingw32msvc/lib/libsetupapi.a
 i386-mingw32msvc/lib/libshell32.a
 i386-mingw32msvc/lib/libsvrapi.a
 i386-mingw32msvc/lib/libtapi32.a
