@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mips64emul
-PORTVERSION=	20040607
+PORTVERSION=	0.2
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.mdstud.chalmers.se/~md1gavan/mips64emul/src/
 
