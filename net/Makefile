@@ -1,6 +1,7 @@
-# $Id: Makefile,v 1.257 1999/05/03 03:00:28 steve Exp $
+# $Id: Makefile,v 1.258 1999/05/05 13:59:05 taoka Exp $
 #
 
+    SUBDIR += IglooFTP
     SUBDIR += SSLtelnet
     SUBDIR += archie
     SUBDIR += argus
