@@ -11,6 +11,7 @@
 %%RUBY_SITELIBDIR%%/rexml/node.rb
 %%RUBY_SITELIBDIR%%/rexml/parent.rb
 %%RUBY_SITELIBDIR%%/rexml/parseexception.rb
+%%RUBY_SITELIBDIR%%/rexml/quickpath.rb
 %%RUBY_SITELIBDIR%%/rexml/rexml.rb
 %%RUBY_SITELIBDIR%%/rexml/source.rb
 %%RUBY_SITELIBDIR%%/rexml/streamlistener.rb
