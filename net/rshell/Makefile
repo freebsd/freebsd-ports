@@ -7,7 +7,6 @@
 
 PORTNAME=	rshell
 PORTVERSION=	1.0
-DISTNAME=	rshell-1.0
 CATEGORIES=	net
 MASTER_SITES=	http://www.de.freebsd.org/~wosch/src/
 
