@@ -6032,6 +6032,7 @@ p5-ConfigReader	ports/devel/p5-ConfigReader
 p5-Convert-ASCII-Armour	ports/converters/p5-Convert-ASCII-Armour
 p5-Convert-ASN1	ports/converters/p5-Convert-ASN1
 p5-Convert-BER	ports/converters/p5-Convert-BER
+p5-Convert-BinHex	ports/converters/p5-Convert-BinHex
 p5-Convert-Morse	ports/converters/p5-Convert-Morse
 p5-Convert-PEM	ports/converters/p5-Convert-PEM
 p5-Convert-Recode	ports/converters/p5-Convert-Recode
