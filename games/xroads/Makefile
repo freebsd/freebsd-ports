@@ -12,7 +12,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://linux.tucows.com/files/x11/entertain/
 DISTNAME=	${PORTNAME}-v${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	erik@smluc.org
 COMMENT=	Commodore 64 "Crossroads"-like video game for X Window System
 
 USE_X_PREFIX=	yes
