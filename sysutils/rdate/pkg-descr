@@ -1,0 +1,4 @@
+rdate sets the clock of the local host to the time another host.
+
+It is simpler than xntp and friends.
+
