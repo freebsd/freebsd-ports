@@ -3,26 +3,23 @@
 # Date created:		10 May 1996
 # Whom:			Mita Yoshio <mita@jp.FreeBSD.org>
 #
-# $Id: Makefile,v 1.9 1997/09/14 21:36:16 max Exp $
+# $Id: Makefile,v 1.10 1997/10/02 03:10:04 max Exp $
 #
 
 DISTNAME=	VFlib-2.22-PL8
 PKGNAME=	ja-vflib-2.22.10
 CATEGORIES=	japanese print
 MASTER_SITES=	ftp://gull.se.hiroshima-u.ac.jp/pub/VFlib/
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} VFlib-2.22-Patch9 VFlib-2.22-Patch10\
-		watanabe-vf.tar.Z
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} watanabe-vf.tar.Z
+
+PATCH_SITES=	${MASTER_SITES}
+PATCHFILES=	VFlib-2.22-Patch9 VFlib-2.22-Patch10
 
 MAINTAINER=	mita@jp.FreeBSD.org
 
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 WRKSRC=		${WRKDIR}/VFlib-2.22pl8
-
-pre-patch:
-	@(cd ${WRKSRC}/src; \
-	  ${PATCH} --forward --quiet -p0 -E < ${DISTDIR}/VFlib-2.22-Patch9 ;\
-	  ${PATCH} --forward --quiet -p0 -E < ${DISTDIR}/VFlib-2.22-Patch10 ;\
-	  )
+PATCH_DIST_ARGS=-d ${WRKSRC}/src --forward --quiet -E ${PATCH_STRIP}
 
 do-build:
 	@(cd ${WRKSRC}/src; make)
