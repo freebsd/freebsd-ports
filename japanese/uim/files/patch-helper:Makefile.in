@@ -1,10 +1,12 @@
---- helper/Makefile.in.orig	Sun Nov  9 11:11:01 2003
-+++ helper/Makefile.in	Sun Nov  9 11:14:36 2003
-@@ -140,7 +140,8 @@
+--- helper/Makefile.in.orig	Mon Dec  8 21:20:55 2003
++++ helper/Makefile.in	Sun Dec 21 01:36:26 2003
+@@ -180,8 +180,9 @@
+ 
  EXTRA_DIST = GNOME_UimApplet.server.in.in 
  
- serverdir = $(libdir)/bonobo/servers
+-serverdir = $(libdir)/bonobo/servers
 -server_DATA = GNOME_UimApplet.server
++serverdir = $(prefix)/libdata/bonobo/servers
 +@APPLET_TRUE@server_DATA = GNOME_UimApplet.server
 +@APPLET_FALSE@server_DATA = 
  server_in_files = $(server_DATA:=.in)

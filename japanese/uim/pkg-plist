@@ -4,15 +4,12 @@ bin/uim-helper-server
 bin/uim-xim
 include/uim/uim-helper.h
 include/uim/uim.h
-%%GNOME%%lib/bonobo/servers/GNOME_UimApplet.server
-%%GTK%%lib/gtk-2.0/2.2.0/immodules/im-uim.a
-%%GTK%%lib/gtk-2.0/2.2.0/immodules/im-uim.la
+%%GNOME%%libdata/bonobo/servers/GNOME_UimApplet.server
 %%GTK%%lib/gtk-2.0/2.2.0/immodules/im-uim.so
 lib/libuim.a
-lib/libuim.la
 lib/libuim.so
 lib/libuim.so.0
-lib/pkgconfig/uim.pc
+libdata/pkgconfig/uim.pc
 %%GNOME%%libexec/uim-helper-applet
 %%PORTDOCS%%%%DOCSDIR_JA%%/README.ja
 %%PORTDOCS%%%%DOCSDIR%%/README
