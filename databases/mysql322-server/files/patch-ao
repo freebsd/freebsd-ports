@@ -1,0 +1,11 @@
+--- mit-pthreads/config/Makefile.in.orig	Mon Mar  2 19:44:34 1998
++++ mit-pthreads/config/Makefile.in	Fri Sep  3 21:45:05 1999
+@@ -5,8 +5,6 @@
+ #NOPIC=
+ #NOPROFILE=1
+ CPPFLAGS+= -I${.CURDIR} -I${.CURDIR}/include -I${srcdir}/include -DPTHREAD_KERNEL
+-CDEBUGFLAGS= @CFLAGS@
+-CFLAGS+= ${CDEBUGFLAGS}
+ # CFLAGS+= ${CPPFLAGS} <- done by bsd.lib.mk
+ CFLAGS+= ${CPPFLAGS} 
+ LIBDIR= $(exec_prefix)/lib

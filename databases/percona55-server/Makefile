@@ -34,7 +34,6 @@ CONFIGURE_ARGS=	--localstatedir=${DB_DIR} \
 CONFIGURE_ENV+=	PERL=${PERL} \
 		PERL5=${PERL} \
 		INSTALL_SCRIPT="${INSTALL_SCRIPT}" \
-		CXXFLAGS="${CFLAGS}" \
 		CONFIGURE_ARGS="${CONFIGURE_ARGS}"
 
 .if !defined(CLIENT_ONLY)
@@ -42,32 +41,54 @@ RUN_DEPENDS=	mysql:${PORTSDIR}/databases/mysql322-client
 
 .include <bsd.port.pre.mk>
 
-.if defined(NATIVE_THREADS) && ${OSVERSION} >= 300000
-CONFIGURE_ARGS+=	--with-mit-threads=no
-.else
+.if ${OSVERSION} >= 320000
+.if defined(MIT_PTHREADS)
 CONFIGURE_ARGS+=	--with-mit-threads=yes
-.endif
 
-.if !defined(NATIVE_THREADS) && ${OSVERSION} >= 300000
 pre-fetch:
 	@${ECHO}
-	@${ECHO} "You may set NATIVE_THREADS (make NATIVE_THREADS=yes)"
-	@${ECHO} "to compile mysql with the native FreeBSD threads (libc_r)."
-	@${ECHO} "Warning: There are still some bugs in libc_r which prevent"
-	@${ECHO} "         'mysqladmin shutdown' from working properly and"
-	@${ECHO} "         killing mysqld might not work."
+	@${ECHO} "Using supplied mit-pthreads."
 	@${ECHO}
-.elif defined(NATIVE_THREADS) && ${OSVERSION} >= 300000
+.else
+CONFIGURE_ARGS+=	--with-mit-threads=no
+
 pre-fetch:
 	@${ECHO}
 	@${ECHO} "Using native FreeBSD threads (libc_r)."
 	@${ECHO}
-.elif defined(NATIVE_THREADS) && ${OSVERSION} < 300000
+	@${ECHO} "You may set MIT_PTHREADS (make MIT_PTHREADS=yes)"
+	@${ECHO} "to compile mysql with the supplied mit-pthreads."
+	@${ECHO} "(You don't want to set this unless you have a good reason)."
+	@${ECHO}
+.endif
+.elif ${OSVERSION} >= 300000
+.if defined(NATIVE_THREADS)
+CONFIGURE_ARGS+=	--with-mit-threads=no
+
 pre-fetch:
 	@${ECHO}
-	@${ECHO} "Sorry, native FreeBSD threads (libc_r) in 2.2-branch"
-	@${ECHO} "are still too buggy to use with mysql."
-	@${ECHO} "Using mit-pthreads."
+	@${ECHO} "Using native FreeBSD threads (libc_r)."
+	@${ECHO}
+.else
+CONFIGURE_ARGS+=	--with-mit-threads=yes
+
+pre-fetch:
+	@${ECHO}
+	@${ECHO} "Using supplied mit-pthreads."
+	@${ECHO}
+	@${ECHO} "You may set NATIVE_THREADS (make NATIVE_THREADS=yes)"
+	@${ECHO} "to compile mysql with the native FreeBSD threads (libc_r)."
+	@${ECHO} "Warning: There are some bugs in libc_r which prevent"
+	@${ECHO} "         'mysqladmin shutdown' from working properly and"
+	@${ECHO} "         killing mysqld might not work."
+	@${ECHO}
+.endif
+.else
+CONFIGURE_ARGS+=	--with-mit-threads=yes
+
+pre-fetch:
+	@${ECHO}
+	@${ECHO} "Using supplied mit-pthreads."
 	@${ECHO}
 .endif
 
