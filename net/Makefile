@@ -158,6 +158,7 @@
     SUBDIR += geta
     SUBDIR += ggsd
     SUBDIR += gicq
+    SUBDIR += gift-gnutella
     SUBDIR += gift-openft
     SUBDIR += giftcurs
     SUBDIR += gini

@@ -1,0 +1,16 @@
+lib/giFT/libGnutella.la
+lib/giFT/libGnutella.so
+share/giFT/Gnutella/Gnutella.conf
+share/giFT/Gnutella/Gnutella.conf.template
+share/giFT/Gnutella/gwebcaches
+share/giFT/Gnutella/hostiles.txt
+%%PORTDOCS%%share/doc/giFT-gnutella/AUTHORS
+%%PORTDOCS%%share/doc/giFT-gnutella/COPYING
+%%PORTDOCS%%share/doc/giFT-gnutella/ChangeLog
+%%PORTDOCS%%share/doc/giFT-gnutella/INSTALL
+%%PORTDOCS%%share/doc/giFT-gnutella/NEWS
+%%PORTDOCS%%share/doc/giFT-gnutella/README
+%%PORTDOCS%%share/doc/giFT-gnutella/TODO
+@dirrm lib/giFT
+@dirrm share/giFT/Gnutella
+@dirrm %%PORTDOCS%%share/doc/giFT-gnutella
