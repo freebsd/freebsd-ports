@@ -33,6 +33,7 @@ NO_CDROM=	'dated material'
 LATEST_LINK=	gcc31
 
 USE_BZIP2=	yes
+USE_REINPLACE=	yes
 
 PATCH_WRKSRC=	${SRCDIR}
 CONFIGURE_SCRIPT=	../${SRCDIR:C/${WRKDIR}//}/configure
@@ -93,6 +94,8 @@ pre-configure:
 	@${TOUCH} ${SRCDIR}/gcc/cstamp-h.in
 	@${MKDIR} ${CONFIGURE_WRKSRC}
 	@${RM} -f ${SRCDIR}/gcc/*/*.info*
+	@${REINPLACE_CMD} -e 's/elf_x86_64/elf_x86_64_fbsd/g' \
+	    ${SRCDIR}/gcc/config/i386/freebsd64.h
 
 pre-build:
 	cd ${SRCDIR} ; contrib/gcc_update --touch
