@@ -9,5 +9,6 @@ bin/pyzord
 %%PYTHON_SITELIBDIR%%/pyzor/server.py
 %%PYTHON_SITELIBDIR%%/pyzor/server.pyc
 %%PYTHON_SITELIBDIR%%/pyzor/server.pyo
-share/doc/pyzor/usage.html
-@dirrm share/doc/pyzor
+%%DOCSDIR%%/usage.html
+@dirrm %%PYTHON_SITELIBDIR%%/pyzor
+@dirrm %%DOCSDIR%%
