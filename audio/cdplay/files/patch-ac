@@ -1,13 +1,13 @@
 diff -ur ../cdplay-0.92.orig/cdplay.1 ./cdplay.1
 --- ../cdplay-0.92.orig/cdplay.1	Fri Nov  7 20:13:21 1997
 +++ ./cdplay.1	Sat Jun 27 00:29:34 1998
-@@ -35,15 +35,15 @@
+@@ -35,15 +35,14 @@
  ]
  .SH DESCRIPTION
  .B cdplay
 -plays audio cd's with a confortable console user interface. 
-+plays audio cd's with a confortable console user interface. 
- Supports only SCSI CD-ROM drives.
+-Supports only SCSI CD-ROM drives.
++plays audio cd's with a comfortable console user interface. 
  .SH OPTIONS
  .TP
  .BR \-d " device"
@@ -20,7 +20,7 @@ diff -ur ../cdplay-0.92.orig/cdplay.1 ./cdplay.1
  .TP
  .BR -h
  Display a brief help message.
-@@ -59,6 +59,9 @@
+@@ -59,6 +58,9 @@
  Space
  Pause. If cd is already on pause continues.
  .TP
@@ -30,9 +30,14 @@ diff -ur ../cdplay-0.92.orig/cdplay.1 ./cdplay.1
  \'e\'
  Eject. Spits the disc out of your drive.
  .TP
-@@ -80,13 +83,13 @@
+@@ -79,14 +81,18 @@
+ .TP
  \'q\'
  Quit. Exit the program.
++.SH ENVIRONMENT
++.TP
++CDROM
++The cd device to use if one isn't specified with the -d flag.
  .SH NOTES
 -If someone gets this to work with IDE drive please let me know. Currently 
 -tested ONLY with FreeBSD and NetBSD. Writen for FreeBSD and some features 
