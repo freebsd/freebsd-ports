@@ -15,25 +15,14 @@ MASTER_SITES=	ftp://ftp.bitchx.com/pub/BitchX/source/ \
 		ftp://ftp.cyberpunkz.org/pub/BitchX/tcl-o/:tcl
 DISTFILES=	ircii-pana-${PORTVERSION}${EXTRACT_SUFX} \
 		ircii-pana-${PORTVERSION}${EXTRACT_SUFX}.sig
-.if defined(WITH_TCL)
-DISTFILES+=	freebsd4-tcl83-bx1.0c19-tcl.o:tcl \
-		freebsd4-tcl83-bx1.0c19-tcl.o.sig:tcl
-.endif
 EXTRACT_ONLY=	ircii-pana-${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER?=	arved@FreeBSD.org
 COMMENT?=	"An alternative ircII color client with optional GTK/GNOME support"
 
-.if defined(WITH_XMMS)
-LIB_DEPENDS+=	xmms.4:${PORTSDIR}/multimedia/xmms
-.endif
-
 WRKSRC=		${WRKDIR}/BitchX
 USE_PERL5=	yes
 USE_REINPLACE=	yes
-.if defined(WITH_IPV6)
-USE_AUTOCONF_VER=253
-.endif
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 CONFIGURE_TARGET=
@@ -46,6 +35,31 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 
 MAN1=		BitchX.1
+
+OPTIONS=	ESOND "With ESOUND support" off \
+		GNOME "With GTK/GNOME1 Frontend" off \
+		IPV6 "With IPV6 support" off \
+		LATIN "Recommended if you are using an ISO-8859-1 display" off \
+		PLUGINS "With BitchX Plugins" off \
+		SOCKS5 "With SOCKS5 support" off \
+		SSL "With SSL" off \
+		TCL "With TCL support" off \
+		XMMS "With XMMS plugin" off
+		
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_TCL)
+DISTFILES+=	freebsd4-tcl83-bx1.0c19-tcl.o:tcl \
+		freebsd4-tcl83-bx1.0c19-tcl.o.sig:tcl
+.endif
+
+.if defined(WITH_XMMS)
+LIB_DEPENDS+=	xmms.4:${PORTSDIR}/multimedia/xmms
+.endif
+
+.if defined(WITH_IPV6)
+USE_AUTOCONF_VER=253
+.endif
 
 .if defined(WITH_GNOME)
 USE_X_PREFIX=	yes
@@ -65,8 +79,6 @@ CONFIGURE_ARGS+=--enable-sound
 .if defined(WITH_SSL)
 USE_OPENSSL=		yes
 .endif
-
-.include <bsd.port.pre.mk>
 
 .if ${ARCH} == "alpha" || ${ARCH} == "ia64"
 BROKEN="Dumps core on startup"
