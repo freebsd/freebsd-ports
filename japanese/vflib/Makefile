@@ -7,6 +7,7 @@
 
 PORTNAME=	vflib
 PORTVERSION=	${VFLIB_VERSION}
+PORTREVISION=	1
 CATEGORIES=	japanese print
 MASTER_SITES=	ftp://gull.se.hiroshima-u.ac.jp/pub/TypeHack/
 DISTNAME=	VFlib2-${PORTVERSION}
@@ -15,6 +16,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	mita@FreeBSD.org
 
 BUILD_DEPENDS=	xmkmf:${PORTSDIR}/devel/imake-4
+LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext
 RUN_DEPENDS=	${X11BASE}/lib/X11/fonts/TrueType/kochi-mincho.ttf:${PORTSDIR}/japanese/kochi-ttfonts
 
 VFLIB_VERSION=	2.25.6
