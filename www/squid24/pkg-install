@@ -1,45 +1,105 @@
 #!/bin/sh
+#
+# $FreeBSD: /tmp/pcvs/ports/www/squid24/Attic/pkg-install,v 1.8 2004-02-18 12:25:08 sergei Exp $
+#
 
-PKGNAME=$1
+PATH=/bin:/usr/bin:/usr/sbin
+pkgname=$1
+squid_base=${PKG_PREFIX:-/usr/local}/squid
+squid_confdir=${PKG_PREFIX:-/usr/local}/etc/squid
+squid_user=${SQUID_USER:=squid}
+squid_group=${SQUID_GROUP:=squid}
+squid_gid=3128
+squid_uid=3128
 
 case $2 in
-    PRE-INSTALL)
+PRE-INSTALL)
+	echo "===> Pre-installation configuration for ${pkgname}"
+	if ! pw groupshow ${squid_group} -q >/dev/null ; then
+		while pw groupshow -g ${squid_gid} -q >/dev/null; do
+			squid_gid=`expr ${squid_gid} + 1`
+		done
+		echo "There is no group '${squid_group}' on this system, so I will try to create it:"
+		if ! pw groupadd ${squid_group} -g ${squid_gid} -q ; then
+			echo "Failed to create group \"${squid_group}\"!" >&2
+			echo "Please create it manually." >&2
+			exit 1
+		else
+			echo "Group '${squid_group}' created successfully:"
+		fi
+	else
+		echo "I will use the existing group '${squid_group}':"
+	fi
+	pw groupshow ${squid_group}
+	if ! pw usershow ${squid_user} -q >/dev/null ; then
+		while pw usershow -u ${squid_uid} -q >/dev/null; do
+			squid_uid=`expr ${squid_uid} + 1`
+		done
+		echo "There is no account '${squid_user}' on this system, so I will try to create it:"
+		if ! pw useradd ${squid_user} -u ${squid_uid} -q \
+	  	    -c "squid caching-proxy pseudo user" -g ${squid_group} \
+		    -d "${squid_base}" -s "/sbin/nologin" -h - ; then
+			echo "Failed to create user '${squid_user}'!" >&2
+			echo "Please create it manually." >&2
+			exit 1
+		else
+			echo "User '${squid_user}' created successfully:"
+		fi
+	else
+		echo "I will use the existing user '${squid_user}':"
+	fi
+	pw usershow ${squid_user}
+	for dir in cache logs; do
+	if [ ! -d ${squid_base}/${dir} ]; then
+		echo "Creating ${squid_base}/${dir}..."
+		install -d -o ${squid_user} -g ${squid_group} \
+		    -m 0750 ${squid_base}/${dir}
+	fi
+	done
+	if [ ! -d ${squid_confdir} ]; then
+		echo "Creating ${squid_confdir}..."
+		install -d -o root -g ${squid_group} \
+		    -m 0750 ${squid_confdir}
+	fi
 	;;
-    POST-INSTALL)
-	echo "==> Post-installation configuration of ${PKGNAME}"
+POST-INSTALL)
+	for file in mime.conf squid.conf; do
+		if [ ! -f ${squid_confdir}/${file} \
+		    -a -f ${squid_confdir}/${file}.default ]; then
+		echo "Creating ${file} from default..."
+		install -c -o root -g ${squid_group} -m 0640 \
+		    ${squid_confdir}/${file}.default ${squid_confdir}/${file}
+	fi
+	done
+
+	echo "===> Post-installation informations for ${pkgname}"
 	echo ""
-	echo "    o you DO need running nameservice to start and run ${PKGNAME}"
+	echo "     o You can find the configuration files for this package"
+	echo "       in the directory ${squid_confdir}."
 	echo ""
-	echo "    o use the ${PKGNAME} proxy and caching WWW Server by"
-	echo "      configuring your WWW Navigator (Netscape, Mosaic,...)"
-	echo "      to use it as a proxy server."
+	echo "     o A cache directory has been created in ${squid_base}/cache."
+	echo "       Log files will be written to ${squid_base}/logs."
 	echo ""
-	echo "    o Note that before you can run ${PKGNAME} you will"
-	echo "      need to initialise the cache directory."
-	echo "      You can do this by typing \"squid -z\"."
+	echo "     o The default configuration will deny everyone access to the"
+	echo "       proxy service. Edit the \"http_access\" directives in"
+	echo "       ${squid_confdir}/squid.conf to suit your needs."
 	echo ""
-	echo "==> Press Enter to edit the ${PKGNAME} config file."
-	echo "    (The defaults are reasonable; and the file is well commented)"
+	echo "     o If you never ran squid on this system before, you need to"
+	echo "       initialize the cache directory by running \"squid -z\""
+	echo "       as 'root' or '${squid_user}' before starting squid."
+	echo ""
 	tput md
-	echo "    You'd certainly like to pay attention to the"
-	echo "    ACTUAL locations of cache \"spool\", logfiles, pidfile!"
+	echo "     *** UPDATE NOTICE ***"
+	echo ""
+	echo "     Starting with version 2.4.7_11, all helper applications are"
+	echo "     installed to ${PKG_PREFIX}/libexec/squid instead of"
+	echo "     ${PKG_PREFIX}/libexec."
+	echo "     Please check your squid.conf and update it if necessary."
 	tput me
-	if [ -z "${PACKAGE_BUILDING}" ]; then read skip; fi
-	chown root:wheel ${PREFIX:-/usr/local}/etc/squid/squid.conf*
-	chmod 644 ${PREFIX:-/usr/local}/etc/squid/squid.conf*
-	[ -f ${PREFIX:-/usr/local}/etc/squid/squid.conf ] || \
-		cp -fp	${PREFIX:-/usr/local}/etc/squid/squid.conf.default \
-			${PREFIX:-/usr/local}/etc/squid/squid.conf
-	[ -f ${PREFIX:-/usr/local}/etc/squid/mime.conf ] || \
-		cp -fp	${PREFIX:-/usr/local}/etc/squid/mime.conf.default \
-			${PREFIX:-/usr/local}/etc/squid/mime.conf
-	${EDITOR:-vi} ${PREFIX:-/usr/local}/etc/squid/squid.conf \
-		      ${PREFIX:-/usr/local}/etc/squid/mime.conf
+	echo ""
 	;;
-    *)
-	echo "Unexpected Argument $2!!!"
-	exit 1
+*)
+	exit 64
 	;;
 esac
 exit 0
-

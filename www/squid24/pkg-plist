@@ -1,4 +1,4 @@
-etc/rc.d/squid.sh
+@comment $FreeBSD$
 etc/squid/errors/ERR_ACCESS_DENIED
 etc/squid/errors/ERR_CACHE_ACCESS_DENIED
 etc/squid/errors/ERR_CACHE_MGR_ACCESS_DENIED
@@ -55,28 +55,5 @@ etc/squid/icons/anthony-text.gif
 etc/squid/icons/anthony-unknown.gif
 etc/squid/icons/anthony-xbm.gif
 etc/squid/icons/anthony-xpm.gif
-etc/squid/mib.txt
-@unexec if cmp -s %D/etc/squid/mime.conf %D/etc/squid/mime.conf.default; then rm -f %D/etc/squid/mime.conf; fi
-etc/squid/mime.conf.default
-@exec [ -f %B/mime.conf ] || cp %B/%f %B/mime.conf
-@unexec if cmp -s %D/etc/squid/squid.conf %D/etc/squid/squid.conf.default; then rm -f %D/etc/squid/squid.conf; fi
-etc/squid/squid.conf.default
-@exec [ -f %B/squid.conf ] || cp %B/%f %B/squid.conf
-libexec/cachemgr.cgi
-libexec/diskd
-libexec/unlinkd
-sbin/RunAccel
-sbin/RunCache
-sbin/client
-sbin/squid
-@exec mkdir -p %D/etc/squid/errors
-@exec mkdir -p %D/squid/cache
-@exec chown nobody:nogroup %D/squid/cache
-@exec mkdir -p %D/squid/logs
-@exec chown nobody:nogroup %D/squid/logs
 @dirrm etc/squid/icons
-@dirrm etc/squid/errors
-@dirrm etc/squid
-@dirrm squid/logs
-@dirrm squid/cache
-@dirrm squid
+@unexec rmdir -p %D/etc/squid/errors 2>/dev/null || true

@@ -9,9 +9,16 @@ The Harvest home page is http://harvest.cs.colorado.edu/.
 ARPA funding for the Harvest project has ended, the squid project has
 continued development of the cache where Harvest finished.
 
-FreeBSD PORTER'S NOTES. To this moment, Squid is not well documented.
-But you aren't lost in space: there is a mailing list,
-<squid-users@squid-cache.org>, where you will find some support and help.
-We also _strongly_ suggest you to examine Web pages noted above.
+* This version of squid is no longer officially supported. *
 
+Please see this port's Makefile for a list of compilation options.
+
+*** UPDATE NOTICE ***
+Starting with Version 2.4.7_11 the default user:group changed from
+nobody:nogroup to squid:squid. You can restore the old behavior
+of this port by specifying SQUID_UID=nobody SQUID_GID=nogroup in
+your make environment. Helper applications are now installed to
+$PREFIX/libexec/squid instead of $PREFIX/libexec, too.
+
+You can find further information on the project's website at
 WWW: http://www.squid-cache.org/
