@@ -32,6 +32,54 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="8d823883-0ca9-11d9-8a8a-000c41e2cdad">
+    <topic>mozilla --- built-in CA certificates may be overridden</topic>
+    <affects>
+      <package>
+        <name>firefox</name>
+        <range><lt>0.9.3</lt></range>
+      </package>
+      <package>
+        <name>linux-mozilla</name>
+        <range><lt>1.7.2</lt></range>
+      </package>
+      <package>
+        <name>linux-mozilla-devel</name>
+        <range><lt>1.7.2</lt></range>
+      </package>
+      <package>
+        <name>mozilla</name>
+        <range><lt>1.7.2,2</lt></range>
+        <range><ge>1.8.a,2</ge></range>
+      </package>
+      <package>
+        <name>mozilla-gtk1</name>
+        <range><lt>1.7.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>Under some situations, Mozilla will automatically import
+          a certificate from an email message or web site.  This
+          behavior can be used as a denial-of-service attack: if the
+          certificate has a distinguished name (DN) identical to one
+          of the built-in Certificate Authorities (CAs), then Mozilla
+          will no longer be able to certify sites with certificates
+          issued from that CA.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-0758</cvename>
+      <url>https://bugzilla.mozilla.org/show_bug.cgi?id=249004</url>
+      <certvu>160360</certvu>
+      <url>http://banquo.inf.ethz.ch:8080/</url>
+    </references>
+    <dates>
+      <discovery>2004-06-29</discovery>
+      <entry>2004-09-22</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="a4815970-c5cc-11d8-8898-000d6111a684">
     <topic>rssh --- file name disclosure bug</topic>
     <affects>
