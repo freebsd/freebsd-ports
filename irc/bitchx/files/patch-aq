@@ -1,6 +1,15 @@
 --- include/config.h.old	Wed Mar 14 11:20:48 2001
 +++ include/config.h	Wed Mar 14 11:23:51 2001
-@@ -468,7 +468,7 @@
+@@ -225,7 +225,7 @@
+  * in the client. defining this variable to 1 allows that happen. It also
+  * adds a HEBREW_TOGGLE variable which can turn this feature on/off
+  */
+-#undef WANT_HEBREW
++#define WANT_HEBREW
+ 
+ /* if you use cidentd the filename is called .authlie instead of .noident.
+  * as well some modifications to the format of the file were made. So we 
+@@ -449,7 +449,7 @@
  #define DEFAULT_FTP_GRAB OFF
  #define DEFAULT_HTTP_GRAB OFF
  #define DEFAULT_HELP_WINDOW OFF
@@ -9,7 +18,7 @@
  #define DEFAULT_NICK_COMPLETION_LEN 2
  #define DEFAULT_NICK_COMPLETION_TYPE 0  /* 0 1 2 */
  #define DEFAULT_NOTIFY ON
-@@ -498,9 +498,9 @@
+@@ -480,9 +480,9 @@
  #define DEFAULT_AINV 0
  #define DEFAULT_ANNOY_KICK OFF
  #define DEFAULT_AOP_VAR OFF
@@ -22,7 +31,7 @@
  #define DEFAULT_DEOPFLOOD ON
  #if defined(__EMXPM__) || defined(WIN32)
  #define DEFAULT_CODEPAGE 437
-@@ -702,7 +702,7 @@
+@@ -684,7 +684,7 @@
  #endif
  
  #undef PARANOID		/* #define this if your paranoid about dcc hijacking */
