@@ -1,0 +1,12 @@
+bin/knapster
+share/doc/HTML/en/knapster/index-1.html
+share/doc/HTML/en/knapster/index-2.html
+share/doc/HTML/en/knapster/index-3.html
+share/doc/HTML/en/knapster/index-4.html
+share/doc/HTML/en/knapster/index-5.html
+share/doc/HTML/en/knapster/index-6.html
+share/doc/HTML/en/knapster/index.html
+share/icons/mini/knapster.xpm
+share/icons/knapster.xpm
+share/applnk/Internet/knapster.kdelnk
+@dirrm share/doc/HTML/en/knapster
