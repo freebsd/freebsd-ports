@@ -34,4 +34,9 @@ MAN1=		dict.1
 post-patch:
 	${REINPLACE_CMD} -e 's|/etc/|${PREFIX}/etc/|g' ${WRKSRC}/dict.1
 
+post-install:
+	if [ ! -f ${PREFIX}/etc/dict.conf ]; then \
+		${INSTALL_DATA} ${FILESDIR}/dict.conf ${PREFIX}/etc; \
+	fi
+
 .include <bsd.port.mk>
