@@ -1,0 +1,102 @@
+etc/aolserver3/modules/tcl/debug.tcl
+etc/aolserver3/modules/tcl/form.tcl
+etc/aolserver3/modules/tcl/http.tcl
+etc/aolserver3/modules/tcl/modlog.tcl
+etc/aolserver3/modules/tcl/nsperm/compat.tcl
+etc/aolserver3/modules/tcl/nsperm/init.tcl
+etc/aolserver3/modules/tcl/prodebug.tcl
+etc/aolserver3/modules/tcl/sendmail.tcl
+etc/aolserver3/nsd.tcl.sample
+etc/rc.d/aolserver3.sh
+include/aolserver3/ns.h
+include/aolserver3/nsextmsg.h
+include/aolserver3/nspd.h
+include/aolserver3/nsthread.h
+include/aolserver3/tcl.h
+include/aolserver3/tcl76.h
+include/aolserver3/tcl82.h
+include/aolserver3/tclDecls.h
+lib/libnspd.a
+libexec/aolserver3/nscgi.so
+libexec/aolserver3/nscp.so
+libexec/aolserver3/nsext.so
+libexec/aolserver3/nslog.so
+libexec/aolserver3/nsperm.so
+libexec/aolserver3/nssock.so
+libexec/aolserver3/nsunix.so
+libexec/aolserver3/nsvhr.so
+sbin/nsd
+sbin/nsd76
+sbin/nsd82
+sbin/translate-ini
+share/examples/aolserver3/alias/alias.c
+share/examples/aolserver3/alias/makefile
+share/examples/aolserver3/alias/nsd.tcl
+share/examples/aolserver3/counter/counter.c
+share/examples/aolserver3/counter/makefile
+share/examples/aolserver3/counter/nsd.tcl
+share/examples/aolserver3/logrefer/logrefer.c
+share/examples/aolserver3/logrefer/makefile
+share/examples/aolserver3/logrefer/nsd.tcl
+share/examples/aolserver3/makefile
+share/examples/aolserver3/nscommdrv/makefile
+share/examples/aolserver3/nscommdrv/nscommdrv.c
+share/examples/aolserver3/nscommdrv/nsd.tcl
+share/examples/aolserver3/nshello/makefile
+share/examples/aolserver3/nshello/nsd.tcl
+share/examples/aolserver3/nshello/nshello.c
+share/examples/aolserver3/nsproxy/display.c
+share/examples/aolserver3/nsproxy/display.h
+share/examples/aolserver3/nsproxy/makefile
+share/examples/aolserver3/nsproxy/nsd.tcl
+share/examples/aolserver3/nsproxy/nsproxy.c
+share/examples/aolserver3/postgres/makefile
+share/examples/aolserver3/postgres/nsd.tcl
+share/examples/aolserver3/postgres/postgres.c
+share/examples/aolserver3/stats/makefile
+share/examples/aolserver3/stats/nsd.tcl
+share/examples/aolserver3/stats/stats.c
+share/examples/aolserver3/tclcs/makefile
+share/examples/aolserver3/tclcs/nsd.tcl
+share/examples/aolserver3/tclcs/tclcs.c
+share/examples/aolserver3/tclhello/makefile
+share/examples/aolserver3/tclhello/nsd.tcl
+share/examples/aolserver3/tclhello/tclhello.c
+share/examples/aolserver3/tests/makefile
+share/examples/aolserver3/tests/nsd.tcl
+share/examples/aolserver3/tests/tests.c
+www/aolserver3/servers/example-server/modules/nsperm/group
+www/aolserver3/servers/example-server/modules/nsperm/hosts.allow
+www/aolserver3/servers/example-server/modules/nsperm/hosts.deny
+www/aolserver3/servers/example-server/modules/nsperm/passwd
+www/aolserver3/servers/example-server/modules/nsperm/perms
+www/aolserver3/servers/example-server/pages/index.html
+@dirrm etc/aolserver3/modules/nsunix
+@dirrm etc/aolserver3/modules/tcl/nsperm
+@dirrm etc/aolserver3/modules/tcl
+@dirrm etc/aolserver3/modules
+@dirrm etc/aolserver3
+@dirrm include/aolserver3
+@dirrm libexec/aolserver3
+@dirrm share/examples/aolserver3/alias
+@dirrm share/examples/aolserver3/counter
+@dirrm share/examples/aolserver3/logrefer
+@dirrm share/examples/aolserver3/nscommdrv
+@dirrm share/examples/aolserver3/nshello
+@dirrm share/examples/aolserver3/nsproxy
+@dirrm share/examples/aolserver3/postgres
+@dirrm share/examples/aolserver3/stats
+@dirrm share/examples/aolserver3/tclcs
+@dirrm share/examples/aolserver3/tclhello
+@dirrm share/examples/aolserver3/tests
+@dirrm share/examples/aolserver3
+@dirrm www/aolserver3/log
+@dirrm www/aolserver3/servers/example-server/modules/nscp
+@dirrm www/aolserver3/servers/example-server/modules/nslog
+@dirrm www/aolserver3/servers/example-server/modules/nsperm
+@dirrm www/aolserver3/servers/example-server/modules/tcl
+@dirrm www/aolserver3/servers/example-server/modules
+@dirrm www/aolserver3/servers/example-server/pages
+@dirrm www/aolserver3/servers/example-server
+@dirrm www/aolserver3/servers
+@dirrm www/aolserver3/
