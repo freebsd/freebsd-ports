@@ -1,0 +1,11 @@
+--- protocols/fddi/nd_fddi.h.orig	Tue May 13 10:34:37 2003
++++ protocols/fddi/nd_fddi.h	Tue May 13 10:40:53 2003
+@@ -26,7 +26,7 @@
+ #ifndef __nd_fddi_h
+ #define __nd_fddi_h
+ 
+-#include <netinet/if_fddi.h>
++#include <net/fddi.h>
+ 
+ #include <netdude/nd_gettext.h>
+ #include <netdude/nd_packet.h>
