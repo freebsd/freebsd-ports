@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.cs.arizona.edu/sr/
 DISTNAME=	sr231
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	rssh@cki.ipri.kiev.ua
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A parallel language "Synchronization Resources"
 
 BROKEN=		"Does not compile"

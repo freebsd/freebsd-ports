@@ -11,7 +11,7 @@ CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.cis.ufl.edu/pub/simdigest/tools/
 DISTFILES=	SimPack3.tar.Z
 
-MAINTAINER=	rssh@cki.ipri.kiev.ua
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SimPack & Sim++ libraries and tools for simulatiom modelling
 
 BROKEN=		"Does not install/compile"
