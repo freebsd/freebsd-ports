@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rus-ispell
-PORTVERSION=	0.99f6
+PORTVERSION=	0.99f7
 CATEGORIES=	russian textproc
 MASTER_SITES=	ftp://scon155.phys.msu.su/pub/russian/ispell/
 
