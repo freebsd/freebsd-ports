@@ -1,91 +1,162 @@
-%%TARGET_PREFIX%%/etc/crypt.pl
-%%TARGET_PREFIX%%/etc/replic.pl
-%%TARGET_PREFIX%%/samples/sax/XMLFilterBase.java
-%%TARGET_PREFIX%%/samples/sax/DataUnformatFilter.java
-%%TARGET_PREFIX%%/samples/sax/FilterTest.java
-%%TARGET_PREFIX%%/samples/sax/DataFormatFilter.java
-%%TARGET_PREFIX%%/samples/sax/XMLWriter.java
-%%TARGET_PREFIX%%/samples/sax/test1.xml
-%%TARGET_PREFIX%%/samples/sax/test2.xml
-%%TARGET_PREFIX%%/samples/DOMBuilderDemo.java
-%%TARGET_PREFIX%%/samples/SAXBuilderDemo.java
-%%TARGET_PREFIX%%/samples/TestXMLOutputter.java
-%%TARGET_PREFIX%%/samples/WarReader.java
-%%TARGET_PREFIX%%/samples/cdata.xml
-%%TARGET_PREFIX%%/samples/contents.xml
-%%TARGET_PREFIX%%/samples/fibo.xml
-%%TARGET_PREFIX%%/samples/inline.xml
-%%TARGET_PREFIX%%/samples/namespaces.xml
-%%TARGET_PREFIX%%/samples/testNamespaces.xml
-%%TARGET_PREFIX%%/samples/Count.java
-%%TARGET_PREFIX%%/samples/web.xml
-%%TARGET_PREFIX%%/lib/bin/antRun
-%%TARGET_PREFIX%%/lib/bin/antRun.hid
-%%TARGET_PREFIX%%/lib/ant.jar
-%%TARGET_PREFIX%%/lib/collections.jar
-%%TARGET_PREFIX%%/lib/collections.license
-%%TARGET_PREFIX%%/lib/collections.readme
-%%TARGET_PREFIX%%/lib/xerces.jar
-%%TARGET_PREFIX%%/build/jdom-jdk11.jar
-%%TARGET_PREFIX%%/build/jdom.jar
-%%TARGET_PREFIX%%/src/java/org/jdom/adapters/XercesDOMAdapter.java
-%%TARGET_PREFIX%%/src/java/org/jdom/adapters/CrimsonDOMAdapter.java
-%%TARGET_PREFIX%%/src/java/org/jdom/adapters/DOMAdapter.java
-%%TARGET_PREFIX%%/src/java/org/jdom/adapters/OracleV1DOMAdapter.java
-%%TARGET_PREFIX%%/src/java/org/jdom/adapters/OracleV2DOMAdapter.java
-%%TARGET_PREFIX%%/src/java/org/jdom/adapters/ProjectXDOMAdapter.java
-%%TARGET_PREFIX%%/src/java/org/jdom/adapters/XML4JDOMAdapter.java
-%%TARGET_PREFIX%%/src/java/org/jdom/adapters/AbstractDOMAdapter.java
-%%TARGET_PREFIX%%/src/java/org/jdom/input/BuilderErrorHandler.java
-%%TARGET_PREFIX%%/src/java/org/jdom/input/DOMBuilder.java
-%%TARGET_PREFIX%%/src/java/org/jdom/input/SAXBuilder.java
-%%TARGET_PREFIX%%/src/java/org/jdom/input/SAXBuilder.java.orig
-%%TARGET_PREFIX%%/src/java/org/jdom/output/DOMOutputter.java
-%%TARGET_PREFIX%%/src/java/org/jdom/output/NamespaceStack.java
-%%TARGET_PREFIX%%/src/java/org/jdom/output/SAXOutputter.java
-%%TARGET_PREFIX%%/src/java/org/jdom/output/XMLOutputter.java
-%%TARGET_PREFIX%%/src/java/org/jdom/DataConversionException.java
-%%TARGET_PREFIX%%/src/java/org/jdom/DocType.java
-%%TARGET_PREFIX%%/src/java/org/jdom/Document.java
-%%TARGET_PREFIX%%/src/java/org/jdom/Document.java.orig
-%%TARGET_PREFIX%%/src/java/org/jdom/Element.java
-%%TARGET_PREFIX%%/src/java/org/jdom/Element.java.orig
-%%TARGET_PREFIX%%/src/java/org/jdom/Entity.java
-%%TARGET_PREFIX%%/src/java/org/jdom/IllegalAddException.java
-%%TARGET_PREFIX%%/src/java/org/jdom/Attribute.java
-%%TARGET_PREFIX%%/src/java/org/jdom/IllegalNameException.java
-%%TARGET_PREFIX%%/src/java/org/jdom/IllegalTargetException.java
-%%TARGET_PREFIX%%/src/java/org/jdom/JDOMException.java
-%%TARGET_PREFIX%%/src/java/org/jdom/Namespace.java
-%%TARGET_PREFIX%%/src/java/org/jdom/PartialList.java
-%%TARGET_PREFIX%%/src/java/org/jdom/ProcessingInstruction.java
-%%TARGET_PREFIX%%/src/java/org/jdom/Verifier.java
-%%TARGET_PREFIX%%/src/java/org/jdom/Verifier.java.orig
-%%TARGET_PREFIX%%/src/java/org/jdom/IllegalDataException.java
-%%TARGET_PREFIX%%/src/java/org/jdom/CDATA.java
-%%TARGET_PREFIX%%/src/java/org/jdom/Comment.java
-%%TARGET_PREFIX%%/build.bat
-%%TARGET_PREFIX%%/TODO.txt
-%%TARGET_PREFIX%%/README.txt
-%%TARGET_PREFIX%%/LICENSE.txt
-%%TARGET_PREFIX%%/COMMITTERS.txt
-%%TARGET_PREFIX%%/CHANGES.txt
-%%TARGET_PREFIX%%/build11.sh
-%%TARGET_PREFIX%%/build11.bat
-%%TARGET_PREFIX%%/build.xml
-%%TARGET_PREFIX%%/build.sh
-@dirrm %%TARGET_PREFIX%%/etc
-@dirrm %%TARGET_PREFIX%%/samples/sax
-@dirrm %%TARGET_PREFIX%%/samples
-@dirrm %%TARGET_PREFIX%%/lib/bin
-@dirrm %%TARGET_PREFIX%%/lib
-@dirrm %%TARGET_PREFIX%%/build
-@dirrm %%TARGET_PREFIX%%/src/java/org/jdom/adapters
-@dirrm %%TARGET_PREFIX%%/src/java/org/jdom/input
-@dirrm %%TARGET_PREFIX%%/src/java/org/jdom/output
-@dirrm %%TARGET_PREFIX%%/src/java/org/jdom
-@dirrm %%TARGET_PREFIX%%/src/java/org
-@dirrm %%TARGET_PREFIX%%/src/java
-@dirrm %%TARGET_PREFIX%%/src
-@dirrm %%TARGET_PREFIX%%
-@unexec rmdir %%PREFIX%%/share/java 2>/dev/null || true
+%%T%%/CHANGES.txt
+%%T%%/COMMITTERS.txt
+%%T%%/LICENSE.txt
+%%T%%/README.txt
+%%T%%/TODO.txt
+%%T%%/build.bat
+%%T%%/build.sh
+%%T%%/build.xml
+%%T%%/build/apidocs/AllNames.html
+%%T%%/build/apidocs/Package-org.jdom.adapters.html
+%%T%%/build/apidocs/Package-org.jdom.html
+%%T%%/build/apidocs/Package-org.jdom.input.html
+%%T%%/build/apidocs/Package-org.jdom.output.html
+%%T%%/build/apidocs/Package-org.jdom.transform.html
+%%T%%/build/apidocs/org.jdom.Attribute.html
+%%T%%/build/apidocs/org.jdom.CDATA.html
+%%T%%/build/apidocs/org.jdom.Comment.html
+%%T%%/build/apidocs/org.jdom.DataConversionException.html
+%%T%%/build/apidocs/org.jdom.DocType.html
+%%T%%/build/apidocs/org.jdom.Document.html
+%%T%%/build/apidocs/org.jdom.Element.html
+%%T%%/build/apidocs/org.jdom.EntityRef.html
+%%T%%/build/apidocs/org.jdom.IllegalAddException.html
+%%T%%/build/apidocs/org.jdom.IllegalDataException.html
+%%T%%/build/apidocs/org.jdom.IllegalNameException.html
+%%T%%/build/apidocs/org.jdom.IllegalTargetException.html
+%%T%%/build/apidocs/org.jdom.JDOMException.html
+%%T%%/build/apidocs/org.jdom.Namespace.html
+%%T%%/build/apidocs/org.jdom.ProcessingInstruction.html
+%%T%%/build/apidocs/org.jdom.Text.html
+%%T%%/build/apidocs/org.jdom.Verifier.html
+%%T%%/build/apidocs/org.jdom.adapters.AbstractDOMAdapter.html
+%%T%%/build/apidocs/org.jdom.adapters.CrimsonDOMAdapter.html
+%%T%%/build/apidocs/org.jdom.adapters.DOMAdapter.html
+%%T%%/build/apidocs/org.jdom.adapters.JAXPDOMAdapter.html
+%%T%%/build/apidocs/org.jdom.adapters.OracleV1DOMAdapter.html
+%%T%%/build/apidocs/org.jdom.adapters.OracleV2DOMAdapter.html
+%%T%%/build/apidocs/org.jdom.adapters.ProjectXDOMAdapter.html
+%%T%%/build/apidocs/org.jdom.adapters.XML4JDOMAdapter.html
+%%T%%/build/apidocs/org.jdom.adapters.XercesDOMAdapter.html
+%%T%%/build/apidocs/org.jdom.input.BuilderErrorHandler.html
+%%T%%/build/apidocs/org.jdom.input.DOMBuilder.html
+%%T%%/build/apidocs/org.jdom.input.DefaultJDOMFactory.html
+%%T%%/build/apidocs/org.jdom.input.JDOMFactory.html
+%%T%%/build/apidocs/org.jdom.input.SAXBuilder.html
+%%T%%/build/apidocs/org.jdom.input.SAXHandler.html
+%%T%%/build/apidocs/org.jdom.output.DOMOutputter.html
+%%T%%/build/apidocs/org.jdom.output.SAXOutputter.html
+%%T%%/build/apidocs/org.jdom.output.XMLOutputter.html
+%%T%%/build/apidocs/org.jdom.transform.JDOMResult.html
+%%T%%/build/apidocs/org.jdom.transform.JDOMSource.html
+%%T%%/build/apidocs/packages.html
+%%T%%/build/apidocs/tree.html
+%%T%%/build/jdom-jdk11.jar
+%%T%%/build/jdom.jar
+%%T%%/build11.bat
+%%T%%/build11.sh
+%%T%%/etc/crypt.pl
+%%T%%/etc/replic.pl
+%%T%%/lib/README
+%%T%%/lib/ant.jar
+%%T%%/lib/ant.readme
+%%T%%/lib/bin/antRun
+%%T%%/lib/collections.jar
+%%T%%/lib/collections.license
+%%T%%/lib/collections.readme
+%%T%%/lib/crimson.jar
+%%T%%/lib/crimson.license-asf
+%%T%%/lib/crimson.license-w3c.html
+%%T%%/lib/crimson.readme
+%%T%%/lib/jaxp.jar
+%%T%%/lib/jaxp.license.html
+%%T%%/lib/jaxp.readme
+%%T%%/lib/jaxp.relnotes.html
+%%T%%/lib/xalan.jar
+%%T%%/lib/xalan.license
+%%T%%/lib/xalan.readme
+%%T%%/lib/xerces.jar
+%%T%%/lib/xerces.readme
+%%T%%/package/JDOMAbout.java
+%%T%%/package/META-INF/MANIFEST.MF
+%%T%%/package/META-INF/info.xml
+%%T%%/samples/Count.java
+%%T%%/samples/DOMBuilderDemo.java
+%%T%%/samples/SAXBuilderDemo.java
+%%T%%/samples/TestXMLOutputter.java
+%%T%%/samples/WarReader.java
+%%T%%/samples/XSLTransform.java
+%%T%%/samples/catalog.xml
+%%T%%/samples/catalog.xsl
+%%T%%/samples/cdata.xml
+%%T%%/samples/contents.xml
+%%T%%/samples/fibo.xml
+%%T%%/samples/inline.xml
+%%T%%/samples/namespaces.xml
+%%T%%/samples/sax/DataFormatFilter.java
+%%T%%/samples/sax/DataUnformatFilter.java
+%%T%%/samples/sax/FilterTest.java
+%%T%%/samples/sax/XMLFilterBase.java
+%%T%%/samples/sax/XMLWriter.java
+%%T%%/samples/sax/test1.xml
+%%T%%/samples/sax/test2.xml
+%%T%%/samples/testNamespaces.xml
+%%T%%/samples/web.xml
+%%T%%/src/java/org/jdom/Attribute.java
+%%T%%/src/java/org/jdom/CDATA.java
+%%T%%/src/java/org/jdom/Comment.java
+%%T%%/src/java/org/jdom/DataConversionException.java
+%%T%%/src/java/org/jdom/DocType.java
+%%T%%/src/java/org/jdom/Document.java
+%%T%%/src/java/org/jdom/Element.java
+%%T%%/src/java/org/jdom/EntityRef.java
+%%T%%/src/java/org/jdom/IllegalAddException.java
+%%T%%/src/java/org/jdom/IllegalDataException.java
+%%T%%/src/java/org/jdom/IllegalNameException.java
+%%T%%/src/java/org/jdom/IllegalTargetException.java
+%%T%%/src/java/org/jdom/JDOMException.java
+%%T%%/src/java/org/jdom/Namespace.java
+%%T%%/src/java/org/jdom/PartialList.java
+%%T%%/src/java/org/jdom/ProcessingInstruction.java
+%%T%%/src/java/org/jdom/Text.java
+%%T%%/src/java/org/jdom/Verifier.java
+%%T%%/src/java/org/jdom/adapters/AbstractDOMAdapter.java
+%%T%%/src/java/org/jdom/adapters/CrimsonDOMAdapter.java
+%%T%%/src/java/org/jdom/adapters/DOMAdapter.java
+%%T%%/src/java/org/jdom/adapters/JAXPDOMAdapter.java
+%%T%%/src/java/org/jdom/adapters/OracleV1DOMAdapter.java
+%%T%%/src/java/org/jdom/adapters/OracleV2DOMAdapter.java
+%%T%%/src/java/org/jdom/adapters/ProjectXDOMAdapter.java
+%%T%%/src/java/org/jdom/adapters/XML4JDOMAdapter.java
+%%T%%/src/java/org/jdom/adapters/XercesDOMAdapter.java
+%%T%%/src/java/org/jdom/input/BuilderErrorHandler.java
+%%T%%/src/java/org/jdom/input/DOMBuilder.java
+%%T%%/src/java/org/jdom/input/DefaultJDOMFactory.java
+%%T%%/src/java/org/jdom/input/JDOMFactory.java
+%%T%%/src/java/org/jdom/input/SAXBuilder.java
+%%T%%/src/java/org/jdom/input/SAXHandler.java
+%%T%%/src/java/org/jdom/output/DOMOutputter.java
+%%T%%/src/java/org/jdom/output/NamespaceStack.java
+%%T%%/src/java/org/jdom/output/SAXOutputter.java
+%%T%%/src/java/org/jdom/output/XMLOutputter.java
+%%T%%/src/java/org/jdom/transform/JDOMResult.java
+%%T%%/src/java/org/jdom/transform/JDOMSource.java
+@dirrm %%T%%/build/apidocs
+@dirrm %%T%%/build
+@dirrm %%T%%/package/META-INF
+@dirrm %%T%%/package
+@dirrm %%T%%/lib/bin
+@dirrm %%T%%/lib
+@dirrm %%T%%/etc
+@dirrm %%T%%/samples/sax
+@dirrm %%T%%/samples
+@dirrm %%T%%/src/java/org/jdom/adapters
+@dirrm %%T%%/src/java/org/jdom/input
+@dirrm %%T%%/src/java/org/jdom/output
+@dirrm %%T%%/src/java/org/jdom/transform
+@dirrm %%T%%/src/java/org/jdom
+@dirrm %%T%%/src/java/org
+@dirrm %%T%%/src/java
+@dirrm %%T%%/src
+@dirrm %%T%%
+@unexec rmdir share/java 2> /dev/null || true
