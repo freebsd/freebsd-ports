@@ -27,7 +27,7 @@ RUN_DEPENDS=	xvinfo:${PORTSDIR}/x11/XFree86-4-clients \
 	${X11BASE}/bin/Xwrapper-4:${PORTSDIR}/x11/wrapper
 
 
-MAINTAINER=	jmz@FreeBSD.org
+MAINTAINER=	anholt@FreeBSD.org
 
 NO_BUILD=	yes
 LATEST_LINK=	XFree86
