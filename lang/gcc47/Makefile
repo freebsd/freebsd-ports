@@ -41,7 +41,7 @@ NOMANCOMPRESS=	yes	# too hard to deal with differences on 5-cur and releng4
 
 .include <bsd.port.pre.mk>
 
-#BROKEN=		"Building libjava causes an Internal Compiler Error iff built within the ports tree"
+BROKEN=		"Building libjava causes an Internal Compiler Error iff built within the ports tree"
 
 CONFIGURE_TARGET=	${ARCH}-portbld-freebsd${OSREL}
 
