@@ -17,7 +17,6 @@ MAINTAINER=	ume@FreeBSD.org
 COMMENT=	RFC 2222 SASL (Simple Authentication and Security Layer)
 
 USE_SUBMAKE=	yes
-USE_OPENSSL=	yes
 
 INSTALLS_SHLIB=	yes
 
@@ -97,6 +96,12 @@ CONFIGURE_ARGS+=	--enable-krb4
 .else
 CONFIGURE_ARGS+=	--disable-krb4
 EBONES=	"@comment "
+.endif
+
+.include <bsd.port.pre.mk>
+.include "${PORTSDIR}/security/openssl/bsd.openssl.mk"
+.if !defined(WITH_OPENSSL_BASE)
+CONFIGURE_ARGS+=	--with-openssl=${OPENSSLBASE}
 .endif
 
 CONFIGURE_ENV+=	LOCALBASE=${LOCALBASE} \
@@ -198,4 +203,4 @@ post-install:
 post-clean:
 	@${RM} -f ${WRKDIRPREFIX}${.CURDIR}/Makefile.inc
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
