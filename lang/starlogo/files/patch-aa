@@ -7,4 +7,4 @@
 +export CLASSPATH
 +
 +cd %%PREFIX%%/share/java/starlogo/sample-projects
-+exec %%LOCALBASE%%/bin/javavm starlogo.Toplevel compiler "init 100"
++exec %%LOCALBASE%%/bin/javavm -noasyncgc starlogo.Toplevel compiler "init 100"
