@@ -3,7 +3,7 @@
 # Date created:		11 November 1998
 # Whom:			Ben Hutchinson <benhutch@xfiles.org.uk>
 #
-# $Id$
+# $Id: Makefile,v 1.6 1998/11/15 21:27:19 mph Exp $
 #
 
 DISTNAME=	ircii-EPIC4pre2.001-NR8
@@ -21,7 +21,7 @@ WRKSRC=		${WRKDIR}/ircii-EPIC4pre2.001-NR8
 
 do-install:
 		( cd ${WRKSRC} && make INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
-		INSTALL_DATA="${INSTALL_DATA}" ${INSTALL} )
+		INSTALL_DATA="${INSTALL_DATA}" install )
 
 post-install:
 		( cd ${PREFIX}/lib/irc && tar zxf ${DISTDIR}/epic4pre2-help.tar.gz)
