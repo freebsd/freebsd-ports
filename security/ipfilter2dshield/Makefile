@@ -1,6 +1,6 @@
 # New ports collection makefile for:	ipfilter2dshield
 # Date created:		2004-06-18
-# Whom:			Frank W. Josellis <frank@dynamical-systems.org>
+# Whom:			Joe Barbish <fbsd_user@a1poweruser.com>
 #
 # $FreeBSD$
 #
