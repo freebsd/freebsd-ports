@@ -5,11 +5,10 @@
 # $FreeBSD$
 #
 
-PORTNAME=	${LANGPREFIX}DeepForest
+PORTNAME=	DeepForest
 PORTVERSION=	1.0a
 CATEGORIES=	${CATEGORY_LIST}
 MASTER_SITES=	http://www.aaa-int.or.jp/~jfactory/JDE/dist/
-DISTNAME=	DeepForest-${PORTVERSION}
 
 MAINTAINER=	kiri@pis.toba-cmt.ac.jp
 
@@ -29,7 +28,6 @@ TKSTEPVERSION=	8.0
 PIXMAPPATH?=	${PREFIX}/share/WindowMaker/Pixmaps
 LANGUAGE?=
 .if (${LANGUAGE} == "Japanese")
-LANGPREFIX=	ja-
 CATEGORY_LIST=	archivers windowmaker tkstep80 japanese
 RUN_DEP_LIST=	${LOCALBASE}/lib/Img1.2/libimg12.so.1:${PORTSDIR}/japanese/libimg \
 		${LOCALBASE}/lib/tkstep8.0jp/tkstep.tcl:${PORTSDIR}/japanese/tkstep80
