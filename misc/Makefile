@@ -133,6 +133,7 @@
     SUBDIR += most
     SUBDIR += moviedb
     SUBDIR += mshell
+    SUBDIR += mtx
     SUBDIR += muuz
     SUBDIR += nsf
     SUBDIR += numchar

@@ -1,0 +1,4 @@
+sbin/mtx
+sbin/tapeinfo
+sbin/loaderinfo
+sbin/scsitape
