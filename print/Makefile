@@ -5,6 +5,7 @@
     SUBDIR += a2ps-letter
     SUBDIR += a2ps-letterdj
     SUBDIR += abc2mtex
+    SUBDIR += abntex
     SUBDIR += acrobatviewer
     SUBDIR += acroread
     SUBDIR += acroread-commfont
