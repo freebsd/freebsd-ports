@@ -109,6 +109,7 @@
     SUBDIR += dhisd
     SUBDIR += dictd
     SUBDIR += dictd-database
+    SUBDIR += diradmin
     SUBDIR += disco
     SUBDIR += djbdns
     SUBDIR += dlint
