@@ -18,6 +18,12 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Display X and Win32 desktops on remote X/Win32/Java displays
 
+.include <bsd.port.pre.mk>
+
+.if ${MACHINE_ARCH} != i386
+BROKEN=		"Does not compile on ${MACHINE_ARCH}"
+.endif
+
 USE_PERL5=	yes
 WRKSRC=		${WRKDIR}/unix/vnc_unixsrc
 USE_IMAKE=	yes
@@ -43,4 +49,5 @@ post-install:
 # Go install Java classes
 	${MKDIR} ${PREFIX}/share/vnc
 	${CP} -R ${WRKSRC}/classes ${PREFIX}/share/vnc
-.include <bsd.port.mk>
+
+.include <bsd.port.post.mk>
