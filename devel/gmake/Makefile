@@ -7,7 +7,7 @@
 
 PORTNAME=	gmake
 PORTVERSION=	3.79.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	make
@@ -18,10 +18,17 @@ MAINTAINER=	portmgr@FreeBSD.org
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-prefix=g \
 		--with-included-gettext
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -DHAVE_LOCALE_H" \
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -DHAVE_LOCALE_H -DHAVE_LC_MESSAGES" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 MAN1=		gmake.1
+
+# Fscking GNU developers put 777 dirs into their tarball, so that anybody
+# could insert evil code into gmake without you even noticing by modifying
+# files during do-extract or do-configure.
+
+pre-extract:
+	${CHMOD} 700 ${WRKDIR}
 
 # joerg@freebsd.org says our getloadavg() no longer requires setgid kmem
 
