@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME:S/lib//}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Multi-cipher cryptographic library (used in PHP3)
+COMMENT=	Multi-cipher cryptographic library (used in PHP)
 
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
