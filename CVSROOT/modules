@@ -2657,6 +2657,7 @@ iip		ports/irc/iip
 ija		ports/news/ija
 ike-scan	ports/security/ike-scan
 im		ports/mail/im
+im-ja		ports/japanese/im-ja
 imageindex	ports/graphics/imageindex
 imagesort	ports/graphics/imagesort
 imageviewer	ports/graphics/imageviewer
