@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	spamprobe
-PORTVERSION=	0.8b
+PORTVERSION=	0.9h
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=${PORTNAME}
@@ -14,20 +14,13 @@ MASTER_SITE_SUBDIR=${PORTNAME}
 MAINTAINER=	mdodd@freebsd.org
 COMMENT=	Spam detector using Bayesian analysis of word counts
 
-LIB_DEPENDS=	db4:${PORTSDIR}/databases/db4
+LIB_DEPENDS=	db4.0:${PORTSDIR}/databases/db4
 
-MAKEFILE=	${FILESDIR}/Makefile
-MAKE_ENV+=	FILESDIR="${FILESDIR}"
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--enable-default-8bit
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/db4" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 
-.include <bsd.port.pre.mk>
+MAN1=	spamprobe.1
 
-post-build:
-	@cd ${WRKSRC} && ${MAKE_ENV} ${MAKE} -f \
-		${FILESDIR}/Makefile.export0_6 clean all
-
-post-install:
-	@cd ${WRKSRC} && ${MAKE_ENV} ${MAKE} -f \
-		${FILESDIR}/Makefile.export0_6 install
-	@${CAT} ${PKGMESSAGE}
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
