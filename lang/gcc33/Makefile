@@ -148,7 +148,12 @@ post-install:
 	fi
 .endfor
 	${MV} -f ${PREFIX}/bin/g7733 ${PREFIX}/bin/g77-33
-	${MV} -f ${PREFIX}/man/man1/g7733.1 ${PREFIX}/man/man1/g77-33.1
+	-${MV} -f ${PREFIX}/man/man1/g7733.1 ${PREFIX}/man/man1/g77-33.1
+	# man pages can only be generated if Perl >= 5.6 is installed, so
+	# fake them on 4.x systems.
+.for mp in ${_MANPAGES}
+	( ${TEST} -e ${mp} || ${TOUCH} ${TOUCH_FLAGS} ${mp} )
+.endfor
 	# These libraries are moved from PREFIX/lib to avoid conflicts with
 	# the stock compiler.
 .for f in libstdc++ libsupc++ libg2c libfrtbegin libobjc ${EXTRA_SHLIB}
@@ -158,11 +163,6 @@ post-install:
 	-${MV} -f ${PREFIX}/lib/libgcj.* ${TARGLIB}
 	${RM} -f ${PREFIX}/lib/libiberty.a
 	${RM} -f ${TARGLIB}/*.la
-# I am sick and tired of the anonyance that man pages can only be generated if
-# perl 5.6 is installed.  This is becoming a royal PITA on non-5-CURRENT systems
-.for mp in ${_MANPAGES}
-	( ${TEST} -e ${mp} || ${TOUCH} ${TOUCH_FLAGS} ${mp} )
-.endfor
 	# Handle target libraries and GCJ include files.
 	${RM} -f ${WRKDIR}/PLIST.lib
 .for d in ${TARGLIB:S/^${PREFIX}\///} include/gcj include/gnu include/java include/javax
