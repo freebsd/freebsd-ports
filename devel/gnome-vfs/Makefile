@@ -120,7 +120,6 @@ pre-configure:
 	fi
 
 post-install:
-	@${MKDIR} ${PREFIX}/share/gnome/vfolders
 .if !defined(WITHOUT_KDE_MENUS)
 	@${INSTALL_DATA} ${WRKSRC}/KDE.directory ${PREFIX}/share/gnome/vfolders
 .endif
