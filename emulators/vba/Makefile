@@ -6,14 +6,14 @@
 
 PORTNAME=	vba
 PORTVERSION=	1.7.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	emulators
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	VisualBoyAdvance-src-${PORTVERSION}
 
 MAINTAINER=	arundel@gmx.net
-COMMENT=	Currently the best Gameboy Advance emulator!
+COMMENT=	Open Source Gameboy Advance emulator
 
 BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
@@ -28,10 +28,12 @@ TARGET_DIR=	${PREFIX}/bin/
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500035
+.if (${OSVERSION} < 500035)
 CFLAGS+=	-O0
-.else
-CLAGS+=
+.endif
+
+.ifndef(PROFILING)
+CONFIGURE_ARGS= --without-profiling --disable-dev
 .endif
 
 DATA_FILES=	${WRKSRC}/src/VisualBoyAdvance.cfg
@@ -40,12 +42,10 @@ DOC_FILES=	COPYING AUTHORS NEWS README ChangeLog INSTALL
 
 pre-everything::
 	@${ECHO_MSG} ""
-	@${ECHO_MSG} "GCC must be 3.x or greater in order to compile GBA.cpp with -O2. Earlier"
-	@${ECHO_MSG} "versions have a problem during optimization that requires an absurd"
-	@${ECHO_MSG} "ammount of memory and usually ends up crashing the compiler/computer"
+	@${ECHO_MSG} "You can enable profiling by defining PROFILING."
 	@${ECHO_MSG} ""
-	@${ECHO_MSG} "Note by MAINTAINER: Currently everything < 500035 is being build with -O0"
-	@${ECHO_MSG} "flag."
+	@${ECHO_MSG} "Due to a bug in gcc2 optimsations other than -O0 will be ignored on"
+	@${ECHO_MSG} "FreeBSD releases that didn't ship with gcc3 (prior 500035)."
 	@${ECHO_MSG} ""
 
 do-install:
