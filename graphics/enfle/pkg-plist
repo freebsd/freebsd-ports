@@ -3,6 +3,7 @@ lib/enfle/plugins/archiver/archiver_bz2.so
 lib/enfle/plugins/archiver/archiver_dri.so
 lib/enfle/plugins/archiver/archiver_exe.so
 lib/enfle/plugins/archiver/archiver_gz.so
+lib/enfle/plugins/archiver/archiver_libarc.so
 lib/enfle/plugins/archiver/archiver_misc.so
 lib/enfle/plugins/archiver/archiver_one.so
 lib/enfle/plugins/archiver/archiver_pak.so
@@ -13,10 +14,12 @@ lib/enfle/plugins/loader/loader_grp.so
 lib/enfle/plugins/loader/loader_jpeg.so
 lib/enfle/plugins/loader/loader_lfg.so
 lib/enfle/plugins/loader/loader_mag.so
+lib/enfle/plugins/loader/loader_mng.so
 lib/enfle/plugins/loader/loader_p2.so
 lib/enfle/plugins/loader/loader_pic.so
 lib/enfle/plugins/loader/loader_png.so
 lib/enfle/plugins/loader/loader_pnm.so
+lib/enfle/plugins/loader/loader_ungif.so
 lib/enfle/plugins/loader/loader_xbm.so
 lib/enfle/plugins/loader/loader_xpm.so
 lib/enfle/plugins/saver/saver_jpeg.so
