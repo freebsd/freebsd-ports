@@ -23,5 +23,7 @@ USE_GMAKE=	YES
 USE_LIBTOOL=	YES
 
 BROKEN=		project is dead and port unmaintained
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2004-04-21
 
 .include <bsd.port.mk>
