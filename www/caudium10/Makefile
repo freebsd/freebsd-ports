@@ -7,6 +7,7 @@
 
 PORTNAME=	caudium10
 PORTVERSION=	1.0.52
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.oav.net/caudium/source/	\
 		ftp://ftp.caudium.net/caudium/source/
@@ -16,7 +17,7 @@ MAINTAINER=	kiwi@oav.net
 COMMENT=	A free webserver which is based on the Roxen Challenger 1.3 code base
 
 BUILD_DEPENDS=	pike:${PORTSDIR}/lang/pike70/
-LIB_DEPENDS=	sablot.69:${PORTSDIR}/textproc/sablotron/
+LIB_DEPENDS=	sablot.70:${PORTSDIR}/textproc/sablotron/
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/
 
