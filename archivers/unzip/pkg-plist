@@ -1,5 +1,5 @@
 bin/unzip
-@exec ln -f %F %B/zipinfo
+@exec ln -sf %f %B/zipinfo
 bin/funzip
 bin/unzipsfx
 bin/zipgrep
