@@ -8,7 +8,7 @@
 PORTNAME=	imlib2
 PORTVERSION=	1.0.4
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.nl.rasterman.com/files/ \
+MASTER_SITES=	http://www.ca.us.rasterman.com/files/ \
 		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	enlightenment
 
