@@ -1,6 +1,6 @@
 # New ports collection makefile for:	py-irclib
 # Date created:				25 April 2001
-# Whom:					Hye-Shik Chang <perky@python.or.kr>
+# Whom:					Hye-Shik Chang
 #
 # $FreeBSD$
 #

@@ -1,3 +1,6 @@
+%%PYTHON_SITELIBDIR%%/ircbot.py
+%%PYTHON_SITELIBDIR%%/ircbot.pyc
+%%PYTHON_SITELIBDIR%%/ircbot.pyo
 %%PYTHON_SITELIBDIR%%/irclib.py
 %%PYTHON_SITELIBDIR%%/irclib.pyc
 %%PYTHON_SITELIBDIR%%/irclib.pyo
