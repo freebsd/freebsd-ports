@@ -4,7 +4,7 @@
 # Date created:         15 Dec 1994
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.50 1997/08/16 10:15:56 ache Exp $
+# $Id: Makefile,v 1.51 1997/08/21 10:17:45 andreas Exp $
 #
 
 DISTNAME=       lynx2.7.1ac-0.54
@@ -14,6 +14,7 @@ MASTER_SITES=   http://sol.slcc.edu/lynx/current/
 
 MAINTAINER=	ache@FreeBSD.ORG
 
+BROKEN=		"doesn't build on -current"
 WRKSRC=         ${WRKDIR}/lynx2-7-1
 GNU_CONFIGURE=  YES
 CONFIGURE_ARGS= --with-screen=ncurses
