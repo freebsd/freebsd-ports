@@ -10,6 +10,7 @@
     SUBDIR += magic
     SUBDIR += mars
     SUBDIR += pcb
+    SUBDIR += qcad
     SUBDIR += sis
     SUBDIR += spice
     SUBDIR += tkgate
