@@ -196,7 +196,7 @@ lib/asterisk/modules/app_enumlookup.so
 lib/asterisk/modules/app_eval.so
 lib/asterisk/modules/app_exec.so
 lib/asterisk/modules/app_festival.so
-lib/asterisk/modules/app_flash.so
+%%WITH_ZAPTEL%%lib/asterisk/modules/app_flash.so
 lib/asterisk/modules/app_forkcdr.so
 lib/asterisk/modules/app_getcpeid.so
 lib/asterisk/modules/app_groupcount.so
@@ -207,7 +207,7 @@ lib/asterisk/modules/app_intercom.so
 lib/asterisk/modules/app_lookupblacklist.so
 lib/asterisk/modules/app_lookupcidname.so
 lib/asterisk/modules/app_macro.so
-lib/asterisk/modules/app_meetme.so
+%%WITH_ZAPTEL%%lib/asterisk/modules/app_meetme.so
 lib/asterisk/modules/app_milliwatt.so
 lib/asterisk/modules/app_mp3.so
 lib/asterisk/modules/app_nbscat.so
@@ -241,13 +241,13 @@ lib/asterisk/modules/app_verbose.so
 lib/asterisk/modules/app_voicemail.so
 lib/asterisk/modules/app_waitforring.so
 lib/asterisk/modules/app_zapateller.so
-lib/asterisk/modules/app_zapbarge.so
-lib/asterisk/modules/app_zapras.so
-lib/asterisk/modules/app_zapscan.so
+%%WITH_ZAPTEL%%lib/asterisk/modules/app_zapbarge.so
+%%WITH_ZAPTEL%%lib/asterisk/modules/app_zapras.so
+%%WITH_ZAPTEL%%lib/asterisk/modules/app_zapscan.so
 lib/asterisk/modules/cdr_csv.so
 lib/asterisk/modules/cdr_manager.so
 lib/asterisk/modules/chan_agent.so
-lib/asterisk/modules/chan_h323.so
+%%WITH_H323%%lib/asterisk/modules/chan_h323.so
 lib/asterisk/modules/chan_iax2.so
 lib/asterisk/modules/chan_local.so
 lib/asterisk/modules/chan_mgcp.so
@@ -258,7 +258,7 @@ lib/asterisk/modules/chan_modem_i4l.so
 lib/asterisk/modules/chan_oss.so
 lib/asterisk/modules/chan_sip.so
 lib/asterisk/modules/chan_skinny.so
-lib/asterisk/modules/chan_zap.so
+%%WITH_ZAPTEL%%lib/asterisk/modules/chan_zap.so
 lib/asterisk/modules/codec_a_mu.so
 lib/asterisk/modules/codec_adpcm.so
 lib/asterisk/modules/codec_alaw.so
@@ -295,6 +295,7 @@ lib/asterisk/modules/res_monitor.so
 lib/asterisk/modules/res_musiconhold.so
 sbin/asterisk
 sbin/astgenkey
+sbin/astman
 sbin/safe_asterisk
 share/asterisk/agi-bin/agi-test.agi
 share/asterisk/agi-bin/eagi-sphinx-test
