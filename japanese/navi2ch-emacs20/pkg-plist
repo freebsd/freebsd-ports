@@ -1,6 +1,3 @@
-@unexec install-info --delete %D/info/navi2ch.info %D/info/dir
-info/navi2ch.info
-@exec install-info %D/info/navi2ch.info %D/info/dir
 %%PORTDOCS%%share/doc/ja/navi2ch/ChangeLog
 %%PORTDOCS%%share/doc/ja/navi2ch/README
 %%PORTDOCS%%share/doc/ja/navi2ch/TODO
