@@ -16,7 +16,8 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 
 LIB_DEPENDS=	ORBit-2.0:${PORTSDIR}/devel/ORBit2 \
-		db3.2:${PORTSDIR}/databases/db3
+		db3.2:${PORTSDIR}/databases/db3 \
+		xml2.5:${PORTSDIR}/textproc/libxml2
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
