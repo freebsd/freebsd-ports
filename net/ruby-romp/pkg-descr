@@ -19,4 +19,4 @@ has many distinct advantages over drb:
   the backtrace to make debugging easier.
 
 Author:	Paul Brannan (cout at rm-f.net)
-WWW:	http://rm-f.net/~cout/ruby/romp/
+WWW:	http://rm-f.net/~cout/code/ruby/romp/
