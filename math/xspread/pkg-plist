@@ -1,0 +1,3 @@
+@cwd /usr/X11R6
+bin/xspread
+man/man1/xspread.1.gz
