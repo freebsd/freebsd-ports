@@ -12,6 +12,7 @@ CATEGORIES=	emulators
 MASTER_SITES=	http://www.aist-nara.ac.jp/~masaki-c/private/unitbase/xsys35/down/
 
 MAINTAINER=	sf@FreeBSD.org
+COMMENT=	AliceSoft System 3.5 on X Window System
 
 USE_REINPLACE=	yes
 USE_AUTOCONF=	yes

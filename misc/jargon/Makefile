@@ -11,6 +11,7 @@ CATEGORIES=	misc
 MASTER_SITES=	http://www.catb.org/~esr/jargon/
 
 MAINTAINER=	sf@FreeBSD.org
+COMMENT=	The famous jargon file
 
 NO_BUILD=	yes
 USE_REINPLACE=	yes
