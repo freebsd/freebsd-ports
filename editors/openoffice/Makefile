@@ -112,18 +112,19 @@ JAVAVM=         ${JDK13DIR}/bin/java
 
 GNU_CONFIGURE=	yes
 USE_AUTOCONF=	yes
-WRKSRC=	${WRKDIR}/oo_1.0.1_src/config_office
+WRKDIR=		${WRKDIRPREFIX}${.CURDIR}/work
+WRKSRC=		${WRKDIR}/oo_1.0.1_src/config_office
 LD_PATH1=	${WRKSRC}/../vos/unxfbsd.pro/lib/:${WRKSRC}/../ucbhelper/unxfbsd.pro/lib/
 LD_PATH=	${LD_PATH1}:${WRKSRC}/../solver/641/unxfbsd.pro/lib/
 .if defined(WITH_DEBUG)
 CFLAGS+=	-g
 .if ${WITH_DEBUG} == 2
-DMAKE=		dmake debug="true"
+BUILD=		build debug="true"
 .else
-DMAKE=		dmake
+BUILD=		build
 .endif
 .else
-DMAKE=		dmake strip="true"
+BUILD=		build strip="true"
 .endif
 
 .if !defined(DISPLAY)
@@ -389,16 +390,16 @@ do-build:
 .endif
 .if !defined(DISPLAY)
 	@cd ${WRKSRC}/.. && DISPLAY=${DISPLAYHACK} PATH="${PATH}:${LOCALBASE}/bin:${LOCALBASE}/sbin" && \
-		tcsh -c 'source FreeBSDEnv.Set && unsetenv TOP && ${DMAKE}'
+		tcsh -c 'source FreeBSDEnv.Set && unsetenv TOP && ${BUILD}'
 	@${CAT} ${WRKDIR}/.Xvfb.pid | xargs kill
 	@${RM} -f ${WRKDIR}/.Xvfb.pid
 .else
 	@cd ${WRKSRC}/.. && DISPLAY=${DISPLAY} PATH="${PATH}:${LOCALBASE}/bin:${LOCALBASE}/sbin" && \
-		tcsh -c 'source FreeBSDEnv.Set && unsetenv TOP && ${DMAKE}'
+		tcsh -c 'source FreeBSDEnv.Set && unsetenv TOP && ${BUILD}'
 .endif
 .if defined(LANG_PKGNAME)
 	@cd ${WRKSRC}/.. && PATH="${PATH}:${LOCALBASE}/bin:${LOCALBASE}/sbin" && \
-		tcsh -c 'source FreeBSDEnv.Set && unsetenv TOP && cd instsetoo/util && ${DMAKE} LANGEXT=${LANGEXT}'
+		tcsh -c 'source FreeBSDEnv.Set && unsetenv TOP && cd instsetoo/util && ${BUILD} LANGEXT=${LANGEXT}'
 .endif
 
 pre-install:
