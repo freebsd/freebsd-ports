@@ -6,11 +6,13 @@
 #
 
 PORTNAME=	blackbox
-PORTVERSION= 	0.61.0
+PORTVERSION=	0.61.1
 CATEGORIES=	x11-wm
 MASTER_SITES=	ftp://portal.alug.org/pub/blackbox/0.6x.x/
 
 MAINTAINER=	patseal@hyperhost.net
+
+MAN1=		blackbox.1 bsetroot.1
 
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
