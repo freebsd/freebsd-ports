@@ -1,10 +1,10 @@
---- libgnome/Makefile.in.orig	Wed Sep 22 16:55:25 1999
-+++ libgnome/Makefile.in	Thu Sep 23 12:21:33 1999
-@@ -169,7 +169,7 @@
+--- libgnome/Makefile.in.orig	Tue Mar 21 11:24:10 2000
++++ libgnome/Makefile.in	Thu Mar 23 17:49:22 2000
+@@ -168,7 +168,7 @@
  
  EXTRA_DIST = parse-path.cP 
  
--libgnome_la_LDFLAGS = -version-info 35:8:3 #-rpath $(libdir)
+-libgnome_la_LDFLAGS = -version-info 35:9:3 #-rpath $(libdir)
 +libgnome_la_LDFLAGS = -version-info 3:0:0 #-rpath $(libdir)
  libgnome_la_LIBADD = $(GLIB_LIBS) -lm $(DL_LIB)
  
