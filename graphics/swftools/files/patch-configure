@@ -1,0 +1,31 @@
+--- configure.orig	Mon Aug 16 11:29:43 2004
++++ configure	Mon Aug 16 11:30:57 2004
+@@ -10269,7 +10269,8 @@
+ cat >>conftest.$ac_ext <<_ACEOF
+ /* end confdefs.h.  */
+ $ac_includes_default
+-#include <$ac_header>
++#include <ft2build.h>
++#include FT_FREETYPE_H
+ _ACEOF
+ rm -f conftest.$ac_objext
+ if { (eval echo "$as_me:$LINENO: \"$ac_compile\"") >&5
+@@ -10313,7 +10314,8 @@
+ cat confdefs.h >>conftest.$ac_ext
+ cat >>conftest.$ac_ext <<_ACEOF
+ /* end confdefs.h.  */
+-#include <$ac_header>
++#include <ft2build.h>
++#include FT_FREETYPE_H
+ _ACEOF
+ if { (eval echo "$as_me:$LINENO: \"$ac_cpp conftest.$ac_ext\"") >&5
+   (eval $ac_cpp conftest.$ac_ext) 2>conftest.er1
+@@ -10413,6 +10415,8 @@
+ echo $ECHO_N "checking whether we can compile the freetype test program... $ECHO_C" >&6
+ 
+     cat > conftest.c << EOF
++#include <ft2build.h>
++#include FT_FREETYPE_H
+ #include <freetype/freetype.h>
+ #include <freetype/ftglyph.h>
+ #include <freetype/ftsnames.h>
