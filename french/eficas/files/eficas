@@ -1,0 +1,11 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# $1 = comm
+# $2 = com0
+# $3 = com1
+# $4 = com2
+
+cd %%EFICASDIR%%/Aster
+exec %%PYTHON_CMD%% eficas_aster.pyo $1 $2 $3 $4
