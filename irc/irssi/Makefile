@@ -1,12 +1,12 @@
 # New ports collection makefile for:	irssi
-# Version required:		0.7.8
+# Version required:		0.7.9
 # Date created:			14 Apr 1999
 # Whom:				Jim Mock <jim@phrantic.phear.net>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/04/30 17:08:24 taoka Exp $
 #
 
-DISTNAME=	irssi-0.7.8
+DISTNAME=	irssi-0.7.9
 CATEGORIES=	net
 MASTER_SITES=	http://www.sicom.fi/~ikioma/irssi/
 
