@@ -11,7 +11,7 @@ CATEGORIES=	biology
 MASTER_SITES=	http://geta.life.uiuc.edu:80/~gary/programs/fastDNAml/
 DISTNAME=	fastDNAml_${PORTVERSION}
 
-MAINTAINER=	mzaki@e-mail.ne.jp
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The faster variant of DNAML, makes phylogenetic trees using maximum likelihood
 
 USE_GMAKE=	yes

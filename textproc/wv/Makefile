@@ -11,7 +11,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	wvware
 
-MAINTAINER=	mzaki@e-mail.ne.jp
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A library and executables to access Microsoft Word files
 
 LIB_DEPENDS=	wmf.2:${PORTSDIR}/graphics/libwmf
