@@ -8,7 +8,7 @@
 PORTNAME=	gnupg
 PORTVERSION=	1.2.0
 CATEGORIES=	security
-MASTER_SITES=	ftp://ftp.gnupg.org/pub/gcrypt/%SUBDIR%/ \
+MASTER_SITES=	ftp://ftp.gnupg.org/gcrypt/%SUBDIR%/ \
 		http://ftp.planetmirror.com/pub/gnupg/%SUBDIR%/ \
 		http://sunsite.dk/pub/security/gcrypt/%SUBDIR%/ \
 		ftp://pgp.iijlab.net/pub/%SUBDIR%/ \
