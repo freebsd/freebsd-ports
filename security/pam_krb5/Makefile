@@ -21,6 +21,8 @@ MAKE_ENV=		PREFIX="${PREFIX}" MANPREFIX="${MANPREFIX}" \
 
 MAN8=			pam_krb5.8
 
+.include <bsd.port.pre.mk>
+
 # Try hard to figure out which Kerberos implementation we should use to
 # build this thing.  There are three possibilities:
 #   Heimdal in the base system -- XXX disabled for now (missing libraries)
@@ -34,11 +36,11 @@ KRB5_IMPL="heimdal"
 .elif defined(HEIMDAL_HOME) && exists(${HEIMDAL_HOME}/include/heim_err.h)
 KRB5BASE=${HEIMDAL_HOME}
 KRB5_IMPL=heimdal
-LIB_DEPENDS+=		krb5.14:${PORTSDIR}/security/heimdal
+LIB_DEPENDS+=		krb5.15:${PORTSDIR}/security/heimdal
 .elif exists(${LOCALBASE}/include/heim_err.h)
 KRB5BASE=${LOCALBASE}
 KRB5_IMPL=heimdal
-LIB_DEPENDS+=		krb5.14:${PORTSDIR}/security/heimdal
+LIB_DEPENDS+=		krb5.15:${PORTSDIR}/security/heimdal
 .elif defined(KRB5_HOME) && exists(${KRB5_HOME}/include/mit-sipb-copyright.h)
 KRB5BASE=${KRB5_HOME}
 KRB5_IMPL=mit
@@ -51,4 +53,4 @@ LIB_DEPENDS+=		krb5.3:${PORTSDIR}/security/krb5
 BROKEN=			"No version of Kerberos is installed."
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
