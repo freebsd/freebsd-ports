@@ -33,6 +33,7 @@
     SUBDIR += pxtools
     SUBDIR += py-MySQL
     SUBDIR += py-PyGreSQL
+    SUBDIR += rdb
     SUBDIR += ruby-postgres
     SUBDIR += sqsh
     SUBDIR += tcl-Mysql
