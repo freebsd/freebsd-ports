@@ -1,0 +1,13 @@
+--- Makefile.in.orig	Wed Jan 12 22:35:56 2005
++++ Makefile.in	Wed Jan 12 22:38:58 2005
+@@ -663,8 +663,8 @@
+ 	${INSTALL_DIRS} ${DESTDIR}/${confdir}
+ 	@list='${CONFS}'; for p in $$list; do \
+ 	  if test -f ${SRC_CONFDIR}/$$p; then \
+-	    ${ECHO} "  ${INSTALL_DATA} ${SRC_CONFDIR}/$$p ${DESTDIR}/${confdir}"; \
+-	    ${INSTALL_DATA} ${SRC_CONFDIR}/$$p ${DESTDIR}/${confdir}; \
++	    ${ECHO} "  ${INSTALL_DATA} ${SRC_CONFDIR}/$$p-sample ${DESTDIR}/${confdir}"; \
++	    ${INSTALL_DATA} ${SRC_CONFDIR}/$$p ${DESTDIR}/${confdir}/$$p-sample; \
+ 	  else :; fi; \
+ 	done
+ 

@@ -1,0 +1,123 @@
+bin/bnbot
+bin/bncdb
+bin/bnchat
+bin/bnftp
+bin/bni2tga
+bin/bnibuild
+bin/bniextract
+bin/bnilist
+bin/bnpass
+bin/bnstat
+bin/tgainfo
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL.unix
+%%PORTDOCS%%%%DOCSDIR%%/PORTS
+%%PORTDOCS%%%%DOCSDIR%%/README.fdwatch
+%%PORTDOCS%%%%DOCSDIR%%/README.storage
+%%PORTDOCS%%%%DOCSDIR%%/bnmotd.txt
+etc/pvpgn/ad.conf-sample
+etc/pvpgn/address_translation.conf-sample
+etc/pvpgn/anongame_infos.conf-sample
+etc/pvpgn/autoupdate.conf-sample
+etc/pvpgn/bnalias.conf-sample
+etc/pvpgn/bnban.conf-sample
+etc/pvpgn/bnetd.conf-sample
+etc/pvpgn/bnetd_default_user.cdb-sample
+etc/pvpgn/bnetd_default_user.plain-sample
+etc/pvpgn/bnhelp.conf-sample
+etc/pvpgn/bnissue.txt-sample
+etc/pvpgn/bnmaps.conf-sample
+etc/pvpgn/bnmotd.txt-sample
+etc/pvpgn/bnxpcalc.conf-sample
+etc/pvpgn/bnxplevel.conf-sample
+etc/pvpgn/channel.conf-sample
+etc/pvpgn/command_groups.conf-sample
+etc/pvpgn/d2cs.conf-sample
+etc/pvpgn/d2dbs.conf-sample
+etc/pvpgn/d2server.ini-sample
+etc/pvpgn/news.txt-sample
+etc/pvpgn/realm.conf-sample
+etc/pvpgn/sql_DB_layout.conf-sample
+etc/pvpgn/supportfile.conf-sample
+etc/pvpgn/topics.conf-sample
+etc/pvpgn/tournament.conf-sample
+etc/pvpgn/versioncheck.conf-sample
+etc/rc.d/bnetd%%RC_SUFX%%
+sbin/bnetd
+sbin/bntrackd
+sbin/d2cs
+sbin/d2dbs
+share/pvpgn/files/IX86ver1.mpq
+share/pvpgn/files/PMACver1.mpq
+share/pvpgn/files/WAR3IX86.mpq
+share/pvpgn/files/XMACver1.mpq
+share/pvpgn/files/ad000001.mng
+share/pvpgn/files/ad000001.smk
+share/pvpgn/files/ad000004.mng
+share/pvpgn/files/bnserver-D2DV.ini
+share/pvpgn/files/bnserver-D2XP.ini
+share/pvpgn/files/bnserver-WAR3.ini
+share/pvpgn/files/bnserver.ini
+share/pvpgn/files/chathelp-war3-default.txt
+share/pvpgn/files/chathelp-war3-enUS.txt
+share/pvpgn/files/chathelp-war3-frFR.txt
+share/pvpgn/files/chathelp-war3-ruRU.txt
+share/pvpgn/files/chathelp-war3-zhCN.txt
+share/pvpgn/files/icons-WAR3.bni
+share/pvpgn/files/icons.bni
+share/pvpgn/files/icons_STAR.bni
+share/pvpgn/files/matchmaking-war3-default.dat
+share/pvpgn/files/matchmaking-war3-enUS.dat
+share/pvpgn/files/newaccount-default.txt
+share/pvpgn/files/newaccount-enUS.txt
+share/pvpgn/files/newbie.save
+share/pvpgn/files/termsofservice-default.txt
+share/pvpgn/files/termsofservice-enUS.txt
+share/pvpgn/files/tos-unicode_BRA.txt
+share/pvpgn/files/tos-unicode_CHI.txt
+share/pvpgn/files/tos-unicode_DEU.txt
+share/pvpgn/files/tos-unicode_ENU.txt
+share/pvpgn/files/tos-unicode_ESP.txt
+share/pvpgn/files/tos-unicode_FRA.txt
+share/pvpgn/files/tos-unicode_HAN.txt
+share/pvpgn/files/tos-unicode_ITA.txt
+share/pvpgn/files/tos-unicode_JPN.txt
+share/pvpgn/files/tos-unicode_KOR.txt
+share/pvpgn/files/tos-unicode_POL.txt
+share/pvpgn/files/tos-unicode_POR.txt
+share/pvpgn/files/tos-unicode_RUS.txt
+share/pvpgn/files/tos-unicode_SIN.txt
+share/pvpgn/files/tos-unicode_USA.txt
+share/pvpgn/files/tos.txt
+share/pvpgn/files/tos_BRA.txt
+share/pvpgn/files/tos_CHI.txt
+share/pvpgn/files/tos_DEU.txt
+share/pvpgn/files/tos_ENU.txt
+share/pvpgn/files/tos_ESP.txt
+share/pvpgn/files/tos_FRA.txt
+share/pvpgn/files/tos_HAN.txt
+share/pvpgn/files/tos_ITA.txt
+share/pvpgn/files/tos_JPN.txt
+share/pvpgn/files/tos_KOR.txt
+share/pvpgn/files/tos_POL.txt
+share/pvpgn/files/tos_POR.txt
+share/pvpgn/files/tos_RUS.txt
+share/pvpgn/files/tos_SIN.txt
+share/pvpgn/files/tos_USA.txt
+@dirrm share/pvpgn/bak/charinfo
+@dirrm share/pvpgn/bak/charsave
+@dirrm share/pvpgn/bak
+@dirrm share/pvpgn/bnmail
+@dirrm share/pvpgn/chanlogs
+@dirrm share/pvpgn/charinfo
+@dirrm share/pvpgn/charsave
+@dirrm share/pvpgn/clans
+@dirrm share/pvpgn/files
+@dirrm share/pvpgn/ladders
+@dirrm share/pvpgn/reports
+@dirrm share/pvpgn/status
+@dirrm share/pvpgn/teams
+@dirrm share/pvpgn/users
+@dirrm share/pvpgn/userscdb
+@unexec rmdir %D/share/pvpgn 2>/dev/null || true
+@dirrm etc/pvpgn
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

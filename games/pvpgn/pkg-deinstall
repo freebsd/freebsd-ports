@@ -1,0 +1,24 @@
+#!/bin/sh
+
+if [ "$2" != "POST-DEINSTALL" ]; then
+    exit 0
+fi
+
+USER=bnetd
+LOGDIR=/var/log/pvpgn
+PIDDIR=/var/run/pvpgn
+
+if pw usershow "${USER}" 2>/dev/null 1>&2; then
+	echo "To delete PvPGN user permanently, use 'pw userdel ${USER}'"
+fi
+
+if pw groupshow "${USER}" 2>/dev/null 1>&2; then
+	echo "To delete PvPGN group permanently, use 'pw groupdel ${USER}'"
+fi
+
+rm -Rf ${PIDDIR}
+
+echo "If you wish to delete pvpgn data and log files, "
+echo "remove '%%PVPGN_DIR%%' and '${LOGDIR}' directories."
+
+exit 0
