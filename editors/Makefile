@@ -27,6 +27,7 @@
     SUBDIR += dte
     SUBDIR += e3
     SUBDIR += e93
+    SUBDIR += edith
     SUBDIR += elvis
     SUBDIR += em
     SUBDIR += emacs

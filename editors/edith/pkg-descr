@@ -1,0 +1,18 @@
+Edith Pro is a high quality user-friendly text editing system
+that combines a modern, colourful multi-window user interface 
+with large basic editing flexibility. It is intended for those
+who want a powerful editing tool, but are not prepared to
+spend a wealth of energy into learning and configuring their 
+applications.
+
+Edith Pro concentrates on editing features that are universal
+in applicability; as such it is not a programmable editor, but
+it has many well thought-out elementary features that allow
+efficient text editing for arbitrary types of text.
+
+This port uses the Linux binary compatibility.
+
+WWW: http://www.zfc.nl
+
+- Christian Brueffer
+chris@unixpages.org
