@@ -5,5 +5,5 @@ if [ $# -eq 0 -o x$1 = xstart ]; then
    fi
 fi
 if [ x$1 = xstop ]; then
-	[ -x !!PREFIX!!/news/bin/ctlinnd stop machine is going down
+	[ -x !!PREFIX!!/news/bin/ctlinnd shutdown machine is going down
 fi
