@@ -1,9 +1,9 @@
-OpenOffice.org Build 1.1.0 Personal Install How-To
+OpenOffice.org Build 1.1.2 Personal Install How-To
 
 Written by:	Martin Blapp <mbr@freebsd.org>
 
 OpenOffice.org 1.1Beta will soon been installed in
-${PREFIX}/OpenOffice.org-1.1.0
+${PREFIX}/OpenOffice.org-1.1.2
 
 1 User installation
 -------------------
@@ -29,27 +29,16 @@ There are some wrappers installed for fast startup.
 Add "${PREFIX}/bin/" to your PATH and you will be able
 to use them.
 
-${PREFIX}/bin/openoffice-1.1
-${PREFIX}/bin/openoffice-1.1-sagenda
-${PREFIX}/bin/openoffice-1.1-scalc
-${PREFIX}/bin/openoffice-1.1-sdraw
-${PREFIX}/bin/openoffice-1.1-setup
-${PREFIX}/bin/openoffice-1.1-sfax
-${PREFIX}/bin/openoffice-1.1-simpress
-${PREFIX}/bin/openoffice-1.1-spadmin
-${PREFIX}/bin/openoffice-1.1-sweb
-${PREFIX}/bin/openoffice-1.1-swriter
-
-OO.org does need $LANG to be set to a suitable value.
-If it is not already set, a default value is chosen.
-Some old X-Servers before XFree86 4.2 do not like the
-western locale with Euro symbol (ISO_8859-15).
-You should ignore the warning message then or upgrade to
-to a more recent X-server.
-
-If you have chosen US-ASCII as locale, you cannot load
-and save documents with special characters and these
-characters are also not available in swriter and scalc.
+${PREFIX}/bin/openoffice-1.1.2
+${PREFIX}/bin/openoffice-1.1.2-sagenda
+${PREFIX}/bin/openoffice-1.1.2-scalc
+${PREFIX}/bin/openoffice-1.1.2-sdraw
+${PREFIX}/bin/openoffice-1.1.2-setup
+${PREFIX}/bin/openoffice-1.1.2-sfax
+${PREFIX}/bin/openoffice-1.1.2-simpress
+${PREFIX}/bin/openoffice-1.1.2-spadmin
+${PREFIX}/bin/openoffice-1.1.2-sweb
+${PREFIX}/bin/openoffice-1.1.2-swriter
 
 3 Setup problems (FreeBSD < 4.7-RELEASE only)
 ---------------------------------------------
@@ -68,15 +57,3 @@ you need the following patch. You will see this
 bug only if your OS is older than FreeBSD 4.7-RELEASE.
 
 http://people.freebsd.org/~mbr/ooo/rtld-symlookup.diff
-
-5 Crash at startup after using a localized version
---------------------------------------------------
-
-If you had installed the english version, and then have
-switched to a localized OO.org, it will crash instantly.
-
-To solve this issue, please remove the already installed
-OpenOffice.org1.1Beta dir in your homedir and remove the
-appropriate entry from ".sversionrc". After you have done
-this, redo the user installation and the problem will
-go away.
