@@ -6,41 +6,37 @@
 #
 
 PORTNAME=	mup
-PORTVERSION=	4.5
+PORTVERSION=	4.6
 PORTREVISION=	0
 CATEGORIES=	print audio
 MASTER_SITES=	ftp://ftp.arkkra.com/pub/unix/
-DISTFILES=	mup45src.tar.gz mup45doc.tar.gz
+DISTFILES=	mup46src.tar.gz mup46doc.tar.gz
 
 MAINTAINER=	darius@dons.net.au
 COMMENT=	A shareware program for typesetting music
 
-BROKEN=		Does not fetch, will be removed after Feb 2
-
-BUILD_WRKSRC=	${WRKSRC}
-NO_WRKSUBDIR=	yes
 USE_XLIB=	yes
+MAN1=		mup.1 mkmupfnt.1 mupdisp.1 mupprnt.1
 
 post-extract:
-	${CP} ${FILESDIR}/Makefile ${BUILD_WRKSRC}/Makefile
-	${CP} ${FILESDIR}/Makefile.mup ${BUILD_WRKSRC}/mup/Makefile
-	${CP} ${FILESDIR}/Makefile.fnt ${BUILD_WRKSRC}/mkmupfnt/Makefile
-	${CP} ${FILESDIR}/Makefile.disp ${BUILD_WRKSRC}/mupdisp/Makefile
+	${CP} ${FILESDIR}/Makefile ${WRKSRC}/Makefile
+	${CP} ${FILESDIR}/Makefile.mup ${WRKSRC}/mup/Makefile
+	${CP} ${FILESDIR}/Makefile.fnt ${WRKSRC}/mkmupfnt/Makefile
+	${CP} ${FILESDIR}/Makefile.disp ${WRKSRC}/mupdisp/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/mup/mup ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/mkmupfnt/mkmupfnt ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/mupdisp/mupdisp ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/mupprnt ${PREFIX}/bin
-	${MKDIR} ${PREFIX}/share/doc/mup
+	${INSTALL_MAN} ${WRKSRC}/docs/mup.1 ${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/docs/mkmupfnt.1 ${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/docs/mupdisp.1 ${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/docs/mupprnt.1 ${PREFIX}/man/man1
 .if !defined(NOPORTDOCS)
-	tar -cf - -C ${WRKSRC} overview.txt register.txt README0 README1 mupfeat.txt faq.txt license.txt uguide uguide.ps | tar -C ${PREFIX}/share/doc/mup -xf -
-	${INSTALL_MAN} ${WRKSRC}/mup.1 ${PREFIX}/man/man1
-	${INSTALL_MAN} ${WRKSRC}/mkmupfnt.1 ${PREFIX}/man/man1
-	${INSTALL_MAN} ${WRKSRC}/mupdisp.1 ${PREFIX}/man/man1
-	${INSTALL_MAN} ${WRKSRC}/mupprnt.1 ${PREFIX}/man/man1
+	${MKDIR} ${DOCSDIR}
+	tar -cf - -C ${WRKSRC}/docs/ overview.txt register.txt README1 mupfeat.txt faq.txt license.txt uguide uguide.ps | tar -C ${DOCSDIR} -xf -
+	${INSTALL_DATA} ${WRKSRC}/README0 ${DOCSDIR}
 .endif
-
-MAN1=	mup.1 mkmupfnt.1 mupdisp.1 mupprnt.1
 
 .include <bsd.port.mk>
