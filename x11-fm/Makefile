@@ -10,7 +10,7 @@
     SUBDIR += fsv
     SUBDIR += gnomemc
     SUBDIR += jafm
-    SUBDIR += mfm
+    SUBDIR += mtoolsfm
     SUBDIR += nautilus
     SUBDIR += offix-files
     SUBDIR += rox-base
