@@ -3,7 +3,7 @@
 # Date created:		So  21 Jun 1998 16:09:39 CEST
 # Whom:			Stefan Herrmann <stefan@asterix.webaffairs.net>
 #
-# $Id: Makefile,v 1.72 1999/04/11 22:23:30 dirk Exp $
+# $Id: Makefile,v 1.73 1999/04/13 15:40:20 dirk Exp $
 #
 
 DISTNAME=	apache_${VERSION_APACHE}
@@ -93,6 +93,9 @@ pre-fetch:
 .if !defined(BATCH)
 	@${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/configure.php
 .endif
+
+post-extract:
+	@${LN} -s php-${VERSION_PHP3} ${WRKDIR}/php3
 
 pre-configure:
 	@cd ${WRKSRC} \
