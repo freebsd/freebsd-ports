@@ -1,0 +1,22 @@
+======================================================================
+This Java VM will attempt to detect the number of processors and other
+system information by accessing files in linux's procfs.  You must
+install the Linux emulation procfs filesystem for this to work
+correctly.  The JVM will core dump otherwise.  This can be 
+accomplished by adding the following line to your /etc/fstab file:
+
+ linprocfs   /compat/linux/proc   linprocfs   rw   0  0
+
+and then, as root, executing the commands:
+
+kldload linprocfs
+mount /compat/linux/proc 
+
+Also, you must use a kernel with the option USER_LDT enabled.  Note
+that this option is not enabled in the GENERIC kernel, so you will
+need to compile a kernel with this option if you haven't already
+done so.
+
+NOTE: The JVM does not currently exit correctly unless the application
+      has a specific call to System.exit().
+======================================================================

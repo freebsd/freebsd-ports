@@ -1,0 +1,6 @@
+IBM implementation of the Java 2 Standard Edition SDK,
+version 1.4 for Linux.  It contains IBM's just-in-time
+compiler, enhanced with a unique Mixed Mode Interpreter
+and a re-engineered Java 2 virtual machine.
+
+WWW: https://www6.software.ibm.com/dl/lxdk/lxdk-p
