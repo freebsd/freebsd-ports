@@ -7,7 +7,7 @@
 
 PORTNAME=	gbib
 PORTVERSION=	0.1.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases editors gnome
 MASTER_SITES=	ftp://ftp.seul.org/pub/gbib/src/ \
 		http://www.unixpages.org/distfiles/
@@ -41,7 +41,8 @@ post-patch:
 		's|CXXFLAGS = -g|CXXFLAGS = @CXXFLAGS@|g ; \
 		 s|^exec_prefix =.*$$|exec_prefix = @exec_prefix@|g ; \
 		 s|^datadir =.*$$|datadir = @datadir@|g ; \
-		 s|^localedir =.*$$|localedir = $$(prefix)/share/locale|g'
+		 s|^localedir =.*$$|localedir = $$(prefix)/share/locale|g ; \
+		 s|^gnulocaledir =.*$$|gnulocaledir = $$(prefix)/share/locale|g'
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
