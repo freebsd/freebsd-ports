@@ -15,6 +15,7 @@ DISTNAME=	${PORTNAME}-2.1_4
 
 MAINTAINER=	ports@FreeBSD.org
 
+USE_REINPLACE=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--bindir=${PREFIX}/bin --datadir=${PREFIX}/share/elvis
 MAN1=		elvis.1 elvtags.1 ref.1
@@ -30,7 +31,7 @@ pre-fetch:
 .endif
 
 pre-configure:
-	@${PERL} -pi -e 's|%%X11BASE%%|${X11BASE}|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|%%X11BASE%%|${X11BASE}|g' ${WRKSRC}/configure
 
 do-install:
 .for file in elvis elvtags ref

@@ -13,11 +13,12 @@ DISTNAME=	ue400dev
 
 MAINTAINER=	ports@FreeBSD.org
 
+USE_REINPLACE=	yes
 NO_WRKSUBDIR=	yes
 USE_ZIP=	yes
 EXTRACT_BEFORE_ARGS=	-Laq
 
 post-patch:
-	@${PERL} -pi -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/src/*.c
+	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/src/*.c
 
 .include <bsd.port.mk>

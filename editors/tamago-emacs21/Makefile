@@ -22,6 +22,7 @@ MAINTAINER=	ports@FreeBSD.org
 BUILD_DEPENDS=	emacs-${EMACS_VER}:${PORTSDIR}/editors/${EMACS_PORT_NAME}
 RUN_DEPENDS=	emacs-${EMACS_VER}:${PORTSDIR}/editors/${EMACS_PORT_NAME}
 
+USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
@@ -31,7 +32,7 @@ ELISPDIR=	${PREFIX}/${EMACS_LIBDIR_WITH_VER}/site-lisp
 PLIST_SUB=	ELISPDIR="${EMACS_LIBDIR_WITH_VER}/site-lisp"
 
 pre-configure:
-	@${PERL} -pi -e 's|emacs/site-lisp|${EMACS_NAME}/${EMACS_VER}/site-lisp|g' \
+	@${REINPLACE_CMD} -e 's|emacs/site-lisp|${EMACS_NAME}/${EMACS_VER}/site-lisp|g' \
 	    ${WRKSRC}/configure
 
 .include <bsd.port.mk>
