@@ -13,14 +13,16 @@ MASTER_SITES=	ftp://ftp.openal.org/
 MAINTAINER=	ports@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/${PORTNAME}/linux
+
+USE_GMAKE=	yes
 USE_AUTOCONF=	yes
-GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 
 post-patch:
-	for file in $$(find ${WRKSRC} -name Makefile.in); \
-	do \
-		perl -pi -e 's/-g -c/-c/g' $${file}; \
-	done
+	@find ${WRKSRC} -name 'Makefile.in' | xargs ${PERL} -pi -e 's/-g -c/-c/g'
+
+post-install:
+	${INSTALL_DATA} ${WRKSRC}/doc/openal.info ${PREFIX}/info
+	@install-info ${PREFIX}/info/openal.info ${PREFIX}/info/dir
 
 .include <bsd.port.mk>

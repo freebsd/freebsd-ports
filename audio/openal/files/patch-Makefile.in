@@ -1,0 +1,42 @@
+--- Makefile.in.orig	Sun Sep  3 17:40:32 2000
++++ Makefile.in	Fri Oct 13 05:50:01 2000
+@@ -1,4 +1,5 @@
+ INSTALL=@INSTALL@
++INSTALL_DATA=@INSTALL_DATA@
+ LN_S=@LN_S@
+ DESTDIR=@prefix@/
+ DESTINC=$(DESTDIR)include
+@@ -38,20 +39,19 @@
+ 	$(INSTALL) -d -m 755 $(DESTINC)
+ 	$(INSTALL) -d -m 755 $(DESTINC)/AL
+ 	$(INSTALL) -d -m 755 $(DESTLIB)
+-	$(INSTALL) -m 755 src/libopenal.a $(DESTLIB)
+-	$(INSTALL) -m 755 src/libopenal.so.$(VERSION) $(DESTLIB)
+-	$(LN_S) -f $(DESTLIB)/libopenal.so.$(VERSION) $(DESTLIB)/libopenal.so.$(MAJOR_VERSION)
+-	$(LN_S) -f $(DESTLIB)/libopenal.so.$(VERSION) $(DESTLIB)/libopenal.so
+-	$(INSTALL) -m 444 ../include/AL/al.h $(DESTINC)/AL
+-	$(INSTALL) -m 444 ../include/AL/alc.h $(DESTINC)/AL
+-	$(INSTALL) -m 444 ../include/AL/alu.h $(DESTINC)/AL
+-	$(INSTALL) -m 444 ../include/AL/alut.h $(DESTINC)/AL
+-	$(INSTALL) -m 444 ../include/AL/altypes.h $(DESTINC)/AL
+-	$(INSTALL) -m 444 ../include/AL/alctypes.h $(DESTINC)/AL
+-	$(INSTALL) -m 444 ../include/AL/alutypes.h $(DESTINC)/AL
+-	$(INSTALL) -m 444 ../include/AL/aluttypes.h $(DESTINC)/AL
+-	$(INSTALL) -m 444 include/AL/alkludge.h $(DESTINC)/AL
+-	$(INSTALL) -m 444 include/AL/alkludgetypes.h $(DESTINC)/AL
++	$(INSTALL_DATA) src/libopenal.a $(DESTLIB)
++	$(INSTALL_DATA) src/libopenal.so.$(MAJOR_VERSION) $(DESTLIB)
++	$(LN_S) -f $(DESTLIB)/libopenal.so.$(MAJOR_VERSION) $(DESTLIB)/libopenal.so
++	$(INSTALL_DATA) ../include/AL/al.h $(DESTINC)/AL
++	$(INSTALL_DATA) ../include/AL/alc.h $(DESTINC)/AL
++	$(INSTALL_DATA) ../include/AL/alu.h $(DESTINC)/AL
++	$(INSTALL_DATA) ../include/AL/alut.h $(DESTINC)/AL
++	$(INSTALL_DATA) ../include/AL/altypes.h $(DESTINC)/AL
++	$(INSTALL_DATA) ../include/AL/alctypes.h $(DESTINC)/AL
++	$(INSTALL_DATA) ../include/AL/alutypes.h $(DESTINC)/AL
++	$(INSTALL_DATA) ../include/AL/aluttypes.h $(DESTINC)/AL
++	$(INSTALL_DATA) include/AL/alkludge.h $(DESTINC)/AL
++	$(INSTALL_DATA) include/AL/alkludgetypes.h $(DESTINC)/AL
+ 
+ configure: configure.in
+ 	@echo "configure.in newer than configure...Please re-./configure"
