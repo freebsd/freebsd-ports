@@ -21,8 +21,6 @@ CONFIGURE_TARGET=
 CONFIGURE_ARGS+=	 --disable-fast-perl \
 		--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
-.include <bsd.port.pre.mk>
-
 .if defined(WITHOUT_KDE)
 CONFIGURE_ARGS+=	--disable-kde --enable-mt
 USE_REINPLACE=	yes
@@ -35,4 +33,4 @@ post-patch:
 	${REINPLACE_CMD} -e "s,qtlib=\"qt\",qtlib=\"qt-mt -pthread\"," ${WRKSRC}/configure
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
