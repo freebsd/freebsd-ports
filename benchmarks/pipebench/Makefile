@@ -11,7 +11,7 @@ PORTVERSION=	0.40
 CATEGORIES=	benchmarks
 MASTER_SITES=	ftp://ftp.habets.pp.se/pub/synscan/
 
-MAINTAINER=	mich@freebsdcluster.org
+MAINTAINER=	mich@FreeBSD.org
 COMMENT=	Pipebench shows current throughput/amount of data through a pipe
 
 CFLAGS+=	-w -pedantic

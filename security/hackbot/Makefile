@@ -11,7 +11,7 @@ CATEGORIES=	security
 MASTER_SITES=	http://ws.obit.nl/hackbot/
 EXTRACT_SUFX=   .tgz
 
-MAINTAINER=	mich@freebsdcluster.org
+MAINTAINER=	mich@FreeBSD.org
 COMMENT=	A host exploration tool and bannergrabber
 
 USE_REINPLACE=	YES

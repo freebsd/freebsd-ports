@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.seekrut.com/rk/
 DISTNAME=	${PORTNAME}
 DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	mich@freebsdcluster.org
+MAINTAINER=	mich@FreeBSD.org
 COMMENT=	Quick display of FreeBSD port descriptions
 
 USE_PYTHON=	YES

@@ -11,7 +11,7 @@ PORTVERSION=	2.1
 CATEGORIES=	news
 MASTER_SITES=	http://newspost.unixcab.org/download/
 
-MAINTAINER=	mich@freebsdcluster.org
+MAINTAINER=	mich@FreeBSD.org
 COMMENT=	Newspost is a full-featured USEnet binary autoposter
 
 ALL_TARGET=	main

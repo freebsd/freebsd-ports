@@ -15,7 +15,7 @@ MASTER_SITES=	http://freebsdcluster.org/~mich/software/ \
 MASTER_SITE_SUBDIR=	${PORTNAME}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	mich@freebsdcluster.org
+MAINTAINER=	mich@FreeBSD.org
 COMMENT=	Cisco Discovery Protocol Reporter
 
 CFLAGS+=	-ggdb

@@ -11,7 +11,7 @@ PORTVERSION=	0.2.2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.teaser.fr/~amajorel/wtail/
 
-MAINTAINER=	mich@freebsdcluster.org
+MAINTAINER=	mich@FreeBSD.org
 COMMENT=	Wtail does the equivalent of tail -f on several files at once
 
 do-install:

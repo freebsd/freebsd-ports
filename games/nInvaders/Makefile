@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	ninvaders
 DISTNAME=	ninvaders${PORTVERSION}
 
-MAINTAINER=	mich@freebsdcluster.org
+MAINTAINER=	mich@FreeBSD.org
 COMMENT=	The nIvaders game is a Space Invaders clone for ncurses
 
 WRKSRC=		${WRKDIR}/ninvaders-${PORTVERSION}

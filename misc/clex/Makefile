@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.clex.sk/download/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
 
-MAINTAINER=	mich@freebsdcluster.org
+MAINTAINER=	mich@FreeBSD.org
 COMMENT=	A commandline file manager
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

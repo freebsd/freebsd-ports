@@ -13,7 +13,7 @@ MASTER_SITES=	http://belnet.dl.sourceforge.net/sourceforge/cvsdelta/ \
 		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	mich@freebsdcluster.org
+MAINTAINER=	mich@FreeBSD.org
 COMMENT=	Cvsdelta summarizes differences between local and in-cvs files
 
 USE_RUBY=	yes
