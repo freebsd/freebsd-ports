@@ -6,27 +6,27 @@
 #
 
 PORTNAME=	libsidplay2
-PORTVERSION=	2.0.7
-PORTREVISION=	1
+PORTVERSION=	2.1.0
 CATEGORIES=	audio emulators
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	sidplay2
-DISTNAME=	${PORTNAME:S/2//}-${PORTVERSION}-5
-EXTRACT_SUFX=	.tgz
+DISTNAME=	sidplay-libs-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	resid.2:${PORTSDIR}/audio/resid
+LD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
+RUN_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
 
-WRKSRC=		${WRKDIR}/${PORTNAME:S/2//}-${PORTVERSION}
-
+USE_REINPLACE=	yes
 USE_GMAKE=	yes
-USE_LIBTOOL=	yes
-CONFIGURE_ARGS=	--with-resid-includes=${LOCALBASE}/include \
-		--with-resid-library=${LOCALBASE}/lib
+GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 INSTALLS_SHLIB=	yes
 
 post-patch:
-	@${CHMOD} +rw ${WRKSRC}/${CONFIGURE_SCRIPT}
+	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
+		's|[(]libdir[)]/pkgconfig|(prefix)/libdata/pkgconfig|g'
+	@${REINPLACE_CMD} -e 's|<malloc\.h>|<stdlib.h>|g' \
+		${WRKSRC}/libsidutils/src/ini/ini.cpp
 
 .include <bsd.port.mk>
