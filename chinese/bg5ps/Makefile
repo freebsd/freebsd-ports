@@ -13,7 +13,6 @@ DISTNAME=	bg5ps-1.3.0
 
 MAINTAINER=	keith@FreeBSD.org
 
-USE_GMAKE=	yes
 USE_FREETYPE=	yes
 USE_PYTHON=	yes
 
