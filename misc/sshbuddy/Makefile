@@ -8,15 +8,15 @@
 PORTNAME=	sshbuddy
 PORTVERSION=	1.05
 CATEGORIES=	misc
-MASTER_SITES=	http://topcu.linux.tucows.com/files/x11/network/
-DISTFILES=	${PORTNAME}${PORTVERSION}${EXTRACT_SUFX}
+MASTER_SITES=	http://topcu.linux.tucows.com/files/x11/network/ \
+		http://www.linuxmafia.com/pub/linux/security/sshbuddy/ \
+		http://www.linuxberg.at/files/x11/network/
 
 MAINTAINER=	ports@freebsd.org
 
 RUN_DEPENDS=	expectk:${PORTSDIR}/lang/expect
 
 NO_BUILD=	yes
-WRKSRC=		${WRKDIR}/beta1.05
 
 do-install:
 		${INSTALL_SCRIPT} ${WRKSRC}/sshbuddy.expk ${PREFIX}/bin/sshbuddy
