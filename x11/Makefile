@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.150 1997/08/25 14:10:09 itojun Exp $
+# $Id: Makefile,v 1.151 1997/08/31 17:14:08 max Exp $
 #
 
     SUBDIR += FWF
@@ -18,6 +18,7 @@
     SUBDIR += emu
     SUBDIR += enlightenment
     SUBDIR += etlfonts
+    SUBDIR += explorer
     SUBDIR += fbsd-icons
     SUBDIR += filerunner
     SUBDIR += freefonts
