@@ -1,6 +1,6 @@
 --- Makefile.PL.orig	Tue Mar 12 22:07:07 2002
-+++ Makefile.PL	Thu May 16 11:01:05 2002
-@@ -9,14 +9,24 @@
++++ Makefile.PL	Thu May 16 11:52:08 2002
+@@ -9,14 +9,28 @@
  # FP extensions 5.0 from Martin Blapp <mbr@freebsd.org>
  #
  
@@ -9,6 +9,10 @@
 +$prefix= $ENV{PREFIX};
 +if (!$prefix) {
 +	$prefix = "/usr/local/";
++} else {
++	if ($prefix =~ /^(.*?)[\/]{1,}$/) {
++		$prefix = $1;
++	}
 +}
 +
 +$ostype=`uname`;
@@ -30,7 +34,7 @@
      print "If you don't know, enter the word 'findit'. I will try to look\n";
      print "for you... but it will take a few minutes.\n";
      print "Your choice: ";
-@@ -121,8 +131,8 @@
+@@ -121,8 +135,8 @@
  # Check the user for sanity
  # Should be 48 for Mandrake, 80 for BSD
  
@@ -41,7 +45,7 @@
  } else { $defaultid=99; }
  
  if ($uid < $defaultid) {
-@@ -162,7 +172,8 @@
+@@ -162,7 +176,8 @@
  $_=~ s|"\$\(fpstatic_bin\)|\\\\\"$sbindir\/fpstatic\\\\|;
  $_=~ s|\$\(httpdconf\)|$httpdconf|;
  $_=~ s|\$\(libexecdir\)|$libexecdir|;

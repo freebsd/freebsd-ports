@@ -1,13 +1,6 @@
---- Makefile.in	Tue Mar 12 22:07:06 2002
-+++ Makefile.in	Thu May 16 11:00:58 2002
-@@ -16,14 +16,14 @@
- DEF=	-DFPEXEC_BIN=\"$(fpexec_bin)\" \
- 	-DFPSTATIC_BIN=\"$(fpstatic_bin)\"
- 
--DEF2=	-DFP_HTTPD_USER=\"$(fpexec_uidcaller)\" \
-+DeEF2=	-DFP_HTTPD_USER=\"$(fpexec_uidcaller)\" \
- 	-DFP_UID_MIN=$(fpexec_uidmin) \
- 	-DFP_GID_MIN=$(fpexec_gidmin) \
+--- Makefile.in.orig	Tue Mar 12 22:07:06 2002
++++ Makefile.in	Thu May 16 11:27:06 2002
+@@ -22,8 +22,9 @@
  	-DFP_LOG_EXEC=\"$(fpexec_logexec)\" \
  	-DFP_USERDIR_SUFFIX=\"$(fpexec_userdir)\" \
  	-DFP_DOC_ROOT=\"$(fpexec_docroot)\" \
@@ -15,6 +8,7 @@
 -	-DFPDIR=\"/usr/local/frontpage/version5.0/exes\" \
 +	-DFP_SAFE_PATH=\"$(prefix)/bin:/usr/bin:/bin\" \
 +	-DFPDIR=\"$(prefix)/frontpage/version5.0/exes\" \
++	-DPREFIX=\"$(prefix)\" \
  	-DFP_USER=\"bin\" \
  	-DFP_GROUP=\"bin\" \
  	-DFP_HTACCESS=\".htaccess\" \
