@@ -32,6 +32,51 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="2797b27a-f55b-11d8-81b0-000347a4fa7d">
+    <topic>kdelibs -- konqueror cross-domain cookie injection</topic>
+    <affects>
+      <package>
+        <name>kdelibs</name>
+        <range><lt>3.2.3_3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>According to a KDE Security Advisory:</p>
+	<blockquote cite="http://www.kde.org/info/security/advisory-20040823-1.txt">
+          <p>WESTPOINT internet reconnaissance services alerted the
+            KDE security team that the KDE web browser Konqueror
+            allows websites to set cookies for certain country
+            specific secondary top level domains.</p>
+          <p>Web sites operating under the affected domains can
+           set HTTP cookies in such a way that the Konqueror web
+           browser will send them to all other web sites operating
+           under the same domain.  A malicious website can use
+           this as part of a session fixation attack. See e.g.
+           http://www.acros.si/papers/session_fixation.pdf</p>
+         <p>Affected are all country specific secondary top level
+          domains that use more than 2 characters in the secondary
+          part of the domain name and that use a secondary part other
+          than com, net, mil, org, gov, edu or int. Examples of
+          affected domains are .ltd.uk, .plc.uk and .firm.in</p>
+	<p>It should be noted that popular domains such as .co.uk, .co.in
+	  and .com are NOT affected.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-0746</cvename>
+      <url>http://www.kde.org/info/security/advisory-20040823-1.txt</url>
+      <url>http://www.osvdb.org/9117</url>
+      <url>http://secunia.com/advisories/12341</url>
+      <url>http://www.acros.si/papers/session_fixation.pdf</url>
+    </references>
+    <dates>
+      <discovery>2004-08-23</discovery>
+      <entry>2004-08-26</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="bef4515b-eaa9-11d8-9440-000347a4fa7d">
     <topic>xine -- vcd URL buffer overflow</topic>
     <affects>
