@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	PHPUnit2
-DISTVERSION=	2.2.0beta4
-PORTEPOCH=	1
+PORTVERSION=	2.1.5
+PORTEPOCH=	2
 CATEGORIES=	devel www pear
 
 MAINTAINER=	antonio@php.net
@@ -38,11 +38,11 @@ FILES=		Extensions/CodeCoverage/Renderer/HTML.php \
 		Extensions/PerformanceTestCase.php Extensions/RepeatedTest.php \
 		Extensions/TestDecorator.php Extensions/TestSetup.php \
 		Framework/Assert.php Framework/AssertionFailedError.php \
-		Framework/Error.php Framework/ComparisonFailure.php \
-		Framework/IncompleteTest.php Framework/IncompleteTestError.php \
-		Framework/Test.php Framework/TestCase.php Framework/TestFailure.php \
-		Framework/TestListener.php Framework/TestResult.php Framework/TestSuite.php \
-		Framework/Warning.php Runner/BaseTestRunner.php \
+		Framework/ComparisonFailure.php Framework/IncompleteTest.php \
+		Framework/IncompleteTestError.php Framework/Test.php \
+		Framework/TestCase.php Framework/TestFailure.php \
+		Framework/TestListener.php Framework/TestResult.php \
+		Framework/TestSuite.php Framework/Warning.php Runner/BaseTestRunner.php \
 		Runner/IncludePathTestCollector.php Runner/StandardTestSuiteLoader.php \
 		Runner/TestCollector.php Runner/TestRunListener.php \
 		Runner/TestSuiteLoader.php Runner/Version.php Tests/Framework/AllTests.php \
@@ -56,15 +56,15 @@ FILES=		Extensions/CodeCoverage/Renderer/HTML.php \
 		Tests/Extensions/RepeatedTestTest.php Tests/Runner/AllTests.php \
 		Tests/Runner/BaseTestRunnerTest.php Tests/AllTests.php \
 		Tests/DoubleTestCase.php Tests/Error.php Tests/Failure.php \
-		Tests/InheritedTestCase.php Tests/Iterator.php Tests/MockRunner.php \
-		Tests/NoArgTestCaseTest.php Tests/NonStatic.php Tests/NoTestCaseClass.php \
-		Tests/NoTestCases.php Tests/NotPublicTestCase.php Tests/NotVoidTestCase.php \
-		Tests/OneTestCase.php Tests/OverrideTestCase.php Tests/SetupFailure.php \
-		Tests/Sleep.php Tests/Success.php Tests/TearDownFailure.php \
-		Tests/ThrowExceptionTestCase.php Tests/ThrowNoExceptionTestCase.php \
-		Tests/TornDown.php Tests/TornDown2.php Tests/TornDown3.php Tests/TornDown4.php \
-		Tests/TornDown5.php Tests/WasRun.php TextUI/ResultPrinter.php \
-		TextUI/TestRunner.php Util/Filter.php Util/Printer.php Util/Skeleton.php
+		Tests/InheritedTestCase.php Tests/MockRunner.php Tests/NoArgTestCaseTest.php \
+		Tests/NonStatic.php Tests/NoTestCaseClass.php Tests/NoTestCases.php \
+		Tests/NotPublicTestCase.php Tests/NotVoidTestCase.php Tests/OneTestCase.php \
+		Tests/OverrideTestCase.php Tests/SetupFailure.php Tests/Sleep.php \
+		Tests/Success.php Tests/TearDownFailure.php Tests/ThrowExceptionTestCase.php \
+		Tests/ThrowNoExceptionTestCase.php Tests/TornDown.php Tests/TornDown2.php \
+		Tests/TornDown3.php Tests/TornDown4.php Tests/TornDown5.php Tests/WasRun.php \
+		TextUI/ResultPrinter.php TextUI/TestRunner.php Util/Filter.php \
+		Util/Printer.php Util/Skeleton.php
 SCRIPTFILES=	phpunit
 
 post-patch:
