@@ -8,7 +8,7 @@
 PORTNAME=	cmios9
 PORTVERSION=	2.0
 CATEGORIES=	converters
-MASTER_SITES=	http://www.spies.com/~kmi/
+MASTER_SITES=	http://members.tripod.com/kmi9000/files/
 
 MAINTAINER=	M.Indlekofer@gmx.de
 COMMENT=	Ftp-like access to Fairlight image files and devices
