@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-MASTERDIR=	${.CURDIR}/../vim6
+MASTERDIR=	${.CURDIR}/../vim
 
 PORTREVISION=	1
 
