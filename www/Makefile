@@ -64,6 +64,7 @@
     SUBDIR += links
     SUBDIR += linux-netscape4
     SUBDIR += linux-netscape47-communicator
+    SUBDIR += linux-netscape47-navigator
     SUBDIR += lynx
     SUBDIR += lynx-current
     SUBDIR += lynx-ssl
