@@ -136,3 +136,5 @@ share/texmf/fonts/vf/makejvf/Ryumin-Light-V.vf
 @dirrm share/texmf/fonts/tfm/makejvf
 @dirrm share/texmf/fonts/vf/makejvf
 @dirrm share/doc/makejvf-fkr
+@exec if [ -x %D/bin/mktexlsr ]; then %D/bin/mktexlsr; fi
+@unexec if [ -x %D/bin/mktexlsr ]; then %D/bin/mktexlsr; fi
