@@ -14,7 +14,7 @@ DISTNAME=	gnome-utils-${PORTVERSION}
 
 MAINTAINER=	gnome@FreeBSD.org
 
-BUILD_DEPENDS=	msgfmt-new:${PORTS}/devel/gettext-devel
+BUILD_DEPENDS=	msgfmt-new:${PORTSDIR}/devel/gettext-devel
 LIB_DEPENDS=	gtop.1:${PORTSDIR}/devel/libgtop \
 		ext2fs.2:${PORTSDIR}/sysutils/e2fsprogs
 
