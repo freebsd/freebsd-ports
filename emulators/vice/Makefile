@@ -9,8 +9,7 @@ PORTVERSION=	1.7
 CATEGORIES=	emulators
 MASTER_SITES=	ftp://ftp.funet.fi/pub/cbm/crossplatform/emulators/VICE/
 
-MAINTAINER=	ports@FreeBSD.org
-
+MAINTAINER=	dinoex@FreeBSD.org
 
 RESTRICTED=	ROMs are copyrighted by Commodore Business Machines
 NO_CDROM=	${RESTRICTED}
@@ -35,6 +34,10 @@ CONFIGURE_ARGS=	--enable-gnomeui
 .else
 LIB_DEPENDS=	Xaw3d.${XAWVER}:${PORTSDIR}/x11-toolkits/Xaw3d
 CONFIGURE_ARGS=	--with-xaw3d
+.endif
+
+.if ${XFREE86_VERSION} == 4
+BUILD_DEPENDS+=	bdftopcf:${PORTSDIR}/x11/XFree86-4-clients
 .endif
 
 post-extract:
