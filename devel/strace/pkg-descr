@@ -2,11 +2,10 @@ Strace is a process tracer, i.e. a debugging tool that prints out
 a trace of all the system calls made and signals received by a
 process itself or a process and its descendants.
 
-Strace is similar to the native BSD ktrace/kdump pair of utilities,
-but strace's output style is more convenient in some cases or for
-some developers.
+Strace is similar to the native BSD ``truss'' utility, but it's
+output style is more convenient in most cases.
 
 WWW: http://www.liacs.nl/~wichert/strace/
 
 - Alex Semenyaka
-alexs@snark.rinet.ru
+alex@rinet.ru
