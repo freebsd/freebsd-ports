@@ -304,7 +304,7 @@ post-install:
 .endfor
 # for reading encrypted PDFs
 	${ECHO_MSG} ">>> installing support for encrypted PDF files ..."
-	${INSTALL_DATA} ${DISTDIR}/${DECRYPT_PDF} \
+	${INSTALL_DATA} ${_DISTDIR}/${DECRYPT_PDF} \
 		${PREFIX}/share/ghostscript/${PORTVERSION}/lib
 #
 # now NOPORTDOCS dependend stuff
