@@ -1,0 +1,31 @@
+lib/perl5/site_perl/5.6.1/mach/auto/XML/GDOME/GDOME.so
+lib/perl5/site_perl/5.6.1/mach/auto/XML/GDOME/GDOME.bs
+lib/perl5/site_perl/5.6.1/mach/XML/GDOME.pm
+lib/perl5/site_perl/5.6.1/mach/XML/GDOME.pod
+lib/perl5/site_perl/5.6.1/mach/XML/GDOME/ProcessingInstruction.pod
+lib/perl5/site_perl/5.6.1/mach/XML/GDOME/Text.pod
+lib/perl5/site_perl/5.6.1/mach/XML/GDOME/DocumentFragment.pod
+lib/perl5/site_perl/5.6.1/mach/XML/GDOME/DocumentType.pod
+lib/perl5/site_perl/5.6.1/mach/XML/GDOME/Comment.pod
+lib/perl5/site_perl/5.6.1/mach/XML/GDOME/NamedNodeMap.pod
+lib/perl5/site_perl/5.6.1/mach/XML/GDOME/Document.pod
+lib/perl5/site_perl/5.6.1/mach/XML/GDOME/CDATASection.pod
+lib/perl5/site_perl/5.6.1/mach/XML/GDOME/Attr.pod
+lib/perl5/site_perl/5.6.1/mach/XML/GDOME/NodeList.pod
+lib/perl5/site_perl/5.6.1/mach/XML/GDOME/CharacterData.pod
+lib/perl5/site_perl/5.6.1/mach/XML/GDOME/EntityReference.pod
+lib/perl5/site_perl/5.6.1/mach/XML/GDOME/Node.pod
+lib/perl5/site_perl/5.6.1/mach/XML/GDOME/Element.pod
+lib/perl5/site_perl/5.6.1/mach/XML/GDOME/Entity.pod
+lib/perl5/site_perl/5.6.1/mach/XML/GDOME/Notation.pod
+lib/perl5/site_perl/5.6.1/mach/XML/GDOME/SAX/Generator.pm
+lib/perl5/site_perl/5.6.1/mach/XML/GDOME/SAX/Builder.pm
+lib/perl5/site_perl/5.6.1/mach/XML/GDOME/SAX/Parser.pm
+lib/perl5/site_perl/5.6.1/mach/XML/GDOME/XPath/Result.pod
+lib/perl5/site_perl/5.6.1/mach/XML/GDOME/XPath/Evaluator.pod
+lib/perl5/site_perl/5.6.1/mach/XML/GDOME/XPath/NSResolver.pod
+lib/perl5/site_perl/5.6.1/mach/XML/GDOME/XPath/Namespace.pod
+@dirrm lib/perl5/site_perl/5.6.1/mach/XML/GDOME/XPath
+@dirrm lib/perl5/site_perl/5.6.1/mach/XML/GDOME/SAX
+@dirrm lib/perl5/site_perl/5.6.1/mach/XML/GDOME
+@dirrm lib/perl5/site_perl/5.6.1/mach/auto/XML/GDOME
