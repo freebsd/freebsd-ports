@@ -9,7 +9,7 @@ PORTNAME=	netscape
 PORTVERSION=	3.04
 CATEGORIES=	korean www
 MASTER_SITES=	ftp://archive:oldies@archive.netscape.com/archive/navigator/intl/3.01/unix/ko/ \
-		http://www.bpel.tutics.tut.ac.jp/~take/Netscape/etc/
+		ftp://ftp.kr.FreeBSD.org/pub/FreeBSD-kr/distfiles/
 DISTFILES=	netscape-ko-v301.alpha-dec-osf2.0.tar.gz NLS.tar.gz
 
 MAINTAINER=	cjh@FreeBSD.org
