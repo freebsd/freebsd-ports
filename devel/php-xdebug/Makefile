@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	xdebug
-PORTVERSION=	1.3.0
+PORTVERSION=	1.3.1
 CATEGORIES=	devel
-MASTER_SITES=	http://files.derickrethans.nl/
+MASTER_SITES=	http://www.xdebug.org/files/
 PKGNAMEPREFIX=	php-
 EXTRACT_SUFX=	.tgz
 
@@ -18,6 +18,7 @@ COMMENT=	Xdebug extension for PHP
 USE_PHP=	yes
 USE_PHPIZE=	yes
 CONFIGURE_ARGS=	--enable-xdebug --with-php-config=${PREFIX}/bin/php-config
+CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 post-build:
