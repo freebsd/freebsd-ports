@@ -1,0 +1,7 @@
+share/doc/%%PORTDOCS%%/INSTALL
+share/doc/%%PORTDOCS%%/TODO
+share/doc/%%PORTDOCS%%/COPYING
+share/doc/%%PORTDOCS%%/Changelog
+share/doc/%%PORTDOCS%%/README
+@dirrm share/doc/%%PORTDOCS%%
+lib/xmms/General/libmp3cue.so

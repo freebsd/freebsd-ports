@@ -1,0 +1,14 @@
+XMMS mp3cue adds cue file support to XMMS. Cue files store 
+information (Artist, Title, Time) describing smaller tracks 
+within a large audio file. mp3cue allows you to easily manipulate 
+these cue files; and more importantly, it presents you with a 
+separate playlist composed from the cue information which you can 
+use to easily navigate to any of the smaller tracks in the audio 
+file, just like a normal playlist. You can also save this cue 
+information within an ID3v2 tag (if the audio file is an mp3), 
+eliminating the need for an external cue file.
+
+WWW: http://brianvictor.tripod.com/
+
+- muanton
+r2@music.lt
