@@ -1,12 +1,14 @@
-StarOffice 5.1a (Sun Version) Personal Install How-To
+StarOffice 5.2 Personal Install How-To
 
-Written By:
-Darren Wiebe
-dkwiebe@hagenhomes.com
+Written by:      Darren Wiebe <dkwiebe@hagenhomes.com>
+		 and Martin Blapp <mb@imp.ch>
 
-Make install will preform a network installation of StarOffice 5.1a.
-Once that is done, run make install-user, as the user you usually login
-as and do a standard workstation install.  It will now be ready to use.
+You will very shortly have finished  a network install of StarOffice 5.2.
+Once that is done exit X11 and run it again as the user that you usually use.
+Then run "make install-user" and do a standard workstation install.
+Change the install path to $HOME/office52. Then add $HOME/office52/ to your path.
+
+It will now be ready to use.
 
 Good Luck
 

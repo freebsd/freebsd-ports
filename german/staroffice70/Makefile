@@ -1,85 +1,101 @@
-# New ports collection makefile for:	StarOffice 5.1a
-# Date created:		30 October 1999
-# Whom:			dkwiebe
+# New ports collection makefile for: StarOffice 5.2
+# Date created:		22 August 2000
+# Whom:                 Martin Blapp
 #
 # $FreeBSD$
 #
 
 PORTNAME=	staroffice
-PORTVERSION=	5.1a
+PORTVERSION=	5.2
 CATEGORIES=	editors linux
-MASTER_SITES=	http://afug.hypermart.net/files/ \
-		http://www.hagenhomes.com/freebsd/files/  \
-		ftp://ftp.stat.duke.edu/pub/Users/sto/StarOffice51a/  \
-		ftp://ftp.stardivision.de/pub/support/so51a/nwspatch/unxlnxi/  \
-		ftp://ftp.stardivision.de/pub/support/so51a/db/unxlnxi/
-DISTNAME=	so51a_lnx_01
-EXTRACT_SUFX=	.tar
-DISTFILES=	applicat.rdb.gz libofa517li.so libsdb517li.so
+DISTNAME=	so-5_2-ga-bin-linux-en.bin
+DISTFILES=	soa-5_2-ga-bin-linux-en.bin so-5_2-ga-bin-linux-en.bin
+EXTRACT_ONLY=
 
 MAINTAINER=	mb@imp.ch
 
-BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 RUN_DEPENDS=	/compat/linux/usr/i486-linux-libc5/lib/libc.so.5:${PORTSDIR}/emulators/linux_base
 
 ONLY_FOR_ARCHS=	i386
 NO_CDROM=	'Must be downloaded direct from Sun via www interface'
 IS_INTERACTIVE=	yes
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
-EXTRACT_CMD=	${CAT}
-EXTRACT_BEFORE_ARGS=	-u
 NO_BUILD=	yes
-DIST_SUBDIR=	staroffice5
-WRKSRC=		${WRKDIR}/so51inst
+DIST_SUBDIR=	staroffice52
+WRKSRC=		${WRKDIR}/office52
 TMPDIR=		${WRKDIR}/tmp
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_CDROM)
-.if !exists(/cdrom/linux/office51/setup.zip)
-IGNORE="Please mount the Sun StarOffice 5.1 CDROM onto /cdrom and run make again."
+#
+# Staroffice depends on a scripting fix for
+# src/sys/i386/linux/linux_sysvec. It should
+# be revision 1.55.2.1 or higher. Please upgrade
+# to FreeBSD 4.1
+#
+.if ${OSVERSION} < 410000
+BROKEN= YES
 .endif
+
+.if defined(WITH_CDROM)
+IGNORE= "Please mount the Sun StarOffice 5.2 CDROM onto /cdrom and run make again."
 .else	# FTP/web download
-DISTFILES+=	${DISTNAME}${EXTRACT_SUFX}
-.if !exists(${_DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
-IGNORE="Please manually download ${DISTNAME}${EXTRACT_SUFX} from http://www.sun.com/staroffice.  Put ${DISTNAME}${EXTRACT_SUFX} into the directory ${_DISTDIR} and run make again.  Or, if you have the Sun StarOffice 5.1 CDROM, please run 'make WITH_CDROM=yes'"
+.if !exists(${_DISTDIR}/${DISTNAME})
+IGNORE="Please manually download ${DISTNAME} from http://www.sun.com/staroffice. Put ${DISTNAME} into the directory ${_DISTDIR} and run make again. Or, if you have the Sun StarOffice 5.2 CDROM, please run 'make USE_CDROM=yes'"
 .endif
 .endif
 
 .if defined(WITH_CDROM)
 do-extract:
-	@${MKDIR} ${WRKSRC}/office51
-	@cd ${WRKSRC}/office51 && ${LN} -s /cdrom/linux/office51/* .
+	@${MKDIR} ${WRKSRC}/office52
+	@cd ${WRKSRC}/office52 && ${LN} -s ${CD_MOUNTPT}/linux/office52/* .
 .endif
 
-post-extract:
-	@unzip -u -L ${WRKDIR}/so51inst/office51/setup.zip -d ${WRKDIR}/tmp
-	@${CP} -p ${_DISTDIR}/applicat.rdb.gz ${WRKDIR}
-	@${GZIP_CMD} -d ${WRKDIR}/applicat.rdb.gz
+do-extract:
+.if !defined(DISPLAY) || ${DISPLAY} == ""
+	@ ${ECHO}
+	@ ${ECHO} Can\'t open display:
+	@ ${ECHO} Please check your DISPLAY variable.
+	@ ${ECHO}
+	@ ${FALSE}
+.else
+	@${MKDIR} ${WRKSRC}
+	@${MKDIR} ${TMPDIR}
+	@${CP} ${_DISTDIR}/${DISTNAME} ${WRKSRC}
+	@${CP} ${_DISTDIR}/soa-5_2-ga-bin-linux-en.bin ${WRKSRC}
+	@${CHMOD} 755 ${WRKSRC}/${DISTNAME}
+	@${CHMOD} 755 ${WRKSRC}/soa-5_2-ga-bin-linux-en.bin
+	@cd ${WRKSRC}
+	@${WRKSRC}/${DISTNAME} -extract ${WRKSRC}
+	@cd ../../
+.endif
 
 post-configure:
-	@${PERL} -pi.orig -e 's|DefaultDestPath = "Office51";|DefaultDestPath = "${PREFIX}/Office51";|' ${WRKSRC}/office51/setup.ins
+	@${PERL} -pi.orig -e 's|DefaultDestPath = "office52";|DefaultDestPath = "${PREFIX}/office52";|' ${WRKSRC}/setup.ins
 
 do-install:
-	@${CP} /compat/linux/etc/ld.so.conf ${TMPDIR}/ld.so.conf.tmp
-	@${ECHO} "${WRKDIR}/tmp" >> ${TMPDIR}/ld.so.conf.tmp
-	@${ECHO} "/usr/X11R6/lib" >> ${TMPDIR}/ld.so.conf.tmp
-	@PATH=${PATH}:${TMPDIR}/sv001.tmp:/compat/linux/tmp/sv001.tmp:/compat/linux/tmp:/tmp
-	@LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:${TMPDIR}:${WRKDIR}/tmp:/usr/lib:/lib:/tmp:/compat/linux/lib
-	@/compat/linux/sbin/ldconfig -f ${TMPDIR}/ld.so.conf.tmp
+.if !defined(DISPLAY) || ${DISPLAY} == ""
+	@ ${ECHO}
+	@ ${ECHO} Can\'t open display:
+	@ ${ECHO} Please check your DISPLAY variable.
+	@ ${ECHO}
+	@ ${FALSE}
+.else
+.if exists(/compat/linux/usr/local)
+	@${LN} -fs /compat/linux/usr/local/office52 ${PREFIX}/office52
+.endif
 	@${CAT} ${PKGDIR}/MESSAGE
-	@-TEMP=${TMPDIR} ${WRKDIR}/so51inst/office51/setup /net
+	@-TEMP=${TMPDIR} /compat/linux/bin/sh -c '${WRKSRC}/setup /net'
+	@ ${ECHO}
+	@ ${ECHO} Ignore the error-message. StarOffice5.2 has been installed
+	@ ${ECHO} successfully on your system.
+	@ ${ECHO}
+.endif
 
-	@${INSTALL_DATA} ${WRKDIR}/applicat.rdb ${PREFIX}/Office51/bin
-	@${INSTALL_DATA} ${_DISTDIR}/libofa517li.so ${PREFIX}/Office51/lib
-	@${INSTALL_DATA} ${_DISTDIR}/libsdb517li.so ${PREFIX}/Office51/lib
-	@${CHMOD} 100755 ${PREFIX}/Office51/lib/libofa517li.so
-	@${CHMOD} 100755 ${PREFIX}/Office51/lib/libsdb517li.so
-	@${PATCH} -s ${PREFIX}/Office51/bin/setup ${FILESDIR}/setup.patch
-	@${PATCH} -s ${PREFIX}/Office51/bin/soffice ${FILESDIR}/soffice.patch
-	@${PERL} -pi -e 's|DefaultDestPath = "${PREFIX}/Office51";|DefaultDestPath = "~/Office51";|' ${PREFIX}/Office51/instdb.ins
+post-install:
+	@${PATCH} -s ${PREFIX}/office52/program/setup ${FILESDIR}/setup.patch
+	@${PATCH} -s ${PREFIX}/office52/program/soffice ${FILESDIR}/soffice.patch
 
 install-user:
-	${PREFIX}/Office51/bin/setup
+	${PREFIX}/office52/program/setup
 
 .include <bsd.port.post.mk>

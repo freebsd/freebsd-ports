@@ -1,62 +1,76 @@
-# New ports collection makefile for: StarOffice 5.1a german
-# Date created:		20 Dezember 1999
+# New ports collection makefile for: StarOffice 5.2 german
+# Date created:		22 August 2000
 # Whom:                 Martin Blapp
 #
 # $FreeBSD$
 #
 
 PORTNAME=	staroffice
-PORTVERSION=	5.1a
+PORTVERSION=	5.2
 CATEGORIES=	editors linux
-MASTER_SITES=	ftp://ftp.hagenhomes.com/pub/  \
-		ftp://ftp.stat.duke.edu/pub/Users/sto/StarOffice51a/  \
-		ftp://ftp.stardivision.de/pub/support/so51a/nwspatch/unxlnxi/  \
-		ftp://ftp.stardivision.de/pub/support/so51a/db/unxlnxi/
-DISTNAME=	so51a_lnx_49
-EXTRACT_SUFX=	.tar
-DISTFILES=	applicat.rdb.gz libofa517li.so libsdb517li.so
+DISTNAME=	so-5_2-ga-bin-linux-de.bin
+DISTFILES=	soa-5_2-ga-bin-linux-de.bin so-5_2-ga-bin-linux-de.bin
+EXTRACT_ONLY=
 
 MAINTAINER=	mb@imp.ch
 
-BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 RUN_DEPENDS=	/compat/linux/usr/i486-linux-libc5/lib/libc.so.5:${PORTSDIR}/emulators/linux_base
 
 ONLY_FOR_ARCHS=	i386
 NO_CDROM=	'Sie muessen StarOffice manuell via WWW-Interface herunterladen.'
 IS_INTERACTIVE=	yes
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
-EXTRACT_CMD=	${CAT}
-EXTRACT_BEFORE_ARGS=	-u
 NO_BUILD=	yes
-DIST_SUBDIR=	staroffice5
-WRKSRC=		${WRKDIR}/so51inst
+DIST_SUBDIR=	staroffice52
+WRKSRC=		${WRKDIR}/office52
+TMPDIR=		${WRKDIR}/tmp
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_CDROM)
-.if !exists(${CD_MOUNTPT}/linux/office51/setup.zip)
-IGNORE= "Bitte mounten Sie die Sun StarOffice 5.1 CDROM and starten Sie make erneut."
+#
+# Staroffice benötigt einen System-Patch der erst
+# in FreeBSD 4.1 verfügbar ist. Bitte bringen Sie ihr
+# System auf den neuesten Stand.
+#
+.if ${OSVERSION} < 410000
+BROKEN= YES
 .endif
+
+.if defined(WITH_CDROM)
+IGNORE= "Bitte mounten Sie die Sun StarOffice 5.2 CDROM nach /cdrom and starten Sie make erneut."
 .else	# FTP/web download
-DISTFILES+=	${DISTNAME}${EXTRACT_SUFX}
-.if !exists(${_DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
-IGNORE="Bitte laden Sie ${DISTNAME}${EXTRACT_SUFX} manuell von http://www.sun.com/staroffice herunter. Kopieren Sie ${DISTNAME}${EXTRACT_SUFX} in das Verzeichnis ${_DISTDIR} und starten Sie make erneut.  Wenn Sie die StarOffice 5.1 CDROM besitzen, koennen Sie auch 'make WITH_CDROM=yes' ausfuehren."
+.if !exists(${_DISTDIR}/${DISTNAME})
+IGNORE="Bitte laden Sie ${DISTNAME} manuell von http://www.sun.com/staroffice herunter. Kopieren Sie ${DISTNAME} in das Verzeichnis ${_DISTDIR} und starten Sie make erneut.  Wenn Sie die StarOffice 5.2 CDROM besitzen, koennen Sie auch 'make WITH_CDROM=yes' ausfuehren."
 .endif
 .endif
 
 .if defined(WITH_CDROM)
 do-extract:
-	@${MKDIR} ${WRKSRC}/office51
-	@cd ${WRKSRC}/office51 && ${LN} -s ${CD_MOUNTPT}/linux/office51/* .
+	@${MKDIR} ${WRKSRC}/office52
+	@cd ${WRKSRC}/office52 && ${LN} -s ${CD_MOUNTPT}/linux/office52/* .
 .endif
 
-post-extract:
-	@unzip -u -L ${WRKDIR}/so51inst/office51/setup.zip -d ${WRKDIR}/tmp
-	@${CP} -p ${_DISTDIR}/applicat.rdb.gz ${WRKDIR}
-	@${GZIP_CMD} -d ${WRKDIR}/applicat.rdb.gz
+do-extract:
+.if !defined(DISPLAY) || ${DISPLAY} == ""
+	@ ${ECHO}
+	@ ${ECHO} Die Variable DISPLAY ist nicht gesetzt. Setzen Sie entweder
+	@ ${ECHO} das DISPLAY manuell oder rufen Sie make mit DISPLAY= und dem
+	@ ${ECHO} entsprechenden DISPLAY als Parameter auf.
+	@ ${ECHO}
+	@ ${FALSE}
+.else
+	@${MKDIR} ${WRKSRC}
+	@${MKDIR} ${TMPDIR}
+	@${CP} ${_DISTDIR}/${DISTNAME} ${WRKSRC}
+	@${CP} ${_DISTDIR}/soa-5_2-ga-bin-linux-de.bin ${WRKSRC}
+	@${CHMOD} 755 ${WRKSRC}/${DISTNAME}
+	@${CHMOD} 755 ${WRKSRC}/soa-5_2-ga-bin-linux-de.bin
+	@cd ${WRKSRC}
+	@${WRKSRC}/${DISTNAME} -extract ${WRKSRC}
+	@cd ../../
+.endif
 
 post-configure:
-	@${PERL} -pi.orig -e 's|DefaultDestPath = "Office51";|DefaultDestPath = "${PREFIX}/Office51";|' ${WRKSRC}/office51/setup.ins
+	@${PERL} -pi.orig -e 's|DefaultDestPath = "office52";|DefaultDestPath = "${PREFIX}/office52";|' ${WRKSRC}/setup.ins
 
 do-install:
 .if !defined(DISPLAY) || ${DISPLAY} == ""
@@ -68,34 +82,21 @@ do-install:
 	@ ${FALSE}
 .else
 .if exists(/compat/linux/usr/local)
-	@${LN} -fs /compat/linux/usr/local/Office51 ${PREFIX}/Office51
+	@${LN} -fs /compat/linux/usr/local/office52 ${PREFIX}/office52
 .endif
-	@${CP} /compat/linux/etc/ld.so.conf ${WRKDIR}/tmp/ld.so.conf.temp
-	@${ECHO} "${WRKDIR}/tmp" >> ${WRKDIR}/tmp/ld.so.conf.temp
-	@PATH=${PATH}:${WRKDIR}/tmp
-	@LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:${WRKDIR}/tmp:/usr/lib:/lib:/compat/linux/lib
-	@/compat/linux/sbin/ldconfig -f ${WRKDIR}/tmp/ld.so.conf.temp
 	@${CAT} ${PKGDIR}/MESSAGE
-	@-TEMP=${WRKDIR}/tmp ${WRKDIR}/so51inst/office51/setup /net
+	@-TEMP=${TMPDIR} /compat/linux/bin/sh -c '${WRKSRC}/setup /net'
 	@ ${ECHO}
-	@ ${ECHO} Ignorieren Sie die Fehlermeldung. StarOffice5.1a wurde erfolgreich
+	@ ${ECHO} Ignorieren Sie die Fehlermeldung. StarOffice5.2 wurde erfolgreich
 	@ ${ECHO} auf Ihrem System installiert.
 	@ ${ECHO}
-	@/compat/linux/sbin/ldconfig
 .endif
 
 post-install:
-	@${INSTALL_DATA} ${WRKDIR}/applicat.rdb ${PREFIX}/Office51/bin
-	@${INSTALL_DATA} ${_DISTDIR}/libofa517li.so ${PREFIX}/Office51/lib
-	@${INSTALL_DATA} ${_DISTDIR}/libsdb517li.so ${PREFIX}/Office51/lib
-	@${PATCH} -s ${PREFIX}/Office51/bin/setup ${FILESDIR}/setup.patch
-	@${PATCH} -s ${PREFIX}/Office51/bin/soffice ${FILESDIR}/soffice.patch
-	@${CHMOD} 100755 ${PREFIX}/Office51/lib/libofa517li.so
-	@${CHMOD} 100755 ${PREFIX}/Office51/lib/libsdb517li.so
-	@${PERL} -pi -e 's|DefaultDestPath = "${PREFIX}/Office51";|DefaultDestPath = "~/Office51";|' ${PREFIX}/Office51/instdb.ins
-	@${INSTALL_DATA} ${FILESDIR}/dot.sversionrc /root/.sversionrc
+	@${PATCH} -s ${PREFIX}/office52/program/setup ${FILESDIR}/setup.patch
+	@${PATCH} -s ${PREFIX}/office52/program/soffice ${FILESDIR}/soffice.patch
 
 install-user:
-	${PREFIX}/Office51/bin/setup
+	${PREFIX}/office52/program/setup
 
 .include <bsd.port.post.mk>
