@@ -6,24 +6,28 @@
 #
 
 PORTNAME=	gliv
-PORTVERSION=	1.0.3
+PORTVERSION=	1.2
 CATEGORIES=	graphics
 MASTER_SITES=	http://gliv.tuxfamily.org/
 
 MAINTAINER=	ishmael27@home.com
 
 LIB_DEPENDS=	Imlib2.1:${PORTSDIR}/graphics/imlib2 \
+		gtkgl.5:${PORTSDIR}/x11-toolkits/gtkglarea \
 		gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_MESA=	yes
-GNU_CONFIGURE=	yes
+USE_GTK=	yes
 USE_X_PREFIX=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-lm" \
-		LIBS="-L${LOCALBASE}/lib -lgnugetopt"
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
+		LIBS="-L${LOCALBASE}/lib -lgnugetopt -L${X11BASE}/lib \
+			-lGLU -lGL -lXext -lX11 -lm ${PTHREAD_LIBS}"
 
 MAN1=		gliv.1
+
+post-patch:
+	@${PERL} -pi -e 's|gtk-config|${GTK_CONFIG}|g' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
