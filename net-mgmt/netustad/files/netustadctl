@@ -1,0 +1,30 @@
+#!/bin/csh
+######################################
+# netustadctl: netUstad ConTroLler #
+######################################
+
+set prefix="%%PREFIX%%"
+
+switch ($1)
+	case start:
+		$prefix/sbin/netustad
+		breaksw
+	case stop:
+		killall netustad
+		breaksw
+	case reload:
+		killall -HUP netustad
+		echo ""
+		echo "netUstad configuration reloaded"
+		echo ""
+		breaksw
+	case restart:
+		killall netustad
+		$prefix/sbin/netustad
+		breaksw
+	default:
+		echo ""
+		echo "usage: netustadctl start|stop|restart|reload"
+		echo ""
+		exit 64
+endsw
