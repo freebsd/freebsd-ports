@@ -14,16 +14,13 @@ DISTNAME=	gnome-user-docs-${PORTVERSION}
 
 MAINTAINER=	gnome@FreeBSD.org
 
+BUILD_DEPENDS=	scrollkeeper-config:${PORTSDIR}/textproc/scrollkeeper
+RUN_DEPENDS=	scrollkeeper-config:${PORTSDIR}/textproc/scrollkeeper
+
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_GNOME=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gnomeprefix gnomehack gnomehier
 GNU_CONFIGURE=	yes
-
-pre-patch:
-	@${PERL} -pi -e 's|-lpthread|-pthread|g ; \
-		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
-	@find ${WRKSRC} -name "Makefile.in" | xargs ${PERL} -pi -e \
-		's|\$\(datadir\)/gnome/|\$\(datadir\)/|g ; \
-		 s|\$\(datadir\)/locale|\$\(prefix\)/share/locale|g'
 
 .include <bsd.port.mk>
