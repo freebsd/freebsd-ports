@@ -1,0 +1,30 @@
+--- doc/Makefile.in.orig	Mon Feb  5 22:40:26 2001
++++ doc/Makefile.in	Mon Feb  5 22:50:03 2001
+@@ -40,9 +40,6 @@
+ 
+ all:	rxvt.1
+ 
+-rxvt.1: rxvt.tbl Makefile
+-	@if test x$(TBL) = x; then : ; else echo "$(TBL) $(srcdir)/rxvt.tbl | grep -v '^.lf' > rxvt.1"; $(TBL) $(srcdir)/rxvt.tbl | grep -v '^.lf' > rxvt.1 ; fi
+-
+ SEDREPLACE = -e 's%@RXVT_VERSION@%$(VERSION)%g;'\
+ 	     -e 's%@RXVT_LSMDATE@%$(LSMDATE)%g;'\
+ 	     -e 's%@RXVT_DATE@%$(DATE)%g;'\
+@@ -56,7 +53,7 @@
+ 
+ tags allbin:
+ 
+-alldoc:	$(basedir)/$(VERNAME).lsm yodl/versioninfo.yo rxvt.1 rxvt.html rxvtRef.html rxvtRef.txt
++alldoc:	rxvt.1
+ 
+ yodl/versioninfo.yo: yodl/versioninfo.yo.in ../src/version.h
+ 	$(SED) $(SEDREPLACE) < $(srcdir)/yodl/versioninfo.yo.in > $@
+@@ -87,7 +84,7 @@
+ distclean:
+ 
+ install:
+-	$(INSTALL_DATA) rxvt.1 $(DESTDIR)$(mandir)/$(RXVTNAME).$(manext)
++	$(INSTALL_DATA) rxvt.1 $(PREFIX)/man/man1/crxvt.1
+ 
+ uninstall:
+ 	-(cd $(mandir); $(RMF) $(RXVTNAME).$(manext) )
