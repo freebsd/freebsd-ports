@@ -3967,6 +3967,7 @@ libarc		ports/archivers/libarc
 libargparse	ports/devel/libargparse
 libart		ports/graphics/libart
 libart_lgpl2	ports/graphics/libart_lgpl2
+libassa		ports/devel/libassa
 libast		ports/devel/libast
 libaudiofile	ports/audio/libaudiofile
 libaux		ports/graphics/libaux
