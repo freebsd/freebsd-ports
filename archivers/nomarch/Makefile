@@ -16,10 +16,12 @@ MAINTAINER=	erwin@lansing.dk
 
 LIB_DEPENDS=	gnugetopt:${PORTSDIR}/devel/libgnugetopt
 
+USE_REINPLACE=	yes
+
 MAN1=	nomarch.1
 
 post-patch:
-	@${PERL} -pi -e "s,^CC,#CC,g ; s,^CFLAGS,#CFLAGS,g ; \
+	@${REINPLACE_CMD} -e "s,^CC,#CC,g ; s,^CFLAGS,#CFLAGS,g ; \
 		s,^PREFIX,#PREFIX,g ; \
 		s,%%LOCALBASE%%,${LOCALBASE},g" ${WRKSRC}/Makefile
 

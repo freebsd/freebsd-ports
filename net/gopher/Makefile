@@ -15,12 +15,14 @@ MAINTAINER=	erwin@lansing.dk
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+USE_REINPLACE=	yes
 
 MAN1=	gopher.1 gophfilt.1
 MAN5=	gopherd.conf.5 gopherrc.5
 MAN8=	gopherd.8 gopherindex.8
 
 pre-patch:
-	@${FIND} ${WRKSRC} -name '*.[ch]' | xargs ${PERL} -pi -e 's,<malloc.h>,<stdlib.h>,'
+	@${FIND} ${WRKSRC} -name '*.[ch]' | xargs ${REINPLACE_CMD} -e \
+		's,<malloc.h>,<stdlib.h>,'
 
 .include <bsd.port.mk>

@@ -16,6 +16,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:S/a//}/src
 
 WANT_GTK=	yes
 MAKE_ENV=	FLAGS="${CFLAGS}"
+USE_REINPLACE=	yes
 
 .include <bsd.port.pre.mk>
 
@@ -29,7 +30,7 @@ PLIST_SUB+=	WANT_GTK="@comment "
 .endif
 
 post-patch:
-	@${FIND} ${WRKSRC} -name "Makefile" | ${XARGS} ${PERL} -pi -e \
+	@${FIND} ${WRKSRC} -name "Makefile" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|^CC=|#CC=|g ; \
 		 s| make| \$$\{MAKE\}|g ; \
 		 s|`gtk-config|`\$$\{GTK_CONFIG\}|g'
