@@ -1,6 +1,6 @@
 bin/i386-rtems-g77
-lib/gcc-lib/i386-rtems/3.2.1/f771
-lib/gcc-lib/i386-rtems/3.2.1/include/g2c.h
+lib/gcc-lib/i386-rtems/%%GCCVERSION%%/f771
+lib/gcc-lib/i386-rtems/%%GCCVERSION%%/include/g2c.h
 i386-rtems/lib/soft-float/nofp/libg2c.la
 i386-rtems/lib/soft-float/nofp/libg2c.a
 i386-rtems/lib/soft-float/nofp/libfrtbegin.a

@@ -1,6 +1,6 @@
 bin/m68k-rtems-g77
-lib/gcc-lib/m68k-rtems/3.2.1/f771
-lib/gcc-lib/m68k-rtems/3.2.1/include/g2c.h
+lib/gcc-lib/m68k-rtems/%%GCCVERSION%%/f771
+lib/gcc-lib/m68k-rtems/%%GCCVERSION%%/include/g2c.h
 m68k-rtems/lib/m68000/libg2c.la
 m68k-rtems/lib/m68000/libg2c.a
 m68k-rtems/lib/m68000/libfrtbegin.a
