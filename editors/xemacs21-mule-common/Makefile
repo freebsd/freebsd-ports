@@ -22,28 +22,6 @@
 
 XEMACS_MAJOR_VER=	21
 
-.for dir in \
-	editors/xemacs${XEMACS_MAJOR_VER}-mule \
-	japanese/xemacs${XEMACS_MAJOR_VER}-canna \
-	japanese/xemacs${XEMACS_MAJOR_VER}-canna+freewnn \
-	japanese/xemacs${XEMACS_MAJOR_VER}-canna+wnn6 \
-	japanese/xemacs${XEMACS_MAJOR_VER}-freewnn \
-	japanese/xemacs${XEMACS_MAJOR_VER}-wnn6
-.if exists(${WRKDIRPREFIX}${.CURDIR}/../../${dir}/work/.install_done)
-WRKDIR=	${WRKDIRPREFIX}${.CURDIR}/../../${dir}/work
-.elif exists(${WRKDIRPREFIX}${.CURDIR}/../../${dir}/work/.build_done)
-WRKDIR=	${WRKDIRPREFIX}${.CURDIR}/../../${dir}/work
-.endif
-.endfor
-.if !defined(WRKDIR)
-.if defined(PACKAGE_BUILDING)
-pre-build:
-	@cd ${.CURDIR}/../xemacs${XEMACS_MAJOR_VER}-mule; ${MAKE}
-.else
-BROKEN=		You should build install one of the other xemacs ports first
-.endif
-.endif
-
 CONFIGURE_ARGS=	--with-x11 \
 		--with-mule \
 		--x-includes=${X11BASE}/include \
@@ -63,7 +41,10 @@ DESCR_TMPL=		${.CURDIR}/../xemacs${XEMACS_MAJOR_VER}-mule-common/files/DESCR.tmp
 INSTALL_TMPL=		${.CURDIR}/../xemacs${XEMACS_MAJOR_VER}-mule-common/files/INSTALL.tmpl
 COMMENT_TEXT=		XEmacs(version ${XEMACS_MAJOR_VER}) with mule, lisp files, info pages, etc (except executables)
 
+WRKDIR=	${WRKDIRPREFIX}/${.CURDIR}/../xemacs${XEMACS_MAJOR_VER}-mule/work
+
 pre-build:
+	@cd ${.CURDIR}/../xemacs${XEMACS_MAJOR_VER}-mule; ${MAKE}
 	@${RM} -f ${WRKSRC}/lib-src/DOC* ${WRKSRC}/src/xemacs
 
 pre-install:
