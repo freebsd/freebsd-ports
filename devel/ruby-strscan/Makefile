@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	strscan
-PORTVERSION=	0.6.3
-PORTREVISION=	2
+PORTVERSION=	0.6.5
 CATEGORIES=	devel ruby
 MASTER_SITES=	http://www.loveruby.net/archive/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -16,8 +15,9 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	knu@FreeBSD.org
 
 USE_RUBY=	yes
-USE_RUBY_AMSTD=	yes
 USE_RUBY_SETUP=	yes
+
+RUBY_SETUP=	install.rb
 
 DOCS_EN=	README.en \
 		doc.en/changes.html doc.en/index.html \
