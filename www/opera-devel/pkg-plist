@@ -55,6 +55,7 @@ bin/opera
 %%DATADIR%%/images/opera_48x48.png
 %%DATADIR%%/images/operabanner.png
 %%DATADIR%%/images/shared.gif
+%%DATADIR%%/images/splash.png
 %%DATADIR%%/images/startup1.png
 %%DATADIR%%/images/startup2.png
 %%DATADIR%%/ini/dialog.ini
@@ -70,7 +71,7 @@ bin/opera
 %%DATADIR%%/jsconsole.html
 %%DATADIR%%/lngcode.txt
 %%DATADIR%%/locale/english.lng
-%%DATADIR%%/locale/en/lngcode.txt
+%%DATADIR%%/locale/en/default.adr
 %%DATADIR%%/locale/en/search.ini
 %%DATADIR%%/opera6.adr
 %%DATADIR%%/plugins/libnpp.so
@@ -106,6 +107,7 @@ bin/opera
 %%DATADIR%%/styles/user/textonly.css
 %%DATADIR%%/styles/user/userstyle.ini
 %%DATADIR%%/styles/wml.css
+%%DATADIR%%/hhd.ssr
 @dirrm %%DATADIR%%/styles/user
 @dirrm %%DATADIR%%/styles
 @dirrm %%DATADIR%%/skin

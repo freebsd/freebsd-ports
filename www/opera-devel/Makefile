@@ -6,19 +6,19 @@
 #
 
 PORTNAME=	opera
-PORTVERSION=	7.21.20031013
+PORTVERSION=	7.22.20031103
 CATEGORIES=	www
-MASTER_SITES=	ftp://ftp.sunet.se/pub/www/clients/Opera/unix/freebsd/721/final/en/static/ \
-		ftp://sunsite.cnlab-switch.ch/mirror/opera/unix/freebsd/721/final/en/static/ \
-		ftp://ftp.tiscali.nl/pub/mirrors/opera/unix/freebsd/721/final/en/static/ \
-		ftp://ftp.ntua.gr/pub/www/Opera/unix/freebsd/721/final/en/static/ \
-		http://mirrors.pmmf.hu/mirror/opera/unix/freebsd/721/final/en/static/ \
-		ftp://ftp.task.gda.pl/pub/opera/unix/freebsd/721/final/en/static/ \
-		ftp://ftp.planetmirror.com/pub/opera/unix/freebsd/721/final/en/static/ \
-		http://gd.tuwien.ac.at/infosys/browsers/opera/unix/freebsd/721/final/en/static/ \
-		ftp://ftp.opera.com/pub/opera/unix/freebsd/721/final/en/static/
+MASTER_SITES=	ftp://ftp.sunet.se/pub/www/clients/Opera/unix/freebsd/722/final/en/static/ \
+		ftp://sunsite.cnlab-switch.ch/mirror/opera/unix/freebsd/722/final/en/static/ \
+		ftp://ftp.tiscali.nl/pub/mirrors/opera/unix/freebsd/722/final/en/static/ \
+		ftp://ftp.ntua.gr/pub/www/Opera/unix/freebsd/722/final/en/static/ \
+		http://mirrors.pmmf.hu/mirror/opera/unix/freebsd/722/final/en/static/ \
+		ftp://ftp.task.gda.pl/pub/opera/unix/freebsd/722/final/en/static/ \
+		ftp://ftp.planetmirror.com/pub/opera/unix/freebsd/722/final/en/static/ \
+		http://gd.tuwien.ac.at/infosys/browsers/opera/unix/freebsd/722/final/en/static/ \
+		ftp://ftp.opera.com/pub/opera/unix/freebsd/722/final/en/static/
 
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/1./1-/}.1-static-qt.i386.freebsd
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/2./2-/}.1-static-qt.i386.freebsd-en
 
 MAINTAINER=	avleeuwen@piwebs.com
 COMMENT=	A blazingly fast, full-featured, standards-compliant browser
