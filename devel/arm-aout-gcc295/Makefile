@@ -18,6 +18,8 @@ DISTFILES=	gcc-core-${PORTVERSION}${EXTRACT_SUFX} \
 
 MAINTAINER=	pbecke@javagear.com
 
+BROKEN=		"Does not build"
+
 GCC_REV=	${DISTNAME:S/gcc-//g}
 PLIST_SUB+=	GCC_REV=${GCC_REV}
 USE_BZIP2=	yes
