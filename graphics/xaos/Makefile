@@ -44,6 +44,11 @@ MAN6=		xaos.6
 
 .include <bsd.port.pre.mk>
 
+# GCC 3.4.2 alleges prototype mismatches with __attribute__((regparm))
+.if ${OSVERSION} >= 502125
+CFLAGS+=	-DNOREGISTERS
+.endif
+
 .if ${ARCH} != "i386" && ${ARCH} != "amd64" && ${OSVERSION} >= 502102
 BROKEN=		"Does not compile on FreeBSD >=5.x on !i386 and !amd64"
 .endif
