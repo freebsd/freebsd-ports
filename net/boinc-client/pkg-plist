@@ -1,3 +1,4 @@
+@exec mkdir -p %D/boinc/projects
 bin/boinc-client
 boinc/client/%%BOINC_BINARY%%
 etc/rc.d/boinc.sh
