@@ -7,6 +7,7 @@
 
 PORTNAME=	sylpheed-claws
 PORTVERSION=	0.8.2
+PORTREVISION=	1
 CATEGORIES=	mail news ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	sylpheed-claws
@@ -59,7 +60,7 @@ LIB_DEPENDS+=		jconv.0:${PORTSDIR}/japanese/libjconv
 CONFIGURE_ARGS+=	--disable-jconv
 .endif
 .if defined(WITH_PSPELL) || defined(WITH_ALL)
-LIB_DEPENDS+=		pspell.4:${PORTSDIR}/textproc/pspell
+LIB_DEPENDS+=		pspell.15:${PORTSDIR}/textproc/aspell
 CONFIGURE_ARGS+=	--enable-pspell
 .endif
 .if defined(WITH_JPILOT) || defined(WITH_ALL)
