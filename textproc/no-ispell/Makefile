@@ -13,4 +13,6 @@ PORTVERSION=	2.0
 PORTREVISION=	1
 MASTERDIR=	${.CURDIR}/../ispell
 
+USE_PERL5=	yes
+
 .include        "${MASTERDIR}/Makefile"
