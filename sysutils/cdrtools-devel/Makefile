@@ -8,7 +8,7 @@
 PORTNAME?=	cdrtools
 CDRTLSVERSION=	2.01a27
 PORTVERSION?=	${CDRTLSVERSION}
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES?=	sysutils audio
 MASTER_SITES=	ftp://ftp.berlios.de/pub/cdrecord/alpha/ \
 		ftp://ftp.cs.tu-berlin.de/pub/misc/cdrecord/alpha/
@@ -101,7 +101,8 @@ post-patch:
 .endif
 .for i in README.rscsi include/deflts.h cdda2wav/cdda2wav.1 \
 	cdrecord/cdrecord.1 cdrecord/cdrecord.dfl cdrecord/defaults.c \
-	readcd/readcd.1 rscsi/rscsi.c rscsi/rscsi.dfl scgcheck/scgcheck.1
+	librscg/scsi-remote.c readcd/readcd.1 rscsi/rscsi.c rscsi/rscsi.dfl \
+	scgcheck/scgcheck.1
 	@${REINPLACE_CMD} -e 's|\/opt\/schily|${PREFIX}|g; \
 		s|\/usr\/local|${PREFIX}|g; s|\/etc\/default|${PREFIX}\/etc|g; \
 		s|\/var\/adm\/messages|\/var\/run\/dmesg.boot|g' ${WRKSRC}/${i}
