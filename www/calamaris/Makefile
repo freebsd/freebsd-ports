@@ -1,12 +1,12 @@
 # New ports collection makefile for:	calmaris
-# Version required:	2.26
+# Version required:	2.27
 # Date created:         25 December 1998
 # Whom:                 Dima Sivachenko
 #
-# $Id: Makefile,v 1.5 1999/05/02 09:06:22 mharo Exp $
+# $Id: Makefile,v 1.6 1999/06/08 22:33:59 steve Exp $
 #
 
-DISTNAME=	calamaris-2.26
+DISTNAME=	calamaris-2.27
 CATEGORIES=	www textproc
 MASTER_SITES=	http://calamaris.cord.de/ \
 		ftp://ftp.gpad.ac.ru/pub/FreeBSD/distfiles/
