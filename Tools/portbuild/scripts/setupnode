@@ -38,9 +38,9 @@ if [ "$nocopy" = 0 ]; then
     echo "copying bindist to $(hostname)"
     if [ ${disconnected} = 0 ]; then  
       cp -p ${pb}/${arch}/${branch}/tarballs/bindist.tar ${tmpdir}/${branch}/tarballs
-      cp -p ${pb}/${arch}/${branch}/tarballs/bindist-$(hostname).tar ${tmpdir}/${branch}/tarballs
     fi
   fi
+  cp -p ${pb}/${arch}/${branch}/tarballs/bindist-$(hostname).tar ${tmpdir}/${branch}/tarballs
   if [ ${disconnected} = 1 ]; then
     # Prepare all directories, they will be populated by a rsync push from the master
     mkdir -p ${pb}/scripts ${pb}/${arch}/${branch}/ports ${pb}/${arch}/${branch}/src ${pb}/${arch}/${branch}/src ${pb}/${arch}/${branch}/tarballs
