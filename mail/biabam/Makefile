@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	biabam
-PORTVERSION=	0.9.6
+PORTVERSION=	0.9.7
 CATEGORIES=	mail
 MASTER_SITES=	http://mmj.dk/biabam/
 
@@ -19,7 +19,7 @@ USE_REINPLACE=	yes
 NO_BUILD=	yes
 PLIST_FILES=	bin/biabam
 
-do-patch:
+post-patch:
 	@${REINPLACE_CMD} -e 's|\(#!\)\(/bin/bash\)|\1${LOCALBASE}\2|' \
 		${WRKSRC}/${PORTNAME}
 
