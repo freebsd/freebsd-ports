@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	muse
-PORTVERSION=	0.1
+PORTVERSION=	0.2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.spatula.net/muse/
 
@@ -15,9 +15,5 @@ COMMENT=	Shows memory usage data
 
 MAN1=		muse.1
 MANCOMPRESSED=	yes
-
-pre-patch:
-	${RM} -f ${WRKSRC}/Makefile
-	${CP} ${FILESDIR}/Makefile ${WRKSRC}
 
 .include <bsd.port.mk>
