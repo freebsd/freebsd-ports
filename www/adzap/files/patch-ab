@@ -1,10 +1,11 @@
---- adzap.conf.orig	Tue Jul  3 01:28:24 2001
-+++ adzap.conf	Tue Jul  3 01:28:41 2001
-@@ -0,0 +1,23 @@
+--- /dev/null	Fri Dec 28 09:15:33 2001
++++ zaps/adzap.conf	Fri Dec 28 09:15:03 2001
+@@ -0,0 +1,24 @@
 +# example adzap configuration file
 +# copy this file over to ${PREFIX}/etc/adzap.conf,
 +# then modify this to match your install
 +
++zapper=%%PREFIX%%/libexec/adzap		# location of the zapper
 +ZAP_MODE=CLEAR				# or "CLEAR"
 +ZAP_BASE=http://adzap.cs.zip.com.au	# a local web server will be better
 +ZAP_PREMATCH=				# pathname of extra pattern file

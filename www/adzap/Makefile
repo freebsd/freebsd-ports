@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	adzap
-PORTVERSION=	20011013
+PORTVERSION=	20020105
 CATEGORIES=	www perl5
 MASTER_SITES=	http://www.zip.com.au/~cs/adzap/ \
 		${MASTER_SITE_LOCAL}
@@ -17,24 +17,27 @@ WRKSRC=		${WRKDIR}/adzap
 
 NO_BUILD=	# defined
 USE_PERL5=	# defined
+ZAPFILES=	adzap.conf closepopup-clear.html no-op-clear.html \
+		closepopup.html no-op.html no-op-clear.js no-op.js \
+		ad-clear.gif ad-clear.mp3 ad-clear.swf ad.gif
+RCFILES=	proxy-cisra.pac proxy-home.pac proxy-zip.pac
 
 do-configure:
 .for FILE in squid_redirect wrapzap
-	${CP} ${WRKSRC}/${FILE} ${WRKSRC}/${FILE}.orig
-	${SED} -e "s:/usr/bin/perl:${PERL5}:g" \
-	       -e "s:@@PREFIX@@:${PREFIX}:g" \
-		<${WRKSRC}/${FILE}.orig >${WRKSRC}/${FILE}
+	${PERL} -pi -e "s:/usr/bin/perl:${PERL5}:g; \
+			s:%%PREFIX%%:${PREFIX}:g" ${WRKSRC}/scripts/${FILE}
+	${PERL} -pi -e "s:%%PREFIX%%:${PREFIX}:g" ${WRKSRC}/zaps/adzap.conf
 .endfor
-#	${SED} s,%PREFIX%,${PREFIX}, < ${WRKSRC}/wrapzap > ${WRKSRC}/adzap
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/squid_redirect ${PREFIX}/libexec
-	${INSTALL_SCRIPT} ${WRKSRC}/wrapzap ${PREFIX}/libexec/adzap
+	${INSTALL_SCRIPT} ${WRKSRC}/scripts/squid_redirect ${PREFIX}/libexec
+	${INSTALL_SCRIPT} ${WRKSRC}/scripts/wrapzap ${PREFIX}/libexec/adzap
 	${MKDIR} ${PREFIX}/share/examples/adzap
-.for FILE in adzap.conf proxy-cisra.pac proxy-home.pac proxy-zip.pac \
-	closepopup-clear.html no-op-clear.html closepopup.html no-op.html \
-	no-op-clear.js no-op.js ad-clear.gif ad-clear.mp3 ad-clear.swf ad.gif
-	${INSTALL_DATA} ${WRKSRC}/${FILE} ${PREFIX}/share/examples/adzap
+.for FILE in ${ZAPFILES}
+	${INSTALL_DATA} ${WRKSRC}/zaps/${FILE} ${PREFIX}/share/examples/adzap
+.endfor
+.for FILE in ${RCFILES}
+	${INSTALL_DATA} ${WRKSRC}/rc/${FILE} ${PREFIX}/share/examples/adzap
 .endfor
 
 post-install:
