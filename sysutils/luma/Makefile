@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	luma
-PORTVERSION=	2.0.3
+PORTVERSION=	2.1
 CATEGORIES=	sysutils net-mgmt
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 # MASTER_SITES=	http://home.tu-clausthal.de/~ifwd/luma/
@@ -30,7 +30,6 @@ USE_OPENLDAP=	yes
 MAN1=		luma.1
 
 post-extract:
-	@${FIND} ${WRKSRC} -name *.orig -delete
 	@${MV} ${WRKSRC}/share/man ${WRKSRC}/
 
 do-configure:
