@@ -1,22 +1,52 @@
---- Makefile.orig	Wed Jun  5 01:38:47 2002
-+++ Makefile	Wed Jun  5 01:41:39 2002
-@@ -1,14 +1,14 @@
- # Eukleides 0.9.0 makefile
+--- Makefile.orig	Tue Nov 12 06:25:09 2002
++++ Makefile	Sat Dec 14 08:42:59 2002
+@@ -1,18 +1,20 @@
+ # Eukleides 0.9.2 makefile
  # Copyright (c) Christian Obrecht 2000-2002
  
 -CC = gcc
 -CFLAGS = -c -O2
-+#CC = gcc
++CC ?= gcc
 +CFLAGS += -c
  OBJECTS = lex.yy.o parser.tab.o main.o geometry.o drawing.o
  LEX = flex
  YACC = bison -d
--BIN = /usr/local/bin/
--MAN = /usr/man/man1/
--INFO = /usr/info/
-+BIN = ${PREFIX}/bin/
-+MAN = ${PREFIX}/man/man1/
-+INFO = ${PREFIX}/info/
+-PREFIX = /usr/local/
+-BIN = $(PREFIX)bin/
+-MAN = $(PREFIX)man/man1/
+-INFO = $(PREFIX)info/
++PREFIX ?= /usr/local/
++BIN = $(PREFIX)/bin/
++MAN = $(PREFIX)/man/man1/
++INFO = $(PREFIX)/info/
  PAPER = --texinfo=@afourpaper
  DOC = eukleides.info eukleides.dvi eukleides.ps
  
++all : eukleides info
++
+ eukleides : $(OBJECTS)
+ 	$(CC) -o $@ -lm $(OBJECTS)
+ 
+@@ -42,15 +44,13 @@
+ book : dvi
+ 	dvips -f eukleides.dvi > eukleides.ps
+ 
+-install : eukleides man info
+-	strip eukleides ; \
+-	cp -f eukleides $(BIN)eukleides ; \
+-	chmod +x euk2eps ; \
+-	cp -f euk2eps $(BIN)euk2eps ; \
+-	chmod +x euk2edit ; \
+-	cp -f euk2edit $(BIN)euk2edit ; \
+-	install-info eukleides.info $(INFO)dir ; \
+-	cp -f eukleides.info $(INFO)eukleides.info
++install : eukleides info
++	${BSD_INSTALL_PROGRAM} eukleides $(BIN)eukleides
++	${BSD_INSTALL_SCRIPT} euk2eps $(BIN)euk2eps
++	${BSD_INSTALL_SCRIPT} euk2edit $(BIN)euk2edit
++	${BSD_INSTALL_MAN} eukleides.man $(MAN)eukleides.1
++	${BSD_INSTALL_DATA} eukleides.info $(INFO)eukleides.info
++	install-info eukleides.info $(INFO)dir
+ 
+ uninstall :
+ 	rm -f $(BIN)eukleides ; \

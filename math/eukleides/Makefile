@@ -7,18 +7,19 @@
 #
 
 PORTNAME=	eukleides
-PORTVERSION=	0.9.0
+PORTVERSION=	0.9.2.1
 CATEGORIES=	math
 MASTER_SITES=	http://perso.wanadoo.fr/obrecht/download/
-DISTNAME=	${PORTNAME}.${PORTVERSION}
+DISTNAME=	${PORTNAME}.${PORTVERSION:R}rev${PORTVERSION:E}
 
 MAINTAINER=	ports@FreeBSD.org
 
 RUN_DEPENDS=	pstoedit:${PORTSDIR}/graphics/pstoedit \
 		epstopdf:${PORTSDIR}/print/teTeX
 
+WRKSRC=		${WRKDIR}/${PORTNAME}.${PORTVERSION:R}
+
 USE_BISON=	yes
-ALL_TARGET=	${PORTNAME}
 USE_GMAKE=	yes
 
 MAN1=	eukleides.1
