@@ -1,0 +1,20 @@
+VPATH=	${.CURDIR}/75dpi:${.CURDIR}/misc
+BDFS!=	echo ${VPATH:S,:,/*.bdf ,}/*.bdf
+PCFS=	${BDFS:T:S/.bdf/.pcf/}
+
+.SUFFIXES:	.bdf .pcf
+
+all:	fonts.dir fonts.alias ${PCFS}
+
+fonts.dir:	${PCFS}
+	mkfontdir .
+
+fonts.alias: ${VPATH:S,:,/fonts.alias ,}/fonts.alias
+	cat ${.ALLSRC} > ${.TARGET}
+
+.bdf.pcf:
+	bdftopcf -o ${.TARGET} ${.ALLSRC}
+
+install: all
+	${MKDIR} ${INST_DIR}
+	${BSD_INSTALL_DATA} ${PCFS} fonts.dir fonts.alias ${INST_DIR}

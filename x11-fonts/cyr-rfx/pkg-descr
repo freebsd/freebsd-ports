@@ -1,0 +1,18 @@
+CYR-RFX started as a collection of cyrillic fonts for X-Window
+("CYR-RFX" stands for "CYRillic Raster Fonts for X"). Now it includes
+several cyrillic encodings and two latin ones (both with Euro sign). 
+
+These fonts are modified (mainly with cyrillics added) versions of
+standard X-Window fonts from misc/ and 75dpi/. 
+
+The fonts included are all *iso8859-1 from misc/, and most important
+75dpi/ ones: lu (LucidaSans), lut (LucidaSansTypewriter), tim (Times),
+helv (Helvetica) and cour (Courier).
+
+Unlike the standard CYR-RFX' hierarchical install, this port installs
+all fonts for the same encoding into a single directory, with combined
+fonts.aliases and the new fonts.dir. The default encoding is KOI8-O --
+seemingly the most complete of the Cyrillic encodings, compatible (for
+most intents and purposes) with KOI8-R and KOI8-U.
+
+WWW: http://www.inp.nsk.su/~bolkhov/files/fonts/cyr-rfx/00index.en.html
