@@ -1,6 +1,6 @@
 #!/bin/sh
 
-MOZILLA_DIR="%%PREFIX%%/lib/mozilla"
+MOZILLA_DIR="%%PREFIX%%/lib/%%MOZILLA%%"
 MOZILLA_EXEC="mozilla"
 LOCATION='new-tab'
 
