@@ -2,11 +2,11 @@
 # $FreeBSD$
 #
 
-if [ -f /var/run/smokeping.pid ]; then
+if [ -f ${PKG_PREFIX}/var/smokeping/smokeping.pid ]; then
     if [ -x ${PKG_PREFIX}/etc/rc.d/smokeping.sh ]; then
         ${PKG_PREFIX}/etc/rc.d/smokeping.sh stop > /dev/null
     fi
-    rm /var/run/smokeping.pid
+    rm ${PKG_PREFIX}/var/smokeping/smokeping.pid
 fi
 
 if [ "$2" != "POST-DEINSTALL" ]; then
