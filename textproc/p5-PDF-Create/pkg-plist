@@ -1,0 +1,6 @@
+lib/perl5/site_perl/%%PERL_VER%%/PDF/Create/Page.pm
+lib/perl5/site_perl/%%PERL_VER%%/PDF/Create/Outline.pm
+lib/perl5/site_perl/%%PERL_VER%%/PDF/sample.pl
+lib/perl5/site_perl/%%PERL_VER%%/PDF/Create.pm
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/PDF/Create
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/PDF

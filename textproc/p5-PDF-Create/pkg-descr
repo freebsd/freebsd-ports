@@ -1,0 +1,17 @@
+
+From the p5-PDF-Create README:
+
+	PDF::Create allows you to create PDF documents using a large
+	number of primitives, and emit the result as a PDF file or
+	stream. PDF stands for Portable Document Format.
+
+	Documents can have several pages, a table of content, an
+	information section and many other PDF elements. More
+	functionnalities will be added as needs arise.
+
+For more details, type 'perldoc PDF::Create' or see the CPAN homepage:
+
+WWW: http://search.cpan.org/search?dist=PDF-Create
+
+- Pete 
+petef@databits.net

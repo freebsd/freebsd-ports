@@ -79,6 +79,7 @@
     SUBDIR += no-ispell
     SUBDIR += openjade
     SUBDIR += p5-DelimMatch
+    SUBDIR += p5-PDF-Create
     SUBDIR += p5-Sort-ArbBiLex
     SUBDIR += p5-Sort-Fields
     SUBDIR += p5-Spreadsheet-ParseExcel
