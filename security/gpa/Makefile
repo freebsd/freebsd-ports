@@ -14,7 +14,8 @@ MASTER_SITE_SUBDIR=	alpha/gpa
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A graphical frontend for the GNU Privacy Guard
 
-BUILD_DEPENDS=	gpgme-config:${PORTSDIR}/security/gpgme
+BUILD_DEPENDS=	gpgme-config:${PORTSDIR}/security/gpgme \
+		gpg:${PORTSDIR}/security/gnupg
 RUN_DEPENDS=	gpg:${PORTSDIR}/security/gnupg
 
 USE_X_PREFIX=	yes
