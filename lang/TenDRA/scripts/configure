@@ -188,6 +188,13 @@ cat >$WRKSRC/src/lib/env/freebsd/elf/80x86/system+ <<EOF
 >API_NAME		"-Asystem1 -Asystem"
 >INFO			"System@Headers"
 EOF
+# Create $WRKSRC/src/lib/env/freebsd/elf/80x86/tcc_diag
+cat >$WRKSRC/src/lib/env/freebsd/elf/80x86/tcc_diag <<EOF
+/* TCC ENVIRONMENT : DIAGNOSTICS FOR FreeBSD */
+
+<LINK		"-L-LIBDIR-/diag"
+>SYS_LIB	"-static -g"
+EOF
 # Create $WRKSRC/src/lib/env/freebsd/elf/80x86/tcc_prof
 cat >$WRKSRC/src/lib/env/freebsd/elf/80x86/tcc_prof <<EOF
 /* TCC ENVIRONMENT : PROFILING FOR FreeBSD */
