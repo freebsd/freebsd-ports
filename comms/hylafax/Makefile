@@ -3,7 +3,7 @@
 # Date created:		19 Apr 1997
 # Whom:			Jun-ichiro itojun Itoh <itojun@itojun.org>
 #
-# $Id: Makefile,v 1.8 1996/11/17 03:00:42 obrien Exp $
+# $Id: Makefile,v 1.9 1997/05/29 06:49:15 asami Exp $
 #
 
 DISTNAME=	hylafax-v4.0pl1
@@ -48,6 +48,7 @@ SUID_EXES= 	${PREFIX}/sbin/faxgetty ${PREFIX}/sbin/faxq \
 pre-configure:
 	@${RM} -f ${WRKSRC}/tiff.h 
 	@${RM} -f ${WRKSRC}/tiffio.h 
+	@ln -s ${PREFIX}/include/tiff34.h ${WRKSRC}/tiff34.h
 	@ln -s ${PREFIX}/include/tiff34.h ${WRKSRC}/tiff.h
 	@ln -s ${PREFIX}/include/tiffio34.h ${WRKSRC}/tiffio.h
 
