@@ -1,0 +1,103 @@
+--- contrib/Makefile.in.orig	Mon Jun  4 19:14:31 2001
++++ contrib/Makefile.in	Wed Mar 26 11:45:15 2003
+@@ -12,6 +12,7 @@
+ mandir = @mandir@
+ srcdir = @srcdir@
+ docdir = @docdir@
++samplesdir = @prefix@/share/examples/mutt
+ top_srcdir = @top_srcdir@
+ top_builddir = ..
+ INSTALL = @INSTALL@
+@@ -37,12 +38,12 @@
+ check:
+ 
+ install:
+-	$(top_srcdir)/mkinstalldirs $(DESTDIR)$(docdir)/samples $(DESTDIR)$(docdir)/samples/iconv
++	$(top_srcdir)/mkinstalldirs $(DESTDIR)$(samplesdir) $(DESTDIR)$(samplesdir)/iconv
+ 	for f in $(SAMPLES) ; do \
+-		$(INSTALL) -m 644 $(srcdir)/$$f $(DESTDIR)$(docdir)/samples ;	\
++		$(INSTALL) -m 644 $(srcdir)/$$f $(DESTDIR)$(samplesdir);	\
+ 	done
+ 	for f in $(srcdir)/iconv/*.rc ; do					\
+-		$(INSTALL) -m 644 $$f $(DESTDIR)$(docdir)/samples/iconv	  ;	\
++		$(INSTALL) -m 644 $$f $(DESTDIR)$(samplesdir)/iconv	  ;	\
+ 	done
+ 
+ # Nothing needs to be done - uninstall in doc removes samples as well.
+--- init.h.orig	Tue Mar  4 10:28:12 2003
++++ init.h	Wed Mar 26 15:41:19 2003
+@@ -1455,8 +1455,8 @@
+   ** .pp
+   ** For examples on how to configure these formats for the various versions
+   ** of PGP which are floating around, see the pgp*.rc and gpg.rc files in
+-  ** the samples/ subdirectory which has been installed on your system
+-  ** alongside the documentation.
++  ** the share/examples/mutt subdirectory which has been installed on your
++  ** system.
+   ** (PGP only)
+   */
+   { "pgp_getkeys_command",	DT_STR, R_NONE, UL &PgpGetkeysCommand, 0},
+@@ -1628,8 +1628,8 @@
+   ** .de
+   ** .pp
+   ** For examples on how to configure these formats, see the smime.rc in
+-  ** the samples/ subdirectory which has been installed on your system
+-  ** alongside the documentation.
++  ** the share/examples/mutt subdirectory which has been installed on your
++  ** system.
+   ** (S/MIME only)
+   */
+   { "smime_verify_command", 	DT_STR, R_NONE, UL &SmimeVerifyCommand, 0},
+--- Makefile.am.orig	Wed Mar 26 13:13:10 2003
++++ Makefile.am	Wed Mar 26 13:25:40 2003
+@@ -13,7 +13,7 @@
+ 
+ bin_SCRIPTS = muttbug flea
+ 
+-BUILT_SOURCES = keymap_defs.h patchlist.c
++BUILT_SOURCES = keymap_defs.h patchlist.c Muttrc
+ 
+ bin_PROGRAMS = mutt @DOTLOCK_TARGET@ @PGPAUX_TARGET@
+ mutt_SOURCES = $(BUILT_SOURCES) \
+--- INSTALL.orig	Mon Nov 25 15:16:46 2002
++++ INSTALL	Wed Mar 26 15:59:57 2003
+@@ -225,13 +225,13 @@
+ need to tell mutt about implementation-defined names for some
+ character sets.  Sample configuration files for various systems can
+ be found in the directory contrib/iconv/ in this source
+-distribution, and will be installed in the samples/iconv directory
++distribution, and will be installed in the share/examples/mutt/iconv directory
+ as part of mutt's documentation.
+ 
+ In order to use these sample configuration files, just put a line
+ like
+ 
+-     source /usr/local/doc/mutt/samples/iconv/iconv.osf1-4.0d.rc
++     source /usr/local/share/examples/mutt/iconv/iconv.osf1-4.0d.rc
+ 
+ into your system's global Muttrc, which normally resides in /etc or
+ /usr/local/etc.
+--- doc/manual.txt.orig	Wed Mar 19 23:30:56 2003
++++ doc/manual.txt	Wed Mar 26 16:07:20 2003
+@@ -4954,8 +4954,8 @@
+ 
+   For examples on how to configure these formats for the various
+   versions of PGP which are floating around, see the pgp*.rc and gpg.rc
+-  files in the samples/ subdirectory which has been installed on your
+-  system alongside the documentation.  (PGP only)
++  files in the share/examples/mutt/ subdirectory which has been installed on
++  your system alongside the documentation.  (PGP only)
+ 
+   66..33..114433..  ppggpp__ggeettkkeeyyss__ccoommmmaanndd
+ 
+@@ -5147,8 +5147,8 @@
+         ``$smime_ca_location''" or "-CAfile ``$smime_ca_location''".
+ 
+   For examples on how to configure these formats, see the smime.rc in
+-  the samples/ subdirectory which has been installed on your system
+-  alongside the documentation.  (S/MIME only)
++  the share/examples/mutt/ subdirectory which has been installed on your
++  system alongside the documentation.  (S/MIME only)
+ 
+   66..33..116622..  ssmmiimmee__vveerriiffyy__ccoommmmaanndd
+ 
