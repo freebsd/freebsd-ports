@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xpenguins
-PORTVERSION=	2.1
+PORTVERSION=	2.2
 CATEGORIES=	games
 MASTER_SITES=	http://xpenguins.seul.org/
 
