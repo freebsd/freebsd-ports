@@ -1,0 +1,12 @@
+--- src/msql/msqldb.c.ORG	Wed Oct 23 19:19:06 1996
++++ src/msql/msqldb.c	Wed Oct 23 19:20:51 1996
+@@ -1398,6 +1398,9 @@
+ 		safeFree(entry->rowBuf);
+ 		safeFree(entry->keyBuf);
+ 		entry->def = NULL;
++		*(entry->DB) = 0;
++		*(entry->table) = 0;
++		entry->age = 0;
+ 	}
+ 
+ 	/*
