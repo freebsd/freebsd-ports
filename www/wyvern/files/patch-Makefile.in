@@ -1,0 +1,29 @@
+--- Makefile.in.orig	Mon Dec 11 01:06:38 2000
++++ Makefile.in	Sat Mar  3 23:29:15 2001
+@@ -74,21 +74,20 @@
+ 	${INSTALL} -m 444 ${install_docs} ${docsdir}
+ 	-(cd ${confdir}; ${MV} wyvern.conf wyvern.conf.old)
+ 	-(cd ${confdir}; ${MV} mime.types mime.types.old)
+-	(cd conf; ${INSTALL_DATA} ${install_conf} ${confdir})
++	(cd conf; for f in ${install_conf}; do ${INSTALL_DATA} $${f} ${confdir}/$${f}-dist; done)
++	(cd ${confdir}; for f in ${install_conf}; do [ -f $${f} ] || cp $${f}-dist $${f}; done)
+ 	(cd style; ${INSTALL_DATA} *.css ${styledir})
+ 	(cd icons; ${INSTALL} -m 444 *.gif ${iconsdir})
+ 	(cd images; ${INSTALL} -m 444 *.jpg ${imagesdir})
+ 	(cd htdocs; ${INSTALL_DATA} ${install_htdocs} ${htdocsdir})
+ 	(cd admin; ${INSTALL_DATA} ${install_admin} ${admindir})
+ 	(cd manual; ${MAKE} install)
+-	(cd etc; ${INSTALL_DATA} ${install_admin_pwd} ${etcdir}/.admin_passwd)
+-	(cd etc; ${INSTALL_DATA} ${install_admin_md5} ${etcdir}/.admin_passwd_md5)
+-	(cd ${etcdir}; ${bindir}/plain2dbm .admin_passwd)
+-	(cd ${etcdir}; ${bindir}/plain2dbm .admin_passwd_md5)
++	(cd etc; for f in ${install_admin_pwd} ${install_admin_md5}; do ${INSTALL_DATA} $${f} ${etcdir}/$${f#dot}-dist; done)
++	(cd ${etcdir}; for f in ${install_admin_pwd} ${install_admin_md5}; do ${bindir}/plain2dbm $${f#dot}-dist; [ -f $${f#dot} ] || cp $${f#dot}-dist $${f#dot}; done)
+ 	(cd etc/rc.d; ${INSTALL} -m 555 ${install_rc_d} ${rcdir})
+ 	(cd samples; ${INSTALL_DATA} ${install_samples} ${samplesdir})
+ 	(cd cgi-bin; ${MAKE} install)
+-	@if [ "x${SSL_CMD}" != "x" ]; then ${MAKE} certificate; fi
++#	@if [ "x${SSL_CMD}" != "x" ]; then ${MAKE} certificate; fi
+ 
+ update::	check-dirs
+ 	(cd src; ${MAKE} install)
