@@ -3,7 +3,7 @@
 # Date created:		21 August 1995
 # Whom:			asami
 #
-# $Id: Makefile,v 1.3 1996/04/24 20:41:55 ache Exp $
+# $Id: Makefile,v 1.4 1996/05/22 22:26:45 ache Exp $
 #
 
 DISTNAME=       netscape-3.0b4
@@ -13,9 +13,8 @@ DISTFILES=      netscape-v30b4-export.i386-unknown-bsd.tar.gz
 
 MAINTAINER=	jkh@FreeBSD.ORG
 
+RESTRICTED=	"Commercial software."
 NO_WRKSUBDIR=	yes
-# commercial package
-NO_PACKAGE=	yes
 
 post-install:
 	@cat ${PKGDIR}/DESCR
