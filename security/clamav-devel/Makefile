@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	clamav
-PORTVERSION=	20040126
+PORTVERSION=	20040129
 CATEGORIES=	security
 MASTER_SITES=	http://clamav.sourceforge.net/snapshot/
 PKGNAMESUFFIX=	-devel
@@ -121,20 +121,21 @@ pre-install:
 		${SH} ${PKGINSTALL} ${PREFIX} PRE-INSTALL
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}${PKGNAMESUFFIX}
-	${INSTALL_DATA} ${WRKSRC}/docs/*pdf ${DOCSDIR}${PKGNAMESUFFIX}
+	@${INSTALL_DATA} ${WRKSRC}/docs/*pdf ${DOCSDIR}${PKGNAMESUFFIX}
 .endif
 
 post-install:
 	@[ -f ${PREFIX}/etc/clamav.conf ] || \
-		${CP} ${PREFIX}/etc/clamav.conf.default \
+		${CP} ${BUILD_WRKSRC}/etc/clamav.conf.default \
 			${PREFIX}/etc/clamav.conf
 	@[ -f ${PREFIX}/etc/freshclam.conf ] || \
-		${CP} ${PREFIX}/etc/freshclam.conf.default \
+		${CP} ${BUILD_WRKSRC}/etc/freshclam.conf.default \
 			${PREFIX}/etc/freshclam.conf
 	@${CHOWN} -R ${CLAMAVUSER}:${CLAMAVGROUP} ${DATADIR}
 	@${INSTALL_SCRIPT} ${WRKDIR}/clamav-clamd.sh \
 		${RC_DIR}/clamav-clamd${RC_SUFX}
 	@${INSTALL_SCRIPT} ${WRKDIR}/freshclam.sh ${RC_DIR}/freshclam${RC_SUFX}
+	@${SH} ${PKGINSTALL} ${PREFIX} POST-INSTALL
 .if defined(WITH_MILTER)
 	@${INSTALL_SCRIPT} ${WRKDIR}/clamav-milter.sh \
 		${RC_DIR}/clamav-milter${RC_SUFX}
