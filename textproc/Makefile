@@ -513,6 +513,7 @@
     SUBDIR += texi2html
     SUBDIR += tkdiff
     SUBDIR += tnef2txt
+    SUBDIR += trang
     SUBDIR += tth
     SUBDIR += txt2html
     SUBDIR += txt2man
