@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	tmake
-PORTVERSION=	1.4
+PORTVERSION=	1.5
 CATEGORIES=	devel perl5
-MASTER_SITES=	ftp://ftp.troll.no/freebies/tmake/
+MASTER_SITES=	ftp://ftp.trolltech.com/freebies/tmake/
 
 MAINTAINER=	jesse@cs.uni-magdeburg.de
 
