@@ -113,6 +113,7 @@ share/vim/%%VIM_VER%%/ftplugin/mail.vim
 share/vim/%%VIM_VER%%/ftplugin/make.vim
 share/vim/%%VIM_VER%%/ftplugin/man.vim
 share/vim/%%VIM_VER%%/ftplugin/python.vim
+share/vim/%%VIM_VER%%/ftplugin/ruby.vim
 share/vim/%%VIM_VER%%/ftplugin/vim.vim
 share/vim/%%VIM_VER%%/ftplugin/xs.vim
 share/vim/%%VIM_VER%%/ftplugof.vim
@@ -125,6 +126,7 @@ share/vim/%%VIM_VER%%/indent/make.vim
 share/vim/%%VIM_VER%%/indent/matlab.vim
 share/vim/%%VIM_VER%%/indent/perl.vim
 share/vim/%%VIM_VER%%/indent/python.vim
+share/vim/%%VIM_VER%%/indent/ruby.vim
 share/vim/%%VIM_VER%%/indent/sh.vim
 share/vim/%%VIM_VER%%/indent/tcl.vim
 share/vim/%%VIM_VER%%/indent/verilog.vim
@@ -231,6 +233,7 @@ share/vim/%%VIM_VER%%/syntax/docbk.vim
 share/vim/%%VIM_VER%%/syntax/dosbatch.vim
 share/vim/%%VIM_VER%%/syntax/dosini.vim
 share/vim/%%VIM_VER%%/syntax/dracula.vim
+share/vim/%%VIM_VER%%/syntax/dsl.vim
 share/vim/%%VIM_VER%%/syntax/dtd.vim
 share/vim/%%VIM_VER%%/syntax/dtml.vim
 share/vim/%%VIM_VER%%/syntax/dylan.vim
