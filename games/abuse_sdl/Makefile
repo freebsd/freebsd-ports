@@ -6,20 +6,26 @@
 #
 
 PORTNAME=	abuse_sdl
-PORTVERSION=	0.6.1
+PORTVERSION=	0.7.0
 CATEGORIES=	games
 MASTER_SITES=	http://www.labyrinth.net.au/~trandor/abuse/files/
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An SDL port of the Abuse game engine
 
-LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12:install
-
-USE_GMAKE=	YES
-GNU_CONFIGURE=	YES
-CONFIGURE_ENV=	CFLAGS="${CFLAGS}" SDL_CONFIG="${LOCALBASE}/bin/sdl11-config"
-CONFIGURE_ARGS=	--prefix="${PREFIX}"
+USE_BZIP2=	yes
+USE_MESA=	yes
+USE_SDL=	yes
+USE_REINPLACE=	yes
+USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include" \
+		LDFLAGS="-L${X11BASE}/lib"
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 MAN6=		abuse-sdl.6
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
