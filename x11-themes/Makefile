@@ -85,6 +85,7 @@
     SUBDIR += lila-xfce4-panel
     SUBDIR += lila-xffm
     SUBDIR += lila-xfwm4
+    SUBDIR += metacity-aluminumalloy-volcanic-theme
     SUBDIR += metacity-theme-6nome
     SUBDIR += metacity-theme-aero
     SUBDIR += metacity-theme-alloy-c
