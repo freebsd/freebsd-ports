@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	open-cobol
-PORTVERSION=	0.23
-PORTREVISION=	1
+PORTVERSION=	0.30
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -20,10 +19,10 @@ LIB_DEPENDS=	gmp.6:${PORTSDIR}/math/libgmp4
 
 USE_LIBLTDL=	yes
 USE_GETOPT_LONG=	yes
-GNU_CONFIGURE=	yes
+USE_REINPLACE=	yes
+USE_LIBTOOL_VER=	15
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
-CONFIGURE_ARGS=	--with-readline
 INSTALLS_SHLIB=	yes
 
 INFO=		open-cobol
@@ -36,8 +35,13 @@ CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .else
 USE_GETTEXT=	yes
-LDFLAGS+=	-lintl
 PLIST_SUB+=	NLS=""
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|^SUBDIRS = lib |SUBDIRS = |g' \
+		${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's|$$(top_builddir)/lib/libsupport\.a||g' \
+		${WRKSRC}/cobc/Makefile.in
 
 .include <bsd.port.mk>

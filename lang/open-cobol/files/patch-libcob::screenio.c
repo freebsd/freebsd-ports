@@ -1,10 +1,10 @@
---- libcob/screenio.c.orig	Thu Apr  3 06:02:51 2003
-+++ libcob/screenio.c	Tue Apr 29 04:09:44 2003
+--- libcob/screenio.c.orig	Fri Mar 12 13:41:58 2004
++++ libcob/screenio.c	Wed Nov 24 02:43:30 2004
 @@ -19,6 +19,7 @@
  
  #include "config.h"
  
-+#include <sys/types.h>
++#include <stdio.h>
  #include <string.h>
- #if HAVE_CURSES_H
- #include <curses.h>
+ 
+ #if HAVE_NCURSES_H
