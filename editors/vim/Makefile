@@ -37,10 +37,10 @@ MAINTAINER?=	obrien@FreeBSD.org
 SLAVEDIRS=	editors/vim-lite
 
 .if defined(PACKAGE_BUILDING) && !defined(LITE)
-BUILD_DEPENDS=	tclsh8.0:${PORTSDIR}/lang/tcl80
-LIB_DEPENDS=	tcl80.1:${PORTSDIR}/lang/tcl80
-USE_PERL5=	yes
-USE_PYTHON=	yes
+WITH_TCL=	yes
+WITH_PERL=	yes
+WITH_PYTHON=	yes
+WITH_CSCOPE=	yes
 .endif
 
 USE_BZIP2=	yes
@@ -55,13 +55,14 @@ PLIST_SUB=	VIM_VER=${DISTNAME:S/-//:S/.//}
 DATADIR=	${PREFIX}/share/vim/${DISTNAME:S/-//:S/.//}
 MAN1=		evim.1 vim.1 vimdiff.1 vimtutor.1 xxd.1
 MLINKS=		vim.1 rvim.1  vim.1 rview.1
+.if !defined(LITE)
+MLINKS+=	vim.1 gvim.1  vim.1 gview.1  vim.1 rgvim.1  vim.1 rgview.1  \
+		eview.1 gvimdiff.1
+.endif
 
 .include <bsd.port.pre.mk>
 
 .if !defined(LITE)
-MLINKS+=	vim.1 gvim.1  vim.1 gview.1  vim.1 rgvim.1  vim.1 rgview.1  \
-		eview.1 gvimdiff.1
-
 MAKE_ARGS+=	CONF_OPT_FEAT="--with-features=big"
 I18N=		CONF_OPT_MULTIBYTE="--enable-multibyte --enable-fontset --enable-xim"
 
@@ -72,6 +73,27 @@ WITHOUT_X11=	yes
 .if defined(WITH_CSCOPE)
 RUN_DEPENDS+=	cscope:${PORTSDIR}/devel/cscope
 CSCOPE_ARG=	--enable-cscope
+.endif
+
+.if defined(WITH_PYTHON)
+USE_PYTHON=	yes
+MAKE_ARGS+=	CONF_OPT_PYTHON="--enable-pythoninterp"
+.endif
+
+.if defined(WITH_PERL)
+USE_PERL5=	yes
+MAKE_ARGS+=	CONF_OPT_PERL="--enable-perlinterp"
+.endif
+
+.if defined(WITH_TCL)
+BUILD_DEPENDS=	tclsh8.0:${PORTSDIR}/lang/tcl80
+LIB_DEPENDS=	tcl80.1:${PORTSDIR}/lang/tcl80
+MAKE_ARGS+=	CONF_OPT_TCL="--enable-tclinterp"
+.endif
+
+.if defined(WITH_RUBY)
+USE_RUBY=	yes
+MAKE_ARGS+=	CONF_OPT_RUBY="--enable-rubyinterp"
 .endif
 
 .if !defined(WITHOUT_X11)
@@ -87,6 +109,10 @@ MAKE_ARGS+=	CONF_OPT_GUI="--enable-gui=athena" ${I18N}
 USE_GTK=	yes
 MAKE_ARGS+=	CONF_OPT_GUI="--enable-gui=gtk --with-gtk-prefix=${X11BASE}" ${I18N}
 MAKE_ARGS+=	X_LIBS="$(X_LIBS) -lXt"
+.elif defined(WITH_GNOME)
+USE_GNOME=	yes
+MAKE_ARGS+=	CONF_OPT_GUI="--enable-gui=gnome --with-gtk-prefix=${X11BASE}" ${I18N}
+MAKE_ARGS+=	X_LIBS="$(X_LIBS) -lXt"
 .elif defined(WITH_MOTIF)
 USE_MOTIF=	yes
 MAKE_ARGS+=	CONF_OPT_GUI="--enable-gui=motif --with-motif-lib=\"${MOTIFLIB}\"" MOTIFHOME=${X11BASE} ${I18N}
@@ -95,14 +121,10 @@ MAKE_ARGS+=	CONF_OPT_GUI="--enable-gui=motif --with-motif-lib=\"${MOTIFLIB}\"" M
 MAKE_ARGS+=	CONF_OPT_GUI="--enable-gui=no --without-x" ${I18N}
 .endif	# WITHOUT_X11
 
-.if defined(PACKAGE_BUILDING)
-MAKE_ARGS+=	CONF_OPT_PERL="--enable-perlinterp --enable-pythoninterp --enable-tclinterp --enable-cscope"
-.endif
-
 .else	# LITE
 PKGNAMESUFFIX=	-lite
 MAKE_ARGS+=	CONF_OPT_GUI="--enable-gui=no --without-x --enable-multibyte"
-MAKE_ARGS+=	CONF_OPT_PERL="--disable-perlinterp --disable-pythoninterp --disable-tclinterp"
+MAKE_ARGS+=	CONF_OPT_PERL="--disable-perlinterp --disable-pythoninterp --disable-tclinterp --disable-rubyinterp"
 .endif	# LITE
 
 pre-build:
