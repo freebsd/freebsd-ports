@@ -14,7 +14,7 @@ PATCH_SITES=	ftp://ftp.gtk.org/pub/gtk/v1.3/dependencies/
 PATCHFILES=	fribidi-0.1.12-glib2.patch
 PATCH_DIST_STRIP=	-p1
 
-MAINTAINER=	sobomax@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	glib-1.3.1:${PORTSDIR}/devel/glib13
 
