@@ -36,8 +36,7 @@ VERSION_SOUND_C!=	ident < ${SRCPREFIX}/sys/dev/sound/pcm/sound.c | \
 VERSION_SOUND_C=
 .endif
 
-VERSION_SOUND_C_CURRENT:=	${VERSION_SOUND_C:S/1.//}
-VERSION_SOUND_C_STABLE:=	${VERSION_SOUND_C:S/1.17.2.//}
+VERSION_SOUND_C_MINOR:=	${VERSION_SOUND_C:S/^1.//:S/^17.2.//}
 
 .if ${OSVERSION} < 410000
 BROKEN=		"FreeBSD 3.*, 4.0 are not supported"
@@ -51,7 +50,7 @@ PORTREVISION=	3
 # FreeBSD 4.2, 4.3
 PORTVERSION=    1.3
 
-.if ${VERSION_SOUND_C_STABLE} < 4
+.if ${VERSION_SOUND_C_MINOR} < 4
 # FreeBSD 4.2 before kobj MFC
 PORTREVISION=	1
 
@@ -69,7 +68,7 @@ MAKE_ENV+=	HAVE_KOBJ_PCM=1
 
 .elif ${OSVERSION} < 500000
 # FreeBSD 4.5+, 4.6, 4.7, 4.8-
-.if ${VERSION_SOUND_C_STABLE} < 12
+.if ${VERSION_SOUND_C_MINOR} < 12
 BROKEN=		"Base system is outdated. This port needs -STABLE after 2002-04-22."
 .endif
 PORTVERSION=	1.3
@@ -79,7 +78,7 @@ MAKE_ENV+=	HAVE_KOBJ_PCM=1
 
 .if ${OSVERSION} > 500000
 # FreeBSD 5-CURRENT
-.if ${VERSION_SOUND_C_CURRENT} < 70
+.if ${VERSION_SOUND_C_MINOR} < 70
 BROKEN=		"Base system is outdated. This port needs -CURRENT after 2002-04-04."
 .endif
 .endif
