@@ -1,7 +1,5 @@
 etc/exim/configure.default
 etc/rc.d/exim.sh
-info/exim.info
-info/exim_filter.info
 sbin/exim
 sbin/exim-%%EXIM_VERSION%%-1
 sbin/exim_checkaccess
@@ -17,21 +15,17 @@ sbin/exigrep
 sbin/eximstats
 sbin/exiqgrep
 sbin/exiqsumm
-%%PORTDOCS%%share/doc/exim/POST-INSTALL-NOTES
-%%PORTDOCS%%share/doc/exim/Exim3.upgrade
-%%PORTDOCS%%share/doc/exim/Exim4.upgrade
-%%PORTDOCS%%share/doc/exim/OptionLists.txt
-%%PORTDOCS%%share/doc/exim/README
-%%PORTDOCS%%share/doc/exim/dbm.discuss.txt
-%%PORTDOCS%%share/doc/exim/filter.txt
-%%PORTDOCS%%share/doc/exim/pcrepattern.txt
-%%PORTDOCS%%share/doc/exim/pcretest.txt
-%%PORTDOCS%%share/doc/exim/spec.txt
-%%PORTDOCS%%%%EXISCAN_ACL%%share/doc/exim/exiscan-acl-examples.txt
-%%PORTDOCS%%%%EXISCAN_ACL%%share/doc/exim/exiscan-acl-spec.txt
-@unexec install-info --delete %D/info/exim.info %D/info/dir
-@unexec install-info --delete %D/info/exim_filter.info %D/info/dir
-@exec install-info --section="Exim" --entry "* Exim Specification: (exim).       Exim manual" %D/info/exim.info %D/info/dir
-@exec install-info --section="Exim" --entry "* Exim Filtering: (exim_filter).    Filtering mail with Exim" %D/info/exim_filter.info %D/info/dir
+%%PORTDOCS%%%%DOCSDIR%%/POST-INSTALL-NOTES
+%%PORTDOCS%%%%DOCSDIR%%/Exim3.upgrade
+%%PORTDOCS%%%%DOCSDIR%%/Exim4.upgrade
+%%PORTDOCS%%%%DOCSDIR%%/OptionLists.txt
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/dbm.discuss.txt
+%%PORTDOCS%%%%DOCSDIR%%/filter.txt
+%%PORTDOCS%%%%DOCSDIR%%/pcrepattern.txt
+%%PORTDOCS%%%%DOCSDIR%%/pcretest.txt
+%%PORTDOCS%%%%DOCSDIR%%/spec.txt
+%%PORTDOCS%%%%EXISCAN_ACL%%%%DOCSDIR%%/exiscan-acl-examples.txt
+%%PORTDOCS%%%%EXISCAN_ACL%%%%DOCSDIR%%/exiscan-acl-spec.txt
 @dirrm etc/exim
-@dirrm share/doc/exim
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
