@@ -7,16 +7,23 @@ libdata/bonobo/servers/GNOME_RemoteDesktop.server
 libexec/vino-server
 share/gnome/control-center-2.0/capplets/vino-preferences.desktop
 share/gnome/pixmaps/gnome-remote-desktop.png
-share/gnome/vino/vino-client.html
-share/gnome/vino/vino-client.jar
 share/gnome/vino/vino-preferences.glade
 share/gnome/vino/vino-prompt.glade
 share/locale/bg/LC_MESSAGES/vino.mo
+share/locale/bn/LC_MESSAGES/vino.mo
 share/locale/cs/LC_MESSAGES/vino.mo
 share/locale/en_CA/LC_MESSAGES/vino.mo
 share/locale/en_GB/LC_MESSAGES/vino.mo
+share/locale/es/LC_MESSAGES/vino.mo
+share/locale/gu/LC_MESSAGES/vino.mo
+share/locale/hu/LC_MESSAGES/vino.mo
 share/locale/nl/LC_MESSAGES/vino.mo
+share/locale/no/LC_MESSAGES/vino.mo
+share/locale/pa/LC_MESSAGES/vino.mo
 share/locale/pt/LC_MESSAGES/vino.mo
 share/locale/pt_BR/LC_MESSAGES/vino.mo
+share/locale/sq/LC_MESSAGES/vino.mo
+share/locale/sr/LC_MESSAGES/vino.mo
+share/locale/sr@Latn/LC_MESSAGES/vino.mo
 share/locale/sv/LC_MESSAGES/vino.mo
 @dirrm share/gnome/vino
