@@ -34,6 +34,7 @@ WITHOUT_CHATZILLA=	"Contains a buffer overflow reported at http://online.securit
 .if defined(WITH_GTK2)
 LIB_DEPENDS+=	gtk-x11-2.0.0:${PORTSDIR}/x11-toolkits/gtk20 \
 		ORBit-2.0:${PORTSDIR}/devel/ORBit2
+WITHOUT_XFT=	"Mozilla cannot be built with GTK-2.0 and Xft support"
 .else
 USE_GNOME=	gtk12
 .endif
