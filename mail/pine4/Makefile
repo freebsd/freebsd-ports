@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	pine
-PORTVERSION=	4.58
+PORTVERSION=	4.60
 CATEGORIES=	mail news
 MASTER_SITES=	ftp://ftp.cac.washington.edu/pine/ \
 		http://mirror.sit.wisc.edu/pub/net/mail/pine/ \
 		ftp://sunsite.icm.edu.pl/pub/unix/mail/pine/ \
-		ftp://mirrors.unam.mx/pub/pine/ \
 		ftp://ftp.uni-magdeburg.de/pub/mirror/ftp.cac.washington.edu/pine/ \
 		ftp://ftp.fu-berlin.de/unix/mail/pine/ \
 		ftp://ftp.ut.ee/pub/unix/mail/pine/ \
@@ -49,6 +48,10 @@ pre-fetch:
 .endif
 
 post-patch:
+.for f in build buildcyg
+	@${CP} ${WRKSRC}/${f} ${WRKSRC}/${f}.presed
+	@${SED} -e 's:CC=cc:CC=${CC}:g' ${WRKSRC}/${f}.presed > ${WRKSRC}/${f}
+.endfor
 	@for i in ${WRKSRC}/README ${WRKSRC}/doc/pine.1 \
 		${WRKSRC}/doc/tech-notes.txt ${WRKSRC}/doc/tech-notes/*.html \
 		${WRKSRC}/pico/osdep/os-bsf.h \
