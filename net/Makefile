@@ -76,7 +76,6 @@
     SUBDIR += coda_intro
     SUBDIR += confregdecode
     SUBDIR += corkscrew
-    SUBDIR += cphone
     SUBDIR += crescendo
     SUBDIR += cricket
     SUBDIR += cryptcat
