@@ -16,15 +16,26 @@ MAINTAINER=	chuckr@FreeBSD.org
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		gd.2:${PORTSDIR}/graphics/gd
 
+.if !defined(WITHOUT_X11)
 USE_XLIB=	yes
+.endif
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/gd"
 CONFIGURE_ARGS=	--exec-prefix=${PREFIX} \
 		--includedir=${LOCALBASE}/include/ \
 		--libdir=${LOCALBASE}/lib \
-		--with-x --without-linux-vga \
+		--without-linux-vga \
 		--with-gd=${LOCALBASE}/lib \
 		--with-readline=gnu --with-lasergnu --with-png
+
+.if defined(WITHOUT_X11)
+CONFIGURE_ARGS+=	--without-x
+PLIST_SUB+=		X11:="@comment "
+.else
+CONFIGURE_ARGS+=	--with-x
+PLIST_SUB+=		X11:=""
+.endif
 
 post-install:
 	${MKDIR} ${PREFIX}/share/doc/gnuplot
