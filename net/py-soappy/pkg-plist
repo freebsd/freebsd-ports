@@ -43,6 +43,9 @@
 %%PYTHON_SITELIBDIR%%/SOAPpy/version.py
 %%PYTHON_SITELIBDIR%%/SOAPpy/version.pyc
 %%PYTHON_SITELIBDIR%%/SOAPpy/version.pyo
+%%PYTHON_SITELIBDIR%%/SOAPpy/wstools/Namespaces.py
+%%PYTHON_SITELIBDIR%%/SOAPpy/wstools/Namespaces.pyc
+%%PYTHON_SITELIBDIR%%/SOAPpy/wstools/Namespaces.pyo
 %%PYTHON_SITELIBDIR%%/SOAPpy/wstools/TimeoutSocket.py
 %%PYTHON_SITELIBDIR%%/SOAPpy/wstools/TimeoutSocket.pyc
 %%PYTHON_SITELIBDIR%%/SOAPpy/wstools/TimeoutSocket.pyo
