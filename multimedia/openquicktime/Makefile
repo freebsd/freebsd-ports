@@ -31,6 +31,10 @@ OPTIONS=	DEBUG "Turn on debugging" on
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 502126
+BROKEN=		"Does not compile on FreeBSD >= 5.x"
+.endif
+
 .ifndef(WITH_DEBUG)
 CONFIGURE_ARGS+=	--enable-debug=no
 .endif
