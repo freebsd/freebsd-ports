@@ -223,7 +223,7 @@ CONFIGURE_ARGS+=--without-ispell
 .endif
 
 .if defined(WITH_OPENLDAP) && !defined(WITHOUT_OPENLDAP)
-PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-ldap
+PKGNAMESUFFIX!=	${ECHO} ${PKGNAMESUFFIX}-ldap
 USE_OPENLDAP=	yes
 CONFIGURE_ARGS+=--with-authldap
 PLIST_SUB+=	SUB_LDAP=""
@@ -237,7 +237,7 @@ PLIST_SUB+=	SUB_LDAP="@comment "
 BROKEN+=	VPopMail and MySQL are mutually exclusive.\
 		Uninstall VPopMail if you want MySQL authentication.
 .endif
-PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-mysql
+PKGNAMESUFFIX!=	${ECHO} ${PKGNAMESUFFIX}-mysql
 USE_MYSQL=	yes
 CONFIGURE_ARGS+=--with-authmysql \
 		--with-mysql-libs=${LOCALBASE}/lib/mysql \
@@ -249,10 +249,10 @@ PLIST_SUB+=	SUB_MYSQL="@comment "
 .endif
 
 .if defined(WITH_PGSQL) && !defined(WITHOUT_PGSQL)
-PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-pgsql
+PKGNAMESUFFIX!=	${ECHO} ${PKGNAMESUFFIX}-pgsql
 LIB_DEPENDS+=	pq.3:${PORTSDIR}/databases/postgresql7
-CONFIGURE_ARGS+=--with-authpgsql
-		--with-pgsql-libs=${PGSQLBASE}/lib
+CONFIGURE_ARGS+=--with-authpgsql \
+		--with-pgsql-libs=${PGSQLBASE}/lib \
 		--with-pgsql-includes=${PGSQLINCLUDES}
 PLIST_SUB+=	SUB_PGSQL=""
 .else
@@ -261,7 +261,7 @@ PLIST_SUB+=	SUB_PGSQL="@comment "
 .endif
 
 .if defined(WITH_VCHKPW) && !defined(WITHOUT_VCHKPW) && !defined(WITH_MYSQL)
-PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-vpopmail
+PKGNAMESUFFIX!=	${ECHO} ${PKGNAMESUFFIX}-vpopmail
 BUILD_DEPENDS+=	${LOCALBASE}/vpopmail/lib/libvpopmail.a:${PORTSDIR}/mail/vpopmail
 CONFIGURE_ARGS+=--with-authvchkpw
 .else
