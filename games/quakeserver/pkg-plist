@@ -1,3 +1,4 @@
+etc/rc.d/quakeserver.sh
 quakeserver/id1/pak0.pak
 quakeserver/unixded
 quakeserver/readme.unixded
