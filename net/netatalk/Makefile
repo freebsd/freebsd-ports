@@ -29,6 +29,7 @@ USE_BZIP2=	yes
 CONFIGURE_ARGS+=	--with-tcp-wrappers \
 			--with-pkgconfdir=${PREFIX}/etc
 .if defined(WITH_PAM)
+CONFIGURE_ARGS+=	--with-pam=/etc/pam.d
 PLIST_SUB+=	NETATALKPAM=""
 .else
 CONFIGURE_ARGS+=	--without-pam
