@@ -10,6 +10,8 @@ bin/konsolekalendar
 bin/korgac
 bin/korganizer
 bin/korganizerIn
+bin/kpilot
+bin/kpilotDaemon
 include/KNotesIface.h
 include/calendar/calendardecoration.h
 include/calendar/plugin.h
@@ -25,8 +27,25 @@ include/korganizer/baseview.h
 include/korganizer/calendarviewbase.h
 include/korganizer/mainwindow.h
 include/korganizer/part.h
+include/kpilot/kpilotlink.h
+include/kpilot/pilotDatabase.h
+include/kpilot/pilotLocalDatabase.h
+include/kpilot/pilotRecord.h
+include/kpilot/pilotSerialDatabase.h
+include/kpilot/plugin.h
+include/kpilot/syncAction.h
+include/kpilot/uiDialog.h
+lib/kde3/libabbrowserconduit.la
+lib/kde3/libabbrowserconduit.so
+lib/kde3/libabbrowserconduit.so.0
+lib/kde3/libexpenseconduit.la
+lib/kde3/libexpenseconduit.so
+lib/kde3/libexpenseconduit.so.0
 lib/kde3/libkcm_alarmdaemonctrl.la
 lib/kde3/libkcm_alarmdaemonctrl.so
+lib/kde3/libknotesconduit.la
+lib/kde3/libknotesconduit.so
+lib/kde3/libknotesconduit.so.0
 lib/kde3/libkorg_datenums.la
 lib/kde3/libkorg_datenums.so
 lib/kde3/libkorg_holidays.la
@@ -35,6 +54,18 @@ lib/kde3/libkorg_projectview.la
 lib/kde3/libkorg_projectview.so
 lib/kde3/libkorg_webexport.la
 lib/kde3/libkorg_webexport.so
+lib/kde3/libnullconduit.la
+lib/kde3/libnullconduit.so
+lib/kde3/libnullconduit.so.0
+lib/kde3/libpopmailconduit.la
+lib/kde3/libpopmailconduit.so
+lib/kde3/libpopmailconduit.so.0
+lib/kde3/libtodoconduit.la
+lib/kde3/libtodoconduit.so
+lib/kde3/libtodoconduit.so.0
+lib/kde3/libvcalconduit.la
+lib/kde3/libvcalconduit.so
+lib/kde3/libvcalconduit.so.0
 lib/libkalarmd.la
 lib/libkalarmd.so
 lib/libkalarmd.so.0
@@ -47,12 +78,17 @@ lib/libkgantt.so.0
 lib/libkorganizer.la
 lib/libkorganizer.so
 lib/libkorganizer.so.1
+lib/libkpilot.la
+lib/libkpilot.so
+lib/libkpilot.so.0
 share/applnk/Applications/kalarm.desktop
 share/applnk/Applications/korganizer.desktop
 share/applnk/Settings/System/alarmdaemonctrl.desktop
 share/applnk/Utilities/kandy.desktop
 share/applnk/Utilities/karm.desktop
 share/applnk/Utilities/knotes.desktop
+share/applnk/Utilities/kpilot.desktop
+share/applnk/Utilities/kpilotdaemon.desktop
 share/apps/kalarm/icons/hicolor/16x16/actions/eventdelete.png
 share/apps/kalarm/icons/hicolor/16x16/actions/eventnew.png
 share/apps/kalarm/icons/hicolor/16x16/actions/kalarm.png
@@ -206,6 +242,17 @@ share/apps/korganizer/sounds/lightmag.wav
 share/apps/korganizer/sounds/onscreen.wav
 share/apps/korganizer/sounds/spinout.wav
 share/apps/korganizer/tips
+share/apps/kpilot/icons/hicolor/16x16/actions/backup.png
+share/apps/kpilot/icons/hicolor/16x16/actions/busysync.png
+share/apps/kpilot/icons/hicolor/16x16/actions/fastsync.png
+share/apps/kpilot/icons/hicolor/16x16/actions/hotsync.png
+share/apps/kpilot/icons/hicolor/16x16/actions/restore.png
+share/apps/kpilot/kpilot-address.png
+share/apps/kpilot/kpilot-fileinstaller.png
+share/apps/kpilot/kpilot-hotsync.png
+share/apps/kpilot/kpilot-knotes.png
+share/apps/kpilot/kpilot-splash.png
+share/apps/kpilot/kpilotui.rc
 share/autostart/kalarm.tray.desktop
 share/autostart/kalarmd.autostart.desktop
 share/autostart/korgac.desktop
@@ -277,24 +324,39 @@ share/icons/hicolor/16x16/apps/kalarm.png
 share/icons/hicolor/16x16/apps/karm.png
 share/icons/hicolor/16x16/apps/knotes.png
 share/icons/hicolor/16x16/apps/korganizer.png
+share/icons/hicolor/16x16/apps/kpilot.png
+share/icons/hicolor/16x16/apps/kpilotDaemon.png
 share/icons/hicolor/22x22/actions/kalarm.png
+share/icons/hicolor/22x22/apps/kpilot.png
 share/icons/hicolor/32x32/apps/kalarm.png
 share/icons/hicolor/32x32/apps/karm.png
 share/icons/hicolor/32x32/apps/knotes.png
 share/icons/hicolor/32x32/apps/korganizer.png
+share/icons/hicolor/32x32/apps/kpilot.png
 share/icons/hicolor/48x48/apps/kalarm.png
 share/icons/hicolor/48x48/apps/karm.png
 share/icons/hicolor/48x48/apps/knotes.png
 share/icons/hicolor/48x48/apps/korganizer.png
+share/icons/hicolor/48x48/apps/kpilot.png
+share/icons/hicolor/48x48/apps/kpilotDaemon.png
 share/icons/locolor/16x16/apps/kalarm.png
+share/icons/locolor/16x16/apps/kpilot.png
 share/icons/locolor/32x32/apps/kalarm.png
+share/services/abbrowser_conduit.desktop
+share/services/expense-conduit.desktop
+share/services/knotes-conduit.desktop
 share/services/korganizer/datenums.desktop
 share/services/korganizer/holidays.desktop
 share/services/korganizer/projectview.desktop
 share/services/korganizer/webexport.desktop
+share/services/null-conduit.desktop
+share/services/popmail-conduit.desktop
+share/services/todo-conduit.desktop
+share/services/vcal-conduit.desktop
 share/servicetypes/calendardecoration.desktop
 share/servicetypes/calendarplugin.desktop
 share/servicetypes/korganizerpart.desktop
+share/servicetypes/kpilotconduit.desktop
 @comment directories
 @dirrm share/servicetypes
 @dirrm share/services/korganizer
@@ -308,6 +370,7 @@ share/servicetypes/korganizerpart.desktop
 @dirrm share/icons/hicolor/48x48
 @dirrm share/icons/hicolor/32x32/apps
 @dirrm share/icons/hicolor/32x32
+@dirrm share/icons/hicolor/22x22/apps
 @dirrm share/icons/hicolor/22x22/actions
 @dirrm share/icons/hicolor/22x22
 @dirrm share/icons/hicolor/16x16/apps
@@ -326,6 +389,11 @@ share/servicetypes/korganizerpart.desktop
 @dirrm share/doc
 @dirrm share/config
 @dirrm share/autostart
+@dirrm share/apps/kpilot/icons/hicolor/16x16/actions
+@dirrm share/apps/kpilot/icons/hicolor/16x16
+@dirrm share/apps/kpilot/icons/hicolor
+@dirrm share/apps/kpilot/icons
+@dirrm share/apps/kpilot
 @dirrm share/apps/korganizer/sounds
 @dirrm share/apps/korganizer/plugins
 @dirrm share/apps/korganizer/icons/hicolor/32x32/actions
@@ -382,6 +450,7 @@ share/servicetypes/korganizerpart.desktop
 @dirrm share/applnk/Applications
 @dirrm share/applnk
 @dirrm lib/kde3
+@dirrm include/kpilot
 @dirrm include/korganizer
 @dirrm include/kgantt
 @dirrm include/calendar

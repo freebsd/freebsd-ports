@@ -7,6 +7,7 @@
 
 PORTNAME=	kdepim
 PORTVERSION=	${KDE_VERSION}
+PORTREVISION=	1
 CATEGORIES=	deskutils kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION}/src
@@ -24,8 +25,5 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 
 .include "${.CURDIR}/../../x11/kde3/Makefile.kde"
-
-# Remove kpilot by author's request.
-CONFIGURE_ENV+=DO_NOT_COMPILE="kpilot"
 
 .include <bsd.port.mk>
