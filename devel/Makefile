@@ -161,6 +161,7 @@
     SUBDIR += fc++
     SUBDIR += ffcall
     SUBDIR += fhist
+    SUBDIR += fib
     SUBDIR += flick
     SUBDIR += flux
     SUBDIR += fnccheck
