@@ -1,6 +1,6 @@
---- source/Makefile.in.orig	Thu Aug 24 04:29:55 2000
-+++ source/Makefile.in	Mon Dec  4 03:45:30 2000
-@@ -17,7 +17,7 @@
+--- source/Makefile.in.orig	Tue Jan  6 01:03:32 2004
++++ source/Makefile.in	Tue Jan  6 01:04:25 2004
+@@ -18,7 +18,7 @@
  	ircsig.o keys.o lastlog.o list.o log.o mail.o names.o network.o \
  	newio.o notice.o notify.o numbers.o output.o parse.o queue.o reg.o \
  	screen.o server.o status.o term.o timer.o vars.o who.o window.o \
@@ -9,7 +9,7 @@
  
  INCLUDES = -I@srcdir@/../include -I../include
  
-@@ -96,7 +96,7 @@
+@@ -97,7 +97,7 @@
   ../include/history.h ../include/hook.h ../include/input.h \
   ../include/output.h ../include/screen.h ../include/window.h \
   ../include/lastlog.h ../include/status.h ../include/stack.h \
@@ -18,7 +18,7 @@
  alist.o: alist.c ../include/irc.h ../include/defs.h \
   ../include/config.h ../include/irc_std.h ../include/debug.h \
   ../include/alist.h ../include/ircaux.h ../include/output.h
-@@ -342,7 +342,7 @@
+@@ -349,7 +349,7 @@
   ../include/irc_std.h ../include/debug.h ../include/ircaux.h \
   ../include/vars.h ../include/term.h ../include/screen.h \
   ../include/window.h ../include/lastlog.h ../include/status.h \
@@ -27,11 +27,8 @@
  timer.o: timer.c ../include/irc.h ../include/defs.h \
   ../include/config.h ../include/irc_std.h ../include/debug.h \
   ../include/ircaux.h ../include/window.h ../include/lastlog.h \
-@@ -379,6 +379,7 @@
-  ../include/irc.h ../include/irc_std.h ../include/debug.h \
-  ../include/term.h ../include/screen.h ../include/window.h \
-  ../include/lastlog.h ../include/status.h ../include/ircaux.h
-+kanji.o: kanji.c ../include/kanji.h
- wterm.o: wterm.c ../include/irc.h ../include/defs.h \
-  ../include/config.h ../include/irc_std.h ../include/debug.h \
+@@ -391,3 +391,4 @@
   ../include/ircaux.h ../include/vars.h ../include/term.h \
+  ../include/screen.h ../include/window.h ../include/lastlog.h \
+  ../include/status.h ../include/output.h
++kanji.o: kanji.c ../include/kanji.h

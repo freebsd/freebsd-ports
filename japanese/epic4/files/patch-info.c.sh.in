@@ -1,0 +1,11 @@
+--- source/info.c.sh.in.orig	Tue Dec  5 09:11:57 2000
++++ source/info.c.sh.in	Tue Jan  6 01:11:49 2004
+@@ -20,7 +20,7 @@
+  */
+ 
+ #ifdef __STDC__
+-#define my_paste(x, y, z) x ## y ## z
++#define my_paste(x, y, z) x y z
+ #else
+ #define my_paste(x, y, z) x/**/y/**/z
+ #endif
