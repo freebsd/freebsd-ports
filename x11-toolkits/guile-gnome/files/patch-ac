@@ -1,0 +1,20 @@
+--- guile-gnome/Makefile.in.orig	Sat May 20 14:58:39 2000
++++ guile-gnome/Makefile.in	Fri Jun  9 15:27:36 2000
+@@ -117,7 +117,7 @@
+ libguilegnorba_la_LDFLAGS = -export-dynamic
+ 
+ gnomeg_SOURCES = main.c gnomeg.c client.c gnome-glue.c gnome-ui-infos.h
+-gnomeg_LDADD =  	$(top_builddir)/guile-gtk/libguilegtk.la     	@GUILE_LIBS@ 				     	$(GNOME_LIBDIR)                              	$(GNOMEUI_LIBS)
++gnomeg_LDADD =  	@GUILE_LIBS@ 				     	$(GNOME_LIBDIR)                              	$(GNOMEUI_LIBS) -lguilegtk-1.2
+ 
+ 
+ scmgnomedir = $(datadir)/guile/gnome
+@@ -151,7 +151,7 @@
+ PROGRAMS =  $(bin_PROGRAMS)
+ 
+ gnomeg_OBJECTS =  main.o gnomeg.o client.o gnome-glue.o
+-gnomeg_DEPENDENCIES =  $(top_builddir)/guile-gtk/libguilegtk.la
++gnomeg_DEPENDENCIES =  
+ gnomeg_LDFLAGS = 
+ CFLAGS = @CFLAGS@
+ COMPILE = $(CC) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
