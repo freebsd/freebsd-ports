@@ -1,12 +1,12 @@
 # New ports collection makefile for:		diablo
-# Version required:				1.09
+# Version required:				1.10
 # Date created:					June 2nd 1997
 # Whom:						jfitz
 #
-# $Id: Makefile,v 1.1.1.1 1997/06/02 19:52:11 jfitz Exp $
+# $Id: Makefile,v 1.2 1997/06/08 01:41:05 jfitz Exp $
 #
 
-DISTNAME=	diablo-1.09
+DISTNAME=	diablo-1.10
 CATEGORIES=	news
 MASTER_SITES=	http://www.backplane.com/diablo/
 EXTRACT_SUFX=	.tgz
@@ -39,7 +39,7 @@ pre-install:
 
 do-install:
 		cd ${WRKSRC} && ${PREFIX}/bin/xmake install
-.for file in COPYRIGHT INSTALL KNOWN_PROBLEMS README RELEASE_NOTES TODO
+.for file in COPYRIGHT INSTALL README RELEASE_NOTES TODO
 		${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/diablo
 .endfor
 		${INSTALL_DATA} ${WRKSRC}/post-install-notes ${PREFIX}/share/doc/diablo
