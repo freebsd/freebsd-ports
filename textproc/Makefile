@@ -9,6 +9,7 @@
     SUBDIR += cocoon
     SUBDIR += code2html
     SUBDIR += dict
+    SUBDIR += diffstat
     SUBDIR += docbook
     SUBDIR += docbook-241
     SUBDIR += docbook-300
