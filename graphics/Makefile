@@ -50,6 +50,7 @@
     SUBDIR += giram
     SUBDIR += glx
     SUBDIR += gnofract4d
+    SUBDIR += gnomeiconedit
     SUBDIR += gphoto
     SUBDIR += gplot
     SUBDIR += gqview

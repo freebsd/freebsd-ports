@@ -1,0 +1,15 @@
+Are you fed up waiting for The GIMP to load when all you want to do is
+change 3 pixels in an icon? No, you're probably not. But if you are,
+then maybe GNOME-Iconedit is what you need.
+
+Features:
+* 256 level alpha
+* 16.7 million colours
+* Saving in XPM and PNG format
+* Some fancy paint modes.
+* Multi-level cut/paste buffer.
+* Brush mode where contents of the paste buffer can be pasted
+  anywhere on the screen.
+* Loads any format Gdk-Pixbuf can handle.
+
+WWW: http://www.abdn.ac.uk/~u07ih/gnome-iconedit/
