@@ -1,5 +1,43 @@
 --- config.h.in.orig	Sun Jul  2 15:12:55 1995
-+++ config.h.in	Sun Sep  8 17:15:59 2002
-@@ -28 +28 @@
++++ config.h.in	Wed Oct 15 13:19:33 2003
+@@ -5,26 +5,26 @@
+ #undef pid_t
+ 
+ #undef SIZEOF_LONG
+-#undef HAVE_STRING_H
+-#undef HAVE_LIMITS_H
++#define HAVE_STRING_H 1
++#define HAVE_LIMITS_H 1
+ 
+-#undef HAVE_FSYNC
++#define HAVE_FSYNC 1
+ 
+-#undef HAVE_STRERROR
+-#undef HAVE_STRERROR_PROTO
+-#undef HAVE_SYS_ERRLIST_PROTO
++#define HAVE_STRERROR 1
++#define HAVE_STRERROR_PROTO 1
++#define HAVE_SYS_ERRLIST_PROTO 1
+ 
+-#undef HAVE_GETTIMEOFDAY_PROTO
++#define HAVE_GETTIMEOFDAY_PROTO 1
+ 
+-#undef HAVE_GETHOSTID
+-#undef HAVE_GETHOSTID_PROTO
++#define HAVE_GETHOSTID 1
++#define HAVE_GETHOSTID_PROTO 1
+ 
+-#undef HAVE_UNAME
+-#undef HAVE_SYS_UTSNAME_H
+-#undef HAVE_GETHOSTNAME_PROTO
++#define HAVE_UNAME 1
++#define HAVE_SYS_UTSNAME_H 1
++#define HAVE_GETHOSTNAME_PROTO 1
+ 
+-#undef HAVE_GETPID_PROTO
++#define HAVE_GETPID_PROTO 1
+ 
 -#undef HAVE_STRNCASECMP_PROTO
 +#define HAVE_STRNCASECMP_PROTO 1
+ 
+ #endif /* _CONFIG_H_IN */
