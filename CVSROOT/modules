@@ -4859,6 +4859,7 @@ libodbc++	ports/databases/libodbc++
 liboe		ports/mail/liboe
 libofx		ports/finance/libofx
 libogg		ports/audio/libogg
+liboil		ports/devel/liboil
 libol		ports/devel/libol
 libole2		ports/devel/libole2
 liboop		ports/devel/liboop
