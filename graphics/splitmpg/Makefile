@@ -8,14 +8,18 @@
 PORTNAME=	splitmpg
 PORTVERSION=	1.0
 CATEGORIES=	graphics
-MASTER_SITES=	ftp://ftp.ecel.uwa.edu.au/users/michael/
-DISTFILES=	${PORTNAME}.tgz
+MASTER_SITES=	ftp://ftp.ecel.uwa.edu.au/users/michael/ \
+		ftp://ftp.netcom.com/pub/ms/msimmons/
+DISTNAME=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
-MAN1=		splitmpeg.1
-MANCOMPRESSED=	yes
-
 NO_WRKSUBDIR=	yes
+MAKEFILE=	makefile
+MAN1=		splitmpeg.1
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/splitmpeg ${PREFIX}/bin
+	${INSTALL_MAN} ${FILESDIR}/splitmpeg.1 ${PREFIX}/man/man1
 
 .include <bsd.port.mk>

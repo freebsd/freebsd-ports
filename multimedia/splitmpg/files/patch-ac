@@ -1,0 +1,21 @@
+--- makefile.orig	Thu Jun 23 00:07:39 1994
++++ makefile	Wed Apr 26 19:23:14 2000
+@@ -22,11 +22,14 @@
+ # Email: michael@ecel.uwa.edu.au
+ # Post: P.O. Box 506, NEDLANDS WA 6009, AUSTRALIA
+ 
++# FreeBSD
++LIBS = -lm
++
+ # Linux
+-CC=g++
+-CFLAGS=-O2 -m486 -funroll-loops -Wall -DLINUX -DINTEL_BYTE_ORDER
+-INCLUDES=-I/usr/g++-include/ -I/usr/lib/gcc-lib/i486-linux/2.5.8/include/
+-LIBS=-lm
++#CC=g++
++#CFLAGS=-O2 -m486 -funroll-loops -Wall -DLINUX -DINTEL_BYTE_ORDER
++#INCLUDES=-I/usr/g++-include/ -I/usr/lib/gcc-lib/i486-linux/2.5.8/include/
++#LIBS=-lm
+ 
+ # SunOS
+ #CFLAGS = -O2 -Wall -DSunOS -DSPARC
