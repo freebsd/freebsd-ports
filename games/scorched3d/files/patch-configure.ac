@@ -1,36 +1,24 @@
---- configure.ac.orig	Wed Jan 14 12:08:10 2004
-+++ configure.ac	Sat Jan 31 18:10:28 2004
-@@ -34,8 +34,8 @@
- dnl Check for SDL_mixer lib
- have_SDLmixer=no
- AC_TRY_COMPILE([
--   	#include <SDL/SDL.h>
--	#include <SDL/SDL_mixer.h>
-+   	#include <SDL11/SDL.h>
-+	#include <SDL11/SDL_mixer.h>
+--- ./configure.ac.orig	Wed May 26 14:01:15 2004
++++ ./configure.ac	Sun May 30 22:43:42 2004
+@@ -37,8 +37,8 @@
+ have_SDLmixer=yes
+ if test "x$enable_sdltest" = "xyes" ; then
+ 	AC_TRY_COMPILE([
+-		#include <SDL/SDL.h>
+-		#include <SDL/SDL_mixer.h>
++		#include <SDL11/SDL.h>
++		#include <SDL11/SDL_mixer.h>
  
- int main(int argc, char *argv[])
- { return 0; }
-@@ -54,8 +54,8 @@
- dnl Check for SDL_net lib
- have_SDLnet=no
- AC_TRY_COMPILE([
--   	#include <SDL/SDL.h>
--	#include <SDL/SDL_net.h>
-+   	#include <SDL11/SDL.h>
-+	#include <SDL11/SDL_net.h>
+ 		int main(int argc, char *argv[])
+ 		{ return 0; }
+@@ -64,8 +64,8 @@
+ have_SDLnet=yes
+ if test "x$enable_sdltest" = "xyes" ; then
+ 	AC_TRY_COMPILE([
+-		#include <SDL/SDL.h>
+-		#include <SDL/SDL_net.h>
++		#include <SDL11/SDL.h>
++		#include <SDL11/SDL_net.h>
  
- int main(int argc, char *argv[])
- { return 0; }
-@@ -144,9 +144,9 @@
- 
- dnl Define install prefix 
- if test x$prefix = xNONE; then
--	prefix=/usr/local/games
-+	prefix=/usr/local
- fi
--AC_DEFINE_UNQUOTED(PKGDIR, "$prefix/$PACKAGE/", [install directory])
-+AC_DEFINE_UNQUOTED(PKGDIR, "$prefix/games/$PACKAGE/", [install directory])
- 
- # extra fixed flags
- CFLAGS="$CFLAGS -DdDOUBLE"
+ 		int main(int argc, char *argv[])
+ 		{ return 0; }
