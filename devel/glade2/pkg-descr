@@ -1,5 +1,5 @@
-This is Glade, a user interface builder for GTK+.  (GTK+, which
-stands for the Gimp ToolKit, is a library for creating graphical
-user interfaces for the X Window System. See http://www.gtk.org/)
+Glade is a RAD tool to enable quick & easy development of user interfaces
+for the GTK+ toolkit. It also contains built-in support for generating the
+C source code needed to recreate the interfaces.
 
-http://www.comp.lancs.ac.uk/~damon/builder/index.html
+WWW: http://glade.pn.org/
