@@ -174,8 +174,8 @@ _APACHE_MODULES+=	${LDAP_MODULES}
 CONFIGURE_ARGS+=	--enable-threads
 CFLAGS+=		-DFREEBSD_THREAD_HACK
 .   if ${WITH_PTHREAD_LIBS} != "c_r" && ${OSVERSION} > 500023
-CONFIGURE_ENV+=		ac_cv_pthreads_lib=${WITH_PTHREAD_LIBS} \
-			ac_cv_pthreads_cflags=${WITH_PTHREAD_CFLAGS}
+CONFIGURE_ENV+=		apr_cv_pthreads_lib=-l${WITH_PTHREAD_LIBS} \
+			apr_cv_pthreads_cflags=${WITH_PTHREAD_CFLAGS}
 .   endif
 .   if !defined(WITH_CUSTOM_THREADS)
 _APACHE_MODULES+=	${THREADS_MODULES}
