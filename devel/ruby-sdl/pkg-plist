@@ -10,6 +10,9 @@
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/sdl/sgetest.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/sdl/testsprite.rb
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/sdl
+%%PORTDOCS%%%%RUBY_DOCDIR%%/sdl/rubysdl_const_list.txt
 %%PORTDOCS%%%%RUBY_DOCDIR%%/sdl/ja/README
+%%PORTDOCS%%%%RUBY_DOCDIR%%/sdl/ja/rubysdl_doc.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/sdl/ja/rubysdl_doc.rd
 %%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/sdl/ja
 %%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/sdl
