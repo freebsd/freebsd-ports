@@ -7,7 +7,7 @@
 
 CATEGORIES=	korean editors
 
-LANG_PKGNAME=	kr
+LANG_PKGNAME=	ko
 LANG_EXT=	82
 LANG_CONFIGURE_ARG=	KOREAN
 MASTERDIR=	${.CURDIR}/../../editors/openoffice
