@@ -1,3 +1,10 @@
-This package contains all of the items you'll need to be a
-Half-Life server under FreeBSD (with Linux emulation),
-including the popular "Counterstrike" mod.
+This package contains all of the items you'll need to run a
+Half-Life Dedicated Server under FreeBSD (with Linux emulation).
+HLDS will be installed under `/compat/linux/usr/games/hlds_l/`
+
+Visit these following web pages for more information:
+
+WWW: http://server.counter-strike.net
+
+- Patrick Li
+pat@databits.net

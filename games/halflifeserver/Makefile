@@ -6,15 +6,13 @@
 #
 
 PORTNAME=	HLDS
-PORTVERSION=	3.1.0.4
+PORTVERSION=	3.1.0.6
 CATEGORIES=	games linux
-MASTER_SITES=
-DISTFILES=	hlds_l3104.tar.gz cs_10.tar.gz
+MASTER_SITES=	http://204.213.190.22/downloads/
+DISTNAME=	hlds_l3106
 EXTRACT_ONLY=
 
-MAINTAINER=	markm@FreeBSD.org
-
-#FORBIDDEN=	"Remotely exploitable buffer overflows."
+MAINTAINER=	pat@databits.net
 
 BUILD_DEPENDS=	/compat/linux/lib/ld.so:${PORTSDIR}/emulators/linux_base
 RUN_DEPENDS=	/compat/linux/usr/i486-linux-libc5/lib/libc.so.5:${PORTSDIR}/emulators/linux_base
@@ -23,17 +21,9 @@ NO_CDROM=	"Size; the data set is much too big"
 NO_BUILD=	yes
 PREFIX=		/compat/linux
 WRKSRC=		${WRKDIR}/hlds_l
-EXTRACT_ONLY_1=	hlds_l3104.tar.gz
-EXTRACT_ONLY_2=	cs_10.tar.gz
+EXTRACT_ONLY_1=	hlds_l3106.tar.gz
 
 HLDSDIR=	/usr/games/hlds_l
-
-.include <bsd.port.pre.mk>
-
-.if !exists(${DISTDIR}/hlds_l3104.tar.gz) \
-	&& !exists(${DISTDIR}/cs_10.tar.gz)
-IGNORE='Please go to http://www.planethalflife.com for details of how to obtain the Half-Life Dedicated Server (Linux version 3.1.0.4) and http://www.counter-strike.net for details on how to obtain the Linux port of Counter-Strike 1.0. Put the files hlds_l3104.tar.gz and cs_10.tar.gz into the directory ${DISTDIR} and run make again.'
-.endif
 
 do-install:
 	@cd ${PREFIX}/usr/games ;\
@@ -50,12 +40,12 @@ do-install:
 			exit 1 ;\
 		fi \
 	done
-	@cd ${PREFIX}${HLDSDIR} ;\
-	for file in `find . -name \*.txt -or -name \*.cfg -or -name \*.inf -or -name \*.scr -or -name \*.lst -or -name \*.gam` ; do \
-		${TR} -d '\r' < $${file} > $${file}.out ;\
-		${MV} $${file}.out $${file} ;\
-	done
-	${ECHO} ${HLDSDIR} >> ${PREFIX}/etc/ld.so.conf
-	${PREFIX}/bin/sh -c ldconfig
 
-.include <bsd.port.post.mk>
+	if ! (cat ${PREFIX}/etc/ld.so.conf | ${GREP} ${HLDSDIR}) ;\
+	then \
+		${ECHO} ${HLDSDIR} >> ${PREFIX}/etc/ld.so.conf ;\
+	fi
+
+	${PREFIX}${SH} -c ${LDCONFIG}
+
+.include <bsd.port.mk>

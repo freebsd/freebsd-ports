@@ -100,6 +100,8 @@
     SUBDIR += heretic
     SUBDIR += heroes
     SUBDIR += hex
+    SUBDIR += hlserver-cs
+    SUBDIR += hlserver-flf
     SUBDIR += icbm3d
     SUBDIR += icebreaker
     SUBDIR += ifm
