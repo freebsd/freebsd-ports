@@ -6,14 +6,16 @@
 #
 
 PORTNAME=	esh
-PORTVERSION=	0.8
+PORTVERSION=	0.8.5
 CATEGORIES=	shells
-MASTER_SITES=	MASTER_SITE_LOCAL
-MASTER_SITE_SUBDIR=
+MASTER_SITES=	http://slon.ttk.ru/esh/
 
-MAINTAINER=	nectar@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/esh
+
+pre-build:
+	@(cd ${WRKSRC} && ${MAKE} clean)
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/esh ${PREFIX}/bin/esh
