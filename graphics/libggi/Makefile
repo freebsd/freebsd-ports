@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libggi
-PORTVERSION=	2.0.3
+PORTVERSION=	2.0.4
 PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	graphics devel
@@ -24,7 +24,6 @@ USE_BZIP2=	yes
 USE_XLIB=	yes
 INSTALLS_SHLIB=	yes
 
-USE_AUTOCONF_VER=	253
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-internal-dga	#This is broken for now
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
