@@ -34,8 +34,6 @@ aswedit-*		ports/www/aswedit	Commercial software.
 atari800-*		ports/emulators/atari800 xf25 contains copyright ROMs
 						and cannot be distributed.
 baudline		ports/audio/baudline	No redistribution allowed
-bb-*			ports/net/bb		FreeBSD has permission from
-						author to put bb onto CDROM.
 bcwipe			ports/security/bcwipe	Non-Commercial Distribution and
 						Use Only
 bitstream-vera		ports/x11-fonts/bitstream-vera Preliminary version not for redistribution
@@ -70,8 +68,6 @@ cos-*			ports/java/cos		Special conditions apply for
 						commercial use.
 cosmo/*			ports/games/cosmo	Possible copyright infringement
 cryptix-jce-*		ports/java/cryptix-jce	Testing purpose only.
-cs-0.5			ports/devel/cs		License required for
-						redistribution on CDROM.
 csound			ports/audio/csound	Distribution prohibited; may be
 						used for making commercial
 						music but other commercial use
