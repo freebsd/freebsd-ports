@@ -28,6 +28,7 @@ lib/perl5/site_perl/%%PERL_VER%%/LWP/Debug.pm
 lib/perl5/site_perl/%%PERL_VER%%/LWP/MediaTypes.pm
 lib/perl5/site_perl/%%PERL_VER%%/LWP/MemberMixin.pm
 lib/perl5/site_perl/%%PERL_VER%%/LWP/Protocol.pm
+lib/perl5/site_perl/%%PERL_VER%%/LWP/Protocol/GHTTP.pm
 lib/perl5/site_perl/%%PERL_VER%%/LWP/Protocol/data.pm
 lib/perl5/site_perl/%%PERL_VER%%/LWP/Protocol/file.pm
 lib/perl5/site_perl/%%PERL_VER%%/LWP/Protocol/ftp.pm
