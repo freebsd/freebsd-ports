@@ -2,6 +2,9 @@ bin/socklog-conf
 bin/socklog
 bin/tryto
 bin/uncat
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/benefits.html
 %%PORTDOCS%%%%DOCSDIR%%/configuration.html
 %%PORTDOCS%%%%DOCSDIR%%/examples.html
