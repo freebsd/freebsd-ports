@@ -1,0 +1,14 @@
+*** astrolog.h.bak	Thu Jun 20 22:40:36 1996
+--- astrolog.h	Sun Jul 14 06:51:53 1996
+***************
+*** 127,133 ****
+--- 127,135 ----
+  */
+  
+  #ifndef PC
++ #ifndef DEFAULT_DIR
+  #define DEFAULT_DIR "~/astrolog"
++ #endif
+  #else
+  #define DEFAULT_DIR "C:\\ASTROLOG"
+  #endif
