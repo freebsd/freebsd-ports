@@ -1,0 +1,6 @@
+%%RUBY_SITEARCHLIBDIR%%/ruby_libgtop.so
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/libgtop/test.rb
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/libgtop
+%%PORTDOCS%%%%RUBY_DOCDIR%%/libgtop/ChangeLog
+%%PORTDOCS%%%%RUBY_DOCDIR%%/libgtop/README
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/libgtop

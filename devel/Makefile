@@ -390,6 +390,7 @@
     SUBDIR += ruby-intl
     SUBDIR += ruby-lapidary
     SUBDIR += ruby-libglade
+    SUBDIR += ruby-libgtop
     SUBDIR += ruby-locale
     SUBDIR += ruby-metaruby
     SUBDIR += ruby-mmap
