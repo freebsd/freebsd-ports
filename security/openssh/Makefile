@@ -14,7 +14,8 @@ MASTER_SITES=	ftp://ftp.openbsd.org/pub/OpenBSD/OpenSSH/ \
 DISTNAME=	openssh-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-PATCH_SITES=	${MASTER_SITES}
+PATCH_SITES=	${MASTER_SITE_LOCAL}
+PATCH_SITE_SUBDIR=dinoex
 PATCHFILES=	openbsd2x_3.0.1.patch
 
 MAINTAINER=	dinoex@FreeBSD.org
@@ -102,12 +103,16 @@ pre-install:
 post-install:
 .if !defined(BATCH)
 .if !exists(${PREFIX}/etc/ssh_host_key)
-	@${ECHO_MSG} ">> Generating an RSA secret host key."
+	@${ECHO_MSG} ">> Generating an RSA1 secret host key."
 	${PREFIX}/bin/ssh-keygen -N "" -f ${PREFIX}/etc/ssh_host_key
+.endif
+.if !exists(${PREFIX}/etc/ssh_host_rsa_key)
+	@${ECHO_MSG} ">> Generating a RSA secret host key."
+	${PREFIX}/bin/ssh-keygen -t rsa -N "" -f ${PREFIX}/etc/ssh_host_rsa_key
 .endif
 .if !exists(${PREFIX}/etc/ssh_host_dsa_key)
 	@${ECHO_MSG} ">> Generating a DSA secret host key."
-	${PREFIX}/bin/ssh-keygen -d -N "" -f ${PREFIX}/etc/ssh_host_dsa_key
+	${PREFIX}/bin/ssh-keygen -t dsa -N "" -f ${PREFIX}/etc/ssh_host_dsa_key
 .endif
 .endif
 .if !exists(${PREFIX}/etc/rc.d/sshd.sh)
