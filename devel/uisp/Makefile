@@ -16,10 +16,11 @@ MAINTAINER=	ports@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
 
+USE_REINPLACE=	yes
 USE_GMAKE=	yes
 
 post-patch:
-	${PERL} -pi -e "s@-O3@${CFLAGS}@g; \
+	@${REINPLACE_CMD} -e "s@-O3@${CFLAGS}@g; \
 			s@g\+\+@${CXX}@g" ${WRKSRC}/Makefile
 
 .include <bsd.port.mk>

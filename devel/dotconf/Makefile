@@ -13,13 +13,14 @@ MASTER_SITES=	http://www.azzit.de/dotconf/download/v1.0/
 
 MAINTAINER=	ports@FreeBSD.org
 
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 INSTALLS_SHLIB=	yes
 
 pre-patch:
-	@${PERL} -pi -e 's|-Wall -g||' ${WRKSRC}/configure
-	@${PERL} -pi -e 's|-release $(LT_RELEASE)||' ${WRKSRC}/src/Makefile.in
+	@${REINPLACE_CMD} -e 's|-Wall -g||' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|-release $(LT_RELEASE)||' ${WRKSRC}/src/Makefile.in
 
 post-install:
 .if !defined(NOPORTDOCS)

@@ -17,6 +17,7 @@ LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
 
 PCRE_CONFIG?=	${LOCALBASE}/bin/pcre-config
 
+USE_REINPLACE=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
 CONFIGURE_ENV=	CPPFLAGS="`${PCRE_CONFIG} --cflags`" \
@@ -26,9 +27,9 @@ INSTALLS_SHLIB=	yes
 MAN3=	Pcre.3
 
 post-patch:
-	@${PERL} -pi -e 's|-I/usr/local/include||g ; \
+	@${REINPLACE_CMD} -e 's|-I/usr/local/include||g ; \
 		 s|-L/usr/local/lib||g' ${WRKSRC}/configure
-	@${PERL} -pi -e 's|-O -g|\@CXXFLAGS\@|g' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's|-O -g|\@CXXFLAGS\@|g' ${WRKSRC}/Makefile.in
 
 post-install:
 .if !defined(NOPORTDOCS)

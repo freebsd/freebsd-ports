@@ -17,6 +17,7 @@ MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
 
+USE_REINPLACE=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_FLAGS}" \
@@ -27,7 +28,7 @@ post-extract:
 	@${RM} -f ${WRKSRC}/config.cache
 
 post-patch:
-	@${PERL} -pi -e "s,-lrt,${PTHREAD_LIBS},g" ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e "s,-lrt,${PTHREAD_LIBS},g" ${WRKSRC}/configure
 
 post-install:
 .if !defined(NOPORTDOCS)

@@ -17,12 +17,13 @@ MAINTAINER=	ports@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
 
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 
 MAN1=	freescope.1
 
 pre-patch:
-	@${PERL} -pi -e 's|CFLAGS=.*$$|CFLAGS="\$$CFLAGS"|g ; \
+	@${REINPLACE_CMD} -e 's|CFLAGS=.*$$|CFLAGS="\$$CFLAGS"|g ; \
 		 s|CXXFLAGS=.*$$|CXXFLAGS="\$$CXXFLAGS"|g ; \
 		 s|bindir="/usr/local/bin"||g' ${WRKSRC}/configure
 

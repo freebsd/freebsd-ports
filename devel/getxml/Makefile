@@ -16,10 +16,11 @@ MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	xml.5:${PORTSDIR}/textproc/libxml
 
+USE_REINPLACE=	yes
 USE_GLIB=	yes
 GNU_CONFIGURE=	yes
 
 post-patch:
-	@${PERL} -pi -e "s,glib-config,${GLIB_CONFIG},g" ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e "s,glib-config,${GLIB_CONFIG},g" ${WRKSRC}/configure
 
 .include <bsd.port.mk>

@@ -14,6 +14,7 @@ DISTNAME=	LeoArg-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 INSTALLS_SHLIB=	yes
@@ -24,7 +25,7 @@ MAN3=	LeoArg.3 LeoArg__InvalidOption.3 LeoArg__InvalidSetting.3 \
 
 post-patch:
 .for file in Makefile.in doc/Makefile.in
-	@${PERL} -pi -e 's|^docdir|#docdir|g ; \
+	@${REINPLACE_CMD} -e 's|^docdir|#docdir|g ; \
 		 s| install-data-local||g' ${WRKSRC}/${file}
 .endfor
 

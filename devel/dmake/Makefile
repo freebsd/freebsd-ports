@@ -15,6 +15,7 @@ DISTNAME=	${PORTNAME}-v${PORTVERSION}-src-export.all-unknown-all
 MAINTAINER=	ports@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
+USE_REINPLACE=	yes
 USE_GMAKE=	yes
 MAKE_ENV=	CC=${CC}
 MAKEFILE=	makefile
@@ -27,7 +28,7 @@ post-extract:
 .endfor
 
 post-patch:
-	@${PERL} -pi -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/unix/startup.h
+	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/unix/startup.h
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/dmake ${PREFIX}/bin

@@ -13,16 +13,18 @@ EXTRACT_SUFX=	.tar
 
 MAINTAINER=	ports@FreeBSD.org
 
+USE_REINPLACE=	yes
+REINPLACE_ARGS=	-i ""
 NO_BUILD=	yes
 
 PERFORCE_PORT?=	1666
 
 post-patch:
-	${PERL} -pi \
+	@${REINPLACE_CMD} \
 		-e 's,!!PREFIX!!,${PREFIX},g;' \
 		-e 's,!!PERFORCE_PORT!!,${PERFORCE_PORT},g;' \
 		${WRKSRC}/test/config
-	find ${WRKSRC} -name '*.orig' -delete
+	@${FIND} ${WRKSRC} -name '*.orig' -delete
 
 do-install:
 	${MKDIR} ${PREFIX}/${PORTNAME}
