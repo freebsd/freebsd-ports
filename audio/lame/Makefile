@@ -18,9 +18,28 @@ BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
 
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
-USE_GTK=	yes
+WANT_GTK=	yes
 CONFIGURE_ARGS=	--enable-nasm
+
+.include <bsd.port.pre.mk>
+
+.if (defined(HAVE_GTK) || defined(WITH_GTK)) && !defined(WITHOUT_GTK)
+USE_GTK=	yes
+PLIST_SUB+=	WITH_GTK=''
+.else
+PLIST_SUB+=	WITH_GTK='@comment '
+.endif
 
 MAN1=		lame.1
 
-.include <bsd.port.mk>
+post-build:
+.if defined(HAVE_GTK) && !defined(WITHOUT_GTK)
+	(cd ${WRKSRC}/frontend && make mp3x)
+.endif
+
+post-install:
+.if defined(HAVE_GTK) && !defined(WITHOUT_GTK)
+	${INSTALL_PROGRAM} ${WRKSRC}/frontend/mp3x ${PREFIX}/bin/
+.endif
+
+.include <bsd.port.post.mk>
