@@ -1,5 +1,5 @@
---- config/abi_defs.mk	Fri Jun  9 15:48:49 2000
-+++ config/abi_defs.mk.new	Thu Jun 22 16:32:03 2000
+--- src/config/abi_defs.mk	Fri Jun  9 15:48:49 2000
++++ src/config/abi_defs.mk.new	Thu Jun 22 16:32:03 2000
 @@ -124,11 +124,11 @@
  ## INSTALL program...
  

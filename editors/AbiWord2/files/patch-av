@@ -1,5 +1,5 @@
---- config/platforms/freebsd.mk.orig	Sun Jan  7 01:04:09 2001
-+++ config/platforms/freebsd.mk	Sun Jan  7 01:07:26 2001
+--- src/config/platforms/freebsd.mk.orig	Sun Jan  7 01:04:09 2001
++++ src/config/platforms/freebsd.mk	Sun Jan  7 01:07:26 2001
 @@ -57,7 +57,7 @@
  endif
  

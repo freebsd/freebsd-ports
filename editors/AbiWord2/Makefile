@@ -10,34 +10,40 @@
 # AbiWord build system.
 
 PORTNAME=	AbiWord
-PORTVERSION=	0.7.13
-PORTREVISION=	1
+PORTVERSION=	0.9.0
 CATEGORIES=	editors
-MASTER_SITES=	http://www.abisource.com/downloads/Version-${PORTVERSION}/lf/
-DISTNAME=	abi-${PORTVERSION}
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} expat-${PORTVERSION}.tar.gz \
-		unixfonts-${PORTVERSION}.tar.gz wv-${PORTVERSION}.tar.gz \
-		abidistfiles-${PORTVERSION}.tar.gz \
-		psiconv-${PORTVERSION}.tar.gz libiconv-${PORTVERSION}.tar.gz
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
+		http://www.abisource.com/downloads/Version-${PORTVERSION}/lf/
+MASTER_SITE_SUBDIR=	abiword
+DISTNAME=	abiword-${PORTVERSION}
 
 MAINTAINER=	gnome@FreeBSD.org
 
 # unzip is needed during the installation process
 BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
-LIB_DEPENDS=	png.4:${PORTSDIR}/graphics/png
-RUN_DEPENDS=	ispell:${PORTSDIR}/textproc/ispell
+LIB_DEPENDS=	png.4:${PORTSDIR}/graphics/png \
+		giconv.2:${PORTSDIR}/converters/libiconv
 
 DIST_SUBDIR=	AbiWord
 
-WRKSRC=		${WRKDIR}/abi/src
-USE_XLIB=	yes
+WRKSRC=		${WRKDIR}/${DISTNAME}/abi
+
 USE_GMAKE=	yes
 USE_GTK=	yes
-MAKE_ENV=	prefix="${PREFIX}"
+USE_AUTOMAKE=	yes
+AUTOMAKE=	${WRKSRC}/autogen.sh && ${FIXME}
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib -lgiconv"
+MAKEFILE=	GNUmakefile
 
-.include <bsd.port.pre.mk>
+FIXME=		find ${WRKSRC} -name GNUmakefile.in | xargs ${PERL} -pi -e \
+		    's|\$$\(libdir\)/\@PACKAGE\@|\$$\(datadir\)/\@PACKAGE\@|g'
+
+pre-configure:
+	@cd ${WRKSRC} && ${TOUCH} NEWS README AUTHORS ChangeLog
 
 post-install:
-	@${CAT} ${PKGMESSAGE}
+	@${LN} -sf LittleEndian32.american.hash \
+		${PREFIX}/share/abiword/dictionary/american.hash
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
