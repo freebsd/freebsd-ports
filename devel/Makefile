@@ -164,6 +164,7 @@
     SUBDIR += ftnchek
     SUBDIR += funnelweb
     SUBDIR += g-wrap
+    SUBDIR += g2c
     SUBDIR += gaa
     SUBDIR += gconf
     SUBDIR += gconf2
