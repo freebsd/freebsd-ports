@@ -7,6 +7,7 @@ bin/gpsdrive
 bin/gpsfetchmap.pl
 bin/gpspoint2gpsdrive.pl
 bin/gpsreplay
+bin/gpssmswatch
 bin/gpssql_backup.sh
 bin/gpssql_restore.sh
 bin/wpcvt
@@ -17,6 +18,7 @@ lib/libfly.so.2
 lib/libnautic.a
 lib/libnautic.so
 lib/libnautic.so.2
+share/applications/gpsdrive.desktop
 share/gpsdrive/AUTHORS
 share/gpsdrive/CREDITS
 share/gpsdrive/FAQ.gpsdrive
@@ -56,4 +58,5 @@ share/locale/pt_BR/LC_MESSAGES/gpsdrive.mo
 share/locale/sk/LC_MESSAGES/gpsdrive.mo
 share/locale/sv/LC_MESSAGES/gpsdrive.mo
 share/locale/tr/LC_MESSAGES/gpsdrive.mo
+share/pixmaps/gpsicon.png
 @dirrm share/gpsdrive
