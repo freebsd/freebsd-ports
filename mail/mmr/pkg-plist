@@ -1,11 +1,9 @@
 bin/mmr
 share/doc/mmr/BUGS
 share/doc/mmr/CHANGES
-share/doc/mmr/COPYING
-share/doc/mmr/Copyright
 share/doc/mmr/Features
 share/doc/mmr/README
 share/doc/mmr/TODO
 share/examples/mmr/dot.mmrc.sample
-@dirrm share/doc/mmr
 @dirrm share/examples/mmr
+@dirrm share/doc/mmr

@@ -1,20 +1,20 @@
---- mailmsg.cc.orig	Sat Feb 19 21:38:48 2000
-+++ mailmsg.cc	Sat Feb 19 21:39:24 2000
-@@ -190,7 +190,7 @@
- 						continue;
- 					}
- 					schar = 
--					  ((*status == ' ') ? "R" : status);
-+					  ((*status == ' ') ? (char *)"R" : status);
- 					*sptr = *schar;
- 					NewField("Status", schar);
- 					status_written = 1;
-@@ -208,7 +208,7 @@
- 				char *schar;
- 				sptr = new char[strlen("Status: ")+2+1];
- 				strcpy(sptr, "Status: ");
--				schar = ((*status == ' ') ? "R" : status);
-+				schar = ((*status == ' ') ? (char *)"R" : status);
- 				strcat(sptr, schar); strcat(sptr, "\n");
- 				QueueRing(ringbuf, sptr, strlen(sptr));
- 				delete[] sptr;
+--- mailmsg.cpp.orig	Sat Jan 29 19:09:17 2000
++++ mailmsg.cpp	Fri Mar 31 03:37:43 2000
+@@ -142,7 +142,7 @@
+ 					continue;
+ 				}
+ 				schar = 
+-				  ((*status == ' ') ? "R" : status);
++				  ((*status == ' ') ? (char *)"R" : status);
+ 				*sptr = *schar;
+ 				NewField("Status", schar);
+ 				status_written = 1;
+@@ -157,7 +157,7 @@
+ 			char *schar;
+ 			sptr = new char[strlen("Status: ")+2+1];
+ 			strcpy(sptr, "Status: ");
+-			schar = ((*status == ' ') ? "R" : status);
++			schar = ((*status == ' ') ? (char *)"R" : status);
+ 			strcat(sptr, schar); strcat(sptr, "\n");
+ 			QueueRing(ringbuf, sptr, strlen(sptr));
+ 			delete[] sptr;

@@ -1,31 +1,30 @@
 # New ports collection makefile for:	mmr
-# Version required:			1.5.2
+# Version required:			1.5.4
 # Date created:				23 October 1997
 # Whom:					Andrey Zakhvatov
 #
 # $FreeBSD$
 #
 
-DISTNAME=		mmr-1.5.2
-CATEGORIES=		mail
-MASTER_SITES=		${MASTER_SITE_SUNSITE} \
-			http://www.devolution.com/~slouken/projects/mmr/
-MASTER_SITE_SUBDIR=	system/mail/mua
+DISTNAME=	mmr-1.5.4
+CATEGORIES=	mail
+MASTER_SITES=	http://www.devolution.com/~slouken/projects/mmr/
 
-MAINTAINER=		ports@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
-ALL_TARGET=
+ALL_TARGET=	# empty
+
+post-extract:
+	@${RM} -f ${WRKSRC}/*.o
 
 do-install:
-	@ ${INSTALL_PROGRAM} ${WRKSRC}/mmr ${PREFIX}/bin
-	@ ${MKDIR} ${PREFIX}/share/examples/mmr
-	@ ${INSTALL_DATA} ${WRKSRC}/DOT-mmrc ${PREFIX}/share/examples/mmr/dot.mmrc.sample
-
-post-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/mmr ${PREFIX}/bin
+	@${MKDIR} ${PREFIX}/share/examples/mmr
+	${INSTALL_DATA} ${WRKSRC}/DOT-mmrc ${PREFIX}/share/examples/mmr/dot.mmrc.sample
 .if !defined(NOPORTDOCS)
-	@ ${MKDIR} ${PREFIX}/share/doc/mmr
-.for file in BUGS CHANGES COPYING Copyright Features README TODO
-	@ ${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/mmr
+	@${MKDIR} ${PREFIX}/share/doc/mmr
+.for file in BUGS CHANGES Features README TODO
+	${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/mmr
 .endfor
 .endif
 
