@@ -1,7 +1,9 @@
 share/xml/xhtml/1.1/VERSION
 share/xml/xhtml/1.1/xhtml11-flat.dtd
 share/xml/xhtml/1.1/xhtml11-model-1.mod
+@unexec %%XMLCATMGR%% -sc %%CATALOG_PORTS_SGML%% remove %%DTDDIR%%/xhtml11.cat
 share/xml/xhtml/1.1/xhtml11.cat
+@exec %%XMLCATMGR%% -sc %%CATALOG_PORTS_SGML%% add CATALOG %%DTDDIR%%/xhtml11.cat
 share/xml/xhtml/1.1/xhtml11.dtd
 share/xml/xhtml/1.1/xml1.dcl
 share/xml/xhtml/1.1/xml1n.dcl

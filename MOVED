@@ -742,3 +742,4 @@ x11-toolkits/guile-gobject||2004-01-07|Broken for a while, with no new versions
 devel/glade||2004-01-07|Superseded by devel/glade2
 devel/p5-Glade-Perl||2004-01-07|No longer works under new glade2
 chinese/abiword||2004-01-07|Patches were no longer available, was unmaintained
+textproc/xhtml-1.1|textproc/xhtml-11|2004-01-07|Renamed to fit naming convention

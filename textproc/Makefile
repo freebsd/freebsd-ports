@@ -515,7 +515,7 @@
     SUBDIR += xerces-c2
     SUBDIR += xerces-j
     SUBDIR += xhtml
-    SUBDIR += xhtml-1.1
+    SUBDIR += xhtml-11
     SUBDIR += xhtml-basic
     SUBDIR += xhtml-modularization
     SUBDIR += xincluder
