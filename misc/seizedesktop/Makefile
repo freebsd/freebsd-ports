@@ -28,8 +28,8 @@ SCRIPTS_ENV=	LANG=C LN=${LN} PERL=${PERL} LANGUAGE=${LANGUAGE} VERSION=${TKSTEPV
 TKSTEPVERSION=	8.0
 LANGUAGE?=
 .if (${LANGUAGE} == "Japanese")
-RUN_DEP_LIST=	${LOCALBASE}/lib/tkstep8.0jp/tkstep.tcl:${PORTSDIR}/japanese/tkstep80
-LIB_DEP_LIST=	img.1:${PORTSDIR}/japanese/libimg
+RUN_DEP_LIST=	${LOCALBASE}/lib/tkstep8.0jp/tkstep.tcl:${PORTSDIR}/japanese/tkstep80 \
+		${LOCALBASE}/lib/Img1.2/libimg12.so.1:${PORTSDIR}/japanese/libimg
 .else
 RUN_DEP_LIST=	${LOCALBASE}/lib/tkstep8.0/tkstep.tcl:${PORTSDIR}/x11-toolkits/tkstep80
 LIB_DEP_LIST=	img.1:${PORTSDIR}/graphics/libimg
