@@ -3,20 +3,20 @@ bin/vncviewer
 bin/vncpasswd
 bin/vncserver
 bin/vncconnect
-share/vnc-tight/classes/DesCipher.class
-share/vnc-tight/classes/animatedMemoryImageSource.class
-share/vnc-tight/classes/authenticationPanel.class
-share/vnc-tight/classes/clipboardFrame.class
-share/vnc-tight/classes/hextile.vnc
-share/vnc-tight/classes/index.vnc
-share/vnc-tight/classes/noshared.vnc
-share/vnc-tight/classes/optionsFrame.class
-share/vnc-tight/classes/rfbProto.class
-share/vnc-tight/classes/shared.vnc
-share/vnc-tight/classes/vncCanvas.class
-share/vnc-tight/classes/vncviewer.class
-share/vnc-tight/classes/vncviewer.jar
-share/vnc-tight/classes/tight.vnc
-share/vnc-tight/classes/zlib.vnc
-@dirrm share/vnc-tight/classes
-@dirrm share/vnc-tight
+share/tightvnc/classes/DesCipher.class
+share/tightvnc/classes/animatedMemoryImageSource.class
+share/tightvnc/classes/authenticationPanel.class
+share/tightvnc/classes/clipboardFrame.class
+share/tightvnc/classes/hextile.vnc
+share/tightvnc/classes/index.vnc
+share/tightvnc/classes/noshared.vnc
+share/tightvnc/classes/optionsFrame.class
+share/tightvnc/classes/rfbProto.class
+share/tightvnc/classes/shared.vnc
+share/tightvnc/classes/vncCanvas.class
+share/tightvnc/classes/vncviewer.class
+share/tightvnc/classes/vncviewer.jar
+share/tightvnc/classes/tight.vnc
+share/tightvnc/classes/zlib.vnc
+@dirrm share/tightvnc/classes
+@dirrm share/tightvnc
