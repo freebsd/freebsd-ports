@@ -1,42 +1,40 @@
 bin/wnb
 bin/wn
-include/wordnet-%%VER%%/license.h
-include/wordnet-%%VER%%/setutil.h
-include/wordnet-%%VER%%/wn.h
-include/wordnet-%%VER%%/wnconsts.h
-include/wordnet-%%VER%%/wnglobal.h
-include/wordnet-%%VER%%/wnhelp.h
-include/wordnet-%%VER%%/wnrtl.h
-include/wordnet-%%VER%%/wntypes.h
+include/WordNet-%%VER%%/license.h
+include/WordNet-%%VER%%/setutil.h
+include/WordNet-%%VER%%/wn.h
+include/WordNet-%%VER%%/wnconsts.h
+include/WordNet-%%VER%%/wnglobal.h
+include/WordNet-%%VER%%/wnhelp.h
+include/WordNet-%%VER%%/wnrtl.h
+include/WordNet-%%VER%%/wntypes.h
 lib/libwn1.a
 lib/libwn1.so.7
 lib/libwn1.so
 lib/libtclwn1.so.7
 lib/libtclwn1.so
 lib/tcl%%TCL_DVER%%/Wordnet/pkgIndex.tcl
-share/wordnet-%%VER%%/adj.exc
-share/wordnet-%%VER%%/adv.exc
-share/wordnet-%%VER%%/cntlist
-share/wordnet-%%VER%%/cntlist.rev
-share/wordnet-%%VER%%/data.adj
-share/wordnet-%%VER%%/data.adv
-share/wordnet-%%VER%%/data.noun
-share/wordnet-%%VER%%/data.verb
-share/wordnet-%%VER%%/index.adj
-share/wordnet-%%VER%%/index.adv
-share/wordnet-%%VER%%/index.noun
-share/wordnet-%%VER%%/index.sense
-share/wordnet-%%VER%%/index.verb
-share/wordnet-%%VER%%/lexnames
-share/wordnet-%%VER%%/noun.exc
-share/wordnet-%%VER%%/sentidx.vrb
-share/wordnet-%%VER%%/sents.vrb
-share/wordnet-%%VER%%/verb.exc
-share/wordnet-%%VER%%/wnres/license.txt
-share/wordnet-%%VER%%/wnres/wn.xbm
-share/wordnet-%%VER%%/wnres/wnb.man
-share/wordnet-%%VER%%/wnres/wngloss.man
-@dirrm include/wordnet-%%VER%%
+share/WordNet-%%VER%%/adj.exc
+share/WordNet-%%VER%%/adv.exc
+share/WordNet-%%VER%%/cntlist
+share/WordNet-%%VER%%/cntlist.rev
+share/WordNet-%%VER%%/data.adj
+share/WordNet-%%VER%%/data.adv
+share/WordNet-%%VER%%/data.noun
+share/WordNet-%%VER%%/data.verb
+share/WordNet-%%VER%%/index.adj
+share/WordNet-%%VER%%/index.adv
+share/WordNet-%%VER%%/index.noun
+share/WordNet-%%VER%%/index.sense
+share/WordNet-%%VER%%/index.verb
+share/WordNet-%%VER%%/lexnames
+share/WordNet-%%VER%%/noun.exc
+share/WordNet-%%VER%%/sentidx.vrb
+share/WordNet-%%VER%%/sents.vrb
+share/WordNet-%%VER%%/verb.exc
+share/WordNet-%%VER%%/wnres/license.txt
+share/WordNet-%%VER%%/wnres/wn.xbm
+@dirrm include/WordNet-%%VER%%
 @dirrm lib/tcl%%TCL_DVER%%/Wordnet
-@dirrm share/wordnet-%%VER%%/wnres
-@dirrm share/wordnet-%%VER%%
+@dirrm share/WordNet-%%VER%%/wnres
+@dirrm share/WordNet-%%VER%%

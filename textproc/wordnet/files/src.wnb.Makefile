@@ -3,7 +3,7 @@ TCL_DVER?=	8.3
 TCL_VER=	${TCL_DVER:S/.//g}
 TCL_INCDIR?=	${PREFIX}/include/tcl${TCL_DVER}
 
-CFLAGS+=	-DUNIX -DDEFAULTPATH="\"${PREFIX}/share/wordnet-1.7\"" \
+CFLAGS+=	-DUNIX -DDEFAULTPATH="\"${PREFIX}/share/WordNet-${VER}\"" \
 		-DDEFAULTBIN="\"${PREFIX}/bin\""
 
 CFLAGS+=	-I${.CURDIR}/../../include -I$(TCL_INCDIR)
@@ -21,7 +21,7 @@ pkgIndex.tcl:
 			> pkgIndex.tcl
 
 LIBDIR=		${PREFIX}/lib
-RESDIR=		${PREFIX}/share/wordnet-1.7/wnres
+RESDIR=		${PREFIX}/share/WordNet-${VER}/wnres
 
 ${LIBDIR} ${RESDIR} ${LIBDIR}/tcl${TCL_DVER}/Wordnet:
 	mkdir -p ${.TARGET}
@@ -30,7 +30,8 @@ beforeinstall: ${LIBDIR} ${RESDIR} ${LIBDIR}/tcl${TCL_DVER}/Wordnet
 	${INSTALL} -C -o ${BINOWN} -g ${BINGRP} -m 444 \
 		pkgIndex.tcl ${LIBDIR}/tcl${TCL_DVER}/Wordnet
 	${INSTALL} -C -o ${BINOWN} -g ${BINGRP} -m 444 \
-		${.CURDIR}/../lib/wnres/*.* ${RESDIR}
+		${.CURDIR}/../lib/wnres/license.txt \
+		${.CURDIR}/../lib/wnres/*.xbm ${RESDIR}
 	${INSTALL} -C -o ${BINOWN} -g ${BINGRP} -m 755 \
 		wnb ${PREFIX}/bin
 

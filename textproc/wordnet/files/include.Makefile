@@ -1,4 +1,4 @@
-WN_INSTALLDIR = ${PREFIX}/include/wordnet-1.7
+WN_INSTALLDIR = ${PREFIX}/include/WordNet-${VER}
 
 WN_FILES=	license.h setutil.h wn.h wnconsts.h wnglobal.h \
 		wnhelp.h wnrtl.h wntypes.h

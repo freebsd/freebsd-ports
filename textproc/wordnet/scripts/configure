@@ -20,7 +20,4 @@ Configuring the wnb script to call the right wish-binary directly
 +#!${PREFIX}/bin/wish${TCL_DVER}
 +
 +package require Wordnet
-@@ -30 +27 @@
--	set resourcedir "/usr/local/wordnet1.6/lib/wnres"
-+	set resourcedir "${PREFIX}/share/wordnet-1.6/wnres"
 EOPATCH

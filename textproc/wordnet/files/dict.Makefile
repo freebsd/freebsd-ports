@@ -1,4 +1,4 @@
-WN_INSTALLDIR=	${PREFIX}/share/wordnet-1.7
+WN_INSTALLDIR=	${PREFIX}/share/WordNet-${VER}
 WN_FILES=	data.noun data.verb data.adj data.adv index.noun \
 		index.verb index.adj index.adv noun.exc verb.exc \
 		adj.exc adv.exc index.sense cntlist.rev \
