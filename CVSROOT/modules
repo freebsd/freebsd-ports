@@ -5877,6 +5877,7 @@ php-screw	ports/www/php-screw
 php-sqlrelay	ports/databases/php-sqlrelay
 php-templates	ports/www/php-templates
 php3		ports/lang/php3
+php4		ports/lang/php4
 phpSysInfo	ports/www/phpSysInfo
 php_doc		ports/lang/php_doc
 phpbb		ports/www/phpbb
