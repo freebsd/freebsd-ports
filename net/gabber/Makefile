@@ -7,6 +7,7 @@
 
 PORTNAME=	gabber
 PORTVERSION=	0.8.3
+PORTREVISION=	1
 CATEGORIES=	net gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -14,7 +15,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	gnome@FreeBSD.org
 
 LIB_DEPENDS=	gnomemm.6:${PORTSDIR}/x11-toolkits/gnome-- \
-		gal.6:${PORTSDIR}/x11-toolkits/gal
+		gal.7:${PORTSDIR}/x11-toolkits/gal
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
