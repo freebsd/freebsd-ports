@@ -1,5 +1,4 @@
 %%RUBY_SITELIBDIR%%/mp3info.rb
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/README
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/blank.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Mp3Info.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Mp3Info.src/M000001.html
