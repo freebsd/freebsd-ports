@@ -17,6 +17,7 @@
     SUBDIR += ircd-hybrid
     SUBDIR += irchat-pj-emacs20
     SUBDIR += irchat-pj-emacs21
+    SUBDIR += irchat-pj-xemacs-devel-mule
     SUBDIR += irchat-pj-xemacs21-mule
     SUBDIR += iroffer
     SUBDIR += irssi
