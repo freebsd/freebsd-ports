@@ -26,7 +26,7 @@ DOCS=		CHANGELOG	README	doc
 
 post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${RUBY_MODEXAMPLESDIR}
+#	${MKDIR} ${RUBY_MODEXAMPLESDIR}
 #.for f in ${EXAMPLES}
 #	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODEXAMPLESDIR}/
 #.endfor
