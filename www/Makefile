@@ -44,7 +44,6 @@
     SUBDIR += bk_edit
     SUBDIR += bkmrkconv
     SUBDIR += bluefish
-    SUBDIR += bluefish-devel
     SUBDIR += boa
     SUBDIR += bookmarkbridge
     SUBDIR += bozohttpd

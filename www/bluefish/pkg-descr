@@ -1,6 +1,5 @@
-Bluefish is an advanced HTML editor that contains functionality for
-PHP, SSI, and RXML.  It is designed for the experienced web designer.
+Bluefish is a powerful editor for experienced web designers and programmers.
+Bluefish supports many programming and markup languages, but it focuses on
+editing dynamic and interactive websites
 
 WWW:   http://bluefish.openoffice.nl/
-
-- Jim <jim@FreeBSD.org>

@@ -1,53 +1,71 @@
 # New ports collection makefile for:   bluefish
-# Date created:			25 July 1999
-# Whom:				Jim Mock <jim@FreeBSD.org>
+# Date created:			23 January 2003
+# Whom:				Koop Mast <einekoai@chello.nl>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	bluefish
-PORTVERSION=	0.7
-PORTREVISION=	2
+PORTVERSION=	1.0
 CATEGORIES=	www editors
-MASTER_SITES=	http://pkedu.fbt.eitn.wau.nl/~olivier/downloads/ \
-		ftp://bluefish.advancecreations.com/pub/bluefish/downloads/ \
-		http://bluefish.mrball.net/downloads/ \
-		ftp://ftp.ratisbona.com/pub/bluefish/downloads/ \
-		http://bluefish.shellhung.org/downloads/
+MASTER_SITES=	http://pkedu.fbt.eitn.wau.nl/~olivier/${DOWNLOAD}/ \
+		ftp://bluefish.advancecreations.com/pub/bluefish/${DOWNLOAD}/ \
+		http://bluefish.mrball.net/${DOWNLOAD}/ \
+		ftp://ftp.ratisbona.com/pub/bluefish/${DOWNLOAD}/ \
+		http://bluefish.shellhung.org/${DOWNLOAD}/
 
 MAINTAINER=	kwm@FreeBSD.org
 COMMENT=	HTML editor designed for the experienced web designer
 
-RUN_DEPENDS=	weblint:${PORTSDIR}/www/weblint
+LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre \
+		aspell.16:${PORTSDIR}/textproc/aspell
 
-CONFLICTS=	bluefish-0.1*
-
-USE_GMAKE=	yes
-USE_BZIP2=	yes
-USE_PERL5_BUILD=yes
-USE_X_PREFIX=	yes
-USE_GNOME=	imlib
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-install-location="${X11BASE}/lib/bluefish"
-
-.include <bsd.port.pre.mk>
-
-.if defined(WITH_AUTO_COMPLETE)
-CONFIGURE_ARGS+=	--with-autocomplet
+.if !defined(WITHOUT_WEBLINT)
+RUN_DEPENDS+=	weblint:${PORTSDIR}/www/weblint
+.endif
+.if defined(WITH_TIDY)
+RUN_DEPENDS+=	tidy:${PORTSDIR}/www/tidy
 .endif
 
-MANCOMPRESSED=	no
+DOWNLOAD=	downloads
+USE_BZIP2=	yes
+USE_GNOME=	gnomehier gtk20 gnomevfs2
+USE_X_PREFIX=	yes
+USE_REINPLACE=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS=	--with-freedesktop_org-menu=${PREFIX}/share/gnome/applications \
+		--with-freedesktop_org-mime=${PREFIX}/share/mime \
+		--with-gnome2_4-mime=${PREFIX}/share/gnome/mime-info \
+		--with-gnome2_4-appreg=${PREFIX}/share/gnome/application-registry \
+		--with-icon-path=${PREFIX}/share/gnome/pixmaps
+
+# Turns debugging output on
+.if defined(WITH_DEBUG)
+CONFIGURE_ARGS+=	--with-debugging-output
+.endif
+
+.if defined(WITHOUT_SPLASH)
+CONFIGURE_ARGS+=	--disable-splash-screen
+.endif
+
 MAN1=		bluefish.1
 
+pre-everything::
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "Bluefish  has the following tunable option(s):"
+	@${ECHO_MSG} "  WITH_DEBUG		for debug support"
+	@${ECHO_MSG} "  WITHOUT_WEBLINT	disable the weblint syntax and style checker"
+	@${ECHO_MSG} "  WITH_TIDY		for the tidy html cleanup program"
+	@${ECHO_MSG} "  WITHOUT_SPLASH	disable the splash screen"
+	@${ECHO_MSG} ""
+
 post-patch:
-	@${PERL} -pi -e 's|gtk-config|${GTK_CONFIG}|g;' ${WRKSRC}/configure
+#	@${REINPLACE_CMD} -e 's|/applications/|/apps/Applications/|g' \
+#		${WRKSRC}/data/Makefile.in
 
 post-install:
-.if !defined(NOPORTDOCS)
-	@${ECHO} "===>   Installing bluefish docs in ${PREFIX}/share/doc/bluefish"
-	@${ECHO} "===>   A manual is available online at http://bluefish.linuxbox.com/manual/"
-	@${MKDIR} ${PREFIX}/share/doc/bluefish && ${CHMOD} a+rx ${PREFIX}/share/doc/bluefish
-	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/bluefish
-.endif
+	@${INSTALL_SCRIPT} ${WRKSRC}/debian/bluefish.1 ${PREFIX}/man/man1/bluefish.1
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
