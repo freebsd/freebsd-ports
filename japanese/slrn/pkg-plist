@@ -1,0 +1,43 @@
+bin/chkslang
+bin/slrn
+bin/slrnpull
+man/ja/man1/slrn.1.gz
+man/man1/slrn.1.gz
+share/doc/slrn/FAQ
+share/doc/slrn/INSTALL
+share/doc/slrn/README.GroupLens
+share/doc/slrn/README.macros
+share/doc/slrn/README.os2
+share/doc/slrn/README.vms
+share/doc/slrn/README.w95
+share/doc/slrn/SCORE_FAQ
+share/doc/slrn/VMS-SLRN.HLP
+share/doc/slrn/help.txt
+share/doc/slrn/pc-keys.txt
+share/doc/slrn/score.sl
+share/doc/slrn/score.txt
+share/doc/slrn/slrn.1
+share/doc/slrn/slrn.rc
+share/doc/slrn/slrn.sl
+share/doc/slrn/ja/BUG.euc
+share/doc/slrn/ja/README.euc
+share/doc/slrn/ja/README.macros.euc
+share/doc/slrn/ja/README.slrnpull.euc
+share/doc/slrn/ja/SCORE_FAQ.euc
+share/doc/slrn/ja/TODO.euc
+share/doc/slrn/ja/WhatsNew.euc
+share/doc/slrn/ja/changes.euc
+share/doc/slrn/ja/jslrn.rc
+share/doc/slrn/ja/kon.terminfo
+share/doc/slrn/ja/score.euc
+share/doc/slrn/ja/slrn.1
+share/doc/slrnpull/FAQ
+share/doc/slrnpull/QUICK_INSTALL
+share/doc/slrnpull/README
+share/doc/slrnpull/score
+share/doc/slrnpull/slrn.rc
+share/doc/slrnpull/slrnpull.conf
+share/doc/slrnpull/slrnpull.sh
+@dirrm share/doc/slrn/ja
+@dirrm share/doc/slrn
+@dirrm share/doc/slrnpull

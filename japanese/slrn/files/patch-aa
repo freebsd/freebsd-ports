@@ -1,0 +1,21 @@
+*** src/slrnfeat.h.orig	Fri Jun 26 17:49:39 1998
+--- src/slrnfeat.h	Fri Jun 26 17:50:16 1998
+***************
+*** 217,224 ****
+  #define SLRN_TZ_TM_ZONE  2   /* timezone set in tm_zone of struct tm */
+  #define SLRN_TZ_TIMEZONE 3   /* timezone() */
+    /* choose one from listed above */
+! #define SLRN_TZ_TYPE SLRN_TZ_TZNAME
+! /* #define SLRN_TZ_TYPE SLRN_TZ_TM_ZONE */
+  #define KANJI
+  #ifdef SLRNPULL_CODE
+  #undef KANJI
+--- 217,224 ----
+  #define SLRN_TZ_TM_ZONE  2   /* timezone set in tm_zone of struct tm */
+  #define SLRN_TZ_TIMEZONE 3   /* timezone() */
+    /* choose one from listed above */
+! /* #define SLRN_TZ_TYPE SLRN_TZ_TZNAME */
+! #define SLRN_TZ_TYPE SLRN_TZ_TM_ZONE
+  #define KANJI
+  #ifdef SLRNPULL_CODE
+  #undef KANJI
