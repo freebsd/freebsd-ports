@@ -1,0 +1,8 @@
+This module serves as an easy, clean alternative to Exporter. Unlike Exporter,
+it is not subclassed, but it simply exports a custom import() into your
+namespace.
+
+With Exporter::Tidy, you don't need to use any package global in your module.
+Even the subs you export can be lexically scoped.
+
+WWW: http://search.cpan.org/dist/Exporter-Tidy/
