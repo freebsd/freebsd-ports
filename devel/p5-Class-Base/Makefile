@@ -11,7 +11,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Class
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	lars@thegler.dk
+MAINTAINER=	lth@FreeBSD.org
 COMMENT=	Useful base class for deriving other modules
 
 PERL_CONFIGURE=	yes

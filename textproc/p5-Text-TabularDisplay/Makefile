@@ -11,7 +11,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Text
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	lars@thegler.dk
+MAINTAINER=	lth@FreeBSD.org
 COMMENT=	Display text in formatted table output
 
 PERL_CONFIGURE=	yes

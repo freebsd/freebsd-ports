@@ -14,7 +14,7 @@ PKGNAMESUFFIX=	-persistent
 DISTNAME=	${PORTNAME}-${VERSION}p-${LEVEL}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	lars@thegler.dk
+MAINTAINER=	lth@FreeBSD.org
 COMMENT=	Library for embedded web servers
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${VERSION}-persistent-${LEVEL}

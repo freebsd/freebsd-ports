@@ -11,7 +11,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Algorithm
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	lars@thegler.dk
+MAINTAINER=	lth@FreeBSD.org
 COMMENT=	Generate prefixes from intervals
 
 PERL_CONFIGURE=	yes

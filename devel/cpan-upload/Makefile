@@ -11,7 +11,7 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../by-authors/id/N/NE/NEILB/scripts/
 
-MAINTAINER=	lars@thegler.dk
+MAINTAINER=	lth@FreeBSD.org
 COMMENT=	Script for uploading distributions to CPAN
 
 BUILD_DEPENDS=	${SITE_PERL}/AppConfig/Std.pm:${PORTSDIR}/devel/p5-AppConfig-Std \

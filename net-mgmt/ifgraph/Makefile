@@ -10,7 +10,7 @@ PORTVERSION=	0.4.9
 CATEGORIES=	net-mgmt www
 MASTER_SITES=	http://ifgraph.sourceforge.net/stable/
 
-MAINTAINER=	lars@thegler.dk
+MAINTAINER=	lth@FreeBSD.org
 COMMENT=	Simple grapher of SNMP data with RRD
 
 RUN_DEPENDS=	rrdtool:${PORTSDIR}/net/rrdtool

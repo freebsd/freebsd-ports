@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	SQL
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	lars@thegler.dk
+MAINTAINER=	lth@FreeBSD.org
 COMMENT=	Manipulate structured data definitions (SQL and more)
 
 BUILD_DEPENDS=	${SITE_PERL}/Class/Base.pm:${PORTSDIR}/devel/p5-Class-Base \

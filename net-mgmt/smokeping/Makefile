@@ -10,7 +10,7 @@ PORTVERSION=	1.30
 CATEGORIES=	net www
 MASTER_SITES=	http://people.ee.ethz.ch/~oetiker/webtools/smokeping/pub/
 
-MAINTAINER=	lars@thegler.dk
+MAINTAINER=	lth@FreeBSD.org
 COMMENT=	Latency logging and graphing system
 
 RUN_DEPENDS=	rrdtool:${PORTSDIR}/net/rrdtool \
