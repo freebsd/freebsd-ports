@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	thunderbird
-PORTVERSION=	0.7.1
+PORTVERSION=	0.7.2
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
 MASTER_SITE_SUBDIR=	thunderbird/releases/${PORTVERSION}
@@ -41,6 +41,8 @@ WRKSRC=			${WRKDIR}/mozilla
 LOCAL_SUBDIR=		lib/${PORTNAME}
 LOCAL_PREFIX=		${PREFIX}/${LOCAL_SUBDIR}
 ESD_LIB=		libesd.so.2
+
+PLIST_SUB+=	TBVER="${PORTVERSION}"
 
 .include <bsd.port.pre.mk>
 
@@ -135,6 +137,7 @@ post-install:
 	@${INSTALL_DATA} ${FILESDIR}/Extensions.rdf \
 		${LOCAL_PREFIX}/lib/${PORTNAME}-${PORTVERSION}/extensions.port
 	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+	${MKDIR} ${PREFIX}/bin
 	${RM} -f ${PREFIX}/bin/thunderbird
 	${LN} -s ${LOCAL_PREFIX}/bin/thunderbird \
 		${PREFIX}/bin/thunderbird
