@@ -1,0 +1,8 @@
+%%RUBY_SITEARCHLIBDIR%%/qt2table.so
+%%RUBY_EXAMPLESDIR%%/qt2table/qtable/table.rb
+%%RUBY_EXAMPLESDIR%%/qt2table/table/README.orig
+%%RUBY_EXAMPLESDIR%%/qt2table/table/table.rb
+%%RUBY_EXAMPLESDIR%%/qt2table/table/qtlogo.xpm 
+@dirrm %%RUBY_EXAMPLESDIR%%/qt2table/qtable
+@dirrm %%RUBY_EXAMPLESDIR%%/qt2table/table
+@dirrm %%RUBY_EXAMPLESDIR%%/qt2table
