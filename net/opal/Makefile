@@ -17,10 +17,13 @@ DISTFILES=	openh323_1.7.4.tar.gz \
 
 MAINTAINER=	roger@freebsd.org
 
-# Check for telephony.h in /usr/include/sys and in $PREFIX/include/sys.
+# Check for telephony.h in the two places the source is hard coded to check
+# /usr/include/sys and /usr/local/include/sys
 # If it is not present, extract it from the comms/ixj port
 .if !exists(/usr/include/sys/telephony.h)
-BUILD_DEPENDS=  ${PREFIX}/include/sys/telephony.h:${PORTSDIR}/comms/ixj:patch
+.if !exists(/usr/local/include/sys/telephony.h)
+BUILD_DEPENDS=  ${NONEXISTENT}:${PORTSDIR}/comms/ixj:patch
+.endif
 .endif
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
@@ -37,11 +40,11 @@ MAKE_ARGS=	OSTYPE=${OPSYS} MACHTYPE=${THE_MACHTYPE} OSRELEASE=${OSVERSION} CPLUS
 
 post-patch:
 .if !exists(/usr/include/sys/telephony.h)
-.if !exists($(PREFIX)/sys/telephony.h)
-	# Copy over ixj driver include files into OpenH323 include directory
+.if !exists(/usr/local/include/sys/telephony.h)
+	# Copy ixj driver include files into OpenH323 include directory
 	${MKDIR} ${WRKDIR}/openh323/include/sys
-	${CP} ${PORTSDIR}/comms/ixj/work/ixj_freebsd/telephony.h ${WRKDIR}/openh323/include/sys
-	${CP} ${PORTSDIR}/comms/ixj/work/ixj_freebsd/ixjuser.h ${WRKDIR}/openh323/include/sys
+	${CP} ${WRKDIRPREFIX}${.CURDIR}/../../comms/ixj/work/ixj_freebsd/telephony.h ${WRKDIR}/openh323/include/sys
+	${CP} ${WRKDIRPREFIX}${.CURDIR}/../../comms/ixj/work/ixj_freebsd/ixjuser.h ${WRKDIR}/openh323/include/sys
 .endif
 .endif
 
