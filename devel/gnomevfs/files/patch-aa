@@ -41,7 +41,7 @@ $FreeBSD$
  else
    
 -		LDFLAGS="$LDFLAGS -L$with_openssl_libs -lssl -lcrypto -ldl"
-+		LDFLAGS="$LDFLAGS -L$with_openssl_libs -lssl -lcrypto"
++		LDFLAGS="$LDFLAGS -L$with_openssl_libs -lssl -lcryptofoo"
  		cat > conftest.$ac_ext <<EOF
  #line 10107 "configure"
  #include "confdefs.h"
@@ -50,7 +50,7 @@ $FreeBSD$
  
  		msg_openssl="yes"
 -		OPENSSL_LDFLAGS="-L$with_openssl_libs -lssl -lcrypto -ldl"
-+		OPENSSL_LDFLAGS="-L$with_openssl_libs -lssl -lcrypto"
++		OPENSSL_LDFLAGS="-L$with_openssl_libs -lssl -lcryptofoo"
  		
  
  if true; then
