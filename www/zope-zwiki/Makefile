@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	zwiki
-PORTVERSION=	0.9.4
+PORTVERSION=	0.9.8
 CATEGORIES=	www zope
 MASTER_SITES=	http://www.zope.org/Members/simon/ZWiki/ \
 		http://zwiki.org/zwikidir/releases/
@@ -39,11 +39,9 @@ do-build:
 do-install:
 	@ ${CHMOD} -R og+rX ${WRKSRC}/
 	@ ${MKDIR} ${ZOPEBASEDIR}/${ZOPEPRODUCTDIR}/${ZOPEPRODUCTNAME}
-	@ ${MKDIR} ${ZOPEBASEDIR}/import
 	@ cd ${WRKSRC} && find * \! -name \*.zexp \
 	  | ${CPIO} ${BINOWN}:${BINGRP} \
 	  ${ZOPEBASEDIR}/${ZOPEPRODUCTDIR}/${ZOPEPRODUCTNAME}
-	@ ${INSTALL_DATA} ${WRKSRC}/ZWikiWebs.zexp ${ZOPEBASEDIR}/import
 
 post-install:
 .if !defined(BATCH)
