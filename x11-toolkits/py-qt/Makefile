@@ -20,7 +20,8 @@ USE_LIBTOOL=	yes
 USE_GMAKE=	yes
 CONFIGURE_ENV=	LDFLAGS=-lgcc \
 		SIP_MOC="${X11BASE}/bin/moc2"
-CONFIGURE_ARGS= --with-qt-includes=${X11BASE}/include/qt2
+CONFIGURE_ARGS=	--with-qt-includes=${X11BASE}/include/qt2 \
+		--with-qt-libraries=${X11BASE}/lib
 
 pre-patch:
 	@find ${WRKSRC} -name Makefile.in | \
