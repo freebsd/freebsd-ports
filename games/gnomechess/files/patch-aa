@@ -1,0 +1,38 @@
+--- configure.orig	Sat Nov  6 16:57:13 1999
++++ configure	Sat Jan 29 01:50:47 2000
+@@ -2103,7 +2103,7 @@
+ fi
+ if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
+   echo "$ac_t""yes" 1>&6
+-  PTHREAD_LIB="-lc_r"
++  PTHREAD_LIB=""
+ else
+   echo "$ac_t""no" 1>&6
+ echo $ac_n "checking for pthread_create""... $ac_c" 1>&6
+@@ -3856,7 +3856,7 @@
+   cat conftest.$ac_ext >&5
+   rm -rf conftest*
+   CATOBJEXT=.mo
+-		   DATADIRNAME=lib
++		   DATADIRNAME=share
+ fi
+ rm -f conftest*
+ 		INSTOBJEXT=.mo
+@@ -4244,13 +4244,13 @@
+ fi
+ 
+         
+-	USE_INCLUDED_LIBINTL=yes
++#	USE_INCLUDED_LIBINTL=yes
+         CATOBJEXT=.gmo
+         INSTOBJEXT=.mo
+         DATADIRNAME=share
+-	INTLDEPS='$(top_builddir)/intl/libintl.a'
+-	INTLLIBS=$INTLDEPS
+-	LIBS=`echo $LIBS | sed -e 's/-lintl//'`
++#	INTLDEPS='$(top_builddir)/intl/libintl.a'
++#	INTLLIBS=$INTLDEPS
++#	LIBS=`echo $LIBS | sed -e 's/-lintl//'`
+         nls_cv_header_intl=intl/libintl.h
+         nls_cv_header_libgt=intl/libgettext.h
+       fi

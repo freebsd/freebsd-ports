@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Sat Nov  6 16:58:14 1999
++++ Makefile.in	Sat Jan 29 01:51:02 2000
+@@ -115,7 +115,7 @@
+ Icon_DATA = gnome-chess.png
+ Mime_DATA = gnome-chess.keys gnome-chess.mime
+ 
+-Gamesdir = $(datadir)/gnome/apps/Games
++Gamesdir = $(datadir)/apps/Games
+ Icondir = $(datadir)/pixmaps
+ Mimedir = $(datadir)/mime-info
+ 

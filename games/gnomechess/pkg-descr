@@ -1,0 +1,6 @@
+A GUI chess front-end to crafy, for the GNOME Desktop Environment
+
+It works with chess programs and chess servers - it is also a PGN viewer.
+For chess programs, it works best with the chess engine crafty 
+(ftp://ftp.cis.uab.edu/pub/hyatt) but most features should also work with
+GNU Chess (ftp://ftp.gnu.org).
