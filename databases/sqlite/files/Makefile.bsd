@@ -10,9 +10,10 @@ LDADD	+=	-lreadline -L${PREFIX}/lib -ltcl${TCL_DVER} -lm -lgdbm
 
 .PATH:	${.CURDIR}/src
 
-SRCS	 =	build.c dbbe.c dbbegdbm.c dbbemem.c delete.c expr.c insert.c \
-		main.c parse.y printf.c random.c select.c table.c tokenize.c \
-		update.c util.c vdbe.c where.c tclsqlite.c
+SRCS	 =	btree.c build.c dbbe.c dbbegdbm.c dbbemem.c delete.c expr.c \
+		insert.c main.c pager.c parse.y printf.c random.c select.c \
+		shell.c table.c tokenize.c update.c util.c vdbe.c where.c \
+		tclsqlite.c
 
 INCS	 =	sqlite.h
 
