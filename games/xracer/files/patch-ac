@@ -1,0 +1,12 @@
+--- src/Makefile.am.orig	Mon Aug  9 00:37:36 1999
++++ src/Makefile.am	Thu Aug 10 01:32:14 2000
+@@ -15,8 +15,7 @@
+ # Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
+ 
+ #TRACK		= track-general
+-CFLAGS		= -Wall -O3 @XRACER_EXTRA_CFLAGS@ \
+-		  -I/usr/X11R6/include -I/usr/local/include
++CFLAGS		= @CFLAGS@ @XRACER_EXTRA_CFLAGS@
+ 
+ bin_PROGRAMS    = xracer
+ 
