@@ -1,0 +1,19 @@
+--- PBLAS/SRC/PBtools.h.orig	Wed Feb 16 03:04:17 2000
++++ PBLAS/SRC/PBtools.h	Sat Jul 13 12:38:19 2002
+@@ -1148,7 +1148,7 @@
+                                  int *,     char *,    char *,
+                                  int *,     char *,    int *,
+                                  char *,    char *,    int * );
+-
++/* comment out to avoid conflict with lapack.h
+ F_VOID_FCT     csymv_          ( F_CHAR_T,  int *,     char *,
+                                  char *,    int *,     char *,
+                                  int *,     char *,    char *,
+@@ -1164,6 +1164,7 @@
+ F_VOID_FCT     zsyr_           ( F_CHAR_T,  int *,     char *,
+                                  char *,    int *,     char *,
+                                  int * );
++*/
+ 
+ F_VOID_FCT     csyr2_          ( F_CHAR_T,  int *,     char *,
+                                  char *,    int *,     char *,
