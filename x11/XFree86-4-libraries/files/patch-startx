@@ -1,0 +1,54 @@
+--- programs/xinit/startx.cpp.orig	Fri Apr 27 13:04:53 2001
++++ programs/xinit/startx.cpp	Sat Oct 27 03:50:41 2001
+@@ -82,8 +82,12 @@
+ 
+ display=:0
+ whoseargs="client"
++listen_tcp="-nolisten tcp"
+ while [ "x$1" != "x" ]; do
+     case "$1" in
++    -listen_tcp)
++	listen_tcp=""
++	;;
+     --)
+ 	whoseargs="server"
+ 	;;
+@@ -134,7 +138,7 @@
+ done
+ #endif
+ 
+-xinit $clientargs -- $serverargs
++xinit $clientargs -- $serverargs $listen_tcp
+ 
+ if [ x"$removelist" != x ]; then
+     xauth remove $removelist
+--- programs/xinit/startx.man.orig	Thu Apr 19 17:08:32 2001
++++ programs/xinit/startx.man	Sat Oct 27 03:40:01 2001
+@@ -42,10 +42,17 @@
+ somewhat nicer user interface for running a single session of the X
+ Window System.  It is often run with no arguments.
+ .PP
+-Arguments immediately following the
++Except for the
++.RB '-listen_tcp'
++option, arguments immediately following the
+ .I startx
+ command are used to start a client in the same manner as
+ .IR xinit (1).
++The
++.RB '-listen_tcp'
++option of startx enables the TCP/IP transport type which is needed for remote X
++displays.  This is disabled by default for security reasons.
++.PP
+ The special argument
+ .RB '--'
+ marks the end of client arguments and the beginning of server options.
+@@ -66,6 +73,8 @@
+ startx -- -dpi 100
+ .PP
+ startx -- -layout Multihead
++.PP
++startx -listen_tcp -- -depth 16
+ .RE
+ .PP
+ To determine the client to run,
