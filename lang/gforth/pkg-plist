@@ -20,204 +20,245 @@ info/gforth.info
 @unexec install-info --quiet --delete %D/info/vmgen.info %D/info/dir
 info/vmgen.info
 @exec install-info %D/info/vmgen.info %D/info/dir
-lib/gforth/%%PORTVERSION%%/gforth-ditc
-lib/gforth/%%PORTVERSION%%/gforth.fi
+%%LIB_DIR%%/%%PORTVERSION%%/gforth-ditc
+%%LIB_DIR%%/%%PORTVERSION%%/gforth.fi
 @exec mkdir -p %D/lib/gforth/site-forth
-%%PORTDOCS%%share/doc/gforth/AUTHORS
-%%PORTDOCS%%share/doc/gforth/BUGS
-%%PORTDOCS%%share/doc/gforth/Benchres
-%%PORTDOCS%%share/doc/gforth/COPYING
-%%PORTDOCS%%share/doc/gforth/COPYING.DOC
-%%PORTDOCS%%share/doc/gforth/INSTALL
-%%PORTDOCS%%share/doc/gforth/INSTALL.BINDIST
-%%PORTDOCS%%share/doc/gforth/NEWS
-%%PORTDOCS%%share/doc/gforth/NEWS.vmgen
-%%PORTDOCS%%share/doc/gforth/README
-%%PORTDOCS%%share/doc/gforth/README.vmgen
-%%PORTDOCS%%share/doc/gforth/ToDo
-share/emacs/site-lisp/gforth.el
-share/gforth/%%PORTVERSION%%/TAGS
-share/gforth/%%PORTVERSION%%/add.fs
-share/gforth/%%PORTVERSION%%/ans-report.fs
-share/gforth/%%PORTVERSION%%/ansi.fs
-share/gforth/%%PORTVERSION%%/answords.fs
-share/gforth/%%PORTVERSION%%/arch/386/asm.fs
-share/gforth/%%PORTVERSION%%/arch/386/disasm.fs
-share/gforth/%%PORTVERSION%%/arch/alpha/asm.fs
-share/gforth/%%PORTVERSION%%/arch/alpha/disasm.fs
-share/gforth/%%PORTVERSION%%/arch/mips/asm.fs
-share/gforth/%%PORTVERSION%%/arch/mips/disasm.fs
-share/gforth/%%PORTVERSION%%/arch/mips/insts.fs
-share/gforth/%%PORTVERSION%%/asm/README
-share/gforth/%%PORTVERSION%%/asm/basic.fs
-share/gforth/%%PORTVERSION%%/asm/bitmask.fs
-share/gforth/%%PORTVERSION%%/asm/generic.fs
-share/gforth/%%PORTVERSION%%/asm/numref.fs
-share/gforth/%%PORTVERSION%%/asm/target.fs
-share/gforth/%%PORTVERSION%%/assert.fs
-share/gforth/%%PORTVERSION%%/backtrac.fs
-share/gforth/%%PORTVERSION%%/blocked.fb
-share/gforth/%%PORTVERSION%%/blocks.fs
-share/gforth/%%PORTVERSION%%/bubble.fs
-share/gforth/%%PORTVERSION%%/bufio.fs
-share/gforth/%%PORTVERSION%%/chains.fs
-share/gforth/%%PORTVERSION%%/code.fs
-share/gforth/%%PORTVERSION%%/colorize.fs
-share/gforth/%%PORTVERSION%%/comp-i.fs
-share/gforth/%%PORTVERSION%%/compat/README
-share/gforth/%%PORTVERSION%%/compat/anslocal.fs
-share/gforth/%%PORTVERSION%%/compat/assert.fs
-share/gforth/%%PORTVERSION%%/compat/control.fs
-share/gforth/%%PORTVERSION%%/compat/defer.fs
-share/gforth/%%PORTVERSION%%/compat/exception.fs
-share/gforth/%%PORTVERSION%%/compat/loops.fs
-share/gforth/%%PORTVERSION%%/compat/required.fs
-share/gforth/%%PORTVERSION%%/compat/strcomp.fs
-share/gforth/%%PORTVERSION%%/compat/struct.fs
-share/gforth/%%PORTVERSION%%/compat/vocabulary.fs
-share/gforth/%%PORTVERSION%%/cross.fs
-share/gforth/%%PORTVERSION%%/debug.fs
-share/gforth/%%PORTVERSION%%/debugs.fs
-share/gforth/%%PORTVERSION%%/doc/makedoc.fs
-share/gforth/%%PORTVERSION%%/doskey.fs
-share/gforth/%%PORTVERSION%%/ds2texi.fs
-share/gforth/%%PORTVERSION%%/ec/README
-share/gforth/%%PORTVERSION%%/ec/builttag.fs
-share/gforth/%%PORTVERSION%%/ec/dotx.fs
-share/gforth/%%PORTVERSION%%/ec/mirror.fs
-share/gforth/%%PORTVERSION%%/ec/nesting.fs
-share/gforth/%%PORTVERSION%%/ec/shex.fs
-share/gforth/%%PORTVERSION%%/ekey.fs
-share/gforth/%%PORTVERSION%%/environ.fs
-share/gforth/%%PORTVERSION%%/envos.dos
-share/gforth/%%PORTVERSION%%/envos.fs
-share/gforth/%%PORTVERSION%%/envos.os2
-share/gforth/%%PORTVERSION%%/errors.fs
-share/gforth/%%PORTVERSION%%/etags.fs
-share/gforth/%%PORTVERSION%%/exboot.fs
-share/gforth/%%PORTVERSION%%/except.fs
-share/gforth/%%PORTVERSION%%/extend.fs
-share/gforth/%%PORTVERSION%%/fi2c.fs
-share/gforth/%%PORTVERSION%%/fib.fs
-share/gforth/%%PORTVERSION%%/filedump.fs
-share/gforth/%%PORTVERSION%%/fixpath.fs
-share/gforth/%%PORTVERSION%%/float.fs
-share/gforth/%%PORTVERSION%%/glocals.fs
-share/gforth/%%PORTVERSION%%/glosgen.fs
-share/gforth/%%PORTVERSION%%/gray.fs
-share/gforth/%%PORTVERSION%%/hash.fs
-share/gforth/%%PORTVERSION%%/history.fs
-share/gforth/%%PORTVERSION%%/httpd.fs
-share/gforth/%%PORTVERSION%%/intcomp.fs
-share/gforth/%%PORTVERSION%%/kernel/accept.fs
-share/gforth/%%PORTVERSION%%/kernel/aliases.fs
-share/gforth/%%PORTVERSION%%/kernel/aliases0.fs
-share/gforth/%%PORTVERSION%%/kernel/args.fs
-share/gforth/%%PORTVERSION%%/kernel/basics.fs
-share/gforth/%%PORTVERSION%%/kernel/cbr.fs
-share/gforth/%%PORTVERSION%%/kernel/cloop.fs
-share/gforth/%%PORTVERSION%%/kernel/comp.fs
-share/gforth/%%PORTVERSION%%/kernel/cond-old.fs
-share/gforth/%%PORTVERSION%%/kernel/cond.fs
-share/gforth/%%PORTVERSION%%/kernel/doers.fs
-share/gforth/%%PORTVERSION%%/kernel/errore.fs
-share/gforth/%%PORTVERSION%%/kernel/files.fs
-share/gforth/%%PORTVERSION%%/kernel/getdoers.fs
-share/gforth/%%PORTVERSION%%/kernel/groups.fs
-share/gforth/%%PORTVERSION%%/kernel/input.fs
-share/gforth/%%PORTVERSION%%/kernel/int.fs
-share/gforth/%%PORTVERSION%%/kernel/io.fs
-share/gforth/%%PORTVERSION%%/kernel/kernel.fs
-share/gforth/%%PORTVERSION%%/kernel/license.fs
-share/gforth/%%PORTVERSION%%/kernel/main.fs
-share/gforth/%%PORTVERSION%%/kernel/nio.fs
-share/gforth/%%PORTVERSION%%/kernel/pass.fs
-share/gforth/%%PORTVERSION%%/kernel/paths.fs
-share/gforth/%%PORTVERSION%%/kernel/prim0.fs
-share/gforth/%%PORTVERSION%%/kernel/quotes.fs
-share/gforth/%%PORTVERSION%%/kernel/require.fs
-share/gforth/%%PORTVERSION%%/kernel/saccept.fs
-share/gforth/%%PORTVERSION%%/kernel/tools.fs
-share/gforth/%%PORTVERSION%%/kernel/toolsext.fs
-share/gforth/%%PORTVERSION%%/kernel/vars.fs
-share/gforth/%%PORTVERSION%%/kernl32l.fi
-share/gforth/%%PORTVERSION%%/lib.fs
-share/gforth/%%PORTVERSION%%/locals.fs
-share/gforth/%%PORTVERSION%%/locate.fs
-share/gforth/%%PORTVERSION%%/look.fs
-share/gforth/%%PORTVERSION%%/mach16b.fs
-share/gforth/%%PORTVERSION%%/mach16l.fs
-share/gforth/%%PORTVERSION%%/mach32b.fs
-share/gforth/%%PORTVERSION%%/mach32l.fs
-share/gforth/%%PORTVERSION%%/mach64b.fs
-share/gforth/%%PORTVERSION%%/mach64l.fs
-share/gforth/%%PORTVERSION%%/machpc.fs.in
-share/gforth/%%PORTVERSION%%/make-app.fs
-share/gforth/%%PORTVERSION%%/matrix.fs
-share/gforth/%%PORTVERSION%%/mini-oof.fs
-share/gforth/%%PORTVERSION%%/moof-exm.fs
-share/gforth/%%PORTVERSION%%/moofglos.fs
-share/gforth/%%PORTVERSION%%/more.fs
-share/gforth/%%PORTVERSION%%/objects.fs
-share/gforth/%%PORTVERSION%%/objexamp.fs
-share/gforth/%%PORTVERSION%%/oof.fs
-share/gforth/%%PORTVERSION%%/oofsampl.fs
-share/gforth/%%PORTVERSION%%/other.fs
-share/gforth/%%PORTVERSION%%/prim
-share/gforth/%%PORTVERSION%%/prims2x.fs
-share/gforth/%%PORTVERSION%%/proxy.fs
-share/gforth/%%PORTVERSION%%/quotes.fs
-share/gforth/%%PORTVERSION%%/random.fs
-share/gforth/%%PORTVERSION%%/savesys.fs
-share/gforth/%%PORTVERSION%%/search.fs
-share/gforth/%%PORTVERSION%%/see-ext.fs
-share/gforth/%%PORTVERSION%%/see.fs
-share/gforth/%%PORTVERSION%%/siev.fs
-share/gforth/%%PORTVERSION%%/sieve.fs
-share/gforth/%%PORTVERSION%%/simp-see.fs
-share/gforth/%%PORTVERSION%%/sokoban.fs
-share/gforth/%%PORTVERSION%%/source.fs
-share/gforth/%%PORTVERSION%%/startup.fs
-share/gforth/%%PORTVERSION%%/string.fs
-share/gforth/%%PORTVERSION%%/struct.fs
-share/gforth/%%PORTVERSION%%/stuff.fs
-share/gforth/%%PORTVERSION%%/table.fs
-share/gforth/%%PORTVERSION%%/tags.fs
-share/gforth/%%PORTVERSION%%/tasker.fs
-share/gforth/%%PORTVERSION%%/termsize.fs
-share/gforth/%%PORTVERSION%%/test/checkans.fs
-share/gforth/%%PORTVERSION%%/test/coretest.fs
-share/gforth/%%PORTVERSION%%/test/dbltest.fs
-share/gforth/%%PORTVERSION%%/test/float.fs
-share/gforth/%%PORTVERSION%%/test/gforth.fs
-share/gforth/%%PORTVERSION%%/test/other.fs
-share/gforth/%%PORTVERSION%%/test/postpone.fs
-share/gforth/%%PORTVERSION%%/test/signals.fs
-share/gforth/%%PORTVERSION%%/test/string.fs
-share/gforth/%%PORTVERSION%%/test/tester.fs
-share/gforth/%%PORTVERSION%%/tt.fs
-share/gforth/%%PORTVERSION%%/unbuffer.fs
-share/gforth/%%PORTVERSION%%/unix/socket.fs
-share/gforth/%%PORTVERSION%%/vt100.fs
-share/gforth/%%PORTVERSION%%/vt100key.fs
-share/gforth/%%PORTVERSION%%/wordinfo.fs
-share/gforth/%%PORTVERSION%%/wordsets.fs
-@exec mkdir -p %D/share/gforth/site-forth
-@dirrm share/gforth/site-forth
-@dirrm share/gforth/%%PORTVERSION%%/unix
-@dirrm share/gforth/%%PORTVERSION%%/test
-@dirrm share/gforth/%%PORTVERSION%%/kernel
-@dirrm share/gforth/%%PORTVERSION%%/ec
-@dirrm share/gforth/%%PORTVERSION%%/doc
-@dirrm share/gforth/%%PORTVERSION%%/compat
-@dirrm share/gforth/%%PORTVERSION%%/asm
-@dirrm share/gforth/%%PORTVERSION%%/arch/mips
-@dirrm share/gforth/%%PORTVERSION%%/arch/alpha
-@dirrm share/gforth/%%PORTVERSION%%/arch/386
-@dirrm share/gforth/%%PORTVERSION%%/arch
-@dirrm share/gforth/%%PORTVERSION%%
-@dirrm share/gforth
-%%PORTDOCS%%@dirrm share/doc/gforth
-@dirrm lib/gforth/site-forth
-@dirrm lib/gforth/%%PORTVERSION%%
-@dirrm lib/gforth
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/BUGS
+%%PORTDOCS%%%%DOCSDIR%%/Benchres
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/COPYING.DOC
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL.BINDIST
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/NEWS.vmgen
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.vmgen
+%%PORTDOCS%%%%DOCSDIR%%/ToDo
+%%EMACS_DIR%%/gforth.el
+%%DATADIR%%/%%PORTVERSION%%/TAGS
+%%DATADIR%%/%%PORTVERSION%%/add.fs
+%%DATADIR%%/%%PORTVERSION%%/ans-report.fs
+%%DATADIR%%/%%PORTVERSION%%/ansi.fs
+%%DATADIR%%/%%PORTVERSION%%/answords.fs
+%%DATADIR%%/%%PORTVERSION%%/arch/386/asm.fs
+%%DATADIR%%/%%PORTVERSION%%/arch/386/disasm.fs
+@comment %%DATADIR%%/%%PORTVERSION%%/arch/4stack/asm.fs
+@comment %%DATADIR%%/%%PORTVERSION%%/arch/4stack/mach.fs
+@comment %%DATADIR%%/%%PORTVERSION%%/arch/4stack/prim.fs
+@comment %%DATADIR%%/%%PORTVERSION%%/arch/4stack/relocate.fs
+@comment %%DATADIR%%/%%PORTVERSION%%/arch/6502/asm.fs
+@comment %%DATADIR%%/%%PORTVERSION%%/arch/6502/cold.fs
+@comment %%DATADIR%%/%%PORTVERSION%%/arch/6502/mach.fs
+@comment %%DATADIR%%/%%PORTVERSION%%/arch/6502/prim.fs
+@comment %%DATADIR%%/%%PORTVERSION%%/arch/6502/softuart.fs
+@comment %%DATADIR%%/%%PORTVERSION%%/arch/6502/zero.fs
+@comment %%DATADIR%%/%%PORTVERSION%%/arch/8086/asm.fs
+@comment %%DATADIR%%/%%PORTVERSION%%/arch/8086/mach.fs
+@comment %%DATADIR%%/%%PORTVERSION%%/arch/8086/prim.fs
+%%DATADIR%%/%%PORTVERSION%%/arch/alpha/asm.fs
+%%DATADIR%%/%%PORTVERSION%%/arch/alpha/disasm.fs
+@comment %%DATADIR%%/%%PORTVERSION%%/arch/avr/asm.fs
+@comment %%DATADIR%%/%%PORTVERSION%%/arch/c165/asm.fs
+@comment %%DATADIR%%/%%PORTVERSION%%/arch/c165/mach.fs
+@comment %%DATADIR%%/%%PORTVERSION%%/arch/c165/prim.fs
+@comment %%DATADIR%%/%%PORTVERSION%%/arch/h8/asm.fs
+%%DATADIR%%/%%PORTVERSION%%/arch/mips/asm.fs
+%%DATADIR%%/%%PORTVERSION%%/arch/mips/disasm.fs
+%%DATADIR%%/%%PORTVERSION%%/arch/mips/insts.fs
+@comment %%DATADIR%%/%%PORTVERSION%%/arch/misc/asm.fs
+@comment %%DATADIR%%/%%PORTVERSION%%/arch/misc/mach.fs
+@comment %%DATADIR%%/%%PORTVERSION%%/arch/misc/prim.fs
+@comment %%DATADIR%%/%%PORTVERSION%%/arch/misc/sim.fs
+@comment %%DATADIR%%/%%PORTVERSION%%/arch/misc/sokoban.fs
+@comment %%DATADIR%%/%%PORTVERSION%%/arch/misc/tt.fs
+@comment %%DATADIR%%/%%PORTVERSION%%/arch/sharc/mach.fs
+@comment %%DATADIR%%/%%PORTVERSION%%/arch/shboom/asm.fs
+@comment %%DATADIR%%/%%PORTVERSION%%/arch/shboom/compiler.fs
+@comment %%DATADIR%%/%%PORTVERSION%%/arch/shboom/dis.fs
+@comment %%DATADIR%%/%%PORTVERSION%%/arch/shboom/dis2.fs
+@comment %%DATADIR%%/%%PORTVERSION%%/arch/shboom/doers.fs
+@comment %%DATADIR%%/%%PORTVERSION%%/arch/shboom/mach.fs
+@comment %%DATADIR%%/%%PORTVERSION%%/arch/shboom/prim.fs
+%%DATADIR%%/%%PORTVERSION%%/asm/README
+%%DATADIR%%/%%PORTVERSION%%/asm/basic.fs
+%%DATADIR%%/%%PORTVERSION%%/asm/bitmask.fs
+%%DATADIR%%/%%PORTVERSION%%/asm/generic.fs
+%%DATADIR%%/%%PORTVERSION%%/asm/numref.fs
+%%DATADIR%%/%%PORTVERSION%%/asm/target.fs
+%%DATADIR%%/%%PORTVERSION%%/assert.fs
+%%DATADIR%%/%%PORTVERSION%%/backtrac.fs
+%%DATADIR%%/%%PORTVERSION%%/blocked.fb
+%%DATADIR%%/%%PORTVERSION%%/blocks.fs
+%%DATADIR%%/%%PORTVERSION%%/bubble.fs
+%%DATADIR%%/%%PORTVERSION%%/bufio.fs
+%%DATADIR%%/%%PORTVERSION%%/chains.fs
+%%DATADIR%%/%%PORTVERSION%%/code.fs
+%%DATADIR%%/%%PORTVERSION%%/colorize.fs
+%%DATADIR%%/%%PORTVERSION%%/comp-i.fs
+%%DATADIR%%/%%PORTVERSION%%/compat/README
+%%DATADIR%%/%%PORTVERSION%%/compat/anslocal.fs
+%%DATADIR%%/%%PORTVERSION%%/compat/assert.fs
+%%DATADIR%%/%%PORTVERSION%%/compat/control.fs
+%%DATADIR%%/%%PORTVERSION%%/compat/defer.fs
+%%DATADIR%%/%%PORTVERSION%%/compat/exception.fs
+%%DATADIR%%/%%PORTVERSION%%/compat/loops.fs
+%%DATADIR%%/%%PORTVERSION%%/compat/required.fs
+%%DATADIR%%/%%PORTVERSION%%/compat/strcomp.fs
+%%DATADIR%%/%%PORTVERSION%%/compat/struct.fs
+%%DATADIR%%/%%PORTVERSION%%/compat/vocabulary.fs
+%%DATADIR%%/%%PORTVERSION%%/cross.fs
+%%DATADIR%%/%%PORTVERSION%%/debug.fs
+%%DATADIR%%/%%PORTVERSION%%/debugs.fs
+%%DATADIR%%/%%PORTVERSION%%/doc/makedoc.fs
+%%DATADIR%%/%%PORTVERSION%%/doskey.fs
+%%DATADIR%%/%%PORTVERSION%%/ds2texi.fs
+%%DATADIR%%/%%PORTVERSION%%/ec/README
+%%DATADIR%%/%%PORTVERSION%%/ec/builttag.fs
+%%DATADIR%%/%%PORTVERSION%%/ec/dotx.fs
+%%DATADIR%%/%%PORTVERSION%%/ec/mirror.fs
+%%DATADIR%%/%%PORTVERSION%%/ec/nesting.fs
+%%DATADIR%%/%%PORTVERSION%%/ec/shex.fs
+%%DATADIR%%/%%PORTVERSION%%/ekey.fs
+%%DATADIR%%/%%PORTVERSION%%/environ.fs
+%%DATADIR%%/%%PORTVERSION%%/envos.dos
+%%DATADIR%%/%%PORTVERSION%%/envos.fs
+%%DATADIR%%/%%PORTVERSION%%/envos.os2
+%%DATADIR%%/%%PORTVERSION%%/errors.fs
+%%DATADIR%%/%%PORTVERSION%%/etags.fs
+%%DATADIR%%/%%PORTVERSION%%/exboot.fs
+%%DATADIR%%/%%PORTVERSION%%/except.fs
+%%DATADIR%%/%%PORTVERSION%%/extend.fs
+%%DATADIR%%/%%PORTVERSION%%/fi2c.fs
+%%DATADIR%%/%%PORTVERSION%%/fib.fs
+%%DATADIR%%/%%PORTVERSION%%/filedump.fs
+%%DATADIR%%/%%PORTVERSION%%/fixpath.fs
+%%DATADIR%%/%%PORTVERSION%%/float.fs
+%%DATADIR%%/%%PORTVERSION%%/glocals.fs
+%%DATADIR%%/%%PORTVERSION%%/glosgen.fs
+%%DATADIR%%/%%PORTVERSION%%/gray.fs
+%%DATADIR%%/%%PORTVERSION%%/hash.fs
+%%DATADIR%%/%%PORTVERSION%%/history.fs
+%%DATADIR%%/%%PORTVERSION%%/httpd.fs
+%%DATADIR%%/%%PORTVERSION%%/intcomp.fs
+%%DATADIR%%/%%PORTVERSION%%/kernel/accept.fs
+%%DATADIR%%/%%PORTVERSION%%/kernel/aliases.fs
+%%DATADIR%%/%%PORTVERSION%%/kernel/aliases0.fs
+%%DATADIR%%/%%PORTVERSION%%/kernel/args.fs
+%%DATADIR%%/%%PORTVERSION%%/kernel/basics.fs
+%%DATADIR%%/%%PORTVERSION%%/kernel/cbr.fs
+%%DATADIR%%/%%PORTVERSION%%/kernel/cloop.fs
+%%DATADIR%%/%%PORTVERSION%%/kernel/comp.fs
+%%DATADIR%%/%%PORTVERSION%%/kernel/cond-old.fs
+%%DATADIR%%/%%PORTVERSION%%/kernel/cond.fs
+%%DATADIR%%/%%PORTVERSION%%/kernel/doers.fs
+%%DATADIR%%/%%PORTVERSION%%/kernel/errore.fs
+%%DATADIR%%/%%PORTVERSION%%/kernel/files.fs
+%%DATADIR%%/%%PORTVERSION%%/kernel/getdoers.fs
+%%DATADIR%%/%%PORTVERSION%%/kernel/groups.fs
+%%DATADIR%%/%%PORTVERSION%%/kernel/input.fs
+%%DATADIR%%/%%PORTVERSION%%/kernel/int.fs
+%%DATADIR%%/%%PORTVERSION%%/kernel/io.fs
+%%DATADIR%%/%%PORTVERSION%%/kernel/kernel.fs
+%%DATADIR%%/%%PORTVERSION%%/kernel/license.fs
+%%DATADIR%%/%%PORTVERSION%%/kernel/main.fs
+%%DATADIR%%/%%PORTVERSION%%/kernel/nio.fs
+%%DATADIR%%/%%PORTVERSION%%/kernel/pass.fs
+%%DATADIR%%/%%PORTVERSION%%/kernel/paths.fs
+%%DATADIR%%/%%PORTVERSION%%/kernel/prim0.fs
+%%DATADIR%%/%%PORTVERSION%%/kernel/quotes.fs
+%%DATADIR%%/%%PORTVERSION%%/kernel/require.fs
+%%DATADIR%%/%%PORTVERSION%%/kernel/saccept.fs
+%%DATADIR%%/%%PORTVERSION%%/kernel/tools.fs
+%%DATADIR%%/%%PORTVERSION%%/kernel/toolsext.fs
+%%DATADIR%%/%%PORTVERSION%%/kernel/vars.fs
+%%DATADIR%%/%%PORTVERSION%%/kernl%%WORDSIZE%%%%BYTEORDER%%.fi
+%%DATADIR%%/%%PORTVERSION%%/lib.fs
+%%DATADIR%%/%%PORTVERSION%%/locals.fs
+%%DATADIR%%/%%PORTVERSION%%/locate.fs
+%%DATADIR%%/%%PORTVERSION%%/look.fs
+%%DATADIR%%/%%PORTVERSION%%/mach16b.fs
+%%DATADIR%%/%%PORTVERSION%%/mach16l.fs
+%%DATADIR%%/%%PORTVERSION%%/mach32b.fs
+%%DATADIR%%/%%PORTVERSION%%/mach32l.fs
+%%DATADIR%%/%%PORTVERSION%%/mach64b.fs
+%%DATADIR%%/%%PORTVERSION%%/mach64l.fs
+%%DATADIR%%/%%PORTVERSION%%/machpc.fs.in
+%%DATADIR%%/%%PORTVERSION%%/make-app.fs
+%%DATADIR%%/%%PORTVERSION%%/matrix.fs
+%%DATADIR%%/%%PORTVERSION%%/mini-oof.fs
+%%DATADIR%%/%%PORTVERSION%%/moof-exm.fs
+%%DATADIR%%/%%PORTVERSION%%/moofglos.fs
+%%DATADIR%%/%%PORTVERSION%%/more.fs
+%%DATADIR%%/%%PORTVERSION%%/objects.fs
+%%DATADIR%%/%%PORTVERSION%%/objexamp.fs
+%%DATADIR%%/%%PORTVERSION%%/oof.fs
+%%DATADIR%%/%%PORTVERSION%%/oofsampl.fs
+%%DATADIR%%/%%PORTVERSION%%/other.fs
+%%DATADIR%%/%%PORTVERSION%%/prim
+%%DATADIR%%/%%PORTVERSION%%/prims2x.fs
+%%DATADIR%%/%%PORTVERSION%%/proxy.fs
+%%DATADIR%%/%%PORTVERSION%%/quotes.fs
+%%DATADIR%%/%%PORTVERSION%%/random.fs
+%%DATADIR%%/%%PORTVERSION%%/savesys.fs
+%%DATADIR%%/%%PORTVERSION%%/search.fs
+%%DATADIR%%/%%PORTVERSION%%/see-ext.fs
+%%DATADIR%%/%%PORTVERSION%%/see.fs
+%%DATADIR%%/%%PORTVERSION%%/siev.fs
+%%DATADIR%%/%%PORTVERSION%%/sieve.fs
+%%DATADIR%%/%%PORTVERSION%%/simp-see.fs
+%%DATADIR%%/%%PORTVERSION%%/sokoban.fs
+%%DATADIR%%/%%PORTVERSION%%/source.fs
+%%DATADIR%%/%%PORTVERSION%%/startup.fs
+%%DATADIR%%/%%PORTVERSION%%/string.fs
+%%DATADIR%%/%%PORTVERSION%%/struct.fs
+%%DATADIR%%/%%PORTVERSION%%/stuff.fs
+%%DATADIR%%/%%PORTVERSION%%/table.fs
+%%DATADIR%%/%%PORTVERSION%%/tags.fs
+%%DATADIR%%/%%PORTVERSION%%/tasker.fs
+%%DATADIR%%/%%PORTVERSION%%/termsize.fs
+%%DATADIR%%/%%PORTVERSION%%/test/checkans.fs
+%%DATADIR%%/%%PORTVERSION%%/test/coretest.fs
+%%DATADIR%%/%%PORTVERSION%%/test/dbltest.fs
+%%DATADIR%%/%%PORTVERSION%%/test/float.fs
+%%DATADIR%%/%%PORTVERSION%%/test/gforth.fs
+%%DATADIR%%/%%PORTVERSION%%/test/other.fs
+%%DATADIR%%/%%PORTVERSION%%/test/postpone.fs
+%%DATADIR%%/%%PORTVERSION%%/test/signals.fs
+%%DATADIR%%/%%PORTVERSION%%/test/string.fs
+%%DATADIR%%/%%PORTVERSION%%/test/tester.fs
+%%DATADIR%%/%%PORTVERSION%%/tt.fs
+%%DATADIR%%/%%PORTVERSION%%/unbuffer.fs
+%%DATADIR%%/%%PORTVERSION%%/unix/socket.fs
+%%DATADIR%%/%%PORTVERSION%%/vt100.fs
+%%DATADIR%%/%%PORTVERSION%%/vt100key.fs
+%%DATADIR%%/%%PORTVERSION%%/wordinfo.fs
+%%DATADIR%%/%%PORTVERSION%%/wordsets.fs
+@exec mkdir -p %D/%%DATADIR%%/site-forth
+@dirrm %%DATADIR%%/site-forth
+@dirrm %%DATADIR%%/%%PORTVERSION%%/unix
+@dirrm %%DATADIR%%/%%PORTVERSION%%/test
+@dirrm %%DATADIR%%/%%PORTVERSION%%/kernel
+@dirrm %%DATADIR%%/%%PORTVERSION%%/ec
+@dirrm %%DATADIR%%/%%PORTVERSION%%/doc
+@dirrm %%DATADIR%%/%%PORTVERSION%%/compat
+@dirrm %%DATADIR%%/%%PORTVERSION%%/asm
+@comment @dirrm %%DATADIR%%/%%PORTVERSION%%/arch/shboom
+@comment @dirrm %%DATADIR%%/%%PORTVERSION%%/arch/sharc
+@comment @dirrm %%DATADIR%%/%%PORTVERSION%%/arch/misc
+@dirrm %%DATADIR%%/%%PORTVERSION%%/arch/mips
+@comment @dirrm %%DATADIR%%/%%PORTVERSION%%/arch/h8
+@comment @dirrm %%DATADIR%%/%%PORTVERSION%%/arch/c165
+@comment @dirrm %%DATADIR%%/%%PORTVERSION%%/arch/avr
+@dirrm %%DATADIR%%/%%PORTVERSION%%/arch/alpha
+@comment @dirrm %%DATADIR%%/%%PORTVERSION%%/arch/8086
+@comment @dirrm %%DATADIR%%/%%PORTVERSION%%/arch/6205
+@comment @dirrm %%DATADIR%%/%%PORTVERSION%%/arch/4stack
+@dirrm %%DATADIR%%/%%PORTVERSION%%/arch/386
+@dirrm %%DATADIR%%/%%PORTVERSION%%/arch
+@dirrm %%DATADIR%%/%%PORTVERSION%%
+@dirrm %%DATADIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%LIB_DIR%%/site-forth
+@dirrm %%LIB_DIR%%/%%PORTVERSION%%
+@dirrm %%LIB_DIR%%
