@@ -1923,6 +1923,7 @@ gdchart		ports/graphics/gdchart
 gdeskcal	ports/deskutils/gdeskcal
 gdeskcal-skins	ports/deskutils/gdeskcal-skins
 gdesklets	ports/deskutils/gdesklets
+gdesklets-clock	ports/x11-clocks/gdesklets-clock
 gdict		ports/textproc/gdict
 gdis		ports/science/gdis
 gdk-pixbuf	ports/graphics/gdk-pixbuf
