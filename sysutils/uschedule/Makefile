@@ -16,7 +16,7 @@ COMMENT=	A scheduler program, designed to replace cron(8) and at(1)
 BUILD_DEPENDS=	${LOCALBASE}/bin/tai64nlocal:${PORTSDIR}/sysutils/daemontools
 RUN_DEPENDS=	${LOCALBASE}/bin/multilog:${PORTSDIR}/sysutils/daemontools
 
-DISABLE_SIZE=	yes
+NO_SIZE=	yes
 WRKSRC=		${WRKDIR}/admin/${DISTNAME}
 
 MAN1=		uschedule.1 uschedulecmd.1 uscheduleconf.1 uschedulecp.1 \
@@ -27,8 +27,8 @@ PORTDOCS=	ChangeLog NEWS SECURITY-BUG
 bin=		uschedule uschedulecmd uscheduleconf uschedulecp \
 		uscheduleedit uschedulelist uschedulerm
 sbin=		uscheduled
-PLIST_FILES=	${bin:S/^/bin\//}
-PLIST_FILES+=	${sbin:S/^/sbin\//}
+PLIST_FILES=	${bin:S,^,bin/,}
+PLIST_FILES+=	${sbin:S,^,sbin/,}
 
 do-build:
 	cd ${WRKSRC} && package/compile && package/check
