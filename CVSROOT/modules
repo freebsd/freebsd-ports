@@ -6603,6 +6603,7 @@ p5-Class-WhiteHole	ports/devel/p5-Class-WhiteHole
 p5-Class-XPath	ports/devel/p5-Class-XPath
 p5-Clone	ports/devel/p5-Clone
 p5-Color-Rgb	ports/graphics/p5-Color-Rgb
+p5-Commands-Guarded	ports/devel/p5-Commands-Guarded
 p5-Compress-Bzip2	ports/archivers/p5-Compress-Bzip2
 p5-Compress-LeadingBlankSpaces	ports/www/p5-Compress-LeadingBlankSpaces
 p5-Compress-Zlib	ports/archivers/p5-Compress-Zlib
