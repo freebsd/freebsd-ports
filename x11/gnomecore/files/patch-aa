@@ -1,14 +1,14 @@
---- configure.orig	Wed Jan 13 10:36:02 1999
-+++ configure	Thu Jan 14 21:55:14 1999
-@@ -1100,13 +1100,13 @@
+--- configure.orig	Mon Feb  1 06:34:03 1999
++++ configure	Tue Feb  2 05:57:35 1999
+@@ -1121,13 +1121,13 @@
  	    fi
  	
  	    if test "$no_gnome_config" = "yes"; then
 -              echo $ac_n "checking for gnomeConf.sh file in $gnome_prefix""... $ac_c" 1>&6
--echo "configure:1105: checking for gnomeConf.sh file in $gnome_prefix" >&5
+-echo "configure:1126: checking for gnomeConf.sh file in $gnome_prefix" >&5
 -	      if test -f $gnome_prefix/gnomeConf.sh; then
 +              echo $ac_n "checking for gnomeConf.sh file in $prefix/share/gnome""... $ac_c" 1>&6
-+echo "configure:1105: checking for gnomeConf.sh file in $prefix/share/gnome" >&5
++echo "configure:1126: checking for gnomeConf.sh file in $prefix/share/gnome" >&5
 +	      if test -f $prefix/share/gnome/gnomeConf.sh; then
  	        echo "$ac_t""found" 1>&6
  	        echo "loading gnome configuration from" \
@@ -19,3 +19,21 @@
  	        
  	      else
  	        echo "$ac_t""not found" 1>&6
+@@ -5046,7 +5046,7 @@
+   cat conftest.$ac_ext >&5
+   rm -rf conftest*
+   CATOBJEXT=.mo
+-		   DATADIRNAME=lib
++		   DATADIRNAME=share
+ fi
+ rm -f conftest*
+ 		INSTOBJEXT=.mo
+@@ -5308,7 +5308,7 @@
+ 		 USE_INCLUDED_LIBINTL=yes
+ 		 CATOBJEXT=.cat
+ 		 INSTOBJEXT=.cat
+-		 DATADIRNAME=lib
++		 DATADIRNAME=share
+ 		 INTLDEPS='$(top_builddir)/intl/libintl.a'
+ 		 INTLLIBS=$INTLDEPS
+ 		 LIBS=`echo $LIBS | sed -e 's/-lintl//'`
