@@ -32,9 +32,7 @@ lib/libgpilotdconduit.a
 lib/libgpilotdconduit.so
 lib/libgpilotdconduit.so.1
 share/gnome/applets/Utility/gpilot-applet.desktop
-share/gnome/apps/Settings/Peripherals/gpilotd-conduits-capplet.desktop
 share/gnome/apps/Settings/Peripherals/gpilotd-control-applet.desktop
-share/gnome/control-center/Peripherals/gpilotd-conduits-capplet.desktop
 share/gnome/control-center/Peripherals/gpilotd-control-applet.desktop
 share/gnome/gnome-pilot/conduits/backup.conduit
 share/gnome/gnome-pilot/conduits/file.conduit
