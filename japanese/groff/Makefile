@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	groff
-PORTVERSION=	1.17
-PORTREVISION=	1
+PORTVERSION=	1.17.2
 CATEGORIES=	japanese print
 MASTER_SITES=	${MASTER_SITE_LOCAL:S,%SUBDIR%,okazaki/&,} \
 		${MASTER_SITE_GNU}
@@ -21,7 +20,7 @@ PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	okazaki@FreeBSD.org
 
-TMAC_DATE=	20010614
+TMAC_DATE=	20010811
 TMAC_DISTNAME=	tmac-${TMAC_DATE}
 
 USE_GMAKE=	yes
@@ -30,7 +29,7 @@ USE_AUTOCONF=	yes
 CONFIGURE_ARGS=	--program-prefix=g --enable-nippon
 CONFIGURE_ENV=	INSTALL_MAN="${INSTALL_MAN}"
 
-TMACBASE=	${WRKDIR}/tmac
+TMACBASE=	${WRKDIR}/${TMAC_DISTNAME}
 TMACDIR=	share/groff/${PORTVERSION}/tmac
 SITETMACDIR=	share/groff/site-tmac
 MDOCDIR=	${TMACDIR}/mdoc
@@ -52,7 +51,8 @@ MAN7=		groff.7 groff_char.7 groff_man.7 groff_mdoc.7 \
 		groff_mwww.7 mmroff.7 roff.7
 
 SITETMACFILES=	mdoc.local
-TMACFILES=	tmac.orig_me tmac.vgrind
+TMACFILES=	tmac.orig_me tmac.vgrind \
+		an-old.tmac doc.tmac
 MDOCFILES=	eucJP
 
 DOCUMENTS=	ChangeLog.jp NEWS PROBLEMS README README.jp \
@@ -72,6 +72,24 @@ TEXINFO_FILTER=	-e 's/\@acronym/\@var/g;' \
 		-e 's/ifnotinfo/iftex/g;' \
 		-e 's/\@option/\@samp/g;' \
 		-e 's/\@env/\@code/g;'
+
+# workaround for autoconf-2.13
+
+CONFIGUREIN_FILTER=	\
+		-e 's|AC_INIT|dnl|g;' \
+		-e 's|AC_CONFIG_SRCDIR|AC_INIT|g;' \
+		-e 's|AC_OUTPUT|dnl|g;' \
+		-e 's|AC_CONFIG_FILES|AC_OUTPUT|g;'
+
+ACLOCAL_FILTER=	-e 's/AC_LANG_POP\(C\+\+\)/AC_LANG_RESTORE/g;' \
+		-e 's/AC_LANG_PUSH\(C\+\+\)/AC_LANG_SAVE\nAC_LANG_CPLUSPLUS/g;'
+
+post-extract:
+	${LN} -sf configure.ac ${WRKSRC}/configure.in
+
+post-patch:
+	${PERL} -pi ${CONFIGUREIN_FILTER} ${WRKSRC}/configure.in
+	${PERL} -pi ${ACLOCAL_FILTER} ${WRKSRC}/aclocal.m4
 
 post-build:
 .if !defined(WITHOUT_INFO)
