@@ -1,25 +1,41 @@
 # New ports collection makefile for:	 gnotepad+
-# Date created:		08-March-1999
+# Date created:		08 March 1999
 # Whom:			brett@peloton.physics.montana.edu
 #
 # $FreeBSD$
 #
 
 PORTNAME=	gnotepad+
-PORTVERSION=	1.1.4
+PORTVERSION=	1.2.1
 CATEGORIES=	editors www
-MASTER_SITES=	http://ack.netpedia.net/gnp/
+MASTER_SITES=	http://download.sourceforge.net/gnotepad/
+.if !defined(NOPORTDOCS)
+DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
+		${PORTNAME}-help-${DOCVERSION}${EXTRACT_SUFX}
+.endif
 
 MAINTAINER=	brett@peloton.runet.edu
 
 LIB_DEPENDS=    Xpm.4:${PORTSDIR}/graphics/xpm \
-		gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
+		gnome.3:${PORTSDIR}/x11/gnomelibs \
+		intl.1:${PORTSDIR}/devel/gettext
 
 GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
 
+DOCVERSION=	1.2.0
+USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=  GTK_CONFIG="${GTK_CONFIG}"
+CONFIGURE_ENV=	GTK_CONFIG="${GTK_CONFIG}" \
+		CPPFLAGS="-I${LOCALBASE}/include" \
+		LIBS="-L${LOCALBASE}/lib"
 
 MAN1=	gnp.1
+
+.if !defined(NOPORTDOCS)
+post-extract:
+		${MV} ${WRKSRC}/docs ${WRKSRC}/docs.old
+		${CP} -R ${WRKDIR}/${PORTNAME}-help-${DOCVERSION}/docs \
+			${WRKSRC}/docs
+.endif
 
 .include <bsd.port.mk>
