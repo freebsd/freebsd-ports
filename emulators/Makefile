@@ -15,6 +15,7 @@
     SUBDIR += darcnes
     SUBDIR += dgen-sdl
     SUBDIR += dlx
+    SUBDIR += dosbox
     SUBDIR += fmsx
     SUBDIR += freesci
     SUBDIR += frodo
