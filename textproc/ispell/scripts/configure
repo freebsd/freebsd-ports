@@ -26,7 +26,8 @@ echo "#undef WORDS"  >> local.h
 echo '#define WORDS   "/usr/share/dict/words"'  >> local.h 
 echo '#undef ELISPDIR'  >> local.h
 echo "#define ELISPDIR \"$PREFIX/share/emacs/site-lisp\"" >> local.h
-echo "#define SHAREDIR \"$PREFIX/share/ispell\"" >> local.h
+echo "#undef LIBDIR" >> local.h
+echo "#define LIBDIR \"$PREFIX/share/ispell\"" >> local.h
 
 mv Makefile Makefile.orig
 sed -e 's/^[ 	]*$/\
