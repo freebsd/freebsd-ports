@@ -7,7 +7,6 @@ lib/perl5/site_perl/%%PERL_VER%%/Mail/Filter.pm
 lib/perl5/site_perl/%%PERL_VER%%/Mail/Header.pm
 lib/perl5/site_perl/%%PERL_VER%%/Mail/Internet.pm
 lib/perl5/site_perl/%%PERL_VER%%/Mail/Mailer.pm
-lib/perl5/site_perl/%%PERL_VER%%/Mail/Mailer/mail.pm
 lib/perl5/site_perl/%%PERL_VER%%/Mail/Mailer/qmail.pm
 lib/perl5/site_perl/%%PERL_VER%%/Mail/Mailer/rfc822.pm
 lib/perl5/site_perl/%%PERL_VER%%/Mail/Mailer/sendmail.pm
