@@ -1,77 +1,94 @@
-*** Unix/ui.c.orig	Sun Feb 13 17:45:57 1994
---- Unix/ui.c	Sun Nov 27 15:06:44 1994
+*** Makefile.old	Sat Jan 28 12:51:48 1995
+--- Makefile	Sat Jan 28 14:24:11 1995
 ***************
-*** 69,74 ****
---- 69,76 ----
-   *
-   */
+*** 11,17 ****
+  #  hpalib, hplow, hp3, dec, solaris, sparc, linux, freebsd, sgi, 
+  #  soundblaster, aix.
+  # gmake needed to handle this file in FreeBSD
+! MACHINE = sparc
   
-+ #include "defs.h"
-+ 
-  #ifdef dec
-  #define stub_only
-  #endif
+  # The name of your C compiler. For most machines this will be
+  # either 'cc' or 'gcc'.
+--- 11,17 ----
+  #  hpalib, hplow, hp3, dec, solaris, sparc, linux, freebsd, sgi, 
+  #  soundblaster, aix.
+  # gmake needed to handle this file in FreeBSD
+! MACHINE = freebsd
+  
+  # The name of your C compiler. For most machines this will be
+  # either 'cc' or 'gcc'.
 ***************
-*** 82,92 ****
-  #include <sys/termio.h>
-  #endif
-  #ifdef __386BSD__
-  #include <sys/ioctl.h>
-  #endif
-  #include <stdio.h>
-  #include <signal.h>
-- #include "defs.h"
-  #include "extern.h"
-  #include "tags.h"
-  #include "prefs.h"
---- 84,95 ----
-  #include <sys/termio.h>
-  #endif
-  #ifdef __386BSD__
-+ #include <fcntl.h>
-  #include <sys/ioctl.h>
-+ #define termio termios
-  #endif
-  #include <stdio.h>
-  #include <signal.h>
-  #include "extern.h"
-  #include "tags.h"
-  #include "prefs.h"
+*** 30,40 ****
+  #
+  # If you don't wish to use the 'make install' and 'make install.man'
+  # commands, you can ignore these.
+! BIN_DIR = /users/algo/espie/pub/bin
+! MAN_DIR = /usr/local/man
+  
+  # Where to put the compression methods description
+! COMPRESSION_FILE=/users/algo/espie/pub/lib/compression_methods
+  
+  # How to install the binaries and manpage. If you have a unix system,
+  # use the GNU install program if you have it, otherwise try 'cp'. For
+--- 30,44 ----
+  #
+  # If you don't wish to use the 'make install' and 'make install.man'
+  # commands, you can ignore these.
+! PREFIX=/usr/local
+! #BIN_DIR = /users/algo/espie/pub/bin
+! BIN_DIR = $(PREFIX)/bin
+! #MAN_DIR = /usr/local/man
+! MAN_DIR = $(PREFIX)/man
+  
+  # Where to put the compression methods description
+! #COMPRESSION_FILE=/users/algo/espie/pub/lib/compression_methods
+! COMPRESSION_FILE=$(PREFIX)/etc/compression_methods
+  
+  # How to install the binaries and manpage. If you have a unix system,
+  # use the GNU install program if you have it, otherwise try 'cp'. For
 ***************
-*** 193,198 ****
---- 196,202 ----
-     if (run_in_fg())
-        {
-  #ifdef __386BSD__
-+       fcntl(fileno(stdin), F_SETFL, O_NONBLOCK);
-        tcgetattr(fileno(stdin), &zap);
-  #else
-        ioctl(fileno(stdin), TCGETA, &zap);
+*** 55,62 ****
+  #
+  # If you don't wish to use the 'make install' and 'make install.man'
+  # commands, you can ignore these.
+! INST_BIN_OPT = -s -m 755 -o root -g root
+! INST_MAN_OPT = -m 644 -o root -g root
+  ###############################################################################
+  #
+  # C compiler flags and libraries for each machine.
+--- 59,68 ----
+  #
+  # If you don't wish to use the 'make install' and 'make install.man'
+  # commands, you can ignore these.
+! #INST_BIN_OPT = -s -m 755 -o root -g root
+! #INST_MAN_OPT = -m 644 -o root -g root
+! INST_BIN_OPT = -c -s -m 555 -o bin -g bin
+! INST_MAN_OPT = -c -m 644 -o bin -g bin
+  ###############################################################################
+  #
+  # C compiler flags and libraries for each machine.
 ***************
-*** 217,223 ****
-  #endif
-        zap.c_lflag &= ~(ICANON | ECHO);
-  #ifdef __386BSD__
-!       tcsetattr(fileno(stdin, TCSANOW, &zap);
-  #else
-        ioctl(fileno(stdin), TCSETA, &zap);
-  #endif
---- 221,227 ----
-  #endif
-        zap.c_lflag &= ~(ICANON | ECHO);
-  #ifdef __386BSD__
-!       tcsetattr(fileno(stdin), TCSANOW, &zap);
-  #else
-        ioctl(fileno(stdin), TCSETA, &zap);
-  #endif
+*** 154,159 ****
+--- 160,168 ----
+  	$(INSTALL) $(INST_BIN_OPT) tracker $(BIN_DIR)
+  	$(INSTALL) $(INST_BIN_OPT) randomize $(BIN_DIR)
+  	$(INSTALL) $(INST_BIN_OPT) analyzer $(BIN_DIR)
++ 	$(INSTALL) $(INST_BIN_OPT) splitmod $(BIN_DIR)
++ 	[ -f ${COMPRESSION_FILE} ] || \
++ 	   $(INSTALL) $(INST_MAN_OPT) compression_methods ${COMPRESSION_FILE}
+  
+  install.man:
+  	$(INSTALL) $(INST_MAN_OPT) man/tracker.1 $(MAN_DIR)/man1/tracker.1
+*** Unix/ui.c.old	Sat Jan 28 12:57:02 1995
+--- Unix/ui.c	Sat Jan 28 14:41:15 1995
 ***************
-*** 227,232 ****
---- 231,245 ----
-        is_fg = FALSE;
+*** 148,153 ****
+--- 148,162 ----
+        return FALSE;
      }
   
 + /* if_fg_sane_tty():
-+  * restore tty modes, if running in foreground
++  * restore tty modes, _only_ if running in foreground
 +  */
 + LOCAL void if_fg_sane_tty()
 +    {
@@ -79,32 +96,51 @@
 +        sane_tty();
 +    }
 + 
-  /* nonblocking_io():
-   * try to setup the keyboard to non blocking io
-   */
+  LOCAL void switch_mode()
+     {
+  #ifdef __NeXT__
 ***************
-*** 240,252 ****
-        {
-        psanity = &sanity;
-  #ifdef __386BSD__
+*** 200,206 ****
+  #endif
+        zap.c_lflag &= ~(ICANON | ECHO);
+  #ifdef __FreeBSD__
+!       tcsetattr(fileno(stdin), TCSANOW, &zap);
+  #else
+        ioctl(fileno(stdin), TCSETA, &zap);
+  #endif
+--- 209,215 ----
+  #endif
+        zap.c_lflag &= ~(ICANON | ECHO);
+  #ifdef __FreeBSD__
+!       tcsetattr(fileno(stdin), TCSADRAIN, &zap);
+  #else
+        ioctl(fileno(stdin), TCSETA, &zap);
+  #endif
+***************
+*** 227,240 ****
+        ioctl(fileno(stdin), TIOCGETP, psanity);
+  #else /* __NeXT__ */
+  #ifdef __FreeBSD__
 !       tcgetattr(fileno(stdin), &sanity);
   #else
         ioctl(fileno(stdin), TCGETA, psanity);
   #endif
+  #endif /* __NeXT__ */
         }
      switch_mode();
 !    at_end(sane_tty);
      }
   
   
---- 253,265 ----
-        {
-        psanity = &sanity;
-  #ifdef __386BSD__
+--- 236,249 ----
+        ioctl(fileno(stdin), TIOCGETP, psanity);
+  #else /* __NeXT__ */
+  #ifdef __FreeBSD__
 !       tcgetattr(fileno(stdin), psanity);
   #else
         ioctl(fileno(stdin), TCGETA, psanity);
   #endif
+  #endif /* __NeXT__ */
         }
      switch_mode();
 !    at_end(if_fg_sane_tty);
@@ -112,18 +148,18 @@
   
   
 ***************
-*** 255,261 ****
-  LOCAL void sane_tty()
-     {
-  #ifdef __386BSD__
+*** 246,252 ****
+        ioctl(fileno(stdin), TIOCSETP, psanity);
+  #else /* __NeXT__ */
+  #ifdef __FreeBSD__
 !       tcsetattr(fileno(stdin), &sanity);
   #else
         ioctl(fileno(stdin), TCSETA, psanity);
   #endif
---- 268,274 ----
-  LOCAL void sane_tty()
-     {
-  #ifdef __386BSD__
+--- 255,261 ----
+        ioctl(fileno(stdin), TIOCSETP, psanity);
+  #else /* __NeXT__ */
+  #ifdef __FreeBSD__
 !       tcsetattr(fileno(stdin), TCSADRAIN, psanity);
   #else
         ioctl(fileno(stdin), TCSETA, psanity);
