@@ -10,7 +10,7 @@ CATEGORIES=	ftp kde
 MASTER_SITES=	http://kftpgrabber.sourceforge.net/releases/
 
 PATCH_SITES=	http://www.brueffer.de/distfiles/
-PATCHFILES=	${DISTNAME}-patch.gz
+PATCHFILES=	${DISTNAME}-patch_1.gz
 
 MAINTAINER=	markus@FreeBSD.org
 COMMENT=	Graphical ftp client for KDE
@@ -22,13 +22,7 @@ USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502126
-BROKEN=		"Does not compile on FreeBSD >= 5.x"
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|-O2||g'	${WRKSRC}/${CONFIGURE_SCRIPT}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
