@@ -19,6 +19,8 @@ COMMENT=	A Qt GUI for the Direct Connect (TM) dctc text client
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
 RUN_DEPENDS=	dctc:${PORTSDIR}/net/dctc
 
+BROKEN=		"Build fails"
+
 USE_QT_VER=	3
 USE_REINPLACE=	yes
 USE_SIZE=	yes
