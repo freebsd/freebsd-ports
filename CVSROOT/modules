@@ -983,6 +983,7 @@ cvsadmin	ports/devel/cvsadmin
 cvsbook		ports/devel/cvsbook
 cvsd		ports/devel/cvsd
 cvsdelta	ports/devel/cvsdelta
+cvsdiff2patch	ports/devel/cvsdiff2patch
 cvsgraph	ports/devel/cvsgraph
 cvslines	ports/devel/cvslines
 cvsmail		ports/mail/cvsmail
