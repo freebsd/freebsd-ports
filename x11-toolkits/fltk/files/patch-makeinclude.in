@@ -1,0 +1,13 @@
+--- makeinclude.in.orig	Sun Jan  5 14:57:05 2003
++++ makeinclude.in	Sun Jan  5 14:57:31 2003
+@@ -53,8 +53,8 @@
+ 
+ # flags for C++ compiler:
+ OPTIM		= @OPTIM@
+-CFLAGS		= $(OPTIM) @CFLAGS@
+-CXXFLAGS	= $(OPTIM) @CXXFLAGS@
++CFLAGS		= $(OPTIM) @CFLAGS@ @CPPFLAGS@
++CXXFLAGS	= $(OPTIM) @CXXFLAGS@ @CPPFLAGS@
+ 
+ # program to make the archive:
+ LIBNAME		= @LIBNAME@

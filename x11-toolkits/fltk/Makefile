@@ -7,7 +7,6 @@
 
 PORTNAME=	fltk
 PORTVERSION?=	${_PORTVERSION}
-PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	ftp://ftp.fltk.org/pub/fltk/${VERSION}/ \
 		ftp://ftp.chg.ru/pub/X11/fltk/${VERSION}/ \
@@ -18,6 +17,9 @@ MASTER_SITES=	ftp://ftp.fltk.org/pub/fltk/${VERSION}/ \
 DISTNAME=	${PORTNAME}-${VERSION}-source
 
 MAINTAINER?=	demon@FreeBSD.org
+
+LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
+		jpeg.9:${PORTSDIR}/graphics/jpeg
 
 .if defined(WITH_XUNICODE)
 PATCH_VERSION=	20010114
@@ -37,34 +39,23 @@ CONFIGURE_ENV=	CXXFLAGS=-DUSE_XUNICODE
 _PORTVERSION+=	${VERSION}
 .endif
 
-VERSION=	1.0.10
+VERSION=	1.1.2
 USE_BZIP2=	yes
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--enable-shared
-CONFIGURE_ENV+=	CPPFLAGS="${PTHREAD_CFLAGS}" \
-		LDFLAGS="${PTHREAD_LIBS}"
+CONFIGURE_ENV+=	CPPFLAGS="${PTHREAD_CFLAGS} -I${LOCALBASE}/include" \
+		LDFLAGS="${PTHREAD_LIBS} -L${LOCALBASE}/lib"
 WRKSRC=		${WRKDIR}/${PORTNAME}-${VERSION}
 USE_X_PREFIX=	yes
 USE_MESA=	yes
-MAN1=		fluid.1
+
+MAN1=		fluid.1 fltk-config.1
+MAN3=		fltk.3
 
 .if defined(WITH_XUNICODE)
 post-extract:
 	cd ${WRKSRC} && ${LN} -s ${X11BASE}/include/xunicode
-.endif
-
-post-install:
-	@ ${INSTALL_MAN} ${WRKSRC}/documentation/fluid.1 \
-		${PREFIX}/man/man1
-.if !defined(NOPORTDOCS)
-	@ ${MKDIR} ${DOCSDIR}
-	for ext in html gif jpg ; do \
-		${INSTALL_DATA} ${WRKSRC}/documentation/*.$$ext \
-		${DOCSDIR}; \
-	done
-	${INSTALL_DATA} ${WRKSRC}/documentation/README \
-		${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
