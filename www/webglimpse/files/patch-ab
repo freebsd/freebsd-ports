@@ -1,5 +1,5 @@
 --- wginstall.pl.orig	Fri Sep 25 19:34:42 1998
-+++ wginstall.pl	Mon Nov  2 09:11:33 1998
++++ wginstall.pl	Mon Nov  2 10:49:39 1998
 @@ -31,7 +31,7 @@
  
  
@@ -189,7 +189,15 @@
  
  
  # build local copy of httpget and html2txt
-@@ -606,11 +607,11 @@
+@@ -491,6 +492,7 @@
+ 					"OutputTool.pm", # New with v1.6b3
+ 					"config.pl",
+ 					"httpget.c",
++					"html2txt.c",
+ 					"url_get");
+ 
+ @optlibfiles = (			"CustomOutputTool.pm", # New with v1.6b4 - only distributed w/commercial version
+@@ -606,11 +608,11 @@
  
  print "Webglimpse installation complete.\n\n";
  
@@ -206,7 +214,7 @@
  
  
  print "\nSee http://glimpse.cs.arizona.edu/webglimpse for more\n";
-@@ -619,25 +620,25 @@
+@@ -619,25 +621,25 @@
  print "You may configure an archive at any time with the command \n";
  print "$WEBGLIMPSE_HOME/confarc\n\n";
  
@@ -244,7 +252,7 @@
  
  1;
  
-@@ -703,8 +704,8 @@
+@@ -703,8 +705,8 @@
  			print TEMP "\$CGIBIN = \"$CGIBIN\";\n";
  		}elsif(/^\$gunzip *=/){
  			print TEMP "\$gunzip = \"$gunzip\";\n";
