@@ -1,13 +1,13 @@
 # New ports collection makefile for:	mars_nwe
-# Version required:     0.99.pl15
+# Version required:     0.99.pl17
 # Date created:		29 Dec 1998
 # Whom:			Boris Popov <bp@butya.kz>
 #
-# $Id: Makefile,v 1.3 1999/01/27 01:33:13 foxfair Exp $
+# $Id: Makefile,v 1.4 1999/03/08 17:27:46 foxfair Exp $
 #
 
-DISTNAME=       mars_nwe-0.99.pl15
-PKGNAME=	mars_nwe-0.99b15
+DISTNAME=       mars_nwe-0.99.pl17
+PKGNAME=	mars_nwe-0.99b17
 CATEGORIES=	net
 MASTER_SITES=	http://www.compu-art.de/download/ \
 		ftp://ftp.gwdg.de/pub/linux/misc/ncpfs/mars_nwe/ \
@@ -17,8 +17,6 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	bp@butya.kz
 
 WRKSRC=		${WRKDIR}/mars_nwe
-
-NO_PACKAGE=	ignores cflags
 
 do-build:
 	@(cd ${WRKSRC} && ${MAKE} all)
