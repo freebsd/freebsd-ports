@@ -119,7 +119,9 @@
 %%KRONOLITHDIR%%/templates/month_end_week.inc
 %%KRONOLITHDIR%%/templates/month_foot.inc
 %%KRONOLITHDIR%%/templates/month_head.inc
+%%KRONOLITHDIR%%/templates/view/view.inc
 %%KRONOLITHDIR%%/templates/week/head.inc
+%%KRONOLITHDIR%%/viewevent.php
 %%KRONOLITHDIR%%/week.php
 %%KRONOLITHDIR%%/workweek.php
 @dirrm %%KRONOLITHDIR%%/config
@@ -169,6 +171,7 @@
 @dirrm %%KRONOLITHDIR%%/templates/javascript
 @dirrm %%KRONOLITHDIR%%/templates/menu
 @dirrm %%KRONOLITHDIR%%/templates/month
+@dirrm %%KRONOLITHDIR%%/templates/view
 @dirrm %%KRONOLITHDIR%%/templates/week
 @dirrm %%KRONOLITHDIR%%/templates
 @dirrm %%KRONOLITHDIR%%
