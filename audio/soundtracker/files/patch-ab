@@ -1,0 +1,10 @@
+--- app/drivers/oss-output.c.orig	Sun Nov 28 20:04:30 1999
++++ app/drivers/oss-output.c		Sun Nov 28 20:04:01 1999
+@@ -33,6 +33,6 @@
+ #include <sys/types.h>
+ #include <unistd.h>
+-#include <sys/soundcard.h>
++#include <machine/soundcard.h>
+ #include <sys/time.h>
+
+ #include <glib.h>

@@ -1,0 +1,8 @@
+--- app/sample-editor.c.orig	Sun Nov 28 20:05:23 1999
++++ app/sample-editor.c	Sun Nov 28 20:04:51 1999
+@@ -28,4 +28,4 @@
+ #include <fcntl.h>
+ #include <stdlib.h>
+-#include <sys/soundcard.h>
++#include <machine/soundcard.h>
+ #include <sys/ioctl.h>

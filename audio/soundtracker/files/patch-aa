@@ -1,0 +1,10 @@
+--- app/drivers/oss-input.c.orig	Sun Nov 28 20:02:10 1999
++++ app/drivers/oss-input.c	Sun Nov 28 20:03:03 1999
+@@ -33,6 +33,6 @@
+ #include <sys/types.h>
+ #include <unistd.h>
+-#include <sys/soundcard.h>
++#include <machine/soundcard.h>
+ #include <sys/time.h>
+
+ #include <glib.h>
