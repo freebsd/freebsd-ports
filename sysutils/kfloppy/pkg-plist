@@ -5,6 +5,7 @@ bin/kcalc
 bin/kcharselect
 bin/kdepasswd
 bin/kdessh
+bin/kdf
 bin/kedit
 bin/kfind
 bin/kfloppy
@@ -14,11 +15,17 @@ bin/klaptopdaemon
 bin/kljettool
 bin/klpq
 bin/knotes
+bin/kwikdisk
+include/knotesdcop.h
+lib/kcalc.la
+lib/kcalc.so
 lib/kedit.la
 lib/kedit.so
 lib/kedit.so.0
 lib/kfind.la
 lib/kfind.so
+lib/libkcm_kdf.la
+lib/libkcm_kdf.so
 lib/libkcm_laptop.la
 lib/libkcm_laptop.so
 lib/libktimemon.la
@@ -26,11 +33,14 @@ lib/libktimemon.so
 lib/libktimemon.so.1
 share/applnk/Editors/KEdit.desktop
 share/applnk/Kfind.desktop
+share/applnk/Settings/Information/kcmdf.desktop
 share/applnk/Settings/Information/pcmcia.desktop
 share/applnk/Settings/PowerControl/battery.desktop
 share/applnk/Settings/PowerControl/bwarning.desktop
 share/applnk/Settings/PowerControl/cwarning.desktop
 share/applnk/Settings/PowerControl/power.desktop
+share/applnk/System/kdf.desktop
+share/applnk/System/kwikdisk.desktop
 share/applnk/Utilities/KCharSelect.desktop
 share/applnk/Utilities/KFloppy.desktop
 share/applnk/Utilities/KLJetTool.desktop
@@ -54,6 +64,11 @@ share/apps/ark/icons/locolor/22x22/actions/ark_open.png
 share/apps/ark/icons/locolor/22x22/actions/ark_options.png
 share/apps/ark/icons/locolor/22x22/actions/ark_selectall.png
 share/apps/ark/icons/locolor/22x22/actions/ark_view.png
+share/apps/kab/htmlexport/templates/index.html
+share/apps/kab/htmlexport/templates/kab_address.html
+share/apps/kab/htmlexport/templates/kab_background.gif
+share/apps/kab/htmlexport/templates/kab_entrylist.html
+share/apps/kab/htmlexport/templates/kab_person.html
 share/apps/kab/pics/addressbook_logo.png
 share/apps/karm/karmui.rc
 share/apps/karm/pics/clock.xpm
@@ -69,12 +84,9 @@ share/apps/karm/pics/watch-5.xpm
 share/apps/karm/pics/watch-6.xpm
 share/apps/karm/pics/watch-7.xpm
 share/apps/kcalc/pics/kcalclogo.png
+share/apps/kdf/pics/delete.png
+share/apps/kdf/pics/tick.png
 share/apps/kedit/keditui.rc
-share/apps/kedit/pics/colors.png
-share/apps/kedit/pics/fonts.png
-share/apps/kedit/pics/keditlogo.png
-share/apps/kedit/pics/misc.png
-share/apps/kedit/toolbar/filenew2.png
 share/apps/kfind/icons/locolor/22x22/actions/archive.png
 share/apps/kfind/icons/locolor/22x22/actions/delete.png
 share/apps/kfind/icons/locolor/22x22/actions/idea.png
@@ -128,9 +140,7 @@ share/doc/HTML/en/kab/installation.html
 share/doc/HTML/en/kab/introduction.html
 share/doc/HTML/en/kab/kab-edit.html
 share/doc/HTML/en/kab/kab-edit.png
-share/doc/HTML/en/kab/kab-toolbar.html
 share/doc/HTML/en/kab/kab-using.png
-share/doc/HTML/en/kab/using-kab.html
 share/doc/HTML/en/karm/.anchors
 share/doc/HTML/en/karm/common
 share/doc/HTML/en/karm/credits.html
@@ -140,39 +150,29 @@ share/doc/HTML/en/karm/index.html
 share/doc/HTML/en/karm/installation.html
 share/doc/HTML/en/karm/interface.html
 share/doc/HTML/en/karm/introduction.html
-share/doc/HTML/en/karm/karm.png 
+share/doc/HTML/en/karm/karm.png
 share/doc/HTML/en/karm/menus.html
 share/doc/HTML/en/karm/status-bar.html
 share/doc/HTML/en/karm/tool-bar.html
 share/doc/HTML/en/karm/using-karm.html
 share/doc/HTML/en/kcalc/.anchors
-share/doc/HTML/en/kcalc/commentsonspecificfunctions.html
+share/doc/HTML/en/kcalc/and-or-xor.html
+share/doc/HTML/en/kcalc/comments-on-specific-functions.html
 share/doc/HTML/en/kcalc/common
-share/doc/HTML/en/kcalc/compilationandinstallation.html
 share/doc/HTML/en/kcalc/copyright.html
-share/doc/HTML/en/kcalc/cutandpaste.html
-share/doc/HTML/en/kcalc/fixedprecision.html
-share/doc/HTML/en/kcalc/howdoigetetheeulernumber.html
-share/doc/HTML/en/kcalc/howdoigettwofixeddigitsaftertheperiod.html
-share/doc/HTML/en/kcalc/index.cvlog
+share/doc/HTML/en/kcalc/enable-long-double-precision.html
 share/doc/HTML/en/kcalc/index.docbook
 share/doc/HTML/en/kcalc/index.html
 share/doc/HTML/en/kcalc/installation.html
 share/doc/HTML/en/kcalc/introduction.html
-share/doc/HTML/en/kcalc/invmod.html
 share/doc/HTML/en/kcalc/kcalc_on_Aix.txt
 share/doc/HTML/en/kcalc/kcalc_on_OSF.txt
-share/doc/HTML/en/kcalc/keyaccels.html
-share/doc/HTML/en/kcalc/lshrsh.html
-share/doc/HTML/en/kcalc/modes.html
+share/doc/HTML/en/kcalc/key-accels.html
+share/doc/HTML/en/kcalc/lsh-rsh.html
 share/doc/HTML/en/kcalc/percent.html
-share/doc/HTML/en/kcalc/percentfunction.html
-share/doc/HTML/en/kcalc/questionsandanswers.html
-share/doc/HTML/en/kcalc/requirements.html
-share/doc/HTML/en/kcalc/tipsandtricks.html
-share/doc/HTML/en/kcalc/trigonometricmode.html
+share/doc/HTML/en/kcalc/questions-and-answers.html
+share/doc/HTML/en/kcalc/trigonometric-mode.html
 share/doc/HTML/en/kcalc/usage.html
-share/doc/HTML/en/kcalc/whataboutprecision.html
 share/doc/HTML/en/kdf/.anchors
 share/doc/HTML/en/kdf/common
 share/doc/HTML/en/kdf/credits.html
@@ -194,6 +194,7 @@ share/doc/HTML/en/kedit/go.html
 share/doc/HTML/en/kedit/help.html
 share/doc/HTML/en/kedit/index.docbook
 share/doc/HTML/en/kedit/index.html
+share/doc/HTML/en/kedit/installation.html
 share/doc/HTML/en/kedit/introduction.html
 share/doc/HTML/en/kedit/keybindings.html
 share/doc/HTML/en/kedit/on-screen-fundamentals.html
@@ -230,6 +231,7 @@ share/doc/HTML/en/kfloppy/credits.html
 share/doc/HTML/en/kfloppy/formatting-options.html
 share/doc/HTML/en/kfloppy/index.docbook
 share/doc/HTML/en/kfloppy/index.html
+share/doc/HTML/en/kfloppy/installation.html
 share/doc/HTML/en/kfloppy/introduction.html
 share/doc/HTML/en/kfloppy/usingkfloppy.html
 share/doc/HTML/en/khexedit/.anchors
@@ -252,15 +254,22 @@ share/doc/HTML/en/khexedit/toolbar.html
 share/doc/HTML/en/khexedit/tools-menu.html
 share/doc/HTML/en/khexedit/view-menu.html
 share/doc/HTML/en/kjots/.anchors
+share/doc/HTML/en/kjots/commands.html
 share/doc/HTML/en/kjots/common
-share/doc/HTML/en/kjots/index.cvlog
+share/doc/HTML/en/kjots/compilation.html
+share/doc/HTML/en/kjots/configuration.html
+share/doc/HTML/en/kjots/credits.html
 share/doc/HTML/en/kjots/index.docbook
 share/doc/HTML/en/kjots/index.html
+share/doc/HTML/en/kjots/installation.html
 share/doc/HTML/en/kjots/introduction.html
-share/doc/HTML/en/kjots/keyboardshortcuts.html
-share/doc/HTML/en/kjots/subjectlist.html
-share/doc/HTML/en/kjots/todo.html
-share/doc/HTML/en/kjots/usage.html
+share/doc/HTML/en/kjots/kjots-pages.html
+share/doc/HTML/en/kjots/menu-edit.html
+share/doc/HTML/en/kjots/menu-help.html
+share/doc/HTML/en/kjots/menu-hotlist.html
+share/doc/HTML/en/kjots/menu-options.html
+share/doc/HTML/en/kjots/requirements.html
+share/doc/HTML/en/kjots/using-kjots.html
 share/doc/HTML/en/kljettool/.anchors
 share/doc/HTML/en/kljettool/README
 share/doc/HTML/en/kljettool/common
@@ -295,10 +304,12 @@ share/doc/HTML/en/knotes/.anchors
 share/doc/HTML/en/knotes/common
 share/doc/HTML/en/knotes/compilation.html
 share/doc/HTML/en/knotes/configuration.html
+share/doc/HTML/en/knotes/configuring-actions.html
+share/doc/HTML/en/knotes/configuring-editor.html
 share/doc/HTML/en/knotes/credits.html
-share/doc/HTML/en/knotes/customizingactions.html
-share/doc/HTML/en/knotes/customizingdisplay.html
-share/doc/HTML/en/knotes/customizingeditor.html
+share/doc/HTML/en/knotes/customizing-actions.html
+share/doc/HTML/en/knotes/customizing-display.html
+share/doc/HTML/en/knotes/customizing-editor.html
 share/doc/HTML/en/knotes/deleting-a-note.html
 share/doc/HTML/en/knotes/desktop-functions.html
 share/doc/HTML/en/knotes/displaying-notes.html
@@ -321,7 +332,6 @@ share/doc/HTML/en/kpm/common
 share/doc/HTML/en/kpm/compilation.html
 share/doc/HTML/en/kpm/credits.html
 share/doc/HTML/en/kpm/faq.html
-share/doc/HTML/en/kpm/index.cvlog
 share/doc/HTML/en/kpm/index.docbook
 share/doc/HTML/en/kpm/index.html
 share/doc/HTML/en/kpm/installation.html
@@ -343,7 +353,6 @@ share/doc/HTML/en/ktimemon/autoscaling.html
 share/doc/HTML/en/ktimemon/common
 share/doc/HTML/en/ktimemon/config.html
 share/doc/HTML/en/ktimemon/fund.html
-share/doc/HTML/en/ktimemon/index.cvlog
 share/doc/HTML/en/ktimemon/index.docbook
 share/doc/HTML/en/ktimemon/index.html
 share/doc/HTML/en/ktimemon/installation.html
@@ -351,6 +360,7 @@ share/doc/HTML/en/ktimemon/introduction.html
 share/doc/HTML/en/ktimemon/menu.html
 share/doc/HTML/en/ktimemon/revisionhistory.html
 share/doc/HTML/en/ktimemon/thanksandacknowledgements.html
+share/icons/hicolor/16x16/apps/kfind.png
 share/icons/hicolor/32x32/apps/ark.png
 share/icons/hicolor/32x32/apps/kab.png
 share/icons/hicolor/32x32/apps/karm.png
@@ -384,15 +394,19 @@ share/icons/locolor/16x16/apps/kab.png
 share/icons/locolor/16x16/apps/karm.png
 share/icons/locolor/16x16/apps/kcalc.png
 share/icons/locolor/16x16/apps/kcharselect.png
+share/icons/locolor/16x16/apps/kcmdf.png
+share/icons/locolor/16x16/apps/kdf.png
 share/icons/locolor/16x16/apps/kedit.png
 share/icons/locolor/16x16/apps/kfind.png
 share/icons/locolor/16x16/apps/kfloppy.png
 share/icons/locolor/16x16/apps/khexedit.png
 share/icons/locolor/16x16/apps/kjots.png
+share/icons/locolor/16x16/apps/klaptopdaemon.png
 share/icons/locolor/16x16/apps/kljettool.png
 share/icons/locolor/16x16/apps/klpq.png
 share/icons/locolor/16x16/apps/knotes.png
 share/icons/locolor/16x16/apps/ktimemon.png
+share/icons/locolor/16x16/apps/kwikdisk.png
 share/icons/locolor/16x16/apps/laptop_battery.png
 share/icons/locolor/16x16/apps/laptop_pcmcia.png
 share/icons/locolor/32x32/apps/ark.png
@@ -400,6 +414,8 @@ share/icons/locolor/32x32/apps/kab.png
 share/icons/locolor/32x32/apps/karm.png
 share/icons/locolor/32x32/apps/kcalc.png
 share/icons/locolor/32x32/apps/kcharselect.png
+share/icons/locolor/32x32/apps/kcmdf.png
+share/icons/locolor/32x32/apps/kdf.png
 share/icons/locolor/32x32/apps/kedit.png
 share/icons/locolor/32x32/apps/kfind.png
 share/icons/locolor/32x32/apps/kfloppy.png
@@ -409,8 +425,14 @@ share/icons/locolor/32x32/apps/kljettool.png
 share/icons/locolor/32x32/apps/klpq.png
 share/icons/locolor/32x32/apps/knotes.png
 share/icons/locolor/32x32/apps/ktimemon.png
+share/icons/locolor/32x32/apps/kwikdisk.png
 share/icons/locolor/32x32/apps/laptop_battery.png
 share/icons/locolor/32x32/apps/laptop_pcmcia.png
+@dirrm share/icons/locolor/32x32/apps
+@dirrm share/icons/locolor/16x16/apps
+@dirrm share/icons/hicolor/48x48/apps
+@dirrm share/icons/hicolor/32x32/apps
+@dirrm share/icons/hicolor/16x16/apps
 @dirrm share/doc/HTML/en/ktimemon
 @dirrm share/doc/HTML/en/kpm
 @dirrm share/doc/HTML/en/knotes
@@ -426,6 +448,8 @@ share/icons/locolor/32x32/apps/laptop_pcmcia.png
 @dirrm share/doc/HTML/en/karm
 @dirrm share/doc/HTML/en/kab
 @dirrm share/doc/HTML/en/ark
+@dirrm share/doc/HTML/en
+@dirrm share/config
 @dirrm share/apps/knotes/pics
 @dirrm share/apps/knotes
 @dirrm share/apps/kljettool/pics
@@ -439,25 +463,32 @@ share/icons/locolor/32x32/apps/laptop_pcmcia.png
 @dirrm share/apps/klaptopdaemon
 @dirrm share/apps/kjots/pics
 @dirrm share/apps/kjots
+@dirrm share/apps/kicker/applets
 @dirrm share/apps/khexedit/toolbar
 @dirrm share/apps/khexedit
 @dirrm share/apps/kfloppy/pics
 @dirrm share/apps/kfloppy
 @dirrm share/apps/kfind/icons/locolor/22x22/actions
-@dirrm share/apps/kfind/icons/locolor/22x22
-@dirrm share/apps/kfind/icons/locolor
-@dirrm share/apps/kfind/icons
-@dirrm share/apps/kfind
-@dirrm share/apps/kedit/toolbar
-@dirrm share/apps/kedit/pics
 @dirrm share/apps/kedit
+@dirrm share/apps/kdf/pics
+@dirrm share/apps/kdf
 @dirrm share/apps/kcalc/pics
 @dirrm share/apps/kcalc
 @dirrm share/apps/karm/pics
 @dirrm share/apps/karm
 @dirrm share/apps/kab/pics
+@dirrm share/apps/kab/htmlexport/templates
+@dirrm share/apps/kab/htmlexport
+@dirrm share/apps/kab
 @dirrm share/apps/ark/icons/locolor/22x22/actions
 @dirrm share/apps/ark/icons/locolor/22x22
 @dirrm share/apps/ark/icons/locolor
 @dirrm share/apps/ark/icons
 @dirrm share/apps/ark
+@dirrm share/apps
+@dirrm share/applnk/Utilities
+@dirrm share/applnk/System
+@dirrm share/applnk/Settings/PowerControl
+@dirrm share/applnk/Settings/Information
+@dirrm share/applnk/Editors
+@dirrm share/applnk

@@ -1,6 +1,6 @@
---- kio/global.cpp.orig	Thu Dec  7 14:52:15 2000
-+++ kio/global.cpp	Thu Dec  7 14:52:29 2000
-@@ -28,6 +28,12 @@
+--- kio/global.cpp	Sun Feb 18 10:27:06 2001
++++ kio/global.cpp.new	Thu Feb 22 23:47:34 2001
+@@ -30,6 +30,12 @@
  #include <string.h>
  #include <unistd.h>
  
@@ -10,10 +10,10 @@
 +#include <sys/mount.h>
 +#endif
 +
- #ifdef HAVE_FSTAB_H
- #include <fstab.h>
- #endif
-@@ -423,6 +429,30 @@
+ #include "kio/global.h"
+ #include "kio/job.h"
+ 
+@@ -567,6 +573,30 @@
  
      /* Get the list of mounted file systems */
  
@@ -44,9 +44,9 @@
      if ((mtab = SETMNTENT(MNTTAB, "r")) == 0) {
          perror("setmntent");
          return QString::null;
-@@ -467,6 +497,7 @@
+@@ -612,6 +642,7 @@
+ #endif /* GET_MNTINFO */
  
-     ENDMNTENT(mtab);
      //kdDebug( 7007 ) << "Returning result " << result << endl;
 +#endif
      return result;
