@@ -41,10 +41,18 @@ XMKMF=		${MAKE} Makefile.boot
 ALL_TARGET=	VerifyOS Everything
 XFREE86_HTML_MAN=	no
 
+# User config option: Build and install Motif demos
+.if defined(NO_OPENMOTIF_DEMOS)
+PLIST_SUB+=		MOTIF_DEMOS="@comment "
+.else
+PLIST_SUB+=		MOTIF_DEMOS=""
+.endif
+
 MAN1=	mwm.1 \
 	uil.1 \
-	xmbind.1 \
-	DNDDemo.1 \
+	xmbind.1
+.if !defined(NO_OPENMOTIF_DEMOS)
+MAN1+=	DNDDemo.1 \
 	draw.1 \
 	earth.1 \
 	exm_in_c.1 \
@@ -67,6 +75,7 @@ MAN1=	mwm.1 \
 	spin_box.1 \
 	tic_mark.1 \
 	xmanimate.1
+.endif
 
 MAN1DONT=\
 	animate.1 \
@@ -648,6 +657,10 @@ pre-configure:
 		${RM} -f ${WRKSRC}/imports/x11/lib/X11/config; \
 		${LN} -s ${WRKSRC}/config/cf ${WRKSRC}/imports/x11/lib/X11/config; \
 	fi
+.if defined(NO_OPENMOTIF_DEMOS)
+	${CHMOD} +w ${WRKSRC}/config/cf/host.def
+	@echo "#define BuildMotifDemos		NO" >>${WRKSRC}/config/cf/host.def
+.endif
 
 post-configure:
 	@${CP} ${X11BASE}/bin/imake ${WRKSRC}/config/imake/
@@ -677,7 +690,7 @@ share-doc:
 		${WRKSRC}/README \
 		${WRKSRC}/RELNOTES \
 		${PREFIX}/share/doc/openmotif/
-.if !defined{NOPORTDOCS}
+.if !defined(NOPORTDOCS)
 	@${INSTALL_DATA} \
 		${WRKSRC}/CLOSEDBUGS \
 		${WRKSRC}/OPENBUGS \
@@ -688,7 +701,7 @@ share-doc:
 .endif
 
 share-guides:
-.if !defined{NOPORTDOCS}
+.if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/openmotif/guides/
 	@cd ${WRKSRC} && \
 		${CP} -rp doc/ps/* ${PREFIX}/share/doc/openmotif/guides/

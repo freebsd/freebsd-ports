@@ -2,48 +2,48 @@
 @exec [ -f %D/lib/X11/config/host.def.orig ] || mv %D/lib/X11/config/host.def %D/lib/X11/config/host.def.orig
 lib/X11/config/host.def
 @unexec [ -f %D/%F.orig ] && mv %D/%F.orig %D/%F || :
-bin/DNDDemo
-bin/UTMXmText
-bin/aicon
-bin/airport
-bin/autopopups
-bin/combo_box
-bin/container
-bin/dainput
-bin/dogs
-bin/draw
-bin/earth
-bin/exm_in_c
-bin/exm_in_uil
-bin/filemanager
-bin/fileview
-bin/getsubres
-bin/helloint
-bin/hellomotif
-bin/i18ninput
-bin/motifshell
+%%MOTIF_DEMOS%%bin/DNDDemo
+%%MOTIF_DEMOS%%bin/UTMXmText
+%%MOTIF_DEMOS%%bin/aicon
+%%MOTIF_DEMOS%%bin/airport
+%%MOTIF_DEMOS%%bin/autopopups
+%%MOTIF_DEMOS%%bin/combo_box
+%%MOTIF_DEMOS%%bin/container
+%%MOTIF_DEMOS%%bin/dainput
+%%MOTIF_DEMOS%%bin/dogs
+%%MOTIF_DEMOS%%bin/draw
+%%MOTIF_DEMOS%%bin/earth
+%%MOTIF_DEMOS%%bin/exm_in_c
+%%MOTIF_DEMOS%%bin/exm_in_uil
+%%MOTIF_DEMOS%%bin/filemanager
+%%MOTIF_DEMOS%%bin/fileview
+%%MOTIF_DEMOS%%bin/getsubres
+%%MOTIF_DEMOS%%bin/helloint
+%%MOTIF_DEMOS%%bin/hellomotif
+%%MOTIF_DEMOS%%bin/i18ninput
+%%MOTIF_DEMOS%%bin/motifshell
 bin/mwm
-bin/notebook
-bin/onHelp
-bin/periodic
-bin/piano
-bin/sampler2_0
-bin/setDate
-bin/simpleDemo
-bin/simple_drag
-bin/simple_drop
-bin/simpledrop
-bin/spin_box
-bin/tic_mark
-bin/todo
+%%MOTIF_DEMOS%%bin/notebook
+%%MOTIF_DEMOS%%bin/onHelp
+%%MOTIF_DEMOS%%bin/periodic
+%%MOTIF_DEMOS%%bin/piano
+%%MOTIF_DEMOS%%bin/sampler2_0
+%%MOTIF_DEMOS%%bin/setDate
+%%MOTIF_DEMOS%%bin/simpleDemo
+%%MOTIF_DEMOS%%bin/simple_drag
+%%MOTIF_DEMOS%%bin/simple_drop
+%%MOTIF_DEMOS%%bin/simpledrop
+%%MOTIF_DEMOS%%bin/spin_box
+%%MOTIF_DEMOS%%bin/tic_mark
+%%MOTIF_DEMOS%%bin/todo
 bin/uil
-bin/uilsymdump
-bin/xmanimate
-bin/xmapdef
+%%MOTIF_DEMOS%%bin/uilsymdump
+%%MOTIF_DEMOS%%bin/xmanimate
+%%MOTIF_DEMOS%%bin/xmapdef
 bin/xmbind
-bin/xmfonts
-bin/xmforc
-bin/xmform
+%%MOTIF_DEMOS%%bin/xmfonts
+%%MOTIF_DEMOS%%bin/xmforc
+%%MOTIF_DEMOS%%bin/xmform
 include/Mrm/MrmAppl.h
 include/Mrm/MrmDecls.h
 include/Mrm/MrmMsgI.h
@@ -332,17 +332,17 @@ include/uil/UilDef.h
 include/uil/UilSymDef.h
 include/uil/UilSymGl.h
 include/uil/XmAppl.uil
-lib/X11/app-defaults/Fileview
+%%MOTIF_DEMOS%%lib/X11/app-defaults/Fileview
 lib/X11/app-defaults/Mwm
-lib/X11/app-defaults/XmdAirport
-lib/X11/app-defaults/XmdAnimate
-lib/X11/app-defaults/XmdDraw
-lib/X11/app-defaults/XmdFilemanager
-lib/X11/app-defaults/XmdI18nInput
-lib/X11/app-defaults/XmdPeriodic
-lib/X11/app-defaults/XmdSampler2_0
-lib/X11/app-defaults/XmdSetDate
-lib/X11/app-defaults/XmdTodo
+%%MOTIF_DEMOS%%lib/X11/app-defaults/XmdAirport
+%%MOTIF_DEMOS%%lib/X11/app-defaults/XmdAnimate
+%%MOTIF_DEMOS%%lib/X11/app-defaults/XmdDraw
+%%MOTIF_DEMOS%%lib/X11/app-defaults/XmdFilemanager
+%%MOTIF_DEMOS%%lib/X11/app-defaults/XmdI18nInput
+%%MOTIF_DEMOS%%lib/X11/app-defaults/XmdPeriodic
+%%MOTIF_DEMOS%%lib/X11/app-defaults/XmdSampler2_0
+%%MOTIF_DEMOS%%lib/X11/app-defaults/XmdSetDate
+%%MOTIF_DEMOS%%lib/X11/app-defaults/XmdTodo
 lib/X11/bindings/CDE
 lib/X11/bindings/acorn
 lib/X11/bindings/apollo
@@ -374,41 +374,41 @@ lib/X11/config/Motif.rules
 lib/X11/config/Motif.rules.openmotif
 lib/X11/config/Motif.tmpl
 lib/X11/config/Motif.tmpl.openmotif
-lib/X11/help/aicon.help
-lib/X11/help/draw.help
-lib/X11/help/filemanager.help
-lib/X11/help/getsubres.help
-lib/X11/help/helpOn.help
-lib/X11/help/i18ninput.help
-lib/X11/help/sampler2_0.help
-lib/X11/help/todo.help
-lib/X11/help/xmanimate.help
-lib/X11/motifshell/help
-lib/X11/motifshell/membership
-lib/X11/motifshell/motif
-lib/X11/motifshell/motifshell.c
-lib/X11/motifshell/principles
-lib/X11/motifshell/research
-lib/X11/motifshell/welcome
+%%MOTIF_DEMOS%%lib/X11/help/aicon.help
+%%MOTIF_DEMOS%%lib/X11/help/draw.help
+%%MOTIF_DEMOS%%lib/X11/help/filemanager.help
+%%MOTIF_DEMOS%%lib/X11/help/getsubres.help
+%%MOTIF_DEMOS%%lib/X11/help/helpOn.help
+%%MOTIF_DEMOS%%lib/X11/help/i18ninput.help
+%%MOTIF_DEMOS%%lib/X11/help/sampler2_0.help
+%%MOTIF_DEMOS%%lib/X11/help/todo.help
+%%MOTIF_DEMOS%%lib/X11/help/xmanimate.help
+%%MOTIF_DEMOS%%lib/X11/motifshell/help
+%%MOTIF_DEMOS%%lib/X11/motifshell/membership
+%%MOTIF_DEMOS%%lib/X11/motifshell/motif
+%%MOTIF_DEMOS%%lib/X11/motifshell/motifshell.c
+%%MOTIF_DEMOS%%lib/X11/motifshell/principles
+%%MOTIF_DEMOS%%lib/X11/motifshell/research
+%%MOTIF_DEMOS%%lib/X11/motifshell/welcome
 lib/X11/system.mwmrc
-lib/X11/uid/C/uid/l_strings.uid
-lib/X11/uid/English.uid
-lib/X11/uid/French.uid
-lib/X11/uid/German.uid
-lib/X11/uid/dog.uid
-lib/X11/uid/dogs.uid
-lib/X11/uid/english/uid/l_strings.uid
-lib/X11/uid/exm_in_uil.uid
-lib/X11/uid/french/uid/l_strings.uid
-lib/X11/uid/hebrew/uid/l_strings.uid
-lib/X11/uid/helloint.uid
-lib/X11/uid/hellomotif.uid
-lib/X11/uid/japanese/uid/l_strings.uid
-lib/X11/uid/periodic.uid
-lib/X11/uid/plane.uid
-lib/X11/uid/superman.uid
-lib/X11/uid/swedish/uid/l_strings.uid
-lib/X11/uid/xmanimate.uid
+%%MOTIF_DEMOS%%lib/X11/uid/C/uid/l_strings.uid
+%%MOTIF_DEMOS%%lib/X11/uid/English.uid
+%%MOTIF_DEMOS%%lib/X11/uid/French.uid
+%%MOTIF_DEMOS%%lib/X11/uid/German.uid
+%%MOTIF_DEMOS%%lib/X11/uid/dog.uid
+%%MOTIF_DEMOS%%lib/X11/uid/dogs.uid
+%%MOTIF_DEMOS%%lib/X11/uid/english/uid/l_strings.uid
+%%MOTIF_DEMOS%%lib/X11/uid/exm_in_uil.uid
+%%MOTIF_DEMOS%%lib/X11/uid/french/uid/l_strings.uid
+%%MOTIF_DEMOS%%lib/X11/uid/hebrew/uid/l_strings.uid
+%%MOTIF_DEMOS%%lib/X11/uid/helloint.uid
+%%MOTIF_DEMOS%%lib/X11/uid/hellomotif.uid
+%%MOTIF_DEMOS%%lib/X11/uid/japanese/uid/l_strings.uid
+%%MOTIF_DEMOS%%lib/X11/uid/periodic.uid
+%%MOTIF_DEMOS%%lib/X11/uid/plane.uid
+%%MOTIF_DEMOS%%lib/X11/uid/superman.uid
+%%MOTIF_DEMOS%%lib/X11/uid/swedish/uid/l_strings.uid
+%%MOTIF_DEMOS%%lib/X11/uid/xmanimate.uid
 lib/libMrm.a
 lib/libMrm.so
 lib/libMrm.so.2
@@ -418,62 +418,62 @@ lib/libUil.so.2
 lib/libXm.a
 lib/libXm.so
 lib/libXm.so.2
-%%PORTDOCS%%share/doc/openmotif/BUGREPORT
-share/doc/openmotif/CLOSEDBUGS.gz
-%%PORTDOCS%%share/doc/openmotif/COPYRIGHT.MOTIF
-share/doc/openmotif/OPENBUGS.gz
-%%PORTDOCS%%share/doc/openmotif/README
-%%PORTDOCS%%share/doc/openmotif/RELNOTES
-share/doc/openmotif/guides/README
-share/doc/openmotif/guides/mot-cdesgr.ps.Z
-share/doc/openmotif/guides/mot-csgcc.ps.Z
-share/doc/openmotif/guides/mot-gloss.ps.Z
-share/doc/openmotif/guides/mot-mcsg.ps.Z
-share/doc/openmotif/guides/mot-pg/ch01.ps.Z
-share/doc/openmotif/guides/mot-pg/ch02.ps.Z
-share/doc/openmotif/guides/mot-pg/ch03.ps.Z
-share/doc/openmotif/guides/mot-pg/ch04.ps.Z
-share/doc/openmotif/guides/mot-pg/ch05.ps.Z
-share/doc/openmotif/guides/mot-pg/ch06.ps.Z
-share/doc/openmotif/guides/mot-pg/ch07.ps.Z
-share/doc/openmotif/guides/mot-pg/ch08.ps.Z
-share/doc/openmotif/guides/mot-pg/ch09.ps.Z
-share/doc/openmotif/guides/mot-pg/ch10.ps.Z
-share/doc/openmotif/guides/mot-pg/ch11.ps.Z
-share/doc/openmotif/guides/mot-pg/ch12.ps.Z
-share/doc/openmotif/guides/mot-pg/ch13.ps.Z
-share/doc/openmotif/guides/mot-pg/ch14.ps.Z
-share/doc/openmotif/guides/mot-pg/ch15.ps.Z
-share/doc/openmotif/guides/mot-pg/ch16.ps.Z
-share/doc/openmotif/guides/mot-pg/ch17.ps.Z
-share/doc/openmotif/guides/mot-pg/ch18.ps.Z
-share/doc/openmotif/guides/mot-pg/ch19.ps.Z
-share/doc/openmotif/guides/mot-pg/ch20.ps.Z
-share/doc/openmotif/guides/mot-pg/ch21.ps.Z
-share/doc/openmotif/guides/mot-pg/ch22.ps.Z
-share/doc/openmotif/guides/mot-pg/ch23.ps.Z
-share/doc/openmotif/guides/mot-ref/ch01.ps.Z
-share/doc/openmotif/guides/mot-ref/ch02.ps.Z
-share/doc/openmotif/guides/mot-ref/ch03.ps.Z
-share/doc/openmotif/guides/mot-ref/ch04.ps.Z
-share/doc/openmotif/guides/mot-ref/ch05.ps.Z
-share/doc/openmotif/guides/mot-ref/ch06.ps.Z
-share/doc/openmotif/guides/mot-ref/ch07.ps.Z
-share/doc/openmotif/guides/mot-ref/ch08.ps.Z
-share/doc/openmotif/guides/mot-ref/ch09.ps.Z
-share/doc/openmotif/guides/mot-ref/ch11.ps.Z
-share/doc/openmotif/guides/mot-ref/ch12.ps.Z
-share/doc/openmotif/guides/mot-ref/ch14.ps.Z
-share/doc/openmotif/guides/mot-ug/ch01.ps.Z
-share/doc/openmotif/guides/mot-ug/ch02.ps.Z
-share/doc/openmotif/guides/mot-ug/ch03.ps.Z
-share/doc/openmotif/guides/mot-ug/ch04.ps.Z
-share/doc/openmotif/guides/mot-ug/ch05.ps.Z
-share/doc/openmotif/guides/mot-ug/ch06.ps.Z
-share/doc/openmotif/guides/mot-ug/ch07.ps.Z
-share/doc/openmotif/guides/mot-ug/ch08.ps.Z
-share/doc/openmotif/guides/mot-ug/ch10.ps.Z
-share/doc/openmotif/guides/mot-wwg.ps.Z
+share/doc/openmotif/BUGREPORT
+%%PORTDOCS%%share/doc/openmotif/CLOSEDBUGS.gz
+share/doc/openmotif/COPYRIGHT.MOTIF
+%%PORTDOCS%%share/doc/openmotif/OPENBUGS.gz
+share/doc/openmotif/README
+share/doc/openmotif/RELNOTES
+%%PORTDOCS%%share/doc/openmotif/guides/README
+%%PORTDOCS%%share/doc/openmotif/guides/mot-cdesgr.ps.Z
+%%PORTDOCS%%share/doc/openmotif/guides/mot-csgcc.ps.Z
+%%PORTDOCS%%share/doc/openmotif/guides/mot-gloss.ps.Z
+%%PORTDOCS%%share/doc/openmotif/guides/mot-mcsg.ps.Z
+%%PORTDOCS%%share/doc/openmotif/guides/mot-pg/ch01.ps.Z
+%%PORTDOCS%%share/doc/openmotif/guides/mot-pg/ch02.ps.Z
+%%PORTDOCS%%share/doc/openmotif/guides/mot-pg/ch03.ps.Z
+%%PORTDOCS%%share/doc/openmotif/guides/mot-pg/ch04.ps.Z
+%%PORTDOCS%%share/doc/openmotif/guides/mot-pg/ch05.ps.Z
+%%PORTDOCS%%share/doc/openmotif/guides/mot-pg/ch06.ps.Z
+%%PORTDOCS%%share/doc/openmotif/guides/mot-pg/ch07.ps.Z
+%%PORTDOCS%%share/doc/openmotif/guides/mot-pg/ch08.ps.Z
+%%PORTDOCS%%share/doc/openmotif/guides/mot-pg/ch09.ps.Z
+%%PORTDOCS%%share/doc/openmotif/guides/mot-pg/ch10.ps.Z
+%%PORTDOCS%%share/doc/openmotif/guides/mot-pg/ch11.ps.Z
+%%PORTDOCS%%share/doc/openmotif/guides/mot-pg/ch12.ps.Z
+%%PORTDOCS%%share/doc/openmotif/guides/mot-pg/ch13.ps.Z
+%%PORTDOCS%%share/doc/openmotif/guides/mot-pg/ch14.ps.Z
+%%PORTDOCS%%share/doc/openmotif/guides/mot-pg/ch15.ps.Z
+%%PORTDOCS%%share/doc/openmotif/guides/mot-pg/ch16.ps.Z
+%%PORTDOCS%%share/doc/openmotif/guides/mot-pg/ch17.ps.Z
+%%PORTDOCS%%share/doc/openmotif/guides/mot-pg/ch18.ps.Z
+%%PORTDOCS%%share/doc/openmotif/guides/mot-pg/ch19.ps.Z
+%%PORTDOCS%%share/doc/openmotif/guides/mot-pg/ch20.ps.Z
+%%PORTDOCS%%share/doc/openmotif/guides/mot-pg/ch21.ps.Z
+%%PORTDOCS%%share/doc/openmotif/guides/mot-pg/ch22.ps.Z
+%%PORTDOCS%%share/doc/openmotif/guides/mot-pg/ch23.ps.Z
+%%PORTDOCS%%share/doc/openmotif/guides/mot-ref/ch01.ps.Z
+%%PORTDOCS%%share/doc/openmotif/guides/mot-ref/ch02.ps.Z
+%%PORTDOCS%%share/doc/openmotif/guides/mot-ref/ch03.ps.Z
+%%PORTDOCS%%share/doc/openmotif/guides/mot-ref/ch04.ps.Z
+%%PORTDOCS%%share/doc/openmotif/guides/mot-ref/ch05.ps.Z
+%%PORTDOCS%%share/doc/openmotif/guides/mot-ref/ch06.ps.Z
+%%PORTDOCS%%share/doc/openmotif/guides/mot-ref/ch07.ps.Z
+%%PORTDOCS%%share/doc/openmotif/guides/mot-ref/ch08.ps.Z
+%%PORTDOCS%%share/doc/openmotif/guides/mot-ref/ch09.ps.Z
+%%PORTDOCS%%share/doc/openmotif/guides/mot-ref/ch11.ps.Z
+%%PORTDOCS%%share/doc/openmotif/guides/mot-ref/ch12.ps.Z
+%%PORTDOCS%%share/doc/openmotif/guides/mot-ref/ch14.ps.Z
+%%PORTDOCS%%share/doc/openmotif/guides/mot-ug/ch01.ps.Z
+%%PORTDOCS%%share/doc/openmotif/guides/mot-ug/ch02.ps.Z
+%%PORTDOCS%%share/doc/openmotif/guides/mot-ug/ch03.ps.Z
+%%PORTDOCS%%share/doc/openmotif/guides/mot-ug/ch04.ps.Z
+%%PORTDOCS%%share/doc/openmotif/guides/mot-ug/ch05.ps.Z
+%%PORTDOCS%%share/doc/openmotif/guides/mot-ug/ch06.ps.Z
+%%PORTDOCS%%share/doc/openmotif/guides/mot-ug/ch07.ps.Z
+%%PORTDOCS%%share/doc/openmotif/guides/mot-ug/ch08.ps.Z
+%%PORTDOCS%%share/doc/openmotif/guides/mot-ug/ch10.ps.Z
+%%PORTDOCS%%share/doc/openmotif/guides/mot-wwg.ps.Z
 @comment	share/examples/openmotif/demos/ch05/Scale/Imakefile
 @comment	share/examples/openmotif/demos/ch05/Scale/README
 @comment	share/examples/openmotif/demos/ch05/Scale/interface.c
@@ -513,10 +513,10 @@ share/doc/openmotif/guides/mot-wwg.ps.Z
 @comment	share/examples/openmotif/demos/ch17/simple_drop/simple_drop.man
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
-@dirrm share/doc/openmotif/guides/mot-pg
-@dirrm share/doc/openmotif/guides/mot-ref
-@dirrm share/doc/openmotif/guides/mot-ug
-@dirrm share/doc/openmotif/guides
+%%PORTDOCS%%@dirrm share/doc/openmotif/guides/mot-pg
+%%PORTDOCS%%@dirrm share/doc/openmotif/guides/mot-ref
+%%PORTDOCS%%@dirrm share/doc/openmotif/guides/mot-ug
+%%PORTDOCS%%@dirrm share/doc/openmotif/guides
 @dirrm share/doc/openmotif
 @comment	@dirrm share/examples/openmotif/demos/ch05/Scale
 @comment	@dirrm share/examples/openmotif/demos/ch05
@@ -536,18 +536,18 @@ share/doc/openmotif/guides/mot-wwg.ps.Z
 @dirrm include/Mrm
 @dirrm include/uil
 @dirrm lib/X11/bindings
-@dirrm lib/X11/help
-@dirrm lib/X11/motifshell
-@dirrm lib/X11/uid/C/uid
-@dirrm lib/X11/uid/C
-@dirrm lib/X11/uid/french/uid
-@dirrm lib/X11/uid/french
-@dirrm lib/X11/uid/english/uid
-@dirrm lib/X11/uid/english
-@dirrm lib/X11/uid/hebrew/uid
-@dirrm lib/X11/uid/hebrew
-@dirrm lib/X11/uid/japanese/uid
-@dirrm lib/X11/uid/japanese
-@dirrm lib/X11/uid/swedish/uid
-@dirrm lib/X11/uid/swedish
-@dirrm lib/X11/uid
+%%MOTIF_DEMOS%%@dirrm lib/X11/help
+%%MOTIF_DEMOS%%@dirrm lib/X11/motifshell
+%%MOTIF_DEMOS%%@dirrm lib/X11/uid/C/uid
+%%MOTIF_DEMOS%%@dirrm lib/X11/uid/C
+%%MOTIF_DEMOS%%@dirrm lib/X11/uid/french/uid
+%%MOTIF_DEMOS%%@dirrm lib/X11/uid/french
+%%MOTIF_DEMOS%%@dirrm lib/X11/uid/english/uid
+%%MOTIF_DEMOS%%@dirrm lib/X11/uid/english
+%%MOTIF_DEMOS%%@dirrm lib/X11/uid/hebrew/uid
+%%MOTIF_DEMOS%%@dirrm lib/X11/uid/hebrew
+%%MOTIF_DEMOS%%@dirrm lib/X11/uid/japanese/uid
+%%MOTIF_DEMOS%%@dirrm lib/X11/uid/japanese
+%%MOTIF_DEMOS%%@dirrm lib/X11/uid/swedish/uid
+%%MOTIF_DEMOS%%@dirrm lib/X11/uid/swedish
+%%MOTIF_DEMOS%%@dirrm lib/X11/uid
