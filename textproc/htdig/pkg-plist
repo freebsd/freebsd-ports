@@ -3,7 +3,7 @@ bin/htfuzzy
 bin/htmerge
 bin/htnotify
 bin/rundig
-etc/htdig.conf
+etc/htdig.conf.sample
 share/htdig/bad_words
 share/htdig/english.0
 share/htdig/english.aff
