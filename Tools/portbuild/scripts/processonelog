@@ -116,8 +116,8 @@ elif grep -qE '(/usr/libexec/elf/ld: cannot find|undefined reference to|cannot o
   reason="linker_error"; tag="ld"
 elif grep -qE 'chown:.*invalid argument' $1; then
   reason="chown"; tag="chown"
-elif grep -qE 'cp:.*Invalid argument' $1; then
-  reason="munmap"; tag="munmap"
+#elif grep -qE 'cp:.*Invalid argument' $1; then
+#  reason="munmap"; tag="munmap"
 elif grep -q 'install: .*: No such file' $1; then
   if grep -q 'install: /usr/local/www/cgi-bin.*No such file or directory' $1; then
     reason="cgi-bin"; tag="cgi-bin"
@@ -224,8 +224,8 @@ elif grep -q "/usr/local/www/cgi-bin does not exist" $1; then
   reason="cgi-bin"; tag="cgi-bin"
 elif grep -qE "chown: .*\..*: Invalid argument" $1; then
   reason="chown"; tag="chown"
-elif grep -qE "cp: .*: Invalid argument" $1; then
-  reason="munmap"; tag="munmap"
+#elif grep -qE "cp: .*: Invalid argument" $1; then
+#  reason="munmap"; tag="munmap"
 elif grep -q "Cannot stat: " $1; then
   reason="configure_error"; tag="configure"
 elif grep -qE "Script.*configure.*failed unexpectedly" $1; then
