@@ -1,6 +1,6 @@
-System/Library/Bundles/SSL.bundle/Resources/Info-gnustep.plist
-System/Library/Bundles/SSL.bundle/SSL
-System/Library/Bundles/SSL.bundle/stamp.make
+%%OPENSSL%%System/Library/Bundles/SSL.bundle/Resources/Info-gnustep.plist
+%%OPENSSL%%System/Library/Bundles/SSL.bundle/SSL
+%%OPENSSL%%System/Library/Bundles/SSL.bundle/stamp.make
 System/Library/DTDs/gsdoc-0_6_5.dtd
 System/Library/DTDs/gsdoc-0_6_6.dtd
 System/Library/DTDs/gsdoc-0_6_7.dtd
@@ -44,8 +44,10 @@ System/Library/Headers/Foundation/NSFormatter.h
 System/Library/Headers/Foundation/NSGeometry.h
 System/Library/Headers/Foundation/NSHashTable.h
 System/Library/Headers/Foundation/NSHost.h
+%%GNUSTEP_DEVEL%%System/Library/Headers/Foundation/NSIndexSet.h
 System/Library/Headers/Foundation/NSInvocation.h
 System/Library/Headers/Foundation/NSKeyValueCoding.h
+%%GNUSTEP_DEVEL%%System/Library/Headers/Foundation/NSKeyedArchiver.h
 System/Library/Headers/Foundation/NSLock.h
 System/Library/Headers/Foundation/NSMapTable.h
 System/Library/Headers/Foundation/NSMethodSignature.h
@@ -61,6 +63,7 @@ System/Library/Headers/Foundation/NSPortCoder.h
 System/Library/Headers/Foundation/NSPortMessage.h
 System/Library/Headers/Foundation/NSPortNameServer.h
 System/Library/Headers/Foundation/NSProcessInfo.h
+%%GNUSTEP_DEVEL%%System/Library/Headers/Foundation/NSPropertyList.h
 System/Library/Headers/Foundation/NSProtocolChecker.h
 System/Library/Headers/Foundation/NSProxy.h
 System/Library/Headers/Foundation/NSRange.h
@@ -782,8 +785,8 @@ System/Tools/xmlparse
 @dirrm System/Library/Documentation/man/man8
 @dirrm System/Library/Documentation/man/man1
 @dirrm System/Library/DTDs
-@dirrm System/Library/Bundles/SSL.bundle/Resources
-@dirrm System/Library/Bundles/SSL.bundle
+%%OPENSSL%%@dirrm System/Library/Bundles/SSL.bundle/Resources
+%%OPENSSL%%@dirrm System/Library/Bundles/SSL.bundle
 @exec mkdir -p %D/System/Library/Documentation/man/man1
 @cwd %%LOCALBASE%%
 etc/gdomap_if
