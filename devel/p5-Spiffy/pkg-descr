@@ -1,0 +1,9 @@
+IO::All - Spiffy Perl Interface Framework For You
+
+Spiffy" is a framework and methodology for doing object oriented programming
+in Perl. Spiffy combines the best parts of Exporter.pm, base.pm, mixin.pm and
+SUPER.pm into one magic foundation class. It attempts to fix all the nits and
+warts of traditional Perl OO, in a clean, straightforward and
+(perhaps someday) standard way.
+
+WWW: http://search.cpan.org/~ingy/Spiffy-0.18/
