@@ -70,6 +70,7 @@
     SUBDIR += guile
     SUBDIR += hope
     SUBDIR += hugs
+    SUBDIR += icc
     SUBDIR += ici
     SUBDIR += icon
     SUBDIR += intel2gas
