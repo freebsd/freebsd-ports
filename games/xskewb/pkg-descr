@@ -1,0 +1,13 @@
+Xskewb is a puzzle similar in nature to the famous Rubik's Cube.
+Its variations on the inspiration include using 5 blocks per side,
+including a large distinct diamond block, and optionally requiring
+correct block "orientation".  This is similar to other puzzles
+such as the "Creative Puzzle Ball", "Meffert's Challenge", and Disney's
+"Mickey's Challenge".  The original design was by Uwe Meffert
+("Pyraminx Cube") and coined Skewb by Douglas Hofstadter.
+
+By building from the source and editing its Imakefile before the
+``build'' phase, you may be able to use Motif or LessTif with this port.
+
+- Andrey Zakhvatov
+andy@icc.surw.chel.su
