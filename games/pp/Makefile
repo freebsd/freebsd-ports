@@ -15,6 +15,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Prometeus Project - real time strategy game for X Window System
 
 WRKSRC=		${WRKDIR}/ppsrc
+USE_GCC=	2.95
 USE_QT_VER=	1
 USE_X_PREFIX=	yes
 

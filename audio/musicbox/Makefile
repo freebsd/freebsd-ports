@@ -18,6 +18,7 @@ COMMENT=	X11 front-end for mpg123
 
 RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123
 
+USE_GCC=	2.95
 USE_QT_VER=	1
 DOCS=		ChangeLog README
 EVAL_PREFIX+=	QT1DIR=qt1
@@ -25,6 +26,12 @@ PATH=		${QT1DIR}/qt/bin:$$PATH
 PLIST=		${WRKDIR}/pkg-plist
 USE_X_PREFIX=	yes
 WRKSRC=		${WRKDIR}/musicbox-1.01
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 501013
+BROKEN=		"compilation error"
+.endif
 
 pre-install:
 	${ECHO_CMD} bin/musicbox > ${PLIST}
@@ -44,4 +51,4 @@ do-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
