@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnugo
-PORTVERSION=	3.2
+PORTVERSION=	3.4
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	gnugo
@@ -17,6 +17,7 @@ COMMENT=	The game of Go
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 
+INFO=		gnugo
 MAN6=		gnugo.6
 
 post-extract:
