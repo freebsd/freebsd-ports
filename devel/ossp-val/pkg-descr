@@ -1,0 +1,9 @@
+OSSP val is a flexible name to value mapping library for C variables. It is
+a companion library to OSSP var. It allows one to access C variables through
+name strings, although the C language does neither provide such a dedicated
+facility nor an evaluation construct (which could be used to implement such
+a facility easily).
+
+WWW: http://www.ossp.org/pkg/lib/val/
+
+-- AlanE@FreeBSD.org

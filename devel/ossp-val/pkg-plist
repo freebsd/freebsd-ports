@@ -1,0 +1,6 @@
+bin/val-config
+include/val.h
+lib/libval.a
+lib/libval.la
+lib/libval.so
+lib/libval.so.9
