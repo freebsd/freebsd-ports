@@ -12,4 +12,10 @@ Then do this to make it work effective:
 # apachectl configtest (see if there are any config errors)
 # apachectl restart
 
+If you have trouble loading this module due to missing
+symbols, try adding the following line to the top of your
+apachectl script (on line 2):
+
+LD_PRELOAD=/usr/lib/libpam.so.1; export LD_PRELOAD
+
 ************************************************************
