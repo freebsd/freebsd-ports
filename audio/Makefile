@@ -1,12 +1,11 @@
-# $Id: Makefile,v 1.17 1995/05/14 07:12:08 asami Exp $
+# $Id: Makefile,v 1.18 1995/06/10 02:36:44 jkh Exp $
 #
 # RESTRICTED: xmcd (needs Motif, xmcd itself isn't restricted)
 #
 # BROKEN: gmod
-# BROKEN: rplay (can't connect to master site)
 # BROKEN: rsynth (can't find a master site)
 #
 
-SUBDIR= gsm maplay nas playmidi s3mod sox tracker xcd xcdplayer
+SUBDIR= gsm maplay nas playmidi rplay s3mod sox tracker xcd xcdplayer
 
 .include <bsd.port.subdir.mk>
