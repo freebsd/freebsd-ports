@@ -1,0 +1,101 @@
+# New ports collection makefile for:	posixtestsuite
+# Date created:				11 November 2003
+# Whom:					Alexey Zelkin <phantom@FreeBSD.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	posixtestsuite
+PORTVERSION=	1.3.0
+CATEGORIES=	misc
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR= posixtest
+
+MAINTAINER=	phantom@FreeBSD.org
+COMMENT=	Open POSIX Test Suite
+
+WRKSRC=		${WRKDIR}/posixtestsuite
+
+NO_CONFIGURE=	YES
+NO_BUILD=	YES
+NO_INSTALL=	YES
+NO_PACKAGE=	"Nothing to package"
+
+USE_GMAKE=	YES
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+REGR_LOG= log.run-4stable
+.else
+REGR_LOG= log.run-5current
+.endif
+
+RUN_RESULT=	${WRKSRC}/run.result
+LOCAL_REGR_LOG=	${WRKSRC}/regression.result
+
+.if defined(QUIET)
+THEPIPE= >
+.else
+THEPIPE= | tee 2>&1
+.endif
+
+.if defined(WITH_THRLIB)
+THRLIB=${WITH_THRLIB}
+.else
+THRLIB=	-lc_r
+.endif
+
+pre-everything::
+	@${ECHO} "Following make commands are available:"
+	@${ECHO} ""
+	@${ECHO} "  * help - this message"
+	@${ECHO} "  * run - run whole testsuite"
+	@${ECHO} "  * rerun - re-run broken tests"
+	@${ECHO} "  * regression - show differences between original and current results"
+	@${ECHO} ""
+	@${ECHO} "Following options are available:"
+	@${ECHO} ""
+	@${ECHO} "  * QUIET - don't print progress messages while running"
+	@${ECHO} "  * WITH_THRLIB - choose thread library to run test against"
+	@${ECHO} "    (NB: by default 'libc_r' is used)"
+	@${ECHO} ""
+	@${ECHO} "Examples:"
+	@${ECHO} ""
+	@${ECHO} "  make WITH_THRLIB=libkse run"
+	@${ECHO} "    - run tests against libkse"
+	@${ECHO} ""
+	@${ECHO} "  make QUIET=YES WITH_THRLIB= regression"
+	@${ECHO} "    - be quiet, run tests against libc, compare tests results"
+	@${ECHO} ""
+
+help:	pre-everything
+
+aclean:	all
+	@${ECHO} "Cleaning tests tree..."
+	-@(cd ${WRKSRC} && rm -f ${RUN_RESULT} && gmake clean)
+
+rerun:	all
+.if defined(WITH_THRLIB)
+	echo ${THRLIB} > ${WRKSRC}/LDFLAGS
+.endif
+.if empty(THRLIB)
+	@${ECHO} "Running tests (against -lc) ..."
+.else
+	@${ECHO} "Running tests (against ${THRLIB}) ..."
+.endif
+	@(cd ${WRKSRC} && gmake all) ${THEPIPE} ${RUN_RESULT}
+	@${ECHO} ""
+	@${ECHO} "Run output is stored into following files:"
+	@${ECHO} "  * short version: ${RUN_RESULT}"
+	@${ECHO} "  * extended version: ${WRKSRC}/logfile"
+
+run:	aclean rerun
+
+regression:	run
+	@${ECHO} "Show regression log..."
+	@(cd ${WRKSRC} && diff -u ${FILESDIR}/${REGR_LOG} ${RUN_RESULT}) > ${LOCAL_REGR_LOG}
+	@[ -z ${LOCAL_REGR_LOG ] || ( ${ECHO} "No regression detected"; exit 0 )
+	@${ECHO} "Regression log stored at ${LOCAL_REGR_LOG}
+
+.include <bsd.port.post.mk>

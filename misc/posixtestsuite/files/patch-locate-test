@@ -1,0 +1,27 @@
+diff -ur locate-test~ locate-test
+--- locate-test	Tue Sep 23 21:45:57 2003
++++ locate-test	Tue Nov 11 07:30:35 2003
+@@ -60,19 +60,19 @@
+           shift;
+           ;;
+       "--fmake")
+-          find functional/ -type f -maxdepth 2 -mindepth 2 -name "Makefile" -printf "%h\n"
++          find functional/ -type f -maxdepth 2 -mindepth 2 -name "Makefile" | sed 's#/Makefile##g'
+           exit 0;
+           ;;
+       "--frun")
+-          find functional/ -type f -maxdepth 2 -mindepth 2 -name "run.sh" -printf "%h\n"
++          find functional/ -type f -maxdepth 2 -mindepth 2 -name "run.sh" | sed 's#/run.sh##g'
+           exit 0;
+           ;;
+       "--smake")
+-          find stress/ -type f -maxdepth 2 -mindepth 2 -name "Makefile" -printf "%h\n"
++          find stress/ -type f -maxdepth 2 -mindepth 2 -name "Makefile" | sed 's#/Makefile##g'
+           exit 0;
+           ;;
+       "--srun")
+-          find stress/ -type f -maxdepth 2 -mindepth 2 -name "run.sh" -printf "%h\n"
++          find stress/ -type f -maxdepth 2 -mindepth 2 -name "run.sh" | sed 's#/run.sh##g'
+           exit 0;
+           ;;
+       "--help")
