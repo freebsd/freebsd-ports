@@ -50,6 +50,7 @@ share/locale/vi/LC_MESSAGES/gnome-terminal.mo
 share/locale/wa/LC_MESSAGES/gnome-terminal.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-terminal.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-terminal.mo
+@dirrm share/gnome/omf/gnome-terminal
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnome-terminal/profiles/Default
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnome-terminal/profiles
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnome-terminal/keybindings
