@@ -6,13 +6,14 @@
 #
 
 PORTNAME=	ices
-PORTVERSION=	20021112
+PORTVERSION=	2.0.b.2.20030811
+PORTEPOCH=	1
 CATEGORIES=	audio net
 MASTER_SITES=	http://tigress.com/lofi/ \
 		http://lofi.dyndns.org/
-DISTNAME=	${PORTNAME}-devel-${PORTVERSION}
+DISTNAME=	${PORTNAME}-2.0-Beta2-20030811
 
-MAINTAINER=	michaelnottebrock@gmx.net
+MAINTAINER=	lofi@freebsd.org
 COMMENT=	A streaming source client for icecast 2
 
 LIB_DEPENDS=	ogg.4:${PORTSDIR}/audio/libogg \
@@ -20,32 +21,21 @@ LIB_DEPENDS=	ogg.4:${PORTSDIR}/audio/libogg \
 		vorbis.2:${PORTSDIR}/audio/libvorbis \
 		xml2.5:${PORTSDIR}/textproc/libxml2
 
-AUTOMAKE_ARGS=  --add-missing
-AUTOMAKE_ENV=   CFLAGS="${PTHREAD_CFLAGS} -I${LOCALBASE}/include" \
-		LDFLAGS="${PTHREAD_LIBS} -L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	--disable-oggtest --disable-vorbistest --disable-shouttest
 CONFIGURE_ENV=	CFLAGS="${PTHREAD_CFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="${PTHREAD_LIBS} -L${LOCALBASE}/lib"
-USE_AUTOMAKE_VER=15
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
-USE_REINPLACE=	yes
-USE_BZIP2=	yes
 
-WRKSRC=		${WRKDIR}/ices
+WRKSRC=		${WRKDIR}/ices-2.0-Beta2
 
-post-configure:
-	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/src/Makefile
-	@${REINPLACE_CMD} -e 's|-O20|${CFLAGS}|g' ${WRKSRC}/conf/Makefile \
-						${WRKSRC}/src/avl/Makefile \
-						${WRKSRC}/src/log/Makefile \
-						${WRKSRC}/src/net/Makefile \
-						${WRKSRC}/src/thread/Makefile \
-						${WRKSRC}/src/timing/Makefile \
-						${WRKSRC}/src/Makefile \
-						${WRKSRC}/Makefile
+.include <bsd.port.pre.mk>
 
 post-install:
-	@${INSTALL_SCRIPT} ${WRKSRC}/contrib/run_ices ${LOCALBASE}/bin
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/conf/ices-live.xml \
+			${WRKSRC}/conf/ices-playlist.xml \
+			${DOCSDIR}
+.endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
