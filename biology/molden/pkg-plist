@@ -1,0 +1,39 @@
+bin/molden
+share/doc/molden/doc/figures.ps.Z
+share/doc/molden/doc/manual.ps.Z
+share/doc/molden/doc/manual.txt.Z
+share/doc/molden/test/adf.molf
+share/doc/molden/test/ampac.arc
+share/doc/molden/test/ampac.test
+share/doc/molden/test/bucky.xyz
+share/doc/molden/test/chemx.test
+share/doc/molden/test/complex2.out
+share/doc/molden/test/esp.test
+share/doc/molden/test/esp.txt
+share/doc/molden/test/fragment
+share/doc/molden/test/gamess_uk.freq
+share/doc/molden/test/gamess_uk.input
+share/doc/molden/test/gamess_uk.test1
+share/doc/molden/test/gamess_uk.test2
+share/doc/molden/test/gamess_us.h2o_631g_opt.out
+share/doc/molden/test/gamess_us.irc
+share/doc/molden/test/gamess_us_uhf_opt
+share/doc/molden/test/gaussian.freq
+share/doc/molden/test/gaussian.input
+share/doc/molden/test/gaussian.test
+share/doc/molden/test/mopac.freq
+share/doc/molden/test/mopac.test
+share/doc/molden/test/pdb.test
+share/doc/molden/test/reacpth.xyz
+share/doc/molden/test/shelx.ins
+share/doc/molden/test/surface.molf
+share/doc/molden/test/test.fdat
+share/doc/molden/test/test.mol2
+share/doc/molden/test/tinker_charmm.xyz
+share/doc/molden/test/tinker_mm3.xyz
+share/doc/molden/test/uracil.fdat
+share/doc/molden/test/uracil_gauss.out
+share/doc/molden/test/vamp.test
+@dirrm share/doc/molden/test
+@dirrm share/doc/molden/doc
+@dirrm share/doc/molden
