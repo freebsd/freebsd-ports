@@ -1,0 +1,19 @@
+--- Makefile.orig	Sat Jul  3 23:07:06 2004
++++ Makefile	Thu Aug 12 17:06:38 2004
+@@ -1,11 +1,11 @@
+-CC = gcc
++#CC = gcc
+ #CFLAGS = -DUSE_GTK `sdl-config --cflags` `gtk-config --cflags` -Iwrapper/ -g -mmmx -msse
+ #CFLAGS = -DUSE_GTK `sdl-config --cflags` `gtk-config --cflags` -Iwrapper/ -O3 -mcpu=athlon -ffast-math -funroll-loops -fomit-frame-pointer -msse -mmmx
+-CFLAGS = -DUSE_GTK `sdl-config --cflags` `gtk-config --cflags` -Iwrapper/ -O3 -mcpu=athlon -ffast-math -funroll-loops -fomit-frame-pointer -msse -mmmx
+-CXX = g++
++#CFLAGS = -DUSE_GTK `sdl-config --cflags` `gtk-config --cflags` -Iwrapper/ -O3 -mcpu=athlon -ffast-math -funroll-loops -fomit-frame-pointer -msse -mmmx
++#CXX = g++
+ CPPFLAGS = $(CFLAGS)
+-LD = g++
+-LDFLAGS = -lGL -lGLU -L/usr/X11R6/lib -lSDL
++#LD = g++
++#LDFLAGS = -lGL -lGLU -L/usr/X11R6/lib -lSDL
+ 
+ OBJECTS = Main.o \
+ 	rdp.o \
