@@ -11,4 +11,4 @@ syntax-based applications that have less of a "compiler" flavour.
 Coco/R is available in Oberon, Modula-2, Pascal, Delphi, C, Java and C#
 versions.  This port only builds the C/C++ version.
 
-WWW: http://cs.ru.ac.za/homes/cspt/cocor.htm
+WWW: http://www.scifac.ru.ac.za/coco/

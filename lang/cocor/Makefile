@@ -6,13 +6,14 @@
 #
 
 PORTNAME=	cocor
-PORTVERSION=	1.6
+PORTVERSION=	1.7
 CATEGORIES=	lang
-MASTER_SITES=	ftp://cs.ru.ac.za/pub/coco/
-DISTNAME=	cocorc16
+MASTER_SITES=	http://www.scifac.ru.ac.za/coco/
+DISTNAME=	cocorc17
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	guy-ezmlm@rucus.ru.ac.za
+COMMENT=	A compiler generator that combines the functionality of lex and yacc
 
 WRKSRC=		${WRKDIR}
 ALL_TARGET=	all1
