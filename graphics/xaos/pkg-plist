@@ -1,4 +1,4 @@
 bin/xaos
-man/man6/xaos.6
+man/man6/xaos.6.gz
 share/doc/XaoS/tutorial.txt
 share/doc/XaoS/algorithm.txt
