@@ -51,7 +51,7 @@ do-install:
 		${TAR} -xf - -C${PINSTDIR})
 
 post-install:
-	@${ENV} PKG_PREFIX=${PREFIX} \
+	@${SETENV} PKG_PREFIX=${PREFIX} \
 		${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.mk>
