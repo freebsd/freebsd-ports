@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	racc
-PORTVERSION=	1.2.2
+PORTVERSION=	1.2.3
 CATEGORIES=	devel ruby
 MASTER_SITES=	http://www1.u-netsurf.ne.jp/~brew/mine/soft/
 PKGNAMEPREFIX=	ruby-
@@ -31,7 +31,7 @@ DOCS_EN=	changes.html command.html debug.html grammer.html \
 		index.html usage.html
 DOCS_JA=	changes.html command.html debug.html grammer.html \
 		index.html parser.html usage.html
-EXAMPLES=	calc.y calc2-ja.y compile.rb
+EXAMPLES=	calc-ja.y calc.y conflict.y lalr.y syntax.y yyerr.y
 
 post-patch:
 	${PERL} -i -pe '$$. == 1 && s,^#!\s*\S+,#!${RUBY},' \
