@@ -1,9 +1,9 @@
 bin/mnews
 lib/mnews/jnames
 lib/mnews/default-domain
+man/ja_JP.EUC/man1/mnews.1.gz
 share/doc/mnews/FAQ.doc
 share/doc/mnews/board.doc
-share/doc/mnews/mnews.1
 share/doc/mnews/mnews.doc
 share/doc/mnews/prerel.doc
 share/doc/mnews/present.doc
