@@ -3,7 +3,7 @@
 # Date created:         7 December 1994
 # Whom:                 asami
 #
-# $Id: Makefile,v 1.5 1995/03/24 11:11:58 asami Exp $
+# $Id: Makefile,v 1.6 1995/04/01 12:51:21 jkh Exp $
 #
 
 USE_IMAKE=	yes
@@ -33,7 +33,8 @@ fetch:	pre-fetch
 	      ${NCFTP} ${NCFTPFLAGS} ${SOURCESITE}\{$$file\}); \
 	  done; \
 	  echo ">> Now creating a tarball ${DISTDIR}/${TARFILE}..."; \
-	  tar -C ${.CURDIR}/src -czf ${DISTDIR}/${TARFILE} xfed; \
+	  tar -C ${.CURDIR}/src -cf - xfed | \
+	    gzip --best > ${DISTDIR}/${TARFILE}; \
 	  rm -rf ${.CURDIR}/src; \
 	fi
 .endif
