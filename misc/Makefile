@@ -56,6 +56,7 @@
     SUBDIR += felis
     SUBDIR += fep
     SUBDIR += figlet
+    SUBDIR += figlet-fonts
     SUBDIR += findutils
     SUBDIR += fortuneit
     SUBDIR += freedialog
