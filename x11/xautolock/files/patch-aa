@@ -1,0 +1,47 @@
+*** xautolock.c.orig	Sat Jul 20 17:32:41 1996
+--- xautolock.c	Sat Jul 20 17:56:41 1996
+***************
+*** 196,201 ****
+--- 196,203 ----
+   *  with vroot.h, because it needs to know the real root window.
+   */
+  
++ #include <sys/param.h>
++ 
+  #if defined(hpux) || defined (__hpux)
+  #ifndef _HPUX_SOURCE
+  #define _HPUX_SOURCE
+***************
+*** 235,241 ****
+--- 237,247 ----
+  #endif /* !NOSTDHDRS */
+  
+  #if !defined (apollo) && !defined (VMS)
++ 
++ #if !defined (BSD) 
+  #include <malloc.h>
++ #endif /* !BSD */
++ 
+  #include <unistd.h>
+  #endif /* !apollo && !VMS */
+  
+***************
+*** 1587,1593 ****
+  #else /* VMS */
+    if (locker_pid)
+    {
+! #if !defined (UTEKV) && !defined (SYSV) && !defined(SVR4)
+      union wait  status;  /* childs process status */
+  #else /* !UTEKV && !SYSV && !SVR4 */
+      int         status;  /* childs process status */
+--- 1593,1602 ----
+  #else /* VMS */
+    if (locker_pid)
+    {
+! 
+! #if defined (BSD)
+!     int status;
+! #elif !defined (UTEKV) && !defined (SYSV) && !defined(SVR4)
+      union wait  status;  /* childs process status */
+  #else /* !UTEKV && !SYSV && !SVR4 */
+      int         status;  /* childs process status */
