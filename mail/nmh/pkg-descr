@@ -8,3 +8,5 @@ a (mostly) compatible drop-in replacement for MH.
 nmh is currently in BETA testing/development.  It seems to be
 generally stable, but things may break from release to release
 as changes are made.
+
+WWW: http://www.math.gatech.edu/nmh/
