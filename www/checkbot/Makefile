@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	checkbot
-PORTVERSION=	1.74
+PORTVERSION=	1.75
 CATEGORIES=	www perl5
 MASTER_SITES=	http://degraaff.org/checkbot/ \
 		http://wolfram.schneider.org/src/
 
 MAINTAINER=	wosch@FreeBSD.org
-COMMENT=	A WWW link verifier, similar like momspider
+COMMENT=	A WWW link verifier, similar to momspider
 
 RUN_DEPENDS=	${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww \
  		${SITE_PERL}/URI.pm:${PORTSDIR}/net/p5-URI \
