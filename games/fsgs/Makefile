@@ -13,9 +13,9 @@ DISTFILES=	fsgs07126bsd.tgz fsgs0721lx.tgz
 
 MAINTAINER=	dburr@FreeBSD.ORG
 
-FORBIDDEN=	"Some data files probably need to be made group-writable"
-
 NO_BUILD=	yes
+
+IGNORE=		"Disabled for legal reasons"
 
 do-install:
 	${CP} -Rp ${WRKDIR}/opt/fsgs ${PREFIX}/fsgs
