@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	qdbm
-PORTVERSION=	1.8.8
+PORTVERSION=	1.8.10
 CATEGORIES=	databases
 MASTER_SITES=	http://qdbm.sourceforge.net/ \
 		${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	fuyuki@nigredo.org
+MAINTAINER=	fuyuki@hadaly.org
 COMMENT=	Quick Database Manager
 
 GNU_CONFIGURE=	yes
@@ -43,7 +43,7 @@ post-patch:
 
 post-build:
 	cd ${WRKSRC}/lab; ${MAKE} CC="${CC}" CFLAGS="${CFLAGS}" fmtcnv031127
-	cd ${WRKSRC}; ${MAKE} check
+	cd ${WRKSRC}; ${SETENV} QDBMDBGFD=1 ${MAKE} check
 
 post-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/lab/fmtcnv031127 ${PREFIX}/bin
