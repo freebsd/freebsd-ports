@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.205 1999/06/11 19:07:12 steve Exp $
+# $Id: Makefile,v 1.206 1999/06/16 18:12:39 sada Exp $
 #
 
     SUBDIR += Canna
@@ -8,6 +8,7 @@
     SUBDIR += Wnn6-lib
     SUBDIR += a2ps
     SUBDIR += ack
+    SUBDIR += acroread-jpnfont
     SUBDIR += binder
     SUBDIR += bookview
     SUBDIR += camltk41
