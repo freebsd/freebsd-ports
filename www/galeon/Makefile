@@ -19,8 +19,6 @@ LIB_DEPENDS=	gnome.4:${PORTSDIR}/x11/gnomelibs \
 RUN_DEPENDS=	panel:${PORTSDIR}/x11/gnomecore \
 		mozilla:${PORTSDIR}/www/mozilla
 
-BROKEN=		"Jeremy should update Mozilla port to M16"
-
 USE_X_PREFIX=	yes
 USE_NEWGCC=	yes
 GNU_CONFIGURE=	yes
