@@ -17,4 +17,4 @@ number of extensions that take advantage of these two new objects.
        + Fourier Transforms (FFTPACK)
        + Random Numbers (RANLIB)
 
-WWW: http://xfiles.llnl.gov/python.htm
+WWW: http://www.pfdubois.com/numpy/
