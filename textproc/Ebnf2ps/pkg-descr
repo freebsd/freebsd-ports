@@ -1,0 +1,11 @@
+Ebnf2ps generates nice looking syntax diagrams in EPS and FIG format from
+EBNF specifications and from yacc, bison, and Happy input grammars. The
+diagrams can be immediately included in TeX/LaTeX documents and in texts
+created with other popular document preparation systems.
+
+Ebnf2ps is written in Haskell98, a lazy functional programming language.
+
+WWW: http://www.informatik.uni-freiburg.de/~thiemann/haskell/ebnf2ps/
+
+Bruce
+bms@FreeBSD.org

@@ -1,0 +1,26 @@
+share/examples/Ebnf2ps/regular.BNF
+share/examples/Ebnf2ps/gofer.BNF
+share/examples/Ebnf2ps/examples.ps
+share/examples/Ebnf2ps/ebnf.BNF
+@dirrm share/examples/Ebnf2ps
+bin/Ebnf2ps
+%%PORTDOCS%%%%DOCSDIR%%/doc.tex
+%%PORTDOCS%%%%DOCSDIR%%/doc.ps
+%%PORTDOCS%%%%DOCSDIR%%/Term.eps
+%%PORTDOCS%%%%DOCSDIR%%/String.eps
+%%PORTDOCS%%%%DOCSDIR%%/Regexp.eps
+%%PORTDOCS%%%%DOCSDIR%%/RFactor.eps
+%%PORTDOCS%%%%DOCSDIR%%/RExtAtom.eps
+%%PORTDOCS%%%%DOCSDIR%%/RAtom_unfold.eps
+%%PORTDOCS%%%%DOCSDIR%%/RAtom.eps
+%%PORTDOCS%%%%DOCSDIR%%/Production_unfold.eps
+%%PORTDOCS%%%%DOCSDIR%%/Production.eps
+%%PORTDOCS%%%%DOCSDIR%%/Nonterminal.eps
+%%PORTDOCS%%%%DOCSDIR%%/File.eps
+%%PORTDOCS%%%%DOCSDIR%%/Factor.eps
+%%PORTDOCS%%%%DOCSDIR%%/ExtAtom.eps
+%%PORTDOCS%%%%DOCSDIR%%/Export.eps
+%%PORTDOCS%%%%DOCSDIR%%/Character.eps
+%%PORTDOCS%%%%DOCSDIR%%/Atom_unfold.eps
+%%PORTDOCS%%%%DOCSDIR%%/Atom.eps
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
