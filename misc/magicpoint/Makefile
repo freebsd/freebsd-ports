@@ -7,8 +7,8 @@
 #
 # "?=" and "+=" are for localized (i.e. Japanese) version
 
-DISTNAME=	magicpoint-1.05a
-PKGNAME?=	magicpoint-1.05a
+DISTNAME=	magicpoint-1.06a
+PKGNAME?=	magicpoint-1.06a
 CATEGORIES+=	misc
 MASTER_SITES=	ftp://ftp.mew.org/pub/MagicPoint/
 
