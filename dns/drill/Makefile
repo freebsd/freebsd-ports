@@ -25,4 +25,6 @@ LDFLAGS+=	-L${OPENSSLLIB}
 CFLAGS+=	-I${OPENSSLINC}
 CONFIGURE_ARGS=	--prefix=${PREFIX}
 
+PLIST_FILES=	bin/drill
+
 .include <bsd.port.mk>
