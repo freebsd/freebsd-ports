@@ -13,4 +13,4 @@ Included is a tiny shell script called rhost to interface with
 jdresolve when resolving a single IP address. Think of it as a smart
 replacement for the 'host' utility that comes with bind-utils.
 
-WWW: http://www.jdrowell.com/Linux/Projects/jdresolve
+WWW: http://www.jdrowell.com/Linux/Projects/jdresolve/

@@ -6,4 +6,4 @@ This port does not install GRUB on the master boot record of your hard drive.
 To do this, or to use it with a floppy disk, you will need to read the info 
 page that is installed by the port.
 
-WWW: http://www.gnu.org/software/grub
+WWW: http://www.gnu.org/software/grub/

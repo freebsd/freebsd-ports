@@ -10,7 +10,7 @@ cells, and associated support files, it is hoped that future
 revisions will include support for vector files, and other data
 elements stored within the GRASS database.
 
-WWW: http://gdal.velocet.ca/projects/grass
+WWW: http://gdal.velocet.ca/projects/grass/
 
 - Jonathan Pennington
   <john@coastalgeology.org>

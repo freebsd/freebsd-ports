@@ -19,4 +19,4 @@ Currently, the task of ocamlweb may be seen as:
   2. generating a global index of cross-references, where each identifier 
      is associated to the lists of sections where it is defined or used. 
 
-WWW: http://www.lri.fr/~filliatr/ocamlweb
+WWW: http://www.lri.fr/~filliatr/ocamlweb/
