@@ -14,5 +14,5 @@ etc/qmrtg.conf.sample
 %%PORTDOCS%%%%EXAMPLESDIR%%/mrtg.cfg
 %%PORTDOCS%%%%EXAMPLESDIR%%/qmrtg.conf.sample
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
-@exec mkdir -p /var/db/qmrtg
-@unexec rm -rf /var/db/qmrtg
+@exec mkdir -p %%QMRTG_DBDIR%%
+@unexec rm -rf %%QMRTG_DBDIR%% 2>&1 >/dev/null || true
