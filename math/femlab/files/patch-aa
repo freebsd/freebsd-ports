@@ -1,0 +1,31 @@
+*** source/Imakefile.orig	Tue Sep  2 10:38:18 1997
+--- source/Imakefile	Tue Sep  2 10:39:42 1997
+***************
+*** 17,29 ****
+  
+              OBJS = $(SRCS:.c=.o)
+  
+!               CC = gcc -O
+       CDEBUGFLAGS = 
+    EXTRA_INCLUDES = -I../include
+  #
+  # Change next line to the location of the libsx library
+  #
+! EXTRA_LOAD_FLAGS = -L/users/math/martenl/projects/lib 
+   LOCAL_LIBRARIES = -lfreq -lsx -lm XawClientLibs
+           DEPLIBS = XawClientDepLibs
+   
+--- 17,29 ----
+  
+              OBJS = $(SRCS:.c=.o)
+  
+!               CC = gcc -O2
+       CDEBUGFLAGS = 
+    EXTRA_INCLUDES = -I../include
+  #
+  # Change next line to the location of the libsx library
+  #
+! EXTRA_LOAD_FLAGS = -L$(X11BASE)
+   LOCAL_LIBRARIES = -lfreq -lsx -lm XawClientLibs
+           DEPLIBS = XawClientDepLibs
+   
