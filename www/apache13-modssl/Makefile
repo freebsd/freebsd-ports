@@ -174,7 +174,6 @@ CFLAGS+=	-O3
 MODSNMP_DISTFILE=	${MODSNMP_FILE}:mod_snmp
 .endif
 .if defined(WITH_APACHE_MODSNMP) || defined(APACHE_WITH_MODSNMP)
-BROKEN=		"must wait for next release of mod_snmp"
 CONFLICTS+=	apache+mod_ssl-1.* \
 		apache+mod_ssl+ipv6-1.* \
 		apache+mod_ssl+mod_accel-1.* \
