@@ -188,6 +188,7 @@
     SUBDIR += scigraphica
     SUBDIR += scilab
     SUBDIR += sdpa
+    SUBDIR += sdpara
     SUBDIR += slsc
     SUBDIR += snns
     SUBDIR += solitaire
