@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dedit
-PORTVERSION=	0.5.10
+PORTVERSION=	0.5.11
 CATEGORIES=	editors gnome
 MASTER_SITES=	ftp://ftp.debian.org/debian/dists/unstable/main/source/editors/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
