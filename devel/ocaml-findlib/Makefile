@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	findlib
-PORTVERSION=	0.7.1
+PORTVERSION=	0.7.2
 CATEGORIES=	devel
 MASTER_SITES=	http://www.ocaml-programming.de/packages/
 PKGNAMEPREFIX=	ocaml-
