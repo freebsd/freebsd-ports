@@ -8,24 +8,18 @@
 PORTNAME=	apache+mod_ssl
 PORTVERSION=	${VERSION_APACHE}.${VERSION_RA}.${VERSION_MODSSL}
 CATEGORIES=	russian www security
-MASTER_SITES=	http://nagoya.apache.org/dist/httpd/ \
-		http://www.apache.org/dist/httpd/ \
-		ftp://ftp.ccs.neu.edu/net/mirrors/ftp.apache.org/apache/dist/httpd/ \
-		ftp://ftp.rge.com/pub/infosystems/apache/dist/httpd/ \
-		ftp://apache.compuex.com/pub/apache/dist/httpd/ \
-		ftp://apache.arctic.org/pub/apache/dist/httpd/ \
-		ftp://ftp.epix.net/pub/apache/dist/httpd/ \
-		ftp://ftp.ameth.org/pub/mirrors/ftp.apache.org/apache/dist/httpd/ \
-		ftp://ftp.connectnet.com/pub/www/apache/httpd/ \
-		ftp://apache.technomancer.com/mirrors/apache/dist/httpd/ \
-		ftp://ftp.raver.net/pub/ftp.apache.org/httpd/ \
-		ftp://www3.service.digital.com/apache/dist/httpd/ \
-		ftp://galileo.galilei.com/pub/apache/httpd/ \
-		ftp://ftp.mtnranch.net/pub/apache/dist/httpd/ \
-		ftp://ftp.iodynamics.com/pub/mirror/apache/dist/httpd/ \
-		ftp://apache.nextpath.com/pub/apache/dist/httpd/ \
+MASTER_SITES=	${MASTER_SITE_APACHE_HTTPD} \
 		${MASTER_SITES_MODSSL:S/$/:modssl/} \
 		${MASTER_SITES_RA:S/$/:rapatches/}
+DISTNAME=	apache_${VERSION_APACHE}
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
+		mod_ssl-${VERSION_MODSSL}-${VERSION_APACHE}${EXTRACT_SUFX}:modssl \
+		patches_${VERSION_APACHE}rusPL${VERSION_RA}.tar.gz:rapatches
+
+MAINTAINER=	lev@serebryakov.spb.ru
+COMMENT=	The Russian Apache webserver with SSL/TLS functionality
+
+LIB_DEPENDS=	mm.12:${PORTSDIR}/devel/mm
 
 MASTER_SITES_MODSSL=	http://www.modssl.org/source/ \
 			ftp://ftp.modssl.org/source/ \
@@ -39,21 +33,10 @@ MASTER_SITES_MODSSL=	http://www.modssl.org/source/ \
 
 MASTER_SITES_RA=	ftp://ftp.lexa.ru/pub/apache-rus/ \
 			ftp://ftp.lexa.ru/pub/apache-rus/old-versions/
-
-DISTNAME=	apache_${VERSION_APACHE}
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		mod_ssl-${VERSION_MODSSL}-${VERSION_APACHE}${EXTRACT_SUFX}:modssl \
-		patches_${VERSION_APACHE}rusPL${VERSION_RA}.tar.gz:rapatches
-
-MAINTAINER=	lev@serebryakov.spb.ru
-COMMENT=	The Russian Apache webserver with SSL/TLS functionality
-
 USE_OPENSSL=	YES
 USE_PERL5=	yes
 
 .include <bsd.port.pre.mk>
-
-LIB_DEPENDS=	mm.12:${PORTSDIR}/devel/mm
 
 VERSION_APACHE=	1.3.27
 VERSION_MODSSL=	2.8.12
@@ -100,7 +83,6 @@ PLIST_SUB+=	SUEXEC="@comment "
 SUEXEC_MAN=
 
 .endif # WITH_APACHE_SUEXEC
-
 
 #
 # Configutre parameters
@@ -157,7 +139,6 @@ OPTIM+=		 -DHARD_SERVER_LIMIT=${APACHE_HARD_SERVER_LIMIT}
 .else
 OPTIM+=		 -DHARD_SERVER_LIMIT=512
 .endif
-
 
 .if defined(APACHE_PERF_TUNING)
 OPTIM+=		-DBUFFERED_LOGS
