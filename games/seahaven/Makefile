@@ -3,7 +3,7 @@
 # Date created:         23 Dec 1998
 # Whom:                 imp
 #
-# $Id: Makefile,v 1.1 1998/12/24 05:51:20 imp Exp $
+# $Id: Makefile,v 1.2 1998/12/26 21:38:43 asami Exp $
 #
 
 DISTNAME=	seahaven-1.04
@@ -14,5 +14,6 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	imp@FreeBSD.ORG
 
 GNU_CONFIGURE=	yes
+MAN6?=		seahaven.6
 
 .include <bsd.port.mk>
