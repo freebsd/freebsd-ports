@@ -1,7 +1,14 @@
-diff -ur /tmp/tor-0.0.6.2/src/common/util.c ./src/common/util.c
---- /tmp/tor-0.0.6.2/src/common/util.c	Sun May  2 00:29:20 2004
-+++ ./src/common/util.c	Fri May 28 14:49:22 2004
-@@ -56,7 +56,9 @@
+--- src/common/util.c.orig	Sun May  2 01:29:20 2004
++++ src/common/util.c	Sat May 29 15:19:02 2004
+@@ -25,6 +25,7 @@
+ #include <windows.h>
+ #endif
+ 
++#include <sys/param.h>
+ #include <stdlib.h>
+ #include <stdio.h>
+ #include <string.h>
+@@ -56,7 +57,9 @@
  #include <sys/limits.h>
  #endif
  #ifdef HAVE_MACHINE_LIMITS_H
