@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	code2html
-PORTVERSION=	0.8.11
+PORTVERSION=	0.9
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
-		http://www.cosy.sbg.ac.at/~ppalfrad/code2html/all/
+		http://www.palfrader.org/code2html/all/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	jedgar@FreeBSD.org
@@ -26,7 +26,8 @@ do-configure:
 		-e 's|/bin/gzip|/usr/bin/gzip|' \
 		-e 's|/etc/code|${PREFIX}/etc/code|' \
 		< ${WRKSRC}/code2html.orig > ${WRKSRC}/code2html
-	@${PERL} -pi.orig -e 's|etc/code|usr/local/etc/code|' ${WRKSRC}/code2html.1
+	@${PERL} -pi.orig -e 's|/etc/code|${PREFIX}/etc/code|' \
+	    ${WRKSRC}/code2html.1
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/code2html ${PREFIX}/bin
