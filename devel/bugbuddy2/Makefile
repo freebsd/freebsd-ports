@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	bugbuddy2
-PORTVERSION=	2.6.1
+PORTVERSION=	2.8.0
+PORTREVISION=	1
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/bug-buddy/2.6
+MASTER_SITE_SUBDIR=	sources/bug-buddy/2.8
 DISTNAME=	bug-buddy-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
@@ -20,12 +21,13 @@ USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
-USE_LIBTOOL_VER=13
-USE_GNOME=	gnomeprefix gnomehack intlhack lthack gnomedesktop
+USE_LIBTOOL_VER=15
+USE_GNOME=	gnomeprefix gnomehack intlhack gnomedesktop
 GNOME_DESKTOP_VERSION=2
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-MAN1=	bug-buddy.1
+MAN1=		bug-buddy.1
+GCONF_SCHEMAS=	bug-buddy.schemas
 
 .include <bsd.port.mk>

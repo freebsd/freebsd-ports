@@ -1,0 +1,11 @@
+--- configure.orig	Thu Jan 29 16:02:10 2004
++++ configure	Thu Jan 29 16:02:39 2004
+@@ -23783,7 +23783,7 @@
+ idldir="$datadir/idl/evolution-data-server-$BASE_VERSION"
+ 
+ 
+-serverdir="$libdir/bonobo/servers"
++serverdir="$prefix/libdata/bonobo/servers"
+ 
+ 
+ 

@@ -1,0 +1,7 @@
+Evolution Webcal installs a GNOME URL Handler for "webcal:".
+This will pop up a subscription dialog when you point your web browser at it.
+The calendars will automaticaly appear in Evolution 1.5.x if it is running,
+or will show up the next time you start Evolution.
+
+It also works for non-GNOME applications. These applications need to set
+there URL handler to be "gnome-open".

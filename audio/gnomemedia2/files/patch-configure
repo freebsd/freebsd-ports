@@ -1,11 +1,11 @@
---- configure.orig	Wed Dec 31 00:49:17 2003
-+++ configure	Wed Dec 31 00:49:57 2003
-@@ -23190,7 +23190,7 @@
+--- configure.orig	Tue Jun  1 17:42:05 2004
++++ configure	Tue Jun  1 18:38:15 2004
+@@ -24584,7 +24584,7 @@
  *FreeBSD*)
- 	CDROM_HOST=freebsd
- 	CDROM_HOST_FREEBSD=true
+ 	CDROM_HOST=bsd
+ 	CDROM_HOST_BSD=true
 -	default_cd_device="/dev/acd0c"
 +	default_cd_device="/dev/%%CDROM%%"
  	;;
- *Linux*)
- 	CDROM_HOST=linux
+ *NetBSD*)
+ 	CDROM_HOST=bsd

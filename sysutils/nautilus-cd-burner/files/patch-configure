@@ -1,0 +1,27 @@
+--- configure.orig	Thu Jul 22 10:27:35 2004
++++ configure	Thu Jul 22 10:29:32 2004
+@@ -21015,6 +21015,8 @@
+ if eval "test \"\${$as_ac_var+set}\" = set"; then
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
++  ac_check_lib_save_LIBS=$LIBS
++  LIBS="-lintl $LIBS"
+   cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+ _ACEOF
+@@ -21097,6 +21099,7 @@
+ fi
+ rm -f conftest.err conftest.$ac_objext \
+       conftest$ac_exeext conftest.$ac_ext
++      LIBS=$ac_check_lib_save_LIBS
+ fi
+ echo "$as_me:$LINENO: result: `eval echo '${'$as_ac_var'}'`" >&5
+ echo "${ECHO_T}`eval echo '${'$as_ac_var'}'`" >&6
+@@ -21104,6 +21107,7 @@
+   cat >>confdefs.h <<_ACEOF
+ #define `echo "HAVE_$ac_func" | $as_tr_cpp` 1
+ _ACEOF
++LIBS="-lintl $LIBS"
+ 
+ fi
+ done

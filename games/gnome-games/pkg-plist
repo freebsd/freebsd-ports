@@ -14,63 +14,12 @@ bin/iagno
 bin/mahjongg
 bin/same-gnome
 bin/sol
-@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/aisleriot.schemas > /dev/null || /usr/bin/true
-etc/gconf/schemas/aisleriot.schemas
-@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/aisleriot.schemas > /dev/null || /usr/bin/true
-@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/blackjack.schemas > /dev/null || /usr/bin/true
-etc/gconf/schemas/blackjack.schemas
-@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/blackjack.schemas > /dev/null || /usr/bin/true
-@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/gataxx.schemas > /dev/null || /usr/bin/true
-etc/gconf/schemas/gataxx.schemas
-@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/gataxx.schemas > /dev/null || /usr/bin/true
-@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/glines.schemas > /dev/null || /usr/bin/true
-etc/gconf/schemas/glines.schemas
-@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/glines.schemas > /dev/null || /usr/bin/true
-@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/gnect.schemas > /dev/null || /usr/bin/true
-etc/gconf/schemas/gnect.schemas
-@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/gnect.schemas > /dev/null || /usr/bin/true
-@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/gnibbles.schemas > /dev/null || /usr/bin/true
-etc/gconf/schemas/gnibbles.schemas
-@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/gnibbles.schemas > /dev/null || /usr/bin/true
-@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/gnobots2.schemas > /dev/null || /usr/bin/true
-etc/gconf/schemas/gnobots2.schemas
-@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/gnobots2.schemas > /dev/null || /usr/bin/true
-@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/gnome-stones.schemas > /dev/null || /usr/bin/true
-etc/gconf/schemas/gnome-stones.schemas
-@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/gnome-stones.schemas > /dev/null || /usr/bin/true
-@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/gnometris.schemas > /dev/null || /usr/bin/true
-etc/gconf/schemas/gnometris.schemas
-@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/gnometris.schemas > /dev/null || /usr/bin/true
-@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/gnomine.schemas > /dev/null || /usr/bin/true
-etc/gconf/schemas/gnomine.schemas
-@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/gnomine.schemas > /dev/null || /usr/bin/true
-@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/gnotravex.schemas > /dev/null || /usr/bin/true
-etc/gconf/schemas/gnotravex.schemas
-@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/gnotravex.schemas > /dev/null || /usr/bin/true
-@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/gtali.schemas > /dev/null || /usr/bin/true
-etc/gconf/schemas/gtali.schemas
-@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/gtali.schemas > /dev/null || /usr/bin/true
-@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/iagno.schemas > /dev/null || /usr/bin/true
-etc/gconf/schemas/iagno.schemas
-@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/iagno.schemas > /dev/null || /usr/bin/true
-@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/mahjongg.schemas > /dev/null || /usr/bin/true
-etc/gconf/schemas/mahjongg.schemas
-@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/mahjongg.schemas > /dev/null || /usr/bin/true
-@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/same-gnome.schemas > /dev/null || /usr/bin/true
-etc/gconf/schemas/same-gnome.schemas
-@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/same-gnome.schemas > /dev/null || /usr/bin/true
-etc/sound/events/gataxx.soundlist
 etc/sound/events/gnect.soundlist
 etc/sound/events/gnibbles.soundlist
 etc/sound/events/gnobots2.soundlist
 etc/sound/events/iagno.soundlist
-include/gdkcardimage/card-style-file.h
-include/gdkcardimage/gdk-card-image.h
 lib/gnome-stones/objects/libgnome-stones.so
 lib/gnome-stones/objects/libgnomekoban.so
-lib/libgdkcardimage.a
-lib/libgdkcardimage.so
-lib/libgdkcardimage.so.1
 share/gnome/applications/blackjack.desktop
 share/gnome/applications/freecell.desktop
 share/gnome/applications/gataxx.desktop
@@ -88,6 +37,7 @@ share/gnome/applications/iagno.desktop
 share/gnome/applications/mahjongg.desktop
 share/gnome/applications/same-gnome.desktop
 share/gnome/applications/sol.desktop
+@exec update-desktop-database > /dev/null || /usr/bin/true
 share/gnome/blackjack/Ameristar.rules
 share/gnome/blackjack/Atlantic_City.rules
 share/gnome/blackjack/Vegas_Downtown.rules
@@ -156,6 +106,7 @@ share/gnome/blackjack/Vegas_Strip.rules
 @unexec [ -s %D/share/gnome/games/mahjongg.easy.scores ] || rm -f %D/share/gnome/games/mahjongg.easy.scores
 @unexec [ -s %D/share/gnome/games/mahjongg.pyramid.scores ] || rm -f %D/share/gnome/games/mahjongg.pyramid.scores
 @unexec [ -s %D/share/gnome/games/mahjongg.tictactoe.scores ] || rm -f %D/share/gnome/games/mahjongg.tictactoe.scores
+@unexec [ -s %D/share/gnome/games/mahjongg.ziggurat.scores ] || rm -f %D/share/gnome/games/mahjongg.ziggurat.scores
 @unexec [ -s %D/share/gnome/games/same-gnome.scores ] || rm -f %D/share/gnome/games/same-gnome.scores
 share/gnome/gnect/white_ob.cn4
 share/gnome/gnibbles/level001.gnl
@@ -254,6 +205,8 @@ share/gnome/help/aisleriot/C/scuffle.xml
 share/gnome/help/aisleriot/C/seahaven.xml
 share/gnome/help/aisleriot/C/sir_tommy.xml
 share/gnome/help/aisleriot/C/spider.xml
+share/gnome/help/aisleriot/C/spider_one_suit.xml
+share/gnome/help/aisleriot/C/spider_two_suit.xml
 share/gnome/help/aisleriot/C/spiderette.xml
 share/gnome/help/aisleriot/C/straight_up.xml
 share/gnome/help/aisleriot/C/streets_and_alleys.xml
@@ -289,7 +242,6 @@ share/gnome/help/gnect/C/figures/tileset.png
 share/gnome/help/gnect/C/gnect.xml
 share/gnome/help/gnect/C/legal.xml
 share/gnome/help/gnibbles/C/figures/game.png
-share/gnome/help/gnibbles/C/figures/graphics.png
 share/gnome/help/gnibbles/C/figures/intro.png
 share/gnome/help/gnibbles/C/figures/playing.png
 share/gnome/help/gnibbles/C/figures/worm_op.png
@@ -404,53 +356,16 @@ share/gnome/omf/gnome-games/same-gnome-C.omf
 @exec scrollkeeper-install -q %D/share/gnome/omf/gnome-games/same-gnome-C.omf 2>/dev/null || /usr/bin/true
 share/gnome/pixmaps/blackjack/baize.png
 share/gnome/pixmaps/blackjack/blackjack-splash.png
-share/gnome/pixmaps/blackjack/chip-1.png
-share/gnome/pixmaps/blackjack/chip-100.png
-share/gnome/pixmaps/blackjack/chip-25.png
-share/gnome/pixmaps/blackjack/chip-5.png
-share/gnome/pixmaps/cards/backs/antique-red.png
-share/gnome/pixmaps/cards/backs/beige.png
-share/gnome/pixmaps/cards/backs/dondorf-flower.png
-share/gnome/pixmaps/cards/backs/face.png
-share/gnome/pixmaps/cards/backs/grey.png
-share/gnome/pixmaps/cards/backs/rods.png
-share/gnome/pixmaps/cards/backs/tux.png
+share/gnome/pixmaps/blackjack/chip-1.svg
+share/gnome/pixmaps/blackjack/chip-100.svg
+share/gnome/pixmaps/blackjack/chip-25.svg
+share/gnome/pixmaps/blackjack/chip-5.svg
 share/gnome/pixmaps/cards/baize.png
-share/gnome/pixmaps/cards/card-styles.xml
-share/gnome/pixmaps/cards/honors/bonded.png
-share/gnome/pixmaps/cards/honors/dondorf.png
-share/gnome/pixmaps/cards/honors/xpat.png
-share/gnome/pixmaps/cards/jokers/gnome.png
-share/gnome/pixmaps/cards/ranks/bold-09x14.png
-share/gnome/pixmaps/cards/ranks/fine-07x12.png
-share/gnome/pixmaps/cards/slots/hand.png
-share/gnome/pixmaps/cards/slots/plain.png
-share/gnome/pixmaps/cards/slots/white-outline.png
-share/gnome/pixmaps/cards/suits_large/knuth-09x10.png
-share/gnome/pixmaps/cards/suits_large/knuth-15x19.png
-share/gnome/pixmaps/cards/suits_large/knuth-18x21.png
-share/gnome/pixmaps/cards/suits_large/knuth-21x25.png
-share/gnome/pixmaps/cards/suits_large/xpat-11x11.png
-share/gnome/pixmaps/cards/suits_large/xpat-15x15.png
-share/gnome/pixmaps/cards/suits_large/xpat-21x21.png
-share/gnome/pixmaps/cards/suits_large/xpat-41x41.png
-share/gnome/pixmaps/cards/suits_medium/knuth-09x10.png
-share/gnome/pixmaps/cards/suits_medium/knuth-15x19.png
-share/gnome/pixmaps/cards/suits_medium/knuth-18x21.png
-share/gnome/pixmaps/cards/suits_medium/knuth-21x25.png
-share/gnome/pixmaps/cards/suits_medium/xpat-11x11.png
-share/gnome/pixmaps/cards/suits_medium/xpat-15x15.png
-share/gnome/pixmaps/cards/suits_medium/xpat-21x21.png
-share/gnome/pixmaps/cards/suits_small/knuth-09x10.png
-share/gnome/pixmaps/cards/suits_small/xpat-11x11.png
-share/gnome/pixmaps/cards/suits_small/xpat-15x15.png
+share/gnome/pixmaps/cards/slot.png
+share/gnome/pixmaps/cards/slots/white-outline.svg
 share/gnome/pixmaps/gataxx.png
 share/gnome/pixmaps/glines.png
 share/gnome/pixmaps/glines/balls.svg
-share/gnome/pixmaps/glines/classic.png
-share/gnome/pixmaps/glines/dots.png
-share/gnome/pixmaps/glines/gumball.png
-share/gnome/pixmaps/glines/pulse.png
 share/gnome/pixmaps/glines/shapes.svg
 share/gnome/pixmaps/gnect-icon.png
 share/gnome/pixmaps/gnect/bg_grotty.jpg
@@ -461,26 +376,46 @@ share/gnome/pixmaps/gnect/tileset_50x50_classic.png
 share/gnome/pixmaps/gnect/tileset_50x50_glassy.png
 share/gnome/pixmaps/gnect/tileset_50x50_hcontrast.png
 share/gnome/pixmaps/gnect/tileset_50x50_square.png
+share/gnome/pixmaps/gnibbles/blank.svg
+share/gnome/pixmaps/gnibbles/bonus1.svg
+share/gnome/pixmaps/gnibbles/bonus2.svg
+share/gnome/pixmaps/gnibbles/bonus3.svg
+share/gnome/pixmaps/gnibbles/bonus4.svg
+share/gnome/pixmaps/gnibbles/bonus5.svg
+share/gnome/pixmaps/gnibbles/diamond.svg
 share/gnome/pixmaps/gnibbles/gnibbles-logo.png
 share/gnome/pixmaps/gnibbles/gnibbles.png
+share/gnome/pixmaps/gnibbles/life.svg
+share/gnome/pixmaps/gnibbles/questionmark.svg
+share/gnome/pixmaps/gnibbles/snake-blue.svg
+share/gnome/pixmaps/gnibbles/snake-cyan.svg
+share/gnome/pixmaps/gnibbles/snake-green.svg
+share/gnome/pixmaps/gnibbles/snake-grey.svg
+share/gnome/pixmaps/gnibbles/snake-magenta.svg
+share/gnome/pixmaps/gnibbles/snake-red.svg
+share/gnome/pixmaps/gnibbles/snake-yellow.svg
+share/gnome/pixmaps/gnibbles/wall-corner-bottom-left.svg
+share/gnome/pixmaps/gnibbles/wall-corner-bottom-right.svg
+share/gnome/pixmaps/gnibbles/wall-corner-top-left.svg
+share/gnome/pixmaps/gnibbles/wall-corner-top-right.svg
+share/gnome/pixmaps/gnibbles/wall-cross.svg
+share/gnome/pixmaps/gnibbles/wall-empty.svg
+share/gnome/pixmaps/gnibbles/wall-straight-side.svg
+share/gnome/pixmaps/gnibbles/wall-straight-up.svg
+share/gnome/pixmaps/gnibbles/wall-tee-down.svg
+share/gnome/pixmaps/gnibbles/wall-tee-left.svg
+share/gnome/pixmaps/gnibbles/wall-tee-right.svg
+share/gnome/pixmaps/gnibbles/wall-tee-up.svg
 share/gnome/pixmaps/gnobots2/aieee.png
-share/gnome/pixmaps/gnobots2/cows.png
-share/gnome/pixmaps/gnobots2/eggs.png
 share/gnome/pixmaps/gnobots2/gnomes.png
-share/gnome/pixmaps/gnobots2/mice.png
 share/gnome/pixmaps/gnobots2/robots.png
 share/gnome/pixmaps/gnobots2/splat.png
-share/gnome/pixmaps/gnobots2/windows.png
 share/gnome/pixmaps/gnobots2/yahoo.png
+share/gnome/pixmaps/gnome-games-common/cards/bonded.png
+share/gnome/pixmaps/gnome-games-common/cards/paris.svg
 share/gnome/pixmaps/gnome-aisleriot.png
 share/gnome/pixmaps/gnome-blackjack.png
 share/gnome/pixmaps/gnome-cardgame.png
-share/gnome/pixmaps/gnome-die1.png
-share/gnome/pixmaps/gnome-die2.png
-share/gnome/pixmaps/gnome-die3.png
-share/gnome/pixmaps/gnome-die4.png
-share/gnome/pixmaps/gnome-die5.png
-share/gnome/pixmaps/gnome-die6.png
 share/gnome/pixmaps/gnome-gnobots2.png
 share/gnome/pixmaps/gnome-gnomine.png
 share/gnome/pixmaps/gnome-gnotravex.png
@@ -508,58 +443,34 @@ share/gnome/pixmaps/gnome-stones/frame.png
 share/gnome/pixmaps/gnome-stones/gnome.png
 share/gnome/pixmaps/gnome-stones/title-tile.png
 share/gnome/pixmaps/gnome-stones/wall.png
-share/gnome/pixmaps/gnometris/5blocks-tig.png
-share/gnome/pixmaps/gnometris/5blocks-tim.png
-share/gnome/pixmaps/gnometris/5blocks.png
 share/gnome/pixmaps/gnometris/7blocks-gw.png
 share/gnome/pixmaps/gnometris/7blocks-tig.png
-share/gnome/pixmaps/gnometris/7blocks.png
-share/gnome/pixmaps/gnometris/7stones-gn.png
-share/gnome/pixmaps/gnometris/7stones2-gn.png
-share/gnome/pixmaps/gnometris/bg/dog-bg.jpg
-share/gnome/pixmaps/gnometris/bg/fishy-bg.jpg
-share/gnome/pixmaps/gnometris/bg/geschier-bg.jpg
-share/gnome/pixmaps/gnometris/bg/gitter-bg.jpg
-share/gnome/pixmaps/gnometris/bg/gnome2-foot.png
-share/gnome/pixmaps/gnometris/bg/gnometris-bg.jpg
-share/gnome/pixmaps/gnometris/bg/greyprint-bg.jpg
-share/gnome/pixmaps/gnometris/bg/leaves-bg.jpg
-share/gnome/pixmaps/gnometris/bg/rhinoceros-bg.jpg
-share/gnome/pixmaps/gnometris/bg/scrcow-bg.jpg
-share/gnome/pixmaps/gnometris/bg/sweet-bg.jpg
-share/gnome/pixmaps/gnometris/bg/trees-bg.jpg
-share/gnome/pixmaps/gnometris/bg/vortex-bg.jpg
-share/gnome/pixmaps/gnometris/bg/watery-bg.jpg
-share/gnome/pixmaps/gnometris/bg/weirdo-bg.jpg
-share/gnome/pixmaps/gnomine/face-cool.xpm
-share/gnome/pixmaps/gnomine/face-sad.xpm
-share/gnome/pixmaps/gnomine/face-smile.xpm
-share/gnome/pixmaps/gnomine/face-win.xpm
-share/gnome/pixmaps/gnomine/face-worried.xpm
+share/gnome/pixmaps/gnomine/face-cool.png
+share/gnome/pixmaps/gnomine/face-sad.png
+share/gnome/pixmaps/gnomine/face-smile.png
+share/gnome/pixmaps/gnomine/face-win.png
+share/gnome/pixmaps/gnomine/face-worried.png
 share/gnome/pixmaps/gnomine/flag-question.svg
 share/gnome/pixmaps/gnomine/flag.svg
 share/gnome/pixmaps/gnomine/mine.svg
 share/gnome/pixmaps/gnotski-icon.png
 share/gnome/pixmaps/gnotski.png
+share/gnome/pixmaps/gtali/gnome-dice-1.svg
+share/gnome/pixmaps/gtali/gnome-dice-2.svg
+share/gnome/pixmaps/gtali/gnome-dice-3.svg
+share/gnome/pixmaps/gtali/gnome-dice-4.svg
+share/gnome/pixmaps/gtali/gnome-dice-5.svg
+share/gnome/pixmaps/gtali/gnome-dice-6.svg
+share/gnome/pixmaps/gtali/gnome-dice-none.svg
 share/gnome/pixmaps/iagno.png
-share/gnome/pixmaps/iagno/blend.png
 share/gnome/pixmaps/iagno/classic.png
-share/gnome/pixmaps/iagno/flipblend.png
-share/gnome/pixmaps/iagno/metal.png
-share/gnome/pixmaps/iagno/metal2.png
-share/gnome/pixmaps/iagno/shrink.png
-share/gnome/pixmaps/iagno/sunmoon.png
 share/gnome/pixmaps/iagno/woodtrim.png
-share/gnome/pixmaps/mahjongg/default.png
-share/gnome/pixmaps/mahjongg/maya.png
 share/gnome/pixmaps/mahjongg/postmodern.svg
 share/gnome/pixmaps/mahjongg/smooth.png
-share/gnome/pixmaps/same-gnome/blink-sync.png
-share/gnome/pixmaps/same-gnome/glass.png
-share/gnome/pixmaps/same-gnome/marbles.png
+share/gnome/pixmaps/rteleport.png
 share/gnome/pixmaps/same-gnome/planets.png
-share/gnome/pixmaps/same-gnome/rotate.png
 share/gnome/pixmaps/same-gnome/stones.png
+share/gnome/pixmaps/teleport.png
 share/gnome/sol-games/agnes.scm
 share/gnome/sol-games/auld_lang_syne.scm
 share/gnome/sol-games/bakers_dozen.scm
@@ -615,6 +526,8 @@ share/gnome/sol-games/seahaven.scm
 share/gnome/sol-games/sir_tommy.scm
 share/gnome/sol-games/sol.scm
 share/gnome/sol-games/spider.scm
+share/gnome/sol-games/spider_one_suit.scm
+share/gnome/sol-games/spider_two_suit.scm
 share/gnome/sol-games/spiderette.scm
 share/gnome/sol-games/straight_up.scm
 share/gnome/sol-games/streets_and_alleys.scm
@@ -631,8 +544,6 @@ share/gnome/sol-games/will_o_the_wisp.scm
 share/gnome/sol-games/yield.scm
 share/gnome/sol-games/yukon.scm
 share/gnome/sol-games/zebra.scm
-share/gnome/sounds/gataxx/flip-piece.wav
-share/gnome/sounds/gataxx/gameover.wav
 share/gnome/sounds/gnibbles/appear.wav
 share/gnome/sounds/gnibbles/bonus.wav
 share/gnome/sounds/gnibbles/crash.wav
@@ -648,13 +559,14 @@ share/gnome/sounds/gnobots2/splat.wav
 share/gnome/sounds/gnobots2/teleport.wav
 share/gnome/sounds/gnobots2/victory.wav
 share/gnome/sounds/gnobots2/yahoo.wav
-share/gnome/sounds/gnome-stones/born.wav
-share/gnome/sounds/gnome-stones/boulder.wav
-share/gnome/sounds/gnome-stones/dig.wav
-share/gnome/sounds/gnome-stones/door_open.wav
-share/gnome/sounds/gnome-stones/explosion.wav
-share/gnome/sounds/gnome-stones/get_diamond.wav
-share/gnome/sounds/gnome-stones/title.wav
+share/gnome/sounds/gnometris/gameover.wav
+share/gnome/sounds/gnometris/gnometris.wav
+share/gnome/sounds/gnometris/land.wav
+share/gnome/sounds/gnometris/lines1.wav
+share/gnome/sounds/gnometris/lines2.wav
+share/gnome/sounds/gnometris/lines3.wav
+share/gnome/sounds/gnometris/slide.wav
+share/gnome/sounds/gnometris/turn.wav
 share/gnome/sounds/iagno/flip-piece.wav
 share/gnome/sounds/iagno/gameover.wav
 share/locale/am/LC_MESSAGES/gnome-games.mo
@@ -685,6 +597,7 @@ share/locale/hi/LC_MESSAGES/gnome-games.mo
 share/locale/hr/LC_MESSAGES/gnome-games.mo
 share/locale/hu/LC_MESSAGES/gnome-games.mo
 share/locale/id/LC_MESSAGES/gnome-games.mo
+share/locale/is/LC_MESSAGES/gnome-games.mo
 share/locale/it/LC_MESSAGES/gnome-games.mo
 share/locale/ja/LC_MESSAGES/gnome-games.mo
 share/locale/ko/LC_MESSAGES/gnome-games.mo
@@ -694,6 +607,7 @@ share/locale/mk/LC_MESSAGES/gnome-games.mo
 share/locale/ml/LC_MESSAGES/gnome-games.mo
 share/locale/mn/LC_MESSAGES/gnome-games.mo
 share/locale/ms/LC_MESSAGES/gnome-games.mo
+share/locale/nb/LC_MESSAGES/gnome-games.mo
 share/locale/nl/LC_MESSAGES/gnome-games.mo
 share/locale/nn/LC_MESSAGES/gnome-games.mo
 share/locale/no/LC_MESSAGES/gnome-games.mo
@@ -709,6 +623,7 @@ share/locale/sq/LC_MESSAGES/gnome-games.mo
 share/locale/sr/LC_MESSAGES/gnome-games.mo
 share/locale/sr@Latn/LC_MESSAGES/gnome-games.mo
 share/locale/sv/LC_MESSAGES/gnome-games.mo
+share/locale/ta/LC_MESSAGES/gnome-games.mo
 share/locale/tr/LC_MESSAGES/gnome-games.mo
 share/locale/uk/LC_MESSAGES/gnome-games.mo
 share/locale/vi/LC_MESSAGES/gnome-games.mo
@@ -716,31 +631,25 @@ share/locale/wa/LC_MESSAGES/gnome-games.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-games.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-games.mo
 @dirrm share/gnome/sounds/iagno
-@dirrm share/gnome/sounds/gnome-stones
+@dirrm share/gnome/sounds/gnometris
 @dirrm share/gnome/sounds/gnobots2
 @dirrm share/gnome/sounds/gnibbles
-@dirrm share/gnome/sounds/gataxx
 @dirrm share/gnome/sol-games/glade
 @dirrm share/gnome/sol-games
 @dirrm share/gnome/pixmaps/same-gnome
 @dirrm share/gnome/pixmaps/mahjongg
 @dirrm share/gnome/pixmaps/iagno
+@dirrm share/gnome/pixmaps/gtali
 @dirrm share/gnome/pixmaps/gnomine
-@dirrm share/gnome/pixmaps/gnometris/bg
 @dirrm share/gnome/pixmaps/gnometris
 @dirrm share/gnome/pixmaps/gnome-stones
+@dirrm share/gnome/pixmaps/gnome-games-common/cards
+@dirrm share/gnome/pixmaps/gnome-games-common
 @dirrm share/gnome/pixmaps/gnobots2
 @dirrm share/gnome/pixmaps/gnibbles
 @dirrm share/gnome/pixmaps/gnect
 @dirrm share/gnome/pixmaps/glines
-@dirrm share/gnome/pixmaps/cards/suits_small
-@dirrm share/gnome/pixmaps/cards/suits_medium
-@dirrm share/gnome/pixmaps/cards/suits_large
 @dirrm share/gnome/pixmaps/cards/slots
-@dirrm share/gnome/pixmaps/cards/ranks
-@dirrm share/gnome/pixmaps/cards/jokers
-@dirrm share/gnome/pixmaps/cards/honors
-@dirrm share/gnome/pixmaps/cards/backs
 @dirrm share/gnome/pixmaps/cards
 @dirrm share/gnome/pixmaps/blackjack
 @dirrm share/gnome/omf/gnome-games
@@ -822,3 +731,4 @@ share/locale/zh_TW/LC_MESSAGES/gnome-games.mo
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-games/iagno-C.omf 2>/dev/null || /usr/bin/true
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-games/mahjongg-C.omf 2>/dev/null || /usr/bin/true
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-games/same-gnome-C.omf 2>/dev/null || /usr/bin/true
+@unexec update-desktop-database > /dev/null || /usr/bin/true

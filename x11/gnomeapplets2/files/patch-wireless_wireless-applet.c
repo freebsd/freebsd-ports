@@ -1,6 +1,6 @@
---- wireless/wireless-applet.c.orig	Tue Apr 13 06:39:46 2004
-+++ wireless/wireless-applet.c	Tue Jun 15 01:22:59 2004
-@@ -30,6 +30,15 @@
+--- wireless/wireless-applet.c.orig	Mon Aug 16 04:45:55 2004
++++ wireless/wireless-applet.c	Mon Sep 20 17:17:27 2004
+@@ -30,12 +30,25 @@
  #include <math.h>
  #include <dirent.h>
  
@@ -16,9 +16,7 @@
  #include <gnome.h>
  #include <panel-applet.h>
  #include <panel-applet-gconf.h>
-@@ -37,7 +46,11 @@
- 
- #include <egg-screen-help.h>
+ #include <glade/glade.h>
  
 +#ifdef __FreeBSD__
 +#define CFG_DEVICE "an0"
@@ -28,7 +26,7 @@
  #define CFG_UPDATE_INTERVAL 2
  
  typedef enum {
-@@ -94,6 +107,12 @@
+@@ -92,6 +105,12 @@
  		WirelessApplet *applet);
  static void wireless_applet_about_cb (BonoboUIComponent *uic,
  		WirelessApplet *applet);
@@ -41,8 +39,8 @@
  static void prefs_response_cb (GtkDialog *dialog, gint response, gpointer data);
  
  static const BonoboUIVerb wireless_menu_verbs [] = {
-@@ -157,9 +176,11 @@
- 	g_free (tmp);
+@@ -159,9 +178,11 @@
+ 	g_free (tltp);
  
  	/* Update the image */
 +#ifndef __FreeBSD__
@@ -54,7 +52,7 @@
  		state = PIX_BROKEN;
  	else if (percent == 0)
  		state = PIX_NO_LINK;
-@@ -190,6 +211,7 @@
+@@ -192,6 +213,7 @@
  	int percent;
  
  	/* Calculate the percentage based on the link quality */
@@ -62,7 +60,7 @@
  	if (level < 0) {
  		percent = -1;
  	} else {
-@@ -200,6 +222,9 @@
+@@ -202,6 +224,9 @@
  			percent = CLAMP (percent, 0, 100);
  		}
  	}
@@ -72,7 +70,7 @@
  
  	wireless_applet_draw (applet, percent);
  }
-@@ -242,14 +267,147 @@
+@@ -244,14 +269,179 @@
  	}
  }
  
@@ -129,7 +127,39 @@
 +
 +	signal_strength = (long int) (wreq.wi_val[1]);
 +
-+	memcpy(level, &signal_strength, sizeof(level));
++#ifdef WI_RID_READ_APS
++	if (signal_strength <= 0) {
++		/* we fail to get signal strength by usual means, try another way */
++		static time_t last_scan;
++		static long int cached;
++		time_t now = time(NULL);
++		
++		/* XXX: this is long operation, and we will scan station not often then one in 5 secs */
++		if (now > last_scan + 5) {
++			struct wi_apinfo *w;
++			int nstations;
++			
++			bzero((char *)&wreq, sizeof(wreq));
++			wreq.wi_len = WI_MAX_DATALEN;
++			wreq.wi_type = WI_RID_READ_APS;
++
++			(void)wi_getval(applet, device, &wreq);
++		
++			nstations = *(int *)wreq.wi_val;
++			if (nstations > 0) {
++				w = (struct wi_apinfo *)(((char *)&wreq.wi_val) + sizeof(int));
++				signal_strength = (long int)w->signal;
++			}
++			
++			cached = signal_strength;
++			last_scan = now;
++		} else {
++			signal_strength = cached;
++		}
++	}
++#endif
++
++	memcpy(level, &signal_strength, sizeof( *level ));
 +
 +	return;
 +}
@@ -222,7 +252,7 @@
  	gboolean found = FALSE;
  
  	/* resest list of available wireless devices */
-@@ -257,8 +415,35 @@
+@@ -259,8 +449,37 @@
  	g_list_free (applet->devices);
  	applet->devices = NULL;
  
@@ -245,7 +275,9 @@
 +						found = TRUE;
 +				}
 +		}
-+		else if (g_strncasecmp (device, "wi", 2)==0 || g_strncasecmp (device, "ath", 3)==0) {
++		else if (g_strncasecmp (device, "wi",   2)==0 || 
++			 g_strncasecmp (device, "ath",  3)==0 ||
++			 g_strncasecmp (device, "ndis", 4)==0) {
 +				applet->devices = g_list_prepend (applet->devices, g_strdup (device));
 +				if (g_strcasecmp (applet->device, device)==0) {
 +						get_wi_data (applet, device, &level);
@@ -258,7 +290,7 @@
  		char *ptr;
  
  		fgets (line, 256, applet->file);
-@@ -292,6 +477,7 @@
+@@ -294,6 +513,7 @@
  				found = TRUE;
  			}
  		}
@@ -266,7 +298,7 @@
  	} while (1);
  
  	if (g_list_length (applet->devices)==1) {
-@@ -303,17 +489,23 @@
+@@ -305,17 +525,23 @@
  	}
  
  	/* rewind the /proc/net/wireless file */
@@ -290,23 +322,20 @@
  
  	wireless_applet_read_device_state (applet);
  
-@@ -360,6 +552,7 @@
+@@ -362,10 +588,12 @@
  static void
  start_file_read (WirelessApplet *applet)
  {
 +#ifndef __FreeBSD__
  	applet->file = fopen ("/proc/net/wireless", "rt");
  	if (applet->file == NULL) {
- 		gtk_tooltips_set_tip (applet->tips,
-@@ -368,6 +561,7 @@
- 				NULL);
  		show_error_dialog (_("There doesn't seem to be any wireless devices configured on your system.\nPlease verify your configuration if you think this is incorrect."));
  	}
 +#endif
  }
  
  static void
-@@ -670,8 +864,10 @@
+@@ -668,8 +896,10 @@
  		applet->prefs = NULL;
  	}
  

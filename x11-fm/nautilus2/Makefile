@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	nautilus2
-PORTVERSION=	2.6.3
-PORTREVISION=	2
+PORTVERSION=	2.8.2
 CATEGORIES=	x11-fm gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME:S/2$//}/2.6
+MASTER_SITE_SUBDIR=	sources/${PORTNAME:S/2$//}/2.8
 DISTNAME=	nautilus-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
@@ -24,7 +23,7 @@ USE_GNOME=	gnomeprefix gnomehack gnomehier intlhack gnomedesktop eel2 \
 		librsvg2
 GNOME_DESKTOP_VERSION=2
 INSTALLS_SHLIB=	yes
-GNU_CONFIGURE=	yes
+USE_LIBTOOL_VER=15
 USE_REINPLACE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="${PTHREAD_LIBS} -L${LOCALBASE}/lib -L${X11BASE}/lib -liconv" \
@@ -34,8 +33,10 @@ CONFIGURE_ARGS=	--with-freetype2-lib-place=${LOCALBASE}/lib \
 		--enable-static
 MAKE_ENV=	G_CHARSET_ALIAS="${LOCALBASE}/libdata/charset.alias"
 
+GCONF_SCHEMAS=	apps_nautilus_preferences.schemas
+
 post-install:
 	${MKDIR} ${PREFIX}/lib/nautilus/extensions-1.0
-	@${CHMOD} u+w ${PREFIX}/share/gnome/nautilus/*.desktop
+#	@${CHMOD} u+w ${PREFIX}/share/gnome/nautilus/*.desktop
 
 .include <bsd.port.mk>

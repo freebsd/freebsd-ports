@@ -1,11 +1,11 @@
---- docs/reference/libgail-util/Makefile.in.orig	Wed Feb 25 13:45:04 2004
-+++ docs/reference/libgail-util/Makefile.in	Wed Feb 25 13:55:28 2004
-@@ -476,8 +476,6 @@
+--- docs/reference/libgail-util/Makefile.in.orig	Mon Sep 13 12:27:31 2004
++++ docs/reference/libgail-util/Makefile.in	Mon Sep 13 12:28:21 2004
+@@ -474,8 +474,6 @@
  	    echo '-- Installing '$$i ; \
  	    $(INSTALL_DATA) $$i $(DESTDIR)$(TARGET_DIR); \
  	  done; \
 -	  echo '-- Installing $(srcdir)/html/index.sgml' ; \
 -	  $(INSTALL_DATA) $(srcdir)/html/index.sgml $(DESTDIR)$(TARGET_DIR) || :; \
- 	fi
+ 	fi)
  
  uninstall-local:

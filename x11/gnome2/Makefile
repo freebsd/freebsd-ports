@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnome2
-PORTVERSION=	2.6.2
+PORTVERSION=	2.8.1
 CATEGORIES=	x11 gnome
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -47,7 +47,13 @@ RUN_DEPENDS=	${X11BASE}/libexec/cdplayer_applet2:${PORTSDIR}/x11/gnomeapplets2 \
 		${X11BASE}/lib/X11/fonts/bitstream-vera/Vera.ttf:${PORTSDIR}/x11-fonts/bitstream-vera \
 		gnopernicus:${PORTSDIR}/accessibility/gnopernicus \
 		${X11BASE}/libexec/gnome-netstatus-applet:${PORTSDIR}/net/gnomenetstatus \
-		dasher:${PORTSDIR}/accessibility/dasher
+		dasher:${PORTSDIR}/accessibility/dasher \
+		evolution-2.0:${PORTSDIR}/mail/evolution \
+		${X11BASE}/libexec/evolution-webcal:${PORTSDIR}/www/evolution-webcal \
+		network-admin:${PORTSDIR}/sysutils/gnomesystemtools \
+		gnome-nettool:${PORTSDIR}/net/gnomenettool \
+		vino-session:${PORTSDIR}/net/vino \
+		ximian-connector-setup-2.0:${PORTSDIR}/mail/ximian-connector
 
 NO_BUILD=	yes
 

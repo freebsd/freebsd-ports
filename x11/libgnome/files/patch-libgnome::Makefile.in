@@ -1,6 +1,6 @@
---- libgnome/Makefile.in.orig	Wed Feb 25 01:17:58 2004
-+++ libgnome/Makefile.in	Wed Feb 25 01:20:59 2004
-@@ -159,6 +159,9 @@
+--- libgnome/Makefile.in.orig	Mon May 31 16:33:14 2004
++++ libgnome/Makefile.in	Mon May 31 16:33:45 2004
+@@ -211,6 +211,9 @@
  libgnomeincludedir = $(includedir)/libgnome-2.0/libgnome
  
  INCLUDES = \

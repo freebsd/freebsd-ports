@@ -1,0 +1,27 @@
+--- moz-plugin/Makefile.in.orig	Fri Sep  3 01:07:24 2004
++++ moz-plugin/Makefile.in	Fri Sep  3 01:08:00 2004
+@@ -282,15 +282,15 @@
+ $(ACLOCAL_M4): @MAINTAINER_MODE_TRUE@ $(am__aclocal_m4_deps)
+ 	cd $(top_builddir) && $(MAKE) $(AM_MAKEFLAGS) am--refresh
+ install-pluginLTLIBRARIES: $(plugin_LTLIBRARIES)
+-	@$(NORMAL_INSTALL)
+-	test -z "$(plugindir)" || $(mkdir_p) "$(DESTDIR)$(plugindir)"
+-	@list='$(plugin_LTLIBRARIES)'; for p in $$list; do \
+-	  if test -f $$p; then \
+-	    f="`echo $$p | sed -e 's|^.*/||'`"; \
+-	    echo " $(LIBTOOL) --mode=install $(pluginLTLIBRARIES_INSTALL) $(INSTALL_STRIP_FLAG) '$$p' '$(DESTDIR)$(plugindir)/$$f'"; \
+-	    $(LIBTOOL) --mode=install $(pluginLTLIBRARIES_INSTALL) $(INSTALL_STRIP_FLAG) "$$p" "$(DESTDIR)$(plugindir)/$$f"; \
+-	  else :; fi; \
+-	done
++#	@$(NORMAL_INSTALL)
++#	test -z "$(plugindir)" || $(mkdir_p) "$(DESTDIR)$(plugindir)"
++#	@list='$(plugin_LTLIBRARIES)'; for p in $$list; do \
++#	  if test -f $$p; then \
++#	    f="`echo $$p | sed -e 's|^.*/||'`"; \
++#	    echo " $(LIBTOOL) --mode=install $(pluginLTLIBRARIES_INSTALL) $(INSTALL_STRIP_FLAG) '$$p' '$(DESTDIR)$(plugindir)/$$f'"; \
++#	    $(LIBTOOL) --mode=install $(pluginLTLIBRARIES_INSTALL) $(INSTALL_STRIP_FLAG) "$$p" "$(DESTDIR)$(plugindir)/$$f"; \
++#	  else :; fi; \
++#	done
+ 
+ uninstall-pluginLTLIBRARIES:
+ 	@$(NORMAL_UNINSTALL)

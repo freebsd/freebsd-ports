@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	gnomegames2
-PORTVERSION=	2.6.2
-PORTREVISION=	2
+PORTVERSION=	2.8.1
 CATEGORIES=	games gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/gnome-games/2.6
+MASTER_SITE_SUBDIR=	sources/gnome-games/2.8
 DISTNAME=	gnome-games-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
@@ -23,12 +22,17 @@ USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
-USE_GNOME=	gnomeprefix gnomehack gnomehier intlhack lthack libgnomeui \
-		librsvg2
-USE_INC_LIBTOOL_VER=13
-INSTALLS_SHLIB=	yes
+USE_GNOME=	gnomeprefix gnomehack gnomehier intlhack libgnomeui \
+		librsvg2 desktopfileutils
+USE_LIBTOOL_VER=15
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+
+GCONF_SCHEMAS=	aisleriot.schemas blackjack.schemas gataxx.schemas \
+		glines.schemas gnect.schemas gnibbles.schemas gnobots2.schemas \
+		gnome-stones.schemas gnometris.schemas gnomine.schemas \
+		gnotravex.schemas gtali.schemas iagno.schemas mahjongg.schemas \
+		same-gnome.schemas
 
 CONFLICTS=	sol-1.0.*
 

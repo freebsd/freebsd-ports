@@ -1,3 +1,2 @@
-Gnome-mag is an accessibility tool that magnifies the screen for easier
-reading.  This package includes the magnifier Bonobo service as well as a
-sample implementation.
+Gnome-Mag magnifies the screen for easier reading.  This package includes a
+magnification Bonobo service.

@@ -57,7 +57,7 @@
 -Malay			ms_MY.UTF-8,ms_MY
 -Marathi			mr_IN.UTF-8,mr_IN
 -Mongolian		mn_MN.UTF-8,mn_MN
--Norwegian(bokmal)	no_NO.UTF-8,no_NO
+-Norwegian(bokmal)	nb_NO.UTF-8,nb_NO,no_NO.UTF-8,no_NO
 -Norwegian(nynorsk)	nn_NO.UTF-8,nn_NO
 -Oriya			or_IN.UTF-8,or_IN
 -Panjabi			pa_IN.UTF-8,pa_IN
@@ -120,7 +120,7 @@
 +Japanese               ja_JP.UTF-8,ja_JP.EUC,ja_JP.eucJP
 +Korean                 ko_KR.UTF-8,ko_KR.EUC,ko_KR.eucKR
 +Lithuanian             lt_LT.UTF-8,lt_LT.ISO8859-4,lt_LT.ISO8859-13
-+Norwegian(bokmal)      no_NO.UTF-8,no_NO.ISO8859-1,no_NO.ISO8859-15
++Norwegian(bokmal)      nb_NO.UTF-8,nb_NO.ISO8859-1,nb_NO.ISO8859-15,no_NO.UTF-8,no_NO.ISO8859-1,no_NO.ISO8859-15
 +Polish                 pl_PL.UTF-8,pl_PL.ISO8859-2
 +Portuguese             pt_PT.UTF-8,pt_PT.ISO8859-15,pt_PT.ISO8859-1
 +Portuguese(Brazilian)  pt_PT.UTF-8,pt_BR.ISO8859-1

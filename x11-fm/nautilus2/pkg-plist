@@ -1,15 +1,5 @@
 bin/nautilus
 bin/nautilus-file-management-properties
-etc/X11/serverconfig/.directory
-etc/X11/starthere/.directory
-etc/X11/starthere/applications.desktop
-etc/X11/starthere/preferences.desktop
-etc/X11/starthere/serverconfig.desktop
-etc/X11/starthere/sysconfig.desktop
-etc/X11/sysconfig/.directory
-@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/apps_nautilus_preferences.schemas > /dev/null || /usr/bin/true
-etc/gconf/schemas/apps_nautilus_preferences.schemas
-@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/apps_nautilus_preferences.schemas > /dev/null || /usr/bin/true
 include/libnautilus/libnautilus.h
 include/libnautilus/nautilus-bonobo-ui.h
 include/libnautilus/nautilus-clipboard.h
@@ -54,14 +44,14 @@ libdata/bonobo/servers/Nautilus_View_image_properties.server
 libdata/bonobo/servers/Nautilus_View_notes.server
 libdata/bonobo/servers/Nautilus_View_text.server
 libdata/bonobo/servers/Nautilus_shell.server
-libdata/pkgconfig/libnautilus.pc
 libdata/pkgconfig/libnautilus-extension.pc
+libdata/pkgconfig/libnautilus.pc
 libexec/nautilus-adapter
 libexec/nautilus-text-view
 libexec/nautilus-throbber
-share/gnome/applications/nautilus.desktop
 share/gnome/applications/nautilus-computer.desktop
 share/gnome/applications/nautilus-home.desktop
+share/gnome/applications/nautilus.desktop
 share/gnome/applications/network-scheme.desktop
 share/gnome/control-center-2.0/capplets/nautilus-file-management-properties.desktop
 share/gnome/gnome-2.0/ui/nautilus-clipboard-ui.xml
@@ -113,8 +103,6 @@ share/gnome/nautilus/patterns/snow_ridge.png
 share/gnome/nautilus/patterns/stucco.jpg
 share/gnome/nautilus/patterns/terracotta.png
 share/gnome/nautilus/patterns/wavy_white.png
-share/gnome/nautilus/starthere-link.desktop
-share/gnome/nautilus/starthere.desktop
 share/gnome/nautilus/static_bookmarks.xml
 share/gnome/pixmaps/nautilus/Search.png
 share/gnome/pixmaps/nautilus/audio.png
@@ -153,6 +141,7 @@ share/locale/az/LC_MESSAGES/nautilus.mo
 share/locale/be/LC_MESSAGES/nautilus.mo
 share/locale/bg/LC_MESSAGES/nautilus.mo
 share/locale/bn/LC_MESSAGES/nautilus.mo
+share/locale/bs/LC_MESSAGES/nautilus.mo
 share/locale/ca/LC_MESSAGES/nautilus.mo
 share/locale/cs/LC_MESSAGES/nautilus.mo
 share/locale/cy/LC_MESSAGES/nautilus.mo
@@ -187,6 +176,7 @@ share/locale/mk/LC_MESSAGES/nautilus.mo
 share/locale/ml/LC_MESSAGES/nautilus.mo
 share/locale/mn/LC_MESSAGES/nautilus.mo
 share/locale/ms/LC_MESSAGES/nautilus.mo
+share/locale/nb/LC_MESSAGES/nautilus.mo
 share/locale/ne/LC_MESSAGES/nautilus.mo
 share/locale/nl/LC_MESSAGES/nautilus.mo
 share/locale/nn/LC_MESSAGES/nautilus.mo
@@ -204,6 +194,7 @@ share/locale/sr/LC_MESSAGES/nautilus.mo
 share/locale/sr@Latn/LC_MESSAGES/nautilus.mo
 share/locale/sr@ije/LC_MESSAGES/nautilus.mo
 share/locale/sv/LC_MESSAGES/nautilus.mo
+share/locale/ta/LC_MESSAGES/nautilus.mo
 share/locale/th/LC_MESSAGES/nautilus.mo
 share/locale/tk/LC_MESSAGES/nautilus.mo
 share/locale/tr/LC_MESSAGES/nautilus.mo

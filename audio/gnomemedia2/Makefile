@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	gnomemedia2
-PORTVERSION=	2.6.2
-PORTREVISION=	6
+PORTVERSION=	2.8.0
 CATEGORIES=	audio gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/gnome-media/2.6
+MASTER_SITE_SUBDIR=	sources/gnome-media/2.8
 DISTNAME=	gnome-media-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
@@ -28,6 +27,9 @@ USE_GNOME=	gnomeprefix gnomehack intlhack gnomehier gnomedesktop \
 		gail gstreamerplugins
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+
+GCONF_SCHEMAS=	CDDB-Slave2.schemas gnome-audio-profiles.schemas \
+		gnome-cd.schemas gnome-sound-recorder.schemas
 
 .include <bsd.port.pre.mk>
 

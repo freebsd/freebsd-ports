@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	gnomecontrolcenter2
-PORTVERSION=	2.6.1
-PORTREVISION=	3
+PORTVERSION=	2.8.1
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/control-center/2.6
+MASTER_SITE_SUBDIR=	sources/control-center/2.8
 DISTNAME=	control-center-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
@@ -26,10 +25,17 @@ USE_GMAKE=	yes
 GNOME_DESKTOP_VERSION=2
 USE_GNOME=	gnomeprefix gnomehack gnomehier intlhack metacity nautilus2 \
 		gstreamerplugins
-GNU_CONFIGURE=	yes
+USE_LIBTOOL_VER=15
 INSTALLS_SHLIB=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
+
+GCONF_SCHEMAS=	apps_gnome_settings_daemon_default_editor.schemas \
+		apps_gnome_settings_daemon_keybindings.schemas \
+		apps_gnome_settings_daemon_screensaver.schemas \
+		desktop_gnome_font_rendering.schemas \
+		desktop_gnome_peripherals_keyboard_xkb.schemas \
+		fontilus.schemas themus.schemas
 
 post-patch:
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \

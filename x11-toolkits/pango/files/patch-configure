@@ -1,15 +1,6 @@
---- configure.orig	Mon Aug  2 20:29:37 2004
-+++ configure	Mon Aug  2 20:32:46 2004
-@@ -1958,7 +1958,7 @@
- 
- 
- 
--LT_VERSION_INFO="400:1:400"
-+LT_VERSION_INFO="399:1:399"
- LT_CURRENT_MINUS_AGE=0
- 
- 
-@@ -23945,10 +23945,10 @@
+--- configure.orig	Mon Aug  2 19:13:53 2004
++++ configure	Mon Aug  2 19:14:46 2004
+@@ -23948,10 +23948,10 @@
  s,@CYGPATH_W@,$CYGPATH_W,;t t
  s,@PACKAGE@,$PACKAGE,;t t
  s,@VERSION@,$VERSION,;t t

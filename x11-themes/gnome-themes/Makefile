@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	gnome-themes
-PORTVERSION=	2.6.3
+PORTVERSION=	2.8.1
 CATEGORIES=	x11-themes gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/2.6
+MASTER_SITE_SUBDIR=	sources/${PORTNAME}/2.8
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
@@ -21,8 +21,9 @@ RUN_DEPENDS=	${X11BASE}/libdata/pkgconfig/gtk-engines-2.pc:${PORTSDIR}/x11-theme
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
-USE_INC_LIBTOOL_VER=13
-USE_GNOME=	gnomehack lthack metacity libgnomeui
+USE_LIBTOOL_VER=15
+USE_GMAKE=	yes
+USE_GNOME=	gnomehack intlhack metacity libgnomeui
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 	       	LDFLAGS="-L${LOCALBASE}/lib"
 

@@ -293,10 +293,14 @@ share/locale/af/LC_MESSAGES/gtk20-properties.mo
 share/locale/af/LC_MESSAGES/gtk20.mo
 share/locale/am/LC_MESSAGES/gtk20-properties.mo
 share/locale/am/LC_MESSAGES/gtk20.mo
+share/locale/ang/LC_MESSAGES/gtk20-properties.mo
+share/locale/ang/LC_MESSAGES/gtk20.mo
 share/locale/ar/LC_MESSAGES/gtk20-properties.mo
 share/locale/ar/LC_MESSAGES/gtk20.mo
 share/locale/az/LC_MESSAGES/gtk20-properties.mo
 share/locale/az/LC_MESSAGES/gtk20.mo
+share/locale/az_IR/LC_MESSAGES/gtk20-properties.mo
+share/locale/az_IR/LC_MESSAGES/gtk20.mo
 share/locale/be/LC_MESSAGES/gtk20-properties.mo
 share/locale/be/LC_MESSAGES/gtk20.mo
 share/locale/bg/LC_MESSAGES/gtk20-properties.mo

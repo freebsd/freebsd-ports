@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	vino
-PORTVERSION=	2.7.92
+PORTVERSION=	2.8.1
 CATEGORIES=	net gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/2.7
+MASTER_SITE_SUBDIR=	sources/${PORTNAME}/2.8
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	A GNOME 2 frontend for vncviewer
+COMMENT=	VNC server that allows for remote access to your GNOME desktop
 
 LIB_DEPENDS=	gnutls:${PORTSDIR}/security/gnutls
 
@@ -22,6 +22,7 @@ USE_GNOME=	gnomeprefix intlhack gnomehack gnomepanel
 USE_GMAKE=	yes
 GNOME_DESKTOP_VERSION=2
 USE_LIBTOOL_VER=15
+CONFIGURE_ARGS=	--enable-session-support
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 

@@ -24,6 +24,16 @@ Gnome_Pre_Include=			bsd.gnome.mk
 #
 # As a result proper LIB_DEPENDS/RUN_DEPENDS will be added and CONFIGURE_ENV
 # and MAKE_ENV defined.
+#
+#
+# GCONF_SCHEMAS		- Set the following to list of all schema files
+#					  that your port installs. These schema files and
+#					  %gconf.xml files will be automatically added to
+#					  ${PLIST}. For example, if your port has
+#					  "etc/gconf/schemas/(foo.schemas and bar.schemas)", add
+#					  add the following to your Makefile:
+#					  "GCONF_SCHEMAS=foo.schemas bar.schemas".
+#
 
 # non-version specific components
 _USE_GNOME_ALL=	gnomehack lthack gnomeprefix gnomehier esound gnomemimedata \
@@ -43,7 +53,8 @@ _USE_GNOME_ALL+=glib20 atk pango gtk20 linc libidl orbit2 \
 		libgtkhtml gnomedesktop libwnck vte libzvt librsvg2 eel2 \
 		gnomepanel nautilus2 metacity gal2 gnomecontrolcenter2 libgda2 \
 		libgnomedb gtksourceview libgsf libgsf_gnome pygtk2 pygnome2 \
-		gstreamerplugins gtkhtml3 gnomespeech desktopfileutils
+		gstreamerplugins gtkhtml3 gnomespeech evolutiondataserver \
+		desktopfileutils
 
 SCROLLKEEPER_DIR=	/var/db/scrollkeeper
 gnomehack_PRE_PATCH=	${FIND} ${WRKSRC} -name "Makefile.in*" | ${XARGS} ${REINPLACE_CMD} -e \
@@ -70,12 +81,14 @@ gnomehier_DETECT=	${X11BASE}/share/gnome/.keep_me
 gnomehier_RUN_DEPENDS=	${gnomehier_DETECT}:${PORTSDIR}/misc/gnomehier
 
 GNOME_HTML_DIR?=	${PREFIX}/share/doc
+GCONF_CONFIG_OPTIONS?=
+GCONF_CONFIG_SOURCE?=xml:${GCONF_CONFIG_OPTIONS}:${PREFIX}/etc/gconf/gconf.xml.defaults
 gnomeprefix_CONFIGURE_ENV=GTKDOC="false"
 gnomeprefix_CONFIGURE_ARGS=--localstatedir=${PREFIX}/share/gnome \
 			   --datadir=${PREFIX}/share/gnome \
 			   --with-html-dir=${GNOME_HTML_DIR} \
 			   --disable-gtk-doc \
-			   --with-gconf-source=xml::${PREFIX}/etc/gconf/gconf.xml.defaults
+			   --with-gconf-source=${GCONF_CONFIG_SOURCE}
 gnomeprefix_USE_GNOME_IMPL=gnomehier
 
 gnometarget_CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
@@ -227,11 +240,11 @@ glib20_LIB_DEPENDS=	glib-2.0.400:${PORTSDIR}/devel/glib20
 glib20_DETECT=		${LOCALBASE}/libdata/pkgconfig/glib-2.0.pc
 glib20_USE_GNOME_IMPL=gnometarget pkgconfig
 
-atk_LIB_DEPENDS=	atk-1.0.600:${PORTSDIR}/accessibility/atk
+atk_LIB_DEPENDS=	atk-1.0.800:${PORTSDIR}/accessibility/atk
 atk_DETECT=		${LOCALBASE}/libdata/pkgconfig/atk.pc
 atk_USE_GNOME_IMPL=	glib20
 
-pango_LIB_DEPENDS=	pango-1.0.399:${PORTSDIR}/x11-toolkits/pango
+pango_LIB_DEPENDS=	pango-1.0.600:${PORTSDIR}/x11-toolkits/pango
 pango_DETECT=		${X11BASE}/libdata/pkgconfig/pango.pc
 pango_USE_GNOME_IMPL=	glib20
 
@@ -271,7 +284,7 @@ gconf2_LIB_DEPENDS=	gconf-2.5:${PORTSDIR}/devel/gconf2
 gconf2_DETECT=		${X11BASE}/libdata/pkgconfig/gconf-2.0.pc
 gconf2_USE_GNOME_IMPL=	orbit2 libxml2 gtk20 linc
 
-gnomevfs2_LIB_DEPENDS=	gnomevfs-2.600:${PORTSDIR}/devel/gnomevfs2
+gnomevfs2_LIB_DEPENDS=	gnomevfs-2.800:${PORTSDIR}/devel/gnomevfs2
 gnomevfs2_DETECT=	${X11BASE}/libdata/pkgconfig/gnome-vfs-2.0.pc
 gnomevfs2_USE_GNOME_IMPL=gconf2 libbonobo gnomemimedata
 
@@ -279,7 +292,7 @@ gail_LIB_DEPENDS=	gailutil.17:${PORTSDIR}/accessibility/gail
 gail_DETECT=		${X11BASE}/libdata/pkgconfig/gail.pc
 gail_USE_GNOME_IMPL=	libgnomecanvas
 
-libgnomecanvas_LIB_DEPENDS=	gnomecanvas-2.600:${PORTSDIR}/graphics/libgnomecanvas
+libgnomecanvas_LIB_DEPENDS=	gnomecanvas-2.800:${PORTSDIR}/graphics/libgnomecanvas
 libgnomecanvas_DETECT=		${X11BASE}/libdata/pkgconfig/libgnomecanvas-2.0.pc
 libgnomecanvas_USE_GNOME_IMPL=	libglade2 libartlgpl2
 
@@ -295,7 +308,7 @@ libgnomeprintui_LIB_DEPENDS=	gnomeprintui-2-2.1:${PORTSDIR}/x11-toolkits/libgnom
 libgnomeprintui_DETECT=		${X11BASE}/libdata/pkgconfig/libgnomeprintui-2.2.pc
 libgnomeprintui_USE_GNOME_IMPL=	libgnomeprint libgnomecanvas
 
-libgnome_LIB_DEPENDS=	gnome-2.600:${PORTSDIR}/x11/libgnome
+libgnome_LIB_DEPENDS=	gnome-2.800:${PORTSDIR}/x11/libgnome
 libgnome_DETECT=	${X11BASE}/libdata/pkgconfig/libgnome-2.0.pc
 libgnome_USE_GNOME_IMPL=libxslt gnomevfs2 esound
 
@@ -303,11 +316,11 @@ libbonoboui_LIB_DEPENDS=	bonoboui-2.0:${PORTSDIR}/x11-toolkits/libbonoboui
 libbonoboui_DETECT=		${X11BASE}/libdata/pkgconfig/libbonoboui-2.0.pc
 libbonoboui_USE_GNOME_IMPL=	libgnomecanvas libgnome
 
-libgnomeui_LIB_DEPENDS=		gnomeui-2.600:${PORTSDIR}/x11-toolkits/libgnomeui
+libgnomeui_LIB_DEPENDS=		gnomeui-2.800:${PORTSDIR}/x11-toolkits/libgnomeui
 libgnomeui_DETECT=		${X11BASE}/libdata/pkgconfig/libgnomeui-2.0.pc
 libgnomeui_USE_GNOME_IMPL=	libbonoboui
 
-atspi_LIB_DEPENDS=	spi.9:${PORTSDIR}/accessibility/at-spi
+atspi_LIB_DEPENDS=	spi.10:${PORTSDIR}/accessibility/at-spi
 atspi_DETECT=		${X11BASE}/libdata/pkgconfig/cspi-1.0.pc
 atspi_USE_GNOME_IMPL=	gail libbonobo
 
@@ -336,11 +349,11 @@ libzvt_LIB_DEPENDS=	zvt-2.0.0:${PORTSDIR}/x11-toolkits/libzvt
 libzvt_DETECT=	${X11BASE}/libdata/pkgconfig/libzvt-2.0.pc
 libzvt_USE_GNOME_IMPL=	gtk20
 
-librsvg2_LIB_DEPENDS=	rsvg-2.8:${PORTSDIR}/graphics/librsvg2
+librsvg2_LIB_DEPENDS=	rsvg-2.10:${PORTSDIR}/graphics/librsvg2
 librsvg2_DETECT=	${X11BASE}/libdata/pkgconfig/librsvg-2.0.pc
-librsvg2_USE_GNOME_IMPL=libartlgpl2 libxml2 gtk20 libgsf
+librsvg2_USE_GNOME_IMPL=libartlgpl2 libgsf gnomevfs2
 
-eel2_LIB_DEPENDS=	eel-2.8:${PORTSDIR}/x11-toolkits/eel2
+eel2_LIB_DEPENDS=	eel-2.10:${PORTSDIR}/x11-toolkits/eel2
 eel2_DETECT=		${X11BASE}/libdata/pkgconfig/eel-2.0.pc
 eel2_USE_GNOME_IMPL=	gnomevfs2 libgnomeui gail
 
@@ -358,8 +371,8 @@ metacity_LIB_DEPENDS=	metacity-private.0:${PORTSDIR}/x11-wm/metacity
 metacity_DETECT=	${X11BASE}/libdata/pkgconfig/libmetacity-private.pc
 metacity_USE_GNOME_IMPL=gconf2 glade2
 
-gal2_LIB_DEPENDS=	gal-2.0.6:${PORTSDIR}/x11-toolkits/gal2
-gal2_DETECT=		${X11BASE}/libdata/pkgconfig/gal-2.0.pc
+gal2_LIB_DEPENDS=	gal-2.2.1:${PORTSDIR}/x11-toolkits/gal2
+gal2_DETECT=		${X11BASE}/libdata/pkgconfig/gal-2.2.pc
 gal2_USE_GNOME_IMPL=gnomeui libgnomeprintui
 
 gnomecontrolcenter2_LIB_DEPENDS=gnome-window-settings.1:${PORTSDIR}/sysutils/gnomecontrolcenter2
@@ -370,7 +383,7 @@ libgda2_LIB_DEPENDS=	gda-2.2:${PORTSDIR}/databases/libgda2
 libgda2_DETECT=			${X11BASE}/libdata/pkgconfig/libgda.pc
 libgda2_USE_GNOME_IMPL=	glib20 libxslt
 
-libgnomedb_LIB_DEPENDS=	gnomedb-2.3:${PORTSDIR}/databases/libgnomedb
+libgnomedb_LIB_DEPENDS=	gnomedb-2.2:${PORTSDIR}/databases/libgnomedb
 libgnomedb_DETECT=		${X11BASE}/libdata/pkgconfig/libgnomedb.pc
 libgnomedb_USE_GNOME_IMPL=libgnomeui libgda2
 
@@ -410,16 +423,21 @@ intltool_BUILD_DEPENDS=	${intltool_DETECT}:${PORTSDIR}/textproc/intltool
 
 intlhack_PRE_PATCH=		${FIND} ${WRKSRC} -name "intltool-merge.in" | ${XARGS} ${REINPLACE_CMD} -e \
 				's|mkdir $$lang or|mkdir $$lang, 0777 or| ; \
-				 s|^push @INC, "/.*|push @INC, "${LOCALBASE}/share/intltool";|'
+				 s|^push @INC, "/.*|push @INC, "${LOCALBASE}/share/intltool";| ; \
+				 s|unpack *[(]'"'"'U\*'"'"'|unpack ('"'"'C*'"'"'|'
 intlhack_USE_GNOME_IMPL=intltool
 
-gtkhtml3_LIB_DEPENDS=	gtkhtml-3.0.4:${PORTSDIR}/www/gtkhtml3
-gtkhtml3_DETECT=		${X11BASE}/libdata/pkgconfig/libgtkhtml-3.0.pc
-gtkhtml3_USE_GNOME_IMPL=gal2 gail
+gtkhtml3_LIB_DEPENDS=	gtkhtml-3.1.11:${PORTSDIR}/www/gtkhtml3
+gtkhtml3_DETECT=		${X11BASE}/libdata/pkgconfig/libgtkhtml-3.1.pc
+gtkhtml3_USE_GNOME_IMPL=gail libgnomeui libgnomeprintui
 
 gnomespeech_LIB_DEPENDS=gnomespeech.7:${PORTSDIR}/accessibility/gnomespeech
 gnomespeech_DETECT=		${LOCALBASE}/libdata/pkgconfig/gnome-speech-1.0.pc
 gnomespeech_USE_GNOME_IMPL=libbonobo
+
+evolutiondataserver_LIB_DEPENDS=edataserver.5:${PORTSDIR}/databases/evolution-data-server
+evolutiondataserver_DETECT=		${X11BASE}/libdata/pkgconfig/evolution-data-server-1.0.pc
+evolutiondataserver_USE_GNOME_IMPL=libgnome
 
 desktopfileutils_RUN_DEPENDS=update-desktop-database:${PORTSDIR}/devel/desktop-file-utils
 desktopfileutils_DETECT=	${X11BASE}/bin/update-desktop-database

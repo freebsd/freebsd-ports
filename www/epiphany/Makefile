@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	epiphany
-PORTVERSION=	1.2.8
+PORTVERSION=	1.4.4
 CATEGORIES=	www gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/1.2
+MASTER_SITE_SUBDIR=	sources/${PORTNAME}/1.4
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
@@ -36,8 +36,7 @@ HEADERS_SUFX=
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
-USE_GNOME=	gnomeprefix gnomehack intlhack libgnomeui
-WANT_GNOME=	yes
+USE_GNOME=	gnomeprefix gnomehack intlhack libgnomeui desktopfileutils
 USE_LIBTOOL_VER=15
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
@@ -46,25 +45,12 @@ CONFIGURE_ARGS=	--with-mozilla-includes="${X11BASE}/include/mozilla${HEADERS_SUF
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include ${PTHREAD_CFLAGS}" \
 		LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 
+GCONF_SCHEMAS=	epiphany-lockdown.schemas epiphany.schemas
+
 FLASHPLAYER=	${LOCALBASE}/lib/libflashplayer.so.1
 PLIST_SUB+=	EPHY_VERSION="${PORTVERSION:C/\.[0-9]+$//}"
 
-.if defined(PACKAGE_BUILDING) || defined(PARALLEL_PACKAGE_BUILD)
-.undef WITHOUT_GNOME
-.undef WITHOUT_ALL
-WITH_GNOME=	yes
-.endif
-
 .include <bsd.port.pre.mk>
-
-.if ${HAVE_GNOME:Mnautilus2}!=""
-USE_GNOME+=		nautilus2
-CONFIGURE_ARGS+=	--enable-nautilus-view
-PLIST_SUB+=		NAUTILUS=""
-.else
-CONFIGURE_ARGS+=	--enable-nautilus-view=no
-PLIST_SUB+=		NAUTILUS="@comment "
-.endif
 
 .if ${OSVERSION} > 500000
 # Galeon does not build correctly in -CURRENT if -Werror is passed
@@ -85,21 +71,29 @@ pre-everything::
 	@${ECHO_MSG} ""
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|mozilla-gtkmozembed|mozilla-gtkmozembed${HEADERS_SUFX}|g; \
-		s|mozilla-xpcom|mozilla-xpcom${HEADERS_SUFX}|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|mozilla-gtkmozembed|mozilla-gtkmozembed${HEADERS_SUFX}|g ; \
+		s|mozilla-xpcom|mozilla-xpcom${HEADERS_SUFX}|g ; \
+		s|$$MOZILLA-gtkmozembed|$$MOZILLA-gtkmozembed${HEADERS_SUFX}|g ; \
+		s|$$MOZILLA-xpcom|$$MOZILLA-xpcom${HEADERS_SUFX}|g' \
+		${WRKSRC}/configure
 	@${FIND} ${WRKSRC} -name "Makefile.in*" | ${XARGS} ${REINPLACE_CMD} -e \
 		 's|-lpthread|${PTHREAD_LIBS}|g'
 	@${FIND} ${WRKSRC} -name "*.cpp" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|malloc\.h|stdlib.h|g'
 
 post-configure:
-	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g ; \
+	@${SED} -e 's|%%PREFIX%%|${PREFIX}|g ; \
 		s|%%LOCALBASE%%|${LOCALBASE}|g ; \
 		s|%%X11BASE%%|${X11BASE}|g ; \
 		s|%%MOZILLA%%|${MOZILLA}|g ; \
-		s|%%FLASHPLAYER%%|${FLASHPLAYER}|g' ${WRKSRC}/src/epiphany
+		s|%%FLASHPLAYER%%|${FLASHPLAYER}|g' <${FILESDIR}/epiphany \
+		> ${WRKDIR}/epiphany
 
 pre-install:
 	@-${X11BASE}/bin/gconftool-2 --shutdown
+
+post-install:
+		@${MV} -f ${PREFIX}/bin/epiphany ${PREFIX}/bin/epiphany-bin
+		${INSTALL_SCRIPT} ${WRKDIR}/epiphany ${PREFIX}/bin
 
 .include <bsd.port.post.mk>

@@ -1,6 +1,6 @@
---- libgnome/gnome-program.c.orig	Wed Jul 23 05:35:30 2003
-+++ libgnome/gnome-program.c	Mon Dec 22 01:19:23 2003
-@@ -894,17 +894,17 @@
+--- libgnome/gnome-program.c.orig	Mon May 31 16:37:02 2004
++++ libgnome/gnome-program.c	Mon May 31 16:37:05 2004
+@@ -895,17 +895,17 @@
  	attr_rel = "";
  	break;
      case GNOME_FILE_DOMAIN_DATADIR:
@@ -21,7 +21,7 @@
  	attr_name = GNOME_PARAM_GNOME_DATADIR;
  	attr_rel = "/pixmaps";
  	break;
-@@ -916,7 +916,7 @@
+@@ -917,7 +917,7 @@
      case GNOME_FILE_DOMAIN_HELP:
  	prefix_rel = "/share/gnome/help";
  	attr_name = GNOME_PARAM_GNOME_DATADIR;
@@ -30,7 +30,7 @@
  	break;
      case GNOME_FILE_DOMAIN_APP_LIBDIR:
  	prefix_rel = "/lib";
-@@ -925,19 +925,19 @@
+@@ -926,19 +926,19 @@
  	search_path = FALSE;
  	break;
      case GNOME_FILE_DOMAIN_APP_DATADIR:
@@ -53,7 +53,7 @@
  	attr_name = GNOME_PARAM_APP_DATADIR;
  	attr_rel = "/pixmaps";
  	search_path = FALSE;
-@@ -958,12 +958,12 @@
+@@ -959,12 +959,12 @@
  
  	attr_name = GNOME_PARAM_APP_DATADIR;
  

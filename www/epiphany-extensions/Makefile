@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	epiphany
-PORTVERSION=	1.0
-PORTREVISION=	1
+PORTVERSION=	1.4.2
 CATEGORIES=	www gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}${PKGNAMESUFFIX}/1.0
+MASTER_SITE_SUBDIR=	sources/${PORTNAME}${PKGNAMESUFFIX}/1.4
 PKGNAMESUFFIX=	-extensions
 DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
 DIST_SUBDIR=	gnome2
@@ -26,8 +25,6 @@ RUN_DEPENDS=	epiphany:${PORTSDIR}/www/epiphany \
 MOZILLA=	mozilla
 HEADERS_SUFX=
 
-MOZ_CONFIGURE_ARGS=	--with-mozilla-snapshot="1.7"
-
 .if !defined(WITH_MOZILLA)
 MOZILLA=	mozilla
 HEADERS_SUFX=
@@ -35,7 +32,6 @@ HEADERS_SUFX=
 .if ${WITH_MOZILLA}=="mozilla-devel" || ${WITH_MOZILLA}=="mozilla-devel-gtk2"
 MOZILLA=	mozilla-devel
 HEADERS_SUFX=	-devel
-MOZ_CONFIGURE_ARGS=	--with-mozilla-snapshot="1.8a2"
 .else
 MOZILLA=	mozilla
 HEADERS_SUFX=
@@ -49,8 +45,9 @@ USE_LIBTOOL_VER=15
 USE_GMAKE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include ${PTHREAD_CFLAGS}" \
 		LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
-CONFIGURE_ARGS=	--with-extensions="all" \
-		${MOZ_CONFIGURE_ARGS}
+CONFIGURE_ARGS=	--with-extensions="all"
+
+PLIST_SUB=	VERSION="1.4"
 
 .if defined(PACKAGE_BUILDING) || defined(PARALLEL_PACKAGE_BUILD)
 .undef WITHOUT_OPENSP
@@ -66,7 +63,7 @@ WITH_OPENSP=	yes
 .if defined(WITH_OPENSP)
 CONFIGURE_ARGS+=	--enable-opensp=yes
 .else
-CONFIGURE_ARGS+=	--enable-opensp=no
+CONFIGURE_ARGS+=	--disable-opensp
 .endif
 
 pre-everything::
@@ -81,6 +78,11 @@ pre-everything::
 	@${ECHO_MSG} ""
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|mozilla-gtkmozembed|mozilla-gtkmozembed${HEADERS_SUFX}|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e \
+		's|mozilla-gtkmozembed|mozilla-gtkmozembed${HEADERS_SUFX}|g; \
+		 s|mozilla-xpcom|mozilla-xpcom${HEADERS_SUFX}|g; \
+		 s|$$MOZILLA-gtkmozembed|$$MOZILLA-gtkmozembed${HEADERS_SUFX}|g; \
+		 s|$$MOZILLA-xpcom|$$MOZILLA-xpcom${HEADERS_SUFX}|g' \
+		${WRKSRC}/configure
 
 .include <bsd.port.post.mk>

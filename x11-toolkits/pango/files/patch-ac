@@ -1,14 +1,15 @@
 
 $FreeBSD$
 
---- Makefile.in.orig	Mon Mar 11 12:16:33 2002
-+++ Makefile.in	Mon Mar 11 12:24:58 2002
-@@ -116,7 +116,7 @@
- YACC = @YACC@
- ms_librarian = @ms_librarian@
+--- Makefile.in.orig	Mon Aug  2 19:12:56 2004
++++ Makefile.in	Mon Aug  2 19:13:11 2004
+@@ -234,7 +234,7 @@
+ 
+ AUTOMAKE_OPTIONS = 1.7
  
 -SUBDIRS = pango modules examples docs tools tests
 +SUBDIRS = pango modules examples docs tools
  
  EXTRA_DIST = \
- 	pango.spec.in	\
+ 	pango.pc.in	\
+

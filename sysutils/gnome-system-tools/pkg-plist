@@ -97,6 +97,8 @@ share/gnome/omf/gnome-system-tools/time-admin-C.omf
 share/gnome/omf/gnome-system-tools/users-admin-C.omf
 @exec scrollkeeper-install -q %D/share/gnome/omf/gnome-system-tools/users-admin-C.omf 2>/dev/null || /usr/bin/true
 share/locale/am/LC_MESSAGES/gnome-system-tools.mo
+share/locale/ar/LC_MESSAGES/gnome-system-tools.mo
+share/locale/ar/LC_MESSAGES/setup-tools-backends.mo
 share/locale/az/LC_MESSAGES/gnome-system-tools.mo
 share/locale/az/LC_MESSAGES/setup-tools-backends.mo
 share/locale/bg/LC_MESSAGES/gnome-system-tools.mo
@@ -104,6 +106,7 @@ share/locale/bn/LC_MESSAGES/setup-tools-backends.mo
 share/locale/bn/LC_MESSAGES/gnome-system-tools.mo
 share/locale/bs/LC_MESSAGES/setup-tools-backends.mo
 share/locale/ca/LC_MESSAGES/gnome-system-tools.mo
+share/locale/ca/LC_MESSAGES/setup-tools-backends.mo
 share/locale/cs/LC_MESSAGES/gnome-system-tools.mo
 share/locale/cs/LC_MESSAGES/setup-tools-backends.mo
 share/locale/da/LC_MESSAGES/gnome-system-tools.mo
@@ -122,6 +125,7 @@ share/locale/et/LC_MESSAGES/gnome-system-tools.mo
 share/locale/eu/LC_MESSAGES/gnome-system-tools.mo
 share/locale/eu/LC_MESSAGES/setup-tools-backends.mo
 share/locale/fi/LC_MESSAGES/gnome-system-tools.mo
+share/locale/fi/LC_MESSAGES/setup-tools-backends.mo
 share/locale/fr/LC_MESSAGES/gnome-system-tools.mo
 share/locale/ga/LC_MESSAGES/gnome-system-tools.mo
 share/locale/gl/LC_MESSAGES/gnome-system-tools.mo
@@ -157,6 +161,8 @@ share/locale/pt/LC_MESSAGES/gnome-system-tools.mo
 share/locale/pt/LC_MESSAGES/setup-tools-backends.mo
 share/locale/pt_BR/LC_MESSAGES/gnome-system-tools.mo
 share/locale/pt_BR/LC_MESSAGES/setup-tools-backends.mo
+share/locale/ro/LC_MESSAGES/gnome-system-tools.mo
+share/locale/ro/LC_MESSAGES/setup-tools-backends.mo
 share/locale/ru/LC_MESSAGES/gnome-system-tools.mo
 share/locale/sk/LC_MESSAGES/gnome-system-tools.mo
 share/locale/sq/LC_MESSAGES/gnome-system-tools.mo
@@ -168,13 +174,16 @@ share/locale/sr@Latn/LC_MESSAGES/setup-tools-backends.mo
 share/locale/sv/LC_MESSAGES/gnome-system-tools.mo
 share/locale/sv/LC_MESSAGES/setup-tools-backends.mo
 share/locale/ta/LC_MESSAGES/gnome-system-tools.mo
+share/locale/ta/LC_MESSAGES/setup-tools-backends.mo
 share/locale/tr/LC_MESSAGES/gnome-system-tools.mo
 share/locale/uk/LC_MESSAGES/gnome-system-tools.mo
 share/locale/uk/LC_MESSAGES/setup-tools-backends.mo
 share/locale/vi/LC_MESSAGES/gnome-system-tools.mo
 share/locale/wa/LC_MESSAGES/gnome-system-tools.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-system-tools.mo
+share/locale/zh_CN/LC_MESSAGES/setup-tools-backends.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-system-tools.mo
+share/locale/zh_TW/LC_MESSAGES/setup-tools-backends.mo
 share/setup-tool-backends/files/debian_ipchains
 share/setup-tool-backends/scripts/boot-conf
 share/setup-tool-backends/scripts/boot-grub.pl

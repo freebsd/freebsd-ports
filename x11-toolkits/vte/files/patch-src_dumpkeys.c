@@ -2,7 +2,7 @@
 +++ src/dumpkeys.c	Thu May  6 10:46:19 2004
 @@ -18,6 +18,7 @@
  
- #ident "$Id: dumpkeys.c,v 1.7 2004/04/30 01:16:53 nalin Exp $"
+ #ident "$Id: patch-src_dumpkeys.c,v 1.5 2004/11/01 04:45:09 marcus Exp $"
  #include "../config.h"
 +#include <sys/types.h>
  #ifdef HAVE_SYS_SELECT_H

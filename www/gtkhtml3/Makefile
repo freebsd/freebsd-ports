@@ -6,26 +6,27 @@
 #
 
 PORTNAME=	gtkhtml3
-PORTVERSION=	3.0.10
-PORTREVISION=	1
+PORTVERSION=	3.2.3
 CATEGORIES=	www gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME:S/3$//}/3.0
+MASTER_SITE_SUBDIR=	sources/${PORTNAME:S/3$//}/3.2
 DISTNAME=	${PORTNAME:S/3$//}-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Lightweight HTML rendering/printing/editing engine
 
-LIB_DEPENDS=	soup-2.0.0:${PORTSDIR}/devel/libsoup
+LIB_DEPENDS=	soup-2.2.7:${PORTSDIR}/devel/libsoup
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomeprefix gnomehack intlhack gal2 gail
+USE_GNOME=	gnomeprefix gnomehack intlhack gail libgnomeui libgnomeprintui
 INSTALLS_SHLIB=	yes
-GNU_CONFIGURE=	yes
+USE_LIBTOOL_VER=15
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
+		LDFLAGS="-L${LOCALBASE}/lib"
+
+PLIST_SUB=	VERSION="3.1"
 
 .include <bsd.port.mk>

@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	gnomenetstatus
-PORTVERSION=	2.6.2.1
+PORTVERSION=	2.8.0
+PORTREVISION=	1
 CATEGORIES=	net gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/gnome-netstatus/2.6
+MASTER_SITE_SUBDIR=	sources/gnome-netstatus/2.8
 DISTNAME=	gnome-netstatus-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
@@ -18,10 +19,13 @@ COMMENT=	A GNOME applet that shows network status
 
 USE_X_PREFIX=	yes
 USE_BZIP2=	yes
+GNOME_DESKTOP_VERSION=2
 USE_GNOME=	gnomehack intlhack gnomeprefix libgnome gnomepanel libglade2
 USE_GMAKE=	yes
-USE_LIBTOOL_VER=13
+USE_LIBTOOL_VER=15
 CONFIGURE_ARGS=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+
+GCONF_SCHEMAS=	netstatus.schemas
 
 .include <bsd.port.mk>

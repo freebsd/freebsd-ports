@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	libsoup
-PORTVERSION=	1.99.28
-PORTREVISION=	1
+PORTVERSION=	2.2.1
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/1.99
+MASTER_SITE_SUBDIR=	sources/${PORTNAME}/2.2
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
@@ -19,14 +18,27 @@ COMMENT=	A SOAP (Simple Object Access Protocol) implementation in C
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
 
 USE_BZIP2=	yes
-USE_GNOME=	gnomehack lthack glib20
+USE_GNOME=	gnomehack glib20 libxml2
 INSTALLS_SHLIB=	yes
-USE_INC_LIBTOOL_VER=	13
-USE_OPENSSL=	yes
+USE_LIBTOOL_VER=15
+USE_GMAKE=	yes
 CONFIGURE_ARGS=	--with-html-dir=${PREFIX}/share/doc \
-		--with-gnutls-includes=${FALSE} \
-		--with-gnutls-libs=${FALSE}
+		--disable-gtk-doc
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include"
 LDFLAGS+=	-L${LOCALBASE}/lib
+
+PLIST_SUB=	VERSION="2.2"
+
+.if !defined(WITHOUT_SSL)
+LIB_DEPENDS+=	gnutls.12:${PORTSDIR}/security/gnutls
+.else
+CONFIGURE_ARGS+=--disable-ssl
+.endif
+
+pre-everything::
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "libsoup has the following configurable option(s):"
+	@${ECHO_MSG} "	WITHOUT_SSL	Disable GnuTLS SSL support"
+	@${ECHO_MSG} ""
 
 .include <bsd.port.mk>

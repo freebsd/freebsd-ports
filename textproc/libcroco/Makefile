@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	libcroco
-PORTVERSION=	0.5.1
+PORTVERSION=	0.6.0
 CATEGORIES=	textproc gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.5
+MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.6
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	CSS2 parsing library
@@ -18,8 +18,8 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_INC_LIBTOOL_VER=13
 INSTALLS_SHLIB=	yes
-USE_GNOME=	gnomehack gtk20 libxml2
+USE_GNOME=	gnomehack lthack glib20 libxml2
 
-MAN1=		croco-config.1 csslint.1
+PLIST_SUB=	VERSION="0.6"
 
 .include <bsd.port.mk>

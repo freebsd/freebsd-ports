@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	gcalctool
-PORTVERSION=	4.3.51
-PORTEPOCH=	1
+PORTVERSION=	4.4.20
+PORTEPOCH=	2
 CATEGORIES=	math gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:R}
@@ -17,15 +17,17 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A GNOME 2 calculator tool based on the old calctool for OpenWindows
 
 USE_BZIP2=	yes
+USE_BISON=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_LIBTOOL_VER=13
+USE_LIBTOOL_VER=15
 USE_REINPLACE=	yes
-USE_GNOME=	gnomeprefix gnomehack lthack intlhack libgnomeui
+USE_GNOME=	gnomeprefix gnomehack intlhack libgnomeui
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 MAN1=		gcalctool.1
+GCONF_SCHEMAS=	gcalctool.schemas
 
 post-patch:
 	@${FIND} ${WRKSRC} -name "*.[ch]" | ${XARGS} ${REINPLACE_CMD} -e \

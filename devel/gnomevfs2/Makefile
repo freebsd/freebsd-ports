@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	gnomevfs2
-PORTVERSION=	2.6.2
-PORTREVISION=	1
+PORTVERSION=	2.8.3
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/gnome-vfs/2.6
+MASTER_SITE_SUBDIR=	sources/gnome-vfs/2.8
 DISTNAME=	gnome-vfs-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
@@ -27,12 +26,16 @@ USE_GNOME=	gnomeprefix gnomehack gnomehier intlhack gnomemimedata gconf2 \
 USE_REINPLACE=	yes
 USE_LIBTOOL_VER=15
 INSTALLS_SHLIB=	yes
-CONFIGURE_ARGS=	--disable-openssl \
+CONFIGURE_ARGS=	--enable-openssl \
 		--disable-gnutls \
 		--with-gtk=no
 CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}" \
 		BSD_PTHREAD_LIBS=${PTHREAD_LIBS}
+
+GCONF_SCHEMAS=	desktop_default_applications.schemas \
+		desktop_gnome_url_handlers.schemas system_dns_sd.schemas \
+		system_http_proxy.schemas system_smb.schemas
 
 OPTIONS=	KDE_MENUS "Integrated KDE menu picks" on
 
@@ -41,6 +44,8 @@ OPTIONS=	KDE_MENUS "Integrated KDE menu picks" on
 .if defined(PACKAGE_BUILDING) || defined(PARALLEL_PACKAGE_BUILD)
 .undef WITHOUT_CDPARANOIA
 .undef WITHOUT_SAMBA
+.undef WITHOUT_MDNS
+WITH_MDNS=		yes
 WITH_CDPARANOIA=	yes
 WITH_SAMBA=		yes
 .endif
@@ -60,6 +65,10 @@ WITH_CDPARANOIA=	yes
 WITH_SAMBA=		yes
 .endif
 
+.if exists(${LOCALBASE}/lib/libhowl.so)
+WITH_MDNS=		yes
+.endif
+
 .if defined(WITH_CDPARANOIA)
 LIB_DEPENDS+=	cdda_paranoia.0:${PORTSDIR}/audio/cdparanoia
 PLIST_SUB+=	CDPARANOIA=""
@@ -67,8 +76,12 @@ PLIST_SUB+=	CDPARANOIA=""
 PLIST_SUB+=	CDPARANOIA="@comment "
 .endif
 
-.if exists(${LOCALBASE}/lib/libfam) || !defined(WITHOUT_FAM)
+.if exists(${LOCALBASE}/lib/libfam.so) || !defined(WITHOUT_FAM)
 LIB_DEPENDS+=	fam.0:${PORTSDIR}/devel/fam
+.endif
+
+.if exists(${LOCALBASE}/lib/libkrb5.so)
+LIB_DEPENDS+=	krb5:${PORTSDIR}/security/heimdal
 .endif
 
 .if defined(WITH_SAMBA)
@@ -76,6 +89,10 @@ LIB_DEPENDS+=	smbclient.0:${PORTSDIR}/net/samba-libsmbclient
 PLIST_SUB+=	SAMBA=""
 .else
 PLIST_SUB+=	SAMBA="@comment "
+.endif
+
+.if defined(WITH_MDNS)
+LIB_DEPENDS+=	howl:${PORTSDIR}/net/howl
 .endif
 
 post-patch:
@@ -86,7 +103,9 @@ post-patch:
 		${WRKSRC}/modules/vfolder/applications-all-users.vfolder-info.in
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g ; \
 		s|%%X11BASE%%|${X11BASE}|g' \
-		${WRKSRC}/libgnomevfs/xdgmime.c
+		${WRKSRC}/libgnomevfs/xdgmime.c \
+		${WRKSRC}/libgnomevfs/eggdirfuncs.c \
+		${WRKSRC}/libgnomevfs/gnome-vfs-mime-info.c
 .if !defined(WITHOUT_KDE_MENUS)
 	@${SED} -e 's|/usr/local|${LOCALBASE}|g' \
 		< ${FILESDIR}/KDE.directory > ${WRKSRC}/KDE.directory

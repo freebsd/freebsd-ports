@@ -1,11 +1,11 @@
---- Makefile.in.orig	Fri Mar 12 01:22:39 2004
-+++ Makefile.in	Fri Mar 12 01:22:55 2004
-@@ -129,7 +129,7 @@
- YACC = @YACC@
+--- Makefile.in.orig	Fri Jun  4 17:24:13 2004
++++ Makefile.in	Fri Jun  4 17:25:02 2004
+@@ -145,7 +145,7 @@
+ am__quote = @am__quote@
  gnomelocaledir = @gnomelocaledir@
- 
+ install_sh = @install_sh@
 -SUBDIRS = po gal tests docs art
 +SUBDIRS = po gal docs art
  
  pkgconfigdir = $(prefix)/libdata/pkgconfig
- pkgconfig_DATA = gal-2.0.pc
+ pkgconfig_DATA = gal-2.2.pc

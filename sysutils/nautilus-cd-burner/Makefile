@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	nautilus-cd-burner
-PORTVERSION=	2.6.1
-PORTREVISION=	1
+PORTVERSION=	2.8.5
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/2.6
+MASTER_SITE_SUBDIR=	sources/${PORTNAME}/2.8
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
@@ -23,12 +22,20 @@ USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNOME_DESKTOP_VERSION=2
-USE_GNOME=	gnomeprefix gnomehack intlhack lthack nautilus2
-USE_INC_LIBTOOL_VER=13
+USE_GNOME=	gnomeprefix gnomehack intlhack nautilus2
+USE_LIBTOOL_VER=15
+INSTALLS_SHLIB=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
+GCONF_SCHEMAS=	ncb.schemas
+
 .include <bsd.port.pre.mk>
+
+.if defined(PACKAGE_BUILDING) || defined(PARALLEL_PACKAGE_BUILD)
+.undef WITHOUT_DVD
+WITH_DVD=	yes
+.endif
 
 .if exists(${LOCALBASE}/bin/growisofs)
 WITH_DVD=	yes

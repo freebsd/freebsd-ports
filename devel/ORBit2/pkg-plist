@@ -66,7 +66,6 @@ libdata/pkgconfig/ORBit-imodule-2.0.pc
 share/aclocal/ORBit2.m4
 share/idl/orbit-2.0/CosNaming.idl
 @dirrm share/idl/orbit-2.0
-@dirrm %%DOCSDIR%%
 @unexec /bin/rmdir %D/share/idl 2>/dev/null || /usr/bin/true
 @unexec /bin/rmdir %D/lib/orbit-2.0 2>/dev/null || /usr/bin/true
 @dirrm include/orbit-2.0/orbit/util

@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	eel2
-PORTVERSION=	2.6.2
+PORTVERSION=	2.8.2
 CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME:S/2$//}/2.6
+MASTER_SITE_SUBDIR=	sources/${PORTNAME:S/2$//}/2.8
 DISTNAME=	eel-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
@@ -20,11 +20,15 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomeprefix gnomehack gnomehier gnomevfs2 gail libgnomeui
-USE_INC_LIBTOOL_VER=13
+USE_LIBTOOL_VER=15
 USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--enable-shared --enable-static
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|%%X11BASE%%|${X11BASE}|g' \
+		${WRKSRC}/eel/eel-open-with-dialog.c
 
 .include <bsd.port.mk>
