@@ -14,6 +14,7 @@ MAINTAINER=	gslin@ccca.nctu.edu.tw
 COMMENT=	Multithreaded anonymous FTP daemon
 
 GNU_CONFIGURE=	yes
+USE_REINPLACE=	yes
 
 RESTRICTED=	License problem
 
@@ -21,9 +22,10 @@ MAN1=		pftpd.1 rpad.1
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} > 501000
-BROKEN=		"Does not compile"
-.endif
+post-patch:
+	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' \
+		${WRKSRC}/configure \
+		${WRKSRC}/plib/configure
 
 post-install:
 	@${CAT} ${WRKSRC}/ISSUES
