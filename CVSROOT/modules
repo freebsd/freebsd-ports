@@ -9565,6 +9565,7 @@ ruby-dbd_pg	ports/databases/ruby-dbd_pg
 ruby-dbd_proxy	ports/databases/ruby-dbd_proxy
 ruby-dbd_sqlite	ports/databases/ruby-dbd_sqlite
 ruby-dbd_sqlrelay	ports/databases/ruby-dbd_sqlrelay
+ruby-dbdbd	ports/databases/ruby-dbdbd
 ruby-dbi	ports/databases/ruby-dbi
 ruby-dcl	ports/science/ruby-dcl
 ruby-dcl-gtk	ports/science/ruby-dcl-gtk
