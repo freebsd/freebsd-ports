@@ -1,0 +1,11 @@
+--- configure.orig	Mon Apr 10 15:41:18 2000
++++ configure	Mon Apr 10 15:42:04 2000
+@@ -3619,7 +3619,7 @@
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
+   ac_save_LIBS="$LIBS"
+-LIBS="-lgdk_imlib `gtk-config --libs`  $LIBS"
++LIBS="-lgdk_imlib `$GTK_CONFIG --libs`  $LIBS"
+ cat > conftest.$ac_ext <<EOF
+ #line 3625 "configure"
+ #include "confdefs.h"
