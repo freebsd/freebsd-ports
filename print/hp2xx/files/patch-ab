@@ -1,0 +1,42 @@
+*** ../doc/hp2xxinf.tex.orig	Tue Oct 24 15:54:03 1995
+--- ../doc/hp2xxinf.tex	Sun Jan 17 14:35:52 1999
+***************
+*** 4,9 ****
+--- 4,16 ----
+  @setfilename hp2xx.info
+  @settitle HP2XX, A HP-GL Converter
+  @setchapternewpage odd
++ @dircategory Miscellaneous
++ @direntry
++ * HP2XX:(hp2xx).		Conversion of HP-GL graphics into raster and
++					vector graphics formats
++ @end direntry
++
++
+  @c @smallbook
+  @c @cropmarks
+  @c %**end of header
+***************
+*** 30,43 ****
+
+  @c THIS MANUAL REQUIRES TEXINFO-2 macros and info-makers to format properly.
+
+- @ifinfo
+- @format
+- START-INFO-DIR-ENTRY
+- * HP2XX:(hp2xx).  Conversion of HP-GL graphics into raster and
+- *                 vector graphics formats
+- END-INFO-DIR-ENTRY
+- @end format
+- @end ifinfo
+  @c
+  @ifinfo
+  This file documents the HP-GL converter HP2XX
+--- 37,42 ----
+***************
+*** 1594,1597 ****
+
+  @contents
+  @bye
+-
+--- 1593,1595 ----

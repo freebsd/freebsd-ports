@@ -1,0 +1,87 @@
+*** ./makefile.orig	Mon Dec  1 03:22:14 1997
+--- ./makefile	Sun Jan 17 14:39:04 1999
+***************
+*** 34,40 ****
+  
+  # Installation sites (GNU conventions):
+  #
+! prefix   = /usr/local
+  bindir   = $(prefix)/bin
+  includedir = $(prefix)/include
+  mandir   = $(prefix)/man
+--- 34,40 ----
+  
+  # Installation sites (GNU conventions):
+  #
+! prefix   = ${PREFIX}
+  bindir   = $(prefix)/bin
+  includedir = $(prefix)/include
+  mandir   = $(prefix)/man
+***************
+*** 45,53 ****
+  # For non-gcc compilers, simply set CFLAGS = -O (to start with)
+  #
+  #CC       = gcc
+! #CFLAGS   = -O2 -Wall -ansi -fstrength-reduce -finline-functions
+  CC       = cc
+! CFLAGS   = -O
+  
+  #LFLAGS   =                # only sometimes needed; see below for examples
+  #CPPFLAGS = -I.            # only sometimes needed; see below for examples
+--- 45,53 ----
+  # For non-gcc compilers, simply set CFLAGS = -O (to start with)
+  #
+  #CC       = gcc
+! CFLAGS   = -O2 -Wall -ansi -fstrength-reduce -finline-functions
+  CC       = cc
+! #CFLAGS   = -O
+  
+  #LFLAGS   =                # only sometimes needed; see below for examples
+  #CPPFLAGS = -I.            # only sometimes needed; see below for examples
+***************
+*** 56,63 ****
+  #
+  #	PNG test setup (for build without installed libpng/libz)
+  #
+! LFLAGS   = -L../../libpng-0.96 -L../../zlib-1.0.4
+! CPPFLAGS = -I. -I../../libpng-0.96 -I../../zlib-1.0.4
+  BINDCMD  = 
+  
+  #############################################################################
+--- 56,65 ----
+  #
+  #	PNG test setup (for build without installed libpng/libz)
+  #
+! #LFLAGS   = -L../../libpng-0.96 -L../../zlib-1.0.4
+! LFLAGS = -L${X11BASE}/lib -L$(prefix)/lib
+! #CPPFLAGS = -I. -I../../libpng-0.96 -I../../zlib-1.0.4
+! CPPFLAGS = -I. -I${X11BASE}/include -I$(prefix)/include
+  BINDCMD  =
+  
+  #############################################################################
+***************
+*** 208,215 ****
+  PROGRAM	= hp2xx
+  
+  default:
+! 	@echo "This makefile needs manual configuration! Edit it now!
+! 	@echo "After configuration, you may use the following commands:
+  	@echo   ""
+  	@echo   "make all             Compile everything"
+  	@echo   "make check           Run a color application in preview mode"
+--- 210,217 ----
+  PROGRAM	= hp2xx
+  
+  default:
+! 	@echo "This makefile needs manual configuration! Edit it now!"
+! 	@echo "After configuration, you may use the following commands:"
+  	@echo   ""
+  	@echo   "make all             Compile everything"
+  	@echo   "make check           Run a color application in preview mode"
+***************
+*** 306,309 ****
+  install-man:	../doc/hp2xx.1
+  		$(CP) ../doc/hp2xx.1 $(man1dir)
+  		$(CHMOD) 644 $(man1dir)/hp2xx.1
+- 
+--- 308,310 ----
