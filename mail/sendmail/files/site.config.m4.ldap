@@ -1,6 +1,8 @@
 APPENDDEF(`confLIBDIRS', `-L%%LOCALBASE%%/lib')
 APPENDDEF(`conf_libsm_ENVDEF', `-I%%LOCALBASE%%/include')
 APPENDDEF(`conf_libsm_ENVDEF', `-DLDAPMAP')     
+APPENDDEF(`conf_libsm_LIBS', `-lldap')
+APPENDDEF(`conf_libsm_LIBS', `-llber')
 APPENDDEF(`conf_sendmail_ENVDEF', `-I%%LOCALBASE%%/include')
 APPENDDEF(`conf_sendmail_ENVDEF', `-DLDAPMAP')     
 APPENDDEF(`conf_sendmail_LIBS', `-lldap')
