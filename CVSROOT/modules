@@ -6411,6 +6411,7 @@ p5-Crypt-Random	ports/security/p5-Crypt-Random
 p5-Crypt-Rijndael	ports/security/p5-Crypt-Rijndael
 p5-Crypt-SSLeay	ports/security/p5-Crypt-SSLeay
 p5-Crypt-Serpent	ports/security/p5-Crypt-Serpent
+p5-Crypt-SmbHash	ports/security/p5-Crypt-SmbHash
 p5-Crypt-Solitaire	ports/security/p5-Crypt-Solitaire
 p5-Crypt-TripleDES	ports/security/p5-Crypt-TripleDES
 p5-Crypt-Twofish	ports/security/p5-Crypt-Twofish
