@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		xmedcon
-PORTVERSION=		0.8.13
+PORTVERSION=		0.9.1
 CATEGORIES=		graphics
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -14,42 +14,47 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	tdv94ped@cs.umu.se
 COMMENT=	A medical image conversion utility and library
 
-USE_SUBMAKE=	yes
 USE_LIBTOOL=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
 INSTALLS_SHLIB=	yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+USE_SUBMAKE=	yes
 
-SCRIPTS_ENV=	WRKDIRPREFIX="${WRKDIRPREFIX}" \
-		MKDIR="${MKDIR}" \
-		REALCURDIR=${.CURDIR}
+OPTIONS=	X11 "With X11" on \
+		GLIB "With Glib" on \
+		ACR_NEMA "With Acr/Nema 2.0" on \
+		ANALYZE "With Analyze (SPM)" on \
+		CONCORDE "With COncorde µPET" on \
+		DICOM "With DICOM 3.0" on \
+		DICOM_LJPEG "With DICOM 3.0 Lossless JPEG" on \
+		ECAT "With ECAT 6.4 / 7.2" on \
+		GIF "With GIF87a/89a" on \
+		INTERFILE "With InterFile 3.3" on \
+		INW "With INW (RUG)" on \
+		PNG "With PNG" on
 
-pre-fetch:
-	@${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/configure
+WANT_GNOME=	yes
 
-.if exists(${WRKDIRPREFIX}${.CURDIR}/Makefile.inc)
-.include "${WRKDIRPREFIX}${.CURDIR}/Makefile.inc"
-.endif
-
-post-clean:
-	@${RM} -f ${WRKDIRPREFIX}${.CURDIR}/Makefile.inc
+.include <bsd.port.pre.mk>
 
 .if !defined(WITH_X11)
 CONFIGURE_ARGS=	--disable-gui
-PLIST_SUB=	X11="@comment "
+PLIST_SUB+=	X11="@comment "
 .else
-USE_X_PREFIX=	yes
-USE_GNOME=	gtk12 gdkpixbuf
-PLIST_SUB=	X11=""
+#USE_X_PREFIX=	yes
+USE_GNOME+=	gtk12 gdkpixbuf
+PLIST_SUB+=	X11=""
 .endif
+
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 .if !defined(WITH_GLIB)
 CONFIGURE_ARGS+=	--disable-glib
 .else
-USE_GNOME+=	glib12
+#USE_GNOME+=		glib12
 .endif
 
-.if !defined(WITH_ACRNEMA) && !defined(WITH_DICOM)
+.if !defined(WITH_ACR_NEMA) && !defined(WITH_DICOM)
 CONFIGURE_ARGS+=	--disable-acr
 .endif
 
@@ -88,7 +93,7 @@ CONFIGURE_ARGS+=	--disable-ljpg
 .if !defined(WITH_PNG)
 CONFIGURE_ARGS+=	--disable-png
 .else
-LIB_DEPENDS+=	png.5:${PORTSDIR}/graphics/png
+LIB_DEPENDS+=		png.5:${PORTSDIR}/graphics/png
 .endif
 
 CONFIGURE_ARGS+=	--includedir=${PREFIX}/include/xmedcon
@@ -98,8 +103,8 @@ MAN1=	medcon.1 xmedcon-config.1
 MAN1+=	xmedcon.1
 .endif
 
-MAN3=	medcon.3
+MAN3+=	medcon.3
 
-MAN4=	m-acr.4 m-anlz.4 m-ecat.4 m-gif.4 m-intf.4 m-inw.4
+MAN4+=	m-acr.4 m-anlz.4 m-ecat.4 m-gif.4 m-intf.4 m-inw.4
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
