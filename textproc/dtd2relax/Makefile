@@ -17,10 +17,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	DTD to RELAX converter for Java
 
 USE_ZIP=	yes
-USE_JAVA=	1.1+
+USE_JAVA=	yes
 NO_BUILD=	yes
-
-NO_BUILD_DEPENDS_JAVA=	yes
 
 JARFILE=	${DISTNAME}-bin-XML4J.jar
 .if !defined(NOPORTDOCS)
