@@ -7,6 +7,7 @@
 
 PORTNAME=	grisbi
 PORTVERSION=	0.4.5
+PORTREVISION=	1
 CATEGORIES=	finance
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -23,6 +24,8 @@ USE_GNOME=	gtk12 libcapplet libxml gnomepanel orbit gdkpixbuf gnomelibs gnomepri
 USE_BISON=	yes
 USE_BZIP2=	yes
 USE_AUTOCONF_VER=	213
+
+MAN1=		grisbi.1
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}"	\
 		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"		\
