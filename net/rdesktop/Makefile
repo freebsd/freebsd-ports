@@ -6,50 +6,29 @@
 #
 
 PORTNAME=	rdesktop
-PORTVERSION=	1.0.0.p19.7.6
-PORTREVISION=	1
+PORTVERSION=	1.2.0
 CATEGORIES=	net comms
-MASTER_SITES=	http://bibl4.oru.se/projects/rdesktop/dist/releases/
-DISTNAME=	rdesktop-1.0.0
-
-PATCH_SITES=	http://bibl4.oru.se/projects/rdesktop/ \
-		http://bibl4.oru.se/projects/rdesktop/patch19/
-PATCHFILES=	rdesktop-unified-patch19-7-6.bz2
-PATCH_DIST_STRIP=	-p2
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
+DISTNAME=	rdesktop-1.2.0
 
 MAINTAINER=	chris@aims.com.au
-
-USE_BZIP2=	yes
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} > 500023
-LIB_DEPENDS=	gmp.6:${PORTSDIR}/math/libgmp4
-.endif
 
 USE_XLIB=	yes
 USE_GMAKE=	yes
 USE_OPENSSL=	yes
-USE_REINPLACE=	yes
-ALL_TARGET=
+HAS_CONFIGURE=	yes
+CONFIGURE_ARGS=	--prefix=${PREFIX}
+
 MAN1=		rdesktop.1
 
-do-patch:
-	@${EXTRACT_CMD} -dc ${_DISTDIR}/${PATCHFILES} | \
-		${PATCH} ${PATCH_DIST_ARGS}
-.if ${OSVERSION} > 500023
-	@${REINPLACE_CMD} -e 's:-O2.*-Wall:${CFLAGS} -I${LOCALBASE}/include:g' \
-			  -e 's:-lgmp:-L${LOCALBASE}/lib -lgmp:g' \
-		${WRKSRC}/Makefile
-.else
-	@${REINPLACE_CMD} -e 's:-O2.*-Wall:${CFLAGS}:g' ${WRKSRC}/Makefile
-.endif
-	@${REINPLACE_CMD} -e 's:/usr/X11R6/:${X11BASE}/:g' \
-			  -e 's:^PREFIX.*:PREFIX=${PREFIX}:g' \
-			  -e 's:^install.*:install\: rdesktop:g' \
-			  -e 's:^.*(INSTALL) rdp-srvr.*::g' \
-		${WRKSRC}/Makefile
-	@${REINPLACE_CMD} -e 's:<endian.h>:<machine/endian.h>:g' \
-		${WRKSRC}/rdesktop.h
+do-install:
+	@${INSTALL_PROGRAM} ${WRKSRC}/rdesktop ${PREFIX}/bin
+	@${INSTALL_MAN} ${WRKSRC}/doc/rdesktop.1 ${PREFIX}/man/man1
+	@${INSTALL} -d -v -m 755 ${PREFIX}/share/rdesktop
+	@${INSTALL} -d -v -m 755 ${PREFIX}/share/rdesktop/keymaps
+	@for f in ${WRKSRC}/keymaps/*; do \
+		${INSTALL_DATA} $$f ${PREFIX}/share/rdesktop/keymaps; \
+	done
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
