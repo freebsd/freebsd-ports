@@ -143,8 +143,9 @@ do-install:
 		${INSTALL_DATA} ${WRKSRC}/etc/${FILE}.dist ${PREFIX}/etc/smokeping/${FILE} ; \
 	fi
 .endfor
-	@${MKDIR} ${PREFIX}/smokeping
-	@${CP} -Rp ${WRKSRC}/[hl]* ${PREFIX}/smokeping/
+	@${MKDIR} ${PREFIX}/smokeping/htdocs
+	@${INSTALL_SCRIPT} ${WRKSRC}/htdocs/smokeping.cgi ${PREFIX}/smokeping/htdocs/smokeping.cgi
+	@${CP} -R ${WRKSRC}/lib ${PREFIX}/smokeping/
 	@${MKDIR} ${PREFIX}/var/smokeping
 	@${CHOWN} ${USER}:${GROUP} ${PREFIX}/var/smokeping
 	@${MKDIR} ${PREFIX}/smokeping/htdocs/img
