@@ -17,6 +17,10 @@ COMMENT=	Weather epplet for Enlightenment similar to wmWeather
 LIB_DEPENDS=	epplet.1:${PORTSDIR}/x11-wm/libepplet
 RUN_DEPENDS=	GrabWeather:${PORTSDIR}/misc/wmweather
 
+BROKEN=		Does not work with new wmweather
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2005-05-01
+
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS}" \
