@@ -1,0 +1,15 @@
+Synaesthesia is a program that represents music graphically in real
+time as coruscating field of fog and glowing lines.  It is intended
+as a visual accompanyment to music.  Synaesthesia seeks to provide
+not just a visual representation of sound, but a representation of
+how sound is percieved.  Its display combines information about
+the frequency, location and diffuseness of sound.  The display is
+sufficiently detailed to make it possible to distinguish several
+individual instruments, singers, or special effects on screen by
+their location, shape and color, and sufficiently fast to distinguish
+individual drum beats and notes.
+
+WWW: http://yoyo.cc.monash.edu.au/~pfh/synaesthesia.html
+
+- Pete
+petef@databits.net

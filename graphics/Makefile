@@ -225,6 +225,7 @@
     SUBDIR += splitmpg
     SUBDIR += stamp
     SUBDIR += svgalib
+    SUBDIR += synaesthesia
     SUBDIR += tgif
     SUBDIR += tgif-nls
     SUBDIR += threeDS
