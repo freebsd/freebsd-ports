@@ -338,6 +338,7 @@
     SUBDIR += vterrain-apps
     SUBDIR += vterrain-sdk
     SUBDIR += whirlgif
+    SUBDIR += white_dune
     SUBDIR += win32-codecs
     SUBDIR += wmgrabimage
     SUBDIR += wmicons

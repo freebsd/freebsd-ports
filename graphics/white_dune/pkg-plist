@@ -1,0 +1,51 @@
+bin/dune
+%%PORTDOCS%%share/doc/white_dune/developer_docs/dune.jpg
+%%PORTDOCS%%share/doc/white_dune/developer_docs/dune.png
+%%PORTDOCS%%share/doc/white_dune/developer_docs/dune_developer.html
+%%PORTDOCS%%share/doc/white_dune/index.html
+%%PORTDOCS%%share/doc/white_dune/typical_vrml_examples/billboard.wrl
+%%PORTDOCS%%share/doc/white_dune/typical_vrml_examples/bubble.wav
+%%PORTDOCS%%share/doc/white_dune/typical_vrml_examples/camera_animation.wrl
+%%PORTDOCS%%share/doc/white_dune/typical_vrml_examples/checker_planesensor.wrl
+%%PORTDOCS%%share/doc/white_dune/typical_vrml_examples/checker_touchsensor.wrl
+%%PORTDOCS%%share/doc/white_dune/typical_vrml_examples/door_cylindersensor.wrl
+%%PORTDOCS%%share/doc/white_dune/typical_vrml_examples/elevator_proximity_trigger.wrl
+%%PORTDOCS%%share/doc/white_dune/typical_vrml_examples/forward_kinematic_animation.wrl
+%%PORTDOCS%%share/doc/white_dune/typical_vrml_examples/forward_kinematic_spheresensor.wrl
+%%PORTDOCS%%share/doc/white_dune/typical_vrml_examples/headupdisplay_example.wrl
+%%PORTDOCS%%share/doc/white_dune/typical_vrml_examples/image.gif
+%%PORTDOCS%%share/doc/white_dune/typical_vrml_examples/index.html
+%%PORTDOCS%%share/doc/white_dune/typical_vrml_examples/material_animation.wrl
+%%PORTDOCS%%share/doc/white_dune/typical_vrml_examples/misc_animation.wrl
+%%PORTDOCS%%share/doc/white_dune/typical_vrml_examples/movie.mpg
+%%PORTDOCS%%share/doc/white_dune/typical_vrml_examples/movie_trigger.wrl
+%%PORTDOCS%%share/doc/white_dune/typical_vrml_examples/sound_trigger.wrl
+%%PORTDOCS%%share/doc/white_dune/typical_vrml_examples/touch_trigger.wrl
+%%PORTDOCS%%share/doc/white_dune/typical_vrml_examples/transform_animation.wrl
+%%PORTDOCS%%share/doc/white_dune/typical_vrml_examples/visibilty_trigger.wrl
+%%PORTDOCS%%share/doc/white_dune/usage_docs/cassettenrecorder.jpg
+%%PORTDOCS%%share/doc/white_dune/usage_docs/dune_animation.jpg
+%%PORTDOCS%%share/doc/white_dune/usage_docs/dune_de.html
+%%PORTDOCS%%share/doc/white_dune/usage_docs/dune_en.html
+%%PORTDOCS%%share/doc/white_dune/usage_docs/dune_interaktion.jpg
+%%PORTDOCS%%share/doc/white_dune/usage_docs/rot.jpg
+%%PORTDOCS%%share/doc/white_dune/usage_docs/scale.jpg
+%%PORTDOCS%%share/doc/white_dune/usage_docs/schieb.jpg
+%%PORTDOCS%%share/doc/white_dune/usage_docs/transform.jpg
+%%PORTDOCS%%share/doc/white_dune/usage_docs/transform2.jpg
+%%PORTDOCS%%share/doc/white_dune/usage_examples/animation_example.wrl
+%%PORTDOCS%%share/doc/white_dune/usage_examples/index.html
+%%PORTDOCS%%share/doc/white_dune/usage_examples/joystick2.sh
+%%PORTDOCS%%share/doc/white_dune/usage_examples/joystick2.sh.html
+%%PORTDOCS%%share/doc/white_dune/usage_examples/nostereo.sh
+%%PORTDOCS%%share/doc/white_dune/usage_examples/nostereo.sh.html
+%%PORTDOCS%%share/doc/white_dune/usage_examples/spaceball_joystick_example.sh
+%%PORTDOCS%%share/doc/white_dune/usage_examples/spaceball_joystick_example.sh.html
+%%PORTDOCS%%share/doc/white_dune/usage_examples/xinput_example.sh
+%%PORTDOCS%%share/doc/white_dune/usage_examples/xinput_example.sh.html
+%%PORTDOCS%%share/doc/white_dune/usage_examples/xinput_irix6.2_example.sh
+%%PORTDOCS%%@dirrm share/doc/white_dune/developer_docs
+%%PORTDOCS%%@dirrm share/doc/white_dune/typical_vrml_examples
+%%PORTDOCS%%@dirrm share/doc/white_dune/usage_docs
+%%PORTDOCS%%@dirrm share/doc/white_dune/usage_examples
+%%PORTDOCS%%@dirrm share/doc/white_dune

@@ -1,0 +1,5 @@
+White_dune is a low level tool, it can read VRML97 files, display and let
+the user change the scenegraph/fields. Unlike most highlevel tools, it uses
+a lightning model based on the VRML97 standard.
+
+WWW: http://www.csv.ica.uni-stuttgart.de/vrml/dune/
