@@ -1,0 +1,20 @@
+--- Makefile.in.orig	Fri Sep 12 12:52:14 2003
++++ Makefile.in	Mon Nov 10 01:09:40 2003
+@@ -141,7 +141,7 @@
+ sharedstatedir = @sharedstatedir@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
+-SUBDIRS = inc dtd lib doc . ofx2qif ofxdump 
++SUBDIRS = inc dtd lib . ofx2qif ofxdump 
+ 
+ docdir = ${prefix}/share/doc/libofx
+ 
+@@ -541,7 +541,7 @@
+ 
+ info-am:
+ 
+-install-data-am: install-docDATA
++install-data-am:
+ 
+ install-exec-am:
+ 
