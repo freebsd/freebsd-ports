@@ -4,4 +4,4 @@ This library works with PostgreSQL 6.4/6.5 and 7.0/7.1.
 Authors: Yukihiro Matsumoto <matz@ruby-lang.org>
 	Eiji Matsumoto <usagi@ruby.club.or.jp>
 	Noboru Saitou <noborus@zetabits.com> (current maintainer)
-WWW:	http://webclub.kcom.ne.jp/mb/noborus/ruby/index.html
+WWW:	http://www.postgresql.jp/interfaces/ruby/archive/
