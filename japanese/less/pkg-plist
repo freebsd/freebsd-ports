@@ -1,0 +1,6 @@
+@cwd ${PREFIX}
+bin/jless
+bin/jlesskey
+lib/jless.hlp
+man/man1/jless.1.gz
+man/man1/jlesskey.1.gz
