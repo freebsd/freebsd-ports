@@ -1555,6 +1555,7 @@ emiclock	ports/x11-clocks/emiclock
 emil		ports/mail/emil
 emirror		ports/ftp/emirror
 emma		ports/misc/emma
+emp		ports/www/emp
 empire		ports/games/empire
 emu		ports/x11/emu
 en-ooodict-CA	ports/editors/ooodict-en_CA
