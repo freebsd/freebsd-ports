@@ -1,0 +1,75 @@
+bin/makeumap
+bin/uniconv
+bin/uniprint
+bin/stripumap
+bin/yudit
+share/yudit/data/8859_1.umap
+share/yudit/data/BIG5_X11.umap
+share/yudit/data/8859_1.bumap
+share/yudit/data/8859_2.bumap
+share/yudit/data/8859_3.bumap
+share/yudit/data/8859_4.bumap
+share/yudit/data/8859_5.bumap
+share/yudit/data/8859_7.bumap
+share/yudit/data/8859_9.bumap
+share/yudit/data/BIG5.bumap
+share/yudit/data/CP1251.bumap
+share/yudit/data/GB2312L.bumap
+share/yudit/data/GB2312R.bumap
+share/yudit/data/JIS0201.bumap
+share/yudit/data/JIS0208.bumap
+share/yudit/data/JIS0212.bumap
+share/yudit/data/KOI8_R.bumap
+share/yudit/data/KSC5601L.bumap
+share/yudit/data/KSC5601R.bumap
+share/yudit/data/OLD5601.bumap
+share/yudit/data/VISCII.bumap
+share/yudit/data/Arabic.kmap
+share/yudit/data/Chinese-CJ.kmap
+share/yudit/data/Cyrillic.kmap
+share/yudit/data/Czech.kmap
+share/yudit/data/Danish.kmap
+share/yudit/data/Dutch.kmap
+share/yudit/data/Esperanto.kmap
+share/yudit/data/Ethiopic.kmap
+share/yudit/data/French.kmap
+share/yudit/data/German.kmap
+share/yudit/data/Greek.kmap
+share/yudit/data/Hangul.kmap
+share/yudit/data/Hangul2.kmap
+share/yudit/data/Hangul3.kmap
+share/yudit/data/Hebrew.kmap
+share/yudit/data/Hungarian.kmap
+share/yudit/data/Kana.kmap
+share/yudit/data/Lithuanian.kmap
+share/yudit/data/Mnemonic.kmap
+share/yudit/data/Polish.kmap
+share/yudit/data/Russian.kmap
+share/yudit/data/SGML.kmap
+share/yudit/data/Unicode2.kmap
+share/yudit/data/Vietnamese.kmap
+share/yudit/help/Config-hu.help
+share/yudit/help/Config.help
+share/yudit/help/General.help
+share/yudit/help/TestPage.help
+share/yudit/config/yuditrc
+share/yudit/locale/hu.utf8/LC_MESSAGES/messages.mo
+share/yudit/locale/ja.utf8/LC_MESSAGES/messages.mo
+share/yudit/locale/ru.utf8/LC_MESSAGES/messages.mo
+share/yudit/locale/zh_TW.utf8/LC_MESSAGES/messages.mo
+share/yudit/locale/your.utf8/LC_MESSAGES/messages.mo
+@dirrm share/yudit/locale/hu.utf8/LC_MESSAGES
+@dirrm share/yudit/locale/hu.utf8
+@dirrm share/yudit/locale/ja.utf8/LC_MESSAGES
+@dirrm share/yudit/locale/ja.utf8
+@dirrm share/yudit/locale/ru.utf8/LC_MESSAGES
+@dirrm share/yudit/locale/ru.utf8
+@dirrm share/yudit/locale/zh_TW.utf8/LC_MESSAGES
+@dirrm share/yudit/locale/zh_TW.utf8
+@dirrm share/yudit/locale/your.utf8/LC_MESSAGES
+@dirrm share/yudit/locale/your.utf8
+@dirrm share/yudit/data
+@dirrm share/yudit/help
+@dirrm share/yudit/config
+@dirrm share/yudit/locale
+@dirrm share/yudit
