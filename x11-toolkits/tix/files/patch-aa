@@ -1,0 +1,20 @@
+--- configure.orig	Wed Oct  2 03:46:38 1996
++++ configure	Sun Dec 22 13:47:10 1996
+@@ -2946,7 +2946,7 @@
+ 
+ 	    # 1. Load the compilation flags for TCL 7.5
+ 	    #
+-	    file="$TCL75_SRC_DIR/unix/$TCL_CONFIG_INFO"
++	    file=/usr/libdata/tcl/tclConfig.sh
+ 	    . $file
+ 	    
+ 	    
+@@ -2965,7 +2965,7 @@
+ 
+ 	    # 2. Load the compilation flags for TK 4.1
+ 	    #
+-	    file="$TK41_SRC_DIR/unix/tkConfig.sh"
++	    file=${PREFIX}/lib/tkConfig.sh
+ 	    . $file
+ 	    
+ 
