@@ -20,7 +20,7 @@ USE_X_PREFIX=	yes
 USE_GNOME=	gnomeprefix gnomehack gnomelibs
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-fpermissive -I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>
