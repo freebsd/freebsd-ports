@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	mysql-jdbc-mm
-PORTVERSION=	1.2b
-CATEGORIES=	databases
+PORTVERSION=	1.2c
+CATEGORIES=	databases java
 MASTER_SITES=	http://www.worldserver.com/mm.mysql/dist/
 DISTNAME=	mm.mysql.jdbc-${PORTVERSION}
 
