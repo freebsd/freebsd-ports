@@ -1,13 +1,13 @@
 # New ports collection makefile for:	gnomelibs
-# Version required:			1.0.1
+# Version required:			1.0.4
 # Date created:				17 June 1998
 # Whom:					Yukihiro Nakai <Nakai@technologist.com>
 #
-# $Id: Makefile,v 1.34 1999/03/15 02:04:17 nectar Exp $
+# $Id: Makefile,v 1.35 1999/03/15 18:30:05 nectar Exp $
 #
 
-DISTNAME=	gnome-libs-1.0.3
-PKGNAME=	gnomelibs-1.0.3
+DISTNAME=	gnome-libs-1.0.4
+PKGNAME=	gnomelibs-1.0.4
 CATEGORIES=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	gnome-1.0/sources
