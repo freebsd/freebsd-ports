@@ -9,7 +9,7 @@ PORTNAME=	proftpd
 PORTVERSION=	1.2.10
 PORTREVISION=	0
 CATEGORIES=	ftp
-MASTER_SITES=	ftp://ftp.proftpd.net/distrib/source/ \
+MASTER_SITES=	ftp://ftp.proftpd.org/distrib/source/ \
 		ftp://ftp.stikman.com/pub/proftpd/ \
 		ftp://ftp.empora.de/pub/mirrors/ftp.proftpd.org/ \
 		ftp://ftp.fastorama.com/ \
