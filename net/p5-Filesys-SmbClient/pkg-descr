@@ -1,0 +1,7 @@
+Provide interface to access routine defined
+in libsmbclient.so
+
+If you want to use filehandle with this module,
+you need Perl 5.6 or later.
+
+WWW: http://search.cpan.org/dist/Filesys-SmbClient/
