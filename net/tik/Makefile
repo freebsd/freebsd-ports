@@ -58,6 +58,8 @@ do-install:
 .endfor
 	@${SED} 's#@PREFIX@#${PREFIX}#g' < ${FILESDIR}/tik >${WRKDIR}/tik.sh
 	${INSTALL_SCRIPT} ${WRKDIR}/tik.sh ${PREFIX}/bin/tik
+	@${SED} 's#@PREFIX@#${PREFIX}#g' < ${FILESDIR}/tac >${WRKDIR}/tac.sh
+	${INSTALL_SCRIPT} ${WRKDIR}/tac.sh ${PREFIX}/bin/tac
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/${DOCDIR}
 	@${ECHO} @dirrm ${DOCDIR} >> ${PLIST}.dirrm
