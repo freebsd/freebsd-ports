@@ -1,5 +1,5 @@
---- session.c.orig	Sun Mar 17 20:08:51 2002
-+++ session.c	Sun Mar 17 20:22:06 2002
+--- session.c.orig	Mon Mar 25 06:21:20 2002
++++ session.c	Mon Mar 25 06:22:52 2002
 @@ -57,6 +57,13 @@
  #include "canohost.h"
  #include "session.h"
@@ -64,7 +64,7 @@
  		/* Close the master side of the pseudo tty. */
  		close(ptyfd);
  
-@@ -583,12 +614,23 @@
+@@ -583,12 +614,24 @@
  do_login(Session *s, const char *command)
  {
  	char *time_string;
@@ -79,6 +79,7 @@
 +	FILE *f;
 +	char buf[256];
 +	char *fname;
++	char *shorttty;
 +#endif /* HAVE_LOGIN_CAP */
 +#ifdef __FreeBSD__
 +#define DEFAULT_WARN  (2L * 7L * 86400L)  /* Two weeks */
@@ -88,7 +89,7 @@
  
  	/*
  	 * Get IP address of client. If the connection is not a socket, let
-@@ -616,10 +658,92 @@
+@@ -616,10 +659,101 @@
  	    get_remote_name_or_ip(utmp_len, options.verify_reverse_mapping),
  	    (struct sockaddr *)&from);
  
@@ -153,7 +154,16 @@
 +#endif /* __FreeBSD__ */
 +
 +#ifdef HAVE_LOGIN_CAP
-+	if (!auth_ttyok(lc, s->tty)) {
++	/* check if we have a pathname in the ttyname */
++	shorttty = rindex( s->tty, '/' );
++	if (shorttty != NULL ) {
++		/* use only the short filename to check */
++		shorttty ++;
++	} else {
++		/* nothing found, use the whole name found */
++		shorttty = s->tty;
++	}
++	if (!auth_ttyok(lc, shorttty)) {
 +		(void)printf("Permission denied.\n");
 +		log(
 +	       "LOGIN %.200s REFUSED (TTY) FROM %.200s ON TTY %.200s",
@@ -182,7 +192,7 @@
  		time_string = ctime(&last_login_time);
  		if (strchr(time_string, '\n'))
  			*strchr(time_string, '\n') = 0;
-@@ -629,7 +753,30 @@
+@@ -629,7 +763,30 @@
  			printf("Last login: %s from %s\r\n", time_string, hostname);
  	}
  
@@ -214,7 +224,7 @@
  }
  
  /*
-@@ -645,9 +792,9 @@
+@@ -645,9 +802,9 @@
  #ifdef HAVE_LOGIN_CAP
  		f = fopen(login_getcapstr(lc, "welcome", "/etc/motd",
  		    "/etc/motd"), "r");
@@ -226,7 +236,7 @@
  		if (f) {
  			while (fgets(buf, sizeof(buf), f))
  				fputs(buf, stdout);
-@@ -674,10 +821,10 @@
+@@ -674,10 +831,10 @@
  #ifdef HAVE_LOGIN_CAP
  	if (login_getcapbool(lc, "hushlogin", 0) || stat(buf, &st) >= 0)
  		return 1;
@@ -239,7 +249,7 @@
  	return 0;
  }
  
-@@ -775,6 +922,10 @@
+@@ -775,6 +932,10 @@
  	env[0] = NULL;
  
  	if (!options.use_login) {
@@ -250,7 +260,7 @@
  		/* Set basic environment. */
  		child_set_env(&env, &envsize, "USER", pw->pw_name);
  		child_set_env(&env, &envsize, "LOGNAME", pw->pw_name);
-@@ -782,9 +933,15 @@
+@@ -782,9 +943,15 @@
  #ifdef HAVE_LOGIN_CAP
  		(void) setusercontext(lc, pw, pw->pw_uid, LOGIN_SETPATH);
  		child_set_env(&env, &envsize, "PATH", getenv("PATH"));
@@ -268,7 +278,7 @@
  
  		snprintf(buf, sizeof buf, "%.200s/%.50s",
  			 _PATH_MAILDIR, pw->pw_name);
-@@ -837,6 +994,11 @@
+@@ -837,6 +1004,11 @@
  		child_set_env(&env, &envsize, "KRB5CCNAME",
  		    s->authctxt->krb5_ticket_file);
  #endif
@@ -280,7 +290,7 @@
  	if (auth_get_socket_name() != NULL)
  		child_set_env(&env, &envsize, SSH_AUTHSOCKET_ENV_NAME,
  		    auth_get_socket_name());
-@@ -979,6 +1141,36 @@
+@@ -979,6 +1151,36 @@
  		fatal("Failed to set uids to %u.", (u_int) pw->pw_uid);
  }
  
@@ -317,7 +327,7 @@
  /*
   * Performs common processing for the child, such as setting up the
   * environment, closing extra file descriptors, setting the user and group
-@@ -1057,7 +1249,7 @@
+@@ -1057,7 +1259,7 @@
  	 * initgroups, because at least on Solaris 2.3 it leaves file
  	 * descriptors open.
  	 */
@@ -326,7 +336,7 @@
  		close(i);
  
  	/*
-@@ -1087,6 +1279,31 @@
+@@ -1087,6 +1289,31 @@
  			exit(1);
  #endif
  	}
