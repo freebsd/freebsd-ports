@@ -1,6 +1,6 @@
---- configure.orig	Tue Oct  7 15:28:39 2003
-+++ configure	Tue Oct  7 15:30:47 2003
-@@ -18452,7 +18452,8 @@
+--- configure.orig	Sun Mar 21 15:03:49 2004
++++ configure	Sun Mar 21 15:03:49 2004
+@@ -18471,7 +18471,8 @@
  
  
  # This can be used to rebuild libtool when needed
@@ -10,24 +10,3 @@
  
  # Always use our own libtool.
  LIBTOOL='$(SHELL) $(top_builddir)/libtool'
-@@ -20126,7 +20127,11 @@
-   fi
-   exec_prefix_save=$exec_prefix
-   if test "x$exec_prefix" = "xNONE"; then
-+  if test "x$prefix" = "xNONE"; then
-     exec_prefix=/usr/local
-+  else
-+    exec_prefix=${prefix}
-+  fi
-   fi
- 
-   full_var="$FROM_VAR"
-@@ -21793,7 +21798,7 @@
- else
-   HAVE_MOZILLA="yes"
- fi
--_mozilla_include_dir=`mozilla-config --cflags|sed 's/-I\(.*\) .*/\1/'`
-+_mozilla_include_dir=`$MOZILLA_CONFIG --cflags|sed 's/-I\(.*\) .*/\1/'`
- MOZILLA_CFLAGS="-I$_mozilla_include_dir/plugin -I$_mozilla_include_dir/java -I$_mozilla_include_dir/nspr"
- 
- 
