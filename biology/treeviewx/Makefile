@@ -14,15 +14,9 @@ DISTNAME=	tv-${PORTVERSION}
 MAINTAINER=	tonym@biolateral.com.au
 COMMENT=	A phylogenetic tree viewer
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500113
-BROKEN=         "Does not compile (bad C++ code)"
-.endif
-
 LIB_DEPENDS=	wx_gtk.2:${PORTSDIR}/x11-toolkits/wxgtk-devel
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
