@@ -364,6 +364,7 @@ share/gputils/lkr/hcs1365.lkr
 share/gputils/lkr/hcs1370.lkr
 share/gputils/lkr/rf509af.lkr
 share/gputils/lkr/rf509ag.lkr
+@dirrm share/doc/gputils
 @dirrm share/gputils/header
 @dirrm share/gputils/lkr
 @dirrm share/gputils
