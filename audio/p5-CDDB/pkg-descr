@@ -8,7 +8,7 @@ itself, but relies on the main program supplying disc data.
 Therefore, it is particularly useful for developing software that
 deals with alternative media, such as MPEG audio files.
 
-WWW: http://search.cpan.org/search?module=CDDB
+WWW: http://search.cpan.org/dist/CDDB
 
 - Yar
 yar@comp.chem.msu.su
