@@ -55,17 +55,17 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	    can give remote attackers access to internals of the
 	    registered object or its module or possibly other modules.
 	    The flaw only affects Python XML-RPC servers that use the
-	    register_instance() method to register an object without
-	    a _dispatch() method.  Servers using only register_function()
-	    are not affected.</p>
+	    <code>register_instance()</code> method to register an object
+	    without a <code>_dispatch()</code> method.  Servers using
+	    only <code>register_function()</code> are not affected.</p>
 	  <p>On vulnerable XML-RPC servers, a remote attacker may
 	    be able to view or modify globals of the module(s)
 	    containing the registered instance's class(es), potentially
 	    leading to data loss or arbitrary code execution.  If the
 	    registered object is a module, the danger is particularly
 	    serious.  For example, if the registered module imports
-	    the os module, an attacker could invoke the os.system()
-	    function.</p>
+	    the <code>os</code> module, an attacker could invoke the
+	    <code>os.system()</code> function.</p>
 	</blockquote>
 	<p><strong>Note:</strong> This vulnerability affects your
 	  system only if you're running
