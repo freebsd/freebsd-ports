@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mydns
-PORTVERSION=	0.8.3
+PORTVERSION=	0.9.0
 CATEGORIES=	net databases
 MASTER_SITES=	http://mydns.bboy.net/download/
 
@@ -20,7 +20,7 @@ USE_BZIP2=	yes
 USE_REINPLACE=	yes
 
 MAN5=		mydns.conf.5
-MAN8=		mydns.8 mydnscheck.8 mydnsdump.8
+MAN8=		mydns.8 mydnscheck.8 mydnsexport.8 mydnsimport.8
 
 DOCS=	AUTHORS COPYING ChangeLog NEWS QUICKSTART README TODO
 
@@ -39,13 +39,13 @@ post-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/mydns.sh ${PREFIX}/etc/rc.d/mydns.sh.sample
 	@install-info ${PREFIX}/info/mydns.info ${PREFIX}/info/dir
 .if !defined(NOPORTDOCS)
-	@${INSTALL} -d -m 0755 ${DOCSDIR}/html ${DOCSDIR}/extras
+	@${INSTALL} -d -m 0755 ${DOCSDIR}/html ${DOCSDIR}/contrib
 .for f in ${DOCS}
 	        @${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}/
 .endfor
 	@${INSTALL_DATA} ${WRKSRC}/doc/html/* ${DOCSDIR}/html/
-	@${INSTALL_DATA} ${WRKSRC}/extras/admin.php ${DOCSDIR}/extras/
-	@${INSTALL_DATA} ${WRKSRC}/extras/README ${DOCSDIR}/extras/
+	@${INSTALL_DATA} ${WRKSRC}/contrib/admin.php ${DOCSDIR}/contrib/
+	@${INSTALL_DATA} ${WRKSRC}/contrib/README ${DOCSDIR}/contrib/
 .endif
 	@${PREFIX}/sbin/mydns --dump-config >${PREFIX}/etc/mydns.conf.sample
 	@${SED} -e 's,%%%PREFIX%%%,${PREFIX},g' ${PKGMESSAGE}

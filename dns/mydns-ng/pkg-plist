@@ -4,7 +4,9 @@ etc/rc.d/mydns.sh.sample
 info/mydns.info
 @exec install-info %D/info/mydns.info %D/info/dir
 bin/mydnscheck
-bin/mydnsdump
+bin/mydnsexport
+bin/mydnsimport
+share/locale/es/LC_MESSAGES/mydns.mo
 share/locale/pt_BR/LC_MESSAGES/mydns.mo
 share/locale/fr/LC_MESSAGES/mydns.mo
 sbin/mydns
@@ -15,8 +17,8 @@ sbin/mydns
 %%PORTDOCS%%share/doc/mydns/QUICKSTART
 %%PORTDOCS%%share/doc/mydns/README
 %%PORTDOCS%%share/doc/mydns/TODO
-%%PORTDOCS%%share/doc/mydns/extras/README
-%%PORTDOCS%%share/doc/mydns/extras/admin.php
+%%PORTDOCS%%share/doc/mydns/contrib/README
+%%PORTDOCS%%share/doc/mydns/contrib/admin.php
 %%PORTDOCS%%share/doc/mydns/html/mydns.html
 %%PORTDOCS%%share/doc/mydns/html/mydns_1.html
 %%PORTDOCS%%share/doc/mydns/html/mydns_10.html
@@ -44,6 +46,7 @@ sbin/mydns
 %%PORTDOCS%%share/doc/mydns/html/mydns_30.html
 %%PORTDOCS%%share/doc/mydns/html/mydns_31.html
 %%PORTDOCS%%share/doc/mydns/html/mydns_32.html
+%%PORTDOCS%%share/doc/mydns/html/mydns_33.html
 %%PORTDOCS%%share/doc/mydns/html/mydns_4.html
 %%PORTDOCS%%share/doc/mydns/html/mydns_5.html
 %%PORTDOCS%%share/doc/mydns/html/mydns_6.html
@@ -54,5 +57,5 @@ sbin/mydns
 %%PORTDOCS%%share/doc/mydns/html/mydns_ovr.html
 %%PORTDOCS%%share/doc/mydns/html/mydns_toc.html
 %%PORTDOCS%%@dirrm share/doc/mydns/html
-%%PORTDOCS%%@dirrm share/doc/mydns/extras
+%%PORTDOCS%%@dirrm share/doc/mydns/contrib
 %%PORTDOCS%%@dirrm share/doc/mydns
