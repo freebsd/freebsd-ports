@@ -32,7 +32,7 @@ PLIST_SUB=	VERSION=${PORTVERSION}
 STRIP=	# empty
 
 do-install:
-	brandelf -t Linux ${WRKDIR}/${DISTNAME}
+	${BRANDELF} -t Linux ${WRKDIR}/${DISTNAME}
 	${INSTALL_PROGRAM} ${WRKDIR}/${DISTNAME} ${PREFIX}/bin
 	${LN} -fhs ${PREFIX}/bin/${DISTNAME} ${PREFIX}/bin/${PORTNAME}
 
