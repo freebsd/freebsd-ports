@@ -24,6 +24,7 @@
     SUBDIR += cdiff
     SUBDIR += chpp
     SUBDIR += cl-meta
+    SUBDIR += cl-meta-clisp
     SUBDIR += cl-meta-cmucl
     SUBDIR += cl-meta-sbcl
     SUBDIR += cl-ppcre
