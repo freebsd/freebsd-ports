@@ -1,0 +1,10 @@
+--- ./lib/rip/ripng.c.orig	Thu Jan 30 11:27:54 2003
++++ ./lib/rip/ripng.c	Thu Jan 30 11:28:06 2003
+@@ -17,6 +17,7 @@
+ #ifdef NT
+ #else
+ #include <sys/fcntl.h>
++#include <sys/types.h>
+ #include <sys/uio.h>
+ #endif /* NT */
+ 
