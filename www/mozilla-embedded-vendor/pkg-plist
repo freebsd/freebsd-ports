@@ -42,10 +42,17 @@ include/mozilla-embedded/intl_csi.h
 include/mozilla-embedded/javaString.h
 include/mozilla-embedded/javaThreads.h
 include/mozilla-embedded/java_lang_String.h
+include/mozilla-embedded/jconfig.h
 include/mozilla-embedded/jdk_java_lang_String.h
+include/mozilla-embedded/jerror.h
+include/mozilla-embedded/jinclude.h
 include/mozilla-embedded/jmc.h
+include/mozilla-embedded/jmorecfg.h
 include/mozilla-embedded/jni.h
 include/mozilla-embedded/jni_md.h
+include/mozilla-embedded/jos2fig.h
+include/mozilla-embedded/jpegint.h
+include/mozilla-embedded/jpeglib.h
 include/mozilla-embedded/jri.h
 include/mozilla-embedded/jri_md.h
 include/mozilla-embedded/jriext.h
@@ -94,6 +101,7 @@ include/mozilla-embedded/jstypes.h
 include/mozilla-embedded/jsutil.h
 include/mozilla-embedded/jsxdrapi.h
 include/mozilla-embedded/jvmmgr.h
+include/mozilla-embedded/jwinfig.h
 include/mozilla-embedded/libi18n.h
 include/mozilla-embedded/libimg.h
 include/mozilla-embedded/libmng.h
@@ -1470,6 +1478,8 @@ include/mozilla-embedded/plhash.h
 include/mozilla-embedded/plresolv.h
 include/mozilla-embedded/plstr.h
 include/mozilla-embedded/plvector.h
+include/mozilla-embedded/png.h
+include/mozilla-embedded/pngconf.h
 include/mozilla-embedded/pratom.h
 include/mozilla-embedded/prbit.h
 include/mozilla-embedded/prclist.h
