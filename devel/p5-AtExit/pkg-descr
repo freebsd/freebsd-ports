@@ -1,0 +1,14 @@
+The AtExit module provides ANSI-C style exit processing modeled after
+the atexit function in the standard C library (see atexit(3C)).  Various
+exit processing routines may be registered by calling atexit and passing
+it the desired subroutine along with any desired arguments.  Then, at
+program-exit time, the subroutines registered with atexit are invoked
+with their given arguments in the reverse order of registration (last
+one registered is invoked first).  Registering the same subroutine more
+than once will cause that subroutine to be invoked once for each
+registration.
+
+WWW: http://search.cpan.org/search?dist=AtExit
+
+-- Sergey Skvortsov
+skv@FreeBSD.org
