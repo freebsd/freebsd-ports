@@ -32,6 +32,37 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="02274fd9-6bc5-11d9-8edb-000a95bc6fae">
+    <topic>realplayer -- arbitrary file deletion and other vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>linux-realplayer</name>
+	<range><lt>10.0.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>An NGSSoftware Insight Security Research Advisory reports:</p>
+	<blockquote cite="http://www.ngssoftware.com/advisories/real-03full.txt">
+	  <p>Two vulnerabilities have been discovered in RealPlayer
+            which may potentially be leveraged to allow remote code
+            execution, or may used in combination with the Real
+            Metadata Package File Deletion vulnerability to reliably
+            delete files from a users system.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.ngssoftware.com/advisories/real-02full.txt</url>
+      <url>http://www.ngssoftware.com/advisories/real-03full.txt</url>
+      <url>http://service.real.com/help/faq/security/040928_player/EN/</url>
+    </references>
+    <dates>
+      <discovery>2004-10-06</discovery>
+      <entry>2005-01-21</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="2001103a-6bbd-11d9-851d-000a95bc6fae">
     <topic>imlib -- xpm heap buffer overflows and integer overflows</topic>
     <affects>
