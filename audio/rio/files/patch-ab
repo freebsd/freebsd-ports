@@ -1,8 +1,8 @@
-*** rio.cpp	Mon Feb  1 17:55:34 1999
---- rio.bsd/rio.cpp	Sat Feb  6 21:00:22 1999
+*** rio.cpp.orig	Mon Mar 15 06:53:16 1999
+--- rio.cpp	Fri Feb 18 11:02:11 2000
 ***************
-*** 49,54 ****
---- 49,65 ----
+*** 53,58 ****
+--- 53,76 ----
   	#define		CLOCK_SECOND			1000
   	#define		DELETEARRAY				delete[]
   
@@ -12,6 +12,13 @@
 + 	#include	<fcntl.h>
 + 	#include	<unistd.h>
 + 	#include	<machine/cpufunc.h>
++ 	#if defined(__alpha__)
++ 		#include <sys/types.h>
++ 		extern "C" {
++ 			u_int8_t inb(u_int32_t);
++ 			void outb(u_int32_t, u_int8_t);
++ 		}
++ 	#endif
 + 	#define		OUTPORT(p,v)			outb( p, v )
 + 	#define		INPORT(p)				inb( p )
 + 	#define		CLOCK_SECOND			CLOCKS_PER_SEC
@@ -22,7 +29,7 @@
   	#include	<unistd.h>
 ***************
 *** 201,206 ****
---- 212,226 ----
+--- 219,233 ----
   	m_iPortData = m_iPortBase + OFFSET_PORT_DATA;
   	m_iPortStatus = m_iPortBase + OFFSET_PORT_STATUS;
   	m_iPortControl = m_iPortBase + OFFSET_PORT_CONTROL;

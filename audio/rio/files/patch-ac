@@ -1,5 +1,5 @@
-*** makefile.orig	Sat Sep 18 15:19:53 1999
---- makefile	Sat Sep 18 15:20:20 1999
+*** makefile.orig	Mon Mar 15 06:53:16 1999
+--- makefile	Sun Feb  6 12:28:15 2000
 ***************
 *** 6,15 ****
   #
@@ -12,7 +12,7 @@
   		chmod +s rio
   
   clean:
---- 6,19 ----
+--- 6,21 ----
   #
   ###############################################################################
   
@@ -20,10 +20,12 @@
 + LDADD=		-lio
 + .endif
 + 
++ CXXFLAGS?=	-O1
++ 
   all: 		rio
   
   rio:		app.cpp rio.cpp
-! 		g++ -O1 -o rio app.cpp rio.cpp ${LDADD}
+! 		g++ ${CXXFLAGS} -o rio app.cpp rio.cpp ${LDADD}
   		chmod +s rio
   
   clean:
