@@ -14,7 +14,8 @@ DISTNAME=		${PORTNAME}-${PORTVERSION:S/.r/rc/}
 
 MAINTAINER=		ports@FreeBSD.org
 
-LIB_DEPENDS=		aa.1:${PORTSDIR}/graphics/aalib
+LIB_DEPENDS=		aa.1:${PORTSDIR}/graphics/aalib \
+			mikmod.2:${PORTSDIR}/audio/libmikmod
 
 GNU_CONFIGURE=		yes
 WRKSRC=			${WRKDIR}/bb-1.3.0
