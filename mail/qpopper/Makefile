@@ -3,7 +3,7 @@
 # Date created:		1 April 1995
 # Whom:			pst
 #
-# $Id: Makefile,v 1.20 1997/11/20 14:38:36 ache Exp $
+# $Id: Makefile,v 1.21 1997/12/24 01:21:35 alex Exp $
 #
 
 DISTNAME=       qpopper2.41beta1
@@ -35,7 +35,7 @@ P_LIBS+=        -lmd -lutil
 
 GNU_CONFIGURE=          yes
 CONFIGURE_ARGS=         --with-apop=${PREFIX}/etc/popper/pop.auth \
-			--with-apopuid=pop
+			--with-apopuid=pop --enable-debugging
 CONFIGURE_ENV=          LIBS="${P_LIBS}" O_DEFS="${O_DEFS}"
 
 MAN8=   popauth.8 popper.8
