@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wzdftpd
-PORTVERSION=	0.3.3
+PORTVERSION=	0.4.0
 CATEGORIES=	ftp ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,22 +17,24 @@ COMMENT=	Modular FTP server configurable online using SITE commands
 USE_RC_SUBR=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
-USE_GETOPT_LONG=yes
+USE_PERL=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 USE_INC_LIBTOOL_VER=13
-CONFIGURE_ARGS+=	--without-mysql
+CONFIGURE_ARGS+=	--without-mysql --without-pam
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
-MAN8=	wzdftpd.8
+OPTIONS=	UFT8 "Enable UTF8 support" off \
+		TCL "Enable TCL support" off \
+		SSL "Enable OpenSSL support" on \
+		IPV6 "Enable IPv6 support" on
 
-.if defined(PACKAGE_BUILDING)
-WITH_UTF8=	yes
-WITH_TCL=	yes
-WITH_SSL=	yes
-WITH_IPV6=	yes
-.endif
+MAN1=	siteconfig.1 \
+	siteuptime.1 \
+	sitewho.1 \
+     	wzd-config.1
+MAN8=	wzdftpd.8
 
 .if defined(WITH_UTF8)
 USE_ICONV=	yes
@@ -41,38 +43,44 @@ CONFIGURE_ARGS+=	--enable-utf8
 
 .if defined(WITH_TCL)
 LIB_DEPENDS+=	tcl84:${PORTSDIR}/lang/tcl84
-CONFIGURE_ARGS+=	--with-tcl='${PREFIX}/include/tcl8.4:${PREFIX}/lib'
+CONFIGURE_ARGS+=	--with-tcl='${PREFIX}/lib/tcl8.4'
 PLIST_SUB+=	TCL=""
 .else
+CONFIGURE_ARGS+=	--without-tcl
 PLIST_SUB+=	TCL="@comment "
 .endif
 
 .if defined(WITH_SSL)
 USE_OPENSSL=	yes
-CONFIGURE_ARGS+=	--enable-ssl
+.else
+CONFIGURE_ARGS+=	--with-openssl=/dev/null
 .endif
 
 .if defined(WITH_IPV6)
 CONFIGURE_ARGS+=	--enable-ipv6
 .endif
 
-DOCS=		AUTHORS Permissions.ReadMeFirst README TLS.ReadMeFirst \
-		ChangeLog src/DOCS_XFERLOG_FORMAT src/KNOWN_BUGS src/TODO
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500600
+PLIST_SUB+=	PERL="@comment "
+.else
+PLIST_SUB+=	PERL=""
+.endif
+
+PORTDOCS=	AUTHORS Permissions.ReadMeFirst README TLS.ReadMeFirst ChangeLog
 
 RC_SCRIPTS_SUB=	PREFIX=${PREFIX} \
 		RC_SUBR=${RC_SUBR}
-
-post-extract:
-.if defined(WITH_TCL)
-	@${REINPLACE_CMD} -e 's|-ltcl8.4|-ltcl84|g' ${WRKSRC}/configure
-.endif
 
 post-install:
 	${MV} ${PREFIX}/etc/wzd.cfg ${PREFIX}/etc/wzd.cfg.sample
 	${MV} ${PREFIX}/etc/users ${PREFIX}/etc/users.sample
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
+.for i in ${PORTDOCS}
+	@${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
+.endfor
 .endif
 	@${SED} -e 's,PREFIX,${PREFIX},g' ${FILESDIR}/pkg-message.in > ${PKGMESSAGE}
 	@${CAT} ${PKGMESSAGE}
@@ -80,4 +88,4 @@ post-install:
 		${FILESDIR}/wzdftpd.sh > ${PREFIX}/etc/rc.d/wzdftpd.sh
 	@${CHMOD} ${BINMODE} ${PREFIX}/etc/rc.d/wzdftpd.sh
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
