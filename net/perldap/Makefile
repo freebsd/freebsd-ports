@@ -6,16 +6,16 @@
 # $FreeBSD$
 #
 
-DISTNAME=	perldap-1_2_2
-DISTFILES=	perldap-1.2.2.tgz
+DISTNAME=	perldap-1.2.2
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.mozilla.org/pub/directory/perldap/
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	paul@FreeBSD.org
 
-WRKSRC=			${WRKDIR}/perldap
 LIB_DEPENDS=	ldap.1:${PORTSDIR}/net/ldapsdk
-                
+
+WRKSRC=		${WRKDIR}/perldap
 MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Mozilla::LDAP::Conn.3 \
 			Mozilla::LDAP::LDIF.3 \
@@ -27,5 +27,5 @@ MAKE_ENV+= LDAPSDKDIR=${PREFIX}/mozilla/directory LDAPV3ON=yes LDAPSDKSSL=no
 
 do-configure:
 	@ cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PERL5} Makefile.PL
- 
+
 .include <bsd.port.mk>
