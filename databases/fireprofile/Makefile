@@ -17,9 +17,15 @@ EXTRACT_SUFX=   -0.1.2.tar.gz
 MAINTAINER=     dean@odyssey.apana.org.au
 COMMENT=	Library to help profiling where programs are using MySQL
 
-BUILD_DEPENDS=	${LOCALBASE}/include/mysql/mysql.h:${PORTSDIR}/databases/mysql323-server
-
 MAN3=		libfireprofile.3
 PLIST_FILES=	lib/libfireprofile.so
 
+# This port does not work with 4.x
+USE_MYSQL=	yes
+DEFAULT_MYSQL_VER=	323
+WANT_MYSQL_VER=	323
+
+.if ${MACHINE_ARCH:L} == amd64
+CFLAGS+=	-fPIC
+.endif
 .include <bsd.port.mk>
