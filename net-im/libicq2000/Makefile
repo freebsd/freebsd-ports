@@ -26,6 +26,7 @@ post-patch:
 	@${PERL} -pi -e \
 		's|^(headersincludedir =).+|\1\$$(includedir)/libicq2000|' \
 		${WRKSRC}/libicq2000/Makefile.in
+	@${PERL} -pi -e 's|(iomanip).h|\1|' ${WRKSRC}/libicq2000/buffer.h
 
 post-configure:
 	@${CP} ${LOCALBASE}/bin/libtool ${WRKSRC}
