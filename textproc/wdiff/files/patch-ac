@@ -1,5 +1,14 @@
---- wdiff.c.orig	Sun Nov  6 02:57:23 1994
-+++ wdiff.c	Wed Aug  1 16:48:38 2001
+--- wdiff.c.orig	Sun Nov  6 16:57:23 1994
++++ wdiff.c	Thu Apr 15 17:58:08 2004
+@@ -108,7 +108,7 @@
+ struct option const longopts[] =
+ {
+   {"copyright"   , 0, NULL, 'C'},
+-  {"version"     , 0, NULL, 'V'},
++  {"version"     , 0, NULL, 'v'},
+   {"no-deleted"  , 0, NULL, '1'},
+   {"no-inserted" , 0, NULL, '2'},
+   {"no-common"   , 0, NULL, '3'},
 @@ -892,8 +892,9 @@
  {
    /* Launch the diff program.  */
@@ -11,3 +20,21 @@
  			   right_side->temp_name, NULL);
    else
      input_file = readpipe (DIFF_PROGRAM, left_side->temp_name,
+@@ -1111,7 +1112,7 @@
+ Mandatory arguments to long options are mandatory for short options too.\n\
+ \n\
+   -C, --copyright            print Copyright then exit\n\
+-  -V, --version              print program version then exit\n\
++  -v, --version              print program version then exit\n\
+   -1, --no-deleted           inhibit output of deleted words\n\
+   -2, --no-inserted          inhibit output of inserted words\n\
+   -3, --no-common            inhibit output of common words\n\
+@@ -1173,7 +1174,7 @@
+   count_changed_left = 0;
+   count_changed_right = 0;
+ 
+-  while (option_char = getopt_long (argc, argv, "123CVahidlnpstw:x:y:z:",
++  while (option_char = getopt_long (argc, argv, "123Cahidlnpstvw:x:y:z:",
+ 				    longopts, NULL),
+ 	 option_char != EOF)
+     switch (option_char)
