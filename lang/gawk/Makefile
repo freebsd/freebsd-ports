@@ -14,6 +14,12 @@ MAINTAINER=	dd@FreeBSD.org
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libintl.a:${PORTSDIR}/devel/gettext
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500039
+EXTRA_PATCHES=	${PATCHDIR}/extra-patch-nowchar
+.endif
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-libiconv-prefix=${LOCALBASE} \
 		--with-libintl-prefix=${LOCALBASE}
@@ -21,4 +27,4 @@ MAN1=		gawk.1 igawk.1
 
 PLIST_SUB=	VERSION=${PORTVERSION}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
