@@ -182,6 +182,7 @@
     SUBDIR += ilu
     SUBDIR += imake
     SUBDIR += imake-4
+    SUBDIR += inilib
     SUBDIR += jakarta-ant
     SUBDIR += jam
     SUBDIR += kdbg
