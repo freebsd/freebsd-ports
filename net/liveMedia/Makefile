@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	liveMedia
-PORTVERSION=	2004.11.30
+PORTVERSION=	2004.12.06
 PORTEPOCH=	1
 CATEGORIES=	net devel
 MASTER_SITES=	http://www.LIVE.COM/liveMedia/public/
@@ -75,8 +75,8 @@ liveMedia=		\
 		liveMedia/include/DarwinInjector.hh \
 		liveMedia/include/DeviceSource.hh \
 		liveMedia/include/DigestAuthentication.hh \
-		liveMedia/include/FileSink.hh \
 		liveMedia/include/FileServerMediaSubsession.hh \
+		liveMedia/include/FileSink.hh \
 		liveMedia/include/FramedFileSource.hh \
 		liveMedia/include/FramedFilter.hh \
 		liveMedia/include/FramedSource.hh \
@@ -89,12 +89,12 @@ liveMedia=		\
 		liveMedia/include/JPEGVideoRTPSink.hh \
 		liveMedia/include/JPEGVideoRTPSource.hh \
 		liveMedia/include/JPEGVideoSource.hh \
-		liveMedia/include/MP3AudioFileServerMediaSubsession.hh \
 		liveMedia/include/MP3ADU.hh \
 		liveMedia/include/MP3ADURTPSink.hh \
 		liveMedia/include/MP3ADURTPSource.hh \
 		liveMedia/include/MP3ADUTranscoder.hh \
 		liveMedia/include/MP3ADUinterleaving.hh \
+		liveMedia/include/MP3AudioFileServerMediaSubsession.hh \
 		liveMedia/include/MP3FileSource.hh \
 		liveMedia/include/MP3HTTPSource.hh \
 		liveMedia/include/MP3Transcoder.hh \
