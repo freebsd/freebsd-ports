@@ -6,11 +6,10 @@
 #
 
 PORTNAME=		cryptlib
-PORTVERSION=		3.1.b4
-PORTREVISION=		1
+PORTVERSION=		3.1.b5
 CATEGORIES=		security
 MASTER_SITES=		ftp://ftp.franken.de/pub/crypt/cryptlib/beta/
-DISTNAME=		cl31beta04
+DISTNAME=		cl31beta05
 EXTRACT_SUFX=		.zip
 
 MAINTAINER=		ports@FreeBSD.org
@@ -23,15 +22,11 @@ EXTRACT_BEFORE_ARGS=	-aq
 NO_WRKSUBDIR=		yes
 USE_GMAKE=		yes
 MAKEFILE=		makefile
-MAKE_ARGS=		all shared
-USE_REINPLACE=		yes
+ALL_TARGET=		default FreeBSD shared
 
 INSTALLS_SHLIB=		yes
 
 .include <bsd.port.pre.mk>
-
-post-patch:
-	${REINPLACE_CMD} -e "s,-fomit-frame-pointer -O3,${CFLAGS}," ${WRKSRC}/makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/endian ${PREFIX}/bin
