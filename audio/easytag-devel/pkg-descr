@@ -1,12 +1,14 @@
 EasyTAG is an utility for viewing and editing tags for MP3, MP2, FLAC, Ogg
 Vorbis, MusePack and Monkey's Audio files. 
 
+The big new feature of this development version is GTK2 support.
+
 Features:
 
 - Auto tagging: parse filename and directory to complete automatically the
-fields (using masks),
+  fields (using masks),
 - Ability to rename files from the tag (using masks) or by loading a text
-file,
+  file,
 - Process selected files of the selected directory, 
 - Ability to browse subdirectories, 
 - Recursion for tagging, removing, renaming, saving..., 
@@ -15,10 +17,10 @@ file,
 - Auto completion of the date if a partial is entered, 
 - Undo and redo last changes, 
 - Ability to process fields of tag and file name (convert letters into
-uppercase, downcase, ...),
+  uppercase, downcase, ...),
 - CDDB support (from http protocol), 
 - A playlist generator window, 
 - French, German, Russian, Dutch, Hungarian, Swedish, Italian, Japanese,
-Ukrainian, Czech, Spanish, Polish and Romanian translation languages,
+  Ukrainian, Czech, Spanish, Polish and Romanian translations
 
 WWW: http://easytag.sourceforge.net

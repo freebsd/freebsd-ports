@@ -1,31 +1,32 @@
-# ex:ts=8
-# New ports collection makefile for:	easytag
-# Date created:			May 17, 2001
-# Whom:				ijliao
+# New ports collection makefile for:	easytag-devel
+# Date created:				15 Feb 2005
+# Whom:					Adam Weinberger <adamw@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	easytag
-PORTVERSION=	1.0
+PORTVERSION=	1.99.3
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
+PKGNAMESUFFIX=	-devel
 
-MAINTAINER=	wxs@csh.rit.edu
-COMMENT=	Tag editor for MP3 and OGG files
+MAINTAINER=	adamw@FreeBSD.org
+COMMENT=	GTK2 Tag editor for MP3 and OGG files
 
-LIB_DEPENDS=	id3-3.8.3:${PORTSDIR}/audio/id3lib \
-		vorbis.3:${PORTSDIR}/audio/libvorbis \
-		FLAC.5:${PORTSDIR}/audio/flac
+LIB_DEPENDS=	id3:${PORTSDIR}/audio/id3lib \
+		vorbis:${PORTSDIR}/audio/libvorbis \
+		FLAC:${PORTSDIR}/audio/flac
 
 MAN1=		easytag.1
+CONFLICTS=	easytag-[0-9]*
 
 USE_BZIP2=	yes
-USE_GNOME=	gtk12
-GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CONFIG_SHELL="${SH}" \
-		CPPFLAGS="-I${LOCALBASE}/include" \
+USE_X_PREFIX=	yes
+USE_GNOME=	gnomehack gnomeprefix gtk20
+USE_LIBTOOL_VER=15
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>
