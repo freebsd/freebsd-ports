@@ -19,6 +19,9 @@ FLAGS+=		${PTHREAD_LIBS}
 GNU_CONFIGURE=	yes
 DOCSFILES=	AUTHORS THANKS COPYING INSTALL NEWS README TODO ChangeLog
 SAMPLEFILES=	README noattach.patterns noattach.patterns.johncon
+.if defined(SENDMAIL_WITH_LDAP)
+CONFIGURE_ARGS+=	--enable-ldap
+.endif
 
 .include <bsd.port.pre.mk>
 
