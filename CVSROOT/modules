@@ -8165,6 +8165,7 @@ py-gtkextra	ports/x11-toolkits/py-gtkextra
 py-gtkglext	ports/x11-toolkits/py-gtkglext
 py-gtkscintilla	ports/x11-toolkits/py-gtkscintilla
 py-gui		ports/x11-toolkits/py-gui
+py-htmltestcase	ports/www/py-htmltestcase
 py-iconv	ports/converters/py-iconv
 py-iconvcodec	ports/converters/py-iconvcodec
 py-id3		ports/audio/py-id3
