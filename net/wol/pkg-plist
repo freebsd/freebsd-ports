@@ -1,8 +1,6 @@
+@comment $FreeBSD$
 bin/wol
 bin/wol-dhcpdconf
-@unexec install-info --delete %D/info/wol.info %D/info/dir
-info/wol.info
-@exec install-info %D/info/wol.info %D/info/dir
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
