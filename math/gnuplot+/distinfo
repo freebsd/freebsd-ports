@@ -1,2 +1,4 @@
 MD5 (gnuplot-3.7.tar.gz) = 18bbd384a991e7b20dbd2c29c239e90d
-MD5 (gnuplot3.7+1.1.8.patch.tar.gz) = f88b3dea62ec73048fb75481ae132b9d
+MD5 (gnuplot3.7+1.1.9.patch.tar.gz) = 0d9a5e8b6687c176dfc1e65cefecd9b8
+MD5 (gnuplot3.7+1.1.9.configure.gd.patch) = 5672b26aa80d8e917a3aaf019d0d1a5f
+MD5 (gnuplot3.7+1.1.9.configure.gd2.patch) = c8d594aeadaff30a2b1fcc9e642d3aae
