@@ -1,0 +1,7 @@
+This port contains a driver for several Winmodems based on the Lucent LT
+chipset. It consists of a shim for the Linux binary only object file.
+
+The shim code was written Watanabe Kiyoshi <aab10490@pop16.odn.net.jp>, see
+http://www.geocities.com/wtnbkysh/
+
+WWW: http://www.heby.de/ltmodem
