@@ -1,8 +1,9 @@
 @comment $FreeBSD$
-sbin/nsd
-sbin/nsdc
-sbin/zonec
-sbin/nsd-notify
+etc/rc.d/nsd.sh
 etc/nsd/nsd.zones.sample
 etc/nsd/nsdc.conf.sample
+sbin/nsd
+sbin/nsd-notify
+sbin/nsdc
+sbin/zonec
 @dirrm etc/nsd
