@@ -40,8 +40,32 @@ libdata/pkgconfig/libxslt.pc
 %%PYTHON:%%share/doc/libxslt-python/examples/pyxsltproc.py
 %%PYTHON:%%share/doc/libxslt-python/examples/test.xml
 %%PYTHON:%%share/doc/libxslt-python/examples/test.xsl
+share/doc/libxslt/html/API.html
+share/doc/libxslt/html/APIchunk0.html
+share/doc/libxslt/html/APIchunk1.html
+share/doc/libxslt/html/APIchunk2.html
+share/doc/libxslt/html/APIchunk3.html
+share/doc/libxslt/html/APIchunk4.html
+share/doc/libxslt/html/APIchunk5.html
+share/doc/libxslt/html/APIchunk6.html
+share/doc/libxslt/html/APIconstructors.html
+share/doc/libxslt/html/APIfiles.html
+share/doc/libxslt/html/APIfunctions.html
+share/doc/libxslt/html/APIsymbols.html
+share/doc/libxslt/html/FAQ.html
 share/doc/libxslt/html/book1.html
+share/doc/libxslt/html/bugs.html
+share/doc/libxslt/html/contexts.gif
+share/doc/libxslt/html/contribs.html
+share/doc/libxslt/html/docbook.html
+share/doc/libxslt/html/docs.html
+share/doc/libxslt/html/downloads.html
+share/doc/libxslt/html/extensions.html
+share/doc/libxslt/html/help.html
+share/doc/libxslt/html/index.html
 share/doc/libxslt/html/index.sgml
+share/doc/libxslt/html/internals.html
+share/doc/libxslt/html/intro.html
 share/doc/libxslt/html/libxslt-attributes.html
 share/doc/libxslt/html/libxslt-extensions.html
 share/doc/libxslt/html/libxslt-functions.html
@@ -58,9 +82,21 @@ share/doc/libxslt/html/libxslt-variables.html
 share/doc/libxslt/html/libxslt-xslt.html
 share/doc/libxslt/html/libxslt-xsltinternals.html
 share/doc/libxslt/html/libxslt-xsltutils.html
+share/doc/libxslt/html/news.html
+share/doc/libxslt/html/node.gif
+share/doc/libxslt/html/object.gif
+share/doc/libxslt/html/processing.gif
+share/doc/libxslt/html/python.html
+share/doc/libxslt/html/redhat.gif
+share/doc/libxslt/html/smallfootonly.gif
+share/doc/libxslt/html/stylesheet.gif
+share/doc/libxslt/html/templates.gif
 share/doc/libxslt/html/tutorial/libxslt_tutorial.c
 share/doc/libxslt/html/tutorial/libxslttutorial.html
 share/doc/libxslt/html/tutorial/libxslttutorial.xml
+share/doc/libxslt/html/xslt.html
+share/doc/libxslt/html/xsltproc.html
+share/doc/libxslt/html/xsltproc2.html
 @dirrm share/doc/libxslt/html/tutorial
 @dirrm share/doc/libxslt/html
 %%PYTHON:%%@dirrm share/doc/libxslt-python/examples

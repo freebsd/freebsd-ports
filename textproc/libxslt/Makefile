@@ -6,15 +6,17 @@
 #
 
 PORTNAME=	libxslt
-PORTVERSION=	1.0.12
+PORTVERSION=	1.0.13
 CATEGORIES=	textproc gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/libxslt
+DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
 
 LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2
 
+USE_BZIP2=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
