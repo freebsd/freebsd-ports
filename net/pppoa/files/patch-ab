@@ -1,0 +1,87 @@
+--- src/pusb-bsd.c.orig	Wed Nov  7 19:45:26 2001
++++ src/pusb-bsd.c	Thu Apr 25 21:15:55 2002
+@@ -100,7 +100,7 @@
+ 	{
+ 	    struct usb_device_info di;
+ 
+-	    di.addr = device;
++	    di.udi_addr = device;
+ 	    if(ioctl(cfd, USB_DEVICEINFO, &di) < 0)
+ 		continue;
+ 
+@@ -116,15 +116,15 @@
+ 	    }
+ #endif
+ 
+-	    if(di.vendorNo == vendorID && di.productNo == productID)
++	    if(di.udi_vendorNo == vendorID && di.udi_productNo == productID)
+ 	    {
+-		if(strncmp(di.devnames[0], "ugen", 4) != 0)
++		if(strncmp(di.udi_devnames[0], "ugen", 4) != 0)
+ 		{
+ 		    /* Has a real driver, don't mess with it */
+ 		    continue;
+ 		}
+ 
+-		sprintf(prefix, "/dev/%s", di.devnames[0]);
++		sprintf(prefix, "/dev/%s", di.udi_devnames[0]);
+ #if defined(__FreeBSD__)
+ 		sprintf(buf, "%s", prefix);
+ #else		
+@@ -199,14 +199,14 @@
+ {
+     struct usb_ctl_request req;
+ 
+-    req.request.bmRequestType = request_type;
+-    req.request.bRequest = request;
+-    USETW(req.request.wValue, value);
+-    USETW(req.request.wIndex, index);
+-    USETW(req.request.wLength, size);
++    req.ucr_request.bmRequestType = request_type;
++    req.ucr_request.bRequest = request;
++    USETW(req.ucr_request.wValue, value);
++    USETW(req.ucr_request.wIndex, index);
++    USETW(req.ucr_request.wLength, size);
+ 
+-    req.data = buf;
+-    req.flags = USBD_SHORT_XFER_OK;
++    req.ucr_data = buf;
++    req.ucr_flags = USBD_SHORT_XFER_OK;
+ 
+     /* !!! If your kernel is built with DIAGNOSTIC (which it is by
+        !!! default under some versions of NetBSD) this ioctl will fail.
+@@ -227,7 +227,7 @@
+     if(ioctl(dev->fd, USB_DO_REQUEST, &req) < 0)
+ 	return -1;
+     else
+-	return req.actlen;
++	return req.ucr_actlen;
+ }
+ 
+ int pusb_set_configuration(pusb_device_t dev, int config)
+@@ -249,8 +249,8 @@
+     struct usb_alt_interface intf;
+     int config;
+ 
+-    intf.interface_index = interface;
+-    intf.alt_no = alternate;
++    intf.uai_interface_index = interface;
++    intf.uai_alt_no = alternate;
+ 
+     if(ioctl(dev->fd, USB_SET_ALTINTERFACE, &intf) < 0)
+     {
+@@ -278,12 +278,12 @@
+ {
+     struct usb_alt_interface intf;
+ 
+-    intf.interface_index = interface;
++    intf.uai_interface_index = interface;
+ 
+     if(ioctl(dev->fd, USB_GET_ALTINTERFACE, &intf) < 0)
+ 	return -1;
+ 
+-    return intf.alt_no;
++    return intf.uai_alt_no;
+ }
+ 
+ pusb_endpoint_t pusb_endpoint_open(pusb_device_t dev, int epnum, int flags)
