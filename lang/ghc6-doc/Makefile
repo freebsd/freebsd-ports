@@ -7,7 +7,7 @@
 
 PORTNAME=	ghc-doc
 PORTVERSION=	5.04.1
-CATEGORIES=	lang
+CATEGORIES=	lang haskell
 MASTER_SITES=	http://www.haskell.org/ghc/docs/${PORTVERSION}/ \
 		http://www.haskell.org/ghc/docs/${PORTVERSION}/html/
 DISTFILES=      building.html.tar.gz building.ps hslibs.html.tar.gz \

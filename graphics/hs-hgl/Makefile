@@ -7,7 +7,7 @@
 
 PORTNAME=	hgl
 PORTVERSION=	2.0.4
-CATEGORIES=	graphics
+CATEGORIES=	graphics haskell
 MASTER_SITES=	http://haskell.org/graphics/downloads/
 DISTNAME=	graphics-${PORTVERSION}.src
 PKGNAMEPREFIX=	hs-

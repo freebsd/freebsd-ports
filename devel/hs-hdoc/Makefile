@@ -6,7 +6,7 @@
 
 PORTNAME=	hdoc
 PORTVERSION=	0.8.2
-CATEGORIES=	devel
+CATEGORIES=	devel haskell
 MASTER_SITES=	http://www.fmi.uni-passau.de/~groessli/hdoc/
 PKGNAMEPREFIX=	hs-
 

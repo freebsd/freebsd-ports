@@ -6,7 +6,7 @@
 
 PORTNAME=	ghc
 PORTVERSION=	5.04.1
-CATEGORIES=	lang
+CATEGORIES=	lang haskell
 MASTER_SITES=	http://www.haskell.org/ghc/dist/${PORTVERSION}/
 
 ONLY_FOR_ARCHS=	i386

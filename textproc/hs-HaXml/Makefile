@@ -7,7 +7,7 @@
 PORTNAME=	haxml
 PORTVERSION=	1.07b
 PORTREVISION=	0
-CATEGORIES=	textproc
+CATEGORIES=	textproc haskell
 MASTER_SITES=	http://www.haskell.org/HaXml/ \
 		ftp://ftp.cs.york.ac.uk/pub/haskell/HaXml/
 DISTNAME=	HaXml-${PORTVERSION}
