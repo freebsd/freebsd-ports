@@ -25,6 +25,7 @@ share/%%MAMEMESS%%/%%MAMEMESS%%rc
 %%PORTDOCS%%share/doc/%%MAMEMESS%%/xmame.css
 %%PORTDOCS%%share/doc/%%MAMEMESS%%/xmame-doc.lyx
 %%PORTDOCS%%share/doc/%%MAMEMESS%%/xmame-doc.txt
+%%PORTDOCS%%share/doc/%%MAMEMESS%%/ctrlr.txt
 %%PORTDOCS%%share/doc/%%MAMEMESS%%/dga2.txt
 %%MAMEONLY%%%%DATFILES%%share/xmame/hiscore.dat
 %%MAMEONLY%%%%DATFILES%%share/xmame/history.dat

@@ -1,5 +1,5 @@
---- src/unix/unix.mak.orig	Mon Mar 18 02:41:37 2002
-+++ src/unix/unix.mak	Tue Mar 19 18:05:20 2002
+--- src/unix/unix.mak.orig	Fri May  3 04:53:53 2002
++++ src/unix/unix.mak	Mon May  6 14:04:08 2002
 @@ -50,20 +50,20 @@
  
  # svga and ggi also use $(X11LIB) since that's where zlib often is
@@ -26,7 +26,26 @@
  CFLAGS.photon2	=
  
  INST.x11        = doinstall
-@@ -357,7 +357,7 @@
+@@ -235,9 +235,18 @@
+ MY_LIBS += -lusb
+ endif
+ else
++ifeq ($(ARCH), freebsd)
++ifeq ($(shell test -f /usr/include/usbhid.h && echo have_usbhid), have_usbhid)
++CONFIG += -DHAVE_USBHID_H
++MY_LIBS += -lusbhid
++else
++MY_LIBS += /usr/lib/libusb.a
++endif
++else
+ MY_LIBS += -lusb
+ endif
+ endif
++endif
+ 
+ ifdef EFENCE
+ MY_LIBS += -lefence
+@@ -366,7 +375,7 @@
  	
  doc/x$(TARGET)rc.dist: all src/unix/xmamerc-keybinding-notes.txt
  	./x$(TARGET).$(DISPLAY_METHOD) -noloadconfig -showconfig | \
@@ -35,7 +54,7 @@
  	cat src/unix/xmamerc-keybinding-notes.txt >> doc/x$(TARGET)rc.dist
  	
  doc/gamelist.$(TARGET): all
-@@ -366,7 +366,8 @@
+@@ -375,7 +384,8 @@
  
  doc/x$(TARGET).6: all src/unix/xmame.6-1 src/unix/xmame.6-3
  	cat src/unix/xmame.6-1 > doc/x$(TARGET).6

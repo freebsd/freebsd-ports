@@ -6,7 +6,7 @@
 #
 
 PORTNAME?=	xmame
-PORTVERSION?=	0.59.1
+PORTVERSION?=	0.60.1
 CATEGORIES=	emulators
 MASTER_SITES=	http://x.mame.net/download/ \
 		http://www.mame.net/zips/ \
@@ -70,6 +70,7 @@ GENERALDOCS=	changes.unix \
 		xmame.css \
 		xmame-doc.lyx \
 		xmame-doc.txt \
+		ctrlr.txt \
 		dga2.txt
 XMAMEDOCS=	changes.mame \
 		gamelist.mame \
