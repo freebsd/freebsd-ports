@@ -3,7 +3,7 @@
 # Date created:				June 7th 1997
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#   $Id: Makefile,v 1.2 1997/06/24 18:43:27 jfitz Exp $
+#   $Id: Makefile,v 1.3 1997/06/27 02:28:27 jfitz Exp $
 #
 
 DISTNAME=	Net-Whois-0.22
@@ -18,7 +18,7 @@ RUN_DEPENDS=	${PREFIX}/lib/perl5/site_perl/Locale/Country.pm:${PORTSDIR}/misc/p5
 
 USE_PERL5=	YES
 
-MANPREFIX=	/usr/local/lib/perl5
+MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Net::Whois.3
 
 do-configure:
