@@ -112,6 +112,7 @@
     SUBDIR += p5-Tie-NetAddr-IP
     SUBDIR += packit
     SUBDIR += pancho
+    SUBDIR += php4-snmp
     SUBDIR += pixilate
     SUBDIR += pmacct
     SUBDIR += portmon
