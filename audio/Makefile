@@ -229,6 +229,7 @@
     SUBDIR += ruby-esound
     SUBDIR += ruby-freedb
     SUBDIR += ruby-mp3tag
+    SUBDIR += ruby-musicbrainz
     SUBDIR += ruby-qt2sound
     SUBDIR += ruby-smf
     SUBDIR += ruby-vorbisfile
