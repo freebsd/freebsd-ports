@@ -14,7 +14,7 @@ MASTER_SITES=	# none
 DISTFILES=	# none
 EXTRACT_ONLY=	# none
 
-LIB_DEPENDS=	Xft.1:${PORTSDIR}/x11/XFree86-4-libraries
+LIB_DEPENDS=	X11.6:${PORTSDIR}/x11/XFree86-4-libraries
 RUN_DEPENDS=	xvinfo:${PORTSDIR}/x11/XFree86-4-clients \
 	${X11BASE}/lib/X11/doc/ddx.TXT:${PORTSDIR}/x11/XFree86-4-documents \
 	${FONT100DPI}:${PORTSDIR}/x11-fonts/XFree86-4-font100dpi \
