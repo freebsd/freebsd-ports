@@ -1,0 +1,21 @@
+--- autoconf.sh.orig	Mon Nov 22 21:47:28 1999
++++ autoconf.sh	Mon Nov 22 21:49:50 1999
+@@ -45,7 +45,7 @@
+ esac
+ 
+ : ${TMPDIR=/tmp}
+-tmpout=${TMPDIR}/acout.$$
++tmpout=`mktemp ${TMPDIR}/acout.XXXXXXXXXX` || exit 1
+ localdir=
+ show_version=no
+ 
+@@ -97,7 +97,8 @@
+ 
+ trap 'rm -f $tmpin $tmpout; exit 1' 1 2 15
+ 
+-tmpin=${TMPDIR}/acin.$$ # Always set this, to avoid bogus errors from some rm's.
++tmpin=`mktemp ${TMPDIR}/acin.XXXXXXXXXX` || { rm -f $tmpout; exit 1; }
++# Always set this, to avoid bogus errors from some rm's.
+ if test z$infile = z-; then
+   infile=$tmpin
+   cat > $infile
