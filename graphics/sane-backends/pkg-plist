@@ -1,12 +1,16 @@
 bin/sane-config
+bin/sane-find-scanner
 bin/scanimage
 etc/sane.d/abaton.conf
 etc/sane.d/agfafocus.conf
 etc/sane.d/apple.conf
 etc/sane.d/artec.conf
 etc/sane.d/avision.conf
+etc/sane.d/bh.conf
+etc/sane.d/canon.conf
 etc/sane.d/coolscan.conf
 etc/sane.d/dc210.conf
+etc/sane.d/dc240.conf
 etc/sane.d/dc25.conf
 etc/sane.d/dll.conf
 etc/sane.d/dmc.conf
@@ -30,6 +34,7 @@ etc/sane.d/sp15c.conf
 etc/sane.d/st400.conf
 etc/sane.d/tamarack.conf
 etc/sane.d/umax.conf
+etc/sane.d/umax_pp.conf
 include/sane/sane.h
 include/sane/saneopts.h
 lib/libsane.a
@@ -53,6 +58,9 @@ lib/sane/libsane-as6e.so.1
 lib/sane/libsane-avision.a
 lib/sane/libsane-avision.so
 lib/sane/libsane-avision.so.1
+lib/sane/libsane-bh.a
+lib/sane/libsane-bh.so
+lib/sane/libsane-bh.so.1
 lib/sane/libsane-canon.a
 lib/sane/libsane-canon.so
 lib/sane/libsane-canon.so.1
@@ -62,6 +70,9 @@ lib/sane/libsane-coolscan.so.1
 lib/sane/libsane-dc210.a
 lib/sane/libsane-dc210.so
 lib/sane/libsane-dc210.so.1
+lib/sane/libsane-dc240.a
+lib/sane/libsane-dc240.so
+lib/sane/libsane-dc240.so.1
 lib/sane/libsane-dc25.a
 lib/sane/libsane-dc25.so
 lib/sane/libsane-dc25.so.1
@@ -104,9 +115,6 @@ lib/sane/libsane-pie.so.1
 lib/sane/libsane-plustek.a
 lib/sane/libsane-plustek.so
 lib/sane/libsane-plustek.so.1
-lib/sane/libsane-pnm.a
-lib/sane/libsane-pnm.so
-lib/sane/libsane-pnm.so.1
 lib/sane/libsane-ricoh.a
 lib/sane/libsane-ricoh.so
 lib/sane/libsane-ricoh.so.1
@@ -131,7 +139,69 @@ lib/sane/libsane-tamarack.so.1
 lib/sane/libsane-umax.a
 lib/sane/libsane-umax.so
 lib/sane/libsane-umax.so.1
+lib/sane/libsane-umax_pp.a
+lib/sane/libsane-umax_pp.so
+lib/sane/libsane-umax_pp.so.1
 sbin/saned
+%%PORTDOCS%%share/doc/sane/AUTHORS
+%%PORTDOCS%%share/doc/sane/COPYING
+%%PORTDOCS%%share/doc/sane/ChangeLog
+%%PORTDOCS%%share/doc/sane/LEVEL2
+%%PORTDOCS%%share/doc/sane/LICENSE
+%%PORTDOCS%%share/doc/sane/NEWS
+%%PORTDOCS%%share/doc/sane/PROBLEMS
+%%PORTDOCS%%share/doc/sane/PROJECTS
+%%PORTDOCS%%share/doc/sane/README
+%%PORTDOCS%%share/doc/sane/README.aix
+%%PORTDOCS%%share/doc/sane/README.hp-ux
+%%PORTDOCS%%share/doc/sane/README.linux
+%%PORTDOCS%%share/doc/sane/README.os2
+%%PORTDOCS%%share/doc/sane/README.solaris
+%%PORTDOCS%%share/doc/sane/README.unixware2
+%%PORTDOCS%%share/doc/sane/README.unixware7
+%%PORTDOCS%%share/doc/sane/TODO
+%%PORTDOCS%%share/doc/sane/backend-writing.txt
+%%PORTDOCS%%share/doc/sane/canon/canon.changes
+%%PORTDOCS%%share/doc/sane/canon/canon.install2700F.txt
+%%PORTDOCS%%share/doc/sane/mustek/mustek.CHANGES
+%%PORTDOCS%%share/doc/sane/umax/negative-types.txt
+%%PORTDOCS%%share/doc/sane/umax/sane-logo.jpg
+%%PORTDOCS%%share/doc/sane/umax/sane-logo2.jpg
+%%PORTDOCS%%share/doc/sane/umax/sane-umax-advanced-options-doc.html
+%%PORTDOCS%%share/doc/sane/umax/sane-umax-advanced.jpg
+%%PORTDOCS%%share/doc/sane/umax/sane-umax-astra-doc.html
+%%PORTDOCS%%share/doc/sane/umax/sane-umax-config-doc.html
+%%PORTDOCS%%share/doc/sane/umax/sane-umax-doc.dvi
+%%PORTDOCS%%share/doc/sane/umax/sane-umax-doc.html
+%%PORTDOCS%%share/doc/sane/umax/sane-umax-doc.tex
+%%PORTDOCS%%share/doc/sane/umax/sane-umax-histogram.jpg
+%%PORTDOCS%%share/doc/sane/umax/sane-umax-mailinglist.html
+%%PORTDOCS%%share/doc/sane/umax/sane-umax-mirage-doc.html
+%%PORTDOCS%%share/doc/sane/umax/sane-umax-not-listed-doc.html
+%%PORTDOCS%%share/doc/sane/umax/sane-umax-old-scanners-doc.html
+%%PORTDOCS%%share/doc/sane/umax/sane-umax-options-doc.html
+%%PORTDOCS%%share/doc/sane/umax/sane-umax-others-doc.html
+%%PORTDOCS%%share/doc/sane/umax/sane-umax-parport-doc.html
+%%PORTDOCS%%share/doc/sane/umax/sane-umax-powerlook-doc.html
+%%PORTDOCS%%share/doc/sane/umax/sane-umax-scanner-clones-doc.html
+%%PORTDOCS%%share/doc/sane/umax/sane-umax-scanners-doc.html
+%%PORTDOCS%%share/doc/sane/umax/sane-umax-speed-doc.html
+%%PORTDOCS%%share/doc/sane/umax/sane-umax-standard-options-doc.html
+%%PORTDOCS%%share/doc/sane/umax/sane-umax-standard.jpg
+%%PORTDOCS%%share/doc/sane/umax/sane-umax-text.jpg
+%%PORTDOCS%%share/doc/sane/umax/sane-umax-text2.jpg
+%%PORTDOCS%%share/doc/sane/umax/sane-umax-text4.jpg
+%%PORTDOCS%%share/doc/sane/umax/sane-umax-uc-doc.html
+%%PORTDOCS%%share/doc/sane/umax/sane-umax-vista-doc.html
+%%PORTDOCS%%share/doc/sane/umax/sane-umax.jpg
+%%PORTDOCS%%share/doc/sane/umax/umax.BUGS
+%%PORTDOCS%%share/doc/sane/umax/umax.CHANGES
+%%PORTDOCS%%share/doc/sane/umax/umax.FAQ
+%%PORTDOCS%%share/doc/sane/umax/umax.TODO
+%%PORTDOCS%%@dirrm share/doc/sane/umax
+%%PORTDOCS%%@dirrm share/doc/sane/mustek
+%%PORTDOCS%%@dirrm share/doc/sane/canon
+%%PORTDOCS%%@dirrm share/doc/sane
 @dirrm lib/sane
 @dirrm include/sane
 @dirrm etc/sane.d
