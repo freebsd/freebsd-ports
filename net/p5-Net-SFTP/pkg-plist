@@ -1,0 +1,10 @@
+%%SITE_PERL%%/Net/SFTP.pm
+%%SITE_PERL%%/Net/SFTP/Attributes.pm
+%%SITE_PERL%%/Net/SFTP/Buffer.pm
+%%SITE_PERL%%/Net/SFTP/Constants.pm
+%%SITE_PERL%%/Net/SFTP/Util.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/SFTP/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/SFTP
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net 2>/dev/null || true
+@dirrm %%SITE_PERL%%/Net/SFTP
+@unexec rmdir %D/%%SITE_PERL%%/Net 2>/dev/null || true
