@@ -1,0 +1,8 @@
+The vomit utility converts a Cisco IP phone conversation into a wave file
+that can be played with ordinary sound players. The phone conversation can
+either be played directly from the network or from a tcpdump output file.
+Vomit is also capable of inserting wavefiles into ongoing telephone
+conversations. Vomit can be used as a network debugging tool, a speaker
+phone, etc ...
+
+WWW: http://www.monkey.org/~provos/vomit/

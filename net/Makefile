@@ -404,6 +404,7 @@
     SUBDIR += urlendec
     SUBDIR += vchat
     SUBDIR += vnc
+    SUBDIR += vomit
     SUBDIR += vrrp
     SUBDIR += vtun
     SUBDIR += wais
