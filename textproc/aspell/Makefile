@@ -6,12 +6,12 @@
 #
 
 PORTNAME?=	aspell
-PORTVERSION=	0.60.1
+PORTVERSION=	0.60.1.1
 CATEGORIES+=	textproc
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	aspell
-DISTFILES=	aspell-0.60.1.tar.gz	# needed for slave ports / options
-EXTRACT_ONLY=	aspell-0.60.1.tar.gz
+DISTFILES=	aspell-0.60.1.1.tar.gz	# needed for slave ports / options
+EXTRACT_ONLY=	aspell-0.60.1.1.tar.gz
 
 MAINTAINER?=	thierry@FreeBSD.org
 COMMENT?=	Spelling checker with better suggestion logic than ispell
@@ -36,7 +36,8 @@ USE_PERL5_BUILD=	yes
 INSTALLS_SHLIB=		yes
 
 MAKE_ARGS=		NOPORTDOCS=${NOPORTDOCS}
-PLIST_SUB=		VER=${PORTVERSION:R}
+VERINST=		${PORTVERSION:R:R}
+PLIST_SUB=		VER=${VERINST}
 
 .if defined(WITH_ISPELL)
 CONFLICTS=		ispell* ??-ispell*
@@ -79,18 +80,6 @@ DICT_SUFFIX=	.tar.bz2
 
 .include <bsd.port.pre.mk>
 .include "${FILESDIR}/verdict"
-
-.if exists(${LOCALBASE}/include/ncurses/ncurses.h)
-WITH_NCURSES=	yes
-.endif
-.if defined(WITH_NCURSES)
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libncurses.so.5.4:${PORTSDIR}/devel/ncurses
-RUN_DEPENDS+=	${LOCALBASE}/lib/libncurses.so.5.4:${PORTSDIR}/devel/ncurses
-CONFIGURE_ARGS+=--enable-curses=${LOCALBASE}/lib/libncurses.so			\
-		--enable-curses-include=${LOCALBASE}/include
-.else
-CONFIGURE_ARGS+=--disable-curses # Curses implementation on FreeBSD is outdated!
-.endif
 
 .if defined(LANG)
 . for i in ${AVAIL_DICT} no
@@ -191,8 +180,6 @@ DICTS+=		${LG}
 	@${ECHO_MSG} '*  - Zulu                         ASPELL_ZU=yes         *'
 	@${ECHO_MSG} '*                                                       *'
 	@${ECHO_MSG} '* Example: "make ASPELL_FR=yes ASPELL_EN=yes install"   *'
-	@${ECHO_MSG} '*                                                       *'
-	@${ECHO_MSG} '* Define WITH_NCURSES to get the full screen interface. *'
 	@${ECHO_MSG} '*********************************************************'
 . for LG in ${AVAIL_DICT}
 .  if (${DEF_DICT} == ${LG})
@@ -221,11 +208,11 @@ post-install:
 	@cd ${WRKDIR}/aspell${VERDICT_${DICO:U}} &&	\
 	 ${CONF_DICT_ENV} ./${CONFIGURE_SCRIPT} &&		\
 	 ${GMAKE} install
-	@${SED} -e "s|%%VER%%|${PORTVERSION:R}|" ${MASTERDIR}/pkg-plist.${DICO}	\
+	@${SED} -e "s|%%VER%%|${VERINST}|" ${MASTERDIR}/pkg-plist.${DICO}	\
 		>> ${TMPPLIST}
 .endfor
 	@${ECHO_CMD} "@dirrm share/aspell" >> ${TMPPLIST}
-	@${ECHO_CMD} "@dirrm lib/aspell-${PORTVERSION:R}" >> ${TMPPLIST}
+	@${ECHO_CMD} "@dirrm lib/aspell-${VERINST}" >> ${TMPPLIST}
 .if defined(WITH_ISPELL)
 	${INSTALL_SCRIPT} ${SCRIPTS:S|^|${WRKSRC}/scripts/|} ${PREFIX}/bin
 .endif
