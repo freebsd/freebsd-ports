@@ -1,15 +1,6 @@
-lib/%%PYTHON_VERSION%%/site-packages/mx/Number/Doc/mxNumber.html
-lib/%%PYTHON_VERSION%%/site-packages/mx/Number/Doc/mxLicense.html
-lib/%%PYTHON_VERSION%%/site-packages/mx/Number/mxNumber/test.py
-lib/%%PYTHON_VERSION%%/site-packages/mx/Number/mxNumber/__init__.py
-lib/%%PYTHON_VERSION%%/site-packages/mx/Number/mxNumber/mxNumber.so
-lib/%%PYTHON_VERSION%%/site-packages/mx/Number/mxNumber/test.pyc
-lib/%%PYTHON_VERSION%%/site-packages/mx/Number/mxNumber/__init__.pyc
-lib/%%PYTHON_VERSION%%/site-packages/mx/Number/mxNumber/test.pyo
-lib/%%PYTHON_VERSION%%/site-packages/mx/Number/mxNumber/__init__.pyo
-lib/%%PYTHON_VERSION%%/site-packages/mx/Number/mxNumber/mxNumber.h
-lib/%%PYTHON_VERSION%%/site-packages/mx/Number/mxNumber/mxh.h
 lib/%%PYTHON_VERSION%%/site-packages/mx/Number/COPYRIGHT
+lib/%%PYTHON_VERSION%%/site-packages/mx/Number/Doc/mxLicense.html
+lib/%%PYTHON_VERSION%%/site-packages/mx/Number/Doc/mxNumber.html
 lib/%%PYTHON_VERSION%%/site-packages/mx/Number/LICENSE
 lib/%%PYTHON_VERSION%%/site-packages/mx/Number/LazyModule.py
 lib/%%PYTHON_VERSION%%/site-packages/mx/Number/LazyModule.pyc
@@ -21,25 +12,21 @@ lib/%%PYTHON_VERSION%%/site-packages/mx/Number/README
 lib/%%PYTHON_VERSION%%/site-packages/mx/Number/__init__.py
 lib/%%PYTHON_VERSION%%/site-packages/mx/Number/__init__.pyc
 lib/%%PYTHON_VERSION%%/site-packages/mx/Number/__init__.pyo
-lib/%%PYTHON_VERSION%%/site-packages/mx/Tidy/Doc/mxTidy.html
-lib/%%PYTHON_VERSION%%/site-packages/mx/Tidy/Doc/mxLicense.html
+lib/%%PYTHON_VERSION%%/site-packages/mx/Number/mxNumber/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/mx/Number/mxNumber/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/mx/Number/mxNumber/__init__.pyo
+lib/%%PYTHON_VERSION%%/site-packages/mx/Number/mxNumber/mxNumber.h
+lib/%%PYTHON_VERSION%%/site-packages/mx/Number/mxNumber/mxNumber.so
+lib/%%PYTHON_VERSION%%/site-packages/mx/Number/mxNumber/mxh.h
+lib/%%PYTHON_VERSION%%/site-packages/mx/Number/mxNumber/test.py
+lib/%%PYTHON_VERSION%%/site-packages/mx/Number/mxNumber/test.pyc
+lib/%%PYTHON_VERSION%%/site-packages/mx/Number/mxNumber/test.pyo
 lib/%%PYTHON_VERSION%%/site-packages/mx/Tidy/Doc/Overview.html
+lib/%%PYTHON_VERSION%%/site-packages/mx/Tidy/Doc/mxLicense.html
+lib/%%PYTHON_VERSION%%/site-packages/mx/Tidy/Doc/mxTidy.html
 lib/%%PYTHON_VERSION%%/site-packages/mx/Tidy/Doc/pending.html
 lib/%%PYTHON_VERSION%%/site-packages/mx/Tidy/Doc/release-notes.html
 lib/%%PYTHON_VERSION%%/site-packages/mx/Tidy/Doc/tidy.gif
-lib/%%PYTHON_VERSION%%/site-packages/mx/Tidy/mxTidy/testWalter.py
-lib/%%PYTHON_VERSION%%/site-packages/mx/Tidy/mxTidy/test.py
-lib/%%PYTHON_VERSION%%/site-packages/mx/Tidy/mxTidy/__init__.py
-lib/%%PYTHON_VERSION%%/site-packages/mx/Tidy/mxTidy/mxTidy.so
-lib/%%PYTHON_VERSION%%/site-packages/mx/Tidy/mxTidy/testWalter.pyc
-lib/%%PYTHON_VERSION%%/site-packages/mx/Tidy/mxTidy/test.pyc
-lib/%%PYTHON_VERSION%%/site-packages/mx/Tidy/mxTidy/__init__.pyc
-lib/%%PYTHON_VERSION%%/site-packages/mx/Tidy/mxTidy/testWalter.pyo
-lib/%%PYTHON_VERSION%%/site-packages/mx/Tidy/mxTidy/test.pyo
-lib/%%PYTHON_VERSION%%/site-packages/mx/Tidy/mxTidy/__init__.pyo
-lib/%%PYTHON_VERSION%%/site-packages/mx/Tidy/mxTidy/mxTidy.h
-lib/%%PYTHON_VERSION%%/site-packages/mx/Tidy/mxTidy/mxh.h
-lib/%%PYTHON_VERSION%%/site-packages/mx/Tidy/mxTidy/input.html
 lib/%%PYTHON_VERSION%%/site-packages/mx/Tidy/README
 lib/%%PYTHON_VERSION%%/site-packages/mx/Tidy/Tidy.py
 lib/%%PYTHON_VERSION%%/site-packages/mx/Tidy/Tidy.pyc
@@ -47,18 +34,45 @@ lib/%%PYTHON_VERSION%%/site-packages/mx/Tidy/Tidy.pyo
 lib/%%PYTHON_VERSION%%/site-packages/mx/Tidy/__init__.py
 lib/%%PYTHON_VERSION%%/site-packages/mx/Tidy/__init__.pyc
 lib/%%PYTHON_VERSION%%/site-packages/mx/Tidy/__init__.pyo
-lib/%%PYTHON_VERSION%%/site-packages/mx/URL/Doc/mxURL.html
-lib/%%PYTHON_VERSION%%/site-packages/mx/URL/Doc/mxLicense.html
-lib/%%PYTHON_VERSION%%/site-packages/mx/URL/mxURL/test.py
-lib/%%PYTHON_VERSION%%/site-packages/mx/URL/mxURL/__init__.py
-lib/%%PYTHON_VERSION%%/site-packages/mx/URL/mxURL/mxURL.so
-lib/%%PYTHON_VERSION%%/site-packages/mx/URL/mxURL/test.pyc
-lib/%%PYTHON_VERSION%%/site-packages/mx/URL/mxURL/__init__.pyc
-lib/%%PYTHON_VERSION%%/site-packages/mx/URL/mxURL/test.pyo
-lib/%%PYTHON_VERSION%%/site-packages/mx/URL/mxURL/__init__.pyo
-lib/%%PYTHON_VERSION%%/site-packages/mx/URL/mxURL/mxURL.h
-lib/%%PYTHON_VERSION%%/site-packages/mx/URL/mxURL/mxh.h
+lib/%%PYTHON_VERSION%%/site-packages/mx/Tidy/mxTidy/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/mx/Tidy/mxTidy/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/mx/Tidy/mxTidy/__init__.pyo
+lib/%%PYTHON_VERSION%%/site-packages/mx/Tidy/mxTidy/input.html
+lib/%%PYTHON_VERSION%%/site-packages/mx/Tidy/mxTidy/mxTidy.h
+lib/%%PYTHON_VERSION%%/site-packages/mx/Tidy/mxTidy/mxTidy.so
+lib/%%PYTHON_VERSION%%/site-packages/mx/Tidy/mxTidy/mxh.h
+lib/%%PYTHON_VERSION%%/site-packages/mx/Tidy/mxTidy/test.py
+lib/%%PYTHON_VERSION%%/site-packages/mx/Tidy/mxTidy/test.pyc
+lib/%%PYTHON_VERSION%%/site-packages/mx/Tidy/mxTidy/test.pyo
+lib/%%PYTHON_VERSION%%/site-packages/mx/Tidy/mxTidy/testMateusz.py
+lib/%%PYTHON_VERSION%%/site-packages/mx/Tidy/mxTidy/testMateusz.pyc
+lib/%%PYTHON_VERSION%%/site-packages/mx/Tidy/mxTidy/testMateusz.pyo
+lib/%%PYTHON_VERSION%%/site-packages/mx/Tidy/mxTidy/testWalter.py
+lib/%%PYTHON_VERSION%%/site-packages/mx/Tidy/mxTidy/testWalter.pyc
+lib/%%PYTHON_VERSION%%/site-packages/mx/Tidy/mxTidy/testWalter.pyo
+lib/%%PYTHON_VERSION%%/site-packages/mx/UID/COPYRIGHT
+lib/%%PYTHON_VERSION%%/site-packages/mx/UID/Doc/mxLicense.html
+lib/%%PYTHON_VERSION%%/site-packages/mx/UID/Doc/mxUID.html
+lib/%%PYTHON_VERSION%%/site-packages/mx/UID/LICENSE
+lib/%%PYTHON_VERSION%%/site-packages/mx/UID/README
+lib/%%PYTHON_VERSION%%/site-packages/mx/UID/UID.py
+lib/%%PYTHON_VERSION%%/site-packages/mx/UID/UID.pyc
+lib/%%PYTHON_VERSION%%/site-packages/mx/UID/UID.pyo
+lib/%%PYTHON_VERSION%%/site-packages/mx/UID/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/mx/UID/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/mx/UID/__init__.pyo
+lib/%%PYTHON_VERSION%%/site-packages/mx/UID/mxUID/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/mx/UID/mxUID/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/mx/UID/mxUID/__init__.pyo
+lib/%%PYTHON_VERSION%%/site-packages/mx/UID/mxUID/mxUID.h
+lib/%%PYTHON_VERSION%%/site-packages/mx/UID/mxUID/mxUID.so
+lib/%%PYTHON_VERSION%%/site-packages/mx/UID/mxUID/mxh.h
+lib/%%PYTHON_VERSION%%/site-packages/mx/UID/mxUID/test.py
+lib/%%PYTHON_VERSION%%/site-packages/mx/UID/mxUID/test.pyc
+lib/%%PYTHON_VERSION%%/site-packages/mx/UID/mxUID/test.pyo
 lib/%%PYTHON_VERSION%%/site-packages/mx/URL/COPYRIGHT
+lib/%%PYTHON_VERSION%%/site-packages/mx/URL/Doc/mxLicense.html
+lib/%%PYTHON_VERSION%%/site-packages/mx/URL/Doc/mxURL.html
 lib/%%PYTHON_VERSION%%/site-packages/mx/URL/LICENSE
 lib/%%PYTHON_VERSION%%/site-packages/mx/URL/LazyModule.py
 lib/%%PYTHON_VERSION%%/site-packages/mx/URL/LazyModule.pyc
@@ -73,36 +87,27 @@ lib/%%PYTHON_VERSION%%/site-packages/mx/URL/URL.pyo
 lib/%%PYTHON_VERSION%%/site-packages/mx/URL/__init__.py
 lib/%%PYTHON_VERSION%%/site-packages/mx/URL/__init__.pyc
 lib/%%PYTHON_VERSION%%/site-packages/mx/URL/__init__.pyo
-lib/%%PYTHON_VERSION%%/site-packages/mx/UID/Doc/mxUID.html
-lib/%%PYTHON_VERSION%%/site-packages/mx/UID/Doc/mxLicense.html
-lib/%%PYTHON_VERSION%%/site-packages/mx/UID/mxUID/test.py
-lib/%%PYTHON_VERSION%%/site-packages/mx/UID/mxUID/__init__.py
-lib/%%PYTHON_VERSION%%/site-packages/mx/UID/mxUID/mxUID.so
-lib/%%PYTHON_VERSION%%/site-packages/mx/UID/mxUID/test.pyc
-lib/%%PYTHON_VERSION%%/site-packages/mx/UID/mxUID/__init__.pyc
-lib/%%PYTHON_VERSION%%/site-packages/mx/UID/mxUID/test.pyo
-lib/%%PYTHON_VERSION%%/site-packages/mx/UID/mxUID/__init__.pyo
-lib/%%PYTHON_VERSION%%/site-packages/mx/UID/mxUID/mxUID.h
-lib/%%PYTHON_VERSION%%/site-packages/mx/UID/mxUID/mxh.h
-lib/%%PYTHON_VERSION%%/site-packages/mx/UID/COPYRIGHT
-lib/%%PYTHON_VERSION%%/site-packages/mx/UID/LICENSE
-lib/%%PYTHON_VERSION%%/site-packages/mx/UID/README
-lib/%%PYTHON_VERSION%%/site-packages/mx/UID/UID.py
-lib/%%PYTHON_VERSION%%/site-packages/mx/UID/UID.pyc
-lib/%%PYTHON_VERSION%%/site-packages/mx/UID/UID.pyo
-lib/%%PYTHON_VERSION%%/site-packages/mx/UID/__init__.py
-lib/%%PYTHON_VERSION%%/site-packages/mx/UID/__init__.pyc
-lib/%%PYTHON_VERSION%%/site-packages/mx/UID/__init__.pyo
-@dirrm lib/%%PYTHON_VERSION%%/site-packages/mx/Number/mxNumber
-@dirrm lib/%%PYTHON_VERSION%%/site-packages/mx/Number/Doc
-@dirrm lib/%%PYTHON_VERSION%%/site-packages/mx/Number
-@dirrm lib/%%PYTHON_VERSION%%/site-packages/mx/Tidy/mxTidy
-@dirrm lib/%%PYTHON_VERSION%%/site-packages/mx/Tidy/Doc
-@dirrm lib/%%PYTHON_VERSION%%/site-packages/mx/Tidy
+lib/%%PYTHON_VERSION%%/site-packages/mx/URL/mxURL/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/mx/URL/mxURL/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/mx/URL/mxURL/__init__.pyo
+lib/%%PYTHON_VERSION%%/site-packages/mx/URL/mxURL/mxURL.h
+lib/%%PYTHON_VERSION%%/site-packages/mx/URL/mxURL/mxURL.so
+lib/%%PYTHON_VERSION%%/site-packages/mx/URL/mxURL/mxh.h
+lib/%%PYTHON_VERSION%%/site-packages/mx/URL/mxURL/test.py
+lib/%%PYTHON_VERSION%%/site-packages/mx/URL/mxURL/test.pyc
+lib/%%PYTHON_VERSION%%/site-packages/mx/URL/mxURL/test.pyo
+lib/%%PYTHON_VERSION%%/site-packages/mx/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/mx/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/mx/__init__.pyo
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/mx/URL/mxURL
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/mx/URL/Doc
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/mx/URL
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/mx/UID/mxUID
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/mx/UID/Doc
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/mx/UID
-@unexec rmdir %D/lib/%%PYTHON_VERSION%%/site-packages/mx 2>/dev/null || true
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/mx/Tidy/mxTidy
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/mx/Tidy/Doc
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/mx/Tidy
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/mx/Number/mxNumber
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/mx/Number/Doc
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/mx/Number

@@ -1,6 +1,6 @@
---- mx/Number/mxNumber/mxNumber.h.orig	Mon Nov 26 12:46:34 2001
-+++ mx/Number/mxNumber/mxNumber.h	Mon Nov 26 12:46:43 2001
-@@ -30,7 +30,7 @@
+--- mx/Number/mxNumber/mxNumber.h.orig	Sat Aug 21 20:32:58 2004
++++ mx/Number/mxNumber/mxNumber.h	Sat Aug 21 20:33:16 2004
+@@ -29,7 +29,7 @@
  #endif
  
  /* Include the GNU MP header file */
