@@ -14,11 +14,16 @@ diff -c old/calendar.c new/calendar.c
   #include "getsb.h"
   #include "kyureki.h"
   #include "main.h"
---- 37,45 ----
+--- 37,50 ----
   #include "common.h"
   #include "config.h"
   #include "getfile.h"
-! #ifndef __FreeBSD__
+! #ifdef __FreeBSD__
+! /* FreeBSD version 2.x and earlier has them defined in stdlib.h */
+!   #if __FreeBSD__ >= 3
+!     #include <unistd.h>
+!   #endif
+! #else
 !   #include "getopt.h"
 ! #endif
   #include "getsb.h"
@@ -168,11 +173,16 @@ diff -c old/main.c new/main.c
   #include "history.h"
   #include "kyureki.h"
   #include "machine.h"
---- 18,26 ----
+--- 18,31 ----
   #include "date.h"
   #include "event.h"
   #include "getfile.h"
-! #ifndef __FreeBSD__
+! #ifdef __FreeBSD__
+! /* FreeBSD version 2.x and earlier has them defined in stdlib.h */
+!   #if __FreeBSD__ >= 3
+!     #include <unistd.h>
+!   #endif
+! #else
 !   #include "getopt.h"
 ! #endif
   #include "history.h"
@@ -393,7 +403,7 @@ diff -c old/version.c new/version.c
 *** 28,33 ****
 --- 28,34 ----
   const char	Version[] = "today " __DATE__ " version 2.10B (Àµ¼°ÈÇ)";
-  const char	RCSid[] ="$Id: patch-aa,v 1.1.1.1 1996/10/18 15:04:50 asami Exp $";
+  const char	RCSid[] ="$Id: patch-aa,v 1.1.1.2 1996/11/10 12:40:20 asami Exp $";
   const char	UseLanguage[] =
 + #if !defined(TRANS)
   #if defined(human68k)
