@@ -1,0 +1,97 @@
+--- audio_oss.c.orig	Mon Feb 12 21:51:27 2001
++++ audio_oss.c	Mon Feb 12 22:12:27 2001
+@@ -143,12 +143,21 @@
+ 
+ int audio_set_channels(struct audio_info_struct *ai)
+ {
+-  int chan = ai->channels - 1;
++  int chan = ai->channels - 1, avail;
+   int ret;
+ 
+   if(ai->channels < 0)
+     return 0;
+ 
++  if (ioctl(ai->fn, SNDCTL_DSP_GETFMTS, &avail) < 0) {
++    perror("SNDCTL_DSP_GETFMTS");
++    return -1;
++  }
++
++  if (chan && (avail & AFMT_STEREO) == 0) {
++    return -1;
++  }
++
+   ret = ioctl(ai->fn, SNDCTL_DSP_STEREO, &chan);
+   if(chan != (ai->channels-1)) {
+     return -1;
+@@ -158,8 +167,8 @@
+ 
+ int audio_set_format(struct audio_info_struct *ai)
+ {
+-  int sample_size,fmts;
+-  int sf,ret;
++  int sample_size, fmts, avail;
++  int sf;
+ 
+   if(ai->format == -1)
+     return 0;
+@@ -194,17 +203,33 @@
+   if(ioctl(ai->fn, SNDCTL_DSP_SAMPLESIZE,&sample_size) < 0)
+     return -1;
+ #endif
++
++  /* newpcm note: need to check format is available before setting,
++   * otherwise driver will not successfully change speed or channels
++   * as format maybe incorrectly set in driver.  newpcm probably needs
++   * modifying to stop broken formats sticking.  */
++  if (ioctl(ai->fn, SNDCTL_DSP_GETFMTS, &avail) < 0) {
++    perror("SNDCTL_DSP_GETFMTS");
++    return -1;
++  }
++  
++  if ((fmts & avail) == 0) {
++    return -1;
++  }
++
+   sf = fmts;
+-  ret = ioctl(ai->fn, SNDCTL_DSP_SETFMT, &fmts);
++  if (ioctl(ai->fn, SNDCTL_DSP_SETFMT, &fmts) < 0) {
++	  perror("SNDCTL_DSP_SETFMT");
++	  return -1;
++  }
+   if(sf != fmts) {
+     return -1;
+   }
+-  return ret;
++  return 0;
+ }
+ 
+ /*
+- * get formats for specific channel/rate parameters
+- */
++ * get formats for specific channel/rate parameters */
+ int audio_get_formats(struct audio_info_struct *ai)
+ {
+   int fmt = 0;
+@@ -219,17 +244,17 @@
+ 	
+   for(i=0;i<6;i++) {
+ 	ai->format = fmts[i];
+-	if(audio_set_format(ai) < 0) {
++	ai->rate = r;
++	if(audio_rate_best_match(ai) < 0) {
+ 		continue;
+-        }
++	}
+ 	ai->channels = c;
+ 	if(audio_set_channels(ai) < 0) {
+ 		continue;
+ 	}
+-	ai->rate = r;
+-	if(audio_rate_best_match(ai) < 0) {
++	if(audio_set_format(ai) < 0) {
+ 		continue;
+-	}
++        }
+ 	if( (ai->rate*100 > r*(100-AUDIO_RATE_TOLERANCE)) && (ai->rate*100 < r*(100+AUDIO_RATE_TOLERANCE)) ) {
+ 		fmt |= fmts[i];
+ 	}
