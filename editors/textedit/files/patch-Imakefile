@@ -1,0 +1,14 @@
+--- Imakefile.orig	Fri Feb 27 10:17:29 2004
++++ Imakefile	Fri Feb 27 10:17:43 2004
+@@ -1,8 +1,8 @@
+ #include <XView.tmpl>
+ 
+-/**/##########################################################################
+-/**/# @(#)Imakefile 1.6 90/07/17 SMI
+-/**/# Imakefile for textedit
++##########################################################################
++# @(#)Imakefile 1.6 90/07/17 SMI
++# Imakefile for textedit
+ 
+ DEFINES = -DSTANDALONE
+ INCLUDES = -I$(HEADER_DEST) -I$(TOP)
