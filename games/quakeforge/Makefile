@@ -30,7 +30,6 @@ USE_GMAKE=	yes
 USE_AUTOCONF=	yes
 USE_XLIB=	yes
 PLIST=		${WRKDIR}/PLIST
-AUTOCONF=	${WRKSRC}/bootstrap
 
 BINARIES=	quake-x11 quake-sdl qw-client-x11 qw-client-sdl qw-server
 
@@ -56,6 +55,8 @@ pre-configure:
 .if !defined(WITH_GLX)
 	@${ECHO_MSG} "Define WITH_GLX to use GLX (otherwise it is explicitly disabled!)"
 .endif
+	@cd ${WRKSRC} ; aclocal
+	@cd ${WRKSRC} ; autoheader
 
 do-install:
 	@${CP} ${PKGDIR}/pkg-plist ${PLIST}
