@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	munin
-PORTVERSION=	1.0.2
+PORTVERSION=	1.0.3
 CATEGORIES=	sysutils perl5
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	munin
@@ -16,8 +16,8 @@ DISTNAME=	${PORTNAME}_${PORTVERSION:S/.p/pre/}
 MAINTAINER=	lupe@lupe-christoph.de
 COMMENT=	Node-specific part of Munin
 
-BUILD_DEPENDS=	${SITE_PERL}/Net/Server/Fork.pm:${PORTSDIR}/net/p5-Net-Server
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	${SITE_PERL}/Net/Server/Fork.pm:${PORTSDIR}/net/p5-Net-Server
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 .include <bsd.port.pre.mk>
 
