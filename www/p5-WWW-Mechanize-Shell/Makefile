@@ -5,6 +5,7 @@
 
 PORTNAME=	WWW-Mechanize-Shell
 PORTVERSION=	0.34
+PORTREVISION=	1
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	WWW
@@ -15,7 +16,6 @@ COMMENT=	An interactive shell for www/p5-WWW-Mechanize
 
 BUILD_DEPENDS=	${SITE_PERL}/URI/URL.pm:${PORTSDIR}/net/p5-URI \
 		${SITE_PERL}/Term/Shell.pm:${PORTSDIR}/devel/p5-Term-Shell \
-		${SITE_PERL}/Test/Harness.pm:${PORTSDIR}/devel/p5-Test-Harness \
 		${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww \
 		${SITE_PERL}/WWW/Mechanize.pm:${PORTSDIR}/www/p5-WWW-Mechanize \
 		${SITE_PERL}/WWW/Mechanize/FormFiller.pm:${PORTSDIR}/www/p5-WWW-Mechanize-FormFiller \

@@ -5,6 +5,7 @@
 
 PORTNAME=	WWW-Mechanize-FormFiller
 PORTVERSION=	0.05
+PORTREVISION=	1
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	WWW
@@ -14,8 +15,7 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl framework to automate HTML forms
 
 BUILD_DEPENDS=	${SITE_PERL}/Data/Random.pm:${PORTSDIR}/devel/p5-Data-Random \
-		${SITE_PERL}/HTML/Form.pm:${PORTSDIR}/www/p5-libwww \
-		${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple
+		${SITE_PERL}/HTML/Form.pm:${PORTSDIR}/www/p5-libwww
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
