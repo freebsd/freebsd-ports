@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cvsweb
-PORTVERSION=	1.89
+PORTVERSION=	1.90
 CATEGORIES=	devel www
 MASTER_SITES=	http://stud.fh-heilbronn.de/~zeller/download/ \
 		${MASTER_SITE_LOCAL}
