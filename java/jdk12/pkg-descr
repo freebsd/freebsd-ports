@@ -1,0 +1,11 @@
+This is the latest patchset from the Java 2 FreeBSD porting project. This port
+allows you to easily build native JDK1.2.2 for FreeBSD.
+
+Please note that due to the current Sun licensing policy, the resulting binaries
+couln't be distributed and you are only permitted to use/hack it personally.
+Due to the same reasons you have to manually fetch source code and patchset for
+FreeBSD.
+
+WWW: http://www.freebsd.org/java/
+     http://www.eyesbeyond.com/freebsddom/java/index.html
+     http://www.sun.com/software/communitysource/java2/
