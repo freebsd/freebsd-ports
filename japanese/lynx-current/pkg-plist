@@ -1,6 +1,6 @@
 bin/lynx
 %%LYNX_LIB%%/lynx.cfg
-%%LYNX_LIB%%/lynx.cfg.default
+%%LYNX_LIB%%/lynx.cfg.sample
 %%LYNX_HELP%%/Lynx_users_guide.html
 %%LYNX_HELP%%/about_lynx.html
 %%LYNX_HELP%%/keystrokes/alt_edit_help.html
