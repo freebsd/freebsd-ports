@@ -29,7 +29,7 @@ INSTALL_JAR=		${INSTALL_DATA}
 do-install:
 	@${ECHO_CMD} -n ">> Installing JAR file..."
 	@${MKDIR} ${JAVA_LIBDIR}
-	@cd ${JAVA_WRKLIBDIR} && ${INSTALL_JAR} ${PORT_JARFILE} ${JAVA_LIBDIR}/${PORTNAME}.jar
+	@cd ${JAVA_WRKLIBDIR} && ${INSTALL_JAR} ${PORT_JARFILE} ${JAVA_LIBDIR}/${PORT_JARFILE}
 	@${ECHO_CMD} " [DONE]"
 
 .if !defined(NOPORTDOCS)
