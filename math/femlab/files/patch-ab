@@ -1,20 +1,6 @@
 *** source/graph.c.orig	Thu Sep 14 08:42:13 1995
 --- source/graph.c	Sat Mar  7 00:14:42 1998
 ***************
-*** 14,21 ****
---- 14,24 ----
-   */
-  
-  #include <stdio.h>
-+ #ifdef __STDC__
-  #include <stdlib.h>
-+ #else
-  #include <malloc.h>
-+ #endif
-  #include <math.h>
-  
-  
-***************
 *** 608,614 ****
   void getDrawingScale()
   {

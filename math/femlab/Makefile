@@ -20,6 +20,13 @@ USE_X_PREFIX=	yes
 
 FEMLAB_HOME=	${PREFIX}/lib/X11/femlab
 
+pre-patch:
+	@${PERL} -pi -e 's,<malloc.h>,<stdlib.h>,' \
+	${WRKSRC}/source/graph.c ${WRKSRC}/source/y.tab.c \
+	${WRKSRC}/source/newdata.c ${WRKSRC}/source/post.c \
+	${WRKSRC}/source/kraftwerk.c ${WRKSRC}/source/list.c \
+	${WRKSRC}/include/xv.h ${WRKSRC}/fsource/y.tab.c
+
 do-install:
 	${MKDIR} ${FEMLAB_HOME}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/source/femlab ${FEMLAB_HOME}/bin
