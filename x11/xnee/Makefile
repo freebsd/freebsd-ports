@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	xnee
-PORTVERSION=	1.0.6
+PORTVERSION=	1.07
 CATEGORIES=	x11
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
@@ -18,17 +18,17 @@ BUILD_DEPENDS=	texi2html:${PORTSDIR}/textproc/texi2html
 
 USE_X_PREFIX=	yes
 USE_PERL5=	yes
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 MAN1=		xnee.1
 
 post-patch:
-	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
-		's| -g | @CFLAGS@ |g'
+	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${PERL} -pi -e \
+		's| -g | \@CFLAGS\@ |g ; \
+		 s|-lpthread|${PTHREAD_LIBS:S/"//g}|g'
 
 post-install:
-	${INSTALL_MAN} ${WRKSRC}/doc/xnee.1 ${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/xnee/doc/xnee.1 ${MANPREFIX}/man/man1
 
 .include <bsd.port.mk>
