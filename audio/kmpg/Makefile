@@ -3,7 +3,7 @@
 # Date created:        23 May 1998
 # Whom:                Hans Petter Bieker <hanspb@persbraten.vgs.no>
 #
-# $Id: Makefile,v 1.10 1999/03/09 06:22:44 fenner Exp $
+# $Id: Makefile,v 1.11 1999/05/02 12:18:09 mharo Exp $
 #
 
 DISTNAME=	kmpg-0.4.3a
@@ -12,8 +12,8 @@ MASTER_SITES=	http://www.freebsd.org/~tom/distfiles/
 
 MAINTAINER=	tom@FreeBSD.ORG
 
-LIB_DEPENDS=	kdecore.1:${PORTSDIR}/x11/kdelibs \
-		kdeui.1:${PORTSDIR}/x11/kdelibs
+LIB_DEPENDS=	kdecore.2:${PORTSDIR}/x11/kdelibs11 \
+		kdeui.2:${PORTSDIR}/x11/kdelibs11
 
 USE_QT=		yes
 GNU_CONFIGURE=	yes

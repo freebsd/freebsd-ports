@@ -3,7 +3,7 @@
 # Date created:        23 May 1998
 # Whom:                Hans Petter Bieker <hanspb@persbraten.vgs.no>
 #
-# $Id: Makefile,v 1.8 1998/11/07 18:27:57 fenner Exp $
+# $Id: Makefile,v 1.9 1998/12/25 17:51:27 steve Exp $
 #
 
 DISTNAME=	klyx-0.9.8a
@@ -13,10 +13,10 @@ MASTER_SITE_SUBDIR= unstable/apps/office
 
 MAINTAINER=	tom@eborcom.com
 
-LIB_DEPENDS=	kdecore.1:${PORTSDIR}/x11/kdelibs \
-		kdeui.1:${PORTSDIR}/x11/kdelibs \
-		kfm.1:${PORTSDIR}/x11/kdelibs \
-		kfile.1:${PORTSDIR}/x11/kdelibs
+LIB_DEPENDS=	kdecore.2:${PORTSDIR}/x11/kdelibs11 \
+		kdeui.2:${PORTSDIR}/x11/kdelibs11 \
+		kfm.2:${PORTSDIR}/x11/kdelibs11 \
+		kfile.2:${PORTSDIR}/x11/kdelibs11
 
 USE_QT=		yes
 GNU_CONFIGURE=	yes
