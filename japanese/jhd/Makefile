@@ -8,7 +8,7 @@
 PORTNAME=	jhd
 PORTVERSION=	2.3
 CATEGORIES=	japanese
-MASTER_SITES=	ftp://ftp.iamas.ac.jp/pub1/UNIX/File/
+MASTER_SITES=	ftp://ftp.iamas.ac.jp/UNIX/File/
 
 MAINTAINER=	taoka@FreeBSD.org
 
