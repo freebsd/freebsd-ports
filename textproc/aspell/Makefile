@@ -48,10 +48,13 @@ DICTREVISION=	2
 .include <bsd.port.pre.mk>
 
 .if defined(LANG)
-DEF_DICT!=	${ECHO_CMD} ${LANG} | ${CUT} -c 1-2
-.else
-DEF_DICT=		en
+.for i in ${AVAIL_DICT}
+.if ${LANG:M${i}*} != ""
+DEF_DICT=	${i}
 .endif
+.endfor
+.endif
+DEF_DICT?=	en
 
 pre-everything::
 .if (!defined(ASPELL_BR) && !defined(ASPELL_CA) && !defined(ASPELL_CS) && !defined(ASPELL_DA) && !defined(ASPELL_DE) && !defined(ASPELL_EN) && !defined(ASPELL_EO) && !defined(ASPELL_ES) && !defined(ASPELL_FO) && !defined(ASPELL_FR) && !defined(ASPELL_IT) && !defined(ASPELL_NL) && !defined(ASPELL_NO) && !defined(ASPELL_PL) && !defined(ASPELL_PT) && !defined(ASPELL_RO) && !defined(ASPELL_RU) && !defined(ASPELL_SK) && !defined(ASPELL_SV))
