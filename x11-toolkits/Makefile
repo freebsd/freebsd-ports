@@ -17,6 +17,7 @@
     SUBDIR += erlgtk
     SUBDIR += fl_editor
     SUBDIR += fltk
+    SUBDIR += flu
     SUBDIR += flvw
     SUBDIR += fox
     SUBDIR += fox-devel
