@@ -16,6 +16,7 @@
     SUBDIR += apache-contrib
     SUBDIR += apache-jserv
     SUBDIR += arena
+    SUBDIR += aria
     SUBDIR += ashe           # requires Motif
     SUBDIR += asp2php
     SUBDIR += aswedit
