@@ -504,7 +504,7 @@ Xold PC/XT.  Anyway, as with the XT too, the emulator requires something
 Xlike an operating system to run with.  Since we cannot ship MS-DOS or
 Xone of its variants along with this distribution (for legal reasons),
 Xyou're now actually looking at a (sort of) "standalone operating system",
-Xjust to get pcemu booted and running.  All this system does is showing
+Xjust to get pcemu booted and running.  All this system does is show
 Xyou this introduction.
 X
 XYou will have to replace this mini-system by a physical image of a
