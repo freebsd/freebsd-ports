@@ -1,7 +1,7 @@
 CC=cc
-INCLUDES=-I${LOCALBASE}/include/tcl7.6 -I${LOCALBASE}/include/tk4.2 -I${X11BASE}/include -I${TK_SRC}/generic
+INCLUDES=-I${LOCALBASE}/include/tcl8.0 -I${LOCALBASE}/include/tk8.0 -I${LOCALBASE}/include/tk8.0/generic -I${X11BASE}/include
 LIB_DIR=${LOCALBASE}/lib
-LIBS=-L${LIB_DIR} -ltk42 -ltcl76 -lm -L${X11BASE}/lib -lX11
+LIBS=-L${LIB_DIR} -ltk80 -ltcl80 -lm -L${X11BASE}/lib -lX11
 CFLAGS+=-ggdb $(INCLUDES) -DFREEBSD -DPROTOTYPES -DHAVE_NO_VALUES_H -DHAVE_LIMITS_H -DHAVE_UNISTD_H -DMAXINT=INT_MAX -DDEFINED_ERRLIST
 # for search.h
 CFLAGS+=-I../src
@@ -10,6 +10,3 @@ OBJS+=hsearch.o
 
 install:	all
 	install -c -s -m 755 -o bin -g bin nt ${PREFIX}/bin
-
-clean:
-	rm *.o *.tcl *.ehtml tcl2c

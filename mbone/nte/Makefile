@@ -3,28 +3,22 @@
 # Date created:				5 September 1996
 # Whom:	      Bill Fenner <fenner@FreeBSD.ORG>
 #
-#   $Id: Makefile,v 1.8 1998/08/05 09:31:31 asami Exp $
+#   $Id: Makefile,v 1.9 1998/08/07 23:56:36 asami Exp $
 #
 
-DISTNAME=	nt.1.5a23
-PKGNAME=	nte-1.5a23
-CATEGORIES=	mbone tk42
-MASTER_SITES=	ftp://cs.ucl.ac.uk/mice/nte/
+DISTNAME=	nte-1.5a29
+CATEGORIES=	mbone tk80
+MASTER_SITES=	ftp://cs.ucl.ac.uk/mice/nte/1.5a29/
 
 MAINTAINER=	fenner@FreeBSD.org
 
-TK_DIR=         ${PORTSDIR}/x11-toolkits/tk42
-TK_SRC=		${TK_DIR}/work/tk4.2p2
+LIB_DEPENDS=	tk80\\.1:${PORTSDIR}/x11-toolkits/tk80
 
-DEPENDS=	${TK_DIR}
-LIB_DEPENDS=	tk42\\.1:${TK_DIR}
+WRKSRC=		${WRKDIR}/nte
 
 RESTRICTED=	"Contains DES encryption"
-NO_WRKSUBDIR=	yes
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
-# Pass this on to our child
-MAKE_ENV=	TK_SRC=${TK_SRC}
 
 .include <bsd.port.mk>
 
