@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	Net
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	DougB@FreeBSD.org
-COMMENT=	Perl5 interface to the DNS resolver, and dymanic updates
+COMMENT=	Perl5 interface to the DNS resolver, and dynamic updates
 
 # Warnings during build are harmless, the port does not need these to build
 RUN_DEPENDS=	${SITE_PERL}/Digest/HMAC_MD5.pm:${PORTSDIR}/security/p5-Digest-HMAC
