@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	xmess
-PORTVERSION=	0.56.2
+PORTVERSION=	0.61.1
 
 MAINTAINER=	stijn@win.tue.nl
 
 MASTERDIR=	${.CURDIR}/../xmame
-PATCHDIR=	${.CURDIR}/files
 COMMENT=	${.CURDIR}/pkg-comment
 DESCR=		${.CURDIR}/pkg-descr
 
