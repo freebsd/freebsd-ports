@@ -1,42 +1,40 @@
-# New ports collection makefile for:	pine-3.96k
+# New ports collection makefile for:	pine-ko
 #
-# Version required:     3.96k
-# Date created:		2 Apr 1997
-# Whom:			Choi Jun Ho <junker@jazz.snu.ac.kr>
+# Version required:     3.96k2
+# Date created:		15 Mar 1998
+# Whom:			CHOI Junho <junker@jazz.snu.ac.kr>
 #
-# $Id: Makefile,v 1.3 1997/05/18 07:06:41 asami Exp $
+# $Id$
 #
 
 DISTNAME=       pine3.96
-PKGNAME=        ko-pine-3.96k
-CATEGORIES=     korean mail
+PKGNAME=        ko-pine-3.96k.2
+CATEGORIES=     korean mail news
 MASTER_SITES=	ftp://ftp.cac.washington.edu/pine/ \
-		ftp://ftp.kaist.ac.kr/pub/hangul/mail/Others/ \
-		ftp://sunsite.kren.nm.kr/pub/packages/hangul/mail/Others/
-DISTFILES=      pine3.96.tar.gz pine395k.patch.tar.gz
+		ftp://ftp.kaist.ac.kr/pub/hangul/incoming/ \
+		ftp://ftp.kreonet.re.kr/pub/hangul/cair-archive/incoming/
+DISTFILES=	pine3.96.tar.gz pine396k2.tar.gz
 
 MAINTAINER=	junker@jazz.snu.ac.kr
 
-EXTRACT_ONLY=   pine3.96.tar.gz
 MAN1= 		pine.1 pico.1 pilot.1
 
 post-patch:
-	@cd ${WRKSRC}; \
-	tar zxf ${DISTDIR}/pine395k.patch.tar.gz; \
-	(cd pine395k; \
-	 patch < ${FILESDIR}/pine395k.to.396k.patch); \
-	patch -s -p0 < pine395k/pine395k.patch
+	@cd ${WRKSRC} && \
+	${PATCH} -s -p1 < ${WRKDIR}/pine396k2/pine396k2.patch
+	@cd ${WRKDIR} && \
+	${PATCH} -s < ${FILESDIR}/dot.pinerc.ko.sample.patch
 
 post-install:
-	install -d -o ${SHAREOWN} -g ${SHAREGRP} -m 755 \
+	${INSTALL} -d -o ${SHAREOWN} -g ${SHAREGRP} -m 755 \
 		${PREFIX}/share/doc/pine
 	cd ${WRKSRC} && \
 		${INSTALL_DATA} doc/tech-notes.txt ${PREFIX}/share/doc/pine
-	cd ${WRKSRC} && \
-		${INSTALL_DATA} pine395k/README \
+		${INSTALL_DATA} ${WRKDIR}/pine396k2/README \
 		${PREFIX}/share/doc/pine/README.patch.ko
-	cd ${WRKSRC} && \
-		${INSTALL_DATA} pine395k/README.pine \
+		${INSTALL_DATA} ${WRKDIR}/pine396k2/pine.doc \
 		${PREFIX}/share/doc/pine/README.pine.ko
+		${INSTALL_DATA} ${WRKDIR}/pine396k2/pinerc.sample \
+		${PREFIX}/etc/dot.pinerc.ko.sample
 
 .include <bsd.port.mk>

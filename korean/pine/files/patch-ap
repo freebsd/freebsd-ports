@@ -1,0 +1,20 @@
+*** pine/ttyout.c.bak	Thu Jul 11 05:45:56 1996
+--- pine/ttyout.c	Thu Jan 29 22:17:48 1998
+***************
+*** 289,295 ****
+      _kppu              = tgetstr("kP", &ptr);
+      _kppd              = tgetstr("kN", &ptr);
+      _kphome            = tgetstr("kh", &ptr);
+!     _kpend             = tgetstr("kE", &ptr);
+      _kpdel             = tgetstr("kD", &ptr);
+      _kf1               = tgetstr("k1", &ptr);
+      _kf2               = tgetstr("k2", &ptr);
+--- 289,296 ----
+      _kppu              = tgetstr("kP", &ptr);
+      _kppd              = tgetstr("kN", &ptr);
+      _kphome            = tgetstr("kh", &ptr);
+!     if((_kpend         = tgetstr("@7", &ptr)) == NULL)
+!       _kpend             = tgetstr("kE", &ptr);
+      _kpdel             = tgetstr("kD", &ptr);
+      _kf1               = tgetstr("k1", &ptr);
+      _kf2               = tgetstr("k2", &ptr);

@@ -1,5 +1,37 @@
 *** pine/send.c.orig	Tue Feb 25 00:57:38 1997
---- pine/send.c	Wed Mar 26 04:27:59 1997
+--- pine/send.c	Sun Jul 20 02:50:31 1997
+***************
+*** 5352,5364 ****
+  		body->subtype = cpystr("octet-stream");
+  	    }
+  
+  	    /*
+  	     * Apply maximal encoding regardless of previous
+  	     * setting.  This segment's either not text, or is 
+  	     * unlikely to be readable with > 30% of the
+  	     * text encoded anyway, so we might as well save space...
+  	     */
+! 	    new_encoding = ENCBINARY;   /*  > 30% 8 bit chars */
+  	}
+      }
+  
+--- 5352,5367 ----
+  		body->subtype = cpystr("octet-stream");
+  	    }
+  
++ 	    if(body->type == TYPETEXT)
++ 	      new_encoding = ENC8BIT;
++ 	    else
+  	    /*
+  	     * Apply maximal encoding regardless of previous
+  	     * setting.  This segment's either not text, or is 
+  	     * unlikely to be readable with > 30% of the
+  	     * text encoded anyway, so we might as well save space...
+  	     */
+! 	      new_encoding = ENCBINARY;   /*  > 30% 8 bit chars */
+  	}
+      }
+  
 ***************
 *** 6113,6119 ****
   
@@ -9,7 +41,7 @@
   	    break;
   
   	  case ENCBINARY:		/* encode binary into BASE64 */
---- 6113,6120 ----
+--- 6116,6123 ----
   
   	switch (body->encoding) {	/* all else needs filtering */
   	  case ENC8BIT:			/* encode 8BIT into QUOTED-PRINTABLE */
@@ -27,7 +59,7 @@
   				    ? ENCQUOTEDPRINTABLE
   				    : (body->encoding <= ENCMAX)
   					? body->encoding : ENCOTHER]);
---- 6173,6179 ----
+--- 6176,6182 ----
         sprintf (*dst += strlen (*dst), "Content-Transfer-Encoding: %s\015\012",
   	       body_encodings[(body->encoding == ENCBINARY)
   				? ENCBASE64
