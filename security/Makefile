@@ -187,6 +187,7 @@
     SUBDIR += rid
     SUBDIR += rsaref
     SUBDIR += ruby-acl
+    SUBDIR += ruby-aes
     SUBDIR += ruby-blowfish
     SUBDIR += ruby-mcrypt
     SUBDIR += ruby-openssl
