@@ -15,8 +15,6 @@ MASTER_SITE_SUBDIR=	gettext
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNU gettext package
 
-LIB_DEPENDS=	expat.5:${PORTSDIR}/textproc/expat2
-
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 USE_ICONV=	yes
@@ -27,8 +25,7 @@ CONFIGURE_ENV=	ACLOCAL="${TRUE}" \
 		MAKEINFO="makeinfo --no-split" \
 		CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	--with-libexpat-prefix=${LOCALBASE}/lib \
-		--mandir=${PREFIX}/man
+CONFIGURE_ARGS=	--mandir=${PREFIX}/man
 INSTALLS_SHLIB=	yes
 
 .if !defined(WITHOUT_GETTEXT_OPTIONS)
@@ -58,6 +55,11 @@ INFO=		autosprintf gettext
 .endif
 
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+CONFIGURE_ARGS+=	--with-libexpat-prefix=${LOCALBASE}/lib
+LIB_DEPENDS+=	expat.5:${PORTSDIR}/textproc/expat2
+.endif
 
 pre-extract:
 .if exists(${PREFIX}/bin/kaffe)
