@@ -8,7 +8,7 @@
 PORTNAME=	plgrenouille
 PORTVERSION=	0.70.6
 CATEGORIES=	french net
-MASTER_SITES=	ftp://blade.concept-micro.com/debian/
+MASTER_SITES=	http://concept.free.free.fr/plgrenouille/debian/
 DISTNAME=	${PORTNAME}_${PORTVERSION:R}-${PORTVERSION:E}
 
 MAINTAINER=	cyrille.lefevre@laposte.net
