@@ -1,0 +1,11 @@
+--- tcldesk/configs/System.orig	Sat Apr 29 18:20:13 2000
++++ tcldesk/configs/System	Sat Apr 29 18:21:05 2000
+@@ -132,7 +132,7 @@
+ ### most cases).
+ 
+ set tkdesk(cmd,whoami) "whoami"		;# used to determine user's login name
+-set tkdesk(cmd,du) "du -Dk"		        ;# for Disk Usage: usage in KB
++set tkdesk(cmd,du) "du -k"		        ;# for Disk Usage: usage in KB
+ set tkdesk(cmd,df) "df"			;# for getting free disk space in KB
+ set tkdesk(cmd,sort) "sort -rn"		;# for Disk Usage: list biggest first
+ set tkdesk(cmd,cp) "cp -r"		;# copy recursively
