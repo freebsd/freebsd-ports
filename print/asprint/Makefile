@@ -3,7 +3,7 @@
 # Date created:		16 August 1997
 # Whom:			brett@peloton.physics.montana.edu
 #
-# $Id: Makefile,v 1.2 1998/08/05 09:31:37 asami Exp $
+# $Id: Makefile,v 1.3 1998/10/12 12:33:23 jseger Exp $
 #
 
 DISTNAME=	asprint
@@ -16,8 +16,6 @@ MAINTAINER=	brett@peloton.physics.montana.edu
 USE_X_PREFIX=	yes
 ALL_TARGET=	asprint
 MAKEFILE=	makefile
-
-BROKEN_ELF=	yes
 
 do-install:
 	${INSTALL_PROGRAM} $(WRKSRC)/asprint ${PREFIX}/bin
