@@ -17,14 +17,14 @@ MASTER_SITES=	ftp://ftp.hu-berlin.de/pub/linux/staroffice/german/ \
 		ftp://ftp.sunet.se/pub7/security/vendor/sun/patches/
 DISTNAME=	so-5_2-ga-bin-linux-de.bin
 .if defined(WITH_CDROM)
-DISTFILES=	109939-02.tar.Z
+DISTFILES=	109939-03.tar.Z
 .else
-DISTFILES=	so-5_2-ga-bin-linux-de.bin 109939-02.tar.Z
+DISTFILES=	so-5_2-ga-bin-linux-de.bin 109939-03.tar.Z
 .if defined(WITH_ADABAS)
 DISTFILES+=	soa-5_2-ga-bin-linux-de.bin
 .endif
 .endif
-EXTRACT_ONLY=	109939-02.tar.Z
+EXTRACT_ONLY=	109939-03.tar.Z
 
 MAINTAINER=	mb@imp.ch
 
@@ -39,7 +39,7 @@ WRKSRC=		${WRKDIR}/office52
 TMPDIR=		${WRKDIR}/tmp
 LD_PATH=	${TMPDIR}:${WRKSRC}:${LINUXBASE}/lib:${LINUXBASE}/usr/lib
 INSTDB.INS=	${PREFIX}/office52/program/instdb.ins
-SUNSOLVE=	${WRKDIR}/109939-02
+SUNSOLVE=	${WRKDIR}/109939-03
 ADABAS_DIST=	soa-5_2-ga-bin-linux-de.bin
 SIZE!=		/bin/df -k . | /usr/bin/tail -n 1 | /usr/bin/awk '{print $$4}'
 LINPROCFS!=	/sbin/mount | /usr/bin/grep linprocfs | /usr/bin/awk '{print $1}'
