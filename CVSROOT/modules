@@ -5952,6 +5952,7 @@ sceptre		ports/cad/sceptre
 scheme48	ports/lang/scheme48
 schemetoc	ports/lang/schemetoc
 scigraphica	ports/math/scigraphica
+scilab		ports/math/scilab
 scintilla	ports/x11-toolkits/scintilla
 scite		ports/editors/scite
 scli		ports/net/scli
