@@ -3,11 +3,11 @@
 # Date created:         6 January 1997
 # Whom:                 Mark Huizer <xaa@stack.nl>
 #
-# $Id: Makefile,v 1.13 1996/12/26 09:06:32 max Exp $
+# $Id: Makefile,v 1.14 1997/01/07 18:30:04 chuckr Exp $
 #
 
-DISTNAME=	kaffe-0.7.0
-PKGNAME=	kaffe-0.7.0
+DISTNAME=	kaffe-0.7.1
+PKGNAME=	kaffe-0.7.1
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.sarc.city.ac.uk/pub/kaffe/ \
 		ftp://alterego.stack.nl/pub/kaffe/
