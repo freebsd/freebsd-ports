@@ -1,0 +1,9 @@
+This module contains functions to access CRLs infos.  It, as the
+OpenCA::X509 module, requires some parameters such as a reference to an
+OpenCA::OpenSSL instance.  This module provides a CRL->PERL Hashes
+parsing, no specific crypto functions are performed.
+
+WWW: http://search.cpan.org/dist/OpenCA-CRL/
+
+-- Sergey Skvortsov
+skv@FreeBSD.org
