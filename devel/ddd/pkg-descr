@@ -9,7 +9,7 @@ explored incrementally and interactively, using automatic layout if
 preferred.  Each time the program stops, the data display reflects the
 current variable values.
 
-WWW: http://www.cs.tu-bs.de/softech/ddd/
+WWW: http://www.gnu.org/software/ddd/
 
 Also daily CVS snapshots are at
 	ftp://ftp.ips.cs.tu-bs.de/pub/local/softech/ddd/current/
