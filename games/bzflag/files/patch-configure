@@ -1,6 +1,6 @@
---- configure.orig	Sat Jan 24 20:15:57 2004
-+++ configure	Sun Jan 25 00:24:23 2004
-@@ -323,7 +323,7 @@
+--- configure.orig	Tue Jan 18 17:13:36 2005
++++ configure	Tue Jan 18 17:16:43 2005
+@@ -63,7 +63,7 @@
  prefix=NONE
  program_prefix=NONE
  program_suffix=NONE
@@ -9,12 +9,11 @@
  silent=
  site=
  srcdir=
-@@ -6065,7 +6065,7 @@
- 
- # avoid using X11 in BeOS
- if test $host_os != beos; then
--  CPPFLAGS=
-+  CPPFLAGS="$X_CFLAGS $CPPFLAGS"
-   if test x$no_x = x; then
-     GLIBS="$X_PRE_LIBS -lX11 $EXTRA_LIBS $GLIBS"
-   fi
+@@ -4198,6 +4198,7 @@
+   beos*)
+     ;;
+   *)
++    CPPFLAGS="$X_CFLAGS $CPPFLAGS"
+     if test x$no_x = x; then
+       GLIBS="$X_PRE_LIBS -lX11 $EXTRA_LIBS $GLIBS"
+     fi
