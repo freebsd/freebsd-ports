@@ -7,6 +7,7 @@
 
 PORTNAME=	progsreiserfs
 PORTVERSION=	0.3.1.r8
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.cgsecurity.org/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.r/-rc/}
@@ -14,22 +15,34 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/.r/-rc/}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utilities and library to manipulate ReiserFS partitions
 
-LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
-
 GNU_CONFIGURE=	yes
-USE_GETTEXT=	yes
-USE_INC_LIBTOOL_VER=	15
+USE_GETOPT_LONG=yes
+USE_LIBTOOL_VER=15
 INSTALLS_SHLIB=	yes
 USE_REINPLACE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ENV=	CPPFLAGS="-I${PREFIX}/include" LDFLAGS="-L${PREFIX}/lib -lgnugetopt"
 CONFIGURE_ARGS=	--disable-debug
+
+.if defined(WITHOUT_NLS)
+CONFIGURE_ARGS+=--disable-nls
+.else
+USE_GETTEXT=	yes
+.endif
 
 MAN8=		cpfs.reiserfs.8 mkfs.reiserfs.8 reiserfs.8 \
 		resizefs.reiserfs.8 tunefs.reiserfs.8
 
-post-patch:
-	${REINPLACE_CMD} -e 's|sys/int_types.h|inttypes.h|' ${WRKSRC}/libreiserfs/tools.c
-	${REINPLACE_CMD} -e 's|sys/int_types.h|inttypes.h|' ${WRKSRC}/include/reiserfs/*
+.include <bsd.port.pre.mk>
 
-.include <bsd.port.mk>
+.if ${OSVERSION} >= 500041
+CFLAGS+=	-Dgetopt_long_only=getopt_long
+EXTRA_PATCHES=	${FILESDIR}/extrapatch-progsreiserfs::libmisc::Makefile.in
+.endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|^LIBTOOL=.*|LIBTOOL=${LIBTOOL}|g' \
+		${WRKSRC}/${CONFIGURE_SCRIPT}
+	@${REINPLACE_CMD} -e 's|sys/int_types.h|inttypes.h|' \
+		${WRKSRC}/libreiserfs/tools.c ${WRKSRC}/include/reiserfs/*
+
+.include <bsd.port.post.mk>
