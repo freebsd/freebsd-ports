@@ -65,17 +65,39 @@ if [ X$tkversion != X ]; then
   echo "*** If you want to use XF86Setup to set the INITIAL configuration,"
   echo "*** then you must build the VGA server"
 fi
+# force the compilation of the EGC server for pc98.
+if [ X"${MACHINE}" = X"pc98" ]; then
+    echo "#define BuildPC98Servers	YES"  >>$F
+    echo "#undef XF98EGCServer"           >>$F
+    echo "#define XF98EGCServer     YES"  >>$F
+    servers="GA968 GANBWAP MGA NEC480 NECS3 NKVNEC PWLB PWSKB SVGA TGUI WABEP WABS WSNA"
+    selected=EGC
+    for i in $servers; do
+	yesno "Do you want to build the $i server? [YES] "
+	if [ $answ = YES ]; then selected="$selected $i"; fi
+	echo "#undef XF98${i}Server"           >>$F
+	echo "#define XF98${i}Server   $answ"  >>$F
+    done
+    echo "#undef XF86SVGAServer"           >>$F
+    echo "#define XF86SVGAServer     NO"  >>$F
+    servers="VGA16 VGA16Dual Mono MonoDual S3 S3V I8514 Mach8 Mach32 Mach64 P9000 AGX  W32 I128"
+    for i in $servers; do
+	echo "#undef XF86${i}Server"           >>$F
+    echo "#define XF86${i}Server   NO"  >>$F
+    done
+else
 # force the compilation of the SVGA server.
-echo "#undef XF86SVGAServer"           >>$F
-echo "#define XF86SVGAServer     YES"  >>$F
-servers="VGA16 VGA16Dual Mono MonoDual S3 S3V I8514 Mach8 Mach32 Mach64 P9000 AGX  W32 I128"
-selected=SVGA
-for i in $servers; do
-  yesno "Do you want to build the $i server? [YES] "
-  if [ $answ = YES ]; then selected="$selected $i"; fi
-  echo "#undef XF86${i}Server"           >>$F
-  echo "#define XF86${i}Server   $answ"  >>$F
-done
+    echo "#undef XF86SVGAServer"           >>$F
+    echo "#define XF86SVGAServer     YES"  >>$F
+    servers="VGA16 VGA16Dual Mono MonoDual S3 S3V I8514 Mach8 Mach32 Mach64 P9000 AGX  W32 I128"
+    selected=SVGA
+    for i in $servers; do
+	yesno "Do you want to build the $i server? [YES] "
+	if [ $answ = YES ]; then selected="$selected $i"; fi
+	echo "#undef XF86${i}Server"           >>$F
+	echo "#define XF86${i}Server   $answ"  >>$F
+    done
+fi
 
 echo
 ok=0
@@ -86,7 +108,11 @@ while [ $ok != 1 ]; do
   if [ $answ != none ]; then
     for i in $selected; do if [ $i = $answ ]; then
       ok=1  
+      if [ X"${MACHINE}" = X"pc98" ]; then
+      echo "#define ServerToInstall		XF98_$answ" >>$F
+      else
       echo "#define ServerToInstall		XF86_$answ" >>$F
+      fi
       fi 
     done
   fi
@@ -96,6 +122,7 @@ echo
 yesno "Do you want to build Xvfb? [YES] "
 echo "#define XVirtualFramebufferServer $answ" >>$F
 
+if [ X"${MACHINE}" != X"pc98" ]; then
 cat >> $F <<END
 #define XF86SvgaDrivers         nv et4000 et3000 pvga1 gvga ati sis tvga8900 \
                                 cirrus ncr77c22 compaq mga oak al2101 ali \
@@ -113,6 +140,7 @@ cat >> $F <<END
 #define XF86W32Drivers		et4000w32
 
 END
+fi
 
 cat <<END
 
