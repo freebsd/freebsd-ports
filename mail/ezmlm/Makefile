@@ -21,6 +21,8 @@ COMMENT=	An easy-to-use, high-speed mailing list manager for qmail
 
 RUN_DEPENDS=	${QMAIL_DIR}/bin/qmail-send:${PORTSDIR}/mail/qmail
 
+CONFLICTS=	ezmlm-idx-*
+
 NO_PACKAGE=	Unsure of DJB license
 
 # QMAIL_DIR is the directory where qmail is installed
