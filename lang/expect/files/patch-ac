@@ -1,6 +1,6 @@
---- Makefile.in.orig	Wed Apr 24 10:37:25 1996
-+++ Makefile.in	Sun Apr 28 09:40:54 1996
-@@ -169,6 +169,7 @@
+--- Makefile.in.orig	Sat Dec 28 01:50:41 1996
++++ Makefile.in	Mon Jan  6 18:40:39 1997
+@@ -180,6 +180,7 @@
  
  INSTALL = @INSTALL@
  INSTALL_PROGRAM = @INSTALL_PROGRAM@
@@ -8,7 +8,7 @@
  INSTALL_DATA = @INSTALL_DATA@
  
  AR = ar
-@@ -185,6 +186,7 @@
+@@ -196,6 +197,7 @@
  	"HDEFS=$(HDEFS)" \
  	"INSTALL=$(INSTALL)" \
  	"INSTALL_DATA=$(INSTALL_DATA)" \
@@ -16,7 +16,7 @@
  	"INSTALL_PROGRAM=$(INSTALL_PROGRAM)" \
  	"LDFLAGS=$(LDFLAGS)" \
  	"RUNTEST=$(RUNTEST)" \
-@@ -388,7 +390,7 @@
+@@ -437,7 +439,7 @@
  	${srcdir}/mkinstalldirs $(bindir_arch_indep) $(man1dir) $(SCRIPTDIR) $(EXECSCRIPTDIR)
  	-for i in $(SCRIPT_LIST) ; do \
  	  if [ -f $$i ] ; then \
