@@ -1,12 +1,27 @@
+lib/perl5/site_perl/%%PERL_VER%%/CGI/Session/BluePrint.pm
+lib/perl5/site_perl/%%PERL_VER%%/CGI/Session/PostgreSQL.pm
+lib/perl5/site_perl/%%PERL_VER%%/CGI/Session/Tutorial.pm
+lib/perl5/site_perl/%%PERL_VER%%/CGI/Session/CookBook.pm
+lib/perl5/site_perl/%%PERL_VER%%/CGI/Session/Serialize/FreezeThaw.pm
+lib/perl5/site_perl/%%PERL_VER%%/CGI/Session/Serialize/Default.pm
+lib/perl5/site_perl/%%PERL_VER%%/CGI/Session/Serialize/Storable.pm
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/CGI/Session/Serialize
+lib/perl5/site_perl/%%PERL_VER%%/CGI/Session/ID/Incr.pm
+lib/perl5/site_perl/%%PERL_VER%%/CGI/Session/ID/MD5.pm
+lib/perl5/site_perl/%%PERL_VER%%/CGI/Session/ID/Static.pm
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/CGI/Session/ID
 lib/perl5/site_perl/%%PERL_VER%%/CGI/Session/DB_File.pm
-lib/perl5/site_perl/%%PERL_VER%%/CGI/Session/MD5.pm
 lib/perl5/site_perl/%%PERL_VER%%/CGI/Session/MySQL.pm
 lib/perl5/site_perl/%%PERL_VER%%/CGI/Session/File.pm
 lib/perl5/site_perl/%%PERL_VER%%/CGI/Session.pm
 lib/perl5/site_perl/%%PERL_VER%%/auto/CGI/Session/remote_addr.al
-lib/perl5/site_perl/%%PERL_VER%%/auto/CGI/Session/remote_host.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/CGI/Session/errstr.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/CGI/Session/expire.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/CGI/Session/_time_alias.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/CGI/Session/name.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/CGI/Session/header.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/CGI/Session/sync_param.al
 lib/perl5/site_perl/%%PERL_VER%%/auto/CGI/Session/close.al
-lib/perl5/site_perl/%%PERL_VER%%/auto/CGI/Session/_date_shortcuts.al
 lib/perl5/site_perl/%%PERL_VER%%/auto/CGI/Session/expires.al
 lib/perl5/site_perl/%%PERL_VER%%/auto/CGI/Session/ctime.al
 lib/perl5/site_perl/%%PERL_VER%%/auto/CGI/Session/atime.al
@@ -18,19 +33,13 @@ lib/perl5/site_perl/%%PERL_VER%%/auto/CGI/Session/error.al
 lib/perl5/site_perl/%%PERL_VER%%/auto/CGI/Session/delete.al
 lib/perl5/site_perl/%%PERL_VER%%/auto/CGI/Session/version.al
 lib/perl5/site_perl/%%PERL_VER%%/auto/CGI/Session/dump.al
-lib/perl5/site_perl/%%PERL_VER%%/auto/CGI/Session/TIEHASH.al
-lib/perl5/site_perl/%%PERL_VER%%/auto/CGI/Session/FETCH.al
-lib/perl5/site_perl/%%PERL_VER%%/auto/CGI/Session/STORE.al
-lib/perl5/site_perl/%%PERL_VER%%/auto/CGI/Session/DELETE.al
-lib/perl5/site_perl/%%PERL_VER%%/auto/CGI/Session/EXISTS.al
-lib/perl5/site_perl/%%PERL_VER%%/auto/CGI/Session/FIRSTKEY.al
-lib/perl5/site_perl/%%PERL_VER%%/auto/CGI/Session/NEXTKEY.al
-lib/perl5/site_perl/%%PERL_VER%%/auto/CGI/Session/CLEAR.al
 lib/perl5/site_perl/%%PERL_VER%%/auto/CGI/Session/autosplit.ix
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/CGI/Session/.packlist
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/CGI/Session
 @unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/CGI 2>/dev/null || true
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/auto/CGI/Session
 @unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/auto/CGI/Session 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/auto/CGI 2>/dev/null || true
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/CGI/Session
 @unexec %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/CGI 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/mach/auto/CGI 2>/dev/null || true
