@@ -24,7 +24,7 @@ CPP = cpp
 
 # X library
 
-XLIB = -lX11
+XLIB = -L/usr/X11R6/lib -lX11
 XLIBCFLAGS =
 PICFLAGS = -fpic -DPIC
 
