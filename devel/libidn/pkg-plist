@@ -7,12 +7,13 @@ include/stringprep.h
 include/tld.h
 lib/libidn.a
 lib/libidn.so
-lib/libidn.so.14
+lib/libidn.so.15
 libdata/pkgconfig/libidn.pc
 share/emacs/site-lisp/idna.el
 share/emacs/site-lisp/punycode.el
 %%NLS%%share/locale/da/LC_MESSAGES/libidn.mo
 %%NLS%%share/locale/de/LC_MESSAGES/libidn.mo
+%%NLS%%share/locale/eo/LC_MESSAGES/libidn.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/libidn.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/libidn.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/libidn.mo
