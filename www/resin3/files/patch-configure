@@ -1,0 +1,23 @@
+--- configure.orig	Tue Oct 12 18:34:32 2004
++++ configure	Tue Oct 12 18:34:48 2004
+@@ -8487,20 +8487,6 @@
+ # Using Perl if it's available.
+ #
+ PERL=`which perl`
+-if test -z "${LD_SHLIB}"; then
+-  if test -z "${LD_SHLIB}" -a "x`$PERL -V:dlsrc 2>/dev/null | grep dlopen`" != "x"; then
+-    PCC="`$PERL -V:cc | cut -d\' -f2`"
+-    if test "${PCC}" = "${CC}"; then
+-      CFLAGS_SHLIB="`$PERL -V:cccdlflags | cut -d\' -f2`"
+-      LDFLAGS_SHLIB="`$PERL -V:lddlflags | cut -d\' -f2`"
+-      LD_SHLIB="`$PERL -V:ld | cut -d\' -f2`"
+-
+-      has_clflags=1
+-
+-      echo "Using shared library flags from Perl"
+-    fi
+-  fi
+-fi
+ 
+ #if test -z "${LD_SHLIB}"; then
+ #  AC_MSG_ERROR([Can't determine compilation flags.]);
