@@ -19,4 +19,10 @@ INFO=		libjit
 MAN3=		libjit.3
 INSTALLS_SHLIB=	yes
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64"
+BROKEN=		"Does not compile on amd64"
+.endif
+
+.include <bsd.port.post.mk>
