@@ -1,8 +1,8 @@
-# $Id: Makefile,v 1.19 1996/02/10 20:34:58 fenner Exp $
+# $Id: Makefile,v 1.20 1996/03/06 11:05:08 asami Exp $
 #
 
     SUBDIR += ImageMagick
-    BROKEN += Mesa              # doesn't install
+    SUBDIR += Mesa
     SUBDIR += aero
     SUBDIR += dore
     SUBDIR += hpscan
