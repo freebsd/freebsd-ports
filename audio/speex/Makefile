@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	speex
-PORTVERSION=	1.0.3
-PORTREVISION=	1
+PORTVERSION=	1.0.4
 PORTEPOCH=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://www.speex.org/download/
@@ -19,6 +18,7 @@ COMMENT=	An open-source patent-free voice codec
 
 LIB_DEPENDS=	ogg.5:${PORTSDIR}/audio/libogg
 
+USE_GNOME=	gnomehack
 USE_GETOPT_LONG=	yes
 USE_REINPLACE=	yes
 USE_INC_LIBTOOL_VER=	13

@@ -1,11 +1,18 @@
-@comment $FreeBSD$
 bin/speexdec
 bin/speexenc
 include/speex.h
+include/speex/speex.h
+include/speex/speex_bits.h
+include/speex/speex_callbacks.h
+include/speex/speex_header.h
+include/speex/speex_stereo.h
 include/speex_bits.h
 include/speex_callbacks.h
 include/speex_header.h
 include/speex_stereo.h
 lib/libspeex.a
 lib/libspeex.so
-lib/libspeex.so.2
+lib/libspeex.so.3
+libdata/pkgconfig/speex.pc
+share/aclocal/speex.m4
+@dirrm include/speex
