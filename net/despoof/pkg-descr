@@ -1,0 +1,7 @@
+A command-line anti-spoofing detection utility. The idea is simple --
+if you receive a packet that you suspect is spoofed, try to determine
+the real TTL of the packet and compare it to the TTL of the packet you
+received. This is intended to be used as a component of an IDS
+toolkit.
+
+WWW:	http://razor.bindview.com/tools/

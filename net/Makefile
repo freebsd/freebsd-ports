@@ -46,6 +46,7 @@
     SUBDIR += datapipe
     SUBDIR += ddup
     SUBDIR += delegate
+    SUBDIR += despoof
     SUBDIR += dgd
     SUBDIR += dgd-lpmud
     SUBDIR += dgd-net

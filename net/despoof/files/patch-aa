@@ -1,0 +1,17 @@
+--- Makefile.orig	Sat Sep  2 18:33:10 2000
++++ Makefile	Sat Sep  2 18:35:05 2000
+@@ -1,10 +1,10 @@
+ # despoof makefile
+ #
+-CC=gcc
+-CFLAGS=-O3
++CC?=gcc
++CFLAGS?=-O
+ PROG=despoof
+-DEFS=`libnet-config --defines`
+-LIBS=-lnet -lpcap
++DEFS=-I${LOCALBASE}/include `libnet-config --defines`
++LIBS=-L${LOCALBASE}/lib -lnet -lpcap
+ 
+ default: all
+ 
