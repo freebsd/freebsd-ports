@@ -1,4 +1,5 @@
 bin/twander.py
+bin/twander.pyo
 %%PORTDOCS%%%%DOCSDIR%%/READ-1ST.txt
 %%PORTDOCS%%%%DOCSDIR%%/WHATSNEW.txt
 %%PORTDOCS%%%%DOCSDIR%%/twander-license.txt
