@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	albatross
-PORTVERSION=	1.10
+PORTVERSION=	1.11
 CATEGORIES=	www python
 MASTER_SITES=	http://object-craft.com.au/projects/albatross/download/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
