@@ -6,14 +6,12 @@
 #
 
 PORTNAME=	cyrus-imapd
-PORTVERSION= 	2.1.12
+PORTVERSION= 	2.2.0.a
 #PORTREVISION=	0
+DISTNAME=	${PORTNAME}-2.2.0-ALPHA
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/ \
 		ftp://ftp.hanse.de/sites/transit/mirror/ftp.andrew.cmu.edu/pub/cyrus-mail/
-
-PATCH_SITES=	http://www.imasy.or.jp/~ume/ipv6/
-PATCHFILES=	${DISTNAME}-ipv6-20030204.diff.gz
 
 MAINTAINER=	ume@FreeBSD.org
 COMMENT=	The cyrus mail server, supporting POP3 and IMAP4 protocols
@@ -35,8 +33,15 @@ CONFIGURE_ARGS=	--with-cyrus-prefix=${PREFIX}/cyrus \
 		--with-auth=unix \
 		--with-com_err
 
-.if defined(WITH_SKIPLIST_MBOX)
-CONFIGURE_ARGS+=--with-mboxlist-db=skiplist
+.if defined(WITHOUT_SKIPLIST)
+CONFIGURE_ARGS+=--with-mboxlist-db=berkeley --with-seen-db=flat
+.endif
+
+.if defined(WITH_NNTP)
+CONFIGURE_ARGS+=--enable-nntp
+PLIST_SUB+=	NNTP=""
+.else
+PLIST_SUB+=	NNTP="@comment "
 .endif
 
 .if defined(WITH_MURDER)
@@ -46,6 +51,30 @@ MAKE_ENV+=	PTHREAD_LIBS=${PTHREAD_LIBS}
 PLIST_SUB+=	MURDER=""
 .else
 PLIST_SUB+=	MURDER="@comment "
+.endif
+
+.if defined(WITH_FULLDIRHASH)
+CONFIGURE_ARGS+=--enable-fulldirhash
+.endif
+
+.if defined(WITH_LISTEXT)
+CONFIGURE_ARGS+=--enable-listext
+.endif
+
+.if defined(WITH_ANNOTATEMORE)
+CONFIGURE_ARGS+=--enable-annotatemore
+.endif
+
+.if defined(WITH_NETSCAPEHACK)
+CONFIGURE_ARGS+=--enable-netscapehack
+.endif
+
+.if defined(WITH_DRAC)
+EXTRA_PATCHES+=	${FILESDIR}/drac_auth.patch \
+	${FILESDIR}/extra-patch-acconfig.h ${FILESDIR}/extra-patch-aclocal.m4
+USE_AUTOCONF=	YES
+CONFIGURE_ARGS+=--with-drac=${LOCALBASE}
+BUILD_DEPENDS+=	${LOCALBASE}/lib/libdrac.a:${PORTSDIR}/mail/drac
 .endif
 
 .if defined(WITH_SNMP)
@@ -60,21 +89,24 @@ CYRUS_USER?=	cyrus
 CYRUS_GROUP?=	cyrus
 
 MAN1=		cyradm.1 imtest.1 installsieve.1 lmtptest.1 mupdatetest.1 \
-		pop3test.1 sieveshell.1 sivtest.1 smtptest.1
+		nntptest.1 pop3test.1 sieveshell.1 sivtest.1 smtptest.1
 MAN3=		imclient.3
 MAN5=		cyrus.conf.5 imapd.conf.5 krb.equiv.5
-MAN8=		arbitron.8 chk_cyrus.8 collectnews.8 ctl_cyrusdb.8 \
-		ctl_deliver.8 ctl_mboxlist.8 cvt_cyrusdb.8 cyrquota.8 \
-		deliver.8 fud.8 idled.8 imapd.8 ipurge.8 lmtpd.8 master.8 \
-		mbpath.8 notifyd.8 pop3d.8 reconstruct.8 rmnews.8 \
-		squatter.8 syncnews.8 timsieved.8 tls_prune.8
+MAN8=		arbitron.8 chk_cyrus.8 nntpd.8 ctl_cyrusdb.8 ctl_deliver.8 \
+		ctl_mboxlist.8 cvt_cyrusdb.8 cyrquota.8 deliver.8 \
+		expirenews.8 fetchnews.8 fud.8 idled.8 imapd.8 ipurge.8 \
+		lmtpd.8 master.8 mbpath.8 notifyd.8 pop3d.8 reconstruct.8 \
+		rmnews.8 squatter.8 syncnews.8 timsieved.8 tls_prune.8
 
 DOCS=		altnamespace anoncvs bugs changes faq feedback index \
 		install install-admin-mb install-auth install-compile \
-		install-configure install-murder install-perf \
-		install-prereq install-sieve install-snmpmon install-testing \
-		install-upgrade mailing-list man notes os overview questions \
-		readme sieve sieve-protocol specs
+		install-configure install-murder install-netnews \
+		install-perf install-prereq install-sieve install-snmpmon \
+		install-testing install-upgrade install-virtdomains \
+		mailing-list man notes os overview questions readme sieve \
+		sieve-protocol specs
+
+DOCSDIR=	${PREFIX}/share/doc/cyrus-imapd22
 
 PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
 PKGINSTALL=	${WRKDIR}/pkg-install
@@ -97,42 +129,49 @@ post-patch:
 				  -e "s|%%CYRUS_USER%%|${CYRUS_USER}|g" \
 				  -e "s|%%CYRUS_GROUP%%|${CYRUS_GROUP}|g" \
 			${WRKSRC}/tools/mkimap
+		@${REINPLACE_CMD} -e "s|/etc/|${PREFIX}/etc/|g" \
+				  -e "s|/usr/sieve|/var/imap/sieve|g" \
+			${WRKSRC}/tools/masssievec
 		@${CP} ${WRKSRC}/man/quota.8 ${WRKSRC}/man/cyrquota.8
 .if ${PERL_LEVEL} < 500600
 		@${REINPLACE_CMD} -e "s|exec perl -x|exec perl -I${LOCALBASE}/lib/perl5/site_perl/${PERL_VER} -x|" \
 			${WRKSRC}/perl/sieve/scripts/sieveshell.pl
 .endif
 
+.if defined(WITH_DRAC)
+pre-configure:
+		cd ${WRKSRC} && ${AUTOHEADER}
+.endif
+
 post-install:
 		@${MV} ${PREFIX}/cyrus/bin/quota ${PREFIX}/cyrus/bin/cyrquota
 .if !defined(NOPORTDOCS)
-		${MKDIR} ${PREFIX}/share/doc/cyrus-imapd2/man
-		${MKDIR} ${PREFIX}/share/doc/cyrus-imapd2/text
+		${MKDIR} ${DOCSDIR}/man
+		${MKDIR} ${DOCSDIR}/text
 .for file in ${DOCS}
-		${INSTALL_DATA} ${WRKSRC}/doc/${file}.html \
-			${PREFIX}/share/doc/cyrus-imapd2
-		@${ECHO} share/doc/cyrus-imapd2/${file}.html >>${TMPPLIST}
+		${INSTALL_DATA} ${WRKSRC}/doc/${file}.html ${DOCSDIR}
+		@${ECHO} share/doc/cyrus-imapd22/${file}.html >>${TMPPLIST}
 .endfor
 .for file in ${MAN1} ${MAN3} ${MAN5} ${MAN8}
 		ofile=`echo ${file} | sed s/cyrquota/quota/`; \
 		if [ -f ${WRKSRC}/doc/man/$${ofile}.html ]; then \
 		${INSTALL_DATA} ${WRKSRC}/doc/man/$${ofile}.html \
-			${PREFIX}/share/doc/cyrus-imapd2/man/$${ofile}.html; \
-		${ECHO} share/doc/cyrus-imapd2/man/$${ofile}.html \
+			${DOCSDIR}/man/$${ofile}.html; \
+		${ECHO} share/doc/cyrus-imapd22/man/$${ofile}.html \
 			>>${TMPPLIST}; \
 		fi
 .endfor
-		${INSTALL_DATA} ${WRKSRC}/doc/cyrusv2.mc \
-			${PREFIX}/share/doc/cyrus-imapd2
-		@${ECHO} share/doc/cyrus-imapd2/cyrusv2.mc >>${TMPPLIST}
-.for file in ${DOCS}
-		${INSTALL_DATA} ${WRKSRC}/doc/text/${file} \
-			${PREFIX}/share/doc/cyrus-imapd2/text
-		@${ECHO} share/doc/cyrus-imapd2/text/${file} >>${TMPPLIST}
+.for file in cyrusv2.mc murder.png netnews.png
+		${INSTALL_DATA} ${WRKSRC}/doc/${file} ${DOCSDIR}
+		@${ECHO} share/doc/cyrus-imapd22/${file} >>${TMPPLIST}
 .endfor
-		@${ECHO} "@dirrm share/doc/cyrus-imapd2/text" >>${TMPPLIST}
-		@${ECHO} "@dirrm share/doc/cyrus-imapd2/man" >>${TMPPLIST}
-		@${ECHO} "@dirrm share/doc/cyrus-imapd2" >>${TMPPLIST}
+.for file in ${DOCS}
+		${INSTALL_DATA} ${WRKSRC}/doc/text/${file} ${DOCSDIR}/text
+		@${ECHO} share/doc/cyrus-imapd22/text/${file} >>${TMPPLIST}
+.endfor
+		@${ECHO} "@dirrm share/doc/cyrus-imapd22/text" >>${TMPPLIST}
+		@${ECHO} "@dirrm share/doc/cyrus-imapd22/man" >>${TMPPLIST}
+		@${ECHO} "@dirrm share/doc/cyrus-imapd22" >>${TMPPLIST}
 .endif
 		${INSTALL_SCRIPT} ${FILESDIR}/imapd.sh \
 			${PREFIX}/etc/rc.d/imapd.sh.sample
@@ -142,6 +181,8 @@ post-install:
 			${PREFIX}/etc/cyrus.conf.dist
 		${INSTALL_SCRIPT} ${WRKSRC}/tools/mkimap \
 			${PREFIX}/cyrus/bin/mkimap
+		${INSTALL_SCRIPT} ${WRKSRC}/tools/masssievec \
+			${PREFIX}/cyrus/bin/masssievec
 		@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} \
 			POST-INSTALL
 		@${CAT} ${PKGMESSAGE}

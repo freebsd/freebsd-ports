@@ -1,0 +1,21 @@
+Index: sieve/Makefile.in
+diff -u sieve/Makefile.in.orig sieve/Makefile.in
+--- sieve/Makefile.in.orig	Fri Feb 28 03:13:50 2003
++++ sieve/Makefile.in	Mon Mar 24 02:26:24 2003
+@@ -32,6 +32,7 @@
+ YACC = @YACC@
+ YFLAGS = -d
+ LEX = @LEX@
++INSTALL = @INSTALL@
+ RANLIB = @RANLIB@
+ COMPILE_ET = @COMPILE_ET@
+ 
+@@ -58,7 +59,7 @@
+ 
+ install: sievec
+ 	$(srcdir)/../install-sh -d ${DESTDIR}$(cyrus_prefix)/bin
+-	$(srcdir)/../install-sh -m 755 sievec $(DESTDIR)$(cyrus_prefix)/bin || exit
++	$(INSTALL) -m 755 sievec $(DESTDIR)$(cyrus_prefix)/bin || exit
+ 
+ test: $(DEPLIBS) libsieve.a test.o
+ 	$(CC) $(LDFLAGS) -o test test.o libsieve.a $(DEPLIBS) $(LIBS)

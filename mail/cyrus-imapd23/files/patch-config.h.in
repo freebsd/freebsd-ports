@@ -1,0 +1,17 @@
+Index: config.h.in
+diff -u config.h.in.orig config.h.in
+--- config.h.in.orig	Thu Mar 20 04:04:36 2003
++++ config.h.in	Fri Mar 21 14:33:39 2003
+@@ -360,8 +360,12 @@
+ #define FNAME_DOMAINDIR "/domain/"
+ #define FNAME_LOGDIR "/log/"
+ #define FNAME_PTSDB "/ptclient/ptscache.db"
++#if !defined(CONFIG_FILENAME)
+ #define CONFIG_FILENAME "/etc/imapd.conf"
++#endif
++#if !defined(DEFAULT_MASTER_CONFIG_FILENAME)
+ #define DEFAULT_MASTER_CONFIG_FILENAME "/etc/cyrus.conf"
++#endif
+ 
+ #ifndef HAVE_SHUTDOWN
+ #define shutdown(fd, mode) 0

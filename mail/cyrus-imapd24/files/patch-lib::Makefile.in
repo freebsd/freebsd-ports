@@ -1,0 +1,13 @@
+Index: lib/Makefile.in
+diff -u lib/Makefile.in.orig lib/Makefile.in
+--- lib/Makefile.in.orig	Thu Feb 13 04:12:42 2003
++++ lib/Makefile.in	Fri Mar 21 15:11:50 2003
+@@ -56,7 +56,7 @@
+ INSTALL = @INSTALL@
+ RANLIB = @RANLIB@
+ 
+-DEFS = @DEFS@
++DEFS = @DEFS@ -DCONFIG_FILENAME=\"$(prefix)/etc/imapd.conf\"
+ CPPFLAGS = -I.. @CPPFLAGS@ @COM_ERR_CPPFLAGS@ @SASLFLAGS@
+ LIBS = @LIBS@
+ 
