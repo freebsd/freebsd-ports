@@ -63,6 +63,7 @@
     SUBDIR += mysql2pgsql
     SUBDIR += mysql323-client
     SUBDIR += mysql323-server
+    SUBDIR += mysqlman
     SUBDIR += mysqltcl
     SUBDIR += mytop
     SUBDIR += namazu2
