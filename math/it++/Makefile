@@ -24,6 +24,8 @@ CONFIGURE_ARGS=	opt
 USE_GMAKE=	yes
 
 post-patch:
+	@${REINPLACE_CMD} -e "s|sparc|__sparc__|" \
+		-e "s|alpha|__alpha__|" ${WRKSRC}/include/base/machdep.h
 	@${REINPLACE_CMD} -e "s|[$$]{it_dir}|${LOCALBASE}|g" ${WRKSRC}/configure
 
 do-install:
