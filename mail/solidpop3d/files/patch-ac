@@ -1,0 +1,30 @@
+--- src/mailbox.c.orig	Sat May 13 16:18:33 2000
++++ src/mailbox.c	Fri Jun  9 14:56:54 2000
+@@ -45,6 +45,9 @@
+ #endif
+ #endif
+ 
++#define md5_finish_ctx(ctx, dig) MD5Final((unsigned char *)dig, ctx)
++#define md5_init_ctx(ctx) MD5Init(ctx)
++#define md5_process_bytes(buf, len, ctx) MD5Update (ctx, (unsigned char *)buf, len)
+ 
+ extern void check_wccount(void);
+ extern char maildrop_name[];
+@@ -207,7 +210,7 @@
+ 	char linebuf[128];
+ 	char msgdate[21];
+ 	struct mb_message *mbspecific;
+-	struct md5_ctx context;
++	MD5_CTX context;
+ 	int header = 1, fixed = 0, newline = 1;
+ 	
+ 	if (mailboxfd < 0) {
+@@ -342,7 +345,7 @@
+ 	off_t act_ofs = 0;
+ 	char msgdate[21];
+ 	struct mb_message *tmp;
+-	struct md5_ctx context;
++	MD5_CTX context;
+ 	int tmpmsgnr = 0;
+ 	time_t tmpmsg_time;
+ 	off_t tmpfrom_where = 0, tmpwhere = 0;

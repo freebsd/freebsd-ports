@@ -1,0 +1,13 @@
+if [ "$2" != "INSTALL" ]; then
+  exit 0
+fi
+if ! id -u pop > /dev/null 2>&1; then
+  echo "You need an account \"pop\" to install this package."
+  echo "Please add it by hand (try \"man vipw\") and try again."
+  echo ""
+  echo "An example passwd entry is:"
+  echo "pop:*:68:6::0:0:Post Office Owner:/nonexistent:/nonexistent"
+  echo ""
+  exit 1
+fi
+exit 0

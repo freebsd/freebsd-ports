@@ -1,0 +1,20 @@
+--- src/const.h.orig	Tue Apr 18 19:04:05 2000
++++ src/const.h	Fri Jun  9 14:12:51 2000
+@@ -36,7 +36,7 @@
+ #define DEFWCCOUNT 5
+ 
+ #ifdef MDMAILBOX
+-#define DEFMAILDROPNAME "/var/spool/mail/%s"
++#define DEFMAILDROPNAME "/var/mail/%s"
+ #else
+ #define DEFMAILDROPNAME "Maildir"
+ #endif
+@@ -50,7 +50,7 @@
+ #define MAXMDTYPENAMELENGTH 40
+ #define USERCFG ".spop3d"
+ #define USERBULL ".spop3d-bull"
+-#define POPUSER "spop3d"
++#define POPUSER "pop"
+ 
+ #define PER_SOURCE 5
+ #define MAX_SESSIONS 50

@@ -1,0 +1,22 @@
+--- src/maildir.c.orig	Sat May 13 16:18:35 2000
++++ src/maildir.c	Fri Jun  9 14:57:07 2000
+@@ -59,6 +59,10 @@
+ #endif
+ #endif
+ 
++#define md5_finish_ctx(ctx, dig) MD5Final((unsigned char *)dig, ctx)
++#define md5_init_ctx(ctx) MD5Init(ctx)
++#define md5_process_bytes(buf, len, ctx) MD5Update (ctx, (unsigned char *)buf, len)
++
+ extern void check_wccount(void);
+ 
+ extern char maildrop_name[];
+@@ -650,7 +654,7 @@
+ char *mdir_md5_uidl_message(unsigned int number, char *result) {
+ 	size_t length;
+ 	char *tmp2, *tmp3;
+-	struct md5_ctx context;
++	MD5_CTX context;
+ 	
+ 	md5_init_ctx(&context);
+ 	tmp2 = ((struct mdir_message *) (messages[number].md_specific))->filename;
