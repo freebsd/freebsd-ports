@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	opengatekeeper
-PORTVERSION=	0.9a3
-PORTREVISION=	2
+PORTVERSION=	0.9a4
 CATEGORIES=	net
 MASTER_SITES=	http://download.sourceforge.net/OpenGatekeeper/
-DISTNAME=	opengate_0.9alpha3
+DISTNAME=	opengate_0.9alpha4
 
 MAINTAINER=	roger@FreeBSD.org
 
