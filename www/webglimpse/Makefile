@@ -12,24 +12,27 @@ PKGNAME=        webglimpse-1.6
 CATEGORIES=     www textproc
 MASTER_SITES=   ftp://ftp.cs.arizona.edu/glimpse/
 
+RUN_DEPENDS+=   /usr/local/etc/apache/httpd.conf:${PORTSDIR}/www/apache13
+RUN_DEPENDS+=   glimpse:${PORTSDIR}/textproc/glimpse
+WRKSRC=         ${WRKDIR}/webglimpse-1.6.edu
+
 MAINTAINER=     ache@freebsd.org
 
-RUN_DEPENDS+=   ${PREFIX}/etc/apache/httpd.conf:${PORTSDIR}/www/apache13
-RUN_DEPENDS+=   glimpse:${PORTSDIR}/textproc/glimpse
-
-IS_INTERACTIVE=	YES
-NO_PACAKGE=	domain name hardcoded
-WRKSRC=         ${WRKDIR}/webglimpse-1.6.edu
 USE_PERL5=      YES
 NO_BUILD=       YES
 
 pre-configure:
 .for i in wginstall wginstall.pl
-	cd ${WRKSRC}; ${CP} $i $i.tmp; \
-		${SED} s=%PERL%=${PERL}= < $i.tmp > $i
+	cd ${WRKSRC}; cp $i $i.tmp; \
+		sed s=%PERL%=${PERL}= < $i.tmp > $i
 .endfor
 
 do-install:
+	${INSTALL} -d -o ${SHAREOWN} -g ${SHAREGRP} -m 755 \
+		${PREFIX}/www/webglimpse
+.if defined(PACKAGE_BUILDING)
+	${INSTALL_DATA} ${FILESDIR}/.wgsiteconf ${PREFIX}/www/webglimpse
+.endif
 	cd ${WRKSRC}; ./wginstall
 	${INSTALL} -d -o ${SHAREOWN} -g ${SHAREGRP} -m 755 \
 		${PREFIX}/share/doc/webglimpse
