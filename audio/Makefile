@@ -3,6 +3,7 @@
 
     SUBDIR += Maaate
     SUBDIR += afsp
+    SUBDIR += agbrowser
     SUBDIR += amp
     SUBDIR += ascd
     SUBDIR += aumix

@@ -1,0 +1,25 @@
+bin/agbrowser
+share/applnk/Internet/agbrowser.desktop
+share/icons/hicolor/16x16/actions/tray-sat.png
+share/icons/hicolor/16x16/apps/agbrowser.png
+share/icons/hicolor/32x32/actions/sat-still.png
+share/icons/hicolor/32x32/actions/sat-trans1.png
+share/icons/hicolor/32x32/actions/sat-trans10.png
+share/icons/hicolor/32x32/actions/sat-trans2.png
+share/icons/hicolor/32x32/actions/sat-trans3.png
+share/icons/hicolor/32x32/actions/sat-trans4.png
+share/icons/hicolor/32x32/actions/sat-trans5.png
+share/icons/hicolor/32x32/actions/sat-trans6.png
+share/icons/hicolor/32x32/actions/sat-trans7.png
+share/icons/hicolor/32x32/actions/sat-trans8.png
+share/icons/hicolor/32x32/actions/sat-trans9.png
+share/icons/hicolor/32x32/apps/agbrowser.png
+share/icons/locolor/16x16/apps/audiogalaxyforkde2.png
+share/icons/locolor/32x32/apps/audiogalaxyforkde2.png
+@dirrm share/icons/locolor/32x32/apps
+@dirrm share/icons/locolor/16x16/apps
+@dirrm share/icons/hicolor/32x32/apps
+@dirrm share/icons/hicolor/32x32/actions
+@dirrm share/icons/hicolor/16x16/apps
+@dirrm share/icons/hicolor/16x16/actions
+@dirrm share/applnk/Internet
