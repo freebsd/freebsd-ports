@@ -19,6 +19,19 @@ USE_XLIB=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-alsa
+CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib" CFLAGS="-I${LOCALBASE}/include"
+USE_AUTOCONF=	yes
+WANT_ESOUND=	yes
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} > 500013
+USE_ESOUND=	yes
+CONFIGURE_ARGS+=	--disable-oss --enable-esd
+.elif defined(HAVE_ESOUND)
+USE_ESOUND=	yes
+CONFIGURE_ARGS+=	--enable-esd
+.endif
 
 MAN1=		xmp.1
 MLINKS=		xmp.1 xxmp.1
@@ -26,4 +39,4 @@ MLINKS=		xmp.1 xxmp.1
 post-patch:
 	@${PERL} -pi -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/docs/xmp.1
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
