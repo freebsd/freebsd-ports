@@ -13,7 +13,7 @@ DISTNAME=	Code_Medic_source-${PORTVERSION}
 
 MAINTAINER=	lioux@linf.unb.br
 
-BUILD_DEPENDS=	nonexistent:${JXPORT}:configure \
+BUILD_DEPENDS=	${NONEXISTENT}:${JXPORT}:configure \
 		makemake:${JXPORT}
 LIB_DEPENDS=	jx-1_5_3.1:${JXPORT} \
 		jsearch-0_5_6.0:${PORTSDIR}/x11-toolkits/libjsearch \
@@ -49,15 +49,16 @@ DOCDIR_PREFIX=  ${PREFIX}/share/doc/${PORTNAME}
 # additional configuration and header files
 EXTRALIB_PREFIX=	${X11BASE}/lib/jx
 EXTRALIBFILES_MAKE_WRKSRC=	include/make
+
+.include <bsd.port.pre.mk>
+
 # main jx distribution files needed for building
 COPY_JXDIRS=	include
 COPY_JXFILES=	Makefile
 # main jx distribution port wrksrc
 JXPORT=		${PORTSDIR}/x11-toolkits/jx
-JXPORT_WRKSRC=	${JXPORT}/work/JX-1.5.3
+JXPORT_WRKSRC!=	cd ${JXPORT} && ${MAKE} -V WRKSRC
 JX_MAKE_CONSTANTS=	jsearch_constants jtree_constants
-
-.include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 300000
 ALL_TARGET=	freebsd3.x
