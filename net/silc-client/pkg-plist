@@ -97,18 +97,6 @@ share/silc/scripts/hello.pl
 share/silc/scripts/mail-maildir.pl
 share/silc/scripts/mail.pl
 share/silc/scripts/silc-mime.pl
-lib/silc/perl/auto/Irssi/.exists
-lib/silc/perl/auto/Irssi/Irssi.so
-lib/silc/perl/auto/Irssi/Irssi.bs
-lib/silc/perl/auto/Irssi/UI/.exists
-lib/silc/perl/auto/Irssi/UI/UI.so
-lib/silc/perl/auto/Irssi/UI/UI.bs
-lib/silc/perl/auto/Irssi/TextUI/.exists
-lib/silc/perl/auto/Irssi/TextUI/TextUI.so
-lib/silc/perl/auto/Irssi/TextUI/TextUI.bs
-lib/silc/perl/auto/Irssi/Silc/.exists
-lib/silc/perl/auto/Irssi/Silc/Silc.so
-lib/silc/perl/auto/Irssi/Silc/Silc.bs
 %%PORTDOCS%%%%DOCSDIR%%/CodingStyle
 %%PORTDOCS%%%%DOCSDIR%%/FAQ
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
@@ -124,10 +112,3 @@ lib/silc/perl/auto/Irssi/Silc/Silc.bs
 @dirrm share/silc
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @unexec rmdir %D/etc/silc 2>/dev/null || true
-@dirrm lib/silc/perl/auto/Irssi/Silc
-@dirrm lib/silc/perl/auto/Irssi/TextUI
-@dirrm lib/silc/perl/auto/Irssi/UI
-@dirrm lib/silc/perl/auto/Irssi
-@dirrm lib/silc/perl/auto
-@dirrm lib/silc/perl
-@dirrm lib/silc
