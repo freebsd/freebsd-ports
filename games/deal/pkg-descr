@@ -1,0 +1,11 @@
+Deal is a calculator for card-draw probabilities. Specifically it
+computes non-replacement draw probabilities using the hypergeomtric
+function. It can also be used to compute binomial coefficients and the
+gamma function.
+
+Deal is useful for tuning Magic: The Gathering decks.
+
+WWW: http://www.tuxedo.org/~esr/software.html
+
+- Mark Pulford
+mark@kyne.com.au

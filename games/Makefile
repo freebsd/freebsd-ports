@@ -54,6 +54,7 @@
     SUBDIR += crafty-open-small
     SUBDIR += crossfire
     SUBDIR += cursive
+    SUBDIR += deal
     SUBDIR += defendguin
     SUBDIR += digger-vgl
     SUBDIR += dontspace
