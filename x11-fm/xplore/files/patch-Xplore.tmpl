@@ -1,0 +1,44 @@
+--- Xplore.tmpl.orig	Wed May  1 16:59:23 2002
++++ Xplore.tmpl	Sun Feb  1 23:18:12 2004
+@@ -49,41 +49,7 @@
+ 
+ /* These definitions are needed for statfs() and the stuff in mnttable.c. */
+ 
+-#ifdef AIXArchitecture
+-  SYSDEP = -DAIX
+-#endif
+-
+-#ifdef AlphaArchitecture
+-  SYSDEP = -DOSF1
+-#endif
+-
+-#ifdef HPArchitecture
+-  SYSDEP = -DHPUX -D_HPUX_SOURCE
+-#endif
+-
+-#ifdef i386Architecture
+   SYSDEP = -DFreeBSD
+-#endif
+-  
+-#ifdef LinuxArchitecture
+-  SYSDEP = -DLINUX
+-#endif
+-
+-#ifdef SCOArchitecture
+-  SYSDEP = -DSCO
+-#endif
+-
+-#ifdef SGIArchitecture
+-  SYSDEP = -DSGI
+-#endif
+-
+-#if defined(SunArchitecture)
+-#if  OSMajorVersion > 4
+-  SYSDEP = -DSOLARIS
+-#else
+-  SYSDEP = -DSUNOS
+-#endif
+-#endif
+ 
+ XCOMM If your system is not SVR4 and neither matches one of the above, you
+ XCOMM might wish to uncomment one of the following and proceed with fingers
