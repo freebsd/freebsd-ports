@@ -11,7 +11,7 @@ CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	smalltalk
 
-MAINTAINER=	alex@big.endian.de
+MAINTAINER=	alex@FreeBSD.org
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-MAINTAINER=     alex@big.endian.de
+MAINTAINER=     alex@FreeBSD.org
 
 ISPELL_BRITISH=	yes
 PORTNAME=	british-ispell
