@@ -3,14 +3,13 @@
 # Date created:         4 Jan 1995
 # Whom:                 swallace
 #
-# $Id: Makefile,v 1.6 1996/11/18 11:25:21 asami Exp $
+# $Id: Makefile,v 1.7 1997/01/03 09:37:04 obrien Exp $
 #
 
 DISTNAME=       xchomp-pl1
 CATEGORIES=	games
-MASTER_SITES=	ftp://ftp.uoknor.edu/mirrors/X/R5contrib/ \
-		${MASTER_SITE_XCONTRIB}
-MASTER_SITE_SUBDIR=	../../R5contrib
+MASTER_SITES=	${MASTER_SITE_XCONTRIB}
+MASTER_SITE_SUBDIR=	../R5contrib
 #
 # Original sources in multi-part compressed shell archive
 #
