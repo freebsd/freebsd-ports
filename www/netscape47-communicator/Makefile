@@ -29,7 +29,7 @@ NETSCAPE_DIST_ARCH=	supported/dec_unix40
 NETSCAPE_DIST_TAG=	alpha-dec-osf4.0
 .endif
 
-.if defined(BROWSER) && ${BROWSER} == 'navigator'
+.if defined(BROWSER) && ${BROWSER} == "navigator"
 NETSCAPE_DIST_GRADE=	navigator_standalone
 .endif
 
