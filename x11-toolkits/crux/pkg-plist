@@ -102,4 +102,5 @@ share/themes/Crux/index.theme
 @dirrm share/themes/Crux/gtk-2.0
 @dirrm share/icons/Crux
 @unexec /bin/rmdir %D/share/themes/Crux 2>/dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons 2>/dev/null || /usr/bin/true
 @unexec /bin/rmdir %D/share/eazel-engine 2>/dev/null || /usr/bin/true
