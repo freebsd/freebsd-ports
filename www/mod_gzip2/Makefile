@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	mod_gzip
-PORTVERSION=	1.3.19.1a
+PORTVERSION=	1.3.19.2a
 CATEGORIES=	www
-MASTER_SITES=	http://www.remotecommunications.com/apache/mod_gzip/src/${PORTVERSION}/
-DISTFILES=	${PORTNAME}.c.gz
-EXTRACT_ONLY=	${DISTFILES:M*.gz}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	mod-gzip
+EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sysadmin@alexdupre.com
 
 BUILD_DEPENDS=	${APXS}:${APACHE_PORT}
 RUN_DEPENDS=	${APXS}:${APACHE_PORT}
@@ -20,26 +20,6 @@ RUN_DEPENDS=	${APXS}:${APACHE_PORT}
 APXS?=		${LOCALBASE}/sbin/apxs
 APACHE_PORT?=	${PORTSDIR}/www/apache13
 
-.if !defined(NOPORTDOCS)
-DISTFILES+=	changes.txt commands.txt samples.txt
-.endif
-
-NO_WRKSUBDIR=	YES
-
-DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
-EXTRACT_AFTER_ARGS=	> ${PORTNAME}.c
-
-do-build:
-	cd ${WRKSRC} && ${LOCALBASE}/sbin/apxs -c ${PORTNAME}.c
-
-do-install:
-	cd ${WRKSRC} && ${LOCALBASE}/sbin/apxs -A -i ${PORTNAME}.so
-
-.if !defined(NOPORTDOCS)
-post-install:
-	@${MKDIR} ${PREFIX}/share/doc/${PORTNAME}
-	@cd ${_DISTDIR} && ${INSTALL_DATA} ${DISTFILES:N*gz} \
-		${PREFIX}/share/doc/${PORTNAME}
-.endif
+ALL_TARGET=	build
 
 .include <bsd.port.mk>

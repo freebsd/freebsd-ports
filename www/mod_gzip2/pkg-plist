@@ -1,7 +1,3 @@
 libexec/apache/mod_gzip.so
-%%PORTDOCS%%share/doc/mod_gzip/samples.txt
-%%PORTDOCS%%share/doc/mod_gzip/commands.txt
-%%PORTDOCS%%share/doc/mod_gzip/changes.txt
-%%PORTDOCS%%@dirrm share/doc/mod_gzip
-@exec ${PKG_PREFIX}/sbin/apxs -e -A -n gzip mod_gzip.so; echo "	enable the mod_gzip in Apache's config manually"
-@unexec ${PKG_PREFIX}/sbin/apxs -e -A -n gzip mod_gzip.so || echo "	remove the mod_gzip from Apache's config manually"
+@exec %D/sbin/apxs -e -A -n gzip %f
+@unexec %D/sbin/apxs -e -A -n gzip %f
