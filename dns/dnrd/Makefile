@@ -7,6 +7,7 @@
 
 PORTNAME=       	dnrd
 PORTVERSION=		2.10
+PORTREVISION=		1
 CATEGORIES=     	dns
 MASTER_SITES=   	http://users.zoominternet.net/~garsh/dnrd/archive/ \
 			http://www.netsw.org/net/ip/infoservice/dns/dnrd/
@@ -17,15 +18,17 @@ COMMENT=		A proxy DNS daemon
 WRKSRC=			${WRKDIR}/${DISTNAME}/src
 
 USE_GMAKE=		yes
-USE_REINPLACE=	yes
+USE_REINPLACE=		yes
 
 MAN8=			dnrd.8
 
 post-patch:
 .for F in main.c master.c
-	@(cd ${WRKSRC} && ${SED} -e 's,%%PREFIX%%,${PREFIX},g' $F > foo && \
-		${MV} foo $F)
+	${REINPLACE_CMD} -e 's,%%PREFIX%%,${PREFIX},g' ${WRKSRC}/$F
 .endfor
-	${REINPLACE_CMD} -e "s@cc@${CC}@g; s@-lc_r@${PTHREAD_LIBS}@g" ${WRKSRC}/Makefile
+	${REINPLACE_CMD} \
+		-e "s,cc,${CC},g" \
+		-e "s,-lc_r,${PTHREAD_LIBS},g" \
+		${WRKSRC}/Makefile
 
 .include <bsd.port.mk>
