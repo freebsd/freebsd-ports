@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	zpt
-PORTVERSION=	1.4.0
+PORTVERSION=	1.4.1
 CATEGORIES=	www zope
 MASTER_SITES=	http://www.zope.org/Members/4am/ZPT/
 PKGNAMEPREFIX=	zope-
@@ -21,8 +21,8 @@ RUN_DEPENDS=	${LOCALBASE}/${SZOPEBASEDIR}/z2.py:${PORTSDIR}/www/zope
 USE_PYTHON=	yes
 DIST_SUBDIR=	zope
 
-TALVERSION=	1.4.0
-ZTUVERSION=	1.1.1
+TALVERSION=	1.4.1
+ZTUVERSION=	1.1.3
 
 # You can change this in the environment if you like.
 SZOPEBASEDIR?=		www/Zope
@@ -57,6 +57,7 @@ do-install:
 	@ cd ${WRKSRC} && find * \( -name examples -a -prune \) -o -print \
 	  | ${CPIO} ${BINOWN}:${BINGRP} \
 	  ${ZOPEBASEDIR}/${ZOPEPRODUCTDIR}/${ZOPEPRODUCTNAME}
+	@ ${MKDIR} ${ZOPEBASEDIR}/import
 	@ ${INSTALL_DATA} ${WRKSRC}/examples/zpt_examples.zexp \
 	  ${ZOPEBASEDIR}/import
 
