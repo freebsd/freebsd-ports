@@ -3,7 +3,7 @@
 # Date created:         6 Apr 97
 # Whom:                 Pedro Giffuni <pgiffuni@fps.biblos.unal.edu.co>
 #
-# $Id: Makefile,v 1.2 1997/03/28 02:35:44 obrien Exp $
+# $Id: Makefile,v 1.1.1.1 1997/06/24 06:07:27 max Exp $
 #
 
 DISTNAME=	pns_source
@@ -20,16 +20,16 @@ MAKEFILE=	makefile
 ALL_TARGET=	pns
 
 do-install:
-	$(MKDIR) $(PREFIX)/lib/xpns
-	$(INSTALL_PROGRAM) $(WRKSRC)/pns $(PREFIX)/lib/xpns/
-	$(INSTALL_DATA) $(WRKSRC)/pns.hlp $(PREFIX)/lib/xpns/
-	$(INSTALL_DATA) $(WRKSRC)/pns.shell $(PREFIX)/lib/xpns/
-	$(INSTALL_SCRIPT) $(WRKSRC)/xpns $(PREFIX)/bin/xpns
+	${MKDIR} ${PREFIX}/lib/xpns
+	${INSTALL_PROGRAM} ${WRKSRC}/pns ${PREFIX}/lib/xpns/
+	${INSTALL_DATA} ${WRKSRC}/pns.hlp ${PREFIX}/lib/xpns/
+	${INSTALL_DATA} ${WRKSRC}/pns.shell ${PREFIX}/lib/xpns/
+	${INSTALL_SCRIPT} ${WRKSRC}/xpns ${PREFIX}/bin/xpns
 
 post-install:
 .if !defined(NOPORTDOCS)
-	$(MKDIR) $(PREFIX)/share/doc/xpns
-	$(CP) $(WRKSRC)/*.net $(PREFIX)/share/doc/xpns/
+	${MKDIR} ${PREFIX}/share/doc/xpns
+	${CP} ${WRKSRC}/*.net ${PREFIX}/share/doc/xpns/
 .endif
 
 .include <bsd.port.mk>
