@@ -2292,7 +2292,6 @@ gtkpod		ports/audio/gtkpod
 gtkportscan	ports/security/gtkportscan
 gtkscintilla	ports/x11-toolkits/gtkscintilla
 gtksee		ports/graphics/gtksee
-gtksourceview	ports/editors/gtksourceview
 gtkspell2	ports/textproc/gtkspell2
 gtksql		ports/databases/gtksql
 gtkstep		ports/x11-toolkits/gtkstep
