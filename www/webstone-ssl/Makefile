@@ -22,6 +22,9 @@ WRKSRC=		${WRKDIR}/WebStone${PORTVERSION}/src
 ALL_TARGET=	install
 NO_INSTALL_MANPAGES=	yes
 
+CONFIGURE_ENV=	"CFLAGS=${CFLAGS} -I${OPENSSLINC}" \
+		LIBS=-L${OPENSSLLIB}
+
 do-install:
 	@${RMDIR} ${WRKSRC}/../bin/runs
 	@${MKDIR} ${PREFIX}/webstone-ssl/bin
