@@ -1,0 +1,5 @@
+qGo is a Go board and full featured SGF editor written with the Qt library,
+available for Linux and Windows. Go is an ancient boardgame, very common in
+Japan, China and Korea.
+
+WWW: http://qgo.sourceforge.net/
