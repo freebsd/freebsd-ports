@@ -1,74 +1,75 @@
-eclipse/features/org.eclipse.gef.sdk_2.1.2/cpl-v10.html
-eclipse/features/org.eclipse.gef.sdk_2.1.2/eclipse_update_120.jpg
-eclipse/features/org.eclipse.gef.sdk_2.1.2/feature.properties
-eclipse/features/org.eclipse.gef.sdk_2.1.2/feature.xml
-eclipse/features/org.eclipse.gef.sdk_2.1.2/license.html
-eclipse/features/org.eclipse.gef.source_2.1.2/cpl-v10.html
-eclipse/features/org.eclipse.gef.source_2.1.2/eclipse_update_120.jpg
-eclipse/features/org.eclipse.gef.source_2.1.2/feature.properties
-eclipse/features/org.eclipse.gef.source_2.1.2/feature.xml
-eclipse/features/org.eclipse.gef.source_2.1.2/license.html
-eclipse/features/org.eclipse.gef_2.1.2/cpl-v10.html
-eclipse/features/org.eclipse.gef_2.1.2/eclipse_update_120.jpg
-eclipse/features/org.eclipse.gef_2.1.2/feature.properties
-eclipse/features/org.eclipse.gef_2.1.2/feature.xml
-eclipse/features/org.eclipse.gef_2.1.2/license.html
-eclipse/plugins/org.eclipse.draw2d.doc.isv_2.1.2/about.html
-eclipse/plugins/org.eclipse.draw2d.doc.isv_2.1.2/doc.properties
-eclipse/plugins/org.eclipse.draw2d.doc.isv_2.1.2/doc.zip
-eclipse/plugins/org.eclipse.draw2d.doc.isv_2.1.2/plugin.properties
-eclipse/plugins/org.eclipse.draw2d.doc.isv_2.1.2/plugin.xml
-eclipse/plugins/org.eclipse.draw2d.doc.isv_2.1.2/toc.xml
-eclipse/plugins/org.eclipse.draw2d.doc.isv_2.1.2/topics_Guide.xml
-eclipse/plugins/org.eclipse.draw2d.doc.isv_2.1.2/topics_Reference.xml
-eclipse/plugins/org.eclipse.draw2d_2.1.2/about.html
-eclipse/plugins/org.eclipse.draw2d_2.1.2/draw2d.jar
-eclipse/plugins/org.eclipse.draw2d_2.1.2/icons/debugGEF.gif
-eclipse/plugins/org.eclipse.draw2d_2.1.2/plugin.properties
-eclipse/plugins/org.eclipse.draw2d_2.1.2/plugin.xml
-eclipse/plugins/org.eclipse.gef.doc.isv_2.1.2/about.html
-eclipse/plugins/org.eclipse.gef.doc.isv_2.1.2/doc.properties
-eclipse/plugins/org.eclipse.gef.doc.isv_2.1.2/doc.zip
-eclipse/plugins/org.eclipse.gef.doc.isv_2.1.2/icons/debugGEF.gif
-eclipse/plugins/org.eclipse.gef.doc.isv_2.1.2/plugin.properties
-eclipse/plugins/org.eclipse.gef.doc.isv_2.1.2/plugin.xml
-eclipse/plugins/org.eclipse.gef.doc.isv_2.1.2/toc.xml
-eclipse/plugins/org.eclipse.gef.doc.isv_2.1.2/topics_Guide.xml
-eclipse/plugins/org.eclipse.gef.doc.isv_2.1.2/topics_Reference.xml
-eclipse/plugins/org.eclipse.gef.source_2.1.2/about.html
-eclipse/plugins/org.eclipse.gef.source_2.1.2/about.ini
-eclipse/plugins/org.eclipse.gef.source_2.1.2/about.mappings
-eclipse/plugins/org.eclipse.gef.source_2.1.2/about.properties
-eclipse/plugins/org.eclipse.gef.source_2.1.2/eclipse32.gif
-eclipse/plugins/org.eclipse.gef.source_2.1.2/plugin.properties
-eclipse/plugins/org.eclipse.gef.source_2.1.2/plugin.xml
-eclipse/plugins/org.eclipse.gef.source_2.1.2/src/org.eclipse.draw2d_2.1.2/draw2dsrc.zip
-eclipse/plugins/org.eclipse.gef.source_2.1.2/src/org.eclipse.gef_2.1.2/gefsrc.zip
-eclipse/plugins/org.eclipse.gef_2.1.2/about.html
-eclipse/plugins/org.eclipse.gef_2.1.2/about.ini
-eclipse/plugins/org.eclipse.gef_2.1.2/about.mappings
-eclipse/plugins/org.eclipse.gef_2.1.2/about.properties
-eclipse/plugins/org.eclipse.gef_2.1.2/eclipse32.gif
-eclipse/plugins/org.eclipse.gef_2.1.2/gef.jar
-eclipse/plugins/org.eclipse.gef_2.1.2/icons/debugGEF.gif
-eclipse/plugins/org.eclipse.gef_2.1.2/plugin.properties
-eclipse/plugins/org.eclipse.gef_2.1.2/plugin.xml
-eclipse/plugins/org.eclipse.gef_2.1.2/readme/readme_gef.html
-@dirrm eclipse/plugins/org.eclipse.gef_2.1.2/readme
-@dirrm eclipse/plugins/org.eclipse.gef_2.1.2/icons
-@dirrm eclipse/plugins/org.eclipse.gef_2.1.2
-@dirrm eclipse/plugins/org.eclipse.gef.source_2.1.2/src/org.eclipse.gef_2.1.2
-@dirrm eclipse/plugins/org.eclipse.gef.source_2.1.2/src/org.eclipse.draw2d_2.1.2
-@dirrm eclipse/plugins/org.eclipse.gef.source_2.1.2/src
-@dirrm eclipse/plugins/org.eclipse.gef.source_2.1.2
-@dirrm eclipse/plugins/org.eclipse.gef.doc.isv_2.1.2/icons
-@dirrm eclipse/plugins/org.eclipse.gef.doc.isv_2.1.2
-@dirrm eclipse/plugins/org.eclipse.draw2d_2.1.2/icons
-@dirrm eclipse/plugins/org.eclipse.draw2d_2.1.2
-@dirrm eclipse/plugins/org.eclipse.draw2d.doc.isv_2.1.2
-@dirrm eclipse/features/org.eclipse.gef_2.1.2
-@dirrm eclipse/features/org.eclipse.gef.source_2.1.2
-@dirrm eclipse/features/org.eclipse.gef.sdk_2.1.2
+eclipse/plugins/org.eclipse.draw2d.doc.isv_3.0.0/doc.zip
+eclipse/plugins/org.eclipse.draw2d.doc.isv_3.0.0/plugin.xml
+eclipse/plugins/org.eclipse.draw2d.doc.isv_3.0.0/plugin.properties
+eclipse/plugins/org.eclipse.draw2d.doc.isv_3.0.0/about.html
+eclipse/plugins/org.eclipse.draw2d.doc.isv_3.0.0/topics_Reference.xml
+eclipse/plugins/org.eclipse.draw2d.doc.isv_3.0.0/topics_Guide.xml
+eclipse/plugins/org.eclipse.draw2d.doc.isv_3.0.0/toc.xml
+eclipse/plugins/org.eclipse.draw2d.doc.isv_3.0.0/doc.properties
+eclipse/plugins/org.eclipse.gef_3.0.0/gef.jar
+eclipse/plugins/org.eclipse.gef_3.0.0/about.mappings
+eclipse/plugins/org.eclipse.gef_3.0.0/eclipse32.gif
+eclipse/plugins/org.eclipse.gef_3.0.0/plugin.xml
+eclipse/plugins/org.eclipse.gef_3.0.0/icons/debugGEF.gif
+eclipse/plugins/org.eclipse.gef_3.0.0/icons/palette_view.gif
+eclipse/plugins/org.eclipse.gef_3.0.0/about.ini
+eclipse/plugins/org.eclipse.gef_3.0.0/readme/readme_gef.html
+eclipse/plugins/org.eclipse.gef_3.0.0/about.html
+eclipse/plugins/org.eclipse.gef_3.0.0/plugin.properties
+eclipse/plugins/org.eclipse.gef_3.0.0/about.properties
+eclipse/plugins/org.eclipse.draw2d_3.0.0/draw2d.jar
+eclipse/plugins/org.eclipse.draw2d_3.0.0/about.html
+eclipse/plugins/org.eclipse.draw2d_3.0.0/plugin.properties
+eclipse/plugins/org.eclipse.draw2d_3.0.0/icons/debugGEF.gif
+eclipse/plugins/org.eclipse.draw2d_3.0.0/plugin.xml
+eclipse/plugins/org.eclipse.gef.source_3.0.0/src/org.eclipse.gef_3.0.0/gefsrc.zip
+eclipse/plugins/org.eclipse.gef.source_3.0.0/src/org.eclipse.draw2d_3.0.0/draw2dsrc.zip
+eclipse/plugins/org.eclipse.gef.source_3.0.0/plugin.properties
+eclipse/plugins/org.eclipse.gef.source_3.0.0/about.mappings
+eclipse/plugins/org.eclipse.gef.source_3.0.0/eclipse32.gif
+eclipse/plugins/org.eclipse.gef.source_3.0.0/about.ini
+eclipse/plugins/org.eclipse.gef.source_3.0.0/plugin.xml
+eclipse/plugins/org.eclipse.gef.source_3.0.0/about.html
+eclipse/plugins/org.eclipse.gef.source_3.0.0/about.properties
+eclipse/plugins/org.eclipse.gef.doc.isv_3.0.0/doc.zip
+eclipse/plugins/org.eclipse.gef.doc.isv_3.0.0/plugin.xml
+eclipse/plugins/org.eclipse.gef.doc.isv_3.0.0/about.html
+eclipse/plugins/org.eclipse.gef.doc.isv_3.0.0/plugin.properties
+eclipse/plugins/org.eclipse.gef.doc.isv_3.0.0/doc.properties
+eclipse/plugins/org.eclipse.gef.doc.isv_3.0.0/toc.xml
+eclipse/plugins/org.eclipse.gef.doc.isv_3.0.0/topics_Guide.xml
+eclipse/plugins/org.eclipse.gef.doc.isv_3.0.0/icons/debugGEF.gif
+eclipse/plugins/org.eclipse.gef.doc.isv_3.0.0/topics_Reference.xml
+eclipse/features/org.eclipse.gef.sdk_3.0.0/feature.properties
+eclipse/features/org.eclipse.gef.sdk_3.0.0/license.html
+eclipse/features/org.eclipse.gef.sdk_3.0.0/eclipse_update_120.jpg
+eclipse/features/org.eclipse.gef.sdk_3.0.0/feature.xml
+eclipse/features/org.eclipse.gef.sdk_3.0.0/cpl-v10.html
+eclipse/features/org.eclipse.gef_3.0.0/license.html
+eclipse/features/org.eclipse.gef_3.0.0/cpl-v10.html
+eclipse/features/org.eclipse.gef_3.0.0/feature.properties
+eclipse/features/org.eclipse.gef_3.0.0/feature.xml
+eclipse/features/org.eclipse.gef_3.0.0/eclipse_update_120.jpg
+eclipse/features/org.eclipse.gef.source_3.0.0/license.html
+eclipse/features/org.eclipse.gef.source_3.0.0/feature.xml
+eclipse/features/org.eclipse.gef.source_3.0.0/eclipse_update_120.jpg
+eclipse/features/org.eclipse.gef.source_3.0.0/feature.properties
+eclipse/features/org.eclipse.gef.source_3.0.0/cpl-v10.html
+@dirrm eclipse/plugins/org.eclipse.gef_3.0.0/readme
+@dirrm eclipse/plugins/org.eclipse.gef_3.0.0/icons
+@dirrm eclipse/plugins/org.eclipse.gef_3.0.0
+@dirrm eclipse/plugins/org.eclipse.gef.source_3.0.0/src/org.eclipse.gef_3.0.0
+@dirrm eclipse/plugins/org.eclipse.gef.source_3.0.0/src/org.eclipse.draw2d_3.0.0
+@dirrm eclipse/plugins/org.eclipse.gef.source_3.0.0/src
+@dirrm eclipse/plugins/org.eclipse.gef.source_3.0.0
+@dirrm eclipse/plugins/org.eclipse.gef.doc.isv_3.0.0/icons
+@dirrm eclipse/plugins/org.eclipse.gef.doc.isv_3.0.0
+@dirrm eclipse/plugins/org.eclipse.draw2d_3.0.0/icons
+@dirrm eclipse/plugins/org.eclipse.draw2d_3.0.0
+@dirrm eclipse/plugins/org.eclipse.draw2d.doc.isv_3.0.0
+@dirrm eclipse/features/org.eclipse.gef_3.0.0
+@dirrm eclipse/features/org.eclipse.gef.source_3.0.0
+@dirrm eclipse/features/org.eclipse.gef.sdk_3.0.0
 @unexec rmdir %D/eclipse/plugins 2>/dev/null || true
 @unexec rmdir %D/eclipse/features 2>/dev/null || true
 @unexec rmdir %D/eclipse 2>/dev/null || true
