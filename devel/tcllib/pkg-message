@@ -1,7 +1,0 @@
-
-	Some of the parts of tcllib already come with man pages,
-	which  are  properly  installed.  Some  others  --  with
-	plain-text/HTML pages  which are  installed next  to the
-	corresponding TCL code. This  is how the Scriptics/Ajuba
-	developers intended it to happen, apparently...
-
