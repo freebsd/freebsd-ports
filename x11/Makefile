@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.235 1998/09/09 08:11:49 tg Exp $
+# $Id: Makefile,v 1.236 1998/10/28 15:58:30 vanilla Exp $
 #
 
     SUBDIR += XFree86
@@ -40,6 +40,7 @@
     SUBDIR += lupe
     SUBDIR += offix-clipboard
     SUBDIR += offix-execute
+    SUBDIR += p5-mkttfdir
     SUBDIR += props
     SUBDIR += rxvt
     SUBDIR += sxpc
