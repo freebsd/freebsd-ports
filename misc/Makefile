@@ -109,6 +109,7 @@
     SUBDIR += kdeaddons
     SUBDIR += kdeutils2
     SUBDIR += kdirstat
+    SUBDIR += kenny
     SUBDIR += koffice-i18n
     SUBDIR += kp
     SUBDIR += kwatch
