@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	quagga
-PORTVERSION=	0.96.2
-PORTREVISION=	1
+PORTVERSION=	0.96.4
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://quagga.net/download/
 
@@ -18,29 +17,48 @@ CONFLICTS=	zebra-devel-* zebra-0*
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+USE_SUBMAKE=	yes
 WANT_AUTOCONF_VER=	253
 WANT_AUTOMAKE_VER=	15
-AUTOMAKE_ARGS=	-a
+AUTOMAKE_ARGS= -a -i
 
 MAN1=		vtysh.1
 MAN8=		bgpd.8 ospf6d.8 ospfd.8 ripd.8 ripngd.8 zebra.8
 
-CONFIGURE_ARGS+=--sysconfdir=${PREFIX}/etc/quagga --enable-vtysh
 SCRIPTS_ENV=	WRKDIRPREFIX=${WRKDIRPREFIX}
+
+pre-fetch:
+	@${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/configure.quagga
 
 .if exists(${WRKDIRPREFIX}${.CURDIR}/Makefile.inc)
 .include "${WRKDIRPREFIX}${.CURDIR}/Makefile.inc"
 .endif
 
-.if defined(ENABLE_USER)
+.if !defined(ENABLE_USER)
+ENABLE_USER=quagga
+.endif
+.if !defined(ENABLE_GROUP)
+ENABLE_GROUP=quagga
+.endif
+
 CONFIGURE_ARGS+=--enable-user=${ENABLE_USER}
-.endif
-.if defined(ENABLE_GROUP)
 CONFIGURE_ARGS+=--enable-group=${ENABLE_GROUP}
+
+.if !defined(SYSCONF_DIR)
+SYSCONF_DIR=${PREFIX}/etc/quagga
 .endif
+.if !defined(LOCALSTATE_DIR)
+LOCALSTATE_DIR=/var/run/quagga
+.endif
+
+CONFIGURE_ARGS+=--sysconfdir=${SYSCONF_DIR}
+CONFIGURE_ARGS+=--localstatedir=${LOCALSTATE_DIR}
+
 .if defined(ENABLE_VTY_GROUP)
 CONFIGURE_ARGS+=--enable-vty-group=${ENABLE_VTY_GROUP}
 .endif
+
+CONFIGURE_ARGS+=--enable-vtysh
 
 pre-everything::
 	@${ECHO} "============================================================="
@@ -50,6 +68,8 @@ pre-everything::
 	@${ECHO} "ENABLE_USER       Specify user to run Quagga suite as"
 	@${ECHO} "ENABLE_GROUP      Specify group to run Quagga suite as"
 	@${ECHO} "ENABLE_VTY_GROUP  Specify group for vty socket ownership"
+	@${ECHO} "SYSCONF_DIR       Specify directory for Quagga configuration files"
+	@${ECHO} "LOCALSTATE_DIR    Specify directory for Quagga runtime files"
 	@${ECHO}
 	@${ECHO} "The following options may be configured interactively:"
 	@${ECHO} "QUAGGA_OPTIONS    Specify additional switches, including:"
@@ -60,9 +80,6 @@ pre-everything::
 	@${ECHO} "   SNMP             SNMP support"
 	@${ECHO} "   TCPSOCKETS       Use TCP/IP sockets for protocol daemons"
 
-post-patch:
-	@( cd ${PATCH_WRKSRC} && ${MV} configure.ac configure.in )
-
 pre-configure:
 .if !defined(BATCH)
 	@${RM} -f ${WRKDIRPREFIX}${.CURDIR}/Makefile.inc
@@ -70,14 +87,18 @@ pre-configure:
 	@(cd ${CONFIGURE_WRKSRC} && ${SETENV} ${AUTOMAKE_ENV} ${ACLOCAL} )
 	@(cd ${CONFIGURE_WRKSRC} && ${SETENV} ${AUTOHEADER_ENV} ${AUTOHEADER} \
 		${AUTOHEADER_ARGS})
-	@(cd ${CONFIGURE_WRKSRC} && ${SETENV} ${AUTOMAKE_ENV} ${AUTOMAKE} \
+	-@(cd ${CONFIGURE_WRKSRC} && ${SETENV} ${AUTOMAKE_ENV} ${AUTOMAKE} \
 		${AUTOMAKE_ARGS})
 	@(cd ${CONFIGURE_WRKSRC} && ${SETENV} ${AUTOCONF_ENV} ${AUTOCONF} \
 		${AUTOCONF_ARGS})
 
 post-install:
+	@${SETENV} SYSCONF_DIR=${SYSCONF_DIR} SYSSTATE_DIR=${SYSSTATE_DIR} \
+		ENABLE_USER=${ENABLE_USER} ENABLE_GROUP=${ENABLE_GROUP} \
+		${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	@${ECHO} "===>     installing ${PORTNAME} startup file..."
 	@${SED} -e "s=!!PREFIX!!=${PREFIX}=" \
+		-e "s=!!SYSCONF_DIR!!=${SYSCONF_DIR}=" \
 		< ${FILESDIR}/zebractl.sh  \
 		> ${PREFIX}/sbin/zebractl
 	@${CHMOD} 555 ${PREFIX}/sbin/zebractl

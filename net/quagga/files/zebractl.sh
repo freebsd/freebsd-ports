@@ -1,6 +1,6 @@
 #! /bin/sh
 #
-# $FreeBSD: /tmp/pcvs/ports/net/quagga/files/Attic/zebractl.sh,v 1.1 2003-09-27 23:40:56 bms Exp $
+# $FreeBSD: /tmp/pcvs/ports/net/quagga/files/Attic/zebractl.sh,v 1.2 2003-11-05 15:19:55 bms Exp $
 #
 # zebra start/stop script by "Andreas Klemm <andreas@FreeBSD.ORG>"
 #
@@ -19,31 +19,31 @@ fi
 
 case $1 in
 	start)
-		if [ ! -f !!PREFIX!!/etc/zebra/zebra.conf ]; then
+		if [ ! -f !!SYSCONF_DIR!!/zebra.conf ]; then
 			echo "error: zebra.conf config file is mandatory"
 			exit 1
 		fi
-		[ -f !!PREFIX!!/etc/zebra/zebra.conf ] \
+		[ -f !!SYSCONF_DIR!!/zebra.conf ] \
 			&& !!PREFIX!!/sbin/zebra -d && echo -n ' zebra'
-		[ -f !!PREFIX!!/etc/zebra/ripd.conf ] \
+		[ -f !!SYSCONF_DIR!!/ripd.conf ] \
 			&& !!PREFIX!!/sbin/ripd -d && echo -n ' ripd'
-		[ -f !!PREFIX!!/etc/zebra/ripngd.conf ] \
+		[ -f !!SYSCONF_DIR!!/ripngd.conf ] \
 			&& !!PREFIX!!/sbin/ripngd -d && echo -n ' ripngd'
-		[ -f !!PREFIX!!/etc/zebra/ospfd.conf ] \
+		[ -f !!SYSCONF_DIR!!/ospfd.conf ] \
 			&& !!PREFIX!!/sbin/ospfd -d && echo -n ' ospfd'
-		[ -f !!PREFIX!!/etc/zebra/ospf6d.conf ] \
+		[ -f !!SYSCONF_DIR!!/ospf6d.conf ] \
 			&& !!PREFIX!!/sbin/ospf6d -d && echo -n ' ospf6d'
-		[ -f !!PREFIX!!/etc/zebra/bgpd.conf ] \
+		[ -f !!SYSCONF_DIR!!/bgpd.conf ] \
 			&& !!PREFIX!!/sbin/bgpd -d && echo -n ' bgpd'
 		;;
 
 	stop)
-		[ -f !!PREFIX!!/etc/zebra/ripd.conf ] && killall ripd
-		[ -f !!PREFIX!!/etc/zebra/ripngd.conf ] && killall ripngd
-		[ -f !!PREFIX!!/etc/zebra/ospfd.conf ] && killall ospfd
-		[ -f !!PREFIX!!/etc/zebra/ospf6d.conf ] && killall ospf6d
-		[ -f !!PREFIX!!/etc/zebra/bgpd.conf ] && killall bgpd
-		[ -f !!PREFIX!!/etc/zebra/zebra.conf ] &&  killall zebra
+		[ -f !!SYSCONF_DIR!!/ripd.conf ] && killall ripd
+		[ -f !!SYSCONF_DIR!!/ripngd.conf ] && killall ripngd
+		[ -f !!SYSCONF_DIR!!/ospfd.conf ] && killall ospfd
+		[ -f !!SYSCONF_DIR!!/ospf6d.conf ] && killall ospf6d
+		[ -f !!SYSCONF_DIR!!/bgpd.conf ] && killall bgpd
+		[ -f !!SYSCONF_DIR!!/zebra.conf ] &&  killall zebra
 		;;
 	restart)
 		$0 stop
