@@ -1,6 +1,5 @@
 bin/pspell-config
 include/pspell/app_string.hh
-include/pspell/conf.h
 include/pspell/config.h
 include/pspell/config_impl.hh
 include/pspell/convert.hh
@@ -25,12 +24,15 @@ include/pspell/string_pair.h
 include/pspell/string_pair_emulation.h
 include/pspell/wordlist.h
 lib/libpspell-impl.a
+lib/libpspell-impl.la
 lib/libpspell-impl.so
-lib/libpspell-impl.so.5
+lib/libpspell-impl.so.6
 lib/libpspell-modules.a
+lib/libpspell-modules.la
 lib/libpspell-modules.so
 lib/libpspell-modules.so.1
 lib/libpspell.a
+lib/libpspell.la
 lib/libpspell.so
 lib/libpspell.so.4
 %%PORTDOCS%%share/doc/pspell/man-html/1_Introduction.html
