@@ -133,6 +133,7 @@ lib/libicq2000.so.2
 %%ICKLEDATADIR%%ickle/translations/SWEDISH_NAMES
 %%ICKLEDATADIR%%ickle/translations/SWEDISH_NAMES_COM
 %%ICKLEDATADIR%%ickle/translations/SWISS
+%%ICKLEDATADIR%%ickle/translations/UKRAINIAN_WIN
 %%ICKLEDATADIR%%ickle/translations/UNITED_KINGDOM
 %%ICKLEDATADIR%%ickle/translations/UNITED_KINGDOM_COM
 @dirrm %%ICKLEDATADIR%%ickle/translations
