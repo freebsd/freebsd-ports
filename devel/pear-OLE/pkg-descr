@@ -1,0 +1,4 @@
+This package allows reading and writing of OLE (Object Linking and Embedding)
+files, the format used as container for Excel, Word and other MS file formats.
+
+WWW: http://pear.php.net/package/OLE/
