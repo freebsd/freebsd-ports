@@ -7496,6 +7496,7 @@ tensile		ports/lang/tensile
 termcap		src/share/termcap
 terminality	ports/devel/terminality
 terminatorx	ports/audio/terminatorx
+termlog		ports/security/termlog
 test		src/bin/test
 tet		ports/misc/tet
 tethereal	ports/net/tethereal
