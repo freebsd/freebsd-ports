@@ -8,53 +8,51 @@
 PORTNAME=	commons-cli
 PORTVERSION=	1.0
 PORTEPOCH=	1
-CATEGORIES=	java
+CATEGORIES=	java devel
 MASTER_SITES=	${MASTER_SITE_APACHE_JAKARTA}
-MASTER_SITE_SUBDIR=	commons/cli/source
+MASTER_SITE_SUBDIR=	${PORTNAME:S,-,/,}/source
 PKGNAMEPREFIX=	jakarta-
 DISTNAME=	cli-${PORTVERSION}-src
 
 MAINTAINER=	znerd@FreeBSD.org
 COMMENT=	Java library for command line arguments and options
 
-BUILD_DEPENDS=	${ANT}:${PORTSDIR}/devel/apache-ant \
-		${LOCALBASE}/share/java/classes/commons-lang.jar:${PORTSDIR}/java/jakarta-commons-lang
+BUILD_DEPENDS=	${JAVALIBDIR}/commons-lang.jar:${PORTSDIR}/java/jakarta-commons-lang
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.2+
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-ANT?=		${LOCALBASE}/bin/ant
-.if defined(NOPORTDOCS)
-ANT_TARGET=	jar -Dnoget
-.else
-ANT_TARGET=	jar javadoc -Dnoget -verbose
+USE_ANT=	yes
+MAKE_ENV+=	ANT_INCLUDE_SHARED_JARS=YES
+MAKE_ARGS=	-Dnoget=yes
+ALL_TARGET=	jar
+.if !defined(NOPORTDOCS)
+ALL_TARGET+=	javadoc
 .endif
-JAVASHAREDIR=	${PREFIX}/share/java
-JARDIR=		${JAVASHAREDIR}/classes
+
 JARFILE=	${PORTNAME}-${PORTVERSION}-beta-2-dev.jar
 DESTJARFILE=	${PORTNAME}.jar
-PLIST_FILES+=   ${JAVAJARDIR:S,^${PREFIX}/,,}/${DESTJARFILE}
-
+PLIST_FILES=	%%JAVAJARDIR%%/${DESTJARFILE}
 .if !defined(NOPORTDOCS)
 PORTDOCS=	apidocs LICENSE.txt
 .endif
 
-do-build:
+post-extract:
 	@${MKDIR} ${WRKSRC}/lib
-	@cd ${WRKSRC} && ${SETENV} ANT_INCLUDE_SHARED_JARS=YES ${ANT} ${ANT_TARGET}
 
 do-install:
-	@${ECHO} -n ">> Installing JAR as ${JARDIR}/${DESTJARFILE}..."
-	@${CP} ${WRKSRC}/target/${JARFILE} ${JARDIR}/${DESTJARFILE}
-	@${ECHO} " [ DONE ]"
-
+	@${ECHO_MSG} -n ">> Installing JAR as ${JAVAJARDIR}/${DESTJARFILE}..."
+	@${INSTALL_DATA} ${WRKSRC}/target/${JARFILE} ${JAVAJARDIR}/${DESTJARFILE}
+	@${ECHO_MSG} " [ DONE ]"
 .if !defined(NOPORTDOCS)
-	@${ECHO} -n ">> Installing documentation in ${DOCSDIR}..."
-	@${MKDIR} ${DOCSDIR}
-	@${CP} -r ${WRKSRC}/target/docs/apidocs ${DOCSDIR}/
-	@${CP} -r ${WRKSRC}/LICENSE.txt ${DOCSDIR}/
-	@${ECHO} " [ DONE ]"
+	@${ECHO_MSG} -n ">> Installing documentation in ${DOCSDIR}..."
+	@cd ${WRKSRC}/target/docs \
+	  && ${FIND} apidocs -type d -exec ${MKDIR} ${DOCSDIR}/{} \; \
+	  && ${FIND} apidocs -type f -exec ${INSTALL_DATA} {} ${DOCSDIR}/{} \;
+	@${INSTALL_DATA} ${WRKSRC}/LICENSE.txt ${DOCSDIR}/
+	@${ECHO_MSG} " [ DONE ]"
 .endif
 
 .include <bsd.port.mk>
