@@ -49,6 +49,7 @@
     SUBDIR += kdebase2
     SUBDIR += kdelibs11
     SUBDIR += kdelibs2
+    SUBDIR += keylaunch
     SUBDIR += kvidtune
     SUBDIR += kworldwatch
     SUBDIR += launch.app
