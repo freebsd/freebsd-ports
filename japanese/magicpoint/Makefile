@@ -10,8 +10,6 @@ COMMENT=	${.CURDIR}/pkg/COMMENT
 
 LIB_DEPENDS=	VFlib2.24:${PORTSDIR}/japanese/vflib
 
-PORTNAME=	magicpoint
-PORTVERSION=	1.06a
 CATEGORIES=	japanese
 
 MAINTAINER=	itojun@itojun.org
