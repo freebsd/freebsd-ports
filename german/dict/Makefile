@@ -3,7 +3,7 @@
 # Date created:         6 August 1997
 # Whom:                 wosch
 #
-# $Id: Makefile,v 1.5 1997/12/31 12:11:56 wosch Exp $
+# $Id: Makefile,v 1.6 1997/12/31 22:33:44 asami Exp $
 #
 
 DISTNAME=       dict-1.1
@@ -14,7 +14,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${dict}.gz
 
 MAINTAINER=     wosch@FreeBSD.org
 
-RUN_DEPENDS=	${PORTSDIR}/textproc/agrep
+RUN_DEPENDS=	agrep:${PORTSDIR}/textproc/agrep
 
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
