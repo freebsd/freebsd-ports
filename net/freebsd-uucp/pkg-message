@@ -1,0 +1,12 @@
+In order to run the periodic UUCP maintenance tasks, please add
+the following to your /etc/periodic.conf.local file:
+
+# 340.uucp
+daily_uuclean_enable="YES"				# Run uuclean.daily
+
+# 410.status-uucp
+daily_status_uucp_enable="YES"				# Check uucp status
+
+# 300.uucp
+weekly_uucp_enable="YES"				# Clean uucp weekly
+
