@@ -50,8 +50,7 @@ echo --- creating zips for $TARGET, using mozilla distribution in $MOZ_DIST
 [ ! -d $TARGET_DIR/$TARGET/runtime/components ] && mkdir -p $TARGET_DIR/$TARGET/runtime/components
 [ ! -d $TARGET_DIR/$TARGET/lib ] && mkdir -p $TARGET_DIR/$TARGET/lib
 [ ! -d $TARGET_DIR/$TARGET/inc ] && mkdir -p $TARGET_DIR/$TARGET/inc
-[ ! -d $TARGET_DIR/$TARGET/inc/mozilla ] && mkdir -p $TARGET_DIR/$TARGET/inc/mozilla
-[ ! -d $TARGET_DIR/$TARGET/inc/mozilla/nspr ] && mkdir -p $TARGET_DIR/$TARGET/inc/mozilla/nspr
+[ ! -d $TARGET_DIR/$TARGET/inc/nspr ] && mkdir -p $TARGET_DIR/$TARGET/inc/nspr
 
 # Copy the files
 echo
@@ -80,19 +79,19 @@ done
 
 for i in `ls -1 $MOZ_DIST/$INC_FILES`; do
 	if [ ! -d $i ]; then 
-		cp -r $MOZ_DIST/include/$i $TARGET_DIR/$TARGET/inc/mozilla
+		cp -r $MOZ_DIST/include/$i $TARGET_DIR/$TARGET/inc/
 	fi
 done
 
 for i in `ls -1 $MOZ_DIST/$INC_FILES2`; do
         if [ ! -d $i ]; then
-		cp -R $MOZ_DIST/public/$i $TARGET_DIR/$TARGET/inc/mozilla
+		cp -R $MOZ_DIST/public/$i $TARGET_DIR/$TARGET/inc
 	fi
 done
 
 for i in `ls -1 $MOZ_DIST/$INC_FILES/nspr`; do
         if [ ! -d $i ]; then
-		cp -R $MOZ_DIST/include/nspr/$i $TARGET_DIR/$TARGET/inc/mozilla/nspr
+		cp -R $MOZ_DIST/include/nspr/$i $TARGET_DIR/$TARGET/inc/nspr
 	fi
 done
 
