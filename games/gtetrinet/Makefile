@@ -14,11 +14,9 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	flynn@energyhq.homeip.net
 COMMENT=	A version of the popular TetriNET multiplayer tetris clone
 
-LIB_DEPENDS=	gnomeui-2.200:${PORTSDIR}/x11-toolkits/libgnomeui
-
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
-USE_GNOME=	gnomehack gnomeprefix esound
+USE_GNOME=	gnomehack gnomeprefix esound libgnomeui
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
