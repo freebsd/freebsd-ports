@@ -13,7 +13,7 @@
  #define  RAND_I_3_4   1610612735
  #define  RAND_F_MAX   2147483647.0
 +#else     
-+#if defined(__FreeBSD__)
++#if defined(__FreeBSD__) || defined(__OpenBSD__) || defined(__NetBSD__)
 +#include <stdlib.h>
 +
 +#define  RAND_I_1_16   (RAND_MAX>>4)
