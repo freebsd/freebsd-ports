@@ -16,7 +16,7 @@ PKGNAMESUFFIX=	-${PAPERSIZE}
 DISTFILES=	a2ps-${PORTVERSION}${EXTRACT_SUFX} sheets.map
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	chuckr@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Formats an ascii file for printing on a postscript printer
 
 USE_PERL5=	yes

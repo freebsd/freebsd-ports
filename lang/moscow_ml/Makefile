@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.dina.kvl.dk/pub/mosml/ \
 		ftp://ftp.csd.uu.se/pub/mirror/mosml/
 DISTNAME=	mos20src
 
-MAINTAINER=	chuckr@freefall.FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Moscow ML, a lightweight implementation of Standard ML
 
 LIB_DEPENDS=	gmp.6:${PORTSDIR}/math/libgmp4

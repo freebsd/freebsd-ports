@@ -11,7 +11,7 @@ CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.che.wisc.edu/pub/octave/bleeding-edge/ \
 		ftp://ftp.eos.hokudai.ac.jp/pub/GNU/misc/octave/bleeding-edge/
 
-MAINTAINER=	chuckr@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	High-level interactive language for numerical computations
 
 BROKEN=		"Does not compile"
