@@ -18,6 +18,7 @@ LIB_DEPENDS=	gtk-x11-2.0:${PORTSDIR}/x11-toolkits/gtk20 \
 		gconf-2:${PORTSDIR}/devel/gconf2 \
 		glade-2.0.0:${PORTSDIR}/devel/libglade2
 
+USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
