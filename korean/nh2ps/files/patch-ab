@@ -1,47 +1,9 @@
-*** Makefile.orig	Tue Jan 28 19:07:14 1997
---- Makefile	Wed Apr  2 21:33:43 1997
-***************
-*** 32,50 ****
-  # stupid a**holes who add non-compatible "features"
-  SHELL	=/bin/sh
-  
-! CC	=gcc
-  
-  D	=.
-  O	=.
-  
-! BINDIR	=/usr/local/bin
-  
-- MANDIR	=/usr/local/man/mann
-- MANEXT	=n
-- 
-- #CFLAGS	= -DBSD -O -DLPR_PRINT
-  # SunSolaris 2.x, omit -DLPR_PRINT for no automatical print
-- CFLAGS	= -DBSD -O2 -DHFONT
-  # Default values for HEIGHT, WIDTH, MARGIN and DIR_SEP (11.64, 8.27, 1.2, '/').
-  # Default values for LPR_COMMAND and LPR_OPT ("lpr", "-l")
-  # No values for TWOSIDED_DFLT, ONESIDED and TWOSIDED
---- 32,54 ----
-  # stupid a**holes who add non-compatible "features"
-  SHELL	=/bin/sh
-  
-! CC	= cc
-  
-  D	=.
-  O	=.
-  
-! ##BINDIR      =/usr/local/bin
-! BINDIR        = $(PREFIX)/bin
-!   
-! ##MANDIR      =/usr/man/mann
-! ##MANEXT      =n
-! MANEXT        =       1
-! MANDIR        =       $(PREFIX)/man/man$(MANEXT)
-!   
-! #CFLAGS       = -O # -DBSD -DLPR_PRINT
-! CFLAGS        = -O -DBSD -DHFONT -DWIDTH=$(WIDTH) -DHEIGHT=$(HEIGHT) -DA4_PAPERSIZE=$(A4_PAPERSIZE)
-  
-  # SunSolaris 2.x, omit -DLPR_PRINT for no automatical print
-  # Default values for HEIGHT, WIDTH, MARGIN and DIR_SEP (11.64, 8.27, 1.2, '/').
-  # Default values for LPR_COMMAND and LPR_OPT ("lpr", "-l")
-  # No values for TWOSIDED_DFLT, ONESIDED and TWOSIDED
+diff -ur ../nh2ps-2.3.orig/nh2ps_opt ./nh2ps_opt
+--- ../nh2ps-2.3.orig/nh2ps_opt	Tue Jul 14 16:31:43 1998
++++ ./nh2ps_opt	Sat Jul 18 22:06:39 1998
+@@ -1,4 +1,4 @@
+-#!/usr/local/bin/perl
++#!/usr/bin/perl
+ #
+ # nh2ps_opt 2.0
+ # - nh2ps hangul, hanja font optimizer
