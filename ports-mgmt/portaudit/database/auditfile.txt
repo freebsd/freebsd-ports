@@ -38,3 +38,4 @@ clamav<0.65_7|http://www.freebsd.org/cgi/query-pr.cgi?pr=ports/62586|remote expl
 apache+ssl>=1.3<1.3.29.1.53|http://www.apache-ssl.org/advisory-20040206.txt|optional client certificate vulnerability
 monkey<0.8.2|http://monkeyd.sourceforge.net/|DoS bug caused by get_real_string()
 mutt<1.4.2|http://www.securityfocus.com/archive/1/353428/2004-02-08/2004-02-14/0|buffer overflow that can be triggered by incoming messages
+fspd<=2.8.1.3|http://fsp.sourceforge.net/|buffer overflow (CAN-2004-0011) and directory traversal (CAN-2003-1022) bugs
