@@ -7,15 +7,16 @@
 #
 
 PORTNAME=	autobench
-PORTVERSION=	2.1.1
-PORTREVISION=	1
+PORTVERSION=	2.1.2
 CATEGORIES=	benchmarks www
 MASTER_SITES=	http://www.xenoclast.org/autobench/downloads/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Automating the process of benchmarking a web server
 
-RUN_DEPENDS=	httperf:${PORTSDIR}/benchmarks/httperf
+RUN_DEPENDS=	httperf:${PORTSDIR}/benchmarks/httperf \
+		gawk:${PORTSDIR}/lang/gawk \
+		gnuplot:${PORTSDIR}/math/gnuplot
 
 USE_PERL5=	yes
 USE_GMAKE=	yes
