@@ -8125,6 +8125,7 @@ wsoundserver	ports/audio/wsoundserver
 wterm		ports/x11/wterm
 wtf		ports/games/wtf
 wu-ftpd		ports/ftp/wu-ftpd
+wu-ftpd+ipv6	ports/ftp/wu-ftpd+ipv6
 wump		src/games/wump
 wv		ports/textproc/wv
 www_en		www/en
