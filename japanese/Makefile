@@ -169,6 +169,7 @@
     SUBDIR += onew-canna+wnn6
     SUBDIR += onew-wnn4
     SUBDIR += onew-wnn6
+    SUBDIR += p5-Jcode
     SUBDIR += p5-jcode.pl
     SUBDIR += p5-manual
     SUBDIR += p5-mkres
