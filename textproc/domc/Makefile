@@ -7,25 +7,27 @@
 #
 
 PORTNAME=	domc
-PORTVERSION=	0.5.8
+PORTVERSION=	0.6.0
 CATEGORIES=	textproc
-MASTER_SITES=	http://auditorymodels.org/domc/src/
-EXTRACT_SUFX=	.tgz
+MASTER_SITES=	http://users.erols.com/mballen/domc/src/
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	expat.1:${PORTSDIR}/textproc/expat
+LIB_DEPENDS=	expat.4:${PORTSDIR}/textproc/expat2 \
+		mba:${PORTSDIR}/devel/libmba
 
 SHLIB_MAJOR=	0
 
-MAKE_ENV=	SHLIB_MAJOR="${SHLIB_MAJOR}"
+USE_REINPLACE=	yes
+CFLAGS=		-I${LOCALBASE}/include -L${LOCALBASE}/lib
+MAKE_ENV=	SHLIB_MAJOR="${SHLIB_MAJOR}" INSTDIR=${PREFIX}
+ALL_TARGET=	# empty
 INSTALLS_SHLIB=	yes
+
 PLIST_SUB=	SHLIB_MAJOR="${SHLIB_MAJOR}"
 
-post-install:
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/docs/*.* ${DOCSDIR}
-.endif
+post-patch:
+	@${REINPLACE_CMD} -e "s|/usr/local|${PREFIX}|g" \
+		-e "s|gcc|${CC}|g" ${WRKSRC}/Makefile
 
 .include <bsd.port.mk>
