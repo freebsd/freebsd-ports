@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	qconfirm
-PORTVERSION=	0.6.0
+PORTVERSION=	0.6.1
 PORTCOMMENT=	Request delivery confirmation for mail message under qmail
 CATEGORIES=	mail
 MASTER_SITES=	http://smarden.org/qconfirm/
