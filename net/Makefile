@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.47 1995/05/19 07:24:45 asami Exp $
+# $Id: Makefile,v 1.48 1995/07/12 23:52:29 asami Exp $
 #
 
     SUBDIR += archie
@@ -39,5 +39,6 @@ RESTRICTED += ivs            # crypto, export controlled
     SUBDIR += yale-tftpd
     SUBDIR += ytalk
     SUBDIR += zircon
+    SUBDIR += zephyr
 
 .include <bsd.port.subdir.mk>
