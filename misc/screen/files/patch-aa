@@ -27,3 +27,22 @@
   # Better do this by hand. E.g. under RCS...
   #	cat ${srcdir}/terminfo/screencap >> /etc/termcap
   	@echo "termcap entry (${srcdir}/terminfo/screencap) should be installed manually."
+*** configure.old	Fri May  2 07:37:26 1997
+--- configure	Thu Jul 23 13:39:45 1998
+***************
+*** 2327,2333 ****
+  
+  test -n "$silent" || echo "checking for crypt and sec libraries"
+  test -f /lib/libcrypt_d.a || test -f /usr/lib/libcrypt_d.a && LIBS="$LIBS -lcrypt_d"
+! test -f /lib/libcrypt.a || test -f /usr/lib/libcrypt.a && LIBS="$LIBS -lcrypt"
+  test -f /lib/libsec.a || test -f /usr/lib/libsec.a && LIBS="$LIBS -lsec"
+  test -f /lib/libshadow.a || test -f /usr/lib/libshadow.a && LIBS="$LIBS -lshadow"
+  
+--- 2327,2333 ----
+  
+  test -n "$silent" || echo "checking for crypt and sec libraries"
+  test -f /lib/libcrypt_d.a || test -f /usr/lib/libcrypt_d.a && LIBS="$LIBS -lcrypt_d"
+! test -f /lib/libcrypt.a || test -f /usr/lib/libcrypt.a || test -f /usr/lib/aout/libcrypt.a && LIBS="$LIBS -lcrypt"
+  test -f /lib/libsec.a || test -f /usr/lib/libsec.a && LIBS="$LIBS -lsec"
+  test -f /lib/libshadow.a || test -f /usr/lib/libshadow.a && LIBS="$LIBS -lshadow"
+  
