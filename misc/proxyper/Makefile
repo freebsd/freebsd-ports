@@ -5,15 +5,14 @@
 # $FreeBSD$
 #
 
-PORTNAME=	proxyper-freebsd3-elf-x86
-PORTVERSION=	333
-PORTREVISION=	1
+PORTNAME=	proxyper
+PORTVERSION=	341
 CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.distributed.net/pub/dcti/proxyper/ \
 		http://http.distributed.net/pub/dcti/proxyper/
 DISTNAME=	proxyper${PORTVERSION}-freebsd-x86
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	tim@bishnet.net
 COMMENT=	The official distributed.net v2 personal proxy
 
 USE_REINPLACE=	yes
@@ -28,28 +27,36 @@ IGNORE=		"This port requires FreeBSD 3.X or greater."
 
 NO_BUILD=	yes
 
-BINDIR=		${PREFIX}/distributed.net/proxy/
-LIBDIR=		${PREFIX}/etc/rc.d/
+BINDIR=		${PREFIX}/distributed.net/proxy
 
-PROXYUID=	nobody
-PROXYGID=	daemon
+PROXYUSER=	nobody
+PROXYGROUP=	daemon
 
-SHAREOWN=	${PROXYUID}
-SHAREGRP=	${PROXYGID}
+SHAREOWN=	${PROXYUSER}
+SHAREGRP=	${PROXYGROUP}
 SHAREMODE=	644
+
+post-extract:
+	@${SED} -e 's#CHANGETHIS#${BINDIR}#' ${FILESDIR}/proxyper.sh \
+		> ${WRKDIR}/proxyper.sh
 
 do-install:
 	if [ ! -d ${BINDIR} ]; then \
 		${MKDIR} ${BINDIR}; \
 	fi
+	${CHOWN} ${PROXYUSER}:${PROXYGROUP} ${BINDIR}
+	${CHMOD} 755 ${BINDIR}
+
 	${INSTALL_PROGRAM} ${WRKSRC}/proxyper ${BINDIR}
-	${INSTALL_SCRIPT} ${FILESDIR}/proxyper.sh ${BINDIR}
-	${REINPLACE_CMD} s+CHANGETHIS+${BINDIR}+ ${BINDIR}proxyper.sh
-	${INSTALL_DATA} ${WRKSRC}/proxyper.ini ${BINDIR}
+
 	${INSTALL_MAN} ${WRKSRC}/ChangeLog.txt ${BINDIR}
 	${INSTALL_MAN} ${WRKSRC}/manual.html ${BINDIR}
-	${CHOWN} ${PROXYUID}:${PROXYGID} ${BINDIR}
-	${CHMOD} 755 ${BINDIR}
-	${LN} -sf ${BINDIR}proxyper.sh ${LIBDIR}proxyper.sh
+
+	${INSTALL_SCRIPT} ${WRKDIR}/proxyper.sh ${PREFIX}/etc/rc.d/proxyper.sh.sample
+
+	${INSTALL_DATA} ${WRKSRC}/proxyper.ini ${BINDIR}/proxyper.ini.sample
+.if !exists(${BINDIR}/proxyper.ini)
+	${INSTALL_DATA} ${WRKSRC}/proxyper.ini ${BINDIR}/proxyper.ini
+.endif
 
 .include <bsd.port.post.mk>

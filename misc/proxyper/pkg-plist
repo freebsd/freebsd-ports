@@ -1,10 +1,9 @@
 distributed.net/proxy/ChangeLog.txt
 distributed.net/proxy/manual.html
 distributed.net/proxy/proxyper
-distributed.net/proxy/proxyper.ini
-distributed.net/proxy/proxyper.sh
-distributed.net/proxy/proxyper.sh.bak
-@exec ln -sf %D/distributed.net/proxy/proxyper.sh %D/etc/rc.d/proxyper.sh
-@unexec rm %D/etc/rc.d/proxyper.sh
+@unexec if cmp -s %D/distributed.net/proxy/proxyper.ini %D/distributed.net/proxy/proxyper.ini.sample; then rm -f %D/distributed.net/proxy/proxyper.ini; fi
+distributed.net/proxy/proxyper.ini.sample
+@exec [ -f %B/proxyper.ini ] || cp %B/%f %B/proxyper.ini
+etc/rc.d/proxyper.sh.sample
 @dirrm distributed.net/proxy
 @dirrm distributed.net
