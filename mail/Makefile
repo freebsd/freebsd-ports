@@ -90,6 +90,7 @@
     SUBDIR += p5-Mail-Folder
     SUBDIR += p5-Mail-Freshmeat
     SUBDIR += p5-Mail-IMAPClient
+    SUBDIR += p5-Mail-MailStats
     SUBDIR += p5-Mail-POP3Client
     SUBDIR += p5-Mail-Sender
     SUBDIR += p5-Mail-Sendmail
