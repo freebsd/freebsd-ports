@@ -775,9 +775,10 @@ if (-e $LAST_FILE) {
 #
 # Produce the final compilation of the log messages
 #
-my @log_msg = &build_header();
 for (my $i = 0; ; $i++) {
 	last unless -e "$LOG_FILE.$i";
+
+	my @log_msg = &build_header();
 
 	my @mod_lines = &read_logfile("$CHANGED_FILE.$i");
 	push @log_msg, &format_lists("Modified", @mod_lines) if @mod_lines;
@@ -796,16 +797,18 @@ for (my $i = 0; ; $i++) {
 		push @log_msg, "  ", map {"  $_"}
 		    format_summaries("$SUMMARY_FILE.$i");
 	}
-}
-#
-# Put the log message at the beginning of the Changes file
-#
-&do_changes_file(@log_msg);
 
-#
-# Mail out the notification.
-#
-&mail_notification(@log_msg);
+	#
+	# Add a copy of the message in the relevant log files.
+	#
+	&do_changes_file(@log_msg);
+
+	#
+	# Mail out the notification.
+	#
+	&mail_notification(@log_msg);
+}
+
 &cleanup_tmpfiles();
 exit 0;
 # EOF
