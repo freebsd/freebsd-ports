@@ -7,30 +7,32 @@
 #
 
 PORTNAME=	flip
-PORTVERSION=	2.2.0
-PORTREVISION=	1
+PORTVERSION=	2.3.0
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.reptilelabour.com/software/files/flip/
 
-MAINTAINER=	ports@freebsd.org
-COMMENT=	"Load a sequence of TIFF files and play them back at a target frame rate"
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Load a sequence of TIFF files and play them back at a target frame rate
 
-LIB_DEPENDS=	tiff:${PORTSDIR}/graphics/tiff
+LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff
 RUN_DEPENDS=	mpeg_encode:${PORTSDIR}/multimedia/mpeg_encode
+
+WRKSRC=		${WRKDIR}/${DISTNAME:R}
 
 USE_QT_VER=	3
 USE_REINPLACE=	yes
-WRKSRC=		${WRKDIR}/${DISTNAME:R}
-CFLAGS+=	-I${LOCALBASE}/include
-MAKE_ENV=	MOC="${MOC}" QTDIR="${X11BASE}"
+MAKE_ENV=	QTDIR="${QT_PREFIX}"
 
 post-patch:
-	@${REINPLACE_CMD} -e "s,^CC,#CC,g ; s,^CXX,#CXX,g ; \
-		s,-O2,${CFLAGS} ${PTHREAD_CFLAGS},g ; \
-		s,^MOC,#MOC,g ; s,lqt,lqt-mt ${PTHREAD_LIBS},g ; \
-		s,/usr/X11R6,${X11BASE},g ; \
-		s,%%LOCALBASE%%,${LOCALBASE},g" ${WRKSRC}/Makefile
-	@${REINPLACE_CMD} -e "s,%%LOCALBASE%%,${LOCALBASE},g" ${WRKSRC}/Config.cpp
+	@${REINPLACE_CMD} -e  's|warn_on release|warn_on thread release|g ; \
+		 s|/usr/X11R6/include|$${LOCALBASE}/include|g ; \
+		 s|= -ltiff|= -L$${LOCALBASE}/lib -ltiff|g' ${WRKSRC}/FLIP.pro
+	@${REINPLACE_CMD} -e \
+		's|/usr/bin|${LOCALBASE}/bin|g' ${WRKSRC}/Config.cpp
+
+do-configure:
+	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} qmake \
+		-spec ${X11BASE}/share/qt/mkspecs/freebsd-g++ FLIP.pro
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/flip ${PREFIX}/bin
