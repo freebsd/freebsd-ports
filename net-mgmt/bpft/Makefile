@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=bpft4
 DISTNAME=	bpft4-latest
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	aquatique@rusunix.org
+MAINTAINER=	aquatique-ports@rambler.ru
 COMMENT=	The BPF Traffic collector
 
 BROKEN=		"Changes permissions of system directories"
