@@ -21,6 +21,8 @@ DOCDIR=		${PREFIX}/share/doc/${PORT_NAME}
 MAN8=		${PORT_NAME}.8
 MANLANG=	. ja
 
+BROKEN=		"PLIST is incorrect"
+
 post-install:
 # install japanese manpage also :-)
 	@${INSTALL_MAN} ${WRKSRC}/libapm-j.man ${PREFIX}/man/ja/man8/${PORT_NAME}.8
