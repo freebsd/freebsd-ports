@@ -1082,6 +1082,7 @@ crimap		ports/biology/crimap
 crimson		ports/textproc/crimson
 crip		ports/audio/crip
 criticalmass	ports/games/criticalmass
+crm114		ports/mail/crm114
 cronolog	ports/sysutils/cronolog
 crossfire-client	ports/games/crossfire-client
 crossfire-server	ports/games/crossfire-server
