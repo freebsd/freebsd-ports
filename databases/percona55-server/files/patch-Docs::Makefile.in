@@ -1,25 +1,25 @@
---- Docs/Makefile.in.orig	Wed Dec  1 01:08:19 2004
-+++ Docs/Makefile.in	Mon Jan 10 11:44:27 2005
-@@ -331,7 +331,7 @@
- 	check-recursive installcheck-recursive
- DIST_COMMON = Makefile.am Makefile.in
- DIST_SUBDIRS = $(SUBDIRS)
+--- Docs/Makefile.in.orig	Tue Mar 22 20:27:11 2005
++++ Docs/Makefile.in	Wed Apr  6 13:00:28 2005
+@@ -359,7 +359,7 @@
+ 
+ SUBDIRS = Images
+ GT = $(srcdir)/Support/generate-text-files.pl
 -all: $(BUILT_SOURCES)
 +all:
  	$(MAKE) $(AM_MAKEFLAGS) all-recursive
  
  .SUFFIXES:
-@@ -599,7 +599,7 @@
- installdirs-am:
- 	$(mkinstalldirs) $(DESTDIR)$(infodir)
- 
+@@ -669,7 +669,7 @@
+ 	for dir in "$(DESTDIR)$(infodir)"; do \
+ 	  test -z "$$dir" || $(mkdir_p) "$$dir"; \
+ 	done
 -install: $(BUILT_SOURCES)
 +install:
  	$(MAKE) $(AM_MAKEFLAGS) install-recursive
  install-exec: install-exec-recursive
  install-data: install-data-recursive
-@@ -718,7 +718,7 @@
- 	uninstall-info-am uninstall-info-recursive uninstall-recursive
+@@ -793,7 +793,7 @@
+ 	tags tags-recursive uninstall uninstall-am uninstall-info-am
  
  
 -all:			$(targets) txt_files
