@@ -28,14 +28,13 @@ USE_GMAKE=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 502102
-BROKEN=		"Does not compile"
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e "s,-lqt,-lqt-mt ${PTHREAD_LIBS},g" ${WRKSRC}/configure
 	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} \
 		${REINPLACE_CMD} -e "s,-lqt,-lqt-mt ${PTHREAD_LIBS},g"
-	@${REINPLACE_CMD} -e "s,malloc.h,stdlib.h,g" ${WRKSRC}/kisomandel/fractal.cpp
+	@${REINPLACE_CMD} -e "s,malloc.h,stdlib.h,g" \
+		${WRKSRC}/kisomandel/fractal.cpp
+	@${REINPLACE_CMD} -e "s,-ffast-math -fomit-frame-pointer,${CFLAGS}," \
+		${WRKSRC}/kisomandel/Makefile.in
 
 .include <bsd.port.post.mk>
