@@ -8,10 +8,10 @@
 PORTNAME=	steam
 PORTVERSION=	1.0
 CATEGORIES=	games linux
-MASTER_SITES=	http://hlstats.neojapangz.com/files/
+MASTER_SITES=	http://www.coreblack.com/files/
 PKGNAMEPREFIX=	linux-
 
-MAINTAINER=	hido@neojapangz.com
+MAINTAINER=	hido@coreblack.com
 COMMENT=	Half Life dedicated server running on steam
 
 IS_INTERACTIVE=	yes
