@@ -7,7 +7,7 @@
 
 PORTNAME=	gpsmanshp
 PORTVERSION=	1.2
-CATEGORIES=	graphics tcl84
+CATEGORIES=	graphics tcl${TCLVERSION:S/.//}
 MASTER_SITES=	http://www.ncc.up.pt/gpsmanshp/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 EXTRACT_SUFX=	.tgz
@@ -16,9 +16,11 @@ MAINTAINER=	jhay@FreeBSD.org
 COMMENT=	Shapelib support for gpsman
 
 RUN_DEPENDS=	gpsman:${PORTSDIR}/astro/gpsman
-LIB_DEPENDS=	shp.1:${PORTSDIR}/devel/shapelib
+LIB_DEPENDS=	shp.1:${PORTSDIR}/devel/shapelib \
+		tcl${TCLVERSION:S/.//}:${PORTSDIR}/lang/tcl${TCLVERSION:S/.//}
 
-PLIST_SUB=	TCLVERSION=8.4 PORTVERSION=${PORTVERSION}
+TCLVERSION?=	8.4
+PLIST_SUB=	TCLVERSION=${TCLVERSION} PORTVERSION=${PORTVERSION}
 
 post-install:
 .if !defined(NOPORTDOCS)
