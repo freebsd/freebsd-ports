@@ -437,6 +437,7 @@
     SUBDIR += transproxy
     SUBDIR += twhttpd
     SUBDIR += twig
+    SUBDIR += twiki
     SUBDIR += udmsearch
     SUBDIR += ump
     SUBDIR += viewml
