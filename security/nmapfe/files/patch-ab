@@ -1,0 +1,25 @@
+--- nmapfe/Makefile.in.orig	Fri May  7 04:51:52 1999
++++ nmapfe/Makefile.in	Fri Jul 23 10:46:08 1999
+@@ -71,7 +71,7 @@
+ PROGRAMS =  $(bin_PROGRAMS)
+ 
+ 
+-DEFS = @DEFS@ -I. -I$(srcdir) 
++DEFS = @DEFS@ -DNMAP_PATH=\"$(bindir)/\"  -I. -I$(srcdir) 
+ CPPFLAGS = @CPPFLAGS@
+ STATIC =
+ LDFLAGS = @LDFLAGS@ $(STATIC)
+@@ -231,11 +231,11 @@
+ maintainer-clean-depend:
+ 	-rm -rf .deps
+ 
+-%.o: %.c
++.c.o:
+ 	@echo '$(COMPILE) -c $<'; \
+ 	$(COMPILE) -c $<
+ 
+-%.lo: %.c
++.c.lo:
+ 	@echo '$(LTCOMPILE) -c $<'; \
+ 	$(LTCOMPILE) -c $<
+ 	@-sed -e 's/^\([^:]*\)\.o:/\1.lo \1.o:/' \
