@@ -7,6 +7,7 @@
 
 PORTNAME?=	aspell
 PORTVERSION=	0.50.1
+PORTREVISION=	1
 CATEGORIES+=	textproc
 MASTER_SITES=	http://savannah.gnu.org/download/${PORTNAME}/rel/	\
 		${MASTER_SITE_GNU}
