@@ -11,6 +11,8 @@ PKGNAME=	ko-baekmukfonts-bdf-1.1
 CATEGORIES=	korean x11-fonts
 MASTER_SITES=	ftp://ftp.mizi.co.kr/pub/baekmuk/ \
 		http://www.FreeBSD.org/~sada/distfiles/
+DISTFILES=	baekmuk-1.1.tar.gz gulim12-19990903.bdf.gz
+EXTRACT_ONLY=	baekmuk-1.1.tar.gz
 
 MAINTAINER=	cjh@kr.freebsd.org
 
@@ -28,6 +30,8 @@ BDFTOPCF=	${PREFIX}/bin/bdftopcf
 MKFONTDIR=	${PREFIX}/bin/mkfontdir
 
 do-build:
+	${GUNZIP_CMD} -c ${_DISTDIR}/gulim12-19990903.bdf.gz \
+		> ${WRKDIR}/gulim12.bdf
 .for FONTNAME in ${FONTLIST}
 	${BDFTOPCF} ${WRKDIR}/${FONTNAME}.bdf | ${GZIP_CMD} -c \
 		> ${WRKDIR}/${FONTNAME}.pcf.gz
