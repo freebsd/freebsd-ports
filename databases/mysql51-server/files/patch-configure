@@ -1,6 +1,6 @@
---- configure.orig	Thu Apr 19 15:18:13 2001
-+++ configure	Thu Apr 19 15:22:18 2001
-@@ -2983,7 +2983,7 @@
+--- configure.orig	Wed May  9 22:34:50 2001
++++ configure	Sat May 12 11:23:21 2001
+@@ -2994,7 +2994,7 @@
    ;;
  esac
  fi
@@ -9,9 +9,9 @@
  if test -n "$HOSTNAME"; then
    echo "$ac_t""$HOSTNAME" 1>&6
  else
-@@ -3117,38 +3117,7 @@
+@@ -3128,38 +3128,7 @@
  echo $ac_n "checking "how to check if pid exists"""... $ac_c" 1>&6
- echo "configure:3119: checking "how to check if pid exists"" >&5
+ echo "configure:3130: checking "how to check if pid exists"" >&5
  PS=$ac_cv_path_PS
 -# Linux style
 -if $PS p $$ 2> /dev/null | grep $0 > /dev/null
@@ -49,7 +49,7 @@
  
  echo "$ac_t"""$FIND_PROC"" 1>&6
  
-@@ -5911,7 +5880,6 @@
+@@ -5922,7 +5891,6 @@
  #define $ac_tr_lib 1
  EOF
  
@@ -57,7 +57,7 @@
  
  else
    echo "$ac_t""no" 1>&6
-@@ -6143,28 +6111,6 @@
+@@ -6154,28 +6122,6 @@
  fi
  
  
@@ -86,7 +86,7 @@
  # Check whether --with-debug or --without-debug was given.
  if test "${with_debug+set}" = set; then
    withval="$with_debug"
-@@ -6845,10 +6791,6 @@
+@@ -6856,10 +6802,6 @@
  ac_link='${CXX-g++} -o conftest${ac_exeext} $CXXFLAGS $CPPFLAGS $LDFLAGS conftest.$ac_ext $LIBS 1>&5'
  cross_compiling=$ac_cv_prog_cxx_cross
  
@@ -96,8 +96,8 @@
 -fi
  mysql_cv_btype_last_arg_accept=none
  cat > conftest.$ac_ext <<EOF
- #line 6855 "configure"
-@@ -8924,10 +8866,6 @@
+ #line 6866 "configure"
+@@ -9019,10 +8961,6 @@
  #do not treat warnings as errors if we are linking agaist other libc
  #this is to work around gcc not being permissive on non-system includes
  #with respect to ANSI C++
@@ -106,9 +106,9 @@
 -  CXXFLAGS="$CXXFLAGS -Werror"
 -fi
  cat > conftest.$ac_ext <<EOF
- #line 8933 "configure"
+ #line 9028 "configure"
  #include "confdefs.h"
-@@ -8992,10 +8930,6 @@
+@@ -9087,10 +9025,6 @@
  ac_link='${CXX-g++} -o conftest${ac_exeext} $CXXFLAGS $CPPFLAGS $LDFLAGS conftest.$ac_ext $LIBS 1>&5'
  cross_compiling=$ac_cv_prog_cxx_cross
  
@@ -117,9 +117,9 @@
 -  CXXFLAGS="$CXXFLAGS -Werror"
 -fi
  cat > conftest.$ac_ext <<EOF
- #line 9001 "configure"
+ #line 9096 "configure"
  #include "confdefs.h"
-@@ -9059,10 +8993,6 @@
+@@ -9154,10 +9088,6 @@
  ac_link='${CXX-g++} -o conftest${ac_exeext} $CXXFLAGS $CPPFLAGS $LDFLAGS conftest.$ac_ext $LIBS 1>&5'
  cross_compiling=$ac_cv_prog_cxx_cross
  
@@ -128,5 +128,5 @@
 -  CXXFLAGS="$CXXFLAGS -Werror"
 -fi
  cat > conftest.$ac_ext <<EOF
- #line 9068 "configure"
+ #line 9163 "configure"
  #include "confdefs.h"
