@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Cache_Lite
-PORTVERSION=	1.4.0
+PORTVERSION=	1.4.1
 PORTEPOCH=	1
 CATEGORIES=	sysutils www pear
 
@@ -18,7 +18,7 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 CATEGORY=	Cache
 FILES=		Lite/Output.php Lite/Function.php Lite.php
-DOCS=		docs/technical docs/examples LICENSE TODO
+DOCS=		docs/technical docs/examples TODO
 TESTS=		test.php test2.php test3.php bench.php bench2.php bench3.php readme
 _DOCSDIR=	.
 
