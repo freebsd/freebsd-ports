@@ -1,5 +1,7 @@
 MD5 (pm3/pm3-1.1.15-FBSD_ALPHA-boot.tar.bz2) = 7d5983635957b5c5e8ba6cc97ceab033
+SIZE (pm3/pm3-1.1.15-FBSD_ALPHA-boot.tar.bz2) = 1545594
 MD5 (pm3/pm3-1.1.15-FreeBSD2-boot.tar.bz2) = 83d2ad933b9fbeff06fe413aa69ceefc
 MD5 (pm3/pm3-1.1.15-FreeBSD3-boot.tar.bz2) = 67cc0d0291df0e7357103f026a6cb657
 MD5 (pm3/pm3-1.1.15-FreeBSD4-boot.tar.bz2) = eac38b81c997bb65186de10db318ca6d
 MD5 (pm3/pm3-1.1.15-src.tar.bz2) = be596ba5d0b422abed5a5b71b0d90892
+SIZE (pm3/pm3-1.1.15-src.tar.bz2) = 18688554
