@@ -3,7 +3,7 @@
 # Date created:         22 November 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.11 1996/04/30 10:33:28 jmz Exp $
+# $Id: Makefile,v 1.12 1996/11/04 14:42:15 jmz Exp $
 #
 
 DISTNAME=	xcd-1.5
@@ -14,6 +14,6 @@ WRKSRC=		${WRKDIR}/xcd
 
 MAINTAINER=	jmz@FreeBSD.org
 
-RUN_DEPENDS=    wish:${PORTSDIR}/x11/tk41
+RUN_DEPENDS=    wish4.1:${PORTSDIR}/x11/tk41
 
 .include <bsd.port.mk>
