@@ -10,8 +10,9 @@ PORTVERSION=	4.2.1
 PORTREVISION=	0
 CATEGORIES=	x11-wm xfce
 MASTER_SITES=	http://www.us.xfce.org/archive/xfce-${PORTVERSION}/src/ \
-		http://spuriousinterrupt.org/projects/xfce4/files/mirror/xfce-${PORTVERSION}/ \
-		http://public.fh-wolfenbuettel.de/~luedickj/xfce4/xfce-${PORTVERSION}/
+		http://www.ca-us.xfce.org/archive/xfce-${PORTVERSION}/src/ \
+		http://public.fh-wolfenbuettel.de/~luedickj/xfce4/xfce-${PORTVERSION}/ \
+		http://hannelore.f1.fhtw-berlin.de/mirrors/xfce4/xfce-${PORTVERSION}/src/
 DIST_SUBDIR=	xfce4
 
 MAINTAINER=	oliver@FreeBSD.org
