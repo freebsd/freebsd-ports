@@ -10,4 +10,4 @@ GtkScintilla addresses both:
  - It is a shared library
  - It is a true GtkWidget subclass with a GTK+ API
 
-WWW: http://www.moleskine.f2s.com/
+WWW: http://www.micampe.it/software/moleskine/

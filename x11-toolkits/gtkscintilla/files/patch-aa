@@ -1,13 +1,13 @@
 
 $FreeBSD$
 
---- Makefile.orig	Sun Jun 10 12:03:21 2001
-+++ Makefile	Sun Jun 10 15:41:45 2001
-@@ -2,18 +2,18 @@
+--- Makefile.orig	Fri Feb  8 10:15:02 2002
++++ Makefile	Mon Feb 11 15:03:03 2002
+@@ -2,20 +2,20 @@
  
  NAME = GtkScintilla
  LIB_NAME = gtkscintilla
--VERSION = 0.7.2
+-VERSION = 0.8.2
 -PREFIX = $(shell gtk-config --prefix)
 +VERSION = 0
 +PREFIX = $(shell $(GTK_CONFIG) --prefix)
@@ -18,21 +18,24 @@ $FreeBSD$
 -SCINTILLA_IFACE = $(SCINTILLA_INCLUDE)/Scintilla.iface
 -LEXERS = $(wildcard $(SCINTILLA_DIR)/gtk/Lex*.o)
 -CFLAGS = $(shell gtk-config --cflags) -g -Wall -DGTK -DSCI_LEXER
--LDFLAGS = $(shell gtk-config --libs) $(SCINTILLA_LIB) $(LEXERS)
--CC = gcc
--LD = gcc
+-LDFLAGS_PRE = $(shell gtk-config --libs) -DGTK 
+-LDFLAGS_POST =  $(LEXERS)  $(SCINTILLA_LIB) -lstdc++
 +SCINTILLA_INCLUDE = $(X11BASE)/include/scintilla
 +SCINTILLA_LIB = -lscintilla
 +SCINTILLA_IFACE = scintilla/include/Scintilla.iface
 +LEXERS = -lscintilla_lexers
 +CFLAGS += $(shell $(GTK_CONFIG) --cflags) -Wall -DGTK -DSCI_LEXER
-+LDFLAGS = $(shell $(GTK_CONFIG) --libs) $(SCINTILLA_LIB) $(LEXERS)
++LDFLAGS_PRE = $(shell $(GTK_CONFIG) --libs) -DGTK 
++LDFLAGS_POST =  $(LEXERS)  $(SCINTILLA_LIB)
+ 
+-CC = gcc
+-LD = gcc
 +CC ?= gcc
 +LD = $(CC)
  AR = ar
  
  STATIC_LIB = lib$(LIB_NAME).a
-@@ -24,10 +24,10 @@
+@@ -26,10 +26,10 @@
  
  all: $(STATIC_LIB) $(SHARED_LIB)
  
@@ -42,10 +45,10 @@ $FreeBSD$
  
 -$(SHARED_LIB): $(SCINTILLA_LIB) gtkscintilla.o
 +$(SHARED_LIB): gtkscintilla.o
- 	$(LD) -o $@ $^ -shared $(LDFLAGS)
+ 	$(LD)  $(LDFLAGS_PRE) gtkscintilla.o -shared $(LDFLAGS_POST) -o $@
  
  gtkscintilla.o: gtkscintilla.h gtkscintilla.c
-@@ -35,8 +35,8 @@
+@@ -37,8 +37,8 @@
  $(SCINTILLA_LIB):
  	cd $(SCINTILLA_DIR)/gtk ; $(MAKE)
  

@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	gtkscintilla
-PORTVERSION=	0.7.2
+PORTVERSION=	0.8.2
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	http://www.moleskine.f2s.com/files/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	moleskine
 DISTNAME=	GtkScintilla-${PORTVERSION}
 
 MAINTAINER=	sobomax@FreeBSD.org
