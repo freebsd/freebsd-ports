@@ -1,31 +1,23 @@
---- Makefile.orig	Fri Nov 16 02:46:59 2001
-+++ Makefile	Sat Nov 17 15:56:24 2001
-@@ -2,12 +2,11 @@
- # $Id: Makefile,v 1.8 2001/11/16 04:46:20 mavetju Exp $
+--- Makefile.orig	Thu Nov 22 23:12:38 2001
++++ Makefile	Fri Nov 23 00:33:25 2001
+@@ -2,7 +2,6 @@
+ # $Id: Makefile,v 1.10 2001/11/23 04:09:03 mavetju Exp $
  #
  
--CC	= gcc
--OPT_C	= -c -Wall -g
-+OPT_C	= -c -Wall -g $(CFLAGS)
+-GTK_CONFIG ?= gtk12-config
+ 
+ OPT_C	= -c -Wall -g $(CFLAGS)
  OPT_L	= -g
- 
--GTK_C	= `gtk12-config --cflags`
--GTK_L	= `gtk12-config --libs`
-+GTK_C	= `${GTK_CONFIG} --cflags`
-+GTK_L	= `${GTK_CONFIG} --libs`
- 
- OFILES	= ipfw-core.o ipfw-data.o ipfw-gtk.o ipfw-default.o ipfw-log.o \
- 	  ipfw-linear.o ipfw-allowonly.o ipfw-denyonly.o
-@@ -38,7 +37,8 @@
+@@ -39,7 +38,8 @@
  	rm /usr/local/man/man8/ipfw-graph.8
  
  install:
--	install -o root -g wheel -m 4755 ipfw-al /usr/local/sbin
+-	install -o root -g wheel -m 4755 ipfw-al /usr/local/bin
 -	install -o root -g wheel -m 0755 ipfw-graph /usr/local/bin
 -	install -o root -g wheel -m 0644 ipfw-al.8 /usr/local/man/man8
 -	install -o root -g wheel -m 0644 ipfw-graph.8 /usr/local/man/man8
-+	${BSD_INSTALL_PROGRAM} ipfw-al ${PREFIX}/sbin
-+	chmod u+s ${PREFIX}/sbin/ipfw-al
++	${BSD_INSTALL_PROGRAM} ipfw-al ${PREFIX}/bin
++	chmod u+s ${PREFIX}/bin/ipfw-al
 +	${BSD_INSTALL_PROGRAM} ipfw-graph ${PREFIX}/bin
 +	${BSD_INSTALL_MAN} ipfw-al.8 ${MANPREFIX}/man/man8
 +	${BSD_INSTALL_MAN} ipfw-graph.8 ${MANPREFIX}/man/man8
