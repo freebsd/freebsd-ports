@@ -50,7 +50,6 @@ Have fun with this new configuration style !     -andreas \n\n\
   "laserjet" "HP LaserJet" ON \
   "la50"     "DEC LA50 printer" ON \
   "la70"     "DEC LA70 printer" ON \
-  "la70t"    "DEC LA70 printer with low resol. text enhancement" ON \
   "la75"     "DEC LA75 printer" ON \
   "la75plus" "DEC LA75plus printer" ON \
   "lbp8"     "Canon LBP-8II laser printer" ON \
