@@ -40,7 +40,6 @@ LDFLAGS+=		-L${LOCALBASE}/lib/mysql
 .endif
 
 CONFIGURE_ENV+=		LDFLAGS="${LDFLAGS}" LOCALBASE=${LOCALBASE}
-FILES_TO_PATCH=		imapd.c main.c maintenance.c pop3d.c user.c
 PORTDOCS=		INSTALL README
 
 MAN1=			dbmail-adduser.1 dbmail-config.1 dbmail-imapd.1 \
@@ -56,10 +55,8 @@ pre-everything::
 	@${ECHO} ""
 
 post-configure:
-.for FILE in ${FILES_TO_PATCH}
 	@${REINPLACE_CMD} -i.orig 's!/etc/dbmail.conf!${PREFIX}/etc/dbmail.conf!g' \
-				${WRKSRC}/${FILE}
-.endfor
+				${WRKSRC}/dbmail.h
 
 post-install:
 	@${INSTALL_DATA} ${WRKSRC}/dbmail.conf ${PREFIX}/etc/dbmail.conf-dist
