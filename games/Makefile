@@ -298,6 +298,7 @@
     SUBDIR += quake2lnx
     SUBDIR += quakeforge
     SUBDIR += quakeserver
+    SUBDIR += quit
     SUBDIR += race
     SUBDIR += rfksay
     SUBDIR += robocode
