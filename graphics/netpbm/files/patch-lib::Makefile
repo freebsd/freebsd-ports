@@ -1,6 +1,6 @@
---- lib/Makefile.orig	Thu Sep 19 12:58:41 2002
-+++ lib/Makefile	Sat Oct  5 00:00:00 2002
-@@ -32,14 +32,16 @@
+--- lib/Makefile.orig	Wed Oct  9 11:21:57 2002
++++ lib/Makefile	Sat Oct 12 00:00:00 2002
+@@ -32,12 +32,14 @@
  # Library objects to be linked but not built by Makefile.common:
  LIBOBJECTS_X = util/shhopt.o util/nstring.o
  
@@ -15,10 +15,7 @@
 +	pgm.h ppm.h ppm.h ppmcmap.h ppmdraw.h ppmfloyd.h colorname.h \
 +	pnm.h pam.h pammap.h util/pm_shhopt.h util/pm_nstring.h
  
--DATAFILE = rgb.txt
-+DATAFILES = rgb.txt
- 
- HEADERLINKS = pm_config.h version.h compile.h shhopt.h
+ DATAFILES = rgb.txt
  
 @@ -69,12 +71,15 @@
  
@@ -37,8 +34,8 @@
  
  ifeq ($(NETPBMLIBTYPE),irixshared)
  # The libxxx.so link is needed to link the executables.
-@@ -98,12 +103,9 @@
- # The $(SONAME) link is only needed to test the programs without
+@@ -98,11 +103,8 @@
+ # The $(SONAME) link is needed only to test the programs without
  # installing the libraries (in that case, you also need to direct the 
  # dynamic linker to the source directories, e.g. set LD_LIBRARY_PATH).
 -$(SONAME): libnetpbm.$(NETPBMLIBSUFFIX).$(MAJ).$(MIN)
@@ -46,13 +43,11 @@
 -	$(SYMLINK) $< $@
 -libnetpbm.$(NETPBMLIBSUFFIX).$(MAJ).$(MIN): $(LIBOBJECTS) $(LIBOBJECTS_X)
 -	$(LD) $(LDSHLIB) -o $@ $(LIBOBJECTS) $(LIBOBJECTS_X) \
--          -lc $(LADD)
 +$(SONAME): $(SHLIBOBJECTS) $(LIBOBJECTS_X)
 +	$(LD) $(LDSHLIB) -o $@ $(SHLIBOBJECTS) $(LIBOBJECTS_X) \
-+          $(LADD)
+           $(SHLIB_CLIB) $(LADD)
  endif
  
- ifeq ($(NETPBMLIBTYPE),dll)
 @@ -180,13 +182,10 @@
  .PHONY: install.lib
  ifeq ($(NETPBMLIBTYPE),unixshared)
@@ -67,7 +62,7 @@
 +install.lib: $(PKGDIR)/lib
 +	cd $(PKGDIR)/lib ; rm -f libnetpbm.$(NETPBMLIBSUFFIX).*
 +	${BSD_INSTALL_DATA} \
-+	  $(SONAME) $(PKGDIR)/lib/
++          $(SONAME) $(PKGDIR)/lib/
  endif
  ifeq ($(NETPBMLIBTYPE),dll)
  #install a Windows DLL shared library

@@ -1,6 +1,6 @@
---- Makefile.common.orig	Tue Sep  3 10:56:40 2002
-+++ Makefile.common	Sat Oct  5 00:00:00 2002
-@@ -235,19 +235,19 @@
+--- Makefile.common.orig	Wed Oct  9 11:17:24 2002
++++ Makefile.common	Sat Oct 12 00:00:00 2002
+@@ -231,19 +231,19 @@
  INSTALLBIN_TARGETS = $(BINARIES:%=%_installbin) netpbm_installbin
  .PHONY: $(INSTALLBIN_TARGETS)
  $(INSTALLBIN_TARGETS): $(PKGDIR)/bin
@@ -14,7 +14,7 @@
  	  $(SRCDIR)/$(SUBDIR)/$(@:%_installscript=%) $<
  
  .PHONY: install.data
- install.data: $(DATAFILES:%=%_installdata) 
+ install.data: $(DATAFILES:%=%_installdata) $(SUBDIRS:%=%/install.data)
  
  .PHONY: $(DATAFILES:%=%_installdata) 
 -$(DATAFILES:%=%_installdata): $(PKGDIR)/misc

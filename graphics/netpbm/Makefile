@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	netpbm
-PORTVERSION=	10.9
+PORTVERSION=	10.10
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -24,7 +24,7 @@ USE_REINPLACE=	yes
 USE_GMAKE=	yes
 MAKE_ENV=	LN="${LN}" RANLIB="${RANLIB}"
 MAKEFILE=	GNUmakefile
-INSTALL_TARGET=	install.bin install.lib install-dev
+INSTALL_TARGET=	install.bin install.lib install.data install-dev
 INSTALLS_SHLIB=	yes
 
 post-patch:
@@ -35,10 +35,5 @@ post-patch:
 	@${CP} ${FILESDIR}/Makefile.config.FreeBSD ${WRKSRC}/Makefile.config
 	@${LN} -sf ${WRKSRC}/lib/util/shhopt.h ${WRKSRC}/lib/util/pm_shhopt.h
 	@${LN} -sf ${WRKSRC}/lib/util/nstring.h ${WRKSRC}/lib/util/pm_nstring.h
-
-post-install:
-	@${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/lib/rgb.txt ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/converter/other/pnmtopalm/*.map ${DATADIR}
 
 .include <bsd.port.mk>
