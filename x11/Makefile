@@ -1,6 +1,5 @@
 # $FreeBSD$
 #
-    SUBDIR += zenity
 
     SUBDIR += 3ddesktop
     SUBDIR += 9box
@@ -230,5 +229,6 @@
     SUBDIR += xzoom
     SUBDIR += yalias
     SUBDIR += yelp
+    SUBDIR += zenity
 
 .include <bsd.port.subdir.mk>

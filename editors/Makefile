@@ -1,6 +1,5 @@
 # $FreeBSD$
 #
-    SUBDIR += zoinks
 
     SUBDIR += AbiWord2
     SUBDIR += MathPlanner
@@ -205,5 +204,6 @@
     SUBDIR += yudit
     SUBDIR += zed
     SUBDIR += zile
+    SUBDIR += zoinks
 
 .include <bsd.port.subdir.mk>

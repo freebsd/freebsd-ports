@@ -1,11 +1,5 @@
 # $FreeBSD$
 #
-    SUBDIR += metacity-theme-6nome
-    SUBDIR += metacity-theme-aero
-    SUBDIR += metacity-theme-alloy-c
-    SUBDIR += metacity-theme-hacked-2
-    SUBDIR += metacity-theme-iridium-rounded
-    SUBDIR += metacity-themes
     SUBDIR += gnome-icons
     SUBDIR += gnome-icons-aqua-fusion
     SUBDIR += gnome-icons-cool-gorilla
@@ -39,5 +33,11 @@
     SUBDIR += kde-icons-steel
     SUBDIR += kde-icons-umicons
     SUBDIR += kde-icons-wasp
+    SUBDIR += metacity-theme-6nome
+    SUBDIR += metacity-theme-aero
+    SUBDIR += metacity-theme-alloy-c
+    SUBDIR += metacity-theme-hacked-2
+    SUBDIR += metacity-theme-iridium-rounded
+    SUBDIR += metacity-themes
 
 .include <bsd.port.subdir.mk>

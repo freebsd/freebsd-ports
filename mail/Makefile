@@ -143,7 +143,6 @@
     SUBDIR += mailgraph
     SUBDIR += mailman
     SUBDIR += mailmgr
-#   SUBDIR += mailman-devel
     SUBDIR += mailscanner
     SUBDIR += mailscanner-devel
     SUBDIR += mailsync
@@ -340,8 +339,8 @@
     SUBDIR += ruby-rfilter
     SUBDIR += ruby-rmail
     SUBDIR += ruby-tmail
-    SUBDIR += scmail
     SUBDIR += sccmilter
+    SUBDIR += scmail
     SUBDIR += sendmail
     SUBDIR += sendmail-ldap
     SUBDIR += sendmail-old
@@ -423,5 +422,6 @@
     SUBDIR += youbin
     SUBDIR += yuzu
     SUBDIR += zmailer
+#   SUBDIR += mailman-devel
 
 .include <bsd.port.subdir.mk>

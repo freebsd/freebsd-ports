@@ -1,6 +1,5 @@
 # $FreeBSD$
 #
-    SUBDIR += ziarc
 
     SUBDIR += admesh
     SUBDIR += astk-client
@@ -48,5 +47,6 @@
     SUBDIR += varkon
     SUBDIR += vipec
     SUBDIR += xcircuit
+    SUBDIR += ziarc
 
 .include <bsd.port.subdir.mk>

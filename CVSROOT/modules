@@ -3190,8 +3190,8 @@ irrtoolset	ports/net-mgmt/irrtoolset
 irsim		ports/cad/irsim
 irssi		ports/irc/irssi
 irssistats	ports/irc/irssistats
-isakmpd		ports/security/isakmpd
 is-aspell	ports/textproc/is-aspell
+isakmpd		ports/security/isakmpd
 isc-dhcp3-client	ports/net/isc-dhcp3-client
 isc-dhcp3-devel	ports/net/isc-dhcp3-devel
 isc-dhcp3-relay	ports/net/isc-dhcp3-relay
@@ -4780,6 +4780,7 @@ m68k-rtems-g77	ports/devel/m68k-rtems-g77
 m68k-rtems-gcc	ports/devel/m68k-rtems-gcc
 m68k-rtems-gdb	ports/devel/m68k-rtems-gdb
 m68k-rtems-objc	ports/devel/m68k-rtems-objc
+mDNSResponder	ports/net/mDNSResponder
 mac-robber	ports/security/mac-robber
 macopix		ports/games/macopix
 macutils	ports/archivers/macutils
@@ -5346,7 +5347,6 @@ mysqltcl	ports/databases/mysqltcl
 mythserver	ports/games/mythserver
 mytop		ports/databases/mytop
 mziq		ports/audio/mziq
-mDNSResponder	ports/net/mDNSResponder
 nInvaders	ports/games/nInvaders
 nab		ports/biology/nab
 nadar		ports/games/nadar
@@ -6672,8 +6672,8 @@ p5-Parse-Yapp	ports/devel/p5-Parse-Yapp
 p5-PatchReader	ports/devel/p5-PatchReader
 p5-Penguin	ports/devel/p5-Penguin
 p5-Penguin-Easy	ports/devel/p5-Penguin-Easy
-p5-PerlMenu	ports/devel/p5-PerlMenu
 p5-PerlIO-via-dynamic	ports/devel/p5-PerlIO-via-dynamic
+p5-PerlMenu	ports/devel/p5-PerlMenu
 p5-Pg		ports/databases/p5-Pg
 p5-PlRPC	ports/net/p5-PlRPC
 p5-Pod-Constants	ports/textproc/p5-Pod-Constants
@@ -8859,8 +8859,8 @@ sn		ports/news/sn
 snack		ports/audio/snack
 snarf		ports/www/snarf
 snd-port	ports/audio/snd
-snes9x		ports/emulators/snes9x
 snes9express	ports/emulators/snes9express
+snes9x		ports/emulators/snes9x
 sng		ports/graphics/sng
 sniff		ports/security/sniff
 sniffit		ports/net/sniffit
