@@ -1,0 +1,10 @@
+*******************************************************************
+From http://www.msx.org/newspost149.html:
+
+Also a tip for X11 users: if you get 'Opening window... FAILED'
+when starting fMSX and you're using -DBPP32, try compiling with
+-DBPP24 instead
+
+For FreeBSD users: run "make clean config" and unselect BPP32 and
+select BPP16 or BPP24 as options.
+*******************************************************************
