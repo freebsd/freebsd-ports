@@ -12,20 +12,22 @@ MASTER_SITES=	ftp://ftp.bitchx.com/pub/BitchX/source/ \
 		ftp://ftp.bitchx.org/pub/BitchX/source/ \
 		ftp://ftp.cyberpunkz.org/pub/BitchX/source/ \
 		ftp://ftp.cyberpunkz.org/pub/BitchX/tcl-o/:tcl
-DISTNAME=	ircii-pana-1.0c19
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
-.if defined(WITH_TCL)
-DISTFILES+=	freebsd4-tcl83-bx1.0c19-tcl.o:tcl
+.if !defined(WITH_TCL)
+DISTNAME=	ircii-pana-${PORTVERSION}
+.else
+DISTFILES=	ircii-pana-${PORTVERSION}${EXTRACT_SUFX} \
+		freebsd4-tcl83-bx1.0c19-tcl.o:tcl
+EXTRACT_ONLY=	ircii-pana-${PORTVERSION}${EXTRACT_SUFX}
 .endif
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	freebsdports@arved.de
 
+BUILD_DEPENDS=	autoconf:${PORTSDIR}/devel/autoconf
+
 WRKSRC=		${WRKDIR}/BitchX
-GNU_CONFIGURE=	yes
+USE_AUTOCONF=	yes
+AUTOCONF=	${LOCALBASE}/bin/autoconf
 USE_GMAKE=	yes
-WANT_ESOUND=	yes
-WANT_GNOME=	yes
 CONFIGURE_ARGS=	--exec-prefix="${PREFIX}/share" \
 		--bindir="${PREFIX}/bin" \
 		--datadir="${PREFIX}/share" \
@@ -37,14 +39,16 @@ MAN1=		BitchX.1
 
 .include <bsd.port.pre.mk>
 
-.if defined(HAVE_GNOME)
+.if defined(WITH_GNOME)
 USE_GNOME=	yes
 CONFIGURE_ARGS+=--with-gtk
 CONFIGURE_ENV+=	CFLAGS="${CFLAGS} -I${X11BASE}/include/gnome-1.0/"
+PLIST_SUB+=	NOGNOME:="@comment " GNOME:=""
 .else
 CONFIGURE_ARGS+=--without-gtk
+PLIST_SUB+=	GNOME:="@comment " NOGNOME:=""
 .endif
-.if (defined(HAVE_ESOUND) && defined(HAVE_GNOME))
+.if (defined(HAVE_ESOUND) && defined(WITH_GNOME))
 USE_ESOUND=	yes
 CONFIGURE_ARGS+=--enable-sound
 .endif
@@ -55,17 +59,15 @@ CONFIGURE_ARGS+=--enable-ipv6
 .if defined(WITH_TCL)
 BUILD_DEPENDS+=	${LOCALBASE}/include/tcl8.3/tcl.h:${PORTSDIR}/lang/tcl83
 CONFIGURE_ARGS+=--with-tcl \
-		--with-tcl-includes=${LOCALBASE}/include/tcl8.3 \
 		--with-tcl-libs=${LOCALBASE}/lib
-CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/tcl8.3"
+CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/tcl8.3" \
+		CFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/tcl8.3"
 .endif
-
 .if defined(WITH_SOCKS5)
 BUILD_DEPENDS+=		${LOCALBASE}/lib/libsocks5.a:${PORTSDIR}/net/socks5
 CONFIGURE_ARGS+=	--with-socks5=${LOCALBASE}
 CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include"
 .endif
-
 .if defined(WITH_PLUGINS)
 CONFIGURE_ARGS+=--with-plugins
 PLIST_SUB+=	PLUGINS:=""
@@ -81,24 +83,26 @@ pre-patch:
 	@${PERL} -pi -e "s!bzip2!true!g" ${WRKSRC}/Makefile.in
 
 pre-extract:
-	@${ECHO} "Available switches:"
-	@${ECHO} "-------------------"
+	@${ECHO_CMD} "Available switches:"
+	@${ECHO_CMD} "-------------------"
 .if !defined(WITH_PLUGINS)
-	@${ECHO} "WITH_PLUGINS - Build the plugins"
+	@${ECHO_CMD} "WITH_PLUGINS - Build the plugins"
 .endif
 .if !defined(WITH_LATIN)
-	@${ECHO} "WITH_LATIN - Recommended if you are using an ISO-8859-1 display"
+	@${ECHO_CMD} "WITH_LATIN - Recommended if you are using an ISO-8859-1 display"
 .endif
 .if !defined(WITH_TCL)
-	@${ECHO} "WITH_TCL - Build BitchX with TCL scripting"
+	@${ECHO_CMD} "WITH_TCL - Build BitchX with TCL scripting"
 .endif
 .if !defined(WITH_SOCKS5)
-	@${ECHO} "WITH_SOCKS5 - Build BitchX with SOCKS5 support"
+	@${ECHO_CMD} "WITH_SOCKS5 - Build BitchX with SOCKS5 support"
 .endif
 .if !defined(WITH_IPV6)
-	@${ECHO} "WITH_IPV6 - Build BitchX with IPV6 support"
+	@${ECHO_CMD} "WITH_IPV6 - Build BitchX with IPV6 support"
 .endif
-
+.if !defined(WITH_GNOME)
+	@${ECHO_CMD} "WITH_GNOME - Build BitchX with Gtk-Frontend"
+.endif
 .if defined(WITH_TCL)
 
 post-extract:
