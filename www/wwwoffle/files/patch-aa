@@ -5,8 +5,8 @@
  LOCALHOST=localhost:8080
  
 -INSTDIR=/usr/local
--SPOOLDIR=/var/tmp/w/wwwoffle
--CONFDIR=/var/tmp/w/wwwoffle
+-SPOOLDIR=/var/spool/wwwoffle
+-CONFDIR=/var/spool/wwwoffle
 +INSTDIR=$(PREFIX)
 +SPOOLDIR=$(SPOOL)/wwwoffle
 +CONFDIR=$(SPOOL)/wwwoffle
