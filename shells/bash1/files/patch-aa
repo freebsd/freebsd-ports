@@ -1,0 +1,11 @@
+--- Makefile.orig	Sun Jun 11 11:41:48 1995
++++ Makefile	Wed Aug 13 00:41:35 1997
+@@ -10,7 +10,7 @@
+ # If you haven't read README, now might be a good time.
+ 
+ # Include some boilerplate Gnu makefile definitions.
+-prefix = /usr/local
++prefix = $(PREFIX)
+ exec_prefix = $(prefix)
+ bindir = $(exec_prefix)/bin
+ srcdir = .
