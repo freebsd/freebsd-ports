@@ -80,6 +80,7 @@
     SUBDIR += evolvotron
     SUBDIR += exifprobe
     SUBDIR += exiftags
+    SUBDIR += exiv2
     SUBDIR += fbm
     SUBDIR += feh
     SUBDIR += figurine
