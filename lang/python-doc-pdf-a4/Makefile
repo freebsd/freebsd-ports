@@ -3,7 +3,7 @@
 # Date created:		02 June 1999
 # Whom:			Thomas Gellekum <tg@FreeBSD.org>
 #
-# $Id4
+# $FreeBSD$
 #
 
 DOCFORMAT=	pdf-a4
