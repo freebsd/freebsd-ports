@@ -7,7 +7,7 @@
 
 PORTNAME=	sawfish
 PORTVERSION= 	0.34
-#PORTREVISION=	1
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	sawmill
@@ -43,6 +43,9 @@ CONFIGURE_ARGS+=--disable-capplet \
 		--without-gdk-pixbuf
 PLIST_SUB+=	GNOME:="@comment "
 .endif
+
+post-extract:
+	@${CP} ${FILESDIR}/zh_TW.Big5.po ${WRKSRC}/po
 
 pre-patch:
 	@${PERL} -pi -e 's^-l(pthread|c_r)^-pthread^g ; \
