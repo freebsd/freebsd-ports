@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	openssl
-PORTVERSION=	0.9.6g
-PORTREVISION=	1
+PORTVERSION=	0.9.6h
 CATEGORIES=	security devel
 MASTER_SITES=	http://www.openssl.org/source/ \
 		ftp://ftp.openssl.org/source/ \
@@ -133,7 +132,9 @@ MAN5=		config.5
 MAN7=		des_modes.7
 
 .if defined(BATCH) || defined(OPENSSL_WITH_386)
+.if ${MACHINE_ARCH} == "i386"
 EXTRACONFIGURE=	386
+.endif
 .endif
 
 do-configure:
@@ -144,7 +145,7 @@ do-configure:
 	${CP} ${FILESDIR}/rnd_keys.c \
 		${WRKSRC}/crypto/des/rnd_keys.c
 .endif
-	@cd ${WRKSRC} \
+	cd ${WRKSRC} \
 	&& ${SETENV} CC="${CC}" CFLAGS="${CFLAGS}" PERL="${PERL}" \
 	./config --prefix=${PREFIX} --openssldir=${OPENSSLDIR} \
 	-L${PREFIX}/lib ${EXTRACONFIGURE}
@@ -161,5 +162,8 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/doc/openssl.txt ${DOCSDIR}/
 .endif
 	@${SED} -e 's#/usr/local#${PREFIX}#g' ${PKGMESSAGE}
+
+test:
+	cd ${WRKSRC} && ${MAKE} test
 
 .include <bsd.port.post.mk>
