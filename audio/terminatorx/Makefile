@@ -14,7 +14,8 @@ DISTNAME=	terminatorX-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Realtime audio synthesizer that allows you to "scratch" on audio data
 
-BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
+BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa \
+		scrollkeeper-config:${PORTSDIR}/textproc/scrollkeeper
 LIB_DEPENDS=	audiofile.0:${PORTSDIR}/audio/libaudiofile \
 		lrdf.1:${PORTSDIR}/textproc/liblrdf
 
