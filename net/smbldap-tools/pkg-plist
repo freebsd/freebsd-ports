@@ -1,6 +1,3 @@
-etc/smbldap-tools/configure.pl
-etc/smbldap-tools/smbldap.conf.default
-etc/smbldap-tools/smbldap_bind.conf.default
 sbin/smbldap-groupadd
 sbin/smbldap-groupdel
 sbin/smbldap-groupmod
@@ -13,7 +10,15 @@ sbin/smbldap-useradd
 sbin/smbldap-userdel
 sbin/smbldap-usermod
 sbin/smbldap-usershow
+@unexec if cmp -s %D/etc/smbldap-tools/smbldap.conf %D/%%EXAMPLESDIR%%/etc/smbldap.conf; then rm -f %D/etc/smbldap-tools/smbldap.conf; fi
+%%EXAMPLESDIR%%/etc/smbldap.conf
+@exec [ -f %D/etc/smbldap-tools/smbldap.conf ] || cp %B/%f %D/etc/smbldap-tools/smbldap.conf
+@unexec if cmp -s %D/etc/smbldap-tools/smbldap_bind.conf %D/%%EXAMPLESDIR%%/etc/smbldap_bind.conf; then rm -f %D/etc/smbldap-tools/smbldap_bind.conf; fi
+%%EXAMPLESDIR%%/etc/smbldap_bind.conf
+@exec [ -f %D/etc/smbldap-tools/smbldap_bind.conf ] || cp %B/%f %D/etc/smbldap-tools/smbldap_bind.conf
 %%EXAMPLESDIR%%/smb.conf
+%%EXAMPLESDIR%%/configure.pl
 %%SITE_PERL%%/smbldap_tools.pm
-@dirrm etc/smbldap-tools
+@unexec rmdir %D/etc/smbldap-tools 2> /dev/null || true
+@dirrm %%EXAMPLESDIR%%/etc
 @dirrm %%EXAMPLESDIR%%
