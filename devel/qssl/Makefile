@@ -26,7 +26,7 @@ USE_QT_VER=	3
 
 do-configure:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ARGS} qmake \
-		-spec ${X11BASE}/share/qt/mkspecs/freebsd-g++ qssl.pro
+		-spec ${LOCALBASE}/share/qt/mkspecs/freebsd-g++ qssl.pro
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/libqssl.so \
