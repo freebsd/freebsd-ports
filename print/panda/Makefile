@@ -31,14 +31,14 @@ INSTALLS_SHLIB=	yes
 
 .include <bsd.port.pre.mk>
 
+post-extract:
+.for file in config.sub config.guess
+	@${RM} ${WRKSRC}/config/${file} && ${TOUCH} ${WRKSRC}/config/${file}
+.endfor
+
 post-patch:
 	@${REINPLACE_CMD} -e 's| -lpanda| \$$(top_srcdir)/libpanda.la|g' \
 		${WRKSRC}/examples/Makefile.in
-
-pre-configure:
-.for f in config.guess config.sub
-	@${LN} -sf ${LOCALBASE}/share/libtool/${f} ${WRKSRC}/config
-.endfor
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/man/panda_*.3 ${MANPREFIX}/man/man3
