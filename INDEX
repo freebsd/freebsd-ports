@@ -216,7 +216,7 @@ xtetris-2.6|/usr/ports/games/xtetris|/usr/X11R6|X Window block dropping game.|/u
 xtic-1.12|/usr/ports/games/xtic|/usr/X11R6|An X version of a simple but tricky board game|/usr/ports/games/xtic/pkg/DESCR|asami@FreeBSD.ORG|games||
 xtriangles-5.3|/usr/ports/games/xtriangles|/usr/X11R6|Triangles puzzle|/usr/ports/games/xtriangles/pkg/DESCR|Nakai@Mlab.t.u-tokyo.ac.jp|games||
 yamsweeper-1.9|/usr/ports/games/yamsweeper|/usr/X11R6|Yet Another Mine Sweeper.|/usr/ports/games/yamsweeper/pkg/DESCR|hidekazu@cs.titech.ac.jp|games||
-ImageMagick-3.7.8|/usr/ports/graphics/ImageMagick|/usr/local|An X11 package for display and interactive manipulation of images.|/usr/ports/graphics/ImageMagick/pkg/DESCR|ports@freebsd.org|graphics|jpeg-6a mpeg_lib-1.1 png-0.89c tiff-3.3|jpeg-6a mpeg_lib-1.1 png-0.89c tiff-3.3
+ImageMagick-3.7.9|/usr/ports/graphics/ImageMagick|/usr/local|An X11 package for display and interactive manipulation of images.|/usr/ports/graphics/ImageMagick/pkg/DESCR|ports@freebsd.org|graphics|jpeg-6a mpeg_lib-1.1 png-0.89c tiff-3.3|jpeg-6a mpeg_lib-1.1 png-0.89c tiff-3.3
 Mesa-2.0|/usr/ports/graphics/Mesa|/usr/X11R6|A graphics library similar to SGI's OpenGL.|/usr/ports/graphics/Mesa/pkg/DESCR|ports@FreeBSD.ORG|graphics||
 aero-1.5.2|/usr/ports/graphics/aero|/usr/X11R6|An X11 based modeler for povray|/usr/ports/graphics/aero/pkg/DESCR|erich@FreeBSD.org|graphics|fwf-3.8 xpm-3.4i|png-0.89c povray-3.0 xpm-3.4i
 pdore-6.0|/usr/ports/graphics/dore|/usr/X11R6|The Dynamic Object Rendering Environment.|/usr/ports/graphics/dore/pkg/DESCR|ports@FreeBSD.ORG|graphics|gmake-3.75|
@@ -289,6 +289,7 @@ jp-kterm-6.2.0|/usr/ports/japanese/kterm|/usr/X11R6|An xterm that speaks Japanes
 jp-less-290|/usr/ports/japanese/less|/usr/local|less + zcat + ISO-2022 - a pager similar to more and pg|/usr/ports/japanese/less/pkg/DESCR|asami@FreeBSD.ORG|japanese||
 jp-man-1.1|/usr/ports/japanese/man|/usr/local|A manual display command for Japanese (EUC).|/usr/ports/japanese/man/pkg/DESCR|kiri@kiri.toba-cmt.ac.jp|japanese||jp-groff-0.99 jp-less-290
 jp-man-doc-1.0|/usr/ports/japanese/man-doc|/usr/local|Japanese man pages (/bin,/usr/bin,/usr/ucb:man1,man8)|/usr/ports/japanese/man-doc/pkg/DESCR|kiri@kiri.toba-cmt.ac.jp|japanese||jp-groff-0.99 jp-less-290 jp-man-1.1
+jp-mew-1.54|/usr/ports/japanese/mew|/usr/local|Message interface to Emacs Window|/usr/ports/japanese/mew/pkg/DESCR|kiri@kiri.toba-cmt.ac.jp|mail japanese|gmake-3.75 mule-2.3|jp-mh-6.8.3 jp-nkf-1.62 perl-5.003
 jp-mh-6.8.3|/usr/ports/japanese/mh|/usr/local|Rand MH mail handling system + Japanese patches|/usr/ports/japanese/mh/pkg/DESCR|asami@FreeBSD.ORG|japanese mail||
 jp-mimekit-1.1|/usr/ports/japanese/mimekit|/usr/local|Library to handle messages with MIME-encoded headers.|/usr/ports/japanese/mimekit/pkg/DESCR|max@FreeBSD.ORG|japanese mail||
 jp-mnews-1.19.2|/usr/ports/japanese/mnews|/usr/local|Simple news and E-mail reader|/usr/ports/japanese/mnews/pkg/DESCR|max@FreeBSD.ORG|japanese news||
@@ -316,6 +317,7 @@ jp-vfghostscript-2.6.2|/usr/ports/japanese/vfghostscript|/usr/local|GNU Postscri
 jp-vfghostscript-4.03|/usr/ports/japanese/vfghostscript4|/usr/local|Aladdin Postscript interpreter with Japanese vector font library.|/usr/ports/japanese/vfghostscript4/pkg/DESCR|mita@jp.FreeBSD.org|japanese print|jp-vflib-2.22|jp-vflib-2.22
 jp-vflib-2.22|/usr/ports/japanese/vflib|/usr/local|Japanese Vector font library with free vector font.|/usr/ports/japanese/vflib/pkg/DESCR|mita@jp.FreeBSD.org|japanese print||
 jp-vfxdvi300-1.7|/usr/ports/japanese/vfxdvi|/usr/X11R6|DVI Previewer for X. + Japanese patch + vector font support|/usr/ports/japanese/vfxdvi/pkg/DESCR|mita@jp.FreeBSD.org|japanese print|jp-vflib-2.22|jp-vflib-2.22
+jp-w3-2.2.26|/usr/ports/japanese/w3|/usr/local|WWW browser based on emacs/mule|/usr/ports/japanese/w3/pkg/DESCR|kiri@kiri.toba-cmt.ac.jp|www japanese|gmake-3.75 mule-2.3|
 xbakuzan-1.0|/usr/ports/japanese/xbakuzan|/usr/X11R6|A paint tool for Shodo, the Japanese traditional writing character|/usr/ports/japanese/xbakuzan/pkg/DESCR|Nakai@Mlab.t.u-tokyo.ac.jp|x11||
 jp-xdvi300-17|/usr/ports/japanese/xdvi|/usr/X11R6|A DVI Previewer for the X Window System with Japanese patch.|/usr/ports/japanese/xdvi/pkg/DESCR|ohmon@tom.sfc.keio.ac.jp|japanese print||jp-pkfonts300-1.0 pkfonts300-1.0
 gofer-2.30a|/usr/ports/lang/Gofer|/usr/local|A lazy functional language.|/usr/ports/lang/Gofer/pkg/DESCR|hsu@FreeBSD.org|lang||
@@ -365,10 +367,11 @@ fetchmail-2.2.0|/usr/ports/mail/fetchmail|/usr/local|batch mail retrieval/forwar
 mailagent-3.0.44|/usr/ports/mail/mailagent|/usr/local|A sophisticated automatic mail-processing tool.|/usr/ports/mail/mailagent/pkg/DESCR|max@FreeBSD.ORG|mail|perl-5.003|perl-5.003
 majordomo-1.94|/usr/ports/mail/majordomo|/usr/local|The Majordomo mailing list manager|/usr/ports/mail/majordomo/pkg/DESCR|jfitz@FreeBSD.ORG|mail||
 mm-2.7|/usr/ports/mail/metamail|/usr/local|Implementation of MIME, the Multipurpose Internet Mail Extensions.|/usr/ports/mail/metamail/pkg/DESCR|torstenb@FreeBSD.ORG|mail||
+mew-1.54|/usr/ports/mail/mew|/usr/local|Message interface to Emacs Window|/usr/ports/mail/mew/pkg/DESCR|kiri@kiri.toba-cmt.ac.jp|mail|emacs-19.34b gmake-3.75|emacs-19.34b mh-6.8.4 perl-5.003
 mh-6.8.4|/usr/ports/mail/mh|/usr/local|Rand MH mail handling system|/usr/ports/mail/mh/pkg/DESCR|pst@FreeBSD.ORG|mail||
 mpack-1.5|/usr/ports/mail/mpack|/usr/local|External MIME packer/unpacker.|/usr/ports/mail/mpack/pkg/DESCR|ache@FreeBSD.ORG|mail news||
-mutt-0.53|/usr/ports/mail/mutt|/usr/local|"The Mongrel of Mail User Agents" (part Elm, Pine, mh)|/usr/ports/mail/mutt/pkg/DESCR|obrien@cs.ucdavis.edu|mail||
-mutt-pgp-0.53|/usr/ports/mail/mutt.with_pgp|/usr/local|"The Mongrel of Mail User Agents" (part Elm, Pine, mh)|/usr/ports/mail/mutt.with_pgp/pkg/DESCR|obrien@cs.ucdavis.edu|mail||
+mutt-0.54|/usr/ports/mail/mutt|/usr/local|"The Mongrel of Mail User Agents" (part Elm, Pine, mh)|/usr/ports/mail/mutt/pkg/DESCR|obrien@cs.ucdavis.edu|mail||
+mutt-pgp-0.54|/usr/ports/mail/mutt.with_pgp|/usr/local|"The Mongrel of Mail User Agents" (part Elm, Pine, mh)|/usr/ports/mail/mutt.with_pgp/pkg/DESCR|obrien@cs.ucdavis.edu|mail||
 p5-Mail-Folder-0.03|/usr/ports/mail/p5-Mail-Folder|/usr/local|perl module for a folder-independant interface to email folders.|/usr/ports/mail/p5-Mail-Folder/pkg/DESCR|jfitz@FreeBSD.ORG|mail|perl-5.003|perl-5.003
 p5-Mail-POP3Client-1.14|/usr/ports/mail/p5-Mail-POP3Client|/usr/local|perl5 module to talk to a POP3 (RFC1081) server|/usr/ports/mail/p5-Mail-POP3Client/pkg/DESCR|jfitz@FreeBSD.ORG|mail|perl-5.003|perl-5.003
 p5-Mail-Tools-1.06|/usr/ports/mail/p5-Mail-Tools|/usr/local|a set of perl5 modules related to mail applications.|/usr/ports/mail/p5-Mail-Tools/pkg/DESCR|jfitz@FreeBSD.ORG|mail|p5-IO-1.12 p5-Net-1.01 perl-5.003|perl-5.003
@@ -639,6 +642,7 @@ p5-libwww-5.03|/usr/ports/www/p5-libwww|/usr/local|perl5 library for WWW access.
 slang-lynx-2.6|/usr/ports/www/slang-lynx|/usr/local|Color Lynx (without keypad) - An alphanumeric display oriented WWW Client.|/usr/ports/www/slang-lynx/pkg/DESCR|ache@FreeBSD.ORG|www|libslang-0.99.35 unzip-5.2|libslang-0.99.35
 squid-1.0.22|/usr/ports/www/squid|/usr/local|Post-Harvest_cached WWW proxy cache and accelerator|/usr/ports/www/squid/pkg/DESCR|stesin@elvisti.kiev.ua|www||
 squid-1.1.1|/usr/ports/www/squid11|/usr/local|BETA Post-Harvest_cached WWW proxy cache and accelerator|/usr/ports/www/squid11/pkg/DESCR|peter@freebsd.org|www||
+w3-2.2.26|/usr/ports/www/w3|/usr/local|WWW browser based on emacs/mule|/usr/ports/www/w3/pkg/DESCR|kiri@kiri.toba-cmt.ac.jp|www|emacs-19.34b gmake-3.75|emacs-19.34b
 w3-msql-1.0|/usr/ports/www/w3-msql|/usr/local|An interface between HTML pages and the MiniSQL database engine|/usr/ports/www/w3-msql/pkg/DESCR|jfitz@FreeBSD.ORG|www databases|msql-1.0.16|
 w3c_httpd-3.0|/usr/ports/www/w3c_httpd|/usr/local|HTTPD (WWW) server from the W3 Consortium (W3C)|/usr/ports/www/w3c_httpd/pkg/DESCR|sa2c@and.or.jp|www||
 webcopy-0.98b7|/usr/ports/www/webcopy|/usr/local|A Web Mirroring Program|/usr/ports/www/webcopy/pkg/DESCR|ache@FreeBSD.ORG|www||
@@ -654,7 +658,6 @@ auis-6.3.1|/usr/ports/x11/auis|/usr/local|Andrew User Interface System|/usr/port
 blast-1.0|/usr/ports/x11/blast|/usr/X11R6|Blast blows holes through windows.|/usr/ports/x11/blast/pkg/DESCR|searle@longacre.demon.co.uk|x11||
 blt-2.1|/usr/ports/x11/blt|/usr/local|A Tk extension (with shared libs)|/usr/ports/x11/blt/pkg/DESCR|lukin@okbmei.msk.su|x11|tk-4.1|tk-4.1
 bricons-3.0|/usr/ports/x11/bricons|/usr/X11R6|Quick start up utility for applications on an X display.|/usr/ports/x11/bricons/pkg/DESCR|shanee@rabbit.augusta.de|x11|xpm-3.4i|xpm-3.4i
-color_xterm-pl5|/usr/ports/x11/color_xterm|/usr/X11R6|R6 xterm with colors|/usr/ports/x11/color_xterm/pkg/DESCR|asami@FreeBSD.ORG|x11||
 ctwm-3.4.2|/usr/ports/x11/ctwm|/usr/X11R6|An extension to twm, with support for multiple virtual screens, etc.|/usr/ports/x11/ctwm/pkg/DESCR|torstenb@FreeBSD.ORG|x11|xpm-3.4i|xpm-3.4i
 dclock-pl4|/usr/ports/x11/dclock|/usr/local|A 7-segment digital clock with optional military time and alarm|/usr/ports/x11/dclock/pkg/DESCR|ports@FreeBSD.ORG|x11||
 emiclock-1.0.2|/usr/ports/x11/emiclock|/usr/X11R6|Hyper-animated face analog clock for X11|/usr/ports/x11/emiclock/pkg/DESCR|asami@FreeBSD.ORG|x11||
@@ -670,7 +673,7 @@ iv-3.1|/usr/ports/x11/iv|/usr/local|A toolkit from Stanford University and Silic
 olvwm-4.1|/usr/ports/x11/olvwm|/usr/X11R6|OpenLook Virtual Window manager |/usr/ports/x11/olvwm/pkg/DESCR|ports@FreeBSD.ORG|x11|xview-config-3.2.1 xview-lib-3.2.1|xview-config-3.2.1 xview-lib-3.2.1
 p5-Tk400-2.00|/usr/ports/x11/p5-Tk400|/usr/local|a re-port of a perl5 interface to Tk4.0p3.|/usr/ports/x11/p5-Tk400/pkg/DESCR|jfitz@FreeBSD.ORG|x11|p5-IO-1.12 p5-MD5-1.7 p5-Net-1.01 p5-libwww-5.03 perl-5.003 tk-4.1|perl-5.003 tk-4.1
 piewm-1.0|/usr/ports/x11/piewm|/usr/X11R6|A tvtwm with pie (circular) menus.|/usr/ports/x11/piewm/pkg/DESCR|asami@FreeBSD.ORG|x11|xpm-3.4i|xpm-3.4i
-qt-1.0|/usr/ports/x11/qt|/usr/X11R6|A C++ X GUI toolkit.|/usr/ports/x11/qt/pkg/DESCR|searle@longacre.demon.co.uk|x11|gmake-3.75|
+qt-1.1|/usr/ports/x11/qt|/usr/X11R6|A C++ X GUI toolkit.|/usr/ports/x11/qt/pkg/DESCR|searle@longacre.demon.co.uk|x11|gmake-3.75|
 qvwm-1.0b4c|/usr/ports/x11/qvwm|/usr/X11R6|The most win95-like window manager. Standalone, not fvwm patched.|/usr/ports/x11/qvwm/pkg/DESCR|nakai@mlab.t.u-tokyo.ac.jp|x11|xpm-3.4i|xpm-3.4i
 rxvt-2.16|/usr/ports/x11/rxvt|/usr/X11R6|rxvt - a low memory usage xterm replacement that supports color|/usr/ports/x11/rxvt/pkg/DESCR|winter@jurai.net|x11||
 SpecJava-0.3|/usr/ports/x11/specJava|/usr/local|spec[Tcl,Java,Grid], TCL 7.5 graphical design tools|/usr/ports/x11/specJava/pkg/DESCR|chuckr@glue.umd.edu|x11|tk-4.1|tk-4.1
