@@ -250,6 +250,7 @@
     SUBDIR += tksol
     SUBDIR += tornado
     SUBDIR += trojka
+    SUBDIR += ttraffic
     SUBDIR += tux-aqfh
     SUBDIR += tuxkart
     SUBDIR += tuxracer
