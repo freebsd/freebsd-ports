@@ -19,15 +19,17 @@ RUN_DEPENDS=	${JAVAVM}:${PORTSDIR}/java/javavmwrapper \
 		${LOCALBASE}/jdk${JDK_VERSION}/bin/java:${PORTSDIR}/java/jdk12-beta
 
 WRKSRC=		${WRKDIR}/DirectConnect${PORTVERSION}
-BUILD_WRKSRC=	${WRKSRC}/classes
+BUILD_WRKSRC=	${WRKDIR}/classes
 PLIST_SUB=	JAR_DIR=${JAR_DIR} \
 		JAR_FILE=${JAR_FILE}
 
 JDK_VERSION=	1.2.2
+JAVAC_CMD=	${LOCALBASE}/jdk${JDK_VERSION}/bin/javac
 JAR_CMD=	${LOCALBASE}/jdk${JDK_VERSION}/bin/jar
 JAVAVM=		${LOCALBASE}/bin/javavm
 JAR_DIR=	share/java/jar/${PORTNAME}
 JAR_MANIFEST=	${FILESDIR}/manifest
+CLASS_SRCDIR=	${WRKSRC}/source
 
 DOC_FILES=	COPYING ChangeLog INSTALL README
 
@@ -38,6 +40,9 @@ post-patch:
 
 # as far as build goes... ;)
 do-build:
+	@${MKDIR} ${BUILD_WRKSRC}
+	@${JAVAC_CMD} -d ${BUILD_WRKSRC} -classpath ${BUILD_WRKSRC} ${CLASS_SRCDIR}/*.java 2>/dev/null
+	@${CP} ${CLASS_SRCDIR}/*.txt ${BUILD_WRKSRC}
 	@cd ${BUILD_WRKSRC} && ${JAR_CMD} -cmf ${JAR_MANIFEST} ${WRKDIR}/${JAR_FILE} *
 
 do-install:
