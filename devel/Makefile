@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.107 1998/05/19 06:59:33 tg Exp $
+# $Id: Makefile,v 1.108 1998/05/22 02:08:40 mph Exp $
 #
 
     SUBDIR += ElectricFence
@@ -41,7 +41,6 @@
     SUBDIR += libtool
     SUBDIR += linux_devel
     SUBDIR += linux_kdump
-    SUBDIR += linuxgdb
     SUBDIR += m4
     SUBDIR += m68kgdb
     SUBDIR += makedepend
