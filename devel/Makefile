@@ -321,6 +321,7 @@
     SUBDIR += gperf
     SUBDIR += gputils
     SUBDIR += gsoap
+    SUBDIR += gstreamer-plugins-gconf
     SUBDIR += gstreamer-plugins-gnomevfs
     SUBDIR += gstreamer-plugins-sdl
     SUBDIR += gtgt
