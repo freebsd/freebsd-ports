@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ssh2
-PORTVERSION=	3.1.0
-PORTREVISION=	1
+PORTVERSION=	3.1.2
 CATEGORIES=	security ipv6
 MASTER_SITES=	ftp://ftp.ssh.com/pub/ssh/ \
 		ftp://sunsite.unc.edu/pub/packages/security/ssh/ \
