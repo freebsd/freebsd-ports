@@ -8,7 +8,7 @@ $FreeBSD$
  # Rule to install gdkconfig.h header file
  #
 -configexecincludedir = $(libdir)/gtk-2.0/include
-+configexecincludedir = $(prefix)/include/gtk-2.0/gdk
++configexecincludedir = $(prefix)/include/gtk-2.0
  
  #note: not gdkconfig.h
  BUILT_SOURCES = stamp-gc-h @REBUILD@ gdkenumtypes.c gdkenumtypes.h
