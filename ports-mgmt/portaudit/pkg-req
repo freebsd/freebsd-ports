@@ -23,5 +23,10 @@ INSTALL)
     echo "${PKG_INFO} is too old, please update port sysutils/pkg_install-devel"
     exit 1
   fi
+
+  if [ "`echo FreeBSD | tr -s .`" != "FreeBSD" ]; then
+    echo "tr(1) is broken."
+    exit 1
+  fi
   ;;
 esac
