@@ -1,0 +1,12 @@
+#!/bin/sh
+# $FreeBSD$
+
+if [ "$2" != "DEINSTALL" ]; then
+    exit
+fi
+
+echo Restoring CLASSPATH in ${PKG_PREFIX}/bin/jumpgis
+
+grep -v '^CLASSPATH=$CLASSPATH:$LIB/pg74jdbc3.jar$' ${PKG_PREFIX}/bin/jumpgis > ${PKG_PREFIX}/bin/jumpgis.new
+cat ${PKG_PREFIX}/bin/jumpgis.new > ${PKG_PREFIX}/bin/jumpgis
+rm ${PKG_PREFIX}/bin/jumpgis.new

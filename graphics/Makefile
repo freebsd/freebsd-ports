@@ -204,6 +204,7 @@
     SUBDIR += jpgtn
     SUBDIR += jslice
     SUBDIR += jumpgis
+    SUBDIR += jumpgis-postgis
     SUBDIR += juno-2
     SUBDIR += k3d
     SUBDIR += kalbum
