@@ -34,6 +34,7 @@ USE_GMAKE=	yes
 MAKE_ENV=	SOMAJOR="${SOMAJOR}" SOMINOR="${SOMINOR}" \
 PLIST_SUB+=	LIBVER="${SOMAJOR}"
 
+post-install:
 .for LIB in DCOP kab kdecore kdesu kdeui kfile kformula khtml kio kjs kmid \
 	    kparts kspell ksycoca kwrite
 	@${LN} -sf ${PREFIX}/lib/lib${LIB}.so.${SOMAJOR} ${PREFIX}/lib/lib${LIB}.so
