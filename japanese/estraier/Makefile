@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	estraier
-PORTVERSION=	1.2.24
+PORTVERSION=	1.2.25
 CATEGORIES=	japanese textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -24,6 +24,9 @@ USE_REINPLACE=	yes
 CONFIGURE_ARGS=	--with-sysqdbm \
 		--enable-dlfilter \
 		--enable-devel
+
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/include"
 
 OPTIONS=	CHASEN "Japanese Morphological Analysis Support" On \
 		MECAB "Part-of-Speech and Morphological Analyzer" On \
@@ -51,8 +54,5 @@ CONFIGURE_ARGS+=	--enable-kakasi
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-O2|${CFLAGS}|' ${WRKSRC}/configure ${WRKSRC}/Makefile.in
-.if defined(NOPORTDOCS)
-	@${REINPLACE_CMD} -e 's|MYDOCS|#|' ${WRKSRC}/Makefile.in
-.endif
 
 .include <bsd.port.post.mk>

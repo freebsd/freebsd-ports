@@ -15,8 +15,8 @@ bin/estxlshtml
 bin/estxview
 libexec/estmerge.cgi
 libexec/estsearch.cgi
-%%PORTDOCS%%share/estraier/COPYING
-%%PORTDOCS%%share/estraier/ChangeLog
+share/estraier/COPYING
+share/estraier/ChangeLog
 share/estraier/estmerge.conf
 share/estraier/estmerge.tmpl
 share/estraier/estmerge.top
@@ -36,8 +36,8 @@ share/estraier/skins/school/estmerge.tmpl
 share/estraier/skins/school/estsearch.tmpl
 share/estraier/skins/stoic/estmerge.tmpl
 share/estraier/skins/stoic/estsearch.tmpl
-%%PORTDOCS%%share/estraier/spex-ja.html
-%%PORTDOCS%%share/estraier/spex.html
+share/estraier/spex-ja.html
+share/estraier/spex.html
 @dirrm share/estraier/skins/stoic
 @dirrm share/estraier/skins/school
 @dirrm share/estraier/skins
