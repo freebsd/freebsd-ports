@@ -3,7 +3,7 @@
 # Date created: 	9 September 1996
 # Whom:			moeding
 #
-# $Id: Makefile,v 1.3 1998/07/03 23:36:18 steve Exp $
+# $Id: Makefile,v 1.4 1999/06/25 04:02:23 billf Exp $
 #
 
 DISTNAME=	lclint-2.4b
@@ -15,7 +15,6 @@ MAINTAINER=	s.moeding@ndh.net
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-NO_PACKAGE=	"doesn't respect $CFLAGS"
 
 do-build:
 	@(cd ${WRKSRC}; ${GMAKE})
