@@ -23,6 +23,8 @@ LIB_DEPENDS=	glib-2.0.0:${PORTSDIR}/devel/glib20 \
 		xml2.5:${PORTSDIR}/textproc/libxml2
 RUN_DEPENDS=	gst-visualise:${PORTSDIR}/multimedia/gstreamer-plugins
 
+IGNORE=		Incompatible with latest gstreamer libraries
+
 USE_X_PREFIX=	yes
 USE_LIBTOOL=	yes
 USE_REINPLACE=	yes
