@@ -8,8 +8,7 @@
 PORTNAME=	scout
 PORTVERSION=	0.70
 CATEGORIES=	www
-MASTER_SITES=	ftp://ftp.armstrong.com/pub/scout/ \
-		http://nerf-herder.net/siege/
+MASTER_SITES=	http://www.cus.org.uk/~dom/distfiles/
 
 MAINTAINER=	d.marks@student.umist.ac.uk
 
