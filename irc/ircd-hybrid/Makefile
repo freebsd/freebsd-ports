@@ -21,6 +21,8 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
 
+BROKEN=		Does not run
+
 #
 # User Configurable Variables
 #
