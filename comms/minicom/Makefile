@@ -15,7 +15,7 @@ MASTER_SITES=	${MASTER_SITE_SUNSITE}  \
 		http://www.clinet.fi/~walker/  \
 		http://www.pp.clinet.fi/~walker/
 MASTER_SITE_SUBDIR=	apps/serialcomm/dialout
-DISTFILES=	${PKGNAME}.src.tar.gz
+DISTFILES=	${DISTNAME}.src${EXTRACT_SUFX}
 
 MAINTAINER=	obrien@FreeBSD.org
 
