@@ -4027,6 +4027,7 @@ linux-flashplugin	ports/www/linux-flashplugin
 linux-gnomelibs	ports/x11/linux-gnomelibs
 linux-gtk	ports/x11-toolkits/linux-gtk
 linux-ibm-jdk13	ports/java/linux-ibm-jdk13
+linux-ibm-jdk14	ports/java/linux-ibm-jdk14
 linux-imlib	ports/graphics/linux-imlib
 linux-j		ports/lang/linux-j
 linux-jpeg	ports/graphics/linux-jpeg
