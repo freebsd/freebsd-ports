@@ -175,6 +175,7 @@ share/gnome/sodipodi/zoom_in.xpm
 share/gnome/sodipodi/zoom_out.xpm
 share/gnome/sodipodi/zoom_page.xpm
 share/gnome/sodipodi/zoom_select.xpm
+share/locale/am/LC_MESSAGES/sodipodi.mo
 share/locale/az/LC_MESSAGES/sodipodi.mo
 share/locale/ca/LC_MESSAGES/sodipodi.mo
 share/locale/cs/LC_MESSAGES/sodipodi.mo
