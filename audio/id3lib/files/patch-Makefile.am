@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- Makefile.am.orig	Fri Sep 15 02:13:51 2000
++++ Makefile.am	Sun Jul 21 15:13:19 2002
+@@ -32,7 +32,7 @@
+ popt_subdir = 
+ endif
+ 
+-SUBDIRS =  . m4 $(popt_subdir) $(zlib_subdir) doc include src examples
++SUBDIRS =  . m4 doc include src examples
+ DIST_SUBDIRS = . m4 popt zlib doc include src examples
+ 
+ INCLUDES = @ID3LIB_DEBUG_FLAGS@
