@@ -145,11 +145,12 @@ post-install:
 	@${ECHO_CMD} '@unexec rmdir %D/lib/xemacs/${PACKAGES_SUBDIR}/* 2>/dev/null || true' >> ${TMPPLIST}
 	@${ECHO_CMD} '@unexec rmdir %D/lib/xemacs/${PACKAGES_SUBDIR} 2>/dev/null || true' >> ${TMPPLIST}
 	@${ECHO_CMD} '@unexec rmdir %D/lib/xemacs 2>/dev/null || true' >> ${TMPPLIST}
-	@${ECHO_MSG} "    This is the set of the packages for xemacs with the xemacs-packages"
-	@${ECHO_MSG} "category. You might be enough only with this package(or if you are non-Latin"
-	@${ECHO_MSG} "people, together with xemacs-mule-packages) for working at XEmacs."
-	@${ECHO_MSG} "    You can also install with running it as root and using the 'Manage Packages'"
-	@${ECHO_MSG} "menu within the 'Options' menu of the menubar. But using this xemacs package"
-	@${ECHO_MSG} "managing, you could not control under ports managing ;-)"
+	@${ECHO_MSG} "    This port installs packages for XEmacs. These packages should be sufficient"
+	@${ECHO_MSG} "for common XEmacs functionality. If you are a non-Latin XEmacs user,installing"
+	@${ECHO_MSG} "the xemacs-mule-packages port instead is recommended."
+	@${ECHO_MSG} "    You can also install these packages by running XEmacs as root and using the"
+	@${ECHO_MSG} "'Manage Packages' menu within the 'Options' menu of the menubar."
+	@${ECHO_MSG} "However,installing the packages using this method defeats the purpose of"
+	@${ECHO_MSG} "installing this port."
 
 .include <bsd.port.mk>
