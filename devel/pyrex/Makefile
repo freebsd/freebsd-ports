@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pyrex
-PORTVERSION=	0.5
+PORTVERSION=	0.6
 CATEGORIES=	devel lang python
 MASTER_SITES=	http://www.cosc.canterbury.ac.nz/~greg/python/Pyrex/
 PKGNAMEPREFIX=	${PYTHONPKGNAMEPREFIX}
@@ -38,7 +38,8 @@ post-install:
 	@${MKDIR} ${DOCSDIR}
 	@cd ${WRKSRC}/Doc && ${INSTALL_DATA} ./* ${DOCSDIR}
 	@${MKDIR} ${EXAMPLESDIR}
-	@cd ${WRKSRC}/Demos && ${INSTALL_DATA} ./* ${EXAMPLESDIR}
+	@${TAR} -C ${WRKSRC}/Demos -cf - . | \
+	 ${TAR} -C ${EXAMPLESDIR} -xf -
 .endif
 
 .include <bsd.port.mk>
