@@ -1,0 +1,16 @@
+bin/ciphon
+lib/%%PYTHON_VERSION%%/site-packages/Ciphon/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/Ciphon/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Ciphon/check.py
+lib/%%PYTHON_VERSION%%/site-packages/Ciphon/check.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Ciphon/config.py
+lib/%%PYTHON_VERSION%%/site-packages/Ciphon/config.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Ciphon/ftplib2.py
+lib/%%PYTHON_VERSION%%/site-packages/Ciphon/ftplib2.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Ciphon/install.py
+lib/%%PYTHON_VERSION%%/site-packages/Ciphon/install.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Ciphon/packagelist.py
+lib/%%PYTHON_VERSION%%/site-packages/Ciphon/packagelist.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Ciphon/xmlparsers.py
+lib/%%PYTHON_VERSION%%/site-packages/Ciphon/xmlparsers.pyc
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/Ciphon
