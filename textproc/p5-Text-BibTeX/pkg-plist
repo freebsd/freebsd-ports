@@ -1,19 +1,19 @@
-%%SITE_PERL%%/mach/Text/BibTeX.pm
-%%SITE_PERL%%/mach/Text/BibTeX/Bib.pm
-%%SITE_PERL%%/mach/Text/BibTeX/BibFormat.pm
-%%SITE_PERL%%/mach/Text/BibTeX/BibSort.pm
-%%SITE_PERL%%/mach/Text/BibTeX/Entry.pm
-%%SITE_PERL%%/mach/Text/BibTeX/File.pm
-%%SITE_PERL%%/mach/Text/BibTeX/Name.pm
-%%SITE_PERL%%/mach/Text/BibTeX/NameFormat.pm
-%%SITE_PERL%%/mach/Text/BibTeX/Structure.pm
-%%SITE_PERL%%/mach/Text/BibTeX/Value.pm
-%%SITE_PERL%%/mach/Text/btool_faq.pod
-%%SITE_PERL%%/mach/auto/Text/BibTeX/.packlist
-%%SITE_PERL%%/mach/auto/Text/BibTeX/BibTeX.bs
-%%SITE_PERL%%/mach/auto/Text/BibTeX/BibTeX.so
-@dirrm %%SITE_PERL%%/mach/Text/BibTeX
-@dirrm %%SITE_PERL%%/mach/auto/Text/BibTeX
+%%SITE_PERL%%/%%PERL_ARCH%%/Text/BibTeX.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Text/BibTeX/Bib.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Text/BibTeX/BibFormat.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Text/BibTeX/BibSort.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Text/BibTeX/Entry.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Text/BibTeX/File.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Text/BibTeX/Name.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Text/BibTeX/NameFormat.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Text/BibTeX/Structure.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Text/BibTeX/Value.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Text/btool_faq.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/BibTeX/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/BibTeX/BibTeX.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/BibTeX/BibTeX.so
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Text/BibTeX
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/BibTeX
 @unexec rmdir %D/%%SITE_PERL%%/Text 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/mach/Text 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/mach/auto/Text 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Text || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Text 2>/dev/null || true
