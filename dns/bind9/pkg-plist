@@ -3,7 +3,9 @@ bin/host
 bin/isc-config.sh
 bin/nslookup
 bin/nsupdate
-include/dns/a6.h
+include/bind9/check.h
+include/bind9/getaddresses.h
+include/bind9/version.h
 include/dns/acl.h
 include/dns/adb.h
 include/dns/byaddr.h
@@ -17,6 +19,7 @@ include/dns/dbtable.h
 include/dns/diff.h
 include/dns/dispatch.h
 include/dns/dnssec.h
+include/dns/ds.h
 include/dns/enumclass.h
 include/dns/enumtype.h
 include/dns/events.h
@@ -32,8 +35,9 @@ include/dns/masterdump.h
 include/dns/message.h
 include/dns/name.h
 include/dns/ncache.h
-include/dns/nxt.h
+include/dns/nsec.h
 include/dns/peer.h
+include/dns/portlist.h
 include/dns/rbt.h
 include/dns/rcode.h
 include/dns/rdata.h
@@ -60,6 +64,7 @@ include/dns/tsig.h
 include/dns/ttl.h
 include/dns/types.h
 include/dns/validator.h
+include/dns/version.h
 include/dns/view.h
 include/dns/xfrin.h
 include/dns/zone.h
@@ -110,6 +115,7 @@ include/isc/offset.h
 include/isc/once.h
 include/isc/ondestroy.h
 include/isc/os.h
+include/isc/parseint.h
 include/isc/platform.h
 include/isc/print.h
 include/isc/quota.h
@@ -126,6 +132,7 @@ include/isc/sha1.h
 include/isc/sockaddr.h
 include/isc/socket.h
 include/isc/stdio.h
+include/isc/stdlib.h
 include/isc/stdtime.h
 include/isc/string.h
 include/isc/symtab.h
@@ -137,6 +144,7 @@ include/isc/time.h
 include/isc/timer.h
 include/isc/types.h
 include/isc/util.h
+include/isc/version.h
 include/isccc/alist.h
 include/isccc/base64.h
 include/isccc/cc.h
@@ -149,9 +157,12 @@ include/isccc/symtab.h
 include/isccc/symtype.h
 include/isccc/types.h
 include/isccc/util.h
+include/isccc/version.h
 include/isccfg/cfg.h
-include/isccfg/check.h
+include/isccfg/grammar.h
 include/isccfg/log.h
+include/isccfg/namedconf.h
+include/isccfg/version.h
 include/lwres/context.h
 include/lwres/int.h
 include/lwres/ipv6.h
@@ -164,14 +175,14 @@ include/lwres/net.h
 include/lwres/netdb.h
 include/lwres/platform.h
 include/lwres/result.h
+include/lwres/version.h
+lib/libbind9.a
 lib/libdns.a
 lib/libisc.a
 lib/libisccc.a
 lib/libisccfg.a
 lib/liblwres.a
 sbin/dnssec-keygen
-sbin/dnssec-makekeyset
-sbin/dnssec-signkey
 sbin/dnssec-signzone
 sbin/lwresd
 sbin/named
@@ -206,6 +217,7 @@ sbin/rndc-confgen
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/misc
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @unexec rm -f %%BIND_DESTETC%%/rndc.conf.sample
+@dirrm include/bind9
 @dirrm include/dns
 @dirrm include/dst
 @unexec rmdir %D/include/isc 2>/dev/null || true

@@ -12,23 +12,33 @@
 # release you can generally build it cleanly from the source - Doug
 
 PORTNAME=	bind9
-PORTVERSION=	9.2.3
+PORTVERSION=	9.3.0
 CATEGORIES=	dns net ipv6
 MASTER_SITES=	${MASTER_SITE_ISC}
 MASTER_SITE_SUBDIR=	bind9/${ISCVERSION}
 DISTNAME=	bind-${ISCVERSION}
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}${EXTRACT_SUFX}.asc
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	DougB@FreeBSD.org
-COMMENT=	Completely new version of the BIND DNS server
+COMMENT=	Completely new version of the BIND DNS suite with updated DNSSEC
 
-# ISC releases things like 9.2.2rc1, which our versioning doesn't like
-ISCVERSION=	9.2.3
+# ISC releases things like 9.3.0rc1, which our versioning doesn't like
+ISCVERSION=	9.3.0
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--localstatedir=/var --disable-linux-caps --disable-threads \
-		--with-randomdev=/dev/random --with-openssl
+CONFIGURE_ARGS=	--localstatedir=/var --disable-linux-caps --with-openssl \
+		--with-randomdev=/dev/random
 
 USE_OPENSSL=	yes
+
+.include <bsd.port.pre.mk>
+
+.if (${OSVERSION} >= 503000)
+CONFIGURE_ARGS+=	--enable-threads
+.else
+CONFIGURE_ARGS+=	--disable-threads
+.endif
 
 .if defined(PORT_REPLACES_BASE_BIND9)
 PKGNAMESUFFIX=	-base
@@ -43,7 +53,7 @@ BIND_DESTETC=	${PREFIX}/etc
 
 PLIST_SUB=	BIND_DESTETC="${BIND_DESTETC}"
 
-MAN1=	dig.1 host.1
+MAN1=	dig.1 host.1 nslookup.1
 MAN3=	lwres.3 lwres_addr_parse.3 lwres_buffer.3 lwres_buffer_add.3 \
 	lwres_buffer_back.3 lwres_buffer_clear.3 lwres_buffer_first.3 \
 	lwres_buffer_forward.3 lwres_buffer_getmem.3 lwres_buffer_getuint16.3 \
@@ -77,16 +87,15 @@ MAN3=	lwres.3 lwres_addr_parse.3 lwres_buffer.3 lwres_buffer_add.3 \
 	lwres_noopresponse_parse.3 lwres_noopresponse_render.3 \
 	lwres_packet.3 lwres_resutil.3 lwres_sethostent.3 \
 	lwres_sethostent_r.3 lwres_string_parse.3
-MAN5=	rndc.conf.5
-MAN8=	dnssec-keygen.8 dnssec-makekeyset.8 dnssec-signkey.8 dnssec-signzone.8 \
-	lwresd.8 named-checkconf.8 named-checkzone.8 named.8 nsupdate.8 \
-	rndc-confgen.8 rndc.8
+MAN5=	named.conf.5 rndc.conf.5
+MAN8=	dnssec-keygen.8 dnssec-signzone.8 lwresd.8 named-checkconf.8 \
+	named-checkzone.8 named.8 nsupdate.8 rndc-confgen.8 rndc.8
 
 post-patch:
 .for FILE in check/named-checkconf.8 named/named.8 nsupdate/nsupdate.8 \
 	rndc/rndc.8
-	@ ${MV} ${WRKSRC}/bin/${FILE} ${WRKSRC}/bin/${FILE}.Dist
-	@ ${SED} -e 's#/etc/named.conf#${BIND_DESTETC}/named.conf#g' \
+	@${MV} ${WRKSRC}/bin/${FILE} ${WRKSRC}/bin/${FILE}.Dist
+	@${SED} -e 's#/etc/named.conf#${BIND_DESTETC}/named.conf#g' \
 		-e 's#/etc/rndc.conf#${BIND_DESTETC}/rndc.conf#g' \
 		${WRKSRC}/bin/${FILE}.Dist > ${WRKSRC}/bin/${FILE}
 .endfor
@@ -104,4 +113,4 @@ post-install:
 
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
