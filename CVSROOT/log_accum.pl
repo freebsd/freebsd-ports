@@ -516,8 +516,6 @@ umask (002);
 # Initialize basic variables
 #
 $PID = getpgrp();
-$state = $STATE_NONE;
-$tag = '';
 $login = $ENV{'USER'} || getlogin || (getpwuid($<))[0] || sprintf("uid#%d",$<);
 @files = split(' ', $ARGV[0]);
 @path = split('/', $files[0]);
@@ -577,41 +575,53 @@ if ($ARGV[0] =~ /Imported sources/) {
 #
 # Iterate over the body of the message collecting information.
 #
-$tag = "HEAD";
+my %added_files;		# Hashes containing lists of files
+my %changed_files;		# that have been changed, keyed
+my %removed_files;		# by branch tag.
+
+my @log_lines;			# The lines of the log message.
+
+my $tag = "HEAD";		# Default branch is HEAD.
+my $state = $STATE_NONE;	# Initially in no state.
+
 while (<STDIN>) {
 	s/[ \t\n]+$//;		# delete trailing space
-	if (/^Revision\/Branch:/) {
-		s,^Revision/Branch:,,;
-		$tag = $_;
-		next;
-	}
-	if (/^[ \t]+Tag:/) {
-		s,^[ \t]+Tag: ,,;
-		$tag = $_;
-		next;
-	}
-	if (/^[ \t]+No tag$/) {
-		$tag = "HEAD";
-		next;
-	}
-	if (/^Modified Files/) { $state = $STATE_CHANGED; next; }
-	if (/^Added Files/)    { $state = $STATE_ADDED;   next; }
-	if (/^Removed Files/)  { $state = $STATE_REMOVED; next; }
-	if (/^Log Message/)    { $state = $STATE_LOG;     next; }
 
-	push (@{ $changed_files{$tag} }, split) if ($state == $STATE_CHANGED);
-	push (@{ $added_files{$tag} },   split) if ($state == $STATE_ADDED);
-	push (@{ $removed_files{$tag} }, split) if ($state == $STATE_REMOVED);
+	# parse the revision tag if it exists.
+	if (/^Revision\/Branch:(.*)/)	{ $tag = $1;	 next; }
+	if (/^[ \t]+Tag: (.*)/)		{ $tag = $1;	 next; }
+	if (/^[ \t]+No tag$/)		{ $tag = "HEAD"; next; }
+
+	# check for a state change, guarding against similar markers
+	# in the log message itself.
+	unless ($state == $STATE_LOG) {
+		if (/^Modified Files/)	{ $state = $STATE_CHANGED; next; }
+		if (/^Added Files/)	{ $state = $STATE_ADDED;   next; }
+		if (/^Removed Files/)	{ $state = $STATE_REMOVED; next; }
+		if (/^Log Message/)	{ $state = $STATE_LOG;	   next; }
+	}
+
+	# don't so anything if we're not in a state.
+	next if $state == $STATE_NONE;
+
+	# collect the log line (ignoring empty template entries)?
 	if ($state == $STATE_LOG) {
-		if (/^PR:$/i ||
+		unless (
+		    /^PR:$/i ||
 		    /^Reviewed by:$/i ||
 		    /^Submitted by:$/i ||
 		    /^Obtained from:$/i ||
 		    /^Approved by:$/i) {
-			next;
+			push @log_lines, $_;
 		}
-		push (@log_lines, $_);
+		next;
 	}
+
+	# otherwise collect information about which files changed.
+	my @files = split;
+	push @{ $changed_files{$tag} },	@files if $state == $STATE_CHANGED;
+	push @{ $added_files{$tag} },	@files if $state == $STATE_ADDED;
+	push @{ $removed_files{$tag} },	@files if $state == $STATE_REMOVED;
 }
 &append_line("$TAGS_FILE.$PID", $tag);
 
