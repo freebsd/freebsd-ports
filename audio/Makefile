@@ -486,6 +486,7 @@
     SUBDIR += xmms-kj
     SUBDIR += xmms-ladspa
     SUBDIR += xmms-liveice
+    SUBDIR += xmms-mac
     SUBDIR += xmms-mad
     SUBDIR += xmms-mailnotify
     SUBDIR += xmms-midi
