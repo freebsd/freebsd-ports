@@ -1,0 +1,22 @@
+Nemesis is a command line, portable "human IP stack".  It can be useful for
+easy injection of packet streams from simple shell scripts.  It supports
+8 protocols (ARP, DNS, ICMP, IGMP, OSPF, RIP, TCP, UDP), and packets can be
+injected on either Layer 2 or Layer 3.
+
+* nemesis-tcp -v -S 192.168.1.1 -D 192.168.2.2 -fS -fA -y 22 -P foo
+  send TCP packet (SYN/ACK) with payload from ascii file 'foo' to target's
+  ssh port from 192.168.1.1 to 192.168.2.2. (-v allows a stdout visual of
+  current injected packet)
+       
+* nemesis-icmp -S 10.10.10.3 -D 10.10.10.1 -G 10.10.10.3 -i 5
+  send ICMP REDIRECT (network) packet from 10.10.10.3 to 10.10.10.1
+  with preferred gateway as source address.  
+
+* nemesis-arp -v -d ne0 -H 0:1:2:3:4:5 -S 10.11.30.5 -D 10.10.15.1
+  send ARP packet through device 'ne0' from hardware source address
+  00:01:02:03:04:05 with IP source address 10.11.30.5 to destination IP
+  address 10.10.15.1 with broadcast destination hardware address.
+  In other words, who-has the mac address of 10.10.15.1, tell 10.11.30.5 
+  - assuming 00:01:02:03:04:05 is the source mac address of our 'ne0' device.
+
+WWW:  http://celerity.bartoli.org/nemesis/
