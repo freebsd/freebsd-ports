@@ -1,0 +1,11 @@
+--- src/exec/dpexec/Makefile.in.orig	Wed Aug 25 22:21:36 1999
++++ src/exec/dpexec/Makefile.in	Wed Sep 15 12:31:03 1999
+@@ -1341,7 +1341,7 @@
+ mostlyclean distclean maintainer-clean
+ 
+ 
+-$(libDPEXEC_a_SOURCES): yuiif.c yuiif.h
++# $(libDPEXEC_a_SOURCES): yuiif.c yuiif.h
+ 
+ .y.h:
+ 	$(YACC) $(YFLAGS) -d $*.y

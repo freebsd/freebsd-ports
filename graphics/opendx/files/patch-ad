@@ -1,0 +1,12 @@
+--- src/exec/dxmods/_compoper1.c.orig	Wed May 26 01:52:52 1999
++++ src/exec/dxmods/_compoper1.c	Thu May 27 10:21:45 1999
+@@ -477,6 +477,9 @@
+ #   define rint(x) ((float)((int)((x) + 0.5)))
+ #   define trunc(x) ((float)((int)(x)))
+ #endif
++#ifdef __FreeBSD__
++#   define trunc(x) ((float)((int)(x)))
++#endif
+ #define SIGN(x) ((x) >= 0? (1): (-1))
+ 
+ 
