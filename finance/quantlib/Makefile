@@ -8,6 +8,7 @@
 
 PORTNAME=	quantlib
 PORTVERSION=	0.3.5
+PORTREVISION=	1
 CATEGORIES=	finance
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -18,23 +19,22 @@ COMMENT=	A comprehensive software framework for quantitative finance
 
 WRKSRC=		${WRKDIR}/QuantLib-${PORTVERSION}
 
-USE_REINPLACE=	yes
 USE_GCC=	3.3
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	LDFLAGS="${PTHREAD_LIBS}"
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS}" LDFLAGS="${PTHREAD_LIBS}"
 INSTALLS_SHLIB=	yes
 
-MAN1=	quantlib-config.1 quantlib-test-suite.1
-PLIST_FILES=	bin/quantlib-config \
-		lib/libQuantLib.a \
-		lib/libQuantLib.so \
-		lib/libQuantLib.so.0 \
-		share/aclocal/quantlib.m4
+MAN1=		quantlib-config.1 quantlib-test-suite.1
+
+post-patch:
+	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
+		's|: install-dist_lispLISP|:|g ; \
+		 s|@CPPUNIT_FOUND_TRUE@|#|g ; \
+		 s|@CPPUNIT_FOUND_FALSE@||g'
 
 post-install:
-	@${FIND} ${PREFIX}/include/ql -type f | \
-		${SED} 's,^${PREFIX}/,,' >> ${TMPPLIST}
-	@${FIND} ${PREFIX}/include/ql -type d | ${SORT} -r | \
-		${SED} 's,^${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
+	${INSTALL_DATA} ${WRKSRC}/quantlib.el ${PREFIX}/share/emacs/site-lisp
 
 .include <bsd.port.mk>
