@@ -1,12 +1,11 @@
---- fonts/Imakefile.orig        Tue Feb 14 00:35:39 1995
-+++ fonts/Imakefile     Sun Nov  3 01:19:28 1996
+--- fonts/Imakefile.orig	Mon Nov  4 05:07:24 1996
++++ fonts/Imakefile	Mon Nov  4 05:07:42 1996
 @@ -2,13 +2,14 @@
  
- XCOMM $Id: Imakefile,v 1.2 1995/02/14 08:35:32 ygz Exp $
  
--OBJS = FontObj(gb16st) FontObj(hku16et)
-+#OBJS =        FontObj(gb16st) FontObj(hku16et)
-+OBJS = FontObj(hku16et)
+-OBJS =	FontObj(gb16st) FontObj(hku16et)
++#OBJS =	FontObj(gb16st) FontObj(hku16et)
++OBJS =	FontObj(hku16et)
  
  FONTINSTDIR = $(FONTDIR)/chinese
  
