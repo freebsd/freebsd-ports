@@ -3,7 +3,7 @@
 # Date created:		Sat Nov  8 10:46:42 CET 1997
 # Whom:			andreas
 #
-# $Id: Makefile,v 1.9 1998/01/31 10:22:48 andreas Exp $
+# $Id: Makefile,v 1.10 1998/02/02 17:51:33 asami Exp $
 #
 
 DISTNAME=	tclplug20-src
@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://ftp.sunlabs.com/pub/tcl/plugin/
 
 MAINTAINER=	andreas@FreeBSD.ORG
 
+BUILD_DEPENDS=	netscape:${PORTSDIR}/www/netscape4-communicator
 RUN_DEPENDS=	netscape:${PORTSDIR}/www/netscape4-communicator
 
 WRKSRC=		${WRKDIR}/tclplugin2.0/plugin2.0/unix
