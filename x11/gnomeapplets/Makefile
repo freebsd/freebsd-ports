@@ -21,6 +21,9 @@ LIB_DEPENDS=	gtop.1:${PORTSDIR}/devel/libgtop
 
 .if ${ARCH} != "i386"
 EXTRA_PATCHES=	${FILESDIR}/extra-patch-Makefile.in
+PLIST_SUB=	BATTERY="@comment "
+.else
+PLIST_SUB=	BATTERY=""
 .endif
 
 USE_X_PREFIX=	yes

@@ -1,6 +1,6 @@
 bin/another_clock_applet
 bin/asclock_applet
-bin/battery_applet
+%%BATTERY%%bin/battery_applet
 bin/cdplayer_applet
 bin/charpick_applet
 bin/clockmail_applet
@@ -30,7 +30,7 @@ bin/webcontrol_applet
 bin/whereami_applet
 etc/CORBA/servers/another_clock_applet.gnorba
 etc/CORBA/servers/asclock_applet.gnorba
-etc/CORBA/servers/battery_applet.gnorba
+%%BATTERY%%etc/CORBA/servers/battery_applet.gnorba
 etc/CORBA/servers/cdplayer_applet.gnorba
 etc/CORBA/servers/charpick_applet.gnorba
 etc/CORBA/servers/clockmail_applet.gnorba
@@ -64,7 +64,7 @@ share/gnome/applets/Clocks/another_clock_applet.desktop
 share/gnome/applets/Clocks/asclock_applet.desktop
 share/gnome/applets/Clocks/clockmail_applet.desktop
 share/gnome/applets/Clocks/jbc_applet.desktop
-share/gnome/applets/Monitors/battery_applet.desktop
+%%BATTERY%%share/gnome/applets/Monitors/battery_applet.desktop
 share/gnome/applets/Monitors/cpuload_applet.desktop
 share/gnome/applets/Monitors/cpumemusage_applet.desktop
 share/gnome/applets/Monitors/diskusage_applet.desktop
@@ -451,54 +451,54 @@ share/gnome/help/asclock_applet/ja/figures/asclock_settings.png
 share/gnome/help/asclock_applet/ja/index.html
 share/gnome/help/asclock_applet/ja/ln10.html
 share/gnome/help/asclock_applet/ja/topic.dat
-share/gnome/help/battery_applet/C/battery.sgml
-share/gnome/help/battery_applet/C/battery_applet.sgml
-share/gnome/help/battery_applet/C/figures/battery-applet-ac-offline-25-20.png
-share/gnome/help/battery_applet/C/figures/battery-applet-ac-online-25-20.png
-share/gnome/help/battery_applet/C/figures/battery-applet-graph.png
-share/gnome/help/battery_applet/C/figures/battery-applet-properties-general.png
-share/gnome/help/battery_applet/C/figures/battery-applet-properties-graph.png
-share/gnome/help/battery_applet/C/figures/battery-applet-properties-messages.png
-share/gnome/help/battery_applet/C/figures/battery-applet-properties-readout.png
-share/gnome/help/battery_applet/C/index.html
-share/gnome/help/battery_applet/C/ln7.html
-share/gnome/help/battery_applet/C/topic.dat
-share/gnome/help/battery_applet/es/LEGALNOTICE.html
-share/gnome/help/battery_applet/es/battery.sgml
-share/gnome/help/battery_applet/es/battery_applet.sgml
-share/gnome/help/battery_applet/es/figures/battery-applet-ac-offline-25-20.png
-share/gnome/help/battery_applet/es/figures/battery-applet-ac-online-25-20.png
-share/gnome/help/battery_applet/es/figures/battery-applet-graph.png
-share/gnome/help/battery_applet/es/figures/battery-applet-properties-general.png
-share/gnome/help/battery_applet/es/figures/battery-applet-properties-graph.png
-share/gnome/help/battery_applet/es/figures/battery-applet-properties-messages.png
-share/gnome/help/battery_applet/es/figures/battery-applet-properties-readout.png
-share/gnome/help/battery_applet/es/index.html
-share/gnome/help/battery_applet/es/topic.dat
-share/gnome/help/battery_applet/it/battery.sgml
-share/gnome/help/battery_applet/it/battery_applet.sgml
-share/gnome/help/battery_applet/it/figures/battery-applet-ac-offline-25-20.png
-share/gnome/help/battery_applet/it/figures/battery-applet-ac-online-25-20.png
-share/gnome/help/battery_applet/it/figures/battery-applet-graph.png
-share/gnome/help/battery_applet/it/figures/battery-applet-properties-general.png
-share/gnome/help/battery_applet/it/figures/battery-applet-properties-graph.png
-share/gnome/help/battery_applet/it/figures/battery-applet-properties-messages.png
-share/gnome/help/battery_applet/it/figures/battery-applet-properties-readout.png
-share/gnome/help/battery_applet/it/index.html
-share/gnome/help/battery_applet/it/ln11.html
-share/gnome/help/battery_applet/it/topic.dat
-share/gnome/help/battery_applet/ja/battery.sgml
-share/gnome/help/battery_applet/ja/battery_applet.sgml
-share/gnome/help/battery_applet/ja/figures/battery-applet-ac-offline-25-20.png
-share/gnome/help/battery_applet/ja/figures/battery-applet-ac-online-25-20.png
-share/gnome/help/battery_applet/ja/figures/battery-applet-graph.png
-share/gnome/help/battery_applet/ja/figures/battery-applet-properties-general.png
-share/gnome/help/battery_applet/ja/figures/battery-applet-properties-graph.png
-share/gnome/help/battery_applet/ja/figures/battery-applet-properties-messages.png
-share/gnome/help/battery_applet/ja/figures/battery-applet-properties-readout.png
-share/gnome/help/battery_applet/ja/index.html
-share/gnome/help/battery_applet/ja/ln10.html
-share/gnome/help/battery_applet/ja/topic.dat
+%%BATTERY%%share/gnome/help/battery_applet/C/battery.sgml
+%%BATTERY%%share/gnome/help/battery_applet/C/battery_applet.sgml
+%%BATTERY%%share/gnome/help/battery_applet/C/figures/battery-applet-ac-offline-25-20.png
+%%BATTERY%%share/gnome/help/battery_applet/C/figures/battery-applet-ac-online-25-20.png
+%%BATTERY%%share/gnome/help/battery_applet/C/figures/battery-applet-graph.png
+%%BATTERY%%share/gnome/help/battery_applet/C/figures/battery-applet-properties-general.png
+%%BATTERY%%share/gnome/help/battery_applet/C/figures/battery-applet-properties-graph.png
+%%BATTERY%%share/gnome/help/battery_applet/C/figures/battery-applet-properties-messages.png
+%%BATTERY%%share/gnome/help/battery_applet/C/figures/battery-applet-properties-readout.png
+%%BATTERY%%share/gnome/help/battery_applet/C/index.html
+%%BATTERY%%share/gnome/help/battery_applet/C/ln7.html
+%%BATTERY%%share/gnome/help/battery_applet/C/topic.dat
+%%BATTERY%%share/gnome/help/battery_applet/es/LEGALNOTICE.html
+%%BATTERY%%share/gnome/help/battery_applet/es/battery.sgml
+%%BATTERY%%share/gnome/help/battery_applet/es/battery_applet.sgml
+%%BATTERY%%share/gnome/help/battery_applet/es/figures/battery-applet-ac-offline-25-20.png
+%%BATTERY%%share/gnome/help/battery_applet/es/figures/battery-applet-ac-online-25-20.png
+%%BATTERY%%share/gnome/help/battery_applet/es/figures/battery-applet-graph.png
+%%BATTERY%%share/gnome/help/battery_applet/es/figures/battery-applet-properties-general.png
+%%BATTERY%%share/gnome/help/battery_applet/es/figures/battery-applet-properties-graph.png
+%%BATTERY%%share/gnome/help/battery_applet/es/figures/battery-applet-properties-messages.png
+%%BATTERY%%share/gnome/help/battery_applet/es/figures/battery-applet-properties-readout.png
+%%BATTERY%%share/gnome/help/battery_applet/es/index.html
+%%BATTERY%%share/gnome/help/battery_applet/es/topic.dat
+%%BATTERY%%share/gnome/help/battery_applet/it/battery.sgml
+%%BATTERY%%share/gnome/help/battery_applet/it/battery_applet.sgml
+%%BATTERY%%share/gnome/help/battery_applet/it/figures/battery-applet-ac-offline-25-20.png
+%%BATTERY%%share/gnome/help/battery_applet/it/figures/battery-applet-ac-online-25-20.png
+%%BATTERY%%share/gnome/help/battery_applet/it/figures/battery-applet-graph.png
+%%BATTERY%%share/gnome/help/battery_applet/it/figures/battery-applet-properties-general.png
+%%BATTERY%%share/gnome/help/battery_applet/it/figures/battery-applet-properties-graph.png
+%%BATTERY%%share/gnome/help/battery_applet/it/figures/battery-applet-properties-messages.png
+%%BATTERY%%share/gnome/help/battery_applet/it/figures/battery-applet-properties-readout.png
+%%BATTERY%%share/gnome/help/battery_applet/it/index.html
+%%BATTERY%%share/gnome/help/battery_applet/it/ln11.html
+%%BATTERY%%share/gnome/help/battery_applet/it/topic.dat
+%%BATTERY%%share/gnome/help/battery_applet/ja/battery.sgml
+%%BATTERY%%share/gnome/help/battery_applet/ja/battery_applet.sgml
+%%BATTERY%%share/gnome/help/battery_applet/ja/figures/battery-applet-ac-offline-25-20.png
+%%BATTERY%%share/gnome/help/battery_applet/ja/figures/battery-applet-ac-online-25-20.png
+%%BATTERY%%share/gnome/help/battery_applet/ja/figures/battery-applet-graph.png
+%%BATTERY%%share/gnome/help/battery_applet/ja/figures/battery-applet-properties-general.png
+%%BATTERY%%share/gnome/help/battery_applet/ja/figures/battery-applet-properties-graph.png
+%%BATTERY%%share/gnome/help/battery_applet/ja/figures/battery-applet-properties-messages.png
+%%BATTERY%%share/gnome/help/battery_applet/ja/figures/battery-applet-properties-readout.png
+%%BATTERY%%share/gnome/help/battery_applet/ja/index.html
+%%BATTERY%%share/gnome/help/battery_applet/ja/ln10.html
+%%BATTERY%%share/gnome/help/battery_applet/ja/topic.dat
 share/gnome/help/cdplayer_applet/C/cdplayer.sgml
 share/gnome/help/cdplayer_applet/C/cdplayer_applet.sgml
 share/gnome/help/cdplayer_applet/C/figures/cdplayer_applet.png
@@ -1174,10 +1174,10 @@ share/gnome/omf/gnome-applets/anotherclock_applet-uk.omf
 share/gnome/omf/gnome-applets/asclock_applet-C.omf
 share/gnome/omf/gnome-applets/asclock_applet-it.omf
 share/gnome/omf/gnome-applets/asclock_applet-ja.omf
-share/gnome/omf/gnome-applets/battery_applet-C.omf
-share/gnome/omf/gnome-applets/battery_applet-es.omf
-share/gnome/omf/gnome-applets/battery_applet-it.omf
-share/gnome/omf/gnome-applets/battery_applet-ja.omf
+%%BATTERY%%share/gnome/omf/gnome-applets/battery_applet-C.omf
+%%BATTERY%%share/gnome/omf/gnome-applets/battery_applet-es.omf
+%%BATTERY%%share/gnome/omf/gnome-applets/battery_applet-it.omf
+%%BATTERY%%share/gnome/omf/gnome-applets/battery_applet-ja.omf
 share/gnome/omf/gnome-applets/cdplayer_applet-C.omf
 share/gnome/omf/gnome-applets/cdplayer_applet-es.omf
 share/gnome/omf/gnome-applets/cdplayer_applet-it.omf
@@ -1306,7 +1306,7 @@ share/gnome/pixmaps/gkb/us.png
 share/gnome/pixmaps/gkb/uy.png
 share/gnome/pixmaps/gkb/yu.png
 share/gnome/pixmaps/gnome-another-clock.png
-share/gnome/pixmaps/gnome-battery.png
+%%BATTERY%%share/gnome/pixmaps/gnome-battery.png
 share/gnome/pixmaps/gnome-clockmail.png
 share/gnome/pixmaps/gnome-cpu-mem.png
 share/gnome/pixmaps/gnome-cpu.png
@@ -1802,19 +1802,19 @@ share/locale/zh_TW/LC_MESSAGES/gnome-applets.mo
 @dirrm share/gnome/help/cdplayer_applet/C/figures
 @dirrm share/gnome/help/cdplayer_applet/C
 @dirrm share/gnome/help/cdplayer_applet
-@dirrm share/gnome/help/battery_applet/ja/stylesheet-images
-@dirrm share/gnome/help/battery_applet/ja/figures
-@dirrm share/gnome/help/battery_applet/ja
-@dirrm share/gnome/help/battery_applet/it/stylesheet-images
-@dirrm share/gnome/help/battery_applet/it/figures
-@dirrm share/gnome/help/battery_applet/it
-@dirrm share/gnome/help/battery_applet/es/stylesheet-images
-@dirrm share/gnome/help/battery_applet/es/figures
-@dirrm share/gnome/help/battery_applet/es
-@dirrm share/gnome/help/battery_applet/C/stylesheet-images
-@dirrm share/gnome/help/battery_applet/C/figures
-@dirrm share/gnome/help/battery_applet/C
-@dirrm share/gnome/help/battery_applet
+%%BATTERY%%@dirrm share/gnome/help/battery_applet/ja/stylesheet-images
+%%BATTERY%%@dirrm share/gnome/help/battery_applet/ja/figures
+%%BATTERY%%@dirrm share/gnome/help/battery_applet/ja
+%%BATTERY%%@dirrm share/gnome/help/battery_applet/it/stylesheet-images
+%%BATTERY%%@dirrm share/gnome/help/battery_applet/it/figures
+%%BATTERY%%@dirrm share/gnome/help/battery_applet/it
+%%BATTERY%%@dirrm share/gnome/help/battery_applet/es/stylesheet-images
+%%BATTERY%%@dirrm share/gnome/help/battery_applet/es/figures
+%%BATTERY%%@dirrm share/gnome/help/battery_applet/es
+%%BATTERY%%@dirrm share/gnome/help/battery_applet/C/stylesheet-images
+%%BATTERY%%@dirrm share/gnome/help/battery_applet/C/figures
+%%BATTERY%%@dirrm share/gnome/help/battery_applet/C
+%%BATTERY%%@dirrm share/gnome/help/battery_applet
 @dirrm share/gnome/help/asclock_applet/ja/stylesheet-images
 @dirrm share/gnome/help/asclock_applet/ja/figures
 @dirrm share/gnome/help/asclock_applet/ja
