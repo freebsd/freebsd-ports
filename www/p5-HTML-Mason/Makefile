@@ -16,7 +16,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	dsh@vlink.ru
 
 RUN_DEPENDS=	${SITE_PERL}/MLDBM.pm:${PORTSDIR}/databases/p5-MLDBM \
-		${SITE_PERL}/Params/Validate.pm:${PORTSDIR}/devel/p5-Params-Validat
+		${SITE_PERL}/Params/Validate.pm:${PORTSDIR}/devel/p5-Params-Validate
 
 IS_INTERACTIVE=	yes
 PERL_CONFIGURE=	yes
