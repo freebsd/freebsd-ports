@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	yaz
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.2
 CATEGORIES=	net pear
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
