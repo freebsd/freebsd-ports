@@ -1,19 +1,19 @@
-*** Makefile.orig	Mon Mar  3 19:52:50 2003
---- Makefile	Mon Mar  3 19:59:55 2003
+*** Makefile.orig	Thu Aug 28 08:22:41 2003
+--- Makefile	Thu Aug 28 08:22:54 2003
 *************** endif
-*** 162,168 ****
+*** 187,193 ****
   
   # extra targets
   addpasswd: $(OBJDIR)/addpasswd.o
-! 	$(CXX) -o $(OBJDIR)/addpasswd $(OBJDIR)/addpasswd.o $(LDFLAGS) -l$(PTLIB_BASE)$(LIB_TYPE) -lpthread -lssl -lexpat
+! 	$(CXX) -o $(OBJDIR)/addpasswd $(CFLAGS) $(OBJDIR)/addpasswd.o $(LDFLAGS) -l$(PTLIB_BASE)$(LIB_TYPE) $(ENDLDLIBS) $(ENDLDFLAGS)
   
   doc:	docs/manual.sgml
   	cd docs; sgml2html manual.sgml; \
---- 162,168 ----
+--- 187,193 ----
   
   # extra targets
   addpasswd: $(OBJDIR)/addpasswd.o
-! 	$(CXX) -o $(OBJDIR)/addpasswd $(OBJDIR)/addpasswd.o $(LDFLAGS) -l$(PTLIB_BASE)$(LIB_TYPE)_s -pthread -lssl -lcrypto -lexpat
+! 	$(CXX) -o $(OBJDIR)/addpasswd $(CFLAGS) $(OBJDIR)/addpasswd.o $(LDFLAGS) -l$(PTLIB_BASE)$(LIB_TYPE)_s $(ENDLDLIBS) $(ENDLDFLAGS)
   
   doc:	docs/manual.sgml
   	cd docs; sgml2html manual.sgml; \
