@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xmradio
-PORTVERSION=	0.8
+PORTVERSION=	1.0
 CATEGORIES=	audio
 MASTER_SITES=	http://www.rostock.zgdv.de/~runge/radio/
 
