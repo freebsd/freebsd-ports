@@ -49,16 +49,24 @@
   
   # paths for installation in user's home-directory.
 ***************
-*** 55,60 ****
---- 55,62 ----
-  XPMLIB 			= -L$(USRLIBDIR) -lXpm
-  XPMINCLUDE		= -I $(INCDIR)
+*** 53,59 ****
   
-+ CFLAGS += -DNO_CUSERID
-+ 
+  # xpat2 needs to know where the xpm library resides (if needed)
+  XPMLIB 			= -L$(USRLIBDIR) -lXpm
+! XPMINCLUDE		= -I $(INCDIR)
+  
   # *****************************************************************************
   # I hope you don't need to change anything below this point
+--- 53,61 ----
+  
+  # xpat2 needs to know where the xpm library resides (if needed)
+  XPMLIB 			= -L$(USRLIBDIR) -lXpm
+! XPMINCLUDE		= -I$(INCDIR)/X11
+! 
+! CFLAGS += -DNO_CUSERID
+  
   # *****************************************************************************
+  # I hope you don't need to change anything below this point
 ***************
 *** 181,188 ****
   	    chmod 755 $(XPATLIBDIR)/$$f; \
