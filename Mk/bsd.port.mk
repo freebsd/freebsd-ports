@@ -337,12 +337,25 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #
 # USE_FREETYPE	- Says that the port uses the freetype print libraries.
 # USE_MESA		- Says that the port uses the Mesa libraries.
-# USE_MOTIF		- Says that the port uses the Motif toolkit.  Implies USE_XPM.
+# USE_MOTIF		- Says that the port uses a Motif toolkit.  Implies USE_XPM.
+# NO_OPENMOTIF		- Says that the port uses a custom Motif toolkit 
+#			  instead of Openmotif.
+#			  Used only when USE_MOTIF is set.
+# WANT_LESSTIF		- Says that the port uses Lesstif as Motif toolkit.
+#			  Used only when USE_MOTIF is set.  Implies
+#			  NO_OPENMOTIF.
 # USE_SDL		- Says that the port uses the sdl libraries.
 # USE_XPM		- Says that the port uses the xpm graphics libraries.
 ##
 # USE_OPENSSL	- Says that the port relies on the OpenSSL package.
 #				  Default: not set.
+##
+#
+# USE_OPENLDAP		- Says that the port uses the OpenLDAP libraries
+#					  Implies: WANT_OPENLDAP_VER?=21
+# WANT_OPENLDAP_VER	- Legal values are: 12, 20, 21, and 22
+#					  If set to an unkown value, the port is marked BROKEN.
+#
 ##
 # USE_JAVA		- Says that the port relies on the Java language.
 #				  Implies inclusion of bsd.java.mk.  (Also see
@@ -357,6 +370,11 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  Implies inclusion of bsd.ruby.mk.  (Also see
 #				  that file for more information on USE_RUBY_*).
 #				  Default: not set.
+# USE_GNUSTEP		- Says that the port relies on the GNUstep system.
+#			  Implies the inclusion of bsd.gnustep.mk.
+#			  (Also see that file for more information on
+#			  USE_GNUSTEP_*).
+#			  Default: not set.
 ##
 # USE_GNOME		- A list of the Gnome dependencies the port has (e.g.,
 #				  glib12, gtk12).  Implies that the port needs Gnome.
@@ -378,6 +396,35 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # USE_LINUX			- Set to yes to say the port needs emulators/linux_base.
 #					  Default: not set.
 # USE_LINUX_PREFIX	- controls the action of PREFIX (see above).
+#
+#
+# USE_MYSQL			- Add MySQL client dependency.
+#					  If no version is given (by the maintainer via the port or 
+#					  by the user via defined variable), try to find the 
+#					  currently installed version.  Fall back to default if 
+#					  necessary (MySQL4.0 = 40).
+#
+# DEFAULT_MYSQL_VER	- MySQL default version. Can be overriden within a port. 
+#					  Default: 40.
+#
+# WANT_MYSQL_VER 	- Maintainer can set an arbitrary version of MySQL by 
+#					  using it.
+#
+# BROKEN_WITH_MYSQL	- This variable can be defined if the ports doesn't support 
+#					  one or more version of MySQL.
+#
+# MYSQL_VER			- Internal variable for MySQL version.
+#
+# WITH_MYSQL_VER	- User defined variable to set MySQL version.
+#
+# USE_RC_SUBR		- Says the ports startup/shutdown script uses the common
+#			  	routines found in etc/rc.subr and may need to
+#				depend on the sysutils/rc_subr port.
+#
+# RC_SUBR		- Set to path of rc.subr, defaults to /etc/rc.subr on
+#				5.x and to ${PREFIX}/etc/rc.subr on non-rcNG
+#				systems.
+#
 #
 # Dependency checking.  Use these if your port requires another port
 # not in the list above.  (Default: empty.)
@@ -980,49 +1027,32 @@ PERL_LEVEL=0
 .endif # !defined(PERL_LEVEL) && defined(PERL_VERSION)
 
 .if defined(USE_OPENSSL)
-.if ${OSVERSION} >= 400014
-.if !exists(/usr/lib/libcrypto.so)
-.BEGIN:
-	@${ECHO_CMD} "This port requires the OpenSSL library, which is part of"
-	@${ECHO_CMD} "the FreeBSD crypto distribution but not installed on your"
-	@${ECHO_CMD} "machine. Please see the \"OpenSSL\" section in the handbook"
-	@${ECHO_CMD} "(at \"http://www.FreeBSD.org/doc/en_US.ISO8859-1/books/handbook/openssl.html\", for instance)"
-	@${ECHO_CMD} "for instructions on how to obtain and install the FreeBSD"
-	@${ECHO_CMD} "OpenSSL distribution."
-	@${FALSE}
+.include "${PORTSDIR}/Mk/bsd.openssl.mk"
+.endif
+
+.if defined(USE_OPENLDAP_VER)
+USE_OPENLDAP?=		yes
+WANT_OPENLDAP_VER=	${USE_OPENLDAP_VER}
+.endif
+
+.if defined(USE_OPENLDAP)
+WANT_OPENLDAP_VER?=	21
+.if ${WANT_OPENLDAP_VER} == 12
+LIB_DEPENDS+=		ldap.1:${PORTSDIR}/net/openldap12
+.elif ${WANT_OPENLDAP_VER} == 20 || ${WANT_OPENLDAP_VER} == 21 || \
+		${WANT_OPENLDAP_VER} == 22
+LIB_DEPENDS+=		ldap.2:${PORTSDIR}/net/openldap${WANT_OPENLDAP_VER}-client
 .else
-OPENSSLBASE=	/usr
-OPENSSLDIR=		/etc/ssl
-# OpenSSL in the base system may not include IDEA for patent licensing reasons.
-.if defined(MAKE_IDEA) && !defined(OPENSSL_IDEA)
-OPENSSL_IDEA=	${MAKE_IDEA}
-.else
-OPENSSL_IDEA?=	NO
+BROKEN=		"unknown OpenLDAP version: ${WANT_OPENLDAP_VER}"
 .endif
-.if ${OPENSSL_IDEA} == "NO"
-# XXX This is a hack to work around the fact that /etc/make.conf clobbers
-#     our CFLAGS. It might not be enough for all future ports.
-.if defined(HAS_CONFIGURE)
-CFLAGS+=		-DNO_IDEA
-.else
-OPENSSL_CFLAGS+=-DNO_IDEA
-.endif
-MAKE_ARGS+=		OPENSSL_CFLAGS="${OPENSSL_CFLAGS}"
-.endif
-.endif
-.else
-LIB_DEPENDS+=	crypto.2:${PORTSDIR}/security/openssl
-OPENSSLBASE?=	${LOCALBASE}
-OPENSSLDIR?=	${OPENSSLBASE}/openssl
-.endif
-OPENSSLLIB=		${OPENSSLBASE}/lib
-OPENSSLINC=		${OPENSSLBASE}/include
-MAKE_ENV+=		OPENSSLLIB=${OPENSSLLIB} OPENSSLINC=${OPENSSLINC} \
-				OPENSSLBASE=${OPENSSLBASE} OPENSSLDIR=${OPENSSLDIR}
 .endif
 
 .if defined(EMACS_PORT_NAME)
 .include "${PORTSDIR}/Mk/bsd.emacs.mk"
+.endif
+
+.if defined(USE_GNUSTEP)
+.include "${PORTSDIR}/Mk/bsd.gnustep.mk"
 .endif
 
 .if defined(USE_PYTHON)
@@ -1369,6 +1399,11 @@ CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 .endif
 .endif
 
+.if defined(USE_RC_SUBR)
+RUN_DEPENDS+=	${LOCALBASE}/etc/rc.subr:${PORTSDIR}/sysutils/rc_subr
+RC_SUBR=	${LOCALBASE}/etc/rc.subr
+.endif
+
 .if defined(USE_LINUX)
 RUN_DEPENDS+=	${LINUXBASE}/etc/redhat-release:${PORTSDIR}/emulators/linux_base
 .endif
@@ -1382,6 +1417,10 @@ MAKE_ENV+=		SDL_CONFIG=${SDL_CONFIG}
 
 .if defined(USE_MOTIF)
 USE_XPM=			yes
+.if defined(WANT_LESSTIF)
+LIB_DEPENDS+=		Xm:${PORTSDIR}/x11-toolkits/lesstif
+NO_OPENMOTIF=		yes
+.endif
 .if !defined(NO_OPENMOTIF)
 LIB_DEPENDS+=		Xm.3:${PORTSDIR}/x11-toolkits/open-motif
 .endif
@@ -1482,6 +1521,43 @@ BUILD_DEPENDS+=	${PERL5}:${PORTSDIR}/lang/${PERL_PORT}
 RUN_DEPENDS+=	${PERL5}:${PORTSDIR}/lang/${PERL_PORT}
 .endif
 .endif
+
+.if defined(USE_MYSQL)
+DEFAULT_MYSQL_VER?=	40
+# MySQL client version currently supported.
+MYSQL323_LIBVER=10
+MYSQL40_LIBVER=		12
+MYSQL41_LIBVER=		14
+
+# Setting/finding MySQL version we want.
+.if defined(WANT_MYSQL_VER)
+MYSQL_VER=	${WANT_MYSQL_VER}
+.elif defined(WITH_MYSQL_VER)
+MYSQL_VER=	${WITH_MYSQL_VER}
+.elif exists(${LOCALBASE}/lib/mysql/libmysqlclient.so.${MYSQL_323_LIBVER})
+MYSQL_VER=	323
+.elif exists(${LOCALBASE}/lib/mysql/libmysqlclient.so.${MYSQL40_LIBVER})
+MYSQL_VER=	40
+.elif exists(${LOCALBASE}/lib/mysql/libmysqlclient.so.${MYSQL41_LIBVER})
+MYSQL_VER=	41
+.else
+MYSQL_VER=	${DEFAULT_MYSQL_VER}
+.endif # WANT_MYSQL
+
+# And now we are checking if we can use it
+.if exists(${PORTSDIR}/databases/mysql${MYSQL_VER}-client)
+.if defined(BROKEN_WITH_MYSQL)
+.	for VER in ${BROKEN_WITH_MYSQL}
+.		if (${MYSQL_VER} == "${VER}")
+BROKEN=		"Doesn't work with MySQL version : ${MYSQL_VER} (Doesn't support MySQL ${BROKEN_WITH_MYSQL})"
+.		endif
+.	endfor
+.endif # BROKEN_WITH_MYSQL
+LIB_DEPENDS+=	mysqlclient.${MYSQL${MYSQL_VER}_LIBVER}:${PORTSDIR}/databases/mysql${MYSQL_VER}-client
+.else
+BROKEN=		"unknown MySQL version: ${MYSQL_VER}"
+.endif # Check for correct libs
+.endif # USE_MYSQL
 
 .if defined(USE_XLIB)
 .if ${XFREE86_VERSION} == 3
@@ -1702,13 +1778,19 @@ PORTDIRNAME?=	${_PORTDIRNAME}
 PKGORIGIN?=		${PKGCATEGORY}/${PORTDIRNAME}
 .endif
 
-.if ${OSVERSION} < 460102 && ${PKGORIGIN} != "sysutils/pkg_install" \
-	&& exists(${LOCALBASE}/sbin/pkg_info)
+.if ${OSVERSION} < 460102 && ${PKGORIGIN} != "sysutils/pkg_install"
 BUILD_DEPENDS+=	${LOCALBASE}/sbin/pkg_info:${PORTSDIR}/sysutils/pkg_install
+.if exists(${LOCALBASE}/sbin/pkg_info)
 PKG_CMD?=		${LOCALBASE}/sbin/pkg_create
 PKG_ADD?=		${LOCALBASE}/sbin/pkg_add
 PKG_DELETE?=	${LOCALBASE}/sbin/pkg_delete
 PKG_INFO?=		${LOCALBASE}/sbin/pkg_info
+.else
+PKG_CMD?=		/usr/sbin/pkg_create
+PKG_ADD?=		/usr/sbin/pkg_add
+PKG_DELETE?=	/usr/sbin/pkg_delete
+PKG_INFO?=		/usr/sbin/pkg_info
+.endif
 .else
 PKG_CMD?=		/usr/sbin/pkg_create
 PKG_ADD?=		/usr/sbin/pkg_add
@@ -3028,6 +3110,7 @@ delete-package-list: delete-package-links-list
 check-already-installed:
 .if !defined(NO_PKG_REGISTER) && !defined(FORCE_PKG_REGISTER)
 		@${ECHO_MSG} "===>  Checking if ${PKGORIGIN} already installed"
+		@${MKDIR} ${PKG_DBDIR}
 		@already_installed=`${PKG_INFO} -q -O ${PKGORIGIN} 2> /dev/null`; \
 		if [ -n "$${already_installed}" ]; then \
 				for p in $${already_installed}; do \
@@ -3040,8 +3123,8 @@ check-already-installed:
 								fi; \
 						fi; \
 				done; \
-		fi;
-		@if [ -d ${PKG_DBDIR}/${PKGNAME} -o -n "$${found_package}" ]; then \
+		fi; \
+		if [ -d ${PKG_DBDIR}/${PKGNAME} -o -n "$${found_package}" ]; then \
 				if [ -d ${PKG_DBDIR}/${PKGNAME} ]; then \
 						${ECHO_CMD} "===>   ${PKGNAME} is already installed"; \
 				else \
