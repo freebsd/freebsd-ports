@@ -6,8 +6,9 @@
 #
 
 PORTNAME=	Cache_Lite
-PORTVERSION=	1.3.1
+PORTVERSION=	1.4.0
 CATEGORIES=	sysutils www pear
+DISTNAME=	${PORTNAME}-${PORTVERSION}beta1
 
 MAINTAINER=	antonio@php.net
 COMMENT=	PEAR fast and safe little cache system
