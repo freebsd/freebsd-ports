@@ -7,7 +7,7 @@
 
 PORTNAME=	irssi
 PORTVERSION=	0.8.9
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES?=	irc
 MASTER_SITES=	http://irssi.org/files/
 
@@ -32,7 +32,7 @@ WITH_GLIB=	1
 .endif
 
 .if ! defined(WITH_PERL)
-WITH_PERL=	no
+WITH_PERL=	yes
 .endif
 
 .if ! defined(WITH_PROXY)
@@ -120,7 +120,7 @@ pre-extract:
 	@${ECHO} "You may use the following build options:"
 	@${ECHO} ""
 	@${ECHO} "	WITH_GLIB=1|2		Select a GLib version to use [auto]"
-	@${ECHO} "	WITH_PERL=yes|no	Enable Perl support [no]"
+	@${ECHO} "	WITH_PERL=yes|no	Enable Perl support [yes]"
 	@${ECHO} "	WITH_PROXY=yes|no	Enable irssi-proxy [no]"
 	@${ECHO} "	WITH_SOCKS=yes|no	Enable Socks support [no]"
 	@${ECHO} "	WITH_IPV6=yes|no	Enable IPv6 support [yes]"
