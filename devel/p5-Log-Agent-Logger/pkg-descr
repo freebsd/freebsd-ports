@@ -1,0 +1,7 @@
+The Log::Agent::Logger class defines a generic interface for application
+logging. It must not be confused with the interface provided by
+Log::Agent, which is meant to be used by re-usable modules that do not
+wish to commit on a particular logging method, so that they remain true
+building blocks.
+
+WWW: http://search.cpan.org/search?dist=Log-Agent-Logger
