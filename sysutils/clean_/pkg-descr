@@ -1,0 +1,16 @@
+The clean utility searches through the filesystem for "temporary files" 
+left behind by editors and the like which can be deleted safely.
+
+WARNING: This program was written with the express purpose of deleting
+(unwanted) files.  Please be certain that you understand this program
+and that you really want to use such an automatic deletion process
+before you begin.
+
+[ On the other hand, I've been using it for over ten years without
+doing anything worse than not having a core.1 manpage.  The normal
+mode is interactive and prompts for confirmation.  You are advised to
+have backups before using the non-interactive batch mode. ]
+
+WWW: http://sourceforge.net/projects/clean
+
+-Chuck Swiger <chuck@pkix.net>
