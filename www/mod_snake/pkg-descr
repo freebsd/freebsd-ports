@@ -1,0 +1,9 @@
+mod_snake was created in an attempt to give Apache 1.3
+and 2.0 developers the power to create easy and flexible
+modules in the Python programming language. Aside from giving
+modules the same power as they have in C, mod_snake also
+provides APIs similar to that of mod_python and mod_perl
+for simple module creation, accelerated Python CGIs, and
+embedded Python. 
+
+WWW: http://modsnake.sourceforge.net/
