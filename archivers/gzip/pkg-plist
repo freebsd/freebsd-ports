@@ -1,0 +1,17 @@
+@comment $FreeBSD$
+bin/gunzip
+bin/gzexe
+bin/gzip
+bin/zcat
+bin/zcmp
+bin/zdiff
+bin/zegrep
+bin/zfgrep
+bin/zforce
+bin/zgrep
+bin/zless
+bin/zmore
+bin/znew
+@unexec install-info --quiet --delete %D/info/gzip.info %D/info/dir
+info/gzip.info
+@exec install-info %D/info/gzip.info %D/info/dir
