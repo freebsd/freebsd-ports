@@ -1,5 +1,5 @@
 --- Makefile.orig	Sun Jul 11 02:26:40 2004
-+++ Makefile	Sun Jul 11 11:13:07 2004
++++ Makefile	Mon Jul 12 08:52:21 2004
 @@ -1,21 +1,21 @@
  # -march=i686 speeds this up quite a bit on my machine (even more so
  # than -march=athlon-xp) so if this looks like a recent x86 machine,
@@ -30,8 +30,12 @@
  CFLAGS  += $(shell pkg-config --cflags $(PKGS))
  LIBS    += $(shell pkg-config --libs $(PKGS))
  
-@@ -50,7 +50,7 @@
- 	$(CC) -o $@ $(OBJS) $(LIBS)
+@@ -47,10 +47,10 @@
+ 
+ 
+ $(BIN): $(OBJS)
+-	$(CC) -o $@ $(OBJS) $(LIBS)
++	$(CC) -o $@ $(OBJS) $(LIBS) $(LDFLAGS)
  
  %.o: %.c src/*.h
 -	$(CC) -c -o $@ $< $(CFLAGS)
