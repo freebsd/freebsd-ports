@@ -1,28 +1,26 @@
---- Makefile.orig	Tue Mar 11 10:20:35 2003
-+++ Makefile	Tue Mar 11 10:21:23 2003
-@@ -155,14 +155,14 @@
+--- Makefile.orig	Tue Mar 11 18:34:49 2003
++++ Makefile	Tue Mar 25 12:02:24 2003
+@@ -132,13 +132,13 @@
  
  TARGDIR= targets
- TARGETS= runtime prelude libraries greencard hp2graph hattools \
+ TARGETS= runtime prelude libraries greencard hp2graph \
 -	 profruntime profprelude profprelude-$(CC) \
 -	 timeruntime timeprelude timeprelude-$(CC) \
 +	 profruntime profprelude profprelude-gcc \
 +	 timeruntime timeprelude timeprelude-gcc \
  	 timetraceruntime timetraceprelude \
--	 traceruntime traceprelude traceprelude-$(CC) \
 -	 compiler-nhc compiler-hbc compiler-ghc compiler-$(CC) \
 -	 hmake-nhc hmake-hbc hmake-ghc hmake-$(CC) \
 -	 greencard-nhc greencard-hbc greencard-ghc greencard-$(CC) \
--	 prelude-$(CC) pragma-$(CC) libraries-$(CC) \
-+	 traceruntime traceprelude traceprelude-gcc \
+-	 prelude-$(CC) pragma-$(CC) libraries-$(CC)
 +	 compiler-nhc compiler-hbc compiler-ghc compiler-gcc \
 +	 hmake-nhc hmake-hbc hmake-ghc hmake-gcc \
 +	 greencard-nhc greencard-hbc greencard-ghc greencard-gcc \
-+	 prelude-gcc pragma-gcc libraries-gcc \
- 	 hat-nhc hat-ghc hat-trans-ghc hat-trans-nhc hat-lib-ghc hat-lib-nhc \
- 	 hat-tools-ghc hat-tools-nhc
++	 prelude-gcc pragma-gcc libraries-gcc
  
-@@ -203,8 +203,8 @@
+ .PHONY: default basic all compiler help config install
+ 
+@@ -173,8 +173,8 @@
  								libraries
  basic-ghc: $(PRAGMA) runtime hmake-ghc greencard-ghc compiler-ghc prelude \
  								libraries
@@ -31,22 +29,9 @@
 +basic-gcc:   runtime prelude-gcc pragma-gcc compiler-gcc \
 +		 greencard-gcc hmake-gcc libraries-gcc
  
- all-$(BUILDCOMP): basic-$(BUILDCOMP) heapprofile timeprofile #tracer #hoodui
+ all-$(BUILDCOMP): basic-$(BUILDCOMP) heapprofile timeprofile #hoodui
  
-@@ -224,9 +224,9 @@
- 		compiler-ghc traceruntime traceprelude hattools hat-ghc
- tracer-hbc: $(PRAGMA) runtime hmake-hbc greencard-hbc \
- 		compiler-hbc traceruntime traceprelude hattools
--tracer-$(CC): runtime prelude-$(CC) pragma-$(CC) compiler-$(CC) \
--		greencard-$(CC) hmake-$(CC) \
--		traceruntime traceprelude-$(CC) hattools
-+tracer-gcc: runtime prelude-gcc pragma-gcc compiler-gcc \
-+		greencard-gcc hmake-gcc \
-+		traceruntime traceprelude-gcc hattools
- timetraceprofile: timetraceruntime timetraceprelude
- 
- $(TARGETS): % : $(TARGDIR)/$(MACHINE)/%
-@@ -328,47 +328,47 @@
+@@ -275,41 +275,41 @@
  	touch $(TARGDIR)/$(MACHINE)/timeprelude
  
  
@@ -56,14 +41,6 @@
 -	touch $(TARGDIR)/$(MACHINE)/prelude-$(CC)
 +	touch $(TARGDIR)/$(MACHINE)/prelude-gcc
  	touch $(TARGDIR)/$(MACHINE)/prelude
--$(TARGDIR)/$(MACHINE)/traceprelude-$(CC): $(PRELUDEC)
-+$(TARGDIR)/$(MACHINE)/traceprelude-gcc: $(PRELUDEC)
- 	cd src/prelude;        $(MAKE) CFG=T fromC
- 	cd src/prelude/$(MACHINE)/NHC; $(MAKE) CFG=T clean all
- 	cd src/prelude;        $(MAKE) CFG=T relink
--	touch $(TARGDIR)/$(MACHINE)/traceprelude-$(CC)
-+	touch $(TARGDIR)/$(MACHINE)/traceprelude-gcc
- 	touch $(TARGDIR)/$(MACHINE)/traceprelude
 -$(TARGDIR)/$(MACHINE)/timeprelude-$(CC): $(PRELUDEC)
 +$(TARGDIR)/$(MACHINE)/timeprelude-gcc: $(PRELUDEC)
  	cd src/prelude;        $(MAKE) CFG=z fromC

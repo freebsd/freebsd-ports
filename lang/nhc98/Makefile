@@ -64,10 +64,7 @@ post-install:
 	${INSTALL_MAN} ${WRKSRC}/man/nhc98.1.fix ${PREFIX}/man/man1/nhc98.1
 	${RM} ${WRKSRC}/man/nhc98.1.fix
 .if !defined(NOPORTDOCS)
-.for ending in aux log out toc
-	${RM} ${PREFIX}/share/doc/nhc98/hat/hatuser.${ending}
-.endfor
-.for directory in . bugs examples hat hmake implementation-notes libs
+.for directory in . bugs examples hmake implementation-notes libs
 	${RM} -r ${PREFIX}/share/doc/nhc98/${directory}/CVS
 .endfor
 .endif
