@@ -1,13 +1,5 @@
-Fix a const-related compiler warning produced by the "execve" wrapper.
-Move network related wrappers to separate files, for SOCKS support.
-Fix some things so that it will compile under FreeBSD-3.0.
-Add missing wrappers for various system calls.
-Fix numerous argument declarations to agree with their prototypes.
-Fix the wrapper for ftruncate so that it deals properly with the 64-bit
-arguments.
-
 --- m3/m3core/src/runtime/FreeBSD2/RTHeapDepC.c.orig	Sat Mar 23 14:52:21 1996
-+++ m3/m3core/src/runtime/FreeBSD2/RTHeapDepC.c	Sun Mar 14 05:43:53 1999
++++ m3/m3core/src/runtime/FreeBSD2/RTHeapDepC.c	Wed Dec 22 22:43:12 1999
 @@ -80,7 +80,8 @@
  #include <sys/file.h>
  #include <sys/param.h>
@@ -18,7 +10,7 @@ arguments.
  #endif
  #include <sys/mount.h>
  #include <sys/ipc.h>
-@@ -89,9 +90,21 @@
+@@ -89,9 +90,27 @@
  #include <ufs/ufs/quota.h>
  #include <sys/signal.h>
  #include <sys/socket.h>
@@ -37,10 +29,16 @@ arguments.
 +#include <string.h>
 +#include <unistd.h>
 +
++#if __FreeBSD_version >= 400013
++#define SOCKLEN_T	socklen_t
++#else
++#define SOCKLEN_T	int
++#endif
++
  #ifdef   NULL
  #undef   NULL
  #endif
-@@ -110,22 +123,8 @@
+@@ -110,22 +129,8 @@
  /* Unless otherwise noted, all the following wrappers have the same
     structure. */
  
@@ -64,7 +62,7 @@ arguments.
  int mode;
  { int result;
  
-@@ -137,7 +136,7 @@
+@@ -137,7 +142,7 @@
  }
  
  int acct(file)   /* ok */
@@ -73,7 +71,7 @@ arguments.
  { int result;
  
    ENTER_CRITICAL;
-@@ -228,19 +227,6 @@
+@@ -228,19 +233,6 @@
  }
  */
  
@@ -93,7 +91,7 @@ arguments.
  /* not implemented
  int cachectl(addr, nbytes, op)
  char *addr;
-@@ -268,7 +254,7 @@
+@@ -268,7 +260,7 @@
  */
  
  int chdir(path)   /* ok */
@@ -102,7 +100,7 @@ arguments.
  { int result;
  
    ENTER_CRITICAL;
-@@ -278,8 +264,20 @@
+@@ -278,8 +270,20 @@
    return result;
  }
  
@@ -124,7 +122,7 @@ arguments.
  mode_t mode;
  { int result;
  
-@@ -291,7 +289,7 @@
+@@ -291,7 +295,7 @@
  }
  
  int chown(path, owner, group)   /* ok */
@@ -133,7 +131,7 @@ arguments.
  uid_t owner;
  gid_t group;
  { int result;
-@@ -304,7 +302,7 @@
+@@ -304,7 +308,7 @@
  }
  
  int chroot(dirname)   /* ok */
@@ -142,7 +140,7 @@ arguments.
  { int result;
  
    ENTER_CRITICAL;
-@@ -314,19 +312,6 @@
+@@ -314,19 +318,6 @@
    return result;
  }
  
@@ -162,7 +160,7 @@ arguments.
  /* not implemented (obsolete)
  int creat(name, mode)   
  const char *name;
-@@ -356,8 +341,8 @@
+@@ -356,8 +347,8 @@
      result = syscall(SYS_execve, name, argv, envp);
      if (result == -1 && errno == EFAULT) {
        MAKE_READABLE(name);
@@ -173,7 +171,7 @@ arguments.
      } else {
        return result;
      }
-@@ -473,7 +458,7 @@
+@@ -473,7 +464,7 @@
  
  int getgroups(gidsetsize, grouplist)   /* ok */
  int gidsetsize;
@@ -182,7 +180,7 @@ arguments.
  { int result;
  
    ENTER_CRITICAL;
-@@ -513,20 +498,6 @@
+@@ -513,20 +504,6 @@
  }
  */
  
@@ -203,7 +201,7 @@ arguments.
  int getrlimit(resource, rlp)   /* ok */
  int resource;
  struct rlimit *rlp;
-@@ -551,20 +522,6 @@
+@@ -551,24 +528,10 @@
    return result;
  }
  
@@ -224,7 +222,12 @@ arguments.
  int getsockopt(s, level, optname, optval, optlen)   /* ok */
  int s, level, optname;
  void *optval;
-@@ -629,9 +586,24 @@
+-int *optlen;
++SOCKLEN_T *optlen;
+ { int result;
+ 
+   ENTER_CRITICAL;
+@@ -629,9 +592,24 @@
    return result;
  }
  
@@ -251,7 +254,7 @@ arguments.
  { int result;
  
    ENTER_CRITICAL;
-@@ -643,7 +615,7 @@
+@@ -643,7 +621,7 @@
  }
  
  int lstat(path, buf)   /* ok */
@@ -260,7 +263,7 @@ arguments.
  struct stat *buf;
  { int result;
  
-@@ -656,7 +628,7 @@
+@@ -656,7 +634,7 @@
  }
  
  int mkdir(path, mode)   /* ok */
@@ -269,7 +272,7 @@ arguments.
  mode_t mode;
  { int result;
  
-@@ -667,8 +639,20 @@
+@@ -667,8 +645,20 @@
    return result;
  }
  
@@ -291,7 +294,7 @@ arguments.
  mode_t mode;
  dev_t dev;
  { int result;
-@@ -680,13 +664,51 @@
+@@ -680,13 +670,51 @@
    return result;
  }
  
@@ -350,7 +353,7 @@ arguments.
  int mount(type, dir, flags, data)
  int type;
  const char *dir;
-@@ -723,6 +745,7 @@
+@@ -723,6 +751,7 @@
    }
    return result;
  }
@@ -358,7 +361,7 @@ arguments.
  
  int msgctl(msqid, cmd, buf)   /* ok */
  int msqid, cmd;
-@@ -793,9 +816,13 @@
+@@ -793,9 +822,13 @@
  }
  
  int quotactl(path, cmd, uid, addr)   /* ok */
@@ -375,7 +378,7 @@ arguments.
  { int result;
  
    ENTER_CRITICAL;
-@@ -821,21 +848,8 @@
+@@ -821,21 +854,8 @@
    return result;
  }
  
@@ -398,7 +401,7 @@ arguments.
  char *buf;
  int bufsiz;
  { int result;
-@@ -865,46 +879,6 @@
+@@ -865,46 +885,6 @@
    return result;
  }
  
@@ -445,7 +448,7 @@ arguments.
  int recvmsg(s, msg, flags)   /* ok */
  int s;
  struct msghdr msg[];
-@@ -940,7 +914,7 @@
+@@ -940,7 +920,7 @@
  }
  
  int rmdir(path)   /* ok */
@@ -454,7 +457,7 @@ arguments.
  { int result;
  
    ENTER_CRITICAL;
-@@ -950,44 +924,42 @@
+@@ -950,44 +930,42 @@
    return result;
  }
  
@@ -526,7 +529,7 @@ arguments.
      break;
    }
    result = syscall(SYS_semsys, 0, semid, semnum, cmd, arg);
-@@ -1012,24 +984,6 @@
+@@ -1012,24 +990,6 @@
    return result;
  }
  
@@ -551,7 +554,7 @@ arguments.
  int sendmsg(s, msg, flags)   /* ok */
  int s;
  const struct msghdr msg[];
-@@ -1051,29 +1005,8 @@
+@@ -1051,29 +1011,8 @@
    return result;
  }
  
@@ -582,7 +585,7 @@ arguments.
  int namelen;
  { int result;
  
-@@ -1086,7 +1019,7 @@
+@@ -1086,7 +1025,7 @@
  
  int setgroups(ngroups, gidset)   /* ok */
  int ngroups;
@@ -591,7 +594,7 @@ arguments.
  { int result;
  
    ENTER_CRITICAL;
-@@ -1097,7 +1030,7 @@
+@@ -1097,7 +1036,7 @@
  }
  
  int sethostname(name, namelen)   /* ok */
@@ -600,7 +603,16 @@ arguments.
  int namelen;
  { int result;
  #if __FreeBSD__ >= 2
-@@ -1213,20 +1146,20 @@
+@@ -1168,7 +1107,7 @@
+ int setsockopt(s, level, optname, optval, optlen)   /* ok */
+ int s, level, optname;
+ const void *optval;
+-int optlen;
++SOCKLEN_T optlen;
+ { int result;
+ 
+   ENTER_CRITICAL;
+@@ -1213,20 +1152,20 @@
    return result;
  }
  
@@ -628,7 +640,7 @@ arguments.
  int sigaltstack(ss, oss)   /* ok */
  const struct sigaltstack *ss;
  struct sigaltstack *oss;
-@@ -1239,20 +1172,6 @@
+@@ -1239,20 +1178,6 @@
    EXIT_CRITICAL;
    return result;
  }
@@ -649,7 +661,7 @@ arguments.
  
  int socketpair(d, type, protocol, sv)   /* ok */
  int d, type, protocol;
-@@ -1267,7 +1186,7 @@
+@@ -1267,7 +1192,7 @@
  }
  
  int stat(path, buf)   /* ok */
@@ -658,7 +670,7 @@ arguments.
  struct stat *buf;
  { int result;
  
-@@ -1280,7 +1199,7 @@
+@@ -1280,7 +1205,7 @@
  }
  
  int swapon(special)   /* ok */
@@ -667,7 +679,7 @@ arguments.
  { int result;
  
    ENTER_CRITICAL;
-@@ -1291,8 +1210,8 @@
+@@ -1291,8 +1216,8 @@
  }
  
  int symlink(name1, name2)   /* ok */
@@ -678,7 +690,7 @@ arguments.
  { int result;
  
    ENTER_CRITICAL;
-@@ -1304,14 +1223,14 @@
+@@ -1304,14 +1229,14 @@
  }
  
  int truncate(path, length)   /* ok */
@@ -697,7 +709,7 @@ arguments.
    EXIT_CRITICAL;
    return result;
  }
-@@ -1328,7 +1247,7 @@
+@@ -1328,7 +1253,7 @@
  }
  
  int unlink(path)   /* ok */
@@ -706,7 +718,7 @@ arguments.
  { int result;
  
    ENTER_CRITICAL;
-@@ -1414,19 +1333,6 @@
+@@ -1414,19 +1339,6 @@
    ENTER_CRITICAL;
    MAKE_WRITABLE(status);
    result = syscall(SYS_wait4, pid, status, options, NULL);
