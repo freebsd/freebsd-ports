@@ -1,7 +1,14 @@
---- Imlib/Makefile.in.orig	Tue Mar 27 22:21:27 2001
-+++ Imlib/Makefile.in	Tue Apr  3 13:12:00 2001
-@@ -126,3 +126,3 @@
+
+$FreeBSD$
+
+--- Imlib/Makefile.in.orig	Wed Aug  1 02:34:50 2001
++++ Imlib/Makefile.in	Thu Aug  2 20:15:30 2001
+@@ -138,7 +138,7 @@
+ 	snprintf.c
  
--libImlib_la_LDFLAGS = -version-info 10:10:9
+ 
+-libImlib_la_LDFLAGS = -version-info 10:11:9
 +libImlib_la_LDFLAGS = -version-info 5:0:0
  #libImlib_la_LDDADD     = $(SUPPORT_LIBS)
+ libImlib_la_LIBADD = $(SUPPORT_LIBS)
+ 
