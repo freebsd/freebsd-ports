@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	${PYTHON_MASTER_SITE_SUBDIR}
 DISTFILES=	${PYTHON_DISTFILE}
 
 MAINTAINER=	perky@FreeBSD.org
-COMMENT?=	An interpreted object-oriented programming language
+COMMENT=	An interpreted object-oriented programming language
 
 DIST_SUBDIR=	python
 WRKSRC=		${PYTHON_WRKSRC}
@@ -24,6 +24,7 @@ CONFIGURE_ENV=	OPT="${CFLAGS}"
 INSTALL_TARGET=	altinstall
 MAN1=		${PYTHON_VERSION}.1
 
+NO_LATEST_LINK=	yes
 USE_PYTHON=	yes
 PYTHON_VERSION=	python2.2
 PYTHON_NO_DEPENDS=	yes
