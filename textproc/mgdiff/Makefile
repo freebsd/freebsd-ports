@@ -3,7 +3,7 @@
 # Date created:         		22 October 1996
 # Whom:                 		andreas@marvin.robin.de
 #
-# $Id: Makefile,v 1.1.1.1 1996/11/15 11:01:25 asami Exp $
+# $Id: Makefile,v 1.2 1996/11/17 09:06:15 obrien Exp $
 #
 
 DISTNAME=	mgdiff
@@ -20,7 +20,6 @@ USE_IMAKE=      yes
 post-install:
 	@${MKDIR} ${PREFIX}/lib/X11/mgdiff
 	@${INSTALL_DATA} ${WRKSRC}/mgdiff.x[bp]m ${PREFIX}/lib/X11/mgdiff
-	@${ECHO} Mgdiff comes with .xbm and .xpm files for use as window
-	@${ECHO} manager icons. You will find them in ${PREFIX}/lib/X11/mgdiff.
+	@${CAT} ${PKGDIR}/MESSAGE
 
 .include <bsd.port.mk>
