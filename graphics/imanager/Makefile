@@ -11,8 +11,6 @@ CATEGORIES=	graphics
 MASTER_SITES=	http://www.digidezign.com/~imanager/
 DISTNAME=	imanager-${PORTVERSION}.final.imlib
 
-MAINTAINER=	dozprompt@onsea.com
-
 LIB_DEPENDS=	Imlib.5:${PORTSDIR}/graphics/imlib \
 		kdecore.3:${PORTSDIR}/x11/kdelibs11
 
