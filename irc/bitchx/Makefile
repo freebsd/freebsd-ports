@@ -104,8 +104,14 @@ CONFIGURE_ARGS+=	--with-plugins=${PLUGINS}
 .endif
 CONFIGURE_ENV+=		CFLAGS="${CFLAGS}"
 
-.if exists(${PREFIX}/bin/gpg)
+pre-patch:
+.if defined(WITH_LATIN)
+	${REINPLACE_CMD} -e 's|#undef LATIN1|#define LATIN1|g' ${WRKSRC}/include/config.h
+.endif
+	${REINPLACE_CMD} -e 's|bzip2|true|g' ${WRKSRC}/Makefile.in
+
 pre-extract:
+.if exists(${PREFIX}/bin/gpg)
 	@${ECHO_CMD} "===> Verifying GnuPG Signatures."
 	-gpg --keyserver pgp.mit.edu --recv-key 42D1F77C
 	cd ${DISTDIR}; gpg --verify ircii-pana-${PORTVERSION}${EXTRACT_SUFX}.sig \
@@ -117,14 +123,6 @@ pre-extract:
 .else
 	@${ECHO_CMD} "===> GnuPG not installed. Signatures can not be verified"	
 .endif
-
-pre-patch:
-.if defined(WITH_LATIN)
-	${REINPLACE_CMD} -e 's|#undef LATIN1|#define LATIN1|g' ${WRKSRC}/include/config.h
-.endif
-	${REINPLACE_CMD} -e 's|bzip2|true|g' ${WRKSRC}/Makefile.in
-
-pre-extract:
 	@${ECHO_CMD} "Available switches:"
 	@${ECHO_CMD} "-------------------"
 .if !defined (WITH_XMMS)
@@ -152,6 +150,7 @@ pre-extract:
 .if !defined(WITH_GNOME)
 	@${ECHO_CMD} "WITH_GNOME   - Build BitchX with Gtk-Frontend"
 .endif
+
 .if defined(WITH_TCL)
 
 post-extract:
