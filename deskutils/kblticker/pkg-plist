@@ -1,0 +1,28 @@
+bin/kblticker
+share/applnk/Internet/kblticker.desktop
+share/apps/kblticker/icons/hicolor/16x16/actions/kblticker_idle.png
+share/apps/kblticker/icons/hicolor/16x16/actions/kblticker_new.png
+share/apps/kblticker/icons/hicolor/22x22/actions/kblticker_idle.png
+share/apps/kblticker/icons/hicolor/22x22/actions/kblticker_new.png
+share/doc/HTML/en/kblticker/common
+share/doc/HTML/en/kblticker/index.cache.bz2
+share/doc/HTML/en/kblticker/index.docbook
+share/icons/hicolor/128x128/apps/kblticker.png
+share/icons/hicolor/16x16/apps/kblticker.png
+share/icons/hicolor/32x32/apps/kblticker.png
+share/icons/hicolor/48x48/apps/kblticker.png
+share/icons/hicolor/64x64/apps/kblticker.png
+share/sounds/kblticker_bells.wav
+share/sounds/kblticker_whistles.wav
+@dirrm share/doc/HTML/en/kblticker
+@unexec rmdir %D/share/doc/HTML/en 2>/dev/null || true
+@unexec rmdir %D/share/doc/HTML 2>/dev/null || true
+@dirrm share/apps/kblticker/icons/hicolor/16x16/actions
+@dirrm share/apps/kblticker/icons/hicolor/22x22/actions
+@dirrm share/apps/kblticker/icons/hicolor/16x16
+@dirrm share/apps/kblticker/icons/hicolor/22x22
+@dirrm share/apps/kblticker/icons/hicolor
+@dirrm share/apps/kblticker/icons
+@dirrm share/apps/kblticker
+@unexec rmdir %D/share/apps 2>/dev/null || true
+@unexec rmdir %D/share/applnk 2>/dev/null || true

@@ -54,6 +54,7 @@
     SUBDIR += journal
     SUBDIR += karamba
     SUBDIR += kbirthday
+    SUBDIR += kblticker
     SUBDIR += kdepim3
     SUBDIR += kickpim
     SUBDIR += kluje

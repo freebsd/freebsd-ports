@@ -1,0 +1,26 @@
+# ex:ts=8
+# Ports collection makefile for:  kblticker
+# Date created:                   Thu Apr 29, 2004
+# Whom:                           Michael L. Hostbaek (mich@FreeBSD.org)
+#
+# $FreeBSD$
+#
+
+PORTNAME=		kblticker
+PORTVERSION=		0.2.1
+CATEGORIES=		deskutils kde
+MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
+
+MAINTAINER=		mich@FreeBSD.org
+COMMENT=		KDE bloglines notifier
+
+GNU_CONFIGURE=		yes
+USE_GMAKE=		yes
+USE_KDELIBS_VER=	3
+
+CONFIGURE_ARGS+=	--enable-final
+
+CONFIGURE_TARGET=
+
+.include <bsd.port.mk>
