@@ -7,15 +7,15 @@
 #
 
 PORTNAME=	compaq-cc
-PORTVERSION=	6.2.9.506.1
+PORTVERSION=	6.4.9.005.1
 PORTREVISION=	2
 CATEGORIES=	lang
-MASTER_SITES=	ftp://ftp.compaq.com/pub/products/C-CXX/linux/compaq_c_v62/
-DISTFILES=	ccc-6.2.9.506-1.alpha.rpm libots-2.2.7-2.alpha.rpm
+MASTER_SITES=	ftp://ftp.compaq.com/pub/products/C-CXX/linux/compaq_c/
+DISTFILES=	ccc-6.4.9.005-1.alpha.rpm libots-2.2.7-2.alpha.rpm
 .if defined(WANT_EV6)
-DISTFILES+=	cpml_ev6-5.1.0-2.alpha.rpm
+DISTFILES+=	cpml_ev6-5.1.0-4.alpha.rpm
 .else
-DISTFILES+=	cpml_ev5-5.1.0-2.alpha.rpm
+DISTFILES+=	cpml_ev5-5.1.0-4.alpha.rpm
 .endif
 
 MAINTAINER=	obrien@FreeBSD.org
@@ -29,7 +29,7 @@ ONLY_FOR_ARCHS=	alpha
 PREFIX=		/
 LIBOTS_REV=	libots-2.2.7
 CPML_REV=	cpml-5.1.0
-CCC_REV=	ccc-6.2.9.506-1
+CCC_REV=	ccc-6.4.9.005-1
 CCC_DIR=	usr/lib/compaq/${CCC_REV}
 CCC_ROOT=	${PREFIX}/${CCC_DIR}
 PLIST_SUB=	CCC_REV=${CCC_REV} CPML_REV=${CPML_REV} LIBOTS_REV=${LIBOTS_REV}
@@ -67,12 +67,12 @@ do-install:
 	cd ${CCC_ROOT}/alpha-linux/bin	\
 	    ; ${MV} lnxcc_driver lnxcc_driver.Linux			\
 	    ; ${SED} -e 's/-dynamic-linker/-g             /g'		\
-		     -e 's|/lib/ld-linux.so.2|-g                |g'	\
 		     -e 's|-D__linux__|-D__FreeBSD|g'			\
 		     -e 's|-D__linux....|-D__FreeBSD__|g'		\
 		     -e 's|-Dlinux|-D_____|g'				\
 		lnxcc_driver.Linux >lnxcc_driver			\
 		; ${CHMOD} 555 lnxcc_driver
+
 # the shared libs gives us trouble right now, so only offer .a's
 	${RM} ${PREFIX}/usr/lib/libots.so
 	${RM} ${PREFIX}/usr/lib/libcpml.so
@@ -80,6 +80,12 @@ do-install:
 	cd ${WRKSRC}							\
 	    ; ccc -c ${FILESDIR}/*.c					\
 	    ; ar vq /usr/lib/compaq/cpml-5.1.0/libcpml_ev5.a *.o
+# create /lib/ld-linux.so.2 becausing nulling it out in the (dynamic)
+# compiler binary prevents it from running
+	cd ${WRKSRC}							\
+	    ; cp  /dev/null ld-linux.c					\
+	    ; mkdir -p ${PREFIX}/lib					\
+	    ; cc -c ld-linux.c -o ${PREFIX}/lib/ld-linux.so.2		\
 # cpio creates directories with stupid permissions
 	find ${PREFIX}/usr/lib/compaq -type d | xargs ${CHMOD} 755
 # tweaks to compile FreeBSD bits better
@@ -116,6 +122,8 @@ post-install:
 	cd ${PREFIX} ;\
 	    find ${CCC_DIR}/alpha-linux -type f -o -type l \
 	    					>${WRKDIR}/PLIST.alphalinux
+	${ECHO} "lib/ld-linux.so.2"		>>${WRKDIR}/PLIST.alphalinux
+	${ECHO} "@dirrm lib"		>>${WRKDIR}/PLIST.alphalinux
 	cd ${PREFIX} ;\
 	    find ${CCC_DIR}/alpha-linux -type d \
 	    | sed -e 's/^/@dirrm /g' \

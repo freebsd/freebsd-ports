@@ -20,7 +20,9 @@
  * *                                                               *
  * *****************************************************************
  */
+#define __attribute__(x)
 #include_next <stdio.h>
+#undef __attribute__
 #undef NULL
 #ifdef __cplusplus
 #define NULL 0
