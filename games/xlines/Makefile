@@ -28,9 +28,9 @@ do-install:
 	@${MKDIR} ${PREFIX}/share/xlines
 	${INSTALL_DATA} ${WRKSRC}/trolltech.gif ${PREFIX}/share/xlines
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/xlines
-	${INSTALL_DATA} ${WRKSRC}/readme.lines ${PREFIX}/share/doc/xlines
-	${INSTALL_DATA} ${WRKSRC}/readme.qt ${PREFIX}/share/doc/xlines
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/readme.lines ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/readme.qt ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>

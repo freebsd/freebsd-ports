@@ -2,14 +2,14 @@ bin/xpns
 libexec/xpns/pns
 share/xpns/pns.hlp
 share/xpns/pns.shell
-share/doc/xpns/a.net
-share/doc/xpns/a1.net
-share/doc/xpns/add.net
-share/doc/xpns/mult.net
-share/doc/xpns/phil.net
-share/doc/xpns/rw.net
-share/doc/xpns/sub.net
-share/doc/xpns/sub2.net
+%%PORTDOCS%%share/doc/xpns/a.net
+%%PORTDOCS%%share/doc/xpns/a1.net
+%%PORTDOCS%%share/doc/xpns/add.net
+%%PORTDOCS%%share/doc/xpns/mult.net
+%%PORTDOCS%%share/doc/xpns/phil.net
+%%PORTDOCS%%share/doc/xpns/rw.net
+%%PORTDOCS%%share/doc/xpns/sub.net
+%%PORTDOCS%%share/doc/xpns/sub2.net
 @dirrm share/xpns
-@dirrm share/doc/xpns
+%%PORTDOCS%%@dirrm share/doc/xpns
 @dirrm libexec/xpns

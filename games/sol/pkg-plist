@@ -5,11 +5,11 @@ bin/sol
 @owner
 @group
 @mode
-share/doc/sol/CREDITS
-share/doc/sol/README
+%%PORTDOCS%%share/doc/sol/CREDITS
+%%PORTDOCS%%share/doc/sol/README
 @owner games
 @group games
 @mode 660
 share/sol/sol.score
-@dirrm share/doc/sol
+%%PORTDOCS%%@dirrm share/doc/sol
 @dirrm share/sol

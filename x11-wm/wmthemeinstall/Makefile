@@ -19,20 +19,19 @@ USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GTK=	yes
 GNU_CONFIGURE=	yes
-DOCS_DIR=	${PREFIX}/share/wmthemeinstall
 
 pre-build:
 	@${PERL} -pi -e "s:/usr/local:${PREFIX}:g" ${WRKSRC}/wmOptions.c
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/wmthemeinstall ${PREFIX}/bin
+	@${INSTALL_PROGRAM} ${WRKSRC}/wmthemeinstall ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCS_DIR}
-	${INSTALL_DATA} ${WRKSRC}/ChangeLog ${DOCS_DIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCS_DIR}
-	${INSTALL_DATA} ${WRKSRC}/AUTHORS ${DOCS_DIR}
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/ChangeLog ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/AUTHORS ${DOCSDIR}
 	@${ECHO}
-	@${ECHO} "Documentation was installed in ${DOCS_DIR}."
+	@${ECHO} "Documentation was installed in ${DOCSDIR}."
 	@${ECHO}
 .endif
 

@@ -1,3 +1,3 @@
 bin/fli2gif
-share/doc/fli2gif/FLI2GIF.TXT.gz
-@dirrm share/doc/fli2gif
+%%PORTDOCS%%share/doc/fli2gif/FLI2GIF.TXT.gz
+%%PORTDOCS%%@dirrm share/doc/fli2gif

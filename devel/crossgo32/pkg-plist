@@ -174,9 +174,9 @@ lib/libi386-go32-opcodes.a
 lib/libiberty.a
 share/crossgo32/emu387
 share/crossgo32/go32.exe
-share/doc/crossgo32/FAQ-0.8
-share/doc/crossgo32/README.FreeBSD
-@dirrm share/doc/crossgo32
+%%PORTDOCS%%share/doc/crossgo32/FAQ-0.8
+%%PORTDOCS%%share/doc/crossgo32/README.FreeBSD
+%%PORTDOCS%%@dirrm share/doc/crossgo32
 @dirrm share/crossgo32
 @dirrm lib/gcc-lib/i386-go32/2.7.2.2/include/objc
 @dirrm lib/gcc-lib/i386-go32/2.7.2.2/include

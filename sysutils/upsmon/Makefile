@@ -24,8 +24,8 @@ do-install:
 	@${CHMOD} +x ${PREFIX}/etc/rc.d/upsmon.sh
 
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/upsmon
-	${INSTALL_DATA} ${WRKSRC}/INSTALL ${PREFIX}/share/doc/upsmon
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/INSTALL ${DOCSDIR}
 .endif
 
 post-install:

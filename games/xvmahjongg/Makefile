@@ -23,10 +23,10 @@ MAN6=		xvmahjongg.6
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/mahjongg ${PREFIX}/bin/xvmahjongg
 	${INSTALL_MAN} ${WRKSRC}/mahjongg.6 ${PREFIX}/man/man6/xvmahjongg.6
-	@${MKDIR} ${PREFIX}/share/doc/xvmahjongg
 .if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
 .for file in Notes README README.too
-	${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/xvmahjongg
+	@${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
 .endif
 

@@ -26,9 +26,9 @@ post-install:
 	@${CHMOD} 664 ${PREFIX}/share/xdigger/xdigger.hiscore
 	@${CHOWN} root:games ${PREFIX}/share/xdigger/xdigger.hiscore
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/xdigger
-	${INSTALL_DATA} ${WRKSRC}/ChangeLog ${PREFIX}/share/doc/xdigger
-	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/xdigger
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/ChangeLog ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>

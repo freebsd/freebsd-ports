@@ -1,5 +1,5 @@
 bin/upsstat
 sbin/upsmond
 etc/rc.d/upsmon.sh
-share/doc/upsmon/INSTALL
-@dirrm share/doc/upsmon
+%%PORTDOCS%%share/doc/upsmon/INSTALL
+%%PORTDOCS%%@dirrm share/doc/upsmon

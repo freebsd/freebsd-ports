@@ -1,10 +1,10 @@
 bin/pmf
-share/doc/pmf/mud-clients.FAQ
-share/doc/pmf/mud-rwho.FAQ  
-share/doc/pmf/mud.FAQ
-share/doc/pmf/mudlist.18oct93 
-share/doc/pmf/pmf.doc
-share/doc/pmf/resource-usage
+%%PORTDOCS%%share/doc/pmf/mud-clients.FAQ
+%%PORTDOCS%%share/doc/pmf/mud-rwho.FAQ  
+%%PORTDOCS%%share/doc/pmf/mud.FAQ
+%%PORTDOCS%%share/doc/pmf/mudlist.18oct93 
+%%PORTDOCS%%share/doc/pmf/pmf.doc
+%%PORTDOCS%%share/doc/pmf/resource-usage
 share/examples/pmf/dot.pmfrc
 share/examples/pmf/pmf-sparc-sound
 share/examples/pmf/sample-robot
@@ -98,4 +98,4 @@ share/pmf/helpfiles/verbose
 @dirrm share/pmf/helpfiles
 @dirrm share/pmf
 @dirrm share/examples/pmf
-@dirrm share/doc/pmf
+%%PORTDOCS%%@dirrm share/doc/pmf

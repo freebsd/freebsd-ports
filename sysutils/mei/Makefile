@@ -32,8 +32,8 @@ BROKEN=		not support CAM
 
 .if !defined(NOPORTDOCS)
 post-install:
-	${MKDIR} ${PREFIX}/share/doc/mei
-	${INSTALL_DATA} ${WRKSRC}/*txt ${PREFIX}/share/doc/mei
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/*txt ${DOCSDIR}
 .endif
 
 .include <bsd.port.post.mk>

@@ -33,9 +33,9 @@ do-install:
 .endfor
 .if !defined(NOPORTDOCS)
 	@${ECHO_MSG} "===>   Installing documentation for ${PKGNAME}"
-	${MKDIR} ${PREFIX}/share/doc/rdb
+	@${MKDIR} ${DOCSDIR}
 .for docfile in ${DOCFILES}
-	${INSTALL_DATA} ${WRKSRC}/doc/${docfile} ${PREFIX}/share/doc/rdb
+	@${INSTALL_DATA} ${WRKSRC}/doc/${docfile} ${DOCSDIR}
 .endfor
 .endif
 

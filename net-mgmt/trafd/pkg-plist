@@ -7,8 +7,8 @@ bin/trafstat
 bin/trafstatd
 bin/trafstop
 etc/traflog.format
-share/doc/trafd/README
-@dirrm share/doc/trafd
+%%PORTDOCS%%share/doc/trafd/README
+%%PORTDOCS%%@dirrm share/doc/trafd
 @dirrm var/trafd
 @unexec rmdir %D/var/log 2>/dev/null || true
 @unexec rmdir %D/var 2>/dev/null || true

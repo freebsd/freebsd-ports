@@ -29,9 +29,9 @@ pre-configure:
 
 post-install:
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/qvplay
-.for file  in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/../../${file} ${PREFIX}/share/doc/qvplay
+	@${MKDIR} ${DOCSDIR}
+.for file in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/../../${file} ${DOCSDIR}
 .endfor
 .endif
 	@${SED} -e 's#/usr/local#${PREFIX}#' ${PKGMESSAGE}

@@ -22,8 +22,8 @@ ALL_TARGET=	tiff2png
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/tiff2png ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/tiff2png
-	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/tiff2png
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>

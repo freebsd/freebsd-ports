@@ -5,9 +5,9 @@ i386-go32/include/panel.h
 i386-go32/lib/libcurses.a
 i386-go32/lib/libcurso.a
 i386-go32/lib/libpano.a
-share/doc/pdcurses/README.FreeBSD
-share/doc/pdcurses/intro.txt
-share/doc/pdcurses/overview.txt
-share/doc/pdcurses/readme.txt
-share/doc/pdcurses/xwindows.txt
-@dirrm share/doc/pdcurses
+%%PORTDOCS%%share/doc/pdcurses/README.FreeBSD
+%%PORTDOCS%%share/doc/pdcurses/intro.txt
+%%PORTDOCS%%share/doc/pdcurses/overview.txt
+%%PORTDOCS%%share/doc/pdcurses/readme.txt
+%%PORTDOCS%%share/doc/pdcurses/xwindows.txt
+%%PORTDOCS%%@dirrm share/doc/pdcurses

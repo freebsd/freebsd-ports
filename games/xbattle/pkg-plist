@@ -13,10 +13,10 @@ share/xbattle/xbos/tropical2.xbo
 share/xbattle/xbos/tundra.xbo
 share/xbattle/xbts/castle.xbt
 share/xbattle/xbts/natural.xbt
-share/doc/xbattle/README
-share/doc/xbattle/tutorial1
-share/doc/xbattle/tutorial2
-@dirrm share/doc/xbattle
+%%PORTDOCS%%share/doc/xbattle/README
+%%PORTDOCS%%share/doc/xbattle/tutorial1
+%%PORTDOCS%%share/doc/xbattle/tutorial2
+%%PORTDOCS%%@dirrm share/doc/xbattle
 @dirrm share/xbattle/xbas
 @dirrm share/xbattle/xbos
 @dirrm share/xbattle/xbts

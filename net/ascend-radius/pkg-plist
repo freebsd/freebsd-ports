@@ -1,20 +1,20 @@
 sbin/builddbm
 sbin/radiusd
 sbin/radiusd.dbm
-share/doc/ascend-radius/ascend.doc
-share/doc/ascend-radius/draft-ietf-radius-accounting-01.txt
-share/doc/ascend-radius/draft-ietf-radius-radius-03.txt
-share/doc/ascend-radius/draft-ietf-radius-radius-04.txt
-share/doc/ascend-radius/ChangeLog
-share/doc/ascend-radius/README
-share/doc/ascend-radius/README.cexample
-share/doc/ascend-radius/README.dict
-share/doc/ascend-radius/radius.ps
-share/doc/ascend-radius/radius.pdf
-share/doc/ascend-radius/980618.ps
-share/doc/ascend-radius/980618.pdf
+%%PORTDOCS%%share/doc/ascend-radius/ascend.doc
+%%PORTDOCS%%share/doc/ascend-radius/draft-ietf-radius-accounting-01.txt
+%%PORTDOCS%%share/doc/ascend-radius/draft-ietf-radius-radius-03.txt
+%%PORTDOCS%%share/doc/ascend-radius/draft-ietf-radius-radius-04.txt
+%%PORTDOCS%%share/doc/ascend-radius/ChangeLog
+%%PORTDOCS%%share/doc/ascend-radius/README
+%%PORTDOCS%%share/doc/ascend-radius/README.cexample
+%%PORTDOCS%%share/doc/ascend-radius/README.dict
+%%PORTDOCS%%share/doc/ascend-radius/radius.ps
+%%PORTDOCS%%share/doc/ascend-radius/radius.pdf
+%%PORTDOCS%%share/doc/ascend-radius/980618.ps
+%%PORTDOCS%%share/doc/ascend-radius/980618.pdf
 etc/raddb/clients.example
 etc/raddb/dictionary
 etc/raddb/users.example
-@dirrm share/doc/ascend-radius
+%%PORTDOCS%%@dirrm share/doc/ascend-radius
 @dirrm etc/raddb

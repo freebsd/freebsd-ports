@@ -70,7 +70,7 @@ openssl/misc/c_issuer
 openssl/misc/c_name
 openssl/misc/der_chop
 openssl/openssl.cnf.sample
-share/doc/openssl/openssl.txt
+%%PORTDOCS%%share/doc/openssl/openssl.txt
 @dirrm include/openssl
 @dirrm openssl/certs
 @dirrm openssl/lib
@@ -82,4 +82,4 @@ share/doc/openssl/openssl.txt
 @dirrm openssl/misc
 @dirrm openssl/private
 @dirrm openssl
-@dirrm share/doc/openssl
+%%PORTDOCS%%@dirrm share/doc/openssl

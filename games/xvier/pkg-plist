@@ -1,4 +1,4 @@
 bin/xvier
 libexec/xvier_prog
-share/doc/xvier/README
-@dirrm share/doc/xvier
+%%PORTDOCS%%share/doc/xvier/README
+%%PORTDOCS%%@dirrm share/doc/xvier

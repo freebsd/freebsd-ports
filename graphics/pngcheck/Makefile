@@ -18,9 +18,9 @@ MAKEFILE=	Makefile.unx
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/pngcheck ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/pngcheck
-	${INSTALL_DATA} ${WRKSRC}/CHANGELOG ${PREFIX}/share/doc/pngcheck
-	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/pngcheck
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/CHANGELOG ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>

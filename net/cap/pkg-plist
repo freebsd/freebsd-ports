@@ -67,32 +67,32 @@ man/man3/libcap.3.gz
 man/man3/libafpc.3.gz
 man/man3/libafp.3.gz
 man/man8/papof.8.gz
-share/doc/cap/abmisc.doc
-share/doc/cap/asp.notes
-share/doc/cap/atp.notes
-share/doc/cap/cap.auth.doc
-share/doc/cap/cap.notes
-share/doc/cap/glossary
-share/doc/cap/install.ms
-share/doc/cap/iptalk.cookbook
-share/doc/cap/nbp.ext
-share/doc/cap/pap.notes
-share/doc/cap/print.cookbook
-share/doc/cap/sched.notes
-share/doc/cap/uab.desc.ms
-share/doc/cap/uar.cookbook
-share/doc/cap/CAP.faq
-share/doc/cap/CAP60.README
-share/doc/cap/NOTICE
-share/doc/cap/README
-share/doc/cap/papif.README
-share/doc/cap/lwsrv.README
-share/doc/cap/aufs.README
-share/doc/cap/doc.README
-share/doc/cap/applications.README
-share/doc/cap/uab.README
-share/doc/cap/ethertalk.README
+%%PORTDOCS%%share/doc/cap/abmisc.doc
+%%PORTDOCS%%share/doc/cap/asp.notes
+%%PORTDOCS%%share/doc/cap/atp.notes
+%%PORTDOCS%%share/doc/cap/cap.auth.doc
+%%PORTDOCS%%share/doc/cap/cap.notes
+%%PORTDOCS%%share/doc/cap/glossary
+%%PORTDOCS%%share/doc/cap/install.ms
+%%PORTDOCS%%share/doc/cap/iptalk.cookbook
+%%PORTDOCS%%share/doc/cap/nbp.ext
+%%PORTDOCS%%share/doc/cap/pap.notes
+%%PORTDOCS%%share/doc/cap/print.cookbook
+%%PORTDOCS%%share/doc/cap/sched.notes
+%%PORTDOCS%%share/doc/cap/uab.desc.ms
+%%PORTDOCS%%share/doc/cap/uar.cookbook
+%%PORTDOCS%%share/doc/cap/CAP.faq
+%%PORTDOCS%%share/doc/cap/CAP60.README
+%%PORTDOCS%%share/doc/cap/NOTICE
+%%PORTDOCS%%share/doc/cap/README
+%%PORTDOCS%%share/doc/cap/papif.README
+%%PORTDOCS%%share/doc/cap/lwsrv.README
+%%PORTDOCS%%share/doc/cap/aufs.README
+%%PORTDOCS%%share/doc/cap/doc.README
+%%PORTDOCS%%share/doc/cap/applications.README
+%%PORTDOCS%%share/doc/cap/uab.README
+%%PORTDOCS%%share/doc/cap/ethertalk.README
 @dirrm include/netat
 @dirrm etc/cap
 @dirrm lib/cap
-@dirrm share/doc/cap
+%%PORTDOCS%%@dirrm share/doc/cap

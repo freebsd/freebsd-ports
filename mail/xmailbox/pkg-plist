@@ -1,8 +1,8 @@
 bin/xmailbox
 lib/X11/app-defaults/XMailbox
-share/doc/xmailbox/DISCLAIMER
-share/doc/xmailbox/README
+%%PORTDOCS%%share/doc/xmailbox/DISCLAIMER
+%%PORTDOCS%%share/doc/xmailbox/README
 share/xmailbox/dingdong.au
 share/xmailbox/ugotmail.au
-@dirrm share/doc/xmailbox
+%%PORTDOCS%%@dirrm share/doc/xmailbox
 @dirrm share/xmailbox

@@ -3380,9 +3380,9 @@ include/X11/pixmaps/z/zortech.xpm
 include/X11/pixmaps/z/zug.xpm
 include/X11/pixmaps/z/zug1.xpm
 include/X11/pixmaps/z/zug2.xpm
-share/doc/hobbes-icons-xpm3/README
-share/doc/hobbes-icons-xpm3/readem.shar
-@dirrm share/doc/hobbes-icons-xpm3
+%%PORTDOCS%%share/doc/hobbes-icons-xpm3/README
+%%PORTDOCS%%share/doc/hobbes-icons-xpm3/readem.shar
+%%PORTDOCS%%@dirrm share/doc/hobbes-icons-xpm3
 @dirrm include/X11/pixmaps/0
 @dirrm include/X11/pixmaps/1
 @dirrm include/X11/pixmaps/2

@@ -30,105 +30,105 @@ include/flux/xml.h
 lib/libflux.a
 lib/libflux.so
 lib/libflux.so.1
-share/doc/flux/AUTHORS
-share/doc/flux/NEWS
-share/doc/flux/README
-share/doc/flux/TODO
-share/doc/flux/html/.#index.html.1.15
-share/doc/flux/html/about.html
-share/doc/flux/html/benchmarks.html
-share/doc/flux/html/contact.html
-share/doc/flux/html/docs/future.html
-share/doc/flux/html/docs/hacking.html
-share/doc/flux/html/docs/index.html
-share/doc/flux/html/docs/platforms.html
-share/doc/flux/html/docs/ref-bmem.html
-share/doc/flux/html/docs/ref-comm.html
-share/doc/flux/html/docs/ref-log.html
-share/doc/flux/html/docs/ref-mt.html
-share/doc/flux/html/docs/ref-proxy.html
-share/doc/flux/html/docs/ref-sock.html
-share/doc/flux/html/docs/ref-tt.html
-share/doc/flux/html/docs/ref.css
-share/doc/flux/html/download.html
-share/doc/flux/html/img/background-gray.png
-share/doc/flux/html/img/frontpage-bottom.png
-share/doc/flux/html/img/frontpage-glass.png
-share/doc/flux/html/img/frontpage-header.png
-share/doc/flux/html/img/frontpage-menu-about.png
-share/doc/flux/html/img/frontpage-menu-contact.png
-share/doc/flux/html/img/frontpage-menu-cvs.png
-share/doc/flux/html/img/frontpage-menu-docs.png
-share/doc/flux/html/img/frontpage-menu-download.png
-share/doc/flux/html/img/frontpage-menu-footer.png
-share/doc/flux/html/img/frontpage-nurse.png
-share/doc/flux/html/img/graph-ballocbenchmark-alpha.png
-share/doc/flux/html/img/graph-ballocbenchmark-pentium.png
-share/doc/flux/html/img/menu-about.png
-share/doc/flux/html/img/menu-contact.png
-share/doc/flux/html/img/menu-cvs.png
-share/doc/flux/html/img/menu-docs.png
-share/doc/flux/html/img/menu-download-bottom.png
-share/doc/flux/html/img/menu-download-top.png
-share/doc/flux/html/img/subpage-header-left.png
-share/doc/flux/html/img/subpage-header-picturefooter.png
-share/doc/flux/html/img/subpage-header-pictureheader0.png
-share/doc/flux/html/img/subpage-header-pictureheader1.png
-share/doc/flux/html/img/subpage-header-pictureheader2.png
-share/doc/flux/html/img/subpage-header-pictureheader3.png
-share/doc/flux/html/img/subpage-header-topright.png
-share/doc/flux/html/img/subpage-icon-about.png
-share/doc/flux/html/img/subpage-icon-benchmarks.png
-share/doc/flux/html/img/subpage-icon-contact.png
-share/doc/flux/html/img/subpage-icon-docs.png
-share/doc/flux/html/img/subpage-icon-download.png
-share/doc/flux/html/img/subpage-icon-hacking.png
-share/doc/flux/html/img/subpage-icon-proxies.png
-share/doc/flux/html/img/subpage-icon-tree.png
-share/doc/flux/html/img/subpage-title-about.png
-share/doc/flux/html/img/subpage-title-benchmarks.png
-share/doc/flux/html/img/subpage-title-contact.png
-share/doc/flux/html/img/subpage-title-docs.png
-share/doc/flux/html/img/subpage-title-download.png
-share/doc/flux/html/img/subpage-title-hacking.png
-share/doc/flux/html/img/subpage-title-markuptrees.png
-share/doc/flux/html/img/subpage-title-proxies.png
-share/doc/flux/html/img/subpage-title-tokentrees.png
-share/doc/flux/html/index.html
-share/doc/flux/plain/builds/0.3.0/billy
-share/doc/flux/plain/builds/0.3.0/domination
-share/doc/flux/plain/builds/0.3.0/fili
-share/doc/flux/plain/builds/0.3.0/foo
-share/doc/flux/plain/builds/0.3.0/gluttony
-share/doc/flux/plain/builds/0.3.0/harald
-share/doc/flux/plain/builds/0.3.0/kassad
-share/doc/flux/plain/builds/0.3.0/morten
-share/doc/flux/plain/builds/0.3.0/nerdhaven
-share/doc/flux/plain/builds/0.3.0/nocto
-share/doc/flux/plain/builds/0.3.0/totem
-share/doc/flux/plain/builds/0.3.0/vodka
-share/doc/flux/plain/builds/0.3.0/wrath
-share/doc/flux/plain/builds/0.4.0/gluttony
-share/doc/flux/plain/builds/0.4.0/nocto
-share/doc/flux/plain/builds/0.4.0/wrath
-share/doc/flux/plain/builds/Summary
-share/doc/flux/tex/comm.fig
-share/doc/flux/tex/concepts.fig
-share/doc/flux/tex/depend.fig
-share/doc/flux/tex/fifobuf.fig
-share/doc/flux/tex/proxy.fig
-share/doc/flux/tex/refcard-gen.sh
-share/doc/flux/tex/refcard.tex
-share/doc/flux/tex/sock.fig
-share/doc/flux/tex/tt.fig
-share/doc/flux/tex/ttree-rules.fig
-@dirrm share/doc/flux/tex
-@dirrm share/doc/flux/plain/builds/0.4.0
-@dirrm share/doc/flux/plain/builds/0.3.0
-@dirrm share/doc/flux/plain/builds
-@dirrm share/doc/flux/plain
-@dirrm share/doc/flux/html/img
-@dirrm share/doc/flux/html/docs
-@dirrm share/doc/flux/html
-@dirrm share/doc/flux
+%%PORTDOCS%%share/doc/flux/AUTHORS
+%%PORTDOCS%%share/doc/flux/NEWS
+%%PORTDOCS%%share/doc/flux/README
+%%PORTDOCS%%share/doc/flux/TODO
+%%PORTDOCS%%share/doc/flux/html/.#index.html.1.15
+%%PORTDOCS%%share/doc/flux/html/about.html
+%%PORTDOCS%%share/doc/flux/html/benchmarks.html
+%%PORTDOCS%%share/doc/flux/html/contact.html
+%%PORTDOCS%%share/doc/flux/html/docs/future.html
+%%PORTDOCS%%share/doc/flux/html/docs/hacking.html
+%%PORTDOCS%%share/doc/flux/html/docs/index.html
+%%PORTDOCS%%share/doc/flux/html/docs/platforms.html
+%%PORTDOCS%%share/doc/flux/html/docs/ref-bmem.html
+%%PORTDOCS%%share/doc/flux/html/docs/ref-comm.html
+%%PORTDOCS%%share/doc/flux/html/docs/ref-log.html
+%%PORTDOCS%%share/doc/flux/html/docs/ref-mt.html
+%%PORTDOCS%%share/doc/flux/html/docs/ref-proxy.html
+%%PORTDOCS%%share/doc/flux/html/docs/ref-sock.html
+%%PORTDOCS%%share/doc/flux/html/docs/ref-tt.html
+%%PORTDOCS%%share/doc/flux/html/docs/ref.css
+%%PORTDOCS%%share/doc/flux/html/download.html
+%%PORTDOCS%%share/doc/flux/html/img/background-gray.png
+%%PORTDOCS%%share/doc/flux/html/img/frontpage-bottom.png
+%%PORTDOCS%%share/doc/flux/html/img/frontpage-glass.png
+%%PORTDOCS%%share/doc/flux/html/img/frontpage-header.png
+%%PORTDOCS%%share/doc/flux/html/img/frontpage-menu-about.png
+%%PORTDOCS%%share/doc/flux/html/img/frontpage-menu-contact.png
+%%PORTDOCS%%share/doc/flux/html/img/frontpage-menu-cvs.png
+%%PORTDOCS%%share/doc/flux/html/img/frontpage-menu-docs.png
+%%PORTDOCS%%share/doc/flux/html/img/frontpage-menu-download.png
+%%PORTDOCS%%share/doc/flux/html/img/frontpage-menu-footer.png
+%%PORTDOCS%%share/doc/flux/html/img/frontpage-nurse.png
+%%PORTDOCS%%share/doc/flux/html/img/graph-ballocbenchmark-alpha.png
+%%PORTDOCS%%share/doc/flux/html/img/graph-ballocbenchmark-pentium.png
+%%PORTDOCS%%share/doc/flux/html/img/menu-about.png
+%%PORTDOCS%%share/doc/flux/html/img/menu-contact.png
+%%PORTDOCS%%share/doc/flux/html/img/menu-cvs.png
+%%PORTDOCS%%share/doc/flux/html/img/menu-docs.png
+%%PORTDOCS%%share/doc/flux/html/img/menu-download-bottom.png
+%%PORTDOCS%%share/doc/flux/html/img/menu-download-top.png
+%%PORTDOCS%%share/doc/flux/html/img/subpage-header-left.png
+%%PORTDOCS%%share/doc/flux/html/img/subpage-header-picturefooter.png
+%%PORTDOCS%%share/doc/flux/html/img/subpage-header-pictureheader0.png
+%%PORTDOCS%%share/doc/flux/html/img/subpage-header-pictureheader1.png
+%%PORTDOCS%%share/doc/flux/html/img/subpage-header-pictureheader2.png
+%%PORTDOCS%%share/doc/flux/html/img/subpage-header-pictureheader3.png
+%%PORTDOCS%%share/doc/flux/html/img/subpage-header-topright.png
+%%PORTDOCS%%share/doc/flux/html/img/subpage-icon-about.png
+%%PORTDOCS%%share/doc/flux/html/img/subpage-icon-benchmarks.png
+%%PORTDOCS%%share/doc/flux/html/img/subpage-icon-contact.png
+%%PORTDOCS%%share/doc/flux/html/img/subpage-icon-docs.png
+%%PORTDOCS%%share/doc/flux/html/img/subpage-icon-download.png
+%%PORTDOCS%%share/doc/flux/html/img/subpage-icon-hacking.png
+%%PORTDOCS%%share/doc/flux/html/img/subpage-icon-proxies.png
+%%PORTDOCS%%share/doc/flux/html/img/subpage-icon-tree.png
+%%PORTDOCS%%share/doc/flux/html/img/subpage-title-about.png
+%%PORTDOCS%%share/doc/flux/html/img/subpage-title-benchmarks.png
+%%PORTDOCS%%share/doc/flux/html/img/subpage-title-contact.png
+%%PORTDOCS%%share/doc/flux/html/img/subpage-title-docs.png
+%%PORTDOCS%%share/doc/flux/html/img/subpage-title-download.png
+%%PORTDOCS%%share/doc/flux/html/img/subpage-title-hacking.png
+%%PORTDOCS%%share/doc/flux/html/img/subpage-title-markuptrees.png
+%%PORTDOCS%%share/doc/flux/html/img/subpage-title-proxies.png
+%%PORTDOCS%%share/doc/flux/html/img/subpage-title-tokentrees.png
+%%PORTDOCS%%share/doc/flux/html/index.html
+%%PORTDOCS%%share/doc/flux/plain/builds/0.3.0/billy
+%%PORTDOCS%%share/doc/flux/plain/builds/0.3.0/domination
+%%PORTDOCS%%share/doc/flux/plain/builds/0.3.0/fili
+%%PORTDOCS%%share/doc/flux/plain/builds/0.3.0/foo
+%%PORTDOCS%%share/doc/flux/plain/builds/0.3.0/gluttony
+%%PORTDOCS%%share/doc/flux/plain/builds/0.3.0/harald
+%%PORTDOCS%%share/doc/flux/plain/builds/0.3.0/kassad
+%%PORTDOCS%%share/doc/flux/plain/builds/0.3.0/morten
+%%PORTDOCS%%share/doc/flux/plain/builds/0.3.0/nerdhaven
+%%PORTDOCS%%share/doc/flux/plain/builds/0.3.0/nocto
+%%PORTDOCS%%share/doc/flux/plain/builds/0.3.0/totem
+%%PORTDOCS%%share/doc/flux/plain/builds/0.3.0/vodka
+%%PORTDOCS%%share/doc/flux/plain/builds/0.3.0/wrath
+%%PORTDOCS%%share/doc/flux/plain/builds/0.4.0/gluttony
+%%PORTDOCS%%share/doc/flux/plain/builds/0.4.0/nocto
+%%PORTDOCS%%share/doc/flux/plain/builds/0.4.0/wrath
+%%PORTDOCS%%share/doc/flux/plain/builds/Summary
+%%PORTDOCS%%share/doc/flux/tex/comm.fig
+%%PORTDOCS%%share/doc/flux/tex/concepts.fig
+%%PORTDOCS%%share/doc/flux/tex/depend.fig
+%%PORTDOCS%%share/doc/flux/tex/fifobuf.fig
+%%PORTDOCS%%share/doc/flux/tex/proxy.fig
+%%PORTDOCS%%share/doc/flux/tex/refcard-gen.sh
+%%PORTDOCS%%share/doc/flux/tex/refcard.tex
+%%PORTDOCS%%share/doc/flux/tex/sock.fig
+%%PORTDOCS%%share/doc/flux/tex/tt.fig
+%%PORTDOCS%%share/doc/flux/tex/ttree-rules.fig
+%%PORTDOCS%%@dirrm share/doc/flux/tex
+%%PORTDOCS%%@dirrm share/doc/flux/plain/builds/0.4.0
+%%PORTDOCS%%@dirrm share/doc/flux/plain/builds/0.3.0
+%%PORTDOCS%%@dirrm share/doc/flux/plain/builds
+%%PORTDOCS%%@dirrm share/doc/flux/plain
+%%PORTDOCS%%@dirrm share/doc/flux/html/img
+%%PORTDOCS%%@dirrm share/doc/flux/html/docs
+%%PORTDOCS%%@dirrm share/doc/flux/html
+%%PORTDOCS%%@dirrm share/doc/flux
 @dirrm include/flux

@@ -24,8 +24,8 @@ bin/ws
 include/freeWAIS-sf/wais.h
 lib/freeWAIS-sf/emacs/lisp/wais.el
 lib/freeWAIS-sf/libwais.a
-share/doc/SF/fwsf.ps
-@dirrm share/doc/SF
+%%PORTDOCS%%share/doc/SF/fwsf.ps
+%%PORTDOCS%%@dirrm share/doc/SF
 @dirrm lib/freeWAIS-sf/emacs/lisp
 @dirrm lib/freeWAIS-sf/emacs
 @dirrm lib/freeWAIS-sf

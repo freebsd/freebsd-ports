@@ -140,10 +140,10 @@ i386-go32/lib/libm.a
 i386-go32/lib/libpc.a
 i386-go32/lib/specs
 info/libc.info
-share/doc/djgpp2/README.FreeBSD
-share/doc/djgpp2/install
-share/doc/djgpp2/readme
-@dirrm share/doc/djgpp2
+%%PORTDOCS%%share/doc/djgpp2/README.FreeBSD
+%%PORTDOCS%%share/doc/djgpp2/install
+%%PORTDOCS%%share/doc/djgpp2/readme
+%%PORTDOCS%%@dirrm share/doc/djgpp2
 @unexec rm -rf %D/i386-go32/lib
 @unexec rm -rf %D/i386-go32/include
 @unexec mv %D/i386-go32/lib-newlib %D/i386-go32/lib

@@ -55,14 +55,14 @@ lib/libgphoto_sony_dscf1.so.0
 lib/libgphoto_sony_dscf55.a
 lib/libgphoto_sony_dscf55.so
 lib/libgphoto_sony_dscf55.so.0
-share/doc/gphoto/ChangeLog
-share/doc/gphoto/FAQ
-share/doc/gphoto/NEWS
-share/doc/gphoto/PROGRAMMERS
-share/doc/gphoto/README
-share/doc/gphoto/THANKS
-share/doc/gphoto/THEMES
-share/doc/gphoto/TODO
+%%PORTDOCS%%share/doc/gphoto/ChangeLog
+%%PORTDOCS%%share/doc/gphoto/FAQ
+%%PORTDOCS%%share/doc/gphoto/NEWS
+%%PORTDOCS%%share/doc/gphoto/PROGRAMMERS
+%%PORTDOCS%%share/doc/gphoto/README
+%%PORTDOCS%%share/doc/gphoto/THANKS
+%%PORTDOCS%%share/doc/gphoto/THEMES
+%%PORTDOCS%%share/doc/gphoto/TODO
 share/gphoto/AUTHORS
 share/gphoto/MANUAL
 share/gphoto/gallery/CSStheme/gphotobutton.png 
@@ -95,4 +95,4 @@ share/gphoto/gallery/RedNGray/thumbnail.html
 @dirrm share/gphoto/gallery/CSStheme
 @dirrm share/gphoto/gallery
 @dirrm share/gphoto
-@dirrm share/doc/gphoto
+%%PORTDOCS%%@dirrm share/doc/gphoto

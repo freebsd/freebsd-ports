@@ -1,22 +1,22 @@
 bin/ewipe
-share/doc/ewipe/Changes.jp
-share/doc/ewipe/README
-share/doc/ewipe/README.jp
-share/doc/ewipe/dot.ewipe
+%%PORTDOCS%%share/doc/ewipe/Changes.jp
+%%PORTDOCS%%share/doc/ewipe/README
+%%PORTDOCS%%share/doc/ewipe/README.jp
+%%PORTDOCS%%share/doc/ewipe/dot.ewipe
 share/ewipe/definefont.tcl
 share/ewipe/edittable.tcl
 share/ewipe/setpointer.tcl
 share/ewipe/tclIndex
 share/ewipe/viewer.tcl
-share/examples/ewipe/a1.gif
-share/examples/ewipe/a2.gif
-share/examples/ewipe/a3.gif
-share/examples/ewipe/a4.gif
-share/examples/ewipe/blue1.gif
-share/examples/ewipe/sample.ewp
-share/examples/ewipe/test.ewp
-share/examples/ewipe/tutorial.ewp
-share/examples/ewipe/tutorial-e.ewp
-@dirrm share/examples/ewipe
+%%PORTDOCS%%share/examples/ewipe/a1.gif
+%%PORTDOCS%%share/examples/ewipe/a2.gif
+%%PORTDOCS%%share/examples/ewipe/a3.gif
+%%PORTDOCS%%share/examples/ewipe/a4.gif
+%%PORTDOCS%%share/examples/ewipe/blue1.gif
+%%PORTDOCS%%share/examples/ewipe/sample.ewp
+%%PORTDOCS%%share/examples/ewipe/test.ewp
+%%PORTDOCS%%share/examples/ewipe/tutorial.ewp
+%%PORTDOCS%%share/examples/ewipe/tutorial-e.ewp
+%%PORTDOCS%%@dirrm share/examples/ewipe
 @dirrm share/ewipe
-@dirrm share/doc/ewipe
+%%PORTDOCS%%@dirrm share/doc/ewipe

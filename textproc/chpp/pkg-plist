@@ -11,9 +11,9 @@ share/chpp/include/sql.chh
 share/chpp/include/strings.chh
 share/chpp/include/time.chh
 share/chpp/include/w3lib.chh
-share/doc/chpp/AUTHORS
-share/doc/chpp/NEWS
-share/doc/chpp/README
+%%PORTDOCS%%share/doc/chpp/AUTHORS
+%%PORTDOCS%%share/doc/chpp/NEWS
+%%PORTDOCS%%share/doc/chpp/README
 share/examples/chpp/regress/dotest
 share/examples/chpp/regress/tests
 share/examples/chpp/regress/arith/arith.txt
@@ -106,6 +106,6 @@ share/examples/chpp/website/tricks_t.chml
 @dirrm share/examples/chpp/regress/arith
 @dirrm share/examples/chpp/regress
 @dirrm share/examples/chpp
-@dirrm share/doc/chpp
+%%PORTDOCS%%@dirrm share/doc/chpp
 @dirrm share/chpp/include
 @dirrm share/chpp

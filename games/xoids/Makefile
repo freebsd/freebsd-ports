@@ -22,8 +22,8 @@ post-extract:
 
 post-install:
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/xoids
-	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/xoids
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>

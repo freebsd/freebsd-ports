@@ -1,5 +1,4 @@
-@comment $FreeBSD$
 sbin/dlint
 sbin/digparse
-share/doc/dlint/README
-@dirrm share/doc/dlint
+%%PORTDOCS%%share/doc/dlint/README
+%%PORTDOCS%%@dirrm share/doc/dlint

@@ -24,8 +24,8 @@ MAKE_ENV+=	PCFLAGS="${CFLAGS}"
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/dhcp-conf ${PREFIX}/sbin/dhcpconf
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/dhcpconf
-	@${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/dhcpconf
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>

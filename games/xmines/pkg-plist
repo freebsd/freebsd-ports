@@ -2,6 +2,6 @@ bin/xmines
 @mode 666
 share/xmines/scores
 @mode
-share/doc/xmines/README
-@dirrm share/doc/xmines
+%%PORTDOCS%%share/doc/xmines/README
+%%PORTDOCS%%@dirrm share/doc/xmines
 @dirrm share/xmines

@@ -1,6 +1,6 @@
 bin/xataxx
-share/doc/xataxx/README
-share/doc/xataxx/TODO
+%%PORTDOCS%%share/doc/xataxx/README
+%%PORTDOCS%%share/doc/xataxx/TODO
 share/xataxx/1.xbd
 share/xataxx/10.xbd
 share/xataxx/11.xbd
@@ -55,5 +55,5 @@ share/xataxx/stonemask.xbm
 share/xataxx/title.xbm
 share/xataxx/upcursor.xbm
 share/xataxx/upmask.xbm
-@dirrm share/doc/xataxx
+%%PORTDOCS%%@dirrm share/doc/xataxx
 @dirrm share/xataxx

@@ -10,20 +10,20 @@ include/Hermes/Types.h
 lib/libHermes.a
 lib/libHermes.so
 lib/libHermes.so.1
-share/doc/Hermes/AUTHORS
-share/doc/Hermes/ChangeLog
-share/doc/Hermes/FAQ
-share/doc/Hermes/README
-share/doc/Hermes/TODO
-share/doc/Hermes/TODO.conversion
-share/doc/Hermes/API/api-1.htm
-share/doc/Hermes/API/api-2.htm
-share/doc/Hermes/API/api-3.htm
-share/doc/Hermes/API/api-4.htm
-share/doc/Hermes/API/api.htm
-share/doc/Hermes/API/api.ps
-share/doc/Hermes/API/api.sgml
-share/doc/Hermes/API/api.txt
-@dirrm share/doc/Hermes/API
-@dirrm share/doc/Hermes
+%%PORTDOCS%%share/doc/Hermes/AUTHORS
+%%PORTDOCS%%share/doc/Hermes/ChangeLog
+%%PORTDOCS%%share/doc/Hermes/FAQ
+%%PORTDOCS%%share/doc/Hermes/README
+%%PORTDOCS%%share/doc/Hermes/TODO
+%%PORTDOCS%%share/doc/Hermes/TODO.conversion
+%%PORTDOCS%%share/doc/Hermes/API/api-1.htm
+%%PORTDOCS%%share/doc/Hermes/API/api-2.htm
+%%PORTDOCS%%share/doc/Hermes/API/api-3.htm
+%%PORTDOCS%%share/doc/Hermes/API/api-4.htm
+%%PORTDOCS%%share/doc/Hermes/API/api.htm
+%%PORTDOCS%%share/doc/Hermes/API/api.ps
+%%PORTDOCS%%share/doc/Hermes/API/api.sgml
+%%PORTDOCS%%share/doc/Hermes/API/api.txt
+%%PORTDOCS%%@dirrm share/doc/Hermes/API
+%%PORTDOCS%%@dirrm share/doc/Hermes
 @dirrm include/Hermes

@@ -1,4 +1,4 @@
 bin/spellcast
-share/doc/spellcast/README
-share/doc/spellcast/spelllist.ps
-@dirrm share/doc/spellcast
+%%PORTDOCS%%share/doc/spellcast/README
+%%PORTDOCS%%share/doc/spellcast/spelllist.ps
+%%PORTDOCS%%@dirrm share/doc/spellcast

@@ -1,5 +1,5 @@
 sbin/shlight
 sbin/unshlight
-share/doc/Sharity-Light/README
-share/doc/Sharity-Light/FAQ
-@dirrm share/doc/Sharity-Light
+%%PORTDOCS%%share/doc/Sharity-Light/README
+%%PORTDOCS%%share/doc/Sharity-Light/FAQ
+%%PORTDOCS%%@dirrm share/doc/Sharity-Light

@@ -14,15 +14,15 @@ include/ude/ude-types.h
 include/ude/ude-vector.h
 include/ude/ude-wraparounds.h
 include/ude/ude.h
-share/doc/ude/html/index.html
-share/doc/ude/html/scratch.html
-share/doc/ude/html/uwm/index.html
-share/doc/ude/html/uwm/uwm_manual.html
-share/doc/ude/manual.tex
-share/doc/ude/scratch.lyx
-share/doc/ude/scratch.txt
-share/doc/ude/uwm_manual.lyx
-share/doc/ude/uwm_manual.txt
+%%PORTDOCS%%share/doc/ude/html/index.html
+%%PORTDOCS%%share/doc/ude/html/scratch.html
+%%PORTDOCS%%share/doc/ude/html/uwm/index.html
+%%PORTDOCS%%share/doc/ude/html/uwm/uwm_manual.html
+%%PORTDOCS%%share/doc/ude/manual.tex
+%%PORTDOCS%%share/doc/ude/scratch.lyx
+%%PORTDOCS%%share/doc/ude/scratch.txt
+%%PORTDOCS%%share/doc/ude/uwm_manual.lyx
+%%PORTDOCS%%share/doc/ude/uwm_manual.txt
 share/locale/de/LC_MESSAGES/ude.mo
 share/locale/es/LC_MESSAGES/ude.mo
 share/locale/pt_BR/LC_MESSAGES/ude.mo
@@ -57,7 +57,7 @@ share/ude/gfx/shape.xpm
 @dirrm share/ude/extras
 @dirrm share/ude/config
 @dirrm share/ude
-@dirrm share/doc/ude/html/uwm
-@dirrm share/doc/ude/html
-@dirrm share/doc/ude
+%%PORTDOCS%%@dirrm share/doc/ude/html/uwm
+%%PORTDOCS%%@dirrm share/doc/ude/html
+%%PORTDOCS%%@dirrm share/doc/ude
 @dirrm include/ude

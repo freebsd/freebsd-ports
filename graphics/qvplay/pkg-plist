@@ -1,11 +1,11 @@
 bin/qvalldel
 bin/qvplay
 bin/qvrec
-share/doc/qvplay/FAQ.txt
-share/doc/qvplay/HISTORY
-share/doc/qvplay/PROTOCOL.eng
-share/doc/qvplay/PROTOCOL.txt
-share/doc/qvplay/README
-share/doc/qvplay/README.FreeBSD
-share/doc/qvplay/README.eng
-@dirrm share/doc/qvplay
+%%PORTDOCS%%share/doc/qvplay/FAQ.txt
+%%PORTDOCS%%share/doc/qvplay/HISTORY
+%%PORTDOCS%%share/doc/qvplay/PROTOCOL.eng
+%%PORTDOCS%%share/doc/qvplay/PROTOCOL.txt
+%%PORTDOCS%%share/doc/qvplay/README
+%%PORTDOCS%%share/doc/qvplay/README.FreeBSD
+%%PORTDOCS%%share/doc/qvplay/README.eng
+%%PORTDOCS%%@dirrm share/doc/qvplay

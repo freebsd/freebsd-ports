@@ -1,10 +1,10 @@
 bin/pp
 bin/pp.bin
-share/doc/pp/INSTALL
-share/doc/pp/LICENSE
-share/doc/pp/RULES
-share/doc/pp/WARRANTY
-share/doc/pp/free-license.html
+%%PORTDOCS%%share/doc/pp/INSTALL
+%%PORTDOCS%%share/doc/pp/LICENSE
+%%PORTDOCS%%share/doc/pp/RULES
+%%PORTDOCS%%share/doc/pp/WARRANTY
+%%PORTDOCS%%share/doc/pp/free-license.html
 share/pp/autosave.sav
 share/pp/level/blank.map1
 share/pp/level/level1.map1
@@ -292,7 +292,7 @@ share/pp/pic/stone5.gif
 share/pp/pic/titel640x400.gif
 share/pp/pic/wasser.gif
 share/pp/pic/zentrale.gif
-@dirrm share/doc/pp
+%%PORTDOCS%%@dirrm share/doc/pp
 @dirrm share/pp/level
 @dirrm share/pp/pic
 @dirrm share/pp

@@ -6,7 +6,7 @@ bin/crosspad2ps
 @unexec rm %D/bin/crosspad2eps
 @unexec rm %D/bin/crosspad2tgif
 @unexec rm %D/bin/crosspad2idraw
-share/doc/crosspad/PROTOCOL
-share/doc/crosspad/README.english
-share/doc/crosspad/README.japanese
-@dirrm share/doc/crosspad
+%%PORTDOCS%%share/doc/crosspad/PROTOCOL
+%%PORTDOCS%%share/doc/crosspad/README.english
+%%PORTDOCS%%share/doc/crosspad/README.japanese
+%%PORTDOCS%%@dirrm share/doc/crosspad

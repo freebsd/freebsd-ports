@@ -27,17 +27,20 @@ MAKE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/wmanager ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/wmanager
-	${INSTALL_DATA} ${WRKSRC}/.wmanagerrc ${PREFIX}/share/wmanager/wmanagerrc_sample
-	${INSTALL_DATA} ${WRKSRC}/.xinitrc ${PREFIX}/share/wmanager/xinitrc_sample
+	@${MKDIR} ${PREFIX}/share/examples/${PORTNAME}
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/.wmanagerrc \
+		${PREFIX}/share/examples/${PORTNAME}/wmanagerrc_sample
+	@${INSTALL_DATA} ${WRKSRC}/.xinitrc \
+		${PREFIX}/share/examples/${PORTNAME}/xinitrc_sample
 .for file in FAQ HISTORY INSTALL NEWS README TODO
-	${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/wmanager
+	@${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
-	@${ECHO}
-	@${ECHO} "Docs have been installed in ${PREFIX}/share/wmanager/."
-	@${ECHO} "You are advised to have a look at the sample .wmanagerrc"
-	@${ECHO} "and .xinitrc's available there."
-	@${ECHO}
+	@${ECHO} ""
+	@${ECHO} "Examples of .xinitrc and .wmanagerrc have been installed"
+	@${ECHO} "in ${PREFIX}/share/examples/${PORTNAME} and docs have"
+	@${ECHO} "been installed to ${DOCSDIR}."
+	@${ECHO} ""
 .endif
 
 .include <bsd.port.mk>

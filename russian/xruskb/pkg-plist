@@ -31,7 +31,7 @@ share/xruskb/yawerty-deru-iso5.xmm
 share/xruskb/yawerty-deru-koi8.xmm
 share/xruskb/yawerty-iso5.xmm
 share/xruskb/yawerty-koi8.xmm
-share/doc/xruskb/xrus.doc-english
-share/doc/xruskb/xrus.doc-koi8
-@dirrm share/doc/xruskb
+%%PORTDOCS%%share/doc/xruskb/xrus.doc-english
+%%PORTDOCS%%share/doc/xruskb/xrus.doc-koi8
+%%PORTDOCS%%@dirrm share/doc/xruskb
 @dirrm share/xruskb

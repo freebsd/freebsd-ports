@@ -17,6 +17,6 @@ share/Columns/remove.wav
 share/Columns/rotate.wav
 share/Columns/small.fnt
 share/Columns/tiles.bmp
-share/doc/columns/README
-@dirrm share/doc/columns
+%%PORTDOCS%%share/doc/columns/README
+%%PORTDOCS%%@dirrm share/doc/columns
 @dirrm share/Columns

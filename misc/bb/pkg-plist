@@ -3,8 +3,8 @@ bin/bb_snd_server
 share/bb/bb.s3m
 share/bb/bb2.s3m
 share/bb/bb3.s3m
-share/doc/bb/ANNOUNCE
-share/doc/bb/COPYING
-share/doc/bb/README
+%%PORTDOCS%%share/doc/bb/ANNOUNCE
+%%PORTDOCS%%share/doc/bb/COPYING
+%%PORTDOCS%%share/doc/bb/README
 @dirrm share/bb
-@dirrm share/doc/bb
+%%PORTDOCS%%@dirrm share/doc/bb

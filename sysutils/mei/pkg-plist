@@ -1,8 +1,8 @@
 bin/mei
 bin/moe
-share/doc/mei/mdt.txt
-share/doc/mei/mospec.txt
-share/doc/mei/msdos.txt
-share/doc/mei/readme.txt
-share/doc/mei/unix.txt
-@dirrm share/doc/mei
+%%PORTDOCS%%share/doc/mei/mdt.txt
+%%PORTDOCS%%share/doc/mei/mospec.txt
+%%PORTDOCS%%share/doc/mei/msdos.txt
+%%PORTDOCS%%share/doc/mei/readme.txt
+%%PORTDOCS%%share/doc/mei/unix.txt
+%%PORTDOCS%%@dirrm share/doc/mei

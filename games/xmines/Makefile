@@ -18,8 +18,8 @@ USE_X_PREFIX=	yes
 
 post-install:
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/xmines
-	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/xmines
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>

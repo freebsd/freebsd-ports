@@ -3,17 +3,17 @@ lib/X11/femlab/config/modules
 lib/X11/femlab/bin/femlab
 lib/X11/femlab/bin/meshgen
 lib/X11/femlab/bin/poisson
-share/doc/femlab/manual.dvi
-share/doc/femlab/manual.ps
-share/examples/femlab/capacitor.fem
-share/examples/femlab/convection.fem
-share/examples/femlab/man.fem
-share/examples/femlab/pot-cyl.fem
-share/examples/femlab/soap.fem
-share/examples/femlab/spark-plug.fem
-share/examples/femlab/torsion.fem
+%%PORTDOCS%%share/doc/femlab/manual.dvi
+%%PORTDOCS%%share/doc/femlab/manual.ps
+%%PORTDOCS%%share/examples/femlab/capacitor.fem
+%%PORTDOCS%%share/examples/femlab/convection.fem
+%%PORTDOCS%%share/examples/femlab/man.fem
+%%PORTDOCS%%share/examples/femlab/pot-cyl.fem
+%%PORTDOCS%%share/examples/femlab/soap.fem
+%%PORTDOCS%%share/examples/femlab/spark-plug.fem
+%%PORTDOCS%%share/examples/femlab/torsion.fem
 @dirrm lib/X11/femlab/config
 @dirrm lib/X11/femlab/bin
 @dirrm lib/X11/femlab
-@dirrm share/doc/femlab
-@dirrm share/examples/femlab
+%%PORTDOCS%%@dirrm share/doc/femlab
+%%PORTDOCS%%@dirrm share/examples/femlab

@@ -1,5 +1,5 @@
 bin/44bsd-csh
-share/doc/44bsd-csh/paper.ascii.gz
+%%PORTDOCS%%share/doc/44bsd-csh/paper.ascii.gz
 @exec echo "updating /etc/shells"; cp /etc/shells /etc/shells.bak; (grep -v %D/%F /etc/shells.bak; echo %D/%F) >/etc/shells
 @unexec echo "updating /etc/shells"; cp /etc/shells /etc/shells.bak; (grep -v %D/%F /etc/shells.bak) >/etc/shells
-@dirrm share/doc/44bsd-csh
+%%PORTDOCS%%@dirrm share/doc/44bsd-csh

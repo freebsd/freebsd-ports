@@ -1,2 +1,3 @@
 bin/drm
-share/doc/README.drm
+%%PORTDOCS%%share/doc/drm/README
+%%PORTDOCS%%@dirrm share/doc/drm

@@ -1,10 +1,10 @@
 bin/rubix
-share/doc/rubix/AUTHORS
-share/doc/rubix/BUGS
-share/doc/rubix/INSTALL
-share/doc/rubix/NOISE
-share/doc/rubix/README
-share/doc/rubix/TODO
+%%PORTDOCS%%share/doc/rubix/AUTHORS
+%%PORTDOCS%%share/doc/rubix/BUGS
+%%PORTDOCS%%share/doc/rubix/INSTALL
+%%PORTDOCS%%share/doc/rubix/NOISE
+%%PORTDOCS%%share/doc/rubix/README
+%%PORTDOCS%%share/doc/rubix/TODO
 share/rubix/module.xm
 @dirrm share/rubix
-@dirrm share/doc/rubix
+%%PORTDOCS%%@dirrm share/doc/rubix

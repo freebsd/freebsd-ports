@@ -1,10 +1,10 @@
 bin/robodoc
-share/doc/robodoc/AUTHORS
-share/doc/robodoc/ChangeLog
-share/doc/robodoc/NEWS
-share/doc/robodoc/README
-share/doc/robodoc/main.css
-share/doc/robodoc/robodoc.html
+%%PORTDOCS%%share/doc/robodoc/AUTHORS
+%%PORTDOCS%%share/doc/robodoc/ChangeLog
+%%PORTDOCS%%share/doc/robodoc/NEWS
+%%PORTDOCS%%share/doc/robodoc/README
+%%PORTDOCS%%share/doc/robodoc/main.css
+%%PORTDOCS%%share/doc/robodoc/robodoc.html
 share/examples/robodoc/C/makefile
 share/examples/robodoc/C/prog1.c
 share/examples/robodoc/C/prog1.c.html
@@ -19,4 +19,4 @@ share/examples/robodoc/CPP/muppets.h.html
 @dirrm share/examples/robodoc/CPP
 @dirrm share/examples/robodoc/C
 @dirrm share/examples/robodoc
-@dirrm share/doc/robodoc
+%%PORTDOCS%%@dirrm share/doc/robodoc
