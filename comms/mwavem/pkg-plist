@@ -71,6 +71,7 @@ share/mwavem/mwmmem.prf
 share/mwavem/tigr1040.wtt
 share/mwavem/mwave.ko
 @dirrm share/mwavem
+@dirrm share/mwavem-fbsd
 @exec rm -f /dev/mwave
 @exec mknod /dev/mwave c 96 0
 @unexec rm -f /dev/mwave
