@@ -191,6 +191,7 @@
     SUBDIR += kde3-i18n-ss
     SUBDIR += kde3-i18n-sv
     SUBDIR += kde3-i18n-ta
+    SUBDIR += kde3-i18n-tg
     SUBDIR += kde3-i18n-th
     SUBDIR += kde3-i18n-tr
     SUBDIR += kde3-i18n-uz
