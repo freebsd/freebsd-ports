@@ -81,6 +81,7 @@ share/doc/ntp/hints/sun4
 share/doc/ntp/hints/svr4-dell
 share/doc/ntp/hints/svr4_package
 share/doc/ntp/hints/todo
+share/doc/ntp/hints/vxworks.htm
 share/doc/ntp/hints/vxworks.html
 share/doc/ntp/hints/winnt.htm
 share/doc/ntp/hints.htm
@@ -90,6 +91,7 @@ share/doc/ntp/index.htm
 share/doc/ntp/kern.htm
 share/doc/ntp/kernpps.htm
 share/doc/ntp/ldisc.htm
+share/doc/ntp/leap.htm
 share/doc/ntp/measure.htm
 share/doc/ntp/miscopt.htm
 share/doc/ntp/monopt.htm
@@ -150,6 +152,7 @@ share/doc/ntp/pic/pogo6.gif
 share/doc/ntp/pic/pogo8.gif
 share/doc/ntp/pic/pzf509.jpg
 share/doc/ntp/pic/rabbit.gif
+share/doc/ntp/pic/radio2.gif
 share/doc/ntp/pic/sheepb.jpg
 share/doc/ntp/pic/stack1a.jpg
 share/doc/ntp/pic/tonea.gif
@@ -163,8 +166,6 @@ share/doc/ntp/rdebug.htm
 share/doc/ntp/refclock.htm
 share/doc/ntp/release.htm
 share/doc/ntp/tickadj.htm
-share/doc/ntp/vxworks.htm
-share/doc/ntp/y2k.htm
 @dirrm share/doc/ntp/pic
 @dirrm share/doc/ntp/hints
 @dirrm share/doc/ntp

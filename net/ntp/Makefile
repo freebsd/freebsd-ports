@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ntp
-PORTVERSION=	4.0.99k23
+PORTVERSION=	4.0.99m-rc2
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.udel.edu/pub/ntp/ntp4/ \
 		http://www.eeics.udel.edu/~ntp/ntp_spool/ntp4/
