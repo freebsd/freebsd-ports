@@ -1,0 +1,59 @@
+--- configure	2000/10/31 13:01:21	1.1
++++ configure	2000/10/31 13:03:15
+@@ -9,7 +9,7 @@
+     exit -1
+ fi
+ 
+-if [ ! -f "$TMAKEPATH/../../bin/tmake" ]
++if [ ! -f "$TMAKEPATH/../../../bin/tmake" ]
+ then
+     echo "*******************************************************************************"
+     echo " The tmake utility was not found. This package requires a correctly"
+@@ -20,21 +20,21 @@
+ 
+ echo "Creating Makefiles..."
+ 
+-$TMAKEPATH/../../bin/tmake -o Makefile *.pro 2> /dev/null
++$TMAKEPATH/../../../bin/tmake -o Makefile *.pro 2> /dev/null
+ cd linguist
+-$TMAKEPATH/../../bin/tmake -o Makefile *.pro 2> /dev/null
++$TMAKEPATH/../../../bin/tmake -o Makefile *.pro 2> /dev/null
+ cd tutorial/tt1
+-$TMAKEPATH/../../bin/tmake -o Makefile *.pro 2> /dev/null
++$TMAKEPATH/../../../bin/tmake -o Makefile *.pro 2> /dev/null
+ cd ../tt2
+-$TMAKEPATH/../../bin/tmake -o Makefile *.pro 2> /dev/null
++$TMAKEPATH/../../../bin/tmake -o Makefile *.pro 2> /dev/null
+ cd ../tt3
+-$TMAKEPATH/../../bin/tmake -o Makefile *.pro 2> /dev/null
++$TMAKEPATH/../../../bin/tmake -o Makefile *.pro 2> /dev/null
+ cd ../../../lrelease
+-$TMAKEPATH/../../bin/tmake -o Makefile *.pro 2> /dev/null
++$TMAKEPATH/../../../bin/tmake -o Makefile *.pro 2> /dev/null
+ cd ../lupdate
+-$TMAKEPATH/../../bin/tmake -o Makefile *.pro 2> /dev/null
++$TMAKEPATH/../../../bin/tmake -o Makefile *.pro 2> /dev/null
+ cd ../qm2ts
+-$TMAKEPATH/../../bin/tmake -o Makefile *.pro 2> /dev/null
++$TMAKEPATH/../../../bin/tmake -o Makefile *.pro 2> /dev/null
+ cd ..
+ 
+ if [ -z "$QTDIR" ]
+@@ -46,7 +46,7 @@
+     exit -1
+ fi
+ 
+-if [ ! -f "$QTDIR/lib/libqt.so.2.2.1" -a ! -f "$QTDIR/lib/libqt.a" ]
++if [ ! -f "$QTDIR/lib/libqt2.so.4" -a ! -f "$QTDIR/lib/libqt2.a" ]
+ then
+     echo "*******************************************************************************"
+     echo " The Qt 2.2.1 Library was not found. This package requires a correctly set up"
+@@ -55,7 +55,7 @@
+     exit -1
+ fi
+ 
+-if [ ! -f "$QTDIR/bin/moc" ]
++if [ ! -f "$QTDIR/bin/moc2" ]
+ then
+     echo "*******************************************************************************"
+     echo " The moc meta object compiler was not found. This package requires a"

@@ -146,6 +146,7 @@
     SUBDIR += libunicode
     SUBDIR += libxalloc
     SUBDIR += lincvs
+    SUBDIR += linguist
     SUBDIR += linux_devtools
     SUBDIR += linux_kdump
     SUBDIR += linuxthreads
