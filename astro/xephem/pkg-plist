@@ -1,26 +1,30 @@
 bin/xephem
 lib/X11/app-defaults/XEphem
 lib/X11/xephem/auxil/README
+lib/X11/xephem/auxil/analemma.plt
 lib/X11/xephem/auxil/jupiter.9910
+lib/X11/xephem/auxil/jupitermap.gif
 lib/X11/xephem/auxil/logo.gif
 lib/X11/xephem/auxil/mars.9910
 lib/X11/xephem/auxil/mars_db
 lib/X11/xephem/auxil/marsmap.fts
 lib/X11/xephem/auxil/moon.fts
 lib/X11/xephem/auxil/moon_db
+lib/X11/xephem/auxil/sample.hzn
 lib/X11/xephem/auxil/saturne.9910
+lib/X11/xephem/auxil/starcensus.txt
 lib/X11/xephem/auxil/uranus.9910
 lib/X11/xephem/auxil/xephem.hlp
-lib/X11/xephem/auxil/xephem_sites
+lib/X11/xephem/auxil/xephem.sit
+lib/X11/xephem/auxil/xephem_skyhist
 lib/X11/xephem/catalogs/ISS.edb
 lib/X11/xephem/catalogs/Messier.edb
 lib/X11/xephem/catalogs/NGC.edb
 lib/X11/xephem/catalogs/README
-lib/X11/xephem/catalogs/SAC.edb
 lib/X11/xephem/catalogs/YBS.edb
-lib/X11/xephem/catalogs/asteroids.edb
-lib/X11/xephem/catalogs/comets.edb
-lib/X11/xephem/catalogs/hickson.edb
+lib/X11/xephem/fifos/Makefile
+lib/X11/xephem/fifos/README
+lib/X11/xephem/fits/Abell426.fts
 lib/X11/xephem/tools/README
 lib/X11/xephem/tools/astorb2edb.pl
 lib/X11/xephem/tools/extract.awk
@@ -29,6 +33,12 @@ lib/X11/xephem/tools/gsc/README
 lib/X11/xephem/tools/gsc/gscload.c
 lib/X11/xephem/tools/gsc/support.c
 lib/X11/xephem/tools/jost2edb.awk
+lib/X11/xephem/tools/lx200xed/GPL
+lib/X11/xephem/tools/lx200xed/Makefile
+lib/X11/xephem/tools/lx200xed/README
+lib/X11/xephem/tools/lx200xed/liblx200.c
+lib/X11/xephem/tools/lx200xed/liblx200.h
+lib/X11/xephem/tools/lx200xed/lx200xed.c
 lib/X11/xephem/tools/mpcorb2edb.pl
 lib/X11/xephem/tools/tle2edb.pl
 lib/X11/xephem/tools/xephemdbd/INSTALL
@@ -42,9 +52,12 @@ lib/X11/xephem/tools/xephemdbd/stubs.c
 lib/X11/xephem/tools/xephemdbd/xephemdbd.c
 lib/X11/xephem/tools/xephemdbd/xephemdbd.html
 lib/X11/xephem/tools/xephemdbd/xephemdbd.pl
-@dirrm lib/X11/xephem/auxil
-@dirrm lib/X11/xephem/catalogs
-@dirrm lib/X11/xephem/tools/gsc
 @dirrm lib/X11/xephem/tools/xephemdbd
+@dirrm lib/X11/xephem/tools/lx200xed
+@dirrm lib/X11/xephem/tools/gsc
 @dirrm lib/X11/xephem/tools
+@dirrm lib/X11/xephem/fits
+@dirrm lib/X11/xephem/fifos
+@dirrm lib/X11/xephem/catalogs
+@dirrm lib/X11/xephem/auxil
 @dirrm lib/X11/xephem
