@@ -1,0 +1,17 @@
+--- Makefile.orig	Thu Jul  5 20:09:50 2001
++++ Makefile	Thu Jul  5 20:10:23 2001
+@@ -1,13 +1,11 @@
+-prefix=
+ CPPFLAGS = -I/usr/X11R6/include -I/usr/local/include
+ LIBS = -lXpm -lX11 -ldockapp  
+ LDFLAGS = -L/usr/X11R6/lib -L/usr/local/lib
+-CFLAGS = -O2 -Wall
++CFLAGS += -Wall
+ DFLAGS = -ggdb3 -Wall
+ 
+ wmlpq: wmlpq.c wmlpq-master.xpm
+ 	cc $(CFLAGS) $(LDFLAGS) $(CPPFLAGS) -o wmlpq $(LIBS) wmlpq.c
+-	strip wmlpq
+ 
+ debug: wmlpq.c wmlpq-master.xpm
+ 	cc $(DFLAGS) $(LDFLAGS) $(CPPFLAGS) -o wmlpq $(LIBS) wmlpq.c

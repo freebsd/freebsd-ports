@@ -1,0 +1,11 @@
+The wmlpq example configuration file has been installed to:
+
+	(/usr/X11R6/share/examples/wmlpq/sample.wmlpqrc)
+
+Default configuration file that wmlpq looks for is ${HOME}/.wmlpqrc
+Follow the example configuration file and also dont forget to read
+the README file located at:
+
+	(/usr/X11R6/share/doc/wmlpq/README)
+
+
