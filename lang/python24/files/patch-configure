@@ -1,5 +1,5 @@
 --- configure.orig	Wed Nov 19 04:59:36 2003
-+++ configure	Mon Feb  9 17:39:34 2004
++++ configure	Wed Apr 14 15:37:53 2004
 @@ -1321,7 +1321,7 @@
  VERSION=2.3
  
@@ -31,3 +31,11 @@
  else
    echo "$as_me: program exited with status $ac_status" >&5
  echo "$as_me: failed program was:" >&5
+@@ -15001,6 +15007,7 @@
+     hints.ai_family = AF_UNSPEC;
+     hints.ai_flags = passive ? AI_PASSIVE : 0;
+     hints.ai_socktype = SOCK_STREAM;
++    hints.ai_protocol = IPPROTO_TCP;
+     if ((gaierr = getaddrinfo(NULL, "54321", &hints, &aitop)) != 0) {
+       (void)gai_strerror(gaierr);
+       goto bad;
