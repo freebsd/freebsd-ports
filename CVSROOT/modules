@@ -2909,6 +2909,7 @@ iftop		ports/net/iftop
 igal		ports/www/igal
 iiimecf		ports/editors/iiimecf
 iiimf-client-lib	ports/textproc/iiimf-client-lib
+iiimf-gtk	ports/textproc/iiimf-gtk
 iiimf-headers	ports/textproc/iiimf-headers
 iiimf-le-unit	ports/textproc/iiimf-le-unit
 iiimf-protocol-lib	ports/textproc/iiimf-protocol-lib
