@@ -7,6 +7,7 @@
 
 PORTNAME=	tdiary
 PORTVERSION=	1.5.6
+PORTREVISION=	1
 CATEGORIES?=	www ruby
 MASTER_SITES=	\
 		${MASTER_SITE_SOURCEFORGE} \
@@ -70,6 +71,7 @@ do-install:
 post-install:
 	@cd ${WRKSRC} && ${FIND} . -type f -o -type l | ${SED} -e 's,^\.,${TDIARYDIR:S|${LOCALBASE}/||},' >> ${TMPPLIST}
 	@cd ${WRKSRC} && ${FIND} . -type d -depth  | ${SED} -e 's,^\.,@dirrm ${TDIARYDIR:S|${LOCALBASE}/||},' >> ${TMPPLIST}
-	@${SED} -e "s,%%EXAMPLESDIR%%,${EXAMPLESDIR},g" ${PKGMESSAGE}
+	@${SED}	-e 's|%%EXAMPLESDIR%%|${EXAMPLESDIR}|' < ${FILESDIR}/pkg-message.in > ${PKGMESSAGE}
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
