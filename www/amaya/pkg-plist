@@ -869,6 +869,8 @@ Amaya/fonts/icones.pcf
 Amaya/fonts/icones1.fb
 Amaya/fonts/icones11.fb
 Amaya/resources/xrc/InitConfirmDlgWX.xrc
+@dirrm Amaya/resources/xrc
+@dirrm Amaya/resources
 @dirrm Amaya/fonts
 @dirrm Amaya/doc/images
 @dirrm Amaya/doc/html/viewing
