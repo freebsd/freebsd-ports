@@ -1,0 +1,5 @@
+glademm an extension to glade and glade-2 (Gtk GUI Builder) to create
+C++ sources for gtk-- and gtkmm2 (any combination) or skeletons for
+libglade(mm) based programs.
+
+WWW: http://home.wtal.de/petig/Gtk/
