@@ -4,13 +4,13 @@
 #
 # Whom:	Daniel Eischen <deischen@iworks.InterWorks.org>
 #
-# $Id: Makefile,v 1.3 1996/10/10 00:33:02 max Exp $
+# $Id: Makefile,v 1.4 1996/11/18 13:58:01 asami Exp $
 #
-DISTNAME=	nedit-4.0.1
+DISTNAME=	nedit-4.0.3
 CATEGORIES=	editors x11
-MASTER_SITES=	ftp://ftp.fnal.gov/KITS/pub/nedit/v4_0_1/ \
-		ftp://ftp.fnal.gov/KITS/pub/nedit/v4_0_1/contrib/
-DISTFILES=	nedit_source.tar nedit.app-defaults 
+MASTER_SITES=	ftp://ftp.fnal.gov/KITS/pub/nedit/v4_0_3/ \
+		ftp://ftp.fnal.gov/KITS/pub/nedit/v4_0_3/contrib/
+DISTFILES=	nedit_source.tar.gz nedit.app-defaults 
 
 MAINTAINER=	deischen@iworks.InterWorks.org
 
@@ -19,8 +19,8 @@ LIB_DEPENDS=	Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
 REQUIRES_MOTIF=	yes
 USE_X11=	yes
 NO_WRKSUBDIR=	yes
-EXTRACT_BEFORE_ARGS=	-C ${WRKDIR} -xf
-EXTRACT_ONLY=	nedit_source.tar
+EXTRACT_BEFORE_ARGS=	-C ${WRKDIR} -xzf
+EXTRACT_ONLY=	nedit_source.tar.gz
 MAN1=		nedit.1 nc.1
 
 post-extract:
