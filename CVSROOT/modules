@@ -4179,6 +4179,7 @@ linux-flashplugin	ports/www/linux-flashplugin
 linux-flashplugin6	ports/www/linux-flashplugin6
 linux-gnomelibs	ports/x11/linux-gnomelibs
 linux-gtk	ports/x11-toolkits/linux-gtk
+linux-gtk2	ports/x11-toolkits/linux-gtk2
 linux-ibm-jdk13	ports/java/linux-ibm-jdk13
 linux-ibm-jdk14	ports/java/linux-ibm-jdk14
 linux-imlib	ports/graphics/linux-imlib
