@@ -24,7 +24,7 @@ USE_OPENSSL=	yes
 CONFIGURE_ARGS+=--disable-openssl
 .endif
 CONFIGURE_TARGET=
-CONFIGURE_ARGS+= --build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ARGS+=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 .if defined(WITHOUT_KDE)
 CONFIGURE_ARGS+=	--disable-kde --enable-mt
