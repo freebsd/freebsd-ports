@@ -1,3 +1,4 @@
+bin/pod_cover
 %%SITE_PERL%%/%%PERL_ARCH%%/Pod/Coverage.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Pod/Coverage/CountParents.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Pod/Coverage/ExportOnly.pm
