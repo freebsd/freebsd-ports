@@ -6,19 +6,18 @@
 #
 
 PORTNAME=	SVG
-PORTVERSION=	2.1
+PORTVERSION=	2.27
 CATEGORIES=	textproc graphics perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	SVG
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	skv@FreeBSD.org
+COMMENT=	Perl extension for generating Scalable Vector Graphics (SVG) documents
 
 PERL_CONFIGURE=	yes
-PLIST_SUB=	EXAMPLESDIR="share/examples/${PORTNAME}"
 
 MAN3=		SVG.3 SVG::DOM.3 SVG::Element.3 SVG::Manual.3 SVG::XML.3
-MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 post-patch:
 	@${FIND} ${WRKSRC} \( -name "*.p[lm]" -or -name "*.cgi" \
