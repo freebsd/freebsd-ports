@@ -1,3 +1,12 @@
 %%PYTHON_SITELIBDIR%%/_xmlrpc.so
 %%PYTHON_SITELIBDIR%%/xmlrpc.py
 %%PYTHON_SITELIBDIR%%/xmlrpc.pyc
+%%PORTDOCS%%share/examples/%%SHARE_SUBDIR%%/README
+%%PORTDOCS%%share/examples/%%SHARE_SUBDIR%%/baseClient.py
+%%PORTDOCS%%share/examples/%%SHARE_SUBDIR%%/baseControl.py
+%%PORTDOCS%%share/examples/%%SHARE_SUBDIR%%/baseServer.py
+%%PORTDOCS%%share/examples/%%SHARE_SUBDIR%%/exControl.py
+%%PORTDOCS%%share/examples/%%SHARE_SUBDIR%%/exclient.py
+%%PORTDOCS%%share/examples/%%SHARE_SUBDIR%%/exserver.py
+%%PORTDOCS%%share/examples/%%SHARE_SUBDIR%%/killserver.py
+%%PORTDOCS%%@dirrm share/examples/%%SHARE_SUBDIR%%
