@@ -14,6 +14,8 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	jmz@FreeBSD.org
 
+BROKEN=		"Does not build with XFree86-4"
+
 WRKSRC=		${WRKDIR}/pixmap
 USE_IMAKE=	yes
 USE_XPM=	yes
