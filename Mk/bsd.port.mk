@@ -663,7 +663,7 @@ LIB_DEPENDS+=	qt.2:${PORTSDIR}/x11-toolkits/qt142
 .endif
 
 .if defined(USE_QT2)
-LIB_DEPENDS+=	qt2.2:${PORTSDIR}/x11-toolkits/qt201
+LIB_DEPENDS+=	qt2.2:${PORTSDIR}/x11-toolkits/qt20
 USE_NEWGCC=	yes
 .endif
 
