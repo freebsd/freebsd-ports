@@ -2072,6 +2072,7 @@ ficl-devel	ports/lang/ficl-devel
 fidelio		ports/net/fidelio
 fidogate	ports/news/fidogate
 fidogate-ds	ports/news/fidogate-ds
+fig2pstricks	ports/graphics/fig2pstricks
 figlet		ports/misc/figlet
 figlet-fonts	ports/misc/figlet-fonts
 figurine	ports/graphics/figurine
