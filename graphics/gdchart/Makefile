@@ -6,44 +6,50 @@
 #
 
 PORTNAME=	gdchart
-PORTVERSION=	0.10.1
-PORTREVISION=	1
+PORTVERSION=	0.11.2
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.fred.net/brv/chart/ \
 		ftp://ftp.nuug.no/pub/anders/distfiles/
 DISTNAME=	${PORTNAME}${PORTVERSION}dev
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	knu@FreeBSD.org
 
-LIB_DEPENDS=	gd.2:${PORTSDIR}/graphics/gd
+LIB_DEPENDS=	gd.2:${PORTSDIR}/graphics/gd \
+		jpeg:${PORTSDIR}/graphics/jpeg \
+		freetype:${PORTSDIR}/print/freetype2
 
 USE_REINPLACE=	yes
-MAKEFILE=	makefile
-WRKSRC=		${WRKDIR}/${DISTNAME}
+MAKEFILE=	${FILESDIR}/Makefile
+MAKE_ARGS=	PREFIX="${PREFIX}" LOCALBASE="${LOCALBASE}"
+
+DOCS=		README
+EXAMPLES=	ft_samp.c gdc_pie_samp.c gdc_samp1.c gdc_samp2.c
 
 post-patch:
-	${REINPLACE_CMD} -e 's/^#ifdef HAVE_JPEG/#ifndef NO_JPEG/' ${WRKSRC}/*.[ch]
-
-do-install:
-	${INSTALL_DATA}	${WRKSRC}/libgdchart.a ${PREFIX}/lib
-	${INSTALL_DATA}	${WRKSRC}/gdchart.h ${PREFIX}/include
-	${INSTALL_DATA}	${WRKSRC}/gdc.h ${PREFIX}/include
-	${INSTALL_DATA}	${WRKSRC}/gdcpie.h ${PREFIX}/include
-	${INSTALL_DATA}	${WRKSRC}/gifencode.h ${PREFIX}/include
+	${REINPLACE_CMD} \
+		-e 's/^#ifdef HAVE_JPEG/#ifndef NO_JPEG/' \
+		-e 's/^#ifdef HAVE_LIBFREETYPE/#ifndef NO_LIBFREETYPE/' \
+			${WRKSRC}/*.[ch]
+# ft_samp.c and gdc_samp?.c miss #include "gdcpie.h"
+	${REINPLACE_CMD} \
+		-e 's/^#include "gdc\.h"/#include "gdcpie.h"/' \
+			${WRKSRC}/ft_samp.c \
+			${WRKSRC}/gdc_samp?.c
+# gdc_pie_samp.c misses #include "gdchart.h"
+	${REINPLACE_CMD} \
+		-e 's/^#include "gdc\.h"/#include "gdchart.h"/' \
+			${WRKSRC}/gdc_pie_samp.c
 
 .if !defined(NOPORTDOCS)
 post-install:
-	@${INSTALL} -d -m 0755 ${PREFIX}/share/doc/gdchart
-	${INSTALL_DATA} ${WRKSRC}/gdc_samp1.c ${PREFIX}/share/doc/gdchart
-	${INSTALL_DATA} ${WRKSRC}/gdc_samp2.c ${PREFIX}/share/doc/gdchart
-	${INSTALL_DATA} ${WRKSRC}/gdc_pie_samp.c ${PREFIX}/share/doc/gdchart
-	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/gdchart
-	@${ECHO} "================================================================================"
-	@${ECHO} "Have a look at the sample code and README in ${PREFIX}/share/doc/${PORTNAME}."
-	@${ECHO} "To compile gdc_samp1, try something like:"
-	@${ECHO}
-	@${ECHO} "gcc -I${PREFIX}/include -o gdc_samp1 gdc_samp1.c -L${PREFIX}/lib -lgdchart -lgd"
-	@${ECHO} "================================================================================"
+.for f in ${DOCS}
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}/
+.endfor
+.for f in ${EXAMPLES}
+	${MKDIR} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${EXAMPLESDIR}/
+.endfor
 .endif
 
 .include <bsd.port.mk>
