@@ -14,9 +14,9 @@ DISTNAME=	${PORTNAME}${PORTVERSION}+onew2.2.10
 
 MAINTAINER=	taoka@FreeBSD.org
 
-PATCHDIR=	${.CURDIR}/../jvim/patches
+PATCHDIR=	${.CURDIR}/../jvim/files
 FILESDIR=	${.CURDIR}/../jvim/files
-PLIST=		${.CURDIR}/../jvim/pkg/PLIST
+PLIST=		${.CURDIR}/../jvim/pkg-plist
 MANLANG=	ja
 MAN1=		jcat.1 jfold.1 jgrep.1 jvim.1
 WRKSRC=		${WRKDIR}/${PORTNAME}${PORTVERSION}

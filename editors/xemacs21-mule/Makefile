@@ -68,8 +68,8 @@ PACKAGE_COOKIE=	${WRKDIR}/.package_done-${PKGNAME}
 STRIP=
 INSTALL_TARGET?=install-arch-dep
 FILESDIR=	${.CURDIR}/../../editors/xemacs${XEMACS_MAJOR_VER}/files
-PATCHDIR=	${.CURDIR}/../../editors/xemacs${XEMACS_MAJOR_VER}/patches
-PKGDIR?=	${.CURDIR}/../../editors/xemacs${XEMACS_MAJOR_VER}-mule/pkg
+PATCHDIR=	${.CURDIR}/../../editors/xemacs${XEMACS_MAJOR_VER}/files
+PKGDIR?=	${.CURDIR}/../../editors/xemacs${XEMACS_MAJOR_VER}-mule
 
 SLAVEDIRS=	editors/xemacs21-mule-common editors/xemacs21-mule-sumo
 

@@ -10,8 +10,8 @@ CATEGORIES=	japanese
 RUN_DEPENDS=	wish4.2jp:${PORTSDIR}/japanese/tk42
 
 MASTERDIR=	${.CURDIR}/../../misc/ewipe
-PATCHDIR=	${.CURDIR}/patches
-COMMENT=	${.CURDIR}/pkg/COMMENT
+PATCHDIR=	${.CURDIR}/files
+COMMENT=	${.CURDIR}/pkg-comment
 
 KANJI=		yes
 

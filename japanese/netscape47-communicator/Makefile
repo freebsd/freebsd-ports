@@ -12,8 +12,8 @@ DISTNAME=	communicator-ja-euc-v475-export.generic-generic-generic
 MASTERDIR=	${.CURDIR}/../netscape4-communicator
 SUBMASTERDIR=	${.CURDIR}/../netscape${BROWSER_VER}-communicator
 FILESDIR=	${SUBMASTERDIR}/files
-PATCHDIR=	${SUBMASTERDIR}/patches
-PKGDIR=		${SUBMASTERDIR}/pkg
+PATCHDIR=	${SUBMASTERDIR}/files
+PKGDIR=		${SUBMASTERDIR}
 
 BROWSER_VER=	47
 BROWSER_VERSION=	4.75

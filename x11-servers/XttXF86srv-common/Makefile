@@ -38,7 +38,7 @@ BINOWN=		root
 BINGRP=		wheel
 MASTERDIR?=	${.CURDIR}/../XttXF86srv-common
 FILESDIR=	${MASTERDIR}/files
-PATCHDIR=	${MASTERDIR}/patches
+PATCHDIR=	${MASTERDIR}/files
 .if defined(USE_SHARED_WRKSRC)
 WRKDIR=		${MASTERDIR}/work
 .endif
