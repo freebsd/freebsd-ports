@@ -3,10 +3,10 @@
 # Date created:		03 September 1994
 # Whom:			mr
 #
-# $Id: Makefile,v 1.4 1994/09/13 06:34:51 jkh Exp $
+# $Id: Makefile,v 1.5 1994/09/14 14:12:02 jkh Exp $
 #
 
-DISTNAME=	pine3.90
+DISTNAME=	pine3.91
 MASTER_SITES=	ftp://ftp.cac.washington.edu/pine/
 EXTRACT_SUFX=.tar.Z
 
