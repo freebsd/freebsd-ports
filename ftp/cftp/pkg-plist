@@ -1,11 +1,5 @@
+@comment $FreeBSD$
 bin/cftp
 @unexec install-info --delete %D/info/cftp.info %D/info/dir
 info/cftp.info
 @exec install-info %D/info/cftp.info %D/info/dir
-%%PORTDOCS%%share/doc/cftp/AUTHORS
-%%PORTDOCS%%share/doc/cftp/ChangeLog
-%%PORTDOCS%%share/doc/cftp/NEWS
-%%PORTDOCS%%share/doc/cftp/README
-%%PORTDOCS%%share/doc/cftp/THANKS
-%%PORTDOCS%%share/doc/cftp/TODO
-%%PORTDOCS%%@dirrm share/doc/cftp
