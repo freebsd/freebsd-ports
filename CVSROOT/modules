@@ -7910,6 +7910,7 @@ sxsame		ports/games/sxsame
 sybase-ocsd	ports/databases/sybase-ocsd
 sylpheed	ports/mail/sylpheed
 sylpheed-claws	ports/mail/sylpheed-claws
+sylpheed-gtk2	ports/mail/sylpheed-gtk2
 symlinks	ports/sysutils/symlinks
 synaesthesia	ports/graphics/synaesthesia
 syncal		ports/palm/syncal
