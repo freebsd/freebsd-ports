@@ -27,6 +27,7 @@ LDCONFIG_DIRS=	%%PREFIX%%/lib/wine
 MAN1=		wine.1
 MAN5=		wine.conf.5
 ONLY_FOR_ARCHS=	i386
+USE_BISON=	yes
 
 .if !defined(NDEBUG)
 STRIP=
