@@ -1,7 +1,0 @@
-bin/jabber-config
-include/jabber/jabber.h
-lib/libjabber.a
-lib/libjabber.la
-lib/libjabber.so
-lib/libjabber.so.1
-@dirrm include/jabber
