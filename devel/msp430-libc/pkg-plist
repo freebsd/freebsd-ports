@@ -11,6 +11,8 @@
 %%LIBC_TARG%%/include/msp430/basic_timer.h
 %%LIBC_TARG%%/include/msp430/common.h
 %%LIBC_TARG%%/include/msp430/compa.h
+%%LIBC_TARG%%/include/msp430/dac12.h
+%%LIBC_TARG%%/include/msp430/dma.h
 %%LIBC_TARG%%/include/msp430/eprom.h
 %%LIBC_TARG%%/include/msp430/flash.h
 %%LIBC_TARG%%/include/msp430/gpio.h
@@ -30,6 +32,8 @@
 %%LIBC_TARG%%/include/msp430x12x2.h
 %%LIBC_TARG%%/include/msp430x13x.h
 %%LIBC_TARG%%/include/msp430x14x.h
+%%LIBC_TARG%%/include/msp430x15x.h
+%%LIBC_TARG%%/include/msp430x16x.h
 %%LIBC_TARG%%/include/msp430x31x.h
 %%LIBC_TARG%%/include/msp430x32x.h
 %%LIBC_TARG%%/include/msp430x33x.h
@@ -41,8 +45,14 @@
 %%LIBC_TARG%%/include/stdio.h
 %%LIBC_TARG%%/include/stdlib.h
 %%LIBC_TARG%%/include/string.h
+%%LIBC_TARG%%/include/sys/_ansi.h
+%%LIBC_TARG%%/include/sys/_types.h
 %%LIBC_TARG%%/include/sys/cdefs.h
+%%LIBC_TARG%%/include/sys/config.h
+%%LIBC_TARG%%/include/sys/fdlibm.h
+%%LIBC_TARG%%/include/sys/ieeefp.h
 %%LIBC_TARG%%/include/sys/inttypes.h
+%%LIBC_TARG%%/include/sys/reent.h
 %%LIBC_TARG%%/include/sys/types.h
 %%LIBC_TARG%%/lib/crt430x110.o
 %%LIBC_TARG%%/lib/crt430x1101.o
@@ -60,6 +70,12 @@
 %%LIBC_TARG%%/lib/crt430x147.o
 %%LIBC_TARG%%/lib/crt430x148.o
 %%LIBC_TARG%%/lib/crt430x149.o
+%%LIBC_TARG%%/lib/crt430x155.o
+%%LIBC_TARG%%/lib/crt430x156.o
+%%LIBC_TARG%%/lib/crt430x157.o
+%%LIBC_TARG%%/lib/crt430x167.o
+%%LIBC_TARG%%/lib/crt430x168.o
+%%LIBC_TARG%%/lib/crt430x169.o
 %%LIBC_TARG%%/lib/crt430x311.o
 %%LIBC_TARG%%/lib/crt430x312.o
 %%LIBC_TARG%%/lib/crt430x313.o
@@ -100,7 +116,6 @@
 %%LIBC_TARG%%/share/mspgcc/examples/tcpip/tcpip.c
 %%LIBC_TARG%%/share/mspgcc/examples/tcpip/tcpip.h
 %%LIBC_TARG%%/share/mspgcc/examples/tcpip/webside.c
-@exec mkdir -p %D/%%LIBC_TARG%%/share/mspgcc/examples/adc
 @dirrm %%LIBC_TARG%%/include/msp430
 @dirrm %%LIBC_TARG%%/include/sys
 @dirrm %%LIBC_TARG%%/include
