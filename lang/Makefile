@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.63 1997/01/03 11:26:54 asami Exp $
+# $Id: Makefile,v 1.64 1997/01/16 08:34:24 msmith Exp $
 #
 
     SUBDIR += Gofer
@@ -13,6 +13,7 @@
     SUBDIR += g77
     SUBDIR += gcl
     SUBDIR += gnat
+    SUBDIR += guavac
     SUBDIR += guile-iii
     SUBDIR += icon
     SUBDIR += idl4
