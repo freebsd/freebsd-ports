@@ -253,6 +253,24 @@
  test "$LIBMALLOC" = yes && MACHDEPLIBS="$MACHDEPLIBS -lmalloc"
  
  #
+@@ -2364,5 +2364,5 @@
+ 	    if [ "${lib_ver}" = "3.4" ]; then
+ 		tiff_runlen_t="uint16"
+-	    elif [ "${lib_ver}" = "3.5" -o "${lib_ver}" = "3.6" ]; then
++	    elif [ "${lib_ver}" = "3.5" -o "${lib_ver}" = "3.6" -o "${lib_ver}" = "3.7" ]; then
+ 		tiff_runlen_t="uint32"
+ 	    fi
+@@ -2401,7 +2401,7 @@
+ Incompatible TIFF Library.
+ 
+-HylaFAX ${VERSION} requires TIFF software distribution ver 3.4, 3.5, or
+-3.6.  If you do not have up to date TIFF software on your system then
+-you can retrieve it from the location where you obtained this software.
++HylaFAX ${VERSION} requires TIFF software distribution ver 3.4, 3.5, 
++3.6, or 3.7.  If you do not have up to date TIFF software on your system
++then you can retrieve it from the location where you obtained this software.
+ The Home Page for version 3.5 and later is http://www.libtiff.org
+ EOF
 @@ -2640,7 +2652,7 @@
      }
      CheckFuncDecl unlink 'extern int unlink(const char*);' unistd.h
