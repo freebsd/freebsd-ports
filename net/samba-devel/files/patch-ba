@@ -1,7 +1,17 @@
---- configure.in.orig	Mon Oct  4 09:03:55 1999
-+++ configure.in	Mon Oct  4 09:04:00 1999
-@@ -1064,7 +1064,7 @@
-   --whithout-krb5          Don't include Kerbers 5 support (default)],
+--- configure.in.orig	Tue Apr 17 19:00:52 2001
++++ configure.in	Thu Jun  7 13:49:53 2001
+@@ -234,9 +234,6 @@
+ AC_CHECK_TYPE(offset_t,loff_t)
+ AC_CHECK_TYPE(ssize_t, int)
+ 
+-# we need libcups for CUPS support...
+-AC_CHECK_LIB(cups,httpConnect)
+-
+ # we need libdl for PAM and the new VFS code
+ AC_CHECK_LIB(dl,main)
+ 
+@@ -1258,7 +1255,7 @@
+   --without-krb5          Don't include Kerberos 5 support (default)],
  [   AC_MSG_RESULT(yes)
      AC_DEFINE(KRB5_AUTH)
 -    LIBS="$LIBS -ldes425 -lkrb5 -lcrypto -lcom_err"
@@ -9,3 +19,25 @@
      CFLAGS="$CFLAGS -I$withval/include"
      LDFLAGS="$LDFLAGS -L$withval/lib"],
    AC_MSG_RESULT(no)
+@@ -1486,6 +1483,21 @@
+   esac ],
+   AC_MSG_RESULT(no)
+ )
++
++#################################################
++# check for CUPS printing support
++AC_MSG_CHECKING(whether to use CUPS printing)
++AC_ARG_WITH(cups,
++[  --with-cups=base-dir		Include CUPS printing support
++   --without-cups		Don't include CUPS printing support (default)],
++[  AC_MSG_RESULT(yes)
++   LIBS="$LIBS -lcups"
++   CFLAGS="$CFLAGS -I$withval/include"
++   LDFLAGS="$LDFLAGS -L$withval/lib"
++   AC_CHECK_LIB(cups,httpConnect)],
++ AC_MSG_RESULT(no)
++)
++
+ 
+ #################################################
+ # check for experimental disk-quotas support
