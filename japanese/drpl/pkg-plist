@@ -1,17 +1,17 @@
 bin/drpl
 bin/revdic
-share/drpl/maruyaex.db
-share/drpl/maruyaex.dic
-share/drpl/maruyaex.try
-share/drpl/osaka.db
-share/drpl/osaka.dic
-share/drpl/osaka.try
-share/drpl/yarumaex.db
-share/drpl/yarumaex.dic
-share/drpl/yarumaex.try
-@dirrm share/drpl
-%%PORTDOCS%%share/doc/drpl/README.TXT
-%%PORTDOCS%%share/doc/drpl/bap_maruya_mod.htm
-%%PORTDOCS%%share/doc/drpl/bap_maruya_ref.htm
-%%PORTDOCS%%share/doc/drpl/drpl.man
-%%PORTDOCS%%@dirrm share/doc/drpl
+%%DATADIR%%/maruyaex.db
+%%DATADIR%%/maruyaex.dic
+%%DATADIR%%/maruyaex.try
+%%DATADIR%%/osaka.db
+%%DATADIR%%/osaka.dic
+%%DATADIR%%/osaka.try
+%%DATADIR%%/yarumaex.db
+%%DATADIR%%/yarumaex.dic
+%%DATADIR%%/yarumaex.try
+@dirrm %%DATADIR%%
+%%PORTDOCS%%%%DOCSDIR%%/README.TXT
+%%PORTDOCS%%%%DOCSDIR%%/bap_maruya_mod.htm
+%%PORTDOCS%%%%DOCSDIR%%/bap_maruya_ref.htm
+%%PORTDOCS%%%%DOCSDIR%%/drpl.man
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

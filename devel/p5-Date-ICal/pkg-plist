@@ -1,7 +1,8 @@
-lib/perl5/site_perl/%%PERL_VER%%/Date/ICal/Duration.pm
-lib/perl5/site_perl/%%PERL_VER%%/Date/ICal.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Date/ICal/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Date/ICal
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Date 2>/dev/null || true
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Date/ICal
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Date 2>/dev/null || true
+@comment $FreeBSD$
+%%SITE_PERL%%/Date/ICal/Duration.pm
+%%SITE_PERL%%/Date/ICal.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Date/ICal/.packlist
+@dirrm %%SITE_PERL%%/Date/ICal
+@unexec rmdir %D/%%SITE_PERL%%/Date 2>/dev/null || true
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Date/ICal
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Date 2>/dev/null || true

@@ -1,12 +1,13 @@
-lib/perl5/site_perl/%%PERL_VER%%/Date/Japanese/Era.ja.pod
-lib/perl5/site_perl/%%PERL_VER%%/Date/Japanese/Era.pm
-lib/perl5/site_perl/%%PERL_VER%%/Date/Japanese/Era/Table.pm
-lib/perl5/site_perl/%%PERL_VER%%/Date/Japanese/Era/Table/JIS_X0301.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Date/Japanese/Era/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Date/Japanese/Era/Table
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Date/Japanese/Era
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Date/Japanese 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Date 2>/dev/null || true
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Date/Japanese/Era
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Date/Japanese 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Date 2>/dev/null || true
+@comment $FreeBSD$
+%%SITE_PERL%%/Date/Japanese/Era.ja.pod
+%%SITE_PERL%%/Date/Japanese/Era.pm
+%%SITE_PERL%%/Date/Japanese/Era/Table.pm
+%%SITE_PERL%%/Date/Japanese/Era/Table/JIS_X0301.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Date/Japanese/Era/.packlist
+@dirrm %%SITE_PERL%%/Date/Japanese/Era/Table
+@dirrm %%SITE_PERL%%/Date/Japanese/Era
+@unexec rmdir %D/%%SITE_PERL%%/Date/Japanese 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Date 2>/dev/null || true
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Date/Japanese/Era
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Date/Japanese 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Date 2>/dev/null || true

@@ -7,14 +7,13 @@
 
 PORTNAME=	drpl
 PORTVERSION=	1.04
-CATEGORIES=	japanese textproc perl5
+CATEGORIES=	japanese textproc
 MASTER_SITES=	http://www.yk.rim.or.jp/~tomoto/archives/drpl/
 
-MAINTAINER=	fuyuki@mj.0038.net
+MAINTAINER=	fuyuki@hadaly.org
+COMMENT=	Replaces words in a Japanese text using dictionaries
 
 USE_PERL5=	yes
-
-DICSDIR=	${PREFIX}/share/${PORTNAME}
 SCRIPTS=	drpl revdic
 
 post-patch:
@@ -29,8 +28,8 @@ do-build:
 
 do-install:
 	cd ${WRKSRC}; ${INSTALL_SCRIPT} ${SCRIPTS} ${PREFIX}/bin
-	${MKDIR} ${DICSDIR}
-	${INSTALL_DATA} ${WRKSRC}/dic/* ${DICSDIR}
+	${MKDIR} ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/dic/* ${DATADIR}
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC}; ${INSTALL_DATA} *.TXT *.man misc/*.htm ${DOCSDIR}
