@@ -133,22 +133,19 @@ include/WUtil.h
 include/proplist.h
 include/wraster.h
 lib/libPropList.a
-@exec ranlib %D/%F
 lib/libPropList.so
 lib/libPropList.so.0.8
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %D
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %D
 lib/libWINGs.a
-@exec ranlib %D/%F
 lib/libWMaker.a
-@exec ranlib %D/%F
 lib/libwraster.a
-@exec ranlib %D/%F
 share/WINGs/Images.tiff
 share/WINGs/Images.xpm
 share/WINGs/defaultIcon.tiff
 share/WINGs/defaultIcon.xpm
 share/WindowMaker/Backgrounds/BlueImage.jpeg
+share/WindowMaker/Backgrounds/BlueWaves.jpeg
 share/WindowMaker/Backgrounds/SeaNight.jpeg
 share/WindowMaker/Defaults/WMGLOBAL
 share/WindowMaker/Defaults/WMRootMenu
@@ -166,8 +163,69 @@ share/WindowMaker/Icons/clip.tiff
 share/WindowMaker/Icons/clip.xpm
 share/WindowMaker/Icons/defaultAppIcon.tiff
 share/WindowMaker/Icons/defaultAppIcon.xpm
+share/WindowMaker/Pixmaps/Ant.xpm
+share/WindowMaker/Pixmaps/Antennae.xpm
+share/WindowMaker/Pixmaps/Bee48x48.xpm
+share/WindowMaker/Pixmaps/Beer.xpm
+share/WindowMaker/Pixmaps/Bird.xpm
+share/WindowMaker/Pixmaps/Book.xpm
+share/WindowMaker/Pixmaps/Bookshelf.xpm
+share/WindowMaker/Pixmaps/Brain.xpm
+share/WindowMaker/Pixmaps/BulletHole.xpm
+share/WindowMaker/Pixmaps/CashRegister.xpm
+share/WindowMaker/Pixmaps/Clipboard.xpm
+share/WindowMaker/Pixmaps/Cola.xpm
+share/WindowMaker/Pixmaps/ColorGNU.xpm
+share/WindowMaker/Pixmaps/Correspondence.dir.xpm
+share/WindowMaker/Pixmaps/CrystalSkull.dir.xpm
+share/WindowMaker/Pixmaps/Daemon.xpm
+share/WindowMaker/Pixmaps/Detergent.dir.xpm
+share/WindowMaker/Pixmaps/DoomII.xpm
+share/WindowMaker/Pixmaps/Draw.xpm
+share/WindowMaker/Pixmaps/EscherCube.xpm
+share/WindowMaker/Pixmaps/EscherTriangle.xpm
+share/WindowMaker/Pixmaps/Fish5.dir.xpm
+share/WindowMaker/Pixmaps/Football.xpm
+share/WindowMaker/Pixmaps/FootballUS.xpm
+share/WindowMaker/Pixmaps/Gear.xpm
+share/WindowMaker/Pixmaps/Ghost.xpm
+share/WindowMaker/Pixmaps/HP-16C-48.xpm
+share/WindowMaker/Pixmaps/HandOpen.xpm
+share/WindowMaker/Pixmaps/HandPointing.xpm
+share/WindowMaker/Pixmaps/HandPointingLeft.xpm
+share/WindowMaker/Pixmaps/HandPunch.xpm
+share/WindowMaker/Pixmaps/HandReach.xpm
+share/WindowMaker/Pixmaps/HeroSandwich.dir.xpm
+share/WindowMaker/Pixmaps/LadyBug48x48.xpm
+share/WindowMaker/Pixmaps/Microphone.xpm
+share/WindowMaker/Pixmaps/Netscape.xpm
+share/WindowMaker/Pixmaps/NewsAgent.xpm
+share/WindowMaker/Pixmaps/PDF.xpm
+share/WindowMaker/Pixmaps/Padlock.xpm
+share/WindowMaker/Pixmaps/Paint.xpm
+share/WindowMaker/Pixmaps/Pencils.24.xpm
+share/WindowMaker/Pixmaps/Penguin.xpm
+share/WindowMaker/Pixmaps/Radio.xpm
+share/WindowMaker/Pixmaps/Reference.xpm
+share/WindowMaker/Pixmaps/Rumi.xpm
+share/WindowMaker/Pixmaps/Snail.xpm
+share/WindowMaker/Pixmaps/T2-Film.xpm
+share/WindowMaker/Pixmaps/TagIcon.xpm
+share/WindowMaker/Pixmaps/TapeIcon1.xpm
+share/WindowMaker/Pixmaps/TrueDie48.xpm
+share/WindowMaker/Pixmaps/WheelbarrowFull.xpm
+share/WindowMaker/Pixmaps/WordEditor.xpm
+share/WindowMaker/Pixmaps/Wrench-12bit.xpm
+share/WindowMaker/Pixmaps/bomb2.xpm
+share/WindowMaker/Pixmaps/inspect.xpm
+share/WindowMaker/Pixmaps/monitor.xpm
+share/WindowMaker/Pixmaps/paint.xpm
+share/WindowMaker/Pixmaps/tile.black.xpm
+share/WindowMaker/Pixmaps/tile.snow.xpm
 share/WindowMaker/Pixmaps/tile.tiff
 share/WindowMaker/Pixmaps/tile.xpm
+share/WindowMaker/Pixmaps/tile2.xpm
+share/WindowMaker/Pixmaps/xv.xpm
 share/WindowMaker/README
 share/WindowMaker/Styles/Autumn
 share/WindowMaker/Styles/Black
@@ -198,6 +256,7 @@ share/WindowMaker/Styles/ShinyBrown
 share/WindowMaker/Styles/Summer
 share/WindowMaker/Styles/Traditional
 share/WindowMaker/Styles/VioletBlue
+share/WindowMaker/Themes/BlueWaves
 share/WindowMaker/Themes/Default
 share/WindowMaker/Themes/Night
 share/WindowMaker/Themes/OpenStep
@@ -225,6 +284,7 @@ share/WindowMaker/menu.se
 share/WindowMaker/menu.tr
 share/WindowMaker/plmenu
 share/WindowMaker/wmmacros
+@exec mkdir -p %B/Sounds
 @dirrm share/WindowMaker/Themes
 @dirrm share/WindowMaker/Styles
 @dirrm share/WindowMaker/Sounds
