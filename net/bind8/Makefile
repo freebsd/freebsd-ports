@@ -5,10 +5,19 @@
 # $FreeBSD$
 #
 
+# I stay very aware of developments regarding BIND. I frequently delay updating
+# this port from a known-stable version due to concerns about stability of a
+# newer version. If you are interested in using the most recent ISC release
+# you can generally build it cleanly from the source. - Doug
+
 PORTNAME=	bind
-PORTVERSION=	8.2.4
+PORTVERSION=	8.2.5
 CATEGORIES=	net
-MASTER_SITES=	ftp://ftp.isc.org/isc/bind/src/8.2.4/
+MASTER_SITES=	ftp://ftp.isc.org/isc/bind/src/${PORTVERSION}/ \
+		ftp://ftp.epix.net/pub/isc/bind/src/${PORTVERSION}/ \
+		ftp://ftp.nominum.com/pub/isc/bind/src/${PORTVERSION}/ \
+		ftp://ftp.grolier.fr/pub/isc/bind/src/${PORTVERSION}/
+
 DISTFILES=	bind-src.tar.gz bind-doc.tar.gz
 
 MAINTAINER=	DougB@FreeBSD.org
