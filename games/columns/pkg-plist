@@ -1,0 +1,19 @@
+bin/columns
+share/columns/applause.wav
+share/columns/bg.bmp
+share/columns/big.ofn
+share/columns/bye.wav
+share/columns/drop.wav
+share/columns/gameover.wav
+share/columns/hello.wav
+share/columns/laugh.wav
+share/columns/level.wav
+share/columns/move.wav
+share/columns/perfect.wav
+share/columns/remove.wav
+share/columns/rotate.wav
+share/columns/small.ofn
+share/columns/tiles.bmp
+share/doc/columns/README
+@dirrm share/columns
+@dirrm share/doc/columns
