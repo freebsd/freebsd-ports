@@ -15,6 +15,8 @@ DISTNAME=	zh-chinput2-1.3.1
 MAINTAINER=	phj@cn.FreeBSD.org
 COMMENT=	Another Chinese GB2312 and Big5 X11 input server
 
+BUILD_DEPENDS=	imake:${X_IMAKE_PORT}
+
 USE_MYSQL=	yes
 USE_REINPLACE=	yes
 USE_XLIB=	yes
