@@ -1,0 +1,8 @@
+libpgtcl is a library that implements Tcl commands for front-end
+clients to interact with the Postgresql backends.
+
+pgaccess is a great graphical database management tool for PostgreSQL.
+
+This software is part of the standard PostgreSQL distribution.
+
+WWW: http://www.postgresql.org/
