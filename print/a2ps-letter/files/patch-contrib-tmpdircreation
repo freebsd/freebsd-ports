@@ -1,0 +1,116 @@
+diff -ru contrib.orig/card.in contrib/card.in
+--- contrib.orig/card.in	Thu Dec 30 19:23:25 2004
++++ contrib/card.in	Thu Dec 30 19:29:49 2004
+@@ -38,7 +38,7 @@
+ LC_ALL="${LC_ALL-C}" export LC_ALL
+ print_form_feeds=:
+ RM="/bin/rm -rf"
+-tmp_dir=${TMPDIR-/tmp}/$program.$$
++tmp_dir=$(mktemp -d -t ${program}) || exit 1
+ tmp_file=$tmp_dir/card
+ success=false
+ verbose=:
+@@ -190,7 +190,6 @@
+ 
+ # Create a tmp dir and be ready to clean up
+ trap "$RM $tmp_dir" 0 1 2 15
+-(umask 077 && mkdir $tmp_dir) || exit 1
+ 
+ case $LC_ALL in
+   fr) footer="Engendré par $version_short" ;;
+diff -ru contrib.orig/fixps.in contrib/fixps.in
+--- contrib.orig/fixps.in	Thu Dec 30 19:23:25 2004
++++ contrib/fixps.in	Thu Dec 30 19:31:22 2004
+@@ -38,7 +38,7 @@
+ run_gs=0
+ # What action to perform: fixps, cat, check, and gs
+ task=fixps
+-tmpdir=/tmp/$program.$$
++tmpdir=$(mktemp -d -t ${program}) || exit 1
+ verbose=echo
+ 
+ # The version/usage strings
+@@ -191,7 +191,6 @@
+   trap "/bin/rm -rf $tmpdir" 0 1 2 3 13 15
+ fi
+ 
+-mkdir $tmpdir
+ fixps_sed=$tmpdir/fixps.sed
+ 
+ # If printing from stdin, save into a tmp file
+diff -ru contrib.orig/pdiff.in contrib/pdiff.in
+--- contrib.orig/pdiff.in	Thu Dec 30 19:23:25 2004
++++ contrib/pdiff.in	Thu Dec 30 19:16:59 2004
+@@ -34,7 +34,7 @@
+ diff_options='-u'
+ file=
+ output=
+-tmpdir=/tmp/$program.$$
++tmpdir=$(mktemp -d -t ${program}) || exit 1
+ verbose=echo
+ wdiff_prog=${WDIFF:-wdiff}
+ wdiff_options='-w[wd- -x-wd] -y{wd+ -z+wd}'
+diff -ru contrib.orig/psmandup.in contrib/psmandup.in
+--- contrib.orig/psmandup.in	Thu Dec 30 19:23:25 2004
++++ contrib/psmandup.in	Thu Dec 30 19:32:30 2004
+@@ -36,7 +36,7 @@
+ message=
+ psselect=${PSSELECT:-psselect}
+ psset=${PSSET:-psset}
+-tmpdir=/tmp/$program.$$
++tmpdir=$(mktemp -d -t ${program}) || exit 1
+ 
+ # These two must be kept in synch.  They are opposed.
+ verbose=echo
+@@ -184,8 +184,6 @@
+   # Temp dir.  Get ready not to leave junk (if not debugging)
+   trap "/bin/rm -rf $tmpdir" 0 1 2 3 13 15
+ fi
+-
+-mkdir $tmpdir
+ 
+ # If printing from stdin, save into a tmp file
+ if test $file = '-'; then
+diff -ru contrib.orig/psset.in contrib/psset.in
+--- contrib.orig/psset.in	Thu Dec 30 19:23:25 2004
++++ contrib/psset.in	Thu Dec 30 19:33:50 2004
+@@ -33,7 +33,7 @@
+ output=-
+ pagedevices=	# `;' separated list of `key:value'
+ quiet=:         # i.e., verbose
+-tmpdir=${TMPDIR:-/tmp}/$program.$$
++tmpdir=$(mktemp -d -t ${program}) || exit 1
+ sedscript=$tmpdir/psset.sed
+ 
+ # The version/usage strings
+@@ -185,8 +185,6 @@
+       echo "$help"  1>&2
+       exit 1;;
+ esac
+-
+-mkdir $tmpdir
+ 
+ if test -n "$debug"; then
+   # Set -x now if debugging
+diff -ru contrib.orig/texi2dvi4a2ps contrib/texi2dvi4a2ps
+--- contrib.orig/texi2dvi4a2ps	Thu Dec 30 19:23:25 2004
++++ contrib/texi2dvi4a2ps	Thu Dec 30 19:34:36 2004
+@@ -91,7 +91,7 @@
+ quiet=          # by default let the tools' message be displayed
+ set_language=
+ textra=
+-tmpdir=${TMPDIR:-/tmp}/t2d$$  # avoid collisions on 8.3 filesystems.
++tmpdir=$(mktemp -d -t ${program}) || exit 1
+ txincludes=     # TEXINPUTS extensions
+ txiprereq=19990129 # minimum texinfo.tex version to have macro expansion
+ verbose=false   # echo for verbose mode
+@@ -202,9 +202,6 @@
+ if test -z "$debug"; then
+   trap "cd / && rm -rf $tmpdir" 0 1 2 15
+ fi
+-
+-# Create the temporary directory with strict rights
+-(umask 077 && mkdir $tmpdir) || exit 1
+ 
+ # Prepare the tools we might need.  This may be extra work in some
+ # cases, but improves the readibility of the script.

@@ -7,7 +7,7 @@
 
 PORTNAME=	a2ps
 PORTVERSION=	4.13b
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	print
 MASTER_SITES=	ftp://ftp.enst.fr/pub/unix/a2ps/ \
 		${MASTER_SITE_GNU}
