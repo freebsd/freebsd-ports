@@ -52,3 +52,4 @@ japanese/mhonarc|www/mhonarc|2002-11-17|current www/mhonarc could use Japanese
 graphics/linux_mesa||2002-11-17|Port was broken and out of date
 audio/cdrdao|sysutils/cdrdao|2002-11-18|misfiled, burns data CDs too
 sysutils/pkgview|sysutils/gnome-pkgview|2002-11-20|author has changed the binary and package name
+japanese/tvi||2002-11-22|development discontinued and distfile unavailable
