@@ -2,6 +2,7 @@
 bin/leafnode-version
 bin/newsq
 etc/leafnode/config.example
+etc/leafnode/filters.example
 etc/leafnode/nntp.rules.dist
 etc/leafnode/run.tcpd.dist
 etc/leafnode/run.tcpserver.dist
@@ -27,6 +28,7 @@ share/doc/leafnode/README-FQDN.html
 share/doc/leafnode/README-daemontools
 share/doc/leafnode/README.FIRST
 share/doc/leafnode/TODO
+share/doc/leafnode/leafnode.cron.daily
 share/doc/leafnode/doc_german/INSTALL_de
 share/doc/leafnode/doc_german/LIESMICH-daemontools
 share/doc/leafnode/doc_german/README
@@ -39,4 +41,5 @@ share/doc/leafnode/doc_german/leafnode.8
 share/doc/leafnode/doc_german/texpire.8
 @dirrm share/doc/leafnode/doc_german
 @dirrm share/doc/leafnode
+@unexec rmdir %D/lib/leafnode 2>/dev/null || true
 @dirrm etc/leafnode

@@ -6,7 +6,8 @@
 #
 
 PORTNAME=	leafnode
-PORTVERSION=	1.9.29
+PORTVERSION=	1.9.31
+PORTREVISION=	0
 CATEGORIES=	news
 MASTER_SITES=	http://dl.sourceforge.net/sourceforge/leafnode/ \
 		http://www.dt.e-technik.uni-dortmund.de/~ma/${PORTNAME}/ \
@@ -28,8 +29,15 @@ CONFIGURE_ARGS=	--quiet --sysconfdir=${LOCALBASE}/etc/leafnode \
 		--with-lockfile=/var/spool/lock/news/leafnode.lck \
 		--with-spooldir=/var/spool/news
 MAKE_ARGS=
-MAN1=		newsq.1
+MAN1=		leafnode-version.1 newsq.1
 MAN8=		applyfilter.8 checkgroups.8 fetchnews.8 leafnode.8 texpire.8
+
+# The next two parts work around a packaging error in the tarball.
+post-extract:
+		${RM} ${WRKSRC}/leafnode.cron.daily
+
+pre-build:
+		cd ${WRKSRC} && ${MAKE} leafnode.cron.daily
 
 post-install:
 		${INSTALL_SCRIPT} ${WRKSRC}/setup-daemontools.sh ${LOCALBASE}/sbin/
@@ -38,12 +46,12 @@ post-install:
 		for i in ChangeLog COPYING CREDITS FAQ.txt FAQ.pdf FAQ.html \
 			 INSTALL NEWS README \
 			 README-FQDN README-FQDN.html README-daemontools \
-			 README.FIRST TODO ; do \
+			 README.FIRST TODO leafnode.cron.daily ; do \
 		  ${INSTALL_MAN} ${WRKSRC}/$$i \
 			${LOCALBASE}/share/doc/${PORTNAME} ; done
 		${MKDIR} ${LOCALBASE}/share/doc/${PORTNAME}/doc_german
 		for i in INSTALL_de LIESMICH-daemontools README \
-			README_de ${MAN1} ${MAN8} ; do \
+			README_de newsq.1 ${MAN8} ; do \
 		  ${INSTALL_MAN} ${WRKSRC}/doc_german/$$i \
 			${LOCALBASE}/share/doc/${PORTNAME}/doc_german ; done
 .endif
