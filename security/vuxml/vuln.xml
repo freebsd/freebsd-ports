@@ -32,6 +32,117 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="edf61c61-0f07-11d9-8393-000103ccf9d6">
+    <topic>php -- strip_tags cross-site scripting vulnerability</topic>
+    <affects>
+      <package>
+	<name>mod_php4-twig</name>
+	<name>php4</name>
+	<name>php4-cgi</name>
+	<name>php4-cli</name>
+	<name>php4-dtc</name>
+	<name>php4-horde</name>
+	<name>php4-nms</name>
+	<range><le>4.3.7_3</le></range>
+      </package>
+      <package>
+	<name>mod_php4</name>
+	<range><le>4.3.7_3,1</le></range>
+      </package>
+      <package>
+	<name>php5</name>
+	<name>php5-cgi</name>
+	<name>php5-cli</name>
+	<range><le>5.0.0.r3_2</le></range>
+      </package>
+      <package>
+	<name>mod_php5</name>
+	<range><le>5.0.0.r3_2,1</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Stefan Esser of e-matters discovered that PHP's strip_tags()
+	  function would ignore certain characters during parsing of tags,
+	  allowing these tags to pass through. Select browsers could then
+	  parse these tags, possibly allowing cross-site scripting attacks.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-0595</cvename>
+      <mlist msgid="20040713225525.GB26865@e-matters.de">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=108981589117423</mlist>
+      <url>http://security.e-matters.de/advisories/122004.html</url>
+      <bid>10724</bid>
+    </references>
+    <dates>
+      <discovery>2004-07-14</discovery>
+      <entry>2004-09-27</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="dd7aa4f1-102f-11d9-8a8a-000c41e2cdad">
+    <topic>php -- memory_limit related vulnerability</topic>
+    <affects>
+      <package>
+	<name>mod_php4-twig</name>
+	<name>php4</name>
+	<name>php4-cgi</name>
+	<name>php4-cli</name>
+	<name>php4-dtc</name>
+	<name>php4-horde</name>
+	<name>php4-nms</name>
+	<range><le>4.3.7_3</le></range>
+      </package>
+      <package>
+	<name>mod_php4</name>
+	<range><le>4.3.7_3,1</le></range>
+      </package>
+      <package>
+	<name>php5</name>
+	<name>php5-cgi</name>
+	<name>php5-cli</name>
+	<range><le>5.0.0.r3_2</le></range>
+      </package>
+      <package>
+	<name>mod_php5</name>
+	<range><le>5.0.0.r3_2,1</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Stefan Esser of e-matters discovered a condition within PHP
+	  that may lead to remote execution of arbitrary code.  The
+	  memory_limit facility is used to notify functions when memory
+	  contraints have been met. Under certain conditions, the entry
+	  into this facility is able to interrupt functions such as
+	  zend_hash_init() at locations not suitable for interruption.
+	  The result would leave these functions in a vulnerable state.</p>
+	<blockquote cite="http://security.e-matters.de/advisories/112004.html">
+	  <p>An attacker that is able to trigger the memory_limit abort
+	    within zend_hash_init() and is additionally able to control
+	    the heap before the HashTable itself is allocated, is able to
+	    supply his own HashTable destructor pointer. [...]</p>
+	  <p>All mentioned places outside of the extensions are quite easy
+	    to exploit, because the memory allocation up to those places
+	    is deterministic and quite static throughout different PHP
+	    versions. [...]</p>
+	  <p>Because the exploit itself consist of supplying an arbitrary
+	    destructor pointer this bug is exploitable on any platform.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-0594</cvename>
+      <mlist msgid="20040713225329.GA26865@e-matters.de">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=108981780109154</mlist>
+      <url>http://security.e-matters.de/advisories/112004.html</url>
+      <bid>10725</bid>
+    </references>
+    <dates>
+      <discovery>2004-07-14</discovery>
+      <entry>2004-09-27</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="184f5d0b-0fe8-11d9-8a8a-000c41e2cdad">
     <topic>subversion -- WebDAV fails to protect metadata</topic>
     <affects>
