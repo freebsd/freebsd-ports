@@ -20,7 +20,8 @@ MAINTAINER=	roger@freebsd.org
 WRKSRC=         ${WRKDIR}/openh323
 
 USE_BISON=	yes
-USE_GMAKE=      yes
+USE_XLIB=	yes
+USE_GMAKE=	yes
 ALL_TARGET=	opt
 MAKE_ENV=	PWLIBDIR=${WRKDIR}/pwlib \
 		OPENH323DIR=${WRKDIR}/openh323
