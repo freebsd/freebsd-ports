@@ -133,6 +133,7 @@
     SUBDIR += sgmltools-lite
     SUBDIR += sgrep
     SUBDIR += sp
+    SUBDIR += tclExpat
     SUBDIR += tdtd.el
     SUBDIR += texi2html
     SUBDIR += textutils
