@@ -86,6 +86,7 @@
     SUBDIR += netscape47-communicator.us
     SUBDIR += netscape47-navigator
     SUBDIR += netscape47-navigator.us
+    SUBDIR += nscache
     SUBDIR += npc
     SUBDIR += p5-Apache
     SUBDIR += p5-Apache-ASP
