@@ -1,5 +1,5 @@
 --- set_soenv.in.orig	Thu Feb 27 14:12:36 2003
-+++ set_soenv.in	Fri Mar 28 12:54:52 2003
++++ set_soenv.in	Sat Mar 29 23:11:54 2003
 @@ -52,7 +52,7 @@
  #-------------------------------------------------
  #
@@ -28,6 +28,15 @@
  $WRAPCMD	= "";				# Wrapper (only for winnt)
  
  #
+@@ -863,7 +864,7 @@
+ # Location of 
+ $STAR_SSCOMMON        = '$SOLARENV'.$CONFIG.$ds."ssolar.cmn";
+ # Location of 
+-$STAR_SSOLARINI       = '$SOLARENV'.$CONFIG.$ds."ssolar.ini";
++$STAR_SSOLARINI       = '$SOLARENV'.$CONFIG.$ds."ssrx644.ini";
+ # Path to the OpenOffice.org recourses.
+ $STAR_RESOURCEPATH    = '$SOLARVER'.$ds.'$UPD'.$ds.'$INPATH'.$BIN;
+ # Location of the registry file.
 @@ -1184,7 +1185,7 @@
                          $L_STLPORT_LIB.
                          $L.$XLIB;
