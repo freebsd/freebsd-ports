@@ -1,0 +1,16 @@
+Guia de Instalação do StarOffice 5.2 edição Pessoal
+
+Escrito por:	Darren Wiebe <dkwiebe@hagenhomes.com>
+		e Martin Blapp <mb@imp.ch>
+
+Você em breve terá terminado uma instalação de rede do
+StarOffice 5.2. Assim que esta estiver terminada, saia do X11 e
+execute-o novamente como o usuário que utiliza normalmente.
+Então, execute "make install-user" e realize uma instalação
+padrão para estação de trabalho. Substitua o diretório de
+instalação para $HOME/office52. Então, adicione $HOME/office52/
+à sua variável PATH.
+
+StarOffice estará pronto para ser usado.
+
+Boa Sorte
