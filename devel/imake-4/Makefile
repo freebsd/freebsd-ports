@@ -116,6 +116,8 @@ ExtendedInputDevices?=	YES
 # InstallXserverSetUID=NO : use Xwrapper.
 # End of XFree86 configrations
 
+.include <bsd.port.pre.mk>
+
 .if ${HasXdmAuth} == YES
 .if defined(USA_RESIDENT) && ${USA_RESIDENT} == YES
 .if !exists(${DISTDIR}/${DIST_SUBDIR}/Wraphelp.c)
@@ -136,4 +138,4 @@ IGNOREFILES=	Wraphelp.c
 .endif	# USA_RESIDENT
 .endif	# HasXdmAuth
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
