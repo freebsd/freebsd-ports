@@ -247,7 +247,6 @@
     SUBDIR += linux-nwserver
     SUBDIR += linux-q3ademo
     SUBDIR += linux-steam
-    SUBDIR += linux_nwnclient
     SUBDIR += lm-solve
     SUBDIR += ltris
     SUBDIR += macopix
