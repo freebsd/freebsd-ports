@@ -1,3 +1,7 @@
 lib/perl5/site_perl/%%PERL_VER%%/Mail/Audit.pm
+lib/perl5/site_perl/%%PERL_VER%%/Mail/Audit/KillDups.pm
+lib/perl5/site_perl/%%PERL_VER%%/Mail/Audit/MAPS.pm
+lib/perl5/site_perl/%%PERL_VER%%/Mail/Audit/PGP.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Mail/Audit/.packlist
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Mail/Audit
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Mail/Audit
