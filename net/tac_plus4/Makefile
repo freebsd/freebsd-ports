@@ -17,23 +17,31 @@ MAINTAINER=	igor@zynaps.ru
 EXTRACT_BEFORE_ARGS=	-C ${WRKDIR} -xf
 ALL_TARGET=	tac_plus
 MAN8=		tac_plus.8
+EXTRA_PATCH=	patch-ba
 
-post-patch:
-	@${MV} -f ${WRKSRC}/tac_plus.1 ${WRKSRC}/tac_plus.8
+# To change the text displayed when users are prompted to enter
+# a username, set appropriately TAC_CHANGE_PROMPT variable.
+.if defined(TAC_CHANGE_PROMPT) && ${TAC_CHANGE_PROMPT} == YES
+pre-patch:
+	@${CP} ${FILESDIR}/${EXTRA_PATCH} ${PATCHDIR}
+.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/tac_plus ${PREFIX}/sbin
-	${INSTALL_MAN} ${WRKSRC}/tac_plus.8 ${PREFIX}/man/man8
-	${INSTALL_DATA} ${FILESDIR}/tacacs.conf.example ${PREFIX}/etc/
+	${INSTALL_MAN} ${WRKSRC}/tac_plus.1 ${PREFIX}/man/man8/tac_plus.8
+	${INSTALL_DATA} ${FILESDIR}/tac_plus.conf.example ${PREFIX}/etc/
 	@if [ ! -f ${PREFIX}/etc/rc.d/tac_plus.sh ]; then \
 		${ECHO} "Installing ${PREFIX}/etc/rc.d/tac_plus.sh startup file."; \
 		echo "#!/bin/sh" > ${PREFIX}/etc/rc.d/tac_plus.sh; \
-		echo "[ -x ${PREFIX}/sbin/tac_plus -a -f ${PREFIX}/etc/tac_plus.conf ] && ${PREFIX}/sbin/tac_plus -C ${PREFIX}/etc/tacacs.conf && echo -n ' tac_plus'" >> ${PREFIX}/etc/rc.d/tac_plus.sh; \
+		echo "[ -x ${PREFIX}/sbin/tac_plus -a -f ${PREFIX}/etc/tac_plus.conf ] && ${PREFIX}/sbin/tac_plus -C ${PREFIX}/etc/tac_plus.conf && echo -n ' tac_plus'" >> ${PREFIX}/etc/rc.d/tac_plus.sh; \
 		chmod 751 ${PREFIX}/etc/rc.d/tac_plus.sh; \
 	fi
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/tac_plus
 	${INSTALL_DATA} ${WRKSRC}/users_guide ${PREFIX}/share/doc/tac_plus
 .endif
+
+pre-clean:
+	@${RM} -f ${PATCHDIR}/${EXTRA_PATCH}
 
 .include <bsd.port.mk>
