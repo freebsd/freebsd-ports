@@ -5,5 +5,7 @@ method, none of the data is stored and only a few statistical measures
 are available. Using the full method, the entire data set is retained
 and additional functions are available.
 
+WWW: http://search.cpan.org/search?dist=Statistics-Descriptive
+
 -Anton
 <tobez@FreeBSD.org>
