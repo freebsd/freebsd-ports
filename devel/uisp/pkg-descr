@@ -3,7 +3,7 @@ through your parallel or serial port. Several programming hardware are
 supported, the only one I have tested and the simplest one (no component) 
 is the in-circuit parallel programmer. Schematics are available online.
 
-WWW: http://medo.fov.uni-mb.si/mapp/uTools/index.html
+WWW: http://savannah.nongnu.org/projects/uisp
 
 - Bruno
 

@@ -6,21 +6,12 @@
 #
 
 PORTNAME=	uisp
-PORTVERSION=	1.0b
-PORTREVISION=	1
+PORTVERSION=	20020626
 CATEGORIES=	devel
-MASTER_SITES=	http://medo.fov.uni-mb.si/mapp/uTools/
-EXTRACT_SUFX=	.src.tar.gz
+MASTER_SITES=	http://savannah.nongnu.org/download/uisp/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bruno@tinkerbox.org
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
-
-USE_REINPLACE=	yes
-USE_GMAKE=	yes
-
-post-patch:
-	@${REINPLACE_CMD} -e "s@-O3@${CFLAGS}@g; \
-			s@g\+\+@${CXX}@g" ${WRKSRC}/Makefile
+GNU_CONFIGURE=	yes
 
 .include <bsd.port.mk>

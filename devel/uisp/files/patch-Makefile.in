@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- Makefile.in.orig	Thu Nov 21 20:34:28 2002
++++ Makefile.in	Thu Nov 21 20:35:07 2002
+@@ -327,7 +327,7 @@
+ install-exec-am:
+ install-exec: install-exec-recursive
+ 
+-install-data-am: install-data-local
++install-data-am: # install-data-local
+ install-data: install-data-recursive
+ 
+ install-am: all-am
