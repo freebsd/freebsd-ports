@@ -1,10 +1,10 @@
 # ex:ts=8
-# New ports collection makefile for:	samba
-# Version required:			1.9.18
-# Date created:				11th Feb 1995
-# Whom:					gpalmer
+# New ports collection makefile for:	smbtcpdump
+# Version required:			3.4
+# Date created:				2 Jun 1998
+# Whom:					obrien
 #
-# $Id: Makefile,v 1.5 1999/01/06 21:27:02 obrien Exp $
+# $Id: Makefile,v 1.6 1999/01/06 21:33:42 obrien Exp $
 #
 
 DISTNAME=	tcpdump-3.4
@@ -19,8 +19,6 @@ PATCHFILES=	tcpdump-3.4a5-smb.patch
 
 MAINTAINER=	obrien@FreeBSD.org
 
-.include <bsd.port.pre.mk>
-
 GNU_CONFIGURE=	yes
 ALL_TARGET=	depend tcpdump
 MAN1=		smbtcpdump.1
@@ -29,4 +27,4 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/tcpdump ${PREFIX}/sbin/smbtcpdump
 	${INSTALL_MAN} ${WRKSRC}/tcpdump.1 ${PREFIX}/man/man1/smbtcpdump.1
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
