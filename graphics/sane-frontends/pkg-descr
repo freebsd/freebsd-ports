@@ -12,4 +12,4 @@ xcam. Xscanimage is a GTK-based application for scanning images that
 can also be used as a GIMP-plugin, and Xcam is used to get images
 from cameras supported by SANE.
 
-WWW: http://www.mostang.com/sane/
+WWW: http://www.sane-project.org/
