@@ -9,7 +9,7 @@
 
 PORTNAME=		phoenix
 PORTVERSION=		0.4
-PORTREVISION=		3
+PORTREVISION=		4
 CATEGORIES=		www # pita
 MASTER_SITES=		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	trevor
@@ -44,6 +44,7 @@ LIBS+=			${PTHREAD_LIBS}
 NO_MTREE=		yes
 WRKSRC=			${WRKDIR}/mozilla
 LOCAL_PREFIX=		${PREFIX}/lib/${PORTNAME}
+MAKE_ENV+=		XP_UNIX=1
 MAKE_ARGS+=		XP_UNIX=1
 
 .include <bsd.port.pre.mk>
@@ -68,16 +69,21 @@ BUILD_DEPENDS+=	${SITE_PERL}/File/Spec.pm:${PORTSDIR}/devel/p5-File-Spec
 .endif # ${PERL_LEVEL} < 500601
 
 .if ${OSVERSION} > 500038
-BROKEN=	"on -CURRENT, can only be used with local files"
+BROKEN=	"on -CURRENT, can only be used with local files."
+BROKEN+="Make with -DNO_IGNORE to override this message."
 .endif
 
+pre-extract:
+	@${ECHO_MSG} "Extracting source (this takes a while) ..."
+
 post-extract:
-	${SED} -e 's|@CFLAGS@|${CFLAGS}|'		\
+	@${SED} -e 's|@CFLAGS@|${CFLAGS}|'		\
 		-e 's|@LIBS@|${LIBS}|'			\
 		-e 's|@X11BASE@|${X11BASE}|'		\
 		-e 's|@LOCALBASE@|${LOCALBASE}|'	\
 		-e 's|@PREFIX@|${LOCAL_PREFIX}|'	\
 		<${FILESDIR}/mozconfig.in >${WRKSRC}/.mozconfig
+	@${CAT} ${PKGMESSAGE} 2>/dev/null; sleep 5
 
 # fix for Xft (thanks to marcus@)
 post-patch:
@@ -86,12 +92,13 @@ post-patch:
 		nsDrawingSurfaceGTK.cpp	nsFontMetricsXft.h
 
 post-install:
-	${RM} -f ${PREFIX}/bin/phoenix
-	${LN} -s ${LOCAL_PREFIX}/bin/phoenix \
+	@${RM} -f ${PREFIX}/bin/phoenix
+	@${LN} -s ${LOCAL_PREFIX}/bin/phoenix \
 		${PREFIX}/bin/phoenix
-	${RM} -f ${PREFIX}/bin/phoenix-config
-	${LN} -s ${LOCAL_PREFIX}/bin/mozilla-config \
+	@${RM} -f ${PREFIX}/bin/phoenix-config
+	@${LN} -s ${LOCAL_PREFIX}/bin/mozilla-config \
 		${PREFIX}/bin/phoenix-config
+	@${CAT} ${PKGMESSAGE} 2>/dev/null; sleep 5
 
 .include <bsd.port.post.mk>
 
