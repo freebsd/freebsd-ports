@@ -1,0 +1,7 @@
+%%SITE_PERL%%/Mail/Address/MobileJp.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/Address/MobileJp/.packlist
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/Address/MobileJp 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/Address          2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail                  2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Mail/Address               2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Mail                       2>/dev/null || true

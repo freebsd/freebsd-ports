@@ -1,0 +1,4 @@
+Mail::Address::MobileJp is an utility to detect an email
+address is mobile (cellurar) email address or not.
+
+WWW: http://search.cpan.org/search?dist=Mail-Address-MobileJp
