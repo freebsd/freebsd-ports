@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	downloader
-PORTVERSION=	1.24.1
+PORTVERSION=	1.25
 CATEGORIES=	ftp
 MASTER_SITES=	http://www.krasu.ru/soft/chuchelo/files/ \
 		ftp://ftp.server51.freshmeat.net/pub/d4x/ \
@@ -20,7 +20,8 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/main
 USE_GTK=	yes
 USE_GMAKE=	yes
 MAKE_ENV=	CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" DEST="${PREFIX}" \
-		OSTYPE="${OPSYS}" MAKE_CMD="${GMAKE}"
+		OSTYPE="${OPSYS}" MAKE_CMD="${GMAKE}" \
+		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" PTHREAD_LIBS="${PTHREAD_LIBS}"
 MAN1=		nt.1
 
 PORTDOCS=	ChangeLog FAQ FAQ.de FAQ.es FAQ.fr FAQ.gr LICENSE     \
@@ -28,11 +29,11 @@ PORTDOCS=	ChangeLog FAQ FAQ.de FAQ.es FAQ.fr FAQ.gr LICENSE     \
 		README.pl README.pt_BR README.ru THANKS TODO TROUBLES
 
 post-install:
-	${INSTALL_MAN} ${WRKSRC}/../nt.1 ${PREFIX}/man/man1
+	@${INSTALL_MAN} ${WRKSRC}/../nt.1 ${PREFIX}/man/man1
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/downloader
 .for file in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/../${file} ${PREFIX}/share/doc/downloader
+	@${INSTALL_DATA} ${WRKSRC}/../${file} ${PREFIX}/share/doc/downloader
 .endfor
 .endif
 

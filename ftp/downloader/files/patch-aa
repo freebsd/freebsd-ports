@@ -1,17 +1,21 @@
---- Makefile.orig	Mon Mar 19 21:41:01 2001
-+++ Makefile	Mon Mar 19 21:42:05 2001
-@@ -34,8 +34,9 @@
+--- Makefile.orig	Sat Mar 24 02:54:02 2001
++++ Makefile	Fri Mar 30 11:30:16 2001
+@@ -33,10 +33,11 @@
+ endif
  
  ifeq ($(OSTYPE),FreeBSD)
- PTHREAD=-pthread
+-PTHREAD=-pthread
 -GTKCONFIG=gtk12-config
 -MAKE=gmake
+-CXXFLAGS+=-D_THREAD_SAFE
++PTHREAD=$(PTHREAD_LIBS)
 +GTKCONFIG=${GTK_CONFIG}
 +GLIBCONFIG=${GLIB_CONFIG}
 +MAKE=${MAKE_CMD}
- CXXFLAGS+=-D_THREAD_SAFE
++CXXFLAGS+=$(PTHREAD_CFLAGS)
  endif
  
+ GTKLIBS=$(shell $(GTKCONFIG) --libs) $(shell $(GLIBCONFIG) --libs)
 @@ -82,7 +83,7 @@
  
  
