@@ -1,27 +1,27 @@
-share/doc/tct/README
-share/doc/tct/CHANGES
-share/doc/tct/COPYRIGHT
-share/doc/tct/INSTALL
-share/doc/tct/LICENSE
-share/doc/tct/MANIFEST
-share/doc/tct/OS-NOTES
-share/doc/tct/README.FIRST
-share/doc/tct/TODO
-share/doc/tct/design-notes
-share/doc/tct/grave-robber.README
-share/doc/tct/lazarus.README
-share/doc/tct/mac.README
-share/doc/tct/conf/coroner.cf
-share/doc/tct/conf/grave-robber.cf
-share/doc/tct/conf/lazarus.cf
-share/doc/tct/conf/look@first
-share/doc/tct/conf/mac_file.lst
-share/doc/tct/conf/mac_file.headers
-share/doc/tct/conf/paths.pl
-share/doc/tct/conf/paths.pl.old
-share/doc/tct/conf/save_these_files
-share/doc/tct/lazarus/lazarus
-share/doc/tct/bin/file
+%%DOCSDIR%%/README
+%%DOCSDIR%%/CHANGES
+%%DOCSDIR%%/COPYRIGHT
+%%DOCSDIR%%/INSTALL
+%%DOCSDIR%%/LICENSE
+%%DOCSDIR%%/MANIFEST
+%%DOCSDIR%%/OS-NOTES
+%%DOCSDIR%%/README.FIRST
+%%DOCSDIR%%/TODO
+%%DOCSDIR%%/design-notes
+%%DOCSDIR%%/grave-robber.README
+%%DOCSDIR%%/lazarus.README
+%%DOCSDIR%%/mac.README
+%%DOCSDIR%%/conf/coroner.cf
+%%DOCSDIR%%/conf/grave-robber.cf
+%%DOCSDIR%%/conf/lazarus.cf
+%%DOCSDIR%%/conf/look@first
+%%DOCSDIR%%/conf/mac_file.lst
+%%DOCSDIR%%/conf/mac_file.headers
+%%DOCSDIR%%/conf/paths.pl
+%%DOCSDIR%%/conf/paths.pl.old
+%%DOCSDIR%%/conf/save_these_files
+%%DOCSDIR%%/lazarus/lazarus
+%%DOCSDIR%%/bin/file
 bin/ils
 bin/grave-robber
 bin/lastcomm
@@ -35,49 +35,49 @@ bin/lazarus
 bin/icat
 bin/md5-tct
 bin/file-tct
-share/doc/tct/lib/body_init.pl
-share/doc/tct/lib/bsd.pl
-share/doc/tct/lib/chk_binaries.pl
-share/doc/tct/lib/command.pl
-share/doc/tct/lib/crunch.pl
-share/doc/tct/lib/date.pl
-share/doc/tct/lib/datez.pl
-share/doc/tct/lib/dig-sig.pl
-share/doc/tct/lib/file_mode.pl
-share/doc/tct/lib/getopts.pl
-share/doc/tct/lib/hostname.pl
-share/doc/tct/lib/is_able.pl
-share/doc/tct/lib/linux.pl
-share/doc/tct/lib/logger.pl
-share/doc/tct/lib/major_minor.pl
-share/doc/tct/lib/maj_min_walk.pl
-share/doc/tct/lib/misc.pl
-share/doc/tct/lib/ostype.pl
-share/doc/tct/lib/pass.cache.pl
-share/doc/tct/lib/print_table.pl
-share/doc/tct/lib/proc.pl
-share/doc/tct/lib/process_dirs.pl
-share/doc/tct/lib/ps_spy.pl
-share/doc/tct/lib/rawdev.pl
-share/doc/tct/lib/realpath.pl
-share/doc/tct/lib/save_the_files.pl
-share/doc/tct/lib/savecore.pl
+%%DOCSDIR%%/lib/body_init.pl
+%%DOCSDIR%%/lib/bsd.pl
+%%DOCSDIR%%/lib/chk_binaries.pl
+%%DOCSDIR%%/lib/command.pl
+%%DOCSDIR%%/lib/crunch.pl
+%%DOCSDIR%%/lib/date.pl
+%%DOCSDIR%%/lib/datez.pl
+%%DOCSDIR%%/lib/dig-sig.pl
+%%DOCSDIR%%/lib/file_mode.pl
+%%DOCSDIR%%/lib/getopts.pl
+%%DOCSDIR%%/lib/hostname.pl
+%%DOCSDIR%%/lib/is_able.pl
+%%DOCSDIR%%/lib/linux.pl
+%%DOCSDIR%%/lib/logger.pl
+%%DOCSDIR%%/lib/major_minor.pl
+%%DOCSDIR%%/lib/maj_min_walk.pl
+%%DOCSDIR%%/lib/misc.pl
+%%DOCSDIR%%/lib/ostype.pl
+%%DOCSDIR%%/lib/pass.cache.pl
+%%DOCSDIR%%/lib/print_table.pl
+%%DOCSDIR%%/lib/proc.pl
+%%DOCSDIR%%/lib/process_dirs.pl
+%%DOCSDIR%%/lib/ps_spy.pl
+%%DOCSDIR%%/lib/rawdev.pl
+%%DOCSDIR%%/lib/realpath.pl
+%%DOCSDIR%%/lib/save_the_files.pl
+%%DOCSDIR%%/lib/savecore.pl
 %%SITE_PERL%%/savecore.pl
 %%SITE_PERL%%/paths.pl
-share/doc/tct/lib/solaris.pl
-share/doc/tct/lib/stat.pl
-share/doc/tct/lib/suck_free_inodes.pl
-share/doc/tct/lib/suck_table.pl
-share/doc/tct/lib/sunos.pl
-share/doc/tct/lib/system_stubs.pl
-share/doc/tct/lib/tm_misc.pl
-share/doc/tct/lib/tree.pl
-share/doc/tct/lib/trust.pl
-share/doc/tct/lib/vault_cp.pl
-share/doc/tct/etc/magic
-@dirrm share/doc/tct/conf
-@dirrm share/doc/tct/lib
-@dirrm share/doc/tct/lazarus
-@dirrm share/doc/tct/etc
-@dirrm share/doc/tct/bin
-@dirrm share/doc/tct
+%%DOCSDIR%%/lib/solaris.pl
+%%DOCSDIR%%/lib/stat.pl
+%%DOCSDIR%%/lib/suck_free_inodes.pl
+%%DOCSDIR%%/lib/suck_table.pl
+%%DOCSDIR%%/lib/sunos.pl
+%%DOCSDIR%%/lib/system_stubs.pl
+%%DOCSDIR%%/lib/tm_misc.pl
+%%DOCSDIR%%/lib/tree.pl
+%%DOCSDIR%%/lib/trust.pl
+%%DOCSDIR%%/lib/vault_cp.pl
+%%DOCSDIR%%/etc/magic
+@dirrm %%DOCSDIR%%/conf
+@dirrm %%DOCSDIR%%/lib
+@dirrm %%DOCSDIR%%/lazarus
+@dirrm %%DOCSDIR%%/etc
+@dirrm %%DOCSDIR%%/bin
+@dirrm %%DOCSDIR%%
