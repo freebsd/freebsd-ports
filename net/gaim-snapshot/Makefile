@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	gaim
-PORTVERSION=	0.9.15
+PORTVERSION=	0.9.17
 CATEGORIES=	net
-MASTER_SITES=	ftp://ftp.marko.net/pub/gaim/
+MASTER_SITES=	ftp://ftp.marko.net/pub/gaim/ \
+		http://download.sourceforge.net/gaim/
 
 MAINTAINER=	jim@FreeBSD.org
 
