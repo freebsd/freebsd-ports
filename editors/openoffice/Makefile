@@ -397,11 +397,9 @@ build-mozilla:
 .endif
 
 install-mozilla:
-.if ! exists(${WRKDIR}/../moz/zipped/FREEBSDGCCIinc.zip)
 	@${CP} ${WRKDIR}/FREEBSDGCCIinc.zip ${WRKSRC}/../moz/zipped/
 	@${CP} ${WRKDIR}/FREEBSDGCCIlib.zip ${WRKSRC}/../moz/zipped/
 	@${CP} ${WRKDIR}/FREEBSDGCCIruntime.zip ${WRKSRC}/../moz/zipped/
-.endif
 
 register-mozilla:
 .if exists(${WRKDIR}/mozilla-runtime)
@@ -428,8 +426,12 @@ mozilla:
 	@${MAKE} install-mozilla
 
 do-build:
-.if ! exists(${WRKDIR}/../moz/zipped/FREEBSDGCCIruntime.zip)
+.if ! exists(${WRKSRC}/../moz/zipped/FREEBSDGCCIruntime.zip)
+.if ! exists(${WRKSRC}/../moz/zipped/FREEBSDGCCIlib.zip)
+.if ! exists(${WRKSRC}/../moz/zipped/FREEBSDGCCIinc.zip)
 	@${MAKE} mozilla
+.endif
+.endif
 .endif
 .if exists(${WRKDIR}/.Xvfb.pid)
 	@-${CAT} ${WRKDIR}/.Xvfb.pid | xargs kill
