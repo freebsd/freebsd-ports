@@ -7,7 +7,7 @@
 
 PORTNAME=	ricochet
 PORTVERSION=	0.97
-PORTREVISION=   5
+PORTREVISION=   6
 CATEGORIES=	mail
 MASTER_SITES=	http://vipul.net/perl/sources/spamcontrol/ricochet/
 
@@ -21,10 +21,10 @@ RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Mail/Internet.pm:${POR
 
 NO_BUILD=	yes
 
-post-patch:
+do-configure:
 .for file in install ricochet
-	@${PERL5} -pi -e 's,%%PREFIX%%,${PREFIX},g' ${WRKSRC}/${file}
-	@${PERL5} -pi -e 's,%%INSTALL_DATA%%,${INSTALL_DATA},g' ${WRKSRC}/${file}
+	${PERL5} -pi -e 's,%%PREFIX%%,${PREFIX},g' ${WRKSRC}/${file}
+	${PERL5} -pi -e 's,%%INSTALL_DATA%%,${INSTALL_DATA},g' ${WRKSRC}/${file}
 .endfor
 
 do-install:
