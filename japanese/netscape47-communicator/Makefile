@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-DISTNAME=	communicator-ja-euc-v473-export.generic-generic-generic-20000715
+DISTNAME=	communicator-ja-euc-v474-export.generic-generic-generic
 
 MASTERDIR=	${.CURDIR}/../netscape4-communicator
 SUBMASTERDIR=	${.CURDIR}/../netscape${BROWSER_VER}-communicator
@@ -14,7 +14,7 @@ PATCHDIR=	${SUBMASTERDIR}/patches
 PKGDIR=		${SUBMASTERDIR}/pkg
 
 BROWSER_VER=	47
-BROWSER_VERSION=	4.73
+BROWSER_VERSION=	4.74
 NETHELP=	nethelp-v47
 
 .include "${MASTERDIR}/Makefile"
