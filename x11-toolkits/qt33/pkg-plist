@@ -514,9 +514,6 @@ plugins/designer/libcppeditor.so
 plugins/designer/libdlgplugin.so
 plugins/designer/librcplugin.so
 plugins/designer/libwizards.so
-%%IMAGE_PLUGINS%%plugins/imageformats/libqjpeg.so
-%%IMAGE_PLUGINS%%plugins/imageformats/libqmng.so
-%%IMAGE_PLUGINS%%plugins/imageformats/libqpng.so
 share/doc/qt/aboutqt.html
 share/doc/qt/abstract-connections.png
 share/doc/qt/abstractwidgets.html
@@ -2306,7 +2303,6 @@ templates/Dialog_with_Buttons_(Right).ui
 templates/Tab_Dialog.ui
 @dirrm templates
 @dirrm share/doc/qt
-%%IMAGE_PLUGINS%%@dirrm plugins/imageformats
 @dirrm plugins/designer
 @dirrm plugins
 @dirrm mkspecs/win32-watcom

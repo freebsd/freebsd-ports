@@ -7,7 +7,7 @@
 
 PORTNAME?=	qt
 PORTVERSION?=	3.0.5
-PORTREVISION?=  4
+PORTREVISION?=  5
 CATEGORIES?=	x11-toolkits
 MASTER_SITES=	ftp://ftp.trolltech.com/qt/source/ \
 		ftp://ftp.chg.ru/pub/X11/qt/source/
@@ -20,14 +20,6 @@ LIB_DEPENDS=	mng.1:${PORTSDIR}/graphics/libmng \
 		png.5:${PORTSDIR}/graphics/png \
 		jpeg.9:${PORTSDIR}/graphics/jpeg
 
-.if defined(WITH_IMAGE_PLUGINS)
-IMAGELIB_TYPE=	plugin
-PLIST_SUB+=	IMAGE_PLUGINS=""
-.else # WITHOUT_IMAGE_PLUGINS [default]
-IMAGELIB_TYPE=	qt
-PLIST_SUB+=	IMAGE_PLUGINS="@comment "
-.endif # WITHOUT_IMAGE_PLUGINS [default]
-
 QT_PREFIX?=		${PREFIX}
 USE_BZIP2=		yes
 USE_GMAKE=		yes
@@ -39,9 +31,9 @@ HAS_CONFIGURE=		yes
 CONFIGURE_ARGS=	-prefix ${QT_PREFIX} \
 		-shared -qt-gif -system-zlib \
 		-no-g++-exceptions -thread -no-stl \
-		-${IMAGELIB_TYPE}-imgfmt-png \
-		-${IMAGELIB_TYPE}-imgfmt-jpeg \
-		-${IMAGELIB_TYPE}-imgfmt-mng \
+		-qt-imgfmt-png \
+		-qt-imgfmt-jpeg \
+		-qt-imgfmt-mng \
 		-system-libpng -system-libjpeg 	-system-libmng \
 		-no-nas-sound -sm \
 		-docdir ${QT_PREFIX}/share/doc/qt \
