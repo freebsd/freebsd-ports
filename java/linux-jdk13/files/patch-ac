@@ -1,0 +1,152 @@
+--- jre/lib/font.properties.orig	Sat Jan 27 12:30:43 2001
++++ jre/lib/font.properties	Tue May 15 09:39:02 2001
+@@ -23,25 +23,25 @@
+ serif.1=-b&h-lucidabright-medium-r-normal--*-%d-*-*-p-*-iso8859-1
+ #replace .1 font line if you have zapf fonts
+ #serif.1=--zapf dingbats-medium-r-normal--*-%d-*-*-p-*-adobe-fontspecific
+-serif.2=--symbol-medium-r-normal--*-%d-*-*-p-*-adobe-fontspecific
++#serif.2=--symbol-medium-r-normal--*-%d-*-*-p-*-adobe-fontspecific
+ 
+ serif.italic.0=-b&h-lucidabright-medium-i-normal--*-%d-*-*-p-*-iso8859-1
+ serif.italic.1=-b&h-lucidabright-medium-i-normal--*-%d-*-*-p-*-iso8859-1
+ #replace .1 font line if you have zapf fonts
+ #serif.italic.1=--zapf dingbats-medium-r-normal--*-%d-*-*-p-*-adobe-fontspecific
+-serif.italic.2=--symbol-medium-r-normal--*-%d-*-*-p-*-adobe-fontspecific
++#serif.italic.2=--symbol-medium-r-normal--*-%d-*-*-p-*-adobe-fontspecific
+ 
+ serif.bold.0=-b&h-lucidabright-demibold-r-normal--*-%d-*-*-p-*-iso8859-1
+ serif.bold.1=-b&h-lucidabright-demibold-r-normal--*-%d-*-*-p-*-iso8859-1
+ #replace .1 font line if you have zapf fonts
+ #serif.bold.1=--zapf dingbats-medium-r-normal--*-%d-*-*-p-*-adobe-fontspecific
+-serif.bold.2=--symbol-medium-r-normal--*-%d-*-*-p-*-adobe-fontspecific
++#serif.bold.2=--symbol-medium-r-normal--*-%d-*-*-p-*-adobe-fontspecific
+ 
+ serif.bolditalic.0=-b&h-lucidabright-demibold-i-normal--*-%d-*-*-p-*-iso8859-1
+ serif.bolditalic.1=-b&h-lucidabright-demibold-i-normal--*-%d-*-*-p-*-iso8859-1
+ #replace .1 font line if you have zapf fonts
+ #serif.bolditalic.1=--zapf dingbats-medium-r-normal--*-%d-*-*-p-*-adobe-fontspecific
+-serif.bolditalic.2=--symbol-medium-r-normal--*-%d-*-*-p-*-adobe-fontspecific
++#serif.bolditalic.2=--symbol-medium-r-normal--*-%d-*-*-p-*-adobe-fontspecific
+ 
+ # SansSerif font definition
+ #
+@@ -49,25 +49,25 @@
+ sansserif.1=-b&h-lucidasans-medium-r-normal-sans-*-%d-*-*-p-*-iso8859-1
+ #replace .1 font line if you have zapf fonts
+ #sansserif.1=--zapf dingbats-medium-r-normal--*-%d-*-*-p-*-adobe-fontspecific
+-sansserif.2=--symbol-medium-r-normal--*-%d-*-*-p-*-adobe-fontspecific
++#sansserif.2=--symbol-medium-r-normal--*-%d-*-*-p-*-adobe-fontspecific
+ 
+ sansserif.italic.0=-b&h-lucidasans-medium-i-normal-sans-*-%d-*-*-p-*-iso8859-1
+ sansserif.italic.1=-b&h-lucidasans-medium-i-normal-sans-*-%d-*-*-p-*-iso8859-1
+ #replace .1 font line if you have zapf fonts
+ #sansserif.italic.1=--zapf dingbats-medium-r-normal--*-%d-*-*-p-*-adobe-fontspecific
+-sansserif.italic.2=--symbol-medium-r-normal--*-%d-*-*-p-*-adobe-fontspecific
++#sansserif.italic.2=--symbol-medium-r-normal--*-%d-*-*-p-*-adobe-fontspecific
+ 
+ sansserif.bold.0=-b&h-lucidasans-bold-r-normal-sans-*-%d-*-*-p-*-iso8859-1
+ sansserif.bold.1=-b&h-lucidasans-bold-r-normal-sans-*-%d-*-*-p-*-iso8859-1
+ #replace .1 font line if you have zapf fonts
+ #sansserif.bold.1=--zapf dingbats-medium-r-normal--*-%d-*-*-p-*-adobe-fontspecific
+-sansserif.bold.2=--symbol-medium-r-normal--*-%d-*-*-p-*-adobe-fontspecific
++#sansserif.bold.2=--symbol-medium-r-normal--*-%d-*-*-p-*-adobe-fontspecific
+ 
+ sansserif.bolditalic.0=-b&h-lucidasans-bold-i-normal-sans-*-%d-*-*-p-*-iso8859-1
+ sansserif.bolditalic.1=-b&h-lucidasans-bold-i-normal-sans-*-%d-*-*-p-*-iso8859-1
+ #replace .1 font line if you have zapf fonts
+ #sansserif.bolditalic.1=--zapf dingbats-medium-r-normal--*-%d-*-*-p-*-adobe-fontspecific
+-sansserif.bolditalic.2=--symbol-medium-r-normal--*-%d-*-*-p-*-adobe-fontspecific
++#sansserif.bolditalic.2=--symbol-medium-r-normal--*-%d-*-*-p-*-adobe-fontspecific
+ 
+ # Monospaced font definition
+ #
+@@ -75,25 +75,25 @@
+ monospaced.1=-b&h-lucidatypewriter-medium-r-normal-sans-*-%d-*-*-m-*-iso8859-1
+ #replace .1 font line if you have zapf fonts
+ #monospaced.1=--zapf dingbats-medium-r-normal--*-%d-*-*-p-*-adobe-fontspecific
+-monospaced.2=--symbol-medium-r-normal--*-%d-*-*-p-*-adobe-fontspecific
++#monospaced.2=--symbol-medium-r-normal--*-%d-*-*-p-*-adobe-fontspecific
+ 
+ monospaced.italic.0=-b&h-lucidatypewriter-medium-r-normal-sans-*-%d-*-*-m-*-iso8859-1
+ monospaced.italic.1=-b&h-lucidatypewriter-medium-r-normal-sans-*-%d-*-*-m-*-iso8859-1
+ #replace .1 font line if you have zapf fonts
+ #monospaced.italic.1=--zapf dingbats-medium-r-normal--*-%d-*-*-p-*-adobe-fontspecific
+-monospaced.italic.2=--symbol-medium-r-normal--*-%d-*-*-p-*-adobe-fontspecific
++#monospaced.italic.2=--symbol-medium-r-normal--*-%d-*-*-p-*-adobe-fontspecific
+ 
+ monospaced.bold.0=-b&h-lucidatypewriter-bold-r-normal-sans-*-%d-*-*-m-*-iso8859-1
+ monospaced.bold.1=-b&h-lucidatypewriter-bold-r-normal-sans-*-%d-*-*-m-*-iso8859-1
+ #replace .1 font line if you have zapf fonts
+ #monospaced.bold.1=--zapf dingbats-medium-r-normal--*-%d-*-*-p-*-adobe-fontspecific
+-monospaced.bold.2=--symbol-medium-r-normal--*-%d-*-*-p-*-adobe-fontspecific
++#monospaced.bold.2=--symbol-medium-r-normal--*-%d-*-*-p-*-adobe-fontspecific
+ 
+ monospaced.bolditalic.0=-b&h-lucidatypewriter-bold-r-normal-sans-*-%d-*-*-m-*-iso8859-1
+ monospaced.bolditalic.1=-b&h-lucidatypewriter-bold-r-normal-sans-*-%d-*-*-m-*-iso8859-1
+ #replace .1 font line if you have zapf fonts
+ #monospaced.bolditalic.1=--zapf dingbats-medium-r-normal--*-%d-*-*-p-*-adobe-fontspecific
+-monospaced.bolditalic.2=--symbol-medium-r-normal--*-%d-*-*-p-*-adobe-fontspecific
++#monospaced.bolditalic.2=--symbol-medium-r-normal--*-%d-*-*-p-*-adobe-fontspecific
+ 
+ # Dialog font definition
+ #
+@@ -101,25 +101,25 @@
+ dialog.1=-b&h-lucidasans-medium-r-normal-sans-*-%d-*-*-p-*-iso8859-1
+ #replace .1 font line if you have zapf fonts
+ #dialog.1=--zapf dingbats-medium-r-normal--*-%d-*-*-p-*-adobe-fontspecific
+-dialog.2=--symbol-medium-r-normal--*-%d-*-*-p-*-adobe-fontspecific
++#dialog.2=--symbol-medium-r-normal--*-%d-*-*-p-*-adobe-fontspecific
+ 
+ dialog.italic.0=-b&h-lucidasans-medium-i-normal-sans-*-%d-*-*-p-*-iso8859-1
+ dialog.italic.1=-b&h-lucidasans-medium-i-normal-sans-*-%d-*-*-p-*-iso8859-1
+ #replace .1 font line if you have zapf fonts
+ #dialog.italic.1=--zapf dingbats-medium-r-normal--*-%d-*-*-p-*-adobe-fontspecific
+-dialog.italic.2=--symbol-medium-r-normal--*-%d-*-*-p-*-adobe-fontspecific
++#dialog.italic.2=--symbol-medium-r-normal--*-%d-*-*-p-*-adobe-fontspecific
+ 
+ dialog.bold.0=-b&h-lucidasans-bold-r-normal-sans-*-%d-*-*-p-*-iso8859-1
+ dialog.bold.1=-b&h-lucidasans-bold-r-normal-sans-*-%d-*-*-p-*-iso8859-1
+ #replace .1 font line if you have zapf fonts
+ #dialog.bold.1=--zapf dingbats-medium-r-normal--*-%d-*-*-p-*-adobe-fontspecific
+-dialog.bold.2=--symbol-medium-r-normal--*-%d-*-*-p-*-adobe-fontspecific
++#dialog.bold.2=--symbol-medium-r-normal--*-%d-*-*-p-*-adobe-fontspecific
+ 
+ dialog.bolditalic.0=-b&h-lucidasans-bold-i-normal-sans-*-%d-*-*-p-*-iso8859-1
+ dialog.bolditalic.1=-b&h-lucidasans-bold-i-normal-sans-*-%d-*-*-p-*-iso8859-1
+ #replace .1 font line if you have zapf fonts
+ #dialog.bolditalic.1=--zapf dingbats-medium-r-normal--*-%d-*-*-p-*-adobe-fontspecific
+-dialog.bolditalic.2=--symbol-medium-r-normal--*-%d-*-*-p-*-adobe-fontspecific
++#dialog.bolditalic.2=--symbol-medium-r-normal--*-%d-*-*-p-*-adobe-fontspecific
+ 
+ # DialogInput font definition
+ #
+@@ -127,25 +127,25 @@
+ dialoginput.1=-b&h-lucidatypewriter-medium-r-normal-sans-*-%d-*-*-m-*-iso8859-1
+ #replace .1 font line if you have zapf fonts
+ #dialoginput.1=--zapf dingbats-medium-r-normal--*-%d-*-*-p-*-adobe-fontspecific
+-dialoginput.2=--symbol-medium-r-normal--*-%d-*-*-p-*-adobe-fontspecific
++#dialoginput.2=--symbol-medium-r-normal--*-%d-*-*-p-*-adobe-fontspecific
+ 
+ dialoginput.italic.0=-b&h-lucidatypewriter-medium-r-normal-sans-*-%d-*-*-m-*-iso8859-1
+ dialoginput.italic.1=-b&h-lucidatypewriter-medium-r-normal-sans-*-%d-*-*-m-*-iso8859-1
+ #replace .1 font line if you have zapf fonts
+ #dialoginput.italic.1=--zapf dingbats-medium-r-normal--*-%d-*-*-p-*-adobe-fontspecific
+-dialoginput.italic.2=--symbol-medium-r-normal--*-%d-*-*-p-*-adobe-fontspecific
++#dialoginput.italic.2=--symbol-medium-r-normal--*-%d-*-*-p-*-adobe-fontspecific
+ 
+ dialoginput.bold.0=-b&h-lucidatypewriter-bold-r-normal-sans-*-%d-*-*-m-*-iso8859-1
+ dialoginput.bold.1=-b&h-lucidatypewriter-bold-r-normal-sans-*-%d-*-*-m-*-iso8859-1
+ #replace .1 font line if you have zapf fonts
+ #dialoginput.bold.1=--zapf dingbats-medium-r-normal--*-%d-*-*-p-*-adobe-fontspecific
+-dialoginput.bold.2=--symbol-medium-r-normal--*-%d-*-*-p-*-adobe-fontspecific
++#dialoginput.bold.2=--symbol-medium-r-normal--*-%d-*-*-p-*-adobe-fontspecific
+ 
+ dialoginput.bolditalic.0=-b&h-lucidatypewriter-bold-r-normal-sans-*-%d-*-*-m-*-iso8859-1
+ dialoginput.bolditalic.1=-b&h-lucidatypewriter-bold-r-normal-sans-*-%d-*-*-m-*-iso8859-1
+ #replace .1 font line if you have zapf fonts
+ #dialoginput.bolditalic.1=--zapf dingbats-medium-r-normal--*-%d-*-*-p-*-adobe-fontspecific
+-dialoginput.bolditalic.2=--symbol-medium-r-normal--*-%d-*-*-p-*-adobe-fontspecific
++#dialoginput.bolditalic.2=--symbol-medium-r-normal--*-%d-*-*-p-*-adobe-fontspecific
+ 
+ # Default font definition
+ #

@@ -1,0 +1,11 @@
+--- jre/lib/jvm.cfg.orig	Fri Feb  9 13:24:23 2001
++++ jre/lib/jvm.cfg	Tue May 15 09:41:16 2001
+@@ -8,7 +8,7 @@
+ # List of JVMs that can be used as the first option to java, javac, etc.
+ # Order is important -- first in this list is the default JVM.
+ #
++-classic
+ -client
+ -hotspot
+ -server
+--classic
