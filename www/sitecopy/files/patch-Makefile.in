@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Fri Jan 26 22:16:42 2001
++++ Makefile.in	Fri Jan 26 22:16:47 2001
+@@ -23,7 +23,7 @@
+ datadir = $(prefix)/@DATADIRNAME@
+ # Previously I had:
+ # datadir = @datadir@/sitecopy
+-docdir = $(prefix)/doc/sitecopy
++docdir = $(prefix)/share/doc/sitecopy
+ sc_datadir = $(datadir)/sitecopy
+ 
+ top_srcdir = @top_srcdir@

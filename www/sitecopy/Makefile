@@ -6,15 +6,16 @@
 #
 
 PORTNAME=	sitecopy
-PORTVERSION=	0.9.10
+PORTVERSION=	0.10.14
 CATEGORIES=	www
 MASTER_SITES=	http://www.lyra.org/sitecopy/
 
 MAINTAINER=	nik@FreeBSD.org
 
-LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext \
+		expat.1:${PORTSDIR}/textproc/expat \
+		neon.9:${PORTSDIR}/www/neon
 
-FETCH_BEFORE_ARGS=	-b
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CC="${CC} -I${LOCALBASE}/include" LDFLAGS=-L${LOCALBASE}/lib \
 		LIBS=-lintl
