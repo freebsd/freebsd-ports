@@ -1,3 +1,4 @@
+bin/f2py2.2
 lib/%%PYTHON_VERSION%%/site-packages/f2py2e/__cvs_version__.py
 lib/%%PYTHON_VERSION%%/site-packages/f2py2e/__cvs_version__.pyc
 lib/%%PYTHON_VERSION%%/site-packages/f2py2e/__cvs_version__.pyo
