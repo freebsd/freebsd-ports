@@ -8,8 +8,7 @@
 #
 
 PORTNAME=	apache
-PORTVERSION=	2.0.49
-PORTREVISION=	3
+PORTVERSION=	2.0.50
 CATEGORIES=	www ipv6
 MASTER_SITES=	${MASTER_SITE_APACHE_HTTPD} \
 		http://sheepkiller.nerim.net/ports/${PORTNAME}/:powerlogo
@@ -33,10 +32,12 @@ CONFLICTS=	apache+mod_ssl-1.* apache+mod_ssl+ipv6-1.* apache+mod_ssl+modsnmp-1.*
 		ru-apache+mod_ssl-1.* ru-apache-1.* thttpd-2.*
 
 # patch files
-PATCH_SITES+=		${MASTER_SITE_LOCAL:S/$/:clement/}
-PATCH_SITE_SUBDIR=	clement/:clement
 .if defined (WITH_WINDOWSUPDATEFIX)
-PATCHFILES+=		httpd-${PORTVERSION}-windowsupdate.patch:clement
+EXTRA_PATCHES+=		${FILESDIR}/exp-windowsupdate.patch
+.endif
+.if defined(WITH_EXPERIMENTAL_PATCHES)
+EXTRA_PATCHES+=		${FILESDIR}/exp-apr-kqueue.patch \
+			${FILESDIR}/exp-http-ready.patch
 .endif
 
 SCRIPTS_ENV+=		LIBTOOL=${LIBTOOL} LIBTOOLIZE=${LIBTOOLIZE} \
@@ -44,7 +45,8 @@ SCRIPTS_ENV+=		LIBTOOL=${LIBTOOL} LIBTOOLIZE=${LIBTOOLIZE} \
 			LIBTOOL_M4=${LOCALBASE}/share/aclocal/libtool${LIBTOOL_VERSION}.m4 \
 			AUTOHEADER=${AUTOHEADER}
 
-USE_AUTOCONF_VER=	257
+USE_ICONV=		yes
+USE_AUTOCONF_VER=	259
 USE_LIBTOOL_VER=	15
 USE_PERL5=		yes
 USE_RC_SUBR=		yes
@@ -56,6 +58,7 @@ CONFIGURE_ARGS=	--prefix=${PREFIX_RELDEST} \
 		--with-perl=${PERL5} \
 		--with-port=${WITH_HTTP_PORT} \
 		--with-expat=${LOCALBASE} \
+		--with-iconv=${LOCALBASE} \
 		--libdir=${PREFIX_RELDEST}/lib/apache2 \
 		--includedir=${PREFIX_RELDEST}/include/apache2
 
@@ -69,7 +72,7 @@ RC_SCRIPTS_SUB=	PREFIX=${PREFIX} RC_SUBR=${RC_SUBR}
 
 MAKE_ENV+=	DESTDIR=${DESTDIR} EXPR_COMPAT=yes
 
-WITH_MPM?=	prefork # or worker, perchild
+WITH_MPM?=	prefork # or worker, perchild, threadpool
 
 WITH_HTTP_PORT?=	80
 

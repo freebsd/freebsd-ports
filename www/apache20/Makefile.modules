@@ -195,6 +195,7 @@ CONFIGURE_ARGS+=	--with-ssl=${OPENSSLBASE}
 SUEXEC_DOCROOT?=		${PREFIX_RELDEST}/www/data
 SUEXEC_USERDIR?=		public_html
 SUEXEC_SAFEPATH?=		${PREFIX_RELDEST}/bin:${LOCALBASE}/bin:/usr/bin:/bin
+SUEXEC_LOGFILE?=		/var/log/httpd-suexec.log
 SUEXEC_UIDMIN?=			1000
 SUEXEC_GIDMIN?=			1000
 SUEXEC_CALLER?=			${WWWOWN}
@@ -205,7 +206,7 @@ CONFIGURE_ARGS+=		--with-suexec-caller=${SUEXEC_CALLER} \
 				--with-suexec-userdir="${SUEXEC_USERDIR}" \
 				--with-suexec-docroot="${SUEXEC_DOCROOT}" \
 				--with-suexec-safepath="${SUEXEC_SAFEPATH}" \
-				--with-suexec-logfile="/var/log/httpd-suexec.log" \
+				--with-suexec-logfile="${SUEXEC_LOGFILE}" \
 				--with-suexec-bin="${PREFIX_RELDEST}/sbin/suexec"
 .   if defined(WITH_SUEXEC_UMASK)
 CONFIGURE_ARGS+=			--with-suexec-umask=${WITH_SUEXEC_UMASK}

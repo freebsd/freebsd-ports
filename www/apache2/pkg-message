@@ -16,4 +16,3 @@ Available variables you add/set to /etc/rc.conf.
                               Extra flags passed to start command.
 - apache2limits_args (str):   Default to "-e -C daemon"
                               Arguments of pre-start limits run.
-
