@@ -3,7 +3,7 @@
 # Date created:		25 August 1994
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.4 1994/09/14 14:12:45 jkh Exp $
+# $Id: Makefile,v 1.5 1994/09/14 16:17:31 jkh Exp $
 #
 
 DISTNAME=	fvwm-1.23b
@@ -15,6 +15,6 @@ USE_IMAKE=	yes
 DEPENDS=	x11/xpm
 
 pre-install:
-	@cp ${FILESDIR}/configure2.h ${WRKSRC}
+	@cp ${FILESDIR}/configure2.h ${WRKSRC}/configure.h
 
 .include <bsd.port.mk>
