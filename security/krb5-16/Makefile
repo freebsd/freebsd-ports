@@ -88,13 +88,8 @@ post-extract:
 .endif
 
 post-patch:
-.if ${OSVERSION} >= 500000
-	@${REINPLACE_CMD} -e '1s,^#!\/usr\/athena,#!${LOCALBASE},' \
+	@${REINPLACE_CMD} -e '1s,^#!\/usr\/athena/bin/perl,#!${PERL5},' \
 		${WRKSRC}/../doc/man2html
-.else
-	@${REINPLACE_CMD} -e '1s,^#!\/usr\/athena,#!\/usr,' \
-		${WRKSRC}/../doc/man2html
-.endif
 
 pre-build:
 .if !defined(KRB5_KRB4_COMPAT)
