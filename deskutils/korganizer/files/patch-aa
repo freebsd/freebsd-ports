@@ -1,11 +1,36 @@
---- src/Makefile.in.orig	Sat May 23 18:08:36 1998
-+++ src/Makefile.in	Sat May 23 18:08:51 1998
-@@ -160,7 +160,7 @@
+--- src/calobject.cpp.orig	Fri Oct  2 13:47:51 1998
++++ src/calobject.cpp	Fri Oct  2 13:49:31 1998
+@@ -79,13 +79,17 @@
+   tmpStr = config->readEntry("Time Zone");
+   int dstSetting = config->readNumEntry("Daylight Savings", 0);
+   extern long int timezone;
++#if 0
+   extern int daylight;
++#endif
+   time_t curtime;
+   curtime = time(0);
+   localtime(&curtime);
+   int hourOff = - ((timezone / 60) / 60);
++#if 0
+   if (daylight)
+     hourOff += 1;
++#endif
+   QString tzStr;
+   tzStr.sprintf("%.2d%.2d",
+ 		hourOff, 
+@@ -96,6 +100,7 @@
+     config->writeEntry("Time Zone", tzStr.data());
+   }
+   
++#if 0
+   // if daylight savings has changed since last load time, we need
+   // to rewrite these settings to the config file.
+   if ((daylight && !dstSetting) ||
+@@ -103,6 +108,7 @@
+     config->writeEntry("Time Zone", tzStr.data());
+     config->writeEntry("Daylight Savings", daylight);
+   }
++#endif
+   
+   setTimeZone(tzStr.data());
  
- # the library search path. 
- #korganizer_LDFLAGS = $(all_libraries) $(KDE_RPATH)
--korganizer_LDFLAGS = $(all_libraries) -Wl,-rpath -Wl,$(KDEDIR)/lib
-+korganizer_LDFLAGS = $(all_libraries)
- 
- # the libraries to link against. Be aware of the order. First the libraries,
- # that depend on the following ones.
