@@ -366,7 +366,7 @@ post-install:
 	${INSTALL_SCRIPT} \
 	 ${WRKSRC}/obj.`${WRKSRC}/devtools/bin/Build -A`/libsharedmilter/libmilter.so \
 	 ${PREFIX}/lib/libmilter.so.${MILTER_SOVER}
-	${LN} -s libmilter.so.${MILTER_SOVER} ${PREFIX}/lib/libmilter.so
+	${LN} -sf libmilter.so.${MILTER_SOVER} ${PREFIX}/lib/libmilter.so
 .endif
 .endif
 .if exists(${DESTDIR}/etc/mail/mailer.conf)
