@@ -5986,6 +5986,7 @@ ruby-dbd_sqlrelay	ports/databases/ruby-dbd_sqlrelay
 ruby-dbd_sybase	ports/databases/ruby-dbd_sybase
 ruby-dbi	ports/databases/ruby-dbi
 ruby-devel	ports/lang/ruby-devel
+ruby-devel-logger	ports/sysutils/ruby-devel-logger
 ruby-dialogs	ports/devel/ruby-dialogs
 ruby-dl		ports/devel/ruby-dl
 ruby-drb	ports/net/ruby-drb
