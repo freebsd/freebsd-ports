@@ -10,7 +10,7 @@ PORTNAME=	Astro-Catalog
 PORTVERSION=	2.1.3
 CATEGORIES=	astro perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN} \
-		http://www.astro.ex.ac.uk/estar/software/
+		http://www.estar.org.uk/software/
 MASTER_SITE_SUBDIR=	Astro
 PKGNAMEPREFIX=	p5-
 
