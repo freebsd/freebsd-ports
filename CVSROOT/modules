@@ -4120,6 +4120,7 @@ ktagebuch	ports/deskutils/ktagebuch
 ktextdecode	ports/converters/ktextdecode
 ktoblzcheck	ports/finance/ktoblzcheck
 ktritoc		ports/games/ktritoc
+kuake		ports/deskutils/kuake
 kvirc		ports/irc/kvirc
 kwappen		ports/games/kwappen
 kwatch		ports/misc/kwatch
