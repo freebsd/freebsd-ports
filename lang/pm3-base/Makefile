@@ -61,7 +61,7 @@ BOOTSTRAP=	pm3-${PORTVERSION}-${TARGET}-boot.tar.bz2
 WORDSIZE=	32
 .elif ${ARCH} == "alpha"
 .if ${OSVERSION} < 400011
-BROKEN=		Not supported on older versions of FreeBSD/Alpha
+IGNORE=		Not supported on older versions of FreeBSD/Alpha
 .endif
 CFLAGS+=	-mieee
 TARGET=		FBSD_ALPHA
