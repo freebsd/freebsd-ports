@@ -105,7 +105,7 @@
     SUBDIR += pstoedit
     SUBDIR += py-imaging
     SUBDIR += py-imaging-handbook
-    SUBDIR += pyopengl
+    SUBDIR += py-opengl
     SUBDIR += qcread
     SUBDIR += qiv
     SUBDIR += qvplay
