@@ -116,12 +116,14 @@ share/doc/vmware/SAMBA-LICENSE
 @exec mkdir -p /compat/linux/dev;for n in 0 1 2 3 4 5 6 7 8 9; do ln -s /dev/ttyv$n /compat/linux/dev/tty$n;done
 @exec ln -s /dev/ttyva /compat/linux/dev/tty10
 @exec ln -s /dev/ttyvb /compat/linux/dev/tty11
+@exec mknod /compat/linux/dev/null c 2 2
+@exec chmod 666 /compat/linux/dev/null
 @exec mknod /compat/linux/dev/hda b 0 0x00010002
 @exec mknod /compat/linux/dev/hdb b 0 0x0001000a
 @exec ln -s %D/etc/vmware /etc/vmware
 @exec mknod /dev/vmmon c 200 0
 @exec mknod /dev/vmnet1 c 201 1
-@unexec rm -f /etc/vmware /dev/vmmon /dev/vmnet1 /compat/linux/bin/df /compat/linux/dev/tty[0-9]* /compat/linux/dev/hd?
+@unexec rm -f /etc/vmware /dev/vmmon /dev/vmnet1 /compat/linux/bin/df /compat/linux/dev/tty[0-9]* /compat/linux/dev/hd? /compat/linux/dev/null
 @dirrm etc/vmware
 @dirrm lib/vmware/bin
 @dirrm lib/vmware/lib/floppies
