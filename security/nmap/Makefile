@@ -1,10 +1,9 @@
-# ex:ts=8
 # Ports collection makefile for:  nmap
-# Version required:     	  2.07
+# Version required:     	  1.51
 # Date created:			  Tue Aug 04, 1998
 # Whom:				  David O'Brien (obrien@NUXI.com)
 #
-# $Id: Makefile,v 1.11 1999/02/08 18:56:36 obrien Exp $
+# $Id: Makefile,v 1.12 1999/02/11 07:47:28 flathill Exp $
 #
 
 DISTNAME=	nmap-2.07
