@@ -13,5 +13,6 @@ info/conduits.info
 info/conduits.info-1
 info/conduits.info-2
 @exec install-info %D/info/conduits.info %D/info/dir
-share/locale/fr/LC_MESSAGES/coldsync.mo
 share/locale/de/LC_MESSAGES/coldsync.mo
+share/locale/fr/LC_MESSAGES/coldsync.mo
+share/locale/it/LC_MESSAGES/coldsync.mo
