@@ -92,6 +92,7 @@
     SUBDIR += jed
     SUBDIR += jgv
     SUBDIR += jhd
+    SUBDIR += jisx0213-fonts
     SUBDIR += jls
     SUBDIR += jpilot
     SUBDIR += jtex209-ascii
