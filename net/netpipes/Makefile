@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=kris
 DISTNAME=	netpipes-4.2-export
 
 MAINTAINER=	doconnor@gsoft.com.au
+COMMENT=	A group of shell utilities to connect programs to sockets
 
 NO_WRKSUBDIR=	yes
 MAN1=		faucet.1 hose.1 sockdown.1 getpeername.1 encapsulate.1 \

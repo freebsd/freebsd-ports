@@ -25,6 +25,7 @@ PATCHFILES=	sasl_apop_patch.gz \
 		${DISTNAME}-ipv6-${IPV6_VER}.diff.gz
 
 MAINTAINER=	hetzels@westbend.net
+COMMENT=	RFC 2222 SASL (Simple Authentication and Security Layer)
 
 USE_SUBMAKE=	yes
 USE_OPENSSL=	yes

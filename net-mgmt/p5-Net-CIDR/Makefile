@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Net
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	spadger@best.com
+COMMENT=	Perl module to manipulate IPv4/IPv6 netblocks in CIDR notation
 
 PERL_CONFIGURE=	yes
 

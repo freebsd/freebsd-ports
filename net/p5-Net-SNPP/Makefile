@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Net
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	erwin@lansing.dk
+COMMENT=	Net::SNPP - Perl Simple Network Pager Protocol Client
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Net/Cmd.pm:${PORTSDIR}/net/p5-Net
 RUN_DEPENDS=	${BUILD_DEPENDS}

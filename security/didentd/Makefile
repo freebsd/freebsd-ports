@@ -11,6 +11,7 @@ CATEGORIES=	security
 MASTER_SITES=	http://untergrund.bewaff.net/~drt/c0re.jp/c0de/didentd/ http://c0re.jp/c0de/didentd/
 
 MAINTAINER=	drt@un.bewaff.net
+COMMENT=	Modular RfC1423 (identd) server sending encrypted audit tokens.
 
 RUN_DEPENDS=	tcpserver:${PORTSDIR}/sysutils/ucspi-tcp
 

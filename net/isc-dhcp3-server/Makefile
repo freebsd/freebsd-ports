@@ -20,6 +20,7 @@ PATCHFILES=	dhcp3_3.0+3.0.1rc9-2.2.diff.gz
 PATCH_DIST_STRIP=-p1
 
 MAINTAINER=	cyrille.lefevre@laposte.net
+COMMENT=	ISC Dynamic Host Configuration Protocol client and server code
 
 USE_REINPLACE=	yes
 

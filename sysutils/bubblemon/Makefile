@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.student.nada.kth.se/~d92-jwa/code/bubblemon/ \
 		http://www.student.nada.kth.se/~d92-jwa/code/bubblemon/attic/
 
 MAINTAINER=	rael@vectorstar.net
+COMMENT=	Bubblemon is a system CPU and memory load monitor for the GNOME panel
 
 LIB_DEPENDS=	gtop.1:${PORTSDIR}/devel/libgtop
 

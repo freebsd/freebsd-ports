@@ -11,6 +11,7 @@ CATEGORIES=	net windowmaker
 MASTER_SITES=	ftp://ftp.enteract.com/users/rneswold/
 
 MAINTAINER=	rneswold@enteract.com
+COMMENT=	A network bandwidth monitor intended for the WindowMaker dock
 
 USE_XPM=	yes
 MAN1=		wmnet.1

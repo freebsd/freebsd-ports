@@ -13,6 +13,7 @@ MASTER_SITES=	http://net.doit.wisc.edu/~plonka/FlowScan/
 DISTFILES=	FlowScan-${PORTVERSION}.tar.gz
 
 MAINTAINER=	lyngbol@wheel.dk
+COMMENT=	Processes IP flows recorded in cflowd-format raw flow files
 
 BUILD_DEPENDS=	ksh:${PORTSDIR}/shells/pdksh \
 		rrdtool:${PORTSDIR}/net/rrdtool \

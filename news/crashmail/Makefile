@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.df.lth.se/~billing/crashmail/
 DISTNAME=	cm062linux
 
 MAINTAINER=	vk@vk.pp.ru
+COMMENT=	CrashMail II FTN mail tosser
 
 WRKSRC=		${WRKDIR}/CrashMail
 BUILD_WRKSRC=	${WRKSRC}/src

@@ -19,6 +19,7 @@ MASTER_SITES=	ftp://ftp.ssh.com/pub/ssh/ \
 DISTNAME=	ssh-${PORTVERSION}
 
 MAINTAINER=	larse@ISI.EDU
+COMMENT=	Secure shell client and server (remote login program)
 
 GNU_CONFIGURE=	YES
 

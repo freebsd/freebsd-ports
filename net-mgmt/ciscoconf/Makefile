@@ -12,6 +12,7 @@ MASTER_SITES=	http://buffoon.automagic.org/dist/ \
 		http://maggie.automagic.org/dist/
 
 MAINTAINER=	jabley@automagic.org
+COMMENT=	Fetches configuration from Cisco routers and stores them under RCS
 
 BUILD_DEPENDS=	makedepend:${PORTSDIR}/x11/XFree86
 ALL_TARGET=	depend all

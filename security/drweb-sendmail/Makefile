@@ -12,6 +12,7 @@ MASTER_SITES=   ftp://ftp.drweb.ru/pub/unix/
 DISTNAME=       drweb-clients-4.29.10-A-sources
 
 MAINTAINER=	anton@chelcom.ru
+COMMENT=	Sendmail message filter for virus processing through DrWeb daemon
 
 RUN_DEPENDS=    ${LOCALBASE}/etc/rc.d/drweb-0.sh:${PORTSDIR}/security/drwebd
 

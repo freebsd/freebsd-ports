@@ -13,6 +13,7 @@ DISTNAME=	LimeWireLinux
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	mkm@ieee.org
+COMMENT=	A Java based gnutella client
 
 USE_JAVA=	1.3+
 NO_BUILD=	yes

@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.mat.univie.ac.at/pub/teschl/xtexsh/
 DISTNAME=	${PORTNAME}-1.4-2
 
 MAINTAINER=	js@jeannot.org
+COMMENT=	Tcl/Tk-based simple TeX interface
 
 RUN_DEPENDS=	tex:${PORTSDIR}/print/teTeX \
 		wish8.4:${PORTSDIR}/x11-toolkits/tk84

@@ -14,6 +14,7 @@ MASTER_SITES=	http://www.domtools.com/pub/ \
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	veers@disturbed.net
+COMMENT=	Set of utilities for extracting information from DNS records
 
 USE_PERL5=	YES
 

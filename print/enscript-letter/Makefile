@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	enscript
 DISTNAME=	enscript-${PORTVERSION}
 
 MAINTAINER=	kline@thought.org
+COMMENT=	ASCII-to-PostScript filter
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes

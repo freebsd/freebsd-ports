@@ -14,6 +14,7 @@ PKGNAMESUFFIX=	-gui
 DISTNAME=	${PORTNAME}-${PORTVERSION:C/.0$/-0/}.shared.${ARCH}-${OPSYS}
 
 MAINTAINER=	holger@e-gitt.net
+COMMENT=	A OCAML/GTK GUI for the mldonkey peer-to-peer network client
 
 ONLY_FOR_ARCHS= i386 alpha
 USE_BZIP2=	yes

@@ -14,6 +14,7 @@ MASTER_SITES=	http://dist.automagic.org/ \
 		http://dist3.automagic.org/
 
 MAINTAINER=	jabley@automagic.org
+COMMENT=	Optimise a list of route prefixes to help make nice short filters
 
 GNU_CONFIGURE=	yes
 

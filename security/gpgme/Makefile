@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_GNUPG}
 MASTER_SITE_SUBDIR=	gpgme
 
 MAINTAINER=	markun@onohara.to
+COMMENT=	A library to make access to GnuPG easier
 
 BUILD_DEPENDS=	gpg:${PORTSDIR}/security/gnupg
 LIB_DEPENDS=	pth.20:${PORTSDIR}/devel/pth

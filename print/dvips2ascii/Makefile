@@ -11,6 +11,7 @@ CATEGORIES=	print
 MASTER_SITES=	http://www.de.freebsd.org/~eserte/distfiles/
 
 MAINTAINER=	eserte@cs.tu-berlin.de
+COMMENT=	PostScript (created by dvips) to ascii converter
 
 do-build:
 	${MV} ${WRKSRC}/dvips2ascii ${WRKSRC}/dvips2ascii.orig

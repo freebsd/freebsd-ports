@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Tie
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	svenasse@polaris.ca
+COMMENT=	Tie a filehandle to Syslog
 
 PERL_CONFIGURE=	yes
 

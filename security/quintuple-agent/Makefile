@@ -11,6 +11,7 @@ CATEGORIES=	security
 MASTER_SITES=	http://www.vibe.at/tools/q-agent/
 
 MAINTAINER=	stolz@i2.informatik.rwth-aachen.de
+COMMENT=	Quintuple Agent is a program that stores secrets for you
 
 LIB_DEPENDS+=	intl.4:${PORTSDIR}/devel/gettext
 

@@ -12,6 +12,7 @@ CATEGORIES=	security
 MASTER_SITES=	http://cpbotha.net/files/pam_pwdfile/
 
 MAINTAINER=	mschout@gkg.net
+COMMENT=	A pam module for authenticating with flat passwd files
 
 MAKEFILE=	${FILESDIR}/Makefile.bsd
 

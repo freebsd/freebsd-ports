@@ -14,6 +14,7 @@ DISTNAME=	xapply-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	csg@fedex.com
+COMMENT=	Generalize listed filenames to csh-extended glob patterns
 
 BUILD_DEPENDS=	makeme:${PORTSDIR}/devel/msrc0 \
 		mkcmd:${PORTSDIR}/devel/mkcmd

@@ -15,6 +15,7 @@ PKGNAMESUFFIX=	-src
 DISTNAME=	${PORTNAME}-${PORTVERSION:C/.0$/-0/}.sources
 
 MAINTAINER=	holger@e-gitt.net
+COMMENT=	A OCAML client for eDonkey and Overnet peer-to-peer networks
 
 BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml
 

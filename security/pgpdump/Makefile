@@ -11,6 +11,7 @@ CATEGORIES=	security
 MASTER_SITES=	ftp://pgp.iijlab.net/pub/pgp/tools/
 
 MAINTAINER=	kaoru@kaisei.org
+COMMENT=	PGP packet visualizer
 
 GNU_CONFIGURE=	yes
 

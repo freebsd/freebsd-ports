@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Crypt
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	rachek@si.FreeBSD.org
+COMMENT=	Crypt::PGPSimple provides a simple object-oriented interface to PGP
 
 RUN_DEPENDS=	${LOCALBASE}/bin/pgp:${PORTSDIR}/security/pgp
 

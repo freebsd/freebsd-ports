@@ -11,6 +11,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://www.pdos.lcs.mit.edu/click/
 
 MAINTAINER=	gnn@neville-neil.com
+COMMENT=	The Click Modular Router
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes

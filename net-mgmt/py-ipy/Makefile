@@ -14,6 +14,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	IPy-${PORTVERSION}
 
 MAINTAINER=	drt@un.bewaff.net
+COMMENT=	A Python module for handling IPv4 and IPv6 Addresses and Networks
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes

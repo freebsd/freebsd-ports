@@ -13,6 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	mich@freebsdcluster.org
+COMMENT=	A simple TCP port forwarder
 
 USE_REINPLACE=	yes
 

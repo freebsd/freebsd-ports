@@ -11,6 +11,7 @@ CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.hlfl.org/pub/hlfl/
 
 MAINTAINER=	asl@launay.org
+COMMENT=	High Level Firewall Language
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--datadir=${LOCALBASE}/share/doc

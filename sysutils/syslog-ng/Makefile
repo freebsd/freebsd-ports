@@ -11,6 +11,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://www.balabit.hu/downloads/syslog-ng/1.4/
 
 MAINTAINER=	vince@bendnet.com
+COMMENT=	A powerfull syslogd replacement
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libol.a:${PORTSDIR}/devel/libol
 

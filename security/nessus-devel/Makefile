@@ -15,6 +15,7 @@ MASTER_SITES=	ftp://ftp.nessus.org/pub/nessus/unstable/nessus-${PORTVERSION}/src
 DISTNAME=	nessus-core-${PORTVERSION}
 
 MAINTAINER=	udo.schweigert@siemens.com
+COMMENT=	A security scanner: looks for vulnerabilities in a given network
 
 LIB_DEPENDS=	nasl.4:${PORTSDIR}/security/nessus-libnasl-devel
 

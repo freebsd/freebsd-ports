@@ -14,6 +14,7 @@ DISTNAME=		pptp-linux-1.1.0
 DISTFILES=		pptp-linux-1.1.0-1.tar.gz
 
 MAINTAINER=	thomas@cuivre.fr.eu.org
+COMMENT=	PPTP client for establishing a VPN link with an NT server
 
 LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
 

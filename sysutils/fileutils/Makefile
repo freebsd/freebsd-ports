@@ -13,6 +13,7 @@ MASTER_SITES=   ${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	fileutils
 
 MAINTAINER=	cyrille.lefevre@laposte.net
+COMMENT=	The GNU file utilities
 
 # Global variables
 #

@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	File/HDIAS
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	martin@tradex.sk
+COMMENT=	Perl5 anti-virus file scanning package
 
 PERL_CONFIGURE=	yes
 

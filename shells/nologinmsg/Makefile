@@ -13,6 +13,7 @@ MASTER_SITES=	# none
 DISTFILES=	# none
 
 MAINTAINER=	freebsd-security@rikrose.net
+COMMENT=	More functional native binary replacement for /sbin/nologin
 
 USE_REINPLACE=	yes
 

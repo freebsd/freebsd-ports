@@ -11,6 +11,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.conundrum.com/pub/sarah/
 
 MAINTAINER=	mattp@conundrum.com
+COMMENT=	Syslog automated Rotation and Archive Handler
 
 USE_PERL5=	yes
 NO_BUILD=	yes

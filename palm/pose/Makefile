@@ -13,6 +13,7 @@ MASTER_SITES=	http://www.palmos.com/dev/tech/tools/emulator/
 DISTFILES=	emulator_src_31.tar.gz emulator_skins_16.tar.gz
 
 MAINTAINER=	wlloyd@slap.net
+COMMENT=	Palm OS(R) Emulator
 
 LIB_DEPENDS=	fltk.1:${PORTSDIR}/x11-toolkits/fltk
 

@@ -11,6 +11,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://www.mavetju.org/download/
 
 MAINTAINER=	edwin@mavetju.org
+COMMENT=	Get a 'graphical' tree-overview of installed packages
 
 USE_REINPLACE=	yes
 USE_PERL5=	yes

@@ -13,6 +13,7 @@ PKGNAMEPREFIX=	linux-
 DISTNAME=	Linux-ACU-Driver-v${PORTVERSION}
 
 MAINTAINER=	matt@peterson.org
+COMMENT=	Aironet Cisco Utilities for 802.11 wireless NIC's
 
 RUN_DEPENDS=	${LINUXBASE}/lib/libc.so.6:${PORTSDIR}/emulators/linux_base \
 		${LINUXBASE}/usr/lib/libgtk-1.2.so.0:${PORTSDIR}/x11-toolkits/linux-gtk

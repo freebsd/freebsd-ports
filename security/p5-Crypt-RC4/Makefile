@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Crypt
 PKGNAMEPREFIX=		p5-
 
 MAINTAINER=		svenasse@polaris.ca
+COMMENT=	Perl implementation of the RC4 encryption algorithm
 
 PERL_CONFIGURE=		yes
 

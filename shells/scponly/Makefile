@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.sublimation.org/scponly/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	mcglk@artlogix.com
+COMMENT=	A tiny shell which only permits scp and sftp
 
 MAN8=	scponly.8
 

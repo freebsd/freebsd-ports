@@ -14,6 +14,7 @@ MASTER_SITES=	ftp://ftp.astron.com/pub/file/ \
 		ftp://ftp.fu-berlin.de/unix/tools/file/
 
 MAINTAINER=	jharris@widomaker.com
+COMMENT=	File - determine file type
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-fsect-man5

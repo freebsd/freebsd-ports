@@ -14,6 +14,7 @@ PATCH_SITES=	http://www.ml-search.com/xisp/distfiles/
 PATCHFILES=	xisp-2.7-freebsd-patch-20030126.gz
 
 MAINTAINER=	tm@onepost.net
+COMMENT=	A user-friendly X interface to pppd/chat
 
 LIB_DEPENDS=	forms.1:${PORTSDIR}/x11-toolkits/xforms
 

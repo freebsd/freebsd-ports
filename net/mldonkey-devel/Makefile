@@ -14,6 +14,7 @@ MASTER_SITES=	http://ernie.eit.uni-kl.de/mldonkey/ \
 DISTNAME=	${PORTNAME}-${PORTVERSION:C/.0$/-0/}.shared.${ARCH}-${OPSYS}
 
 MAINTAINER=	holger@e-gitt.net
+COMMENT=	A OCAML client for eDonkey and Overnet peer-to-peer networks (core)
 
 ONLY_FOR_ARCHS=	alpha i386
 USE_BZIP2=	yes

@@ -12,6 +12,7 @@ DISTNAME=	IPv6socket_scrub
 EXTRACT_SUFX=	.tar
 
 MAINTAINER=	Janos.Mohacsi@dante.org.uk
+COMMENT=	Checks IPv6 portability of C source code
 
 MAN1=		ipv6socket_scrub.1
 

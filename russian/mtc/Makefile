@@ -13,6 +13,7 @@ CATEGORIES=	russian
 MASTER_SITES=	http://www.ipform.ru/files/
 
 MAINTAINER=	infoteacher@ipform.ru
+COMMENT=	Multifile text Encoding Converter 1.3
 
 NO_BUILD=	yes
 

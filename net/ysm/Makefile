@@ -17,6 +17,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	ysmv7_2_8_1
 
 MAINTAINER=	vampiro@rusunix.org
+COMMENT=	Command line ICQ client with ICQ2000 and recoding support
 
 LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
 

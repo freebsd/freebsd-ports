@@ -13,6 +13,7 @@ MASTER_SITES=	http://www.erlenstar.demon.co.uk/perl/ \
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	croyle@gelemna.org
+COMMENT=	Object for handling Usenet articles in mail or news form
 
 RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Net/DNS.pm:${PORTSDIR}/net/p5-Net-DNS \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Net/NNTP.pm:${PORTSDIR}/net/p5-Net \

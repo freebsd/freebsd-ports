@@ -11,6 +11,7 @@ CATEGORIES=	print
 MASTER_SITES=	http://sporadic.stanford.edu/bump/
 
 MAINTAINER=	spcoltri@omcl.org
+COMMENT=	Convert a Go game record in SGF format into TeX and provide fonts to make a dvi
 
 BUILD_DEPENDS=	tex:${PORTSDIR}/print/teTeX
 RUN_DEPENDS=	tex:${PORTSDIR}/print/teTeX

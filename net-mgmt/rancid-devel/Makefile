@@ -12,6 +12,7 @@ CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.shrubbery.net/pub/rancid/
 
 MAINTAINER=	janos.mohacsi@bsd.hu
+COMMENT=	Really Awesome New Cisco confIg Differ
 
 BUILD_DEPENDS=	expect:${PORTSDIR}/lang/expect
 RUN_DEPENDS=	expect:${PORTSDIR}/lang/expect \

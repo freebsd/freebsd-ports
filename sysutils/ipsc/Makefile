@@ -12,6 +12,7 @@ MASTER_SITES=	http://ipsc.sourceforge.net/dist/ipsc/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	jeremy@external.org
+COMMENT=	An IP Subnet Calculator
 
 BUILD_DEPENDS=	${PORTSDIR}/sysutils/prips/work/prips/prips.o:${PORTSDIR}/sysutils/prips:build
 

@@ -11,6 +11,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://www.switch.ch/tf-tant/floma/sw/samplicator/
 
 MAINTAINER=	lyngbol@wheel.dk
+COMMENT=	Receives UDP datagrams and redistributes them to a set of receivers
 
 GNU_CONFIGURE=	yes
 

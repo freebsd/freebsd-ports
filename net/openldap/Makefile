@@ -21,6 +21,7 @@ MASTER_SITE_SUBDIR=	openldap-release
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	lodea@vet.com.au
+COMMENT=	Open source LDAP client and server software
 
 USE_LIBTOOL=	yes
 

@@ -14,6 +14,7 @@ MASTER_SITES=	http://www.edwinh.org/flexbackup/tarball/ \
 MASTER_SITE_SUBDIR=	system/backup
 
 MAINTAINER=	johnjen@reynoldsnet.org
+COMMENT=	Perl-based, flexible tape backup system that uses dump, cpio, or afio
 
 RUN_DEPENDS=	afio:${PORTSDIR}/sysutils/afio \
 		buffer:${PORTSDIR}/misc/buffer \

@@ -12,6 +12,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://gtk.licq.org/download/
 
 MAINTAINER=	roman@xpert.com
+COMMENT=	Gtk+ plugin for licq
 
 BUILD_DEPENDS=	${LOCALBASE}/include/licq/licq_icqd.h:${PORTSDIR}/net/licq
 LIB_DEPENDS=	pspell.15:${PORTSDIR}/textproc/aspell \

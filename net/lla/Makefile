@@ -14,6 +14,7 @@ DISTNAME=	${PORTNAME}.${PORTVERSION}
 EXTRACT_SUFX=	.pl
 
 MAINTAINER=	koj@ofug.net
+COMMENT=	Perl-based LDAP log statistics generator
 
 RUN_DEPENDS=	${SITE_ARCH_PERL}/Date/Calc.pm:${PORTSDIR}/devel/p5-Date-Calc \
 		${SITE_PERL}/Date/Manip.pm:${PORTSDIR}/devel/p5-Date-Manip \

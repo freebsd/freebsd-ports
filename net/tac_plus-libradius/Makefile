@@ -13,6 +13,7 @@ DISTFILES=	tac_plus.F5.0.0.alpha.tar.gz \
 		tac_plus_radius.tgz
 
 MAINTAINER=	gremlin@portal-to-web.de
+COMMENT=	The www.gazi.edu.tr tacacs+ Daemon with pam and libradius support
 
 WRKPREFIX=	tac_plus.F5.0.0.alpha
 WRKSRC=		${WRKDIR}/${WRKPREFIX}/

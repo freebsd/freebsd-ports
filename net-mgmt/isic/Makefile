@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.packetfactory.net/Projects/ISIC/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	bradh@uunet.co.za
+COMMENT=	IP Stack Integrity Checker
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libnet.a:${PORTSDIR}/net/libnet
 

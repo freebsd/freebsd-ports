@@ -11,6 +11,7 @@ CATEGORIES=	net
 MASTER_SITES=	ftp://fadeto.blackened.com/pub/other/hotlinex.org/
 
 MAINTAINER=	logo@blackened.com
+COMMENT=	A text based Hotline (http://www.bigredh.com) client for Unix
 
 GNU_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}/hx

@@ -14,6 +14,7 @@ MASTER_SITES=	http://www.laurentconstantin.com/common/lcrzoex/download/v4/ \
 EXTRACT_SUFX=	-src.tgz
 
 MAINTAINER=	king@v2project.com
+COMMENT=	Lcrzoex contains over 300 functionnalities using network library lcrzo
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/liblcrzo.a:${PORTSDIR}/security/lcrzo
 

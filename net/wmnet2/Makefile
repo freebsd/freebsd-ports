@@ -13,6 +13,7 @@ MASTER_SITES=	http://www.digitalkaos.net/linux/wmnet/download/
 DISTNAME=	wmnet-${PORTVERSION}
 
 MAINTAINER=	flag@libero.it
+COMMENT=	A cool network monitor for WindowMaker
 
 USE_IMAKE=	yes
 

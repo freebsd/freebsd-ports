@@ -11,6 +11,7 @@ CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.lexa.ru/pub/domestic/snar/
 
 MAINTAINER=	snar@paranoia.ru
+COMMENT=	Safe (in the mean of stack smashing) reincarnation of strcpy et al
 
 ONLY_FOR_ARCHS=	i386
 

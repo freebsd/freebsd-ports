@@ -11,6 +11,7 @@ CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.chg.ru/pub/networking/freebsd/
 
 MAINTAINER=	ks@itp.ac.ru
+COMMENT=	IP over UDP tunnel with encryption
 
 USE_OPENSSL=	YES
 

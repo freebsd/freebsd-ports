@@ -14,6 +14,7 @@ MASTER_SITES=	http://www.ennui.net/~crioux/ \
 DISTNAME=	bo121unix
 
 MAINTAINER=	darius@dons.net.au
+COMMENT=	Client program for the Back Orifice Windows program
 
 WRKSRC=		${WRKDIR}/bo
 GNU_CONFIGURE=	yes

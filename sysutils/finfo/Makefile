@@ -12,6 +12,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://freebsdcluster.org/~mich/software/
 
 MAINTAINER=	mich@freebsdcluster.org
+COMMENT=	Finfo displays potentially useful information about a file
 
 do-build:
 	(cd ${WRKSRC} && ${CC} ${CFLAGS} -o ${PORTNAME} ${PORTNAME}.c)

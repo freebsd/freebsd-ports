@@ -14,6 +14,7 @@ MASTER_SITES=	http://www.lammah.com/pad/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	jharris@widomaker.com
+COMMENT=	A command-line utility to encrypt files
 
 DOC_FILES=	COPYING README ChangeLog
 GNU_CONFIGURE=	yes

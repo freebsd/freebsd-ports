@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	rdesktop-1.2.0
 
 MAINTAINER=	chris@aims.com.au
+COMMENT=	RDP client for Windows NT Terminal Server
 
 USE_XLIB=	yes
 USE_GMAKE=	yes

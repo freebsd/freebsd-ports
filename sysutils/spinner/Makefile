@@ -12,6 +12,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://downloads.laffeycomputer.com/current_builds/spinner/
 
 MAINTAINER=	mich@freebsdcluster.org
+COMMENT=	Keep ssh and telnet connections from dropping due to inactivity
 
 DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
 GNU_CONFIGURE=	yes

@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Net
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	mistral@imasy.or.jp
+COMMENT=	Send Wake On Lan (WOL) packets to power on computers
 
 PERL_CONFIGURE=	yes
 

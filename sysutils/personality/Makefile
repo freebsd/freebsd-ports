@@ -11,6 +11,7 @@ CATEGORIES=	sysutils
 DISTFILES=	# none
 
 MAINTAINER=	andreas_and_joe@tao.org.uk
+COMMENT=	System configuration management utility to alter system personality
 
 WRKSRC=		${WRKDIR}/src
 NO_BUILD=	YES

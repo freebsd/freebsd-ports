@@ -13,6 +13,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION:S/./_/}_tar_Z
 EXTRACT_SUFX=	.txt
 
 MAINTAINER=	mwest@uct.ac.za
+COMMENT=	PostScript calendar program
 
 WRKSRC=		${WRKDIR}/pcal.${PORTVERSION}
 PAPERSIZE?=	A4

@@ -14,6 +14,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	roman@xpert.com
+COMMENT=	GTK based Gnutella client
 
 LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2
 

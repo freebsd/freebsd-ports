@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	Net
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	jesse@gallup.com
+COMMENT=	A configurable base class for writing internet servers in Perl
 
 PERL_CONFIGURE=	yes
 

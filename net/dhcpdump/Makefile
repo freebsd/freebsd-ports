@@ -11,6 +11,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://www.mavetju.org/download/
 
 MAINTAINER=	edwin@mavetju.org
+COMMENT=	Decode and diagnose sniffed DHCP packets
 
 MAN1=		dhcpdump.1
 

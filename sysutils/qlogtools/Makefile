@@ -11,6 +11,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://untroubled.org/qlogtools/
 
 MAINTAINER=	sergei@kolobov.com
+COMMENT=	Tools for processing logs from qmail and other packages
 
 MAN1=		multipipe.1 multitail.1 qfilelog.1 \
 		spipe.1 tai2tai64n.1 tai64n2tai.1 teepipe.1

@@ -17,6 +17,7 @@ MASTER_SITE_SUBDIR=  LPRng/ifhp
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=papowell@astart.com
+COMMENT=	IFHP - A highly configurable print filter for LPRng
 
 
 GNU_CONFIGURE=	yes

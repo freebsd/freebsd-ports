@@ -12,6 +12,7 @@ MASTER_SITES=	http://bpft.by.ru/ \
 EXTRACT_SUFX=	_29-07-2002.tgz
 
 MAINTAINER=	vampiro@rusunix.org
+COMMENT=	The BPF Traffic collector
 
 WRKSRC=		${WRKDIR}/bpft
 MAN1=		traflog.1 trafstat.1

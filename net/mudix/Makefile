@@ -11,6 +11,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://dw.nl.eu.org/mudix/
 
 MAINTAINER=	scorpio@drkshdw.org
+COMMENT=	Ncurses-based MUD client with triggers, aliases, colors
 
 GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes

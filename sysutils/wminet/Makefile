@@ -11,6 +11,7 @@ CATEGORIES=	sysutils windowmaker
 MASTER_SITES=	http://www.neotokyo.org/illusion/downloads/
 
 MAINTAINER=	sk-ports@vegamuse.org
+COMMENT=	Window Maker dockable inetd monitor
 
 WRKSRC=		${WRKDIR}/wminet.app/wminet
 

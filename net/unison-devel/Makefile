@@ -13,6 +13,7 @@ DISTNAME=	src
 DIST_SUBDIR=	unison-${PORTVERSION}
 
 MAINTAINER=	daniel+unison@pelleg.org
+COMMENT=	A user-level file synchronization tool
 
 BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml
 

@@ -12,6 +12,7 @@ CATEGORIES+=	palm comms
 MASTER_SITES=	http://jpilot.org/
 
 MAINTAINER?=	varju@webct.com
+COMMENT?=	Desktop Organizer Software for the Palm Pilot
 
 LIB_DEPENDS=	pisock.8:${PORTSDIR}/palm/pilot-link \
 		intl.4:${PORTSDIR}/devel/gettext

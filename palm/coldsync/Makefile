@@ -11,6 +11,7 @@ CATEGORIES=	palm comms
 MASTER_SITES=	http://www.coldsync.org/download/
 
 MAINTAINER=	arensb+freebsd-ports@ooblick.com
+COMMENT=	Synchronize a PalmPilot with a Unix workstation
 
 LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 

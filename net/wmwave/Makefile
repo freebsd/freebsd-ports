@@ -14,6 +14,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/./-/}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	bms@spc.org
+COMMENT=	Display 802.11 status in the WindowMaker Dock
 
 MAKEFILE=	${FILESDIR}/Makefile
 WRKSRC=		${WRKDIR}/${PORTNAME}

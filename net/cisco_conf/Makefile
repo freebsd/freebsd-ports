@@ -13,6 +13,7 @@ DISTNAME=	ciscoconf-${PORTVERSION}
 DIST_SUBDIR=	cisco_conf
 
 MAINTAINER=	anton@urc.ac.ru
+COMMENT=	Simple configuration editor for Cisco devices
 
 RUN_DEPENDS=	${LOCALBASE}/bin/joe:${PORTSDIR}/editors/joe
 

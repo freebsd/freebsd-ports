@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	Net
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	lars@thegler.dk
+COMMENT=	A perl module for SNMP... Net::SNMP
 
 .include <bsd.port.pre.mk>
 

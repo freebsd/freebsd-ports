@@ -11,6 +11,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://www.mavetju.org/download/
 
 MAINTAINER=	edwin@mavetju.org
+COMMENT=	Graphical overview of traffic going through your IPFW rules
 
 USE_REINPLACE=	yes
 USE_GNOMENG=	yes

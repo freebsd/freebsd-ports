@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	steve
 
 MAINTAINER=	volf@oasis.IAEhv.nl
+COMMENT=	Extract binary files from multi-segment uuencoded postings
 
 MAKEFILE=	makefils/linux.mkf
 MAN1=		unpost.1

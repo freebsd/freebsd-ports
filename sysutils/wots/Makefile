@@ -11,6 +11,7 @@ CATEGORIES=	sysutils security
 MASTER_SITES=	http://www.hpcc.uh.edu/~tonyc/tools/
 
 MAINTAINER=	bms@spc.org
+COMMENT=	System log watch/alert utility, similar to swatch, written in Perl
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Mail/Send.pm:${PORTSDIR}/mail/p5-Mail-Tools \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Term/ANSIColor.pm:${PORTSDIR}/devel/p5-Term-ANSIColor

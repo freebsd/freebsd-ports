@@ -11,6 +11,7 @@ CATEGORIES=	security www
 MASTER_SITES=	http://www.hsc.fr/ressources/outils/subweb/download/
 
 MAINTAINER=	ecu@ipv42.net
+COMMENT=	SubWeb is a (reverse) proxy to inspect HTTP flows on the fly
 
 NO_BUILD=	YES
 

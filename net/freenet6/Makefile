@@ -12,6 +12,7 @@ MASTER_SITES=	# fetch manually
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	edwin@mavetju.org
+COMMENT=	Freenet6 Tunnel Setup Protocol Client - Free IPv6 tunnel
 
 RESTRICTED=	"Must Agree to License at http://www.freenet6.net/ on the download page for FreeBSD"
 NO_CDROM=	${RESTRICTED}

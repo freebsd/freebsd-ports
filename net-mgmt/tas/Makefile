@@ -12,6 +12,7 @@ MASTER_SITES=	http://rnoc.urc.ac.ru/~anton/projects/tas/
 DISTNAME=	tas-${PORTVERSION}
 
 MAINTAINER=	anton@urc.ac.ru
+COMMENT=	Traffic accounting system
 
 WRKSRC=		${WRKDIR}/tas
 

@@ -10,6 +10,7 @@ CATEGORIES=	science
 MASTER_SITES=	http://vegemite.chem.nottingham.ac.uk/~xmakemol/dists/
 
 MAINTAINER=	chizhang@uchicago.edu
+COMMENT=	Molecule Viewer Program Based on Motif Widget
 
 USE_XLIB=	yes
 USE_MOTIF=	yes

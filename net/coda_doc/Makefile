@@ -13,6 +13,7 @@ DISTNAME=	coda-doc-4.6.5-3
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	rvb@cs.cmu.edu
+COMMENT=	An experimental, replicated, high-performance network file system
 
 MAN1=		cfs.1 \
 		clog.1 \

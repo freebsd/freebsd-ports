@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	ojnk
 
 MAINTAINER=	mdl@60hz.org
+COMMENT=	Ident server that supports user-defined ident strings
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

@@ -11,6 +11,7 @@ CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.routemeister.net/projects/sipcalc/files/
 
 MAINTAINER=	Janos.Mohacsi@bsd.hu
+COMMENT=	Sipcalc is an IP subnet calculator with IPv6 and CGI interface support
 
 LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
 

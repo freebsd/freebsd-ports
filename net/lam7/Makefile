@@ -11,6 +11,7 @@ CATEGORIES=    	net parallel
 MASTER_SITES=  	http://www.lam-mpi.org/download/files/
 
 MAINTAINER=    	bremner@unb.ca
+COMMENT=	Local Area Multicomputer MPI implementation
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-rsh=ssh

@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	cp2fwbuilder
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	chris@unixpages.org
+COMMENT=	Checkpoint FW1 to Firewall Builder ruleset converter
 
 RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/XML/Writer.pm:${PORTSDIR}/textproc/p5-XML-Writer \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5

@@ -14,6 +14,7 @@ MASTER_SITES=	ftp://ftp.ugh.net.au/pub/unix/blimitd/ \
 		http://ftp.megamirror.com/pub/ugh/unix/blimitd/
 
 MAINTAINER=	andrew@ugh.net.au
+COMMENT=	Daemon to enforce login.conf limits
 
 WRKSRC=		${WRKDIR}/blimitd
 

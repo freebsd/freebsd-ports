@@ -11,6 +11,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://www.citi.umich.edu/u/provos/honeyd/
 
 MAINTAINER=	dominc_marks@btinternet.com
+COMMENT=	A daemon to service arp replies
 
 BUILD_DEPENDS=	${LOCALBASE}/include/dnet.h:${PORTSDIR}/net/libdnet \
 		${LOCALBASE}/include/event.h:${PORTSDIR}/devel/libevent

@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Net
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	joseph@randomnetworks.com
+COMMENT=	Provides a tied interface to the /etc/services file
 
 PERL_CONFIGURE=	YES
 

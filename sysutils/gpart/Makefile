@@ -14,6 +14,7 @@ MASTER_SITES=	http://home.pages.de/~michab/gpart/ \
 MASTER_SITE_SUBDIR=	system/filesystems
 
 MAINTAINER=	andrew@ugh.net.au
+COMMENT=	Tries to recover lost partition tables and file systems
 
 USE_GMAKE=	yes
 MAN8=		gpart.8

@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ports.jp.FreeBSD.org/pub/FreeBSD-jp/ports-jp/LOCAL_PORTS/ \
 		http://www.tsden.org/takamiti/extipl/archs/
 
 MAINTAINER=	takamiti@tsden.org
+COMMENT=	Partition-selectable boot loader for IBM-PC/AT compatibles
 
 BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
 

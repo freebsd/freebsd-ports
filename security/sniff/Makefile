@@ -12,6 +12,7 @@ MASTER_SITES=		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	fenner
 
 MAINTAINER=		veraldi@cs.unibo.it
+COMMENT=	Program to sniff logins and passwords
 
 MAN1=			sniff.1
 HAS_CONFIGURE=		yes

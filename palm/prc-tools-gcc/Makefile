@@ -19,6 +19,7 @@ DISTFILES=	${DISTNAME}.tar.gz \
 EXTRACT_ONLY=	gdb-4.18.tar.bz2 gcc-core-2.95.2.tar.bz2 gcc-g++-2.95.2.tar.bz2
 
 MAINTAINER=	linimon@lonesome.com
+COMMENT=	PRC-tools for Palm OS (gcc part)
 
 BUILD_DEPENDS=	${PREFIX}/bin/m68k-palmos-as:${PORTSDIR}/palm/prc-tools-binutils \
 		${LOCALBASE}/bin/autoheader:${PORTSDIR}/devel/autoconf

@@ -12,6 +12,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.apcupsd.com/pub/apcupsd/stable/tar/
 
 MAINTAINER=	Lars.Koeller@Uni-Bielefeld.de
+COMMENT=	A daemon for controlling APC UPS
 
 LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 

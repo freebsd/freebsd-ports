@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	pvh@wfeet.za.net
+COMMENT=	GKrellM plugin which shows status of gnomeICU
 
 BROKEN=		"Does not compile"
 

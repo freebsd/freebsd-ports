@@ -12,6 +12,7 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	trafcount
 
 MAINTAINER=		amir@boom.org.il
+COMMENT=	Ethernet Traffic Counter
 
 BROKEN=			"Does not compile"
 

@@ -11,6 +11,7 @@ CATEGORIES=		security kde
 MASTER_SITES=		http://devel-home.kde.org/~kgpg/src/
 
 MAINTAINER=		rick@rptn.net
+COMMENT=	A simple KDE frontend for GnuPG
 
 RUN_DEPENDS=		gpg:${PORTSDIR}/security/gnupg
 

@@ -12,6 +12,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://www.teaser.fr/~amajorel/wtail/
 
 MAINTAINER=	mich@freebsdcluster.org
+COMMENT=	Wtail does the equivalent of tail -f on several files at once
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/wtail ${PREFIX}/bin

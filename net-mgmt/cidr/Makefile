@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	nork
 DISTNAME=	cidr-current
 
 MAINTAINER=	midom@dammit.lt
+COMMENT=	RFC 1878 subnet calculator / helper
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 ALL_TARGET=	cidr

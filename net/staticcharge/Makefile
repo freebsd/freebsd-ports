@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.staticcling.org/clients/
 DISTNAME=	ChargeGTK-${PORTVERSION}
 
 MAINTAINER=	mahlon@martini.nu
+COMMENT=	A GTK client for the StaticCling dynamic DNS service
 
 BUILD_DEPENDS=	lynx:${PORTSDIR}/www/lynx
 

@@ -15,6 +15,7 @@ MASTER_SITES=	ftp://ftp.nessus.org/pub/nessus/unstable/nessus-${PORTVERSION}/src
 DISTNAME=	libnasl-${PORTVERSION}
 
 MAINTAINER=	udo.schweigert@siemens.com
+COMMENT=	Nessus Attack Scripting Language
 
 LIB_DEPENDS=	nessus.4:${PORTSDIR}/security/nessus-libraries-devel
 

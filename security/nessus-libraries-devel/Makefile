@@ -15,6 +15,7 @@ MASTER_SITES=	ftp://ftp.nessus.org/pub/nessus/unstable/nessus-${PORTVERSION}/src
 DISTNAME=	nessus-libraries-${PORTVERSION}
 
 MAINTAINER=	udo.schweigert@siemens.com
+COMMENT=	Libraries for Nessus, the security scanner
 
 DIST_SUBDIR=	nessus
 WRKSRC=		${WRKDIR}/nessus-libraries

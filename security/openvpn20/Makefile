@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	matthias.andree@web.de
+COMMENT=	Secure IP/Ethernet tunnel daemon
 
 LIB_DEPENDS=	lzo.1:${PORTSDIR}/archivers/lzo
 

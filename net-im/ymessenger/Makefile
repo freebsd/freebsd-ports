@@ -15,6 +15,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:C/\.(.+)\.(.+)$/.\1-\2/g}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	sethk@meowfishies.com
+COMMENT=	Yahoo! Messenger - Instant messaging client
 
 LIB_DEPENDS=	gdk_pixbuf.2:${PORTSDIR}/graphics/gdk-pixbuf
 

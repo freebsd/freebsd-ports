@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=nagios
 DISTNAME=	nagios-1.0
 
 MAINTAINER=	blaz@si.FreeBSD.org
+COMMENT=	Extremely powerful network monitoring system
 
 LIB_DEPENDS=	gd.2:${PORTSDIR}/graphics/gd \
 		gnugetopt.1:${PORTSDIR}/devel/libgnugetopt

@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	amavis
 DISTNAME=	${PORTNAME}-snapshot-${PORTVERSION}
 
 MAINTAINER=	gslin@ccca.nctu.edu.tw
+COMMENT=	The daemonized version of amavis-perl
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/arc:${PORTSDIR}/archivers/arc \
 		${LOCALBASE}/bin/lha:${PORTSDIR}/archivers/lha \

@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.nt.phys.kyushu-u.ac.jp/shimizu/download/
 DISTNAME=	FVCool${PORTVERSION:S/.//g}
 
 MAINTAINER=	frerich.raabe@gmx.de
+COMMENT=	VCool for FreeBSD - Cooling software for AMD Athlon/Duron CPUs
 
 ONLY_FOR_ARCHS=	i386
 USE_REINPLACE=	yes

@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Net
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	igor@zynaps.ru
+COMMENT=	Perl modules for using sockets
 
 PERL_CONFIGURE=	yes
 

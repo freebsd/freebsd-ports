@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.no-ip.com/client/linux/
 DISTNAME=	noip_updater_v${PORTVERSION}
 
 MAINTAINER=	esoha@attbi.com
+COMMENT=	No-IP.com's dynamic DNS update client
 
 ALL_TARGET=	noip
 

@@ -13,6 +13,7 @@ DISTNAME=	nettest.92.11.09
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	proot@iaces.com
+COMMENT=	Performs client and server functions for timing data throughput
 
 NO_WRKSUBDIR=	yes
 MAN8=		nettest.8

@@ -16,6 +16,7 @@ MASTER_SITES=	http://www.simon.org.ua/ipa/ \
 		http://ipa.it-ss.be/
 
 MAINTAINER=	simon@simon.org.ua
+COMMENT=	IP accounting software
 
 NO_PACKAGE=	"Needs to be built uniquely for each host"
 ALL_TARGET=	FreeBSD

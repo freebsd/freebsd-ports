@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Crypt
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	patrick@mindstep.com
+COMMENT=	Perl5 interface to the Blowfish encryption alogorithm
 
 PERL_CONFIGURE=	yes
 

@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Net
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	jj@nttmcl.com
+COMMENT=	Perl extension for manipulating IPv6 addresses
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Net/IPv4Addr.pm:${PORTSDIR}/net/p5-Net-IPv4Addr \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Math/Base85.pm:${PORTSDIR}/math/p5-Math-Base85

@@ -12,6 +12,7 @@ MASTER_SITES=	http://starship.python.net/crew/hinsen/MMTK/
 DISTNAME=	MMTK-${PORTVERSION}
 
 MAINTAINER=	gjohnson@srrc.ars.usda.gov
+COMMENT=	An Open Source program library for molecular simulation applications
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/Scientific:${PORTSDIR}/math/py-scientific
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/Scientific:${PORTSDIR}/math/py-scientific

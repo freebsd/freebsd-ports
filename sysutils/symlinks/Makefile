@@ -12,6 +12,7 @@ MASTER_SITES=		${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	utils/file
 
 MAINTAINER=		andreas_and_joe@tao.org.uk
+COMMENT=	Symbolic link maintenance utility
 
 MAN8=			symlinks.8
 

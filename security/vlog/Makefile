@@ -13,6 +13,7 @@ DISTNAME=	vlog-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	satbran@web.de
+COMMENT=	A curses based real-time logfile viewer esp. useful for ipflog
 
 ALL_TARGET=	it
 MAKE_ARGS=	CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS}" \

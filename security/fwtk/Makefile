@@ -20,6 +20,7 @@ PATCH_DIST_STRIP=	-p1
 .endif
 
 MAINTAINER=	a.go@wish.net
+COMMENT=	A toolkit used for building firewalls based on proxy services
 
 RESTRICTED=	"No form of redistribution is allowed"
 

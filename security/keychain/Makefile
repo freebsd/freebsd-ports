@@ -13,6 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	distributions/gentoo/distfiles
 
 MAINTAINER=	olive@oban.frmug.org
+COMMENT=	A user-friendly front-end to ssh-agent(1)
 
 USE_BZIP2=	yes
 NO_BUILD=	yes

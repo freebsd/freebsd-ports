@@ -11,6 +11,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.erudition.net/pub/monitord/
 
 MAINTAINER=	walt@erudition.net
+COMMENT=	Service that restarts other standalone services if they terminate
 
 MAN8=		monitord.8
 

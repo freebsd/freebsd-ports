@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=sleuthkit
 
 MAINTAINER=	jan@atstake.com
+COMMENT=	The @stake Sleuth Kit for forensic analysis
 
 USE_PERL5=	yes
 DOCS=		README docs/* tct.docs/*

@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.ripe.net/tools/IRRToolSet/
 DISTNAME=	IRRToolSet-${PORTVERSION}
 
 MAINTAINER=	oberman@es.net
+COMMENT=	A suite of routing policy tools to interact with the IRR
 
 LIB_DEPENDS=	tk83.1:${PORTSDIR}/x11-toolkits/tk83
 

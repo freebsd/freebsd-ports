@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.acm.rpi.edu/~n/naim/ \
 		http://128.113.139.111/~n/.naim_archive/0/11/
 
 MAINTAINER=	rtdean@cytherianage.net
+COMMENT=	Curses based AOL Instant Messager implementation
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} \

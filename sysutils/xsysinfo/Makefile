@@ -11,6 +11,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	ftp://freebsd.csie.nctu.edu.tw/pub/jdli/source/
 
 MAINTAINER=	jdli@csie.nctu.edu.tw
+COMMENT=	A system information display tool
 
 USE_IMAKE=	yes
 MANCOMPRESSED=	yes

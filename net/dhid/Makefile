@@ -13,6 +13,7 @@ DISTFILES=		${DISTNAME}${EXTRACT_SUFX} \
 			${PORTNAME}-3.1${EXTRACT_SUFX}
 
 MAINTAINER=		oryx@ungulate.net
+COMMENT=	DHIS client for updating dynamic DNS entries in dhisd DNS tables
 
 USE_REINPLACE=	yes
 OLDWRKSRC=		${WRKDIR}/${PORTNAME}-3.1

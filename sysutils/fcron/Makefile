@@ -15,6 +15,7 @@ MASTER_SITE_SUBDIR=	system/daemons/cron
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
 
 MAINTAINER=	svenasse@polaris.ca
+COMMENT=	Fcron is a periodical command scheduler
 
 NO_PACKAGE=	"Runaway package build"
 

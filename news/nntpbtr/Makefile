@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.kiarchive.ru/pub/unix/news/
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	dk@farm.org
+COMMENT=	NNTP bulk transfer
 
 MAN1=		nntpbtr.1
 

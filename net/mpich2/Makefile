@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://ftp.mcs.anl.gov/pub/mpi/
 DIST_SUBDIR=	mpich
 
 MAINTAINER=	dbader@eece.unm.edu
+COMMENT=	Message Passing Interface (MPI) Library
 
 PATCH_SITES=	ftp://ftp.mcs.anl.gov/pub/mpi/patch/${PORTVERSION}/
 PATCHFILES=	3524 7633

@@ -12,6 +12,7 @@ MASTER_SITES=	http://downloads.plkr.org/1.2/
 DISTNAME=	${PORTNAME}_bin-${PORTVERSION}
 
 MAINTAINER=	mt@primats.org.ua
+COMMENT=	An offline HTML viewer for PalmOS devices
 
 BUILD_DEPENDS=	ppmtoTbmp:${PORTSDIR}/palm/ppmtoTbmp \
 		convert:${PORTSDIR}/graphics/ImageMagick \

@@ -14,6 +14,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-RELEASE
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	jflemer@acm.jhu.edu
+COMMENT=	DOCSIS(tm) binary configuration file encoder/decoder
 
 LIB_DEPENDS=	snmp.4:${PORTSDIR}/net/net-snmp4
 

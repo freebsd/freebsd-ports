@@ -14,6 +14,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/b/beta/}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	sergei@kolobov.com
+COMMENT=	Modern syslogd replacement with PCRE support
 
 LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
 

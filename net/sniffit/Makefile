@@ -21,6 +21,7 @@ PATCHFILES=	sniffit_0.3.7.beta-6.1.diff.gz
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	edwin@mavetju.org
+COMMENT=	A packet sniffer program.  For educational use
 
 GNU_CONFIGURE=	yes
 ALL_TARGET=

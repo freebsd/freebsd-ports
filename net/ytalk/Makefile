@@ -14,6 +14,7 @@ MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR= system/network/chat
 
 MAINTAINER=	dom@happygiraffe.net
+COMMENT=	A new "talk" that can talk to multiple parties at once
 
 MAN1=		ytalk.1
 

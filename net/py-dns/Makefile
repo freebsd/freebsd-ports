@@ -15,6 +15,7 @@ DISTNAME=	pydns-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	linimon@lonesome.com
+COMMENT=	DNS (Domain Name Service) library for Python
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes

@@ -11,6 +11,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://www.spyz.org/perf/
 
 MAINTAINER=	tobega@spyz.org
+COMMENT=	Xview-based system monitoring tool
 
 LIB_DEPENDS=	xview.3:${PORTSDIR}/x11-toolkits/xview
 

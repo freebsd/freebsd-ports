@@ -11,6 +11,7 @@ CATEGORIES=	security
 MASTER_SITES=	http://www.amavis.org/dist/perl/
 
 MAINTAINER=	svenasse@polaris.ca
+COMMENT=	Mail Virus Scanner (uses external antivirus)
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/uvscan:${PORTSDIR}/security/vscan \
 		${LOCALBASE}/bin/lha:${PORTSDIR}/archivers/lha \

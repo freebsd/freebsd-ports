@@ -13,6 +13,7 @@ MASTER_SITES=	http://sb.123.org/ \
 		http://ftp.ceti.com.pl/pub/scout/progs/Unix/
 
 MAINTAINER=	shipley@dis.org
+COMMENT=	Utility for detecting traceroutes and reporting them via syslog
 
 USE_REINPLACE=	yes
 

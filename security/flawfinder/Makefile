@@ -14,6 +14,7 @@ MASTER_SITES=	${MASTER_SITE_PACKETSTORM} \
 MASTER_SITE_SUBDIR=	UNIX/security
 
 MAINTAINER=	jim@corebsd.or.id
+COMMENT=	Examines source code looking for security weaknesses
 
 USE_PYTHON=	yes
 NO_BUILD=	yes

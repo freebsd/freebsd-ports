@@ -13,6 +13,7 @@ MASTER_SITES=	http://docs.real.com/docs/proxykit/
 DISTNAME=	${PORTNAME}_2_0
 
 MAINTAINER=	stolz@i2.informatik.rwth-aachen.de
+COMMENT=	The RTSP Proxy Kit is a reference implementation of an RTSP proxy
 
 HAS_CONFIGURE=	YES
 

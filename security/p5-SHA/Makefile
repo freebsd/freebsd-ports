@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	SHA
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	jim@corebsd.or.id
+COMMENT=	Perl5 interface to the SHA1 algorithm
 
 PERL_CONFIGURE=	yes
 

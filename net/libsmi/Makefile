@@ -11,6 +11,7 @@ CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.ibr.cs.tu-bs.de/pub/local/libsmi/
 
 MAINTAINER=	saper@system.pl
+COMMENT=	A library to access SMI MIB information
 
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes

@@ -15,6 +15,7 @@ DISTNAME=	xperfmon++v1.1
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	Lars.Koeller@Uni-Bielefeld.DE
+COMMENT=	A graphical X11 system performance monitor
 
 USE_IMAKE=	yes
 MAN1=		xperfmon++.1

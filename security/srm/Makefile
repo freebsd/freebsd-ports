@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	srm
 
 MAINTAINER=	kjones@antihackertoolkit.com
+COMMENT=	Secure rm, a utility which destroys file contents before unlinking
 
 USE_LIBTOOL=	YES
 

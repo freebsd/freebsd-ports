@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.deepspace6.net/pub/sources/nc6/ \
 		http://ftp.deepspace6.net/pub/sources/nc6/
 
 MAINTAINER=	filippo@widestore.net
+COMMENT=	Netcat 6 is a netcat clone with IPv6 support
 
 MAN1=		nc6.1
 GNU_CONFIGURE=	yes

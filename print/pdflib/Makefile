@@ -11,6 +11,7 @@ CATEGORIES=	print
 MASTER_SITES=	http://www.pdflib.com/pdflib/download/
 
 MAINTAINER=	sysadmin@alexdupre.com
+COMMENT=	A C library for dynamically generating PDF
 
 RESTRICTED=	"many odd restrictions on usage and distribution"
 

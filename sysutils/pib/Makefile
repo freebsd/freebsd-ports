@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	msmith
 
 MAINTAINER=	.@babolo.ru
+COMMENT=	GUI Ports Collection management tool
 
 BUILD_DEPENDS=	wish8.2:${PORTSDIR}/x11-toolkits/tk82
 RUN_DEPENDS=	wish8.2:${PORTSDIR}/x11-toolkits/tk82

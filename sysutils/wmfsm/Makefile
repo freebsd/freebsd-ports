@@ -12,6 +12,7 @@ MASTER_SITES=	http://netpedia.net/hosting/wmfsm/source/ \
 		http://e.dyn.mdn.de/mirror/wmfsm/
 
 MAINTAINER=	panic@subphase.de
+COMMENT=	Displays filesystem usage of mountpoints in a nice WindowMaker dockapp
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/wmfsm
 

@@ -12,6 +12,7 @@ CATEGORIES=	science math
 MASTER_SITES=	http://www.csie.ntu.edu.tw/~cjlin/libsvm/
 
 MAINTAINER=	me@davidyu.org
+COMMENT=	A library for Support Vector Machines
 
 .if defined(WITH_PYTHON)
 USE_PYTHON=	yes

@@ -15,6 +15,7 @@ MASTER_SITES=	${MASTER_SITE_GNUPG} \
 MASTER_SITE_SUBDIR=	alpha/gnutls/libtasn1
 
 MAINTAINER=	sergei@kolobov.com
+COMMENT=	ASN.1 structure parser library
 
 LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
 

@@ -13,6 +13,7 @@ MASTER_SITES=	http://www.realvnc.com/dist/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-unixsrc
 
 MAINTAINER=	james@now.ie
+COMMENT=	Display X and Win32 desktops on remote X/Win32/Java displays
 
 GNU_CONFIGURE=	yes
 # vnc supplied zlib seg. faults if compiled with -O

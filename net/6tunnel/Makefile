@@ -14,6 +14,7 @@ MASTER_SITES=	ftp://amba.bydg.pdi.net/pub/wojtekka/ \
 		http://rencade.raphit.net/~vt/
 
 MAINTAINER=	vt@bsd-fr.org
+COMMENT=	TCP proxy for application that don't speak IPv6
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

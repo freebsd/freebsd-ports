@@ -15,6 +15,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	GnuPGInterface-${PORTVERSION}
 
 MAINTAINER=	shell@shellhung.org
+COMMENT=	Python module for GnuPG interface
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes

@@ -40,6 +40,7 @@ PATCH_SITES=	http://home.arcor.de/kay_lehmann/freebsd/ports/lgrind/
 PATCHFILES=	patch-Makefile.gz patch-source_Makefile.gz
 
 MAINTAINER=	kay_lehmann@web.de
+COMMENT=	Produce beautiful listings of source code with LaTeX
 
 BUILD_DEPENDS=	latex:${PORTSDIR}/print/teTeX
 RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX

@@ -18,6 +18,7 @@ MASTER_SITE_SUBDIR=	dc-gui
 DISTNAME=	dclib-0.1beta11
 
 MAINTAINER=	e96sv@yahoo.se
+COMMENT=	Direct connect interface library for dcgui
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		xml2.5:${PORTSDIR}/textproc/libxml2

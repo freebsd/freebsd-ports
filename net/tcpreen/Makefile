@@ -11,6 +11,7 @@ CATEGORIES=	net ipv6
 MASTER_SITES=	http://rdenisc.free.fr/tcpreen/
 
 MAINTAINER=	Janos.Mohacsi@bsd.hu
+COMMENT=	A simple TCP session re-engineering tool
 
 LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext \
 		gnugetopt.1:${PORTSDIR}/devel/libgnugetopt

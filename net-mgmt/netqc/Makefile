@@ -11,6 +11,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://web.uni-svishtov.bg/netqc/
 
 MAINTAINER=	rvasilev@uni-svishtov.bg
+COMMENT=	Network Monitoring System based on Net-Snmp
 
 LIB_DEPENDS=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client \
 		snmp.4:${PORTSDIR}/net/net-snmp4

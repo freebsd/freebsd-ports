@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	mich@freebsdcluster.org
+COMMENT=	Ah-tty is an automatic helper for command prompts and shells
 
 GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes

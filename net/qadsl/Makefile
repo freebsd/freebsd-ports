@@ -12,6 +12,7 @@ MASTER_SITES=	http://qba.linuxsweden.nu/code/
 DISTNAME=	qadsl-final-${PORTVERSION}
 
 MAINTAINER=	arlu@telia.com
+COMMENT=	Auto login/Keep-alive for Telia AB ADSL and COMHEM Cable internet
 
 MAN8=		qadsl.8
 MANCOMPRESSED=	yes

@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	cups
 
 MAINTAINER=	doconnor@gsoft.com.au
+COMMENT=	GUI print front-end for CUPS
 
 LIB_DEPENDS=	cups:${PORTSDIR}/print/cups \
 		fltk:${PORTSDIR}/x11-toolkits/fltk

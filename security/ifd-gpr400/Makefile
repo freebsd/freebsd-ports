@@ -11,6 +11,7 @@ CATEGORIES=	security
 MASTER_SITES=	http://www.innovationsw.com/~jaiger/downloads/smartcard/
 
 MAINTAINER=	bms@spc.org
+COMMENT=	PC/SC Lite driver for Gemplus GPR400 PCMCIA Smart Card Readers
 
 BUILD_DEPENDS=	${LOCALBASE}/include/ifdhandler.h:${PORTSDIR}/security/ifd-devkit
 LIB_DEPENDS=	pcsclite.0:${PORTSDIR}/devel/pcsc-lite

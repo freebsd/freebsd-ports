@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Unix/MHARNISCH
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	erwin@lansing.dk
+COMMENT=	Perl5 interface to the UNIX syslog(3) calls
 
 PERL_CONFIGURE=	yes
 

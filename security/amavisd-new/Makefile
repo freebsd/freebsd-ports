@@ -13,6 +13,7 @@ MASTER_SITES=	http://www.ijs.si/software/amavisd/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.p/-p/}
 
 MAINTAINER=	blaz@si.FreeBSD.org
+COMMENT=	Performance-enhanced daemonized version of amavis-perl
 
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes \
 		${SITE_PERL}/${PERL_ARCH}/Unix/Syslog.pm:${PORTSDIR}/sysutils/p5-Unix-Syslog \

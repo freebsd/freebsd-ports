@@ -12,6 +12,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://www.bsdshell.net/download/
 
 MAINTAINER=	spe@bsdfr.org
+COMMENT=	This a VRRP RFC2338 Compliant implementation under FreeBSD
 
 MAN8=		freevrrpd.8
 

@@ -13,6 +13,7 @@ MASTER_SITES=	http://oak.cats.ohiou.edu/~rf358197/gutenfetch/download/ \
 MASTER_SITE_SUBDIR=	petef
 
 MAINTAINER=	rf358197@oak.cats.ohiou.edu
+COMMENT=	Fetch listings and books from Project Gutenberg
 
 RUN_DEPENDS=	wget:${PORTSDIR}/ftp/wget/ \
 		unzip:${PORTSDIR}/archivers/unzip/

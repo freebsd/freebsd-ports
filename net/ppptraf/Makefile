@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.borg-cube.com/users/diskiller/distfiles/ \
 		http://people.FreeBSD.org/~dburr/distfiles/
 
 MAINTAINER=	diskiller@cnbinc.com
+COMMENT=	A ncurses based PPP Traffic (bytes in/out) monitoring program
 
 #MAN1=		ppptraf.1
 

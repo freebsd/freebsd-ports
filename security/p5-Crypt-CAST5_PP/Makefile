@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Crypt
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	fuyuki@hadaly.org
+COMMENT=	CAST5 block cipher in pure Perl
 
 PERL_CONFIGURE=	yes
 

@@ -11,6 +11,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://angrypot.com/ssync/
 
 MAINTAINER=	nyxo@dnuc.polyn.kiae.su
+COMMENT=	A minimalistic tool for keeping filesystems in synchronization
 
 ALL_TARGET=	default
 USE_GMAKE=	yes

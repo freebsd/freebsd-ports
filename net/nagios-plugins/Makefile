@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	nagiosplug
 DISTNAME=	nagios-plugins-1.3.0-beta2
 
 MAINTAINER=	blaz@si.FreeBSD.org
+COMMENT=	Plugins for nagios
 
 USE_SUBMAKE=	yes
 GNU_CONFIGURE=	yes

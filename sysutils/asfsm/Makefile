@@ -11,6 +11,7 @@ MASTER_SITES=	http://www.tigr.net/afterstep/download/asfsm/
 DISTNAME=	asfsm-1.0pre15
 
 MAINTAINER=	jack@germanium.xtalwind.net
+COMMENT=	File-system monitor for the AfterStep window manager
 
 USE_X_PREFIX=	yes
 USE_XPM=	yes

@@ -13,6 +13,7 @@ DISTNAME=	LaBrea${PORTVERSION:S/./_/g}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	nick@rogness.net
+COMMENT=	Defense mechanism against CodeRed
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libnet.a:${PORTSDIR}/net/libnet
 

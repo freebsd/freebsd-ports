@@ -11,6 +11,7 @@ CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.eng.oar.net/pub/flow-tools/
 
 MAINTAINER=	.@babolo.ru
+COMMENT=	Programs to work with Cisco NetFlow
 
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes

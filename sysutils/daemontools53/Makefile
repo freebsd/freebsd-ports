@@ -12,6 +12,7 @@ MASTER_SITES=	http://cr.yp.to/daemontools/ \
 		ftp://cr.yp.to/daemontools/
 
 MAINTAINER=	dom@happygiraffe.net
+COMMENT=	Service monitoring and logging utilities by djb
 
 NO_PACKAGE=	"Unsure of djb\'s license"
 

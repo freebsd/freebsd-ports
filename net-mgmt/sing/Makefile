@@ -14,6 +14,7 @@ DISTNAME=	SING-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	roman@xpert.com
+COMMENT=	Tool for sending customized ICMP packets
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libnet.a:${PORTSDIR}/net/libnet \
 

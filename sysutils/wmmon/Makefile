@@ -11,6 +11,7 @@ CATEGORIES=	sysutils windowmaker
 MASTER_SITES=	http://linux.tucows.com/files/x11/dock/
 
 MAINTAINER=	sk-ports@vegamuse.org
+COMMENT=	WindowMaker dockable system load/performance monitor
 
 WRKSRC=		${WRKDIR}/wmmon.app/wmmon
 

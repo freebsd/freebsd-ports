@@ -13,6 +13,7 @@ DISTFILES=	# empty
 EXTRACT_ONLY=	# empty
 
 MAINTAINER=	mwm@mired.org
+COMMENT=	A startup/shutdown script to preserve mixer settings across reboots
 
 NO_BUILD=	yes
 

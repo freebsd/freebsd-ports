@@ -13,6 +13,7 @@ MASTER_SITES=	http://www.jetico.com/linux/ \
 DISTNAME=	BCWipe-${PORTVERSION:S/./-/g:S/-/./}
 
 MAINTAINER=	crow@nektor.hu
+COMMENT=	BCWipe securely erase data from magnetic and solid-state memory
 
 NO_CDROM=	yes
 USE_REINPLACE=	yes

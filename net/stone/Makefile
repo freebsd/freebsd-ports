@@ -11,6 +11,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://www.gcd.org/sengoku/stone/
 
 MAINTAINER=	mistral@imasy.or.jp
+COMMENT=	Stone is a TCP/IP packet repeater in the application layer
 
 MAN1=		${PORTNAME}.1
 MANLANG=	"" ja

@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.chez.com/littleigloo/files/
 DISTNAME=	LinPopUp-${PORTVERSION}.src
 
 MAINTAINER=	roman@xpert.com
+COMMENT=	X11 port of WinPopup
 
 RUN_DEPENDS=	${LOCALBASE}/bin/smbclient:${PORTSDIR}/net/samba
 

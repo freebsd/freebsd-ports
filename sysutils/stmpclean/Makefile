@@ -11,6 +11,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.mccme.ru/users/shalunov/
 
 MAINTAINER=	shalunov@mccme.ru
+COMMENT=	Remove old files from temporary directories
 
 MAN8=		stmpclean.8
 MANCOMPRESSED=	no

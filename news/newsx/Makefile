@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.kvaleberg.com/pub/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.8/pl6/}
 
 MAINTAINER=	thierry@pompo.net
+COMMENT=	A program to fetch news from and post news to a remote NNTP server
 
 .if defined(WITH_CNEWS)
 BUILD_DEPENDS=	${LOCALBASE}/news/lib/libcnews.a:${PORTSDIR}/news/cnews

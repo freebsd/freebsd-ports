@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	../../authors/id/M/MN/MNAGUIB
 PKGNAMEPREFIX=		p5-
 
 MAINTAINER=		svenasse@polaris.ca
+COMMENT=	Easily create TCP/IP clients and servers
 
 BUILD_DEPENDS=		${SITE_PERL}/${PERL_ARCH}/Storable.pm:${PORTSDIR}/devel/p5-Storable \
 			${SITE_PERL}/Crypt/RSA.pm:${PORTSDIR}/security/p5-Crypt-RSA

@@ -15,6 +15,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	mich@freebsdcluster.org
+COMMENT=	Cisco Discovery Protocol Reporter
 
 CFLAGS+=	-ggdb
 LDFLAGS+=	-L${LOCALBASE}/lib -lpcap

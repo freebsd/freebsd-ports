@@ -13,6 +13,7 @@ MASTER_SITES=   ftp://ftp.belwue.de/pub/unix/sendfile/current/
 DISTFILES=	sendfile-20010216.tar.gz
 
 MAINTAINER=	sec@42.org
+COMMENT=	Simple Asynchronous File Transfer Reference Implementation
 
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=makeconfig

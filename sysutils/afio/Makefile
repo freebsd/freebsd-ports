@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	system/backup
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	nox@jelal.hb.north.de
+COMMENT=	Archiver & backup program w/ builtin compression
 
 ALL_TARGET=	${PORTNAME}
 MAN1=		afio.1

@@ -13,6 +13,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	jason@mastaler.com
+COMMENT=	Python cryptography modules
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes

@@ -12,6 +12,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.waseda.ac.jp/pub/X11others/
 
 MAINTAINER=	kazu@jp.freebsd.org
+COMMENT=	Network load monitor for X11
 
 BUILD_DEPENDS=	nkf:${PORTSDIR}/japanese/nkf
 

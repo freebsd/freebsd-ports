@@ -16,6 +16,7 @@ MASTER_SITES=	ftp://ftp.cracksoft.kiev.ua/pub/linux/gtic/ \
 DISTNAME=	${PORTNAME}-1.3b
 
 MAINTAINER=	dsh@vlink.ru
+COMMENT=	The GNU file forwarder (FSC-0087) for fidonet-like networks
 
 MAKE_ENV+=	DEFINES="${DEFINES}"
 

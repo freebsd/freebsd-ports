@@ -11,6 +11,7 @@ CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.ibr.cs.tu-bs.de/pub/local/${PORTNAME}/
 
 MAINTAINER=	lyngbol@wheel.dk
+COMMENT=	A collection of SNMP command line management tools
 
 LIB_DEPENDS=	xml2:${PORTSDIR}/textproc/libxml2
 

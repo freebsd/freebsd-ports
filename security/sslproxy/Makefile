@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.obdev.at/pub/Products/sslproxy/
 DISTNAME=	sslproxy.2000_Jan_29
 
 MAINTAINER=	alexlh@funk.org
+COMMENT=	Proxies non-SSL request over an SSL connection
 
 USE_OPENSSL=	YES
 

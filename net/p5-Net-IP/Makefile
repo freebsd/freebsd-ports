@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Net
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	fuyuki@hadaly.org
+COMMENT=	Perl extension for manipulating IPv4/IPv6 addresses
 
 PERL_CONFIGURE=	yes
 

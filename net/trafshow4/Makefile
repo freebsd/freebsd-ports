@@ -14,6 +14,7 @@ MASTER_SITES=	ftp://ftp.sasknow.com/pub/trafshow/ \
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ryan@sasknow.com
+COMMENT=	Full screen visualization of the network traffic
 
 .include <bsd.port.pre.mk>
 .if ${OSVERSION} < 400010

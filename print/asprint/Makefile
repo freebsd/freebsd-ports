@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	apps/asprint
 DISTNAME=	asprint
 
 MAINTAINER=	brett@peloton.runet.edu
+COMMENT=	A simple browser to allow a user to print
 
 USE_X_PREFIX=	yes
 ALL_TARGET=	asprint

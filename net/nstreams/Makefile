@@ -11,6 +11,7 @@ CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.nessus.org/pub/nstreams/
 
 MAINTAINER=	ecu@ipv42.net
+COMMENT=	Analyses network traffic and produces ipfw rules to allow it
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

@@ -10,6 +10,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://www.tundraware.com/Software/tdir/
 
 MAINTAINER=	tundra@tundraware.com
+COMMENT=	Advanced file directory display utility
 
 USE_PYTHON=	yes
 MANCOMPRESSED=	yes

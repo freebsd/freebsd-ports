@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	../../authors/id/BDFOY
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	svenasse@polaris.ca
+COMMENT=	Perl extension for working with Chemical Elements
 
 PERL_CONFIGURE=	yes
 

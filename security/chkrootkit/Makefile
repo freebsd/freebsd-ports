@@ -11,6 +11,7 @@ CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.pangeia.com.br/pub/seg/pac/
 
 MAINTAINER=	cordeiro@luinil.nic.br
+COMMENT=	A tool to locally check for signs of a rootkit
 
 USE_REINPLACE=	yes
 

@@ -11,6 +11,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://home.t-online.de/home/Moestl/
 
 MAINTAINER=	roman@xpert.com
+COMMENT=	Caching (permanently, writes to disk on exit) DNS proxy-server
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-cachedir=${PDNSDB}

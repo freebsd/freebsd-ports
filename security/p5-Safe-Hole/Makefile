@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Safe
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	    sethk@meowfishies.com
+COMMENT=	Make a hole to the original main compartment in the Safe compartment
 
 PERL_CONFIGURE=	    yes
 

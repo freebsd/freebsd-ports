@@ -14,6 +14,7 @@ PKGNAMEPREFIX=	p5-
 DISTNAME=	Krb4-1.1
 
 MAINTAINER=	ajk@iu.edu
+COMMENT=	Perl extension for Kerberos 4
 
 PERL_CONFIGURE=	yes
 

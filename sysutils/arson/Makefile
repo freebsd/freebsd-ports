@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=${PORTNAME}
 DISTNAME=	${PORTNAME}-${PORTVERSION}-kde3
 
 MAINTAINER=	stefan.jahn@nemesis-sektor.de
+COMMENT=	A KDE frontend for mkisofs and cdrecord
 
 RUN_DEPENDS=	cdrecord:${PORTSDIR}/sysutils/cdrtools \
 		mkisofs:${PORTSDIR}/sysutils/mkisofs \

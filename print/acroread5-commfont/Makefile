@@ -13,6 +13,7 @@ DISTNAME?=	commfont # dummy
 DIST_SUBDIR=	Acrobat5
 
 MAINTAINER=	koma2@jiro.c.u-tokyo.ac.jp
+COMMENT=	Asian Font Packs for Acrobat Reader 5.0 (for common files)
 
 NO_BUILD=	yes
 SLAVEDIRS=	chinese/acroread-chsfont chinese/acroread-chtfont

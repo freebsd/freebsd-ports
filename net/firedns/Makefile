@@ -15,6 +15,7 @@ DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	-${PORTVERSION}.tar.gz
 
 MAINTAINER=	dean@odyssey.apana.org.au
+COMMENT=	A C library for handling asynchronous DNS queries
 
 BUILD_DEPENDS=	${LOCALBASE}/include/firestring.h:${PORTSDIR}/misc/firestring
 

@@ -13,6 +13,7 @@ MASTER_SITES=		${MASTER_SITE_AFTERSTEP} \
 MASTER_SITE_SUBDIR=	apps/asmem
 
 MAINTAINER=	jack@germanium.xtalwind.net
+COMMENT=	An AfterStep look-n-feel memory utilization monitor
 
 USE_X_PREFIX=	yes
 USE_XPM=	yes

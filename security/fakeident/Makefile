@@ -13,6 +13,7 @@ MASTER_SITES=	http://www.wa.apana.org.au/~dean/sources/ \
 		ftp://ftp.wa.apana.org.au/pub/pc/unix/packages/
 
 MAINTAINER=	dean@odyssey.apana.org.au
+COMMENT=	Tool that replies with a standard answer to incoming identd requests
 
 do-build:
 	@cd $(WRKSRC); \

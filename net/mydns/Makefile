@@ -11,6 +11,7 @@ CATEGORIES=	net databases
 MASTER_SITES=	http://mydns.bboy.net/download/
 
 MAINTAINER=	simond@irrelevant.org
+COMMENT=	DNS server designed to utilize the MySQL database
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-confdir=${PREFIX}/etc --without-libiconv-prefix

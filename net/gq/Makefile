@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gqclient
 
 MAINTAINER=	roman@xpert.com
+COMMENT=	GTK-based LDAP client
 
 LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
 

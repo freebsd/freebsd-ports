@@ -20,6 +20,7 @@ MASTER_SITES=	http://www.dsl.gr.jp/~manabe/PPxP/packages/	\
 		http://www.dsl.ics.tut.ac.jp/~manabe/PPxP/packages/
 
 MAINTAINER=	nosuzuki@postcard.st
+COMMENT=	A new and easy to use PPP software
 
 LIB_DEPENDS=	forms.1:${PORTSDIR}/x11-toolkits/xforms
 .if defined(WITH_TCLJP)

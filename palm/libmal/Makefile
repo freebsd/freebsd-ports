@@ -12,6 +12,7 @@ CATEGORIES=	palm
 MASTER_SITES=	http://jasonday.home.att.net/code/libmal/
 
 MAINTAINER=	groot@kde.org
+COMMENT=	A library encapsulating malsync
 
 LIB_DEPENDS=	pisock.8:${PORTSDIR}/palm/pilot-link
 

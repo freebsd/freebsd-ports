@@ -11,6 +11,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://michael.toren.net/code/tcptraceroute/
 
 MAINTAINER=	corecode@corecode.ath.cx
+COMMENT=	A traceroute implementation using TCP packets
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libnet.a:${PORTSDIR}/net/libnet
 

@@ -11,6 +11,7 @@ CATEGORIES=	net tk83 ipv6
 MASTER_SITES=	ftp://ftp.csl.sony.co.jp/pub/kjc/
 
 MAINTAINER=	kjc@csl.sony.co.jp
+COMMENT=	Tele Traffic Tapper, a network traffic monitoring tool
 
 # the tcl/tk LIB_DEPENDS has to match that of ports/x11-toolkits/blt.
 LIB_DEPENDS=	BLT24.2:${PORTSDIR}/x11-toolkits/blt \

@@ -11,6 +11,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://www.spelio.net.ru/soft/
 
 MAINTAINER=	vlm@spelio.net.ru
+COMMENT=	IP accounting daemon simulating Cisco ip accounting
 
 MANCOMPRESSED=	no
 MAN5=	ipcad.conf.5

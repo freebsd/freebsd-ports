@@ -11,6 +11,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://www.nlnetlabs.nl/downloads/nsd/
 
 MAINTAINER=	nsd-info@nlnetlabs.nl
+COMMENT=	An authoratative only non-recursive high performance name server
 
 MAN8=	nsd.8 zonec.8 nsdc.8
 

@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.tsu.ru/~pascal/other/xxkb/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	matey@cis.ohio-state.edu
+COMMENT=	An XKB keyboard layout switcher and indicator
 
 USE_XPM=	yes
 USE_IMAKE=	yes

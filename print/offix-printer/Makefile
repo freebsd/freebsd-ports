@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	desktop_managers/OffiX
 DISTNAME=	Printer-2.4
 
 MAINTAINER=	ruslan@shevchenko.kiev.ua
+COMMENT=	OffiX printer icon with support of DND protocol
 
 LIB_DEPENDS=	Dnd.1:${PORTSDIR}/x11/libdnd
 

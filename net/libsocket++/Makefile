@@ -16,6 +16,7 @@ MASTER_SITES=	http://members.aon.at/~hstraub/linux/socket++/ \
 DISTNAME=	socket++-${PORTVERSION}
 
 MAINTAINER=	narvi@haldjas.folklore.ee
+COMMENT=	A C++ wrapper library to the sockets
 
 BUILD_DEPENDS=	autoconf:${PORTSDIR}/devel/autoconf
 

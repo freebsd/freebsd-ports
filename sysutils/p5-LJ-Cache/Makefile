@@ -12,6 +12,7 @@ MASTER_SITES=	http://livejournal.com/files/code/cache/ \
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ahze@rgv.net
+COMMENT=	Perl5 implementation of an LRU dictionary cache
 
 PERL_CONFIGURE=	yes
 

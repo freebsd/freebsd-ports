@@ -11,6 +11,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://www.whizkidtech.net/fports/
 
 MAINTAINER=	adam@whizkidtech.net
+COMMENT=	URL encoder and decoder
 
 BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
 

@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Net
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	dannyman@tellme.com
+COMMENT=	Perform domain lookups on 2-letter and 3-letter TLDs
 
 PERL_CONFIGURE=	YES
 
