@@ -521,7 +521,6 @@ de-webalizer-1.12|/usr/ports/german/webalizer|/usr/local|A web server log file a
 EZWGL-1.38|/usr/ports/graphics/EZWGL|/usr/X11R6|The EZ Widget and Graphics Library.|/usr/ports/graphics/EZWGL/pkg/DESCR|andy@icc.surw.chel.su|graphics devel x11|jpeg-6b|jpeg-6b
 ImageMagick-4.0.7|/usr/ports/graphics/ImageMagick|/usr/local|An X11 package for display and interactive manipulation of images.|/usr/ports/graphics/ImageMagick/pkg/DESCR|jseger@FreeBSD.org|graphics|freetype-1.1 ghostscript-5.10 gmake-3.76.1 jbigkit-1.0 jpeg-6b mpeg_lib-1.2.1 netpbm-94.3.1 png-1.0.2 tiff-3.4 transfig-3.2 unzip-5.3.2 xpm-3.4k|freetype-1.1 jbigkit-1.0 jpeg-6b mpeg_lib-1.2.1 png-1.0.2 tiff-3.4
 Mesa-2.6|/usr/ports/graphics/Mesa2|/usr/X11R6|A graphics library similar to SGI's OpenGL.|/usr/ports/graphics/Mesa2/pkg/DESCR|jseger@FreeBSD.ORG|graphics||
-Mesa-2.6|/usr/ports/graphics/Mesa3|/usr/X11R6|A graphics library similar to SGI's OpenGL.|/usr/ports/graphics/Mesa3/pkg/DESCR|jseger@FreeBSD.ORG|graphics||
 aalib-1.2|/usr/ports/graphics/aalib|/usr/local|An ascii art library|/usr/ports/graphics/aalib/pkg/DESCR|andy@icc.surw.chel.su|graphics||
 aero-1.7.0|/usr/ports/graphics/aero|/usr/X11R6|An X11 based modeler for povray|/usr/ports/graphics/aero/pkg/DESCR|erich@FreeBSD.org|graphics|fwf-4.0 xpm-3.4k|png-1.0.2 povray-3.0 xpm-3.4k
 aview-1.2|/usr/ports/graphics/aview|/usr/local|Graphics viewer for viewing netpbm format on console or X using aalib|/usr/ports/graphics/aview/pkg/DESCR|frankch@waru.life.nthu.edu.tw|graphics x11|aalib-1.2|ImageMagick-4.0.7 aalib-1.2 freetype-1.1 jbigkit-1.0 jpeg-6b mpeg_lib-1.2.1 netpbm-94.3.1 png-1.0.2 tiff-3.4
@@ -540,7 +539,6 @@ giflib-3.0|/usr/ports/graphics/giflib|/usr/local|Tools and library routines for 
 gifmerge-1.33|/usr/ports/graphics/gifmerge|/usr/local|A tool for making a GIF Animation.|/usr/ports/graphics/gifmerge/pkg/DESCR|nakai@mlab.t.u-tokyo.ac.jp|graphics||
 giftool-1.0|/usr/ports/graphics/giftool|/usr/local|a tool for GIF89a transparent option and interlace mode|/usr/ports/graphics/giftool/pkg/DESCR|Nakai@Mlab.t.u-tokyo.ac.jp|graphics||
 giftrans-1.12|/usr/ports/graphics/giftrans|/usr/local|a tool for GIF89a transparent option and inerlace mode.|/usr/ports/graphics/giftrans/pkg/DESCR|Nakai@Mlab.t.u-tokyo.ac.jp|graphics||
-gimp-1.0.0|/usr/ports/graphics/gimp-devel|/usr/X11R6|developer's beta release of the General Image Manipulation Program|/usr/ports/graphics/gimp-devel/pkg/DESCR|erich@FreeBSD.org|graphics|aalib-1.2 gmake-3.76.1 gtk-1.0.4 jpeg-6b mpeg_lib-1.2.1 png-1.0.2 tiff-3.4 xpm-3.4k|aalib-1.2 gtk-1.0.4 jpeg-6b mpeg_lib-1.2.1 png-1.0.2 tiff-3.4 xpm-3.4k
 GimpUserManual-HTML-1.0.0|/usr/ports/graphics/gimp-manual|/usr/X11R6|The user manual for the GNU Image Manipulation Program (GIMP).|/usr/ports/graphics/gimp-manual/pkg/DESCR|brett@peloton.physics.montana.edu|graphics|bzip2-0.1p2|
 gimp-1.0.0|/usr/ports/graphics/gimp1|/usr/X11R6|developer's beta release of the General Image Manipulation Program|/usr/ports/graphics/gimp1/pkg/DESCR|erich@FreeBSD.org|graphics|aalib-1.2 gmake-3.76.1 gtk-1.0.4 jpeg-6b mpeg_lib-1.2.1 png-1.0.2 tiff-3.4 xpm-3.4k|aalib-1.2 gtk-1.0.4 jpeg-6b mpeg_lib-1.2.1 png-1.0.2 tiff-3.4 xpm-3.4k
 gplot-4.3|/usr/ports/graphics/gplot|/usr/local|Graphic utilities for the processing of CGM metafiles.|/usr/ports/graphics/gplot/pkg/DESCR|giffunip@asme.org|graphics||
@@ -914,7 +912,8 @@ p5-Mail-Folder-0.07|/usr/ports/mail/p5-Mail-Folder|/usr/local|perl module for a 
 p5-Mail-POP3Client-1.15|/usr/ports/mail/p5-Mail-POP3Client|/usr/local|perl5 module to talk to a POP3 (RFC1081) server|/usr/ports/mail/p5-Mail-POP3Client/pkg/DESCR|jfitz@FreeBSD.ORG|mail perl5|perl-5.00404|perl-5.00404
 p5-Mail-Tools-1.11|/usr/ports/mail/p5-Mail-Tools|/usr/local|a set of perl5 modules related to mail applications.|/usr/ports/mail/p5-Mail-Tools/pkg/DESCR|jfitz@FreeBSD.ORG|mail perl5|p5-Data-Dumper-2.081 p5-Net-1.0605 perl-5.00404|perl-5.00404
 pgpsendmail-1.4|/usr/ports/mail/pgpsendmail|/usr/local|PGP sign/encrypt/decrypt messages automatically.|/usr/ports/mail/pgpsendmail/pkg/DESCR|ache@FreeBSD.ORG|mail|gmake-3.76.1 pgp-2.6.2 rsaref-2.0 unzip-5.3.2|
-pine-3.96|/usr/ports/mail/pine|/usr/local|Program for Internet E-mail and News|/usr/ports/mail/pine/pkg/DESCR|ports@FreeBSD.org|mail news||
+pine-3.96|/usr/ports/mail/pine3|/usr/local|Program for Internet E-mail and News|/usr/ports/mail/pine3/pkg/DESCR|ports@FreeBSD.org|mail news||
+pine-4.01|/usr/ports/mail/pine4|/usr/local|Pine(tm) -- a Program for Internet News & Email|/usr/ports/mail/pine4/pkg/DESCR|pine@freebsd.ady.ro|mail news||
 popclient-3.0b6|/usr/ports/mail/popclient|/usr/local|client for pop2, pop3, apop, rpop|/usr/ports/mail/popclient/pkg/DESCR|wosch@FreeBSD.org|mail||
 poppassd-4.0|/usr/ports/mail/poppassd|/usr/local|A server to allow users to change their password from within Eudora|/usr/ports/mail/poppassd/pkg/DESCR|andrew@ugh.net.au|mail||
 qpopper-2.53|/usr/ports/mail/popper|/usr/local|Berkeley POP 3 server (now maintained by Qualcomm).|/usr/ports/mail/popper/pkg/DESCR|ache@freebsd.org|mail||
@@ -1290,7 +1289,7 @@ ru-d1489-1.3|/usr/ports/russian/d1489|/usr/local|cp866<->koi8-r and cp1251<->koi
 ru-elm-2.4ME|/usr/ports/russian/elm.language|/usr/local|Tune Elm with MIME for KOI8-R defaults|/usr/ports/russian/elm.language/pkg/DESCR|ache@FreeBSD.org|russian mail||elm-2.4ME+40
 ru-netscape-3.01|/usr/ports/russian/netscape3.language|/usr/X11R6|Tune netscape3.01 to work with russian (koi8-r) fonts|/usr/ports/russian/netscape3.language/pkg/DESCR|ache@FreeBSD.ORG|russian www||XFree86-3.3.2 netscape-3.04 ru-X11-3.3
 ru-pgp-2.6.3ia|/usr/ports/russian/pgp.language|/usr/local|Russian language module for PGP|/usr/ports/russian/pgp.language/pkg/DESCR|ache@FreeBSD.ORG|russian|unzip-5.3.2|pgp-2.6.2 rsaref-2.0
-ru-pine-3.95|/usr/ports/russian/pine.language|/usr/local|Tune Pine for Russian (KOI8-R) defaults|/usr/ports/russian/pine.language/pkg/DESCR|ache@FreeBSD.org|russian mail||pine-3.96
+ru-pine-3.96|/usr/ports/russian/pine.language|/usr/local|Tune Pine for Russian (KOI8-R) defaults|/usr/ports/russian/pine.language/pkg/DESCR|ache@FreeBSD.org|russian mail||pine-3.96
 ru-ispell-1.0|/usr/ports/russian/rispell|/usr/local|Russian (KOI8-R) dictionary for ISPELL|/usr/ports/russian/rispell/pkg/DESCR|ache@FreeBSD.org|textproc russian|ispell-3.1.20|
 SSLeay-0.8.1b|/usr/ports/security/SSLeay|/usr/local|SSL and crypto library|/usr/ports/security/SSLeay/pkg/DESCR|markm@FreeBSD.ORG|devel security|rsaref-2.0|rsaref-2.0
 bjorb-0.5.3.1|/usr/ports/security/bjorb|/usr/local|Secure TCP relay software with SSL.|/usr/ports/security/bjorb/pkg/DESCR|issei@t-cnet.or.jp|net security|SSLeay-0.8.1b rsaref-2.0|SSLeay-0.8.1b rsaref-2.0
