@@ -7,6 +7,7 @@
 
 PORTNAME=	sslwrap
 PORTVERSION=	2.0.6
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.quiltaholic.com/rickk/sslwrap/
 DISTNAME=	${PORTNAME}
@@ -19,14 +20,13 @@ USE_REINPLACE=	YES
 
 WRKSRC=		${WRKDIR}/${PORTNAME}${PORTVERSION:S/.//g}
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 501000
-BROKEN=		"Does not compile"
-.endif
-
 post-patch:
-	${REINPLACE_CMD} -e 's/SSL_OP_NON_EXPORT_FIRST/SSL_OP_CIPHER_SERVER_PREFERENCE/g' ${WRKSRC}/s_server.c
+	${REINPLACE_CMD} -e \
+		's/SSL_OP_NON_EXPORT_FIRST/SSL_OP_CIPHER_SERVER_PREFERENCE/g' \
+		${WRKSRC}/s_server.c
+	${REINPLACE_CMD} -e \
+		's,%%OPENSSL%%,openssl/,g' \
+		${WRKSRC}/s_server.c ${WRKSRC}/s_cb.c ${WRKSRC}/apps.h ${WRKSRC}/s_socket.c
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/sslwrap ${PREFIX}/bin/sslwrap
@@ -36,4 +36,4 @@ do-install:
 			${PREFIX}/share/doc/sslwrap
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
