@@ -1,0 +1,7 @@
+%%Q3DIR%%description.pk3
+%%Q3DIR%%maplist.cfg
+%%Q3DIR%%motd.cfg
+%%Q3DIR%%readme.txt
+%%Q3DIR%%vm/qagame.qvm
+@dirrm %%Q3DIR%%vm
+@dirrm %%Q3DIR%%
