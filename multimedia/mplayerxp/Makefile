@@ -6,93 +6,118 @@
 #
 
 PORTNAME=	mplayer
-PORTVERSION=	0.18
+PORTVERSION=	0.50.0.1
 CATEGORIES=	graphics
-MASTER_SITES=	http://MPlayerHQ.hu/MPlayer/releases/ \
-		http://www.stud.uni-karlsruhe.de/~uedc/mplayer/
-DISTNAME=	MPlayer-${PORTVERSION}pre
-EXTRACT_SUFX=	.tgz
+MASTER_SITES=	http://ftp.mplayerhq.hu/MPlayer/releases/ \
+		http://www.stud.uni-karlsruhe.de/~uedc/mplayer/ \
+		http://www.rrr.de/~riggs/mplayer/
+DISTNAME=	MPlayer-0.50pre1
 
 MAINTAINER=	riggs@rrr.de
 
-ONLY_FOR_ARCHS=	i386
+LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
+		SDL-1.1.3:${PORTSDIR}/devel/sdl12
+RUN_DEPENDS=	${LOCALBASE}/share/mplayer/fonts:${PORTSDIR}/graphics/mplayer-fonts
 
-WRKSRC=		${WRKDIR}/MPlayer-${PORTVERSION}pre5
+USE_BZIP2=	yes
+USE_GMAKE=	yes
+USE_XLIB=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS+=	--disable-esd
 CONFIGURE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}"
-CFLAGS+=	-O3 -ffast-math -fomit-frame-pointer
 
 MAN1=		mplayer.1
 MANCOMPRESSED=	no
 
-GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
-USE_XLIB=	yes
-
-LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
-RUN_DEPENDS=	${PREFIX}/share/mplayer/fonts:${PORTSDIR}/graphics/mplayer-fonts
-
-CONFIGURE_ARGS+=--disable-esd
+CONFFILES=	codecs.conf example.conf
+DOCFILES=       DVB bugreports.html cd-dvd.html codecs-in.html \
+		codecs.html documentation.html faq.html skin-en.html \
+		sound.html video.html tech/tech-eng.txt
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_SDL)
-LIB_DEPENDS+=    SDL-1.1.3:${PORTSDIR}/devel/sdl12
-.else
-BUILD_DEPENDS+=  nasm:${PORTSDIR}/devel/nasm
+.if exists(${WRKDIRPREFIX}${.CURDIR}/Makefile.inc)
+.include "${WRKDIRPREFIX}${.CURDIR}/Makefile.inc"
 .endif
-.if !defined(WITHOUT_3DNOW) && ${OSVERSION} >= 400021
+
+# hack to cope with dmesg standard vs ports standard
+.if (WITH_3DNow!)
+WITH_3DNOW=	yes
+.endif
+
+.if defined(WITH_OPTIMIZED_CFLAGS)
+CFLAGS+=       -O3 -ffast-math -fomit-frame-pointer
+.endif
+
+.if defined(WITH_GUI)
+USE_GTK=	yes
+CONFIGURE_ARGS+=	--enable-gui
+.endif
+
+# "enable" build for other archs
+.if ${ARCH} == "i386"
+.if defined(WITH_MMX)
+CONFIGURE_ARGS+=--enable-mmx
+.endif
+.if defined(WITH_3DNOW) && ${OSVERSION} >= 400021
 CONFIGURE_ARGS+=--enable-3dnow
 .endif
-.if !defined(WITHOUT_3DNOWEX) && !defined(WITHOUT_3DNOW) && ${OSVERSION} >= 400021
+.if defined(WITH_DSP) && defined(WITH_3DNOW) && ${OSVERSION} >= 400021
 CONFIGURE_ARGS+=--enable-3dnowex
 .endif
-.if !defined(WITHOUT_MMX2)
-CONFIGURE_ARGS+=--enable-mmx2
+.if defined(WITH_SSE)
+CONFIGURE_ARGS+=--enable-mmx2 --enable-sse
+.endif
+.if !defined(WITHOUT_WIN32_CODECS)
+RUN_DEPENDS+=	${CODEC_DETECTION_FILE}:${CODEC_PORT}
+
+CONFIGURE_ARGS+=	--with-win32libdir=${LOCALBASE}/lib/win32
+
+CODEC_PORT=	${PORTSDIR}/graphics/win32-codecs
+CODEC_DETECTION_FILE!=	${MAKE} -f ${CODEC_PORT}/Makefile -V CODEC_DETECTION_FILE
+.endif
+.endif # ARCH == i386
+
+pre-everything::
+.if !defined(WITH_OPTIMIZED_CFLAGS)
+	@${ECHO_MSG} "You can enable additional compilation optimizations"
+	@${ECHO_MSG} "by defining WITH_OPTIMIZED_CFLAGS"
+.endif
+.if !defined(WITH_GUI)
+	@${ECHO} "You can enable GTK GUI by defining WITH_GUI."
+.endif
+.if ${ARCH} == "i386"
+.if !defined(WITHOUT_WIN32_CODECS)
+	@${ECHO_MSG} "You can disable support (this turns this into a X86 only port)"
+	@${ECHO_MSG} "for Win32 codecs"
 .endif
 .if defined(WITH_SSE)
-CONFIGURE_ARGS+=--enable-sse
-.endif
-.if defined(USE_AVIFILE_CODECS)
-BUILD_DEPENDS+=	${PREFIX}/lib/win32:${PORTSDIR}/graphics/win32-codecs
-.else
-BUILD_DEPENDS+=	${PREFIX}/lib/mplayer-codecs:${PORTSDIR}/graphics/mplayer-codecs
-CONFIGURE_ARGS+=--with-win32libdir=${LOCALBASE}/lib/mplayer-codecs
-.endif
-
-pre-extract:
-
-.if !defined(WITHOUT_3DNOW) && ${OSVERSION} >= 400021
-	@${ECHO_MSG} "You can disable 3DNow! support by defining WITHOUT_3DNOW"
-.endif
-
-.if !defined(WITHOUT_3DNOWEX) && !defined(WITHOUT_3DNOW) && ${OSVERSION} >= 400021
-	@${ECHO_MSG} "You can disable K7 3DNow! extension support by defining WITHOUT_3DNOWEX"
-.endif
-.if !defined(WITHOUT_MMX2)
-	@${ECHO_MSG} "You can disable MMX2 support by defining WITHOUT_MMX2"
-.endif
-.if !defined(WITH_SSE)
-	@${ECHO_MSG} "You can enable SSE optimized decoding by defining WITH_SSE"
 	@${ECHO_MSG} "You have to enable \"options CPU_ENABLE_SSE\" in your kernel"
-	@${ECHO_MSG} "config in order to enable kernel support for SSE."
+	@${ECHO_MSG} "config in order to enable kernel support for SSE/MMX2."
 .endif
+.endif # ARCH == i386
+
+pre-configure:
+	@${RM} -f "${WRKDIRPREFIX}${.CURDIR}/Makefile.inc"
+	@${MKDIR} "${WRKDIRPREFIX}${.CURDIR}"
+	@${SETENV} TEMPDIR="${WRKDIRPREFIX}${.CURDIR}" ${PERL} ${FILESDIR}/get-feat
+
+post-configure:
+	@${RM} -f "${WRKDIRPREFIX}${.CURDIR}/Makefile.inc"
 
 post-install:
-	@${MKDIR} ${PREFIX}/share/mplayer
-	@${CHMOD} 755 ${PREFIX}/share/mplayer
-	@${INSTALL_DATA} ${WRKSRC}/DOCS/codecs.conf ${PREFIX}/share/mplayer
-	@${INSTALL_DATA} ${WRKSRC}/DOCS/example.conf ${PREFIX}/share/mplayer
+	@${MKDIR} ${DATADIR}
+	@${CHMOD} 755 ${DATADIR}
+.for conf in ${CONFFILES}
+	${INSTALL_DATA} ${WRKSRC}/etc/${conf} ${DATADIR}
+.endfor
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/mplayer
-	@${CHMOD} 755 ${PREFIX}/share/doc/mplayer
-	@${INSTALL_DATA} ${WRKSRC}/DOCS/DGA ${PREFIX}/share/doc/mplayer
-	@${INSTALL_DATA} ${WRKSRC}/DOCS/FREEBSD ${PREFIX}/share/doc/mplayer
-	@${INSTALL_DATA} ${WRKSRC}/DOCS/MPlayer-FAQ ${PREFIX}/share/doc/mplayer
-	@${INSTALL_DATA} ${WRKSRC}/DOCS/OpenDivX ${PREFIX}/share/doc/mplayer
-	@${INSTALL_DATA} ${WRKSRC}/DOCS/README ${PREFIX}/share/doc/mplayer
-	@${INSTALL_DATA} ${WRKSRC}/DOCS/SDL ${PREFIX}/share/doc/mplayer
-	@${INSTALL_DATA} ${WRKSRC}/DOCS/VIDEOCARDS ${PREFIX}/share/doc/mplayer
+	@${MKDIR} ${DOCSDIR}
+	@${CHMOD} 755 ${DOCSDIR}
+.for doc in ${DOCFILES}
+	@${INSTALL_DATA} ${WRKSRC}/DOCS/${doc} ${DOCSDIR}
+.endfor
 .endif
 	@${CAT} pkg-message
 
