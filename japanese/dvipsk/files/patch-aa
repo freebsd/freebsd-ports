@@ -1,22 +1,37 @@
---- dvipsk/output.c.orig	Sun May  3 06:42:35 1998
-+++ dvipsk/output.c	Sun May  3 06:42:46 1998
-@@ -90,6 +90,8 @@
- static Boolean popened = 0 ;
- int lastfont ; /* exported to dospecial to fix rotate.tex problem */
- static void chrcmd();                   /* just a forward declaration */
-+void cmdout();                          /* just a forward declaration */
-+void numout();                          /* just a forward declaration */
- static char strbuffer[LINELENGTH + 20], *strbp = strbuffer ;
- static struct papsiz *finpapsiz ;
- struct papsiz defpapsiz = {
---- Makefile.in.orig	Sat Feb  8 03:43:07 1997
-+++ Makefile.in	Sat Jun 27 17:41:51 1998
-@@ -31,7 +31,7 @@
- 	  (cd $$d && $(MAKE) $(makeargs) $@); else true; fi; done
+--- Makefile.in.orig	Thu Mar 12 06:37:45 1998
++++ Makefile.in	Sun Jun 28 11:41:59 1998
+@@ -34,7 +34,7 @@
+ 	  (cd $$d && $(MAKE) $(makeargs) $@) || break; else true; fi; done
  
  install install-data install-exec:
 -	for d in kpathsea $(programs); do if test -d $$d; then \
 +	for d in $(programs); do if test -d $$d; then \
- 	  (cd $$d && $(MAKE) $(installargs) $@); else true; fi; done
+ 	  (cd $$d && $(MAKE) $(installargs) $@) || break; else true; fi; done
  
  # Other standard targets for everything.
+--- dvipsk/Makefile.in.orig	Tue Mar  3 23:47:43 1998
++++ dvipsk/Makefile.in	Wed Jul  1 15:41:44 1998
+@@ -80,9 +80,9 @@
+ install-data: $(program).info
+ 	$(SHELL) $(top_srcdir)/../mkinstalldirs $(mandir) $(infodir) $(psheaderdir)/base $(dvips_plain_macrodir)
+ # PostScript prologues and encodings.
+-	for h in $(prologues); do $(INSTALL_DATA) $$h $(psheaderdir)/base/$$h; done
+-	cd $(srcdir)/reencode && \
+-	  for e in *.enc; do $(INSTALL_DATA) $$e $(psheaderdir)/base/$$e; done
++#	for h in $(prologues); do $(INSTALL_DATA) $$h $(psheaderdir)/base/$$h; done
++#	cd $(srcdir)/reencode && \
++#	  for e in *.enc; do $(INSTALL_DATA) $$e $(psheaderdir)/base/$$e; done
+ # config.ps. Any one config.ps will be wrong for most people, so don't
+ # install anything by default.
+ #	if test ! -r $(psheaderdir)/base/config.ps				\
+@@ -103,8 +103,8 @@
+ 	$(INSTALL_DATA) $(srcdir)/dvips.1 $(mandir)/dvips.$(manext)
+ 	$(INSTALL_DATA) $(srcdir)/afm2tfm.1 $(mandir)/afm2tfm.$(manext)
+ # TeX macros.
+-	cd $(srcdir)/tex && for m in *.tex; do \
+-	  $(INSTALL_DATA) $$m $(dvips_plain_macrodir)/$$m; done
++#	cd $(srcdir)/tex && for m in *.tex; do \
++#	  $(INSTALL_DATA) $$m $(dvips_plain_macrodir)/$$m; done
+ 	$(POSTINSTALL)
+ 	if $(SHELL) -c 'install-info --version' >/dev/null 2>&1; then \
+ 	  install-info --info-dir=$(infodir) $(infodir)/$(program).info; \

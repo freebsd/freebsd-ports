@@ -1,33 +1,14 @@
---- dvipsk/contrib/config.ps.orig	Sun May  3 06:42:37 1998
-+++ dvipsk/contrib/config.ps	Sun May  3 06:59:56 1998
-@@ -4,13 +4,13 @@
+--- dvipsk/config.ps.orig	Sun Jun 28 11:43:25 1998
++++ dvipsk/config.ps	Sun Jun 28 11:46:02 1998
+@@ -4,9 +4,9 @@
  *
- m 1000000
+ m 470000
  *
 -*   And send output by default to the printer.
 +*   Run as a filter by default.
  *
--o !lpr
+-* o !lpr
 +f
  *
- *   Default resolution.
+ *  Additional .map files
  *
--D 400
-+D 300
- *
- *   Last resort sizes.
- *
-@@ -21,10 +21,10 @@
- *   If your default is a4 uncomment the following definition
- *   and comment out the letterSize definition.
- *
--*@ A4size 210mm 297mm
--*@+ %%PaperSize: A4
-+@ A4size 210mm 297mm
-+@+ %%PaperSize: A4
- 
--@ letterSize 8.5in 11in
-+*@ letterSize 8.5in 11in
- 
- @ letter 8.5in 11in
- @+ %%BeginPaperSize: Letter
