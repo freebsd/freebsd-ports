@@ -141,6 +141,10 @@ pre-configure:
 		s|\$$gtk_config_exec_prefix/bin/gtk-config|\$${GTK_CONFIG}|' \
 		${WRKSRC}/auto/configure
 
+#	Clean up junk files to keep them from being installed.
+pre-install:
+	@${RM} -f ${WRKSRC}/../runtime/macros/maze/*.orig
+
 post-install:
 	[ -e ${PREFIX}/bin/gvim ] || (cd ${PREFIX}/bin ; ${LN} -sf vim gvim)
 	#	below needed for `vim-lite' port
