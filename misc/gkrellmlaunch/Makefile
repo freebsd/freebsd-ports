@@ -23,8 +23,13 @@ USE_X_PREFIX=	yes
 USE_GNOME=	imlib
 ALL_TARGET=	${PORTNAME}.so
 
+.include <bsd.port.pre.mk>
+.if ${ARCH} == "amd64"
+CFLAGS=	-fPIC
+.endif
+
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME}.so \
 		${PREFIX}/libexec/gkrellm/plugins
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
