@@ -84,6 +84,7 @@
     SUBDIR += netsaint
     SUBDIR += netsaint-plugins
     SUBDIR += netspoc
+    SUBDIR += netustad
     SUBDIR += nitpicker
     SUBDIR += nocol
     SUBDIR += nrpe
