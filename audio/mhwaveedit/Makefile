@@ -8,13 +8,14 @@
 
 PORTNAME=	mhwaveedit
 PORTVERSION=	1.2.0
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://www.mtek.chalmers.se/~hjormagn/
 
 MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	sndfile.1:${PORTSDIR}/audio/libsndfile \
-		gtk-x11-2.0.0:${PORTSDIR}/x11-toolkits/gtk20
+		gtk-x11-2.0.200:${PORTSDIR}/x11-toolkits/gtk20
 
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes

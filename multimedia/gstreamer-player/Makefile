@@ -7,6 +7,7 @@
 
 PORTNAME=	gstreamer
 PORTVERSION=	0.4.0
+PORTREVISION=	1
 CATEGORIES=	multimedia audio gnome
 MASTER_SITES=	http://gstreamer.net/releases/0.4.0/src/
 PKGNAMESUFFIX=	-player
@@ -16,9 +17,9 @@ MAINTAINER=	lioux@FreeBSD.org
 
 BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
 LIB_DEPENDS=	glib-2.0.0:${PORTSDIR}/devel/glib20 \
-		gnomeui-2.0:${PORTSDIR}/x11-toolkits/libgnomeui \
+		gnomeui-2.200:${PORTSDIR}/x11-toolkits/libgnomeui \
 		gstreamer.0:${PORTSDIR}/multimedia/gstreamer \
-		gtk-x11-2.0.0:${PORTSDIR}/x11-toolkits/gtk20 \
+		gtk-x11-2.0.200:${PORTSDIR}/x11-toolkits/gtk20 \
 		popt.0:${PORTSDIR}/devel/popt \
 		xml2.5:${PORTSDIR}/textproc/libxml2
 RUN_DEPENDS=	gst-visualise:${PORTSDIR}/multimedia/gstreamer-plugins

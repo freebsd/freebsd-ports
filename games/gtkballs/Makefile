@@ -7,12 +7,13 @@
 
 PORTNAME=	gtkballs
 PORTVERSION=	3.0.1
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://gtkballs.antex.ru/dist/
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	gtk-x11-2.0.0:${PORTSDIR}/x11-toolkits/gtk20
+LIB_DEPENDS=	gtk-x11-2.0.200:${PORTSDIR}/x11-toolkits/gtk20
 
 USE_REINPLACE=	yes
 USE_GMAKE=	yes

@@ -24,8 +24,8 @@ USE_GNOME=	gtk12 imlib
 USE_GMAKE=	yes
 
 .if exists(${X11BASE}/libdata/pkgconfig/gtk+-2.0.pc) || defined(WITH_GTK2)
-LIB_DEPENDS+=	gtk-x11-2.0.0:${PORTSDIR}/x11-toolkits/gtk20
-PLIST_SUB+=	GTK2="" GTK2_VERSION="2.0.0"
+LIB_DEPENDS+=	gtk-x11-2.0.200:${PORTSDIR}/x11-toolkits/gtk20
+PLIST_SUB+=	GTK2="" GTK2_VERSION="2.2.0"
 .else
 PLIST_SUB+=	GTK2="@comment "
 .endif

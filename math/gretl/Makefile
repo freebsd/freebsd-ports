@@ -8,6 +8,7 @@
 
 PORTNAME=	gretl
 PORTVERSION=	1.0.2
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,7 +18,7 @@ MAINTAINER=	ports@FreeBSD.org
 BUILD_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot
 LIB_DEPENDS=	gmp.6:${PORTSDIR}/math/libgmp4 \
 		xml2.5:${PORTSDIR}/textproc/libxml2 \
-		gtk-x11-2.0.0:${PORTSDIR}/x11-toolkits/gtk20
+		gtk-x11-2.0.200:${PORTSDIR}/x11-toolkits/gtk20
 BUILD_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot
 
 USE_X_PREFIX=	yes
@@ -36,8 +37,9 @@ MAN1=	gretl.1 gretl-config.1
 CONFIGURE_ARGS+=	--without-gnome
 PLIST_SUB+=	GNOME2:="@comment " DATADIR="share"
 .else
-LIB_DEPENDS+=	gnomeprintui-2.0:${PORTSDIR}/x11-toolkits/libgnomeprintui \
-		gnomeui-2.0:${PORTSDIR}/x11-toolkits/libgnomeui
+BROKEN=		"Needs to be updated for libgnomeprint-2.2"
+LIB_DEPENDS+=	gnomeprintui-2-2.0:${PORTSDIR}/x11-toolkits/libgnomeprintui \
+		gnomeui-2.200:${PORTSDIR}/x11-toolkits/libgnomeui
 USE_GNOME=	gnomeprefix
 PLIST_SUB+=	GNOME2:="" DATADIR="share/gnome"
 .endif
