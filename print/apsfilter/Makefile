@@ -7,9 +7,11 @@
 
 PORTNAME=	apsfilter
 PORTVERSION=	6.0.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	print
 MASTER_SITES=	http://www.apsfilter.org/download/
+PATCH_SITES=	http://www.apsfilter.org/download/
+PATCHFILES=	diff-6.0.0-09.01.2001.gz
 
 MAINTAINER=	andreas@FreeBSD.org
 
