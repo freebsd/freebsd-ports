@@ -1,11 +1,15 @@
---- xmps-avi-plugin/Makefile.in.orig	Sat Sep 16 14:13:04 2000
-+++ xmps-avi-plugin/Makefile.in	Sat Sep 16 14:20:30 2000
-@@ -1,6 +1,6 @@
--LIBS = -lstdc++ -L../lib -L@libdir@ -laviplay -lpthread @XMPS_LIBS@ 
-+LIBS = -lstdc++ -L../lib -L@libdir@ -laviplay -pthread @XMPS_LIBS@ 
+--- lib/videocodec/Module.h.orig	Fri Oct  6 13:01:34 2000
++++ lib/videocodec/Module.h	Fri Oct  6 13:02:09 2000
+@@ -4,6 +4,12 @@
+ #include <videoencoder.h>
+ #include <list>
+ #include <string>
++#if (defined(__unix__) || defined(unix)) && !defined(USG)
++#include <sys/param.h>
++#endif
++#if (defined(BSD) && (BSD >= 199103))
++#include <sys/time.h>
++#endif
+ using namespace std;
  
--INCLUDES = -I. -I../include -I@includedir@/avifile @XMPS_CFLAGS@ 
-+INCLUDES = -I. -I../include -I@includedir@/avifile @XMPS_CFLAGS@ @SDL_CFLAGS@
- 
- all: avi_configure.o avi_codec.o
- 	 $(CC) -shared avi_configure.o avi_codec.o $(LIBS) -o libavi.so
+ class VideoCodecControl;

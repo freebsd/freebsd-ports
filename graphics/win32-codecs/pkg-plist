@@ -7,6 +7,7 @@ include/avifile/aviutil.h
 include/avifile/config.h
 include/avifile/default.h
 include/avifile/except.h
+include/avifile/image.h
 include/avifile/loader.h
 include/avifile/registry.h
 include/avifile/videodecoder.h
@@ -40,12 +41,15 @@ include/avifile/wine/winreg.h
 include/avifile/wine/winuser.h
 @dirrm include/avifile/wine
 @dirrm include/avifile
+bin/avifile-config
 bin/aviplay
 bin/benchmark
+bin/qtrecompress
 share/avifile/open.ppm
 share/avifile/pause.ppm
 share/avifile/play.ppm
 share/avifile/stop.ppm
+share/avifile/about.ppm
 share/avifile/test.png
 @dirrm share/avifile
 lib/win32/ativcr2.dll
@@ -59,8 +63,7 @@ lib/win32/ir41_32.dll
 lib/win32/ir41_qc.dll
 lib/win32/ir50_32.dll
 lib/win32/ir50_qc.dll
+lib/win32/m3jpeg32.dll
 lib/win32/mpg4c32.dll
 @dirrm lib/win32
 lib/libaviplay.so
-@exec /sbin/ldconfig -m %D/lib
-@unexec /sbin/ldconfig -R
