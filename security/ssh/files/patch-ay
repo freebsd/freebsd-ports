@@ -10,7 +10,7 @@
 +      if (time(NULL) - last_kill_time > 60 && getppid() != 1)
 +       {
 +         last_kill_time = time(NULL);
-+         kill(SIGALRM, getppid());
++         kill(getppid(), SIGALRM);
 +       }
 +      fatal("Bad result from rsa_private_decrypt");
 +    }
