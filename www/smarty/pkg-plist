@@ -222,9 +222,32 @@
 %%DATADIR%%/Smarty.class.php
 %%DATADIR%%/Smarty_Compiler.class.php
 %%DATADIR%%/debug.tpl
+%%DATADIR%%/core/core.assemble_plugin_filepath.php
+%%DATADIR%%/core/core.assign_smarty_interface.php
+%%DATADIR%%/core/core.create_dir_structure.php
+%%DATADIR%%/core/core.display_debug_console.php
+%%DATADIR%%/core/core.get_include_path.php
+%%DATADIR%%/core/core.get_microtime.php
+%%DATADIR%%/core/core.get_php_resource.php
+%%DATADIR%%/core/core.is_secure.php
+%%DATADIR%%/core/core.is_trusted.php
+%%DATADIR%%/core/core.load_plugins.php
+%%DATADIR%%/core/core.load_resource_plugin.php
+%%DATADIR%%/core/core.process_cached_inserts.php
+%%DATADIR%%/core/core.process_compiled_include.php
+%%DATADIR%%/core/core.read_cache_file.php
+%%DATADIR%%/core/core.rm_auto.php
+%%DATADIR%%/core/core.rmdir.php
+%%DATADIR%%/core/core.run_insert_handler.php
+%%DATADIR%%/core/core.smarty_include_php.php
+%%DATADIR%%/core/core.write_cache_file.php
+%%DATADIR%%/core/core.write_compiled_include.php
+%%DATADIR%%/core/core.write_compiled_resource.php
+%%DATADIR%%/core/core.write_file.php
 %%DATADIR%%/plugins/block.textformat.php
 %%DATADIR%%/plugins/function.assign.php
 %%DATADIR%%/plugins/function.assign_debug_info.php
+%%DATADIR%%/plugins/function.config_load.php
 %%DATADIR%%/plugins/function.counter.php
 %%DATADIR%%/plugins/function.cycle.php
 %%DATADIR%%/plugins/function.debug.php
@@ -274,5 +297,6 @@
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/templates
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/templates_c
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+@dirrm %%DATADIR%%/core
 @dirrm %%DATADIR%%/plugins
 @dirrm %%DATADIR%%
