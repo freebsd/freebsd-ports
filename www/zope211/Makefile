@@ -65,7 +65,7 @@ do-install:
 	@${ECHO} "===>   Please be patient, some builds need their time."
 	@${ECHO} "===>   Copying..."
 	@${CP} -Rp ${WRKSRC}/* ${ZOPEBASEDIR}/
-	@#${CP} -Rp ${WRKDIR}/lib ${ZOPEBASEDIR}/
+	@${CP} -Rp ${WRKDIR}/lib ${ZOPEBASEDIR}/
 	@#
 	@${CHMOD} -R u+w ${ZOPEBASEDIR}
 	@(cd ${ZOPEBASEDIR} && ${PYTHON_CMD} w_pcgi.py)
