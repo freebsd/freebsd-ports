@@ -1,0 +1,196 @@
+bin/prawda
+bin/prawda_x
+%%DATADIR%%/language.rc
+%%DATADIR%%/prawdarc.local
+%%DATADIR%%/prawdarc.root
+%%DATADIR%%/version
+%%DATADIR%%/z_man.rc
+%%DATADIR%%/z_preproc.rc
+%%DATADIR%%/dicts/zform/english/en_be
+%%DATADIR%%/dicts/zform/english/en_modal
+%%DATADIR%%/dicts/zform/english/en_tiny
+%%DATADIR%%/dicts/zform/english/en_sub_r
+%%DATADIR%%/dicts/zform/english/en_verb_r
+%%DATADIR%%/dicts/zform/esperanto/es_verb_r
+%%DATADIR%%/dicts/zform/esperanto/es_esti
+%%DATADIR%%/dicts/zform/esperanto/es_pronoun
+%%DATADIR%%/dicts/zform/esperanto/es_qadj
+%%DATADIR%%/dicts/zform/esperanto/es_qsub
+%%DATADIR%%/dicts/zform/esperanto/es_rel
+%%DATADIR%%/dicts/zform/esperanto/es_sub_r
+%%DATADIR%%/dicts/zform/esperanto/es_adj_r
+%%DATADIR%%/dicts/zform/russkij/ru_verb_r
+%%DATADIR%%/dicts/zform/russkij/ru_modal
+%%DATADIR%%/dicts/zform/russkij/ru_num
+%%DATADIR%%/dicts/zform/russkij/ru_num2
+%%DATADIR%%/dicts/zform/russkij/ru_order
+%%DATADIR%%/dicts/zform/russkij/ru_pronoun_1
+%%DATADIR%%/dicts/zform/russkij/ru_pronoun_2
+%%DATADIR%%/dicts/zform/russkij/ru_pronoun_3
+%%DATADIR%%/dicts/zform/russkij/ru_pronoun_4
+%%DATADIR%%/dicts/zform/russkij/ru_pronoun_i
+%%DATADIR%%/dicts/zform/russkij/ru_quest
+%%DATADIR%%/dicts/zform/russkij/ru_quest_a
+%%DATADIR%%/dicts/zform/russkij/ru_quest_s
+%%DATADIR%%/dicts/zform/russkij/ru_tiny
+%%DATADIR%%/dicts/zform/russkij/ru_adj_r
+%%DATADIR%%/dicts/zform/russkij/ru_sub_r
+%%DATADIR%%/dicts/zform/russkij/ru_esti
+%%DATADIR%%/dicts/esperanto_russkij/base_esru
+%%DATADIR%%/dicts/esperanto_russkij/base_esru1
+%%DATADIR%%/dicts/esperanto_russkij/bokarev
+%%DATADIR%%/dicts/esperanto_russkij/es_macro
+%%DATADIR%%/dicts/english_russian/base_fverb
+%%DATADIR%%/dicts/english_russian/base_enru1
+%%DATADIR%%/dicts/english_russian/base_fverb_be
+%%DATADIR%%/dicts/english_russian/base_enru
+%%DATADIR%%/dicts/english_russian/base_pre
+%%DATADIR%%/dicts/english_russian/base_post
+%%DATADIR%%/dicts/english_russian/muller
+%%DATADIR%%/grammar/esperanto_russkij/lang.txt
+%%DATADIR%%/grammar/esperanto_russkij/adv.h
+%%DATADIR%%/grammar/esperanto_russkij/atom.h
+%%DATADIR%%/grammar/esperanto_russkij/core1.h
+%%DATADIR%%/grammar/esperanto_russkij/core.h
+%%DATADIR%%/grammar/esperanto_russkij/format_es.h
+%%DATADIR%%/grammar/esperanto_russkij/format_r.h
+%%DATADIR%%/grammar/esperanto_russkij/imperativ.h
+%%DATADIR%%/grammar/esperanto_russkij/lang.cpp
+%%DATADIR%%/grammar/esperanto_russkij/lang.h
+%%DATADIR%%/grammar/esperanto_russkij/main.h
+%%DATADIR%%/grammar/esperanto_russkij/mklang
+%%DATADIR%%/grammar/esperanto_russkij/num.h
+%%DATADIR%%/grammar/esperanto_russkij/patch.h
+%%DATADIR%%/grammar/esperanto_russkij/sub.h
+%%DATADIR%%/grammar/esperanto_russkij/unorder.h
+%%DATADIR%%/grammar/esperanto_russkij/verb1.h
+%%DATADIR%%/grammar/esperanto_russkij/verb.h
+%%DATADIR%%/grammar/esperanto_russkij/verb_modal.h
+%%DATADIR%%/grammar/esperanto_russkij/w_frasa.h
+%%DATADIR%%/grammar/esperanto_russkij/adj.h
+%%DATADIR%%/grammar/english_russian/lang.txt
+%%DATADIR%%/grammar/english_russian/adv.h
+%%DATADIR%%/grammar/english_russian/atom.h
+%%DATADIR%%/grammar/english_russian/core.h
+%%DATADIR%%/grammar/english_russian/dis_quest.h
+%%DATADIR%%/grammar/english_russian/format_a.h
+%%DATADIR%%/grammar/english_russian/format_r.h
+%%DATADIR%%/grammar/english_russian/lang.cpp
+%%DATADIR%%/grammar/english_russian/lang.h
+%%DATADIR%%/grammar/english_russian/mklang
+%%DATADIR%%/grammar/english_russian/next_chance.h
+%%DATADIR%%/grammar/english_russian/num.h
+%%DATADIR%%/grammar/english_russian/sub.h
+%%DATADIR%%/grammar/english_russian/tail.h
+%%DATADIR%%/grammar/english_russian/tail_is.h
+%%DATADIR%%/grammar/english_russian/verb_be.h
+%%DATADIR%%/grammar/english_russian/verb_c.h
+%%DATADIR%%/grammar/english_russian/verb.h
+%%DATADIR%%/grammar/english_russian/verb_have.h
+%%DATADIR%%/grammar/english_russian/verb_mod_be.h
+%%DATADIR%%/grammar/english_russian/verb_mod.h
+%%DATADIR%%/grammar/english_russian/verb_mod_have.h
+%%DATADIR%%/grammar/english_russian/verb_there_is.h
+%%DATADIR%%/grammar/english_russian/wh_frasa.h
+%%DATADIR%%/grammar/english_russian/adj.h
+%%DATADIR%%/fonts/koi6x13.pcf.gz
+%%DATADIR%%/fonts/fonts.dir
+%%DOCSDIR%%/help/about.html
+%%DOCSDIR%%/help/tip9.html
+%%DOCSDIR%%/help/tip8.html
+%%DOCSDIR%%/help/tip7.html
+%%DOCSDIR%%/help/tip6.html
+%%DOCSDIR%%/help/tip5.html
+%%DOCSDIR%%/help/tip4.html
+%%DOCSDIR%%/help/tip3.html
+%%DOCSDIR%%/help/tip2.html
+%%DOCSDIR%%/help/tip1.html
+%%DOCSDIR%%/help/tip0.html
+%%DOCSDIR%%/help/src.html
+%%DOCSDIR%%/help/slowo3.html
+%%DOCSDIR%%/help/slowo1.html
+%%DOCSDIR%%/help/slowo.html
+%%DOCSDIR%%/help/path.html
+%%DOCSDIR%%/help/newwords1.html
+%%DOCSDIR%%/help/newwords.html
+%%DOCSDIR%%/help/menu.html
+%%DOCSDIR%%/help/index.html
+%%DOCSDIR%%/help/howto.html
+%%DOCSDIR%%/help/help.html
+%%DOCSDIR%%/help/grammar.html
+%%DOCSDIR%%/help/first.html
+%%DOCSDIR%%/help/empty.html
+%%DOCSDIR%%/help/edit.html
+%%DOCSDIR%%/help/debug.html
+%%DOCSDIR%%/help/base_enru.html
+%%DOCSDIR%%/help/windows.html
+%%DOCSDIR%%/latex/source.ps
+%%DOCSDIR%%/latex/lang.ps
+%%DOCSDIR%%/latex/interface.ps
+%%DOCSDIR%%/latex/idea.ps
+%%DOCSDIR%%/latex/grammar.ps
+%%DOCSDIR%%/latex/esperanto.ps
+%%DOCSDIR%%/html_grammar/esperanto/index.html
+%%DOCSDIR%%/html_grammar/esperanto/atom.h.html
+%%DOCSDIR%%/html_grammar/esperanto/num.h.html
+%%DOCSDIR%%/html_grammar/esperanto/sub.h.html
+%%DOCSDIR%%/html_grammar/esperanto/adj.h.html
+%%DOCSDIR%%/html_grammar/esperanto/adv.h.html
+%%DOCSDIR%%/html_grammar/esperanto/verb.h.html
+%%DOCSDIR%%/html_grammar/esperanto/verb1.h.html
+%%DOCSDIR%%/html_grammar/esperanto/verb_modal.h.html
+%%DOCSDIR%%/html_grammar/esperanto/unorder.h.html
+%%DOCSDIR%%/html_grammar/esperanto/core.h.html
+%%DOCSDIR%%/html_grammar/esperanto/core1.h.html
+%%DOCSDIR%%/html_grammar/esperanto/w_frasa.h.html
+%%DOCSDIR%%/html_grammar/esperanto/patch.h.html
+%%DOCSDIR%%/html_grammar/esperanto/main.h.html
+%%DOCSDIR%%/html_grammar/esperanto/lang.cpp.html
+%%DOCSDIR%%/html_grammar/esperanto/lang.h.html
+%%DOCSDIR%%/html_grammar/english/index.html
+%%DOCSDIR%%/html_grammar/english/atom.h.html
+%%DOCSDIR%%/html_grammar/english/num.h.html
+%%DOCSDIR%%/html_grammar/english/sub.h.html
+%%DOCSDIR%%/html_grammar/english/adj.h.html
+%%DOCSDIR%%/html_grammar/english/adv.h.html
+%%DOCSDIR%%/html_grammar/english/verb.h.html
+%%DOCSDIR%%/html_grammar/english/verb_be.h.html
+%%DOCSDIR%%/html_grammar/english/verb_there_is.h.html
+%%DOCSDIR%%/html_grammar/english/verb_have.h.html
+%%DOCSDIR%%/html_grammar/english/verb_mod.h.html
+%%DOCSDIR%%/html_grammar/english/verb_mod_be.h.html
+%%DOCSDIR%%/html_grammar/english/verb_mod_have.h.html
+%%DOCSDIR%%/html_grammar/english/verb_c.h.html
+%%DOCSDIR%%/html_grammar/english/tail.h.html
+%%DOCSDIR%%/html_grammar/english/tail_is.h.html
+%%DOCSDIR%%/html_grammar/english/wh_frasa.h.html
+%%DOCSDIR%%/html_grammar/english/core.h.html
+%%DOCSDIR%%/html_grammar/english/dis_quest.h.html
+%%DOCSDIR%%/html_grammar/english/next_chance.h.html
+%%DOCSDIR%%/html_grammar/english/lang.cpp.html
+%%DOCSDIR%%/html_grammar/english/lang.h.html
+%%DOCSDIR%%/html_grammar/index.html
+%%DOCSDIR%%/releasenote.txt
+%%DOCSDIR%%/programmer.txt
+%%DOCSDIR%%/preproc.txt
+%%DOCSDIR%%/install.txt
+%%DOCSDIR%%/comrade.txt
+%%DOCSDIR%%/about.txt
+@dirrm %%DATADIR%%/dicts/english_russian
+@dirrm %%DATADIR%%/dicts/esperanto_russkij
+@dirrm %%DATADIR%%/dicts/zform/english
+@dirrm %%DATADIR%%/dicts/zform/esperanto
+@dirrm %%DATADIR%%/dicts/zform/russkij
+@dirrm %%DATADIR%%/dicts/zform
+@dirrm %%DATADIR%%/dicts
+@dirrm %%DATADIR%%/grammar/english_russian
+@dirrm %%DATADIR%%/grammar/esperanto_russkij
+@dirrm %%DATADIR%%/grammar
+@dirrm %%DATADIR%%/fonts
+@dirrm %%DATADIR%%
+@dirrm %%DOCSDIR%%/help
+@dirrm %%DOCSDIR%%/latex
+@dirrm %%DOCSDIR%%/html_grammar/english
+@dirrm %%DOCSDIR%%/html_grammar/esperanto
+@dirrm %%DOCSDIR%%/html_grammar
+@dirrm %%DOCSDIR%%

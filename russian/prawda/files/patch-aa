@@ -1,0 +1,158 @@
+--- src/face/common.cpp.orig	Wed Jul 28 19:36:02 2004
++++ src/face/common.cpp	Wed Jul 28 19:39:14 2004
+@@ -9,7 +9,6 @@
+ # include <stdio.h>
+ # include <string.h>
+ # include <stdlib.h>
+-# include <malloc.h>
+ # include "mylib.h"
+ # include "video.h"
+ # include "color.h"
+--- src/face/edit1.cpp.orig	Wed Jul 28 19:36:02 2004
++++ src/face/edit1.cpp	Wed Jul 28 19:39:29 2004
+@@ -7,7 +7,6 @@
+ /***************************************************************************/
+ 
+ # include <stdio.h>
+-# include <malloc.h>
+ # include <string.h>
+ 
+ # include "mylib.h"
+--- src/face/menu.cpp.orig	Wed Jul 28 19:36:02 2004
++++ src/face/menu.cpp	Wed Jul 28 19:39:39 2004
+@@ -7,7 +7,6 @@
+ /*******************************************************************/
+ 
+ # include <stdio.h>
+-# include <malloc.h>
+ # include <string.h>
+ 
+ # include "mylib.h"
+--- src/face/slowo.cpp.orig	Wed Jul 28 19:36:02 2004
++++ src/face/slowo.cpp	Wed Jul 28 19:39:51 2004
+@@ -7,7 +7,6 @@
+ /***************************************************************************/
+ 
+ # include <stdio.h>
+-# include <malloc.h>
+ # include <string.h>
+ # include <dirent.h>
+ # include <sys/types.h>
+--- src/face/slowo1.cpp.orig	Wed Jul 28 19:36:02 2004
++++ src/face/slowo1.cpp	Wed Jul 28 19:40:03 2004
+@@ -6,7 +6,6 @@
+ //     Анисимов Д.В.                                         сегодня
+ /***************************************************************************/
+ # include <stdio.h>
+-# include <malloc.h>
+ # include <string.h>
+ # include <stdlib.h>
+ # include <dirent.h>
+--- src/face/slowo1.h.orig	Wed Jul 28 19:36:02 2004
++++ src/face/slowo1.h	Wed Jul 28 19:40:11 2004
+@@ -9,7 +9,6 @@
+ # define SLOWO1_H
+ 
+ # include <stdio.h>
+-# include <malloc.h>
+ # include <string.h>
+ # include <stdlib.h>
+ # include <dirent.h>
+--- src/face/video_os2.cpp.orig	Wed Jul 28 19:36:02 2004
++++ src/face/video_os2.cpp	Wed Jul 28 19:40:24 2004
+@@ -6,7 +6,6 @@
+ //     Анисимов Д.В.                               сегодня
+ /*******************************************************************/
+ 
+-# include <malloc.h>
+ # include <string.h>
+ # include <conio.h>
+ # include <mylib.h>
+--- src/face/video_t.cpp.orig	Wed Jul 28 19:36:02 2004
++++ src/face/video_t.cpp	Wed Jul 28 19:47:21 2004
+@@ -6,7 +6,6 @@
+ //          Анисимов Д.В.                               сегодня
+ /*******************************************************************/
+ 
+-# include <malloc.h>
+ # include <string.h>
+ # include <curses.h>
+ # include <mylib.h>
+@@ -470,7 +469,7 @@
+ {  char shift=6 ;
+    int  shift1=0 ;
+ 
+-# ifndef _SUN_
++# if !defined(_SUN_) && !defined(__FreeBSD__)
+    if( TermType==CONSOLE )
+    {
+       ioctl( 0,TIOCLINUX,&shift );
+--- src/trans/factorial.cpp.orig	Wed Jul 28 19:36:02 2004
++++ src/trans/factorial.cpp	Wed Jul 28 19:38:06 2004
+@@ -1,5 +1,4 @@
+ # include <stdio.h>
+-# include <malloc.h>
+ 
+ struct t_Factorial
+ {  short  n,      // величина факториала n!
+--- src/trans/grammar.cpp.orig	Wed Jul 28 19:36:02 2004
++++ src/trans/grammar.cpp	Wed Jul 28 19:37:55 2004
+@@ -6,7 +6,6 @@
+ //       Анисимов Д.В.                                     сегодня 
+ /***************************************************************************/
+ # include <stdio.h>
+-# include <malloc.h>
+ # include <string.h>
+ # include <stdlib.h>
+ # include <mylib.h>
+--- src/trans/list.h.orig	Wed Jul 28 19:36:02 2004
++++ src/trans/list.h	Wed Jul 28 19:38:13 2004
+@@ -8,8 +8,6 @@
+ # ifndef LIST_HPP
+ # define LIST_HPP
+ 
+-# include <malloc.h>
+-
+ void list_error( void );
+ 
+ # define DECLARE_LIST_TYPE( t,t1 )  \
+--- src/trans/mylib.h.orig	Wed Jul 28 19:36:02 2004
++++ src/trans/mylib.h	Wed Jul 28 19:38:25 2004
+@@ -9,7 +9,6 @@
+ # define MYLIB_H
+ 
+ # include <stdio.h>
+-# include <malloc.h>
+ # include <stdlib.h>
+ 
+ # define Err_Memory -2
+--- src/trans/slowo3.cpp.orig	Wed Jul 28 19:36:02 2004
++++ src/trans/slowo3.cpp	Wed Jul 28 19:38:33 2004
+@@ -7,7 +7,6 @@
+ /***************************************************************************/
+ 
+ # include <stdio.h>
+-# include <malloc.h>
+ # include <string.h>
+ # include <stdlib.h>
+ 
+--- src/utils/kod.c.orig	Wed Jul 28 19:36:02 2004
++++ src/utils/kod.c	Wed Jul 28 19:54:22 2004
+@@ -3,7 +3,6 @@
+ */
+ # include <stdio.h>
+ # include <string.h>
+-# include <malloc.h>
+ # include <stdlib.h>
+ 
+ # include <dirent.h>
+--- src/utils/zdicts_compress.cpp.orig	Wed Jul 28 19:36:02 2004
++++ src/utils/zdicts_compress.cpp	Wed Jul 28 19:54:41 2004
+@@ -38,7 +38,6 @@
+  *****************************************************************************/
+ # include <stdio.h>
+ # include <string.h>
+-# include <malloc.h>
+ # include <stdlib.h>
+ # include <mylib.cpp>
+ 
