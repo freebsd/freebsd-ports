@@ -1,0 +1,17 @@
+--- modules/alarms.c	Tue Apr 15 18:34:15 1997
++++ modules/alarms.c.new	Sun Jan  2 20:50:02 2000
+@@ -1,5 +1,14 @@
++#ifdef HAVE_CONFIG_H
++#include "../config.h"
++#endif
++
++#ifdef HAVE_NCURSES_NCURSES_H
++#include <ncurses/ncurses.h>
++#include <ncurses/term.h>
++#else
+ #include <curses.h>
+ #include <term.h>
++#endif
+ 
+ #include <stdlib.h>
+ #include <stdio.h>

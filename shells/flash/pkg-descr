@@ -1,0 +1,12 @@
+Flash is an attempt to create a secure menu-driver shell for UNIX-derived OSes,
+while providing user-friendliness and easy configurability. An ideal situation
+requiring the use of flash would be a student-run telnet server which needs to:
+
+a) shelter the users from some of the nastinesses of UNIX
+b) shelter the system from nasty users
+c) provide an easy way to launch applications
+d) support multitasking/job control as elegantly as possible
+e) support easy-to-get-right configuration by administrators
+
+WWW: http://www.netsoc.ucd.ie/flash/
+Author: Steve Fegan <flash@netsoc.ucd.ie>

@@ -1,0 +1,56 @@
+--- Makefile.in	Mon Jun 28 11:28:50 1999
++++ Makefile.in.new	Sun Jan  2 21:49:48 2000
+@@ -7,9 +7,8 @@
+ INITIALMENU = system.menu
+ 
+ # Directory to install everything to
+-prefix = /usr/slocal
+ EXEC_PREFIX = ${prefix}
+-BINDIR = $(EXEC_PREFIX)/bin
++BINDIR = $(EXEC_PREFIX)/sbin
+ LIBDIR = $(prefix)/lib/flash
+ MANDIR = $(prefix)/man/man1
+ 
+@@ -23,29 +22,38 @@
+ TAR = tar
+ TAROPTIONS = zcvf
+ RELNAME = $(PROGNAME).tar.gz
++NCURSES ?=
++NC_CFLAGS ?=
++NC_LFLAGS ?=
+ 
+ # C Compiler
+ CC = gcc
+ DEBUG  = -g
+ #DEBUG = -DDEBUG -g
+ #CPPFLAGS = -I/usr/include/ncurses -DHAVE_CONFIG_H -DPREFIX=\"/usr/slocal\" #-DDEBUG
+-CPPFLAGS = -DHAVE_CONFIG_H -DPREFIX=\"/usr/slocal\" -DDONT_HIGHLIGHT_WITH_REVERSE #-DLITTLE_ENDIAN 
++CPPFLAGS = $(NCURSES) $(NC_CFLAGS) -DHAVE_CONFIG_H -DPREFIX=\"$(prefix)\" -DDONT_HIGHLIGHT_WITH_REVERSE #-DLITTLE_ENDIAN 
+ CFLAGS = -O2 $(CPPFLAGS) $(DEBUG) -Wall -rdynamic
+ 
+-LDFLAGS = -rdynamic
+-LIBRARIES = -lncurses -ldl
++LDFLAGS = -rdynamic $(NC_LFLAGS)
++LIBRARIES = -lncurses
+ 
+ SCREEN_SOURCES = screens/nc_init.c screens/nc_lock.c screens/nc_about.c screens/nc_menus.c screens/nc_misc.c screens/nc_job.c screens/nc_module.c
+ 
++MODULE_PROGS = modules/countdown modules/background
+ SOURCES = main.c parse.c string.c set.c misc.c menu.c exec.c rc.c tree.c parseline.c event.c sha.c module.c debug.c $(SCREEN_SOURCES)
+ OBJECTS = $(SOURCES:.c=.o)
+ 
++all: $(PROGNAME)
++
+ .c.o:
+ 		$(CC) $(CFLAGS) -c -o $@ $<
+ 
+-$(PROGNAME):	$(OBJECTS)
++$(PROGNAME):	$(OBJECTS) $(MODULE_PROGS)
+ 		$(RM) $@
+ 		$(CC) -o $@ $(OBJECTS) $(LDFLAGS) $(LIBRARIES)
++
++$(MODULE_PROGS):
++		$(MAKE) -C modules && $(MAKE)
+ 
+ shacrypt:	
+ 		$(CC) $(CFLAGS) -DO_WRAP -o $@ sha.c

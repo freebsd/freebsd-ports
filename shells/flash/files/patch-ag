@@ -1,0 +1,10 @@
+--- screens/nc_menus.c	Tue Jun 29 05:42:18 1999
++++ screens/nc_menus.c.new	Sat Dec 11 01:36:09 1999
+@@ -783,7 +783,6 @@
+   struct menu *menu;
+   struct menu_items *HK;
+   int noclobber,gotch;
+-  char c;
+ 
+   if (!(firstmenu))
+     return;
