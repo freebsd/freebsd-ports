@@ -1,0 +1,2 @@
+@exec mkdir -p %D/share/doc/xemacs-additional-packages
+@dirrm share/doc/xemacs-additional-packages

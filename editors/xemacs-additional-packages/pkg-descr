@@ -1,0 +1,7 @@
+    This is the additional package for XEmacs(version over 21). You can install
+all packages except for basic(xemacs-packages), basic mule(xemacs-basic-mule)
+and mule(xemacs-mule-packages). You can also install `sumo'-like packages with
+xemacs-packages and xemacs-additional-packages. If you think install
+individual package, try to use other xemacs-*-packages. These packages are
+prepared for installation by xemacs categories.
+
