@@ -7,11 +7,16 @@
 
 PORTNAME=	doxygen
 PORTVERSION=	1.2.10
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.stack.nl/pub/users/dimitri/
 EXTRACT_SUFX=	.src.tar.gz
 
-MAINTAINER=	dchapes@ddm.wox.org
+MAINTAINER=	bsdport@ddm.wox.org
+
+.ifndef NOPORTDOCS
+BUILD_DEPENDS=	dot:${PORTSDIR}/graphics/graphviz
+.endif
 
 USE_QT_VER=	2
 USE_PERL5=	yes
@@ -20,12 +25,15 @@ USE_GMAKE=	yes
 QT_NONSTANDARD=	yes	# non-standard configure arguements
 CONFIGURE_ARGS+=--prefix ${PREFIX} --perl ${PERL} --make ${GMAKE} \
 		--with-doxywizard
+
+.ifndef NOPORTDOCS
 ALL_TARGET=	all docs
 .ifdef HAVE_LATEX
 ALL_TARGET+=	ps
 PLIST_SUB+=	HAVE_LATEX=""
 .else
 PLIST_SUB+=	HAVE_LATEX="@comment "
+.endif
 .endif
 
 pre-configure:
