@@ -10,9 +10,17 @@ The approximate procedure is:
 1) CVSROOT/avail lockout
 2) cvs rtag RELEASE_4_5_0 ports
 
-1) cd /a/steve/4.5/i386/RC3
-2) ./setup.sh (may want to redirect stdout to a file,
-   as this gives copious output.)
-3) ./doit.sh
+PWD=`pwd`
+1) cd $PWD && cvs co -d srcscripts src/release/scripts
+   OR
+   cd $PWD/srcscripts && cvs up -dP
+2) cd $PWD && cvs co -d releng ports/Tools/scripts/release
+   OR
+   cd $PWD/releng && cvs up -dP
+3) cd $PWD/releng
+4) make RELEASE=4.6-RELEASE SRCSCRIPTS=${PWD}/srcscripts
+5) cd 4.6-RELEASE
+6) ./doit.sh
+   [ answer prompts and stuff as it appears ]
 
 More documentation to come later.
