@@ -18,6 +18,4 @@ MAINTAINER=	clive@FreeBSD.org
 
 #RUN_DEPENDS=	${X11BASE}/lib/X11/fonts/TrueType/bsmi00lp.ttf:${PORTSDIR}/chinese/arphicttf
 
-BROKEN=		"Does not patch; will be removed after Feb 2"
-
 .include "${MASTERDIR}/Makefile"
