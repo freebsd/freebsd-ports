@@ -23,7 +23,9 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-cxxflags="${CXXFLAGS}" \
 		--without-sidplay
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib" \
+		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
+		PTHREAD_LIBS="${PTHREAD_LIBS}"
 
 .if !defined(WITHOUT_VORBIS)
 LIB_DEPENDS+=	vorbisfile.3:${PORTSDIR}/audio/libvorbis
