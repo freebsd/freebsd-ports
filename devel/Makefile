@@ -602,6 +602,7 @@
     SUBDIR += p4api
     SUBDIR += p4db
     SUBDIR += p4delta
+    SUBDIR += p4genpatch
     SUBDIR += p4v
     SUBDIR += p5-AI-Pathfinding-AStar
     SUBDIR += p5-Agent
