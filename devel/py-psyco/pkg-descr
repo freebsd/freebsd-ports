@@ -1,0 +1,8 @@
+Psyco shows that it is possible to execute Python code at speeds
+approaching that of fully compiled languages, by "specialization". The
+current prototype operates on i386-compatible processors and shows 2
+to 100 times speed-ups, depending on code.
+
+WWW: http://psyco.sourceforge.net/
+
+- Alex Rodioukov <simuran@shaw.ca>

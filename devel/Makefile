@@ -641,6 +641,7 @@
     SUBDIR += py-period
     SUBDIR += py-plex
     SUBDIR += py-pqueue
+    SUBDIR += py-psyco
     SUBDIR += py-px
     SUBDIR += py-repl
     SUBDIR += py-reverse
