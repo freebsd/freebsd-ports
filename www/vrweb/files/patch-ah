@@ -1,0 +1,26 @@
+--- src/common/Dispatch/connect.C.orig	Wed Oct 20 19:39:20 1999
++++ src/common/Dispatch/connect.C	Wed Oct 20 19:41:38 1999
+@@ -102,7 +102,11 @@
+        if ((iError=WSAGetLastError()) != WSAEWOULDBLOCK) {
+          cerr << "ConnectRequest::ConnectRequest(): ::connect() code:" << iError<<endl;
+ #else
++#ifdef __FreeBSD__
++       if (errno != EINPROGRESS) {
++#else
+        if (::errno != EINPROGRESS) {
++#endif
+            ::perror ("ConnectRequest::ConnectRequest(): ::connect()") ;
+ #endif
+            HGSOCKCLOSE (socket_) ;
+@@ -154,7 +158,11 @@
+    sockaddr_in that ;
+    int thatlen = sizeof (that) ;
+    if (::getpeername (fd, (sockaddr*)&that, &thatlen) < 0) {
++#ifdef __FreeBSD__
++      if (! (errno==ENOTCONN || errno==ECONNREFUSED))
++#else
+       if (! (::errno==ENOTCONN || ::errno==ECONNREFUSED))
++#endif
+          ::perror ("ConnectRequest::outputReady(): ::getpeername()") ;
+       callback->connectError (a) ;
+       ::close (fd) ;

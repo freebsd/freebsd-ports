@@ -1,0 +1,23 @@
+--- src/common/utils/socket.C.orig	Wed Oct 20 19:23:22 1999
++++ src/common/utils/socket.C	Wed Oct 20 19:36:04 1999
+@@ -53,6 +53,8 @@
+ //
+ // 
+ // </file> 
++
++#include <stdio.h>
+ #include "socket.h"
+ 
+ #include "new.h"
+@@ -186,7 +188,11 @@
+ #ifndef WIN32
+    int dupfd = ::dup (fd()) ;
+    if (dupfd < 0) {
++#ifdef __FreeBSD__
++      set_errno_(errno) ;
++#else
+       set_errno_(::errno) ;
++#endif
+       perror_("Socket::accept_(sockaddr&,int&): ::dup()") ;
+       return dupfd ;
+    }

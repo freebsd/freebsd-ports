@@ -1,12 +1,10 @@
-*** src/common/OS/directory.C.orig	Mon Jun 23 02:29:52 1997
---- src/common/OS/directory.C	Mon Jun 23 02:31:27 1997
-***************
-*** 32,37 ****
---- 32,38 ----
-   * includes <sys/dir.h>, which is silly because <sys/dir.h>
-   * needs <sys/types.h>.
-   */
-+ #include <machine/types.h>
-  #include "types.h"
-  #ifdef apollo
-  #include <sys/dir.h>
+--- src/common/OS/directory.C.orig	Thu Jan 30 18:58:15 1997
++++ src/common/OS/directory.C	Fri Oct 22 14:58:52 1999
+@@ -32,6 +32,7 @@
+  * includes <sys/dir.h>, which is silly because <sys/dir.h>
+  * needs <sys/types.h>.
+  */
++#include <sys/types.h>
+ #include "types.h"
+ #ifdef apollo
+ #include <sys/dir.h>

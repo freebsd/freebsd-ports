@@ -15,8 +15,6 @@ MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	GL.14:${PORTSDIR}/graphics/Mesa3
 
-BROKEN=		install
-
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 

@@ -1,5 +1,5 @@
---- src/harmony/scene/mesacontext.C.orig	Thu Apr 23 16:08:17 1998
-+++ src/harmony/scene/mesacontext.C	Thu Apr 23 16:08:47 1998
+--- src/harmony/scene/mesacontext.C.orig	Wed Feb 26 02:06:48 1997
++++ src/harmony/scene/mesacontext.C	Fri Oct 22 15:19:42 1999
 @@ -95,8 +95,8 @@
  
  #include <IV-X11/Xdefs.h>      /* Display, Font of X11 */
@@ -11,3 +11,11 @@
  #include <IV-X11/Xundefs.h>  /* get back to IV's names */
  
  #include <iostream.h>
+@@ -236,6 +236,7 @@
+     xdpy, &xvisinfo_, 1,  // rgb mode
+     0,  // no alpha planes (Mesa 2.0)
+     double_buffered_,
++    0,
+     imgcontext,  // ximage or pixmap
+     1, 0, 0,  // depth buffer, no stencil, no accum (Mesa 2.0)
+     0  // level (Mesa 2.0)
