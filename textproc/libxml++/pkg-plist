@@ -9,9 +9,12 @@ include/libxml++-1.0/libxml++/exceptions/parse_error.h
 include/libxml++-1.0/libxml++/exceptions/validity_error.h
 include/libxml++-1.0/libxml++/keepblanks.h
 include/libxml++-1.0/libxml++/libxml++.h
+include/libxml++-1.0/libxml++/nodes/cdatanode.h
 include/libxml++-1.0/libxml++/nodes/commentnode.h
+include/libxml++-1.0/libxml++/nodes/contentnode.h
 include/libxml++-1.0/libxml++/nodes/element.h
 include/libxml++-1.0/libxml++/nodes/node.h
+include/libxml++-1.0/libxml++/nodes/processinginstructionnode.h
 include/libxml++-1.0/libxml++/nodes/textnode.h
 include/libxml++-1.0/libxml++/noncopyable.h
 include/libxml++-1.0/libxml++/parsers/domparser.h
@@ -19,7 +22,7 @@ include/libxml++-1.0/libxml++/parsers/parser.h
 include/libxml++-1.0/libxml++/parsers/saxparser.h
 lib/libxml++-0.1.a
 lib/libxml++-0.1.so
-lib/libxml++-0.1.so.9
+lib/libxml++-0.1.so.10
 libdata/pkgconfig/libxml++-1.0.pc
 share/aclocal/libxml++.m4
 @dirrm include/libxml++-1.0/libxml++/exceptions
