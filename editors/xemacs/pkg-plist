@@ -151,6 +151,7 @@ lib/xemacs-%%XEMACS_VER%%/etc/photos/fabrice.png
 lib/xemacs-%%XEMACS_VER%%/etc/photos/fabricem.png
 lib/xemacs-%%XEMACS_VER%%/etc/photos/hniksic.png
 lib/xemacs-%%XEMACS_VER%%/etc/photos/hniksicm.png
+lib/xemacs-%%XEMACS_VER%%/etc/photos/jan.png
 lib/xemacs-%%XEMACS_VER%%/etc/photos/jareth.png
 lib/xemacs-%%XEMACS_VER%%/etc/photos/jarethm.png
 lib/xemacs-%%XEMACS_VER%%/etc/photos/jens.png
@@ -523,7 +524,6 @@ lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/s/esix.h
 lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/s/esix5r4.h
 lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/s/ewsux5r4.h
 lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/s/freebsd.h
-lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/s/freebsd.h.orig
 lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/s/gnu.h
 lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/s/hpux.h
 lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/s/hpux10-shr.h
@@ -814,6 +814,7 @@ lib/xemacs-%%XEMACS_VER%%/info/lispref.info-45
 lib/xemacs-%%XEMACS_VER%%/info/lispref.info-46
 lib/xemacs-%%XEMACS_VER%%/info/lispref.info-47
 lib/xemacs-%%XEMACS_VER%%/info/lispref.info-48
+lib/xemacs-%%XEMACS_VER%%/info/lispref.info-49
 lib/xemacs-%%XEMACS_VER%%/info/lispref.info-5
 lib/xemacs-%%XEMACS_VER%%/info/lispref.info-6
 lib/xemacs-%%XEMACS_VER%%/info/lispref.info-7
