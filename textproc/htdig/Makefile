@@ -7,6 +7,7 @@
 
 PORTNAME=	htdig
 PORTVERSION=	3.1.5
+PORTREVISION=	1
 CATEGORIES=	textproc www
 MASTER_SITES=	http://www.htdig.org/files/ \
 		${MASTER_SITE_SUNSITE} \
@@ -16,7 +17,7 @@ MASTER_SITES=	http://www.htdig.org/files/ \
 		ftp://ftp.htdig.org/pub/htdig/
 MASTER_SITE_SUBDIR=	apps/www/indexing
 
-MAINTAINER=	billf@FreeBSD.org
+MAINTAINER=	DougB@FreeBSD.org
 
 RUN_DEPENDS=	${LOCALBASE}/share/doc/apache:${PORTSDIR}/www/apache13
 
