@@ -3,14 +3,14 @@
 # Date created:		7 Apr 1998
 # Whom:			Robert Nordier <rnordier@iafrica.com>
 #
-# $Id: Makefile,v 1.1.1.1 1998/04/13 00:09:29 jmg Exp $
+# $Id: Makefile,v 1.2 1998/04/14 11:49:14 rnordier Exp $
 #
 
 DISTNAME=	TenDRA-4.1.2
 CATEGORIES=	lang
 MASTER_SITES=	ftp://alph.dera.gov.uk/pub/TenDRA/
 
-MAINTAINER=	rnordier@iafrica.com
+MAINTAINER=	rnordier@FreeBSD.ORG
 
 OSREL!=		uname -r
 PLIST=		${WRKDIR}/PLIST
