@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.servlets.com/cos/
 
 MAINTAINER=	noway@nohow.demon.co.uk
 
-RUN_DEPENDS=	${LOCALBASE}/jdk${JDK_VERSION}/bin/java:${PORTSDIR}/java/jdk \
+RUN_DEPENDS=	${LOCALBASE}/jdk${JDK_VERSION}/bin/java:${PORTSDIR}/java/jdk11 \
 		${LOCALBASE}/bin/servletrunner:${PORTSDIR}/java/jsdk
 
 USE_ZIP=	yes

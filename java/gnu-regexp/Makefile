@@ -13,8 +13,8 @@ DISTNAME=	gnu.regexp-${PORTVERSION}
 
 MAINTAINER=	des@FreeBSD.org
 
-BUILD_DEPENDS=	${LOCALBASE}/jdk1.1.8/bin/javac:${PORTSDIR}/java/jdk
-RUN_DEPENDS=	${LOCALBASE}/jdk1.1.8/bin/java:${PORTSDIR}/java/jdk
+BUILD_DEPENDS=	${LOCALBASE}/jdk1.1.8/bin/javac:${PORTSDIR}/java/jdk11
+RUN_DEPENDS=	${LOCALBASE}/jdk1.1.8/bin/java:${PORTSDIR}/java/jdk11
 
 NO_BUILD=	yes
 

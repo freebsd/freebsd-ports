@@ -13,7 +13,7 @@ EXTRACT_SUFX=	.zip
 
 MAINTAINER=	noway@nohow.demon.co.uk
 
-RUN_DEPENDS=	${PREFIX}/jdk${JDK_VERSION}/bin/java:${PORTSDIR}/java/jdk \
+RUN_DEPENDS=	${PREFIX}/jdk${JDK_VERSION}/bin/java:${PORTSDIR}/java/jdk11 \
 		${PREFIX}/share/java/classes/collections.jar:${PORTSDIR}/java/collections
 
 USE_ZIP=	YES
