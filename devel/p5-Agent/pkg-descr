@@ -1,0 +1,8 @@
+Agent Perl provides both a foundation for software agent developers, and a
+standardized API for the agent's users.  Agent's two most prominent features
+are its support for agent transportation and abstract messaging over
+different mediums.
+
+Author: Steve Purkis <spurkis@engsoc.carleton.ca>
+
+--will
