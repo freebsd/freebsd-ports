@@ -1,5 +1,5 @@
---- Makefile	Fri Sep 27 00:05:30 1996
-+++ /home/andy/tmp/wrk/Makefile	Fri May  7 09:48:58 1999
+--- Makefile.orig	Thu Sep 26 13:05:30 1996
++++ Makefile	Sun Oct 20 14:24:16 2002
 @@ -18,8 +18,8 @@
  
  MAN=man
@@ -30,7 +30,7 @@
  
  install: all
  	$(INSTALL) -d -o root -g root -m 755 $(bindir)
-@@ -56,13 +56,14 @@
+@@ -56,13 +56,13 @@
  
  # DO NOT DELETE
  
@@ -46,12 +46,11 @@
 -dbview.o: /usr/include/_G_config.h /usr/include/getopt.h
 +db_dump.o: db_dump.h /usr/include/fcntl.h /usr/include/sys/types.h
 +db_dump.o: /usr/include/sys/cdefs.h /usr/include/inttypes.h
-+db_dump.o: /usr/include/machine/ansi.h /usr/include/machine/types.h
 +db_dump.o: /usr/include/machine/endian.h /usr/include/sys/stat.h
 +db_dump.o: /usr/include/sys/time.h /usr/include/time.h
-+db_dump.o: /usr/include/sys/_posix.h /usr/include/stdio.h
++db_dump.o: /usr/include/stdio.h
 +db_dump.o: /usr/include/unistd.h /usr/include/sys/unistd.h
 +db_dump.o: /usr/include/stdlib.h /usr/include/stdlib.h /usr/include/ctype.h
 +db_dump.o: /usr/include/runetype.h /usr/include/string.h
 +dbview.o: version.h db_dump.h /usr/include/stdio.h /usr/include/sys/cdefs.h
-+dbview.o: /usr/include/machine/ansi.h /usr/local/include/getopt.h
++dbview.o: /usr/local/include/getopt.h
