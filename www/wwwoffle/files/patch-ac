@@ -1,0 +1,11 @@
+--- src/testprogs/Makefile.in.orig	Tue Feb 26 18:53:40 2002
++++ src/testprogs/Makefile.in	Tue Feb 26 18:53:09 2002
+@@ -28,7 +28,7 @@
+ 
+ ########
+ 
+-INCLUDE=@ZLIB_INC@
++INCLUDE=@ZLIB_INC@ -I..
+ LIBRARY=@LIBS@ @ZLIB_LIB@
+ 
+ COMPILE=$(CC) -c $(CFLAGS)
