@@ -1,3 +1,5 @@
+@unexec cmp %D/etc/privoxy/config.sample %D/etc/privoxy/config && rm %D/etc/privoxy/config
+@unexec cmp %D/etc/privoxy/user.action.sample %D/etc/privoxy/user.action && rm %D/etc/privoxy/user.action
 etc/privoxy/config.sample
 etc/privoxy/default.action
 etc/privoxy/default.filter
@@ -85,6 +87,7 @@ sbin/privoxy
 %%DOCSDIR%%/user-manual/templates.html
 %%DOCSDIR%%/user-manual/upgradersnote.html
 @dirrm etc/privoxy/templates
+@unexec rmdir %D/etc/privoxy 2>/dev/null || true
 @dirrm %%DOCSDIR%%/developer-manual
 @dirrm %%DOCSDIR%%/faq
 @dirrm %%DOCSDIR%%/images
