@@ -1,0 +1,6 @@
+#!/bin/sh
+rm -rf errors logs make.* old-errors packages 
+mv bak/* .
+cd ..
+rm -rf distfiles
+#mv bak/distfiles .
