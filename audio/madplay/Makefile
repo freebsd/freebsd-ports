@@ -7,6 +7,7 @@
 
 PORTNAME=	madplay
 PORTVERSION=	0.15.0b
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://ftp.mars.org/pub/mpeg/
@@ -24,6 +25,7 @@ WANT_GNOME=	yes
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib"
+ALL_TARGET=	all madtime
 
 MAN1=		abxtest.1 madplay.1
 
@@ -35,5 +37,8 @@ PKGNAMESUFFIX=	-esound
 .else
 CONFIGURE_ARGS+=	--without-esd
 .endif
+
+post-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/madtime ${PREFIX}/bin
 
 .include <bsd.port.post.mk>
