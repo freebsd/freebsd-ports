@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tkhonyaku
-PORTVERSION=	1.0
+PORTVERSION=	1.3
 CATEGORIES=	japanese
 MASTER_SITES=	http://www.yk.rim.or.jp/~kawagisi/
 
@@ -16,23 +16,21 @@ RUN_DEPENDS=	${LOCALBASE}/bin/wish8.0jp:${PORTSDIR}/japanese/tk80
 
 NO_BUILD=	yes
 
-PLIST_SUB=	DISTNAME="${DISTNAME}"
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
-pre-patch:
-	${MKDIR} ${WRKSRC}
-	@${MV} ${WRKSRC}/../colors.gif ${WRKSRC}
-	@${MV} ${WRKSRC}/../tkhonyaku ${WRKSRC}
-	@${MV} ${WRKSRC}/../tkhonyaku-readme ${WRKSRC}
-	@${MV} ${WRKSRC}/../tkhonyaku.gif ${WRKSRC}
-	@${MV} ${WRKSRC}/../tkhonyaku.xpm ${WRKSRC}
+post-patch:
+	${PERL} -i -pe 's,/usr/local/tkhonyaku,${PREFIX}/tkhonyaku,g' \
+		${WRKSRC}/tkhonyaku ${WRKSRC}/tkhonyaku-readme
 
 do-install:
+	${MKDIR} ${PREFIX}/share/tkhonyaku
+	${INSTALL_DATA} ${WRKSRC}/tkhonyaku.gif ${PREFIX}/share/tkhonyaku/
+	${INSTALL_DATA} ${WRKSRC}/tkhonyaku.xpm ${PREFIX}/share/tkhonyaku/
+	${INSTALL_DATA} ${WRKSRC}/colors.gif ${PREFIX}/share/tkhonyaku/
+	${INSTALL_SCRIPT} ${WRKSRC}/tkhonyaku ${PREFIX}/bin/
+.if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/tkhonyaku
-	${MKDIR} ${PREFIX}/tkhonyaku
-	@${CP} ${WRKSRC}/tkhonyaku-readme ${PREFIX}/share/doc/tkhonyaku/
-	@${CP} ${WRKSRC}/colors.gif ${PREFIX}/tkhonyaku
-	@${CP} ${WRKSRC}/tkhonyaku.gif ${PREFIX}/tkhonyaku/
-	@${CP} ${WRKSRC}/tkhonyaku.xpm ${PREFIX}/tkhonyaku/
-	@${CP} ${WRKSRC}/tkhonyaku ${PREFIX}/bin
+	${INSTALL_DATA} ${WRKSRC}/tkhonyaku-readme ${PREFIX}/share/doc/tkhonyaku/
+.endif
 
 .include <bsd.port.mk>

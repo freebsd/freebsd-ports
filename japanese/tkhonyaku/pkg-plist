@@ -1,7 +1,7 @@
 share/doc/tkhonyaku/tkhonyaku-readme
-tkhonyaku/colors.gif
-tkhonyaku/tkhonyaku.gif
-tkhonyaku/tkhonyaku.xpm
+share/tkhonyaku/tkhonyaku.gif
+share/tkhonyaku/tkhonyaku.xpm
+share/tkhonyaku/colors.gif
 bin/tkhonyaku
 @dirrm share/doc/tkhonyaku
-@dirrm tkhonyaku
+@dirrm share/tkhonyaku
