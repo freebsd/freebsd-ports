@@ -35,6 +35,4 @@ MAN1=		pkcs15-crypt.1 pkcs15-init.1 pkcs15-tool.1 \
 MAN5=		pkcs15-profile.5
 MAN7=		pkcs15.7 opensc.7
 
-CFLAGS+=	-fPIC
-
 .include <bsd.port.mk>
