@@ -20,6 +20,7 @@
     SUBDIR += fwtk
     SUBDIR += gag
     SUBDIR += gnupg
+    SUBDIR += gnupg-rsa
     SUBDIR += gpasman
     SUBDIR += gtkportscan
     SUBDIR += heimdal
