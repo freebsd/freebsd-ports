@@ -386,6 +386,8 @@ lib/xemacs/xemacs-packages/lisp/auctex/tex-jp.elc
 lib/xemacs/xemacs-packages/lisp/auctex/tex-site.el
 lib/xemacs/xemacs-packages/lisp/auctex/tex.el
 lib/xemacs/xemacs-packages/lisp/auctex/tex.elc
+lib/xemacs/xemacs-packages/lisp/auctex/texmathp.el
+lib/xemacs/xemacs-packages/lisp/auctex/texmathp.elc
 lib/xemacs/xemacs-packages/lisp/c-support/ChangeLog
 lib/xemacs/xemacs-packages/lisp/c-support/_pkg.el
 lib/xemacs/xemacs-packages/lisp/c-support/auto-autoloads.el
@@ -727,6 +729,8 @@ lib/xemacs/xemacs-packages/lisp/mail-lib/custom-load.el
 lib/xemacs/xemacs-packages/lisp/mail-lib/custom-load.elc
 lib/xemacs/xemacs-packages/lisp/mail-lib/highlight-headers.el
 lib/xemacs/xemacs-packages/lisp/mail-lib/highlight-headers.elc
+lib/xemacs/xemacs-packages/lisp/mail-lib/mailheader.el
+lib/xemacs/xemacs-packages/lisp/mail-lib/mailheader.elc
 lib/xemacs/xemacs-packages/lisp/mail-lib/mail-abbrevs.el
 lib/xemacs/xemacs-packages/lisp/mail-lib/mail-abbrevs.elc
 lib/xemacs/xemacs-packages/lisp/mail-lib/mail-extr.el
@@ -964,6 +968,28 @@ lib/xemacs/xemacs-packages/lisp/sh-script/executable.el
 lib/xemacs/xemacs-packages/lisp/sh-script/executable.elc
 lib/xemacs/xemacs-packages/lisp/sh-script/sh-script.el
 lib/xemacs/xemacs-packages/lisp/sh-script/sh-script.elc
+lib/xemacs/xemacs-packages/lisp/texinfo/ChangeLog
+lib/xemacs/xemacs-packages/lisp/texinfo/_pkg.el
+lib/xemacs/xemacs-packages/lisp/texinfo/auto-autoloads.el
+lib/xemacs/xemacs-packages/lisp/texinfo/auto-autoloads.elc
+lib/xemacs/xemacs-packages/lisp/texinfo/custom-load.el
+lib/xemacs/xemacs-packages/lisp/texinfo/custom-load.elc
+lib/xemacs/xemacs-packages/lisp/texinfo/detexinfo.el
+lib/xemacs/xemacs-packages/lisp/texinfo/detexinfo.elc
+lib/xemacs/xemacs-packages/lisp/texinfo/informat.el
+lib/xemacs/xemacs-packages/lisp/texinfo/informat.elc
+lib/xemacs/xemacs-packages/lisp/texinfo/makeinfo.el
+lib/xemacs/xemacs-packages/lisp/texinfo/makeinfo.elc
+lib/xemacs/xemacs-packages/lisp/texinfo/tex-mode.el
+lib/xemacs/xemacs-packages/lisp/texinfo/tex-mode.elc
+lib/xemacs/xemacs-packages/lisp/texinfo/texinfmt.el
+lib/xemacs/xemacs-packages/lisp/texinfo/texinfmt.elc
+lib/xemacs/xemacs-packages/lisp/texinfo/texinfo.el
+lib/xemacs/xemacs-packages/lisp/texinfo/texinfo.elc
+lib/xemacs/xemacs-packages/lisp/texinfo/texnfo-tex.el
+lib/xemacs/xemacs-packages/lisp/texinfo/texnfo-tex.elc
+lib/xemacs/xemacs-packages/lisp/texinfo/texnfo-upd.el
+lib/xemacs/xemacs-packages/lisp/texinfo/texnfo-upd.elc
 lib/xemacs/xemacs-packages/lisp/text-modes/ChangeLog
 lib/xemacs/xemacs-packages/lisp/text-modes/_pkg.el
 lib/xemacs/xemacs-packages/lisp/text-modes/auto-autoloads.el
@@ -1148,6 +1174,8 @@ lib/xemacs/xemacs-packages/lisp/w3/w3-hotindex.el
 lib/xemacs/xemacs-packages/lisp/w3/w3-hotindex.elc
 lib/xemacs/xemacs-packages/lisp/w3/w3-imap.el
 lib/xemacs/xemacs-packages/lisp/w3/w3-imap.elc
+lib/xemacs/xemacs-packages/lisp/w3/w3-java.el
+lib/xemacs/xemacs-packages/lisp/w3/w3-java.elc
 lib/xemacs/xemacs-packages/lisp/w3/w3-jscript.el
 lib/xemacs/xemacs-packages/lisp/w3/w3-jscript.elc
 lib/xemacs/xemacs-packages/lisp/w3/w3-keyword.el
@@ -1244,6 +1272,8 @@ lib/xemacs/xemacs-packages/lisp/xemacs-base/passwd.el
 lib/xemacs/xemacs-packages/lisp/xemacs-base/passwd.elc
 lib/xemacs/xemacs-packages/lisp/xemacs-base/pp.el
 lib/xemacs/xemacs-packages/lisp/xemacs-base/pp.elc
+lib/xemacs/xemacs-packages/lisp/xemacs-base/regexp-opt.el
+lib/xemacs/xemacs-packages/lisp/xemacs-base/regexp-opt.elc
 lib/xemacs/xemacs-packages/lisp/xemacs-base/regi.el
 lib/xemacs/xemacs-packages/lisp/xemacs-base/regi.elc
 lib/xemacs/xemacs-packages/lisp/xemacs-base/ring.el
@@ -1294,8 +1324,6 @@ lib/xemacs/xemacs-packages/lisp/xemacs-devel/pretty-print.el
 lib/xemacs/xemacs-packages/lisp/xemacs-devel/pretty-print.elc
 lib/xemacs/xemacs-packages/lisp/xemacs-devel/profile.el
 lib/xemacs/xemacs-packages/lisp/xemacs-devel/profile.elc
-lib/xemacs/xemacs-packages/lisp/xemacs-devel/regexp-opt.el
-lib/xemacs/xemacs-packages/lisp/xemacs-devel/regexp-opt.elc
 lib/xemacs/xemacs-packages/lisp/xemacs-devel/reposition.el
 lib/xemacs/xemacs-packages/lisp/xemacs-devel/reposition.elc
 lib/xemacs/xemacs-packages/lisp/xemacs-devel/trace.el
@@ -1335,6 +1363,7 @@ lib/xemacs/xemacs-packages/pkginfo/MANIFEST.prog-modes
 lib/xemacs/xemacs-packages/pkginfo/MANIFEST.psgml
 lib/xemacs/xemacs-packages/pkginfo/MANIFEST.sgml
 lib/xemacs/xemacs-packages/pkginfo/MANIFEST.sh-script
+lib/xemacs/xemacs-packages/pkginfo/MANIFEST.texinfo
 lib/xemacs/xemacs-packages/pkginfo/MANIFEST.text-modes
 lib/xemacs/xemacs-packages/pkginfo/MANIFEST.time
 lib/xemacs/xemacs-packages/pkginfo/MANIFEST.vc
@@ -1360,6 +1389,7 @@ lib/xemacs/xemacs-packages/pkginfo/MANIFEST.xemacs-devel
 @dirrm lib/xemacs/xemacs-packages/lisp/vc
 @dirrm lib/xemacs/xemacs-packages/lisp/time
 @dirrm lib/xemacs/xemacs-packages/lisp/text-modes
+@dirrm lib/xemacs/xemacs-packages/lisp/texinfo
 @dirrm lib/xemacs/xemacs-packages/lisp/sh-script
 @dirrm lib/xemacs/xemacs-packages/lisp/sgml
 @dirrm lib/xemacs/xemacs-packages/lisp/psgml
