@@ -2491,6 +2491,7 @@ grisbi		ports/finance/grisbi
 grn		ports/news/grn
 gromit		ports/x11/gromit
 groundhog	ports/games/groundhog
+growspd		ports/sysutils/growspd
 grpn		ports/math/grpn
 gru		ports/games/gru
 grub		ports/sysutils/grub
