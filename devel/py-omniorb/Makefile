@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	omniorb
-PORTVERSION=	2.3
-PORTREVISION=	1
+PORTVERSION=	2.5
 CATEGORIES=	devel python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME:L}
@@ -32,25 +31,21 @@ OMNIORB_WRKSRC!=	cd ${.CURDIR}/../omniORB && ${MAKE} -V WRKSRC
 
 USE_PYTHON=	yes
 USE_GMAKE=	yes
+USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 MAKEFILE=	GNUmakefile
 INSTALLS_SHLIB=	yes
 USE_REINPLACE=	yes
 
 CONFIGURE_SCRIPT=	../configure
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV+=	CC=${CC} CFLAGS="${CFLAGS}" CXX=${CXX} CXXFLAGS="${CXXFLAGS}" \
 		CPP=${CPP} PYTHON=${PYTHON_CMD}
-CONFIGURE_ARGS=	--with-openssl=/usr --with-omniorb=${LOCALBASE}
-
-CPIO=		cpio --quiet -pdum
-
-MODULEDIRS=	CosNaming CosNaming__POA omniORB
-DOCSDIR=	${PREFIX}/share/doc/omniORBpy
-EXAMPLESDIR=	${PREFIX}/share/examples/omniORBpy
+CONFIGURE_ARGS=	--with-openssl=${OPENSSLBASE} --with-omniorb=${LOCALBASE}
 
 pre-configure:
-	@ ${MKDIR} ${CONFIGURE_WRKSRC}
-	@ cd ${OMNIORB_WRKSRC} && ${FIND} idl | ${CPIO} ${WRKSRC}
+	@${MKDIR} ${CONFIGURE_WRKSRC}
+	@cd ${OMNIORB_WRKSRC} && ${FIND} idl | ${CPIO} --quiet -pdum ${WRKSRC}
 
 post-patch:
 	@${REINPLACE_CMD} -Ee 's#-pthread|-lc_r#${PTHREAD_LIBS}#' \
@@ -58,14 +53,14 @@ post-patch:
 
 pre-install:
 .if !defined(NOPORTDOCS)
-	@ ${MKDIR} ${DOCSDIR}/html
-	@ ${MKDIR} ${DOCSDIR}/tex
-	@ ${INSTALL_DATA} ${WRKSRC}/doc/omniORBpy.* ${DOCSDIR}
-	@ ${INSTALL_DATA} ${WRKSRC}/doc/omniORBpy/* ${DOCSDIR}/html
-	@ ${INSTALL_DATA} ${WRKSRC}/doc/tex/* ${DOCSDIR}/tex
-	@ ${MKDIR} ${EXAMPLESDIR}
-	@ cd ${WRKSRC}/examples && ${FIND} . \
-	  | ${CPIO} -R ${SHAREOWN}:${SHAREGRP} ${EXAMPLESDIR}
+	@${MKDIR} ${DOCSDIR}/html
+	@${MKDIR} ${DOCSDIR}/tex
+	@${INSTALL_DATA} ${WRKSRC}/doc/omniORBpy.* ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/doc/omniORBpy/* ${DOCSDIR}/html
+	@${INSTALL_DATA} ${WRKSRC}/doc/tex/* ${DOCSDIR}/tex
+	@${MKDIR} ${EXAMPLESDIR}
+	@cd ${WRKSRC}/examples && ${FIND} . \
+	  | ${CPIO} --quiet -pdum -R ${SHAREOWN}:${SHAREGRP} ${EXAMPLESDIR}
 .endif
 
 .include <bsd.port.mk>

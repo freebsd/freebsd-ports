@@ -17,7 +17,7 @@ include/omniORBpy.h
 %%PYTHON_SITELIBDIR%%/_omnicodesetsmodule.so.2.0
 %%PYTHON_SITELIBDIR%%/_omnipymodule.so
 %%PYTHON_SITELIBDIR%%/_omnipymodule.so.2
-%%PYTHON_SITELIBDIR%%/_omnipymodule.so.2.3
+%%PYTHON_SITELIBDIR%%/_omnipymodule.so.2.4
 %%PYTHON_SITELIBDIR%%/_omnisslTPmodule.so
 %%PYTHON_SITELIBDIR%%/_omnisslTPmodule.so.2
 %%PYTHON_SITELIBDIR%%/_omnisslTPmodule.so.2.0
