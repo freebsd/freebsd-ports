@@ -739,3 +739,4 @@ irc/irssi+perl|irc/irssi|2004-01-05|Main irssi port has Perl support
 devel/simpleparse|devel/py-simpleparse|2004-01-06|readd as py-simpleparse
 devel/anjuta-devel|devel/anjuta|2004-01-07|moved to devel/anjuta as new stable release
 x11-toolkits/guile-gobject||2004-01-07|Broken for a while, with no new versions
+devel/glade||2004-01-07|Superseded by devel/glade2
