@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.169 1998/12/15 22:06:25 kuriyama Exp $
+# $Id: Makefile,v 1.170 1998/12/16 18:50:20 sada Exp $
 #
 
     SUBDIR += Canna
@@ -15,6 +15,7 @@
     SUBDIR += chimera
     SUBDIR += diclookup-mule
     SUBDIR += dserver
+    SUBDIR += dvi2dvi
     SUBDIR += dvi2ps
     SUBDIR += dvi2tty
     SUBDIR += dvipsk
