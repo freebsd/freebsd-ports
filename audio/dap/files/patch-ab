@@ -1,0 +1,112 @@
+--- main/Makefile.freebsd.orig	Wed Sep 16 09:26:42 1998
++++ main/Makefile.freebsd	Wed Sep 16 18:34:39 1998
+@@ -0,0 +1,83 @@
++CC      = gcc
++CXX     = g++
++FORMS   = /usr/X11R6/include
++SOUND   = ../sound
++SPKIT   = ../spkit
++TOOLTIP = ../tooltips
++BACKDIR = ../mainbak
++HOMEDIR = $(HOME)
++INCDIR  = -I. -I$(SOUND) -I$(SPKIT) -I$(FORMS) -I$(TOOLTIP) -I/usr/include
++LIBDIR  = -L$(SPKIT)/spkit -L$(FORMS) -L$(TOOLTIP) -L/usr/lib -L/usr/X11R6/lib
++CCFLAGS = $(CFLAGS) $(INCDIR) -DLINUX -DUSINGGCC
++LDFLAGS = $(LIBDIR) -ldsp -ltooltips -lxforms -lXpm -lX11 -lm
++
++PROGS =	DAP
++OBJS  = DPTich.o DPTich_cb.o DPTich_DSP.o DPTich_edit_cb.o DPTich_macros.o \
++        DPTich_effect_cb.o DPTich_main.o DPSampleXforms.o DPTich_prefs.o \
++        DPTich_linux_audio.o DPTich_linux_audiofile.o \
++        DPTich_linux_macros.o DPTich_linux_ieee.o  \
++        $(SOUND)/DPSample.o $(SOUND)/DPResample.o $(SOUND)/DPMixPlay.o \
++        DPCrossButton.o
++
++.c.o:
++	$(CC) $(CCFLAGS) -c $*.c -o $*.o
++
++.cc.o:
++	$(CXX) $(CCFLAGS) -c $*.cc -o $*.o
++
++all: $(PROGS)
++
++DAP: $(OBJS)
++	$(CXX) $(OBJS) -o DAP $(LDFLAGS) 
++
++clean:
++	-rm -f $(OBJS) core
++
++empty:
++	-rm -f $(OBJS) $(PROGS) core
++
++back:
++	"cp" *.c $(BACKDIR)
++	"cp" *.cc $(BACKDIR)
++	"cp" *.h $(BACKDIR)
++	"cp" *.fd $(BACKDIR)
++	"cp" icons/*.gif $(BACKDIR)/icons
++	"cp" icons/*.xpm $(BACKDIR)/icons
++	"cp" Makefile.* $(BACKDIR)
++	lha a $(HOMEDIR)/tich3.lzh *.c *.cc *.h *.fd icons/*.gif icons/*.xpm \
++	Makefile.*
++
++restore:
++	lha x $(HOMEDIR)/tich3.lzh
++
++print:
++	a2ps \
++	DPTich_main.h \
++	DPTich_main.cc \
++	DPTich_prefs.h \
++	DPTich_prefs.cc \
++	DPTich_macros.h \
++	DPTich_macros.cc \
++	DPTich_cb.h \
++	DPTich_cb.cc \
++	DPTich_edit_cb.cc \
++	DPTich_effect_cb.cc \
++	DPTich_effect.h \
++	DPTich_DSP.h \
++	DPTich_DSP.cc \
++	DPTich_linux_macros.h \
++	DPTich_linux_macros.c \
++	DPTich_linux_audio.h \
++	DPTich_linux_audio.c \
++	DPTich_linux_audiofile.h \
++	DPTich_linux_audiofile.c \
++	DPTich_linux_ieee.h \
++	DPTich_linux_ieee.c \
++	DPSampleXforms.h \
++	DPSampleXforms.cc \
++	DPCrossButton.h \
++	DPCrossButton.c \
++	DPTich.h \
++	DPTich.c \
++	Makefile.* \
++	>$(HOMEDIR)/tich3.ps
+--- main/DPTich_linux_audio.h.orig	Wed Sep 16 18:40:00 1998
++++ main/DPTich_linux_audio.h	Wed Sep 16 18:43:04 1998
+@@ -23,7 +23,11 @@
+ #define _DPTich_linux_audio_h
+ 
+ #include <stdio.h>
++#ifdef	__FreeBSD__
++#include <stdio.h>
++#else
+ #include <malloc.h>
++#endif
+ #include <unistd.h>
+ #include <fcntl.h>
+ #include <limits.h>
+@@ -31,7 +35,11 @@
+ #include <sys/types.h>
+ #include <sys/stat.h>
+ #include <sys/ioctl.h>
++#ifdef	__FreeBSD__
++#include <machine/soundcard.h>
++#else
+ #include <sys/soundcard.h>
++#endif
+ 
+ #ifdef __cplusplus
+ extern "C"

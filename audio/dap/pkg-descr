@@ -1,0 +1,9 @@
+DAP is a comprehensive audio sample editing and processing suite. DAP
+currently supports AIFF and AIFF-C audio files, 8 or 16 bit resolution
+and 1, 2 or 4 channels of audio data. Note however that on Linux and
+Solaris, compressed AIFF-C files are not currently supported, only
+non-compressed AIFF and AIFF-C files.
+
+The package itself offers comprehensive editing, playback and recording
+facilities including full time stretch resampling, manual data editing
+and a reasonably complete DSP processing suite. 

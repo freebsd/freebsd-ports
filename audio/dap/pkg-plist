@@ -1,0 +1,6 @@
+bin/DAP
+share/doc/DAP/COPYING
+share/doc/DAP/README
+share/doc/DAP/THANKS
+share/doc/DAP/TODO
+@dirrm share/doc/DAP
