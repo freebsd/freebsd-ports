@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://ftp.bic.mni.mcgill.ca/pub/mpeg/
 MAINTAINER=	ports@FreeBSD.org
 
 GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	OPTIMIZE="${CFLAGS}"
 
 pre-install:
 	@${MKDIR} ${PREFIX}/bin ${PREFIX}/lib ${PREFIX}/include
