@@ -6,8 +6,7 @@
 # $FreeBSD$
 #
 
-DISTNAME=	saint-1.5.beta2
-PKGNAME=	saint-1.5
+DISTNAME=	saint-1.5
 CATEGORIES=	security
 MASTER_SITES=	http://www.wwdsi.com/saint/downloads/
 
