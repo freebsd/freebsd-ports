@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_PORTS_JP}
 
-MAINTAINER=	sada@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Redirect any key to second mouse button
 
 PLIST_FILES=	bin/kb2mb2

@@ -9,7 +9,7 @@ PORTVERSION=	0.5
 MASTER_SITES= 	${MASTER_SITE_PORTS_JP} \
 		http://xjman.dsl.gr.jp/
 
-MAINTAINER=	sada@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 MASTERDIR=	${.CURDIR}/../xjman
 WRKSRC=		${WRKDIR}/man/ja_JP.eucJP

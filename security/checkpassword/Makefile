@@ -10,7 +10,7 @@ PORTVERSION=	0.90
 CATEGORIES=	security
 MASTER_SITES=	http://cr.yp.to/checkpwd/
 
-MAINTAINER=	sada@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A simple password-checking interface
 
 ALL_TARGET=	it

@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	ver${PORTVERSION}
 EXTRACT_SUFX=	.lzh
 
-MAINTAINER=	sada@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Handwritten Japanese TrueType fonts by Mika-chan
 
 EXTRACT_DEPENDS=	lha:${PORTSDIR}/archivers/lha

@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.iij.ad.jp/pub/published/oreilly/nutshell/dnsbind/
 DISTNAME=	dns
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	sada@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Translate host table to name server file format
 
 NO_BUILD=	YES

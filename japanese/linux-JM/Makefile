@@ -11,7 +11,7 @@ CATEGORIES=	japanese
 MASTER_SITES=	http://www.linux.or.jp/JM/per-pkg/
 DISTFILES=	${DISTFILES_GNU} ${DISTFILES_OTHERS}
 
-MAINTAINER=	sada@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Japanese translated man pages by JM Project
 
 CONFLICTS=	ja-samba-2.*

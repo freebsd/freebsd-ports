@@ -18,7 +18,7 @@ PATCH_SITE_SUBDIR=	flathill
 PATCHFILES=	${DISTNAME}ja.patch
 PATCH_DIST_STRIP= -p1
 
-MAINTAINER=	flathill@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library to add ICQ communication support to your software
 
 USE_GNOME=	glib12
