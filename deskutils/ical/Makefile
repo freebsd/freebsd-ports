@@ -7,7 +7,8 @@
 
 PORTNAME=	ical
 PORTVERSION=	2.2
-CATEGORIES=	deskutils tk82
+PORTREVISION=	1
+CATEGORIES=	deskutils tk83
 MASTER_SITES=	ftp://ftp.sco.com/skunkware/src/shellutil/ \
 		ftp://ftp.sunet.se/pub/vendor/sco/skunkware/src/shellutil/ \
 		ftp://ftp.netsw.org/netsw/X11/Tools/Desktop/ \
@@ -16,14 +17,14 @@ MASTER_SITES=	ftp://ftp.sco.com/skunkware/src/shellutil/ \
 
 MAINTAINER=	obrien@FreeBSD.org
 
-LIB_DEPENDS=	tk82.1:${PORTSDIR}/x11-toolkits/tk82
+LIB_DEPENDS=	tk83.1:${PORTSDIR}/x11-toolkits/tk83
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-tclconfig=${PREFIX}/lib/tcl8.2 \
-		--with-tclhdir=${PREFIX}/include/tcl8.2 \
-		--with-tclsh=${PREFIX}/bin/tclsh8.2 \
-		--with-tkconfig=${PREFIX}/lib/tk8.2 \
-		--with-tkhdir=${PREFIX}/include/tk8.2
+CONFIGURE_ARGS=	--with-tclconfig=${PREFIX}/lib/tcl8.3 \
+		--with-tclhdir=${PREFIX}/include/tcl8.3 \
+		--with-tclsh=${PREFIX}/bin/tclsh8.3 \
+		--with-tkconfig=${PREFIX}/lib/tk8.3 \
+		--with-tkhdir=${PREFIX}/include/tk8.3
 
 MAN1=		ical.1
 
