@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	man-doc
-PORTVERSION=	4.6
+PORTVERSION=	4.7
 CATEGORIES=	japanese
 DISTFILES=	# none
 
