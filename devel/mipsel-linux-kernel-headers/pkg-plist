@@ -739,6 +739,7 @@ mipsel-linux/include/linux/x25.h
 mipsel-linux/include/linux/yam.h
 mipsel-linux/include/linux/zftape.h
 mipsel-linux/include/linux/zorro.h
+@exec mkdir %D/mipsel-linux/include/linux/modules
 @dirrm mipsel-linux/include/asm-mips/arc
 @dirrm mipsel-linux/include/asm-mips/baget
 @dirrm mipsel-linux/include/asm-mips/dec
@@ -758,4 +759,3 @@ mipsel-linux/include/asm
 @dirrm mipsel-linux/include/linux/sunrpc
 @dirrm mipsel-linux/include/linux
 @dirrm mipsel-linux/include
-
