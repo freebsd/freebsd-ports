@@ -1,5 +1,5 @@
---- doc/Makefile.orig	Mon Sep  9 16:49:16 2002
-+++ doc/Makefile	Thu Jun  5 19:14:53 2003
+--- ./doc/Makefile.orig	Mon Sep  9 16:49:16 2002
++++ ./doc/Makefile	Tue Aug  5 16:57:31 2003
 @@ -5,7 +5,7 @@
  include ../../huskymak.cfg
  endif
@@ -9,7 +9,12 @@
  
  ifdef HTMLDIR
  html: hpt_toc.html
-@@ -47,12 +47,12 @@
+@@ -43,16 +43,16 @@
+ 	-$(RM) $(RMOPT) hpt*html
+ 	-$(RM) $(RMOPT) hpt.info*
+ 
+-install: info html dvi
++install: info html
  	@echo .
  ifdef INFODIR
  	-$(MKDIR) $(MKDIROPT) $(INFODIR)
