@@ -15,9 +15,11 @@ MAINTAINER=	knu@FreeBSD.org
 
 NO_BUILD=	yes
 
+USE_PERL5=	yes
+
 # This version of cvsweb is Zeller's version + knu's enhancements.
 REV_ZELLER=	1.93
-REV_KNU=	1.9
+REV_KNU=	1.10
 
 # Specify where your repository belongs.
 # (You can reconfigure it after installation anyway)
@@ -38,6 +40,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 do-configure:
 	cd ${WRKSRC} && ${PERL} -i -pe "\
+		s;/usr/bin/perl5;${PERL};g; \
 		s;/usr/local;${PREFIX};g; \
 		s;/home/cvs;${CVSROOT};g; \
 		s;'Local Repository';'${TITLE}';g; \
