@@ -6204,6 +6204,7 @@ portmon		ports/net/portmon
 portoseguro	ports/x11/portoseguro
 ports		ports
 ports_Mk	ports/Mk
+ports_Templates	ports/Templates
 ports_Tools	ports/Tools
 ports_archivers	ports/archivers
 ports_astro	ports/astro
