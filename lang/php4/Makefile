@@ -20,7 +20,7 @@
 #
 
 PORTNAME=	php4
-PORTVERSION=	4.3.4
+PORTVERSION=	4.3.5
 PORTREVISION=	7
 CATEGORIES?=	lang devel www
 MASTER_SITES=	http://www.php.net/distributions/:release \
@@ -110,6 +110,8 @@ CONFIGURE_ARGS+=--enable-fastcgi
 CONFIGURE_ARGS+=--enable-discard-path
 .endif
 SAPI_FILE=	bin/php
+.else
+CONFIGURE_ARGS+=--disable-cgi
 .endif
 PLIST_SUB+=	APACHE="@comment "
 .else
@@ -247,10 +249,14 @@ CONFIGURE_ARGS+=--with-curl=${LOCALBASE}
 
 .if defined(WITH_DB4)
 WITH_DB4_VER?=	41
+.if ${WITH_DB4_VER} == 42
+LIB_DEPENDS+=	db4.2.2:${PORTSDIR}/databases/db42
+.else
 .if ${WITH_DB4_VER} == 4
 LIB_DEPENDS+=	db4.0:${PORTSDIR}/databases/db4
 .else
 LIB_DEPENDS+=	db41.1:${PORTSDIR}/databases/db41
+.endif
 .endif
 CONFIGURE_ARGS+=--with-db4=${LOCALBASE}
 .endif
@@ -583,8 +589,7 @@ CONFIGURE_ARGS+=--enable-debug
 EXT_DIR:=	${EXT_DIR}-debug
 .endif
 
-PLIST_SUB+=	SAPI_FILE=${SAPI_FILE} \
-		EXT_DIR=${EXT_DIR}
+PLIST_SUB+=	SAPI_FILE=${SAPI_FILE}
 
 .if ${OSVERSION} < 400014 || defined(WITHOUT_IPV6)
 CONFIGURE_ARGS+=--disable-ipv6
@@ -714,7 +719,6 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/php.ini-dist ${PREFIX}/etc
 	@${INSTALL_DATA} ${WRKSRC}/php.ini-recommended ${PREFIX}/etc
 	@${INSTALL_DATA} ${WRKDIR}/php.conf ${PREFIX}/etc
-	@${TOUCH} ${PREFIX}/lib/php/${EXT_DIR}/.keepme
 .if !defined(WITHOUT_APACHE)
 	@${ECHO_CMD} "*****************************************************************************"
 	@${ECHO_CMD} ""
