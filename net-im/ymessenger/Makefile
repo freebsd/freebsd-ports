@@ -24,6 +24,6 @@ do-install:
 	@${INSTALL_PROGRAM} ${WRKDIR}/bin/ymessenger ${PREFIX}/bin
 
 post-extract:
-	${PERL} -p -e 's/libintl\.so\.1/libintl.so.2/g' -i \
-		${WRKDIR}/bin/ymessenger
+	echo 2 | dd bs=1 count=1 conv=notrunc seek=21653 \
+		of=${WRKDIR}/bin/ymessenger
 .include <bsd.port.mk>
