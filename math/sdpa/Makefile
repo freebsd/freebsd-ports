@@ -33,8 +33,14 @@ USE_REINPLACE=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
-LAPACK=		-lalapack
-CBLAS=		-lcblas -lf77blas -latlas -lg2c
+.if defined(WITH_SMP)
+LAPACK=		-lalapack_r
+CBLAS=		-lptcblas -lptf77blas -latlas_r -lg2c ${PTHREAD_LIBS}
+.else
+LAPACK=		-static -lalapack
+CBLAS=		-static -lcblas -lf77blas -latlas -lg2c
+.endif
+#WITH_SMP=	yes
 #WITH_ICC=	yes
 
 .if defined(WITH_OPTIMIZED_FLAGS)
@@ -49,8 +55,8 @@ CXXFLAGS+=	-mcpu=i686 -march=i686 -mfancy-math-387 -mpreferred-stack-boundary=3
 .if defined(WITH_ICC)
 CC=		${LOCALBASE}/intel_cc_80/bin/icc
 CXX=		${LOCALBASE}/intel_cc_80/bin/icpc
-CFLAGS=		-O3 -tpp7 -xiMKW -Vaxlib
-CXXFLAGS=	-O3 -tpp7 -xiMKW -Vaxlib
+CFLAGS=		-O3 -tpp7 -axN -Vaxlib
+CXXFLAGS=	-O3 -tpp7 -axN -Vaxlib
 .endif
 
 pre-build:
