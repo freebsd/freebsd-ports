@@ -1,10 +1,12 @@
-BLD stands for "black list daemon" and is intended to build blacklists
-using simple rules based on a maximum number of submissions of the same
-IP address during a minimum time interval.  BLD was primarily designed to
-fight against dictionnary-based spams (by making the MTA report to BLD
-any host that tries to send a mail to an unknown user) but can be used  
-by any application that needs a blacklist based on connection rate
-limits.
+BLD stands for "blacklist daemon" and is intended to serve a
+blacklist.  The blacklist is built by simply inserting IP addresses
+or by using submission rate limits based on a maximum number of
+submissions of the same IP address within a minimum time interval.
+You can build a BLD cluster by configuring the daemon to notify
+other similar daemon(s) every time an IP address is added to the
+blacklist.  BLD was primarily designed to fight against dictionnary-based
+spams (by making the MTA report to BLD any host that tries to send
+a mail to an unknown user) but can be used by any program.
 
 See homepage for more infos:
 

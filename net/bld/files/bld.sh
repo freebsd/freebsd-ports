@@ -24,7 +24,7 @@ required_dirs=/var/run/bld
 # set defaults
 
 bld_enable=${bld_enable:-"NO"}
-bld_flags=${bld_flags:-""}
+bld_flags=${bld_flags:-"-u bld -g bld"}
 
 load_rc_config $name
 run_rc_command "$1"
