@@ -6,27 +6,35 @@
 #
 
 PORTNAME=	gxditview
-PORTVERSION=	0.100
+PORTVERSION=	1.17
 CATEGORIES=	japanese print
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	groff
-DISTNAME=	groff-1.15
+DISTNAME=	groff-${PORTVERSION}
 
 PATCH_SITES=	${MASTER_SITE_LOCAL}
-PATCH_SITE_SUBDIR= okazaki
-PATCHFILES=	${DISTNAME}-jgroff-${PORTVERSION}-pl1.diff.gz
-PATCH_DIST_ARGS=	-d ${WRKSRC}/.. --forward --quiet -E -p1
+PATCH_SITE_SUBDIR=	okazaki/groff
+PATCHFILES=	${DISTNAME}-jgroff-0.0.1.diff.gz
+PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	okazaki@FreeBSD.org
 
 RUN_DEPENDS=	${LOCALBASE}/bin/groff:${PORTSDIR}/japanese/groff
 
+USE_AUTOCONF=	yes
+USE_GMAKE=	yes
 USE_IMAKE=	yes
-MAKE_ENV=	NIPPONDEFINES="-DNIPPON"
-WRKSRC=		${WRKDIR}/${DISTNAME}/xditview
+
+CONFIGURE_ARGS=	--program-prefix=g --enable-nippon
+CONFIGURE_ENV=	INSTALL_MAN="${INSTALL_MAN}"
+
+MAKE_ENV=	GROFF_PREFIX=${LOCALBASE} NIPPONDEFINES="-DNIPPON"
+BUILD_WRKSRC=	${WRKDIR}/${DISTNAME}/src/xditview
+INSTALL_WRKSRC=	${WRKDIR}/${DISTNAME}/src/xditview
+
 MAN1=		gxditview.1
 
-post-patch:
-	@${PERL} -pi -e 's|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/Imakefile
+post-extract:
+	${CP} ${FILESDIR}/Imakefile ${WRKSRC}
 
 .include <bsd.port.mk>
