@@ -1,52 +1,10 @@
 ------------------------------------------------------------------------------
-Gofer 2.28 is an interactive functional programming environment (i.e. an
+Gofer is an interactive functional programming environment (i.e. an
 interpreter) supporting a language based on the draft report for Haskell
-version 1.2, including the following features:
-
-  o  Lazy evaluation, higher order functions, pattern matching etc...
-
-  o  Wide range of built-in types with provision for defining new free
-     datatypes and type synonyms.
-
-  o  Polymorphic type system with provision for overloading based on
-     a system of type classes.
-
-  o  Full Haskell 1.2 expression and pattern syntax including lambda,
-     case, conditional and let expressions, list comprehensions, operator
-     sections, and wildcard, as and irrefutable patterns.
-
-  o  Partial implementation of Haskell 1.2 facilities for I/O, enabling
-     the use of simple interactive programs and programs reading and writing
-     text files.
-
-  o  User documentation, sample programs and source code freely available.
-
-  o  Supports constructor classes and overloaded monad comprehensions.
-
-  o  Simple minded compiler/translator Gofer -> C with runtime system for
-     generation of standalone applications.
-
-  o  Runs (and originally developed) on PC compatible computers, but
-     also works on Sun workstations.  Code should be portable to many
-     other kinds of machine.
+version 1.2.
  
 Gofer is intended as an experimental language, particularly where type classes
-are involved.  Gofer extends the Haskell type class system in several ways:
-
-  o  Type classes with multiple parameters are supported.
-
-  o  Instances of type classes may be defined non-overlapping, but otherwise
-     arbitrary types.
-
-  o  Predicates in contexts may involve arbitrary type expressions, not just
-     type variables as in Haskell.
-
-  o  Basic approach to dictionary construction is different, based on the
-     approach I described in a posting to the Haskell mailing list early in
-     Feburary 1991.  The resulting system ensures that all dictionaries are
-     constructed before evaluation begins, avoiding repeated construction
-     and enabling the shared evaluation of overloaded constants in
-     dictionaries.
+are involved.  Gofer extends the Haskell type class system in several ways.
 
 The most significant features of Haskell not currently supported are:
 modules, arrays, overloaded numeric constants, default declarations, derived
@@ -59,3 +17,5 @@ And just in case you wondered:
    private correspondence, or other documents  without  restriction  or
    obligation.
 ------------------------------------------------------------------------------
+
+WWW: http://www.cse.ogi.edu/~mpj/goferarc/
