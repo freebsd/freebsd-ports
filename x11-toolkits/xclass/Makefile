@@ -22,7 +22,13 @@ ALL_TARGET=	shared
 INSTALL_TARGET=	install_shared
 INSTALLS_SHLIB=	yes
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502000
+BROKEN=		"Does not compile"
+.endif
+
 do-install:
 	${LN} -sf ${PREFIX}/lib/libxclass.so.0.8.2 ${PREFIX}/lib/libxclass.so
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
