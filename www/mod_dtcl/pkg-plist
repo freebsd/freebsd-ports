@@ -8,19 +8,14 @@ share/mod_dtcl/infodebug.tcl
 share/mod_dtcl/testdtcl.tcl
 @dirrm share/mod_dtcl
 share/doc/mod_dtcl/INSTALL.html
-share/doc/mod_dtcl/Makefile.html
+share/doc/mod_dtcl/TODO.html
 share/doc/mod_dtcl/benchmark.html
 share/doc/mod_dtcl/browse-source.html
 share/doc/mod_dtcl/dtcl-tcl.html
-share/doc/mod_dtcl/dtcl.gif
-share/doc/mod_dtcl/dtcl.html
 share/doc/mod_dtcl/examples.ttml
-share/doc/mod_dtcl/globalscript.html
-share/doc/mod_dtcl/infodebug.html
-share/doc/mod_dtcl/mod_dtcl.html
+share/doc/mod_dtcl/readme.hpux.html
 share/doc/mod_dtcl/readme.html
 share/doc/mod_dtcl/table.html
-share/doc/mod_dtcl/testdtcl.html
-share/doc/mod_dtcl/two-mode-mode.html
 share/doc/mod_dtcl/use.html
+share/doc/mod_dtcl/dtcl.gif
 @dirrm share/doc/mod_dtcl
