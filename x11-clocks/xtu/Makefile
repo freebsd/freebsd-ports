@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xtu
-PORTVERSION= 	1.0
+PORTVERSION=	1.1
 CATEGORIES=	x11-clocks
 MASTER_SITES=	http://www.rostock.zgdv.de/~runge/xtu/
 
