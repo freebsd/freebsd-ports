@@ -1,1 +1,29 @@
 bin/rdesktop
+share/rdesktop/keymaps/ar
+share/rdesktop/keymaps/fr-be
+share/rdesktop/keymaps/en-us
+share/rdesktop/keymaps/en-gb
+share/rdesktop/keymaps/tr
+share/rdesktop/keymaps/th
+share/rdesktop/keymaps/sv
+share/rdesktop/keymaps/sl
+share/rdesktop/keymaps/ru
+share/rdesktop/keymaps/pt
+share/rdesktop/keymaps/pl
+share/rdesktop/keymaps/no
+share/rdesktop/keymaps/mk
+share/rdesktop/keymaps/lv
+share/rdesktop/keymaps/lt
+share/rdesktop/keymaps/ja
+share/rdesktop/keymaps/it
+share/rdesktop/keymaps/hr
+share/rdesktop/keymaps/fr
+share/rdesktop/keymaps/fi
+share/rdesktop/keymaps/es
+share/rdesktop/keymaps/de
+share/rdesktop/keymaps/da
+share/rdesktop/keymaps/pt-br
+share/rdesktop/keymaps/common
+share/rdesktop/keymaps/modifiers
+@unexec rmdir %D/share/rdesktop/keymaps 2>/dev/null || true
+@unexec rmdir %D/share/rdesktop 2>/dev/null || true
