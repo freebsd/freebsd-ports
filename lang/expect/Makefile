@@ -3,7 +3,7 @@
 # Whom:			pst
 # Version required:	5.25
 #
-# $Id: Makefile,v 1.23 1997/10/11 22:31:59 obrien Exp $
+# $Id: Makefile,v 1.24 1997/10/11 22:37:55 obrien Exp $
 #
 
 DISTNAME=	expect
@@ -25,10 +25,13 @@ CONFIGURE_ARGS= --enable-shared \
 		--with-tclinclude=${PREFIX}/include/tcl8.0 \
 		--with-tkconfig=${PREFIX}/lib/tk8.0 \
 		--with-tkinclude=${PREFIX}/include/tk8.0
+# needed for japanese/expect
+.if !defined(NO_MAN_INSTALL)
 MAN1=		autoexpect.1 cryptdir.1 decryptdir.1 dislocate.1 \
 		expect.1 expectk.1 kibitz.1 mkpasswd.1 passmass.1 \
 		tknewsbiff.1 unbuffer.1 xkibitz.1
 MAN3=		libexpect.3
+.endif
 
 test:
 	@(cd ${WRKSRC}; make test)
