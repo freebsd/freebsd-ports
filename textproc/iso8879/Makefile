@@ -32,7 +32,7 @@ do-install:
 	@unzip -a -q -o ${DISTDIR}/${DISTFILES} -d ${INSTDIR}
 	@${INSTALL_DATA} ${FILESDIR}/catalog ${INSTDIR}/catalog
 	@${CHMOD} ${SHAREMODE} ${INSTDIR}/*
-	@${CHOWN} -R ${SHAREOWN}.${SHAREGRP} ${INSTDIR}
+	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${INSTDIR}
 
 post-install:
 	@${MKCATALOG} -q install ${PORTNAME}
