@@ -1,0 +1,54 @@
+GZIP_CMD?=	gzip
+MKBOLD_CMD?=	mkbold
+MKITALIC_CMD?=	mkitalic
+
+CP?=		/bin/cp
+PATCH?=		/usr/bin/patch
+SED?=		/usr/bin/sed
+
+DIST_ALL=	10x20L2b.bdf 10x20L2m.bdf 10x20L3b.bdf 10x20L3m.bdf \
+		10x20L9b.bdf 10x20L9m.bdf 10x20b.bdf 10x20m.bdf \
+		10x20rkb.bdf 10x20rkm.bdf ipa-10x20b.bdf ipa-10x20m.bdf \
+		k20b.bdf k20m.bdf
+
+MADE_BDF=	vk20b.bdf vk20m.bdf nk20b-1.bdf
+
+DIST_NOBOLD=	# empty
+MADE_BOLD=	${DIST_NOBOLD:S/.bdf/b.bdf/g}
+
+DIST_NOITALIC=	${DIST_ALL} ${MADE_BDF} ${MADE_BOLD}
+MADE_ITALIC=	${DIST_NOITALIC:S/m/mi/g:S/b./bi./g:S/b-/bi-/g}
+
+BDF_ALL=	${DIST_ALL} ${MADE_BDF} ${MADE_BOLD} ${MADE_ITALIC}
+PCF_ALL=	${BDF_ALL:S/.bdf/.pcf.gz/g}
+
+all: ${PCF_ALL} fonts.alias
+
+${MADE_BOLD}: ${.TARGET:S/b.bdf/.bdf/}
+	${MKBOLD_CMD} $> > $@
+
+${MADE_ITALIC}: ${.TARGET:S/mi/m/:S/bi./b./:S/bi-/b-/}
+	${MKITALIC_CMD} $> > $@
+
+${PCF_ALL}: ${.TARGET:S/.pcf.gz/.bdf/}
+	bdftopcf $> | ${GZIP_CMD} -c > $@
+
+vk20m.bdf: k20m.bdf tategaki.diff
+	${SED} '/vk20b.bdf/,$$d' tategaki.diff | ${PATCH} -o $@ k20m.bdf
+
+vk20b.bdf: k20b.bdf tategaki.diff
+	${SED} -n '/vk20b.bdf/,$$p' tategaki.diff | ${PATCH} -o $@ k20b.bdf
+
+nk20b-1.bdf: k20b.bdf newjis.diff
+	${PATCH} -o $@ k20b.bdf < newjis.diff
+
+fonts.alias: Makefile.dist
+	${SED} -n '/^.*echo \(.*\) >>.*$$/ s//\1/p' $> > $@
+	egrep -iv '^(-kappa-[^ 	]*--20-|(v?k|a|r)20[mb][ 	]|(ipa-)?10x20[mb][ 	]|10x20(rk|L[2-9])[mb][ 	])' ${PREFIX}/${FONTSDIR}/fonts.alias >> fonts.alias || true
+
+install:
+	mkdir -p ${PREFIX}/${FONTSDIR}
+	${BSD_INSTALL_DATA} ${PCF_ALL} fonts.alias ${PREFIX}/${FONTSDIR}
+
+clean::
+	rm ${MADE_BOLD} ${MADE_ITALIC} ${PCF_ALL}
