@@ -5963,6 +5963,7 @@ openldap22-server	ports/net/openldap22-server
 openmcu		ports/net/openmcu
 openmortal	ports/games/openmortal
 opennap		ports/audio/opennap
+openntpd	ports/net/openntpd
 openobex	ports/comms/openobex
 openoffice-1.0	ports/editors/openoffice-1.0
 openoffice-1.0-ar	ports/editors/openoffice-1.0-ar
