@@ -1,49 +1,5 @@
-%%JAVALIBDIR%%/spread-3.17.0.jar
-%%JAVALIB_DOCS%%share/doc/spread-j/html/allclasses-frame.html
-%%JAVALIB_DOCS%%share/doc/spread-j/html/deprecated-list.html
-%%JAVALIB_DOCS%%share/doc/spread-j/html/help-doc.html
-%%JAVALIB_DOCS%%share/doc/spread-j/html/index-all.html
-%%JAVALIB_DOCS%%share/doc/spread-j/html/index.html
-%%JAVALIB_DOCS%%share/doc/spread-j/html/overview-tree.html
-%%JAVALIB_DOCS%%share/doc/spread-j/html/packages.html
-%%JAVALIB_DOCS%%share/doc/spread-j/html/serialized-form.html
-%%JAVALIB_DOCS%%share/doc/spread-j/html/spread/AdvancedMessageListener.html
-%%JAVALIB_DOCS%%share/doc/spread-j/html/spread/BasicMessageListener.html
-%%JAVALIB_DOCS%%share/doc/spread-j/html/spread/GroupID.html
-%%JAVALIB_DOCS%%share/doc/spread-j/html/spread/MembershipInfo.html
-%%JAVALIB_DOCS%%share/doc/spread-j/html/spread/MessageFactory.html
-%%JAVALIB_DOCS%%share/doc/spread-j/html/spread/NULLAuth.html
-%%JAVALIB_DOCS%%share/doc/spread-j/html/spread/SpreadAuthInterface.html
-%%JAVALIB_DOCS%%share/doc/spread-j/html/spread/SpreadConnection.Listener.html
-%%JAVALIB_DOCS%%share/doc/spread-j/html/spread/SpreadConnection.html
-%%JAVALIB_DOCS%%share/doc/spread-j/html/spread/SpreadException.html
-%%JAVALIB_DOCS%%share/doc/spread-j/html/spread/SpreadGroup.html
-%%JAVALIB_DOCS%%share/doc/spread-j/html/spread/SpreadMessage.html
-%%JAVALIB_DOCS%%share/doc/spread-j/html/spread/SpreadVersion.html
-%%JAVALIB_DOCS%%share/doc/spread-j/html/spread/class-use/AdvancedMessageListener.html
-%%JAVALIB_DOCS%%share/doc/spread-j/html/spread/class-use/BasicMessageListener.html
-%%JAVALIB_DOCS%%share/doc/spread-j/html/spread/class-use/GroupID.html
-%%JAVALIB_DOCS%%share/doc/spread-j/html/spread/class-use/MembershipInfo.html
-%%JAVALIB_DOCS%%share/doc/spread-j/html/spread/class-use/MessageFactory.html
-%%JAVALIB_DOCS%%share/doc/spread-j/html/spread/class-use/NULLAuth.html
-%%JAVALIB_DOCS%%share/doc/spread-j/html/spread/class-use/SpreadAuthInterface.html
-%%JAVALIB_DOCS%%share/doc/spread-j/html/spread/class-use/SpreadConnection.Listener.html
-%%JAVALIB_DOCS%%share/doc/spread-j/html/spread/class-use/SpreadConnection.html
-%%JAVALIB_DOCS%%share/doc/spread-j/html/spread/class-use/SpreadException.html
-%%JAVALIB_DOCS%%share/doc/spread-j/html/spread/class-use/SpreadGroup.html
-%%JAVALIB_DOCS%%share/doc/spread-j/html/spread/class-use/SpreadMessage.html
-%%JAVALIB_DOCS%%share/doc/spread-j/html/spread/class-use/SpreadVersion.html
-%%JAVALIB_DOCS%%share/doc/spread-j/html/spread/package-frame.html
-%%JAVALIB_DOCS%%share/doc/spread-j/html/spread/package-summary.html
-%%JAVALIB_DOCS%%share/doc/spread-j/html/spread/package-tree.html
-%%JAVALIB_DOCS%%share/doc/spread-j/html/spread/package-use.html
-%%JAVALIB_DOCS%%share/doc/spread-j/html/stylesheet.css
-%%JAVALIB_DOCS%%share/doc/spread-j/readme.txt
-%%JAVALIB_DOCS%%@dirrm share/doc/spread-j/html/spread/class-use
-%%JAVALIB_DOCS%%@dirrm share/doc/spread-j/html/spread
-%%JAVALIB_DOCS%%@dirrm share/doc/spread-j/html
-%%JAVALIB_DOCS%%@dirrm share/doc/spread-j
-share/examples/spread-j/Flooder.java
-share/examples/spread-j/recThread.java
-share/examples/spread-j/User.java
-@dirrm share/examples/spread-j
+%%JAVALIBDIR%%/spread-3.17.1.jar
+%%PORTDOCS%%%%EXAMPLESDIR%%/Flooder.java
+%%PORTDOCS%%%%EXAMPLESDIR%%/recThread.java
+%%PORTDOCS%%%%EXAMPLESDIR%%/User.java
+%%PORTDOCS%%@dirrm share/examples/spread-j
