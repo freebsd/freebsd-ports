@@ -21,6 +21,8 @@ DISTFILES+=	oo_${PORTVERSION}_src.tar.bz2 neon.tgz:moz \
 DISTFILES+=	${L10NHELP:S/$/:help/}
 .endif
 
+BROKEN=		"Does not work anymore. soffice.bin segfaults"
+
 SORT?=	/usr/bin/sort
 FIND?=	/usr/bin/find
 CUT?=	/usr/bin/cut
