@@ -1,5 +1,5 @@
-*** Makefile.orig	Mon May 12 10:55:59 1997
---- Makefile	Tue Jan 19 22:27:09 1999
+*** Makefile.orig	Mon May 12 17:55:59 1997
+--- Makefile	Tue May 18 21:22:21 1999
 ***************
 *** 6,30 ****
   
@@ -40,7 +40,7 @@
   GZIP	=gzip
   
   # Binary directory for make install
-! BINDIR	=$(PREFIX)/libexec
+! BINDIR	=$(PREFIX)/bin
   
   # Library directories for Linux
 ! XLIBDIR	=$(X11BASE)/lib
@@ -85,26 +85,29 @@
   # Just change it to wherever your libX11.a resides.
 ! LDFLAGS+=-L$(XLIBDIR)
   
-  all: xbanner freetemp random_effect xb_check 
+  all: xbanner freetemp random_effect xb_check
   
 ***************
-*** 71,79 ****
+*** 70,79 ****
+  xb_check: xb_check.o 
   	$(CC) $(CFLAGS) -o xb_check xb_check.o 
   
-  install: freetemp xbanner xb_check 
+! install: freetemp xbanner xb_check 
 ! 	$(INSTALL) --strip --mode "0755" --owner root --group bin freetemp $(BINDIR)/freetemp
 ! 	$(INSTALL) --strip --mode "0755" --owner root --group bin xbanner $(BINDIR)/xbanner
 ! 	$(INSTALL) --strip --mode "0755" --owner root --group bin xb_check $(BINDIR)/xb_check
   
   strip: exe
   	strip xbanner freetemp xb_check random_effect
---- 71,79 ----
-  	$(CC) $(CFLAGS) -o xb_check xb_check.o 
+--- 70,80 ----
+  xb_check: xb_check.o
+  	$(CC) $(CFLAGS) -o xb_check xb_check.o
   
-  install: freetemp xbanner xb_check 
+! install: freetemp xbanner xb_check random_effect
 ! 	$(INSTALL) -cs -g bin -m "0755" -o root freetemp $(BINDIR)/freetemp
 ! 	$(INSTALL) -cs -g bin -m "0755" -o root xbanner $(BINDIR)/xbanner
 ! 	$(INSTALL) -cs -g bin -m "0755" -o root xb_check $(BINDIR)/xb_check
+! 	$(INSTALL) -cs -g bin -m "0755" -o root random_effect $(BINDIR)/random_effect
   
   strip: exe
   	strip xbanner freetemp xb_check random_effect

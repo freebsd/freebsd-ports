@@ -1,0 +1,154 @@
+*** backg.c.org	Tue May 18 20:52:54 1999
+--- backg.c	Tue May 18 20:54:22 1999
+***************
+*** 5,11 ****
+  #include <stdlib.h>
+  #include <string.h>
+  #ifndef vms
+! #include <malloc.h>
+  #endif
+  #include <math.h>
+  
+--- 5,14 ----
+  #include <stdlib.h>
+  #include <string.h>
+  #ifndef vms
+! #include <sys/param.h>
+! #  if !(defined(BSD) && (BSD >= 199306))
+! #    include <malloc.h>
+! #  endif
+  #endif
+  #include <math.h>
+  
+*** colors.c.org	Tue May 18 20:54:37 1999
+--- colors.c	Tue May 18 20:55:39 1999
+***************
+*** 7,13 ****
+  #include <stdio.h>
+  #include <ctype.h>
+  #ifndef vms
+! #include <malloc.h>
+  #endif
+  
+  /* X11 include(s) */
+--- 7,16 ----
+  #include <stdio.h>
+  #include <ctype.h>
+  #ifndef vms
+! #include <sys/param.h>
+! #  if !(defined(BSD) && (BSD >= 199306))
+! #    include <malloc.h>
+! #  endif
+  #endif
+  
+  /* X11 include(s) */
+*** effect.c.org	Tue May 18 20:55:49 1999
+--- effect.c	Tue May 18 20:56:39 1999
+***************
+*** 7,13 ****
+  #include <stdio.h>
+  #include <ctype.h>
+  #ifndef vms
+! #include <malloc.h>
+  #endif
+  
+  /* X11 include(s) */
+--- 7,16 ----
+  #include <stdio.h>
+  #include <ctype.h>
+  #ifndef vms
+! #include <sys/param.h>
+! #  if !(defined(BSD) && (BSD >= 199306))
+! #    include <malloc.h>
+! #  endif
+  #endif
+  
+  /* X11 include(s) */
+*** plasma.c.org	Tue May 18 20:55:56 1999
+--- plasma.c	Tue May 18 20:56:58 1999
+***************
+*** 2,8 ****
+  #include <math.h>
+  #include <stdlib.h>
+  #ifndef vms
+! #include <malloc.h>
+  #endif
+  
+  #include <X11/Xlib.h>
+--- 2,11 ----
+  #include <math.h>
+  #include <stdlib.h>
+  #ifndef vms
+! #include <sys/param.h>
+! #  if !(defined(BSD) && (BSD >= 199306))
+! #    include <malloc.h>
+! #  endif
+  #endif
+  
+  #include <X11/Xlib.h>
+*** random_effect.c.org	Tue May 18 20:56:06 1999
+--- random_effect.c	Tue May 18 20:57:12 1999
+***************
+*** 1,7 ****
+  #include <stdio.h>
+  #include <stdlib.h>
+  #ifndef vms
+! #include <malloc.h>
+  #endif
+  #include <time.h>
+  #include <string.h>
+--- 1,10 ----
+  #include <stdio.h>
+  #include <stdlib.h>
+  #ifndef vms
+! #include <sys/param.h>
+! #  if !(defined(BSD) && (BSD >= 199306))
+! #    include <malloc.h>
+! #  endif
+  #endif
+  #include <time.h>
+  #include <string.h>
+*** ripples.c.org	Tue May 18 20:56:11 1999
+--- ripples.c	Tue May 18 20:57:22 1999
+***************
+*** 2,8 ****
+  #include <math.h>
+  #include <stdlib.h>
+  #ifndef vms
+! #include <malloc.h>
+  #endif
+  
+  /* use this to change if you want ripples with more than 256 colors */
+--- 2,11 ----
+  #include <math.h>
+  #include <stdlib.h>
+  #ifndef vms
+! #include <sys/param.h>
+! #  if !(defined(BSD) && (BSD >= 199306))
+! #    include <malloc.h>
+! #  endif
+  #endif
+  
+  /* use this to change if you want ripples with more than 256 colors */
+*** util.c.org	Tue May 18 20:56:18 1999
+--- util.c	Tue May 18 20:57:34 1999
+***************
+*** 7,13 ****
+  #include <stdlib.h>
+  
+  #ifndef vms
+! #include <malloc.h>
+  #endif
+  
+  #include <X11/Xlib.h>
+--- 7,16 ----
+  #include <stdlib.h>
+  
+  #ifndef vms
+! #include <sys/param.h>
+! #  if !(defined(BSD) && (BSD >= 199306))
+! #    include <malloc.h>
+! #  endif
+  #endif
+  
+  #include <X11/Xlib.h>

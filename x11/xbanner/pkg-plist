@@ -1,6 +1,8 @@
-libexec/freetemp
-libexec/xbanner
-libexec/xb_check
+bin/freetemp
+bin/xbanner
+bin/xb_check
+bin/random_effect
+lib/X11/app-defaults/XBanner
 share/doc/XBanner/COPYING-2.0
 share/doc/XBanner/Changes.txt
 share/doc/XBanner/Credits.txt
@@ -23,3 +25,5 @@ share/examples/XBanner/FatText_Sky
 share/examples/XBanner/FgGrad_Idea_2
 share/examples/XBanner/Just_an_Idea
 share/examples/XBanner/My_Home_Setup.tar
+@dirrm share/doc/XBanner
+@dirrm share/examples/XBanner
