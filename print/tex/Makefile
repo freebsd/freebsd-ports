@@ -6,6 +6,7 @@ EXTRACT_ONLY=	web2c.tar.gz web.tar.gz tex_base.tar.gz cm_tfm.tar.gz \
 		mf_lib.tar.gz cm_mf.tar.gz
 
 
+WRKDIR=		${.CURDIR}/work
 FTPGET=		${FILESDIR}/ftpget
 
 DISTNAME=	web2c-6.1
