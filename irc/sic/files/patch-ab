@@ -1,0 +1,13 @@
+--- dns.c.orig	Tue Dec 15 03:07:04 1998
++++ dns.c	Tue Dec 15 03:07:14 1998
+@@ -22,10 +22,6 @@
+ #include <netinet/in.h>
+ #include <arpa/inet.h>
+ 
+-/* BIND 8.x lossage */
+-#undef inet_ntoa
+-#undef inet_addr
+-
+ extern	int	h_errno;
+ 
+ void
