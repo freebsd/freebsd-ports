@@ -26,6 +26,7 @@ BUILD_DEPENDS=	makedepend:${PORTSDIR}/devel/makedepend
 
 USE_RC_SUBR=	YES
 
+USE_OPENSSL=	yes
 USE_PERL5=	yes
 USE_REINPLACE=	YES
 GNU_CONFIGURE=	YES
@@ -36,6 +37,7 @@ CONFIGURE_ARGS=	--with-cyrus-prefix=${PREFIX}/cyrus \
 		--with-bdb-libdir=${LOCALBASE}/lib \
 		--with-auth=unix \
 		--with-com_err \
+		--with-openssl=${OPENSSLBASE} \
 		--with-perl=${PERL5}
 
 .if defined(WITH_BDB_VER)
@@ -114,11 +116,6 @@ RUN_DEPENDS+=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/File/Temp.pm:${PORTSD
 .if ${PERL_LEVEL} < 500600
 RUN_DEPENDS+=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Pod/Parser.pm:${PORTSDIR}/textproc/p5-PodParser
 .endif
-
-USE_OPENSSL=	yes
-#.if !defined(WITH_OPENSSL_BASE)
-CONFIGURE_ARGS+=	--with-openssl=${OPENSSLBASE}
-#.endif
 
 RC_SCRIPTS_SUB=	PREFIX=${PREFIX} \
 		RC_SUBR=${RC_SUBR}
