@@ -23,7 +23,7 @@ USE_BZIP2=	yes
 
 MAN8=		exim.8
 
-EXIM_VERSION=	4.01
+EXIM_VERSION=	4.03
 EXIM_DOCVERSION=	4.00
 
 PLIST_SUB+=     EXIM_VERSION="${EXIM_VERSION}"
@@ -41,11 +41,13 @@ MAKE_ENV+=	OSTYPE=${OPSYS} ARCHTYPE=${MACHINE_ARCH}
 
 # Define WITH_TCP_WRAPPERS, WITH_LDAP, WITH_MYSQL, and WITH_PGSQL to
 # link against libwrap, an LDAP library (see below), liblibmysqlclient
-# and libpq respectively.
+# and libpq respectively.  Define WITH_PWCHECK to link against libsasl
+# for SMTP AUTH authentication via the Cyrus SASL pwcheck daemon.
 #WITH_TCP_WRAPPERS=	yes
 #WITH_LDAP=		yes
 #WITH_MYSQL=		yes
 #WITH_PGSQL=		yes
+#WITH_PWCHECK=		yes
 
 # Define WITHOUT_IPV6 to exclude IPv6 support from the compiled exim
 # binary.  Exim compiled with IPv6 support will still operate on
@@ -146,6 +148,12 @@ SEDLIST+=	-e 's,XX_MYSQL_LIBS_XX,-L${LOCALBASE}/lib/mysql -lmysqlclient,' \
 		-e 's,^\# LOOKUP_MYSQL=,LOOKUP_MYSQL=,'
 .else
 SEDLIST+=	-e 's,XX_MYSQL_[^ ]*_XX,,'
+.endif
+
+.if defined(WITH_PWCHECK)
+LIB_DEPENDS+=	sasl.8:${PORTSDIR}/security/cyrus-sasl
+SEDLIST+=	-e 's,^\# SUPPORT_CYRUS_PWCHECK=,SUPPORT_CYRUS_PWCHECK=,' \
+		-e 's,^\# CYRUS_PWCHECK_SOCKET=,CYRUS_PWCHECK_SOCKET=,' 
 .endif
 
 .if !defined(WITHOUT_PAM)
