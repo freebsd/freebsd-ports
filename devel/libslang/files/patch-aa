@@ -1,6 +1,6 @@
---- configure.orig	Wed Oct 30 03:37:23 2002
-+++ configure	Wed Oct 30 03:56:57 2002
-@@ -2033,6 +2033,18 @@
+--- configure.orig	Sun Jan 26 07:31:27 2003
++++ configure	Fri Feb 21 17:21:25 2003
+@@ -2034,6 +2034,18 @@
       ELFLIB_MAJOR="lib\$(THIS_LIB).\$(ELF_MAJOR_VERSION).dylib"
       ELFLIB_MAJOR_MINOR="lib\$(THIS_LIB).\$(ELF_MAJOR_VERSION).\$(ELF_MINOR_VERSION).dylib"
       ;;
@@ -19,10 +19,10 @@
    * )
      echo "Note: ELF compiler for host_os=$host_os may be wrong"
      ELF_CC="$CC"
-@@ -2438,16 +2489,8 @@
+@@ -2439,16 +2451,8 @@
  
  echo $ac_n "checking SLANG_VERSION""... $ac_c" 1>&6
- echo "configure:2441: checking SLANG_VERSION" >&5
+ echo "configure:2442: checking SLANG_VERSION" >&5
 -slang_version=`grep "^#define  *SLANG_VERSION " $srcdir/src/slang.h |
 -               awk '{ print $3 }'`
 -slang_major_version=`echo $slang_version |
@@ -34,7 +34,7 @@
 -
 -slang_minor_version="$slang_minor_version.$slang_mminor_version"
 +slang_major_version=1
-+slang_minor_version=5
++slang_minor_version=6
  slang_version="$slang_major_version.$slang_minor_version"
  echo "$ac_t""$slang_version" 1>&6
  
