@@ -1,0 +1,25 @@
+bin/mkrefe
+bin/refe
+%%RUBY_SITELIBDIR%%/refe/completion.rb
+%%RUBY_SITELIBDIR%%/refe/config.rb
+%%RUBY_SITELIBDIR%%/refe/database.rb
+%%RUBY_SITELIBDIR%%/refe/extrefparser.rb
+%%RUBY_SITELIBDIR%%/refe/info.rb
+%%RUBY_SITELIBDIR%%/refe/mtable.rb
+%%RUBY_SITELIBDIR%%/refe/mtof.rb
+%%RUBY_SITELIBDIR%%/refe/mygetopt.rb
+%%RUBY_SITELIBDIR%%/refe/rubyrefmparser.rb
+%%RUBY_SITELIBDIR%%/refe/rubysrcparser.rb
+@dirrm %%RUBY_SITELIBDIR%%/refe
+%%WITH_GDBM%%share/refe/fdoc
+%%WITH_DBM%%share/refe/fdoc.db
+share/refe/ftable
+%%WITH_GDBM%%share/refe/mdoc
+%%WITH_DBM%%share/refe/mdoc.db
+share/refe/mtable
+@dirrm share/refe
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ChangeLog
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/TODO
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/README.ja
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/ja
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%

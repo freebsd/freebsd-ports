@@ -316,6 +316,7 @@
     SUBDIR += ruby-gyokuro
     SUBDIR += ruby-kakasi
     SUBDIR += ruby-man
+    SUBDIR += ruby-refe
     SUBDIR += ruby-romkan
     SUBDIR += ruby-slang
     SUBDIR += ruby-tcltklib
