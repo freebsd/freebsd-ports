@@ -1,0 +1,14 @@
+*** formats.c.orig	Tue Jan 11 02:25:57 2000
+--- formats.c	Fri Jan 21 12:00:00 2000
+***************
+*** 5,11 ****
+--- 5,13 ----
+  
+  #include <stdio.h>
+  #include <string.h>
++ #ifndef __STDC__
+  #include <malloc.h>
++ #endif
+  #include <X11/Intrinsic.h>
+  #include <X11/StringDefs.h>
+  

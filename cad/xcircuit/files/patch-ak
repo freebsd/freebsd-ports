@@ -1,0 +1,14 @@
+*** menucalls.c.orig	Tue Jan 11 01:41:59 2000
+--- menucalls.c	Fri Jan 21 12:00:00 2000
+***************
+*** 6,12 ****
+--- 6,14 ----
+  
+  #include <stdio.h>
+  #include <string.h>
++ #ifndef __STDC__
+  #include <malloc.h>
++ #endif
+  #include <sys/types.h>
+  #include <errno.h>
+  #include <limits.h>

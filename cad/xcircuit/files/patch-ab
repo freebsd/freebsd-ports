@@ -1,8 +1,16 @@
-*** xcircuit.c.orig	Fri Jun 25 23:25:12 1999
---- xcircuit.c	Tue Sep  7 00:48:01 1999
+*** xcircuit.c.orig	Fri Jan 14 00:21:21 2000
+--- xcircuit.c	Fri Jan 21 12:00:00 2000
 ***************
-*** 17,22 ****
---- 17,25 ----
+*** 11,22 ****
+--- 11,27 ----
+  #include <stdio.h>
+  #include <stdlib.h>
+  #include <string.h>
++ #ifndef __STDC__
+  #include <malloc.h>
++ #endif
+  #include <sys/types.h>
+  #include <sys/stat.h>
   #include <errno.h>
   #include <limits.h>
   #include <locale.h>
@@ -13,11 +21,11 @@
   #include <X11/Intrinsic.h>
   #include <X11/StringDefs.h>
 ***************
-*** 1384,1389 ****
---- 1387,1396 ----
-     objectptr	*page;		/* -schem flag and renumbers argc! (bug?) */
-     Pixmap	icon, mask;
+*** 1435,1440 ****
+--- 1440,1449 ----
      char		*argv0;		/* find root of argv[0] */
+     short initargc = argc;	/* because XtInitialize() absorbs the     */
+     				/* -schem flag and renumbers argc! (bug?) */
 + 
 + #ifdef __FreeBSD__
 +    fpsetmask(0);

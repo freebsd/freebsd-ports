@@ -1,7 +1,7 @@
-*** Imakefile.orig	Thu Nov 25 07:05:35 1999
---- Imakefile	Tue Dec 14 04:46:02 1999
+*** Imakefile.orig	Thu Jan  6 03:15:52 2000
+--- Imakefile	Fri Jan 21 12:00:00 2000
 ***************
-*** 24,40 ****
+*** 26,44 ****
   #CCOPTIONS = -O2
   #
   # for debugging purposes uncomment the following line:
@@ -14,12 +14,14 @@
   #------------------------------------------------------------------------
   #
 ! PREFIX = /usr/local
-  # XCIRCUIT_LIB_DIR = $(PREFIX)/src/xcircuit-2.0b1/psfiles
+  # XCIRCUIT_LIB_DIR = $(PREFIX)/src/xcircuit-2.0b2/psfiles
 ! XCIRCUIT_LIB_DIR = $(PREFIX)/lib/xcircuit-2.0
-  XCIRCUIT_BIN_DIR = $(PREFIX)/bin
-  XCIRCUIT_MAN_DIR = $(PREFIX)/man/man1
+! XCIRCUIT_BIN_DIR = $(PREFIX)/bin
+! XCIRCUIT_MAN_DIR = $(PREFIX)/man/man1
   
---- 24,40 ----
+  #------------------------------------------------------------------------
+  # Support for graphics double-buffering (A memory hog, but yields fastest
+--- 26,44 ----
   #CCOPTIONS = -O2
   #
   # for debugging purposes uncomment the following line:
@@ -31,14 +33,16 @@
   # Change the following as desired to suit your environment:
   #------------------------------------------------------------------------
   #
-! PREFIX ?= /usr/local
-  # XCIRCUIT_LIB_DIR = $(PREFIX)/src/xcircuit-2.0b1/psfiles
-! XCIRCUIT_LIB_DIR = $(PREFIX)/lib/X11/xcircuit
-  XCIRCUIT_BIN_DIR = $(PREFIX)/bin
-  XCIRCUIT_MAN_DIR = $(PREFIX)/man/man1
+! #PREFIX = /usr/local
+  # XCIRCUIT_LIB_DIR = $(PREFIX)/src/xcircuit-2.0b2/psfiles
+! XCIRCUIT_LIB_DIR = $(LIBDIR)/xcircuit
+! XCIRCUIT_BIN_DIR = $(BINDIR)
+! XCIRCUIT_MAN_DIR = $(MANDIR)
   
+  #------------------------------------------------------------------------
+  # Support for graphics double-buffering (A memory hog, but yields fastest
 ***************
-*** 87,95 ****
+*** 89,97 ****
   # DEC Alpha, Solaris and other SVR4 systems need the following,
   # or if you have compilation errors about "dp->d_name" being
   # undefined:
@@ -48,7 +52,7 @@
   
   # My DECstation (Ultrix) has something funny going on in XLib. . . if there
   # is a compile-time error "ld: Undefined: XUniqueContext *** Error code 1"
---- 87,95 ----
+--- 89,97 ----
   # DEC Alpha, Solaris and other SVR4 systems need the following,
   # or if you have compilation errors about "dp->d_name" being
   # undefined:

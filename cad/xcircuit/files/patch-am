@@ -1,0 +1,14 @@
+*** parameter.c.orig	Sat Jan  8 01:24:21 2000
+--- parameter.c	Fri Jan 21 12:00:00 2000
+***************
+*** 9,15 ****
+--- 9,17 ----
+  
+  #include <stdio.h>
+  #include <string.h>
++ #ifndef __STDC__
+  #include <malloc.h>
++ #endif
+  
+  #include <X11/Intrinsic.h>
+  #include <X11/StringDefs.h>
