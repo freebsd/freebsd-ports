@@ -11,7 +11,7 @@ CATEGORIES=	graphics
 MASTER_SITES=   http://www.boutell.com/gd/http/ \
 		ftp://ftp.boutell.com/pub/boutell/gd/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	billf@FreeBSD.org
 
 LIB_DEPENDS=	png.3:${PORTSDIR}/graphics/png \
 		ttf.4:${PORTSDIR}/print/freetype \
