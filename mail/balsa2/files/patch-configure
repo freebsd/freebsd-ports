@@ -1,0 +1,20 @@
+--- configure	Fri Dec 14 06:13:21 2001
++++ configure.new	Sun Dec 16 12:52:33 2001
+@@ -8869,7 +8869,7 @@
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
+   ac_save_LIBS="$LIBS"
+-LIBS="-lldap -llber -lresolv $LIBS"
++LIBS="-lldap -llber $LIBS"
+ cat > conftest.$ac_ext <<EOF
+ #line 8875 "configure"
+ #include "confdefs.h"
+@@ -8900,7 +8900,7 @@
+   cat >> confdefs.h <<\EOF
+ #define ENABLE_LDAP 1
+ EOF
+- LIBS="-lldap -llber -lresolv $LIBS"
++ LIBS="-lldap -llber $LIBS"
+ else
+   echo "$ac_t""no" 1>&6
+ { echo "configure: error: *** You enabled LDAP but ldap library is not found." 1>&2; exit 1; }
