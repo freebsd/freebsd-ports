@@ -1,19 +1,19 @@
 %%SITE_PERL%%/Module/Build.pm
-%%SITE_PERL%%/Module/Build/Compat.pm
 %%SITE_PERL%%/Module/Build/Base.pm
-%%SITE_PERL%%/Module/Build/PPMMaker.pm
+%%SITE_PERL%%/Module/Build/Compat.pm
 %%SITE_PERL%%/Module/Build/Cookbook.pm
-%%SITE_PERL%%/Module/Build/Platform/darwin.pm
-%%SITE_PERL%%/Module/Build/Platform/MacOS.pm
-%%SITE_PERL%%/Module/Build/Platform/RiscOS.pm
-%%SITE_PERL%%/Module/Build/Platform/VOS.pm
-%%SITE_PERL%%/Module/Build/Platform/Windows.pm
-%%SITE_PERL%%/Module/Build/Platform/Unix.pm
+%%SITE_PERL%%/Module/Build/PPMMaker.pm
 %%SITE_PERL%%/Module/Build/Platform/Amiga.pm
+%%SITE_PERL%%/Module/Build/Platform/Default.pm
 %%SITE_PERL%%/Module/Build/Platform/EBCDIC.pm
 %%SITE_PERL%%/Module/Build/Platform/MPEiX.pm
+%%SITE_PERL%%/Module/Build/Platform/MacOS.pm
+%%SITE_PERL%%/Module/Build/Platform/RiscOS.pm
+%%SITE_PERL%%/Module/Build/Platform/Unix.pm
 %%SITE_PERL%%/Module/Build/Platform/VMS.pm
-%%SITE_PERL%%/Module/Build/Platform/Default.pm
+%%SITE_PERL%%/Module/Build/Platform/VOS.pm
+%%SITE_PERL%%/Module/Build/Platform/Windows.pm
+%%SITE_PERL%%/Module/Build/Platform/darwin.pm
 @dirrm %%SITE_PERL%%/Module/Build/Platform
 @dirrm %%SITE_PERL%%/Module/Build
 @unexec rmdir %D/%%SITE_PERL%%/Module 2>/dev/null || true
