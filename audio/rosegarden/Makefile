@@ -21,7 +21,7 @@ RUN_DEPENDS=	${LOCALBASE}/lib/tclmidi/tclmidi31.so:$(PORTSDIR)/audio/tclmidi
 
 GNU_CONFIGURE=	yes
 USE_AUTOCONF=	yes
-USE_XLIB=	yes
+USE_X_PREFIX=	yes
 CONFIGURE_ARGS=	--with-tclincl=${LOCALBASE}/include/tcl8.0/
 CONFIGURE_ENV=	LIBS="-L${PREFIX}/lib"
 
