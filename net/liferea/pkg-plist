@@ -5,11 +5,13 @@ lib/liferea/liblihtmlg.so
 share/gnome/applications/liferea.desktop
 share/gnome/liferea/css/liferea.css
 share/gnome/liferea/css/liferea2.css
+share/gnome/liferea/dtd/html.ent
 share/gnome/liferea/opml/feedlist.opml
 share/gnome/liferea/opml/feedlist_de.opml
 share/gnome/liferea/opml/feedlist_es.opml
 share/gnome/liferea/opml/feedlist_fr.opml
 share/gnome/liferea/opml/feedlist_sk.opml
+share/gnome/liferea/pixmaps/arrow.png
 share/gnome/liferea/pixmaps/available.png
 share/gnome/liferea/pixmaps/directory.png
 share/gnome/liferea/pixmaps/edit.png
@@ -35,12 +37,14 @@ share/locale/ja/LC_MESSAGES/liferea.mo
 share/locale/ko/LC_MESSAGES/liferea.mo
 share/locale/mk/LC_MESSAGES/liferea.mo
 share/locale/pl/LC_MESSAGES/liferea.mo
+share/locale/pt_BR/LC_MESSAGES/liferea.mo
 share/locale/ro/LC_MESSAGES/liferea.mo
 share/locale/ru/LC_MESSAGES/liferea.mo
 share/locale/sk/LC_MESSAGES/liferea.mo
 share/locale/zh_TW/LC_MESSAGES/liferea.mo
 @dirrm share/gnome/liferea/pixmaps
 @dirrm share/gnome/liferea/opml
+@dirrm share/gnome/liferea/dtd
 @dirrm share/gnome/liferea/css
 @dirrm share/gnome/liferea
 @dirrm lib/liferea
