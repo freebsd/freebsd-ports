@@ -1,0 +1,23 @@
+%%SITE_PERL%%/XML/Validator/Schema.pm
+%%SITE_PERL%%/XML/Validator/Schema/Attribute.pm
+%%SITE_PERL%%/XML/Validator/Schema/AttributeLibrary.pm
+%%SITE_PERL%%/XML/Validator/Schema/ComplexTypeNode.pm
+%%SITE_PERL%%/XML/Validator/Schema/ElementLibrary.pm
+%%SITE_PERL%%/XML/Validator/Schema/ElementNode.pm
+%%SITE_PERL%%/XML/Validator/Schema/ElementRefNode.pm
+%%SITE_PERL%%/XML/Validator/Schema/Library.pm
+%%SITE_PERL%%/XML/Validator/Schema/ModelNode.pm
+%%SITE_PERL%%/XML/Validator/Schema/Node.pm
+%%SITE_PERL%%/XML/Validator/Schema/Parser.pm
+%%SITE_PERL%%/XML/Validator/Schema/RootNode.pm
+%%SITE_PERL%%/XML/Validator/Schema/SimpleType.pm
+%%SITE_PERL%%/XML/Validator/Schema/SimpleTypeNode.pm
+%%SITE_PERL%%/XML/Validator/Schema/TypeLibrary.pm
+%%SITE_PERL%%/XML/Validator/Schema/Util.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Validator/Schema/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Validator/Schema
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Validator 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML 2>/dev/null || true
+@dirrm %%SITE_PERL%%/XML/Validator/Schema
+@unexec rmdir %D/%%SITE_PERL%%/XML/Validator 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/XML 2>/dev/null || true
