@@ -1,8 +1,0 @@
-bin/whisker
-share/whisker/brute.db
-share/whisker/dumb.db
-share/whisker/scan.db
-share/whisker/server.db
-@dirrm share/whisker
-share/doc/whisker/whisker.txt
-@dirrm share/doc/whisker
