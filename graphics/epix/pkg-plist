@@ -1,26 +1,27 @@
 bin/elaps
 bin/epix
+bin/keywords
 bin/laps
 include/epix.h
 lib/libepix.a
-share/epix/config/bash_completions
-share/epix/config/epix.el
-share/epix/config/epix.spec
-share/epix/config/epix.texi
-share/epix/config/update_figs.sh
-share/epix/notes/BUGS
-share/epix/notes/CHANGELOG
-share/epix/notes/INSTALL
-share/epix/notes/POST-INSTALL
-share/epix/notes/README
-share/epix/notes/README-authors
-share/epix/notes/README-changes
-share/epix/notes/THANKS
-share/epix/notes/TODO
-share/epix/samples/epix-%%VERSION%%_samples.tar
-@dirrm share/epix/samples
-@dirrm share/epix/notes
-@dirrm share/epix/config
-@exec mkdir -p %D/share/epix/tutorial
-@exec rmdir %D/share/epix/tutorial 2>/dev/null || true
-@exec rmdir %D/share/epix 2>/dev/null || true
+%%DATADIR%%/config/bash_completions
+%%DATADIR%%/config/epix.el
+%%DATADIR%%/config/epix.spec
+%%DATADIR%%/config/epix.texi
+%%DATADIR%%/config/update_figs.sh
+%%DATADIR%%/notes/BUGS
+%%DATADIR%%/notes/CHANGELOG
+%%DATADIR%%/notes/INSTALL
+%%DATADIR%%/notes/POST-INSTALL
+%%DATADIR%%/notes/README
+%%DATADIR%%/notes/README-authors
+%%DATADIR%%/notes/README-changes
+%%DATADIR%%/notes/THANKS
+%%DATADIR%%/notes/TODO
+%%DATADIR%%/samples/epix-%%VERSION%%_samples.tar
+@dirrm %%DATADIR%%/samples
+@dirrm %%DATADIR%%/notes
+@dirrm %%DATADIR%%/config
+@exec mkdir -p %D/%%DATADIR%%/tutorial
+@unexec rmdir %D/%%DATADIR%%/tutorial 2>/dev/null || true
+@unexec rmdir %D/%%DATADIR%% 2>/dev/null || true
