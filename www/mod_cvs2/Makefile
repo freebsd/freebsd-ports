@@ -1,0 +1,36 @@
+# New ports collection makefile for:	mod_cvs2
+# Date created:				6 January 2003
+# Whom:					Clement Laforet <clement@FreeBSD.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	mod_cvs
+PORTVERSION=	0.5.91
+CATEGORIES=	www
+MASTER_SITES=	http://resare.com/noa/mod_cvs/dist/
+
+MAINTAINER=	clement@FreeBSD.org
+COMMENT=	A module that makes Apache 2 CVS aware
+
+USE_APACHE=	yes
+WITH_APACHE2=	yes
+
+LATEST_LINK=	mod_cvs2
+
+PORTDOCS=	reference.html guide.html README
+
+do-build:
+	@(cd ${WRKSRC} && ${APXS} -c ${PORTNAME}.c)
+
+do-install:
+	@(cd ${WRKSRC} && ${APXS} -i -A -n ${PORTNAME:S/mod_//} ${PORTNAME}.la)
+.if !defined (NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+.   for f in ${PORTDOCS:NREADME}
+	@${INSTALL_DATA} ${WRKSRC}/doc/${f} ${DOCSDIR}
+.   endfor
+.endif
+
+.include <bsd.port.mk>
