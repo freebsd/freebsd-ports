@@ -1,10 +1,8 @@
 bin/lostirc
-lib/charset.alias
 share/applnk/lostirc.desktop
 share/gnome/apps/Internet/lostirc.desktop
 share/gnome/pixmaps/lostirc.png
 share/locale/da/LC_MESSAGES/lostirc.mo
-share/locale/locale.alias
 %%PORTDOCS%%share/doc/lostirc/AUTHORS
 %%PORTDOCS%%share/doc/lostirc/COPYING
 %%PORTDOCS%%share/doc/lostirc/ChangeLog
