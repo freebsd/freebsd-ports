@@ -1,0 +1,30 @@
+*** Makefile.2	Wed Apr 23 22:14:31 1997
+--- Makefile	Wed Apr 23 22:16:32 1997
+***************
+*** 15,21 ****
+  SIZEDEPSRC	:= $(shell grep -l -i '      INCLUDE ' *.f; true)
+  SIZEDEPEND	= $(SIZEDEPSRC:.f=.o)
+  MOPAC		= MOPAC7
+! MOPACSHELL	= mopac
+  BINDIR		= /usr/local/bin
+  OWNER		= root.bin
+  
+--- 15,21 ----
+  SIZEDEPSRC	:= $(shell grep -l -i '      INCLUDE ' *.f; true)
+  SIZEDEPEND	= $(SIZEDEPSRC:.f=.o)
+  MOPAC		= MOPAC7
+! MOPACSHELL	= rmopac
+  BINDIR		= /usr/local/bin
+  OWNER		= root.bin
+  
+***************
+*** 23,28 ****
+--- 23,30 ----
+  		@echo -n "Loading $@ ... "
+  		f77 -O $(OBJS) -o $@
+  		@echo "done"
++ 
++ all:          $(MOPAC)
+  
+  clean:
+  	 	$(RM) $(OBJS) *.trace core

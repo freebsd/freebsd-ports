@@ -1,0 +1,6 @@
+bin/MOPAC7
+bin/rmopac
+share/doc/mopac/mopac.tex
+share/doc/mopac/mopac.dvi
+share/doc/mopac/h2o.dat
+@dirrm share/doc/mopac

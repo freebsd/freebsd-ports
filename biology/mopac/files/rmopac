@@ -1,0 +1,40 @@
+#!/bin/csh -f
+#
+set job = $1
+set mopacdir = /usr/local/bin
+set smallmopac = MOPAC7
+#
+#  Check that prior copies of files do not exist
+foreach file (out log arc end)
+    if -e $job.$file mv $job.$file $job.$file.$$
+  end
+#
+#  Now, make all the necessary assignments
+#
+setenv FOR005 $job.dat
+setenv FOR006 $job.out
+setenv FOR009 $job.res
+setenv FOR010 $job.den
+setenv FOR011 $job.log
+setenv FOR012 $job.arc
+setenv FOR013 $job.gpt
+setenv FOR016 $job.syb
+setenv FOR020 $job.ump
+setenv SETUP  SETUP.DAT
+setenv SHUTDOWN $job.end
+if -e core rm core
+if -e fort.2 rm fort.2
+if -e fort.16 rm fort.16
+#
+time $mopacdir/$smallmopac >> $job.log  
+#
+echo job $job is finished
+head -3 $job.dat
+if -e core rm core
+if -e fort.2 rm fort.2
+if -e fort.16 rm fort.16
+#
+if -e SHUTDOWN rm SHUTDOWN
+if -e $job.end rm $job.end
+if -e nul      rm nul
+exit

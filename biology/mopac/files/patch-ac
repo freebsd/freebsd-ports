@@ -1,0 +1,25 @@
+*** readmo.f.2	Wed Apr 23 17:28:03 1997
+--- readmo.f	Wed Apr 23 17:30:15 1997
+***************
+*** 50,55 ****
+--- 50,56 ----
+  C
+        DIMENSION LOPT(3,NUMATM)
+        CHARACTER KEYWRD*241, KOMENT*81, TITLE*81, LINE*80, BANNER*80
++      * ,BANNR2*80
+        CHARACTER KEYS(80)*1, SPACE*1, SPACE2*2, CH*1, CH2*2
+        CHARACTER ELEMNT*2, IDATE*24, GETNAM*80, NAME*4, NAMO*4, ISTA*4
+        COMMON /KEYWRD/ KEYWRD
+***************
+*** 221,227 ****
+--- 222,231 ----
+  C
+        BANNER=' ** MOPAC FOR LINUX (PUBLIC DOMAIN VERSION) '//
+       1' MTA ATOMKI, Debrecen, 95-JUN-21  **'
++       BANNR2=' ** Porting to FreeBSD 2.1R  by Hiroki Minematu'//
++      1' and Ryo MIYAMOTO, 1997-04-23  **'
+        WRITE(6,'(A)')BANNER
++       WRITE(6,'(A)')BANNR2
+  C
+  C    THE BANNER DOES NOT APPEAR ANYWHERE ELSE.
+  C
