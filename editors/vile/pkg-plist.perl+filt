@@ -14,7 +14,6 @@ share/doc/vile/modes.doc
 share/doc/vile/oleauto.doc
 share/doc/vile/perl.doc
 share/doc/vile/visvile.doc
-share/doc/vile/w32modes.doc
 share/doc/vile/vile-perl-api.doc
 @dirrm share/doc/vile
 share/vile/perl/Vile/Exporter.pm
@@ -103,6 +102,7 @@ share/vile/macros/color-ls.rc
 share/vile/macros/dates.rc
 share/vile/macros/digraphs.rc
 share/vile/macros/gnugpg.rc
+share/vile/macros/loaderrs.rc
 share/vile/macros/manpage.rc
 share/vile/macros/palettes.rc
 share/vile/macros/pictmode.rc

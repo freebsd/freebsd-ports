@@ -15,7 +15,6 @@ share/doc/xvile/modes.doc
 share/doc/xvile/oleauto.doc
 share/doc/xvile/perl.doc
 share/doc/xvile/visvile.doc
-share/doc/xvile/w32modes.doc
 share/doc/xvile/vile-perl-api.doc
 @dirrm share/doc/xvile
 share/xvile/vile/perl/Vile/Exporter.pm
@@ -105,6 +104,7 @@ share/xvile/macros/color-ls.rc
 share/xvile/macros/dates.rc
 share/xvile/macros/digraphs.rc
 share/xvile/macros/gnugpg.rc
+share/xvile/macros/loaderrs.rc
 share/xvile/macros/manpage.rc
 share/xvile/macros/palettes.rc
 share/xvile/macros/pictmode.rc
