@@ -189,7 +189,7 @@ while [ "$1" ]; do
 		\"japanese\")
 			${CAT} << EOF
 MASTER_SITES+=	ftp://night.fminn.nagano.nagano.jp/php4/
-DISTFILES=	\${DISTNAME}\${EXTRACT_SUFX} php4_jstring-20010205.tar.gz php4_mbregex-1.2.tar.gz
+DISTFILES=	\${DISTNAME}\${EXTRACT_SUFX} php4_jstring-1.1.1.tar.gz php4_mbregex-1.2.1.tar.gz
 CONFIGURE_ARGS+=--enable-jstring --enable-mbregex
 BUILD_DEPENDS+=	automake:\${PORTSDIR}/devel/automake
 BUILD_DEPENDS+=	autoconf:\${PORTSDIR}/devel/autoconf
