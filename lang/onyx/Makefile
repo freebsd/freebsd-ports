@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	onyx
-PORTVERSION=	2.3.0
+PORTVERSION=	2.3.1
 CATEGORIES=	lang
 MASTER_SITES=	http://www.canonware.com/download/onyx/
 
@@ -21,7 +21,7 @@ MAN1=		onyx.1
 MANCOMPRESSED=	no
 
 do-build:
-	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} cook)
+	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} cook libs mods bins)
 
 do-install:
 	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} cook install)
