@@ -12,7 +12,7 @@ CATEGORIES=	mail
 MASTER_SITES=	http://gonza.bizhost.ru/ports/
 DISTNAME=	ftr${PORTVERSION:S/.//g}s
 
-MAINTAINER=	gonza@techline.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	FTN Messages tracker
 
 LIB_DEPENDS=	smapi.2:${PORTSDIR}/news/husky-smapi
