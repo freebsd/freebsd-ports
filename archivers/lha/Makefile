@@ -1,19 +1,17 @@
 # New ports collection makefile for:    lha
-# Version required:     1.01u
+# Version required:     1.14C
 # Date created:         26 Dec 1994
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.2 1995/04/01 12:43:26 jkh Exp $
+# $Id: Makefile,v 1.3 1995/04/12 04:54:01 asami Exp $
 #
 
-DISTNAME=       lha101u
-PKGNAME=        lha-1.01u
+DISTNAME=       lha-114c
+PKGNAME=        lha-1.14c
 CATEGORIES+=	archivers
-MASTER_SITES=	ftp://garbo.uwasa.fi/unix/arcers/
-EXTRACT_SUFX=   .tar.Z
+MASTER_SITES=   ftp://ftp.leo.chubu.ac.jp/pub/tools/
+EXTRACT_SUFX=   .tgz
 
 MAINTAINER=     ache@FreeBSD.ORG
-
-NO_WRKSUBDIR=	yes
 
 .include <bsd.port.mk>
