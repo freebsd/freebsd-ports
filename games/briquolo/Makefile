@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	briquolo
-PORTVERSION=	0.5
+PORTVERSION=	0.5.1
 CATEGORIES=	games
 MASTER_SITES=	http://briquolo.free.fr/download/
 
@@ -30,8 +30,7 @@ CPPFLAGS=	-I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|="-Wall"|="$$CXXFLAGS"|g ; \
-		 s|-O3||g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|-O3||g' ${WRKSRC}/configure
 	@${GREP} -lR "SDL/SDL" ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} -e \
 		's|SDL/SDL|SDL|g'
 
