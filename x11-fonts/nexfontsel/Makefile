@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nexfontsel
-PORTVERSION= 	2.0
+PORTVERSION= 	2.0.2
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://www.netlab.is.tsukuba.ac.jp/~yokota/archive/
 DISTNAME=	NeXFontSel-${PORTVERSION}
