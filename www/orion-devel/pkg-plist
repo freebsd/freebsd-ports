@@ -1,9 +1,5 @@
-etc/rc.d/orion.sh
+etc/rc.d/020.orion.sh
 bin/orionctl
-%%T%%/application-deployments/default/defaultWebApp/
-%%T%%/application-deployments/default/defaultWebApp/orion-web.xml
-%%T%%/application-deployments/default/defaultWebApp/persistence
-%%T%%/application-deployments/default/defaultWebApp/persistence/state.ser
 %%T%%/config/database-schemas/hypersonic.xml
 %%T%%/config/database-schemas/ms-access.xml
 %%T%%/config/database-schemas/ms-sql.xml
@@ -322,9 +318,8 @@ bin/orionctl
 %%T%%/orion.jar
 %%T%%/tools.jar
 %%T%%/mail.jar
-@dirrm %%T%%/application-deployments/default/defaultWebApp/persistence
-@dirrm %%T%%/application-deployments/default/defaultWebApp
-@dirrm %%T%%/application-deployments/default
+%%T%%/crimson.jar
+%%T%%/jaas.jar
 @dirrm %%T%%/application-deployments
 @dirrm %%T%%/config/database-schemas
 @dirrm %%T%%/config
@@ -402,5 +397,3 @@ bin/orionctl
 @dirrm %%T%%/persistence/ejb
 @dirrm %%T%%/persistence
 @dirrm %%T%%
-@unexec pw groupdel orion || true
-@unexec pw userdel orion || true
