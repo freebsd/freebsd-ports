@@ -15,18 +15,12 @@ DISTNAME=	sidplay-libs-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library to play Commodore 64 SID-tunes cycle accurate
 
-BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
-RUN_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
-
-USE_REINPLACE=	yes
+USE_GNOME=	gnomehack gnometarget pkgconfig
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 INSTALLS_SHLIB=	yes
 
 post-patch:
-	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
-		's|[(]libdir[)]/pkgconfig|(prefix)/libdata/pkgconfig|g'
 	@${REINPLACE_CMD} -e 's|<malloc\.h>|<stdlib.h>|g' \
 		${WRKSRC}/libsidutils/src/ini/ini.cpp
 
