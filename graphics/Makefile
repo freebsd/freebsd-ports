@@ -201,6 +201,7 @@
     SUBDIR += jpatch
     SUBDIR += jpeg
     SUBDIR += jpeg-mmx
+    SUBDIR += jpeg2pdf
     SUBDIR += jpeg2ps-a4
     SUBDIR += jpeg2ps-letter
     SUBDIR += jpeginfo

@@ -1,0 +1,12 @@
+jpeg2pdf has the following features:
+
+* jpeg2pdf is fast. Unlike ImageMagick or other general image conversion
+  tools, jpeg2pdf is specialized for its task an does this very efficiently.
+* jpeg2pdf generates compact PDF files. Unlike general image conversion
+  tools, jpeg2pdf doesn't do any processing/rescaling of the images, nor does
+  it generate thumbnails of the pages in the PDF file.
+* jpeg2pdf is a command-line program. So it can very easily be integrated in a
+  shell script or a web server process to automate a conversion task.
+
+Author:	Koen Vervloesem <koen.vervloesem@myrealbox.com>
+WWW:	http://koan.studentenweb.org/software/jpeg2pdf.html

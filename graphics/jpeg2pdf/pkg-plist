@@ -1,0 +1,26 @@
+@comment $FreeBSD$
+bin/jpeg2pdf
+%%RUBY_SITELIBDIR%%/image_size.rb
+%%RUBY_SITELIBDIR%%/jpeg2pdf.rb
+%%RUBY_SITELIBDIR%%/rpdf.rb
+%%RUBY_SITELIBDIR%%/rpdf/crossreftable.rb
+%%RUBY_SITELIBDIR%%/rpdf/document.rb
+%%RUBY_SITELIBDIR%%/rpdf/documentcatalog.rb
+%%RUBY_SITELIBDIR%%/rpdf/imagedictionary.rb
+%%RUBY_SITELIBDIR%%/rpdf/page.rb
+%%RUBY_SITELIBDIR%%/rpdf/pagetree.rb
+%%RUBY_SITELIBDIR%%/rpdf/pdfarray.rb
+%%RUBY_SITELIBDIR%%/rpdf/pdfboolean.rb
+%%RUBY_SITELIBDIR%%/rpdf/pdfdictionary.rb
+%%RUBY_SITELIBDIR%%/rpdf/pdfinteger.rb
+%%RUBY_SITELIBDIR%%/rpdf/pdfname.rb
+%%RUBY_SITELIBDIR%%/rpdf/pdfnull.rb
+%%RUBY_SITELIBDIR%%/rpdf/pdfnumeric.rb
+%%RUBY_SITELIBDIR%%/rpdf/pdfobject.rb
+%%RUBY_SITELIBDIR%%/rpdf/pdfstream.rb
+%%RUBY_SITELIBDIR%%/rpdf/pdfstring.rb
+%%RUBY_SITELIBDIR%%/rpdf/rectangle.rb
+%%RUBY_SITELIBDIR%%/rpdf/trailer.rb
+%%RUBY_SITELIBDIR%%/rpdf/util.rb
+%%RUBY_SITELIBDIR%%/rpdf/version.rb
+@dirrm %%RUBY_SITELIBDIR%%/rpdf
