@@ -11758,7 +11758,6 @@ xfce4-iconbox	ports/misc/xfce4-iconbox
 xfce4-media	ports/multimedia/xfce4-media
 xfce4-mcs-manager	ports/sysutils/xfce4-mcs-manager
 xfce4-mcs-plugins	ports/sysutils/xfce4-mcs-plugins
-xfce4-menueditor	ports/x11-wm/xfce4-menueditor
 xfce4-minicmd-plugin	ports/sysutils/xfce4-minicmd-plugin
 xfce4-mixer	ports/audio/xfce4-mixer
 xfce4-netload-plugin	ports/sysutils/xfce4-netload-plugin
