@@ -1,0 +1,23 @@
+--- configure.in.orig	Wed Feb 12 17:14:28 2003
++++ configure.in	Wed Feb 12 17:19:31 2003
+@@ -652,16 +652,10 @@
+     AC_DEFINE(MULTI_CHARSET)
+     DEF_FONT_IDX=0
+     MULTICHAR_ENCODING="big5"
+-    FONT0="8x16"
+-    FONT1="9x18"
+-    FONT2="10x20"
+-    FONT3="12x24"
+-    FONT4="13x26"
+-    MFONT0="-*-ming-medium-r-normal--16-*-*-*-c-*-big5-0"
+-    MFONT1="-*-ming-medium-r-normal--18-*-*-*-c-*-big5-0"
+-    MFONT2="-*-ming-medium-r-normal--20-*-*-*-c-*-big5-0"
+-    MFONT3="-*-ming-medium-r-normal--24-*-*-*-c-*-big5-0"
+-    MFONT4="-*-ming-medium-r-normal--26-*-*-*-c-*-big5-0"
++    FONT0="kc8x15"
++    FONT1="kc12x24"
++    MFONT0="kc15f"
++    MFONT1="kc24f"
+   else
+     MULTI_CHARSET_TYPE=""
+   fi
