@@ -15,7 +15,6 @@ MAINTAINER=	jedgar@FreeBSD.org
 ALL_TARGET=	clean wmcalc
 USE_X_PREFIX=   yes
 USE_XPM=	yes
-NO_WRKSUBDIR=	yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/wmcalc ${PREFIX}/bin
