@@ -8,6 +8,7 @@
 
 PORTNAME=	horde
 PORTVERSION=	1.2.6
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.horde.org/pub/horde/tarballs/
 
@@ -26,9 +27,9 @@ MAINTAINER=	thierry@thomas.as
 RUN_DEPENDS+=	${LOCALBASE}/libexec/apache/libssl.so:${PORTSDIR}/www/apache13-modssl
 .endif
 .if defined(WITH_PHP3)
-RUN_DEPENDS+=	${LOCALBASE}/libexec/apache/libphp4.so:${PORTSDIR}/www/mod_php3
+RUN_DEPENDS+=	${LOCALBASE}/libexec/apache/libphp3.so:${PORTSDIR}/www/mod_php3
 .else
-RUN_DEPENDS+=	${LOCALBASE}/libexec/apache/libphp3.so:${PORTSDIR}/www/mod_php4
+RUN_DEPENDS+=	${LOCALBASE}/libexec/apache/libphp4.so:${PORTSDIR}/www/mod_php4
 .endif
 
 NO_BUILD=	yes
