@@ -1,7 +1,7 @@
 Index: tcpdump.c
 ===========================================================================
---- tcpdump.c	2004/11/17 15:20:25	#1
-+++ tcpdump.c	2004/11/17 15:20:25
+--- tcpdump.c	2004/11/17 22:48:46	#1
++++ tcpdump.c	2004/11/17 22:48:46
 @@ -112,6 +112,9 @@
  	{
  		case -1: /* Not an IP packet */
@@ -14,8 +14,8 @@ Index: tcpdump.c
  			callback_plast = ip_buf+iplen-offset-1;
 Index: tcpdump.h
 ===========================================================================
---- tcpdump.h	2004/11/17 15:20:25	#1
-+++ tcpdump.h	2004/11/17 15:20:25
+--- tcpdump.h	2004/11/17 22:48:46	#1
++++ tcpdump.h	2004/11/17 22:48:46
 @@ -178,7 +178,7 @@
  }
  
@@ -48,3 +48,18 @@ Index: tcpdump.h
  		default: /* well, this is not an IP packet */
  			offset = -1;
  			break;			
+Index: tcptrace.h
+===========================================================================
+--- tcptrace.h	2004/11/17 22:48:46	#1
++++ tcptrace.h	2004/11/17 22:48:46
+@@ -1172,6 +1172,10 @@
+ #define ETHERTYPE_VLAN		0x8100
+ #endif	/* 802.1Q Virtual LAN */
+ 
++#ifndef ETHER_VLAN_ENCAP_LEN
++#define ETHER_VLAN_ENCAP_LEN	4
++#endif /* 802.1Q tag header length */
++
+ /* support for PPPoE encapsulation added by Yann Samama (ysamama@nortelnetworks.com)*/
+ #ifndef ETHERTYPE_PPPOE_SESSION
+ #define ETHERTYPE_PPPOE_SESSION	0x8864
