@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	autodia
-PORTVERSION=	1.8
+PORTVERSION=	1.9
 CATEGORIES=	devel perl5
 MASTER_SITES=	http://droogs.org/autodia/download/
 DISTNAME=	Autodia-${PORTVERSION}
@@ -41,7 +41,7 @@ MAN3=	Autodia.3 autodia.3 autodia_java.3 \
 DOCS=	CHANGES COPYING CREDITS DEVELOP FAQ INSTALL MANIFEST README TODO
 
 pre-install:
-	@${RM} -f ${WRKSRC}/blib/man3/*.3pm
+	@${RM} -f ${WRKSRC}/blib/man3/*.3
 
 .if !defined(NOPORTDOCS)
 post-install:
