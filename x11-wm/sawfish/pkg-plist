@@ -589,11 +589,14 @@ share/sawfish/%%VERSION%%/themes/smaker/theme.jl
 @dirrm share/sawfish/%%VERSION%%/lisp
 @dirrm share/sawfish/%%VERSION%%
 @dirrm share/sawfish
+%%NOGNOME:%%@dirrm share/gnome/pixmaps
 %%GNOME:%%@dirrm share/gnome/control-center/Sawfish
 %%GNOME:%%@dirrm share/gnome/apps/Settings/Sawfish
+%%NOGNOME:%%@dirrm share/gnome
 @dirrm libexec/sawfish/%%VERSION%%/%%GNUHOST%%/sawfish/wm/util
 @dirrm libexec/sawfish/%%VERSION%%/%%GNUHOST%%/sawfish/wm
 @dirrm libexec/sawfish/%%VERSION%%/%%GNUHOST%%/sawfish
 @dirrm libexec/sawfish/%%VERSION%%/%%GNUHOST%%
 @dirrm libexec/sawfish/%%VERSION%%
 @dirrm libexec/sawfish
+@dirrm libexec/rep/%%GNUHOST%%/sawfish
