@@ -6268,6 +6268,7 @@ ports_deskutils	ports/deskutils
 ports_devel	ports/devel
 ports_dict	ports/textproc/dict
 ports_doc	ports/net/doc
+ports_dns	ports/dns
 ports_editors	ports/editors
 ports_egcs	ports/lang/egcs
 ports_emulators	ports/emulators
