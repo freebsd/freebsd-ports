@@ -3,7 +3,7 @@
 # Optionally install a supfile and start cvsup on it.
 #
 # Written Jan 8th, 1998.  Jordan Hubbard <jkh@FreeBSD.org>
-# Last modification date: April 5th, 2000.
+# Last modification date: March 10th, 2001.
 
 # Failsafe - if the environment is spammed somehow, pick a reasonable
 # prefix.
@@ -75,7 +75,6 @@ just the kernel, for example, then select src-sys.
     "src-base"		"Misc files directly under /usr/src" No \
     "src-bin"		"Sources for things in /bin" No \
     "src-contrib"	"Sources for contributed packages" No \
-    "src-crypto" 	"Non-U.S. export portions of ssh/Kerberos" No \
     "src-etc"		"Sources for things in /etc" No \
     "src-games"		"Sources for things in /usr/games" No \
     "src-gnu"		"Sources for GNU utils (requires src-contrib)" No \
@@ -86,7 +85,6 @@ just the kernel, for example, then select src-sys.
     "src-libexec"	"Sources for things in /usr/libexec" No \
     "src-release"	"Sources for release building tools" No \
     "src-sbin"		"Sources for things in /sbin" No \
-    "src-secure" 	"Non-U.S. export DES software" No \
     "src-share"		"Sources for things in /usr/share" No \
     "src-sys"		"Sources for the kernel (/usr/src/sys)" No \
     "src-tools"		"Sources for miscellaneous tools" No \
@@ -137,7 +135,6 @@ choose to go this route).
 	C_SRC_TARGETS=""
 	return ${_VAL}
     fi
-    EXPORT=YES
     return ${_VAL}
 }
 
@@ -241,38 +238,12 @@ writefile() {
 
     echo >> ${SUPFILE}
     if [ "${C_SRC_TARGETS}" ]; then
-	if [ -z "${EXPORT}" ]; then
-	    echo '*default ' "host=cvsup.internat.freebsd.org" > ${SUPFILE}.intl
-	    echo '*default ' "base=${C_BASE}" >> ${SUPFILE}.intl
-	    echo '*default ' "prefix=${C_BASE}" >> ${SUPFILE}.intl
-	    echo '*default ' "release=${C_RELEASE}" >> ${SUPFILE}.intl
-	    if [ "${C_RELEASETAG}" != "cvs" ]; then
-		echo '*default ' "tag=${C_RELEASETAG}" >> ${SUPFILE}.intl
-	    fi
-	    echo '*default ' "${C_OPTS}" >> ${SUPFILE}.intl
-	    echo >> ${SUPFILE}.intl
-	fi
 	if [ "${C_SRC_TARGETS}" != "src-all" ]; then
 	    for i in ${C_SRC_TARGETS}; do
-		if [ "$i" = "\"src-crypto\"" -o "$i" = "\"src-secure\"" ]; then
-		    if [ "${EXPORT}" ]; then
-			eval echo $i >> ${SUPFILE}
-		    else
-			eval echo $i >> ${SUPFILE}.intl
-		    fi
-		else
-		    eval echo $i >> ${SUPFILE}
-		fi
+	    	eval echo $i >> ${SUPFILE}
 	    done
 	else
 	    echo src-all >> ${SUPFILE}
-	    if [ "${EXPORT}" ]; then
-		echo src-crypto >> ${SUPFILE}
-		echo src-secure >> ${SUPFILE}
-	    else
-		echo src-crypto >> ${SUPFILE}.intl
-		echo src-secure >> ${SUPFILE}.intl
-	    fi
 	fi
     fi
     if [ "${C_RELEASETAG}" != "cvs" ]; then
@@ -330,10 +301,6 @@ if [ -r "${SUPFILE}" -a -x "${CVSUP_CMD}" ]; then
 	infomsg "OK, to update your system later simply type:
      \"${CVSUP_CMD} ${CVSUP_ARGS} ${SUPFILE}\"
 or put the command in your /etc/daily.local file for automatic updates."
-	if [ -z "${EXPORT}" ]; then
-	    infomsg "Since you are outside the U.S/Canada, you should also
-run this same command for ${SUPFILE}.intl"
-	fi
     else
 	if yesno "Are you behind a firewall?"; then
 	    CVSUP_ARGS="${CVSUP_ARGS} -P -"
@@ -343,16 +310,8 @@ run this same command for ${SUPFILE}.intl"
 	fi
 	message "Now running ${CVSUP_CMD} ${CVSUP_ARGS} ${SUPFILE}."
 	runprog "${CVSUP_CMD} ${CVSUP_ARGS} ${SUPFILE}"
-	if [ -z "${EXPORT}" -a -r ${SUPFILE}.intl ]; then
-	    message "Now running ${CVSUP_CMD} ${CVSUP_ARGS} ${SUPFILE}.intl."
-	    runprog "${CVSUP_CMD} ${CVSUP_ARGS} ${SUPFILE}.intl"
-	fi
 	infomsg "All finished!  To update your system again, simply type
 	\"${CVSUP_CMD} ${CVSUP_ARGS} ${SUPFILE}\"
 or put the command in your /etc/daily.local file for automatic updates."
-	if [ -z "${EXPORT}" ]; then
-	    infomsg "Since you are outside the U.S/Canada, you should also
-run this same command for ${SUPFILE}.intl"
-	fi
     fi
 fi
