@@ -12,6 +12,8 @@ MASTER_SITE_SUBDIR=	radius
 
 MAINTAINER=	lance@evitel.net
 
+BROKEN=		"Does not package correctly"
+
 #MAKEFILE=	Makefile
 
 USE_SUBMAKE=	yes
