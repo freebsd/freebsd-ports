@@ -532,7 +532,6 @@ MASTER_SITE_SOURCEFORGE+= \
 	http://us.dl.sourceforge.net/%SUBDIR%/ \
 	http://eu.dl.sourceforge.net/%SUBDIR%/ \
 	ftp://us.dl.sourceforge.net/pub/sourceforge/%SUBDIR%/ \
-	ftp://gd.tuwien.ac.at/linux/sourceforge/%SUBDIR%/ \
 	ftp://ftp.kddlabs.co.jp/sourceforge/%SUBDIR%/ \
 	ftp://ftp.chg.ru/pub/sourceforge/%SUBDIR%/
 
