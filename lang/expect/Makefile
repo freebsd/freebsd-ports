@@ -3,7 +3,7 @@
 # Whom:			pst
 # Version required:	5.25
 #
-# $Id: Makefile,v 1.20 1997/07/07 08:25:10 pst Exp $
+# $Id: Makefile,v 1.21 1997/10/11 12:38:59 markm Exp $
 #
 
 DISTNAME=	expect
@@ -14,17 +14,17 @@ MASTER_SITES=	http://expect.nist.gov/ \
 
 MAINTAINER=	ports@freebsd.org
 
-DEPENDS=	${PORTSDIR}/lang/tcl80 \
-		${PORTSDIR}/x11/tk80
+LIB_DEPENDS=	tcl80\\.1\\.:${PORTSDIR}/lang/tcl8 \
+		tk80\\.1:${PORTSDIR}/x11/tk80
 
 WRKSRC=		${WRKDIR}/expect-5.25
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS= --enable-shared \
 		--with-tclconfig=${PREFIX}/lib/tcl8.0 \
-		--with-tclinclude=${PORTSDIR}/lang/tcl80/work/tcl8.0 \
+		--with-tclinclude=${PREFIX}/include/tcl8.0 \
 		--with-tkconfig=${PREFIX}/lib/tk8.0 \
-		--with-tkinclude=${PORTSDIR}/x11/tk80/work/tk8.0
+		--with-tkinclude=${PREFIX}/include/tk8.0
 MAN1=		autoexpect.1 cryptdir.1 decryptdir.1 dislocate.1 \
 		expect.1 expectk.1 kibitz.1 mkpasswd.1 passmass.1 \
 		tknewsbiff.1 unbuffer.1 xkibitz.1
