@@ -1,6 +1,6 @@
-! Cyrillic keyboard mapping table for XFree86-3.1 server of X11R6.
+! Cyrillic keyboard mapping table for XFree86-3.1.2 server of X11R6.
 ! Copyright (C) 1995 Cronyx Ltd., info@cronyx.ru
-! Changes Copyright (C) 1995 by Andrey A. Chernov, Moscow, Russia.
+! Changes Copyright (C) 1995-1996 by Andrey A. Chernov, Moscow, Russia.
 !
 ! This product is free Software, you can use it free of charge
 ! without restriction (e.g. use, copy, modify, merge, publish,
@@ -10,8 +10,8 @@
 ! Code Table: KOI8-R
 ! Switcher: CapsLock
 !
-! WARNING: Control keys NOT WORKS when russian mode is active due
-! to X11 bug (control handling when modeswitch is on),
+! WARNING: Control keys DON'T WORK when Russian mode is active due
+! to an X11 bug (control handling when modeswitch is on),
 ! if you know, how to fix it, I am all ears.
 !                                              <ache@astral.msk.su>
 !
@@ -28,11 +28,11 @@ keycode  9      = Escape          NoSymbol        Escape
 keycode 10      = 1               exclam          exclam     1
 keycode 11      = 2               at              quotedbl   2
 keycode 12      = 3               numbersign      grave      3
-keycode 13      = 4               dollar          semicolon  4
+keycode 13      = 4               dollar          asterisk   4
 keycode 14      = 5               percent         colon      5
 keycode 15      = 6               asciicircum     comma      6
 keycode 16      = 7               ampersand       period     7
-keycode 17      = 8               asterisk        asterisk   8
+keycode 17      = 8               asterisk        semicolon  8
 keycode 18      = 9               parenleft       parenleft  9
 keycode 19      = 0               parenright      parenright 0
 keycode 20      = minus           underscore      minus   underscore
@@ -77,7 +77,7 @@ keycode 60      = period          greater         0xc0    0xe0
 keycode 61      = slash           question        slash   question
 keycode 64      = Alt_L
 keycode 65      = space           NoSymbol        space
-keycode 66      = Caps_Lock       0x1007ff01
+keycode 66      = Caps_Lock       XF86ModeLock
 keycode 67      = F1
 keycode 68      = F2
 keycode 69      = F3
