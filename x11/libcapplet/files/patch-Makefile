@@ -1,0 +1,11 @@
+--- Makefile.orig	Wed Jul 10 21:32:05 2002
++++ Makefile	Wed Jul  9 23:15:23 2003
+@@ -14,7 +14,7 @@
+ 	-lORBitutil -lglib12 -lwrap -lm -lgnorba -lXpm -ljpeg -lgnomeui \
+ 	-lart_lgpl -lgdk_imlib -ltiff -lungif -lpng -lz -lSM -lICE -lgtk12 \
+ 	-lgdk12 -lgmodule12 -lXext -lX11 -lgnome -lgnomesupport -lintl \
+-	-lesd -lgnugetopt -laudiofile 
++	-lesd ${LDFLAGS} -laudiofile 
+ 
+ CLEANFILES+=control-center-common.c control-center-skels.c \
+ 	    control-center-stubs.c control-center.h cappletConf.sh \
