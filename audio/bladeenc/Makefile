@@ -6,15 +6,14 @@
 #
 
 PORTNAME=	bladeenc
-PORTVERSION=	0.92
+PORTVERSION=	0.94.1
 CATEGORIES=	audio
 MASTER_SITES=	http://bladeenc.mp3.no/source/ \
 		http://www.physik.TU-Berlin.DE/~ibex/ports/distfiles/
-EXTRACT_SUFX=	.0-src-stable.tar.gz
+EXTRACT_SUFX=	-src-stable.tar.gz
 
 MAINTAINER=	dirk@FreeBSD.org
 
-WRKSRC=		${WRKDIR}/${DISTNAME}.0
 GNU_CONFIGURE=	yes
 
 .include <bsd.port.mk>
