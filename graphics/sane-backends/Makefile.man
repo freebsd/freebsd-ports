@@ -38,6 +38,7 @@ MAN5+=	sane-mustek_pp.5
 MAN5+=	sane-mustek_usb.5
 MAN5+=	sane-nec.5
 MAN5+=	sane-net.5
+MAN5+=	sane-niash.5
 MAN5+=	sane-pie.5
 MAN5+=	sane-pint.5
 MAN5+=	sane-plustek.5
