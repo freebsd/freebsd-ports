@@ -1,12 +1,15 @@
-*** fig.h.orig	Wed Jun  1 23:35:23 1994
---- fig.h	Wed Jan  4 20:58:06 1995
+diff -c -r1.1 fig.h
+*** 1.1	1995/01/21 20:05:21
+--- fig.h	1995/01/21 20:06:39
 ***************
-*** 228,234 ****
+*** 233,239 ****
+--- 233,241 ----
   
   extern int	errno;
   extern int	sys_nerr;
-- extern char    *sys_errlist[];
++ #if (! (defined(BSD) && (BSD >= 199306)))
+  extern char    *sys_errlist[];
++ #endif
   extern char    *mktemp();
   
   #include <math.h>	/* for sin(), cos() etc */
---- 228,233 ----
