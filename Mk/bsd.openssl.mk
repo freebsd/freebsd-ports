@@ -2,7 +2,7 @@
 # Date created:		31 May 2002
 # Whom:			dinoex
 #
-# $FreeBSD: /tmp/pcvs/ports/Mk/bsd.openssl.mk,v 1.16 2004-05-12 04:58:52 dinoex Exp $
+# $FreeBSD: /tmp/pcvs/ports/Mk/bsd.openssl.mk,v 1.17 2004-05-12 20:22:34 dinoex Exp $
 #
 # Use of 'USE_OPENSSL=yes' includes this Makefile after bsd.ports.pre.mk
 #
@@ -59,6 +59,8 @@ check-depends::
 	@${ECHO_CMD} "Dependency warning: used OpenSSL version contains known vulnerabilities"
 	@${ECHO_CMD} "Please update or define either WITH_OPENSSL_BASE or WITH_OPENSSL_PORT"
 	@${FALSE}
+.else
+WITH_OPENSSL_BASE=yes
 .endif
 .endif
 
