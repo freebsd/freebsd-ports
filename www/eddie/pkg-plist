@@ -35,130 +35,130 @@ lib/eddie/conf/ex3.mig
 lib/eddie/conf/ex4.gate
 lib/eddie/conf/ex4.mig
 lib/eddie/conf/logs/.KEEPME
-lib/eddie/lib/dns_server-1.5.1/ebin/.KEEPME
-lib/eddie/lib/dns_server-1.5.1/ebin/dns_app.beam
-lib/eddie/lib/dns_server-1.5.1/ebin/dns_cache.beam
-lib/eddie/lib/dns_server-1.5.1/ebin/dns_catalog.beam
-lib/eddie/lib/dns_server-1.5.1/ebin/dns_domain_sup.beam
-lib/eddie/lib/dns_server-1.5.1/ebin/dns_load.beam
-lib/eddie/lib/dns_server-1.5.1/ebin/dns_parse.beam
-lib/eddie/lib/dns_server-1.5.1/ebin/dns_query.beam
-lib/eddie/lib/dns_server-1.5.1/ebin/dns_recurse.beam
-lib/eddie/lib/dns_server-1.5.1/ebin/dns_recurse_udp_tracker.beam
-lib/eddie/lib/dns_server-1.5.1/ebin/dns_rr.beam
-lib/eddie/lib/dns_server-1.5.1/ebin/dns_server.app
-lib/eddie/lib/dns_server-1.5.1/ebin/dns_server.beam
-lib/eddie/lib/dns_server-1.5.1/ebin/dns_sig.beam
-lib/eddie/lib/dns_server-1.5.1/ebin/dns_sup.beam
-lib/eddie/lib/dns_server-1.5.1/ebin/dns_tcp_accept.beam
-lib/eddie/lib/dns_server-1.5.1/ebin/dns_udp.beam
-lib/eddie/lib/dns_server-1.5.1/ebin/dns_xfr.beam
-lib/eddie/lib/dns_server-1.5.1/ebin/dns_zone.beam
-lib/eddie/lib/dns_server-1.5.1/priv/.KEEPME
-lib/eddie/lib/dns_server-1.5.1/priv/dns.boot
-lib/eddie/lib/dns_server-1.5.1/priv/dns_sys.config
-lib/eddie/lib/dns_server-1.5.1/priv/lbdns
-lib/eddie/lib/inet_server-1.5.1/ebin/.KEEPME
-lib/eddie/lib/inet_server-1.5.1/ebin/erlet_admit_ctrl.beam
-lib/eddie/lib/inet_server-1.5.1/ebin/erlet_status.beam
-lib/eddie/lib/inet_server-1.5.1/ebin/erlet_utils.beam
-lib/eddie/lib/inet_server-1.5.1/ebin/http.beam
-lib/eddie/lib/inet_server-1.5.1/ebin/http_admit.beam
-lib/eddie/lib/inet_server-1.5.1/ebin/http_db.beam
-lib/eddie/lib/inet_server-1.5.1/ebin/http_fields.beam
-lib/eddie/lib/inet_server-1.5.1/ebin/http_parse.beam
-lib/eddie/lib/inet_server-1.5.1/ebin/inet_app.beam
-lib/eddie/lib/inet_server-1.5.1/ebin/inet_server.app
-lib/eddie/lib/inet_server-1.5.1/ebin/inet_server.beam
-lib/eddie/lib/inet_server-1.5.1/ebin/is_config.beam
-lib/eddie/lib/inet_server-1.5.1/ebin/is_core.beam
-lib/eddie/lib/inet_server-1.5.1/ebin/is_db.beam
-lib/eddie/lib/inet_server-1.5.1/ebin/is_service_db.beam
-lib/eddie/lib/inet_server-1.5.1/ebin/is_sup.beam
-lib/eddie/lib/inet_server-1.5.1/ebin/queue_srv.beam
-lib/eddie/lib/inet_server-1.5.1/ebin/queue_timer.beam
-lib/eddie/lib/inet_server-1.5.1/ebin/srv_parse.beam
-lib/eddie/lib/inet_server-1.5.1/ebin/srv_table.beam
-lib/eddie/lib/inet_server-1.5.1/ebin/url_parse.beam
-lib/eddie/lib/inet_server-1.5.1/priv/.KEEPME
-lib/eddie/lib/inet_server-1.5.1/priv/relay
-lib/eddie/lib/load_info-1.5.1/ebin/.KEEPME
-lib/eddie/lib/load_info-1.5.1/ebin/load_app.beam
-lib/eddie/lib/load_info-1.5.1/ebin/load_info.app
-lib/eddie/lib/load_info-1.5.1/ebin/load_server.beam
-lib/eddie/lib/load_info-1.5.1/ebin/load_sup.beam
-lib/eddie/lib/load_info-1.5.1/ebin/lonelb.beam
-lib/eddie/lib/load_info-1.5.1/load_avg
-lib/eddie/lib/load_info-1.5.1/priv/.KEEPME
-lib/eddie/lib/load_info-1.5.1/priv/load_avg
-lib/eddie/lib/lonelb-1.5.1/ebin/.KEEPME
-lib/eddie/lib/lonelb-1.5.1/ebin/get_mig_conf.beam
-lib/eddie/lib/lonelb-1.5.1/ebin/lonelb.app
-lib/eddie/lib/master-1.5.1/ebin/.KEEPME
-lib/eddie/lib/master-1.5.1/ebin/master.app
-lib/eddie/lib/master-1.5.1/ebin/master_app.beam
-lib/eddie/lib/master-1.5.1/ebin/master_heuristics.beam
-lib/eddie/lib/master-1.5.1/ebin/master_server.beam
-lib/eddie/lib/master-1.5.1/ebin/master_sup.beam
-lib/eddie/lib/master-1.5.1/priv/.KEEPME
-lib/eddie/lib/misc-1.5.1/ebin/.KEEPME
-lib/eddie/lib/misc-1.5.1/ebin/config_file.beam
-lib/eddie/lib/misc-1.5.1/ebin/db.beam
-lib/eddie/lib/misc-1.5.1/ebin/disk_log_handler.beam
-lib/eddie/lib/misc-1.5.1/ebin/fdsrv.beam
-lib/eddie/lib/misc-1.5.1/ebin/log_sig.beam
-lib/eddie/lib/misc-1.5.1/ebin/misc.app
-lib/eddie/lib/misc-1.5.1/ebin/misc.beam
-lib/eddie/lib/misc-1.5.1/ebin/misc_app.beam
-lib/eddie/lib/misc-1.5.1/ebin/misc_sup.beam
-lib/eddie/lib/misc-1.5.1/ebin/sig_ex.beam
-lib/eddie/lib/misc-1.5.1/ebin/sig_handler.beam
-lib/eddie/lib/misc-1.5.1/ebin/syslog_handler.beam
-lib/eddie/lib/misc-1.5.1/priv/.KEEPME
-lib/eddie/lib/misc-1.5.1/priv/fdsrv
-lib/eddie/lib/misc-1.5.1/priv/fdsrv_drv.so
-lib/eddie/lib/misc-1.5.1/priv/sig_handler
-lib/eddie/lib/misc-1.5.1/priv/syslog_drv.so
-lib/eddie/lib/oam-1.5.1/ebin/.KEEPME
-lib/eddie/lib/oam-1.5.1/ebin/oam.app
-lib/eddie/lib/oam-1.5.1/ebin/oam.beam
-lib/eddie/lib/oam-1.5.1/ebin/oam_config.beam
-lib/eddie/lib/oam-1.5.1/ebin/oam_config_files.beam
-lib/eddie/lib/oam-1.5.1/priv/.KEEPME
-lib/eddie/lib/oam-1.5.1/priv/conf
-lib/eddie/lib/oam-1.5.1/priv/eddie
-lib/eddie/lib/oam-1.5.1/priv/eddie.init
-lib/eddie/lib/oam-1.5.1/priv/gate
-lib/eddie/lib/oam-1.5.1/priv/lbdns.init
-lib/eddie/lib/oam-1.5.1/priv/mig
-lib/eddie/lib/oam-1.5.1/priv/oam.app
-lib/eddie/lib/oam-1.5.1/priv/package
-lib/eddie/lib/oam-1.5.1/priv/rpm.spec
-lib/eddie/lib/oam-1.5.1/priv/start
-lib/eddie/lib/servant-1.5.1/ebin/.KEEPME
-lib/eddie/lib/servant-1.5.1/ebin/dummy.beam
-lib/eddie/lib/servant-1.5.1/ebin/eddie.beam
-lib/eddie/lib/servant-1.5.1/ebin/http_monitor.beam
-lib/eddie/lib/servant-1.5.1/ebin/servant.app
-lib/eddie/lib/servant-1.5.1/ebin/servant_app.beam
-lib/eddie/lib/servant-1.5.1/ebin/servant_config.beam
-lib/eddie/lib/servant-1.5.1/ebin/servant_inet_server_sup.beam
-lib/eddie/lib/servant-1.5.1/ebin/servant_monitor_server.beam
-lib/eddie/lib/servant-1.5.1/ebin/servant_monitor_sup.beam
-lib/eddie/lib/servant-1.5.1/ebin/servant_server.beam
-lib/eddie/lib/servant-1.5.1/ebin/servant_sup.beam
-lib/eddie/lib/servant-1.5.1/ebin/servant_util.beam
-lib/eddie/lib/servant-1.5.1/priv/garp
-lib/eddie/lib/servant-1.5.1/priv/ifadd
-lib/eddie/lib/servant-1.5.1/priv/ifdel
-lib/eddie/lib/servant-1.5.1/priv/ifget
-lib/eddie/lib/servant-1.5.1/priv/routeadd
-lib/eddie/lib/sync_nodes-1.5.1/ebin/.KEEPME
-lib/eddie/lib/sync_nodes-1.5.1/ebin/sync_nodes.app
-lib/eddie/lib/sync_nodes-1.5.1/ebin/sync_nodes_app.beam
-lib/eddie/lib/sync_nodes-1.5.1/ebin/sync_nodes_server.beam
-lib/eddie/lib/sync_nodes-1.5.1/ebin/sync_nodes_sup.beam
-lib/eddie/lib/sync_nodes-1.5.1/priv/.KEEPME
+lib/eddie/lib/dns_server-1.5.3/ebin/.KEEPME
+lib/eddie/lib/dns_server-1.5.3/ebin/dns_app.beam
+lib/eddie/lib/dns_server-1.5.3/ebin/dns_cache.beam
+lib/eddie/lib/dns_server-1.5.3/ebin/dns_catalog.beam
+lib/eddie/lib/dns_server-1.5.3/ebin/dns_domain_sup.beam
+lib/eddie/lib/dns_server-1.5.3/ebin/dns_load.beam
+lib/eddie/lib/dns_server-1.5.3/ebin/dns_parse.beam
+lib/eddie/lib/dns_server-1.5.3/ebin/dns_query.beam
+lib/eddie/lib/dns_server-1.5.3/ebin/dns_recurse.beam
+lib/eddie/lib/dns_server-1.5.3/ebin/dns_recurse_udp_tracker.beam
+lib/eddie/lib/dns_server-1.5.3/ebin/dns_rr.beam
+lib/eddie/lib/dns_server-1.5.3/ebin/dns_server.app
+lib/eddie/lib/dns_server-1.5.3/ebin/dns_server.beam
+lib/eddie/lib/dns_server-1.5.3/ebin/dns_sig.beam
+lib/eddie/lib/dns_server-1.5.3/ebin/dns_sup.beam
+lib/eddie/lib/dns_server-1.5.3/ebin/dns_tcp_accept.beam
+lib/eddie/lib/dns_server-1.5.3/ebin/dns_udp.beam
+lib/eddie/lib/dns_server-1.5.3/ebin/dns_xfr.beam
+lib/eddie/lib/dns_server-1.5.3/ebin/dns_zone.beam
+lib/eddie/lib/dns_server-1.5.3/priv/.KEEPME
+lib/eddie/lib/dns_server-1.5.3/priv/dns.boot
+lib/eddie/lib/dns_server-1.5.3/priv/dns_sys.config
+lib/eddie/lib/dns_server-1.5.3/priv/lbdns
+lib/eddie/lib/inet_server-1.5.3/ebin/.KEEPME
+lib/eddie/lib/inet_server-1.5.3/ebin/erlet_admit_ctrl.beam
+lib/eddie/lib/inet_server-1.5.3/ebin/erlet_status.beam
+lib/eddie/lib/inet_server-1.5.3/ebin/erlet_utils.beam
+lib/eddie/lib/inet_server-1.5.3/ebin/http.beam
+lib/eddie/lib/inet_server-1.5.3/ebin/http_admit.beam
+lib/eddie/lib/inet_server-1.5.3/ebin/http_db.beam
+lib/eddie/lib/inet_server-1.5.3/ebin/http_fields.beam
+lib/eddie/lib/inet_server-1.5.3/ebin/http_parse.beam
+lib/eddie/lib/inet_server-1.5.3/ebin/inet_app.beam
+lib/eddie/lib/inet_server-1.5.3/ebin/inet_server.app
+lib/eddie/lib/inet_server-1.5.3/ebin/inet_server.beam
+lib/eddie/lib/inet_server-1.5.3/ebin/is_config.beam
+lib/eddie/lib/inet_server-1.5.3/ebin/is_core.beam
+lib/eddie/lib/inet_server-1.5.3/ebin/is_db.beam
+lib/eddie/lib/inet_server-1.5.3/ebin/is_service_db.beam
+lib/eddie/lib/inet_server-1.5.3/ebin/is_sup.beam
+lib/eddie/lib/inet_server-1.5.3/ebin/queue_srv.beam
+lib/eddie/lib/inet_server-1.5.3/ebin/queue_timer.beam
+lib/eddie/lib/inet_server-1.5.3/ebin/srv_parse.beam
+lib/eddie/lib/inet_server-1.5.3/ebin/srv_table.beam
+lib/eddie/lib/inet_server-1.5.3/ebin/url_parse.beam
+lib/eddie/lib/inet_server-1.5.3/priv/.KEEPME
+lib/eddie/lib/inet_server-1.5.3/priv/relay
+lib/eddie/lib/load_info-1.5.3/ebin/.KEEPME
+lib/eddie/lib/load_info-1.5.3/ebin/load_app.beam
+lib/eddie/lib/load_info-1.5.3/ebin/load_info.app
+lib/eddie/lib/load_info-1.5.3/ebin/load_server.beam
+lib/eddie/lib/load_info-1.5.3/ebin/load_sup.beam
+lib/eddie/lib/load_info-1.5.3/ebin/lonelb.beam
+lib/eddie/lib/load_info-1.5.3/load_avg
+lib/eddie/lib/load_info-1.5.3/priv/.KEEPME
+lib/eddie/lib/load_info-1.5.3/priv/load_avg
+lib/eddie/lib/lonelb-1.5.3/ebin/.KEEPME
+lib/eddie/lib/lonelb-1.5.3/ebin/get_mig_conf.beam
+lib/eddie/lib/lonelb-1.5.3/ebin/lonelb.app
+lib/eddie/lib/master-1.5.3/ebin/.KEEPME
+lib/eddie/lib/master-1.5.3/ebin/master.app
+lib/eddie/lib/master-1.5.3/ebin/master_app.beam
+lib/eddie/lib/master-1.5.3/ebin/master_heuristics.beam
+lib/eddie/lib/master-1.5.3/ebin/master_server.beam
+lib/eddie/lib/master-1.5.3/ebin/master_sup.beam
+lib/eddie/lib/master-1.5.3/priv/.KEEPME
+lib/eddie/lib/misc-1.5.3/ebin/.KEEPME
+lib/eddie/lib/misc-1.5.3/ebin/config_file.beam
+lib/eddie/lib/misc-1.5.3/ebin/db.beam
+lib/eddie/lib/misc-1.5.3/ebin/disk_log_handler.beam
+lib/eddie/lib/misc-1.5.3/ebin/fdsrv.beam
+lib/eddie/lib/misc-1.5.3/ebin/log_sig.beam
+lib/eddie/lib/misc-1.5.3/ebin/misc.app
+lib/eddie/lib/misc-1.5.3/ebin/misc.beam
+lib/eddie/lib/misc-1.5.3/ebin/misc_app.beam
+lib/eddie/lib/misc-1.5.3/ebin/misc_sup.beam
+lib/eddie/lib/misc-1.5.3/ebin/sig_ex.beam
+lib/eddie/lib/misc-1.5.3/ebin/sig_handler.beam
+lib/eddie/lib/misc-1.5.3/ebin/syslog_handler.beam
+lib/eddie/lib/misc-1.5.3/priv/.KEEPME
+lib/eddie/lib/misc-1.5.3/priv/fdsrv
+lib/eddie/lib/misc-1.5.3/priv/fdsrv_drv.so
+lib/eddie/lib/misc-1.5.3/priv/sig_handler
+lib/eddie/lib/misc-1.5.3/priv/syslog_drv.so
+lib/eddie/lib/oam-1.5.3/ebin/.KEEPME
+lib/eddie/lib/oam-1.5.3/ebin/oam.app
+lib/eddie/lib/oam-1.5.3/ebin/oam.beam
+lib/eddie/lib/oam-1.5.3/ebin/oam_config.beam
+lib/eddie/lib/oam-1.5.3/ebin/oam_config_files.beam
+lib/eddie/lib/oam-1.5.3/priv/.KEEPME
+lib/eddie/lib/oam-1.5.3/priv/conf
+lib/eddie/lib/oam-1.5.3/priv/eddie
+lib/eddie/lib/oam-1.5.3/priv/eddie.init
+lib/eddie/lib/oam-1.5.3/priv/gate
+lib/eddie/lib/oam-1.5.3/priv/lbdns.init
+lib/eddie/lib/oam-1.5.3/priv/mig
+lib/eddie/lib/oam-1.5.3/priv/oam.app
+lib/eddie/lib/oam-1.5.3/priv/package
+lib/eddie/lib/oam-1.5.3/priv/rpm.spec
+lib/eddie/lib/oam-1.5.3/priv/start
+lib/eddie/lib/servant-1.5.3/ebin/.KEEPME
+lib/eddie/lib/servant-1.5.3/ebin/dummy.beam
+lib/eddie/lib/servant-1.5.3/ebin/eddie.beam
+lib/eddie/lib/servant-1.5.3/ebin/http_monitor.beam
+lib/eddie/lib/servant-1.5.3/ebin/servant.app
+lib/eddie/lib/servant-1.5.3/ebin/servant_app.beam
+lib/eddie/lib/servant-1.5.3/ebin/servant_config.beam
+lib/eddie/lib/servant-1.5.3/ebin/servant_inet_server_sup.beam
+lib/eddie/lib/servant-1.5.3/ebin/servant_monitor_server.beam
+lib/eddie/lib/servant-1.5.3/ebin/servant_monitor_sup.beam
+lib/eddie/lib/servant-1.5.3/ebin/servant_server.beam
+lib/eddie/lib/servant-1.5.3/ebin/servant_sup.beam
+lib/eddie/lib/servant-1.5.3/ebin/servant_util.beam
+lib/eddie/lib/servant-1.5.3/priv/garp
+lib/eddie/lib/servant-1.5.3/priv/ifadd
+lib/eddie/lib/servant-1.5.3/priv/ifdel
+lib/eddie/lib/servant-1.5.3/priv/ifget
+lib/eddie/lib/servant-1.5.3/priv/routeadd
+lib/eddie/lib/sync_nodes-1.5.3/ebin/.KEEPME
+lib/eddie/lib/sync_nodes-1.5.3/ebin/sync_nodes.app
+lib/eddie/lib/sync_nodes-1.5.3/ebin/sync_nodes_app.beam
+lib/eddie/lib/sync_nodes-1.5.3/ebin/sync_nodes_server.beam
+lib/eddie/lib/sync_nodes-1.5.3/ebin/sync_nodes_sup.beam
+lib/eddie/lib/sync_nodes-1.5.3/priv/.KEEPME
 sbin/eddie
 sbin/lbdns
 share/eddie/README
@@ -176,32 +176,32 @@ share/eddie/dns/lb_dns.boot
 @dirrm share/eddie
 @dirrm lib/eddie/conf/conf
 @dirrm lib/eddie/conf/logs
-@dirrm lib/eddie/lib/dns_server-1.5.1/priv
-@dirrm lib/eddie/lib/dns_server-1.5.1/ebin
-@dirrm lib/eddie/lib/oam-1.5.1/priv
-@dirrm lib/eddie/lib/oam-1.5.1/ebin
-@dirrm lib/eddie/lib/inet_server-1.5.1/priv
-@dirrm lib/eddie/lib/inet_server-1.5.1/ebin
-@dirrm lib/eddie/lib/master-1.5.1/priv
-@dirrm lib/eddie/lib/master-1.5.1/ebin
-@dirrm lib/eddie/lib/servant-1.5.1/priv
-@dirrm lib/eddie/lib/servant-1.5.1/ebin
-@dirrm lib/eddie/lib/load_info-1.5.1/priv
-@dirrm lib/eddie/lib/load_info-1.5.1/ebin
-@dirrm lib/eddie/lib/sync_nodes-1.5.1/priv
-@dirrm lib/eddie/lib/sync_nodes-1.5.1/ebin
-@dirrm lib/eddie/lib/lonelb-1.5.1/ebin
-@dirrm lib/eddie/lib/misc-1.5.1/priv
-@dirrm lib/eddie/lib/misc-1.5.1/ebin
-@dirrm lib/eddie/lib/dns_server-1.5.1
-@dirrm lib/eddie/lib/oam-1.5.1
-@dirrm lib/eddie/lib/inet_server-1.5.1
-@dirrm lib/eddie/lib/master-1.5.1
-@dirrm lib/eddie/lib/servant-1.5.1
-@dirrm lib/eddie/lib/load_info-1.5.1
-@dirrm lib/eddie/lib/sync_nodes-1.5.1
-@dirrm lib/eddie/lib/lonelb-1.5.1
-@dirrm lib/eddie/lib/misc-1.5.1
+@dirrm lib/eddie/lib/dns_server-1.5.3/priv
+@dirrm lib/eddie/lib/dns_server-1.5.3/ebin
+@dirrm lib/eddie/lib/oam-1.5.3/priv
+@dirrm lib/eddie/lib/oam-1.5.3/ebin
+@dirrm lib/eddie/lib/inet_server-1.5.3/priv
+@dirrm lib/eddie/lib/inet_server-1.5.3/ebin
+@dirrm lib/eddie/lib/master-1.5.3/priv
+@dirrm lib/eddie/lib/master-1.5.3/ebin
+@dirrm lib/eddie/lib/servant-1.5.3/priv
+@dirrm lib/eddie/lib/servant-1.5.3/ebin
+@dirrm lib/eddie/lib/load_info-1.5.3/priv
+@dirrm lib/eddie/lib/load_info-1.5.3/ebin
+@dirrm lib/eddie/lib/sync_nodes-1.5.3/priv
+@dirrm lib/eddie/lib/sync_nodes-1.5.3/ebin
+@dirrm lib/eddie/lib/lonelb-1.5.3/ebin
+@dirrm lib/eddie/lib/misc-1.5.3/priv
+@dirrm lib/eddie/lib/misc-1.5.3/ebin
+@dirrm lib/eddie/lib/dns_server-1.5.3
+@dirrm lib/eddie/lib/oam-1.5.3
+@dirrm lib/eddie/lib/inet_server-1.5.3
+@dirrm lib/eddie/lib/master-1.5.3
+@dirrm lib/eddie/lib/servant-1.5.3
+@dirrm lib/eddie/lib/load_info-1.5.3
+@dirrm lib/eddie/lib/sync_nodes-1.5.3
+@dirrm lib/eddie/lib/lonelb-1.5.3
+@dirrm lib/eddie/lib/misc-1.5.3
 @dirrm lib/eddie/conf
 @dirrm lib/eddie/bin
 @dirrm lib/eddie/lib
