@@ -30,6 +30,7 @@
     SUBDIR += diacanvas
     SUBDIR += divx4linux
     SUBDIR += dore
+    SUBDIR += drm-kmod
     SUBDIR += dumpmpeg
     SUBDIR += ecg2png
     SUBDIR += electriceyes
