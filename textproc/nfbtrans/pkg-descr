@@ -1,0 +1,9 @@
+NFBTRANS is a very accurate Grade Two braille translator.  It can also
+back translate a Grade Two file into normal text.  The program has
+many options which allow the user to customize its operation.
+Formatting commands can be used to generate Tables of Contents, ink
+print page numbers, running headers and much more. Translation rules
+are in a text file and can easily be modified by the user.  The
+program can be configured to hyphenate words to save space.
+
+- Max

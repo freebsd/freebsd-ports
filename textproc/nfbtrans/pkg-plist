@@ -1,0 +1,25 @@
+bin/nfbtrans
+lib/nfbtrans/back.tab
+lib/nfbtrans/braille.tab
+lib/nfbtrans/english.dic
+lib/nfbtrans/nfbtrans.cnf
+lib/nfbtrans/tables/bhs_bhm.tab
+lib/nfbtrans/tables/danish.tab
+lib/nfbtrans/tables/dutch.tab
+lib/nfbtrans/tables/dutch3.tab
+lib/nfbtrans/tables/esperant.tab
+lib/nfbtrans/tables/german.tab
+lib/nfbtrans/tables/gnt.tab
+lib/nfbtrans/tables/iceland.tab
+lib/nfbtrans/tables/netcom.cap
+lib/nfbtrans/tables/norweg.tab
+lib/nfbtrans/tables/russian.tab
+lib/nfbtrans/tables/span2.tab
+lib/nfbtrans/tables/spanish.tab
+lib/nfbtrans/tables/swedish.tab
+lib/nfbtrans/tables/tables.doc
+share/doc/nfbtrans/nfbtrans.doc
+share/doc/nfbtrans/nfbtrans.fmt
+@dirrm lib/nfbtrans/tables
+@dirrm lib/nfbtrans
+@dirrm share/doc/nfbtrans
