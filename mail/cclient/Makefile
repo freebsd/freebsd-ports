@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cclient
-PORTVERSION=	0104031813
+PORTVERSION=	0104051333
 CATEGORIES=	mail devel
 MASTER_SITES=	ftp://ftp.cac.washington.edu/imap/%SUBDIR%/ \
 		ftp://ftp.funet.fi/pub/mirrors/ftp.cac.washington.edu/imap/%SUBDIR%/ \
