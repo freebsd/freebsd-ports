@@ -1,5 +1,6 @@
 bin/eif
 lib/eif/buildcost.pl
+lib/eif/cmap.pl
 lib/eif/comcount.sh
 lib/eif/decay.pl
 lib/eif/edu1.sh
@@ -20,6 +21,4 @@ lib/eif/pop.sh
 lib/eif/pwith
 lib/eif/swith
 lib/eif/with
-@dirrm share/nls/en_US.US-ASCII
-@dirrm share/nls/POSIX
 @dirrm lib/eif
