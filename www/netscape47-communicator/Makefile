@@ -20,7 +20,7 @@ MASTER_SITES?=	ftp://ftp.netscape.com./pub/communicator/english/4.73/unix/suppor
 DISTFILES?=	communicator-v473-export.alpha-dec-osf4.0.tar.gz
 .endif
 
-ONLY_FOR_ARCHS=	i386 alpha
+ONLY_FOR_ARCHS?=	i386 alpha
 
 MASTERDIR=	${.CURDIR}/../netscape4-communicator
 .if ${ARCH} == "i386"
