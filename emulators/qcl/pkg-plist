@@ -1,0 +1,13 @@
+bin/qcl
+share/qcl/default.qcl
+share/qcl/dft.qcl
+share/qcl/expmod.qcl
+share/qcl/fanout.qcl
+share/qcl/functions.qcl
+share/qcl/modarith.qcl
+share/qcl/qufunct.qcl
+share/qcl/roulette.qcl
+share/qcl/shor.qcl
+share/qcl/swap.qcl
+share/qcl/grover.qcl
+@dirrm share/qcl

@@ -35,6 +35,7 @@
     SUBDIR += osf1_base
     SUBDIR += pcemu
     SUBDIR += prodosemu
+    SUBDIR += qcl
     SUBDIR += quasi88
     SUBDIR += rtc
     SUBDIR += sim
