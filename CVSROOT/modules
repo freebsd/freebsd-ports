@@ -8027,6 +8027,7 @@ tifmerge	ports/graphics/tifmerge
 tightvnc	ports/net/tightvnc
 tik		ports/net/tik
 tileworld	ports/games/tileworld
+tilp		ports/comms/tilp
 timelimit	ports/sysutils/timelimit
 timidity	ports/audio/timidity
 timidity++	ports/audio/timidity++
