@@ -45,10 +45,10 @@ lib/pcb/m4/to.inc
 @unexec install-info --delete %D/info/pcb.info %D/info/dir
 info/pcb.info
 @exec install-info --section="Utilities" --entry="* PCB: (pcb).		Interactive printed circuit board layout system for X11" %D/info/pcb.info %D/info/dir
-share/doc/pcb/index.html
-share/doc/pcb/pcb.html
-share/doc/pcb/pcb.ps
-share/doc/pcb/refcard.ps
-@dirrm share/doc/pcb
+%%DOCSDIR%%/index.html
+%%DOCSDIR%%/pcb.html
+%%DOCSDIR%%/pcb.ps
+%%DOCSDIR%%/refcard.ps
+@dirrm %%DOCSDIR%%
 @dirrm lib/pcb/m4
 @dirrm lib/pcb

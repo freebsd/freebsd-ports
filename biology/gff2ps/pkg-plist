@@ -1,3 +1,3 @@
 bin/gff2ps
-%%PORTDOCS%%share/doc/gff2ps/MANUAL_GFF2PS_v0.96.ps
-%%PORTDOCS%%@dirrm share/doc/gff2ps
+%%PORTDOCS%%%%DOCSDIR%%/MANUAL_GFF2PS_v0.96.ps
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

@@ -19,12 +19,12 @@ lib/gfax/prefs_ui.py
 lib/gfax/setup.glade
 lib/gfax/ui.py
 lib/gfax/uninstall.sh
-%%PORTDOCS%%share/doc/gfax/AUTHORS
-%%PORTDOCS%%share/doc/gfax/COPYING
-%%PORTDOCS%%share/doc/gfax/Changelog
-%%PORTDOCS%%share/doc/gfax/HACKING
-%%PORTDOCS%%share/doc/gfax/INSTALL
-%%PORTDOCS%%share/doc/gfax/TODO
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/Changelog
+%%PORTDOCS%%%%DOCSDIR%%/HACKING
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/TODO
 share/gnome/apps/Applications/gfax.desktop
 share/gnome/ximian/Programs/Utilities/gfax.desktop
 @dirrm share/gnome/ximian/Programs/Utilities
@@ -33,6 +33,6 @@ share/gnome/ximian/Programs/Utilities/gfax.desktop
 @dirrm share/gnome/apps/Applications
 @dirrm share/gnome/apps
 @dirrm share/gnome
-%%PORTDOCS%%share/doc/gfax
+%%PORTDOCS%%%%DOCSDIR%%
 @dirrm lib/gfax/pixmaps
 @dirrm lib/gfax

@@ -2,6 +2,6 @@ sbin/mserver
 sbin/tcpconn
 etc/mserver.conf.default
 etc/rc.d/mserver.sh.sample
-%%PORTDOCS%%share/doc/mserver/README
-%%PORTDOCS%%share/doc/mserver/README.tcpconn
-%%PORTDOCS%%@dirrm share/doc/mserver
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.tcpconn
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

@@ -10,31 +10,31 @@ lib/gtkwave/reader_out.so.0
 lib/gtkwave/reader_vcd.a
 lib/gtkwave/reader_vcd.so
 lib/gtkwave/reader_vcd.so.0
-%%PORTDOCS%%share/doc/gtkwave/data_format.png
-%%PORTDOCS%%share/doc/gtkwave/edit_menu.png
-%%PORTDOCS%%share/doc/gtkwave/file_menu.png
-%%PORTDOCS%%share/doc/gtkwave/gtkwave.html
-%%PORTDOCS%%share/doc/gtkwave/help_menu.png
-%%PORTDOCS%%share/doc/gtkwave/hierarchy.png
-%%PORTDOCS%%share/doc/gtkwave/markers_menu.png
-%%PORTDOCS%%share/doc/gtkwave/search_menu.png
-%%PORTDOCS%%share/doc/gtkwave/time_menu.png
-%%PORTDOCS%%share/doc/gtkwave/view_menu.png
-%%PORTDOCS%%share/doc/gtkwave/w.ps
-%%PORTDOCS%%share/doc/gtkwave/w1.png
-%%PORTDOCS%%share/doc/gtkwave/w10.png
-%%PORTDOCS%%share/doc/gtkwave/w11.png
-%%PORTDOCS%%share/doc/gtkwave/w12.png
-%%PORTDOCS%%share/doc/gtkwave/w13.png
-%%PORTDOCS%%share/doc/gtkwave/w3.png
-%%PORTDOCS%%share/doc/gtkwave/w4.png
-%%PORTDOCS%%share/doc/gtkwave/w5.png
-%%PORTDOCS%%share/doc/gtkwave/w6.png
-%%PORTDOCS%%share/doc/gtkwave/w7.png
-%%PORTDOCS%%share/doc/gtkwave/w8.png
-%%PORTDOCS%%share/doc/gtkwave/w9.png
-%%PORTDOCS%%share/doc/gtkwave/wps.png
-%%PORTDOCS%%share/doc/gtkwave/zoom_submenu.png
+%%PORTDOCS%%%%DOCSDIR%%/data_format.png
+%%PORTDOCS%%%%DOCSDIR%%/edit_menu.png
+%%PORTDOCS%%%%DOCSDIR%%/file_menu.png
+%%PORTDOCS%%%%DOCSDIR%%/gtkwave.html
+%%PORTDOCS%%%%DOCSDIR%%/help_menu.png
+%%PORTDOCS%%%%DOCSDIR%%/hierarchy.png
+%%PORTDOCS%%%%DOCSDIR%%/markers_menu.png
+%%PORTDOCS%%%%DOCSDIR%%/search_menu.png
+%%PORTDOCS%%%%DOCSDIR%%/time_menu.png
+%%PORTDOCS%%%%DOCSDIR%%/view_menu.png
+%%PORTDOCS%%%%DOCSDIR%%/w.ps
+%%PORTDOCS%%%%DOCSDIR%%/w1.png
+%%PORTDOCS%%%%DOCSDIR%%/w10.png
+%%PORTDOCS%%%%DOCSDIR%%/w11.png
+%%PORTDOCS%%%%DOCSDIR%%/w12.png
+%%PORTDOCS%%%%DOCSDIR%%/w13.png
+%%PORTDOCS%%%%DOCSDIR%%/w3.png
+%%PORTDOCS%%%%DOCSDIR%%/w4.png
+%%PORTDOCS%%%%DOCSDIR%%/w5.png
+%%PORTDOCS%%%%DOCSDIR%%/w6.png
+%%PORTDOCS%%%%DOCSDIR%%/w7.png
+%%PORTDOCS%%%%DOCSDIR%%/w8.png
+%%PORTDOCS%%%%DOCSDIR%%/w9.png
+%%PORTDOCS%%%%DOCSDIR%%/wps.png
+%%PORTDOCS%%%%DOCSDIR%%/zoom_submenu.png
 %%PORTDOCS%%share/examples/gtkwave/agonynan_bccom.vcd.gz
 %%PORTDOCS%%share/examples/gtkwave/pci.vcd.gz
 %%PORTDOCS%%share/examples/gtkwave/simple.vcd
@@ -63,5 +63,5 @@ share/gtkwave/pixmaps/vcd_mime.xpm
 @dirrm share/gtkwave/pixmaps
 @dirrm share/gtkwave
 %%PORTDOCS%%@dirrm share/examples/gtkwave
-%%PORTDOCS%%@dirrm share/doc/gtkwave
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm lib/gtkwave

@@ -3,17 +3,17 @@ bin/hybridize
 bin/normalize
 bin/random_clip
 bin/random_line
-%%PORTDOCS%%share/doc/dna-qc/qc_algorithm.ps.Z
-%%PORTDOCS%%share/doc/dna-qc/qc_fig1.ps.Z
-%%PORTDOCS%%share/doc/dna-qc/qc_fig2a.ps.Z
-%%PORTDOCS%%share/doc/dna-qc/qc_fig2b.ps.Z
-%%PORTDOCS%%share/doc/dna-qc/qc_fig2c.ps.Z
-%%PORTDOCS%%share/doc/dna-qc/qc_fig3.ps.Z
-%%PORTDOCS%%share/doc/dna-qc/qc_fig4.ps.Z
-%%PORTDOCS%%share/doc/dna-qc/qc_fig5.ps.Z
-%%PORTDOCS%%share/doc/dna-qc/qc_fig6.ps.Z
-%%PORTDOCS%%share/doc/dna-qc/qc_fig7.ps.Z
-%%PORTDOCS%%share/doc/dna-qc/surprize.ps.Z
+%%PORTDOCS%%%%DOCSDIR%%/qc_algorithm.ps.Z
+%%PORTDOCS%%%%DOCSDIR%%/qc_fig1.ps.Z
+%%PORTDOCS%%%%DOCSDIR%%/qc_fig2a.ps.Z
+%%PORTDOCS%%%%DOCSDIR%%/qc_fig2b.ps.Z
+%%PORTDOCS%%%%DOCSDIR%%/qc_fig2c.ps.Z
+%%PORTDOCS%%%%DOCSDIR%%/qc_fig3.ps.Z
+%%PORTDOCS%%%%DOCSDIR%%/qc_fig4.ps.Z
+%%PORTDOCS%%%%DOCSDIR%%/qc_fig5.ps.Z
+%%PORTDOCS%%%%DOCSDIR%%/qc_fig6.ps.Z
+%%PORTDOCS%%%%DOCSDIR%%/qc_fig7.ps.Z
+%%PORTDOCS%%%%DOCSDIR%%/surprize.ps.Z
 %%PORTDOCS%%share/examples/dna-qc/README
 %%PORTDOCS%%share/examples/dna-qc/bact.all
 %%PORTDOCS%%share/examples/dna-qc/chromosomeIII.all
@@ -22,4 +22,4 @@ bin/random_line
 %%PORTDOCS%%share/examples/dna-qc/script.limits
 %%PORTDOCS%%share/examples/dna-qc/worm.all
 %%PORTDOCS%%@dirrm share/examples/dna-qc
-%%PORTDOCS%%@dirrm share/doc/dna-qc
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

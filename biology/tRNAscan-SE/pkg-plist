@@ -22,5 +22,5 @@ share/tRNAscan-SE/ESELC.cm
 share/tRNAscan-SE/Dsignal
 share/tRNAscan-SE/gcode.ystmito
 @dirrm share/tRNAscan-SE
-%%PORTDOCS%%share/doc/tRNAscan-SE/Manual.ps
-%%PORTDOCS%%@dirrm share/doc/tRNAscan-SE
+%%PORTDOCS%%%%DOCSDIR%%/Manual.ps
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

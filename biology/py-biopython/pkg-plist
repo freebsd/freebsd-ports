@@ -188,34 +188,34 @@
 %%PLIST_OMNIORB%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/types_idl.py
 %%PLIST_OMNIORB%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/types_idl.pyc
 %%PLIST_OMNIORB%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/types_idl.pyo
-%%PORTDOCS%%%%PLIST_CORBA%%share/doc/biopython/BioCorba/IntroPythonClient.pdf
-%%PORTDOCS%%%%PLIST_CORBA%%share/doc/biopython/BioCorba/IntroPythonClient.tex
-%%PORTDOCS%%%%PLIST_CORBA%%share/doc/biopython/BioCorba/IntroPythonServer.pdf
-%%PORTDOCS%%%%PLIST_CORBA%%share/doc/biopython/BioCorba/IntroPythonServer.tex
-%%PORTDOCS%%%%PLIST_CORBA%%share/doc/biopython/BioCorba/Tutorial.html
-%%PORTDOCS%%%%PLIST_CORBA%%share/doc/biopython/BioCorba/Tutorial.pdf
-%%PORTDOCS%%%%PLIST_CORBA%%share/doc/biopython/BioCorba/Tutorial.tex
-%%PORTDOCS%%%%PLIST_CORBA%%share/doc/biopython/BioCorba/Tutorial.txt
+%%PORTDOCS%%%%PLIST_CORBA%%%%DOCSDIR%%/BioCorba/IntroPythonClient.pdf
+%%PORTDOCS%%%%PLIST_CORBA%%%%DOCSDIR%%/BioCorba/IntroPythonClient.tex
+%%PORTDOCS%%%%PLIST_CORBA%%%%DOCSDIR%%/BioCorba/IntroPythonServer.pdf
+%%PORTDOCS%%%%PLIST_CORBA%%%%DOCSDIR%%/BioCorba/IntroPythonServer.tex
+%%PORTDOCS%%%%PLIST_CORBA%%%%DOCSDIR%%/BioCorba/Tutorial.html
+%%PORTDOCS%%%%PLIST_CORBA%%%%DOCSDIR%%/BioCorba/Tutorial.pdf
+%%PORTDOCS%%%%PLIST_CORBA%%%%DOCSDIR%%/BioCorba/Tutorial.tex
+%%PORTDOCS%%%%PLIST_CORBA%%%%DOCSDIR%%/BioCorba/Tutorial.txt
 %%PORTDOCS%%%%PLIST_CORBA%%share/examples/biopython/BioCorba/a_drought.gb
 %%PORTDOCS%%%%PLIST_CORBA%%share/examples/biopython/BioCorba/collection_server.py
 %%PORTDOCS%%%%PLIST_CORBA%%share/examples/biopython/BioCorba/genbank_client.py
 %%PORTDOCS%%%%PLIST_CORBA%%share/examples/biopython/BioCorba/genbank_server.py
-%%PORTDOCS%%share/doc/biopython/Blast.txt
-%%PORTDOCS%%share/doc/biopython/Enzyme.txt
-%%PORTDOCS%%share/doc/biopython/Fasta.txt
-%%PORTDOCS%%share/doc/biopython/IntelliGenetics.txt
-%%PORTDOCS%%share/doc/biopython/InterPro.txt
-%%PORTDOCS%%share/doc/biopython/KEGG.txt
-%%PORTDOCS%%share/doc/biopython/Medline.txt
-%%PORTDOCS%%share/doc/biopython/Parser.txt
-%%PORTDOCS%%share/doc/biopython/Prosite.txt
-%%PORTDOCS%%share/doc/biopython/References.txt
-%%PORTDOCS%%share/doc/biopython/SwissProt.txt
-%%PORTDOCS%%share/doc/biopython/Tutorial.pdf
-%%PORTDOCS%%share/doc/biopython/Tutorial.tex
-%%PORTDOCS%%share/doc/biopython/Tutorial.txt
-%%PORTDOCS%%share/doc/biopython/make_api_docs.py
-%%PORTDOCS%%share/doc/biopython/metatool.txt
+%%PORTDOCS%%%%DOCSDIR%%/Blast.txt
+%%PORTDOCS%%%%DOCSDIR%%/Enzyme.txt
+%%PORTDOCS%%%%DOCSDIR%%/Fasta.txt
+%%PORTDOCS%%%%DOCSDIR%%/IntelliGenetics.txt
+%%PORTDOCS%%%%DOCSDIR%%/InterPro.txt
+%%PORTDOCS%%%%DOCSDIR%%/KEGG.txt
+%%PORTDOCS%%%%DOCSDIR%%/Medline.txt
+%%PORTDOCS%%%%DOCSDIR%%/Parser.txt
+%%PORTDOCS%%%%DOCSDIR%%/Prosite.txt
+%%PORTDOCS%%%%DOCSDIR%%/References.txt
+%%PORTDOCS%%%%DOCSDIR%%/SwissProt.txt
+%%PORTDOCS%%%%DOCSDIR%%/Tutorial.pdf
+%%PORTDOCS%%%%DOCSDIR%%/Tutorial.tex
+%%PORTDOCS%%%%DOCSDIR%%/Tutorial.txt
+%%PORTDOCS%%%%DOCSDIR%%/make_api_docs.py
+%%PORTDOCS%%%%DOCSDIR%%/metatool.txt
 %%PORTDOCS%%share/examples/biopython/GenBank/check_output.py
 %%PORTDOCS%%share/examples/biopython/GenBank/check_output_simple.py
 %%PORTDOCS%%share/examples/biopython/GenBank/find_parser_problems.py
@@ -814,12 +814,12 @@ lib/%%PYTHON_VERSION%%/site-packages/Bio/utils.pyo
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/Bio/Align
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/Bio
 %%PORTDOCS%%%%PLIST_CORBA%%@dirrm share/examples/biopython/BioCorba
-%%PORTDOCS%%%%PLIST_CORBA%%@dirrm share/doc/biopython/BioCorba
+%%PORTDOCS%%%%PLIST_CORBA%%@dirrm %%DOCSDIR%%/BioCorba
 %%PORTDOCS%%@dirrm share/examples/biopython/xbbtools
 %%PORTDOCS%%@dirrm share/examples/biopython/SeqGui
 %%PORTDOCS%%@dirrm share/examples/biopython/GenBank
 %%PORTDOCS%%@dirrm share/examples/biopython
-%%PORTDOCS%%@dirrm share/doc/biopython
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%PLIST_OMNIORB%%@dirrm lib/%%PYTHON_VERSION%%/site-packages/BioCorba/bsane__POA/seqcore
 %%PLIST_OMNIORB%%@dirrm lib/%%PYTHON_VERSION%%/site-packages/BioCorba/bsane__POA/comparison
 %%PLIST_OMNIORB%%@dirrm lib/%%PYTHON_VERSION%%/site-packages/BioCorba/bsane__POA/collection

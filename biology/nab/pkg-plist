@@ -16,7 +16,7 @@ include/nabtypes.h
 lib/cifparse.a
 lib/libnab.a
 lib/libsym.a
-share/doc/nab/NAB.pdf
+%%DOCSDIR%%/NAB.pdf
 share/nab/bin/matextract
 share/nab/bin/matgen
 share/nab/bin/matmerge
@@ -358,4 +358,4 @@ share/nab/test/2strand.pdb
 @dirrm share/nab/dgdb
 @dirrm share/nab/bin
 @dirrm share/nab
-@dirrm share/doc/nab
+@dirrm %%DOCSDIR%%

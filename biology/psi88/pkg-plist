@@ -9,22 +9,22 @@ bin/preplot
 bin/rpsi1
 bin/rpsi2
 bin/rpsicon
-%%PORTDOCS%%share/doc/psi88/psi88.doc
-%%PORTDOCS%%share/doc/psi88/README
-%%PORTDOCS%%share/doc/psi88/examples/ad634a.psi1
-%%PORTDOCS%%share/doc/psi88/examples/ad634a.psi2
-%%PORTDOCS%%share/doc/psi88/examples/ad634a.psicon
-%%PORTDOCS%%share/doc/psi88/examples/ad635a.psi1
-%%PORTDOCS%%share/doc/psi88/examples/ad635a.psi2
-%%PORTDOCS%%share/doc/psi88/examples/ad635a.psicon
-%%PORTDOCS%%share/doc/psi88/examples/ad636a.psi1
-%%PORTDOCS%%share/doc/psi88/examples/ad636a.psi2
-%%PORTDOCS%%share/doc/psi88/examples/ad636a.psicon
-%%PORTDOCS%%share/doc/psi88/examples/ch3cl.psi1
-%%PORTDOCS%%share/doc/psi88/examples/ch3cl.psi2
-%%PORTDOCS%%share/doc/psi88/examples/ch3cl.psicon
-%%PORTDOCS%%share/doc/psi88/examples/test.psi1
-%%PORTDOCS%%share/doc/psi88/examples/test.psi2
-%%PORTDOCS%%share/doc/psi88/examples/test.psicon
-%%PORTDOCS%%@dirrm share/doc/psi88/examples
-%%PORTDOCS%%@dirrm share/doc/psi88
+%%PORTDOCS%%%%DOCSDIR%%/psi88.doc
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/examples/ad634a.psi1
+%%PORTDOCS%%%%DOCSDIR%%/examples/ad634a.psi2
+%%PORTDOCS%%%%DOCSDIR%%/examples/ad634a.psicon
+%%PORTDOCS%%%%DOCSDIR%%/examples/ad635a.psi1
+%%PORTDOCS%%%%DOCSDIR%%/examples/ad635a.psi2
+%%PORTDOCS%%%%DOCSDIR%%/examples/ad635a.psicon
+%%PORTDOCS%%%%DOCSDIR%%/examples/ad636a.psi1
+%%PORTDOCS%%%%DOCSDIR%%/examples/ad636a.psi2
+%%PORTDOCS%%%%DOCSDIR%%/examples/ad636a.psicon
+%%PORTDOCS%%%%DOCSDIR%%/examples/ch3cl.psi1
+%%PORTDOCS%%%%DOCSDIR%%/examples/ch3cl.psi2
+%%PORTDOCS%%%%DOCSDIR%%/examples/ch3cl.psicon
+%%PORTDOCS%%%%DOCSDIR%%/examples/test.psi1
+%%PORTDOCS%%%%DOCSDIR%%/examples/test.psi2
+%%PORTDOCS%%%%DOCSDIR%%/examples/test.psicon
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/examples
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

@@ -1,8 +1,8 @@
 bin/mars
-%%PORTDOCS%%share/doc/mars/proman/prog.ps
-%%PORTDOCS%%share/doc/mars/usrman/user.ps
-%%PORTDOCS%%share/doc/mars/motifman/Xmotif.ps
-%%PORTDOCS%%@dirrm share/doc/mars/proman
-%%PORTDOCS%%@dirrm share/doc/mars/usrman
-%%PORTDOCS%%@dirrm share/doc/mars/motifman
-%%PORTDOCS%%@dirrm share/doc/mars
+%%PORTDOCS%%%%DOCSDIR%%/proman/prog.ps
+%%PORTDOCS%%%%DOCSDIR%%/usrman/user.ps
+%%PORTDOCS%%%%DOCSDIR%%/motifman/Xmotif.ps
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/proman
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/usrman
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/motifman
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

@@ -1,8 +1,8 @@
 bin/molden
 bin/moldenogl
-%%PORTDOCS%%share/doc/molden/figures.ps.Z
-%%PORTDOCS%%share/doc/molden/manual.ps.Z
-%%PORTDOCS%%share/doc/molden/manual.txt.Z
+%%PORTDOCS%%%%DOCSDIR%%/figures.ps.Z
+%%PORTDOCS%%%%DOCSDIR%%/manual.ps.Z
+%%PORTDOCS%%%%DOCSDIR%%/manual.txt.Z
 %%PORTDOCS%%share/molden/test/adf.molf
 %%PORTDOCS%%share/molden/test/ampac.arc
 %%PORTDOCS%%share/molden/test/ampac.test
@@ -51,4 +51,4 @@ bin/moldenogl
 %%PORTDOCS%%@dirrm share/molden/test
 %%PORTDOCS%%@dirrm share/molden/utils
 %%PORTDOCS%%@dirrm share/molden
-%%PORTDOCS%%@dirrm share/doc/molden
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

@@ -1,15 +1,15 @@
 bin/genomewise
-%%PORTDOCS%%share/doc/wise/README
-%%PORTDOCS%%share/doc/wise/apiend.tex
-%%PORTDOCS%%share/doc/wise/appendix.tex
-%%PORTDOCS%%share/doc/wise/dynamite.tex
-%%PORTDOCS%%share/doc/wise/genewise21.eps
-%%PORTDOCS%%share/doc/wise/genewise6.eps
-%%PORTDOCS%%share/doc/wise/gettex.pl
-%%PORTDOCS%%share/doc/wise/makefile
-%%PORTDOCS%%share/doc/wise/wise2.tex
-%%PORTDOCS%%share/doc/wise/wise2api.tex
-%%PORTDOCS%%share/doc/wise/wise3arch.tex
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/apiend.tex
+%%PORTDOCS%%%%DOCSDIR%%/appendix.tex
+%%PORTDOCS%%%%DOCSDIR%%/dynamite.tex
+%%PORTDOCS%%%%DOCSDIR%%/genewise21.eps
+%%PORTDOCS%%%%DOCSDIR%%/genewise6.eps
+%%PORTDOCS%%%%DOCSDIR%%/gettex.pl
+%%PORTDOCS%%%%DOCSDIR%%/makefile
+%%PORTDOCS%%%%DOCSDIR%%/wise2.tex
+%%PORTDOCS%%%%DOCSDIR%%/wise2api.tex
+%%PORTDOCS%%%%DOCSDIR%%/wise3arch.tex
 %%PORTDOCS%%share/examples/wise/README
 %%PORTDOCS%%share/examples/wise/db.hmm
 %%PORTDOCS%%share/examples/wise/hn_est.fa
@@ -56,6 +56,6 @@ bin/genewise
 bin/genewisedb
 bin/psw
 bin/pswdb
-%%PORTDOCS%%@dirrm share/doc/wise
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%PORTDOCS%%@dirrm share/examples/wise
 @dirrm share/wise

@@ -14,8 +14,8 @@ bin/sfetch
 bin/shuffle
 bin/sindex
 bin/sreformat
-%%PORTDOCS%%share/doc/hmmer/00README
-%%PORTDOCS%%share/doc/hmmer/COPYRIGHT
-%%PORTDOCS%%share/doc/hmmer/NOTES
-%%PORTDOCS%%share/doc/hmmer/Userguide.pdf
-%%PORTDOCS%%@dirrm share/doc/hmmer
+%%PORTDOCS%%%%DOCSDIR%%/00README
+%%PORTDOCS%%%%DOCSDIR%%/COPYRIGHT
+%%PORTDOCS%%%%DOCSDIR%%/NOTES
+%%PORTDOCS%%%%DOCSDIR%%/Userguide.pdf
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

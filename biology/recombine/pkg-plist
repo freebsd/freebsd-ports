@@ -1,5 +1,5 @@
 bin/filetran
 bin/recombine
-%%PORTDOCS%%share/doc/recombine/rec_errors.doc
-%%PORTDOCS%%share/doc/recombine/recombine.doc
-%%PORTDOCS%%@dirrm share/doc/recombine
+%%PORTDOCS%%%%DOCSDIR%%/rec_errors.doc
+%%PORTDOCS%%%%DOCSDIR%%/recombine.doc
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

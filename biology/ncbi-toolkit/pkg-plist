@@ -1,51 +1,51 @@
-%%PORTDOCS%%share/doc/ncbi-toolkit/FAQ.txt
-%%PORTDOCS%%share/doc/ncbi-toolkit/README-qm
-%%PORTDOCS%%share/doc/ncbi-toolkit/README.asn2xml
-%%PORTDOCS%%share/doc/ncbi-toolkit/README.bcl
-%%PORTDOCS%%share/doc/ncbi-toolkit/README.bls
-%%PORTDOCS%%share/doc/ncbi-toolkit/README.fastacmd
-%%PORTDOCS%%share/doc/ncbi-toolkit/README.formatdb
-%%PORTDOCS%%share/doc/ncbi-toolkit/README.imp
-%%PORTDOCS%%share/doc/ncbi-toolkit/README.mbl
-%%PORTDOCS%%share/doc/ncbi-toolkit/README.nbl
-%%PORTDOCS%%share/doc/ncbi-toolkit/README.pbl
-%%PORTDOCS%%share/doc/ncbi-toolkit/README.rps
-%%PORTDOCS%%share/doc/ncbi-toolkit/README.sdk
-%%PORTDOCS%%share/doc/ncbi-toolkit/asn2gb.txt
-%%PORTDOCS%%share/doc/ncbi-toolkit/asn2gph.txt
-%%PORTDOCS%%share/doc/ncbi-toolkit/dispatcher.html
-%%PORTDOCS%%share/doc/ncbi-toolkit/fa2htgs/README
-%%PORTDOCS%%share/doc/ncbi-toolkit/fa2htgs/updateHtgsDoc
-%%PORTDOCS%%share/doc/ncbi-toolkit/firedialog.gif
-%%PORTDOCS%%share/doc/ncbi-toolkit/firewall.html
-%%PORTDOCS%%share/doc/ncbi-toolkit/fwd_check.sh
-%%PORTDOCS%%share/doc/ncbi-toolkit/images/ncbi_sequin.css
-%%PORTDOCS%%share/doc/ncbi-toolkit/images/seqn01.gif
-%%PORTDOCS%%share/doc/ncbi-toolkit/images/seqn02.gif
-%%PORTDOCS%%share/doc/ncbi-toolkit/images/seqn03.gif
-%%PORTDOCS%%share/doc/ncbi-toolkit/images/seqn04.gif
-%%PORTDOCS%%share/doc/ncbi-toolkit/images/seqn05.gif
-%%PORTDOCS%%share/doc/ncbi-toolkit/images/seqn06.gif
-%%PORTDOCS%%share/doc/ncbi-toolkit/images/seqn07.gif
-%%PORTDOCS%%share/doc/ncbi-toolkit/images/seqn08.gif
-%%PORTDOCS%%share/doc/ncbi-toolkit/images/seqn09.gif
-%%PORTDOCS%%share/doc/ncbi-toolkit/images/seqn10.gif
-%%PORTDOCS%%share/doc/ncbi-toolkit/images/seqn11.gif
-%%PORTDOCS%%share/doc/ncbi-toolkit/images/seqn12.gif
-%%PORTDOCS%%share/doc/ncbi-toolkit/images/seqn13.gif
-%%PORTDOCS%%share/doc/ncbi-toolkit/images/seqn14.gif
-%%PORTDOCS%%share/doc/ncbi-toolkit/images/seqn15.gif
-%%PORTDOCS%%share/doc/ncbi-toolkit/images/seqn16.gif
-%%PORTDOCS%%share/doc/ncbi-toolkit/images/seqn17.gif
-%%PORTDOCS%%share/doc/ncbi-toolkit/images/seqn18.gif
-%%PORTDOCS%%share/doc/ncbi-toolkit/images/seqn19.gif
-%%PORTDOCS%%share/doc/ncbi-toolkit/images/seqn20.gif
-%%PORTDOCS%%share/doc/ncbi-toolkit/images/seqn21.gif
-%%PORTDOCS%%share/doc/ncbi-toolkit/images/seqn22.gif
-%%PORTDOCS%%share/doc/ncbi-toolkit/ncbixml.txt
-%%PORTDOCS%%share/doc/ncbi-toolkit/sdk.doc
-%%PORTDOCS%%share/doc/ncbi-toolkit/sequin.htm
-%%PORTDOCS%%share/doc/ncbi-toolkit/tbl2asn.txt
+%%PORTDOCS%%%%DOCSDIR%%/FAQ.txt
+%%PORTDOCS%%%%DOCSDIR%%/README-qm
+%%PORTDOCS%%%%DOCSDIR%%/README.asn2xml
+%%PORTDOCS%%%%DOCSDIR%%/README.bcl
+%%PORTDOCS%%%%DOCSDIR%%/README.bls
+%%PORTDOCS%%%%DOCSDIR%%/README.fastacmd
+%%PORTDOCS%%%%DOCSDIR%%/README.formatdb
+%%PORTDOCS%%%%DOCSDIR%%/README.imp
+%%PORTDOCS%%%%DOCSDIR%%/README.mbl
+%%PORTDOCS%%%%DOCSDIR%%/README.nbl
+%%PORTDOCS%%%%DOCSDIR%%/README.pbl
+%%PORTDOCS%%%%DOCSDIR%%/README.rps
+%%PORTDOCS%%%%DOCSDIR%%/README.sdk
+%%PORTDOCS%%%%DOCSDIR%%/asn2gb.txt
+%%PORTDOCS%%%%DOCSDIR%%/asn2gph.txt
+%%PORTDOCS%%%%DOCSDIR%%/dispatcher.html
+%%PORTDOCS%%%%DOCSDIR%%/fa2htgs/README
+%%PORTDOCS%%%%DOCSDIR%%/fa2htgs/updateHtgsDoc
+%%PORTDOCS%%%%DOCSDIR%%/firedialog.gif
+%%PORTDOCS%%%%DOCSDIR%%/firewall.html
+%%PORTDOCS%%%%DOCSDIR%%/fwd_check.sh
+%%PORTDOCS%%%%DOCSDIR%%/images/ncbi_sequin.css
+%%PORTDOCS%%%%DOCSDIR%%/images/seqn01.gif
+%%PORTDOCS%%%%DOCSDIR%%/images/seqn02.gif
+%%PORTDOCS%%%%DOCSDIR%%/images/seqn03.gif
+%%PORTDOCS%%%%DOCSDIR%%/images/seqn04.gif
+%%PORTDOCS%%%%DOCSDIR%%/images/seqn05.gif
+%%PORTDOCS%%%%DOCSDIR%%/images/seqn06.gif
+%%PORTDOCS%%%%DOCSDIR%%/images/seqn07.gif
+%%PORTDOCS%%%%DOCSDIR%%/images/seqn08.gif
+%%PORTDOCS%%%%DOCSDIR%%/images/seqn09.gif
+%%PORTDOCS%%%%DOCSDIR%%/images/seqn10.gif
+%%PORTDOCS%%%%DOCSDIR%%/images/seqn11.gif
+%%PORTDOCS%%%%DOCSDIR%%/images/seqn12.gif
+%%PORTDOCS%%%%DOCSDIR%%/images/seqn13.gif
+%%PORTDOCS%%%%DOCSDIR%%/images/seqn14.gif
+%%PORTDOCS%%%%DOCSDIR%%/images/seqn15.gif
+%%PORTDOCS%%%%DOCSDIR%%/images/seqn16.gif
+%%PORTDOCS%%%%DOCSDIR%%/images/seqn17.gif
+%%PORTDOCS%%%%DOCSDIR%%/images/seqn18.gif
+%%PORTDOCS%%%%DOCSDIR%%/images/seqn19.gif
+%%PORTDOCS%%%%DOCSDIR%%/images/seqn20.gif
+%%PORTDOCS%%%%DOCSDIR%%/images/seqn21.gif
+%%PORTDOCS%%%%DOCSDIR%%/images/seqn22.gif
+%%PORTDOCS%%%%DOCSDIR%%/ncbixml.txt
+%%PORTDOCS%%%%DOCSDIR%%/sdk.doc
+%%PORTDOCS%%%%DOCSDIR%%/sequin.htm
+%%PORTDOCS%%%%DOCSDIR%%/tbl2asn.txt
 bin/Nentrez
 bin/Psequin
 bin/asn2ff
@@ -632,6 +632,6 @@ share/ncbi-toolkit/taxlist.txt
 @dirrm include/ncbi
 @dirrm lib/ncbi
 @dirrm share/ncbi-toolkit
-%%PORTDOCS%%@dirrm share/doc/ncbi-toolkit/images
-%%PORTDOCS%%@dirrm share/doc/ncbi-toolkit/fa2htgs
-%%PORTDOCS%%@dirrm share/doc/ncbi-toolkit
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/images
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/fa2htgs
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

@@ -50,26 +50,26 @@ bin/xyzedit
 bin/xyzint
 bin/xyzpdb
 bin/xyzsybyl
-%%PORTDOCS%%share/doc/tinker/README
-%%PORTDOCS%%share/doc/tinker/guide.pdf
-%%PORTDOCS%%share/doc/tinker/guide.ps.gz
-%%PORTDOCS%%share/doc/tinker/guide.txt
-%%PORTDOCS%%share/doc/tinker/license.pdf
-%%PORTDOCS%%share/doc/tinker/license.ps
-%%PORTDOCS%%share/doc/tinker/license.txt
-%%PORTDOCS%%share/doc/tinker/logo-bind.pdf
-%%PORTDOCS%%share/doc/tinker/logo-bind.ps.gz
-%%PORTDOCS%%share/doc/tinker/logo.pdf
-%%PORTDOCS%%share/doc/tinker/logo.ps.gz
-%%PORTDOCS%%share/doc/tinker/release-3.2
-%%PORTDOCS%%share/doc/tinker/release-3.6
-%%PORTDOCS%%share/doc/tinker/release-3.7
-%%PORTDOCS%%share/doc/tinker/release-3.8
-%%PORTDOCS%%share/doc/tinker/release-3.9
-%%PORTDOCS%%share/doc/tinker/release-4.0
-%%PORTDOCS%%share/doc/tinker/summary.pdf
-%%PORTDOCS%%share/doc/tinker/summary.ps
-%%PORTDOCS%%share/doc/tinker/summary.txt
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/guide.pdf
+%%PORTDOCS%%%%DOCSDIR%%/guide.ps.gz
+%%PORTDOCS%%%%DOCSDIR%%/guide.txt
+%%PORTDOCS%%%%DOCSDIR%%/license.pdf
+%%PORTDOCS%%%%DOCSDIR%%/license.ps
+%%PORTDOCS%%%%DOCSDIR%%/license.txt
+%%PORTDOCS%%%%DOCSDIR%%/logo-bind.pdf
+%%PORTDOCS%%%%DOCSDIR%%/logo-bind.ps.gz
+%%PORTDOCS%%%%DOCSDIR%%/logo.pdf
+%%PORTDOCS%%%%DOCSDIR%%/logo.ps.gz
+%%PORTDOCS%%%%DOCSDIR%%/release-3.2
+%%PORTDOCS%%%%DOCSDIR%%/release-3.6
+%%PORTDOCS%%%%DOCSDIR%%/release-3.7
+%%PORTDOCS%%%%DOCSDIR%%/release-3.8
+%%PORTDOCS%%%%DOCSDIR%%/release-3.9
+%%PORTDOCS%%%%DOCSDIR%%/release-4.0
+%%PORTDOCS%%%%DOCSDIR%%/summary.pdf
+%%PORTDOCS%%%%DOCSDIR%%/summary.ps
+%%PORTDOCS%%%%DOCSDIR%%/summary.txt
 %%PORTDOCS%%share/examples/tinker/README
 %%PORTDOCS%%share/examples/tinker/anion.dat
 %%PORTDOCS%%share/examples/tinker/anion.dyn0
@@ -437,7 +437,7 @@ share/tinker/params/water.prm
 %%PORTDOCS%%share/tinker/test/white.key
 %%PORTDOCS%%share/tinker/test/white.xyz
 share/tinker/tinker.txt
-%%PORTDOCS%%@dirrm share/doc/tinker
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%PORTDOCS%%@dirrm share/examples/tinker
 %%PORTDOCS%%@dirrm share/tinker/bench
 @dirrm share/tinker/params

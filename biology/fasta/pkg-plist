@@ -1,15 +1,15 @@
-%%PORTDOCS%%share/doc/fasta/COPYRIGHT
-%%PORTDOCS%%share/doc/fasta/README.versions
-%%PORTDOCS%%share/doc/fasta/fasta20.doc
-%%PORTDOCS%%share/doc/fasta/fasta20.me
-%%PORTDOCS%%share/doc/fasta/format.doc
-%%PORTDOCS%%share/doc/fasta/readme.v15
-%%PORTDOCS%%share/doc/fasta/readme.v16
-%%PORTDOCS%%share/doc/fasta/readme.v17
-%%PORTDOCS%%share/doc/fasta/readme.v20
-%%PORTDOCS%%share/doc/fasta/readme.v20u4
-%%PORTDOCS%%share/doc/fasta/readme.v20u5
-%%PORTDOCS%%share/doc/fasta/readme.v20u6
+%%PORTDOCS%%%%DOCSDIR%%/COPYRIGHT
+%%PORTDOCS%%%%DOCSDIR%%/README.versions
+%%PORTDOCS%%%%DOCSDIR%%/fasta20.doc
+%%PORTDOCS%%%%DOCSDIR%%/fasta20.me
+%%PORTDOCS%%%%DOCSDIR%%/format.doc
+%%PORTDOCS%%%%DOCSDIR%%/readme.v15
+%%PORTDOCS%%%%DOCSDIR%%/readme.v16
+%%PORTDOCS%%%%DOCSDIR%%/readme.v17
+%%PORTDOCS%%%%DOCSDIR%%/readme.v20
+%%PORTDOCS%%%%DOCSDIR%%/readme.v20u4
+%%PORTDOCS%%%%DOCSDIR%%/readme.v20u5
+%%PORTDOCS%%%%DOCSDIR%%/readme.v20u6
 bin/aacomp
 bin/align
 bin/align0
@@ -35,4 +35,4 @@ bin/tfasta
 bin/tfastx
 bin/tgrease
 bin/zs_exp
-%%PORTDOCS%%@dirrm share/doc/fasta
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
