@@ -1,11 +1,11 @@
---- Makefile.orig	Wed Oct 13 16:20:11 1999
-+++ Makefile	Mon Dec 27 10:42:48 1999
-@@ -3,35 +3,35 @@
+--- Makefile.orig	Wed Oct 13 17:20:11 1999
++++ Makefile	Wed Feb  2 21:43:18 2000
+@@ -3,22 +3,24 @@
  #If you do not have gcc, change the setting for COMPILER, but you must
  #use an ANSI standard C compiler (NOT the old SunOS 4.1.3 cc
  #compiler; get gcc if you are still using it). 
 -COMPILER=gcc
-+#COMPILER=gcc
++COMPILER=${CC}
  
  #If the ar command fails on your system, consult the ar manpage
  #for your system. 
@@ -24,32 +24,40 @@
  #If you do have FreeType and/or Xpm fully installed, uncomment a
  #variation of this and comment out the line above. See also LIBS below.
 -#CFLAGS=-O -DHAVE_XPM -DHAVE_LIBTTF
++.if defined(WANT_X11)
 +CFLAGS+=-DHAVE_XPM -DHAVE_LIBTTF
++.endif
  
  #If you don't have FreeType and/or Xpm fully installed, uncomment this
  #(default).
--LIBS=-lm -lgd -lpng -lz
-+#LIBS=-lm -lgd -lpng -lz
- 
+@@ -27,11 +29,16 @@
  #If you do have FreeType and/or Xpm fully installed, uncomment a 
  #variation of this and comment out the line above. Note that
  #Xpm requires X11. See also CFLAGS above.
 -#LIBS=-lm -lgd -lpng -lz -lttf -lXpm -lX11
++.if defined(WANT_X11)
 +LIBS=-lm -lgd -lpng -lz -lttf -lXpm -lX11
++.endif
  
  #Typical install locations for freetype, zlib, xpm and libpng header files.
  #If yours are somewhere else, change this. 
 -INCLUDEDIRS=-I/usr/local/include -I/usr/include/X11 -I/usr/X11R6/include/X11
-+CFLAGS+=-I$(LOCALBASE)/include -I$(LOCALBASE)/include/freetype -I$(X11BASE)/include -I$(X11BASE)/include/X11
++CFLAGS+=-I$(LOCALBASE)/include
++.if defined(WANT_X11)
++CFLAGS+=-I$(LOCALBASE)/include/freetype -I$(X11BASE)/include -I$(X11BASE)/include/X11
++.endif
  
  #Typical install locations for freetype, zlib, xpm and libpng libraries.
  #If yours are somewhere else, other than a standard location
-@@ -39,16 +39,16 @@
+@@ -39,16 +46,19 @@
  #-L. as this allows the gd library itself to be found.
  #Put -L. first so that old versions of the gd library elsewhere
  #on your system can't cause conflicts while building a new one.
 -LIBDIRS=-L. -L/usr/local/lib -L/usr/lib/X11 -L/usr/X11R6/lib
-+LIBDIRS=-L. -L$(LOCALBASE)/lib -L$(X11BASE)/lib
++LIBDIRS=-L. -L$(LOCALBASE)/lib
++.if defined(WANT_X11)
++LIBDIRS+=-L$(X11BASE)/lib
++.endif
  
  #Location where libgd.a should be installed by "make install".
 -INSTALL_LIB=/usr/local/lib
@@ -65,7 +73,7 @@
  
  #
  #
-@@ -58,34 +58,41 @@
+@@ -58,34 +68,41 @@
  
  VERSION=1.7
  
@@ -127,7 +135,7 @@
  
  gddemo: gddemo.o libgd.a
  	$(CC) gddemo.o -o gddemo	$(LIBDIRS) $(LIBS)
-@@ -120,16 +127,19 @@
+@@ -120,16 +137,19 @@
  gdtestttf: gdtestttf.o libgd.a
  	$(CC) gdtestttf.o -o gdtestttf	$(LIBDIRS) $(LIBS)
  
