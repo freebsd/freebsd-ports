@@ -2,11 +2,10 @@
 
 The EMBOSS suite has been successfully installed.
 
-In order to use the EMBOSS programs, you will need to set some environment
-variables in your shell startup file.
+In order to see graphical output from some EMBOSS programs, you will need to
+set the following environment variable in your shell startup file:
 
 - set PLPLOT_LIB to:     "%%PREFIX%%/share/EMBOSS"
-- set EMBOSS_ACDROOT to: "%%PREFIX%%/share/EMBOSS/acd"
 
 NB:  A sample configuration file has been installed to %%PREFIX%%/etc as
 emboss.default.sample.  This must be renamed to emboss.default and edited

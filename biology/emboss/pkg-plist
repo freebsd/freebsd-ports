@@ -83,6 +83,7 @@ bin/dbigcg
 bin/descseq
 bin/diffseq
 bin/digest
+bin/domainer
 bin/dotmatcher
 bin/dotpath
 bin/dottup
@@ -109,6 +110,7 @@ bin/iep
 bin/infoseq
 bin/isochore
 bin/lindna
+bin/marscan
 bin/maskfeat
 bin/maskseq
 bin/matcher
@@ -121,6 +123,7 @@ bin/newcpgseek
 bin/newseq
 bin/noreturn
 bin/notseq
+bin/nrscope
 bin/nthseq
 bin/octanol
 bin/oddcomp
@@ -156,6 +159,7 @@ bin/remap
 bin/restover
 bin/restrict
 bin/revseq
+bin/scope
 bin/seealso
 bin/seqmatchall
 bin/seqret
@@ -238,6 +242,7 @@ share/EMBOSS/acd/demotable.acd
 share/EMBOSS/acd/descseq.acd
 share/EMBOSS/acd/diffseq.acd
 share/EMBOSS/acd/digest.acd
+share/EMBOSS/acd/domainer.acd
 share/EMBOSS/acd/dotmatcher.acd
 share/EMBOSS/acd/dotpath.acd
 share/EMBOSS/acd/dottup.acd
@@ -267,6 +272,7 @@ share/EMBOSS/acd/iep.acd
 share/EMBOSS/acd/infoseq.acd
 share/EMBOSS/acd/isochore.acd
 share/EMBOSS/acd/lindna.acd
+share/EMBOSS/acd/marscan.acd
 share/EMBOSS/acd/maskfeat.acd
 share/EMBOSS/acd/maskseq.acd
 share/EMBOSS/acd/matcher.acd
@@ -279,6 +285,7 @@ share/EMBOSS/acd/newcpgseek.acd
 share/EMBOSS/acd/newseq.acd
 share/EMBOSS/acd/noreturn.acd
 share/EMBOSS/acd/notseq.acd
+share/EMBOSS/acd/nrscope.acd
 share/EMBOSS/acd/nthseq.acd
 share/EMBOSS/acd/octanol.acd
 share/EMBOSS/acd/oddcomp.acd
@@ -338,6 +345,7 @@ share/EMBOSS/acd/sigcleave.acd
 share/EMBOSS/acd/silent.acd
 share/EMBOSS/acd/simplesw.acd
 share/EMBOSS/acd/splitter.acd
+share/EMBOSS/acd/stamps.acd
 share/EMBOSS/acd/stretcher.acd
 share/EMBOSS/acd/stssearch.acd
 share/EMBOSS/acd/supermatcher.acd
@@ -789,6 +797,7 @@ share/doc/EMBOSS/programs/html/dnapars.html
 share/doc/EMBOSS/programs/html/dnapenny.html
 share/doc/EMBOSS/programs/html/dollop.html
 share/doc/EMBOSS/programs/html/dolpenny.html
+share/doc/EMBOSS/programs/html/domainer.html
 share/doc/EMBOSS/programs/html/dotmatcher.html
 share/doc/EMBOSS/programs/html/dotmatcher0.gif
 share/doc/EMBOSS/programs/html/dotpath.html
@@ -854,6 +863,7 @@ share/doc/EMBOSS/programs/html/isochore.html
 share/doc/EMBOSS/programs/html/isochore0.gif
 share/doc/EMBOSS/programs/html/kitsch.html
 share/doc/EMBOSS/programs/html/lindna.html
+share/doc/EMBOSS/programs/html/marscan.html
 share/doc/EMBOSS/programs/html/maskfeat.html
 share/doc/EMBOSS/programs/html/maskseq.html
 share/doc/EMBOSS/programs/html/matcher.html
@@ -873,6 +883,7 @@ share/doc/EMBOSS/programs/html/newcpgseek.html
 share/doc/EMBOSS/programs/html/newseq.html
 share/doc/EMBOSS/programs/html/noreturn.html
 share/doc/EMBOSS/programs/html/notseq.html
+share/doc/EMBOSS/programs/html/nrscope.html
 share/doc/EMBOSS/programs/html/nthseq.html
 share/doc/EMBOSS/programs/html/octanol.html
 share/doc/EMBOSS/programs/html/octanol0.gif
@@ -919,6 +930,7 @@ share/doc/EMBOSS/programs/html/protdist.html
 share/doc/EMBOSS/programs/html/protein_sequence_composition_group.html
 share/doc/EMBOSS/programs/html/protein_sequence_features_group.html
 share/doc/EMBOSS/programs/html/protein_sequence_properties_group.html
+share/doc/EMBOSS/programs/html/protein_structure_group.html
 share/doc/EMBOSS/programs/html/pscan.html
 share/doc/EMBOSS/programs/html/re_group.html
 share/doc/EMBOSS/programs/html/rebaseextract.html
@@ -928,8 +940,11 @@ share/doc/EMBOSS/programs/html/reformatting_group.html
 share/doc/EMBOSS/programs/html/remap.html
 share/doc/EMBOSS/programs/html/repeats_group.html
 share/doc/EMBOSS/programs/html/restml.html
+share/doc/EMBOSS/programs/html/restover.html
 share/doc/EMBOSS/programs/html/restrict.html
+share/doc/EMBOSS/programs/html/restriction_enzymes_group.html
 share/doc/EMBOSS/programs/html/revseq.html
+share/doc/EMBOSS/programs/html/scope.html
 share/doc/EMBOSS/programs/html/secondary_structure_group.html
 share/doc/EMBOSS/programs/html/seealso.html
 share/doc/EMBOSS/programs/html/seqboot.html
@@ -1022,6 +1037,7 @@ share/doc/EMBOSS/programs/text/dnapars.txt
 share/doc/EMBOSS/programs/text/dnapenny.txt
 share/doc/EMBOSS/programs/text/dollop.txt
 share/doc/EMBOSS/programs/text/dolpenny.txt
+share/doc/EMBOSS/programs/text/domainer.txt
 share/doc/EMBOSS/programs/text/dotmatcher.txt
 share/doc/EMBOSS/programs/text/dotpath.txt
 share/doc/EMBOSS/programs/text/dottup.txt
@@ -1077,6 +1093,7 @@ share/doc/EMBOSS/programs/text/infoseq.txt
 share/doc/EMBOSS/programs/text/isochore.txt
 share/doc/EMBOSS/programs/text/kitsch.txt
 share/doc/EMBOSS/programs/text/lindna.txt
+share/doc/EMBOSS/programs/text/marscan.txt
 share/doc/EMBOSS/programs/text/maskfeat.txt
 share/doc/EMBOSS/programs/text/maskseq.txt
 share/doc/EMBOSS/programs/text/matcher.txt
@@ -1092,6 +1109,7 @@ share/doc/EMBOSS/programs/text/newcpgseek.txt
 share/doc/EMBOSS/programs/text/newseq.txt
 share/doc/EMBOSS/programs/text/noreturn.txt
 share/doc/EMBOSS/programs/text/notseq.txt
+share/doc/EMBOSS/programs/text/nrscope.txt
 share/doc/EMBOSS/programs/text/nthseq.txt
 share/doc/EMBOSS/programs/text/octanol.txt
 share/doc/EMBOSS/programs/text/oddcomp.txt
@@ -1127,8 +1145,10 @@ share/doc/EMBOSS/programs/text/recode.txt
 share/doc/EMBOSS/programs/text/redata.txt
 share/doc/EMBOSS/programs/text/remap.txt
 share/doc/EMBOSS/programs/text/restml.txt
+share/doc/EMBOSS/programs/text/restover.txt
 share/doc/EMBOSS/programs/text/restrict.txt
 share/doc/EMBOSS/programs/text/revseq.txt
+share/doc/EMBOSS/programs/text/scope.txt
 share/doc/EMBOSS/programs/text/seealso.txt
 share/doc/EMBOSS/programs/text/seqboot.txt
 share/doc/EMBOSS/programs/text/seqmatchall.txt

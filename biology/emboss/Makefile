@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	emboss
-PORTVERSION=	1.9.1
-PORTREVISION=	1
+PORTVERSION=	1.10.0
 CATEGORIES=	biology
 MASTER_SITES=	ftp://ftp.uk.embnet.org/pub/EMBOSS/ \
 		ftp://ftp.no.embnet.org/pub/EMBOSS/ \
@@ -39,7 +38,7 @@ SCRIPTS_ENV+=	WRKDIRPREFIX="${WRKDIRPREFIX}" \
 
 WRKSRC=		${WRKDIR}/${PORTNAME:U}-${PORTVERSION}
 EMBASSY_WRKDIR=	${WRKSRC}/EMBASSY
-EMNU_VERSION=	1.0.3
+EMNU_VERSION=	1.0.4
 MSE_VERSION=	0.0.4
 TOPO_VERSION=	0.1
 PHYLIP_VERSION=	3.573c
@@ -105,7 +104,10 @@ post-install:
 	  ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} \
 	  ${MAKE_ARGS} ${INSTALL_TARGET})
 .endfor
-	@ ${INSTALL_DATA} ${WRKSRC}/emboss/acd/emboss.default \
+	@ ${PERL} -pe 's#%%PREFIX%%#${PREFIX}#' \
+	  ${WRKSRC}/emboss/acd/emboss.default > \
+	  ${PREFIX}/etc/emboss.default.sample && \
+	  ${CHOWN} ${SHAREOWN}:${SHAREGRP} \
 	  ${PREFIX}/etc/emboss.default.sample
 .if !defined(BATCH)
 	@ ${PERL} -pe 's#%%PREFIX%%#${PREFIX}#' \
