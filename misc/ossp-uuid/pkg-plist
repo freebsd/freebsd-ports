@@ -3,5 +3,11 @@ bin/uuid-config
 include/uuid.h
 lib/libuuid.a
 lib/libuuid.la
-lib/libuuid.so
-lib/libuuid.so.1
+%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/OSSP/uuid.pm
+%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/OSSP/uuid.pod
+%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/OSSP/uuid/.packlist
+%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/OSSP/uuid/uuid.bs
+%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/OSSP/uuid/uuid.so
+%%WITH_PERL%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/OSSP/uuid
+%%WITH_PERL%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/OSSP
+%%WITH_PERL%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/OSSP
