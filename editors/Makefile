@@ -112,7 +112,6 @@
     SUBDIR += ooodict-hu_HU
     SUBDIR += ooodict-it_IT
     SUBDIR += ooodict-nl_NL
-    SUBDIR += ooodict-pl_PL
     SUBDIR += ooodict-sk_SK
     SUBDIR += ooodict-sv_SE
     SUBDIR += openoffice
