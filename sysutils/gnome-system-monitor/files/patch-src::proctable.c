@@ -1,6 +1,18 @@
---- src/proctable.c.orig	Sat Jun  7 04:35:32 2003
-+++ src/proctable.c	Thu Sep  4 16:29:18 2003
-@@ -539,6 +539,9 @@
+--- src/proctable.c.orig	Sun Feb  8 10:06:08 2004
++++ src/proctable.c	Tue Apr 13 01:01:51 2004
+@@ -147,8 +147,9 @@
+ 				    G_TYPE_STRING, G_TYPE_STRING, G_TYPE_STRING,
+ 				    G_TYPE_STRING, G_TYPE_STRING, G_TYPE_STRING,
+ 				    G_TYPE_STRING, G_TYPE_STRING, G_TYPE_STRING,
+-				    G_TYPE_INT, G_TYPE_INT, G_TYPE_INT,
+-				    GDK_TYPE_PIXBUF, G_TYPE_POINTER);		    
++				    G_TYPE_STRING, G_TYPE_INT, G_TYPE_INT,
++				    G_TYPE_INT, GDK_TYPE_PIXBUF,
++				    G_TYPE_POINTER);		    
+   	
+   	proctree = gtk_tree_view_new_with_model (GTK_TREE_MODEL (model));
+ 	gtk_tree_view_set_rules_hint (GTK_TREE_VIEW (proctree), TRUE);
+@@ -547,6 +548,9 @@
  	glibtop_get_proc_uid (&procuid, pid);
  	glibtop_get_proc_time (&proctime, pid);
  	newcputime = proctime.utime + proctime.stime;
@@ -9,8 +21,8 @@
 +	}
  	model = gtk_tree_view_get_model (GTK_TREE_VIEW (procdata->tree));
  
- 	info->mem = procmem.size;
-@@ -620,6 +623,9 @@
+         wnck_pid_read_resource_usage (gdk_screen_get_display (gdk_screen_get_default ()),
+@@ -651,6 +655,9 @@
  	glibtop_get_proc_uid (&procuid, pid);
  	glibtop_get_proc_time (&proctime, pid);
  	newcputime = proctime.utime + proctime.stime;
@@ -18,9 +30,9 @@
 +		newcputime /= (proctime.frequency/100);
 +	}
  
- 	arguments = glibtop_get_proc_args (&procargs, pid, 0);	
- 	get_process_name (procdata, info, procstate.cmd, arguments);
-@@ -709,12 +715,20 @@
+         wnck_pid_read_resource_usage (gdk_screen_get_display (gdk_screen_get_default ()),
+                                       pid,
+@@ -751,12 +758,20 @@
  	return NULL;
  }
  
@@ -41,7 +53,7 @@
  	
  	while (i < n)
  	{
-@@ -812,6 +826,9 @@
+@@ -848,6 +863,9 @@
  	** should probably have a total_time_last gint in the ProcInfo structure */
  	glibtop_get_cpu (&cpu);
  	total_time = cpu.total - total_time_last;
