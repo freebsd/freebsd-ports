@@ -1,5 +1,5 @@
---- Makefile.orig	Mon Feb  9 02:23:04 1998
-+++ Makefile	Sat Nov 14 22:58:27 1998
+--- Makefile.orig	Sun Feb  8 23:53:04 1998
++++ Makefile	Wed Nov 25 07:05:28 1998
 @@ -21,6 +21,7 @@
  	@echo ""
  	@echo "make linux-help     Linux, more help"
@@ -14,7 +14,7 @@
  		OBJECTS='decode_i386.o dct64_i386.o getbits_.o audio_oss.o' \
 -		CFLAGS='-Wall -ansi -pedantic -O4 -m486 -fomit-frame-pointer \
 -			-funroll-all-loops -ffast-math -DROT_I386 \
-+		CFLAGS+='-Wall -ansi -pedantic -fomit-frame-pointer \
++		CFLAGS+='-Wall -O2 -ansi -pedantic -fomit-frame-pointer \
 +			-funroll-all-loops -ffast-math -DROT_I386 -DREAD_MMAP \
 +			-DI386_ASSEM -DREAL_IS_FLOAT -DUSE_MMAP -DOSS' \
 +		mpg123-make
@@ -22,7 +22,7 @@
 +freebsd-elf:
 +	$(MAKE) CC=cc LDFLAGS= \
 +		OBJECTS='decode_i386.o dct64_i386.o getbits.o audio_oss.o' \
-+		CFLAGS+='-Wall -ansi -pedantic -fomit-frame-pointer \
++		CFLAGS+='-Wall -O2 -ansi -pedantic -fomit-frame-pointer \
 +			-funroll-all-loops -ffast-math -DROT_I386 -DREAD_MMAP \
  			-DI386_ASSEM -DREAL_IS_FLOAT -DUSE_MMAP -DOSS' \
  		mpg123-make
