@@ -1,4 +1,5 @@
 bin/GOPchop
+bin/gtkspu
 bin/mpegcat
 share/GOPchop/pixmaps/about.xpm
 share/GOPchop/pixmaps/error.xpm
