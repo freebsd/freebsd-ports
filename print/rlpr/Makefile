@@ -16,6 +16,7 @@ COMMENT=	Send print jobs to lpd servers anywhere on a network
 #LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext
 
 GNU_CONFIGURE=	yes
+USE_GETOPT_LONG=yes
 #CONFIGURE_ENV=	CPPFLAGS="-I${PREFIX}/include" LDFLAGS="-L${PREFIX}/lib -lintl"
 CONFIGURE_ENV=	CPPFLAGS="-I${FILESDIR}"
 CONFIGURE_ARGS=	--disable-nls --without-catgets
