@@ -26,6 +26,10 @@ USE_PYTHON=	-2.3
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 500000
+BROKEN=		"Does not compile on FreeBSD 4.x"
+.endif
+
 pre-everything::
 		@${ECHO_MSG} "Define WITHOUT_PYTHON to\
 			disable PYTHON scripts support."
