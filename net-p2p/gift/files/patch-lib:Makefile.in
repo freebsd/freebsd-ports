@@ -1,0 +1,29 @@
+--- lib/Makefile.in.orig	Fri Nov 16 02:52:02 2001
++++ lib/Makefile.in	Fri Nov 16 02:53:46 2001
+@@ -122,19 +122,19 @@
+ maintainer-clean-libLIBRARIES:
+ 
+ install-libLIBRARIES: $(lib_LIBRARIES)
+-	@$(NORMAL_INSTALL)
+-	$(mkinstalldirs) $(DESTDIR)$(libdir)
++	@$(PRE_INSTALL)
+ 	@list='$(lib_LIBRARIES)'; for p in $$list; do \
+ 	  if test -f $$p; then \
+-	    echo " $(INSTALL_DATA) $$p $(DESTDIR)$(libdir)/$$p"; \
+-	    $(INSTALL_DATA) $$p $(DESTDIR)$(libdir)/$$p; \
++	    echo " $(RANLIB) $$p"; \
++	    $(RANLIB) $$p; \
+ 	  else :; fi; \
+ 	done
+-	@$(POST_INSTALL)
++	@$(NORMAL_INSTALL)
++	$(mkinstalldirs) $(DESTDIR)$(libdir)
+ 	@list='$(lib_LIBRARIES)'; for p in $$list; do \
+ 	  if test -f $$p; then \
+-	    echo " $(RANLIB) $(DESTDIR)$(libdir)/$$p"; \
+-	    $(RANLIB) $(DESTDIR)$(libdir)/$$p; \
++	    echo " $(INSTALL_DATA) $$p $(DESTDIR)$(libdir)/$$p"; \
++	    $(INSTALL_DATA) $$p $(DESTDIR)$(libdir)/$$p; \
+ 	  else :; fi; \
+ 	done
+ 
