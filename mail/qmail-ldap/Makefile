@@ -11,7 +11,7 @@ CATEGORIES=	mail
 PKGNAMESUFFIX=	-ldap
 
 PATCH_SITES=	http://www.nrg4u.com/qmail/:ldap
-PATCHFILES=	qmail-ldap-1.03-${LDAP_PATCH_DATE}.patch.gz:ldap,local
+PATCHFILES=	qmail-ldap-1.03-${LDAP_PATCH_DATE}.patch.gz:ldap
 PATCH_DIST_STRIP+=	-p1
 
 EXTRA_PATCHES+=	${QMAIL_PORT_PATCHDIR}/patch-ab ${QMAIL_PORT_PATCHDIR}/patch-ac
