@@ -7,16 +7,13 @@
 #
 
 PORTNAME=	hdf5
-PORTVERSION=	1.6.2
-PORTREVISION=	1
+PORTVERSION=	1.6.3
 CATEGORIES=	science archivers graphics
-MASTER_SITES=	ftp://hdf.ncsa.uiuc.edu/pub/outgoing/hdf5/snapshots/
-DISTNAME=	${PORTNAME}-${PORTVERSION}-post2
+MASTER_SITES=	ftp://hdf.ncsa.uiuc.edu/pub/outgoing/hdf5/${PORTVERSION}/
 
 MAINTAINER=	koziol@ncsa.uiuc.edu
 COMMENT=	Hierarchical Data Format library (from NCSA)
 
-USE_BZIP2=	yes
 USE_REINPLACE=	yes
 USE_LIBTOOL_VER=13
 LIBTOOLFILES=	configure c++/configure
