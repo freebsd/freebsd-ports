@@ -1,0 +1,60 @@
+$FreeBSD$
+
+--- Makefile.orig	Sat Sep  7 12:59:26 2002
++++ Makefile	Wed Jan 29 17:09:14 2003
+@@ -22,9 +22,9 @@
+ # Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+ #
+ 
+-LIB_PATH =	-L/usr/X11/lib			# Libraries for X
+-INC_PATH =	-I. -I/usr/X11/include 		# Header files for X
+-INST_LIBS=	/usr/X11/lib
++LIB_PATH =	-L${X11BASE}/lib			# Libraries for X
++INC_PATH =	-I. -I${X11BASE}/include 		# Header files for X
++INST_LIBS=	${PREFIX}/lib
+ 
+ XAW=		./X11/XawPlus
+ 
+@@ -39,10 +39,12 @@
+ 		MenuButton.o Toggle.o Panner.o Command.o Repeater.o \
+ 		Grip.o Scrollbar.o List.o \
+  		Tree.o DrawingArea.o StripChart.o Dialog.o
++all: lib
+ 
+-all:		lib install
+ lib:		libXawPlus.a libXawPlus.so.3.1 libXaw.so.6.6 libXaw.so.7.0
+ 
++.PHONY: clean
++
+ clean:
+ 		rm -f *.o *.a *.so*
+ 
+@@ -53,7 +55,7 @@
+ 
+ libXawPlus.so.3.1: $(OBJS)
+ 		$(CC) -shared -Wl,-soname,libXawPlus.so.3 \
+-		-o libXawPlus.so.3.1 $(OBJS)
++		-o libXawPlus.so.3 $(OBJS)
+ 
+ libXaw.so.6.6: $(OBJS)
+ 		$(CC) -shared -Wl,-soname,libXaw.so.6 \
+@@ -66,14 +68,14 @@
+ # --- This only works as superuser root
+ 
+ install:
+-		rm -rf /usr/X11/include/X11/XawPlus
+-		mkdir -p /usr/X11/include/X11/XawPlus
+-		cp ./X11/XawPlus/*.h /usr/X11/include/X11/XawPlus
++		rm -rf ${PREFIX}/include/X11/XawPlus
++		mkdir -p ${PREFIX}/include/X11/XawPlus
++		${BSD_INSTALL_DATA} ./X11/XawPlus/*.h ${PREFIX}/include/X11/XawPlus
+ 		cp libXawPlus.a $(INST_LIBS)
+ 		rm -f $(INST_LIBS)/libXawPlus.so.3 $(INST_LIBS)/libXawPlus.so
+-		cp libXawPlus.so.3.1 $(INST_LIBS)
++		${BSD_INSTALL_DATA} libXawPlus.so.3 $(INST_LIBS)
+ 		ldconfig
+-		ln -s $(INST_LIBS)/libXawPlus.so.3.1 $(INST_LIBS)/libXawPlus.so
++		ln -s $(INST_LIBS)/libXawPlus.so.3 $(INST_LIBS)/libXawPlus.so
+ 
+ installxaw:
+ 		rm -f	$(INST_LIBS)/libXaw.so.6 \

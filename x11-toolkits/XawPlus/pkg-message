@@ -1,0 +1,10 @@
+*******************************************************************
+If you want XawPlus to replace the default Athena Widget Set
+so most X applications will get a 3-D look, do this (as root):
+
+cd ${PREFIX}/lib
+mv libXaw.so.7 libXaw2d.so.7
+rm libXaw.so
+ln -s libXawPlus.so.3 libXaw.so.7
+ln -s libXawPlus.so.3 libXaw.so
+*******************************************************************
