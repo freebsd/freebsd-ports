@@ -13,4 +13,3 @@ lib/libscintilla.so.1
 lib/libscintilla_lexers.so
 lib/libscintilla_lexers.so.1
 @dirrm include/scintilla
-
