@@ -63,6 +63,7 @@
     SUBDIR += p5-Statistics-Distributions
     SUBDIR += p5-Statistics-LTU
     SUBDIR += p5-Statistics-OLS
+    SUBDIR += p5-Statistics-Table-F
     SUBDIR += pari
     SUBDIR += parmetis
     SUBDIR += physcalc

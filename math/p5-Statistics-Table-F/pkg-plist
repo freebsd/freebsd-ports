@@ -1,0 +1,11 @@
+lib/perl5/site_perl/%%PERL_VER%%/auto/Statistics/Table/F/autosplit.ix
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Statistics/Table/F/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/Statistics/Table/F.pm
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/auto/Statistics/Table/F
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Statistics/Table/F
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/auto/Statistics/Table 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/auto/Statistics 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Statistics/Table 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Statistics 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Statistics/Table 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Statistics 2>/dev/null || true
