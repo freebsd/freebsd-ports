@@ -31,10 +31,12 @@ KRB5_HOME?=	${LOCALBASE}
 
 do-build:
 	cd ${WRKSRC} && \
-		${APXS} -I${KRB5_HOME}/include -L${KRB5_HOME}/lib \
+		${APXS} -I${KRB5_HOME}/include \
 		-DKRB5 -DKRB5_VERIFY_TICKET -DKRB5_SAVE_CREDENTIALS \
 		-DKRB5_DEFAULT_KEYTAB=\"\\\"file:${LOCALBASE}/etc/apache/keytab\\\"\" \
-		-c ${PORTNAME}.c
+		-c ${PORTNAME}.c \
+		-L${KRB5_HOME}/lib -Wl,-rpath -Wl,${KRB5_HOME}/lib \
+		-lkrb5 -lk5crypto -lcom_err
 
 do-install:
 	${APXS} -i -A -n ${PORTNAME:S/mod_//g} ${WRKSRC}/${PORTNAME}.so
