@@ -38,6 +38,10 @@ MAN1=	avifix.1 aviindex.1 avimerge.1 avisplit.1 avisync.1 tccat.1 tcdemux.1 \
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} != "i386"
+BROKEN=		"Broken pkg-plist on !i386"
+.endif
+
 .if exists(${LOCALBASE}/lib/libtheora.so)
 WITH_LIBTHEORA=		yes
 .endif
