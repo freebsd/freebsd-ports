@@ -1,14 +1,17 @@
---- src/icu_db.c.orig	Sat Jan  5 19:15:03 2002
-+++ src/icu_db.c	Sat Jan  5 19:16:00 2002
-@@ -33,7 +33,11 @@
+
+$FreeBSD$
+
+--- src/icu_db.c.orig	Sat Jun 22 22:11:46 2002
++++ src/icu_db.c	Wed Sep 11 11:45:05 2002
+@@ -27,7 +27,11 @@
+ 
+ #include <fcntl.h>
  #include <errno.h>
- #include <stdio.h>
- #include <string.h>
 +#if defined(HAVE_STDLIB_H)
 +#include <stdlib.h>
 +#else
  #include <malloc.h>
 +#endif
- 
- #if defined(HAVE_LIBGDBM)
- #include <gdbm.h>
+ #include <stdio.h>
+ #include <string.h>
+ #include <sys/param.h>

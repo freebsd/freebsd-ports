@@ -157,6 +157,7 @@
     SUBDIR += gnomba
     SUBDIR += gnome-vnc
     SUBDIR += gnomeicu
+    SUBDIR += gnomeicu2
     SUBDIR += gnomemeeting
     SUBDIR += gnometelnet
     SUBDIR += gnosamba
