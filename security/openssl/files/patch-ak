@@ -1,0 +1,13 @@
+--- apps/Makefile.ssl.orig	Sun May 23 14:36:09 1999
++++ apps/Makefile.ssl	Fri May 28 22:29:19 1999
+@@ -101,8 +101,8 @@
+ 	 cp $$i $(INSTALL_PREFIX)$(OPENSSLDIR)/misc/$$i; \
+ 	 chmod 755 $(INSTALL_PREFIX)$(OPENSSLDIR)/misc/$$i ); \
+ 	 done
+-	@cp openssl.cnf $(INSTALL_PREFIX)$(OPENSSLDIR); \
+-	chmod 644 $(INSTALL_PREFIX)$(OPENSSLDIR)/openssl.cnf
++	@cp openssl.cnf $(INSTALL_PREFIX)$(OPENSSLDIR)/openssl.cnf.sample; \
++	chmod 644 $(INSTALL_PREFIX)$(OPENSSLDIR)/openssl.cnf.sample
+ 
+ tags:
+ 	ctags $(SRC)
