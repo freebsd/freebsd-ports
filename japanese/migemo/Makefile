@@ -28,9 +28,15 @@ RUN_DEPENDS+=	${RUBY_SITELIBDIR}/romkan.rb:${PORTSDIR}/japanese/ruby-romkan \
 
 CONFIGURE_ARGS+=--with-rubydir=${RUBY_SITELIBDIR}
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} != "i386" && ${ARCH} != "sparc64"
+BROKEN=		"Does not compile on !i386 and !sparc64"
+.endif
+
 post-install:
 .if defined(EMACS_PORT_NAME)
 	@${CAT} ${PKGMESSAGE}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

@@ -71,4 +71,10 @@ CONFIGURE_ARGS+=	--enable-usbtoken
 CONFIGURE_ARGS+=	--with-plugin-dir=${X11BASE}/lib/mozilla/plugins
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} != "i386" && ${ARCH} != "sparc64"
+BROKEN=		"Does not compile on !i386 and !sparc64"
+.endif
+
+.include <bsd.port.post.mk>
