@@ -7,6 +7,7 @@
 
 PORTNAME=	telnet
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	chinese
 MASTER_SITES=	# none
 DISTFILES=	# none
@@ -14,28 +15,41 @@ DISTFILES=	# none
 MAINTAINER=	leeym@FreeBSD.org
 COMMENT=	8bit compatible telnet client for Chinese input
 
-BROKEN=		"Fails to patch"
-
-SRCDIR=		/usr/src/usr.bin/telnet
 USE_REINPLACE=	yes
 
 MAN1=		zh-telnet.1
 
+.if exists (/usr/src/contrib/telnet/telnet)
+SRCDIR=		/usr/src/contrib/telnet/telnet
+CONTRIB_TELNET=	yes
+.elif exists (/usr/src/usr.bin/telnet)
+SRCDIR=		/usr/src/usr.bin/telnet
+.else
+IGNORE=		"You need to build this port with the source code of telnet"
+.endif
+
 do-extract:
-.if exists (${SRCDIR})
 	@${MKDIR} ${WRKDIR}
 	@${CP} -R ${SRCDIR} ${WRKSRC}
-	@${MKDIR} ${WRKSRC}/lib
-	@${CP} -R /usr/src/lib/libtelnet ${WRKSRC}/lib
+.if defined(CONTRIB_TELNET)
+	@echo CONTRIB_TELNET
+	@${CP} -R ${SRCDIR}/../libtelnet ${SRCDIR}/../../../usr.bin/telnet/Makefile ${WRKSRC}
+	@${CP} ${SRCDIR}/../arpa/telnet.h ${SRCDIR}/../../../lib/libtelnet/Makefile ${WRKSRC}/libtelnet
 .else
-IGNORE=	"You need to build this port with ${SRCDIR}"
+	@${CP} -R ${SRCDIR}/../../lib/libtelnet ${WRKSRC}
 .endif
 
 pre-patch:
-	@${REINPLACE_CMD} -e 's,/../..,,g' ${WRKSRC}/Makefile
+.if defined(CONTRIB_TELNET)
+	@echo CONTRIB_TELNET
+	@${REINPLACE_CMD} -e 's,/../../contrib/telnet,,g' ${WRKSRC}/Makefile ${WRKSRC}/libtelnet/Makefile
+	@${REINPLACE_CMD} -e 's,${TELNETDIR}/telnet,${TELNETDIR},g' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's,/arpa,,g' ${WRKSRC}/libtelnet/Makefile
+.endif
+	@${REINPLACE_CMD} -e 's,/../../lib,,g' ${WRKSRC}/Makefile
 
 pre-build:
-	@cd ${WRKSRC}/lib/libtelnet && ${MAKE}
+	@cd ${WRKSRC}/libtelnet && ${MAKE}
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/telnet ${PREFIX}/bin/zh-telnet
