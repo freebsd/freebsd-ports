@@ -92,7 +92,6 @@
     SUBDIR += pico
     SUBDIR += poedit
     SUBDIR += psgml
-    SUBDIR += psgml-emacs
     SUBDIR += psgml-emacs19
     SUBDIR += psgml-emacs20
     SUBDIR += psgml-mule
