@@ -19,11 +19,11 @@ USE_KDEBASE_VER=	3
 USE_BZIP2=		yes
 USE_GMAKE=		yes
 GNU_CONFIGURE=		yes
-USE_REINPLACE=          yes
+USE_REINPLACE=		yes
+CONFIGURE_ENV=		LDFLAGS="${PTHREAD_LIBS}"
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-O2||g' ${WRKSRC}/${CONFIGURE_SCRIPT}
+	@${REINPLACE_CMD} -e 's|-O2||g; s|-lpthread|${PTHREAD_LIBS}|g' \
+		${WRKSRC}/${CONFIGURE_SCRIPT}
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/x11/kde3/Makefile.kde"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
