@@ -16,13 +16,15 @@ PKGNAMEPREFIX=		p5-
 MAINTAINER=		brian@quynh-and-brian.org
 COMMENT=	Add hooks on methods from other classes
 
-BUILD_DEPENDS=		${SITE_PERL}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes
+BUILD_DEPENDS=		${ARCH_PERL}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes \
+			${SITE_PERL}/Test/Simple.pm::${PORTSDIR}/devel/p5-Test-Simple
 
 PERL_CONFIGURE=		yes
 
 MAN3=			Class::Hook.3
 MANPREFIX=		${PREFIX}/lib/perl5/${PERL_VERSION}
 
-SITE_PERL=		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}
+ARCH_PERL=		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}
+SITE_PERL=		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}
 
 .include <bsd.port.mk>
