@@ -1,14 +1,14 @@
 # New ports collection makefile for:	ja-tcsh NLS catalog (Generic Japanese)
-# Version required:	6.08.02
+# Version required:	6.08.05
 # Date created:		19 August 1998
 # Whom:			Issei Suzuki <issei@jp.FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.3 1998/10/10 03:57:29 steve Exp $
+# $Id: Makefile,v 1.4 1999/01/06 19:12:20 sada Exp $
 #
 
 .if !defined(NLSSRC)
-DISTNAME=	tcsh-6.08.02
-PKGNAME=	ja-tcsh-nls-generic-6.08.02
+DISTNAME=	tcsh-6.08.05
+PKGNAME=	ja-tcsh-nls-generic-6.08.05
 CATEGORIES=	japanese shells
 MASTER_SITES=	ftp://ftp.astron.com/pub/tcsh/ \
 		http://www2.wbs.ne.jp/~znc/tcsh/
@@ -23,7 +23,7 @@ NLSSRC=		${DISTNAME}/nls/ja
 BUILD_DEPENDS=	nkf:${PORTSDIR}/japanese/nkf
 RUN_DEPENDS=	tcsh:${PORTSDIR}/japanese/tcsh
 
-WRKSRC=		${WRKDIR}/tcsh-6.08.02.add2
+WRKSRC=		${WRKDIR}/tcsh-6.08.05.add2
 
 NLSDIR=		${PREFIX}/share/nls
 GENCAT=		/usr/bin/gencat
