@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	libmusicbrainz
-PORTVERSION=	2.0.2
-PORTREVISION=	3
+PORTVERSION=	2.1.1
 CATEGORIES=	audio
 MASTER_SITES=	ftp://ftp.musicbrainz.org/pub/musicbrainz/
 
