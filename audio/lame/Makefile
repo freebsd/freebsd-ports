@@ -6,14 +6,13 @@
 #
 
 PORTNAME=	lame
-PORTVERSION=	3.91
-PORTREVISION=	1
+PORTVERSION=	3.92
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
-		ftp://lame.sourceforge.net/pub/
+		ftp://ftp.fu-berlin.de/unix/sound/%SUBDIR%/
 MASTER_SITE_SUBDIR=	lame
 
-MAINTAINER=	yoshiaki@kt.rim.or.jp
+MAINTAINER=	netchild@FreeBSD.org
 
 .if ${MACHINE_ARCH} == "i386"
 BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
@@ -21,30 +20,30 @@ BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
 
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
-USE_GNOMENG=	yes
-WANT_GNOME=	yes
-CONFIGURE_ARGS=	--enable-nasm --enable-mp3rtp
-
-.include <bsd.port.pre.mk>
-
-.if (${HAVE_GNOME:Mgtk12}!="" || defined(WITH_GTK)) && !defined(WITHOUT_GTK)
-USE_GNOME+=	gtk12
-PLIST_SUB+=	WITH_GTK=''
-PKGNAMESUFFIX=	-gtk
-.else
-PLIST_SUB+=	WITH_GTK='@comment '
-.endif
+USE_LIBTOOL=	yes
+USE_GMAKE=	yes
+CONFIGURE_ARGS=	--enable-nasm --enable-mp3rtp --disable-gtktest
 
 MAN1=		lame.1
 
-post-build:
-.if ${HAVE_GNOME:Mgtk12}!="" && !defined(WITHOUT_GTK)
-	cd ${WRKSRC}/frontend && make mp3x
+DOC_FILES=	API LICENSE PRESETS.draft README TODO USAGE
+
+.if defined(NOPORTDOCS)
+do-install:
+	@cd ${INSTALL_WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} \
+		${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} install-exec
+	@cd ${INSTALL_WRKSRC}/include && ${SETENV} ${MAKE_ENV} ${GMAKE} \
+		${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} install-data
+	@cd ${INSTALL_WRKSRC}/doc/man && ${SETENV} ${MAKE_ENV} ${GMAKE} \
+		${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} install-data
+.else
+post-install: install-doc
+
+install-doc:
+	@${MKDIR} ${DOCSDIR}
+.for file in ${DOC_FILES}
+	@${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+.endfor
 .endif
 
-post-install:
-.if ${HAVE_GNOME:Mgtk12}!="" && !defined(WITHOUT_GTK)
-	${INSTALL_PROGRAM} ${WRKSRC}/frontend/mp3x ${PREFIX}/bin/
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

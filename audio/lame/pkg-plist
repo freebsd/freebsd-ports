@@ -1,11 +1,16 @@
 bin/lame
 bin/mp3rtp
-%%WITH_GTK%%bin/mp3x
 include/lame/lame.h
 lib/libmp3lame.a
-lib/libmp3lame.la
-lib/libmp3lame.so
 lib/libmp3lame.so.0
+@exec ln -fs %F %B/libmp3lame.so
+@unexec rm -f %B/libmp3lame.so
+%%PORTDOCS%%share/doc/lame/API
+%%PORTDOCS%%share/doc/lame/LICENSE
+%%PORTDOCS%%share/doc/lame/PRESETS.draft
+%%PORTDOCS%%share/doc/lame/README
+%%PORTDOCS%%share/doc/lame/TODO
+%%PORTDOCS%%share/doc/lame/USAGE
 %%PORTDOCS%%share/doc/lame/html/basic.html
 %%PORTDOCS%%share/doc/lame/html/contributors.html
 %%PORTDOCS%%share/doc/lame/html/examples.html
@@ -18,3 +23,4 @@ lib/libmp3lame.so.0
 %%PORTDOCS%%share/doc/lame/html/switchs.html
 %%PORTDOCS%%@dirrm share/doc/lame/html
 %%PORTDOCS%%@dirrm share/doc/lame
+@dirrm include/lame
