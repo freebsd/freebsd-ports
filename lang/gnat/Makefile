@@ -5,7 +5,7 @@
 # Date created:         Sat Mar 18 02:16:45 1995
 # Porter:               nils@guru.ims.uni-stuttgart.de
 #
-# $Id: Makefile,v 1.5 1995/05/13 15:08:45 jmacd Exp $
+# $Id: Makefile,v 1.6 1995/11/22 13:12:46 asami Exp $
 
 DISTNAME=       gnat-2.03-src
 PKGNAME=        gnat-2.03
@@ -13,6 +13,9 @@ CATEGORIES+=	lang
 MASTER_SITES=   ftp://cs.nyu.edu/pub/gnat/
 EXTRACT_SUFX=	.tar.gz
 
+.if !exists(/usr/local/bin/gnatf)
+BROKEN=		yes	# requires existing gnat compiler
+.endif
 # You need a compiler who calls an existing gnat compiler:
 # if you have one, if you have one put it here, otherwise,
 # you will need to install from a package first, the Makefile
