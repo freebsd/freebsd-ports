@@ -9,7 +9,8 @@ PORTNAME=	gnome-commander
 PORTVERSION=	1.0.1
 PORTREVISION=	2
 CATEGORIES=	x11-fm gnome
-MASTER_SITES=	http://savannah.nongnu.org/download/gcmd/gcmd.pkg/${PORTVERSION}/
+MASTER_SITES=	${MASTER_SITE_GNOME}
+MASTER_SITE_SUBDIR=	sources/gnome-commander/1.0/
 
 MAINTAINER=	rehsack@liwing.de
 COMMENT=	File manager for Gnome
@@ -19,6 +20,8 @@ LIB_DEPENDS=	fam.0:${PORTSDIR}/devel/fam
 .else
 CONFIGURE_ARGS=	--without-fam
 .endif
+
+CONFLICTS=	gnome-commander2-*
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
