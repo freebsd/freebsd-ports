@@ -1,3 +1,4 @@
+sbin/dtcpauth
 sbin/dtcpc
 sbin/dtcps
 etc/rc.d/dtcpc.sh.sample
