@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.77 1997/06/30 11:58:58 tg Exp $
+# $Id: Makefile,v 1.78 1997/07/01 23:02:42 max Exp $
 #
 
     SUBDIR += acm
@@ -31,6 +31,7 @@
     SUBDIR += oonsoo
     SUBDIR += qcc
     SUBDIR += quakeserver
+    SUBDIR += sokoban
     SUBDIR += spider
     SUBDIR += starlanes
     SUBDIR += tksol
