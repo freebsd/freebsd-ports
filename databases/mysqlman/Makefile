@@ -10,7 +10,7 @@ CATEGORIES=	databases www
 MASTER_SITES=	#http://www.gossamer-threads.com/scripts/mysqlman/index.htm
 DISTNAME=	mysqlman
 
-MAINTAINER=	Janos.Mohacsi@bsd.hu
+MAINTAINER=	ports@freebsd.org
 
 RUN_DEPENDS=    ${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI \
 		${WWW_DIR}:${PORTSDIR}/www/apache13
