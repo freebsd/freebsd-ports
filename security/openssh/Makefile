@@ -118,9 +118,9 @@ do-extract:
 	@${CP} ${FILESDIR}/pam_ssh.c ${WRKSRC}/pam_ssh/
 
 post-patch:
-	@${PERL} -pi.orig -e 's:__PREFIX__:${PREFIX}:g' ${WRKSRC}/ssh.h \
+	@${PERL} -pi -e 's:__PREFIX__:${PREFIX}:g' ${WRKSRC}/ssh.h \
 		${WRKSRC}/sshd_config ${WRKSRC}/pam_ssh/pam_ssh.c
-	@${PERL} -pi.openssl -e \
+	@${PERL} -pi -e \
 	    's:^(\s*#\s*include\s+<)ssl(/\w+\.h>\s*)$$:$$1openssl$$2:g' \
 	    ${WRKSRC}/*.[ch]
 

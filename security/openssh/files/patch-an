@@ -1,6 +1,14 @@
 --- /usr/ports/distfiles/OpenSSH-1.2/src/usr.bin/ssh/sshd.c	Sun Nov 28 16:50:26 1999
-+++ sshd.c	Sun Nov 28 17:22:27 1999
-@@ -32,6 +32,16 @@
++++ sshd.c	Mon Dec  6 00:54:51 1999
+@@ -24,6 +24,7 @@
+ #include "servconf.h"
+ #include "uidswap.h"
+ #include "compat.h"
++#include <time.h>
+ 
+ #ifdef LIBWRAP
+ #include <tcpd.h>
+@@ -32,6 +33,16 @@
  int deny_severity = LOG_WARNING;
  #endif /* LIBWRAP */
  
@@ -17,7 +25,108 @@
  #ifndef O_NOCTTY
  #define O_NOCTTY	0
  #endif
-@@ -1048,6 +1058,14 @@
+@@ -118,6 +129,32 @@
+    the private key. */
+ RSA *public_key;
+ 
++/* These are used to implement connections_per_period. */
++struct magic_connection {
++		struct timeval connections_begin;
++		unsigned int connections_this_period;
++} *magic_connections;
++/* Magic number, too!  TODO: this doesn't have to be static. */
++const size_t MAGIC_CONNECTIONS_SIZE = 1;
++
++static __inline int
++magic_hash(struct sockaddr_in *sin) {
++
++	return 0;
++}
++
++static __inline struct timeval
++timevaldiff(struct timeval *tv1, struct timeval *tv2) {
++	struct timeval diff;
++	int carry;
++
++	carry = tv1->tv_usec > tv2->tv_usec;
++	diff.tv_sec = tv2->tv_sec - tv1->tv_sec - (carry ? 0 : 1);
++	diff.tv_usec = tv2->tv_usec - tv1->tv_usec + (carry ? 1000000 : 0);
++
++	return diff;
++}
++
+ /* Prototypes for various functions defined later in this file. */
+ void do_connection();
+ void do_authentication(char *user);
+@@ -278,6 +315,7 @@
+ 	extern char *optarg;
+ 	extern int optind;
+ 	int opt, aux, sock_in, sock_out, newsock, i, pid, on = 1;
++	int connections_per_period_exceeded = 0;
+ 	int remote_major, remote_minor;
+ 	int silentrsa = 0;
+ 	struct sockaddr_in sin;
+@@ -542,6 +580,12 @@
+ 		/* Arrange SIGCHLD to be caught. */
+ 		signal(SIGCHLD, main_sigchld_handler);
+ 
++		/* Initialize the magic_connections table.  It's magical! */
++		magic_connections = calloc(MAGIC_CONNECTIONS_SIZE,
++		    sizeof(struct magic_connection));
++		if (magic_connections == NULL)
++			fatal("calloc: %s", strerror(errno));
++
+ 		/*
+ 		 * Stay listening for connections until the system crashes or
+ 		 * the daemon is killed with a signal.
+@@ -560,9 +604,31 @@
+ 				error("accept: %.100s", strerror(errno));
+ 				continue;
+ 			}
++			if (options.connections_per_period != 0) {
++				struct timeval diff, connections_end;
++				struct magic_connection *mc;
++
++				(void)gettimeofday(&connections_end, NULL);
++				mc = &magic_connections[magic_hash(&sin)];
++				diff = timevaldiff(&mc->connections_begin, &connections_end);
++				if (diff.tv_sec >= options.connections_period) {
++					/*
++					 * Slide the window forward only after completely
++					 * leaving it.
++					 */
++					mc->connections_begin = connections_end;
++					mc->connections_this_period = 1;
++				} else {
++					if (++mc->connections_this_period >
++					    options.connections_per_period)
++						connections_per_period_exceeded = 1;
++				}
++			}
++					
+ 			/*
+-			 * Got connection.  Fork a child to handle it, unless
+-			 * we are in debugging mode.
++			 * Got connection.  Fork a child to handle it unless
++			 * we are in debugging mode or the maximum number of
++			 * connections per period has been exceeded.
+ 			 */
+ 			if (debug_flag) {
+ 				/*
+@@ -576,6 +642,12 @@
+ 				sock_out = newsock;
+ 				pid = getpid();
+ 				break;
++			} else if (connections_per_period_exceeded) {
++				log("Connection rate limit of %u/%us has been exceeded; "
++				    "dropping connection from %s.",
++				    options.connections_per_period, options.connections_period,
++				    inet_ntoa(sin.sin_addr));
++				connections_per_period_exceeded = 0;
+ 			} else {
+ 				/*
+ 				 * Normal production daemon.  Fork, and have
+@@ -1048,6 +1120,14 @@
  				return 0;
  		}
  	}
@@ -32,7 +141,7 @@
  	/* We found no reason not to let this user try to log on... */
  	return 1;
  }
-@@ -1083,6 +1101,9 @@
+@@ -1083,6 +1163,9 @@
  	pwcopy.pw_gid = pw->pw_gid;
  	pwcopy.pw_dir = xstrdup(pw->pw_dir);
  	pwcopy.pw_shell = xstrdup(pw->pw_shell);
@@ -42,7 +151,7 @@
  	pw = &pwcopy;
  
  	/*
-@@ -1871,6 +1892,10 @@
+@@ -1871,6 +1954,10 @@
  	struct sockaddr_in from;
  	int fromlen;
  	struct pty_cleanup_context cleanup_context;
@@ -53,7 +162,7 @@
  
  	/* Get remote host name. */
  	hostname = get_canonical_hostname();
-@@ -1935,6 +1960,12 @@
+@@ -1935,6 +2022,12 @@
  		/* Check if .hushlogin exists. */
  		snprintf(line, sizeof line, "%.200s/.hushlogin", pw->pw_dir);
  		quiet_login = stat(line, &st) >= 0;
@@ -66,7 +175,7 @@
  
  		/*
  		 * If the user has logged in before, display the time of last
-@@ -1958,6 +1989,20 @@
+@@ -1958,6 +2051,20 @@
  			else
  				printf("Last login: %s from %s\r\n", time_string, buf);
  		}
@@ -87,7 +196,7 @@
  		/*
  		 * Print /etc/motd unless a command was specified or printing
  		 * it was disabled in server options or login(1) will be
-@@ -1966,14 +2011,22 @@
+@@ -1966,14 +2073,22 @@
  		 */
  		if (command == NULL && options.print_motd && !quiet_login &&
  		    !options.use_login) {
@@ -111,7 +220,17 @@
  		/* Do common processing for the child, such as execing the command. */
  		do_child(command, pw, term, display, auth_proto, auth_data, ttyname);
  		/* NOTREACHED */
-@@ -2117,15 +2170,34 @@
+@@ -2109,7 +2224,8 @@
+ 	 const char *display, const char *auth_proto,
+ 	 const char *auth_data, const char *ttyname)
+ {
+-	const char *shell, *cp = NULL;
++	char *shell;
++	const char *cp = NULL;
+ 	char buf[256];
+ 	FILE *f;
+ 	unsigned int envsize, i;
+@@ -2117,15 +2233,34 @@
  	extern char **environ;
  	struct stat st;
  	char *argv[10];
@@ -151,7 +270,7 @@
  	}
  	/* Set login name in the kernel. */
  	if (setlogin(pw->pw_name) < 0)
-@@ -2135,6 +2207,13 @@
+@@ -2135,6 +2270,13 @@
  	/* Login(1) does this as well, and it needs uid 0 for the "-h"
  	   switch, so we let login(1) to this for us. */
  	if (!options.use_login) {
@@ -165,7 +284,7 @@
  		if (getuid() == 0 || geteuid() == 0) {
  			if (setgid(pw->pw_gid) < 0) {
  				perror("setgid");
-@@ -2157,7 +2236,14 @@
+@@ -2157,7 +2299,14 @@
  	 * Get the shell from the password data.  An empty shell field is
  	 * legal, and means /bin/sh.
  	 */
@@ -180,7 +299,7 @@
  
  #ifdef AFS
  	/* Try to get AFS tokens for the local cell. */
-@@ -2181,7 +2267,12 @@
+@@ -2181,7 +2330,12 @@
  		child_set_env(&env, &envsize, "USER", pw->pw_name);
  		child_set_env(&env, &envsize, "LOGNAME", pw->pw_name);
  		child_set_env(&env, &envsize, "HOME", pw->pw_dir);
@@ -193,7 +312,7 @@
  
  		snprintf(buf, sizeof buf, "%.200s/%.50s",
  			 _PATH_MAILDIR, pw->pw_name);
-@@ -2271,6 +2362,9 @@
+@@ -2271,6 +2425,9 @@
  	 */
  	endpwent();
  	endhostent();
@@ -203,7 +322,7 @@
  
  	/*
  	 * Close any extra open file descriptors so that we don\'t have them
-@@ -2278,7 +2372,7 @@
+@@ -2278,7 +2435,7 @@
  	 * initgroups, because at least on Solaris 2.3 it leaves file
  	 * descriptors open.
  	 */
@@ -212,7 +331,7 @@
  		close(i);
  
  	/* Change current directory to the user\'s home directory. */
-@@ -2297,6 +2391,26 @@
+@@ -2297,6 +2454,26 @@
  	 * in this order).
  	 */
  	if (!options.use_login) {
