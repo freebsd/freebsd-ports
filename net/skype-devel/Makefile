@@ -7,6 +7,7 @@
 
 PORTNAME=	skype
 PORTVERSION=	0.93.0.3
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://download.skype.com/linux/
 DISTNAME=	skype_staticQT-${PORTVERSION}
@@ -40,21 +41,21 @@ do-build:
 	${BRANDELF} -t Linux ${WRKSRC}/skype
 
 do-install:
-	${INSTALL} ${WRKSRC}/skype ${PREFIX}/bin/
+	${INSTALL} ${WRKSRC}/skype ${PREFIX}/bin/skype_bin
+	${ECHO_CMD} -e "#!/bin/sh\n\nSKYPE_RESOURCES_PATH='${DATADIR}' skype_bin \"$$@\"" >${PREFIX}/bin/skype
+	${CHMOD} a+rx ${PREFIX}/bin/skype
 .if ${HAVE_GNOME:Mgnomehier} != ""
 	${INSTALL_DATA} ${WRKSRC}/skype.desktop ${PREFIX}/share/gnome/applications/
 	${INSTALL_DATA} ${WRKSRC}/icons/skype_48_32.png ${PREFIX}/share/gnome/pixmaps/skype.png
 .endif
-	${MKDIR} ${DATADIR}/icons ${DATADIR}/lang
+	${MKDIR} ${DATADIR}/icons ${DATADIR}/lang ${DATADIR}/sound
 	${INSTALL_DATA} ${WRKSRC}/icons/* ${DATADIR}/icons/
 	${INSTALL_DATA} ${WRKSRC}/lang/*.qm ${DATADIR}/lang/
-	${INSTALL_DATA} ${WRKSRC}/sound/*.wav ${DATADIR}/
+	${INSTALL_DATA} ${WRKSRC}/sound/*.wav ${DATADIR}/sound/
 	${INSTALL_DATA} ${WRKSRC}/LICENSE ${DATADIR}/
 
 post-install:
 	@${ECHO} "##########################################################################"
-	@${ECHO} "Since skype uses a hadcoded path to the data/language files (/usr/share/skype and .../lang) which a port isn't allowed to install files into, call_in.wav and the language files are not installed into the official path and therefore are not usable out of the box." | fmt
-	@${ECHO}
 	@${ECHO} "Known good soundcards for the use with Skype:"
 	@${ECHO} " - SiS 7012 (snd_ich) based ones"
 	@${ECHO} " - CMedia CMI8738 (snd_cmi) based ones"
@@ -64,6 +65,7 @@ post-install:
 	@${ECHO} " - VIA on-board sound (FreeBSD 5.1 seems to be ok)"
 	@${ECHO} " - Creative CT5880 (snd_es137x) based ones"
 	@${ECHO} " - Yamaha DS-1E (snd_ds1) based ones (reported for FreeBSD 4.10)"
+	@${ECHO} " - SB16 DSP 4.16 (snd_sb16) based ones"
 	@${ECHO}
 	@${ECHO} "If your soundcard is not listed here, send the the output of 'cat /dev/sndstat' with a short note if it works or not to ${MAINTAINER} please." | fmt
 	@${ECHO} "##########################################################################"
