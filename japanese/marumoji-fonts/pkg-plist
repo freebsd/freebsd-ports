@@ -1,0 +1,15 @@
+%%FONTSDIR%%/7x14maru.pcf.gz
+%%FONTSDIR%%/7x14rkmr.pcf.gz
+%%FONTSDIR%%/8x16maru.pcf.gz
+%%FONTSDIR%%/8x16rkmr.pcf.gz
+%%FONTSDIR%%/9x18maru.pcf.gz
+%%FONTSDIR%%/9x18rkmr.pcf.gz
+%%FONTSDIR%%/maru14.pcf.gz
+%%FONTSDIR%%/maru16.pcf.gz
+%%FONTSDIR%%/maru18.pcf.gz
+share/doc/marumoji-fonts/LICENSE
+@dirrm share/doc/marumoji-fonts
+@exec cd %D/%%FONTSDIR%% ; %D/bin/mkfontdir
+@unexec cd %D/%%FONTSDIR%% ; %D/bin/mkfontdir
+@unexec if [ `wc -c %D/%%FONTSDIR%%/fonts.dir | awk '{print $1}'` = 2 ]; then rm -f %D/%%FONTSDIR%%/fonts.dir; fi
+@unexec if [ ! -s %D/%%FONTSDIR%%/fonts.alias ]; then rm -f %D/%%FONTSDIR%%/fonts.alias; fi
