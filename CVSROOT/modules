@@ -2316,7 +2316,7 @@ hobbes-icons-xpm	ports/graphics/hobbes-icons-xpm
 holyshout	ports/audio/holyshout
 hope		ports/lang/hope
 horde		ports/www/horde
-horde3		ports/www/horde3
+horde2		ports/www/horde2
 host		src/usr.bin/host
 hostname	src/bin/hostname
 hotjava		ports/www/hotjava
