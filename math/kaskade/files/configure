@@ -1,0 +1,4 @@
+#!/bin/sh
+# $FreeBSD$
+(cd minigraph && sh ./configure $*)
+(cd sources && sh ./configure $*)

@@ -1,5 +1,7 @@
-*** psdriv.cc.orig	Tue Jul  8 23:53:37 1997
---- psdriv.cc	Tue Jul  8 23:53:43 1997
+$FreeBSD$
+
+*** sources/psdriv.cc.orig	Tue Jul  8 23:53:37 1997
+--- sources/psdriv.cc	Tue Jul  8 23:53:43 1997
 ***************
 *** 155,161 ****
 --- 155,163 ----

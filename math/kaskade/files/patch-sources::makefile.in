@@ -1,0 +1,13 @@
+$FreeBSD$
+
+--- sources/makefile.in.orig	Fri Nov 14 15:11:06 2003
++++ sources/makefile.in	Fri Nov 14 15:11:19 2003
+@@ -15,7 +15,7 @@
+ CFLAGS = @CFLAGS@ -I$(INCDIR)
+ CXXFLAGS = @CXXFLAGS@ -I$(INCDIR)
+ FFLAGS = @FFLAGS@
+-FCLIBS = @FCLIB@
++FCLIBS = -lg2c @FCLIB@
+ CLDFLAGS = @CLDFLAGS@
+ FLDFLAGS = @FLDFLAGS@
+ LIBS = $(FCLIBS) @X_LIBS@ @FCLIB@ @LIBS@
