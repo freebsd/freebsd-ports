@@ -106,7 +106,6 @@
     SUBDIR += jetpack
     SUBDIR += kbubbles
     SUBDIR += jzip
-    SUBDIR += kdegames11
     SUBDIR += kdegames2
     SUBDIR += klondike
     SUBDIR += kpuzzle
