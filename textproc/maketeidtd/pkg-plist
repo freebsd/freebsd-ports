@@ -11,5 +11,7 @@ bin/maketeidtd
 %%PORTDOCS%%share/examples/maketeidtd/tei-equation.ent
 %%PORTDOCS%%share/examples/maketeidtd/teilitex.dtd
 %%PORTDOCS%%share/examples/maketeidtd/teilitex.ent
+%%PORTDOCS%%share/examples/maketeidtd/teixlite.dtd
+%%PORTDOCS%%share/examples/maketeidtd/Makefile
 %%PORTDOCS%%@dirrm share/doc/maketeidtd
 %%PORTDOCS%%@dirrm share/examples/maketeidtd

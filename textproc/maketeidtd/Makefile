@@ -14,8 +14,6 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	ports@henrik-motakef.de
 COMMENT=	Generate customized TEI-DTDs
 
-BROKEN=		"Checksum mismatch"
-
 RUN_DEPENDS=	carthage:${PORTSDIR}/textproc/carthage \
 		${LOCALBASE}/share/sgml/tei/p4/tei2.dtd:${PORTSDIR}/textproc/tei-p4
 
