@@ -1,19 +1,19 @@
 # New ports collection makefile for:	PCSC-ruby
 # Date created:		27 Dec 2001
-# Whom:			Toni Andjelkovic <toni@ants.at>
+# Whom:			Toni Andjelkovic <toni@soth.at>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	pcsc-lite
-PORTVERSION=	0.5
+PORTVERSION=	0.6
 CATEGORIES=	devel ruby
-MASTER_SITES=	http://www.ants.at/ruby/PCSC-ruby/dist/
+MASTER_SITES=	http://soth.at/PCSC-ruby/dist/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	PCSC-ruby-${PORTVERSION}
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	toni@ants.at
+MAINTAINER=	toni@soth.at
 
 LIB_DEPENDS=	pcsclite.0:${PORTSDIR}/devel/pcsc-lite
 
