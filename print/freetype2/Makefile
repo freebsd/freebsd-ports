@@ -5,8 +5,8 @@
 # $FreeBSD$
 #
 
-PORTNAME=	freetype
-PORTVERSION=	1.3.1
+PORTNAME=	freetype2
+PORTVERSION=	2.0
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://sunsite.cnlab-switch.ch/ftp/mirror/freetype/freetype1/ \
@@ -21,15 +21,15 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	jseger@FreeBSD.org
 
+USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--disable-nls --enable-static --enable-shared
+CONFIGURE_WRKSRC=	${WRKSRC}/builds/unix
+LIBTOOLFILES=	${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 
-# Older versions of freetype installed include files in ${PREFIX}/include
-# this is a compatibility hack for now
-
-post-install:
-	${LN} -fs ${PREFIX}/include/freetype/*.h ${PREFIX}/include
+post-configure:
+	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} setup)
 
 .include <bsd.port.mk>

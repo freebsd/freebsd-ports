@@ -1,0 +1,11 @@
+--- builds/unix/detect.mk	2000/11/09 14:14:15	1.1
++++ builds/unix/detect.mk	2000/11/09 14:14:22
+@@ -62,7 +62,7 @@
+     setup: std_setup
+ 
+     unix-def.mk: $(TOP)/builds/unix/unix-def.in
+-	    cd builds/unix; $(USE_CFLAGS) ./configure $(CFG)
++#	    cd builds/unix; $(USE_CFLAGS) ./configure $(CFG)
+ 
+   endif # test Unix
+ endif   # test PLATFORM

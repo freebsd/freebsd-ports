@@ -36,6 +36,7 @@
     SUBDIR += enscript-letterdj
     SUBDIR += enscriptfonts
     SUBDIR += freetype
+    SUBDIR += freetype2
     SUBDIR += ggv
     SUBDIR += ghostscript5
     SUBDIR += ghostscript55
