@@ -3853,6 +3853,7 @@ majordomo	ports/mail/majordomo
 make++		ports/devel/make++
 makedepend	ports/devel/makedepend
 makeindex	ports/print/makeindex
+makepasswd	ports/security/makepasswd
 makepatch	ports/textproc/makepatch
 makeplus	ports/devel/makeplus
 makeself	ports/archivers/makeself
