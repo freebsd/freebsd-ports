@@ -1,12 +1,12 @@
 === IMPORTANT NOTICE ===
 
-- dvips(1) searches the necessary files from the share/texmf/dvips-ptex
+- dvips(1) searches the necessary files from the share/texmf/dvips/ptex
   directory first, and then the share/texmf/dvips directory.
 
-- share/texmf/dvips-ptex/base/psfonts.map should not be edited
-  manually.  Instead, edit share/texmf/web2c-ptex/updmap.cfg (and
-  share/texmf/dvips-ptex/ptex-kanji.map, which is for Japanese font
-  map), and invoke the updmap-ptex(1) command, which generates
-  share/texmf/dvips-ptex/base/*.map.  Note that the original
-  updmap(1) in the teTeX distribution uses share/texmf/web2c/updmap.cfg,
-  not share/texmf/web2c-ptex/updmap.cfg.
+- share/texmf/dvips/ptex/base/psfonts.map should not be edited
+  manually.  Instead, edit share/texmf/web2c/ptex/updmap.cfg (and
+  share/texmf/fonts/map/dvips/ptex/kanji.map, which is for Japanese font
+  map), and invoke the updmap-sys-ptex(1) command, which generates
+  share/texmf/dvips/ptex/base/*.map.  Note that the original
+  updmap-sys(1) in the teTeX distribution uses share/texmf/web2c/updmap.cfg,
+  not share/texmf/web2c/ptex/updmap.cfg.

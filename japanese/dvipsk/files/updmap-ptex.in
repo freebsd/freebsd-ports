@@ -3,9 +3,8 @@
 SETENV=/usr/bin/env
 
 ${SETENV} \
-	TEXPSHEADERS='.;$TEXMF/{dvips{-ptex,},pdftex,tex,fonts/type1}//' \
-	TEXCONFIG='$TEXMF/dvips{-ptex,}//' \
-	%%PREFIX%%/bin/updmap \
-		--cnffile %%PREFIX%%/%%TEXMF%%/web2c-ptex/updmap.cfg \
+	TEXPSHEADERS='.;$TEXMF/{dvips{/ptex,},pdftex,tex,fonts/type1}//' \
+	TEXCONFIG='$TEXMF/dvips{/ptex,}//' \
+	%%PREFIX%%/bin/updmap-sys \
+		--cnffile %%PREFIX%%/%%TEXMFDIR%%/web2c/ptex/updmap.cfg \
 		--outputdir %%PREFIX%%/%%DVIPSDIR%%/base \
-		$*

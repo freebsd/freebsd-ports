@@ -5,7 +5,7 @@
  
  # mktex.cnf, texmf.cnf, etc.
 -web2cdir = $(texmf)/web2c
-+web2cdir = $(texmf)/web2c-ptex
++web2cdir = $(texmf)/web2c/ptex
  
  # The top-level font directory.
  fontdir = $(texmf)/fonts
@@ -14,7 +14,7 @@
  
  # For dvips configuration files, psfonts.map, etc.
 -dvipsdir = $(texmf)/dvips
-+dvipsdir = $(texmf)/dvips-ptex
++dvipsdir = $(texmf)/dvips/ptex
  
  # For dvips .pro files, gsftopk's render.ps, etc.
  psheaderdir = $(dvipsdir)
