@@ -1,5 +1,5 @@
---- bookmarks.c.orig	Sun Mar 31 22:03:02 2002
-+++ bookmarks.c	Sun Mar 31 22:03:07 2002
+--- src/bookmarks.c.orig       Sun Mar 31 22:03:02 2002
++++ src/bookmarks.c    Sun Mar 31 22:03:07 2002
 @@ -52,7 +52,7 @@
  #if FXML2
  #define xmlChildNode children
