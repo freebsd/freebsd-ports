@@ -3,7 +3,7 @@
 # Date created:		30 Jul 1995
 # Whom:			torstenb@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.57 1998/07/11 23:10:50 imp Exp $
+# $Id: Makefile,v 1.58 1998/07/25 19:46:37 asami Exp $
 #
 # Maximal ssh package requires YES values for
 # USE_PERL, USE_TCPWRAP
@@ -56,6 +56,10 @@ CONFIGURE_ARGS= --prefix=${PREFIX} --with-etcdir=${PREFIX}/etc
 
 .if defined(USA_RESIDENT) && ${USA_RESIDENT} == YES
 CONFIGURE_ARGS+= --with-rsaref
+.endif
+
+.if defined(KRB5_HOME) && exists(${KRB5_HOME})
+CONFIGURE_ARGS+=--with-kerberos5=${KRB5_HOME} --enable-kerberos-tgt-passing
 .endif
 
 # Include support for the SecureID card
