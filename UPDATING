@@ -6,6 +6,12 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20040619:
+  AFFECTS: users of sysutils/webmin and sysutils/usermin
+
+  The webmin and usermin ports must now be enabled in rc.conf.
+  See the pkg-message or script for details.
+
 20040618:
   AFFECTS: users of japanese/ptex-tetex
 
