@@ -32,7 +32,9 @@ INSTALL=		${LINUXBASE}/usr/bin/install
 
 GNU_CONFIGURE=		yes
 CONFIGURE_TARGET=	#
-CONFIGURE_ARGS=		--libdir="${PREFIX}/usr/X11R6/lib" \
+CONFIGURE_ARGS+=	--x-libraries="${LINUXBASE}/usr/X11R6/lib" \
+			--x-includes="${LINUXBASE}/usr/X11R6/include" \
+			--libdir="${PREFIX}/usr/X11R6/lib" \
 			--includedir="${PREFIX}/usr/X11R6/include"
 CONFIGURE_ENV=		PATH="${LINUXBASE}/bin:${LINUXBASE}/usr/bin:${PATH}" \
 			GL_MAJOR_VER="${GL_MAJOR_VER}" \
