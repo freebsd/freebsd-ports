@@ -4030,6 +4030,7 @@ objformat	src/usr.bin/objformat
 obliterate	ports/sysutils/obliterate
 obnc		ports/net/obnc
 ocaml		ports/lang/ocaml
+ocaml-mode.el	ports/lang/ocaml-mode.el
 ocamlweb	ports/devel/ocamlweb
 octave		ports/math/octave
 odsclient	ports/net/odsclient
