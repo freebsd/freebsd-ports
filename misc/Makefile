@@ -103,6 +103,7 @@
     SUBDIR += gretl
     SUBDIR += grun
     SUBDIR += gtkfind
+    SUBDIR += gtktalog
     SUBDIR += gtl
     SUBDIR += gwhich
     SUBDIR += hb
