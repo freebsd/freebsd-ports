@@ -6,15 +6,15 @@
 #
 
 PORTNAME=	libogg
-PORTVERSION=	1.1
+PORTVERSION=	1.1.2
 PORTEPOCH=	3
 CATEGORIES=	audio
-MASTER_SITES=	http://www.vorbis.com/files/1.0.1/unix/
+MASTER_SITES=	http://downloads.xiph.org/releases/ogg/
 
 MAINTAINER=	naddy@FreeBSD.org
 COMMENT=	Ogg bitstream library
 
-USE_INC_LIBTOOL_VER=	13
+USE_INC_LIBTOOL_VER=	15
 USE_GNOME=	gnomehack
 INSTALLS_SHLIB=	yes
 
