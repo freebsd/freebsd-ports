@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	fidoconf
-PORTVERSION=	0.14.2
-PORTREVISION=	1
+PORTVERSION=	0.14.3
 CATEGORIES=	news mail
-DISTNAME=	${PORTNAME}_${PORTVERSION}-${PORTREVISION}
+DISTNAME=	${PORTNAME}-${PORTVERSION}-release
 
 MAINTAINER=	fjoe@FreeBSD.org
 COMMENT=	Configuration library for Husky Fidosoft Project
