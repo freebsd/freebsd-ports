@@ -1,7 +1,7 @@
-*** ../pwlib/make/unix.mak.orig	Fri Aug 10 07:35:55 2001
---- ../pwlib/make/unix.mak	Fri Aug 10 07:45:03 2001
+*** ../pwlib/make/unix.mak.orig	Tue May  7 02:57:51 2002
+--- ../pwlib/make/unix.mak	Wed May 22 00:53:00 2002
 *************** ifeq ($(OSTYPE),FreeBSD)
-*** 535,545 ****
+*** 644,654 ****
   
   P_PTHREADS	:= 1
   
@@ -13,7 +13,7 @@
   
   ifndef OSRELEASE
   OSRELEASE	:= $(shell sysctl -n kern.osreldate)
---- 535,545 ----
+--- 644,654 ----
   
   P_PTHREADS	:= 1
   
@@ -26,15 +26,15 @@
   ifndef OSRELEASE
   OSRELEASE	:= $(shell sysctl -n kern.osreldate)
 *************** LDFLAGS		+= $(DEBLDFLAGS)
-*** 962,968 ****
+*** 1136,1142 ****
   
   else
   
 ! OPTCCFLAGS	+= -O3 -DNDEBUG
   #OPTCCFLAGS	+= -DP_USE_INLINES=1
   #OPTCCFLAGS	+= -fconserve-space
-  ifneq ($(OSTYPE),Darwin)
---- 962,969 ----
+  ifneq ($(OSTYPE),Carbon)
+--- 1136,1143 ----
   
   else
   
@@ -42,4 +42,4 @@
 ! OPTCCFLAGS	+= -DNDEBUG
   #OPTCCFLAGS	+= -DP_USE_INLINES=1
   #OPTCCFLAGS	+= -fconserve-space
-  ifneq ($(OSTYPE),Darwin)
+  ifneq ($(OSTYPE),Carbon)
