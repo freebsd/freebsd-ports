@@ -1,4 +1,5 @@
-share/java/classes/pircbot.jar
+@comment $FreeBSD$
+%%JAVAJARDIR%%/pircbot.jar
 %%PORTDOCS%%%%DOCSDIR%%/constant-values.html
 %%PORTDOCS%%%%DOCSDIR%%/org/jibble/pircbot/class-use/NickAlreadyInUseException.html
 %%PORTDOCS%%%%DOCSDIR%%/org/jibble/pircbot/class-use/DccChat.html
