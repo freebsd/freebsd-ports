@@ -8,6 +8,7 @@
     SUBDIR += dumpasn1
     SUBDIR += fconv
     SUBDIR += gb2jis
+    SUBDIR += gbase
     SUBDIR += i18ntools
     SUBDIR += iconv
     SUBDIR += iconv-extra

@@ -1,0 +1,8 @@
+GBase is a GTK program designed to convert between the four common
+bases used in programming (decimal, hexadecimal, octal and binary).
+It converts numbers on-the-fly as they are typed in. It can also
+convert numbers entered on the command line. It can correctly handle
+both signed and unsigned 32-bit integers.
+
+License: Artistic
+WWW: http://www.hibernaculum.net/gbase.html
