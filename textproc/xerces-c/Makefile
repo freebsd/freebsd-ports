@@ -8,9 +8,9 @@
 PORTNAME=	xerces_c
 PORTVERSION=	1.7.0
 CATEGORIES=	textproc
-MASTER_SITES=	${MASTER_SITE_APACHE_XML} \
+MASTER_SITES=	http://archive.apache.org/dist/xml/%SUBDIR%/ \
 		http://document-root.de/xerces-c-mirror/
-MASTER_SITE_SUBDIR=	xerces-c/stable/archives/Xerces-C_${PORTVERSION:S/./_/g}
+MASTER_SITE_SUBDIR=	xerces-c/Xerces-C_${PORTVERSION:S/./_/g}
 DISTNAME=	xerces-c-src${PORTVERSION:S/./_/g}
 
 MAINTAINER=	ports@FreeBSD.org
