@@ -24,8 +24,14 @@ INSTALLS_SHLIB=	yes
 CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS} -DNDEBUG" \
 		LDFLAGS="${PTHREAD_LIBS}"
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH}=="alpha"
+BROKEN=	Does not compile on ${ARCH}
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread||; s|-nostdinc++||; \
 		s|-fPIC||' ${WRKSRC}/configure
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
