@@ -20,12 +20,17 @@ include/bglibs/crypto/sha1.h
 include/bglibs/crypto/sha256.h
 include/bglibs/crypto/sha384.h
 include/bglibs/crypto/sha512.h
+include/bglibs/crypto/surf.h
 include/bglibs/dict/dict.h
 include/bglibs/dict/load.h
 include/bglibs/fmt/number.h
 include/bglibs/installer.h
+include/bglibs/iobuf/common.h
+include/bglibs/iobuf/ibuf.h
 include/bglibs/iobuf/iobuf.h
+include/bglibs/iobuf/obuf.h
 include/bglibs/misc/misc.h
+include/bglibs/misc/ucspi.h
 include/bglibs/msg/msg.h
 include/bglibs/msg/wrap.h
 include/bglibs/net/ipv4.h
@@ -36,6 +41,7 @@ include/bglibs/path/path.h
 include/bglibs/pwcmp/client.h
 include/bglibs/pwcmp/hex.h
 include/bglibs/pwcmp/module.h
+include/bglibs/str/env.h
 include/bglibs/str/iter.h
 include/bglibs/str/str.h
 include/bglibs/sysdeps.h
@@ -44,8 +50,12 @@ include/bglibs/uint16.h
 include/bglibs/uint32.h
 include/bglibs/uint64.h
 include/bglibs/uintnn.h
+include/bglibs/unix/cloexec.h
+include/bglibs/unix/fcntl.h
 include/bglibs/unix/nonblock.h
+include/bglibs/unix/selfpipe.h
 include/bglibs/unix/sig.h
+include/bglibs/unix/trigger.h
 include/bglibs/vmailmgr/client.h
 include/bglibs/vmailmgr/vpwentry.h
 lib/libbase64/base64.a
@@ -109,14 +119,19 @@ lib/libvmailmgr/vpwentry.a
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTDOCS%%%%DOCSDIR%%/annotated.html
 %%PORTDOCS%%%%DOCSDIR%%/classes.html
+%%PORTDOCS%%%%DOCSDIR%%/cloexec_8h-source.html
 %%PORTDOCS%%%%DOCSDIR%%/cmsg_8h-source.html
+%%PORTDOCS%%%%DOCSDIR%%/common_8h-source.html
 %%PORTDOCS%%%%DOCSDIR%%/deprecated.html
 %%PORTDOCS%%%%DOCSDIR%%/djb_2sig_8h-source.html
 %%PORTDOCS%%%%DOCSDIR%%/doxygen.css
 %%PORTDOCS%%%%DOCSDIR%%/doxygen.png
+%%PORTDOCS%%%%DOCSDIR%%/env_8h-source.html
+%%PORTDOCS%%%%DOCSDIR%%/fcntl_8h-source.html
 %%PORTDOCS%%%%DOCSDIR%%/files.html
 %%PORTDOCS%%%%DOCSDIR%%/functions.html
 %%PORTDOCS%%%%DOCSDIR%%/functions_vars.html
+%%PORTDOCS%%%%DOCSDIR%%/group__envstr.html
 %%PORTDOCS%%%%DOCSDIR%%/group__fmt.html
 %%PORTDOCS%%%%DOCSDIR%%/group__iobuf.html
 %%PORTDOCS%%%%DOCSDIR%%/group__ipv4.html
@@ -126,6 +141,8 @@ lib/libvmailmgr/vpwentry.a
 %%PORTDOCS%%%%DOCSDIR%%/group__socket.html
 %%PORTDOCS%%%%DOCSDIR%%/group__str.html
 %%PORTDOCS%%%%DOCSDIR%%/group__striter.html
+%%PORTDOCS%%%%DOCSDIR%%/group__trigger.html
+%%PORTDOCS%%%%DOCSDIR%%/ibuf_8h-source.html
 %%PORTDOCS%%%%DOCSDIR%%/index.html
 %%PORTDOCS%%%%DOCSDIR%%/iobuf_8h-source.html
 %%PORTDOCS%%%%DOCSDIR%%/ipv4_8h-source.html
@@ -134,6 +151,7 @@ lib/libvmailmgr/vpwentry.a
 %%PORTDOCS%%%%DOCSDIR%%/modules.html
 %%PORTDOCS%%%%DOCSDIR%%/nonblock_8h-source.html
 %%PORTDOCS%%%%DOCSDIR%%/number_8h-source.html
+%%PORTDOCS%%%%DOCSDIR%%/obuf_8h-source.html
 %%PORTDOCS%%%%DOCSDIR%%/pages.html
 %%PORTDOCS%%%%DOCSDIR%%/resolve_8h-source.html
 %%PORTDOCS%%%%DOCSDIR%%/selfpipe_8h-source.html
@@ -148,6 +166,7 @@ lib/libvmailmgr/vpwentry.a
 %%PORTDOCS%%%%DOCSDIR%%/structstr.html
 %%PORTDOCS%%%%DOCSDIR%%/structstr__sortentry.html
 %%PORTDOCS%%%%DOCSDIR%%/structstriter.html
+%%PORTDOCS%%%%DOCSDIR%%/trigger_8h-source.html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm include/bglibs/adt
 @dirrm include/bglibs/base64

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bglibs
-PORTVERSION=	1.017
+PORTVERSION=	1.019
 CATEGORIES=	devel
 MASTER_SITES=	http://untroubled.org/${PORTNAME}/
 
@@ -29,10 +29,4 @@ do-install:
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "alpha"
-BROKEN=		"Does not compile (coredump)"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
