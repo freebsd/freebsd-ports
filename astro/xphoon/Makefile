@@ -3,14 +3,17 @@
 # Date created:		14 February 1995
 # Whom:			asami
 #
-# $Id: Makefile,v 1.2 1995/03/24 11:12:06 asami Exp $
+# $Id: Makefile,v 1.3 1995/04/01 12:51:36 jkh Exp $
 #
 
 DISTNAME=	xphoon
-USE_IMAKE=	yes
-MASTER_SITES=	ftp://gatekeeper.dec.com/pub/X11//R5-contrib/
+PKGNAME=	xphoon-91.9.18
 CATEGORIES+=	x11
-MAINTAINER=	asami@FreeBSD.ORG
+MASTER_SITES=	ftp://gatekeeper.dec.com/pub/X11//R5-contrib/
 EXTRACT_SUFX=	.tar.Z
+
+MAINTAINER=	asami@FreeBSD.ORG
+
+USE_IMAKE=	yes
 
 .include <bsd.port.mk>

@@ -1,4 +1,14 @@
+# New ports collection makefile for:	xview-clients
+# Version required:     3.2p1-X11R6
+# Date created:         22 November 1994
+# Whom:                 ljo
+#
+# $Id$
+#
+
 DISTNAME=	xview-clients
+PKGNAME=	xview-clients-3.2.1
+
 DEPENDS=        ../xview-lib
 WRKDIR=      	../xview-config/work/xview3.2p1-X11R6/clients
 WRKSRC=      	../xview-config/work/xview3.2p1-X11R6/clients
