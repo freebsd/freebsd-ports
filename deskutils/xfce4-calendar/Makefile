@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.berlios.de/pub/xfce-goodies/4.0.5/ \
 DISTNAME=	xfcalendar-${PORTVERSION}
 DIST_SUBDIR=	xfce4
 
-MAINTAINER=	matt@rimasec.net
+MAINTAINER=	matt@bsdfly.org
 COMMENT=	A calendar application to manage your time with XFce 4
 
 BUILD_DEPENDS=	xfce-mcs-manager:${PORTSDIR}/sysutils/xfce4-mcs-manager

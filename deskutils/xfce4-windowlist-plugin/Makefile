@@ -10,11 +10,11 @@ PORTVERSION=	0.1.0
 CATEGORIES=	deskutils xfce
 MASTER_SITES=	http://download.berlios.de/xfce-goodies/ \
 		http://matt.nerim.net/xfce-goodies/ \
-		http://xfce.org/~kelnos/mirrors/xfce-goodies/ \
-		http://www.bsd-blax.org/ports/mirrors/
+		http://xfce.org/~kelnos/mirrors/xfce-goodies/
 DISTNAME=	xfce4-windowlist-plugin-${PORTVERSION}
+DIST_SUBDIR=	xfce4
 
-MAINTAINER=	matt@rimasec.net
+MAINTAINER=	matt@bsdfly.org
 COMMENT=	A windowlist plugin for xfce4-panel
 
 BUILD_DEPENDS=	xfce4-panel:${PORTSDIR}/x11-wm/xfce4-panel

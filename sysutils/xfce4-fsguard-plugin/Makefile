@@ -11,10 +11,10 @@ PORTREVISION=	2
 CATEGORIES=	sysutils xfce
 MASTER_SITES=	http://download.berlios.de/xfce-goodies/ \
 		http://matt.nerim.net/xfce-goodies/ \
-		http://xfce.org/~kelnos/mirrors/xfce-goodies/ \
-		http://www.bsd-blax.org/ports/mirrors/
+		http://xfce.org/~kelnos/mirrors/xfce-goodies/
+DIST_SUBDIR=	xfce4
 
-MAINTAINER=	matt@rimasec.net
+MAINTAINER=	matt@bsdfly.org
 COMMENT=	XFce4 panel plugin to check a mountpoint for free disk space
 
 BUILD_DEPENDS=	xfce4-panel:${PORTSDIR}/x11-wm/xfce4-panel

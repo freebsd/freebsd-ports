@@ -10,10 +10,10 @@ PORTVERSION=	0.1.4
 PORTREVISION=	3
 CATEGORIES=	x11-wm xfce
 MASTER_SITES=	http://echobase.homeunix.net/~bmeurer/tmp/xfce4-session/ \
-		http://matt.nerim.net/xfce-goodies/ \
-		http://www.bsd-blax.org/ports/mirrors/
+		http://matt.nerim.net/xfce-goodies/
+DIST_SUBDIR=	xfce4
 
-MAINTAINER=	matt@rimasec.net
+MAINTAINER=	matt@bsdfly.org
 COMMENT=	XFce 4 Session Manager
 
 BUILD_DEPENDS=	xfce-mcs-manager:${PORTSDIR}/sysutils/xfce4-mcs-manager
