@@ -76,6 +76,7 @@
     SUBDIR += icc
     SUBDIR += ici
     SUBDIR += icon
+    SUBDIR += ifc
     SUBDIR += intel2gas
     SUBDIR += intercal
     SUBDIR += itcl
