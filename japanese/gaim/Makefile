@@ -8,15 +8,13 @@
 CATEGORIES=	japanese net
 
 PATCH_SITES=		http://www.cc.rim.or.jp/~yaz/:jp_patch
-PATCHFILES=		gaim-1.0.1_jp.patch.gz:jp_patch
+PATCHFILES=		gaim-1.0.3_jp.patch.gz:jp_patch
 PATCH_DIST_STRIP=	-p1:jp_patch
 
 MAINTAINER=	freebsd@next-generation.org
 
 MASTERDIR=	${.CURDIR}/../../net/gaim
 MD5_FILE=	${.CURDIR}/distinfo
-
-IGNORE=	Needs upgrade for Gaim 1.0.3
 
 CONFLICTS=	gaim-*
 
