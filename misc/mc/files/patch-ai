@@ -5,7 +5,7 @@
  #
  
 -DZIP=/usr/bin
-+DZIP=/usr/local/bin
++DZIP=%%PREFIX%%/bin
  XZIP="$DZIP/zip -g"
  XDZIP="$DZIP/zip -d"
  XUNZIP="$DZIP/unzip"
