@@ -1,6 +1,6 @@
---- configure.orig	Tue Feb  4 09:08:16 1997
-+++ configure	Tue Mar  4 12:03:22 1997
-@@ -1161,6 +1161,8 @@
+--- configure.ORIG	Sun Sep 28 19:23:25 1997
++++ configure	Fri Oct 10 08:37:05 1997
+@@ -1236,6 +1236,8 @@
  # It thinks the first close brace ends the variable substitution.
  test -z "$INSTALL_PROGRAM" && INSTALL_PROGRAM='${INSTALL}'
  
@@ -9,32 +9,11 @@
  test -z "$INSTALL_DATA" && INSTALL_DATA='${INSTALL} -m 644'
  
  
-@@ -5728,15 +5730,17 @@
-     EXP_LIB_VERSION=$EXP_VERSION_NODOTS
- fi
- 
-+VERSION=${EXP_LIB_VERSION}
-+
- EXP_BUILD_LIB_SPEC="-L`pwd` -lexpect${EXP_LIB_VERSION}"
- EXP_LIB_SPEC="-L\${exec_prefix}/lib -lexpect${EXP_LIB_VERSION}"
--EXP_NONSHARED_LIB_FILE=libexpect${EXP_LIB_VERSION}.a
-+eval EXP_NONSHARED_LIB_FILE=libexpect${TCL_UNSHARED_LIB_SUFFIX}
- 
- echo $ac_n "checking for type of library to build""... $ac_c" 1>&6
- echo "configure:5737: checking for type of library to build" >&5
--if test "$enable_shared" = "yes" && test "x${TCL_SHLIB_SUFFIX}" != "x" ; then
-+if test "$enable_shared" = "yes" -a "x${TCL_SHARED_LIB_SUFFIX}" != "x" ; then
-   EXP_SHLIB_CFLAGS=$TCL_SHLIB_CFLAGS
--  EXP_SHARED_LIB_FILE=libexpect$EXP_LIB_VERSION$TCL_SHLIB_SUFFIX
-+  eval EXP_SHARED_LIB_FILE=libexpect${TCL_SHARED_LIB_SUFFIX}
-   EXP_LIB_FILE=$EXP_SHARED_LIB_FILE
-   EXP_LIB_FILES="$EXP_SHARED_LIB_FILE $EXP_NONSHARED_LIB_FILE"
-   echo "$ac_t""both shared and nonshared" 1>&6
-@@ -5908,6 +5912,7 @@
+@@ -6019,6 +6021,7 @@
  s%@TK_LIB_SPEC@%$TK_LIB_SPEC%g
  s%@CC@%$CC%g
  s%@INSTALL_PROGRAM@%$INSTALL_PROGRAM%g
 +s%@INSTALL_SCRIPT@%$INSTALL_SCRIPT%g
  s%@INSTALL_DATA@%$INSTALL_DATA%g
+ s%@RANLIB@%$RANLIB%g
  s%@subdirs@%$subdirs%g
- s%@CPP@%$CPP%g
