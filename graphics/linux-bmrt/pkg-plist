@@ -12,7 +12,7 @@ include/slc.h
 lib/libribout.a
 lib/libslcargs.a
 lib/rayserver.so
-share/bmrt/.rendribrc
+share/bmrt/rendribrc.sample
 share/bmrt/shaders/Makefile
 share/bmrt/shaders/ambientlight.linux.slc
 share/bmrt/shaders/ambientlight.sl
