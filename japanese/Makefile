@@ -442,6 +442,7 @@
     SUBDIR += xshodo
     SUBDIR += xshodou
     SUBDIR += xv
+    SUBDIR += xvi-euc
     SUBDIR += xyagamo
     SUBDIR += xyaku
     SUBDIR += yc.el

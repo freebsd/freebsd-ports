@@ -1,0 +1,39 @@
+#
+# $FreeBSD$
+#
+
+PORTNAME=	xvi
+PORTVERSION=	2.19b
+CATEGORIES=	japanese editors
+MASTER_SITES=	http://lion.zero.ad.jp/~zau50357/public_html/ \
+		ftp://ftp.vector.co.jp/pack/dos/writing/edit/vi/
+DISTFILES=	${PORTNAME}-2.19.tar.bz2 \
+		j${PORTNAME}219b.lzh
+
+MAINTAINER=	ports@FreeBSD.org
+
+BUILD_DEPENDS=	lha:${PORTSDIR}/archivers/lha
+
+USE_REINPLACE=	yes
+
+WRKSRC=	${WRKDIR}/xvi-2.19/src
+
+do-extract:
+	@${MKDIR} ${WRKDIR}
+	@(cd ${WRKDIR} && ${TAR} jxf ${DISTDIR}/${PORTNAME}-2.19.tar.bz2)
+	@(cd ${WRKSRC} && lha xfq ${DISTDIR}/j${PORTNAME}219b.lzh)
+
+pre-patch:
+	@(cd ${WRKSRC} && ${PATCH} -p0 -sE < jxvi219.dif)
+	@${CP} ${WRKSRC}/make_386.bsd ${WRKSRC}/Makefile
+
+post-patch:
+	${REINPLACE_CMD} 's:/usr/local:${PREFIX}:g' ${WRKSRC}/Makefile
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/${PROG} ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/xvi.1.gz ${PREFIX}/man/man1/${PROG}.1.gz
+	${MKDIR} ${PREFIX}/share/xvi
+	${INSTALL_DATA} ${WRKSRC}/../doc/help ${PREFIX}/share/xvi/${PROG}.help
+
+.include <bsd.port.mk>
