@@ -1,5 +1,5 @@
---- Makefile.orig	Mon Jul 16 12:07:16 2001
-+++ Makefile	Mon Jul 16 12:10:33 2001
+--- Makefile.orig	Sat Aug  4 02:49:43 2001
++++ Makefile	Sat Aug  4 02:51:31 2001
 @@ -10,7 +10,6 @@
  
  
@@ -12,12 +12,12 @@
  BLOCK=-DBLOCKSIZE=50
  
  #full optimization
--CFLAGS =  -O3 -fforce-addr -funroll-loops -fomit-frame-pointer -ffast-math 
-+CFLAGS +=  -fforce-addr -funroll-loops -fomit-frame-pointer -ffast-math 
+-CFLAGS =  -O3 -mpreferred-stack-boundary=4 -fforce-addr -funroll-loops -fomit-frame-pointer -ffast-math 
++CFLAGS +=  -mpreferred-stack-boundary=4 -fforce-addr -funroll-loops -fomit-frame-pointer -ffast-math 
  
  
  
-@@ -284,8 +283,8 @@
+@@ -328,8 +327,8 @@
  install: 
  	@make default
  	@echo
