@@ -19,7 +19,9 @@ RUN_DEPENDS=	instant:${PORTSDIR}/textproc/sgmlformat \
 		${PREFIX}/share/sgml/html/catalog:${PORTSDIR}/textproc/html \
 		${PREFIX}/share/sgml/linuxdoc:${PORTSDIR}/textproc/linuxdoc \
 		${PREFIX}/share/sgml/docbook/catalog:${PORTSDIR}/textproc/docbook \
-		${PREFIX}/share/sgml/iso8879:${PORTSDIR}/textproc/iso8879
+		${PREFIX}/share/sgml/iso8879:${PORTSDIR}/textproc/iso8879 \
+		${PREFIX}/bin/eps2png:${PORTSDIR}/graphics/eps2png \
+		${PREFIX}/bin/pngtopnm:${PORTSDIR}/graphics/netpbm
 
 .if defined(WITH_OPENJADE)
 RUN_DEPENDS+=	openjade:${PORTSDIR}/textproc/openjade
