@@ -14,6 +14,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		${CDB_DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	matusita@FreeBSD.org
+COMMENT=Yet another dictionary server for SKK
 
 RUN_DEPENDS=	${LOCALBASE}/${SKKDIR}/SKK-JISYO.${SKKJISYO_TYPE}.cdb:${PORTSDIR}/japanese/skk-jisyo-cdb
 

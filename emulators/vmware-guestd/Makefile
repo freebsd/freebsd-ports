@@ -12,6 +12,7 @@ MASTER_SITES=	# none
 DISTNAME=	vmware-freebsd-tools
 
 MAINTAINER=	matusita@FreeBSD.org
+COMMENT=VMware time synchronization daemon for FreeBSD guest OS (for VMware 3.x)
 
 LIB_DEPENDS=	c.3:${PORTSDIR}/misc/compat3x
 

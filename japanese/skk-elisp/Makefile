@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PORTS_JP}
 DISTNAME=	skk${PORTVERSION}
 
 MAINTAINER=	matusita@FreeBSD.org
+COMMENT=Emacs-lisp frontend for the SKK Japanese-input software
 
 BUILD_DEPENDS=	mule:${.CURDIR}/../../editors/mule
 RUN_DEPENDS=	${LOCALBASE}/share/skk/${SKKJISYO}:${SKK_MASTERDIR}

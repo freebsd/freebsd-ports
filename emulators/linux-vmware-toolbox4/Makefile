@@ -13,6 +13,7 @@ PKGNAMEPREFIX=	linux-
 DISTNAME=	vmware-linux-tools
 
 MAINTAINER=	matusita@FreeBSD.org
+COMMENT=VMware toolbox for FreeBSD Guest OS (full-featured Linux version)
 
 ONLY_FOR_ARCHS=	i386
 USE_LINUX=	yes
