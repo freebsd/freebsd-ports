@@ -1,14 +1,14 @@
 # New ports collection makefile for:    mswordview
-# Version required:     0.4.9
+# Version required:     0.5.1
 # Date created:         Fri Nov  6 09:06:33 PST 1998
-# Whom:                 sumikawa
+# Whom:                 sumikawa@kame.net
 #
-# $Id: Makefile,v 1.1.1.1 1998/11/06 17:08:24 itojun Exp $
+# $Id: Makefile,v 1.2 1998/11/06 17:12:02 itojun Exp $
 #
 
-DISTNAME=	mswordview-0.4.9
+DISTNAME=	mswordview-0.5.1
 CATEGORIES=	textproc
-MASTER_SITES=	http://www.csn.ul.ie/~caolan/publink/mswordview/
+MASTER_SITES=	http://www.gnu.org/~caolan/publink/mswordview/
 
 MAINTAINER=	sumikawa@kame.net
 

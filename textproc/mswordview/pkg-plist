@@ -635,6 +635,8 @@ lib/mswordview/patterns/98.gif
 lib/mswordview/patterns/99.gif
 lib/mswordview/patterns/clear.gif
 lib/mswordview/patterns/convert.sh
+lib/mswordview/patterns/commentbegin.gif
+lib/mswordview/patterns/commentend.gif
 lib/mswordview/patterns/documentend.gif
 lib/mswordview/patterns/endnotebegin.gif
 lib/mswordview/patterns/endnoteend.gif
