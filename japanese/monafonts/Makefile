@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	monafonts
-PORTVERSION=	2.02
+PORTVERSION=	2.03
 PORTEPOCH=	1
 CATEGORIES=	japanese x11-fonts
 MASTER_SITES=	http://members.tripod.co.jp/s42335/mona/dist/
