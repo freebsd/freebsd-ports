@@ -906,6 +906,7 @@ contrib_smbfs   src/contrib/smbfs
 contrib_softupdates	src/contrib/sys/softupdates
 contrib_sort	src/contrib/sort
 contrib_sys	src/contrib/sys
+contrib_tar	src/contrib/tar
 contrib_tcp_wrappers	src/contrib/tcp_wrappers
 contrib_tcpdump	src/contrib/tcpdump
 contrib_tcsh	src/contrib/tcsh
