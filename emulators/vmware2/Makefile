@@ -29,9 +29,8 @@ VMWARE_MIRROR_SITES=	\
 		http://vmware-svca.www.conxion.com/software/ \
 		http://vmware-chil.www.conxion.com/software/ \
 		http://vmware-heva.www.conxion.com/software/ \
-		http://www.vmware.co.uk/software/ \
-		http://mirror.aarnet.edu.au/pub/vmware/software/ \
-		ftp://mirror.aarnet.edu.au/pub/vmware/software/
+		http://vmware.wespe.de/software/ \
+		ftp://vmware.wespe.de/pub/software
 FREEBSD_MODULE_SITES=	\
 		http://www.mindspring.com/~vsilyaev/vmware/files/ \
 		ftp://mirror.aarnet.edu.au/pub/vmware/freebsd/ \
