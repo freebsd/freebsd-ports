@@ -1,27 +1,6 @@
---- XMakefile.orig	Fri Apr 21 13:35:48 2000
-+++ XMakefile	Sat Apr 22 06:51:43 2000
-@@ -18,16 +18,16 @@
- 
- INCLUDES=-I.
- 
--DEFS=$(INCLUDES) # -DDEBUG
--CFLAGS=$(MYCFLAGS) $(DEFS) 
--LIBS=-L. -lindep $(GCLIB) $(MATHLIB) $(LOCAL_LIBRARIES) $(SYS_LIBRARIES)
-+DEFS+=$(INCLUDES) # -DDEBUG
-+CFLAGS+=$(DEFS) 
-+LIBS+=-L. -lindep -lgc $(MATHLIB) $(LOCAL_LIBRARIES) $(SYS_LIBRARIES)
- INSTALL=sh install.sh
- INSTALL2=sh ../install.sh
- AR=ar
- 
- all: $(TARGETS)
- 
--$(TARGET): $(ALLOBJS) $(ALIB) $(GCTARGET)
-+$(TARGET): $(ALLOBJS) $(ALIB)
- 	$(CC) $(CFLAGS) -o $(TARGET) $(ALLOBJS) $(LIBS)
- 
- $(ALIB): $(ALIBOBJS)
-@@ -67,23 +67,24 @@
+--- XMakefile.orig	Mon Oct  8 13:08:11 2001
++++ XMakefile	Mon Oct  8 13:11:26 2001
+@@ -87,22 +87,23 @@
  install: $(TARGETS)
  	-$(MKDIR) $(DESTDIR)$(BIN_DIR)
  	-$(MKDIR) $(DESTDIR)$(HELP_DIR)
@@ -40,8 +19,9 @@
 +	$(BSD_INSTALL_DATA) w3mhelp-w3m_ja.html $(DESTDIR)$(HELP_DIR_JA)/w3mhelp-w3m_ja.html
 +	$(BSD_INSTALL_DATA) w3mhelp-lynx_en.html $(DESTDIR)$(HELP_DIR)/w3mhelp-lynx_en.html
 +	$(BSD_INSTALL_DATA) w3mhelp-lynx_ja.html $(DESTDIR)$(HELP_DIR_JA)/w3mhelp-lynx_ja.html
-+	for d in $(BOOKMARKER) $(HELPER); do $(BSD_INSTALL_PROGRAM) $$d $(DESTDIR)$(LIB_DIR)/$$d; done
-+	cd scripts; for i in *.cgi; do $(BSD_INSTALL_SCRIPT) $$i $(DESTDIR)$(LIB_DIR)/$$i; done
++	$(BSD_INSTALL_DATA) $(HELP_FILE) $(DESTDIR)$(HELP_DIR)/w3mhelp.html
++	for d in $(BOOKMARKER) $(HELPER); do $(BSD_INSTALL_SCRIPT) $$d $(DESTDIR)$(LIB_DIR)/$$d; done
++	(cd scripts; for i in *.cgi; do $(BSD_INSTALL_SCRIPT) $$i $(DESTDIR)$(LIB_DIR)/$$i; done)
  
  uninstall:
  	-$(RM) $(BIN_DIR)/$(TARGET)
@@ -50,10 +30,7 @@
 +	-$(RM) $(HELP_DIR_JA)/w3mhelp-lynx_ja.html
  	-$(RM) $(HELP_DIR)/w3mhelp-w3m_en.html 
 -	-$(RM) $(HELP_DIR)/w3mhelp-w3m_ja.html 
--	-$(RM) $(HELP_DIR)/w3mhelp.html
 +	-$(RM) $(HELP_DIR_JA)/w3mhelp-w3m_ja.html 
-+	-$(RM) $(LIB_DIR)/$(BOOKMARKER)
-+	-$(RM) $(LIB_DIR)/$(HELPER)
+ 	-$(RM) $(HELP_DIR)/w3mhelp.html
  
  clean: sweep
- 	rm -f *.o *.a $(TARGETS) mktable

@@ -1,0 +1,57 @@
+--- configure.orig	Thu Sep 27 21:30:08 2001
++++ configure	Sun Oct  7 14:33:20 2001
+@@ -33,7 +33,9 @@
+ 
+ # parameters:
+ 
+-prefix=/usr/local
++if [ -z "$prefix" ]; then
++  prefix=/usr/local
++fi
+ all_yes=0
+ while [ $# -gt 0 ]
+ do
+@@ -332,6 +334,9 @@
+ readdir "$def_helpdir"
+ helpdir=$_dir
+ echo "def_helpdir='$helpdir'" >> config.param
++readdir "$def_helpdir_ja"
++helpdir_ja=$_dir
++echo "def_helpdir_ja='$helpdir_ja'" >> config.param
+ 
+ echo "Which language do you prefer?"
+ echo "  1 - Japanese (charset ISO-2022-JP, EUC-JP, Shift_JIS)"
+@@ -1686,7 +1691,7 @@
+    VIEW_UNSEENOBJECTS enables w3m to make a link to unseen objects.
+    e.g. background image.
+  */
+-#undef VIEW_UNSEENOBJECTS
++#define VIEW_UNSEENOBJECTS
+ 
+ /*
+    VI_PREC_NUM enables vi-like behavior for '2 SPC' or '2 b'
+@@ -1731,7 +1736,7 @@
+ /*
+  * Use Emacs-like key binding for file name completion
+  */
+-#undef EMACS_LIKE_LINEEDIT
++#define EMACS_LIKE_LINEEDIT
+ 
+ /*
+  * Remove line trailing spaces in html buffer.
+@@ -1753,6 +1758,7 @@
+ 
+ BIN_DIR = $bindir
+ HELP_DIR = $helpdir
++HELP_DIR_JA = $helpdir_ja
+ LIB_DIR = $suplibdir
+ HELP_FILE = $helpfile
+ SYS_LIBRARIES = $gpmlib $extlib $termlib $ssllib $v6lib
+@@ -1801,6 +1807,7 @@
+ 
+ #define LIB_DIR      "$suplibdir"
+ #define HELP_DIR     "$helpdir"
++#define HELP_DIR_JA  "$helpdir_ja"
+ #define HELP_FILE    "w3mhelp.html"
+ #define W3MCONFIG    "w3mconfig"
+ 
