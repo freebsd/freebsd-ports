@@ -309,7 +309,11 @@ j2sdk-1_4_2-bin-scsl.*	ports/java/jdk14	Redistribution of pre-compiled
 						binaries is not permitted
 j2sdk-1_4_2-src-scsl.*	ports/java/jdk14	Redistribution of pre-compiled
 						binaries is not permitted
-j2sdk-1_5_0-beta-doc.*	ports/java/jdk15-doc	This documentation is under
+jdk-1_5_0-bin-scsl.*	ports/java/jdk15	Redistribution of pre-compiled
+						binaries is not permitted
+jdk-1_5_0-src-scsl.*	ports/java/jdk15	Redistribution of pre-compiled
+						binaries is not permitted
+j2sdk-1_5_0-doc.*	ports/java/jdk15-doc	This documentation is under
 						license and export control/
 j2sdk-1_5_0-*-i586.bin	ports/java/linux-sun-jdk15 Redistribution of repackaged
 						binaries not permitted.
