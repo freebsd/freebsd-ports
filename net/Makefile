@@ -159,6 +159,7 @@
     SUBDIR += icqlib
     SUBDIR += icqlib0
     SUBDIR += icqnix
+    SUBDIR += icradius
     SUBDIR += icukrell
     SUBDIR += ip-tun
     SUBDIR += ip6_int
