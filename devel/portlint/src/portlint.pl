@@ -23,7 +23,7 @@ $portdir = '.';
 
 # default setting - for FreeBSD
 $portsdir = '/usr/ports';
-$rcsidstr = '(Id|FreeBSD)';
+$rcsidstr = 'FreeBSD';
 $multiplist = 0;
 $ldconfigwithtrue = 0;
 $rcsidinplist = 0;
@@ -70,7 +70,7 @@ EOF
 # OS dependent configs
 # os	portsdir	rcsid		mplist	ldcfg	plist-rcsid mancompresss strict	localbase	newxdef	automan
 @osdep = split(/\n/, <<EOF);
-FreeBSD	/usr/ports	(Id|FreeBSD)	0	0	0		1	0	/usr/local	1	1
+FreeBSD	/usr/ports	FreeBSD		0	0	0		1	0	/usr/local	1	1
 NetBSD	/usr/pkgsrc	NetBSD		1	1	1		0	1	/usr/pkg	0	0
 EOF
 $osname = `uname -s`;
