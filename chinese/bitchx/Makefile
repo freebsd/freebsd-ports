@@ -5,6 +5,13 @@
 # $FreeBSD$
 #
 
+PORTNAME=	BitchX
+PKGNAMEPREFIX:= ${PKGNAMEPREFIX}tw-
+PORTREVISION=	1
+CATEGORIES=	chinese irc
+
+MAINTAINER=	clive@FreeBSD.org
+
 MASTERDIR=	${.CURDIR}/../../irc/bitchx
 EXTRA_PATCHES=	${.CURDIR}/files/patch-source::input.c \
 		${.CURDIR}/files/patch-include::config.h \
@@ -17,9 +24,3 @@ WITHOUT_GNOME=	YES
 WITHOUT_ESOUND=	YES
 
 .include "${MASTERDIR}/Makefile"
-
-PORTNAME=	BitchX
-PKGNAMEPREFIX:= ${PKGNAMEPREFIX}tw-
-CATEGORIES=	chinese irc
-
-MAINTAINER=	clive@FreeBSD.org
