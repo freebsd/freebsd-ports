@@ -23,9 +23,21 @@ MAN1=		scp.1 slogin.1 ssh-add.1 ssh-agent.1 ssh-keygen.1 ssh.1 \
 		ssh-keyscan.1 sftp.1
 MAN8=		sshd.8 sftp-server.8
 MANCOMPRESSED=	yes
+FIXME=		lib/Makefile scp/Makefile sftp/Makefile sftp-server/Makefile \
+		ssh/Makefile ssh-add/Makefile ssh-agent/Makefile \
+		ssh-keygen/Makefile ssh-keyscan/Makefile sshd/Makefile
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 430000
+OPENSSLBASE=	/usr/local
+OPENSSLDIR=	${OPENSSLBASE}/openssl
+LIB_DEPENDS+=   crypto.2:${PORTSDIR}/security/openssl
+OPENSSLLIB=	${OPENSSLBASE}/lib
+OPENSSLINC=	${OPENSSLBASE}/include
+MAKE_ENV+=	OPENSSLLIB=${OPENSSLLIB} OPENSSLINC=${OPENSSLINC} \
+		OPENSSLBASE=${OPENSSLBASE} OPENSSLDIR=${OPENSSLDIR}
+.endif
 CRYPTOLIBS=	-L${OPENSSLLIB} -lcrypto
 # Here, MANDIR is concetenated to DESTDIR which all forms the man install dir...
 MAKE_ENV+=	DESTDIR=${PREFIX} MANDIR=/man/man CRYPTOLIBS="${CRYPTOLIBS}"
@@ -68,6 +80,16 @@ post-patch:
 	@${PERL} -pi -e 's:__PREFIX__:${PREFIX}:g' ${WRKSRC}/ssh.h	\
 		${WRKSRC}/sshd_config ${WRKSRC}/sshd.sh \
 		${WRKSRC}/pathnames.h
+
+.if ${OSVERSION} < 430000
+post-configure:
+.for i in ${FIXME}
+	@${PERL5} -pi -e "s=KERBEROS[:]L=KERBEROS=" ${WRKSRC}/${i}
+	@${PERL5} -pi -e "s=AFS[:]L=AFS=" ${WRKSRC}/${i}
+	@${PERL5} -pi -e "s=TCP_WRAPPERS[:]L=TCP_WRAPPERS=" ${WRKSRC}/${i}
+	@${PERL5} -pi -e "s=SKEY[:]L=SKEY=" ${WRKSRC}/${i}
+.endfor
+.endif
 
 post-install:
 .if !defined(BATCH)
