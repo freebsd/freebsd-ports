@@ -14,7 +14,7 @@
   manualdir:     ${prefix}/share/doc/apache2
   cgidir:        ${datadir}/cgi-bin
   includedir:    ${prefix}/include/apache2
-  localstatedir: @@DESTDIR@@/var
+  localstatedir: /var
   runtimedir:    ${localstatedir}/run
   logfiledir:    ${localstatedir}/log
   proxycachedir: ${datadir}/proxy
