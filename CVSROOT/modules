@@ -3622,7 +3622,6 @@ kgdb		src/gnu/usr.bin/kgdb
 kget		src/sbin/kget
 kgmon		src/usr.sbin/kgmon
 kgpg		ports/security/kgpg
-kgpgapplet	ports/security/kgpgapplet
 kgzip		src/usr.sbin/kgzip
 kgzldr		src/sys/boot/i386/kgzldr
 khacc		ports/finance/khacc
