@@ -324,6 +324,7 @@ apinger		ports/net/apinger
 apm		src/usr.sbin/apm
 apmconf		src/usr.sbin/apmconf
 apmd		src/usr.sbin/apmd
+apotheke	ports/x11-fm/apotheke
 apply		src/usr.bin/apply
 apr		ports/devel/apr
 apropos		src/gnu/usr.bin/man/apropos
