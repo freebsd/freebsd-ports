@@ -14,5 +14,7 @@ share/mnews/samples/jnames.fj
 share/mnews/samples/jnames.jp
 share/mnews/samples/jnames.smp
 share/mnews/samples/jnames.tnn
-@unexec rm -rf %D/lib/mnews
-@unexec rm -rf %D/share/mnews
+@dirrm lib/mnews
+@dirrm share/mnews/doc
+@dirrm share/mnews/samples
+@dirrm share/mnews

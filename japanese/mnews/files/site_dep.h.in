@@ -32,7 +32,7 @@
 #define	PIPE_CODE	ASCII_CODE
 #define	EDITOR_COMMAND	"@PREFIX@/bin/mule -nw"
 #define	SEND_COMMAND	"/usr/sbin/sendmail -t -om -oi"
-#define	POST_COMMAND	"/usr/lib/news/inews -h"
+#define	POST_COMMAND	"/usr/local/bin/inews -h"
 #define	MH_COMMAND_PATH	"@PREFIX@/bin"
 #define	JNAMES_DB	"@PREFIX@/lib/mnews/jnames"
 #define	NEWS_SPOOL	"/var/spool/news"
