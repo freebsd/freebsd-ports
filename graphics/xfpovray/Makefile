@@ -20,9 +20,8 @@ RUN_DEPENDS=	povray:${PORTSDIR}/graphics/povray
 
 USE_IMAKE=	yes
 USE_GMAKE=	yes
-NO_INSTALL_MANPAGES=	yes
 
 post-patch:
-	@/usr/bin/perl -pi -e "s|\@LOCALBASE\@|${LOCALBASE}|g;" ${WRKSRC}/src/xfpovray.h
+	${PERL} -pi -e "s|\@LOCALBASE\@|${LOCALBASE}|g;" ${WRKSRC}/src/xfpovray.h
 
 .include <bsd.port.mk>
