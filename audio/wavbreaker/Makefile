@@ -12,6 +12,8 @@ MASTER_SITES=	http://huli.org/wavbreaker/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool to split wav files
 
+BROKEN=		"Patch fails"
+
 USE_GNOME=	gnomehack gtk20 libxml2
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
