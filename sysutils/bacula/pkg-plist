@@ -1,6 +1,7 @@
 %%SERVER%%share/bacula/query.sql
 etc/rc.d/bacula.sh.sample
 %%SERVER%%sbin/chio-bacula
+%%SERVER%%sbin/mtx-changer
 %%SERVER%%sbin/bacula-dir
 sbin/bacula-fd
 %%SERVER%%sbin/bacula-sd
