@@ -1,14 +1,13 @@
 bin/gdcd
-share/pixmaps/gdcd/blues.png
-share/pixmaps/gdcd/data.png
-share/pixmaps/gdcd/folk.png
-share/pixmaps/gdcd/jazz.png
-share/pixmaps/gdcd/misc.png
-share/pixmaps/gdcd/newage.png
-share/pixmaps/gdcd/nodisc.png
-share/pixmaps/gdcd/reggae.png
-share/pixmaps/gdcd/rock.png
-share/pixmaps/gdcd/soundtrack.png
-share/pixmaps/gdcd/unknown.png
-@dirrm share/pixmaps/gdcd
-@unexec rmdir %d/share/pixmaps 2>/dev/null || true
+share/gnome/pixmaps/gdcd/blues.png
+share/gnome/pixmaps/gdcd/data.png
+share/gnome/pixmaps/gdcd/folk.png
+share/gnome/pixmaps/gdcd/jazz.png
+share/gnome/pixmaps/gdcd/misc.png
+share/gnome/pixmaps/gdcd/newage.png
+share/gnome/pixmaps/gdcd/nodisc.png
+share/gnome/pixmaps/gdcd/reggae.png
+share/gnome/pixmaps/gdcd/rock.png
+share/gnome/pixmaps/gdcd/soundtrack.png
+share/gnome/pixmaps/gdcd/unknown.png
+@dirrm share/gnome/pixmaps/gdcd
