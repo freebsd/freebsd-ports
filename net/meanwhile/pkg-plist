@@ -9,6 +9,8 @@ include/meanwhile/session.h
 include/meanwhile/srvc_aware.h
 include/meanwhile/srvc_conf.h
 include/meanwhile/srvc_im.h
+include/meanwhile/srvc_store.h
+include/meanwhile/st_list.h
 lib/libmeanwhile.a
 lib/libmeanwhile.so
 lib/libmeanwhile.so.0
