@@ -3,7 +3,7 @@
 # Date created:			Oct 27 1998
 # Whom:				Vanilla Pooh Shu <vanilla@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.3 1998/11/04 08:55:06 vanilla Exp $
+# $Id: Makefile,v 1.4 1998/11/11 13:27:09 vanilla Exp $
 #
 
 DISTNAME=	replay-source-dgtk_0.58
@@ -14,7 +14,7 @@ MASTER_SITES=	http://replay.linuxpower.org/files/
 MAINTAINER=	Nakai@technologist.com
 
 LIB_DEPENDS=	gtk11.1:${PORTSDIR}/x11-toolkits/gtk11 \
-		esd.0:${PORTSDIR}/audio/esound
+		esd.1:${PORTSDIR}/audio/esound
 
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
