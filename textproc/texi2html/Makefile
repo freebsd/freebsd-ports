@@ -6,27 +6,16 @@
 #
 
 PORTNAME=	texi2html
-PORTVERSION= 	1.52
+PORTVERSION= 	1.64
 CATEGORIES=	textproc
-MASTER_SITES=	http://wwwcn.cern.ch/dci/texi2html/
-DISTNAME=	${PORTNAME}
-EXTRACT_SUFX=	.shar.Z
+MASTER_SITES=	http://www.mathematik.uni-kl.de/~obachman/Texi2html/Distrib/
 
-MAINTAINER=	i.vaudrey@bigfoot.com
+MAINTAINER=	roam@orbitel.bg
 
-EXTRACT_CMD=	uncompress
-EXTRACT_BEFORE_ARGS=	-c
-EXTRACT_AFTER_ARGS=	| sh
-NO_WRKSUBDIR=	yes
-NO_BUILD=	yes
+USE_AUTOMAKE=	yes
+USE_AUTOCONF=	yes
+GNU_CONFIGURE=	yes
 
 MAN1=		texi2html.1
-
-post-extract:
-	@cd ${WRKSRC}; split -l 1940 texi2html texi2html.
-
-do-install:
-	${INSTALL_SCRIPT} ${WRKDIR}/texi2html.aa ${PREFIX}/bin/texi2html
-	${INSTALL_MAN} ${WRKDIR}/texi2html.ab ${PREFIX}/man/man1/${MAN1}
 
 .include <bsd.port.mk>
