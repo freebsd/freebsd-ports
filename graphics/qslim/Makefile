@@ -33,6 +33,12 @@ CPPFLAGS=	-I${LOCALBASE}/include -I${X11BASE}/include \
 LDFLAGS=	-L${LOCALBASE}/lib -lgnugetopt -L${X11BASE}/lib \
 		${PTHREAD_LIBS}
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} > 500034
+CFLAGS+=	-DMIX_ANSI_IOSTREAMS -fpermissive
+.endif
+
 post-extact:
 	@${RM} -f ${WRKSRC}/mixkit/src/getopt.h
 
@@ -51,4 +57,4 @@ do-install:
 	@${MKDIR} ${PREFIX}/include/mixkit
 	${INSTALL_DATA} ${WRKSRC}/mixkit/src/*.h ${PREFIX}/include/mixkit
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
