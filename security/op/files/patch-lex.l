@@ -1,5 +1,5 @@
---- lex.l.orig	Wed Oct 15 05:58:41 2003
-+++ lex.l	Wed Oct 15 06:01:15 2003
+--- lex.l.orig	Thu Mar  3 20:47:59 2005
++++ lex.l	Thu Mar  3 20:49:11 2005
 @@ -10,10 +10,11 @@
  /* +-------------------------------------------------------------------+ */
  
@@ -13,15 +13,15 @@
  static cmd_t	*newcmd();
  char	*savestr();
  
-@@ -47,20 +48,15 @@
+@@ -47,15 +48,12 @@
  #include <sys/stat.h>
  #include <syslog.h>
  
 -msg(va_alist)
 - va_dcl
-+msg(char *s,...)
++msg (char *s, ...)
  {
--#if 0
+ #if 0
  	va_list	ap;
 -	char	*s;
  
@@ -31,8 +31,3 @@
  	fprintf(stderr,"line %d: ",yyline);
  	vfprintf(stderr, s, ap);
  	fputc('\n', stderr);
- 	va_end(ap);
--#endif
- }
- 
- static addarg(state, cmd, str)
