@@ -49,27 +49,23 @@
  
  #Note: for Freetype 1.x, use DHAVE_LIBTTF and -lttf instead.
  
-@@ -45,7 +53,10 @@
+@@ -45,7 +53,8 @@
  #ensure that the version of gd you are installing is used, and not an 
  #older release in your directory tree somewhere.
  
 -INCLUDEDIRS=-I. -I/usr/include/freetype2 -I/usr/include/X11 -I/usr/X11R6/include/X11 -I/usr/local/include 
 +INCLUDEDIRS=-I. -I${LOCALBASE}/include/freetype2 -I${LOCALBASE}/include
-+.if defined(WITH_X11)
-+INCLUDEDIRS+=-I${X11BASE}/include/X11 -I${X11BASE}/include
-+.endif
++INCLUDEDIRS+=-I${X11BASE}/include/X11 -I${X11BASE}/include/freetype2 -I${X11BASE}/include
  
  #Typical install locations for freetype, zlib, xpm and libpng libraries.
  #If yours are somewhere else, other than a standard location
-@@ -55,16 +66,19 @@
+@@ -55,16 +66,17 @@
  #on your system can't cause conflicts while building a new one.
  #This line shouldn't hurt if you don't actually have some of the
  #optional libraries and directories.
 -LIBDIRS=-L. -L/usr/local/lib -L/usr/lib/X11 -L/usr/X11R6/lib
 +LIBDIRS=-L. -L${LOCALBASE}/lib -Wl,--rpath,${LOCALBASE}/lib
-+.if defined(WITH_X11)
 +LIBDIRS+=-L${X11BASE}/lib -Wl,--rpath,${X11BASE}/lib
-+.endif
  
  #Location where libgd.a should be installed by "make install".
 -INSTALL_LIB=/usr/local/lib

@@ -13,14 +13,9 @@ DISTNAME=	gnome-iconedit-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	gnome.4:${PORTSDIR}/x11/gnomelibs \
-		gdk_pixbuf.2:${PORTSDIR}/graphics/gdk-pixbuf \
-		gnomeprint.13:${PORTSDIR}/print/gnomeprint \
-		bonobo.2:${PORTSDIR}/devel/bonobo
-RUN_DEPENDS=	gnomecc:${PORTSDIR}/sysutils/gnomecontrolcenter
-
 BROKEN=		"Uses internals from devel/oaf that are no longer present"
 
+USE_GNOME=	yes
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 USE_LIBTOOL=	yes

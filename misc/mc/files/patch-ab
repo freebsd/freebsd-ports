@@ -1,36 +1,7 @@
---- vfs/Make-mc.in.orig	Tue Mar 30 08:34:34 1999
-+++ vfs/Make-mc.in	Wed Apr  7 23:37:58 1999
-@@ -13,8 +13,9 @@
- DEFS     = $(XDEFS)
- LIBS     = @LINTL@ @SHADOWLIB@ $(XLIBS) @TERMNET@ @PAMLIBS@ @LCRYPT@ $(XLIB)
- INSTALL  = @INSTALL@
--INSTALL_PROGRAM = @INSTALL_PROGRAM@ -m 755
-+INSTALL_PROGRAM = @INSTALL_PROGRAM@
- INSTALL_DATA = @INSTALL_DATA@
-+INSTALL_SCRIPT = @INSTALL_SCRIPT@
- AR = @AR@
- 
- #
-@@ -185,7 +186,7 @@
- 
- install: @mcserv@ install.extfs
- 	-(if test x@mcserv@ != x; then \
--	    $(INSTALL_PROGRAM) mcserv $(DESTDIR)$(bindir)/$(binprefix)mcserv; \
-+	    $(INSTALL_PROGRAM) mcserv $(DESTDIR)$(sbindir)/$(binprefix)mcserv; \
- 	fi)
- 
- install.extfs:
-@@ -194,11 +195,11 @@
- 	          $(DESTDIR)$(extfsdir)/$$I; \
- 	done
- 	for I in $(EXTFS_CONST) ; do \
--	    $(INSTALL_PROGRAM) $(srcdir)/extfs/$$I \
-+	    $(INSTALL_SCRIPT) $(srcdir)/extfs/$$I \
- 	             $(DESTDIR)$(extfsdir)/$$I; \
- 	done
- 	for I in $(EXTFS_OUT) ; do \
--	    $(INSTALL_PROGRAM) $(builddir)/vfs/extfs/$$I \
-+	    $(INSTALL_SCRIPT) $(builddir)/vfs/extfs/$$I \
- 	             $(DESTDIR)$(extfsdir)/$$I; \
- 	done
+--- vfs/Make-mc.in.orig	Wed Apr 11 07:07:50 2001
++++ vfs/Make-mc.in	Fri Apr 20 12:24:23 2001
+@@ -233,3 +233,3 @@
+ 	$(mkinstalldirs) $(DESTDIR)$(bindir)
+-	$(INSTALL_PROGRAM) mcserv $(DESTDIR)$(bindir)/$(binprefix)mcserv
++	$(INSTALL_PROGRAM) mcserv $(DESTDIR)$(sbindir)/$(binprefix)mcserv
  

@@ -7,15 +7,12 @@
 
 PORTNAME=	junglemonkey
 PORTVERSION=	0.1.9
+PORTREVISION=	1
 CATEGORIES=	ftp gnome
 MASTER_SITES=	http://www.junglemonkey.net/src/
 DISTNAME=	jm-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-
-LIB_DEPENDS=	gnet.0:${PORTSDIR}/net/gnet \
-		popt.0:${PORTSDIR}/devel/popt \
-		glade.4:${PORTSDIR}/devel/libglade
 
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes

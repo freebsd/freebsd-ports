@@ -7,18 +7,17 @@
 
 PORTNAME=	fwbuilder
 PORTVERSION=	0.8.7
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	roman@xpert.com
 
-LIB_DEPENDS=	xml.5:${PORTSDIR}/textproc/libxml \
-		gtkmm.2:${PORTSDIR}/x11-toolkits/gtk--
+LIB_DEPENDS=	gtkmm.2:${PORTSDIR}/x11-toolkits/gtk--
 
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
-USE_GTK=	yes
 USE_LIBTOOL=	yes
 USE_GNOMELIBS=	yes
 WITHOUT_ESOUND=	yes

@@ -7,16 +7,15 @@
 
 PORTNAME=	etherape
 PORTVERSION=	0.5.7
+PORTREVISION=	1
 CATEGORIES=	net gnome
 MASTER_SITES=	http://prdownloads.sourceforge.net/etherape/ \
 		ftp://etherape.sourceforge.net/pub/etherape/
 
 MAINTAINER=	holger@eit.uni-kl.de
 
-LIB_DEPENDS=	glade.4:${PORTSDIR}/devel/libglade
+USE_GNOME=	yes
 
-HAS_CONFIGURE=	yes
-CONFIGURE_ENV=	GTK_CONFIG=${X11BASE}/bin/gtk12-config
 MAN8=		etherape.8
 
 .include <bsd.port.mk>

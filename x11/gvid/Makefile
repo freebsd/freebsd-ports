@@ -7,6 +7,7 @@
 
 PORTNAME=	gvid
 PORTVERSION=	0.2
+PORTREVISION=	1
 CATEGORIES=	x11 gnome
 MASTER_SITES=	http://kvand.mit.edu/kvand/gVid/ \
 		ftp://ftp.proxad.net/mirrors/ftp.linuxberg.com/files/gnome/xwin/ \
@@ -16,10 +17,8 @@ MASTER_SITES=	http://kvand.mit.edu/kvand/gVid/ \
 
 MAINTAINER=	smoberly@xavier.dyndns.org
 
-LIB_DEPENDS=	panel_applet.4:${PORTSDIR}/x11/gnomecore \
-		gnome.4:${PORTSDIR}/x11/gnomelibs
-
 USE_X_PREFIX=	yes
+USE_GNOME=	yes
 
 MAKE_ENV=	MKDIR="${MKDIR}"
 

@@ -7,14 +7,13 @@
 
 PORTNAME=	gnomefind
 PORTVERSION=	1.0.1
+PORTREVISION=	1
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gnome-find
 DISTNAME=	gnome-find-${PORTVERSION}
 
 MAINTAINER=	sobomax@FreeBSD.org
-
-LIB_DEPENDS=	glade.4:${PORTSDIR}/devel/libglade
 
 USE_X_PREFIX=	yes
 USE_XPM=	yes

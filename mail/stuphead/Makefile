@@ -7,20 +7,17 @@
 
 PORTNAME=	stuphead
 PORTVERSION=	0.4.9
-CATEGORIES=	mail
+PORTREVISION=	1
+CATEGORIES=	mail gnome
 MASTER_SITES=	http://stuphead.antex.ru/
 
 MAINTAINER=	ozz@FreeBSD.org.ru
 
-LIB_DEPENDS=	gdk_pixbuf.2:${PORTSDIR}/graphics/gdk-pixbuf
-
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_GTK=	yes
+USE_GNOME=	yes
 USE_LIBTOOL=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
 
 pre-patch:
 	@${PERL} -pi -e 's#DATADIRNAME=lib#DATADIRNAME=share#g' \

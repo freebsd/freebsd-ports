@@ -6,7 +6,8 @@
 
 PORTNAME=	rox
 PORTVERSION=	1.1.2
-CATEGORIES=	x11-fm
+PORTREVISION=	1
+CATEGORIES=	x11-fm gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	rox
 DISTNAME=	rox-${PORTVERSION}
@@ -14,12 +15,9 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	olgeni@FreeBSD.org
 
-LIB_DEPENDS=	xml.5:${PORTSDIR}/textproc/libxml \
-		gdk_pixbuf.2:${PORTSDIR}/graphics/gdk-pixbuf
 RUN_DEPENDS=	${LOCALBASE}/share/Choices:${PORTSDIR}/x11-fm/rox-base
 
-USE_GLIB=	yes
-USE_GTK=	yes
+USE_GNOMECTRL=	yes
 MAN1=		rox.1
 
 do-build:

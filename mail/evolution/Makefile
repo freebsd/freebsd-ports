@@ -7,26 +7,15 @@
 
 PORTNAME=	evolution
 PORTVERSION=	0.9
+PORTREVISION=	1
 CATEGORIES=	mail gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	unstable/sources/evolution
 
 MAINTAINER=	sobomax@FreeBSD.org
 
-# Note: gnomepilot support has been forcibly taken out for now, so
-# we can save ourselves a little bit of build time
-
-LIB_DEPENDS=	xml.5:${PORTSDIR}/textproc/libxml \
-		glade.4:${PORTSDIR}/devel/libglade \
-		gdk_pixbuf.2:${PORTSDIR}/graphics/gdk-pixbuf \
-		gnomeprint.13:${PORTSDIR}/print/gnomeprint \
-		oaf.0:${PORTSDIR}/devel/oaf \
-		bonobo.2:${PORTSDIR}/devel/bonobo \
-		gnomevfs.0:${PORTSDIR}/devel/gnomevfs \
-		unicode.0:${PORTSDIR}/devel/libunicode \
-		gtkhtml.8:${PORTSDIR}/www/gtkhtml \
-		ldap.1:${PORTSDIR}/net/openldap # \
-#		gpilotd.0:${PORTSDIR}/palm/gnomepilot
+LIB_DEPENDS=	gtkhtml.10:${PORTSDIR}/www/gtkhtml \
+		ldap.1:${PORTSDIR}/net/openldap
 
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes

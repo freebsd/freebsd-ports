@@ -7,14 +7,12 @@
 
 PORTNAME=	gide
 PORTVERSION=	0.3.0
+PORTREVISION=	1
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	unstable/sources/gIDE
 
 MAINTAINER=	ade@FreeBSD.org
-
-LIB_DEPENDS=	glade.4:${PORTSDIR}/devel/libglade \
-		guile.9:${PORTSDIR}/lang/guile
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes

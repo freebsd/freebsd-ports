@@ -7,7 +7,7 @@
 
 PORTNAME=	mozilla
 PORTVERSION=	0.8.1
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 PKGNAMESUFFIX=	+ipv6
 CATEGORIES=	www ipv6
@@ -17,7 +17,7 @@ DISTNAME=	${PORTNAME}-source-${PORTVERSION}
 
 MAINTAINER=	sumikawa@FreeBSD.org
 
-LIB_DEPENDS=	IDL.2:${PORTSDIR}/devel/ORBit \
+LIB_DEPENDS=	ORBit.2:${PORTSDIR}/devel/ORBit \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.4:${PORTSDIR}/graphics/png
 

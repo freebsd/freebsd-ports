@@ -7,7 +7,8 @@
 
 PORTNAME=	freeamp
 PORTVERSION=	2.1.rc5
-CATEGORIES=	audio
+PORTREVISION=	1
+CATEGORIES=	audio gnome
 MASTER_SITES=	http://www.freeamp.org/download/src/
 
 MAINTAINER=	roman@xpert.com
@@ -15,14 +16,12 @@ MAINTAINER=	roman@xpert.com
 BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
 LIB_DEPENDS=	musicbrainz.1:${PORTSDIR}/audio/musicbrainz \
 		id3:${PORTSDIR}/audio/id3lib \
-		gdk_pixbuf.2:${PORTSDIR}/graphics/gdk-pixbuf \
-		ttf.4:${PORTSDIR}/print/freetype \
-		ORBit.2:${PORTSDIR}/devel/ORBit
+		ttf.4:${PORTSDIR}/print/freetype
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_BZIP2=	yes
 USE_XLIB=	yes
-USE_GTK=	yes
+USE_GNOMECTRL=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--prefix=${PREFIX}

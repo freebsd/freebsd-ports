@@ -7,13 +7,14 @@
 
 PORTNAME=	metatheme
 PORTVERSION=	0.5.0
+PORTREVISION=	1
 CATEGORIES=	misc gnome
 MASTER_SITES=	ftp://ftp.helixcode.com/pub/metatheme/
 
 MAINTAINER=	sobomax@FreeBSD.org
 
-LIB_DEPENDS=	gtkhtml.8:${PORTSDIR}/www/gtkhtml \
-		gal.4:${PORTSDIR}/x11-toolkits/gal \
+LIB_DEPENDS=	gtkhtml.10:${PORTSDIR}/www/gtkhtml \
+		gal.6:${PORTSDIR}/x11-toolkits/gal \
 		gnet.0:${PORTSDIR}/net/gnet
 
 USE_X_PREFIX=	yes
