@@ -1,19 +1,11 @@
---- configure.orig	Fri Oct 27 00:40:22 2000
-+++ configure	Tue Dec 12 02:14:04 2000
-@@ -1629,14 +1629,14 @@
+--- src/songlendb/Makefile.in.old	Sun Oct 22 22:36:00 2000
++++ src/songlendb/Makefile.in	Sun Oct 22 22:36:21 2000
+@@ -95,7 +95,7 @@
+ LIBRARIES =  $(noinst_LIBRARIES)
  
  
- 
--if test "$qt_includes" = "$x_includes" || test -z "$qt_includes"; then
-+if test -z "$qt_includes"; then
-  QT_INCLUDES="";
- else
-  QT_INCLUDES="-I$qt_includes"
-  all_includes="$QT_INCLUDES $all_includes"
- fi
- 
--if test "$qt_libraries" = "$x_libraries" || test -z "$qt_libraries"; then
-+if test -z "$qt_libraries"; then
-  QT_LDFLAGS=""
- else
-  QT_LDFLAGS="-L$qt_libraries"
+-DEFS = @DEFS@ -I. -I$(srcdir) 
++DEFS = @DEFS@ -I. -I$(srcdir) -I$(LOCALBASE)/include
+ CPPFLAGS = @CPPFLAGS@
+ LDFLAGS = @LDFLAGS@
+ LIBS = @LIBS@
