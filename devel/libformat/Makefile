@@ -8,6 +8,7 @@
 
 PORTNAME=	libformat
 PORTVERSION=	0.1.7
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://home.pages.at/kingleo/development/
 DISTNAME=	Format-${PORTVERSION}
@@ -15,8 +16,20 @@ DISTNAME=	Format-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 
 GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 INSTALLS_SHLIB=	yes
 
 MAN3=	Format.3
+
+post-patch:
+	@${PERL} -pi -e 's| install-data-local||g' ${WRKSRC}/doc/Makefile.in
+
+post-install:
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+.for file in doc/Format.html doc/Format.txt src/testMakefile src/testformat.cpp
+	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+.endfor
+.endif
 
 .include <bsd.port.mk>

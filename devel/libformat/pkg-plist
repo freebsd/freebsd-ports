@@ -1,5 +1,9 @@
 include/Format.hh
 lib/libFormat.a
-lib/libFormat.la
 lib/libFormat.so
 lib/libFormat.so.0
+%%PORTDOCS%%share/doc/libformat/Format.html
+%%PORTDOCS%%share/doc/libformat/Format.txt
+%%PORTDOCS%%share/doc/libformat/testMakefile
+%%PORTDOCS%%share/doc/libformat/testformat.cpp
+%%PORTDOCS%%@dirrm share/doc/libformat
