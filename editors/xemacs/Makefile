@@ -1,22 +1,19 @@
 # New ports collection makefile for:	X-Emacs
-# Version required:	20.3
+# Version required:	20.4
 # Date created:		26 August 1997
 # Whom:			Michael Elbel (me)
 #
-# $Id: Makefile,v 1.11 1998/03/28 19:42:15 ache Exp $
+# $Id: Makefile,v 1.12 1998/04/15 22:18:19 jseger Exp $
 #
 
-DISTNAME=	xemacs-20.3
+DISTNAME=	xemacs-20.4
 CATEGORIES=	editors
 MASTER_SITES=	\
-		ftp://ftp.xemacs.org/pub/${DISTNAME}/ \
-		ftp://ftp2.xemacs.org/pub/xemacs/${DISTNAME}/ \
-		ftp://ftp.mpi-sb.mpg.de/pub/gnu/mirror/ftp.xemacs.org/${DISTNAME}/ \
+		ftp://ftp.xemacs.org/pub/xemacs/${DISTNAME}/ \
+		ftp://ftp.mpi-sb.mpg.de/pub/gnu/mirror/ftp.xemacs.org/xemacs/${DISTNAME}/ \
 		ftp://ftp.usyd.edu.au:/pub/Xemacs/${DISTNAME}/ \
 		ftp://ftp.lab.kdd.co.jp/xemacs/${DISTNAME}/ \
-		ftp://ftp.th-darmstadt.de:/pub/editors/xemacs/${DISTNAME}/ \
-		ftp://SunSITE.sut.ac.jp/pub/archives/xemacs/${DISTNAME}/ \
-		ftp://ftp.gw.com/mirrors/pub/unix/xemacs/${DISTNAME}/
+		ftp://ftp.th-darmstadt.de:/pub/editors/xemacs/${DISTNAME}/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${MULEDISTFILE}
 
 MAINTAINER=	me@FreeBSD.org
