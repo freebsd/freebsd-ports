@@ -11,7 +11,7 @@ CATEGORIES=	news ipv6
 MASTER_SITES=	${MASTER_SITE_ISC}
 MASTER_SITE_SUBDIR=	inn
 
-MAINTAINER=	des@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	InterNetNews -- the Internet meets Netnews
 
 NO_LATEST_LINK=	yes
