@@ -8,8 +8,8 @@
 PORTNAME?=	qt
 PORTVERSION?=	3.0.5
 CATEGORIES?=	x11-toolkits
-MASTER_SITES=   ftp://ftp.trolltech.com/qt/source/ \
-                ftp://ftp.chg.ru/pub/X11/qt/source/
+MASTER_SITES=	ftp://ftp.trolltech.com/qt/source/ \
+		ftp://ftp.chg.ru/pub/X11/qt/source/
 DISTNAME=	qt-x11-free-${PORTVERSION}
 DIST_SUBDIR=	KDE
 
@@ -46,7 +46,7 @@ CONFIGURE_ARGS=	-prefix ${QT_PREFIX} \
 		-docdir ${QT_PREFIX}/share/doc/qt \
 		-I${LOCALBASE}/include -L${LOCALBASE}/lib
 .if defined(WITH_DEBUG)
-CONFIGURE_ARGS+= -debug
+CONFIGURE_ARGS+=-debug
 .endif
 .if defined(WITH_OPENGL)
 USE_MESA=	yes
@@ -78,7 +78,7 @@ BROKEN=		"The QT 3.x port does not support any XFree86 < 4.x"
 pre-everything:
 	@${ECHO_MSG} '===> **************************************************'
 	@${ECHO_MSG} '===> NOTE: Use of WITH_OPENGL is not recommended with'
-	@${ECHO_MSG} '===> versions of XFree86 < 4.2.0.' 
+	@${ECHO_MSG} '===> versions of XFree86 < 4.2.0.'
 	@${ECHO_MSG} '===> **************************************************'
 .endif
 

@@ -377,25 +377,19 @@ include/qxt.h
 lib/libeditor.prl
 lib/libeditor.so
 lib/libeditor.so.1
+lib/libeditor.so.1.0
 lib/libeditor.so.1.0.0
-@exec rm -f %D/lib/libeditor.so.1.0 || true
-@exec ln -s libeditor.so.1.0.0 %D/lib/libeditor.so.1.0 || true
-@unexec rm -f %D/lib/libeditor.so.1.0 || true
 lib/libqnp.prl
 lib/libqt-mt.prl
 lib/libqt-mt.so
 lib/libqt-mt.so.3
+lib/libqt-mt.so.3.0
 lib/libqt-mt.so.3.0.5
-@exec rm -f %D/lib/libqt-mt.so.3.0 || true
-@exec ln -s libqt-mt.so.3.0.0 %D/lib/libqt-mt.so.3.0 || true
-@unexec rm -f  %D/lib/libqt-mt.so.3.0 || true
 lib/libqui.prl
 lib/libqui.so
 lib/libqui.so.1
+lib/libqui.so.1.0
 lib/libqui.so.1.0.0
-@exec rm -f %D/lib/libqui.so.1.0 || true
-@exec ln -s libqui.so.1.0.0 %D/lib/libqui.so.1.0 || true
-@unexec rm -f  %D/lib/libqui.so.1.0 || true
 lib/libqxt.prl
 mkspecs/aix-64/qmake.conf
 mkspecs/aix-64/qplatformdefs.h
