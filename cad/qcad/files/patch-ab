@@ -1,0 +1,11 @@
+--- qcadlib/src/engine/rs_graphic.cpp.orig	Thu Sep  9 07:31:40 2004
++++ qcadlib/src/engine/rs_graphic.cpp	Thu Sep  9 07:32:03 2004
+@@ -518,7 +518,7 @@
+ 	if (fabs(s.x)>1.0e-6) {
+ 		fx = ps.x / s.x;
+ 	}
+-	if (fabs(s.y>1.0e-6)) {
++	if (fabs(s.y)>1.0e-6) {
+ 		fy = ps.y / s.y;
+ 	}
+ 
