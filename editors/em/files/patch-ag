@@ -1,5 +1,5 @@
---- main.c.orig	Sat Jan 27 05:31:22 2001
-+++ main.c	Mon Dec 31 19:08:46 2001
+--- main.c.orig	Fri Jan 26 21:31:22 2001
++++ main.c	Sun Jun 13 00:19:43 2004
 @@ -49,11 +49,17 @@
   *
   * 4.0	Petri Kutvonen, 1-Sep-91
@@ -22,10 +22,13 @@
   */
  
  #include        <stdio.h>
-@@ -89,6 +95,10 @@
+@@ -89,6 +95,13 @@
  #include <signal.h>
  #endif
  
++static int prtuse(char*);
++
++
 +#if	defined(TOYCODE) && defined(BSD)
 +#include	<sys/unistd.h>
 +#include	<errno.h>
@@ -33,7 +36,7 @@
  #if	CALLED
  emacs(argc, argv)
  #else
-@@ -225,9 +235,21 @@
+@@ -225,9 +238,21 @@
  #if	TOYCODE
  				case 't':	/* -t for tabmask change */
  				case 'T':
@@ -58,7 +61,7 @@
  #endif
  				default:	/* unknown switch */
  					/* ignore this for now */
-@@ -273,7 +295,11 @@
+@@ -273,7 +298,11 @@
  			sink = strlen(argv[carg]);
  			if (sink >= 2 && (argv[carg][sink-2] == '.' &&
  				 (argv[carg][sink-1] == 'c' || argv[carg][sink-1] == 'h')))
@@ -71,7 +74,16 @@
  #endif
  		}
  	}
-@@ -913,5 +939,44 @@
+@@ -769,7 +798,7 @@
+ 			ALWAYS null terminate
+ */
+ 
+-char *strncpy(dst, src, maxlen)
++char *mystrncpy(dst, src, maxlen)
+ 
+ char *dst;	/* destination of copied string */
+ char *src;	/* source */
+@@ -913,5 +941,44 @@
  #undef	exit
  	exit(status);
  #endif
