@@ -1,0 +1,24 @@
+# New ports collection makefile for:	audio/mp3wrap
+# Date created:				30.05.2003
+# Whom:					Ulrich Spoerlein <q@uni.de>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	mp3wrap
+PORTVERSION=	0.5
+CATEGORIES=	audio
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
+DISTNAME=	${PORTNAME}-${PORTVERSION}-src
+
+MAINTAINER=	q@uni.de
+COMMENT=	Utility to merge mp3 files (and other formats)
+
+GNU_CONFIGURE=	yes
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+
+MAN1=		mp3wrap.1
+
+.include <bsd.port.mk>

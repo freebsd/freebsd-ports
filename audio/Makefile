@@ -165,6 +165,7 @@
     SUBDIR += mp3rename
     SUBDIR += mp3splt
     SUBDIR += mp3stat
+    SUBDIR += mp3wrap
     SUBDIR += mpegaudio
     SUBDIR += mpg123
     SUBDIR += mpg123.el
