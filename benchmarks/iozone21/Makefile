@@ -14,6 +14,8 @@ EXTRACT_SUFX=	.shar.gz
 
 MAINTAINER=	obrien@FreeBSD.org
 
+LATEST_LINK=	iozone21
+
 EXTRACT_CMD=	( gzcat | awk '{if (/^\#!/) x++} {if(x) print $$0'}| /bin/sh )
 EXTRACT_BEFORE_ARGS=	<
 EXTRACT_AFTER_ARGS=	# empty
