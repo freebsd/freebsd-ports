@@ -1,0 +1,13 @@
+--- extern/ode/Makefile.orig	Fri Feb 21 01:05:20 2003
++++ extern/ode/Makefile	Fri Feb 21 01:06:27 2003
+@@ -37,10 +37,6 @@
+ TEMPSETTINGS = ./user-settings
+ 
+ all:
+-    ifeq ($(OS),freebsd)
+-	(grep FreeBSD $(DISTDIR)/Makefile >/dev/null ; \
+-	    [ $$? -eq 0 ] || patch < patchfile.FreeBSD )
+-    endif
+     ifeq ($(OS),$(findstring $(OS), "freebsd linux"))
+ 	[ -d $(DISTDIR)/lib ] || mkdir $(DISTDIR)/lib
+ 	$(MAKE) -C $(DISTDIR)

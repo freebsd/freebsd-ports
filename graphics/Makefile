@@ -23,6 +23,7 @@
     SUBDIR += barcode
     SUBDIR += bbrb
     SUBDIR += blender
+    SUBDIR += blender-devel
     SUBDIR += cadubi
     SUBDIR += camediaplay
     SUBDIR += camserv
