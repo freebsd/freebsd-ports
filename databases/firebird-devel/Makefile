@@ -6,14 +6,13 @@
 #
 
 PORTNAME=	firebird
-PORTVERSION=	1.0.r1
+PORTVERSION=	1.0.r2
 CATEGORIES=	databases
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
-		http://www.aims.com.au/chris/
+MASTER_SITES=	http://www.aims.com.au/chris/
 MASTER_SITE_SUBDIR=firebird
-DISTFILES=	bootkit-RC1.tar.gz \
+DISTFILES=	bootkit-RC2.tar.gz \
 		interbase0.9-4-v5examples.tar.gz \
-		Firebird-1.0.0-RC1-FreeBSD.tar.gz
+		Firebird-1.0.0-RC2-FreeBSD.tar.gz
 
 MAINTAINER=	chris@aims.com.au
 
@@ -31,8 +30,11 @@ do-extract:
 	@${MKDIR} ${WRKDIR}
 	@(								\
 	cd ${WRKDIR}; ${TAR} -zxf					\
-		 ${DISTDIR}/Firebird-1.0.0-RC1-FreeBSD.tar.gz;		\
-	cd interbase; ${TAR} -zxf ${DISTDIR}/bootkit-RC1.tar.gz;	\
+		 ${DISTDIR}/Firebird-1.0.0-RC2-FreeBSD.tar.gz;		\
+	cd interbase; ${TAR} -zxf ${DISTDIR}/bootkit-RC2.tar.gz;	\
+	${CP} ${FILESDIR}/boot.freebsd ${WRKDIR}/interbase/;		\
+	${CP} ${FILESDIR}/make.freebsd ${WRKDIR}/interbase/;		\
+	${CP} ${FILESDIR}/buildBootDatabases ${WRKDIR}/interbase/;	\
 	${CP} msgs/msg.gbak misc/msg.gbak				\
 	)
 
@@ -51,12 +53,13 @@ do-configure:
 	INTERBASE=${WRKDIR}/interbase/interbase; export INTERBASE;	\
 	REFDBPATH=${WRKDIR}/refDatabases; export REFDBPATH;		\
 	${SH} buildBootDatabases;					\
+	NOPROMPT_SETUP=yes; export NOPROMPT_SETUP;			\
+	FIREBIRD_64_BIT_IO=yes; export FIREBIRD_64_BIT_IO;		\
 	${CAT} builds_win32/original/build_no.ksh | ${TR} -d '\r'	\
 		> builds_win32/original/build_no.ksh.fix;		\
 	${MV} builds_win32/original/build_no.ksh.fix			\
 		 builds_win32/original/build_no.ksh;			\
-	${SH} setup_dirs boot FREEBSD PROD ${WRKDIR}/refDatabases boot;	\
-	${TOUCH} ${WRKDIR}/interbase/dsql/parse.c			\
+	${SH} Configure.sh PROD FREEBSD;				\
 	)
 
 do-build:
@@ -77,6 +80,7 @@ do-install:
 	@(								\
 	cd ${WRKDIR}/interbase;						\
 	${RM} ${WRKDIR}/interbase/interbase/isc4_tmp.gdb;		\
+	${CP} /dev/null interbase/interbase.log;			\
 	${CP} -Rp interbase ${PREFIX}/firebird;				\
 	${RM} ${PREFIX}/firebird/install;				\
 	${RM} ${PREFIX}/firebird/lib/libgds.so.1.0;			\

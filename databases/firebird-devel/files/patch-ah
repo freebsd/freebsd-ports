@@ -1,0 +1,14 @@
+--- porting/dsql/parse.c.orig	Wed Jan 30 16:53:19 2002
++++ porting/dsql/parse.c	Wed Jan 30 17:38:08 2002
+@@ -4704,9 +4704,8 @@
+ #endif	/* ANSI-C/C++ */
+ #endif	/* ! YYPARSE_PARAM */
+ 
+-int
+-dsql_yyparse (YYPARSE_PARAM_ARG)
+-    YYPARSE_PARAM_DECL
++int dsql_yyparse(USHORT client_dialect, USHORT db_dialect,
++		USHORT parser_version, BOOLEAN *stmt_ambiguous)
+ {
+     register int yym, yyn, yystate;
+ #if YYDEBUG

@@ -1,0 +1,120 @@
+#!/bin/sh
+#
+# $Id: buildBootDatabases,v 1.1 2000/09/29 16:26:39 tom Exp tom $
+#
+# Contributor(s):
+#
+# Reed Mideke <rfm@cruzers.com>
+# Tom Coleman TMC Systems <tcoleman@autowares.com>
+#
+printUsage() {
+   echo "usage is : 'buildBootDatabases'"
+   echo "      or : 'buildBootDatabases <destDir>'"
+   echo ""
+   echo "usually as:"
+   echo "sh builds/original/buildBootDatabases"
+   echo "from the main interbase source directory"
+   echo "where defaults are srcDir=. and destDir=../refDatabases"
+   echo ""
+}
+
+checkVariables() {
+     echo ""
+     echo ""
+     echo ""
+     echo "- Firebird - Reference database build ------------------------"
+     echo ""
+     echo "Parameters :"
+     echo ""
+     echo "Source code dir root                   : $IBSrc"
+     echo "Dest root dir where to build ref db's  : $IBRefDir"
+     echo ""
+     echo "If you wish to have different values please set them before running"
+     echo "this script"
+     echo "usage is : 'buildBootDatabases'"
+     echo "      or : 'buildBootDatabases <destDir>'"
+     echo ""
+     echo "--------------------------------------------------------------"
+     echo ""
+     AskQuestion "Press return to continue"
+}
+
+#--------------------------------------------------------------------
+# Ask the user a question.
+
+Answer=""
+
+AskQuestion() {
+    Test=$1
+    DefaultAns=$2
+    echo -n "${1}"
+    Answer="$DefaultAns"
+#    read Answer
+}
+
+#--------------------------------------------------------------------
+# Build the databases needed for a standard interbase build
+
+buildStdDatabases() {
+    echo "- building std databases"
+
+# boot make will create this if it does not exist
+#   (cd jrd; touch metadata.gdb)
+
+# boot make will create this if it does not exist
+#   touch msgs/msg.gdb
+
+# boot make will create this if it does not exist
+#   touch qli/help.gdb
+
+    touch pyxis/forms.gdb
+
+    touch utilities/rebuild.gdb
+}
+
+#------------------------------------------------------------------------
+
+createRefDir() {
+    if [ -d $IBRefDir ] 
+      then
+         echo "** Warning ** - The reference directory $IBRefDir already exists"
+         AskQuestion "Press return to delete it and continue or ^C to abort"
+
+         rm -rf $IBRefDir
+    fi
+ 
+    mkdir -p $IBRefDir
+}
+
+
+#== Main Program ==================================================
+
+
+# Check parameters 
+
+if [ $# = 0 ] 
+  then
+     export IBSrc=`pwd`
+     export IBRefDir=../refDatabases
+
+elif [ $# = 1 ]
+  then
+     export IBSrc=`pwd`
+     export IBRefDir=$1
+
+else
+  printUsage
+  exit
+fi
+
+
+checkVariables
+
+
+createRefDir
+
+cd $IBRefDir
+
+mkdir -p msgs qli jrd utilities example4 example5 examples pyxis
+
+buildStdDatabases
