@@ -6,12 +6,13 @@
 #
 
 PORTNAME?=	cdrtools
-PORTVERSION?=	2.01a24
+CDRTLSVERSION=	2.01a25
+PORTVERSION?=	${CDRTLSVERSION}
 PORTREVISION?=	0
 CATEGORIES?=	sysutils audio
 MASTER_SITES=	ftp://ftp.berlios.de/pub/cdrecord/alpha/ \
 		ftp://ftp.cs.tu-berlin.de/pub/misc/cdrecord/alpha/
-DISTNAME=	cdrtools-2.01a24
+DISTNAME=	cdrtools-${CDRTLSVERSION}
 
 MAINTAINER=	marius@alchemy.franken.de
 COMMENT?=	Cdrecord and other programs to extract and record CDs/CD-R[W]s
@@ -62,14 +63,15 @@ PKGNAMESUFFIX?=	-devel
 .include <bsd.port.pre.mk>
 
 pre-everything::
-.if !defined(WITH_RSCSI)
+.if !defined(MKISOFS) && !defined(WITH_RSCSI)
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "You may use the following build option(s):"
 	@${ECHO_MSG} ""
-	@${ECHO_MSG} "WITH_RSCSI=yes		builds with rscsi which allows using SCSI-devices over"
-	@${ECHO_MSG} "			the network."
+	@${ECHO_MSG} "WITH_RSCSI=yes		builds with the rscsi daemon which provides access to"
+	@${ECHO_MSG} "			local SCSI-devices over the network (the client-side"
+	@${ECHO_MSG} "			in cdda2wav, cdrecord, etc. is built unconditionally)."
 	@${ECHO_MSG} "			BEWARE:	The rscsi binary gets installed suid root as"
-	@${ECHO_MSG} "			this is the preferred method to set it up."
+	@${ECHO_MSG} "				this is the preferred method to set it up."
 	@${ECHO_MSG} ""
 .endif
 
