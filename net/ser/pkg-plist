@@ -11,16 +11,19 @@ lib/ser/modules/dbtext.so
 lib/ser/modules/domain.so
 lib/ser/modules/enum.so
 lib/ser/modules/exec.so
+lib/ser/modules/ext.so
 lib/ser/modules/group.so
 lib/ser/modules/mangler.so
 lib/ser/modules/maxfwd.so
 lib/ser/modules/msilo.so
 lib/ser/modules/mysql.so
+lib/ser/modules/mediaproxy.so
 lib/ser/modules/nathelper.so
 lib/ser/modules/pa.so
 lib/ser/modules/pdt.so
 lib/ser/modules/permissions.so
 lib/ser/modules/pike.so
+lib/ser/modules/postgres.so
 lib/ser/modules/print.so
 lib/ser/modules/registrar.so
 lib/ser/modules/rr.so
@@ -50,6 +53,7 @@ share/doc/ser/README.dbtext
 share/doc/ser/README.domain
 share/doc/ser/README.enum
 share/doc/ser/README.exec
+share/doc/ser/README.ext
 share/doc/ser/README.group
 share/doc/ser/README.mangler
 share/doc/ser/README.maxfwd
@@ -59,6 +63,7 @@ share/doc/ser/README.pa
 share/doc/ser/README.pdt
 share/doc/ser/README.permissions
 share/doc/ser/README.pike
+share/doc/ser/README.postgres
 share/doc/ser/README.print
 share/doc/ser/README.registrar
 share/doc/ser/README.rr
