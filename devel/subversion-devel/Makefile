@@ -6,6 +6,7 @@
 
 PORTNAME=	subversion
 PORTVERSION=	r3987	# 0.16.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://subversion.tigris.org/files/documents/15/2123/
 
@@ -27,6 +28,9 @@ CONFIGURE_ARGS= --with-ssl \
 		--with-apr=${LOCALBASE} \
 		--with-apr-util=${LOCALBASE}
 
+MAN1= svn.1 svnadmin.1
+MANCOMPRESSED= no
+
 post-extract:
 	@${REINPLACE_CMD} 's/ldb/ldb4/g' ${WRKSRC}/configure
 
@@ -37,6 +41,11 @@ post-extract:
 post-configure:
 	@${REINPLACE_CMD} 's/install-swig-py-lib//g' ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} 's/swig-py-lib//g' ${WRKSRC}/Makefile
-	@${REINPLACE_CMD} 's/install-man install-info//g' ${WRKSRC}/Makefile
+
+post-install:
+.if !defined(NOPORTDOCS)
+	cd ${WRKSRC}/doc/book; \
+	${MAKE} INSTALL_DIR=${DOCSDIR} install-book
+.endif
 
 .include <bsd.port.mk>
