@@ -3992,6 +3992,7 @@ libjsearch	ports/x11-toolkits/libjsearch
 libjtoolbar	ports/x11-toolkits/libjtoolbar
 libjtree	ports/x11-toolkits/libjtree
 libksba		ports/security/libksba
+liblingoteach	ports/textproc/liblingoteach
 liblrdf		ports/textproc/liblrdf
 libltdl		ports/devel/libltdl
 liblug		ports/graphics/liblug
