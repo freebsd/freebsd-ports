@@ -1,0 +1,10 @@
+--- Makefile.am.orig	Sat Jul 14 14:58:55 2001
++++ Makefile.am	Sat Jul 14 14:59:44 2001
+@@ -47,7 +47,3 @@
+ 	tar zxf ruby-bsearch.tar.gz
+ 	cp ruby-bsearch/bsearch.rb .
+ 	rm -rf ruby-bsearch
+-
+-migemo.ja.html: migemo.ja.rd
+-	rd2 migemo.ja.rd > migemo.ja.html
+-

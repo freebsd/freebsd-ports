@@ -1,40 +1,16 @@
-lib/perl5/site_perl/%%PERL_VER%%/Lingua/Romkan.pm
-lib/perl5/site_perl/%%PERL_VER%%/Lingua/kanrom.pl
-lib/perl5/site_perl/%%PERL_VER%%/Lingua/romkan.pl
-lib/perl5/site_perl/%%PERL_VER%%/Lingua/romrom.pl
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Lingua/Romkan/.packlist
 %%EMACS_LIBDIR%%/site-lisp/migemo.el
 %%EMACS_LIBDIR%%/site-lisp/migemo.elc
-share/doc/migemo/english-1.png
-share/doc/migemo/english-2.png
-share/doc/migemo/english-3.png
-share/doc/migemo/english-4.png
-share/doc/migemo/english-5.png
-share/doc/migemo/english-6.png
-share/doc/migemo/kanji-1.png
-share/doc/migemo/kanji-2.png
-share/doc/migemo/kanji-3.png
-share/doc/migemo/kanji-4.png
-share/doc/migemo/katakana-1.png
-share/doc/migemo/katakana-2.png
-share/doc/migemo/katakana-3.png
-share/doc/migemo/katakana-4.png
-share/doc/migemo/katakana-5.png
-share/doc/migemo/line-across-1.png
-share/doc/migemo/line-across-2.png
-share/doc/migemo/line-across-3.png
-share/doc/migemo/line-across-4.png
-share/doc/migemo/line-across-5.png
-share/doc/migemo/migemo.html
-share/doc/migemo/zenkaku-1.png
-share/doc/migemo/zenkaku-2.png
-share/doc/migemo/zenkaku-3.png
-share/doc/migemo/zenkaku-4.png
-share/migemo/migemo-cache.pl
-share/migemo/migemo-dict
-share/migemo/migemo.pl
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Lingua
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Lingua/Romkan
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Lingua
+%%RUBY_SITELIBDIR%%/migemo.rb
+%%RUBY_SITELIBDIR%%/migemo-cache.rb
+%%RUBY_SITELIBDIR%%/migemo-convert.rb
+%%RUBY_SITELIBDIR%%/migemo-dict.rb
+%%RUBY_SITELIBDIR%%/migemo-index.rb
+share/doc/migemo/migemo.ja.html
 @dirrm share/doc/migemo
+share/migemo/migemo-dict
+share/migemo/migemo-dict.idx
+share/migemo/migemo-dict.cache
+share/migemo/migemo-dict.cache.idx
+share/migemo/user-dict.sample
+share/migemo/regex-dict.sample
 @dirrm share/migemo
