@@ -6,12 +6,10 @@
 #
 
 PORTNAME=	opennap
-PORTVERSION=	0.37
+PORTVERSION=	0.38
 CATEGORIES=	audio net
-MASTER_SITES=	ftp://download.sourceforge.net/pub/sourceforge/opennap/ \
-		ftp://ftp.darenet.dk/mirrors/mirror.linuxberg.com/files/console/servers/ \
-		ftp://ftp.netis.com/pub/mirrors2/linuxberg/files/console/servers/ \
-		ftp://ftp.sblug.com/pub/unix/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	dburr@FreeBSD.ORG
 
