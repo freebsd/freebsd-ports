@@ -1,0 +1,5 @@
+DateTime::Format::DateManip is a class that knows how to convert between
+Date::Manip dates and durations and DateTime and DateTime::Duration objects.
+Recurrences are note yet supported.
+
+WWW: http://datetime.perl.org/
