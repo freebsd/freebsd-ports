@@ -1,5 +1,8 @@
 bin/automake
+@unexec install-info --delete %D/info/automake.info %D/info/dir
 info/automake.info
+@exec [ -f %D/info/dir ] || sed -ne '1,/Menu:/p' /usr/share/info/dir > %D/info/dir
+@exec install-info %D/info/automake.info %D/info/dir
 share/automake/config.guess
 share/automake/config.sub
 share/automake/install-sh
