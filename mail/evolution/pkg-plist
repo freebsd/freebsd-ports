@@ -215,7 +215,7 @@ libexec/evolution/%%VERSION%%/evolution-addressbook-export
 libexec/evolution/%%VERSION%%/evolution-alarm-notify
 libexec/evolution/%%VERSION%%/killev
 share/gnome/applications/evolution-%%VERSION%%.desktop
-@exec update-desktop-database > /dev/null || /usr/bin/true
+@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 share/gnome/evolution/%%VERSION%%/addresstypes.xml
 share/gnome/evolution/%%VERSION%%/default/C/mail/local/Inbox
 share/gnome/evolution/%%VERSION%%/default/de/mail/local/Inbox
@@ -505,4 +505,4 @@ share/locale/zh_TW/LC_MESSAGES/evolution-%%VERSION%%.mo
 @dirrm include/evolution-%%VERSION%%/calendar/gui
 @dirrm include/evolution-%%VERSION%%/calendar
 @dirrm include/evolution-%%VERSION%%
-@unexec update-desktop-database > /dev/null || /usr/bin/true
+@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
