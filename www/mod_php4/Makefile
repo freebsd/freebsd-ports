@@ -3,7 +3,7 @@
 # Date created:         Fri Aug 25 16:42:36 CDT 1995
 # Whom:                 erich@rrnet.com
 #
-# $Id: Makefile,v 1.18 1996/10/26 18:49:52 markm Exp $
+# $Id: Makefile,v 1.19 1996/10/31 17:42:13 markm Exp $
 #
 
 DISTNAME=       apache_1.1.1
@@ -12,6 +12,39 @@ CATEGORIES+=	www
 MASTER_SITES=   ftp://www.apache.org/apache/dist/
 
 MAINTAINER=	ache@freebsd.org
+
+# User-controlled variables list
+# CHARSET_ACHE - add charset negotiation to .var files and charset guessing
+# DIR_ACHE - add SuppressHTMLPreamble option to directory index
+# ALL_ACHE - both patches from above
+# SECURE_SERVER - build Apache with SSL
+
+.if defined(ALL_ACHE)
+CHARSET_ACHE=YES
+DIR_ACHE=YES
+.endif
+.if defined(CHARSET_ACHE) || defined(DIR_ACHE)
+PATCH_SITES+=   http://www.nagual.ru/~ache/
+.endif
+.if defined(CHARSET_ACHE)
+PATCHFILES+=    mod.patch
+VERS_ID1=       charset/
+.endif
+.if defined(DIR_ACHE)
+PATCHFILES+=    dir.patch
+VERS_ID2=       dir/
+.endif
+.if defined(VERS_ID1) || defined(VERS_ID2)
+VERS_ID=        ${VERS_ID1}${VERS_ID2}ache
+.endif
+
+.if defined(VERS_ID)
+post-patch:
+	@cd ${WRKSRC}/src; \
+	mv httpd.h httpd.h.old; \
+	sed 's=SERVER_VERSION *"\(.*\)"=SERVER_VERSION "\1 '"${VERS_ID}"'"=' \
+	< httpd.h.old > httpd.h
+.endif
 
 .if defined(SECURE_SERVER)
 
