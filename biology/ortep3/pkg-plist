@@ -67,6 +67,7 @@ share/doc/ortep3/examples/xenate.hp
 share/doc/ortep3/examples/xenate.ps 
 share/doc/ortep3/man/000readme.txt
 share/doc/ortep3/man/instrsum.ps
+share/doc/ortep3/src/000readme.txt
 @dirrm share/doc/ortep3/examples
 @dirrm share/doc/ortep3/man
 @dirrm share/doc/ortep3/src
