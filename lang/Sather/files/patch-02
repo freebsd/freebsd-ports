@@ -7,7 +7,7 @@
   
 ! CPP= /lib/cpp -C -P
   RANLIB= ranlib
-! CC= gcc
+  CC= gcc
 ! CFLAGS= -O
   GC_CC= ${CC}
   MV= mv
@@ -23,7 +23,7 @@
   
 ! CPP= /usr/bin/cpp -C -P
   RANLIB= ranlib
-! CC= cc
+  CC= gcc
 ! CFLAGS= -O2
   GC_CC= ${CC}
   MV= mv
