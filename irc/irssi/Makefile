@@ -6,41 +6,110 @@
 #
 
 PORTNAME=	irssi
-PORTVERSION=	0.8.6
-PORTREVISION?=	3
-CATEGORIES+=	irc	# `+=' is for slave ports
+PORTVERSION=	0.8.8
+CATEGORIES=	irc
 MASTER_SITES=	http://irssi.org/files/
 
-MAINTAINER?=	vanilla@FreeBSD.org
-COMMENT?=	A modular IRC client with many features
+MAINTAINER=	vanilla@FreeBSD.org
+COMMENT=	A modular IRC client with many features
 
 USE_BZIP2=	yes
-USE_PERL5=	yes
-USE_GNOME=	glib12
 GNU_CONFIGURE=	yes
-# `+=' is for slave ports
-CONFIGURE_ARGS+=	--without-socks --without-bot --with-textui \
-		--with-perl-lib=site
+
+MAN1=		irssi.1
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_PROXY)
+# Set option defaults.
+
+.if ! defined(WITH_GLIB)
+.if exists(${LOCALBASE}/include/glib-2.0/glib.h)
+WITH_GLIB=	2
+.else
+WITH_GLIB=	1
+.endif
+.endif
+
+.if ! defined(WITH_PERL)
+WITH_PERL=	no
+.endif
+
+.if ! defined(WITH_PROXY)
+WITH_PROXY=	no
+.endif
+
+.if ! defined(WITH_SOCKS)
+WITH_SOCKS=	no
+.endif
+
+.if ! defined(WITH_IPV6)
+WITH_IPV6=	yes
+.endif
+
+.if ! defined(WITH_SSL)
+WITH_SSL=	yes
+.endif
+
+# Process options.
+
+.if ${WITH_GLIB} == "2"
+USE_GNOME=	glib20
+LIB_DEPENDS+=	gc.1:${PORTSDIR}/deve/boehm-gc
+CONFIGURE_ENV+=	CPPFLAGS=-I${PREFIX}/include
+CONFIGURE_ARGS+=	--with-gc
+.elif ${WITH_GLIB} == "1"
+CONFIGURE_ARGS+=	--with-glib1
+USE_GNOME=	glib12
+.else
+.error WITH_GLIB must be set to "1" or "2".
+.endif
+
+.if ${WITH_PERL:L} == "yes"
+USE_PERL5=	yes
+CONFIGURE_ARGS+=	--with-perl-lib=site
+PLIST_SUB+=	WITH_PERL=""
+.else
+CONFIGURE_ARGS+=	--without-perl
+PLIST_SUB+=	WITH_PERL="@comment "
+.endif
+
+.if ${WITH_PROXY:L} == "yes"
 CONFIGURE_ARGS+=	--with-proxy
 PLIST_SUB+=	WITH_PROXY=""
 .else
 PLIST_SUB+=	WITH_PROXY="@comment "
 .endif
 
-.if defined(WITH_IPV6)
-.if ${OSVERSION} >= 400014
-CONFIGURE_ARGS+= --enable-ipv6
-CATEGORIES+=	ipv6
-.endif
-.else
-CONFIGURE_ARGS+= --disable-ipv6
+.if ${WITH_SOCKS:L} == "yes"
+CONFIGURE_ARGS+=	--with-socks
 .endif
 
-MAN1=		irssi.1
+.if ${WITH_IPV6:L} == "yes"
+.if ${OSVERSION} >= 400014
+CONFIGURE_ARGS+=	--enable-ipv6
+CATEGORIES+=	ipv6
+.else
+.error This version of FreeBSD does not support IPv6. Please use WITH_IPV6=no.
+.endif
+.endif
+
+.if ${WITH_SSL:L} == "yes"
+USE_OPENSSL=	yes
+.else
+CONFIGURE_ARGS+=	--disable-ssl
+.endif
+
+pre-everything::
+	@${ECHO} ""
+	@${ECHO} "You may use the following build options:"
+	@${ECHO} ""
+	@${ECHO} "	WITH_GLIB=1|2		Select a GLib version to use [auto]"
+	@${ECHO} "	WITH_PERL=yes|no	Enable Perl support [no]"
+	@${ECHO} "	WITH_PROXY=yes|no	Enable irssi-proxy [no]"
+	@${ECHO} "	WITH_SOCKS=yes|no	Enable Socks support [no]"
+	@${ECHO} "	WITH_IPV6=yes|no	Enable IPv6 support [yes]"
+	@${ECHO} "	WITH_SSL=yes|no		Enable SSL support [yes]"
+	@${ECHO} ""
 
 pre-configure:
 	@cd ${WRKSRC} && ${MV} irssi.conf irssi.conf.sample

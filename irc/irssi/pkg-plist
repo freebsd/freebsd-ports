@@ -1,26 +1,26 @@
 bin/irssi
 etc/irssi.conf
 etc/irssi.conf.sample
-%%WITH_PROXY%%/lib/irssi/modules/libirc_proxy.a
-%%WITH_PROXY%%/lib/irssi/modules/libirc_proxy.la
-%%WITH_PROXY%%/lib/irssi/modules/libirc_proxy.so
-%%WITH_PROXY%%/lib/irssi/modules/libirc_proxy.so.0
-%%SITE_PERL%%/%%PERL_ARCH%%/Irssi.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Irssi/Irc.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Irssi/TextUI.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Irssi/UI.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Irssi/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Irssi/Irssi.bs
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Irssi/Irssi.so
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Irssi/Irc/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Irssi/Irc/Irc.bs
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Irssi/Irc/Irc.so
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Irssi/TextUI/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Irssi/TextUI/TextUI.bs
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Irssi/TextUI/TextUI.so
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Irssi/UI/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Irssi/UI/UI.bs
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Irssi/UI/UI.so
+%%WITH_PROXY%%lib/irssi/modules/libirc_proxy.a
+%%WITH_PROXY%%lib/irssi/modules/libirc_proxy.la
+%%WITH_PROXY%%lib/irssi/modules/libirc_proxy.so
+%%WITH_PROXY%%lib/irssi/modules/libirc_proxy.so.0
+%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/Irssi.pm
+%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/Irssi/Irc.pm
+%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/Irssi/TextUI.pm
+%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/Irssi/UI.pm
+%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Irssi/.packlist
+%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Irssi/Irssi.bs
+%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Irssi/Irssi.so
+%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Irssi/Irc/.packlist
+%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Irssi/Irc/Irc.bs
+%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Irssi/Irc/Irc.so
+%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Irssi/TextUI/.packlist
+%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Irssi/TextUI/TextUI.bs
+%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Irssi/TextUI/TextUI.so
+%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Irssi/UI/.packlist
+%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Irssi/UI/UI.bs
+%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Irssi/UI/UI.so
 share/doc/irssi/botnet.txt
 share/doc/irssi/design.txt
 share/doc/irssi/faq.html
@@ -56,6 +56,7 @@ share/irssi/help/disconnect
 share/irssi/help/echo
 share/irssi/help/eval
 share/irssi/help/exec
+share/irssi/help/flushbuffers
 share/irssi/help/format
 share/irssi/help/hash
 share/irssi/help/help
@@ -70,6 +71,7 @@ share/irssi/help/join
 share/irssi/help/kick
 share/irssi/help/kickban
 share/irssi/help/kill
+share/irssi/help/knock
 share/irssi/help/knockout
 share/irssi/help/lastlog
 share/irssi/help/layout
@@ -165,11 +167,11 @@ share/irssi/scripts/splitlong.pl
 share/irssi/scripts/usercount.pl
 share/irssi/themes/colorless.theme
 share/irssi/themes/default.theme
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Irssi/UI
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Irssi/TextUI
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Irssi/Irc
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Irssi
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Irssi
+%%WITH_PERL%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Irssi/UI
+%%WITH_PERL%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Irssi/TextUI
+%%WITH_PERL%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Irssi/Irc
+%%WITH_PERL%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Irssi
+%%WITH_PERL%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Irssi
 @dirrm lib/irssi/modules
 @dirrm lib/irssi
 @dirrm share/doc/irssi

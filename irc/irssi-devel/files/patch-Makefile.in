@@ -1,7 +1,7 @@
---- Makefile.in.orig	Sun Feb 17 12:02:33 2002
-+++ Makefile.in	Sun Feb 17 14:00:58 2002
-@@ -110,7 +110,7 @@
- SUBDIRS = src $(SERVERTEST) docs scripts
+--- Makefile.in.orig	Sun Nov 23 15:15:19 2003
++++ Makefile.in	Sun Nov 23 15:24:26 2003
+@@ -119,7 +119,7 @@
+ SUBDIRS = src docs scripts
  
  confdir = $(sysconfdir)
 -conf_DATA = irssi.conf
@@ -9,7 +9,7 @@
  
  themedir = $(datadir)/irssi/themes
  theme_DATA = default.theme colorless.theme
-@@ -452,8 +452,8 @@
+@@ -459,8 +459,8 @@
  
  config.h: default-config.h default-theme.h
  
