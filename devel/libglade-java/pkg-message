@@ -1,0 +1,7 @@
+************************************************************************
+Libglade-java was successfully installed.  In order to build and run GTK+
+Java applications, you must add the following to your CLASSPATH:
+
+%%JAVAJARDIR%%/glade%%GLADE_API_VERSION%%.jar
+
+************************************************************************
