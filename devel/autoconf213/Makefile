@@ -25,7 +25,7 @@ USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	M4=${PREFIX}/bin/gm4
 CONFIGURE_ARGS=	--program-suffix=213 --datadir=${PREFIX}/share/autoconf213
-WRKSRC=		${WRKDIR}/${PORTNAME}
+WRKSRC=		${WRKDIR}/autoconf
 
 post-install:
 	@install-info ${PREFIX}/info/autoconf.info ${PREFIX}/info/dir
