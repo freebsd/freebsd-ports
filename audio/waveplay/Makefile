@@ -16,7 +16,7 @@ COMMENT=	A simple wav file player
 
 MAN1=			waveplay.1
 MANLANG=		"" ja
-ONLY_FOR_ARCHS=		i386
+ONLY_FOR_ARCHS=		i386 amd64
 PLIST_FILES=		bin/waveplay
 
 do-install:
