@@ -1,0 +1,11 @@
+--- src/OpenH323n.dtf.orig	Sat Feb 19 11:25:47 2005
++++ src/OpenH323n.dtf	Sat Feb 19 11:26:53 2005
+@@ -15904,7 +15904,7 @@
+     ?RingLine@OpalLineInterfaceDevice@@UAEHIK@Z @8723 NONAME ;public: virtual int __thiscall OpalLineInterfaceDevice::RingLine(unsigned int,unsigned long)
+     ?RingLine@OpalVoipBlasterDevice@@UAEHIK@Z @13722 NONAME ;public: virtual int __thiscall OpalVoipBlasterDevice::RingLine(unsigned int,unsigned long)
+     ?ROWZAG@@3QBEB @8724 NONAME ;unsigned char const * const  ROWZAG
+-    ?RtpCallback@H323_H263Codec@@SAXPAXHH@Z @18805 NONAME ;public: static void __cdecl H323_H263Codec::RtpCallback(void *,int,int)
++    ?RtpCallback@H323_H263Codec@@SAXPAXHH@Z @18805 NONAME ;public: static void __cdecl H323_H263Codec::RtpCallback(AVCodecContext *,void *,int,int)
+     ?saveblks@Pre_Vid_Coder@@IAEXPAE@Z @8725 NONAME ;protected: void __thiscall Pre_Vid_Coder::saveblks(unsigned char *)
+     ?SelectDefaultLogicalChannel@H323Connection@@UAEXI@Z @8726 NONAME ;public: virtual void __thiscall H323Connection::SelectDefaultLogicalChannel(unsigned int)
+     ?SelectFastStartChannels@H323Connection@@UAEXIHH@Z @9303 NONAME ;public: virtual void __thiscall H323Connection::SelectFastStartChannels(unsigned int,int,int)
