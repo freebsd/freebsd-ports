@@ -6,8 +6,8 @@
 # $FreeBSD$
 #
 
-VERSION=	1.3.9
-RA_VERSION=	29.2
+VERSION=	1.3.11
+RA_VERSION=	29.3
 DISTNAME=       apache_${VERSION}
 PKGNAME=        ru-apache-${VERSION}
 CATEGORIES=	www russian
@@ -47,6 +47,7 @@ GZCAT=sh -c 'tar -zxf $$0 -C ${WRKSRC};${CAT} ${WRKSRC}/RA-1.3rusPL${RA_VERSION}
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	\
 		 --prefix=${PREFIX} \
+		 --server-gid=nogroup \
 		 --with-perl=${PERL} \
 		 --with-layout=${FILESDIR}/FreeBSD.layout:FreeBSD \
 		 --suexec-docroot=${PREFIX}/www/data \
