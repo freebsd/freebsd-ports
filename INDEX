@@ -9,19 +9,22 @@ archivers/zip/zip201:                   zip v 2.01. Create/update ZIP files whic
 archivers/zoo/zoo-2.10pl1:              zoo - manipulate archives of files in compressed form. Version 2.10pl1
 audio/gmod/gmod1.4:                     gmod - Gravis Ultrasound .MOD player
 audio/gsm/gsm-1.0.4:                    gsm - audio converter and library for converting u-law to gsm encoding
+audio/maplay/maplay1_2:                 maplay, an MPEG audio player/decoder that decodes layer I and layer II MPEG audio streams
 audio/nas/nas-1.2p1:                    nas - Network Audio System version 1.2 patchlevel 1
+audio/playmidi/playmidi:                Playmidi 1.1 - MIDI player
 audio/sox/sox10p11:                     sox - SOund eXchange - universal sound sample translator
-audio/tracker/tracker:                  Tracker 4.12 - MOD player
+audio/tracker/tracker:                  Tracker 4.27 - MOD player
 audio/xcd/xcd:                          xcd - a Tcl/Tk CD player
 audio/xcdplayer/xcdplayer-2.2:          XCdplayer 2.2
 cad/acs/acs016:                         ACS is a general purpose circuit simulator.
 cad/irsim/irsim-9.2:                    IRSIM 9.2
 cad/magic/magic-6.4.4:                  Magic CAD Tool 6.4.4
 cad/pcb/pcb-1.2.patch_02:               This is the Pcb Vers 1.2
+comms/ecu/ecu-3.33:                     Extended Call Utility version 3.33
 comms/flexfax/flexfax:                  flexfax fax software version 2.3 beta 036
 comms/mgetty+sendfax/mgetty-0.22:       mgetty+sendfax version 0.22 - handle external logins, send and receive faxes
 comms/seyon/Seyon-2.14b:                The Seyon communications package for the X Window system, version 2.14c
-databases/msql/msql-1.0:                msql version 1.0 - Mini SQL Database
+databases/msql/msql-1.0.5:              msql version 1.0 - Mini SQL Database
 devel/bison/bison-1.22:                 bison - GNU Project parser generator (yacc replacement)
 devel/gmake/make-3.72.1:                GNU make 3.72.1 (binary distribution)
 devel/libmalloc/malloc:                 Small, fast malloc library with comprehensive error checking
@@ -30,15 +33,22 @@ devel/mprof/mprof-3.0:                  Memory Profiler and Leak Detector, versi
 editors/axe/aXe-6.1.2:                  aXe-6.1.2 - aXe version 6.1.2
 editors/emacs/emacs-19.28:              GNU Emacs 19.28 text editor binaries
 editors/jove/jove-4.16beta:             This is the JOVE text editor, version 4.14.6.
+editors/mule/mule-2.2.2:                mule-2.2.2, a multilingual emacs
+editors/uemacs/uemacs:                  MicroEMACS version 3.12 -- a full screen editor
+editors/vile/vile-5.2:                  vile - VI Like Emacs.  a vi "workalike", with many additional features.
 editors/xemacs/xemacs-19.11:            X Emacs 19.11 text editor binaries
+editors/xvile/vile-5.2:                 xvile - VI Like Emacs, X11 version -- a fully "X aware" vi work-alike
+games/acm/acm:                          acm - A flight simulator for X11
 games/golddig/golddig:                  golddig - Getting the Gold and Avoiding Death
 games/jetpack/jetpack:                  jetpack: Arcade action game for X Windows
 games/oneko/oneko-1.1b:                 oneko, a cat chasing a mouse all over the screen
 games/xasteroids/xasteroids:            X windows based asteroids style arcade game
 games/xboard/xboard-3.2.pl0:            xboard, X user interface for GNU Chess and the Internet Chess Server
+games/xboing/xboing2.2:                 xboing - X windows arcade game.  Version 2.2
 games/xchomp/xchomp:                    Pac-man-like game under X Windows
 games/xinvaders/xinvaders:              Shoot-em-up them nasty little bugs.
 games/xjewel/xjewel-1.6:                xjewel - X windows droping jewels game.  Version 1.6
+games/xlife/xlife:                      xlife-3.0, John Horton Conway's Game of Life.
 games/xmille/xmille:                    X window mille bourne game
 games/xmine/xmine-1.0.3-Xaw:            The `Athena' port of the xminesweeper game
 games/xminesweep/xminesweep3.0:         xminesweep - X windows minesweeper game.  Version 3.0
@@ -48,10 +58,11 @@ games/xpipeman/xpipeman:                xpipeman - connect the pipes to stop the
 games/xrobots/xrobots:                  xrobots - fight off villainous robots (X Windows)
 games/xsol/xsol-new:                    xsol - solitare
 games/xtetris/xtetris-2.5.2:            Xtetris is a X Window block dropping game.
+graphics/ImageMagick/ImageMagick-3.5:   ImageMagick is an X11 package for display and interactive manipulation of images.
+graphics/dore/pdore-6.0:                Dore - The Dynamic Object Rendering Environment
 graphics/mpeg-lib/mpeg_lib-1.1:         MPEG Library - a collection of C routines to decode MPEG movies
 graphics/mpeg_play/mpeg_play-2.0:       mpeg_play version 2.0, a program to play mpeg movies on X displays
 graphics/netpbm/netpbm:                 Netpbm - a toolkit for conversion of images between different formats
-graphics/povray/POV-Ray-2.2:            POV-Ray 2.2 Persistence of Vision Ray Tracer
 graphics/jpeg/jpegsrc.v5a:              IJG's jpeg compresion utilities version 5
 graphics/tiff/v3.3beta021.src:          Libtiff is a library for reading and writing tiff data files encoded with the "Tag Image File" format
 graphics/xanim/xanim2683:               XAnim 2.68.3
@@ -60,12 +71,18 @@ graphics/xfig/xfig.3.1.3:               Xfig - A drawing program. Version 3.1.3
 graphics/xpaint/xpaint-2.1.1:           XPaint is a simple paint program.
 graphics/xpm/xpm-3.4d:                  xpm-3.4d - version 3.4d of the X Pixmap library
 graphics/xv/xv-3.10a:                   XV 3.10, an X11 program that displays images of various formats
+japanese/Canna/Canna32p1:               Canna 3.2p1 - Kana-Kanji convertion system
+japanese/Wnn/Wnn4.2:                    Wnn4.2, a Japanese/Chinese/Korean input method (only Japanese built)
+japanese/kterm/kterm-6.1.0:             kterm-6.1.0, an xterm that speaks Japanese
+japanese/nkf/nkf-1.5pl1:                nkf-1.5pl1, Network Kanji code conversion Filter
 lang/Gofer/gofer230a:                   gofer - a lazy functional language
-lang/STk/STk-2.1:                       STk is a scheme interpreter with full access to the Tk graphical package.
-lang/Sather/Sather-1.0.4:               ** No Description
+lang/STk/STk-2.1.6:                     STk is a scheme interpreter with full access to the Tk graphical package.
+lang/Sather/Sather-1.0.5:               ** No Description
 lang/forth/pfe099:                      forth - Implementation of ANSI Forth. Version 0.9.9
+lang/gcl/gcl-1.1:                       gcl - GNU Common Lisp
 lang/logo/ucblogo:                      ucblogo - Brian Harvey's logo language interpreter.
 lang/p2c/p2c-1.21alpha-07.Dec.93:       p2c - Pascal to C translator, version 1.21alpha-07.Dec.93
+lang/scheme48/scheme48-0.36:            Scheme 48 is the Scheme Underground's implementation of R4RS.
 lang/schemetoc/Scheme-to-C:             Scheme-to-C, a compiler and interpreter for compiling scheme into C.
 lang/scm/scm:                           Scm - a scheme interpreter
 lang/smalltalk/smalltalk-1.1.1:         GNU Smalltalk version 1.1.1
@@ -83,6 +100,7 @@ math/blas/blas:                         BLAS level 1, 2, and 3 (Basic Linear Alg
 math/calc/calc-2.9.3t6:                 calc - arbitrary precision calculator.  Version 2.9.3t6
 math/eispack/eispack:                   Eispack, Eigenvalue system package.
 math/fudgit/Fudgit_2.41:                fudgit - double-precision multi-purpose data-processing and fitting program
+math/gmp/gmp-1.3.2:                     GNU MP, a library for arbitrary precision arithmetic.
 math/gnuplot/gnuplot:                   Gnuplot - a command-driven interactive function plotting program. Version 3.5
 math/hexcalc/hexcalc:                   hexcalc, a multi-radix calculator for x11
 math/linpack/linpack:                   Linpack, Linear Algebra package.
@@ -91,8 +109,7 @@ math/xgraph/xgraph-11:                  xgraph ver. 11, a program that helps you
 net/archie/c-archie-1.4.1-FIXED:        archie - prospero client for the archie service
 net/cern_httpd/WWW:                     HTTPD (WWW) server from Cern (version 3.0)
 net/chimera/chimera-1.63:               chimera - X/Athena World-Wide Web Client. Version 1.63
-net/dgd/dgd-1.0.8:                      Dworkin's Game Driver (MUD server), version 1.0.8.
-net/dgd-lpmud/dgd-lpmud:                ** No Description
+net/dgd/dgd-1.0.9:                      Dworkin's Generic Driver (network server)
 net/fspclient/fspclient.0.0-h+:         fspclient - a client for the fsp service
 net/gated/gated-R3_5Alpha_9:            GateD routing protocol daemon (version 3.5 alpha)
 net/gopher/gopher2.1:                   gopher - client and server for access to a distributed document service.
@@ -101,19 +118,23 @@ net/irc/irc2.8.21:                      ircd, the 'Internet Relay Chat' Server. 
 net/ircII/ircii-2.8:                    ircII, the 'Internet Relay Chat' Client, Version 2.6
 net/ivs/ivs-3.3:                        IVS - INRIA Videoconference Software, version 3.3
 net/lynx/lynx2-3-7:                     lynx - A text/ascii oriented World-Wide Web Client. Version 2.3.7 BETA
-net/ncftp2/ncftp-2.0b17:                ** No Description
+net/ncftp2/ncftp-2.0.1:                 NcFTP 2.0.1 -- Internet file transfer program
 net/nv/nv-3.3beta:                      NV (MBONE video tool), version 3.3beta
 net/pcnfsd/pcnfsd.93.02.16:             pcnfsd(8) - Sun PC NFS authentication and printing server as of 93.02.16
 net/pidentd/pidentd-2.4.1:              pidentd - a RFC1413 identification server, version 2.4 alpha 2
 net/pmf/pmf-1.13.1:                     PMF (Padrone's Mud Frontend), version 1.13.1
+net/samba/samba-1.9.02:                 ** No Description
+net/scotty/scotty-1.2.0:                scotty - network management extensions to tcl v1.2.0
+patched to v1.2.2
 net/sup/sup:                            This is CMU's Software Update Protocol package
 net/tclDP/tcl-dp3.2:                    tcl-dp - distributed processing extensions for tcl and Tk
 net/tcp_wrapper/tcp_wrappers_7.2:       
 This is the 7.2 version of the TCP/IP daemon wrapper package.
 net/tcpblast/tcpblast:                  This is the TCPBLAST program.
+net/tkined/tkined-1.2.0:                tkined - a tk based network editor v 1.2.0
+Patched to v1.2.2
 net/tkWWW/tkWWW-0.12:                   tkWWW version 0.12, a WWW client based on Tcl/Tk.
 net/tintin++/tintin++v1.5pl6:           ** No Description
-net/wais/freeWAIS-0.3:                  freeWAIS 0.3 from CNIDR
 net/wu-ftpd/wu-ftpd-2.4:                wu-ftpd is a replacement ftp server for Un*x systems.
 net/xarchie/xarchie-2.0.10:             X11 front-end program for the archie network search service
 net/yale-tftpd/yale-tftpd:              Enhanced tftpd(8) from Yale University and cisco Systems
@@ -123,7 +144,6 @@ news/nn/nn-6.5.0.b3:                    NN newsreader, version 6.5.0.b3
 news/nntp/nntp-t5:                      NNTP with NOV support.
 news/trn/trn-3.6:                       TRN, Threaded Read News, newsreader 3.5
 news/inn/inn1.4sec:                     InterNetNews -- the Internet meets Netnews, Version 1.4
-print/ImageMagick/ImageMagick-3.5:      ImageMagick is an X11 package for display and interactive manipulation of images.
 print/a2ps/a2ps:                        a2ps - formats an ascii file for printing on a postscript printer. Version 4.3
 print/afm/afm:                          Adobe Font Metrics.
 print/dvi2xx/dvi2xx:                    dvilj2,                                 dvilj2p, dvilj, dviljp, dvi3812: convert dvi files to HP LaserJet or IBM 3812 format
@@ -141,42 +161,49 @@ print/texinfo/texinfo:                  texinfo:  typeset Texinfo files for prin
 print/transfig/transfig.3.1.1:          transfig - Tools to convert Xfig's .fig files. Version 3.1.1
 print/xdvi/xdvi:                        xdvi: a DVI Previewer for the X Window System. Patchlevel 18
 print/xtexshell/XTeXShell-0.91:         This is the XTeXShell Vers 0.91
-shells/bash/bash-1.14.3:                bash, the GNU Borne Again Shell.  Version 1.14.3
+shells/bash/bash-1.14.4:                bash, the GNU Borne Again Shell.  Version 1.14.4
 shells/pdksh/pdksh-5.1.3:               PD KSH v5.1.3 94/12/22 (binaries)
 shells/tcsh/tcsh-6.05:                  TCSH shell V6.05 (binaries)
+shells/zsh/zsh-2.6-beta4:               Zsh - the Z shell, version 2.6 beta 4
+utils/amanda/amanda-2.2.6:              Amanda, The Advanced Maryland Automatic Network Disk Archiver
+utils/colorls/colorls:                  colorls is an ls replacement that can use color to display file attributes.
 utils/cpm/cpm-1.1:                      Utility to transfer files from/to CP/M (R) diskettes.
 utils/hfs/hfs0_37:                      hfs - program for reading Macintosh HFS floppy disks, hard drives and CDROMs
 utils/iozone/iozone:                    IOZONE: Performance Test of Sequential File I/O  --  V2.01
 utils/ispell/ispell-3.1:                Ispell - an interactive spelling checker.    version 3.1
-utils/less/less-252:                    less 252 - a better more utility
+utils/less/less-278:                    less 278 - a better pager utility
 utils/mshell/mshell:                    Mshell: a Unix menuing shell
 utils/mtools/mtools-2.0.7:              Mtools  -  a collection of tools for manipulating MSDOS files. Version 2.0.7
-utils/nkf/nkf-1.4:                      nkf-1.4, Network Kanji code conversion Filter
-utils/rman/rman:                        rman - reverse compile man pages from formatted form to a number of source formats
+utils/rman/rman-2.0:                    rman - reverse compile man pages from formatted form to a number of source formats
 utils/screen/screen-3.6.1:              screen - a full-screen window manager
-utils/top/top-3.3beta4:                 Top 3.3 - A system monitoring utility
+utils/top/top-3.3:                      Top 3.3 - A system monitoring utility
+utils/tua/tua-4.0:                      TUA - The Uucp Analyzer. Version 4.0
 utils/xdu/xdu-3.0:                      xdu, graphically display output of du
 utils/xsysstats/xsysstats1.32:          xsysstats-1.32, a system information display tool
 x11/Xaw3d/Xaw3d-1.0:                    Xaw3d-1.0, a 3-D Athena Widget set that looks like Motif.
 x11/color_xterm/color_xterm:            R6 color xterm for XFree86-3.1 on FreeBSD-2.0
 x11/ctwm/ctwm-3.3:                      CTWM is an extension to twm, that support multiple virtual screens, and a lot of other goodies.
-x11/emu/emu-1.3:                        The emu terminal emulator for the X Window System, version 1.3
+x11/emiclock/EmiClock-1.0.2:            Emi Clock 1.0.2 - hyper animated face analog clock for X11
+x11/emu/emu-1.31:                       The emu terminal emulator for the X Window System, version 1.31
 x11/fvwm/fvwm:                          fvwm-1.23b - version 1.23b of of the fvwm window manager - requires XPM
-x11/kterm/kterm-6.1.0:                  kterm-6.1.0, an xterm that speaks Japanese
+x11/g3view/g3view-1.8:                  g3view - fast display of a g3 fax file in an X11 window
 x11/olvwm/olvwm4:                       OpenLook Virtual Window manager 
 x11/piewm/piewm:                        piewm, tvtwm with pie menus, where tvtwm is a virtual desktop twm
 x11/rxvt/rxvt-2.09:                     rxvt - a cut-down version of xterm for those with less memory
 x11/tk/tk3.6:                           TK (Tcl Tool Kit), version 3.6 (with shared libs)
 x11/tkhfs/tkhfs:                        tkhfs - a Tcl/Tk front end to the hfs program. 
-x11/tkman/tkman:                        tkman - a Tcl/Tk based manual browser
+x11/tkman/tkman-1.6:                    tkman - a Tcl/Tk based manual browser
 x11/tvtwm/tvtwm:                        tvtwm - a virtual desktop twm
 x11/x3270/x3270-3.0.3:                  3270 Terminal emulator (3.0.2.5)
+x11/xdaliclock/xdaliclock-2.05:         xdaliclock v 2.05 - a rather neat animated clock.
 x11/xearth/xearth-0.92:                 XEarth 0.92
 x11/xfed/xfed:                          xfed, a program that will let you edit X fonts (.bdf files)
-x11/xlockmore/xlockmore-1.14:           XLockmore (like XLock session locker/screen saver, but just more) v 1.14
+x11/xfm/xfm-1.3:                        xfm-1.3 - xfm version 1.3
+x11/xkeycaps/xkeycaps-2.28:             xkeycaps - graphically display and edit the keyboard mapping
+x11/xlockmore/xlockmore-2.7:            XLockmore (like XLock session locker/screen saver, but just more) v 1.14
+x11/xphoon/xphoon:                      xphoon sets X the root window to a picture of the moon in its current phase
 x11/xsnow/xsnow-1.39:                   Xsnow - create a snowy and Santa-y desktop
 x11/xview-config/xview-config:          Xview3.2 executables libs, includes, and man pages
 x11/xview-lib/xview-lib:                Xview3.2 executables libs, includes, and man pages
 x11/xview-clients/xview-clients:        Xview3.2 executables libs, includes, and man pages
 x11/blt/blt-1.7:                        BLT (Tk add-on), version 1.7 (with shared libs)
-x11/vic/vic-2.6:                        vic (MBONE video tool), version 2.6
