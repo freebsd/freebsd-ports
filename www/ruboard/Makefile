@@ -6,15 +6,13 @@
 #
 
 PORTNAME=	ruboard
-PORTVERSION=	1.2.1
-PORTREVISION=	1
+PORTVERSION=	1.2.2
 CATEGORIES=	www russian
 MASTER_SITES=	http://amsoft.ru/pub/ruboard/
 
-MAINTAINER=	am@amsoft.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A web based discussion board
 
-USE_PERL5_BUILD=yes
-USE_PERL5_RUN	=yes
+USE_PERL5=	yes
 
 .include <bsd.port.mk>
