@@ -1,0 +1,11 @@
+--- src/Makefile.in.orig	Fri Apr  9 14:10:34 2004
++++ src/Makefile.in	Fri Apr  9 14:10:59 2004
+@@ -218,7 +218,7 @@
+ 
+ # libtool stuff: set export symbols for resolving
+ tilp_LDFLAGS = $(LDFLAGS) $(no_undefined) #-lefence
+-tilp_CFLAGS = $(CLFAGS) -DGTK_DISABLE_DEPRECATED
++tilp_CFLAGS = $(CLFAGS)
+ subdir = src
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
