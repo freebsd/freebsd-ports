@@ -24,6 +24,10 @@ WANT_GNOME=	yes
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 500113
+BROKEN=		"Does not compile on FreeBSD ${OSVERSION}"
+.endif
+
 .if ${HAVE_GNOME:Mgnomelibs}!=""
 USE_GNOME+=	gnomelibs
 .endif
