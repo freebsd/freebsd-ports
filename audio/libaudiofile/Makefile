@@ -8,10 +8,9 @@
 PORTNAME=	libaudiofile
 PORTVERSION=	0.2.3
 CATEGORIES=	audio
-MASTER_SITES=	ftp://ftp.68k.org/pub/michael/ \
-		ftp://oss.sgi.com/projects/audiofile/download/ \
+MASTER_SITES=	ftp://oss.sgi.com/projects/audiofile/download/ \
 		${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/libaudiofile/0.2
+MASTER_SITE_SUBDIR=	sources/audiofile/0.2
 DISTNAME=	audiofile-${PORTVERSION}
 
 MAINTAINER=	gnome@FreeBSD.org
