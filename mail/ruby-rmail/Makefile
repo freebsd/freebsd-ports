@@ -5,12 +5,12 @@
 # $FreeBSD$
 #
 
-PORTNAME=	mail
-PORTVERSION=	0.7
+PORTNAME=	rmail
+PORTVERSION=	0.8
 CATEGORIES=	mail ruby
 MASTER_SITES=	http://www.lickey.com/rubymail/download/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
-DISTNAME=	ruby${PORTNAME}-${PORTVERSION}
+DISTNAME=	rubymail-${PORTVERSION}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
@@ -19,19 +19,12 @@ USE_RUBY=	yes
 
 NO_BUILD=	yes
 
-RUBY_SHEBANG_FILES=	${WRKSRC}/bin/*.rb
-
 DOCS=		NEWS README THANKS doc
-EXAMPLES=	bin/*.rb dot.rdeliver
 
 do-install:
-	${MKDIR} ${RUBY_SITELIBDIR}/mail
-	${CP} -R ${WRKSRC}/mail/* ${RUBY_SITELIBDIR}/mail/
+	${MKDIR} ${RUBY_SITELIBDIR}/${PORTNAME}
+	${CP} -R ${WRKSRC}/${PORTNAME}/* ${RUBY_SITELIBDIR}/${PORTNAME}/
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${RUBY_EXAMPLESDIR}/${PORTNAME}
-.for f in ${EXAMPLES}
-	${INSTALL_SCRIPT} ${WRKSRC}/${f} ${RUBY_EXAMPLESDIR}/${PORTNAME}/
-.endfor
 	${MKDIR} ${RUBY_DOCDIR}/${PORTNAME}
 .for f in ${DOCS}
 	${CP} -R ${WRKSRC}/${f} ${RUBY_DOCDIR}/${PORTNAME}/
