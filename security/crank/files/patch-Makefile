@@ -1,0 +1,31 @@
+--- Makefile.in.orig	Thu Aug  9 17:05:12 2001
++++ Makefile.in	Thu Aug  9 17:05:54 2001
+@@ -7,9 +7,8 @@
+ prefix=@prefix@
+ exec_prefix = @exec_prefix@
+ VERSION = $(shell cat VERSION)
+-CC = gcc
+ PLUGIN-INSTALL = @libdir@/crank/plugins
+-CFLAGS = -O2 -Wall @GTK_CFLAGS@ -DPLUGIN_DIR=\"$(PLUGIN-INSTALL)\"
++CFLAGS += -Wall @GTK_CFLAGS@ -DPLUGIN_DIR=\"$(PLUGIN-INSTALL)\"
+ LIBS  = @GTK_LIBS@
+ OBJFILES = $(patsubst %.c,%.o,$(wildcard *.c))
+ PLUGIN-INSTALL = @libdir@/crank/plugins
+@@ -19,7 +18,7 @@
+           $(PLUGIN-SRC)/statistics.n-grams.so \
+           $(PLUGIN-SRC)/text.simple-filters.so \
+           $(PLUGIN-SRC)/utilities.notepad.so
+-TMPDIR = /usr/tmp
++TMPDIR = /tmp
+ 
+ # Files for source distribution
+ DISTFILES = *.[ch] Makefile.in Makefile.mingw AUTHORS README BUGS VERSION \
+@@ -40,7 +39,7 @@
+ all: crank plugin
+ 
+ crank: $(OBJFILES)
+-	$(CC) $(CFLAGS) $(LIBDIR) -o $@ $(OBJFILES) $(LIBS)
++	$(CC) $(CFLAGS) -o $@ $(OBJFILES) $(LIBS)
+ 
+ $(OBJFILES) : crank.h
+ 
