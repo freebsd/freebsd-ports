@@ -1,0 +1,26 @@
+--- sio/Makefile.in.orig	Fri Jun 28 03:09:26 2002
++++ sio/Makefile.in	Fri Jul  5 11:26:55 2002
+@@ -64,15 +64,19 @@
+ 	chmod a+r $(PREFIX)/lib/$(LIB) $(PREFIX)/include/sio.h $(PREFIX)/include/usio.h
+ 	-@/bin/ls -l $(PREFIX)/lib/$(LIB) $(PREFIX)/include/sio.h $(PREFIX)/include/usio.h
+ 
++dynamic: $(LIBSO)
++
+ shared: $(LIBSO)
+ 
+ so: $(LIBSO)
+ 
+ $(LIBSO): $(SOBJS)
+-	/bin/rm -f $(LIBSO)
+-	gcc -shared -Wl,-soname,$(LIBSO) -o $(LIBSO) $(SOBJS)
+-	chmod a+r $(LIB) sio.h usio.h
+-	-@/bin/ls -l $(LIBSO)
++	/bin/rm -f $(LIBSO) $(LIBSOS)
++	$(CC) -shared "-Wl,-soname,$(LIBSO)" -o "$(LIBSO)" $(SOBJS)
++	$(CC) -shared -Wl,-x -o $(LIBSO) `lorder $(SOBJS) | tsort -q`
++	chmod a+r $(LIBSO) sio.h usio.h
++	/bin/ln -s "$(LIBSO)" "$(LIBSOS)"
++	-@/bin/ls -l "$(LIBSOS)" "$(LIBSO)"
+ 
+ soinstall: $(LIBSO)
+ 	cp $(LIBSO) $(PREFIX)/lib/$(LIBSO)
