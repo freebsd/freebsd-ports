@@ -2,9 +2,11 @@
 # Version required:			1.6.1
 # Date created:				5 November 1996
 # Whom:					fenner
+#
+# $Id:$
 
 DISTNAME=	geomview-1.6.1
-CATEGORIES=	graphics
+CATEGORIES=	graphics tk42
 MASTER_SITES=	ftp://ftp.geom.umn.edu/pub/software/geomview/	\
 		ftp://ftp-sfb288.math.tu-berlin.de/pub/geomview/
 DISTFILES=	geomview-1.6.1-src.tar.gz
@@ -12,9 +14,8 @@ DISTFILES=	geomview-1.6.1-src.tar.gz
 MAINTAINER=	fenner@freebsd.org
 
 LIB_DEPENDS=	xforms\\.0:${PORTSDIR}/x11/xforms \
-		MesaGL\\.13:${PORTSDIR}/graphics/Mesa
-
-BROKEN=		tcl
+		MesaGL\\.13:${PORTSDIR}/graphics/Mesa \
+		tk42:${PORTSDIR}/x11/tk42
 
 WRKSRC=		${WRKDIR}/Geomview
 REQUIRES_MOTIF=	yes
@@ -30,12 +31,15 @@ MAN3=		anytopl.3 bdy.3 fsaparse.3 geomutil.3 lisp.3 plcombine.3 \
 MAN5=		discgrp.5 geomview.5 oogl.5
 
 # Set CPU type for Geomview make
-# Add ${.CURDIR}/files to PATH for "make install"
+# Add ${FILESDIR} to PATH for "make install"
 # Allow user to specify "make install MAPLE_LIB=foo" as geomview wants
-MAKE_ENV=	CPU=FreeBSD PATH=${.CURDIR}/files:${PATH} MAPLE_LIB=${MAPLE_LIB}
+MAKE_ENV=	CPU=FreeBSD PATH=${FILESDIR}:${PATH} MAPLE_LIB=${MAPLE_LIB}
+
+post-extract:
+	/bin/chmod +x ${FILESDIR}/nroff
 
 pre-install:
-	${MKDIR} -p ${PREFIX}/share/geomview
+	${MKDIR} ${PREFIX}/share/geomview
 
 # Geomview presumes that you're installing in the source directory,
 # so massive parts of the source directory have to be copied to the
@@ -55,16 +59,16 @@ LIBEXEC_DIRS=	modules bin
 CHOWN?=		/usr/sbin/chown
 
 post-install:
-	${MKDIR} -p ${PREFIX}/info
+	${MKDIR} ${PREFIX}/info
 .for i in ${INFO_FILES}
 	${INSTALL_DATA} ${WRKSRC}/doc/${i} ${PREFIX}/info
 .endfor
 .if !defined(NOPORTDOCS)
-	${MKDIR} -p ${PREFIX}/share/doc/geomview
+	${MKDIR} ${PREFIX}/share/doc/geomview
 .for i in ${DOC_FILES}
 	${INSTALL_DATA} ${WRKSRC}/doc/${i} ${PREFIX}/share/doc/geomview
 .endfor
-	${MKDIR} -p ${PREFIX}/share/examples/geomview
+	${MKDIR} ${PREFIX}/share/examples/geomview
 .for i in ${EXAMPLE_FILES}
 	${INSTALL_DATA} ${WRKSRC}/doc/${i} ${PREFIX}/share/examples/geomview
 .endfor
@@ -74,13 +78,13 @@ post-install:
 .endfor
 .for i in ${SHARE_DIRS}
 	${RM} -rf ${PREFIX}/share/geomview/${i}
-	${MKDIR} -p ${PREFIX}/share/geomview/${i}
+	${MKDIR} ${PREFIX}/share/geomview/${i}
 	${CP} -pr ${WRKSRC}/${i} ${PREFIX}/share/geomview
 	${CHOWN} -R ${SHAREOWN}.${SHAREGRP} ${PREFIX}/share/geomview/${i}
 .endfor
 .for i in ${LIBEXEC_DIRS}
 	${RM} -rf ${PREFIX}/libexec/geomview/${i}
-	${MKDIR} -p ${PREFIX}/libexec/geomview/${i}
+	${MKDIR} ${PREFIX}/libexec/geomview/${i}
 	${CP} -pr ${WRKSRC}/${i} ${PREFIX}/libexec/geomview/
 	${CHOWN} -R ${BINOWN}.${BINGRP} ${PREFIX}/libexec/geomview/${i}
 .endfor
