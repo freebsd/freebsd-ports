@@ -1,0 +1,11 @@
+--- ghost.cc.orig	Sun Jan  9 01:50:15 2000
++++ ghost.cc	Sun Jan  9 01:50:37 2000
+@@ -165,7 +165,7 @@
+ 	    }
+ }
+ 
+-Ghost::go(Pacman *pac) {	//go for pacman: do ghost code
++int Ghost::go(Pacman *pac) {	//go for pacman: do ghost code
+ typ w;				//what type is at next coordinates
+ int i=1;			//moved or not?
+ int xx,yy;			//coordinates
