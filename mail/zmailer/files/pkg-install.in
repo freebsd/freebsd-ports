@@ -1,0 +1,4 @@
+#!/bin/sh
+if [ "$2" = POST-INSTALL ]; then
+  %%PREFIX%%/sbin/post-install
+fi

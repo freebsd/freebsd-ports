@@ -1,0 +1,10 @@
+--- Makefile.in.orig	Wed Apr 14 17:22:31 2004
++++ Makefile.in	Wed Apr 14 17:23:04 2004
+@@ -130,6 +130,7 @@
+ 	@cd transports ; $(MAKE) $(MFLAGS) install
+ 	@cd libc  ;      $(MAKE) $(MFLAGS) install
+ 	@cd utils ;      $(MAKE) $(MFLAGS) install
++	@cd man ;      $(MAKE) $(MFLAGS) install
+ 	$(MAKE) $(MFLAGS) post-install-note
+ 
+ post-install-note:

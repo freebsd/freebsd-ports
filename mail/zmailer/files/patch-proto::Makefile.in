@@ -1,0 +1,21 @@
+--- proto/Makefile.in.orig	Fri Oct 24 23:33:43 2003
++++ proto/Makefile.in	Fri Apr 16 13:43:29 2004
+@@ -91,10 +91,6 @@
+ 		echo $(MKDIR) $(DESTDIR)$$MAILBIN/ta &&		\
+ 			$(MKDIR) $(DESTDIR)$$MAILBIN/ta ;	\
+ 	fi ;							\
+-	if [ ! -d $(DESTDIR)$$MAILBIN/bak ]; then		\
+-		echo $(MKDIR) $(DESTDIR)$$MAILBIN/bak &&		\
+-			$(MKDIR) $(DESTDIR)$$MAILBIN/bak ;	\
+-	fi ;							\
+ 	if [ ! -d $(DESTDIR)$$POSTOFFICE ]; then			\
+ 		echo $(MKDIR) $(DESTDIR)$$POSTOFFICE &&		\
+ 			$(MKDIR) $(DESTDIR)$$POSTOFFICE ;	\
+@@ -130,7 +126,6 @@
+ 
+ mailbin: $(PZCONFIG) $(PMAILBIN) $(MD5SUM)
+ 	-@(. $(PZCONFIG) ;					\
+-	if [ ! -d $(DESTDIR)$$MAILBIN/bak ]; then $(MKDIR) $(DESTDIR)$$MAILBIN/bak ; fi ; \
+ 	for file in $(PMAILBIN) ;				\
+ 	do							\
+ 		name=`expr $$file : '\([^.]*\)'` ;		\
