@@ -1,6 +1,32 @@
---- main.c.orig	Tue Sep  9 01:24:31 2003
-+++ main.c	Tue Sep  9 01:29:26 2003
-@@ -448,29 +448,17 @@
+--- main.c.orig	Wed Oct 15 05:58:41 2003
++++ main.c	Wed Oct 15 06:02:22 2003
+@@ -9,7 +9,7 @@
+ /* +-------------------------------------------------------------------+ */
+ 
+ #include <stdio.h>
+-#include <varargs.h>
++#include <stdarg.h>
+ #include <syslog.h>
+ #include <pwd.h>
+ #include <grp.h>
+@@ -170,14 +170,11 @@
+ 	return Go(new, num, argc, argv);
+ }
+ 
+-fatal(va_alist)
+- va_dcl
++fatal(char *s,...)
+ {
+ 	va_list	ap;
+-	char	*s;
+ 
+-	va_start(ap);
+-	s = va_arg(ap, char *);
++	va_start(ap,s);
+ 	vfprintf(stderr, s, ap);
+ 	fputc('\n', stderr);
+ 	va_end(ap);
+@@ -448,29 +445,17 @@
  	char		*cp, *np;
  	struct passwd	*pw;
  	struct group	*gr;
@@ -32,7 +58,7 @@
  				gidset[ngroups++] = gr->gr_gid;
  		}
  		if (ngroups == 0) 
-@@ -533,6 +521,18 @@
+@@ -533,6 +518,18 @@
  			new_envp[curenv++] = environ[i];
  	}
  	new_envp[curenv] = NULL;
