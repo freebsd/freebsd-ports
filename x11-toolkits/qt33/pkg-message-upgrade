@@ -1,9 +1,0 @@
-
-===> *****************************************************************
-===> WARNING!!!
-===> If you are upgrading to 3.0.5 from Qt version 3.0 - 3.0.4, you
-===> must rebuild/reinstall kdelibs after installing the new Qt version, 
-===> or attempts to build kdebase will fail. We recommended to
-===> rebuild all kde packages, starting with kdelibs, after such an
-===> upgrade. This is a one time procedure only.
-===> *****************************************************************

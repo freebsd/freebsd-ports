@@ -55,7 +55,6 @@ PLIST_SUB+=	OPENGL=""
 PKGNAMESUFFIX=	-opengl
 BROKEN=	"Using WITH_OPENGL causes DRI to fail in mysterious ways"
 .else
-PKGMESSAGE=	pkg-message-upgrade
 PLIST_SUB+=	OPENGL="@comment "
 CONFIGURE_ARGS+=-disable-opengl
 .endif
@@ -74,12 +73,6 @@ CFLAGS+=	-O0
 BROKEN=		"The QT 3.x port does not support any XFree86 < 4.x"
 .endif
 
-.if defined(BATCH) || defined(PACKAGE_BUILDING)
-SLEEP=${TRUE}
-.else
-SLEEP=/bin/sleep
-.endif
-
 pre-fetch:
 .if exists(${X11BASE}/include/qt2/qapp.h)
 	@${ECHO}
@@ -90,7 +83,7 @@ pre-fetch:
 	@${FALSE}
 .endif
 
-# Remove unneeded dirs (speedup) and fake netscape files.
+# Remove unneeded dirs (speedup) and netscape files (build barfs).
 post-patch:
 	@${FIND} ${WRKSRC} -name CVS | ${XARGS} ${RM} -fr
 	@${RM} -fr ${WRKSRC}/examples ${WRKSRC}/tutorial
@@ -124,12 +117,5 @@ pre-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/tools/qembed/qembed ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/tools/qvfb/qvfb ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/findtr ${PREFIX}/bin
-
-.if exists(${PKGMESSAGE})
-# Display another GL advisory. This one goes in the package, too.
-post-install::
-	@${CAT} ${PKGMESSAGE}
-	@${SLEEP} 10
-.endif
 
 .include <bsd.port.post.mk>
