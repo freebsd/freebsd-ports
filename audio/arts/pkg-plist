@@ -5,7 +5,6 @@ bin/artsdsp
 bin/artsplay
 bin/artsrec
 bin/artsshell
-bin/artswrapper
 bin/mcopidl
 include/arts/anyref.h
 include/arts/artsflow.h
@@ -158,3 +157,8 @@ lib/mcop/soundserver.mcopclass
 lib/mcop/soundserver.mcoptype
 lib/mcop/x11globalcomm.mcopclass
 lib/mcop/x11globalcomm.mcoptype
+@dirrm lib/mcop/Arts
+@dirrm lib/mcop
+@dirrm include/artsc
+@dirrm include/arts/gsl
+@dirrm include/arts

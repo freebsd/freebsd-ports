@@ -16,8 +16,6 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Additional applets for Kicker
 
-IGNORE=		This port is part of KDE 3.2.1 and is not yet ready
-
 KDE_SPLIT=	${KICKERAPPLETS_PORTNAME:S/${KDE_SPLIT_DIST}-//}
 USE_KDEBASE_VER=3
 USE_KDELIBS_VER=3

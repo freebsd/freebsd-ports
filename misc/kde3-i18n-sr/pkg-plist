@@ -559,8 +559,6 @@ share/locale/sr/LC_MESSAGES/webarchiver.mo
 share/locale/sr/charset
 share/locale/sr/entry.desktop
 share/locale/sr/flag.png
-@dirrm share/locale/sr/LC_MESSAGES
-@dirrm share/locale/sr
 @dirrm share/doc/HTML/sr/khelpcenter
 @dirrm share/doc/HTML/sr/common
 @dirrm share/doc/HTML/sr

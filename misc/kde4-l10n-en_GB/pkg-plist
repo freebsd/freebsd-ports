@@ -201,6 +201,8 @@ share/doc/HTML/en_GB/kdm/kdmrc-ref.docbook
 share/doc/HTML/en_GB/kfind/common
 share/doc/HTML/en_GB/kfind/index.cache.bz2
 share/doc/HTML/en_GB/kfind/index.docbook
+share/doc/HTML/en_GB/khelpcenter/common
+share/doc/HTML/en_GB/khelpcenter/contact.docbook
 share/doc/HTML/en_GB/khelpcenter/faq/about.docbook
 share/doc/HTML/en_GB/khelpcenter/faq/common
 share/doc/HTML/en_GB/khelpcenter/faq/configkde.docbook
@@ -224,9 +226,14 @@ share/doc/HTML/en_GB/khelpcenter/glossary/common
 share/doc/HTML/en_GB/khelpcenter/glossary/index.cache.bz2
 share/doc/HTML/en_GB/khelpcenter/glossary/index.docbook
 share/doc/HTML/en_GB/khelpcenter/glossary/kdeprintingglossary.docbook
+share/doc/HTML/en_GB/khelpcenter/help.docbook
+share/doc/HTML/en_GB/khelpcenter/index.cache.bz2
+share/doc/HTML/en_GB/khelpcenter/index.docbook
+share/doc/HTML/en_GB/khelpcenter/links.docbook
 share/doc/HTML/en_GB/khelpcenter/quickstart/common
 share/doc/HTML/en_GB/khelpcenter/quickstart/index.cache.bz2
 share/doc/HTML/en_GB/khelpcenter/quickstart/index.docbook
+share/doc/HTML/en_GB/khelpcenter/support.docbook
 share/doc/HTML/en_GB/khelpcenter/userguide/about-desktop.docbook
 share/doc/HTML/en_GB/khelpcenter/userguide/common
 share/doc/HTML/en_GB/khelpcenter/userguide/first-impressions.docbook
@@ -255,6 +262,8 @@ share/doc/HTML/en_GB/khelpcenter/userguide/ug-faq.docbook
 share/doc/HTML/en_GB/khelpcenter/visualdict/common
 share/doc/HTML/en_GB/khelpcenter/visualdict/index.cache.bz2
 share/doc/HTML/en_GB/khelpcenter/visualdict/index.docbook
+share/doc/HTML/en_GB/khelpcenter/welcome.docbook
+share/doc/HTML/en_GB/khelpcenter/whatiskde.docbook
 share/doc/HTML/en_GB/kicker/common
 share/doc/HTML/en_GB/kicker/index.cache.bz2
 share/doc/HTML/en_GB/kicker/index.docbook

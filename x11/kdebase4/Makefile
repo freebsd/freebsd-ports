@@ -8,10 +8,9 @@
 
 PORTNAME=	kdebase
 PORTVERSION=	${KDE_VERSION}
-PORTREVISION=	1
 CATEGORIES=	x11 kde
 MASTER_SITES=	${MASTER_SITE_KDE}
-MASTER_SITE_SUBDIR=	stable/${PORTVERSION:S/.0//}/src
+MASTER_SITE_SUBDIR=	stable/${PORTVERSION}/src
 DIST_SUBDIR=	KDE
 
 MAINTAINER=	kde@FreeBSD.org
@@ -39,37 +38,53 @@ CONFIGURE_ARGS+=--without-java			\
 		--with-qt-dir=${X11BASE}	\
 		--with-xdmdir=${X11BASE}/lib/X11/xdm
 
+OPTIONS=	ARTSWRAPPER "Suid wrapper for aRts, req'd for realtime prio" on \
+		MOTIF       "Support Netscape plugins, requires openmotif" on
+
 .include "${.CURDIR}/../../x11/kde3/Makefile.kde"
 .include <bsd.port.pre.mk>
 
-.if defined(WITHOUT_MOTIF)
-CONFIGURE_ARGS+=	--without-motif
-.else
+.if exists(${X11BASE}/bin/mwm)
+.	if	!defined(WITH_MOTIF)
+MOTIF_OVERRIDE=	yes
+WITH_MOTIF=	yes
+.	endif
+.endif
+
+.if defined(WITH_ARTSWRAPPER)
+RUN_DEPENDS+=	artswrapper:${PORTSDIR}/audio/artswrapper
+.endif
+
+.if defined(WITH_MOTIF)
 USE_MOTIF=	yes
 PLIST_APPEND+=	plist.motif
+.else
+CONFIGURE_ARGS+=	--without-motif
+.endif
 
-pre-extract::
+pre-everything::
+.if defined(MOTIF_OVERRIDE)
 	@${ECHO_MSG}
-	@${ECHO_MSG} "If you want to compile WITHOUT Motif support, hit"
-	@${ECHO_MSG} "Ctrl-C right now and use \"make WITHOUT_MOTIF=yes\""
+	@${ECHO_MSG} "*******************************************************"
+	@${ECHO_MSG} "*  openmotif is installed but WITH_MOTIF is not set!  *"
+	@${ECHO_MSG} "*     WITH_MOTIF has been enabled automatically.      *"
+	@${ECHO_MSG} "*******************************************************"
 	@${ECHO_MSG}
-	@${ECHO_MSG} "This will DISABLE netscape plugin compatibility."
-	@${ECHO_MSG}
-.endif # defined(WITHOUT_MOTIF)
+.endif
 
 post-extract:
 	@${ECHO} "#!/bin/sh" > ${WRKSRC}/mkpamserv
 	@${ECHO} "exit 0" >> ${WRKSRC}/mkpamserv
 
 post-configure:
-	${REINPLACE_CMD} -e "s@genkdmconf --in@genkdmconf --no-old --in@" \
-		${WRKSRC}/kdm/kfrontend/Makefile
 	${REINPLACE_CMD} -e "s@^\s*Exec=.*\$$@Exec=ElectricEyes@" \
 		${WRKSRC}/kappfinder/apps/Graphics/ElectricEyes.desktop
 	${REINPLACE_CMD} -e 's/444/644/g' \
 		${WRKSRC}/kdesktop/init/Templates/Makefile
 
 post-install:
+	${LOCALBASE}/bin/genkdmconf --no-old --in ${PREFIX}/share/config/kdm/default
+	${LOCALBASE}/bin/genkdmconf --no-backup --no-old-scripts --in ${PREFIX}/share/config/kdm
 	${RM} -f ${PREFIX}/share/apps/konsole/linux.desktop
 	${CHMOD} u+s ${PREFIX}/bin/kcheckpass
 	${CHGRP} kmem ${PREFIX}/bin/ksysguardd && \

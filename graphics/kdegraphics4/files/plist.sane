@@ -19,12 +19,15 @@ lib/libkscan.so
 lib/libkscan.so.1
 share/applications/kde/kooka.desktop
 share/apps/kooka/kookaui.rc
+share/apps/kooka/pics/gocr.png
+share/apps/kooka/pics/lockzoom.png
 share/apps/kooka/pics/mirror-both.png
 share/apps/kooka/pics/mirror-horiz.png
 share/apps/kooka/pics/mirror-vert.png
 share/apps/kooka/pics/newfromselect.png
 share/apps/kooka/pics/ocr-select.png
 share/apps/kooka/pics/ocr.png
+share/apps/kooka/pics/ocrad.png
 share/apps/kooka/pics/scaleorig.png
 share/apps/kooka/pics/scaletoheight.png
 share/apps/kooka/pics/scaletowidth.png

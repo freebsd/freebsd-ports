@@ -80,9 +80,19 @@ share/doc/HTML/fr/artsbuilder/tools.docbook
 share/doc/HTML/fr/atlantik/common
 share/doc/HTML/fr/atlantik/index.cache.bz2
 share/doc/HTML/fr/atlantik/index.docbook
+share/doc/HTML/fr/cervisia/annotate.png
+share/doc/HTML/fr/cervisia/checkout.png
+share/doc/HTML/fr/cervisia/commit.png
 share/doc/HTML/fr/cervisia/common
+share/doc/HTML/fr/cervisia/diff.png
+share/doc/HTML/fr/cervisia/history.png
+share/doc/HTML/fr/cervisia/import.png
 share/doc/HTML/fr/cervisia/index.cache.bz2
 share/doc/HTML/fr/cervisia/index.docbook
+share/doc/HTML/fr/cervisia/logtree.png
+share/doc/HTML/fr/cervisia/mainview.png
+share/doc/HTML/fr/cervisia/resolve.png
+share/doc/HTML/fr/cervisia/updatetag.png
 share/doc/HTML/fr/common/1.png
 share/doc/HTML/fr/common/10.png
 share/doc/HTML/fr/common/2.png
@@ -220,6 +230,12 @@ share/doc/HTML/fr/kbounce/index.docbook
 share/doc/HTML/fr/kbounce/jezball_corridor1.png
 share/doc/HTML/fr/kbounce/jezball_corridor2.png
 share/doc/HTML/fr/kbounce/jezball_newWall.png
+share/doc/HTML/fr/kbruch/checked.png
+share/doc/HTML/fr/kbruch/common
+share/doc/HTML/fr/kbruch/gui_main.png
+share/doc/HTML/fr/kbruch/index.cache.bz2
+share/doc/HTML/fr/kbruch/index.docbook
+share/doc/HTML/fr/kbruch/reduced.png
 share/doc/HTML/fr/kbugbuster/common
 share/doc/HTML/fr/kbugbuster/index.cache.bz2
 share/doc/HTML/fr/kbugbuster/index.docbook
@@ -264,6 +280,9 @@ share/doc/HTML/fr/kcontrol/crypto/index.docbook
 share/doc/HTML/fr/kcontrol/desktop/common
 share/doc/HTML/fr/kcontrol/desktop/index.cache.bz2
 share/doc/HTML/fr/kcontrol/desktop/index.docbook
+share/doc/HTML/fr/kcontrol/desktopbehavior/common
+share/doc/HTML/fr/kcontrol/desktopbehavior/index.cache.bz2
+share/doc/HTML/fr/kcontrol/desktopbehavior/index.docbook
 share/doc/HTML/fr/kcontrol/ebrowsing/common
 share/doc/HTML/fr/kcontrol/ebrowsing/index.cache.bz2
 share/doc/HTML/fr/kcontrol/ebrowsing/index.docbook
@@ -494,6 +513,11 @@ share/doc/HTML/fr/kgamma/index.docbook
 share/doc/HTML/fr/kget/common
 share/doc/HTML/fr/kget/index.cache.bz2
 share/doc/HTML/fr/kget/index.docbook
+share/doc/HTML/fr/kget/kget1.png
+share/doc/HTML/fr/kget/kget2.png
+share/doc/HTML/fr/kget/kget3.png
+share/doc/HTML/fr/kget/kget4.png
+share/doc/HTML/fr/kget/kget5.png
 share/doc/HTML/fr/kghostview/common
 share/doc/HTML/fr/kghostview/index.cache.bz2
 share/doc/HTML/fr/kghostview/index.docbook
@@ -506,6 +530,9 @@ share/doc/HTML/fr/kgoldrunner/tute008.png
 share/doc/HTML/fr/kgpg/common
 share/doc/HTML/fr/kgpg/index.cache.bz2
 share/doc/HTML/fr/kgpg/index.docbook
+share/doc/HTML/fr/kgpgcertmanager/common
+share/doc/HTML/fr/kgpgcertmanager/index.cache.bz2
+share/doc/HTML/fr/kgpgcertmanager/index.docbook
 share/doc/HTML/fr/khangman/common
 share/doc/HTML/fr/khangman/index.cache.bz2
 share/doc/HTML/fr/khangman/index.docbook
@@ -1155,6 +1182,9 @@ share/doc/HTML/fr/kspaceduel/kspaceduel3.png
 share/doc/HTML/fr/kspell/common
 share/doc/HTML/fr/kspell/index.cache.bz2
 share/doc/HTML/fr/kspell/index.docbook
+share/doc/HTML/fr/ksplashml/common
+share/doc/HTML/fr/ksplashml/index.cache.bz2
+share/doc/HTML/fr/ksplashml/index.docbook
 share/doc/HTML/fr/kstars/aavso.png
 share/doc/HTML/fr/kstars/ai-contents.docbook
 share/doc/HTML/fr/kstars/altvstime.docbook
@@ -1865,6 +1895,7 @@ share/locale/fr/LC_MESSAGES/libkonq.mo
 share/locale/fr/LC_MESSAGES/libkpimexchange.mo
 share/locale/fr/LC_MESSAGES/libkscan.mo
 share/locale/fr/LC_MESSAGES/libkscreensaver.mo
+share/locale/fr/LC_MESSAGES/libksieve.mo
 share/locale/fr/LC_MESSAGES/libksirtet.mo
 share/locale/fr/LC_MESSAGES/libksync.mo
 share/locale/fr/LC_MESSAGES/libtaskbar.mo
@@ -1931,6 +1962,7 @@ share/locale/fr/relecture_gui
 @dirrm share/doc/HTML/fr/ksysv
 @dirrm share/doc/HTML/fr/ksysguard
 @dirrm share/doc/HTML/fr/kstars
+@dirrm share/doc/HTML/fr/ksplashml
 @dirrm share/doc/HTML/fr/kspell
 @dirrm share/doc/HTML/fr/kspaceduel
 @dirrm share/doc/HTML/fr/ksokoban
@@ -2035,6 +2067,7 @@ share/locale/fr/relecture_gui
 @dirrm share/doc/HTML/fr/khelpcenter/faq
 @dirrm share/doc/HTML/fr/khelpcenter
 @dirrm share/doc/HTML/fr/khangman
+@dirrm share/doc/HTML/fr/kgpgcertmanager
 @dirrm share/doc/HTML/fr/kgpg
 @dirrm share/doc/HTML/fr/kgoldrunner
 @dirrm share/doc/HTML/fr/kghostview
@@ -2097,6 +2130,7 @@ share/locale/fr/relecture_gui
 @dirrm share/doc/HTML/fr/kcontrol/energy
 @dirrm share/doc/HTML/fr/kcontrol/email
 @dirrm share/doc/HTML/fr/kcontrol/ebrowsing
+@dirrm share/doc/HTML/fr/kcontrol/desktopbehavior
 @dirrm share/doc/HTML/fr/kcontrol/desktop
 @dirrm share/doc/HTML/fr/kcontrol/crypto
 @dirrm share/doc/HTML/fr/kcontrol/cookies
@@ -2112,6 +2146,7 @@ share/locale/fr/relecture_gui
 @dirrm share/doc/HTML/fr/kcalc
 @dirrm share/doc/HTML/fr/kcachegrind
 @dirrm share/doc/HTML/fr/kbugbuster
+@dirrm share/doc/HTML/fr/kbruch
 @dirrm share/doc/HTML/fr/kbounce
 @dirrm share/doc/HTML/fr/kblackbox
 @dirrm share/doc/HTML/fr/kbattleship

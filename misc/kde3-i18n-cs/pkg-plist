@@ -510,7 +510,6 @@ share/locale/cs/LC_MESSAGES/kpersonalizer.mo
 share/locale/cs/LC_MESSAGES/kpf.mo
 share/locale/cs/LC_MESSAGES/kpilot.mo
 share/locale/cs/LC_MESSAGES/kpoker.mo
-share/locale/cs/LC_MESSAGES/kpovmodeler.mo
 share/locale/cs/LC_MESSAGES/kppp.mo
 share/locale/cs/LC_MESSAGES/kppplogview.mo
 share/locale/cs/LC_MESSAGES/kprinter.mo
@@ -628,7 +627,6 @@ share/locale/cs/LC_MESSAGES/lockout.mo
 share/locale/cs/LC_MESSAGES/lskat.mo
 share/locale/cs/LC_MESSAGES/lyrics.mo
 share/locale/cs/LC_MESSAGES/mediacontrol.mo
-share/locale/cs/LC_MESSAGES/megami.mo
 share/locale/cs/LC_MESSAGES/minitoolsplugin.mo
 share/locale/cs/LC_MESSAGES/naughtyapplet.mo
 share/locale/cs/LC_MESSAGES/nexscope.mo
@@ -638,7 +636,6 @@ share/locale/cs/LC_MESSAGES/passwords.mo
 share/locale/cs/LC_MESSAGES/pitchablespeed.mo
 share/locale/cs/LC_MESSAGES/privacy.mo
 share/locale/cs/LC_MESSAGES/qeditor.mo
-share/locale/cs/LC_MESSAGES/quanta.mo
 share/locale/cs/LC_MESSAGES/quicklauncher.mo
 share/locale/cs/LC_MESSAGES/secpolicy.mo
 share/locale/cs/LC_MESSAGES/spy.mo

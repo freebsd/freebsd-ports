@@ -1064,6 +1064,7 @@ share/apps/quanta/toolbar/check_grey.png
 share/apps/quanta/toolbar/close.png
 share/apps/quanta/toolbar/color.png
 share/apps/quanta/toolbar/copy.png
+share/apps/quanta/toolbar/css.png
 share/apps/quanta/toolbar/customlayout.png
 share/apps/quanta/toolbar/cut.png
 share/apps/quanta/toolbar/date.png
@@ -1214,7 +1215,9 @@ share/apps/quanta/toolbar/textarea.png
 share/apps/quanta/toolbar/tree_win.png
 share/apps/quanta/toolbar/ttab.png
 share/apps/quanta/toolbar/undo.png
+share/apps/quanta/toolbar/view_text.png
 share/apps/quanta/toolbar/vpl.png
+share/apps/quanta/toolbar/vpl_text.png
 share/apps/quanta/toolbar/wiznewprjfin.png
 share/apps/quanta/toolbar/wiznewprjglb.png
 share/apps/quanta/toolbar/wiznewprjloc.png

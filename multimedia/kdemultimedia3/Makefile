@@ -8,10 +8,9 @@
 
 PORTNAME=	kdemultimedia
 PORTVERSION=	${KDE_VERSION}
-PORTREVISION=	3
 CATEGORIES=	multimedia kde
 MASTER_SITES=	${MASTER_SITE_KDE}
-MASTER_SITE_SUBDIR=	stable/${PORTVERSION:S/.0//}/src
+MASTER_SITE_SUBDIR=	stable/${PORTVERSION}/src
 DIST_SUBDIR=	KDE
 
 MAINTAINER=	kde@FreeBSD.org
@@ -36,47 +35,60 @@ KDE_BUILD_PLIST=yes
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_GNOME=	esound
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 
 MAKE_ENV=	${CONFIGURE_ENV}
 
-CONFIGURE_ARGS+=	--with-vorbis="${LOCALBASE}" \
-			--enable-audio=oss,esd
+CONFIGURE_ARGS+=	--with-vorbis="${LOCALBASE}"
+INSTALLS_SHLIB=	yes
+LDCONFIG_DIRS+=	%%PREFIX%%/lib %%PREFIX%%/lib/kde3
+
+OPTIONS=	XINE "Enable support for video playback, using libxine" off \
+		MPEGLIB "Use mpeglib for audio playback" on
 
 .include "${.CURDIR}/../../x11/kde3/Makefile.kde"
 .include <bsd.port.pre.mk>
 
 .if exists(${X11BASE}/bin/xine-config)
+.	if !defined(WITH_XINE)
+XINE_OVERRIDE=	yes
 WITH_XINE=	yes
-.endif # exists(${LOCALBASE}/bin/xine-config)
+.	endif
+.endif
 
-.if defined(WITHOUT_XINE)
-DO_NOT_COMPILE+=	xine_artsplugin
-CONFIGURE_ARGS+=	--disable-xinetest
-.elif defined(WITH_XINE)
+.if defined(WITH_XINE)
 PLIST_APPEND+=	plist.xine
 LIB_DEPENDS+=	xine:${PORTSDIR}/multimedia/libxine
 BUILD_DEPENDS+=	xine-config:${PORTSDIR}/multimedia/libxine
 CONFIGURE_ARGS+=--with-xine-prefix=${X11BASE}
-.endif # defined(WITHOUT_XINE)
-
-.if defined(WITHOUT_MPEGLIB)
-PLIST_APPEND+=	plist.no-mpeglib
 .else
+DO_NOT_COMPILE+=        xine_artsplugin
+CONFIGURE_ARGS+=        --disable-xinetest
+.endif
+
+.if defined(WITH_MPEGLIB)
 PLIST_APPEND+=	plist.mpeglib
+.else
+PLIST_APPEND+=	plist.no-mpeglib
 .endif
 
 .if defined(DO_NOT_COMPILE)
 CONFIGURE_ENV+=	DO_NOT_COMPILE="${DO_NOT_COMPILE}"
 .endif # defined(DO_NOT_COMPILE)
 
-INSTALLS_SHLIB=	yes
-LDCONFIG_DIRS+=	%%PREFIX%%/lib %%PREFIX%%/lib/kde3
+pre-everything::
+.if defined(XINE_OVERRIDE)
+	@${ECHO_MSG}
+	@${ECHO_MSG} "********************************************************"
+	@${ECHO_MSG} "*    libxine is installed but WITH_XINE is not set!    *"
+	@${ECHO_MSG} "*       WITH_XINE has been enabled automatically.      *"
+	@${ECHO_MSG} "********************************************************"
+	@${ECHO_MSG}
+.endif
 
 pre-configure:
-.if defined(WITHOUT_MPEGLIB)
+.if !defined(WITH_MPEGLIB)
 	${REINPLACE_CMD} -e \
 	'/FreeBSD/,/;$$/s/kde_mpeglib_compiles=yes/kde_mpeglib_compiles=no/g' \
 		${WRKSRC}/configure

@@ -352,6 +352,13 @@ share/apps/klettres/cs/alpha/a-29.ogg
 share/apps/klettres/cs/alpha/a-3.ogg
 share/apps/klettres/cs/alpha/a-30.ogg
 share/apps/klettres/cs/alpha/a-31.ogg
+share/apps/klettres/cs/alpha/a-32.ogg
+share/apps/klettres/cs/alpha/a-33.ogg
+share/apps/klettres/cs/alpha/a-34.ogg
+share/apps/klettres/cs/alpha/a-35.ogg
+share/apps/klettres/cs/alpha/a-36.ogg
+share/apps/klettres/cs/alpha/a-37.ogg
+share/apps/klettres/cs/alpha/a-38.ogg
 share/apps/klettres/cs/alpha/a-4.ogg
 share/apps/klettres/cs/alpha/a-5.ogg
 share/apps/klettres/cs/alpha/a-6.ogg
@@ -1545,9 +1552,18 @@ share/doc/HTML/en/kvoctrain/stat1-dlg.png
 share/doc/HTML/en/kvoctrain/stat2-dlg.png
 share/doc/HTML/en/kvoctrain/syn-query-dlg.png
 share/doc/HTML/en/kvoctrain/verb-query-dlg.png
+share/icons/crystalsvg/128x128/apps/flashkard.png
 share/icons/crystalsvg/128x128/apps/kalzium.png
 share/icons/crystalsvg/128x128/apps/khangman.png
+share/icons/crystalsvg/128x128/apps/kig.png
+share/icons/crystalsvg/128x128/apps/kiten.png
 share/icons/crystalsvg/128x128/apps/klettres.png
+share/icons/crystalsvg/128x128/apps/kmessedwords.png
+share/icons/crystalsvg/128x128/apps/kmplot.png
+share/icons/crystalsvg/128x128/apps/kpercentage.png
+share/icons/crystalsvg/128x128/apps/kstars.png
+share/icons/crystalsvg/128x128/apps/ktouch.png
+share/icons/crystalsvg/128x128/apps/kverbos.png
 share/icons/crystalsvg/16x16/actions/kanjidic.png
 share/icons/crystalsvg/16x16/actions/kverbosuser.png
 share/icons/crystalsvg/16x16/apps/edu_languages.png
@@ -1566,6 +1582,7 @@ share/icons/crystalsvg/16x16/apps/kmessedwords.png
 share/icons/crystalsvg/16x16/apps/kmplot.png
 share/icons/crystalsvg/16x16/apps/kpercentage.png
 share/icons/crystalsvg/16x16/apps/kstars.png
+share/icons/crystalsvg/16x16/apps/ktouch.png
 share/icons/crystalsvg/16x16/apps/kverbos.png
 share/icons/crystalsvg/16x16/apps/kvoctrain.png
 share/icons/crystalsvg/22x22/actions/edit_add.png
@@ -1582,22 +1599,30 @@ share/icons/crystalsvg/32x32/apps/kbruch.png
 share/icons/crystalsvg/32x32/apps/keduca.png
 share/icons/crystalsvg/32x32/apps/khangman.png
 share/icons/crystalsvg/32x32/apps/kig.png
+share/icons/crystalsvg/32x32/apps/kiten.png
 share/icons/crystalsvg/32x32/apps/klettres.png
 share/icons/crystalsvg/32x32/apps/kmessedwords.png
 share/icons/crystalsvg/32x32/apps/kmplot.png
 share/icons/crystalsvg/32x32/apps/kpercentage.png
 share/icons/crystalsvg/32x32/apps/kstars.png
+share/icons/crystalsvg/32x32/apps/ktouch.png
+share/icons/crystalsvg/32x32/apps/kverbos.png
 share/icons/crystalsvg/32x32/apps/kvoctrain.png
 share/icons/crystalsvg/48x48/apps/edu_languages.png
 share/icons/crystalsvg/48x48/apps/flashkard.png
 share/icons/crystalsvg/48x48/apps/kalzium.png
 share/icons/crystalsvg/48x48/apps/keduca.png
 share/icons/crystalsvg/48x48/apps/khangman.png
+share/icons/crystalsvg/48x48/apps/kig.png
+share/icons/crystalsvg/48x48/apps/kiten.png
 share/icons/crystalsvg/48x48/apps/klettres.png
+share/icons/crystalsvg/48x48/apps/kmessedwords.png
+share/icons/crystalsvg/48x48/apps/kmplot.png
+share/icons/crystalsvg/48x48/apps/kpercentage.png
 share/icons/crystalsvg/48x48/apps/kstars.png
+share/icons/crystalsvg/48x48/apps/ktouch.png
+share/icons/crystalsvg/48x48/apps/kverbos.png
 share/icons/crystalsvg/48x48/apps/kvoctrain.png
-share/icons/hicolor/16x16/apps/ktouch.png
-share/icons/hicolor/32x32/apps/ktouch.png
 share/icons/hicolor/48x48/apps/grownup.png
 share/icons/hicolor/48x48/apps/kids.png
 share/icons/hicolor/48x48/apps/menubar.png
@@ -1605,16 +1630,8 @@ share/icons/locolor/16x16/actions/edit_add.png
 share/icons/locolor/16x16/actions/edit_remove.png
 share/icons/locolor/16x16/apps/kbruch.png
 share/icons/locolor/16x16/apps/kig.png
-share/icons/locolor/16x16/apps/kmessedwords.png
-share/icons/locolor/16x16/apps/kmplot.png
-share/icons/locolor/16x16/apps/kpercentage.png
-share/icons/locolor/16x16/apps/kstars.png
 share/icons/locolor/32x32/apps/kbruch.png
 share/icons/locolor/32x32/apps/kig.png
-share/icons/locolor/32x32/apps/kmessedwords.png
-share/icons/locolor/32x32/apps/kmplot.png
-share/icons/locolor/32x32/apps/kpercentage.png
-share/icons/locolor/32x32/apps/kstars.png
 share/mimelnk/application/x-edu.desktop
 share/mimelnk/application/x-edugallery.desktop
 share/mimelnk/application/x-kgeo.desktop
@@ -1629,10 +1646,6 @@ share/services/kig_part.desktop
 @dirrm share/icons/locolor
 @dirrm share/icons/hicolor/48x48/apps
 @dirrm share/icons/hicolor/48x48
-@dirrm share/icons/hicolor/32x32/apps
-@dirrm share/icons/hicolor/32x32
-@dirrm share/icons/hicolor/16x16/apps
-@dirrm share/icons/hicolor/16x16
 @dirrm share/icons/crystalsvg/48x48/apps
 @dirrm share/icons/crystalsvg/32x32/apps
 @dirrm share/icons/crystalsvg/22x22/apps

@@ -16,8 +16,6 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Additonal plugins and features for kate
 
-IGNORE=		This port is part of KDE 3.2.1 and is not yet ready
-
 KDE_SPLIT=	kate
 KDE_DOC_SPLIT=	kate-plugins
 USE_KDEBASE_VER=3

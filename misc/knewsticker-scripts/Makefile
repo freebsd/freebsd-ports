@@ -16,8 +16,6 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Utilityscripts for KNewsTicker
 
-IGNORE=		This port is part of KDE 3.2.1 and is not yet ready
-
 KDE_SPLIT=	${KNEWSTICKERAPP_PORTNAME:S/${KDE_SPLIT_DIST}-//}
 KDE_DOC_SPLIT=	# none
 USE_KDELIBS_VER=3

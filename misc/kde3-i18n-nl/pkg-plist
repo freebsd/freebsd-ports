@@ -75,6 +75,9 @@ share/doc/HTML/nl/common/xml.dcl
 share/doc/HTML/nl/kaddressbook/common
 share/doc/HTML/nl/kaddressbook/index.cache.bz2
 share/doc/HTML/nl/kaddressbook/index.docbook
+share/doc/HTML/nl/kalzium/common
+share/doc/HTML/nl/kalzium/index.cache.bz2
+share/doc/HTML/nl/kalzium/index.docbook
 share/doc/HTML/nl/kate-plugins/htmltools.docbook
 share/doc/HTML/nl/kate-plugins/insertcommand.docbook
 share/doc/HTML/nl/kate-plugins/openheader.docbook
@@ -368,6 +371,10 @@ share/doc/HTML/nl/kioslave/webdavs.docbook
 share/doc/HTML/nl/kmoon/common
 share/doc/HTML/nl/kmoon/index.cache.bz2
 share/doc/HTML/nl/kmoon/index.docbook
+share/doc/HTML/nl/kmplot/commands.docbook
+share/doc/HTML/nl/kmplot/configuration.docbook
+share/doc/HTML/nl/kmplot/credits.docbook
+share/doc/HTML/nl/kmplot/developer.docbook
 share/doc/HTML/nl/kompare/common
 share/doc/HTML/nl/kompare/index.cache.bz2
 share/doc/HTML/nl/kompare/index.docbook
@@ -375,6 +382,38 @@ share/doc/HTML/nl/konsole/konsole.png
 share/doc/HTML/nl/kspell/common
 share/doc/HTML/nl/kspell/index.cache.bz2
 share/doc/HTML/nl/kspell/index.docbook
+share/doc/HTML/nl/kstars/ai-contents.docbook
+share/doc/HTML/nl/kstars/altvstime.docbook
+share/doc/HTML/nl/kstars/astroinfo.docbook
+share/doc/HTML/nl/kstars/blackbody.docbook
+share/doc/HTML/nl/kstars/calc-apcoords.docbook
+share/doc/HTML/nl/kstars/calc-dayduration.docbook
+share/doc/HTML/nl/kstars/calc-eqgal.docbook
+share/doc/HTML/nl/kstars/calc-geodetic.docbook
+share/doc/HTML/nl/kstars/calc-horizontal.docbook
+share/doc/HTML/nl/kstars/calc-julianday.docbook
+share/doc/HTML/nl/kstars/calc-precess.docbook
+share/doc/HTML/nl/kstars/calc-sidereal.docbook
+share/doc/HTML/nl/kstars/calculator.docbook
+share/doc/HTML/nl/kstars/cequator.docbook
+share/doc/HTML/nl/kstars/colorandtemp.docbook
+share/doc/HTML/nl/kstars/commands.docbook
+share/doc/HTML/nl/kstars/config.docbook
+share/doc/HTML/nl/kstars/cpoles.docbook
+share/doc/HTML/nl/kstars/credits.docbook
+share/doc/HTML/nl/kstars/csphere.docbook
+share/doc/HTML/nl/kstars/darkmatter.docbook
+share/doc/HTML/nl/kstars/dcop.docbook
+share/doc/HTML/nl/kstars/details.docbook
+share/doc/HTML/nl/kstars/dumpmode.docbook
+share/doc/HTML/nl/kstars/ecliptic.docbook
+share/doc/HTML/nl/kstars/ellipticalgalaxies.docbook
+share/doc/HTML/nl/kstars/equinox.docbook
+share/doc/HTML/nl/kstars/flux.docbook
+share/doc/HTML/nl/kstars/geocoords.docbook
+share/doc/HTML/nl/ktouch/common
+share/doc/HTML/nl/ktouch/index.cache.bz2
+share/doc/HTML/nl/ktouch/index.docbook
 share/doc/HTML/nl/kweather/common
 share/doc/HTML/nl/kweather/index.cache.bz2
 share/doc/HTML/nl/kweather/index.docbook
@@ -890,9 +929,12 @@ share/locale/nl/entry.desktop
 share/locale/nl/flag.png
 @dirrm share/doc/HTML/nl/kworldclock
 @dirrm share/doc/HTML/nl/kweather
+@dirrm share/doc/HTML/nl/ktouch
+@dirrm share/doc/HTML/nl/kstars
 @dirrm share/doc/HTML/nl/kspell
 @dirrm share/doc/HTML/nl/konsole
 @dirrm share/doc/HTML/nl/kompare
+@dirrm share/doc/HTML/nl/kmplot
 @dirrm share/doc/HTML/nl/kmoon
 @dirrm share/doc/HTML/nl/kioslave
 @dirrm share/doc/HTML/nl/kinfocenter/xserver
@@ -954,6 +996,7 @@ share/locale/nl/flag.png
 @dirrm share/doc/HTML/nl/kbugbuster
 @dirrm share/doc/HTML/nl/kate-plugins
 @dirrm share/doc/HTML/nl/kate
+@dirrm share/doc/HTML/nl/kalzium
 @dirrm share/doc/HTML/nl/kaddressbook
 @dirrm share/doc/HTML/nl/common
 @dirrm share/doc/HTML/nl/artsbuilder

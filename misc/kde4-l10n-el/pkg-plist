@@ -5,6 +5,7 @@ share/locale/el/LC_MESSAGES/appletproxy.mo
 share/locale/el/LC_MESSAGES/ark.mo
 share/locale/el/LC_MESSAGES/artsbuilder.mo
 share/locale/el/LC_MESSAGES/artscontrol.mo
+share/locale/el/LC_MESSAGES/atlantik.mo
 share/locale/el/LC_MESSAGES/audiorename_plugin.mo
 share/locale/el/LC_MESSAGES/autorefresh.mo
 share/locale/el/LC_MESSAGES/babelfish.mo
@@ -50,6 +51,7 @@ share/locale/el/LC_MESSAGES/imagerename_plugin.mo
 share/locale/el/LC_MESSAGES/imgalleryplugin.mo
 share/locale/el/LC_MESSAGES/irkick.mo
 share/locale/el/LC_MESSAGES/jefferson.mo
+share/locale/el/LC_MESSAGES/juk.mo
 share/locale/el/LC_MESSAGES/kabc2mutt.mo
 share/locale/el/LC_MESSAGES/kabc_dir.mo
 share/locale/el/LC_MESSAGES/kabc_file.mo
@@ -87,6 +89,7 @@ share/locale/el/LC_MESSAGES/katexmltools.mo
 share/locale/el/LC_MESSAGES/katomic.mo
 share/locale/el/LC_MESSAGES/kaudiocreator.mo
 share/locale/el/LC_MESSAGES/kbabel.mo
+share/locale/el/LC_MESSAGES/kbackgammon.mo
 share/locale/el/LC_MESSAGES/kbattleship.mo
 share/locale/el/LC_MESSAGES/kblackbox.mo
 share/locale/el/LC_MESSAGES/kbounce.mo
@@ -228,6 +231,7 @@ share/locale/el/LC_MESSAGES/kfouleggs.mo
 share/locale/el/LC_MESSAGES/kgamma.mo
 share/locale/el/LC_MESSAGES/kget.mo
 share/locale/el/LC_MESSAGES/kghostview.mo
+share/locale/el/LC_MESSAGES/kgoldrunner.mo
 share/locale/el/LC_MESSAGES/kgpg.mo
 share/locale/el/LC_MESSAGES/khangman.mo
 share/locale/el/LC_MESSAGES/khelpcenter.mo
@@ -259,6 +263,7 @@ share/locale/el/LC_MESSAGES/kio_smb.mo
 share/locale/el/LC_MESSAGES/kio_smbro.mo
 share/locale/el/LC_MESSAGES/kio_smtp.mo
 share/locale/el/LC_MESSAGES/kioexec.mo
+share/locale/el/LC_MESSAGES/kit.mo
 share/locale/el/LC_MESSAGES/kjobviewer.mo
 share/locale/el/LC_MESSAGES/kjots.mo
 share/locale/el/LC_MESSAGES/kjumpingcube.mo
@@ -287,6 +292,7 @@ share/locale/el/LC_MESSAGES/knorskverbs.mo
 share/locale/el/LC_MESSAGES/knotes.mo
 share/locale/el/LC_MESSAGES/knotify.mo
 share/locale/el/LC_MESSAGES/kodo.mo
+share/locale/el/LC_MESSAGES/kolf.mo
 share/locale/el/LC_MESSAGES/kolourpicker.mo
 share/locale/el/LC_MESSAGES/kompare.mo
 share/locale/el/LC_MESSAGES/konq_smbmounterplugin.mo
@@ -319,6 +325,7 @@ share/locale/el/LC_MESSAGES/krunapplet.mo
 share/locale/el/LC_MESSAGES/ksame.mo
 share/locale/el/LC_MESSAGES/kscd.mo
 share/locale/el/LC_MESSAGES/kscreensaver.mo
+share/locale/el/LC_MESSAGES/kshisen.mo
 share/locale/el/LC_MESSAGES/ksig.mo
 share/locale/el/LC_MESSAGES/ksirc.mo
 share/locale/el/LC_MESSAGES/ksirtet.mo
@@ -326,6 +333,8 @@ share/locale/el/LC_MESSAGES/ksmiletris.mo
 share/locale/el/LC_MESSAGES/ksmserver.mo
 share/locale/el/LC_MESSAGES/ksnake.mo
 share/locale/el/LC_MESSAGES/ksnapshot.mo
+share/locale/el/LC_MESSAGES/ksokoban.mo
+share/locale/el/LC_MESSAGES/kspaceduel.mo
 share/locale/el/LC_MESSAGES/ksplash.mo
 share/locale/el/LC_MESSAGES/ksplashthemes.mo
 share/locale/el/LC_MESSAGES/kstart.mo
@@ -394,6 +403,7 @@ share/locale/el/LC_MESSAGES/libksync.mo
 share/locale/el/LC_MESSAGES/libtaskbar.mo
 share/locale/el/LC_MESSAGES/libtaskmanager.mo
 share/locale/el/LC_MESSAGES/lockout.mo
+share/locale/el/LC_MESSAGES/lskat.mo
 share/locale/el/LC_MESSAGES/lyrics.mo
 share/locale/el/LC_MESSAGES/mediacontrol.mo
 share/locale/el/LC_MESSAGES/minitoolsplugin.mo

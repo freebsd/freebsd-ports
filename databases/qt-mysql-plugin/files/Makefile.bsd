@@ -1,22 +1,29 @@
-DB=${PLUGIN:T}
-
 SHLIB_NAME=	libqsql${DB}.so
 
 VPATH=		${PLUGIN}:${DRIVER}
 CXXFLAGS+=	-I${PLUGIN} -I${DRIVER} \
+		-I${LOCALBASE}/firebird/include \
 		-I${LOCALBASE}/include/mysql \
 		-I${LOCALBASE}/include/postgresql/server \
 		-I${LOCALBASE}/include -I${X11BASE}/include \
 		${PTHREAD_CFLAGS} -DQT_THREAD_SUPPORT
-.if ${DB}==mysql
+.if ${DB}==ibase
+LDADD=		-L${X11BASE}/lib -L${LOCALBASE}/firebird/lib ${PTHREAD_LIBS} -lqt-mt -lgds
+SRCS=		qsql_${DB}.cpp main.cpp
+.elif ${DB}==mysql
 LDADD=		-L${X11BASE}/lib -L${LOCALBASE}/lib/mysql ${PTHREAD_LIBS} -lqt-mt -lmysqlclient 
-.elif ${DB}==psql
-LDADD=		-L${X11BASE}/lib -L${LOCALBASE}/lib ${PTHREAD_LIBS} -lqt-mt -lpq
+SRCS=		qsql_${DB}.cpp main.cpp
 .elif ${DB}==odbc
 LDADD=		-L${X11BASE}/lib -L${LOCALBASE}/lib ${PTHREAD_LIBS} -lqt-mt -lodbc
+SRCS=		qsql_${DB}.cpp main.cpp
+.elif ${DB}==psql
+LDADD=		-L${X11BASE}/lib -L${LOCALBASE}/lib ${PTHREAD_LIBS} -lqt-mt -lpq
+SRCS=		qsql_${DB}.cpp main.cpp
+.elif ${DB}==sqlite
+LDADD=		-L${X11BASE}/lib -L${LOCALBASE}/lib ${PTHREAD_LIBS} -lqt-mt -lsqlite
+SRCS=		qsql_${DB}.cpp smain.cpp
 .endif
 
-SRCS=		qsql_${DB}.cpp main.cpp
 LIBDIR=		${PREFIX}/lib/plugins/sqldrivers
 
 ${LIBDIR}:

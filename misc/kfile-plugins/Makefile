@@ -16,8 +16,6 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Plugins for Konqueror (in filemanager mode)
 
-IGNORE=		This port is part of KDE 3.2.1 and is not yet ready
-
 KDE_SPLIT=	${KFILEPLUGINS_PORTNAME:S/${KDE_SPLIT_DIST}-//}
 KDE_DOC_SPLIT=	# none
 USE_KDEBASE_VER=3

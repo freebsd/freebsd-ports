@@ -363,6 +363,9 @@ share/doc/HTML/de/kcron/kcronstart.png
 share/doc/HTML/de/kcron/newtask.png
 share/doc/HTML/de/kcron/newvariable.png
 share/doc/HTML/de/kcron/print.png
+share/doc/HTML/de/kdat/common
+share/doc/HTML/de/kdat/index.cache.bz2
+share/doc/HTML/de/kdat/index.docbook
 share/doc/HTML/de/kdebugdialog/common
 share/doc/HTML/de/kdebugdialog/index.cache.bz2
 share/doc/HTML/de/kdebugdialog/index.docbook
@@ -438,6 +441,15 @@ share/doc/HTML/de/kget/kget5.png
 share/doc/HTML/de/kghostview/common
 share/doc/HTML/de/kghostview/index.cache.bz2
 share/doc/HTML/de/kghostview/index.docbook
+share/doc/HTML/de/kgpg/common
+share/doc/HTML/de/kgpg/editor.png
+share/doc/HTML/de/kgpg/index.cache.bz2
+share/doc/HTML/de/kgpg/index.docbook
+share/doc/HTML/de/kgpg/keygen.png
+share/doc/HTML/de/kgpg/keymanage.png
+share/doc/HTML/de/kgpg/keys.png
+share/doc/HTML/de/kgpg/kicker.png
+share/doc/HTML/de/kgpg/options.png
 share/doc/HTML/de/kgpgcertmanager/common
 share/doc/HTML/de/kgpgcertmanager/index.cache.bz2
 share/doc/HTML/de/kgpgcertmanager/index.docbook
@@ -1822,6 +1834,7 @@ share/locale/de/flag.png
 @dirrm share/doc/HTML/de/khelpcenter
 @dirrm share/doc/HTML/de/khangman
 @dirrm share/doc/HTML/de/kgpgcertmanager
+@dirrm share/doc/HTML/de/kgpg
 @dirrm share/doc/HTML/de/kghostview
 @dirrm share/doc/HTML/de/kget
 @dirrm share/doc/HTML/de/kgamma
@@ -1838,6 +1851,7 @@ share/locale/de/flag.png
 @dirrm share/doc/HTML/de/kdesu
 @dirrm share/doc/HTML/de/kdeprint
 @dirrm share/doc/HTML/de/kdebugdialog
+@dirrm share/doc/HTML/de/kdat
 @dirrm share/doc/HTML/de/kcron
 @dirrm share/doc/HTML/de/kcontrol/windowmanagement
 @dirrm share/doc/HTML/de/kcontrol/useragent

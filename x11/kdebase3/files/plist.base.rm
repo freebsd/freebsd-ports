@@ -377,6 +377,7 @@
 @dirrm share/doc/HTML/en
 @dirrm share/doc/HTML
 @dirrm share/desktop-directories
+@dirrm share/config/kdm/default
 @dirrm share/config/kdm
 @dirrm share/config
 @dirrm share/autostart

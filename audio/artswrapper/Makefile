@@ -14,8 +14,6 @@ EXTRACT_SUFX=	# none
 MAINTAINER=	kde@freebsd.org
 COMMENT=	Setuid wrapper for arts
 
-IGNORE=		This port is part of KDE 3.2.1 and is not yet ready
-
 NO_WRKSUBDIR=	yes
 PLIST_FILES=	bin/artswrapper
 

@@ -6,24 +6,24 @@
 #
 
 PORTNAME=	kdevelop
-PORTVERSION=	3.0.0
+PORTVERSION=	3.0.2
 CATEGORIES?=	devel kde
 MASTER_SITES=	${MASTER_SITE_KDE}
-MASTER_SITE_SUBDIR=	stable/${KDE_VERSION:S/.0//}/src
+MASTER_SITE_SUBDIR=	stable/${PORTVERSION}/src
 # DISTNAME=	${KDE_DISTNAME}
 DIST_SUBDIR=	KDE
 
 MAINTAINER?=	kde@FreeBSD.org
 COMMENT=	Powerful IDE for developing KDE/Qt-based apps
 
-BUILD_DEPENDS=  msgfmt:${PORTSDIR}/devel/gettext
-LIB_DEPENDS=    db41:${PORTSDIR}/databases/db41
+BUILD_DEPENDS=	msgfmt:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=	db4:${PORTSDIR}/databases/db4
 RUN_DEPENDS=	extractrc:${PORTSDIR}/devel/kdesdk3 \
-		gmake:${PORTSDIR}/devel/gmake
+		gmake:${PORTSDIR}/devel/gmake \
+		autoconf257:${PORTSDIR}/devel/autoconf257 \
+		automake17:${PORTSDIR}/devel/automake17
 .if defined(WITH_OPTIONAL_DEPENDS)
-RUN_DEPENDS+=	autoconf:${PORTSDIR}/devel/autoconf \
-		automake:${PORTSDIR}/devel/automake \
-		kiconedit:${PORTSDIR}/graphics/kdegraphics3 \
+RUN_DEPENDS+=	kiconedit:${PORTSDIR}/graphics/kdegraphics3 \
 		ark:${PORTSDIR}/misc/kdeutils3 \
 		glimpse:${PORTSDIR}/textproc/glimpse \
 		a2ps:${PORTSDIR}/print/a2ps-letter
@@ -53,11 +53,11 @@ post-patch:
 
 pre-configure:
 	${REINPLACE_CMD} -e 's@extractrc@@g' ${WRKSRC}/Makefile.in
-	${REINPLACE_CMD} -e 's@$$CXXFLAGS $$X_CFLAGS -ldb@-I/usr/local/include/db41 $$CXXFLAGS $$X_CFLAGS -L/usr/local/lib -ldb41@' ${WRKSRC}/configure
-	${REINPLACE_CMD} -e 's@INCLUDES = $$(all_includes)@INCLUDES = -I/usr/local/include/db41 $$(all_includes)@' ${WRKSRC}/lib/catalog/Makefile.in
-	${REINPLACE_CMD} -e 's@libkdevcatalog_la_LIBADD = -ldb@libkdevcatalog_la_LIBADD = -L/usr/local/lib -ldb41@' ${WRKSRC}/lib/catalog/Makefile.in
-	${REINPLACE_CMD} -e 's@^all_includes = @all_includes = -I/usr/local/include/db41 @' ${WRKSRC}/languages/cpp/Makefile.in
-	${REINPLACE_CMD} -e 's@^all_includes = @all_includes = -I/usr/local/include/db41 @' ${WRKSRC}/languages/java/Makefile.in
-	${REINPLACE_CMD} -e 's@^all_includes = @all_includes = -I/usr/local/include/db41 @' ${WRKSRC}/languages/pascal/Makefile.in
+	${REINPLACE_CMD} -e 's@$$CXXFLAGS $$X_CFLAGS -ldb@-I/usr/local/include/db4 $$CXXFLAGS $$X_CFLAGS -L/usr/local/lib -ldb4@' ${WRKSRC}/configure
+	${REINPLACE_CMD} -e 's@INCLUDES = $$(all_includes)@INCLUDES = -I/usr/local/include/db4 $$(all_includes)@' ${WRKSRC}/lib/catalog/Makefile.in
+	${REINPLACE_CMD} -e 's@libkdevcatalog_la_LIBADD = -ldb@libkdevcatalog_la_LIBADD = -L/usr/local/lib -ldb4@' ${WRKSRC}/lib/catalog/Makefile.in
+	${REINPLACE_CMD} -e 's@^all_includes = @all_includes = -I/usr/local/include/db4 @' ${WRKSRC}/languages/cpp/Makefile.in
+	${REINPLACE_CMD} -e 's@^all_includes = @all_includes = -I/usr/local/include/db4 @' ${WRKSRC}/languages/java/Makefile.in
+	${REINPLACE_CMD} -e 's@^all_includes = @all_includes = -I/usr/local/include/db4 @' ${WRKSRC}/languages/pascal/Makefile.in
 
 .include <bsd.port.post.mk>

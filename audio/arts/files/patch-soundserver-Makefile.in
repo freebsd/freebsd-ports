@@ -1,0 +1,58 @@
+--- soundserver/Makefile.in.orig	Sun Feb 29 22:25:27 2004
++++ soundserver/Makefile.in	Thu Mar  4 16:07:59 2004
+@@ -344,7 +344,7 @@
+ 
+ 
+ ###### "real" programs
+-bin_PROGRAMS = artsd artsplay artscat artswrapper artsshell artsrec
++bin_PROGRAMS = artsd artsplay artscat artsshell artsrec
+ 
+ artsd_LDADD = libsoundserver_idl.la $(FLOWLIBS) \
+               $(top_builddir)/mcop_mt/libmcop_mt.la $(USE_THREADS)
+@@ -364,10 +364,6 @@
+ artsplay_SOURCES = artsplay.cc
+ artsplay_COMPILE_FIRST = soundserver.h artsversion.h
+ 
+-artswrapper_SOURCES = artswrapper.c
+-artswrapper_INCLUDES = -I$(top_builddir) -DEXECUTE=\"$(artsdpath)\"
+-artswrapper_LDADD = $(LIBPOSIX4)
+-
+ artsshell_LDADD = libsoundserver_idl.la $(USE_THREADS)
+ artsshell_SOURCES = artsshell.cc tradercheck.cc
+ artsshell_COMPILE_FIRST = soundserver.h artsversion.h
+@@ -431,7 +427,7 @@
+ #>+ 1
+ libsoundserver_idl_la_OBJECTS = soundserver.lo
+ bin_PROGRAMS = artsd$(EXEEXT) artsplay$(EXEEXT) artscat$(EXEEXT) \
+-	artswrapper$(EXEEXT) artsshell$(EXEEXT) artsrec$(EXEEXT)
++	artsshell$(EXEEXT) artsrec$(EXEEXT)
+ PROGRAMS = $(bin_PROGRAMS)
+ 
+ am_artscat_OBJECTS = artscat.$(OBJEXT)
+@@ -568,14 +564,14 @@
+ 	$(libartswavplayobject_la_SOURCES) $(libkmedia2_la_SOURCES) \
+ 	$(libkmedia2_idl_la_SOURCES) $(libsoundserver_idl_la_SOURCES) \
+ 	$(artscat_SOURCES) $(artsd_SOURCES) $(artsplay_SOURCES) \
+-	$(artsrec_SOURCES) $(artsshell_SOURCES) $(artswrapper_SOURCES)
++	$(artsrec_SOURCES) $(artsshell_SOURCES)
+ DATA = $(mcopclass_DATA) $(mcoptype_DATA)
+ 
+ HEADERS = $(artsinclude_HEADERS)
+ 
+ DIST_COMMON = $(artsinclude_HEADERS) Makefile.am Makefile.in \
+ 	artsversion-new.h.in
+-SOURCES = $(libartsgslplayobject_la_SOURCES) $(libartswavplayobject_la_SOURCES) $(libkmedia2_la_SOURCES) $(libkmedia2_idl_la_SOURCES) $(libsoundserver_idl_la_SOURCES) $(artscat_SOURCES) $(artsd_SOURCES) $(artsplay_SOURCES) $(artsrec_SOURCES) $(artsshell_SOURCES) $(artswrapper_SOURCES)
++SOURCES = $(libartsgslplayobject_la_SOURCES) $(libartswavplayobject_la_SOURCES) $(libkmedia2_la_SOURCES) $(libkmedia2_idl_la_SOURCES) $(libsoundserver_idl_la_SOURCES) $(artscat_SOURCES) $(artsd_SOURCES) $(artsplay_SOURCES) $(artsrec_SOURCES) $(artsshell_SOURCES)
+ 
+ #>- all: all-am
+ #>+ 1
+@@ -691,9 +687,6 @@
+ artsshell$(EXEEXT): $(artsshell_OBJECTS) $(artsshell_DEPENDENCIES) 
+ 	@rm -f artsshell$(EXEEXT)
+ 	$(CXXLINK) $(artsshell_LDFLAGS) $(artsshell_OBJECTS) $(artsshell_LDADD) $(LIBS)
+-artswrapper$(EXEEXT): $(artswrapper_OBJECTS) $(artswrapper_DEPENDENCIES) 
+-	@rm -f artswrapper$(EXEEXT)
+-	$(LINK) $(artswrapper_LDFLAGS) $(artswrapper_OBJECTS) $(artswrapper_LDADD) $(LIBS)
+ 
+ mostlyclean-compile:
+ 	-rm -f *.$(OBJEXT) core *.core

@@ -279,5 +279,3 @@ share/locale/eo/LC_MESSAGES/webarchiver.mo
 share/locale/eo/charset
 share/locale/eo/entry.desktop
 share/locale/eo/flag.png
-@dirrm share/locale/eo/LC_MESSAGES
-@dirrm share/locale/eo

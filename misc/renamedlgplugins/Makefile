@@ -16,8 +16,6 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	"Plugins for Konqueror's rename dialog"
 
-IGNORE=		This port is part of KDE 3.2.1 and is not yet ready
-
 KDE_SPLIT=	renamedlgplugins
 KDE_DOC_SPLIT=	# none
 USE_KDELIBS_VER=3

@@ -187,6 +187,9 @@ share/doc/HTML/sl/khelpcenter/lines.png
 share/doc/HTML/sl/khelpcenter/links.docbook
 share/doc/HTML/sl/khelpcenter/main.html
 share/doc/HTML/sl/khelpcenter/pointers.png
+share/doc/HTML/sl/khelpcenter/quickstart/common
+share/doc/HTML/sl/khelpcenter/quickstart/index.cache.bz2
+share/doc/HTML/sl/khelpcenter/quickstart/index.docbook
 share/doc/HTML/sl/khelpcenter/shadow1.png
 share/doc/HTML/sl/khelpcenter/support.docbook
 share/doc/HTML/sl/khelpcenter/tinylogo.png
@@ -869,6 +872,7 @@ share/locale/sl/flag.png
 @dirrm share/doc/HTML/sl/kinfocenter
 @dirrm share/doc/HTML/sl/khelpcenter/visualdict
 @dirrm share/doc/HTML/sl/khelpcenter/userguide
+@dirrm share/doc/HTML/sl/khelpcenter/quickstart
 @dirrm share/doc/HTML/sl/khelpcenter/glossary
 @dirrm share/doc/HTML/sl/khelpcenter/faq
 @dirrm share/doc/HTML/sl/khelpcenter

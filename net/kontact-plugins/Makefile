@@ -16,8 +16,6 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Newsticker plugin for Kontact
 
-IGNORE=		This port is part of KDE 3.2.1 and is not yet ready
-
 LIB_DEPENDS=	kdepim:${PORTSDIR}/deskutils/kdepim3
 
 KDE_SPLIT=	kontact
