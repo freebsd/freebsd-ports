@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	Spreadsheet-WriteExcel
-PORTVERSION=	0.35
+PORTVERSION=	0.37
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Spreadsheet
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	skv@protey.ru
+MAINTAINER=	skv@FreeBSD.org
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Parse/RecDescent.pm:${PORTSDIR}/devel/p5-Parse-RecDescent
 RUN_DEPENDS=	${BUILD_DEPENDS}
@@ -34,10 +34,10 @@ MAN3=		Spreadsheet::WriteExcel.3 \
 MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 pre-configure:
-		${MV} ${WRKSRC}/WriteExcel/doc	${WRKSRC}
-		${MV} ${WRKSRC}/WriteExcel/examples	${WRKSRC}
-		${PERL} -pi -e 's:WriteExcel/(doc|examples):\1:g' \
-			${WRKSRC}/MANIFEST
+	@${MV} ${WRKSRC}/WriteExcel/doc	${WRKSRC}
+	@${MV} ${WRKSRC}/WriteExcel/examples	${WRKSRC}
+	@${PERL} -pi -e 's:WriteExcel/(doc|examples):\1:g' \
+		${WRKSRC}/MANIFEST
 
 post-install:
 .ifndef(NOPORTDOCS)
@@ -46,8 +46,8 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/* ${DOCSDIR}
 	@${ECHO_MSG} "===>   Installing examples for ${PKGNAME}"
 	@${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/examples/README ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/examples/republic.bmp ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/examples/README \
+		${WRKSRC}/examples/republic.bmp ${EXAMPLESDIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/examples/*.pl ${EXAMPLESDIR}
 .endif
 

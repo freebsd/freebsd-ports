@@ -17,7 +17,9 @@ lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Spreadsheet/WriteExcel/.pack
 %%PORTDOCS%%%%DOCSDIR%%/merge2.gif
 %%PORTDOCS%%%%DOCSDIR%%/number_formats1.html
 %%PORTDOCS%%%%DOCSDIR%%/number_formats2.html
+%%PORTDOCS%%%%DOCSDIR%%/palette.html
 %%PORTDOCS%%%%DOCSDIR%%/regions.gif
+%%PORTDOCS%%%%DOCSDIR%%/rgb5-97.html
 %%PORTDOCS%%%%DOCSDIR%%/simple.gif
 %%PORTDOCS%%%%DOCSDIR%%/stats.gif
 %%PORTDOCS%%%%DOCSDIR%%/stocks.gif
@@ -33,6 +35,7 @@ lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Spreadsheet/WriteExcel/.pack
 %%PORTDOCS%%%%EXAMPLESDIR%%/bigfile.pl
 %%PORTDOCS%%%%EXAMPLESDIR%%/cgi.pl
 %%PORTDOCS%%%%EXAMPLESDIR%%/chess.pl
+%%PORTDOCS%%%%EXAMPLESDIR%%/colors.pl
 %%PORTDOCS%%%%EXAMPLESDIR%%/comments.pl
 %%PORTDOCS%%%%EXAMPLESDIR%%/convertA1.pl
 %%PORTDOCS%%%%EXAMPLESDIR%%/copyformat.pl
@@ -44,10 +47,12 @@ lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Spreadsheet/WriteExcel/.pack
 %%PORTDOCS%%%%EXAMPLESDIR%%/filehandle.pl
 %%PORTDOCS%%%%EXAMPLESDIR%%/formats.pl
 %%PORTDOCS%%%%EXAMPLESDIR%%/function_locale.pl
+%%PORTDOCS%%%%EXAMPLESDIR%%/headers.pl
 %%PORTDOCS%%%%EXAMPLESDIR%%/hyperlink1.pl
 %%PORTDOCS%%%%EXAMPLESDIR%%/hyperlink2.pl
 %%PORTDOCS%%%%EXAMPLESDIR%%/images.pl
 %%PORTDOCS%%%%EXAMPLESDIR%%/lecxe.pl
+%%PORTDOCS%%%%EXAMPLESDIR%%/long_string.pl
 %%PORTDOCS%%%%EXAMPLESDIR%%/merge1.pl
 %%PORTDOCS%%%%EXAMPLESDIR%%/merge2.pl
 %%PORTDOCS%%%%EXAMPLESDIR%%/merge3.pl
@@ -64,8 +69,8 @@ lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Spreadsheet/WriteExcel/.pack
 %%PORTDOCS%%%%EXAMPLESDIR%%/tab2xls.pl
 %%PORTDOCS%%%%EXAMPLESDIR%%/textwrap.pl
 %%PORTDOCS%%%%EXAMPLESDIR%%/win32ole.pl
-%%PORTDOCS%%%%EXAMPLESDIR%%/write_arrays.pl
 %%PORTDOCS%%%%EXAMPLESDIR%%/writeA1.pl
+%%PORTDOCS%%%%EXAMPLESDIR%%/write_arrays.pl
 %%PORTDOCS%%%%EXAMPLESDIR%%/writemany.pl
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
