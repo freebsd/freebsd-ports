@@ -16,28 +16,28 @@ MAINTAINER=	keith@FreeBSD.org
 
 RUN_DEPENDS=	ttfm.sh:${PORTSDIR}/chinese/ttfm
 
-CJK?=		NO
-GS6?=		NO
-XTT?=		YES
+WANT_CJK?=	NO
+WANT_GS6?=	NO
+WANT_X?=	YES
 
-NO_BUILD=	YES
+NO_BUILD=	yes
 SHAREMODE=	644
 WRKSRC=		${WRKDIR}/arphic
-USE_XLIB=	YES
+USE_XLIB=	yes
 FONTDIR=	${PREFIX}/share/fonts/TrueType
 XFONTDIR=	${X11BASE}/lib/X11/fonts/TrueType
-INSTALL_ENV=	PKG_PREFIX=${PREFIX} CJK=${CJK} GS6=${GS6} XTT=${XTT} \
-		XFREE86_VERSION=${XFREE86_VERSION}
+INSTALL_ENV=	PKG_PREFIX=${PREFIX} XFREE86_VERSION=${XFREE86_VERSION} \
+		WANT_CJK=${WANT_CJK} WANT_GS6=${WANT_GS6} WANT_X=${WANT_X}
 
 .include <bsd.port.pre.mk>
 
-.if ${CJK} != "NO"
+.if ${WANT_CJK} != "NO"
 RUN_DEPENDS+=	bg5latex:${PORTSDIR}/chinese/CJK
 .endif
-.if ${GS6} != "NO"
+.if ${WANT_GS6} != "NO"
 RUN_DEPENDS+=	${LOCALBASE}/share/ghostscript/CJK/CMap/B5pc-H:${PORTSDIR}/chinese/ghostscript6
 .endif
-.if ${XFREE86_VERSION} == 3 && ${XTT} != "NO"
+.if ${XFREE86_VERSION} == 3 && ${WANT_X} != "NO"
 RUN_DEPENDS+=	mkfontdir.pl:${PORTSDIR}/x11-servers/XttXF86srv-common
 .endif
 
