@@ -1,13 +1,16 @@
---- elvi/Makefile.in.orig	Sat Jan 13 03:39:42 2001
-+++ elvi/Makefile.in	Wed Jul 18 01:16:36 2001
-@@ -104,14 +104,14 @@
- 		  xxx \
- 		  yahoo
+
+$FreeBSD$
+
+--- elvi/Makefile.in.orig	Sat Oct 27 23:06:22 2001
++++ elvi/Makefile.in	Sat Oct 27 23:07:02 2001
+@@ -70,14 +70,14 @@
  
--sysconf_DATA	= surfraw_elvi.list
-+pkgdata_DATA	= surfraw_elvi.list
+ bin_SCRIPTS =  		  altavista 		  amazon 		  appwatch 		  ask 		  austlii 		  britannica 		  cite 		  cnn 		  currency 		  debbugs 		  debcontents 		  debpackages 		  deja 		  excite 		  fast 		  ftpsearch 		  freshmeat 		  jake 		  google 		  linuxdoc 		  netbsd 		  pubmed 		  raging 		  rhyme 		  slashdot 		  sundocs 		  sourceforge 		  stockquote 		  scaleplus 		  sunsolve 		  swhois 		  thesaurus 		  translate 		  W 		  webster 		  wetandwild 		  woffle 		  xxx 		  yahoo
  
- EXTRA_DIST	= $(bin_SCRIPTS)
+-sysconf_DATA = surfraw_elvi.list
++pkgdata_DATA = surfraw_elvi.list
+ 
+ EXTRA_DIST = $(bin_SCRIPTS)
  mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
  CONFIG_CLEAN_FILES = 
  SCRIPTS =  $(bin_SCRIPTS)
@@ -17,7 +20,7 @@
  
  DIST_COMMON =  Makefile.am Makefile.in
  
-@@ -150,23 +150,23 @@
+@@ -115,23 +115,23 @@
  	  rm -f $(DESTDIR)$(bindir)/`echo $$p|sed '$(transform)'`; \
  	done
  
@@ -51,38 +54,42 @@
  	done
  tags: TAGS
  TAGS:
-@@ -188,7 +188,7 @@
- check: all
- 	$(MAKE)
- installcheck:
--install-exec: install-binSCRIPTS install-sysconfDATA
-+install-exec: install-binSCRIPTS install-pkgdataDATA
- 	@$(NORMAL_INSTALL)
+@@ -160,23 +160,23 @@
+ check: check-am
+ installcheck-am:
+ installcheck: installcheck-am
+-install-exec-am: install-binSCRIPTS install-sysconfDATA
++install-exec-am: install-binSCRIPTS
+ install-exec: install-exec-am
  
- install-data: 
-@@ -197,12 +197,12 @@
- install: install-exec install-data all
- 	@:
+-install-data-am:
++install-data-am: install-pkgdataDATA
+ install-data: install-data-am
  
--uninstall: uninstall-binSCRIPTS uninstall-sysconfDATA
-+uninstall: uninstall-binSCRIPTS uninstall-pkgdataDATA
- 
+ install-am: all-am
+ 	@$(MAKE) $(AM_MAKEFLAGS) install-exec-am install-data-am
+ install: install-am
+-uninstall-am: uninstall-binSCRIPTS uninstall-sysconfDATA
++uninstall-am: uninstall-binSCRIPTS uninstall-pkgdataDATA
+ uninstall: uninstall-am
+ all-am: Makefile $(SCRIPTS) $(DATA)
+ all-redirect: all-am
  install-strip:
- 	$(MAKE) INSTALL_PROGRAM='$(INSTALL_PROGRAM) -s' INSTALL_SCRIPT='$(INSTALL_PROGRAM)' install
+ 	$(MAKE) $(AM_MAKEFLAGS) AM_INSTALL_PROGRAM_FLAGS=-s install
  installdirs:
--	$(mkinstalldirs)  $(DATADIR)$(bindir) $(DATADIR)$(sysconfdir)
-+	$(mkinstalldirs)  $(DATADIR)$(bindir) $(DATADIR)$(pkgdatadir)
+-	$(mkinstalldirs)  $(DESTDIR)$(bindir) $(DESTDIR)$(sysconfdir)
++	$(mkinstalldirs)  $(DESTDIR)$(bindir) $(DESTDIR)$(pkgdatadir)
  
  
  mostlyclean-generic:
-@@ -230,8 +230,8 @@
- 	@echo "This command is intended for maintainers to use;"
- 	@echo "it deletes files that may require special tools to rebuild."
+@@ -206,8 +206,8 @@
+ 
+ maintainer-clean: maintainer-clean-am
  
 -.PHONY: uninstall-binSCRIPTS install-binSCRIPTS uninstall-sysconfDATA \
--install-sysconfDATA tags distdir info dvi installcheck install-exec \
+-install-sysconfDATA tags distdir info-am info dvi-am dvi check check-am \
 +.PHONY: uninstall-binSCRIPTS install-binSCRIPTS uninstall-pkgdataDATA \
-+install-pkgdataDATA tags distdir info dvi installcheck install-exec \
- install-data install uninstall all installdirs mostlyclean-generic \
- distclean-generic clean-generic maintainer-clean-generic clean \
- mostlyclean distclean maintainer-clean
++install-pkgdataDATA tags distdir info-am info dvi-am dvi check check-am \
+ installcheck-am installcheck install-exec-am install-exec \
+ install-data-am install-data install-am install uninstall-am uninstall \
+ all-redirect all-am all installdirs mostlyclean-generic \

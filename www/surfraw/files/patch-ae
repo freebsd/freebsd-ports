@@ -1,9 +1,12 @@
---- elvi/Makefile.am.orig	Sun Sep 17 14:45:18 2000
-+++ elvi/Makefile.am	Sun Sep 17 14:48:39 2000
-@@ -34,7 +34,7 @@
+
+$FreeBSD$
+
+--- elvi/Makefile.am.orig	Sat Oct 27 23:05:41 2001
++++ elvi/Makefile.am	Sat Oct 27 23:05:58 2001
+@@ -39,7 +39,7 @@
+ 		  woffle \
  		  xxx \
  		  yahoo
- 
 -sysconf_DATA	= surfraw_elvi.list
 +pkgdata_DATA	= surfraw_elvi.list
  
