@@ -13,6 +13,8 @@ MASTER_SITES=	http://www.tahi.org/release/v6eval/
 MAINTAINER=	Yukiyo.Akisada@jp.yokogawa.com
 COMMENT=		IPv6 Conformance Test Platform
 
+BROKEN=		Broken pkg-plist
+
 RUN_DEPENDS=	${SITE_PERL}/Expect.pm:${PORTSDIR}/lang/p5-Expect
 
 USE_PERL5=	yes
