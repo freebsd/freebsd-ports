@@ -1,0 +1,21 @@
+--- utils/Etbg.c.orig	Sat Mar 27 10:13:46 1999
++++ utils/Etbg.c	Mon Mar 24 14:03:40 2003
+@@ -26,12 +26,15 @@
+ #include <stdio.h>
+ #include <string.h>
+ 
++#ifndef FALSE
++#define FALSE (0)
++#define TRUE (1)
++#endif
++
+ int 
+ main(int argc, char **argv)
+ {
+-  enum {
+-    FALSE, TRUE
+-  } scale = FALSE, trans = FALSE;
++  int scale = FALSE, trans = FALSE;
+   unsigned int i, pic = 0, tint = 0, shade = 0;
+ 
+   for (i = 1; i < argc; i++) {

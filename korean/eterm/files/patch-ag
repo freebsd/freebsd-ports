@@ -6,8 +6,8 @@
  DLLTOOL="$DLLTOOL" AS="$AS" \
 -${CONFIG_SHELL-/bin/sh} $ac_aux_dir/ltconfig --no-reexec \
 -$libtool_flags --no-verify $ac_aux_dir/ltmain.sh $host \
-+${CONFIG_SHELL-/bin/sh} /usr/local/share/libtool/ltconfig --no-reexec \
-+$libtool_flags --no-verify --disable-ltlibs /usr/local/share/libtool/ltmain.sh $host \
++${CONFIG_SHELL-/bin/sh} ${LOCALBASE}/share/libtool/ltconfig --no-reexec \
++$libtool_flags --no-verify --disable-ltlibs ${LOCALBASE}/share/libtool/ltmain.sh $host \
  || { echo "configure: error: libtool configure failed" 1>&2; exit 1; }
  
  # Reload cache, that may have been modified by ltconfig
@@ -19,7 +19,7 @@
 -
 -# Always use our own libtool.
 -LIBTOOL='$(SHELL) $(top_builddir)/libtool'
-+LIBTOOL_DEPS="/usr/local/share/libtool/ltconfig --disable-ltlibs /usr/local/share/libtool/ltmain.sh"
++LIBTOOL_DEPS="${LOCALBASE}/share/libtool/ltconfig --disable-ltlibs ${LOCALBASE}/share/libtool/ltmain.sh"
 +LIBTOOL="${LOCALBASE}/bin/libtool"
  
  # Redirect the config.log output again, so that the ltconfig log is not
