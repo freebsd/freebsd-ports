@@ -7,15 +7,27 @@
 
 PORTNAME=	png
 PORTVERSION=	1.2.5
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://swrinde.nde.swri.edu/pub/png/src/ \
 		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	lib${PORTNAME}
 DISTNAME=	lib${PORTNAME}-${PORTVERSION}
-
-#PATCH_SITES=	ftp://ftp.libpng.org/pub/png/src/
-#PATCHFILES=
+PATCH_SITES=	${MASTER_SITES}
+PATCH_SITE_SUBDIR=	${MASTER_SITE_SUBDIR}
+PATCHFILES=	libpng-patch00-pngrtran-filler-RRGGBB-overflow.txt \
+		libpng-patch01-pngrtran-filler-GG-overflow.txt \
+		libpng-patch02-pngerror-memcpy-overflow.txt \
+		libpng-patch03-trns-chunk-overflow.txt \
+		libpng-patch04-get-uint-31.txt \
+		libpng-patch05-pngpread-chunklength.txt \
+		libpng-patch06-pngread-chunklength.txt \
+		libpng-patch07-png-read-png-overflow.txt \
+		libpng-patch08-splt-buffer-overflow.txt \
+		libpng-patch09-null-iccp-profile.txt \
+		libpng-patch10-find-duplicate-chunk.txt \
+		libpng-patch11-limit-dimensions.txt
+PATCH_DIST_STRIP= -p1
 
 MAINTAINER=	ache@FreeBSD.org
 COMMENT=	Library for manipulating PNG images
