@@ -17,5 +17,6 @@ existing projects.  In this second public release, you can find:
        * Plain text password authentication
        * Using now only one BPF device for all VRID
        * Support netmask for Virtual IP addresses
+       * Support for monitored circuit and dependances between VRIDs
 
 WWW: http://www.bsdshell.net/
