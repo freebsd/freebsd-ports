@@ -3,7 +3,7 @@
 # Date created:        24 November 1997
 # Whom:                Murray Stokely <murray@cdrom.com>
 #
-# $Id: Makefile,v 1.9 1998/10/09 18:05:11 vanilla Exp $
+# $Id: Makefile,v 1.10 1998/10/28 15:50:25 vanilla Exp $
 #
 
 DISTNAME=	Eterm-0.8.7
@@ -27,11 +27,15 @@ pre-patch:
 	${CP} ${FILESDIR}/patch-kanji ${PATCHDIR}
 .endif
 
+post-patch:
+	@find ${WRKSRC} -name '*.orig' | xargs ${RM} -f
+
 post-install:
 	chown root.wheel ${PREFIX}/bin/Eterm
 	chmod 4755 ${PREFIX}/bin/Eterm
-
+	${INSTALL_DATA} ${WRKSRC}/ReleaseNotes ${PREFIX}/share/Eterm
 .ifndef NOPORTDOCS
+	${INSTALL_DATA} ${WRKSRC}/doc/Eterm.help ${PREFIX}/share/Eterm
 	${INSTALL_DATA} ${WRKSRC}/doc/Eterm.ref ${PREFIX}/share/Eterm
 	${INSTALL_DATA} ${WRKSRC}/doc/Eterm.tcap ${PREFIX}/share/Eterm
 	${INSTALL_DATA} ${WRKSRC}/doc/Eterm.ti ${PREFIX}/share/Eterm
