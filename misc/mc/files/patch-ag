@@ -1,5 +1,5 @@
---- lib/mc.ext.in.orig	Sun Dec  6 16:43:44 1998
-+++ lib/mc.ext.in	Sun Dec  6 16:46:43 1998
+--- lib/mc.ext.in.orig	Mon Oct 12 15:31:03 1998
++++ lib/mc.ext.in	Mon Dec  7 00:09:23 1998
 @@ -265,7 +265,7 @@
  # ar library
  regex/\.s?a$
@@ -9,7 +9,42 @@
  
  # C
  shell/.c
-@@ -356,8 +356,8 @@
+@@ -327,8 +327,8 @@
+ 
+ # ar library
+ regex/\.s?a$
+-	Open=%view{ascii} ar tv %f
+-	View=%view{ascii} nm %f
++	Open=%view{ascii} ar tv '%d/%p'
++	View=%view{ascii} nm '%d/%p'
+ 	Icon=a.xpm
+ 
+ # .so libraries are not manual pages
+@@ -338,26 +338,26 @@
+ 
+ # Manual page
+ regex/(([^0-9]|^[^\.]*)\.([1-9][A-Za-z]*|n)|\.man)$
+-	Open=nroff @TROFFASCII@ @MANDOC@ %f | %var{PAGER:more}
+-	View=%view{ascii,nroff} nroff @TROFFASCII@ @MANDOC@ %f
++	Open=nroff @TROFFASCII@ @MANDOC@ '%d/%p' | %var{PAGER:more}
++	View=%view{ascii,nroff} nroff @TROFFASCII@ @MANDOC@ '%d/%p'
+ 	Icon=man.xpm
+ 
+ # Troff with me macros.
+ shell/.me
+-	Open=nroff @TROFFASCII@ -me %f | %var{PAGER:more}
+-	View=%view{ascii,nroff} nroff @TROFFASCII@ -me %f
++	Open=nroff @TROFFASCII@ -me '%d/%p' | %var{PAGER:more}
++	View=%view{ascii,nroff} nroff @TROFFASCII@ -me '%d/%p'
+ 	Icon=man.xpm
+ 
+ # Troff with ms macros.
+ shell/.ms
+-	Open=nroff @TROFFASCII@ -ms %f | %var{PAGER:more}
+-	View=%view{ascii,nroff} nroff @TROFFASCII@ -ms %f
++	Open=nroff @TROFFASCII@ -ms '%d/%p' | %var{PAGER:more}
++	View=%view{ascii,nroff} nroff @TROFFASCII@ -ms '%d/%p'
+ 	Icon=man.xpm
  
  # Manual page - compressed
  regex/([^0-9]|^[^\.]*)\.([1-9][a-z]?|n)\.g?[Zz]$
@@ -100,6 +135,18 @@
  
  # Sound files
  shell/.mod
+@@ -448,9 +448,9 @@
+ 	Icon=framemaker.xpm
+ 
+ type/mail
+-	Open=elm -f %f
++	Open=mutt -f '%d/%p'
+ 	Icon=mail.xpm
+-	View=%view{ascii} mcmfmt < %f
++	View=%view{ascii} mcmfmt < '%d/%p'
+ 
+ # gzipped
+ type/gzip
 @@ -531,14 +531,14 @@
         Icon=rexx.xpm
  
