@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	jikes
-PORTVERSION=	1.17
+PORTVERSION=	1.18
 CATEGORIES=	java
 MASTER_SITES=	http://oss.software.ibm.com/pub/jikes/${PORTVERSION}/
 
