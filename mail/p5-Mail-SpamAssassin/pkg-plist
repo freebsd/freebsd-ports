@@ -52,36 +52,36 @@ etc/rc.d/spamd.sh
 %%PORTDOCS%%%%DOCSDIR%%/sample-nonspam.txt
 %%PORTDOCS%%%%DOCSDIR%%/sample-spam.txt
 %%PORTDOCS%%%%DOCSDIR%%/spamassassin.sql
-share/spamassassin/10_misc.cf
-share/spamassassin/20_anti_ratware.cf
-share/spamassassin/20_body_tests.cf
-share/spamassassin/20_compensate.cf
-share/spamassassin/20_dnsbl_tests.cf
-share/spamassassin/20_fake_helo_tests.cf
-share/spamassassin/20_head_tests.cf
-share/spamassassin/20_html_tests.cf
-share/spamassassin/20_meta_tests.cf
-share/spamassassin/20_phrases.cf
-share/spamassassin/20_porn.cf
-share/spamassassin/20_ratware.cf
-share/spamassassin/20_uri_tests.cf
-share/spamassassin/23_bayes.cf
-share/spamassassin/25_body_tests_es.cf
-share/spamassassin/25_body_tests_pl.cf
-share/spamassassin/25_head_tests_es.cf
-share/spamassassin/25_head_tests_pl.cf
-share/spamassassin/30_text_de.cf
-share/spamassassin/30_text_es.cf
-share/spamassassin/30_text_fr.cf
-share/spamassassin/30_text_it.cf
-share/spamassassin/30_text_pl.cf
-share/spamassassin/30_text_sk.cf
-share/spamassassin/50_scores.cf
-share/spamassassin/60_whitelist.cf
-share/spamassassin/languages
-share/spamassassin/triplets.txt
-share/spamassassin/user_prefs.template
-@dirrm share/spamassassin
+%%DATADIR%%/10_misc.cf
+%%DATADIR%%/20_anti_ratware.cf
+%%DATADIR%%/20_body_tests.cf
+%%DATADIR%%/20_compensate.cf
+%%DATADIR%%/20_dnsbl_tests.cf
+%%DATADIR%%/20_fake_helo_tests.cf
+%%DATADIR%%/20_head_tests.cf
+%%DATADIR%%/20_html_tests.cf
+%%DATADIR%%/20_meta_tests.cf
+%%DATADIR%%/20_phrases.cf
+%%DATADIR%%/20_porn.cf
+%%DATADIR%%/20_ratware.cf
+%%DATADIR%%/20_uri_tests.cf
+%%DATADIR%%/23_bayes.cf
+%%DATADIR%%/25_body_tests_es.cf
+%%DATADIR%%/25_body_tests_pl.cf
+%%DATADIR%%/25_head_tests_es.cf
+%%DATADIR%%/25_head_tests_pl.cf
+%%DATADIR%%/30_text_de.cf
+%%DATADIR%%/30_text_es.cf
+%%DATADIR%%/30_text_fr.cf
+%%DATADIR%%/30_text_it.cf
+%%DATADIR%%/30_text_pl.cf
+%%DATADIR%%/30_text_sk.cf
+%%DATADIR%%/50_scores.cf
+%%DATADIR%%/60_whitelist.cf
+%%DATADIR%%/languages
+%%DATADIR%%/triplets.txt
+%%DATADIR%%/user_prefs.template
+@dirrm %%DATADIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/SpamAssassin
 @unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail 2>/dev/null || true

@@ -11,7 +11,7 @@ filtering using the user's own mail user-agent application.
 Additional drop-in rule sets are available at
 http://wiki.apache.org/spamassassin/CustomRulesets
 
-WWW:	http://spamassassin.org/
+WWW:	http://spamassassin.apache.org/
 
 - Doug Barton
 DougB@FreeBSD.org
