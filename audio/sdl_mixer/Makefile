@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	sdl_mixer
-PORTVERSION=	1.2.5
-PORTREVISION=	3
+PORTVERSION=	1.2.6
 CATEGORIES=	audio
 MASTER_SITES=	http://www.libsdl.org/projects/SDL_mixer/release/
 DISTNAME=	SDL_mixer-${PORTVERSION}
@@ -21,7 +20,8 @@ LIB_DEPENDS=	vorbis.3:${PORTSDIR}/audio/libvorbis \
 USE_SDL=	sdl
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
-USE_INC_LIBTOOL_VER=	13
+USE_LIBTOOL_VER=15
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 INSTALLS_SHLIB=	yes
