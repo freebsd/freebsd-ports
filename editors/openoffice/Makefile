@@ -32,6 +32,7 @@ MOUNT?=	/sbin/mount
 ZIP?=	${PREFIX}/bin/zip
 UNZIP?=	${PREFIX}/bin/unzip
 TCSH?=	/bin/tcsh
+PASTE?= /usr/bin/paste
 
 .include <bsd.port.pre.mk>
 
@@ -70,6 +71,15 @@ PKGNAMESUFFIX=	-${LANG_SUFFIX}
 CONFIGURE_ARGS+=	--with-lang=${LANG_CONFIGURE_ARG},ENUS
 .endif
 .endif
+
+.if !defined (LANG) && !defined(USE_LANG)
+USE_LANG=	en_US.ISO8859-15
+LANG_LIST=	en_US.ISO8859-15 en_US.ISO8859-1 US-ASCII
+.else
+USE_LANG=	${LANG}
+.endif
+
+LANG_SORTED=	`${ECHO} ${LANG_LIST} | ${TR} " " "\n" | ${PASTE} -d " " - -`
 
 .if ${OSVERSION} < 500000
 #
@@ -164,11 +174,29 @@ CONFIGURE_ARGS+=	--enable-gcc3
 
 pre-fetch:
 	@${ECHO}
+.if !defined(LANG)
 	@${ECHO} "REQUIREMENTS:"
-.if !defined(USE_GCC) || !defined(WITH_DEBUG)
 	@${ECHO}
-	@${ECHO} "OPTIONS:"
+	@${ECHO} "OO requires that the ENV variable LANG"
+	@${ECHO} "is set to a proper value. Dependent on"
+	@${ECHO} "which language port you use, OO does"
+	@${ECHO} "automatically set LANG to a suitable"
+	@${ECHO} "value. You can change this with:"
+	@${ECHO}
+	@${ECHO} "USE_LANG=\"prefered language\""
+	@${ECHO}
+	@${ECHO} "and set a different language"
+	@${ECHO} "like:"
+	@${ECHO}
+	@${ECHO} "${LANG_SORTED}"
+	@${ECHO}
+	@${ECHO} "Your current setting is:"
+	@${ECHO}
+	@${ECHO} "USE_LANG=${USE_LANG}"
+	@${ECHO}
+	@${ECHO}
 .endif
+	@${ECHO} "OPTIONS:"
 .if !defined(USE_GCC)
 	@${ECHO}
 	@${ECHO} "You can compile OO with different"
@@ -232,8 +260,10 @@ pre-fetch:
 	@${ECHO} "kern.maxssiz=\"268435456\""
 .endif
 	@${ECHO}
+.if ${OSVERSION} < 460002
 	@${ECHO} "REQUIRED SYSTEM PATCHES:"
 	@${ECHO}
+.endif
 .if ${OSVERSION} < 500000
 	@${ECHO} "OO.org can crash if you enter a non existing path"
 	@${ECHO} "or URL in the location bar. To fix these crashes"
@@ -479,6 +509,8 @@ install-user:
 post-install:
 	@${ECHO_MSG} "===>  Add wrapper scripts";
 	@${SED} -e 's#%%PREFIX%%#${PREFIX}#g' < ${FILESDIR}/openoffice-wrapper \
+	   > ${WRKDIR}/openoffice
+	@${SED} -e 's#%%LANG%%#${USE_LANG}#g' < ${FILESDIR}/openoffice-wrapper \
 	   > ${WRKDIR}/openoffice
 	@${INSTALL_SCRIPT} ${WRKDIR}/openoffice ${PREFIX}/bin/openoffice
 	@${LN} -fs ${PREFIX}/bin/openoffice ${PREFIX}/bin/openoffice-sagenda
