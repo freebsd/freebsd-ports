@@ -1,0 +1,17 @@
+bin/lplayer
+lib/lplayer/go.png
+lib/lplayer/go32.png
+lib/lplayer/lplayer-bin
+lib/lplayer/lplayericon.png
+lib/lplayer/lplayerlogo.png
+lib/lplayer/lplayerlogo2.png
+lib/lplayer/lplayerlogo3.png
+lib/lplayer/next.png
+lib/lplayer/play.png
+lib/lplayer/previous.png
+lib/lplayer/ratedown.png
+lib/lplayer/ratedown32.png
+lib/lplayer/rateup.png
+lib/lplayer/rateup32.png
+lib/lplayer/stop.png
+@dirrm lib/lplayer

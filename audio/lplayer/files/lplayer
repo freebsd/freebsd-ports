@@ -1,0 +1,41 @@
+#!/bin/sh
+# -*-mode: shell-script-*-
+#
+# lplayer
+#
+# 2002-12-16 Alan Eldridge <alane@freebsd.org>
+#
+
+run_lplayer() {
+    ./lplayer-bin ${1:+"$@"} &
+    exit 0
+}
+
+INFOPID=0
+XDIALOG=/usr/X11R6/bin/Xdialog
+if test -x $XDIALOG; then
+    $XDIALOG --title LongPlayer --backtitle "Please wait ..." \
+	--no-buttons --infobox "Backing up DB ..." 15 50 5000 &
+    INFOPID=$!
+fi # test -x $XDIALOG ...
+
+DBFILE=$HOME/.lptable.lp2
+PLISTS=$HOME/.lpplaylists.xml
+SETTINGS=$HOME/.lpsettings.xml
+SUFFIX=.save
+LPLAYERDIR=/usr/local/lib/lplayer
+
+for i in $DBFILE $PLISTS $SETTINGS; do
+    if test -f $i; then
+	test -f $i$SUFFIX && cmp -s $i $i$SUFFIX && continue
+	rm -f $i$SUFFIX 2>/dev/null; cp -pf $i $i$SUFFIX
+    fi
+done
+
+test $INFOPID -gt 0 && wait $INFOPID
+
+cd $LPLAYERDIR
+run_lplayer ${1:+"$@"} &
+
+exit 0
+#EOF

@@ -125,6 +125,7 @@
     SUBDIR += linux-libaudiofile
     SUBDIR += linux-vsound
     SUBDIR += lopster
+    SUBDIR += lplayer
     SUBDIR += mad
     SUBDIR += maplay
     SUBDIR += mhwaveedit
