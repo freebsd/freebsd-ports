@@ -1,22 +1,22 @@
---- makefile.orig      Tue Sep 18 00:15:28 2001
-+++ makefile   Sun May 12 00:46:39 2002
-@@ -12,9 +12,7 @@
- # GENERAL
+--- makefile.orig      Wed Jun  5 23:11:40 2002
++++ makefile   Wed Jun  5 23:11:57 2002
+@@ -13,8 +13,8 @@
  #
 
--INCLUDES      =       -I/usr/local/include/
+ INCLUDES      =       -I/usr/local/include/
 -CFLAGS                =       $(INCLUDES) -Wall -Werror -O3 -fPIC
 -CXXFLAGS      =       $(CFLAGS)
-+CXXFLAGS              +=      -I/usr/local/include/
++CFLAGS                +=      $(INCLUDES) -Wall -Werror
++CXXFLAGS      +=      $(CFLAGS)
  PLUGIN_LIB    =       ../plugins/cmt.so
 
  ###############################################################################
-@@ -61,7 +59,7 @@
+@@ -61,7 +61,7 @@
  targets:      $(PLUGIN_LIB)
 
  $(PLUGIN_LIB):        $(PLUGIN_OBJECTS)
 -      $(CXX)  -shared                                                 \
-+      $(CXX) ${CXXFLAGS} -shared                                      \
++      $(CXX)  ${CXXFLAGS} -shared                                            \
                -o $(PLUGIN_LIB)                                        \
                $(PLUGIN_OBJECTS)
 
