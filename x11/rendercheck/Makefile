@@ -8,7 +8,7 @@
 PORTNAME=	rendercheck
 PORTVERSION=	1.0.3
 CATEGORIES=	x11
-MASTER_SITES=	http://pdx.freedesktop.org/~xapps/release/
+MASTER_SITES=	http://xapps.freedesktop.org/release/
 
 MAINTAINER=	anholt@FreeBSD.org
 COMMENT=	A small program for testing basic Render extension conformance
