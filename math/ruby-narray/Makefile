@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	narray
-PORTVERSION=	0.5.6p1
+PORTVERSION=	0.5.6p2
 CATEGORIES=	math ruby
 MASTER_SITES=	http://www.ir.isas.ac.jp/~masa/ruby/dist/ \
 		http://www.ruby-lang.org/~knu/backup/
