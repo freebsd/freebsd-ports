@@ -6,32 +6,26 @@
 #
 
 PORTNAME=	xsidplay
-PORTVERSION=	1.3.8
+PORTVERSION=	1.3.9
 CATEGORIES=	audio emulators
 MASTER_SITES=	http://www.geocities.com/SiliconValley/Lakes/5147/sidplay/packages/ \
 		http://www.freenix.no/~anders/
-DISTNAME=	${PORTNAME}-1_3_8
-EXTRACT_SUFX=   _tar.gz
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/./_/g}
+EXTRACT_SUFX=   .tgz
 
 MAINTAINER=	anders@fix.no
 
-BUILD_DEPENDS=	sidplay:${PORTSDIR}/audio/sidplay
+LIB_DEPENDS=	sidplay.1:${PORTSDIR}/audio/libsidplay
 
 GNU_CONFIGURE=	YES
-USE_GMAKE=	YES
 USE_QT=		YES
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include \
-		-I${LOCALBASE}/include/sidplay" \
-		LDFLAGS=-L${LOCALBASE}/lib
+		-I${X11BASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 
 WRKSRC=		${WRKDIR}/${PKGNAME}
 
-.include <bsd.port.pre.mk>
-.if ${OSVERSION} >= 400000
-BROKEN=	"Doesn't build with gcc >= 2.8.1"
-.endif
-
 do-install:
-		${INSTALL_PROGRAM} ${WRKSRC}/src/xsidplay ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/src/xsidplay ${PREFIX}/bin
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
