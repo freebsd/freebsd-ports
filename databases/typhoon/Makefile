@@ -3,7 +3,7 @@
 # Date created:		Wed Dec 11 15:16:19 CST 1996
 # Whom:			erich@FreeBSD.org
 #
-# $Id: Makefile,v 1.3 1998/01/31 16:59:53 jseger Exp $
+# $Id: Makefile,v 1.4 1998/10/20 01:30:01 steve Exp $
 #
 
 DISTNAME=	typhoon-1.10.3
@@ -26,8 +26,8 @@ post-install:
 	@${MKDIR} ${PREFIX}/share/typhoon
 	@${INSTALL_DATA} ${WRKSRC}/man/manual.asc ${PREFIX}/share/typhoon
 	@${INSTALL_DATA} ${WRKSRC}/include/environ.h ${WRKSRC}/include/typhoon.h ${PREFIX}/include
-	@if [ $PORTOBJFORMAT = "elf" ]; then \
-		@{LN} -sf libtyphoon.so.1.10 ${PREFIX}/lib/libtyphoon.so; \
+	@if [ ${PORTOBJFORMAT} = "aout" ]; then \
+		${LN} -sf libtyphoon.so.1.10 ${PREFIX}/lib/libtyphoon.so; \
 	fi
 	@${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 
