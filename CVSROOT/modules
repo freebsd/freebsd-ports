@@ -4324,6 +4324,7 @@ mod_index_rss	ports/www/mod_index_rss
 mod_jk		ports/www/mod_jk
 mod_jk2		ports/www/mod_jk2
 mod_layout	ports/www/mod_layout
+mod_layout2	ports/www/mod_layout2
 mod_limitipconn	ports/www/mod_limitipconn
 mod_log_mysql	ports/www/mod_log_mysql
 mod_mp3		ports/www/mod_mp3
