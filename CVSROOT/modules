@@ -5797,6 +5797,7 @@ rt2-demo	ports/games/rt2-demo
 rtadvd		src/usr.sbin/rtadvd
 rtb		ports/games/rtb
 rtc		ports/emulators/rtc
+rtcw		ports/games/rtcw
 rtems-gcc	ports/devel/rtems-gcc
 rtf2htm		ports/textproc/rtf2htm
 rtf2latex	ports/print/rtf2latex
