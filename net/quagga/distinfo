@@ -1,2 +1,4 @@
 MD5 (quagga-0.96.4.tar.gz) = 55f5a307c453f90d7dfcc13f0dabb83d
+SIZE (quagga-0.96.4.tar.gz) = 1401066
 MD5 (quagga-bgp_route-wspace.diff) = 180682299947c8d7fe7d0ed1f540e5ae
+SIZE (quagga-bgp_route-wspace.diff) = 687
