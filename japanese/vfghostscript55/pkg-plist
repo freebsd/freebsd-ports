@@ -79,25 +79,26 @@ share/ghostscript/5.50vflib/doc/Unix-lpr.htm
 share/ghostscript/5.50vflib/doc/Use.htm
 share/ghostscript/5.50vflib/doc/Xfonts.htm
 share/ghostscript/5.50vflib/doc/djgpp.sj
+share/ghostscript/5.50vflib/doc/epag-3.09/FILES
+share/ghostscript/5.50vflib/doc/epag-3.09/adjust.ps
+share/ghostscript/5.50vflib/doc/epag-3.09/ert.txt
+share/ghostscript/5.50vflib/doc/epag-3.09/gdevepag.txt
+share/ghostscript/5.50vflib/doc/epag-3.09/gsepagif.sh
+share/ghostscript/5.50vflib/doc/epag-3.09/psprint
 share/ghostscript/5.50vflib/doc/gdev10v.jis
 share/ghostscript/5.50vflib/doc/gdevdmpr.sj
-share/ghostscript/5.50vflib/doc/gdevnpdl.jis
 share/ghostscript/5.50vflib/doc/gdevmd2k.jis
+share/ghostscript/5.50vflib/doc/gdevmjc-0.8/MJ700V2C.FAQ
 share/ghostscript/5.50vflib/doc/gdevmjc-0.8/README.mjc
 share/ghostscript/5.50vflib/doc/gdevmjc-0.8/README.mje
 share/ghostscript/5.50vflib/doc/gdevmjc-0.8/README.noz
-share/ghostscript/5.50vflib/doc/gdevmjc-0.8/MJ700V2C.FAQ
 share/ghostscript/5.50vflib/doc/gdevmjc-0.8/cpem.doc
-share/ghostscript/5.50vflib/doc/gdevrpdl.doc 
+share/ghostscript/5.50vflib/doc/gdevnpdl.jis
+share/ghostscript/5.50vflib/doc/gdevrpdl.doc
 share/ghostscript/5.50vflib/doc/gs261j.doc
 share/ghostscript/5.50vflib/doc/gs261j.jis
 share/ghostscript/5.50vflib/doc/gs_statd.dif
-share/ghostscript/5.50vflib/doc/epag-3.09/FILES
-share/ghostscript/5.50vflib/doc/epag-3.09/gdevepag.txt
-share/ghostscript/5.50vflib/doc/epag-3.09/ert.txt
-share/ghostscript/5.50vflib/doc/epag-3.09/adjust.ps
-share/ghostscript/5.50vflib/doc/epag-3.09/gsepagif.sh
-share/ghostscript/5.50vflib/doc/epag-3.09/psprint
+share/ghostscript/5.50vflib/doc/hpijs_readme.html
 share/ghostscript/5.50vflib/doc/kfvflib.sj
 share/ghostscript/5.50vflib/doc/ps2epsi.txt
 share/ghostscript/5.50vflib/doc/readme-eplaser.euc
@@ -404,11 +405,11 @@ share/ghostscript/fonts/u004006t.pfm
 share/ghostscript/fonts/z003034l.afm
 share/ghostscript/fonts/z003034l.pfb
 share/ghostscript/fonts/z003034l.pfm
+@dirrm share/ghostscript/fonts
+@dirrm share/ghostscript/5.50vflib/vflib
+@dirrm share/ghostscript/5.50vflib/examples
 @dirrm share/ghostscript/5.50vflib/doc/gdevmjc-0.8
 @dirrm share/ghostscript/5.50vflib/doc/epag-3.09
 @dirrm share/ghostscript/5.50vflib/doc
-@dirrm share/ghostscript/5.50vflib/examples
-@dirrm share/ghostscript/5.50vflib/vflib
 @dirrm share/ghostscript/5.50vflib
-@dirrm share/ghostscript/fonts
 @dirrm share/ghostscript

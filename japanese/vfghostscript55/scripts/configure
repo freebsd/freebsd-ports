@@ -4,7 +4,7 @@
 
 if [ ! "X"${BATCH} = "X" ] ; then
 
-PRINTER_JAPAN=' mjc180.dev mjc360.dev mjc720.dev mj500c.dev lips2p.dev lips3.dev lips4.dev lips4v.dev  bjc880j.dev epag.dev npdl.dev nx100f.dev nx100v.dev bj10v.dev bj10vh.dev dmprt.dev md2k.dev md5k.dev lp2200.dev lp9400.dev lp8700.dev lp8100.dev lp3000c.dev lp8000c.dev lp8200c.dev lp8300c.dev lp8500c.dev lp8600f.dev lp8400f.dev lp8300f.dev lp1900.dev lp1800.dev hpijs.dev DJ630.dev DJ6xx.dev DJ6xxP.dev DJ8xx.dev DJ9xx.dev DJ9xxVIP.dev AP21xx.dev'
+PRINTER_JAPAN=' mjc180.dev mjc360.dev mjc720.dev mj500c.dev lips2p.dev lips3.dev lips4.dev lips4v.dev  bjc880j.dev epag.dev npdl.dev nx100f.dev nx100v.dev bj10v.dev bj10vh.dev dmprt.dev md2k.dev md5k.dev lp2200.dev lp9400.dev lp8700.dev lp8100.dev lp3000c.dev lp8000c.dev lp8200c.dev lp8300c.dev lp8500c.dev lp8600f.dev lp8400f.dev lp8300f.dev lp1900.dev lp1800.dev ijs.dev'
 
 sed -e "s;DEVICE_DEVS15=pdfwrite.dev;DEVICE_DEVS15=pdfwrite.dev stcolor.dev st800.dev uniprint.dev bmp16m.dev ${PRINTER_JAPAN};" \
     < ${WRKSRC}/unix-gcc.mak > ${WRKSRC}/unix-gcc.mak.bak && \
@@ -138,13 +138,7 @@ Have fun with this new configuration style !     -andreas \n\n\
    "pjetxl"   "alternate HP PaintJet XL driver" OFF \
    "pjxl"     "HP PaintJet XL color printer" ON \
    "pjxl300"  "HP PaintJet XL300 color printer (also for 1200C)" ON \
-   "DJ6xx"    "HP DeskJet 600C Series, e-Series (e-20)" ON \
-   "DJ6xxP"   "HP DJ 600C Series Photo" ON \
-   "DJ630"    "HP DJ 630C Series" ON \
-   "DJ8xx"    "HP DJ 800C Series" ON \
-   "DJ9xx"    "HP DJ 900C Series, Photo Smart" ON \
-   "DJ9xxVIP" "HP DJ 990C Series, Photo Smart" ON \
-   "AP21xx"   "Apollo 2100 Series" ON \
+   "ijs"      "HP PhotoSmart/DeskJet series (HP developed driver)" ON \
    "m8510"    "C.Itoh M8510 printer" OFF \
    "cp50"     "Mitsubishi CP50 color" OFF \
    "necp6"    "NEC P6/P6+/P60, 360x360 DPI resol" OFF \
