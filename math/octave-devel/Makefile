@@ -39,6 +39,10 @@ CONFIGURE_ARGS=	--disable-shared --with-fftw --host=${GNU_HOST}
 CONFIGURE_ARGS+=	--with-f2c
 .endif
 
+.if ${OSVERSION} <= 470101
+CONFIGURE_ARGS+=	--disable-readline
+.endif
+
 MAN1=		octave.1 octave-bug.1
 
 LIBOCTAVE-INFO= liboctave.info liboctave.info-1 liboctave.info-2 liboctave.info-3
