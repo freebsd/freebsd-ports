@@ -10,8 +10,10 @@ bin/noweb
 bin/nuweb2noweb
 bin/cpif
 bin/sl2h
+share/emacs/site-lisp/noweb-mode.el
 share/noweb/autodefs.c
 share/noweb/autodefs.icon
+share/noweb/autodefs.lrtl
 share/noweb/autodefs.pascal
 share/noweb/autodefs.promela
 share/noweb/autodefs.sml
