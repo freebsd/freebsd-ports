@@ -1,9 +1,0 @@
---- src/blacklist.c.orig	Mon Feb 12 00:26:06 2001
-+++ src/blacklist.c	Mon Feb 12 00:26:19 2001
-@@ -1,5 +1,6 @@
- /* blacklist.c */
- 
-+#include <sys/types.h>
- #include <stdio.h>
- #include <stdlib.h>
- #include <string.h>

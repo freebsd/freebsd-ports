@@ -193,7 +193,6 @@
     SUBDIR += gnu-radius
     SUBDIR += gnugadu
     SUBDIR += gnunet
-    SUBDIR += gnut
     SUBDIR += gofish
     SUBDIR += googolplex
     SUBDIR += gopher
