@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	freesci
-PORTVERSION=	0.3.4a
-PORTREVISION=	1
+PORTVERSION=	0.3.4c
 CATEGORIES=	emulators games
 MASTER_SITES=	${MASTER_SITE_SAVANNAH} \
 		http://teksolv.de/~jameson/
@@ -23,11 +22,19 @@ GNU_CONFIGURE=	yes
 WANT_SDL=	yes
 
 CONFIGURE_TARGET=
-CONFIGURE_ENV=	CFLAGS=${PTHREAD_CFLAGS}
+CONFIGURE_ENV=	CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS}"
 
 MAN6=	freesci-tools.6 freesci.6
 
 .include <bsd.port.pre.mk>
+
+.if defined(WITH_OPTIMIZED_CFLAGS)
+CFLAGS=		-O3 -fexpensive-optimizations -fomit-frame-pointer -funroll-loops \
+		-fstrict-aliasing
+.if ${ARCH} != "alpha"
+CFLAGS+=	-ffast-math
+.endif
+.endif
 
 .if ${HAVE_SDL:Msdl}!=""
 WITH_SDL=	yes
@@ -78,8 +85,11 @@ pre-everything::
 .if !defined(WITH_DIRECTFB)
 	@${ECHO_MSG} "Define WITH_DIRECTFB to build with DirectFB support"
 .endif
+.if !defined(WITH_OPTIMIZED_CFLAGS)
+	@${ECHO_MSG} "Define WITH_OPTIMIZED_CFLAGS to build with extra optimizations"
+.endif
 
-post-patch:
+pre-configure:
 	@${REINPLACE_CMD} -e 's/-lpthread/${PTHREAD_LIBS}/g' ${WRKSRC}/configure
 
 post-install:
