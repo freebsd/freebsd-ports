@@ -1,32 +1,32 @@
---- config.h.orig	Fri Jan 28 09:48:51 2000
-+++ config.h	Fri Jan 28 18:53:34 2000
-@@ -59,19 +59,16 @@
+--- config.h.orig	Fri Apr 21 12:37:50 2000
++++ config.h	Sat Apr 22 06:22:36 2000
+@@ -64,20 +64,16 @@
  /**********************************************************/
  #ifdef makefile_parameter
  
 -BIN_DIR = /usr/local/bin
 -HELP_DIR = /usr/local/lib/w3m
 -LIB_DIR = /usr/local/lib/w3m
--HELP_FILE = w3mhelp_ja.html
--SYS_LIBRARIES = -lgpm  -lbsd -lncurses  -L/usr/local/ssl/lib -lssl -lcrypto
+-HELP_FILE = w3mhelp-w3m_ja.html
+-SYS_LIBRARIES = -lgpm  -lbsd -lnsl -lncurses  -L/usr/local/ssl/lib -lssl -lcrypto
 +BIN_DIR = %%PREFIX%%/bin
 +HELP_DIR = %%PREFIX%%/share/doc/w3m
 +HELP_DIR_JA = %%PREFIX%%/share/doc/ja/w3m
 +LIB_DIR = %%PREFIX%%/libexec/w3m
-+HELP_FILE = w3mhelp_en.html
 +SYS_LIBRARIES = -lncurses
  LOCAL_LIBRARIES = 
 -CC = gcc
--MYCFLAGS = -g -I./gc  -I/usr/local/ssl/include/openssl -I/usr/local/ssl/include
+-MYCFLAGS = -O -I./gc  -I/usr/local/ssl/include/openssl -I/usr/local/ssl/include
  KEYBIND_SRC = keybind.c
  KEYBIND_OBJ = keybind.o
  EXT=
+ MATHLIB=-lm
 -GCLIB=gc/gc.a
 -GCTARGET=gc/gc.a
  RANLIB=ranlib
  MKDIR=mkdir -p
- #else
-@@ -81,23 +78,31 @@
+ VERSION=0.1.9
+@@ -89,26 +85,34 @@
  
  #define JA 0
  #define EN 1
@@ -46,22 +46,28 @@
  #define MENU
  #define USE_COOKIE
 -#define USE_SSL
+-#define USE_SSL_VERIFY
 +#undef USE_SSL
++#undef USE_SSL_VERIFY
+ #undef FTPPASS_HOSTNAMEGEN
  
- #define DEF_EDITOR "/usr/bin/vi"
+ 
+-#define DEF_EDITOR "/bin/vi"
 -#define DEF_MAILER "/bin/mail"
--#define DEF_EXT_BROWSER "/usr/local/bin/netscape"
-+#define DEF_MAILER "/usr/bin/mail"
-+#define DEF_EXT_BROWSER "%%PREFIX%%/bin/netscape"
- 
+-#define DEF_EXT_BROWSER "/usr/X11R6/bin/netscape"
+-
 -#define LIB_DIR      "/usr/local/lib/w3m"
 -#define HELP_DIR     "/usr/local/lib/w3m"
 -#define HELP_FILE    "w3mhelp.html"
++#define DEF_EDITOR "/usr/bin/vi"
++#define DEF_MAILER "/usr/bin/mail"
++#define DEF_EXT_BROWSER "%%PREFIX%%/bin/netscape"
++
 +#define LIB_DIR      "%%PREFIX%%/libexec/w3m"
 +#ifdef JAPANESE
-+#define HELP_FILE    "%%PREFIX%%/share/doc/ja/w3m/w3mhelp_ja.html"
++#define HELP_FILE    "%%PREFIX%%/share/doc/ja/w3m/w3mhelp-w3m_ja.html"
 +#else
-+#define HELP_FILE    "%%PREFIX%%/share/doc/w3m/w3mhelp_en.html"
++#define HELP_FILE    "%%PREFIX%%/share/doc/w3m/w3mhelp-w3m_en.html"
 +#endif
  #define W3MCONFIG    "w3mconfig"
  
