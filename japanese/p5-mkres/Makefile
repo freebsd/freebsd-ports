@@ -9,8 +9,9 @@ PORTNAME=	mkres
 PORTVERSION=	1.4
 CATEGORIES=	japanese perl5
 MASTER_SITES=	http://ftp.infonets.hiroshima-u.ac.jp/~taoka/FreeBSD/tt/
-EXTRACT_SUFX=	# none
+PKGNAMEPREFIX=	p5-
 DISTNAME=	${PORTNAME}.pl-${PORTVERSION}
+EXTRACT_SUFX=	# none
 
 MAINTAINER=	taoka@FreeBSD.org
 
@@ -18,10 +19,6 @@ RUN_DEPENDS=	mkttfdir:${PORTSDIR}/print/perlftlib
 
 USE_PERL5=	yes
 NO_WRKSUBDIR=	yes
-
-.include <bsd.port.pre.mk>
-
-PKGNAMEPREFIX:=	${PKGNAMEPREFIX}p5-
 
 do-extract:
 		@${RM} -rf ${WRKDIR}
@@ -39,4 +36,4 @@ do-install:
 		${INSTALL_SCRIPT} ${WRKSRC}/${DISTNAME} \
 			${PREFIX}/bin/mkres.pl
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
