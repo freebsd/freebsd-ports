@@ -1,6 +1,8 @@
---- configure.orig	Mon Aug  2 13:32:06 2004
-+++ configure	Mon Aug  2 23:01:34 2004
-@@ -1,6 +1,6 @@
+--- configure.orig	Tue Aug  3 13:46:22 2004
++++ configure	Tue Aug 17 20:24:39 2004
+@@ -1,7 +1,7 @@
+-#!/bin/bash
++#!/bin/sh
  
  MAKE=make
 -which gmake >& /dev/null

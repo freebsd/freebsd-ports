@@ -1,42 +1,11 @@
---- Makefile.orig	Sun Aug  1 18:20:13 2004
-+++ Makefile	Mon Aug  2 23:22:49 2004
-@@ -27,7 +27,7 @@
- PROGS_CV=kbmcv
- 
- all:	$(PROGS) $(DATA) $(PROGS_CV) gcin.spec
--	make -C data
-+	${MAKE} -C data
- 
- gcin:      $(OBJS) $(IMdkitLIB)
- 	$(CC) -o $@ $(OBJS) $(IMdkitLIB) $(LDFLAGS)
-@@ -56,7 +56,7 @@
- 	$(CC) -o $@ $(OBJS_kbmcv)
- 
- $(IMdkitLIB):
--	make -C IMdkit/lib
-+	${MAKE} -C IMdkit/lib
- 
- install:
- 	install -d $(GCIN_TABLE_DIR)
-@@ -67,8 +67,8 @@
- 	install -d $(bindir)
+--- Makefile.orig	Tue Aug  3 13:56:59 2004
++++ Makefile	Tue Aug 17 20:21:44 2004
+@@ -68,7 +68,7 @@
  	install -d $(libdir)/menu
  	install -m 644 menu/* $(libdir)/menu
--	make -C data install
+ 	$(MAKE) -C data install
 -	if [ $(prefix) = /usr/local ]; then \
-+	${MAKE} -C data install
 +	if [ $(prefix) != /usr/local ]; then \
  	   install -m 644 menu/* /usr/lib/menu; \
  	   which update-menus >& /dev/null && update-menus; \
  	   sh modify-XIM; \
-@@ -80,8 +80,8 @@
- 	   install -s $(PROGS) $(bindir); \
- 	fi
- clean:
--	make -C IMdkit clean
--	make -C data clean
-+	${MAKE} -C IMdkit clean
-+	${MAKE} -C data clean
- 	rm -f *.o *~ *.E config.mak tags core.* $(PROGS) $(PROGS_CV) $(DATA) .depend gcin.spec menu/*~
- 	cd ..; tar cvfj gcin.tbz gcin
- 
