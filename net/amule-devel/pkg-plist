@@ -1,53 +1,28 @@
 share/locale/ar/LC_MESSAGES/amule.mo
-@unexec rmdir %D/share/locale/ar/LC_MESSAGES 2>/dev/null || true
 share/locale/bg/LC_MESSAGES/amule.mo
-@unexec rmdir %D/share/locale/bg/LC_MESSAGES 2>/dev/null || true
 share/locale/ca/LC_MESSAGES/amule.mo
-@unexec rmdir %D/share/locale/ca/LC_MESSAGES 2>/dev/null || true
 share/locale/da/LC_MESSAGES/amule.mo
-@unexec rmdir %D/share/locale/da/LC_MESSAGES 2>/dev/null || true
 share/locale/de/LC_MESSAGES/amule.mo
-@unexec rmdir %D/share/locale/de/LC_MESSAGES 2>/dev/null || true
 share/locale/en_GB/LC_MESSAGES/amule.mo
-@unexec rmdir %D/share/locale/en_GB/LC_MESSAGES 2>/dev/null || true
 share/locale/es/LC_MESSAGES/amule.mo
-@unexec rmdir %D/share/locale/es/LC_MESSAGES 2>/dev/null || true
 share/locale/es_MX/LC_MESSAGES/amule.mo
 share/locale/et_EE/LC_MESSAGES/amule.mo
-@unexec rmdir %D/share/locale/et_EE/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/et_EE 2>/dev/null || true
 share/locale/eu/LC_MESSAGES/amule.mo
-@unexec rmdir %D/share/locale/eu/LC_MESSAGES 2>/dev/null || true
 share/locale/fi/LC_MESSAGES/amule.mo
-@unexec rmdir %D/share/locale/fi/LC_MESSAGES 2>/dev/null || true
 share/locale/fr/LC_MESSAGES/amule.mo
-@unexec rmdir %D/share/locale/fr/LC_MESSAGES 2>/dev/null || true
 share/locale/gl/LC_MESSAGES/amule.mo
-@unexec rmdir %D/share/locale/gl/LC_MESSAGES 2>/dev/null || true
 share/locale/hr/LC_MESSAGES/amule.mo
-@unexec rmdir %D/share/locale/hr/LC_MESSAGES 2>/dev/null || true
 share/locale/hu/LC_MESSAGES/amule.mo
-@unexec rmdir %D/share/locale/hu/LC_MESSAGES 2>/dev/null || true
 share/locale/it/LC_MESSAGES/amule.mo
-@unexec rmdir %D/share/locale/it/LC_MESSAGES 2>/dev/null || true
 share/locale/it_CH/LC_MESSAGES/amule.mo
-@unexec rmdir %D/share/locale/it_CH/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/it_CH 2>/dev/null || true
 share/locale/ko/LC_MESSAGES/amule.mo
-@unexec rmdir %D/share/locale/ko/LC_MESSAGES 2>/dev/null || true
 share/locale/nl/LC_MESSAGES/amule.mo
-@unexec rmdir %D/share/locale/nl/LC_MESSAGES 2>/dev/null || true
 share/locale/pl/LC_MESSAGES/amule.mo
-@unexec rmdir %D/share/locale/pl/LC_MESSAGES 2>/dev/null || true
 share/locale/pt_BR/LC_MESSAGES/amule.mo
-@unexec rmdir %D/share/locale/pt_BR/LC_MESSAGES 2>/dev/null || true
 share/locale/pt_PT/LC_MESSAGES/amule.mo
 share/locale/ru/LC_MESSAGES/amule.mo
-@unexec rmdir %D/share/locale/ru/LC_MESSAGES 2>/dev/null || true
 share/locale/zh_CN/LC_MESSAGES/amule.mo
-@unexec rmdir %D/share/locale/zh_CN/LC_MESSAGES 2>/dev/null || true
 share/locale/zh_TW/LC_MESSAGES/amule.mo
-@unexec rmdir %D/share/locale/zh_TW/LC_MESSAGES 2>/dev/null || true
 share/gnome/doc/aMule-2.0.0rc7/ABOUT-NLS
 share/gnome/doc/aMule-2.0.0rc7/Changelog
 share/gnome/doc/aMule-2.0.0rc7/Doxyfile
