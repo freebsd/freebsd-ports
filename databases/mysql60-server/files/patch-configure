@@ -1,26 +1,6 @@
---- configure.orig	Wed Oct  6 00:10:05 1999
-+++ configure	Thu Nov 25 21:00:43 1999
-@@ -2070,8 +2070,8 @@
- LD="$LD" LDFLAGS="$LDFLAGS" LIBS="$LIBS" \
- LN_S="$LN_S" NM="$NM" RANLIB="$RANLIB" \
- DLLTOOL="$DLLTOOL" AS="$AS" OBJDUMP="$OBJDUMP" \
--${CONFIG_SHELL-/bin/sh} $ac_aux_dir/ltconfig --no-reexec \
--$libtool_flags --no-verify $ac_aux_dir/ltmain.sh $host \
-+${CONFIG_SHELL-/bin/sh} /usr/local/share/libtool/ltconfig --no-reexec \
-+$libtool_flags --no-verify --disable-ltlibs /usr/local/share/libtool/ltmain.sh $host \
- || { echo "configure: error: libtool configure failed" 1>&2; exit 1; }
- 
- # Reload cache, that may have been modified by ltconfig
-@@ -2085,7 +2085,7 @@
- 
- 
- # This can be used to rebuild libtool when needed
--LIBTOOL_DEPS="$ac_aux_dir/ltconfig $ac_aux_dir/ltmain.sh"
-+LIBTOOL_DEPS="/usr/local/share/libtool/ltconfig --disable-ltlibs /usr/local/share/libtool/ltmain.sh"
- 
- # Always use our own libtool.
- LIBTOOL='$(SHELL) $(top_builddir)/libtool'
-@@ -2737,7 +2737,7 @@
+--- configure.orig	Wed Jan 12 04:32:17 2000
++++ configure	Tue Jan 25 14:58:09 2000
+@@ -2743,7 +2743,7 @@
    ;;
  esac
  fi
@@ -29,9 +9,9 @@
  if test -n "$HOSTNAME"; then
    echo "$ac_t""$HOSTNAME" 1>&6
  else
-@@ -2865,30 +2865,7 @@
+@@ -2871,30 +2871,7 @@
  echo $ac_n "checking "how to check if pid exists"""... $ac_c" 1>&6
- echo "configure:2867: checking "how to check if pid exists"" >&5
+ echo "configure:2873: checking "how to check if pid exists"" >&5
  PS=$ac_cv_path_PS
 -# Linux style
 -if $PS p $$ 2> /dev/null | grep $0 > /dev/null
@@ -61,7 +41,7 @@
  echo "$ac_t"""$FIND_PROC"" 1>&6
  
  # Check if a pid is valid
-@@ -4569,8 +4546,6 @@
+@@ -4614,8 +4591,6 @@
  #define $ac_tr_lib 1
  EOF
  
@@ -70,7 +50,7 @@
  else
    echo "$ac_t""no" 1>&6
  fi
-@@ -4804,28 +4779,6 @@
+@@ -4849,28 +4824,6 @@
  fi
  
  
@@ -99,7 +79,16 @@
  # Check whether --with-debug or --without-debug was given.
  if test "${with_debug+set}" = set; then
    withval="$with_debug"
-@@ -8064,7 +8017,7 @@
+@@ -7973,7 +7926,7 @@
+ #include <pthread.h>
+ int main() {
+ pthread_attr_t thr_attr;
+-pthread_attr_setscope(&thr_attr,0);
++XXXpthread_attr_setscope(&thr_attr,0);
+ ; return 0; }
+ EOF
+ if { (eval echo configure:7980: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext}; then
+@@ -8178,7 +8131,7 @@
      echo ""
      echo "Configuring MIT Pthreads"
      # We will never install so installation paths are not needed.
