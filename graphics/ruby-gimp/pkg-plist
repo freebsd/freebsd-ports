@@ -1,0 +1,23 @@
+%%RUBY_SITEARCHLIBDIR%%/gimp.so
+%%RUBY_SITEARCHLIBDIR%%/gimpui.so
+%%RUBY_SITELIBDIR%%/gimp.rb
+%%RUBY_SITELIBDIR%%/gimpenums.rb
+%%RUBY_SITELIBDIR%%/gimpfu.rb
+%%RUBY_SITELIBDIR%%/gimpshelf.rb
+%%RUBY_SITELIBDIR%%/gimpui.rb
+%%PORTDOCS%%%%RUBY_DOCDIR%%/gimp/TODO
+%%PORTDOCS%%%%RUBY_DOCDIR%%/gimp/README
+%%PORTDOCS%%%%RUBY_DOCDIR%%/gimp/ENVIRONMENT
+%%PORTDOCS%%%%RUBY_DOCDIR%%/gimp/ja/MEMO.ja
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/gimp/ja
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/gimp
+@cwd %%X11BASE%%
+libexec/gimp/1.2/plug-ins/clothify.rb
+libexec/gimp/1.2/plug-ins/coolmetal-logo.rb
+libexec/gimp/1.2/plug-ins/erase-rows.rb
+libexec/gimp/1.2/plug-ins/eval.rb
+libexec/gimp/1.2/plug-ins/list_images.rb
+libexec/gimp/1.2/plug-ins/raindrop.rb
+libexec/gimp/1.2/plug-ins/rendermap.rb
+libexec/gimp/1.2/plug-ins/sphere.rb
+libexec/gimp/1.2/plug-ins/textured-logo.rb
