@@ -12,8 +12,7 @@ MASTER_SITES=	http://peacock.sourceforge.net/sources/
 
 MAINTAINER=	ade@FreeBSD.org
 
-LIB_DEPENDS=	gnome.4:${PORTSDIR}/x11/gnomelibs
-RUN_DEPENDS=	gnomecc:${PORTSDIR}/sysutils/gnomecontrolcenter
+LIB_DEPENDS=	panel_applet.4:${PORTSDIR}/x11/gnomecore
 
 GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
 

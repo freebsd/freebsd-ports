@@ -14,9 +14,8 @@ DISTNAME=	gLife-${PORTVERSION}
 
 MAINTAINER=	ade@FreeBSD.org
 
-LIB_DEPENDS=	gnome.4:${PORTSDIR}/x11/gnomelibs \
+LIB_DEPENDS=	panel_applet.4:${PORTSDIR}/x11/gnomecore \
 		glade.4:${PORTSDIR}/devel/libglade
-RUN_DEPENDS=	gnomecc:${PORTSDIR}/sysutils/gnomecontrolcenter
 
 USE_X_PREFIX=	yes
 USE_LIBTOOL=	yes
