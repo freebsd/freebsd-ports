@@ -1,9 +1,10 @@
-# $Id: Makefile,v 1.38 1997/09/05 17:13:14 max Exp $
+# $Id: Makefile,v 1.39 1997/10/29 12:19:56 tg Exp $
 #
 
     SUBDIR += amp
     SUBDIR += cam
     SUBDIR += cddbd
+    SUBDIR += cdplay
     SUBDIR += gmod
     SUBDIR += gsm
     SUBDIR += maplay
