@@ -132,10 +132,14 @@ cat >>$exfile <<'EOF'
 */.cvsignore
 */windows
 */windows/*
+*/activex
+*/activex/*
 */os2
 */os2/*
 */solaris
 */solaris/*
+*/gc
+*/gc/*
 mozilla/apache
 mozilla/calendar
 mozilla/cck
