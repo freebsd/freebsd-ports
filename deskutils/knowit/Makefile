@@ -8,8 +8,7 @@
 #
 
 PORTNAME=	knowit
-PORTVERSION=	0.9
-PORTREVISION=	2
+PORTVERSION=	0.10
 CATEGORIES=	deskutils
 MASTER_SITES=	http://knowit.sourceforge.net/files/
 
@@ -18,12 +17,17 @@ COMMENT=	A note manager with tree organization that uses RTF for storage
 
 USE_BZIP2=	yes
 USE_KDELIBS_VER=	3
+USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-USE_REINPLACE=	yes
+MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOHEADER="${TRUE}" \
+		AUTOMAKE="${TRUE}"
+
+QTCPPFLAGS+=	${PTHREAD_CFLAGS}
+QTCFGLIBS+=	${PTHREAD_LIBS}
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-O2||g' -e 's|-lpthread|${PTHREAD_LIBS}|g' \
-		${WRKSRC}/${CONFIGURE_SCRIPT}
+	@${REINPLACE_CMD} -e 's|-O2||g ; \
+		 s|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
