@@ -13,6 +13,7 @@ MASTER_SITES=		http://www.witchspace.com/files/
 MAINTAINER=		jon@witchspace.com
 COMMENT=		A program for generating and rendering fractal landscapes
 
+BROKEN=			"failed dependency (qt32 and/or qmake?)"
 USE_MESA=		yes
 USE_KDELIBS_VER=	3
 QTDIR?=			${X11BASE}
