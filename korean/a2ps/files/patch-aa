@@ -1,0 +1,23 @@
+--- a2ps-h.py~	Sat Sep 30 18:04:02 2000
++++ a2ps-h.py	Sat Sep 30 18:04:39 2000
+@@ -1,4 +1,4 @@
+-#! /usr/bin/env python
++#!%%PYTHON_CMD%%
+ 
+ #
+ # (C) Mizi Research
+@@ -16,10 +16,10 @@
+ 
+ import string,sys,os
+ 
+-hps = '/Gulim-Regular'
+-hbps = '/Gulim-Regular'
+-hbops = '/Gulim-Regular'
+-hops = '/Gulim-Regular'
++hps = '/%%PSFONTKO%%'
++hbps = '/%%PSFONTKO%%'
++hbops = '/%%PSFONTKO%%'
++hops = '/%%PSFONTKO%%'
+ 
+ def trans_file(filename):
+ 	if type(filename) == type([]):
