@@ -2555,7 +2555,6 @@ CONFIGURE_LOG?=		config.log
 # A default message to print if do-configure fails.
 CONFIGURE_FAIL_MESSAGE?=	"Please report the problem to ${MAINTAINER} [maintainer] and attach the \"${CONFIGURE_WRKSRC}/${CONFIGURE_LOG}\" including the output of the failure of your make command. Also, it might be a good idea to provide an overview of all packages installed on your system (e.g. an \`ls ${PKG_DBDIR}\`)."
 
-
 .if defined(GNU_CONFIGURE)
 # Maximum command line length
 .if !defined(CONFIGURE_MAX_CMD_LEN)
