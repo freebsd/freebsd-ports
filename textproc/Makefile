@@ -177,6 +177,7 @@
     SUBDIR += tkdiff
     SUBDIR += tth
     SUBDIR += txt2html
+    SUBDIR += txt2man
     SUBDIR += ua-ispell
     SUBDIR += unroff
     SUBDIR += urlview

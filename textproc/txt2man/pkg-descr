@@ -1,0 +1,7 @@
+txt2man converts the input text into nroff commands using man(7) macros for
+man pages. Smart argument processing is available either for commands using
+"-" sign for flags (including long options used in GNU tools). If ifile is
+omitted, standard input is taken as argument. Result is displayed on standard
+output.
+
+WWW: http://mvertes.free.fr/
