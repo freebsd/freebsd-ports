@@ -3,7 +3,7 @@
 # Date created:				26 Jan 1998
 # Whom:					Josh Tiefenbach <josh@ican.net>
 #
-# $Id: Makefile,v 1.7 1998/01/26 18:43:20 jfitz Exp $
+# $Id: Makefile,v 1.8 1999/01/13 02:47:29 scrappy Exp $
 #
 
 DISTNAME=	db-2.3.16
@@ -13,6 +13,7 @@ MASTER_SITES=	http://www.sleepycat.com/db/packages/
 MAINTAINER=	josh@ican.net
 
 Y2K=		http://www.sleepycat.com/faq.html#A8
+WWW_SITE=	http://www.sleepycat.com
 
 MANUAL_PACKAGE_BUILD=	incompatible with libc version
 WRKSRC=		${WRKDIR}/${DISTNAME}/build.unix
