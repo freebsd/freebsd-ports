@@ -107,7 +107,7 @@
  	for i in $(SRC_DIR)/library/*.tcl $(SRC_DIR)/library/tclIndex $(UNIX_DIR)/tkAppInit.c; \
  	    do \
  	    echo "Installing $$i"; \
-@@ -466,28 +491,28 @@
+@@ -466,30 +491,27 @@
  	@cd $(SRC_DIR)/doc; for i in *.1; \
  	    do \
  	    echo "Installing doc/$$i"; \
@@ -119,7 +119,7 @@
 +		    $$i | gzip -c > $(MAN1_INSTALL_DIR)/$$i.gz; \
 +	    chmod 444 $(MAN1_INSTALL_DIR)/$$i.gz; \
  	    done;
- 	$(UNIX_DIR)/mkLinks $(MAN1_INSTALL_DIR)
+-	$(UNIX_DIR)/mkLinks $(MAN1_INSTALL_DIR)
  	@cd $(SRC_DIR)/doc; for i in *.3; \
  	    do \
  	    echo "Installing doc/$$i"; \
@@ -131,7 +131,7 @@
 +		    $$i | gzip -c > $(MAN3_INSTALL_DIR)/$$i.gz; \
 +	    chmod 444 $(MAN3_INSTALL_DIR)/$$i.gz; \
  	    done;
- 	$(UNIX_DIR)/mkLinks $(MAN3_INSTALL_DIR)
+-	$(UNIX_DIR)/mkLinks $(MAN3_INSTALL_DIR)
  	@cd $(SRC_DIR)/doc; for i in *.n; \
  	    do \
  	    echo "Installing doc/$$i"; \
@@ -143,5 +143,7 @@
 +		    $$i | gzip -c > $(MANN_INSTALL_DIR)/$$i.gz; \
 +	    chmod 444 $(MANN_INSTALL_DIR)/$$i.gz; \
  	    done;
- 	$(UNIX_DIR)/mkLinks $(MANN_INSTALL_DIR)
+-	$(UNIX_DIR)/mkLinks $(MANN_INSTALL_DIR)
  
+ Makefile: $(UNIX_DIR)/Makefile.in
+ 	$(SHELL) config.status
