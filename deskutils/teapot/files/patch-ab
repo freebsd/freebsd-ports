@@ -1,0 +1,21 @@
+--- doc/Makefile.orig	Thu Mar 19 03:12:57 1998
++++ doc/Makefile	Sat Oct 28 06:36:44 2000
+@@ -5,15 +5,15 @@
+ 		soelim teapot.MM | grep -v '^\.lf' >teapot.mm
+ 
+ command.html.0 command.tbl.0:	command command.bat insTH.ed
+-		teapot -b command <command.bat
++		../teapot -b command <command.bat
+ 		ed command.tbl.0 <insTH.ed
+ 
+ editline.html.0 editline.tbl.0:	editline editline.bat insTH.ed
+-		teapot -b editline <editline.bat
++		../teapot -b editline <editline.bat
+ 		ed editline.tbl.0 <insTH.ed
+ 
+ unsorted.html.0 unsorted.tbl.0:	unsorted unsorted.bat unsorted.ed
+-		teapot -b unsorted <unsorted.bat
++		../teapot -b unsorted <unsorted.bat
+ 		ed unsorted.tbl.0 <unsorted.ed
+ 
+ teapot.ps:	teapot.mm
