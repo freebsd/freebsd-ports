@@ -1,9 +1,6 @@
-
-$FreeBSD$
-
---- configure.orig	Sun Feb 10 08:21:30 2002
-+++ configure	Sun May 19 23:52:50 2002
-@@ -746,7 +746,7 @@
+--- configure.orig	Mon May 19 18:46:21 2003
++++ configure	Sat May 31 19:37:03 2003
+@@ -1475,7 +1475,7 @@
  GIMP_VERSION=$GIMP_MAJOR_VERSION.$GIMP_MINOR_VERSION.$GIMP_MICRO_VERSION
  
  LT_RELEASE=$GIMP_MAJOR_VERSION.$GIMP_MINOR_VERSION
@@ -12,7 +9,7 @@ $FreeBSD$
  LT_REVISION=$GIMP_INTERFACE_AGE
  LT_AGE=`expr $GIMP_BINARY_AGE - $GIMP_INTERFACE_AGE`
  LT_CURRENT_MINUS_AGE=`expr $LT_CURRENT - $LT_AGE`
-@@ -5577,6 +5577,7 @@
+@@ -7535,6 +7535,7 @@
  
  # This can be used to rebuild libtool when needed
  LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
@@ -20,7 +17,7 @@ $FreeBSD$
  
  # Always use our own libtool.
  LIBTOOL='$(SHELL) $(top_builddir)/libtool'
-@@ -11957,8 +11958,8 @@
+@@ -18639,8 +18640,8 @@
  
  fi
  
@@ -31,15 +28,3 @@ $FreeBSD$
  gimpsysconfdir=$sysconfdir/$PACKAGE/$GIMP_MAJOR_VERSION.$GIMP_MINOR_VERSION
  
  localedir='${prefix}/${DATADIRNAME}/locale'
-@@ -13133,11 +13134,6 @@
-   *) # Relative path.
-     srcdir="$ac_dots$ac_given_srcdir$ac_dir_suffix"
-     top_srcdir="$ac_dots$ac_given_srcdir" ;;
--  esac
--
--  case "$ac_given_INSTALL" in
--  [/$]*) INSTALL="$ac_given_INSTALL" ;;
--  *) INSTALL="$ac_dots$ac_given_INSTALL" ;;
-   esac
- 
-   echo creating "$ac_file"
