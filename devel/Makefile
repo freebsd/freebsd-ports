@@ -961,6 +961,7 @@
     SUBDIR += py-fortran
     SUBDIR += py-freebsd
     SUBDIR += py-game
+    SUBDIR += py-getargs
     SUBDIR += py-grouch
     SUBDIR += py-istring
     SUBDIR += py-kjbuckets
