@@ -9380,6 +9380,7 @@ wesnoth		ports/games/wesnoth
 wfb2sql		ports/databases/wfb2sql
 wget		ports/ftp/wget
 wget+ipv6	ports/ftp/wget+ipv6
+wget-devel	ports/ftp/wget-devel
 whatmask	ports/net/whatmask
 whatpix		ports/sysutils/whatpix
 whichman	ports/misc/whichman
