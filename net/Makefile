@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.123 1997/11/05 04:19:36 asami Exp $
+# $Id: Makefile,v 1.124 1997/11/05 11:47:36 obrien Exp $
 #
 
     SUBDIR += archie
@@ -34,6 +34,8 @@
     SUBDIR += kdenetwork
     SUBDIR += ldap
     SUBDIR += libsocket++
+    SUBDIR += llnlxdir
+    SUBDIR += llnlxftp
     SUBDIR += mirror
     SUBDIR += moxftp
     SUBDIR += mpd
