@@ -3,7 +3,6 @@ This package contains a very funny fortune file in Italian.
 For further informations please read the README file
 in the working directory (not installed).
 
-WWW: http://www.pluto.linux.it/~zuse/fortune.it
 Distfile Size: ~400kb
 
 - ported to FreeBSD by Gianmarco (gmarco@giovannelli.it)
