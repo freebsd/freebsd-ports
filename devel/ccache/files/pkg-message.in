@@ -1,5 +1,5 @@
 
 === NOTE ===
-Please read %%LOCALBASE%%/%%HOWTO%% for information on using
-ccache with FreeBSD ports and src.
+Please read %%DOCSDIR%%/%%HOWTO%% for 
+information on using ccache with FreeBSD ports and src.
 

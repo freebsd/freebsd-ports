@@ -65,7 +65,7 @@ post-extract:
 		s|%%LOCALBASE%%|${LOCALBASE}|' \
 		${FILESDIR}/${HOWTO}.in > ${WRKDIR}/${HOWTO}
 	@${SED} -e 's|%%HOWTO%%|${HOWTO}|; \
-		s|%%LOCALBASE%%|${LOCALBASE}|' \
+		s|%%DOCSDIR%%|${DOCSDIR}|' \
 		${FILESDIR}/pkg-message.in >${PKGMESSAGE}
 .endif
 
