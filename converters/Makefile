@@ -45,6 +45,7 @@
     SUBDIR += p5-Unicode-MapUTF8
     SUBDIR += p5-Unicode-String
     SUBDIR += psiconv
+    SUBDIR += py-cjkcodecs
     SUBDIR += py-iconv
     SUBDIR += py-iconvcodec
     SUBDIR += recode
