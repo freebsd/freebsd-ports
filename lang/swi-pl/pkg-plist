@@ -63,7 +63,6 @@ lib/%%DISTNAME%%/library/shlib.pl
 lib/%%DISTNAME%%/library/system.pl
 lib/%%DISTNAME%%/library/toolkit.pl
 lib/%%DISTNAME%%/library/topvars.pl
-lib/%%DISTNAME%%/library/whereis.pl
 lib/%%DISTNAME%%/library/wise.pl
 lib/%%DISTNAME%%/library/MANUAL
 lib/%%DISTNAME%%/include/SWI-Prolog.h
