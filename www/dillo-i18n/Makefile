@@ -4,9 +4,12 @@
 #
 # $FreeBSD$
 #
+# Tunables:
+# WITH_DILLO_SSL: enable experimental SSL support
+#
 
 PORTNAME=	dillo
-PORTVERSION=	0.8.2
+PORTVERSION=	0.8.3
 CATEGORIES=	www
 MASTER_SITES=	http://www.dillo.org/download/
 
@@ -24,12 +27,28 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	--enable-ipv6
+CONFIGURE_ARGS=	--enable-ipv6 --libdir=${PREFIX}/libexec
+
+.if defined(WITH_DILLO_SSL)
+CONFIGURE_ARGS+=	--enable-ssl
+USE_OPENSSL=	yes
+.else
+CONFIGURE_ARGS+=	--disable-ssl
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-pthread|${PTHREAD_LIBS}|g ; \
 		 s|-D_THREAD_SAFE|${PTHREAD_CFLAGS}|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|dillorc|dillorc.sample|g' ${WRKSRC}/Makefile.in
 	@${CP} ${WRKSRC}/dillorc ${WRKSRC}/dillorc.sample
+
+pre-configure:
+.if !defined(WITH_DILLO_SSL)
+	@${ECHO_CMD} ""
+	@${ECHO_CMD} "   You can enable dillo's experimental SSL support by specifing"
+	@${ECHO_CMD} "   WITH_DILLO_SSL=yes in your make environment or on the"
+	@${ECHO_CMD} "   commandline."
+	@${ECHO_CMD} ""
+.endif
 
 .include <bsd.port.mk>

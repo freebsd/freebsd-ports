@@ -4,15 +4,17 @@ bin/dpid
 bin/dpidc
 etc/dillorc.sample
 etc/dpidrc
-lib/dillo/dpi/bookmarks/bookmarks.dpi
-lib/dillo/dpi/downloads/downloads.dpi
-lib/dillo/dpi/ftp/ftp.filter.dpi
-lib/dillo/dpi/hello/hello.filter.dpi
-lib/dillo/dpi/https/https.filter.dpi
-@dirrm lib/dillo/dpi/https
-@dirrm lib/dillo/dpi/hello
-@dirrm lib/dillo/dpi/ftp
-@dirrm lib/dillo/dpi/downloads
-@dirrm lib/dillo/dpi/bookmarks
-@dirrm lib/dillo/dpi
-@dirrm lib/dillo
+libexec/dillo/dpi/bookmarks/bookmarks.dpi
+libexec/dillo/dpi/downloads/downloads.dpi
+libexec/dillo/dpi/file/file.dpi
+libexec/dillo/dpi/ftp/ftp.filter.dpi
+libexec/dillo/dpi/hello/hello.filter.dpi
+libexec/dillo/dpi/https/https.filter.dpi
+@dirrm libexec/dillo/dpi/https
+@dirrm libexec/dillo/dpi/hello
+@dirrm libexec/dillo/dpi/ftp
+@dirrm libexec/dillo/dpi/file
+@dirrm libexec/dillo/dpi/downloads
+@dirrm libexec/dillo/dpi/bookmarks
+@dirrm libexec/dillo/dpi
+@dirrm libexec/dillo
