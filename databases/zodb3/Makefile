@@ -5,15 +5,17 @@
 # $FreeBSD$
 #
 
-PORTNAME=	zodb3
-PORTVERSION=	3.1
+PORTNAME=	zodb
+PORTVERSION=	3.2
 CATEGORIES=	databases
-MASTER_SITES=	http://www.zope.org/Products/ZODB3.1/
+MASTER_SITES=	http://www.zope.org/Products/ZODB${PORTVERSION}/${PORTVERSION}/
+PKGNAMESUFFIX=	-py${PYTHON_SUFFIX}
 DISTNAME=	ZODB3-${PORTVERSION}
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	perky@FreeBSD.org
 COMMENT=	The Z - Object Database for python
 
+CONFLICTS=	zodb-1.*
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 
