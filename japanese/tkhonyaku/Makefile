@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tkhonyaku
-PORTVERSION=	1.3
+PORTVERSION=	1.4
 CATEGORIES=	japanese
 MASTER_SITES=	http://www.yk.rim.or.jp/~kawagisi/
 
