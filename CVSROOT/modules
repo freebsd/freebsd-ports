@@ -5260,6 +5260,7 @@ lodju		ports/graphics/lodju
 log4c		ports/devel/log4c
 log4cplus	ports/devel/log4cplus
 log4cpp		ports/devel/log4cpp
+log4cxx		ports/devel/log4cxx
 log4j		ports/devel/log4j
 log_analysis	ports/sysutils/log_analysis
 logcheck	ports/security/logcheck
