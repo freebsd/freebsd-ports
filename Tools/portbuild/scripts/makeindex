@@ -7,6 +7,9 @@ INDEX_PRISTINE=1
 # Don't give luser advice if it fails
 INDEX_QUIET=1
 
+# Concurrency of index build
+INDEX_JOBS=2
+
 pb=/var/portbuild
 arch=$1
 shift
