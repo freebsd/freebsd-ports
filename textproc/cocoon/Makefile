@@ -7,20 +7,21 @@
 
 PORTNAME=	cocoon
 PORTVERSION=	1.8.2
+PORTREVISION=	1
 CATEGORIES=	textproc www java
-MASTER_SITES=	http://xml.apache.org/cocoon/dist/
+MASTER_SITES=	http://xml.apache.org/cocoon/dist/cocoon1/ \
+		http://www.metaverse.nl/~ernst/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	znerd
 DISTNAME=	Cocoon-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
-BUILD_DEPENDS=	${LOCALBASE}/jdk${JDK_VERSION}/bin/javac:${PORTSDIR}/java/jdk
-RUN_DEPENDS=	${LOCALBASE}/libexec/apache/mod_jserv.so:${PORTSDIR}/www/apache-jserv
-
-MAKE_ENV=	JAVA_HOME=${LOCALBASE}/jdk${JDK_VERSION} CLASSPATH=${CLASSPATH}
+USE_JAVA=	1.1+
+MAKE_ENV=	JAVA_HOME=${JAVA_HOME} CLASSPATH=${CLASSPATH}
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-JDK_VERSION=	1.1.8
-CLASSPATH=	${LOCALBASE}/jdk${JDK_VERSION}/lib/classes.zip
+CLASSPATH=	${JAVA_CLASSES}
 LIBS=		fop_0_15_0.jar xalan_1_2_D02.jar xerces_1_2.jar
 JDIR=		${PREFIX}/share/java/classes
 CDIR=		${PREFIX}/etc/apache/cocoon
