@@ -53,8 +53,8 @@ sbin/quickmkdir
 @unexec rmdir %%SPOOLDIR%%/out.going 2>/dev/null || :
 @unexec rmdir %%SPOOLDIR%%/temp.files 2>/dev/null || :
 @unexec rmdir %%SPOOLDIR%% 2>/dev/null || :
-@unexec rmdir %%PREFIX%%/var/spool 2>/dev/null || :
-@unexec rmdir %%PREFIX%%/var 2>/dev/null || :
+@unexec rmdir %D/var/spool 2>/dev/null || :
+@unexec rmdir %D/var 2>/dev/null || :
 @unexec rmdir %D/lib/leafnode 2>/dev/null || :
 @dirrm etc/leafnode
-@unexec if test -d "%%SPOOLDIR%%" || test -d "%%PREFIX%%/etc/leafnode" ; then echo ; echo "==============================================================================" ; echo "If you want to remove leafnode for good," ; echo "type: rm -rf %%PREFIX%%/etc/leafnode %%SPOOLDIR%%" ; echo "==============================================================================" ; fi
+@unexec if test -d "%%SPOOLDIR%%" || test -d "%D/etc/leafnode" ; then echo ; echo "==============================================================================" ; echo "If you want to remove leafnode for good," ; echo "type: rm -rf %D/etc/leafnode %%SPOOLDIR%%" ; echo "==============================================================================" ; fi
