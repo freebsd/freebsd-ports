@@ -7,6 +7,7 @@
 
 PORTNAME=	zebra
 PORTVERSION=	0.94
+PORTREVISION=	1
 CATEGORIES=	net ipv6
 MASTER_SITES=	ftp://ftp.zebra.org/pub/zebra/ \
 		ftp://ftp.ripe.net/mirrors/sites/ftp.zebra.org/pub/zebra/ \
@@ -15,15 +16,16 @@ MASTER_SITES=	ftp://ftp.zebra.org/pub/zebra/ \
 		ftp://ftp.pop-pr.rnp.br/pub/GNU/ftp.zebra.org/zebra/
 
 MAINTAINER=	sumikawa@FreeBSD.org
-COMMENT=	Free RIPv1, RIPv2, OSPFv2, BGP4 route software (server/reflector)
+COMMENT=		Free RIPv1, RIPv2, OSPFv2, BGP4 route software (server/reflector)
 
 USE_SUBMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=--sysconfdir=${PREFIX}/etc/zebra --enable-vtysh
+CONFIGURE_ARGS+=	--sysconfdir=${PREFIX}/etc/zebra --enable-vtysh
 SCRIPTS_ENV=	WRKDIRPREFIX=${WRKDIRPREFIX}
 
 MAN1=		vtysh.1
 MAN8=		bgpd.8 ospf6d.8 ospfd.8 ripd.8 ripngd.8 zebra.8
+INFO=		zebra
 
 .if !defined(BATCH)
 pre-configure:
