@@ -24,6 +24,7 @@ share/gnome/scite/baan.properties
 share/gnome/scite/bullant.properties
 share/gnome/scite/conf.properties
 share/gnome/scite/cpp.properties
+share/gnome/scite/css.properties
 share/gnome/scite/eiffel.properties
 share/gnome/scite/fortran.properties
 share/gnome/scite/html.properties
