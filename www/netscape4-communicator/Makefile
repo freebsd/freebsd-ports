@@ -16,7 +16,12 @@ MAINTAINER?=	sada@FreeBSD.org
 RUN_DEPENDS+=	netscape:${PORTSDIR}/www/netscape-wrapper
 
 .if (${PORTVERSION} == "4.76")
-BROKEN=		"has a serious security hole, use 4.77 instead"
+BROKEN=		"Has a serious security hole, use 4.77 instead.\
+		In addition to,\
+		on FreeBSD ports,\
+		4.77 is available only for Linux/Alpha-arch now,\
+		and looks Netscape would never support FreeBSD native one\
+		any more"
 .endif
 
 .if !defined(INFILE_HEAD)
