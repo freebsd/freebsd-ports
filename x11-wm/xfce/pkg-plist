@@ -25,6 +25,7 @@ etc/xfce/fvwm2rc
 etc/xfce/fvwmrc
 etc/xfce/xfbdrc
 etc/xfce/xfce3rc
+etc/xfce/xfce3rc.cs
 etc/xfce/xfce3rc.hu
 etc/xfce/xfce3rc.ja
 etc/xfce/xfce3rc.ko
@@ -39,6 +40,26 @@ etc/xfce/xinitrc.mwm
 etc/xfce/xsession
 etc/xfce/xtree.reg
 lib/gtk/themes/engines/libxfce.so
+share/locale/ca/LC_MESSAGES/xfce.mo
+share/locale/cs/LC_MESSAGES/xfce.mo
+share/locale/da/LC_MESSAGES/xfce.mo
+share/locale/de/LC_MESSAGES/xfce.mo
+share/locale/es/LC_MESSAGES/xfce.mo
+share/locale/et/LC_MESSAGES/xfce.mo
+share/locale/fi/LC_MESSAGES/xfce.mo
+share/locale/fr/LC_MESSAGES/xfce.mo
+share/locale/gl/LC_MESSAGES/xfce.mo
+share/locale/hu/LC_MESSAGES/xfce.mo
+share/locale/it/LC_MESSAGES/xfce.mo
+share/locale/ja/LC_MESSAGES/xfce.mo
+share/locale/nl/LC_MESSAGES/xfce.mo
+share/locale/pl/LC_MESSAGES/xfce.mo
+share/locale/pt_BR/LC_MESSAGES/xfce.mo
+share/locale/ro/LC_MESSAGES/xfce.mo
+share/locale/ru/LC_MESSAGES/xfce.mo
+share/locale/sk/LC_MESSAGES/xfce.mo
+share/locale/sv/LC_MESSAGES/xfce.mo
+share/locale/zh/LC_MESSAGES/xfce.mo
 share/xfce/COPYING
 share/xfce/XFce3.logo
 share/xfce/backdrops/A-Little-Exercise-3.jpg
@@ -136,6 +157,7 @@ share/xfce/backdrops/Xfce.xpm
 share/xfce/backdrops/Xfcemice.jpg
 share/xfce/help/help.gl.html
 share/xfce/help/help.html
+share/xfce/help/help.nl.html
 share/xfce/help/slogan.jpg
 share/xfce/help/title_legend.jpg
 share/xfce/help/xfbd.jpg
@@ -264,28 +286,17 @@ share/xfce/icons/X_server.xpm
 share/xfce/icons/Xmix.xpm
 share/xfce/icons/Xterm.xpm
 share/xfce/icons/Xv.xpm
-share/xfce/locale/ca/LC_MESSAGES/xfce.mo
-share/xfce/locale/da/LC_MESSAGES/xfce.mo
-share/xfce/locale/de/LC_MESSAGES/xfce.mo
-share/xfce/locale/es/LC_MESSAGES/xfce.mo
-share/xfce/locale/et/LC_MESSAGES/xfce.mo
-share/xfce/locale/fi/LC_MESSAGES/xfce.mo
-share/xfce/locale/fr/LC_MESSAGES/xfce.mo
-share/xfce/locale/gl/LC_MESSAGES/xfce.mo
-share/xfce/locale/hu/LC_MESSAGES/xfce.mo
-share/xfce/locale/it/LC_MESSAGES/xfce.mo
-share/xfce/locale/ja/LC_MESSAGES/xfce.mo
-share/xfce/locale/nl/LC_MESSAGES/xfce.mo
-share/xfce/locale/pl/LC_MESSAGES/xfce.mo
-share/xfce/locale/ro/LC_MESSAGES/xfce.mo
-share/xfce/locale/ru/LC_MESSAGES/xfce.mo
-share/xfce/locale/sk/LC_MESSAGES/xfce.mo
-share/xfce/locale/sv/LC_MESSAGES/xfce.mo
-share/xfce/locale/zh/LC_MESSAGES/xfce.mo
 share/xfce/palettes/Alpine
+share/xfce/palettes/Aluminium
 share/xfce/palettes/Analog
 share/xfce/palettes/Anthracite
 share/xfce/palettes/Bahamas
+share/xfce/palettes/BeHappy
+share/xfce/palettes/BeHappy2
+share/xfce/palettes/BeHappy3
+share/xfce/palettes/BlueX
+share/xfce/palettes/BlueX2
+share/xfce/palettes/BlueX3
 share/xfce/palettes/Bronze
 share/xfce/palettes/Cheese
 share/xfce/palettes/Citrouille
@@ -295,6 +306,7 @@ share/xfce/palettes/Default
 share/xfce/palettes/Dolly
 share/xfce/palettes/Dust
 share/xfce/palettes/Fall
+share/xfce/palettes/Glass
 share/xfce/palettes/Golden
 share/xfce/palettes/Grayscale
 share/xfce/palettes/Ground
@@ -303,6 +315,8 @@ share/xfce/palettes/HiContrast
 share/xfce/palettes/HiTech
 share/xfce/palettes/HiTech2
 share/xfce/palettes/Iceland
+share/xfce/palettes/Liquid
+share/xfce/palettes/Liquid2
 share/xfce/palettes/Mauve
 share/xfce/palettes/Metal
 share/xfce/palettes/Military
@@ -313,6 +327,8 @@ share/xfce/palettes/OldWood
 share/xfce/palettes/Pale
 share/xfce/palettes/Paper
 share/xfce/palettes/Plum
+share/xfce/palettes/Power
+share/xfce/palettes/Power2
 share/xfce/palettes/Prairie
 share/xfce/palettes/Salmon
 share/xfce/palettes/Salmon2
@@ -385,7 +401,13 @@ share/xfce/sounds/zap01.wav
 share/xfce/sounds/zap02.wav
 share/xfce/sounds/zap03.wav
 share/xfce/sounds/zap04.wav
+share/xfce/textures/Aluminium.xpm
+share/xfce/textures/BlueX.xpm
+share/xfce/textures/Glass.xpm
+share/xfce/textures/Liquid.xpm
 share/xfce/textures/Modern.xpm
+share/xfce/textures/Power.xpm
+share/xfce/textures/Power2.xpm
 share/xfce/textures/bronze.xpm
 share/xfce/textures/cheese.xpm
 share/xfce/textures/craters.xpm
@@ -401,25 +423,10 @@ share/xfce/textures/stripe.xpm
 @dirrm share/xfce/backdrops
 @dirrm share/xfce/help
 @dirrm share/xfce/icons
-@dirrm share/xfce/locale/ca/LC_MESSAGES
-@dirrm share/xfce/locale/da/LC_MESSAGES
-@dirrm share/xfce/locale/de/LC_MESSAGES
-@dirrm share/xfce/locale/es/LC_MESSAGES
-@dirrm share/xfce/locale/et/LC_MESSAGES
-@dirrm share/xfce/locale/fi/LC_MESSAGES
-@dirrm share/xfce/locale/fr/LC_MESSAGES
-@dirrm share/xfce/locale/gl/LC_MESSAGES
-@dirrm share/xfce/locale/hu/LC_MESSAGES
-@dirrm share/xfce/locale/it/LC_MESSAGES
-@dirrm share/xfce/locale/ja/LC_MESSAGES
-@dirrm share/xfce/locale/nl/LC_MESSAGES
-@dirrm share/xfce/locale/pl/LC_MESSAGES
-@dirrm share/xfce/locale/ro/LC_MESSAGES
-@dirrm share/xfce/locale/ru/LC_MESSAGES
-@dirrm share/xfce/locale/sk/LC_MESSAGES
-@dirrm share/xfce/locale/sv/LC_MESSAGES
-@dirrm share/xfce/locale/zh/LC_MESSAGES
 @dirrm share/xfce/palettes
 @dirrm share/xfce/sounds
 @dirrm share/xfce/textures
+@dirrm share/xfce/locale/et
+@dirrm share/xfce/locale/fr
+@dirrm share/xfce/locale/it
 @dirrm share/xfce
