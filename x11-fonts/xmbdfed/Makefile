@@ -6,13 +6,9 @@
 #
 
 PORTNAME=	xmbdfed
-PORTVERSION= 	4.3.3
+PORTVERSION= 	4.4
 CATEGORIES=	x11-fonts
 MASTER_SITES=	ftp://crl.nmsu.edu/CLR/multiling/General/
-DISTNAME=	${PORTNAME}-4.3
-
-PATCH_SITES=	${MASTER_SITES}
-PATCHFILES=	${DISTNAME}.patch1 ${DISTNAME}.patch2 ${DISTNAME}.patch3
 
 MAINTAINER=	ports@FreeBSD.org
 
