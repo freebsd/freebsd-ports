@@ -23,8 +23,8 @@ MAINTAINER=	jseger@FreeBSD.org
 
 USE_XLIB=	yes
 USE_GMAKE=	yes
+USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
-GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-nls --enable-static --enable-shared
 
 # Older versions of freetype installed include files in ${PREFIX}/include
