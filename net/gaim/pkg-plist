@@ -5,15 +5,24 @@ share/gaim/pixmaps/aimicon2.xpm
 share/gaim/pixmaps/aol_icon.xpm
 share/gaim/pixmaps/big.xpm
 share/gaim/pixmaps/bold.xpm
+share/gaim/pixmaps/buddyadd.xpm
+share/gaim/pixmaps/buddychat.xpm
+share/gaim/pixmaps/buddydel.xpm
 share/gaim/pixmaps/dt_icon.xpm
 share/gaim/pixmaps/free_icon.xpm
+share/gaim/pixmaps/im.xpm
+share/gaim/pixmaps/info.xpm
 share/gaim/pixmaps/italic.xpm
 share/gaim/pixmaps/login_icon.xpm
 share/gaim/pixmaps/logo.xpm
 share/gaim/pixmaps/logout_icon.xpm
 share/gaim/pixmaps/no_icon.xpm
 share/gaim/pixmaps/normal.xpm
+share/gaim/pixmaps/palette.xpm
+share/gaim/pixmaps/permadd.xpm
+share/gaim/pixmaps/permdel.xpm
 share/gaim/pixmaps/small.xpm
 share/gaim/pixmaps/speaker.xpm
+share/gaim/pixmaps/wood.xpm
 @dirrm share/gaim/pixmaps
 @dirrm share/gaim
