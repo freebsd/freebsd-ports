@@ -1,0 +1,25 @@
+diff pre-conf/util/namecheck.t util/namecheck.t
+--- pre-conf/util/namecheck.t	Tue Oct 18 04:50:01 1994
++++ util/namecheck.t	Mon Aug  2 21:03:29 1999
+@@ -23,9 +23,9 @@
+ comp.lang.0++	name component does not contain letter
+ comp.lang.all	`all' or `ctl' used as name component
+ comp.lang.ctl	`all' or `ctl' used as name component
+-comp.lang.verylonglanguage	name component longer than 14 characters
+-comp.lang.verylonglanguag	name component longer than 14 characters
+-comp.lang.verylonglangua
++comp.lang.verylong1234567890language	name component longer than 24 characters
++comp.lang.verylong1234567890languag	name component longer than 24 characters
++comp.lang.verylong1234567890langua
+ comp.lang.C++	uppercase letter(s) in name
+ comp.lang.c_2
+ comp.lang.c-2
+diff pre-conf/ctl/reg/n.1r work/ctl/reg/n.1r
+--- pre-conf/ctl/reg/n.1r	Fri Apr 28 02:50:47 1995
++++ ctl/reg/n.1r	Mon Aug  2 22:12:43 1999
+@@ -1,4 +1,4 @@
+-newgroup comp.lang.beta
++new newsgroup comp.lang.beta
+ :::
+ tale@uunet.uu.net (David C Lawrence) said to
+ create `comp.lang.beta'.

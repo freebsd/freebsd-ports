@@ -14,13 +14,15 @@ MASTER_SITES=	ftp://ftp.cs.toronto.edu/pub/c-news/ \
 		ftp://ftp.win.or.jp/pub/network/news/cnews/ \
 		ftp://ftp.redcom.ru/pub/unix/usenet/c-news/ \
 		ftp://ftp.mc.hik.se/pub/unix/news/c-news/ \
+		ftp://ftp.lan-ks.de/pub/c-news/ \
 		ftp://ftp.dinoex.org/pub/c-news/
 EXTRACT_SUFX=	.tar.Z
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		pgpverify-1.12
 
-PATCH_SITES=    ftp://ftp.dinoex.org/pub/c-news/
-PATCHFILES=     c-news-patch-fileart.c c-news-patch-namecheck.awk \
+PATCH_SITES=	ftp://ftp.lan-ks.de/pub/c-news/ \
+		ftp://ftp.dinoex.org/pub/c-news/
+PATCHFILES=	c-news-patch-fileart.c c-news-patch-namecheck.awk \
 		c-news-patch-newsrun c-news-patch-sendbatches \
 		c-news-patch-ctl-pgp3 c-news-patch-ctl-more \
 		c-news-patch-ctl-regexp \
@@ -43,21 +45,39 @@ MAN8=		cnewsdo.8cn expire.8cn explode.8cn mergeactive.8 \
 		newsmaint.8cn newsoverview.8 relaynews.8cn report.8cn \
 		rnews.8cn
 
-NEWSSPOOL=	${PREFIX}/newsspool
-NEWSBIN=	${PREFIX}/news/cnewsbin
-NEWSLIB=	${PREFIX}/news/lib
-PGPVERIFY=	pgpverify-1.12
+MODIFY=		conf/quiz.def \
+		conf/substitutions \
+		include/config.make
+
+NEWSBIN?=	${PREFIX}/news/cnewsbin
+NEWSCTL?=	${PREFIX}/news/lib
+NEWSARTS?=	/var/news
+NEWSOV?=	/var/news/over.view
+PGPVERIFY?=	pgpverify-1.12
 
 pre-patch:
 	@${CP} ${DISTDIR}/${DIST_SUBDIR}/${PGPVERIFY} ${WRKSRC}/${PGPVERIFY}
+
+pre-configure:
+.for i in ${MODIFY}
+	@${MV} ${WRKSRC}/${i} ${WRKSRC}/${i}.sed
+	${SED} \
+		-e "s=/usr/local/news/lib/bin/config=${NEWSBIN}/config=" \
+		-e "s=/usr/local/news/cnewsbin=${NEWSBIN}=" \
+		-e "s=/usr/local/news/lib=${NEWSCTL}=" \
+		-e "s=/var/news/over.view=${NEWSOV}=" \
+		-e "s=/var/news=${NEWSARTS}=" \
+		-e "s=/usr/local/bin=${PREFIX}/bin=" \
+		${WRKSRC}/${i}.sed >${WRKSRC}/${i}
+.endfor
 
 do-install:
 	${RM} -f ${PREFIX}/bin/inews
 	${INSTALL_DATA} ${WRKSRC}/libdbz/dbz.h ${PREFIX}/include
 	${INSTALL_DATA} ${WRKSRC}/libcnews.a ${PREFIX}/lib
-	${MKDIR} ${NEWSSPOOL} ${NEWSBIN} ${NEWSLIB}
-	-${LN} -s ${NEWSSPOOL} /var/news
-	${CHOWN} news.news ${NEWSSPOOL} ${NEWSLIB}
+	${MKDIR} ${NEWSARTS} ${NEWSBIN} ${NEWSCTL}
+	-${LN} -s ${NEWSARTS} /var/news
+	${CHOWN} news.news ${NEWSARTS} ${NEWSCTL}
 	${CHOWN} bin.bin ${NEWSBIN}
 	${INSTALL_SCRIPT} ${WRKSRC}/${PGPVERIFY} ${NEWSBIN}/pgpverify
 	cd ${WRKSRC}; ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} install
@@ -80,7 +100,7 @@ do-install:
 	@${ECHO} ""
 	@${ECHO} "!!!!!!!!"
 	@${ECHO} "you MUST change the configuration of this news setup:"
-	@${ECHO} "	cd to ${NEWSLIB} and change the following files..."
+	@${ECHO} "	cd to ${NEWSCTL} and change the following files..."
 	@${ECHO} "mailname, whoami, organization, mailpaths, sys, readnews.ctl, postdefltgroup"
 	@${ECHO} "	to suit your local system and news topology."
 	@${ECHO} "!!!!!!!!"

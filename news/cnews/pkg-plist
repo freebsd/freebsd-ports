@@ -121,10 +121,10 @@ news/cnewsbin/staleness
 news/cnewsbin/touchlock
 news/cnewsbin/unlock
 news/cnewsbin/pgpverify
+news/cnewsbin/config
 news/lib/active
 news/lib/active.times
 news/lib/batchparms
-news/lib/bin/config
 news/lib/controlperm
 news/lib/explist
 news/lib/history
