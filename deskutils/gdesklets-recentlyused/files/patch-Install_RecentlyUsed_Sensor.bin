@@ -1,0 +1,18 @@
+--- Install_RecentlyUsed_Sensor.bin.orig	Sat Sep 20 01:59:52 2003
++++ Install_RecentlyUsed_Sensor.bin	Sat Sep 20 02:00:20 2003
+@@ -75,15 +75,9 @@
+     else:
+         cmd = "mkdir -p %(destination)s; cd %(destination)s; " X               "LANG=C tar -xzvf %(tmp)s 2>&1"
+-    fail, out = commands.getstatusoutput(cmd % vars())
++    commands.getstatusoutput(cmd % vars())
+     os.unlink(tmp)
+     
+-    if (fail):
+-        if (no_message): print ERROR_TAR + out
+-        else: message(ERROR_TAR + out, "error")
+-        sys.exit(1)
+-
+-    print out
+     if (not list_only):
+         if (no_message): print SUCCESS
+         else: message(SUCCESS, "info")

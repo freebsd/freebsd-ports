@@ -14,6 +14,7 @@
     SUBDIR += gdeskcal
     SUBDIR += gdeskcal-skins
     SUBDIR += gdesklets
+    SUBDIR += gdesklets-recentlyused
     SUBDIR += gemcal
     SUBDIR += genius
     SUBDIR += glabels
