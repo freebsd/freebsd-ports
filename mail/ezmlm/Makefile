@@ -15,7 +15,7 @@ MASTER_SITES=	ftp://ftp.ezmlm.org/pub/qmail/ \
 		ftp://ftp.rifkin.technion.ac.il/pub/qmail/ \
 		ftp://ftp.mira.net.au/unix/mail/qmail/
 
-MAINTAINER=	tom@eborcom.com
+MAINTAINER=	tom@FreeBSD.org
 
 # QMAIL_DIR is the directory where qmail is installed
 .if !defined(QMAIL_DIR)
