@@ -5,6 +5,6 @@ compression ratio while allowing *very* fast decompression. Decompression
 requires no additional memory.
 
 Author: Markus Franz Xaver Johannes Oberhumer
-        markus.oberhumer@jk.uni-linz.ac.at
+        markus@oberhumer.com
 
-WWW: http://wildsau.idv.uni-linz.ac.at/mfx/ucl.html
+WWW: http://www.oberhumer.com/opensource/ucl/
