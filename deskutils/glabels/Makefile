@@ -14,6 +14,7 @@ MAINTAINER=	martin.klaffenboeck@gmx.at
 
 LIB_DEPENDS=	gnomeprint-2.0:${PORTSDIR}/print/libgnomeprint \
 		gnugetopt.1:${PORTSDIR}/devel/libgnugetopt \
+		gnomeprintui-2.0:${PORTSDIR}/x11-toolkits/libgnomeprintui \
 		gnomeui-2.0:${PORTSDIR}/x11-toolkits/libgnomeui
 
 USE_GNOMENG=	yes
