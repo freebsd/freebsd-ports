@@ -1,0 +1,11 @@
+--- Imakefile.orig	Tue May 18 05:36:35 1999
++++ Imakefile	Wed Nov  1 09:02:22 2000
+@@ -132,7 +132,7 @@
+ XCOMM             Create Makefile
+ XCOMM ---------------------------------------
+ 
+-ComplexProgramTarget(wmdate)
++ComplexProgramTargetNoMan(wmdate)
+ 
+ XCOMM - - - - - - - - - - - - - - - - - - - -
+ XCOMM                 e n d
