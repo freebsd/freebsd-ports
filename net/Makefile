@@ -22,6 +22,7 @@
     SUBDIR += archie.el
     SUBDIR += ari-yahoo
     SUBDIR += arla
+    SUBDIR += arp-sk
     SUBDIR += arpd
     SUBDIR += arping
     SUBDIR += arprelease
