@@ -1,7 +1,7 @@
 bin/nxtvepg
 lib/X11/app-defaults/Nxtvepg
-%%PORTDOCS%%share/doc/nxtvepg/README
-%%PORTDOCS%%share/doc/nxtvepg/TODO
-%%PORTDOCS%%share/doc/nxtvepg/CHANGES
-%%PORTDOCS%%share/doc/nxtvepg/manual.html
-@dirrm share/doc/nxtvepg
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES
+%%PORTDOCS%%%%DOCSDIR%%/manual.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

@@ -1,46 +1,10 @@
---- Makefile.bsd.orig	Mon Apr 21 00:10:22 2003
-+++ Makefile.bsd	Tue Oct 21 15:10:24 2003
-@@ -46,17 +46,20 @@
- # other settings
- # On FreeBSD there is only a modified tclsh with a message to launch
- # tclsh8.3 or tclsh8.4 , so this is hardcoded here
--TCL_VER         = 8.3
-+TCL_VER         = 8.4
- LDLIBS          = -L$(LOCALBASE)/lib\
-                   -L$(X11BASE)/lib\
--                  -ltk83 -ltcl83 -lX11 -lXmu -lm
-+                  -ltk84 -ltcl84 -lX11 -lXmu -lm
+--- Makefile.bsd.orig	Fri Jul 30 16:35:54 2004
++++ Makefile.bsd	Fri Jul 30 16:36:04 2004
+@@ -127,6 +127,7 @@
+ CFLAGS ?= $(OPTFLAGS)
+ CFLAGS += $(WARN) $(INCS) $(DEFS)
+ #LDLIBS += -pg
++BUILD_DIR=	${WRKSRC}
  
- INCS            += -I$(LOCALBASE)/include/tcl$(TCL_VER)\
-                    -I$(LOCALBASE)/include/tk$(TCL_VER)
--WANT_THREADS    = 1 # uncomment to force process based implementation
--
--PTHREAD         = -pthread
-+WANT_THREADS    = 1 # comment out to force process based implementation
+ all :: printconfig
  
-+ifeq ($(OS), FreeBSD)
-+PTHREAD         = $(PTHREAD_LIBS)
-+else
-+PTHREAD		= -pthread
-+endif
- 
- ### Common part for all UN*X variants  ###
- 
-@@ -77,7 +80,7 @@
- endif
- 
- # other settings
--OPTFLAGS = -O6 -pipe -g
-+OPTFLAGS = -O -pipe -g
- 
- # use static libraries for debugging only
- #LDLIBS += -Ldbglib -static
-@@ -143,7 +146,7 @@
- 	$(ECHO) "   system db dir:                             $(SYS_DBDIR)"
- endif
- ifdef WANT_THREADS
--	$(ECHO) "   Concurrency implementation based on:       threads"
-+	$(ECHO) "   Concurrency implementation based on:       threads (using $(PTHREAD))"
- else
- 	$(ECHO) "   Concurrency implementation based on:       processes"
- endif

@@ -1,5 +1,5 @@
---- Makefile.orig	Thu Oct  9 21:09:22 2003
-+++ Makefile	Tue Oct 21 12:57:04 2003
+--- Makefile.orig	Sun Jul 18 15:00:26 2004
++++ Makefile	Fri Jul 30 16:34:23 2004
 @@ -43,12 +43,24 @@
  include Makefile.bsd
  else
@@ -27,7 +27,7 @@
  
  # if you have perl set the path here, else just leave it alone
  PERL    = /usr/bin/perl
-@@ -92,10 +104,10 @@
+@@ -104,10 +116,10 @@
  # The database directory can be either in the user's $HOME (or relative to any
  # other env variable) or at a global place like /var/spool (world-writable)
  # -> uncomment 2 lines below to put the databases in the user's home
@@ -41,3 +41,12 @@
  DEFS        += -DEPG_DB_DIR=\"$(SYS_DBDIR)\"
  INST_DB_DIR  = $(ROOT)$(SYS_DBDIR)
  INST_DB_PERM = 0777
+@@ -121,7 +133,7 @@
+ CFLAGS += $(WARN) $(INCS) $(DEFS)
+ #LDLIBS += -pg
+ 
+-BUILD_DIR  = build-$(shell uname -m | sed -e 's/i.86/i386/' -e 's/ppc/powerpc/')
++BUILD_DIR  ?= build-$(shell uname -m | sed -e 's/i.86/i386/' -e 's/ppc/powerpc/')
+ INCS      += -I$(BUILD_DIR)
+ 
+ # end Linux specific part
