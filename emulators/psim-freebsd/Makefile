@@ -6,12 +6,18 @@
 # $FreeBSD$
 #
 
+SNAPDATE=	2002-03-10
+SNAPVER=	${SNAPDATE:S/-//g}
+
 PORTNAME=	psim-freebsd
-PORTVERSION=	5.1.1
+PORTVERSION=	5.2
+PORTREVISION=	${SNAPVER}
 CATEGORIES=	emulators
 MASTER_SITES=	${MASTER_SITE_SOURCEWARE}
-MASTER_SITE_SUBDIR=	gdb/releases
-DISTNAME=	gdb-${PORTVERSION}
+#MASTER_SITE_SUBDIR=	gdb/releases
+MASTER_SITE_SUBDIR=	gdb/snapshots/current
+#DISTNAME=	gdb-${PORTVERSION}
+DISTNAME=	gdb+dejagnu-${SNAPVER}
 
 MAINTAINER=	mp@FreeBSD.org
 
@@ -36,5 +42,10 @@ do-install:
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${FILESDIR}/HOW-TO ${DOCSDIR}
 .endif
+
+cklatest:
+	ncftpls \
+	    ftp://mirrors.rcn.net/mirrors/sources.redhat.com/${MASTER_SITE_SUBDIR}/  \
+	    | grep gdb+dejagnu-
 
 .include <bsd.port.post.mk>
