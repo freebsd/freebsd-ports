@@ -2145,6 +2145,7 @@ genpak		ports/biology/genpak
 gensig		ports/mail/gensig
 gentoo		ports/x11-fm/gentoo
 geomview	ports/graphics/geomview
+geos		ports/graphics/geos
 geotrace	ports/net/geotrace
 geramik		ports/x11-toolkits/geramik
 gerbv		ports/cad/gerbv
