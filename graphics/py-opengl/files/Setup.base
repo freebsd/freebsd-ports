@@ -9,10 +9,10 @@
 #
 
 # This module provides most of the interfaces to the standard OpenGL API
-_opengl	_openglmodule.c  -IX11BASE/include -LX11BASE/lib -lGL 
+_opengl	_openglmodule.c  -IX11BASE/include -LX11BASE/lib -lGL -lXext -lX11
 
 # Some convenience functions contributed by users.
-openglutil	openglutil.c  -IX11BASE/include -LX11BASE/lib -lGL 
+openglutil	openglutil.c  -IX11BASE/include -LX11BASE/lib -lGL -lXext -lX11
 
 # 
 # If you have the Numeric extensions installed, make sure the
@@ -22,13 +22,22 @@ openglutil	openglutil.c  -IX11BASE/include -LX11BASE/lib -lGL
 # These modules provide a few more features than the two modules
 # above, and significantly more speed in some circumstances
 #
+# (( Will these guys ever decide on "one" include directory name?! ))
 _opengl_num	_opengl_nummodule.c  -DNUMERIC \
 	-ILOCALBASE/include/python1.5/numerical \
-	-IX11BASE/include -LX11BASE/lib -lGL 
+	-ILOCALBASE/include/python1.5/Numeric \
+	-IX11BASE/include -LX11BASE/lib -lGL -lXext -lX11
 
 openglutil_num	openglutil_num.c  -DNUMERIC \
 	-ILOCALBASE/include/python1.5/numerical \
-	-IX11BASE/include -LX11BASE/lib -lGL 
+	-ILOCALBASE/include/python1.5/Numeric \
+	-IX11BASE/include -LX11BASE/lib -lGL -lXext -lX11
+# NOTES:  
+#  - The -lX11 for _opengl_num and openglutil_num is a hack around 
+#    XFree86 4.0 libGL.so's undeclared dependence on libX11 (e.g. XFreePixmap).
+#  - The -lXext for _opengl_num and opengl_num is a hack around
+#    XFree86 4.0 libGL.so's undeclared depdnence on libXext 
+#    (e.g. XextAddDisplay)
 
 # The GLU utility library -- part of most standard OpenGL setups
 _glu	_glumodule.c  \
@@ -40,7 +49,7 @@ _glut	\
 	-lglut  \
 # You'll definitely need these (or maybe edit them for MesaGL/MesaGLU:
 	-IX11BASE/include -LX11BASE/lib \
-	-lGLU -lGL  \
+	-lGLU -lGL \
 # Various combinations of these depending on your platform:
 	-lXi -lXmu -lXext -lX11 \
 # on SGI IRIX 6, uncomment the following
