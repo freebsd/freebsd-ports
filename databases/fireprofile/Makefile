@@ -8,7 +8,7 @@
 PORTNAME=	fireprofile
 PORTVERSION=    0.1.2
 CATEGORIES=     databases
-MASTER_SITES=   http://ares.penguinhosting.net/~ian/projects/ \
+MASTER_SITES=   http://firestuff.org/projects/ \
 		http://www.wa.apana.org.au/~dean/sources/ \
 		ftp://ftp.wa.apana.org.au/pub/pc/unix/packages/
 DISTNAME=	fireprofile
