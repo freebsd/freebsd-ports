@@ -1,0 +1,15 @@
+This package contains regular expressions for the following XML tokens:
+BaseChar, Ideographic, Letter, Digit, Extender, CombiningChar, NameChar,
+EntityRef, CharRef, Reference, Name, NmToken, and AttValue.
+
+The definitions of these tokens were taken from the XML spec
+(Extensible Markup Language 1.0) at http://www.w3.org/TR/REC-xml.
+
+Also contains the regular expressions for the following tokens from the
+XML Namespaces spec at http://www.w3.org/TR/REC-xml-names:
+NCNameChar, NCName, QName, Prefix and LocalPart.
+
+WWW: http://search.cpan.org/search?dist=XML-RegExp
+
+-- Sergey Skvortsov
+skv@protey.ru
