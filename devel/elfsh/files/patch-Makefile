@@ -1,0 +1,17 @@
+--- Makefile	Wed Aug 13 16:31:55 2003
++++ Makefile.patch	Sat Aug 16 02:11:52 2003
+@@ -7,10 +7,10 @@
+ 
+ RM	= rm -f
+ ETAGS   = etags
+-MODPATH = /usr/share/elfsh/
+-BINPATH = /usr/bin
+-LIBPATH = /usr/lib/
+-INCPATH = /usr/include/
++MODPATH = $(PREFIX)/share/elfsh/
++BINPATH = $(PREFIX)/bin
++LIBPATH = $(PREFIX)/lib/
++INCPATH = $(PREFIX)/include/
+ 
+ all	:
+ 	@echo 'Builting libelfsh...'

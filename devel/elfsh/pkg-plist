@@ -1,5 +1,11 @@
 bin/elfsh
-lib/libelfsh.a
-lib/libelfsh.so
+include/libelfsh-compat.h
+include/libelfsh-internal.h
 include/libelfsh-sunos.h
 include/libelfsh.h
+lib/libelfsh.a
+lib/libelfsh.so
+share/elfsh/modremap.so
+share/elfsh/modtest.so
+@dirrm share/elfsh
+

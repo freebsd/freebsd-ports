@@ -1,0 +1,11 @@
+--- modules/modflow/Makefile	Sat Aug 16 01:52:00 2003
++++ modules/modflow/Makefile.patch	Sat Aug 16 01:51:51 2003
+@@ -17,7 +17,7 @@
+ 
+ NAME = modflow.so
+ 
+-CFLAGS = -Wall -Werror -ggdb -I../../vm/include \
++CFLAGS += -Wall -Werror -ggdb -I../../vm/include \
+ 	-I../../libelfsh/include -I../../libhash/include \
+ 	-fPIC -rdynamic -DELFSH_INTERN
+ 

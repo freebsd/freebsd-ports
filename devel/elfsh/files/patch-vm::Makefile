@@ -1,0 +1,31 @@
+--- vm/Makefile	Fri Aug 15 17:58:34 2003
++++ vm/Makefile.patch	Sat Aug 16 02:26:48 2003
+@@ -19,9 +19,6 @@
+ RM			= rm -f
+ NAME			= elfsh
+ 
+-DLOPT_freebsd4.4	=
+-DLOPT_linux-gnu		= -ldl
+-DLOPT_solaris		= -ldl
+ #EXTRAOPT		= -lefence
+ 
+ # Uncomment that to use libasm
+@@ -29,14 +26,14 @@
+ #LDASMOPT		= -lasm
+ 
+ # Uncommant that to use libreadline
+-#READLNOPT		= -DUSE_READLN
+-#LDREADLNOPT		= -lreadline -ltermcap
++READLNOPT		= -DUSE_READLN
++LDREADLNOPT		= -lreadline -ltermcap
+ 
+-CFLAGS			= -rdynamic -fPIC -g3 -O2 -Wall -Iinclude \
++CFLAGS			+= -rdynamic -fPIC -g3 -Wall -Iinclude \
+ 			-I../libhash/include/ -I../libelfsh/include/ \
+ 			-DELFSH_INTERN $(ASMOPT) $(READLNOPT)
+ LDFLAGS			= -L../libelfsh/ -lelfsh -L../libhash/ -lhashelfsh \
+-			-rdynamic -g3 -ldl $(LDASMOPT) $(LDREADLNOPT) \
++			-rdynamic -g3 $(LDASMOPT) $(LDREADLNOPT) \
+ 			$(EXTRAOPT)
+ 
+ 

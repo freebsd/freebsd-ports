@@ -1,11 +1,11 @@
---- libelfsh/Makefile.orig	Mon Jun 23 17:36:25 2003
-+++ libelfsh/Makefile	Mon Jun 23 17:37:33 2003
+--- libelfsh/Makefile	Wed Aug 13 16:31:55 2003
++++ libelfsh/Makefile.patch	Sat Aug 16 01:48:30 2003
 @@ -8,7 +8,7 @@
  CC			= gcc
  RM			= rm -f 
  AR			= ar rc
--CFLAGS			= -Iinclude -Wall -g3 -O2
-+CFLAGS			+= -Iinclude -Wall -fpic
+-CFLAGS			= -rdynamic -Iinclude -Wall -fPIC -g3 -O2 -DELFSH_INTERN
++CFLAGS			+= -rdynamic -Iinclude -Wall -fPIC -g3 -DELFSH_INTERN
  SRC			= dynamic.c dynsym.c elf.c fixup.c got.c hash.c \
-                           interp.c pht.c plt.c section.c sht.c error.c \
- 			  stab.c symbol.c notes.c reloc.c functions.c \
+                         interp.c pht.c plt.c section.c sht.c error.c stab.c \
+ 			symbol.c notes.c reloc.c blocks.c ctors.c dtors.c \
