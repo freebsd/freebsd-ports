@@ -21,7 +21,7 @@
        No attempt is made to correct for that.
 
        Date::Manip is therefore not equipped to truly deal with
-       historacle dates, but should be able to perform
+       historical dates, but should be able to perform
        (virtually) any operation dealing with a modern time and
        date.
 
