@@ -2029,6 +2029,7 @@ hlserver-glbwar	ports/games/hlserver-glbwar
 hlserver-heroes	ports/games/hlserver-heroes
 hlserver-opfor	ports/games/hlserver-opfor
 hlserver-oz	ports/games/hlserver-oz
+hlserver-psychostats	ports/games/hlserver-psychostats
 hlserver-pvk	ports/games/hlserver-pvk
 hlserver-si	ports/games/hlserver-si
 hlserver-snow	ports/games/hlserver-snow
