@@ -29,6 +29,6 @@ USE_GMAKE=	yes
 CONFIGURE_ARGS?=	--sysconfdir=${PREFIX}/etc/rc.d
 
 CODA_SUITE?=	server
-CODA_VERSION?=	5.3.17
+CODA_VERSION?=	5.3.19
 
 .include <bsd.port.mk>
