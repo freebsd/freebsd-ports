@@ -7,7 +7,7 @@
 
 PORTNAME=	felt
 PORTVERSION=	3.06
-CATEGORIES=	cad
+CATEGORIES=	science
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://symphony.clarku.edu/atkinson/felt/Binaries/ \
 		ftp://ftp.isd.uni-stuttgart.de/pub/src/FEM/FElt/

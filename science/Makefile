@@ -8,6 +8,7 @@
     SUBDIR += chemtool-devel
     SUBDIR += clhep
     SUBDIR += euler
+    SUBDIR += felt
     SUBDIR += flounder
     SUBDIR += gchempaint
     SUBDIR += gchemutils
