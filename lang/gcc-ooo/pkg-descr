@@ -1,6 +1,7 @@
-GCC, the GNU Compiler Collection includes gcc, g++, gcj, and g77.
+GCC, the GNU Compiler Collection includes gcc, g++
+for OpenOffice.org compilation
 
-This port installs the various front ends as gcc34, g++34, gcj34,
-and g77-34 into the ${PREFIX}/bin directory.
+This port installs the various front ends as gcc-ooo, and g++-ooo
+into the ${PREFIX}/bin directory.
 
 WWW: http://gcc.gnu.org/
