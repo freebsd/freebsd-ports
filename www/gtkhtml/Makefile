@@ -14,8 +14,7 @@ DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 
-LIB_DEPENDS=	pspell.15:${PORTSDIR}/textproc/aspell \
-		soup.5:${PORTSDIR}/devel/soup
+LIB_DEPENDS=	pspell.15:${PORTSDIR}/textproc/aspell
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
@@ -32,6 +31,12 @@ CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 
 VERSION=	${PORTNAME}-${PORTVERSION}
 
+.include <bsd.port.pre.mk>
+
+.if exists(${LOCALBASE}/libdata/pkgconfig/soup.pc) || !defined(WITHOUT_SOUP)
+LIB_DEPENDS+=	soup.5:${PORTSDIR}/devel/soup
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
 		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
@@ -47,4 +52,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/gtkhtmlConf.sh \
 		${PREFIX}/etc/gtkhtmlConf.sh
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
