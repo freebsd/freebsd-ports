@@ -10,7 +10,7 @@ PORTVERSION= 	1.64
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.mathematik.uni-kl.de/~obachman/Texi2html/Distrib/
 
-MAINTAINER=	roam@orbitel.bg
+MAINTAINER=	roam@FreeBSD.org
 
 USE_AUTOMAKE=	yes
 USE_AUTOCONF=	yes

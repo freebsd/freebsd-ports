@@ -10,7 +10,7 @@ PORTVERSION= 	1.69
 CATEGORIES=	www devel
 MASTER_SITES=	ftp://hcs.harvard.edu/pub/web/tools/cgihtml/
 
-MAINTAINER=	roam@orbitel.bg
+MAINTAINER=	roam@FreeBSD.org
 
 INSTALLS_SHLIB=	yes
 

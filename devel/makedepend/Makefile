@@ -11,7 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/
 DISTNAME=	cyrus-imapd-2.0.7
 
-MAINTAINER=	roam@orbitel.bg
+MAINTAINER=	roam@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/makedepend
 GNU_CONFIGURE=	YES

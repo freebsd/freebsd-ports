@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=gh-tool
 DISTNAME=	ghmain.c
 EXTRACT_SUFX=
 
-MAINTAINER=	roam@orbitel.bg
+MAINTAINER=	roam@FreeBSD.org
 
 WRKSRC=		${WRKDIR}
 
