@@ -14,6 +14,7 @@ MASTER_SITES=	http://www.clark.net/~roesch/ \
 MAINTAINER=	dirk@FreeBSD.org
 
 GNU_CONFIGURE=	yes
+MAN8=		snort.8
 
 post-install:
 	${MKDIR} ${PREFIX}/share/snort
@@ -21,5 +22,6 @@ post-install:
           scan-lib snort-lib web-lib
 	${INSTALL_DATA} ${WRKSRC}/$i ${PREFIX}/share/snort
 .endfor
+	${INSTALL_MAN} ${WRKSRC}/${MAN8} ${PREFIX}/man/man8
 
 .include <bsd.port.mk>
