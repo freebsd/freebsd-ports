@@ -15,6 +15,7 @@ MASTER_SITE_SUBDIR=	devel/make
 MAINTAINER=	jasone@freebsd.org
 
 BUILD_DEPENDS=	gettext:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext
 
 USE_AUTOCONF=	yes
 GNU_CONFIGURE=	yes
