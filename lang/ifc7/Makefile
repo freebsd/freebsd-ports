@@ -43,7 +43,7 @@ IGNORE=	"Please manually download ${DISTFILES} from ${IFC_SITE}, ${IFC_SITE}f60l
 .endif
 
 .if exists(${LINUXBASE}/boot/kernel.h)
-BROKEN=	Can not coexist with linux_devtools
+BROKEN=	Cannot coexist with linux_devtools
 .endif
 
 post-extract:
