@@ -1,5 +1,5 @@
---- gdialog/dialog.h.orig	Tue Jan  5 17:55:34 1999
-+++ gdialog/dialog.h	Tue Jan  5 17:55:48 1999
+--- gdialog/dialog.h.orig	Tue Jul  6 16:23:33 1999
++++ gdialog/dialog.h	Wed Aug 18 11:34:23 1999
 @@ -36,24 +36,7 @@
  #include <gnome.h>
  #endif
@@ -10,7 +10,7 @@
 -#  if defined(USE_NCURSES) && !defined(RENAMED_NCURSES)
 -#    include <ncurses.h>
 -#  else
--#    ifndef _XOPEN_SOURCE_EXTENDED
+-#    if !defined(_XOPEN_SOURCE_EXTENDED) && !defined(__sgi)
 -#        define hacked 1
 -#        define _XOPEN_SOURCE_EXTENDED
 -#        define _ACS_COMPAT_CODE
