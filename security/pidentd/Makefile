@@ -22,6 +22,10 @@ ALL_TARGET=	freebsd
 MAKE_ENV=	REALPREFIX=${PREFIX}
 MAN8=		identd.8 idecrypt.8
 
+.if defined(WITH_DES)
+USE_OPENSSL=	yes
+.endif
+
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 400014
@@ -34,7 +38,6 @@ ADD_GDEFS+=	-DINET6 -D__ss_family=ss_family -D__ss_len=ss_len
 #WITH_DES=	yes
 
 .if defined(WITH_DES)
-.include "${PORTSDIR}/security/openssl/bsd.openssl.mk"
 ADD_GDEFS+=	-DINCLUDE_CRYPT -DOPENSSL_DES_LIBDES_COMPATIBILITY \
 		-I${OPENSSLINC} -I${OPENSSLINC}/openssl
 ADD_GLIBS=	-L${OPENSSLLIB} -lcrypto
