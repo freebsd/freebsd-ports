@@ -22,7 +22,6 @@
     SUBDIR += extract-xiso
     SUBDIR += fceu
     SUBDIR += fmsx
-    SUBDIR += freesci
     SUBDIR += frodo
     SUBDIR += fuse
     SUBDIR += gbe

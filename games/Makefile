@@ -134,6 +134,7 @@
     SUBDIR += freeciv-gtk2
     SUBDIR += freedoko
     SUBDIR += freedroid
+    SUBDIR += freesci
     SUBDIR += freesweep
     SUBDIR += frotz
     SUBDIR += frozenbubble
