@@ -1,4 +1,5 @@
 bin/BitchX
+bin/scr-bx
 bin/wserv
-lib/BitchX/BitchX.help
-@dirrm lib/BitchX
+lib/bx/BitchX.help
+@dirrm lib/bx
