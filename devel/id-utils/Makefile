@@ -11,7 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	id-utils
 
-MAINTAINER=	pst@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 # need to byte-compile a .el file
 BUILD_DEPENDS=	emacs:${PORTSDIR}/editors/emacs20
