@@ -45,7 +45,10 @@ MLINKS+=	vim.1 gvim.1  vim.1 gview.1  vim.1 rgvim.1  vim.1 rgview.1
 
 MAKE_FLAGS:=	CONF_OPT_MAX="--enable-max-features" ${MAKE_FLAGS}
 
-.if defined(HAVE_MOTIF)
+.if defined(HAVE_GTK)
+LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
+MAKE_FLAGS:=	CONF_OPT_GUI="--enable-gui=gtk --with-gtk-prefix=${X11BASE} --enable-multibyte --enable-fontset --enable-multibyte --enable-xim" ${MAKE_FLAGS}
+.elif defined(HAVE_MOTIF)
 REQUIRES_MOTIF=	yes
 MAKE_FLAGS:=	CONF_OPT_GUI="--enable-gui=motif --with-motif-lib=\"${MOTIFLIB}\"" MOTIFHOME=${X11BASE} ${MAKE_FLAGS}
 .else
