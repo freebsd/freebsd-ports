@@ -3,12 +3,12 @@
 # Date created:		13 Mar 1998
 # Whom:			sada@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.8 1998/12/20 22:18:12 sada Exp $
+# $Id: Makefile,v 1.9 1998/12/26 21:52:55 sada Exp $
 #
 
-MAINTAINER=	sada@FreeBSD.ORG
-
 MASTERDIR=	${.CURDIR}/../netscape4-communicator
+
+MAINTAINER=	sada@FreeBSD.ORG
 
 BROWSER=	navigator
 

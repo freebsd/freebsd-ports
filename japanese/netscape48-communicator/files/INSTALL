@@ -1,0 +1,9 @@
+#!/bin/sh
+[ "x$1" = "x" ] && exit 1
+if [ "x$2" = "xPOST-INSTALL" -a -n "$JA_NETSCAPE_INSTALL_CFG" ]; then
+	CFGLOC=/usr/lib/X11/@LANG@/app-defaults
+	if [ ! -e $CFGLOC/netscape.cfg ]; then
+		mkdir -p $CFGLOC
+		cp @NDIR@/@LANG@/netscape.cfg $CFGLOC
+	fi
+fi

@@ -3,7 +3,7 @@
 # Date created:		13 Mar 1998
 # Whom:			sada@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.12 1998/12/27 09:09:48 asami Exp $
+# $Id: Makefile,v 1.13 1998/12/27 19:43:52 sada Exp $
 #
 
 DISTNAME=	ja-netscape-${BROWSER}-${BROWSER_VERSION}
@@ -21,6 +21,7 @@ RUN_DEPENDS?=	${PREFIX}/bin/${BROWSER}-${BROWSER_VERSION}:${PORTSDIR}/www/netsca
 MAN1=		ja-netscape.1
 MANLANG=	ja
 NO_BUILD=	yes
+PKGINSTALL=	${WRKDIR}/INSTALL
 PLIST=		${.CURDIR}/pkg/PLIST
 PLIST_SUB=	NSUBDIR=${NSUBDIR} LANG=${LANG}
 WRKSRC=		${WRKDIR}/netscape-ja_euc
@@ -40,7 +41,7 @@ MAKESCRIPT=	${SED} -e "s;@X11BASE@;${X11BASE};g" \
 MANDIR=		${MANPREFIX}/man/${MANLANG}
 NDIR=		${PREFIX}/${NSUBDIR}
 NSUBDIR?=	lib/netscape
-PORTKIT?=	ja-netscape4-portkit.1998.1228.tar.gz
+PORTKIT=	ja-netscape-portkit.1998.1230.tar.gz
 PORTKIT_DIR=	${WRKDIR}/portkit
 PORTKIT_SITES=	http://WWW.JP.FreeBSD.ORG/~sada/distfiles/ \
 		http://WWW.FreeBSD.ORG/~sada/distfiles/
@@ -49,9 +50,11 @@ PORTKIT_SITES=	http://WWW.JP.FreeBSD.ORG/~sada/distfiles/ \
 
 do-configure:
 	${MAKESCRIPT} ${PORTKIT_DIR}/start.sh.in >${WRKDIR}/start.sh
-	${CP} ${PORTKIT_DIR}/Netscape.${BROWSER} ${WRKDIR}/Netscape
-	${CP} ${PORTKIT_DIR}/splash.${BROWSER} ${WRKDIR}/splash
-	${CP} ${WRKDIR}/splash ${WRKDIR}/about
+	${MAKESCRIPT} ${PORTKIT_DIR}/Netscape.${BROWSER}-${BROWSER_VERSION} \
+		>${WRKDIR}/Netscape
+	${MAKESCRIPT} ${MASTERDIR}/files/INSTALL >${PKGINSTALL}
+	${CP} ${PORTKIT_DIR}/about.${BROWSER}-${BROWSER_VERSION} ${WRKDIR}/about
+	${CP} ${WRKDIR}/about ${WRKDIR}/splash
 
 do-install:
 	${INSTALL_DATA} ${PORTKIT_DIR}/preferences.js ${NDIR}
@@ -70,5 +73,9 @@ do-install:
 	${LN} -sf ${BROWSER_CMD} ${PREFIX}/bin/netscape
 	${MKDIR} ${MANDIR}/man1
 	${INSTALL_MAN} ${PORTKIT_DIR}/${MAN1} ${MANDIR}/man1
+
+post-install:
+	${SETENV} PKG_PREFIX=${PREFIX} \
+		${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.mk>
