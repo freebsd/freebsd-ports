@@ -48,12 +48,12 @@ PLUGINSDIR=		${PREFIX}/lib/browser_plugins
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 500601
-.undef NO_IGNORE
-BROKEN=	Mozilla Firebird only supports the ports versions of Perl.
-BROKEN+=If you have installed a Perl port, and are getting this message,
-BROKEN+=please make sure you have given the command \'use.perl port\'.
-.endif # ${PERL_LEVEL} < 500601
+#.if ${PERL_LEVEL} < 500601
+#.undef NO_IGNORE
+#BROKEN=	Mozilla Firebird only supports the ports versions of Perl.
+#BROKEN+=If you have installed a Perl port, and are getting this message,
+#BROKEN+=please make sure you have given the command \'use.perl port\'.
+#.endif # ${PERL_LEVEL} < 500601
 
 SORT?=/usr/bin/sort
 PLIST=${WRKDIR}/plist
