@@ -1,0 +1,10 @@
+--- tkseti	Wed Jun 30 17:43:09 1999
++++ tkseti	Wed Jun 30 17:43:19 1999
+@@ -1,6 +1,6 @@
+ #!/bin/sh
+ # the next line restarts using wish \
+-exec wish "$0" ${1+"$@"}
++exec wish8.0 "$0" ${1+"$@"}
+ #############################################################################
+ # Visual Tcl v1.20 Project
+ #
