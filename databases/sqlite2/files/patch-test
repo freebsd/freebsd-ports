@@ -1,0 +1,6 @@
+--- test/all.test	Tue Feb  6 08:29:31 2001
++++ test/all.test	Fri Jun  8 16:28:34 2001
+@@ -27,2 +27,3 @@
+ set testdir [file dirname $argv0]
++load [lindex $argv 0]
+ source $testdir/tester.tcl
