@@ -1,12 +1,12 @@
 # New ports collection makefile for:	cmatrix
-# Version required:			0.98b
+# Version required:			0.98c
 # Date created:				1 May 1999
 # Whom:					Andrey Zakhvatov
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/05/03 04:36:13 steve Exp $
 #
 
-DISTNAME=	cmatrix-0.98b
+DISTNAME=	cmatrix-0.98c
 CATEGORIES=	misc
 MASTER_SITES=	http://www.plattsburgh.edu/faculty/allegrcr/cmatrix/dist/
 
@@ -18,7 +18,7 @@ do-install:
 post-install:
 .if !defined(NOPORTDOCS)
 	@ ${MKDIR} ${PREFIX}/share/doc/cmatrix
-.for file in COPYING Changelog README TODO
+.for file in Changelog README TODO
 	@ ${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/cmatrix
 .endfor
 .endif
