@@ -2,24 +2,24 @@
 +++ Makefile	2000/08/31 17:35:38
 @@ -5,8 +5,20 @@
  	@echo "Currently that is:"
- 	@which python
+ 	@which ${PYTHON_CMD}
  
 -all: MA RNG FFT
 +all:: main MA RNG FFT
 +
 +main:
-+	python setup.py build
++	${PYTHON_CMD} setup.py build
  
  MA RNG FFT:
--	(cd Packages/$@; python setup.py install)
-+	(cd Packages/$@; mkdir -p Include ; ln -sf ../../../Include Include/Numeric; python setup.py build)
+-	(cd Packages/$@; ${PYTHON_CMD} setup.py install)
++	(cd Packages/$@; mkdir -p Include ; ln -sf ../../../Include Include/Numeric; ${PYTHON_CMD} setup.py build)
 +
 +install:: main_install MA_install RNG_install FFT_install
 +
 +main_install:
-+	python setup.py install
++	${PYTHON_CMD} setup.py install
 +
 +MA_install RNG_install FFT_install:
-+	(cd Packages/${@:S/_install//}; python setup.py install)
++	(cd Packages/${@:S/_install//}; ${PYTHON_CMD} setup.py install)
 +
  
