@@ -19,6 +19,10 @@ upgrades.
   mkdir -p /tmp/.ICE-unix && chmod 1777 /tmp/.ICE-unix && 
   chown root:wheel /tmp/.ICE-unix
 
+  Also, make sure you do NOT have clear_tmp_enable="YES" set in /etc/rc.conf,
+  as it will remove the directory on every reboot and applications will re-
+  create it with the wrong ownership.
+
 20041227:
   AFFECTS: users of lang/gambas
   AUTHOR: thierry@FreeBSD.org
