@@ -14,7 +14,7 @@ MASTER_SITES=	http://cooledit.sourceforge.net/ \
 		http://www.netins.net/showcase/Comput-IT/cooledit/src/
 MASTER_SITE_SUBDIR=	apps/editors/X/cooledit
 
-MAINTAINER=	brett@peloton.runet.edu
+MAINTAINER=	ports@freebsd.org
 COMMENT=	Suite of utilities, including a GUI editor
 
 LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext \

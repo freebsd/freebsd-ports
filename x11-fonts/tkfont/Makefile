@@ -12,7 +12,7 @@ CATEGORIES=	x11-fonts tk83
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	petef
 
-MAINTAINER=	brett@peloton.runet.edu
+MAINTAINER=	ports@freebsd.org
 COMMENT=	A Tk based replacement for xfontsel
 
 RUN_DEPENDS=	wish8.3:${PORTSDIR}/x11-toolkits/tk83
