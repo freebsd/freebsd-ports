@@ -1,4 +1,4 @@
-bin/quake2
+bin/q2f
 %%SVGA:%%lib/quake2/ref_soft.so
 %%SDL:%%lib/quake2/ref_softsdl.so
 %%SDLGL:%%lib/quake2/ref_sdlgl.so
