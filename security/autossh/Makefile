@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	autossh
-PORTVERSION=	1.2e
+PORTVERSION=	1.2f
 CATEGORIES=	security
 MASTER_SITES=	http://www.harding.motd.ca/autossh/
 EXTRACT_SUFX=	.tgz
@@ -17,6 +17,7 @@ COMMENT=	Automatically restart SSH sessions and tunnels
 MAKEFILE=	Makefile.bsd
 USE_REINPLACE=	yes
 
+PORTDOCS=	CHANGES README
 MAN1=		autossh.1
 
 post-patch:
