@@ -1,22 +1,20 @@
---- configure.orig	Mon May 29 04:46:09 2000
-+++ configure	Tue Jun  6 16:21:42 2000
+--- configure.orig	Sat Aug 19 23:51:05 2000
++++ configure	Sat Aug 19 23:52:51 2000
 @@ -12,7 +12,8 @@
  ###############################################################################
  
  #DEFINES=-DDEBUG
 -INSTALLDIR= /usr/local/bin
 +INSTALLDIR= \$(PREFIX)/bin
-+MANDIR= \$(PREFIX)/man/man8
++MANDIR = \$(PREFIX)/man/man8
  
  !
  
-@@ -113,8 +114,8 @@
-     ;;
+@@ -114,7 +115,7 @@
    *)
  cat <<! >> Makefile
--CC = cc
+ CC = cc
 -CFLAGS = 
-+CC ?= cc
 +CFLAGS += -D${SYSTEM}
  LDFLAGS = -lm
  INCLUDES = -I.
