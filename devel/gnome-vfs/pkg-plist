@@ -114,7 +114,6 @@ share/locale/zh_TW/LC_MESSAGES/gnome-vfs-2.0.mo
 @dirrm share/doc/gnome-vfs
 @dirrm lib/vfs/2.0/extfs
 @dirrm lib/vfs/2.0
-@dirrm lib/vfs
 @dirrm lib/gnome-vfs-2.0/modules
 @dirrm lib/gnome-vfs-2.0
 @dirrm include/gnome-vfs-module-2.0/libgnomevfs
@@ -124,3 +123,4 @@ share/locale/zh_TW/LC_MESSAGES/gnome-vfs-2.0.mo
 @dirrm etc/gnome-vfs-2.0/vfolders
 @dirrm etc/gnome-vfs-2.0/modules
 @dirrm etc/gnome-vfs-2.0
+@unexec /bin/rmdir %D/lib/vfs 2>/dev/null || /usr/bin/true
