@@ -1,0 +1,15 @@
+This package sends wake-on-lan packets to turn on machines
+that are wake-on-lan capable.
+
+For now there is only one function in this package:
+
+Net::Wake::by_udp(host, mac_address, [port]);
+
+You can power on PCs by
+perl -e 'use Net::Wake; Net::Wake::by_udp("192.168.0.1", "xx:xx:xx:xx:xx:xx");'
+
+You can also specify broadcast address for `host'. It is useful in a
+intelligent network.
+
+--
+Yoshihiko Sarumaru <mistral@imasy.or.jp>
