@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	qtools
-PORTVERSION=	0.55
+PORTVERSION=	0.56
 CATEGORIES=	mail
 MASTER_SITES=	http://www.superscript.com/qtools/
 
