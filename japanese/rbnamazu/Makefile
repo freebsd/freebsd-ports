@@ -13,8 +13,6 @@ DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
 
-RUN_DEPENDS=	${RUBY_SITELIBDIR}/optparse.rb:${PORTSDIR}/devel/ruby-optparse
-
 USE_RUBY=	yes
 .if !defined(NOPORTDOCS)
 USE_RUBY_RD=	yes
@@ -24,6 +22,12 @@ NO_BUILD=	yes
 
 MODULES=	rbnamazu.rb nmzqr.rb nmzqr.tab.rb nmzdoc.rb
 RD_DOCS=	rbnamazu.rd.ja rbnamazu.rd.en
+
+.include <bsd.port.pre.mk>
+
+.if ${RUBY_VER} < 1.7
+RUN_DEPENDS+=	${RUBY_SITELIBDIR}/optparse.rb:${PORTSDIR}/lang/ruby16-shim-ruby18
+.endif
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/namazu.rb ${PREFIX}/bin/
@@ -45,4 +49,4 @@ do-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
