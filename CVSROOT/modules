@@ -709,6 +709,7 @@ cervisia	ports/devel/cervisia
 cfe		ports/misc/cfe
 cfengine	ports/sysutils/cfengine
 cflow		ports/devel/cflow
+cflow2vcg	ports/devel/cflow2vcg
 cflowd		ports/net/cflowd
 cfm		ports/x11-fm/cfm
 cfs		ports/security/cfs
