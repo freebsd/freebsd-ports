@@ -231,7 +231,7 @@ nav/apache/webroot/report/DatabaseResult.py
 nav/apache/webroot/report/Generator.py
 nav/apache/webroot/report/Matrix.py
 nav/apache/webroot/report/Report.py
-nav/apache/webroot/report/report.py
+nav/apache/webroot/report/reporthandler.py
 nav/apache/webroot/status/.htaccess
 nav/apache/webroot/status/StatusDefaultPrefs.py
 nav/apache/webroot/status/StatusPrefs.py
@@ -290,6 +290,7 @@ nav/bin/safe_smsd.pl
 nav/bin/servicemon.py
 nav/bin/smsd.pl
 nav/bin/thresholdMon.py
+nav/bin/vprrd.py
 nav/doc/cricket/README
 nav/doc/cricket/cricket-config/.nav
 nav/doc/cricket/cricket-config/Defaults
@@ -301,6 +302,8 @@ nav/doc/cricket/cricket-config/router-interfaces/.nav
 nav/doc/cricket/cricket-config/router-interfaces/Defaults
 nav/doc/cricket/cricket-config/routers/.nav
 nav/doc/cricket/cricket-config/routers/Defaults
+nav/doc/cricket/cricket-config/servers/.nav
+nav/doc/cricket/cricket-config/servers/Defaults
 nav/doc/cricket/cricket-config/switch-ports/.nav
 nav/doc/cricket/cricket-config/switch-ports/Defaults
 nav/doc/cricket/cricket-config/switches/.nav
@@ -315,6 +318,7 @@ nav/doc/sql/manage.sql
 nav/doc/sql/navprofiles.sql
 nav/doc/sql/snmpoid.sql
 nav/doc/sql/upgrades/3.0_beta7.sql
+nav/doc/sql/upgrades/3.0_beta8.sql
 nav/doc/sql/upgrades/README
 nav/etc/alertengine.cfg
 nav/etc/alertmsg.conf
@@ -380,6 +384,7 @@ nav/lib/java/eventEngine/handler-plugins/ThresholdState.jar
 nav/lib/java/getBoksMacs/getBoksMacs.jar
 nav/lib/java/getDeviceData/data-plugins/Device.jar
 nav/lib/java/getDeviceData/data-plugins/Gwport.jar
+nav/lib/java/getDeviceData/data-plugins/Mem.jar
 nav/lib/java/getDeviceData/data-plugins/Module.jar
 nav/lib/java/getDeviceData/data-plugins/ModuleMon.jar
 nav/lib/java/getDeviceData/data-plugins/Netbox.jar
@@ -393,6 +398,7 @@ nav/lib/java/getDeviceData/device-plugins/CiscoSwCL3addon.jar
 nav/lib/java/getDeviceData/device-plugins/CiscoSwIOS.jar
 nav/lib/java/getDeviceData/device-plugins/CiscoSwIOSaddon.jar
 nav/lib/java/getDeviceData/device-plugins/CiscoSwMenu.jar
+nav/lib/java/getDeviceData/device-plugins/DeviceMem.jar
 nav/lib/java/getDeviceData/device-plugins/DNSCheck.jar
 nav/lib/java/getDeviceData/device-plugins/HP.jar
 nav/lib/java/getDeviceData/device-plugins/MibIISw.jar
@@ -401,18 +407,18 @@ nav/lib/java/getDeviceData/device-plugins/StaticRoutes.jar
 nav/lib/java/getDeviceData/device-plugins/Typeoid.jar
 nav/lib/java/getDeviceData/getDeviceData.jar
 nav/lib/java/networkDiscovery/networkDiscovery.jar
-nav/lib/perl/Alert.pm
-nav/lib/perl/AlertsBase.pm
-nav/lib/perl/Engine.pm
-nav/lib/perl/EquipmentGroups.pm
-nav/lib/perl/IP.pm
-nav/lib/perl/Log.pm
-nav/lib/perl/NAV.pm
+nav/lib/perl/NAV/AlertEngine/Alert.pm
+nav/lib/perl/NAV/AlertEngine/AlertsBase.pm
+nav/lib/perl/NAV/AlertEngine/Engine.pm
+nav/lib/perl/NAV/AlertEngine/EquipmentGroups.pm
+nav/lib/perl/NAV/AlertEngine/Log.pm
+nav/lib/perl/NAV/AlertEngine/NewAlerts.pm
+nav/lib/perl/NAV/AlertEngine/QueuedAlerts.pm
+nav/lib/perl/NAV/AlertEngine/User.pm
+nav/lib/perl/NAV/AlertEngine/UserGroups.pm
 nav/lib/perl/NAV/Path.pm
-nav/lib/perl/NewAlerts.pm
-nav/lib/perl/QueuedAlerts.pm
-nav/lib/perl/User.pm
-nav/lib/perl/UserGroups.pm
+nav/lib/perl/NAV.pm
+nav/lib/perl/NetAddr/IP.pm
 nav/lib/python/nav/Snmp.py
 nav/lib/python/nav/__init__.py
 nav/lib/python/nav/auth.py
@@ -627,6 +633,7 @@ nav/lib/python/rotater.py
 @dirrm nav/doc/cricket/cricket-config/giga-switch-ports
 @dirrm nav/doc/cricket/cricket-config/router-interfaces
 @dirrm nav/doc/cricket/cricket-config/routers
+@dirrm nav/doc/cricket/cricket-config/servers
 @dirrm nav/doc/cricket/cricket-config/switch-ports
 @dirrm nav/doc/cricket/cricket-config/switches
 @dirrm nav/doc/cricket/cricket-config
@@ -649,7 +656,9 @@ nav/lib/python/rotater.py
 @dirrm nav/lib/java/getDeviceData
 @dirrm nav/lib/java/networkDiscovery
 @dirrm nav/lib/java
+@dirrm nav/lib/perl/NAV/AlertEngine
 @dirrm nav/lib/perl/NAV
+@dirrm nav/lib/perl/NetAddr
 @dirrm nav/lib/perl
 @dirrm nav/lib/python/nav/db/forgotten
 @dirrm nav/lib/python/nav/db
