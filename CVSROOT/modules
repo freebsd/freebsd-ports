@@ -650,6 +650,7 @@ ccdconfig	src/sbin/ccdconfig
 ccdoc		ports/devel/ccdoc
 cclient		ports/mail/cclient
 ccmath		ports/math/ccmath
+ccrypt		ports/security/ccrypt
 ccscript	ports/lang/ccscript
 cd-console	ports/audio/cd-console
 cd-write	ports/sysutils/cd-write
