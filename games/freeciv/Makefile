@@ -6,14 +6,13 @@
 #
 
 PORTNAME=	freeciv
-PORTVERSION=	1.14.0
-PORTREVISION=	1
+PORTVERSION=	1.14.1
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.freeciv.org/pub/freeciv/stable/ \
 		ftp://ftp.netc.pt/pub/freeciv/stable/ \
 		ftp://ftp.pvv.ntnu.no/pub/freeciv/stable/
 
-MAINTAINER?=	adam-ports@blacktabby.org
+MAINTAINER?=	rehsack@liwing.de
 COMMENT?=	A civilisation clone for X11; multiplayer
 
 USE_GETTEXT=	yes
@@ -25,16 +24,46 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 
+CONFLICTS=	freeciv-*
+
 .include <bsd.port.pre.mk>
 
-.if ${HAVE_GNOME:Mgtk12}!=""
-USE_GNOME+=	imlib
-PKGNAMESUFFIX?=	-imlib
+.if 	!defined(WITH_GTK) && !defined(WITH_GTK12) && !defined(WITH_GTK2) && \
+	!defined(WITHOUT_GNOME)
+AUTO_DEPENDS=	yes
+.if ${HAVE_GNOME:Mgtk20}!=""
+WITH_GTK2=	yes
+.elif ${HAVE_GNOME:Mgtk12}!=""
+WITH_GTK=	yes
+.endif
+.endif
+
+.if defined(WITH_GTK2)
+USE_GNOME+=	gtk20
+PKGNAMESUFFIX?=	-gtk2
+CONFIGURE_ARGS+=	--enable-client=gtk2
+.elif defined(WITH_GTK) || defined(WITH_GTK12)
+USE_GNOME+=	imlib gtk12
+PKGNAMESUFFIX?=	-gtk
+CONFIGURE_ARGS+=	--enable-client=gtk
 .else
 LIB_DEPENDS+=	Xaw3d.${XAWVER}:${PORTSDIR}/x11-toolkits/Xaw3d
 .endif
 
+pre-fetch:
+.if defined(AUTO_DEPENDS)
+	@${ECHO} -n "No WITH_GTK, WITH_GTK2 or WITHOUT_GNOME defined, autodetecting: "
+.if defined(WITH_GTK)
+	@${ECHO} "GTK"
+.elif defined(WITH_GTK2)
+	@${ECHO} "GTK2"
+.else
+	@${ECHO} "Xaw3d"
+.endif
+.endif
+
 post-patch:
-	cd ${WRKSRC}; ${FIND} . -name Makefile.in | ${XARGS} ${REINPLACE_CMD} -e 's/@program_transform_name@//'
+	cd ${WRKSRC}; ${FIND} . -name Makefile.in | \
+		${XARGS} ${REINPLACE_CMD} -e 's/@program_transform_name@//'
 
 .include <bsd.port.post.mk>
