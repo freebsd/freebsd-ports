@@ -47,7 +47,7 @@ WRKSRC=		${WRKDIR}/${BROWSER}-v475.${NETSCAPE_DIST_TAG}
 ONLY_FOR_ARCHS?=	i386 alpha
 
 .if ${ARCH} == "alpha" && !defined(BROWSER)
-PLIST=		${PKGDIR}/PLIST.alpha
+PLIST=		${PKGDIR}/pkg-plist.alpha
 .endif
 
 .if ${ARCH} == "alpha"
