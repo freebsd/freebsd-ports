@@ -1,0 +1,17 @@
+*** Imakefile.orig	Thu May  5 07:58:34 1994
+--- Imakefile	Tue Oct  8 01:52:47 1996
+***************
+*** 4,9 ****
+  # gcc
+  #CC = gcc
+  # CFLAGS = -O2 -Wall -DXPM -DUSLEEP
+! CFLAGS =-DXPM -I/usr/local/X11R5/include/ 
+  CDEBUGFLAGS = 
+  ComplexProgramTarget(xeyes+)
+--- 4,9 ----
+  # gcc
+  #CC = gcc
+  # CFLAGS = -O2 -Wall -DXPM -DUSLEEP
+! CFLAGS =-DXPM -I/usr/X11R6/include/ -L/usr/X11R6/lib
+  CDEBUGFLAGS = 
+  ComplexProgramTarget(xeyes+)

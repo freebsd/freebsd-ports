@@ -1,0 +1,18 @@
+Xeyes+ 2.01, horrible eyes looking at your mouse cursor.
+
+Usage: 
+	xeyes+ [-root] [-wm] [-speed n] [-smooth] [-display <display>]
+
+	-root
+		Draw on the root window directly.
+
+	-wm   
+		Not allow window managers to redirect
+
+	-speed 
+		How fast the eyes move from 1 to 100 in 10 micro seconds. 
+
+	-smooth
+		Eyes move more smooth.
+
+Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
