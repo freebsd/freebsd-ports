@@ -7590,6 +7590,7 @@ sl		ports/games/sl
 slashem-tty	ports/games/slashem-tty
 slay		ports/sysutils/slay
 sleuth		ports/dns/sleuth
+sleuthkit	ports/sysutils/sleuthkit
 slffea		ports/cad/slffea
 slib		ports/lang/slib
 sliderule	ports/deskutils/sliderule
