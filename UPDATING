@@ -10,7 +10,7 @@ upgrades.
   AFFECTS: users of sysutils/portupgrade
   AUTHOR: lofi@freebsd.org
 
-  portsdb(1) is part of the portupgrade suite and is used to convert a ports 
+  portsdb(1) is part of the portupgrade suite and is used to convert a ports
   INDEX file to a binary INDEX.db database. By default, it uses the
   libc-builtin berkeley db to do so, which has a buggy btree implementation.
 
@@ -60,7 +60,7 @@ upgrades.
 
   Also remember that 'make index' is only supported on _complete_
   ports-trees. If you are currently refusing whole categories by means
-  of a cvsup refuse file, use 'make fetchindex' instead (or consider 
+  of a cvsup refuse file, use 'make fetchindex' instead (or consider
   keeping an extra machine/jail with a complete ports-tree around to
   do INDEX builds on).
 
@@ -249,14 +249,14 @@ upgrades.
   AFFECTS: users of mail/getmail
   AUTHOR: question+fbsdports@closedsrc.org
 
-  If you are using a version of mail/getmail earlier than 4.x and 
-  are planning to upgrade to 4.2.2, please note that the configuration file 
-  syntax has changed and the existing configuration file(s) will not work. 
+  If you are using a version of mail/getmail earlier than 4.x and
+  are planning to upgrade to 4.2.2, please note that the configuration file
+  syntax has changed and the existing configuration file(s) will not work.
   Please refer to the online documentation available at:
 
     (http://www.qcc.ca/~charlesc/software/getmail-4/documentation.html)
 
-  If you already upgraded to the latest version of getmail, you can refer 
+  If you already upgraded to the latest version of getmail, you can refer
   to the installed documentation under:
 
     ${PREFIX}/share/docs/getmail
@@ -392,7 +392,7 @@ upgrades.
       or, if you're using the sysutils/portindex port
 
       	portindex
-    
+
   2.) Delete installed packages which conflict with the updated KDE
       ports.
 
@@ -400,7 +400,7 @@ upgrades.
       	kdeaddons-kaddressbook-plugins-\* kdepim-\* kdeutils-\* \
       	kdeaddons-\[0-9\]\* kde-\[0-9\]\*
 
-      kdegraphics now conflicts with the kolourpaint package and kdeedu now 
+      kdegraphics now conflicts with the kolourpaint package and kdeedu now
       conflicts with the kwordquiz package. If you have kwordquiz and/or
       kolourpaint installed on your system and you want to use the kdegraphics/
       kdeedu ports, you should first deinstall the conflicting packages:
@@ -421,16 +421,16 @@ upgrades.
       quanta installed.
 
   4.) Reinstall any KDE ports you deleted in step 2. Note that the kdeaddons-
-      kontact-plugins (net/kontact-plugins), kdepim-kpilot (palm/kpilot) and 
+      kontact-plugins (net/kontact-plugins), kdepim-kpilot (palm/kpilot) and
       quanta (www/quanta) ports/packages do not exist anymore and cannot be
       reinstalled.
 
   Known post-updating issues:
 
   - If you're missing acoustic notifications (system sounds) after the update:
-    
+
     	rm ~/.kde/share/config/knotifyrc
-  
+
     Then log out of KDE and back in again.
 
   - KMail has been heavily modified since KDE 3.2.x. Testing shows that KMail
@@ -439,7 +439,7 @@ upgrades.
     until it resumes normal operation.
 
     The integration of GnuPG and KMail for signing, encrypting and verifying
-    PGP/MIME mail has also changed. A quick howto is available at 
+    PGP/MIME mail has also changed. A quick howto is available at
     http://freebsd.kde.org/howtos/gnupg-kmail.php.
 
   - kdm users might get warnings from kdm about obsolete lines in kdmrc.
@@ -546,32 +546,32 @@ upgrades.
   AFFECTS: users of x11/kdebase3 (kdm)
   AUTHOR: kde@freebsd.org
 
-  If you are unable to login to X via kdm after portupgrading to the latest 
+  If you are unable to login to X via kdm after portupgrading to the latest
   kdebase port and you're getting these or similar messages on the console
 
-  /kernel: Aug 13 17:12:10 kiste kdm: :0[447]: Can't execute 
+  /kernel: Aug 13 17:12:10 kiste kdm: :0[447]: Can't execute
   "/usr/local/share/config/kdm/Xstartup": No such file or directory
-  /kernel: Aug 13 17:12:10 kiste kdm: :0[432]: Cannot execute startup script 
+  /kernel: Aug 13 17:12:10 kiste kdm: :0[432]: Cannot execute startup script
   "/usr/local/share/config/kdm/Xstartup"
-  /kernel: Aug 13 17:12:10 kiste kdm: :0[448]: Can't execute 
+  /kernel: Aug 13 17:12:10 kiste kdm: :0[448]: Can't execute
   "/usr/local/share/config/kdm/Xreset": No such file or directory
-  /kernel: Aug 13 17:12:12 kiste kdm: :0[458]: Can't execute 
+  /kernel: Aug 13 17:12:12 kiste kdm: :0[458]: Can't execute
   "/usr/local/share/config/kdm/Xsetup": No such file or directory
 
   please do the following:
 
-  1.) Copy /usr/local/share/config/kdm/kdmrc away to a safe place, for example 
+  1.) Copy /usr/local/share/config/kdm/kdmrc away to a safe place, for example
   your home directory ( cp /usr/local/share/config/kdm/kdmrc ~/ )
 
   2.) Run, as root: genkdmconf --no-old
 
-  3.) Put your copy of kdmrc back to /usr/local/share/config/kdm/kdmrc (cp 
+  3.) Put your copy of kdmrc back to /usr/local/share/config/kdm/kdmrc (cp
   ~/kdmrc /usr/local/share/config/kdm/ )
 
-  Optional step 4.) Run, as root: genkdmconf (without any options) to update 
+  Optional step 4.) Run, as root: genkdmconf (without any options) to update
   your kdmrc to the lastest configfile format
 
-  Note for advanced users: Substitute /usr/local with your custom PREFIX if 
+  Note for advanced users: Substitute /usr/local with your custom PREFIX if
   you're using one.
 
 20040730:
@@ -653,7 +653,7 @@ Option "XkbRules" "xfree86"
     portupgrade -o x11-fonts/xorg-fonts-cyrillic  XFree86-fontCyrillic
     portupgrade -o x11-fonts/xorg-fonts-encodings  XFree86-fontEncodings
     portupgrade -o x11-servers/xorg-server  XFree86-Server
-    portupgrade -o x11/xorg -f XFree86 
+    portupgrade -o x11/xorg -f XFree86
 
 20040719:
   AFFECTS: users of PHP
