@@ -4,7 +4,7 @@
 #
 # Whom:	Daniel Eischen <deischen@iworks.InterWorks.org>
 #
-# $Id:
+# $Id: $
 #
 DISTNAME=	nedit-4.0.1
 CATEGORIES=	editors x11
