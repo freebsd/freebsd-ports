@@ -3,7 +3,7 @@
 # Date created:		19 Sep 1997
 # Whom:			itojun@itojun.org
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1997/09/19 02:13:54 itojun Exp $
 #
 
 DISTNAME=	mei-1.53
@@ -12,6 +12,8 @@ MASTER_SITES=	http://www.vector.co.jp/authors/VA001240/archive/
 DISTFILES=	mei153s.tgz mei153d.tgz
 
 MAINTAINER=	itojun@itojun.org
+
+BUILD_DEPENDS=	nkf:${PORTSDIR}/nkf
 
 MAN1=	mei.1 moe.1
 MANLANG=	"" ja_JP.EUC
