@@ -1,11 +1,22 @@
---- Makefile.in	2000/09/20 16:08:11	1.1
-+++ Makefile.in	2000/09/20 16:08:25
-@@ -89,7 +89,7 @@
- 
+
+$FreeBSD$
+
+--- Makefile.in.orig
++++ Makefile.in
+@@ -225,7 +225,7 @@
+ target_os = @target_os@
+ target_vendor = @target_vendor@
  lib_LTLIBRARIES = libSDL_ttf.la
- 
 -libSDL_ttfincludedir = $(includedir)/SDL
 +libSDL_ttfincludedir = $(includedir)/SDL11
- libSDL_ttfinclude_HEADERS =  	SDL_ttf.h
+ libSDL_ttfinclude_HEADERS = \
+ 	SDL_ttf.h
  
+@@ -243,7 +243,6 @@
  
+ libSDL_ttf_la_LDFLAGS = \
+ 	-no-undefined		\
+-	-release $(LT_RELEASE)	\
+ 	-version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE)
+ 
+ libSDL_ttf_la_LIBADD = 

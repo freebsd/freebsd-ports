@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	sdl_ttf
-PORTVERSION=	2.0.6
-PORTREVISION=	2
+PORTVERSION=	2.0.7
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.libsdl.org/projects/SDL_ttf/release/
 DISTNAME=	SDL_ttf-${PORTVERSION}
@@ -21,8 +20,9 @@ USE_SDL=	sdl
 USE_GL=		yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
-USE_INC_LIBTOOL_VER=13
+USE_LIBTOOL_VER=15
 LIBTOOLFLAGS=	--disable-ltlibs --release-ignore
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 MAKE_ARGS=	LT_CURRENT=3 LT_REVISION=0 LT_AGE=0
