@@ -44,6 +44,7 @@ CONFIGURE_ARGS+= --enable-ipv6
 .endif
 
 post-patch:
+	${RM} -f ${WRKSRC}/ext/gdbm/MANIFEST
 	${RM} -f ${WRKSRC}/ext/tcltklib/MANIFEST
 	${RM} -f ${WRKSRC}/ext/tk/MANIFEST
 	${RM} -rf ${WRKSRC}/lib/irb ${WRKSRC}/sample/irb.rb
