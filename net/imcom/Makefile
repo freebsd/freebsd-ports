@@ -5,10 +5,9 @@
 # $FreeBSD$
 
 PORTNAME=	imcom
-PORTVERSION=	1.30.b8
+PORTVERSION=	1.31
 CATEGORIES=	net
-MASTER_SITES=	http://nafai.dyndns.org/files/imcom-betas/
-DISTNAME=	${PORTNAME}-1.30beta8
+MASTER_SITES=	http://nafai.dyndns.org/files/
 
 MAINTAINER=	martijn@pacno.net
 COMMENT=	IMCom is a command-line Jabber client written in Python
@@ -19,10 +18,5 @@ GNU_CONFIGURE=	yes
 USE_PYTHON=	yes
 
 MAN1=		imcom.1
-
-pre-install:
-	@cd ${WRKSRC} ; \
-	${RM} -rf docs/CVS; \
-	${RM} -rf docs/*~
 
 .include <bsd.port.mk>

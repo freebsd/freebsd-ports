@@ -1,40 +1,41 @@
---- Makefile.in.orig	Thu Apr 10 11:11:05 2003
-+++ Makefile.in	Thu Apr 10 11:18:55 2003
-@@ -2,21 +2,29 @@
+--- Makefile.in.orig	Mon Jul 21 15:34:31 2003
++++ Makefile.in	Mon Jul 21 15:39:57 2003
+@@ -2,7 +2,7 @@
  exec_prefix = @exec_prefix@
  bindir = @bindir@
  datadir = @datadir@
-+docdir = @datadir@/doc
+-docdir = @datadir@/imcom/docs
++docdir = @datadir@/doc/imcom
  mandir = @mandir@
  
-+pythonprograms=	CLI.py LogHandler.py AccountCreator.py
-+pythondata=	AutoStatus.py CICommands.py Colors.py DTCPSocketManager.py \
-+		GUI.py GUI2.py GUIbackend.py IHTTPServer.py IMCom.py JIDLink.py \
-+		JabberHandler.py JabberTags.py Preferences.py SocketWrapper.py \
-+		VCardTags.py test.py testuni.py 
-+
  all:
--	chmod +x imcom CLI.py LogHandler.py AccountCreator.py
+@@ -13,21 +13,23 @@
  
- install: all
- 	mkdir -p ${datadir}/imcom
--	mkdir -p ${datadir}/imcom/docs
--	cp *.py ${datadir}/imcom
--	mkdir -p ${bindir}
--	cp imcom ${bindir}
--	cp docs/*.html ${datadir}/imcom/docs
--	cp CONTRIBUTORS LICENSE README README.autostatus TODO WHATSNEW ${datadir}/imcom/docs
-+	${BSD_INSTALL_DATA} ${pythondata} ${datadir}/imcom
-+	${BSD_INSTALL_SCRIPT} ${pythonprograms} ${datadir}/imcom
-+	${BSD_INSTALL_SCRIPT} imcom ${bindir}/
-+.if !defined(NOPORTDOCS)
-+	mkdir -p ${docdir}/imcom/
-+	${BSD_INSTALL_DATA} docs/*.html ${docdir}/imcom/
-+	${BSD_INSTALL_DATA} CONTRIBUTORS LICENSE README README.autostatus TODO WHATSNEW ${docdir}/imcom
-+.endif
- 	mkdir -p ${mandir}/man1/
--	cp docs/imcom.1 ${mandir}/man1/imcom.1
+ install-bin: install-modules
+ 	install -d -m 0755 ${bindir}
+-	install -m 0755 imcom ${bindir}
++	${BSD_INSTALL_SCRIPT} imcom ${bindir}
+ 
+ install-modules:
+ 	install -d -m 0755 ${datadir}/imcom
+ 	install -d -m 0755 ${datadir}/imcom/modules
+ 	install -m 0644 *.py ${datadir}/imcom
+ 	install -m 0644 modules/*.py ${datadir}/imcom/modules
+-	install -m 0755 CLI.py LogHandler.py AccountCreator.py ${datadir}/imcom
++	${BSD_INSTALL_SCRIPT} CLI.py LogHandler.py AccountCreator.py ${datadir}/imcom
+ 
+ install-doc:
+-	install -d -m 0755 ${docdir}
+ 	install -d -m 0755 ${mandir}/man1
+-	install -m 0755 docs/*.html ${docdir}
+-	install -m 0755 CONTRIBUTORS LICENSE README README.autostatus TODO WHATSNEW ${docdir}
+-	install -m 0755 docs/imcom.1 ${mandir}/man1/imcom.1
 +	${BSD_INSTALL_MAN} docs/imcom.1 ${mandir}/man1/imcom.1
++.if !defined(NOPORTDOCS)
++	install -d -m 0755 ${docdir}
++	${BSD_INSTALL_DATA} docs/*.html ${docdir}
++	${BSD_INSTALL_DATA} CONTRIBUTORS LICENSE README README.autostatus TODO WHATSNEW ${docdir}
++.endif
  
- install-docs: install
  
+ uninstall:
