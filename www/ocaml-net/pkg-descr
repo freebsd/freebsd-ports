@@ -1,0 +1,18 @@
+A collection of modules for the Objective Caml language which focus
+on application-level Internet protocols and conventions.
+
+The current distribution contains:
+
+- a mature implementation of the CGI protocol
+
+- an implementation of the JSERV protocol (AJP-1.2)
+
+- an experimental POP3 client
+
+- a library of string processing functions related to Internet
+  protocols
+
+WWW: http://sourceforge.net/projects/ocamlnet
+
+- Stephane Legrand
+  <stephane@freebsd.org>
