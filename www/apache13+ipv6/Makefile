@@ -8,7 +8,7 @@
 PORTNAME=	apache+ipv6
 PORTVERSION=	1.3.22
 CATEGORIES=	www ipv6
-PORTREVISION=   4
+PORTREVISION=   5
 MASTER_SITES=   http://httpd.apache.org/dist/httpd/ \
 		ftp://ftp.ccs.neu.edu/net/mirrors/ftp.apache.org/apache/dist/httpd/ \
 		ftp://ftp.rge.com/pub/infosystems/apache/dist/httpd/ \
@@ -66,7 +66,7 @@ MAN1=		dbmmanage.1 htdigest.1 htpasswd.1
 MAN8=		ab.8 apachectl.8 apxs.8 httpd.8 logresolve.8 rotatelogs.8
 
 pre-install:
-	PKG_PREFIX=${PREFIX} ./pkg-install ${PKGNAME} PRE-INSTALL
+	PKG_PREFIX=${PREFIX} ${SH} pkg-install ${PKGNAME} PRE-INSTALL
 
 post-install:
 	@if [ ! -f ${PREFIX}/etc/rc.d/apache.sh ]; then \
