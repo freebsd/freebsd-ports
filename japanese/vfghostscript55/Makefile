@@ -11,24 +11,21 @@ CATEGORIES=	japanese print
 MASTER_SITES=	${MASTER_SITE_GNU} \
 		ftp://ftp.cs.wisc.edu/ghost/gnu/gs550/ \
 		ftp://ftp.cs.wisc.edu/ghost/gnu/fonts/ \
-		http://www.bukka.p.chiba-u.ac.jp/~ohmori/gs/ \
-		ftp://ftp.mei.co.jp/free/gnu/util/ghostscript/drivers/ \
+		http://www.ozemail.com.au/~geoffk/pdfencrypt/ \
 		${MASTER_SITE_LOCAL} \
 		${MASTER_SITE_PORTS_JP} \
-		http://www.ldl.jaist.ac.jp/~akr/nonresearch/free-software/ghostscript/ \
-		http://www.flatout.org/~daisuke/Linux/gs/gs5/Original-sources/OLD/ \
-		http://www.rd.nacsis.ac.jp/~katayama/homepage/ghostscript/jpdf/ \
-		http://itohws03.ee.noda.sut.ac.jp/~matsuda/VFlib-FT/ \
+		http://www.bukka.p.chiba-u.ac.jp/~ohmori/gs/ \
 		http://www.ceres.dti.ne.jp/~owatanab/gdevnpdl/ \
 		http://www.humblesoft.com/pub/ \
-		http://www.necs.co.jp/~umi/ \
+		http://www6.vc-net.ne.jp/~umi/ \
 		http://plaza26.mbn.or.jp/~higamasa/gdevmd2k/ \
 		http://www.aial.hiroshima-u.ac.jp/~sakai/Linux/gs5.50/ \
 		http://www.epkowa.on.arena.ne.jp/pips/data/lp1900/
 # first for ${MASTER_SITE_GNU}, second for ${MASTER_SITE_LOCAL},
 # third for ${MASTER_SITE_PORTS_JP}
 MASTER_SITE_SUBDIR=	ghostscript asami/LOCAL_PORTS .
-DISTFILES=	${GS_SOURCES} ${GS_DRIVERS} ${GS_FONTS_STD} ${GS_FONTS_OTHER}
+DISTFILES=	${GS_SOURCES} ${GS_FONTS_STD} ${GS_FONTS_OTHER} \
+		${DECRYPT_PDF} ${GS_DRIVERS}
 EXTRACT_ONLY=	${GS_SOURCES}
 
 MAINTAINER=	mita@jp.FreeBSD.org
@@ -48,7 +45,15 @@ CFLAGS+=	-DA4
 GSINST_DIR=	${PREFIX}/share/ghostscript/5.50vflib
 DOC_DIR=	${GSINST_DIR}/doc
 PRINTER=	${WRKSRC}/jp-printers
+
 GS_SOURCES=	gnu-gs-5.50a.tar.gz
+#  Note: the following two are real files that have symlinks with
+#  later version numbers pointing to them.  To avoid unnecessarily
+#  downloading distfiles, do not change these when upgrading the port
+#  unless the files really change.
+GS_FONTS_STD=	gnu-gs-fonts-std-6.0.tar.gz
+GS_FONTS_OTHER=	gnu-gs-fonts-other-6.0.tar.gz
+
 GS_DRIVERS=	gs5.50-vflib-1.0.tar.gz
 GS_DRIVERS+=	gdevlips-2.3.6-550.tar.gz
 GS_DRIVERS+=	gdevmjc-0.8.tar.gz
@@ -60,21 +65,13 @@ GS_DRIVERS+=	gdevalps-0.21.tar.gz
 GS_DRIVERS+=	gdevmd2k-0.2a.tar.gz
 GS_DRIVERS+=	gdevrpdl-1.2.tar.gz
 GS_DRIVERS+=	eplaser-2.0.2-550.tgz
-#  Note: the following two are real files that have symlinks with
-#  later version numbers pointing to them.  To avoid unnecessarily
-#  downloading distfiles, do not change these when upgrading the port
-#  unless the files really change.
-GS_FONTS_STD=	gnu-gs-fonts-std-6.0.tar.gz
-GS_FONTS_OTHER=	gnu-gs-fonts-other-6.0.tar.gz
 
-pre-fetch:
-.if !defined(PDFENCRYPT)
-	@${ECHO_MSG} "NOTE: You can have encrypted PDF support by adding "
-	@${ECHO_MSG} "\"PDFENCRYPT=yes\" to argument of make."
-.endif
+# replacement for pdf_sec.ps, that allows you to read encrypted PDF files
+DECRYPT_PDF=	pdf_sec.ps
 
 post-extract:
 	${LN} -s ${WRKDIRPREFIX}${.CURDIR}/../../graphics/jpeg/work/jpeg-6b ${WRKSRC}/jpeg
+	@${TAR} -C ${WRKSRC} --unlink -xzf ${DISTDIR}/gs5.50-vflib-1.0.tar.gz
 	@( ${MKDIR} ${PRINTER} ; \
 	  cd ${PRINTER} ; \
 	  ${TAR} --unlink -xzf ${DISTDIR}/gdevlips-2.3.6-550.tar.gz ; \
@@ -91,10 +88,8 @@ post-extract:
 	)
 
 pre-patch:
-	@(cd ${WRKSRC} ; \
-	  ${TAR} --unlink -xzf ${DISTDIR}/gs5.50-vflib-1.0.tar.gz ;\
-	  ${PATCH} -s -p1 < ${WRKSRC}/gs5.50-vflib-1.0/gs5.50-vflib-1.0.diff \
-		>/dev/null 2>&1)
+	@${CAT} ${WRKSRC}/gs5.50-vflib-1.0/gs5.50-vflib-1.0.diff | \
+		${PATCH} -d ${WRKSRC} -p1 --forward --quiet -E
 
 post-patch:
 	@( cd ${PRINTER} ; \
@@ -144,6 +139,7 @@ pre-install:
 	@${TAR} -C ${PREFIX}/share/ghostscript -xzf ${DISTDIR}/${GS_FONTS_OTHER}
 
 post-install:
+	${INSTALL_DATA} ${DISTDIR}/pdf_sec.ps ${GSINST_DIR}
 	${INSTALL_PROGRAM} ${PRINTER}/epag-3.09/ert ${PREFIX}/bin
 	@strip ${PREFIX}/bin/gs
 	@( \
@@ -177,15 +173,5 @@ post-install:
 	  ${CP} ${PRINTER}/gdevmjc-0.8/gdevmjc.ps ${GSINST_DIR} ; \
 	  ${CP} ${PRINTER}/eplaser/readme-eplaser.euc ${DOC_DIR} ; \
 	)
-.if defined(PDFENCRYPT)
-	@${CP} -f ${DISTDIR}/pdf_sec.ps ${GSINST_DIR}
-.endif
-
-# encrypted PDF support.  can't be packaged due to export control issues.
-.if defined(PDFENCRYPT)
-MASTER_SITES+=	http://www.ozemail.com.au/~geoffk/pdfencrypt/
-DISTFILES+=	pdf_sec.ps
-RESTRICTED=	"Crypto; export controlled, RC4 in PostScript code included"
-.endif
 
 .include <bsd.port.mk>
