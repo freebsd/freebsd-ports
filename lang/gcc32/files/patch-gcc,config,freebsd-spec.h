@@ -1,9 +1,10 @@
 --- gcc/config/freebsd-spec.h.orig	Tue Mar  2 14:34:55 2004
 +++ gcc/config/freebsd-spec.h	Fri Dec 17 11:22:26 2004
-@@ -130,11 +130,19 @@
+@@ -130,11 +130,20 @@
    }"
  #else
  #if FBSD_MAJOR >= 5
++#include <sys/param.h>
 +#if __FreeBSD_version < 502102 /* upto FreeBSD 5.2.1 */
  #define FBSD_LIB_SPEC "							\
    %{!shared:								\
