@@ -12,6 +12,8 @@ MASTER_SITES=	ftp://ftp.pangeia.com.br/pub/seg/pac/
 
 MAINTAINER=	cordeiro@luinil.nic.br
 
+USE_REINPLACE=	yes
+
 ALL_TARGET=	chkrootkit chklastlog chkwtmp chkproc ifpromisc 
 
 DOCFILES=	COPYRIGHT README README.chklastlog README.chkwtmp
@@ -19,8 +21,8 @@ DOCFILES=	COPYRIGHT README README.chklastlog README.chkwtmp
 BINMODE=	0700
 
 pre-patch:
-	${PERL} -pi -e "s/^CC/#CC/; s/^CFLAGS/#CFLAGS/" ${WRKSRC}/Makefile
-	${PERL} -pi -e \
+	${REINPLACE_CMD} -e "s/^CC/#CC/; s/^CFLAGS/#CFLAGS/" ${WRKSRC}/Makefile
+	${REINPLACE_CMD} -e \
 		's#\./chklastlog#${PREFIX}/sbin/chklastlog#g; \
 		s#\./chkwtmp#${PREFIX}/sbin/chkwtmp#g; \
 		s#\./chkproc#${PREFIX}/sbin/chkproc#g; \

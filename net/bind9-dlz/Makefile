@@ -31,6 +31,7 @@ PLIST=		${WRKDIR}/.PLIST.more
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--localstatedir=/var --disable-linux-caps
 WRKSRC=		${WRKDIR}/bind-${ISCVERSION}
+USE_REINPLACE=	yes
 
 DIR=		${WRKSRC}/bin/
 DLZVERSION=	0.2.1
@@ -79,12 +80,12 @@ MAN8=	dnssec-keygen.8 dnssec-makekeyset.8 dnssec-signkey.8 dnssec-signzone.8 \
 	rndc-confgen.8 rndc.8
 
 pre-patch:
-	${PERL} -pi -e "s=bind-9.2.1/==" ${EXTRA_PATCHES}
+	${REINPLACE_CMD} -e "s=bind-9.2.1/==" ${EXTRA_PATCHES}
 
 post-patch:
-	${PERL} -pi -e "s=/usr/local/pgsql/include=${LOCALBASE}/include=" \
+	${REINPLACE_CMD} -e "s=/usr/local/pgsql/include=${LOCALBASE}/include=" \
 		${WRKSRC}/bin/named/Makefile.in
-	${PERL} -pi -e "s=/usr/local/pgsql/lib=${LOCALBASE}/lib=" \
+	${REINPLACE_CMD} -e "s=/usr/local/pgsql/lib=${LOCALBASE}/lib=" \
 		${WRKSRC}/bin/named/Makefile.in
 .for FILE in check/named-checkconf.8 named/named.8 nsupdate/nsupdate.8 \
 	rndc/rndc.8

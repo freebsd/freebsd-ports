@@ -14,12 +14,13 @@ DISTNAME=	BCWipe-${PORTVERSION:S/./-/g:S/-/./}
 
 MAINTAINER=	crow@nektor.hu
 
+USE_REINPLACE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:S/./-/g:S/-/./}
 
 MAN1=	bcwipe.1
 
 post-patch:
-	@${PERL} -pi -e "s,^CFLAGS,#CFLAGS,g" ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e "s,^CFLAGS,#CFLAGS,g" ${WRKSRC}/Makefile
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/bcwipe ${PREFIX}/bin

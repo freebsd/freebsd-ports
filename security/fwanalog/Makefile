@@ -14,6 +14,7 @@ MAINTAINER=	cy@FreeBSD.org
 
 RUN_DEPENDS=	analog:${PORTSDIR}/www/analog
 
+USE_REINPLACE=	yes
 ETCDIR=		${PREFIX}/etc/${PORTNAME}
 PLIST_SUB+=	ETCDIR=${ETCDIR}
 CONFFILES=	fwanalog-dom.tab \
@@ -24,10 +25,11 @@ CONFFILES=	fwanalog-dom.tab \
 		services.conf
 
 post-patch:
-	${PERL} -pi -e "s,the script's directory.*$$,${ETCDIR},;" \
+	${REINPLACE_CMD} \
+		-e "s,the script's directory.*$$,${ETCDIR},;" \
 		-e 's,cd .*$$,cd ${ETCDIR},; s,sh\$$/,\$$/.,' \
 		${WRKSRC}/fwanalog.sh
-	${PERL} -pi -e 's/"freebsd/"ipf/; s/"ipflog/"messages/' \
+	${REINPLACE_CMD} -e 's/"freebsd/"ipf/; s/"ipflog/"messages/' \
 		${WRKSRC}/fwanalog.opts.freebsd
 
 do-build:
