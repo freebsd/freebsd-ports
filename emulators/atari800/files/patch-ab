@@ -1,19 +1,29 @@
-*** sound.c.orig	Sun Apr 20 23:19:13 1997
---- sound.c	Sun Apr 20 23:19:28 1997
-***************
-*** 3,9 ****
-  #ifdef VOXWARE
-  #include <fcntl.h>
-  #include <sys/ioctl.h>
-! #include <sys/soundcard.h>
-  
-  #include "pokey11.h"
-  
---- 3,9 ----
-  #ifdef VOXWARE
-  #include <fcntl.h>
-  #include <sys/ioctl.h>
-! #include <machine/soundcard.h>
-  
-  #include "pokey11.h"
-  
+--- prompts.c.orig	Thu Jun 18 20:20:15 1998
++++ prompts.c	Thu Jun 18 20:22:22 1998
+@@ -10,7 +10,7 @@
+ 	char gash[128];
+ 
+ 	printf(message, string);
+-	gets(gash);
++	fgets(gash,128,stdin);
+ 	if (strlen(gash) > 0)
+ 		strcpy(string, gash);
+ }
+@@ -20,7 +20,7 @@
+ 	char gash[128];
+ 
+ 	printf(message, *num);
+-	gets(gash);
++	fgets(gash,128,stdin);
+ 	if (strlen(gash) > 0)
+ 		sscanf(gash, "\n%d", num);
+ }
+@@ -32,7 +32,7 @@
+ 
+ 	do {
+ 		printf(message, *yn);
+-		gets(gash);
++		fgets(gash,128,stdin);
+ 
+ 		if (strlen(gash) > 0)
+ 			t_yn = gash[0];

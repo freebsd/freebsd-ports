@@ -1,53 +1,26 @@
-*** prompts.c.orig	Sun Apr 20 23:32:27 1997
---- prompts.c	Sun Apr 20 23:34:30 1997
-***************
-*** 10,16 ****
-    char gash[128];
-  
-    printf (message, string);
-!   gets (gash);
-    if (strlen(gash) > 0)
-      strcpy (string, gash);
-  }
---- 10,16 ----
-    char gash[128];
-  
-    printf (message, string);
-!   fgets (gash,128,stdin);
-    if (strlen(gash) > 0)
-      strcpy (string, gash);
-  }
-***************
-*** 20,26 ****
-    char gash[128];
-  
-    printf (message, *num);
-!   gets (gash);
-    if (strlen(gash) > 0)
-      sscanf (gash,"\n%d", num);
-  }
---- 20,26 ----
-    char gash[128];
-  
-    printf (message, *num);
-!   fgets (gash,128,stdin);
-    if (strlen(gash) > 0)
-      sscanf (gash,"\n%d", num);
-  }
-***************
-*** 33,39 ****
-    do
-      {
-        printf (message, *yn);
-!       gets (gash);
-  
-        if (strlen(gash) > 0)
-  	t_yn = gash[0];
---- 33,39 ----
-    do
-      {
-        printf (message, *yn);
-!       fgets (gash,128,stdin);
-  
-        if (strlen(gash) > 0)
-  	t_yn = gash[0];
+--- monitor.c.orig	Sun Feb 22 02:19:59 1998
++++ monitor.c	Thu Jun 18 21:05:50 1998
+@@ -94,10 +94,13 @@
+ 
+ 		printf("> ");
+ 		fflush(stdout);
+-		if (gets(s) == NULL) {
++		if (fgets(s,256,stdin) == NULL) {
+ 			printf("\n> CONT\n");
+ 			strcpy(s, "CONT");
+ 		}
++
++		s[strlen(s)-1]='\0';                /* fgets provision */
++
+ 		t = get_token(s);
+ 		if (t == NULL) {
+ 			continue;
+@@ -179,7 +182,7 @@
+ 					char gash[4];
+ 
+ 					printf("Press return to continue: ");
+-					gets(gash);
++					fgets(gash,4,stdin);
+ 					nlines = 0;
+ 				}
+ 			}

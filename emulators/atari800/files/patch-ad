@@ -1,19 +1,19 @@
-*** rt-config.c.orig	Sun Apr 20 23:38:04 1997
---- rt-config.c	Sun Apr 20 23:39:04 1997
+*** sound.c.orig	Thu Jun 18 21:57:09 1998
+--- sound.c	Thu Jun 18 21:57:30 1998
 ***************
-*** 32,38 ****
-  int enable_xcolpf1;
+*** 5,11 ****
+  #ifdef VOXWARE
+  #include <fcntl.h>
+  #include <sys/ioctl.h>
+! #include <sys/soundcard.h>
   
-  static char *rtconfig_filename1 = "atari800.cfg";
-! static char *rtconfig_filename2 = "/etc/atari800.cfg";
+  #include "pokey11.h"
   
-  int RtConfigLoad (char *rtconfig_filename)
-  {
---- 32,38 ----
-  int enable_xcolpf1;
+--- 5,11 ----
+  #ifdef VOXWARE
+  #include <fcntl.h>
+  #include <sys/ioctl.h>
+! #include <machine/soundcard.h>
   
-  static char *rtconfig_filename1 = "atari800.cfg";
-! static char *rtconfig_filename2 = ATARI_CONFIG ;
+  #include "pokey11.h"
   
-  int RtConfigLoad (char *rtconfig_filename)
-  {
