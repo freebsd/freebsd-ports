@@ -7,6 +7,7 @@
 
 PORTNAME=	intltool
 PORTVERSION=	0.28
+PORTREVISION=	1
 CATEGORIES=	textproc gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.28
@@ -22,6 +23,7 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_PERL5=	yes
 USE_GNOME=	gnometarget
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--libdir="${PREFIX}/libdata"
 
@@ -29,5 +31,8 @@ MAN8=		intltool-extract.8 intltool-merge.8 intltool-prepare.8 \
 		intltool-update.8 intltoolize.8
 
 CONFLICTS=	xml-i18n-tools-*
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|/usr/share|${PREFIX}/share|' ${WRKSRC}/intltool-merge.in
 
 .include <bsd.port.mk>

@@ -21,4 +21,7 @@ share/intltool/intltool-update.in
 share/intltool/xml-i18n-po-Makefile.in.in-patch-1
 share/intltool/xml-i18n-po-Makefile.in.in-patch-2
 share/intltool/xml-i18n-po-Makefile.in.in-patch-5
+@dirrm share/intltool/XML/Parser/Style
+@dirrm share/intltool/XML/Parser
+@dirrm share/intltool/XML
 @dirrm share/intltool
