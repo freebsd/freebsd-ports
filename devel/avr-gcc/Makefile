@@ -6,13 +6,14 @@
 #
 
 PORTNAME=	gcc
-PORTVERSION=	3.0.1
+PORTVERSION=	3.2-2002-06-28
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_GNU}
-MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTNAME}-${PORTVERSION}
+#MASTER_SITES=	${MASTER_SITE_GNU}
+#MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTNAME}-${PORTVERSION}
+#MASTER_SITES=	ftp://gcc.gnu.org/pub/gcc/snapshots/${PORTVERSION}/
+MASTER_SITES=	http://people.freebsd.org/~joerg/
 PKGNAMEPREFIX=	avr-
-DISTFILES=	gcc-core-${PORTVERSION}${EXTRACT_SUFX} \
-		gcc-g++-${PORTVERSION}${EXTRACT_SUFX}
+DISTFILES=	gcc-core+g++-${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	joerg@freebsd.org
 
@@ -26,7 +27,7 @@ WRKSRC=		${WRKDIR}/gcc-${PORTVERSION}
 
 # Unfortunately, only some mirrors have it as a .bz2 file, while
 # the original master site still uses .gz.
-#USE_BZIP2=	yes
+USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_BISON=	yes
 GNU_CONFIGURE=	yes
@@ -35,6 +36,8 @@ CONFIGURE_ARGS=	--target=avr
 
 MAKE_FLAGS=	LANGUAGES="c c++"
 
-MAN1=		cpp.1 avr-gcc.1 avr-g++.1 gcov.1
+# Only few man pages in this snapshot...
+#MAN1=		cpp.1 avr-gcc.1 avr-g++.1 gcov.1
+MAN1=		avr-g++.1
 
 .include <bsd.port.mk>

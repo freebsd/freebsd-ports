@@ -1,6 +1,6 @@
---- configure.in.orig	Sun Aug 12 18:18:37 2001
-+++ configure.in	Sun Aug 12 18:18:13 2001
-@@ -665,6 +665,9 @@
+--- configure.in.orig	Sun May  5 20:56:48 2002
++++ configure.in	Tue Jun  4 18:21:31 2002
+@@ -706,6 +706,9 @@
  	   target_configdirs="${target_configdirs} target-bsp target-cygmon"
      fi
      ;;
