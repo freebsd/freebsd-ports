@@ -1,0 +1,16 @@
+*** samples/speed.c.0	Fri Jan 27 18:41:09 1995
+--- samples/speed.c	Sun Feb  5 15:43:42 1995
+***************
+*** 122,128 ****
+--- 122,132 ----
+      clock_t clk;
+  
+      clk = times(&tm);
++ #ifdef __FreeBSD__
++     return (double) clk / (double) sysconf(_SC_CLK_TCK);
++ #else
+      return (double)clk / (double)HZ;
++ #endif
+  #else
+      return 0;
+  #endif
