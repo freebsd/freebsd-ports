@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	MailScanner
-PORTVERSION=	4.28.1
+PORTVERSION=	4.29.2
 CATEGORIES=	mail
 MASTER_SITES=	http://www.sng.ecs.soton.ac.uk/mailscanner/files/4/tar/
 PKGNAMESUFFIX=	-devel
@@ -25,7 +25,8 @@ BUILD_DEPENDS=	\
 	${SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp \
 	${SITE_PERL}/Convert/TNEF.pm:${PORTSDIR}/converters/p5-Convert-TNEF \
 	${SITE_PERL}/Net/CIDR.pm:${PORTSDIR}/net-mgmt/p5-Net-CIDR \
-	${SITE_PERL}/Archive/Zip.pm:${PORTSDIR}/archivers/p5-Archive-Zip
+	${SITE_PERL}/Archive/Zip.pm:${PORTSDIR}/archivers/p5-Archive-Zip \
+	${SITE_PERL}/${PERL_ARCH}/Compress/Zlib.pm:${PORTSDIR}/archivers/p5-Compress-Zlib
 RUN_DEPENDS=	${BUILD_DEPENDS} \
 		${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash2 \
 		${LOCALBASE}/bin/tnef:${PORTSDIR}/converters/tnef \
