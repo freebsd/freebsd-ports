@@ -1,0 +1,33 @@
+--- include/config.h.old	Wed Mar 14 11:20:48 2001
++++ include/config.h	Wed Mar 14 11:23:51 2001
+@@ -468,7 +468,7 @@
+ #define DEFAULT_FTP_GRAB OFF
+ #define DEFAULT_HTTP_GRAB OFF
+ #define DEFAULT_HELP_WINDOW OFF
+-#define DEFAULT_NICK_COMPLETION ON
++#define DEFAULT_NICK_COMPLETION OFF
+ #define DEFAULT_NICK_COMPLETION_LEN 2
+ #define DEFAULT_NICK_COMPLETION_TYPE 0  /* 0 1 2 */
+ #define DEFAULT_NOTIFY ON
+@@ -498,9 +498,9 @@
+ #define DEFAULT_AINV 0
+ #define DEFAULT_ANNOY_KICK OFF
+ #define DEFAULT_AOP_VAR OFF
+-#define DEFAULT_AUTO_AWAY ON
+-#define DEFAULT_KICK_OPS ON
+-#define DEFAULT_AUTO_REJOIN ON
++#define DEFAULT_AUTO_AWAY OFF
++#define DEFAULT_KICK_OPS OFF
++#define DEFAULT_AUTO_REJOIN OFF
+ #define DEFAULT_DEOPFLOOD ON
+ #if defined(__EMXPM__) || defined(WIN32)
+ #define DEFAULT_CODEPAGE 437
+@@ -702,7 +702,7 @@
+ #endif
+ 
+ #undef PARANOID		/* #define this if your paranoid about dcc hijacking */
+-#undef WANT_CHAN_NICK_SERV	/* do we want to include some chan/nick/oper server commands */
++#define WANT_CHAN_NICK_SERV	/* do we want to include some chan/nick/oper server commands */
+ 
+ /* new epic stuff */
+ #define OLD_STATUS_S_EXPANDO_BEHAVIOR

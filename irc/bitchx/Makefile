@@ -69,10 +69,11 @@ CONFIGURE_ARGS+=--without-plugins
 PLIST_SUB+=	PLUGINS:="@comment "
 .endif
 
-.if defined(WITH_LATIN)
 pre-patch:
+.if defined(WITH_LATIN)
 	@${PERL} -pi -e "s!#undef LATIN1!#define LATIN1!" ${WRKSRC}/include/config.h
 .endif
+	@${PERL} -pi -e "s!bzip2!true!g" ${WRKSRC}/Makefile.in
 
 pre-extract:
 	@${ECHO} "Available switches:"
