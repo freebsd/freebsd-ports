@@ -123,6 +123,10 @@ pre-install:
 	@${FALSE}
 .endif
 
+post-patch:
+	@${SED} "s|/etc|${PREFIX}/etc|g" < ${WRKSRC}/mysys/default.c > ${WRKSRC}/mysys/default.c.etcfix
+	@${CP} ${WRKSRC}/mysys/default.c.etcfix ${WRKSRC}/mysys/default.c
+
 post-install:
 .if !defined(PACKAGE_BUILDING)
 .if !defined(SKIP_INSTALL_DB)
