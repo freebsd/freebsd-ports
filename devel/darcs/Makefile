@@ -7,6 +7,7 @@
 
 PORTNAME=	darcs
 PORTVERSION=	0.9.8
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.abridgegame.org/darcs/
 
@@ -62,7 +63,7 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/darcs.1 ${MANPREFIX}/man/man1
 .if defined(WITH_CGI)
 	${MKDIR} ${PREFIX}/${CGIDIR}
-	${INSTALL_PROGRAM} ${WRKSRC}/darcs_cgi ${PREFIX}/${CGIDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/darcs_cgi ${PREFIX}/${CGIDIR}/darcs
 .endif
 
 .include <bsd.port.mk>
