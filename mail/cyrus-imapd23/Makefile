@@ -75,6 +75,20 @@ PLIST_SUB+=	MURDER=""
 PLIST_SUB+=	MURDER="@comment "
 .endif
 
+.if defined(WITH_IDLE)
+.if ${WITH_IDLE} != poll && ${WITH_IDLE} != idled && ${WITH_IDLE} != no
+BROKEN=		"WITH_IDLE must be poll, idled or no"
+.endif
+CONFIGURE_ARGS+=--with-idle=${WITH_IDLE}
+.if ${WITH_IDLE} == idled
+PLIST_SUB+=	IDLED=""
+.else
+PLIST_SUB+=	IDLED="@comment "
+.endif
+.else
+PLIST_SUB+=	IDLED="@comment "
+.endif
+
 .if defined(WITH_LISTEXT)
 CONFIGURE_ARGS+=--enable-listext
 .endif
