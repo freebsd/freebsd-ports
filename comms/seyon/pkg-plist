@@ -8,3 +8,4 @@ bin/seyon
 lib/X11/app-defaults/Seyon
 lib/X11/app-defaults/Seyon-color
 lib/X11/seyon.help
+man/man1/seyon.1.gz
