@@ -1,0 +1,228 @@
+Index: mozilla/mailnews/local/src/nsPop3Protocol.cpp
+===================================================================
+RCS file: /cvsroot/mozilla/mailnews/local/src/nsPop3Protocol.cpp,v
+retrieving revision 1.214.2.1
+retrieving revision 1.214.2.1.2.1
+diff -u -r1.214.2.1 -r1.214.2.1.2.1
+--- mailnews/local/src/nsPop3Protocol.cpp	27 May 2004 14:54:03 -0000	1.214.2.1
++++ mailnews/local/src/nsPop3Protocol.cpp	27 Aug 2004 13:15:42 -0000	1.214.2.1.2.1
+@@ -61,7 +61,6 @@
+ #include "nsISignatureVerifier.h"
+ 
+ #define EXTRA_SAFETY_SPACE 3096
+-#define kLargeNumberOfMessages 50000
+ 
+ static PRLogModuleInfo *POP3LOGMODULE = nsnull;
+ 
+@@ -1791,11 +1790,11 @@
+ 
+ 
+     m_pop3ConData->msg_info = (Pop3MsgInfo *) 
+-      PR_CALLOC(sizeof(Pop3MsgInfo) *
+-      (m_pop3ConData->number_of_messages < kLargeNumberOfMessages ? m_pop3ConData->number_of_messages : kLargeNumberOfMessages));
++      PR_CALLOC(sizeof(Pop3MsgInfo) * m_pop3ConData->number_of_messages);
+     if (!m_pop3ConData->msg_info)
+         return(MK_OUT_OF_MEMORY);
+     m_pop3ConData->next_state_after_response = POP3_GET_LIST;
++    m_listpos = 0;
+     return SendData(m_url, "LIST"CRLF);
+ }
+ 
+@@ -1837,6 +1836,9 @@
+   */
+   if(!PL_strcmp(line, "."))
+   {
++    // limit the list if fewer entries than given in STAT response
++    if(m_listpos < m_pop3ConData->number_of_messages)
++      m_pop3ConData->number_of_messages = m_listpos;
+     m_pop3ConData->next_state = POP3_SEND_UIDL_LIST;
+     m_pop3ConData->pause_for_read = PR_FALSE;
+     PR_Free(line);
+@@ -1848,24 +1850,15 @@
+   if (token)
+   {
+     msg_num = atol(token);
++    m_listpos++;
+     
+-    if(msg_num <= m_pop3ConData->number_of_messages && msg_num > 0)
++    if(m_listpos <= m_pop3ConData->number_of_messages && m_listpos > 0)
+     {
+       token = nsCRT::strtok(newStr, " ", &newStr);
+       if (token)
+-        m_pop3ConData->msg_info[msg_num-1].size = atol(token);
+-      
+-      if (msg_num >= kLargeNumberOfMessages && msg_num < m_pop3ConData->number_of_messages)
+       {
+-        m_pop3ConData->msg_info = (Pop3MsgInfo *)   //allocate space for next entry
+-          PR_REALLOC(m_pop3ConData->msg_info, sizeof(Pop3MsgInfo) * (msg_num + 1));
+-        if (!m_pop3ConData->msg_info)
+-        {
+-          m_pop3ConData->number_of_messages = msg_num; //so that we don't try to free not allocated entries!
+-          return(MK_OUT_OF_MEMORY);
+-        }
+-        m_pop3ConData->msg_info[msg_num].size = 0; //initialize
+-        m_pop3ConData->msg_info[msg_num].uidl = nsnull;
++        m_pop3ConData->msg_info[m_listpos-1].size = atol(token);
++        m_pop3ConData->msg_info[m_listpos-1].msgnum = msg_num;
+       }
+     }
+   }
+@@ -2101,6 +2094,7 @@
+   {
+     m_pop3ConData->next_state_after_response = POP3_GET_XTND_XLST_MSGID;
+     m_pop3ConData->pause_for_read = PR_TRUE;
++    m_listpos = 0;
+     return SendData(m_url, "XTND XLST Message-Id" CRLF);
+   }
+   else
+@@ -2166,6 +2160,9 @@
+   */
+   if(!PL_strcmp(line, "."))
+   {
++    // limit the list if fewer entries than given in STAT response
++    if(m_listpos < m_pop3ConData->number_of_messages)
++      m_pop3ConData->number_of_messages = m_listpos;
+     m_pop3ConData->next_state = POP3_GET_MSG;
+     m_pop3ConData->pause_for_read = PR_FALSE;
+     PR_Free(line);
+@@ -2177,7 +2174,9 @@
+   if (token)
+   {
+     msg_num = atol(token);
+-    if(msg_num <= m_pop3ConData->number_of_messages && msg_num > 0) 
++    m_listpos++;
++
++    if(m_listpos <= m_pop3ConData->number_of_messages && m_listpos > 0) 
+     {
+       /*	    char *eatMessageIdToken = nsCRT::strtok(newStr, " ", &newStr);	*/
+       char *uidl = nsCRT::strtok(newStr, " ", &newStr);/* not really a uidl but a unique token -km */
+@@ -2189,8 +2188,17 @@
+       there, I have no idea; must be a server bug.  Or something. */
+       uidl = "";
+       
+-      m_pop3ConData->msg_info[msg_num-1].uidl = PL_strdup(uidl);
+-      if (!m_pop3ConData->msg_info[msg_num-1].uidl)
++      // seeking right entry, but try the one that should it be first
++      PRInt32 i;
++      if(m_pop3ConData->msg_info[m_listpos - 1].msgnum == msg_num)
++        i = m_listpos - 1;
++      else
++        for(i = 0; m_pop3ConData->msg_info[i].msgnum != msg_num &&
++                   i <= m_pop3ConData->number_of_messages; i++)
++          ;
++      
++      m_pop3ConData->msg_info[i].uidl = PL_strdup(uidl);
++      if (!m_pop3ConData->msg_info[i].uidl)
+       {
+         PR_Free(line);
+         return MK_OUT_OF_MEMORY;
+@@ -2209,6 +2217,7 @@
+     {
+         m_pop3ConData->next_state_after_response = POP3_GET_UIDL_LIST;
+         m_pop3ConData->pause_for_read = PR_TRUE;
++        m_listpos = 0;
+         return SendData(m_url,"UIDL" CRLF);
+     }
+     else
+@@ -2264,6 +2273,9 @@
+      */
+     if(!PL_strcmp(line, "."))
+ 	{
++        // limit the list if fewer entries than given in STAT response
++        if(m_listpos < m_pop3ConData->number_of_messages)
++          m_pop3ConData->number_of_messages = m_listpos;
+         m_pop3ConData->next_state = POP3_GET_MSG;
+         m_pop3ConData->pause_for_read = PR_FALSE;
+ 	PR_Free(line);
+@@ -2275,7 +2287,9 @@
+     if (token)
+     {
+       msg_num = atol(token);
+-      if(msg_num <= m_pop3ConData->number_of_messages && msg_num > 0) 
++      m_listpos++;
++
++      if(m_listpos <= m_pop3ConData->number_of_messages && m_listpos > 0) 
+       {
+         char *uidl = nsCRT::strtok(newStr, " ", &newStr);
+ 
+@@ -2286,8 +2300,17 @@
+                there, I have no idea; must be a server bug.  Or something. */
+             uidl = "";
+ 
+-        m_pop3ConData->msg_info[msg_num-1].uidl = PL_strdup(uidl);
+-        if (!m_pop3ConData->msg_info[msg_num-1].uidl)
++        // seeking right entry, but try the one that should it be first
++        PRInt32 i;
++        if(m_pop3ConData->msg_info[m_listpos - 1].msgnum == msg_num)
++          i = m_listpos - 1;
++        else
++          for(i = 0; m_pop3ConData->msg_info[i].msgnum != msg_num &&
++                     i <= m_pop3ConData->number_of_messages; i++)
++            ;
++
++        m_pop3ConData->msg_info[i].uidl = PL_strdup(uidl);
++        if (!m_pop3ConData->msg_info[i].uidl)
+         {
+           PR_Free(line);
+           return MK_OUT_OF_MEMORY;
+@@ -2603,7 +2626,7 @@
+ PRInt32 nsPop3Protocol::SendTop()
+ {
+    char * cmd = PR_smprintf( "TOP %ld 20" CRLF,
+-     m_pop3ConData->last_accessed_msg+1);
++     m_pop3ConData->msg_info[m_pop3ConData->last_accessed_msg].msgnum);
+    PRInt32 status = -1;
+    if (cmd)
+    {
+@@ -2624,7 +2647,7 @@
+  */
+ PRInt32 nsPop3Protocol::SendXsender()
+ {
+-  char * cmd = PR_smprintf("XSENDER %ld" CRLF, m_pop3ConData->last_accessed_msg+1);
++  char * cmd = PR_smprintf("XSENDER %ld" CRLF, m_pop3ConData->msg_info[m_pop3ConData->last_accessed_msg].msgnum);
+   PRInt32 status = -1;
+   if (cmd)
+   {  
+@@ -2662,7 +2685,7 @@
+ nsPop3Protocol::SendRetr()
+ {
+   
+-  char * cmd = PR_smprintf("RETR %ld" CRLF, m_pop3ConData->last_accessed_msg+1);
++  char * cmd = PR_smprintf("RETR %ld" CRLF, m_pop3ConData->msg_info[m_pop3ConData->last_accessed_msg].msgnum);
+   PRInt32 status = -1;
+   if (cmd)
+   {
+@@ -3071,8 +3094,8 @@
+ {
+     /* increment the last accessed message since we have now read it
+      */
++    char * cmd = PR_smprintf("DELE %ld" CRLF, m_pop3ConData->msg_info[m_pop3ConData->last_accessed_msg].msgnum);
+     m_pop3ConData->last_accessed_msg++;
+-    char * cmd = PR_smprintf("DELE %ld" CRLF, m_pop3ConData->last_accessed_msg);
+ 	PRInt32 status = -1;
+ 	if (cmd)
+ 	{
+Index: mozilla/mailnews/local/src/nsPop3Protocol.h
+===================================================================
+RCS file: /cvsroot/mozilla/mailnews/local/src/nsPop3Protocol.h,v
+retrieving revision 1.63
+retrieving revision 1.63.10.1
+diff -u -r1.63 -r1.63.10.1
+--- mailnews/local/src/nsPop3Protocol.h	8 Mar 2004 19:50:30 -0000	1.63
++++ mailnews/local/src/nsPop3Protocol.h	27 Aug 2004 13:15:42 -0000	1.63.10.1
+@@ -191,6 +191,7 @@
+ } Pop3UidlHost;
+ 
+ typedef struct Pop3MsgInfo {
++    PRInt32 msgnum;
+     PRInt32 size;
+     char* uidl;
+ } Pop3MsgInfo;
+@@ -350,6 +351,7 @@
+   void BackupAuthFlags();
+   void RestoreAuthFlags();
+   PRInt32 m_origAuthFlags;
++  PRInt32 m_listpos;
+ 
+   //////////////////////////////////////////////////////////////////////////////////////////
+       // Begin Pop3 protocol state handlers
