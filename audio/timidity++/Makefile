@@ -6,8 +6,8 @@
 # $FreeBSD$
 #
 
-DISTNAME=	TiMidity++-1.3.10
-PKGNAME=	timidity++-1.3.10
+DISTNAME=	TiMidity++-2.9.0
+PKGNAME=	timidity++-2.9.0
 CATEGORIES=	audio
 MASTER_SITES=	http://www.goice.co.jp/member/mo/timidity/dist/
 
@@ -16,53 +16,50 @@ MAINTAINER=	yatt@msc.biglobe.ne.jp
 # If you don't have X11, type "make -DNO_X11" or uncomment this.
 #NO_X11=	yes
 
-# If you don't require Japanese docs, uncomment this.
-#NO_USE_JAPANESE=	yes
-
+USE_BZIP2=	yes
+GNU_CONFIGURE=	yes
 .if !defined(NO_X11)
 USE_XLIB=	yes
+LIB_DEPENDS+=	png.3:${PORTSDIR}/graphics/png
 .endif
-USE_AUTOCONF=	yes
 
 DIST_SUBDIR=	timidity
-
-PLIST_SUB=	TIMID_DIR=${TIMID_DIR}
-
-.include <bsd.port.pre.mk>
+INSTALL_TARGET=	install install.man
 
 .if !defined(NO_X11)
-CONFIGURE_ARGS=	--prefix=${PREFIX} --with-x --enable-audio \
-		--enable-ncurses --enable-vt100 \
-		--enable-dynamic=dynamic \
+CONFIGURE_ARGS=	--with-x --enable-ncurses --enable-vt100 \
+		--enable-dynamic --enable-server \
 		--enable-network --enable-spectrogram --enable-wrd
 .else
-CONFIGURE_ARGS= --prefix=${PREFIX} --enable-audio \
-		--enable-ncurses --enable-vt100 \
-		--disable-tcltk --disable-emacs --disable-xaw --disable-xskin \
-		--disable-motif --disable-slang --disable-gtk \
+CONFIGURE_ARGS= --enable-ncurses --enable-vt100 \
 		--enable-network --disable-spectrogram --disable-wrd
 .endif
-.if ${PORTOBJFORMAT} == "elf"
-CONFIGURE_ENV= LDFLAGS=-export-dynamic
+
+.if defined(USE_ESOUND)
+LIB_DEPENDS+=	esd.2:${PORTSDIR}/audio/esound
+CONFIGURE_ARGS+=	--enable-audio=oss,esd
+.else
+CONFIGURE_ARGS+=	--enable-audio=oss
 .endif
 
 MAN1=		timidity.1
 MAN5=		timidity.cfg.5
-MANLANG=	""
-.if !defined(NO_USE_JAPANESE)
-MANLANG+=	ja
-.endif
 
 DOCFILES=	README.dl README.sf
-DOCLANG=	C
-.if !defined(NO_USE_JAPANESE)
-DOCLANG+=	ja_JP.ujis
+DOCLANG=	C ja_JP.ujis
+
+.include <bsd.port.pre.mk>
+
+.if ${PORTOBJFORMAT} == "elf"
+CONFIGURE_ENV=	LDFLAGS=-export-dynamic
 .endif
 
-TIMID_DIR=	${PREFIX}/lib/timidity
-
 post-install:
-	@${MKDIR} ${TIMID_DIR}
+	@${MKDIR} ${PREFIX}/man/ja/man1 ${PREFIX}/man/ja/man1
+	${INSTALL_MAN} ${WRKSRC}/doc/ja_JP.ujis/timidity.1 \
+	${PREFIX}/man/ja/man1
+	${INSTALL_MAN} ${WRKSRC}/doc/ja_JP.ujis/timidity.cfg.5 \
+	${PREFIX}/man/ja/man5
 .if !defined(NOPORTDOCS)
 .for lang in ${DOCLANG}
 	@${MKDIR} \
@@ -73,12 +70,8 @@ post-install:
 	done;
 .endfor
 .endif
-.if !defined(NO_USE_JAPANESE)
-	@${MKDIR} ${PREFIX}/man/ja/man1; ${MKDIR} ${PREFIX}/man/ja/man5
-	${INSTALL_MAN} ${WRKSRC}/doc/ja_JP.ujis/timidity.1 \
-	${PREFIX}/man/ja/man1
-	${INSTALL_MAN} ${WRKSRC}/doc/ja_JP.ujis/timidity.cfg.5 \
-	${PREFIX}/man/ja/man5
-.endif
+	${SETENV} PKG_PREFIX=${PREFIX} \
+	${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>

@@ -1,6 +1,6 @@
---- timidity/timidity.h.orig	Sat Sep 18 15:42:24 1999
-+++ timidity/timidity.h	Sat Sep 18 15:42:51 1999
-@@ -434,7 +434,7 @@
+--- timidity/timidity.h.orig	Thu Nov  4 21:14:15 1999
++++ timidity/timidity.h	Wed Nov 24 17:15:31 1999
+@@ -441,7 +441,7 @@
  #ifdef LITTLE_ENDIAN
  #define LE_SHORT(x) (x)
  #define LE_LONG(x) (x)
