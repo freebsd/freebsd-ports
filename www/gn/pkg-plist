@@ -1,5 +1,4 @@
 @cwd /usr/local
-@srcdir ${WRKSRC}
 etc/gn_mime.types
 libexec/gn
 libexec/sgn
