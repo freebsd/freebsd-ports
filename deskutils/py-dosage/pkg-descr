@@ -1,0 +1,9 @@
+Dosage is an application designed to keep a local "mirror" of specific web
+comics, and other picture-based content such as Picture of the Day sites,
+with a variety of options for updating and maintaining comics.
+Dosage supports a recursive "catch-up" method, where it traverses a comic
+by essentially "visiting" previous comics and picking out the comics.
+Dosage is written entirely in Python, and relies on regular expressions to
+do most of the grunt work.
+
+WWW: http://slipgate.za.net/dosage/

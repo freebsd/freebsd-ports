@@ -111,6 +111,7 @@
     SUBDIR += planner
     SUBDIR += plans
     SUBDIR += preferences.app
+    SUBDIR += py-dosage
     SUBDIR += remind
     SUBDIR += rolo
     SUBDIR += rox-memo
