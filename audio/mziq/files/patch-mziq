@@ -1,0 +1,11 @@
+--- mziq.orig	Sat Aug 25 01:42:16 2001
++++ mziq	Sat Aug 25 01:42:33 2001
+@@ -52,7 +52,7 @@
+ #
+ # This is the only option you really need to modify. It defines the top-level
+ # directories where the program will search for files.
+-@basedir   = ("/storage/mp3");
++@basedir   = ("$ENV{'HOME'}");
+ 
+ # These options might work for most people.
+ #
