@@ -64,14 +64,25 @@
  libdir = @Plugins_archiver_dir@
  LIBS = 
  
---- plugins/archiver/libarc/Makefile.in.orig	Tue Jan 25 10:05:17 2000
-+++ plugins/archiver/libarc/Makefile.in	Wed Jan 26 11:15:57 2000
+--- plugins/archiver/libarc/Makefile.in.orig	Mon May 29 04:36:52 2000
++++ plugins/archiver/libarc/Makefile.in	Wed Jun  7 23:35:42 2000
 @@ -90,7 +90,7 @@
  saver_dirs = @saver_dirs@
  
- lib_LTLIBRARIES = libarc.la
--libarc_la_LDFLAGS = -module
-+libarc_la_LDFLAGS = -module -version-info 1:0:0
+ lib_LTLIBRARIES = archiver_libarc.la
+-archiver_libarc_la_LDFLAGS = -module
++archiver_libarc_la_LDFLAGS = -module -version-info 1:0:0
  libdir = @Plugins_archiver_dir@
  LIBS = -larc
+ 
+--- plugins/archiver/exe/Makefile.in.orig	Mon May 29 04:36:50 2000
++++ plugins/archiver/exe/Makefile.in	Wed Jun  7 23:40:37 2000
+@@ -90,7 +90,7 @@
+ saver_dirs = @saver_dirs@
+ 
+ lib_LTLIBRARIES = archiver_exe.la
+-archiver_exe_la_LDFLAGS = -module
++archiver_exe_la_LDFLAGS = -module -version-info 1:0:0
+ libdir = @Plugins_archiver_dir@
+ LIBS = 
  
