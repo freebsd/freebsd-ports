@@ -1,0 +1,133 @@
+bin/doomsday
+lib/libdpdehread.a
+lib/libdpdehread.la
+lib/libdpdehread.so
+lib/libdpdehread.so.0
+lib/libdpmapload.a
+lib/libdpmapload.la
+lib/libdpmapload.so
+lib/libdpmapload.so.0
+lib/libdropengl.a
+lib/libdropengl.la
+lib/libdropengl.so
+lib/libdropengl.so.0
+%%WITH_OPENAL%%lib/libdsopenal.a
+%%WITH_OPENAL%%lib/libdsopenal.la
+%%WITH_OPENAL%%lib/libdsopenal.so
+%%WITH_OPENAL%%lib/libdsopenal.so.0
+lib/libdssdlmixer.a
+lib/libdssdlmixer.la
+lib/libdssdlmixer.so
+lib/libdssdlmixer.so.0
+lib/libjdoom.a
+lib/libjdoom.la
+lib/libjdoom.so
+lib/libjdoom.so.0
+lib/libjheretic.a
+lib/libjheretic.la
+lib/libjheretic.so
+lib/libjheretic.so.0
+lib/libjhexen.a
+lib/libjhexen.la
+lib/libjhexen.so
+lib/libjhexen.so.0
+%%DATADIR%%/Data/Doomsday.wad
+%%DATADIR%%/Data/Fonts/Fixed.dfn
+%%DATADIR%%/Data/Fonts/Fixed12.dfn
+%%DATADIR%%/Data/Fonts/Large.dfn
+%%DATADIR%%/Data/Fonts/Small10.dfn
+%%DATADIR%%/Data/Fonts/Small7.dfn
+%%DATADIR%%/Data/Fonts/Small8.dfn
+%%DATADIR%%/Data/Fonts/System.dfn
+%%DATADIR%%/Data/Fonts/System12.dfn
+%%DATADIR%%/Data/Graphics/Background.pcx
+%%DATADIR%%/Data/Graphics/BoxCorner.png
+%%DATADIR%%/Data/Graphics/BoxFill.png
+%%DATADIR%%/Data/Graphics/BoxShade.png
+%%DATADIR%%/Data/Graphics/Hint.png
+%%DATADIR%%/Data/Graphics/Logo.png
+%%DATADIR%%/Data/Graphics/Mouse.png
+%%DATADIR%%/Data/Graphics/RadioCC.pcx
+%%DATADIR%%/Data/Graphics/RadioCO.pcx
+%%DATADIR%%/Data/Graphics/WallGlow.pcx
+%%DATADIR%%/Data/KeyMaps/de.dkm
+%%DATADIR%%/Data/KeyMaps/default.dkm
+%%DATADIR%%/Data/KeyMaps/fi.dkm
+%%DATADIR%%/Data/cphelp.txt
+%%DATADIR%%/Data/jDoom/jDoom.wad
+%%DATADIR%%/Data/jHeretic/jHeretic.wad
+%%DATADIR%%/Data/jHexen/jHexen.wad
+%%DATADIR%%/Defs/Doomsday.ded
+%%DATADIR%%/Defs/Flags.ded
+%%DATADIR%%/Defs/XG.ded
+%%DATADIR%%/Defs/jDoom/Anim.ded
+%%DATADIR%%/Defs/jDoom/Audio.ded
+%%DATADIR%%/Defs/jDoom/Details.ded
+%%DATADIR%%/Defs/jDoom/Doom1Lights.ded
+%%DATADIR%%/Defs/jDoom/Doom2Lights.ded
+%%DATADIR%%/Defs/jDoom/Finales.ded
+%%DATADIR%%/Defs/jDoom/Lights.ded
+%%DATADIR%%/Defs/jDoom/Maps.ded
+%%DATADIR%%/Defs/jDoom/Objects.ded
+%%DATADIR%%/Defs/jDoom/Particles.ded
+%%DATADIR%%/Defs/jDoom/PlutFinales.ded
+%%DATADIR%%/Defs/jDoom/Special.ded
+%%DATADIR%%/Defs/jDoom/Sprites.ded
+%%DATADIR%%/Defs/jDoom/TNTFinales.ded
+%%DATADIR%%/Defs/jDoom/Text.ded
+%%DATADIR%%/Defs/jDoom/Values.ded
+%%DATADIR%%/Defs/jDoom/jDoom.ded
+%%DATADIR%%/Defs/jHeretic/Anim.ded
+%%DATADIR%%/Defs/jHeretic/Audio.ded
+%%DATADIR%%/Defs/jHeretic/Finales.ded
+%%DATADIR%%/Defs/jHeretic/Lights.ded
+%%DATADIR%%/Defs/jHeretic/Maps.ded
+%%DATADIR%%/Defs/jHeretic/Objects.ded
+%%DATADIR%%/Defs/jHeretic/Special.ded
+%%DATADIR%%/Defs/jHeretic/Sprites.ded
+%%DATADIR%%/Defs/jHeretic/Text.ded
+%%DATADIR%%/Defs/jHeretic/jHeretic.ded
+%%DATADIR%%/Defs/jHexen/Anim.ded
+%%DATADIR%%/Defs/jHexen/Audio.ded
+%%DATADIR%%/Defs/jHexen/Finales.ded
+%%DATADIR%%/Defs/jHexen/Lights.ded
+%%DATADIR%%/Defs/jHexen/Maps.ded
+%%DATADIR%%/Defs/jHexen/Objects.ded
+%%DATADIR%%/Defs/jHexen/Special.ded
+%%DATADIR%%/Defs/jHexen/Sprites.ded
+%%DATADIR%%/Defs/jHexen/Text.ded
+%%DATADIR%%/Defs/jHexen/jHexen.ded
+%%DATADIR%%/Runtime/jDoom/Startup.cfg
+%%DATADIR%%/Runtime/jHeretic/Startup.cfg
+%%DATADIR%%/Runtime/jHexen/Startup.cfg
+%%PORTDOCS%%%%DOCSDIR%%/CVars.txt
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog.txt
+%%PORTDOCS%%%%DOCSDIR%%/DEDDoc.txt
+%%PORTDOCS%%%%DOCSDIR%%/Network.txt
+%%PORTDOCS%%%%DOCSDIR%%/Ravenlic.txt
+%%PORTDOCS%%%%DOCSDIR%%/SrcNotes.txt
+%%PORTDOCS%%%%DOCSDIR%%/TexC.txt
+%%PORTDOCS%%%%DOCSDIR%%/jDoom/DoomLic.txt
+%%PORTDOCS%%%%DOCSDIR%%/jDoom/JDoom.txt
+%%PORTDOCS%%%%DOCSDIR%%/jHeretic/JHeretic.txt
+%%PORTDOCS%%%%DOCSDIR%%/jHexen/JHexen.txt
+@dirrm %%DATADIR%%/Runtime/jHexen
+@dirrm %%DATADIR%%/Runtime/jHeretic
+@dirrm %%DATADIR%%/Runtime/jDoom
+@dirrm %%DATADIR%%/Runtime
+@dirrm %%DATADIR%%/Defs/jHexen
+@dirrm %%DATADIR%%/Defs/jHeretic
+@dirrm %%DATADIR%%/Defs/jDoom
+@dirrm %%DATADIR%%/Defs
+@dirrm %%DATADIR%%/Data/jHexen
+@dirrm %%DATADIR%%/Data/jHeretic
+@dirrm %%DATADIR%%/Data/jDoom
+@dirrm %%DATADIR%%/Data/KeyMaps
+@dirrm %%DATADIR%%/Data/Graphics
+@dirrm %%DATADIR%%/Data/Fonts
+@dirrm %%DATADIR%%/Data
+@dirrm %%DATADIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/jDoom
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/jHeretic
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/jHexen
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

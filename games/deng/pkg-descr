@@ -1,0 +1,23 @@
+The Doomsday Engine is an enhanced Doom source port for the Windows and
+UNIX platforms. It is based on the source code of id Software's Doom
+and Raven Software's Heretic and Hexen.
+Some of supported features are:
+* Dynamic lights
+* Lens flares
+* High-resolution textures (PNG, TGA, PCX)
+* Particle effects
+* Detail textures
+* 3D models (uses Quake II's MD2 format)
+* Simple environmental mapping for 3D models (shiny effects)
+* MD2 skymodels and skyboxes
+* Actor (monster) movement smoothing
+* Simulated radiosity shadowing system for the environment
+* Simple shadows for objects
+* Fog
+* Glowing surfaces
+* Smart texture filtering using a modified hq2x algorith
+
+WWW: http://deng.sourceforge.net/
+
+- Igor Pokrovsky
+ip@doom.homeunix.org
