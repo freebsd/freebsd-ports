@@ -1,10 +1,19 @@
-Anubis is an outgoing mail processor, and provides the SMTP tunnel between
-the MUA (Mail User Agent) and the MTA (Mail Transport Agent). It operates
-as a proxy server daemon, independently from mail user agents, and can manage
-and process outgoing mail on the fly using a highly configurable rule system,
-based on a regular expressions (PerlRE) system. Anubis can edit outgoing mail
-headers, encrypt and/or sign mail with GnuPG, build secure SMTP tunnels using
-the TLS/SSL encryption even if your mail user agent doesn't support it, or
-tunnel a connection through a SOCKS proxy server.
+GNU Anubis is an outgoing mail processor. It goes between the MUA (Mail User
+Agent) and the MTA (Mail Transport Agent), and can perform on the fly various
+sorts of processing and conversion on the outgoing mail in accord with the
+sender's specified rules, based on a highly configurable regular expressions
+system. It operates as a proxy server, independently from mail user agents.
+GNU Anubis can edit outgoing mail headers, encrypt and/or sign mail with the
+GNU Privacy Guard, build secure SMTP tunnels (Simple Mail Transport Protocol)
+using the TLS/SSL encryption even if your mail user agent doesn't support it,
+or tunnel a connection through a SOCKS proxy server.
 
-WWW: http://anubis.sourceforge.net/
+--------*      --------**      ------***
+|  MUA  | ---> | Anubis | ---> |  MTA  |
+---------      ----------      ---------
+
+*   Mail User Agent (client)
+**  An outgoing mail processor and the SMTP tunnel.
+*** Mail Transport Agent (server)
+
+WWW:	http://www.gnu.org/software/anubis/

@@ -18,9 +18,9 @@
 ###########################################################################
 
 PORTNAME=	anubis
-PORTVERSION=	3.5.0
+PORTVERSION=	3.6.0
 CATEGORIES=	mail
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	sergei@kolobov.com
@@ -34,10 +34,9 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		MAKEINFO="makeinfo --no-split"
 
 # OpenSSL
-.if defined(WITHOUT_OPENSSL)
-CONFIGURE_ARGS+=	--without-openssl
-.else
+.if !defined(WITHOUT_OPENSSL)
 USE_OPENSSL=		yes
+CONFIGURE_ARGS+=	--with-openssl
 .endif
 
 # GPGME
