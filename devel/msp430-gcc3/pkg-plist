@@ -1,30 +1,50 @@
 %%GCC_TARG%%/bin/cpp
 %%GCC_TARG%%/bin/gcc
+%%GCC_TARG%%/bin/gcc-%%GCC_REV%%
+%%GCC_TARG%%/bin/gcov
 bin/%%GCC_TARG%%-cpp
 bin/%%GCC_TARG%%-gcc
+bin/%%GCC_TARG%%-gcc-%%GCC_REV%%
 bin/%%GCC_TARG%%-gccbug
 bin/%%GCC_TARG%%-gcov
-lib/gcc-lib/%%GCC_TARG%%/%%GCC_REV%%/cc1
-lib/gcc-lib/%%GCC_TARG%%/%%GCC_REV%%/collect2
-lib/gcc-lib/%%GCC_TARG%%/%%GCC_REV%%/cpp0
-lib/gcc-lib/%%GCC_TARG%%/%%GCC_REV%%/include/README
-lib/gcc-lib/%%GCC_TARG%%/%%GCC_REV%%/include/fixed
-lib/gcc-lib/%%GCC_TARG%%/%%GCC_REV%%/include/float.h
-lib/gcc-lib/%%GCC_TARG%%/%%GCC_REV%%/include/iso646.h
-lib/gcc-lib/%%GCC_TARG%%/%%GCC_REV%%/include/limits.h
-lib/gcc-lib/%%GCC_TARG%%/%%GCC_REV%%/include/stdarg.h
-lib/gcc-lib/%%GCC_TARG%%/%%GCC_REV%%/include/stdbool.h
-lib/gcc-lib/%%GCC_TARG%%/%%GCC_REV%%/include/syslimits.h
-lib/gcc-lib/%%GCC_TARG%%/%%GCC_REV%%/include/stddef.h
-lib/gcc-lib/%%GCC_TARG%%/%%GCC_REV%%/include/varargs.h
-lib/gcc-lib/%%GCC_TARG%%/%%GCC_REV%%/libgcc.a
-lib/gcc-lib/%%GCC_TARG%%/%%GCC_REV%%/msp1/libgcc.a
-lib/gcc-lib/%%GCC_TARG%%/%%GCC_REV%%/msp2/libgcc.a
-lib/gcc-lib/%%GCC_TARG%%/%%GCC_REV%%/tradcpp0
-lib/gcc-lib/%%GCC_TARG%%/%%GCC_REV%%/specs
-@dirrm lib/gcc-lib/%%GCC_TARG%%/%%GCC_REV%%/include
-@dirrm lib/gcc-lib/%%GCC_TARG%%/%%GCC_REV%%/msp1
-@dirrm lib/gcc-lib/%%GCC_TARG%%/%%GCC_REV%%/msp2
-@dirrm lib/gcc-lib/%%GCC_TARG%%/%%GCC_REV%%
-@dirrm lib/gcc-lib/%%GCC_TARG%%
-@unexec rmdir %D/lib/gcc-lib 2> /dev/null || true
+lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/include/README
+lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/include/float.h
+lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/include/iso646.h
+lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/include/limits.h
+lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/include/stdarg.h
+lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/include/stdbool.h
+lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/include/stddef.h
+lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/include/unwind.h
+lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/include/varargs.h
+lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/install-tools/mkheaders.conf
+lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/install-tools/include/float.h
+lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/install-tools/include/iso646.h
+lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/install-tools/include/limits.h
+lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/install-tools/include/stdarg.h
+lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/install-tools/include/stdbool.h
+lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/install-tools/include/stddef.h
+lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/install-tools/include/unwind.h
+lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/install-tools/include/varargs.h
+lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/libgcc.a
+lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/libgcov.a
+lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/msp1/libgcc.a
+lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/msp1/libgcov.a
+lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/msp2/libgcc.a
+lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/msp2/libgcov.a
+lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/specs
+libexec/gcc/%%GCC_TARG%%/%%GCC_REV%%/cc1
+libexec/gcc/%%GCC_TARG%%/%%GCC_REV%%/collect2
+libexec/gcc/%%GCC_TARG%%/%%GCC_REV%%/install-tools/mkheaders
+@dirrm lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/include
+@dirrm lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/install-tools/include
+@dirrm lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/install-tools
+@dirrm lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/msp1
+@dirrm lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/msp2
+@dirrm lib/gcc/%%GCC_TARG%%/%%GCC_REV%%
+@dirrm lib/gcc/%%GCC_TARG%%
+@unexec rmdir %D/lib/gcc 2> /dev/null || true
+@dirrm libexec/gcc/%%GCC_TARG%%/%%GCC_REV%%/install-tools
+@dirrm libexec/gcc/%%GCC_TARG%%/%%GCC_REV%%
+@dirrm libexec/gcc/%%GCC_TARG%%
+@unexec rmdir %D/libexec/gcc 2> /dev/null || true
+
