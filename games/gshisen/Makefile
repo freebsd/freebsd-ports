@@ -18,14 +18,10 @@ PREFIX=		${LOCALBASE}/GNUstep
 NO_MTREE=	yes
 WRKSRC=		${WRKDIR}/GShisen
 USE_GMAKE=	yes
-MAKEFILE=
-MAKE_FLAGS=	GUI_BACKEND_LIB=back
-
-.include <bsd.port.pre.mk>
-
+USE_GNUSTEP=	yes
 USE_GNUSTEP_BACK=	yes
 USE_GNUSTEP_BUILD=	yes
 USE_GNUSTEP_INSTALL=	yes
-.include "${PORTSDIR}/devel/gnustep/bsd.gnustep.mk"
+MAKEFILE=
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

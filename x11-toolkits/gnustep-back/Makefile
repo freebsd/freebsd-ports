@@ -36,6 +36,11 @@ CONFIGURE_ARGS+=	--with-jpeg-include=${LOCALBASE}/include
 #CPPFLAGS+=		-I${LOCALBASE}/include/freetype2
 CONFIGURE_ENV+=		CPPFLAGS="${CPPFLAGS}"
 USE_GMAKE=		yes
+USE_GNUSTEP=	yes
+USE_GNUSTEP_GUI=	yes
+USE_GNUSTEP_CONFIGURE=	yes
+USE_GNUSTEP_BUILD=	yes
+USE_GNUSTEP_INSTALL=	yes
 MAKEFILE=
 MAKE_FLAGS+=		OPTFLAG="${CFLAGS} -I${X11BASE}/include"
 BREAKS_IF_PEDANTIC=	yes
@@ -67,12 +72,6 @@ PLIST_SUB+=		USE_XLIB="" USE_XDPS="@comment " USE_ART="@comment "
 .if ${OSVERSION} < 500000
 MAKE_ENV+=		ADDITIONAL_LDFLAGS=-lcipher
 .endif
-
-USE_GNUSTEP_GUI=	yes
-USE_GNUSTEP_CONFIGURE=	yes
-USE_GNUSTEP_BUILD=	yes
-USE_GNUSTEP_INSTALL=	yes
-.include "${PORTSDIR}/devel/gnustep/bsd.gnustep.mk"
 
 post-extract:
 .for file in config.guess config.sub install-sh

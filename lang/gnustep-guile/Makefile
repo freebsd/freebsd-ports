@@ -22,6 +22,10 @@ NO_MTREE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=
 USE_GMAKE=	yes
+USE_GNUSTEP=	yes
+USE_GNUSTEP_CONFIGURE=	yes
+USE_GNUSTEP_BUILD=	yes
+USE_GNUSTEP_INSTALL=	yes
 MAKEFILE=
 MAKE_FLAGS=	OPTFLAG="${CFLAGS}"
 PLIST_SUB+=	GUILE_VER="${GUILE_VER}"
@@ -39,11 +43,6 @@ PLIST_SUB+=		USEX11=""
 .endif
 
 .include <bsd.port.pre.mk>
-
-USE_GNUSTEP_CONFIGURE=	yes
-USE_GNUSTEP_BUILD=	yes
-USE_GNUSTEP_INSTALL=	yes
-.include "${PORTSDIR}/devel/gnustep/bsd.gnustep.mk"
 
 GUILE_VER!=	(cd ${PORTSDIR}/lang/guile && make -V GUILE_VER)
 

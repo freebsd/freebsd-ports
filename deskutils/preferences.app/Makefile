@@ -20,6 +20,10 @@ USE_BZIP2=	yes
 PREFIX=		${LOCALBASE}/GNUstep
 NO_MTREE=	yes
 USE_GMAKE=	yes
+USE_GNUSTEP=	yes
+USE_GNUSTEP_BACK=	yes
+USE_GNUSTEP_BUILD=	yes
+USE_GNUSTEP_INSTALL=	yes
 MAKEFILE=	GNUmakefile
 INSTALLS_SHLIB=	yes
 
@@ -33,11 +37,4 @@ post-patch:
 	${SED} -e "s= -Werror==" ${WRKSRC}/${i}.sed > ${WRKSRC}/${i}
 .endfor
 
-.include <bsd.port.pre.mk>
-
-USE_GNUSTEP_BACK=	yes
-USE_GNUSTEP_BUILD=	yes
-USE_GNUSTEP_INSTALL=	yes
-.include "${PORTSDIR}/devel/gnustep/bsd.gnustep.mk"
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

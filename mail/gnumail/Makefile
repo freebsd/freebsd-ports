@@ -23,15 +23,14 @@ PREFIX=		${LOCALBASE}/GNUstep
 NO_MTREE=	yes
 WRKSRC=		${WRKDIR}/GNUMail
 USE_GMAKE=	yes
+USE_GNUSTEP=	yes
+USE_GNUSTEP_BACK=	yes
+USE_GNUSTEP_BUILD=	yes
+USE_GNUSTEP_INSTALL=	yes
 MAKEFILE=
 ALL_TARGET=
 
 .include <bsd.port.pre.mk>
-
-USE_GNUSTEP_BACK=	yes
-USE_GNUSTEP_BUILD=	yes
-USE_GNUSTEP_INSTALL=	yes
-.include "${PORTSDIR}/devel/gnustep/bsd.gnustep.mk"
 
 PANTOMIME_PORT?=	mail/pantomime
 

@@ -20,17 +20,14 @@ NO_MTREE=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}
 GUN_CONFIGURE=	yes
 USE_GMAKE=	yes
+USE_GNUSTEP=	yes
+USE_GNUSTEP_BACK=	yes
+USE_GNUSTEP_BUILD=	yes
+USE_GNUSTEP_INSTALL=	yes
 MAKEFILE=	GNUmakefile
 
 MAKE_APPS=	Finger GFractal GPuzzle HostAddress
 INSTALL_APPS=	Finger GFractal GPuzzle HostAddress
-
-.include <bsd.port.pre.mk>
-
-USE_GNUSTEP_BACK=	yes
-USE_GNUSTEP_BUILD=	yes
-USE_GNUSTEP_INSTALL=	yes
-.include "${PORTSDIR}/devel/gnustep/bsd.gnustep.mk"
 
 post-build:
 .for i in ${MAKE_APPS}
@@ -47,4 +44,4 @@ post-install:
 	rm -rf /root/GNUstep
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -31,18 +31,15 @@ CONFIGURE_ARGS+=	--with-tiff-include=${LOCALBASE}/include
 CONFIGURE_ARGS+=	--with-jpeg-library=${LOCALBASE}/lib
 CONFIGURE_ARGS+=	--with-jpeg-include=${LOCALBASE}/include
 USE_GMAKE=	yes
-MAKEFILE=
-MAKE_FLAGS+=	OPTFLAG="${CFLAGS}"
-BREAKS_IF_PEDANTIC=	yes
-EXTRA_FIX=		${WRKSRC}/Tools/gsnd/portaudio/pa_unix_oss/Makefile
-
-.include <bsd.port.pre.mk>
-
+USE_GNUSTEP=	yes
 USE_GNUSTEP_CONFIGURE=	yes
 USE_GNUSTEP_BUILD=	yes
 USE_GNUSTEP_INSTALL=	yes
 USE_GNUSTEP_BASE=	yes
-.include "${PORTSDIR}/devel/gnustep/bsd.gnustep.mk"
+MAKEFILE=
+MAKE_FLAGS+=	OPTFLAG="${CFLAGS}"
+BREAKS_IF_PEDANTIC=	yes
+EXTRA_FIX=		${WRKSRC}/Tools/gsnd/portaudio/pa_unix_oss/Makefile
 
 post-extract:
 .for file in config.guess config.sub install-sh
@@ -59,4 +56,4 @@ test:
 	@(cd ${WRKSRC}/Tools/gsnd/portaudio/pa_unix_oss && \
 		${GMAKE} && ./patest)
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
