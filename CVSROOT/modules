@@ -1839,6 +1839,7 @@ fcgi		ports/www/fcgi
 fconv		ports/converters/fconv
 fcplay		ports/audio/fcplay
 fcptools	ports/net/fcptools
+fcrackzip	ports/security/fcrackzip
 fcron		ports/sysutils/fcron
 fd		ports/shells/fd
 fdp-tools	ports/textproc/fdp-tools
