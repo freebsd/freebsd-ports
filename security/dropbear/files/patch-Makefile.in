@@ -1,22 +1,21 @@
---- Makefile.in.orig	Sat Oct 11 10:08:19 2003
-+++ Makefile.in	Sat Oct 11 14:58:58 2003
-@@ -46,14 +46,11 @@
- 	-strip dropbearconvert
+--- Makefile.in.orig	Tue Dec 16 06:14:06 2003
++++ Makefile.in	Tue Dec 16 10:57:36 2003
+@@ -53,15 +53,9 @@
+ 	-$(STRIP) dropbearconvert
  
  install: all
--	install -d -m 755 $(DESTDIR)$(sbindir)
--	install -d -m 755 $(DESTDIR)$(bindir)
--	install -m 755 dropbear $(DESTDIR)$(sbindir)
--	install -m 755 dropbearkey $(DESTDIR)$(bindir)
--	install -m 755 dropbearconvert $(DESTDIR)$(bindir)
+-	$(INSTALL) -d -m 755 $(DESTDIR)$(sbindir)
+-	$(INSTALL) -d -m 755 $(DESTDIR)$(bindir)
+-	$(INSTALL) -m 755 dropbear $(DESTDIR)$(sbindir)
+-	$(INSTALL) -m 755 dropbearkey $(DESTDIR)$(bindir)
+-	$(INSTALL) -m 755 dropbearconvert $(DESTDIR)$(bindir)
+-	# chown might fail, so do it separately to the install
 -	-chown root:root $(DESTDIR)$(sbindir)/dropbear
 -	-chown root:root $(DESTDIR)$(bindir)/dropbearkey
 -	-chown root:root $(DESTDIR)$(bindir)/dropbearconvert
-+	${INSTALL} -d -m 755 $(DESTDIR)$(sbindir)
-+	${INSTALL} -d -m 755 $(DESTDIR)$(bindir)
-+	${INSTALL_PROGRAM} dropbear $(DESTDIR)$(sbindir)
-+	${INSTALL_PROGRAM} dropbearkey $(DESTDIR)$(bindir)
-+	${INSTALL_PROGRAM} dropbearconvert $(DESTDIR)$(bindir)
++	$(BSD_INSTALL_PROGRAM) -m 755 dropbear $(DESTDIR)$(sbindir)
++	$(BSD_INSTALL_PROGRAM) -m 755 dropbearkey $(DESTDIR)$(bindir)
++	$(BSD_INSTALL_PROGRAM) -m 755 dropbearconvert $(DESTDIR)$(bindir)
  
  
  static: dropbear-static dropbearkey-static dropbearconvert-static
