@@ -102,7 +102,7 @@
 +		    int f, g, h;
 +		    if (!fudge) {
 +		      ASSERT(use_band == ibp);
-+		      use_band = (byte*)gs_malloc(ul_band_size, 1, "gdi_print_page/fudge");
++		      use_band = (byte*)gs_malloc(/*XXX 'mem' ptr goes here*//*,*/ ul_band_size, 1, "gdi_print_page/fudge");
 +		      fudge=1;
 +		    }
 +		    memcpy(use_band, ibp, ul_band_size);
