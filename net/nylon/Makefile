@@ -7,12 +7,14 @@
 #
 
 PORTNAME=	nylon
-PORTVERSION=	0.2
+PORTVERSION=	0.3
 CATEGORIES=	net
-MASTER_SITES=	http://mesh.eecs.umich.edu/projects/nylon/
+MASTER_SITES=	http://www.citi.umich.edu/u/marius/
 
-MAINTAINER=	William.Ward@ericsson.com
+MAINTAINER=	ports@FreeBSD.org
 
-USE_AUTOCONF=	yes
+GNU_CONFIGURE=	yes
+
+MAN1=		nylon.1
 
 .include <bsd.port.mk>
