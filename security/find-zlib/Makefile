@@ -16,12 +16,9 @@ EXTRACT_ONLY=
 MAINTAINER=	trevor@FreeBSD.org
 COMMENT=	Scans files for statically linked zlib (libz) code
 
-PLIST=		${WRKDIR}/pkg-plist
+PLIST_FILES=	bin/find-zlib
 NO_BUILD=	none
 USE_PERL5=	yes
-
-pre-install:
-	${ECHO_CMD} bin/find-zlib > ${PLIST}
 
 do-install:
 	${INSTALL_SCRIPT} ${DISTDIR}/${DISTNAME} ${PREFIX}/bin
