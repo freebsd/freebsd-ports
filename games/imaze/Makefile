@@ -14,21 +14,17 @@ DISTFILES=	imaze1.3.tar.Z imaze.tar
 
 MAINTAINER=	kuehn@rz.tu-clausthal.de
 
-.if defined(HAVE_MOTIF) && defined(FORCE_MOTIF)
-.if !defined(MOTIFLIB)
-MOTIFLIB=	-L${X11BASE}/lib -lXm
-.endif
-MAKE_ENV+=	FORCE_MOTIF=${FORCE_MOTIF}
+.if defined(HAVE_MOTIF) && !defined(PACKAGE_BUILDING)
+MAKE_ENV+=	FORCE_MOTIF=yes
 .else
 LIB_DEPENDS=	xview\\.3\\.2:${PORTSDIR}/x11/xview-lib
 .endif
 
 EXTRACT_ONLY=	imaze1.3.tar.Z
-NO_CONFIGURE=	yes
 USE_X11=	yes
 
 post-extract:
-	@cp ${FILESDIR}/Makefile ${WRKDIR}/imaze/Makefile
+	@${CP} ${FILESDIR}/Makefile ${WRKDIR}/imaze/Makefile
 	@tar xf ${DISTDIR}/imaze.tar -C ${WRKDIR}/imaze
 
 .include <bsd.port.mk>
