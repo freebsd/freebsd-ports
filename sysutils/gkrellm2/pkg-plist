@@ -1,7 +1,6 @@
 bin/gkrellm
 include/gkrellm/gkrellm.h
 include/gkrellm/gkrellm_public_proto.h
-include/gkrellm/gkrellm_private_proto.h
 @dirrm include/gkrellm
 @exec mkdir -p %D/libexec/gkrellm/plugins
 @dirrm libexec/gkrellm/plugins
@@ -13,4 +12,3 @@ share/doc/gkrellm/COPYRIGHT
 share/doc/gkrellm/README
 share/doc/gkrellm/Themes.html
 @dirrm share/doc/gkrellm
-@dirrm include/gkrellm
