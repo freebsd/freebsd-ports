@@ -1,0 +1,13 @@
+
+  It is gcc (c and c++ compiler suite) for  MIPS Little Endian Linux
+  (mipsel-linux) target with SNOW ABI.
+  This target is, for example, VR Linux on NEC's VR-based PDAs (Agenda VR3
+  and others).
+  This port doesn't contains any libraries or headers. To build it you must
+  have headers for your target in ${PREFIX}/mipsel-linux/include directory.
+  Headers and libraries for Agenda VR6 PDA could be installed from
+  devel/agenda-headers and devel/agenda-libs ports.
+
+http://dev.agendacomputing.org/ -- Agenda VR3 PDA
+http://gcc.gnu.org/ -- Home page of GNU gcc 
+WWW: http://www.vr-linux.org/
