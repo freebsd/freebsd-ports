@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	vcp
-PORTVERSION=	1.7.2
+PORTVERSION=	2.1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://members.iinet.net.au/~lynx/vcp/ \
 		http://members.optusnet.com.au/~dbbryan/vcp/
