@@ -15,8 +15,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-${PORTREVISION}
 MAINTAINER=	dinoex@FreeBSD.org
 
 .if !defined(METAKIT_WITHOUT_PYTHON)
-BUILD_DEPENDS=	python1.5:${PORTSDIR}/lang/python15
-RUN_DEPENDS=	python1.5:${PORTSDIR}/lang/python15
+BUILD_DEPENDS=	python2.1:${PORTSDIR}/lang/python
+RUN_DEPENDS=	python2.1:${PORTSDIR}/lang/python
 .endif
 .if defined(METAKIT_WITH_TCL)
 LIB_DEPENDS=	tcl83.1:${PORTSDIR}/lang/tcl83
