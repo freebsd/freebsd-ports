@@ -1,0 +1,11 @@
+--- calendar/conduits/todo/Makefile.in.orig	Mon Dec  9 16:01:21 2002
++++ calendar/conduits/todo/Makefile.in	Mon Dec  9 16:01:48 2002
+@@ -231,7 +231,7 @@
+ 
+ 
+ libetodo_conduit_la_LDFLAGS = -module -avoid-version
+-libetodo_conduit_la_LIBADD =  	$(top_builddir)/e-util/libeutil.la					$(top_builddir)/calendar/cal-client/libcal-client-static.la		$(top_builddir)/calendar/cal-util/libcal-util-static.la			$(top_builddir)/libversit/libversit.a					$(top_builddir)/libical/src/libical/libical-static.la			$(top_builddir)/libwombat/libwombat-static.la	 			$(top_builddir)/e-util/libeconduit-static.la	 			$(EVOLUTION_CALENDAR_CONDUIT_LIBS)
++libetodo_conduit_la_LIBADD =  	$(top_builddir)/e-util/libeutil.la					$(top_builddir)/calendar/cal-client/libcal-client.la		$(top_builddir)/calendar/cal-util/libcal-util.la			$(top_builddir)/libversit/libversit.a					$(top_builddir)/libical/src/libical/libical-static.la			$(top_builddir)/libwombat/libwombat.la	 			$(top_builddir)/e-util/libeconduit.la	 			$(EVOLUTION_CALENDAR_CONDUIT_LIBS)
+ 
+ 
+ Conduitdir = $(datadir)/gnome-pilot/conduits/
