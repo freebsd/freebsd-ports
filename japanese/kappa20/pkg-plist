@@ -1,20 +1,37 @@
 %%FONTSDIR%%/10x20L2b.pcf.gz
+%%FONTSDIR%%/10x20L2bi.pcf.gz
 %%FONTSDIR%%/10x20L2m.pcf.gz
+%%FONTSDIR%%/10x20L2mi.pcf.gz
 %%FONTSDIR%%/10x20L3b.pcf.gz
+%%FONTSDIR%%/10x20L3bi.pcf.gz
 %%FONTSDIR%%/10x20L3m.pcf.gz
+%%FONTSDIR%%/10x20L3mi.pcf.gz
 %%FONTSDIR%%/10x20L9b.pcf.gz
+%%FONTSDIR%%/10x20L9bi.pcf.gz
 %%FONTSDIR%%/10x20L9m.pcf.gz
+%%FONTSDIR%%/10x20L9mi.pcf.gz
 %%FONTSDIR%%/10x20b.pcf.gz
+%%FONTSDIR%%/10x20bi.pcf.gz
 %%FONTSDIR%%/10x20m.pcf.gz
+%%FONTSDIR%%/10x20mi.pcf.gz
 %%FONTSDIR%%/10x20rkb.pcf.gz
+%%FONTSDIR%%/10x20rkbi.pcf.gz
 %%FONTSDIR%%/10x20rkm.pcf.gz
+%%FONTSDIR%%/10x20rkmi.pcf.gz
 %%FONTSDIR%%/ipa-10x20b.pcf.gz
+%%FONTSDIR%%/ipa-10x20bi.pcf.gz
 %%FONTSDIR%%/ipa-10x20m.pcf.gz
+%%FONTSDIR%%/ipa-10x20mi.pcf.gz
 %%FONTSDIR%%/k20b.pcf.gz
+%%FONTSDIR%%/k20bi.pcf.gz
 %%FONTSDIR%%/k20m.pcf.gz
+%%FONTSDIR%%/k20mi.pcf.gz
 %%FONTSDIR%%/nk20b-1.pcf.gz
+%%FONTSDIR%%/nk20bi-1.pcf.gz
 %%FONTSDIR%%/vk20b.pcf.gz
+%%FONTSDIR%%/vk20bi.pcf.gz
 %%FONTSDIR%%/vk20m.pcf.gz
+%%FONTSDIR%%/vk20mi.pcf.gz
 %%PORTDOCS%%share/doc/ja/kappa20/README.euc-jp
 %%PORTDOCS%%@dirrm share/doc/ja/kappa20
 @exec cd %D/%%FONTSDIR%% ; %D/bin/mkfontdir

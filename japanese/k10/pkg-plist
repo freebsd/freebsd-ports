@@ -3,9 +3,16 @@
 %%FONTSDIR%%/5x10rk.pcf.gz
 %%FONTSDIR%%/knj10.pcf.gz
 %%FONTSDIR%%/knj10B.pcf.gz
-share/doc/naga10/README
+%%FONTSDIR%%/5x10rkb.pcf.gz
+%%FONTSDIR%%/5x10Bi.pcf.gz
+%%FONTSDIR%%/5x10ai.pcf.gz
+%%FONTSDIR%%/5x10rki.pcf.gz
+%%FONTSDIR%%/knj10i.pcf.gz
+%%FONTSDIR%%/knj10Bi.pcf.gz
+%%FONTSDIR%%/5x10rkbi.pcf.gz
+%%PORTDOCS%%share/doc/naga10/README
+%%PORTDOCS%%@dirrm share/doc/naga10
 @exec cd %D/%%FONTSDIR%% ; %D/bin/mkfontdir
 @unexec cd %D/%%FONTSDIR%% ; %D/bin/mkfontdir
 @unexec if [ `wc -c %D/%%FONTSDIR%%/fonts.dir | awk '{print $1}'` = 2 ]; then rm -f %D/%%FONTSDIR%%/fonts.dir; fi
 @unexec if [ ! -s %D/%%FONTSDIR%%/fonts.alias ]; then rm -f %D/%%FONTSDIR%%/fonts.alias; fi
-@dirrm share/doc/naga10

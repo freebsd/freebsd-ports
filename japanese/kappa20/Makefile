@@ -7,6 +7,7 @@
 
 PORTNAME=	kappa20
 PORTVERSION=	0.394
+PORTREVISION=	1
 CATEGORIES=	japanese x11-fonts
 MASTER_SITES=	http://kappa.allnet.ne.jp/20dot.fonts/
 DISTNAME=	Kappa20-${PORTVERSION}
@@ -16,16 +17,23 @@ MAINTAINER=	ginga@athena.club.ne.jp
 USE_X_PREFIX=	yes
 USE_BZIP2=	yes
 
+BUILD_DEPENDS=	mkitalic:${PORTSDIR}/x11-fonts/mkitalic
+
 .include <bsd.port.pre.mk>
 
 .if ${XFREE86_VERSION} == 4
+BUILD_DEPENDS+=	bdftopcf:${PORTSDIR}/x11/XFree86-4-clients
 RUN_DEPENDS=	mkfontdir:${PORTSDIR}/x11/XFree86-4-clients
 .endif
 
 FONTSDIR=	lib/X11/fonts/local
 MAKE_ENV=	INSTALL_DATA="${INSTALL_DATA}"
-MAKE_ARGS=	TARGETDIR="${PREFIX}/${FONTSDIR}"
+MAKE_ARGS=	FONTSDIR="${FONTSDIR}"
 PLIST_SUB=	FONTSDIR=${FONTSDIR}
+
+post-extract:
+	(cd ${WRKSRC} ; ${MV} Makefile Makefile.dist)
+	${CP} ${FILESDIR}/Makefile.in ${WRKSRC}/Makefile
 
 pre-install:
 	@${SETENV} PKG_PREFIX=${PREFIX} \

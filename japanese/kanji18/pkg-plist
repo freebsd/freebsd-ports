@@ -1,7 +1,10 @@
 %%FONTSDIR%%/kanji18.pcf.gz
-share/doc/kanji18/18to16.sed
-share/doc/kanji18/README.kanji18
-share/doc/kanji18/kanji16.alias
-share/doc/kanji18/kanji18.alias
+%%FONTSDIR%%/kanji18b.pcf.gz
+%%FONTSDIR%%/kanji18bi.pcf.gz
+%%FONTSDIR%%/kanji18i.pcf.gz
+%%PORTDOCS%%share/doc/kanji18/18to16.sed
+%%PORTDOCS%%share/doc/kanji18/README.kanji18
+%%PORTDOCS%%share/doc/kanji18/kanji16.alias
+%%PORTDOCS%%share/doc/kanji18/kanji18.alias
+%%PORTDOCS%%@dirrm share/doc/kanji18
 @unexec if [ ! -s %D/%%FONTSDIR%%/fonts.alias ]; then rm -f %D/%%FONTSDIR%%/fonts.alias; fi
-@dirrm share/doc/kanji18

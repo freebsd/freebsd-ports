@@ -23,9 +23,21 @@ fi
 TMPFILE=/tmp/install-fonts-alias-$$
 cat << EOF > ${TMPFILE}
 kanji18  -jis-gothic-medium-r-normal--18-170-75-75-c-180-jisx0208.1983-0
+kanji18b  -jis-gothic-bold-r-normal--18-170-75-75-c-180-jisx0208.1983-0
+kanji18i  -jis-gothic-medium-i-normal--18-170-75-75-c-180-jisx0208.1983-0
+kanji18bi  -jis-gothic-bold-i-normal--18-170-75-75-c-180-jisx0208.1983-0
 -jis-fixed-medium-r-normal--18-130-100-100-c-180-jisx0208.1983-0 -jis-gothic-medium-r-normal--18-130-100-100-c-180-jisx0208.1983-0
+-jis-fixed-bold-r-normal--18-130-100-100-c-180-jisx0208.1983-0 -jis-gothic-bold-r-normal--18-130-100-100-c-180-jisx0208.1983-0
+-jis-fixed-medium-i-normal--18-130-100-100-c-180-jisx0208.1983-0 -jis-gothic-medium-i-normal--18-130-100-100-c-180-jisx0208.1983-0
+-jis-fixed-bold-i-normal--18-130-100-100-c-180-jisx0208.1983-0 -jis-gothic-bold-i-normal--18-130-100-100-c-180-jisx0208.1983-0
 -jis-fixed-medium-r-normal--18-170-75-75-c-180-jisx0208.1983-0 -jis-gothic-medium-r-normal--18-170-75-75-c-180-jisx0208.1983-0
+-jis-fixed-bold-r-normal--18-170-75-75-c-180-jisx0208.1983-0 -jis-gothic-bold-r-normal--18-170-75-75-c-180-jisx0208.1983-0
+-jis-fixed-medium-i-normal--18-170-75-75-c-180-jisx0208.1983-0 -jis-gothic-medium-i-normal--18-170-75-75-c-180-jisx0208.1983-0
+-jis-fixed-bold-i-normal--18-170-75-75-c-180-jisx0208.1983-0 -jis-gothic-bold-i-normal--18-170-75-75-c-180-jisx0208.1983-0
 -jis-gothic-medium-r-normal--18-130-100-100-c-180-jisx0208.1983-0 -jis-gothic-medium-r-normal--18-170-75-75-c-180-jisx0208.1983-0
+-jis-gothic-bold-r-normal--18-130-100-100-c-180-jisx0208.1983-0 -jis-gothic-bold-r-normal--18-170-75-75-c-180-jisx0208.1983-0
+-jis-gothic-medium-i-normal--18-130-100-100-c-180-jisx0208.1983-0 -jis-gothic-medium-i-normal--18-170-75-75-c-180-jisx0208.1983-0
+-jis-gothic-bold-i-normal--18-130-100-100-c-180-jisx0208.1983-0 -jis-gothic-bold-i-normal--18-170-75-75-c-180-jisx0208.1983-0
 EOF
 
 echo "Updating ${FONTDIR}/fonts.alias"

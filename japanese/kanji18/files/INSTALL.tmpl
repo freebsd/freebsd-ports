@@ -1,8 +1,8 @@
 #!/bin/sh
 
 if [ "x$2" = "xPOST-INSTALL" ]; then
-	cd ${PKG_PREFIX}/%%FONTSDIR%%; ${PKG_PREFIX}/bin/mkfontdir
-	${PKG_PREFIX}/bin/xset fp rehash ||
+	cd ${PKG_PREFIX}/%%FONTSDIR%%; %%X11BASE%%/bin/mkfontdir
+	%%X11BASE%%/bin/xset fp rehash ||
 	(
 	 echo "**********************************************************"
 	 echo "You should restart X server or do 'xset fp rehash' command"

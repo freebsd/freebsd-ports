@@ -1,7 +1,10 @@
 %%FONTSDIR%%/kanji26.pcf.gz
-share/doc/kanji26/26to24.sed
-share/doc/kanji26/README.kanji26
-share/doc/kanji26/kanji24.alias
-share/doc/kanji26/kanji26.alias
+%%FONTSDIR%%/kanji26b.pcf.gz
+%%FONTSDIR%%/kanji26bi.pcf.gz
+%%FONTSDIR%%/kanji26i.pcf.gz
+%%PORTDOCS%%share/doc/kanji26/26to24.sed
+%%PORTDOCS%%share/doc/kanji26/README.kanji26
+%%PORTDOCS%%share/doc/kanji26/kanji24.alias
+%%PORTDOCS%%share/doc/kanji26/kanji26.alias
+%%PORTDOCS%%@dirrm share/doc/kanji26
 @unexec if [ ! -s %D/%%FONTSDIR%%/fonts.alias ]; then rm -f %D/%%FONTSDIR%%/fonts.alias; fi
-@dirrm share/doc/kanji26

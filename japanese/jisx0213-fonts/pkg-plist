@@ -1,9 +1,27 @@
-%%FONTSDIR%%/jiskan16-2000-1.pcf.gz
-%%FONTSDIR%%/jiskan16-2000-2.pcf.gz
-%%FONTSDIR%%/K14-1.pcf.gz
-%%FONTSDIR%%/K14-2.pcf.gz
 %%FONTSDIR%%/K12-1.pcf.gz
+%%FONTSDIR%%/K12-1b.pcf.gz
+%%FONTSDIR%%/K12-1bi.pcf.gz
+%%FONTSDIR%%/K12-1i.pcf.gz
 %%FONTSDIR%%/K12-2.pcf.gz
+%%FONTSDIR%%/K12-2b.pcf.gz
+%%FONTSDIR%%/K12-2bi.pcf.gz
+%%FONTSDIR%%/K12-2i.pcf.gz
+%%FONTSDIR%%/K14-1.pcf.gz
+%%FONTSDIR%%/K14-1b.pcf.gz
+%%FONTSDIR%%/K14-1bi.pcf.gz
+%%FONTSDIR%%/K14-1i.pcf.gz
+%%FONTSDIR%%/K14-2.pcf.gz
+%%FONTSDIR%%/K14-2b.pcf.gz
+%%FONTSDIR%%/K14-2bi.pcf.gz
+%%FONTSDIR%%/K14-2i.pcf.gz
+%%FONTSDIR%%/jiskan16-2000-1.pcf.gz
+%%FONTSDIR%%/jiskan16-2000-1b.pcf.gz
+%%FONTSDIR%%/jiskan16-2000-1bi.pcf.gz
+%%FONTSDIR%%/jiskan16-2000-1i.pcf.gz
+%%FONTSDIR%%/jiskan16-2000-2.pcf.gz
+%%FONTSDIR%%/jiskan16-2000-2b.pcf.gz
+%%FONTSDIR%%/jiskan16-2000-2bi.pcf.gz
+%%FONTSDIR%%/jiskan16-2000-2i.pcf.gz
 @exec cd %D/%%FONTSDIR%% ; %D/bin/mkfontdir
 @unexec cd %D/%%FONTSDIR%% ; %D/bin/mkfontdir
 @unexec if [ `wc -c %D/%%FONTSDIR%%/fonts.dir | awk '{print $1}'` = 2 ]; then rm -f %D/%%FONTSDIR%%/fonts.dir; fi
