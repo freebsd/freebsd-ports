@@ -1,0 +1,8 @@
+METIS is a software package for partitioning unstructured graphs,
+partitioning meshes, and computing fill-reducing orderings of sparse
+matrices.
+
+Important note: this is not the original METIS, it has been specially
+patched by EDF to be used by Code_Aster.
+
+WWW: http://www-users.cs.umn.edu/~karypis/metis/index.html

@@ -1,0 +1,43 @@
+--- CONFIG/configure.orig	Mon Dec 16 18:11:44 2002
++++ CONFIG/configure	Sun Jun 29 14:58:48 2003
+@@ -18,7 +18,7 @@
+    if [ -z "$rtn" ] || [ "$rtn" = "y" -o "$rtn" = "Y" ]; then
+       OS_TYPE=SunOS64
+    fi
+-elif [ $OS_TYPE != "OSF1" -a $OS_TYPE != "IRIX64" -a $OS_TYPE != "Linux" ]; then
++elif [ $OS_TYPE != "OSF1" -a $OS_TYPE != "IRIX64" -a $OS_TYPE != "Linux" -a $OS_TYPE != "FreeBSD" ]; then
+ 	echo " Operating system $OS_TYPE unknown on this distribution"
+ 	echo " Installation failed !"
+    exit 8
+@@ -30,14 +30,23 @@
+ # FOPTIONS : Fortran compiler options,
+ # LDOPTIONS : link options, AR : archiver
+ 
+-CC="cc"
+-F90="f90"
+-LD="$F90"
+-COPTIONS=""
+-FOPTIONS=""
+-LDOPTIONS="-L. -L.."
+-OPTFLAGS="-O"
+-AR="ar rv"
++if [ $OS_TYPE = "FreeBSD" ]; then
++   CC="$CC"
++   F90="$F77"
++   LD="$LD"
++   COPTIONS="$CFLAGS"
++   LDOPTIONS="$LDFLAGS -lc -lg2c -L. -L.."
++   AR="$AR rv"
++else
++   CC="cc"
++   F90="f90"
++   LD="$F90"
++   COPTIONS=""
++   FOPTIONS=""
++   LDOPTIONS="-L. -L.."
++   OPTFLAGS="-O"
++   AR="ar rv"
++fi
+ if [ $OS_TYPE = "Linux" ]; then
+    CC="gcc"
+    F90="g77"
