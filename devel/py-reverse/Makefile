@@ -19,7 +19,7 @@ COMMENT=	A set of tools for reverse engineering Python code
 
 BUILD_DEPENDS=	${PYXML}
 RUN_DEPENDS=	${PYXML} \
-		${PYTHONPREFIX_SITELIBDIR}/logilab/pylint/__init__.py:${PORTSDIR}/devel/py-logilab-common
+		${PYTHONPREFIX_SITELIBDIR}/logilab/__init__.py:${PORTSDIR}/devel/py-logilab-common
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
