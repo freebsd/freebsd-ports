@@ -8,6 +8,9 @@ lib/libVTKGraphicsPython.so
 lib/libVTKImaging.so
 lib/libVTKImagingTcl.so
 lib/libVTKImagingPython.so
+lib/libVTKPatented.so
+lib/libVTKPatentedTcl.so
+lib/libVTKPatentedPython.so
 lib/libVTKContrib.so
 lib/libVTKContribTcl.so
 lib/libVTKContribPython.so
