@@ -10,7 +10,7 @@ PORTVERSION=	0.99.9.1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	http://dovecot.procontrol.fi/
 
-MAINTAINER=	d.marks@student.umist.ac.uk
+MAINTAINER=	dominic.marks@btinternet.com
 COMMENT=	Secure and compact IMAP and POP3 servers
 
 LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv

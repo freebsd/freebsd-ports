@@ -1,6 +1,6 @@
 # New ports collection makefile for:	scout
 # Date created:			15/04/2002
-# Whom:				Dominic Marks <d.marks@student.umist.ac.uk>
+# Whom:				Dominic Marks <dominic.marks@btinternet.com>
 #
 # $FreeBSD$
 #
@@ -11,7 +11,7 @@ CATEGORIES=	www
 MASTER_SITES=	ftp://sid.joedog.org/pub/scout/ \
 	http://www.cus.org.uk/~dom/distfiles/scout/
 
-MAINTAINER=	d.marks@student.umist.ac.uk
+MAINTAINER=	dominic.marks@btinternet.com
 COMMENT=	A utility to harvest URLs from a given start point
 
 USE_LIBTOOL=	yes

@@ -1,6 +1,6 @@
 # New ports collection makefile for:	mutella
 # Date created:				2/12/2001
-# Whom:			Dominic Marks <d.marks@student.umist.ac.uk>
+# Whom:			Dominic Marks <dominic.marks@btinternet.com>
 #
 # $FreeBSD$
 #
@@ -12,7 +12,7 @@ CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	mutella
 
-MAINTAINER=	d.marks@student.umist.ac.uk
+MAINTAINER=	dominic.marks@btinternet.com
 COMMENT=	A command line Gnutella client
 
 MAN1=		mutella.1
