@@ -6,18 +6,15 @@
 #
 
 PORTNAME=	picprog
-PORTVERSION=	1.0
+PORTVERSION=	1.0.1
 CATEGORIES=	devel
-MASTER_SITES=	http://hyvatti.iki.fi/~jaakko/pic/
+MASTER_SITES=	http://www.pp.htv.fi/jhyvatti/pic/
 
 MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
 
 MAN1=		picprog.1
-
-#post-patch:
-#	$(CP) ${PATCHDIR}/getopt* ${WRKSRC}
 
 post-install:
 .if !defined(NOPORTDOCS)
