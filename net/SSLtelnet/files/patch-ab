@@ -1,9 +1,90 @@
---- ../../SSLtelnet-0.11/lib/libbsd/Makefile	Fri Jun 30 09:05:37 1995
-+++ ./lib/libbsd/Makefile	Sun Mar 29 14:31:30 1998
-@@ -1,5 +1,5 @@
- LIB=	bsd
--CFLAGS= -DLIBC_SCCS  -I../../include
-+CFLAGS+= -DLIBC_SCCS  -I$(PREFIX)/include
- OBJS=	getenv.o herror.o setenv.o strerror.o getpass.o inet_addr.o
+--- telnetd/pathnames.h.orig	Sat Jun 15 17:26:10 1996
++++ telnetd/pathnames.h	Wed Sep  2 12:53:18 1998
+@@ -53,7 +53,7 @@
+ /* I'm working on having this work as is with SunOS 5.x */
+ #ifndef USE_SRALOGIN
+ #undef _PATH_LOGIN
+-#ifdef __bsdi__
++#if defined(__bsdi__) || defined(__FreeBSD__)
+ #define	_PATH_LOGIN	"/usr/bin/login"
+ #else 
+ #define	_PATH_LOGIN	"/bin/login"
+--- telnetd/sys_term.c.orig	Wed Sep  2 12:53:19 1998
++++ telnetd/sys_term.c	Wed Sep  2 12:53:22 1998
+@@ -739,7 +739,7 @@
+ 	else
+ 		termbuf.lflags &= ~LPASS8;
+ #else
+-	if (on) {
++	if (1) {
+ 		termbuf.c_iflag &= ~ISTRIP;
+ 	} else {
+ 		termbuf.c_iflag |= ISTRIP;
+--- telnetd/telnetd.c.orig	Sat Aug  2 14:40:48 1997
++++ telnetd/telnetd.c	Wed Sep  2 12:53:21 1998
+@@ -140,7 +140,7 @@
+ 	highpty = getnpty();
+ #endif /* CRAY */
  
- lib${LIB}.a: ${OBJS}
+-	while ((ch = getopt(argc, argv, "d:a:e:lhnr:I:D:B:sS:a:X:z:")) != EOF) {
++	while ((ch = getopt(argc, argv, "d:a:e:lhnr:I:D:B:sS:a:X:z:q")) != EOF) {
+ 		switch(ch) {
+ 
+ #ifdef USE_SSL
+@@ -203,6 +203,11 @@
+ 
+ 			}
+ 			break;
++
++		case 'q':
++			ssl_quiet_flag = 1;
++			break;
++			
+ #endif /* USE_SSL */
+ 
+ #ifdef	AUTHENTICATE
+@@ -584,7 +589,7 @@
+ #ifdef USE_SSL
+         /* might as well output something useful here ... */
+ 	fprintf(stderr, " [-z ssl] [-z secure] [-z debug] [-z verify=int]\n\t");
+-	fprintf(stderr, " [-z cert=file] [-z key=file]\n\t");
++	fprintf(stderr, " [-z cert=file] [-z key=file] [-q]\n\t");
+ #endif /* USE_SSL */
+ 	fprintf(stderr, " [port]\n");
+ 	exit(1);
+@@ -656,7 +661,12 @@
+ 		fflush(stderr);
+ 	    }
+ 
+-	    fatal(net,"[SSL required - connection rejected]");
++	    if (ssl_quiet_flag) {
++		sleep(1);
++		exit(1);
++	    }
++	    else
++		fatal(net,"[SSL required - connection rejected]");
+ 
+ 	}
+     }
+--- telnetd/Makefile.orig	Tue Sep 12 10:22:51 1995
++++ telnetd/Makefile	Fri Sep  4 15:10:46 1998
+@@ -4,16 +4,13 @@
+ 
+ PROG=	telnetd
+ 
+-CFLAGS= -DTERMCAP -DKLUDGELINEMODE -DUSE_TERMIO -DAUTHENTICATE -DUSE_SSL \
+-	-DDIAGNOSTICS -DFILIO_H \
+-	-I../lib -I../lib/libbsd/include \
++CFLAGS+= -DTERMCAP -DKLUDGELINEMODE -DUSE_TERMIO -DAUTHENTICATE -DUSE_SSL \
++	-DDIAGNOSTICS -DFILIO_H -I../lib -I../lib/libbsd/include \
+ 	-I$(SSLTOP)/include
+ 
+ LIBS= 	../lib/libtelnet/libtelnet.a \
+-	../lib/libbsd/libbsd.a \
+-	../lib/libutil/libutil.a \
+ 	$(SSLTOP)/lib/libssl.a \
+-	$(SSLTOP)/lib/libcrypto.a 
++	$(SSLTOP)/lib/libcrypto.a -lutil
+ #	$(SSLTOP)/lib/libdes.a
+ 
+ OBJS=	authenc.o global.o slc.o state.o sys_term.o telnetd.o \

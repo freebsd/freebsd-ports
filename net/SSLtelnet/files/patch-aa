@@ -1,5 +1,5 @@
---- ../../SSLtelnet-0.11/Makefile	Sat Aug  2 16:08:25 1997
-+++ ./Makefile	Sun Mar 29 18:28:44 1998
+--- Makefile.orig	Sat Aug  2 15:08:25 1997
++++ Makefile	Wed Sep  2 12:53:13 1998
 @@ -47,7 +47,7 @@
  
  # the location where SSLeay is installed ... 
@@ -55,3 +55,14 @@
  	cd $(INSTALLTOP)/certs; \
  	ssleay req -new -x509 -nodes -days 365 -out telnetd.pem -keyout telnetd.pem; \
  	ln -s telnetd.pem `ssleay x509 -noout -hash < telnetd.pem`.0 ;\
+--- lib/Makefile.orig	Wed Sep  2 13:11:39 1998
++++ lib/Makefile	Wed Sep  2 13:11:49 1998
+@@ -1,7 +1,7 @@
+ #SUBDIRS= gmp-1.2 kerberosIV/krb libbsd libdes/des libpk libtelnet libutil
+ SUBDIRS= gmp-1.3.2 libbsd libpk libtelnet libutil
+ 
+-SUBDIRS= libbsd libtelnet libutil
++SUBDIRS= libtelnet
+ 
+ all:
+ 	@for i in $(SUBDIRS); \
