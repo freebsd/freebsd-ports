@@ -15,28 +15,32 @@ DISTNAME=	diclookup-mule-${PORTVERSION}
 MAINTAINER=	mita@FreeBSD.org
 COMMENT=	CDROM dictionary client for emacs. (needs ndtpd or dserver package)
 
-RUN_DEPENDS=	${X11BASE}/share/doc/intlfonts-1.2/README:${PORTSDIR}/x11-fonts/intlfonts
+RUN_DEPENDS=	${FONTSDIR}/a18rk.pcf.gz:${PORTSDIR}/x11-fonts/intlfonts
 
 WRKSRC=		${WRKDIR}/diclookup-mule-${PORTVERSION}
 EMACS_PORT_NAME?=	emacs20
 MAKE_ARGS+=	LISPDIR="${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/diclookup"
-DOC_DIR=	${PREFIX}/share/doc/diclookup-emacs20
+FONTSDIR=	${X11BASE}/lib/X11/fonts/local
+DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}${PKGNAMESUFFIX}
 
 pre-install:
 	${MKDIR} ${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/diclookup
+
 post-install:
-	${MKDIR} ${DOC_DIR}
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
 	@${SED} s!PREFIX_DIR!${PREFIX}!g ${FILESDIR}/setup-diclookup.sh \
-				> ${DOC_DIR}/setup-diclookup.sh
+				> ${DOCSDIR}/setup-diclookup.sh
 	@${SED} s!PREFIX_DIR!${PREFIX}!g ${FILESDIR}/deinstall-diclookup.sh \
-				> ${DOC_DIR}/deinstall-diclookup.sh
+				> ${DOCSDIR}/deinstall-diclookup.sh
 	${INSTALL_DATA} ${FILESDIR}/README.diclookup-setup.txt \
-				${DOC_DIR}/
+				${DOCSDIR}/
 	${INSTALL_DATA} ${WRKSRC}/README \
-				${DOC_DIR}/README.diclookup-mule
+				${DOCSDIR}/README.diclookup-mule
 	${INSTALL_DATA} ${WRKSRC}/README.sirup \
-				${DOC_DIR}/
+				${DOCSDIR}/
 	${INSTALL_DATA} ${WRKSRC}/lib/README \
-			${DOC_DIR}/README.diclookup-mule.lib
+			${DOCSDIR}/README.diclookup-mule.lib
+.endif
 
 .include <bsd.port.mk>

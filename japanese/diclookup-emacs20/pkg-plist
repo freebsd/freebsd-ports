@@ -1,9 +1,9 @@
-share/doc/diclookup-emacs20/README.diclookup-setup.txt
-share/doc/diclookup-emacs20/README.diclookup-mule
-share/doc/diclookup-emacs20/README.sirup
-share/doc/diclookup-emacs20/README.diclookup-mule.lib
-share/doc/diclookup-emacs20/setup-diclookup.sh
-share/doc/diclookup-emacs20/deinstall-diclookup.sh
+%%PORTDOCS%%%%DOCSDIR%%/README.diclookup-setup.txt
+%%PORTDOCS%%%%DOCSDIR%%/README.diclookup-mule
+%%PORTDOCS%%%%DOCSDIR%%/README.sirup
+%%PORTDOCS%%%%DOCSDIR%%/README.diclookup-mule.lib
+%%PORTDOCS%%%%DOCSDIR%%/setup-diclookup.sh
+%%PORTDOCS%%%%DOCSDIR%%/deinstall-diclookup.sh
 %%EMACS_LIBDIR_WITH_VER%%/site-lisp/diclookup/od-eiwa.elc
 %%EMACS_LIBDIR_WITH_VER%%/site-lisp/diclookup/od-oxford.elc
 %%EMACS_LIBDIR_WITH_VER%%/site-lisp/diclookup/od-italian.elc
@@ -18,4 +18,4 @@ share/doc/diclookup-emacs20/deinstall-diclookup.sh
 %%EMACS_LIBDIR_WITH_VER%%/site-lisp/diclookup/sirup.elc
 %%EMACS_LIBDIR_WITH_VER%%/site-lisp/diclookup/ndtp.elc
 @dirrm %%EMACS_LIBDIR_WITH_VER%%/site-lisp/diclookup
-@dirrm share/doc/diclookup-emacs20
+@dirrm %%DOCSDIR%%
