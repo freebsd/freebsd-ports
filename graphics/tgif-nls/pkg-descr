@@ -1,0 +1,21 @@
+Tgif 4.X with NLS message catalogs support
+
+Tgif is an interactive drawing tool that allows the user to draw and
+manipulate objects in the X Window System. It's also a hyper-graphics (or
+hyper-structured-graphics) browser on the World-Wide-Web. Its hyper-text
+home page is http://bourbon.cs.umd.edu:8001/tgif/ and its hyper-graphics
+home page is http://bourbon.cs.umd.edu:8001/tgif/index.obj.
+
+Tgif drawings can be converted to a variety of formats, including GIF,
+encapsulated PostScript and XBM.
+
+Version 4 has a completely revamped 3-D user interface, as well as a host
+of new features. Tgif-4.1.5 and above version supports native language in
+the menus.
+
+Tgif depends on the `netpbm' package, available from the `ports' 
+collection. In order to native language support, `gettext' package is 
+required, and it's also available from the `ports' collection.
+
+Tgif is written, maintained and enhanced by
+William Chia-Wei Cheng (william@cs.umd.edu)

@@ -1,0 +1,11 @@
+bin/tgif
+lib/X11/app-defaults/Tgif
+lib/X11/ja_JP.EUC/app-defaults/Tgif
+lib/X11/tgif/tgificon.eps
+lib/X11/tgif/tgificon.obj
+lib/X11/tgif/tgificon.xbm
+lib/X11/tgif/tgificon.xpm
+lib/X11/tgif/tangram.sym
+lib/X11/tgif/keys.obj
+share/locale/ja/LC_MESSAGES/tgif.mo
+@dirrm lib/X11/tgif

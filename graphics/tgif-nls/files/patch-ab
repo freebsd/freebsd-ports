@@ -1,0 +1,39 @@
+--- Tgif.tmpl.orig	Sun May  2 18:21:54 1999
++++ Tgif.tmpl	Sun May  2 18:24:06 1999
+@@ -41,6 +41,15 @@
+ XIMPDEFINES      =
+ #endif
+ 
++#define IHaveSubdirs
++
++SUBDIRS = po
++
++#define PassCDebugFlags 'CDEBUGFLAGS=$(CDEBUGFLAGS)'
++
++MakeSubdirs($(SUBDIRS))
++DependSubdirs($(SUBDIRS))
++
+ PROGRAMS	= tgif XCOMM prtgif frontend11.o testdrive
+ XCOMM CDEBUGFLAGS= -g -Wall
+ XCOMM INSTPGMFLAGS= -s
+@@ -58,16 +67,16 @@
+                   -DOBJ_FILE_EXT=\"obj\" -DSYM_FILE_EXT=\"sym\" \@@\
+                   -DTEXT_FILE_EXT=\"txt\" -DPIN_FILE_EXT=\"pin\"
+ MISCDEFINES	= -D_BACKGROUND_DONT_FORK -D_USE_XDRAWPOINT_TO_PUT_A_POINT
+-MOREDEFINES	=
++MOREDEFINES	= -DUSE_XT_INITIALIZE -D_ENABLE_NLS
+ 
+ XCOMM ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ XCOMM Please see Imakefile for more defines to be added to MOREDEFINES above
+ XCOMM ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ 
+ DEPLIBS		= $(DEPXLIB)
+-LOCAL_LIBRARIES	= $(XLIB)
+-XCOMM LOCAL_LIBRARIES	= $(XMULIB) $(XTOOLLIB) $(XLIB)
++XCOMM LOCAL_LIBRARIES	= $(XLIB)
++LOCAL_LIBRARIES	= $(XMULIB) $(XTOOLLIB) $(XLIB)
+ XCOMM SYS_LIBRARIES	= -ldl -lm
+-SYS_LIBRARIES	= -lm
++SYS_LIBRARIES	= -lm -lcompat
+ EXTRA_INCLUDES += -I/usr/local/include
+ EXTRA_LIBRARIES += -L/usr/local/lib -lintl
