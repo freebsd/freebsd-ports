@@ -499,6 +499,8 @@ sharefonts-*		ports/x11-fonts/sharefonts Shareware.  Cannot be
 						authorization.
 shorten-*		ports/audio/shorten	May not be sold. May not be
 						distributed if modified.
+sid-milter-*		ports/mail/sid-milter	may incorporate intellectual
+						property, possible patent issues.
 sim*.zip		ports/emulators/sim	No commercial use
 simpjava.tar.gz		ports/java/simplicity	Restrictive license
 ski-*.i386.rpm		ports/emulators/ski	Restrictive license
