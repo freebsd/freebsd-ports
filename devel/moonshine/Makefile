@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	moonshine
-PORTVERSION=	1.1.3
+PORTVERSION=	1.1.5
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.suite3220.com/pub/Moonshine/1.1/src/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
@@ -17,6 +17,7 @@ USE_QT_VER=	2
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_XLIB=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	QTDIR="${X11BASE}"
 QTCPPFLAGS+=	-I${X11BASE}/include
 
 .include <bsd.port.pre.mk>
