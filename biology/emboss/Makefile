@@ -17,6 +17,8 @@ EXTRACT_ONLY=	${PORTNAME:U}-${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	wjv@FreeBSD.org
 
+BROKEN=		"Does not fetch"
+
 LIB_DEPENDS=	gd.2:${PORTSDIR}/graphics/gd
 
 USE_SUBMAKE=	yes
