@@ -56,5 +56,5 @@
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Net/DNS/Resolver
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Net/DNS
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/DNS
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/%%PERL_ARCH%%/auto/Net 2>/dev/null || true
 @unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Net 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net 2>/dev/null || true
