@@ -1,13 +1,13 @@
 # New ports collection makefile for:	R (letter)
-# Version required:		R-0.64.2
-# Date created:			Tue Jun 23 07:36:55 EST 1998
+# Version required:		R-0.99.0a
+# Date created:			Wed Feb 23 13:39:51 EST 2000
 # Whom:				Maurice Castro <maurice@serc.rmit.edu.au>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	R-0.64.2
-PKGNAME=	R-${PAPERSIZE}-0.64.2
+DISTNAME=	R-0.99.0a
+PKGNAME=	R-${PAPERSIZE}-0.99.0a
 CATEGORIES=	math
 MASTER_SITES=	http://lib.stat.cmu.edu/R/CRAN/src/base/ \
 		ftp://ftp.biostat.washington.edu/mirrors/R/CRAN/src/base/ \
@@ -38,9 +38,7 @@ PAPERSIZE?=	letter
 
 ALL_TARGET=all help html
 
-MAN1=	R.1 Rd2txt.1 Rdconv.1
-MLINKS=	Rdconv.1 Sd2Rd.1 \
-	Rdconv.1 Rdindex.1
+MAN1=	R.1
 
 test:
 	@(cd ${WRKSRC}; make test-All)
