@@ -10,7 +10,7 @@ PORTVERSION=	1.32
 CATEGORIES=	net security
 MASTER_SITES=	http://jeff.wwti.com/nemesis/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	molter@tin.it
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libnet.a:${PORTSDIR}/net/libnet
 
