@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	xsidplay
-PORTVERSION=	1.5.4
+PORTVERSION=	1.6b11
 CATEGORIES=	audio emulators
 MASTER_SITES=	http://www.geocities.com/SiliconValley/Lakes/5147/sidplay/packages/ \
 		http://www.freenix.no/~anders/
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/./_/g}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	anders@fix.no
@@ -25,10 +24,12 @@ USE_LIBTOOL=	yes
 CONFIGURE_ENV=	MOC="${X11BASE}/bin/moc2"
 CONFIGURE_ARGS=	--with-qt-includes=${X11BASE}/include/qt2 \
 		--with-qt-libraries=${X11BASE}/lib \
-		--with-sidplay-includes=${LOCALBASE}/include \
-		--with-sidplay-library=${LOCALBASE}/lib \
+		--with-sidplay-inc=${LOCALBASE}/include \
+		--with-sidplay-lib=${LOCALBASE}/lib \
 		--with-x-includes=${X11BASE}/include \
 		--with-x-libraries=${X11BASE}/lib
+
+CFLAGS+=	-D_THREAD_SAFE
 
 .include <bsd.port.pre.mk>
 
