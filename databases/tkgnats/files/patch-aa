@@ -1,0 +1,20 @@
+--- Makefile.orig	Sat Apr 18 10:34:36 1998
++++ Makefile	Sat Apr 18 10:36:24 1998
+@@ -5,7 +5,7 @@
+ #################################################
+ 
+ # WISHPROG can be a full path or just program name.
+-WISHPROG	= wish
++WISHPROG	= wish8.1
+ 
+ # Set GNATS=network if you _are_ using the GNATS daemon "gnatsd".
+ # Set GNATS=local   if you're going to access disk files directly.
+@@ -16,7 +16,7 @@
+ 
+ ########## TkGnats installation locations
+ 
+-prefix		= /usr/local
++prefix		= $(PREFIX)
+ 
+ ########## tkgnats executable location
+ BINDIR		= $(prefix)/bin
