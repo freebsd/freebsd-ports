@@ -3,7 +3,7 @@
 # Date created:		24 September 1994
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.4 1994/11/01 20:52:47 jkh Exp $
+# $Id: Makefile,v 1.5 1995/04/01 12:48:55 jkh Exp $
 #
 
 DISTNAME=	xarchie-2.0.10
@@ -13,6 +13,6 @@ MASTER_SITES+=	ftp://ftp.funet.fi/pub/X11/contrib/applications/
 CATEGORIES+=	networking
 
 USE_IMAKE=	yes
-DEPENDS=	${PORTSDIR}/net/archie
+EXEC_DEPENDS=	archie:${PORTSDIR}/net/archie
 
 .include <bsd.port.mk>
