@@ -12,7 +12,6 @@ lib/X11/xcin25/doc/Cin
 lib/X11/xcin25/doc/CopyRight
 lib/X11/xcin25/doc/FAQ
 lib/X11/xcin25/doc/README
-lib/X11/xcin25/doc/README.En
 lib/X11/xcin25/doc/SETUP
 lib/X11/xcin25/doc/Todo
 lib/X11/xcin25/doc/Usage
@@ -28,7 +27,6 @@ lib/X11/xcin25/doc/modules/im_comm
 lib/X11/xcin25/doc/modules/zh_hex
 lib/X11/xcin25/tab/big5/array30.tab
 lib/X11/xcin25/tab/big5/bims_pinyin.tab
-lib/X11/xcin25/tab/big5/cantonese.tab
 lib/X11/xcin25/tab/big5/cj.tab
 lib/X11/xcin25/tab/big5/default.phr
 lib/X11/xcin25/tab/big5/phone.tab
@@ -40,14 +38,12 @@ lib/X11/xcin25/tab/big5/yin.db
 lib/X11/xcin25/tab/big5hkscs/cj.tab
 lib/X11/xcin25/tab/big5hkscs/default.phr
 lib/X11/xcin25/tab/big5hkscs/sys.tab
-lib/X11/xcin25/tab/gb2312/biaoxingma.tab
 lib/X11/xcin25/tab/gb2312/default.phr
 lib/X11/xcin25/tab/gb2312/jtcj_gb.tab
 lib/X11/xcin25/tab/gb2312/pinyin.tab
 lib/X11/xcin25/tab/gb2312/shuangpin.tab
 lib/X11/xcin25/tab/gb2312/sys.tab
 lib/X11/xcin25/tab/gb2312/wubizixing.tab
-lib/X11/xcin25/tab/gb2312/zhiranma.tab
 lib/X11/xcin25/tab/gbk/default.phr
 lib/X11/xcin25/tab/gbk/sys.tab
 share/locale/zh_TW.Big5/LC_MESSAGES/xcin.mo
