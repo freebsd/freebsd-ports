@@ -3,4 +3,4 @@ libraries, Garbage-collector, stack-expandor, C-interface,
 GNU-readline and GNU-Emacs interface, very fast compiler,
 X11 interface using XPCE (info: ftp swi.psy.uva.nl:/pub/xpce).
 
-WWW: http://www.swi-pl.org/
+WWW: http://www.swi-prolog.org/
