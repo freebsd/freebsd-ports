@@ -110,6 +110,7 @@ bin/tmda-sendmail
 %%PORTDOCS%%%%DOCSDIR%%/index.html
 %%PORTDOCS%%%%DOCSDIR%%/install.html
 %%PORTDOCS%%%%DOCSDIR%%/inuse.html
+%%PORTDOCS%%%%DOCSDIR%%/logos.html
 %%PORTDOCS%%%%DOCSDIR%%/mirrors.html
 %%PORTDOCS%%%%DOCSDIR%%/press.html
 %%PORTDOCS%%%%DOCSDIR%%/requirements.html
