@@ -56,6 +56,7 @@
     SUBDIR += dtd2relax
     SUBDIR += dtdinst
     SUBDIR += dtdparse
+    SUBDIR += eo-aspell
     SUBDIR += eruby
     SUBDIR += expat
     SUBDIR += expat2
