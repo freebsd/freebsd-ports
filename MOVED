@@ -191,4 +191,22 @@ x11-fm/rox-base||2003-03-24|obsolete
 graphics/xvid|multimedia/xvid|2003-03-29|new category
 print/dvipdfm-cjk|print/dvipdfmx|2003-03-29|port renamed
 games/tetris|games/bsdtris|2003-04-02|port renamed (see ports/13693)
+misc/p5-Business-CreditCard|finance/p5-Business-CreditCard|2003-04-03|port renamed (see ports/50557)
+misc/p5-Business-OnlinePayment|finance/p5-Business-OnlinePayment|2003-04-03|port renamed (see ports/50557)
+misc/p5-Business-OnlinePayment-2CheckOut|finance/p5-Business-OnlinePayment-2CheckOut|2003-04-03|port renamed (see ports/50557)
+misc/p5-Business-OnlinePayment-AuthorizeNet|finance/p5-Business-OnlinePayment-AuthorizeNet|2003-04-03|port renamed (see ports/50557)
+misc/p5-Business-OnlinePayment-BankOfAmerica|finance/p5-Business-OnlinePayment-BankOfAmerica|2003-04-03|port renamed (see ports/50557)
+misc/p5-Business-OnlinePayment-Beanstream|finance/p5-Business-OnlinePayment-Beanstream|2003-04-03|port renamed (see ports/50557)
+misc/p5-Business-OnlinePayment-Cardstream|finance/p5-Business-OnlinePayment-Cardstream|2003-04-03|port renamed (see ports/50557)
+misc/p5-Business-OnlinePayment-Jettis|finance/p5-Business-OnlinePayment-Jettis|2003-04-03|port renamed (see ports/50557)
+misc/p5-Business-OnlinePayment-LinkPoint|finance/p5-Business-OnlinePayment-LinkPoint|2003-04-03|port renamed (see ports/50557)
+misc/p5-Business-OnlinePayment-MerchantCommerce|finance/p5-Business-OnlinePayment-MerchantCommerce|2003-04-03|port renamed (see ports/50557)
+misc/p5-Business-OnlinePayment-Network1Financial|finance/p5-Business-OnlinePayment-Network1Financial|2003-04-03|port renamed (see ports/50557)
+misc/p5-Business-OnlinePayment-PayConnect|finance/p5-Business-OnlinePayment-PayConnect|2003-04-03|port renamed (see ports/50557)
+misc/p5-Business-OnlinePayment-PaymentsGateway|finance/p5-Business-OnlinePayment-PaymentsGateway|2003-04-03|port renamed (see ports/50557)
+misc/p5-Business-OnlinePayment-SurePay|finance/p5-Business-OnlinePayment-SurePay|2003-04-03|port renamed (see ports/50557)
+misc/p5-Business-OnlinePayment-TCLink|finance/p5-Business-OnlinePayment-TCLink|2003-04-03|port renamed (see ports/50557)
+misc/p5-Business-OnlinePayment-VirtualNet|finance/p5-Business-OnlinePayment-VirtualNet|2003-04-03|port renamed (see ports/50557)
+misc/p5-Business-OnlinePayment-eSec|finance/p5-Business-OnlinePayment-eSec|2003-04-03|port renamed (see ports/50557)
+misc/p5-Business-OnlinePayment-WorldPay-Junior|finance/p5-Business-WorldPay-Junior|2003-04-03|port renamed (see ports/50557)
 math/p5-Math-Trig||2003-04-03|in base perl5 suite
