@@ -1,0 +1,113 @@
+include/Producer/Barrier
+include/Producer/Block
+include/Producer/BlockingQueue
+include/Producer/Camera
+include/Producer/CameraConfig
+include/Producer/CameraGroup
+include/Producer/Events
+include/Producer/Export
+include/Producer/InputArea
+include/Producer/Keyboard
+include/Producer/KeyboardMouse
+include/Producer/Math
+include/Producer/Mutex
+include/Producer/Referenced
+include/Producer/RenderSurface
+include/Producer/Thread
+include/Producer/Timer
+include/Producer/Trackball
+include/Producer/Types
+include/Producer/Version
+include/Producer/VisualChooser
+include/Producer/Window3D
+include/Producer/osgCameraGroup
+include/Producer/osgSceneHandler
+lib/libProducer.so
+lib/libProducer.so.0
+@dirrm include/Producer
+%%PORTDOCS%%%%DOCSDIR%%/CameraConfig.bnf
+%%PORTDOCS%%%%DOCSDIR%%/CameraConfig.example
+%%PORTDOCS%%%%DOCSDIR%%/Notes
+%%PORTDOCS%%%%DOCSDIR%%/directors_chair.jpg
+%%PORTDOCS%%%%DOCSDIR%%/documentation.html
+%%PORTDOCS%%%%DOCSDIR%%/download.html
+%%PORTDOCS%%%%DOCSDIR%%/doxy.cfg
+%%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/install.html
+%%PORTDOCS%%%%DOCSDIR%%/prerequisites.html
+%%PORTDOCS%%%%DOCSDIR%%/producer_name.html
+%%PORTDOCS%%%%DOCSDIR%%/Tutorial/index.html
+%%PORTDOCS%%%%DOCSDIR%%/Tutorial/producer_camera.jpg
+%%PORTDOCS%%%%DOCSDIR%%/Tutorial/producers_chair.jpg
+%%PORTDOCS%%%%DOCSDIR%%/Tutorial/SourceCode/Camera/GNUmakefile
+%%PORTDOCS%%%%DOCSDIR%%/Tutorial/SourceCode/Camera/MySceneHandler
+%%PORTDOCS%%%%DOCSDIR%%/Tutorial/SourceCode/Camera/example1.cpp
+%%PORTDOCS%%%%DOCSDIR%%/Tutorial/SourceCode/Camera/glut_teapot.cpp
+%%PORTDOCS%%%%DOCSDIR%%/Tutorial/SourceCode/CameraGroup/GNUmakefile
+%%PORTDOCS%%%%DOCSDIR%%/Tutorial/SourceCode/CameraGroup/MySceneHandler
+%%PORTDOCS%%%%DOCSDIR%%/Tutorial/SourceCode/CameraGroup/example1.cpp
+%%PORTDOCS%%%%DOCSDIR%%/Tutorial/SourceCode/CameraGroup/example2.cpp
+%%PORTDOCS%%%%DOCSDIR%%/Tutorial/SourceCode/CameraGroup/example3.cpp
+%%PORTDOCS%%%%DOCSDIR%%/Tutorial/SourceCode/CameraGroup/glut_teapot.cpp
+%%PORTDOCS%%%%DOCSDIR%%/Tutorial/SourceCode/CameraGroup/oneWindow.cfg
+%%PORTDOCS%%%%DOCSDIR%%/Tutorial/SourceCode/CameraGroup/twoProjectionRects.cfg
+%%PORTDOCS%%%%DOCSDIR%%/Tutorial/SourceCode/CameraGroup/twoWindows.cfg
+%%PORTDOCS%%%%DOCSDIR%%/Tutorial/SourceCode/GNUmakefile
+%%PORTDOCS%%%%DOCSDIR%%/Tutorial/SourceCode/KeyboardMouse/GNUmakefile
+%%PORTDOCS%%%%DOCSDIR%%/Tutorial/SourceCode/KeyboardMouse/MyKeyboardMouseCallback
+%%PORTDOCS%%%%DOCSDIR%%/Tutorial/SourceCode/KeyboardMouse/MySceneHandler
+%%PORTDOCS%%%%DOCSDIR%%/Tutorial/SourceCode/KeyboardMouse/MySceneHandler2
+%%PORTDOCS%%%%DOCSDIR%%/Tutorial/SourceCode/KeyboardMouse/example1.cpp
+%%PORTDOCS%%%%DOCSDIR%%/Tutorial/SourceCode/KeyboardMouse/example2.cpp
+%%PORTDOCS%%%%DOCSDIR%%/Tutorial/SourceCode/KeyboardMouse/example3.cpp
+%%PORTDOCS%%%%DOCSDIR%%/Tutorial/SourceCode/KeyboardMouse/example4.cpp
+%%PORTDOCS%%%%DOCSDIR%%/Tutorial/SourceCode/KeyboardMouse/example5.cpp
+%%PORTDOCS%%%%DOCSDIR%%/Tutorial/SourceCode/KeyboardMouse/example6.cpp
+%%PORTDOCS%%%%DOCSDIR%%/Tutorial/SourceCode/KeyboardMouse/glut_teapot.cpp
+%%PORTDOCS%%%%DOCSDIR%%/Tutorial/SourceCode/KeyboardMouse/threePipe.cfg
+%%PORTDOCS%%%%DOCSDIR%%/Tutorial/SourceCode/KeyboardMouse/twoPipe.cfg
+%%PORTDOCS%%%%DOCSDIR%%/Tutorial/SourceCode/KeyboardMouse/twoWindows.cfg
+%%PORTDOCS%%%%DOCSDIR%%/Tutorial/SourceCode/Make/makedefs
+%%PORTDOCS%%%%DOCSDIR%%/Tutorial/SourceCode/Make/makerules
+%%PORTDOCS%%%%DOCSDIR%%/Tutorial/SourceCode/Motif/GNUmakefile
+%%PORTDOCS%%%%DOCSDIR%%/Tutorial/SourceCode/Motif/MotifTest
+%%PORTDOCS%%%%DOCSDIR%%/Tutorial/SourceCode/Motif/README
+%%PORTDOCS%%%%DOCSDIR%%/Tutorial/SourceCode/Motif/example1.cpp
+%%PORTDOCS%%%%DOCSDIR%%/Tutorial/SourceCode/Motif/example2.cpp
+%%PORTDOCS%%%%DOCSDIR%%/Tutorial/SourceCode/Motif/gui.cpp
+%%PORTDOCS%%%%DOCSDIR%%/Tutorial/SourceCode/Motif/gui.h
+%%PORTDOCS%%%%DOCSDIR%%/Tutorial/SourceCode/Motif/test.cfg
+%%PORTDOCS%%%%DOCSDIR%%/Tutorial/SourceCode/RenderSurface/GNUmakefile
+%%PORTDOCS%%%%DOCSDIR%%/Tutorial/SourceCode/RenderSurface/MyGraphics
+%%PORTDOCS%%%%DOCSDIR%%/Tutorial/SourceCode/RenderSurface/example1.cpp
+%%PORTDOCS%%%%DOCSDIR%%/Tutorial/SourceCode/RenderSurface/glut_teapot.cpp
+%%PORTDOCS%%%%DOCSDIR%%/Tutorial/SourceCode/Window3D/GNUmakefile
+%%PORTDOCS%%%%DOCSDIR%%/Tutorial/SourceCode/Window3D/MyGraphics
+%%PORTDOCS%%%%DOCSDIR%%/Tutorial/SourceCode/Window3D/glut_teapot.cpp
+%%PORTDOCS%%%%DOCSDIR%%/Tutorial/SourceCode/Window3D/main.cpp
+%%PORTDOCS%%%%DOCSDIR%%/Tutorial/VC++6.0/CameraGroup_1/CameraGroup_1.dsp
+%%PORTDOCS%%%%DOCSDIR%%/Tutorial/VC++6.0/CameraGroup_2/CameraGroup_2.dsp
+%%PORTDOCS%%%%DOCSDIR%%/Tutorial/VC++6.0/Camera_1/Camera_1.dsp
+%%PORTDOCS%%%%DOCSDIR%%/Tutorial/VC++6.0/KeyboardMouse_1/KeyboardMouse_1.dsp
+%%PORTDOCS%%%%DOCSDIR%%/Tutorial/VC++6.0/KeyboardMouse_2/KeyboardMouse_2.dsp
+%%PORTDOCS%%%%DOCSDIR%%/Tutorial/VC++6.0/KeyboardMouse_3/KeyboardMouse_3.dsp
+%%PORTDOCS%%%%DOCSDIR%%/Tutorial/VC++6.0/KeyboardMouse_4/KeyboardMouse_4.dsp
+%%PORTDOCS%%%%DOCSDIR%%/Tutorial/VC++6.0/Tutorial.dsw
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/Tutorial/SourceCode/Camera
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/Tutorial/SourceCode/CameraGroup
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/Tutorial/SourceCode/KeyboardMouse
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/Tutorial/SourceCode/Make
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/Tutorial/SourceCode/Motif
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/Tutorial/SourceCode/RenderSurface
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/Tutorial/SourceCode/Window3D
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/Tutorial/SourceCode
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/Tutorial/VC++6.0/CameraGroup_1
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/Tutorial/VC++6.0/CameraGroup_2
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/Tutorial/VC++6.0/Camera_1
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/Tutorial/VC++6.0/KeyboardMouse_1
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/Tutorial/VC++6.0/KeyboardMouse_2
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/Tutorial/VC++6.0/KeyboardMouse_3
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/Tutorial/VC++6.0/KeyboardMouse_4
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/Tutorial/VC++6.0
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/Tutorial
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

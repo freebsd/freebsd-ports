@@ -233,6 +233,7 @@
     SUBDIR += opendx
     SUBDIR += opendx-samples
     SUBDIR += opengl-man
+    SUBDIR += openproducer
     SUBDIR += openrm
     SUBDIR += ophoto
     SUBDIR += optipng
