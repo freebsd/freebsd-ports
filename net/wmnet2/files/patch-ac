@@ -1,0 +1,10 @@
+--- wmnet.c.orig	Thu May  4 21:01:14 2000
++++ wmnet.c	Wed Dec 19 17:43:40 2001
+@@ -732,6 +732,7 @@
+ 			case ButtonPress:
+ 				if(event.xbutton.button == Button1 && click_command != NULL) {
+ 					if (fork() == 0) {
++						setgid(getgid());
+ 						execl("/bin/sh", "sh", "-c", click_command, NULL);
+ 						perror("wmnet: execl()");
+ 						exit(15);
