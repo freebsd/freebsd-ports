@@ -1,13 +1,13 @@
 # New ports collection makefile for:	control-center
-# Version required:			0.99
+# Version required:			0.99.1
 # Date created:				29 Dec 1998
 # Whom:					Vanilla I. Shu <vanilla@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.1.1.1 1999/01/05 13:12:01 vanilla Exp $
+# $Id: Makefile,v 1.2 1999/01/14 20:57:30 vanilla Exp $
 #
 
-DISTNAME=	control-center-0.99
-PKGNAME=	gnomecontrolcenter-0.99
+DISTNAME=	control-center-0.99.1
+PKGNAME=	gnomecontrolcenter-0.99.1
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.jimpick.com/pub/mirrors/gnome/sources/latest/ \
 		ftp://ftp.geo.net/pub/gnome/sources/latest/ \
@@ -18,8 +18,6 @@ MAINTAINER=	vanilla@FreeBSD.ORG
 
 RUN_DEPENDS=	panel:${PORTSDIR}/x11/gnomecore
 LIB_DEPENDS=	gnome.1:${PORTSDIR}/x11/gnomelibs
-
-BROKEN=		"Can't works with gnomelibs 0.99.3"
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
