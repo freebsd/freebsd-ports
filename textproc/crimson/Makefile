@@ -7,6 +7,7 @@
 
 PORTNAME=	crimson
 PORTVERSION=	1.1.3
+PORTREVISION=	1
 CATEGORIES=	textproc java
 MASTER_SITES=	http://xml.apache.org/dist/crimson/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-bin
