@@ -6718,6 +6718,7 @@ p5-Apache-Session	ports/www/p5-Apache-Session
 p5-Apache-Session-PHP	ports/www/p5-Apache-Session-PHP
 p5-Apache-Session-SharedMem	ports/www/p5-Apache-Session-SharedMem
 p5-Apache-Session-Wrapper	ports/www/p5-Apache-Session-Wrapper
+p5-Apache-Singleton	ports/www/p5-Apache-Singleton
 p5-Apache-SubProcess	ports/www/p5-Apache-SubProcess
 p5-Apache-Test	ports/www/p5-Apache-Test
 p5-Apache-XBEL	ports/textproc/p5-Apache-XBEL
