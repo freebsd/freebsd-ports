@@ -9,6 +9,7 @@
     SUBDIR += XFree86-4-fontScalable
     SUBDIR += Xft
     SUBDIR += Xg
+    SUBDIR += ae_fonts_mono
     SUBDIR += artwiz-fonts
     SUBDIR += bdfresize
     SUBDIR += bitmap-fonts
