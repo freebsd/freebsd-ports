@@ -3,7 +3,7 @@
 # Date created:     	15th August 1997
 # Whom:			Richard Seaman <dick@tar.com>
 #
-# $Id$
+# $Id: Makefile,v 1.37 1997/08/15 15:44:27 markm Exp $
 
 DISTNAME=       apache_1.2.1
 PKGNAME=        apacheSSL-1.2.1
@@ -15,7 +15,7 @@ MAIN_SRC=	${DISTNAME}${EXTRACT_SUFX}
 SSL_EXTRAS=	apache_1.2.0+ssl_1.8.tar.gz
 DISTFILES=	${MAIN_SRC} ${SSL_EXTRAS}
 EXTRACT_ONLY=	${MAIN_SRC}
-BUILD_DEPENDS=	ssleay:${PORTSDIR}/security/SSLeay-0.8.1
+BUILD_DEPENDS=	ssleay:${PORTSDIR}/security/SSLeay
 RESTRICTED=     "Contains cryptography"
 
 MAINTAINER=	markm@freebsd.org
