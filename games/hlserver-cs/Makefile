@@ -17,7 +17,7 @@ MASTER_SITES?=	ftp://ftp.icrontic.com/pub/ \
 		ftp://ftp.icsmedia.de/pub/games/halflife/counter_strike/linux_server/ \
 		http://ftp1download.gamespy.com/fileplanet/fpnew/action/half-life/modifications/cstrike/ \
 		http://fileplanet.games-world.net/dl/ftp1.gamespy.com/fpnew/action/half-life/modifications/cstrike/ \
-		ftp://fileplanet.blueyonder.co.uk/ftp1.gamespy.com/fpnew/action/half-life/modifications/cstrike/ \
+		ftp://fileplanet.blueyonder.co.uk/ftp1.gamespy.com/fpnew/action/half-life/modifications/cstrike/
 PKGNAMEPREFIX=	hlserver-
 .ifndef(DISTNAME)
 DISTFILES?=	cs_11b_full.tar.gz cs_11c_up.tar.gz
