@@ -1,0 +1,44 @@
+
+$FreeBSD$
+
+--- Makefile.Linux.Mesa.orig	Sun Feb  2 19:59:42 1997
++++ Makefile.Linux.Mesa	Wed Mar 14 13:02:41 2001
+@@ -3,23 +3,23 @@
+ 
+ .SUFFIXES: .cc .o
+ 
+-ARCH = -DLINUX -DMESA #-DSOUND
++ARCH = -DLINUX -DPREFIX=\"$(PREFIX)\" #-DUSING_MESA -DSOUND
+ 
+ MESA = Mesa
+ 
+-INCLUDE = -I/usr/include -I$(MESA)/include -I$(MESA)/include/GL
++INCLUDE = -I$(X11BASE)/include -I$(X11BASE)/include/GL
+ 
+-CFLAGS = $(INCLUDE) $(ARCH) -O2 -m486 -Wall -pipe \
++CFLAGS += $(INCLUDE) $(ARCH) -DSOUND -Wall -pipe \
+ 	-pedantic -funroll-loops -mieee-fp
+ 
+-LDFLAGS = -L/usr/X11R6/lib -L$(MESA)/lib
++LDFLAGS = -L$(X11BASE)/lib
+ 
+ TAR	= tar  
+ COMPRESS = compress -v
+ MV	= mv
+ RM	= rm -f 
+ LS	= /bin/ls
+-CC 	= gcc -Wall
++CC 	?= gcc -Wall
+ CD	= cd
+ 
+ .c.o:	
+@@ -31,8 +31,7 @@
+ linux-elf: $(Obj)
+ 	@echo "Linking $(Obj) to $(EXECNAME)..."
+ 	$(CC) -o $(EXECNAME) $(Obj) $(LDFLAGS) \
+-	-lMesaaux -lMesatk -lMesaGLU -lMesaGL \
+-	-lXext -lX11 -lm
++	-laux -lGLU -lGL -lXext -lX11 -lm
+ 	@echo "****** Done ******"
+ 
+ linux: $(Obj)
