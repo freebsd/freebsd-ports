@@ -1,0 +1,2 @@
+lib/perl5/site_perl/%%PERL_VER%%/Apache/AuthenRadius.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/AuthenRadius/.packlist

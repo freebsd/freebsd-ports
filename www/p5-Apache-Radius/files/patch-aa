@@ -1,0 +1,11 @@
+--- AuthenRadius.pm.orig	Sun Aug  1 00:14:23 1999
++++ AuthenRadius.pm	Mon Sep 20 20:05:38 1999
+@@ -37,7 +37,7 @@
+ 	my $timeout = $r->dir_config("Auth_Radius_timeout") || 5;
+ 
+ 	# Sanity for usernames and passwords.
+-	if (length $user > 64 or $user =~ /[^A-Za-z0-9]/) {
++	if (length $user > 64 or $user =~ /[^A-Za-z0-9@._-]/) {
+ 		$r->log_reason("Apache::AuthenRadius username too long or"
+ 			."contains illegal characters", $r->uri);
+ 		$r->note_basic_auth_failure;
