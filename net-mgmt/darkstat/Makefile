@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	darkstat
-PORTVERSION=	1.1
+PORTVERSION=	1.21
 CATEGORIES=	net
 MASTER_SITES=	http://members.optushome.com.au/darkmoon7/net/ \
 		ftp://ftp.nuug.no/pub/anders/distfiles/
