@@ -1,8 +1,18 @@
+bin/abbrowser_conduit
 bin/alarmd
+bin/conduitExpense
+bin/conduitKNotes
 bin/ical2vcal
 bin/kandy
 bin/kandy_client
 bin/korganizer
+bin/kpilot
+bin/kpilotDaemon
+bin/null_conduit
+bin/pilotListener
+bin/popmail_conduit
+bin/todoconduit
+bin/vcalconduit
 include/kgantt/KGantt.h
 include/kgantt/KGanttBarConfig.h
 include/kgantt/KGanttItem.h
@@ -74,6 +84,8 @@ lib/libvcard.so
 lib/libvcard.so.0
 share/applnk/Applications/korganizer.desktop
 share/applnk/Utilities/kandy.desktop
+share/applnk/Utilities/kpilot.desktop
+share/applnk/Utilities/kpilotdaemon.desktop
 share/apps/kandy/default.kandy
 share/apps/kandy/kandymobileui.rc
 share/apps/kandy/kandyui.rc
@@ -189,6 +201,11 @@ share/apps/korganizer/sounds/lightmag.wav
 share/apps/korganizer/sounds/onscreen.wav
 share/apps/korganizer/sounds/spinout.wav
 share/apps/korganizer/tips
+share/apps/kpilot/icons/hicolor/16x16/actions/backup.png
+share/apps/kpilot/icons/hicolor/16x16/actions/fastsync.png
+share/apps/kpilot/icons/hicolor/16x16/actions/hotsync.png
+share/apps/kpilot/icons/hicolor/16x16/actions/restore.png
+share/apps/kpilot/kpilotui.rc
 share/autostart/alarmd.desktop
 share/config/korganizerrc
 share/doc/HTML/en/kandy/common
@@ -251,17 +268,34 @@ share/doc/HTML/en/kpilot/toolbar_backup.png
 share/doc/HTML/en/kpilot/toolbar_hotsync.png
 share/icons/hicolor/16x16/apps/kandy.png
 share/icons/hicolor/16x16/apps/korganizer.png
+share/icons/hicolor/16x16/apps/kpilot.png
 share/icons/hicolor/32x32/apps/kandy.png
 share/icons/hicolor/32x32/apps/korganizer.png
+share/icons/hicolor/32x32/apps/kpilot.png
 share/icons/hicolor/48x48/apps/korganizer.png
+share/icons/locolor/16x16/apps/kpilot.xpm
+share/services/abbrowser_conduit.desktop
+share/services/expense-conduit.desktop
+share/services/knotes-conduit.desktop
+share/services/null-conduit.desktop
+share/services/popmail-conduit.desktop
+share/services/todo-conduit.desktop
+share/services/vcal-conduit.desktop
+share/servicetypes/kpilotconduit.desktop
+@dirrm share/icons/locolor/16x16/apps
+@dirrm share/icons/locolor/16x16
+@dirrm share/icons/locolor
 @dirrm share/icons/hicolor/48x48/apps
 @dirrm share/icons/hicolor/32x32/apps
-@dirrm share/icons/hicolor/16x16/apps
 @dirrm share/doc/HTML/en/kpilot
 @dirrm share/doc/HTML/en/korganizer
 @dirrm share/doc/HTML/en/kandy
-@dirrm share/config
 @dirrm share/autostart
+@dirrm share/apps/kpilot/icons/hicolor/16x16/actions
+@dirrm share/apps/kpilot/icons/hicolor/16x16
+@dirrm share/apps/kpilot/icons/hicolor
+@dirrm share/apps/kpilot/icons
+@dirrm share/apps/kpilot
 @dirrm share/apps/korganizer/sounds
 @dirrm share/apps/korganizer/icons/hicolor/32x32/actions
 @dirrm share/apps/korganizer/icons/hicolor/32x32
@@ -286,5 +320,6 @@ share/icons/hicolor/48x48/apps/korganizer.png
 @dirrm share/apps/kandy
 @dirrm share/applnk/Utilities
 @dirrm share/applnk/Applications
+@dirrm share/applnk
 @dirrm include/rmm
 @dirrm include/kgantt

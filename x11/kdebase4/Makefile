@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	kdebase
-PORTVERSION=	2.2.1
-PORTREVISION=	1
+PORTVERSION=	2.2.2
 CATEGORIES?=	x11 kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION}/src
@@ -15,6 +14,9 @@ DIST_SUBDIR=	KDE
 
 MAINTAINER?=	kde@FreeBSD.org
 
+BUILD_DEPENDS=	autoconf213:${PORTSDIR}/devel/autoconf213 \
+		automake14:${PORTSDIR}/devel/automake14 \
+		objprelink:${PORTSDIR}/devel/objprelink
 LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext
 
 USE_KDELIBS_VER=2
@@ -27,8 +29,13 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	RUN_KAPPFINDER=no
 CONFIGURE_ARGS+=--with-xdmdir=${X11BASE}/lib/X11/xdm \
 		--with-qt-dir=${X11BASE} \
-		--without-ldap \
-		--disable-closure
+		--without-ldap --disable-closure --enable-objprelink
+.if defined(PARALLEL_PACKAGE_BUILD) || defined(WANT_KDE_FINAL)
+CONFIGURE_ARGS+=--enable-final
+.endif
+.if defined(PARALLEL_PACKAGE_BUILD) || defined(WANT_KDE_NDEBUG)
+CONFIGURE_ARGS+=--disable-debug
+.endif
 USE_GMAKE=	yes
 
 .include <bsd.port.pre.mk>
@@ -56,6 +63,15 @@ post-extract:
 	@${ECHO} "exit 0" >> ${WRKSRC}/mkpamserv
 
 pre-configure:
+	${MKDIR} ${WRKSRC}/auto-bin
+.for AC in autoconf autoheader
+	${LN} -sf ${LOCALBASE}/bin/${AC}213 ${WRKSRC}/auto-bin/${AC}
+.endfor
+.for AM in automake aclocal
+	${LN} -sf ${LOCALBASE}/bin/${AM}14 ${WRKSRC}/auto-bin/${AM}
+.endfor
+	cd ${WRKSRC} && env PATH=$$PATH:${WRKSRC}/auto-bin \
+		${GMAKE} -f Makefile.cvs
 	${PERL} -pi -e "s@version-info 3:0@version-info ${SOMAJOR}:${SOMINOR}@g" ${WRKSRC}/libkonq/Makefile.in
 	${PERL} -pi -e "s@version-info 1:0:0@version-info ${SOMAJOR}:${SOMINOR}@g" ${WRKSRC}/khelpcenter/Makefile.in
 	${PERL} -pi -e "s@version-info 1:1:0@version-info ${SOMAJOR}:${SOMINOR}@g" ${WRKSRC}/nsplugins/Makefile.in

@@ -6,15 +6,11 @@ bin/kmailcvt
 bin/knewstickerstub
 bin/knode
 bin/korn
-bin/kotalkd
 bin/kppp
 bin/kppplogview
 bin/ksirc
 bin/ksticker
-bin/ktalkd
-bin/ktalkdlg
 bin/lisa
-bin/mail.local
 bin/reslisa
 include/kmailIface.h
 include/mimelib/address.h
@@ -51,8 +47,6 @@ include/mimelib/text.h
 include/mimelib/token.h
 include/mimelib/utility.h
 include/mimelib/uuencode.h
-lib/kde2/libkcm_ktalkd.la
-lib/kde2/libkcm_ktalkd.so
 lib/kio_lan.la
 lib/kio_lan.so
 lib/ksirc.la
@@ -82,7 +76,6 @@ share/applnk/Internet/Kppp.desktop
 share/applnk/Internet/kit.desktop
 share/applnk/Internet/kppplogview.desktop
 share/applnk/Internet/ksirc.desktop
-share/applnk/Settings/Network/kcmktalkd.desktop
 share/applnk/Settings/Network/kcmnewsticker.desktop
 share/applnk/Settings/Network/lanbrowser.desktop
 share/applnk/Settings/Personalization/kcmnewsticker.desktop
@@ -369,6 +362,7 @@ share/apps/kppp/Rules/Germany/Addcom.rst
 share/apps/kppp/Rules/Germany/CallOkaynet.rst
 share/apps/kppp/Rules/Germany/Callino_Surf_Basic.rst
 share/apps/kppp/Rules/Germany/Callino_Surf_Plus.rst
+share/apps/kppp/Rules/Germany/Callisa_City.rst
 share/apps/kppp/Rules/Germany/City_Activ_Plus_Option.rst
 share/apps/kppp/Rules/Germany/Cityweb.rst
 share/apps/kppp/Rules/Germany/Freenet_Enterprise.rst
@@ -462,11 +456,17 @@ share/apps/kppp/Rules/Netherlands/NedpointBasis_Lokaal.rst
 share/apps/kppp/Rules/Netherlands/NedpointBelBespaar_Lokaal.rst
 share/apps/kppp/Rules/Norway/Local_Area.rst
 share/apps/kppp/Rules/Norway/Long_Distance.rst
+share/apps/kppp/Rules/Poland/Dialog_Atut.rst
+share/apps/kppp/Rules/Poland/Dialog_Atut_020.rst
+share/apps/kppp/Rules/Poland/Dialog_Efekt.rst
+share/apps/kppp/Rules/Poland/Dialog_Profit.rst
 share/apps/kppp/Rules/Poland/Internetia.rst
 share/apps/kppp/Rules/Poland/Netia_100km_Niebieska.rst
 share/apps/kppp/Rules/Poland/Netia_100km_Zielona.rst
 share/apps/kppp/Rules/Poland/Netia_Lokalne_Niebieska.rst
 share/apps/kppp/Rules/Poland/Netia_Lokalne_Zielona.rst
+share/apps/kppp/Rules/Poland/Netia_Niebieska.rst
+share/apps/kppp/Rules/Poland/Netia_Zielona.rst
 share/apps/kppp/Rules/Poland/TPSA.rst
 share/apps/kppp/Rules/Poland/TP_100km.rst
 share/apps/kppp/Rules/Poland/TP_Lokalne.rst
@@ -479,6 +479,9 @@ share/apps/kppp/Rules/Portugal/PT_YesNET_Ilhas.rst
 share/apps/kppp/Rules/Romania/Telecom_GSM.rst
 share/apps/kppp/Rules/Romania/Telecom_Interurban.rst
 share/apps/kppp/Rules/Romania/Telecom_Local.rst
+share/apps/kppp/Rules/Russia/TEMPLATE.ru
+share/apps/kppp/Rules/Russia/Yamalelectroliaison.rst
+share/apps/kppp/Rules/Russia/mtu-intel_standart.rst
 share/apps/kppp/Rules/Singapore/SingTel_Local.rst
 share/apps/kppp/Rules/Slovakia/Internetovy_tarif_019XY.rst
 share/apps/kppp/Rules/Slovakia/ST_medzimesto.rst
@@ -604,7 +607,6 @@ share/apps/ksirc/test.pl
 share/apps/ksirc/tester.pl
 share/apps/lisa/README
 share/config/ksircrc
-share/config/ktalkdrc
 share/doc/HTML/en/kdict/applet.png
 share/doc/HTML/en/kdict/common
 share/doc/HTML/en/kdict/conf.png
@@ -724,7 +726,6 @@ share/icons/hicolor/16x16/apps/knode.png
 share/icons/hicolor/16x16/apps/korn.png
 share/icons/hicolor/16x16/apps/kppp.png
 share/icons/hicolor/16x16/apps/ksirc.png
-share/icons/hicolor/16x16/apps/ktalkd.png
 share/icons/hicolor/32x32/apps/kdict.png
 share/icons/hicolor/32x32/apps/kit.png
 share/icons/hicolor/32x32/apps/kmail.png
@@ -734,7 +735,6 @@ share/icons/hicolor/32x32/apps/knode.png
 share/icons/hicolor/32x32/apps/korn.png
 share/icons/hicolor/32x32/apps/kppp.png
 share/icons/hicolor/32x32/apps/ksirc.png
-share/icons/hicolor/32x32/apps/ktalkd.png
 share/icons/hicolor/48x48/apps/kdict.png
 share/icons/hicolor/48x48/apps/kit.png
 share/icons/hicolor/48x48/apps/kmail.png
@@ -744,15 +744,12 @@ share/icons/hicolor/48x48/apps/knode.png
 share/icons/hicolor/48x48/apps/korn.png
 share/icons/hicolor/48x48/apps/kppp.png
 share/icons/hicolor/48x48/apps/ksirc.png
-share/icons/hicolor/48x48/apps/ktalkd.png
 share/services/knewsservice.protocol
 share/services/kntsrcfilepropsdlg.desktop
 share/services/lan.protocol
 share/services/rlan.protocol
-share/sounds/ktalkd.wav
 @dirrm share/icons/hicolor/48x48/apps
 @dirrm share/icons/hicolor/32x32/apps
-@dirrm share/icons/hicolor/16x16/apps
 @dirrm share/doc/HTML/en/lisa
 @dirrm share/doc/HTML/en/ktalkd
 @dirrm share/doc/HTML/en/ksirc
@@ -763,8 +760,6 @@ share/sounds/ktalkd.wav
 @dirrm share/doc/HTML/en/kmail
 @dirrm share/doc/HTML/en/kit
 @dirrm share/doc/HTML/en/kdict
-@dirrm share/doc/HTML/en
-@dirrm share/config
 @dirrm share/apps/lisa
 @dirrm share/apps/ksirc/pics
 @dirrm share/apps/ksirc
@@ -778,6 +773,7 @@ share/sounds/ktalkd.wav
 @dirrm share/apps/kppp/Rules/South_Afrika
 @dirrm share/apps/kppp/Rules/Slovakia
 @dirrm share/apps/kppp/Rules/Singapore
+@dirrm share/apps/kppp/Rules/Russia
 @dirrm share/apps/kppp/Rules/Romania
 @dirrm share/apps/kppp/Rules/Portugal
 @dirrm share/apps/kppp/Rules/Poland
@@ -864,7 +860,6 @@ share/sounds/ktalkd.wav
 @dirrm share/apps/kdict/icons/hicolor
 @dirrm share/apps/kdict/icons
 @dirrm share/apps/kdict
-@dirrm share/apps/kconf_update
 @dirrm share/applnk/Utilities
 @dirrm share/applnk/Settings/Personalization
 @dirrm share/applnk/Settings/Network
@@ -872,5 +867,4 @@ share/sounds/ktalkd.wav
 @dirrm share/applnk/Internet
 @dirrm share/applnk/.hidden
 @dirrm share/applnk
-@dirrm lib/kde2
 @dirrm include/mimelib

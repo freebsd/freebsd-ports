@@ -7,6 +7,7 @@
 
 PORTNAME?=	qt
 PORTVERSION?=	2.3.1
+PORTREVISION=	1
 CATEGORIES?=	x11-toolkits
 MASTER_SITES=	ftp://ftp.trolltech.com/qt/source/ \
 		ftp://ftp.chg.ru/pub/X11/qt/source/
@@ -18,6 +19,7 @@ MAINTAINER?=	kde@FreeBSD.org
 LIB_DEPENDS=	mng.1:${PORTSDIR}/graphics/libmng \
 		png.5:${PORTSDIR}/graphics/png \
 		jpeg.9:${PORTSDIR}/graphics/jpeg
+BUILD_DEPENDS=	objprelink:${PORTSDIR}/devel/objprelink
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_MESA=	yes
@@ -75,7 +77,10 @@ pre-fetch:
 .endif
 .endif
 
-pre-configure:
+qt-pre-configure:
+	@true
+
+pre-configure: qt-pre-configure
 	${PERL} -pi -e "s,gcc,${CC},g; s,g\+\+,${CXX},g; \
 			s,/usr/X11R6,${X11BASE},g; \
 			s,-fno-exceptions,-fno-exceptions ${CXXFLAGS} -I/usr/include -D_PTH_H_ -D_PTH_PTHREAD_H_ -frerun-cse-after-loop,g" ${CONFIG}
@@ -86,6 +91,10 @@ pre-configure:
 			s,cp src/moc/moc bin/moc,cp src/moc/moc2 bin/moc2,g; \
 			s,symlinks  src-moc src-mt sub-src sub-tools sub-tutorial sub-examples,symlinks src-moc src-mt sub-src sub-tools,g" \
 		${WRKSRC}/Makefile
+.if (${PORTNAME} == "qt")
+	${PERL} -pi -e "s@\$$(MAKE) designer@@g; s@uic \\\@uic@g; \
+			s@\t\tdesigner@@g" ${WRKSRC}/tools/designer/Makefile.in
+.endif
 
 post-configure:
 	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} symlinks)

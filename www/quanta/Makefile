@@ -31,6 +31,9 @@ USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+= --with-extra-includes=${LOCALBASE}/include \
 		--disable-closure
+.if defined(PARALLEL_PACKAGE_BUILD) || defined(WANT_KDE_NDEBUG)
+CONFIGURE_ARGS+=--disable-debug
+.endif
 USE_GMAKE=	yes
 
 DOCS=		css html javascript php

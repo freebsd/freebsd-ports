@@ -1897,7 +1897,6 @@ share/icons/locolor/32x32/apps/lskat.png
 @dirrm share/icons/locolor
 @dirrm share/icons/hicolor/48x48/apps
 @dirrm share/icons/hicolor/32x32/apps
-@dirrm share/icons/hicolor/16x16/apps
 @dirrm share/doc/HTML/en/lskat
 @dirrm share/doc/HTML/en/kwin4
 @dirrm share/doc/HTML/en/ktuberling
@@ -2027,3 +2026,4 @@ share/icons/locolor/32x32/apps/lskat.png
 @dirrm share/applnk/Games/Board
 @dirrm share/applnk/Games/Arcade
 @dirrm share/applnk/Games
+@dirrm share/applnk

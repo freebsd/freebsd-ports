@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	kdemultimedia
-PORTVERSION=	2.2.1
+PORTVERSION=	2.2.2
 CATEGORIES=	audio kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION}/src
@@ -14,14 +14,21 @@ DIST_SUBDIR=	KDE
 
 MAINTAINER=	kde@FreeBSD.org
 
+BUILD_DEPENDS=	autoconf213:${PORTSDIR}/devel/autoconf213 \
+		automake14:${PORTSDIR}/devel/automake14 \
+		objprelink:${PORTSDIR}/devel/objprelink
 RUN_DEPENDS=	xanim:${PORTSDIR}/graphics/xanim
 
 USE_KDELIBS_VER=2
 USE_BZIP2=	yes
 INSTALLS_SHLIB=	yes
-USE_AUTOCONF=	yes
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-qt-includes=${X11BASE}/include/qt2 \
-		--with-qt-libraries=${X11BASE}/lib
+		--with-qt-libraries=${X11BASE}/lib \
+		--enable-objprelink
+.if defined(PARALLEL_PACKAGE_BUILD) || defined(WANT_KDE_NDEBUG)
+CONFIGURE_ARGS+=--disable-debug
+.endif
 USE_GMAKE=	yes
 MAKE_ENV=	${CONFIGURE_ENV}
 
@@ -46,9 +53,21 @@ pre-everything::
 .endif
 
 pre-configure:
-	${PERL} -pi -e "s@all_includes=\"@all_includes=\"-I/usr/include @g" ${WRKSRC}/acinclude.m4 ${WRKSRC}/aclocal.m4
-	${PERL} -pi -e 's,kscd_compile=no,kscd_compile=yes,g; \
-			s,kde_artsplug_compiles = xno,kde_argsplug_compiles = x,g' ${WRKSRC}/configure.in
+	${PERL} -pi -e "s@all_includes=\"@all_includes=\"-I/usr/include @g" \
+		${WRKSRC}/acinclude.m4 ${WRKSRC}/aclocal.m4
+	${PERL} -pi -e \
+		's,kscd_compile=no,kscd_compile=yes,g; \
+		s,kde_artsplug_compiles = xno,kde_artsplug_compiles = x,g' \
+		${WRKSRC}/kscd/configure.in.in
+	${MKDIR} ${WRKSRC}/auto-bin
+.for AC in autoconf autoheader
+	${LN} -sf ${LOCALBASE}/bin/${AC}213 ${WRKSRC}/auto-bin/${AC}
+.endfor
+.for AM in automake aclocal
+	${LN} -sf ${LOCALBASE}/bin/${AM}14 ${WRKSRC}/auto-bin/${AM}
+.endfor
+	cd ${WRKSRC} && env PATH=$$PATH:${WRKSRC}/auto-bin \
+		${GMAKE} -f Makefile.cvs
 
 post-install:
 	@${ECHO_MSG}

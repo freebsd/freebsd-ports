@@ -15,6 +15,8 @@ DIST_SUBDIR=	KDE
 
 MAINTAINER=	kde@FreeBSD.org
 
+BUILD_DEPENDS=	autoconf213:${PORTSDIR}/devel/autoconf213 \
+		automake14:${PORTSDIR}/devel/automake14
 LIB_DEPENDS=	iconv.2:${PORTSDIR}/converters/iconv
 
 USE_KDELIBS_VER=2
@@ -22,7 +24,13 @@ USE_PYTHON=	yes
 PYTHON_VERSION=	python2.1
 USE_BZIP2=	yes
 INSTALLS_SHLIB=	yes
-USE_AUTOCONF=	yes
+GNU_CONFIGURE=	yes
+.if defined(PARALLEL_PACKAGE_BUILD) || defined(WANT_KDE_FINAL)
+CONFIGURE_ARGS+=--enable-final
+.endif
+.if defined(PARALLEL_PACKAGE_BUILD) || defined(WANT_KDE_NDEBUG)
+CONFIGURE_ARGS+=--disable-debug
+.endif
 USE_GMAKE=	yes
 
 post-patch:
@@ -32,6 +40,15 @@ post-patch:
 		${WRKSRC}/templates/Illustration.desktop
 
 pre-configure:
+	${MKDIR} ${WRKSRC}/auto-bin
+.for AC in autoconf autoheader
+	${LN} -sf ${LOCALBASE}/bin/${AC}213 ${WRKSRC}/auto-bin/${AC}
+.endfor
+.for AM in automake aclocal
+	${LN} -sf ${LOCALBASE}/bin/${AM}14 ${WRKSRC}/auto-bin/${AM}
+.endfor
+	cd ${WRKSRC} && env PATH=$$PATH:${WRKSRC}/auto-bin \
+		${GMAKE} -f Makefile.cvs
 	find ${WRKSRC} -name Makefile.in | xargs ${PERL} -pi -e \
 		"s@LIBPYTHON =@LIBPYTHON= ${PTHREAD_LIBS}@g"
 	${PERL} -pi -e "s@la_LIBADD =@la_LIBADD= ${PTHREAD_LIBS}@g" \
