@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.28 1999/05/06 03:51:13 fenner Exp $
+# $Id: Makefile,v 1.29 1999/05/11 02:16:55 sada Exp $
 #
 
     SUBDIR += FWF
@@ -35,6 +35,7 @@
     SUBDIR += tk81
     SUBDIR += tkstep80
     SUBDIR += v
+    SUBDIR += wxgtk
     SUBDIR += xbae
     SUBDIR += xforms
     SUBDIR += xg
