@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	totem
-PORTVERSION=	0.98.0
+PORTVERSION=	0.99.0
 CATEGORIES=	multimedia gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/..$//}
@@ -19,7 +19,7 @@ LIB_DEPENDS=	xine.6:${PORTSDIR}/multimedia/libxine
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
-USE_GNOME=	gnomeprefix gnomehack libgnomeui
+USE_GNOME=	gnomeprefix gnomehack gnomedesktop
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
