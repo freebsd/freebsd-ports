@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.206 1999/07/26 18:16:52 sada Exp $
+# $Id: Makefile,v 1.207 1999/08/02 23:17:23 cpiazza Exp $
 #
 
     SUBDIR += ElectricFence
@@ -150,6 +150,7 @@
     SUBDIR += rinfo
     SUBDIR += sawt
     SUBDIR += scogdb
+    SUBDIR += sdl
     SUBDIR += sfio
     SUBDIR += shtool
     SUBDIR += stlport
