@@ -1,11 +1,11 @@
---- plugins/qt-gui/aclocal.m4.orig	Tue Jul 11 18:54:25 2000
-+++ plugins/qt-gui/aclocal.m4	Wed Aug  9 14:53:40 2000
+--- plugins/qt-gui/aclocal.m4.orig	Wed Jul 12 05:54:25 2000
++++ plugins/qt-gui/aclocal.m4	Mon Sep 25 14:45:24 2000
 @@ -59,7 +59,7 @@
        fi
  
        for qt_dir in $qt_library_dirs; do
 -        for qt_check_lib in $qt_dir/libqt.so.2; do
-+        for qt_check_lib in $qt_dir/libqt2.so.3; do
++        for qt_check_lib in $qt_dir/libqt2.so.4; do
            if test -r $qt_check_lib; then
              ac_qt_libraries=$qt_dir
              break 2
