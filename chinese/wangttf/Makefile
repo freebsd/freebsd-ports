@@ -1,24 +1,33 @@
 # New ports collection makefile for:	zh-wangttf
-# Date created:		19 Nov 2000
-# Whom:			Jing-Tang Keith Jang <keith@FreeBSD.org>
+# Date created:		1 Sep 2004
+# Whom:			Shen Chuan-Hsing <statue@freebsd.sinica.edu.tw>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	wangttf
-PORTVERSION=	1.0
-PORTREVISION=	2
+PORTVERSION=	1.3
 CATEGORIES=	chinese x11-fonts
-MASTER_SITES=	ftp://freebsd.sinica.edu.tw/pub/statue/wangttf/
-DISTFILES=	wcl-01.ttf.bz2 wcl-02.ttf.bz2 wcl-03.ttf.bz2 wcl-04.ttf.bz2 \
-		wcl-05.ttf.bz2 wcl-06.ttf.bz2 wcl-07.ttf.bz2 wcl-08.ttf.bz2 \
-		wcl-09.ttf.bz2 wcl-10.ttf.bz2
+MASTER_SITES=	ftp://cle.linux.org.tw/pub/fonts/wangfonts/ \
+		ftp://cle.linux.org.tw/pub/fonts/wangfonts/WCL/
+DISTFILES=	wp010-05.ttf wp010-08.ttf wp110-05.ttf wp110-08.ttf \
+		wp210-05.ttf wp210-08.ttf wp310-05.ttf wp310-08.ttf \
+		wt001.ttf wt002.ttf wt003.ttf wt004.ttf wt005.ttf \
+		wt006.ttf wt009.ttf wt011.ttf wt014.ttf wt021.ttf \
+		wt024.ttf wt028.ttf wt034.ttf wt040.ttf wt064.ttf \
+		wt071.ttf wtcc02.ttf wtcc15.ttf wtg-06cut1x.ttf \
+		wthc06.ttf wts11.ttf wts43.ttf wts47.ttf wts55.ttf \
+		WCL-01.ttf WCL-02.ttf WCL-03.ttf WCL-04.ttf WCL-05.ttf \
+		WCL-06.ttf WCL-07.ttf WCL-08.ttf WCL-09.ttf WCL-10.ttf
 EXTRACT_ONLY=
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Ten Chinese Big5 TrueType fonts, made by Dr. Hann-Tzong Wang
+COMMENT=	Many Chinese Big5 TrueType fonts, made by Dr. Hann-Tzong Wang
 
-RUN_DEPENDS=	ttfm.sh:${PORTSDIR}/chinese/ttfm
+BUILD_DEPENDS=	fc-cache:${PORTSDIR}/x11-fonts/fontconfig \
+		ttfm.sh:${PORTSDIR}/chinese/ttfm
+RUN_DEPENDS=	fc-cache:${PORTSDIR}/x11-fonts/fontconfig \
+		ttfm.sh:${PORTSDIR}/chinese/ttfm
 
 DIST_SUBDIR=	zh-wangttf
 USE_BZIP2=	yes
@@ -27,45 +36,18 @@ NO_BUILD=	yes
 SHAREMODE=	644
 FONTDIR=	${PREFIX}/share/fonts/TrueType
 XFONTDIR=	${X11BASE}/lib/X11/fonts/TrueType
-INSTALL_ENV=	PKG_PREFIX=${PREFIX} \
-		DEFAULT=${DEFAULT} WANT_CJK=${WANT_CJK} WANT_GS=${WANT_GS} \
-		WITHOUT_X=${WITHOUT_X}
 
 .include <bsd.port.pre.mk>
 
-.if defined(WANT_CJK)
-RUN_DEPENDS+=	bg5latex:${PORTSDIR}/chinese/CJK
-.endif
-.if defined(WANT_GS)
-RUN_DEPENDS+=	${LOCALBASE}/share/ghostscript/Resource/ai0/CMap/Identity-H:${PORTSDIR}/print/adobe-cmaps
-.endif
-
-pre-fetch:
-.if defined(WANT_CJK)
-	@${ECHO} "CJK support will be added."
-.endif
-.if defined(WANT_GS)
-	@${ECHO} "Ghostscript support will be added."
-.endif
-.if defined(WITHOUT_X)
-	@${ECHO} "X Window support will NOT be added."
-.endif
-.if !defined(WANT_CJK) && !defined(WANT_GS) && !defined(WITHOUT_X)
-	@${ECHO} --
-	@${ECHO} "Type \"make WANT_CJK=yes\" if you want CJK support."
-	@${ECHO} "Type \"make WANT_GS=yes\" if you want Ghostscript support."
-	@${ECHO} "Type \"make WITHOUT_X=yes\" if you DONT want X Window support."
-	@${ECHO} "You can use them in combinations."
-	@${ECHO} --
-.endif
-
 do-install:
 	@${MKDIR} ${FONTDIR}
+	@${ECHO_MSG} "===> Running ttfm.sh"
 .for i in ${DISTFILES}
 	@${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/${i} ${FONTDIR}
-	@${EXTRACT_CMD} -dv ${FONTDIR}/${i}
+	-@${PREFIX}/bin/ttfm.sh --add xttfm ${i}
 .endfor
+	@${ECHO_MSG} "===> Running fc-cache"
+	-@${X11BASE}/bin/fc-cache -f -v ${XFONTDIR}
 	@${INSTALL_DATA} ${FILESDIR}/wangttf.txt ${FONTDIR}
-	@${SETENV} ${INSTALL_ENV} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.post.mk>
