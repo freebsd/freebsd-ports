@@ -61,18 +61,9 @@ share/doc/wwwoffle/pl/README.lang
 @dirrm share/doc/wwwoffle/ru
 @dirrm share/doc/wwwoffle
 @cwd %%WWWOFFLE_SPOOL%%
-upgrade-config-2.5-2.6.pl
-upgrade-config-2.x-2.5.pl
-upgrade-config.pl
-outgoing/O98hgItueyIbW8udnZuMjpg
-outgoing/Oh-W1UuCia4-wLoZYEnRrXw
-outgoing/Ox3oAN7UMcBN5bQi-qYGkoA
-outgoing/U98hgItueyIbW8udnZuMjpg
-outgoing/Uh-W1UuCia4-wLoZYEnRrXw
-outgoing/Ux3oAN7UMcBN5bQi-qYGkoA
 html/README
-html/de/Welcome.html
 html/de/README.CONF.html
+html/de/Welcome.html
 html/de/local/index.html
 html/de/messages/AddCacheInfo.html
 html/de/messages/CantRefreshPosted.html
@@ -91,11 +82,11 @@ html/de/messages/ConfigurationSection-Tail.html
 html/de/messages/ConfigurationUrl-Body.html
 html/de/messages/ConfigurationUrl-Head.html
 html/de/messages/ConfigurationUrl-Tail.html
+html/de/messages/ConfirmRequest.html
+html/de/messages/ControlAuthFail.html
 html/de/messages/ControlDelete-Body.html
 html/de/messages/ControlDelete-Head.html
 html/de/messages/ControlDelete-Tail.html
-html/de/messages/ConfirmRequest.html
-html/de/messages/ControlAuthFail.html
 html/de/messages/ControlEditError.html
 html/de/messages/ControlEditPage-Body.html
 html/de/messages/ControlEditPage-Head.html
@@ -108,8 +99,8 @@ html/de/messages/ControlWWWOFFLE-Tail.html
 html/de/messages/ExecCGIFailed.html
 html/de/messages/FTPDir-Head.html
 html/de/messages/FTPDir-Tail.html
-html/de/messages/FileLocked.html
 html/de/messages/FTPPut.html
+html/de/messages/FileLocked.html
 html/de/messages/HostNotCached.html
 html/de/messages/HostNotGot.html
 html/de/messages/IllegalProtocol.html
@@ -239,6 +230,7 @@ html/en/messages/InfoRequest.html
 html/en/messages/InfoRequested.html
 html/en/messages/InfoSource-Head.html
 html/en/messages/InfoSource-Tail.html
+html/en/messages/KeepCache.html
 html/en/messages/MethodUnsupported.html
 html/en/messages/MonitorFormError.html
 html/en/messages/MonitorIllegal.html
@@ -538,6 +530,8 @@ html/nl/messages/AddCacheInfo.html
 html/nl/messages/CantRefreshPosted.html
 html/nl/messages/ConfigurationAuthFail.html
 html/nl/messages/ConfigurationChange.html
+html/nl/messages/ConfigurationIllegal.html
+html/nl/messages/ConfigurationItem-Body.html
 html/nl/messages/ConfigurationItem-Head.html
 html/nl/messages/ConfigurationItem-Tail.html
 html/nl/messages/ConfigurationPage-Body.html
@@ -550,14 +544,20 @@ html/nl/messages/ConfigurationUrl-Body.html
 html/nl/messages/ConfigurationUrl-Head.html
 html/nl/messages/ConfigurationUrl-Tail.html
 html/nl/messages/ConfirmRequest.html
+html/nl/messages/ControlAuthFail.html
+html/nl/messages/ControlDelete-Body.html
+html/nl/messages/ControlDelete-Head.html
+html/nl/messages/ControlDelete-Tail.html
 html/nl/messages/ControlEditError.html
 html/nl/messages/ControlEditPage-Body.html
 html/nl/messages/ControlEditPage-Head.html
 html/nl/messages/ControlEditPage-Tail.html
 html/nl/messages/ControlEditUpdate.html
+html/nl/messages/ControlIllegal.html
 html/nl/messages/ControlPage.html
 html/nl/messages/ControlWWWOFFLE-Head.html
 html/nl/messages/ControlWWWOFFLE-Tail.html
+html/nl/messages/ExecCGIFailed.html
 html/nl/messages/FTPDir-Head.html
 html/nl/messages/FTPPut.html
 html/nl/messages/FileLocked.html
@@ -567,20 +567,35 @@ html/nl/messages/IllegalProtocol.html
 html/nl/messages/Index-Head.html
 html/nl/messages/Index-Tail.html
 html/nl/messages/IndexError-Body.html
+html/nl/messages/IndexHost-Body.html
 html/nl/messages/IndexHost-Head.html
 html/nl/messages/IndexHost-Tail.html
 html/nl/messages/IndexIllegal.html
+html/nl/messages/IndexLastOut-Body.html
 html/nl/messages/IndexLastOut-Head.html
 html/nl/messages/IndexLastOut-Tail.html
+html/nl/messages/IndexLastTime-Body.html
 html/nl/messages/IndexLastTime-Head.html
 html/nl/messages/IndexLastTime-Tail.html
+html/nl/messages/IndexMonitor-Body.html
 html/nl/messages/IndexMonitor-Head.html
 html/nl/messages/IndexMonitor-Tail.html
+html/nl/messages/IndexOutgoing-Body.html
 html/nl/messages/IndexOutgoing-Head.html
 html/nl/messages/IndexOutgoing-Tail.html
+html/nl/messages/IndexProtocol-Body.html
 html/nl/messages/IndexProtocol-Head.html
 html/nl/messages/IndexRoot-Body.html
 html/nl/messages/IndexSeparator-Body.html
+html/nl/messages/InfoCached.html
+html/nl/messages/InfoContents-Body.html
+html/nl/messages/InfoContents-Head.html
+html/nl/messages/InfoContents-Tail.html
+html/nl/messages/InfoIllegal.html
+html/nl/messages/InfoRequest.html
+html/nl/messages/InfoRequested.html
+html/nl/messages/InfoSource-Head.html
+html/nl/messages/InfoSource-Tail.html
 html/nl/messages/MethodUnsupported.html
 html/nl/messages/MonitorFormError.html
 html/nl/messages/MonitorIllegal.html
@@ -588,6 +603,7 @@ html/nl/messages/MonitorPage.html
 html/nl/messages/MonitorWillGet.html
 html/nl/messages/PageNotFound.html
 html/nl/messages/ProxyAuthFail.html
+html/nl/messages/Redirect.html
 html/nl/messages/RefreshFormError.html
 html/nl/messages/RefreshIllegal.html
 html/nl/messages/RefreshPage.html
@@ -765,6 +781,12 @@ html/ru/messages/SearchIllegal.html
 html/ru/messages/ServerError.html
 html/ru/messages/UserNeedsPass.html
 html/ru/messages/WillGet.html
+outgoing/O98hgItueyIbW8udnZuMjpg
+outgoing/Oh-W1UuCia4-wLoZYEnRrXw
+outgoing/Ox3oAN7UMcBN5bQi-qYGkoA
+outgoing/U98hgItueyIbW8udnZuMjpg
+outgoing/Uh-W1UuCia4-wLoZYEnRrXw
+outgoing/Ux3oAN7UMcBN5bQi-qYGkoA
 search/htdig/conf/htdig-full.conf
 search/htdig/conf/htdig-incr.conf
 search/htdig/conf/htdig-lasttime.conf
@@ -784,18 +806,21 @@ search/mnogosearch/conf/result.html
 search/mnogosearch/scripts/wwwoffle-indexer-full
 search/mnogosearch/scripts/wwwoffle-indexer-lasttime
 search/mnogosearch/scripts/wwwoffle-mnogosearch
+search/namazu/conf/mknmzrc
+search/namazu/conf/namazurc
 search/namazu/db/NMZ.body
 search/namazu/db/NMZ.foot
 search/namazu/db/NMZ.head
 search/namazu/db/NMZ.result.normal
 search/namazu/db/NMZ.result.short
 search/namazu/db/NMZ.tips
-search/namazu/conf/mknmzrc
-search/namazu/conf/namazurc
 search/namazu/scripts/wwwoffle-mknmz-full
 search/namazu/scripts/wwwoffle-mknmz-lasttime
 search/namazu/scripts/wwwoffle-namazu
 search/udmsearch
+upgrade-config-2.5-2.6.pl
+upgrade-config-2.x-2.5.pl
+upgrade-config.pl
 @dirrm lastout
 @dirrm local
 @dirrm html/de/local
@@ -803,13 +828,13 @@ search/udmsearch
 @dirrm html/de/search/htdig
 @dirrm html/de/search
 @dirrm html/de
+@dirrm html/en/local/dontget
+@dirrm html/en/local
 @dirrm html/en/messages
 @dirrm html/en/search/htdig
 @dirrm html/en/search/mnogosearch
 @dirrm html/en/search/namazu
 @dirrm html/en/search
-@dirrm html/en/local/dontget
-@dirrm html/en/local
 @dirrm html/en
 @dirrm html/es/messages
 @dirrm html/es/search/htdig
@@ -817,9 +842,9 @@ search/udmsearch
 @dirrm html/es/search
 @dirrm html/es
 @dirrm html/fr/messages
-@dirrm html/fr/search/htdig
 @dirrm html/fr/search/mnogosearch
 @dirrm html/fr/search/namazu
+@dirrm html/fr/search/htdig
 @dirrm html/fr/search
 @dirrm html/fr
 @dirrm html/it/messages
@@ -829,12 +854,12 @@ search/udmsearch
 @dirrm html/it
 @dirrm html/nl/messages
 @dirrm html/nl
+@dirrm html/pl/local
 @dirrm html/pl/messages
 @dirrm html/pl/search/htdig
-@dirrm html/pl/search/mnogosearch
 @dirrm html/pl/search/namazu
+@dirrm html/pl/search/mnogosearch
 @dirrm html/pl/search
-@dirrm html/pl/local
 @dirrm html/pl
 @dirrm html/ru/local
 @dirrm html/ru/messages
