@@ -22,7 +22,8 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libcnews.a:${PORTSDIR}/news/cnews
 NO_WRKSUBDIR=	yes
 MAN1=		nntpxmit.1
 MAN8=		nntpd.8c acttimes.8c
-PLIST=		${WRKDIR}/.PLIST.sed
+PLIST_SUB+=     NEWSBIN=${NEWSBIN:S=${PREFIX}/==}
+PLIST_SUB+=    	NEWSCTL=${NEWSCTL:S=${PREFIX}/==}
 
 MODIFY=		conf.h Makefile
 
@@ -48,9 +49,6 @@ pre-configure:
 		-e "s=/usr/local/man=${PREFIX}/man=" \
 		${WRKSRC}/${i}.sed >${WRKSRC}/${i}
 .endfor
-	@${SED} \
-		-e "s=news/cnewsbin=${NEWSBIN:S=${PREFIX}/==}=" \
-		${PKGDIR}/PLIST >${PLIST}
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/overview.fmt ${NEWSCTL}/overview.fmt
