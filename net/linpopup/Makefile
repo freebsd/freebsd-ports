@@ -23,6 +23,10 @@ MAN1=		linpopup.1 LinPopUp.1
 
 USE_GNOME=	gtk12
 USE_X_PREFIX=	yes
+USE_REINPLACE=	yes
+
+post-patch:
+	${REINPLACE_CMD} -e "s#/doc/#/share/doc/#" ${WRKSRC}/Makefile
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
