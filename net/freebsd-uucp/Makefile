@@ -26,6 +26,9 @@ FIXME=	etc/periodic/daily/340.uucp etc/periodic/daily/410.status-uucp \
 	etc/periodic/weekly/300.uucp
 BPKGNAME=	base-uucp-1.06.1
 
+# fix errros for -std=iso9899:1999 in FreeBSD 5.1
+MAKE_ENV+=	CSTD=gnu99
+
 post-extract:
 	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} \
 		${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} extract)
