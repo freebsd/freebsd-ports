@@ -6,21 +6,23 @@
 #
 
 PORTNAME=	gdb
-PORTVERSION=	5.0
-PORTREVISION=	3
+PORTVERSION=	5.2
+PORTREVISION=	0
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	gdb
 
 MAINTAINER=	jeh@FreeBSD.org
 
-PATCHFILES=	${GDBNAME}-rtems-20010314.diff
+PATCHFILES=	${GDBNAME}-rtems-base-20020612.diff \
+		${GDBNAME}-rtems-cg-20020612.diff \
+		${GDBNAME}-rtems-rdbg-20020612.diff
 PATCH_SITES=	ftp://ftp.oarcorp.com/pub/rtems/snapshots/c_tools/source/ \
 		http://rtems.thehousleys.net/
 
 LCLTARGET?=	i386-rtems
 
-GDBNAME=	gdb-5.0
+GDBNAME=	gdb-5.2
 MASTERDIR=	${.CURDIR}/../i386-rtems-gdb
 PLIST=		${PKGDIR}/pkg-plist.${LCLTARGET}
 
@@ -41,7 +43,7 @@ CONFIGURE_SCRIPT?=	../${GDBNAME}/configure
 
 PATCH_DIST_STRIP?=	-p1
 
-MAN1=		${LCLTARGET}-gdb.1
+MAN1+=		${LCLTARGET}-gdb.1
 
 pre-configure:
 	@(cd ${WRKDIR} ; ${MKDIR} build-${LCLTARGET})
