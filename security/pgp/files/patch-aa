@@ -1,0 +1,45 @@
+*** makefile.orig	Thu Jan 18 04:42:36 1996
+--- makefile	Sat Feb 19 11:06:55 2000
+***************
+*** 79,85 ****
+  	@echo "where <system> can be:"
+  	@echo "	386bsd, 3b1, 3b1_asm, aix370, aix386, amix-68k-gcc, apollo,"
+  	@echo "	apollo-gcc, atari,aux(*), aux-gcc, bsd, bsdgcc, convexos,"
+! 	@echo "	dgux, djgpp, encore, freebsd, hpux-68k(*), hpux-68k-ansi,"
+  	@echo "	hpux-68k-gcc, hpux-pa(*), hpux-pa-ansi, hpux-pa-gcc,"
+  	@echo "	hpux9-pa-ansi, irix, irix_asm, isc, isc_asm, linux, linux-68k,"
+  	@echo "	machten, mach_386, mips-ultrix, netbsd, netbsd_68k, newsasm,"
+--- 79,85 ----
+  	@echo "where <system> can be:"
+  	@echo "	386bsd, 3b1, 3b1_asm, aix370, aix386, amix-68k-gcc, apollo,"
+  	@echo "	apollo-gcc, atari,aux(*), aux-gcc, bsd, bsdgcc, convexos,"
+! 	@echo "	dgux, djgpp, encore, freebsd-{alpha,i386}, hpux-68k(*), hpux-68k-ansi,"
+  	@echo "	hpux-68k-gcc, hpux-pa(*), hpux-pa-ansi, hpux-pa-gcc,"
+  	@echo "	hpux9-pa-ansi, irix, irix_asm, isc, isc_asm, linux, linux-68k,"
+  	@echo "	machten, mach_386, mips-ultrix, netbsd, netbsd_68k, newsasm,"
+***************
+*** 171,179 ****
+  	$(MAKE) all CC=gcc LD=gcc \
+  	CFLAGS="$(RSAINCDIR) -O2 -DHIGHFIRST -DUNIX -DPORTABLE -DIDEA32"
+  
+! freebsd:
+  	$(MAKE) all LD="$(CC) -s" OBJS_EXT="_80386.o _zmatch.o" \
+! 	CFLAGS="$(RSAINCDIR) -O2 -fno-strength-reduce -DUNIX -DIDEA32 -DASM \
+  	-DMAX_NAMELEN=255"
+  
+  386bsd:
+--- 171,184 ----
+  	$(MAKE) all CC=gcc LD=gcc \
+  	CFLAGS="$(RSAINCDIR) -O2 -DHIGHFIRST -DUNIX -DPORTABLE -DIDEA32"
+  
+! freebsd-i386:
+  	$(MAKE) all LD="$(CC) -s" OBJS_EXT="_80386.o _zmatch.o" \
+! 	CFLAGS="$(RSAINCDIR) $(OS_CFLAGS) -DUNIX -DIDEA32 -DASM \
+! 	-DMAX_NAMELEN=255"
+! 
+! freebsd-alpha:
+! 	$(MAKE) all LD="$(CC) -s" \
+! 	CFLAGS="$(RSAINCDIR) $(OS_CFLAGS) -DPORTABLE -DUNIX -DIDEA32 \
+  	-DMAX_NAMELEN=255"
+  
+  386bsd:
