@@ -437,6 +437,7 @@
     SUBDIR += phpSysInfo
     SUBDIR += phpbb
     SUBDIR += phpnuke
+    SUBDIR += phpwiki
     SUBDIR += plone
     SUBDIR += plugger
     SUBDIR += postnuke
