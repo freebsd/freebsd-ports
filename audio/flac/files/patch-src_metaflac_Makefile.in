@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- src/metaflac/Makefile.in.orig	Sat Oct  5 01:37:47 2002
++++ src/metaflac/Makefile.in	Sat Oct  5 01:38:37 2002
+@@ -144,7 +144,7 @@
+ 
+ metaflac_LDFLAGS = 
+ 
+-metaflac_LDADD = $(top_builddir)/src/libFLAC/libFLAC.la @SHARE_LIBS@ -lm
++metaflac_LDADD = $(top_builddir)/src/libFLAC/libFLAC.la @SHARE_LIBS@ @LIBICONV@ -lm
+ subdir = src/metaflac
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_CLEAN_FILES =

@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- src/flac/Makefile.in.orig	Sat Oct  5 01:37:42 2002
++++ src/flac/Makefile.in	Sat Oct  5 01:38:19 2002
+@@ -155,7 +155,7 @@
+ 	vorbiscomment.h
+ 
+ 
+-flac_LDADD = $(NEED_OGGFLAC_LIB) $(top_builddir)/src/libFLAC/libFLAC.la @OGG_LIBS@ @SHARE_LIBS@ -lm
++flac_LDADD = $(NEED_OGGFLAC_LIB) $(top_builddir)/src/libFLAC/libFLAC.la @OGG_LIBS@ @SHARE_LIBS@ @LIBICONV@ -lm
+ subdir = src/flac
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_CLEAN_FILES =

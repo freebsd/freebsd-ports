@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- doc/html/Makefile.in.orig	Sat Oct  5 01:22:20 2002
++++ doc/html/Makefile.in	Sat Oct  5 01:23:09 2002
+@@ -135,7 +135,7 @@
+ 
+ SUBDIRS = ru images
+ 
+-docdir = $(datadir)/doc/$(PACKAGE)-$(VERSION)/html
++docdir = $(datadir)/doc/$(PACKAGE)/html
+ 
+ doc_DATA = \
+ 	comparison.html \
