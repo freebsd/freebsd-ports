@@ -1,0 +1,11 @@
+--- gcc/fixinc/mkfixinc.sh.orig	Sat May 15 11:21:35 1999
++++ gcc/fixinc/mkfixinc.sh	Thu Jun 10 19:49:25 1999
+@@ -40,7 +40,7 @@
+ 
+ 	*-*-netbsd* | \
+ 	alpha*-*-linux-gnulibc1* | \
+-	i[34567]86-*-freebsd* | \
++	*-*-freebsd* | \
+ 	i[34567]86-*-netbsd* | i[34567]86-*-openbsd* | \
+ 	i[34567]86-*-solaris2* | \
+ 	sparcv9-*-solaris2* | \

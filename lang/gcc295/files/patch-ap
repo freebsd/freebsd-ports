@@ -1,0 +1,26 @@
+--- gcc/ginclude/stddef.h.orig	Wed Dec 16 13:19:25 1998
++++ gcc/ginclude/stddef.h	Tue Jun 22 11:05:25 1999
+@@ -109,7 +109,6 @@
+ #define _T_PTRDIFF
+ #define __PTRDIFF_T
+ #define _PTRDIFF_T_
+-#define _BSD_PTRDIFF_T_
+ #define ___int_ptrdiff_t_h
+ #define _GCC_PTRDIFF_T
+ #ifndef __PTRDIFF_TYPE__
+@@ -156,7 +155,6 @@
+ #define _T_SIZE
+ #define __SIZE_T
+ #define _SIZE_T_
+-#define _BSD_SIZE_T_
+ #define _SIZE_T_DEFINED_
+ #define _SIZE_T_DEFINED
+ #define ___int_size_t_h
+@@ -217,7 +215,6 @@
+ #define _T_WCHAR
+ #define __WCHAR_T
+ #define _WCHAR_T_
+-#define _BSD_WCHAR_T_
+ #define _WCHAR_T_DEFINED_
+ #define _WCHAR_T_DEFINED
+ #define _WCHAR_T_H
