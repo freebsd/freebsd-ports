@@ -5,9 +5,9 @@
 # $FreeBSD$
 
 PORTNAME=	ksocrat
-PORTVERSION=	3.1.2
+PORTVERSION=	3.2
 CATEGORIES=	russian kde
-MASTER_SITES=	http://apps.kde.com/na/2/counter/vid/9139/dld0/	\
+MASTER_SITES=	http://ksocrat.linux.kiev.ua/download/ \
 		http://voodoo.oberon.net/
 MASTER_SITE_SUBDIR=	${PORTNAME}-${PORTVERSION}
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
