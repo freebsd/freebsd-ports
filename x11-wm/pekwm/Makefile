@@ -9,19 +9,19 @@ PORTNAME=	pekwm
 PORTVERSION=	0.1.3
 PORTREVISION=	2
 CATEGORIES=	x11-wm
-MASTER_SITES=	http://pekwm.pekdon.net/files/source/
+MASTER_SITES=	http://pekwm.org/files/source/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A windowmanager based on aewm++
 
-USE_X_PREFIX=	yes
-GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
 USE_BZIP2=	yes
-
-CONFIGURE_ARGS+=	--enable-shape --disable-xft --disable-xinerama \
-			--disable-debug --enable-menus --enable-keygrabber \
-			--enable-harbour --disable-pcre
+USE_X_PREFIX=	yes
+USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ARGS=	--enable-shape --disable-xft --disable-xinerama \
+		--disable-debug --enable-menus --enable-keygrabber \
+		--enable-harbour --disable-pcre
 
 MAN1=		pekwm.1
 
