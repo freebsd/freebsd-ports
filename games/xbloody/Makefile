@@ -15,7 +15,6 @@ MAINTAINER=	kazu@jp.freebsd.org
 
 NO_WRKSUBDIR=	yes
 USE_IMAKE=	yes
-NO_INSTALL_MANPAGES= yes
 
 post-install:
 .if !defined(NOPORTDOCS)
