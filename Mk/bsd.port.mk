@@ -1609,7 +1609,7 @@ PKGINSTALLVER!= ${PKG_INFO} -P 2>/dev/null | ${SED} -e 's/.*: //'
 DISABLE_CONFLICTS=     YES
 .endif
 .if !defined(PKG_ARGS)
-PKG_ARGS=		-v -c "-${COMMENT:Q}" -d ${DESCR} -f ${TMPPLIST} -p ${PREFIX} -P "`${MAKE} package-depends | ${GREP} -v -E ${PKG_IGNORE_DEPENDS} | sort -u`" ${EXTRA_PKG_ARGS}
+PKG_ARGS=		-v -c -${COMMENT:Q} -d ${DESCR} -f ${TMPPLIST} -p ${PREFIX} -P "`${MAKE} package-depends | ${GREP} -v -E ${PKG_IGNORE_DEPENDS} | sort -u`" ${EXTRA_PKG_ARGS}
 .if exists(${PKGINSTALL})
 PKG_ARGS+=		-i ${PKGINSTALL}
 .endif
