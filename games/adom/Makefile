@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	adom
-PORTVERSION=	1.0.0
+PORTVERSION=	1.1.0
 CATEGORIES=	games linux
 MASTER_SITES=	http://www.adom.de/adom/download/linux/
-DISTNAME=	adom-100-elf
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g}-elf
 
 MAINTAINER=	rover@lglobus.ru
 
@@ -26,7 +26,7 @@ do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/adom ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for docs in readme.1st adomfaq.txt manual.doc
+.for docs in readme.1st adomfaq.txt manual.doc techstat.doc
 	@${INSTALL_DATA} ${WRKSRC}/${docs} ${DOCSDIR}
 .endfor
 .endif
