@@ -5,60 +5,48 @@
 # $FreeBSD$
 #
 
-PORTNAME=		exult
-PORTVERSION=		1.00
-CATEGORIES=		games
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
+PORTNAME=	exult
+PORTVERSION=	1.00
+PORTREVISION=	1
+CATEGORIES=	games
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ultima VII engine
 
-LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12
 RUN_DEPENDS=	timidity:${PORTSDIR}/audio/timidity
 
-ONLY_FOR_ARCHS=	i386
-
-SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
 USE_XLIB=	yes
+USE_SDL=	yes
+USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	CPPFLAGS=-I${X11BASE}/include \
+		LDFLAGS="-L${X11BASE}/lib"
 CONFIGURE_ARGS=	--with-x \
-		--x-includes=${X11BASE}/include \
-		--x-libraries=${X11BASE}/lib \
 		--disable-tools \
 		--disable-sdltest
-# SDL cannot find X11 includes in normal way
-CONFIGURE_ENV=	CPPFLAGS=-I${X11BASE}/include \
-		SDL_CONFIG="${SDL_CONFIG}"
 
 MAN6=		exult.6
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 501000
-BROKEN=		"Does not compile"
-.endif
+post-patch:
+	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
+		's|^DEBUG_FLAGS|#DEBUG_FLAGS|g'
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/exult ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/docs/exult.6 ${MANPREFIX}/man/man6
 	@${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/data/exult.flx ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/data/exult_bg.flx ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/data/exult_si.flx ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/data/midisfx.flx ${DATADIR}
-	${INSTALL_MAN} ${WRKSRC}/docs/exult.6 ${PREFIX}/man/man6
-.ifndef (NOPORTDOCS)
+.for file in exult.flx exult_bg.flx exult_si.flx midisfx.flx
+	${INSTALL_DATA} ${WRKSRC}/data/${file} ${DATADIR}
+.endfor
+.if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/FAQ ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/NEWS ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+.for file in FAQ NEWS README
+	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+.endfor
 .endif
+	@${SED} 's:/usr/local:${PREFIX}:g' ${PKGMESSAGE}
 
-post-install:
-	@${ECHO_MSG} "******************************************************************************"
-	@${ECHO_MSG} "* Original Ultima VII data is required to run Exult"
-	@${ECHO_MSG} "* Please, read ${DOCSDIR}/README for additional information"
-	@${ECHO_MSG} "******************************************************************************"
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

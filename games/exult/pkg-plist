@@ -1,10 +1,10 @@
 bin/exult
-share/exult/exult.flx
-share/exult/exult_bg.flx
-share/exult/exult_si.flx
-share/exult/midisfx.flx
-@dirrm share/exult
-%%PORTDOCS%%share/doc/exult/FAQ
-%%PORTDOCS%%share/doc/exult/NEWS
-%%PORTDOCS%%share/doc/exult/README
-%%PORTDOCS%%@dirrm share/doc/exult
+%%PORTDOCS%%%%DOCSDIR%%/FAQ
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%DATADIR%%/exult.flx
+%%DATADIR%%/exult_bg.flx
+%%DATADIR%%/exult_si.flx
+%%DATADIR%%/midisfx.flx
+@dirrm %%DATADIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
