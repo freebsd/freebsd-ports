@@ -1,0 +1,12 @@
+--- configure.orig	Mon Nov  9 19:53:49 1998
++++ configure	Fri Feb 11 09:05:44 2000
+@@ -5011,8 +5011,7 @@
+         echo "$ac_t""no" 1>&6
+       else
+         echo "$ac_t""yes" 1>&6
+-        CFLAGS="${CFLAGS} -pthread"
+-        LD_FALLBACK_FLAGS="${LD_FALLBACK_FLAGS-} -lc_r"
++        LD_FALLBACK_FLAGS="${LD_FALLBACK_FLAGS-} -pthread"
+       fi
+     ;;
+ 
