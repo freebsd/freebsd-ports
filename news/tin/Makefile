@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tin
-PORTVERSION=    1.5.9
+PORTVERSION=    1.5.10
 CATEGORIES+=	news
 MASTER_SITES=	ftp://ftp.tin.org/pub/news/clients/tin/v1.5/ \
 		ftp://nuxi.ucdavis.edu/pub/tin/v1.5/ \
@@ -15,7 +15,8 @@ MASTER_SITES=	ftp://ftp.tin.org/pub/news/clients/tin/v1.5/ \
 MAINTAINER?=    ache@FreeBSD.org
 
 LIB_DEPENDS=	uu.1:${PORTSDIR}/converters/uulib \
-		intl.1:${PORTSDIR}/devel/gettext
+		intl.1:${PORTSDIR}/devel/gettext \
+		giconv.2:${PORTSDIR}/converters/libiconv
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
@@ -29,7 +30,7 @@ CONFIGURE_ARGS=	--with-nntp-default-server=news \
 		--enable-nls \
 		--enable-curses \
 		--with-ncurses \
-		--with-mime-default-charset=ISO-8859-1 \
+		--disable-mime-strict-charset \
 		--enable-forgery \
 		--enable-break-long-lines \
 		--with-pgp=${PREFIX}/bin/pgp \
@@ -55,6 +56,12 @@ post-patch:
 
 pre-configure:
 	${CP} ${FILESDIR}/pcre.h ${WRKSRC}/pcre
+
+post-configure:
+	(nm /usr/lib/libc.a | grep -q strcasestr) && \
+		echo "#define HAVE_STRCASESTR 1" >> ${WRKSRC}/include/autoconf.h
+	echo "#define HAVE_ICONV_H 1" >> ${WRKSRC}/include/autoconf.h
+	echo "#define HAVE_ICONV 1" >> ${WRKSRC}/include/autoconf.h
 
 post-build:
 	cd ${WRKSRC}/po; gmake
