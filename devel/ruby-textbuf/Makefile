@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	textbuf
-PORTVERSION=	0.3.6
+PORTVERSION=	0.3.7
 CATEGORIES=	devel ruby
 MASTER_SITES=	http://www1.u-netsurf.ne.jp/~brew/mine/soft/
 MASTER_SITE_SUBDIR=	knu
@@ -24,6 +24,9 @@ DOCS_JA=	README.ja
 
 do-install:
 .if !defined(NOPORTDOCS)
+	${MKDIR} ${RUBY_EXAMPLESDIR}/textbuf/ja
+	${INSTALL_DATA} ${WRKSRC}/stest.rb ${RUBY_EXAMPLESDIR}/textbuf/
+	${INSTALL_DATA} ${WRKSRC}/test.rb ${RUBY_EXAMPLESDIR}/textbuf/ja/
 	${MKDIR} ${RUBY_DOCDIR}/textbuf/ja
 .for f in ${DOCS_EN}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_DOCDIR}/textbuf/

@@ -1,4 +1,8 @@
 %%RUBY_SITEARCHLIBDIR%%/textbuf.so
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/textbuf/stest.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/textbuf/ja/test.rb
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/textbuf/ja
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/textbuf
 %%PORTDOCS%%%%RUBY_DOCDIR%%/textbuf/README.en
 %%PORTDOCS%%%%RUBY_DOCDIR%%/textbuf/ja/README.ja
 %%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/textbuf/ja
