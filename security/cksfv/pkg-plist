@@ -1,3 +1,3 @@
 bin/cksfv
-share/doc/cksfv/README
-@dirrm share/doc/cksfv
+%%PORTDOCS%%share/doc/cksfv/README
+%%PORTDOCS%%@dirrm share/doc/cksfv
