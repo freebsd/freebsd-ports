@@ -4,11 +4,11 @@
    around your text!            /* around your text! */
                                 /*********************/
 
-boxes is a text filter which can draw ASCII art boxes around its input
-text. These boxes may also be removed, even if they have been badly
-damaged by editing of the text inside. Since boxes may be open on any
-side, boxes can also be used to create regional comments in any
-programming language. With the help of an editor macro or mapping,
+The boxes command is a text filter which can draw ASCII art boxes around
+its input text.  These boxes may also be removed, even if they have
+been badly damaged by editing of the text inside.  Since boxes may be
+open on any side, boxes can also be used to create regional comments in
+any programming language.  With the help of an editor macro or mapping,
 damaged boxes can easily be repaired.
 
 WWW: http://www6.informatik.uni-erlangen.de/~tsjensen/boxes/
