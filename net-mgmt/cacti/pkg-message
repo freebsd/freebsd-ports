@@ -14,8 +14,8 @@ FLUSH PRIVILEGES;" | mysql &&
 Specify the MySQL user, password and database for 
 your cacti configuration.
 5: Add a line to your /etc/crontab file similar to:
-*/5 * * * * %%CACTIUSER%% php %%PREFIX%%/%%CACTIDIR%%/cmd.php > /dev/null 2>&1
-6: Point your web browser to the cacti dir
+*/5 * * * * %%CACTIUSER%% %%LOCALBASE%%/bin/php %%PREFIX%%/%%CACTIDIR%%/poller.php > /dev/null 2>&1
+6: Point your web browser to the cacti dir and login with admin/admin
 
 Have fun!
 ==========================================================
