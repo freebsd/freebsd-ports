@@ -14,7 +14,6 @@ MASTER_SITES=	ftp://ftp.gnome.org/pub/GNOME/sources/gnomemeeting/0.98/ \
 MAINTAINER=	roger@FreeBSD.org
 COMMENT=	GNOME H323 Video Conferencing program, similar to NetMeeting
 
-LIB_DEPENDS=	ldap.2:${PORTSDIR}/net/openldap20-client
 BUILD_DEPENDS=  ${NONEXISTENT}:${PORTSDIR}/net/openh323:build
 
 # note, we do not want to clean openh323, otherwise it has to build
@@ -25,6 +24,7 @@ USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	libgnomeui libbonobo gnomeprefix gnomehack
+USE_OPENLDAP=	yes
 USE_BISON=	yes
 # Clear configure target so we stop getting binaries prefixed with i386-portbld-freebsd46
 CONFIGURE_TARGET=
