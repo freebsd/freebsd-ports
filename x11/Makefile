@@ -126,6 +126,7 @@
     SUBDIR += xdtm
     SUBDIR += xfedor
     SUBDIR += xfishtank
+    SUBDIR += xfree86_xkb_xml
     SUBDIR += xgrab
     SUBDIR += xkbctrl
     SUBDIR += xkbset

@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- Makefile.in	2002/05/31 10:47:09	1.1
++++ Makefile.in	2002/05/31 10:47:21
+@@ -105,7 +105,7 @@
+ VERSION = @VERSION@
+ xkb_base = @xkb_base@
+ 
+-SUBDIRS = m4 po intl
++SUBDIRS = m4 po
+ 
+ xml_in_files = xfree86.xml.in
+ xml_DATA = $(xml_in_files:.xml.in=.xml) xkb.dtd
