@@ -13,7 +13,6 @@
     SUBDIR += clean-theme-gtk
     SUBDIR += colorstep
     SUBDIR += easygtk
-    SUBDIR += eel
     SUBDIR += eel2
     SUBDIR += efltk
     SUBDIR += engradient
