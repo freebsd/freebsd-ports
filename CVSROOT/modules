@@ -1677,6 +1677,7 @@ dviselect	ports/print/dviselect
 dvorak7min	ports/misc/dvorak7min
 dvorakng	ports/misc/dvorakng
 dvts		ports/multimedia/dvts
+dwarfdump	ports/devel/dwarfdump
 dwatch		ports/sysutils/dwatch
 dxf2fig		ports/cad/dxf2fig
 dxpc		ports/x11/dxpc
