@@ -2,7 +2,7 @@ Please use bzip2, which is the successor of this older bzip version.
 This port stays for compatibility reasons.  A discussion of the
 advantages of bzip2 over bzip 0.21 is given on the homepage.
 
-In short: bzip2 ist faster, more reliable and *patent free*
+In short: bzip2 is faster, more reliable and *patent free*
 
 COMMERCIAL USE of bzip
 
