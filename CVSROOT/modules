@@ -9415,6 +9415,7 @@ vtk-python	ports/math/vtk-python
 vtk-tcl		ports/math/vtk-tcl
 vtun		ports/net/vtun
 vtwm		ports/x11-wm/vtwm
+vulnerability-test-port	ports/security/vulnerability-test-port
 vx68k		ports/emulators/vx68k
 vxtools		ports/emulators/vxtools
 w3		ports/www/w3
