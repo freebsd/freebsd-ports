@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	plwm
-PORTVERSION=	2.4
+PORTVERSION=	2.5
 CATEGORIES=	x11-wm python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -14,12 +14,13 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	mwm@mired.org
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/Xlib/X.py:${PORTSDIR}/x11-toolkits/py-xlib
+BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/Xlib/X.py:${PORTSDIR}/x11-toolkits/py-xlib
 
 USE_PYTHON=	yes
 GNU_CONFIGURE=	yes
 
 post-install:
-	${INSTALL_DATA} ${WRKSRC}/doc/plwm.info ${PREFIX}/info
+	makeinfo -o ${PREFIX}/info/plwm.info ${WRKSRC}/doc/plwm.texi
 	install-info --section=X11 ${PREFIX}/info/plwm.info ${PREFIX}/info/dir
 
 .include <bsd.port.mk>
