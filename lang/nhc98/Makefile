@@ -5,15 +5,11 @@
 # $FreeBSD$
 
 PORTNAME=	nhc98
-PORTVERSION=	1.14a
-PORTREVISION=	1
+PORTVERSION=	1.16
 CATEGORIES=	lang haskell
 MASTER_SITES=	ftp://ftp.cs.york.ac.uk/pub/haskell/${PORTNAME}/
 DISTNAME=	${PORTNAME}src-${PORTVERSION}
 DIST_SUBDIR=	nhc98
-
-PATCH_SITES=	${MASTER_SITES}
-PATCHFILES=	patch-1.14-Time
 
 MAINTAINER=	obraun@FreeBSD.org
 COMMENT=	A fully-fledged compiler for Haskell 98
@@ -68,9 +64,6 @@ post-install:
 	${INSTALL_MAN} ${WRKSRC}/man/nhc98.1.fix ${PREFIX}/man/man1/nhc98.1
 	${RM} ${WRKSRC}/man/nhc98.1.fix
 .if !defined(NOPORTDOCS)
-.for ending in aux log
-	${RM} ${PREFIX}/share/doc/nhc98/hat/tutorial1.${ending}
-.endfor
 .for ending in aux log out toc
 	${RM} ${PREFIX}/share/doc/nhc98/hat/hatuser.${ending}
 .endfor
