@@ -88,7 +88,6 @@
     SUBDIR += libetpan
     SUBDIR += liboe
     SUBDIR += librfc822
-    SUBDIR += listar
     SUBDIR += listmanager
     SUBDIR += lmtp2nntp
     SUBDIR += mahogany
