@@ -1,5 +1,5 @@
---- configure.orig	Mon Jul  3 17:10:35 2000
-+++ configure	Mon Jul  3 17:12:16 2000
+--- configure.orig	Sat Dec  9 07:00:06 2000
++++ configure	Sat Feb 24 16:02:38 2001
 @@ -837,13 +837,13 @@
    CFLAGS="$ac_save_CFLAGS"
  elif test $ac_cv_prog_cc_g = yes; then
@@ -32,14 +32,14 @@
    else
      CXXFLAGS=
    fi
-@@ -2691,8 +2691,8 @@
-     CFLAGS="-Wall $CFLAGS"
-     CXXFLAGS="-Wall -Wno-return-type $CXXFLAGS"
-     if test -z "$DEBUGFLAG"; then
--        CFLAGS="-O2 -fforce-mem -fforce-addr -fcaller-saves $CFLAGS"
--        CXXFLAGS="-O2 -fforce-mem -fforce-addr -fcaller-saves $CXXFLAGS"
-+        CFLAGS="-fforce-mem -fforce-addr -fcaller-saves $CFLAGS"
-+        CXXFLAGS="-fforce-mem -fforce-addr -fcaller-saves $CXXFLAGS"
+@@ -2750,8 +2750,8 @@
+ 	# WAS: I removed the -fforce-mem, -fforce-addr, -fcaller-saves
+ 	#      They all seemed to make either no difference or enlarged
+ 	#      the code by a few hundred bytes.
+-        CFLAGS="-O2 $CFLAGS"
+-        CXXFLAGS="-O2 $CXXFLAGS"
++#        CFLAGS="-O2 $CFLAGS"
++#        CXXFLAGS="-O2 $CXXFLAGS"
      fi
      if test $PICFLAG = 1; then
      	CFLAGS="-fPIC $CFLAGS"
