@@ -8,22 +8,21 @@
 
 PORTNAME=	mutt-devel
 PORTVERSION=	1.3.20
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES+=	mail
 MASTER_SITES=	ftp://ftp.demon.co.uk/pub/mirrors/mutt/devel/ \
 		ftp://ftp.parodius.com/pub/mutt/devel/
 DISTNAME=	mutt-${PORTVERSION}i
-#DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	ust@cert.siemens.de
+MAINTAINER=	udo.schweigert@siemens.com
 
 DIST_SUBDIR=    mutt
 GNU_CONFIGURE=  yes
 CONFIGURE_ARGS=	--enable-flock --disable-fcntl \
 		--with-sharedir=${PREFIX}/share/mutt \
 		--with-docdir=${PREFIX}/share/doc/mutt \
-		--sysconfdir=${PREFIX}/etc \
+		--sysconfdir=${PREFIX}/etc --enable-external-dotlock \
 		--with-libiconv-prefix=${PREFIX}
 
 .include <bsd.port.pre.mk>
@@ -33,8 +32,10 @@ USE_AUTOMAKE=	yes
 
 .if defined(WITH_MUTT_COMPRESSED_FOLDERS) || defined(WITH_MUTT_NNTP) || \
 		defined(WITH_MUTT_RU_PATCH) || defined(WITH_MUTT_QUOTE_PATCH)
-PATCH_SITES+=	http://mutt.org.ua/download/mutt-${PATCH_VERSION}/ \
-		ftp://mutt.org.ua/mutt/mutt-${PATCH_VERSION}/
+PATCH_SITES+=	http://www.mutt.org.ua/download/mutt-${PATCH_VERSION}/ \
+		http://www2.mutt.org.ua/download/mutt-${PATCH_VERSION}/ \
+		ftp://ftp.mutt.org.ua/pub/mutt/mutt-${PATCH_VERSION}/ \
+		ftp://ftp2.mutt.org.ua/pub/mutt/mutt-${PATCH_VERSION}/
 .endif
 
 .if !defined(PATCH_VERSION)
