@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mziq
-PORTVERSION=	0.4.1
+PORTVERSION=	0.4.2
 CATEGORIES=	audio
 MASTER_SITES=	http://cseg.lucidx.com/projects/src/mziq/
 
@@ -20,16 +20,19 @@ WRKSRC=		${WRKDIR}/MZiq
 NO_BUILD=	yes
 USE_PERL5=	yes
 
+PORTDOCS=	${DOC_FILES}
+PLIST_FILES=	bin/gmziq bin/jukebox bin/mziq
+
+DOC_FILES=	README TODO default.mz example.mz rcfile
+
 do-install:
 .for FILE in gmziq jukebox mziq
-	@${INSTALL_SCRIPT} ${WRKSRC}/${FILE} ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/${FILE} ${PREFIX}/bin
 .endfor
-
 .if !defined(NOPORTDOCS)
-post-install:
 	@${MKDIR} ${DOCSDIR}
-.for FILE in README TODO default.mz example.mz rcfile
-	@${INSTALL_DATA} ${WRKSRC}/${FILE} ${DOCSDIR}
+.for FILE in ${DOC_FILES}
+	${INSTALL_DATA} ${WRKSRC}/${FILE} ${DOCSDIR}
 .endfor
 .endif
 
