@@ -2,7 +2,7 @@ bin/finger
 libexec/fingerd
 libexec/in.fingerd
 libexec/in.cfingerd
-etc/rc.d/start.fingerd.sh.sample
+etc/rc.d/fingerd.sh.sample
 etc/fingerdir/ttylocs.sample
 etc/fingerdir/clients.sample
 etc/fingerdir/mailhost.sample

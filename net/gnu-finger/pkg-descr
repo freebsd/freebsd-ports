@@ -23,9 +23,8 @@ finger		stream	tcp	nowait	nobody	/usr/local/libexec/in.fingerd	in.fingerd
 	% kill -HUP `cat /var/run/inetd.pid`
 
 5) If this host is GNU finger server host,
-   move start.fingerd.sh.sample to start.fingerd.sh in /usr/local/etc/rc.d
-   directory.
-   And exec start_fingerd.sh.
+   rename fingerd.sh.sample to fingerd.sh in /usr/local/etc/rc.d directory.
+   And exec fingerd.sh.
 
 - Yoshiro MIHIRA
 (sanpei@yy.cs.keio.ac.jp)
