@@ -11,7 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.rpm.org/pub/rpm/dist/rpm-4.1.x/ \
 		ftp://ftp.mirror.ac.uk/sites/ftp.rpm.org/pub/rpm/dist/rpm-4.1.x/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	eik@FreeBSD.org
 COMMENT=	A getopt(3) like library with a number of enhancements, from Redhat
 
 USE_GETTEXT=	yes
