@@ -5,7 +5,7 @@ etc/sound/events/galeon.soundlist
 libdata/bonobo/servers/GNOME_Galeon_Automation.server
 libdata/bonobo/servers/GNOME_Galeon_NautilusView.server
 share/gnome/applications/galeon.desktop
-@exec update-desktop-database > /dev/null || /usr/bin/true
+@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 share/gnome/galeon/FAQ.html
 share/gnome/galeon/about_logo.png
 share/gnome/galeon/autoscroll.xpm
@@ -222,4 +222,4 @@ share/locale/zh_TW/LC_MESSAGES/galeon-2.0.mo
 @dirrm share/gnome/help/galeon/es
 @dirrm share/gnome/help/galeon
 @dirrm share/gnome/galeon
-@unexec update-desktop-database > /dev/null || /usr/bin/true
+@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true

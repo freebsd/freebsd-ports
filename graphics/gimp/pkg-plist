@@ -1177,7 +1177,7 @@ share/gimp/misc/gimp.desktop
 share/gimp/misc/gimp.keys
 %%GNOMEPANEL:%%share/gnome/application-registry/gimp-2.2.applications
 %%GNOMEPANEL:%%share/gnome/applications/gimp-2.2.desktop
-%%GNOMEPANEL:%%@exec update-desktop-database > /dev/null || /usr/bin/true
+%%GNOMEPANEL:%%@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 %%GNOMEPANEL:%%share/gnome/mime-info/gimp-2.2.keys
 share/gimp/palettes/Bears.gpl
 share/gimp/palettes/Bgold.gpl
@@ -1900,4 +1900,4 @@ share/locale/zh_TW/LC_MESSAGES/gimp20.mo
 @dirrm include/gimp-2.0
 @dirrm etc/gimp/2.2
 @dirrm etc/gimp
-%%GNOMEPANEL:%%@unexec update-desktop-database > /dev/null || /usr/bin/true
+%%GNOMEPANEL:%%@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true

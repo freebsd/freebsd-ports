@@ -147,5 +147,5 @@ share/locale/zh_TW/LC_MESSAGES/totem.mo
 @dirrm include/totem/1/plparser
 @dirrm include/totem/1
 @dirrm include/totem
-@exec update-desktop-database > /dev/null || /usr/bin/true
-@unexec update-desktop-database > /dev/null || /usr/bin/true
+@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
+@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true

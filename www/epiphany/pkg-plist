@@ -60,7 +60,7 @@ libdata/pkgconfig/epiphany-1.6.pc
 share/gnome/application-registry/epiphany.applications
 share/gnome/applications/bme.desktop
 share/gnome/applications/epiphany.desktop
-@exec update-desktop-database > /dev/null || /usr/bin/true
+@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 share/gnome/epiphany/art/epiphany-bookmarks.png
 share/gnome/epiphany/art/epiphany-close-tab.png
 share/gnome/epiphany/art/epiphany-download.png
@@ -209,4 +209,4 @@ share/locale/zh_TW/LC_MESSAGES/epiphany.mo
 @dirrm %%DOCSDIR%%
 @dirrm include/epiphany-%%EPHY_VERSION%%/epiphany
 @dirrm include/epiphany-%%EPHY_VERSION%%
-@unexec update-desktop-database > /dev/null || /usr/bin/true
+@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true

@@ -2,7 +2,7 @@ bin/ggv
 libdata/bonobo/servers/GNOME_GGV.server
 libexec/ggv-postscript-viewer
 share/gnome/applications/ggv.desktop
-@exec update-desktop-database > /dev/null || /usr/bin/true
+@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 share/gnome/gnome-2.0/ui/ggv-control-ui.xml
 share/gnome/gnome-2.0/ui/ggv-postscript-view-ui.xml
 share/gnome/gnome-2.0/ui/ggv-ui.xml
@@ -147,4 +147,4 @@ share/locale/zh_TW/LC_MESSAGES/ggv.mo
 @dirrm share/gnome/help/ggv/C/figures
 @dirrm share/gnome/help/ggv/C
 @dirrm share/gnome/help/ggv
-@unexec update-desktop-database > /dev/null || /usr/bin/true
+@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true

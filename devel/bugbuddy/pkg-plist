@@ -1,7 +1,7 @@
 bin/bug-buddy
 share/gnome/application-registry/bug-buddy.applications
 share/gnome/applications/bug-buddy-core.desktop
-@exec update-desktop-database > /dev/null || /usr/bin/true
+@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 share/gnome/applications/bug-buddy.desktop
 share/gnome/bug-buddy/bug-buddy.glade
 share/gnome/bug-buddy/bug-buddy.png
@@ -93,4 +93,4 @@ share/locale/zh_TW/LC_MESSAGES/bug-buddy.mo
 @dirrm share/gnome/bug-buddy/bugzilla/gnome
 @dirrm share/gnome/bug-buddy/bugzilla
 @dirrm share/gnome/bug-buddy
-@unexec update-desktop-database > /dev/null || /usr/bin/true
+@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true

@@ -7,7 +7,7 @@ bin/coaster
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 share/gnome/application-registry/coaster.applications
 share/gnome/applications/coaster.desktop
-@exec update-desktop-database > /dev/null || /usr/bin/true
+@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 share/gnome/coaster/glade/coaster-dialogs.glade
 share/gnome/coaster/glade/coaster-preferences.glade
 share/gnome/coaster/glade/coaster.glade
@@ -42,6 +42,6 @@ share/mime/packages/coaster.xml
 @dirrm share/gnome/coaster/glade
 @dirrm share/gnome/coaster
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@unexec update-desktop-database > /dev/null || /usr/bin/true
-@exec update-mime-database %D/share/mime
-@unexec update-mime-database %D/share/mime
+@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
+@exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
+@unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime

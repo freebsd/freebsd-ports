@@ -42,8 +42,8 @@ share/xlog/qsllabels.glabels
 @dirrm share/xlog/dxcc
 @dirrm share/xlog
 @dirrm share/pixmaps/xlog
-@exec update-mime-database %D/share/mime
-@unexec update-mime-database %D/share/mime
+@exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
+@unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
 @unexec rmdir %D/share/applications 2> /dev/null || true
 @unexec rmdir %D/share/applnk/Applications 2> /dev/null || true
 @unexec rmdir %D/share/applnk 2> /dev/null || true

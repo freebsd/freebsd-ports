@@ -12,7 +12,7 @@ lib/screem/plugins/tableWizard.so
 lib/screem/plugins/uploadWizard.so
 share/gnome/application-registry/screem.applications
 share/gnome/applications/screem.desktop
-@exec update-desktop-database > /dev/null || /usr/bin/true
+@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 share/gnome/help/screem/C/figures/color-wizard.png
 share/gnome/help/screem/C/figures/css-wizard1.png
 share/gnome/help/screem/C/figures/css-wizard2.png
@@ -226,6 +226,6 @@ share/locale/zh_CN/LC_MESSAGES/screem.mo
 @dirrm share/gnome/screem/ui
 @dirrm share/gnome/screem
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/screem/screem-C.omf 2>/dev/null || /usr/bin/true
-@exec update-mime-database %D/share/mime
-@unexec update-mime-database %D/share/mime
-@unexec update-desktop-database > /dev/null || /usr/bin/true
+@exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
+@unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
+@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true

@@ -69,5 +69,5 @@ share/mime/packages/gchempaint.xml
 @dirrm share/gnome/help/gchempaint/C
 @dirrm share/gnome/help/gchempaint
 @dirrm share/gnome/omf/gchempaint
-@exec update-mime-database %D/share/mime
-@unexec update-mime-database %D/share/mime
+@exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
+@unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime

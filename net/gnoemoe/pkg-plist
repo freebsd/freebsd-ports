@@ -46,5 +46,5 @@ share/mime/packages/gnoemoe.xml
 @dirrm share/gnome/gnoemoe/pixmaps/ice-userlist
 @dirrm share/gnome/gnoemoe/pixmaps
 @dirrm share/gnome/gnoemoe
-@exec update-mime-database %D/share/mime
-@unexec update-mime-database %D/share/mime
+@exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
+@unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime

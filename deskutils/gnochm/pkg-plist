@@ -26,5 +26,5 @@ share/mime/packages/gnochm.xml
 @dirrm share/gnome/gnochm
 @unexec rmdir %D/man/it/man1 2>/dev/null||true
 @unexec rmdir %D/man/it 2>/dev/null||true
-@exec update-mime-database %D/share/mime
-@unexec update-mime-database %D/share/mime
+@exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
+@unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime

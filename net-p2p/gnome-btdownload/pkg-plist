@@ -5,7 +5,7 @@ bin/gnome-btdownload
 %%PORTDOCS%%%%DOCSDIR%%/README
 share/gnome/application-registry/gnome-btdownload.applications
 share/gnome/applications/gnome-btdownload.desktop
-@exec update-desktop-database > /dev/null || /usr/bin/true
+@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 share/gnome/gnome-btdownload/glade/contdiag.glade
 share/gnome/gnome-btdownload/glade/dlsession.glade
 share/gnome/gnome-btdownload/glade/errdiag.glade
@@ -16,4 +16,4 @@ share/gnome/mime-info/gnome-btdownload.mime
 @dirrm share/gnome/gnome-btdownload/glade
 @dirrm share/gnome/gnome-btdownload
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@unexec update-desktop-database > /dev/null || /usr/bin/true
+@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true

@@ -294,5 +294,5 @@ share/mime/packages/beast.xml
 @dirrm share/gnome/bse/v0.6.4/scripts
 @dirrm share/gnome/bse/v0.6.4
 @dirrm share/gnome/bse
-@exec update-mime-database %D/share/mime
-@unexec update-mime-database %D/share/mime
+@exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
+@unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime

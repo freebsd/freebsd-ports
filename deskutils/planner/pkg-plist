@@ -212,5 +212,5 @@ share/mime/packages/planner.xml
 @dirrm lib/planner
 @dirrm include/planner-1.0/libplanner
 @dirrm include/planner-1.0
-@exec update-mime-database %D/share/mime
-@unexec update-mime-database %D/share/mime
+@exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
+@unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime

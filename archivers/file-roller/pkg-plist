@@ -8,7 +8,7 @@ libdata/bonobo/servers/File_Roller_Component.server
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 share/gnome/application-registry/file-roller.applications
 share/gnome/applications/file-roller.desktop
-@exec update-desktop-database > /dev/null || /usr/bin/true
+@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 share/gnome/file-roller/glade/file_roller.glade
 share/gnome/help/file-roller/C/figures/file-roller_home.png
 share/gnome/help/file-roller/C/figures/file-roller_leftarrow.png
@@ -177,4 +177,4 @@ share/locale/zh_TW/LC_MESSAGES/file-roller.mo
 @dirrm share/gnome/file-roller/glade
 @dirrm share/gnome/file-roller
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@unexec update-desktop-database > /dev/null || /usr/bin/true
+@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true

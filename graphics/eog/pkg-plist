@@ -1,6 +1,6 @@
 bin/eog
 share/gnome/applications/eog.desktop
-@exec update-desktop-database > /dev/null || /usr/bin/true
+@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 share/gnome/eog/eog-gtk-ui.xml
 share/gnome/eog/glade/eog.glade
 share/gnome/help/eog/C/eog.xml
@@ -155,4 +155,4 @@ share/locale/zh_TW/LC_MESSAGES/eog.mo
 @dirrm share/gnome/help/eog
 @dirrm share/gnome/eog/glade
 @dirrm share/gnome/eog
-@unexec update-desktop-database > /dev/null || /usr/bin/true
+@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
