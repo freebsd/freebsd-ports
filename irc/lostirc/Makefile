@@ -17,7 +17,8 @@ LIB_DEPENDS=	gtkmm.2:${PORTSDIR}/x11-toolkits/gtk-- \
 		sigc:${PORTSDIR}/devel/libsigc++
 
 USE_X_PREFIX=	yes
-USE_GTK=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
 
 MAN1=	lostirc.1

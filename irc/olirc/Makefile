@@ -15,7 +15,8 @@ MAINTAINER=	nox@jelal.kn-bremen.de
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
-USE_GTK=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
 
 do-install:
