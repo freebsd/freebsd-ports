@@ -1,0 +1,24 @@
+ICONV is 1) the library (libiconv.a and .so) for conversion between
+various charsets and 2) the command line utility (iconv).
+
+Supported charsets are:
+
+Unicode:	ucs2-internal, iso-10646-ucs-2, utf-8, unicode-1-1-utf-7
+EUC:		euc-jp, gb2312, euc-kr, x-euc-tw
+ISO-2022:	iso-2022-cn, iso-2022-jp, iso-2022-kr, iso-2022-jp-2
+ISO:		us-ascii, iso-8859-1, iso-8859-2, iso-8859-3, iso-8859-4
+		iso-8859-5, iso-8859-6, iso-8859-7, iso-8859-8, iso-8859-9
+		iso-8859-10, iso-8859-13, iso-8859-14, iso-8859-15
+KOI:		koi8-r, koi8-u, x-koi8-ru
+Windows:	windows-1250, windows-1251, windows-1252, windows-1253,
+		windows-1254, windows-1255, windows-1256, windows-1257,
+		windows-1258, cp874, cp932, cp936, cp949, cp950
+IBM-DOS:	cp437, cp737, cp775, cp850, cp852, cp855, cp857, cp860,
+		cp861, cp862, cp863, cp864, cp865, cp866, cp869, cp874
+Apple:		x-mac-ce, x-mac-croatian, x-mac-cyrillic, x-mac-dingbats,
+		x-mac-greek, x-mac-iceland, x-mac-roman, x-mac-romania,
+		x-mac-thai, x-mac-turkish, x-mac-ukraine
+CJK:		big5, cns11643, gb_2312-80, gb12345, johab, ksx1001,
+		shift_jis, jis_x0201, jis_x0208-1983, jis_x0212-1990
+
+		Konstantin Chuguev <joy@urc.ac.ru>	September 1999.
