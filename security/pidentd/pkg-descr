@@ -8,3 +8,5 @@ this will use only normally available kernel access functions (and is due
 to that more limited in the different machines it support). Please note
 that this daemon used to be called pauthd but has changed name to better
 reflect what it does (and to conform to the new RFC).
+
+WWW: http://www.lysator.liu.se/~pen/pidentd/
