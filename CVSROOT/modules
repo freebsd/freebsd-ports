@@ -6576,7 +6576,7 @@ p5-Test-Simple	ports/devel/p5-Test-Simple
 p5-Test-Unit	ports/devel/p5-Test-Unit
 p5-Text-Autoformat	ports/textproc/p5-Text-Autoformat
 p5-Text-Balanced	ports/textproc/p5-Text-Balanced
-p5-Text-BibTex	ports/textproc/p5-Text-BibTex
+p5-Text-BibTeX	ports/textproc/p5-Text-BibTeX
 p5-Text-Bind	ports/textproc/p5-Text-Bind
 p5-Text-CSV	ports/textproc/p5-Text-CSV
 p5-Text-CSV_XS	ports/textproc/p5-Text-CSV_XS
