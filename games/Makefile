@@ -98,7 +98,6 @@
     SUBDIR += mindfocus
     SUBDIR += mirrormagic
     SUBDIR += miscom
-    SUBDIR += mudix
     SUBDIR += nethack
     SUBDIR += nethack-qt
     SUBDIR += nethack3
