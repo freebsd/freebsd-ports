@@ -1,0 +1,17 @@
+--- Makefile.orig	Sat Sep  2 17:41:34 2000
++++ Makefile	Sat Sep  2 17:41:48 2000
+@@ -3,11 +3,12 @@
+ # (c) <lcamtuf@tpi.pl>
+ #
+ 
+-CC      = gcc
++CC      ?= gcc
+ CLIBS	= -lpcap
+ SUNLIBS	= -lsocket -lnsl -D_SUN_=1
+ STRIP	= strip
+-CFLAGS  = -O3 -Wall
++CFLAGS  ?= -O3
++CFLAGS	+= -Wall
+ FILE	= p0f
+ VERSION = 1.7
+ 
