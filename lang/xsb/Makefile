@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	XSB
-PORTVERSION=	2.5
+PORTVERSION=	2.6
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME:L}
@@ -25,8 +25,9 @@ PLIST_SUB+=	MACHINE_ARCH=${MACHINE_ARCH} \
 
 do-build:
 	@ cd ${WRKSRC} ; \
-	./configure  ; \
-	./makexsb
+	./configure ; \
+	./makexsb ; \
+	./makexsb dynmodule
 
 do-install:
 	@ ${CP} -r ${WRKDIR}/XSB ${PREFIX} ; \

@@ -1,0 +1,17 @@
+--- ../emu/std_pred_xsb_i.h.orig	Sat Jan 31 02:08:02 2004
++++ ../emu/std_pred_xsb_i.h	Sat Jan 31 02:16:16 2004
+@@ -485,8 +485,12 @@
+       if (isfloat(term)) {
+ 	sprintf(str, "%e", float_val(term));
+       } else {
+-	err_handle(TYPE, 1, call_name, 2, "number", term);
+-	return FALSE;	/* fail */
++        if (isboxedinteger(term)) {
++          sprintf(str, "%ld", (long)boxedint_val(term));
++        } else {
++  	  err_handle(TYPE, 1, call_name, 2, "number", term);
++	  return FALSE;	/* fail */
++        }
+       }
+     }
+     new_list = makelist(hreg);
