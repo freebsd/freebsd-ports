@@ -1,6 +1,6 @@
---- Makefile.orig	Sun Jul 26 16:11:40 1998
-+++ Makefile	Sun Jul 26 16:14:35 1998
-@@ -1,11 +1,11 @@
+--- Makefile.orig	Wed Oct 22 19:35:01 1997
++++ Makefile	Tue Jun  4 14:14:40 2002
+@@ -1,12 +1,12 @@
  
  SRCS= include.c list.c main.c subs.c var.c wild.c
  OBJS= include.o list.o main.o subs.o var.o wild.o
@@ -10,13 +10,14 @@
  EXE= xmake
 -IBDIR= /usr/local/bin
 -IMDIR= /usr/local/man/man1
+-CC= cc
 +PREFIX?= /usr/local
 +IBDIR= $(PREFIX)/bin
 +IMDIR= $(PREFIX)/man/man1
--CC= cc
  
  all: $(EXE)
-@@ -16,6 +17,6 @@
+ 
+@@ -16,6 +16,6 @@
  clean:
  	rm -f $(OBJS) $(EXE)
  
@@ -24,5 +25,5 @@
 -	install -c -s -m 755 $(EXE) $(IBDIR)/$(EXE)
 -
 +install:
-+	install -c -s -o $(BINOWN) -g $(BINGRP) -m $(BINMODE) $(EXE) $(IBDIR)
-+	install -c -o $(MANOWN) -g $(MANGRP) -m $(MANMODE) xmake.1 $(IMDIR)
++	$(BSD_INSTALL_PROGRAM) $(EXE) $(IBDIR)
++	$(BSD_INSTALL_MAN) xmake.1 $(IMDIR)

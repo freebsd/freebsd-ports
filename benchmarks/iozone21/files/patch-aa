@@ -11,7 +11,7 @@
 + install:
 + 	-@mkdir -p ${PREFIX}/bin
 + 	-@mkdir -p ${PREFIX}/man/man1
-+ 	${INSTALL} ${COPY} ${STRIP} -o ${BINOWN} -g ${BINGRP} -m ${BINMODE} iozone ${PREFIX}/bin
++ 	${BSD_INSTALL_PROGRAM} iozone ${PREFIX}/bin
 + 	@echo .Dd `/bin/date` > iozone.1
 + 	@echo .Dt IOZONE 1 >> iozone.1
 + 	@echo .Sh NAME >> iozone.1
@@ -35,4 +35,4 @@
 + 		 {if (x) print $0}' >>iozone.1
 + 	@echo .Sh AUTHOR >> iozone.1
 + 	@echo Bill Norcott >> iozone.1
-+ 	${INSTALL} ${COPY} -o ${BINOWN} -g ${BINGRP} -m 644 iozone.1 ${PREFIX}/man/man1
++ 	${BSD_INSTALL_MAN} iozone.1 ${PREFIX}/man/man1

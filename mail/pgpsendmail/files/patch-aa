@@ -1,5 +1,5 @@
 *** Makefile.old	Sat Oct 15 23:06:26 1994
---- Makefile	Sat Jan 21 03:04:40 1995
+--- Makefile	Tue Jun  4 14:11:52 2002
 ***************
 *** 13,28 ****
   #
@@ -103,14 +103,14 @@
   
   
 + all_install:
-+ 	/usr/bin/install $(COPY) -o $(BINOWN) -g $(BINGRP) -m $(BINMODE) pgpsendmail $(PREFIX)/lib
-+ 	/usr/bin/install -c -o $(BINOWN) -g $(BINGRP) -m 644 doc/pgpsendmail.8 $(PREFIX)/man/man8
-+ 	/usr/bin/install $(COPY) -o $(BINOWN) -g $(BINGRP) -m $(BINMODE) pgpdaemon $(PREFIX)/bin
-+ 	/usr/bin/install -c -o $(BINOWN) -g $(BINGRP) -m 644 doc/pgpdaemon.8 $(PREFIX)/man/man8
-+ 	/usr/bin/install $(COPY) -o $(BINOWN) -g $(BINGRP) -m $(BINMODE) pgppipe $(PREFIX)/bin
-+ 	/usr/bin/install -c -o $(BINOWN) -g $(BINGRP) -m 644 doc/pgppipe.1 $(PREFIX)/man/man1
-+ 	/usr/bin/install $(COPY) -o $(BINOWN) -g $(BINGRP) -m $(BINMODE) sendpgppass $(PREFIX)/bin
-+ 	/usr/bin/install -c -o $(BINOWN) -g $(BINGRP) -m 644 doc/sendpgppass.1 $(PREFIX)/man/man1
++ 	$(BSD_INSTALL_PROGRAM) pgpsendmail $(PREFIX)/lib
++ 	$(BSD_INSTALL_MAN) doc/pgpsendmail.8 $(PREFIX)/man/man8
++ 	$(BSD_INSTALL_PROGRAM) pgpdaemon $(PREFIX)/bin
++ 	$(BSD_INSTALL_MAN) doc/pgpdaemon.8 $(PREFIX)/man/man8
++ 	$(BSD_INSTALL_PROGRAM) pgppipe $(PREFIX)/bin
++ 	$(BSD_INSTALL_MAN) doc/pgppipe.1 $(PREFIX)/man/man1
++ 	$(BSD_INSTALL_PROGRAM) sendpgppass $(PREFIX)/bin
++ 	$(BSD_INSTALL_MAN) doc/sendpgppass.1 $(PREFIX)/man/man1
 + 
   clean:
   	rm -f *.BAK *.log *.sed .#* *~ *.bak */*.bak */tmp* .*defaults */*~
