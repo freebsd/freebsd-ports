@@ -1,42 +1,47 @@
 # New ports collection makefile for:	MRTG
-# Version required:			2.5.3
+# Version required:			2.6.6
 # Date created:				April 18th 1997
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#   $Id: Makefile,v 1.9 1998/09/28 17:11:12 smace Exp $
+#   $Id: Makefile,v 1.10 1998/10/10 02:09:30 smace Exp $
 #
 
-DISTNAME=	mrtg-2.5.3
+DISTNAME=	mrtg-2.6.6
 CATEGORIES=	net
 MASTER_SITES=	http://ee-staff.ethz.ch/~oetiker/webtools/mrtg/pub/
 
 MAINTAINER=	jfitz@FreeBSD.ORG
 
 BUILD_DEPENDS=	${PREFIX}/lib/libgd.a:${PORTSDIR}/graphics/gd
-RUN_DEPENDS=	${PREFIX}/lib/perl5/site_perl/${PERL_VER}/PV.pm:${PORTSDIR}/devel/p5-PV
 
 USE_PERL5=	YES
 MAKE_ENV+=	PERL=${PERL}
 
-ALL_TARGET=	rateup substitute
+GNU_CONFIGURE=	YES
+
+CONFIGURE_ARGS=	--with-gd-lib=${PREFIX}/lib \
+		--with-gd-inc=${PREFIX}/include/gd
+
+CONFIGURE_ENV=	PERL=${PERL}
 
 do-install:
 		${MKDIR} -p -m 755 ${PREFIX}/etc/mrtg
 		${MKDIR} -p -m 755 ${PREFIX}/lib/perl5/site_perl/${PERL_VER}
 		${MKDIR} -p -m 755 ${PREFIX}/share/mrtg
 		${MKDIR} -p -m 755 ${PREFIX}/share/doc/mrtg
-		for file in readme.html readme.txt mibhelp.txt INSTALL COPYING COPYRIGHT Changes Contributors Todo; do \
+		for file in ANNOUNCE CHANGES COPYING COPYRIGHT MANIFEST README doc/config.html doc/config.pod doc/config.txt doc/htaccess.txt doc/logfile-format.txt doc/manual.html doc/manual.txt doc/mibhelp.txt doc/squid.txt ; do \
 			${INSTALL_DATA} ${WRKSRC}/$$file ${PREFIX}/share/doc/mrtg/; \
 		done
-		for file in ${WRKSRC}/*.gif; do \
+		${INSTALL_DATA} ${WRKSRC}/doc/sample-mrtg.cfg ${PREFIX}/etc/mrtg
+		for file in ${WRKSRC}/images/*.gif; do \
 			${INSTALL_DATA} $$file ${PREFIX}/share/mrtg/; \
 		done
-		for file in SNMP_Session.pm BER.pm; do \
-			${INSTALL_DATA} ${WRKSRC}/$$file ${PREFIX}/lib/perl5/site_perl/${PERL_VER}; \
+		for file in SNMP_Session.pm SNMP_util.pm BER.pm; do \
+			${INSTALL_DATA} ${WRKSRC}/run/$$file ${PREFIX}/lib/perl5/site_perl/${PERL_VER}; \
 		done
-		${INSTALL_PROGRAM} ${WRKSRC}/rateup ${PREFIX}/bin/
-		for file in mrtg cfgmaker convert indexmaker; do \
-			${INSTALL_SCRIPT} ${WRKSRC}/$$file ${PREFIX}/bin/; \
+		${INSTALL_PROGRAM} ${WRKSRC}/run/rateup ${PREFIX}/bin/
+		for file in mrtg cfgmaker indexmaker; do \
+			${INSTALL_SCRIPT} ${WRKSRC}/run/$$file ${PREFIX}/bin/; \
 		done
 
 post-install:
@@ -45,6 +50,7 @@ post-install:
 	@${ECHO} "############################################################################"
 	@${ECHO} "# Please create a MRTG config file in ${PREFIX}/etc/mrtg                   #"
 	@${ECHO} "# A configuration file can be automatically generated with cfgmaker        #"
+	@${ECHO} "# A sample configuration file is installed as sample-mrtg.cfg              #"
 	@${ECHO} "############################################################################"
 .endif
 
