@@ -6,7 +6,7 @@
 #
 
 PORTNAME=       dillo
-PORTVERSION=	0.6.5
+PORTVERSION=	0.6.6
 CATEGORIES=     www
 MASTER_SITES=   http://dillo.cipsga.org.br/download/ \
 		ftp://ftp.nuug.no/pub/anders/distfiles/
