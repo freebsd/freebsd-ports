@@ -32,6 +32,11 @@ rcvar=`set_rcvar`
 command="${prefix}/cyrus/bin/master"
 pidfile="/var/run/cyrus-master.pid"
 required_files="${prefix}/etc/cyrus.conf ${prefix}/etc/imapd.conf"
+stop_postcmd="cyrus_imapd_poststop"
+
+cyrus_imapd_poststop() {
+	/bin/rm -f ${pidfile}
+}
 
 load_rc_config $name
 run_rc_command "$1"
