@@ -985,8 +985,6 @@ share/konwert/filters/winwest-mac
 share/konwert/filters/winwest-macroman
 share/konwert/filters/xjp-UTF8
 share/konwert/filters/xmetodo-UTF8
-share/nls/POSIX
-share/nls/en_US.US-ASCII
 @dirrm lib/konwert/aux
 @dirrm lib/konwert/devel
 @dirrm lib/konwert
