@@ -6,10 +6,7 @@
 
   - devel/automake
   - devel/c_c++_reference
-  - devel/kdbg
-  - devel/kdelibdocs
-  - devel/ktranslator
-  - graphics/kdegraphics2
+  - graphics/kdegraphics3
   - textproc/glimpse
   - print/a2ps-*
   - print/enscript-*

@@ -42,6 +42,7 @@ share/locale/ar/LC_MESSAGES/kateprojectmanager.mo
 share/locale/ar/LC_MESSAGES/katetextfilter.mo
 share/locale/ar/LC_MESSAGES/katexmltools.mo
 share/locale/ar/LC_MESSAGES/kbabel.mo
+share/locale/ar/LC_MESSAGES/kbugbuster.mo
 share/locale/ar/LC_MESSAGES/kcalc.mo
 share/locale/ar/LC_MESSAGES/kcardchooser.mo
 share/locale/ar/LC_MESSAGES/kcharselect.mo
@@ -62,6 +63,7 @@ share/locale/ar/LC_MESSAGES/kcmicons.mo
 share/locale/ar/LC_MESSAGES/kcminfo.mo
 share/locale/ar/LC_MESSAGES/kcminput.mo
 share/locale/ar/LC_MESSAGES/kcmioslaveinfo.mo
+share/locale/ar/LC_MESSAGES/kcmkamera.mo
 share/locale/ar/LC_MESSAGES/kcmkclock.mo
 share/locale/ar/LC_MESSAGES/kcmkdb.mo
 share/locale/ar/LC_MESSAGES/kcmkeys.mo
@@ -124,6 +126,7 @@ share/locale/ar/LC_MESSAGES/kdmconfig.mo
 share/locale/ar/LC_MESSAGES/kdmgreet.mo
 share/locale/ar/LC_MESSAGES/kedit.mo
 share/locale/ar/LC_MESSAGES/keduca.mo
+share/locale/ar/LC_MESSAGES/kfax.mo
 share/locale/ar/LC_MESSAGES/kfifteenapplet.mo
 share/locale/ar/LC_MESSAGES/kfile_m3u.mo
 share/locale/ar/LC_MESSAGES/kfile_mp3.mo
@@ -137,6 +140,7 @@ share/locale/ar/LC_MESSAGES/kfindpart.mo
 share/locale/ar/LC_MESSAGES/kfloppy.mo
 share/locale/ar/LC_MESSAGES/kfmclient.mo
 share/locale/ar/LC_MESSAGES/kfmexec.mo
+share/locale/ar/LC_MESSAGES/kfract.mo
 share/locale/ar/LC_MESSAGES/kgantt.mo
 share/locale/ar/LC_MESSAGES/kghostview.mo
 share/locale/ar/LC_MESSAGES/khelpcenter.mo
@@ -159,6 +163,7 @@ share/locale/ar/LC_MESSAGES/kio_print.mo
 share/locale/ar/LC_MESSAGES/kio_sftp.mo
 share/locale/ar/LC_MESSAGES/kio_smb.mo
 share/locale/ar/LC_MESSAGES/kio_smbro.mo
+share/locale/ar/LC_MESSAGES/kio_smtp.mo
 share/locale/ar/LC_MESSAGES/kit.mo
 share/locale/ar/LC_MESSAGES/kjobviewer.mo
 share/locale/ar/LC_MESSAGES/kjots.mo
@@ -208,6 +213,7 @@ share/locale/ar/LC_MESSAGES/kppplogview.mo
 share/locale/ar/LC_MESSAGES/kprinter.mo
 share/locale/ar/LC_MESSAGES/kreadconfig.mo
 share/locale/ar/LC_MESSAGES/kregexpeditor.mo
+share/locale/ar/LC_MESSAGES/kruler.mo
 share/locale/ar/LC_MESSAGES/krunapplet.mo
 share/locale/ar/LC_MESSAGES/kscd.mo
 share/locale/ar/LC_MESSAGES/ksirc.mo
@@ -251,6 +257,7 @@ share/locale/ar/LC_MESSAGES/libkdenetwork.mo
 share/locale/ar/LC_MESSAGES/libkicker.mo
 share/locale/ar/LC_MESSAGES/libkickermenu_kdeprint.mo
 share/locale/ar/LC_MESSAGES/libkonq.mo
+share/locale/ar/LC_MESSAGES/libkscan.mo
 share/locale/ar/LC_MESSAGES/libkscreensaver.mo
 share/locale/ar/LC_MESSAGES/libtaskbar.mo
 share/locale/ar/LC_MESSAGES/libtaskmanager.mo
@@ -270,3 +277,5 @@ share/locale/ar/LC_MESSAGES/validatorsplugin.mo
 share/locale/ar/LC_MESSAGES/webarchiver.mo
 share/locale/ar/charset
 share/locale/ar/entry.desktop
+@dirrm share/locale/ar/LC_MESSAGES
+@dirrm share/locale/ar

@@ -292,3 +292,7 @@ share/locale/hr/LC_MESSAGES/webarchiver.mo
 share/locale/hr/charset
 share/locale/hr/entry.desktop
 share/locale/hr/flag.png
+@dirrm share/locale/hr/LC_MESSAGES
+@dirrm share/locale/hr
+@dirrm share/doc/HTML/hr/common
+@dirrm share/doc/HTML/hr

@@ -182,6 +182,7 @@ share/doc/HTML/en/kdevelop/index-15.html
 share/doc/HTML/en/kdevelop/index-16.html
 share/doc/HTML/en/kdevelop/index-17.html
 share/doc/HTML/en/kdevelop/index-18.html
+share/doc/HTML/en/kdevelop/index-19.html
 share/doc/HTML/en/kdevelop/index-2.html
 share/doc/HTML/en/kdevelop/index-3.html
 share/doc/HTML/en/kdevelop/index-4.html
@@ -242,12 +243,15 @@ share/doc/HTML/en/kdevelop/tutorial/index-8.html
 share/doc/HTML/en/kdevelop/tutorial/index-9.html
 share/doc/HTML/en/kdevelop/tutorial/index.html
 share/doc/HTML/en/kdevelop/tutorial/logotp3.png
+share/doc/HTML/en/kdevelop/welcome/index.html
+share/doc/HTML/en/kdevelop/welcome/logotp3.png
 share/icons/hicolor/16x16/apps/kdevelop.png
 share/icons/hicolor/32x32/apps/kdevelop.png
 share/icons/hicolor/48x48/apps/kdevelop.png
 share/mimelnk/application/x-kdevelop-project.desktop
 @dirrm share/icons/hicolor/48x48/apps
 @dirrm share/icons/hicolor/32x32/apps
+@dirrm share/doc/HTML/en/kdevelop/welcome
 @dirrm share/doc/HTML/en/kdevelop/tutorial
 @dirrm share/doc/HTML/en/kdevelop/reference/C
 @dirrm share/doc/HTML/en/kdevelop/reference

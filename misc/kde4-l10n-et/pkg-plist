@@ -346,3 +346,6 @@ share/locale/et/LC_MESSAGES/webarchiver.mo
 share/locale/et/charset
 share/locale/et/entry.desktop
 share/locale/et/flag.png
+@dirrm share/doc/HTML/et/kcontrol
+@dirrm share/doc/HTML/et/common
+@dirrm share/doc/HTML/et

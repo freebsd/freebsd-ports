@@ -158,9 +158,13 @@ share/doc/HTML/nl/kdesu/index.docbook
 share/doc/HTML/nl/kdm/common
 share/doc/HTML/nl/kdm/index.cache.bz2
 share/doc/HTML/nl/kdm/index.docbook
+share/doc/HTML/nl/kfind/common
+share/doc/HTML/nl/kfind/index.cache.bz2
+share/doc/HTML/nl/kfind/index.docbook
 share/doc/HTML/nl/khelpcenter/contact.docbook
 share/doc/HTML/nl/khelpcenter/faq/about.docbook
 share/doc/HTML/nl/khelpcenter/faq/configkde.docbook
+share/doc/HTML/nl/khelpcenter/faq/desktop.docbook
 share/doc/HTML/nl/khelpcenter/faq/getkde.docbook
 share/doc/HTML/nl/khelpcenter/faq/install.docbook
 share/doc/HTML/nl/khelpcenter/faq/intro.docbook
@@ -651,3 +655,27 @@ share/locale/nl/LC_MESSAGES/zonedclockapplet.mo
 share/locale/nl/charset
 share/locale/nl/entry.desktop
 share/locale/nl/flag.png
+@dirrm share/doc/HTML/nl/ksysguard
+@dirrm share/doc/HTML/nl/kspell
+@dirrm share/doc/HTML/nl/kpager
+@dirrm share/doc/HTML/nl/konsole
+@dirrm share/doc/HTML/nl/kioslave
+@dirrm share/doc/HTML/nl/khelpcenter/visualdict
+@dirrm share/doc/HTML/nl/khelpcenter/userguide
+@dirrm share/doc/HTML/nl/khelpcenter/quickstart
+@dirrm share/doc/HTML/nl/khelpcenter/faq
+@dirrm share/doc/HTML/nl/khelpcenter
+@dirrm share/doc/HTML/nl/kfind
+@dirrm share/doc/HTML/nl/kdm
+@dirrm share/doc/HTML/nl/kdesu
+@dirrm share/doc/HTML/nl/kdeprint
+@dirrm share/doc/HTML/nl/kdebugdialog
+@dirrm share/doc/HTML/nl/kcontrol
+@dirrm share/doc/HTML/nl/kate
+@dirrm share/doc/HTML/nl/kaddressbook
+@dirrm share/doc/HTML/nl/common
+@dirrm share/doc/HTML/nl/artsbuilder
+@dirrm share/doc/HTML/nl
+@dirrm share/apps/ktuberling/sounds/nl
+@dirrm share/apps/ktuberling/sounds
+@dirrm share/apps/ktuberling

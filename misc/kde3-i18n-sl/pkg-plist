@@ -297,9 +297,6 @@ share/doc/HTML/sl/klipper/index.docbook
 share/doc/HTML/sl/kmenuedit/common
 share/doc/HTML/sl/kmenuedit/index.cache.bz2
 share/doc/HTML/sl/kmenuedit/index.docbook
-share/doc/HTML/sl/koffice/common
-share/doc/HTML/sl/koffice/index.cache.bz2
-share/doc/HTML/sl/koffice/index.docbook
 share/doc/HTML/sl/konqueror/cmndline.png
 share/doc/HTML/sl/konqueror/common
 share/doc/HTML/sl/konqueror/dirtree.png
@@ -318,9 +315,6 @@ share/doc/HTML/sl/konsole/common
 share/doc/HTML/sl/konsole/index.cache.bz2
 share/doc/HTML/sl/konsole/index.docbook
 share/doc/HTML/sl/konsole/konsole.png
-share/doc/HTML/sl/koshell/common
-share/doc/HTML/sl/koshell/index.cache.bz2
-share/doc/HTML/sl/koshell/index.docbook
 share/doc/HTML/sl/kpackage/common
 share/doc/HTML/sl/kpackage/index.cache.bz2
 share/doc/HTML/sl/kpackage/index.docbook
@@ -341,15 +335,6 @@ share/doc/HTML/sl/kppp/kppp-faq.docbook
 share/doc/HTML/sl/kppp/security.docbook
 share/doc/HTML/sl/kppp/tricks.docbook
 share/doc/HTML/sl/kppp/wizard.docbook
-share/doc/HTML/sl/kpresenter/faq.docbook
-share/doc/HTML/sl/kpresenter/guides.docbook
-share/doc/HTML/sl/kpresenter/menus.docbook
-share/doc/HTML/sl/kpresenter/options.docbook
-share/doc/HTML/sl/kpresenter/screen.docbook
-share/doc/HTML/sl/kpresenter/tutorial.docbook
-share/doc/HTML/sl/krita/commands.docbook
-share/doc/HTML/sl/krita/faq.docbook
-share/doc/HTML/sl/krita/using.docbook
 share/doc/HTML/sl/kruler/common
 share/doc/HTML/sl/kruler/index.cache.bz2
 share/doc/HTML/sl/kruler/index.docbook
@@ -359,8 +344,6 @@ share/doc/HTML/sl/ksnapshot/index.docbook
 share/doc/HTML/sl/ksysguard/common
 share/doc/HTML/sl/ksysguard/index.cache.bz2
 share/doc/HTML/sl/ksysguard/index.docbook
-share/doc/HTML/sl/kugar/datadtd.docbook
-share/doc/HTML/sl/kugar/dataref.docbook
 share/doc/HTML/sl/kuser/common
 share/doc/HTML/sl/kuser/index.cache.bz2
 share/doc/HTML/sl/kuser/index.docbook
@@ -705,3 +688,41 @@ share/locale/sl/LC_MESSAGES/webarchiver.mo
 share/locale/sl/charset
 share/locale/sl/entry.desktop
 share/locale/sl/flag.png
+@dirrm share/doc/HTML/sl/noatun
+@dirrm share/doc/HTML/sl/kwrite
+@dirrm share/doc/HTML/sl/kuser
+@dirrm share/doc/HTML/sl/ksysguard
+@dirrm share/doc/HTML/sl/ksnapshot
+@dirrm share/doc/HTML/sl/kruler
+@dirrm share/doc/HTML/sl/kppp
+@dirrm share/doc/HTML/sl/kpager
+@dirrm share/doc/HTML/sl/kpackage
+@dirrm share/doc/HTML/sl/konsole
+@dirrm share/doc/HTML/sl/konqueror
+@dirrm share/doc/HTML/sl/kmenuedit
+@dirrm share/doc/HTML/sl/klipper
+@dirrm share/doc/HTML/sl/kit
+@dirrm share/doc/HTML/sl/kioslave
+@dirrm share/doc/HTML/sl/kicker
+@dirrm share/doc/HTML/sl/khelpcenter/visualdict
+@dirrm share/doc/HTML/sl/khelpcenter/userguide
+@dirrm share/doc/HTML/sl/khelpcenter/quickstart
+@dirrm share/doc/HTML/sl/khelpcenter/glossary
+@dirrm share/doc/HTML/sl/khelpcenter/faq
+@dirrm share/doc/HTML/sl/khelpcenter
+@dirrm share/doc/HTML/sl/kfind
+@dirrm share/doc/HTML/sl/kedit
+@dirrm share/doc/HTML/sl/kdvi
+@dirrm share/doc/HTML/sl/kdm
+@dirrm share/doc/HTML/sl/kdesu
+@dirrm share/doc/HTML/sl/kdeprint
+@dirrm share/doc/HTML/sl/kdebugdialog
+@dirrm share/doc/HTML/sl/kcron
+@dirrm share/doc/HTML/sl/kcontrol
+@dirrm share/doc/HTML/sl/kate
+@dirrm share/doc/HTML/sl/kaddressbook
+@dirrm share/doc/HTML/sl/common
+@dirrm share/doc/HTML/sl
+@dirrm share/apps/ktuberling/sounds/sl
+@dirrm share/apps/ktuberling/sounds
+@dirrm share/apps/ktuberling

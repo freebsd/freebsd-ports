@@ -1,4 +1,3 @@
-@comment files/links
 bin/kasteroids
 bin/katomic
 bin/kbackgammon
@@ -28,9 +27,6 @@ bin/kwin4
 bin/kwin4proc
 bin/lskat
 bin/lskatproc
-include/ghighscores.h
-include/ghighscores_item.h
-include/gsettings.h
 include/kcarddialog.h
 include/kchat.h
 include/kchatbase.h
@@ -1116,7 +1112,7 @@ share/apps/kmahjongg/toolbar/pause.xpm
 share/apps/kmahjongg/toolbar/play.xpm
 share/apps/kmines/kminesui.rc
 share/apps/konquest/konquestui.rc
-share/apps/konquest/pics/konquest-splash.gif
+share/apps/konquest/pics/konquest-splash.png
 share/apps/konquest/pics/planet1.xpm
 share/apps/konquest/pics/planet2.xpm
 share/apps/konquest/pics/planet3.xpm
@@ -1823,6 +1819,7 @@ share/doc/HTML/en/kpat/diamonds.png
 share/doc/HTML/en/kpat/hearts.png
 share/doc/HTML/en/kpat/index.cache.bz2
 share/doc/HTML/en/kpat/index.docbook
+share/doc/HTML/en/kpat/man.docbook
 share/doc/HTML/en/kpat/playfield.png
 share/doc/HTML/en/kpat/spades.png
 share/doc/HTML/en/kpoker/common
@@ -1979,6 +1976,7 @@ share/icons/locolor/32x32/apps/lskat.png
 @dirrm share/icons/hicolor/16x16/actions
 @dirrm share/icons/hicolor/16x16
 @dirrm share/icons/hicolor
+@dirrm share/icons
 @dirrm share/doc/HTML/en/lskat
 @dirrm share/doc/HTML/en/kwin4
 @dirrm share/doc/HTML/en/ktuberling
@@ -2006,6 +2004,7 @@ share/icons/locolor/32x32/apps/lskat.png
 @dirrm share/doc/HTML/en/kasteroids
 @dirrm share/doc/HTML/en
 @dirrm share/doc/HTML
+@dirrm share/doc
 @dirrm share/apps/lskat/grafix
 @dirrm share/apps/lskat
 @dirrm share/apps/kwin4/grafix/default
@@ -2104,10 +2103,12 @@ share/icons/locolor/32x32/apps/lskat.png
 @dirrm share/apps/carddecks/cards-default
 @dirrm share/apps/carddecks/cards-aisleriot
 @dirrm share/apps/carddecks
+@dirrm share/apps
 @dirrm share/applnk/Toys
 @dirrm share/applnk/Games/TacticStrategy
 @dirrm share/applnk/Games/Card
 @dirrm share/applnk/Games/Board
 @dirrm share/applnk/Games/Arcade
 @dirrm share/applnk/Games
+@dirrm share/applnk
 @dirrm include/kgame

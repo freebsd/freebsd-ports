@@ -1,4 +1,4 @@
-# New ports collection makefile for:	KDE libraries 2
+# New ports collection makefile for:	KDE libraries 3
 # Date created:				Fri Apr 14 2000 15:05:00 EDT
 # Whom:					will
 #
@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	kdelibs
-PORTVERSION=	3.0
-PORTREVISION=	1
+PORTVERSION=	3.0.1
 CATEGORIES?=	x11 kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION}/src
@@ -36,19 +35,9 @@ SOMINOR=	0
 USE_BZIP2=	yes
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=
-CONFIGURE_ARGS+=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS+=--enable-cups --disable-ltdl-install
-.if defined(PARALLEL_PACKAGE_BUILD) || defined(WANT_KDE_FINAL)
-CONFIGURE_ARGS+=--enable-final
-.endif
-.if defined(PARALLEL_PACKAGE_BUILD) || defined(WANT_KDE_NDEBUG)
-CONFIGURE_ARGS+=--disable-debug
-.endif
 
-.if ${MACHINE_ARCH} == "alpha"
-CFLAGS=		-O0 ${KDE_CFLAGS}
-.endif
+.include "${.CURDIR}/../kde3/Makefile.kde"
 
 USE_GMAKE=	yes
 MAKE_ENV=	SOMAJOR="${SOMAJOR}" SOMINOR="${SOMINOR}"
@@ -56,7 +45,7 @@ PLIST_SUB+=	LIBVER="${SOMAJOR}" LDCONFIG="${LDCONFIG}"
 
 .include <bsd.port.pre.mk>
 
-pre-fetch:
+pre-fetch: kde-version-check
 .if ${OSVERSION} <= 410002
 	@${ECHO}
 	@${ECHO} "			NOTICE"
@@ -64,23 +53,12 @@ pre-fetch:
 	@${ECHO} "Your OpenSSL installation could be out of date.  This is"
 	@${ECHO} "just a warning, but if your system's world was built on"
 	@${ECHO} "sources earlier than August 20 along RELENG_4 or older,"
-	@${ECHO} "then KDE2 will not build with SSL support."
+	@${ECHO} "then KDE3 will not build with SSL support."
 	@${ECHO}
 .endif
 
 pre-configure:
 	cd ${WRKSRC} && ${GMAKE} -f Makefile.cvs
-
-pre-extract:
-.if exists(${LOCALBASE}/include/kfm.h)
-	@${ECHO}
-	@${ECHO} "			NOTICE"
-	@${ECHO}
-	@${ECHO} "You have KDE1 headers installed!  Installing this port"
-	@${ECHO} "will result in conflicts between KDE2 and KDE1!"
-	@${ECHO}
-	@${FALSE}
-.endif
 
 post-install:
 	${SED} -e 's,%%PREFIX%%,${PREFIX},g' ${FILESDIR}/kdelibs.sh > ${PREFIX}/etc/rc.d/kdelibs.sh

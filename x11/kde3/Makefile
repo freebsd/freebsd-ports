@@ -1,4 +1,4 @@
-# New ports collection makefile for:	KDE2
+# New ports collection makefile for:	KDE3
 # Date created:				Sun May 14 2000 00:50:02
 # Whom:					Will Andrews <will@FreeBSD.org>
 #
@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	kde
-PORTVERSION=	3.0
-PORTREVISION=	1
+PORTVERSION=	3.0.1
 CATEGORIES=	x11 kde
 MASTER_SITES=	# empty
 DISTFILES=	# none

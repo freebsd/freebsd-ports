@@ -348,3 +348,7 @@ share/locale/he/LC_MESSAGES/webarchiver.mo
 share/locale/he/charset
 share/locale/he/entry.desktop
 share/locale/he/flag.png
+@dirrm share/locale/he/LC_MESSAGES
+@dirrm share/doc/HTML/he/khelpcenter
+@dirrm share/doc/HTML/he/common
+@dirrm share/doc/HTML/he

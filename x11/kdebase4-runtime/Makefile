@@ -1,4 +1,4 @@
-# New ports collection makefile for:	kdebase2
+# New ports collection makefile for:	kdebase3
 # Date created:				Fri Apr 14 2000 15:05:00 EDT
 # Whom:					will
 #
@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	kdebase
-PORTVERSION=	3.0
-PORTREVISION=	1
+PORTVERSION=	3.0.1
 CATEGORIES?=	x11 kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION}/src
@@ -22,20 +21,20 @@ USE_XPM=	yes
 USE_BZIP2=	yes
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=
-CONFIGURE_ARGS+=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV+=	RUN_KAPPFINDER=no
 CONFIGURE_ARGS+=--with-xdmdir=${X11BASE}/lib/X11/xdm \
 		--without-ldap --disable-closure
-.if defined(PARALLEL_PACKAGE_BUILD) || defined(WANT_KDE_FINAL)
-CONFIGURE_ARGS+=--enable-final
-.endif
-.if defined(PARALLEL_PACKAGE_BUILD) || defined(WANT_KDE_NDEBUG)
-CONFIGURE_ARGS+=--disable-debug
-.endif
 USE_GMAKE=	yes
 
+.include "${.CURDIR}/../../x11/kde3/Makefile.kde"
+
 .include <bsd.port.pre.mk>
+
+.if exists(${X11BASE}/bin/mkfontdir)
+PLIST_SUB+=	MKFONTDIR=""
+.else
+PLIST_SUB+=	MKFONTDIR="@comment "
+.endif
 
 .if exists(${X11BASE}/include/Xm/Xm.h)
 WITH_MOTIF=	yes
@@ -58,6 +57,10 @@ pre-everything::
 post-extract:
 	@${ECHO} "#!/bin/sh" > ${WRKSRC}/mkpamserv
 	@${ECHO} "exit 0" >> ${WRKSRC}/mkpamserv
+
+post-patch:
+	@${PERL} -pi -e "s@Exec=ee@Exec=ElectricEyes@g" \
+		${WRKSRC}/kappfinder/apps/Graphics/ElectricEyes.desktop
 
 .if ${MACHINE_ARCH} == "alpha"
 pre-configure:

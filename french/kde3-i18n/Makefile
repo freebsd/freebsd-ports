@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	kde-i18n-fr
-PORTVERSION=	3.0
+PORTVERSION=	3.0.1
 CATEGORIES?=	misc kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=     stable/${PORTVERSION}/src
@@ -24,5 +24,9 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=
 CONFIGURE_ARGS+=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+
+pre-configure:
+	${PERL} -pi -e "s@ core @ @g" \
+		${WRKSRC}/docs/kdebase/khelpcenter/faq/Makefile.in
 
 .include <bsd.port.mk>

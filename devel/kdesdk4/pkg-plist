@@ -1,7 +1,6 @@
-@comment files/links
 bin/adddebug
 bin/catalogmanager
-bin/cervisia
+%%CERVISIA%%bin/cervisia
 bin/create_cvsignore
 bin/create_makefile
 bin/create_makefiles
@@ -63,9 +62,9 @@ lib/kde3/pothumbnail.so
 lib/libcatalogmanager.la
 lib/libcatalogmanager.so
 lib/libcatalogmanager.so.1
-lib/libcervisia.la
-lib/libcervisia.so
-lib/libcervisia.so.1
+%%CERVISIA%%lib/libcervisia.la
+%%CERVISIA%%lib/libcervisia.so
+%%CERVISIA%%lib/libcervisia.so.1
 lib/libkbabel.la
 lib/libkbabel.so
 lib/libkbabel.so.1
@@ -82,7 +81,7 @@ lib/libkspy.la
 lib/libkspy.so
 lib/libkspy.so.1
 share/applnk/Development/catalogmanager.desktop
-share/applnk/Development/cervisia.desktop
+%%CERVISIA%%share/applnk/Development/cervisia.desktop
 share/applnk/Development/kbabel.desktop
 share/applnk/Development/kbabeldict.desktop
 share/applnk/Development/kbugbuster.desktop
@@ -104,8 +103,8 @@ share/apps/catalogmanager/pics/broken.png
 share/apps/catalogmanager/pics/missing.png
 share/apps/catalogmanager/pics/needwork.png
 share/apps/catalogmanager/pics/ok.png
-share/apps/cervisia/cervisiashellui.rc
-share/apps/cervisia/cervisiaui.rc
+%%CERVISIA%%share/apps/cervisia/cervisiashellui.rc
+%%CERVISIA%%share/apps/cervisia/cervisiaui.rc
 share/apps/kapptemplate/admin/ChangeLog
 share/apps/kapptemplate/admin/Makefile
 share/apps/kapptemplate/admin/Makefile.am
@@ -230,6 +229,7 @@ share/apps/kbabel/icons/hicolor/16x16/actions/prevfuzzy.png
 share/apps/kbabel/icons/hicolor/16x16/actions/prevfuzzyuntrans.png
 share/apps/kbabel/icons/hicolor/16x16/actions/prevuntranslated.png
 share/apps/kbabel/icons/hicolor/16x16/actions/search2msgstr.png
+share/apps/kbabel/icons/hicolor/16x16/actions/togglefuzzy.png
 share/apps/kbabel/icons/hicolor/16x16/actions/transsearch.png
 share/apps/kbabel/icons/hicolor/22x22/actions/autodiff.png
 share/apps/kbabel/icons/hicolor/22x22/actions/catalogmanager.png
@@ -245,6 +245,7 @@ share/apps/kbabel/icons/hicolor/22x22/actions/prevfuzzy.png
 share/apps/kbabel/icons/hicolor/22x22/actions/prevfuzzyuntrans.png
 share/apps/kbabel/icons/hicolor/22x22/actions/prevuntranslated.png
 share/apps/kbabel/icons/hicolor/22x22/actions/search2msgstr.png
+share/apps/kbabel/icons/hicolor/22x22/actions/togglefuzzy.png
 share/apps/kbabel/icons/hicolor/22x22/actions/transsearch.png
 share/apps/kbabel/icons/hicolor/32x32/actions/autodiff.png
 share/apps/kbabel/icons/hicolor/32x32/actions/catalogmanager.png
@@ -260,6 +261,7 @@ share/apps/kbabel/icons/hicolor/32x32/actions/prevfuzzy.png
 share/apps/kbabel/icons/hicolor/32x32/actions/prevfuzzyuntrans.png
 share/apps/kbabel/icons/hicolor/32x32/actions/prevuntranslated.png
 share/apps/kbabel/icons/hicolor/32x32/actions/search2msgstr.png
+share/apps/kbabel/icons/hicolor/32x32/actions/togglefuzzy.png
 share/apps/kbabel/icons/hicolor/32x32/actions/transsearch.png
 share/apps/kbabel/icons/locolor/16x16/actions/autodiff.png
 share/apps/kbabel/icons/locolor/16x16/actions/catalogmanager.png
@@ -275,6 +277,7 @@ share/apps/kbabel/icons/locolor/16x16/actions/prevfuzzy.png
 share/apps/kbabel/icons/locolor/16x16/actions/prevfuzzyuntrans.png
 share/apps/kbabel/icons/locolor/16x16/actions/prevuntranslated.png
 share/apps/kbabel/icons/locolor/16x16/actions/search2msgstr.png
+share/apps/kbabel/icons/locolor/16x16/actions/togglefuzzy.png
 share/apps/kbabel/icons/locolor/16x16/actions/transsearch.png
 share/apps/kbabel/icons/locolor/32x32/actions/autodiff.png
 share/apps/kbabel/icons/locolor/32x32/actions/catalogmanager.png
@@ -290,6 +293,7 @@ share/apps/kbabel/icons/locolor/32x32/actions/prevfuzzy.png
 share/apps/kbabel/icons/locolor/32x32/actions/prevfuzzyuntrans.png
 share/apps/kbabel/icons/locolor/32x32/actions/prevuntranslated.png
 share/apps/kbabel/icons/locolor/32x32/actions/search2msgstr.png
+share/apps/kbabel/icons/locolor/32x32/actions/togglefuzzy.png
 share/apps/kbabel/icons/locolor/32x32/actions/transsearch.png
 share/apps/kbabel/kbabelui.rc
 share/apps/kbabel/pics/broken.png
@@ -310,18 +314,18 @@ share/apps/kompare/icons/locolor/16x16/apps/kompare.png
 share/apps/kompare/icons/locolor/32x32/apps/kompare.png
 share/apps/kompare/kompareui.rc
 share/apps/komparepart/komparepartui.rc
-share/doc/HTML/en/cervisia/checkout.png
-share/doc/HTML/en/cervisia/commit.png
-share/doc/HTML/en/cervisia/common
-share/doc/HTML/en/cervisia/diff.png
-share/doc/HTML/en/cervisia/history.png
-share/doc/HTML/en/cervisia/import.png
-share/doc/HTML/en/cervisia/index.cache.bz2
-share/doc/HTML/en/cervisia/index.docbook
-share/doc/HTML/en/cervisia/logtree.png
-share/doc/HTML/en/cervisia/mainview.png
-share/doc/HTML/en/cervisia/resolve.png
-share/doc/HTML/en/cervisia/updatetag.png
+%%CERVISIA%%share/doc/HTML/en/cervisia/checkout.png
+%%CERVISIA%%share/doc/HTML/en/cervisia/commit.png
+%%CERVISIA%%share/doc/HTML/en/cervisia/common
+%%CERVISIA%%share/doc/HTML/en/cervisia/diff.png
+%%CERVISIA%%share/doc/HTML/en/cervisia/history.png
+%%CERVISIA%%share/doc/HTML/en/cervisia/import.png
+%%CERVISIA%%share/doc/HTML/en/cervisia/index.cache.bz2
+%%CERVISIA%%share/doc/HTML/en/cervisia/index.docbook
+%%CERVISIA%%share/doc/HTML/en/cervisia/logtree.png
+%%CERVISIA%%share/doc/HTML/en/cervisia/mainview.png
+%%CERVISIA%%share/doc/HTML/en/cervisia/resolve.png
+%%CERVISIA%%share/doc/HTML/en/cervisia/updatetag.png
 share/doc/HTML/en/kbabel/back.png
 share/doc/HTML/en/kbabel/bottom.png
 share/doc/HTML/en/kbabel/catalogmanager.png
@@ -360,13 +364,13 @@ share/doc/HTML/en/kbabel/top.png
 share/doc/HTML/en/kbabel/transsearch.png
 share/doc/HTML/en/kbabel/undo.png
 share/icons/hicolor/16x16/apps/catalogmanager.png
-share/icons/hicolor/16x16/apps/cervisia.png
+%%CERVISIA%%share/icons/hicolor/16x16/apps/cervisia.png
 share/icons/hicolor/16x16/apps/kbabel.png
 share/icons/hicolor/16x16/apps/kbabeldict.png
 share/icons/hicolor/16x16/apps/kompare.png
 share/icons/hicolor/16x16/mimetypes/gettext.png
 share/icons/hicolor/32x32/apps/catalogmanager.png
-share/icons/hicolor/32x32/apps/cervisia.png
+%%CERVISIA%%share/icons/hicolor/32x32/apps/cervisia.png
 share/icons/hicolor/32x32/apps/kbabel.png
 share/icons/hicolor/32x32/apps/kbabeldict.png
 share/icons/hicolor/32x32/mimetypes/gettext.png
@@ -387,7 +391,9 @@ share/mimelnk/application/x-gettext.desktop
 share/services/kompare_part.desktop
 share/services/pothumbnail.desktop
 @comment directories
+@dirrm share/services
 @dirrm share/mimelnk/application
+@dirrm share/mimelnk
 @dirrm share/icons/locolor/32x32/mimetypes
 @dirrm share/icons/locolor/32x32/apps
 @dirrm share/icons/locolor/32x32
@@ -405,10 +411,12 @@ share/services/pothumbnail.desktop
 @dirrm share/icons/hicolor/16x16/apps
 @dirrm share/icons/hicolor/16x16
 @dirrm share/icons/hicolor
+@dirrm share/icons
 @dirrm share/doc/HTML/en/kbabel
-@dirrm share/doc/HTML/en/cervisia
+%%CERVISIA%%@dirrm share/doc/HTML/en/cervisia
 @dirrm share/doc/HTML/en
 @dirrm share/doc/HTML
+@dirrm share/doc
 @dirrm share/apps/komparepart
 @dirrm share/apps/kompare/icons/locolor/32x32/apps
 @dirrm share/apps/kompare/icons/locolor/32x32
@@ -452,7 +460,7 @@ share/services/pothumbnail.desktop
 @dirrm share/apps/kapptemplate/appframework
 @dirrm share/apps/kapptemplate/admin
 @dirrm share/apps/kapptemplate
-@dirrm share/apps/cervisia
+%%CERVISIA%%@dirrm share/apps/cervisia
 @dirrm share/apps/catalogmanager/pics
 @dirrm share/apps/catalogmanager/icons/locolor/32x32/actions
 @dirrm share/apps/catalogmanager/icons/locolor/32x32
@@ -470,5 +478,8 @@ share/services/pothumbnail.desktop
 @dirrm share/apps/catalogmanager/icons/hicolor
 @dirrm share/apps/catalogmanager/icons
 @dirrm share/apps/catalogmanager
+@dirrm share/apps
 @dirrm share/applnk/Development
+@dirrm share/applnk
+@dirrm lib/kde3
 @dirrm include/kbabel

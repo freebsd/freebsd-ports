@@ -1,4 +1,4 @@
-# New ports collection makefile for:	KDE2 Graphics
+# New ports collection makefile for:	KDE3 Graphics
 # Date created:				Saturday 2 September 2000
 # Whom:					Will Andrews <will@FreeBSD.org>
 #
@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	kdegraphics
-PORTVERSION=	3.0
-PORTREVISION=	2
+PORTVERSION=	3.0.1
 CATEGORIES=	graphics kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION}/src
@@ -19,18 +18,19 @@ USE_KDELIBS_VER=3
 USE_BZIP2=	yes
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=
-CONFIGURE_ARGS+=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_GMAKE=	yes
-CONFIGURE_ARGS+=--without-kamera
-.if defined(PARALLEL_PACKAGE_BUILD) || defined(WANT_KDE_FINAL)
-CONFIGURE_ARGS+=--enable-final
-.endif
-.if defined(PARALLEL_PACKAGE_BUILD) || defined(WANT_KDE_NDEBUG)
-CONFIGURE_ARGS+=--disable-debug
+CONFIGURE_ARGS+=--without-kamera --without-imlib-config
+
+.if defined(WITH_IMLIB) || defined(KDE_WITH_IMLIB)
+USE_IMLIB=	yes
+PLIST_SUB+=	IMLIB=""
+.else
+WITHOUT_IMLIB=	yes
+CONFIGURE_ARGS+=--without-imlib-config
+PLIST_SUB+=	IMLIB="@comment "
 .endif
 
-LIB_DEPENDS+=	Imlib.5:${PORTSDIR}/graphics/imlib
+.include "${.CURDIR}/../../x11/kde3/Makefile.kde"
 
 .include <bsd.port.pre.mk>
 

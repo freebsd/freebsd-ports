@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	kdeartwork
-PORTVERSION=	3.0
+PORTVERSION=	3.0.1
 CATEGORIES=	x11-wm kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION}/src
@@ -15,12 +15,13 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	kde@FreeBSD.org
 
 USE_KDEBASE_VER=3
+USE_MESA=	yes
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=
-CONFIGURE_ARGS+=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
+
+.include "${.CURDIR}/../../x11/kde3/Makefile.kde"
 
 .include <bsd.port.pre.mk>
 

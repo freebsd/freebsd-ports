@@ -407,7 +407,6 @@ share/apps/kppp/Rules/Denmark/Worldonline-ISDN.rst
 share/apps/kppp/Rules/Estonia/Eesti_Telefon.rst
 share/apps/kppp/Rules/Finland/Vaasan_LP.rst
 share/apps/kppp/Rules/France/France_Telecom_Local.rst
-share/apps/kppp/Rules/France/France_Telecom_Local_Area.rst
 share/apps/kppp/Rules/France/France_Telecom_Local_Primaliste_Internet.rst
 share/apps/kppp/Rules/France/France_Telecom_National.rst
 share/apps/kppp/Rules/Germany/2.5min.rst
@@ -807,7 +806,22 @@ share/services/kxmlrpcd.desktop
 share/services/lan.protocol
 share/services/rlan.protocol
 %%KTALKD%%share/sounds/ktalkd.wav
-@comment dirs
+@comment directories
+@dirrm share/sounds
+@dirrm share/services
+@dirrm share/icons/locolor/32x32/apps
+@dirrm share/icons/locolor/32x32
+@dirrm share/icons/locolor/16x16/apps
+@dirrm share/icons/locolor/16x16
+@dirrm share/icons/locolor
+@dirrm share/icons/hicolor/48x48/apps
+@dirrm share/icons/hicolor/48x48
+@dirrm share/icons/hicolor/32x32/apps
+@dirrm share/icons/hicolor/32x32
+@dirrm share/icons/hicolor/16x16/apps
+@dirrm share/icons/hicolor/16x16
+@dirrm share/icons/hicolor
+@dirrm share/icons
 @dirrm share/doc/HTML/en/lisa
 @dirrm share/doc/HTML/en/ktalkd
 @dirrm share/doc/HTML/en/ksirc
@@ -819,6 +833,10 @@ share/services/rlan.protocol
 @dirrm share/doc/HTML/en/kmail
 @dirrm share/doc/HTML/en/kit
 @dirrm share/doc/HTML/en/kdict
+@dirrm share/doc/HTML/en
+@dirrm share/doc/HTML
+@dirrm share/doc
+@dirrm share/config
 @dirrm share/apps/lisa
 @dirrm share/apps/ksirc/pics/emoticons
 @dirrm share/apps/ksirc/pics
@@ -925,6 +943,7 @@ share/services/rlan.protocol
 @dirrm share/apps/kdict/icons
 @dirrm share/apps/kdict
 @dirrm share/apps/kconf_update
+@dirrm share/apps
 @dirrm share/applnk/Utilities
 @dirrm share/applnk/Settings/System
 @dirrm share/applnk/Settings/Personalization
@@ -933,4 +952,5 @@ share/services/rlan.protocol
 @dirrm share/applnk/Internet
 @dirrm share/applnk/.hidden
 @dirrm share/applnk
+@dirrm lib/kde3
 @dirrm include/mimelib

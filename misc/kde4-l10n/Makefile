@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	kde-i18n
-PORTVERSION=	3.0
+PORTVERSION=	3.0.1
 CATEGORIES=	misc kde
 MASTER_SITES=	# none
 DISTFILES=	# none

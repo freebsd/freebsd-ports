@@ -533,6 +533,8 @@ lib/kde3/kdeprint_rlpr.la
 lib/kde3/kdeprint_rlpr.so
 lib/kde3/kgzipfilter.la
 lib/kde3/kgzipfilter.so
+lib/kde3/khtmlimagepart.la
+lib/kde3/khtmlimagepart.so
 lib/kde3/kimg_eps.la
 lib/kde3/kimg_eps.so
 lib/kde3/kimg_g3.la
@@ -620,8 +622,6 @@ lib/libkdeui.so.4
 lib/libkhtml.la
 lib/libkhtml.so
 lib/libkhtml.so.4
-lib/libkhtmlimage.la
-lib/libkhtmlimage.so
 lib/libkio.la
 lib/libkio.so
 lib/libkio.so.4
@@ -3187,13 +3187,195 @@ share/servicetypes/ktexteditoreditor.desktop
 share/servicetypes/kurifilterplugin.desktop
 share/servicetypes/renamedlgplugin.desktop
 share/servicetypes/scriptinterface.desktop
-@exec /bin/mkdir -p %D/share/icons/hicolor/32x32/actions/kde
-@exec /bin/mkdir -p %D/share/icons/hicolor/32x32/actions/kde
-@exec /bin/mkdir -p %D/share/icons/hicolor/32x32/actions/kde
-@exec /bin/mkdir -p %D/share/icons/hicolor/22x22/actions/kde
-@exec /bin/mkdir -p %D/share/icons/hicolor/22x22/actions/kde
-@exec /bin/mkdir -p %D/share/icons/hicolor/22x22/actions/kde
+@comment empty dirs
 @exec /bin/mkdir -p %D/share/icons/hicolor/32x32/actions/kde
 @exec /bin/mkdir -p %D/share/icons/hicolor/22x22/actions/kde
-@exec /bin/mkdir -p %D/share/icons/hicolor/32x32/actions/kde
-@exec /bin/mkdir -p %D/share/icons/hicolor/22x22/actions/kde
+@comment directories
+@dirrm share/servicetypes
+@dirrm share/services/kded
+@dirrm share/services
+@dirrm share/mimelnk/video
+@dirrm share/mimelnk/text
+@dirrm share/mimelnk/multipart
+@dirrm share/mimelnk/message
+@dirrm share/mimelnk/inode
+@dirrm share/mimelnk/image
+@dirrm share/mimelnk/audio
+@dirrm share/mimelnk/application
+@dirrm share/mimelnk/all
+@dirrm share/mimelnk
+@dirrm share/icons/hicolor/64x64/mimetypes
+@dirrm share/icons/hicolor/64x64/filesystems
+@dirrm share/icons/hicolor/64x64
+@dirrm share/icons/hicolor/48x48/mimetypes
+@dirrm share/icons/hicolor/48x48/filesystems
+@dirrm share/icons/hicolor/48x48/devices
+@dirrm share/icons/hicolor/48x48/actions
+@dirrm share/icons/hicolor/48x48
+@dirrm share/icons/hicolor/32x32/mimetypes
+@dirrm share/icons/hicolor/32x32/filesystems
+@dirrm share/icons/hicolor/32x32/devices
+@dirrm share/icons/hicolor/32x32/actions/kde
+@dirrm share/icons/hicolor/32x32/actions
+@dirrm share/icons/hicolor/32x32
+@dirrm share/icons/hicolor/22x22/actions/kde
+@dirrm share/icons/hicolor/22x22/actions
+@dirrm share/icons/hicolor/22x22
+@dirrm share/icons/hicolor/16x16/mimetypes
+@dirrm share/icons/hicolor/16x16/filesystems
+@dirrm share/icons/hicolor/16x16/devices
+@dirrm share/icons/hicolor/16x16/apps
+@dirrm share/icons/hicolor/16x16/actions
+@dirrm share/icons/hicolor/16x16
+@dirrm share/icons/hicolor
+@dirrm share/icons
+@dirrm share/doc/HTML/en/kspell
+@dirrm share/doc/HTML/en/common
+@dirrm share/doc/HTML/en
+@dirrm share/doc/HTML
+@dirrm share/config/ui
+@dirrm share/config/colors
+@dirrm share/config
+@dirrm share/autostart
+@dirrm share/apps/kstyle/themes
+@dirrm share/apps/kstyle/pixmaps/riscos
+@dirrm share/apps/kstyle/pixmaps
+@dirrm share/apps/kstyle
+@dirrm share/apps/kssl
+@dirrm share/apps/ksgmltools2/docbook/xsl/tools/profile
+@dirrm share/apps/ksgmltools2/docbook/xsl/tools/olink
+@dirrm share/apps/ksgmltools2/docbook/xsl/tools
+@dirrm share/apps/ksgmltools2/docbook/xsl/params
+@dirrm share/apps/ksgmltools2/docbook/xsl/lib
+@dirrm share/apps/ksgmltools2/docbook/xsl/images/callouts
+@dirrm share/apps/ksgmltools2/docbook/xsl/images
+@dirrm share/apps/ksgmltools2/docbook/xsl/html
+@dirrm share/apps/ksgmltools2/docbook/xsl/common
+@dirrm share/apps/ksgmltools2/docbook/xsl
+@dirrm share/apps/ksgmltools2/docbook/xml-dtd-4.1.2/ent
+@dirrm share/apps/ksgmltools2/docbook/xml-dtd-4.1.2
+@dirrm share/apps/ksgmltools2/docbook
+@dirrm share/apps/ksgmltools2/customization/zh-TW/entities
+@dirrm share/apps/ksgmltools2/customization/zh-TW
+@dirrm share/apps/ksgmltools2/customization/xsl
+@dirrm share/apps/ksgmltools2/customization/uk/entities
+@dirrm share/apps/ksgmltools2/customization/uk
+@dirrm share/apps/ksgmltools2/customization/tr/entities
+@dirrm share/apps/ksgmltools2/customization/tr
+@dirrm share/apps/ksgmltools2/customization/sv/entities
+@dirrm share/apps/ksgmltools2/customization/sv
+@dirrm share/apps/ksgmltools2/customization/sr/entities
+@dirrm share/apps/ksgmltools2/customization/sr
+@dirrm share/apps/ksgmltools2/customization/sl/entities
+@dirrm share/apps/ksgmltools2/customization/sl
+@dirrm share/apps/ksgmltools2/customization/sk/entities
+@dirrm share/apps/ksgmltools2/customization/sk
+@dirrm share/apps/ksgmltools2/customization/ru/entities
+@dirrm share/apps/ksgmltools2/customization/ru
+@dirrm share/apps/ksgmltools2/customization/ro/entities
+@dirrm share/apps/ksgmltools2/customization/ro
+@dirrm share/apps/ksgmltools2/customization/pt/entities
+@dirrm share/apps/ksgmltools2/customization/pt-BR/entities
+@dirrm share/apps/ksgmltools2/customization/pt-BR
+@dirrm share/apps/ksgmltools2/customization/pt
+@dirrm share/apps/ksgmltools2/customization/pl/entities
+@dirrm share/apps/ksgmltools2/customization/pl
+@dirrm share/apps/ksgmltools2/customization/no/entities
+@dirrm share/apps/ksgmltools2/customization/no
+@dirrm share/apps/ksgmltools2/customization/nn/entities
+@dirrm share/apps/ksgmltools2/customization/nn
+@dirrm share/apps/ksgmltools2/customization/nl/entities
+@dirrm share/apps/ksgmltools2/customization/nl
+@dirrm share/apps/ksgmltools2/customization/ko/entities
+@dirrm share/apps/ksgmltools2/customization/ko
+@dirrm share/apps/ksgmltools2/customization/ja/entities
+@dirrm share/apps/ksgmltools2/customization/ja
+@dirrm share/apps/ksgmltools2/customization/it/entities
+@dirrm share/apps/ksgmltools2/customization/it
+@dirrm share/apps/ksgmltools2/customization/id/entities
+@dirrm share/apps/ksgmltools2/customization/id
+@dirrm share/apps/ksgmltools2/customization/hu/entities
+@dirrm share/apps/ksgmltools2/customization/hu
+@dirrm share/apps/ksgmltools2/customization/fr/entities
+@dirrm share/apps/ksgmltools2/customization/fr
+@dirrm share/apps/ksgmltools2/customization/fi/entities
+@dirrm share/apps/ksgmltools2/customization/fi
+@dirrm share/apps/ksgmltools2/customization/et/entities
+@dirrm share/apps/ksgmltools2/customization/et
+@dirrm share/apps/ksgmltools2/customization/es/entities
+@dirrm share/apps/ksgmltools2/customization/es
+@dirrm share/apps/ksgmltools2/customization/entities
+@dirrm share/apps/ksgmltools2/customization/en/entities
+@dirrm share/apps/ksgmltools2/customization/en-GB/entities
+@dirrm share/apps/ksgmltools2/customization/en-GB
+@dirrm share/apps/ksgmltools2/customization/en
+@dirrm share/apps/ksgmltools2/customization/el/entities
+@dirrm share/apps/ksgmltools2/customization/el
+@dirrm share/apps/ksgmltools2/customization/dtd
+@dirrm share/apps/ksgmltools2/customization/de/entities
+@dirrm share/apps/ksgmltools2/customization/de
+@dirrm share/apps/ksgmltools2/customization/da/entities
+@dirrm share/apps/ksgmltools2/customization/da
+@dirrm share/apps/ksgmltools2/customization/cs/entities
+@dirrm share/apps/ksgmltools2/customization/cs
+@dirrm share/apps/ksgmltools2/customization/ca/entities
+@dirrm share/apps/ksgmltools2/customization/ca
+@dirrm share/apps/ksgmltools2/customization/af/entities
+@dirrm share/apps/ksgmltools2/customization/af
+@dirrm share/apps/ksgmltools2/customization
+@dirrm share/apps/ksgmltools2
+@dirrm share/apps/knotify
+@dirrm share/apps/kjava
+@dirrm share/apps/kio_uiserver/icons/hicolor/16x16/apps
+@dirrm share/apps/kio_uiserver/icons/hicolor/16x16
+@dirrm share/apps/kio_uiserver/icons/hicolor
+@dirrm share/apps/kio_uiserver/icons
+@dirrm share/apps/kio_uiserver
+@dirrm share/apps/khtml/icons/hicolor/32x32/actions
+@dirrm share/apps/khtml/icons/hicolor/32x32
+@dirrm share/apps/khtml/icons/hicolor/22x22/actions
+@dirrm share/apps/khtml/icons/hicolor/22x22
+@dirrm share/apps/khtml/icons/hicolor/16x16/actions
+@dirrm share/apps/khtml/icons/hicolor/16x16
+@dirrm share/apps/khtml/icons/hicolor
+@dirrm share/apps/khtml/icons
+@dirrm share/apps/khtml/css
+@dirrm share/apps/khtml
+@dirrm share/apps/kdewidgets/pics
+@dirrm share/apps/kdewidgets
+@dirrm share/apps/kdeui/pics
+@dirrm share/apps/kdeui
+@dirrm share/apps/kdeprint/plugins
+@dirrm share/apps/kdeprint/pics
+@dirrm share/apps/kdeprint/icons/hicolor/32x32/apps
+@dirrm share/apps/kdeprint/icons/hicolor/32x32/actions
+@dirrm share/apps/kdeprint/icons/hicolor/32x32
+@dirrm share/apps/kdeprint/icons/hicolor/22x22/actions
+@dirrm share/apps/kdeprint/icons/hicolor/22x22
+@dirrm share/apps/kdeprint/icons/hicolor/16x16/apps
+@dirrm share/apps/kdeprint/icons/hicolor/16x16/actions
+@dirrm share/apps/kdeprint/icons/hicolor/16x16
+@dirrm share/apps/kdeprint/icons/hicolor
+@dirrm share/apps/kdeprint/icons
+@dirrm share/apps/kdeprint/filters
+@dirrm share/apps/kdeprint
+@dirrm share/apps/kconf_update
+@dirrm share/apps/kcertpart
+@dirrm share/apps/kate/syntax
+@dirrm share/apps/kate
+@dirrm share/apps/LICENSES
+@dirrm share/apps
+@dirrm lib/kde3/plugins/styles
+@dirrm lib/kde3/plugins/designer
+@dirrm lib/kde3/plugins
+@dirrm lib/kde3
+@dirrm include/libkmid
+@dirrm include/ktexteditor
+@dirrm include/kparts
+@dirrm include/kjs
+@dirrm include/kio
+@dirrm include/kdesu
+@dirrm include/kdeprint
+@dirrm include/kate
+@dirrm include/kabc
+@dirrm include/dom

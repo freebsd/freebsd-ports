@@ -9,7 +9,7 @@ bin/kiconedit
 bin/kpaint
 bin/kruler
 bin/ksnapshot
-bin/kuickshow
+%%IMLIB%%bin/kuickshow
 bin/kview
 bin/kviewshell
 %%SANE%%include/devselector.h
@@ -38,8 +38,8 @@ lib/kde3/kfile_ps.la
 lib/kde3/kfile_ps.so
 %%KAMERA%%lib/kio_kamera.la
 %%KAMERA%%lib/kio_kamera.so
-lib/kuickshow.la
-lib/kuickshow.so
+%%IMLIB%%lib/kuickshow.la
+%%IMLIB%%lib/kuickshow.so
 lib/kview.la
 lib/kview.so
 %%KAMERA%%lib/libkcm_kamera.la
@@ -73,7 +73,7 @@ share/applnk/Graphics/kiconedit.desktop
 share/applnk/Graphics/kpaint.desktop
 share/applnk/Graphics/kruler.desktop
 share/applnk/Graphics/ksnapshot.desktop
-share/applnk/Graphics/kuickshow.desktop
+%%IMLIB%%share/applnk/Graphics/kuickshow.desktop
 share/applnk/Graphics/kview.desktop
 %%KAMERA%%share/applnk/Settings/Peripherals/kamera.desktop
 share/apps/kdvi/kdvi_part.rc
@@ -144,16 +144,16 @@ share/apps/kruler/kruler-north.png
 share/apps/kruler/kruler-south.png
 share/apps/kruler/kruler-west.png
 share/apps/kruler/move.wav
-share/apps/kuickshow/im_palette.pal
-share/apps/kuickshow/pics/about.png
-share/apps/kuickshow/pics/calibrate.png
-share/apps/kuickshow/pics/handcursor.png
-share/apps/kuickshow/pics/imageviewer-medium.png
-share/apps/kuickshow/pics/imageviewer-small.png
-share/apps/kuickshow/pics/ksslide.png
-share/apps/kuickshow/pics/kuickshow-day.jpg
-share/apps/kuickshow/pics/kuickshow-night.jpg
-share/apps/kuickshow/pics/logo.png
+%%IMLIB%%share/apps/kuickshow/im_palette.pal
+%%IMLIB%%share/apps/kuickshow/pics/about.png
+%%IMLIB%%share/apps/kuickshow/pics/calibrate.png
+%%IMLIB%%share/apps/kuickshow/pics/handcursor.png
+%%IMLIB%%share/apps/kuickshow/pics/imageviewer-medium.png
+%%IMLIB%%share/apps/kuickshow/pics/imageviewer-small.png
+%%IMLIB%%share/apps/kuickshow/pics/ksslide.png
+%%IMLIB%%share/apps/kuickshow/pics/kuickshow-day.jpg
+%%IMLIB%%share/apps/kuickshow/pics/kuickshow-night.jpg
+%%IMLIB%%share/apps/kuickshow/pics/logo.png
 share/apps/kview/kview_part.rc
 share/apps/kview/kview_popup.rc
 share/apps/kview/kviewui.rc
@@ -230,7 +230,7 @@ share/icons/hicolor/16x16/apps/kiconedit.png
 share/icons/hicolor/16x16/apps/kpaint.png
 share/icons/hicolor/16x16/apps/kruler.png
 share/icons/hicolor/16x16/apps/ksnapshot.png
-share/icons/hicolor/16x16/apps/kuickshow.png
+%%IMLIB%%share/icons/hicolor/16x16/apps/kuickshow.png
 share/icons/hicolor/16x16/apps/kview.png
 share/icons/hicolor/16x16/apps/kviewshell.png
 share/icons/hicolor/32x32/apps/kcoloredit.png
@@ -242,7 +242,7 @@ share/icons/hicolor/32x32/apps/kiconedit.png
 share/icons/hicolor/32x32/apps/kpaint.png
 share/icons/hicolor/32x32/apps/kruler.png
 share/icons/hicolor/32x32/apps/ksnapshot.png
-share/icons/hicolor/32x32/apps/kuickshow.png
+%%IMLIB%%share/icons/hicolor/32x32/apps/kuickshow.png
 share/icons/hicolor/32x32/apps/kview.png
 share/icons/hicolor/32x32/apps/kviewshell.png
 share/icons/hicolor/48x48/apps/kdvi.png
@@ -256,14 +256,16 @@ share/icons/hicolor/48x48/apps/ksnapshot.png
 share/icons/hicolor/48x48/apps/kview.png
 share/icons/hicolor/48x48/apps/kviewshell.png
 share/icons/locolor/16x16/apps/kcoloredit.png
-share/icons/locolor/16x16/apps/kuickshow.png
+%%IMLIB%%share/icons/locolor/16x16/apps/kuickshow.png
 share/icons/locolor/32x32/apps/kcoloredit.png
-share/icons/locolor/32x32/apps/kuickshow.png
+%%IMLIB%%share/icons/locolor/32x32/apps/kuickshow.png
 %%KAMERA%%share/services/kamera.protocol
 share/services/kfile_pdf.desktop
 share/services/kfile_png.desktop
 share/services/kfile_ps.desktop
 %%SANE%%share/services/scanservice.desktop
+@comment directories
+@dirrm share/services
 @dirrm share/icons/locolor/32x32/apps
 @dirrm share/icons/locolor/32x32
 @dirrm share/icons/locolor/16x16/apps
@@ -277,8 +279,8 @@ share/services/kfile_ps.desktop
 @dirrm share/icons/hicolor/16x16/actions
 @dirrm share/icons/hicolor/16x16
 @dirrm share/icons/hicolor
+@dirrm share/icons
 @dirrm share/doc/HTML/en/kview
-@dirrm share/doc/HTML/en/kuickshow
 @dirrm share/doc/HTML/en/ksnapshot
 @dirrm share/doc/HTML/en/kruler
 @dirrm share/doc/HTML/en/kpaint
@@ -288,12 +290,15 @@ share/services/kfile_ps.desktop
 @dirrm share/doc/HTML/en/kfract
 @dirrm share/doc/HTML/en/kdvi
 @dirrm share/doc/HTML/en/kcoloredit
+@dirrm share/doc/HTML/en
+@dirrm share/doc/HTML
+@dirrm share/doc
 @dirrm share/apps/kviewshell
 @dirrm share/apps/kviewerpart
 @dirrm share/apps/kview/toolbar
 @dirrm share/apps/kview
-@dirrm share/apps/kuickshow/pics
-@dirrm share/apps/kuickshow
+%%IMLIB%%@dirrm share/apps/kuickshow/pics
+%%IMLIB%%@dirrm share/apps/kuickshow
 @dirrm share/apps/kruler
 @dirrm share/apps/kpaint/toolbar
 @dirrm share/apps/kpaint
@@ -311,3 +316,4 @@ share/services/kfile_ps.desktop
 @dirrm share/apps
 @dirrm share/applnk/Graphics
 @dirrm share/applnk
+@dirrm lib/kde3

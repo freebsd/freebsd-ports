@@ -32,10 +32,10 @@ lib/kde3/kcm_kdf.la
 lib/kde3/kcm_kdf.so
 %%ALPHA_NA%%lib/kde3/kcm_laptop.la
 %%ALPHA_NA%%lib/kde3/kcm_laptop.so
-lib/kde3/kedit.la
-lib/kde3/kedit.so
 lib/kde3/libkregexpeditorgui.la
 lib/kde3/libkregexpeditorgui.so
+lib/kedit.la
+lib/kedit.so
 %%ALPHA_NA%%lib/klaptopdaemon.la
 %%ALPHA_NA%%lib/klaptopdaemon.so
 lib/libark.la
@@ -222,5 +222,75 @@ share/icons/locolor/32x32/apps/klprfax.png
 share/services/arkpart.desktop
 %%ALPHA_NA%%share/services/klaptopdaemon.desktop
 share/services/kregexpeditorgui.desktop
+@comment empty dirs
 @exec /bin/mkdir -p %D/share/apps/kcalc/pics
-@exec /bin/mkdir -p %D/share/apps/kcalc/pics
+@comment directories
+@dirrm share/services
+@dirrm share/icons/locolor/32x32/apps
+@dirrm share/icons/locolor/32x32
+@dirrm share/icons/locolor/16x16/apps
+@dirrm share/icons/locolor/16x16
+@dirrm share/icons/locolor
+@dirrm share/icons/hicolor/48x48/apps
+@dirrm share/icons/hicolor/48x48
+@dirrm share/icons/hicolor/32x32/apps
+@dirrm share/icons/hicolor/32x32
+@dirrm share/icons/hicolor/16x16/apps
+@dirrm share/icons/hicolor/16x16
+@dirrm share/icons/hicolor
+@dirrm share/icons
+@dirrm share/doc/HTML/en/klprfax
+@dirrm share/doc/HTML/en/klpq
+@dirrm share/doc/HTML/en/kljettool
+@dirrm share/doc/HTML/en/kjots
+@dirrm share/doc/HTML/en/khexedit
+@dirrm share/doc/HTML/en/kfloppy
+@dirrm share/doc/HTML/en/kedit
+@dirrm share/doc/HTML/en/kdf
+@dirrm share/doc/HTML/en/kcalc
+@dirrm share/doc/HTML/en/kab
+@dirrm share/doc/HTML/en/ark
+@dirrm share/doc/HTML/en/KRegExpEditor
+@dirrm share/doc/HTML/en
+@dirrm share/doc/HTML
+@dirrm share/doc
+@dirrm share/apps/kregexpeditor/predefined/general
+@dirrm share/apps/kregexpeditor/predefined
+@dirrm share/apps/kregexpeditor/pics
+@dirrm share/apps/kregexpeditor
+@dirrm share/apps/konqueror/servicemenus
+@dirrm share/apps/konqueror
+@dirrm share/apps/kljettool/pics
+@dirrm share/apps/kljettool
+@dirrm share/apps/klaptopdaemon/icons/hicolor/32x32/actions
+@dirrm share/apps/klaptopdaemon/icons/hicolor/32x32
+@dirrm share/apps/klaptopdaemon/icons/hicolor/16x16/actions
+@dirrm share/apps/klaptopdaemon/icons/hicolor/16x16
+@dirrm share/apps/klaptopdaemon/icons/hicolor
+@dirrm share/apps/klaptopdaemon/icons
+@dirrm share/apps/klaptopdaemon
+@dirrm share/apps/kjots/pics
+@dirrm share/apps/kjots
+@dirrm share/apps/kicker/applets
+@dirrm share/apps/kicker
+@dirrm share/apps/khexedit/toolbar
+@dirrm share/apps/khexedit
+@dirrm share/apps/kedit
+@dirrm share/apps/kdf/pics
+@dirrm share/apps/kdf
+@dirrm share/apps/kcalc/pics
+@dirrm share/apps/kcalc
+@dirrm share/apps/ark/icons/hicolor/22x22/actions
+@dirrm share/apps/ark/icons/hicolor/22x22
+@dirrm share/apps/ark/icons/hicolor
+@dirrm share/apps/ark/icons
+@dirrm share/apps/ark
+@dirrm share/apps
+@dirrm share/applnk/Utilities
+@dirrm share/applnk/System
+@dirrm share/applnk/Settings/PowerControl
+@dirrm share/applnk/Settings/Information
+@dirrm share/applnk/Settings
+@dirrm share/applnk/Editors
+@dirrm share/applnk
+@dirrm lib/kde3
