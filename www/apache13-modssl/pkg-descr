@@ -1,4 +1,4 @@
- Apache 1.3 + mod_ssl 2.1          ``mod_ssl combines the flexibility of  
+ Apache 1.3 + mod_ssl 2.2          ``mod_ssl combines the flexibility of  
  ========================            Apache with the security of SSLeay.''
 
  This is Apache version 1.3 plus mod_ssl which provides strong cryptography
@@ -21,6 +21,8 @@
    o  Support for the SSLeay+RSAref US-situation
    o  Advanced pass-phrase handling for private keys
    o  X.509 certificate based authentication for both client and server
+   o  Support for per-URL renegotiation of SSL handshake parameters
+   o  Support for explicit seeding of the PRNG with external sources
    o  Additional boolean-expression based access control facility
    o  Backward compatibility to other Apache SSL solutions
    o  Inter-process SSL session cache
