@@ -1,0 +1,5 @@
+Regexp::Log is a base class for a variety of modules that generate
+regular expressions for performing the usual data munging tasks on
+log files that cannot be simply split().
+
+WWW: http://search.cpan.org/dist/Regexp-Log
