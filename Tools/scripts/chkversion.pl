@@ -251,7 +251,7 @@ sub getauthors {
         if (!$revision{$origin}) {
             open MAKEFILE, "<$portsdir/$origin/Makefile";
             while (<MAKEFILE>) {
-               if (m'\$FreeBSD$ ]+,v (\d+(?:\.\d+)+) \d{4}(?:/\d{2}){2} \d{2}(?::\d{2}){2} (\w+) [\w ]+\$') {
+               if (m'\$FreeBSD\: [^\$ ]+,v (\d+(?:\.\d+)+) \d{4}(?:/\d{2}){2} \d{2}(?::\d{2}){2} (\w+) [\w ]+\$') {
                    $revision{$origin} = $1;
                    $author{$origin} = $2;
                }
