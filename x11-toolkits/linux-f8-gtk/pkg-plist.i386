@@ -1,0 +1,37 @@
+usr/doc/gtk+-1.2.5/AUTHORS
+usr/doc/gtk+-1.2.5/COPYING
+usr/doc/gtk+-1.2.5/ChangeLog
+usr/doc/gtk+-1.2.5/NEWS
+usr/doc/gtk+-1.2.5/README
+usr/doc/gtk+-1.2.5/TODO
+usr/lib/libgdk-1.2.so.0.5.0
+usr/share/locale/ca/LC_MESSAGES/gtk+.mo
+usr/share/locale/cs/LC_MESSAGES/gtk+.mo
+usr/share/locale/da/LC_MESSAGES/gtk+.mo
+usr/share/locale/de/LC_MESSAGES/gtk+.mo
+usr/share/locale/el/LC_MESSAGES/gtk+.mo
+usr/share/locale/es/LC_MESSAGES/gtk+.mo
+usr/share/locale/et/LC_MESSAGES/gtk+.mo
+usr/share/locale/eu/LC_MESSAGES/gtk+.mo
+usr/share/locale/fi/LC_MESSAGES/gtk+.mo
+usr/share/locale/fr/LC_MESSAGES/gtk+.mo
+usr/share/locale/ga/LC_MESSAGES/gtk+.mo
+usr/share/locale/hr/LC_MESSAGES/gtk+.mo
+usr/share/locale/hu/LC_MESSAGES/gtk+.mo
+usr/share/locale/it/LC_MESSAGES/gtk+.mo
+usr/share/locale/ja/LC_MESSAGES/gtk+.mo
+usr/share/locale/ko/LC_MESSAGES/gtk+.mo
+usr/share/locale/nl/LC_MESSAGES/gtk+.mo
+usr/share/locale/no/LC_MESSAGES/gtk+.mo
+usr/share/locale/pl/LC_MESSAGES/gtk+.mo
+usr/share/locale/pt/LC_MESSAGES/gtk+.mo
+usr/share/locale/pt_BR/LC_MESSAGES/gtk+.mo
+usr/share/locale/ru/LC_MESSAGES/gtk+.mo
+usr/share/locale/sk/LC_MESSAGES/gtk+.mo
+usr/share/locale/sl/LC_MESSAGES/gtk+.mo
+usr/share/locale/sv/LC_MESSAGES/gtk+.mo
+usr/share/locale/wa/LC_MESSAGES/gtk+.mo
+usr/share/locale/zh_TW.Big5/LC_MESSAGES/gtk+.mo
+usr/share/themes/Default/gtk/gtkrc
+@dirrm usr/share/themes/Default/gtk
+@dirrm usr/doc/gtk+-1.2.5
