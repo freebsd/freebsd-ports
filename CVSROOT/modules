@@ -2028,6 +2028,7 @@ fr-jdictionary-fre-hun	ports/french/jdictionary-fre-hun
 fr-kde3-i18n	ports/french/kde3-i18n
 fr-koffice-i18n	ports/french/koffice-i18n
 fr-med		ports/french/med
+fr-mozilla-flp	ports/french/mozilla-flp
 fr-netscape7	ports/french/netscape7
 fr-ooodict-FR	ports/french/ooodict-fr_FR
 fr-openoffice-1.0	ports/french/openoffice-1.0
@@ -5390,6 +5391,8 @@ moviedb		ports/misc/moviedb
 movingmotif	ports/x11-toolkits/movingmotif
 mowitz		ports/x11-toolkits/mowitz
 mozart		ports/lang/mozart
+mozex		ports/lang/mozex
+mozex-firefox	ports/lang/mozex-firefox
 mozilla		ports/www/mozilla
 mozilla-bonobo	ports/www/mozilla-bonobo
 mozilla-devel	ports/www/mozilla-devel
@@ -7991,6 +7994,8 @@ prc-tools	ports/palm/prc-tools
 prcs		ports/devel/prcs
 predict		ports/comms/predict
 preferences.app	ports/deskutils/preferences.app
+preferential	ports/www/preferential
+preferential-firefox	ports/www/preferential-firefox
 prelude-lml	ports/security/prelude-lml
 prelude-manager	ports/security/prelude-manager
 prelude-nids	ports/security/prelude-nids
