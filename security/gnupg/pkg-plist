@@ -1,4 +1,5 @@
 bin/gpg
+bin/gpgv
 lib/gnupg/rndegd
 lib/gnupg/rndunix
 lib/gnupg/tiger
