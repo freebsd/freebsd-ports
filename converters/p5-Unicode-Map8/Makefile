@@ -18,6 +18,7 @@ BUILD_DEPENDS=	${SITE_PERL}/Unicode/String.pm:${PORTSDIR}/converters/p5-Unicode-
 SITE_PERL=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}
 PERL_CONFIGURE=	yes
 
+MAN1=		umap.1
 MAN3=		Unicode::Map8.3
 MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
