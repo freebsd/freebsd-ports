@@ -1,6 +1,6 @@
---- timidity/config.h.orig	Tue Feb  1 23:16:29 2000
-+++ timidity/config.h	Mon Apr 24 12:53:43 2000
-@@ -156,6 +156,22 @@
+--- timidity/config.h.orig	Mon Jul  3 07:36:37 2000
++++ timidity/config.h	Sat Nov 18 18:47:45 2000
+@@ -159,6 +159,22 @@
  # endif
  #endif /* linux */
  
@@ -23,27 +23,3 @@
  /* Win32 on Intel machines */
  #ifdef __WIN32__
  #  define LITTLE_ENDIAN
-@@ -186,13 +202,23 @@
- #ifdef LITTLE_ENDIAN
- #define LE_SHORT(x) x
- #define LE_LONG(x) x
-+#if defined(__FreeBSD__) && !defined(__alpha__)
-+#define BE_SHORT(x) __byte_swap_word(x)
-+#define BE_LONG(x) __byte_swap_long(x)
-+#else
- #define BE_SHORT(x) XCHG_SHORT(x)
- #define BE_LONG(x) XCHG_LONG(x)
-+#endif
- #else
- #define BE_SHORT(x) x
- #define BE_LONG(x) x
-+#ifdef __FreeBSD__
-+#define LE_SHORT(x) __byte_swap_word(x)
-+#define LE_LONG(x) __byte_swap_long(x)
-+#else
- #define LE_SHORT(x) XCHG_SHORT(x)
- #define LE_LONG(x) XCHG_LONG(x)
-+#endif
- #endif
- 
- #define MAX_AMPLIFICATION 800
