@@ -19,6 +19,8 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	sumikawa@FreeBSD.org
 COMMENT=		IPv6 enabled cvs.  You can use IPv6 connection when using pserver
 
+CONFLICTS=	cvsnt-[12]*
+
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 #USE_GMAKE=	yes
