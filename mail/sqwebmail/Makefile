@@ -77,7 +77,6 @@ CONFIGURE_ARGS=	\
 	--enable-imagedir=${PREFIX}/${WEBDATADIR}/${WEBDATASUBDIR} \
 	--libexecdir=${PREFIX}/libexec/sqwebmail \
 	--mandir=${PREFIX}/man \
-	--prefix=${PREFIX}/share/sqwebmail \
 	--enable-imageurl=/${IMAGEURL} \
 	--with-locking-method=fcntl \
 	--with-libintl-prefix=${LOCALBASE} \
@@ -223,6 +222,9 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|^case x$$lockmethod in|${TEST} \&\& &|g' \
 		${WRKSRC}/liblock/configure
 
+	@${FIND} ${WRKSRC} -name configure | ${XARGS} ${REINPLACE_CMD} \
+		-e 's|prefix=\$$ac_optarg|&/share/sqwebmail|g'
+
 	@${REINPLACE_CMD} -e 's|mkdir -p|${MKDIR}|g' ${WRKSRC}/pcp/configure
 
 	@${REINPLACE_CMD} -e 's|@LIBTOOL@|${LIBTOOL}|' \
@@ -243,6 +245,5 @@ post-install:
 
 install-configure:
 	cd ${WRKSRC} && ${GMAKE} install-configure
-
 
 .include <bsd.port.mk>
