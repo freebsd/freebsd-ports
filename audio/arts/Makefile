@@ -7,22 +7,21 @@
 #
 
 PORTNAME=	arts
-PORTVERSION=	1.1.4
-PORTREVISION=	3
+PORTVERSION=	1.2.0
 PORTEPOCH=	1
 CATEGORIES=	audio kde
-MASTER_SITES=	http://mirrors.isc.org/pub/kde/stable/3.1.4/FreeBSD/patches/ \
-		${MASTER_SITE_KDE}
-MASTER_SITE_SUBDIR=	stable/3.1.4/src
-DISTFILES=	arts-1.1.4.tar.bz2 \
-		arts-2003092201-configure.tar.bz2 \
-		patch-ltmain.sh
+MASTER_SITES=	${MASTER_SITE_KDE}
+MASTER_SITE_SUBDIR=	stable/3.2/src
 DIST_SUBDIR=	KDE
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Audio system for the KDE integrated X11 desktop
 
-LIB_DEPENDS+=	audiofile.0:${PORTSDIR}/audio/libaudiofile
+LIB_DEPENDS+=	audiofile:${PORTSDIR}/audio/libaudiofile \
+		mad:${PORTSDIR}/audio/libmad \
+		ogg:${PORTSDIR}/audio/libogg \
+		glib:${PORTSDIR}/devel/glib20 \
+		vorbis:${PORTSDIR}/audio/libvorbis
 
 USE_QT_VER=	3
 USE_BZIP2=	yes
@@ -38,6 +37,6 @@ CONFIGURE_ENV+=	DO_NOT_COMPILE="${DO_NOT_COMPILE}"
 .include "${.CURDIR}/../../x11/kde3/Makefile.kde"
 
 post-install:
-	@${CHMOD} 4555 ${PREFIX}/bin/artswrapper	
+	@${CHMOD} 4555 ${PREFIX}/bin/artswrapper
 
 .include <bsd.port.mk>
