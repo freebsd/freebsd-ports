@@ -27,7 +27,7 @@ JDK_VERSION=	1.1.8
 
 .include <bsd.port.pre.mk>
 
-.if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
+.if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}) && !defined(PACKAGE_BUILDING)
 IGNORE='You must manually fetch the standard zip format distribution from http://www.javasoft.com/products/jfc/download.html and place it in ${DISTDIR} then run make again.'
 .endif
 
