@@ -1,5 +1,4 @@
 bin/sokoban
-share/sokoban/highscore
 share/sokoban/screens/sokoban.help
 share/sokoban/screens/screen.1
 share/sokoban/screens/screen.2
