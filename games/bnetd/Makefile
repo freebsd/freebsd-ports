@@ -3,11 +3,11 @@
 # Date created:		24 April 1999
 # Whom:			Ying-Chieh Liao <ijliao@csie.nctu.edu.tw>
 #
-# $Id: Makefile,v 1.1.1.1 1999/04/27 01:06:57 taoka Exp $
+# $Id: Makefile,v 1.2 1999/05/01 16:59:31 mharo Exp $
 #
 
 DISTNAME=	bnetd-0.4.7
-CATEGORIES=	net game
+CATEGORIES=	games net
 MASTER_SITES=	http://www.bnetd.org/files/
 
 MAINTAINER=	ijliao@csie.nctu.edu.tw

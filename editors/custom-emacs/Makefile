@@ -3,11 +3,11 @@
 # Date created:		27 December 1998
 # Whom:			shige
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/04/30 02:59:33 shige Exp $
 #
 
 DISTNAME=	custom-${CUSTOM_VER}
-CATEGORIES=	editors elisps
+CATEGORIES=	editors elisp
 MASTER_SITES=	ftp://ftp.dina.kvl.dk/pub/Staff/Per.Abrahamsen/custom/ \
 		ftp://ftp.win.ne.jp/pub/word/elisp/
 
