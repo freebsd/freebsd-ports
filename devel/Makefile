@@ -282,7 +282,6 @@
     SUBDIR += gnomecommon
     SUBDIR += gnomecrash
     SUBDIR += gnomevfs
-    SUBDIR += gnomevfs-extras
     SUBDIR += gnomevfs2
     SUBDIR += gnustep
     SUBDIR += gnustep-make
