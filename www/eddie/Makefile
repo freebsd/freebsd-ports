@@ -12,7 +12,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://www.aims.com.au/chris/
 DISTNAME=	eddie-1.5.1-20020619
 
-MAINTAINER=	sam@inf.enst.fr
+MAINTAINER=	chris@aims.com.au
 
 BUILD_DEPENDS=	erlc:${PORTSDIR}/lang/erlang
 
