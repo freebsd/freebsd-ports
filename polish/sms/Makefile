@@ -7,9 +7,8 @@
 
 PORTNAME=	sms
 PORTVERSION=	1.9.1i
-CATEGORIES=	misc
+CATEGORIES=	polish
 MASTER_SITES=	http://www.ceti.pl/~miki/komputery/download/sms/
-PKGNAMEPREFIX=	pl-
 
 MAINTAINER=	dotz@irc.pl
 COMMENT=	Send SMS to cellular phones in Poland (Idea, ERA, Plus)
