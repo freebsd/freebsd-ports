@@ -103,6 +103,7 @@
     SUBDIR += ppm2fli
     SUBDIR += pstoedit
     SUBDIR += py-imaging
+    SUBDIR += py-imaging-handbook
     SUBDIR += qcread
     SUBDIR += qiv
     SUBDIR += qvplay
