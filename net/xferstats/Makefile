@@ -14,7 +14,7 @@ MASTER_SITES=	http://xferstats.off.net/download/xferstats-2.00/ \
 
 MAINTAINER=	dima@Chg.RU
 
-LIB_DEPENDS=	glib12.2:${PORTSDIR}/devel/glib12
+LIB_DEPENDS=	glib12.3:${PORTSDIR}/devel/glib12
 
 GLIB_CONFIG?=	${LOCALBASE}/bin/glib12-config
 

@@ -16,23 +16,7 @@ MASTER_SITE_SUBDIR=	X11/gtkbuffet/apps/gedit
 
 MAINTAINER=		andy@icc.surw.chel.su
 
-LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm \
-		art_lgpl.2:${PORTSDIR}/x11/gnomelibs \
-		audiofile.0:${PORTSDIR}/audio/libaudiofile \
-		esd.2:${PORTSDIR}/audio/esound \
-		gdk_imlib.5:${PORTSDIR}/graphics/imlib \
-		gdk12.2:${PORTSDIR}/x11-toolkits/gtk12 \
-		gif.5:${PORTSDIR}/graphics/png \
-		glib12.2:${PORTSDIR}/devel/glib12 \
-		gmodule12.2:${PORTSDIR}/devel/glib12 \
-		gnome.2:${PORTSDIR}/x11/gnomelibs \
-		gnomesupport.2:${PORTSDIR}/x11/gnomelibs \
-		gnomeui.2:${PORTSDIR}/x11/gnomelibs \
-		gtk12.2:${PORTSDIR}/x11-toolkits/gtk12 \
-		intl.1:${PORTSDIR}/devel/gettext \
-		jpeg.9:${PORTSDIR}/graphics/jpeg \
-		png.3:${PORTSDIR}/graphics/png \
-		tiff.4:${PORTSDIR}/graphics/tiff
+LIB_DEPENDS=	gnomeui.2:${PORTSDIR}/x11/gnomelibs
 
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes

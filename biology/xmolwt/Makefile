@@ -11,11 +11,7 @@ MASTER_SITES=	http://www.st.hirosaki-u.ac.jp/~rmiya/xmolwt/
 
 MAINTAINER=	rmiya@cc.hirosaki-u.ac.jp
 
-LIB_DEPENDS=	gdk12.2:${PORTSDIR}/x11-toolkits/gtk12 \
-		glib12.2:${PORTSDIR}/devel/glib12 \
-		gmodule12.2:${PORTSDIR}/devel/glib12 \
-		gtk12.2:${PORTSDIR}/x11-toolkits/gtk12 \
-		intl.1:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
 
 USE_GMAKE=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}
