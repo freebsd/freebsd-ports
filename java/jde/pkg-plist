@@ -1,0 +1,221 @@
+bin/jtags
+%%EMACS_VERSION_SITE_LISPDIR%%/jde/beanshell.el
+%%EMACS_VERSION_SITE_LISPDIR%%/jde/beanshell.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/jde/jde-ant.el
+%%EMACS_VERSION_SITE_LISPDIR%%/jde/jde-ant.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/jde/jde-bug.el
+%%EMACS_VERSION_SITE_LISPDIR%%/jde/jde-bug.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/jde/jde-compile.el
+%%EMACS_VERSION_SITE_LISPDIR%%/jde/jde-compile.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/jde/jde-complete.el
+%%EMACS_VERSION_SITE_LISPDIR%%/jde/jde-complete.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/jde/jde-db.el
+%%EMACS_VERSION_SITE_LISPDIR%%/jde/jde-db.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/jde/jde-dbo.el
+%%EMACS_VERSION_SITE_LISPDIR%%/jde/jde-dbo.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/jde/jde-dbs.el
+%%EMACS_VERSION_SITE_LISPDIR%%/jde/jde-dbs.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/jde/jde-gen.el
+%%EMACS_VERSION_SITE_LISPDIR%%/jde/jde-gen.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/jde/jde-help.el
+%%EMACS_VERSION_SITE_LISPDIR%%/jde/jde-help.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/jde/jde-imenu.el
+%%EMACS_VERSION_SITE_LISPDIR%%/jde/jde-imenu.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/jde/jde-import.el
+%%EMACS_VERSION_SITE_LISPDIR%%/jde/jde-import.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/jde/jde-java-font-lock.el
+%%EMACS_VERSION_SITE_LISPDIR%%/jde/jde-java-font-lock.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/jde/jde-java-grammar.el
+%%EMACS_VERSION_SITE_LISPDIR%%/jde/jde-java-grammar.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/jde/jde-javadoc-gen.el
+%%EMACS_VERSION_SITE_LISPDIR%%/jde/jde-javadoc-gen.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/jde/jde-javadoc.el
+%%EMACS_VERSION_SITE_LISPDIR%%/jde/jde-javadoc.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/jde/jde-make.el
+%%EMACS_VERSION_SITE_LISPDIR%%/jde/jde-make.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/jde/jde-package.el
+%%EMACS_VERSION_SITE_LISPDIR%%/jde/jde-package.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/jde/jde-parse.el
+%%EMACS_VERSION_SITE_LISPDIR%%/jde/jde-parse.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/jde/jde-run.el
+%%EMACS_VERSION_SITE_LISPDIR%%/jde/jde-run.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/jde/jde-stat.el
+%%EMACS_VERSION_SITE_LISPDIR%%/jde/jde-stat.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/jde/jde-which-method.el
+%%EMACS_VERSION_SITE_LISPDIR%%/jde/jde-which-method.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/jde/jde-widgets.el
+%%EMACS_VERSION_SITE_LISPDIR%%/jde/jde-widgets.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/jde/jde-wiz.el
+%%EMACS_VERSION_SITE_LISPDIR%%/jde/jde-wiz.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/jde/jde.el
+%%EMACS_VERSION_SITE_LISPDIR%%/jde/jde.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/jde/setnu.el
+%%EMACS_VERSION_SITE_LISPDIR%%/jde/setnu.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/jde/tree-widget.el
+%%EMACS_VERSION_SITE_LISPDIR%%/jde/tree-widget.elc
+@exec ln -sf %D/share/java/jde %D/%%EMACS_VERSION_SITE_LISPDIR%%/jde/java
+share/java/jde/bsh-commands/bsh/commands/browseClassName.bsh
+share/java/jde/bsh-commands/bsh/commands/whichClass.bsh
+share/java/jde/lib/bsh.jar
+share/java/jde/lib/jde.jar
+share/java/jde/src/jde/debugger/CommandStream.java
+share/java/jde/src/jde/debugger/Debug.java
+share/java/jde/src/jde/debugger/DebuggeeProcess.java
+share/java/jde/src/jde/debugger/DebuggeeSIO.java
+share/java/jde/src/jde/debugger/Etc.java
+share/java/jde/src/jde/debugger/EventHandler.java
+share/java/jde/src/jde/debugger/JDE.java
+share/java/jde/src/jde/debugger/JDEException.java
+share/java/jde/src/jde/debugger/JDENumberFormatException.java
+share/java/jde/src/jde/debugger/Jdebug.java
+share/java/jde/src/jde/debugger/LispForm.java
+share/java/jde/src/jde/debugger/Main.java
+share/java/jde/src/jde/debugger/ObjectStore.java
+share/java/jde/src/jde/debugger/ProcessRegistry.java
+share/java/jde/src/jde/debugger/Protocol.java
+share/java/jde/src/jde/debugger/Rep.java
+share/java/jde/src/jde/debugger/command/AttachShmem.java
+share/java/jde/src/jde/debugger/command/AttachSocket.java
+share/java/jde/src/jde/debugger/command/Break.java
+share/java/jde/src/jde/debugger/command/CancelTraceClasses.java
+share/java/jde/src/jde/debugger/command/CancelTraceMethods.java
+share/java/jde/src/jde/debugger/command/CancelTraceThreads.java
+share/java/jde/src/jde/debugger/command/Clear.java
+share/java/jde/src/jde/debugger/command/CommandRegistry.java
+share/java/jde/src/jde/debugger/command/DebugCommand.java
+share/java/jde/src/jde/debugger/command/DebugCommandFactory.java
+share/java/jde/src/jde/debugger/command/DebugProcessCommand.java
+share/java/jde/src/jde/debugger/command/DebugSessionCommand.java
+share/java/jde/src/jde/debugger/command/EvaluateExpression.java
+share/java/jde/src/jde/debugger/command/Finish.java
+share/java/jde/src/jde/debugger/command/GetArray.java
+share/java/jde/src/jde/debugger/command/GetLoadedClasses.java
+share/java/jde/src/jde/debugger/command/GetLocals.java
+share/java/jde/src/jde/debugger/command/GetObject.java
+share/java/jde/src/jde/debugger/command/GetObjectMonitors.java
+share/java/jde/src/jde/debugger/command/GetPathInfo.java
+share/java/jde/src/jde/debugger/command/GetString.java
+share/java/jde/src/jde/debugger/command/GetThis.java
+share/java/jde/src/jde/debugger/command/GetThread.java
+share/java/jde/src/jde/debugger/command/GetThreads.java
+share/java/jde/src/jde/debugger/command/Interrupt.java
+share/java/jde/src/jde/debugger/command/KillThread.java
+share/java/jde/src/jde/debugger/command/LaunchApplication.java
+share/java/jde/src/jde/debugger/command/ListenShmem.java
+share/java/jde/src/jde/debugger/command/ListenSocket.java
+share/java/jde/src/jde/debugger/command/Quit.java
+share/java/jde/src/jde/debugger/command/Resume.java
+share/java/jde/src/jde/debugger/command/Run.java
+share/java/jde/src/jde/debugger/command/Step.java
+share/java/jde/src/jde/debugger/command/Suspend.java
+share/java/jde/src/jde/debugger/command/TraceClasses.java
+share/java/jde/src/jde/debugger/command/TraceExceptions.java
+share/java/jde/src/jde/debugger/command/TraceMethods.java
+share/java/jde/src/jde/debugger/command/TraceThreads.java
+share/java/jde/src/jde/debugger/command/Watch.java
+share/java/jde/src/jde/debugger/expr/ASCII_UCodeESC_CharStream.java
+share/java/jde/src/jde/debugger/expr/Expr.jj
+share/java/jde/src/jde/debugger/expr/ExpressionParser.java
+share/java/jde/src/jde/debugger/expr/ExpressionParserConstants.java
+share/java/jde/src/jde/debugger/expr/ExpressionParserTokenManager.java
+share/java/jde/src/jde/debugger/expr/LValue.java
+share/java/jde/src/jde/debugger/expr/ParseException.java
+share/java/jde/src/jde/debugger/expr/Token.java
+share/java/jde/src/jde/debugger/expr/TokenMgrError.java
+share/java/jde/src/jde/debugger/spec/AccessWatchpointSpec.java
+share/java/jde/src/jde/debugger/spec/BreakpointSpec.java
+share/java/jde/src/jde/debugger/spec/EventRequestSpec.java
+share/java/jde/src/jde/debugger/spec/EventRequestSpecList.java
+share/java/jde/src/jde/debugger/spec/ExceptionSpec.java
+share/java/jde/src/jde/debugger/spec/LineBreakpointSpec.java
+share/java/jde/src/jde/debugger/spec/MethodBreakpointSpec.java
+share/java/jde/src/jde/debugger/spec/ModificationWatchpointSpec.java
+share/java/jde/src/jde/debugger/spec/PatternReferenceTypeSpec.java
+share/java/jde/src/jde/debugger/spec/ReferenceTypeSpec.java
+share/java/jde/src/jde/debugger/spec/SourceNameReferenceTypeSpec.java
+share/java/jde/src/jde/debugger/spec/WatchpointSpec.java
+share/java/jde/src/jde/util/Completion.java
+share/java/jde/src/jde/util/DynamicClassLoader.java
+share/java/jde/src/jde/util/JdeUtilities.java
+share/java/jde/src/jde/wizards/AbstractClassFactory.java
+share/java/jde/src/jde/wizards/ClassRegistry.java
+share/java/jde/src/jde/wizards/DefaultNameFactory.java
+share/java/jde/src/jde/wizards/DelegateFactory.java
+share/java/jde/src/jde/wizards/ImportWizard.java
+share/java/jde/src/jde/wizards/InterfaceFactory.java
+share/java/jde/src/jde/wizards/MethodFactory.java
+share/java/jde/src/jde/wizards/MethodOverrideFactory.java
+share/java/jde/src/jde/wizards/NameFactory.java
+share/java/jde/src/jde/wizards/Signature.java
+%%PORTDOCS%%@exec ln -sf %D/share/doc/jde %D/%%EMACS_VERSION_SITE_LISPDIR%%/jde/doc
+%%PORTDOCS%%share/doc/jde/ChangeLog
+%%PORTDOCS%%share/doc/jde/ReleaseNotes.txt
+%%PORTDOCS%%share/doc/jde/html/bsh-ug/bsh-ug-content.html
+%%PORTDOCS%%share/doc/jde/html/bsh-ug/bsh-ug-toc.html
+%%PORTDOCS%%share/doc/jde/html/bsh-ug/bsh-ug.html
+%%PORTDOCS%%share/doc/jde/html/bsh-ug/images/BeanShellBuffer.gif
+%%PORTDOCS%%share/doc/jde/html/bsh-ug/images/BshMultiLineEx.gif
+%%PORTDOCS%%share/doc/jde/html/css/jde_style.css
+%%PORTDOCS%%share/doc/jde/html/jde-ug/images/OverrideMeth1.gif
+%%PORTDOCS%%share/doc/jde/html/jde-ug/images/OverrideMeth2.gif
+%%PORTDOCS%%share/doc/jde/html/jde-ug/images/OverrideMeth3.gif
+%%PORTDOCS%%share/doc/jde/html/jde-ug/images/OverrideMeth4.gif
+%%PORTDOCS%%share/doc/jde/html/jde-ug/images/OverrideMeth5.gif
+%%PORTDOCS%%share/doc/jde/html/jde-ug/images/RegisterTemplate.gif
+%%PORTDOCS%%share/doc/jde/html/jde-ug/images/TemplateList.gif
+%%PORTDOCS%%share/doc/jde/html/jde-ug/images/WorkingDirectory.gif
+%%PORTDOCS%%share/doc/jde/html/jde-ug/images/classes_menu1.gif
+%%PORTDOCS%%share/doc/jde/html/jde-ug/images/jdemenu.gif
+%%PORTDOCS%%share/doc/jde/html/jde-ug/images/keybindings.gif
+%%PORTDOCS%%share/doc/jde/html/jde-ug/images/speedbar1.gif
+%%PORTDOCS%%share/doc/jde/html/jde-ug/images/speedbar2.gif
+%%PORTDOCS%%share/doc/jde/html/jde-ug/images/speedbar3.gif
+%%PORTDOCS%%share/doc/jde/html/jde-ug/images/speedbar4.gif
+%%PORTDOCS%%share/doc/jde/html/jde-ug/images/speedbar5.gif
+%%PORTDOCS%%share/doc/jde/html/jde-ug/jde-ug-content.html
+%%PORTDOCS%%share/doc/jde/html/jde-ug/jde-ug-toc.html
+%%PORTDOCS%%share/doc/jde/html/jde-ug/jde-ug.html
+%%PORTDOCS%%share/doc/jde/html/jdebug-ug/images/enable_jdebug.gif
+%%PORTDOCS%%share/doc/jde/html/jdebug-ug/images/jdebug_menu.gif
+%%PORTDOCS%%share/doc/jde/html/jdebug-ug/images/window_config.gif
+%%PORTDOCS%%share/doc/jde/html/jdebug-ug/jdebug-ug-content.html
+%%PORTDOCS%%share/doc/jde/html/jdebug-ug/jdebug-ug-toc.html
+%%PORTDOCS%%share/doc/jde/html/jdebug-ug/jdebug-ug.html
+%%PORTDOCS%%share/doc/jde/tli_rbl/au/link.au
+%%PORTDOCS%%share/doc/jde/tli_rbl/au/tree.au
+%%PORTDOCS%%share/doc/jde/tli_rbl/img/icon.gif
+%%PORTDOCS%%share/doc/jde/tli_rbl/img/icon2.gif
+%%PORTDOCS%%share/doc/jde/tli_rbl/img/icon3.gif
+%%PORTDOCS%%share/doc/jde/tli_rbl/img/photo.gif
+%%PORTDOCS%%share/doc/jde/tli_rbl/tli_rbl.jar
+%%PORTDOCS%%share/doc/jde/tli_rbl/txt/jde-ug-toc.txt
+%%PORTDOCS%%share/doc/jde/tli_rbl/txt/jdebug-ug-toc.txt
+@dirrm share/java/jde/bsh-commands/bsh/commands
+@dirrm share/java/jde/bsh-commands/bsh
+@dirrm share/java/jde/bsh-commands
+@dirrm share/java/jde/lib
+@dirrm share/java/jde/src/jde/debugger/command
+@dirrm share/java/jde/src/jde/debugger/expr
+@dirrm share/java/jde/src/jde/debugger/spec
+@dirrm share/java/jde/src/jde/debugger
+@dirrm share/java/jde/src/jde/util
+@dirrm share/java/jde/src/jde/wizards
+@dirrm share/java/jde/src/jde
+@dirrm share/java/jde/src
+@dirrm share/java/jde
+@unexec test -h %D/%%EMACS_VERSION_SITE_LISPDIR%%/jde/java && rm -f %D/%%EMACS_VERSION_SITE_LISPDIR%%/jde/java
+%%PORTDOCS%%@dirrm share/doc/jde/html/bsh-ug/images
+%%PORTDOCS%%@dirrm share/doc/jde/html/bsh-ug
+%%PORTDOCS%%@dirrm share/doc/jde/html/css
+%%PORTDOCS%%@dirrm share/doc/jde/html/jde-ug/images
+%%PORTDOCS%%@dirrm share/doc/jde/html/jde-ug
+%%PORTDOCS%%@dirrm share/doc/jde/html/jdebug-ug/images
+%%PORTDOCS%%@dirrm share/doc/jde/html/jdebug-ug
+%%PORTDOCS%%@dirrm share/doc/jde/html
+%%PORTDOCS%%@dirrm share/doc/jde/tli_rbl/au
+%%PORTDOCS%%@dirrm share/doc/jde/tli_rbl/img
+%%PORTDOCS%%@dirrm share/doc/jde/tli_rbl/txt
+%%PORTDOCS%%@dirrm share/doc/jde/tli_rbl
+%%PORTDOCS%%@dirrm share/doc/jde
+%%PORTDOCS%%@unexec test -h %D/%%EMACS_VERSION_SITE_LISPDIR%%/jde/doc && rm -f %D/%%EMACS_VERSION_SITE_LISPDIR%%/jde/doc
+@dirrm %%EMACS_VERSION_SITE_LISPDIR%%/jde

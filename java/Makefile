@@ -22,6 +22,7 @@
     SUBDIR += javavmwrapper
     SUBDIR += jce-aba
     SUBDIR += jdbcpool
+    SUBDIR += jde
     SUBDIR += jdk
     SUBDIR += jdk-tutorial
     SUBDIR += jdk11-doc
