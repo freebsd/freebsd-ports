@@ -940,6 +940,7 @@ crescendo	ports/net/crescendo
 cricket		ports/net/cricket
 crimap		ports/biology/crimap
 crimson		ports/textproc/crimson
+crip		ports/audio/crip
 criticalmass	ports/games/criticalmass
 cronolog	ports/sysutils/cronolog
 crossfire-client	ports/games/crossfire-client
