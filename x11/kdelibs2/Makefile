@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	kdelibs
-PORTVERSION=	2.1.2
+PORTVERSION=	2.2
 CATEGORIES=	x11 kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION}/distribution/src
@@ -15,7 +15,10 @@ MAINTAINER=	will@FreeBSD.org
 
 LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
 		audiofile.0:${PORTSDIR}/audio/libaudiofile \
-		mimelib.3:${PORTSDIR}/converters/kdesupport2
+		fam.0:${PORTSDIR}/devel/fam \
+		cups.2:${PORTSDIR}/print/cups \
+		xml2.5:${PORTSDIR}/textproc/libxml2 \
+		bz2.1:${PORTSDIR}/archivers/bzip2
 
 USE_OPENSSL=	yes
 USE_QT_VER=	2
@@ -24,6 +27,8 @@ SOMINOR=	0
 USE_BZIP2=	yes
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS+=--enable-cups --disable-ltdl-install \
+		--enable-debug --disable-final
 
 .if ${MACHINE_ARCH} == "alpha"
 CFLAGS=		-O0 ${KDE_CFLAGS}
@@ -31,7 +36,7 @@ CFLAGS=		-O0 ${KDE_CFLAGS}
 
 USE_GMAKE=	yes
 MAKE_ENV=	SOMAJOR="${SOMAJOR}" SOMINOR="${SOMINOR}"
-PLIST_SUB+=	LIBVER="${SOMAJOR}" RM="${RM}"
+PLIST_SUB+=	LIBVER="${SOMAJOR}" LDCONFIG="${LDCONFIG}"
 
 .include <bsd.port.pre.mk>
 
@@ -46,14 +51,28 @@ pre-fetch:
 	@${ECHO} "then KDE2 will not build with SSL support."
 	@${ECHO}
 .endif
+.if exists(${LOCALBASE}/include/kfm.h)
+	@${ECHO}
+	@${ECHO} "			NOTICE"
+	@${ECHO}
+	@${ECHO} "You have KDE1 headers installed!  Installing this port"
+	@${ECHO} "will result in conflicts between KDE2 and KDE1!"
+	@${ECHO}
+	@${FALSE}
+.endif
 
 pre-configure:
-	${PERL} -pi -e "s@-O2@-O0@g" ${WRKSRC}/configure
+	${PERL} -pi -e "s@-O2@-O0@g; s@\"-lfam@\"-L${LOCALBASE}/lib -lfam@g" ${WRKSRC}/configure
+	${PERL} -pi -e "s@kspell api@@g" ${WRKSRC}/doc/Makefile.in
 	(find ${WRKSRC} -name Makefile.in | xargs ${PERL} -pi.orig -e \
 		"s@version-info 1:0@version-info ${SOMAJOR}:${SOMINOR}@g; \
 		 s@version-info 3:0@version-info ${SOMAJOR}:${SOMINOR}@g")
 
+post-configure:
+	${PERL} -pi -e "s@-D_PTH_H_ -D_PTH_PTHREAD_H_@@g" ${WRKSRC}/arts/mcop_mt/Makefile
+
 post-install:
+	${SED} -e 's,%%PREFIX%%,${PREFIX},g' ${FILESDIR}/kdelibs.sh > ${PREFIX}/etc/rc.d/kdelibs.sh
 .for LIB in DCOP kab kdecore kdesu kdeui kfile kformula kio kjs \
 	    kparts kspell ksycoca kjava
 	@${LN} -sf ${PREFIX}/lib/lib${LIB}.so.${SOMAJOR} ${PREFIX}/lib/lib${LIB}.so

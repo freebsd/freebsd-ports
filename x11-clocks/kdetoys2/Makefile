@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	kdetoys
-PORTVERSION=	2.1.1
+PORTVERSION=	2.2
 CATEGORIES=	x11-clocks kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION}/distribution/tar/generic/src

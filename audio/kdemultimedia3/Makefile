@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	kdemultimedia
-PORTVERSION=	2.1.1
+PORTVERSION=	2.2
 CATEGORIES=	audio kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION}/distribution/tar/generic/src
@@ -27,8 +27,7 @@ MAKE_ENV=	${CONFIGURE_ENV}
 pre-configure:
 	${PERL} -pi -e "s@all_includes=\"@all_includes=\"-I/usr/include @g" ${WRKSRC}/acinclude.m4 ${WRKSRC}/aclocal.m4
 	${PERL} -pi -e 's,kscd_compile=no,kscd_compile=yes,g; \
-			s,DO_NOT_COMPILE mpeglib_artsplug,DO_NOT_COMPILE,g; \
-			s,DO_NOT_COMPILE mpeglib,DO_NOT_COMPILE,g' ${WRKSRC}/configure.in
+			s,kde_artsplug_compiles = xno,kde_argsplug_compiles = x,g' ${WRKSRC}/configure.in
 
 post-install:
 	@${ECHO_MSG}

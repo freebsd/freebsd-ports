@@ -21,6 +21,7 @@ USE_BZIP2=	yes
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+BROKEN=		"Not used with KDE 2.2"
 
 CONFIGURE_ARGS+=--without-audiofile
 

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	kdegraphics
-PORTVERSION=	2.1.1
+PORTVERSION=	2.2
 CATEGORIES=	graphics kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION}/distribution/tar/generic/src
@@ -21,5 +21,12 @@ USE_BZIP2=	yes
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+
+pre-configure:
+	${PERL} -pi -e "s@libkscan_la_LIBADD =@libkscan_la_LIBADD= -lintl@g" ${WRKSRC}/libkscan/Makefile.in
+	${PERL} -pi -e "s@libkcm_kamera_la_LIBADD =@libkcm_kamera_la_LIBADD= -lintl@g" ${WKRSRC}/kamera/kcontrol/Makefile.in
+	${PERL} -pi -e "s@name = item@name=(char*)item@g" ${WRKSRC}/kamera/kcontrol/kamera.cpp
+	find ${WRKSRC} -name Makefile.in | xargs ${PERL} -pi -e \
+		"s@GPHOTO2_LIBS =@GPHOTO2_LIBS= -lintl@g"
 
 .include <bsd.port.mk>

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	kdenetwork
-PORTVERSION=	2.1.1
+PORTVERSION=	2.2
 CATEGORIES=	net news kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION}/distribution/tar/generic/src

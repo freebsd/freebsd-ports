@@ -1,0 +1,7 @@
+#!/bin/sh
+if [ -f /usr/local/include/kwin.h ]; then
+echo <<EOF
+You have KDE2 headers installed!  Installing this package
+will result in conflicts between KDE2 and KDE1.
+EOF
+fi

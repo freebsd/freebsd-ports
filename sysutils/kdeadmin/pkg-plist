@@ -1,182 +1,79 @@
 bin/kcron
 bin/kpackage
-bin/kpackage_slack_l
-bin/printversion
-bin/kuser
 bin/kwuftpd
 bin/secpolicy
-lib/libkcm_ksysctrl.so
-lib/libkcm_ksysctrl.la
-share/doc/HTML/en/kcron/.anchors
-share/doc/HTML/en/kcron/commands.html
-share/doc/HTML/en/kcron/compilation.html
-share/doc/HTML/en/kcron/credits.html
-share/doc/HTML/en/kcron/faq.html
-share/doc/HTML/en/kcron/index.html
-share/doc/HTML/en/kcron/installation.html
-share/doc/HTML/en/kcron/introduction.html
-share/doc/HTML/en/kcron/manage-tasks.html
-share/doc/HTML/en/kcron/manage-variables.html
-share/doc/HTML/en/kcron/new-task.html
-share/doc/HTML/en/kcron/new-variable.html
-share/doc/HTML/en/kcron/printing-crontab.html
-share/doc/HTML/en/kcron/requirements.html
-share/doc/HTML/en/kcron/saving-crontab.html
-share/doc/HTML/en/kcron/using-kcron.html
+share/applnk/System/kcron.desktop
+share/applnk/System/kpackage.desktop
+share/applnk/System/kwuftpd.desktop
+share/apps/kpackage/kpackageui.rc
+share/apps/kpackage/pics/bnew.png
+share/apps/kpackage/pics/bsd.png
+share/apps/kpackage/pics/bupdated.png
+share/apps/kpackage/pics/cross.png
+share/apps/kpackage/pics/dbad.png
+share/apps/kpackage/pics/deb.png
+share/apps/kpackage/pics/dnew.png
+share/apps/kpackage/pics/dupdated.png
+share/apps/kpackage/pics/kiss.png
+share/apps/kpackage/pics/knew.png
+share/apps/kpackage/pics/kupdated.png
+share/apps/kpackage/pics/noball.png
+share/apps/kpackage/pics/ptick.png
+share/apps/kpackage/pics/question.png
+share/apps/kpackage/pics/rnew.png
+share/apps/kpackage/pics/rpm.png
+share/apps/kpackage/pics/rupdated.png
+share/apps/kpackage/pics/slack.png
+share/apps/kpackage/pics/snew.png
+share/apps/kpackage/pics/supdated.png
+share/apps/kpackage/pics/tick.png
+share/apps/kpackage/toolbar/ftin.xpm
+share/apps/kpackage/toolbar/ftout.xpm
 share/doc/HTML/en/kcron/common
+share/doc/HTML/en/kcron/index.cache.bz2
 share/doc/HTML/en/kcron/index.docbook
 share/doc/HTML/en/kcron/kcron.png
 share/doc/HTML/en/kcron/kcronstart.png
 share/doc/HTML/en/kcron/newtask.png
 share/doc/HTML/en/kcron/newvariable.png
 share/doc/HTML/en/kcron/print.png
-share/doc/HTML/en/kpackage/.anchors
-share/doc/HTML/en/kpackage/cache-menu.html
-share/doc/HTML/en/kpackage/credits-and-licenses.html
-share/doc/HTML/en/kpackage/help-menu.html
-share/doc/HTML/en/kpackage/index.html
-share/doc/HTML/en/kpackage/installation.html
-share/doc/HTML/en/kpackage/installing-packages.html
-share/doc/HTML/en/kpackage/integrating-available-packages-in-the-tree.html
-share/doc/HTML/en/kpackage/introduction.html
-share/doc/HTML/en/kpackage/menus.html
-share/doc/HTML/en/kpackage/onscreen-fundamentals.html
-share/doc/HTML/en/kpackage/package-information-panel.html
-share/doc/HTML/en/kpackage/packages-menu.html
-share/doc/HTML/en/kpackage/requirements.html
-share/doc/HTML/en/kpackage/root-access.html
-share/doc/HTML/en/kpackage/settings-menu.html
-share/doc/HTML/en/kpackage/special-menu.html
-share/doc/HTML/en/kpackage/the-package-tree-panel.html
-share/doc/HTML/en/kpackage/toolbar.html
-share/doc/HTML/en/kpackage/uninstalling-packages.html
 share/doc/HTML/en/kpackage/common
+share/doc/HTML/en/kpackage/index.cache.bz2
 share/doc/HTML/en/kpackage/index.docbook
-share/doc/HTML/en/ksysv/.anchors
-share/doc/HTML/en/ksysv/appendix.html
-share/doc/HTML/en/ksysv/authors.html
-share/doc/HTML/en/ksysv/configuration.html
-share/doc/HTML/en/ksysv/credits.html
-share/doc/HTML/en/ksysv/index.html
-share/doc/HTML/en/ksysv/introduction.html
-share/doc/HTML/en/ksysv/keyboard.html
-share/doc/HTML/en/ksysv/license.html
-share/doc/HTML/en/ksysv/onscreenfundamentals.html
-share/doc/HTML/en/ksysv/standard-semantics-of-runlevels.html
-share/doc/HTML/en/ksysv/the-menu-entries.html
 share/doc/HTML/en/ksysv/common
-share/doc/HTML/en/ksysv/index.cvlog
+share/doc/HTML/en/ksysv/index.cache.bz2
 share/doc/HTML/en/ksysv/index.docbook
-share/doc/HTML/en/kuser/.anchors
-share/doc/HTML/en/kuser/add-user.html
-share/doc/HTML/en/kuser/credits.html
-share/doc/HTML/en/kuser/customizing.html
-share/doc/HTML/en/kuser/group-properties.html
-share/doc/HTML/en/kuser/index.html
-share/doc/HTML/en/kuser/start.html
-share/doc/HTML/en/kuser/user-properties.html
-share/doc/HTML/en/kuser/using.html
 share/doc/HTML/en/kuser/common
+share/doc/HTML/en/kuser/index.cache.bz2
 share/doc/HTML/en/kuser/index.docbook
-share/doc/HTML/en/kwuftpd/.anchors
-share/doc/HTML/en/kwuftpd/about-ftp-accounts.html
-share/doc/HTML/en/kwuftpd/basic-ftp-setup.html
-share/doc/HTML/en/kwuftpd/credits-and-license.html
-share/doc/HTML/en/kwuftpd/directories.html
-share/doc/HTML/en/kwuftpd/index.html
-share/doc/HTML/en/kwuftpd/installation.html
-share/doc/HTML/en/kwuftpd/introduction.html
-share/doc/HTML/en/kwuftpd/logging.html
-share/doc/HTML/en/kwuftpd/menuref.html
-share/doc/HTML/en/kwuftpd/messages.html
-share/doc/HTML/en/kwuftpd/ratios.html
-share/doc/HTML/en/kwuftpd/security.html
-share/doc/HTML/en/kwuftpd/uploads.html
-share/doc/HTML/en/kwuftpd/user-classes.html
-share/doc/HTML/en/kwuftpd/using-kwuftpd.html
-share/doc/HTML/en/kwuftpd/virtual-hosts.html
 share/doc/HTML/en/kwuftpd/common
-share/doc/HTML/en/kwuftpd/logging.png
-share/doc/HTML/en/kwuftpd/index.docbook
 share/doc/HTML/en/kwuftpd/directories.png
+share/doc/HTML/en/kwuftpd/index.cache.bz2
+share/doc/HTML/en/kwuftpd/index.docbook
+share/doc/HTML/en/kwuftpd/logging.png
 share/doc/HTML/en/kwuftpd/messages.png
 share/doc/HTML/en/kwuftpd/ratios.png
 share/doc/HTML/en/kwuftpd/security.png
 share/doc/HTML/en/kwuftpd/uploads.png
 share/doc/HTML/en/kwuftpd/user_classes.png
 share/doc/HTML/en/kwuftpd/virtual.png
-share/apps/kpackage/pics/cross.xpm
-share/apps/kpackage/pics/dbad.xpm
-share/apps/kpackage/pics/deb.xpm
-share/apps/kpackage/pics/dnew.xpm
-share/apps/kpackage/pics/dupdated.xpm
-share/apps/kpackage/pics/ptick.xpm
-share/apps/kpackage/pics/question.xpm
-share/apps/kpackage/pics/rnew.xpm
-share/apps/kpackage/pics/rpm.xpm
-share/apps/kpackage/pics/rupdated.xpm
-share/apps/kpackage/pics/kiss.xpm
-share/apps/kpackage/pics/knew.xpm
-share/apps/kpackage/pics/kupdated.xpm
-share/apps/kpackage/pics/slack.xpm
-share/apps/kpackage/pics/snew.xpm
-share/apps/kpackage/pics/supdated.xpm
-share/apps/kpackage/pics/bsd.xpm
-share/apps/kpackage/pics/bnew.xpm
-share/apps/kpackage/pics/bupdated.xpm
-share/apps/kpackage/pics/tick.xpm
-share/apps/kpackage/pics/noball.xpm
-share/apps/kpackage/toolbar/ftin.xpm
-share/apps/kpackage/toolbar/ftout.xpm
-share/apps/kpackage/kpackageui.rc
-share/apps/ksysctrl/pci.ids
-share/apps/ksysctrl/README
-share/apps/ksysctrl/NEWS
-share/apps/ksysctrl/LICENSE
-share/apps/kuser/pics/group.png
-share/apps/kuser/pics/user.png
-share/apps/kuser/icons/locolor/22x22/actions/add_group.png
-share/apps/kuser/icons/locolor/22x22/actions/add_user.png
-share/apps/kuser/icons/locolor/22x22/actions/delete_group.png
-share/apps/kuser/icons/locolor/22x22/actions/delete_user.png
-share/apps/kuser/icons/locolor/22x22/actions/edit_group.png
-share/apps/kuser/icons/locolor/22x22/actions/edit_user.png
-share/apps/kuser/kuserui.rc
-share/mimelnk/application/x-debian-package.kdelnk
-share/icons/locolor/16x16/apps/kcron.png
-share/icons/locolor/16x16/apps/kuser.png
-share/icons/locolor/16x16/apps/kpackage.png
-share/icons/locolor/32x32/apps/kcron.png
-share/icons/locolor/32x32/apps/kpackage.png
-share/icons/locolor/32x32/apps/kuser.png
+share/icons/hicolor/16x16/apps/kcron.png
+share/icons/hicolor/16x16/apps/kpackage.png
+share/icons/hicolor/32x32/apps/kcron.png
 share/icons/hicolor/32x32/apps/kpackage.png
-share/icons/hicolor/32x32/apps/kuser.png
 share/icons/hicolor/48x48/apps/kpackage.png
-share/icons/hicolor/48x48/apps/kuser.png
-share/applnk/System/kcron.desktop
-share/applnk/System/kpackage.desktop
-share/applnk/System/kuser.desktop
-share/applnk/System/kwuftpd.desktop
-share/applnk/Settings/System/ksysctrl.desktop
-@dirrm share/doc/HTML/en/kcron
-@dirrm share/doc/HTML/en/kpackage
-@dirrm share/doc/HTML/en/ksysv
-@dirrm share/doc/HTML/en/kuser
+share/mimelnk/application/x-debian-package.desktop
+@dirrm share/mimelnk/application
+@dirrm share/icons/hicolor/48x48/apps
+@dirrm share/icons/hicolor/32x32/apps
+@dirrm share/icons/hicolor/16x16/apps
 @dirrm share/doc/HTML/en/kwuftpd
-@dirrm share/apps/kpackage/pics
+@dirrm share/doc/HTML/en/kuser
+@dirrm share/doc/HTML/en/ksysv
+@dirrm share/doc/HTML/en/kpackage
+@dirrm share/doc/HTML/en/kcron
+@dirrm share/doc/HTML/en
 @dirrm share/apps/kpackage/toolbar
+@dirrm share/apps/kpackage/pics
 @dirrm share/apps/kpackage
-@dirrm share/apps/ksysctrl/toolbar
-@dirrm share/apps/ksysctrl/icons/locolor/16x16/apps
-@dirrm share/apps/ksysctrl/icons/locolor/16x16
-@dirrm share/apps/ksysctrl/icons/locolor/32x32/apps
-@dirrm share/apps/ksysctrl/icons/locolor/32x32
-@dirrm share/apps/ksysctrl/icons/locolor
-@dirrm share/apps/ksysctrl/icons
-@dirrm share/apps/ksysctrl
-@dirrm share/apps/kuser/pics
-@dirrm share/apps/kuser/icons/locolor/22x22/actions
-@dirrm share/apps/kuser/icons/locolor/22x22
-@dirrm share/apps/kuser/icons/locolor
-@dirrm share/apps/kuser/icons
-@dirrm share/apps/kuser
+@dirrm share/applnk/System

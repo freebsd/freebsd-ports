@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	koffice
-PORTVERSION=	2.0.1
-PORTREVISION=	2
+PORTVERSION=	1.1-rc1
+PORTEPOCH=	1
 CATEGORIES=	editors kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION}/distribution/tar/generic/src
@@ -21,5 +21,17 @@ USE_BZIP2=	yes
 INSTALLS_SHLIB=	yes
 USE_AUTOCONF=	yes
 USE_GMAKE=	yes
+
+pre-configure:
+	find ${WRKSRC} -name Makefile.in | xargs ${PERL} -pi -e \
+		"s@LIBPYTHON =@LIBPYTHON= ${PTHREAD_LIBS}@g"
+	${PERL} -pi -e "s@la_LIBADD =@la_LIBADD= ${PTHREAD_LIBS}@g" \
+		${WRKSRC}/kivio/plugins/*/Makefile.in
+	${PERL} -pi -e "s@Exec=kivio@Exec=env LD_PRELOAD=/usr/lib/libc_r.so kivio@g" \
+		${WRKSRC}/kivio/kiviopart/kivio.desktop
+
+post-install:
+	${MV} ${PREFIX}/bin/kivio ${PREFIX}/bin/kivio.real
+	${INSTALL_SCRIPT} ${FILESDIR}/kivio.sh ${PREFIX}/bin/kivio
 
 .include <bsd.port.mk>
