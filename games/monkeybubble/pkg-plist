@@ -1,4 +1,6 @@
 bin/monkey-bubble
+etc/gconf/gconf.xml.defaults/apps/monkey-bubble-game/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/monkey-bubble-game/%gconf.xml
 etc/gconf/schemas/monkey-bubble.schemas
 lib/libgdkview.a
 lib/libgdkview.so
@@ -145,3 +147,5 @@ share/locale/fr/LC_MESSAGES/monkey-bubble.mo
 @dirrm share/gnome/monkey-bubble/gfx/bubbles
 @dirrm share/gnome/monkey-bubble/gfx
 @dirrm share/gnome/monkey-bubble
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/monkey-bubble-game
+@dirrm etc/gconf/gconf.xml.defaults/apps/monkey-bubble-game

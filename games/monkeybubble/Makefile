@@ -7,6 +7,7 @@
 
 PORTNAME=	monkeybubble
 PORTVERSION=	0.1.7
+PORTREVISION=	1
 CATEGORIES=	games gnome
 MASTER_SITES=	http://monkey-bubble.tuxfamily.org/
 DISTNAME=	monkey-bubble-${PORTVERSION}
