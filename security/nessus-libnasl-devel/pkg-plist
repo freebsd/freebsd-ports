@@ -3,4 +3,4 @@ bin/nasl-config
 include/nessus/nasl.h
 lib/libnasl.a
 lib/libnasl.so
-lib/libnasl.so.1
+lib/libnasl.so.2
