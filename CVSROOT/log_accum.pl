@@ -22,7 +22,7 @@
 
 require 5.003;		# might work with older perl5
 
-###use strict;
+use strict;
 use Sys::Hostname;	# get hostname() function
 
 ############################################################
@@ -68,6 +68,8 @@ my $FILE_PREFIX = "#cvs.files";
 # Remember to comment out if using for other purposes.
 #-------------------------------------------------------
 if (hostname() =~ /^(freefall|internat)\.freebsd\.org$/i) {
+	my $meister;
+
 	$MAILADDRS='cvs-committers@FreeBSD.org cvs-all@FreeBSD.org';
 	if ($1 =~ /freefall/i) {
 		$meister = 'peter@FreeBSD.org';
@@ -104,6 +106,9 @@ my $TAGS_FILE     = "$BASE_FN.tags";
 my $X_BRANCH_HDR  = "X-FreeBSD-CVS-Branch:";
 
 my $CVSROOT       = $ENV{'CVSROOT'} || "/home/ncvs";
+
+my $PID = getpgrp();		# Process id; used for generating filenames.
+
 
 ############################################################
 #
@@ -515,7 +520,6 @@ umask (002);
 #
 # Initialize basic variables
 #
-$PID = getpgrp();
 $login = $ENV{'USER'} || getlogin || (getpwuid($<))[0] || sprintf("uid#%d",$<);
 @files = split(' ', $ARGV[0]);
 @path = split('/', $files[0]);
@@ -658,30 +662,30 @@ for ($i = 0; ; $i++) {
 #
 # Spit out the information gathered in this pass.
 #
-foreach $tag ( keys %added_files ) {
+foreach my $tag ( keys %added_files ) {
 	&append_names_to_file("$ADDED_FILE.$i.$PID",   $dir, $tag,
 	    @{ $added_files{$tag} });
 }
-foreach $tag ( keys %changed_files ) {
+foreach my $tag ( keys %changed_files ) {
 	&append_names_to_file("$CHANGED_FILE.$i.$PID", $dir, $tag,
 	    @{ $changed_files{$tag} });
 }
-foreach $tag ( keys %removed_files ) {
+foreach my $tag ( keys %removed_files ) {
 	&append_names_to_file("$REMOVED_FILE.$i.$PID", $dir, $tag,
 	    @{ $removed_files{$tag} });
 }
 &write_logfile("$LOG_FILE.$i.$PID", @log_lines);
 
 if ($RCSIDINFO) {
-	foreach $tag ( keys %added_files ) {
+	foreach my $tag ( keys %added_files ) {
 		&change_summary_added("$SUMMARY_FILE.$i.$PID",
 		    @{ $added_files{$tag} });
 	}
-	foreach $tag ( keys %changed_files ) {
+	foreach my $tag ( keys %changed_files ) {
 		&change_summary_changed("$SUMMARY_FILE.$i.$PID",
 		    @{ $changed_files{$tag} });
 	}
-	foreach $tag ( keys %removed_files ) {
+	foreach my $tag ( keys %removed_files ) {
 		&change_summary_removed("$SUMMARY_FILE.$i.$PID",
 		    @{ $removed_files{$tag} });
 	}
