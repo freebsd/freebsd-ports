@@ -3,7 +3,7 @@
 # Date created:				1 December 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/12/24 13:49:52 jseger Exp $
 #
 
 DISTNAME=		tcb-1.4a
@@ -24,7 +24,6 @@ do-install:
 	@ ${INSTALL_DATA} ${WRKSRC}/tcbrc ${PREFIX}/share/tcb
 	@ ${INSTALL_DATA} ${WRKSRC}/doc/HELP ${PREFIX}/share/tcb
 	@ ${INSTALL_MAN} ${WRKSRC}/doc/tcb.1 ${PREFIX}/man/man1
-
 .if !defined(NOPORTDOCS)
 	@ ${MKDIR} ${PREFIX}/share/doc/tcb
 	@ ${INSTALL_DATA} ${WRKSRC}/doc/CHANGES ${PREFIX}/share/doc/tcb
