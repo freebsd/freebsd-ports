@@ -1,22 +1,29 @@
-# New ports collection makefile for:	joe
-# Date created:		01 Jul 1995
-# Whom:			torstenb@FreeBSD.org
+# New ports collection makefile for:	joe-devel
+# Date created:		25 Jul 2001
+# Whom:			dwcjr@FreeBSD.org
 #
 # $FreeBSD$
 #
 
 PORTNAME=	joe
-PORTVERSION=	2.8
-PORTREVISION=	3
-CATEGORIES+=	editors
-MASTER_SITES=	ftp://ftp.std.com/src/editors/
-DISTNAME=	${PORTNAME}${PORTVERSION}
-EXTRACT_SUFX=	.tar.Z
+PORTVERSION=	2.9.6
+CATEGORIES=	editors
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	joe-editor
+EXTRACT_SUFX=	.tgz
 
-MAINTAINER?=	toasty@dragondata.com
+MAINTAINER=	petef@databits.net
 
-WRKSRC=		${WRKDIR}/joe
-ALL_TARGET=	joe
 MAN1=		joe.1
+
+GNU_CONFIGURE=	yes
+USE_GMAKE=	yes
+
+post-install:
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${PREFIX}/share/doc/joe
+	${INSTALL_DATA} ${WRKSRC}/INFO ${WRKSRC}/README ${PREFIX}/share/doc/joe
+	${INSTALL_DATA} ${WRKSRC}/LIST ${PREFIX}/share/doc/joe/CommandList
+.endif
 
 .include <bsd.port.mk>

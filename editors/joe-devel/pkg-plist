@@ -3,8 +3,13 @@ bin/jmacs
 bin/jstar
 bin/rjoe
 bin/jpico
-lib/joerc
-lib/jmacsrc
-lib/jstarrc
-lib/rjoerc
-lib/jpicorc
+bin/termidx
+etc/joerc
+etc/jmacsrc
+etc/jstarrc
+etc/rjoerc
+etc/jpicorc
+%%PORTDOCS%%share/doc/joe/INFO
+%%PORTDOCS%%share/doc/joe/README
+%%PORTDOCS%%share/doc/joe/CommandList
+%%PORTDOCS%%@dirrm share/doc/joe

@@ -1,11 +1,17 @@
---- conf.c.orig	Fri Jun  1 19:32:10 2001
-+++ conf.c	Fri Jun  1 19:33:37 2001
-@@ -204,8 +204,6 @@
-  fprintf(f,"\n");
+--- conf.c.orig	Wed Apr 11 16:11:00 2001
++++ conf.c	Mon Jun 25 22:19:07 2001
+@@ -179,14 +179,6 @@
+ 	fprintf (f, "\n");
  
-  fprintf(f,"char *getenv();\n");
-- if(sizeof(long)==8) fprintf(f,"int time();\n");
-- else fprintf(f,"long time();\n");
-  fprintf(f,"void *malloc();\n");
-  fprintf(f,"void free();\n");
-  fprintf(f,"void *calloc();\n");
+ 	fprintf (f, "char *getenv();\n");
+-#if !defined(__linux__) || !defined(__alpha)
+-	if (sizeof (long) == 8) {
+-		fprintf (f, "int time();\n");
+-	} else 
+-#endif
+-	{
+-		fprintf (f, "long time();\n");
+-	}
+ 	fprintf (f, "void *malloc();\n");
+ 	fprintf (f, "void free();\n");
+ 	fprintf (f, "void *calloc();\n");

@@ -1,8 +1,10 @@
---- b.h.orig	Wed Dec 21 13:04:46 1994
-+++ b.h	Tue Dec  7 13:35:11 1999
-@@ -61,4 +61,5 @@
-  int internal;			/* Set for internal buffers */
-  int er;			/* Error code when file was loaded */
-+ int filehandle;		/* File handle for locking */
-  };
+--- b.h.orig	Sat Apr 21 23:15:48 2001
++++ b.h	Sat Apr 21 23:16:16 2001
+@@ -56,6 +56,7 @@
+ 	P *oldtop;		/* Last top screen position before orphaning */
+ 	int rdonly;		/* Set for read-only */
+ 	int internal;		/* Set for internal buffers */
++	int filehandle; 	/* File handle for locking */
+ 	int er;			/* Error code when file was loaded */
+ };
  
