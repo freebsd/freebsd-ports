@@ -36,7 +36,9 @@ RUN_DEPENDS+=	openjade:${PORTSDIR}/textproc/openjade
 RUN_DEPENDS+=	jade:${PORTSDIR}/textproc/jade
 .endif
 
+.if !defined(JADETEX)
 IS_INTERACTIVE= "user must set JADETEX variable to 'yes' or 'no'"
+.endif
 
 JADETEX?=
 
