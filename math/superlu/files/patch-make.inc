@@ -1,5 +1,5 @@
---- make.inc.orig	Wed Sep  4 06:02:16 2002
-+++ make.inc	Wed Jun 11 08:48:52 2003
+--- make.inc.orig	Thu Jan 22 09:45:17 2004
++++ make.inc	Thu Apr  1 20:34:07 2004
 @@ -16,14 +16,15 @@
  #
  #  The machine (platform) identifier to append to the library names
@@ -20,23 +20,22 @@
  
  #
  #  The archiver and the flag(s) to use when building archive (library)
-@@ -33,13 +34,12 @@
+@@ -33,12 +34,12 @@
  ARCHFLAGS    = cr
  RANLIB       = ranlib
  
 -CC           = cc
 -CFLAGS       = -xO3 -xcg92
--#CFLAGS       = -Wall -O2 
 -FORTRAN	     = f77
 -FFLAGS       = -O
 -LOADER       = cc
--LOADOPTS     = #-xO3
+-LOADOPTS     = -xO3
 +CC           = %%CC%%
 +CFLAGS       = %%CFLAGS%%
 +FORTRAN	     = %%FC%%
 +FFLAGS       = %%FFLAGS%%
-+LOADER       = ${CC}
-+#LOADOPTS     = -O2
++LOADER       = %%CC%%
++LOADOPTS     = 
  
  #
  #  C preprocessor defs for compilation (-DNoChange, -DAdd_, or -DUpCase)
