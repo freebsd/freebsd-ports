@@ -1,0 +1,12 @@
+@comment $FreeBSD$
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/bytefield.pdf
+%%PORTDOCS%%%%DOCSDIR%%/example.pdf
+%%PORTDOCS%%%%DOCSDIR%%/example.tex
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%CLASSDIR%%/bytefield.dtx
+%%CLASSDIR%%/bytefield.sty
+%%CLASSDIR%%/bytefield.ins
+@dirrm %%CLASSDIR%%
+@exec %%MKTEXLSR%%
+@unexec %%MKTEXLSR%%

@@ -1,0 +1,4 @@
+The bytefield package helps the user create illustrations for network
+protocol specifications and anything else that utilizes fields of
+data.  These illustrations show how the bits and bytes are laid out in
+a packet or in memory.
