@@ -1,0 +1,7 @@
+bin/cddb.pl
+lib/perl5/site_perl/%%PERL_VER%%/CDDB_get.pm
+lib/perl5/site_perl/%%PERL_VER%%/auto/CDDB_get/autosplit.ix
+lib/perl5/site_perl/%%PERL_VER%%/cddb.pl
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/CDDB_get/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/auto/CDDB_get
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/CDDB_get
