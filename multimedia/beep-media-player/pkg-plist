@@ -15,6 +15,7 @@ lib/beep/Input/libcdaudio.so
 lib/beep/Input/libmpg123.so
 lib/beep/Output/libOSS.so
 %%ESDPLUGIN:%%lib/beep/Output/libesdout.so
+lib/beep/Visualization/libbscope.so
 share/aclocal/beep.m4
 @dirrm lib/beep/Output
 @dirrm lib/beep/Input
