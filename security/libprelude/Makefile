@@ -4,7 +4,7 @@
 # $FreeBSD$
 
 PORTNAME=	libprelude
-PORTVERSION=	0.8.8
+PORTVERSION=	0.8.10
 CATEGORIES=	security
 MASTER_SITES=	http://www.prelude-ids.org/download/releases/
 
@@ -24,6 +24,10 @@ CONFIGURE_ARGS+=	--disable-openssl
 USE_OPENSSL=		YES
 .endif
 
+.if defined(NOPORTDOCS)
+MAKE_ENV+=	NOPORTDOCS=yes
+.endif
+
 post-extract:
 	@${ECHO} ""
 	@${ECHO} "*------------------------------------------------------------------*"
@@ -32,9 +36,5 @@ post-extract:
 	@${ECHO} "      WITHOUT_SSL=yes         Disable SSL support in libprelude"
 	@${ECHO} "*------------------------------------------------------------------*"
 	@${ECHO} ""
-
-pre-configure:
-	@${REINPLACE_CMD} 's!\$(prefix)/libprelude/include!\$(prefix)/include/libprelude!' \
-			${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>

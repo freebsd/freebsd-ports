@@ -1,0 +1,10 @@
+--- src/Makefile.in.orig	Sun Dec  7 19:04:39 2003
++++ src/Makefile.in	Sun Dec  7 19:05:27 2003
+@@ -640,6 +640,7 @@
+ libpcap-unpack: .libpcap-unpack
+ .libpcap-unpack: $(top_srcdir)/libpcap.tar
+ 	tar xf $(top_srcdir)/libpcap.tar
++	patch -p0 < $(top_srcdir)/libpcap.diff
+ 	@touch .libpcap-unpack
+ 
+ libpcap-configure: libpcap/Makefile

@@ -49,6 +49,7 @@ share/prelude-manager/xmlmod/idmef-message.dtd
 %%DOCSDIR%%/prelude-manager-ssl.html
 @unexec rmdir %D/etc/prelude-manager 2>/dev/null || echo "If you are permanently removing this port, you should do a ``rm -rf ${PKG_PREFIX}/etc/prelude-manager`` to remove any configuration files left." | fmt
 @dirrm include/prelude-manager
+@dirrm lib/prelude-manager/db
 @dirrm lib/prelude-manager/decodes
 @dirrm lib/prelude-manager/reports
 @dirrm lib/prelude-manager

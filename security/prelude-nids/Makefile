@@ -5,14 +5,14 @@
 # $FreeBSD$
 
 PORTNAME=	prelude-nids
-PORTVERSION=	0.8.5
+PORTVERSION=	0.8.6
 CATEGORIES=	security
-MASTER_SITES=   http://www.prelude-ids.org/download/releases/
+MASTER_SITES=	http://www.prelude-ids.org/download/releases/
 
 MAINTAINER=	sheepkiller@cultdeadsheep.org
 COMMENT=	Prelude Network Intrusion Detection System sensor
 
-LIB_DEPENDS=		prelude.0:${PORTSDIR}/security/libprelude
+LIB_DEPENDS=	prelude.1:${PORTSDIR}/security/libprelude
 
 USE_GMAKE=		yes
 USE_LIBTOOL=		yes
@@ -21,5 +21,8 @@ CONFIGURE_ARGS+=	--prefix=${PREFIX} \
 			--program-prefix=""
 
 MAN8=			prelude-nids.8
+
+post-patch:
+	${CP} ${FILESDIR}/libpcap.diff ${WRKSRC}
 
 .include <bsd.port.mk>
