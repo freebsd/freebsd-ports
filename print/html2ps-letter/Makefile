@@ -3,7 +3,7 @@
 # Date created:		Sat Nov 22 12:54:50 CET 1997
 # Whom:			andreas
 #
-# $Id: Makefile,v 1.4 1998/10/20 01:45:48 steve Exp $
+# $Id: Makefile,v 1.5 1998/11/22 22:45:16 sada Exp $
 #
 
 DISTNAME=	html2ps-1.0b1
