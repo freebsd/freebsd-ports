@@ -17,7 +17,7 @@ DISTFILES+=	${EXTRACT_ONLY}
 EXTRACT_ONLY+=	manued-0.9.3${EXTRACT_SUFX}
 .endif
 
-MAINTAINER=	fuyuki@mj.0038.net
+MAINTAINER=	fuyuki@hadaly.org
 
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/manued-0.9.3
