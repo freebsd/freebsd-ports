@@ -1,0 +1,3 @@
+@cwd /usr/X11R6
+bin/hexcalc
+man/man1/hexcalc.1.gz
