@@ -3,7 +3,7 @@
 # Date created:		July 16, 1997
 # Whom:			jfieber
 #
-# $Id: Makefile,v 1.2 1997/07/19 16:01:56 jfieber Exp $
+# $Id: Makefile,v 1.3 1997/07/22 13:49:11 jfieber Exp $
 #
 
 DISTNAME=	sgmlformat-1.2
@@ -24,7 +24,7 @@ RUN_DEPENDS=	nsgmls:${PORTSDIR}/textproc/jade
 
 RUN_DEPENDS+=	${PREFIX}/share/sgml/linuxdoc:${PORTSDIR}/textproc/linuxdoc \
 		${PREFIX}/share/sgml/docbook:${PORTSDIR}/textproc/docbook \
-		perl:${PORTSDIR}/lang/perl5
+		perl5.00401:${PORTSDIR}/lang/perl5
 
 post-install:
 	@${CAT} ${PKGDIR}/MESSAGE
