@@ -32,6 +32,7 @@
     SUBDIR += linux-eagle
     SUBDIR += magic
     SUBDIR += mars
+    SUBDIR += netgen
     SUBDIR += ngspice_rework
     SUBDIR += oregano
     SUBDIR += pcb

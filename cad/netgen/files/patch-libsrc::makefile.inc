@@ -1,0 +1,20 @@
+--- libsrc/makefile.inc.orig	Tue Feb  3 11:47:07 2004
++++ libsrc/makefile.inc	Mon May  3 10:51:35 2004
+@@ -24,7 +24,7 @@
+ .SUFFIXES: .cpp .o 
+ #
+ .cpp.o:
+-	$(CPLUSPLUS) $(CPLUSPLUSFLAGS1) $(CPLUSPLUSFLAGS2) $(CPLUSPLUSFLAGSLIBRARY) $<
++	$(CPLUSPLUS) $(CPLUSPLUSFLAGS1) $(CPLUSPLUSFLAGS2) $(CPLUSPLUSFLAGS3) $(CPLUSPLUSFLAGSLIBRARY) $<
+ #
+ #
+ $(LIBB):: $(LIB_DIR) 
+@@ -32,7 +32,7 @@
+ # make lib from sources:
+ #
+ $(LIBB):: $(src) 
+-	$(CPLUSPLUS) $(CPLUSPLUSFLAGS1) $(CPLUSPLUSFLAGS2) $(CPLUSPLUSFLAGSLIBRARY)  $?
++	$(CPLUSPLUS) $(CPLUSPLUSFLAGS1) $(CPLUSPLUSFLAGS2) $(CPLUSPLUSFLAGS3) $(CPLUSPLUSFLAGSLIBRARY)  $?
+ 	@$(AR) $(ARFLAGS) $@ *.o
+ 	-@$(RM) *.o
+ 	-@$(RANLIB) $@
