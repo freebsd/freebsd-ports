@@ -1,0 +1,19 @@
+--- wmcalc.c.orig	Mon Dec 20 00:17:29 1999
++++ wmcalc.c	Tue Mar 28 07:34:28 2000
+@@ -10,11 +10,11 @@
+  *    development of wmbutton.  I'm listing them here partially as thanks for 
+  *    helping out, catching bugs in the code, etc.
+  ***********************************************************************/
+-#include <Xlib.h>
+-#include <Xutil.h>
+-#include <xpm.h>
+-#include <extensions/shape.h>
+-#include <keysym.h>
++#include <X11/Xlib.h>
++#include <X11/Xutil.h>
++#include <X11/xpm.h>
++#include <X11/extensions/shape.h>
++#include <X11/keysym.h>
+ #include <stdio.h>
+ #include <math.h>
+ #include <stdlib.h>
