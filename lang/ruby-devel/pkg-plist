@@ -6,6 +6,7 @@ bin/h2rb%%_RUBY_SUFFIX%%
 bin/irb%%_RUBY_SUFFIX%%
 %%IF_DEFAULT%%bin/ruby%%RUBY_R%%
 bin/ruby%%_RUBY_SUFFIX%%
+lib/lib%%RUBY_NAME%%-static.a
 lib/lib%%RUBY_NAME%%.so
 lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%RUBY_ARCHLIBDIR%%/config.h
@@ -93,6 +94,7 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%RUBYLIB%%%%RUBY_LIBDIR%%/pp.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/prettyprint.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/profile.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/profiler.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/pstore.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/rational.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/readbytes.rb
