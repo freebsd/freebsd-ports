@@ -1,2 +1,5 @@
 %%SITE_PERL%%/IO/Tee.pm
-@unexec rmdir %D/%%SITE_PERL%%/IO         2>/dev/null || true
+@unexec rm %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/Tee/.packlist  2> /dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/Tee  2> /dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/IO  2> /dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/IO  2> /dev/null || true
