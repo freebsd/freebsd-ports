@@ -1,0 +1,5 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/DifferenceMarkup/.packlist
+%%SITE_PERL%%/XML/DifferenceMarkup.pm
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/DifferenceMarkup
+@unexec rmdir %D/%%SITE_PERL%%/XML 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML 2>/dev/null || true
