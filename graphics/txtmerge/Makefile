@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://ftp.cdrom.com/pub/unixfreeware/graphics/ \
 		ftp://ftp.kddlabs.co.jp/pub/graphics/gifanim/
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	nacai@iname.com
+MAINTAINER=	nakai@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/txtmerge
 ALL_TARGET=	txtmerge

@@ -12,7 +12,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://neo.yanagi.gifu-u.ac.jp/~c94056/
 DISTFILES=	PuzzleTama-ver1.5.tar.gz
 
-MAINTAINER=	nacai@iname.com
+MAINTAINER=	nakai@FreeBSD.org
 
 LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
 

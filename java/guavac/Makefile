@@ -10,7 +10,7 @@ DISTNAME=	guavac-1.2
 CATEGORIES=	java
 MASTER_SITES=	ftp://ftp.yggdrasil.com/pub/dist/devel/compilers/guavac/
 
-MAINTAINER=	nacai@iname.com
+MAINTAINER=	nakai@FreeBSD.org
 
 USE_NEWGCC=	yes
 USE_GMAKE=	yes

@@ -12,7 +12,7 @@ CATEGORIES=	emulators
 MASTER_SITES=	http://www.fortunecity.com/roswell/vanthal/10/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	nacai@iname.com
+MAINTAINER=	nakai@FreeBSD.org
 
 NO_WRKSUBDIR=	yes
 USE_XLIB=	yes

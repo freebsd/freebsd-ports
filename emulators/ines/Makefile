@@ -12,7 +12,7 @@ CATEGORIES=	emulators
 MASTER_SITES=	http://www.komkon.org/fms/iNES/
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	nacai@iname.com
+MAINTAINER=	nakai@FreeBSD.org
 
 NO_WRKSUBDIR=	yes
 USE_X_PREFIX=	yes

@@ -10,7 +10,7 @@ DISTNAME=	xsoldier-0.96
 CATEGORIES=	games
 MASTER_SITES=	http://www.surfline.ne.jp/hachi/xsoldier/
 
-MAINTAINER=	nacai@iname.com
+MAINTAINER=	nakai@FreeBSD.org
 
 LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
 
