@@ -1,5 +1,5 @@
---- configure.orig	Sat Jun 28 02:49:27 1997
-+++ configure	Wed Aug 20 13:33:21 1997
+--- configure.orig	Wed Sep 24 01:57:21 1997
++++ configure	Wed Oct  1 13:31:58 1997
 @@ -1060,6 +1060,7 @@
  
  if test "$val" != ""; then
@@ -7,26 +7,34 @@
 +    tclsrcdir=$val
      if test ! -d $TCL_SRC_DIR; then
          { echo "configure: error: Directory $TCL_SRC_DIR doesn't exist" 1>&2; exit 1; }
-         { echo "configure: error: Please install the source code of Tcl 7.6" 1>&2; exit 1; }
+         { echo "configure: error: Please install the source code of Tcl 8.0" 1>&2; exit 1; }
 @@ -1082,7 +1083,7 @@
  fi
  echo "$ac_t""$TCL_SRC_DIR" 1>&6
  
 -TCL_BIN_DIR=$TCL_SRC_DIR/unix
-+TCL_BIN_DIR=$TCL_SRC_DIR/../../lib/tcl7.6
++TCL_BIN_DIR=$TCL_SRC_DIR/../../lib/tcl8.0
  
  #--------------------------------------------------------------------
  #	See if there was a command-line option for where Tk is;  if
-@@ -1124,7 +1125,7 @@
+@@ -1102,6 +1103,7 @@
+ 
+ if test "$val" != ""; then
+     TK_SRC_DIR=$val
++    tksrcdir=$val
+     if test ! -d $TK_SRC_DIR; then
+         { echo "configure: error: Directory $TK_SRC_DIR doesn't exist" 1>&2; exit 1; }
+         { echo "configure: error: Please install the source code of Tk 8.0" 1>&2; exit 1; }
+@@ -1124,7 +1126,7 @@
  fi
  echo "$ac_t""$TK_SRC_DIR" 1>&6
  
 -TK_BIN_DIR=$TK_SRC_DIR/unix
-+TK_BIN_DIR=$TK_SRC_DIR/../../lib/tk4.2
++TK_BIN_DIR=$TK_SRC_DIR/../../lib/tk8.0
  
  #--------------------------------------------------------------------
  #	Find out the top level source directory of the Tix package.
-@@ -1707,12 +1708,12 @@
+@@ -1707,15 +1709,15 @@
  s%@SHLIB_VERSION@%$SHLIB_VERSION%g
  s%@DL_LIBS@%$DL_LIBS%g
  s%@LD_FLAGS@%$LD_FLAGS%g
@@ -41,8 +49,12 @@
 +s%@TK_LIB_SPEC@%$TK_LIB_SPEC%g
  s%@TK_LIBS@%$TK_LIBS%g
  s%@TK_VERSION@%$TK_VERSION%g
- s%@TK_SRC_DIR@%$TK_SRC_DIR%g
-@@ -1738,8 +1739,8 @@
+-s%@TK_SRC_DIR@%$TK_SRC_DIR%g
++s%@TK_SRC_DIR@%$tksrcdir%g
+ s%@TK_BIN_DIR@%$TK_BIN_DIR%g
+ s%@TK_XINCLUDES@%$TK_XINCLUDES%g
+ s%@TIX_LD_SEARCH_FLAGS@%$TIX_LD_SEARCH_FLAGS%g
+@@ -1738,8 +1740,8 @@
  s%@TIX_SAM_FILE@%$TIX_SAM_FILE%g
  s%@TIX_MAKE_SAM@%$TIX_MAKE_SAM%g
  s%@TIX_DEFS@%$TIX_DEFS%g

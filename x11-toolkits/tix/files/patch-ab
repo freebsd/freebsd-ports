@@ -1,5 +1,5 @@
---- ../Makefile.in.orig	Sat Feb 15 08:35:34 1997
-+++ ../Makefile.in	Fri Feb 21 09:16:34 1997
+--- ../Makefile.in.orig	Wed Jul  9 22:33:48 1997
++++ ../Makefile.in	Wed Oct  1 12:03:37 1997
 @@ -28,7 +28,7 @@
  # Directory in which to install the library of Tix scripts and demos
  # (note: you can set the TIX_LIBRARY environment variable at run-time to
