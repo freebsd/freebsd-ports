@@ -6152,6 +6152,7 @@ tail		src/usr.bin/tail
 talk		src/usr.bin/talk
 talkd		src/libexec/talkd
 tamago		ports/editors/tamago
+tamago-emacs20	ports/editors/tamago-emacs20
 tank		ports/games/tank
 tar		src/gnu/usr.bin/tar
 tas		ports/net/tas
