@@ -6,20 +6,20 @@
 #
 
 PORTNAME=	gcc
-PORTVERSION=	3.3.2003.07.07
-PORTREVISION=	0
+PORTVERSION=	3.3.1
 CATEGORIES=	devel
-#MASTER_SITES=	${MASTER_SITE_GNU}
-#MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTNAME}-${PORTVERSION}
-#MASTER_SITES=	ftp://gcc.gnu.org/pub/gcc/snapshots/${PORTVERSION}/
-MASTER_SITES=	http://people.freebsd.org/~joerg/
+MASTER_SITES=	${MASTER_SITE_GNU}
+MASTER_SITES+=	http://people.freebsd.org/~joerg/:local
+MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTNAME}-${PORTVERSION}
 PKGNAMEPREFIX=	avr-
-DISTFILES=	gcc-core+g++-${PORTVERSION}${EXTRACT_SUFX} \
-		${MAN_AUX}
-EXTRACT_ONLY=	gcc-core+g++-${PORTVERSION}${EXTRACT_SUFX}
+DISTFILES=	gcc-core-${PORTVERSION}${EXTRACT_SUFX} \
+		gcc-g++-${PORTVERSION}${EXTRACT_SUFX} \
+		${MAN_AUX}:local
+EXTRACT_ONLY=	gcc-core-${PORTVERSION}${EXTRACT_SUFX} \
+		gcc-g++-${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	joerg@freebsd.org
-COMMENT=	FSF GCC 3.3 for Atmel AVR 8-bit RISC cross-development
+COMMENT=	FSF GCC 3.3.1 for Atmel AVR 8-bit RISC cross-development
 
 BUILD_DEPENDS=	avr-as:${PORTSDIR}/devel/avr-binutils \
 		avr-ld:${PORTSDIR}/devel/avr-binutils \
@@ -40,7 +40,7 @@ GNU_CONFIGURE=	yes
 
 CONFIGURE_ARGS=	--target=avr
 
-MAN_AUX=	gcc-man.2003.07.07.tar.gz
+MAN_AUX=	gcc-man.2003.09.09.tar.gz
 
 MAKE_FLAGS=	LANGUAGES="c c++"
 # get rid of that silly -mcpu=pentiumpro -current is so fond of. :-(
@@ -48,6 +48,7 @@ MAKE_ENV=	MACHINE_ARCH=avr
 
 MAN1=		cpp.1 avr-gcc.1 avr-g++.1 gcov.1
 MAN7=		fsf-funding.7 gfdl.7 gpl.7
+INFO=		cpp gcc gccint cppinternals
 
 # Since the pod2man in FreeBSD 4-stable's /usr/bin cannot be used, we
 # help out by extracting precompiled manpages there.
