@@ -37,8 +37,6 @@ RESTRICTED=	yes
 
 .include <bsd.port.pre.mk>
 
-RUN_DEPENDS+=	java:${PORTSDIR}/${_JAVA_PORT_FREEBSD_1_4}
-
 # Check for OVT distfile
 .if !exists(${DISTDIR}/${DISTFILES}) && !defined(PACKAGE_BUILDING)
 ECHO_MSG=/usr/bin/printf
