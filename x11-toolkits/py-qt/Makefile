@@ -6,6 +6,7 @@
 
 PORTNAME=	qt
 PORTVERSION=	3.4
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits python
 MASTER_SITES=	http://www.river-bank.demon.co.uk/download/PyQt/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,6 +15,7 @@ DISTNAME=	PyQt-x11-gpl-${PORTVERSION}
 MAINTAINER=	nbm@FreeBSD.org
 
 LIB_DEPENDS=	sip.9:${PORTSDIR}/devel/sip
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/libsip.so:${PORTSDIR}/devel/py-sip
 
 USE_QT_VER=	3
 USE_PYTHON=	yes
