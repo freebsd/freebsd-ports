@@ -15,7 +15,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		ftp://gd.tuwien.ac.at/pub/graphics/ImageMagick/ \
 		ftp://ftp.ms.mff.cuni.cz/MIRRORS/ftp.wizards.dupont.com/pub/ImageMagick/ \
 		ftp://ftp.oce.nl/pub/Internet/audio+video/ImageMagick/
-MASTER_SITE_SUBDIR=	jseger
+MASTER_SITE_SUBDIR=	knu
 
 MAINTAINER=	jseger@FreeBSD.org
 
@@ -23,7 +23,7 @@ LIB_DEPENDS=	bz2.1:${PORTSDIR}/archivers/bzip2 \
 		df.1:${PORTSDIR}/graphics/hdf \
 		jbig.1:${PORTSDIR}/graphics/jbigkit \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
-		png.3:${PORTSDIR}/graphics/png \
+		png.4:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		ttf.4:${PORTSDIR}/print/freetype \
 		xml.5:${PORTSDIR}/textproc/libxml2
