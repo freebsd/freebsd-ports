@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.107 1998/03/12 15:44:10 itojun Exp $
+# $Id: Makefile,v 1.108 1998/03/12 16:07:26 itojun Exp $
 #
 
     SUBDIR += Canna
@@ -69,6 +69,7 @@
     SUBDIR += mule-wnn4
     SUBDIR += mule-wnn6
     SUBDIR += nethack
+    SUBDIR += netscape4
     SUBDIR += newosaka
     SUBDIR += nkf
     SUBDIR += nvi-euc-jp
