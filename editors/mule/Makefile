@@ -40,8 +40,6 @@ FILESDIR=	${.CURDIR}/../../editors/mule-common/files
 MD5_FILE=	${.CURDIR}/../../editors/mule-common/distinfo
 SCRIPTDIR=	${.CURDIR}/../../editors/mule-common/scripts
 PLIST=		${.CURDIR}/../../editors/mule/pkg-plist
-INSTALL_COOKIE=	${WRKDIR}/.install_done-${PKGNAME}
-PACKAGE_COOKIE=	${WRKDIR}/.package_done-${PKGNAME}
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 MAKE_ENV=	LIBDIR="${LIBDIR}"
