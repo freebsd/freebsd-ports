@@ -2,6 +2,7 @@ bin/svk
 %%SITE_PERL%%/SVK.pm
 %%SITE_PERL%%/SVK/Command.pm
 %%SITE_PERL%%/SVK/Command/Add.pm
+%%SITE_PERL%%/SVK/Command/Admin.pm
 %%SITE_PERL%%/SVK/Command/Annotate.pm
 %%SITE_PERL%%/SVK/Command/Cat.pm
 %%SITE_PERL%%/SVK/Command/Checkout.pm
@@ -28,6 +29,8 @@ bin/svk
 %%SITE_PERL%%/SVK/Command/Propget.pm
 %%SITE_PERL%%/SVK/Command/Proplist.pm
 %%SITE_PERL%%/SVK/Command/Propset.pm
+%%SITE_PERL%%/SVK/Command/Pull.pm
+%%SITE_PERL%%/SVK/Command/Push.pm
 %%SITE_PERL%%/SVK/Command/Resolved.pm
 %%SITE_PERL%%/SVK/Command/Revert.pm
 %%SITE_PERL%%/SVK/Command/Smerge.pm
@@ -53,11 +56,24 @@ bin/svk
 %%SITE_PERL%%/SVK/Merge.pm
 %%SITE_PERL%%/SVK/Notify.pm
 %%SITE_PERL%%/SVK/Patch.pm
+%%SITE_PERL%%/SVK/Resolve.pm
+%%SITE_PERL%%/SVK/Resolve/AraxisMerge.pm
+%%SITE_PERL%%/SVK/Resolve/Emacs.pm
+%%SITE_PERL%%/SVK/Resolve/FileMerge.pm
+%%SITE_PERL%%/SVK/Resolve/GtkDiff.pm
+%%SITE_PERL%%/SVK/Resolve/Guiffy.pm
+%%SITE_PERL%%/SVK/Resolve/KDiff3.pm
+%%SITE_PERL%%/SVK/Resolve/Meld.pm
+%%SITE_PERL%%/SVK/Resolve/P4WinMerge.pm
+%%SITE_PERL%%/SVK/Resolve/TkDiff.pm
+%%SITE_PERL%%/SVK/Resolve/TortoiseMerge.pm
+%%SITE_PERL%%/SVK/Resolve/XXDiff.pm
 %%SITE_PERL%%/SVK/Target.pm
 %%SITE_PERL%%/SVK/Target/Universal.pm
 %%SITE_PERL%%/SVK/Util.pm
 %%SITE_PERL%%/SVK/XD.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/SVK/.packlist
+@dirrm %%SITE_PERL%%/SVK/Resolve
 @dirrm %%SITE_PERL%%/SVK/I18N
 @dirrm %%SITE_PERL%%/SVK/Editor
 @dirrm %%SITE_PERL%%/SVK/Command

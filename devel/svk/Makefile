@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	svk
-PORTVERSION=	0.21
+PORTVERSION=	0.22
 PORTREVISION=	0
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
@@ -24,8 +24,8 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/SVN/Core.pm:${PORTSDIR}/devel/subversio
 		${SITE_PERL}/${PERL_ARCH}/Compress/Zlib.pm:${PORTSDIR}/archivers/p5-Compress-Zlib \
 		${SITE_PERL}/Data/Hierarchy.pm:${PORTSDIR}/devel/p5-Data-Hierarchy \
 		${SITE_PERL}/Date/Parse.pm:${PORTSDIR}/devel/p5-TimeDate \
-		${SITE_PERL}/File/BaseDir.pm:${PORTSDIR}/devel/p5-File-BaseDir \
-		${SITE_PERL}/File/MimeInfo.pm:${PORTSDIR}/devel/p5-File-MimeInfo \
+		${SITE_PERL}/File/Type.pm:${PORTSDIR}/devel/p5-File-Type \
+		${SITE_PERL}/FreezeThaw.pm:${PORTSDIR}/devel/p5-FreezeThaw \
 		${SITE_PERL}/IO/Digest.pm:${PORTSDIR}/devel/p5-IO-Digest \
 		${SITE_PERL}/Locale/Maketext/Lexicon.pm:${PORTSDIR}/devel/p5-Locale-Maketext-Lexicon \
 		${SITE_PERL}/Locale/Maketext/Simple.pm:${PORTSDIR}/devel/p5-Locale-Maketext-Simple \
@@ -35,7 +35,6 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/SVN/Core.pm:${PORTSDIR}/devel/subversio
 		${SITE_PERL}/Pod/Simple.pm:${PORTSDIR}/textproc/p5-Pod-Simple \
 		${SITE_PERL}/Regexp/Shellish.pm:${PORTSDIR}/devel/p5-Regexp-Shellish \
 		${SITE_PERL}/SVN/Simple/Edit.pm:${PORTSDIR}/devel/p5-SVN-Simple \
-		${SITE_PERL}/Text/Diff.pm:${PORTSDIR}/textproc/p5-Text-Diff \
 		${SITE_PERL}/YAML.pm:${PORTSDIR}/textproc/p5-YAML
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
@@ -49,6 +48,7 @@ MAN1=		svk.1
 MAN3=		SVK.3 \
 		SVK::Command.3 \
 		SVK::Command::Add.3 \
+		SVK::Command::Admin.3 \
 		SVK::Command::Annotate.3 \
 		SVK::Command::Cat.3 \
 		SVK::Command::Checkout.3 \
@@ -75,6 +75,8 @@ MAN3=		SVK.3 \
 		SVK::Command::Propget.3 \
 		SVK::Command::Proplist.3 \
 		SVK::Command::Propset.3 \
+		SVK::Command::Pull.3 \
+		SVK::Command::Push.3 \
 		SVK::Command::Resolved.3 \
 		SVK::Command::Revert.3 \
 		SVK::Command::Smerge.3 \
@@ -93,8 +95,10 @@ MAN3=		SVK.3 \
 		SVK::Merge.3 \
 		SVK::Notify.3 \
 		SVK::Patch.3 \
+		SVK::Resolve.3 \
 		SVK::Target.3 \
 		SVK::Target::Universal.3 \
+		SVK::Util.3 \
 		SVK::XD.3
 
 .include <bsd.port.pre.mk>
