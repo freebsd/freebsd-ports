@@ -17,13 +17,6 @@ MAINTAINER=	ports@FreeBSD.org
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gtk.py:${PORTSDIR}/x11-toolkits/py-gtk
 
 USE_PYTHON=	yes
-
-SETUP_CMD=	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} setup.py
-
-do-build:
-	@${SETUP_CMD} build
-
-do-install:
-	@${SETUP_CMD} install
+USE_PYDISTUTILS=	yes
 
 .include <bsd.port.mk>
