@@ -5759,6 +5759,7 @@ p5-AI-NeuralNet-Mesh	ports/math/p5-AI-NeuralNet-Mesh
 p5-AI-Perceptron	ports/math/p5-AI-Perceptron
 p5-AcePerl	ports/biology/p5-AcePerl
 p5-Agent	ports/devel/p5-Agent
+p5-Algorithm-Annotate	ports/devel/p5-Algorithm-Annotate
 p5-Algorithm-Diff	ports/devel/p5-Algorithm-Diff
 p5-Algorithm-Evolutionary	ports/devel/p5-Algorithm-Evolutionary
 p5-Algorithm-Interval2Prefix	ports/devel/p5-Algorithm-Interval2Prefix
@@ -6089,6 +6090,7 @@ p5-Data-Flow	ports/devel/p5-Data-Flow
 p5-Data-FormValidator	ports/textproc/p5-Data-FormValidator
 p5-Data-HexDump	ports/devel/p5-Data-HexDump
 p5-Data-Hexdumper	ports/devel/p5-Data-Hexdumper
+p5-Data-Hierarchy	ports/devel/p5-Data-Hierarchy
 p5-Data-JavaScript	ports/lang/p5-Data-JavaScript
 p5-Data-Page	ports/databases/p5-Data-Page
 p5-Data-Properties	ports/devel/p5-Data-Properties
@@ -6640,6 +6642,7 @@ p5-PatchReader	ports/devel/p5-PatchReader
 p5-Penguin	ports/devel/p5-Penguin
 p5-Penguin-Easy	ports/devel/p5-Penguin-Easy
 p5-PerlMenu	ports/devel/p5-PerlMenu
+p5-PerlIO-via-dynamic	ports/devel/p5-PerlIO-via-dynamic
 p5-Pg		ports/databases/p5-Pg
 p5-PlRPC	ports/net/p5-PlRPC
 p5-Pod-Constants	ports/textproc/p5-Pod-Constants
@@ -6696,6 +6699,9 @@ p5-SPOPS	ports/devel/p5-SPOPS
 p5-SQL-Abstract	ports/databases/p5-SQL-Abstract
 p5-SQL-Statement	ports/databases/p5-SQL-Statement
 p5-SVG	ports/textproc/p5-SVG
+p5-SVN-Mirror	ports/devel/p5-SVN-Mirror
+p5-SVN-Simple	ports/devel/p5-SVN-Simple
+p5-SVN-Web	ports/devel/p5-SVN-Web
 p5-SWF-File	ports/graphics/p5-SWF-File
 p5-Safe-Hole	ports/security/p5-Safe-Hole
 p5-Scalar-List-Utils	ports/lang/p5-Scalar-List-Utils
@@ -9017,6 +9023,7 @@ su2		ports/sysutils/su2
 subcalc		ports/net-mgmt/subcalc
 subconv		ports/multimedia/subconv
 subversion	ports/devel/subversion
+subversion-perl	ports/devel/subversion-perl
 subweb		ports/security/subweb
 suck		ports/news/suck
 suck-cnews	ports/news/suck-cnews
@@ -9039,6 +9046,7 @@ sv-aspell	ports/textproc/sv-aspell
 sv-ooodict-SE	ports/editors/ooodict-sv_SE
 svg2swf		ports/graphics/svg2swf
 svgalib		ports/graphics/svgalib
+svk		ports/devel/svk
 svnc		ports/net/svnc
 svr4_base	ports/emulators/svr4_base
 swarm		ports/devel/swarm
