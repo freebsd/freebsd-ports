@@ -20,6 +20,7 @@
     SUBDIR += fbsd-icons
     SUBDIR += gmessage
     SUBDIR += gnome
+    SUBDIR += gnomeapplets
     SUBDIR += gnomecore
     SUBDIR += gnomelibs
     SUBDIR += gyroscope

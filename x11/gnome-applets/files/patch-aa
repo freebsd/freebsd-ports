@@ -1,0 +1,19 @@
+--- configure.orig	Mon May 22 00:00:41 2000
++++ configure	Fri May 26 18:10:31 2000
+@@ -3399,6 +3399,7 @@
+ *irix*) CDROM_HOST=iric; CDROM_LIBS="-lcdaudio -lmediad -lds";;
+ *linux*) CDROM_HOST=linux;;
+ *solaris*) CDROM_HOST=solaris;;
++*freebsd*) CDROM_HOST=freebsd;;
+ esac
+ 
+ 
+@@ -5703,7 +5704,7 @@
+   cat conftest.$ac_ext >&5
+   rm -rf conftest*
+   CATOBJEXT=.mo
+-		   DATADIRNAME=lib
++		   DATADIRNAME=share
+ fi
+ rm -f conftest*
+ 		INSTOBJEXT=.mo
