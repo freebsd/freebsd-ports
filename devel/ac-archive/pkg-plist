@@ -238,6 +238,12 @@ bin/acinclude
 %%DOCSDIR%%/Installed_Packages/am_rpm_init.m4
 %%DOCSDIR%%/Installed_Packages/am_with_mpatrol.html
 %%DOCSDIR%%/Installed_Packages/am_with_mpatrol.m4
+%%DOCSDIR%%/Installed_Packages/ax_check_gl.html
+%%DOCSDIR%%/Installed_Packages/ax_check_gl.m4
+%%DOCSDIR%%/Installed_Packages/ax_check_glu.html
+%%DOCSDIR%%/Installed_Packages/ax_check_glu.m4
+%%DOCSDIR%%/Installed_Packages/ax_check_glut.html
+%%DOCSDIR%%/Installed_Packages/ax_check_glut.m4
 %%DOCSDIR%%/Installed_Packages/bnv_have_qt.html
 %%DOCSDIR%%/Installed_Packages/bnv_have_qt.m4
 %%DOCSDIR%%/Installed_Packages/check_gnu_make.html
@@ -415,10 +421,14 @@ bin/acinclude
 %%DOCSDIR%%/autoconf-archive.tar.gz
 %%DOCSDIR%%/bkorb/ag_check_allocated_ctime.html
 %%DOCSDIR%%/bkorb/ag_check_allocated_ctime.m4
+%%DOCSDIR%%/bkorb/ag_check_pathfind.html
+%%DOCSDIR%%/bkorb/ag_check_pathfind.m4
 %%DOCSDIR%%/bkorb/ag_check_posix_regcomp.html
 %%DOCSDIR%%/bkorb/ag_check_posix_regcomp.m4
 %%DOCSDIR%%/bkorb/ag_check_posix_sysinfo.html
 %%DOCSDIR%%/bkorb/ag_check_posix_sysinfo.m4
+%%DOCSDIR%%/bkorb/ag_check_strcspn.html
+%%DOCSDIR%%/bkorb/ag_check_strcspn.m4
 %%DOCSDIR%%/bkorb/ag_check_strftime.html
 %%DOCSDIR%%/bkorb/ag_check_strftime.m4
 %%DOCSDIR%%/bkorb/ag_check_sys_siglist.html
@@ -428,6 +438,8 @@ bin/acinclude
 @dirrm %%DOCSDIR%%/bkorb
 %%DOCSDIR%%/braden/ax_check_gl.html
 %%DOCSDIR%%/braden/ax_check_gl.m4
+%%DOCSDIR%%/braden/ax_check_glu.html
+%%DOCSDIR%%/braden/ax_check_glu.m4
 %%DOCSDIR%%/braden/ax_check_glut.html
 %%DOCSDIR%%/braden/ax_check_glut.m4
 @dirrm %%DOCSDIR%%/braden
