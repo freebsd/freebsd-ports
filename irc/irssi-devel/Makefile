@@ -13,6 +13,8 @@ MASTER_SITES=	http://irssi.org/files/
 
 MAINTAINER?=	vanilla@FreeBSD.org
 
+LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext
+
 USE_BZIP2=	yes
 USE_PERL5=	yes
 USE_GLIB=	yes
