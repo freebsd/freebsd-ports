@@ -16,7 +16,7 @@ COMMENT=	A wonderful Sega Genesis/MegaDrive emulator
 BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
 
 USE_SDL=	yes
-USE_MESA=	yes
+USE_GL=		yes
 GNU_CONFIGURE=	yes
 
 MAN1=		dgen.1 tobin.1
