@@ -3,12 +3,12 @@
 # Date created:		21 August 1995
 # Whom:			asami
 #
-# $Id: Makefile,v 1.23 1998/08/24 10:04:12 markm Exp $
+# $Id: Makefile,v 1.24 1998/11/19 05:17:34 obrien Exp $
 #
 
 DISTNAME=       netscape-3.04
 CATEGORIES=	www
-MASTER_SITES=   ftp://ftp.netscape.com/pub/navigator/3.04/shipping/english/unix/bsdi11/navigator_complete/
+MASTER_SITES=   ftp://archive:oldies@archive.netscape.com/archive/navigator/3.04/shipping/english/unix/bsdi11/navigator_complete/
 DISTFILES=      netscape-v304-export.x86-unknown-bsd.tar.gz
 
 MAINTAINER=     ports@FreeBSD.ORG
@@ -17,7 +17,7 @@ NO_LATEST_LINK=	yes
 NO_WRKSUBDIR=	yes
 
 .if defined(GOLD)
-MASTER_SITES=   ftp://ftp.netscape.com/pub/navigator/3.04/shipping/english/unix/bsdi11/navigator_gold_complete/
+MASTER_SITES=   ftp://archive:oldies@archive.netscape.com/archive/navigator/3.04/shipping/english/unix/bsdi11/navigator_gold_complete/
 DIST_SUBDIR=    gold
 PKGNAME=	${DISTNAME}-gold
 .endif
