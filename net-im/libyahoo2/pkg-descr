@@ -1,0 +1,4 @@
+libyahoo2 is a C library interface to the new Yahoo! Messenger protocol.
+It supports almost all current features of the protocol.
+
+WWW: http://libyahoo2.sourceforge.net/
