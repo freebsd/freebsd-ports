@@ -17,6 +17,10 @@ COMMENT=	Derived from, and similar to, Blackbox
 
 LIB_DEPENDS=	Xft.2:${PORTSDIR}/x11-fonts/Xft
 
+BROKEN=		"Does not install"
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2004-04-16
+
 CONFIGURE_ARGS=	--datadir=${PREFIX}/share/openbox --prefix=${PREFIX} \
 		--sysconfdir=${PREFIX}/etc/openbox
 DOCS=		ABOUT-NLS AUTHORS CHANGELOG COPYING README TODO
