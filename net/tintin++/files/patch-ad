@@ -1,0 +1,112 @@
+--- main.c.orig	Thu Mar 25 11:26:53 1999
++++ main.c	Tue Sep 26 17:27:58 2000
+@@ -18,6 +18,7 @@
+ #include <signal.h>
+ #include "tintin.h"
+ #include <fcntl.h>
++#include <termios.h>
+ 
+ #ifndef BADSIG
+ #define BADSIG (void (*)())-1
+@@ -109,7 +110,7 @@
+ tcflag_t c_lflag;
+ cc_t c_cc[NCCS];
+ #else
+-unsigned char c_cc[NCC];
++unsigned char c_cc[NCCS];
+ unsigned short c_lflag;
+ #endif
+ 
+@@ -580,7 +581,7 @@
+     if(ses->logfile) {
+       if (!OLD_LOG) {
+       count=0;
+-      for(n=0;n<=didget;n++) 
++      for(n=0;n<didget;n++)
+          if (buffer[n]!='\r') { 
+             temp[count]=buffer[n]; 
+             count++;
+@@ -750,7 +751,7 @@
+       sprintf(strng,"%c8%s\n\r%c7%c[%d;%df", E, cptr, E, E, input_row, input_col);
+     else
+       sprintf(strng,"%s\n\r", cptr);
+-    write(1,strng, strlen(strng)+1);
++    write(1,strng, strlen(strng));
+     display_col=1;
+     if (redraw && term_echoing && !is_split)
+       write(1, k_input, strlen(k_input));
+@@ -806,7 +807,7 @@
+       cptr++;
+       sprintf(strng,"%s\n\r", cptr);
+     }
+-    write(1,strng, strlen(strng)+1);
++    write(1,strng, strlen(strng));
+     display_col=1;
+   } 
+   text_came=TRUE;  
+@@ -876,7 +877,7 @@
+   input_col=1;  
+   sprintf(fn, "%c[2J%c[1;%dr%c[%d;1f", E, E, display_row, E, split_line);
+   write(1,fn, strlen(fn));
+-  write(1,"-------------------------------------------------------------------------------", 80);
++  write(1,"--------------------------------------------------------------------------------", 80);
+   sprintf(fn, "%c[%d;1f%c7", E, split_line-1, E);
+   write(1,fn,strlen(fn));
+   sprintf(fn, "%c[%d;1f", E, input_row);
+--- misc.c.orig	Fri Mar  5 21:40:11 1999
++++ misc.c	Tue Sep 26 17:20:07 2000
+@@ -106,7 +106,7 @@
+   char temp[2];
+   temp[0]=7;
+   temp[1]=0;
+-  write(1, temp, 2);
++  write(1, temp, 1);
+ }
+ 
+ 
+@@ -176,7 +176,7 @@
+     }
+     ses=NULL;  
+     if (is_split) 
+-      write(1, "c", 3);
++      write(1, "c", 2);
+     tintin_puts2("TINTIN suffers from bloodlack, and the lack of a beating heart...", ses);
+     tintin_puts2("TINTIN is dead! R.I.P.", ses);
+     tintin_puts2("Your blood freezes as you hear TINTIN's death cry.", ses);
+--- parse.c.orig	Sun Aug 28 22:12:10 1994
++++ parse.c	Tue Sep 26 17:20:07 2000
+@@ -670,10 +670,10 @@
+   if(ses && !PSEUDO_PROMPT)
+     write_line_mud("", ses);
+   else if (!is_split)
+-    write(1,"> ", 3);
++    write(1,"> ", 2);
+   else {
+     sprintf(strng,"8> 7[%d;%df", input_row, input_col);
+-    write(1,strng, strlen(strng)+1);
++    write(1,strng, strlen(strng));
+     display_col+=2;
+   } 
+ }
+--- utils.c.orig	Fri Mar  5 00:58:57 1999
++++ utils.c	Tue Sep 26 17:23:23 2000
+@@ -21,6 +21,8 @@
+ #include <unistd.h>
+ #endif
+ 
++#include <sys/param.h>
++
+ void syserr();
+ 
+ /*********************************************/
+@@ -56,7 +58,9 @@
+      char *msg;
+ {
+   extern int errno, sys_nerr;
+-  //extern char *sys_errlist[];
++#if !defined(BSD) || (BSD < 199306)
++    extern char *sys_errlist[];
++#endif
+ 
+   fprintf(stderr,"ERROR: %s (%d",msg, errno);
+   if(errno>0 && errno<sys_nerr)
