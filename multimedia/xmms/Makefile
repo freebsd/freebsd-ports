@@ -46,7 +46,7 @@ PLIST_SUB+=	MIKMODPLUGIN:="@comment "
 .endif
 
 .if !defined(WITHOUT_VORBIS)
-LIB_DEPENDS+=	vorbis.0:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS+=	vorbis.1:${PORTSDIR}/audio/libvorbis
 INPUT_PLUGINS+=	vorbis
 PLIST_SUB+=	VORBISPLUGIN:=""
 .else
