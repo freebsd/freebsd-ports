@@ -1,0 +1,11 @@
+--- Imakefile.orig	Sun May  2 05:05:41 1999
++++ Imakefile	Sun May  2 05:05:53 1999
+@@ -98,7 +98,7 @@
+ #ifdef XmClientLibs
+ LOCAL_LIBRARIES = XmClientLibs $(SOCKS_LIBS)
+ #else
+-LOCAL_LIBRARIES = $(XMLIB) $(XTOOLLIB) $(XLIB) $(SOCKS_LIBS)
++LOCAL_LIBRARIES = $(XMLIB) $(XTOOLLIB) $(XLIB) $(SOCKS_LIBS) ${MOTIFLIB}
+ #endif
+ #endif
+ 
