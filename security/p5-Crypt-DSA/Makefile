@@ -22,6 +22,7 @@ BUILD_DEPENDS=	${PERLBASE}/Crypt/Random.pm:${PORTSDIR}/security/p5-Crypt-Random 
 		${PERLBASE}/${PERL_ARCH}/Math/Pari.pm:${PORTSDIR}/math/p5-Math-Pari \
 		${PERLBASE}/Convert/PEM.pm:${PORTSDIR}/converters/p5-Convert-PEM \
 		${PERLBASE}/Data/Buffer.pm:${PORTSDIR}/misc/p5-Data-Buffer
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
