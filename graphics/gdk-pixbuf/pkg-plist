@@ -70,7 +70,6 @@ share/gnome/html/gdk-pixbuf/x3735.html
 share/gnome/html/gdk-pixbuf/x3765.html
 share/gnome/html/gdk-pixbuf/x3787.html
 @dirrm share/gnome/html/gdk-pixbuf
-@dirrm share/gnome/html
 @dirrm include/gdk-pixbuf
 @dirrm lib/gdk-pixbuf/loaders
 @dirrm lib/gdk-pixbuf
