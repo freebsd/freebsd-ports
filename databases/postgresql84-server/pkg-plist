@@ -151,6 +151,18 @@ pgsql/man/manl/sql.l.gz
 pgsql/man/manl/update.l.gz
 pgsql/man/manl/vacuum.l.gz
 pgsql/post-install-notes
+share/doc/pgsql/FAQ
+share/doc/pgsql/FAQ-Irix
+share/doc/pgsql/FAQ-Linux
+share/doc/pgsql/README.GEQO
+share/doc/pgsql/README.fsync
+share/doc/pgsql/README.support
+share/doc/pgsql/TODO
+share/doc/pgsql/TODO.GEQO
+share/doc/pgsql/bug.template
+share/doc/pgsql/libpgtcl.doc
+share/doc/pgsql/userguide.ps
+@dirrm share/doc/pgsql
 @dirrm pgsql/lib
 @dirrm pgsql/bin
 @dirrm pgsql/include/port/BSD44_derived
