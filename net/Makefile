@@ -454,7 +454,6 @@
     SUBDIR += sleuth
     SUBDIR += slirp
     SUBDIR += smbfs
-    SUBDIR += smbtcpdump
     SUBDIR += smm++
     SUBDIR += smokeping
     SUBDIR += sniffit
