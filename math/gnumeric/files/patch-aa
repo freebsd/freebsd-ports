@@ -1,9 +1,9 @@
 
 $FreeBSD$
 
---- configure.orig	Tue Oct 23 13:08:10 2001
-+++ configure	Tue Oct 23 13:09:21 2001
-@@ -10149,7 +10149,7 @@
+--- configure.orig	Wed Nov  7 11:20:14 2001
++++ configure	Wed Nov  7 11:34:43 2001
+@@ -9981,7 +9981,7 @@
  done
  
  
@@ -12,3 +12,12 @@ $FreeBSD$
  do
  ac_safe=`echo "$ac_hdr" | sed 'y%./+-%__p_%'`
  echo $ac_n "checking for $ac_hdr""... $ac_c" 1>&6
+@@ -10618,7 +10618,7 @@
+ 	if gnome-config --libs gb > /dev/null 2>&1; then
+ 		verstxt=`gnome-config --modversion gb 2>/dev/null`
+ 		vers=`echo "$verstxt" | awk -F. '{ printf "%d", $1 * 10000 + $2 * 100 + $3; }'`
+-		if test "$vers" -eq 000017; then
++		if test "$vers" -ge 000017; then
+ 			echo "$ac_t""$marker_ok found $verstxt" 1>&6
+ 			cat >> confdefs.h <<\EOF
+ #define ENABLE_GB 1

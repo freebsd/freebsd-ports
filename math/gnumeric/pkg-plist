@@ -76,7 +76,6 @@ share/gnome/gnumeric/%%VERSION%%/glade/advanced-filter.glade
 share/gnome/gnumeric/%%VERSION%%/glade/analysis-tools.glade
 share/gnome/gnumeric/%%VERSION%%/glade/anova-one.glade
 share/gnome/gnumeric/%%VERSION%%/glade/anova-two.glade
-share/gnome/gnumeric/%%VERSION%%/glade/autocorrect-exceptions.glade
 share/gnome/gnumeric/%%VERSION%%/glade/autocorrect.glade
 share/gnome/gnumeric/%%VERSION%%/glade/autoformat.glade
 share/gnome/gnumeric/%%VERSION%%/glade/autosave-prompt.glade
@@ -116,7 +115,6 @@ share/gnome/gnumeric/%%VERSION%%/glade/search-replace.glade
 share/gnome/gnumeric/%%VERSION%%/glade/search.glade
 share/gnome/gnumeric/%%VERSION%%/glade/sheet-order.glade
 share/gnome/gnumeric/%%VERSION%%/glade/sheet-rename.glade
-share/gnome/gnumeric/%%VERSION%%/glade/solver-options.glade
 share/gnome/gnumeric/%%VERSION%%/glade/solver.glade
 share/gnome/gnumeric/%%VERSION%%/glade/summary.glade
 share/gnome/gnumeric/%%VERSION%%/glade/variance-tests.glade
@@ -133,6 +131,7 @@ share/gnome/gnumeric/%%VERSION%%/templates/purchase_order.gnumeric
 share/gnome/help/gnumeric/C/analysis-tools.html
 share/gnome/help/gnumeric/C/anova.html
 share/gnome/help/gnumeric/C/authors.html
+share/gnome/help/gnumeric/C/autocorrect.html
 share/gnome/help/gnumeric/C/autofill.html
 share/gnome/help/gnumeric/C/autosave.html
 share/gnome/help/gnumeric/C/cell-elements.html
@@ -146,6 +145,7 @@ share/gnome/help/gnumeric/C/editing-selections.html
 share/gnome/help/gnumeric/C/editing.html
 share/gnome/help/gnumeric/C/file-format.html
 share/gnome/help/gnumeric/C/files.html
+share/gnome/help/gnumeric/C/filter.html
 share/gnome/help/gnumeric/C/formatting.html
 share/gnome/help/gnumeric/C/formulas.html
 share/gnome/help/gnumeric/C/fourier-analysis-tool.html
@@ -495,6 +495,8 @@ share/gnome/help/gnumeric/C/gnumeric-ztest.html
 share/gnome/help/gnumeric/C/goal-seek.html
 share/gnome/help/gnumeric/C/histogram-tool.html
 share/gnome/help/gnumeric/C/images/add-decimals.png
+share/gnome/help/gnumeric/C/images/advanced-filter-1.png
+share/gnome/help/gnumeric/C/images/advanced-filter-2.png
 share/gnome/help/gnumeric/C/images/align-center.png
 share/gnome/help/gnumeric/C/images/align-left.png
 share/gnome/help/gnumeric/C/images/align-right.png
