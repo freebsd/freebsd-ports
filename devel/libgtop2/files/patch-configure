@@ -1,5 +1,5 @@
---- configure.orig	Mon Apr 29 12:37:16 2002
-+++ configure	Mon Apr 29 12:44:17 2002
+--- configure.orig	Sun Feb 10 09:30:14 2002
++++ configure	Thu May  9 01:40:00 2002
 @@ -1249,10 +1249,10 @@
  
  # The aliases save the names the user supplied, while $host etc.
@@ -36,6 +36,15 @@
  
  # Always use our own libtool.
  LIBTOOL='$(SHELL) $(top_builddir)/libtool'
+@@ -15639,7 +15640,7 @@
+ LIBGTOP_GUILE_LIBS="$LIBGTOP_LIBS"
+ LIBGTOP_GUILE_INCS="$LIBGTOP_INCS"
+ LIBGTOP_BINDIR='$(bindir)'
+-LIBGTOP_SERVER='$(bindir)/libgtop_server'
++LIBGTOP_SERVER='$(bindir)/libgtop_server2'
+ 
+ sysdeps_dir="$libgtop_sysdeps_dir"
+ 
 @@ -15688,7 +15689,7 @@
  
  if test x$libgtop_need_server = xyes ; then
