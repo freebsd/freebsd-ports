@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tcpflow
-PORTVERSION=	0.12
+PORTVERSION=	0.20
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.circlemud.org/pub/jelson/tcpflow/
 
