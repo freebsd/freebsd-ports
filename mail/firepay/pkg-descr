@@ -1,0 +1,8 @@
+FirePay is an implementation of the HashCash/MIME 
+(application/postage-hashcash) specification. HashCash is an anti-spam,
+anti-DoS system for email. The concept centers around the sender of the 
+mail completing a computationally expensive task (in this case, 
+generating hash collisions) that the recipient can verify very quickly.
+This allows the sender to "pay" for transport in CPU cycles, creating 
+artificial scarcity. Programs are included to add payment to messages 
+(for the sender) and to verify message payment (for the recipient).
