@@ -1,0 +1,15 @@
+The Hoard memory allocator is a fast, scalable, and memory-efficient
+memory allocator for shared-memory multiprocessors.
+
+Multithreaded programs that perform dynamic memory allocation do not
+scale because the heap is a bottleneck. When multiple threads
+simultaneously allocate or deallocate memory from the heap, they will
+be serialized while waiting for the heap lock. Programs making
+intensive use of the heap actually slow down as the number of
+processors increases. (Note: If you make a lot of use of the STL, you
+may not know it, but you are making a lot of use of the heap.)
+
+Hoard is a fast allocator that solves this problem. In addition, it
+has very reasonable bounds on memory consumption.
+
+WWW: http://www.hoard.org/
