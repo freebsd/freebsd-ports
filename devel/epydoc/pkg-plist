@@ -15,6 +15,9 @@ bin/epydocgui
 %%PYTHON_SITELIBDIR%%/epydoc/css.py
 %%PYTHON_SITELIBDIR%%/epydoc/css.pyc
 %%PYTHON_SITELIBDIR%%/epydoc/css.pyo
+%%PYTHON_SITELIBDIR%%/epydoc/foog.py
+%%PYTHON_SITELIBDIR%%/epydoc/foog.pyc
+%%PYTHON_SITELIBDIR%%/epydoc/foog.pyo
 %%PYTHON_SITELIBDIR%%/epydoc/gui.py
 %%PYTHON_SITELIBDIR%%/epydoc/gui.pyc
 %%PYTHON_SITELIBDIR%%/epydoc/gui.pyo
@@ -82,6 +85,8 @@ bin/epydocgui
 %%PORTDOCS%%%%DOCSDIR%%/api/private/epydoc.colorize-module.html
 %%PORTDOCS%%%%DOCSDIR%%/api/private/epydoc.css
 %%PORTDOCS%%%%DOCSDIR%%/api/private/epydoc.css-module.html
+%%PORTDOCS%%%%DOCSDIR%%/api/private/epydoc.foog-module.html
+%%PORTDOCS%%%%DOCSDIR%%/api/private/epydoc.foog.Foo-class.html
 %%PORTDOCS%%%%DOCSDIR%%/api/private/epydoc.gui-module.html
 %%PORTDOCS%%%%DOCSDIR%%/api/private/epydoc.gui.EpydocGUI-class.html
 %%PORTDOCS%%%%DOCSDIR%%/api/private/epydoc.gui._PipeIO-class.html
@@ -154,6 +159,7 @@ bin/epydocgui
 %%PORTDOCS%%%%DOCSDIR%%/api/private/toc-epydoc.cli-module.html
 %%PORTDOCS%%%%DOCSDIR%%/api/private/toc-epydoc.colorize-module.html
 %%PORTDOCS%%%%DOCSDIR%%/api/private/toc-epydoc.css-module.html
+%%PORTDOCS%%%%DOCSDIR%%/api/private/toc-epydoc.foog-module.html
 %%PORTDOCS%%%%DOCSDIR%%/api/private/toc-epydoc.gui-module.html
 %%PORTDOCS%%%%DOCSDIR%%/api/private/toc-epydoc.help-module.html
 %%PORTDOCS%%%%DOCSDIR%%/api/private/toc-epydoc.html-module.html
@@ -189,6 +195,8 @@ bin/epydocgui
 %%PORTDOCS%%%%DOCSDIR%%/api/public/epydoc.colorize-module.html
 %%PORTDOCS%%%%DOCSDIR%%/api/public/epydoc.css
 %%PORTDOCS%%%%DOCSDIR%%/api/public/epydoc.css-module.html
+%%PORTDOCS%%%%DOCSDIR%%/api/public/epydoc.foog-module.html
+%%PORTDOCS%%%%DOCSDIR%%/api/public/epydoc.foog.Foo-class.html
 %%PORTDOCS%%%%DOCSDIR%%/api/public/epydoc.gui-module.html
 %%PORTDOCS%%%%DOCSDIR%%/api/public/epydoc.gui.EpydocGUI-class.html
 %%PORTDOCS%%%%DOCSDIR%%/api/public/epydoc.help-module.html
@@ -251,6 +259,7 @@ bin/epydocgui
 %%PORTDOCS%%%%DOCSDIR%%/api/public/toc-epydoc.cli-module.html
 %%PORTDOCS%%%%DOCSDIR%%/api/public/toc-epydoc.colorize-module.html
 %%PORTDOCS%%%%DOCSDIR%%/api/public/toc-epydoc.css-module.html
+%%PORTDOCS%%%%DOCSDIR%%/api/public/toc-epydoc.foog-module.html
 %%PORTDOCS%%%%DOCSDIR%%/api/public/toc-epydoc.gui-module.html
 %%PORTDOCS%%%%DOCSDIR%%/api/public/toc-epydoc.help-module.html
 %%PORTDOCS%%%%DOCSDIR%%/api/public/toc-epydoc.html-module.html
