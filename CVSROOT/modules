@@ -1830,6 +1830,7 @@ frontpage-th	ports/www/frontpage-th
 frontpage-zh	ports/www/frontpage-zh
 frotz		ports/games/frotz
 frox		ports/ftp/frox
+frozenbubble	ports/games/frozenbubble
 fsck		src/sbin/fsck
 fsck_ext2fs	ports/sysutils/fsck_ext2fs
 fsck_ffs	src/sbin/fsck_ffs
