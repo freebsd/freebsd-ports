@@ -1,0 +1,38 @@
+*** src/feature.h.orig	Fri Jan 22 21:25:16 1999
+--- src/feature.h	Sat Jan 30 00:48:14 1999
+***************
+*** 153,159 ****
+   * This has been superceded and is only for you older users
+   */
+  /* #define HOTKEY_CTRL */
+! /* #define HOTKEY_META */
+  
+  /*
+   * To use
+--- 153,159 ----
+   * This has been superceded and is only for you older users
+   */
+  /* #define HOTKEY_CTRL */
+! #define HOTKEY_META
+  
+  /*
+   * To use
+***************
+*** 351,358 ****
+  #ifdef KANJI
+  # define NFONTS		5
+  # define FONT0_IDX	2
+! # define MFONT_LIST	"k14", "jiskan16", "jiskan18", "jiskan24", "jiskan26"
+! # define NFONT_LIST	"7x14", "8x16", "9x18", "12x24", "13x26"
+  #else
+  # ifdef ZH
+  #  define NFONTS	5
+--- 351,358 ----
+  #ifdef KANJI
+  # define NFONTS		5
+  # define FONT0_IDX	2
+! # define MFONT_LIST	"k14", "k10", "k12", "kanji16", "kanji24"
+! # define NFONT_LIST	"7x14", "a10", "r12", "8x16", "12x24"
+  #else
+  # ifdef ZH
+  #  define NFONTS	5

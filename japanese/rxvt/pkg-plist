@@ -1,3 +1,9 @@
 bin/rxvt
 share/doc/ja/rxvt/README.ja
+share/doc/ja/rxvt/rxvt.html
+share/doc/ja/rxvt/rxvtRef.html
+share/doc/ja/rxvt/rxvtRef.txt
+lib/X11/rxvt/ja.menu
+lib/X11/rxvt/terminal.menu
 @dirrm share/doc/ja/rxvt
+@dirrm lib/X11/rxvt

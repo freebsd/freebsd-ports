@@ -1,0 +1,60 @@
+# standard settings for a `terminal' control menu
+# only attach to an existing menubar
+[menu]
+
+/Terminal/*
+./Font/*
+{Normal}	^@\E]50;#
+{Larger}{(M->)}	^@\E]50;#+
+{Smaller}{(M-<)}^@\E]50;#-
+{-}
+{Font 1}	^@\E]50;#1
+{Font 2}	^@\E]50;#2
+{Font 3}	^@\E]50;#3
+{Font 4}	^@\E]50;#4
+../Screen/*
+{ReverseVideo}	^@\E[?5t
+{Toggle Width}	^@\E[?3t
+{Cursor}	^@\E[?25t
+{Switch}	^@\E[?47t
+{-}
+{menuBar}	^@\E[?10t
+{refresh menu}	^@\E[?10h
+{scrollBar}	^@\E[?30t
+{-}
+{Toggle scroll-on-TTY}	^@\E[?1010t
+{Toggle scroll-on-Key}	^@\E[?1011t
+../Keys/*
+{XTerm}	^@\E[?35t
+{Backspace}	^@\E[?67t
+{Cursor}	^@\E[?1t
+{KeyPad}	^@\E[?66t
+../
+{-}
+./Pixmap/*
+{None}		^@\E[m\E]20;\a
+#{-}
+# load .xpm files (assuming Rxvt*path: has been properly set)
+# notice there are 2 ways to do this task
+#{background5}	^@\E]20;background5
+#{Mona}		^@\E]10;[pixmap:monalisa;100]
+#{world}		^@\E]20;world
+{-}
+./Attrib/*
+{Full}		^@\E]20;;100x100+50+50;?
+{Tiled}		^@\E]20;;0
+{Centre}	^@\E]20;;=+50+50;?
+{-}
+# set `quick arrow' keys
+{Zoom}{200/50%}	^@\E]10;[:<b>\^@\\E]20;;<r>200x0<l>50x0<u>0x200<d>0x50<e>;?:]
+{Pos}{5%}	^@\E]10;[:<b>\^@\\E]20;;<r>+5+0<l>-5+0<u>+0-5<d>+0+5<e>;?:]
+../
+../
+{-}
+{Version}	^@\E[8n
+/
+
+# make sure the change gets updated
+[show]
+[done]
+#--------------------------------------------------------------------- eof

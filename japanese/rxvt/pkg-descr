@@ -3,12 +3,9 @@ suitable for use on machines with small memories. Tek4010 support
 is removed.
 
 This supports Japanese input with X Input Method (XIM) Protocol.
-Supported input styles are `OverTheSpot' and `Root'.  The Patch is
-contributed from Nobutaka Mantani <nobutaka@nobutaka.com>.  More
-information can be found at:
+Supported input styles are `OverTheSpot', 'OffTheSpot' and `Root'.
+More information can be found at:
      http://www.nobutaka.com/programs/rxvt.html
-
-Modifications were made by Rob Nation (nation@rocket.sanders.lockheed.com) 
-to make it a little more compact, and to add and remove certain features.
+Documents are at /usr/X11R6/share/doc/ja/rxvt/.
 
 HomePage of rxvt: http://babayaga.math.fu-berlin.de/rxvt/
