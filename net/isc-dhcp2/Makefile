@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	isc-dhcp
-PORTVERSION=	2.0
+PORTVERSION=	2.0.1
 CATEGORIES=	net
 MASTER_SITES=   ftp://ftp.isc.org/isc/dhcp/
-DISTNAME=	dhcp-${PORTVERSION}
+DISTNAME=	dhcp-2.0pl1
 
 MAINTAINER=	jseger@FreeBSD.org
 
