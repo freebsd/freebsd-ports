@@ -393,6 +393,7 @@
     SUBDIR += nicotine
     SUBDIR += nitpicker
     SUBDIR += nload
+    SUBDIR += nocatauth-gateway
     SUBDIR += nocatauth-server
     SUBDIR += nocol
     SUBDIR += nrpe
