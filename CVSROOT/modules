@@ -7287,6 +7287,7 @@ zh-p5-Date-Chinese	ports/chinese/p5-Date-Chinese
 zh-pine4	ports/chinese/pine4
 zh-pyDict	ports/chinese/pyDict
 zh-qe		ports/chinese/qe
+zh-qterm	ports/chinese/qterm
 zh-rxvt		ports/chinese/rxvt
 zh-rxvt-big5	ports/chinese/rxvt-big5
 zh-rxvt-gb		ports/chinese/rxvt-gb
