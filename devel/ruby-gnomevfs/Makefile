@@ -18,9 +18,9 @@ MAINTAINER=	knu@FreeBSD.org
 COMMENT=	Ruby binding for GnomeVFS
 
 RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/glib2.so:${PORTSDIR}/devel/ruby-glib2
-LIB_DEPENDS=	gnomevfs-2.0:${PORTSDIR}/devel/gnomevfs2
 
 USE_RUBY=	yes
+USE_GNOME=	gnomevfs2
 USE_RUBY_EXTCONF=	yes
 
 .include "${.CURDIR}/../../x11/ruby-gnome2/Makefile.common"
