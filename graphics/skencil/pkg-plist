@@ -188,6 +188,7 @@ share/sketch/Sketch/Lib/util.py
 share/sketch/Sketch/Lib/util.pyc
 share/sketch/Sketch/Modules/_sketchmodule.so
 share/sketch/Sketch/Modules/_type1module.so
+share/sketch/Sketch/Modules/pstokenize.so
 share/sketch/Sketch/Modules/skreadmodule.so
 share/sketch/Sketch/Pixmaps/AlignBottom.xbm
 share/sketch/Sketch/Pixmaps/AlignCenterX.xbm
