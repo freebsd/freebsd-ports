@@ -59,7 +59,7 @@ while [ "$1" ]; do
 			LIB_PATH="$LIB_PATH:${LOCALBASE}/lib/mysql/"
 			;;
 		\"PostgreSQL\")
-			echo "POSTGRESQL_PORT?=	databases/postgresql-client"
+			echo "POSTGRESQL_PORT?=	databases/postgresql7"
 			echo "LIB_DEPENDS+=	pq.3:\${PORTSDIR}/\${POSTGRESQL_PORT}"
 			echo "CONFIGURE_ARGS+= --with-postgres"
 			INCLUDE_PATH="$INCLUDE_PATH:${LOCALBASE}/include/pgsql/"

@@ -1087,3 +1087,4 @@ lang/tclX80|lang/tclX|2004-05-14|replaced by lang/tclX
 misc/libelysium||2004-05-14|ancient version of this software
 audio/traymp|audio/gmpc|2004-05-16|project renamed
 security/avmailgate||2004-05-18|removed due to licensing concerns
+databases/postgresql-client|databases/postgresql7|2004-05-25|Remove the -client port because of dependencies problem

@@ -38,7 +38,7 @@ PLIST_FILES+=	lib/libauth_mysql.so
 .endif
 
 .if defined(WITH_POSTGRESQL)
-LIB_DEPENDS+=	pq:${PORTSDIR}/databases/postgresql-client
+LIB_DEPENDS+=	pq:${PORTSDIR}/databases/postgresql7
 ALL_TARGET+=	postgres
 PLIST_FILES+=	lib/libauth_postgres.so
 .endif

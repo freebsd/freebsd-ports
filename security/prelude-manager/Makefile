@@ -39,7 +39,7 @@ PLIST_SUB+=		MYSQL="@comment "
 .endif
 
 .if defined(WITH_POSTGRES)
-LIB_DEPENDS+=		pq.3:${PORTSDIR}/databases/postgresql-client
+LIB_DEPENDS+=		pq.3:${PORTSDIR}/databases/postgresql7
 CONFIGURE_ARGS+=	--enable-pgsql
 PLIST_SUB+=		PGSQL=""
 .else

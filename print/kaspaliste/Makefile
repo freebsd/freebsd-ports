@@ -15,7 +15,7 @@ MAINTAINER=		jaapb@kerguelen.org
 COMMENT=		Bibliography tool for KDE/Postgres/BibTeX
 
 LIB_DEPENDS= \
-		pq.3:${PORTSDIR}/databases/postgresql-client
+		pq.3:${PORTSDIR}/databases/postgresql7
 
 USE_BZIP2=		yes
 USE_KDEBASE_VER=	3

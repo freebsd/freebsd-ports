@@ -22,7 +22,7 @@ CONFIGURE_ARGS=	--with-wx=${X11BASE}
 CONFIGURE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}"
 
-POSTGRESQL_PORT?=	databases/postgresql-client
+POSTGRESQL_PORT?=	databases/postgresql7
 
 .include <bsd.port.pre.mk>
 

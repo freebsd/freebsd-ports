@@ -424,7 +424,7 @@ CONFIGURE_ARGS+=--enable-posix
 .endif
 
 .if defined(WITH_POSTGRESQL)
-POSTGRESQL_PORT?=	databases/postgresql-client
+POSTGRESQL_PORT?=	databases/postgresql7
 LIB_DEPENDS+=	pq.3:${PORTSDIR}/${POSTGRESQL_PORT}
 CONFIGURE_ARGS+=--with-pgsql=${LOCALBASE}
 .endif

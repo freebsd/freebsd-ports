@@ -160,7 +160,7 @@ WITH_PGSQL=	yes
 .endif
 
 .if defined(WITH_PGSQL)
-POSTGRESQL_PORT?=	databases/postgresql-client
+POSTGRESQL_PORT?=	databases/postgresql7
 LIB_DEPENDS+=		pq.3:${PORTSDIR}/${POSTGRESQL_PORT}
 CONFIGURE_ARGS+=	--enable-auth-module=pgsql
 

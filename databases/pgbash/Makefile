@@ -19,7 +19,7 @@ EXTRACT_ONLY=	pgbash-7.3.tar.gz
 MAINTAINER=	sascha@root-login.org
 COMMENT=	SQL Bash Shell for PostgreSQL
 
-LIB_DEPENDS=	pq.3:${PORTSDIR}/databases/postgresql-client
+LIB_DEPENDS=	pq.3:${PORTSDIR}/databases/postgresql7
 
 WRKSRC=		${WRKDIR}/pgbash-7.3/src/bash-2.05a
 

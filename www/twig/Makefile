@@ -25,7 +25,7 @@ PHP_PORT?=	www/mod_php4-twig
 PHP4_PORT?=	www/mod_php4-twig
 PHP3_PORT?=	www/mod_php3
 TWIG?=		www/data-dist/twig
-POSTGRESQL_PORT?=	databases/postgresql-client
+POSTGRESQL_PORT?=	databases/postgresql7
 PLIST_SUB+=	TWIG=${TWIG}
 ROOTFILES=	index.php3 test.php3 goto.php3
 CONFFILES=	.htaccess mailfooter.inc.php3.sample
