@@ -356,6 +356,7 @@
     SUBDIR += robotfindskitten
     SUBDIR += rockdodger
     SUBDIR += rocksndiamonds
+    SUBDIR += rottdc
     SUBDIR += rt2-demo
     SUBDIR += rtb
     SUBDIR += rtcw
