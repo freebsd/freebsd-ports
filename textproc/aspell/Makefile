@@ -22,6 +22,7 @@ BUILD_DEPENDS+=	bzip2:${PORTSDIR}/archivers/bzip2
 .endif
 
 USE_LIBTOOL=	yes
+CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--enable-dict-dir=${DATADIR} \
 		--enable-doc-dir=${DOCSDIR}
 USE_GMAKE=	yes

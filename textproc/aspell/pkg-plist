@@ -94,9 +94,9 @@ share/aspell/viscii.dat
 %%PORTDOCS%%share/doc/aspell/manual.dvi
 %%PORTDOCS%%share/doc/aspell/manual.tex
 %%PORTDOCS%%share/doc/aspell/manual2.lyx
+%%PORTDOCS%%@dirrm share/doc/aspell/man-text
+%%PORTDOCS%%@dirrm share/doc/aspell/man-html
+%%PORTDOCS%%@dirrm share/doc/aspell/dev-text
+%%PORTDOCS%%@dirrm share/doc/aspell/dev-html
+%%PORTDOCS%%@dirrm share/doc/aspell
 @dirrm include/pspell
-@dirrm %%PORTDOCS%%share/doc/aspell/dev-html
-@dirrm %%PORTDOCS%%share/doc/aspell/dev-text
-@dirrm %%PORTDOCS%%share/doc/aspell/man-html
-@dirrm %%PORTDOCS%%share/doc/aspell/man-text
-@dirrm %%PORTDOCS%%share/doc/aspell
