@@ -1,0 +1,23 @@
+*** ymakefile.orig      Sun Dec 10 17:56:09 1995
+--- ymakefile   Sun Dec 10 17:57:22 1995
+***************
+*** 121,130 ****
+  /* Compilation flags definitions */
+  CFLAGS_NORMAL   = -g EXTRA_CC_FLAGS 
+  CFLAGS_PROFILE  = -g -pg -DUSE_MONCONTROL EXTRA_CC_FLAGS 
+  CFLAGS_OPTIMIZE = -O -DOPTIMIZE EXTRA_CC_FLAGS 
+  
+  /* Actual compilation flags and compiler definition */
+! CFLAGS = $(CFLAGS_NORMAL) $(READLINEDEF)
+  
+  
+  
+--- 121,130 ----
+  /* Compilation flags definitions */
+  CFLAGS_NORMAL   = -g EXTRA_CC_FLAGS 
+  CFLAGS_PROFILE  = -g -pg -DUSE_MONCONTROL EXTRA_CC_FLAGS 
+  CFLAGS_OPTIMIZE = -O -DOPTIMIZE EXTRA_CC_FLAGS
+  
+  /* Actual compilation flags and compiler definition */
+! CFLAGS = $(CFLAGS_OPTIMIZE) $(READLINEDEF)
+
