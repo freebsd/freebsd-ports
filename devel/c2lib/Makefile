@@ -21,14 +21,6 @@ SCRIPTS_ENV=	WRKDIRPREFIX="${WRKDIRPREFIX}" \
 	REALCURDIR="${.CURDIR}" \
 	DISTNAME="${DISTNAME}"
 
-post-extract:
-	@${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/genman3list.sh
-
-post-clean:
-	@${RM} -f ${WRKDIRPREFIX}${.CURDIR}/Makefile.inc
-
-.if exists(${WRKDIRPREFIX}${.CURDIR}/Makefile.inc)
-.include "${WRKDIRPREFIX}${.CURDIR}/Makefile.inc"
-.endif
+MAN3!=		${CAT} ${FILESDIR}/man3
 
 .include <bsd.port.mk>
