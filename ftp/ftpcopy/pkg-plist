@@ -1,10 +1,10 @@
 bin/ftpcp
 bin/ftpcopy
 bin/ftpls
-%%PORTDOCS%%share/doc/ftpcopy/ChangeLog
-%%PORTDOCS%%share/doc/ftpcopy/NEWS
-%%PORTDOCS%%share/doc/ftpcopy/README
-%%PORTDOCS%%share/doc/ftpcopy/THANKS
-%%PORTDOCS%%share/doc/ftpcopy/ftpcopy.html
-%%PORTDOCS%%share/doc/ftpcopy/ftpls.html
-%%PORTDOCS%%@dirrm share/doc/ftpcopy
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/THANKS
+%%PORTDOCS%%%%DOCSDIR%%/ftpcopy.html
+%%PORTDOCS%%%%DOCSDIR%%/ftpls.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
