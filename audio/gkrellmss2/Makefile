@@ -9,7 +9,7 @@ PORTNAME=	gkrellmss
 PORTVERSION=	2.6
 PORTREVISION=	1
 CATEGORIES=	audio
-MASTER_SITES=	http://web.wt.net/~billw/gkrellmss/
+MASTER_SITES=	http://members.dslextreme.com/users/billw/gkrellmss/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A plugin for GKrellM with a VU meter showing left/right channel audio
