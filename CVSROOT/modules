@@ -3889,6 +3889,7 @@ lapack		ports/math/lapack
 lapack++	ports/math/lapack++
 larbin		ports/www/larbin
 larswm		ports/x11-wm/larswm
+latd		ports/net/latd
 latex		ports/print/latex
 latex-mk	ports/misc/latex-mk
 latex2html	ports/textproc/latex2html
