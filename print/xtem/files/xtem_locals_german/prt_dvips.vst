@@ -1,0 +1,20 @@
+ @
+                 relative Seitenzahlen                                   @ r @  rel \
+
+ungerade+gerade  absolute Seitenzahlen                                   @ a @  abs \
+
+ungerade         absolute Seitenzahlen                                   @ a @  u_abs \
+
+gerade           absolute Seitenzahlen                                   @ a @  g_abs \
+
+A5Buch Vorderseiten: A4 quer, so daß fertiges Buch in der Mitte gefaltet werden kann @   @  a5buchvorder \
+
+A5Buch Rückseiten:   A4 quer, so daß fertiges Buch in der Mitte gefaltet werden kann @   @  a5buchrueck \
+
+verkleinert:  2 Seiten verkleinert (quer) auf A4-Blatt                   @ r @  verkleinern2 \
+
+verkleinert:  4 Seiten verkleinert (hoch) auf A4-Blatt                   @ r @  verkleinern4 \
+
+
+*** ab hier "Kommentar" (Leerzeile beendet den ausgewerteten Teil der Datei!)
+

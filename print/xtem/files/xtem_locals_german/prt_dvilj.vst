@@ -1,0 +1,10 @@
+ @
+ungerade+gerade  absolute Seitenzahlen                                   @ a @  abs  \
+
+ungerade         absolute Seitenzahlen                                   @ a @  odd_abs  \
+
+gerade           absolute Seitenzahlen                                   @ a @  even_abs  \
+
+
+*** ab hier "Kommentar" (Leerzeile beendet den ausgewerteten Teil der Datei!)
+

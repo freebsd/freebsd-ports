@@ -1,0 +1,10 @@
+	Obviously,  xtem  (as an X11  frontend)  for TeX is  quite useless
+	without TeX. By default, though, there's no check in this port for
+	it in order to avoid space problems during build. You can activate
+	it by typing  "make BUILD_IT_ALL=yes ..."  instead of  just  "make
+	...".  In that case,  the existence of tex will be checked for and
+	"teTeX-0.4" will be installed when it can't be found. In addition,
+	"gv"  (a "nicer" version  of ghostview)  will  be checked  for and
+	installed as well, if not found.
+
+	Happy TeXing,           Peter Cornelius <pc@akk.uni-karlsruhe.de>

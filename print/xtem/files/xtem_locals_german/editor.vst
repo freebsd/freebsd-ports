@@ -1,0 +1,40 @@
+  @
+xemacs&  80x60 (Spalten x Zeilen)                  @  @ xemacs & @ -geometry 80x60+210+0   \
+
+xemacs  80x60 (Spalten x Zeilen)                   @  @ xemacs @ -geometry 80x60+210+0  \
+
+xmacs&                                             @  @ exmacs& @   \
+
+xmacs                                              @  @ exmacs @   \
+
+vi&                                                @ xterm +sb -title "vi $ed_file" -e @ vi& @  \
+
+vi                                                 @ xterm +sb -title "vi $ed_file" -e @ vi  @  \
+
+vi&  (nur lesen)                                   @ xterm +sb -title "vi $ed_file" -e @ vi& @ -R  \
+
+vi   (nur lesen)                                   @ xterm +sb -title "vi $ed_file" -e @ vi  @ -R  \
+
+
+*** ab hier "Kommentar" (Leerzeile beendet den ausgewerteten Teil der Datei!)
+
+nedit&                                             @      @ nedit& @  \
+
+nedit                                              @      @ nedit  @  \
+
+e&   TenPlus-Editor                                @      @ e&     @  \
+
+e     TenPlus-Editor                               @      @ e      @  \
+
+gvim&                                              @      @ gvim&  @  \
+
+textedit&                                          @      @ textedit& @  \
+
+emacs&                                             @      @ emacs& @  \
+
+emacs                                              @      @ emacs  @  \
+
+emacs&  80x60 (SpaltenxZeilen)                     @      @ emacs& @ -font lucidasanstypewriter-bold-12 -geometry 80x60+210+0  \
+
+emacs   80x60 (SpaltenxZeilen)                     @      @ emacs  @ -font lucidasanstypewriter-bold-12 -geometry 80x60+210+0  \
+

@@ -1,0 +1,14 @@
+ @
+Brief:   English mit  Logo         @ ??? (noch in Entwicklung!)  \
+
+Brief:   English ohne Logo         @ ??? (noch in Entwicklung!)  \
+
+Brief:   Deutsch mit  Logo --- Test @ cat $letterdir/head_ger.tex @ { {Datum} {Adresse} {Betreff} {Brieftext} } @ Datum {Bitte Datum eingeben (leere Eingabe: dann Tagesdatum)} {1 30} {echo "\today"} { {Monat} {$letterdir/ScriptMonthYear german} } {echo "eingegebenerText"} {cat "\input{Deutsch_mit_Logo_I2}"} @ Adresse {Bitte Adresse eingeben} {6 40} {} { {} {} } {echo "eingegebenerText"} {cat "\input{Deutsch_mit_Logo_I3}"} @ Betreff {Bitte Betreff eingeben} {6 70} {} { {} {} } {echo "eingegebenerText"} {cat "\input{Deutsch_mit_Logo_I4}"} @ Brieftext {Bitte Brieftext eingeben} {25 80} {} { {} {} } {echo "eingegebenerText"} {cat "\input{Deutsch_mit_Logo_I5}"} @ cat $letterdir/tail_ger.tex  \
+
+Artikel                            @ ??? (noch in Entwicklung!)  \
+
+Gutachten                          @ ??? (noch in Entwicklung!)  \
+
+
+*** ab hier "Kommentar" (Leerzeile beendet den ausgewerteten Teil der Datei!)
+

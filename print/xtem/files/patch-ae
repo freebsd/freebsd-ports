@@ -1,0 +1,19 @@
+--- locals_english.LRW/preview.vst.orig	Tue Jan 13 13:52:13 1998
++++ locals_english.LRW/preview.vst	Wed Feb  4 11:57:14 1998
+@@ -1,4 +1,16 @@
+  @
++gv&  (in background)  @ ghostview& @ .ps  @ -center -magstep -1 @ \
++   letter_portrait{-t letter}{-letter}, \
++   letter_landscape{-t letter -t landscape}{-letter -swap -landscape}, \
++   legal_portrait{-t legal}{-legal}, \
++   legal_landscape{-t legal -t landscape}{-legal -swap -landscape}, \
++   A4_portrait{}{-a4},A4_landscape{-t landscape}{-a4 -swap -landscape} 
++gv   (in foreground)  @ ghostview  @ .ps  @ -center -magstep -1 @ \
++   letter_portrait{-t letter}{-letter}, \
++   letter_landscape{-t letter -t landscape}{-letter -swap -landscape}, \
++   legal_portrait{-t legal}{-legal}, \
++   legal_landscape{-t legal -t landscape}{-legal -swap -landscape}, \
++   A4_portrait{}{-a4},A4_landscape{-t landscape}{-a4 -swap -landscape} 
+ xdvi&       (in background)  @ xdvi&      @ .dvi @                     @ \
+    letter_portrait{}{-paper us -keep},letter_landscape{}{-paper usr -keep}, \
+    legal_portrait{}{-paper legal -keep}, \

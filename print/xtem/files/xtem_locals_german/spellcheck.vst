@@ -1,0 +1,14 @@
+ @
+ispell - Wörterbücher:  allg.: deutsch,  spez.: $HOME/.ispell_deutsch         @ ispell @ deutsch  @ K @   @ -M -t -b -C -d deutsch -p $HOME/.ispell_deutsch \
+
+ispell - Wörterbücher:  allg.: deutsch,  spez.: $main_file.ispell             @ ispell @ deutsch  @ K @   @ -M -t -b -C -d deutsch -p ./$main_file.ispell \
+
+ispell - Wörterbücher:  allg.: englisch, spez.: $HOME/.ispell_english         @ ispell @ english  @ K @   @ -M -t -b -d english -p $HOME/.ispell_english \
+
+ispell - Wörterbücher:  allg.: englisch, spez.: $main_file.ispell             @ ispell @ english  @ K @   @ -M -t -b -d english -p ./$main_file.ispell \
+
+spell -  Wörterbuch:           englisch                                       @ spell  @ english  @   @   @ \
+
+
+*** ab hier "Kommentar" (Leerzeile beendet den ausgewerteten Teil der Datei!)
+
