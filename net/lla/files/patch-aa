@@ -1,19 +1,19 @@
-*** lla.pl.orig	Wed May  2 14:27:49 2001
---- lla.pl	Wed May  2 14:28:14 2001
+*** lla.orig	Wed Sep 26 16:22:29 2001
+--- lla	Wed Sep 26 16:22:45 2001
 ***************
-*** 123,129 ****
-  else 
-  {
-   $MailSubject = "LDAP Log Analyse Report";
-!  open (EMAIL , "| /bin/mail -s \"$MailSubject\" $email");
-   print EMAIL $report;
-   close EMAIL;
-  
---- 123,129 ----
-  else 
-  {
-   $MailSubject = "LDAP Log Analyse Report";
-!  open (EMAIL , "| /usr/bin/mail -s \"$MailSubject\" $email");
-   print EMAIL $report;
-   close EMAIL;
-  
+*** 269,275 ****
+  if (@email) {
+      my $MailSubject = "LDAP Log Analyse Report";
+      my $all_email = join ' ', @email;
+!     open OUTPUT, "| /bin/mail -s \"$MailSubject\" $all_email";
+  } else {
+      open OUTPUT, ">&STDOUT";
+  }
+--- 269,275 ----
+  if (@email) {
+      my $MailSubject = "LDAP Log Analyse Report";
+      my $all_email = join ' ', @email;
+!     open OUTPUT, "| /usr/bin/mail -s \"$MailSubject\" $all_email";
+  } else {
+      open OUTPUT, ">&STDOUT";
+  }
