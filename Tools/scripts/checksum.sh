@@ -2,7 +2,7 @@
 #
 # Created by:	Alexander Langer <alex@big.endian.de>
 # Created on:	May 22, 2000
-# MAINTAINER=	alex@big.endian.de
+# MAINTAINER=	alex@FreeBSD.org
 
 if [ -z $1 ]; then
 	echo "Usage: $0 <portname> ..."
@@ -48,6 +48,12 @@ while [ ! -z $1 ]; do
 	fi
 
 	if file $broken | grep "gzip compressed data" >/dev/null; then
+		cd orig
+		tar -zxf ../$broken
+		cd ../new
+		tar -zxf $PORTSDIR/distfiles/$broken
+		cd ..
+	elif file $broken | grep "compress'd data 16 bits" >/dev/null; then
 		cd orig
 		tar -zxf ../$broken
 		cd ../new
