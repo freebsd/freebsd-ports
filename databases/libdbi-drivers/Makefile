@@ -8,22 +8,32 @@
 
 PORTNAME=	libdbi-drivers
 PORTVERSION=	0.7.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	delphij@FreeBSD.org
 COMMENT=	Drivers for libdbi
 
 LIB_DEPENDS=	dbi.0:${PORTSDIR}/databases/libdbi
 
 USE_GNOME=	gnometarget lthack
-USE_LIBTOOL_VER=	13
+USE_LIBTOOL_VER=	15
 CONFIGURE_ARGS=	--disable-static \
 		--with-dbi-incdir=${LOCALBASE}/include/dbi
 
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-${PORTVERSION}
+
+OPTIONS=	MYSQL	"With MySQL Driver" on \
+		PGSQL	"With PostgreSQL Driver" on \
+		SQLITE	"With SQLite Driver" on
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITHOUT_MYSQL) && defined(WITHOUT_PGSQL) && defined(WITHOUT_SQLITE)
+IGNORE=		You must choose at least one driver
+.endif
 
 .if defined(WITH_MYSQL)
 USE_MYSQL=	yes
@@ -60,4 +70,4 @@ PLIST_SUB+=	SQLITE="@comment "
 post-patch:
 	@${REINPLACE_CMD} -e 's|-O20|$$CFLAGS|g' ${WRKSRC}/configure
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
