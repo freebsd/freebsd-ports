@@ -225,6 +225,7 @@
     SUBDIR += p5-Business-OnlinePayment-Cardstream
     SUBDIR += p5-Business-OnlinePayment-Jettis
     SUBDIR += p5-Business-OnlinePayment-LinkPoint
+    SUBDIR += p5-Business-OnlinePayment-Network1Financial
     SUBDIR += p5-Business-OnlinePayment-SurePay
     SUBDIR += p5-Business-OnlinePayment-TCLink
     SUBDIR += p5-Business-OnlinePayment-VirtualNet
