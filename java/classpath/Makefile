@@ -7,14 +7,13 @@
 #
 
 PORTNAME=	classpath
-PORTVERSION=	0.12
-PORTREVISION=	1
+PORTVERSION=	0.14
 CATEGORIES=	java
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A GNU project to create free core class libraries
+COMMENT=	A GNU project to create a free Java class library
 
 BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip
 
