@@ -1,0 +1,14 @@
+This module provides a Perl interface to the Perforce API allowing you
+to write Perl scripts which communicate directly with a Perforce server.
+
+P4::Client is the main interface through which all commands are issued.
+The Perforce API is callback based though, and all interaction with the
+user interface takes place through callbacks to methods of the P4::UI
+object passed to the Run() method.
+
+To customise the behaviour of the Perforce client, you should derive
+your own class from P4::UI and override the relevant methods therein.
+
+WWW: http://public.perforce.com//guest/tony_smith/perforce/API/Perl/index.html
+
+\Anton
