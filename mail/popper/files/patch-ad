@@ -7,104 +7,122 @@ WARNING: Do not merge these patches in with other patch files.
 						-- Paul Traina
 						   17-Feb-1997
 
---- pop_dropcopy.c	Mon Feb 17 13:14:18 1997
-+++ pop_dropcopy.c	Mon Feb 17 15:51:37 1997
-@@ -160,6 +160,37 @@
-     return(ti != 0);
- }
- 
-+char *
-+return_path (const char *unixfrom)
-+{
-+    static char tmpbuf[BUFSIZ];
-+    int fromlen = sizeof("From ") - 1;
-+    const char *fp, *hp, *cp, *ep;
-+
-+    /* if it doesn't start with a From_, it's not */
-+    if (strncmp(unixfrom, "From ", fromlen))
-+	return NULL;
-+
-+    fp = unixfrom + fromlen;
-+    hp = cp = strchr(fp, ' ');
-+    while (hp = strchr(++hp, 'r'))
-+	if (!strncmp(hp, "remote from", sizeof("remote from") - 1)) {
-+	    hp = strrchr(hp, ' ');
-+	    break;
-+        }
-+
-+    if (hp) {
-+	ep = strrchr(++hp, '\n');
-+	snprintf(tmpbuf, sizeof(tmpbuf), "Return-Path: %.*s!%.*s\n",
-+		 ep - hp, hp,
-+		 cp - fp, fp);
-+    } else
-+	snprintf(tmpbuf, sizeof(tmpbuf), "Return-Path: %.*s\n",
-+		 cp - fp, fp);
-+
-+    return tmpbuf;
-+}
-+
- /* Hashing to a spool directory helps reduce the lookup time for sites
-  * with thousands of mail spool files.  Unix uses a linear list to
-  * save directory information and the following methods attempt to
-@@ -284,6 +315,7 @@
-     char                    buffer[MAXLINELEN];		/*  Read buffer */
-     MD5_CTX		    mdContext;
-     unsigned char	    digest[16];
-+    char		   *rpath;
- 
- #ifdef DEBUG
-     if(p->debug)
-@@ -349,6 +381,12 @@
- 	    (p->mmdf_separator ? !strcmp(p->mmdf_separator, buffer) :
- 	    isfromline(buffer))) {
- 
-+	    if (!p->mmdf_separator) {
-+		rpath = return_path(buffer);
-+		if (rpath)
-+		    snprintf(buffer, sizeof(buffer), rpath);
-+	    }
-+
- 	    if (expecting_trailer) {
- 		/* skip over the MMDF trailer */
- 		expecting_trailer = 0;
-@@ -394,6 +432,7 @@
- 	    mp->retr_flag = FALSE;
- 	    mp->orig_retr_state = FALSE;
- 	    mp->uidl_str = "\n";
-+	    mp->return_path = rpath ? strdup(rpath) : NULL;
- #ifdef DEBUG
- 	    if(p->debug)
- 		pop_log(p,POP_DEBUG, "Msg %d being added to list", mp->number);
-@@ -511,6 +550,7 @@
-     int			    content_length, content_nchar, cont_len;
-     MD5_CTX		    mdContext;
-     unsigned char	    digest[16];
-+    char		   *rpath;
- 
-     FILE		    *mail_drop;		    /*  Streams for fids */
- 
-@@ -583,6 +623,12 @@
- 	    (p->mmdf_separator ? !strcmp(p->mmdf_separator, buffer) :
- 	    isfromline(buffer))) {
- 
-+	    if (!p->mmdf_separator) {
-+		rpath = return_path(buffer);
-+		if (rpath)
-+		    snprintf(buffer, sizeof(buffer), rpath);
-+	    }
-+
- 	    if (expecting_trailer) {
- 		expecting_trailer = 0;
- 		continue;
-@@ -628,6 +674,7 @@
-             mp->retr_flag = FALSE;
-             mp->orig_retr_state = FALSE;
- 	    mp->uidl_str = "\n";
-+	    mp->return_path = rpath ? strdup(rpath) : NULL;
- 
- #ifdef DEBUG
-             if(p->debug)
+With old variant of this patch message size was counted incorrectly
+and "rpath" variable can be referenced without initialization,
+fixed now.
+						-- Andrey Chernov
+						   8-Oct-1997
+
+*** pop_dropcopy.c.orig	Fri Jul 25 21:42:07 1997
+--- pop_dropcopy.c	Wed Oct  8 00:07:19 1997
+***************
+*** 151,156 ****
+--- 151,187 ----
+      return(ti != 0);
+  }
+  
++ char *
++ return_path (const char *unixfrom)
++ {
++     static char tmpbuf[BUFSIZ];
++     int fromlen = sizeof("From ") - 1;
++     const char *fp, *hp, *cp, *ep;
++ 
++     /* if it doesn't start with a From_, it's not */
++     if (strncmp(unixfrom, "From ", fromlen))
++ 	return NULL;
++ 
++     fp = unixfrom + fromlen;
++     hp = cp = strchr(fp, ' ');
++     while (hp = strchr(++hp, 'r'))
++ 	if (!strncmp(hp, "remote from", sizeof("remote from") - 1)) {
++ 	    hp = strrchr(hp, ' ');
++ 	    break;
++         }
++ 
++     if (hp) {
++ 	ep = strrchr(++hp, '\n');
++ 	snprintf(tmpbuf, sizeof(tmpbuf), "Return-Path: %.*s!%.*s\n",
++ 		 ep - hp, hp,
++ 		 cp - fp, fp);
++     } else
++ 	snprintf(tmpbuf, sizeof(tmpbuf), "Return-Path: %.*s\n",
++ 		 cp - fp, fp);
++ 
++     return tmpbuf;
++ }
++ 
+  /* Hashing to a spool directory helps reduce the lookup time for sites
+   * with thousands of mail spool files.  Unix uses a linear list to
+   * save directory information and the following methods attempt to
+***************
+*** 275,280 ****
+--- 306,312 ----
+      char                    buffer[MAXLINELEN];		/*  Read buffer */
+      MD5_CTX		    mdContext;
+      unsigned char	    digest[16];
++     char                   *rpath = NULL;
+  
+  #ifdef DEBUG
+      if(p->debug)
+***************
+*** 340,345 ****
+--- 372,380 ----
+  	    (p->mmdf_separator ? !strcmp(p->mmdf_separator, buffer) :
+  	    isfromline(buffer))) {
+  
++ 	    if (!p->mmdf_separator)
++ 		rpath = return_path(buffer);
++ 
+  	    if (expecting_trailer) {
+  		/* skip over the MMDF trailer */
+  		expecting_trailer = 0;
+***************
+*** 385,390 ****
+--- 420,428 ----
+  	    mp->retr_flag = FALSE;
+  	    mp->orig_retr_state = FALSE;
+  	    mp->uidl_str = "\n";
++ 	    mp->return_path = rpath ? strdup(rpath) : NULL;
++ 	    if (rpath)
++ 		mp->length += strlen(rpath) + 1;
+  #ifdef DEBUG
+  	    if(p->debug)
+  		pop_log(p,POP_DEBUG, "Msg %d being added to list", mp->number);
+***************
+*** 502,507 ****
+--- 540,546 ----
+      int			    content_length, content_nchar, cont_len;
+      MD5_CTX		    mdContext;
+      unsigned char	    digest[16];
++     char                   *rpath = NULL;
+  
+      FILE		    *mail_drop;		    /*  Streams for fids */
+  
+***************
+*** 574,579 ****
+--- 613,621 ----
+  	    (p->mmdf_separator ? !strcmp(p->mmdf_separator, buffer) :
+  	    isfromline(buffer))) {
+  
++ 	    if (!p->mmdf_separator)
++ 		rpath = return_path(buffer);
++ 
+  	    if (expecting_trailer) {
+  		expecting_trailer = 0;
+  		continue;
+***************
+*** 619,624 ****
+--- 661,669 ----
+              mp->retr_flag = FALSE;
+              mp->orig_retr_state = FALSE;
+  	    mp->uidl_str = "\n";
++ 	    mp->return_path = rpath ? strdup(rpath) : NULL;
++ 	    if (rpath)
++ 		mp->length += strlen(rpath) + 1;
+  
+  #ifdef DEBUG
+              if(p->debug)
 --- pop_send.c	Mon Feb 17 13:14:25 1997
 +++ pop_send.c	Mon Feb 17 13:15:28 1997
 @@ -84,6 +84,9 @@

@@ -1,84 +1,46 @@
-*** make.44bsd.orig	Mon Mar 31 21:47:57 1997
---- make.44bsd	Wed Apr 23 07:58:19 1997
+*** configure.orig	Fri Jul 25 21:42:06 1997
+--- configure	Tue Oct  7 22:37:01 1997
 ***************
-*** 3,32 ****
+*** 828,834 ****
+  fi
   
-  #               Defines are described in the INSTALL document.
+  fi
+! if test "$GCC" = yes 
+  then
+  	CFLAGS="$CFLAGS -fstrength-reduce -fpcc-struct-return"
+  fi
+--- 828,834 ----
+  fi
   
-! PROG=popper popauth
-! MAN8=popper.8 popauth.8
-  SRCS=	pop_dele.c pop_dropcopy.c pop_get_command.c pop_get_subcommand.c \
-  	pop_init.c pop_last.c pop_list.c pop_log.c pop_lower.c pop_msg.c \
-  	pop_parse.c pop_pass.c pop_quit.c pop_rset.c pop_send.c pop_stat.c \
-  	pop_updt.c pop_user.c pop_xtnd.c pop_xmit.c popper.c pop_bull.c \
-! 	xtnd_xlst.c pop_uidl.c pop_rpop.c pop_apop.c md5.c pop_auth.c
-! #SRCS+=	flock.c mktemp.c
-! 
-! BINDIR=/usr/local/libexec
-! MANDIR=/usr/local/man/man
+  fi
+! if test "$GCC" = DISABLE_yes
+  then
+  	CFLAGS="$CFLAGS -fstrength-reduce -fpcc-struct-return"
+  fi
+***************
+*** 1354,1360 ****
+  netinet/in.h \
+  maillock.h \
+  ndbm.h \
+- gdbm.h \
   
-! #LDADD+= -lcrypt -lndbm
+  do
+  ac_safe=`echo "$ac_hdr" | sed 'y%./+-%__p_%'`
+--- 1354,1359 ----
+***************
+*** 1697,1703 ****
+  char gdbm_open();
   
-! CFLAGS+=-DHAVE_PARAM_H 
+  int main() {
+! gdbm_open()
+  ; return 0; }
+  EOF
+  if { (eval echo configure:1704: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest; then
+--- 1696,1702 ----
+  char gdbm_open();
   
-  # if you want APOP support, uncomment the next line
-! #CFLAGS+=-DAPOP=\"/etc/pop.auth\" -DPOPUID=\"pop\"
-  
-  # if you want RPOP support, uncomment the next line
-  #CFLAGS+=-DRPOP
-  
-  # if you want to block POP access for anyone in /etc/ftpusers, uncomment
-! #CFLAGS+=-DNONAUTHFILE=\"/etc/ftpusers\"
-  
-  .include <bsd.prog.mk>
-- 
---- 3,51 ----
-  
-  #               Defines are described in the INSTALL document.
-  
-! SUBDIR=popauth
-! 
-! PROG=	popper
-! MAN8=	popper.8					# FreeBSD
-! MAN=	popper.8					# NetBSD/OpenBSD
-! 
-  SRCS=	pop_dele.c pop_dropcopy.c pop_get_command.c pop_get_subcommand.c \
-  	pop_init.c pop_last.c pop_list.c pop_log.c pop_lower.c pop_msg.c \
-  	pop_parse.c pop_pass.c pop_quit.c pop_rset.c pop_send.c pop_stat.c \
-  	pop_updt.c pop_user.c pop_xtnd.c pop_xmit.c popper.c pop_bull.c \
-! 	xtnd_xlst.c pop_uidl.c pop_rpop.c pop_apop.c pop_auth.c
-! #SRCS+= md5.c flock.c mktemp.c
-  
-! PREFIX?=/usr/local
-! BINDIR=${PREFIX}/libexec
-! MANDIR=${PREFIX}/man/man
-! 
-! CFLAGS+=-DHAVE_PARAM_H -DSETPROCTITLE
-! LDADD+=-lutil
-! DPADD+=${LIBUTIL}
-! 
-! .if !defined(APOP_ONLY)
-! .if exists(/usr/lib/libskey.a) && exists(/usr/lib/libmd.a)
-! DPADD+=${LIBSKEY}
-! LDADD+=-lskey
-! CFLAGS+=-DSKEY
-! .endif
-! .endif
-  
-! LDADD+=-lmd -lcrypt
-! DPADD+=${LIBMD} ${LIBCRYPT}
-  
-  # if you want APOP support, uncomment the next line
-! CFLAGS+=-DAPOP=\"${PREFIX}/etc/popper/pop.auth\" -DPOPUID=\"pop\"
-! 
-! .if defined(APOP_ONLY)
-! CFLAGS+=-DAPOP_ONLY
-! .endif
-  
-  # if you want RPOP support, uncomment the next line
-  #CFLAGS+=-DRPOP
-  
-  # if you want to block POP access for anyone in /etc/ftpusers, uncomment
-! CFLAGS+=-DNONAUTHFILE=\"/etc/ftpusers\"
-  
-  .include <bsd.prog.mk>
+  int main() {
+! DISABLE_gdbm_open()
+  ; return 0; }
+  EOF
+  if { (eval echo configure:1704: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest; then

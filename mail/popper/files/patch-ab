@@ -93,40 +93,35 @@ SKEY + pw_expire patches
       /*  Tell the user that the password is required */
       return (pop_msg(p,POP_SUCCESS,"Password required for %s.",p->user));
   }
-*** popper.h.orig	Tue Apr  1 00:10:18 1997
---- popper.h	Wed Apr 23 07:33:12 1997
+*** popper.h.orig	Fri Jul 25 21:42:08 1997
+--- popper.h	Tue Oct  7 20:26:58 1997
 ***************
-*** 35,40 ****
---- 35,43 ----
-  #  define	HAVE_VSPRINTF
-  #  define	BIND43
-  # endif
-+ # if (defined(BSD) && (BSD >= 199306))
-+ #  define	BSD44_DBM
-+ # endif
+*** 25,37 ****
+  # include <net/errno.h>
+  #endif
+  
+! #ifdef		HAVE_PARAM_H
+  #include <sys/param.h>
+- # if (defined(BSD) && (BSD >= 199103))
+- #  define	HAVE_UNISTD_H
+- #  define	HAVE_VPRINTF
+- #  define	BIND43
+- # endif
+  #endif
+  
+  #ifdef BSDI
+--- 25,32 ----
+  # include <net/errno.h>
+  #endif
+  
+! #ifdef          HAVE_SYS_PARAM_H
+  #include <sys/param.h>
   #endif
   
   #ifdef BSDI
 ***************
-*** 114,120 ****
-  # define POP_MAILDIR     "/var/mail"
-  # define POP_DROP        "/var/mail/.%s.pop"
-  # define POP_TMPDROP     "/var/mail/tmpXXXXXX"
-! # define POP_TMPXMIT     "/var/mail/xmitXXXXXX"
-  # define MAIL_COMMAND	 "/usr/sbin/sendmail"
-  # define OSDONE
-  #endif
---- 117,123 ----
-  # define POP_MAILDIR     "/var/mail"
-  # define POP_DROP        "/var/mail/.%s.pop"
-  # define POP_TMPDROP     "/var/mail/tmpXXXXXX"
-! # define POP_TMPXMIT     "/var/tmp/xmitXXXXXX"
-  # define MAIL_COMMAND	 "/usr/sbin/sendmail"
-  # define OSDONE
-  #endif
-***************
-*** 353,358 ****
---- 356,364 ----
+*** 304,309 ****
+--- 299,307 ----
   extern AUTH_DAT kdata;
   #endif /* KERBEROS */
   

@@ -1,71 +1,93 @@
-*** pop_dropcopy.c.orig	Sat Mar 29 07:30:36 1997
---- pop_dropcopy.c	Wed Apr 23 07:34:06 1997
+*** Makefile.in.orig	Fri Jul 25 21:42:06 1997
+--- Makefile.in	Tue Oct  7 19:43:23 1997
 ***************
-*** 54,60 ****
-  # define L_XTND SEEK_END
-  #endif
+*** 1,20 ****
+! CSRCS		=	flock.c pop_dele.c pop_dropcopy.c \
+  			pop_get_command.c pop_get_subcommand.c pop_init.c \
+  			pop_last.c pop_list.c pop_log.c pop_lower.c \
+  			pop_msg.c pop_parse.c pop_pass.c pop_quit.c \
+  			pop_rset.c pop_send.c pop_stat.c pop_updt.c \
+  			pop_user.c pop_xtnd.c pop_xmit.c popper.c \
+! 			pop_bull.c xtnd_xlst.c pop_uidl.c mktemp.c \
+! 			pop_rpop.c pop_apop.c md5.c pop_auth.c
   
-! #include "md5.h"
+! OBJS		=	flock.o pop_dele.o pop_dropcopy.o \
+  			pop_get_command.o pop_get_subcommand.o pop_init.o \
+  			pop_last.o pop_list.o pop_log.o pop_lower.o \
+  			pop_msg.o pop_parse.o pop_pass.o pop_quit.o \
+  			pop_rset.o pop_send.o pop_stat.o pop_updt.o \
+  			pop_user.o pop_xtnd.o pop_xmit.o popper.o \
+! 			pop_bull.o xtnd_xlst.o pop_uidl.o mktemp.o \
+! 			pop_rpop.o pop_apop.o md5.o pop_auth.o
   
-  /* This macro comes from Mark Crispin's c-client code */
+  DOCS		=	README pop3.rfc1081 pop3e.rfc1082 popper.8
   
---- 54,60 ----
-  # define L_XTND SEEK_END
-  #endif
+--- 1,20 ----
+! CSRCS           =       pop_dele.c pop_dropcopy.c \
+  			pop_get_command.c pop_get_subcommand.c pop_init.c \
+  			pop_last.c pop_list.c pop_log.c pop_lower.c \
+  			pop_msg.c pop_parse.c pop_pass.c pop_quit.c \
+  			pop_rset.c pop_send.c pop_stat.c pop_updt.c \
+  			pop_user.c pop_xtnd.c pop_xmit.c popper.c \
+! 			pop_bull.c xtnd_xlst.c pop_uidl.c \
+! 			pop_rpop.c pop_apop.c pop_auth.c
   
-! #include <md5.h>
+! OBJS            =       pop_dele.o pop_dropcopy.o \
+  			pop_get_command.o pop_get_subcommand.o pop_init.o \
+  			pop_last.o pop_list.o pop_log.o pop_lower.o \
+  			pop_msg.o pop_parse.o pop_pass.o pop_quit.o \
+  			pop_rset.o pop_send.o pop_stat.o pop_updt.o \
+  			pop_user.o pop_xtnd.o pop_xmit.o popper.o \
+! 			pop_bull.o xtnd_xlst.o pop_uidl.o \
+! 			pop_rpop.o pop_apop.o pop_auth.o
   
-  /* This macro comes from Mark Crispin's c-client code */
+  DOCS		=	README pop3.rfc1081 pop3e.rfc1082 popper.8
   
 ***************
-*** 755,760 ****
---- 755,761 ----
-                                                          the SERVER maildrop */
-      FILE		    *tf;		    /*  The temp file */
-      int			    tfn;		    
-+     char		    template[POP_TMPSIZE];  /*  Temp name holder */
-      char                    buffer[MAXLINELEN];     /*  Read buffer */
-      long                    offset;                 /*  Old/New boundary */
-      int                     nchar;                  /*  Bytes written/read */
-***************
-*** 794,799 ****
---- 795,811 ----
-      }
-  #endif
+*** 32,38 ****
+  DEFS		=	@DEFS@
+  O_DEFS		= 	@O_DEFS@
   
-+     /* First create a unique file.  Would prefer mkstemp, but Ultrix...*/
-+     strcpy(template,POP_TMPDROP);
-+     if (((tfn=mkstemp(template)) == -1) ||
-+ 	((tf=fdopen(tfn, "w+")) == NULL)) {	/* failure, bail out	*/
-+         pop_log(p,POP_PRIORITY,
-+             "Unable to create temporary temporary maildrop '%s': %s",template,
-+                 (errno < sys_nerr) ? sys_errlist[errno] : "") ;
-+         return pop_msg(p,POP_FAILURE,
-+ 		"System error, can't create temporary file.");
-+     }
-+ 
-      /* Here we work to make sure the user doesn't cause us to remove or
-       * write over existing files by limiting how much work we do while
-       * running as root.
-***************
-*** 807,812 ****
---- 819,837 ----
-  	pwp->pw_gid = mybuf.st_gid;
-  # endif
-  #endif
-+ 
-+     /* Now give this file to the user	*/
-+     (void) chown(template, (UID_T)pwp->pw_uid, (GID_T)pwp->pw_gid);
-+     /* (void) chmod(template,0600); umask now handles this */
-+ 
-+     /* Now link this file to the temporary maildrop.  If this fails it
-+      * is probably because the temporary maildrop already exists.  If so,
-+      * this is ok.  We can just go on our way, because by the time we try
-+      * to write into the file we will be running as the user.
-+      */
-+     (void) link(template,p->temp_drop);
-+     (void) fclose(tf);
-+     (void) unlink(template);
+! TARGET		=	@TARGET@
   
-      /* Now we run as the user. */
-      (void) setgid((GID_T)pwp->pw_gid);
+  INSTALLDIR	=	/usr/local/lib
+  
+--- 32,38 ----
+  DEFS		=	@DEFS@
+  O_DEFS		= 	@O_DEFS@
+  
+! TARGET          =       popper
+  
+  INSTALLDIR	=	/usr/local/lib
+  
+***************
+*** 54,61 ****
+  ${TARGET}: ${OBJS}
+  	${CC}  ${OBJS} -o ${TARGET} ${LIBS}
+  
+! popauth: popauth.o flock.o
+! 	${CC}  -o popauth popauth.o  flock.o 
+  
+  .c.o: 
+  	${CC} -c -I. ${CFLAGS} ${DEFS} ${O_DEFS} $< -o $@
+--- 54,61 ----
+  ${TARGET}: ${OBJS}
+  	${CC}  ${OBJS} -o ${TARGET} ${LIBS}
+  
+! popauth: popauth.o
+! 	${CC}  -o popauth popauth.o
+  
+  .c.o: 
+  	${CC} -c -I. ${CFLAGS} ${DEFS} ${O_DEFS} $< -o $@
+***************
+*** 76,84 ****
+  	rm -f core *.o *.Z* config.h config.status config.cache config.log
+  
+  ${OBJS}:    ${INCLUDES}
+- pop_dropcopy.o: flock.h
+- pop_updt.o: flock.h
+- flock.o: flock.h
+  
+  
+  
+--- 76,81 ----
