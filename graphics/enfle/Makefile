@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	enfle
-PORTVERSION=	20000615
+PORTVERSION=	20000627
 CATEGORIES=	graphics
 MASTER_SITES=	http://enfle.fennel.org/ \
 		http://www3.big.or.jp/~sian/linux/products/enfle/ \
