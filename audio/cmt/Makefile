@@ -6,6 +6,7 @@
 
 PORTNAME=	cmt
 PORTVERSION=	1.12
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://www.ladspa.org/download/
 DISTNAME=	${PORTNAME}_src
@@ -20,21 +21,9 @@ WRKSRC=		${WRKDIR}/${PORTNAME}/src
 MAKEFILE=	makefile
 ALL_TARGET=	targets
 
-post-patch:
-	@${FIND} ${WRKSRC} -name '*.cpp' | ${XARGS} ${PERL} -pi -e \
-		's|<malloc.h>|<stdlib.h>|g'
-
-.for i in ${WRKSRC}/analogue.cpp \
-	${WRKSRC}/canyondelay.cpp \
-	${WRKSRC}/lofi.cpp \
-	${WRKSRC}/phasemod.cpp \
-	${WRKSRC}/syndrum.cpp \
-	${WRKSRC}/vcf303.cpp
-	${MV} ${WRKDIR}/$i ${WRKDIR}/$i.sed
-	${SED} -e "s:malloc.h:stdlib.h:g" \
-		${WRKDIR}/$i.sed >${WRKDIR}/$i
-	${RM} ${WRKDIR}/$i.sed
-.endfor
+pre-patch:
+	@${FIND} ${WRKSRC} -name '*.cpp' | ${XARGS} \
+		${REINPLACE_CMD} -e "s|<malloc.h>|<stdlib.h>|g"
 
 do-install:
 	@${INSTALL_DATA} ${WRKSRC}/../plugins/cmt.so ${LOCALBASE}/lib/ladspa/
