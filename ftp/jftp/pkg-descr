@@ -1,0 +1,6 @@
+JFtp is a graphical network browser. It support various types of connections
+like FTP, SMB, SFTP, NFS, HTTP and local ones, has a nice swing gui, lots of
+features and can be started and (auto)updated using Java Web Start in any
+browser (link on homepage).
+
+WWW: http://j-ftp.sourceforge.net/
