@@ -3,7 +3,7 @@
 # Date created:         20 Sep 1998
 # Whom:                 msmith
 #
-# $Id: Makefile,v 1.2 1998/11/06 07:09:15 msmith Exp $
+# $Id: Makefile,v 1.3 1998/12/28 23:38:12 msmith Exp $
 #
 
 DISTNAME=       linux
@@ -28,17 +28,13 @@ BINDIR=		${PREFIX}/bin
 do-fetch:
         @if [ ! -f ${DISTDIR}/${DISTFILES} ]; then \
            ${ECHO} "" ; \
-           ${ECHO} "  The source to this port may not be automatically fetched" 
-; \
-           ${ECHO} "  due to licensing restrictions. You MUST fetch the source" 
-; \
-           ${ECHO} "  manually after reading and agreeing to the license at:" ; 
-\
+           ${ECHO} "  The source to this port may not be automatically fetched" ; \
+           ${ECHO} "  due to licensing restrictions. You MUST fetch the source" ; \
+           ${ECHO} "  manually after reading and agreeing to the license at:" ; \
            ${ECHO} "" ; \
            ${ECHO} "      http://download.citrix.com/download.asp?client=LINUX" ; \
            ${ECHO} "" ; \
-           ${ECHO} "  Once ${DISTFILES} has been downloaded, move it to ${DISTDI
-R}" ; \
+           ${ECHO} "  Once ${DISTFILES} has been downloaded, move it to ${DISTDIR}" ; \
            ${ECHO} "  and then restart this build." ; \
            ${ECHO} "" ; \
            exit 1 ; \
