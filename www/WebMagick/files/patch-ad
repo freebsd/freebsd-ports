@@ -1,0 +1,8 @@
+--- utils/help2man.bak	Thu Aug 20 06:58:41 1998
++++ utils/help2man	Sun Feb 21 22:37:42 1999
+@@ -1,4 +1,4 @@
+-#!/usr/local/bin/perl -w
++#!/usr/bin/perl -w
+ 
+ # Generate a short man page from --help and --version output.
+ # Copyright © 1997, 98 Free Software Foundation, Inc.
