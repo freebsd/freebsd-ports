@@ -1,5 +1,6 @@
-IPA allows to make IP accounting (network accounting) based on IPv4/v6
-Firewall and/or IP Filter accounting rules.
+IPA allows to make IP accounting (network accounting) based on
+FreeBSD IPv4/v6 Firewall, OpenBSD Packet Filter and IP Filter
+accounting rules on FreeBSD, NetBSD and OpenBSD.
 
 It supports limits for accounting rules and limits events as "limit is
 reached", "reached limit is expired", etc. It understands time intervals
