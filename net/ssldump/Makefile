@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ssldump
-PORTVERSION=	0.9b2
+PORTVERSION=	0.9b3
 CATEGORIES=	net security
 MASTER_SITES=	http://www.rtfm.com/ssldump/
 
@@ -18,7 +18,9 @@ USE_OPENSSL=	YES
 
 USE_AUTOCONF=	YES
 GNU_CONFIGURE=	YES
-CONFIGURE_ARGS=	--with-openssl=${OPENSSLBASE}
+USE_GMAKE=	YES
+CONFIGURE_ARGS=	--with-openssl=${OPENSSLBASE} \
+		--sbindir=${PREFIX}/bin	
 
 MAN1=		ssldump.1
 
