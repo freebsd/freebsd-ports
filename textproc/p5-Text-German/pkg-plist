@@ -1,0 +1,15 @@
+%%SITE_PERL%%/Text/German.pod
+%%SITE_PERL%%/Text/German.pm
+%%SITE_PERL%%/Text/German/Adjektiv.pm
+%%SITE_PERL%%/Text/German/Ausnahme.pm
+%%SITE_PERL%%/Text/German/Cache.pm
+%%SITE_PERL%%/Text/German/Endung.pm
+%%SITE_PERL%%/Text/German/Regel.pm
+%%SITE_PERL%%/Text/German/Util.pm
+%%SITE_PERL%%/Text/German/Verb.pm
+%%SITE_PERL%%/Text/German/Vorsilbe.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/German/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/German
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Text 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Text/German 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Text 2>/dev/null || true
