@@ -74,7 +74,6 @@ PLIST_SUB+=	JDK_VERSION=${JDK_VERSION}
 JDKIMAGEDIR=	${WRKSRC}/../build/bsd-i386/jdk-image-i386
 JDKIMAGEDIR_G=	${WRKSRC}/../build/bsd-i386/jdk-debug-image-i386
 
-SORT?=		/usr/bin/sort
 CPIO?=		/usr/bin/cpio
 
 .if defined(NODEBUG)

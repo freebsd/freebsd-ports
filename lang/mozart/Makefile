@@ -75,9 +75,9 @@ post-install:
 		| ${XARGS} -0 ${CHMOD} ${SHAREMODE}
 	@${RM} -rf ${PREFIX}/lib/oz/mozart
 .endif
-	@cd ${PREFIX} ; ${FIND} lib/oz -type f -o -type l | sort \
+	@cd ${PREFIX} ; ${FIND} lib/oz -type f -o -type l | ${SORT} \
 		> ${WRKDIR}/PLIST.lib-oz
-	@cd ${PREFIX} ; ${FIND} lib/oz -type d | sort -r \
+	@cd ${PREFIX} ; ${FIND} lib/oz -type d | ${SORT} -r \
 	    	| ${SED} -e 's/^/@dirrm /g' \
 		>> ${WRKDIR}/PLIST.lib-oz
 	@${ECHO_CMD} "r ${TMPPLIST}"		> ${WRKDIR}/ex.script

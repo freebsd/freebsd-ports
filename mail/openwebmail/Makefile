@@ -125,7 +125,8 @@ pre-install:
 	@${FIND} ${WRKSRC}/*/openwebmail \( -name "*.bak" -or -name "*.orig" \) -delete
 .if !exists(${PLIST})
 	@${ECHO} "@unexec if cmp -s %D/www/cgi-bin/openwebmail/etc/openwebmail.conf %D/www/cgi-bin/openwebmail/etc/openwebmail.conf-dist; then ${RM} -f %D/www/cgi-bin/openwebmail/etc/openwebmail.conf; fi" > ${PLIST}
-	@${FIND} ${WRKSRC}/*/openwebmail -type f -o -type l | ${SED} -e 's,${WRKSRC},www,g' | sort -u >> ${PLIST}
+	@${FIND} ${WRKSRC}/*/openwebmail -type f -o -type l | \
+		${SED} -e 's,${WRKSRC},www,g' | ${SORT} -u >> ${PLIST}
 	@${ECHO} "www/cgi-bin/openwebmail/etc/dbm.conf" >> ${PLIST}
 .for f in b2g g2b lunar
 	@${ECHO} "www/cgi-bin/openwebmail/etc/${f}.db" >> ${PLIST}
@@ -136,7 +137,8 @@ pre-install:
 		-e 's,openwebmail/openwebmail,openwebmail/.openwebmail,g' \
 		>> ${PLIST}
 .endif
-	@${FIND} ${WRKSRC}/*/openwebmail -type d | sort -ur | ${SED} -e 's,${WRKSRC},@dirrm www,g' >> ${PLIST}
+	@${FIND} ${WRKSRC}/*/openwebmail -type d | ${SORT} -ur | \
+		${SED} -e 's,${WRKSRC},@dirrm www,g' >> ${PLIST}
 .endif
 
 do-install:

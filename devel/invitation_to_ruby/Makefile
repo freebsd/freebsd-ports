@@ -29,7 +29,6 @@ NO_BUILD=	yes
 PLIST=		${WRKDIR}/plist
 
 CPIO?=		/usr/bin/cpio
-SORT?=		/usr/bin/sort
 
 .include <bsd.port.pre.mk>
 

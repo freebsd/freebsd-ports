@@ -47,7 +47,7 @@ post-install:
 	    ${FIND} share/${PORTNAME} -type f -o -type l >${WRKDIR}/PLIST.share
 	@cd ${PREFIX} ;\
 	    ${FIND} share/${PORTNAME} -type d \
-	    	| sort -r | ${SED} -e 's/^/@dirrm /g' >>${WRKDIR}/PLIST.share
+	    	| ${SORT} -r | ${SED} -e 's/^/@dirrm /g' >>${WRKDIR}/PLIST.share
 	@${ECHO_CMD} "r ${TMPPLIST}"		> ${WRKDIR}/ex.script
 	@${ECHO_CMD} "/Insert PLIST.share"	>> ${WRKDIR}/ex.script
 	@${ECHO_CMD} "d"				>> ${WRKDIR}/ex.script

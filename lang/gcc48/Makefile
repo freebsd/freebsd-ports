@@ -165,7 +165,7 @@ post-install:
 	    ${FIND} ${inc:S/^${PREFIX}\///} -type f -o -type l	\
 	    	>>${WRKDIR}/PLIST.lib ;\
 	    ${FIND} ${inc:S/^${PREFIX}\///} -type d \
-	    	| sort -r | ${SED} -e 's/^/@dirrm /g' >>${WRKDIR}/PLIST.lib
+	    	| ${SORT} -r | ${SED} -e 's/^/@dirrm /g' >>${WRKDIR}/PLIST.lib
 .endfor
 	(${ECHO_CMD} "@unexec rmdir %D/lib/gcc/${CONFIGURE_TARGET} 2>&1 || true" ; ${ECHO_CMD} "@unexec rmdir %D/lib/gcc 2>&1 || true") >> ${WRKDIR}/PLIST.lib
 	${ECHO_CMD} "r ${TMPPLIST}"		> ${WRKDIR}/ex.script

@@ -118,7 +118,8 @@ pre-install:
 		${PYTHONPREFIX_LIBDIR}/${platform}
 .endfor
 .endfor
-	@sort -r -o ${PLIST} ${PLIST_GMP} ${PLIST_TOOLS} ${PLIST_DEMO} ${PKGDIR}/pkg-plist
+	@${SORT} -r -o ${PLIST} ${PLIST_GMP} ${PLIST_TOOLS} ${PLIST_DEMO} \
+		${PKGDIR}/pkg-plist
 
 post-install:
 	@${MKDIR} ${MANPREFIX}/man/man1

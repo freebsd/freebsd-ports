@@ -158,11 +158,11 @@ post-install:
 	${INSTALL_DATA} ${FILESDIR}/vietnamese_viscii.vim ${DATADIR}/keymap
 	cd ${PREFIX} ;\
 	    ${FIND} share/vim/${_DATADIR} -type f -o -type l	\
-	    	| sort						\
+	    	| ${SORT}					\
 	    	>${WRKDIR}/PLIST.share-vim
 	cd ${PREFIX} ;\
-	    ${FIND} share/vim/${_DATADIR} -type d	\
-	    	| sort -r | ${SED} -e 's/^/@dirrm /g'	\
+	    ${FIND} share/vim/${_DATADIR} -type d		\
+	    	| ${SORT} -r | ${SED} -e 's/^/@dirrm /g'	\
 		>>${WRKDIR}/PLIST.share-vim
 	${ECHO_CMD} "r ${TMPPLIST}"			> ${WRKDIR}/ex.script
 	${ECHO_CMD} "/Insert PLIST.share-vim"		>> ${WRKDIR}/ex.script

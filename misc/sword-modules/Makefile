@@ -45,7 +45,6 @@ SCRIPTS_ENV=	SETDIR="${SETDIR}" \
 	BATCH="${BATCH}"
 
 DIRNAME?=	${BASENAME:S/basename/dirname/}
-SORT?=		sort
 
 .if !exists(${MODFILE})
 pre-fetch:	select

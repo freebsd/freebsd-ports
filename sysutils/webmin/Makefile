@@ -80,8 +80,11 @@ do-install:
 	@${CHMOD} 554 ${PREFIX}/etc/rc.d/webmin.sh-dist
 
 post-install:
-	@cd ${WRKSRC} ; ${FIND} * -type f -o -type l | sort | ${AWK} '{ print "lib/webmin/" $$1 }' > ${WRKDIR}/PLIST.lib-webmin
-	@cd ${WRKSRC} ; ${FIND} * -type d | sort -r | ${AWK} '{ print "lib/webmin/" $$1 }' | ${SED} -e 's/^/@dirrm /g' >> ${WRKDIR}/PLIST.lib-webmin
+	@cd ${WRKSRC} ; ${FIND} * -type f -o -type l | ${SORT} | ${AWK} \
+		'{ print "lib/webmin/" $$1 }' > ${WRKDIR}/PLIST.lib-webmin
+	@cd ${WRKSRC} ; ${FIND} * -type d | ${SORT} -r | ${AWK} \
+		'{ print "lib/webmin/" $$1 }' | ${SED} -e 's/^/@dirrm /g' \
+		>> ${WRKDIR}/PLIST.lib-webmin
 
 	@${ECHO_CMD} "r ${TMPPLIST}"			> ${WRKDIR}/ex.script
 	@${ECHO_CMD} "/Insert PLIST.lib-webmin"		>> ${WRKDIR}/ex.script

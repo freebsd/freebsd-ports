@@ -53,7 +53,7 @@ post-build:
 			${ECHO_CMD} man/ja/man$$2/$$1.gz; shift 2; \
 		done; \
 	fi; \
-	done|sort|uniq >>${PLIST}
+	done|${SORT}|uniq >>${PLIST}
 	@${ECHO_CMD} "@exec ${LN} -sf %D/man/ja %D/man/ja_JP.EUC" >>${PLIST}
 	@${ECHO_CMD} "@unexec ${RM} -f %D/man/ja_JP.EUC" >>${PLIST}
 	@${ECHO_CMD} "share/doc/xjman/COPYRIGHT" >>${PLIST}

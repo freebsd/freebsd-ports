@@ -22,8 +22,6 @@ WRKSRC=		${WRKDIR}/DaNAMiCS
 
 PLIST=		${WRKDIR}/plist
 
-SORT?=		/usr/bin/sort
-
 pre-install:
 	cd ${WRKSRC}; ${FIND} . -type f \
 		| ${SORT} | ${SED} -e 's|^\.|danamics|' >${PLIST}

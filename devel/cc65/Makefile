@@ -89,7 +89,7 @@ do-install:
 plist:
 	@${FIND} ${WRKSRC}/samples -not -type d | \
 	    ${SED} -E -e 's/^.*cc65.*\/samples/%%PORTDOCS%%share\/doc\/cc65\/samples/'
-	@${FIND} ${WRKSRC}/samples -type d | sort -r | \
+	@${FIND} ${WRKSRC}/samples -type d | ${SORT} -r | \
 	    ${SED} -E -e 's/^.*cc65.*\/samples/%%PORTDOCS%%@dirrm share\/doc\/cc65\/samples/'
 .for filename in ${DOCFILES}
 	@${ECHO_CMD} %%PORTDOCS%%share/doc/cc65/`${BASENAME} ${filename}`
@@ -106,7 +106,7 @@ plist:
 .endfor
 	@${FIND} ${WRKSRC}/include -not -type d | \
 	    ${SED} -E -e 's/^.*cc65.*\/include/lib\/cc65\/include/'
-	@${FIND} ${WRKSRC}/include -type d | sort -r | \
+	@${FIND} ${WRKSRC}/include -type d | ${SORT} -r | \
 	    ${SED} -E -e 's/^.*cc65.*\/include/@dirrm lib\/cc65\/include/'
 .for filename in ${CC65LIBFILES}
 	@${ECHO_CMD} lib/cc65/lib/`${BASENAME} ${filename}`

@@ -21,7 +21,6 @@ NO_BUILD=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 CPIO?=		/usr/bin/cpio --quiet -pdum -R
-SORT=		/usr/bin/sort -r
 PLIST=		${WRKDIR}/PLIST
 
 pre-install:
@@ -31,7 +30,9 @@ do-install:
 	@${MKDIR} ${DATADIR}
 	@ cd ${WRKSRC} && ${FIND} * -type f -print | ${CPIO} ${BINOWN}:${BINGRP} ${DATADIR}
 	@ cd ${DATADIR} && ${FIND} * -type d -print | ${XARGS} ${CHMOD} 0755
-	@ cd ${PREFIX} && ${FIND} share/${PORTNAME} -type f -print | ${SORT} > ${TMPPLIST}
-	@ cd ${PREFIX} && ${FIND} share/${PORTNAME} -type d -print | ${SORT} | ${SED} -e 's#^#@dirrm #' >> ${TMPPLIST}
+	@ cd ${PREFIX} && ${FIND} share/${PORTNAME} -type f -print | \
+		${SORT} -r > ${TMPPLIST}
+	@ cd ${PREFIX} && ${FIND} share/${PORTNAME} -type d -print | \
+		${SORT} -r | ${SED} -e 's#^#@dirrm #' >> ${TMPPLIST}
 
 .include <bsd.port.mk>

@@ -47,7 +47,6 @@ WRKSRC=		${WRKDIR}/${PKGNAMEPREFIX}jdk${JDK_VERSION}
 NO_BUILD=	yes
 
 CPIO?=		/usr/bin/cpio
-SORT?=		/usr/bin/sort
 INSTALL_DIR=	${PREFIX}/${PKGNAMEPREFIX}jdk${JDK_VERSION}
 
 .if defined(WITHOUT_PLUGIN)

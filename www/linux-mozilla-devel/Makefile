@@ -114,7 +114,7 @@ pre-install:
 	${ECHO_CMD} bin/${STARTUP_CMD} > ${PLIST}
 	${ECHO_CMD} "@unexec ${FIND} ${FULL_INSTALL_DIR}/plugins \
 		-type l -exec ${RM} {} \;" >> ${PLIST}
-	cd ${WRKSRC}/bin; for i in `${FIND} * \! -type d | sort`; do \
+	cd ${WRKSRC}/bin; for i in `${FIND} * \! -type d | ${SORT}`; do \
 		${ECHO_CMD} lib/${INSTALL_DIR}/$${i} >> ${PLIST}; \
 	done
 	cd ${WRKSRC}/bin; \

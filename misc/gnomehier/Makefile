@@ -27,13 +27,13 @@ do-fetch:
 pre-install:
 	@${RM} -f ${PLIST}
 	@${TOUCH} -f ${PLIST}
-	@${CAT} ${FILESDIR}/dirlist | sort | ${SED} -e \
+	@${CAT} ${FILESDIR}/dirlist | ${SORT} | ${SED} -e \
 		's|$$|/.keep_me|' >> ${PLIST}
 	@${ECHO_CMD} "etc/gconf/gconf.xml.defaults/schemas/apps/%gconf.xml" \
 		>> ${PLIST}
 	@${ECHO_CMD} "etc/gconf/gconf.xml.defaults/apps/%gconf.xml" \
 		>> ${PLIST}
-	@${CAT} ${FILESDIR}/dirlist | sort -r | ${SED} -e \
+	@${CAT} ${FILESDIR}/dirlist | ${SORT} -r | ${SED} -e \
 		's|^|@dirrm |' >> ${PLIST}
 
 do-install:

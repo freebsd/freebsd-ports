@@ -48,7 +48,7 @@ do-install:
 	@${ECHO_CMD} -n ">> Creating packing list..."
 	@${FIND} ${TARGET_DIR} -type f -print | \
 		${SED} "s,${PREFIX}/*,," >> ${PLIST}
-	@${FIND} ${TARGET_DIR} -type d -print | sort -r | \
+	@${FIND} ${TARGET_DIR} -type d -print | ${SORT} -r | \
 		${SED} -e "s,${PREFIX}/*,," -e "s,^,@dirrm ,g" >> ${PLIST}
 	@${ECHO_CMD} " [ DONE ]"
 

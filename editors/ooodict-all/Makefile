@@ -33,7 +33,6 @@ HYPHDIST?=	hyph_cs_CZ.zip hyph_da_DK.zip hyph_de_DE.zip \
 		hyph_sk_SK.zip hyph_sl_SI.zip hyph_uk_UA.zip
 .endif
 
-SORT?=	/usr/bin/sort
 CUT?=	/usr/bin/cut
 
 .include <bsd.port.pre.mk>

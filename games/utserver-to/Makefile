@@ -48,7 +48,6 @@ STRIP=
 UTDIR=		usr/games/ut-server/
 PLIST_SUB+=	UTDIR="${UTDIR}"
 INSTALL_DIR=	${INSTALL} -d -o ${BINOWN} -g ${BINGRP} -m ${BINMODE}
-SORT?=		/usr/bin/sort
 
 UTSERVER_PORT=	${.CURDIR}/../utserver
 MASTERPKGMESSAGE!=	cd ${UTSERVER_PORT} && ${MAKE} -V PKGMESSAGE

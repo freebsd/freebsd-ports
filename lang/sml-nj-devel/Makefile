@@ -178,8 +178,8 @@ pre-install:
 	( ${FIND} -s -d ${MLSRCSBASE} -type d | \
 	${AWK} '{ print "@dirrm ${MLROOTRELATIVE}/" $$0 }' ) ) | \
 	${EGREP} -v ${MLSRCEXCLUDEREGEX} > ${MLSRCPLIST}
-	@${GREP} -h ^[^@] ${MLPLISTFILES} | sort -u > ${PLIST}
-	@${GREP} -h ^@dirrm ${MLPLISTFILES} | sort -r -u >> ${PLIST}
+	@${GREP} -h ^[^@] ${MLPLISTFILES} | ${SORT} -u > ${PLIST}
+	@${GREP} -h ^@dirrm ${MLPLISTFILES} | ${SORT} -r -u >> ${PLIST}
 	@${ECHO} ' done.'
 .endif
 

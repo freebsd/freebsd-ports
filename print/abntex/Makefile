@@ -18,8 +18,6 @@ RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 NO_BUILD=	yes
-#
-SORT?=		/usr/bin/sort
 
 do-install:
 # extract into staging area

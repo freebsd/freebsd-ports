@@ -23,7 +23,7 @@ BUILD_DEPENDS=	ispell:${PORTSDIR}/textproc/ispell
 WRKSRC=		${WRKDIR}/russian-ispell
 
 post-build:
-	cd ${WRKSRC} && LANG=ru_RU.KOI8-R sort russian.sml > russian.dict
+	cd ${WRKSRC} && LANG=ru_RU.KOI8-R ${SORT} russian.sml > russian.dict
 
 do-install:
 	cd ${WRKSRC} && \

@@ -29,9 +29,10 @@ do-install:
 
 post-install:
 	@cd ${WRKSRC} && ${FIND} . -type f -o -type l | \
-		sed 's,^\.,share/${PORTNAME},' | sort >> ${TMPPLIST}
+		sed 's,^\.,share/${PORTNAME},' | ${SORT} >> ${TMPPLIST}
 	@cd ${WRKSRC} && ${FIND} . -type d | \
-		sed 's,^\.,@dirrm share/${PORTNAME},' | sort -r >> ${TMPPLIST}
+		sed 's,^\.,@dirrm share/${PORTNAME},' | ${SORT} -r \
+			>> ${TMPPLIST}
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

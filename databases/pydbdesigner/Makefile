@@ -46,9 +46,9 @@ post-patch:
 do-build:
 	cd ${WRKSRC};\
 	${ECHO_CMD} bin/${PORTNAME} >${PLIST};\
-	${FIND} . ! -type d | cut -c3- | sort \
+	${FIND} . ! -type d | cut -c3- | ${SORT} \
 		| ${SED} -e "s|^|${MY_SITELIBSUBDIR}/|" >>${PLIST};\
-	${FIND} . -type d | cut -c3- | sort -r \
+	${FIND} . -type d | cut -c3- | ${SORT} -r \
 		| ${SED} -e "s|^|@dirrm ${MY_SITELIBSUBDIR}/|" >>${PLIST}
 
 do-install:

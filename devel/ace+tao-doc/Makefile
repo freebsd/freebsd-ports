@@ -36,7 +36,7 @@ pre-install:
 		n=`${ECHO_CMD} $${f}|${SED} -e 's#^./##'`; \
 		${ECHO_CMD} ${INSTALL_DIR}/$${n} >> ${PLIST}; \
 	done; \
-	sort -r ${DIRLIST} >> ${PLIST}
+	${SORT} -r ${DIRLIST} >> ${PLIST}
 
 do-install:
 	@${ECHO_MSG} "--> Installing files:"; \

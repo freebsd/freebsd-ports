@@ -56,7 +56,7 @@ post-build:
 			${ECHO_CMD} share/man/ja/man$$2/$$1.gz; shift 2; \
 		done; \
 	 fi; \
-	done|sort|uniq >>${PLIST}
+	done|${SORT}|uniq >>${PLIST}
 
 pre-install:
 .for sec in ${MANSECS}

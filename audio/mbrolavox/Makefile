@@ -57,7 +57,7 @@ do-patch:
 pre-install:
 	@${RM} -f ${PLIST}
 	@cd ${WRKSRC}; \
-	for ii in `${FIND} * \! -type d | sort`; do \
+	for ii in `${FIND} * \! -type d | ${SORT}`; do \
 		${ECHO_CMD} share/mbrolavox/$${ii} >> ${PLIST}; \
 	done ; \
 	for ii in `${FIND} -d * -type d`; do \

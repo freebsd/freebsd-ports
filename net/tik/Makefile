@@ -20,8 +20,6 @@ RUN_DEPENDS=	tclsh8.2:${PORTSDIR}/lang/tcl82 \
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/tik
 
-SORT?=		sort
-
 SRCDIRS=	share/tik share/tik/components share/tik/media \
 		share/tik/packages share/tik/strs
 

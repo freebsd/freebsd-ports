@@ -28,7 +28,6 @@ INSTALL_DIR=	${INSTALL} -d -o ${BINOWN} -g ${BINGRP} -m 755
 LDCONFIG_LINUX=	${LINUXBASE}/sbin/ldconfig
 
 HLDSDIR=	/usr/games/hlds_l/
-SORT?=		/usr/bin/sort
 
 # files which should be installed with executables perms
 EXECUTABLES=	hltv hlds hlds_run hlds_amd hlds_i486 hlds_i686

@@ -72,9 +72,11 @@ post-install:
 	@${ECHO_MSG}
 	@${ECHO_MSG} "===>  Making PLIST Phase Start"
 	@cd ${PREFIX}; ${FIND} ${WIKIAUTO:S/^${PREFIX}\///} -type f -o -type l | ${SED} -e 's,^\.,${WIKIAUTO:S|${PREFIX}/||},' >>${TMPPLIST}
-	@cd ${PREFIX}; ${FIND} ${WIKIAUTO:S/^${PREFIX}\///} -type d | sort -r | ${SED} -e 's/^/@dirrm /' >>${TMPPLIST}
+	@cd ${PREFIX}; ${FIND} ${WIKIAUTO:S/^${PREFIX}\///} -type d | \
+		${SORT} -r | ${SED} -e 's/^/@dirrm /' >>${TMPPLIST}
 	@cd ${PREFIX}; ${FIND} ${WIKIPM:S/^${PREFIX}\///} -type f -o -type l | ${SED} -e 's,^\.,${WIKIPM:S|${PREFIX}/||},' >>${TMPPLIST}
-	@cd ${PREFIX}; ${FIND} ${WIKIPM:S/^${PREFIX}\///} -type d | sort -r | ${SED} -e 's/^/@dirrm /' >>${TMPPLIST}
+	@cd ${PREFIX}; ${FIND} ${WIKIPM:S/^${PREFIX}\///} -type d | \
+		${SORT} -r | ${SED} -e 's/^/@dirrm /' >>${TMPPLIST}
 	@${ECHO_MSG} "===>  Making PLIST Phase End"
 
 	@${SED} -e 's|%%EXAMPLESDIR%%|${EXAMPLESDIR}|' \

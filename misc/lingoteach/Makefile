@@ -42,8 +42,6 @@ CONFIGURE_ARGS+=	--enable-debug
 PLIST=		${WRKDIR}/plist
 .endif
 
-SORT?=		/usr/bin/sort
-
 .include <bsd.port.pre.mk>
 
 pre-everything::

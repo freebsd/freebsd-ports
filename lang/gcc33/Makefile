@@ -158,7 +158,7 @@ post-install:
 .for d in ${TARGLIB:S/^${PREFIX}\///} include/gcj include/gnu include/java include/javax
 	cd ${PREFIX} ; if [ -d $d ]; then \
 	    ${FIND} $d -type f -o -type l >>${WRKDIR}/PLIST.lib ;\
-	    ${FIND} $d -type d | sort -r \
+	    ${FIND} $d -type d | ${SORT} -r \
 	        | ${SED} -e 's/^/@dirrm /g' >>${WRKDIR}/PLIST.lib ;\
 	fi
 .endfor

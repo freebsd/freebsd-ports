@@ -32,7 +32,7 @@ pre-install:
 		${ECHO_CMD} bin/sftp >> ${PLIST}.unsorted; \
 		${ECHO_CMD} man/man1/sftp.1.gz >> ${PLIST}.unsorted; \
 	fi
-	@sort -u ${PLIST}.unsorted > ${PLIST}
+	@${SORT} -u ${PLIST}.unsorted > ${PLIST}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/sftp ${PREFIX}/bin/secftp
