@@ -4,7 +4,7 @@
 # Date created:			  Sun Mar 09, 1997
 # Whom:				  David O'Brien (obrien@FreeBSD.org)
 #
-# $Id: Makefile,v 1.4 1997/11/26 01:40:34 obrien Exp $
+# $Id: Makefile,v 1.5 1998/07/28 01:49:59 obrien Exp $
 #
 
 DISTNAME=	john-1.5
@@ -13,6 +13,9 @@ MASTER_SITES=	http://www.false.com/security/john/ \
 		ftp://ftp.false.com/pub/security/john/
 
 MAINTAINER=     obrien@FreeBSD.org
+
+PATCH_SITES=	${MASTER_SITES}
+PATCHFILES=	john-1.5-bugfix.diff
 
 RESTRICTED=	"contains crypto (crypt())"
 
@@ -24,8 +27,8 @@ ALL_TARGET=	${OSNAME}-${ARCHNAME}-any
 .endif
 
 do-configure:
-	${MV} ${WRKDIR}/${DISTNAME}/run/john.ini ${WRKDIR}/${DISTNAME}/run/john.ini.in
-	${SED} -e "s:~/all.chr:${PREFIX}/share/john/all.chr:" \
+	@${MV} ${WRKDIR}/${DISTNAME}/run/john.ini ${WRKDIR}/${DISTNAME}/run/john.ini.in
+	@${SED} -e "s:~/all.chr:${PREFIX}/share/john/all.chr:" \
 	    -e "s:~/alpha.chr:${PREFIX}/share/john/alpha.chr:" \
 	    -e "s:~/digits.chr:${PREFIX}/share/john/digits.chr:" \
 	    ${WRKDIR}/${DISTNAME}/run/john.ini.in > ${WRKDIR}/${DISTNAME}/run/john.ini
