@@ -7,7 +7,7 @@
 
 PORTNAME=	tac_plus
 PORTVERSION=	F4.0.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp-eng.cisco.com/pub/tacacs/
 DISTNAME=	tac_plus.F4.0.4.alpha
