@@ -1,0 +1,11 @@
+--- libs/doc/theme/Makefile.in.orig	Sun Nov  4 18:19:47 2001
++++ libs/doc/theme/Makefile.in	Sun Nov  4 18:20:04 2001
+@@ -62,7 +62,7 @@
+ PACKAGE = @PACKAGE@
+ VERSION = @VERSION@
+ 
+-htmldir = $(prefix)/doc/spirit/theme
++htmldir = $(prefix)/share/doc/spirit/theme
+ 
+ EXTRA_DIST =  bkd.gif bulb.gif bullet.gif gradient.jpg l_arr.gif lens.gif note.gif r_arr.gif spirit_header.jpg u_arr.gif style.css
+ 

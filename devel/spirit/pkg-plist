@@ -1,0 +1,73 @@
+include/spirit/boost/config.hpp
+include/spirit/boost/detail_limits.hpp
+include/spirit/boost/limits.hpp
+include/spirit/boost/multi_pass.hpp
+include/spirit/boost/spirit/actions.hpp
+include/spirit/boost/spirit/chset.hpp
+include/spirit/boost/spirit/composite.hpp
+include/spirit/boost/spirit/debug.hpp
+include/spirit/boost/spirit/directives.hpp
+include/spirit/boost/spirit/exceptions.hpp
+include/spirit/boost/spirit/impl/actions.ipp
+include/spirit/boost/spirit/impl/chset.ipp
+include/spirit/boost/spirit/impl/directives.ipp
+include/spirit/boost/spirit/impl/exceptions.ipp
+include/spirit/boost/spirit/impl/iterators.ipp
+include/spirit/boost/spirit/impl/loops.ipp
+include/spirit/boost/spirit/impl/numerics.ipp
+include/spirit/boost/spirit/impl/operators.ipp
+include/spirit/boost/spirit/impl/parser.ipp
+include/spirit/boost/spirit/impl/primitives.ipp
+include/spirit/boost/spirit/impl/rule.ipp
+include/spirit/boost/spirit/impl/symbols.ipp
+include/spirit/boost/spirit/iterators.hpp
+include/spirit/boost/spirit/loops.hpp
+include/spirit/boost/spirit/numerics.hpp
+include/spirit/boost/spirit/operators.hpp
+include/spirit/boost/spirit/parser.hpp
+include/spirit/boost/spirit/primitives.hpp
+include/spirit/boost/spirit/rule.hpp
+include/spirit/boost/spirit/spirit.hpp
+include/spirit/boost/spirit/spirit_fwd.hpp
+include/spirit/boost/spirit/symbols.hpp
+@dirrm include/spirit/boost/spirit/impl
+@dirrm include/spirit/boost/spirit
+@dirrm include/spirit/boost
+@dirrm include/spirit
+share/doc/spirit/annotations.html
+share/doc/spirit/character_sets.html
+share/doc/spirit/debugging.html
+share/doc/spirit/directives.html
+share/doc/spirit/error_handling.html
+share/doc/spirit/future_directions.html
+share/doc/spirit/index.html
+share/doc/spirit/introduction.html
+share/doc/spirit/iterators_and_parsing.html
+share/doc/spirit/loops.html
+share/doc/spirit/numerics.html
+share/doc/spirit/operators.html
+share/doc/spirit/parametric_parsers.html
+share/doc/spirit/primitives.html
+share/doc/spirit/reference_wrappers.html
+share/doc/spirit/references.html
+share/doc/spirit/semantic_actions.html
+share/doc/spirit/specialized_actions.html
+share/doc/spirit/symbols.html
+share/doc/spirit/the_multi_pass.html
+share/doc/spirit/the_parser.html
+share/doc/spirit/the_rule.html
+share/doc/spirit/the_scanner.html
+share/doc/spirit/theme/bkd.gif
+share/doc/spirit/theme/bulb.gif
+share/doc/spirit/theme/bullet.gif
+share/doc/spirit/theme/gradient.jpg
+share/doc/spirit/theme/l_arr.gif
+share/doc/spirit/theme/lens.gif
+share/doc/spirit/theme/note.gif
+share/doc/spirit/theme/r_arr.gif
+share/doc/spirit/theme/spirit_header.jpg
+share/doc/spirit/theme/style.css
+share/doc/spirit/theme/u_arr.gif
+share/doc/spirit/wrap_up.html
+@dirrm share/doc/spirit/theme
+@dirrm share/doc/spirit
