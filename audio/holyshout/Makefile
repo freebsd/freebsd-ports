@@ -15,9 +15,7 @@ MAINTAINER=	hollywar@mail.holywar.net
 USE_GMAKE=	yes
 
 post-patch:
-	(cd ${WRKSRC} && find . -name Makefile | xargs ${PERL} -pi -e \
-		"s@-O20@${CFLAGS}@g")
-	(cd ${WRKSRC} && find . -name Makefile | xargs ${PERL} -pi -e \
-		"s@-O2@${CFLAGS}@g")
+	(find ${WRKSRC} -name Makefile | xargs ${PERL} -pi -e \
+		"s@-O20@${CFLAGS}@g ; s@-O2@${CFLAGS}@g")
 
 .include <bsd.port.mk>

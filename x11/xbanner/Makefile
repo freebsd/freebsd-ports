@@ -20,8 +20,8 @@ USE_XPM=	yes
 #USE_IMAKE=	yes
 
 post-patch:
-	@${PERL} -pi -e 's|%%X11BASE%%|${X11BASE}|g' ${WRKSRC}/xres.c
-	@${PERL} -pi -e 's|%%X11BASE%%|${X11BASE}|g' ${WRKSRC}/samples/XBanner.ad
+	@${PERL} -pi -e 's|%%X11BASE%%|${X11BASE}|g' \
+		${WRKSRC}/xres.c ${WRKSRC}/samples/XBanner.ad
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/samples/XBanner.ad \

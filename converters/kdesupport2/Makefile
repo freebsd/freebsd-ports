@@ -32,8 +32,8 @@ CONFIGURE_ENV+= LIBQT="-lqt2" MOC="${MOC}" LIBQTFILE="libqt2" \
 USE_GMAKE=	yes
 
 pre-configure:
-	${PERL} -pi -e "s@TOPSUBDIRS libaps@TOPSUBDIRS@g" ${WRKSRC}/configure
-	${PERL} -pi -e "s@odbc libaps@odbc@g" ${WRKSRC}/configure
+	${PERL} -pi -e "s@TOPSUBDIRS libaps@TOPSUBDIRS@g ; \
+		s@odbc libaps@odbc@g" ${WRKSRC}/configure
 	${PERL} -pi -e "s@-version-info 1:1@-version-info 3:0@g" ${WRKSRC}/mimelib/Makefile.in
 
 .include <bsd.port.mk>

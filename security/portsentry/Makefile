@@ -15,8 +15,8 @@ MAINTAINER=	dan@freebsddiary.org
 ALL_TARGET=	freebsd
 
 post-patch:
-	@${PERL} -pi -e 's,__PREFIX__,${PREFIX},g' ${WRKSRC}/portsentry.conf
-	@${PERL} -pi -e 's,__PREFIX__,${PREFIX},g' ${WRKSRC}/portsentry_config.h
+	@${PERL} -pi -e 's,__PREFIX__,${PREFIX},g' \
+		${WRKSRC}/portsentry.conf ${WRKSRC}/portsentry_config.h
 
 do-install:
 .if !exists($(PREFIX)/etc/portsentry.conf)

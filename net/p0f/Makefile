@@ -17,8 +17,8 @@ MAINTAINER=		trevor@FreeBSD.org
 WRKSRC=			${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 post-patch:
-	@${PERL} -pi -e "s=/etc=${PREFIX}/etc=g" ${WRKSRC}/p0f.c
-	@${PERL} -pi -e "s=/etc=${PREFIX}/etc=g" ${WRKSRC}/README
+	@${PERL} -pi -e "s=/etc=${PREFIX}/etc=g ; \
+		s=/etc=${PREFIX}/etc=g" ${WRKSRC}/README
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/p0f ${PREFIX}/bin

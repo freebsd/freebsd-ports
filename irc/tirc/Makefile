@@ -18,8 +18,7 @@ MAKE_FLAGS=	CONF_ARGS="--prefix=${PREFIX}"
 MAN1=		tirc.1
 
 post-patch:
-	@${PERL} -pi -e 's:__PREFIX__:${PREFIX}:g' ${WRKSRC}/*.c
-	@${PERL} -pi -e 's:__PREFIX__:${PREFIX}:g' ${WRKSRC}/*.1
+	@${PERL} -pi -e 's:__PREFIX__:${PREFIX}:g' ${WRKSRC}/*.c ${WRKSRC}/*.1
 
 post-install:
 	strip ${PREFIX}/bin/tirc

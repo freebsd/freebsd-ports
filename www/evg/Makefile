@@ -25,9 +25,9 @@ NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PKGNAME}
 
 post-patch:
-	@ ${PERL} -pi -e 's#/usr/bin/python#${PYTHON_CMD}#' ${WRKSRC}/evg
-	@ ${PERL} -pi -e 's#/usr/X11R6#${X11BASE}#' ${WRKSRC}/evg
-	@ ${PERL} -pi -e 's#/usr/bin/ee#${X11BASE}/bin/xv#' ${WRKSRC}/evg
+	@ ${PERL} -pi -e 's#/usr/bin/python#${PYTHON_CMD}# ; \
+		s#/usr/X11R6#${X11BASE}# ; \
+		s#/usr/bin/ee#${X11BASE}/bin/xv#' ${WRKSRC}/evg
 
 do-install:
 	@ ${MKDIR} ${PYTHON_SITELIBDIR}

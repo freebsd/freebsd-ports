@@ -22,10 +22,9 @@ CONFIGURE_ARGS+=--prefix ${PREFIX} --perl ${PERL5} --make ${GMAKE}
 CONFIGURE_ENV+=	QTDIR=${X11BASE}
 
 pre-configure:
-	@${PERL} -pi -e "s:gcc:${CC}:g" ${WRKSRC}/tmake/lib/freebsd-g++/tmake.conf
-	@${PERL} -pi -e "s:g\+\+:${CXX}:" ${WRKSRC}/tmake/lib/freebsd-g++/tmake.conf
-	@${PERL} -pi -e "s:%%CFLAGS%%:${CFLAGS}:g" ${WRKSRC}/tmake/lib/freebsd-g++/tmake.conf
-	@${PERL} -pi -e "s:%%CXXFLAGS%%:${CXXFLAGS}:g" ${WRKSRC}/tmake/lib/freebsd-g++/tmake.conf
+	@${PERL} -pi -e "s:gcc:${CC}:g ; s:g\+\+:${CXX}:g ; \
+		s:%%CFLAGS%%:${CFLAGS}:g ; \
+		s:%%CXXFLAGS%%:${CXXFLAGS}:g" ${WRKSRC}/tmake/lib/freebsd-g++/tmake.conf
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/doxygen ${PREFIX}/bin

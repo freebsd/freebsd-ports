@@ -20,8 +20,8 @@ NO_BUILD=	yes
 PYTHON?=	${LOCALBASE}/bin/python
 
 pre-install:
-	@${PERL} -pi -e "s:/usr/bin/python:${PYTHON}:g" ${WRKSRC}/pyWeather.py
-	@${PERL} -pi -e "s:pyWeather.py:pyWeather:g" ${WRKSRC}/pyWeather.py
+	@${PERL} -pi -e "s:/usr/bin/python:${PYTHON}:g ; \
+		s:pyWeather.py:pyWeather:g" ${WRKSRC}/pyWeather.py
 
 do-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/pyWeather.py ${PREFIX}/bin/pyWeather

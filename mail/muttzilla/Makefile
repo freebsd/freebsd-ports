@@ -16,19 +16,8 @@ MAINTAINER=	obrien@FreeBSD.org
 pre-configure:
 	@${PERL} -pi.orig \
 		-e "s:/etc/muttzilla.conf:${PREFIX}/etc/muttzilla.conf:g"  \
-		${WRKSRC}/muttzilla.h
-	@${PERL} -pi.orig \
-		-e "s:/etc/muttzilla.conf:${PREFIX}/etc/muttzilla.conf:g"  \
-		${WRKSRC}/mzmail.sh
-	@${PERL} -pi.orig \
-		-e "s:/etc/muttzilla.conf:${PREFIX}/etc/muttzilla.conf:g"  \
-		${WRKSRC}/mzmail.py
-	@${PERL} -pi.orig \
-		-e "s:/etc/muttzilla.conf:${PREFIX}/etc/muttzilla.conf:g"  \
-		${WRKSRC}/mznews.sh
-	@${PERL} -pi.orig \
-		-e "s:/etc/muttzilla.conf:${PREFIX}/etc/muttzilla.conf:g"  \
-		${WRKSRC}/mznews.py
+		${WRKSRC}/muttzilla.h ${WRKSRC}/mzmail.sh ${WRKSRC}/mzmail.py \
+		${WRKSRC}/mznews.sh ${WRKSRC}/mznews.py
 
 post-install:
 .if !defined(NOPORTDOCS)
