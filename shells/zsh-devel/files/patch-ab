@@ -1,5 +1,5 @@
---- Doc/zsh.texi.orig	Mon May  8 18:18:06 2000
-+++ Doc/zsh.texi	Mon May 15 18:50:31 2000
+--- Doc/zsh.texi.orig	Tue May 30 18:17:46 2000
++++ Doc/zsh.texi	Thu Jun  1 00:17:04 2000
 @@ -7,6 +7,10 @@
  @end iftex
  @setfilename zsh.info
@@ -11,7 +11,7 @@
  @c %**end of header
  
  @ifinfo
-@@ -1025,14 +1029,14 @@
+@@ -1185,14 +1189,14 @@
  string by using the `@t{\'}' escape.
  
  @noindent
@@ -24,11 +24,11 @@
  @noindent
  @example
 -print @value{dsq}@value{dsq}
-+print @t{''''}
++print @t{'}@t{'}@t{'}@t{'}
  @end example
  
  @noindent
-@@ -2571,7 +2575,7 @@
+@@ -2674,7 +2678,7 @@
  A history expansion begins with the first character of the @t{histchars}
  parameter, which is `@t{!}' by default, and may occur anywhere on the
  command line; history expansions do not nest.  The `@t{!}' can be escaped
@@ -37,25 +37,25 @@
  to suppress its special meaning.  Double quotes will @emph{not} work for
  this.  Following this history character is an optional event designator
  (@ref{Event Designators}) and then an optional word
-@@ -6137,7 +6141,7 @@
+@@ -6271,7 +6275,7 @@
  @example
  unsetopt localtraps
  trap - INT
 -fn() @{ setopt localtraps; trap @value{dsq} INT; sleep 3; @}
-+fn() @{ setopt localtraps; trap '' INT; sleep 3; @}
++fn() @{ setopt localtraps; trap @t{'}@t{'} INT; sleep 3; @}
  @end example
  
  @noindent
-@@ -6358,7 +6362,7 @@
+@@ -6500,7 +6504,7 @@
  @cindex rc, quoting style
  @cindex quoting style, rc
  @item @t{RC_QUOTES}
 -Allow the character sequence `@t{@value{dsq}}' to signify a single quote
 +Allow the character sequence `@t{'}@t{'}' to signify a single quote
- within singly quoted strings.
- 
- @pindex RCS
-@@ -9373,7 +9377,7 @@
+ within singly quoted strings.  Note this does not apply in quoted strings
+ using the format @t{$'}@var{...}@t{'}, where a backslashed single quote can
+ be used.
+@@ -9528,7 +9532,7 @@
  @item @t{quote-line} (ESC-') (unbound) (unbound)
  Quote the current line; that is, put a `@t{'}' character at the
  beginning and the end, and convert all `@t{'}' characters
@@ -64,39 +64,102 @@
  
  @tindex quote-region
  @item @t{quote-region} (ESC-") (unbound) (unbound)
-@@ -15230,7 +15234,7 @@
+@@ -12350,7 +12354,7 @@
+ 
+ @noindent
+ @example
+-zstyle ':completion:*' group-name @value{dsq}
++zstyle ':completion:*' group-name @t{'}@t{'}
+ @end example
+ 
+ @noindent
+@@ -12583,7 +12587,7 @@
+ 
+ @noindent
+ The default colors are the same as for the GNU @t{ls} command and can be
+-obtained by setting the style to an empty string (i.e. @t{@value{dsq}}).
++obtained by setting the style to an empty string (i.e. @t{'}@t{'}).
+ 
+ @kindex list-packed, completion style
+ @item @t{list-packed}
+@@ -12663,7 +12667,7 @@
+ 
+ @noindent
+ @example
+-zstyle ':completion:*' matcher-list @value{dsq} 'm:@{a-zA-Z@}=@{A-Za-z@}'
++zstyle ':completion:*' matcher-list @t{'}@t{'} 'm:@{a-zA-Z@}=@{A-Za-z@}'
+ @end example
+ 
+ @noindent
+@@ -12677,7 +12681,7 @@
+ @example
+ zstyle ':completion:*' completer _complete _prefix
+ zstyle ':completion:*:complete:*' matcher-list \ 
+-       @value{dsq} 'm:@{a-zA-Z@}=@{A-Za-z@}'
++       @t{'}@t{'} 'm:@{a-zA-Z@}=@{A-Za-z@}'
+ @end example
+ 
+ @noindent
+@@ -12695,7 +12699,7 @@
+ @example
+ zstyle ':completion:*' completer _complete _correct _complete:foo
+ zstyle ':completion:*:complete:*' matcher-list \ 
+-    @value{dsq} 'm:@{a-zA-Z@}=@{A-Za-z@}'
++    @t{'}@t{'} 'm:@{a-zA-Z@}=@{A-Za-z@}'
+ zstyle ':completion:*:foo:*' matcher-list \ 
+     'm:@{a-zA-Z@}=@{A-Za-z@} r:|[-_./]=* r:|=*'
+ @end example
+@@ -15380,7 +15384,7 @@
+ 
+ @noindent
+ @example
+-compctl -M @value{dsq} 'm:@{a-zA-Z@}=@{A-Za-z@}'
++compctl -M @t{'}@t{'} 'm:@{a-zA-Z@}=@{A-Za-z@}'
+ @end example
+ 
+ @noindent
+@@ -15591,7 +15595,7 @@
  
  @noindent
  @example
 -compctl -D -f + -H 0 @value{dsq}
-+compctl -D -f + -H 0 ''
++compctl -D -f + -H 0 @t{'}@t{'}
  @end example
  
  @noindent
-@@ -15318,7 +15322,7 @@
+@@ -15679,7 +15683,7 @@
  
  @noindent
  @example
 -compctl -x 'r[-exec,;]' -l @value{dsq} -- find
-+compctl -x 'r[-exec,;]' -l '' -- find
++compctl -x 'r[-exec,;]' -l @t{'}@t{'} -- find
  @end example
  
  @noindent
-@@ -16469,7 +16473,7 @@
+@@ -16740,7 +16744,7 @@
+ paranoid behaviour, intended to avoid security problems involving
+ a @t{chown} being tricked into affecting files other than the ones
+ intended.  It will refuse to follow symbolic links, so that (for example)
+-``@t{chown luser /tmp/foo/passwd}@value{dsq} can't accidentally chown @t{/etc/passwd}
++``@t{chown luser /tmp/foo/passwd}@t{'}@t{'} can't accidentally chown @t{/etc/passwd}
+ if @t{/tmp/foo} happens to be a link to @t{/etc}.  It will also check
+ where it is after leaving directories, so that a recursive chown of
+ a deep directory tree can't end up recursively chowning @t{/usr} as
+@@ -16831,7 +16835,7 @@
  paranoid behaviour, intended to avoid common security problems involving
  a root-run @t{rm} being tricked into removing files other than the ones
  intended.  It will refuse to follow symbolic links, so that (for example)
 -``@t{rm /tmp/foo/passwd}@value{dsq} can't accidentally remove @t{/etc/passwd}
-+``@t{rm /tmp/foo/passwd}'' can't accidentally remove @t{/etc/passwd}
++``@t{rm /tmp/foo/passwd}@t{'}@t{'} can't accidentally remove @t{/etc/passwd}
  if @t{/tmp/foo} happens to be a link to @t{/etc}.  It will also check
  where it is after leaving directories, so that a recursive removal of
  a deep directory tree can't end up recursively removing @t{/usr} as
-@@ -16868,7 +16872,7 @@
+@@ -17231,7 +17235,7 @@
  @item @t{link}
  If the file is a link and the @t{-L} option is in
  effect, this contains the name of the file linked to, otherwise
 -it is empty.  Note that if this element is selected (``@t{stat +link}@value{dsq})
-+it is empty.  Note that if this element is selected (``@t{stat +link}'')
++it is empty.  Note that if this element is selected (``@t{stat +link}@t{'}@t{'})
  then the @t{-L} option is automatically used.
  
  @end table
