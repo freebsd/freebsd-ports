@@ -3,7 +3,7 @@
 # Date created:		29 October 1994
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.14 1995/04/09 06:11:09 asami Exp $
+# $Id: Makefile,v 1.15 1995/06/26 05:58:07 asami Exp $
 #
 
 DISTNAME=	emacs-19.29
@@ -19,5 +19,8 @@ post-install:
 	gzip -9nf ${PREFIX}/man/man1/emacs.1
 	gzip -9nf ${PREFIX}/man/man1/etags.1
 	gzip -9nf ${PREFIX}/man/man1/ctags.1
+	for file in emacs-19.29 emacsclient etags ctags b2m; do \
+	  strip ${PREFIX}/bin/$$file; \
+	done
 
 .include <bsd.port.mk>
