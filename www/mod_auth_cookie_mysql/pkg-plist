@@ -1,0 +1,8 @@
+libexec/apache/mod_auth_cookie_mysql.so
+@exec %D/sbin/apxs -e -a -n auth_cookie_mysql %D/%f
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%EXAMPLESDIR%%/authform.tmpl
+%%PORTDOCS%%%%EXAMPLESDIR%%/putcookie.cgi
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+@unexec echo "===>  If you do not plan on reinstalling mod_auth_cookie_mysql, you must manually remove"; echo "===>  references to it in httpd.conf."
