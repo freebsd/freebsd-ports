@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	baudline
-PORTVERSION=	0.90
+PORTVERSION=	0.92
 CATEGORIES=	audio linux
-MASTER_SITES=	http://www.geocities.com/sigfriedblip/baudline/ \
-		http://members.telocity.com/~eriko/baudline/
+MASTER_SITES=	http://www.baudline.com/
+PKGNAMEPREFIX=	linux-
 DISTNAME=	baudline_${PORTVERSION:S/.p/pre/}_i686
 
 MAINTAINER=	dyeske@yahoo.com
@@ -19,6 +19,8 @@ ONLY_FOR_ARCHS=	i386
 USE_LINUX=	yes
 NO_BUILD=	yes
 STRIP=
+
+BRANDELF?=	/usr/bin/brandelf
 
 RESTRICTED=	"author requests no distribution except from their site"
 NO_CDROM=	${RESTRICTED}
@@ -46,6 +48,7 @@ pre-everything::
 .endif
 
 do-install:
+	@${BRANDELF} -t Linux ${WRKSRC}/baudline
 	@${INSTALL_PROGRAM} ${WRKSRC}/baudline ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
