@@ -90,7 +90,6 @@ include/gtkhtml/htmltypes.h
 include/gtkhtml/htmlundo-action.h
 include/gtkhtml/htmlundo.h
 include/gtkhtml/htmlvspace.h
-lib/bonobo/plugin/libstorage_http.a
 lib/bonobo/plugin/libstorage_http.so
 lib/libgtkhtml.a
 lib/libgtkhtml.so
