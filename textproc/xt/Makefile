@@ -1,5 +1,5 @@
 # New ports collection makefile for:	XT
-# Version required:	19991102
+# Version required:	19991105
 # Date created:		23 June 1999
 # Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
 #
@@ -7,19 +7,15 @@
 #
 
 DISTNAME=	xt
-PKGNAME=	xt-19991102
+PKGNAME=	xt-19991105
 CATEGORIES=	textproc
 MASTER_SITES=	ftp://ftp.jclark.com/pub/xml/
-EXTRACT_SUFX=	.zip
 
 MAINTAINER=	kuriyama@FreeBSD.org
 
-BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 RUN_DEPENDS=	${PREFIX}/${JAVASUBDIR}/bin/java:${PORTSDIR}/java/jdk
 
-EXTRACT_CMD=	unzip
-EXTRACT_BEFORE_ARGS=	-a -q -L
-EXTRACT_AFTER_ARGS=	# empty
+USE_ZIP=	YES
 NO_WRKSUBDIR=	YES
 PLIST_SUB=	JAVASUBDIR=${JAVASUBDIR}
 
