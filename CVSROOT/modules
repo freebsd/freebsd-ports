@@ -387,6 +387,7 @@ august		ports/www/august
 aumix		ports/audio/aumix
 aureal-kmod	ports/audio/aureal-kmod
 auth_ldap	ports/www/auth_ldap
+autobook	ports/devel/autobook
 autoconf	ports/devel/autoconf
 autoconf213	ports/devel/autoconf213
 autodia		ports/devel/autodia
