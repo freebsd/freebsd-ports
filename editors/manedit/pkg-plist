@@ -1,0 +1,13 @@
+bin/manedit
+bin/manwrap
+share/manedit/help/manpage_writing_procedures
+share/manedit/help/manpage_xml_referance
+share/manedit/icons/manedit.xpm
+share/manedit/templates/api.mpt
+share/manedit/templates/config.mpt
+share/manedit/templates/intro.mpt
+share/manedit/templates/program.mpt
+@dirrm share/manedit/templates
+@dirrm share/manedit/icons
+@dirrm share/manedit/help
+@dirrm share/manedit
