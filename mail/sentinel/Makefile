@@ -24,10 +24,8 @@ USE_REINPLACE=	yes
 .if !exists(/usr/lib/libmilter.a) && !exists(${LOCALBASE}/lib/libmilter.a)
 IGNORE=         requires Sendmail 8.12
 .endif
-.if exists(${LOCALBASE}/lib/libmilter.a)
 CFLAGS+=       -I${LOCALBASE}/include
 LDFLAGS+=      -L${LOCALBASE}/lib
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e \
@@ -35,8 +33,8 @@ post-patch:
 
 do-build:
 	cd ${WRKSRC} && \
-		${CC} ${CFLAGS} -I${LOCALBASE}/include ${PTHREAD_CFLAGS} \
-		-o ${PORTNAME} ${PORTNAME}.c -L${LOCALBASE}/lib \
+		${CC} ${CFLAGS} ${PTHREAD_CFLAGS} \
+		-o ${PORTNAME} ${PORTNAME}.c ${LDFLAGS} \
 		-lmilter -lpcre -lpcreposix ${PTHREAD_LIBS} 
 
 do-install:
