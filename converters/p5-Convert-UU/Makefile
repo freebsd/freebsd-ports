@@ -3,7 +3,7 @@
 # Date created:				October 20th 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-# $Id: Makefile,v 1.11 1997/12/21 21:49:20 vanilla Exp $
+# $Id: Makefile,v 1.12 1998/02/18 18:16:01 vanilla Exp $
 #
 
 DISTNAME=	Convert-UU-0.20
@@ -13,6 +13,8 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Convert
 
 MAINTAINER=	jfitz@FreeBSD.ORG
+
+BROKEN=		perl upgrade
 
 USE_PERL5=	YES
 
