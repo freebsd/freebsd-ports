@@ -10,6 +10,7 @@
     SUBDIR += myphpmoney
     SUBDIR += openhbci
     SUBDIR += p5-Business-CreditCard
+    SUBDIR += p5-Business-OCV
     SUBDIR += p5-Business-OnlinePayment
     SUBDIR += p5-Business-OnlinePayment-2CheckOut
     SUBDIR += p5-Business-OnlinePayment-AuthorizeNet
