@@ -7,7 +7,7 @@
 
 PORTNAME=	automake14
 PORTVERSION=	1.4.5
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	automake
@@ -41,17 +41,20 @@ pre-configure:
 	@${REINPLACE_CMD} -i -e "s,%%X11BASE%%,${X11BASE}," \
 		${WRKSRC}/aclocal.in
 
+pre-install:
+	${MKDIR} ${PREFIX}/share/automake14
+	${MKDIR} ${PREFIX}/share/aclocal14
+	${MKDIR} ${PREFIX}/libexec/automake14
+	# temporary
+	cd ${PREFIX}/share/automake14; ln -s . automake
+	cd ${PREFIX}/share/automake14; ln -s ../aclocal14 aclocal
+
 post-install:
-	@-${RM} -fr ${PREFIX}/libexec/automake14 \
-	@${MKDIR} ${PREFIX}/libexec/automake14
 .for i in aclocal automake
-	@${LN} -s ../../bin/${i}14 \
+	${LN} -s ../../bin/${i}14 \
 		${PREFIX}/libexec/automake14/${i}
 .endfor
 	@install-info ${PREFIX}/info/automake14.info \
 		${PREFIX}/info/dir
-	# temporary
-	${LN} -s . ${PREFIX}/share/automake14/automake
-	${LN} -s ../aclocal14 ${PREFIX}/share/automake14/aclocal
 
 .include <bsd.port.mk>
