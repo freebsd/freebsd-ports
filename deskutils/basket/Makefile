@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=		basket
-PORTVERSION=		0.3
+PORTVERSION=		0.3.1
 CATEGORIES=		deskutils kde
 MASTER_SITES=		http://www.sebastien.laout.tuxfamily.org/basket/
 
