@@ -1,43 +1,72 @@
---- configure.orig	Wed Jun 28 20:37:28 2000
-+++ configure	Fri Jun 30 09:30:38 2000
-@@ -36053,7 +36053,6 @@
-     eval "LIBRARY$unique=set"
-     
-      
+--- configure.orig	Tue Aug 29 20:37:36 2000
++++ configure	Sat Sep  2 10:02:53 2000
+@@ -37824,18 +37824,6 @@
+   fi
+ 
+ 	
+- case "cs" in
+- c|c_r|pthread*) ;;
+- *)
+-
+-   
 -  LIBS="-lcs $LIBS"
- 
-    
-   fi
-@@ -36099,7 +36098,6 @@
-     eval "LIBRARY$unique=set"
-     
-      
--  LIBS="-lcomn $LIBS"
- 
-    
-   fi
-@@ -36122,7 +36120,6 @@
-     eval "LIBRARY$unique=set"
-     
-      
--  LIBS="-lintl $LIBS"
- 
-    
-   fi
-@@ -36131,7 +36128,7 @@
-   ;;
+-
+-
+-  ;;
+-  esac
+-
+-	
+  case "ct" in
+  c|c_r|pthread*) ;;
+  *)
+@@ -37848,30 +37836,7 @@
    esac
  
+ 	
+- case "comn" in
+- c|c_r|pthread*) ;;
+- *)
+-
+-   
+-  LIBS="-lcomn $LIBS"
+-
+-
+-  ;;
+-  esac
+-
+-	
+- case "intl" in
+- c|c_r|pthread*) ;;
+- *)
+-
+-   
+-  LIBS="-lintl $LIBS"
+-
+-
+-  ;;
+-  esac
+-
 -	SYBASE_CT_LIBS="-lcs -lct -lcomn -lintl"
 +	SYBASE_CT_LIBS="-lct"
      old_LDFLAGS=$LDFLAGS
      LDFLAGS="$LDFLAGS -L$SYBASE_CT_LIBDIR"
      echo $ac_n "checking for netg_errstr in -ltcl""... $ac_c" 1>&6
-@@ -36208,7 +36205,6 @@
-     eval "LIBRARY$unique=set"
-     
-      
+@@ -37923,18 +37888,6 @@
+  
+ else
+   echo "$ac_t""no" 1>&6
+- 
+- case "sybtcl" in
+- c|c_r|pthread*) ;;
+- *)
+-
+-   
 -  LIBS="-lsybtcl $LIBS"
+-
+-
+-  ;;
+-  esac
+- 
+ fi
  
-    
-   fi
+     echo $ac_n "checking for insck__getVdate in -linsck""... $ac_c" 1>&6
