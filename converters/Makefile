@@ -23,6 +23,7 @@
     SUBDIR += p5-Convert-ASN1
     SUBDIR += p5-Convert-BER
     SUBDIR += p5-Convert-Recode
+    SUBDIR += p5-Convert-TNEF
     SUBDIR += p5-Convert-UU
     SUBDIR += p5-MIME-Base64
     SUBDIR += p5-Unicode-Map8

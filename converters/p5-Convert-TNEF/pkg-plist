@@ -1,0 +1,21 @@
+lib/perl5/site_perl/%%PERL_VER%%/Convert/TNEF.pm
+lib/perl5/site_perl/%%PERL_VER%%/auto/Convert/TNEF/read_ent.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/Convert/TNEF/read_in.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/Convert/TNEF/read.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/Convert/TNEF/debug_print.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/Convert/TNEF/build_data.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/Convert/TNEF/purge.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/Convert/TNEF/message.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/Convert/TNEF/attachments.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/Convert/TNEF/data.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/Convert/TNEF/name.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/Convert/TNEF/longname.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/Convert/TNEF/datahandle.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/Convert/TNEF/size.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/Convert/TNEF/autosplit.ix
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Convert/TNEF/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/auto/Convert/TNEF
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Convert/TNEF
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Convert 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/auto/Convert 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Convert 2>/dev/null || true
