@@ -1,11 +1,11 @@
---- scripts/safe_mysqld.sh.orig	Wed Nov  4 13:21:22 1998
-+++ scripts/safe_mysqld.sh	Tue Nov 10 16:59:51 1998
+--- scripts/safe_mysqld.sh.orig	Fri Nov 27 00:37:54 1998
++++ scripts/safe_mysqld.sh	Wed Dec 23 23:45:24 1998
 @@ -12,33 +12,9 @@
  
  trap '' 1 2 3 15			# we shouldn't let anyone kill us
  
 -# Check if we are starting this relative (for the binary release)
--if test -f ./data/mysql/db.frm -a -f ./share/mysql/english/errmsg.sys -a \
+-if test -d ./data/mysql -a -f ./share/mysql/english/errmsg.sys -a \
 - -x ./bin/mysqld
 -then
 -  MY_BASEDIR_VERSION=`pwd`		# Where bin, share and data is
