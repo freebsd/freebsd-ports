@@ -8938,6 +8938,7 @@ powwow		ports/games/powwow
 pp		ports/games/pp
 pp3		ports/astro/pp3
 ppantsfonts	ports/x11-fonts/ppantsfonts
+ppars		ports/security/ppars
 ppgen		ports/security/ppgen
 ppl		ports/devel/ppl
 ppm2fli		ports/multimedia/ppm2fli
