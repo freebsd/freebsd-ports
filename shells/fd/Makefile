@@ -3,12 +3,12 @@
 # Date created:         20 Feb 1996
 # Whom:                 Nobuhiro Yasutomi <nobu@psrc.isac.co.jp>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1996/03/20 07:53:43 asami Exp $
 #
 
 DISTNAME=       FD-1.01
 PKGNAME=        fd-1.01
-CATEGORIES+=	misc
+CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.mei.co.jp/free/others/Utilities/
 
 MAINTAINER=	nobu@psrc.isac.co.jp

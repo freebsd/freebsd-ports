@@ -3,11 +3,11 @@
 # Date created:         17 Nov 1995
 # Whom:                 markm
 #
-# $Id: Makefile,v 1.3 1995/11/20 13:43:45 asami Exp $
+# $Id: Makefile,v 1.4 1995/11/26 10:47:25 asami Exp $
 #
 
 DISTNAME=       buffer-1.17
-CATEGORIES+=	misc
+CATEGORIES=	misc
 MASTER_SITES=   ftp://ftp.sun.ac.za/pub/unix/misc/
 
 MAINTAINER=	markm@FreeBSD.ORG

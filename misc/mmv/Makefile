@@ -3,13 +3,12 @@
 # Date created:		2 Feb 1995
 # Whom:			Michael Elbel (me)
 #
-# $Id: Makefile,v 1.10 1996/04/12 08:38:33 asami Exp $
+# $Id: Makefile,v 1.11 1996/06/26 22:33:17 gpalmer Exp $
 #
-
 
 DISTNAME=	mmv
 PKGNAME=	mmv-1.01b
-CATEGORIES+=	misc
+CATEGORIES=	misc
 MASTER_SITES=	ftp://gatekeeper.dec.com/pub/usenet/comp.sources.unix/
 DISTFILES=	part01.Z part02.Z mmv.pch.Z
 
@@ -47,10 +46,10 @@ pre-extract:
 	chmod +x scripts/unshar scripts/makeitapatch
 
 do-extract:
-	@rm -rf ${WRKDIR}
-	@mkdir -p ${WRKDIR}/tmp
+	@${RM} -rf ${WRKDIR}
+	@${MKDIR} ${WRKDIR}/tmp
 	@(cd ${DISTDIR} ; for file in ${DISTFILES}; do \
-		cp $$file ${WRKDIR}/tmp; \
+		${CP} $$file ${WRKDIR}/tmp; \
 	 done ; \
 	 cd ${WRKDIR}/tmp; \
 	 uncompress *; \
@@ -60,21 +59,19 @@ do-extract:
 	 done ; \
 	 ${SCRIPTDIR}/makeitapatch tmp/mmv.pch ; \
 	 mv tmp/mmv.pch ${PATCHDIR}/patch-0a ; \
-	 cat mmv.c.? >mmv.c ; rm mmv.c.? )
+	 ${CAT} mmv.c.? >mmv.c ; rm mmv.c.? )
 
 
 do-install:
 	(cd ${PREFIX}/bin ; rm -f mmv mad mcp mln ; \
 	 cd ${WRKSRC}; \
-	 install ${COPY} ${STRIP} -o ${BINOWN} -g ${BINGRP} -m ${BINMODE} \
-	  mmv ${PREFIX}/bin ; \
+	 ${INSTALL_PROGRAM} mmv ${PREFIX}/bin ; \
 	 ln ${PREFIX}/bin/mmv ${PREFIX}/bin/mad ; \
 	 ln ${PREFIX}/bin/mmv ${PREFIX}/bin/mcp ; \
 	 ln ${PREFIX}/bin/mmv ${PREFIX}/bin/mln ; \
 	 if [ ! -f mmv.1.gz ] ; then gzip mmv.1 ; fi ; \
-	 if [ ! -d ${PREFIX}/man/man1 ]; then mkdir -p ${PREFIX}/man/man1; fi; \
-	 install ${COPY} -o ${BINOWN} -g ${BINGRP} \
-	  mmv.1.gz ${PREFIX}/man/man1 ; )
+	 if [ ! -d ${PREFIX}/man/man1 ]; then ${MKDIR} ${PREFIX}/man/man1; fi; \
+	 ${INSTALL_MAN} mmv.1.gz ${PREFIX}/man/man1 ; )
 
 pre-clean:
 	@rm -f ${PATCHDIR}/patch-0a	# created by do-extract above

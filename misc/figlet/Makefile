@@ -3,12 +3,12 @@
 # Date created:         Sat July 20, 1996
 # Whom:                 David O'Brien (obrien@cs.ucdavis.edu)
 #
-# $Id: Makefile,v 1.1.1.1 1996/08/09 04:17:16 asami Exp $
+# $Id: Makefile,v 1.2 1996/11/03 06:56:33 obrien Exp $
 #
 
 DISTNAME=	figlet2.1.1
 PKGNAME=	figlet-2.1.1
-CATEGORIES+=	misc
+CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.nicoh.com/pub/figlet/program/unix/  \
 		ftp://ftp.wwa.com/pub/Scarecrow/Figlet/Unix/
 EXTRACT_SUFX=	.tar.Z

@@ -3,11 +3,11 @@
 # Date created:         Fri Oct 4, 1996
 # Whom:                 David O'Brien (obrien@cs.ucdavis.edu)
 #
-# $Id: Makefile,v 1.5 1995/04/24 03:38:04 asami Exp $
+# $Id: Makefile,v 1.1.1.1 1996/11/03 08:42:02 obrien Exp $
 #
 
 DISTNAME=	splitvt-1.6.1
-CATEGORIES+=	misc
+CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.cc.gatech.edu/pub/linux/utils/console/  \
 		ftp://sunsite.unc.edu/pub/Linux/utils/console/  \
 		ftp://ftp.funet.fi/pub/Linux/sunsite/utils/console/  \

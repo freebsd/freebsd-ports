@@ -3,7 +3,7 @@
 # Date created:		12 Jul 1995
 # Whom:			torstenb@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.3 1996/06/17 08:33:34 asami Exp $
+# $Id: Makefile,v 1.4 1996/10/16 09:14:08 asami Exp $
 #
 
 DISTNAME=	git-4.3.11
@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://prep.ai.mit.edu/pub/gnu/
 GNU_CONFIGURE=	YES
 
 pre-install:
-	cp ${WRKSRC}/term/.gitrc.ansi \
+	${CP} ${WRKSRC}/term/.gitrc.ansi \
 		${WRKSRC}/term/.gitrc.cons25
 	(cd ${WRKSRC}/term ; patch --quiet -p0 <${FILESDIR}/gitrc.cons25.patch )
 

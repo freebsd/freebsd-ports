@@ -3,12 +3,12 @@
 # Date created:				October 17th 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#   $Id: Makefile,v 1.1.1.1 1996/10/24 08:21:50 jfitz Exp $
+#   $Id: Makefile,v 1.2 1996/10/24 09:57:40 jfitz Exp $
 #
 
 DISTNAME=	Array-PrintCols-1.2
 PKGNAME=	p5-Array-PrintCols-1.2
-CATEGORIES+=	misc
+CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.digital.com/pub/plan/perl/CPAN/modules/by-module/Array/ \
 		ftp://ftp.cdrom.com/pub/perl/CPAN/modules/by-module/Array/ \
 		ftp://ftp.cis.ufl.edu/pub/perl/CPAN/modules/by-module/Array/ \
