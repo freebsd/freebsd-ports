@@ -23,5 +23,9 @@ post-extract:
 
 post-install:
 	strip ${PREFIX}/libexec/idled
+.if !exists(${PREFIX}/etc/rc.d/idled.sh)
+	@${ECHO} "Installing ${PREFIX}/etc/rc.d/idled.sh startup script."
+	${INSTALL_SCRIPT} -m 751 ${FILESDIR}/idled.sh ${PREFIX}/etc/rc.d/idled.sh
+.endif
 
 .include <bsd.port.mk>
