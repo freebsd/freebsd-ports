@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	apache
-PORTVERSION=    1.3.26
-PORTREVISION=   3
+PORTVERSION=    1.3.27
 CATEGORIES=	www
 MASTER_SITES=   http://www.apache.org/dist/httpd/ \
 		ftp://ftp.ccs.neu.edu/net/mirrors/ftp.apache.org/apache/dist/httpd/ \
