@@ -1,13 +1,13 @@
 # New ports collection makefile for:	LotusXSL
-# Version required:	0.17.4
+# Version required:	0.18.4
 # Date created:		23 June 1999
 # Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	lotusxsl_0_17_4
-PKGNAME=	lotusxsl-0.17.4
+DISTNAME=	lotusxsl_0_18_4
+PKGNAME=	lotusxsl-0.18.4
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.alphaworks.ibm.com/formula/lotusxsl/
 #MASTER_SITES=	http://apps.alphaworks.ibm.com/technologies/lotusxsl/
@@ -31,8 +31,8 @@ do-build:
 do-install:
 	${MKDIR} ${DIR}/classes ${DIR}/LotusXSL
 	(cd ${WRKSRC};\
-	 ${INSTALL_DATA} js.jar lotusxsl.jar ${DIR}/classes;\
-	 ${CP} -R apidocs examples images readme_production samples testsuite *.htm? run* xsl-html40s.dtd ${DIR}/LotusXSL;\
+	 ${INSTALL_DATA} js.jar lotusxsl.jar lotusxslbsf.jar ${DIR}/classes;\
+	 ${CP} -R apidocs examples images readme_production *.htm? run* ${DIR}/LotusXSL;\
 	 ${INSTALL_SCRIPT} ${WRKSRC}/lotusxsl ${PREFIX}/bin)
 
 .include <bsd.port.mk>
