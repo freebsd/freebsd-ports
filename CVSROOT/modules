@@ -9677,6 +9677,7 @@ sparc-rtems-g77	ports/devel/sparc-rtems-g77
 sparc-rtems-gcc	ports/devel/sparc-rtems-gcc
 sparc-rtems-gdb	ports/devel/sparc-rtems-gdb
 sparc-rtems-objc	ports/devel/sparc-rtems-objc
+spassgen	ports/sysutils/spassgen
 spdbv		ports/biology/spdbv
 speak		ports/games/speak
 speak_freely	ports/mbone/speak_freely
