@@ -1,13 +1,13 @@
 # New ports collection makefile for:	aspell
-# Version required:	.24
+# Version required:	0.27.2
 # Date created:		7 December 1998
 # Whom:			Josh Gilliam <josh@quick.net>
 #
-# $Id: Makefile,v 1.2 1999/02/28 10:25:56 obrien Exp $
+# $Id: Makefile,v 1.3 1999/02/28 11:49:40 obrien Exp $
 #
 
-DISTNAME=	aspell-.27.1
-PKGNAME=	aspell-0.27.1
+DISTNAME=	aspell-.27.2
+PKGNAME=	aspell-0.27.2
 CATEGORIES=	textproc
 MASTER_SITES=	http://metalab.unc.edu/kevina/aspell/ \
 		ftp://ftp.kddlabs.co.jp/pub/Tools/aspell/ \
@@ -15,20 +15,15 @@ MASTER_SITES=	http://metalab.unc.edu/kevina/aspell/ \
 
 MAINTAINER=	josh@quick.net
 
-.if defined(HAVE_EGCS)
+.include <bsd.port.pre.mk>
+.if ${OSREL} < 4
 BUILD_DEPENDS=	eg++:${PORTSDIR}/lang/egcs
 CC=	egcc
 CXX=	eg++
-.else
-BUILD_DEPENDS=	${PREFIX}/include/stlport/hash_map:${PORTSDIR}/devel/stlport
 .endif
 
 GNU_CONFIGURE=	yes
-.if defined(HAVE_EGCS)
 CONFIGURE_ENV=	CXXFLAGS="${CXXFLAGS} -I${WRKSRC}"
-.else
-CONFIGURE_ENV=	CXXFLAGS="${CXXFLAGS} -I${PREFIX}/include/stlport"
-.endif
 USE_GMAKE=	yes
 MAKE_ARGS=	NOPORTDOCS=${NOPORTDOCS}
 
@@ -52,4 +47,4 @@ pre-install:
 	          ${WRKSRC}/manual/man-text/D_Glossary.txt \
 	          ${WRKSRC}/manual/man-text/E_Copyright.txt
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
