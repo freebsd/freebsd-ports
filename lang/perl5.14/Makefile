@@ -39,6 +39,11 @@ CONFIGURE_ARGS=	-sde -Dprefix=${PREFIX} \
 	-Ui_malloc -Ui_iconv -Uinstallusrbinperl \
 	-Dcc="${CC}" -Doptimize="${CFLAGS}" -Duseshrplib \
 	-Dccflags=-DAPPLLIB_EXP=\"${BSDPAN_DEST}\"
+LOCALE_CLEANUP=	LANG="" LC_ALL="" LC_COLLATE="" LC_CTYPE="" \
+		LC_MESSAGES="" LC_MONETARY="" LC_NUMERIC="" \
+		LC_TIME=""
+CONFIGURE_ENV+=	${LOCALE_CLEANUP}
+MAKE_ENV+=	${LOCALE_CLEANUP}
 
 .include "Makefile.man"
 .include <bsd.port.pre.mk>
