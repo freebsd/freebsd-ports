@@ -1,0 +1,11 @@
+--- src/video_out/Makefile.in.orig	Tue Apr  6 21:57:52 2004
++++ src/video_out/Makefile.in	Tue Apr  6 21:58:35 2004
+@@ -280,8 +280,6 @@
+ #opengl_module = xineplug_vo_out_opengl.la
+ #endif
+ @HAVE_SYNCFB_TRUE@@HAVE_X11_TRUE@syncfb_module = xineplug_vo_out_syncfb.la
+-@HAVE_SUNFB_TRUE@@HAVE_X11_TRUE@pgx64_module = xineplug_vo_out_pgx64.la
+-@HAVE_SUNFB_TRUE@@HAVE_X11_TRUE@pgx32_module = xineplug_vo_out_pgx32.la
+ 
+ @HAVE_VIDIX_TRUE@vidix_module = xineplug_vo_out_vidix.la
+ 

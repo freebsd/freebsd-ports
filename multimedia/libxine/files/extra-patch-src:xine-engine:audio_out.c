@@ -1,6 +1,16 @@
---- src/xine-engine/audio_out.c.orig	Thu Dec 25 09:24:36 2003
-+++ src/xine-engine/audio_out.c	Wed Jan  7 21:19:54 2004
-@@ -429,7 +429,7 @@
+--- src/xine-engine/audio_out.c.orig	Wed Mar 17 05:21:58 2004
++++ src/xine-engine/audio_out.c	Wed Apr  7 23:09:00 2004
+@@ -63,6 +63,9 @@
+ /* required for FNDELAY decl */
+ #define _BSD_SOURCE 1
+ 
++#define INT16_MAX 0x7fff
++#define INT16_MIN (-0x7fff-1)
++
+ #ifdef HAVE_CONFIG_H
+ #include "config.h"
+ #endif
+@@ -452,7 +455,7 @@
    num_frames = pts_len * this->frames_per_kpts / 1024;
  
    xprintf (this->xine, XINE_VERBOSITY_DEBUG,
@@ -9,7 +19,7 @@
  
    if ((this->output.mode == AO_CAP_MODE_A52) || (this->output.mode == AO_CAP_MODE_AC5)) {
      write_pause_burst(this,num_frames);
-@@ -792,7 +792,7 @@
+@@ -831,7 +834,7 @@
      this->resample_sync_factor = (avg_gap < 0) ? 0.995 : 1.005;
  
      llprintf (LOG_RESAMPLE_SYNC,
@@ -18,7 +28,7 @@
      return 0;
  
    } else if (info->reduce_gap && abs(avg_gap) < 50) {
-@@ -826,7 +826,7 @@
+@@ -865,7 +868,7 @@
         * this during calculation */
        num_frames = (this->do_resample) ? (buf->num_frames * this->frame_rate_factor)
          : buf->num_frames;
@@ -27,7 +37,7 @@
               avg_gap, gap_diff, num_frames * info->window * info->last_factor,
               this->resample_sync_factor);
  #endif
-@@ -981,7 +981,7 @@
+@@ -1020,7 +1023,7 @@
       */
  
      hw_vpts = cur_time;
@@ -36,7 +46,7 @@
  
      /* External A52 decoder delay correction */
      if ((this->output.mode==AO_CAP_MODE_A52) || (this->output.mode==AO_CAP_MODE_AC5)) 
-@@ -994,7 +994,7 @@
+@@ -1033,7 +1036,7 @@
       * calculate gap:
       */
      gap = in_buf->vpts - hw_vpts;
@@ -45,7 +55,7 @@
               hw_vpts, in_buf->vpts, gap);
  
      if (this->resample_sync_method) {
-@@ -1018,7 +1018,7 @@
+@@ -1057,7 +1060,7 @@
        lprintf ("loop: drop package, next fifo\n");
        fifo_append (this->free_fifo, in_buf);
  
@@ -54,7 +64,7 @@
                 in_buf->vpts, gap);
        in_buf = NULL;
  
-@@ -1252,7 +1252,7 @@
+@@ -1286,7 +1289,7 @@
    this->frames_per_kpts   = (this->output.rate * 1024) / 90000;
    this->audio_step        = ((int64_t)90000 * (int64_t)32768) / (int64_t)this->input.rate;
    
@@ -63,7 +73,7 @@
    return this->output.rate;
  }
  
-@@ -1355,7 +1355,7 @@
+@@ -1395,7 +1398,7 @@
  
    buf->extra_info->vpts = buf->vpts;
           
