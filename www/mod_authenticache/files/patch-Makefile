@@ -1,0 +1,31 @@
+--- Makefile.orig	Sat Mar  6 02:03:42 2004
++++ Makefile	Sat Mar  6 12:04:51 2004
+@@ -3,14 +3,16 @@
+ NAME = mod_authenticache
+ VERSION = 2.0.8
+ 
+-CC = `apxs -q CC`
++CC = `${APXS} -q CC`
+ DEFS = -DVERSION=\"$(VERSION)\"
+-INCS = -I`apxs -q INCLUDEDIR`
+-FLGS = -s -O3 -Wall -pipe
++INCS = -I`${APXS} -q INCLUDEDIR`
++FLGS = ${CFLAGS}
+ OBJS = $(NAME).o
+ #EXPS = /u/webs/ap-home/modules/httpd.exp /u/webs/ap-home/lib/apr.exp /u/webs/ap-home/lib/aprutil.exp
+ #LIBS = -L../truerand -lrand
+ 
++all: $(NAME).so
++
+ $(NAME).so: $(OBJS) $(EXPS)
+ 	$(CC) $(FLGS) -fpic -shared -o $@ $^ $(LIBS)
+ 
+@@ -21,7 +23,7 @@
+ 	-rm -f *.o *.so
+ 
+ install: $(NAME).so
+-	-cp -p $(NAME).so `apxs -q LIBEXECDIR`
++	-cp -p $(NAME).so `${APXS} -q LIBEXECDIR`
+ 
+ dist: clean
+ 	( cd ..; \
