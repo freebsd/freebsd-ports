@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	mod_security
-PORTVERSION=	1.5
+PORTVERSION=	1.5.1
 CATEGORIES=	www
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	mod-security
-DISTNAME=	${PORTNAME}_${PORTVERSION}
+MASTER_SITES=	http://www.modsecurity.org/download/
 
 MAINTAINER=	sysadmin@alexdupre.com
 COMMENT=	An intrusion detection and prevention engine
@@ -37,7 +35,7 @@ SO=		so
 BUILD_DEPENDS+= ${APXS}:${APACHE_PORT}
 RUN_DEPENDS+=   ${APXS}:${APACHE_PORT}
 
-DOCS=		CHANGES INSTALL LICENSE README modsecurity-manual-v1.5.pdf
+DOCS=		CHANGES INSTALL LICENSE README modsecurity-manual-v1.5.1.pdf
 
 do-build:
 	@cd ${APWRKSRC} && ${APXS} -c mod_security.c
