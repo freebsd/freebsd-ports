@@ -8,13 +8,19 @@
 PORTNAME=	tcl
 PORTVERSION=	8.3.0
 CATEGORIES=	lang tcl83
-MASTER_SITES=	ftp://ftp.scriptics.com/pub/tcl/tcl8_3/
+MASTER_SITES=	${MASTER_SITE_TCLTK}
+MASTER_SITE_SUBDIR=	tcl8_3
 DISTNAME=	${PORTNAME}${PORTVERSION}
+
+PATCH_SITES=	ftp://ftp.neosoft.com/pub/tcl/sorted/packages-8.0/devel/ \
+		http://www.neosoft.com/tcl/ftparchive/sorted/packages-8.0/devel/
+PATCHFILES=	${PORTNAME}${PORTVERSION}plus.patch.gz
 
 MAINTAINER=	jseger@FreeBSD.org
 
 Y2K=            http://www.scriptics.com/Y2K.html
 
+PATCH_DIST_ARGS= -d ${WRKDIR}/${DISTNAME} -E ${PATCH_DIST_STRIP}
 WRKSRC=		${WRKDIR}/${DISTNAME}/unix
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared
@@ -34,8 +40,8 @@ MAN3=	Access.3 AddErrInfo.3 Alloc.3 AllowExc.3 AppInit.3 AssocData.3 \
 	DetachPids.3 DoOneEvent.3 DoWhenIdle.3 DoubleObj.3 Encoding.3 Eval.3 \
 	Exit.3 ExprLong.3 ExprLongObj.3 FindExec.3 GetCwd.3 GetHostName.3 \
 	GetIndex.3 GetInt.3 GetOpnFl.3 GetStdChan.3 GetVersion.3 Hash.3 \
-	InitStubs.3 IntObj.3 Interp.3 LinkVar.3 ListObj.3 Notifier.3 Object.3 \
-	ObjectType.3 OpenFileChnl.3 OpenTcp.3 ParseCmd.3 PkgRequire.3 \
+	InitStubs.3 IntObj.3 Interp.3 LinkVar.3 ListObj.3 MainLoop.3 Notifier.3\
+	Object.3 ObjectType.3 OpenFileChnl.3 OpenTcp.3 ParseCmd.3 PkgRequire.3 \
 	Preserve.3 PrintDbl.3 RecEvalObj.3 RecordEval.3 RegExp.3 SaveResult.3 \
 	SetErrno.3 SetRecLmt.3 SetResult.3 SetVar.3 Sleep.3 SplitList.3 \
 	SplitPath.3 StaticPkg.3 StrMatch.3 StringObj.3 Tcl_Main.3 Thread.3 \
