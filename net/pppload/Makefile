@@ -3,7 +3,7 @@
 # Date created:        30 January 1998
 # Whom:                Sean Cole <scole@aracnet.com>
 #
-# $Id: Makefile,v 1.2 1998/02/16 09:10:52 asami Exp $
+# $Id: Makefile,v 1.1.1.1 1998/02/16 15:25:04 steve Exp $
 #
 
 DISTNAME=	pppload-1.0
@@ -17,7 +17,6 @@ LIB_DEPENDS=	qt:${PORTSDIR}/x11/qt
 
 MAN1=		pppload.1
 
-BROKEN=		install
 USE_GMAKE=	yes
 
 .include <bsd.port.mk>
