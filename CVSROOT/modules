@@ -2346,6 +2346,7 @@ greed_game	ports/games/greed
 grep		src/gnu/usr.bin/grep
 grepmail	ports/mail/grepmail
 gretl		ports/misc/gretl
+grhino		ports/games/grhino
 gri		ports/math/gri
 gridpix		ports/graphics/gridpix
 gringotts	ports/security/gringotts
