@@ -1,17 +1,17 @@
---- mpg123.c.orig	Wed Jun 16 01:51:36 1999
-+++ mpg123.c	Fri Aug 13 15:25:52 1999
+--- mpg123.c.orig	Fri Jun 18 14:18:11 1999
++++ mpg123.c	Fri May  5 00:07:02 2000
 @@ -27,6 +27,10 @@
  #include <sched.h>
  #endif
  
 +#ifdef __FreeBSD__
-+#include <floatingpoint.h>
++#include <ieeefp.h>
 +#endif
 +
  #include "mpg123.h"
  #include "getlopt.h"
  #include "buffer.h"
-@@ -780,6 +784,10 @@
+@@ -784,6 +788,10 @@
          _wildcard(&argc,&argv);
  #endif
  
@@ -22,7 +22,7 @@
  	if(sizeof(short) != 2) {
  		fprintf(stderr,"Ouch SHORT has size of %d bytes (required: '2')\n",(int)sizeof(short));
  		exit(1);
-@@ -913,17 +921,6 @@
+@@ -917,17 +925,6 @@
  				&dirname, &filename))
  				fprintf(stderr, "\nDirectory: %s", dirname);
  			fprintf(stderr, "\nPlaying MPEG stream from %s ...\n", filename);
