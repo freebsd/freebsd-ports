@@ -219,6 +219,7 @@ lib/php/build/shtool
 %%CLI%%%%PEAR%%share/pear/bootstrap/PEAR/Dependency.php
 %%CLI%%%%PEAR%%share/pear/bootstrap/PEAR/DependencyDB.php
 %%CLI%%%%PEAR%%share/pear/bootstrap/PEAR/Downloader.php
+%%CLI%%%%PEAR%%share/pear/bootstrap/PEAR/ErrorStack.php
 %%CLI%%%%PEAR%%share/pear/bootstrap/PEAR/Installer.php
 %%CLI%%%%PEAR%%share/pear/bootstrap/PEAR/Packager.php
 %%CLI%%%%PEAR%%share/pear/bootstrap/PEAR/Registry.php
