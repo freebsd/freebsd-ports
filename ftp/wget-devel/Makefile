@@ -7,6 +7,7 @@
 
 PORTNAME=	wget
 PORTVERSION=	1.8.2
+PORTREVISION=	1
 CATEGORIES=	ftp www
 MASTER_SITES=	${MASTER_SITE_GNU} \
 		ftp://ftp.dl.ac.uk/ccp14/ftp-mirror/wget/pub/unix/util/wget/ \
@@ -22,6 +23,7 @@ LIB_DEPENDS=	intl.2:${PORTSDIR}/devel/gettext
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
+USE_PERL5=	yes		# only for pod2man
 
 .if defined(WITHOUT_SSL)
 CONFIGURE_ARGS=	--with-ssl=no
@@ -30,6 +32,8 @@ USE_OPENSSL=	yes
 .endif
 CONFIGURE_ENV+=	CPPFLAGS=-I${LOCALBASE}/include \
 		LIBS=-L${LOCALBASE}/lib
+
+MAN1=		wget.1
 
 post-patch:
 	${RM} -f ${WRKSRC}/doc/wget.info*
