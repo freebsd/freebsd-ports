@@ -44,7 +44,7 @@ registerVM () {
 
     VM=`/bin/echo "${1}" | sed 's|#.*||'`
     if [ ! -x ${VM} ]; then
-        /bin/echo "${IAM}: warning: the specified JavaVM \"${VM}\" either not exists of not executable" >&2
+        /bin/echo "${IAM}: warning: the specified JavaVM \"${VM}\" either not exists or not executable" >&2
     fi
 
     /bin/ed "${CONF}" >/dev/null <<EOF
