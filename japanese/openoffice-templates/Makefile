@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	templates
-PORTVERSION=	1.1.1.20040612
+PORTVERSION=	${OPENOFFICE_VER}.20040612
 PORTREVISION=	0
 CATEGORIES=	japanese editors
 MASTER_SITES=	http://desktop.good-day.net/ooo11/
@@ -20,7 +20,8 @@ PLIST=		${WRKDIR}/pkg-plist
 
 RUN_DEPENDS=	${PREFIX}/${OPENOFFICE}/program/soffice:${PORTSDIR}/japanese/openoffice-1.1
 
-OPENOFFICE=	OpenOffice.org1.1.1
+OPENOFFICE=	OpenOffice.org${OPENOFFICE_VER}
+OPENOFFICE_VER=	1.1.1
 
 OOTEMPLATES=	\
 		A4-kariert.sti			\
