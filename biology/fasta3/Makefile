@@ -8,16 +8,12 @@
 PORTNAME=	fasta3
 PORTVERSION=	33.t08.d4
 CATEGORIES=	biology
-MASTER_SITES=	http://ftp.virginia.edu/pub/fasta/
+MASTER_SITES=	ftp://ftp.virginia.edu/pub/fasta/
 DISTNAME=	fasta${PORTVERSION:S/.//g}
 EXTRACT_SUFX=	.shar.Z
 
-MAINTAINER=	wjv@FreeBSD.org
+MAINTAINER=	fernan@iib.unsam.edu.ar
 COMMENT=	A collection of programs for searching DNA and protein databases, v3
-
-BROKEN=		"Checksum mismatch"
-EXPIRATION_DATE=2004-08-20
-DEPRECATED=	${BROKEN}
 
 NO_CDROM=	May not be sold or incorporated into a commercial product
 WRKSRC=		${WRKDIR}/fasta3
