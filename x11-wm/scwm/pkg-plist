@@ -9,40 +9,91 @@ info/scwm.info
 lib/X11/scwm/decor.scwmrc
 lib/X11/scwm/gjb.scwmrc
 lib/X11/scwm/juhp.scwmrc
-lib/X11/scwm/robbe.scwmrc
 lib/X11/scwm/sds.scwmrc
 lib/X11/scwm/system.scwmrc
 lib/libscwmexec.a
 lib/libscwmexec.la
 lib/libscwmexec.so
 lib/libscwmexec.so.0
+lib/scwm-modules/app/scwm/libbackground.a
+lib/scwm-modules/app/scwm/libbackground.la
+lib/scwm-modules/app/scwm/libbackground.so
+lib/scwm-modules/app/scwm/libbackground.so.0
+lib/scwm-modules/app/scwm/libc-animation.a
+lib/scwm-modules/app/scwm/libc-animation.la
+lib/scwm-modules/app/scwm/libc-animation.so
+lib/scwm-modules/app/scwm/libc-animation.so.0
+lib/scwm-modules/app/scwm/liboverlay-plane.a
+lib/scwm-modules/app/scwm/liboverlay-plane.la
+lib/scwm-modules/app/scwm/liboverlay-plane.so
+lib/scwm-modules/app/scwm/liboverlay-plane.so.0
+lib/scwm-modules/app/scwm/libpie-menus.a
+lib/scwm-modules/app/scwm/libpie-menus.la
+lib/scwm-modules/app/scwm/libpie-menus.so
+lib/scwm-modules/app/scwm/libpie-menus.so.0
+lib/scwm-modules/app/scwm/libxpm-menus.a
+lib/scwm-modules/app/scwm/libxpm-menus.la
+lib/scwm-modules/app/scwm/libxpm-menus.so
+lib/scwm-modules/app/scwm/libxpm-menus.so.0
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
+man/man1/scwm.1.gz
+man/man1/scwmexec.1.gz
+man/man1/scwmrepl.1.gz
+share/scwm-modules/app/scwm/advice.scm
+share/scwm-modules/app/scwm/animation.scm
 share/scwm-modules/app/scwm/auto-raise.scm
 share/scwm-modules/app/scwm/base.scm
 share/scwm-modules/app/scwm/bincomm.scm
+share/scwm-modules/app/scwm/cached-program-exists.scm
+share/scwm-modules/app/scwm/cascade.scm
 share/scwm-modules/app/scwm/decor.scm
+share/scwm-modules/app/scwm/desk-background.scm
 share/scwm-modules/app/scwm/doc.scm
 share/scwm-modules/app/scwm/face.scm
+share/scwm-modules/app/scwm/file.scm
 share/scwm-modules/app/scwm/flux.scm
 share/scwm-modules/app/scwm/fvwm-compat.scm
 share/scwm-modules/app/scwm/fvwm-eval.scm
 share/scwm-modules/app/scwm/fvwm-module.scm
 share/scwm-modules/app/scwm/image-loaders.scm
+share/scwm-modules/app/scwm/listops.scm
+share/scwm-modules/app/scwm/message-window.scm
+share/scwm-modules/app/scwm/minimal.scm
 share/scwm-modules/app/scwm/module-types.scm
 share/scwm-modules/app/scwm/optargs.scm
+share/scwm-modules/app/scwm/placement.scm
 share/scwm-modules/app/scwm/prefs-menu.scm
+share/scwm-modules/app/scwm/report-usage.scm
+share/scwm-modules/app/scwm/shutdown-opts.scm
+share/scwm-modules/app/scwm/sort.scm
+share/scwm-modules/app/scwm/stacking.scm
 share/scwm-modules/app/scwm/std-menus.scm
 share/scwm-modules/app/scwm/style-options.scm
 share/scwm-modules/app/scwm/style.scm
+share/scwm-modules/app/scwm/theme-impl.scm
+share/scwm-modules/app/scwm/themes.scm
+share/scwm-modules/app/scwm/tile.scm
+share/scwm-modules/app/scwm/user-options.scm
+share/scwm-modules/app/scwm/virtual.scm
 share/scwm-modules/app/scwm/wininfo.scm
 share/scwm-modules/app/scwm/winlist.scm
 share/scwm-modules/app/scwm/winops.scm
 share/scwm-modules/app/scwm/wmconfig-menu.scm
+share/scwm-themes/fvwm2.tar.gz
+share/scwm-themes/mwm.tar.gz
+share/scwm-themes/win95.tar.gz
+share/scwm/scwm-concepts.txt
+share/scwm/scwm-hooks.txt
 share/scwm/scwm-procedures.txt
+share/scwm/scwm-variables.txt
 share/scwm/scwm.sgml
 @dirrm lib/X11/scwm
+@dirrm lib/scwm-modules/app/scwm
+@dirrm lib/scwm-modules/app
+@dirrm lib/scwm-modules
+@dirrm share/scwm
 @dirrm share/scwm-modules/app/scwm
 @dirrm share/scwm-modules/app
 @dirrm share/scwm-modules
-@dirrm share/scwm
+@dirrm share/scwm-themes

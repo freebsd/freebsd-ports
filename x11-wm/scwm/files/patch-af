@@ -1,0 +1,11 @@
+--- utilities/Makefile.in.orig	Wed Apr  7 07:54:19 1999
++++ utilities/Makefile.in	Wed Apr  7 07:54:27 1999
+@@ -105,7 +105,7 @@
+ x_ldflags = @x_ldflags@
+ x_libs = @x_libs@
+ 
+-SUBDIRS = dev emacs libscwmexec scwmexec scwmrepl 
++SUBDIRS = dev libscwmexec scwmexec scwmrepl 
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = ../include/config.h
+ CONFIG_CLEAN_FILES = 
