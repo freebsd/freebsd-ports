@@ -8,7 +8,7 @@
 PORTNAME=	sftp
 PORTVERSION=	0.9.9
 CATEGORIES=	ftp security
-MASTER_SITES=	ftp://ftp.xbill.org/pub/sftp/
+MASTER_SITES=	ftp://ftp.xbill.org/pub/sftp/old/
 
 MAINTAINER=	cy@FreeBSD.org
 
