@@ -22,6 +22,12 @@ USE_GCC=	3.3
 DOC_FILES=	README
 MAN1=		doscan.1
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=		"Does not compile"
+.endif
+
 post-install:
 .ifndef(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
@@ -30,4 +36,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
