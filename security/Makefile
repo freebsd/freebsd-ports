@@ -166,6 +166,7 @@
     SUBDIR += libprelude
     SUBDIR += libsectok
     SUBDIR += libtasn1
+    SUBDIR += libtomcrypt
     SUBDIR += libwhisker
     SUBDIR += liedentd
     SUBDIR += linux-pam-docs

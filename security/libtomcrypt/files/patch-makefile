@@ -1,0 +1,50 @@
+--- makefile.orig	Wed Dec 24 20:59:55 2003
++++ makefile	Sat Apr 10 23:01:52 2004
+@@ -52,9 +52,9 @@
+ #LIBPATH-The directory for libtomcrypt to be installed to.
+ #INCPATH-The directory to install the header files for libtomcrypt.
+ #DATAPATH-The directory to install the pdf docs.
+-DESTDIR=
+-LIBPATH=/usr/lib
+-INCPATH=/usr/include
++DESTDIR=$(PREFIX)
++LIBPATH=/lib
++INCPATH=/include
+ DATAPATH=/usr/share/doc/libtomcrypt/pdf
+ 
+ #List of objects to compile.
+@@ -106,6 +106,7 @@
+ 
+ #This rule makes the test program included with libtomcrypt
+ test: library $(TESTOBJECTS)
++	mv $(TEST).o demos
+ 	$(CC) $(TESTOBJECTS) $(LIBNAME) -o $(TEST) $(WARN)
+ 
+ #This rule makes the hash program included with libtomcrypt
+@@ -129,13 +130,19 @@
+ #This rule installs the library and the header files. This must be run
+ #as root in order to have a high enough permission to write to the correct
+ #directories and to set the owner and group to root.
+-install: library docs
+-	install -d -g root -o root $(DESTDIR)$(LIBPATH)
+-	install -d -g root -o root $(DESTDIR)$(INCPATH)
+-	install -d -g root -o root $(DESTDIR)$(DATAPATH)
+-	install -g root -o root $(LIBNAME) $(DESTDIR)$(LIBPATH)
+-	install -g root -o root $(HEADERS) $(DESTDIR)$(INCPATH)
+-	install -g root -o root crypt.pdf $(DESTDIR)$(DATAPATH)
++install: library docs install-nodocs
++	install -d -g wheel -o root $(DOCSDIR)
++	install -g wheel -o root crypt.pdf $(DOCSDIR)
++	install -g wheel -o root notes/* $(DOCSDIR)
++
++install-nodocs:
++	install -d -g wheel -o root $(DESTDIR)$(LIBPATH)
++	install -d -g wheel -o root $(DESTDIR)$(INCPATH)
++	install -d -g wheel -o root $(EXAMPLESDIR)
++	install -g wheel -o root $(LIBNAME) $(DESTDIR)$(LIBPATH)
++	install -g wheel -o root $(HEADERS) $(DESTDIR)$(INCPATH)
++	install -g wheel -o root examples/* $(EXAMPLESDIR)
++	install -g wheel -o root demos/* $(EXAMPLESDIR)
+ 
+ #This rule cleans the source tree of all compiled code, not including the pdf
+ #documentation.

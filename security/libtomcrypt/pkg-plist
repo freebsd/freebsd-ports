@@ -1,0 +1,37 @@
+lib/libtomcrypt.a
+include/tommath.h
+include/mycrypt_cfg.h
+include/mycrypt_gf.h
+include/mycrypt_kr.h
+include/mycrypt_misc.h
+include/mycrypt_prng.h
+include/mycrypt_cipher.h
+include/mycrypt_hash.h
+include/mycrypt_macros.h
+include/mycrypt_pk.h
+include/mycrypt.h
+include/mycrypt_argchk.h
+include/mycrypt_custom.h
+%%EXAMPLESDIR%%/ch1-01.c
+%%EXAMPLESDIR%%/ch1-02.c
+%%EXAMPLESDIR%%/ch1-03.c
+%%EXAMPLESDIR%%/ch2-01.c
+%%EXAMPLESDIR%%/encrypt.c
+%%EXAMPLESDIR%%/small.c
+%%EXAMPLESDIR%%/timer.asm
+%%EXAMPLESDIR%%/timer.h
+%%EXAMPLESDIR%%/x86_prof.c
+%%EXAMPLESDIR%%/hashsum.c
+%%EXAMPLESDIR%%/test.c
+%%EXAMPLESDIR%%/timer.c
+%%EXAMPLESDIR%%/tv_gen.c
+%%PORTDOCS%%%%DOCSDIR%%/crypt.pdf
+%%PORTDOCS%%%%DOCSDIR%%/cipher_tv.txt
+%%PORTDOCS%%%%DOCSDIR%%/hmac_tv.txt
+%%PORTDOCS%%%%DOCSDIR%%/hash_tv.txt
+%%PORTDOCS%%%%DOCSDIR%%/omac_tv.txt
+%%PORTDOCS%%%%DOCSDIR%%/tech0001.txt
+%%PORTDOCS%%%%DOCSDIR%%/tech0002.txt
+%%PORTDOCS%%%%DOCSDIR%%/tech0003.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%EXAMPLESDIR%%
