@@ -1,6 +1,7 @@
 # $FreeBSD$
 #
 
+    SUBDIR += SETIsupport
     SUBDIR += dgpsip
     SUBDIR += ephem
     SUBDIR += glunarclock
