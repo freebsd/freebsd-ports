@@ -18,7 +18,7 @@ COMMENT=	MSN Messenger
 LIB_DEPENDS=	Imlib.5:${PORTSDIR}/graphics/imlib
 RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84 \
 		convert:${PORTSDIR}/graphics/ImageMagick \
-		${LOCALBASE}/lib/tcllib1.4/base64/base64.tcl:${PORTSDIR}/devel/tcllib
+		${LOCALBASE}/lib/tcllib1.6/base64/base64.tcl:${PORTSDIR}/devel/tcllib
 
 USE_REINPLACE=	yes
 WRKSRC=		${WRKDIR}/msn
