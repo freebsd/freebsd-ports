@@ -2,46 +2,79 @@ bin/sim
 bin/simctrl
 lib/menu/sim-kde.menu
 share/applnk/Internet/sim.desktop
-share/icons/locolor/32x32/apps/sim.png
-share/icons/locolor/16x16/apps/sim.png
+share/apps/sim/pict/splash.png
+share/apps/sim/sounds/alert.wav
+share/apps/sim/sounds/auth.wav
+share/apps/sim/sounds/chat.wav
+share/apps/sim/sounds/file.wav
+share/apps/sim/sounds/filedone.wav
+share/apps/sim/sounds/message.wav
+share/apps/sim/sounds/sms.wav
+share/apps/sim/sounds/startup.wav
+share/apps/sim/sounds/url.wav
 share/icons/hicolor/16x16/apps/sim.png
 share/icons/hicolor/32x32/apps/sim.png
+share/icons/locolor/16x16/apps/sim.png
+share/icons/locolor/32x32/apps/sim.png
 share/locale/bg/LC_MESSAGES/sim.mo
 share/locale/cs/LC_MESSAGES/sim.mo
 share/locale/de/LC_MESSAGES/sim.mo
 share/locale/es/LC_MESSAGES/sim.mo
-share/locale/he/LC_MESSAGES/sim.mo
 share/locale/fr/LC_MESSAGES/sim.mo
+share/locale/he/LC_MESSAGES/sim.mo
 share/locale/it/LC_MESSAGES/sim.mo
 share/locale/nl/LC_MESSAGES/sim.mo
 share/locale/pl/LC_MESSAGES/sim.mo
-share/locale/sk/LC_MESSAGES/sim.mo
 share/locale/ru/LC_MESSAGES/sim.mo
+share/locale/sk/LC_MESSAGES/sim.mo
 share/locale/tr/LC_MESSAGES/sim.mo
 share/locale/uk/LC_MESSAGES/sim.mo
 share/locale/zh_TW/LC_MESSAGES/sim.mo
-share/apps/sim/sounds/auth.wav
-share/apps/sim/sounds/message.wav
-share/apps/sim/sounds/url.wav
-share/apps/sim/sounds/alert.wav
-share/apps/sim/sounds/sms.wav
-share/apps/sim/sounds/file.wav
-share/apps/sim/sounds/filedone.wav
-share/apps/sim/sounds/chat.wav
-share/apps/sim/sounds/startup.wav
-share/apps/sim/pict/splash.png
-@dirrm lib/menu
-@unexec rmdir %D/share/applnk/Internet 2>/dev/null || true
-@unexec rmdir %D/share/applnk 2>/dev/null || true
+@unexec rmdir %D/share/locale/zh_TW/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/zh_TW 2>/dev/null || true
+@unexec rmdir %D/share/locale/uk/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/uk 2>/dev/null || true
+@unexec rmdir %D/share/locale/tr/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/tr 2>/dev/null || true
+@unexec rmdir %D/share/locale/sk/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/sk 2>/dev/null || true
+@unexec rmdir %D/share/locale/ru/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/ru 2>/dev/null || true
+@unexec rmdir %D/share/locale/pl/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/pl 2>/dev/null || true
+@unexec rmdir %D/share/locale/nl/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/nl 2>/dev/null || true
+@unexec rmdir %D/share/locale/it/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/it 2>/dev/null || true
+@unexec rmdir %D/share/locale/he/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/he 2>/dev/null || true
+@unexec rmdir %D/share/locale/fr/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/fr 2>/dev/null || true
+@unexec rmdir %D/share/locale/es/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/es 2>/dev/null || true
+@unexec rmdir %D/share/locale/de/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/de 2>/dev/null || true
+@unexec rmdir %D/share/locale/cs/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/cs 2>/dev/null || true
+@unexec rmdir %D/share/locale/bg/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/bg 2>/dev/null || true
+@unexec rmdir %D/share/locale 2>/dev/null || true
 @unexec rmdir %D/share/icons/locolor/32x32/apps 2>/dev/null || true
 @unexec rmdir %D/share/icons/locolor/32x32 2>/dev/null || true
 @unexec rmdir %D/share/icons/locolor/16x16/apps 2>/dev/null || true
 @unexec rmdir %D/share/icons/locolor/16x16 2>/dev/null || true
 @unexec rmdir %D/share/icons/locolor 2>/dev/null || true
-@unexec rmdir %D/share/icons/hicolor/16x16/apps 2>/dev/null || true
-@unexec rmdir %D/share/icons/hicolor/16x16 2>/dev/null || true
 @unexec rmdir %D/share/icons/hicolor/32x32/apps 2>/dev/null || true
 @unexec rmdir %D/share/icons/hicolor/32x32 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/16x16/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/16x16 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor 2>/dev/null || true
+@unexec rmdir %D/share/icons 2>/dev/null || true
 @dirrm share/apps/sim/sounds
 @dirrm share/apps/sim/pict
+@dirrm share/apps/sim/icons
 @dirrm share/apps/sim
+@unexec rmdir %D/share/apps 2>/dev/null || true
+@unexec rmdir %D/share/applnk/Internet 2>/dev/null || true
+@unexec rmdir %D/share/applnk 2>/dev/null || true
+@dirrm lib/menu

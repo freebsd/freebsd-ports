@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	simicq
-PORTVERSION=	0.8.2
+PORTVERSION=	0.8.3
 CATEGORIES=	net kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME:S/mi/m-i/}
@@ -18,17 +18,17 @@ USE_GMAKE=	yes
 USE_QT_VER=	3
 USE_PERL5_BUILD=	yes
 GNU_CONFIGURE=	yes
+USE_REINPLACE=	yes
+
 .if !defined(WITHOUT_SSL)
 USE_OPENSSL=	yes
 .else
 CONFIGURE_ARGS+=--disable-openssl
 .endif
-CONFIGURE_TARGET=
-CONFIGURE_ARGS+=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 .if defined(WITHOUT_KDE)
 CONFIGURE_ARGS+=	--disable-kde --enable-mt
-USE_REINPLACE=	yes
 .else
 USE_KDELIBS_VER=	3
 .endif
@@ -38,5 +38,6 @@ post-patch:
 	${REINPLACE_CMD} -e "s,qtlib=\"qt\",qtlib=\"qt-mt -pthread\"," \
 		${WRKSRC}/configure
 .endif
+	${REINPLACE_CMD} -e 's/-O2//g' ${CONFIGURE_WRKSRC}/configure
 
 .include <bsd.port.mk>
