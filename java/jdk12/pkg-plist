@@ -708,6 +708,9 @@ jdk%%JDK_VERSION%%/jre/lib/i386/libcmm.so.1.2.2
 jdk%%JDK_VERSION%%/jre/lib/i386/libdcpr.so
 jdk%%JDK_VERSION%%/jre/lib/i386/libdcpr.so.1.2.2
 %%DEBUG:%%jdk%%JDK_VERSION%%/jre/lib/i386/libdcpr_g.so
+jdk%%JDK_VERSION%%/jre/lib/i386/libdt_socket.so
+jdk%%JDK_VERSION%%/jre/lib/i386/libdt_socket.so.1.2.2
+%%DEBUG:%%jdk%%JDK_VERSION%%/jre/lib/i386/libdt_socket_g.so
 jdk%%JDK_VERSION%%/jre/lib/i386/libfontmanager.so
 jdk%%JDK_VERSION%%/jre/lib/i386/libfontmanager.so.1.2.2
 %%DEBUG:%%jdk%%JDK_VERSION%%/jre/lib/i386/libfontmanager_g.so
@@ -717,6 +720,9 @@ jdk%%JDK_VERSION%%/jre/lib/i386/libhprof.so.1.2.2
 jdk%%JDK_VERSION%%/jre/lib/i386/libjava.so
 jdk%%JDK_VERSION%%/jre/lib/i386/libjava.so.1.2.2
 %%DEBUG:%%jdk%%JDK_VERSION%%/jre/lib/i386/libjava_g.so
+jdk%%JDK_VERSION%%/jre/lib/i386/libjdwp.so
+jdk%%JDK_VERSION%%/jre/lib/i386/libjdwp.so.1.2.2
+%%DEBUG:%%jdk%%JDK_VERSION%%/jre/lib/i386/libjdwp_g.so
 jdk%%JDK_VERSION%%/jre/lib/i386/libjpeg.so
 jdk%%JDK_VERSION%%/jre/lib/i386/libjpeg.so.1.2.2
 %%DEBUG:%%jdk%%JDK_VERSION%%/jre/lib/i386/libjpeg_g.so
@@ -752,6 +758,7 @@ jdk%%JDK_VERSION%%/jre/lib/security/cacerts
 jdk%%JDK_VERSION%%/jre/lib/security/java.policy
 jdk%%JDK_VERSION%%/jre/lib/security/java.security
 jdk%%JDK_VERSION%%/lib/dt.jar
+jdk%%JDK_VERSION%%/lib/jpda.jar
 jdk%%JDK_VERSION%%/lib/tools.jar
 jdk%%JDK_VERSION%%/src.jar
 @exec	mkdir -p %D/share/java/classes

@@ -11,7 +11,7 @@ CATEGORIES=	java devel
 MASTER_SITES=	# http://www.sun.com/software/java2/download.html
 #		 http://www.eyesbeyond.com/freebsddom/java/jdk.html
 DISTFILES=	${PORTNAME}${JDK_VERSION:S/./_/g}-src${EXTRACT_SUFX} \
-		freebsd-jdk122-patches-${JDK_PATCHSET_VERSION}.tar.gz
+		bsd-jdk122-patches-${JDK_PATCHSET_VERSION}.tar.gz
 
 MAINTAINER=	glewis@FreeBSD.org
 
@@ -28,10 +28,10 @@ RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper \
 		${X11BASE}/lib/libXm.so:${PORTSDIR}/x11-toolkits/open-motif \
 		${X11BASE}/lib/X11/fonts/URW/fonts.dir:${PORTSDIR}/x11-fonts/urwfonts
 
-WRKSRC=		${WRKDIR}/build/freebsd
+WRKSRC=		${WRKDIR}/build/bsd
 
 JDK_VERSION=	1.2.2
-JDK_PATCHSET_VERSION=	10
+JDK_PATCHSET_VERSION=	11
 
 JDK11DIR?=	${LOCALBASE}/jdk1.1.8
 JFC11DIR?=	${WRKDIRPREFIX}${.CURDIR}/../../java/jfc/work/swing-1.1.1fcs
@@ -55,7 +55,7 @@ MAKE_ENV=	HAVE_DPS="no" \
 		CLASSPATH="" \
 		JAVA_COMPILER=""
 ALL_TARGET=	release-images
-PATCH_CMD=	${PATCH} -p1 -s <
+PATCH_CMD=	${PATCH} -p1 <
 PLIST_SUB+=	JDK_VERSION=${JDK_VERSION}
 
 JDKIMAGEDIR=	${WRKSRC}/jdk-image-i386
@@ -86,11 +86,11 @@ IGNORE=You must manually fetch the source distribution and FreeBSD patches (${DI
 pre-patch:
 	@${MKDIR} ${WRKSRC}
 .for dir in build src ext/i18n/build ext/i18n/src ext/iiimp/build 
-	@cd ${WRKDIR}/${dir} && ${RM} -rf freebsd && ${CP} -R solaris freebsd
+	@cd ${WRKDIR}/${dir} && ${RM} -rf bsd && ${CP} -R solaris bsd
 .endfor
 	@cd ${WRKSRC}		&& ${PATCH_CMD} ${WRKDIR}/build.patches && \
 	 cd ../share		&& ${PATCH_CMD} ${WRKDIR}/buildshare.patches && \
-	 cd ../../src/freebsd	&& ${PATCH_CMD} ${WRKDIR}/src.patches && \
+	 cd ../../src/bsd	&& ${PATCH_CMD} ${WRKDIR}/src.patches && \
 	 cd ../share		&& ${PATCH_CMD} ${WRKDIR}/srcshare.patches && \
 	 cd ../../ext		&& ${PATCH_CMD} ${WRKDIR}/ext.patches
 	@${MKDIR} ${WRKSRC}/1.1_libs
