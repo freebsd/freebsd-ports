@@ -1,7 +1,6 @@
 bin/gqview
-share/gnome/pixmaps/gqview.png
-share/gnome/apps/Graphics/gqview.desktop
-share/gqview/README
+%%PORTDOCS%%%%DOCSDIR%%/README
+share/locale/bg/LC_MESSAGES/gqview.mo
 share/locale/cs/LC_MESSAGES/gqview.mo
 share/locale/da/LC_MESSAGES/gqview.mo
 share/locale/de/LC_MESSAGES/gqview.mo
@@ -10,6 +9,7 @@ share/locale/et/LC_MESSAGES/gqview.mo
 share/locale/fi/LC_MESSAGES/gqview.mo
 share/locale/fr/LC_MESSAGES/gqview.mo
 share/locale/hu/LC_MESSAGES/gqview.mo
+share/locale/id/LC_MESSAGES/gqview.mo
 share/locale/it/LC_MESSAGES/gqview.mo
 share/locale/ja/LC_MESSAGES/gqview.mo
 share/locale/nl/LC_MESSAGES/gqview.mo
@@ -20,14 +20,11 @@ share/locale/ro/LC_MESSAGES/gqview.mo
 share/locale/ru/LC_MESSAGES/gqview.mo
 share/locale/sk/LC_MESSAGES/gqview.mo
 share/locale/sl/LC_MESSAGES/gqview.mo
+share/locale/sv/LC_MESSAGES/gqview.mo
 share/locale/th/LC_MESSAGES/gqview.mo
 share/locale/tr/LC_MESSAGES/gqview.mo
 share/locale/uk/LC_MESSAGES/gqview.mo
 share/locale/vi/LC_MESSAGES/gqview.mo
 share/locale/zh_CN.GB2312/LC_MESSAGES/gqview.mo
 share/locale/zh_TW/LC_MESSAGES/gqview.mo
-@dirrm share/gqview
-@unexec rmdir %D/share/gnome/pixmaps 2>/dev/null || true
-@unexec rmdir %D/share/gnome/apps/Graphics 2>/dev/null || true
-@unexec rmdir %D/share/gnome/apps 2>/dev/null || true
-@unexec rmdir %D/share/gnome 2>/dev/null || true
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
