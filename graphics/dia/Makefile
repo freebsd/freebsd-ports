@@ -6,37 +6,41 @@
 #
 
 PORTNAME=	dia
-PORTVERSION=	0.90
-CATEGORIES+=	graphics gnome
+PORTVERSION=	0.91
+CATEGORIES=	graphics gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/dia/0.90
+MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.91
+DIST_SUBDIR=	gnome2
 
 MAINTAINER?=	gnome@FreeBSD.org
 COMMENT=	Diagram creation program, similar to Visio
 
-BUILD_DEPENDS=	freetype-config:${PORTSDIR}/print/freetype2
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt \
-		freetype.9:${PORTSDIR}/print/freetype2 \
-		unicode.0:${PORTSDIR}/devel/libunicode
+		gnomeui-2.200:${PORTSDIR}/x11-toolkits/libgnomeui
 
+USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOMENG=	yes
-USE_GNOME=	gnomeprefix gnomehack gnomelibs gdkpixbuf bonobo
+USE_GNOME=	gnomeprefix gnomehack
 USE_LIBTOOL=	yes
-CONFIGURE_ARGS=	--enable-gnome --enable-gnome-print --enable-bonobo \
-		--enable-freetype
+CONFIGURE_ARGS=	--enable-gnome --enable-bonobo
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib -lintl"
 
 MAN1=		dia.1
 
+.if !defined(WITHOUT_PYTHON)
+USE_PYTHON=	yes
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pygtk.py:${PORTSDIR}/x11-toolkits/py-gtk2
+CONFIGURE_ARGS+=	--with-python
+PLIST_SUB=	PYTHON:=""
+.else
+PLIST_SUB=	PYTHON:="@comment "
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
 		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
-
-post-install:
-	${SED} "s|%%PREFIX%%|${PREFIX}|g" ${FILESDIR}/dia.sh > ${WRKDIR}/dia.sh
-	${INSTALL_SCRIPT} ${WRKDIR}/dia.sh ${PREFIX}/bin/dia
 
 .include <bsd.port.mk>

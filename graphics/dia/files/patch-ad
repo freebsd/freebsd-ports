@@ -1,9 +1,6 @@
-
-$FreeBSD$
-
---- configure.orig	Sat Jun  1 10:40:13 2002
-+++ configure	Fri Jul 12 13:52:26 2002
-@@ -7118,6 +7118,7 @@
+--- configure.orig	Wed Mar 12 19:51:36 2003
++++ configure	Mon Mar 17 14:05:51 2003
+@@ -7546,6 +7546,7 @@
  
  # This can be used to rebuild libtool when needed
  LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
@@ -11,12 +8,12 @@ $FreeBSD$
  
  # Always use our own libtool.
  LIBTOOL='$(SHELL) $(top_builddir)/libtool'
-@@ -7911,7 +7912,7 @@
+@@ -9738,7 +9739,7 @@
  
  
- OLDCPPFLAGS=$CPPFLAGS
--CPPFLAGS="$CPPFLAGS `glib-config --cflags`"
-+CPPFLAGS="$CPPFLAGS `$GLIB_CONFIG --cflags`"
+ cat >>confdefs.h <<_ACEOF
+-#define GNOME_ICONDIR "${prefix}/share/pixmaps"
++#define GNOME_ICONDIR "${datadir}/pixmaps"
+ _ACEOF
  
- 
-   echo "$as_me:$LINENO: checking for nl_langinfo and CODESET" >&5
+     have_gnome=true
