@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	lsof
-PORTVERSION=	4.57.1
+PORTVERSION=	4.57.2
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://vic.cc.purdue.edu/pub/tools/unix/lsof/  \
 		ftp://vic.cc.purdue.edu/pub/tools/unix/lsof/NEW/ \
@@ -19,10 +19,11 @@ MASTER_SITES=	ftp://vic.cc.purdue.edu/pub/tools/unix/lsof/  \
 		ftp://ftp.sunet.se/pub/unix/admin/lsof/  \
 		ftp://ftp.sunet.se/pub/unix/admin/lsof/NEW/
 DISTNAME=	${PORTNAME}_${PORTVERSION}_W
-DISTNAME=	${PORTNAME}_4.58A.freebsd
+DISTNAME=	${PORTNAME}_4.58B.freebsd
 
 MAINTAINER=	obrien@FreeBSD.org
 
+FIXUP_RELEASE=	yes
 WRKSRC=		${WRKDIR}/${SRCBALL_NAME}
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	Configure
@@ -33,6 +34,7 @@ MAN8=		lsof.8
 
 SRCBALL_NAME=	${DISTNAME:S/_W$//}
 
+.if !defined(FIXUP_RELEASE)
 post-extract:
 	@( cd ${WRKDIR} ; \
 	EXPMD5=`${GREP} MD5 README.${SRCBALL_NAME} | ${SED} 's/^[ ]*//'` ; \
@@ -46,6 +48,7 @@ post-extract:
 	${EXTRACT_AFTER_ARGS} \
 	)
 	@( cd ${WRKSRC} ; ${ECHO} "y" | ./Inventory || exit 1 )
+.endif
 
 #pre-patch:
 #	@${ECHO_MSG} "===>  Applying distribution patches for ${PKGNAME}"
