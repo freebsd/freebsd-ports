@@ -9,12 +9,3 @@
  
  =back
  
-@@ -210,7 +210,7 @@
-     $bpl ||= 72;
-     $nl  ||= "\n";
-     my $r_str = $self->[0];
--    my (@lines, $len, $i);
-+    my ($i, $len, @lines) = (0, 0);
-     while ($$r_str =~
- 	   m/($RE{EUC_0212}|$RE{EUC_KANA}|$RE{EUC_C}|[\x00-\xff])/sgo)
-     {
