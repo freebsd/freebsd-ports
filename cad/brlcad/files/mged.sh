@@ -8,4 +8,4 @@ export BRLCAD_ROOT
 export PATH=%%BRLCAD_ROOT%%/bin:$PATH
 export MANPATH=%%BRLCAD_ROOT%%/man:$MANPATH
 
-exec %%BRLCAD_ROOT%%/bin/mged
+exec %%BRLCAD_ROOT%%/bin/mged $@

@@ -1,4 +1,4 @@
-../bin/mged
+@unexec rm -f %%LOCALBASE%%/bin/mged
 bin/a-d
 bin/alias-pix
 bin/aliastorle
