@@ -3922,6 +3922,7 @@ lpr		src/usr.sbin/lpr
 lprps-a4	ports/print/lprps-a4
 lprps-letter	ports/print/lprps-letter
 lptcontrol	src/usr.sbin/lptcontrol
+lr		ports/misc/lr
 lrzsz		ports/comms/lrzsz
 ls		src/bin/ls
 lsdb		ports/databases/lsdb
