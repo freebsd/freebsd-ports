@@ -1,9 +1,9 @@
---- etc/sendmail/etc/drweb/drweb_smf.conf.orig	Mon May  6 23:48:14 2002
-+++ etc/sendmail/etc/drweb/drweb_smf.conf	Fri May 10 18:12:59 2002
-@@ -15,14 +15,14 @@
+--- etc/drweb_smf.conf.orig	Fri Jul 26 17:03:59 2002
++++ etc/drweb_smf.conf	Sun Aug 25 06:48:32 2002
+@@ -14,14 +14,14 @@
  #   Address = inet:3000@localhost
- #   Address = local:/var/drweb/run/drwebd.socket
- #   Address = pid:/var/drweb/run/drwebd.pid
+ #   Address = local:/usr/local/drweb/run/drwebd.skt
+ #   Address = pid:/usr/local/drweb/run/drwebd.pid
 -Address = inet:3000@localhost
 +Address = local:%PREFIX%/drweb/run/drwebd.sock
  
@@ -11,74 +11,47 @@
  # (useful only if daemon uses TCP/IP communications)
  Cache = yes
  
- # Timeout for communication operations (in seconds)
--Timeout = 60
+ # Timeout for whole scanning session (in seconds)
+-Timeout = 120
 +Timeout = 160
- 
- #########################
- # Communication section #
-@@ -32,7 +32,7 @@
- # Note: FAMILY pid is not valid
- # Address = inet:3001@localhost
- # Address = local:/usr/local/drweb/run/drweb-smf.skt
--Address = inet:3001@localhost
-+Address = local:%PREFIX%/drweb/run/drweb-smf.sock
  
  ########################
  # Scan options section #
-@@ -58,10 +58,10 @@
- SpamFilter = off
- 
- # Directory used for story temporary files
--Spool = /var/drweb/spool
-+Spool = /tmp
- 
- # User account used by filter
--# FilterAccount = 
-+FilterAccount = drweb
- 
- # Deny scanning if at least one of recipient or sender address
- # present in DenyList with "deny" option (yes/no), if "no" all
-@@ -69,7 +69,7 @@
+@@ -61,10 +61,10 @@
  DenyOnOne = yes
  
  # List with rules for users or domains to block scanning 
 -DenyList = /etc/drweb/users.conf
 +DenyList = %PREFIX%/etc/drweb/users.conf
  
- ###################
- # Actions section #
-@@ -95,7 +95,8 @@
- #        pass (default) - pass such messages
- #        discard - discard such messages
- #        reject - reject this message
--SpamFilterAlert = pass
-+SpamFilterAlert = discard
-+
- # EmptyFrom  - mean that SMTP session initiated with empty envelope From:
- #              widely used spammers and Mailer-Daemons
- # Actions:
-@@ -111,7 +112,7 @@
- #        pass - accept messages with such objects
- #        quarantine - move message to quarantine and reject it
- #        reject (default) - reject messages
--SkipObject = reject
-+SkipObject = pass
+ # Directory used for story temporary files
+-Spool = /var/drweb/spool 
++Spool = /tmp
  
- # MailbombObject - mean that daemon found object in archive with compression 
- #                  ratio exceeded MaxCompressionRation or size of object greater
-@@ -138,19 +139,19 @@
+ # Permissions for created spool files
+ SpoolFilesMode = 0600
+@@ -136,7 +136,7 @@
+ #        reject - reject messages
+ #        quarantine - move message to quarantine and discard it
+ #        tempfail - says that we temporary unavailable
+-ScanningErrors = reject
++ScanningErrors = tempfail
+ 
+ # ProcessingErrors - errors in proxy-client: no memory`,' misconfigured`,' timeout
+ #                    on communication with daemon and etc. 
+@@ -144,19 +144,19 @@
  #        pass - accept messages
- #        reject (default) - reject messages
+ #        reject - reject messages
  #        tempfail - says that we temporary unavailable
 -ProcessingErrors = reject
 +ProcessingErrors = tempfail
  
  # Admin mail address (may be unix-local address)
- AdminMail = postmaster
+-AdminMail = av-admin@example.com
++AdminMail = postmaster
  
- # Filter address, that be used in From:
--FilterMail = DrWeb-DAEMON@your.domain.com
+ # Filter address`,' that be used in From:
+-FilterMail = DrWeb-DAEMON@example.com
 +FilterMail = DrWeb-DAEMON@%HOSTNAME%
  
  # Quarantine directory. 
@@ -87,45 +60,56 @@
  # infected messages would not been storied
 -Quarantine = /var/drweb/infected
 +Quarantine = %PREFIX%/drweb/infected
-  
  
- #########################
-@@ -177,31 +178,31 @@
+ # Permissions for quarantined files
+ QuarantineFilesMode = 0660
+@@ -185,32 +185,32 @@
  RcptsNotify = yes
  
  # Files with notification templates
--AdminTemplate = /etc/drweb/templates/en/sendmail/virus-admin.msg
--SenderTemplate = /etc/drweb/templates/en/sendmail/virus-sender.msg
--RcptsTemplate = /etc/drweb/templates/en/sendmail/virus-rcpts.msg
-+AdminTemplate = %PREFIX%/etc/drweb/templates/en/sendmail/virus-admin.msg
-+SenderTemplate = %PREFIX%/etc/drweb/templates/en/sendmail/virus-sender.msg
-+RcptsTemplate = %PREFIX%/etc/drweb/templates/en/sendmail/virus-rcpts.msg
+-AdminTemplate = /etc/drweb/templates/en-ru/sendmail/virus-admin.msg
+-SenderTemplate = /etc/drweb/templates/en-ru/sendmail/virus-sender.msg
+-RcptsTemplate = /etc/drweb/templates/en-ru/sendmail/virus-rcpts.msg
++AdminTemplate = %PREFIX%/etc/drweb/templates/en-ru/sendmail/virus-admin.msg
++SenderTemplate = %PREFIX%/etc/drweb/templates/en-ru/sendmail/virus-sender.msg
++RcptsTemplate = %PREFIX%/etc/drweb/templates/en-ru/sendmail/virus-rcpts.msg
  
  [SkipNotifications]
  AdminNotify = no
  SenderNotify = yes
  RcptsNotify = no
  AdminTemplate = 
--SenderTemplate = /etc/drweb/templates/en/sendmail/skipobj-sender.msg
-+SenderTemplate = %PREFIX%/etc/drweb/templates/en/sendmail/skipobj-sender.msg
+-SenderTemplate = /etc/drweb/templates/en-ru/sendmail/skip-sender.msg
++SenderTemplate = %PREFIX%/etc/drweb/templates/en-ru/sendmail/skip-sender.msg
  RcptsTemplate = 
  
  [MailbombNotifications]
  AdminNotify = yes
  SenderNotify = yes
  RcptsNotify = no
--AdminTemplate = /etc/drweb/templates/en/sendmail/mailbomb-admin.msg
--SenderTemplate = /etc/drweb/templates/en/sendmail/mailbomb-sender.msg
-+AdminTemplate = %PREFIX%/etc/drweb/templates/en/sendmail/mailbomb-admin.msg
-+SenderTemplate = %PREFIX%/etc/drweb/templates/en/sendmail/mailbomb-sender.msg
+-AdminTemplate = /etc/drweb/templates/en-ru/sendmail/mailbomb-admin.msg
+-SenderTemplate = /etc/drweb/templates/en-ru/sendmail/mailbomb-sender.msg
++AdminTemplate = %PREFIX%/etc/drweb/templates/en-ru/sendmail/mailbomb-admin.msg
++SenderTemplate = %PREFIX%/etc/drweb/templates/en-ru/sendmail/mailbomb-sender.msg
  RcptsTemplate = 
  
  [ErrorNotifications]
  AdminNotify = yes
- SenderNotify = no
+ SenderNotify = yes
  RcptsNotify = no
--AdminTemplate = /etc/drweb/templates/en/sendmail/error-admin.msg
-+AdminTemplate = %PREFIX%/etc/drweb/templates/en/sendmail/error-admin.msg
- SenderTemplate = 
+-AdminTemplate = /etc/drweb/templates/en-ru/sendmail/error-admin.msg
+-SenderTemplate = /etc/drweb/templates/en-ru/sendmail/error-sender.msg
++AdminTemplate = %PREFIX%/etc/drweb/templates/en-ru/sendmail/error-admin.msg
++SenderTemplate = %PREFIX%/etc/drweb/templates/en-ru/sendmail/error-sender.msg
  RcptsTemplate = 
  
+ ###################
+@@ -239,7 +239,7 @@
+ # Definition of Sendmail Milter Address according to sendmail.cf 
+ # Note: FAMILY pid is not valid
+ # MilterAddress = local:/usr/local/drweb/run/drweb-smf.skt
+-MilterAddress = inet:3001@localhost
++MilterAddress = local:%PREFIX%/drweb/run/drweb-smf.sock
+ 
+ # Timeout for drweb-smf to sendmail connection
+ # (Must be greater that any Timeout. parameter in sendmail.cf)

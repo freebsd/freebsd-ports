@@ -1,63 +1,128 @@
---- etc/sendmail/etc/drweb/templates/ru/sendmail/error-admin.msg.bak	Fri Apr 12 20:31:53 2002
-+++ etc/sendmail/etc/drweb/templates/ru/sendmail/error-admin.msg	Fri May 10 13:44:52 2002
-@@ -1,5 +1,5 @@
- From: DrWeb-DAEMON
--Subject: Сбой антивирусного фильтра
-+Subject: =?koi8-r?B?88LPyiDBztTJ18nS1dPOz8fPIMbJ?= =?koi8-r?B?zNjU0sE=?=
- Content-Type: text/plain; charset=koi8-r
+--- ./etc/templates/en-ru/sendmail/error-admin.msg.bak	Fri Jul 26 17:03:59 2002
++++ ./etc/templates/en-ru/sendmail/error-admin.msg	Sun Aug 25 09:08:04 2002
+@@ -36,4 +36,4 @@
+ Content-Type: text/rfc822-headers
  
- Уважаемый Администратор,
---- etc/sendmail/etc/drweb/templates/ru/sendmail/mailbomb-admin.msg.bak	Fri Apr 12 20:32:10 2002
-+++ etc/sendmail/etc/drweb/templates/ru/sendmail/mailbomb-admin.msg	Fri May 10 13:44:13 2002
-@@ -1,5 +1,5 @@
- From: DrWeb-DAEMON
--Subject: Найден подозрительный объект
-+Subject: =?koi8-r?B?7sHKxMXOINDPxM/a0snUxczYztnK?= =?koi8-r?B?IM/C38XL1A==?=
- Content-Type: text/plain; charset=koi8-r
+ $FULLHEADERS$
+---001-DrWeb-MailFilter-Notification
++--001-DrWeb-MailFilter-Notification--
+--- ./etc/templates/en-ru/sendmail/error-sender.msg.bak	Fri Jul 26 17:03:59 2002
++++ ./etc/templates/en-ru/sendmail/error-sender.msg	Sun Aug 25 09:08:05 2002
+@@ -57,4 +57,4 @@
+ Content-Type: text/rfc822-headers
  
- Уважаемый Администратор,
---- etc/sendmail/etc/drweb/templates/ru/sendmail/mailbomb-sender.msg.bak	Fri Apr 12 20:41:18 2002
-+++ etc/sendmail/etc/drweb/templates/ru/sendmail/mailbomb-sender.msg	Fri May 10 13:45:00 2002
-@@ -1,5 +1,5 @@
- From: $FILTER_MAIL$
--Subject: Недоставленное сообщение: $SUBJECT$
-+Subject: =?koi8-r?B?7sXEz9PUwdfMxc7Oz8Ug08/Pwt3F?= =?koi8-r?B?zsnFOg==?= $SUBJECT$
- Content-Type: text/plain; charset=koi8-r
+ $FULLHEADERS$
+---001-DrWeb-MailFilter-Notification
++--001-DrWeb-MailFilter-Notification--
+--- ./etc/templates/en-ru/sendmail/mailbomb-admin.msg.bak	Fri Jul 26 17:03:59 2002
++++ ./etc/templates/en-ru/sendmail/mailbomb-admin.msg	Sun Aug 25 09:08:05 2002
+@@ -37,4 +37,4 @@
+ Content-Type: text/rfc822-headers
  
- Уважаемый Отправитель,
---- etc/sendmail/etc/drweb/templates/ru/sendmail/skipobj-sender.msg.bak	Fri Apr 12 20:41:14 2002
-+++ etc/sendmail/etc/drweb/templates/ru/sendmail/skipobj-sender.msg	Fri May 10 13:45:00 2002
-@@ -1,5 +1,5 @@
- From: $FITLER_MAIL$
--Subject: Недоставленное сообщение: $SUBJECT$
-+Subject: =?koi8-r?B?7sXEz9PUwdfMxc7Oz8Ug08/Pwt3F?= =?koi8-r?B?zsnFOg==?= $SUBJECT$
- Content-Type: text/plain; charset=koi8-r
+ $FULLHEADERS$
+---001-DrWeb-MailFilter-Notification
++--001-DrWeb-MailFilter-Notification--
+--- ./etc/templates/en-ru/sendmail/mailbomb-sender.msg.bak	Fri Jul 26 17:03:59 2002
++++ ./etc/templates/en-ru/sendmail/mailbomb-sender.msg	Sun Aug 25 09:08:05 2002
+@@ -59,4 +59,4 @@
+ Content-Type: text/rfc822-headers
  
- Уважаемый Отправитель,
---- etc/sendmail/etc/drweb/templates/ru/sendmail/virus-admin.msg.bak	Fri Apr 12 20:33:29 2002
-+++ etc/sendmail/etc/drweb/templates/ru/sendmail/virus-admin.msg	Fri May 10 13:45:00 2002
-@@ -1,5 +1,5 @@
- From: DrWeb-DAEMON
--Subject: Найдем вирус !
-+Subject: =?koi8-r?B?7sHKxMXOINfJ0tXTIQ==?=
- Content-Type: text/plain; charset=koi8-r
+ $FULLHEADERS$
+---001-DrWeb-MailFilter-Notification
++--001-DrWeb-MailFilter-Notification--
+--- ./etc/templates/en-ru/sendmail/skip-sender.msg.bak	Fri Jul 26 17:03:59 2002
++++ ./etc/templates/en-ru/sendmail/skip-sender.msg	Sun Aug 25 09:08:05 2002
+@@ -57,4 +57,4 @@
+ Content-Type: text/rfc822-headers
  
- Уважаемый Администратор,
---- etc/sendmail/etc/drweb/templates/ru/sendmail/virus-rcpts.msg.bak	Fri Apr 12 20:41:08 2002
-+++ etc/sendmail/etc/drweb/templates/ru/sendmail/virus-rcpts.msg	Fri May 10 13:45:00 2002
-@@ -1,5 +1,5 @@
- From: $FILTER_MAIL$
--Subject: Недоставленное сообщение: $SUBJECT$
-+Subject: =?koi8-r?B?7sXEz9PUwdfMxc7Oz8Ug08/Pwt3F?= =?koi8-r?B?zsnFOg==?= $SUBJECT$
- Content-Type: text/plain; charset=koi8-r
+ $FULLHEADERS$
+---001-DrWeb-MailFilter-Notification
++--001-DrWeb-MailFilter-Notification--
+--- ./etc/templates/en-ru/sendmail/virus-admin.msg.bak	Fri Jul 26 17:03:59 2002
++++ ./etc/templates/en-ru/sendmail/virus-admin.msg	Sun Aug 25 09:08:05 2002
+@@ -41,4 +41,4 @@
+ Content-Type: text/rfc822-headers
  
- Уважаемый Получатель,
---- etc/sendmail/etc/drweb/templates/ru/sendmail/virus-sender.msg.bak	Fri Apr 12 20:41:05 2002
-+++ etc/sendmail/etc/drweb/templates/ru/sendmail/virus-sender.msg	Fri May 10 13:45:00 2002
-@@ -1,5 +1,5 @@
- From: $FILTER_MAIL$
--Subject: Недоставленное сообщение: $SUBJECT$
-+Subject: =?koi8-r?B?7sXEz9PUwdfMxc7Oz8Ug08/Pwt3F?= =?koi8-r?B?zsnFOg==?= $SUBJECT$
- Content-Type: text/plain; charset=koi8-r
+ $FULLHEADERS$
+---001-DrWeb-MailFilter-Notification
++--001-DrWeb-MailFilter-Notification--
+--- ./etc/templates/en-ru/sendmail/virus-rcpts.msg.bak	Fri Jul 26 17:03:59 2002
++++ ./etc/templates/en-ru/sendmail/virus-rcpts.msg	Sun Aug 25 09:08:05 2002
+@@ -58,4 +58,4 @@
+ Content-Type: text/rfc822-headers
  
- Уважаемый Отправитель,
+ $FULLHEADERS$
+---001-DrWeb-MailFilter-Notification
++--001-DrWeb-MailFilter-Notification--
+--- ./etc/templates/en-ru/sendmail/virus-sender.msg.bak	Fri Jul 26 17:03:59 2002
++++ ./etc/templates/en-ru/sendmail/virus-sender.msg	Sun Aug 25 09:08:05 2002
+@@ -60,4 +60,4 @@
+ Content-Type: text/rfc822-headers
+ 
+ $FULLHEADERS$
+---001-DrWeb-MailFilter-Notification
++--001-DrWeb-MailFilter-Notification--
+--- ./etc/templates/en-es/sendmail/error-admin.msg.bak	Fri Jul 26 17:03:59 2002
++++ ./etc/templates/en-es/sendmail/error-admin.msg	Sun Aug 25 09:16:19 2002
+@@ -38,4 +38,4 @@
+ Content-Type: text/rfc822-headers
+ 
+ $FULLHEADERS$
+---001-DrWeb-MailFilter-Notification
++--001-DrWeb-MailFilter-Notification--
+--- ./etc/templates/en-es/sendmail/error-sender.msg.bak	Fri Jul 26 17:03:59 2002
++++ ./etc/templates/en-es/sendmail/error-sender.msg	Sun Aug 25 09:16:19 2002
+@@ -56,4 +56,4 @@
+ Content-Type: text/rfc822-headers
+ 
+ $FULLHEADERS$
+---001-DrWeb-MailFilter-Notification
++--001-DrWeb-MailFilter-Notification--
+--- ./etc/templates/en-es/sendmail/mailbomb-admin.msg.bak	Fri Jul 26 17:03:59 2002
++++ ./etc/templates/en-es/sendmail/mailbomb-admin.msg	Sun Aug 25 09:16:19 2002
+@@ -39,4 +39,4 @@
+ Content-Type: text/rfc822-headers
+ 
+ $FULLHEADERS$
+---001-DrWeb-MailFilter-Notification
++--001-DrWeb-MailFilter-Notification--
+--- ./etc/templates/en-es/sendmail/mailbomb-sender.msg.bak	Fri Jul 26 17:03:59 2002
++++ ./etc/templates/en-es/sendmail/mailbomb-sender.msg	Sun Aug 25 09:16:19 2002
+@@ -59,4 +59,4 @@
+ Content-Type: text/rfc822-headers
+ 
+ $FULLHEADERS$
+---001-DrWeb-MailFilter-Notification
++--001-DrWeb-MailFilter-Notification--
+--- ./etc/templates/en-es/sendmail/skip-sender.msg.bak	Fri Jul 26 17:03:59 2002
++++ ./etc/templates/en-es/sendmail/skip-sender.msg	Sun Aug 25 09:16:19 2002
+@@ -56,4 +56,4 @@
+ Content-Type: text/rfc822-headers
+ 
+ $FULLHEADERS$
+---001-DrWeb-MailFilter-Notification
++--001-DrWeb-MailFilter-Notification--
+--- ./etc/templates/en-es/sendmail/virus-admin.msg.bak	Fri Jul 26 17:03:59 2002
++++ ./etc/templates/en-es/sendmail/virus-admin.msg	Sun Aug 25 09:16:19 2002
+@@ -43,4 +43,4 @@
+ Content-Type: text/rfc822-headers
+ 
+ $FULLHEADERS$
+---001-DrWeb-MailFilter-Notification
++--001-DrWeb-MailFilter-Notification--
+--- ./etc/templates/en-es/sendmail/virus-rcpts.msg.bak	Fri Jul 26 17:03:59 2002
++++ ./etc/templates/en-es/sendmail/virus-rcpts.msg	Sun Aug 25 09:16:19 2002
+@@ -58,4 +58,4 @@
+ Content-Type: text/rfc822-headers
+ 
+ $FULLHEADERS$
+---001-DrWeb-MailFilter-Notification
++--001-DrWeb-MailFilter-Notification--
+--- ./etc/templates/en-es/sendmail/virus-sender.msg.bak	Fri Jul 26 17:03:59 2002
++++ ./etc/templates/en-es/sendmail/virus-sender.msg	Sun Aug 25 09:16:19 2002
+@@ -59,4 +59,4 @@
+ Content-Type: text/rfc822-headers
+ 
+ $FULLHEADERS$
+---001-DrWeb-MailFilter-Notification
++--001-DrWeb-MailFilter-Notification--
