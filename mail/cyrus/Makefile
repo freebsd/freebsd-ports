@@ -7,7 +7,7 @@
 
 PORTNAME=	cyrus
 PORTVERSION=	1.6.24
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	mail tcl82
 MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/ \
 		ftp://ftp.hanse.de/sites/transit/mirror/ftp.andrew.cmu.edu/pub/cyrus-mail/
@@ -36,11 +36,16 @@ MAN8=		arbitron.8 collectnews.8 cyrquota.8 deliver.8 fud.8 \
 		imapd.8 mbpath.8 pop3d.8 reconstruct.8 rmnews.8 syncnews.8 \
 		timsieved.8
 
+post-patch:
+	${CP} ${FILESDIR}/600.cyrus ${WRKDIR}
+	${REINPLACE_CMD} -e 's,LOCALBASE,${LOCALBASE},g' ${WRKDIR}/600.cyrus
+
 post-configure:
 		@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|' ${WRKSRC}/imap/config.c ${WRKSRC}/imap/krbck.c
 
 pre-install:
 		@ ${CP} ${WRKSRC}/man/quota.8 ${WRKSRC}/man/cyrquota.8
+		@ ${CP} ${WRKDIR}/600.cyrus /etc/periodic/daily/600.cyrus
 
 DOCS=	README acl-extension anoncvs bugs changes copyrights install \
 	mailing-list overview quota-extension server-design
