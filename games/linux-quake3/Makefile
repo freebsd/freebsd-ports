@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	q3ded
-PORTVERSION=	1.32
+PORTVERSION=	1.32b
 CATEGORIES=	games linux
 MASTER_SITES=	ftp://ftp.bluesnews.com/idstuff/quake3/linux/ \
 		ftp://ftp.idsoftware.com/idstuff/quake3/linux/
@@ -29,7 +29,7 @@ INSTALL_DIR=	${INSTALL} -d -o ${BINOWN} -g ${BINGRP} -m 755
 do-extract:
 	@${RM} -rf ${WRKDIR}
 	@${MKDIR} ${WRKDIR}
-	@cd ${WRKDIR} && ${TAIL} +179 ${_DISTDIR}/${DISTNAME}${EXTRACT_SUFX} | \
+	@cd ${WRKDIR} && ${TAIL} +266 ${_DISTDIR}/${DISTNAME}${EXTRACT_SUFX} | \
 		${TAR} zxvf - >/dev/null
 
 pre-patch:
@@ -49,10 +49,10 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/missionpack/pak${mpak}.pk3 \
 		${PREFIX}/${Q3DIR}/missionpack
 .endfor
-	@${INSTALL} -c -o nobody -g nogroup -m 500 ${WRKSRC}/bin/x86/q3ded \
+.for exec in q3ded quake3.x86 quake3-smp.x86
+	@${INSTALL} -c -o nobody -g nogroup -m 500 ${WRKSRC}/bin/x86/${exec} \
 		${PREFIX}/${Q3DIR}
-	@${INSTALL} -c -o nobody -g nogroup -m 500 \
-		${WRKSRC}/bin/x86/quake3.x86 ${PREFIX}/${Q3DIR}
+.endfor
 .for pb in pbag.so pbcl.so pbsv.so
 	@${INSTALL_DATA} ${WRKSRC}/pb/${pb} ${PREFIX}/${Q3DIR}/pb
 .endfor
