@@ -1,0 +1,3 @@
+#!/usr/local/bin/wish8.0
+auto_mkindex $argv be.tcl ee.tcl re.tcl vfs.tcl xf_sel.tcl
+exit
