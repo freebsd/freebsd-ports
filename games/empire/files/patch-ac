@@ -1,0 +1,38 @@
+--- display.c.orig	Sat Sep 18 18:35:53 1999
++++ display.c	Sat Sep 18 18:36:16 1999
+@@ -236,7 +236,7 @@
+ 	for (r = 0; jnkbuf[r] != '\0'; r++) {
+ 		if (r+NUMTOPS >= MAP_HEIGHT) break;
+ 		(void) move (r+NUMTOPS, cols-NUMSIDES+4);
+-		(void) addch ((chtype)jnkbuf[r]);
++		(void) addch ((chartype)jnkbuf[r]);
+ 	}
+ }
+ 
+@@ -278,7 +278,7 @@
+ 		break;
+ 	}
+ #endif /* A_COLOR */
+-	(void) addch ((chtype)vp->contents);
++	(void) addch ((chartype)vp->contents);
+ #ifdef A_COLOR
+ 	attrset(0);
+ 	attron(COLOR_PAIR(COLOR_WHITE));
+@@ -420,7 +420,7 @@
+ 	cell = vmap[row_col_loc(r,c)].contents;
+ 	
+ 	(void) move (row/row_inc + NUMTOPS, col/col_inc);
+-	(void) addch ((chtype)cell);
++	(void) addch ((chartype)cell);
+ }
+ 
+ /*
+@@ -498,7 +498,7 @@
+ 		print_zoom_cell (vmap, row, col, row_inc, col_inc);
+ 	else {
+ 		(void) move (row/row_inc + NUMTOPS, col/col_inc);
+-		(void) addch ((chtype)cell);
++		(void) addch ((chartype)cell);
+ 	}
+ }
+ 
