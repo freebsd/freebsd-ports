@@ -23,7 +23,7 @@ NO_BUILD=	yes
 
 # Called MY_JDK and MY_JDK_PORT so not to conflict with any other possible
 # definitions in the ports system.
-MY_JDK=		linux-jdk1.4.0.01
+MY_JDK=		linux-sun-jdk1.4.0.01
 MY_JDK_PORT=	linux-sun-jdk14
 RUN_DEPENDS=    ${LOCALBASE}/${MY_JDK}/bin/java:${PORTSDIR}/java/${MY_JDK_PORT}
 
