@@ -3,9 +3,45 @@ bin/ddd
 info/ddd.info
 @exec install-info %D/info/ddd.info %D/info/dir
 @unexec install-info --delete %D/info/ddd.info %D/info/dir
+info/ddd-themes.info
+@exec install-info %D/info/ddd-themes.info %D/info/dir
+@unexec install-info --delete %D/info/ddd-themes.info %D/info/dir
+share/ddd-3.3/COPYING
+share/ddd-3.3/NEWS
+share/ddd-3.3/ddd/Ddd
+share/ddd-3.3/themes/green.vsl
+share/ddd-3.3/themes/red.vsl
+share/ddd-3.3/themes/smalltitles.vsl
+share/ddd-3.3/themes/smallvalues.vsl
+share/ddd-3.3/themes/suppress.vsl
+share/ddd-3.3/themes/tinyvalues.vsl
+share/ddd-3.3/vsllib/arcs.vsl
+share/ddd-3.3/vsllib/builtin.vsl
+share/ddd-3.3/vsllib/colors.vsl
+share/ddd-3.3/vsllib/ctree.vsl
+share/ddd-3.3/vsllib/ddd.vsl
+share/ddd-3.3/vsllib/flow.vsl
+share/ddd-3.3/vsllib/flowplus.vsl
+share/ddd-3.3/vsllib/fonts.vsl
+share/ddd-3.3/vsllib/linebreak.vsl
+share/ddd-3.3/vsllib/list.vsl
+share/ddd-3.3/vsllib/slopes.vsl
+share/ddd-3.3/vsllib/std.vsl
+share/ddd-3.3/vsllib/struct.vsl
+share/ddd-3.3/vsllib/symbols.vsl
+share/ddd-3.3/vsllib/tab.vsl
+share/ddd-3.3/vsllib/tree.vsl
+share/ddd-3.3/vsllib/verbose.vsl
+share/ddd-3.3/vsllib/vsl.vsl
+share/ddd-3.3/vsllib/vsldef.vsl
+share/ddd-3.3/vsllib/vsllib.vsl
 share/doc/ddd/PROBLEMS
 share/doc/ddd/README
 share/doc/ddd/ddd-paper.ps.gz
 share/doc/ddd/ddd.ps.gz
 share/doc/ddd/sample.dddinit
+@dirrm share/ddd-3.3/ddd
+@dirrm share/ddd-3.3/themes
+@dirrm share/ddd-3.3/vsllib
+@dirrm share/ddd-3.3
 @dirrm share/doc/ddd
