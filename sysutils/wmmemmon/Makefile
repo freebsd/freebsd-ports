@@ -13,17 +13,17 @@ DISTNAME=	WMMemMon-${PORTVERSION}
 
 MAINTAINER=	pat@FreeBSD.org
 
-ONLY_FOR_ARCHS=	i386
-WRKSRC=		${WRKDIR}/${DISTNAME}
 USE_X_PREFIX=	yes
 USE_XPM=	yes
-USE_AUTOCONF=	yes
+GNU_CONFIGURE=	yes
 
-do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/src/wmmemmon ${PREFIX}/bin
+pre-patch:
+	@${PERL} -pi.orig -e 's|WMMwmMon|WMMemMon|' \
+		${WRKSRC}/src/wmmemmon.c
+
+post-install:
 .ifndef(NOPORTDOCS)
-	@${INSTALL} -d -o ${SHAREOWN} -g ${SHAREGRP} -m ${SHAREMODE} \
-		${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif # !NOPORTDOCS
 
