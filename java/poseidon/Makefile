@@ -11,7 +11,7 @@ CATEGORIES=	java
 MASTER_SITES=	# http://www.gentleware.com/products/download.php4
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}	# Required to print the message
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	gerrit@beine-computer.de
 COMMENT=	A popular UML CASE tool
 
 USE_ZIP=	yes
