@@ -1,0 +1,44 @@
+This is a (hopefully complete, but possibly missing one or two small
+things) list of all the changes made by the FreeBSD port.  All of
+these changes were either to make the package fit in better with the
+UNIX paradigm (the author states that the only reason slnr compiles
+on UNIX at all is to allow testing of getnews so many of the things
+slnr did/does are orientated towards a DOS environment), to fix typical
+porting problems, or to add some small functionality so that I would
+be able to use slnr for my purposes.
+
+
+Changed to look for ~/.slnrrc instead of slnr.ini (in the current
+directory) if compiled with -DUNIX.
+
+Allows C-r to cause a screen refresh in the main menu.
+
+Uses some more temporary filenames.
+
+Changed default editor and pager to suit FreeBSD.
+
+Changed to look for ~/.signature instead of sig.txt (in the current
+directory) if compiled with -DUNIX.
+
+Some stuff to allow all configureable options to be set via a
+compile-time default, the .slnrrc file, and the environment.
+
+Now ignores wether the TERM environment variable is set to `ansi' or not
+and depends solely upon the environment variable `ANSI' existing or not,
+`ANSI=y' in your ~/.slnrrc, and the compile-time default, in that order.
+
+Various porting snaffoos.
+
+Fixed a bug where articles of type `b', `B', or anything else that had the
+article length denoted only by a byte-offset, would be incorrectly 
+parsed (couldn't find the end of the article).  NOTE that the result is
+NOT entirely 8-bit clean as it is supposed to be, but it is better at 
+least it works, now.
+
+Added option "Reply to all recipients" to keep the cc: line in the 
+message.
+
+Added repfile option.  NOTE repfile is relevant to the current directory.
+
+Fixed bug that would sometimes cause the REPLIES file to be appended to
+instead of overwritten if one had only email replies.
