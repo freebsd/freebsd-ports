@@ -49,7 +49,7 @@ class Vars:
 	DEV_NULL = '/dev/null'
 	ETC_MAKE_CONF = '/etc/make.conf'
 	
-	SLASH_REPL_SYMBOL = '_'	# The sysmbol to replace '/' when auto-generating
+	SLASH_REPL_SYMBOL = '::'	# The sysmbol to replace '/' when auto-generating
 							# patchnames
 
 
@@ -195,26 +195,30 @@ def gendiff(path, wrksrc, outfile = ''):
           Vars.DEV_NULL, path)
 
 	if outfile != '':
-		cmdline = '( %s && %s ) 1>%s 2>%s' % (IDGEN_CMD, cmdline, outfile, \
-		  Vars.DEV_NULL)
+		cmdline = '( %s && %s ) 2>%s' % (IDGEN_CMD, cmdline, Vars.DEV_NULL)
+
 	savedir = os.getcwd()
 	os.chdir(wrksrc)
-	exitstat = os.system(cmdline)
-	if os.WIFEXITED(exitstat):
-		exitval = os.WEXITSTATUS(exitstat)
-		if exitval == 0:    # No differences were found
-			if outfile != '':
-				os.unlink(outfile)
-			retval = False
-			retmsg = 'no differencies found between original and current ' \
+	pipe = popen2.Popen3(cmdline)
+	outbuf = pipe.fromchild.readlines()
+	for stream in (pipe.fromchild, pipe.tochild):
+		stream.close()
+	exitval = os.WEXITSTATUS(pipe.wait())
+	if exitval == 0:    # No differences were found
+		retval = False
+		retmsg = 'no differencies found between original and current ' \
 			  'version of "%s"' % fullpath
-		elif exitval == 1:  # Some differences  were  found
-			retval = True
-			retmsg = ''
-		else:               # Error occured
-			raise ECmdError('"%s"' % cmdline, \
-			  'external command returned non-zero error code')
-			# Not reached #
+	elif exitval == 1:  # Some differences  were  found
+		if (outfile != ''):
+			open(outfile, 'w').writelines(outbuf)
+		else:
+			sys.stdout.writelines(outbuf)
+		retval = True
+		retmsg = ''
+	else:               # Error occured
+		raise ECmdError('"%s"' % cmdline, \
+		  'external command returned non-zero error code')
+		# Not reached #
 
 	os.chdir(savedir)
 	return (retval, retmsg)
