@@ -1240,6 +1240,7 @@
     SUBDIR += ruby-fam
     SUBDIR += ruby-filelock
     SUBDIR += ruby-filemagic
+    SUBDIR += ruby-flex_rb
     SUBDIR += ruby-gconf2
     SUBDIR += ruby-gemfinder
     SUBDIR += ruby-gems
