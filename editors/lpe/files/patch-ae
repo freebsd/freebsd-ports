@@ -1,5 +1,5 @@
---- Makefile.in.orig	Sat Jul  3 19:33:57 1999
-+++ Makefile.in	Mon Jul  5 10:28:35 1999
+--- Makefile.in.orig	Sat Jul  3 21:33:57 1999
++++ Makefile.in	Fri Sep 17 17:59:58 1999
 @@ -108,8 +108,8 @@
  lpe_LDADD = @INTLLIBS@ @INTLOBJS@ @DL_LIB@ @SLANG_LIB@
  lpe_LDFLAGS = @lpe_LDFLAGS@
@@ -11,3 +11,12 @@
  
  liblpedir = $(libdir)/lpe
  
+@@ -650,7 +650,7 @@
+ install-data-hook:
+ 	list="@MODES@" ; \
+ 	for mode in $$list; do \
+-		( cd $(DESTDIR)$(liblpedir) ; source $$mode ; \
++		( . $(srcdir)/$$mode ; cd $(DESTDIR)$(liblpedir) ; \
+ 		  newname="`echo $$mode | sed -e 's/lib\(.*\)\.la/\1.so/'`" ; \
+ 		  test -f $$newname && rm -f $$newname ; \
+ 		  ln -s $$dlname $$newname ) ; \
