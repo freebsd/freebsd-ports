@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	opera
-PORTVERSION=	7.20.20030811
+PORTVERSION=	7.20.20030821
 CATEGORIES=	www
-MASTER_SITES=	http://snapshot.opera.com/unix/intel-freebsd/438-20030811-7.20-B3/
+MASTER_SITES=	http://snapshot.opera.com/unix/intel-freebsd/445-20030821-7.20-B4/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/0./0-/}.1-static-qt.i386.freebsd
 
 MAINTAINER=	avleeuwen@piwebs.com
