@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libol
-PORTVERSION=	0.2.16
+PORTVERSION=	0.2.17
 CATEGORIES=	devel
 MASTER_SITES=	http://www.balabit.hu/downloads/libol/0.2/
 
