@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	texinfo
-PORTVERSION=	4.5
-PORTREVISION=	1
+PORTVERSION=	4.7
+PORTREVISION=	0
 CATEGORIES=	japanese print
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -20,19 +20,18 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	mitsuru@riken.go.jp
 COMMENT=	Typeset Texinfo files for printing. Uses TeX
 
-RUN_DEPENDS=	ptex:${PORTSDIR}/japanese/ptex
+RUN_DEPENDS=	ptex:${PORTSDIR}/japanese/ptex-tetex
 
-BROKEN=		"Checksum mismatch"
-EXPIRATION_DATE=2004-08-20
-DEPRECATED=	${BROKEN}
-
+USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-prefix=j
 INSTALL_TARGET=	install install-tex
 CFLAGS+=	"-DEUC=1"
-MAKE_ARGS=	TEXMF=${PREFIX}/share/texmf
+MAKE_ARGS=	TEXMF=${PREFIX}/${TEXMFLOCAL}
+PLIST_SUB=	TEXMFLOCAL=${TEXMFLOCAL}
+TEXMFLOCAL=	share/texmf-local
 
-MAN1=		jinfo.1 jinstall-info.1 jmakeinfo.1 jtexindex.1 jtexi2dvi.1
+MAN1=		jinfo.1 jinfokey.1 jinstall-info.1 jmakeinfo.1 jtexindex.1 jtexi2dvi.1
 MAN5=		jinfo.5 jtexinfo.5
 
 .include <bsd.port.mk>
