@@ -60,6 +60,7 @@
     SUBDIR += visualos
     SUBDIR += vmsbackup
     SUBDIR += vmware
+    SUBDIR += vmware-guestd
     SUBDIR += vmware-tools
     SUBDIR += vmware2
     SUBDIR += vmware_xf4mod
