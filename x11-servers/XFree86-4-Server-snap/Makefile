@@ -7,7 +7,7 @@
 
 PORTNAME=	Server
 PORTVERSION=	4.3.99.12
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-servers
 MASTER_SITES=	${MASTER_SITE_XFREE:S|source/||:S/$/:x/} \
 		${MASTER_SITE_LOCAL:S/$/:local/}
@@ -76,22 +76,14 @@ MAN4=			citron.4 \
 			dynapro.4 \
 			elographics.4 \
 			fbdevhw.4 \
-			glint.4 \
 			kbd.4 \
 			keyboard.4 \
-			mga.4 \
 			microtouch.4 \
 			mouse.4 \
 			mutouch.4 \
 			nv.4 \
 			r128.4 \
 			radeon.4 \
-			rendition.4 \
-			s3virge.4 \
-			savage.4 \
-			siliconmotion.4 \
-			tdfx.4 \
-			vga.4 \
 			void.4 \
 			wacom.4
 MAN5=			XF86Config.5
@@ -118,7 +110,6 @@ PLIST_SUB+=		DRI="@comment "
 PLIST_SUB+=	ALPHA_NA="@comment "
 .else
 PLIST_SUB+=	ALPHA_NA=""
-MAN1+=		scanpci.1
 .endif
 
 .if ${ARCH} == ia64
@@ -128,13 +119,25 @@ PLIST_SUB+=	IA64_NA=""
 .endif
 
 .if ${ARCH} == sparc64
-PLIST_SUB+=	SPARC64_NA="@comment "
+PLIST_SUB	SPARC64_NA="@comment "
+PLIST_SUB+=	SPARC64=""
+MAN4+=		sunffb.4
 .else
+PLIST_SUB+=	SPARC64="@comment "
 PLIST_SUB+=	SPARC64_NA=""
+MAN4+=		glint.4 \
+		mga.4 \
+		rendition.4 \
+		s3virge.4 \
+		savage.4 \
+		siliconmotion.4 \
+		tdfx.4 \
+		vga.4
 .endif
 
 .if ${ARCH} == i386
 PLIST_SUB+=	I386=""
+MAN1+=		scanpci.1
 MAN4+=		apm.4 \
 		chips.4 \
 		cirrus.4 \
