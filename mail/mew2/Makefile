@@ -16,6 +16,8 @@ PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 MAINTAINER?=	kiri@FreeBSD.org
 COMMENT?=	Message interface to Emacs Window (version 2) for emacs21
 
+USE_PERL5_BUILD=yes
+
 # Mew major version
 MEW_MAJOR_VER?=	2
 
