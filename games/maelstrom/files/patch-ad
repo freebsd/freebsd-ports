@@ -1,0 +1,11 @@
+--- controls.cpp.orig	Sun Jan 28 15:51:37 2001
++++ controls.cpp	Sun Jan 28 15:51:49 2001
+@@ -89,7 +89,7 @@
+ 	if ( fname ) {
+ 		*fname = datafile;
+ 	}
+-	sprintf(datafile,  "%s/%s", home, MAELSTROM_DATA);
++	snprintf(datafile, sizeof(datafile), "%s/%s", home, MAELSTROM_DATA);
+ 	if ( (data=fopen(datafile, mode)) == NULL )
+ 		return(NULL);
+ 	return(data);
