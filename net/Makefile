@@ -388,7 +388,6 @@
     SUBDIR += ntalk
     SUBDIR += ntop
     SUBDIR += ntp
-    SUBDIR += ntp-devel
     SUBDIR += ntraceroute
     SUBDIR += nvnet
     SUBDIR += nylon
