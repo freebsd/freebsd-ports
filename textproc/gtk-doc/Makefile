@@ -7,15 +7,17 @@
 
 PORTNAME=	gtk-doc
 PORTVERSION=	1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
 MASTER_SITES=	ftp://ftp.gtk.org/pub/gtk/v1.1/docs/rdp/
 
 MAINTAINER=	gnome@freebsd.org
 COMMENT=	Code documentation system, originally for GTK+
 
-BUILD_DEPENDS=	${LOCALBASE}/share/sk/docbook/${DOCBOOK_VERSION}/docbook.cat:${PORTSDIR}/textproc/docbook-sk
-RUN_DEPENDS=	jade:${PORTSDIR}/textproc/jade
+BUILD_DEPENDS=	${LOCALBASE}/share/sk/docbook/${DOCBOOK_VERSION}/docbook.cat:${PORTSDIR}/textproc/docbook-sk \
+		${LOCALBASE}/share/xsl/docbook/xhtml/chunk.xsl:${PORTSDIR}/textproc/docbook-xsl
+RUN_DEPENDS=	jade:${PORTSDIR}/textproc/jade \
+		${LOCALBASE}/share/xsl/docbook/xhtml/chunk.xsl:${PORTSDIR}/textproc/docbook-xsl
 
 DOCBOOK_VERSION=	4.1.2
 
