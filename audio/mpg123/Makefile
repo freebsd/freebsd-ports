@@ -23,7 +23,7 @@ PATCHFILES=	mpg123-059r-v6-20000713b.diff.gz \
 		l3.diff.gz
 PATCH_DIST_STRIP=	-p1
 
-MAINTAINER=	sobomax@freebsd.org
+MAINTAINER=	des@FreeBSD.org
 
 WANT_ESOUND=	yes
 
