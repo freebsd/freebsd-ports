@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Text-MagicTemplate
-PORTVERSION=	3.11
+PORTVERSION=	3.44
 PORTEPOCH=	1
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
@@ -16,10 +16,14 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	clsung@dragon2.net
 COMMENT=	A Perl Module with magic merger of runtime values with templates
 
+BUILD_DEPENDS=	${SITE_PERL}/HTML/TableTiler.pm:${PORTSDIR}/www/p5-HTML-TableTiler \
+		${SITE_PERL}/HTML/FillInForm.pm:${PORTSDIR}/www/p5-HTML-FillInForm
+
 PERL_CONFIGURE=	YES
 
 MAN3=		Text::MagicTemplate.3 \
 		Bundle::Text::MagicTemplate.3 \
+		HTML::MagicTemplate.3 \
 		Text::MagicTemplate::Zone.3
 
 .include <bsd.port.pre.mk>

@@ -1,14 +1,17 @@
 %%SITE_PERL%%/Text/MagicTemplate.pm
+%%SITE_PERL%%/HTML/MagicTemplate.pm
 %%SITE_PERL%%/Bundle/Text/MagicTemplate.pm
 %%SITE_PERL%%/Text/MagicTemplate/Zone.pm
 %%SITE_PERL%%/auto/Text/MagicTemplate/_EVAL_.al
 %%SITE_PERL%%/auto/Text/MagicTemplate/_EVAL_ATTRIBUTES_.al
 %%SITE_PERL%%/auto/Text/MagicTemplate/TRACE_DELETIONS.al
-%%SITE_PERL%%/auto/Text/MagicTemplate/ID_list.al
 %%SITE_PERL%%/auto/Text/MagicTemplate/INCLUDE_TEXT.al
 %%SITE_PERL%%/auto/Text/MagicTemplate/autosplit.ix
+%%SITE_PERL%%/auto/Text/MagicTemplate/TableTiler.al
+%%SITE_PERL%%/auto/Text/MagicTemplate/FillInForm.al
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/MagicTemplate/.packlist
 @dirrm %%SITE_PERL%%/Text/MagicTemplate
+@unexec rmdir %D/%%SITE_PERL%%/HTML 2>/dev/null || true
 @unexec rmdir %D/%%SITE_PERL%%/Text 2>/dev/null || true
 @dirrm %%SITE_PERL%%/auto/Text/MagicTemplate
 @dirrm %%SITE_PERL%%/mach/auto/Text/MagicTemplate
