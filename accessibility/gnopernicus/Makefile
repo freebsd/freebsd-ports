@@ -15,13 +15,13 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Collection of accessibility apps for GNOME 2
 
-LIB_DEPENDS=	gnome-mag.1:${PORTSDIR}/accessibility/gnomemag \
-		gnomespeech.7:${PORTSDIR}/accessibility/gnomespeech
+LIB_DEPENDS=	gnome-mag.1:${PORTSDIR}/accessibility/gnomemag
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomeprefix gnomehack intlhack lthack libgnomeui atspi
+USE_GNOME=	gnomeprefix gnomehack intlhack lthack libgnomeui atspi \
+		gnomespeech
 USE_LIBTOOL_VER=13
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
