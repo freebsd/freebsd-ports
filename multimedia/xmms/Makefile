@@ -39,7 +39,4 @@ post-extract:
 	@${PERL} -pi.bak -e 's:blur_8.s:blur_8.S:g' \
 	    ${WRKSRC}/Visualization/blur_scope/Makefile.in
 
-post-install:
-	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
-
 .include <bsd.port.mk>

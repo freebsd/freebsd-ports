@@ -10,9 +10,9 @@ include/xmms/dga.h
 include/xmms/plugin.h
 lib/libxmms.so.1
 @exec ln -fs %D/%F %B/libxmms.so
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %D/lib
+@exec /sbin/ldconfig -m %D/lib
 @unexec rm -f %B/libxmms.so
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
+@unexec /sbin/ldconfig -R
 lib/xmms/Output/libOSS.so
 lib/xmms/Output/libdisk_writer.so
 lib/xmms/Input/libwav.so
