@@ -16,6 +16,7 @@ MASTER_SITES=	ftp://ftp.m17n.org/pub/mule/semi/semi-1.14-for-flim-1.14/ \
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 
 MAINTAINER?=	shige@FreeBSD.org
+COMMENT?=	SEMI, Library of MIME feature for GNU Emacs for emacs21
 
 PORTCLASS?=	master
 

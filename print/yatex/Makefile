@@ -13,6 +13,7 @@ MASTER_SITES=	http://www.yatex.org/ \
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	taoka@FreeBSD.org
+COMMENT?=	Yet Another LaTeX mode and html mode on Emacs (for Emacs{19,20} and XEmacs{19,20})
 
 PKGINSTALL=	${WRKDIR}/INSTALL
 PKGDEINSTALL=	${WRKDIR}/DEINSTALL

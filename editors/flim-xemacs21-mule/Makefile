@@ -11,6 +11,7 @@ MAINTAINER=	shige@FreeBSD.org
 PORTCLASS=	slave
 
 MASTERDIR=	${.CURDIR}/../../editors/flim
+COMMENT=	FLIM, message representation or encoding elisp library for xemacs21-mule
 
 # emacs port setup
 EMACS_PORT_NAME=	xemacs21-mule

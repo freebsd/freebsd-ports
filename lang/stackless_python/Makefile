@@ -19,12 +19,12 @@ PATCHFILES=	stackless-${CVSDATE}.diff.bz2
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	perky@FreeBSD.org
+COMMENT=	Python implementation that does not use the C stack
 
 ONLY_FOR_ARCHS=	i386 powerpc
 CVSDATE=	021026
 MASTERDIR=	${.CURDIR}/../../lang/python
 
-COMMENTFILE=	${.CURDIR}/pkg-comment
 DESCR=		${.CURDIR}/pkg-descr
 MD5_FILE=	${.CURDIR}/distinfo
 PLIST=		${WRKDIR}/pkg-plist

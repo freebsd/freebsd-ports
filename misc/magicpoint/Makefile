@@ -12,6 +12,7 @@ CATEGORIES+=	misc
 MASTER_SITES=	ftp://ftp.mew.org/pub/MagicPoint/
 
 MAINTAINER?=	mita@FreeBSD.org
+COMMENT?=	An X11-based presentation tool
 
 LIB_DEPENDS+=	png.5:${PORTSDIR}/graphics/png
 RUN_DEPENDS+=	pnmscale:${PORTSDIR}/graphics/netpbm

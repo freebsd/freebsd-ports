@@ -7,6 +7,8 @@
 
 PORTVERSION=	1.3
 MASTERDIR=	${.CURDIR}/../pips800
+COMMENT=	Photo Image Print System for Linux --- EPSON PM-780C
+
 PRTYPE=		780
 
 .include "${MASTERDIR}/Makefile"

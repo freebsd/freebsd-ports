@@ -17,6 +17,7 @@ DISTFILES+=	${DOC_DISTFILES}
 EXTRACT_ONLY=	${RPMFILE}
 
 MAINTAINER=	taoka@FreeBSD.org
+COMMENT?=	Canon Bubble Jet Print Filter for Linux -- Common files
 
 BUILD_DEPENDS=  rpm2cpio:${PORTSDIR}/archivers/rpm2cpio
 .if defined(SLAVE_PORT)
@@ -40,7 +41,6 @@ EXTRACT_AFTER_ARGS=	| cpio -id --quiet
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}${_SUF1}${_SUF2}
 DIST_SUBDIR=	bjfilter
 PLIST=		${.CURDIR}/pkg-plist
-COMMENTFILE=	${.CURDIR}/pkg-comment
 DESCR=		${.CURDIR}/pkg-descr
 MD5_FILE=	${.CURDIR}/distinfo
 ONLY_FOR_ARCHS=	i386

@@ -9,7 +9,7 @@ PORTNAME=	mysql-client
 PORTREVISION=	0
 
 MASTERDIR=	${.CURDIR}/../mysql323-server
-COMMENTFILE=	${PKGDIR}/pkg-comment.client
+COMMENT=	Multithreaded SQL database (client)
 PKGINSTALL=	mustnotexist
 PLIST=		${PKGDIR}/pkg-plist.client
 

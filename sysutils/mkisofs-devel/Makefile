@@ -11,7 +11,7 @@ PORTREVISION=	0
 CATEGORIES=	sysutils
 
 MASTERDIR=	${.CURDIR}/../cdrtools
-COMMENTFILE=	${PKGDIR}/pkg-comment.mkisofs
+COMMENT=	Create iso9660/Rock Ridge/Joliet filesystems
 DESCR=		${PKGDIR}/pkg-descr.mkisofs
 PLIST=		${PKGDIR}/pkg-plist.mkisofs
 

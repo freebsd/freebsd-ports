@@ -10,7 +10,7 @@ PORTREVISION=	0
 PKGNAMESUFFIX=	-client
 
 MASTERDIR=	${.CURDIR}/../mysql40-server
-COMMENT=	${PKGDIR}/pkg-comment.client
+COMMENT=	Multithreaded SQL database (client)
 PKGINSTALL=	mustnotexist
 PLIST=		${PKGDIR}/pkg-plist.client
 

@@ -7,6 +7,8 @@
 
 PORTVERSION=	1.3.1
 MASTERDIR=	${.CURDIR}/../pips800
+COMMENT=	Photo Image Print System for Linux --- EPSON PM-820C
+
 PRTYPE=		820
 
 .include "${MASTERDIR}/Makefile"

@@ -6,6 +6,8 @@
 #
 
 MASTERDIR=	${.CURDIR}/../pips800
+COMMENT=	Photo Image Print System for Linux --- EPSON PM-760C
+
 PRTYPE=		760
 
 .include "${MASTERDIR}/Makefile"

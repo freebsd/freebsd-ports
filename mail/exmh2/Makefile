@@ -16,6 +16,7 @@ MASTER_SITES+=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER?=	bmah@FreeBSD.org
+COMMENT?=	X11/TK based mail reader front end to MH
 
 .if defined(JAPANESE_EXMH)
 RUN_DEPENDS=	wish8.0jp:${PORTSDIR}/japanese/tk80

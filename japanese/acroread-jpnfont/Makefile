@@ -8,6 +8,8 @@
 DISTNAME=	jpnfont
 CATEGORIES=	japanese
 
+COMMENT=	Asian Font Packs for Acrobat Reader 4.0 (for Japanese)
+
 MASTERDIR=	${.CURDIR}/../../print/acroread-commfont
 
 .include "${MASTERDIR}/Makefile"

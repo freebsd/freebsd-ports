@@ -15,6 +15,7 @@ DISTFILES?=	SKK-JISYO.L.${PORTVERSION}${SKK_JISYO_SUFFIX}.gz \
 DIST_SUBDIR=	skk-jisyo
 
 MAINTAINER?=	yoichi@FreeBSD.org
+COMMENT?=	Jisyo (dictionary) files for the SKK Japanese-input software
 
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes

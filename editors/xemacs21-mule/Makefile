@@ -24,6 +24,7 @@ MULE_SLAVE=	yes
 .endif
 
 MAINTAINER?=	kiri@FreeBSD.org
+COMMENT=?	XEmacs(version 21) text editor with mule(Only the executables)
 
 BUILD_DEPENDS=	${BUILD_INPUT_METHOD}
 .if defined(MULE_SLAVE)

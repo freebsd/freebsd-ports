@@ -8,7 +8,8 @@
 PKGNAMESUFFIX=	-mule
 
 MASTERDIR=	${.CURDIR}/../yatex
-COMMENTFILE=	${.CURDIR}/pkg-comment
+COMMENT=	Yet Another LaTeX mode and html mode on Emacs (for mule 2.3)
+
 EMACS_PORT_NAME=mule
 
 .include	"${MASTERDIR}/Makefile"

@@ -6,7 +6,7 @@
 #
 
 MASTERDIR=	${.CURDIR}/../../misc/magicpoint
-COMMENTFILE=	${.CURDIR}/pkg-comment
+COMMENT=	An X11-based presentation tool, configured with vflib support
 
 LIB_DEPENDS=	VFlib2.24:${PORTSDIR}/japanese/vflib
 
