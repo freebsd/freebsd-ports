@@ -6,6 +6,7 @@
 
 PORTNAME=	kftpgrabber
 PORTVERSION=	0.5.0.b1
+PORTREVISION=	1
 CATEGORIES=	ftp kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -14,6 +15,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/.b1/-beta1/}
 MAINTAINER=	markus@FreeBSD.org
 COMMENT=	Graphical FTP client for KDE
 
+EXTRA_PATCHES=	${.CURDIR}/../../x11/kde3/files/extrapatch-configure
+
 USE_BZIP2=	yes
 USE_KDELIBS_VER=3
 USE_GMAKE=	yes
@@ -21,16 +24,16 @@ USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
 
-OPTIONS=	HOWL "ZeroConf (Rendezvous) support" off \
-		QSA  "QSA scripting support" off
+OPTIONS=	HOWL "ZeroConf (Rendezvous) support" on \
+		QSA  "QSA scripting support" on
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_HOWL)
+.if !defined(WITHOUT_HOWL)
 LIB_DEPENDS+=	howl:${PORTSDIR}/net/howl
 .endif
 
-.if defined(WITH_QSA)
+.if !defined(WITHOUT_QSA)
 LIB_DEPENDS+=	qsa.1:${PORTSDIR}/devel/qsa
 .endif
 
