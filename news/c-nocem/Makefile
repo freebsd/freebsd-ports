@@ -32,8 +32,4 @@ PLIST_SUB+=	NEWSBIN=${NEWSBIN:S=${PREFIX}/==}
 USE_PERL5=	yes
 .endif
 
-pre-fetch:
-	(cd ${PORTSDIR}/${CNEWSSRC} && \
-		${SETENV} ${MAKE_ENV} ${MAKE} fetch)
-
 .include <bsd.port.post.mk>

@@ -340,10 +340,6 @@ MLINKS=	3DBorder.3 Tk_Alloc3DBorderFromObj.3 \
 
 .include <bsd.port.pre.mk>
 
-pre-fetch:
-	(cd ${PORTSDIR}/lang/tcl84 && \
-		${SETENV} ${MAKE_ENV} ${MAKE} fetch)
-
 post-install:
 	${INSTALL_DATA} ${FILESDIR}/pkgIndex.tcl ${PREFIX}/lib/tk${TK_VER}/
 .if exists(${PKGINSTALL})
