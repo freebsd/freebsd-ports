@@ -16,6 +16,8 @@ COMMENT=	A C++ Application Framework for use with Gnome--
 
 LIB_DEPENDS=	gnomemm-1.2.10:${PORTSDIR}/x11-toolkits/gnome--
 
+IGNORE=		"Obsolete; will be upgraded to 1.3.x after the 5.2 freeze"
+
 USE_X_PREFIX=	yes
 USE_PERL5=	yes
 USE_GMAKE=	yes
