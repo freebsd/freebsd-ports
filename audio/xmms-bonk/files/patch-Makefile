@@ -12,7 +12,7 @@ $FreeBSD$
 -else
 -  CFLAGS=-Wall -O2 -fno-exceptions -ffast-math -D_REENTRANT `gtk-config --cflags`
 -endif
-+CXXFLAGS+= -fno-exceptions -D_REENTRANT `xmms-config --cflags`
++CXXFLAGS+= -fno-exceptions -D_REENTRANT `xmms-config --cflags` -fPIC
  
  libbonk.so : bonk-xmms.cc
 -	$(CPP) $(CFLAGS) -shared -o libbonk.so bonk-xmms.cc -lstdc++

@@ -1,6 +1,11 @@
---- makefile.orig	Fri Nov 29 14:30:00 2002
-+++ makefile	Fri Nov 29 14:34:56 2002
-@@ -13,7 +13,7 @@
+--- makefile.orig	Tue Dec  5 05:36:20 2000
++++ makefile	Sun Feb  8 22:55:53 2004
+@@ -9,11 +9,11 @@
+ xmmsdir=`xmms-config --data-dir`
+ xmmsvislib=`xmms-config --visualization-plugin-dir`
+ 
+-CFLAGS=-O2 -Wall -DHAVE_LIBPNG -DXMMS_DIR=\"$(xmmsdir)\" -DKJSKIN=\"$(xmmsdir)/kjofol/default.zip\" -I. `xmms-config --cflags`
++CFLAGS=-O2 -Wall -DHAVE_LIBPNG -DXMMS_DIR=\"$(xmmsdir)\" -DKJSKIN=\"$(xmmsdir)/kjofol/default.zip\" -I. `xmms-config --cflags` -fPIC
  LPNG = -lpng -lz
  LDFLAGS=-O2
  # LIBS=-L/usr/lib `gtk-config --libs` $(LPNG) -lgthread -lpthread -lxmms -Wl,--rpath -Wl,/usr/local/lib
