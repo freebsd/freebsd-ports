@@ -8,6 +8,7 @@
 
 PORTNAME=	gnunet
 PORTVERSION=	0.6.5
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.ovmj.org/GNUnet/download/ \
 		${MASTER_SITE_GNU}
@@ -83,8 +84,18 @@ PLIST_SUB+=		WITH_IPV6=""
 PLIST_SUB+=		WITH_IPV6="@comment "
 .endif
 
+.if defined(WITH_GUILE)
+LIB_DEPENDS+=		guile.15:${PORTSDIR}/lang/guile
+CONFIGURE_ARGS+=	--enable-guile
+MAN1+=			gnunet-download-manager.1
+PLIST_SUB+=		WITH_GUILE=""
+.else
+CONFIGURE_ARGS+=	--disable-guile
+PLIST_SUB+=		WITH_GUILE="@comment "
+.endif
+
 MAN1=		gnunet-chat.1 gnunet-check.1 gnunet-convert.1 \
-		gnunet-delete.1 gnunet-directory.1 gnunet-download-manager.1 \
+		gnunet-delete.1 gnunet-directory.1 \
 		gnunet-download.1 gnunet-gtk.1 gnunet-insert.1 \
 		gnunet-peer-info.1 gnunet-pseudonym.1 \
 		gnunet-search.1 gnunet-stats.1 gnunet-tbench.1 \
