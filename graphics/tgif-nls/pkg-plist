@@ -1,5 +1,7 @@
 bin/tgif
 bin/tgif-nls
+lib/X11/tgif/Copyright
+lib/X11/tgif/LICENSE.QPL
 lib/X11/tgif/tgif.Xdefaults
 lib/X11/tgif/tgificon.eps
 lib/X11/tgif/tgificon.obj
@@ -10,10 +12,13 @@ lib/X11/tgif/eq4.sym
 lib/X11/tgif/eq4-2x.sym
 lib/X11/tgif/eq4-ps2epsi.sym
 lib/X11/tgif/eq4-epstool.sym
+lib/X11/tgif/eq4xpm.sym
 lib/X11/tgif/keys.obj
 %%PORTDOCS%%share/doc/tgif/Copyright
 %%PORTDOCS%%share/doc/tgif/HISTORY
+%%PORTDOCS%%share/doc/tgif/LICENSE.QPL
 %%PORTDOCS%%share/doc/tgif/README
+%%PORTDOCS%%share/doc/tgif/tgif.1.html
 share/examples/tgif/an-sr-flip-flop.obj
 share/examples/tgif/example.tex
 share/examples/tgif/fonts.obj

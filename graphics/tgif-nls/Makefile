@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	tgif
-PORTVERSION=	4.1.41
-PORTREVISION=	2
+PORTVERSION=	4.1.42
 CATEGORIES=	graphics
-MASTER_SITES=	ftp://bourbon.cs.umd.edu/pub/tgif/ \
-		ftp://ftp.cs.ucla.edu/pub/tgif/ \
-		ftp://download.sourceforge.net/tgif/
+MASTER_SITES=	ftp://bourbon.usc.edu/pub/tgif/ \
+		${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR= tgif
 PKGNAMESUFFIX=	-nls
+DISTNAME=	${PORTNAME}-QPL-${PORTVERSION}
 
 MAINTAINER=	one@netlab.is.tsukuba.ac.jp
 
@@ -27,7 +27,7 @@ TGIFDOC=	${PREFIX}/share/doc/tgif
 TGIFDEMO=	${PREFIX}/share/examples/tgif
 DEMO_FILES=	an-sr-flip-flop.obj launch-demo-1.obj \
 		fonts.obj launch-demo.obj keys.obj slide-demo.obj example.tex
-READMES=	Copyright HISTORY README
+READMES=	Copyright HISTORY LICENSE.QPL README tgif.1.html
 SPICE_FILES=	README BZ.mod DN.mod DN.sym MN.mod MN.sym MP.mod MP.sym \
 		SN.mod SN.sym SP.mod SP.sym capacitor.sym connection.sym \
 		demo.obj gauge.sym ground.sym in.sym out.sym port.sym \
