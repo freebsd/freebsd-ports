@@ -1,0 +1,7 @@
+Pyfort is a tool for connecting Fortran routines (and "Fortran-like" C) to
+Python and its Numerical Python array extension. Pyfort translates an module
+file that describes the routines you wish to access from Python into a C
+language source file defining a Python module. Pyfort will also build and
+install this extension into Python.
+
+WWW: http://pyfortran.sourceforge.net/
