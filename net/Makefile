@@ -500,6 +500,7 @@
     SUBDIR += pim6sd
     SUBDIR += pipsecd
     SUBDIR += plb
+    SUBDIR += pmacct
     SUBDIR += pmf
     SUBDIR += poink
     SUBDIR += poptop

@@ -1,0 +1,10 @@
+pmacct is a network tool to gather IP traffic information (bytes counter and
+number of packets). Aggregation of statistics is done either by looking at
+destination, source, both source and destination, or unidirectional IP flows.
+Data is stored in an in-memory table or using an SQL database (currently only
+MySQL). The content of these tables can be later retrieved by a client program
+via a local stream-oriented connection (for simple output or export to MRTG) or
+via an SQL client. Gathering packets off the wire is done with the pcap library
+and promiscuous mode of one or more network interfaces.
+
+WWW: http://www.ba.cnr.it/~paolo/pmacct/ 
