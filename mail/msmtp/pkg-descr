@@ -18,4 +18,6 @@ Features include:
     * support for multiple accounts
     * sendmail compatible exit codes (which most MUAs understand).
 
+Note: you may want to install mail/msmtpqueue - queuing support for msmtp.
+
 WWW: http://msmtp.sourceforge.net/
