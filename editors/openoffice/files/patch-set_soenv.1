@@ -1,5 +1,5 @@
 --- set_soenv.1.orig	Wed Apr 17 22:41:31 2002
-+++ set_soenv.1	Thu Jun  6 13:10:51 2002
++++ set_soenv.1	Thu Jun  6 15:58:56 2002
 @@ -40,7 +40,7 @@
  #
  # Set this value equal to the corresponding amount of
@@ -84,7 +84,30 @@
  } 
  elsif ( $platform eq "$Linux" ) 
  {
-@@ -934,15 +949,16 @@
+@@ -891,7 +906,7 @@
+ 			$ps_STLPORT_LIB.
+                         $ps.'$SOLARVER'.$ds.'$UPD'.$ds.'$INPATH'.$LIB;
+ }
+-elsif (($platform eq "$Linux") || ($platform eq "$FreeBSD") || ($platform eq "$NetBSD") || ($platform eq "$Tru64"))
++elsif (($platform eq "$Linux") || ($platform eq "$NetBSD") || ($platform eq "$Tru64"))
+ {  $LD_LIBRARY_PATH   = $cur_dir.
+                         $ps.'$SOLARENV'.$ds.'$INPATH'.$LIB.
+                         $ps.$USR_LOCAL.$LIB.
+@@ -899,6 +914,13 @@
+ 			$ps_STLPORT_LIB.
+                         $ps.'$SOLARVER'.$ds.'$UPD'.$ds.'$INPATH'.$LIB;
+ }
++elsif ($platform eq "$FreeBSD")
++{  $LD_LIBRARY_PATH   = $cur_dir.
++                        $ps.'$SOLARENV'.$ds.'$INPATH'.$LIB.
++                        $ps.$par_dir.$LIB.
++			$ps_STLPORT_LIB.
++                        $ps.'$SOLARVER'.$ds.'$UPD'.$ds.'$INPATH'.$LIB;
++}
+ elsif ($platform eq "$Irix" || $platform eq "$Irix64")
+ {  $LD_LIBRARY_PATH   = $cur_dir.
+                         $ps.'$SOLARENV'.$ds.'$INPATH'.$LIB.
+@@ -934,15 +956,16 @@
                          $D.$COM.
  			$D.$CVER.
                          $D.$GVER.
@@ -104,7 +127,7 @@
  {  $SOLARDEF         .= $D."GLIBC=".$GLIBC;
  }
  $SOLARDEF            .= $D."SUPD=$UPD".
-@@ -959,7 +975,7 @@
+@@ -959,7 +982,7 @@
                          $L.$USR_DT.$LIB.
                          $L.$USR_OPENWIN.$LIB.'"';
  }
@@ -113,7 +136,7 @@
  {  $SOLAREXTRALIB     = '"'.$L.$par_dir.$LIB.
                          $L.$LIB.
                          $L.$USR.$LIB.
-@@ -969,6 +985,11 @@
+@@ -969,6 +992,11 @@
  {  $SOLAREXTRALIB     = '"'.$L.$LIB.
                          $L.$USR.$LIB.'"';
  }
@@ -125,7 +148,7 @@
  # Compiler include search directory paths.
  if (($platform eq "$Solaris") || ($platform eq "$Linux") || ($platform eq "$FreeBSD") || ($platform eq "$NetBSD") || ($platform eq "$Tru64") || ($platform eq "$Irix") || ($platform eq "$Irix64")) 
  {  $SOLARINCLUDES     = '"'.$I.'$SOLARENV'.$INC.'"';
-@@ -1039,7 +1060,7 @@
+@@ -1039,7 +1067,7 @@
                          $ps.$USR.$LIB.
                          $ps.$USR_LOCAL.$BIN;
  }
@@ -134,7 +157,7 @@
  {  $PATH              = $cur_dir.
                          $ps.'$SOLARVER'.$ds.'$UPD'.$ds.'$INPATH'.$BIN.
                          $ps.'$SOLARENV'.$ds.'$OUTPATH'.$BIN.
-@@ -1058,6 +1079,22 @@
+@@ -1058,6 +1086,22 @@
  			$ps.$USR.$ds."X11".$BIN.
                          $ps.$USR.$LIB;
  }
@@ -157,7 +180,7 @@
  elsif ($platform eq "$Winnt")
  { 
     my ( $noldPATH );
-@@ -1155,7 +1192,7 @@
+@@ -1155,7 +1199,7 @@
  			$L_STLPORT_LIB.
                          $L.$XLIB.'"';
  }
@@ -166,7 +189,7 @@
  {  $SOLARLIB          = '"'.$L.$par_dir.$LIB.
  			$L.'$SOLARENV'.$ds.'$OUTPATH'.$LIB.
                          $L.'$SOLARVER'.$ds.'$UPD'.$ds.'$INPATH'.$LIB.
-@@ -1167,6 +1204,15 @@
+@@ -1167,6 +1211,15 @@
  			$L_STLPORT_LIB.
                          $L.$XLIB.'"';
  }
@@ -182,7 +205,7 @@
  elsif ($platform eq "$Winnt")
  {  $SOLARLIB          = '"'.$L.'$SOLARVER'.$ds.'$UPD'.$ds.'$INPATH'.$LIB.
                          $L.$par_dir.$LIB.
-@@ -1196,7 +1242,7 @@
+@@ -1196,7 +1249,7 @@
  	$SOLARINC            .= $I.$USR.$INCLUDE;
  }
  $SOLARINC	     .= $STLPORT_stlport;
@@ -191,7 +214,7 @@
  {
  # This simply adds an include path, so even cases that break the FHS work
  $SOLARINC            .= $STLPORT_inc_stlport;
-@@ -1210,11 +1256,6 @@
+@@ -1210,11 +1263,6 @@
  {  $SOLARINC         .= $I.'$COMPATH'.$ds."include";
  }
  
@@ -203,7 +226,7 @@
  $SOLARINC            .= $I.'$SOLARENV'.$INC.$ds."Xp31".
                          $I.'$JAVA_HOME'.$INCLUDE;
  
-@@ -1382,6 +1423,9 @@
+@@ -1382,6 +1430,9 @@
  ToFile( "NEW_JAR_PACK",      $NEW_JAR_PACK,      "e" );
  ToFile( "NO_BSYMBOLIC",      $NO_BSYMBOLIC,      "e" );
  ToFile( "TF_FILTER",         "TRUE",             "e" );
@@ -213,7 +236,7 @@
  if ( $platform ne "$Macosx" )
  {  ToFile( "PSPRINT",           "TRUE",             "e" );
  } elsif ( $GUIBASE eq "unx" ) {
-@@ -1407,6 +1451,12 @@
+@@ -1407,6 +1458,12 @@
  ToFile( "GUIENV",            $GUIENV,            "e" );
  ToFile( "GVER",              $GVER,              "e" );
  ToFile( "OS",                $OS,                "e" );
