@@ -15,6 +15,12 @@ MASTER_SITES=	http://www.canb.auug.org.au/~millerp/		\
 
 MAINTAINER=	jkoshy@freebsd.org
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} <= 500000
+BROKEN=		"Does not compile"
+.endif
+
 MAN1=		fcomp.1 fhist.1 fmerge.1
 ALL_TARGET=	binaries
 INSTALL_TARGET=	install-bin
@@ -32,4 +38,4 @@ post-install:
 	${INSTALL_MAN} tmp ${PREFIX}/man/man1/${file}.1)
 .endfor
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
