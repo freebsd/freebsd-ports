@@ -3,7 +3,7 @@
 # Date created:         19 April 1998
 # Whom:                 chuckr
 #
-# $Id: Makefile,v 1.19 1998/09/17 00:50:50 asami Exp $
+# $Id: Makefile,v 1.20 1998/11/29 12:43:08 asami Exp $
 #
 
 DISTNAME=	gnuplot-beta340
@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.che.wisc.edu/pub/gnuplot/
 
 MAINTAINER=	chuckr@FreeBSD.org
 
-LIB_DEPENDS=    png.2:${PORTSDIR}/graphics/png
+LIB_DEPENDS=    png.3:${PORTSDIR}/graphics/png
 BUILD_DEPENDS=	$(PREFIX)/lib/libgd.a:${PORTSDIR}/graphics/gd
 
 USE_XLIB=	yes

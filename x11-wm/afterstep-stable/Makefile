@@ -3,7 +3,7 @@
 # Date created:		1 May 1998
 # Whom:			Brett Taylor
 #
-# $Id: Makefile,v 1.30 1999/01/17 03:03:44 billf Exp $
+# $Id: Makefile,v 1.31 1999/01/18 03:38:24 billf Exp $
 #
 
 DISTNAME=	AfterStep-1.6.6
@@ -17,7 +17,7 @@ MASTER_SITES=   ftp://ftp.afterstep.org/stable/ \
 MAINTAINER=	dima@chg.ru
 
 LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm \
-		png.2:${PORTSDIR}/graphics/png \
+		png.3:${PORTSDIR}/graphics/png \
 		jpeg.9:${PORTSDIR}/graphics/jpeg
 
 INSTALL_TARGET=	install install.man

@@ -3,7 +3,7 @@
 # Date created:		10 June 1997
 # Whom:			Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.41 1999/01/20 22:49:40 vanilla Exp $
+# $Id: Makefile,v 1.42 1999/01/21 20:00:49 vanilla Exp $
 #
 
 DISTNAME=	imlib-1.9.2
@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	imlib
 
 MAINTAINER=	vanilla@FreeBSD.ORG
 
-LIB_DEPENDS=    png.2:${PORTSDIR}/graphics/png \
+LIB_DEPENDS=    png.3:${PORTSDIR}/graphics/png \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		tiff.4:${PORTSDIR}/graphics/tiff34 \
 		gif.3:${PORTSDIR}/graphics/giflib \

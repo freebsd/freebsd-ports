@@ -3,7 +3,7 @@
 # Date created:		5 Dec 1997
 # Whom:			Kazuyuki IENAGA <ienaga@jsys.co.jp>
 #
-# $Id: Makefile,v 1.12 1998/12/26 03:47:19 kuriyama Exp $
+# $Id: Makefile,v 1.13 1999/01/18 03:05:25 steve Exp $
 #
 
 DISTNAME=	xemacs-20.4
@@ -23,7 +23,7 @@ MAINTAINER?=	kiri@kiri.toba-cmt.ac.jp
 BUILD_DEPENDS=	${BUILD_INPUT_METHOD}
 LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
-		png.2:${PORTSDIR}/graphics/png \
+		png.3:${PORTSDIR}/graphics/png \
 		compface.1:${PORTSDIR}/mail/faces \
 		${LIB_INPUT_METHOD}
 RUN_DEPENDS=	${PREFIX}/lib/${XEMACS_DIR}/lisp/x11/x-win-xfree86.elc:${PORTSDIR}/editors/xemacs-mule-common

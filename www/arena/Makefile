@@ -3,7 +3,7 @@
 # Date created:         Dec 1 1995
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.12 1998/09/15 11:57:48 asami Exp $
+# $Id: Makefile,v 1.13 1998/09/17 00:50:50 asami Exp $
 #
 
 DISTNAME=       arena-CJK-beta3a
@@ -14,7 +14,7 @@ MASTER_SITES=   ftp://ftp-eu.w3.org/pub/Arena/beta-3/
 MAINTAINER=     ache@FreeBSD.ORG
 
 LIB_DEPENDS+=   jpeg.9:${PORTSDIR}/graphics/jpeg
-LIB_DEPENDS+=   png.2:${PORTSDIR}/graphics/png
+LIB_DEPENDS+=   png.3:${PORTSDIR}/graphics/png
 
 BROKEN=		png upgrade
 

@@ -3,7 +3,7 @@
 # Date created:		Sun Nov 22 12:08:18 CET 1998
 # Whom:			Dirk Froemberg <ibex@physik.TU-Berlin.DE>
 #
-# $Id: Makefile,v 1.7 1998/12/25 14:41:09 vanilla Exp $
+# $Id: Makefile,v 1.8 1999/01/08 14:18:43 dirk Exp $
 #
 
 DISTNAME=	gtksee-0.2.1
@@ -16,7 +16,7 @@ MAINTAINER=	dirk@FreeBSD.ORG
 
 LIB_DEPENDS=	gtk11.1:${PORTSDIR}/x11-toolkits/gtk11 \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
-		png.2:${PORTSDIR}/graphics/png \
+		png.3:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff34
 
 GNU_CONFIGURE=	yes

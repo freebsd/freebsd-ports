@@ -3,7 +3,7 @@
 # Date created:         3 Dec 1996
 # Whom:                 paulo@isr.uc.pt
 #
-# $Id: Makefile,v 1.11 1998/09/17 00:50:48 asami Exp $
+# $Id: Makefile,v 1.12 1998/12/30 11:48:34 dirk Exp $
 #
 
 DISTNAME=	povray3
@@ -17,7 +17,7 @@ DISTFILES=	povuni_s.tgz povuni_d.tgz
 
 MAINTAINER=	kkennawa@physics.adelaide.edu.au
 
-LIB_DEPENDS=	png.2:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	png.3:${PORTSDIR}/graphics/png
 
 USE_XLIB=	yes
 MAN1=		povray.1

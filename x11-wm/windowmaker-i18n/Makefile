@@ -3,7 +3,7 @@
 # Date created:		24 Nov 1998
 # Whom:			mac@jp.freebsd.org
 #
-# $Id: Makefile,v 1.47 1999/01/18 03:18:27 steve Exp $
+# $Id: Makefile,v 1.48 1999/01/18 06:43:04 asami Exp $
 
 DISTNAME=	WindowMaker-0.50.2
 PKGNAME=	windowmaker-i18n-0.50.2
@@ -20,7 +20,7 @@ MAINTAINER=	mac@jp.freebsd.org
 LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm \
 		gif.3:${PORTSDIR}/graphics/giflib \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
-		png.2:${PORTSDIR}/graphics/png \
+		png.3:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff34
 BUILD_DEPENDS=	${LOCALBASE}/lib/libintl.a:${PORTSDIR}/devel/gettext \
 		nkf:${PORTSDIR}/japanese/nkf
