@@ -52,6 +52,7 @@
     SUBDIR += rio
     SUBDIR += ripenc
     SUBDIR += ripit
+    SUBDIR += ripit-atapi
     SUBDIR += rosegarden
     SUBDIR += rplay
     SUBDIR += rsynth
