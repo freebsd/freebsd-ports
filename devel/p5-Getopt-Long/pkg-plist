@@ -1,0 +1,14 @@
+lib/perl5/site_perl/%%PERL_VER%%/auto/Getopt/Long/GetOptions.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/Getopt/Long/FindOption.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/Getopt/Long/Configure.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/Getopt/Long/config.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/Getopt/Long/Croak.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/Getopt/Long/autosplit.ix
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Getopt/Long/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/newgetopt.pl
+lib/perl5/site_perl/%%PERL_VER%%/Getopt/Long.pm
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/auto/Getopt/Long
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Getopt/Long
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/auto/Getopt 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Getopt 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Getopt 2>/dev/null || true
