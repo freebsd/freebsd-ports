@@ -1,0 +1,6 @@
+lib/perl5/site_perl/%%PERL_VER%%/mach/auto/Attribute/Handlers/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/Attribute/Handlers.pm
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/mach/auto/Attribute/Handlers
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/mach/auto/Attribute
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/mach/auto 2>/dev/null || true
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Attribute
