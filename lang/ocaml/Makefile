@@ -1,4 +1,4 @@
-# New ports collection makefile for:	Objective Caml
+# New ports collection makefile for:	ocaml
 # Date created:		24 December 1996
 # Whom:			Kiriyama Kazuhiko <kiri@kiri.toba-cmt.ac.jp>
 #
@@ -6,38 +6,37 @@
 #
 
 PORTNAME=	ocaml
-PORTVERSION=	3.07
-PORTREVISION=	1
+PORTVERSION=	3.07.2
 CATEGORIES=	lang
 MASTER_SITES=	http://caml.inria.fr/distrib/${DISTNAME}/ \
 		ftp://ftp.inria.fr/INRIA/caml-light/${DISTNAME}/ \
 		ftp://ftp.kurims.kyoto-u.ac.jp/pub/lang/caml-light/${DISTNAME}/
-PKGNAMESUFFIX=	${TKSFX}
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DOCFILES}
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX} \
-		${DISTNAME}-refman.html${EXTRACT_SUFX}
+PKGNAMESUFFIX=	${SFX}
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/.2$//}
 
 PATCH_SITES=	${MASTER_SITES}
 PATCHFILES=	${DISTNAME}-patch2.diffs
 PATCH_DIST_STRIP=-p1
 
-MAINTAINER=	eugos@gmx.net
-COMMENT=	An ML language based on a complete class-based objective system
-
-PLIST_SUB+=	DISTNAME=${DISTNAME}
+MAINTAINER?=	eugos@gmx.net
+COMMENT?=	The Objective Caml compiler and programming environment
 
 .if defined(WITHOUT_X11)
 PLIST_SUB+=	X11="@comment " TK="@comment "
 WITHOUT_TK=	yes
-TKSFX=		-nox11
+SFX=		-nox11
+CONFLICTS=	ocaml-[0-9]* ocaml-notk-*
 .else
 PLIST_SUB+=	X11=""
 USE_XLIB=	yes
 .if defined(WITHOUT_TK)
 PLIST_SUB+=	TK="@comment "
-TKSFX=		-notk
+SFX=		-notk
+CONFLICTS=	ocaml-[0-9]* ocaml-nox11-*
 .else
 PLIST_SUB+=	TK=""
+CONFLICTS=	ocaml-nox11-* ocaml-notk-*
+
 BUILD_DEPENDS+=	${LOCALBASE}/include/tcl8.4:${PORTSDIR}/lang/tcl84 \
 		${LOCALBASE}/include/tk8.4:${PORTSDIR}/x11-toolkits/tk84
 LIB_DEPENDS+=	tk84.1:${PORTSDIR}/x11-toolkits/tk84
@@ -80,12 +79,10 @@ MLINKS=		ocamlc.1 ocamlc.opt.1 ocamlopt.1 ocamlopt.opt.1 \
 		camlp4.1 camlp4o.opt.1 camlp4.1 camlp4r.opt.1 \
 		camlp4.1 ocpp.1 camlp4.1 camlp4sch.1
 
-CONFIGURE_ARGS=	-prefix ${PREFIX} \
-		-with-pthread
+CONFIGURE_ARGS=	-prefix ${PREFIX} -with-pthread
 
 .if !defined(WITHOUT_X11)
-CONFIGURE_ARGS+=	-x11include ${X11BASE}/include \
-			-x11lib ${X11BASE}/lib
+CONFIGURE_ARGS+=	-x11include ${X11BASE}/include -x11lib ${X11BASE}/lib
 .if defined(WITHOUT_TK)
 CONFIGURE_ARGS+=	-no-tk
 .else
@@ -93,22 +90,7 @@ CONFIGURE_ARGS+=	-tkdefs "-I${LOCALBASE}/include/tcl8.4 -I${LOCALBASE}/include/t
 .endif
 .endif
 
-.if !defined(NOPORTDOCS)
-DOCFILES=	${DISTNAME}-refman.html.tar.gz ${DISTNAME}-refman.ps.gz \
-		${DISTNAME}-refman.pdf
-.endif
-
 post-install:
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/LICENSE ${DOCSDIR}
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}/html
-	@${MKDIR} ${DOCSDIR}/html/libref
-	@cd ${WRKDIR}/htmlman/libref; ${INSTALL_DATA} * ${DOCSDIR}/html/libref
-	@cd ${WRKDIR}/htmlman; ${INSTALL_DATA} [a-km-z]* libg* ${DOCSDIR}/html
-	@${INSTALL_DATA} ${DISTDIR}/${DISTNAME}-refman.ps.gz ${DOCSDIR}
-	@${INSTALL_DATA} ${DISTDIR}/${DISTNAME}-refman.pdf ${DOCSDIR}
-.endif
 .if !defined(WITHOUT_TK)
 	@${MKDIR} ${EXAMPLESDIR}
 	@${MKDIR} ${EXAMPLESDIR}/labltk
@@ -121,6 +103,9 @@ post-install:
 	@cd ${WRKSRC}/otherlibs/labltk/examples_camltk; \
 		${INSTALL_DATA} [A-Za-hj-z]* ${EXAMPLESDIR}/camltk
 .endif
-	@${STRIP_CMD} ${PREFIX}/bin/ocamlrun ${PREFIX}/bin/ocamlyacc
+.for prog in camlp4o.opt camlp4r.opt ocamlc.opt ocamldep.opt ocamldoc.opt \
+		ocamllex.opt ocamlopt.opt ocamlrun ocamlyacc
+	@${STRIP_CMD} ${PREFIX}/bin/${prog}
+.endfor
 
 .include <bsd.port.mk>
