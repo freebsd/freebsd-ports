@@ -7,13 +7,13 @@
 
 PORTNAME=	stardict
 PORTVERSION=	2.4.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DIST_SUBDIR=	stardict
 
-MAINTAINER=	delphij@FreeBSD.org.cn
+MAINTAINER=	delphij@FreeBSD.org
 COMMENT=	A cross-platform and international dictionary written in Gtk2
 
 GNU_CONFIGURE=	yes
