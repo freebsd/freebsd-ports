@@ -1,0 +1,63 @@
+--- protocols/httpAPI.py.orig	Sat Mar  6 06:05:19 1999
++++ protocols/httpAPI.py	Mon Mar 24 10:47:50 2003
+@@ -52,9 +52,14 @@
+ 
+ class MyHTTP(httplib.HTTP):
+ 
++    def __init__(self, host='', port=None, strict=None):
++	httplib.HTTP.__init__(self, host, port, strict)
++	self.putrequest_bk = self.putrequest
++	self.putrequest = lambda r,s: MyHTTP.putrequest(self, r, s)
++
+     def putrequest(self, request, selector):
+         self.selector = selector
+-        httplib.HTTP.putrequest(self, request, selector)
++        self.putrequest_bk(request, selector)
+ 
+     def getreply(self, file):
+         self.file = file
+@@ -81,14 +86,14 @@
+     def close(self):
+         if self.file:
+             self.file.close()
+-        if self.sock:
++        if self._conn.sock:
+             try:
+-                self.sock.close()
++                self._conn.sock.close()
+             except socket.error:
+                 # What can you do? :-)
+                 pass
+         self.file = None
+-        self.sock = None
++        self._conn.sock = None
+ 
+ 
+ class http_access:
+@@ -168,7 +173,7 @@
+     def pollmeta(self, timeout=0):
+         Assert(self.state == META)
+ 
+-        sock = self.h.sock
++        sock = self.h._conn.sock
+         try:
+             if not select.select([sock], [], [], timeout)[0]:
+                 return "waiting for server response", 0
+@@ -222,7 +227,7 @@
+             self.readahead = self.readahead[maxbytes:]
+             return data
+         try:
+-            data = self.h.sock.recv(maxbytes)
++            data = self.h._conn.sock.recv(maxbytes)
+         except socket.error, msg:
+             raise IOError, msg, sys.exc_traceback
+         if not data:
+@@ -231,7 +236,7 @@
+         return data
+ 
+     def fileno(self):
+-        return self.h.sock.fileno()
++        return self.h._conn.sock.fileno()
+ 
+ 
+ # To test this, use ProtocolAPI.test()

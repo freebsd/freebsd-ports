@@ -1,0 +1,24 @@
+--- grailbase/app.py.orig	Wed Mar 24 23:11:52 1999
++++ grailbase/app.py	Mon Mar 24 10:48:37 2003
+@@ -3,10 +3,10 @@
+ 
+ import os
+ import mimetypes
+-import regex
++import re
+ import string
+ import utils
+-
++regex = re
+ 
+ class Application:
+     def __init__(self, prefs=None):
+@@ -51,7 +51,7 @@
+ 
+ 
+     __data_scheme_re = regex.compile(
+-        "data:\([^,;]*\)\(;\([^,]*\)\|\),", regex.casefold)
++        "data:\([^,;]*\)\(;\([^,]*\)\|\),")
+ 
+     def guess_type(self, url):
+         """Guess the type of a file based on its URL.
