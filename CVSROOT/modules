@@ -4183,6 +4183,7 @@ kmovisto	ports/science/kmovisto
 kmp		ports/audio/kmp
 kmplayer	ports/multimedia/kmplayer
 kmyirc		ports/irc/kmyirc
+kmymoney2	ports/finance/kmymoney2
 knews		ports/news/knews
 knewsticker-scripts	ports/misc/knewsticker-scripts
 knights		ports/games/knights
