@@ -69,9 +69,14 @@ CONFIGURE_ARGS=	--prefix=${RT_PATH} \
 		--with-db-dba=${DB_DBA_USER}
 
 .if defined(WITH_FASTCGI)
+.if defined(WITH_APACHE2)
+APACHE_PORT?=	${PORTSDIR}/www/apache2
+BUILD_DEPENDS+=	${LOCALBASE}/libexec/apache2/mod_fastcgi.so:${PORTSDIR}/www/mod_fastcgi
+.else
 APACHE_PORT?=	${PORTSDIR}/www/apache13
-BUILD_DEPENDS+=	${LOCALBASE}/libexec/apache/mod_fastcgi.so:${PORTSDIR}/www/mod_fastcgi \
-		${ARCH_PERL}/FCGI.pm:${PORTSDIR}/www/p5-FastCGI
+BUILD_DEPENDS+=	${LOCALBASE}/libexec/apache/mod_fastcgi.so:${PORTSDIR}/www/mod_fastcgi
+.endif
+BUILD_DEPENDS+=		${ARCH_PERL}/FCGI.pm:${PORTSDIR}/www/p5-FastCGI
 DEPENDS_ARGS+=	WITHOUT_MODPERL=yes
 .else
 BUILD_DEPENDS+=	${SITE_PERL}/Apache/DBI.pm:${PORTSDIR}/www/p5-Apache-DBI
