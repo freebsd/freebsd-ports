@@ -7,6 +7,7 @@
 
 PORTNAME=	gnotime
 PORTVERSION=	2.2.1
+PORTREVISION=	1
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gttr
@@ -28,5 +29,10 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 
 MAN1=		gnotime.1
 GCONF_SCHEMAS=	gnotime.schemas
+
+# until a new version comes out...
+post-patch:
+	@${REINPLACE_CMD} -e "s|gtkhtml-3.1|gtkhtml-3.6|g" \
+		${WRKSRC}/configure
 
 .include <bsd.port.mk>
