@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pine
-PORTVERSION=	4.43
+PORTVERSION=	4.44
 PORTREVISION=	0
 CATEGORIES=	chinese mail news
 MASTER_SITES=	ftp://ftp.cac.washington.edu/pine/
