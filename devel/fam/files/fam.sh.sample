@@ -7,7 +7,8 @@ fi
 
 case "$1" in
 start)
-	[ -x ${PREFIX}/bin/fam ] && ( ${PREFIX}/bin/fam & ) && echo -n ' fam'
+	[ -x ${PREFIX}/bin/fam ] && ( ${PREFIX}/bin/fam -T 0 & ) \
+	    && echo -n ' fam'
 	;;
 stop)
 	killall fam && echo -n ' fam'

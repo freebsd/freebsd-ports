@@ -7,6 +7,7 @@
 
 PORTNAME=	fam
 PORTVERSION=	2.6.4
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://oss.sgi.com/projects/fam/download/
 DISTNAME=	${PORTNAME}-oss-${PORTVERSION}
