@@ -1,5 +1,5 @@
-*** src/osdep/unix/Makefile.orig	Tue Jan  7 09:02:08 1997
---- src/osdep/unix/Makefile	Sun Jan 12 18:12:56 1997
+*** src/osdep/unix/Makefile.orig	Wed Apr 16 09:15:28 1997
+--- src/osdep/unix/Makefile	Mon Apr 21 11:45:54 1997
 ***************
 *** 32,45 ****
   
@@ -8,8 +8,8 @@
   ARRC=ar rc
   EXTRAAUTHENTICATORS=
   DEFAULTAUTHENTICATORS=log
-  BINARIES=mail.o misc.o newsrc.o smanager.o osdep.o dummy.o pseudo.o \
-  	netmsg.o rfc822.o nntp.o smtp.o imap4r1.o pop3.o \
+  BINARIES=mail.o misc.o newsrc.o smanager.o osdep.o dummy.o pseudo.o netmsg.o \
+  	flstring.o fdstring.o rfc822.o nntp.o smtp.o imap4r1.o pop3.o \
   	bezerk.o mbox.o mbx.o mmdf.o tenex.o mtx.o news.o phile.o mh.o mx.o
   CC=cc
 ! CFLAGS=$(EXTRACFLAGS)
@@ -24,8 +24,8 @@
   ARRC=ar rc
   EXTRAAUTHENTICATORS=
   DEFAULTAUTHENTICATORS=log
-  BINARIES=mail.o misc.o newsrc.o smanager.o osdep.o dummy.o pseudo.o \
-  	netmsg.o rfc822.o nntp.o smtp.o imap4r1.o pop3.o \
+  BINARIES=mail.o misc.o newsrc.o smanager.o osdep.o dummy.o pseudo.o netmsg.o \
+  	flstring.o fdstring.o rfc822.o nntp.o smtp.o imap4r1.o pop3.o \
   	bezerk.o mbox.o mbx.o mmdf.o tenex.o mtx.o news.o phile.o mh.o mx.o
 + SOFILES=      ${BINARIES:.o=.so}
   CC=cc
@@ -46,8 +46,8 @@
   	@echo "You must specify what type of system"
   	@false
 ***************
-*** 123,128 ****
---- 128,143 ----
+*** 131,136 ****
+--- 136,151 ----
   		RSHPATH=/usr/bin/rsh \
   		CFLAGS="-g -O -pipe -DNFSKLUDGE $(EXTRACFLAGS)"
   
@@ -65,7 +65,7 @@
   	$(MAKE) $(ARCHIVE) OS=$@ EXTRADRIVERS="$(EXTRADRIVERS)" \
   		STDPROTO=bezerkproto MAILSPOOL=/usr/spool/mail \
 ***************
-*** 422,434 ****
+*** 455,467 ****
   # From here on down is OS-independent
   
   clean:
@@ -79,7 +79,7 @@
   # Dependencies
   
   bezerk.o: mail.h misc.h osdep.h bezerk.h pseudo.h dummy.h
---- 437,455 ----
+--- 470,488 ----
   # From here on down is OS-independent
   
   clean:
@@ -100,8 +100,8 @@
   
   bezerk.o: mail.h misc.h osdep.h bezerk.h pseudo.h dummy.h
 ***************
-*** 475,480 ****
---- 496,521 ----
+*** 510,515 ****
+--- 531,556 ----
   	-DRSH=\"$(RSH)\" -DRSHPATH=\"$(RSHPATH)\" \
   	$(EXTRAOSDEFS) -c os_$(OS).c
   	$(MV) os_$(OS).o osdep.o
