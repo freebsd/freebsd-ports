@@ -5260,6 +5260,7 @@ p5-Time		ports/devel/p5-Time
 p5-Time-HiRes	ports/devel/p5-Time-HiRes
 p5-Time-Object	ports/devel/p5-Time-Object
 p5-Time-Period	ports/devel/p5-Time-Period
+p5-Time-Piece	ports/devel/p5-Time-Piece
 p5-TimeDate	ports/devel/p5-TimeDate
 p5-Tk		ports/x11-toolkits/p5-Tk
 p5-Tk-Autoscroll	ports/x11-toolkits/p5-Tk-Autoscroll
