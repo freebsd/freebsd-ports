@@ -1092,6 +1092,7 @@ coda5_doc	ports/net/coda5_doc
 coda5_server	ports/net/coda5_server
 coda6_client	ports/net/coda6_client
 coda6_server	ports/net/coda6_server
+code-browser	ports/editors/code-browser
 code2000	ports/x11-fonts/code2000
 code2html	ports/textproc/code2html
 codecrusader	ports/devel/codecrusader
