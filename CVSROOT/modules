@@ -1771,6 +1771,7 @@ filepp		ports/textproc/filepp
 fileroller	ports/archivers/fileroller
 filerunner	ports/x11-fm/filerunner
 fileutils	ports/sysutils/fileutils
+filmgimp	ports/graphics/filmgimp
 filtermail	ports/mail/filtermail
 find		src/usr.bin/find
 find-zlib	ports/security/find-zlib
