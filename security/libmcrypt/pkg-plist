@@ -1,3 +1,4 @@
+bin/i386--freebsd4.3-libmcrypt-config
 include/mcrypt.h
 lib/libmcrypt.a
 lib/libmcrypt.la
@@ -62,3 +63,4 @@ lib/libmcrypt/wake.so
 lib/libmcrypt/xtea.la
 lib/libmcrypt/xtea.so
 @dirrm lib/libmcrypt
+share/aclocal/libmcrypt.m4
