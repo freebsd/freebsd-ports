@@ -203,6 +203,7 @@
     SUBDIR += gaa
     SUBDIR += gconf
     SUBDIR += gconf2
+    SUBDIR += gconfmm
     SUBDIR += gcvs
     SUBDIR += gdb52
     SUBDIR += gdb53
