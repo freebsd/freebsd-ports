@@ -25,6 +25,12 @@ USE_PYTHON=	-2.3
 CONFIGURE_ARGS+=	--with-pythondir=${LOCALBASE}
 .endif
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 600000 && ${ARCH} != "i386"
+BROKEN=		"Does not compile on FreeBSD >= 6.x on !i386"
+.endif
+
 pre-everything::
 .if !defined(WITHOUT_PYTHON)
 	@${ECHO_MSG} "Define WITHOUT_PYTHON to disable Python scripts support."
@@ -34,4 +40,4 @@ post-patch:
 	@${REINPLACE_CMD} -e 's,-lssl,-lssl -lcrypto,' \
 		${WRKSRC}/configure
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
