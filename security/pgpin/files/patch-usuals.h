@@ -5,7 +5,7 @@
  typedef char *string;	/* pointer to ASCII character string */
  typedef unsigned short word16;	/* values are 0-65535 */
 -#ifdef __alpha
-+#if defined(__alpha) || defined(__sparc64__)
++#if defined(__alpha) || defined(__sparc64__) || defined(__ia64__)
  typedef unsigned int word32;	/* values are 0-4294967295 */
  #else
  typedef unsigned long word32;	/* values are 0-4294967295 */

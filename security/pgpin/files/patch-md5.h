@@ -5,7 +5,7 @@
  #define MD5_H
  
 -#ifdef __alpha
-+#if defined(__alpha) || defined(__sparc64__)
++#if defined(__alpha) || defined(__sparc64__) || defined(__ia64__)
  typedef unsigned int uint32;
  #else
  typedef unsigned long uint32;
