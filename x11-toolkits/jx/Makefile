@@ -9,8 +9,14 @@ PORTNAME=	JX
 PORTVERSION=	1.5.3
 PORTREVISION=	1
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	ftp://gd.tuwien.ac.at/hci/jx/source-1.5.3/ \
-		ftp://ftp.cs.itu.edu.tr/pub/linux/x11/jx/
+MASTER_SITES=	ftp://ftp.fct.unl.pt/.2/linuxberg/files/x11/dev/ \
+		ftp://ftp.chemo.tuniv.szczecin.pl/dsk2/www.linuxberg.com/files/x11/dev/ \
+		ftp://ftp.darenet.dk/mirrors/mirror.linuxberg.com/files/x11/dev/ \
+		ftp://ftp.uni-c.dk/mirrors/mirror.linuxberg.com/files/x11/dev/ \
+		ftp://ftp.cadvision.com/pub/linuxberg/files/x11/dev/ \
+		ftp://ftp.matrix.com.br/pub/linuxberg/files/x11/dev/ \
+		ftp://ftp.duth.gr/pub/linuxberg/files/x11/dev/ \
+		ftp://ftp.rz.uni-karlsruhe.de/pub/mirror/ftp.uni-tuebingen.de/pub/linux/mirrors/ftp.metalab.unc.edu/pub/Linux/libs/X/c++libs/
 DISTNAME=	${PORTNAME}_source-${PORTVERSION}
 
 MAINTAINER=	lioux@FreeBSD.org
