@@ -1,0 +1,34 @@
+--- decode.c.old	Tue Oct 23 16:14:53 2001
++++ decode.c	Tue Oct 23 16:16:22 2001
+@@ -468,6 +468,7 @@
+ 		alloced += VALUEGROWSIZE;
+ 		value = xrealloc(value, alloced);
+ 		to = value + alloced - left - 2;
++		left = alloced - 1;
+ 	    }
+ 	    if (*from == '\\') {
+ 		from++;
+@@ -484,6 +485,7 @@
+ 		alloced += VALUEGROWSIZE;
+ 		value = xrealloc(value, alloced);
+ 		to = value + alloced - left - 2;
++		left = alloced - 1;
+ 	    }
+ 	    *to++ = *from++;
+ 	}
+@@ -573,6 +575,7 @@
+ 		alloced += VALUEGROWSIZE;
+ 		value = xrealloc(value, alloced);
+ 		to = value + alloced - left - 2;
++		left = alloced - 1;
+ 	    }
+ 	    if (*disposition == '\\') {
+ 		disposition++;
+@@ -590,6 +593,7 @@
+ 		alloced += VALUEGROWSIZE;
+ 		value = xrealloc(value, alloced);
+ 		to = value + alloced - left - 2;
++		left = alloced - 1;
+ 	    }
+ 	    *to++ = *disposition++;
+ 	}
