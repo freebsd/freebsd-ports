@@ -9,7 +9,8 @@
 PORTNAME=	cheesetracker
 PORTVERSION=	0.5.5
 CATEGORIES=	audio
-MASTER_SITES=	http://www.reduz.com.ar/cheesetracker/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	cheesetronic
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An Impulse Tracker clone
