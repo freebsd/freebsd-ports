@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	radiusclient
-PORTVERSION=	0.3.1
+PORTVERSION=	0.3.2
 CATEGORIES=	net
-MASTER_SITES=	ftp://ftp.hamburg.cityline.net/pub/radiusclient/ \
+MASTER_SITES=	ftp://ftp.cityline.net/pub/radiusclient/ \
 		ftp://ftp.ecrc.net/pub/netsw/Network/IP/Management/RADIUS/
 
 MAINTAINER=	maurice@serc.rmit.edu.au
