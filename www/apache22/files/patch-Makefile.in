@@ -1,6 +1,6 @@
---- Makefile.in.orig	Mon Sep 30 08:34:40 2002
-+++ Makefile.in	Thu Oct  3 21:05:42 2002
-@@ -36,10 +36,13 @@
+--- Makefile.in.orig	Tue Jul 29 15:40:09 2003
++++ Makefile.in	Tue Sep 30 00:31:14 2003
+@@ -37,10 +37,13 @@
  	    if test ! -f $(DESTDIR)$(sysconfdir)/$$i; then \
  	        $(INSTALL_DATA) $$i $(DESTDIR)$(sysconfdir); \
  	    fi; \
@@ -14,7 +14,7 @@
  	    	( \
  	    		n_lm=`awk 'BEGIN {n=0} /@@LoadModule@@/ {n+=1} END {print n}' < $$i`; \
  	    		if test $$n_lm -eq 0 -o "x$(DSO_MODULES)" = "x"; then \
-@@ -57,6 +60,9 @@
+@@ -58,6 +61,9 @@
  	    				if test "x$$j" = "xssl"; then \
  	    					echo "<IfDefine SSL>"; \
  	    				fi; \
@@ -24,7 +24,7 @@
  	    				if test $$j != "^EOL^"; then \
  	    					echo "LoadModule $${j}_module $(rel_libexecdir)/mod_$${j}.so"; \
  	    				fi; \
-@@ -106,45 +112,33 @@
+@@ -109,45 +115,41 @@
  	doxygen $(top_srcdir)/docs/doxygen.conf
  
  install-htdocs:
@@ -36,11 +36,13 @@
 -	    test -d $(htdocs-srcdir) && (cd $(htdocs-srcdir) && cp -rp * $(DESTDIR)$(htdocsdir)) ; \
 -	    cd $(DESTDIR)$(htdocsdir) && find . -name "CVS" -type d -print | xargs rm -rf 2>/dev/null || true; \
 -	fi
++.if !defined(NO_WWWDATA)
 +	@echo Installing HTML documents
 +	@test -d $(DESTDIR)$(htdocsdir)-dist || $(MKINSTALLDIRS) $(DESTDIR)$(htdocsdir)-dist
 +	@test -d $(htdocs-srcdir) && (cd $(htdocs-srcdir) && cp -rp * $(DESTDIR)$(htdocsdir)-dist)
 +	@test -e $(DESTDIR)$(htdocsdir) || ln -sf $(DESTDIR)$(htdocsdir)-dist $(DESTDIR)$(htdocsdir)
 +	-@test "x$(htdocsdir)" != "x" && cd $(DESTDIR)$(htdocsdir)-dist && find . -name "CVS" -print | xargs rm -rf
++.endif
  
  install-error:
 -	-@if [ -d $(DESTDIR)$(errordir) ]; then \
@@ -51,11 +53,13 @@
 -	    cd $(top_srcdir)/docs/error && cp -rp * $(DESTDIR)$(errordir) ; \
 -	    test "x$(errordir)" != "x" && cd $(DESTDIR)$(errordir) && find . -name "CVS" -type d -print | xargs rm -rf 2>/dev/null || true; \
 -	fi
++.if !defined(NO_ERROR)
 +	@echo Installing error documents
 +	@test -d $(DESTDIR)$(errordir)-dist || $(MKINSTALLDIRS) $(DESTDIR)$(errordir)-dist
 +	cd $(top_srcdir)/docs/error && cp -rp * $(DESTDIR)$(errordir)-dist
 +	-@test "x$(errordir)" != "x" && cd $(DESTDIR)$(errordir)-dist && find . -name "CVS" -print | xargs rm -rf 
 +	@test -e $(DESTDIR)$(errordir) || ln -sf $(DESTDIR)$(errordir)-dist $(DESTDIR)$(errordir)
++.endif
  
  install-icons:
 -	-@if [ -d $(DESTDIR)$(iconsdir) ]; then \
@@ -66,13 +70,14 @@
 -	    cd $(top_srcdir)/docs/icons && cp -rp * $(DESTDIR)$(iconsdir) ; \
 -	    test "x$(iconsdir)" != "x" && cd $(DESTDIR)$(iconsdir) && find . -name "CVS" -type d -print | xargs rm -rf 2>/dev/null || true; \
 -	fi
--
++.if !defined(NO_ICONS)
 +	@echo Installing icons
 +	@test -d $(DESTDIR)$(iconsdir)-dist || $(MKINSTALLDIRS) $(DESTDIR)$(iconsdir)-dist
 +	cd $(top_srcdir)/docs/icons && cp -rp * $(DESTDIR)$(iconsdir)-dist
 +	-@test "x$(iconsdir)" != "x" && cd $(DESTDIR)$(iconsdir)-dist && find . -name "CVS" -print | xargs rm -rf 
 +	@test -e $(DESTDIR)$(iconsdir) || ln -sf $(DESTDIR)$(iconsdir)-dist $(DESTDIR)$(iconsdir)
-+ 
++.endif 
+ 
  install-cgi:
 -	-@if [ -d $(DESTDIR)$(cgidir) ];then \
 -	    echo "[PRESERVING EXISTING CGI SUBDIR: $(DESTDIR)$(cgidir)]"; \
@@ -83,16 +88,18 @@
 -	   test "x$(cgidir)" != "x" && cd $(DESTDIR)$(cgidir) && find . -name "CVS" -type d -print | xargs rm -rf 2>/dev/null || true; \
 -	fi
 -
++.if !defined(NO_CGI)
 +	@echo Installing CGIs
 +	@test -d $(DESTDIR)$(cgidir)-dist || $(MKINSTALLDIRS) $(DESTDIR)$(cgidir)-dist
 +	cd $(top_srcdir)/docs/cgi-examples && cp -rp * $(DESTDIR)$(cgidir)-dist
 +	-@test "x$(cgidir)" != "x" && cd $(DESTDIR)$(cgidir)-dist && find . -name "CVS" -print | xargs rm -rf 
 +	@test -e $(DESTDIR)$(cgidir) || ln -sf $(DESTDIR)$(cgidir)-dist $(DESTDIR)$(cgidir)
++.endif
 + 
  install-other:
  	@test -d $(DESTDIR)$(logfiledir) || $(MKINSTALLDIRS) $(DESTDIR)$(logfiledir)
  	@test -d $(DESTDIR)$(runtimedir) || $(MKINSTALLDIRS) $(DESTDIR)$(runtimedir)
-@@ -185,11 +179,13 @@
+@@ -190,11 +192,13 @@
  	@test -d $(DESTDIR)$(mandir)      || $(MKINSTALLDIRS) $(DESTDIR)$(mandir)
  	@test -d $(DESTDIR)$(mandir)/man1 || $(MKINSTALLDIRS) $(DESTDIR)$(mandir)/man1
  	@test -d $(DESTDIR)$(mandir)/man8 || $(MKINSTALLDIRS) $(DESTDIR)$(mandir)/man8
