@@ -1,0 +1,2 @@
+sbin/nrpe
+etc/nrpe.cfg-sample

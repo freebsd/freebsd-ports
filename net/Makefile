@@ -320,6 +320,7 @@
     SUBDIR += nload
     SUBDIR += nocol
     SUBDIR += noip
+    SUBDIR += nrpe
     SUBDIR += ns
     SUBDIR += nsc
     SUBDIR += nsd
