@@ -16,4 +16,4 @@ will refer to them without the `g' prefix.
 GNU su does not support a wheel group.  This port installs it
 without the suid bit, unless you define WITH_SUID while building.
 
-Cyrille Lefevre <clefevre@citeweb.net>
+WWW: http://www.gnu.org/software/shellutils/shellutils.html

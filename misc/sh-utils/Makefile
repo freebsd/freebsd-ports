@@ -11,7 +11,7 @@ CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR= sh-utils
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	clefevre@citeweb.net
 
 LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext
 
@@ -19,7 +19,7 @@ GNU_CONFIGURE=	yes
 
 CONFIGURE_ARGS=	--program-prefix=g
 
-USE_GMAKE=	yes
+INSTALL_INFO?=	install-info
 
 MAN1=	gbasename.1 gchroot.1 gdate.1 gdirname.1 gecho.1 genv.1 \
 	gexpr.1 gfalse.1 ggroups.1 ghostid.1 ghostname.1 gid.1 \
@@ -27,12 +27,15 @@ MAN1=	gbasename.1 gchroot.1 gdate.1 gdirname.1 gecho.1 genv.1 \
 	gprintf.1 gpwd.1 gsleep.1 gstty.1 gsu.1 gtee.1 gtest.1 \
 	gtrue.1 gtty.1 guname.1 gusers.1 gwho.1 gwhoami.1 gyes.1
 
+post-extract:
+	@${RM} -f ${WRKSRC}/doc/${PORTNAME}.info*
+
 do-patch:
 .if !defined(WITH_SUID)
 	@${PERL} -pi -e "s/u\+s/u\+w/g" ${WRKSRC}/src/Makefile.in
 .endif
 
 post-install:
-	install-info ${PREFIX}/info/sh-utils.info ${PREFIX}/info/dir
+	@${INSTALL_INFO} ${PREFIX}/info/${PORTNAME}.info ${PREFIX}/info/dir
 
 .include <bsd.port.mk>
