@@ -7,7 +7,7 @@
 
 PORTNAME=	libtool
 PORTVERSION=	1.3.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	libtool
@@ -18,8 +18,8 @@ MAINTAINER=	reg@FreeBSD.org
 # FreeBSD support, and would require that all Ports users upgrade for no
 # reason.
 
+INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-ltdl-install
 CONFIGURE_ENV=	PREFIX=${PREFIX}
 
 .include <bsd.port.mk>

@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- libltdl/configure	2001/01/31 10:58:38	1.1
++++ libltdl/configure	2001/01/31 10:59:14
+@@ -1455,7 +1455,7 @@
+ esac
+ 
+ # Check for any special flags to pass to ltconfig.
+-libtool_flags="--cache-file=$cache_file"
++libtool_flags="--cache-file=$cache_file --disable-ltlibs"
+ test "$enable_shared" = no && libtool_flags="$libtool_flags --disable-shared"
+ test "$enable_static" = no && libtool_flags="$libtool_flags --disable-static"
+ test "$enable_fast_install" = no && libtool_flags="$libtool_flags --disable-fast-install"
