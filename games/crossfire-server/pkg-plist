@@ -1494,8 +1494,6 @@ crossfire/lib/maps/world/world_e1
 crossfire/lib/maps/world/world_e2
 crossfire/lib/messages
 crossfire/lib/motd
-crossfire/lib/players/andreas.pl
-crossfire/lib/players/crusher.pl
 crossfire/lib/races
 crossfire/lib/skill_params
 crossfire/lib/sounds
