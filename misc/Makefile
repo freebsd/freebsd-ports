@@ -184,6 +184,7 @@
     SUBDIR += splitvt
     SUBDIR += sshbuddy
     SUBDIR += stan
+    SUBDIR += sword
     SUBDIR += tcb
     SUBDIR += team
     SUBDIR += tet
