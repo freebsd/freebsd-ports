@@ -1,13 +1,7 @@
-*** Makefile.in.orig	Mon Nov 21 11:18:45 1994
---- Makefile.in	Sat Nov 26 15:17:52 1994
+*** Makefile.in.bak	Sun Jan  1 11:34:28 1995
+--- Makefile.in	Sun Jan  1 22:40:25 1995
 ***************
-*** 27,39 ****
-  SHELL=/bin/sh
-  .SUFFIXES: .c .o
-  
-- CC=@CC@
-  #CFLAGS=-g -Wall -Wshadow -Wconversion -Wstrict-prototypes -Wmissing-prototypes
-- CFLAGS=@CFLAGS@
+*** 34,40 ****
   VPATH=@srcdir@
   CPPFLAGS=@CPPFLAGS@ -I.
   
@@ -15,11 +9,7 @@
   LDFLAGS=@LDFLAGS@
   
   # Any -D definitions:
---- 27,37 ----
-  SHELL=/bin/sh
-  .SUFFIXES: .c .o
-  
-  #CFLAGS=-g -Wall -Wshadow -Wconversion -Wstrict-prototypes -Wmissing-prototypes
+--- 34,40 ----
   VPATH=@srcdir@
   CPPFLAGS=@CPPFLAGS@ -I.
   
@@ -28,13 +18,13 @@
   
   # Any -D definitions:
 ***************
-*** 176,180 ****
---- 174,181 ----
-  Win.o: $(GLOBAL_H) Curses.h Main.h Recent.h RCmd.h LGets.h GetPass.h
+*** 182,186 ****
+--- 182,189 ----
+  WGets.o: $(GLOBAL_H) Curses.h WGets.h
   
   Xfer.o: $(GLOBAL_H) Main.h Xfer.h RCmd.h FTP.h Progress.h Poll.h
 + 
 + install:
-+ 	install -c -s -o bin -g bin $(PROG) /usr/local/bin/ncftp2
++ 	$(INSTALL) $(COPY) $(STRIP) -o $(BINOWN) -g $(BINGRP) $(PROG) $(PREFIX)/bin/ncftp2
   
   # eof
