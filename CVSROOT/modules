@@ -8244,7 +8244,6 @@ pdumpfs		ports/sysutils/pdumpfs
 pdumpfs-clean	ports/sysutils/pdumpfs-clean
 pdumpfs-rsync	ports/sysutils/pdumpfs-rsync
 peacock		ports/www/peacock
-pear-APC	ports/www/pear-APC
 pear-Archive_Tar	ports/archivers/pear-Archive_Tar
 pear-Auth	ports/security/pear-Auth
 pear-Auth_HTTP	ports/security/pear-Auth_HTTP
@@ -8350,6 +8349,7 @@ pear-apd	ports/devel/pear-apd
 pear-sqlite	ports/databases/pear-sqlite
 pearpc		ports/emulators/pearpc
 pebrot		ports/net/pebrot
+pecl-APC	ports/www/pecl-APC
 pecl-fileinfo	ports/sysutils/pecl-fileinfo
 pecl-fribidi	ports/converters/pecl-fribidi
 pecl-imagick	ports/graphics/pecl-imagick
