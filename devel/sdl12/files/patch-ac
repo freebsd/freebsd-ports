@@ -1,9 +1,9 @@
 
 $FreeBSD$
 
---- configure.orig	Tue Mar 27 06:39:34 2001
-+++ configure	Mon Apr  2 11:25:59 2001
-@@ -84,6 +84,8 @@
+--- configure.orig	Mon Jun 18 18:21:53 2001
++++ configure	Mon Jun 25 17:59:47 2001
+@@ -100,6 +100,8 @@
  ac_help="$ac_help
    --enable-video-svga     use SVGAlib video driver [default=no]"
  ac_help="$ac_help
@@ -11,17 +11,17 @@ $FreeBSD$
 +ac_help="$ac_help
    --enable-video-aalib    use AAlib video driver [default=no]"
  ac_help="$ac_help
-   --enable-video-opengl   include OpenGL context creation [default=yes]"
-@@ -621,7 +623,7 @@
+   --enable-video-dummy    use dummy video driver [default=no]"
+@@ -639,7 +641,7 @@
  SDL_MAJOR_VERSION=1
  SDL_MINOR_VERSION=2
- SDL_MICRO_VERSION=0
--SDL_INTERFACE_AGE=0
+ SDL_MICRO_VERSION=1
+-SDL_INTERFACE_AGE=1
 +SDL_INTERFACE_AGE=3
- SDL_BINARY_AGE=0
+ SDL_BINARY_AGE=1
  SDL_VERSION=$SDL_MAJOR_VERSION.$SDL_MINOR_VERSION.$SDL_MICRO_VERSION
  
-@@ -634,9 +636,9 @@
+@@ -652,9 +654,9 @@
  
  # libtool versioning
  LT_RELEASE=$SDL_MAJOR_VERSION.$SDL_MINOR_VERSION
@@ -33,7 +33,7 @@ $FreeBSD$
  
  
  
-@@ -3042,7 +3044,7 @@
+@@ -3066,7 +3068,7 @@
  
  
  SDL_CFLAGS=""
@@ -42,7 +42,7 @@ $FreeBSD$
  
  
  case "$target" in
-@@ -5226,6 +5228,57 @@
+@@ -5392,6 +5394,57 @@
      fi
  }
  
@@ -100,7 +100,7 @@ $FreeBSD$
  CheckAAlib()
  {
      # Check whether --enable-video-aalib or --disable-video-aalib was given.
-@@ -5451,8 +5504,8 @@
+@@ -5634,8 +5687,8 @@
  #            pthread_cflags="-D_REENTRANT -D_THREAD_SAFE"
              ;;
          *-*-freebsd*)
@@ -109,9 +109,9 @@ $FreeBSD$
 +            pthread_cflags="-D_REENTRANT ${PTHREAD_CFLAGS}"
 +            pthread_lib="${PTHREAD_LIBS}"
              ;;
-         *-*-openbsd*)
-             pthread_cflags="-D_REENTRANT"
-@@ -6193,6 +6246,7 @@
+         *-*-netbsd*)
+             pthread_cflags="-I/usr/pkg/include -D_REENTRANT"
+@@ -6236,6 +6289,7 @@
          CheckX11
          CheckDGA
          CheckSVGA
@@ -119,7 +119,7 @@ $FreeBSD$
          CheckAAlib
          CheckOpenGL
          CheckPTHREAD
-@@ -6378,10 +6432,10 @@
+@@ -6577,10 +6631,10 @@
    cat >>$new <$old
  
          # Set up files for the audio library
@@ -134,18 +134,11 @@ $FreeBSD$
          # Set up files for the joystick library
          # (No joystick support yet)
          if test x$enable_joystick = xyes; then
-@@ -8818,6 +8872,7 @@
- src/video/macdsp/Makefile
+@@ -9088,6 +9142,8 @@
  src/video/macrom/Makefile
+ src/video/quartz/Makefile
  src/video/svga/Makefile
 +src/video/vgl/Makefile
- src/video/aalib/Makefile
- src/video/wincommon/Makefile
- src/video/windib/Makefile
-@@ -9042,6 +9097,7 @@
- src/video/macdsp/Makefile
- src/video/macrom/Makefile
- src/video/svga/Makefile
 +src/video/vgl/Makefile
  src/video/aalib/Makefile
  src/video/wincommon/Makefile
