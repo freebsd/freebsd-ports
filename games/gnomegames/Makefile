@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	gnomegames
-PORTVERSION=	1.4.0.3
-PORTREVISION=	1
+PORTVERSION=	1.4.0.4
 CATEGORIES=	games gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/gnome-games
 DISTNAME=	gnome-games-${PORTVERSION}
+DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 
@@ -21,7 +21,7 @@ USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	yes
-GNU_CONFIGURE=	yes
+USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include \
 			  `gdk-pixbuf-config --cflags`" \
@@ -33,5 +33,7 @@ pre-patch:
 	@find ${WRKSRC} -name "Makefile.in*" | xargs ${PERL} -pi -e \
 		's|\$\(datadir\)/gnome/|\$\(datadir\)/|g ; \
 		 s|\$\(datadir\)/locale|\$\(prefix\)/share/locale|g'
+	@find ${WRKSRC} -name "*.[ch]" | xargs ${PERL} -pi -e \
+		's|malloc\.h|stdlib.h|g'
 
 .include <bsd.port.mk>
