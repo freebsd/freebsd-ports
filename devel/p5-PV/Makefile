@@ -3,7 +3,7 @@
 # Date created:				April 18th 1997
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#   $Id: Makefile,v 1.4 1997/06/24 18:43:28 jfitz Exp $
+#   $Id: Makefile,v 1.5 1998/08/12 09:57:54 asami Exp $
 #
 
 DISTNAME=	perlvision
@@ -23,8 +23,8 @@ NO_WRKSUBDIR=	YES
 NO_BUILD=	YES
 
 do-install:
-	${MKDIR} -p -m 755 ${PREFIX}/lib/perl5/site_perl
-	${INSTALL_DATA} ${WRKDIR}/PV.pm ${PREFIX}/lib/perl5/site_perl
-	${INSTALL_DATA} ${WRKDIR}/PerlVision.doc ${PREFIX}/lib/perl5/site_perl
+	${MKDIR} -m 755 ${PREFIX}/lib/perl5/site_perl/${PERL_VER}
+	${INSTALL_DATA} ${WRKDIR}/PV.pm ${PREFIX}/lib/perl5/site_perl/${PERL_VER}
+	${INSTALL_DATA} ${WRKDIR}/PerlVision.doc ${PREFIX}/lib/perl5/site_perl/${PERL_VER}
 
 .include <bsd.port.mk>

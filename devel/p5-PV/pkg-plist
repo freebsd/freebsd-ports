@@ -1,2 +1,2 @@
-lib/perl5/site_perl/PV.pm
-lib/perl5/site_perl/PerlVision.doc
+lib/perl5/site_perl/%%PERL_VER%%/PV.pm
+lib/perl5/site_perl/%%PERL_VER%%/PerlVision.doc
