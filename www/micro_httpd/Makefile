@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	micro_httpd
-PORTVERSION=	2000.12.15
+PORTVERSION=	2001.12.14
 CATEGORIES=	www
 MASTER_SITES=	http://www.acme.com/software/micro_httpd/ \
 		http://www.unknown.nu/ports/
-DISTNAME=	${PORTNAME}_15dec00
+DISTNAME=	${PORTNAME}_14dec2001
 
 MAINTAINER=	user@unknown.nu
 COMMENT=	An extremely small web server
