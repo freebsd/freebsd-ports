@@ -6,16 +6,15 @@
 #
 
 PORTNAME=	evolution
-PORTVERSION=	1.0.4
-PORTREVISION=	1
+PORTVERSION=	1.0.5
 CATEGORIES=	mail gnome
-MASTER_SITES=	http://people.FreeBSD.org/~sobomax/ \
+MASTER_SITES=	http://people.FreeBSD.org/~marcus/ \
 		${MASTER_SITE_GNOME} \
 		http://people.FreeBSD.org/~sobomax/:local
 #		${MASTER_SITE_LOCAL:S,$,:local,}
 MASTER_SITE_SUBDIR=	stable/sources/evolution \
 			sobomax/:local
-DISTFILES=	${PORTNAME}-homebrew-${PORTVERSION}${EXTRACT_SUFX} \
+DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
 		db-3.1.17${EXTRACT_SUFX}:local
 DIST_SUBDIR=	gnome
 
