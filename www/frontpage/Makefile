@@ -76,10 +76,8 @@ pre-extract:
 	   ${ECHO} "WARNING: MS FrontPage Extensions requires the libdescrypt library"; \
 	   ${ECHO} "  Install the libdescrypt Library, then build apache-fp"; \
 	   ${ECHO} ; \
-	   ${ECHO} "  FreeBSD Handbook - Security (chapter 6)"; \
-	   ${ECHO} "    http://www.freebsd.org/handbook/security.html#CRYPT"; \
-	   ${ECHO} "  FAQ - I live outside the US. Can I use DES encryption?"; \
-	   ${ECHO} "    http://www.freebsd.org/FAQ/install.html#AEN629"; \
+	   ${ECHO} "  FreeBSD Handbook - Security (chapter 10)"; \
+	   ${ECHO} "    http://www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/crypt.html"; \
 	   ${ECHO} ; \
 	   ${FALSE} ; \
 	fi
