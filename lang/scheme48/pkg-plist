@@ -7,6 +7,16 @@ lib/scheme48/rts/ratnum.scm
 lib/scheme48/rts/recnum.scm
 lib/scheme48/rts/xnum.scm
 lib/scheme48/rts/jar-defrecord.scm
+lib/scheme48/srfi/srfi-1.scm
+lib/scheme48/srfi/srfi-11.scm
+lib/scheme48/srfi/srfi-13.scm
+lib/scheme48/srfi/srfi-14.scm
+lib/scheme48/srfi/srfi-16.scm
+lib/scheme48/srfi/srfi-17.scm
+lib/scheme48/srfi/srfi-19.scm
+lib/scheme48/srfi/srfi-2.scm
+lib/scheme48/srfi/srfi-5.scm
+lib/scheme48/srfi/srfi-7.scm
 lib/scheme48/env/assem.scm
 lib/scheme48/env/basic-command.scm
 lib/scheme48/env/build.scm
@@ -110,6 +120,7 @@ lib/scheme48/posix/regexp.scm
 lib/scheme48/posix/signal.scm
 lib/scheme48/scheme48vm
 lib/scheme48/scheme48.image
+@dirrm lib/scheme48/srfi
 @dirrm lib/scheme48/big
 @dirrm lib/scheme48/env
 @dirrm lib/scheme48/link
