@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	shorten
-PORTVERSION=	3.3
+PORTVERSION=	3.4
 CATEGORIES=	audio archivers
-MASTER_SITES=	http://shnutils.etree.org/misc/
+MASTER_SITES=	http://shnutils.etree.org/shorten/source/
 
 MAINTAINER=	sec@42.org
 
-RESTRICTED=	"May not be sold."
+RESTRICTED=	"May not be sold, may not be used commercially."
 
 GNU_CONFIGURE=	yes
 
