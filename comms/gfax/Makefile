@@ -24,7 +24,7 @@ USE_GMAKE=	yes
 USE_REINPLACE=	yes
 USE_GNOME=	gnomeprefix gnomehier libgnomeprint
 
-BROKEN=		"Doesn't run"
+IGNORE=		"does not run"
 
 .include <bsd.port.pre.mk>
 
