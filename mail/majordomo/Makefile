@@ -24,6 +24,11 @@ INSTALL_TARGET=	install install-wrapper
 MAN1=		approve.1 bounce-remind.1 digest.1
 MAN8=		majordomo.8
 
+pre-fetch:
+.if !defined(BATCH) && !defined(PACKAGE_BUILDING)
+	/usr/bin/dialog --yesno "Majordomo is unsafe to use on multi-user machines: local users can run arbitrary commands as the majordomo user. Do you wish to accept the security risk and build majordomo anyway?" 8 60 || ${FALSE}
+.endif
+
 pre-configure:
 		@ ${SETENV} ${MAKE_ENV} /usr/bin/perl ${SCRIPTDIR}/createuser
 		@ ${CP} ${FILESDIR}/aliases.majordomo ${WRKSRC}
