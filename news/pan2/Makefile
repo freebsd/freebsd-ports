@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	pan2
-PORTVERSION=	0.13.2.90
+PORTVERSION=	0.13.3
 CATEGORIES=	news gnome
 MASTER_SITES=	http://pan.rebelbase.com/download/releases/${PORTVERSION}/SOURCE/ \
 		http://pan.rebelbase.com/download/obsolete/${PORTVERSION}/SOURCE/ \
 		${MASTER_SITE_GNOME}
 
-MASTER_SITE_SUBDIR=	sources/pan/0.13
+MASTER_SITE_SUBDIR=	sources/${PORTNAME:S/2$//}/0.13
 DISTNAME=	${PORTNAME:S/2$//}-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
@@ -35,5 +35,7 @@ CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
 		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|[(]libdir[)]/locale|(prefix)/share/locale|g' \
+		${WRKSRC}/po/Makefile.in.in
 
 .include <bsd.port.mk>
