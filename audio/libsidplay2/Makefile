@@ -6,13 +6,17 @@
 #
 
 PORTNAME=	libsidplay
-PORTVERSION=	1.36.45
+PORTVERSION=	1.36.46
 CATEGORIES=	audio emulators
 MASTER_SITES=	http://www.geocities.com/SiliconValley/Lakes/5147/sidplay/packages/
-DISTFILES=	${PORTNAME}-${PORTVERSION:S/./_/g}.tgz
+DISTFILES=	${PORTNAME}-${PORTVERSION}.tgz
 
 MAINTAINER=	sec@42.org
 
+# geocities seems to be broken.
+# The HTTP Content-Length-header is different from what is received.
+# fetch: libsidplay-1.36.46.tgz appears to be truncated: 202352/202442 bytes
+FETCH_AFTER_ARGS= || true
 FETCH_CMD=	/usr/bin/fetch
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
