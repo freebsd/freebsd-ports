@@ -1,6 +1,6 @@
---- configure.orig	Mon Mar 17 15:31:41 2003
-+++ configure	Mon Apr  7 23:32:37 2003
-@@ -7950,6 +7950,7 @@
+--- configure.orig	Fri Oct 17 01:15:31 2003
++++ configure	Fri Oct 17 01:16:29 2003
+@@ -7968,6 +7968,7 @@
  
  # This can be used to rebuild libtool when needed
  LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
@@ -8,3 +8,14 @@
  
  # Always use our own libtool.
  LIBTOOL='$(SHELL) $(top_builddir)/libtool'
+@@ -11890,8 +11891,8 @@
+ 		;;
+ 	FreeBSD)
+ 		USE_PTHREADS=1
+-		_PTHREAD_CFLAGS="-pthread -D_THREAD_SAFE"
+-		_PTHREAD_LDFLAGS="";;
++		_PTHREAD_CFLAGS="%%PTHREAD_CFLAGS%%"
++		_PTHREAD_LDFLAGS="%%PTHREAD_LIBS%%";;
+ 	*)
+ 		USE_PTHREADS=1
+ 		_PTHREAD_LDFLAGS="-lc_r";;

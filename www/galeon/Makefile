@@ -74,8 +74,9 @@ pre-everything::
 	@${ECHO_MSG} ""
 
 post-patch:
-	@${FIND} ${WRKSRC} -name "Makefile.in*" | xargs ${REINPLACE_CMD} -e \
-		 's|-lpthread|${PTHREAD_LIBS}|g'
+	@${REINPLACE_CMD} -e 's|%%PTHREAD_CFLAGS%%|${PTHREAD_CFLAGS}|' \
+			  -e 's|%%PTHREAD_LIBS%%|${PTHREAD_LIBS}|' \
+			  ${WRKSRC}/configure
 	@${FIND} ${WRKSRC} -name "*.cpp" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|malloc\.h|stdlib.h|g'
 	@${MKDIR} ${WRKSRC}/src/libnautilus
