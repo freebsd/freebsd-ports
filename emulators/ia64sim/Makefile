@@ -12,20 +12,27 @@ CATEGORIES=	emulators
 MASTER_SITES=	http://www.pacificsites.com/~ccrayne/  \
 		http://www.glue.umd.edu/~jasonp/  \
 		http://www.boo.net/~jasonp/
-DISTFILES=	${PORTNAME}${EXTRACT_SUFX}
+DISTNAME=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	IA64 simulator (Intel(R) Architecture 64)
 
+USE_ZIP=	yes
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 501103
+BROKEN=		"does not build with latest gcc"
+.endif
+
 EXTRACT_BEFORE_ARGS=	-qLa
 WRKSRC=		${WRKDIR}/home/chuck/ia64simcc
-USE_ZIP=	yes
 USE_GMAKE=	yes
 MAKEFILE=	makefile.unx
 
 pre-build:
-	rm -f ${WRKSRC}/obj/*.o
-	rm -f ${WRKSRC}/ia64sim
+	${RM} -f ${WRKSRC}/obj/*.o
+	${RM} -f ${WRKSRC}/ia64sim
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ia64sim ${PREFIX}/bin
@@ -34,4 +41,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/ia64user.txt ${WRKSRC}/readme ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
