@@ -5,6 +5,7 @@ bin/gerbv
 %%PORTDOCS%%%%DOCSDIR%%/eagle/eagle2exc.txt
 %%PORTDOCS%%%%DOCSDIR%%/aperturemacro.txt
 %%PORTDOCS%%%%DOCSDIR%%/image2pixmap.fig
+%%PORTDOCS%%%%DOCSDIR%%/projectfiles.txt
 %%PORTDOCS%%%%DOCSDIR%%/sources.txt
 %%PORTDOCS%%%%EXAMPLESDIR%%/Mentor-BoardStation/README.txt
 %%PORTDOCS%%%%EXAMPLESDIR%%/Mentor-BoardStation/artwork_1.grb
@@ -64,6 +65,9 @@ bin/gerbv
 %%PORTDOCS%%%%EXAMPLESDIR%%/orcad/rs232_cm.sst
 %%PORTDOCS%%%%EXAMPLESDIR%%/orcad/rs232_cm.top
 %%PORTDOCS%%%%EXAMPLESDIR%%/orcad/thruhole.tap
+%%DATADIR%%/scheme/init.scm
+@dirrm %%DATADIR%%/scheme
+@dirrm %%DATADIR%%
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/orcad
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/numpres
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/nollezappare

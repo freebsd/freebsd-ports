@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	gerbv
-PORTVERSION=	0.15
-PORTREVISION=	1
+PORTVERSION=	0.16
 CATEGORIES=	cad
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,28 +15,24 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Free Gerber Viewer
 
-USE_GNOME=	gdkpixbuf gnometarget
-USE_REINPLACE=	yes
+USE_GNOME=	gnometarget gtk20
 USE_GETOPT_LONG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
-CONFIGURE_ARGS=	--enable-exportpng
+CONFIGURE_ARGS=	--enable-gtk2
 
 MAN1=	gerbv.1
 
 CPPFLAGS=	-I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib
 
-post-patch:
-	@${REINPLACE_CMD} -e "s|malloc.h|stdlib.h|g" ${WRKSRC}/src/amacro.c
-
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC}/doc && ${FIND} . | \
+	cd ${WRKSRC}/doc && ${FIND} . ! -name "*Makefile*" | \
 		${CPIO} -pdm -L -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR}
 	@${MKDIR} ${EXAMPLESDIR}
-	cd ${WRKSRC}/example && ${FIND} . | \
+	cd ${WRKSRC}/example && ${FIND} . ! -name "*Makefile*" | \
 		${CPIO} -pdm -L -R ${SHAREOWN}:${SHAREGRP} ${EXAMPLESDIR}
 .endif
 
