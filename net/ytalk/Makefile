@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	ytalk
-PORTVERSION=	3.1.1
-PORTREVISION=	1
+PORTVERSION=	3.3.0
 CATEGORIES=	net
-MASTER_SITES=	http://www.iagora.com/~espel/ytalk/
+MASTER_SITES=	http://www.impul.se/ytalk/
 
 MAINTAINER=	dom@happygiraffe.net
 COMMENT=	A new "talk" that can talk to multiple parties at once
