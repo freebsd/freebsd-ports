@@ -5,21 +5,22 @@
 # $FreeBSD$
 
 PORTNAME=		jackit
-PORTVERSION=		0.94.0
-PORTREVISION=		4
+PORTVERSION=		0.98.1
 CATEGORIES=		audio
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	jackit
 DISTNAME=		jack-audio-connection-kit-${PORTVERSION}
 
-MAINTAINER=		arved@FreeBSD.org
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=		JACK is a low-latency audio server
 
+BUILD_DEPENDS=		doxygen:${PORTSDIR}/devel/doxygen
 LIB_DEPENDS=		portaudio.0:${PORTSDIR}/audio/portaudio \
 			sndfile.1:${PORTSDIR}/audio/libsndfile
 
 CONFIGURE_ENV=		LIBS="${PTHREAD_LIBS}" LDFLAGS="-L${LOCALBASE}/lib" \
-			CPPFLAGS="-I${LOCALBASE}/include" CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS}"
+			CPPFLAGS="-I${LOCALBASE}/include" \
+			CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS}"
 GNU_CONFIGURE=		yes
 USE_GETOPT_LONG=	yes
 USE_REINPLACE=		yes
@@ -45,6 +46,5 @@ post-patch:
 		${WRKSRC}/example-clients/Makefile.in
 	${REINPLACE_CMD} -e "s,-ldl,," ${WRKSRC}/jackd/Makefile.in \
 		${WRKSRC}/example-clients/Makefile.in
-	${CP} ${FILESDIR}/Makefile.in ${WRKSRC}/drivers/oss
 
 .include <bsd.port.post.mk>
