@@ -432,6 +432,8 @@ share/texmf/tex/latex/CJK/SJIS/SJIS.cap
 share/texmf/tex/latex/CJK/SJIS/SJIS.chr
 share/texmf/tex/latex/CJK/SJIS/SJIS.cpx
 share/texmf/tex/latex/CJK/SJIS/SJIS.enc
+share/texmf/tex/latex/CJK/SJIS/SJISdnp.cpx
+share/texmf/tex/latex/CJK/SJIS/SJISdnp.enc
 share/texmf/tex/latex/CJK/SJIS/c49song.fd
 share/texmf/tex/latex/CJK/UTF8/UTF8.bdg
 share/texmf/tex/latex/CJK/UTF8/UTF8.chr
