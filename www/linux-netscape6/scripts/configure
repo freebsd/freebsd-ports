@@ -20,21 +20,19 @@ else
 /usr/bin/dialog --title "Netscape 6 component selection" --clear \
 	--checklist "\n\
 Choose components of Netscape 6 to download and install. \n\
-Press the space bar to toggle selections." -1 -1 16 \
-"browser"	"browser (6576 kB)"				ON \
+Press the space bar to toggle selections." -1 -1 12 \
+"browser"	"Web browser (6576 kB)"				ON \
 "deflenus"	"American English profile defaults (26 kB)"	ON \
 "flash"		"Flash plugin (576 kB)"				ON \
 "jre"		"Java plugin (13808 kB)"			ON \
 "langenus"	"American English language pack (608 kB)"	ON \
 "mail"		"e-mail and news (1824 kB)"			ON \
-"psm"		"Personal Security Manager (592 kB)"		ON \
 "regca"		"regional settings for Canada (56 kB)"		ON \
 "reges"		"regional settings for Latin America (54 kB)"	ON \
 "reggb"		"regional settings for the UK (58 kB)"		ON \
 "regus"		"regional settings for the USA (56 kB)"		ON \
 "spellchecker"	"spell-checker (544 kB)"			ON \
-"talkback"	"talkback (832 kB)"				ON \
-"xpcom"		"xpcom (720 kB)"				ON \
+"talkback"	"sends bug reports to Netscape staff (832 kB)"	ON \
 2> /tmp/checklist.tmp.$$
 
 retval=$?
@@ -55,6 +53,9 @@ esac
 
 echo "$choice" \
 	| sed -e "s/\"//g" \
+	| sed -e "s/mail/mail browser/g" \
+	| sed -e "s/browser/browser psm xpcom/g" \
+	| sort -u \
 	| sed -e "s/ /.xpi /g" \
 	| sed -e "s/$/.xpi/g" \
 	| perl -pi -e "s/ /\n/g" \
