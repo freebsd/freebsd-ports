@@ -14,7 +14,7 @@ DISTNAME=	gnome-chemistry-utils-${PORTVERSION}
 MAINTAINER=	pav@oook.cz
 COMMENT=	C++ classes and Gtk2 widgets related to chemistry
 
-LIB_DEPENDS=	gtkglext-x11-1.0:${PORTSDIR}/x11-toolkits/gtkglext \
+LIB_DEPENDS=	gtkglext-x11-1.0.2:${PORTSDIR}/x11-toolkits/gtkglext \
 		openbabel.0:${PORTSDIR}/science/openbabel
 
 USE_BZIP2=	yes

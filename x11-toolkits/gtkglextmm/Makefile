@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	gtkglext
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ wrapper for GtkGLExt
 
-LIB_DEPENDS=	gtkglext-x11-1.0:${PORTSDIR}/x11-toolkits/gtkglext \
+LIB_DEPENDS=	gtkglext-x11-1.0.2:${PORTSDIR}/x11-toolkits/gtkglext \
 		gtkmm-2.0:${PORTSDIR}/x11-toolkits/gtk--2
 
 USE_BZIP2=	yes
