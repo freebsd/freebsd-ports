@@ -1,0 +1,8 @@
+share/ghostscript/%%GS_VERSION%%/lib/CIDFnmap.jp
+@exec /bin/mv %D/share/ghostscript/%%GS_VERSION%%/lib/CIDFnmap  %D/share/ghostscript/%%GS_VERSION%%/lib/CIDFnmap.orig
+@exec /usr/bin/grep -v -e 'CIDFnmap.jp' %D/share/ghostscript/%%GS_VERSION%%/lib/CIDFnmap.orig > %D/share/ghostscript/%%GS_VERSION%%/lib/CIDFnmap
+@exec echo '(CIDFnmap.jp) .runlibfile' >> %D/share/ghostscript/%%GS_VERSION%%/lib/CIDFnmap
+@exec /bin/rm %D/share/ghostscript/%%GS_VERSION%%/lib/CIDFnmap.orig
+@unexec /bin/mv %D/share/ghostscript/%%GS_VERSION%%/lib/CIDFnmap  %D/share/ghostscript/%%GS_VERSION%%/lib/CIDFnmap.orig
+@unexec /usr/bin/grep -v -e 'CIDFnmap.jp' %D/share/ghostscript/%%GS_VERSION%%/lib/CIDFnmap.orig > %D/share/ghostscript/%%GS_VERSION%%/lib/CIDFnmap
+@unexec /bin/rm %D/share/ghostscript/%%GS_VERSION%%/lib/CIDFnmap.orig
