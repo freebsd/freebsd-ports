@@ -3,7 +3,7 @@
 # Date created:		30 May 1998
 # Whom:			Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/06/02 08:09:36 tg Exp $
 #
 
 DISTNAME=	PyGist-13
@@ -33,10 +33,10 @@ do-configure:
 	@(cd ${WRKSRC} && ${CONFIGURE_ENV} python makethis.py)
 
 post-install:
+	@${RM} ${WRKSRC}/*/Demo/*.orig ${WRKSRC}/*/Lib/*.orig
 	${INSTALL_DATA} ${WRKSRC}/*/Lib/* ${SITEPYDIR}
 	@${PREFIX}/bin/python -O ${PYTHONSCRIPTDIR}/compileall.py ${SITEPYDIR}
 	${MKDIR} ${EXAMPLEDIR}
-	@${RM} ${WRKSRC}/*/Demo/*.orig
 	${INSTALL_DATA} ${WRKSRC}/*/Demo/* ${EXAMPLEDIR}
 
 .include <bsd.port.mk>
