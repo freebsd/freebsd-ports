@@ -1,34 +1,34 @@
-lib/libshout.a
-lib/libshout.la
-lib/libshout.so
-lib/libshout.so.1
 include/shout/shout.h
-@dirrm include/shout
-share/doc/libshout-%%PORTVERSION%%/example.html
-share/doc/libshout-%%PORTVERSION%%/example/Makefile
-share/doc/libshout-%%PORTVERSION%%/example/example.c
-share/doc/libshout-%%PORTVERSION%%/example_c.html
-@dirrm share/doc/libshout-%%PORTVERSION%%/example
-share/doc/libshout-%%PORTVERSION%%/AUTHORS
-share/doc/libshout-%%PORTVERSION%%/CHANGES
-share/doc/libshout-%%PORTVERSION%%/COPYING
-share/doc/libshout-%%PORTVERSION%%/README
+lib/libshout.so.2
+lib/libshout.so
+lib/libshout.la
+lib/libshout.a
+share/doc/libshout-%%PORTVERSION%%/index.html
+share/doc/libshout-%%PORTVERSION%%/overview.html
+share/doc/libshout-%%PORTVERSION%%/initialization.html
 share/doc/libshout-%%PORTVERSION%%/connection.html
 share/doc/libshout-%%PORTVERSION%%/datastreaming.html
-share/doc/libshout-%%PORTVERSION%%/datastructures.html
-share/doc/libshout-%%PORTVERSION%%/errorhandling.html
-share/doc/libshout-%%PORTVERSION%%/index.html
-share/doc/libshout-%%PORTVERSION%%/initialization.html
 share/doc/libshout-%%PORTVERSION%%/metadata.html
-share/doc/libshout-%%PORTVERSION%%/overview.html
-share/doc/libshout-%%PORTVERSION%%/reference.html
+share/doc/libshout-%%PORTVERSION%%/datastructures.html
 share/doc/libshout-%%PORTVERSION%%/shout_conn_t.html
 share/doc/libshout-%%PORTVERSION%%/shout_connect.html
 share/doc/libshout-%%PORTVERSION%%/shout_disconnect.html
+share/doc/libshout-%%PORTVERSION%%/shout_sleep.html
 share/doc/libshout-%%PORTVERSION%%/shout_init_connection.html
 share/doc/libshout-%%PORTVERSION%%/shout_send_data.html
-share/doc/libshout-%%PORTVERSION%%/shout_sleep.html
-share/doc/libshout-%%PORTVERSION%%/shout_strerror.html
 share/doc/libshout-%%PORTVERSION%%/shout_update_metadata.html
 share/doc/libshout-%%PORTVERSION%%/style.css
+share/doc/libshout-%%PORTVERSION%%/example.html
+share/doc/libshout-%%PORTVERSION%%/example_c.html
+share/doc/libshout-%%PORTVERSION%%/reference.html
+share/doc/libshout-%%PORTVERSION%%/errorhandling.html
+share/doc/libshout-%%PORTVERSION%%/shout_strerror.html
+share/doc/libshout-%%PORTVERSION%%/README
+share/doc/libshout-%%PORTVERSION%%/AUTHORS
+share/doc/libshout-%%PORTVERSION%%/COPYING
+share/doc/libshout-%%PORTVERSION%%/CHANGES
+share/examples/libshout-%%PORTVERSION%%/Makefile
+share/examples/libshout-%%PORTVERSION%%/example.c
+@dirrm include/shout
 @dirrm share/doc/libshout-%%PORTVERSION%%
+@dirrm share/examples/libshout-%%PORTVERSION%%
