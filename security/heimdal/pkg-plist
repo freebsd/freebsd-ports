@@ -21,7 +21,6 @@ include/asn1.h
 include/asn1_err.h
 include/base64.h
 include/der.h
-include/des.h
 include/editline.h
 include/getarg.h
 include/gssapi.h
@@ -42,18 +41,14 @@ include/krb5-protos.h
 include/krb5-types.h
 include/krb5.h
 include/krb5_err.h
-include/md4.h
-include/md5.h
 include/otp.h
 include/parse_bytes.h
 include/parse_time.h
 include/parse_units.h
-include/rc4.h
 include/resolve.h
 include/rtbl.h
 include/roken-common.h
 include/roken.h
-include/sha.h
 include/sl.h
 include/ss/ss.h
 include/xdbm.h
