@@ -7,7 +7,7 @@
 
 PORTNAME=	gnomecanvas2
 PORTVERSION=	${RUBY_GNOME_PORTVERSION}
-CATEGORIES=	x11-toolkits graphics ruby gnome
+CATEGORIES=	graphics ruby gnome
 MASTER_SITES=	${RUBY_GNOME_MASTER_SITES}
 MASTER_SITE_SUBDIR=	${RUBY_GNOME_MASTER_SITE_SUBDIR}
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -17,9 +17,10 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	Ruby binding for GnomeCanvas2
 
-LIB_DEPENDS=	libgtkglext-x11-1.0.2:${PORTSDIR}/x11-toolkits/gtkglext
-RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/gtk2.so:${PORTSDIR}/x11-toolkits/ruby-gtk2 \
-		${RUBY_SITEARCHLIBDIR}/opengl.so:${PORTSDIR}/graphics/ruby-opengl
+LIB_DEPENDS=    gnomecanvas-2.200:${PORTSDIR}/graphics/libgnomecanvas
+RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/glib2.so:${PORTSDIR}/devel/ruby-glib2 \
+		${RUBY_SITEARCHLIBDIR}/gtk2.so:${PORTSDIR}/x11-toolkits/ruby-gtk2 \
+		${RUBY_SITEARCHLIBDIR}/libart2.so:${PORTSDIR}/graphics/ruby-libart2
 
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
@@ -27,6 +28,7 @@ USE_XLIB=	yes
 
 .include "${.CURDIR}/../../x11/ruby-gnome2/Makefile.common"
 
+WRKSRC=		${RUBY_GNOME_WRKSRC}/gnomecanvas
 INSTALL_TARGET=	site-install
 
 DOCS_EN=	ChangeLog \
