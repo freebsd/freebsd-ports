@@ -30,5 +30,6 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/hackbot.1.gz ${PREFIX}/man/man1/
 
 MAN1=	hackbot.1
+MANCOMPRESSED=	yes
 
 .include <bsd.port.mk>
