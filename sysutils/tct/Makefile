@@ -25,6 +25,12 @@ MAN5=		magic.5 tm-format.5
 
 MYPORTDOCS=	CHANGES COPYRIGHT INSTALL LICENSE MANIFEST OS-NOTES README.FIRST TODO docs/README docs/design-notes docs/lazarus.README docs/grave-robber.README docs/mac.README
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502000
+BROKEN=		"Install broken"
+.endif
+
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/bin/file ${LOCALBASE}/bin/file-tct
 	@${INSTALL_DATA} -m 555 ${WRKSRC}/bin/grave-robber ${LOCALBASE}/bin
@@ -63,4 +69,4 @@ post-install:
 	@${CP} ${WRKSRC}/conf/* ${PREFIX}/share/doc/tct/conf
 	@${CP} ${WRKSRC}/conf/paths.pl ${SITE_PERL}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
