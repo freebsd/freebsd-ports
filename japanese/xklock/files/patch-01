@@ -1,0 +1,42 @@
+--- Makefile-	Sun Apr 20 21:20:12 1997
++++ Makefile	Mon Apr 21 18:29:49 1997
+@@ -4,9 +4,9 @@
+ #
+ 
+ CC      = cc
+-C_FLAG  = -fwritable-strings -DSHADOW -O2  #-DDEBUG -g
++C_FLAG  = -fwritable-strings -O2 -m486 -I${PREFIX}/include #-DDEBUG -g
+ RM_FLAG = -f
+-LIB     = -lX11 -lXmu -lshadow -lXpm
++LIB     = -L${PREFIX}/lib -lX11 -lXmu -lXpm -lcrypt
+ EXE     = xklock
+ OBJ1    = xklock.o
+ OBJ2    = jnames.o
+@@ -18,14 +18,14 @@
+ DOC     = xklock.doc readme.doc
+ TAR     = xklock.tar
+ MAKE    = Makefile Makefile.BE
+-BIN_DIR = /usr/X386/bin
++BIN_DIR = ${PREFIX}/bin
+ 
+ all:$(EXE)
+ 
+ $(EXE):$(OBJ)
+ 	$(CC) $(C_FLAG) -o $@ $(OBJ) $(LIB)
+ 
+-$(OBJ1):$(SRC1) $(INC)
++$(OBJ1):$(SRC1)
+ 	$(CC) $(C_FLAG) -c $(SRC1)
+ 
+ $(OBJ2):$(SRC2)
+--- xklock.c-	Mon Apr 21 20:25:29 1997
++++ xklock.c	Mon Apr 21 20:23:36 1997
+@@ -74,7 +74,7 @@
+ #ifdef	SHADOW
+ static	struct	spwd	*user_spwd;
+ #endif
+-static	char	root_password[32], user_password[32];
++static	char	root_password[_PASSWORD_LEN], user_password[_PASSWORD_LEN];
+ static	char	*option_name[] = {
+   "-d",			/*	0	*/
+   "-foreground",	/*	1	*/

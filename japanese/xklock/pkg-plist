@@ -1,0 +1,3 @@
+bin/xklock
+@exec touch %D/lib/jnames
+@comment @unexec rm %D/lib/jnames
