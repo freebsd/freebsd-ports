@@ -1,0 +1,10 @@
+lib/%%PYTHON_VERSION%%/site-packages/lex.py
+lib/%%PYTHON_VERSION%%/site-packages/yacc.py
+%%PORTDOCS%%share/doc/ply/ply.html
+%%PORTDOCS%%share/doc/ply/example/ansic/clex.py
+%%PORTDOCS%%share/doc/ply/example/ansic/cparse.py
+%%PORTDOCS%%share/doc/ply/example/calc/calc.py
+%%PORTDOCS%%@dirrm share/doc/ply/example/ansic
+%%PORTDOCS%%@dirrm share/doc/ply/example/calc
+%%PORTDOCS%%@dirrm share/doc/ply/example
+%%PORTDOCS%%@dirrm share/doc/ply

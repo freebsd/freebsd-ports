@@ -416,6 +416,7 @@
     SUBDIR += picprog
     SUBDIR += pinstall
     SUBDIR += pkgconfig
+    SUBDIR += ply
     SUBDIR += pmake
     SUBDIR += popt
     SUBDIR += portcheckout

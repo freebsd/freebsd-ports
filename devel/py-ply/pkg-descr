@@ -1,0 +1,9 @@
+PLY is a Python-only implementation of the popular compiler construction
+tools lex and yacc. The implementation borrows ideas from a number of
+previous efforts; most notably John Aycock's SPARK toolkit. However, the
+overall flavor of the implementation is more closely modeled after the C
+version of lex and yacc. The other significant feature of PLY is that it
+provides extensive input validation and error reporting--much more so than
+other Python parsing tools.
+
+WWW: http://systems.cs.uchicago.edu/ply/
