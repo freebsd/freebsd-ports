@@ -11,6 +11,7 @@ CATEGORIES=	textproc ruby
 MASTER_SITES=	http://www.rubynet.org/modules/xml/ruby-libxml/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	ruby-${PORTNAME}-20020709
+DIST_SUBDIR=	ruby
 
 MAINTAINER=	sean@chittenden.org
 
