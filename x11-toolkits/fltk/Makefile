@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fltk
-PORTVERSION?=	${_PORTVERSION}
+PORTVERSION=	${VERSION}
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	ftp://ftp.fltk.org/pub/fltk/${VERSION}/ \
 		ftp://ftp.chg.ru/pub/X11/fltk/${VERSION}/ \
@@ -22,24 +22,6 @@ COMMENT?=	C++ graphical user interface for X
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		Xft.2:${PORTSDIR}/x11-fonts/libXft
-
-.if defined(WITH_XUNICODE)
-PATCH_VERSION=	20010114
-_PORTVERSION+=	${VERSION}.${PATCH_VERSION}
-
-PORTREVISION=	2
-PKGNAMESUFFIX=	-xunicode
-
-PATCH_SITES=	http://www.ab.wakwak.com/~tino/jatk/fltk/
-PATCHFILES=	${PORTNAME}-${VERSION}${PKGNAMESUFFIX}-${PATCH_VERSION}.diff
-PATCH_DIST_STRIP=	-p1
-
-BUILD_DEPENDS=	${X11BASE}/include/xunicode/xunicode.h:${PORTSDIR}/converters/xunicode
-
-CONFIGURE_ENV=	CXXFLAGS=-DUSE_XUNICODE
-.else
-_PORTVERSION+=	${VERSION}
-.endif
 
 .if defined(WITH_THREADS)
 CONFIGURE_ARGS+=--enable-threads
@@ -60,11 +42,6 @@ USE_MESA=	yes
 
 MAN1=		fluid.1 fltk-config.1
 MAN3=		fltk.3
-
-.if defined(WITH_XUNICODE)
-post-extract:
-	cd ${WRKSRC} && ${LN} -s ${X11BASE}/include/xunicode
-.endif
 
 pre-everything::
 	@${ECHO_MSG} "===>  You can enable threads support by defining WITH_THREADS"
