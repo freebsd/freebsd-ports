@@ -1083,6 +1083,7 @@
     SUBDIR += pear-HTML_Table
     SUBDIR += pear-HTML_Template_IT
     SUBDIR += pear-HTML_Template_PHPLIB
+    SUBDIR += pear-HTML_TreeMenu
     SUBDIR += pear-I18N
     SUBDIR += pear-OLE
     SUBDIR += pear-PEAR
