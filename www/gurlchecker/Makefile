@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SAVANNAH} \
 		http://labs.libre-entreprise.org/download.php/57/
 MASTER_SITE_SUBDIR=	${PORTNAME}/stable/0.6
 
-MAINTAINER=	einekoai@chello.nl
+MAINTAINER=	kwm@rainbow-runner.nl
 COMMENT=	A Gnome program to check a page/website for broken links
 
 USE_X_PREFIX=	yes

@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=     . old-versions
 PKGNAMESUFFIX=  -libsmbclient
 DISTNAME=	${PORTNAME}-3.0.0
 
-MAINTAINER=	einekoai@chello.nl
+MAINTAINER=	kwm@rainbow-runner.nl
 COMMENT=	The shared lib from the samba packges
 
 CONFLICTS=	samba-3.*
