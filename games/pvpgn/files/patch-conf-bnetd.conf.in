@@ -1,5 +1,5 @@
---- ../conf/bnetd.conf.in.orig	Wed Jan 12 23:00:53 2005
-+++ ../conf/bnetd.conf.in	Tue Jan 18 23:57:43 2005
+--- ../conf/bnetd.conf.in.orig	Tue Mar  8 00:59:58 2005
++++ ../conf/bnetd.conf.in	Tue Mar  8 01:02:16 2005
 @@ -15,8 +15,8 @@
  # a leading '#').  If none are specified, the userid will not be changed.    #
  #----------------------------------------------------------------------------#
