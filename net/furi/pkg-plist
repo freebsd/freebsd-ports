@@ -1,0 +1,5 @@
+share/doc/furi/Readme.txt
+share/java/classes/furi/furi.jar
+bin/furi
+@dirrm share/java/classes/furi
+@dirrm share/doc/furi

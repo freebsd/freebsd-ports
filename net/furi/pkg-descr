@@ -1,0 +1,5 @@
+FURI is a Gnutella protocol-compatible Java program that can
+participate in the Gnutella network.  It is a full version program
+that can perform most of the tasks of a Gnutella servant.
+
+WWW: http://www.jps.net/williamw/furi/
