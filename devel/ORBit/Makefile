@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	ORBit
-PORTVERSION=	0.5.13
-PORTREVISION=	3
+PORTVERSION=	0.5.14
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/ORBit
+DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 
@@ -18,6 +18,7 @@ BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
 LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext
 RUN_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
 
+USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GLIB=	yes
 INSTALLS_SHLIB=	yes
@@ -25,6 +26,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS= --disable-indent
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
+CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 
 post-patch:
 	@${TOUCH} ${WRKSRC}/configure

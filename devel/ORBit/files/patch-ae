@@ -1,11 +1,11 @@
 
 $FreeBSD$
 
---- configure.orig	Mon Jan  7 11:09:58 2002
-+++ configure	Fri Jan 11 11:51:55 2002
-@@ -2151,9 +2151,9 @@
-   rm -f conf.glibtest
+--- configure.orig	Mon Mar 11 14:42:53 2002
++++ configure	Tue Mar 12 16:33:49 2002
+@@ -7189,9 +7189,9 @@
  
+   rm -f conf.glibtest
  
 -GMODULE_CFLAGS=`glib-config --cflags gmodule`
 +GMODULE_CFLAGS=`$GLIB_CONFIG --cflags gmodule`
@@ -13,23 +13,24 @@ $FreeBSD$
 -GMODULE_LIBS=`glib-config --libs gmodule`
 +GMODULE_LIBS=`$GLIB_CONFIG --libs gmodule`
  
- 
  for ac_prog in 'bison -y' byacc
-@@ -3757,37 +3757,30 @@
+ do
+@@ -9298,39 +9298,33 @@
+ 
  fi
  
- 
-+echo $ac_n "checking how many vectors writev is capable to handle""... $ac_c" 1>&6
-+echo "configure:3761: checking how many vectors writev is capable to handle" >&5
- if test "$cross_compiling" = yes; then
--  cat >> confdefs.h <<\EOF
+-if test "$cross_compiling" = yes; then
+-  cat >>confdefs.h <<\EOF
 -#define HAVE_LIMITED_WRITEV 1
 -EOF
--
++echo $ac_n "checking how many vectors writev is capable to handle""... $ac_c" 1>&6
++echo "configure:3761: checking how many vectors writev is capable to handle" >&5
+ 
++if test "$cross_compiling" = yes; then
 +  MAXIOV=16
  else
-   cat > conftest.$ac_ext <<EOF
- #line 3768 "configure"
+   cat >conftest.$ac_ext <<_ACEOF
+ #line 9308 "configure"
  #include "confdefs.h"
  
 -#include <fcntl.h>
@@ -54,59 +55,52 @@ $FreeBSD$
 -		return(1);
 -
 -	if(writev(fd, iovecs, NIOVECS) < 0)
-+	FILE *f;
-+	int fd, i;
-+	static struct iovec iovecs[4097];
-+	if ((f = fopen("conftestval", "w")) == NULL || \
-+	    (fd = open("/dev/null", O_WRONLY)) < 0)
- 		return 1;
+-		return 1;
 -
-+	for (i = 1; i < 4098 && writev(fd, iovecs, i) >= 0; i++);
-+	fprintf(f, "%d\n", i - 1);
-+	fclose(f);
- 	close(fd);
- 	return 0;
+-	close(fd);
+-	return 0;
++        FILE *f;
++        int fd, i;
++        static struct iovec iovecs[4097];
++        if ((f = fopen("conftestval", "w")) == NULL || \
++            (fd = open("/dev/null", O_WRONLY)) < 0)
++                exit(1);
++        for (i = 1; i < 4098 && writev(fd, iovecs, i) >= 0; i++);
++        fprintf(f, "%d\n", i - 1);
++        fclose(f);
++        close(fd);
++        exit(0);
  }
-@@ -3795,19 +3788,16 @@
- EOF
- if { (eval echo configure:3797: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext} && (./conftest; exit) 2>/dev/null
- then
+ 
+ _ACEOF
+@@ -9345,18 +9339,16 @@
+   ac_status=$?
+   echo "$as_me:9346: \$? = $ac_status" >&5
+   (exit $ac_status); }; }; then
 -  :
 +  MAXIOV=`cat conftestval`
  else
-   echo "configure: failed program was:" >&5
-   cat conftest.$ac_ext >&5
-   rm -fr conftest*
--  cat >> confdefs.h <<\EOF
+   echo "$as_me: program exited with status $ac_status" >&5
+ echo "$as_me: failed program was:" >&5
+ cat conftest.$ac_ext >&5
+-cat >>confdefs.h <<\EOF
 -#define HAVE_LIMITED_WRITEV 1
 -EOF
 -
 +  MAXIOV=16
  fi
- rm -fr conftest*
+ rm -f core core.* *.core conftest$ac_exeext conftest.$ac_objext conftest.$ac_ext
  fi
--
 +echo "$ac_t""$MAXIOV" 1>&6
  
- 
  #######################
-@@ -4740,7 +4730,7 @@
- s%@LIB_WRAP@%$LIB_WRAP%g
- s%@HAVE_HOSTS_ACCESS_TRUE@%$HAVE_HOSTS_ACCESS_TRUE%g
- s%@HAVE_HOSTS_ACCESS_FALSE@%$HAVE_HOSTS_ACCESS_FALSE%g
--s%@HAVE_LIMITED_WRITEV@%$HAVE_LIMITED_WRITEV%g
-+s%@MAXIOV@%$MAXIOV%g
- s%@subdirs@%$subdirs%g
- s%@pkglibdir@%$pkglibdir%g
- 
-@@ -5064,10 +5054,6 @@
-       *) # Relative path.
-         ac_sub_cache_file="$ac_dots$cache_file" ;;
-       esac
--  case "$ac_given_INSTALL" in
--        [/$]*) INSTALL="$ac_given_INSTALL" ;;
--        *) INSTALL="$ac_dots$ac_given_INSTALL" ;;
--        esac
- 
-       echo "running ${CONFIG_SHELL-/bin/sh} $ac_sub_configure $ac_sub_configure_args --cache-file=$ac_sub_cache_file --srcdir=$ac_sub_srcdir"
-       # The eval makes quoting arguments work.
+ # type alignment test #
+@@ -10755,7 +10747,7 @@
+ s,@LIB_WRAP@,$LIB_WRAP,;t t
+ s,@HAVE_HOSTS_ACCESS_TRUE@,$HAVE_HOSTS_ACCESS_TRUE,;t t
+ s,@HAVE_HOSTS_ACCESS_FALSE@,$HAVE_HOSTS_ACCESS_FALSE,;t t
+-s,@HAVE_LIMITED_WRITEV@,$HAVE_LIMITED_WRITEV,;t t
++s,@MAXIOV@,$MAXIOV,;t t
+ s,@subdirs@,$subdirs,;t t
+ s,@pkglibdir@,$pkglibdir,;t t
+ CEOF
