@@ -8,7 +8,7 @@
 PORTNAME=	glbiff
 PORTVERSION=	0.3.5
 CATEGORIES=	mail
-MASTER_SITES=	http://www.dgp.utoronto.ca/~mac/projects/
+MASTER_SITES=	http://www.dgp.utoronto.ca/~mac/code/projects/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	petef@FreeBSD.org
