@@ -20,8 +20,8 @@ MAN1=		xfireworks.1
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/xfireworks ${PREFIX}/bin/xfireworks
-	${INSTALL_MAN} ${WRKSRC}/xfireworks.man ${PREFIX}/bin/xfireworks.1
-	${INSTALL_DATA} ${WRKSRC}/xfireworks.conf ${PREFIX}/etc/xfirewokrs.conf.sample
+	${INSTALL_MAN} ${WRKSRC}/xfireworks.man ${PREFIX}/man/man1/xfireworks.1
+	${INSTALL_DATA} ${WRKSRC}/xfireworks.conf ${PREFIX}/etc/xfireworks.conf.sample
 .if !exists(${PREFIX}/etc/xfireworks.conf)
 	${CP} ${PREFIX}/etc/xfireworks.conf.sample ${PREFIX}/etc/xfireworks.conf
 .endif
