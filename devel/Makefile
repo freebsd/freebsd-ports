@@ -1025,6 +1025,7 @@
     SUBDIR += py-simpleparse
     SUBDIR += py-sip
     SUBDIR += py-spark
+    SUBDIR += py-statgrab
     SUBDIR += py-tables
     SUBDIR += py-twisted
     SUBDIR += py-ui
