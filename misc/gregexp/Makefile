@@ -19,7 +19,8 @@ LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
 USE_X_PREFIX=	yes
 USE_ICONV=	yes
 USE_GETTEXT=	yes
-USE_GNOME=	gtk20 gnomeprefix
+USE_GNOME=	gtk20 gnomeprefix libgnomeui
+USE_GCC=	3.3
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
