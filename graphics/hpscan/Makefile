@@ -3,7 +3,7 @@
 # Date created:		12 January 1996
 # Whom:			nate
 #
-# $Id: Makefile,v 1.6 1995/11/27 04:05:37 asami Exp $
+# $Id: Makefile,v 1.1.1.1 1996/01/12 20:58:37 nate Exp $
 #
 
 DISTNAME=	scanner
@@ -14,6 +14,7 @@ MASTER_SITES=	ftp://freefall.cdrom.com/pub/FreeBSD/LOCAL_PORTS/ \
 
 NO_WRKSUBDIR=		true
 USE_X11=		true
+USE_IMAKE=		true
 NO_INSTALL_MANPAGES=	true
 
 MAINTAINER=	nate@FreeBSD.org
