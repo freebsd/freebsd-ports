@@ -1,5 +1,5 @@
---- ./zvt/zvtterm.c.jp2	Tue Oct 24 08:12:43 2000
-+++ ./zvt/zvtterm.c	Sun Oct 29 18:32:20 2000
+--- zvt/zvtterm.c.zvtmb	Sun Jun 24 07:35:48 2001
++++ zvt/zvtterm.c	Sun Jun 24 07:35:48 2001
 @@ -49,12 +49,15 @@
  #include <X11/Xatom.h>
  #include <X11/Xos.h>
@@ -62,7 +62,7 @@
  
    GTK_WIDGET_SET_FLAGS (term, GTK_CAN_FOCUS);
  
-@@ -329,19 +356,9 @@
+@@ -328,19 +355,9 @@
        term);
  
    /* selection received */
@@ -85,7 +85,7 @@
  }
  
  /**
-@@ -666,6 +683,11 @@
+@@ -647,6 +664,11 @@
    clone_col(&zp->queue_red, 0);
    clone_col(&zp->queue_green, 0);
    clone_col(&zp->queue_blue, 0);
@@ -97,7 +97,7 @@
  }
  
  /**
-@@ -801,6 +823,9 @@
+@@ -782,6 +804,9 @@
    term_force_size(term);
  
    /* input context */
@@ -107,7 +107,7 @@
    if (gdk_im_ready () && !term->ic) {
      GdkICAttr attr;
      
-@@ -813,6 +838,7 @@
+@@ -794,6 +819,7 @@
        g_warning("Can't create input context.");
      }
    }
@@ -115,7 +115,7 @@
  }
  
  static void
-@@ -1280,7 +1306,11 @@
+@@ -1261,7 +1287,11 @@
    case GDK_FONT_FONTSET: {
      XFontSet fontset = (XFontSet) ((GdkFontPrivate *)font)->xfont;
      XFontSetExtents *extents = XExtentsOfFontSet(fontset);
@@ -127,7 +127,7 @@
      term->charheight = extents->max_logical_extent.height;
      zp->fonttype = ZVT_FONT_FONTSET;
    }
-@@ -1295,6 +1325,9 @@
+@@ -1276,6 +1306,9 @@
    if (term->font)
      gdk_font_unref (term->font);
    term->font = font;
@@ -137,7 +137,7 @@
  
    if (term->font_bold)
      gdk_font_unref (term->font_bold);
-@@ -1395,16 +1428,28 @@
+@@ -1376,16 +1409,28 @@
  
    if (rest) {
      g_string_sprintf (outname, "%s-medium-r%s", newname->str, rest);
@@ -166,7 +166,7 @@
      zvt_term_set_fonts_internal (term, font, 0);
    }
  
-@@ -1444,7 +1489,11 @@
+@@ -1425,7 +1470,11 @@
  {
    GdkAtom string_atom;
  #ifdef ZVT_UTF
@@ -178,7 +178,7 @@
    int index;
    struct _zvtprivate *zp = _ZVT_PRIVATE(widget);
  
-@@ -1464,7 +1513,11 @@
+@@ -1445,7 +1494,11 @@
    d(printf(" %s atom = %d\n", types[index], (int)string_atom));
  #else
    /* Get the atom corresonding to the target "STRING" */
@@ -190,7 +190,7 @@
  #endif
  
    if (string_atom == GDK_NONE) {
-@@ -1890,10 +1943,15 @@
+@@ -1871,10 +1924,15 @@
  
    switch (type) {
    default:
@@ -208,7 +208,7 @@
      o = out;
      for(i=0;i<term->vx->selection_size;i++) {
        c = term->vx->selection_data[i];
-@@ -1902,7 +1960,7 @@
+@@ -1883,7 +1941,7 @@
      *outlen = term->vx->selection_size;
      break;
    }
@@ -217,7 +217,7 @@
      unsigned char *o;
      unsigned int len=0;
      d(printf("converting selection to UTF-8\n"));
-@@ -1991,10 +2049,34 @@
+@@ -1972,10 +2030,34 @@
    term = ZVT_TERM (widget);
    vx = term->vx;
  
@@ -253,7 +253,7 @@
      atom = gdk_atom_intern ("UTF-8", FALSE);
    else
      atom = GDK_SELECTION_TYPE_STRING;
-@@ -2045,6 +2127,7 @@
+@@ -2026,6 +2108,7 @@
  
    /* Make sure we got the data in the expected form */
    if (selection_data->type != GDK_SELECTION_TYPE_STRING
@@ -261,7 +261,7 @@
        && selection_data->type != gdk_atom_intern("UTF-8", FALSE)) {
      g_print ("Selection \"STRING\" was not returned as strings!\n");
      return;
-@@ -2055,13 +2138,40 @@
+@@ -2036,13 +2119,40 @@
      {
        int i;
        char *ctmp = selection_data->data;
@@ -308,7 +308,7 @@
      }
  }  
  
-@@ -2113,6 +2223,141 @@
+@@ -2094,6 +2204,141 @@
    return length;
  }
  
@@ -450,7 +450,7 @@
  static void
  zvt_term_writemore (gpointer data, gint fd, GdkInputCondition condition)
  {
-@@ -2343,7 +2588,7 @@
+@@ -2324,7 +2569,7 @@
  static gint
  zvt_term_key_press (GtkWidget *widget, GdkEventKey *event)
  {
@@ -459,22 +459,15 @@
    char *p=buffer;
    struct _vtx *vx;
    ZvtTerm *term;
-@@ -2547,11 +2792,12 @@
+@@ -2535,6 +2780,7 @@
      break;
    default:
        if (event->length > 0){
-+        gint length = MIN(((buffer+ sizeof(buffer)) - p)/sizeof(char), event->length);
- 	if (event->state & GDK_MOD1_MASK){
++	gint length = MIN(((buffer+ sizeof(buffer)) - p)/sizeof(char), event->length);
+ 	if (event->state & (GDK_MOD1_MASK | GDK_MOD4_MASK)){
  	   *p++ = '\033';
          }
--	memcpy(p, event->string, event->length*sizeof(char));
--	p += event->length;
-+	memcpy(p, event->string, length);
-+	p += length;
-       } else {
- 	handled = FALSE;
-       }
-@@ -3161,24 +3407,24 @@
+@@ -3149,24 +3395,24 @@
    break;
    /* this is limited to 65535 characters! */
    case ZVT_FONT_FONTSET: {
@@ -507,7 +500,7 @@
    }
    }
  
-@@ -3199,6 +3445,10 @@
+@@ -3187,6 +3433,10 @@
  		    x + offx + len*term->charwidth, offy + row*term->charheight,
  		    1, term->charheight);
    }
@@ -518,9 +511,9 @@
  }
  
  
-@@ -3833,6 +4083,7 @@
-   } else {
-     d(printf("background hasn't moved, leaving\n"));
+@@ -3856,6 +4106,7 @@
+     gdk_gc_set_foreground (term->back_gc, &pen);
+     return;
    }
 +
  }

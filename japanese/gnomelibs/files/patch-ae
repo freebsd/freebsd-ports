@@ -1,5 +1,5 @@
---- ./zvt/update.c.jp2	Mon Aug 28 01:22:23 2000
-+++ ./zvt/update.c	Sun Oct 29 18:32:20 2000
+--- zvt/update.c.zvtmb	Mon Aug 28 01:22:23 2000
++++ zvt/update.c	Sun Jun 24 07:35:48 2001
 @@ -170,6 +170,11 @@
  	  run++;
  	} else {

@@ -1,5 +1,5 @@
---- ./zvt/vt.h.jp2	Sat Oct 30 03:35:49 1999
-+++ ./zvt/vt.h	Sun Oct 29 18:32:20 2000
+--- zvt/vt.h.zvtmb	Sat Oct 30 03:35:49 1999
++++ zvt/vt.h	Sun Jun 24 07:35:48 2001
 @@ -28,6 +28,10 @@
  /* for utf-8 input support */
  #define ZVT_UTF 1
