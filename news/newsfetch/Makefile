@@ -1,12 +1,12 @@
 # New ports collection makefile for:	newsfetch
-# Version required:	1.2
+# Version required:	1.21
 # Date created:		12 September 1997
 # Whom:			Jun-ichiro itojun Itoh <itojun@itojun.org>
 #
-# $Id: Makefile,v 1.2 1998/04/04 14:20:51 vanilla Exp $
+# $Id: Makefile,v 1.3 1998/05/07 17:10:53 itojun Exp $
 #
 
-DISTNAME=	newsfetch-1.2
+DISTNAME=	newsfetch-1.21
 CATEGORIES=	news
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	system/news/readers
