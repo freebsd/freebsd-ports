@@ -28,9 +28,15 @@ PERL_CONFIGURE=	yes
 MAN3=		Apache::Cookie.3 Apache::Request.3 Apache::libapreq.3 \
 		libapreq.3
 
+.include <bsd.port.pre.mk>
+
 post-patch:
 	@${PERL} -pi~ -e '$$_="" if ($$.>37 && $$.<63) || /PREREQ_PM/' \
 		${WRKSRC}/Makefile.PL
+.if ${PERL_LEVEL} < 500600
+	@${PERL} -pi~ -e '$$_="#define aTHX_\n" if $$. == 155' \
+		${WRKSRC}/c/apache_request.h
+.endif
 
 post-install:
 .ifndef(NOPORTDOCS)
@@ -41,4 +47,4 @@ post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/eg/perl/* ${EXAMPLESDIR}/perl
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
