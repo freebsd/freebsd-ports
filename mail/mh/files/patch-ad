@@ -52,7 +52,7 @@
   		../mts/libmts.a  ../zotnet/libzot.a
 + @END: SYS5SHLIB
 + @BEGIN: FBSDSHLIB
-+ LDLIBES	=	../config/config.o @(SLDFLAG) -lmh$(SLIBVER) \
++ LDLIBES	=	../config/config.o @(SLDFLAG) -L../sbr -lmh$(SLIBVER) \
 + 		../mts/libmts.a  ../zotnet/libzot.a
 + @END: FBSDSHLIB
 + LIBES	=	../config/config.o ../sbr/libmh.so ../mts/libmts.a \
@@ -60,6 +60,39 @@
   LDLIBS	=	$(LDLIBES) ../config/version.o $(LDOPTLIB)
   @END: SHAREDLIB
   LINT	=	lint
+*** ../mh-6.8.3.orig/conf/makefiles/support/pop.orig	Thu Feb 22 13:05:50 1996
+--- conf/makefiles/support/pop	Thu Feb 22 13:10:18 1996
+***************
+*** 59,67 ****
+  @BEGIN: SHAREDLIB
+  LIBES2	=	../../config/config.o ../../sbr/libmh.so $(LIBES1)
+  LDLIBS1	=	$(LIBES1) $(LDOPTLIB)
+  LDLIBS2	=	../../config/config.o ../../config/version.o \
+  		-Bdynamic @(SLDFLAG) -lmh$(SLIBVER) $(LIBES1) $(LDOPTLIB)
+! @END: SHAREDLIB
+  
+  LINT	=	lint
+  LFLAGS	=	-bhu $(OPTIONS)
+--- 59,77 ----
+  @BEGIN: SHAREDLIB
+  LIBES2	=	../../config/config.o ../../sbr/libmh.so $(LIBES1)
+  LDLIBS1	=	$(LIBES1) $(LDOPTLIB)
++ @END: SHAREDLIB
++ @BEGIN: SUN4SHLIB
+  LDLIBS2	=	../../config/config.o ../../config/version.o \
+  		-Bdynamic @(SLDFLAG) -lmh$(SLIBVER) $(LIBES1) $(LDOPTLIB)
+! @END: SUN4SHLIB
+! @BEGIN: SYS5SHLIB
+! LDLIBS2	=	../../config/config.o ../../config/version.o \
+! 		-Bdynamic @(SLDFLAG) -lmh$(SLIBVER) $(LIBES1) $(LDOPTLIB)
+! @END: SYS5SHLIB
+! @BEGIN: FBSDSHLIB
+! LDLIBS2	=	../../config/config.o ../../config/version.o \
+! 		@(SLDFLAG) -L../../sbr -lmh$(SLIBVER) $(LIBES1) $(LDOPTLIB)
+! @END: FBSDSHLIB
+  
+  LINT	=	lint
+  LFLAGS	=	-bhu $(OPTIONS)
 *** ../mh-6.8.3.orig/conf/mhconfig.c	Wed Dec  1 06:00:24 1993
 --- conf/mhconfig.c	Tue Dec 27 19:08:40 1994
 ***************
