@@ -3,14 +3,14 @@
 # Date created:		Sat Aug 30 13:29:42 CEST 1997
 # Whom:			Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.1.1.1 1997/08/30 13:25:04 andreas Exp $
+# $Id: Makefile,v 1.2 1997/09/09 00:39:46 asami Exp $
 #
 
 DISTNAME=	xmbase-grok-1.3.2.sbin
 PKGNAME=	xmbase-grok-1.3.2
 CATEGORIES=	databases x11
-MASTER_SITES=\
-	ftp://ftp.leo.org/pub/comp/os/linux/sunsite/X11/xapps/databases/
+MASTER_SITES=	${MASTER_SITE_SUNSITE}
+MASTER_SITE_SUBDIR=	apps/database/flatfile
 
 MAINTAINER=	andreas@FreeBSD.ORG
 
