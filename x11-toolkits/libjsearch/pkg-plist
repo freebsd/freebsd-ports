@@ -1,0 +1,21 @@
+include/jsearch/JXRegexHelpText.h
+include/jsearch/JXSRDialogUpdateTask.h
+include/jsearch/JXSRFullDialog.h
+include/jsearch/JXSRTextBase.h
+include/jsearch/JXSRTextDialogBase.h
+lib/jx/lib/%%PORTNAME%%-%%LIBVERSION%%.a
+lib/jx/lib/%%PORTNAME%%-%%LIBVERSION%%.so
+lib/jx/make/%%EXTRALIBFILES_MAKE_FILES%%
+lib/%%PORTNAME%%-%%LIBVERSION%%.a
+lib/%%PORTNAME%%-%%LIBVERSION%%.so
+lib/%%PORTNAME%%-%%LIBVERSION%%.so.%%LIBNUMBER%%
+%%PORTDOCS:%%share/doc/JX/LICENSE_%%PORTNAME%%
+share/jx/jsearch/find.xpm
+share/jx/jsearch/findnext.xpm
+share/jx/jsearch/findprev.xpm
+share/jx/jsearch/replace.xpm
+@dirrm share/jx/jsearch
+%%PORTDOCS:%%@unexec rmdir %D/share/doc/JX 2>/dev/null || true
+@dirrm include/%%INCLUDEDIR%%
+@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
+@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
