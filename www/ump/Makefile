@@ -33,7 +33,8 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-ump
 USE_GMAKE=	yes
 USE_XLIB=	yes
-WANT_ESOUND=	yes
+USE_GNOMENG=	yes
+WANT_GNOME=	yes
 # CONFIGURE_ARGS+=	--enable-motif
 EXTRA_PATCHES=	${.CURDIR}/../../audio/timidity++/files/*
 PKGDIR=		${.CURDIR}
@@ -45,8 +46,9 @@ WRKSRC=		${WRKDIR}/TiMidity++-${TIMIDITY_VERSION}
 
 .include <bsd.port.pre.mk>
 
-.if defined(HAVE_ESOUND)
-USE_ESOUND=	yes
+.if ${HAVE_GNOME:Mesound}!=""
+USE_GNOME=	esound
+PKGNAMESUFFIX=	-esound
 CONFIGURE_ARGS+=	--enable-audio=oss,esd
 .else
 CONFIGURE_ARGS+=	--enable-audio=oss

@@ -21,7 +21,8 @@ RUN_DEPENDS=	weblint:${PORTSDIR}/www/weblint
 USE_GMAKE=	yes
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
-USE_IMLIB=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	imlib
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-install-location="${X11BASE}/lib/bluefish"
 

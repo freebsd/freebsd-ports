@@ -17,7 +17,8 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
 		intl.4:${PORTSDIR}/devel/gettext
 
-USE_GTK=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--includedir="${LOCALBASE}/include" \
 			--libdir="${LOCALBASE}/lib" \

@@ -15,7 +15,8 @@ MAINTAINER=	jim@FreeBSD.org
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_GTK=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gtk12
 
 post-install:
 .if !defined(NOPORTDOCS)

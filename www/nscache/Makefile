@@ -16,18 +16,19 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	kris@FreeBSD.org
 
 USE_X_PREFIX=	yes
-USE_GTK=	yes
+USE_GNOMENG=	yes
 WANT_GNOME=	yes
 USE_AUTOMAKE=	yes
 AUTOMAKE_ARGS=	--include-deps
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--with-gtk-config=${GTK_CONFIG}
-  
+
 .include <bsd.port.pre.mk>
-  
+
 .if defined(HAVE_GNOME)
-USE_GNOME=	yes
+USE_GNOME+=	gtk12
+PKGNAMESUFFIX=	-gtk
 .else
 CONFIGURE_ARGS+=	--disable-gnome
 .endif
