@@ -3,7 +3,7 @@
 # Date created:		30 Jul 1995
 # Whom:			torstenb@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.20 1996/03/24 23:04:17 ache Exp $
+# $Id: Makefile,v 1.21 1996/04/17 01:07:04 asami Exp $
 #
 # Maximal ssh package requires YES values for
 # USE_PERL, USE_WISH, USE_TCPWRAP
@@ -90,9 +90,13 @@ post-install:
 # Following stuff must be after <bsd.port.mk> to expand exists() properly
 
 .if defined(USE_WISH) && ${USE_WISH} == YES || \
-    (exists(${PREFIX}/bin/wish4.0) || exists(${PREFIX}/bin/wish)) && \
+    (exists(${PREFIX}/bin/wish4.0) || exists(${PREFIX}/bin/wish4.1) || \
+     exists(${PREFIX}/bin/wish)) && \
     (!defined(USE_WISH) || ${USE_WISH} != NO)
-.if exists(${PREFIX}/bin/wish4.0)
+.if exists(${PREFIX}/bin/wish4.1)
+BUILD_DEPENDS+= wish4.1:${PORTSDIR}/x11/tk41
+CONFIGURE_ENV+= WISH=${PREFIX}/bin/wish4.1
+.elif exists(${PREFIX}/bin/wish4.0)
 BUILD_DEPENDS+= wish4.0:${PORTSDIR}/x11/tk4
 CONFIGURE_ENV+= WISH=${PREFIX}/bin/wish4.0
 .else
