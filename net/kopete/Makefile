@@ -22,10 +22,11 @@ USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 
 CONFIGURE_ENV=	LDFLAGS="-lcrypto"
+_NO_KDE_FIXPTHREAD=	yes
 
 pre-configure:
 	${REINPLACE_CMD} -e 's|-pedantic ||g' ${WRKSRC}/configure
-
+ 
 post-install:
 	${RM} ${PREFIX}/share/locale/xx/LC_MESSAGES/kopete.mo
 	-${RMDIR} ${PREFIX}/share/locale/xx/LC_MESSAGES/

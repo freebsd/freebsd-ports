@@ -20,6 +20,7 @@ USE_KDELIBS_VER=3
 GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
+_NO_KDE_FIXPTHREAD=	yes
 
 .include <bsd.port.pre.mk>
 pre-patch:

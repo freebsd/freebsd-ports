@@ -15,7 +15,7 @@ MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTNAME}-${PORTVERSION}/src
 DIST_SUBDIR=	KDE/koffice
 
-PATCH_SITES=	http://www.koffice.org/bugfixes/
+PATCH_SITES=	http://www.fruitsalad.org/patches/
 PATCHFILES=	1.2.1_kword_crashes.diff
 
 MAINTAINER=	kde@FreeBSD.org
@@ -31,7 +31,6 @@ USE_BZIP2=		yes
 USE_GMAKE=		yes
 USE_PYTHON=		yes
 GNU_CONFIGURE=		yes
-PATCH_WRKSRC=		${WRKSRC}/kword
 USE_REINPLACE=		yes
 
 INSTALLS_SHLIB=		yes
@@ -40,8 +39,5 @@ LDCONFIG_DIRS+=		%%PREFIX%%/lib %%PREFIX%%/lib/kde3
 .include "${.CURDIR}/../../x11/kde3/Makefile.kde"
 
 .include <bsd.port.pre.mk>
-
-pre-configure::
-	${REINPLACE_CMD} -e 's@-pedantic @@g' ${WRKSRC}/configure
 
 .include <bsd.port.post.mk>

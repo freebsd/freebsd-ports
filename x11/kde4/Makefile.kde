@@ -37,6 +37,8 @@ post-extract:
 # Unfortunately, this feature doesn't work right now due to binary files.
 _NO_KDE_PATCHUP=yes
 
+CONFIGURE_ENV+=	PTHREAD_LIBS="${PTHREAD_LIBS}"
+
 # Start options here.
 .if !defined(_NO_KDE_PATCHUP)
 .if !defined(KDE_PATCHFROM_VER)
@@ -89,6 +91,26 @@ CFLAGS=		-O0 ${KDE_CFLAGS}
 CONFIGURE_ARGS+=	--with-xinerama
 .endif
 .endif # !defined(_NO_KDE_XINERAMA)
+
+.if defined(KDE_I18N)
+_NO_KDE_FIXPTHREAD=	yes
+.endif
+
+.if !defined(_NO_KDE_FIXPTHREAD)
+PTHFIX_DATE?=	2003092201
+MASTER_SITES+=	http://www.fruitsalad.org/patches/:kde \
+		${MASTER_SITE_KDE_kde:S,src,FreeBSD/patches,g}
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
+		${PORTNAME}-${PTHFIX_DATE}-configure.tar.bz2:kde
+PATCH_SITES+=	http://www.fruitsalad.org/patches/:kde \
+		${MASTER_SITE_KDE_kde:S,src,FreeBSD/patches,g}
+PATCHFILES+=	patch-ltmain.sh:kde
+USE_REINPLACE=	yes
+
+pre-configure: fix-pedantic
+fix-pedantic:
+	@${REINPLACE_CMD} "s,-pedantic,,g" ${WRKSRC}/configure
+.endif
 
 kde-version-check:
 .if exists(${LOCALBASE}/include/kfm.h)

@@ -32,9 +32,6 @@ KDE_BUILD_PLIST=yes
 .include "${.CURDIR}/../../x11/kde3/Makefile.kde"
 .include <bsd.port.pre.mk>
 
-pre-configure::
-	${REINPLACE_CMD} -e 's@-pedantic @@g' ${WRKSRC}/configure
-
 .if exists(${X11BASE}/bin/xscreensaver)
 WITH_XS=	yes
 .endif # exists(${X11BASE}/bin/xscreensaver)

@@ -18,6 +18,7 @@ RUN_DEPENDS=		gpg:${PORTSDIR}/security/gnupg
 USE_GMAKE=		yes
 GNU_CONFIGURE=		yes
 USE_KDELIBS_VER=	3
+_NO_KDE_FIXPTHREAD=	yes
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/x11/kde3/Makefile.kde"
