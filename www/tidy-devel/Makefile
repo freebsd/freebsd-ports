@@ -11,9 +11,10 @@ PKGNAME=	tidy-0.11.99.2
 CATEGORIES=	www
 MASTER_SITES=	http://www.w3.org/People/Raggett/
 EXTRACT_SUFX=	.tgz
-MAN1=	tidy.1
 
 MAINTAINER=	saken@hotel.rmta.org
+
+MAN1=		tidy.1
 
 ALL_TARGET=	tidy
 
