@@ -20,10 +20,11 @@ lib/adasockets/sockets-stream_io.adb
 lib/adasockets/sockets-thin.ads
 lib/adasockets/sockets-utils.ads
 lib/adasockets/sockets-utils.adb
-lib/adasockets/sockets.ads
 lib/adasockets/sockets.adb
+lib/adasockets/sockets.ads
 share/doc/adasockets/adasockets.ps
 share/doc/adasockets/adasockets.pdf
+@unexec install-info --delete %D/info/adasockets.info %D/info/dir
 info/adasockets.info
+@exec install-info %D/info/adasockets.info %D/info/dir
 @dirrm lib/adasockets
-lib/adasockets/sockets.ads
