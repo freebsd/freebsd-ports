@@ -31,9 +31,9 @@ USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
-		--disable-clamav
+		--disable-clamav --enable-bigstack
 
-MAN1=		clamscan.1 freshclam.1 sigtool.1 clamdscan.1
+MAN1=		clamscan.1 freshclam.1 sigtool.1 clamdscan.1 clamav-milter.1
 MAN5=		clamav.conf.5
 MAN8=		clamd.8
 
