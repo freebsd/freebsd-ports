@@ -183,6 +183,7 @@
     SUBDIR += libxml2
     SUBDIR += libxode
     SUBDIR += libxslt
+    SUBDIR += linux-aspell
     SUBDIR += linux-expat
     SUBDIR += linux-libxml
     SUBDIR += linuxdoc

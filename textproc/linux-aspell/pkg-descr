@@ -1,0 +1,9 @@
+Linux version of Aspell.
+
+Aspell is a spelling checker designed to eventually replace ispell, although
+it currently lacks many of ispell's basic functions. Aspell's main feature is
+that it does a much better job of coming up with possible suggestions than
+ispell. Aspell also includes a powerful C++ library with C and Perl interfaces
+in the works.
+
+WWW: http://aspell.sourceforge.net/
