@@ -1,0 +1,35 @@
+--- item_tcl.C.orig	Sun Nov 28 17:31:26 1999
++++ item_tcl.C	Sun Nov 28 17:32:25 1999
+@@ -329,7 +329,7 @@
+ 
+ static int item_owned(ClientData c, Tcl_Interp* tcl, int argc, char* argv[]) {
+     Item_Tcl* item = (Item_Tcl*) c;
+-    TCL_Return(tcl, (item->value()->IsMine() ? "1" : "0"));
++    TCL_Return(tcl, (item->value()->IsMine() ? (char *)"1" : (char *)"0"));
+ }
+ 
+ static int item_own(ClientData c, Tcl_Interp* tcl, int argc, char* argv[]) {
+@@ -492,12 +492,12 @@
+ 
+ static int item_empty(ClientData c, Tcl_Interp* tcl, int argc, char* argv[]) {
+     Item_Tcl* item = (Item_Tcl*) c;
+-    TCL_Return(tcl, (item->value()->empty()?"1":"0"));
++    TCL_Return(tcl, (item->value()->empty() ? (char *)"1" : (char *)"0"));
+ }
+ 
+ static int item_repeat(ClientData c, Tcl_Interp* tcl, int argc, char* argv[]) {
+     Item_Tcl* item = (Item_Tcl*) c;
+-    TCL_Return(tcl,(item->value()->repeats()?"1":"0"));
++    TCL_Return(tcl,(item->value()->repeats() ? (char *)"1" : (char *)"0"));
+ }
+ 
+ static int item_first(ClientData c, Tcl_Interp* tcl, int argc, char* argv[]) {
+@@ -576,7 +576,7 @@
+ 	TCL_Error(tcl, "invalid date");
+     }
+     Date date(dateDays);
+-    TCL_Return(tcl, (item->value()->contains(date)?"1":"0"));
++    TCL_Return(tcl, (item->value()->contains(date) ? (char *)"1" : (char *)"0"));
+ }
+ 
+ static int item_next(ClientData c, Tcl_Interp* tcl, int argc, char* argv[]) {
