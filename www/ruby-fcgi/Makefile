@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fcgi
-PORTVERSION=	0.8.2
+PORTVERSION=	0.8.3
 CATEGORIES=	www ruby
 MASTER_SITES=	http://www.moonwolf.com/ruby/archive/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -26,7 +26,7 @@ BUILD_WRKSRC=		${CONFIGURE_WRKSRC}
 INSTALL_WRKSRC=		${CONFIGURE_WRKSRC}
 INSTALL_TARGET=	site-install
 
-DOCS=		README
+DOCS=		README README.signals
 
 post-install:
 .if !defined(NOPORTDOCS)
