@@ -3,7 +3,7 @@
 # Date created:         08 August 1995
 # Whom:                 jkh
 #
-# $Id: Makefile,v 1.31 1998/05/20 08:37:12 tg Exp $
+# $Id: Makefile,v 1.32 1998/06/03 07:06:32 tg Exp $
 #
 
 DISTNAME=       pyth151
@@ -90,11 +90,7 @@ pre-install:
 .endif
 
 post-install:
-.if ${OSVERSION} < 300000
 	${INSTALL_SCRIPT} ${PREFIX}/lib/python1.5/plat-freebsd2/regen ${PREFIX}/lib/python1.5/plat-freebsd3
-.else
-	${INSTALL_SCRIPT} ${PREFIX}/lib/python1.5/plat-freebsd3/regen ${PREFIX}/lib/python1.5/plat-freebsd2
-.endif
 	strip ${PREFIX}/bin/python
 
 .include <bsd.port.mk>
