@@ -1,0 +1,3 @@
+bin/secftp
+bin/rsftp
+libexec/sftpserv
