@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	proftpd
-PORTVERSION=	1.2.9
-PORTREVISION=	3
+PORTVERSION=	1.2.10.r1
+PORTREVISION=	0
 CATEGORIES=	ftp
 MASTER_SITES=	ftp://ftp.proftpd.net/distrib/source/ \
 		ftp://ftp.stikman.com/pub/proftpd/ \
@@ -23,10 +23,11 @@ MASTER_SITES=	ftp://ftp.proftpd.net/distrib/source/ \
 		ftp://proftpd.networkedsystems.co.uk/ \
 		ftp://www.linuxceptional.com/proftpd/ \
 		ftp://ftp.ethereal.com/mirrors/ftp.proftpd.org/ \
-		ftp://mirror.cybercomm.nl/ \
+		ftp://mirror.cybercomm.nl/
+DISTNAME=	${PORTNAME}-1.2.10rc1
 
-MAINTAINER=	mharo@FreeBSD.org
-COMMENT=	Highly configurable ftp daemon
+MAINTAINER?=	mharo@FreeBSD.org
+COMMENT?=	Highly configurable ftp daemon
 
 MAN1=	ftpcount.1 ftpwho.1 ftptop.1
 MAN5=	xferlog.5
