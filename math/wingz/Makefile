@@ -3,7 +3,7 @@
 # Date created:         Wed Nov 27 09:15:10 CST 1996
 # Whom:                 erich@rrnet.com
 #
-# $Id: Makefile,v 1.2 1996/12/05 00:43:55 asami Exp $
+# $Id: Makefile,v 1.3 1997/05/28 05:33:09 fenner Exp $
 #
 
 DISTNAME=	Wingz-142
@@ -21,6 +21,6 @@ NO_WRKSUBDIR=	yes
 USE_X11=	yes
 
 post-install:
-	@/bin/sh ${PKGDIR}/INSTALL ${PKGNAME} POST-INSTALL
+	@${SH} ${PKGDIR}/INSTALL ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.mk>

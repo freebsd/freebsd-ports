@@ -3,7 +3,7 @@
 # Date created:		31 December 1996
 # Whom:			MITA Yoshio <mita@ee.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.2 1997/01/04 00:36:48 max Exp $
+# $Id: Makefile,v 1.4 1997/06/10 09:58:45 asami Exp $
 #
 
 DISTNAME=	w3-2.2.26
@@ -64,7 +64,7 @@ post-install:
 		INFODIR=${INFODIR} INFOFILE=${INFOFILE} \
 		ELISPDIR=${ELISPDIR} ADDIR=${ADDIR} \
 		DIRSECTION="${DIRSECTION}" \
-		/bin/sh ${PKGDIR}/INSTALL ${PKGNAME} POST-INSTALL  
+		${SH} ${PKGDIR}/INSTALL ${PKGNAME} POST-INSTALL  
 
 pre-clean:
 	@${RM} -f ${FILESDIR}/DEINSTALL ${FILESDIR}/INSTALL \

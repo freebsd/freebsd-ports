@@ -3,7 +3,7 @@
 # Date created:		21 June 1995
 # Whom:			Satoshi Asami (asami)
 #
-# $Id: Makefile,v 1.10 1996/11/18 09:52:45 asami Exp $
+# $Id: Makefile,v 1.11 1997/03/06 04:09:59 asami Exp $
 #
 
 DISTNAME=	e93-1.2r6X
@@ -21,7 +21,7 @@ USE_X11=	yes
 IS_INTERACTIVE=	yes	# asks "ok?" about license
 
 pre-install:
-	@${SETENV} PKG_PREFIX=${PREFIX} /bin/sh ${PKGDIR}/REQ ${PKGNAME} INSTALL
+	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGDIR}/REQ ${PKGNAME} INSTALL
 .endif
 
 do-install:

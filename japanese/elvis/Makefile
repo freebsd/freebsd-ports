@@ -3,7 +3,7 @@
 # Date created:         5 October 1995
 # Whom:                 Yoshiro MIHIRA <sanpei@yy.cs.keio.ac.jp>
 #
-# $Id: Makefile,v 1.4 1996/12/03 13:07:58 obrien Exp $
+# $Id: Makefile,v 1.5 1997/01/04 15:34:28 max Exp $
 #
 
 DISTNAME=       elvis-1.8
@@ -30,7 +30,7 @@ do-configure:
 post-install:
 	@${MKDIR} ${PREFIX}/share/doc/jp-elvis
 	${INSTALL_DATA} ${WRKSRC}/README.j18 ${PREFIX}/share/doc/jp-elvis
-	@/bin/sh ${PKGDIR}/REQ ${PKGNAME} INSTALL
+	@${SH} ${PKGDIR}/REQ ${PKGNAME} INSTALL
 	@if [ ! -f ${STARTUP_SCRIPT} ]; then				\
 		echo "Installing ${STARTUP_SCRIPT} startup file.";	\
 		echo '#!/bin/sh' > ${STARTUP_SCRIPT};			\

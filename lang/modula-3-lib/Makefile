@@ -3,7 +3,7 @@
 # Date created:		28 Oct 1996
 # Whom:			John Polstra <jdp@polstra.com>
 #
-# $Id: Makefile,v 1.6 1997/03/28 04:38:43 jdp Exp $
+# $Id: Makefile,v 1.7 1997/04/30 03:18:04 asami Exp $
 #
 
 DISTNAME=	modula-3-lib-3.6
@@ -61,12 +61,12 @@ temp_prefix=	${WRKSRC}/installed
 post-extract:
 .if !empty(have_boot)
 	@echo "Copying bootstrap modula-3 compiler from ${have_boot}"
-	@/bin/sh ${SCRIPTDIR}/copy_files ${FILESDIR}/T.boot installed \
+	@${SH} ${SCRIPTDIR}/copy_files ${FILESDIR}/T.boot installed \
 	    ${have_boot} ${WRKSRC}
 .endif
 .if !empty(have_gcc)
 	@echo "Copying gcc sources from ${have_gcc}"
-	@/bin/sh ${SCRIPTDIR}/copy_files ${FILESDIR}/T.gcc m3cc \
+	@${SH} ${SCRIPTDIR}/copy_files ${FILESDIR}/T.gcc m3cc \
 	    ${have_gcc} ${WRKSRC}
 .endif
 	@cd ${WRKSRC}/m3cc/gcc; \
@@ -110,7 +110,7 @@ do-build:
 
 pre-install:
 	@echo "Checking for conflicting shared libraries"
-	@PREFIX=${PREFIX} /bin/sh ${PKGDIR}/INSTALL ${PKGNAME} PRE-INSTALL
+	@PREFIX=${PREFIX} ${SH} ${PKGDIR}/INSTALL ${PKGNAME} PRE-INSTALL
 
 do-install:
 	@echo "Installing shared libraries"

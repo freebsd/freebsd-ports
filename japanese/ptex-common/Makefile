@@ -3,7 +3,7 @@
 # Date created:		5 Nov 1995
 # Whom:			Hideaki Ohmon <ohmon@sfc.keio.ac.jp>
 #
-# $Id: Makefile,v 1.16 1997/02/04 11:09:38 max Exp $
+# $Id: Makefile,v 1.17 1997/06/12 09:48:25 max Exp $
 #
 
 DISTNAME=	ptex3.1415.p2.1.4
@@ -99,7 +99,7 @@ do-build:
 
 pre-install:
 .if !defined(BATCH)
-	@/bin/sh ${PKGDIR}/REQ ${PKGNAME} INSTALL || \
+	@${SH} ${PKGDIR}/REQ ${PKGNAME} INSTALL || \
 	(echo "(Don't worry about the following \"*** Error code 1\"s)" ; \
 	 exit 1)
 .endif

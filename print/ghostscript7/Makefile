@@ -3,7 +3,7 @@
 # Date created:		Tue Jun 10 21:58:54 CEST 1997
 # Whom:			Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.3 1997/06/12 16:48:56 andreas Exp $
+# $Id: Makefile,v 1.4 1997/06/14 09:36:28 andreas Exp $
 #
 
 DISTNAME=	ghostscript-5.0
@@ -56,10 +56,10 @@ post-extract:
 do-configure:
 .if defined(BATCH)
 	@${SETENV} PORTSDIR=${PORTSDIR} WRKSRC=${WRKSRC} \
-		/bin/sh ${SCRIPTDIR}/configure.batch
+		${SH} ${SCRIPTDIR}/configure.batch
 .else
 	@${SETENV} PORTSDIR=${PORTSDIR} WRKSRC=${WRKSRC} \
-		/bin/sh ${SCRIPTDIR}/configure
+		${SH} ${SCRIPTDIR}/configure
 .endif
 
 pre-install:

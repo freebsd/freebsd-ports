@@ -3,7 +3,7 @@
 # Date created:			09 Nov 1996
 # Whom:				Masafumi NAKANE <max@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.1.1.1 1996/12/01 12:08:47 max Exp $
+# $Id: Makefile,v 1.2 1997/06/10 16:28:36 max Exp $
 #
 
 DISTNAME=	cap60.pl100
@@ -100,6 +100,6 @@ post-install:
 	@ln -fs ${PREFIX}/man/man3/CAP.3${GZ} ${PREFIX}/man/man3/${f}.3${GZ}
 .endfor
 	@ln -fs ${PREFIX}/man/man8/papif.8${GZ} ${PREFIX}/man/man8/papof.8${GZ}
-	@/bin/sh ${PKGDIR}/INSTALL ${PKGNAME} POST-INSTALL
+	@${SH} ${PKGDIR}/INSTALL ${PKGNAME} POST-INSTALL
 
 .include "bsd.port.mk"

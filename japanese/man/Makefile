@@ -3,7 +3,7 @@
 # Date created:		4 December 1996
 # Whom:			Kiriyama Kazuhiko <kiri@kiri.toba-cmt.ac.jp>
 #
-# $Id: Makefile,v 1.8 1997/05/20 04:27:31 asami Exp $
+# $Id: Makefile,v 1.9 1997/06/13 16:57:37 max Exp $
 #
 
 DISTNAME=	jp-man-1.1
@@ -59,7 +59,7 @@ post-install:
 	@${MKDIR} ${JMANELDIR}
 	@${INSTALL_DATA} ${FILESDIR}/jman.el ${JMANELDIR}
 	@${SETENV} CP=${CP} PKG_PREFIX=${PREFIX} \
-		/bin/sh ${PKGDIR}/INSTALL ${PKGNAME} POST-INSTALL
+		${SH} ${PKGDIR}/INSTALL ${PKGNAME} POST-INSTALL
 
 pre-clean:
 	@${RM} -f ${PATCHDIR}/patch-aa ${FILESDIR}/patch-xpg4

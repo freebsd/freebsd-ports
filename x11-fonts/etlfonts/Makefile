@@ -3,7 +3,7 @@
 # Date created:		3 Nov 1996
 # Whom:			Mita Yoshio <mita@jp.FreeBSD.org>
 #
-# $Id: Makefile,v 1.1.1.1 1997/01/02 19:18:24 max Exp $
+# $Id: Makefile,v 1.2 1997/01/02 19:32:25 max Exp $
 #
 
 DISTNAME=	non-cjk
@@ -21,6 +21,6 @@ post-extract:
 	@gunzip ${WRKSRC}/*.gz
 
 post-install:
-	@/bin/sh ${PKGDIR}/REQ ${PKGNAME} INSTALL
+	@${SH} ${PKGDIR}/REQ ${PKGNAME} INSTALL
 
 .include <bsd.port.mk>

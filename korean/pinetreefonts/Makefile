@@ -3,7 +3,7 @@
 # Date created:		22 Mar 1997
 # Whom:			Choi Jun Ho <junker@jazz.snu.ac.kr>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1997/03/29 12:58:32 max Exp $
 #
 
 DISTNAME=       pinetree.precomposed-1.0
@@ -42,6 +42,6 @@ do-install:
 
 # to show a warning message to add fontpath for these fonts
 post-install:
-	@/bin/sh ${PKGDIR}/REQ ${PKGNAME} INSTALL
+	@${SH} ${PKGDIR}/REQ ${PKGNAME} INSTALL
 
 .include <bsd.port.mk>

@@ -3,7 +3,7 @@
 # Date created:         5 January 1995
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.30 1997/06/09 12:45:23 jmz Exp $
+# $Id: Makefile,v 1.31 1997/06/10 12:33:48 jmz Exp $
 #
 
 DISTNAME=	xc
@@ -25,7 +25,7 @@ INSTALL_TARGET=	install install.man
 DIST_SUBDIR=	xc
 
 pre-install:
-	@${SETENV} PKG_PREFIX=${PREFIX} /bin/sh ${PKGDIR}/INSTALL \
+	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGDIR}/INSTALL \
 		${PKGNAME} PRE-INSTALL
 
 post-install:

@@ -3,7 +3,7 @@
 # Date created:        5 June 1997
 # Whom:                Ruslan Shevchenko <rssh@cki.ipri.kiev.ua>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1997/06/10 08:50:17 asami Exp $
 #
 
 DISTNAME=	simpack-3.0
@@ -20,7 +20,7 @@ post-build: create-libs create-scripts
 do-install: do-install-bin do-install-include do-install-lib do-install-doc
 
 post-install:
-	@/bin/sh ${PKGDIR}/REQ
+	@${SH} ${PKGDIR}/REQ
 	@${LDCONFIG} -m ${PREFIX}/lib
 
 do-install-bin:

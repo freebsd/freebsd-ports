@@ -3,7 +3,7 @@
 # Date created:		2 Feb 1995
 # Whom:			Michael Elbel (me)
 #
-# $Id: Makefile,v 1.14 1996/12/08 11:55:03 max Exp $
+# $Id: Makefile,v 1.15 1996/12/08 12:02:01 max Exp $
 #
 
 DISTNAME=	mmv
@@ -33,7 +33,7 @@ do-extract:
 	 uncompress ${WRKDIR}/tmp/*; \
 	 cd ${WRKDIR}; \
 	 for file in tmp/part0* ; do \
-	     /bin/sh ${SCRIPTDIR}/unshar $$file; \
+	     ${SH} ${SCRIPTDIR}/unshar $$file; \
 	 done ; \
 	 ${CAT} mmv.c.? >mmv.c ; ${RM} mmv.c.? )
 

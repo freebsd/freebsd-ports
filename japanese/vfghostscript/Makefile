@@ -3,7 +3,7 @@
 # Date created:		14 May 1996
 # Whom:			Mita Yoshio <mita@jp.FreeBSD.org>
 #
-# $Id: Makefile,v 1.6 1996/11/18 10:24:17 asami Exp $
+# $Id: Makefile,v 1.7 1996/12/07 00:20:40 asami Exp $
 #
 
 DISTNAME=	ghostscript2.6.2
@@ -63,11 +63,11 @@ pre-patch:
 	@${CP} ${WRKSRC}/unix-gcc.mak ${WRKSRC}/Makefile
 .if defined(BATCH)
 	@(cd ${WRKSRC} ; \
-	  /bin/sh ${FILESDIR}/printer.sh BATCH; \
+	  ${SH} ${FILESDIR}/printer.sh BATCH; \
 	 )
 .else
 	@(cd ${WRKSRC} ; \
-	  /bin/sh ${FILESDIR}/printer.sh; \
+	  ${SH} ${FILESDIR}/printer.sh; \
 	 )
 .endif
 	@${CAT} ${WRKSRC}/kfvflib.mak >> ${WRKSRC}/Makefile
