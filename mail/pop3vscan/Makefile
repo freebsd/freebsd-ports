@@ -18,13 +18,14 @@ COMMENT=	A transparent POP3-Proxy with virus-scanning capabilities
 LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
 
 .if !defined(WITHOUT_UVSCAN)
-RUN_DEPENDS=	uvscan:${PORTSDIR}/security/vscan
+RUN_DEPENDS+=	uvscan:${PORTSDIR}/security/vscan
 .endif
 
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 USE_GETOPT_LONG=yes
 MAKE_ENV=	_LDFLAGS="${LDFLAGS}"
+SCRIPTS_ENV=	PKG_PREFIX=${PREFIX} NONEXISTENT=${NONEXISTENT} PASSWD=/etc/passwd
 
 pre-fetch:
 .if !defined(WITHOUT_UVSCAN)
@@ -50,7 +51,7 @@ do-install:
 	${INSTALL_SCRIPT} ${FILESDIR}/pop3vscan.sh ${PREFIX}/etc/rc.d/
 
 post-install:
-	@${SETENV} ${SCRIPTS_ENV} PKG_PREFIX="${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+	@${SETENV} ${SCRIPTS_ENV} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	@${SED} -e 's,PREFIX,${PREFIX},g' ${PKGMESSAGE}
 
 .include <bsd.port.mk>

@@ -48,7 +48,7 @@ make_account() {
 	    echo "Done."
 	else
 	    echo "Please create it, and try again."
-	    if ! grep -q "^${u}:" /etc/passwd; then
+	    if ! grep -q "^${u}:" ${PASSWD}; then
 		echo "While you're at it, please create a user \"${u}\" too,"
 		echo "with a default group of \"${g}\"."
 	    fi
@@ -62,7 +62,7 @@ make_account() {
 	echo "You need a user \"${u}\"."
 	if which -s pw && yesno "Would you like me to create it" y; then
 	    pw useradd ${u} -g ${g} -h - ${homeopt} \
-		-s /nonexistent -c "${gcos}" || exit
+		-s ${NONEXISTENT} -c "${gcos}" || exit
 	    echo "Done."
 	else
 	    echo "Please create it, and try again."
