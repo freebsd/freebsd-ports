@@ -1,5 +1,5 @@
 bin/screen
-bin/screen-3.7.6
+bin/screen-3.9.5
 @unexec install-info --delete %D/info/screen.info %D/info/dir
 info/screen.info
 @exec install-info %D/info/screen.info %D/info/dir
