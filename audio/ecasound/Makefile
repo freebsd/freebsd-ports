@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ecasound
-PORTVERSION=	2.0.2
-PORTREVISION=	1
+PORTVERSION=	2.0.3
 CATEGORIES=	audio
 MASTER_SITES=	http://ecasound.seul.org/download/ \
 		${MASTER_SITE_SOURCEFORGE}
@@ -23,7 +22,7 @@ USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 
 CONFIGURE_ARGS+=	--enable-sys-readline
-MAKE_ENV+=      ${CONFIGURE_ENV}
+MAKE_ENV+=	${CONFIGURE_ENV}
 
 .if defined(WITH_MPG123)
 RUN_DEPENDS+=	mpg123:${PORTSDIR}/audio/mpg123
@@ -39,9 +38,9 @@ RUN_DEPENDS+=	mikmod:${PORTSDIR}/audio/mikmod
 
 .if defined(WITH_AUDIOFILE)
 # very crappy hack to detect audiofile properly
-CONFIGURE_ENV+= CPPFLAGS="-I${LOCALBASE}/include" \
-                LDFLAGS="-L${LOCALBASE}/lib" \
-                CFLAGS="-I${LOCALBASE}/include ${CFLAGS}" \
+CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib" \
+		CFLAGS="-I${LOCALBASE}/include ${CFLAGS}" \
 		CXXFLAGS="-I${LOCALBASE}/include ${CXXFLAGS}"
 LIB_DEPENDS+=	audiofile.0:${PORTSDIR}/audio/libaudiofile
 .else
@@ -56,8 +55,26 @@ CONFIGURE_ARGS+=	--disable-pyecasound
 PLIST_SUB+=	WITH_PYECASOUND="@comment "
 #.endif
 
+.if !defined(WITH_OPTIMIZED_CFLAGS)
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-configure.in-optimizations
+.endif
+
 MAN1=		ecasound-iam.1 ecasound.1 ecatools.1
 MAN5=		ecasoundrc.5
+
+pre-everything::
+.if !defined(WITH_OPTIMIZED_CFLAGS)
+	@${ECHO_MSG} "You can enable additional compilation optimizations"
+	@${ECHO_MSG} "by defining WITH_OPTIMIZED_CFLAGS"
+.endif
+.if !defined(WITH_AUDIOFILE)
+	@${ECHO_MSG} "You can enable AUDIOFILE support by defining WITH_AUDIOFILE."
+.endif
+
+post-patch:
+.if !defined(WITH_OPTIMIZED_CFLAGS)
+	@${PERL} -pi -e 's!-O2 -ffast-math!!' ${WRKSRC}/kvutils/Makefile.am
+.endif
 
 post-install:
 .if !defined(NOPORTDOCS)
