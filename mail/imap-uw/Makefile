@@ -9,8 +9,8 @@
 DISTNAME=	imap-4.5
 PKGNAME=	imap-uw-4.5
 CATEGORIES=	mail
-MASTER_SITES=	ftp://ftp.cac.washington.edu/imap/ \
-		ftp://ftp.funet.fi/pub/mirrors/ftp.cac.washington.edu/mail/ \
+MASTER_SITES=	ftp://ftp.cac.washington.edu/imap/old/ \
+		ftp://ftp.funet.fi/pub/mirrors/ftp.cac.washington.edu/mail/old/ \
 		ftp://ftp.uni-halle.de/pub/mail/pine/
 EXTRACT_SUFX=	.tar.Z
 
