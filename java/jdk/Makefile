@@ -32,7 +32,7 @@ DISTFILES=	jdk${JDK_VERSION}_ELF.V1999-11-9.tar.gz
 
 do-install:
 	${MKDIR} ${PREFIX}/jdk${JDK_VERSION}
-	(cd ${WRKSRC} && tar -c -f - .) \
-		| (cd ${PREFIX}/jdk${JDK_VERSION} && tar fx -)
+	(cd ${WRKSRC} && ${TAR} -c -f - .) \
+		| (cd ${PREFIX}/jdk${JDK_VERSION} && ${TAR} --unlink -x -f -)
 
 .include <bsd.port.post.mk>
