@@ -1,0 +1,11 @@
+--- bin/tclh/Makefile.orig	Sun May  6 15:41:26 2001
++++ bin/tclh/Makefile	Sun May  6 15:41:45 2001
+@@ -33,7 +33,7 @@
+ .if defined(NOSHARED)
+ LDADD+=		-lstdc++ -ldisk -lfetch -lz -lcom_err
+ .if !defined(NOQT)
+-LDADD+=		-L/usr/X11R6/lib -lqt2 -lX11 -lXext -lSM -ljpeg -lpng -lmng -llcms -lICE -lz
++LDADD+=		-L/usr/X11R6/lib -lqt2 -lXext -lSM -ljpeg -lpng -lmng -llcms -lICE -lz -lXft -lXrender -lfreetype -lX11
+ .endif
+ .if !defined(NOTVISION)
+ LDADD+=		-ltvision -lncurses
