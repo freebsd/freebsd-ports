@@ -6,16 +6,16 @@
 #
 
 PORTNAME=	pear
-PORTVERSION=	4.0.7
+PORTVERSION=	4.1.0
 CATEGORIES=	devel www
 MASTER_SITES=	ftp://ftp.horde.org/pub/horde/tarballs/
 PKGNAMESUFFIX=	-devel
-DISTNAME=	${PORTNAME}-${PORTVERSION}RC3
 
 MAINTAINER=	thierry@thomas.as
 
 RUN_DEPENDS=	${LOCALBASE}/libexec/apache/libphp4.so:${PORTSDIR}/www/mod_php4
 
+USE_BZIP2=	yes
 NO_BUILD=	yes
 
 LPHP_LIB?=	lib/php
