@@ -15,7 +15,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/DateTime/Language/Italian.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/DateTime/Language/Norwegian.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/DateTime/Language/Oromo.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/DateTime/Language/Portugese.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/DateTime/Language/Portuguese.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/DateTime/Language/Sidama.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/DateTime/Language/Somali.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/DateTime/Language/Spanish.pm
@@ -24,9 +24,10 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/DateTime/Language/TigrinyaEritrean.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/DateTime/Language/TigrinyaEthiopian.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/DateTimePP.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/DateTimePPExtra.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/DateTime/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/DateTime/DateTime.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/DateTime/DateTime.so
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/DateTime/Language
 @unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/DateTime 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/DateTime/Language 2>/dev/null || true
 @unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/DateTime 2>/dev/null || true
