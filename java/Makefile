@@ -21,13 +21,13 @@
     SUBDIR += jce-aba
     SUBDIR += jdbcpool
     SUBDIR += jdk
+    SUBDIR += jdk-tutorial
     SUBDIR += jdk11-doc
+    SUBDIR += jdk12-beta
     SUBDIR += jdk12-doc
+    SUBDIR += jdk13
     SUBDIR += jdk13-doc
     SUBDIR += jdk14-doc
-    SUBDIR += jdk-tutorial
-    SUBDIR += jdk12-beta
-    SUBDIR += jdk13
     SUBDIR += jdom
     SUBDIR += jfc
     SUBDIR += jikes
