@@ -1,9 +1,13 @@
 # $FreeBSD$
 #
 
+    SUBDIR += collections
     SUBDIR += guavac
+    SUBDIR += infobus
+    SUBDIR += jaf
     SUBDIR += java-cup
     SUBDIR += javac_netscape
+    SUBDIR += javamail
     SUBDIR += jdk
     SUBDIR += jdk-doc
     SUBDIR += jdk-tutorial
