@@ -16,9 +16,9 @@ COMMENT=	A library providing routines to access Microsoft Word/Excel files
 
 LIB_DEPENDS=	iconv:${PORTSDIR}/converters/libiconv
 
-CONFIGURE_ARGS=	--with-libiconv=${LOCALBASE} --program-transform-name=
+CONFIGURE_ARGS=	--with-libiconv=${LOCALBASE}
 
-USE_GNOME=	libgsf
+USE_GNOME=	gnometarget libgsf
 USE_LIBTOOL=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
