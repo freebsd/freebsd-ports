@@ -4,7 +4,7 @@
  
    PHP_ADD_LIBRARY_WITH_PATH($DOM_LIBNAME, $DOMXML_DIR/lib, DOMXML_SHARED_LIBADD)
    PHP_ADD_INCLUDE($DOMXML_DIR/include$DOMXML_DIR_ADD)
-+dnl next line is for giconv.h
++dnl next line is for iconv.h
 +  PHP_ADD_INCLUDE($DOMXML_DIR/include)
  
    if test "$PHP_ZLIB_DIR" = "no"; then
