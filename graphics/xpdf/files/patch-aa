@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Tue Aug  3 06:36:22 1999
++++ Makefile.in	Sat Aug 14 04:20:32 1999
+@@ -12,7 +12,7 @@
+ exec_prefix = @exec_prefix@
+ srcdir = @srcdir@
+ 
+-INSTALL = @INSTALL@
++INSTALL = @INSTALL_PROGRAM@
+ INSTALL_DATA = @INSTALL_DATA@
+ 
+ EXE = @EXE@
