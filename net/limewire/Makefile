@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	limewire
-PORTVERSION=	3.8.6
+PORTVERSION=	3.8.7
 CATEGORIES=	net java
 MASTER_SITES=	http://www3.limewire.com/download/
 DISTNAME=	LimeWireLinux
