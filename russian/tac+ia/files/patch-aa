@@ -1,0 +1,22 @@
+--- tac_plus/Makefile.in.orig	Tue Sep  5 16:39:12 2000
++++ tac_plus/Makefile.in	Fri Apr 13 12:41:54 2001
+@@ -42,7 +42,7 @@
+ OBJS = $(SRC:.c=.o)
+ SRCS = $(SRC:%=$(srcdir)/%)
+ 
+-all:	tac_plus generate_passwd tdb @DYN@dynipd
++all:	tac_plus generate_passwd @DYN@tdb dynipd
+ 
+ dynipd: dynipd.o sockread.o allow.o
+ 	$(CC) -o dynipd $(LDFLAGS) dynipd.o sockread.o allow.o @LIBDB@ @LIBNSL@ @LIBSOCKET@ @LIBBIND@
+@@ -81,8 +81,8 @@
+ 
+ install:
+ 	$(INSTALL_PROGRAM) tac_plus $(sbindir)
+-	$(INSTALL_DATA) $(srcdir)/tac_plus.1 $(mandir)/man1
+-	$(INSTALL_PROGRAM) tdb $(sbindir)
++	$(INSTALL_DATA) $(srcdir)/tac_plus.8 $(mandir)/man8
++@DYN@	$(INSTALL_PROGRAM) tdb $(sbindir)
+ @DYN@	$(INSTALL_PROGRAM) dynipd $(sbindir)
+ 
+ depend-gcc:
