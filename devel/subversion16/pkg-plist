@@ -86,28 +86,6 @@ lib/libsvn_wc-1.so.0
 %%MOD_DAV_SVN%%libexec/apache2/mod_authz_svn.so
 %%MOD_DAV_SVN%%@exec %D/sbin/apxs -e -S LIBEXECDIR=%D/libexec/apache2 -a -n dav libexec/apache2/mod_dav.so
 %%MOD_DAV_SVN%%@exec %D/sbin/apxs -e -S LIBEXECDIR=%D/libexec/apache2 -a -n dav_svn libexec/apache2/mod_dav_svn.so
-%%PORTDOCS%%share/doc/subversion/book/images/ch02dia1.png
-%%PORTDOCS%%share/doc/subversion/book/images/ch02dia2.png
-%%PORTDOCS%%share/doc/subversion/book/images/ch02dia3.png
-%%PORTDOCS%%share/doc/subversion/book/images/ch02dia4.png
-%%PORTDOCS%%share/doc/subversion/book/images/ch02dia5.png
-%%PORTDOCS%%share/doc/subversion/book/images/ch02dia6.png
-%%PORTDOCS%%share/doc/subversion/book/images/ch02dia7.png
-%%PORTDOCS%%share/doc/subversion/book/images/ch04dia1.png
-%%PORTDOCS%%share/doc/subversion/book/images/ch04dia2.png
-%%PORTDOCS%%share/doc/subversion/book/images/ch04dia3.png
-%%PORTDOCS%%share/doc/subversion/book/images/ch04dia4.png
-%%PORTDOCS%%share/doc/subversion/book/images/ch05dia1.png
-%%PORTDOCS%%share/doc/subversion/book/images/ch05dia2.png
-%%PORTDOCS%%share/doc/subversion/book/images/ch07dia1.png
-%%PORTDOCS%%share/doc/subversion/book/images/ch07dia2.png
-%%PORTDOCS%%share/doc/subversion/book/images/ch07dia3.png
-%%PORTDOCS%%@dirrm share/doc/subversion/book/images
-%%PORTDOCS%%share/doc/subversion/book/book.html
-%%PORTDOCS%%share/doc/subversion/book/book.pdf
-%%PORTDOCS%%share/doc/subversion/book/book.ps
-%%PORTDOCS%%share/doc/subversion/book/styles.css
-%%PORTDOCS%%@dirrm share/doc/subversion/book
 %%PORTDOCS%%share/doc/subversion/BUGS
 %%PORTDOCS%%share/doc/subversion/CHANGES
 %%PORTDOCS%%share/doc/subversion/COMMITTERS
@@ -115,6 +93,5 @@ lib/libsvn_wc-1.so.0
 %%PORTDOCS%%share/doc/subversion/HACKING
 %%PORTDOCS%%share/doc/subversion/IDEAS
 %%PORTDOCS%%share/doc/subversion/INSTALL
-%%PORTDOCS%%share/doc/subversion/PORTING
 %%PORTDOCS%%share/doc/subversion/README
 %%PORTDOCS%%@dirrm share/doc/subversion
