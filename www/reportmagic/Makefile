@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	reportmagic
-PORTVERSION=	2.04
+PORTVERSION=	2.05
 CATEGORIES=	www
 MASTER_SITES=	http://www.reportmagic.com/
 DISTNAME=	rmagic-${PORTVERSION}
@@ -20,28 +20,16 @@ RUN_DEPENDS=	analog:${PORTSDIR}/www/analog \
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
-pre-fetch:
-
-	@${ECHO} -n "Report Magic will use FreeType if the GD library "
-	@${ECHO} "is compiled with it in."
-	@${ECHO} -n "GD is already listed as a LIB_DEPENDS, but in the "
-	@${ECHO} "event that GD is already "
-	@${ECHO} -n "installed *without* FreeType, you won't be able to "
-	@${ECHO} "use it.  If you want"
-	@${ECHO} -n "FreeType support, please (re)make ${PORTSDIR}/graphics/gd "
-	@${ECHO} "with -DWITH_X11."
-	@${ECHO}
-
-do-build:
+NO_BUILD=	YES
 
 do-install:
 	@cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PERL5} Install.PL -no_modules
 
 post-install:
 	@${ECHO}
-	@${ECHO} "You must agree to the [GPL] license agreement at"
-	@${ECHO} "${PREFIX}/share/doc/reportmagic/license.html"
-	@${ECHO} "before using Report Magic."
+	@${ECHO} "You must agree to the [Artistic] license agreement at"
+	@${ECHO} "${PREFIX}/share/doc/reportmagic/license.html before"
+	@${ECHO} "using Report Magic."
 	@${ECHO}
 
 .include <bsd.port.mk>

@@ -1,18 +1,10 @@
 reportmagic/README
-reportmagic/rmlogo.gif
 reportmagic/analogo.gif
-reportmagic/samples/corpimg.ini
-reportmagic/samples/fineprint.html
-reportmagic/samples/images/back.jpg
-reportmagic/samples/images/bullet.gif
-reportmagic/samples/images/bullet2.gif
-reportmagic/samples/images/layout.gif
-reportmagic/samples/manyfile.ini
-reportmagic/samples/noframes.ini
-reportmagic/samples/onefile.ini
-reportmagic/samples/report.dat
+reportmagic/rmagic.pl
 reportmagic/rmagic.sample
+reportmagic/rmlogo.gif
 reportmagic/sample.dat
+reportmagic/lang/INDEX.txt
 reportmagic/lang/ca/cdata.ini
 reportmagic/lang/ca/lang.ini
 reportmagic/lang/ca/rdata.ini
@@ -37,7 +29,6 @@ reportmagic/lang/hu/cdata.ini
 reportmagic/lang/hu/lang.ini
 reportmagic/lang/hu/rdata.ini
 reportmagic/lang/hu/rmagic.ini
-reportmagic/lang/INDEX.txt
 reportmagic/lang/it/cdata.ini
 reportmagic/lang/it/lang.ini
 reportmagic/lang/it/rdata.ini
@@ -49,20 +40,29 @@ reportmagic/lang/sv/rmagic.ini
 reportmagic/lang/zh/cdata.ini
 reportmagic/lang/zh/lang.ini
 reportmagic/lang/zh/rdata.ini
-reportmagic/rmagic.pl
+reportmagic/samples/corpimg.ini
+reportmagic/samples/fineprint.html
+reportmagic/samples/images/back.jpg
+reportmagic/samples/images/bullet.gif
+reportmagic/samples/images/bullet2.gif
+reportmagic/samples/images/layout.gif
+reportmagic/samples/manyfile.ini
+reportmagic/samples/noframes.ini
+reportmagic/samples/onefile.ini
+reportmagic/samples/report.dat
 reportmagic/wadg/Errors.pm
 reportmagic/wadg/Formatter.pm
 reportmagic/wadg/HTMLWriter.pm
 reportmagic/wadg/rm/CROParser.pm
 reportmagic/wadg/rm/Graphs.pm
+reportmagic/wadg/rm/Report.pm
+reportmagic/wadg/rm/Settings.pm
 reportmagic/wadg/rm/Report/GeneralSummary.pm
 reportmagic/wadg/rm/Report/HierarchicalReport.pm
 reportmagic/wadg/rm/Report/QuickSummary.pm
 reportmagic/wadg/rm/Report/RangeReport.pm
 reportmagic/wadg/rm/Report/TimeReport.pm
 reportmagic/wadg/rm/Report/TimeSummary.pm
-reportmagic/wadg/rm/Report.pm
-reportmagic/wadg/rm/Settings.pm
 share/doc/reportmagic/advanced.html
 share/doc/reportmagic/changes.html
 share/doc/reportmagic/changes0.html
@@ -73,8 +73,6 @@ share/doc/reportmagic/config.html
 share/doc/reportmagic/datefmts.html
 share/doc/reportmagic/faq.html
 share/doc/reportmagic/filefmts.html
-share/doc/reportmagic/images/logo.gif
-share/doc/reportmagic/images/title.gif
 share/doc/reportmagic/index.html
 share/doc/reportmagic/inst_mac.html
 share/doc/reportmagic/inst_src.html
@@ -88,17 +86,19 @@ share/doc/reportmagic/samples.html
 share/doc/reportmagic/siteindex.html
 share/doc/reportmagic/thanks.html
 share/doc/reportmagic/whatsnew.html
+share/doc/reportmagic/images/logo.gif
+share/doc/reportmagic/images/title.gif
 @dirrm reportmagic/samples/images
 @dirrm reportmagic/samples
-@dirrm reportmagic/lang/ca
-@dirrm reportmagic/lang/de
-@dirrm reportmagic/lang/en
-@dirrm reportmagic/lang/es
-@dirrm reportmagic/lang/fr
-@dirrm reportmagic/lang/hu
-@dirrm reportmagic/lang/it
-@dirrm reportmagic/lang/sv
 @dirrm reportmagic/lang/zh
+@dirrm reportmagic/lang/sv
+@dirrm reportmagic/lang/it
+@dirrm reportmagic/lang/hu
+@dirrm reportmagic/lang/fr
+@dirrm reportmagic/lang/es
+@dirrm reportmagic/lang/en
+@dirrm reportmagic/lang/de
+@dirrm reportmagic/lang/ca
 @dirrm reportmagic/lang
 @dirrm reportmagic/wadg/rm/Report
 @dirrm reportmagic/wadg/rm
