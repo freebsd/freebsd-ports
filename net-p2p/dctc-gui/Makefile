@@ -14,7 +14,7 @@ DISTNAME=	dc_gui-${PORTVERSION}
 
 MAINTAINER=	lioux@FreeBSD.org
 
-RUN_DEPENDS=	dctc:${PORTSDIR}/net/dctc
+BUILD_DEPENDS=	dctc:${PORTSDIR}/net/dctc
 LIB_DEPENDS=	ORBit.2:${PORTSDIR}/devel/ORBit \
 		iconv.2:${PORTSDIR}/converters/iconv \
 		intl.1:${PORTSDIR}/devel/gettext
