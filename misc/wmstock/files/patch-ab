@@ -1,0 +1,41 @@
+--- Makefile.orig	Wed Jul  7 12:22:08 1999
++++ Makefile	Sun Aug  1 19:45:11 1999
+@@ -2,13 +2,13 @@
+ # <mfischer@umr.edu>
+ # based on wmWeather - see ../Credits for more information
+ 
+-CC     = gcc
+-CFLAGS = -O2 -g -Wall
++CC     ?= gcc
++CFLAGS += -g -Wall
+ DEBUG  = -DMLF_DEBUG
+ GCOV   = -fprofile-arcs -ftest-coverage
+-INCDIR = -I/usr/X11R6/include/X11 -I/usr/X11R6/include
+-DESTDIR= /usr/X11R6
+-LIBDIR = -L/usr/X11R6/lib
++INCDIR = -I${PREFIX}/include/X11 -I${PREFIX}/include
++DESTDIR= ${PREFIX}
++LIBDIR = -L${PREFIX}/lib
+ # for linux
+ LIBS   = -lXpm -lX11 -lXext
+ # for Solaris
+@@ -22,10 +22,6 @@
+ .c.o:
+ 	$(CC) $(CFLAGS) -c $< -o $*.o $(INCDIR)
+ 
+-#	$(CC) $(CFLAGS) -D$(shell echo `uname -s`) -c $< -o $*.o $(INCDIR)
+-#       no longer need the -D<uname>...
+-
+-
+ all:	wmstock.o wmstock
+ 
+ wmstock.o: wmstock_master.xpm wmstock_mask.xbm
+@@ -43,8 +39,3 @@
+ 		rm -f $$i; \
+ 	done
+ 	rm -f wmstock
+-
+-install:: wmstock
+-	install -c -s -m 0755 wmstock $(DESTDIR)/bin
+-	install -c    -m 0755 testqt.pl $(DESTDIR)/bin
+-	install -c    -m 0644 wmstock.1x $(DESTDIR)/man/man1 

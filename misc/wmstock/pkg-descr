@@ -1,0 +1,11 @@
+wmstock is a cool WindowMaker dockapp that shows stock
+ticker(s) that are retrieved from Yahoo through wget.
+
+However, since wget appears to be broken in this manner/form
+at this time, this port has a patch to use lynx instead, and
+requires lynx to be installed.
+
+Author: Matt Fischer <mfischer@umr.edu>
+WWW: http://mattfischer.com/wmstock
+
+- Will <andrews@technologist.com>
