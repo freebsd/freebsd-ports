@@ -4774,7 +4774,6 @@ nstreams	ports/net/nstreams
 ntalk		ports/net/ntalk
 nte		ports/mbone/nte
 ntfs		src/sys/fs/ntfs
-ntimelord	ports/net/ntimelord
 ntl		ports/math/ntl
 ntop		ports/net/ntop
 ntp		src/usr.sbin/ntp
