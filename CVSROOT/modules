@@ -1786,6 +1786,7 @@ esh		ports/shells/esh
 eshell-emacs20	ports/editors/eshell-emacs20
 esmtp		ports/mail/esmtp
 esound		ports/audio/esound
+est		ports/sysutils/est
 estic		ports/misc/estic
 esvn		ports/devel/esvn
 etcmerge	ports/sysutils/etcmerge
