@@ -17,6 +17,7 @@ share/gnome/help/gucharmap/C/figures/gucharmap_start_window.png
 share/gnome/help/gucharmap/C/gucharmap.xml
 share/gnome/help/gucharmap/C/legal.xml
 share/gnome/omf/gucharmap/gucharmap-C.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gucharmap/gucharmap-C.omf 2>/dev/null || /usr/bin/true
 share/gnome/pixmaps/gucharmap.png
 share/locale/az/LC_MESSAGES/gucharmap.mo
 share/locale/am/LC_MESSAGES/gucharmap.mo
@@ -66,3 +67,4 @@ share/locale/zh_TW/LC_MESSAGES/gucharmap.mo
 @dirrm include/gucharmap
 @exec %D/bin/gtk-query-immodules-2.0 >/dev/null 2>&1 && %D/bin/gtk-query-immodules-2.0 > %D/etc/gtk-2.0/gtk.immodules 2>/dev/null || /usr/bin/true
 @unexec %D/bin/gtk-query-immodules-2.0 >/dev/null 2>&1 && %D/bin/gtk-query-immodules-2.0 > %D/etc/gtk-2.0/gtk.immodules 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gucharmap/gucharmap-C.omf 2>/dev/null || /usr/bin/true
