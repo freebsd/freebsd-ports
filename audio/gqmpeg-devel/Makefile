@@ -8,8 +8,8 @@
 PORTNAME=	gqmpeg
 PORTVERSION=	0.6.3
 CATEGORIES=	audio
-MASTER_SITES=	http://gqview.netpedia.net/ \
-		http://www.geocities.com/SiliconValley/Haven/5235/
+MASTER_SITES=	http://www.netpedia.net/hosting/gqview/packages/ \
+		http://www.geocities.com/SiliconValley/Haven/5235/packages/
 EXTRACT_SUFX=	.src.tar.gz
 
 MAINTAINER=	nakai@FreeBSD.org
