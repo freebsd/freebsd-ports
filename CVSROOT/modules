@@ -5322,6 +5322,7 @@ p5-Tie-DB_FileLock	ports/devel/p5-Tie-DB_FileLock
 p5-Tie-EncryptedHash	ports/security/p5-Tie-EncryptedHash
 p5-Tie-IxHash	ports/devel/p5-Tie-IxHash
 p5-Tie-NetAddr-IP	ports/net/p5-Tie-NetAddr-IP
+p5-Tie-Syslog	ports/sysutils/p5-Tie-Syslog
 p5-Time		ports/devel/p5-Time
 p5-Time-HiRes	ports/devel/p5-Time-HiRes
 p5-Time-Object	ports/devel/p5-Time-Object
