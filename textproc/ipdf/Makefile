@@ -7,20 +7,21 @@
 #
 
 PORTNAME=	ipdf
-PORTVERSION=	0.9.7
+PORTVERSION=	0.9.9
 CATEGORIES=	textproc
 MASTER_SITES=	http://hoopajoo.net/static/projects/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Creates indexed pdf documents from text files
 
-LIB_DEPENDS=	pdf:${PORTSDIR}/print/pdflib \
-		png:${PORTSDIR}/graphics/png \
-		tiff:${PORTSDIR}/graphics/tiff
+LIB_DEPENDS=	pdf.5:${PORTSDIR}/print/pdflib \
+		png.5:${PORTSDIR}/graphics/png \
+		tiff.4:${PORTSDIR}/graphics/tiff
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib"
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 MAN1=	ipdf.1
 
