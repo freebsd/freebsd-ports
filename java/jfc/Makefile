@@ -22,6 +22,7 @@ RESTRICTED=	"Can only be distributed with value added application"
 WRKSRC=		${WRKDIR}/swing-1.1.1fcs
 NO_BUILD=	YES
 PLIST_SUB=	JFCSUBDIR=${PKGNAME}
+ONLY_FOR_ARCHS=	i386
 
 JDK_VERSION=	1.1.8
 
