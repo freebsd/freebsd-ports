@@ -1,0 +1,22 @@
+This is a Perl-based make replacement, but does not provide make
+compatibility. It has a number of powerful capabilities not found in other
+software construction systems, including make.
+
+You will need Perl 5.002 or better and the Perl MD5 Extension
+(MD5-1.6.tar.gz or greater), available from CPAN.
+
+This program is known to work on a variety of platforms: it's in production
+use on versions of FreeBSD, Linux, SunOS, Solaris, HPUX, AIX, IRIX and NT.
+
+Documentation is supplied in POD format (thanks to Ulrich Pfiefer).
+
+A cons discussion group, cons-discuss@eng.fore.com, has been created.  If
+you wish to subscribe, send mail to cons-discuss-request@eng.fore.com with
+the word "subscribe" in the BODY of the message. Please send all comments,
+requests, complaints, etc. to the mailing list.
+
+Cons is maintained by members of the cons-discuss mailing list.
+
+The official cons web site is http://www.lowrent.org/cons
+
+An article about Cons appeared in The Perl Journal, issue #9, Spring 1998.
