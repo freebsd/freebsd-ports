@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	mod_dtcl
-PORTVERSION=	0.8.1.1
+PORTVERSION=	0.8.12
 CATEGORIES=	www tcl83
-MASTER_SITES=	http://master.debian.org/~davidw/mod_dtcl/
-DISTNAME=	libapache-mod-dtcl_0.8.1-1
+MASTER_SITES=	http://tcl.apache.org/mod_dtcl/download/
 
 MAINTAINER=	mi@aldan.algebra.com
 
@@ -20,30 +19,16 @@ WRKSRC=		${WRKDIR}/mod_dtcl
 
 MAKEFILE=	${FILESDIR}/Makefile.bsd
 
-MAN1=		testdtcl.1
-MANCOMPRESSED=	no
-
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/libmod_dtcl.so.1* \
 		${PREFIX}/libexec/apache/mod_dtcl.so
 	${PREFIX}/sbin/apxs -e -A -n dtcl ${PREFIX}/libexec/apache/mod_dtcl.so
-	${INSTALL_PROGRAM} ${WRKSRC}/testdtcl ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/testdtcl.1 ${PREFIX}/man/man1/
 	${MKDIR} ${PREFIX}/share/mod_dtcl
-	${INSTALL_DATA} ${WRKSRC}/*.tcl ${PREFIX}/share/mod_dtcl
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/mod_dtcl
-	${INSTALL_DATA} ${WRKSRC}/*.?tml ${WRKSRC}/*.gif \
+	${INSTALL_DATA} ${WRKSRC}/docs/*.?tml ${WRKSRC}/docs/*.gif \
 		${PREFIX}/share/doc/mod_dtcl
-	${CAT} ${PKGMESSAGE}
-.else
-	# Not installing the documentation. Consult the
-	#	file:/${WRKSRC}/INSTALL.html
-	# for information on how to proceed to enable mod_dtcl.
-	# Note, that the dtcl.tcl mentioned there is installed as
-	#	${PREFIX}/share/mod_dtcl/dtcl.tcl
-	# but the comment in it suggests it should not be used
-	# in a "production environment"...
+	${SED} 's,/usr/local,${LOCALBASE},g' ${PKGMESSAGE}
 .endif
 
 .include <bsd.port.mk>
