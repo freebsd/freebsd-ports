@@ -39,6 +39,7 @@
     SUBDIR += dgd
     SUBDIR += dgd-lpmud
     SUBDIR += dgd-net
+    SUBDIR += dhid
     SUBDIR += dip
     SUBDIR += dlint
     SUBDIR += dnsutl
@@ -132,6 +133,7 @@
     SUBDIR += pppload
     SUBDIR += pptpclient
     SUBDIR += ppxp
+    SUBDIR += priss
     SUBDIR += pvm
     SUBDIR += queso
     SUBDIR += radius
