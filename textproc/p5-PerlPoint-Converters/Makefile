@@ -29,6 +29,8 @@ MAN3=		Bundle::PerlPoint.3 \
 		PerlPoint::Tags::LaTeX.3
 
 .if !defined(NOPORTDOCS)
+PORTDOCS=	# suck all DOCSDIR
+
 post-patch:
 	@cd ${WRKSRC}; ${CP} -R pp2html_styles images doc
 	@${PERL} -pi -e 's!../(images|pp2html_styles)!$$1!g' ${WRKSRC}/doc/*.cfg
