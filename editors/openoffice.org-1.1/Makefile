@@ -89,7 +89,6 @@ CXX=	g++32
 BUILD_DEPENDS+=	zip:${PORTSDIR}/archivers/zip \
 		unzip:${PORTSDIR}/archivers/unzip \
 		gcp:${PORTSDIR}/sysutils/coreutils \
-		${ANT}:${PORTSDIR}/devel/apache-ant \
 		${X11BASE}/lib/libXft.so:${PORTSDIR}/x11-fonts/libXft
 .if !defined(DISPLAY)
 BUILD_DEPENDS+= Xvfb:${X_VFBSERVER_PORT}
@@ -100,6 +99,8 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		freetype.9:${PORTSDIR}/print/freetype2
 .if defined(WITHOUT_JAVA)
 LIB_DEPENDS=	xslt.2:${PORTSDIR}/textproc/libxslt
+.else
+BUILD_DEPENDS+=	${ANT}:${PORTSDIR}/devel/apache-ant
 .endif
 GNU_CONFIGURE=	yes
 USE_AUTOCONF_VER=	259
@@ -231,12 +232,11 @@ post-patch:
 	fi
 .endif
 
-.include <${FILESDIR}/Makefile.mozilla>
-
 .if !defined(WITHOUT_MOZILLA) && ( \
 	!exists(${WRKSRC}/../moz/zipped/FREEBSDGCCIruntime.zip) || \
 	!exists(${WRKSRC}/../moz/zipped/FREEBSDGCCIlib.zip) || \
 	!exists(${WRKSRC}/../moz/zipped/FREEBSDGCCIinc.zip) )
+.include <${FILESDIR}/Makefile.mozilla>
 do-build: mozilla
 .else
 do-build:

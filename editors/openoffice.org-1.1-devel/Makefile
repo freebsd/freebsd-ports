@@ -52,7 +52,7 @@ DISTFILES+=	helpcontent_31_unix.tgz:help helpcontent_33_unix.tgz:help \
 		helpcontent_46_unix.tgz:help helpcontent_49_unix.tgz:help \
 		helpcontent_55_unix.tgz:help \
 		helpcontent_81_unix.tgz:help helpcontent_82_unix.tgz:help \
-		helpcontent_86_unix.tgz:help \
+		helpcontent_86_unix.tgz:help helpcontent_88_unix.tgz:help \
 		helpcontent_90_unix.tgz:help
 L10NHELPS=	helpcontent_31_unix.tgz helpcontent_33_unix.tgz \
 		helpcontent_34_unix.tgz helpcontent_39_unix.tgz \
@@ -61,10 +61,6 @@ L10NHELPS=	helpcontent_31_unix.tgz helpcontent_33_unix.tgz \
 		helpcontent_81_unix.tgz helpcontent_82_unix.tgz \
 		helpcontent_86_unix.tgz helpcontent_88_unix.tgz \
 		helpcontent_90_unix.tgz
-.endif
-
-.if ${OSVERSION} > 502010
-WITHOUT_MOZILLA=	yes	#workaround for mozilla subproject
 .endif
 
 COMMENT?=	Integrated wordprocessor/dbase/spreadheet/drawing/chart/browser
@@ -89,7 +85,6 @@ CXX=	g++32
 BUILD_DEPENDS+=	zip:${PORTSDIR}/archivers/zip \
 		unzip:${PORTSDIR}/archivers/unzip \
 		gcp:${PORTSDIR}/sysutils/coreutils \
-		${ANT}:${PORTSDIR}/devel/apache-ant \
 		${X11BASE}/lib/libXft.so:${PORTSDIR}/x11-fonts/libXft
 .if !defined(DISPLAY)
 BUILD_DEPENDS+= Xvfb:${X_VFBSERVER_PORT}
@@ -100,6 +95,8 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		freetype.9:${PORTSDIR}/print/freetype2
 .if defined(WITHOUT_JAVA)
 LIB_DEPENDS=	xslt.2:${PORTSDIR}/textproc/libxslt
+.else
+BUILD_DEPENDS+=	${ANT}:${PORTSDIR}/devel/apache-ant
 .endif
 GNU_CONFIGURE=	yes
 USE_AUTOCONF_VER=	259
@@ -226,12 +223,11 @@ post-patch:
 	fi
 .endif
 
-.include <${FILESDIR}/Makefile.mozilla>
-
 .if !defined(WITHOUT_MOZILLA) && ( \
 	!exists(${WRKSRC}/../moz/zipped/FREEBSDGCCIruntime.zip) || \
 	!exists(${WRKSRC}/../moz/zipped/FREEBSDGCCIlib.zip) || \
 	!exists(${WRKSRC}/../moz/zipped/FREEBSDGCCIinc.zip) )
+.include <${FILESDIR}/Makefile.mozilla>
 do-build: mozilla
 .else
 do-build:
