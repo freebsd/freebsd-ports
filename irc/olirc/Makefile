@@ -13,6 +13,8 @@ DISTNAME=	olirc-0.0.38-alpha-3.2
 
 MAINTAINER=	nox@jelal.kn-bremen.de
 
+LIB_DEPENDS=	tcl82.1:${PORTSDIR}/lang/tcl82
+
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GNOMENG=	yes
