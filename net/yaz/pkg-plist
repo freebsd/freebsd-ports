@@ -65,10 +65,16 @@ include/yaz/zes-update0.h
 include/yaz/zoom.h
 lib/libyaz.a
 lib/libyaz.la
+lib/libyaz.so
+lib/libyaz.so.1
 lib/libyazmalloc.a
 lib/libyazmalloc.la
+lib/libyazmalloc.so
+lib/libyazmalloc.so.1
 lib/libyazthread.a
 lib/libyazthread.la
+lib/libyazthread.so
+lib/libyazthread.so.1
 share/aclocal/yaz.m4
 share/doc/yaz/asn.external.html
 share/doc/yaz/asn.html
