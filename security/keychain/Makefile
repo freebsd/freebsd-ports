@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	keychain
-PORTVERSION=	1.9
+PORTVERSION=	2.0.2
 CATEGORIES=	security
 MASTER_SITES=	http://www.ibiblio.org/pub/Linux/distributions/gentoo/distfiles/ \
 		ftp://sunsite.dk/mirrors/gentoo/distfiles/ \
 		ftp://ftp.gtlib.cc.gatech.edu/pub/gentoo/distfiles/ \
 		ftp://ftp.gentoo.no/pub/linux/distributions/gentoo/distfiles/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	info@volginfo.ru
 
 USE_BZIP2=	yes
 NO_BUILD=	yes
