@@ -15,8 +15,6 @@ MASTER_SITES=	ftp://ftp.cs.indiana.edu/pub/faces/faces/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Visual mail, user and print face server
 
-NO_PACKAGE=	"Too many configuration options available to set usefull defaults"
-
 USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 
