@@ -7,7 +7,7 @@
 
 PORTNAME=	wget
 PORTVERSION=	1.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	ftp www ipv6
 MASTER_SITES=	${MASTER_SITE_GNU} \
 		ftp://ftp.dl.ac.uk/ccp14/ftp-mirror/wget/pub/unix/util/wget/ \
@@ -15,6 +15,10 @@ MASTER_SITES=	${MASTER_SITE_GNU} \
 		ftp://ftp.uni-mainz.de/pub/gnu/wget/ \
 		ftp://ftp.max.irk.ru/unix/net/www/wget/
 MASTER_SITE_SUBDIR=	wget
+
+PATCH_SITES=	ftp://ftp.kame.net/pub/kame/misc/
+PATCHFILES=	wget-16-v6-20010111a.diff.gz
+PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	sf@FreeBSD.org
 
