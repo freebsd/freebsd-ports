@@ -16,6 +16,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	roman@xpert.com
 
+LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2
+
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
