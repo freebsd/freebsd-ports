@@ -85,8 +85,8 @@ do-build:
 	@cd ${WRKSRC} ; for f in `find plugins -name "README*" -or \
 		-name INSTALL -or -name CHANGES -or -name HISTORY`; \
 		do \
-    		${MKDIR} doc/`dirname $$f` ; \
-    		${MV} $$f doc/`dirname $$f` ; \
+		${MKDIR} doc/`dirname $$f` ; \
+		${MV} $$f doc/`dirname $$f` ; \
 	done; \
 	${MV} doc/plugins/squirrelspell/doc/README doc/plugins/squirrelspell ; \
 	${RM} -rf doc/plugins/squirrelspell/doc ; \
