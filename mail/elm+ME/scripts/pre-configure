@@ -1,19 +1,22 @@
 #!/bin/sh -
 #
-#	pre-configure script for Elm port to FreeBSD 2.0
+#       pre-configure script for Elm port to FreeBSD
 # $FreeBSD$
 
 PortsDir=$PORTSDIR
-  CurDir=$CURDIR
-  WrkSrc=$WRKSRC
+CurDir=$CURDIR
+WrkSrc=$WRKSRC
 
-	cat > ${WrkSrc}/config.sh << 'EOF'
+has_inttypes=undef
+[ -r /usr/include/inttypes.h ] && has_inttypes=define
+
+	cat > ${WrkSrc}/config.sh << EOF
 #!/bin/sh
 # config.sh
 # This file was produced by running the Configure script.
 
-Log='$Log'
-Header='$Header'
+Log='\$Log'
+Header='\$Header'
 bin="${PREFIX}/bin"
 contains='grep'
 cppstdin='/usr/bin/cpp'
@@ -29,7 +32,7 @@ d_mmap='define'
 d_socket='define'
 d_netdb='define'
 d_netinet_in='define'
-d_inttypes='define'
+d_inttypes='$has_inttypes'
 d_nointtypes='undef'
 n='-n'
 c=''
@@ -247,9 +250,9 @@ d_vfork='define'
 defbatsub='no subject (file transmission)'
 defeditor='/usr/bin/vi'
 editoropts=''
-hostname="${Hostname}"
+hostname=''
 phostname='hostname'
-mydomain="${Domain}"
+mydomain=''
 autohostname='define'
 i_memory='define'
 i_stdarg='define'
