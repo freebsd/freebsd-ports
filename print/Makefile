@@ -132,6 +132,7 @@
     SUBDIR += pkfonts600
     SUBDIR += pnm2ppa
     SUBDIR += poster
+    SUBDIR += preview-latex
     SUBDIR += pscal
     SUBDIR += pstotext
     SUBDIR += psutils-a4
