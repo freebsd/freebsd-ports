@@ -1,5 +1,5 @@
---- Makefile.orig	Mon Jun 10 20:49:19 2002
-+++ Makefile	Mon Jun 10 20:51:43 2002
+--- Makefile.orig	Thu Jul 25 05:37:27 2002
++++ Makefile	Wed Aug  7 13:07:21 2002
 @@ -24,12 +24,12 @@
  endif
  
@@ -14,7 +14,7 @@
 -INSTALL = install
 +INSTALL = @${BSD_INSTALL_PROGRAM}
  
- SRCS_COMMON = xacodec.c cpudetect.c codec-cfg.c cfgparser.c my_profile.c spudec.c playtree.c playtreeparser.c asxparser.c vobsub.c subreader.c find_sub.c
+ SRCS_COMMON = xacodec.c cpudetect.c codec-cfg.c cfgparser.c my_profile.c spudec.c playtree.c playtreeparser.c asxparser.c vobsub.c subreader.c sub_cc.c find_sub.c
  SRCS_MENCODER = mencoder.c mp_msg-mencoder.c $(SRCS_COMMON) libao2/afmt.c divx4_vbr.c libvo/aclib.c libvo/osd.c libvo/sub.c libvo/font_load.c me-opt-reg.c
 @@ -226,44 +226,11 @@
  ifeq ($(VIDIX),yes)
@@ -54,7 +54,7 @@
 -endif
 -endif
 -ifeq ($(CSS_USE),yes)
--	@echo "Following task requires root privs. If it fails don't panic"
+-	@echo "The following task requires root privileges. If it fails don't panic,"
 -	@echo "however it means you can't use fibmap_mplayer."
 -	@echo "Without this (or without running mplayer as root) you won't be"
 -	@echo "able to play encrypted DVDs."
