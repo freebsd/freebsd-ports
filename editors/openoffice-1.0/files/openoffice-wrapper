@@ -1,0 +1,15 @@
+#!/bin/sh
+#
+# $FreeBSD: /tmp/pcvs/ports/editors/openoffice-1.0/files/Attic/openoffice-wrapper,v 1.1 2002-08-01 12:29:21 mbr Exp $
+
+cd %%PREFIX%%/OpenOffice.org1.0/program/
+program=`echo $0 | sed -e 's|.*-||'`
+
+case $program in
+$0)
+	exec ./soffice "$@"
+	;;
+	*)
+	exec ./$program "$@"
+	;;
+esac
