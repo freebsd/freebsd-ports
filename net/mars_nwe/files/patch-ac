@@ -14,3 +14,23 @@ $FreeBSD$
       if [ "x$CFLAGS" = "x" ]; then
         CFLAGS="native"
       fi
+--- makefile.unx.orig	Mon May  5 16:54:02 2003
++++ makefile.unx	Mon May  5 16:47:20 2003
+@@ -200,7 +200,7 @@
+ n_routed: $(PROG7)
+ 
+ n_install_ini:
+-	 cd $(VPATH) && $(INSTALL) -m 664 nw.ini $(M_FILENAME_NW_INI) && cd $(OBJDIR)
++	 cd $(VPATH) && $(INSTALL) -m 644 nw.ini $(M_FILENAME_NW_INI) && cd $(OBJDIR)
+ 
+ n_install:
+ 	cd $(VPATH)  && $(INSTALL) -d $(M_PATHNAME_PROGS) && cd $(OBJDIR)
+@@ -232,7 +232,7 @@
+ echo "********************************************************"; \
+ echo ""; \
+ else \
+-$(INSTALL) -m 664 nw.ini $(M_FILENAME_NW_INI); \
++$(INSTALL) -m 644 nw.ini $(M_FILENAME_NW_INI); \
+ echo ""; \
+ echo "********************************************************"; \
+ echo ""; \
