@@ -1388,4 +1388,4 @@ share/mplayer/Skin/%%PKGNAME%%
 %%ABYSS%%@dirrm share/mplayer/Skin/Abyss/icons
 %%ABYSS%%@dirrm share/mplayer/Skin/Abyss
 @dirrm share/mplayer/Skin
-@unexec rmdir share/mplayer/ 2>/dev/null || true
+@unexec rmdir %D/share/mplayer/ 2>/dev/null || true
