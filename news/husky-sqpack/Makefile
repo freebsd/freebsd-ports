@@ -15,8 +15,14 @@ MAINTAINER=	fjoe@FreeBSD.org
 
 LIB_DEPENDS=	fidoconfig.0:${PORTSDIR}/news/husky-fidoconf
 
+USE_REINPLACE=	yes
+
 MAN1=		sqpack.1
 MANCOMPRESSED=	yes
+
+post-patch:
+	@${REINPLACE_CMD} -e 's^/etc/fido/config^${PREFIX}/etc/fido/config^' \
+		${WRKSRC}/sqpack.1
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/news/husky-base/Makefile.inc"
