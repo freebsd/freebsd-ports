@@ -117,6 +117,7 @@ lib/libcanna.a
 lib/libcanna.so.1.0
 lib/libcanna16.a
 lib/libcanna16.so.1.0
+etc/rc.d/canna.sh
 @exec ldconfig -m %B
 @exec chown bin.bin %D/canna/lib/dic/canna
 @exec chmod ug+w %D/canna/lib/dic/canna

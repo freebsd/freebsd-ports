@@ -4,7 +4,7 @@
 # Whom:			Nobuhiro Yasutomi <nobu@psrc.isac.co.jp>
 #			NIIMI Satoshi <sa2c@and.or.jp>
 #
-# $Id: Makefile,v 1.6 1995/06/24 11:38:36 asami Exp $
+# $Id: Makefile,v 1.7 1995/06/26 09:27:45 asami Exp $
 #
 
 DISTNAME=	Canna32p2
@@ -22,6 +22,16 @@ pre-configure:
 	@(cd ${WRKSRC}; xmkmf)
 
 post-install:
-	ldconfig -m ${PREFIX}/lib
+	/sbin/ldconfig -m ${PREFIX}/lib
+	@if [ ! -f ${PREFIX}/etc/rc.d/canna.sh ]; then \
+		echo "Installing ${PREFIX}/etc/rc.d/canna.sh startup file."; \
+		echo "#!/bin/sh" > ${PREFIX}/etc/rc.d/canna.sh; \
+		echo "canna=/usr/local/canna/bin/cannaserver" >> ${PREFIX}/etc/rc.d/canna.sh ;\
+		echo "if [ -f $$canna ]; then" >> ${PREFIX}/etc/rc.d/canna.sh ;\
+		echo "    rm -f /var/spool/canna/lock/.CANNALOCK*" >> ${PREFIX}/etc/rc.d/canna.sh ;\
+		echo "    echo -n ' Canna'; $$canna" >> ${PREFIX}/etc/rc.d/canna.sh ;\
+		echo "fi" >> ${PREFIX}/etc/rc.d/canna.sh ;\
+		chmod 755 ${PREFIX}/etc/rc.d/canna.sh ;\
+	fi
 
 .include <bsd.port.mk>
