@@ -37,10 +37,10 @@ DISTEL_ROOT=	${PREFIX}/lib/erlang/lib/${PORTNAME}-${PORTVERSION}
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/c/dec32 ${PREFIX}/bin
-	@${MKDIR} ${PREFIX}/${EMACS_SITE_LISPDIR}/distel
-	@${INSTALL_DATA} ${WRKSRC}/elisp/*el ${PREFIX}/${EMACS_SITE_LISPDIR}/distel
-	@${INSTALL_DATA} ${WRKSRC}/elisp/*elc ${PREFIX}/${EMACS_SITE_LISPDIR}/distel
-	@${INSTALL_DATA} ${WRKSRC}/elisp/*elc ${PREFIX}/${EMACS_SITE_LISPDIR}/distel
+	@${MKDIR} ${PREFIX}/${EMACS_SITE_LISPDIR}/${PORTNAME}
+	@${INSTALL_DATA} ${WRKSRC}/elisp/*el ${PREFIX}/${EMACS_SITE_LISPDIR}/${PORTNAME}
+	@${INSTALL_DATA} ${WRKSRC}/elisp/*elc ${PREFIX}/${EMACS_SITE_LISPDIR}/${PORTNAME}
+	@${INSTALL_DATA} ${WRKSRC}/elisp/*elc ${PREFIX}/${EMACS_SITE_LISPDIR}/${PORTNAME}
 	@${MKDIR} ${DOCSDIR}
 	@for FILE in ${DISTEL_DOCS}; do \
 		${INSTALL_DATA} ${WRKSRC}/$${FILE} ${DOCSDIR}; \
@@ -53,6 +53,6 @@ do-install:
 	@${MKDIR} ${DISTEL_ROOT}/ebin
 	@${INSTALL_DATA} ${WRKSRC}/erl/*.erl ${DISTEL_ROOT}/src
 	@${INSTALL_DATA} ${WRKSRC}/ebin/*.beam ${DISTEL_ROOT}/ebin
-	@${LN} -sf ${DISTEL_ROOT} ${PREFIX}/lib/erlang/lib/distel
+	@${LN} -sf ${DISTNAME} ${PREFIX}/lib/erlang/lib/${PORTNAME}
 
 .include <bsd.port.mk>
