@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	asir
-PORTVERSION=	20030825
+PORTVERSION=	20040214
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.jssac.org/pub/distfiles/asir/ \
 		ftp://ftp.asir.org/pub/asir/src/
@@ -24,18 +24,16 @@ USE_AUTOCONF=	yes
 USE_AUTOMAKE_VER=	15
 USE_XLIB=	yes
 CONFIGURE_ARGS=	--enable-shared --enable-plot --enable-fep --enable-interval --with-pari=new
-ASIR_DOC_VERSION=	20030507
+ASIR_DOC_VERSION=	20040211
 ASIR_DOC=	asirdoc-${ASIR_DOC_VERSION}.tar.gz
 MAN1=		asir.1
 PREFIX?=	${LOCALBASE}
 WRKSRC=		${WRKDIR}/asir2000
 
-LIB_DATA=	alpi bfct bgk const cyclic defs.h dfff dmul fctrdata fctrtest \
-		fff gr ifplot katsura launch mat nf num primdec \
-		ratint robot solve sp sturm xm
-
-BROKEN=		"Does not compile"
-DEPRECATED=	"Will be removed after April 7 if still broken"
+LIB_DATA=	alpi bfct bgk const cyclic defs.h dfff dmul dmul102 \
+	fctrdata fctrtest fff glib gr ifplot katsura launch mat nf \
+	num primdec primdec_lex primdec_mod ratint robot solve sp \
+	sturm sym weight xm
 
 pre-install:
 	@${MKDIR} ${DATADIR}
