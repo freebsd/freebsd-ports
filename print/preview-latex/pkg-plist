@@ -1,13 +1,14 @@
 share/texmf/tex/latex/preview/prauctex.cfg
 share/texmf/tex/latex/preview/prauctex.def
 share/texmf/tex/latex/preview/preview.sty
+share/texmf/tex/latex/preview/prlyx.def
 share/texmf/tex/latex/preview/prshowbox.def
 share/texmf/tex/latex/preview/prshowlabels.def
 share/texmf/tex/latex/preview/prtightpage.def
 share/texmf/tex/latex/preview/prtracingall.def
 @dirrm share/texmf/tex/latex/preview
-@exec mktexlsr
-@unexec mktexlsr
+@exec %D/bin/mktexlsr
+@unexec %D/bin/mktexlsr
 share/texmf/doc/latex/styles/preview.dvi
 %%EMACS_VERSION_SITE_LISPDIR%%/preview/preview.el
 %%EMACS_VERSION_SITE_LISPDIR%%/preview/preview.elc
