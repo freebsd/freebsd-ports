@@ -13,6 +13,7 @@
     SUBDIR += fsv
     SUBDIR += gentoo
     SUBDIR += gnome-commander
+    SUBDIR += krusader
     SUBDIR += mtoolsfm
     SUBDIR += nautilus
     SUBDIR += nautilus2
