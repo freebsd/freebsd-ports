@@ -3,10 +3,11 @@
 # Date created:        28 October 1997
 # Whom:                Stefan Eßer <se@freebsd.org>
 #
-# $Id: Makefile,v 1.3 1998/03/04 23:22:01 se Exp $
+# $Id: Makefile,v 1.4 1998/03/06 19:52:06 se Exp $
 #
 
 DISTNAME=	kdemultimedia-Beta3-1
+PKGNAME=	kdemultimedia-3.1b
 CATEGORIES=	x11
 MASTER_SITES=	$(MASTER_SITE_KDE)
 MASTER_SITE_SUBDIR= stable/Beta3/distribution/tgz/source
