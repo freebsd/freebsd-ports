@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gtk20-apireference
-PORTVERSION=	20020830
+PORTVERSION=	20021119
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://developer.gnome.org/doc/API/
 DISTFILES=	glib-2.0-docs.tar.gz gtk-2.0-docs.tar.gz gdk-2.0-docs.tar.gz
@@ -14,6 +14,7 @@ DISTFILES=	glib-2.0-docs.tar.gz gtk-2.0-docs.tar.gz gdk-2.0-docs.tar.gz
 MAINTAINER=	edwin@mavetju.org
 
 NO_BUILD=	yes
+PREFIX=		${X11BASE}
 
 do-install:
 	@${MKDIR} ${PREFIX}/share/doc/gdk20
