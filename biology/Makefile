@@ -11,7 +11,6 @@
     SUBDIR += fasta3
     SUBDIR += fastdnaml
     SUBDIR += gaussian98
-    SUBDIR += gp
     SUBDIR += gperiodic
     SUBDIR += hmmer
     SUBDIR += kinemage
