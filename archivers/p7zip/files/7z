@@ -1,0 +1,9 @@
+#! /bin/sh
+
+PROGNAME=${0##*/}
+BINPATH=$(dirname $(realpath $0))/../libexec/p7zip
+if [ $PROGNAME = "7z" -a ! -x "$BINPATH/7z" -a -x "$BINPATH/7za" ]; then
+	PROGNAME=7za
+fi
+
+exec "$BINPATH/$PROGNAME" "$@"

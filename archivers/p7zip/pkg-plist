@@ -1,0 +1,31 @@
+@unexec /bin/rm -f %D/bin/7za
+bin/7z
+@exec /bin/ln -sf 7z %D/bin/7za
+%%MODULES%%libexec/p7zip/7z
+libexec/p7zip/7za
+libexec/p7zip/7zCon.sfx
+%%MODULES%%libexec/p7zip/Codecs/7zAES.dll
+%%MODULES%%libexec/p7zip/Codecs/AES.dll
+%%MODULES%%libexec/p7zip/Codecs/BZip2.dll
+%%MODULES%%libexec/p7zip/Codecs/Branch.dll
+%%MODULES%%libexec/p7zip/Codecs/Copy.dll
+%%MODULES%%libexec/p7zip/Codecs/Deflate.dll
+%%MODULES%%libexec/p7zip/Codecs/Implode.dll
+%%MODULES%%libexec/p7zip/Codecs/LZMA.dll
+%%MODULES%%libexec/p7zip/Codecs/PPMD.dll
+%%MODULES%%libexec/p7zip/Codecs/Swap.dll
+%%MODULES%%libexec/p7zip/Formats/7z.dll
+%%MODULES%%libexec/p7zip/Formats/Rar.dll
+%%MODULES%%libexec/p7zip/Formats/Tar.dll
+%%MODULES%%libexec/p7zip/Formats/Zip.dll
+%%MODULES%%libexec/p7zip/Formats/arj.dll
+%%MODULES%%libexec/p7zip/Formats/bz2.dll
+%%MODULES%%libexec/p7zip/Formats/cab.dll
+%%MODULES%%libexec/p7zip/Formats/cpio.dll
+%%MODULES%%libexec/p7zip/Formats/deb.dll
+%%MODULES%%libexec/p7zip/Formats/gz.dll
+%%MODULES%%libexec/p7zip/Formats/rpm.dll
+%%MODULES%%libexec/p7zip/Formats/split.dll
+%%MODULES%%@dirrm libexec/p7zip/Formats
+%%MODULES%%@dirrm libexec/p7zip/Codecs
+@dirrm libexec/p7zip
