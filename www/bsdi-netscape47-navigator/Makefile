@@ -3,7 +3,7 @@
 # Date created:         20 Sept 1998
 # Whom:                 brett@peloton.physics.montana.edu
 #
-# $Id: Makefile,v 1.28 1998/11/19 21:57:42 billf Exp $
+# $Id: Makefile,v 1.29 1998/11/19 22:54:44 billf Exp $
 #
 
 DISTNAME=       netscape-navigator-4.5
@@ -25,12 +25,9 @@ MASTER_SITES+=	ftp://ftp.fortify.net/pub/Fortify/ \
 		ftp://ftp.za.freebsd.org/pub/Fortify/
 DISTFILES+=	Fortify-1.3.0-unix-x86.tar.gz
 RESTRICTED=     "Contains strong cryptography"
-.endif
-
-.if !defined(USE_128BIT)
+.else
 pre-extract:
 		@${ECHO} "You can make Netscape use 128-bit encryption by defining USE_128BIT"
-		@${ECHO} "and defining USA_RESIDENT to NO"
 .endif
 
 do-install:
@@ -47,7 +44,7 @@ do-install:
 	cd ${WRKDIR}/Fortify-1.3.0-unix-x86 && \
 		(${ECHO} yes ; ${ECHO} no) | ./Fortify.sh ${NDIR}/navigator-4.5.bin
 .endif
-	chown -R bin.bin ${NDIR}
+	chown -R ${BINOWN}.${BINGRP} ${NDIR}
 
 post-install:
 	@${CAT} ${PKGDIR}/DESCR
