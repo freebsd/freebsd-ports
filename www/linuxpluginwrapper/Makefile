@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	linuxpluginwrapper
-PORTVERSION=	20040229
-PORTREVISION=	2
+PORTVERSION=	20040310
+PORTREVISION=	0
 CATEGORIES=	www linux
 MASTER_SITES=	http://people.FreeBSD.org/~nork/distfiles/ \
 		${MASTER_SITE_LOCAL}
@@ -70,8 +70,7 @@ post-build:
 		-e 's,%%LTHREADSHMAJOR%%,${LTHREADSHMAJOR},' \
 		-e '/^%%LIBMAPCONF%%$$/r ${LIBMAPCONF}' \
 		-e '/^%%LIBMAPCONF%%$$/d' \
-		< ${.CURDIR}/pkg-message | \
-	 ${SED} -e 's/liblstdc\+\+\.so\.4/libstdc++.so.4/' > ${PKGMESSAGE}
+		< ${.CURDIR}/pkg-message > ${PKGMESSAGE}
 
 pre-install:
 	@${MKDIR} ${X11BASE}/lib/browser_plugins
