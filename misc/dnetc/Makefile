@@ -57,7 +57,7 @@ do-install:
 	${INSTALL} -c -m ${SBINMODE} -o ${CLIENTUID} -g ${CLIENTGID} ${WRKSRC}/dnetc ${BINDIR}
 
 	${SED} s#CHANGETHIS#${BINDIR}# < ${FILESDIR}/dnetc.sh > ${WRKSRC}/dnetc.sh.pathnames
-	${INSTALL_PROGRAM} ${WRKSRC}/dnetc.sh.pathnames ${LIBDIR}/dnetc.sh
+	${INSTALL} -c -m ${SBINMODE} ${WRKSRC}/dnetc.sh.pathnames ${LIBDIR}/dnetc.sh
 
 	${INSTALL_DATA} ${FILESDIR}/INFO ${BINDIR}
 
