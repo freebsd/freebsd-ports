@@ -29,7 +29,7 @@ CATEGORIES:=	japanese ${CATEGORIES}
 COMMENT=	GNU ghostscript with Japanese font support
 PKGNAMEPREFIX=	ja-
 PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-jpnfont
-RUN_DEPENDS+=	${X11BASE}/lib/X11/fonts/TrueType/kochi-mincho-subst.ttf:${PORTSDIR}/japanese/kochi-ttfonts
+RUN_DEPENDS+=	${X11BASE}/lib/X11/fonts/TrueType/sazanami-mincho.ttf:${PORTSDIR}/japanese/sazanami-ttf
 CIDFNMAP=	CIDFnmap.jp
 .elif defined(KORFONT)
 CATEGORIES:=	korean ${CATEGORIES}
