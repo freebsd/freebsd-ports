@@ -7,12 +7,12 @@
 
 PORTNAME=	sawfish2
 PORTVERSION=	1.2
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	2
 CATEGORIES=	x11-wm
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/sawfish/1.2
-DISTNAME=	sawfish-${PORTVERSION}-gtk2
+MASTER_SITE_SUBDIR=	sources/${PORTNAME:S/2$//}/1.2
+DISTNAME=	${PORTNAME:S/2$//}-${PORTVERSION}-gtk2
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
@@ -40,11 +40,13 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 CONFIGURE_TARGET=	${ARCH}-pc-freebsd${OSREL:C/\..*//}
 
-pre-patch:
+post-patch:
 	@${REINPLACE_CMD} -e 's^-l(pthread|c_r)^${PTHREAD_LIBS}^g ; \
 		 s|DATADIRNAME=lib|DATADIRNAME=share|g ; \
 		 s|USE_INCLUDED_LIBINTL=yes|#USE_INCLUDED_LIBINTL=yes|g ; \
 		 s|[$$][(]top_builddir[)]/intl/libintl.a|-lintl|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|X11/Xft/Xft\.h|X11/Xft/Xft2.h|g' \
+		${WRKSRC}/src/fonts.c
 
 post-install:
 	install-info --section="X11 window manager" \
