@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	kde
-PORTVERSION=	0.12
+PORTVERSION=	0.13
 CATEGORIES=	x11 kde ruby
 MASTER_SITES=	http://sfns.u-shizuoka-ken.ac.jp/geneng/horie_hp/ruby/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -28,6 +28,7 @@ CONFIGURE_ARGS=	--with-x-dir=${X11BASE} \
 		--with-qt-include=${X11BASE}/include/X11/qt \
 		--with-qt-lib=${X11BASE}/lib \
 		--with-kde-dir=${LOCALBASE}
+MAKE_ARGS=	LOCAL_LIBS=-lgcc
 INSTALL_TARGET=	site-install
 
 .if defined(WITH_I18N)
