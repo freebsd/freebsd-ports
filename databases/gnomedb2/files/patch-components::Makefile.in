@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- components/Makefile.in	2002/01/22 13:14:51	1.1
++++ components/Makefile.in	2002/01/22 13:15:50
+@@ -177,7 +177,7 @@
+ 
+ libdatabase_moniker_la_SOURCES =  	gnomedb-monikers-database.c 	gnomedb-monikers.h
+ 
+-libdatabase_moniker_la_LIBADD =  	$(GNOMEDB_LIBS)
++libdatabase_moniker_la_LIBADD =  	$(GNOMEDB_LIBS) -module -avoid-version
+ 
+ 
+ oafdir = $(datadir)/oaf
