@@ -19,7 +19,7 @@ LIB_DEPENDS=	gtop.1:${PORTSDIR}/devel/libgtop
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "alpha"
+.if ${ARCH} != "i386"
 EXTRA_PATCHES=	${FILESDIR}/extra-patch-Makefile.in
 .endif
 
