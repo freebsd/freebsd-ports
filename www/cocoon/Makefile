@@ -25,6 +25,12 @@ JDIR=		${PREFIX}/share/java/classes
 CDIR=		${PREFIX}/etc/apache/cocoon
 SDIR=		${PREFIX}/share/java/cocoon
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502112
+BROKEN=		"Does not compile on 5.x"
+.endif
+
 pre-build:
 	${CHMOD} a+rx ${WRKSRC}/build.sh
 
@@ -60,4 +66,4 @@ do-install:
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
