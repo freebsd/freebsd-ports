@@ -7,7 +7,7 @@
 
 PORTNAME=	openssh
 PORTVERSION=	3.3p1
-PORTREVISION=	3
+PORTREVISION=	5
 CATEGORIES=	security ipv6
 MASTER_SITES=	ftp://ftp.openbsd.org/pub/OpenBSD/OpenSSH/portable/ \
 		ftp://ftp.op.net/pub/OpenBSD/OpenSSH/portable/ \
@@ -51,6 +51,8 @@ CONFIGURE_ARGS+=	--mandir=${MANPREFIX}/man --localstatedir=/var
 EMPTYDIR=	/var/empty
 ETCSSH=		/etc/ssh
 PLIST_SUB+=	NOTBASE="@comment "
+PLIST_SUB+=	BASE=""
+PKGMESSAGE=	pkg-message.empty
 .else
 .if exists(/var/empty)
 EMPTYDIR=	/var/empty
@@ -59,6 +61,7 @@ EMPTYDIR=	${PREFIX}/empty
 .endif
 ETCSSH=		${PREFIX}/etc/ssh
 PLIST_SUB+=	NOTBASE=""
+PLIST_SUB+=	BASE="@comment "
 .endif
 PLIST_SUB+=	EMPTYDIR=${EMPTYDIR}
 CONFIGURE_ARGS+=	--sysconfdir=${ETCSSH}
@@ -119,7 +122,9 @@ post-install:
 .endif
 	${INSTALL_DATA} -c ${WRKSRC}/ssh_config.out ${ETCSSH}/ssh_config-dist
 	${INSTALL_DATA} -c ${WRKSRC}/sshd_config.out ${ETCSSH}/sshd_config-dist
+.if !defined(OPENSSH_OVERWRITE_BASE)
 	@${CAT} ${PKGMESSAGE}
+.endif
 
 .include <bsd.port.pre.mk>
 
