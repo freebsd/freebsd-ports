@@ -11,7 +11,7 @@ MASTERDIR=	${.CURDIR}/../../x11/rxvt
 .include "${MASTERDIR}/Makefile"
 
 PORTNAME=	rxvt
-PORTVERSION=	2.6.3
+PORTVERSION=	2.6.4
 
 #.include <bsd.port.pre.mk>
 PKGNAMEPREFIX:=	${PKGNAMEPREFIX}cn-
