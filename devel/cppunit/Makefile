@@ -31,7 +31,7 @@ MAN1=		cppunit-config.1
 .endif
 MANCOMPRESSED=	no
 
-pre-everything:
+pre-everything::
 .if !defined(WITH_DOXYGEN) && !defined(NOPORTDOCS)
 	@${ECHO_MSG}
 	@${ECHO_MSG} You could define WITH_DOXYGEN if you want HTML documentation
