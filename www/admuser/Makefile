@@ -20,15 +20,9 @@ CONFIGURE_ARGS=	--prefix=${PREFIX}/etc/admuser \
 		--enable-language=English \
 		--enable-cgidir=${PREFIX}/www/cgi-bin \
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502126
-BROKEN=		"Does not compile on FreeBSD >= 5.x"
-.endif
-
 pre-install:
 	@${MKDIR} ${PREFIX}/www/cgi-bin
 
 #BROKEN=		"Install fails"
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
