@@ -1,0 +1,18 @@
+
+#########################################################
+
+Enable mod_perl built as DSO, by adding to httpd.conf:
+
+  LoadModule perl_module modules/mod_perl.so
+
+Next, tell Perl where to find mod_perl2 libraries:
+
+  PerlModule Apache2
+
+There are many other configuration options which you can
+find in the configuration manual:
+
+  http://perl.apache.org/docs/2.0/user/config/config.html
+
+#########################################################
+
