@@ -28,6 +28,7 @@ LIBTOOLFILES=	${SABLEVMDIR}/configure ${NATIVEDIR}/configure
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
+CONFIGURE_ENV=	CFLAGS="-D_P1003_1B_VISIBLE -pthread -I${PREFIX}/include -L${PREFIX}/lib"
 # Uncomment to force gnome dependency
 #USE_GNOMELIBS=	yes
 

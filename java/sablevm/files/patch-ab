@@ -1,16 +1,7 @@
 diff -ur work.orig/sablevm-1.0.3/configure.ac work/sablevm-1.0.3/configure.ac
 --- work.orig/sablevm-1.0.3/configure.ac	Wed Aug 14 22:29:54 2002
 +++ work/sablevm-1.0.3/configure.ac	Sat Aug 17 21:14:51 2002
-@@ -114,12 +114,15 @@
- AC_LIBTOOL_DLOPEN
- AM_PROG_LIBTOOL
- 
-+dnl Required FreeBSD compile flags
-+test "x$prefix" = xNONE && prefix=$ac_default_prefix
-+CFLAGS="${CFLAGS} -D_P1003_1B_VISIBLE -pthread -I${prefix}/include -L${prefix}/lib"
-+
- dnl Checks for libraries.
- AC_CHECK_LIB(ffi,ffi_prep_cif,echo -n,echo ***ERROR: libffi is missing; exit 1)
+@@ -119,7 +119,6 @@
  AC_CHECK_LIB(ltdl,lt_dlinit,echo -n,echo ***ERROR: libltdl is missing; exit 1)
  AC_CHECK_LIB(m,fmod,echo -n,echo ***ERROR: libm is missing; exit 1)
  AC_CHECK_LIB(popt,poptGetContext,echo -n,echo ***ERROR: libpopt is missing; exit 1)
