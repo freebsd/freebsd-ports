@@ -1,0 +1,2 @@
+Before running John the Ripper, copy <install_path>/share/ucfjohn/john.ini
+to the current directory.
