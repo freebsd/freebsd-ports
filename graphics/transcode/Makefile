@@ -6,28 +6,29 @@
 #
 
 PORTNAME=	transcode
-PORTVERSION=	0.6.0.5
-PORTREVISION=	1
+PORTVERSION=	0.6.2
+DISTNAME=	${PORTNAME}-${PORTVERSION}.20021010
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.theorie.physik.uni-goettingen.de/~ostreich/transcode/pre/
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/.5$//g}pre5
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	hendrik@scholz.net
 
 LIB_DEPENDS=	dvdread.2:${PORTSDIR}/graphics/libdvdread \
-		gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
+		gnugetopt.1:${PORTSDIR}/devel/libgnugetopt \
+		jpeg.9:${PORTSDIR}/graphics/jpeg
 
 USE_XLIB=	yes
 USE_GNOMENG=	yes
-USE_GNOME=	glib12
+USE_GNOME=	gtk12
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib -lgnugetopt" \
 		SDL_CONFIG="${LOCALBASE}/bin/sdl11-config"
+USE_REINPLACE=	yes
 
-MAN1=	transcode.1 tccat.1 avisplit.1 avimerge.1 avifix.1
+MAN1=	avifix.1 avimerge.1 avisplit.1 avisync.1 tccat.1 tcdemux.1 \
+	tcprobe.1 tcscan.1 transcode.1
 
 .include <bsd.port.pre.mk>
 
@@ -39,7 +40,7 @@ WITH_IMAGEMAGICK=	yes
 WITH_NASM=	yes
 .endif
 
-.if exists(${LOCALBASE}/lib/libaviplay-0.7.so)
+.if exists(${LOCALBASE}/lib/libaviplay.so)
 WITH_AVIFILE=	yes
 .endif
 
@@ -63,12 +64,8 @@ WITH_LIBDV=	yes
 WITH_OPENQUICKTIME=	yes
 .endif
 
-.if exists(${LOCALBASE}/lib/libmpeg2.so)
-WITH_LIBMPEG2=	yes
-.endif
-
 .if exists(${LOCALBASE}/lib/libfame.so)
-WITH_LIBFAME=	yes
+WITH_FAME=	yes
 .endif
 
 .if exists(${LOCALBASE}/lib/libxvidcore.so)
@@ -88,6 +85,14 @@ WITH_LIBA52=	yes
 WITH_LAME=	yes
 .endif
 
+.if exists(${LOCALBASE}/lib/libogg.so)
+WITH_OGG=	yes
+.endif
+
+.if exists(${LOCALBASE}/lib/liblavplay.so)
+WITH_MJPEG=	yes
+.endif
+
 .if defined(WITH_IMAGEMAGICK)
 LIB_DEPENDS+=	Magick.5:${PORTSDIR}/graphics/ImageMagick
 PLIST_SUB+=	WITH_IMAGEMAGICK=""
@@ -102,7 +107,7 @@ ONLY_FOR_ARCHS=	i386
 .endif
 
 .if defined(WITH_AVIFILE)
-LIB_DEPENDS+=	aviplay-0.7.0:${PORTSDIR}/graphics/avifile
+LIB_DEPENDS+=	aviplay:${PORTSDIR}/graphics/avifile
 PLIST_SUB+=	WITH_AVIFILE=""
 .else
 CONFIGURE_ARGS+=	--with-avifile-mods=no \
@@ -126,7 +131,7 @@ PLIST_SUB+=	WITH_LIBXML2=""
 PLIST_SUB+=	WITH_LIBXML2="@comment "
 .endif
 
-.if defined(WITH_FFMPEG)
+.if defined(WITH_FFMPEG) && !defined(WITHOUT_FFMPEG)
 BUILD_DEPENDS+=	${LOCALBASE}/bin/ffmpeg:${PORTSDIR}/graphics/ffmpeg
 PLIST_SUB+=	WITH_FFMPEG=""
 .else
@@ -136,6 +141,7 @@ PLIST_SUB+=	WITH_FFMPEG="@comment "
 .if defined(WITH_LIBDV)
 LIB_DEPENDS+=	dv.2:${PORTSDIR}/graphics/libdv
 PLIST_SUB+=	WITH_LIBDV=""
+CONFIGURE_ARGS+=	--with-pal-yuv=YV12
 .else
 CONFIGURE_ARGS+=	--with-dv=no
 PLIST_SUB+=	WITH_LIBDV="@comment "
@@ -147,11 +153,8 @@ LIB_DEPENDS+=	openquicktime.0:${PORTSDIR}/graphics/openquicktime
 CONFIGURE_ARGS+=	--with-openqt=no
 .endif
 
-.if defined(WITH_LIBMPEG2)
-LIB_DEPENDS+=	mpeg2.0:${PORTSDIR}/graphics/libmpeg2
-.endif
 .if defined(WITH_FAME)
-LIB_DEPENDS+=	fame.10:${PORTSDIR}/graphics/libfame
+LIB_DEPENDS+=	fame-0.9:${PORTSDIR}/graphics/libfame
 PLIST_SUB+=	WITH_FAME=""
 .else
 PLIST_SUB+=	WITH_FAME="@comment "
@@ -183,11 +186,25 @@ CONFIGURE_ARGS+=	--with-lame=no
 PLIST_SUB+=	WITH_LAME="@comment "
 .endif
 
+.if defined(WITH_OGG)
+LIB_DEPENDS+=	ogg.4:${PORTSDIR}/audio/libogg
+CONFIGURE_ARGS+=  	--with-ogg=yes
+PLIST_SUB+=	WITH_OGG=""
+.else
+PLIST_SUB+=	WITH_OGG="@comment "
+.endif
+
+.if defined(WITH_MJPEG)
+LIB_DEPENDS+=	lavplay-1.6.0:${PORTSDIR}/graphics/mjpegtools
+PLIST_SUB+=	WITH_MJPEG=""
+.else
+PLIST_SUB+=	WITH_MJPEG="@comment "
+.endif
+
 pre-everything::
 .if !defined(WITH_OPTIMIZED_CFLAGS)
 	@${ECHO_MSG}
-	@${ECHO_MSG} "You can enable extra optimizations by defining"
-	@${ECHO_MSG} "WITH_OPTIMIZED_CFLAGS."
+	@${ECHO_MSG} "You can enable extra optimizations by defining WITH_OPTIMIZED_CFLAGS."
 .endif
 .if !defined(WITH_IMAGEMAGICK)
 	@${ECHO_MSG}
@@ -203,7 +220,7 @@ pre-everything::
 	@${ECHO_MSG}
 	@${ECHO_MSG} "You can enable libxml2-dependent modules by defining WITH_LIBXML2."
 .endif
-.if !defined(WITH_FFMPEG)
+.if !defined(WITH_FFMPEG) || defined(WITHOUT_FFMEG)
 	@${ECHO_MSG}
 	@${ECHO_MSG} "You can enable ffmpeg-dependent modules by defining WITH_FFMPEG."
 .endif
@@ -240,13 +257,7 @@ pre-everything::
 .endif
 .if !defined(WITH_FAME)
 	@${ECHO_MSG}
-	@${ECHO_MSG} "You can enable libfame-support by defining WITH_LIBFAME."
-.endif
-.if !defined(WITH_LIBMPEG2)
-	@${ECHO_MSG}
-	@${ECHO_MSG} "You can enable libmpeg2-dependent modules by defining WITH_LIBMPEG2."
-	@${ECHO_MSG} "You will probably want to enable this, if you plan to"
-	@${ECHO_MSG} "rip DVDs."
+	@${ECHO_MSG} "You can enable libfame-support by defining WITH_FAME."
 .endif
 .if !defined(WITH_XVID)
 	@${ECHO_MSG}
@@ -255,34 +266,39 @@ pre-everything::
 	@${ECHO_MSG} "You will probably want to enable this, if you plan to"
 	@${ECHO_MSG} "rip DVDs."
 .endif
+.if !defined(WITH_OGG)
+	@${ECHO_MSG}
+	@${ECHO_MSG} "You can enable libogg support by defining WITH_OGG."
+.endif
+.if !defined(WITH_MJPEG)
+	@${ECHO_MSG}
+	@${ECHO_MSG} "You can enable support for the MJPEG toolkit by defining WITH_MJPEG"
+.endif
 
 post-patch:
 .if ${OSVERSION} <= 500027
-	@${FIND} ${WRKSRC} -type f | ${XARGS} -n 10 -x ${PERL} -pi \
+	@${FIND} ${WRKSRC} -type f | ${XARGS} -n 10 -x ${REINPLACE_CMD} \
 		-e 's|<stdint.h>|<inttypes.h>|'
 .endif
 .if !defined(WITH_OPTIMIZED_CFLAGS)
-	@${FIND} ${WRKSRC} -type f | ${XARGS} -n 10 -x ${PERL} -pi \
+	@${FIND} ${WRKSRC} -type f | ${XARGS} -n 10 -x ${REINPLACE_CMD} \
 		-e 's|-O[236]|${CFLAGS}|'
 .endif
-	@${PERL} -pi -e 's|(seek)64|\1|' ${WRKSRC}/avilib/avidump.c
-	@${PERL} -pi -e 's|<SDL/|<|' ${WRKSRC}/filter/preview/display.h
+	@${REINPLACE_CMD} -E -e 's|(seek)64|\1|' ${WRKSRC}/avilib/avidump.c
+	@${REINPLACE_CMD} -E -e 's|<SDL/|<|' ${WRKSRC}/filter/preview/display.h
 
-	@${PERL} -pi -e 's|(-la52)|\1 ${LIBA52_DEP_LIBS}|' \
+	@${REINPLACE_CMD} -E -e 's|(-la52)|\1 ${LIBA52_DEP_LIBS}|' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 
 pre-configure:
-	@${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
-	@${PERL} -pi -e 's|-ldl||g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -E -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -E -e 's|-ldl||g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -E -e 's|WRKSRC|${WRKSRC}|g' ${WRKSRC}/export/Makefile.in
 
 post-install:
 .if defined(WITH_XVID)
 	@${LN} -sf ${LOCALBASE}/lib/libxvidcore.so \
 		${PREFIX}/lib/transcode/libxvidcore.so
 .endif
-
-# Remove .la-files.
-
-	@${RM} ${PREFIX}/lib/transcode/*.la
 
 .include <bsd.port.post.mk>
