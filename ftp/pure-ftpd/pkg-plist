@@ -22,6 +22,7 @@ etc/pure-ftpd.conf.sample
 %%PORTDOCS%%share/doc/pure-ftpd/README.LDAP
 %%PORTDOCS%%share/doc/pure-ftpd/README.MySQL
 %%PORTDOCS%%share/doc/pure-ftpd/README.Netfilter
+%%PORTDOCS%%share/doc/pure-ftpd/README.PGSQL
 %%PORTDOCS%%share/doc/pure-ftpd/THANKS
 %%PORTDOCS%%share/doc/pure-ftpd/poweredby.jpg
 %%PORTDOCS%%@dirrm share/doc/pure-ftpd
