@@ -6,6 +6,7 @@
     SUBDIR += bnc
     SUBDIR += bobot++
     SUBDIR += dancer-ircd
+    SUBDIR += dancer-services
     SUBDIR += darkbot
     SUBDIR += dcc
     SUBDIR += dircproxy

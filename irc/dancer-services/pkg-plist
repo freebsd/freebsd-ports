@@ -1,0 +1,240 @@
+sbin/cleandb
+sbin/dancer-services
+sbin/encryptconf
+sbin/encryptdb
+sbin/fixlevel
+sbin/servchk
+sbin/shownicks
+sbin/showchans
+@unexec if cmp -s %D/etc/dancer-services/glines.conf %D/etc/dancer-services/glines.conf.sample; then rm -f %D/etc/dancer-services/glines.conf; fi
+etc/dancer-services/glines.conf.sample
+@exec if [ ! -f %B/glines.conf ]; then cp %B/%f %B/glines.conf; fi
+@unexec if cmp -s %D/etc/dancer-services/jupes.conf %D/etc/dancer-services/jupes.conf.sample; then rm -f %D/etc/dancer-services/jupes.conf; fi
+etc/dancer-services/jupes.conf.sample
+@exec if [ ! -f %B/jupes.conf ]; then cp %B/%f %B/jupes.conf; fi
+@unexec if cmp -s %D/etc/dancer-services/logon.news %D/etc/dancer-services/logon.news.sample; then rm -f %D/etc/dancer-services/logon.news; fi
+etc/dancer-services/logon.news.sample
+@exec if [ ! -f %B/logon.news ]; then cp %B/%f %B/logon.news; fi
+@unexec if cmp -s %D/etc/dancer-services/motd.dcc %D/etc/dancer-services/motd.dcc.sample; then rm -f %D/etc/dancer-services/motd.dcc; fi
+etc/dancer-services/motd.dcc.sample
+@exec if [ ! -f %B/motd.dcc ]; then cp %B/%f %B/motd.dcc; fi
+@unexec if cmp -s %D/etc/dancer-services/motd.global %D/etc/dancer-services/motd.global.sample; then rm -f %D/etc/dancer-services/motd.global; fi
+etc/dancer-services/motd.global.sample
+@exec if [ ! -f %B/motd.global ]; then cp %B/%f %B/motd.global; fi
+@unexec if cmp -s %D/etc/dancer-services/services.conf %D/etc/dancer-services/services.conf.sample; then rm -f %D/etc/dancer-services/services.conf; fi
+etc/dancer-services/services.conf.sample
+@exec if [ ! -f %B/services.conf ]; then cp %B/%f %B/services.conf; fi
+@unexec if cmp -s %D/etc/dancer-services/settings.conf %D/etc/dancer-services/settings.conf.sample; then rm -f %D/etc/dancer-services/settings.conf; fi
+etc/dancer-services/settings.conf.sample
+@exec if [ ! -f %B/settings.conf ]; then cp %B/%f %B/settings.conf; fi
+etc/rc.d/dancer-services.sh
+@exec install -d -o ircd -g ircd -m 700 /var/log/dancer-services /var/run/dancer-services
+@unexec rmdir %D/etc/dancer-services /var/log/dancer-services /var/run/dancer-services 2>/dev/null || echo "If you are permanently removing this port, you should do a ``rm -rf ${PKG_PREFIX}/etc/dancer-services /var/log/dancer-services /var/run/dancer-services`` to remove any configuration files and log files left." | fmt
+share/dancer-services/chanserv/access/add
+share/dancer-services/chanserv/access/del
+share/dancer-services/chanserv/access/index
+share/dancer-services/chanserv/access/list
+share/dancer-services/chanserv/akick/add
+share/dancer-services/chanserv/akick/del
+share/dancer-services/chanserv/akick/index
+share/dancer-services/chanserv/akick/list
+share/dancer-services/chanserv/autorem/add
+share/dancer-services/chanserv/autorem/del
+share/dancer-services/chanserv/autorem/index
+share/dancer-services/chanserv/autorem/list
+share/dancer-services/chanserv/clear
+share/dancer-services/chanserv/clearnoexp
+share/dancer-services/chanserv/drop
+share/dancer-services/chanserv/forbid
+share/dancer-services/chanserv/forget
+share/dancer-services/chanserv/identify
+share/dancer-services/chanserv/index
+share/dancer-services/chanserv/info
+share/dancer-services/chanserv/invite
+share/dancer-services/chanserv/level/index
+share/dancer-services/chanserv/level/list
+share/dancer-services/chanserv/level/reset
+share/dancer-services/chanserv/level/set
+share/dancer-services/chanserv/list
+share/dancer-services/chanserv/noexpire
+share/dancer-services/chanserv/op
+share/dancer-services/chanserv/register
+share/dancer-services/chanserv/resetlevels
+share/dancer-services/chanserv/set/email
+share/dancer-services/chanserv/set/entrymsg
+share/dancer-services/chanserv/set/forget
+share/dancer-services/chanserv/set/founder
+share/dancer-services/chanserv/set/guard
+share/dancer-services/chanserv/set/index
+share/dancer-services/chanserv/set/mlock
+share/dancer-services/chanserv/set/password
+share/dancer-services/chanserv/set/private
+share/dancer-services/chanserv/set/restricted
+share/dancer-services/chanserv/set/secure
+share/dancer-services/chanserv/set/secureops
+share/dancer-services/chanserv/set/splitops
+share/dancer-services/chanserv/set/successor
+share/dancer-services/chanserv/set/topiclock
+share/dancer-services/chanserv/set/url
+share/dancer-services/chanserv/set/verbose
+share/dancer-services/chanserv/setpass
+share/dancer-services/chanserv/status
+share/dancer-services/chanserv/unban
+share/dancer-services/chanserv/unforbid
+share/dancer-services/chanserv/voice
+share/dancer-services/global/gchannote
+share/dancer-services/global/gcmemo
+share/dancer-services/global/gmemo
+share/dancer-services/global/gnote
+share/dancer-services/global/index
+share/dancer-services/global/motd
+share/dancer-services/helpserv/chanserv
+share/dancer-services/helpserv/index
+share/dancer-services/helpserv/memoserv
+share/dancer-services/helpserv/nickserv
+share/dancer-services/helpserv/operserv
+share/dancer-services/helpserv/statserv
+share/dancer-services/memoserv/del
+share/dancer-services/memoserv/forward
+share/dancer-services/memoserv/index
+share/dancer-services/memoserv/list
+share/dancer-services/memoserv/purge
+share/dancer-services/memoserv/read
+share/dancer-services/memoserv/reply
+share/dancer-services/memoserv/send
+share/dancer-services/memoserv/undel
+share/dancer-services/nickserv/access/add
+share/dancer-services/nickserv/access/del
+share/dancer-services/nickserv/access/index
+share/dancer-services/nickserv/access/list
+share/dancer-services/nickserv/collide
+share/dancer-services/nickserv/drop
+share/dancer-services/nickserv/droplink
+share/dancer-services/nickserv/flag
+share/dancer-services/nickserv/forbid
+share/dancer-services/nickserv/ghost
+share/dancer-services/nickserv/identify
+share/dancer-services/nickserv/index
+share/dancer-services/nickserv/info
+share/dancer-services/nickserv/link
+share/dancer-services/nickserv/list
+share/dancer-services/nickserv/noexpire
+share/dancer-services/nickserv/recover
+share/dancer-services/nickserv/register
+share/dancer-services/nickserv/release
+share/dancer-services/nickserv/set/automask
+share/dancer-services/nickserv/set/email
+share/dancer-services/nickserv/set/gsm
+share/dancer-services/nickserv/set/hide
+share/dancer-services/nickserv/set/index
+share/dancer-services/nickserv/set/kill
+share/dancer-services/nickserv/set/master
+share/dancer-services/nickserv/set/memos
+share/dancer-services/nickserv/set/notify
+share/dancer-services/nickserv/set/oper
+share/dancer-services/nickserv/set/password
+share/dancer-services/nickserv/set/phone
+share/dancer-services/nickserv/set/private
+share/dancer-services/nickserv/set/secure
+share/dancer-services/nickserv/set/signon
+share/dancer-services/nickserv/set/uin
+share/dancer-services/nickserv/set/unsecure
+share/dancer-services/nickserv/set/url
+share/dancer-services/nickserv/setpass
+share/dancer-services/nickserv/showlink
+share/dancer-services/nickserv/unforbid
+share/dancer-services/nickserv/unlink
+share/dancer-services/operserv/channel
+share/dancer-services/operserv/clones
+share/dancer-services/operserv/dcc/boot
+share/dancer-services/operserv/dcc/index
+share/dancer-services/operserv/dcc/link
+share/dancer-services/operserv/dcc/motd
+share/dancer-services/operserv/dcc/quit
+share/dancer-services/operserv/dcc/unlink
+share/dancer-services/operserv/dcc/who
+share/dancer-services/operserv/die
+share/dancer-services/operserv/dump
+share/dancer-services/operserv/floodoff
+share/dancer-services/operserv/gline
+share/dancer-services/operserv/help
+share/dancer-services/operserv/htm
+share/dancer-services/operserv/hub
+share/dancer-services/operserv/identify
+share/dancer-services/operserv/ignore
+share/dancer-services/operserv/index
+share/dancer-services/operserv/join
+share/dancer-services/operserv/jump
+share/dancer-services/operserv/jupe
+share/dancer-services/operserv/kill
+share/dancer-services/operserv/killchan
+share/dancer-services/operserv/killhost
+share/dancer-services/operserv/kline
+share/dancer-services/operserv/off
+share/dancer-services/operserv/omode
+share/dancer-services/operserv/on
+share/dancer-services/operserv/part
+share/dancer-services/operserv/rehash
+share/dancer-services/operserv/reload
+share/dancer-services/operserv/restart
+share/dancer-services/operserv/save
+share/dancer-services/operserv/secure
+share/dancer-services/operserv/set
+share/dancer-services/operserv/stats
+share/dancer-services/operserv/status
+share/dancer-services/operserv/trace
+share/dancer-services/operserv/umode
+share/dancer-services/operserv/ungline
+share/dancer-services/operserv/unjupe
+share/dancer-services/seenserv/index
+share/dancer-services/seenserv/seen
+share/dancer-services/seenserv/seennick
+share/dancer-services/seenserv/seenstat
+share/dancer-services/seenserv/unseen
+share/dancer-services/statserv/clearstats
+share/dancer-services/statserv/domain
+share/dancer-services/statserv/greplog
+share/dancer-services/statserv/host
+share/dancer-services/statserv/index
+share/dancer-services/statserv/refresh
+share/dancer-services/statserv/server
+share/dancer-services/statserv/showadmins
+share/dancer-services/statserv/showopers
+share/dancer-services/statserv/showstats
+share/dancer-services/statserv/split
+share/dancer-services/statserv/stats
+@dirrm share/dancer-services/statserv
+@dirrm share/dancer-services/seenserv
+@dirrm share/dancer-services/operserv/dcc
+@dirrm share/dancer-services/operserv
+@dirrm share/dancer-services/nickserv/set
+@dirrm share/dancer-services/nickserv/access
+@dirrm share/dancer-services/nickserv
+@dirrm share/dancer-services/memoserv
+@dirrm share/dancer-services/helpserv
+@dirrm share/dancer-services/global
+@dirrm share/dancer-services/chanserv/set
+@dirrm share/dancer-services/chanserv/level
+@dirrm share/dancer-services/chanserv/autorem
+@dirrm share/dancer-services/chanserv/akick
+@dirrm share/dancer-services/chanserv/access
+@dirrm share/dancer-services/chanserv
+@dirrm share/dancer-services
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.dancer
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%%%DOCSDIR%%/README-FLAGS
+%%PORTDOCS%%%%DOCSDIR%%/README-PTHREADS
+%%PORTDOCS%%%%DOCSDIR%%/ReleaseNotes/RELEASENOTES-1.4.0
+%%PORTDOCS%%%%DOCSDIR%%/ReleaseNotes/RELEASENOTES-1.4.2
+%%PORTDOCS%%%%DOCSDIR%%/ReleaseNotes/RELEASENOTES-1.4.5
+%%PORTDOCS%%%%DOCSDIR%%/ReleaseNotes/RELEASENOTES-1.4.6
+%%PORTDOCS%%%%DOCSDIR%%/ReleaseNotes/RELEASENOTES-1.5.0
+%%PORTDOCS%%%%DOCSDIR%%/ReleaseNotes/RELEASENOTES-1.6.0
+%%PORTDOCS%%%%DOCSDIR%%/ReleaseNotes/RELEASENOTES-1.6.1
+%%PORTDOCS%%%%DOCSDIR%%/ReleaseNotes/RELEASENOTES-1.7
+%%PORTDOCS%%%%DOCSDIR%%/ReleaseNotes/RELEASENOTES-1.7.2
+%%PORTDOCS%%%%DOCSDIR%%/ReleaseNotes/RELEASENOTES-1.7.3
+%%PORTDOCS%%%%DOCSDIR%%/TCM-LINKING
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ReleaseNotes
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

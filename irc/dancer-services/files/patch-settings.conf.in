@@ -1,0 +1,33 @@
+--- bin/settings.conf.in.orig	Tue Mar 25 06:09:13 2003
++++ bin/settings.conf.in	Tue Apr 15 18:30:41 2003
+@@ -80,19 +80,19 @@
+ # 
+ ################################################################
+ 
+-HPath              "@prefix@/hybserv"
+-ConfigFile         "hybserv.conf"
+-LogFile            "hybserv.log"
+-PidFile            "hybserv.pid"
+-PipeFile           "hybserv.pipe"
+-HelpPath           "help"
+-DccMotdFile        "motd.dcc"
+-MotdFile           "motd.global"
++HPath              "@@prefix@@/etc/dancer-services"
++ConfigFile         "@@prefix@@/etc/dancer-services/services.conf"
++LogFile            "/var/log/dancer-services/services.log"
++PidFile            "/var/run/dancer-services/dancer-services.pid"
++PipeFile           "/var/run/dancer-services/dancer-services.pipe"
++HelpPath           "/usr/local/share/dancer-services/help"
++DccMotdFile        "@@prefix@@/etc/dancer-services/motd.dcc"
++MotdFile           "@@prefix@@/etc/dancer-services/motd.global"
+ 
+-GlineFile          "glines.conf"
+-JupeFile           "jupes.conf"
++GlineFile          "@@prefix@@/etc/dancer-services/glines.conf"
++JupeFile           "@@prefix@@/etc/dancer-services/jupes.conf"
+ 
+-LogonNews          "logon.news"
++LogonNews          "@@prefix@@/etc/dancer-services/logon.news"
+ 
+ ################################################################
+ #

@@ -1,0 +1,11 @@
+--- include/config.h.in.orig	Sun May 12 00:46:26 2002
++++ include/config.h.in	Tue Apr 15 19:01:09 2003
+@@ -6,7 +6,7 @@
+  * it. -kre
+  */
+ 
+-#define   SETPATH   "@prefix@/dancer-services/settings.conf"
++#define   SETPATH   "@prefix@/etc/dancer-services/settings.conf"
+ 
+ /*
+  * Define this to enable NickServ (Nickname Services)
