@@ -8,7 +8,7 @@
 PORTNAME=	pybench
 PORTVERSION=	1.0
 CATEGORIES=	benchmarks python
-MASTER_SITES=	http://www.lemburg.com/files/python/
+MASTER_SITES=	http://www.egenix.com/files/python/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An extensible benchmark suite for Python
@@ -23,13 +23,15 @@ do-build:
 	@${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}
 
 do-install:
-	@${MKDIR} ${PREFIX}/share/pybench
+	@${MKDIR} ${DATADIR}
 	@(cd ${WRKSRC} && ${TAR} --exclude README -c -f - .) \
-		| (cd ${PREFIX}/share/pybench && ${TAR} --unlink -x -f -)
-	@printf '#!/bin/sh\n${PYTHON_CMD} ${PREFIX}/share/pybench/pybench.py "$$@"\n' \
+		| (cd ${DATADIR} && ${TAR} --unlink -x -f -)
+	@${PRINTF} '#!/bin/sh\n${PYTHON_CMD} ${DATADIR}/pybench.py "$$@"\n' \
 		> ${WRKDIR}/pybench.sh
-	@${MKDIR} ${PREFIX}/share/doc/pybench
-	@${INSTALL_MAN} ${WRKSRC}/README ${PREFIX}/share/doc/pybench
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_MAN} ${WRKSRC}/README ${DOCSDIR}
+.endif
 	@${INSTALL_SCRIPT} ${WRKDIR}/pybench.sh ${PREFIX}/bin/pybench
 
 .include <bsd.port.mk>
