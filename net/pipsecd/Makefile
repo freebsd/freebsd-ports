@@ -1,23 +1,22 @@
 # New ports collection makefile for:	pipsecd
-# Version required:		19990519
+# Version required:		19990831
 # Date created:			16 Aug 1999
 # Whom:				Patrick Bihan-Faou <patrick@mindstep.com>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	tunip
-PKGNAME=	pipsecd-19990519
+DISTNAME=	pipsec-19990831
+PKGNAME=	pipsecd-19990831
 CATEGORIES=	net security
-MASTER_SITES=	http://www.enst.fr/~beyssac/
+MASTER_SITES=	http://www.enst.fr/~beyssac/ \
+		http://www.mindstep.com/pipsec/
 
 MAINTAINER=	patrick@mindstep.com
 
 BUILD_DEPENDS=	${PREFIX}/lib/libcrypto.a:${PORTSDIR}/security/openssl:install
 
-ALL_TARGET=		pipsecd
-
-WRKSRC=		${WRKDIR}/pipsec-19990519
+ALL_TARGET=	pipsecd
 
 .include <bsd.port.pre.mk>
 
