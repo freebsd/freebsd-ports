@@ -16,7 +16,7 @@ BUILD_DEPENDS=\
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/DBD/CSV.pm:${PORTSDIR}/databases/p5-DBD-CSV \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Date/Manip.pm:${PORTSDIR}/devel/p5-Date-Manip \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/SQL/Statement.pm:${PORTSDIR}/databases/p5-SQL-Statement \
+		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/SQL/Statement.pm:${PORTSDIR}/databases/p5-SQL-Statement \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/MIME/Tools.pm:${PORTSDIR}/mail/p5-MIME-Tools \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/MIME/Types.pm:${PORTSDIR}/mail/p5-MIME-Types \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/URI.pm:${PORTSDIR}/net/p5-URI \
