@@ -30,4 +30,10 @@ do-install:
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "alpha" && ${OSVERSION} >= 502102
+BROKEN=		"Does not compile (coredump)"
+.endif
+
+.include <bsd.port.post.mk>
