@@ -25,11 +25,13 @@
     SUBDIR += ffsrecov
     SUBDIR += flexbackup
     SUBDIR += gcombust
+    SUBDIR += glload
     SUBDIR += gnomeadmin
     SUBDIR += gnomecontrolcenter
-    SUBDIR += glload
+    SUBDIR += gpart
     SUBDIR += gtar
     SUBDIR += gtop
+    SUBDIR += guitar
     SUBDIR += idled
     SUBDIR += lavaps
     SUBDIR += libretto-config
