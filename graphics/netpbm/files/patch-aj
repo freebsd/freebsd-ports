@@ -1,5 +1,5 @@
---- pbmplus.h.orig	Fri Mar 24 09:08:33 2000
-+++ pbmplus.h	Sat Apr  1 10:32:36 2000
+--- pbmplus.h.orig	Tue Apr  4 02:34:36 2000
++++ pbmplus.h	Sat Apr 15 08:00:00 2000
 @@ -24,6 +24,9 @@
  #include <errno.h>
  #endif
@@ -28,7 +28,7 @@
  /*#define RGB_DB "/usr/openwin/lib/rgb.txt"*/
  #ifdef VMS
  #define RGB_DB "PBMplus_Dir:RGB.TXT"
-@@ -117,11 +120,13 @@
+@@ -117,6 +120,7 @@
  #ifndef VMS
  #include <unistd.h>
  #endif
@@ -36,9 +36,52 @@
  extern int atoi();
  extern void exit();
  #ifndef __osf__
- extern long time();
+@@ -124,6 +128,7 @@
  extern int write();
+ #endif
+ #endif
 +#endif
- #endif
- #endif
+ 
+ /* CONFIGURE: On most BSD systems, malloc() gets declared in stdlib.h, on
+ ** system V, it gets declared in malloc.h. On some systems, malloc.h
+@@ -264,40 +269,6 @@
+ int pm_readlittlelong ARGS(( FILE* in, long* lP ));
+ int pm_writelittlelong ARGS(( FILE* out, long l ));
+ 
+-
+-/* Command line option parsing */
+-#include "pbmplus.h"
+-/* Shhopt is Sverre Huseby's command line parsing package, which makes
+-   writing command parsing code quick and error free.  Some of the Netpbm
+-   programs use it.
+-*/
+-#include "shhopt.h"
+-
+-void pm_optParseOptions(int *argc, char *argv[],
+-                        optStruct opt[], int allowNegNum);
+-/* Use pm_optParseOptions instead of optParseOptions in order to use the
+-   shared Netpbm libraries
+-*/
+-
+-/* You can use OPTENTRY to assign a value to a dynamically or automatically
+-   allocated optStruct structure with minimal typing and easy readability.
+-
+-   Here is an example:
+-
+-       unsigned int option_def_index = 0;
+-       optStruct *option_def = malloc(100*sizeof(optStruct));
+-       OPTENTRY('h', "help",     OPT_FLAG, &help_flag, 0);
+-       OPTENTRY(0,   "alphaout", OPT_STRING, &alpha_filename, 0);
+-*/       
+-
+-#define OPTENTRY(shortvalue,longvalue,typevalue,outputvalue,flagvalue) {\
+-    option_def[option_def_index].shortName = (shortvalue); \
+-    option_def[option_def_index].longName = (longvalue); \
+-    option_def[option_def_index].type = (typevalue); \
+-    option_def[option_def_index].arg = (outputvalue); \
+-    option_def[option_def_index].flags = (flagvalue); \
+-    option_def[++option_def_index].type = OPT_END; \
+-    }
+ 
+ /* Compatibility stuff */
  

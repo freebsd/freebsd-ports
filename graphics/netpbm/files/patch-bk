@@ -1,0 +1,20 @@
+--- pbm/libpbm1.c.orig	Tue Apr  4 02:32:49 2000
++++ pbm/libpbm1.c	Sat Apr 15 08:00:00 2000
+@@ -141,17 +141,6 @@
+     }
+ 
+ 
+-/* Wrapper for Shhopt, to get it into the shared library */
+-
+-void 
+-pm_optParseOptions(int *argc, char *argv[],
+-                   optStruct opt[], int allowNegNum) {
+-
+-    optParseOptions(argc, argv, opt, allowNegNum);
+-
+-}
+-
+-
+ /* Log base two hacks. */
+ 
+ int

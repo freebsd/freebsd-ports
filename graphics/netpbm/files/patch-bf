@@ -1,5 +1,5 @@
 --- pnm/Makefile.orig	Tue Apr  4 04:38:37 2000
-+++ pnm/Makefile	Sat Apr  8 12:00:00 2000
++++ pnm/Makefile	Sat Apr 15 08:00:00 2000
 @@ -32,6 +32,8 @@
  
  NETPBMLIBS = $(LIBPNM) \
@@ -17,16 +17,20 @@
  
  MANUALS1 = $(BINARIES) $(SCRIPTS)
  MANUALS3 = libpnm
-@@ -104,44 +107,47 @@
+@@ -103,45 +106,49 @@
+ PHONY: merge
  merge:    $(MERGENAME) $(NOMERGEBINARIES)
  
- tifftopnm pnmtotiff:  %: %.o $(NETPBMLIBS) $(TIFFLIB_DIR)/libtiff.so 
+-tifftopnm pnmtotiff:  %: %.o $(NETPBMLIBS) $(TIFFLIB_DIR)/libtiff.so 
 -	$(LD) $(LDFLAGS) -o $@ $@.o $(NETPBMLIBS) -L$(TIFFLIB_DIR) -ltiff \
-+	$(LD) $(LDFLAGS) -o $@ $@.o $(NETPBMLD) -lm -L$(TIFFLIB_DIR) -ltiff \
- 	  $(JPEGLD) $(CDEBUG)
+-	  $(JPEGLD) $(CDEBUG)
++tifftopnm: %: %.o $(NETPBMLIBS) $(TIFFLIB_DIR)/libtiff.so 
++	$(LD) $(LDFLAGS) -o $@ $@.o $(NETPBMLD) ../shhopt/libshhopt.a \
++	  -lm -L$(TIFFLIB_DIR) -ltiff $(JPEGLD) $(CDEBUG)
  
- pnmtotiffcmyk: %: %.o $(NETPBMLIBS) $(TIFFLIB_DIR)/libtiff.so
+-pnmtotiffcmyk: %: %.o $(NETPBMLIBS) $(TIFFLIB_DIR)/libtiff.so
 -	$(LD) $(LDFLAGS) -o $@ $@.o $(NETPBMLIBS) -lm -L$(TIFFLIB_DIR) -ltiff \
++pnmtotiff pnmtotiffcmyk: %: %.o $(NETPBMLIBS) $(TIFFLIB_DIR)/libtiff.so
 +	$(LD) $(LDFLAGS) -o $@ $@.o $(NETPBMLD) -lm -L$(TIFFLIB_DIR) -ltiff \
  	  $(JPEGLD) $(CDEBUG)
  
@@ -47,7 +51,8 @@
  
  jpegtopnm: %: %.o $(NETPBMLIBS)
 -	$(LD) $(LDFLAGS) -o $@ $@.o $(NETPBMLIBS) $(JPEGLD) -lm $(CDEBUG)
-+	$(LD) $(LDFLAGS) -o $@ $@.o $(NETPBMLD) $(JPEGLD) -lm $(CDEBUG)
++	$(LD) $(LDFLAGS) -o $@ $@.o $(NETPBMLD) ../shhopt/libshhopt.a \
++	  $(JPEGLD) -lm $(CDEBUG)
  
  # Rule for objects.
  $(OBJECTS) $(LIBOBJECTS): %.o: %.c

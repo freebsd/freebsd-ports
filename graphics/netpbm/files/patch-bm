@@ -1,0 +1,30 @@
+--- pnm/tifftopnm.c.orig	Tue Apr  4 03:10:27 2000
++++ pnm/tifftopnm.c	Sat Apr 15 08:00:00 2000
+@@ -35,6 +35,7 @@
+ */
+ 
+ #include <string.h>
++#include "shhopt.h"
+ #include "pnm.h"
+ #ifdef VMS
+ #ifdef SYSV
+@@ -512,9 +513,19 @@
+          */
+     unsigned int option_def_index;
+ 
++    /* Create the OptStruct structure describing our options */
++    #define OPTENTRY(shortvalue,longvalue,typevalue,outputvalue,flagvalue) {\
++      option_def[option_def_index].shortName = (shortvalue); \
++      option_def[option_def_index].longName = (longvalue); \
++      option_def[option_def_index].type = (typevalue); \
++      option_def[option_def_index].arg = (outputvalue); \
++      option_def[option_def_index].flags = (flagvalue); \
++      option_def_index++; \
++      }
+     option_def_index = 0;   /* incremented by OPTENTRY */
+     OPTENTRY('h', "headerdump", OPT_FLAG,   &cmdline_p->headerdump,     0);
+     OPTENTRY(0,   "alphaout",   OPT_STRING, &cmdline_p->alpha_filename, 0);
++    option_def[option_def_index].type = OPT_END;
+ 
+     /* Set the defaults */
+     cmdline_p->headerdump = 0;

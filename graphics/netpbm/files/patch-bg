@@ -1,5 +1,5 @@
 --- ppm/Makefile.orig	Tue Apr  4 04:53:40 2000
-+++ ppm/Makefile	Sat Apr  8 12:00:00 2000
++++ ppm/Makefile	Sat Apr 15 08:00:00 2000
 @@ -19,8 +19,15 @@
  endif
  
@@ -16,11 +16,18 @@
  PORTBINARIES =	bmptoppm eyuvtoppm gouldtoppm hpcdtoppm ilbmtoppm imgtoppm \
  		mtvtoppm pcxtoppm pgmtoppm pi1toppm picttoppm \
  		pjtoppm \
-@@ -40,6 +47,7 @@
+@@ -34,12 +41,13 @@
+ 		ppmtotga ppmtouil ppmtoxpm ppmtoyuv \
+ 		ppmtoyuvsplit \
+ 		qrttoppm rawtoppm rgb3toppm sldtoppm spctoppm \
+-		sputoppm tgatoppm ximtoppm xpmtoppm xvminitoppm \
++		sputoppm xpmtoppm xvminitoppm \
+ 		yuvtoppm yuvsplittoppm
+ 
  # We don't build vidtoppm by default, because it requires special libraries
  # and there is no known requirement for vidtoppm.
  
-+NOMERGEBINARIES =
++NOMERGEBINARIES = tgatoppm ximtoppm
  ifneq ($(JPEGLIB_DIR), NONE)
    ifneq ($(JPEGHDR_DIR), NONE)
        NOMERGEBINARIES += ppmtojpeg
@@ -41,7 +48,7 @@
  
  .PHONY: all
  all:        $(BINARIES)
-@@ -72,29 +81,31 @@
+@@ -72,29 +81,35 @@
  
  # Rules for plain programs.
  $(PORTBINARIES): %: %.o $(NETPBMLIBS)
@@ -57,6 +64,10 @@
 -ppmtojpeg: %: %.o $(NETPBMLIBS)
 -	$(LD) $(LDFLAGS) -o $@ $@.o $(NETPBMLIBS) \
 -	  -L $(JPEGLIB_DIR) -ljpeg $(CDEBUG)
++tgatoppm ximtoppm: %: %.o $(NETPBMLIBS) ../shhopt/libshhopt.a
++	$(LD) $(LDFLAGS) -o $@ $@.o $(NETPBMLD) ../shhopt/libshhopt.a \
++	  $(CDEBUG)
++
 +ppmtojpeg: %: %.o $(NETPBMLIBS) ../shhopt/libshhopt.a
 +	$(LD) $(LDFLAGS) -o $@ $@.o $(NETPBMLD) ../shhopt/libshhopt.a \
 +	  $(JPEGLD) $(CDEBUG)

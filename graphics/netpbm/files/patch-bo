@@ -1,0 +1,43 @@
+--- ppm/ppmtojpeg.c.orig	Tue Apr  4 02:33:00 2000
++++ ppm/ppmtojpeg.c	Sat Apr 15 08:00:00 2000
+@@ -29,6 +29,7 @@
+ #include <errno.h>
+ #include <stdio.h>
+ #include <jpeglib.h>
++#include "shhopt.h"
+ #include "ppm.h"
+ 
+ #define EXIT_WARNING 2   /* Goes with EXIT_SUCCESS, EXIT_FAILURE in stdlib.h */
+@@ -324,6 +325,15 @@
+     char ** const argv_parse = malloc(argc*sizeof(char *));
+     /* argv, except we modify it as we parse */
+ 
++    /* Create the OptStruct structure describing our options */
++    #define OPTENTRY(shortvalue,longvalue,typevalue,outputvalue,flagvalue) {\
++      option_def[option_def_index].shortName = (shortvalue); \
++      option_def[option_def_index].longName = (longvalue); \
++      option_def[option_def_index].type = (typevalue); \
++      option_def[option_def_index].arg = (outputvalue); \
++      option_def[option_def_index].flags = (flagvalue); \
++      option_def_index++; \
++      }
+     option_def_index = 0;   /* incremented by OPTENTRY */
+     OPTENTRY(0, "verbose",     OPT_FLAG,   &cmdline_p->verbose,        0);
+     OPTENTRY(0, "quality",     OPT_UINT,   &cmdline_p->quality,        0);
+@@ -343,6 +353,7 @@
+     OPTENTRY(0, "optimize",    OPT_FLAG,   &cmdline_p->optimize,       0);
+     OPTENTRY(0, "optimise",    OPT_FLAG,   &cmdline_p->optimize,       0);
+     OPTENTRY(0, "restart",     OPT_STRING, &restart,                   0);
++    option_def[option_def_index].type = OPT_END; 
+ 
+     /* Set the defaults */
+     cmdline_p->verbose = FALSE;
+@@ -366,7 +377,7 @@
+     argc_parse = argc;
+     for (i=0; i < argc; i++) argv_parse[i] = argv[i];
+ 
+-    pm_optParseOptions(&argc_parse, argv_parse, option_def, 0);
++    optParseOptions(&argc_parse, argv_parse, option_def, 0);
+     /* Uses and sets argc_parse, argv_parse and all of *cmdline_p. */
+ 
+     if (argc_parse - 1 == 0)
