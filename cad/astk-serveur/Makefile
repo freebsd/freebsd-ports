@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	astk
-PORTVERSION=	1.2.0
+PORTVERSION=	1.2.1
 CATEGORIES=	cad
 MASTER_SITES=	http://www.code-aster.org/FICHIERS/
 .if !defined(CLIENT_SEUL)
@@ -14,8 +14,7 @@ PKGNAMESUFFIX=	-serveur
 .else
 PKGNAMESUFFIX=	-client
 .endif
-DISTNAME=	aster-full-src-${ASTER_VER}-3
-EXTRACT_SUFX=	.tar
+DISTNAME=	aster-full-src-${ASTER_VER}-4
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT?=	Graphical interface for Code_Aster (server side)
@@ -153,7 +152,7 @@ post-patch:
 		${WRKSRC}/bin/as_serv.orig
 .else
 	@${RM} ${WRKSRC}/lib/ASTK/init.tcl.orig	${WRKSRC}/lib/ASTK/astkrc/outils.orig	\
-		${WRKSRC}/share/tkselecteur.tcl.orig ${WRKSRC}/lib/ASTK/tools.tcl.orig
+		${WRKSRC}/share/tkselecteur.tcl.orig
 .endif
 
 do-configure:
