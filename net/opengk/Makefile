@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	opengk
-PORTVERSION=	1.0.2
+PORTVERSION=	1.1.1
 CATEGORIES=	net
 MASTER_SITES=	http://www.openh323.org/bin/ \
 		http://www.de.openh323.org/bin/ \
 		http://www.ru.openh323.org/bin/
-DISTNAME=	opengk_1.0.2
+DISTNAME=	opengk_1.1.1
 
 MAINTAINER=	roger@FreeBSD.org
 
@@ -23,7 +23,7 @@ NOCLEANDEPENDS=	yes
 
 USE_NEWGCC=	yes
 USE_GMAKE=	yes
-ALL_TARGET=	opt
+ALL_TARGET=	optnoshared
 MAKE_ENV=	PWLIBDIR=${WRKDIRPREFIX}${.CURDIR}/../openh323/work/pwlib \
 		OPENH323DIR=${WRKDIRPREFIX}${.CURDIR}/../openh323/work/openh323
 THE_MACHTYPE=	${ARCH:S/i386/x86/}
