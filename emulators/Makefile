@@ -68,6 +68,7 @@
     SUBDIR += vMac
     SUBDIR += vgb
     SUBDIR += vgb-bin
+    SUBDIR += vgba-bin
     SUBDIR += vice
     SUBDIR += visualos
     SUBDIR += vmsbackup
