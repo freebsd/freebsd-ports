@@ -7,10 +7,10 @@
 
 PORTNAME=	nag
 PORTVERSION=	1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	deskutils www
-MASTER_SITES=	ftp://ftp.horde.org/pub/nag/tarballs/
-DISTNAME=	${PORTNAME}-${PORTVERSION}-RC3
+MASTER_SITES=	ftp://ftp.horde.org/pub/nag/tarballs/%SUBDIR%/
+MASTER_SITE_SUBDIR=	. old
 
 MAINTAINER=	thierry@pompo.net
 
@@ -50,7 +50,11 @@ do-install:
 	@${CP} -p ${FILESDIR}/httpd.conf.nag ${HORDE_INC}
 	@${PERL} -pi -e "s:/home/httpd/html/horde/nag:${NAGDIR}:g" \
 		${HORDE_INC}/httpd.conf.nag
+	@${CP} -p ${HORDEDIR}/config/registry.php		\
+		${HORDEDIR}/config/registry.php.beforeNag
 	@${PERL} -pi -e "s://UNCOMMENTWHENINSTNAG::" ${HORDEDIR}/config/registry.php
+	@${CP} -p ${HORDEDIR}/config/registry.php		\
+		${HORDEDIR}/config/registry.php.afterNag
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for FILE in ${DOCS}
