@@ -5,7 +5,7 @@ MySQL relational database management system.  Most functions provided by
 this programming API are supported.  Some rarely used functions are
 missing, mainly because noone ever requested them.
 
-WWW: http://search.cpan.org/search?dist=DBD-mysql
+WWW: http://search.cpan.org/dist/DBD-mysql/
 
 -- Sergey Skvortsov
 skv@FreeBSD.org
