@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	evolvotron
-PORTVERSION=	0.0.5
+PORTVERSION=	0.2.3
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,21 +15,27 @@ COMMENT=	Generative software that evolves images/textures/patterns
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-QTDIR?=		${X11BASE}
 USE_QT_VER=	3
-
+USE_PYTHON=	yes
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
+USE_REINPLACE=	yes
 
-MAKE_ENV=	QTDIR="${QTDIR}"
+MAKE_ENV=	QTDIR="${QT_PREFIX}" \
+		QMAKESPEC=${LOCALBASE}/share/qt/mkspecs/freebsd-g++
+CONFIGURE_ENV=	QTDIR="${QT_PREFIX}" \
+		QMAKESPEC=${LOCALBASE}/share/qt/mkspecs/freebsd-g++
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 501000
-BROKEN=		"Does not compile"
-.endif
+post-patch:
+	@${REINPLACE_CMD} -e 's/-pthread/${PTHREAD_LIBS}/' ${WRKSRC}/common.pro
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/evolvotron ${PREFIX}/bin
+	@${INSTALL_PROGRAM} ${WRKSRC}/evolvotron/evolvotron ${PREFIX}/bin
+	@${INSTALL_PROGRAM} ${WRKSRC}/evolvotron_mutate/evolvotron_mutate ${PREFIX}/bin
+	@${INSTALL_PROGRAM} ${WRKSRC}/evolvotron_render/evolvotron_render ${PREFIX}/bin
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/evolvotron.html ${DOCSDIR}
+.endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

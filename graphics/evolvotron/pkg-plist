@@ -1,1 +1,5 @@
 bin/evolvotron
+bin/evolvotron_mutate
+bin/evolvotron_render
+%%PORTDOCS%%%%DOCSDIR%%/evolvotron.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
