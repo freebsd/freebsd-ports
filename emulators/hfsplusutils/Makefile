@@ -61,4 +61,5 @@ BROKEN=	"Does not build on FreeBSD 4.x or earlier"
 BROKEN=		"Broken pkg-plist"
 .endif
 
+DEPRECATED=	"Will be removed after April 15 if still broken"
 .include <bsd.port.post.mk>
