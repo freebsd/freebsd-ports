@@ -26,3 +26,4 @@ bin/JGV.app
 @dirrm JDE/JGV/menu
 @dirrm JDE/JGV/modules
 @dirrm JDE/JGV
+@unexec rmdir %D/JDE 2>/dev/null || true
