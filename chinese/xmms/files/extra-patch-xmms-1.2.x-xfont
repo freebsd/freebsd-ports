@@ -1,6 +1,6 @@
-diff -ru xmms-1.2.3.orig/po/zh_TW.Big5.po xmms-1.2.3/po/zh_TW.Big5.po
---- xmms-1.2.3.orig/po/zh_TW.Big5.po	Tue Sep 19 14:32:28 2000
-+++ xmms-1.2.3/po/zh_TW.Big5.po	Thu Sep 21 11:39:59 2000
+diff -ru po/zh_TW.Big5.po po/zh_TW.Big5.po
+--- po/zh_TW.Big5.po	Tue Sep 19 14:32:28 2000
++++ po/zh_TW.Big5.po	Thu Sep 21 11:39:59 2000
 @@ -3231,17 +3231,17 @@
  msgid "Credits"
  msgstr "·PÁÂ"
@@ -29,9 +29,9 @@ diff -ru xmms-1.2.3.orig/po/zh_TW.Big5.po xmms-1.2.3/po/zh_TW.Big5.po
 -#~ msgstr "³¯«T¥ò (xfont ¸É¤B)"
 +msgid "Chun-Chung Chen (xfont patch)"
 +msgstr "³¯«T¥ò (xfont ¸É¤B)"
-diff -ru xmms-1.2.3.orig/xmms/about.c xmms-1.2.3/xmms/about.c
---- xmms-1.2.3.orig/xmms/about.c	Tue Sep  5 06:30:24 2000
-+++ xmms-1.2.3/xmms/about.c	Thu Sep 21 11:39:59 2000
+diff -ru xmms/about.c xmms/about.c
+--- xmms/about.c	Tue Sep  5 06:30:24 2000
++++ xmms/about.c	Thu Sep 21 11:39:59 2000
 @@ -36,6 +36,7 @@
  	N_("Sean Atkinson"),
  	N_("James M. Cape"),
@@ -40,9 +40,9 @@ diff -ru xmms-1.2.3.orig/xmms/about.c xmms-1.2.3/xmms/about.c
  	N_("Tim Ferguson (joystick plugin)"),
  	N_("Ben Gertzfield"),
  	N_("Vesa Halttunen"),
-diff -ru xmms-1.2.3.orig/xmms/main.c xmms-1.2.3/xmms/main.c
---- xmms-1.2.3.orig/xmms/main.c	Fri Sep 15 06:36:10 2000
-+++ xmms-1.2.3/xmms/main.c	Thu Sep 21 11:39:59 2000
+diff -ru xmms/main.c xmms/main.c
+--- xmms/main.c	Fri Sep 15 06:36:10 2000
++++ xmms/main.c	Thu Sep 21 11:39:59 2000
 @@ -319,8 +319,8 @@
  	cfg.always_on_top = FALSE;
  	cfg.sticky = FALSE;
@@ -79,9 +79,9 @@ diff -ru xmms-1.2.3.orig/xmms/main.c xmms-1.2.3/xmms/main.c
 -
  	if (cfg.playlist_font == NULL)
 -		cfg.playlist_font = g_strdup("-adobe-helvetica-bold-r-*-*-10-*");
-+		cfg.playlist_font = g_strdup("-adobe-helvetica-bold-r-*-*-10-*,*-ming-medium-r-*-*-10-*");
++		cfg.playlist_font = g_strdup("-adobe-helvetica-bold-r-*-*-10-*,*-*-medium-r-*-*-10-*");
 +	if (cfg.playinfo_font == NULL)
-+		cfg.playinfo_font = g_strdup("-adobe-helvetica-medium-r-*-*-8-*,*-ming-medium-r-*-*-8-*");
++		cfg.playinfo_font = g_strdup("-adobe-helvetica-medium-r-*-*-8-*,*-*-medium-r-*-*-8-*");
  	if (cfg.outputplugin == NULL)
  	{
  #if defined(HAVE_SYS_SOUNDCARD_H) || defined(HAVE_MACHINE_SOUNDCARD_H)
@@ -102,8 +102,8 @@ diff -ru xmms-1.2.3.orig/xmms/main.c xmms-1.2.3/xmms/main.c
  	textbox_set_scroll(mainwin_info, cfg.autoscroll);
  	mainwin_rate_text = create_textbox(&mainwin_wlist, mainwin_bg, mainwin_gc, 111, 43, 15, 0, SKIN_TEXT);
  	mainwin_freq_text = create_textbox(&mainwin_wlist, mainwin_bg, mainwin_gc, 156, 43, 10, 0, SKIN_TEXT);
---- xmms-1.2.3.orig/xmms/main.h	Tue Aug 29 11:18:19 2000
-+++ xmms-1.2.3/xmms/main.h	Thu Sep 21 11:39:59 2000
+--- xmms/main.h	Tue Aug 29 11:18:19 2000
++++ xmms/main.h	Thu Sep 21 11:39:59 2000
 @@ -45,8 +45,9 @@
  	gboolean no_playlist_advance, smooth_title_scroll;
  	gboolean use_backslash_as_dir_delimiter, enable_dga;
@@ -115,9 +115,9 @@ diff -ru xmms-1.2.3.orig/xmms/main.c xmms-1.2.3/xmms/main.c
  	gchar *effectplugin;
  	gchar *disabled_iplugins, *enabled_gplugins, *enabled_vplugins;
  	gchar *eqpreset_default_file, *eqpreset_extension;
-diff -ru xmms-1.2.3.orig/xmms/prefswin.c xmms-1.2.3/xmms/prefswin.c
---- xmms-1.2.3.orig/xmms/prefswin.c	Tue Sep 12 06:26:38 2000
-+++ xmms-1.2.3/xmms/prefswin.c	Thu Sep 21 11:39:59 2000
+diff -ru xmms/prefswin.c xmms/prefswin.c
+--- xmms/prefswin.c	Tue Sep 12 06:26:38 2000
++++ xmms/prefswin.c	Thu Sep 21 11:39:59 2000
 @@ -61,6 +61,11 @@
  GtkWidget *prefswin_options_font_vbox;
  GtkWidget *prefswin_options_font_entry, *prefswin_options_font_browse;
@@ -251,9 +251,9 @@ diff -ru xmms-1.2.3.orig/xmms/prefswin.c xmms-1.2.3/xmms/prefswin.c
  	sprintf(temp, "%u", cfg.pause_between_songs_time);
  	gtk_entry_set_text(GTK_ENTRY(prefswin_options_pbs_entry), temp);
  
-diff -ru xmms-1.2.3.orig/xmms/skin.c xmms-1.2.3/xmms/skin.c
---- xmms-1.2.3.orig/xmms/skin.c	Fri Sep 15 06:36:10 2000
-+++ xmms-1.2.3/xmms/skin.c	Thu Sep 21 11:41:23 2000
+diff -ru xmms/skin.c xmms/skin.c
+--- xmms/skin.c	Fri Sep 15 06:36:10 2000
++++ xmms/skin.c	Thu Sep 21 11:41:23 2000
 @@ -94,6 +94,56 @@
  	gdk_window_get_size(skinpixmap->def_pixmap, &skinpixmap->width, &skinpixmap->height);
  }
@@ -346,9 +346,9 @@ diff -ru xmms-1.2.3.orig/xmms/skin.c xmms-1.2.3/xmms/skin.c
  			break;
  	}
  	return ret;
-diff -ru xmms-1.2.3.orig/xmms/skin.h xmms-1.2.3/xmms/skin.h
---- xmms-1.2.3.orig/xmms/skin.h	Sat Aug  5 07:10:37 2000
-+++ xmms-1.2.3/xmms/skin.h	Thu Sep 21 11:39:59 2000
+diff -ru xmms/skin.h xmms/skin.h
+--- xmms/skin.h	Sat Aug  5 07:10:37 2000
++++ xmms/skin.h	Thu Sep 21 11:39:59 2000
 @@ -33,7 +33,7 @@
  typedef enum
  {
@@ -367,9 +367,9 @@ diff -ru xmms-1.2.3.orig/xmms/skin.h xmms-1.2.3/xmms/skin.h
  	GdkColor *pledit_normal, def_pledit_normal;
  	GdkColor *pledit_current, def_pledit_current;
  	GdkColor *pledit_normalbg, def_pledit_normalbg;
-diff -ru xmms-1.2.3.orig/xmms/textbox.c xmms-1.2.3/xmms/textbox.c
---- xmms-1.2.3.orig/xmms/textbox.c	Sat Aug  5 07:10:38 2000
-+++ xmms-1.2.3/xmms/textbox.c	Thu Sep 21 11:39:59 2000
+diff -ru xmms/textbox.c xmms/textbox.c
+--- xmms/textbox.c	Sat Aug  5 07:10:38 2000
++++ xmms/textbox.c	Thu Sep 21 11:39:59 2000
 @@ -55,9 +55,9 @@
  		cw = tb->tb_pixmap_width - tb->tb_offset;
  		if (cw > tb->tb_widget.width)
@@ -500,9 +500,9 @@ diff -ru xmms-1.2.3.orig/xmms/textbox.c xmms-1.2.3/xmms/textbox.c
  	g_free(tb->tb_text);
  	g_free(tb);
  }
-diff -ru xmms-1.2.3.orig/xmms/textbox.h xmms-1.2.3/xmms/textbox.h
---- xmms-1.2.3.orig/xmms/textbox.h	Wed Feb 16 13:05:59 2000
-+++ xmms-1.2.3/xmms/textbox.h	Thu Sep 21 11:39:59 2000
+diff -ru xmms/textbox.h xmms/textbox.h
+--- xmms/textbox.h	Wed Feb 16 13:05:59 2000
++++ xmms/textbox.h	Thu Sep 21 11:39:59 2000
 @@ -33,12 +33,14 @@
  	         tb_is_dragging;
  	gint tb_timeout_tag, tb_drag_x, tb_drag_off;
