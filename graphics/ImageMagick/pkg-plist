@@ -319,7 +319,6 @@ share/ImageMagick/www/api/shear.html
 share/ImageMagick/www/api/signature.html
 share/ImageMagick/www/api/stream.html
 share/ImageMagick/www/api/transform.html
-share/ImageMagick/www/api/types/AnnotateInfo.html
 share/ImageMagick/www/api/types/ChromaticityInfo.html
 share/ImageMagick/www/api/types/ColorPacket.html
 share/ImageMagick/www/api/types/DrawInfo.html
