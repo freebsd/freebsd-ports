@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mingw
-PORTVERSION=	20010726
+PORTVERSION=	20011229
 CATEGORIES=	devel
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -15,7 +15,8 @@ MAINTAINER=	doc@hisio.safenet.pl
 
 RUN_DEPENDS=	i386-mingw32msvc-as:${PORTSDIR}/devel/mingw-binutils \
 		mingwm10.dll:${PORTSDIR}/devel/mingw-bin-msvcrt \
-		i386-mingw32msvc-gcc:${PORTSDIR}/devel/mingw-gcc
+		i386-mingw32msvc-gcc:${PORTSDIR}/devel/mingw-gcc \
+		${LOCALBASE}/i386-mingw32msvc/include/GL/gl.h:${PORTSDIR}/devel/mingw-opengl-headers
 
 NO_BUILD=	yes
 
