@@ -18,6 +18,8 @@ share/gnome/gtetrinet/themes/default/theme.cfg
 share/gnome/gtetrinet/themes/small/blocks.png
 share/gnome/gtetrinet/themes/small/theme.cfg
 share/gnome/pixmaps/gtetrinet.png
+share/gnome/pixmaps/gtetrinet/alone.png
+share/gnome/pixmaps/gtetrinet/team.png
 share/locale/am/LC_MESSAGES/gtetrinet.mo
 share/locale/ca/LC_MESSAGES/gtetrinet.mo
 share/locale/cs/LC_MESSAGES/gtetrinet.mo
@@ -32,10 +34,15 @@ share/locale/pt_BR/LC_MESSAGES/gtetrinet.mo
 share/locale/ru/LC_MESSAGES/gtetrinet.mo
 share/locale/sv/LC_MESSAGES/gtetrinet.mo
 share/locale/uk/LC_MESSAGES/gtetrinet.mo
+share/locale/eu/LC_MESSAGES/gtetrinet.mo
+share/locale/sr/LC_MESSAGES/gtetrinet.mo
+share/locale/sr@Latn/LC_MESSAGES/gtetrinet.mo
+share/locale/zh_TW/LC_MESSAGES/gtetrinet.mo
 @dirrm share/gnome/gtetrinet/themes/small
 @dirrm share/gnome/gtetrinet/themes/default
 @dirrm share/gnome/gtetrinet/themes
 @dirrm share/gnome/gtetrinet
+@dirrm share/gnome/pixmaps/gtetrinet
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gtetrinet/themes
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gtetrinet/sound
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gtetrinet/partyline
