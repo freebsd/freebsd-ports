@@ -11,7 +11,6 @@ ISPELL_DEALT=	yes
 ISPELL_DENEU=	yes
 PORTNAME=	ispell
 PORTVERSION= 	19991219
-PKGNAMEPREFIX=	de-
-MASTERDIR=      ${.CURDIR}/../ispell
+MASTERDIR=      ${.CURDIR}/../../textproc/ispell
 
 .include        "${MASTERDIR}/Makefile"
