@@ -9,25 +9,11 @@ PORTNAME=	apache
 PORTVERSION=    1.3.27
 PORTREVISION=   4
 CATEGORIES=	www
-MASTER_SITES=   http://www.apache.org/dist/httpd/ \
-		ftp://ftp.ccs.neu.edu/net/mirrors/ftp.apache.org/apache/dist/httpd/ \
-		ftp://ftp.rge.com/pub/infosystems/apache/dist/httpd/ \
-		ftp://apache.compuex.com/pub/apache/dist/httpd/ \
-		ftp://apache.arctic.org/pub/apache/dist/httpd/ \
-		ftp://ftp.epix.net/pub/apache/dist/httpd/ \
-		ftp://ftp.ameth.org/pub/mirrors/ftp.apache.org/apache/dist/httpd/ \
-		ftp://ftp.connectnet.com/pub/www/apache/httpd/ \
-		ftp://apache.technomancer.com/mirrors/apache/dist/httpd/ \
-		ftp://ftp.raver.net/pub/ftp.apache.org/httpd/ \
-		ftp://www3.service.digital.com/apache/dist/httpd/ \
-		ftp://galileo.galilei.com/pub/apache/httpd/ \
-		ftp://ftp.mtnranch.net/pub/apache/dist/httpd/ \
-		ftp://ftp.iodynamics.com/pub/mirror/apache/dist/httpd/ \
-		ftp://apache.nextpath.com/pub/apache/dist/httpd/ \
-		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/apache/dist/httpd,}
+MASTER_SITES=   ${MASTER_SITE_APACHE_HTTPD}
 DISTNAME=	apache_${PORTVERSION}
 
-#PATCH_SITES=    http://www.apache.org/dist/httpd/patches/apply_to_1.3.26/
+#PATCH_SITES=   ${MASTER_SITE_APACHE_HTTPD}
+#PATCH_SITE_SUBDIR=     patches/apply_to_1.3.27/
 #PATCHFILES=
 #PATCH_DIST_ARGS= -d ${WRKSRC}/src --forward --quiet -E ${PATCH_DIST_STRIP}
 
