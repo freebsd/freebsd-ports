@@ -1,5 +1,3 @@
-../etc/gdomap_if
-../etc/rc.d/GNUstep.sh
 System/Headers/%%GNU_ARCH%%/%%OPSYS%%/GSConfig.h
 System/Headers/%%GNU_ARCH%%/%%OPSYS%%/mframe.h
 System/Headers/Foundation/Foundation.h
@@ -756,3 +754,6 @@ System/Tools/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/sfparse
 @dirrm System/Headers/gnustep/base
 @dirrm System/Headers/gnustep
 @dirrm System/Headers/Foundation
+@cwd %%LOCALBASE%%
+etc/gdomap_if
+etc/rc.d/GNUstep.sh
