@@ -1,4 +1,6 @@
 bin/aleph
+bin/axc
+bin/axl
 etc/aleph/license.txt
 @dirrm etc/aleph
 include/aleph/eng/Argument.hpp
