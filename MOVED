@@ -1155,3 +1155,4 @@ japanese/ptex-pkfonts360||2004-06-18|no longer maintained
 japanese/ptex-pkfonts400||2004-06-18|no longer maintained
 japanese/ptex-pkfonts600||2004-06-18|no longer maintained
 misc/gpt|misc/gpt31|2004-06-18|repocopy to preserve version 3.1 for misc/globus2
+textproc/p5-Search-OpenFTS|textproc/openfts|2004-06-19|duplicate of textproc/openfts

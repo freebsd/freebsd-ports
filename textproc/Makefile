@@ -281,7 +281,6 @@
     SUBDIR += p5-Regex-PreSuf
     SUBDIR += p5-Regexp-Common
     SUBDIR += p5-SVG
-    SUBDIR += p5-Search-OpenFTS
     SUBDIR += p5-Search-Saryer
     SUBDIR += p5-Sort-ArbBiLex
     SUBDIR += p5-Sort-Fields
