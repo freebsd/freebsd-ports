@@ -6394,6 +6394,7 @@ porttools	ports/devel/porttools
 portupgrade	ports/sysutils/portupgrade
 posadis		ports/net/posadis
 pose		ports/palm/pose
+poslib		ports/devel/poslib
 postal		ports/benchmarks/postal
 poster		ports/print/poster
 postfix		ports/mail/postfix
