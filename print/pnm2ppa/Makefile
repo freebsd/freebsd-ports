@@ -14,14 +14,28 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convert PNM images to PPA for some HP printers
 
-RUN_DEPENDS=	gs:${PORTSDIR}/print/ghostscript-gnu \
+.if defined(WITH_GHOSTSCRIPT_AFPL) && ${WITH_GHOSTSCRIPT_AFPL} == yes
+GSPORT?=	print/ghostscript-afpl
+.else
+GSPORT?=	print/ghostscript-gnu
+.endif
+
+RUN_DEPENDS=	gs:${PORTSDIR}/${GSPORT} \
 		enscript:${PORTSDIR}/print/enscript-letter
 
 USE_GETOPT_LONG=	yes
-MAKE_ENV=	LDFLAGS="${LDFLAGS}"	
+MAKE_ENV=	LDFLAGS="${LDFLAGS}"
 CFLAGS+=	${CPPFLAGS}
 
 MAN1=		pnm2ppa.1
+
+pre-fetch:
+.if !defined(WITH_GHOSTSCRIPT_AFPL) || ${WITH_GHOSTSCRIPT_AFPL} != yes
+	@${ECHO} ""
+	@${ECHO} "      Define WITH_GHOSTSCRIPT_AFPL=yes to use"
+	@${ECHO} "      AFPL Postscript interpreter instead of GNU one"
+	@${ECHO} ""
+.endif
 
 post-patch:
 	@${SED} -e "s:%%PREFIX%%:${PREFIX}:g" \
