@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	courier-imap
-PORTVERSION=	2.1.1
+PORTVERSION=	2.1.2
 PORTREVISION=	0
 PORTEPOCH=	1
 CATEGORIES=	mail ipv6
@@ -105,11 +105,11 @@ LIB_DEPENDS=	ldap.1:${PORTSDIR}/net/openldap12 \
 CONFIGURE_ARGS+=--without-authmysql
 PLIST_SUB+=	MYSQLFLAG="@comment "
 .else
+USE_MYSQL=	YES
+PLIST_SUB+=	MYSQLFLAG=""
 CONFIGURE_ARGS+=--with-authmysql \
 		--with-mysql-libs=${LOCALBASE}/lib/mysql \
 		--with-mysql-includes=${LOCALBASE}/include/mysql
-LIB_DEPENDS+=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client
-PLIST_SUB+=	MYSQLFLAG=""
 .endif
 
 .if !defined(WITH_POSTGRESQL)
