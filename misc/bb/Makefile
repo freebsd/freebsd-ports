@@ -14,6 +14,8 @@ MASTER_SITE_SUBDIR=	games
 
 MAINTAINER=		ports@FreeBSD.org
 
+BROKEN=			"Does not build"
+
 LIB_DEPENDS=		aa.1:${PORTSDIR}/graphics/aalib
 
 MAKEFILE=		makefile

@@ -15,6 +15,8 @@ DISTNAME=	asis-${PORTVERSION}-src
 
 MAINTAINER=	thomas@cuivre.fr.eu.org
 
+BROKEN=		"Does not build"
+
 BUILD_DEPENDS=	adagcc:${PORTSDIR}/lang/gnat
 
 USE_GMAKE=	yes
