@@ -5,8 +5,21 @@ lib/netscape/README
 lib/netscape/netscape.bin
 lib/netscape/mailcap
 lib/netscape/movemail
-lib/netscape/java_40
+lib/netscape/vreg
+lib/netscape/registry
 lib/netscape/Netscape.ad
+lib/netscape/java/classes/ifc11.jar
+@exec ln -fs java/classes/%f lib/netscape/%f
+@unexec rm -f lib/netscape/%f
+lib/netscape/java/classes/iiop10.jar
+@exec ln -fs java/classes/%f lib/netscape/%f
+@unexec rm -f lib/netscape/%f
+lib/netscape/java/classes/jae40.jar
+@exec ln -fs java/classes/%f lib/netscape/%f
+@unexec rm -f lib/netscape/%f
+lib/netscape/java/classes/java40.jar
+@exec ln -fs java/classes/%f lib/netscape/%f
+@unexec rm -f lib/netscape/%f
 @cwd /usr/X11R6
 lib/X11/nls/C
 lib/X11/nls/nls.dir
