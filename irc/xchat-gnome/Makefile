@@ -6,20 +6,17 @@
 #
 
 PORTNAME=	xchat
-PORTVERSION=	0.1
-PORTREVISION=	1
+PORTVERSION=	0.2
 CATEGORIES=	irc gnome ipv6
 MASTER_SITES=	http://navi.cx/releases/ \
 		http://members.chello.nl/~g.mast/distfiles/
 PKGNAMESUFFIX=	-gnome
 DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
 
-MAINTAINER=	kwm@rainbow-runner.nl
+MAINTAINER=	kwm@FreeBSD.org
 COMMENT=	An IRC client for GNOME 2 (development version)
 
 USE_X_PREFIX=	yes
-WRKSRC=		${WRKDIR}/${PORTNAME}-${XCHAT_VER}
-XCHAT_VER=	2.0.8
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack libgnomeui
 USE_REINPLACE=	yes
