@@ -1,0 +1,23 @@
+The qmail program is a secure, reliable, efficient simple message
+transfer agent.  It is meant to be a replacement for the entire
+sendmail-binmail system that most UNIX hosts use.
+
+Although qmail holds security and reliability as its top two
+priorities, it is also fast.  On a Pentium under BSD/OS, qmail can
+easily handle 200000 separate messages per day that are injected
+and must then be delivered to local mailboxes!
+
+Security and reliability are qmail's two strengths, however.  The
+qmail package ensures a message, once accepted, will never be lost.
+An optional new mailbox format, maildir, even lets users safely
+read their mail over NFS, while still accepting new mail deliveries.
+
+The following features are supported: host and user masquerading,
+full host hiding, virtual domains, null clients, list-owner rewriting,
+relay control, double-bounce recording, arbitrary RFC 822 address
+lists, cross-host mailing-list loop detection, per-recipient
+checkpointing, downed host backoffs, independent message retry
+schedules, a drop-in sendmail replacement, and more!
+
+http://pobox.com/~djb/qmail.html
+http://www.qmail.org/
