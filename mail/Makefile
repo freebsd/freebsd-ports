@@ -77,6 +77,7 @@
     SUBDIR += kiltdown
     SUBDIR += knewmail
     SUBDIR += lbdb
+    SUBDIR += liamail
     SUBDIR += libesmtp
     SUBDIR += liboe
     SUBDIR += listar
