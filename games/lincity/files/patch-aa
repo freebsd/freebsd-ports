@@ -1,33 +1,60 @@
---- Makefile.old	Sun Feb  9 23:58:27 1997
-+++ Makefile	Thu Feb 13 14:26:14 1997
-@@ -1,18 +1,18 @@
- #  Makefile for LinCity   (c)  I J Peters 1995,1996.
- 
- #       This is where the binaries for LinCity will be placed.
--LC_BINDIR = /usr/local/bin
-+LC_BINDIR = ${PREFIX}/bin
- #          for solaris you might choose...
- #          LC_BINDIR = /opt/lcity/bin
- 
- #       This is where the library/data files will be placed.
--LC_LIBDIR = /usr/local/lib/lincity
-+LC_LIBDIR = ${PREFIX}/lib/lincity
- #          for solaris you might choose...
- #          LC_LIBDIR = /opt/lcity/lib
- export LC_LIBDIR
- 
- #       This is where the manpage will be placed.
--LC_MANDIR = /usr/local/man/man6
-+LC_MANDIR = ${PREFIX}/man/man6
- LC_MANSUF = 6
- #          for solaris you might choose...
- #          LC_LIBDIR = /opt/lcity/man/man6
-@@ -22,7 +22,7 @@
- EXTRA_OPTS = -fstrength-reduce -ffast-math
- WARN_OPTS  = -Wall -Wpointer-arith -Wcast-align -Winline
- # DEBUG_OPTS =-g
--CFLAGS = -O2 $(DEBUG_OPTS) $(EXTRA_OPTS) $(WARN_OPTS) -DLIBDIR=\"$(LC_LIBDIR)\"
-+CFLAGS = -O2 $(DEBUG_OPTS) $(EXTRA_OPTS) $(WARN_OPTS) -DLIBDIR=\"$(LC_LIBDIR)\" -I${X11BASE}/include
- # -fno-strength-reduce
- # PROFF = -pg
- # PROFL = -lc
+*** Makefile.WAS	Tue Oct 28 16:40:56 1997
+--- Makefile	Tue Oct 28 16:40:59 1997
+***************
+*** 1,19 ****
+  #  Makefile for LinCity   (c)  I J Peters 1995,1996.
+  
+  #       This is where the binaries for LinCity will be placed.
+! LC_BINDIR = /usr/local/bin
+  #          for solaris you might choose...
+  #          LC_BINDIR = /opt/lcity/bin
+  
+  #       This is where the library/data files will be placed.
+! LC_LIBDIR = /usr/local/lib/lincity
+  #          for solaris you might choose...
+  #          LC_LIBDIR = /opt/lcity/lib
+  
+  # export LC_LIBDIR
+  
+  #       This is where the manpage will be placed.
+! LC_MANDIR = /usr/local/man/man6
+  LC_MANSUF = 6
+  #          for solaris you might choose...
+  #          LC_LIBDIR = /opt/lcity/man/man6
+--- 1,19 ----
+  #  Makefile for LinCity   (c)  I J Peters 1995,1996.
+  
+  #       This is where the binaries for LinCity will be placed.
+! LC_BINDIR = ${PREFIX}/bin
+  #          for solaris you might choose...
+  #          LC_BINDIR = /opt/lcity/bin
+  
+  #       This is where the library/data files will be placed.
+! LC_LIBDIR = ${PREFIX}/lib/lincity
+  #          for solaris you might choose...
+  #          LC_LIBDIR = /opt/lcity/lib
+  
+  # export LC_LIBDIR
+  
+  #       This is where the manpage will be placed.
+! LC_MANDIR = ${PREFIX}/man/man6
+  LC_MANSUF = 6
+  #          for solaris you might choose...
+  #          LC_LIBDIR = /opt/lcity/man/man6
+***************
+*** 23,29 ****
+  EXTRA_OPTS = -fstrength-reduce -ffast-math
+  WARN_OPTS  = -Wall -Wpointer-arith -Wcast-align -Winline
+  # DEBUG_OPTS =-g
+! CFLAGS = -O2 $(DEBUG_OPTS) $(EXTRA_OPTS) $(WARN_OPTS) -DLIBDIR=\"$(LC_LIBDIR)\"
+  # -fno-strength-reduce
+  # PROFF = -pg
+  # PROFL = -lc
+--- 23,29 ----
+  EXTRA_OPTS = -fstrength-reduce -ffast-math
+  WARN_OPTS  = -Wall -Wpointer-arith -Wcast-align -Winline
+  # DEBUG_OPTS =-g
+! CFLAGS = -O2 $(DEBUG_OPTS) $(EXTRA_OPTS) $(WARN_OPTS) -DLIBDIR=\"$(LC_LIBDIR)\" -I${X11BASE}/include
+  # -fno-strength-reduce
+  # PROFF = -pg
+  # PROFL = -lc

@@ -457,6 +457,7 @@ lib/lincity/help/confinep.hlp
 lib/lincity/help/tover.hlp
 lib/lincity/help/sustain.hlp
 lib/lincity/help/error.hlp
+lib/lincity/help/tech-level.hlp
 lib/lincity/messages/mod_wind_up.mes
 lib/lincity/messages/error.mes
 lib/lincity/messages/coalpowerup.mes
