@@ -21,7 +21,11 @@ RUN_DEPENDS=	${LOCALBASE}/share/gauche/${GAUCHE_VER}/lib/dbm/gdbm.scm:${PORTSDIR
 
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
-GAUCHE_VER=	`gauche-config -V`
+.if exists(${LOCALBASE}/bin/gauche-config)
+GAUCHE_VER!=	`gauche-config -V`
+.else
+GAUCHE_VER=	none
+.endif
 
 post-patch:
 	${REINPLACE_CMD} -e 's,/usr/bin,${PREFIX}/bin,' \
