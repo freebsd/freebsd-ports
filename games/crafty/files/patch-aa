@@ -1,5 +1,5 @@
 --- Makefile.orig	Tue May 18 07:23:36 1999
-+++ Makefile	Sun May 30 13:22:47 1999
++++ Makefile	Sat Jun 19 10:54:51 1999
 @@ -69,13 +69,13 @@
  #           -DUSE_ASSEMBLY_A -DUSE_ASSEMBLY_B
  # asm     = X86.o
@@ -58,3 +58,12 @@
  
  objects = searchr.o search.o thread.o searchmp.o repeat.o next.o nexte.o      \
          nextr.o history.o quiesce.o evaluate.o movgen.o make.o unmake.o       \
+@@ -189,7 +192,7 @@
+ 
+ egtb.o: egtb.cpp
+ 	@echo $(CC) -c $(CFLAGS) egtb.cpp
+-	@$(CC) -c -pipe -D_REENTRANT -mpentium -O $(opts) egtb.cpp
++	@$(CC) -c -pipe -D_REENTRANT -O $(opts) egtb.cpp
+ clean:
+ 	-rm -f *.o crafty X86-elf.X X86-aout.S
+ 
