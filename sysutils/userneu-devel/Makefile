@@ -21,10 +21,10 @@ RUN_DEPENDS=	\
     ${SITE_PERL}/Crypt/RandPasswd.pm:${PORTSDIR}/security/p5-Crypt-RandPasswd/ \
     ${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5/
 
-USE_PERL5=	yes
+USE_PERL5_RUN=	yes
 NO_BUILD=	yes
 
-CONFLICTS=	userneu
+CONFLICTS=	userneu-1.*
 
 SCRIPTS=	userneu.pl smbrepair.pl
 MAN5=		userneu.conf.5
