@@ -1,8 +1,12 @@
-A small utility to read and write TAG info, as well as retrieve the MP3
-Header info and print it all out in a nice format.
+A small utility to read and write ID3 tags, as well as retrieve and display
+the MP3 header information.
 
-Features:
- - Get, Set and Wipe MP3 TAG Info.
- - Get MPEG Audio Version 1, 2 and 2.5 Header info.
- - User-definable output formatting (rather advanced).
- - Can rename files according to user-defined scheme.
+Some features include:
+* Get, set and wipe ID3 tags
+* User-definable output formatting
+* Rename files according to a user-defined scheme
+
+WWW: http://ibiblio.org/mp3info/
+
+- Pete
+petef@databits.net
