@@ -1,0 +1,13 @@
+$NetBSD: patch-aa,v 1.1.1.1 2001/01/10 14:47:47 taca Exp $
+
+--- configure.in.orig	Thu Mar 22 05:41:31 2001
++++ configure.in
+@@ -97,7 +97,7 @@
+ CHASEN_GENDATA="matrix.cha table.cha chadic.int chadic.pat chadic.ary"
+ AC_SUBST(CHASEN_GENDATA)
+ 
+-CHASEN_PREDATA="grammar.cha ctypes.cha cforms.cha chasenrc connect.cha Makefile.bat" 
++CHASEN_PREDATA="grammar.cha ctypes.cha cforms.cha connect.cha" 
+ AC_SUBST(CHASEN_PREDATA)
+ 
+ AC_OUTPUT([Makefile chasenrc ipadic.spec doc/Makefile])

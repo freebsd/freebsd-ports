@@ -1,0 +1,20 @@
+@comment $NetBSD: PLIST,v 1.1.1.1 2001/01/10 14:47:47 taca Exp $
+@unexec install-info --delete --info-dir=%D/info %D/info/ipadic-ja.info
+info/ipadic-ja.info
+info/ipadic-ja.info-1
+info/ipadic-ja.info-2
+info/ipadic-ja.info-3
+@exec install-info --info-dir=%D/info %D/info/ipadic-ja.info
+share/chasen/dic/ipadic/cforms.cha
+share/chasen/dic/ipadic/chadic.ary
+share/chasen/dic/ipadic/chadic.int
+share/chasen/dic/ipadic/chadic.pat
+@unexec if cmp -s %D/etc/chasenrc %D/share/chasen/dic/ipadic/chasenrc.example; then rm -f %D/etc/chasenrc; else true; fi
+share/chasen/dic/ipadic/chasenrc.example
+@exec if [ ! -f %D/etc/chasenrc ]; then cp %F %D/etc/chasenrc; fi
+share/chasen/dic/ipadic/connect.cha
+share/chasen/dic/ipadic/ctypes.cha
+share/chasen/dic/ipadic/grammar.cha
+share/chasen/dic/ipadic/matrix.cha
+share/chasen/dic/ipadic/table.cha
+@dirrm share/chasen/dic/ipadic
