@@ -1,0 +1,11 @@
+--- configure.orig	Tue Dec 21 13:25:09 2004
++++ configure	Tue Dec 21 13:25:36 2004
+@@ -5130,7 +5130,7 @@
+ fi
+ 
+ 
+-if expr match "$target_cpu" 'i.86' > /dev/null; then
++if echo ${target_cpu} | grep -q 'i.86' > /dev/null; then
+ 	cat >>confdefs.h <<\_ACEOF
+ #define C80x86 1
+ _ACEOF

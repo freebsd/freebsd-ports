@@ -6,86 +6,58 @@
 #
 
 PORTNAME=	fceu
-PORTVERSION=	0.98.12
+PORTVERSION=	0.98.13
 CATEGORIES=	emulators
-MASTER_SITES=	http://www.mavetju.org/download/adopted/
-DISTNAME=	${PORTNAME}-${PORTVERSION}.src
+MASTER_SITES=	http://bsd-unix.org/downloads/
+DISTNAME=	${PORTNAME}-${PORTVERSION}-pre.src
 
 MAINTAINER=	xcas@cox.net
 COMMENT=	A portable NES/Famicom emulator based on Bero's original FCE
 
-USE_SDL=	sdl
-MAN6=		fceu.6
-WRKSRC=		${WRKDIR}/fceu
-USE_X_PREFIX=	yes
 USE_BZIP2=	yes
+USE_GCC=	3.4
 USE_GMAKE=	yes
+USE_REINPLACE=	yes
+USE_SDL=	sdl
+USE_X_PREFIX=	yes
+
+WRKSRC=		${WRKDIR}/fceu
+
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 
-DOCS=		cheat.html faq.html fceultra.html fcm.txt fcs.txt protocol.txt
-TECHDOCS=	README.now README.sound UNIF_current.txt nsfspec.txt
-TECHCPUDOCS=	4017.txt 6502_cpu.txt NESSOUND-4th.txt NESSOUND.txt dmc.txt
-TECHEXPDOCS=	SMB2j.txt mmc5-e.txt mmc5_bank_switch.txt namco.txt taito.txt \
-		tengen.txt vrcvi.txt vrcvii.txt
-TECHPPUDOCS=	"2C02_technical_operation.TXT" loopy1.txt loopy2.txt
+MAN6=		fceu.6
+
+PLIST_FILES=	bin/fceu %%DOCSDIR%%/cheat.html %%DOCSDIR%%/faq.html \
+		%%DOCSDIR%%/fceultra.html %%DOCSDIR%%/fcm.txt \
+		%%DOCSDIR%%/fcs.txt %%DOCSDIR%%/protocol.txt
+PLIST_DIRS=	%%DOCSDIR%%
 
 .include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64"
+BROKEN=		"Does not configure"
+.endif
 
 .if ${ARCH} == "sparc64"
 BROKEN=		"Does not compile on sparc64"
 .endif
 
-pre-everything::
-.if !defined(NOPORTDOCS) && !defined(TECH_DOC_INSTALL)
-	@${ECHO_MSG} "You can install technical documents"
-	@${ECHO_MSG} "by defining TECH_DOC_INSTALL"
-.endif
-
-.if !defined(NOPORTDOCS) && defined(TECH_DOC_INSTALL)
-PLIST_SUB=	TECHDOCS=""
-.else
-PLIST_SUB=	TECHDOCS="@comment "
-.endif
+post-extract:
+	${REINPLACE_CMD} -e 's/[[:cntrl:]]*$$//' ${WRKSRC}/src/drivers/common/vidblit.c
 
 pre-build:
 	@${CP} ${WRKSRC}/Documentation/fceu-sdl.6 ${WRKSRC}/Documentation/fceu.6
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/fceu ${PREFIX}/bin
-
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-.if !defined(NOPORTDOCS)
-.for docs in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/Documentation/${docs} ${DOCSDIR}
-.endfor
-.endif
-
-.if !defined(NOPORTDOCS)
 	${INSTALL_MAN} ${WRKSRC}/Documentation/fceu.6 ${PREFIX}/man/man6
-.if defined(TECH_DOC_INSTALL)
-	@${MKDIR} ${DOCSDIR}/tech
-.for docs in ${TECHDOCS}
-	${INSTALL_DATA} ${WRKSRC}/Documentation/tech/${docs} ${DOCSDIR}/tech
-.endfor
-	@${MKDIR} ${DOCSDIR}/tech/cpu
-.for docs in ${TECHCPUDOCS}
-	${INSTALL_DATA} ${WRKSRC}/Documentation/tech/cpu/${docs} \
-			${DOCSDIR}/tech/cpu
-.endfor
-	@${MKDIR} ${DOCSDIR}/tech/exp
-.for docs in ${TECHEXPDOCS}
-	${INSTALL_DATA} ${WRKSRC}/Documentation/tech/exp/${docs} \
-			${DOCSDIR}/tech/exp
-.endfor
-	@${MKDIR} ${DOCSDIR}/tech/ppu
-.for docs in ${TECHPPUDOCS}
-	${INSTALL_DATA} ${WRKSRC}/Documentation/tech/ppu/${docs:S|_| |g} \
-			${DOCSDIR}/tech/ppu/${docs}
-.endfor
-.endif
-.endif
-.endif
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/Documentation/cheat.html ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/Documentation/faq.html ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/Documentation/fceultra.html ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/Documentation/fcm.txt ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/Documentation/fcs.txt ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/Documentation/protocol.txt ${DOCSDIR}
 
 .include <bsd.port.post.mk>
