@@ -1,0 +1,21 @@
+--- avmailgate/etc/avmailgate.conf.orig	Mon Jan 28 10:38:57 2002
++++ avmailgate/etc/avmailgate.conf	Wed Jan 30 00:00:22 2002
+@@ -22,4 +22,6 @@
+ # User                            uucp 
+ # Group                           uucp
++User                              daemon
++Group                             daemon
+ 
+ # ------------------------------------------------------------------------
+@@ -47,4 +49,5 @@
+ 
+ # AntiVirDir                      /usr/lib/AntiVir
++AntiVirDir                        /usr/local/etc/antivir
+ 
+ # ------------------------------------------------------------------------
+@@ -207,4 +210,5 @@
+ 
+ # ForwardTo /usr/lib/sendmail -oem -oi
++ForwardTo /usr/sbin/sendmail -oem -oi
+ 
+ # Or if you want the mail to be sent by SMTP:

@@ -1,0 +1,7 @@
+#! /bin/csh
+#
+
+cd ../work/avmailgate-6.12.0.0-FreeBSD
+
+diff --unified=2 avmailgate/etc/avmailgate.conf.orig	avmailgate/etc/avmailgate.conf	> ../../patch-aa
+

@@ -1,0 +1,15 @@
+etc/antivir/antivir.vdf
+etc/antivir/avmailgate.conf
+etc/antivir/avmailgate.conf.orig
+etc/antivir/avmailgate.acl
+etc/rc.d/avmailgate.sh
+sbin/avgated
+sbin/avgatefwd
+sbin/avq
+man/man8/avmailgate.8
+man/man5/avmailgate.conf.5
+@unexec rm -r /usr/local/etc/antivir
+@unexec rmdir /var/spool/avmailgate/incoming
+@unexec rmdir /var/spool/avmailgate/outgoing
+@unexec rmdir /var/spool/avmailgate/rejected
+@unexec rmdir /var/spool/avmailgate
