@@ -4,7 +4,7 @@
 #
 # Whom:	Daniel Eischen <deischen@iworks.InterWorks.org>
 #
-# $Id: Makefile,v 1.5 1997/02/05 13:11:45 obrien Exp $
+# $Id: Makefile,v 1.6 1997/02/18 06:00:30 asami Exp $
 #
 
 DISTNAME=	nedit-4.0.3
@@ -24,6 +24,6 @@ EXTRACT_ONLY=	nedit_source.tar.gz
 MAN1=		nedit.1 nc.1
 
 post-extract:
-	${CP} ${DISTDIR}/nedit.app-defaults ${WRKSRC}/NEdit
+	${CP} ${DISTDIR}/nedit.app-defaults ${WRKSRC}/NEdit.ad
 
 .include <bsd.port.mk>
