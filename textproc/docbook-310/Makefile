@@ -1,11 +1,11 @@
 # New ports collection makefile for:	docbook-310
 # Version required:	3.0
 # Date created:		7 April 1999
-# Whom:			nclayton
+# Whom:			nik
 #
 # Based heavily on work by jfieber
 #
-# $Id: Makefile,v 1.2 1999/05/03 12:13:48 kuriyama Exp $
+# $Id: Makefile,v 1.3 1999/05/03 12:31:59 nik Exp $
 #
 
 DISTNAME=	docbk31

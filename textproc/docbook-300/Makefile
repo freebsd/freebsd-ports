@@ -1,11 +1,11 @@
 # New ports collection makefile for:	docbook-300
 # Version required:	3.0
 # Date created:		7 April 1999
-# Whom:			nclayton
+# Whom:			nik
 #
 # Based heavily on work by jfieber
 #
-# $Id: Makefile,v 1.4 1998/06/27 05:19:35 asami Exp $
+# $Id: Makefile,v 1.1.1.1 1999/04/14 22:29:16 nik Exp $
 #
 
 DISTNAME=	docbook-3.0
@@ -13,7 +13,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	ftp://ftp.ora.com/pub/davenport/
 DISTFILES=	docbk30.tar.Z
 
-MAINTAINER=	nclayton@FreeBSD.ORG
+MAINTAINER=	nik@FreeBSD.ORG
 
 RUN_DEPENDS=	${ISOCAT}:${PORTSDIR}/textproc/iso8879
 
