@@ -10,26 +10,22 @@ PORTVERSION=	1.1.8
 CATEGORIES=	net lang
 MASTER_SITES=	ftp://ftp.dworkin.nl/pub/dgd/archive/ \
 		http://dl.droso.net/ports/
-DISTFILES=	dgd-1.1p8.tar.gz
+DISTNAME=	dgd-${PORTVERSION:C/.([0-9]*)$/p\1/}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Dworkin's Generic Driver + extra networking support + regexps
+COMMENT=	"Dworkin's Generic Driver + extra networking support + regexps"
 
 NO_CDROM=	"no distribution to corporate environment"
 RESTRICTED=	"license required for commercial use"
 
 DIST_SUBDIR=	dgd
 WRKSRC=		${WRKDIR}/dgd/src
-.if defined(PATCH_DEBUG)
-PATCH_DIST_ARGS=	-d ${WRKDIR} -E ${PATCH_DIST_STRIP}
-.else
-PATCH_DIST_ARGS=	-d ${WRKDIR} --forward --quiet -E ${PATCH_DIST_STRIP}
-.endif
+ALL_TARGET=	install
 
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 502126
-BROKEN=		"Does not compile on FreeBSD >= 5.x"
+USE_GCC=	3.3
 .endif
 
 pre-patch:
@@ -37,7 +33,6 @@ pre-patch:
 	@${MKDIR} ${WRKDIR}/dgd/bin
 
 post-build:
-	@cd ${WRKSRC}; ${MAKE} install
 	@${MV} ${WRKDIR}/dgd/bin/driver ${WRKDIR}/dgd/bin/driver.net
 	@${MV} ${WRKDIR}/dgd/bin/precomp ${WRKDIR}/dgd/bin/precomp.net
 	@${MV} ${WRKDIR}/dgd/doc/Introduction ${WRKDIR}/dgd/doc/Introduction.NET
