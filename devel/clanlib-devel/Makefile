@@ -15,6 +15,8 @@ DISTNAME=	ClanLib-${PORTVERSION:R}-${PORTVERSION:E}
 MAINTAINER=	bogorodskiy@inbox.ru
 COMMENT=	Cross-platform game SDK
 
+BROKEN=		Unfetchable
+
 LIB_DEPENDS=	Hermes.1:${PORTSDIR}/graphics/Hermes \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png
