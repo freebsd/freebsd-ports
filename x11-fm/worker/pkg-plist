@@ -18,6 +18,10 @@ share/worker/config-deutsch
 share/worker/config-english
 share/worker/scripts/xliwrapper_worker
 share/worker/scripts/displaywrapper_worker
+share/worker/scripts/cd2flac.sh
+share/worker/scripts/cd2mp3.sh
+share/worker/scripts/cd2ogg.sh
+share/worker/scripts/cd2wav.sh
 share/worker/scripts/aa.pattern_rename.sh
 share/pixmaps/WorkerIcon.xpm
 share/pixmaps/WorkerIcon16.xpm
