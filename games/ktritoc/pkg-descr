@@ -1,0 +1,9 @@
+This is a one or two player boardgame for KDE.
+
+One or two player try to occupy a game board of 9 fields containing 9 holes. 
+Each of the fields as well as the game itself is won by placing 3 pieces of 
+the same color into one row, coloumn or diagonal (ala Tic-Tac-Toe). However, 
+the places where to place your pieces is determined by dice adding a 
+random luck factor to the game.
+
+WWW:	http://www.heni-online.de/linux/
