@@ -9,8 +9,8 @@
  
  lint:
  		lint -u $(DEFINES) $(SRCS)
---- util/Makefile.in~	Wed Dec 11 16:10:14 1996
-+++ util/Makefile.in	Wed Dec 11 16:14:42 1996
+--- util/Makefile.in~	Sun May 21 11:47:41 1995
++++ util/Makefile.in	Thu Oct 15 17:09:03 1998
 @@ -8,11 +8,10 @@
  CC		= @cc@
  CFLAGS		= @cflags@
@@ -25,7 +25,7 @@
  SHELL		= /bin/sh
  PROGRAMS	= ddlp dbdview tyexport tyimport # tybackup tyrestore
  MADESRCS	= ddl.c exp.c imp.c
-@@ -74,11 +74,11 @@
+@@ -74,11 +73,11 @@
  
  install:	$(PROGRAMS)
  		cp $(PROGRAMS) $(DESTBIN)
@@ -34,7 +34,7 @@
  		cd $(DESTBIN) && chmod 755 $(PROGRAMS)
  		cd $(DESTBIN) && chown $(DESTOWN) $(PROGRAMS)
  		cd $(DESTBIN) && chgrp $(DESTGRP) $(PROGRAMS)
-+		install -m 644 ../man/ddlp.1 ${PREFIX}/man/man1
++		install -c -m 644 ../man/ddlp.1 ${PREFIX}/man/man1
  
  uninstall:
  		cd $(DESTBIN) && rm -f $(PROGRAMS)
