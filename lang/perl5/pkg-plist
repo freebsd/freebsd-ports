@@ -1,5 +1,3 @@
-@exec ranlib %D/%F
-@exec ranlib %D/%F
 bin/a2p
 bin/c2ph
 bin/find2perl
