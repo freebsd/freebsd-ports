@@ -1,6 +1,6 @@
---- pam_ldap.c.orig	Thu Jul 25 22:15:52 2002
-+++ pam_ldap.c	Thu Jul 25 22:20:11 2002
-@@ -126,12 +126,7 @@
+--- pam_ldap.c.orig	Thu Sep  2 19:20:15 2004
++++ pam_ldap.c	Thu Sep  2 19:21:04 2004
+@@ -127,12 +127,7 @@
  #include "pam_ldap.h"
  #include "md5.h"
  
@@ -13,7 +13,48 @@
  
  #ifndef HAVE_LDAP_MEMFREE
  #define ldap_memfree(x)	free(x)
-@@ -2898,11 +2893,11 @@
+@@ -2946,7 +2941,7 @@
+   int rc;
+   const char *username;
+   char *p;
+-  int use_first_pass = 0, try_first_pass = 0, ignore_flags = 0;
++  int use_first_pass = 0, try_first_pass = 0, ignore_flags = 0, migrate = 0;
+   int i;
+   pam_ldap_session_t *session = NULL;
+   const char *configFile = NULL;
+@@ -2967,6 +2962,8 @@
+ 	;
+       else if (!strcmp (argv[i], "debug"))
+ 	;
++      else if (!strcmp (argv[i], "migrate"))
++        migrate = 1;
+       else
+ 	syslog (LOG_ERR, "illegal option %s", argv[i]);
+     }
+@@ -2980,6 +2977,22 @@
+     return rc;
+ 
+   rc = pam_get_item (pamh, PAM_AUTHTOK, (CONST_ARG void **) &p);
++  /* start of migrate facility in "pam_ldap authentication" */
++  if (migrate==1 && rc==PAM_SUCCESS)
++    {
++      /* check if specified username exists in LDAP */
++      if (_get_user_info(session,username)==PAM_SUCCESS)
++        {
++          /*
++             overwrite old LDAP userPassword with a new password
++             obtained during pam authentication process
++             - rootbinddn and ldap.secret must be set
++          */
++          rc=_update_authtok(session,username,NULL,p);
++          return PAM_IGNORE;
++        }
++    }
++  /* end of migrate facility in "pam_ldap authentication" */
+   if (rc == PAM_SUCCESS && (use_first_pass || try_first_pass))
+     {
+       rc = _do_authentication (session, username, p);
+@@ -3228,11 +3241,11 @@
  		    {
  		      _conv_sendmsg (appconv, "Password change aborted",
  				     PAM_ERROR_MSG, no_warn);
@@ -29,7 +70,16 @@
  		    }
  		  else
  		    {
-@@ -2942,11 +2937,11 @@
+@@ -3246,7 +3259,7 @@
+ 	  if (curpass == NULL)
+ 	    return PAM_MAXTRIES;	/* maximum tries exceeded */
+ 	  else
+-	    pam_set_item (pamh, PAM_OLDAUTHTOK, (void *) curpass);
++	    pam_set_item (pamh, PAM_OLDAUTHTOK, (void *) strdup(curpass));
+ 	}
+       else
+ 	{
+@@ -3274,11 +3287,11 @@
        syslog (LOG_ERR,
  	      "pam_ldap: error getting old authentication token (%s)",
  	      pam_strerror (pamh, rc));
@@ -45,7 +95,7 @@
      }
  
    if (try_first_pass || use_first_pass)
-@@ -2956,11 +2951,11 @@
+@@ -3288,11 +3301,11 @@
  	newpass = NULL;
  
        if (use_first_pass && newpass == NULL)
@@ -61,7 +111,7 @@
      }
  
    tries = 0;
-@@ -3010,11 +3005,11 @@
+@@ -3342,11 +3355,11 @@
  	}
        else
  	{
@@ -77,7 +127,7 @@
  	}
  
        if (cmiscptr == NULL)
-@@ -3046,11 +3041,11 @@
+@@ -3378,11 +3391,11 @@
  		{
  		  _conv_sendmsg (appconv, "Password change aborted",
  				 PAM_ERROR_MSG, no_warn);
