@@ -42,10 +42,13 @@ DOC1=		CHANGES COPYING Copyright INSTALL \
 		README README.FIRST DNS.README country-codes.txt
 WRKSRC=		${WRKDIR}/${DISTNAME:S/-src$//}
 PLIST_SUB+=	PKGNAMEPREFIX=${PKGNAMEPREFIX}
-SUPP_LANG=	catalan chinese czech danish dutch english estonian \
-		finnish french german greek hungarian indonesian \
-		italian korean polish portuguese portuguese_brazil \
-		romanian russain slowak slovene spanish swedish turkish
+SUPP_LANG=	catalan chinese croatian czech danish dutch english \
+		estonian finnish french galician german greek hungarian \
+		icelandic indonesian italian japanese korean latvian \
+		malay norwegian polish portuguese portuguese_brazil \
+		romanian romanian-iso-8859-2 russain serbian \
+		simplified_chinese slowak slovene spanish swedish \
+		turkish ukrainian
 
 .if defined(WEBALIZER_LANG)
 CONFIGURE_ARGS+=	--with-language=${WEBALIZER_LANG}
