@@ -5,11 +5,11 @@
  	$(MKDIR) $(root)$(mandir)/man8
  	$(MKDIR) $(root)$(sysconfdir)
 -	$(MKDIR) $(root)$(htdocsdir)
-+	$(MKDIR) $(root)$(htdocsdir).default
++	$(MKDIR) $(root)$(htdocsdir)-dist
  	$(MKDIR) $(root)$(manualdir)
  	$(MKDIR) $(root)$(iconsdir)
 -	$(MKDIR) $(root)$(cgidir)
-+	$(MKDIR) $(root)$(cgidir).default
++	$(MKDIR) $(root)$(cgidir)-dist
  	$(MKDIR) $(root)$(includedir)
  	$(MKDIR) $(root)$(includedir)/xml
  	$(MKDIR) $(root)$(runtimedir)
@@ -24,16 +24,16 @@
 +#        -@if [ -f $(root)$(htdocsdir)/index.html ] || [ -f $(root)$(htdocsdir)/index.html.en ]; then \
 +#                echo "[PRESERVING EXISTING DATA SUBDIR: $(root)$(htdocsdir)/]"; \
 +#        else \
-+		echo "Copying tree $(TOP)/htdocs/ -> $(root)$(htdocsdir).default/"; \
++		echo "Copying tree $(TOP)/htdocs/ -> $(root)$(htdocsdir)-dist/"; \
  		(cd $(TOP)/htdocs/ && $(TAR) $(TAROPT) - index* apache_pb.* ) |\
 -		(cd $(root)$(htdocsdir)/ && $(TAR) -xf -); \
 -		find $(root)$(htdocsdir)/ -type d -exec chmod a+rx {} \; ; \
 -		find $(root)$(htdocsdir)/ -type f -print | xargs chmod a+r ; \
 -	fi
 -	-@if [ -d $(TOP)/htdocs/manual ]; then \
-+		(cd $(root)$(htdocsdir).default/ && $(TAR) -xf -); \
-+		find $(root)$(htdocsdir).default/ -type d -exec chmod a+rx {} \; ; \
-+		find $(root)$(htdocsdir).default/ -type f -print | xargs chmod a+r ; \
++		(cd $(root)$(htdocsdir)-dist/ && $(TAR) -xf -); \
++		find $(root)$(htdocsdir)-dist/ -type d -exec chmod a+rx {} \; ; \
++		find $(root)$(htdocsdir)-dist/ -type f -print | xargs chmod a+r ; \
 +#        fi
 +#        -@if [ -d $(TOP)/htdocs/manual ]; then \
  		echo "Copying tree $(TOP)/htdocs/manual -> $(root)/$(manualdir)/"; \
@@ -43,7 +43,7 @@
  		find $(root)$(manualdir)/ -type f -print | xargs chmod a+r ; \
 +#        fi
 +	if [ ! -d $(root)$(htdocsdir)/ ]; then \
-+		$(LN) -sf $(root)$(htdocsdir).default $(root)$(htdocsdir); \
++		$(LN) -sf $(root)$(htdocsdir)-dist $(root)$(htdocsdir); \
  	fi
 -	-@if [ -f $(root)$(cgidir)/printenv ]; then \
 -		echo "[PRESERVING EXISTING CGI SUBDIR: $(root)$(cgidir)/]"; \
@@ -57,13 +57,13 @@
  			> $(TOP)/$(SRC)/.apaci.install.tmp; \
 -			echo "$(INSTALL_DATA) $(TOP)/conf/$${script}[*] $(root)$(cgidir)/$${script}"; \
 -			$(INSTALL_DATA) $(TOP)/$(SRC)/.apaci.install.tmp $(root)$(cgidir)/$${script}; \
-+			echo "$(INSTALL_DATA) $(TOP)/conf/$${script}[*] $(root)$(cgidir).default/$${script}"; \
-+			$(INSTALL_DATA) $(TOP)/$(SRC)/.apaci.install.tmp $(root)$(cgidir).default/$${script}; \
++			echo "$(INSTALL_DATA) $(TOP)/conf/$${script}[*] $(root)$(cgidir)-dist/$${script}"; \
++			$(INSTALL_DATA) $(TOP)/$(SRC)/.apaci.install.tmp $(root)$(cgidir)-dist/$${script}; \
  		done; \
 -	fi
 +#        fi
 +	if [ ! -d $(root)$(cgidir)/ ]; then \
-+		$(LN) -sf $(root)$(cgidir).default $(root)$(cgidir); \
++		$(LN) -sf $(root)$(cgidir)-dist $(root)$(cgidir); \
 +  	fi
  	@echo "Copying tree $(TOP)/icons/ -> $(root)$(iconsdir)/"; \
  	(cd $(TOP)/icons/ && $(TAR) $(TAROPT) - *) |\
