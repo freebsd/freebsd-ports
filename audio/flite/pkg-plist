@@ -55,3 +55,4 @@ lib/libflite_cmulex.so.1
 lib/libflite_usenglish.a
 lib/libflite_usenglish.so
 lib/libflite_usenglish.so.1
+@dirrm include/flite
