@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.187 1999/05/26 08:03:25 tg Exp $
+# $Id: Makefile,v 1.188 1999/06/04 07:19:54 jkoshy Exp $
 #
 
     SUBDIR += ElectricFence
@@ -55,6 +55,7 @@
     SUBDIR += glib12
     SUBDIR += gmake
     SUBDIR += gnustep
+    SUBDIR += gtksheet
     SUBDIR += id-utils
     SUBDIR += ilu
     SUBDIR += jam
@@ -151,6 +152,7 @@
     SUBDIR += shtool
     SUBDIR += stlport
     SUBDIR += swarm
+    SUBDIR += t1lib
     SUBDIR += tclcheck
     SUBDIR += tclcl
     SUBDIR += tclgetopts
