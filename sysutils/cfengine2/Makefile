@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cfengine2
-PORTVERSION=	2.0.8p1
+PORTVERSION=	2.1.0p1
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.iu.hio.no/pub/cfengine/ \
 		${MASTER_SITE_GNU}
@@ -24,6 +24,9 @@ USE_OPENSSL=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX}
 
-MAN8=		cfengine.8
+INFO=		cfengine-Anomalies cfengine-Reference cfengine-Tutorial
+
+MAN8=		cfengine.8 cfagent.8 cfenvd.8 cfenvgraph.8 cfexecd.8 cfkey.8 \
+			cfrun.8 cfservd.8
 
 .include <bsd.port.mk>
