@@ -3,7 +3,7 @@
 # Date created:		5 Dec 1997
 # Whom:			Kazuyuki IENAGA <ienaga@jsys.co.jp>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/05/26 15:00:21 kuriyama Exp $
 #
 
 DISTNAME=	xemacs-20.4
@@ -107,4 +107,3 @@ pre-clean:
 	@(cd ${PKGDIR}; ${RM} -f PLIST ${TMPL_FILES})
 
 .include <bsd.port.mk>
-

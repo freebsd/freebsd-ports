@@ -2,10 +2,6 @@ bin/jove
 bin/teachjove
 libexec/jove/portsrv
 libexec/jove/recover
-man/man1/jove.1.gz
-man/man1/teachjove.1.gz
-man/man1/xjove.1.gz
-man/man1/jovetool.1.gz
 share/jove/teach-jove
 share/jove/cmds.doc
 share/jove/jove.rc.sun

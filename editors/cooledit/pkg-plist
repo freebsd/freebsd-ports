@@ -4,10 +4,6 @@ bin/coolman
 bin/coolicon
 bin/coolbrowse
 bin/coolmessage
-man/man1/cooledit.1.gz
-man/man1/smalledit.1.gz
-man/man1/coolman.1.gz
-man/man1/coolicon.1.gz
 lib/libCw.so.1.0
 lib/libCw.so
 lib/libCw.la

@@ -130,8 +130,6 @@ lib/jed/lib/wmenu.sl
 lib/jed/lib/wordstar.hlp
 lib/jed/lib/wordstar.sl
 lib/jed/lib/yankpop.sl
-man/man1/jed.1.gz
-man/man1/rgrep.1.gz
 @dirrm lib/jed/bin
 @dirrm lib/jed/lib/tm
 @dirrm lib/jed/lib
