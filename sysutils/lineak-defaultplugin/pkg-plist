@@ -1,0 +1,3 @@
+@comment $FreeBSD$
+lib/lineakd/plugins/defaultplugin.so
+lib/lineakd/plugins/mediadetectplugin.so
