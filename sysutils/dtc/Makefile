@@ -20,6 +20,8 @@ RUN_DEPENDS=	${LOCALBASE}/share/pear/Crypt/CBC.php:${PORTSDIR}/security/pear-Cry
 		${LOCALBASE}/bin/webalizer:${PORTSDIR}/www/webalizer \
 		${QMAIL_DIR}/bin/qmail-start:${PORTSDIR}/mail/qmail
 
+BROKEN=		Size mismatch
+
 USE_PHP=	session mysql sockets gd
 QMAIL_DIR?=	/var/qmail
 
