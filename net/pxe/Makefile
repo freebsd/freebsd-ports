@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pxe
-PORTVERSION=	1.4
+PORTVERSION=	1.4.1
 CATEGORIES=	net
 MASTER_SITES=	http://www.kano.org.uk/projects/pxe/ \
 		ftp://ftp.nuug.no/pub/anders/distfiles/
@@ -22,10 +22,6 @@ CONFIGURE_ARGS+=	--with-config=${PREFIX}/etc/pxe.conf \
 DOCS=	Changes INSTALL LICENCE README
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500113
-BROKEN=		"Does not compile on FreeBSD ${OSVERSION}"
-.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/pxe ${PREFIX}/sbin/
