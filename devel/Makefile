@@ -1,7 +1,8 @@
-# $Id: Makefile,v 1.77 1997/09/13 17:50:04 jfitz Exp $
+# $Id: Makefile,v 1.78 1997/10/01 08:32:59 cracauer Exp $
 #
 
     SUBDIR += SWIG
+    SUBDIR += SpecTcl
     SUBDIR += asl
     SUBDIR += autoconf
     SUBDIR += automake
