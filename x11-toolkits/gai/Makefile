@@ -21,7 +21,7 @@ USE_REINPLACE=	yes
 USE_BZIP2=	yes
 USE_GL=		yes
 USE_SDL=	yes
-USE_GNOME=	gnomehack gnomeprefix gtk20 pango gnomepanel
+USE_GNOME=	gnomehack gnomeprefix gdkpixbuf gtk20 pango gnomepanel
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	SDLCONF=${SDL_CONFIG}
 
