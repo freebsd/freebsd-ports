@@ -7,7 +7,7 @@
 
 PORTNAME=	Server
 PORTVERSION=	4.2.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	x11-servers
 MASTER_SITES=	${MASTER_SITE_XFREE:S/$/:x/} \
 		${MASTER_SITE_LOCAL:S/$/:local/}
@@ -39,7 +39,10 @@ SCRIPTS_ENV=		OSVERSION=${OSVERSION} \
 			ExtendedInputDevices=${ExtendedInputDevices} \
 			BuildXF86DRI=${BuildXF86DRI} \
 			HasGlide3=${HasGlide3} \
-			HaveMatroxHal=${HaveMatroxHal}
+			HaveMatroxHal=${HaveMatroxHal} \
+			CC="${CC}" \
+			CXX="${CXX}" \
+			CFLAGS="${CFLAGS}"
 MAN1=			XFree86.1 \
 			Xserver.1 \
 			kbd_mode.1 \

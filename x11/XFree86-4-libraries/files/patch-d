@@ -1,5 +1,5 @@
---- config/cf/FreeBSD.cf.orig	Sun Oct  6 18:14:59 2002
-+++ config/cf/FreeBSD.cf	Sun Oct  6 18:28:12 2002
+--- config/cf/FreeBSD.cf.orig	Wed Oct 16 20:31:40 2002
++++ config/cf/FreeBSD.cf	Wed Oct 16 20:32:04 2002
 @@ -43,11 +43,15 @@
  #define GccUsesGas		YES
  #define UseGas			YES
@@ -58,13 +58,13 @@
  #if BuildThreadStubLibrary && !UseInstalled
 -# define CcCmd			$(CLIENTENVSETUP) cc
 -# define CplusplusCmd		$(CLIENTENVSETUP) c++
-+# define CcCmd			$(CLIENTENVSETUP) ${FBSDCC}
-+# define CplusplusCmd		$(CLIENTENVSETUP) ${FBSDCXX}
++# define CcCmd			$(CLIENTENVSETUP) FreeBSDCC
++# define CplusplusCmd		$(CLIENTENVSETUP) FreeBSDCXX
  #else
 -# define CcCmd			cc
 -# define CplusplusCmd		c++
-+# define CcCmd			${FBSDCC}
-+# define CplusplusCmd		${FBSDCXX}
++# define CcCmd			FreeBSDCC
++# define CplusplusCmd		FreeBSDCXX
  #endif
  
  #define CppCmd			/usr/bin/cpp
@@ -99,24 +99,28 @@
  
  #define StandardDefines	-DCSRG_BASED
  
-@@ -448,14 +469,14 @@
- /* The GCC strength-reduce bug is fixed for FreeBSD 2.1.5 and later */
- #ifndef DefaultGcc2i386Opt
- #if OSMajorVersion > 2 || (OSMajorVersion == 2 && OSMinorVersion > 1) || (OSMajorVersion == 2 && OSMinorVersion == 1 && OSTeenyVersion >= 5)
--#define DefaultGcc2i386Opt -O2
-+#define DefaultGcc2i386Opt
- #endif
+@@ -445,18 +466,8 @@
+ #define XawI18nDefines		-DUSE_XWCHAR_STRING -DUSE_XMBTOWC
  #endif
  
- #ifdef i386Architecture
- # define OptimizedCDebugFlags DefaultGcc2i386Opt
- #else
+-/* The GCC strength-reduce bug is fixed for FreeBSD 2.1.5 and later */
+-#ifndef DefaultGcc2i386Opt
+-#if OSMajorVersion > 2 || (OSMajorVersion == 2 && OSMinorVersion > 1) || (OSMajorVersion == 2 && OSMinorVersion == 1 && OSTeenyVersion >= 5)
+-#define DefaultGcc2i386Opt -O2
+-#endif
+-#endif
+-
+-#ifdef i386Architecture
+-# define OptimizedCDebugFlags DefaultGcc2i386Opt
+-#else
 -# define OptimizedCDebugFlags -O
-+# define OptimizedCDebugFlags
- #endif
+-#endif
++#define DefaultGcc2i386Opt
++#define OptimizedCDebugFlags FreeBSDCFLAGS
  
  #ifndef PreIncDir
-@@ -509,6 +530,10 @@
+ # define PreIncDir	/usr/include
+@@ -509,6 +520,10 @@
   
  #ifndef PamLibraries
  #define PamLibraries		-lpam DlLibrary

@@ -7,20 +7,17 @@
 
 PORTNAME=	clients
 PORTVERSION=	4.2.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11
-MASTER_SITES=	${MASTER_SITE_XFREE:S/$/:x/} \
-		${MASTER_SITE_XFREE:S/source//g:S/$/:x421patch/}
-MASTER_SITE_SUBDIR=	4.2.0/:x \
-			${PORTVERSION}/patches/:x421patch \
-			anholt/:local
+MASTER_SITES=	${MASTER_SITE_XFREE:S/$/:x/}
+MASTER_SITE_SUBDIR=	4.2.0/:x
 PKGNAMEPREFIX=	XFree86-
-DISTFILES=	X420src-1.tgz:x \
-		X420src-2.tgz:x \
-		4.2.0-4.2.1.diff.gz:x421patch
+DISTFILES=	X420src-1.tgz:x
 EXTRACT_ONLY=	X420src-1.tgz
 
-PATCH_DIST_STRIP=	-p1
+PATCH_SITES=		${MASTER_SITE_LOCAL}
+PATCH_SITE_SUBDIR=	anholt/patches-4.2.0/
+PATCHFILES=		4.2.0-4.2.1-1-freebsd.patch.gz
 
 MAINTAINER=	anholt@freebsd.org
 
@@ -36,7 +33,10 @@ SCRIPTS_ENV=		InstallXdmConfig=${InstallXdmConfig} \
 			InstallXinitConfig=${InstallXinitConfig} \
 			InstallAppDefFiles=${InstallAppDefFiles} \
 			HasSecureRPC=${HasSecureRPC} \
-			HasPam=${HasPam}
+			HasPam=${HasPam} \
+			CC="${CC}" \
+			CXX="${CXX}" \
+			CFLAGS="${CFLAGS}"
 MAKE_ENV=		PKGNAMEPREFIX=${PKGNAMEPREFIX} \
 			PORTNAME=${PORTNAME} \
 			PORTVERSION=${PORTVERSION}
@@ -67,9 +67,6 @@ post-extract:
 	 ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} \
 	   ${DISTDIR}/${DIST_SUBDIR}/X420src-2.tgz \
 	    | ${TAR} -xf - xc/fonts/util )
-pre-patch:
-	-@${GZCAT} ${DISTDIR}/${DIST_SUBDIR}/4.2.0-4.2.1.diff.gz \
-		| ${PATCH} ${PATCH_DIST_ARGS} --batch
 
 post-patch:
 	cd ${WRKSRC}/nls; \
