@@ -1,9 +1,9 @@
---- install.sh.orig	Fri Sep 19 13:23:30 2003
-+++ install.sh	Sat Sep 20 22:37:16 2003
-@@ -711,9 +711,7 @@
+--- install.sh.orig	Thu Oct  2 14:24:57 2003
++++ install.sh	Thu Oct  2 18:11:45 2003
+@@ -728,9 +728,7 @@
  
      wrapper_opera_plugin_paths="    \"\${HOME}/.opera/plugins\" \\
-     ${plugin_dir} \\
+     ${str_localdirplugin} \\
 -    /usr/lib/opera/plugins \\
 -    /usr/local/lib/opera/plugins \\
 -    /opt/lib/opera/plugins \\"
@@ -11,7 +11,7 @@
  
      case "${machine}:${os}" in
  	i[3456]86:Linux|i[3456]86:FreeBSD|i[3456]86:NetBSD|i[3456]86:OpenBSD)
-@@ -727,7 +725,6 @@
+@@ -744,7 +742,6 @@
      /usr/java/jre1.4.0/plugin/i386/ns4 \\
      /usr/java/jre1.3.1/plugin/i386/ns4 \\
      /usr/lib/j2re1.3/plugin/i386/netscape4 \\
@@ -19,7 +19,7 @@
      /usr/local/linux-jdk1.3.1/jre/plugin/i386/ns4 \\"
  	    wrapper_ibmjava="
  	    IBMJava2-141/jre \\
-@@ -779,15 +776,10 @@
+@@ -796,15 +793,10 @@
  	;;
      esac
      wrapper_netscape_plugin_paths="
@@ -38,7 +38,7 @@
  
      wrapper_file="${wrapper_dir}/opera"
      
-@@ -943,11 +935,8 @@
+@@ -960,11 +952,8 @@
  
  # Acrobat Reader
  for BINDIR in \\
@@ -52,11 +52,11 @@
      ; do
      if test -d \${BINDIR} ; then PATH=\${PATH}:\${BINDIR}; fi
  done
-@@ -1187,44 +1176,6 @@
- 	    echo "This package does not contain support for Netscape Plug-ins.\n"
- 	fi
+@@ -1222,44 +1211,6 @@
  
--     # System wide configuration files
+ 	if test "${bool_destdir}" = "no"; then
+ 
+-	# System wide configuration files
 -	config_dir='/usr/local/etc'
 -	if can_write_to "$config_dir"; then
 -	    echo
@@ -69,7 +69,7 @@
 -		read install_config
 -		case "${install_config}" in
 -
--		    ''|y|Y|yes|YES)
+-		    ''|[yY]|[yY][eE][sS])
 -			backup $config_dir/opera6rc opera6rc config
 -			backup $config_dir/opera6rc.fixed opera6rc.fixed config
 -			cp $cpv $cpf config/opera6rc $config_dir
@@ -77,7 +77,7 @@
 -			break
 -			;;
 -
--		    n|N|no|NO)
+-		    [nN]|[nN][oO])
 -			break
 -			;;
 -		    *)
@@ -97,7 +97,7 @@
       # Shorcuts and Icons
  	icons
  	gnome
-@@ -1320,22 +1271,22 @@
+@@ -1350,22 +1301,22 @@
  
      debug_msg 0 "in icons()"
  
@@ -132,7 +132,7 @@
      fi
    
      if test ! -d /etc/X11/wmconfig/; then
-@@ -1401,33 +1352,33 @@
+@@ -1431,33 +1382,33 @@
        fi
        # end /opt/gnome share
  
@@ -187,7 +187,7 @@
            fi
  	fi
  	# end /usr/share/gnome link
-@@ -1467,12 +1418,12 @@
+@@ -1497,12 +1448,12 @@
  
      fi  
      
@@ -205,7 +205,7 @@
      fi
  }
  
-@@ -1496,8 +1447,8 @@
+@@ -1526,8 +1477,8 @@
        fi
        if test -w /opt/kde/share/applnk/Internet; then generate_desktop /opt/kde/share/applnk/Internet; fi
  
