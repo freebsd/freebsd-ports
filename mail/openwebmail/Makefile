@@ -7,15 +7,13 @@
 
 PORTNAME=	openwebmail
 PORTVERSION=	1.81
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	http://openwebmail.org/openwebmail/download/ \
 		http://turtle.ee.ncku.edu.tw/openwebmail/download/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	leeym@FreeBSD.org
-
-FORBIDDEN=	"Sends mail to developers at install-time"
 
 RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/CGI.pm:${PORTSDIR}/www/p5-CGI.pm \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Net/SMTP.pm:${PORTSDIR}/net/p5-Net \
@@ -45,5 +43,6 @@ do-install:
 .endfor
 	@${PERL5} ${WRKSRC}/cgi-bin/openwebmail/uty/wrapsuid.pl ${OWCGIDIR}
 	@${OWCGIDIR}/openwebmail-tool.pl --init -y
+	@${RM} ${OWCGIDIR}/*orig ${OWCGIDIR}/*bak
 
 .include <bsd.port.mk>
