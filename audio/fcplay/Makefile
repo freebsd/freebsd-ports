@@ -18,18 +18,13 @@ COMMENT=	Future Composer Reference Player
 
 BUILD_DEPENDS=	${LOCALBASE}/include/sidplay/compconf.h:${PORTSDIR}/audio/libsidplay
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CXXFLAGS+=	-I${LOCALBASE}/include
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500113
-BROKEN=		"Does not compile (bad C++ code)"
-.endif
+USE_GCC=	2.95
+PORTDOCS=	ABOUT POINTER
+PLIST_FILES=	bin/fcplay
 
 post-patch:
 .for f in configure Config.h.in
@@ -41,9 +36,8 @@ post-patch:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/fcplay ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/fcplay
-	${INSTALL_DATA} ${WRKSRC}/ABOUT ${PREFIX}/share/doc/fcplay
-	${INSTALL_DATA} ${WRKSRC}/POINTER ${PREFIX}/share/doc/fcplay
+	@${MKDIR} ${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
