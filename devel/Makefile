@@ -112,6 +112,7 @@
     SUBDIR += cvslines
     SUBDIR += cvsmapfs
     SUBDIR += cvspadm
+    SUBDIR += cvsplot
     SUBDIR += cvsps
     SUBDIR += cvsstat
     SUBDIR += cvsutils
