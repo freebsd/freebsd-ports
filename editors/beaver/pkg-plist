@@ -1,4 +1,4 @@
 bin/beaver
-share/gnome/pixmaps/beaver.png
 share/gnome/applications/beaver.desktop
-@dirrm share/beaver
+share/gnome/pixmaps/beaver.png
+share/locale/de/LC_MESSAGES/beaver.mo
