@@ -7,6 +7,7 @@
 
 PORTNAME=	qt2
 PORTVERSION=	0.11
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits ruby
 MASTER_SITES=	http://sfns.u-shizuoka-ken.ac.jp/geneng/horie_hp/ruby/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -32,6 +33,9 @@ INSTALL_TARGET=	site-install
 
 post-extract:
 	find ${WRKSRC} '(' -name .cvsignore -o -name a.out ')' -delete
+
+post-patch:
+	${RUBY} -i -pe 'sub %r"/usr/X11\b", "${X11BASE}"' ${WRKSRC}/lib/qt2.rb
 
 post-install:
 .if !defined(NOPORTDOCS)
