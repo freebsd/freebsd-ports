@@ -33,17 +33,18 @@ share/gnome/glimmer/languages/po.lang
 share/gnome/glimmer/languages/python.lang
 share/gnome/glimmer/languages/scheme.lang
 share/gnome/glimmer/languages/sgml.lang
+share/gnome/glimmer/languages/sql.lang
 share/gnome/glimmer/languages/wml.lang
 share/gnome/glimmer/languages/x86.lang
 share/gnome/glimmer/languages/xml.lang
 share/gnome/glimmer/languages/z80.lang
 share/gnome/glimmer/scripts/Delete_To_End.py
 share/gnome/glimmer/scripts/Delete_To_Start.py
+share/gnome/glimmer/scripts/FileSelector.py
 share/gnome/glimmer/scripts/ISO2HTML.py
 share/gnome/glimmer/scripts/Replace_Spaces.py
 share/gnome/glimmer/scripts/Replace_Tabs.py
 share/gnome/glimmer/scripts/To_Upper.py
-share/gnome/glimmer/scripts/autoexec.py
 share/gnome/pixmaps/glimmer-icon.png
 share/gnome/pixmaps/glimmer-title.png
 @dirrm share/gnome/glimmer/scripts
