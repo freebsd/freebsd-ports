@@ -1,5 +1,23 @@
 --- os_dep.c.orig	Thu Jul  8 04:16:28 2004
-+++ os_dep.c	Sun Oct 31 02:13:04 2004
++++ os_dep.c	Fri Dec 17 03:29:13 2004
+@@ -700,7 +700,7 @@
+     || defined(HURD) || defined(NETBSD)
+ 	static struct sigaction old_segv_act;
+ #	if defined(_sigargs) /* !Irix6.x */ || defined(HPUX) \
+-	|| defined(HURD) || defined(NETBSD)
++	|| defined(HURD) || defined(NETBSD) || defined(FREEBSD)
+ 	    static struct sigaction old_bus_act;
+ #	endif
+ #   else
+@@ -715,7 +715,7 @@
+ #   endif
+     {
+ #	if defined(SUNOS5SIGS) || defined(IRIX5)  \
+-        || defined(OSF1) || defined(HURD) || defined(NETBSD)
++        || defined(OSF1) || defined(HURD) || defined(NETBSD) || defined(FREEBSD)
+ 	  struct sigaction	act;
+ 
+ 	  act.sa_handler	= h;
 @@ -2372,7 +2372,7 @@
  #   endif
  #   ifdef FREEBSD
