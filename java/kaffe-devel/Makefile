@@ -28,7 +28,7 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 
 WRKSRC=		${WRKDIR}/kaffe-${PORTVERSION}
 
-NOT_FOR_ARCHS=	amd64
+NOT_FOR_ARCHS=	amd64 alpha
 
 USE_LIBTOOL=	yes
 USE_GMAKE=	yes
