@@ -5427,9 +5427,9 @@ p5-Net-XWhois	ports/net/p5-Net-XWhois
 p5-Net-Z3950	ports/net/p5-Net-Z3950
 p5-Net-Z3950-SimpleServer	ports/net/p5-Net-Z3950-SimpleServer
 p5-Net-ext	ports/net/p5-Net-ext
-p5-NetAdd-IP-Find	ports/textproc/p5-NetAdd-IP-Find
 p5-NetAddr-IP	ports/net/p5-NetAddr-IP
 p5-NetAddr-IP-Count	ports/net/p5-NetAddr-IP-Count
+p5-NetAddr-IP-Find	ports/textproc/p5-NetAddr-IP-Find
 p5-NetPacket	ports/net/p5-NetPacket
 p5-News-Article	ports/news/p5-News-Article
 p5-News-Newsrc	ports/news/p5-News-Newsrc

@@ -164,7 +164,6 @@
     SUBDIR += p5-Lingua-Ispell
     SUBDIR += p5-Lingua-Preferred
     SUBDIR += p5-MARC
-    SUBDIR += p5-NetAdd-IP-Find
     SUBDIR += p5-NetAddr-IP-Find
     SUBDIR += p5-Number-Format
     SUBDIR += p5-Orchard-Perl
