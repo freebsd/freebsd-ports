@@ -35,7 +35,7 @@ post-patch:
 		${WRKSRC}/bin/settings.conf.in
 
 pre-configure:
-	cd ${WRKSRC}; ./autogen.sh
+	cd ${WRKSRC}; ${SH} ./autogen.sh
 
 pre-build:
 	cd ${WRKSRC}; ${MAKE} depend
