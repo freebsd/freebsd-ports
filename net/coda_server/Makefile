@@ -3,13 +3,14 @@
 # Date created:				19 June 1998
 # Whom:					hmpierce <hmpierce@cs.cmu.edu>
 #
-# $Id: Makefile,v 1.1.1.1 1998/10/05 19:23:43 rvb Exp $
+# $Id: Makefile,v 1.2 1998/10/09 20:47:11 rvb Exp $
 #
 
 DISTNAME=	coda-4.6.6
 PKGNAME=	coda-server-4.6.6.1
 CATEGORIES=	net
-MASTER_SITES=	ftp://ftp.coda.cs.cmu.edu/pub/coda/src/
+#MASTER_SITES=	ftp://ftp.coda.cs.cmu.edu/pub/coda/src/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	rvb@cs.cmu.edu
