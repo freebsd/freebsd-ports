@@ -1,4 +1,9 @@
 bin/spfd
 bin/spfquery
 %%SITE_PERL%%/Mail/SPF/Query.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/SPF/Query/.packlist
 @dirrm %%SITE_PERL%%/Mail/SPF
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/SPF/Query
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/SPF
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Mail 2>/dev/null || true
