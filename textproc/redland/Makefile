@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	redland
-PORTVERSION=	0.9.12
+PORTVERSION=	0.9.13
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.redland.opensource.ac.uk/dist/source/
@@ -17,28 +17,33 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A high-level interface for RDF
 
 LIB_DEPENDS=	db2.0:${PORTSDIR}/databases/db2 \
-		expat.4:${PORTSDIR}/textproc/expat2 \
-		xml2.5:${PORTSDIR}/textproc/libxml2 \
-		xmlparse.1:${PORTSDIR}/www/libwww
-
-LIBWWW_CONFIG?=	${LOCALBASE}/bin/libwww-config
+		raptor.0:${PORTSDIR}/textproc/raptor
 
 USE_OPENSSL=	yes
-USE_PERL5=	yes
+USE_REINPLACE=	yes
+USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/db2 -I${LOCALBASE}/include"
-LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ARGS=	--with-bdb=${LOCALBASE} --with-libwww
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} LDFLAGS="${LDFLAGS}"
+CONFIGURE_ARGS=	--with-bdb-lib="${LOCALBASE}/lib" \
+		--with-bdb-include="${LOCALBASE}/include/db2" \
+		--with-bdb-dbname="db2" \
+		--with-libwww
 INSTALLS_SHLIB=	yes
 
-MAN1=		rapper.1
-MAN3=		libraptor.3 redland.3
+MAN1=		redland-config.1 redland-db-upgrade.1
+MAN3=		redland.3
+
+CPPFLAGS=	-I${LOCALBASE}/include
+LDFLAGS=	-L${LOCALBASE}/lib
 
 post-patch:
-	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${PERL} -pi -e \
-		's|\@INSTALL\@|/usr/bin/install -c|g ; \
-		 s|^CPPFLAGS = -I|CPPFLAGS = \@CPPFLAGS\@ -I|g ; \
-		 s|^LDFLAGS = \@LIBRDF_|LDFLAGS = \@LDFLAGS\@ \@LIBRDF_|g ; \
-		 s|^LIBS = \@LIBRDF_|LIBS = \@LIBS\@ \@LIBRDF_|g'
+	@${REINPLACE_CMD} -e 's|ac_subdirs_all raptor|ac_subdirs_all|g ; \
+		 s|-I\\$$(top_srcdir)/raptor||g ; \
+		 s|\\$$(top_builddir)/raptor/libraptor.la|-lraptor|g' \
+			${WRKSRC}/configure
+	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
+		's|SUBDIRS = raptor|SUBDIRS =|g ; \
+		 s|$$(top_builddir)/raptor/libraptor.la|-lraptor|g'
 
 .include <bsd.port.mk>
