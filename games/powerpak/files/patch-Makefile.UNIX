@@ -1,0 +1,77 @@
+
+$FreeBSD$
+
+--- Makefile.UNIX.orig	Wed Apr 17 19:04:37 2002
++++ Makefile.UNIX	Wed Apr 17 19:16:50 2002
+@@ -1,12 +1,28 @@
+-CC=gcc
+-CFLAGS=-Wall -O6
+-LIBS=-L/usr/X11R6/lib -lm -lSDL -ldl -lpthread
++CC?=gcc
++CFLAGS?=-Wall -O6
++SDL_CONFIG?=sdl-config
++X11BASE?=/usr/X11R6
++LOCALBASE?=/usr/local
++SDL_LIBS!=$(SDL_CONFIG) --libs
++SDL_CFLAGS!=$(SDL_CONFIG) --cflags
++CFLAGS+=-I$(X11BASE)/include -I$(LOCALBASE)/include $(SDL_CFLAGS)
++LIBS+=-L$(X11BASE)/lib -L$(LOCALBASE)/lib -lm $(SDL_LIBS)
+ OBJECTS=powerpak.o img.o img_gif.o img_ppm.o img_tif.o img_pcx.o img_bmp.o img_png.o img_jpg.o img_xxx.o \
+ 	./PowerDraw/powerdraw.o ./PowerDraw/gfx.o ./PowerDraw/primitives.o ./PowerDraw/sprites.o ./PowerDraw/truetype.o \
+ 	./PowerInput/keyboard.o ./PowerInput/mouse.o ./PowerInput/powerinput.o ./PowerInput/joystick.o \
+ 	./Power3D/gfx3d.o ./Power3D/power3d.o ./Power3D/objects3d.o ./Power3D/render.o \
+ 	./PowerSound/audio.o ./PowerSound/channel.o ./PowerSound/sample.o ./PowerSound/powersound.o \
+ 	./PowerMedia/mpeg.o
++SRCS=${OBJECTS:S/.o$/.c/}
++SO_OBJECTS=${OBJECTS:S/.o$/.so/}
++
++.SUFFIXES: .o .so .c
++
++.c.o:
++	${CC} -o ${.TARGET} ${CFLAGS} -c ${.ALLSRC}
++
++.c.so:
++	${CC} -fpic -DPIC -o ${.TARGET} ${CFLAGS} -c ${.ALLSRC}
+ 
+ # Uncomment these if you want the library built with Power3D support
+ # This requires an OpenGL implementation
+@@ -15,7 +31,7 @@
+ 
+ # Uncomment these if you want the library built with TrueType support
+ # This requires the freetype library (http://www.freetype.org)
+-CFLAGS += -DUSE_TTF
++CFLAGS += -DUSE_TTF -I${LOCALBASE}/include/freetype1/freetype
+ LIBS += -lttf
+ 
+ # Uncomment these if you want the library built with music support
+@@ -35,10 +51,10 @@
+ 
+ # Uncomment these if you want the library built with MPEG support
+ # This requires Loki's SMPEG library 
+-CFLAGS += -DUSE_MPEG -I./PowerDraw
++CFLAGS += -DUSE_MPEG -I./PowerDraw -I${LOCALBASE}/include/smpeg
+ LIBS += -lsmpeg
+ 
+-all: splash libPP.a libPP.so
++all: splash libPP.a libPP.so.1
+ 
+ upgrade:splash installdirs
+ 	@echo "Deleting old libs from /usr/lib"
+@@ -85,12 +101,12 @@
+ 	@rm -rf ./PowerSound/*.o
+ 
+ libPP.a: $(OBJECTS)
+-	@echo "Building static library (libPP.a)"
+-	@ar rvs libPP.a $(OBJECTS)
++	@echo "Building static library (${.TARGET})"
++	@ar rvs libPP.a ${.ALLSRC}
+ 
+-libPP.so: $(OBJECTS)
+-	@echo "Building dynamic library (libPP.so)"
+-	@$(CC) -D_REENTRANT -fpic -fPIC -shared -o libPP.so $(OBJECTS) $(LIBS)
++libPP.so.1: $(SO_OBJECTS)
++	@echo "Building dynamic library (${.TARGET})"
++	@$(CC) -shared -o ${.TARGET} ${.ALLSRC} $(LIBS)
+ 
+ splash:
+ 	@echo ""

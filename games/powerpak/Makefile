@@ -6,41 +6,37 @@
 #
 
 PORTNAME=	powerpak
-PORTVERSION=	991203
+PORTVERSION=	20000511
 CATEGORIES=	games
-MASTER_SITES=	http://www.imperialpenguin.com/software/powerpak/
+MASTER_SITES=	http://www.angelfire.com/va/powerpakgsdk/images/
 DISTNAME=	PowerPak
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	SDL-1.0.2:${PORTSDIR}/devel/sdl10
+LIB_DEPENDS=	SDL-1.1.4:${PORTSDIR}/devel/sdl12
+
+SDL_CONFIG=	${LOCALBASE}/bin/sdl11-config
 
 USE_FREETYPE=	yes
-MAKEFILE=	Makefile.FreeBSD
 INSTALLS_SHLIB=	yes
+MAKE_ENV=	SDL_CONFIG="${SDL_CONFIG}"
+MAKEFILE=	Makefile.UNIX
 
 post-extract:
-	@ /usr/bin/find ${WRKSRC} -type f | xargs ${PERL} -pi -e 's/\r//g'
-
-pre-build:
-	@ ${CP} ${FILESDIR}/Makefile.FreeBSD ${WRKSRC}
+	@ /usr/bin/find ${WRKSRC} -type f | xargs ${PERL} -pi -e 's/\r//g ; \
+		s|"SDL/|"|g ; s|<SDL/|<|g'
 
 do-install:
 	@ ${INSTALL_DATA} ${WRKSRC}/libPP.a ${PREFIX}/lib
-	@ ${INSTALL_DATA} ${WRKSRC}/libPP.so ${PREFIX}/lib
+	@ ${INSTALL_PROGRAM} ${WRKSRC}/libPP.so.1 ${PREFIX}/lib
+	@ ${LN} -sf ${PREFIX}/lib/libPP.so.1 ${PREFIX}/lib/libPP.so
 	@ ${MKDIR} ${PREFIX}/include/PowerPak
-	@ ${INSTALL_DATA} ${WRKSRC}/*.h ${PREFIX}/include/PowerPak
-	@ ${INSTALL_DATA} ${WRKSRC}/PowerDraw/*.h ${PREFIX}/include/PowerPak
-	@ ${INSTALL_DATA} ${WRKSRC}/PowerInput/*.h ${PREFIX}/include/PowerPak
-	@ ${MKDIR} ${PREFIX}/share/examples/PowerPak/PowerDraw
-	@ ${INSTALL_DATA} ${WRKSRC}/PowerDraw/examples/Makefile.UNIX ${PREFIX}/share/examples/PowerPak/PowerDraw/Makefile
-	@ ${INSTALL_DATA} ${WRKSRC}/PowerDraw/examples/*.c ${PREFIX}/share/examples/PowerPak/PowerDraw
-	@ ${INSTALL_DATA} ${WRKSRC}/PowerDraw/examples/*.ttf ${PREFIX}/share/examples/PowerPak/PowerDraw
-	@ ${INSTALL_DATA} ${WRKSRC}/PowerDraw/examples/*.pcx ${PREFIX}/share/examples/PowerPak/PowerDraw
-	@ ${MKDIR} ${PREFIX}/share/examples/PowerPak/PowerInput
-	@ ${INSTALL_DATA} ${WRKSRC}/PowerInput/examples/Makefile.UNIX ${PREFIX}/share/examples/PowerPak/PowerInput/Makefile
-.for file in ex1.c ex2.c ex3.c ex4.c ex5.c sprite.pcx
-	@ ${INSTALL_DATA} ${WRKSRC}/PowerInput/examples/${file} ${PREFIX}/share/examples/PowerPak/PowerInput
+.for dir in . Power3D PowerDraw PowerInput PowerMedia PowerSound
+	@ ${INSTALL_DATA} ${WRKSRC}/${dir}/*.h ${PREFIX}/include/PowerPak
+	@ if [ -d ${WRKSRC}/${dir}/examples ]; then \
+		${MKDIR} ${PREFIX}/share/examples/PowerPak/${dir}; \
+		${INSTALL_DATA} ${WRKSRC}/${dir}/examples/* ${PREFIX}/share/examples/PowerPak/${dir}; \
+	  fi
 .endfor
 
 .include <bsd.port.mk>
