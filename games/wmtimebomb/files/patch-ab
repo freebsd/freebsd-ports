@@ -2,7 +2,18 @@
 $FreeBSD$
 
 --- timebomb.c.orig	Mon Nov 16 16:42:54 1998
-+++ timebomb.c	Tue Aug 14 12:30:44 2001
++++ timebomb.c	Wed Nov 17 23:13:48 2004
+@@ -4,8 +4,8 @@
+ #include <X11/xpm.h>
+ #include <X11/Xproto.h>
+ #include <WMaker.h>
+-#include <WINGs.h>
+-#include "WINGsP.h"
++#include <WINGs/WINGs.h>
++#include <WINGs/WINGsP.h>
+ #include <wraster.h>
+ #include <signal.h>
+ #include "xlibgeneral.h"
 @@ -94,7 +94,7 @@
  XpmIcon rbuttonb;
  XpmIcon id;

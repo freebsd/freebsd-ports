@@ -3,12 +3,12 @@
 @@ -1,10 +1,12 @@
 -XPMLIB = -L/usr/X11R6/lib -lXpm -lm -ljpeg -lpng -lz -ltiff -lgif
 -WMAKER = -L/usr/local/lib -lWMaker -lWINGs -lwraster -lPropList
-+XPMLIB = `get-wraster-flags --ldflags` `get-wraster-flags --libs`
-+WMAKER = -lWMaker -lWINGs -lPropList -L${LOCALBASE}/lib
++XPMLIB = `pkg-config --libs WINGs wmlib wrlib`
++WMAKER = -L${X11BASE}/lib -lWMaker
   
  LOCAL_LIBRARIES = $(WMAKER) $(XPMLIB) $(XLIB)
  
-+EXTRA_INCLUDES= `get-wraster-flags --cflags` -I${LOCALBASE}/include -I${X11BASE}/include/WINGs
++EXTRA_INCLUDES= `pkg-config --cflags WINGs wmlib wrlib` -I${X11BASE}/include 
 +
  SRCS = timebomb.c
  OBJS = timebomb.o
