@@ -536,7 +536,7 @@ share/locale/tr/LC_MESSAGES/gnome-libs.mo
 share/locale/uk/LC_MESSAGES/gnome-libs.mo
 share/locale/vi/LC_MESSAGES/gnome-libs.mo
 share/locale/wa/LC_MESSAGES/gnome-libs.mo
-share/locale/zh_CN.GB2312/LC_MESSAGES/gnome-libs.mo
+share/locale/zh_CN/LC_MESSAGES/gnome-libs.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-libs.mo
 @exec mkdir -p %D/share/gnome/games
 @dirrm share/gnome/type-convert
