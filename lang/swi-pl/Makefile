@@ -33,11 +33,8 @@ PLIST_SUB+=	BITS=64
 .endif
 
 .if (${ARCH} == "alpha")
-EXTRA_PATCHES=	${FILESDIR}/extra-patch-src-configure
-.endif
-
-.if ${ARCH} != "i386"
-BROKEN=		"Broken pkg-plist"
+EXTRA_PATCHES=	${FILESDIR}/extra-patch-src-configure \
+		${FILESDIR}/extra-patch-src-Makefile-in
 .endif
 
 post-patch:

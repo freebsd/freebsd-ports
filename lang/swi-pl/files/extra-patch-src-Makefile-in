@@ -1,0 +1,10 @@
+--- src/Makefile.in.orig	Sat Jan 29 21:27:47 2005
++++ src/Makefile.in	Sat Jan 29 21:27:57 2005
+@@ -310,7 +310,6 @@
+ 
+ iruntime::
+ 		$(INSTALL_DATA) $(RUNTIME) $(PLBASE)/lib/$(ARCH)
+-		$(RANLIB) $(PLBASE)/lib/$(ARCH)/$(PLLIB)
+ 		if [ -f $(RUNTIMEDIR)/$(SHAREDV) ]; then \
+ 		  $(INSTALL_DATA) $(RUNTIMEDIR)/$(SHAREDV) $(PLBASE)/lib/$(ARCH) ; \
+ 		( cd $(PLBASE)/lib/$(ARCH) && rm -f $(SHARED) && ln -s $(SHAREDV) $(SHARED) ) ; \
