@@ -7,7 +7,7 @@
 
 PORTNAME=	bacula
 PORTVERSION=	1.34.6
-#PORTREVISION=	1
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	bacula
@@ -216,7 +216,7 @@ post-install:
 	@${ECHO_MSG} "  ${PREFIX}/sbin/chio-bacula"
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "Please have a look at it if you want to use an"
-	@${ECHO_MSG} "auto-changer. You have to configure the usage in"
+	@${ECHO_MSG} "autochanger. You have to configure the usage in"
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "  ${PREFIX}/etc/bacula-dir.conf"
 	@${ECHO_MSG} ""
@@ -228,11 +228,22 @@ post-install:
 	@${ECHO_MSG} "implementation you MUST add some OS dependent options to"
 	@${ECHO_MSG} "the bacula-sd.conf file:"
 	@${ECHO_MSG} ""
-	@${ECHO_MSG} "  Backward Space Record = no;"
 	@${ECHO_MSG} "  Hardware End of Medium = no;"
+	@${ECHO_MSG} "  Backward Space Record = no;"
+	@${ECHO_MSG} "  Backward Space File = no;"
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "With 2 filemart at EOT (see man mt):"
 	@${ECHO_MSG} "  Fast Forward Space File = no;"
 	@${ECHO_MSG} "  BSF at EOM = yes;"
-	@${ECHO_MSG} "  TWOEOF = yes;"
+	@${ECHO_MSG} "  TWO EOF = yes;"
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "With 1 filemart at EOT (see man mt):"
+	@${ECHO_MSG} "  Fast Forward Space File = yes;"
+	@${ECHO_MSG} "  BSF at EOM = no;"
+	@${ECHO_MSG} "  TWO EOF = no;"
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "NOTE: YOU CAN SWITCH EOT model ONLY when starting"
+	@${ECHO_MSG} "      from scratch with EMPTY tapes!!!!"
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "It is also important that all the scripts accessed"
 	@${ECHO_MSG} "by RunBeforeJob and RunAfterJob can be executed by"
