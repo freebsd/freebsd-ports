@@ -7,6 +7,7 @@
 
 PORTNAME=	shim-ruby18
 PORTVERSION=	1.7.3.2002.12.11
+PORTREVISION=	1
 CATEGORIES=	lang devel ruby
 MASTER_SITES=	${MASTER_SITE_RUBY}
 MASTER_SITE_SUBDIR=	shim
@@ -36,9 +37,13 @@ IF_DEFAULT=	""
 IF_DEFAULT=	"@comment "
 .endif
 
-INSTALLED_SCRIPTS=	${PREFIX}/bin/erb
+INSTALLED_SCRIPTS=	${PREFIX}/bin/erb \
+			${PREFIX}/bin/h2rb
 
 PLIST_SUB+=	IF_DEFAULT=${IF_DEFAULT} \
+
+post-extract:
+	${MV} ${WRKSRC}/ext/dl/h2rb ${WRKSRC}/bin/
 
 pre-install:
 	${SETENV} PKG_PREFIX="${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
