@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	libtlen
-PORTVERSION=	20030721
+PORTVERSION=	20031223
 CATEGORIES=	polish net
 MASTER_SITES=	http://www.libtlen.eu.org/snapshots/archive/
 
