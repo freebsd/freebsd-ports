@@ -1,0 +1,152 @@
+diff -udr ../mh-6.8.3.ORG/support/pop/popauth.c ./support/pop/popauth.c
+--- ../mh-6.8.3.ORG/support/pop/popauth.c	Wed Dec  1 06:01:34 1993
++++ ./support/pop/popauth.c	Sat Apr 27 17:35:13 1996
+@@ -18,6 +18,11 @@
+ #include "../zotnet/bboards.h"
+ #include "../zotnet/mts.h"
+ 
++#ifdef	dbm_pagfno
++#undef	dbm_pagfno
++#define	dbm_pagfno	dbm_dirfno
++#endif
++
+ /*  */
+ 
+ static struct swit switches[] = {
+@@ -130,8 +135,10 @@
+ 	if ((db = dbm_open (APOP, O_RDWR | O_CREAT, 0600)) == NULL)
+ 	    adios (APOP, "unable to create POP authorization DB");
+ 	if (fchown (dbm_dirfno (db), pw -> pw_uid, pw -> pw_gid) == NOTOK
+-	        || fchown (dbm_pagfno (db), pw -> pw_uid, pw -> pw_gid)
+-	    		== NOTOK)
++#ifndef	BSD44
++	    || fchown (dbm_pagfno (db), pw -> pw_uid, pw -> pw_gid) == NOTOK
++#endif
++	    )
+ 	    advise (" ", "error setting ownership of POP authorization DB");
+ 
+ 	done (0);
+diff -udr ../mh-6.8.3.ORG/support/pop/popser.c ./support/pop/popser.c
+--- ../mh-6.8.3.ORG/support/pop/popser.c	Sat Apr 27 18:53:45 1996
++++ ./support/pop/popser.c	Sat Apr 27 17:35:13 1996
+@@ -669,6 +669,10 @@
+ #include <fcntl.h>
+ #endif
+ 
++#ifdef	dbm_pagfno
++#undef	dbm_pagfno
++#define	dbm_pagfno	dbm_dirfno
++#endif
+ 
+ static int apop (vec)
+ register char  **vec;
+diff -udr ../mh-6.8.3.ORG/uip/slocal.c ./uip/slocal.c
+--- ../mh-6.8.3.ORG/uip/slocal.c	Sat Apr 27 18:53:49 1996
++++ ./uip/slocal.c	Sat Apr 27 17:35:13 1996
+@@ -44,6 +44,16 @@
+ 
+ #ifdef	MSGID
+ 
++#ifdef	BSD44
++#define	MSGID_PAGFILE ".maildelivery.db"
++#define	MSGID_PAGFNO	dbm_dirfno
++#else
++#define	MSGID_PAGFILE ".maildelivery.pag"
++#define	MSGID_PAGFNO	dbm_pagfno
++#endif
++
++static int check_msgid (int, char *);
++
+ #undef	DBM		/* used by ndbm.h */
+ #include <ndbm.h>
+ #include <stdio.h>
+@@ -173,6 +183,8 @@
+     NULL
+ };
+ 
++static char *rcvstore;
++
+ /*  */
+ 
+ extern char **environ;
+@@ -299,6 +311,8 @@
+ 
+ /*  */
+ 
++    rcvstore = getcpy(libpath("rcvstore"));
++
+     if (addr == NULL)
+ 	addr = getusr ();
+     if (user == NULL)
+@@ -378,10 +392,21 @@
+ {
+ #ifdef	MSGID
+     struct stat st;
++    static int first = 1;
+ 
+-    if (stat (".maildelivery.pag", &st) != NOTOK
+-	    && check_msgid (fd, ".maildelivery") == DONE)
+-	return OK;
++    if (stat (MSGID_PAGFILE, &st) != NOTOK) {
++	/*
++	 * Allow a user to trigger the database by creating an
++	 * empty database file.  That gets us here, now we need
++	 * to remove it so DBM will create and initialize it properly.
++	 */
++	if (st.st_size == 0 && first) {
++	    first = 0;
++	    (void) unlink(MSGID_PAGFILE);
++	}
++	if (check_msgid (fd, ".maildelivery") == DONE)
++	    return OK;
++    }
+ #endif
+ 
+     if (usr_delivery (fd, mdlvr ? mdlvr : ".maildelivery", 0, from) != NOTOK)
+@@ -543,7 +568,23 @@
+ 		status = usr_pipe (fd, tmpbuf, "/bin/sh", vec + 2);
+ 		break;
+ 
++	    case '+':
++	    dofolder:
++		if (*string == '+')
++		    strcpy(tmpbuf, string);
++		else
++		    sprintf(tmpbuf, "+%s", string);
++		vec[2] = "rcvstore";
++		vec[3] = tmpbuf;
++		vec[4] = NULL;
++		if (verbose)
++		    printf("rcvstore %s", vec[3]);
++		status = usr_pipe(fd, "rcvstore", rcvstore, vec + 2);
++		break;
++
+ 	    case 'f': 
++		if (uleq(action, "folder"))
++		    goto dofolder;
+ 		if (!uleq (action, "file"))
+ 		    continue;	/* else fall */
+ 	    case '>': 
+@@ -1314,19 +1355,19 @@
+ 		    fl.l_whence = 0;
+ 		    fl.l_start = 0;
+ 		    fl.l_len = 0;
+-		    if (fcntl (dbm_pagfno (db), F_SETLK, &fl) == -1) {
++		    if (fcntl (MSGID_PAGFNO (db), F_SETLK, &fl) == -1) {
+ 			advise (file, "unable to perform flock on");
+ 			goto out;
+ 		    }
+ 		}
+ #else
+ #ifdef LOCKF
+-		if (lockf (dbm_pagfno (db), F_LOCK) == NOTOK) {
++		if (lockf (MSGID_PAGFNO (db), F_LOCK) == NOTOK) {
+ 		    advise (file, "unable to perform lockf on");
+ 		    goto out;
+ 		}
+ #else
+-		if (flock (dbm_pagfno (db), LOCK_EX) == NOTOK) {
++		if (flock (MSGID_PAGFNO (db), LOCK_EX) == NOTOK) {
+ 		    advise (file, "unable to perform flock on");
+ 		    goto out;
+ 		}
