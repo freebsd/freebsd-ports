@@ -1,5 +1,5 @@
 # New ports collection makefile for:	XEmacs with Wnn6
-# Version required:	20.4
+# Version required:	21.1.6
 # Date created:		25 January 1998
 # Whom:			KIRIYAMA Kazuhiko <kiri@kiri.toba-cmt.ac.jp>
 #

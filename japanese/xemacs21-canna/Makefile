@@ -1,5 +1,5 @@
 # New ports collection makefile for:	XEmacs for Japanese with Canna
-# Version required:	20.4
+# Version required:	21.1.6
 # Date created:		5 Dec 1997
 # Whom:			KIRIYAMA Kazuhiko <kiri@kiri.toba-cmt.ac.jp>
 #
