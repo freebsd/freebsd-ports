@@ -1,14 +1,5 @@
 --- src/Makefile.in.orig	Mon Mar 19 00:32:47 2001
 +++ src/Makefile.in	Mon Mar 19 00:36:54 2001
-@@ -44,7 +44,7 @@
- 			 ${OOPSPATH}/DB \
- 			 ${OOPSPATH}/storages \
- 			 ${OOPS_SYSCONFDIR}/tables \
--			 ${OOPS_LIBDIR}/modules
-+			 ${OOPS_LIBDIR}
- 
- 	if [ "X@OOPS_USER@" != "X" ]; then\
- 		${CHOWN} @OOPS_USER@ ${OOPSPATH}/logs;\
 @@ -53,51 +53,15 @@
  
  install: all mkinstalldirs
