@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pkill
-PORTVERSION=	0.1
+PORTVERSION=	0.2
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	lioux
@@ -31,6 +31,12 @@ MAKE_ENV+=	NEED_KMEM=1
 . endif
 DISTNAME=	${PORTNAME}-stable-${PORTVERSION}
 WRKSRC=		${WRKDIR}/${PORTNAME}-stable
+.endif
+
+post-install:
+.if ${OSVERSION} <= 300000
+	@${CHGRP} kmem ${PREFIX}/bin/pkill 
+	@${CHMOD} 2555 ${PREFIX}/bin/pkill
 .endif
 
 .include <bsd.port.post.mk>
