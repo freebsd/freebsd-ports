@@ -95,6 +95,7 @@
     SUBDIR += xautolock
     SUBDIR += xballoon
     SUBDIR += xbanner
+    SUBDIR += xbindkeys
     SUBDIR += xcb
     SUBDIR += xclip
     SUBDIR += xcmd
