@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://ftp.crynwr.com/piewm/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A tvtwm with pie (circular) menus
 
+DISABLE_SIZE=	yes
 USE_IMAKE=	yes
 USE_XPM=	yes
 MAN1=		piewm.1
