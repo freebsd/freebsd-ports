@@ -1,0 +1,5 @@
+bin/gemfinder
+%%RUBY_DOCDIR%%/gemfinder/README
+%%RUBY_DOCDIR%%/gemfinder/gemfinder.html
+%%RUBY_DOCDIR%%/gemfinder/gemfinder.rd
+@dirrm %%RUBY_DOCDIR%%/gemfinder
