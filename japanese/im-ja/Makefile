@@ -23,7 +23,7 @@ LIB_DEPENDS+=	wnn.0:${PORTSDIR}/japanese/FreeWnn-lib
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
-USE_GNOME=	gnomeprefix gnomehack gtk20 gconf
+USE_GNOME=	gnomeprefix gnomehack gtk20 gconf2
 GNU_CONFIGURE=	yes
 
 .if defined(WITHOUT_CANNA)
