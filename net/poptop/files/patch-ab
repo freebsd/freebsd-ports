@@ -1,8 +1,8 @@
 
 $FreeBSD$
 
---- Makefile.in.orig	Thu Feb 27 16:41:21 2003
-+++ Makefile.in	Wed Jun 25 01:35:11 2003
+--- Makefile.in.orig	Fri Feb 28 00:41:21 2003
++++ Makefile.in	Sat Oct 18 21:51:01 2003
 @@ -75,7 +75,7 @@
  AUTOMAKE_OPTIONS = no-dependencies foreign
  
@@ -12,3 +12,24 @@ $FreeBSD$
  #CFLAGS = -O2 -fno-builtin -Wall -ansi -DSBINDIR='"$(sbindir)"'
  #CFLAGS = -O2 -fno-builtin -Wall -ansi -pedantic -Wmissing-prototypes -Werror -DSBINDIR='"$(sbindir)"'
  
+@@ -93,8 +93,8 @@
+ # for dependencies, so just attribute them all to pptpd.
+ 
+ pptpd_SOURCES = \
+-	pptpd.c configfile.c pptpmanager.c compat.c inststr.c getopt.c getopt1.c \
+-	compat.h configfile.h ctrlpacket.h defaults.h inststr.h our_getopt.h \
++	pptpd.c configfile.c pptpmanager.c compat.c inststr.c \
++	compat.h configfile.h ctrlpacket.h defaults.h inststr.h out_getopt.h \
+ 	our_syslog.h ppphdlc.h pptpctrl.h pptpdefs.h pptpgre.h pptpmanager.h
+ 
+ 
+@@ -118,8 +118,7 @@
+ LDFLAGS = @LDFLAGS@
+ LIBS = @LIBS@
+ pptpd_OBJECTS =  pptpd.$(OBJEXT) configfile.$(OBJEXT) \
+-pptpmanager.$(OBJEXT) compat.$(OBJEXT) inststr.$(OBJEXT) \
+-getopt.$(OBJEXT) getopt1.$(OBJEXT)
++pptpmanager.$(OBJEXT) compat.$(OBJEXT) inststr.$(OBJEXT)
+ pptpd_DEPENDENCIES = 
+ pptpd_LDFLAGS = 
+ pptpctrl_OBJECTS =  pptpctrl.$(OBJEXT) ctrlpacket.$(OBJEXT) \
