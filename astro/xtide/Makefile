@@ -18,12 +18,15 @@ LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm \
 		png.3:${PORTSDIR}/graphics/png
 
 USE_X_PREFIX=	yes
-HAS_CONFIGURE=	yes
+GNU_CONFIGURE=	yes
 MAN1=	xtide.1 tide.1
 MANCOMPRESSED=	no
 
 post-extract:
 	@${GZCAT} ${DISTDIR}/harmonics.world.gz > ${WRKSRC}/harmonics
+
+post-patch:
+	@${PERL} -pi -e "s:%%PREFIX%%:${PREFIX}:g" ${WRKSRC}/TideContext.cc
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/xtide ${PREFIX}/bin
