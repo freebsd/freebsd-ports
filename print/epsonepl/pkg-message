@@ -1,0 +1,9 @@
+-------------------------------------------------------------------------
+
+You need to copy and customize 
+%%PREFIX%%/etc/epsonepl.conf[.sample]
+
+If you're using apsfilter then have a look 
+at %%PREFIX%%/share/epsonepl/epsonepl.apsfilter
+
+-------------------------------------------------------------------------
