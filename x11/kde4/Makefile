@@ -56,16 +56,6 @@ WITHOUT_${module}=yes
 .endfor
 .endif
 
-## If PARALLEL_PACKAGE_BUILD is defined, don't depend on
-## kdeedu, kdesdk & kdevelop. This is for space-saving on
-## the release CD-ROM
-
-.if defined(PARALLEL_PACKAGE_BUILD)
-WITHOUT_KDEVELOP=yes
-WITHOUT_KDEEDU=yes
-WITHOUT_KDESDK=yes
-.endif
-
 ## If the user has some WITHOUT_FOO stuff set that matters to us,
 ## define BATCH so interactive configuration will be skipped.
 
