@@ -3,16 +3,17 @@
 # Date created:		27 Jan 1998
 # Whom:			Jun-ichiro itojun Itoh <itojun@itojun.org>
 #
-# $Id: Makefile,v 1.1.1.1 1998/02/28 03:38:32 itojun Exp $
+# $Id: Makefile,v 1.2 1998/03/03 09:26:29 asami Exp $
 #
 
 DISTNAME=	siag-2.65
 CATEGORIES=	math
+# Since 2.67 (latest version on 3/7/1998) is seriously broken, I asked
+# asami-san to put 2.65 into ftp.freebsd.org.  Thanks.
 MASTER_SITES=	ftp://ftp.edu.stockholm.se/pub/siag/
 
 MAINTAINER=	itojun@itojun.org
 
-BROKEN=		fetch
 USE_X11=	yes
 WRKSRC=		${WRKDIR}/siag
 CONF=	siag/data.scm siag/find.scm siag/keytable.scm siag/menu.scm \
