@@ -1,0 +1,22 @@
+Gnu Regression, Econometrics and Time-series Library
+
+Features
+   - A wide variety of least-squares based estimators (including two-stage
+     least squares).
+   - Easy intuitive interface.
+   - Single commands to launch things like augmented Dickey-Fuller test, Chow
+     test for structural stability, Vector Autoregression.
+   - Reads own format ascii data files, Comma Separated Values files, BOX1
+     files, own format binary databases (allowing mixed data frequencies and
+     series lengths) and RATS 4 databases. Includes a US macro database and a
+     perl script to create a database off economagic.com. See also the gretl
+     data page.
+   - Output models as LaTeX files, in tabular or equation format (not very
+     flexible yet).
+   - Integrated scripting language: enter commands either via the gui or via
+     script.
+   - Command loop structure for Monte Carlo simulations.
+   - GUI controller for fine-tuning Gnuplot graphs.
+   - Link to GNU R for further data analysis.
+
+WWW: http://gretl.sourceforge.net/

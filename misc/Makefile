@@ -102,6 +102,7 @@
     SUBDIR += graphthing
     SUBDIR += grc
     SUBDIR += grdb
+    SUBDIR += gretl
     SUBDIR += grun
     SUBDIR += gtkfind
     SUBDIR += gtl
