@@ -80,6 +80,7 @@
 %%PGADMDIR%%/lang/chinese-tr.php
 %%PGADMDIR%%/lang/convert.awk
 %%PGADMDIR%%/lang/czech.php
+%%PGADMDIR%%/lang/danish.php
 %%PGADMDIR%%/lang/dutch.php
 %%PGADMDIR%%/lang/english.php
 %%PGADMDIR%%/lang/french.php
@@ -100,6 +101,7 @@
 %%PGADMDIR%%/lang/recoded/chinese-sim.php
 %%PGADMDIR%%/lang/recoded/chinese-tr.php
 %%PGADMDIR%%/lang/recoded/czech.php
+%%PGADMDIR%%/lang/recoded/danish.php
 %%PGADMDIR%%/lang/recoded/dutch.php
 %%PGADMDIR%%/lang/recoded/english.php
 %%PGADMDIR%%/lang/recoded/french.php
