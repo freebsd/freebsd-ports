@@ -164,6 +164,7 @@
     SUBDIR += rsynth
     SUBDIR += ruby-audiofile
     SUBDIR += ruby-mp3tag
+    SUBDIR += ruby-qt2sound
     SUBDIR += s3mod
     SUBDIR += sbagen
     SUBDIR += sdl_mixer
