@@ -34,6 +34,7 @@
     SUBDIR += mytop
     SUBDIR += p5-ApacheDBILogConfig
     SUBDIR += p5-ApacheDBILogger
+    SUBDIR += p5-BerkeleyDB
     SUBDIR += p5-DBD-CSV
     SUBDIR += p5-DBD-Pg
     SUBDIR += p5-DBD-XBase
