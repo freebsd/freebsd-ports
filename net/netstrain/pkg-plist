@@ -1,0 +1,4 @@
+bin/netstrain
+bin/netstraind
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
