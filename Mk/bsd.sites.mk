@@ -713,10 +713,10 @@ MASTER_SITE_RUBY+= \
 	ftp://ftp.iDaemons.org/pub/mirror/ftp.ruby-lang.org/ruby/%SUBDIR%/
 
 MASTER_SITE_SAMBA+= \
-	http://us3.samba.org/samba/ftp/%SUBDIR%/ \
 	http://us1.samba.org/samba/ftp/%SUBDIR%/ \
-	http://us4.samba.org/samba/ftp/%SUBDIR%/ \
 	http://us2.samba.org/samba/ftp/%SUBDIR%/ \
+	http://us4.samba.org/samba/ftp/%SUBDIR%/ \
+	http://us3.samba.org/samba/ftp/%SUBDIR%/ \
 	ftp://ca.samba.org/%SUBDIR%/ \
 	ftp://de.samba.org/samba.org/%SUBDIR%/ \
 	ftp://ftp.k2.net/mirrors/samba/%SUBDIR%/ \
