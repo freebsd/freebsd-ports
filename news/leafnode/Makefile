@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	leafnode
-PORTVERSION=	1.9.53
+PORTVERSION=	1.9.54
 PORTREVISION=	0
 CATEGORIES=	news
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED:S/$/:sourceforge/} \
@@ -52,8 +52,12 @@ MAN8DIR_DE=	${MAN8PREFIX}/man/de.ISO8859-1/man8
 DOCS=		ADD-ONS ChangeLog COPYING CREDITS FAQ.txt FAQ.pdf FAQ.html \
 		INSTALL NEWS README ChangeLog.old README-FQDN README-FQDN.html \
 		README-daemontools README.FIRST TODO leafnode.cron.daily \
-		leafnode-SA-2002-01 leafnode-SA-2003-01 KNOWNBUGS
+		leafnode-SA-2002-01 leafnode-SA-2003-01 leafnode-SA-2004-01 KNOWNBUGS
 DOCS_DE=	INSTALL_de LIESMICH-daemontools README README_de
+
+.if !defined(NOPORTDOCS)
+PORTDOCS=	*
+.endif
 
 pre-configure:
 	@${ECHO_MSG}
