@@ -1,6 +1,23 @@
---- alive.h.orig	Fri Mar 15 08:49:43 1991
-+++ alive.h	Fri Dec  6 14:27:44 1996
-@@ -31,7 +31,7 @@
+--- alive.h.orig	Sat Mar 16 01:49:43 1991
++++ alive.h	Fri May  7 23:36:11 1999
+@@ -1,15 +1,10 @@
+ #include	<stdio.h>
++#include	<sys/types.h>
+ 
+ #include	<protocols/rwhod.h>
+ 
+-#include	<sys/types.h>
+-#ifdef SYSV
+ #include	<dirent.h>
+ typedef struct dirent	Directory;
+-#else
+-#include	<sys/dir.h>
+-typedef struct direct	Directory;
+-#endif
+ 
+ #include	<sys/file.h>
+ #include	"gmac.h"
+@@ -31,7 +26,7 @@
  #define	SSIZE	sizeof(u_short)
  #define	LSIZE	sizeof(u_long)
  
