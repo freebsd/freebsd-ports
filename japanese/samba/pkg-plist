@@ -1,5 +1,4 @@
 bin/findsmb
-bin/make_nftable
 bin/make_printerdef
 bin/make_smbcodepage
 bin/make_smbpasswd
@@ -19,6 +18,9 @@ bin/tdbbackup
 %%LDAPSAM%%bin/pdbedit
 %%WINBIND%%bin/wbinfo
 %%WINBIND%%sbin/winbindd
+%%SMBSH%%bin/smbsh
+%%SMBSH%%bin/smbwrapper.so
+bin/pam_smbpass.so
 etc/codepages/codepage.1125
 etc/codepages/codepage.1251
 etc/codepages/codepage.437
@@ -823,17 +825,12 @@ share/examples/samba/LDAP/smbldap-tools/smbldap_conf.pm
 share/examples/samba/LDAP/smbldap-tools/smbldap_tools.pm
 share/examples/samba/README
 %%BUILD_VFS%%share/examples/samba/VFS/Makefile
-share/examples/samba/VFS/.cvsignore
 share/examples/samba/VFS/README
 share/examples/samba/VFS/audit.c
-%%BUILD_VFS%%share/examples/samba/VFS/audit.o
 %%BUILD_VFS%%share/examples/samba/VFS/audit.so
 share/examples/samba/VFS/block/block.c
-%%BUILD_VFS%%share/examples/samba/VFS/block/block.o
 %%BUILD_VFS%%share/examples/samba/VFS/block/block.so
-%%BUILD_VFS%%share/examples/samba/VFS/recycle/recycle.o
 %%BUILD_VFS%%share/examples/samba/VFS/recycle/recycle.so
-%%BUILD_VFS%%share/examples/samba/VFS/skel.o
 %%BUILD_VFS%%share/examples/samba/VFS/skel.so
 share/examples/samba/VFS/block/samba-block.conf
 share/examples/samba/VFS/block/smb.conf
