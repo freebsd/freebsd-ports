@@ -7,9 +7,10 @@
 #
 
 PORTNAME=	anteater
-PORTVERSION=	0.4.1
+PORTVERSION=	0.4.2
 CATEGORIES=	sysutils
-MASTER_SITES=	ftp://ftp.profzone.ch/drzoom/anteater/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A MTA log analyzer
