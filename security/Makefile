@@ -115,6 +115,7 @@
     SUBDIR += ssh2
     SUBDIR += sslproxy
     SUBDIR += sslwrap
+    SUBDIR += sst
     SUBDIR += strobe
     SUBDIR += stunnel
     SUBDIR += sudo
