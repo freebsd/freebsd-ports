@@ -1,0 +1,11 @@
+--- src/docheck.orig	Mon Aug 16 21:41:02 2004
++++ src/docheck	Mon Aug 16 21:41:23 2004
+@@ -551,7 +551,7 @@
+   $O/uschedulerm
+   echo "--- uscheduleruntimelimit works as expected"
+   (
+-    exec 2>/dev/null
++    exec >/dev/null 2>&1
+     $O/uscheduleruntimelimit 3 sh -c 'sleep 30'
+     exit $?
+   )

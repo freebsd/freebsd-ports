@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	uschedule
-PORTVERSION=	0.7.0
+PORTVERSION=	0.7.1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.ohse.de/uwe/uschedule/
 
@@ -20,18 +20,21 @@ NO_SIZE=	yes
 WRKSRC=		${WRKDIR}/admin/${DISTNAME}
 
 MAN1=		uschedule.1 uschedulecmd.1 uscheduleconf.1 uschedulecp.1 \
-		uscheduleedit.1 uschedulelist.1 uschedulerm.1
+		uscheduleedit.1 uschedulelist.1 uschedulerm.1 \
+		uscheduleruntimelimit.1
 MAN7=		uschedule_intro.7
 MAN8=		uscheduled.8
 PORTDOCS=	ChangeLog NEWS SECURITY-BUG
 bin=		uschedule uschedulecmd uscheduleconf uschedulecp \
-		uscheduleedit uschedulelist uschedulerm
+		uscheduleedit uschedulelist uschedulerm uscheduleruntimelimit
 sbin=		uscheduled
 PLIST_FILES=	${bin:S,^,bin/,}
 PLIST_FILES+=	${sbin:S,^,sbin/,}
 
 do-build:
-	cd ${WRKSRC} && package/compile && package/check
+	${ECHO_CMD} ${CC} > ${WRKSRC}/src/conf-cc
+	${ECHO_CMD} ${CFLAGS} > ${WRKSRC}/src/conf-cflags
+	cd ${WRKSRC} && package/build
 
 do-install:
 .if !defined(NOPORTDOCS)
@@ -43,7 +46,7 @@ do-install:
  	    ${MAN${section}PREFIX}/man/man${section}
 .endfor
 .for d in bin sbin
-	cd ${WRKSRC}/compile && ${INSTALL_PROGRAM} ${${d}} ${PREFIX}/${d}
+	cd ${WRKSRC}/command && ${INSTALL_PROGRAM} ${${d}} ${PREFIX}/${d}
 .endfor
 	@${CAT} pkg-message
 
