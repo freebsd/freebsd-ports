@@ -14,7 +14,7 @@ MASTER_SITES=	http://utopia.knoware.nl/users/driehuis/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-fbsd
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Dynamic Library Tracer -- similar to strace, but it traces library calls
+COMMENT=	Dynamic Library Tracer -- similar to strace, but trace library calls
 
 # Although there is sparc code under the Linux/ directory, there is nothing
 # other than i386 in the FreeBSD/ directory as of 2003-18-06.
@@ -23,12 +23,15 @@ ONLY_FOR_ARCHS=	i386
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+PLIST_FILES=	bin/ltrace etc/ltrace.conf
+
 MAN1=		ltrace.1
 
 post-patch:
 	${REINPLACE_CMD} \
 		-e 's|"/etc/ltrace.conf"|"${PREFIX}/etc/ltrace.conf"|g' \
 		${WRKSRC}/ltrace.c
+	${REINPLACE_CMD} -e 's|^\(CC\)|#\1|' ${WRKSRC}/Makefile.in
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ltrace ${PREFIX}/bin
