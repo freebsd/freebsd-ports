@@ -1,0 +1,28 @@
+--- configure.orig	Wed Nov 19 13:39:56 2003
++++ configure	Wed Nov 19 13:40:28 2003
+@@ -3394,9 +3394,9 @@
+ rm -f conftest.$ac_objext conftest.$ac_ext
+ 
+   if test "$have_boost" = "yes"; then
+-    WANT_BOOST_MAJOR=`expr $boost_min_version : '\([0-9]\+\)'`
+-    WANT_BOOST_MINOR=`expr $boost_min_version : '[0-9]\+\.\([0-9]\+\)'`
+-    WANT_BOOST_SUB_MINOR=`expr $boost_min_version : '[0-9]\+\.[0-9]\+\.\([0-9]\+\)'`
++    WANT_BOOST_MAJOR=1
++    WANT_BOOST_MINOR=30
++    WANT_BOOST_SUB_MINOR=0
+     WANT_BOOST_VERSION=`expr $WANT_BOOST_MAJOR \* 100000 \+ $WANT_BOOST_MINOR \* 100 \+ $WANT_BOOST_SUB_MINOR`
+ 
+     cat >conftest.$ac_ext <<_ACEOF
+@@ -3562,9 +3562,9 @@
+ rm -f conftest.$ac_objext conftest.$ac_ext
+ 
+   if test "$have_boost" = "yes"; then
+-    WANT_BOOST_MAJOR=`expr $boost_min_version : '\([0-9]\+\)'`
+-    WANT_BOOST_MINOR=`expr $boost_min_version : '[0-9]\+\.\([0-9]\+\)'`
+-    WANT_BOOST_SUB_MINOR=`expr $boost_min_version : '[0-9]\+\.[0-9]\+\.\([0-9]\+\)'`
++    WANT_BOOST_MAJOR=1
++    WANT_BOOST_MINOR=30
++    WANT_BOOST_SUB_MINOR=0
+     WANT_BOOST_VERSION=`expr $WANT_BOOST_MAJOR \* 100000 \+ $WANT_BOOST_MINOR \* 100 \+ $WANT_BOOST_SUB_MINOR`
+ 
+     cat >conftest.$ac_ext <<_ACEOF
