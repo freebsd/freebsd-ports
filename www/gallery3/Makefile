@@ -13,8 +13,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	jamie@hermans.ca
 
-RUN_DEPENDS=	${LOCALBASE}/share/netpbm:${PORTSDIR}/graphics/netpbm
-RUN_DEPENDS=	${LOCALBASE}/bin/jhead:${PORTSDIR}/graphics/jhead
+RUN_DEPENDS=	${LOCALBASE}/share/netpbm:${PORTSDIR}/graphics/netpbm \
+		${LOCALBASE}/bin/jhead:${PORTSDIR}/graphics/jhead
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 NO_BUILD=	yes
@@ -30,7 +30,7 @@ post-install:
 	@${ECHO} ""
 	@${ECHO} " Please consider adding the following 3 lines to your httpd.conf"
 	@${ECHO} ""
-	@${ECHO} "	<Directory /usr/local/www/data/gallery>"
+	@${ECHO} "	<Directory ${LOCALBASE}/www/data/gallery>"
 	@${ECHO} "		AllowOverride Options FileInfo"
 	@${ECHO} "	</Directory>"
 	@${ECHO} ""
