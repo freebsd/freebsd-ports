@@ -1,7 +1,8 @@
 lib/libmcrypt.a
 lib/libmcrypt.la
+lib/libmcrypt-2.2.so.2
+lib/libmcrypt-2.2.so
 lib/libmcrypt.so
-lib/libmcrypt.so.2
 include/mcrypt.h
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
