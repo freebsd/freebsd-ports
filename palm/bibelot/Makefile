@@ -1,0 +1,25 @@
+# ex:ts=8
+# New ports collection makefile for:	bibelot
+# Date created:		Jan 8, 2001
+# Whom:			Ying-Chieh Liao <ijliao@FreeBSD.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	bibelot
+PORTVERSION=	0.8
+CATEGORIES=	palm
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
+
+MAINTAINER=	ijliao@FreeBSD.org
+
+USE_PERL5=	yes
+
+NO_WRKSUBDIR=	yes
+NO_BUILD=	yes
+
+do-install:
+	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}.pl ${PREFIX}/bin
+
+.include <bsd.port.mk>
