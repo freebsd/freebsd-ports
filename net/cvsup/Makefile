@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	cvsup
-PORTVERSION=	16.1
+PORTVERSION?=	16.1
 CATEGORIES=	net devel
-MASTER_SITES=	ftp://ftp.freebsd.org/pub/FreeBSD/development/CVSup/sources/ \
+MASTER_SITES?=	ftp://ftp3.freebsd.org/pub/FreeBSD/development/CVSup/sources/ \
+		ftp://ftp.freebsd.org/pub/FreeBSD/development/CVSup/sources/ \
 		ftp://ftp.cs.tu-berlin.de/pub/FreeBSD/development/CVSup/sources/
 
 MAINTAINER=	jdp@FreeBSD.org
