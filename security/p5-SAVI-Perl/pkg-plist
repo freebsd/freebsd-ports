@@ -1,0 +1,6 @@
+lib/perl5/site_perl/5.8.5/mach/SAVI.pm
+lib/perl5/site_perl/5.8.5/mach/auto/SAVI/.packlist
+lib/perl5/site_perl/5.8.5/mach/auto/SAVI/SAVI.bs
+lib/perl5/site_perl/5.8.5/mach/auto/SAVI/SAVI.so
+lib/perl5/site_perl/5.8.5/mach/auto/SAVI/autosplit.ix
+@dirrm lib/perl5/site_perl/5.8.5/mach/auto/SAVI
