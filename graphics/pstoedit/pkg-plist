@@ -1,1 +1,6 @@
 bin/pstoedit
+lib/mpost.fmp
+share/doc/pstoedit/changelog.htm
+share/doc/pstoedit/index.htm
+share/doc/pstoedit/pstoedit.htm
+@dirrm share/doc/pstoedit
