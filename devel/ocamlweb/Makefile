@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ocamlweb
-PORTVERSION=	1.31
+PORTVERSION=	1.32
 CATEGORIES=	devel
 MASTER_SITES=	http://www.lri.fr/~filliatr/ftp/ocamlweb/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DOCFILES}
@@ -14,8 +14,6 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	jkoshy@FreeBSD.ORG
 COMMENT=	A literate programming tool for Objective Caml
-
-BROKEN=		"Does not install"
 
 BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml
 RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX
@@ -31,7 +29,7 @@ MAN1=		ocamlweb.1
 post-install:
 .if !defined{NOPORTDOCS}
 	@${MKDIR} ${PREFIX}/share/doc/${PORTNAME}
-	@${INSTALL_DATA} ${DISTDIR}/${PORTNAME}-man.ps.gz ${DOCSDIR}
+	@${INSTALL_DATA} ${DISTDIR}/${DOCFILES} ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
