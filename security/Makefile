@@ -58,6 +58,7 @@
     SUBDIR += portscanner
     SUBDIR += portsentry
     SUBDIR += rsaref
+    SUBDIR += saint
     SUBDIR += skip
     SUBDIR += slush
     SUBDIR += smurflog
