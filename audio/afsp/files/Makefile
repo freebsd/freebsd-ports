@@ -35,24 +35,62 @@ SUBHEADERS =	include/libtsp/AFdataio.h \
 		include/libtsp/WVpar.h \
 		include/libtsp/nucleus.h \
 		include/libtsp/sysOS.h
-MAN3FILES =	man/AFclose.3tsp \
-		man/AFopenRead.3tsp \
-		man/AFopenWrite.3tsp \
-		man/AFreadData.3tsp \
-		man/AFsetFileType.3tsp \
-		man/AFsetHinfo.3tsp \
-		man/AFwriteData.3tsp \
-		man/AFsetNHpar.3tsp
-MAN1FILES =	man/AFsp.1audio \
-		man/CompAudio.1audio \
-		man/CopyAudio.1audio \
-		man/FiltAudio.1audio \
-		man/GenNoise.1audio \
-		man/GenTone.1audio \
-		man/InfoAudio.1audio \
-		man/LPanal.1audio \
-		man/LPsyn.1audio \
-		man/ResampAudio.1audio
+MAN3FILES =	man/libtsp/AF/AFclose.3tsp \
+		man/libtsp/AF/AFopenRead.3tsp \
+		man/libtsp/AF/AFopenWrite.3tsp \
+		man/libtsp/AF/AFreadData.3tsp \
+		man/libtsp/AF/AFsetFileType.3tsp \
+		man/libtsp/AF/AFsetHinfo.3tsp \
+		man/libtsp/AF/AFsetNHpar.3tsp \
+		man/libtsp/AF/AFsetSpeaker.3tsp \
+		man/libtsp/AF/AFwriteData.3tsp
+MAN1FILES =	man/audio/AFsp.1audio \
+		man/audio/CompAudio.1audio \
+		man/audio/CopyAudio.1audio \
+		man/audio/FiltAudio.1audio \
+		man/audio/GenNoise.1audio \
+		man/audio/GenTone.1audio \
+		man/audio/InfoAudio.1audio \
+		man/audio/LPanal.1audio \
+		man/audio/LPsyn.1audio \
+		man/audio/ResampAudio.1audio
+HTMLFILES1 =	html/audio/AFsp.html \
+		html/audio/CompAudio.html \
+		html/audio/CopyAudio.html \
+		html/audio/FiltAudio.html \
+		html/audio/GenNoise.html \
+		html/audio/GenTone.html \
+		html/audio/InfoAudio.html \
+		html/audio/LPanal.html \
+		html/audio/LPsyn.html \
+		html/audio/ResampAudio.html
+HTMLFILES3 =	html/libtsp/AF/AFclose.html \
+		html/libtsp/AF/AFopenRead.html \
+		html/libtsp/AF/AFopenWrite.html \
+		html/libtsp/AF/AFreadData.html \
+		html/libtsp/AF/AFsetFileType.html \
+		html/libtsp/AF/AFsetHinfo.html \
+		html/libtsp/AF/AFsetNHpar.html \
+		html/libtsp/AF/AFsetSpeaker.html \
+		html/libtsp/AF/AFwriteData.html
+FILTERFILES =	filters/STL_BPF_FIR_16k.cof \
+		filters/STL_G712_IIR_16k.cof \
+		filters/STL_G712_IIR_8k.cof \
+		filters/STL_IRS_FIR_16k.cof \
+		filters/STL_IRS_FIR_8k.cof \
+		filters/STL_IRS_IIR_8k.cof \
+		filters/STL_LPx2_FIR.cof \
+		filters/STL_LPx3_FIR.cof \
+		filters/STL_LPx3_IIR.cof \
+		filters/STL_P341_FIR_16k.cof \
+		filters/STL_WB_IIR_48k.cof \
+		filters/STL_dc_IIR_8k.cof \
+		filters/STL_dsm_FIR_16k.cof \
+		filters/STL_hIRS_FIR_16k.cof \
+		filters/STL_mIRS_FIR_16k.cof \
+		filters/STL_mIRS_FIR_48k.cof \
+		filters/STL_pso_FIR_8k.cof \
+		filters/TIA_IRS_FIR_8k.cof
 
 all:
 	for dirs in libtsp libAO audio; do \
@@ -67,3 +105,9 @@ install: ${LIBRARIES} ${BINARIES}
 	${BSD_INSTALL_DATA} ${SUBHEADERS} ${PREFIX}/include/libtsp/
 	${BSD_INSTALL_MAN} ${MAN1FILES} ${PREFIX}/man/man1/
 	${BSD_INSTALL_MAN} ${MAN3FILES} ${PREFIX}/man/man3/
+	mkdir -p ${PREFIX}/share/doc/afsp/audio/
+	${BSD_INSTALL_DATA} ${HTMLFILES1} ${PREFIX}/share/doc/afsp/audio/
+	mkdir -p ${PREFIX}/share/doc/afsp/libtsp/AF/
+	${BSD_INSTALL_DATA} ${HTMLFILES3} ${PREFIX}/share/doc/afsp/libtsp/AF/
+	mkdir -p ${PREFIX}/share/afsp/filters/
+	${BSD_INSTALL_DATA} ${FILTERFILES} ${PREFIX}/share/afsp/filters/

@@ -13,11 +13,11 @@ Audio File Utility Programs:
               a new sequence of samples with a new spacing (sampling rate).
    and FiltAudio, GenNoise, GenTone, LPanal, LPsyn
 The following file formats are supported for reading.
-  - Headerless, AU, RIFF WAVE, AIFF/AIFF-C, NIST SPHERE, IRCAM,
-    INRS-Telecom, ESPS, Text audio (NATO/ESPRIT CD-ROM format)
+  - Headerless, AU, WAVE, AIFF/AIFF-C, NIST SPHERE, IRCAM,
+    INRS-Telecom, ESPS, Comdisco SPW, Text audio
 The following file formats are supported for writing.
-  - Headerless, AU, RIFF WAVE, AIFF-C
+  - Headerless, AU, WAVE, AIFF-C
 
-WWW: http://www.TSP.ECE.McGill.CA/reports/Software/AFsp/AFsp.html
+WWW: http://www.TSP.ECE.McGill.CA/Docs/Software/AFsp/AFsp.html
 
--- Kawaguti Ginga <ginga@athena.club.ne.jp>
+-- Kawaguti Ginga <ginga-freebsd@ginganet.org>

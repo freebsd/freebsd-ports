@@ -33,4 +33,47 @@ include/libtsp/nucleus.h
 include/libtsp/sysOS.h
 lib/libAO.a
 lib/libtsp.a
+share/afsp/filters/STL_BPF_FIR_16k.cof
+share/afsp/filters/STL_G712_IIR_16k.cof
+share/afsp/filters/STL_G712_IIR_8k.cof
+share/afsp/filters/STL_IRS_FIR_16k.cof
+share/afsp/filters/STL_IRS_FIR_8k.cof
+share/afsp/filters/STL_IRS_IIR_8k.cof
+share/afsp/filters/STL_LPx2_FIR.cof
+share/afsp/filters/STL_LPx3_FIR.cof
+share/afsp/filters/STL_LPx3_IIR.cof
+share/afsp/filters/STL_P341_FIR_16k.cof
+share/afsp/filters/STL_WB_IIR_48k.cof
+share/afsp/filters/STL_dc_IIR_8k.cof
+share/afsp/filters/STL_dsm_FIR_16k.cof
+share/afsp/filters/STL_hIRS_FIR_16k.cof
+share/afsp/filters/STL_mIRS_FIR_16k.cof
+share/afsp/filters/STL_mIRS_FIR_48k.cof
+share/afsp/filters/STL_pso_FIR_8k.cof
+share/afsp/filters/TIA_IRS_FIR_8k.cof
+share/doc/afsp/audio/AFsp.html
+share/doc/afsp/audio/CompAudio.html
+share/doc/afsp/audio/CopyAudio.html
+share/doc/afsp/audio/FiltAudio.html
+share/doc/afsp/audio/GenNoise.html
+share/doc/afsp/audio/GenTone.html
+share/doc/afsp/audio/InfoAudio.html
+share/doc/afsp/audio/LPanal.html
+share/doc/afsp/audio/LPsyn.html
+share/doc/afsp/audio/ResampAudio.html
+share/doc/afsp/libtsp/AF/AFclose.html
+share/doc/afsp/libtsp/AF/AFopenRead.html
+share/doc/afsp/libtsp/AF/AFopenWrite.html
+share/doc/afsp/libtsp/AF/AFreadData.html
+share/doc/afsp/libtsp/AF/AFsetFileType.html
+share/doc/afsp/libtsp/AF/AFsetHinfo.html
+share/doc/afsp/libtsp/AF/AFsetNHpar.html
+share/doc/afsp/libtsp/AF/AFsetSpeaker.html
+share/doc/afsp/libtsp/AF/AFwriteData.html
 @dirrm include/libtsp
+@dirrm share/doc/afsp/audio
+@dirrm share/doc/afsp/libtsp/AF
+@dirrm share/doc/afsp/libtsp
+@dirrm share/doc/afsp
+@dirrm share/afsp/filters
+@dirrm share/afsp
