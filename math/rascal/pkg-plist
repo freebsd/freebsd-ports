@@ -1,0 +1,6 @@
+bin/rascal
+%%PORTDOCS%%share/doc/rascal/modules.pdf
+%%PORTDOCS%%share/doc/rascal/modules.ps
+%%PORTDOCS%%share/doc/rascal/rascal.pdf
+%%PORTDOCS%%share/doc/rascal/rascal.ps
+%%PORTDOCS%%@dirrm share/doc/rascal

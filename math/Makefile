@@ -81,6 +81,7 @@
     SUBDIR += py-gnuplot
     SUBDIR += py-scientific
     SUBDIR += pygist
+    SUBDIR += rascal
     SUBDIR += rcalc
     SUBDIR += rpc
     SUBDIR += ruby-bigfloat

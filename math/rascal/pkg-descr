@@ -1,0 +1,6 @@
+Rascal, the Advanced Scientific CALculator, is a platform independent
+modular calculator. Based on modules for integer, doubles, strings,
+vectors and matrices it can be easily extended with existing C or C++
+code. 
+
+WWW: http://rascal.sourceforge.net/
