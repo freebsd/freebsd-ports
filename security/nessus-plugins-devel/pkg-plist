@@ -503,7 +503,6 @@ lib/nessus/plugins/newdsn.nasl
 lib/nessus/plugins/newsdesk.nasl
 lib/nessus/plugins/nikto_wrapper.nes
 lib/nessus/plugins/nimda.nasl
-lib/nessus/plugins/nimda_iis.nasl
 lib/nessus/plugins/nis_server.nasl
 lib/nessus/plugins/nmap_tcp_connect.nes
 lib/nessus/plugins/nmap_wrapper.nes
