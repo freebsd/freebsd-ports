@@ -7,6 +7,7 @@
 
 PORTNAME=	gap
 PORTVERSION=	4.3
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp-gap.dcs.st-and.ac.uk/pub/gap/gap4/
 DISTFILES=	gap4r3.tar.gz \
@@ -38,7 +39,8 @@ do-install:
 	(${SED} -e "s:GAP_DIR=.*:GAP_DIR=${PREFIX}/lib/gap4r3:g" -e "s:GAP_PRG=.*:GAP_PRG=gap:g" ${WRKSRC}/gap4r3/bin/gap.sh > ${PREFIX}/bin/gap; \
 	${CHMOD} 755 ${PREFIX}/bin/gap; )
 	@${MKDIR} ${PREFIX}/lib/gap4r3 ${PREFIX}/lib/gap4r3/bin
-	@${CP} ${WRKSRC}/gap4r3/bin/*/gap ${WRKSRC}/gap4r3/bin/*/gac ${PREFIX}/lib/gap4r3/bin
+	@${INSTALL_PROGRAM} ${WRKSRC}/gap4r3/bin/*/gap ${PREFIX}/lib/gap4r3/bin
+	@${INSTALL_SCRIPT} ${WRKSRC}/gap4r3/bin/*/gac ${PREFIX}/lib/gap4r3/bin
 .for subdir in doc etc grp lib pkg prim small trans tst
 	@${CP} -R ${WRKSRC}/gap4r3/${subdir} ${PREFIX}/lib/gap4r3/
 .endfor
