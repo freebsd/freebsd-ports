@@ -16,7 +16,6 @@ MASTER_SITE_SUBDIR=	petef
 MAINTAINER=	mux@FreeBSD.org
 
 NO_BUILD=	yes
-USE_PERL5=	yes
 
 MAN6=		wtf.6
 
