@@ -48,6 +48,7 @@
     SUBDIR += lsh
     SUBDIR += lxnb
     SUBDIR += mhash
+    SUBDIR += mindterm-binary
     SUBDIR += nbaudit
     SUBDIR += nessus
     SUBDIR += nessus-libraries

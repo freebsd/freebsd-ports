@@ -1,0 +1,15 @@
+This is a Java SSH Client, which has a whole bunch of features.
+You should take a look at the following URL to find out:
+
+http://www.mindbright.se/mindterm/FEATURES.txt
+
+However, this version does _not_ depend on the Java Development
+Kit, since it is the binary version, which runs out-of-the-box
+in webbrowsers that support Java.  A minimal sample HTML page
+is installed as well.
+If you want to use the client from shell, you have to install
+the JDK first (${PORTSDIR}/java/jdk/).
+
+WWW: http://www.mindbright.se/mindterm/
+
+- Alexander Langer <alex@FreeBSD.org>
