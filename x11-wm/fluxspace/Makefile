@@ -16,16 +16,18 @@ COMMENT=       A window manager and workspace enhancer and integrator
 BUILD_DEPENDS=	imlib2-config:${PORTSDIR}/graphics/imlib2 \
 		swig:${PORTSDIR}/devel/swig13
 
-.if defined(WITH_IDESK)
-RUN_DEPENDS+=	idesk:${PORTSDIR}/x11/idesk
-.endif
-.if defined(WITH_ROX-FILER)
-RUN_DEPENDS+=	rox:${PORTSDIR}/x11-fm/rox-filer
-.endif
-
 USE_PYTHON=		yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=		yes
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_IDESK) || exists(${X11BASE}/bin/idesk)
+RUN_DEPENDS+=	idesk:${PORTSDIR}/x11/idesk
+.endif
+.if defined(WITH_ROX-FILER) || exists(${LOCALBASE}/bin/rox)
+RUN_DEPENDS+=	rox:${PORTSDIR}/x11-fm/rox-filer
+.endif
 
 pre-everything::
 	@${ECHO_CMD} "WITH_IDESK	- To install idesk"
@@ -34,4 +36,4 @@ pre-everything::
 post-install::
 	@${CAT} pkg-message
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
