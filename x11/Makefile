@@ -49,13 +49,9 @@
     SUBDIR += imwheel
     SUBDIR += kb2mb2
     SUBDIR += kde2
-    SUBDIR += kdebase11
     SUBDIR += kdebase2
-    SUBDIR += kdelibs11
     SUBDIR += kdelibs2
     SUBDIR += keylaunch
-    SUBDIR += kvidtune
-    SUBDIR += kworldwatch
     SUBDIR += launch.app
     SUBDIR += libdnd
     SUBDIR += libgnome
@@ -77,7 +73,6 @@
     SUBDIR += qrash
     SUBDIR += ruby-X11
     SUBDIR += ruby-gnome
-    SUBDIR += ruby-kde
     SUBDIR += ruby-panel-applet
     SUBDIR += rxvt
     SUBDIR += rxvt-devel

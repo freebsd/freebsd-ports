@@ -95,12 +95,8 @@
     SUBDIR += juke
     SUBDIR += kdemultimedia2
     SUBDIR += khordpro
-    SUBDIR += kmikmod
-    SUBDIR += kmp3
-    SUBDIR += kmpg
     SUBDIR += knapster
     SUBDIR += koog
-    SUBDIR += krio
     SUBDIR += ksmp3play
     SUBDIR += lame
     SUBDIR += lame-devel
@@ -146,7 +142,6 @@
     SUBDIR += mpmf20
     SUBDIR += mpt
     SUBDIR += mq3
-    SUBDIR += musicbox
     SUBDIR += musicbrainz
     SUBDIR += mutemix
     SUBDIR += mxv
@@ -245,7 +240,6 @@
     SUBDIR += wsoundprefs
     SUBDIR += wsoundserver
     SUBDIR += x11amp
-    SUBDIR += xamp
     SUBDIR += xcd
     SUBDIR += xcdplayer
     SUBDIR += xhippo

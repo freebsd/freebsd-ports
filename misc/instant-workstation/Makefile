@@ -7,6 +7,7 @@
 
 PORTNAME=	instant-workstation
 PORTVERSION=	1.0
+PORTVERSION=	1
 CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.lemis.com/pub/
 
@@ -30,7 +31,6 @@ RUN_DEPENDS=	acroread:${PORTSDIR}/print/acroread4 \
 		mutt:${PORTSDIR}/mail/mutt \
 		netscape:${PORTSDIR}/www/netscape47-communicator \
 		/usr/local/sbin/postfix:${PORTSDIR}/mail/postfix \
-		xamp:${PORTSDIR}/audio/xamp \
 		xtset:${PORTSDIR}/x11/xtset \
 		xmms:${PORTSDIR}/audio/xmms \
 		xv:${PORTSDIR}/graphics/xv

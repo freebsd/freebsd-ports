@@ -22,7 +22,6 @@
     SUBDIR += inn
     SUBDIR += inn-stable
     SUBDIR += knews
-    SUBDIR += krn
     SUBDIR += leafnode
     SUBDIR += leafnode+
     SUBDIR += newsfetch

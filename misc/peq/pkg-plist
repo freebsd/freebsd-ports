@@ -1,4 +1,0 @@
-bin/peq
-bin/xpeq
-share/peq/peq.lib
-@dirrm share/peq

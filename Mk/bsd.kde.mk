@@ -30,7 +30,7 @@ KDE_MAINTAINER=		will@FreeBSD.org
 
 # Compat shims.
 .if defined(USE_QT)
-USE_QT_VER=		1
+USE_QT_VER=		2
 pre-everything::
 	@${ECHO} ">>> Warning:  this port needs to be updated as it uses the old-style USE_QT variable!"
 .endif
@@ -43,15 +43,10 @@ pre-everything::
 # USE_KDEBASE_VER section
 .if defined(USE_KDEBASE_VER)
 
-# kdebase 1.x common stuff
-.if ${USE_KDEBASE_VER} == 1
-RUN_DEPENDS+=	kcontrol:${PORTSDIR}/x11/kdebase11
-USE_KDELIBS_VER=1
-
-.elif ${USE_KDEBASE_VER} == 3
+.if ${USE_KDEBASE_VER} == 3
 
 # kdebase 3.x common stuff
-LIB_DEPENDS+=	konq:${PORTSDIR}/x11/kdebase
+LIB_DEPENDS+=	konq:${PORTSDIR}/x11/kdebase3
 USE_KDELIBS_VER=3
 
 .else
@@ -67,15 +62,10 @@ USE_KDELIBS_VER=2
 # USE_KDELIBS_VER section
 .if defined(USE_KDELIBS_VER)
 
-# kdelibs 1.x common stuff 
-.if ${USE_KDELIBS_VER} == 1
-LIB_DEPENDS+=	kdecore.3:${PORTSDIR}/x11/kdelibs11
-USE_QT_VER=		1
-
-.elif ${USE_KDELIBS_VER} == 3
+.if ${USE_KDELIBS_VER} == 3
 
 # kdelibs 3.x common stuff
-LIB_DEPENDS+=	kdecore:${PORTSDIR}/x11/kdelibs
+LIB_DEPENDS+=	kdecore:${PORTSDIR}/x11/kdelibs3
 USE_QT_VER=		3
 
 .else
@@ -91,28 +81,17 @@ USE_QT_VER=		2
 # USE_QT_VER section
 .if defined(USE_QT_VER)
 
-# Qt 1.x common stuff
-.if ${USE_QT_VER} == 1
-LIB_DEPENDS+=	qt.3:${PORTSDIR}/x11-toolkits/qt145
-USE_NEWGCC=		yes
-MOC?=			${X11BASE}/bin/moc
-.if defined(PREFIX)
-QTDIR=			${PREFIX}
-.else
-QTDIR=			${X11BASE}
-.endif
-CONFIGURE_ENV+=	MOC="${MOC}" QTDIR="${QTDIR}"
-
-.elif ${USE_QT_VER} == 3
+.if ${USE_QT_VER} == 3
 
 QTCPPFLAGS?=
 QTCGFLIBS?=
 
 # Qt 3.x common stuff
-QT_PREFIX?=		${X11BASE}/qt
+QT_PREFIX?=		${X11BASE}
 MOC?=			${QT_PREFIX}/bin/moc
-BUILD_DEPENDS+=	${X11BASE}/qt/bin/moc:${PORTSDIR}/x11-toolkits/qt-copy
-RUN_DEPENDS+=	${X11BASE}/qt/bin/moc:${PORTSDIR}/x11-toolkits/qt-copy
+#LIB_DEPENDS+=	qt-mt.3:${PORTSDIR}/x11-toolkits/qt30
+BUILD_DEPENDS+=	${QT_PREFIX}/bin/moc:${PORTSDIR}/x11-toolkits/qt30
+RUN_DEPENDS+=	${QT_PREFIX}/bin/moc:${PORTSDIR}/x11-toolkits/qt30
 USE_NEWGCC=		yes
 QTCPPFLAGS+=	-I/usr/include -I${LOCALBASE}/include -I${PREFIX}/include \
 				-I${QT_PREFIX}/include/qt

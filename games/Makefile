@@ -29,7 +29,6 @@
     SUBDIR += battalion
     SUBDIR += battleball
     SUBDIR += biorythm
-    SUBDIR += blackjack
     SUBDIR += block
     SUBDIR += blockade
     SUBDIR += blue
@@ -153,13 +152,9 @@
     SUBDIR += ishido
     SUBDIR += jetpack
     SUBDIR += jzip
-    SUBDIR += kbubbles
     SUBDIR += kdegames2
     SUBDIR += klondike
     SUBDIR += kpuzzle
-    SUBDIR += krogue
-    SUBDIR += krubik
-    SUBDIR += ktamaga
     SUBDIR += kxl
     SUBDIR += ladder
     SUBDIR += lbreakout
@@ -208,7 +203,6 @@
     SUBDIR += pipenightdreams
     SUBDIR += pmars
     SUBDIR += powerpak
-    SUBDIR += pp
     SUBDIR += prboom
     SUBDIR += ptkei
     SUBDIR += pyching
@@ -349,7 +343,6 @@
     SUBDIR += xlaby
     SUBDIR += xlife
     SUBDIR += xlifegame
-    SUBDIR += xlines
     SUBDIR += xmahjongg
     SUBDIR += xmastermind
     SUBDIR += xmball

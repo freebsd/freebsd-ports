@@ -173,7 +173,6 @@
     SUBDIR += icmpquery
     SUBDIR += icqlib
     SUBDIR += icqlib0
-    SUBDIR += icqnix
     SUBDIR += icradius
     SUBDIR += icukrell
     SUBDIR += ip-tun
@@ -199,14 +198,10 @@
     SUBDIR += jwhois
     SUBDIR += kdenetwork2
     SUBDIR += kdetelnet
-    SUBDIR += kicq
     SUBDIR += kinkatta
     SUBDIR += kio_fish
     SUBDIR += kmsn
-    SUBDIR += kmud
     SUBDIR += konverse
-    SUBDIR += ksamba
-    SUBDIR += kxicq
     SUBDIR += kxicq2
     SUBDIR += lam
     SUBDIR += lambdamoo
@@ -370,7 +365,6 @@
     SUBDIR += pipsecd
     SUBDIR += pmf
     SUBDIR += poptop
-    SUBDIR += pppload
     SUBDIR += pppoa
     SUBDIR += ppptraf
     SUBDIR += pptpclient

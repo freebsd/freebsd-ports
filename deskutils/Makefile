@@ -22,7 +22,6 @@
     SUBDIR += jlj
     SUBDIR += kdepim
     SUBDIR += kmymoney2
-    SUBDIR += kproject
     SUBDIR += kronolith
     SUBDIR += krss
     SUBDIR += logjam

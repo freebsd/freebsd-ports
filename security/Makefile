@@ -75,7 +75,6 @@
     SUBDIR += keychain
     SUBDIR += keynote
     SUBDIR += keyprint
-    SUBDIR += kmap
     SUBDIR += knocker
     SUBDIR += krb5
     SUBDIR += krb5-beta

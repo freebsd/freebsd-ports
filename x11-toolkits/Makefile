@@ -102,12 +102,10 @@
     SUBDIR += py-gnome
     SUBDIR += py-gtk
     SUBDIR += py-gtkscintilla
-    SUBDIR += py-kde
     SUBDIR += py-qt
     SUBDIR += py-tkinter
     SUBDIR += py-wxPython
     SUBDIR += py-xlib
-    SUBDIR += qt145
     SUBDIR += qt2-static
     SUBDIR += qt23
     SUBDIR += qwt
@@ -115,7 +113,6 @@
     SUBDIR += ruby-fltk
     SUBDIR += ruby-fox
     SUBDIR += ruby-gtk
-    SUBDIR += ruby-qt
     SUBDIR += ruby-qt2
     SUBDIR += ruby-qt2canvas
     SUBDIR += ruby-qt2iconview

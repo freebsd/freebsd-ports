@@ -25,7 +25,6 @@
     SUBDIR += bb
     SUBDIR += bbjd
     SUBDIR += biblereader
-    SUBDIR += bidwatcher
     SUBDIR += birthday
     SUBDIR += bogosort
     SUBDIR += bottlerocket
@@ -120,7 +119,6 @@
     SUBDIR += kde2-i18n
     SUBDIR += kdeaddons
     SUBDIR += kdeutils2
-    SUBDIR += kdirstat
     SUBDIR += kenny
     SUBDIR += koffice-i18n
     SUBDIR += kp
@@ -177,7 +175,6 @@
     SUBDIR += pbs
     SUBDIR += pdfmap
     SUBDIR += pdmenu
-    SUBDIR += peq
     SUBDIR += pg
     SUBDIR += pinfo
     SUBDIR += pl-sms

@@ -116,7 +116,6 @@
     SUBDIR += icod
     SUBDIR += icontact
     SUBDIR += imagesort
-    SUBDIR += imanager
     SUBDIR += imlib
     SUBDIR += imlib2
     SUBDIR += imlib2_loaders
@@ -322,7 +321,6 @@
     SUBDIR += togl
     SUBDIR += transcode
     SUBDIR += truevision
-    SUBDIR += twinlib
     SUBDIR += txtmerge
     SUBDIR += urt
     SUBDIR += utah-glx
