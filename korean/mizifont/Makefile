@@ -3,7 +3,7 @@
 # Date created:		16 Mar 1998
 # Whom:			CHOI Junho <junker@jazz.snu.ac.kr>
 #
-# $Id: Makefile,v 1.4 1998/08/07 22:43:11 asami Exp $
+# $Id: Makefile,v 1.5 1998/10/10 08:15:01 steve Exp $
 #
 
 DISTNAME=	xfntmizi-1.1-2.noarch
@@ -13,6 +13,8 @@ MASTER_SITES=	http://www.mizi.co.kr/packages/
 EXTRACT_SUFX=	.rpm
 
 MAINTAINER=	junker@jazz.snu.ac.kr
+
+BROKEN_ELF=	depends on rpm
 
 BUILD_DEPENDS=	rpm2cpio:${PORTSDIR}/misc/rpm
 
