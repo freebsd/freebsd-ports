@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gnapster
-PORTVERSION=	1.4.2
-PORTREVISION=	1
+PORTVERSION=	1.5.0
 CATEGORIES=	audio
 MASTER_SITES=	http://www.faradic.net/~jasta/files/
 
