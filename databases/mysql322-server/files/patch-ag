@@ -1,8 +1,8 @@
---- configure.orig	Wed Nov  4 23:00:15 1998
-+++ configure	Mon Nov 30 23:35:59 1998
-@@ -2197,30 +2197,7 @@
+--- configure.orig	Wed Jan 27 14:41:59 1999
++++ configure	Thu Feb  4 19:50:16 1999
+@@ -2199,30 +2199,7 @@
  echo $ac_n "checking "how to check if pid exists"""... $ac_c" 1>&6
- echo "configure:2199: checking "how to check if pid exists"" >&5
+ echo "configure:2201: checking "how to check if pid exists"" >&5
  PS=$ac_cv_path_PS
 -# Linux style
 -if $PS p $$ 2> /dev/null | grep $0 > /dev/null
@@ -32,12 +32,27 @@
  echo "$ac_t"""$FIND_PROC"" 1>&6
  
  # Check if a pid is valid
-@@ -3484,7 +3461,7 @@
- echo "configure:3485: checking "named thread libs:"" >&5
- if test "$with_named_thread" != "no"
- then
--  LIBS="$LIBS $with_named_thread"
-+  LIBS="-pthread $LIBS"
-   with_posix_threads="yes"
-   with_mit_threads="no"
-   echo "$ac_t"""$with_named_thread"" 1>&6
+@@ -3684,8 +3661,6 @@
+ #define $ac_tr_lib 1
+ EOF
+ 
+-  LIBS="-lc_r $LIBS"
+-
+ else
+   echo "$ac_t""no" 1>&6
+ fi
+@@ -3935,14 +3910,6 @@
+ else
+   CFLAGS="$CFLAGS -DDBUG_OFF"
+   CXXFLAGS="$CXXFLAGS -DDBUG_OFF"
+-  if test "$ac_cv_prog_gcc" = "yes"
+-  then
+-    CFLAGS="-O6 $CFLAGS"
+-    CXXFLAGS="-O $CXXFLAGS"	# Should be -O3 with gcc or g++
+-  else
+-    CFLAGS="-O $CFLAGS"
+-    CXXFLAGS="-O $CXXFLAGS"
+-  fi
+ fi
+ 
+ # Force static compilation to avoid linking probles/get more speed
