@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nginx
-PORTVERSION=	0.1.11
+PORTVERSION=	0.1.12
 CATEGORIES=	www
 MASTER_SITES=	http://sysoev.ru/nginx/
 
@@ -46,9 +46,17 @@ PLIST_SUB+=     WWWDATA="@comment "
 PLIST_SUB+=     WWWDATA=""
 .endif
 
-PLIST_FILES+=	etc/nginx/koi-win \
-		etc/rc.d/nginx.sh \
-		sbin/nginx
+.if defined(STOP_BEFORE_REMOVE)
+PLIST_SUB+=	STOP_BEFORE_REMOVE=""
+.else
+PLIST_SUB+=     STOP_BEFORE_REMOVE="@comment "
+.endif
+
+.if defined(START_AFTER_INSTALL)
+PLIST_SUB+=	START_AFTER_INSTALL=""
+.else
+PLIST_SUB+=	START_AFTER_INSTALL="@comment "
+.endif
 
 RC_SCRIPTS_SUB=PREFIX=${PREFIX} RC_SUBR=${RC_SUBR}
 
@@ -78,7 +86,13 @@ do-install:
 	${MKDIR} ${PREFIX}/www/nginx-dist
 	${INSTALL_DATA} ${WRKSRC}/html/index.html ${PREFIX}/www/nginx-dist
 	${ECHO_CMD} "" >>${PREFIX}/www/nginx-dist/EXAMPLE_DIRECTORY-DONT_ADD_OR_TOUCH_ANYTHING
-	${LN} -sf ${PREFIX}/www/nginx-dist ${PREFIX}/www/nginx
+	[ -e ${PREFIX}/www/nginx ] || \
+		${LN} -sf ${PREFIX}/www/nginx-dist ${PREFIX}/www/nginx
+.endif
+
+post-install:
+.if defined(START_AFTER_INSTALL)
+	${PREFIX}/etc/rc.d/nginx.sh start
 .endif
 
 .include <bsd.port.mk>
