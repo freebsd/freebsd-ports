@@ -52,6 +52,7 @@ lib/libmla_mdata_query.so
 lib/libmla_mdata_record.so
 lib/libmla_mdata_split.so
 lib/libmla_mdata_state.so
+lib/libmla_mdata_string.so
 lib/libmla_mdata_sublist.so
 lib/libmla_mdata_traffic.so
 lib/libmla_mdata_visit.so
