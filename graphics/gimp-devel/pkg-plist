@@ -3,11 +3,11 @@ bin/gimp-config
 bin/gimp.setfont
 bin/gimptool
 include/gck/gck.h
-include/libgimp/color_display.h
-include/libgimp/color_selector.h
 include/libgimp/gimp.h
 include/libgimp/gimpchainbutton.h
 include/libgimp/gimpcolorbutton.h
+include/libgimp/gimpcolordisplay.h
+include/libgimp/gimpcolorselector.h
 include/libgimp/gimpcolorspace.h
 include/libgimp/gimpcompat.h
 include/libgimp/gimpdialog.h
@@ -23,6 +23,8 @@ include/libgimp/gimpmath.h
 include/libgimp/gimpmatrix.h
 include/libgimp/gimpmenu.h
 include/libgimp/gimpmodule.h
+include/libgimp/gimpparasite.h
+include/libgimp/gimpparasiteio.h
 include/libgimp/gimppatheditor.h
 include/libgimp/gimppixmap.h
 include/libgimp/gimpquerybox.h
@@ -34,22 +36,18 @@ include/libgimp/gimpunit.h
 include/libgimp/gimpunitmenu.h
 include/libgimp/gimpvector.h
 include/libgimp/gimpwidgets.h
-include/libgimp/parasite.h
-include/libgimp/parasiteF.h
-include/libgimp/parasiteP.h
-include/libgimp/parasiteio.h
 lib/libgck.a
 lib/libgck.la
 lib/libgck.so
-lib/libgck.so.22
+lib/libgck.so.23
 lib/libgimp.a
 lib/libgimp.la
 lib/libgimp.so
-lib/libgimp.so.22
+lib/libgimp.so.23
 lib/libgimpui.a
 lib/libgimpui.la
 lib/libgimpui.so
-lib/libgimpui.so.22
+lib/libgimpui.so.23
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
 libexec/gimp/1.1/modules/libcdisplay_gamma.la
@@ -279,6 +277,8 @@ share/gimp/devel-docs/html/libgimp/index.sgml
 share/gimp/devel-docs/html/libgimp/libgimp-color-display.html
 share/gimp/devel-docs/html/libgimp/libgimp-color-selector.html
 share/gimp/devel-docs/html/libgimp/libgimp-gimp.html
+share/gimp/devel-docs/html/libgimp/libgimp-gimpcolordisplay.html
+share/gimp/devel-docs/html/libgimp/libgimp-gimpcolorselector.html
 share/gimp/devel-docs/html/libgimp/libgimp-gimpcolorspace.html
 share/gimp/devel-docs/html/libgimp/libgimp-gimpcompat.html
 share/gimp/devel-docs/html/libgimp/libgimp-gimpdialog.html
@@ -292,6 +292,8 @@ share/gimp/devel-docs/html/libgimp/libgimp-gimpmath.html
 share/gimp/devel-docs/html/libgimp/libgimp-gimpmatrix.html
 share/gimp/devel-docs/html/libgimp/libgimp-gimpmenu.html
 share/gimp/devel-docs/html/libgimp/libgimp-gimpmodule.html
+share/gimp/devel-docs/html/libgimp/libgimp-gimpparasite.html
+share/gimp/devel-docs/html/libgimp/libgimp-gimpparasiteio.html
 share/gimp/devel-docs/html/libgimp/libgimp-gimpprotocol.html
 share/gimp/devel-docs/html/libgimp/libgimp-gimpquerybox.html
 share/gimp/devel-docs/html/libgimp/libgimp-gimpsignal.html
