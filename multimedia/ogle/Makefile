@@ -40,6 +40,12 @@ pre-everything::
 	@${ECHO_MSG} '===> Define WITH_DVD_DEVICE if you want to change the default'
 	@${ECHO_MSG} "===> For example, 'make WITH_DVD_DEVICE=\"/dev/somedevice\"'"
 .endif
+.ifndef(WITH_OPTIMIZED_BYTESWAP)
+	@${ECHO_MSG} '===>'
+	@${ECHO_MSG} '===> Define WITH_OPTIMIZED_BYTESWAP to use optimized byteswap'
+	@${ECHO_MSG} '===> routines. This works only in the i386 architecture but'
+	@${ECHO_MSG} '===> only with 486 processors and above.'
+.endif
 
 post-patch:
 .ifdef(WITH_DVD_DEVICE)
@@ -61,4 +67,10 @@ post-configure:
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "i386" && defined(WITH_OPTIMIZED_BYTESWAP)
+EXTRA_PATCHES=	${FILESDIR}/extra-patch-include:ogle_endian.h
+.endif
+
+.include <bsd.port.post.mk>
