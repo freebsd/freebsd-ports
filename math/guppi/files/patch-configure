@@ -1,0 +1,20 @@
+
+$FreeBSD$
+
+--- configure	2002/01/23 15:05:45	1.1
++++ configure	2002/01/23 15:06:08
+@@ -1259,10 +1259,10 @@
+ 
+ # The aliases save the names the user supplied, while $host etc.
+ # will get canonicalized.
+-test -n "$target_alias" &&
+-  test "$program_prefix$program_suffix$program_transform_name" = \
+-    NONENONEs,x,x, &&
+-  program_prefix=${target_alias}-
++#test -n "$target_alias" &&
++#  test "$program_prefix$program_suffix$program_transform_name" = \
++#    NONENONEs,x,x, &&
++#  program_prefix=${target_alias}-
+ 
+ ac_config_headers="$ac_config_headers config.h"
+ 
