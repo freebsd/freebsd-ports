@@ -4,11 +4,11 @@
 # Date created:         Fri Dec 01, 1995
 # Whom:                 obrien@cs.ucdavis.edu
 #
-# $Id: Makefile,v 1.16 1998/12/14 03:14:49 obrien Exp $
+# $Id: Makefile,v 1.17 1999/02/14 06:55:16 asami Exp $
 #
 
 DISTNAME=	${PKGNAME}.src
-PKGNAME=	minicom-1.82
+PKGNAME=	minicom-1.82.1
 CATEGORIES=	comms
 MASTER_SITES=	ftp://ftp.cistron.nl/pub/people/miquels/software/  \
 		${MASTER_SITE_SUNSITE}  \
