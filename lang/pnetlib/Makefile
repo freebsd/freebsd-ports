@@ -33,6 +33,10 @@ PORTDOCS=	ChangeLog-1 ChangeLog-2 ChangeLog-3 ChangeLog-4 \
 .include "${.CURDIR}/../pnet/Makefile.pnet"
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "alpha"
+IGNORE=		"cscc core dumps durring build"
+.endif
+
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
