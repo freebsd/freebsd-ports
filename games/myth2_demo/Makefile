@@ -18,7 +18,7 @@ EXTRACT_ONLY=
 MAINTAINER=	trevor@FreeBSD.org
 COMMENT=	Demo of Myth II: Soulblighter
 
-BROKEN=		"does not unpack correctly"
+BROKEN=		"distfile taken offline"
 
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
@@ -33,7 +33,7 @@ WRKSRC=		${WRKDIR}/update/demos/myth2_demo/
 
 do-extract:
 	${MKDIR} ${WRKDIR}
-	${SED} -e 1,174d < ${DISTDIR}/${DISTFILES} | ${TAR} -C ${WRKDIR} -xzvf -
+	-${SED} -e 1,174d < ${DISTDIR}/${DISTFILES} |${TAR} -C ${WRKDIR} -xzvf -
 
 do-patch:
 	${MKDIR} ${WRKSRC}
