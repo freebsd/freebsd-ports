@@ -1,0 +1,18 @@
+bin/gftp
+share/gftp/COPYING
+share/gftp/deb.xpm
+share/gftp/diff.xpm
+share/gftp/dir.xpm
+share/gftp/doc.xpm
+share/gftp/dotdot.xpm
+share/gftp/down.xpm
+share/gftp/exe.xpm
+share/gftp/gftp-logo.xpm
+share/gftp/gftprc
+share/gftp/linkdir.xpm
+share/gftp/linkfile.xpm
+share/gftp/man.xpm
+share/gftp/tar.xpm
+share/gftp/txt.xpm
+share/gftp/up.xpm
+@dirrm share/gftp
