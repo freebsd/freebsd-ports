@@ -71,6 +71,7 @@
     SUBDIR += cl-lml-sbcl
     SUBDIR += clearsilver
     SUBDIR += clearsilver-python
+    SUBDIR += cocoon
     SUBDIR += comclear
     SUBDIR += coppermine
     SUBDIR += crawl
