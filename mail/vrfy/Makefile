@@ -8,7 +8,8 @@
 PORTNAME=	vrfy
 PORTVERSION=	1.0
 CATEGORIES=	mail
-MASTER_SITES=	ftp://ftp.nikhef.nl/pub/network/
+MASTER_SITES=	ftp://ftp.nikhef.nl/pub/network/ \
+		http://www.kobe1995.net/~kaz/FreeBSD/
 DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.tar.Z
 
