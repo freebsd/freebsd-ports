@@ -1,12 +1,44 @@
+bin/getzone
 bin/posadis
-bin/posctl
+bin/posadis-config
+bin/posadis-getroots
 bin/posask
-@unexec install-info --delete %D/info/posadis.info %D/info/dir
-info/posadis.info
-@exec install-info %D/info/posadis.info %D/info/dir
+bin/poshost
+include/ltdl.h
+include/posadis-%%VERSION%%/auth_mem.h
+include/posadis-%%VERSION%%/cacheapply.h
+include/posadis-%%VERSION%%/configuration.h
+include/posadis-%%VERSION%%/forward.h
+include/posadis-%%VERSION%%/hashvector.h
+include/posadis-%%VERSION%%/lib.h
+include/posadis-%%VERSION%%/masterfile.h
+include/posadis-%%VERSION%%/pbl.h
+include/posadis-%%VERSION%%/query.h
+include/posadis-%%VERSION%%/recursive.h
+include/posadis-%%VERSION%%/resolver.h
+include/posadis-%%VERSION%%/stdquery.h
+include/posadis-%%VERSION%%/vector.h
+include/posadis-%%VERSION%%/zones.h
+include/posadis-%%VERSION%%/zonetransfer.h
+include/posadis-%%VERSION%%/secondary.h
+include/posadis-%%VERSION%%/updates.h
+@dirrm include/posadis-%%VERSION%%
+lib/libltdl.so.4
+lib/libltdl.so
+lib/libltdl.la
+lib/libltdl.a
+lib/posadis/revmap.so.0
+lib/posadis/revmap.so
+lib/posadis/revmap.la
+lib/posadis/localhost.so.0
+lib/posadis/localhost.so
+lib/posadis/localhost.la
+@dirrm lib/posadis
+lib/posadis-%%VERSION%%/include/posadis-config.h
+@dirrm lib/posadis-%%VERSION%%/include
+@dirrm lib/posadis-%%VERSION%%
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
-%%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
