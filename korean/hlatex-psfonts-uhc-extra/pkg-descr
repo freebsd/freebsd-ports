@@ -1,0 +1,16 @@
+HLaTeX PostScript Fonts(UHC)
+============================
+
+This is extra fonts collection for HLaTeX(0.99 and above).
+
+ - Graphic
+ - Bom
+ - Gungseo
+ - Pilgi
+ - Pen
+ - Shinmun
+ - Yetgul
+ - Jamo(Myoungjo, Gothic, Novell, Sora)
+
+--
+Ports by CHOI Junho <cjh@FreeBSD.org>

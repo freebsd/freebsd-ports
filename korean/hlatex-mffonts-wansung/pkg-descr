@@ -1,0 +1,16 @@
+HLaTeX Wansung MF Fonts collection
+==================================
+
+This is HLaTeX Wansung-type MF fonts collection. It can be used in
+HLaTeX-wansung package.
+
+There is two choice to use Wansung-type fonts. One is MF fonts, and the
+other is PS fonts.
+
+You should insert this preamble into your tex file to use these fonts:
+
+  \usepackage{hangul}
+  \usepackage{wanfont}
+
+--
+Ports by CHOI Junho <cjh@FreeBSD.org>
