@@ -13,6 +13,7 @@ MASTER_SITES=	http://rsidd.online.fr/
 MAINTAINER=	rsidd@online.fr
 COMMENT=	Utility for capturing audio streams from programs with OSS output
 
+BUILD_DEPENDS=	sox:${PORTSDIR}/audio/sox
 RUN_DEPENDS=	sox:${PORTSDIR}/audio/sox
 
 USE_LIBTOOL_VER=	13
