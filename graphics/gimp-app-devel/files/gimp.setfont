@@ -46,7 +46,7 @@ sub write_gtkrc($) {
 	if (-e "$path/gtkrc") {
 	    chmod(0644, "$path/gtkrc");
 	    print "Renaming $path/gtkrc to ${path}/gtkrc.old...\n";
-	    rename($path, "${path}/gtkrc.old");
+	    rename("${path}/gtkrc", "${path}/gtkrc.old");
 	}
 
 	print "Writing $path/gtkrc...\n";
@@ -217,7 +217,7 @@ EOF
 }
 
 if ($lang eq "japanese") {
-    $fontset = "-*-fixed-medium-r-normal--14-*-*-*-*-*-iso8859-1,-*-fixed-medium-r-normal--14-*-*-*-*-*-jisx0201.1978-0,-*-fixed-medium-r-normal--14-*-*-*-*-*-jisx0208.1983-0";
+    $fontset = "-*-fixed-medium-r-normal--14-*-*-*-*-*-iso8859-1,-*-fixed-medium-r-normal--14-*-*-*-*-*-jisx0201.1976-0,-*-fixed-medium-r-normal--14-*-*-*-*-*-jisx0208.1983-0";
     print "Setting for Japanese language...\n\n";
 
     write_gtkrc($fontset);
