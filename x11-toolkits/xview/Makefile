@@ -43,6 +43,10 @@ post-install:
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 501102
+BROKEN=		"Fails to compile due to imake"
+.endif
+
 .if ${OSVERSION} >= 500000
 post-patch:
 	@${FIND} ${WRKSRC} -type f | ${XARGS} ${REINPLACE_CMD} -e \
