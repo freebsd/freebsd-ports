@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ser
-PORTVERSION=	0.8.12
+PORTVERSION=	0.8.14
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.berlios.de/pub/ser/${PORTVERSION}/src/
 DISTNAME=	${PORTNAME}-${PORTVERSION}_src
@@ -15,12 +15,15 @@ MAINTAINER=	sobomax@FreeBSD.org
 COMMENT=	A very fast and configurable SIP proxy
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/mysql/libmysqlclient.a:${PORTSDIR}/databases/mysql40-client
-LIB_DEPENDS=	radiusclient.0:${PORTSDIR}/net/radiusclient
+LIB_DEPENDS=	radiusclient.2:${PORTSDIR}/net/radiusclient \
+		pq.3:${PORTSDIR}/${POSTGRESQL_PORT}
 RUN_DEPENDS=	${LOCALBASE}/lib/mysql/libmysqlclient.a:${PORTSDIR}/databases/mysql40-client
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-USE_GMAKE= yes
+POSTGRESQL_PORT?=	databases/postgresql7
+
+USE_GMAKE=	yes
 CFLAGS+=	-I${LOCALBASE}/include
 
 MAN8=		ser.8
