@@ -202,18 +202,21 @@ lib/libkpathsea.a
 %%TEXMFDIR%%/texconfig/tcfmgr
 %%TEXMFDIR%%/texconfig/tcfmgr.map
 %%TEXMFDIR%%/release-tetex-src.txt
-%%TEXMFVARDIR%%/fonts/map/dvips/updmap/download35.map
-%%TEXMFVARDIR%%/fonts/map/dvips/updmap/builtin35.map
-%%TEXMFVARDIR%%/fonts/map/dvips/updmap/psfonts_t1.map
-%%TEXMFVARDIR%%/fonts/map/dvips/updmap/psfonts_pk.map
-%%TEXMFVARDIR%%/fonts/map/dvips/updmap/ps2pk.map
-%%TEXMFVARDIR%%/fonts/map/dvips/updmap/psfonts.map
-%%TEXMFVARDIR%%/fonts/map/pdftex/updmap/pdftex_dl14.map
-%%TEXMFVARDIR%%/fonts/map/pdftex/updmap/pdftex_ndl14.map
-%%TEXMFVARDIR%%/fonts/map/pdftex/updmap/pdftex.map
-%%TEXMFVARDIR%%/fonts/map/dvipdfm/updmap/dvipdfm_dl14.map
-%%TEXMFVARDIR%%/fonts/map/dvipdfm/updmap/dvipdfm_ndl14.map
-%%TEXMFVARDIR%%/fonts/map/dvipdfm/updmap/dvipdfm.map
+@exec %%UPDMAP_SYS%%
+@unexec rm -f %D/%%TEXMFVARDIR%%/fonts/map/dvips/updmap/download35.map
+@unexec rm -f %D/%%TEXMFVARDIR%%/fonts/map/dvips/updmap/builtin35.map
+@unexec rm -f %D/%%TEXMFVARDIR%%/fonts/map/dvips/updmap/psfonts_t1.map
+@unexec rm -f %D/%%TEXMFVARDIR%%/fonts/map/dvips/updmap/psfonts_pk.map
+@unexec rm -f %D/%%TEXMFVARDIR%%/fonts/map/dvips/updmap/ps2pk.map
+@unexec rm -f %D/%%TEXMFVARDIR%%/fonts/map/dvips/updmap/psfonts.map
+@unexec rm -f %D/%%TEXMFVARDIR%%/fonts/map/pdftex/updmap/pdftex_dl14.map
+@unexec rm -f %D/%%TEXMFVARDIR%%/fonts/map/pdftex/updmap/pdftex_ndl14.map
+@unexec rm -f %D/%%TEXMFVARDIR%%/fonts/map/pdftex/updmap/pdftex.map
+@unexec rm -f %D/%%TEXMFVARDIR%%/fonts/map/dvipdfm/updmap/dvipdfm_dl14.map
+@unexec rm -f %D/%%TEXMFVARDIR%%/fonts/map/dvipdfm/updmap/dvipdfm_ndl14.map
+@unexec rm -f %D/%%TEXMFVARDIR%%/fonts/map/dvipdfm/updmap/dvipdfm.map
+@unexec rm -f %D/%%TEXMFVARDIR%%/web2c/updmap.log
+@exec %%FMTUTIL_SYS%% --all
 @unexec rm -f %D/%%TEXMFVARDIR%%/web2c/aleph.log
 @unexec rm -f %D/%%TEXMFVARDIR%%/web2c/cont-en.log
 @unexec rm -f %D/%%TEXMFVARDIR%%/web2c/etex.log
@@ -244,7 +247,6 @@ lib/libkpathsea.a
 @unexec rm -f %D/%%TEXMFVARDIR%%/web2c/metafun.mem
 @unexec rm -f %D/%%TEXMFVARDIR%%/web2c/mpost.mem
 @unexec rm -f %D/%%TEXMFVARDIR%%/web2c/mf.base
-@unexec rm -f %D/%%TEXMFVARDIR%%/web2c/updmap.log
 @dirrm include/kpathsea
 @dirrm %%TEXMFDIR%%/texconfig/x
 @dirrm %%TEXMFDIR%%/texconfig/v
