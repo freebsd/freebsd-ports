@@ -1,0 +1,58 @@
+--- configure.orig	Fri Jan  2 00:19:59 2004
++++ configure	Fri Jan  2 18:15:32 2004
+@@ -1424,7 +1424,7 @@
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
+   ac_save_LIBS="$LIBS"
+-LIBS="-lSDL `sdl-config --libs` $LIBS"
++LIBS="-lSDL-1.1 `sdl11-config --libs` $LIBS"
+ cat > conftest.$ac_ext <<EOF
+ #line 1430 "configure"
+ #include "confdefs.h"
+@@ -1448,9 +1448,9 @@
+ fi
+ if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
+   echo "$ac_t""yes" 1>&6
+-  LIBS="$LIBS `sdl-config --libs`" ; \
+-    CFLAGS="$CFLAGS `sdl-config --cflags`" ; \
+-    CXXFLAGS="$CXXFLAGS `sdl-config --cflags`" ; \
++  LIBS="$LIBS `sdl11-config --libs`" ; \
++    CFLAGS="$CFLAGS `sdl11-config --cflags`" ; \
++    CXXFLAGS="$CXXFLAGS `sdl11-config --cflags`" ; \
+     HAVE_SDL=1
+ else
+   echo "$ac_t""no" 1>&6
+@@ -1588,14 +1588,14 @@
+     LIBS="-L/usr/local/lib -L/usr/X11R6/lib $LIBS"
+     CFLAGS="$CFLAGS -I/usr/X11R6/include" ; \
+     CXXFLAGS="$CXXFLAGS -I/usr/X11R6/include"
+-    echo $ac_n "checking for main in -lpng12""... $ac_c" 1>&6
+-echo "configure:1593: checking for main in -lpng12" >&5
++    echo $ac_n "checking for main in -lpng""... $ac_c" 1>&6
++echo "configure:1593: checking for main in -lpng" >&5
+ ac_lib_var=`echo png12'_'main | sed 'y%./+-%__p_%'`
+ if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
+   ac_save_LIBS="$LIBS"
+-LIBS="-lpng12  $LIBS"
++LIBS="-lpng  $LIBS"
+ cat > conftest.$ac_ext <<EOF
+ #line 1601 "configure"
+ #include "confdefs.h"
+@@ -1619,13 +1619,13 @@
+ fi
+ if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
+   echo "$ac_t""yes" 1>&6
+-    ac_tr_lib=HAVE_LIB`echo png12 | sed -e 's/[^a-zA-Z0-9_]/_/g' \
++    ac_tr_lib=HAVE_LIB`echo png | sed -e 's/[^a-zA-Z0-9_]/_/g' \
+     -e 'y/abcdefghijklmnopqrstuvwxyz/ABCDEFGHIJKLMNOPQRSTUVWXYZ/'`
+   cat >> confdefs.h <<EOF
+ #define $ac_tr_lib 1
+ EOF
+ 
+-  LIBS="-lpng12 $LIBS"
++  LIBS="-lpng $LIBS"
+ 
+ else
+   echo "$ac_t""no" 1>&6

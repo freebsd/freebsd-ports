@@ -355,6 +355,7 @@
     SUBDIR += senken
     SUBDIR += senso
     SUBDIR += sex
+    SUBDIR += shaaft
     SUBDIR += sl
     SUBDIR += slashem-tty
     SUBDIR += smacx
