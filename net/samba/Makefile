@@ -15,7 +15,7 @@ MASTER_SITES=	ftp://ftp.samba.org/pub/samba/ \
 		ftp://se.samba.org/pub/samba/ \
 		ftp://ftp.sunet.se/pub/unix/utilities/samba/
 
-MAINTAINER=	hosokawa@jp.FreeBSD.org
+MAINTAINER=	dwcjr@inethouston.net
 
 # directories
 VARDIR=		/var
@@ -31,7 +31,8 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	 --libdir=${SAMBA_CONFDIR} \
 		--localstatedir=${VARDIR} --with-swatdir=${PREFIX}/share/swat \
 		--with-sambabook=${PREFIX}/share/swat/using_samba \
-		--with-lockdir=${VARDIR}/spool/lock --with-privatedir=${SAMBA_PRIVATE}
+		--with-lockdir=${VARDIR}/spool/lock \
+		--with-privatedir=${SAMBA_PRIVATE}
 
 .if defined(KRB5_HOME) && exists(${KRB5_HOME})
 CONFIGURE_ARGS+=--with-krb5=${KRB5_HOME}
@@ -82,7 +83,6 @@ post-install:
 .else
 	${ECHO} "@unexec echo \"Warning: If you will *NOT* use this package anymore, please remove %D/private/smbpasswd manually.\"" >> ${TMPPLIST}
 .endif
-
 
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/samba
