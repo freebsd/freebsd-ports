@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	botan
-PORTVERSION=	1.2.6
+PORTVERSION=	1.2.7
 PORTREVISION=	0
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	opencl
 DISTNAME=	Botan-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	clsung@dragon2.net
 COMMENT=	A portable, easy to use, and efficient C++ crypto library
 
 USE_REINPLACE=	yes
@@ -40,7 +40,6 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 post-patch:
 	@${REINPLACE_CMD} -e "s,/usr/local,${PREFIX},g ; \
 		s,%%CFLAGS%%,${CFLAGS},g" ${WRKSRC}/${CONFIGURE_SCRIPT}
-	@${RM} -f ${WRKSRC}/src/pipe_io.cpp.orig
 
 post-install:
 	@${RM} -f ${PREFIX}/include/botan/botan
