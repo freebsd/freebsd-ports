@@ -1,0 +1,20 @@
+--- Makefile.in.orig	Mon Oct 27 10:13:45 2003
++++ Makefile.in	Wed Dec 10 18:59:23 2003
+@@ -65,7 +65,7 @@
+ 	@rm -f $@
+ 	$(CC) $(CFLAGS) -c $(srcdir)/$*.c
+ 
+-CSRC =	addrtoname.c gmpls.c gmt2local.c machdep.c parsenfsfh.c \
++CSRC =	addrtoname.c cpack.c gmpls.c gmt2local.c machdep.c parsenfsfh.c \
+ 	print-802_11.c print-ah.c print-arcnet.c print-aodv.c \
+ 	print-arp.c print-ascii.c print-atalk.c print-atm.c \
+ 	print-beep.c print-bfd.c print-bgp.c print-bootp.c print-cdp.c \
+@@ -95,7 +95,7 @@
+ # We would like to say "OBJ = $(SRC:.c=.o)" but Ultrix's make cannot
+ # hack the extra indirection
+ OBJ =	$(CSRC:.c=.o) $(GENSRC:.c=.o) $(LOCALSRC:.c=.o) $(LIBOBJS)
+-HDR =   addrtoname.h appletalk.h bootp.h decnet.h \
++HDR =   addrtoname.h appletalk.h bootp.h cpack.h decnet.h \
+ 	ethertype.h extract.h fddi.h gmt2local.h igrp.h interface.h \
+ 	ipx.h llc.h machdep.h mib.h nfsfh.h nfsv2.h ntp.h ospf.h \
+ 	setsignal.h \
