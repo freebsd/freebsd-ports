@@ -1,0 +1,4 @@
+List::MoreUtils provides some trivial but commonly needed functionality
+on lists which is not going to go into List::Util.
+
+WWW: http://search.cpan.org/dist/List-MoreUtils
