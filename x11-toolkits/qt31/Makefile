@@ -8,7 +8,8 @@
 PORTNAME?=	qt
 PORTVERSION?=	2.3.1
 CATEGORIES?=	x11-toolkits
-MASTER_SITES=	ftp://ftp.trolltech.com/qt/source/
+MASTER_SITES=	ftp://ftp.trolltech.com/qt/source/ \
+		ftp://ftp.chg.ru/pub/X11/qt/source/
 DISTNAME=	qt-x11-${PORTVERSION}
 
 MAINTAINER=	will@FreeBSD.org
