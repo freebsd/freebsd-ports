@@ -4400,6 +4400,7 @@ p5-Crypt-RSA	ports/security/p5-Crypt-RSA
 p5-Crypt-Random	ports/security/p5-Crypt-Random
 p5-Crypt-Rijndael	ports/security/p5-Crypt-Rijndael
 p5-Crypt-SSLeay	ports/security/p5-Crypt-SSLeay
+p5-Crypt-Solitaire	ports/security/p5-Crypt-Solitaire
 p5-Crypt-TripleDES	ports/security/p5-Crypt-TripleDES
 p5-Crypt-Twofish	ports/security/p5-Crypt-Twofish
 p5-Crypt-UnixCrypt	ports/security/p5-Crypt-UnixCrypt
