@@ -5,6 +5,7 @@ share/electric/lib/AllDialogs.c
 share/electric/lib/CL.help
 share/electric/lib/EVE.help
 share/electric/lib/QUISC.help
+share/electric/lib/click.wav
 share/electric/lib/evemenus.mac
 share/electric/lib/evetutor.mac
 share/electric/lib/international/fr/LC_MESSAGES/electric.mo
@@ -19,7 +20,14 @@ share/electric/lib/spiceparts.txt
 share/electric/lib/spicepartsS3.mac
 share/electric/lib/spicepartsS3.txt
 share/electric/lib/tsmc25.txt
+share/electric/lib/ui/README
+share/electric/lib/ui/electric.cw
+share/electric/lib/ui/nccpre.ui
+share/electric/lib/ui/shownode.ui
+share/electric/lib/ui/shownode_ext.ui
+share/electric/lib/ui/visiblelay.ui
 share/electric/lib/umc18.txt
+@dirrm share/electric/lib/ui
 @dirrm share/electric/lib/international/fr/LC_MESSAGES
 @dirrm share/electric/lib/international/fr
 @dirrm share/electric/lib/international
