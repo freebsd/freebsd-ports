@@ -1,9 +1,10 @@
-include/gss.h
+bin/gss
 include/gss/api.h
 include/gss/ext.h
-@dirrm include/gss
+include/gss.h
 lib/libgss.a
 lib/libgss.so
 lib/libgss.so.0
 libdata/pkgconfig/gss.pc
 share/locale/sv/LC_MESSAGES/gss.mo
+@dirrm include/gss
