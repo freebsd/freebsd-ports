@@ -3408,6 +3408,7 @@ linux-lesstif-ns	ports/www/linux-lesstif-ns
 linux-libaudiofile	ports/audio/linux-libaudiofile
 linux-libglade	ports/devel/linux-libglade
 linux-libxml	ports/textproc/linux-libxml
+linux-mozilla	ports/www/linux-mozilla
 linux-netscape4	ports/www/linux-netscape4
 linux-netscape47-communicator	ports/www/linux-netscape47-communicator
 linux-netscape47-navigator	ports/www/linux-netscape47-navigator
