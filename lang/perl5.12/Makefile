@@ -3,11 +3,11 @@
 # Date created:		16 April 1995
 # Whom:			markm
 #
-# $Id: Makefile,v 1.18 1997/05/23 20:06:47 markm Exp $
+# $Id: Makefile,v 1.19 1997/07/17 17:46:36 markm Exp $
 #
 
 DISTNAME=	perl5.004_01
-PKGNAME=	perl-5.004001
+PKGNAME=	perl-5.00401
 CATEGORIES=	lang devel perl5
 MASTER_SITES=	ftp://ftp.digital.com/pub/plan/perl/CPAN/src/5.0/ \
 		ftp://ftp.cdrom.com/pub/perl/CPAN/src/5.0/
