@@ -1,0 +1,19 @@
+*** DOTzorrorc.orig	Sat Aug  3 23:02:53 1996
+--- DOTzorrorc	Sat Aug  3 23:06:44 1996
+***************
+*** 3,9 ****
+  # the defaults so if you like them dont do anything! You can probably
+  # configure all kinds of things using X resources as well but I havent
+  # got it set up for that yet. The easiest way to set many of these is
+! # using the configure option oof the program.
+  #
+  # Set the sort order controlling how actions are displayed.
+  #
+--- 3,9 ----
+  # the defaults so if you like them dont do anything! You can probably
+  # configure all kinds of things using X resources as well but I havent
+  # got it set up for that yet. The easiest way to set many of these is
+! # using the configure option of the program.
+  #
+  # Set the sort order controlling how actions are displayed.
+  #
