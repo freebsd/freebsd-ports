@@ -1,0 +1,6 @@
+The libstatgrab library provides an easy to use interface for
+accessing system statistics and information. It was designed for
+use in the i-scream central monitoring system, but should be useable
+in other programs.
+
+WWW: http://www.i-scream.org.uk/
