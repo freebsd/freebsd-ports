@@ -3,7 +3,7 @@
 # Date created:		31 December 1996
 # Whom:			Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.15 1999/07/04 19:05:24 obrien Exp $
+# $Id: Makefile,v 1.16 1999/07/15 06:15:10 obrien Exp $
 #
 
 DISTNAME=	wget-1.5.3
@@ -20,6 +20,8 @@ MAINTAINER=	obrien@FreeBSD.ORG
 LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext
 
 GNU_CONFIGURE=	yes
+CONFIGURE_ENV=  CPPFLAGS=-I${PREFIX}/include \
+		LDFLAGS=-L${PREFIX}/lib
 
 INFOFILES=	wget.info
 
