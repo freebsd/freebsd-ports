@@ -1,12 +1,12 @@
 # New ports collection makefile for: bgrot
-# Version required:		1.10
 # Date created:			12 January 1999
 # Whom:				Matthew Fuller <fullermd@futuresouth.com>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	bgrot-1.20
+PORTNAME=	bgrot
+PORTVERSION= 	1.20
 CATEGORIES=	x11
 MASTER_SITES=	http://www.futuresouth.com/~fullermd/bgrot/ \
 		http://www.over-yonder.net/~fullermd/bgrot/

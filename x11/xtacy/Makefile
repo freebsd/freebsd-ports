@@ -1,16 +1,16 @@
 # New ports collection makefile for:    xtacy
-# Version required:     1.14
 # Date created:         25 July 1996
 # Whom:                 matt@bdd.net
 #
 # $FreeBSD$
 #
 
-DISTNAME=	xtacy114
-PKGNAME=	xtacy-1.14
+PORTNAME=	xtacy
+PORTVERSION= 	1.14
 CATEGORIES=	x11
 MASTER_SITES=	http://www.ultranet.com/~jjohnson/ \
 		${MASTER_SITE_SUNSITE}
+DISTNAMe=	${PORTNAME}114
 
 MAINTAINER=	matt@bdd.net
 

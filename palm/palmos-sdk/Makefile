@@ -1,15 +1,15 @@
 # New ports collection makefile for:	Palm OS SDK
-# Version required:	3.5
 # Date created:		Mar 22 2000
 # Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	sdk35
-PKGNAME=	palmos-sdk-3.5
+PORTNAME=	palmos-sdk
+PORTVERSION= 	3.5
 CATEGORIES=	palm
 MASTER_SITES=	
+DISTNAME=	sdk35
 
 MAINTAINER=	kuriyama@FreeBSD.org
 

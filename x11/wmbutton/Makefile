@@ -1,12 +1,12 @@
 # New ports collection makefile for:	wmbutton
-# Version required:		0.4
 # Date created:			10 Apr 1999
 # Whom:				Jim Mock <jim@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	wmbutton-0.4
+PORTNAME=	wmbutton
+PORTVERSION= 	0.4
 CATEGORIES=	x11 windowmaker
 MASTER_SITES=	http://www.cs.mun.ca/~gstarkes/wmaker/dockapps/files/ \
 		http://people.FreeBSD.org/~jim/distfiles/

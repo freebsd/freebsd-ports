@@ -1,15 +1,15 @@
 # New ports collection makefile for:	lupe
-# Version required:	0.08
 # Date created:		4 February 1998
 # Whom:			FURUSAWA,Kazuhisa <kazu@jp.freebsd.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	lupe008
-PKGNAME=	lupe-0.08
+PORTNAME=	lupe
+PORTVERSION= 	0.08
 CATEGORIES=	x11
 MASTER_SITES=	http://www.oersted.co.jp/~yav/soft/
+DISTNAME=	lupe008	
 
 MAINTAINER=	kazu@jp.freebsd.org
 

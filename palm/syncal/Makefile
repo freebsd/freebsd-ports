@@ -1,12 +1,12 @@
 # New ports collection makefile for:    tclock
-# Version required:     1.0.1
 # Date created:		So   7 Feb 1999 20:50:43 MET
 # Whom:			Lars Koeller <lkoeller@cc.fh-lippe.de>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	syncal-0.8.3
+PORTNAME=	syncal
+PORTVERSION= 	0.8.3
 CATEGORIES=	palm comms deskutils
 MASTER_SITES=	http://hopf.math.nwu.edu/syncal/
 

@@ -1,15 +1,15 @@
 # New ports collection makefile for:   xmove
-# Version required:    2.0
 # Date created:        16 Jan 1997
 # Whom:                Stefan Zehl <sec@42.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	xmove.2.0beta2
-PKGNAME=	xmove-2.0b2
+PORTNAME=	xmove
+PORTVERSION= 	2.0b2
 CATEGORIES=	x11
 MASTER_SITES=	ftp://ftp.cs.columbia.edu/pub/xmove/
+DISTNAME=	${PORTNAME}.2.0beta2
 
 MAINTAINER=	sec@42.org
 

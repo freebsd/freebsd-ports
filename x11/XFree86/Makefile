@@ -1,13 +1,12 @@
 # New ports collection makefile for:    XFree86
-# Version required:     3.3.6
 # Date created:         5 January 1995
 # Whom:                 jmz
 #
 # $FreeBSD$
 #
 
-DISTNAME=	xc
-PKGNAME= 	XFree86-3.3.6
+PORTNAME=	XFree86
+PORTVERSION= 	3.3.6
 CATEGORIES=	x11
 MASTER_SITES=	ftp://ftp.xfree86.org/pub/XFree86/3.3.6/source/ \
 		ftp://ftp.freesoftware.com/pub/XFree86/3.3.6/source/ \

@@ -1,12 +1,12 @@
 # New ports collection makefile for:	gyroscope
-# Version required:		1.0
 # Date created:			31 July 1999
 # Whom:				Jim Mock <jim@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	gyroscope-1.0
+PORTNAME=	gyroscope
+PORTVERSION= 	1.0
 CATEGORIES=	x11
 MASTER_SITES=	http://www.millar.u-net.com/
 

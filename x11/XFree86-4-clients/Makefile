@@ -1,13 +1,12 @@
 # New ports collection makefile for:    XFree86
-# Version required:     4.0
 # Date created:         5 January 1995
 # Whom:                 jmz
 #
 # $FreeBSD$
 #
 
-DISTNAME=	xc
-PKGNAME= 	XFree86-4.0
+PORTNAME=	XFree86
+PORTVERSION= 	4.0
 CATEGORIES=	x11
 MASTER_SITES=	ftp://ftp.xfree86.org/pub/XFree86/4.0/source/ \
 		ftp://ftp.freesoftware.com/pub/XFree86/4.0/source/ \

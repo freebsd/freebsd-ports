@@ -1,12 +1,12 @@
 # New ports collection makefile for:	libhelp
-# Version required:	1.8.1
 # Date created:		11 December 96
 # Whom:			Lars Koeller <Lars_Koeller@odie.physik2.uni-rostock.de>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	libhelp-1.8.1
+PORTNAME=	libhelp
+PORTVERSION= 	1.8.1
 CATEGORIES=	x11
 MASTER_SITES=	ftp://ftp.informatik.uni-stuttgart.de/pub/libhelp/
 

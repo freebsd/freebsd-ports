@@ -1,12 +1,12 @@
 # New ports collection makefile for:	coldsync
-# Version required:	1.1.2
 # Date created:		21 January 2000
 # Whom:			Andrew Arensburger <arensb@ooblick.com>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	coldsync-1.1.2
+PORTNAME=	coldsync
+PORTVERSION= 	1.1.2
 CATEGORIES=	palm comms
 MASTER_SITES=	http://www.ooblick.com/software/coldsync/
 

@@ -1,12 +1,12 @@
 # New ports collection makefile for:	cyrproxy
-# Version required:			1.4.2
 # Date created:				20 May 1997
 # Whom:					Andrey Zakhvatov
 #
 # $FreeBSD$
 #
 
-DISTNAME=		cyrproxy-1.4.2
+PORTNAME=		cyrproxy
+PORTVERSION= 		1.4.2
 CATEGORIES=		russian net www
 MASTER_SITES=		ftp://ftp.lexa.ru/pub/domestic/lexa/
 

@@ -1,15 +1,15 @@
 # New ports collection makefile for: pgp.language
-# Version required:     2.6.3ia
 # Date created:         4 May 1995
 # Whom:                 ache
 #
 # $FreeBSD$
 #
 
-DISTNAME=       pgp26ru
-PKGNAME=        ru-pgp-2.6.3ia
+PORTNAME=	pgp
+PORTVERSION= 	2.6.3ia
 CATEGORIES=     russian
 MASTER_SITES=   ftp://ftp.kiarchive.ru/pub/unix/crypto/pgp/
+DISTNAME=	pgp26ru
 
 MAINTAINER=	ache@FreeBSD.org
 

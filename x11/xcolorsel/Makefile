@@ -1,16 +1,16 @@
 # New ports collection makefile for:	xcolorsel
-# Version required:		1.1a
 # Date Created:			11 November 1998
 # Whom:				Wayne Cuddy <wayne@crb-web.com>
 #
 # $FreeBSD$
 #
 
-DISTNAME=		xcolorsel-1.1a-src
-PKGNAME=		xcolorsel-1.1a
+PORTNAME=		xcolorsel
+PORTVERSION=		1.1a
 CATEGORIES=		x11
 MASTER_SITES=		${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	utilities
+DISTNAME=		${PKGNAME}-src
 
 MAINTAINER=	wayne@crb-web.com
 

@@ -1,12 +1,12 @@
 # New ports collection makefile for: netscape.language
-# Version required:     3.01
 # Date created:         8 Apr 1996
 # Whom:                 ache
 #
 # $FreeBSD$
 #
 
-PKGNAME=        ru-netscape-3.01
+PORTNAME=	netscape
+PORTVERSION= 	3.01
 CATEGORIES=     russian www
 
 MAINTAINER=	ache@FreeBSD.org

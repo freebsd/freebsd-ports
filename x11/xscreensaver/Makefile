@@ -1,12 +1,12 @@
 # New ports collection makefile for:    xscreensaver
-# Version required:     3.21
 # Date created:         10 July 1995
 # Whom:                 dom@myrddin.demon.co.uk
 #
 # $FreeBSD$
 #
 
-DISTNAME=	xscreensaver-3.21
+PORTNAME=	xscreensaver
+PORTVERSION= 	3.21
 CATEGORIES=	x11
 MASTER_SITES=	http://www.jwz.org/xscreensaver/
 

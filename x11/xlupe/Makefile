@@ -1,12 +1,12 @@
 # New ports collection makefile for:	xlupe
-# Version required:	1.0
 # Date created:		17 Apr 1999
 # Whom:			runge@rostock.zgdv.de
 #
 # $FreeBSD$
 #
 
-DISTNAME=	xlupe-1.0
+PORTNAME=	xlupe
+PORTVERSION= 	1.0
 CATEGORIES=	x11
 MASTER_SITES=	http://www.rostock.zgdv.de/~runge/xlupe/
 

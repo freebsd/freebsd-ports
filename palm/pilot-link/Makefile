@@ -1,14 +1,15 @@
 # New ports collection makefile for:    pilot-link
-# Version required:     0.8.7
 # Date created:         November, 1997
 # Whom:                 Paul Traina <pst@freebsd.org>
 #
 # $FreeBSD$
+#
 
-DISTNAME=	pilot-link.0.9.3
-PKGNAME=	pilot-link-0.9.3
+PORTNAME=	pilot-link
+PORTVERSION= 	0.9.3
 CATEGORIES=	palm comms tk82
 MASTER_SITES=	ftp://ryeham.ee.ryerson.ca/pub/PalmOS/
+DISTNAME=	${PORTNAME}.${PORTVERSION}
 
 MAINTAINER=	dima@freebsd.org
 

@@ -1,16 +1,16 @@
 # New ports collection makefile for:	gnomecore
-# Version required:			1.0.55
 # Date created:				17 March 1998
 # Whom:					Yukihiro Nakai <Nakai@technologist.com>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	gnome-core-1.0.55
-PKGNAME=	gnomecore-1.0.55
+PORTNAME=	gnomecore
+PORTVERSION= 	1.0.55
 CATEGORIES=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/gnome-core
+DISTNAME=	gnome-core-${PORTVERSION}
 
 MAINTAINER=	ade@FreeBSD.org
 

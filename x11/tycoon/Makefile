@@ -1,12 +1,12 @@
 # New ports collection makefile for:	tycoon
-# Version required:	1.07o
 # Date created:		19 September 1997
 # Whom:			steve@farrell.org
 #
 # $FreeBSD$
 #
 
-DISTNAME=	tycoon-1.07o
+PORTNAME=	tycoon
+PORTVERSION=	1.07o	
 CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	X11/desktop
