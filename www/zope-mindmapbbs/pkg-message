@@ -1,0 +1,8 @@
+To complete the installation of MindMapBBS
+
+  1. Restart Zope.  This may be done from the Zope Control Panel.
+
+  2. Add MindMapBBS object.
+
+  3. Add DTML Document which contains a line:
+      <dtml-var your-bbs-name>
