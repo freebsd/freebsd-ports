@@ -4,9 +4,9 @@
 # $FreeBSD$
 
 PORTNAME=	mini-xml
-PORTVERSION=	2.0
+PORTVERSION=	2.1
 CATEGORIES=	textproc
-MASTER_SITES=	http://www.easysw.com/~mike/mxml/swfiles/
+MASTER_SITES=	http://ftp.easysw.com/pub/mxml/${PORTVERSION}/
 DISTNAME=	mxml-${PORTVERSION}
 
 MAINTAINER=	oc@nm.ru
@@ -15,7 +15,7 @@ COMMENT=	Lightweight XML parsing library
 USE_GNOME=	pkgconfig
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=	--with-docdir=${PREFIX}/share/doc/${PORTNAME}
+CONFIGURE_ARGS+=	--with-docdir=${DOCSDIR}
 
 MAN1=		mxmldoc.1
 MAN3=		mxml.3
