@@ -18,8 +18,6 @@ RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/DBI.pm:${
 
 WRKSRC=		${WRKDIR}/${DISTNAME}-${PORTVERSION}
 RESTRICTED=	"not redistributable, license agreement required"
-NO_CDROM=	${RESTRICTED}
-NO_PACKAGE=	${RESTRICTED}
 USE_PERL5=	yes
 NO_BUILD=	yes
 
