@@ -2,10 +2,7 @@ bin/csant
 bin/cscc
 bin/csdoc
 bin/csdoc2html
-bin/csdoc2stub
-bin/csdoc2test
 bin/csdoc2texi
-bin/csdocvalil
 bin/ilalink
 bin/ilasm
 bin/ildasm
