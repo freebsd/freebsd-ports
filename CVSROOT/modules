@@ -11976,7 +11976,7 @@ xtattr		ports/x11/xtattr
 xteddy		ports/games/xteddy
 xtem		ports/print/xtem
 xterm		ports/x11/xterm
-xtermcontrol	ports/x11-toolkits/xtermcontrol
+xtermcontrol	ports/x11/xtermcontrol
 xtermset	ports/x11/xtermset
 xtestpicture	ports/x11/xtestpicture
 xtet42		ports/games/xtet42

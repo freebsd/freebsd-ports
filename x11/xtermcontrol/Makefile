@@ -7,7 +7,7 @@
 
 PORTNAME=	xtermcontrol
 PORTVERSION=	2.7
-CATEGORIES=	x11-toolkits
+CATEGORIES=	x11
 MASTER_SITES=	http://www.thrysoee.dk/xtermcontrol/
 
 MAINTAINER=	krion@FreeBSD.org

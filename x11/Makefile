@@ -257,6 +257,7 @@
     SUBDIR += xtacy
     SUBDIR += xtattr
     SUBDIR += xterm
+    SUBDIR += xtermcontrol
     SUBDIR += xtermset
     SUBDIR += xtestpicture
     SUBDIR += xtoolwait

@@ -214,7 +214,6 @@
     SUBDIR += xforms
     SUBDIR += xg
     SUBDIR += xmhtml
-    SUBDIR += xtermcontrol
     SUBDIR += xview
     SUBDIR += xview-clients
 
