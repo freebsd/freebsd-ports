@@ -14,7 +14,7 @@ EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ob@breuninger.org
 
-RUN_DEPENDS=	gs:${PORTSDIR}/print/ghostscript55
+RUN_DEPENDS=	gs:${PORTSDIR}/print/ghostscript-gnu
 
 MAN1=		pstotext.1
 
