@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	mp3info
-PORTVERSION=	0.2.1
+PORTVERSION=	0.3
 CATEGORIES=	audio ruby
-MASTER_SITES=	http://rubyforge.org/frs/download.php/91/
+MASTER_SITES=	http://rubyforge.org/frs/download.php/808/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	ruby-${PORTNAME}-${PORTVERSION}
 DIST_SUBDIR=	ruby
@@ -18,10 +18,14 @@ COMMENT=	A Ruby library to access to information on mp3 files
 
 USE_RUBY=	yes
 USE_RUBY_SETUP=	yes
+USE_RUBY_RDOC=	yes
 RUBY_SETUP=	install.rb
 
-DOCS=		doc
+DOCS=		CHANGELOG doc
 #EXAMPLES=	test.rb
+
+post-build:
+	cd ${BUILD_WRKSRC}; ${RM} -r doc; ${RUBY_RDOC} lib
 
 post-install:
 .if !defined(NOPORTDOCS)
