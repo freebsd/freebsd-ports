@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.corest.com/download/msyslog/ \
 DISTNAME=	${PORTNAME}-v${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	anders@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Flexible and easy to integrate syslog daemon
 
 .if defined(WITH_MYSQL)
