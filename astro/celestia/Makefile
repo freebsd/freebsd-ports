@@ -13,27 +13,28 @@ MASTER_SITE_SUBDIR=	celestia
 
 MAINTAINER=	trevor@FreeBSD.org
 
+BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash2
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
 		gtkgl.5:${PORTSDIR}/x11-toolkits/gtkglarea
 
 GNU_CONFIGURE=	yes
 PLIST=		${WRKDIR}/pkg-plist
-USE_GTK=	yes
 USE_GMAKE=	yes
 USE_MESA=	yes
 USE_X_PREFIX=	yes
+WANT_GTK=	yes
 
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--includedir="${LOCALBASE}/include" \
 		--libdir="${LOCALBASE}/lib"
-
-CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include -I${X11BASE}/include/GL -I${LOCALBASE}/include" \
-		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib -lm"
+CONFIGURE_ENV=	\
+LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib -lm ${PTHREAD_LIBS}"
+CPPFLAGS="-I${X11BASE}/include -I${X11BASE}/include/GL -I${LOCALBASE}/include ${PTHREAD_CFLAGS}"
 
 pre-patch:
 	${PERL} -pi -e \
-"s:-O2::g; s:-Wall::g; s:-ffast-math::g; s:-fexpensive-optimizations::g" \
+"s:-O2::g; s:-Wall::g; s:-ffast-math::g; s:-fexpensive-optimizations::g; s:\!\ /bin/sh:\!\ ${LOCALBASE}/bin/bash:g" \
 	${WRKSRC}/configure
 
 pre-install:
@@ -96,4 +97,12 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/textures/medres/*.??? \
 		${DATADIR}/textures/medres/
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if defined(HAVE_GTK)
+USE_GTK=	yes
+.else
+CONFIGURE_ARGS+=--without-gtk
+.endif
+
+.include <bsd.port.post.mk>
