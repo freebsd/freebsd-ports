@@ -6,18 +6,17 @@
 #
 
 PORTNAME=	File-CounterFile
-PORTVERSION=	0.12
+PORTVERSION=	1.00
 CATEGORIES=	misc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	File
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	wchao@isi.edu
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl module for persistent counter class
 
 PERL_CONFIGURE=	yes
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		File::CounterFile.3
 
 .include <bsd.port.mk>
