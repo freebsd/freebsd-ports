@@ -7,7 +7,7 @@
 
 PORTNAME=	sdl
 PORTVERSION=	0.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel graphics audio ruby
 MASTER_SITES=	http://www.kmc.kyoto-u.ac.jp/~ohai/rubysdl/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -34,6 +34,9 @@ RD_DOCS_JA=	rubysdl_doc.rd
 
 DOCS_EN=	rubysdl_const_list.txt
 DOCS_JA=	README ${RD_DOCS_JA} ${RD_DOCS_JA:S/.rd$/.html/}
+
+post-patch:
+	${RUBY} -i -pe 'gsub /EVENT_RESERVED1/, "VIDEOEXPOSE"' ${WRKSRC}/*.c
 
 post-build:
 .if !defined(NOPORTDOCS)
