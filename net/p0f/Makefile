@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		p0f
-PORTVERSION=		1.7
+PORTVERSION=		1.8
 CATEGORIES=		net
 MASTER_SITES=		http://lcamtuf.hack.pl/
 DISTNAME=		${PORTNAME}
@@ -17,8 +17,9 @@ MAINTAINER=		trevor@FreeBSD.org
 WRKSRC=			${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 post-patch:
-	@${PERL} -pi -e "s=/etc=${PREFIX}/etc=g ; \
-		s=/etc=${PREFIX}/etc=g" ${WRKSRC}/README
+	@${PERL} -pi -e "s=/etc=${PREFIX}/etc=g" \
+		${WRKSRC}/README \
+		${WRKSRC}/p0f.c
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/p0f ${PREFIX}/bin
