@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	flasm
-PORTVERSION=	1.51
+PORTVERSION=	1.52
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.nowrap.de/download/
 DISTNAME=	flasm15src
