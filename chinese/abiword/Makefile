@@ -13,6 +13,8 @@ DISTFILES=	# none
 
 MAINTAINER=	keith@FreeBSD.org
 
+BROKEN=		"Incorrect pkg-plist"
+
 RUN_DEPENDS=	AbiWord:${PORTSDIR}/editors/AbiWord \
 		ttfm.sh:${PORTSDIR}/chinese/ttfm \
 		${LOCALBASE}/share/fonts/TrueType/bkai00mp.ttf:${PORTSDIR}/chinese/arphicttf \
