@@ -4,13 +4,14 @@
 # Date created: 13 Sep 1997
 # Whom:         ache@FreeBSD.org
 #
-# $Id: Makefile,v 1.2 1997/03/28 10:10:05 asami Exp $
+# $Id: Makefile,v 1.1.1.1 1997/09/13 14:04:21 ache Exp $
 #
 
-DISTNAME=       adcomplain-1.6
-DISTFILES=      adcomplain.pl.uu
+DISTNAME=      adcomplain.pl.uu
+PKGNAME=       adcomplain-1.6
 CATEGORIES=     mail news
 MASTER_SITES=   http://www.rdrop.com/users/billmc/
+EXTRACT_SUFX=	# none
 
 MAINTAINER=     ache@FreeBSD.org
 
