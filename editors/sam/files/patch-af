@@ -1,5 +1,5 @@
-*** Makefile.orig	Fri Aug 11 15:55:41 1995
---- Makefile	Fri Aug 11 16:08:35 1995
+*** Makefile.orig	Fri Feb 11 09:18:10 2000
+--- Makefile	Fri Feb 11 09:21:52 2000
 ***************
 *** 3,8 ****
 --- 3,17 ----
@@ -12,7 +12,7 @@
 + MAN3=add balloc bitblt cachechars event frame graphics rgbpix rune
 + MAN4=font keyboard utf
 + MAN6=bitmap regexp
-+ APP_DEFAULT_DIR=/usr/X11R6/lib/X11/app-defaults
++ APP_DEFAULT_DIR=$(PREFIX)/lib/X11/app-defaults
 + AD=Sam
 + 
   all:	lXg lframe samdir samtermdir
@@ -20,7 +20,7 @@
   lXg:
 ***************
 *** 21,26 ****
---- 30,47 ----
+--- 30,41 ----
   	cd libframe; $(MAKE) install
   	cd sam; $(MAKE) install
   	cd samterm; $(MAKE) install
@@ -30,12 +30,6 @@
 + 	for i in $(MAN4); do cp doc/$$i.4 $(PREFIX)/$(MAN)/man4/$$i.4; done
 + 	for i in $(MAN6); do cp doc/$$i.6 $(PREFIX)/$(MAN)/man6/$$i.6; done
 + 	cp doc/$(AD).ad $(APP_DEFAULT_DIR)/$(AD)
-+ 	strip $(PREFIX)/bin/sam
-+ 	strip $(PREFIX)/bin/samterm
-+ 	for i in $(MAN1); do gzip -9nf $(PREFIX)/$(MAN)/man1/$$i.1; done
-+ 	for i in $(MAN3); do gzip -9nf $(PREFIX)/$(MAN)/man3/$$i.3; done
-+ 	for i in $(MAN4); do gzip -9nf $(PREFIX)/$(MAN)/man4/$$i.4; done
-+ 	for i in $(MAN6); do gzip -9nf $(PREFIX)/$(MAN)/man6/$$i.6; done
   
   clean:
   	cd libXg; $(MAKE) clean

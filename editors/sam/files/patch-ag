@@ -1,0 +1,103 @@
+*** sam/Makefile.orig	Fri Feb 11 11:16:53 2000
+--- sam/Makefile	Fri Feb 11 11:25:38 2000
+***************
+*** 8,14 ****
+  #	
+  #	Additionally, -D_POSIX_SOURCE (or its equivalent) may be specified
+  #	if your compiler supports posix-compatible compilation
+! OS=-DIRIX -ansiposix
+  
+  #	add -Iincludedir for any include directories that need to be searched
+  #	for posix header files (for UMIPS, add -I/usr/include/posix)
+--- 8,14 ----
+  #	
+  #	Additionally, -D_POSIX_SOURCE (or its equivalent) may be specified
+  #	if your compiler supports posix-compatible compilation
+! OS=-DBSDi
+  
+  #	add -Iincludedir for any include directories that need to be searched
+  #	for posix header files (for UMIPS, add -I/usr/include/posix)
+***************
+*** 22,30 ****
+  #	where sam is to be installed.  SAMSAVEDIR is the name of the directory
+  #	where the samsave file restoration script is stored.
+  RSAMNAME=sam
+! TERMNAME=/v/bin/samterm
+! SAMDIR=/usr/bin
+! SAMSAVEDIR=/v/bin
+  
+  #	Set TMP to a good place for tmp files (with lots of room)
+  TMP=/usr/tmp
+--- 22,30 ----
+  #	where sam is to be installed.  SAMSAVEDIR is the name of the directory
+  #	where the samsave file restoration script is stored.
+  RSAMNAME=sam
+! TERMNAME=$(PREFIX)/bin/samterm
+! SAMDIR=$(PREFIX)/bin
+! SAMSAVEDIR=$(PREFIX)/bin
+  
+  #	Set TMP to a good place for tmp files (with lots of room)
+  TMP=/usr/tmp
+***************
+*** 37,47 ****
+  #	Set RXNAME and RXPATHNAME to the name of the remote execution command
+  #	and the pathname of its executable
+  RXNAME=rsh
+! RXPATHNAME=/usr/bsd/rsh
+  
+  SAMSAVE=/bin/sh\\n$(SAMSAVEDIR)/samsave
+  
+! CFLAGS=$(OS) -D_LIBXG_EXTENSION $(INCS)
+  
+  SYSFLAGS=  -DHOMEDIR=\"$(HOMEDIR)\" -DRSAMNAME=\"$(RSAMNAME)\" \
+  		-DTERMNAME=\"$(TERMNAME)\" -DTMP=\"$(TMP)\" \
+--- 37,47 ----
+  #	Set RXNAME and RXPATHNAME to the name of the remote execution command
+  #	and the pathname of its executable
+  RXNAME=rsh
+! RXPATHNAME=/usr/bin/rsh
+  
+  SAMSAVE=/bin/sh\\n$(SAMSAVEDIR)/samsave
+  
+! CFLAGS+=$(OS) -D_LIBXG_EXTENSION $(INCS)
+  
+  SYSFLAGS=  -DHOMEDIR=\"$(HOMEDIR)\" -DRSAMNAME=\"$(RSAMNAME)\" \
+  		-DTERMNAME=\"$(TERMNAME)\" -DTMP=\"$(TMP)\" \
+***************
+*** 50,56 ****
+  		-DSAMSAVE=\"$(SAMSAVE)\"
+  
+  LIB=../libframe/libframe.a ../libXg/libXg.a
+! CC=cc
+  
+  OBJ=sam.o address.o buffer.o cmd.o disc.o error.o file.o io.o \
+  	list.o mesg.o moveto.o multi.o rasp.o regexp.o shell.o \
+--- 50,56 ----
+  		-DSAMSAVE=\"$(SAMSAVE)\"
+  
+  LIB=../libframe/libframe.a ../libXg/libXg.a
+! CC?=cc
+  
+  OBJ=sam.o address.o buffer.o cmd.o disc.o error.o file.o io.o \
+  	list.o mesg.o moveto.o multi.o rasp.o regexp.o shell.o \
+***************
+*** 68,76 ****
+  	rm -f sam
+  
+  install:	sam
+! 	cp sam $(SAMDIR)/$(RSAMNAME)
+! 	cp samsave $(SAMSAVEDIR)/samsave
+! 	chmod +x samsave
+  
+  $(OBJ):	sam.h ../include/u.h ../include/libc.h errors.h mesg.h
+  
+--- 68,76 ----
+  	rm -f sam
+  
+  install:	sam
+! 	${BSD_INSTALL_PROGRAM} sam $(SAMDIR)/$(RSAMNAME)
+! 	${BSD_INSTALL_SCRIPT} samsave $(SAMSAVEDIR)/samsave
+! 	${BSD_INSTALL_SCRIPT} B.sh $(SAMSAVEDIR)/B
+  
+  $(OBJ):	sam.h ../include/u.h ../include/libc.h errors.h mesg.h
+  

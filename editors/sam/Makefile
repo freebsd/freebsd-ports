@@ -8,23 +8,23 @@
 PORTNAME=	sam
 PORTVERSION=	4.3
 CATEGORIES=	editors plan9
-MASTER_SITES=	ftp://ftp.ecf.toronto.edu/pub/plan9/matty/
+MASTER_SITES=	ftp://ftp.cs.usyd.edu.au/matty/unicode/
 DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.msg.gz
 
 MAINTAINER=	ports@FreeBSD.org
 
-USE_XLIB=	yes
+EXTRACT_CMD=		${GZCAT}
+EXTRACT_BEFORE_ARGS=	# empty
+EXTRACT_AFTER_ARGS=	| ${SH}
+
 NO_WRKSUBDIR=	yes
-EXTRACT_CMD=		zcat
-EXTRACT_BEFORE_ARGS=
-EXTRACT_AFTER_ARGS=	|sh
+USE_X_PREFIX=	yes
 
 MAN1=		sam.1
 MAN3=		add.3 balloc.3 bitblt.3 cachechars.3 event.3 frame.3 \
 		graphics.3 rgbpix.3 rune.3
 MAN4=		font.4 keyboard.4 utf.4
 MAN6=		bitmap.6 regexp.6
-MANCOMPRESSED=	yes
 
 .include <bsd.port.mk>
