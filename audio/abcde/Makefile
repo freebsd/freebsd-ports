@@ -27,65 +27,38 @@ MAN1=		abcde.1 cddb-tool.1
 
 .if defined(WITH_CDDA2WAV)
 RUN_DEPENDS+=	cdda2wav:${PORTSDIR}/sysutils/cdrtools
-.else
-CDDA2WAV_MSG=	"Define WITH_CDDA2WAV to enable cdda2wav support."
 .endif
 
 .if defined(WITH_DAGRAB)
 RUN_DEPENDS+=	dagrab:${PORTSDIR}/audio/dagrab
-.else
-DAGRAB_MSG=	"Define WITH_DAGRAB to enable dagrab support."
 .endif
 
 .if defined(WITH_EJECT)
 RUN_DEPENDS+=	eject:${PORTSDIR}/sysutils/eject
-.else
-EJECT_MSG=	"Define WITH_EJECT to enable auto-eject support."
 .endif
 
 .if defined(WITH_FLAC)
 RUN_DEPENDS+=	flac:${PORTSDIR}/audio/flac
-.else
-FLAC_MSG=	"Define WITH_FLAC to enable FLAC support."
 .endif
 
 .if defined(WITH_NORMALIZE)
 RUN_DEPENDS+=	normalize:${PORTSDIR}/audio/normalize
-.else
-NORMALIZE_MSG=	"Define WITH_NORMALIZE to enable normalize support."
 .endif
 
 .if defined(WITH_SPEEX)
 RUN_DEPENDS+=	speexenc:${PORTSDIR}/audio/speex
-.else
-SPEEX_MSG=	"Define WITH_SPEEX to enable Speex support."
 .endif
 
-pre-fetch:
-.if defined(CDDA2WAV_MSG)
-	@${ECHO_MSG} ${CDDA2WAV_MSG}
-	@${ECHO_MSG} ""
-.endif
-.if defined(DAGRAB_MSG)
-	@${ECHO_MSG} ${DAGRAB_MSG}
-	@${ECHO_MSG} ""
-.endif
-.if defined(EJECT_MSG)
-	@${ECHO_MSG} ${EJECT_MSG}
-	@${ECHO_MSG} ""
-.endif
-.if defined(FLAC_MSG)
-	@${ECHO_MSG} ${FLAC_MSG}
-	@${ECHO_MSG} ""
-.endif
-.if defined(NORMALIZE_MSG)
-	@${ECHO_MSG} ${NORMALIZE_MSG}
-	@${ECHO_MSG} ""
-.endif
-.if defined(SPEEX_MSG)
-	@${ECHO_MSG} ${SPEEX_MSG}
-	@${ECHO_MSG} ""
-.endif
+pre-everything::
+	@${ECHO}
+	@${ECHO} "You can build ${PORTNAME} with the following options:"
+	@${ECHO} "WITH_CDDA2WAV         enable cdda2wav support"
+	@${ECHO} "WITH_DAGRAB           enable dagrab support"
+	@${ECHO} "WITH_EJECT            enable auto-eject support"
+	@${ECHO} "WITH_FLAC             enable FLAC support"
+	@${ECHO} "WITH_NORMALIZE        enable normalize support"
+	@${ECHO} "WITH_SPEEX            enable Speex support"
+	@${ECHO}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's#/etc/#${PREFIX}/etc/#g' \
