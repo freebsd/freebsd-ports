@@ -6,17 +6,23 @@
 #
 
 PORTNAME=	tintin
-PORTVERSION=	1.5.6
+PORTVERSION=	1.8.2
 CATEGORIES=     net games
-MASTER_SITES=   ftp://ftp.walrus.com/pub/avatar/clients/ \
-		ftp://ftp.cctpu.edu.ru/pub/comp/networking/mud/ \
-		ftp://iclub.nsu.ru/pub/mud/clients/tintin++/
-DISTNAME=	tintin++v1.5pl6
-EXTRACT_SUFX=   .tar.Z
+MASTER_SITES=	http://mail.newclear.net/tintin/download/
+DISTNAME=	tintin++v1.82
 
 MAINTAINER=	ports@FreeBSD.org
 
 WRKSRC=         ${WRKDIR}/tintin++/src
 GNU_CONFIGURE=	yes
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/tt++ ${PREFIX}/bin
+	${MKDIR} ${PREFIX}/lib/tintin
+	${INSTALL_DATA} ${WRKSRC}/support/.tt_help.txt.Z ${PREFIX}/lib/tintin
+	${MKDIR} ${PREFIX}/share/doc/tintin
+	${INSTALL_DATA} ${WRKSRC}/support/.tintinrc ${PREFIX}/share/doc/tintin/tintinrc
+	${INSTALL_DATA} ${WRKSRC}/../chat.conf ${PREFIX}/share/doc/tintin/chat.conf.example
+	cd ${WRKSRC}/.. ; ${INSTALL_DATA} CHANGES FAQ CREDITS README docs/* ${PREFIX}/share/doc/tintin
 
 .include <bsd.port.mk>
