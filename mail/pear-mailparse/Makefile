@@ -16,11 +16,12 @@ DIST_SUBDIR=	PEAR
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PEAR classes to create and decode MIME messages
 
-BUILD_DEPENDS=	automake:${PORTSDIR}/devel/automake			\
-		autoconf:${PORTSDIR}/devel/autoconf213			\
-		${LOCALBASE}/bin/phpize:${PORTSDIR}/www/mod_php4	\
+BUILD_DEPENDS=	${LOCALBASE}/bin/phpize:${PORTSDIR}/www/mod_php4	\
 		${PEARDIR}/PEAR.php.dist:${PORTSDIR}/devel/pear-PEAR
 RUN_DEPENDS=	${PEARDIR}/PEAR.php.dist:${PORTSDIR}/devel/pear-PEAR
+
+USE_AUTOMAKE=	yes
+USE_AUTOCONF=	yes
 
 .include <bsd.port.pre.mk>
 
