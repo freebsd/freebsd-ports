@@ -12,7 +12,7 @@ CATEGORIES=	devel lang
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	nasm
 
-MAINTAINER=	murray@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	General-purpose multi-platform x86 assembler
 
 USE_BZIP2=	yes
