@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Tue Mar 17 11:30:44 1998
++++ Makefile.in	Tue Mar 17 11:30:29 1998
+@@ -103,7 +103,7 @@
+ # Lets put the informational stuff in a sub directory to avoid 
+ # poluting /usr/local for default installs.
+ #
+-rootdir=	$(exec_prefix)/LessTif
++rootdir=	$(datadir)/doc/LessTif
+ root_DATA=	AUTHORS BUG-REPORTING COPYING COPYING.LIB CREDITS \
+ 	INSTALL KNOWN_BUGS NEWS README RELEASE-POLICY TODO
+ 
