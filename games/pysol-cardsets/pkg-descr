@@ -1,0 +1,13 @@
+What is PySol-Cardsets ?
+========================
+
+A collection of free cardsets adapted for use with PySol.
+I'm distributing this as its own package because I want to
+keep the main distribution reasonable small.
+
+PySol-Cardsets should work with any PySol version >= 2.00,
+but version 4.00 or better is strongly recommended.
+
+PySol-Cardsets is distributed under the terms of the GNU General
+Public License (GPL). The file COPYRIGHT in each of the cardset
+directories contains additional information about the original authors.

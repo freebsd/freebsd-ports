@@ -129,6 +129,8 @@
     SUBDIR += pp
     SUBDIR += ptkei
     SUBDIR += pysol
+    SUBDIR += pysol-cardsets
+    SUBDIR += pysol-music
     SUBDIR += pythoong
     SUBDIR += qcc
     SUBDIR += qix
