@@ -8,7 +8,8 @@
 
 DISTNAME=	cvslines-1.6.7
 CATEGORIES=	devel
-MASTER_SITES=	http://www.netapp.com/technology/freeware/cvslines/
+MASTER_SITES=	http://www.netapp.com/technology/freeware/cvslines/ \
+		http://freefall.freebsd.org/~jkoshy/PORTS/
 
 MAINTAINER=	jkoshy@freebsd.org
 
