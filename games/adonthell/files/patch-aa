@@ -1,0 +1,11 @@
+--- src/win_types.h.orig	Sat May 10 11:38:41 2003
++++ src/win_types.h	Sat May 10 11:38:53 2003
+@@ -15,7 +15,7 @@
+ #ifndef TYPES_WIN_H_
+ #define TYPES_WIN_H_
+ 
+-#include <SDL/SDL_keysym.h>
++#include <SDL11/SDL_keysym.h>
+ 
+ #define WIN_NB_TABLE_CHAR 127
+ #define WIN_TEXT_MAX_LENGTH 5000

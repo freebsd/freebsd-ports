@@ -1,0 +1,11 @@
+--- src/fileops.cc.orig	Sat May 10 11:41:53 2003
++++ src/fileops.cc	Sat May 10 11:42:07 2003
+@@ -24,7 +24,7 @@
+ 
+ 
+ #include <iostream>
+-#include <SDL/SDL_endian.h>
++#include <SDL11/SDL_endian.h>
+ #include "fileops.h"
+ 
+ 

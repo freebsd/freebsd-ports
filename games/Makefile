@@ -15,6 +15,7 @@
     SUBDIR += actx
     SUBDIR += adgali
     SUBDIR += adom
+    SUBDIR += adonthell
     SUBDIR += affenspiel
     SUBDIR += afternoonstalker
     SUBDIR += alephone
