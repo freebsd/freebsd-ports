@@ -1,0 +1,9 @@
+#!/bin/sh
+
+if test "$2" = "POST-INSTALL"; then
+cat << EOF >> ${PKG_PREFIX}/lib/thunderbird/lib/mozilla-1.6b/chrome/installed-chrome.txt
+content,install,url,jar:resource:/chrome/enigmail.jar!/content/enigmail/
+skin,install,url,jar:resource:/chrome/enigmail-skin-tbird.jar!/skin/classic/enigmail/
+locale,install,url,jar:resource:/chrome/enigmail.jar!/locale/en-US/enigmail/
+EOF
+fi

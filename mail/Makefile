@@ -61,6 +61,7 @@
     SUBDIR += emh-xemacs21-mule
     SUBDIR += emil
     SUBDIR += enigmail
+    SUBDIR += enigmail-thunderbird
     SUBDIR += esmtp
     SUBDIR += evolution
     SUBDIR += exact

@@ -1,0 +1,8 @@
+#!/bin/sh
+
+if test "$2" = "POST-DEINSTALL"; then
+FILE=${PKG_PREFIX}/lib/thunderbird/lib/mozilla-1.6b/chrome/installed-chrome.txt
+cp ${FILE} ${FILE}.orig
+cat ${FILE}.orig | grep -v enigmail > ${FILE}
+rm ${FILE}.orig
+fi
