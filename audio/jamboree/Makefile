@@ -7,7 +7,7 @@
 
 PORTNAME=	jamboree
 PORTVERSION=	0.5
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	audio gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION}
@@ -20,7 +20,7 @@ LIB_DEPENDS=	gdbm.3:${PORTSDIR}/databases/gdbm
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomeprefix intlhack gnomehack libgnomeui libglade2
-USE_GSTREAMER=	vorbis mad
+USE_GSTREAMER=	vorbis mad gconf
 USE_LIBTOOL_VER=15
 USE_GMAKE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \

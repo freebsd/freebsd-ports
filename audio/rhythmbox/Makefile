@@ -7,7 +7,7 @@
 
 PORTNAME=	rhythmbox
 PORTVERSION=	0.8.8
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	audio gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.8
@@ -46,7 +46,7 @@ CONFIGURE_ARGS+=	--with-player=xine
 WITH_MONKEYMEDIA=	yes
 .else
 CONFIGURE_ARGS+=	--with-player=gstreamer
-USE_GSTREAMER+=		flac mad gnomevfs
+USE_GSTREAMER+=		flac mad gnomevfs gconf
 .endif
 
 .ifdef (WITH_MONKEYMEDIA)

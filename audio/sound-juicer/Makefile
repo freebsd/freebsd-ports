@@ -7,6 +7,7 @@
 
 PORTNAME=	sound-juicer
 PORTVERSION=	2.10.0
+PORTREVISION=	1
 CATEGORIES=	audio gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/2.10
@@ -24,7 +25,7 @@ USE_GMAKE=	yes
 INSTALLS_OMF=	yes
 USE_REINPLACE=	yes
 USE_GNOME=	gnomehack intlhack gnomeprefix libgnomeui nautiluscdburner
-USE_GSTREAMER=	cdparanoia vorbis flac
+USE_GSTREAMER=	cdparanoia vorbis flac gconf
 USE_LIBTOOL_VER=15
 CONFIGURE_ARGS=	--enable-ignore-missing-cd
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

@@ -38,7 +38,7 @@ OPTIONS=	GSTREAMER "Enable Gstreamer backend" off
 .if defined (WITH_GSTREAMER)
 IGNORE=		Doesn't run with recent gstreamer.
 CONFIGURE_ARGS+=--enable-gstreamer=yes
-USE_GSTREAMER+=	mad vorbis flac
+USE_GSTREAMER+=	mad vorbis flac gconf
 .else
 LIB_DEPENDS+=	xine.12:${PORTSDIR}/multimedia/libxine
 .endif

@@ -7,7 +7,7 @@
 
 PORTNAME=		lindele
 PORTVERSION=		0.1.1
-PORTREVISION=		2
+PORTREVISION=		3
 CATEGORIES=		audio
 MASTER_SITES=		http://download.gna.org/${PORTNAME}/
 
@@ -21,7 +21,7 @@ LIB_DEPENDS=		vorbis:${PORTSDIR}/audio/libvorbis \
 USE_X_PREFIX=		yes
 USE_REINPLACE=		yes
 USE_GNOME=		gnomehack gnomeprefix libgnomeui
-USE_GSTREAMER=		yes
+USE_GSTREAMER=		gconf
 GNU_CONFIGURE=		yes
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
