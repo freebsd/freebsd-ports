@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.266 1999/06/02 06:20:35 mharo Exp $
+# $Id: Makefile,v 1.267 1999/06/04 06:18:52 mharo Exp $
 #
 
     SUBDIR += IglooFTP
@@ -18,6 +18,7 @@
     SUBDIR += boclient
     SUBDIR += bounce
     SUBDIR += bpft
+    SUBDIR += brouted
     SUBDIR += cap
     SUBDIR += cftp
     SUBDIR += choparp
