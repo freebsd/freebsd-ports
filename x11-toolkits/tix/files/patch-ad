@@ -1,0 +1,10 @@
+--- ../../generic/tixInit.c~	Thu Feb 11 18:11:44 1999
++++ ../../generic/tixInit.c	Sun Dec  5 06:46:59 1999
+@@ -537,6 +537,7 @@
+     }\n\
+     set instDir [file dirname [info library]]\n\
+     lappend dirs [tixFileJoin $instDir $lib]\n\
++    lappend dirs " TIX_LIBRARY "\n\
+     lappend dirs [tixFileJoin [tixFileJoin $instDir lib] $lib]\n\
+     catch {\n\
+     lappend dirs [tixFileJoin [tixFileJoin [file dirname [file dirname [info nameofexecutable]]] lib] $lib]\n\

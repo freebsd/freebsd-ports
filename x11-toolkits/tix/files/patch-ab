@@ -1,5 +1,5 @@
---- ../Makefile.in.orig	Thu Mar 18 11:44:17 1999
-+++ ../Makefile.in	Wed Nov  3 14:35:27 1999
+--- ../Makefile.in.orig	Wed Jul  9 22:33:48 1997
++++ ../Makefile.in	Wed Oct  1 12:03:37 1997
 @@ -28,7 +28,7 @@
  # Directory in which to install the library of Tix scripts and demos
  # (note: you can set the TIX_LIBRARY environment variable at run-time to
@@ -18,26 +18,3 @@
  
  install-headers:
  	@for i in $(INCLUDE_DIR); \
-@@ -219,12 +219,20 @@
- 		else true; \
- 		fi; \
- 	    done;
--	@cd $(MANUAL_DIR); for i in *.n *.1; \
-+	@cd $(MANUAL_DIR); for i in *.1; \
-+	    do \
-+	    echo "Installing doc/$$i"; \
-+	    rm -f $(MAN1_DIR)/$$i; \
-+	    sed -e '/man\.macros/r man.macros' -e '/man\.macros/d' \
-+		    $$i > $(MAN1_DIR)/$$i; \
-+	    chmod 444 $(MAN1_DIR)/$$i; \
-+	    done;
-+	@cd $(MANUAL_DIR); for i in *.n; \
- 	    do \
- 	    echo "Installing doc/$$i"; \
- 	    rm -f $(MANN_DIR)/$$i; \
- 	    sed -e '/man\.macros/r man.macros' -e '/man\.macros/d' \
--		    $$i > $(MANN_DIR)/$$i; \
-+		$$i > $(MANN_DIR)/$$i; \
- 	    chmod 444 $(MANN_DIR)/$$i; \
- 	    done;
- 
