@@ -1,11 +1,11 @@
 bin/lftp
 bin/ftpget
-bin/parallelftp
 etc/lftp.conf
 man/man1/lftp.1.gz
 man/man1/ftpget.1.gz
-man/man1/parallelftp.1.gz
+share/doc/lftp/COPYING
 share/doc/lftp/NEWS
 share/doc/lftp/README
+share/doc/lftp/THANKS
 share/doc/lftp/TODO
 @dirrm share/doc/lftp
