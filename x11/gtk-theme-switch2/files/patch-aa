@@ -26,8 +26,8 @@ $FreeBSD$
 -	install -c switch ${PREFIX}/bin
 -	install -c switch.1 ${PREFIX}/man
 +	mkdir -p ${PREFIX}/man/man1
-+	$(BSD_INSTALL_PROGRAM) switch ${PREFIX}/bin
-+	$(BSD_INSTALL_MAN) switch.1 ${PREFIX}/man/man1
++	$(BSD_INSTALL_PROGRAM) switch ${PREFIX}/bin/gtk-theme-switch
++	$(BSD_INSTALL_MAN) switch.1 ${PREFIX}/man/man1/gtk-theme-switch.1
  
  dist: clean
  	rm -rf /tmp/gtk-theme-switch-$(VERSION)
