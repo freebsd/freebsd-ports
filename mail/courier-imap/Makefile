@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	courier-imap
-PORTVERSION=	3.0.4
+PORTVERSION=	3.0.5
 PORTREVISION=	0
 PORTEPOCH=	1
 CATEGORIES=	mail ipv6
@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	courier
 
 .if defined(WITH_DRAC)
 PATCH_SITES=	http://www.smalltown.ne.jp/~usata/pub/patch/
-PATCHFILES=	courier-imap-2.2.1-drac.patch
+PATCHFILES=	courier-imap-3.0.4-drac.patch
 PATCH_DIST_STRIP=	-p1
 .endif
 
