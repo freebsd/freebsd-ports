@@ -1,4 +1,5 @@
 bin/pflogstats
+%%SITE_PERL%%/Pflogstats/pflogstats-common-intermediatexml.pm
 %%SITE_PERL%%/Pflogstats/pflogstats-common-profiling.pm
 %%SITE_PERL%%/Pflogstats/pflogstats-common-support.pm
 %%SITE_PERL%%/Pflogstats/pflogstats-extensions-addressmapping.pm
