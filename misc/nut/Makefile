@@ -9,6 +9,7 @@ PORTNAME=	nut
 PORTVERSION=	8.3
 CATEGORIES=	misc
 MASTER_SITES=	http://www.lafn.org/~av832/
+PKGNAMEPREFIX=	health-
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ponomarew@oberon.net
