@@ -6,16 +6,15 @@
 #
 
 PORTNAME=	xmame
-PORTVERSION=	0.37b7.1
-PORTREVISION=	0
+PORTVERSION=	0.37b10.1
 CATEGORIES=	emulators
 MASTER_SITES=	http://x.mame.net/download/ \
 		ftp://ftp.kaupp.cx/pub/xmame/ \
 		http://www.ozemail.com.au/~knebauer/xmame/files/
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	c9710216@studentmail.newcastle.edu.au
 
+USE_BZIP2=	yes
 USE_XPM=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
@@ -23,12 +22,29 @@ MAKEFILE=	makefile.unix
 
 MAN6=		xmame.6
 
-XMAMEDOCS=	changes.mame changes.unix gamelist.mame \
-		imgtool.txt liesmich.unix multiplayer-readme.txt \
-		readme.mame todo xmame-doc-1.html xmame-doc-2.html \
-		xmame-doc-3.html xmame-doc-4.html xmame-doc-5.html \
-		xmame-doc-6.html xmame-doc-7.html xmame-doc.html \
-		xmame-doc.lyx xmame-doc.ps xmame-doc.sgml xmame-doc.txt
+XMAMEDOCS=	changes.mame \
+		changes.unix \
+		credits.txt \
+		imgtool.txt \
+		liesmich.unix \
+		mess.txt \
+		messnew.txt \
+		messold.txt \
+		messroms.txt \
+		multiplayer-readme.txt \
+		readme.mame \
+		xmame-doc-1.html \
+		xmame-doc-2.html \
+		xmame-doc-3.html \
+		xmame-doc-4.html \
+		xmame-doc-5.html \
+		xmame-doc-6.html \
+		xmame-doc-7.html \
+		xmame-doc.html \
+		xmame-doc.lyx \
+		xmame-doc.ps \
+		xmame-doc.sgml \
+		xmame-doc.txt
 
 # the large number of sed regexes here is intended to make this port a whole
 # lot easier to maintain - please don't convert them into a patch.
