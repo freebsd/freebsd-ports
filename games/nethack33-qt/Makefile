@@ -30,6 +30,8 @@ USE_QT=		yes
 USE_GMAKE=	yes
 MAN6=		dgn_comp.6 dlb.6 lev_comp.6 nethack.6 recover.6
 
+BROKEN=		"Compiler error"
+
 pre-configure:
 	@ ${ECHO} "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
 	@ ${ECHO} "!! You cannot install nethack and nethack-qt in parallel !!"
