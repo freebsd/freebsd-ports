@@ -3,6 +3,7 @@ bin/%%DISTNAME%%
 lib/%%DISTNAME%%-lib/CHANGES
 lib/%%DISTNAME%%-lib/README
 lib/%%DISTNAME%%-lib/activity_status.tf
+lib/%%DISTNAME%%-lib/activity_status2.tf
 lib/%%DISTNAME%%-lib/alias.tf
 lib/%%DISTNAME%%-lib/at.tf
 lib/%%DISTNAME%%-lib/bind-bash.tf
@@ -40,7 +41,6 @@ lib/%%DISTNAME%%-lib/relog.tf
 lib/%%DISTNAME%%-lib/rwho.tf
 lib/%%DISTNAME%%-lib/savehist.tf
 lib/%%DISTNAME%%-lib/self.tf
-lib/%%DISTNAME%%-lib/separator.tf
 lib/%%DISTNAME%%-lib/space_page.tf
 lib/%%DISTNAME%%-lib/spc-page.tf
 lib/%%DISTNAME%%-lib/spedwalk.tf

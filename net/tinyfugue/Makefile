@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	tf
-PORTVERSION=	5.0b2
+PORTVERSION=	5.0b3
 CATEGORIES=	net games
 MASTER_SITES=	http://ftp.tcp.com/pub/mud/Clients/tinyfugue/ \
-		ftp://ftp.minet.uni-jena.de/pub/tf/
+		ftp://tf.tcp.com/pub/tinyfugue/
 DISTVERSION=	${PORTVERSION:S/.//}
 DISTNAME=	${PORTNAME}-${DISTVERSION}
 
