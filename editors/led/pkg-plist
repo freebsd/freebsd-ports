@@ -2,4 +2,6 @@ bin/led
 lib/led/c.so
 lib/led/mbox.so
 lib/led/sh.so
+share/led/dot.ledrc
+@dirrm share/led
 @dirrm lib/led
