@@ -22,18 +22,22 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_MESA=	yes
 
-LIB_DIR_ABS!=	(ghc --print-libdir || true) 2>/dev/null
-IMPORT_DIR_ABS=	${LIB_DIR_ABS}/imports/HOpenGL
-LIB_DIR_REL=	${LIB_DIR_ABS:S/^${PREFIX}\///}
+GHC_VERSION?=	5.04.2
+LIB_DIR_REL=	lib/ghc-${GHC_VERSION}
+LIB_DIR=	${PREFIX}/${LIB_DIR_REL}
+IMPORT_DIR=	${LIB_DIR}/imports/HOpenGL
 IMPORT_DIR_REL=	${LIB_DIR_REL}/imports/HOpenGL
 
 pre-configure:
-	@if [ "${LIB_DIR_ABS}" != "${PREFIX}/${LIB_DIR_REL}" ]; then \
-		${ECHO_MSG} "ERROR: OpenGL and GHC must be installed in the same PREFIX!"; \
-		exit 1; \
+	@if [ ! -d ${LIB_DIR} ]; then \
+		${ECHO_MSG}; ${ECHO_MSG} "ERROR:"; \
+		${ECHO_MSG} "The GHC directory could not be found (${LIB_DIR})."; \
+		${ECHO_MSG} 'Please provide a $$PREFIX and a $$GHC_VERSION, so that'; \
+		${ECHO_MSG} '$$PREFIX/lib/ghc-$$GHC_VERSION points to the right directory!'; \
+		${ECHO_MSG}; exit 1; \
 	fi
 
-CONFIGURE_ARGS+=--with-library-dir=${LIB_DIR_ABS} --with-import-dir=${IMPORT_DIR_ABS} --enable-Mesa
+CONFIGURE_ARGS+=--with-library-dir=${LIB_DIR} --with-import-dir=${IMPORT_DIR} --enable-Mesa
 PLIST_SUB=	LIB_DIR=${LIB_DIR_REL} IMPORT_DIR=${IMPORT_DIR_REL}
 
 ALL_TARGET=	depend all
@@ -46,7 +50,7 @@ CSRC=		${EXAMPLESSRC}/redbook_C
 HSDIR=		${EXAMPLESDIR}/redbook_HS
 HSSRC=		${EXAMPLESSRC}/redbook_HS
 GFXSRC=		${WRKSRC}/GLUT/Graphics
-GFXDIR=		${IMPORT_DIR_ABS}/Graphics
+GFXDIR=		${IMPORT_DIR}/Graphics
 
 CEXAMPLES=	aaindex aapoly aargb accanti accpersp alpha alpha3D anti bezcurve bezmesh bezsurf blendeqn checker clip colormat colormatrix cube depthcue dof double drawf feedback fog fogindex font hello image light lines list material mipmap model movelight multitex nurbs pickdepth picksquare plane planet polyoff polys robot sccolorlight scene scenebamb sceneflat select smooth stencil stroke surface surfpoints teaambient teapots tess tesswind texbind texgen texprox texsub texture3d texturesurf torus trim unproject varray wrap
 HSEXAMPLES=	AAIndex AAPoly AARGB AccAnti AccPersp Alpha Alpha3D Anti BezCurve BezMesh BezSurf BlendEqn Checker Clip ColorMat Cube DList DOF DepthCue Double DrawF Feedback Fog FogIndex Font Hello Image Light Lines Material Mipmap Model MoveLight PickDepth PickSquare Plane Planet PolyOff Polys Quadric Robot ScColorLight Scene SceneBAmb SceneFlat Select Smooth Stencil Stroke TeaAmbient Teapots Tess TexBind TexGen TexProx TexSub TextureSurf Torus Unproject Varray Wrap
