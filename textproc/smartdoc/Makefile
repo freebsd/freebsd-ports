@@ -15,7 +15,7 @@ DISTNAME=	setup
 EXTRACT_SUFX=	.zip
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	kiri@FreeBSD.org
+MAINTAINER=	kunishi@acm.org
 
 BUILD_DEPENDS=	${JDKDIR}/bin/java:${PORTSDIR}/java/jdk12-beta \
 		nkf:${PORTSDIR}/japanese/nkf
