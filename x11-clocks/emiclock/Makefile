@@ -3,7 +3,7 @@
 # Date created:		15 March 1995
 # Whom:			Nobuhiro Yasutomi
 #
-# $Id: Makefile,v 1.12 1998/09/22 22:32:07 asami Exp $
+# $Id: Makefile,v 1.13 1998/12/01 23:37:52 billf Exp $
 #
 
 DISTNAME=	emiclock-1.0.4
@@ -11,6 +11,10 @@ CATEGORIES=	x11-clocks
 MASTER_SITES=	ftp://ftp.plaza.hitachi-sk.co.jp/pub/EmiClock/X11/
 
 MAINTAINER=	nobu@psrc.isac.co.jp
+
+.if ${MACHINE_ARCH} != "i386"
+PLIST=		${PKGDIR}/PLIST.nosound
+.endif
 
 USE_IMAKE=	yes
 MAN1=		emiclock.1
