@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	ispell
-PORTVERSION=    0.85
+PORTVERSION=	0.92
 CATEGORIES=	hungarian textproc
-MASTER_SITES=   http://www.szofi.hu/gnu/magyarispell/
+MASTER_SITES=	http://www.szofi.hu/gnu/magyarispell/
 DISTNAME=	magyarispell-${PORTVERSION}
 
 MAINTAINER=	Janos.Mohacsi@bsd.hu
@@ -17,7 +17,7 @@ BUILD_DEPENDS=	ispell:${PORTSDIR}/textproc/ispell \
 		gm4:${PORTSDIR}/devel/m4
 RUN_DEPENDS=	ispell:${PORTSDIR}/textproc/ispell
 
-USE_GMAKE=      yes
+USE_GMAKE=	yes
 
 do-install:
 	cd ${WRKSRC} && \
