@@ -1,0 +1,82 @@
+
+-------------------------------------------------------------------------
+
+                           XKOBO Version 1.3
+
+              Sun Jun 25 08:37:35 JST 1995   Akira Higuchi
+                      a-higuti@math.hokudai.ac.jp
+ 
+-------------------------------------------------------------------------
+
+ XKOBO is a game for X. The play is quite simple. Your object is to
+ destroy all the fortresses. You can control your ship by pressing
+ the cursor keys, and shot beams by pressing the SHIFT key or the 
+ left mouse button.
+
+ XKOBO requires:
+ 
+   1) Unix (BSD, Linux, etc.)
+   2) X window system (256 colors or greater)
+   3) C++ compiler
+
+ This program has been tested on the following systems:
+
+   *  Linux           + gcc
+   *  Sun-OS (4.1.4)  + gcc
+   *  BSD/OS          + gcc
+
+-------------------------------------------------------------------------
+
+* INSTALLING
+
+ Edit Imakefile and type
+
+     % xmkmf -a
+     % make
+     % su
+     # make install
+     # make install.man
+
+-------------------------------------------------------------------------
+
+* PLAYING
+
+ You can control your ship by pressing the cursor keys, and shot beams
+ by pressing the SHIFT key or the left mouse button. The game can be 
+ paused by pressing 's'. Pressing 'q' will cause xkobo to quit the game.
+
+-------------------------------------------------------------------------
+  
+* OPTIONS
+
+    -doublesize    The window of xkobo is enlarged. But memory usage
+                   is also enlarged.
+
+    -memory        It causes xkobo to reduce memory usage, but slow
+                   down (a little). 
+
+    -fit           Use the default colormap. Normally xkobo uses a
+                   private colormap. 
+
+
+=========================================================================
+
+ XKOBO, a video-oriented game
+ Copyright (C) 1995  Akira Higuchi
+     a-higuti@math.hokudai.ac.jp
+
+ This program is free software; you can redistribute it and/or modify it
+ under the terms of the GNU General Public License as published by the
+ Free Software Foundation; either version 2 of the License, or (at your
+ option) any later version.
+
+ This program is distributed in the hope that it will be useful, but
+ WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ General Public License for more details.
+
+ You should have received a copy of the GNU General Public License along
+ with this program; if not, write to the Free Software Foundation, Inc.,
+ 675 Mass Ave, Cambridge, MA 02139, USA.
+
+=========================================================================
