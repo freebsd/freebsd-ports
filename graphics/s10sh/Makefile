@@ -1,6 +1,6 @@
 # New ports collection makefile for:	s10sh
 # Date created:				Tue Feb 27 00:16:34 MST 2001
-# Whom:					John Reynolds <jjreynold@home.com>
+# Whom:					John Reynolds <johnjen@reynoldsnet.org>
 #
 # $FreeBSD$
 #
@@ -11,7 +11,7 @@ PORTREVISION=   1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.kyuzz.org/antirez/s10sh-src/
 
-MAINTAINER=	jjreynold@home.com
+MAINTAINER=	johnjen@reynoldsnet.org
 
 # Don't extract the libusb bundled with s10sh:
 EXTRACT_AFTER_ARGS=     | ${TAR} -xf - --exclude '*/libusb*'
