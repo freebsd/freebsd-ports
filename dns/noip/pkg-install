@@ -21,7 +21,7 @@ fi
 if ! ${PW} usershow "${USER}" 2>/dev/null 1>&2; then
         if ${PW} useradd ${USER} -g ${GROUP} -h - \
                 -s "/sbin/nologin" -d "/nonexistent" \
-                -c "noip_updater pseudo-user"; \
+                -c "noip pseudo-user"; \
         then
                 ${ECHO} "Added user \"${USER}\"."
         else

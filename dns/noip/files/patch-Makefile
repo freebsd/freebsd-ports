@@ -1,0 +1,35 @@
+--- Makefile.orig	Thu May  8 23:13:28 2003
++++ Makefile	Fri Aug 29 10:22:57 2003
+@@ -1,16 +1,16 @@
+ TGT=noip2
+-CC=gcc
++MYCC=${CC}
+ 
+-PREFIX=/usr/local
+-CONFDIR=${PREFIX}/etc
+-BINDIR=${PREFIX}/bin
++MYPREFIX=${PREFIX}
++CONFDIR=${MYPREFIX}/etc
++BINDIR=${MYPREFIX}/bin
+ 
+ # these defines are for Linux
+-LIBS=
+-ARCH=linux
++#LIBS=
++#ARCH=linux
+ 
+ # for BSD systems that have getifaddr(), uncomment the next line
+-#ARCH=bsd_with_getifaddrs
++ARCH=bsd_with_getifaddrs
+ 
+ # for early BSD systems without getifaddrs(), uncomment the next line
+ #ARCH=bsd
+@@ -21,7 +21,7 @@
+ # ARCH=sun
+ 
+ ${TGT}: Makefile ${TGT}.c 
+-	${CC} -Wall -g -O2 -D${ARCH} -DPREFIX=\"${PREFIX}\" ${TGT}.c -o ${TGT} ${LIBS}
++	${MYCC} ${CFLAGS} -D${ARCH} -DPREFIX=\"${MYPREFIX}\" ${TGT}.c -o ${TGT} ${LIBS}
+ 
+ install: ${TGT} 
+ 	if [ ! -d ${BINDIR} ]; then mkdir -p ${BINDIR};fi
