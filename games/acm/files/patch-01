@@ -1,9 +1,15 @@
---- src/Makefile.in.orig	Fri Aug 30 19:38:52 1996
-+++ src/Makefile.in	Fri Dec  4 19:45:15 1998
-@@ -17,5 +17,5 @@
-       TOPDIR = ..
-  CLEAN_THESE = flight-state black_box_input black_box_output bitmap.h TAGS tags
--      manext = 1
-+      manext = 6
-   MAKEDEPEND = makedepend
- 
+*** src/Makefile.in~	Wed Dec  9 22:53:42 1998
+--- src/Makefile.in	Mon Feb  1 18:05:00 1999
+***************
+*** 18,22 ****
+        TOPDIR = ..
+   CLEAN_THESE = flight-state black_box_input black_box_output bitmap.h TAGS tags
+!       manext = 1
+    MAKEDEPEND = makedepend
+  
+--- 18,22 ----
+        TOPDIR = ..
+   CLEAN_THESE = flight-state black_box_input black_box_output bitmap.h TAGS tags
+!       manext = 6
+    MAKEDEPEND = makedepend
+  
