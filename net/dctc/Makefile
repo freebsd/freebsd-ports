@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dctc
-PORTVERSION=	0.83.3
+PORTVERSION=	0.83.5
 CATEGORIES=	net
 MASTER_SITES=	http://unixpages.org/distfiles/ \
 		http://ac2i.tzo.com/dctc/
@@ -62,11 +62,9 @@ post-patch:
 .for file in ${DOC_FILES}
 	@${PERL} -pi -e 's|(hublist)|dc_\1|' ${WRKSRC}/${file}
 .endfor
-	@${PERL} -pi -e 's/(CK?\(std)(out\))/\1_\2/' ${WRKSRC}/src/*
 	@${PERL} -pi -e 's/(CK?\()inet_ntoa(\))/\1shared_info\2/' ${WRKSRC}/src/*
 	@${FIND} ${WRKSRC} -type f | ${XARGS} -n 10 ${PERL} -pi -e \
-		's|include.+<linux/sem.h>|include <sys/ipc.h>\n#include <sys/sem.h>|; \
-		s|<(db.h>)|<db4/\1|'
+		's|<(db.h>)|<db4/\1|'
 	@${PERL} -pi -e 's|(db)-|\1|g;s|db4.0|db4|' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 	@${PERL} -pi -e 's|/usr/bin/env perl|${PERL}|' \
@@ -83,6 +81,10 @@ pre-build:
 	@${ECHO_CMD} '# define ENODATA ENOMSG' >> ${CONFIGURE_WRKSRC}/config.h
 	@${ECHO_CMD} '#endif' >> ${CONFIGURE_WRKSRC}/config.h
 	@${ECHO_CMD} '#define HAVE_SYS_PARAM_H 1' >> ${CONFIGURE_WRKSRC}/config.h
+# disable GNU auto* tools
+	@${FIND} ${WRKSRC} -type f -name "Makefile" | ${XARGS} \
+		-n 10 ${REINPLACE_CMD} -E -e \
+		's! (autoconf|autoheader|automake|aclocal)$$! ${TRUE}!'
 
 do-install:
 .ifndef(NOPORTDOCS)
