@@ -8,8 +8,7 @@
 #
 
 PORTNAME=	apache
-PORTVERSION=	2.0.48
-PORTREVISION=	5
+PORTVERSION=	2.0.49
 CATEGORIES=	www ipv6
 MASTER_SITES=	${MASTER_SITE_APACHE_HTTPD} \
 		http://sheepkiller.nerim.net/ports/${PORTNAME}/:powerlogo
@@ -35,23 +34,23 @@ CONFLICTS=	apache+mod_ssl-1.* apache+mod_ssl+ipv6-1.* apache+mod_ssl+modsnmp-1.*
 # patch files
 PATCH_SITES+=		${MASTER_SITE_LOCAL:S/$/:clement/}
 PATCH_SITE_SUBDIR=	clement/:clement
-PATCHFILES+=		httpd-2.0.48-buildconf.patch:clement
+PATCHFILES+=		httpd-${PORTVERSION}-buildconf.patch:clement
 PATCH_DIST_STRIP+=	-p1:clement
-.if defined (WITH_LDAPFIX)
-PATCHFILES+=		httpd-2.0.48-ldap-fix.patch:clement
-.endif
 .if defined (WITH_WINDOWSUPDATEFIX)
-PATCHFILES+=		httpd-2.0.48-windowsupdate.patch:clement
+PATCHFILES+=		httpd-${PORTVERSION}-windowsupdate.patch:clement
 .endif
 
 SCRIPTS_ENV+=		LIBTOOL=${LIBTOOL} LIBTOOLIZE=${LIBTOOLIZE} \
-			LIBTOOL_VERSION=${LIBTOOL_VERSION}
+			LIBTOOL_VERSION=${LIBTOOL_VERSION} AUTOCONF=${AUTOCONF} \
+			LIBTOOL_M4=${LOCALBASE}/share/aclocal/libtool${LIBTOOL_VERSION}.m4 \
+			AUTOHEADER=${AUTOHEADER}
 
-USE_AUTOCONF_VER=253
-USE_LIBTOOL_VER=13
-USE_PERL5=	yes
-USE_REINPLACE=	yes
-LIBTOOLFILES=	configure
+USE_AUTOCONF_VER=	253
+USE_LIBTOOL_VER=	13
+USE_PERL5=		yes
+USE_REINPLACE=		yes
+LIBTOOLFILES=		configure
+
 CONFIGURE_ARGS=	--prefix=${PREFIX_RELDEST} \
 		--enable-layout=FreeBSD \
 		--with-perl=${PERL5} \
@@ -135,7 +134,7 @@ show-options:
 	@${SED} -ne 's/^##//p' ${APACHEDIR}/Makefile.doc
 
 show-modules:
-	@for module in $(AVAILABLE_MODULES) ; do \
+	@for module in ${AVAILABLE_MODULES} ; do \
 	${ECHO_MSG} -n "$${module}: ";\
 	if ${ECHO_CMD} ${APACHE_MODULES} | ${GREP} -wq $${module} 2> /dev/null ; then \
 			${ECHO_CMD} -n "enabled "; \
@@ -173,7 +172,7 @@ post-patch:
 	@${RM} -f ${WRKSRC}/docs/manual/index.html.ko.euc-kr
 
 pre-install:
-	PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
+	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 post-install:
 	@if [ ! -f ${PREFIX}/etc/rc.d/apache2.sh ]; then \

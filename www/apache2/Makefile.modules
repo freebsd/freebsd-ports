@@ -92,6 +92,7 @@ CONFIGURE_ARGS+=	--with-dbm=sdbm
 # How does it works ?
 # << TO BE WRITTEN >>
 # All supported modules
+
 AUTH_MODULES=		access auth auth_anon auth_dbm auth_digest
 DAV_MODULES=		dav dav_fs
 EXPERIMENTAL_MODULES=	bucketeer case_filter case_filter_in ext_filter charset_lite \
@@ -99,14 +100,14 @@ EXPERIMENTAL_MODULES=	bucketeer case_filter case_filter_in ext_filter charset_li
 			optional_fn_import optional_fn_export
 LDAP_MODULES=		ldap auth_ldap
 MISC_MODULES=		actions alias asis autoindex cache cern_meta \
-			cgi cgid charset_lite deflate dir disk_cache env expires \
+			cgi charset_lite deflate dir disk_cache env expires \
 			file_cache headers imap include info log_config logio mime \
 			mime_magic negotiation rewrite setenvif speling status \
 			unique_id userdir usertrack vhost_alias
 PROXY_MODULES=		proxy proxy_connect proxy_ftp proxy_http
 SSL_MODULE=		ssl
 SUEXEC_MODULES=		suexec
-THREADS_MODULES=	cache file_cache disk_cache mem_cache
+THREADS_MODULES=	cgid cache file_cache disk_cache mem_cache
 
 # Work in progress
 SLAVE_PORT_MODULES?=	# If you are porting a slave port for apache2 please define SLAVE_PORT_MODULES
@@ -177,7 +178,7 @@ CONFIGURE_ENV+=		ac_cv_pthreads_lib=${WITH_PTHREAD_LIBS} \
 			ac_cv_pthreads_cflags=${WITH_PTHREAD_CFLAGS}
 .   endif
 .   if !defined(WITH_CUSTOM_THREADS)
-_APACHE_MODULES+=	${THREAD_MODULES}
+_APACHE_MODULES+=	${THREADS_MODULES}
 .   else
 _APACHE_MODULES+=	${WITH_CUSTOM_THREADS}
 .   endif

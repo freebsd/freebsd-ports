@@ -104,6 +104,7 @@ include/apache2/mod_include.h
 include/apache2/mod_log_config.h
 include/apache2/mod_proxy.h
 include/apache2/mod_ssl.h
+include/apache2/mod_status.h
 include/apache2/mpm.h
 include/apache2/mpm_common.h
 include/apache2/mpm_default.h
@@ -502,9 +503,11 @@ share/apache2/build/special.mk
 %%PORTDOCS%%%%DOCSDIR%%/mod/allmodules.xml.ko
 %%PORTDOCS%%%%DOCSDIR%%/mod/allmodules.xml.ru
 %%PORTDOCS%%%%DOCSDIR%%/mod/beos.html
+%%PORTDOCS%%%%DOCSDIR%%/mod/beos.html.de
 %%PORTDOCS%%%%DOCSDIR%%/mod/beos.html.en
 %%PORTDOCS%%%%DOCSDIR%%/mod/beos.html.ko.euc-kr
 %%PORTDOCS%%%%DOCSDIR%%/mod/beos.xml
+%%PORTDOCS%%%%DOCSDIR%%/mod/beos.xml.de
 %%PORTDOCS%%%%DOCSDIR%%/mod/beos.xml.ko
 %%PORTDOCS%%%%DOCSDIR%%/mod/beos.xml.meta
 %%PORTDOCS%%%%DOCSDIR%%/mod/core.html
@@ -544,9 +547,11 @@ share/apache2/build/special.mk
 %%PORTDOCS%%%%DOCSDIR%%/mod/index.xml.ko
 %%PORTDOCS%%%%DOCSDIR%%/mod/index.xml.meta
 %%PORTDOCS%%%%DOCSDIR%%/mod/leader.html
+%%PORTDOCS%%%%DOCSDIR%%/mod/leader.html.de
 %%PORTDOCS%%%%DOCSDIR%%/mod/leader.html.en
 %%PORTDOCS%%%%DOCSDIR%%/mod/leader.html.ko.euc-kr
 %%PORTDOCS%%%%DOCSDIR%%/mod/leader.xml
+%%PORTDOCS%%%%DOCSDIR%%/mod/leader.xml.de
 %%PORTDOCS%%%%DOCSDIR%%/mod/leader.xml.ko
 %%PORTDOCS%%%%DOCSDIR%%/mod/leader.xml.meta
 %%PORTDOCS%%%%DOCSDIR%%/mod/mod_access.html
@@ -964,6 +969,10 @@ share/apache2/build/special.mk
 %%PORTDOCS%%%%DOCSDIR%%/programs/apxs.html.en
 %%PORTDOCS%%%%DOCSDIR%%/programs/apxs.xml
 %%PORTDOCS%%%%DOCSDIR%%/programs/apxs.xml.meta
+%%PORTDOCS%%%%DOCSDIR%%/programs/configure.html
+%%PORTDOCS%%%%DOCSDIR%%/programs/configure.html.en
+%%PORTDOCS%%%%DOCSDIR%%/programs/configure.xml
+%%PORTDOCS%%%%DOCSDIR%%/programs/configure.xml.meta
 %%PORTDOCS%%%%DOCSDIR%%/programs/dbmmanage.html
 %%PORTDOCS%%%%DOCSDIR%%/programs/dbmmanage.html.en
 %%PORTDOCS%%%%DOCSDIR%%/programs/dbmmanage.xml
@@ -1002,7 +1011,6 @@ share/apache2/build/special.mk
 %%PORTDOCS%%%%DOCSDIR%%/programs/suexec.html.en
 %%PORTDOCS%%%%DOCSDIR%%/programs/suexec.xml
 %%PORTDOCS%%%%DOCSDIR%%/programs/suexec.xml.meta
-%%PORTDOCS%%%%DOCSDIR%%/search/manual-index.cgi
 %%PORTDOCS%%%%DOCSDIR%%/sections.html
 %%PORTDOCS%%%%DOCSDIR%%/sections.html.en
 %%PORTDOCS%%%%DOCSDIR%%/sections.html.ja.jis
@@ -1066,6 +1074,7 @@ share/apache2/build/special.mk
 %%PORTDOCS%%%%DOCSDIR%%/stopping.xml.ko
 %%PORTDOCS%%%%DOCSDIR%%/stopping.xml.meta
 %%PORTDOCS%%%%DOCSDIR%%/stopping.xml.ru
+%%PORTDOCS%%%%DOCSDIR%%/style/build.properties
 %%PORTDOCS%%%%DOCSDIR%%/style/chm/chm.de.xsl
 %%PORTDOCS%%%%DOCSDIR%%/style/chm/chm.en.xsl
 %%PORTDOCS%%%%DOCSDIR%%/style/chm/chm.ja.xsl
@@ -1145,6 +1154,10 @@ share/apache2/build/special.mk
 %%PORTDOCS%%%%DOCSDIR%%/style/xsl/util/ul-end.xml
 %%PORTDOCS%%%%DOCSDIR%%/style/xsl/util/ul-start.xml
 %%PORTDOCS%%%%DOCSDIR%%/style/zip/zip.en.xsl
+%%PORTDOCS%%%%DOCSDIR%%/style/zip/zip.de.xsl
+%%PORTDOCS%%%%DOCSDIR%%/style/zip/zip.ja.xsl
+%%PORTDOCS%%%%DOCSDIR%%/style/zip/zip.ko.xsl
+%%PORTDOCS%%%%DOCSDIR%%/style/zip/zip.ru.xsl
 %%PORTDOCS%%%%DOCSDIR%%/suexec.html
 %%PORTDOCS%%%%DOCSDIR%%/suexec.html.en
 %%PORTDOCS%%%%DOCSDIR%%/suexec.html.ja.jis
@@ -1539,7 +1552,6 @@ share/apache2/build/special.mk
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/style/chm
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/style
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/ssl
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/search
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/programs
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/platform
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/mod
