@@ -113,7 +113,7 @@ while [ "$1" ]; do
 			echo "LIB_DEPENDS+=	ldap.1:\${PORTSDIR}/net/openldap"
 			echo "LIB_DEPENDS+=	lber.1:\${PORTSDIR}/net/openldap"
 			echo "CONFIGURE_ARGS+=--with-ldap=\${PREFIX}"
-			if [ -f /usr/lib/libkrb.a -a -f /usr/lib/libdes.a ]; then
+			if [ -f /usr/lib/libkrb.a -a -f /usr/lib/libdes.a -a ! -L /usr/lib/libdes.a ]; then
 				echo "CONFIGURE_ENV+=	LIBS='-lkrb -ldes -L\${PREFIX}/lib'"
 			fi
 			;;
