@@ -14,12 +14,19 @@ MASTER_SITE_SUBDIR=	wvware
 MAINTAINER=	ports@FreeBSD.org
 
 BUILD_DEPENDS=	freetype-config:${PORTSDIR}/print/freetype2     # XXX
-LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
-		png.5:${PORTSDIR}/graphics/png \
-		freetype.8:${PORTSDIR}/print/freetype2 \
+LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg \
+		png:${PORTSDIR}/graphics/png \
+		freetype:${PORTSDIR}/print/freetype2 \
 		xml2.5:${PORTSDIR}/textproc/libxml2
 
+.ifndef (WITHOUT_X11)
 USE_XLIB=	yes
+PLIST_SUB+=	X11=''
+.else
+PKGNAMESUFFIX=	-nox11
+PLIST_SUB+=	X11='@comment '
+.endif
+
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	# none
 CONFIGURE_ARGS=	--build=${ARCH}-portbld-freebsd${OSREL} \
