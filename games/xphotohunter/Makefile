@@ -7,7 +7,6 @@
 #
 
 DISTNAME=	xphotohunter-1.3
-PKGNAME=	zh-xphotohunter-1.3
 CATEGORIES=	chinese games
 MASTER_SITES=	http://www.oz.nthu.edu.tw/~u860905/Xphotohunter/
 
