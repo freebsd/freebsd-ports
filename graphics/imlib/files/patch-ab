@@ -1,0 +1,11 @@
+--- imlib.h.orig	Mon Dec  1 23:05:14 1997
++++ imlib.h	Mon Dec  1 23:05:41 1997
+@@ -132,7 +132,7 @@
+ #include <png.h>
+ #endif
+ #ifdef BUILTIN_TIFF
+-#include <tiffio.h>
++#include <tiff34/tiffio.h>
+ #endif
+ 
+ #else /* else LIB_BUILD */
