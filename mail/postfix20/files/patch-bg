@@ -1,0 +1,19 @@
+*** man/man8/local.8.orig	Mon Mar 29 22:37:14 1999
+--- man/man8/local.8	Mon Mar 29 22:37:44 1999
+***************
+*** 75,81 ****
+  .ad
+  .fi
+  The default per-user mailbox is a file in the UNIX mail spool
+! directory (\fB/var/mail/\fIuser\fR or \fB/var/spool/mail/\fIuser\fR);
+  the location can be specified with the \fBmail_spool_directory\fR
+  configuration parameter.
+  
+--- 75,81 ----
+  .ad
+  .fi
+  The default per-user mailbox is a file in the UNIX mail spool
+! directory (\fB/var/mail/\fIuser\fR);
+  the location can be specified with the \fBmail_spool_directory\fR
+  configuration parameter.
+  

@@ -1,0 +1,36 @@
+*** global/mail_params.h.orig	Sat Mar 20 15:09:46 1999
+--- global/mail_params.h	Sat Mar 20 15:10:46 1999
+***************
+*** 127,133 ****
+    */
+  #define VAR_PROGRAM_DIR		"program_directory"
+  #ifndef DEF_PROGRAM_DIR
+! #define DEF_PROGRAM_DIR		"/usr/libexec/postfix"
+  #endif
+  
+  #define VAR_DAEMON_DIR		"daemon_directory"
+--- 127,133 ----
+    */
+  #define VAR_PROGRAM_DIR		"program_directory"
+  #ifndef DEF_PROGRAM_DIR
+! #define DEF_PROGRAM_DIR		"!!PREFIX!!/libexec/postfix"
+  #endif
+  
+  #define VAR_DAEMON_DIR		"daemon_directory"
+***************
+*** 161,167 ****
+    */
+  #define VAR_CONFIG_DIR		"config_directory"
+  #ifndef DEF_CONFIG_DIR
+! #define DEF_CONFIG_DIR		"/etc/postfix"
+  #endif
+  extern char *var_config_dir;
+  
+--- 161,167 ----
+    */
+  #define VAR_CONFIG_DIR		"config_directory"
+  #ifndef DEF_CONFIG_DIR
+! #define DEF_CONFIG_DIR		"!!PREFIX!!/etc/postfix"
+  #endif
+  extern char *var_config_dir;
+  
