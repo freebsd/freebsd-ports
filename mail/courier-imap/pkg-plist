@@ -14,13 +14,12 @@ libexec/logger
 libexec/makedatprog
 sbin/imaplogin
 sbin/makeuserdb
+sbin/mkimapdcert
 sbin/pw2userdb
-sbin/userdb
 sbin/userdbpw
 sbin/vchkpw2userdb
 share/doc/courier-imap/AUTHORS
 share/doc/courier-imap/ChangeLog
 share/doc/courier-imap/INSTALL
 share/doc/courier-imap/README
-share/doc/courier-imap/mkimapdcert
 @unexec rmdir %D/libexec/authlib
