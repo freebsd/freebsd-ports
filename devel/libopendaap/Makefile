@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libopendaap
-PORTVERSION=	0.2.3
+PORTVERSION=	0.3.0
 CATEGORIES=	devel net
 MASTER_SITES=	http://craz.net/programs/itunes/files/
 
