@@ -48,6 +48,10 @@ CONFIGURE_ARGS=	--localstatedir=${DB_DIR} \
 		--with-comment='FreeBSD port: ${PKGNAME}' \
 		--enable-thread-safe-client
 
+.ifdef USE_MYSQL
+.error You have `USE_MYSQL' variable defined either in environment or in make(1) arguments. Please undefine and try again.
+.endif
+
 .include <bsd.port.pre.mk>
 
 .if ${MACHINE_ARCH} == "i386"
