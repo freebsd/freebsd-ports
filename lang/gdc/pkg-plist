@@ -6,7 +6,6 @@ include/d/gcstats.d
 include/d/crc32.d
 include/d/etc/c/recls/win32.mak
 include/d/etc/c/recls/recls.h
-include/d/etc/c/recls/recls.lib
 include/d/etc/c/recls/recls_api.cpp
 include/d/etc/c/recls/recls_api_unix.cpp
 include/d/etc/c/recls/recls_api_win32.cpp
@@ -102,7 +101,6 @@ include/d/etc/c/zlib/zconf.in.h
 include/d/etc/c/zlib/zlib.3
 include/d/etc/c/zlib/zlib.h
 include/d/etc/c/zlib/zlib.html
-include/d/etc/c/zlib/zlib.lib
 include/d/etc/c/zlib/zutil.c
 include/d/etc/c/zlib/adler32.c
 include/d/etc/c/zlib.d
@@ -163,6 +161,7 @@ include/d/std/c/windows/windows.d
 include/d/std/c/dirent.d
 include/d/std/c/process.d
 include/d/std/c/stdarg.d
+include/d/std/c/stddef.d
 include/d/std/c/stdio.d
 include/d/std/c/stdlib.d
 include/d/std/c/time.d
@@ -219,6 +218,7 @@ include/d/std/math2.d
 include/d/std/md5.d
 include/d/std/mmfile.d
 include/d/std/moduleinit.d
+include/d/std/openrj.d
 include/d/std/outbuffer.d
 include/d/std/outofmemory.d
 include/d/std/path.d

@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gdc
-PORTVERSION=	0.8
-PORTREVISION=	1
+PORTVERSION=	0.9
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_GCC} \
 		http://home.earthlink.net/~dvdfrdmn/d/:gdc \
@@ -33,7 +32,7 @@ USE_BZIP2=	yes
 USE_REINPLACE=	yes
 
 GCC_VERSION=	3.4.4
-GCC_REVISION=	20041224
+GCC_REVISION=	20050107
 GCC_VERSIONSTRING=	3.4-${GCC_REVISION}
 
 BOEHM_VERSION=	6.4
@@ -53,12 +52,14 @@ CONFIGURE_TARGET=	${ARCH}-portbld-freebsd${OSREL}
 .endif
 
 GXX_INC=${PREFIX}/lib/gcc/${CONFIGURE_TARGET}/${GCC_VERSION}/include/c++/
-
+SUFFIX=	34
 CONFIGURE_ARGS+=--disable-nls --with-system-zlib \
-		--with-libiconv-prefix=${PERFIX} --program-suffix=34 \
+		--with-libiconv-prefix=${LOCALBASE} \
+		--program-suffix=${SUFFIX} \
 		--with-gxx-include-dir=${GXX_INC} \
 		--disable-shared --prefix=${PREFIX} \
 		--enable-languages=c,d,c++
+MAKE_ARGS+=     MAKEINFOFLAGS="--no-split"
 GNU_CONFIGURE=	yes
 
 WRKSRC=		${WRKDIR}/gcc-${GCC_VERSIONSTRING}
