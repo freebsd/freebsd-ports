@@ -14,7 +14,7 @@
   # for the rest of the world, it is probably better to put the binaries
   # in /usr/local/netperf or /opt/netperf
   #
-! NETPERF_HOME = /usr/local/netperf
+! NETPERF_HOME = ${PREFIX}/netperf
 ! #NETPERF_HOME = /opt/netperf
   
   # The compiler on your system might be somewhere else, and/or have
@@ -32,7 +32,7 @@
   # -U__hpux    - Use this when compiling _on_ HP-UX *for* an HP-RT system
   
   LOG_FILE=DEBUG_LOG_FILE="\"/tmp/netperf.debug\""
-! CFLAGS = %CFLAGS% -D$(LOG_FILE) -DUSE_LOOPER -DHISTOGRAM -DDO_UNIX
+! CFLAGS = %CFLAGS% -D$(LOG_FILE) -DUSE_LOOPER -DHISTOGRAM -DDO_UNIX -DDO_1644
   
   # Some platforms, and some options, require additional libraries.
   # you can add to the "LIBS =" line to accomplish this. if you find
@@ -207,7 +207,7 @@
   #
   # where is netperf installed, there are a few possible places:
   
-! NETPERF_CMD=${NETPERF_CMD:=/usr/local/netperf/netperf}
+! NETPERF_CMD=${NETPERF_CMD:=%%PREFIX%%/netperf/netperf}
   
   
   # there should be no more than two parms passed
@@ -226,7 +226,7 @@
   # where is netperf, and are there any "constant" options such as 
   # the netserver port number
   #NETHOME=/usr/etc/net_perf
-! NETHOME="/usr/local/netperf"
+! NETHOME="%%PREFIX%%/netperf"
   NETPERF=$NETHOME/netperf $PORT
   
   # How accurate we want the estimate of performance: 
@@ -247,7 +247,7 @@
   fi
   
   # where the programs are
-! NETHOME=/usr/local/netperf
+! NETHOME=%%PREFIX%%/netperf
   #NETHOME="/opt/netperf"
 ! #NETHOME=.
   
@@ -270,7 +270,7 @@
   fi
   
   # where the programs are
-! NETHOME=/usr/local/netperf
+! NETHOME=%%PREFIX%%/netperf
   #NETHOME="/opt/netperf"
 ! #NETHOME=.
   
@@ -293,7 +293,7 @@
   
   # where the programs are
   
-! NETHOME=/usr/local/netperf
+! NETHOME=%%PREFIX%%/netperf
   #NETHOME="/opt/netperf"
 ! #NETHOME="."
   
@@ -316,7 +316,7 @@
   
   # where the programs are
   
-! NETHOME=/usr/local/netperf
+! NETHOME=%%PREFIX%%/netperf
   #NETHOME="/opt/netperf"
 ! #NETHOME="."
   
