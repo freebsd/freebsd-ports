@@ -1,0 +1,10 @@
+--- Help/Hyper.c.orig	Thu Apr  7 01:07:36 1994
++++ Help/Hyper.c	Sat Nov 11 12:14:03 2000
+@@ -977,7 +977,6 @@
+ char   *fname;
+ {
+     Widget widget = (Widget) hyper;
+-    extern char *sys_errlist[];
+ 
+     FILE *f = fopen(fname,"r");
+     if(f)

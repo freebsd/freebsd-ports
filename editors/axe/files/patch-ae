@@ -1,0 +1,10 @@
+--- Widgets/FileNom.h.orig	Thu Apr  7 01:07:46 1994
++++ Widgets/FileNom.h	Sat Nov 11 12:14:04 2000
+@@ -33,7 +33,6 @@
+ #define XtNinitialDirectory "initialDirectory"
+ #define XtNselectCallback "selectCallback"
+ #define XtNpathList "pathList"
+-#define XtNcancelCallback "cancelCallback"
+ #define XtNmargin "margin"
+ #define XtNnumberRows "numberRows"
+ #define XtNshowDotFiles "showDotFiles"

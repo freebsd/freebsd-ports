@@ -1,0 +1,10 @@
+--- Widgets/NumericPad.h.orig	Thu Apr  7 01:07:47 1994
++++ Widgets/NumericPad.h	Sat Nov 11 12:14:04 2000
+@@ -47,7 +47,6 @@
+ #define XtNbase          "base"
+ #define XtCBase          "Base"
+ #define XtNenterCallback "enterCallback"
+-#define XtNcancelCallback "cancelCallback"
+ 
+ extern void NumericPadClear();
+ 

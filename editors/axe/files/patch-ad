@@ -1,0 +1,10 @@
+--- Widgets/CtrlCodeSel.h.orig	Thu Apr  7 01:07:46 1994
++++ Widgets/CtrlCodeSel.h	Sat Nov 11 12:14:03 2000
+@@ -40,7 +40,6 @@
+ #define XtNbase          "base"
+ #define XtCBase          "Base"
+ #define XtNenterCallback "enterCallback"
+-#define XtNcancelCallback "cancelCallback"
+ 
+ #endif /* _ControlCodeSelector_h */
+ 
