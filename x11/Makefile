@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.93 1996/08/03 22:44:15 chuckr Exp $
+# $Id: Makefile,v 1.94 1996/08/16 07:40:50 asami Exp $
 #
 
     SUBDIR += FWF
@@ -32,6 +32,7 @@
     SUBDIR += tvtwm
     SUBDIR += viewfax
     SUBDIR += x3270
+    SUBDIR += xautolock
     SUBDIR += xbuffy
     SUBDIR += xcb
     SUBDIR += xcolors
