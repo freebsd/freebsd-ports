@@ -458,7 +458,6 @@
     SUBDIR += ptl
     SUBDIR += py-coro
     SUBDIR += py-cxx
-    SUBDIR += py-functional
     SUBDIR += py-game
     SUBDIR += py-grouch
     SUBDIR += py-htmlkit
@@ -469,6 +468,7 @@
     SUBDIR += py-orbit
     SUBDIR += py-twisted
     SUBDIR += py-unit
+    SUBDIR += py-xoltar-toolkit
     SUBDIR += pychecker
     SUBDIR += qt-designer
     SUBDIR += qtarch
