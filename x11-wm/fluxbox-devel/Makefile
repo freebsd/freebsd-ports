@@ -7,6 +7,7 @@
 
 PORTNAME=	fluxbox
 PORTVERSION=	0.9.12
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	fluxbox
@@ -54,7 +55,7 @@ PLIST_SUB+=		DOCPDF:="@comment "
 .endif
 
 .if defined(WITH_IMLIB2)
-LIB_DEPENDS+=		Imlib2.2:${PORTSDIR}/graphics/imlib2
+LIB_DEPENDS+=		Imlib2.3:${PORTSDIR}/graphics/imlib2
 CONFIGURE_ARGS+=	--enable-imlib2
 .else
 CONFIGURE_ARGS+=	--disable-imlib2
