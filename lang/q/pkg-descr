@@ -1,0 +1,37 @@
+Q is a powerful and extensible functional programming language based on the
+term rewriting calculus. You specify an arbitrary system of equations which
+the interpreter uses as rewrite rules to reduce expressions to normal form. Q
+is useful for scientific programming and other advanced applications, and also
+as a sophisticated kind of desktop calculator. The distribution includes the Q
+programming tools, the standard library, add-on modules for interfacing to GNU
+dbm, ODBC, GNU Octave, GGI, ImageMagick, Tcl/Tk and IBM's Data Explorer, and
+an Emacs mode.
+
+Q's main features:
+
+- advanced symbolic expression manipulation, using equations supplied by the
+  programmer
+
+- fast bytecode interpreter, which executes Q scripts almost as fast as
+  interpreted Lisp or Haskell
+
+- built-in support for arbitrary precision integers, double precision floating
+  point numbers, strings, lists, tuples, curried function applications, lazy
+  evaluation, exception handling, and user-defined object-oriented data types
+  with single inheritance
+
+- simple but powerful module system which lets you manage large scripts with
+  ease, and a libtool-based interface to external C modules which allows such
+  modules to be loaded at runtime
+
+- comprehensive standard library written mostly in Q itself, which includes
+  powerful list processing functions, a collection of useful container data
+  structures, an implementation of the lambda calculus, an interface to the
+  PostScript language, and a system interface featuring binary and C-style
+  formatted I/O, file system and process manipulation utilities, POSIX
+  threads, BSD sockets, regular expression matching, ...
+
+WWW: http://q-lang.sourceforge.net/
+
+- Albert Graef
+ag@muwiinfa.geschichte.uni-mainz.de
