@@ -22,7 +22,8 @@ MAINTAINER=	gnome@FreeBSD.org
 # unzip is needed during the installation process
 BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 LIB_DEPENDS=	png.4:${PORTSDIR}/graphics/png \
-		giconv.2:${PORTSDIR}/converters/libiconv
+		giconv.2:${PORTSDIR}/converters/libiconv \
+		psiconv.7:${PORTSDIR}/converters/psiconv
 
 DIST_SUBDIR=	AbiWord
 
