@@ -30,7 +30,7 @@ SCRIPTS_ENV+=		PREFIX=${PREFIX} \
 ALL_TARGET=		FreeBSDPortsBuild
 INSTALL_TARGET= 	FreeBSDPortsInstall FreeBSDPortsInstall.man
 MANCOMPRESSED=		yes
-MAN1=			xfs.1
+MAN1=			Xserver.1 xfs.1
 
 do-configure:
 	cd ${.CURDIR} && ${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/configure

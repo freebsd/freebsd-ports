@@ -1,2 +1,6 @@
 bin/xfs
 lib/X11/fs/config
+lib/X11/doc/html/Xserver.1.html
+lib/X11/doc/html/xfs.1.html
+lib/X11/doc/html/manindex1.html
+lib/X11/doc/html/manindex3.html

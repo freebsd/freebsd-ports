@@ -29,6 +29,7 @@ SCRIPTS_ENV+=		PREFIX=${PREFIX} \
 			DISTDIR=${DISTDIR}
 ALL_TARGET=		FreeBSDPortsBuild
 INSTALL_TARGET= 	installXprt
+MAN1=			Xserver.1
 
 do-configure:
 	cd ${.CURDIR} && ${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/configure
