@@ -54,7 +54,7 @@ STYLESHEET="%%DATADIR%%/vuxml2portaudit.xslt"
 
 PUBLIC_HTML="${PUBLIC_HTML:-$HOME/public_html/portaudit}"
 HTMLSHEET="%%DATADIR%%/vuxml2html.xslt"
-BASEURL="${BASEURL:-http://people.freebsd.org/~eik/portaudit/}"
+BASEURL="${BASEURL:-http://www.freebsd.org/ports/portaudit/}"
 
 PORTAUDIT2VUXML="%%DATADIR%%/portaudit2vuxml.awk"
 

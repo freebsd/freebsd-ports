@@ -66,8 +66,8 @@
 
       print "    <description>"
       print "      <body xmlns=\"http://www.w3.org/1999/xhtml\">"
-      print "        <p>Please <a href=\"mailto:security-officer@FreeBSD.org?subject=vid%20" UUID "\">contact"
-      print "           the FreeBSD Security Officer</a> for more information.</p>"
+      print "        <p>Please <a href=\"mailto:security@FreeBSD.org?subject=vid%20" UUID "\">contact"
+      print "           the FreeBSD Security Team</a> for more information.</p>"
       print "      </body>"
       print "    </description>"
       print "    <references>"
@@ -91,4 +91,5 @@
     while (getline < XMLFILE) {
       print
     }
+    close(XMLFILE)
   }
