@@ -2312,6 +2312,7 @@ share/wallpapers/simple_wallpaper.jpg
 share/wallpapers/sunday_brunch.jpg
 share/wallpapers/vegetative_fog.jpg
 @dirrm share/wallpapers
+@dirrm share/templates/.source/emtpydir
 @dirrm share/templates/.source
 @dirrm share/templates
 @dirrm share/sounds
