@@ -1,0 +1,10 @@
+--- Makefile.orig	Thu Nov 20 17:23:15 2003
++++ Makefile	Thu Nov 20 17:23:32 2003
+@@ -4,7 +4,6 @@
+ 
+ SUBDIRS=	hash vm
+ SUBDIRS2=	kits
+-MAKE=		make
+ 
+ all:
+ 	for i in $(SUBDIRS); do \

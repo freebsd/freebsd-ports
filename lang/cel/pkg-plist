@@ -1,14 +1,1 @@
 bin/cel
-%%PORTDOCS%%share/doc/cel/CoreArchitecture.html
-%%PORTDOCS%%share/doc/cel/DefaultProtos
-%%PORTDOCS%%share/doc/cel/Linker.html
-%%PORTDOCS%%share/doc/cel/Logs.html
-%%PORTDOCS%%share/doc/cel/ProtoLanguage.html
-%%PORTDOCS%%share/doc/cel/README
-%%PORTDOCS%%share/doc/cel/SimpleDataFormat.html
-%%PORTDOCS%%share/doc/cel/Threads
-%%PORTDOCS%%share/doc/cel/activation.html
-%%PORTDOCS%%share/doc/cel/stackframe
-%%PORTDOCS%%share/doc/cel/structure.html
-%%PORTDOCS%%share/doc/cel/todo.html
-%%PORTDOCS%%@dirrm share/doc/cel
