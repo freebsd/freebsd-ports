@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	limewire
-PORTVERSION=	4.2.8
+PORTVERSION=	4.4.1
 CATEGORIES=	net java
 MASTER_SITES=	http://www9.limewire.com:82/download/
 DISTNAME=	LimeWireLinux
@@ -34,6 +34,7 @@ DATAFILES=	LimeWire.jar MessagesBundles.jar ProgressTabs.jar \
 		tritonus.jar update.ver vorbis.jar xerces.jar \
 		xml-apis.jar xml.war hashes
 PLIST_FILES=	bin/limewire ${DATAFILES:S,^,%%DATADIR%%/,}
+PLIST_DIRS=	%%DATADIR%%
 
 SUB_FILES=	limewire.sh
 
