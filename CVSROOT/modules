@@ -353,6 +353,7 @@ artemis		ports/biology/artemis
 arts++		ports/net/arts++
 as		src/gnu/usr.bin/as
 as80		ports/devel/as80
+asa		src/usr.bin/asa
 asapm		ports/sysutils/asapm
 asbutton	ports/misc/asbutton
 asc		ports/games/asc
