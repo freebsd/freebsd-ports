@@ -6,8 +6,8 @@ bin/wmf2gd
 bin/wmf2svg
 %%X11%%bin/wmf2x
 include/libwmf/api.h
-include/libwmf/color.h
 include/libwmf/canvas.h
+include/libwmf/color.h
 include/libwmf/defs.h
 include/libwmf/eps.h
 include/libwmf/fig.h
@@ -34,7 +34,7 @@ lib/libwmf.so
 lib/libwmf.so.2
 lib/libwmflite.a
 lib/libwmflite.so
-lib/libwmflite.so.2
+lib/libwmflite.so.7
 %%PORTDOCS%%share/doc/libwmf/caolan/2.html
 %%PORTDOCS%%share/doc/libwmf/caolan/Arc.html
 %%PORTDOCS%%share/doc/libwmf/caolan/BitBlt.html
@@ -147,6 +147,7 @@ lib/libwmflite.so.2
 %%PORTDOCS%%share/doc/libwmf/html/include_2libwmf_2color_8h.html
 %%PORTDOCS%%share/doc/libwmf/html/include_2libwmf_2font_8h.html
 %%PORTDOCS%%share/doc/libwmf/html/index.html
+%%PORTDOCS%%share/doc/libwmf/html/io-wmf_8c.html
 %%PORTDOCS%%share/doc/libwmf/html/ipa_2bmp_8h.html
 %%PORTDOCS%%share/doc/libwmf/html/ipa_2eps_2region_8h.html
 %%PORTDOCS%%share/doc/libwmf/html/ipa_2fig_2region_8h.html
@@ -186,6 +187,7 @@ lib/libwmflite.so.2
 %%PORTDOCS%%share/doc/libwmf/html/src_2ipa_2xgd_2font_8h.html
 %%PORTDOCS%%share/doc/libwmf/html/src_2player_2color_8h.html
 %%PORTDOCS%%share/doc/libwmf/html/stream_8c.html
+%%PORTDOCS%%share/doc/libwmf/html/structWmfContext.html
 %%PORTDOCS%%share/doc/libwmf/html/struct__wmfAPI.html
 %%PORTDOCS%%share/doc/libwmf/html/struct__wmfAPI__Options.html
 %%PORTDOCS%%share/doc/libwmf/html/struct__wmfAttributeStore.html
