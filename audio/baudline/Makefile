@@ -21,6 +21,8 @@ USE_LINUX=	yes
 NO_BUILD=	yes
 STRIP=
 
+BROKEN=		"Unfetchable"
+
 BRANDELF?=	/usr/bin/brandelf
 
 RESTRICTED=	"author requests no distribution except from their site"
