@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	haproxy
-PORTVERSION=	1.1.26
+PORTVERSION=	1.1.27
 CATEGORIES=	net www
 MASTER_SITES=	http://w.ods.org/tools/haproxy/src/ \
 		http://w.ods.org/tools/haproxy/src/old/
@@ -43,9 +43,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's!localtime(!localtime((time_t *)!' ${WRKSRC}/haproxy.c
 
 do-build:
-	@(cd ${WRKSRC} ;\
-	echo "${CC} ${CFLAGS} ${LDFLAGS} ${PORTNAME}.c -o ${PORTNAME}" ;\
-	${CC} ${CFLAGS} ${LDFLAGS} ${PORTNAME}.c -o ${PORTNAME} )
+	cd ${WRKSRC} && ${CC} ${CFLAGS} ${LDFLAGS} ${PORTNAME}.c -o ${PORTNAME}
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/haproxy ${PREFIX}/sbin
