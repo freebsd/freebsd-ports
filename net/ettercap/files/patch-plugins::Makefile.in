@@ -1,0 +1,11 @@
+--- plugins/Makefile.in.orig	Sun May  4 01:59:51 2003
++++ plugins/Makefile.in	Sun May  4 02:00:18 2003
+@@ -13,7 +13,7 @@
+ 	make -C $$plug; \
+ 	done
+ 
+-install: plugins
++install:
+ 	for plug in $(PLUGINS); do \
+ 	$(INSTALL) -d $(DESTDIR)$(PLUGDIR) ; \
+ 	$(INSTALL) -m 700 ./$$plug/ec_$$plug.so $(DESTDIR)$(PLUGDIR) ; \

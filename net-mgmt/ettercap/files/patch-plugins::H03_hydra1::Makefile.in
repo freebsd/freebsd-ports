@@ -1,0 +1,11 @@
+--- plugins/H03_hydra1/Makefile.in.orig	Sun May  4 18:58:02 2003
++++ plugins/H03_hydra1/Makefile.in	Sun May  4 18:58:37 2003
+@@ -3,7 +3,7 @@
+ DEFS     = @PICFLAG@ @DEFS@ -D@OS@
+ 
+ CFLAG    = @CFLAGS@
+-COPTS    = -I../..
++COPTS    = -I../.. @COPTS@
+ 
+ PROG     = H03_hydra1
+ 
