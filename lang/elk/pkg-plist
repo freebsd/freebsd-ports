@@ -81,3 +81,11 @@ share/elk/runtime/scm/unix.scm
 share/elk/runtime/scm/xlib.scm
 share/elk/runtime/scm/xt.scm
 share/elk/runtime/scm/xwidgets.scm
+@dirrm include/elk/extensions
+@dirrm include/elk
+@dirrm share/elk/lib
+@dirrm share/elk/runtime/obj/xaw
+@dirrm share/elk/runtime/obj
+@dirrm share/elk/runtime/scm
+@dirrm share/elk/runtime
+@dirrm share/elk
