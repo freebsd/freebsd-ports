@@ -53,8 +53,10 @@ HEADERS_SUFX=
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
+.if defined(WITH_MOZILLA)
 .if ${WITH_MOZILLA}=="mozilla-devel"
 USE_GCC=	3.4
+.endif
 .endif
 .endif
 
