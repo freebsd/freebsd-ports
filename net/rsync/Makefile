@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	rsync
-PORTVERSION=	2.6.2
-PORTREVISION=	3
+PORTVERSION=	2.6.3
+PORTREVISION=	0
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://rsync.samba.org/ftp/%SUBDIR%/ \
 		ftp://sunsite.auc.dk/pub/unix/%SUBDIR%/  \
@@ -102,6 +102,6 @@ post-install:
 .endif
 
 test: build
-	@cd ${WRKSRC}; ${SH} -c 'umask 0; ./test.sh'
+	@cd ${WRKSRC} && ${MAKE} check
 
 .include <bsd.port.post.mk>
