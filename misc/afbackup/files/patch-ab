@@ -1,5 +1,5 @@
---- crptauth.c.orig	Sun Feb  4 14:15:55 2001
-+++ crptauth.c	Thu Aug 23 12:17:33 2001
+--- crptauth.c.orig	Mon Jun 18 11:47:22 2001
++++ crptauth.c	Fri Nov  2 15:51:10 2001
 @@ -344,7 +344,7 @@
    }
  

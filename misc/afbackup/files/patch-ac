@@ -1,5 +1,5 @@
---- full_backup.c.orig	Thu Aug 23 13:33:04 2001
-+++ full_backup.c	Thu Sep 13 18:45:24 2001
+--- full_backup.c.orig	Tue Oct  9 08:09:00 2001
++++ full_backup.c	Fri Nov  2 15:51:10 2001
 @@ -165,6 +165,7 @@
  UChar	*default_paramfiles[] = { DEFAULT_CLIENT_CONFIGFILES , NULL };
  
@@ -16,7 +16,7 @@
  	{ "%L",	NULL, &libdir },
  	{ "%V",	NULL, &vardir },
  	{ "%C",	NULL, &confdir },
-@@ -1384,12 +1386,13 @@
+@@ -1408,12 +1410,13 @@
  
    /* construct file- and dirnames */
    bindir = strapp(backuphome, FN_DIRSEPSTR "bin");
@@ -31,7 +31,7 @@
      nomemerrexit();
  
    if(!paramfile)
-@@ -1400,6 +1403,7 @@
+@@ -1424,6 +1427,7 @@
    if(!backuphome){
       /* construct file- and dirnames */
       bindir = DEFBINDIR;
@@ -39,7 +39,7 @@
       vardir = DEFVARDIR;
       libdir = DEFLIBDIR;
       logdir = DEFLOGDIR;
-@@ -1420,13 +1424,14 @@
+@@ -1444,13 +1448,14 @@
  	}
       }
       ZFREE(cptr);
@@ -55,7 +55,7 @@
       nomemerrexit();
  
    if(!paramfile)
-@@ -1498,8 +1503,8 @@
+@@ -1522,8 +1527,8 @@
    if(!dont_compress_str)
      dont_compress_str = "";
    num_dont_compress = str2wordsq(&dont_compress, dont_compress_str);
@@ -64,5 +64,5 @@
 +  piperprogram = strapp(libexecdir, FN_DIRSEPSTR "__piper");
 +  zprogram = strapp(libexecdir, FN_DIRSEPSTR "__z");
    server_ids_file = strapp(vardir, FN_DIRSEPSTR "server_ids");
-   index_stale_file = strapp(vardir, FN_DIRSEPSTR "index_stale");
+   index_ages_file = strapp(vardir, FN_DIRSEPSTR "index_ages");
    if(!paramfile || !partfile || !oldmarkfile || !orgoldmarkfile

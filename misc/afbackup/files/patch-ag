@@ -1,6 +1,6 @@
---- server.c.orig	Thu Aug 23 12:54:50 2001
-+++ server.c	Thu Sep 13 18:52:58 2001
-@@ -103,11 +103,13 @@
+--- server.c.orig	Sat Oct  6 11:37:14 2001
++++ server.c	Fri Nov  2 15:51:10 2001
+@@ -110,11 +110,13 @@
  UChar		*storefile = NULL;
  UChar		*vardir = NULL;
  UChar		*bindir = NULL;
@@ -14,7 +14,7 @@
  	{ "%L",	NULL, &libdir },
  	{ "%V",	NULL, &vardir },
  	{ "%C", NULL, &confdir },
-@@ -835,6 +837,8 @@
+@@ -851,6 +853,8 @@
      confdir = strdup(DEFSERVCONFDIR);
    if(!bindir)
      bindir = strdup(DEFSERVBINDIR);
@@ -23,7 +23,7 @@
  #else
    if(!vardir)
      vardir = strapp(backuphome, FN_DIRSEPSTR "var");
-@@ -844,6 +848,8 @@
+@@ -860,6 +864,8 @@
      libdir = strdup(confdir);
    if(!bindir)
      bindir = strapp(backuphome, FN_DIRSEPSTR "bin");

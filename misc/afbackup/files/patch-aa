@@ -1,5 +1,5 @@
---- __descrpt.c.orig	Wed Dec 13 14:45:16 2000
-+++ __descrpt.c	Thu Aug 23 12:17:33 2001
+--- __descrpt.c.orig	Mon Jun 18 11:47:22 2001
++++ __descrpt.c	Fri Nov  2 15:51:09 2001
 @@ -129,12 +129,12 @@
    }
  

@@ -48,10 +48,11 @@ if test `uname` = "FreeBSD" ; then
   fi
 fi
 
+
 AC_HEADER_DIRENT
 AC_HEADER_STDC
 dnl AC_HEADER_SYS_WAIT
-AC_CHECK_HEADERS(arpa/inet.h fcntl.h intl/locale.h limits.h malloc.h netinet/ip.h netinet/tcp.h netinet/in_systm.h pthread.h regex.h string.h strings.h sys/acl.h sys/ioctl.h sys/mode.h sys/mount.h sys/param.h sys/resource.h sys/select.h sys/statfs.h sys/statvfs.h sys/time.h sys/timers.h sys/vfs.h sys/wait.h termios.h termio.h time.h unistd.h values.h)
+AC_CHECK_HEADERS(arpa/inet.h fcntl.h intl/locale.h limits.h malloc.h netinet/ip.h netinet/tcp.h netinet/in_systm.h pthread.h regex.h string.h strings.h sys/acl.h sys/ioctl.h sys/mode.h sys/mount.h sys/mtio.h sys/param.h sys/resource.h sys/select.h sys/statfs.h sys/statvfs.h sys/time.h sys/timers.h sys/vfs.h sys/wait.h termios.h termio.h time.h unistd.h values.h)
 
 dnl Checks for typedefs, structures, and compiler characteristics.
 AC_STRUCT_ST_RDEV
@@ -100,26 +101,60 @@ fi
 
 AC_CHECK_TYPE(signal_t, int)
 
-# cannot use pthread_create here, cause IRIX will fail compiling.
-# Solaris has pthread functions in libc, but they don't work, so
-# we have to check for libpthread or libthread FIRST.
-# BTW the m4 autoconf syntax constraints are terrible.
-AC_CHECK_LIB(pthread, pthread_join, libpthread=yes, libpthread=no)
-if test $libpthread = yes ; then
-  AC_DEFINE(HAVE_PTHREAD_JOIN)
-  LIBS="$LIBS -lpthread"
-else
-  AC_CHECK_LIB(thread, pthread_join, libthread=yes, libthread=no)
-  if test $libthread = yes ; then
-    LIBS="$LIBS -lthread"
+AC_ARG_ENABLE(threads, [  --disable-threads       do not configure threads], 
+    if test "x$enable_threads" != xyes; then enable_threads=no; fi,
+    enable_threads=yes)
+
+if test $enable_threads = yes ; then
+  # cannot use pthread_create here, cause IRIX will fail compiling.
+  # Solaris has pthread functions in libc, but they don't work, so
+  # we have to check for libpthread or libthread FIRST.
+  # BTW the m4 autoconf syntax constraints are terrible.
+  AC_CHECK_LIB(pthread, pthread_join, libpthread=yes, libpthread=no)
+  if test $libpthread = yes ; then
     AC_DEFINE(HAVE_PTHREAD_JOIN)
+    LIBS="$LIBS -lpthread"
   else
-    AC_CHECK_FUNC(pthread_join, libc=yes, libc=no)
-    if test $libc = yes ; then
+    AC_CHECK_LIB(thread, pthread_join, libthread=yes, libthread=no)
+    if test $libthread = yes ; then
+      LIBS="$LIBS -lthread"
       AC_DEFINE(HAVE_PTHREAD_JOIN)
+    else
+      AC_CHECK_FUNC(pthread_join, libc=yes, libc=no)
+      if test $libc = yes ; then
+	AC_DEFINE(HAVE_PTHREAD_JOIN)
+      else
+	AC_MSG_CHECKING(for FreeBSD-like pthreads)
+	LIBS_BEFORE="$LIBS"
+	CPPFLAGS_BEFORE="$CPPFLAGS"
+	LIBS="$LIBS -pthread"
+	CPPFLAGS="$CPPFLAGS -D_THREAD_SAFE"
+	AC_CACHE_VAL(ac_cv_decl_freebsd_pthreads,
+	[AC_TRY_LINK([
+#include <stdio.h>
+#include <errno.h>
+#ifdef HAVE_STDLIB_H
+#include <stdlib.h>
+#endif
+#ifdef HAVE_UNISTD_H
+#include <unistd.h>
+#endif],[pthread_join();],
+	ac_cv_decl_freebsd_pthreads=yes, ac_cv_decl_freebsd_pthreads=no)
+	])
+	AC_MSG_RESULT($ac_cv_decl_freebsd_pthreads)
+	if test $ac_cv_decl_freebsd_pthreads = yes; then
+	  AC_DEFINE(HAVE_PTHREAD_JOIN)
+	  SYSDEFINES="$SYSDEFINES -D_THREAD_SAFE"
+	else
+	  LIBS="$LIBS_BEFORE"
+	  CPPFLAGS="$CPPFLAGS_BEFORE"
+	fi
+      fi
     fi
   fi
 fi
+
+AC_SUBST(SYSDEFINES)
 
 checkBoth=0
 AC_CHECK_FUNC(connect, checkSocket=0, checkSocket=1)
@@ -133,7 +168,7 @@ if test "$checkBoth" = 1; then
 fi
 AC_CHECK_FUNC(gethostbyname, , AC_CHECK_LIB(nsl, main, [LIBS="$LIBS -lnsl"]))
 
-AC_CHECK_FUNCS(bsearch drand48 getcwd gettimeofday inet_ntoa isatty isnan lchown lfind lsearch memmove mkdir mkfifo mktime qsort rand re_comp regcomp re_compile_pattern rint select setitimer sighold sigrelse socket strcasecmp strncasecmp strcasestr strdup strerror strrstr strstr timer_create uname acl setacl chacl sys_errlist stat64 statvfs vsnprintf vsyslog)
+AC_CHECK_FUNCS(bsearch door_create drand48 getcwd gettimeofday inet_ntoa isatty isnan lchown lfind lsearch memmove mkdir mkfifo mktime qsort rand re_comp regcomp re_compile_pattern rint seed48 select seteuid setreuid setresuid setegid setregid setresgid setitimer sighold sigrelse socket strcasecmp strncasecmp strcasestr strdup strerror strrstr strstr timer_create uname acl setacl chacl sys_errlist stat64 statvfs vsnprintf vsyslog)
 AC_CHECK_LIB(acl, acl_get_file, acl_get_file=yes, acl_get_file=no)
 if test $acl_get_file = yes ; then
   LIBS="$LIBS -lacl"
@@ -158,15 +193,17 @@ fi
 test "x$prefix" = xNONE && prefix=$ac_default_prefix
 test "x$exec_prefix" = xNONE && exec_prefix=${prefix}
 
+
+
 AC_ARG_WITH(utilslibdir,
     [   --with-utilslibdir=DIR   server configuration files in DIR [prefix/lib]],
     [
-        if test "$withval"; then
-            utilslibdir="$withval"
-        else
-            AC_MSG_WARN([*** You must supply an argument to the --with-utilslibdir
+	if test "$withval"; then
+	    utilslibdir="$withval"
+	else
+	    AC_MSG_WARN([*** You must supply an argument to the --with-utilslibdir
  option.])
-        fi
+	fi
     ]
 )
 : ${utilslibdir:='$prefix/lib'}
@@ -177,12 +214,12 @@ AC_SUBST(utilslibdir)
 AC_ARG_WITH(utilsincdir,
     [   --with-utilsincdir=DIR   server configuration files in DIR [prefix/include]],
     [
-        if test "$withval"; then
-            utilsincdir="$withval"
-        else
-            AC_MSG_WARN([*** You must supply an argument to the --with-utilsincdir
+	if test "$withval"; then
+	    utilsincdir="$withval"
+	else
+	    AC_MSG_WARN([*** You must supply an argument to the --with-utilsincdir
  option.])
-        fi
+	fi
     ]
 )
 : ${utilsincdir:='$prefix/include'}
@@ -193,12 +230,12 @@ AC_SUBST(utilsincdir)
 AC_ARG_WITH(utilsbindir,
     [   --with-utilsbindir=DIR   server configuration files in DIR [prefix/bin]],
     [
-        if test "$withval"; then
-            utilsbindir="$withval"
-        else
-            AC_MSG_WARN([*** You must supply an argument to the --with-utilsbindir
+	if test "$withval"; then
+	    utilsbindir="$withval"
+	else
+	    AC_MSG_WARN([*** You must supply an argument to the --with-utilsbindir
  option.])
-        fi
+	fi
     ]
 )
 : ${utilsbindir:='$prefix/bin'}
@@ -211,12 +248,12 @@ prefixext=yes
 AC_ARG_WITH(prefixext,
     [   --with-prefixext=YESNO extend prefix with /backup [yes]],
     [
-        if test "$withval"; then
-            prefixext="$withval"
-        else
-            AC_MSG_WARN([*** You must supply an argument to the --with-prefixext
+	if test "$withval"; then
+	    prefixext="$withval"
+	else
+	    AC_MSG_WARN([*** You must supply an argument to the --with-prefixext
  option.])
-        fi
+	fi
     ]
 )
 subdir="/backup"
@@ -228,12 +265,12 @@ dnl *** server side ***
 AC_ARG_WITH(serverdir,
     [   --with-serverdir=DIR   server installation in DIR [prefix/subdir/server]],
     [
-        if test "$withval"; then
-            serverdir="$withval"
-        else
-            AC_MSG_WARN([*** You must supply an argument to the --with-serverdir
+	if test "$withval"; then
+	    serverdir="$withval"
+	else
+	    AC_MSG_WARN([*** You must supply an argument to the --with-serverdir
  option.])
-        fi
+	fi
     ]
 )
 : ${serverdir:='$prefix$subdir/server'}
@@ -245,12 +282,12 @@ dnl *** serverbindir
 AC_ARG_WITH(serverbindir,
     [   --with-serverbindir=DIR   server binaries in DIR [serverdir/bin]],
     [
-        if test "$withval"; then
-            serverbindir="$withval"
-        else
-            AC_MSG_WARN([*** You must supply an argument to the --with-serverbindir
+	if test "$withval"; then
+	    serverbindir="$withval"
+	else
+	    AC_MSG_WARN([*** You must supply an argument to the --with-serverbindir
  option.])
-        fi
+	fi
     ]
 )
 : ${serverbindir:='$serverdir/bin'}
@@ -262,12 +299,12 @@ dnl *** serverlibdir
 AC_ARG_WITH(serverlibdir,
     [   --with-serverlibdir=DIR   server configuration files in DIR [serverdir/lib]],
     [
-        if test "$withval"; then
-            serverlibdir="$withval"
-        else
-            AC_MSG_WARN([*** You must supply an argument to the --with-serverlibdir
+	if test "$withval"; then
+	    serverlibdir="$withval"
+	else
+	    AC_MSG_WARN([*** You must supply an argument to the --with-serverlibdir
  option.])
-        fi
+	fi
     ]
 )
 : ${serverlibdir:='$serverdir/lib'}
@@ -279,12 +316,12 @@ dnl *** serverconfdir
 AC_ARG_WITH(serverconfdir,
     [   --with-serverconfdir=DIR   server configuration files in DIR [serverdir/lib]],
     [
-        if test "$withval"; then
-            serverconfdir="$withval"
-        else
-            AC_MSG_WARN([*** You must supply an argument to the --with-serverconfdir
+	if test "$withval"; then
+	    serverconfdir="$withval"
+	else
+	    AC_MSG_WARN([*** You must supply an argument to the --with-serverconfdir
  option.])
-        fi
+	fi
     ]
 )
 : ${serverconfdir:='$serverdir/lib'}
@@ -296,12 +333,12 @@ dnl *** servervardir
 AC_ARG_WITH(servervardir,
     [   --with-servervardir=DIR   variable server files in DIR [serverdir/var]],
     [
-        if test "$withval"; then
-            servervardir="$withval"
-        else
-            AC_MSG_WARN([*** You must supply an argument to the --with-servervardir
+	if test "$withval"; then
+	    servervardir="$withval"
+	else
+	    AC_MSG_WARN([*** You must supply an argument to the --with-servervardir
  option.])
-        fi
+	fi
     ]
 )
 : ${servervardir:='$serverdir/var'}
@@ -313,12 +350,12 @@ dnl *** servermandir
 AC_ARG_WITH(servermandir,
     [   --with-servermandir=DIR   variable server files in DIR [serverdir/man]],
     [
-        if test "$withval"; then
-            servermandir="$withval"
-        else
-            AC_MSG_WARN([*** You must supply an argument to the --with-servermandir
+	if test "$withval"; then
+	    servermandir="$withval"
+	else
+	    AC_MSG_WARN([*** You must supply an argument to the --with-servermandir
  option.])
-        fi
+	fi
     ]
 )
 : ${servermandir:='$serverdir/man'}
@@ -330,12 +367,12 @@ dnl *** serverlogdir
 AC_ARG_WITH(serverlogdir,
     [   --with-serverlogdir=DIR   server log files in DIR [serverdir/var]],
     [
-        if test "$withval"; then
-            serverlogdir="$withval"
-        else
-            AC_MSG_WARN([*** You must supply an argument to the --with-serverlogdir
+	if test "$withval"; then
+	    serverlogdir="$withval"
+	else
+	    AC_MSG_WARN([*** You must supply an argument to the --with-serverlogdir
  option.])
-        fi
+	fi
     ]
 )
 : ${serverlogdir:='$serverdir/var'}
@@ -348,12 +385,12 @@ dnl *** client side ***
 AC_ARG_WITH(clientdir,
     [   --with-clientdir=DIR   client installation in DIR [prefix/subdir/client]],
     [
-        if test "$withval"; then
-            clientdir="$withval"
-        else
-            AC_MSG_WARN([*** You must supply an argument to the --with-clientdir
+	if test "$withval"; then
+	    clientdir="$withval"
+	else
+	    AC_MSG_WARN([*** You must supply an argument to the --with-clientdir
  option.])
-        fi
+	fi
     ]
 )
 : ${clientdir:='$prefix$subdir/client'}
@@ -365,12 +402,12 @@ dnl *** clientbindir
 AC_ARG_WITH(clientbindir,
     [   --with-clientbindir=DIR   client binaries in DIR [clientdir/bin]],
     [
-        if test "$withval"; then
-            clientbindir="$withval"
-        else
-            AC_MSG_WARN([*** You must supply an argument to the --with-clientbindir
+	if test "$withval"; then
+	    clientbindir="$withval"
+	else
+	    AC_MSG_WARN([*** You must supply an argument to the --with-clientbindir
  option.])
-        fi
+	fi
     ]
 )
 : ${clientbindir:='$clientdir/bin'}
@@ -382,12 +419,12 @@ dnl *** clientlibdir
 AC_ARG_WITH(clientlibdir,
     [   --with-clientlibdir=DIR   client configuration files in DIR [clientdir/lib]],
     [
-        if test "$withval"; then
-            clientlibdir="$withval"
-        else
-            AC_MSG_WARN([*** You must supply an argument to the --with-clientlibdir
+	if test "$withval"; then
+	    clientlibdir="$withval"
+	else
+	    AC_MSG_WARN([*** You must supply an argument to the --with-clientlibdir
  option.])
-        fi
+	fi
     ]
 )
 : ${clientlibdir:='$clientdir/lib'}
@@ -416,12 +453,12 @@ dnl *** clientvardir
 AC_ARG_WITH(clientvardir,
     [   --with-clientvardir=DIR   variable client files in DIR [clientdir/var]],
     [
-        if test "$withval"; then
-            clientvardir="$withval"
-        else
-            AC_MSG_WARN([*** You must supply an argument to the --with-clientvardir
+	if test "$withval"; then
+	    clientvardir="$withval"
+	else
+	    AC_MSG_WARN([*** You must supply an argument to the --with-clientvardir
  option.])
-        fi
+	fi
     ]
 )
 : ${clientvardir:='$clientdir/var'}
@@ -433,12 +470,12 @@ dnl *** clientmandir
 AC_ARG_WITH(clientmandir,
     [   --with-clientmandir=DIR   variable client files in DIR [clientdir/man]],
     [
-        if test "$withval"; then
-            clientmandir="$withval"
-        else
-            AC_MSG_WARN([*** You must supply an argument to the --with-clientmandir
+	if test "$withval"; then
+	    clientmandir="$withval"
+	else
+	    AC_MSG_WARN([*** You must supply an argument to the --with-clientmandir
  option.])
-        fi
+	fi
     ]
 )
 : ${clientmandir:='$clientdir/man'}
@@ -450,12 +487,12 @@ dnl *** clientlogdir
 AC_ARG_WITH(clientlogdir,
     [   --with-clientlogdir=DIR   client log files in DIR [clientdir/var]],
     [
-        if test "$withval"; then
-            clientlogdir="$withval"
-        else
-            AC_MSG_WARN([*** You must supply an argument to the --with-clientlogdir
+	if test "$withval"; then
+	    clientlogdir="$withval"
+	else
+	    AC_MSG_WARN([*** You must supply an argument to the --with-clientlogdir
  option.])
-        fi
+	fi
     ]
 )
 : ${clientlogdir:='$clientdir/var'}
@@ -467,12 +504,12 @@ dnl *** rexecdir
 AC_ARG_WITH(rexecdir,
     [   --with-rexecdir=DIR   binaries for remote execution in DIR [prefix/rexec]],
     [
-        if test "$withval"; then
-            REXECDIR="$withval"
-        else
-            AC_MSG_WARN([*** You must supply an argument to the --with-rexecdir
+	if test "$withval"; then
+	    REXECDIR="$withval"
+	else
+	    AC_MSG_WARN([*** You must supply an argument to the --with-rexecdir
  option.])
-        fi
+	fi
     ]
 )
 : ${REXECDIR:='$prefix$subdir/rexec'}
@@ -484,12 +521,12 @@ dnl *** clientconf
 AC_ARG_WITH(clientconf,
     [   --with-clientconf=NAME   NAME for client configuration [backup.conf]],
     [
-        if test "$withval"; then
-            clientconf="$withval"
-        else
-            AC_MSG_WARN([*** You must supply an argument to the --with-clientconf
+	if test "$withval"; then
+	    clientconf="$withval"
+	else
+	    AC_MSG_WARN([*** You must supply an argument to the --with-clientconf
  option.])
-        fi
+	fi
     ]
 )
 : ${clientconf:=backup.conf}
@@ -501,12 +538,12 @@ dnl *** serverconf
 AC_ARG_WITH(serverconf,
     [   --with-serverconf=NAME   NAME for server configuration [backup.conf]],
     [
-        if test "$withval"; then
-            serverconf="$withval"
-        else
-            AC_MSG_WARN([*** You must supply an argument to the --with-serverconf
+	if test "$withval"; then
+	    serverconf="$withval"
+	else
+	    AC_MSG_WARN([*** You must supply an argument to the --with-serverconf
  option.])
-        fi
+	fi
     ]
 )
 : ${serverconf:=backup.conf}
@@ -518,12 +555,12 @@ dnl *** commondir
 AC_ARG_WITH(commondir,
     [   --with-commondir=DIR   software for client and server will reside in DIR [prefix/common]],
     [
-        if test "$withval"; then
-            commondir="$withval"
-        else
-            AC_MSG_WARN([*** You must supply an argument to the --with-commondir
+	if test "$withval"; then
+	    commondir="$withval"
+	else
+	    AC_MSG_WARN([*** You must supply an argument to the --with-commondir
  option.])
-        fi
+	fi
     ]
 )
 : ${commondir:='$prefix$subdir/common'}
@@ -535,12 +572,12 @@ dnl *** commondatadir
 AC_ARG_WITH(commondatadir,
     [   --with-commondatadir=DIR   architecture independent data for client and server will reside in DIR [commondir/share]],
     [
-        if test "$withval"; then
-            commondatadir="$withval"
-        else
-            AC_MSG_WARN([*** You must supply an argument to the --with-commondatadir
+	if test "$withval"; then
+	    commondatadir="$withval"
+	else
+	    AC_MSG_WARN([*** You must supply an argument to the --with-commondatadir
  option.])
-        fi
+	fi
     ]
 )
 : ${commondatadir:='$commondir/share'}
@@ -552,12 +589,12 @@ dnl *** commonshlibdir
 AC_ARG_WITH(commonshlibdir,
     [   --with-commonshlibdir=DIR   architecture independent program text for client and server will reside in DIR [commondatadir/lib]],
     [
-        if test "$withval"; then
-            commonshlibdir="$withval"
-        else
-            AC_MSG_WARN([*** You must supply an argument to the --with-commonshlibdir
+	if test "$withval"; then
+	    commonshlibdir="$withval"
+	else
+	    AC_MSG_WARN([*** You must supply an argument to the --with-commonshlibdir
  option.])
-        fi
+	fi
     ]
 )
 : ${commonshlibdir:='$commondatadir/lib'}
@@ -573,7 +610,7 @@ usedes=no
 AC_ARG_WITH(des,
     [   --with-des   for client/server authentication [no]],
     [
-        usedes=yes
+	usedes=yes
 	des_include=../libdes
 	des_libdir=`echo $des_include|sed 's#include$#lib#g'`
 	des_header=des.h
@@ -584,43 +621,43 @@ AC_ARG_WITH(des,
 AC_ARG_WITH(des-include,
     [   --with-des-include=DIR   des header file in DIR [../libdes]],
     [
-        if test "$withval"; then
-            usedes=yes
-            des_include="$withval"
+	if test "$withval"; then
+	    usedes=yes
+	    des_include="$withval"
 	    des_libdir="$des_include"
 	    des_header=des.h
 	    des_ldflag=-ldes
-        else
-            AC_MSG_WARN([*** You must supply an argument to the --with-des-include
+	else
+	    AC_MSG_WARN([*** You must supply an argument to the --with-des-include
  option.])
-        fi
+	fi
     ]
 )
 
 AC_ARG_WITH(des-header,
     [   --with-des-header=NAME   NAME is des header file [des.h]],
     [
-        if test "$withval"; then
-            usedes=yes
-            des_header="$withval"
+	if test "$withval"; then
+	    usedes=yes
+	    des_header="$withval"
 	    des_ldflag=-ldes
 	    if test _"$des_include" = _ ; then
 		des_include=../libdes
 		des_libdir="$des_include"
 	    fi
-        else
-            AC_MSG_WARN([*** You must supply an argument to the --with-des-header
+	else
+	    AC_MSG_WARN([*** You must supply an argument to the --with-des-header
  option.])
-        fi
+	fi
     ]
 )
 
 AC_ARG_WITH(des-libdir,
     [   --with-des-libdir=DIR   des library is in DIR [../libdes]],
     [
-        if test "$withval"; then
-            usedes=yes
-            des_libdir="$withval"
+	if test "$withval"; then
+	    usedes=yes
+	    des_libdir="$withval"
 	    des_ldflag=-ldes
 	    if test _"$des_include" = _ ; then
 		des_include="$des_libdir"
@@ -628,19 +665,19 @@ AC_ARG_WITH(des-libdir,
 	    if test _"$des_header" = _ ; then
 		des_header="des.h"
 	    fi
-        else
-            AC_MSG_WARN([*** You must supply an argument to the --with-des-libdir
+	else
+	    AC_MSG_WARN([*** You must supply an argument to the --with-des-libdir
  option.])
-        fi
+	fi
     ]
 )
 
 AC_ARG_WITH(des-ldflag,
     [   --with-des-ldflag=LIB   des library is specified by LIB [-ldes]],
     [
-        if test "$withval"; then
-            usedes=yes
-            des_ldflag="$withval"
+	if test "$withval"; then
+	    usedes=yes
+	    des_ldflag="$withval"
 	    if test _"$des_include" = _ ; then
 		des_include=../libdes
 	    fi
@@ -650,10 +687,10 @@ AC_ARG_WITH(des-ldflag,
 	    if test _"$des_libdir" = _ ; then
 		des_libdir="$des_include"
 	    fi
-        else
-            AC_MSG_WARN([*** You must supply an argument to the --with-des-ldflag
+	else
+	    AC_MSG_WARN([*** You must supply an argument to the --with-des-ldflag
  option.])
-        fi
+	fi
     ]
 )
 
@@ -691,7 +728,7 @@ usezlib=no
 AC_ARG_WITH(zlib,
     [   --with-zlib   for builtin compression [no]],
     [
-        usezlib=yes
+	usezlib=yes
 	zlib_include=/usr/local/include
 	zlib_libdir=`echo $zlib_include|sed 's#include$#lib#g'`
     ]
@@ -700,30 +737,30 @@ AC_ARG_WITH(zlib,
 AC_ARG_WITH(zlib-include,
     [   --with-zlib-include=DIR   zlib header file in DIR [/usr/local/include]],
     [
-        if test "$withval"; then
-            usezlib=yes
-            zlib_include="$withval"
+	if test "$withval"; then
+	    usezlib=yes
+	    zlib_include="$withval"
 	    zlib_libdir="$zlib_include"
-        else
-            AC_MSG_WARN([*** You must supply an argument to the --with-zlib-include
+	else
+	    AC_MSG_WARN([*** You must supply an argument to the --with-zlib-include
  option.])
-        fi
+	fi
     ]
 )
 
 AC_ARG_WITH(zlib-libdir,
     [   --with-zlib-libdir=DIR   zlib library is in DIR [/usr/local/lib]],
     [
-        if test "$withval"; then
-            usezlib=yes
-            zlib_libdir="$withval"
+	if test "$withval"; then
+	    usezlib=yes
+	    zlib_libdir="$withval"
 	    if test _"$zlib_include" = _ ; then
 		zlib_include="$zlib_libdir"
 	    fi
-        else
-            AC_MSG_WARN([*** You must supply an argument to the --with-zlib-libdir
+	else
+	    AC_MSG_WARN([*** You must supply an argument to the --with-zlib-libdir
  option.])
-        fi
+	fi
     ]
 )
 

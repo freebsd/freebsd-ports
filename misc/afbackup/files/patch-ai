@@ -1,5 +1,5 @@
---- budefs.h.in.orig	Sat May 26 13:02:04 2001
-+++ budefs.h.in	Mon Aug 27 15:38:41 2001
+--- budefs.h.in.orig	Wed Jul 25 17:26:03 2001
++++ budefs.h.in	Fri Nov  2 15:51:10 2001
 @@ -109,11 +109,13 @@
  #define	SERVERMODE_VARAPPEND	1
  
@@ -15,7 +15,7 @@
  #define DEFSERVVARDIR		"@servervardir@"
  #define DEFSERVLIBDIR		"@serverlibdir@" 
  #define DEFSERVCONFDIR		"@serverconfdir@" 
-@@ -223,11 +225,13 @@
+@@ -227,11 +229,13 @@
  			2048, 1024, 512, 32768, 65536, 10240, 8192, 131072
  
  #define	DEFAULT_CLIENT_CONFIGFILES	\
