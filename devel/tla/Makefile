@@ -10,13 +10,13 @@ PORTVERSION=	1.1
 CATEGORIES=	devel
 MASTER_SITES=	http://regexps.srparish.net/src/${PORTNAME}/ \
 		http://arch.quackerhead.com/~lord/releases/${PORTNAME}/
-DISTNAME=	tla-1.1
 
 MAINTAINER=	seanc@FreeBSD.org
 COMMENT=	The original arch source control management CLI written in C
 
 RUN_DEPENDS=	gpatch:${PORTSDIR}/devel/patch \
 		gdiff:${PORTSDIR}/textproc/diffutils
+BUILD_DEPENDS=	gdiff:${PORTSDIR}/textproc/diffutils
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
