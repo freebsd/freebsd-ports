@@ -1,0 +1,13 @@
+--- lib/Makefile.orig	Mon Nov 27 23:33:49 2000
++++ lib/Makefile	Thu Dec  7 15:23:52 2000
+@@ -10,8 +10,8 @@
+ BUILTIN_CES_STATIC !=	cd ${.CURDIR}/../ces && make libces_static.a \
+ 				>/dev/null && ${AR} t libces_static.a
+ 
+-OBJS =		${BUILTIN_CCS:C|.|../ccs/&|} ${BUILTIN_CES:C|.|../ces/&|}
+-STATICOBJS =	${BUILTIN_CES_STATIC:C|.|../ces/&|}
++OBJS =		${BUILTIN_CCS:S|^|../ccs/&|} ${BUILTIN_CES:S|^|../ces/&|}
++STATICOBJS =	${BUILTIN_CES_STATIC:S|^|../ces/&|}
+ 
+ LIBDIR =	${PREFIX}/lib
+ 
