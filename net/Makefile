@@ -150,6 +150,7 @@
     SUBDIR += gtic
     SUBDIR += gtk+licq
     SUBDIR += gtk-gnutella
+    SUBDIR += gtkhx
     SUBDIR += gtkyahoo
     SUBDIR += gutenfetch
     SUBDIR += h2n

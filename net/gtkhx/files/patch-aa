@@ -1,0 +1,10 @@
+--- configure.orig	Mon Jan 21 23:48:37 2002
++++ configure	Sat Feb  9 20:17:35 2002
+@@ -4894,7 +4894,6 @@
+ 	fi
+ fi
+ 
+-ipv6=yes
+ if test "$ipv6" = yes; then
+ 	for ac_func in getaddrinfo
+ do
