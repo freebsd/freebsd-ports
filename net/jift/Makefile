@@ -20,16 +20,24 @@ RUN_DEPENDS=	${JAVAVM}:${PORTSDIR}/java/javavmwrapper \
 
 USE_ZIP=	yes
 NO_WRKSUBDIR=	yes
+BUILD_WRKSRC=	${WRKSRC}/classes
 PLIST_SUB=	JAR_DIR=${JAR_DIR} \
 		JAR_FILE=${JAR_FILE}
 
 JDK_VERSION=	1.2.2
+JAVAC_CMD=	${LOCALBASE}/jdk${JDK_VERSION}/bin/javac
 JAR_CMD=	${LOCALBASE}/jdk${JDK_VERSION}/bin/jar
 JAVAVM=		${LOCALBASE}/bin/javavm
 JAR_DIR=	share/java/jar/${PORTNAME}
 JAR_MANIFEST=	${FILESDIR}/manifest
 
 DOC_FILES=	copying.txt readme.txt
+CLASS_PACKAGE=	net/sourceforge/jift
+CLASS_SRCDIRS=	node/query \
+		node/net/packet \
+		node/net/crypto \
+		node/net \
+		.
 
 post-patch:
 # remove trailing ^M
@@ -40,7 +48,11 @@ post-patch:
 
 # as far as build goes... ;)
 do-build:
-	cd ${WRKSRC} && ${JAR_CMD} -cmf ${JAR_MANIFEST} ${WRKDIR}/${JAR_FILE} net
+	@${MKDIR} ${BUILD_WRKSRC}
+.for dir in ${CLASS_SRCDIRS}
+	@${JAVAC_CMD} -d ${BUILD_WRKSRC} -classpath ${BUILD_WRKSRC} -sourcepath ${WRKDIR} ${WRKDIR}/${CLASS_PACKAGE}/${dir}/*.java
+.endfor
+	@cd ${BUILD_WRKSRC} && ${JAR_CMD} -cmf ${JAR_MANIFEST} ${WRKDIR}/${JAR_FILE} *
 
 do-install:
 	@${MKDIR} ${PREFIX}/${JAR_DIR}
