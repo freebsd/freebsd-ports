@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	sdl
-PORTVERSION=	1.2.5
-PORTREVISION=	3
+PORTVERSION=	1.2.6
 CATEGORIES=	devel
 MASTER_SITES=	http://www.libsdl.org/release/
 DISTNAME=	SDL-${PORTVERSION}
@@ -20,15 +19,17 @@ BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
 
 INSTALLS_SHLIB=	yes
 USE_REINPLACE=	yes
+REINPLACE_ARGS=	-i ""
 USE_LIBTOOL=	yes
 WANT_GNOME=	yes
-CONFIGURE_ENV=	NASM="${LOCALBASE}/bin/nasm" \
-		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
-		PTHREAD_LIBS="${PTHREAD_LIBS}"
-CONFIGURE_ARGS=	--enable-video-aalib \
-		--disable-nas
+CONFIGURE_ENV=	NASM="${LOCALBASE}/bin/nasm"		\
+		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}"	\
+		PTHREAD_LIBS="${PTHREAD_LIBS}"		\
+		LDFLAGS="${LDFLAGS}"
+CONFIGURE_ARGS=	--enable-video-aalib
 
-CFLAGS+=	${PTHREAD_CFLAGS}
+CFLAGS+=	${PTHREAD_CFLAGS} -I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 .if exists(/usr/lib/libvgl.so.3)
 CONFIGURE_ARGS+=--enable-video-vgl
@@ -37,6 +38,12 @@ DISPLAY_MSG=	${CAT} ${PKGMESSAGE}
 CONFIGURE_ARGS+=--disable-video-vgl
 PKGMESSAGE=	/I/hate/ports/Mk/bsd.port.mk
 DISPLAY_MSG=	${DO_NADA}
+.endif
+
+.if defined(WITH_NAS)
+LIB_DEPENDS+=  audio.2:${PORTSDIR}/audio/nas
+.else
+CONFIGURE_ARGS+=--disable-nas
 .endif
 
 .if !defined(WITHOUT_X11)
@@ -81,6 +88,10 @@ CONFIGURE_ARGS+=--enable-arts
 CONFIGURE_ARGS+=--disable-arts
 .endif
 
+post-patch:
+	@${REINPLACE_CMD} 's|sdl-config|sdl11-config|g'	\
+		${WRKSRC}/test/configure
+
 pre-configure:
 	@${FIND} ${WRKSRC} -type f -name Makefile.in | ${XARGS} ${TOUCH}
 
@@ -92,15 +103,18 @@ post-configure:
 		${WRKSRC}/libtool
 
 post-install:
-	@${MKDIR} ${PREFIX}/share/examples/SDL11
-	${INSTALL_DATA} ${WRKSRC}/test/* ${PREFIX}/share/examples/SDL11
+	@${MKDIR} ${EXAMPLESDIR}
+	@${INSTALL_DATA} ${WRKSRC}/test/* ${EXAMPLESDIR}
+	@${INSTALL_SCRIPT} ${WRKSRC}/test/configure ${EXAMPLESDIR}
+	@${ECHO_MSG} "===> Examples installed in ${EXAMPLESDIR}."
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/SDL11/docs
-.for file in BUGS COPYING CREDITS README WhatsNew docs.html
-	${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/SDL11
+	@${MKDIR} ${DOCSDIR}/docs
+.for doc in BUGS COPYING CREDITS README README-SDL.txt WhatsNew docs.html
+	@${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
 .endfor
 	@cd ${WRKSRC}/docs; ${TAR} cf - `${ECHO_CMD} [^Mm]*` | \
-		(cd ${PREFIX}/share/doc/SDL11/docs; ${TAR} --unlink -xf - )
+		(cd ${DOCSDIR}/docs; ${TAR} --unlink -xf - )
+	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
 .endif
 	@${DISPLAY_MSG}
 
