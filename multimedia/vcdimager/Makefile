@@ -6,6 +6,7 @@
 
 PORTNAME=	vcdimager
 PORTVERSION=	0.7.12
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.vcdimager.org/pub/vcdimager/vcdimager-0.7_UNSTABLE/
 
