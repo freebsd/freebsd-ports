@@ -29,6 +29,7 @@
 #include <sys/param.h>
 #include <sys/systm.h>
 #include <sys/conf.h>
+#include <sys/errno.h>
 #include <sys/kernel.h>
 #include <sys/malloc.h>
 #include <sys/mbuf.h>
@@ -36,6 +37,7 @@
 #include <sys/socket.h>
 #include <sys/filio.h>
 #include <sys/poll.h>
+#include <sys/proc.h>
 #include <sys/uio.h>
 #include <sys/vnode.h>
 
@@ -72,16 +74,21 @@ struct rtc_softc {
 		int	opened:1;
 		int 	enabled:1;
 	 } flags;
+	struct callout rtc_handle;
+	struct timespec lasttime;
+	struct selinfo sip;
+	int woken;
+	void *rtc_ident;
 	} var;
 };
-
-static struct rtc_softc *rtc_sc=NULL;
 
 static d_open_t		rtc_open;
 static d_close_t 	rtc_close;
 static d_ioctl_t	rtc_ioctl;
 static d_poll_t		rtc_poll;
+static d_read_t		rtc_read;
 
+static void rtc_callback(void *xtp);
 static int rtc_modeevent(module_t mod, int cmd, void *arg);
 
 static struct cdevsw rtc_cdevsw = {
@@ -90,12 +97,13 @@ static struct cdevsw rtc_cdevsw = {
 	.d_close =	rtc_close,
 	.d_ioctl =	rtc_ioctl,
 	.d_poll =	rtc_poll,
+	.d_read =	rtc_read,
 	.d_name =	DEVICE_NAME,
 	.d_maj =	CDEV_MAJOR,
 #else
 	/* open */	rtc_open,
 	/* close */	rtc_close,
-	/* read */	noread,
+	/* read */	rtc_read,
 	/* write */	nowrite,
 	/* ioctl */	rtc_ioctl,
 	/* poll */	rtc_poll,
@@ -141,34 +149,37 @@ rtc_attach(dev_t dev)
 		return dev->si_drv1;
 	}
 
-	if (rtc_sc!=NULL)
-		return NULL;
-
 	MALLOC(sc, struct rtc_softc*, sizeof(*sc), M_DEVBUF, M_WAITOK);
 	if (sc==NULL)
 		return NULL;
 
 	bzero(sc, sizeof(*sc));
-	rtc_sc = sc;
 	dev->si_drv1 = sc; /* Link together */
 	sc->dev = dev;
+	sc->var.freq = 1;
+
+#if __FreeBSD_version >= 500000
+	callout_init(&sc->var.rtc_handle, 1);
+#else
+	callout_init(&sc->var.rtc_handle);
+#endif
 	
 	DLog(Lexit, "new %p,%p", dev, sc);
 	return sc;
 }
 
 static int
-rtc_detach(struct rtc_softc *sc) 
+rtc_detach(dev_t dev, struct rtc_softc *sc) 
 {
 	int error=0;
 
 	if (sc == NULL) {
 		return error;
 	}
-	if (sc->var.flags.opened) {
-		return EBUSY;
-	}
+
+	callout_stop(&sc->var.rtc_handle);
 	FREE(sc, M_DEVBUF);
+	dev->si_drv1 = NULL;
 	return error;
 }
 
@@ -191,8 +202,6 @@ rtc_open(dev_t dev, int oflag, int otyp, struct proc *p)
 	if (sc->var.flags.opened)
 		return (EBUSY);
 	
-	bzero(&sc->var, sizeof(sc->var));
-
 	sc->var.flags.opened = 1;
 	
 	return 0;
@@ -207,6 +216,7 @@ rtc_close(dev_t dev, int fflag, int otyp, struct proc *p)
 {
 	struct rtc_softc *sc = (struct rtc_softc *) dev->si_drv1;
 
+	rtc_detach(dev, sc);
 	sc->var.flags.opened = 0;
 	return 0;
 }
@@ -219,13 +229,30 @@ rtc_ioctl(dev_t dev, u_long cmd, caddr_t arg, int mode, struct proc *p)
 #endif
 {
 	struct rtc_softc *sc = (struct rtc_softc *) dev->si_drv1;
-	int error=0;
+	int error=0, freq, sleep;
 	
 	DLog(Lenter, "cmd 0x%04lx", cmd);
 	switch (cmd) {
 	case RTCIO_IRQP_SET:
-		sc->var.freq = *(int *)arg;
+		freq = *(int *)arg;
+		if (freq < 2) {
+			error = EINVAL;
+			break;
+		}
+		if (freq > 1024) {
+			error = EINVAL;
+			break;
+		}
+		sc->var.freq = freq;
+		if (sc->var.freq * 9 > hz * 8) {
+			sc->var.freq = hz;
+			printf("rtc: %d > kern.hz: Timing will be inaccurate, please increase hz.\n", sc->var.freq);
+		}
+		sleep = hz / sc->var.freq;
 		DLog(Linfo, "Set RTC freq %d", sc->var.freq);
+		callout_stop(&sc->var.rtc_handle);
+		nanouptime(&sc->var.lasttime);
+		callout_reset(&sc->var.rtc_handle, sleep, &rtc_callback, (void *)sc);
 		break;
 	case RTCIO_PIE_ON:
 		sc->var.flags.enabled = 1;
@@ -249,19 +276,38 @@ rtc_poll(dev_t dev, int events, struct proc *p)
 {
 	struct rtc_softc *sc = (struct rtc_softc *) dev->si_drv1;
    	int revents = 0;
-	int delay;
 	
 	if (!sc->var.flags.enabled) 
 		return 0;
 
-	delay = 1000000/sc->var.freq;
-
 	if (events) {
 		DLog(Linfo, "Delay for %d usec", delay);
-		DELAY(delay);
-		revents = events;
+		if (sc->var.woken) {
+			sc->var.woken = 0;
+			revents = events;
+		} else {
+			selrecord(p, &sc->var.sip);
+		}
 	}
 	return revents;
+}
+
+int 
+rtc_read(dev_t dev, struct uio *uio, int flags __unused)
+{
+	struct rtc_softc *sc = (struct rtc_softc *) dev->si_drv1;
+	int error;
+	
+	if (!sc->var.flags.enabled) 
+		return 0;
+
+	if (flags & IO_NDELAY)
+		return EAGAIN;
+
+	DLog(Linfo, "Delay for %d usec", delay);
+	error = tsleep(&sc->var.rtc_ident, PCATCH, "rtc rd", hz * 10);
+	sc->var.woken = 0;
+	return 0;
 }
 
 /* -=-=-=-=-=-=-=-=-= module load/unload stuff -=-=-=-=-=-=-=-=-= */
@@ -278,7 +324,7 @@ init_module(void)
 		return error;
 #endif
 
-	rtc_dev = make_dev(&rtc_cdevsw, 0, UID_ROOT, GID_WHEEL, 0600, DEVICE_NAME);
+	rtc_dev = make_dev(&rtc_cdevsw, 0, UID_ROOT, GID_WHEEL, 0644, DEVICE_NAME);
 	if (rtc_dev==NULL)
 		error = ENOMEM;
 
@@ -290,14 +336,8 @@ init_module(void)
 static int
 cleanup_module(void)
 {
-	int error;
-	struct rtc_softc *sc;
+	int error = 0;
 
-	sc = rtc_sc;
-	if ( (error=rtc_detach(sc)) !=0) {
-		DLog(Lfail, "%p busy", sc);
-		return error;
-	}
 	destroy_dev(rtc_dev);
 #if __FreeBSD_version < 500104
 	error = cdevsw_remove(&rtc_cdevsw);
@@ -330,4 +370,42 @@ rtc_modeevent(module_t mod, int cmd, void *arg)
     return (error);
 }
 
+void
+rtc_callback(void *xtp)
+{
+	int sleep;
+	struct rtc_softc *sc = (struct rtc_softc *)xtp;
+	struct timespec curtime, nexttime, increment;
 
+	if (callout_pending(&sc->var.rtc_handle) || !callout_active(&sc->var.rtc_handle))
+		return;
+	/* Wakeup sleepers */
+	sc->var.woken = 1;
+	selwakeup(&sc->var.sip);
+	wakeup(&sc->var.rtc_ident);
+
+	/* Setup for our next nap. */
+	nanouptime(&curtime);
+restart:
+	increment.tv_sec = 0;
+	increment.tv_nsec = 1000000000 / sc->var.freq;
+	timespecadd(&sc->var.lasttime, &increment);
+	nexttime.tv_sec = sc->var.lasttime.tv_sec;
+	nexttime.tv_nsec = sc->var.lasttime.tv_nsec;
+	timespecadd(&nexttime, &increment);
+	if (timespeccmp(&nexttime, &curtime, <)) {
+		/* Catch up if we lag curtime */
+		sc->var.lasttime.tv_sec = curtime.tv_sec;
+		sc->var.lasttime.tv_nsec = curtime.tv_nsec;
+		timespecsub(&sc->var.lasttime, &increment);
+		timespecsub(&nexttime, &curtime);
+#if 0
+		printf("lagging curtime by %d.%ld\n", nexttime.tv_sec, nexttime.tv_nsec);
+#endif
+		goto restart;
+	} else {
+		timespecsub(&nexttime, &curtime);
+		sleep = nexttime.tv_nsec / (1000000000 / hz);
+	}
+	callout_reset(&sc->var.rtc_handle, sleep, &rtc_callback, xtp);
+}
