@@ -1,8 +1,9 @@
-# $Id: Makefile,v 1.87 1999/05/03 03:55:02 steve Exp $
+# $Id: Makefile,v 1.88 1999/05/05 22:18:28 mharo Exp $
 #
 
     SUBDIR += amp
     SUBDIR += ascd
+    SUBDIR += aumix
     SUBDIR += bladeenc
     SUBDIR += cam
     SUBDIR += cdd
