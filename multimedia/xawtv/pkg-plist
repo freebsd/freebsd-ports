@@ -59,6 +59,7 @@ share/xawtv/ntsc-cable-ca.list
 share/xawtv/ntsc-cable-jp.list
 share/xawtv/ntsc-cable.list
 share/xawtv/ntsc-hrc.list
+share/xawtv/oirt-h.list
 share/xawtv/oirt-i-iii.list
 share/xawtv/oirt-sl-sh.list
 share/xawtv/pal-australia-optus.list
@@ -69,6 +70,7 @@ share/xawtv/pal-ireland.list
 share/xawtv/pal-italy.list
 share/xawtv/pal-newzealand.list
 share/xawtv/secam-france.list
+share/xawtv/secam-russia.list
 share/xawtv/uhf.list
 @dirrm share/xawtv
 @cwd %%X11BASE%%
