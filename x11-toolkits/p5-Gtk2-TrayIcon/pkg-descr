@@ -1,0 +1,9 @@
+Interface to the EggTrayIcon library
+
+This module allows a Perl developer to embed an arbitrary widget
+in a System Tray like the Gnome notification area. 
+
+WWW: http://search.cpan.org/dist/Gtk2-TrayIcon/
+
+- Florent Thoumie
+flz@FreeBSD.org

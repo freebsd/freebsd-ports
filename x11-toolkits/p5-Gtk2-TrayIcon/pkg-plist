@@ -1,0 +1,12 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Gtk2/TrayIcon/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Gtk2/TrayIcon/TrayIcon.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Gtk2/TrayIcon/TrayIcon.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/TrayIcon/Install/Files.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/TrayIcon/Install/trayicon-autogen.h
+%%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/TrayIcon/Install/trayicon.typemap
+%%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/TrayIcon.pm
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Gtk2/TrayIcon
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Gtk2 2> /dev/null || true
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/TrayIcon/Install
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/TrayIcon
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Gtk2 2> /dev/null || true
