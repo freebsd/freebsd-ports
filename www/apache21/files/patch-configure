@@ -1,5 +1,5 @@
---- configure.orig	Mon Mar 31 16:48:51 2003
-+++ configure	Thu Apr  3 21:18:08 2003
+--- configure.orig	Wed May 28 14:11:27 2003
++++ configure	Fri May 30 07:47:42 2003
 @@ -1513,7 +1513,7 @@
        $srcdir/config.layout > $pldconf
    layout_name=$LAYOUT
@@ -9,25 +9,25 @@
    for var in prefix exec_prefix bindir sbindir libexecdir mandir \
               sysconfdir datadir errordir iconsdir htdocsdir cgidir \
               includedir localstatedir runtimedir logfiledir libdir \
-@@ -2613,7 +2613,7 @@
-     ac_sub_cache_file="$ac_popdir/$cache_file" ;;
-   esac
+@@ -2627,7 +2627,7 @@
+   done
  
--              if eval $SHELL $ac_abs_srcdir/configure $ac_configure_args --cache-file=$ac_sub_cache_file --srcdir=$ac_abs_srcdir $apache_apr_flags --prefix=$prefix --exec-prefix=$exec_prefix --libdir=$libdir --includedir=$includedir --bindir=$bindir --datadir=$datadir --with-installbuilddir=$installbuilddir
-+              if eval $SHELL $ac_abs_srcdir/configure $ac_configure_args --cache-file=$ac_sub_cache_file --srcdir=$ac_abs_srcdir $apache_apr_flags --prefix=$prefix --exec-prefix=$exec_prefix --libdir=$libdir --includedir=$includedir --bindir=$libdir --datadir=$datadir --with-installbuilddir=$installbuilddir
+ 
+-              if eval $SHELL $ac_abs_srcdir/configure $apr_configure_args --cache-file=$ac_sub_cache_file --srcdir=$ac_abs_srcdir $apache_apr_flags --prefix=$prefix --exec-prefix=$exec_prefix --libdir=$libdir --includedir=$includedir --bindir=$bindir --datadir=$datadir --with-installbuilddir=$installbuilddir
++              if eval $SHELL $ac_abs_srcdir/configure $apr_configure_args --cache-file=$ac_sub_cache_file --srcdir=$ac_abs_srcdir $apache_apr_flags --prefix=$prefix --exec-prefix=$exec_prefix --libdir=$libdir --includedir=$includedir --bindir=$libdir --datadir=$datadir --with-installbuilddir=$installbuilddir
    then :
      echo "srclib/apr configured properly"
    else
-@@ -2888,7 +2888,7 @@
-     ac_sub_cache_file="$ac_popdir/$cache_file" ;;
-   esac
+@@ -2928,7 +2928,7 @@
+   done
  
--              if eval $SHELL $ac_abs_srcdir/configure $ac_configure_args --cache-file=$ac_sub_cache_file --srcdir=$ac_abs_srcdir --with-apr=../apr --prefix=$prefix --exec-prefix=$exec_prefix --libdir=$libdir --includedir=$includedir --bindir=$bindir
-+              if eval $SHELL $ac_abs_srcdir/configure $ac_configure_args --cache-file=$ac_sub_cache_file --srcdir=$ac_abs_srcdir --with-apr=../apr --prefix=$prefix --exec-prefix=$exec_prefix --libdir=$libdir --includedir=$includedir --bindir=$libdir
+ 
+-              if eval $SHELL $ac_abs_srcdir/configure $apr_configure_args --cache-file=$ac_sub_cache_file --srcdir=$ac_abs_srcdir --with-apr=../apr --prefix=$prefix --exec-prefix=$exec_prefix --libdir=$libdir --includedir=$includedir --bindir=$bindir
++              if eval $SHELL $ac_abs_srcdir/configure $apr_configure_args --cache-file=$ac_sub_cache_file --srcdir=$ac_abs_srcdir --with-apr=../apr --prefix=$prefix --exec-prefix=$exec_prefix --libdir=$libdir --includedir=$includedir --bindir=$libdir
    then :
      echo "srclib/apr-util configured properly"
    else
-@@ -15634,6 +15634,9 @@
+@@ -15719,6 +15719,9 @@
  
  cat >>confdefs.h <<_ACEOF
  #define SERVER_CONFIG_FILE "${rel_sysconfdir}/${progname}.conf"
