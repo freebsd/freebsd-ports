@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	erb
-PORTVERSION=	1.4.1
+PORTVERSION=	1.4.3
 CATEGORIES=	textproc ruby
 MASTER_SITES=	http://www2a.biglobe.ne.jp/~seki/ruby/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
