@@ -7,9 +7,10 @@
 
 PORTNAME=	palmos-sdk
 PORTVERSION=	3.5
+PORTREVISION=	1
 CATEGORIES=	palm
 MASTER_SITES=	
-DISTNAME=	sdk35
+DISTFILES=	sdk35.tar.gz sdk35-update1.tar.gz
 
 MAINTAINER=	kuriyama@FreeBSD.org
 
@@ -22,7 +23,7 @@ LIBDIR=		${PREFIX}/palmdev/sdk-3.5/lib
 
 .include <bsd.port.pre.mk>
 
-.if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
+.if !exists(${DISTDIR}/sdk35.tar.gz) || !exists(${DISTDIR}/sdk35-update1.tar.gz)
 IGNORE='You must manually fetch tarball from http://www.palmos.com/dev/tech/tools/ and place it in ${DISTDIR} then run make again.'
 .endif
 
