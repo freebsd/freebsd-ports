@@ -57,10 +57,10 @@ share/locale/uk/LC_MESSAGES/GConf.mo
 share/locale/zh_CN.GB2312/LC_MESSAGES/GConf.mo
 @exec mkdir -p %D/etc/gconf/gconf.xml.defaults/apps
 @exec mkdir -p %D/etc/gconf/gconf.xml.defaults/schemas/apps
-@unexec rm -f %D/etc/gconf/gconf.xml.defaults/%gconf.xml 2>/dev/null || true
-@unexec rm -f %D/etc/gconf/gconf.xml.defaults/apps/%gconf.xml 2>/dev/null || true
-@unexec rm -f %D/etc/gconf/gconf.xml.defaults/schemas/%gconf.xml 2>/dev/null || true
-@unexec rm -f %D/etc/gconf/gconf.xml.defaults/schemas/apps/%gconf.xml 2>/dev/null || true
+@unexec rm -f %D/etc/gconf/gconf.xml.defaults/%%gconf.xml 2>/dev/null || true
+@unexec rm -f %D/etc/gconf/gconf.xml.defaults/apps/%%gconf.xml 2>/dev/null || true
+@unexec rm -f %D/etc/gconf/gconf.xml.defaults/schemas/%%gconf.xml 2>/dev/null || true
+@unexec rm -f %D/etc/gconf/gconf.xml.defaults/schemas/apps/%%gconf.xml 2>/dev/null || true
 @dirrm share/gnome/gconf/1
 @dirrm share/gnome/gconf
 @dirrm lib/GConf/1
