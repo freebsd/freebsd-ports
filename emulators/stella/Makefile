@@ -3,7 +3,7 @@
 # Date created:				March 4, 1999
 # Whom:					Jacques Vidrine <nectar@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.5 1999/03/04 23:24:27 nectar Exp $
+# $Id: Makefile,v 1.6 1999/04/07 15:52:58 nectar Exp $
 #
 
 DISTNAME=	stella-1.1-src
@@ -20,6 +20,8 @@ PORTTOP=	${WRKDIR}/${PKGNAME}
 WRKSRC=		${PORTTOP}/src/build
 MAKEFILE=	makefile
 ALL_TARGET=	freebsd-x
+
+USE_XLIB=	yes
 
 ROMSDIR=	${PREFIX}/share/stella/roms
 ROMS=		ELK.BIN OKIEDOKE.BIN OYSTR29.BIN TEST.BIN TPS.BIN
