@@ -1,0 +1,30 @@
+# New ports collection Makefile for: 	swiggle
+# Date created:				19 Feb 2003
+# Whom:					Josef El-Rayes <j.el-rayes@daemon.li>
+#
+# $FreeBSD$
+
+PORTNAME=	swiggle
+PORTVERSION=	0.3
+CATEGORIES=	www
+MASTER_SITES=	http://mailbox.univie.ac.at/~le/swiggle/files/ \
+		http://www.daemon.li/downloads/
+
+MAINTAINER=	j.el-rayes@daemon.li
+COMMENT=	"Swiggle is a commandline web image gallery generator"
+
+LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg:install \
+		exif.8:${PORTSDIR}/graphics/libexif:install
+
+USE_REINPLACE=	yes
+
+post-patch:
+	${REINPLACE_CMD} -e 's,/usr/local,${LOCALBASE},g' ${WRKSRC}/Makefile
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/swiggle ${PREFIX}/bin
+
+post-install:
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+
+.include <bsd.port.mk>

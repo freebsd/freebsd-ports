@@ -1,0 +1,19 @@
+swiggle is a small command line tool that generates HTML pages, 
+including thumbnail indexes, for given images 
+(a so called "web gallery"). 
+It's intended to be easy to use, and since it is written in C, 
+it's quite speedy.
+
+It uses libjpeg for decompression and compression of images, 
+libexif for getting EXIF information contained in the images, 
+and it caches scaled images so that subsequent runs don't need to 
+scale images again and are faster. 
+Of course, the original images aren't changed.
+
+Currently, it only processes JPEG images, and it's thought 
+to be used primarily with images taken with digital cameras. 
+
+WWW: http://mailbox.univie.ac.at/~le/swiggle/
+
+Josef El-Rayes
+j.el-rayes@daemon.li
