@@ -1,0 +1,8 @@
+--- Makefile.base.orig	Sun Nov 10 02:13:55 2002
++++ Makefile.base	Sun Nov 10 02:14:00 2002
+@@ -1,4 +1,4 @@
+-CFLAGS  = -Wall -Winline ${TFLAGS}
++CFLAGS  += -Wall -Winline ${TFLAGS}
+ OBJECTS = fce.o x6502.o video.o general.o endian.o svga.o sound.o nsf.o fds.o netplay.o ines.o state.o unif.o input.o file.o cart.o crc32.o memory.o cheat.o debug.o
+ 
+ fceu: 		fceu2

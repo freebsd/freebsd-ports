@@ -1,0 +1,29 @@
+bin/fceu
+%%PORTDOCS%%share/doc/fceu/AUTHORS
+%%PORTDOCS%%share/doc/fceu/COPYING
+%%PORTDOCS%%share/doc/fceu/ChangeLog
+%%PORTDOCS%%share/doc/fceu/FAQ
+%%PORTDOCS%%share/doc/fceu/README
+%%PORTDOCS%%share/doc/fceu/TODO
+%%PORTDOCS%%share/doc/fceu/cheat.txt
+%%PORTDOCS%%share/doc/fceu/fcs.txt
+%%PORTDOCS%%share/doc/fceu/porting.txt
+%%PORTDOCS%%share/doc/fceu/readme-linux.txt
+%%PORTDOCS%%%%TECHDOCS%%share/doc/fceu/tech/README.now
+%%PORTDOCS%%%%TECHDOCS%%share/doc/fceu/tech/README.sound
+%%PORTDOCS%%%%TECHDOCS%%share/doc/fceu/tech/UNIF_current.txt
+%%PORTDOCS%%%%TECHDOCS%%share/doc/fceu/tech/nsfspec.txt
+%%PORTDOCS%%%%TECHDOCS%%share/doc/fceu/tech/cpu/4017.txt
+%%PORTDOCS%%%%TECHDOCS%%share/doc/fceu/tech/cpu/6502_cpu.txt
+%%PORTDOCS%%%%TECHDOCS%%share/doc/fceu/tech/cpu/NESSOUND.txt
+%%PORTDOCS%%%%TECHDOCS%%share/doc/fceu/tech/cpu/dmc.txt
+%%PORTDOCS%%%%TECHDOCS%%share/doc/fceu/tech/exp/mmc5-e.txt
+%%PORTDOCS%%%%TECHDOCS%%share/doc/fceu/tech/exp/mmc5_bank_switch.txt
+%%PORTDOCS%%%%TECHDOCS%%share/doc/fceu/tech/ppu/loopy1.txt
+%%PORTDOCS%%%%TECHDOCS%%share/doc/fceu/tech/ppu/loopy2.txt
+%%PORTDOCS%%%%TECHDOCS%%share/doc/fceu/tech/ppu/timing.txt
+%%PORTDOCS%%%%TECHDOCS%%@dirrm share/doc/fceu/tech/ppu
+%%PORTDOCS%%%%TECHDOCS%%@dirrm share/doc/fceu/tech/exp
+%%PORTDOCS%%%%TECHDOCS%%@dirrm share/doc/fceu/tech/cpu
+%%PORTDOCS%%%%TECHDOCS%%@dirrm share/doc/fceu/tech
+%%PORTDOCS%%@dirrm share/doc/fceu

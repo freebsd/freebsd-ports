@@ -1,0 +1,18 @@
+--- Makefile.unixsdl.orig	Fri Jun 20 12:50:03 2003
++++ Makefile.unixsdl	Sun Jul 20 20:43:22 2003
+@@ -1,5 +1,5 @@
+ CC	= gcc 
+-TFLAGS  = -DFRAMESKIP -DSTDIOIFACE -DUNIXDSP -DNETWORK -DFPS `sdl-config --cflags` -mcpu=i686 -O2 -Izlib -fomit-frame-pointer -DC80x86 -DLSB_FIRST -DSDL -DUNIX -DPSS_STYLE=1 -DZLIB
++TFLAGS  = -DFRAMESKIP -DSTDIOIFACE -DUNIXDSP -DNETWORK -DFPS `%%LOCALBASE%%/bin/sdl11-config --cflags` -Izlib -DC80x86 -DLSB_FIRST -DSDL -DUNIX -DPSS_STYLE=1 -DZLIB %%CFLAGS%%
+ 
+ RM	= rm -f
+ B	= drivers/cli/
+@@ -9,7 +9,7 @@
+ include zlib/Makefile
+ 
+ OBJDRIVER	= ${B}sdl.o ${B}interface.o ${B}main.o ${B}sdl-throttle.o ${B}unix-netplay.o ${B}sdl-sound.o ${B}sdl-video.o ${B}sdl-joystick.o drivers/common/cheat.o drivers/common/config.o drivers/common/args.o drivers/common/vidblit.o drivers/common/unixdsp.o ${UNZIPOBJS}
+-LDRIVER		= -lm `sdl-config --libs` -lz
++LDRIVER		= -lm `%%LOCALBASE%%/bin/sdl11-config --libs` -lz
+ 
+ include Makefile.base
+ 

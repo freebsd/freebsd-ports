@@ -1,0 +1,12 @@
+FCE Ultra is an NTSC and PAL Famicom/NES emulator for various 
+platforms. It is based upon Bero's original FCE source code.  Current
+features include good PPU, CPU, pAPU, expansion chip, and joystick
+emulation.  Also a feature unique to this emulator(at the current
+time) is authentic Game Genie emulation.  Save states and snapshot
+features also have been implemented.  The VS Unisystem is emulated
+as well.  FCE Ultra supports iNES format ROM images, UNIF format ROM
+images, headerless and FWNES style FDS disk images, and NSF files.
+
+FCE Ultra currently supports the following iNES mappers(many partially):
+
+WWW: http://fceultra.sourceforge.net/

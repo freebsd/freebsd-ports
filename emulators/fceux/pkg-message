@@ -1,0 +1,10 @@
+	To enable start/stop seti@home client,
+	please run "setiathome" as your login name.
+	If you installed "setiathome" by ports or package,
+	change the line 9 of %%LOCALBASE%%/etc/rc.d/setiathome.sh
+		seti_user=nobody
+			  ^^^^^^
+	to your login name before setting up working directory.
+	If you already done this as nobody, do
+		%%LOCALBASE%%/etc/rc.d/setiathome.sh stop
+		chown -R "YOUR LOGIN NAME" /var/db/setiathome
