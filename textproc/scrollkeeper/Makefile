@@ -18,8 +18,10 @@ MAINTAINER=	gnome@FreeBSD.org
 LIB_DEPENDS=	xslt.1:${PORTSDIR}/textproc/libxslt \
 		intl.4:${PORTSDIR}/devel/gettext
 BUILD_DEPENDS=	intltool-extract:${PORTSDIR}/textproc/intltool \
+		${LOCALBASE}/share/xml/docbook/${DOCBOOK_VERSION}/docbook.cat:${PORTSDIR}/textproc/docbook-xml \
 		${LOCALBASE}/share/xsl/docbook/xhtml/chunk.xsl:${PORTSDIR}/textproc/docbook-xsl
 RUN_DEPENDS=	intltool-extract:${PORTSDIR}/textproc/intltool \
+		${LOCALBASE}/share/xml/docbook/${DOCBOOK_VERSION}/docbook.cat:${PORTSDIR}/textproc/docbook-xml \
 		${LOCALBASE}/share/xsl/docbook/xhtml/chunk.xsl:${PORTSDIR}/textproc/docbook-xsl
 
 # Don't use USE_X_PREFIX - the port doesn't really require X11 to run.
@@ -27,6 +29,8 @@ RUN_DEPENDS=	intltool-extract:${PORTSDIR}/textproc/intltool \
 # (only?) consumer of this port, and BadThings[tm] happen if it's not
 # put in the right place.
 PREFIX?=	${X11BASE}
+
+DOCBOOK_VERSION=	4.1.2
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
