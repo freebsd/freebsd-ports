@@ -8,7 +8,14 @@
 %%PYTHON_SITELIBDIR%%/pyPgSQL/libpq/__init__.pyc
 %%PYTHON_SITELIBDIR%%/pyPgSQL/libpq/__init__.pyo
 %%PYTHON_SITELIBDIR%%/pyPgSQL/libpq/libpqmodule.so
-%%PORTDOCS%%share/doc/py-pyPgSQL/README
 @dirrm %%PYTHON_SITELIBDIR%%/pyPgSQL/libpq
 @dirrm %%PYTHON_SITELIBDIR%%/pyPgSQL
+%%PORTDOCS%%share/doc/py-pyPgSQL/README
+%%PORTDOCS%%share/doc/py-pyPgSQL/README.html
 %%PORTDOCS%%@dirrm share/doc/py-pyPgSQL
+%%PORTDOCS%%share/examples/py-pyPgSQL/basic.py
+%%PORTDOCS%%share/examples/py-pyPgSQL/demo1a.py
+%%PORTDOCS%%share/examples/py-pyPgSQL/demo1b.py
+%%PORTDOCS%%share/examples/py-pyPgSQL/demo2a.py
+%%PORTDOCS%%share/examples/py-pyPgSQL/demo2b.py
+%%PORTDOCS%%@dirrm share/examples/py-pyPgSQL

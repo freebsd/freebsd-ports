@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	pyPgSQL
-PORTVERSION=	2.2
+PORTVERSION=	2.3
 CATEGORIES=	databases python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	pypgsql
 PKGNAMEPREFIX=	py-
-DISTNAME=	pypgsql-${PORTVERSION}
+DISTNAME=	pyPgSQL-${PORTVERSION}
 
 MAINTAINER=	gerhard.haering@gmx.de
 
@@ -21,24 +21,24 @@ LIB_DEPENDS=	pq.2:${PORTSDIR}/databases/postgresql7
 WRKSRC=		${WRKDIR}/pypgsql
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
-USE_REINPLACE=	YES
 
-DOCS=		README
-
-PLIST_SUB+=	PYTHON_SITELIBDIR=${PYTHON_SITELIBDIR:S/^${LOCALBASE}\///g}
+DOCS=		README README.html
+EXAMPLES=	examples/*.py
 
 DATETIME_DEP=	${PYTHON_SITELIBDIR}/mx/DateTime/__init__.py
 
 DOCSDIR=	${PREFIX}/share/doc/py-pyPgSQL
-
-post-patch:
-	${REINPLACE_CMD} -e 's^/usr/local^${LOCALBASE}^g' ${WRKSRC}/setup.py
+EXAMPLESDIR=	${PREFIX}/share/examples/py-pyPgSQL
 
 .if !defined(NOPORTDOCS)
 post-install:
 	@${MKDIR} ${DOCSDIR}
 .for file in ${DOCS}
 	@${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+.endfor
+	@${MKDIR} ${EXAMPLESDIR}
+.for file in ${EXAMPLES}
+	@${INSTALL_DATA} ${WRKSRC}/${file} ${EXAMPLESDIR}
 .endfor
 .endif
 
