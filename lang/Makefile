@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.113 1998/11/10 02:01:52 steve Exp $
+# $Id: Makefile,v 1.114 1998/11/10 02:07:32 steve Exp $
 #
 
     SUBDIR += ETHOberonV4
@@ -68,6 +68,7 @@
     SUBDIR += smalltalk
     SUBDIR += sml-nj
     SUBDIR += squeak
+    SUBDIR += squeak2
     SUBDIR += sr
     SUBDIR += swi-pl
     SUBDIR += tcl75

@@ -1,4 +1,22 @@
-This is the port of squeak, a free smalltalk system with a graphical
-user interface. 
+Squeak is a new implementation of the Smalltalk programming
+environment; it includes:
 
--- Roland Jesse <jesse@cs.uni-magdeburg.de>
+    * a rapid-turn-around Smalltalk-80 compiler,
+    * a caching-JIT run-time virtual machine (with full source in
+      Smalltalk),
+    * large class libraries with portable data and GUI models, and
+    * an integrated development environment with coding tools, GUI
+      construction,
+    * and much more. 
+
+Squeak was developed at Apple Labs, and has been ported to a variety
+of computers (including most flavors of UNIX and Windows). Compared to
+other Smalltalk systems, Squeak has 4 important features:
+
+    * Portability (to Mac, Windows, WinCE, and many flavors of UNIX);
+    * Speed (it uses native C for compute-intensive code);
+    * Price (free, including all source code and the right to distribute
+      applications!); and
+    * Sophistication (full Smalltalk-80 language, libraries, and tools).
+
+Jacques Vidrine <nectar@FreeBSD.ORG>
