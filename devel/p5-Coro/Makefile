@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Coro
-PORTVERSION=	0.97
+PORTVERSION=	1.0a
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Coro
@@ -18,6 +18,8 @@ COMMENT=	Coro - coroutine process abstraction for perl
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Event.pm:${PORTSDIR}/devel/p5-Event \
 		${SITE_PERL}/${PERL_ARCH}/Scalar/Util.pm:${PORTSDIR}/lang/p5-Scalar-List-Utils
 RUN_DEPENDS=	${BUILD_DEPENDS}
+
+WRKSRC=		${WRKDIR}/${DISTNAME:S/a$//}
 
 PERL_CONFIGURE=	yes
 
