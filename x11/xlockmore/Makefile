@@ -3,7 +3,7 @@
 # Date created:		9 November 1994
 # Whom:			smace
 #
-# $Id: Makefile,v 1.26 1998/02/04 07:58:59 tg Exp $
+# $Id: Makefile,v 1.27 1998/03/03 08:29:04 tg Exp $
 #
 
 DISTNAME=       xlockmore-4.08
@@ -22,7 +22,7 @@ CONFIGURE_ARGS= --without-gl --without-motif --without-sx \
 USE_X11=	yes
 MAN1=		xlock.1
 
-.if exists(${X11BASE}/lib/libMesaGL.a)
+.if exists(${X11BASE}/lib/libMesaGL.a) || defined(PACKAGE_BUILDING)
 CONFIGURE_ARGS+=	--with-mesagl
 LIB_DEPENDS+=		GL\\.13:${PORTSDIR}/graphics/Mesa
 .else
