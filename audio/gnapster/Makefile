@@ -10,7 +10,7 @@ PORTVERSION=	1.5.0
 CATEGORIES=	audio
 MASTER_SITES=	http://www.faradic.net/~jasta/files/
 
-MAINTAINER=	cpiazza@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes

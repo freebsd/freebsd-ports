@@ -11,7 +11,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://www.geocities.com/TimesSquare/Zone/5267/
 DISTFILES=	blockade-1_00-linux.tar.gz
 
-MAINTAINER=	cpiazza@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 USE_XLIB=	yes
 

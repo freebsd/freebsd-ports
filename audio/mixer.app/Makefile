@@ -11,7 +11,7 @@ CATEGORIES=	audio
 MASTER_SITES=	http://www.fukt.bth.se/~per/mixer/
 DISTNAME=	Mixer.app-${PORTVERSION}
 
-MAINTAINER=	cpiazza@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 USE_XPM=	yes
 

@@ -10,7 +10,7 @@ PORTVERSION=	1.6d
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.vcdgear.org/files/
 
-MAINTAINER=	cpiazza@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 .include <bsd.port.pre.mk>
 .if ${OSVERSION} < 300004

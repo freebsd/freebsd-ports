@@ -15,7 +15,7 @@ MASTER_SITES=	http://www.azstarnet.com/~donut/programs/id3ed/ \
 #		${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	apps/sound/editors
 
-MAINTAINER=	cpiazza@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
