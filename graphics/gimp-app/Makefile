@@ -42,7 +42,7 @@ INSTALLS_SHLIB=	yes
 LIBTOOLFLAGS=	--disable-ltlibs --release-ignore
 PLIST_SUB=	SHLIBVER="${SHLIBVER}"
 CONFIGURE_ARGS=	--disable-perl \
-		--with-html-dir=${PREFIX}/share/doc/gimp \
+		--with-html-dir=${DOCSDIR} \
 		--disable-gtk-doc \
 		--enable-static
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
@@ -53,10 +53,13 @@ GIMP_DISTFILE=	${DISTDIR}/${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
 MAN1=		gimp.1 gimp-2.0.1 gimptool-2.0.1 gimp-remote.1 gimp-remote-2.0.1
 MAN5=		gimprc.5 gimprc-2.0.5
 
+.if defined(WITH_DEBUG)
+CONFIGURE_ARGS+=	--enable-debug
+.endif
+
 .if defined(WITH_PYTHON)
-USE_PYTHON=	yes
-BUILD_DEPENDS+=	${PYTHON_SITELIBDIR}/gtk-2.0/gtk/_gtk.so:${PORTSDIR}/x11-toolkits/py-gtk2
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/gtk-2.0/gtk/_gtk.so:${PORTSDIR}/x11-toolkits/py-gtk2
+USE_PYTHON=		yes
+USE_GNOME+=		pygtk2
 CONFIGURE_ARGS+=	--enable-python
 PLIST_SUB+=		PYTHON:=""
 .else
@@ -74,10 +77,6 @@ PLIST_SUB+=		PRINT=""
 
 .include <bsd.port.pre.mk>
 
-.if exists(${X11BASE}/libdata/pkgconfig/libgtkhtml-2.0.pc)
-WITH_HTML_HELP_BROWSER=	yes
-.endif
-
 .if ${HAVE_GNOME:Mgnomepanel}!=""
 USE_GNOME+=		gnomepanel
 CONFIGURE_ARGS+=	--with-desktop-dir=${X11BASE}/share/gnome
@@ -87,7 +86,7 @@ PLIST_SUB+=		GNOMEPANEL:=""
 PLIST_SUB+=		GNOMEPANEL:="@comment "
 .endif
 
-.if defined(WITH_HTML_HELP_BROWSER)
+.if ${HAVE_GNOME:Mlibgtkhtml}!="" || defined(WITH_HTML_HELP_BROWSER)
 USE_GNOME+=		libgtkhtml
 PLIST_SUB+=		HELPBROWSER:=""
 .else
@@ -98,6 +97,7 @@ pre-everything::
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "gimp has the following tunable option(s):"
 	@${ECHO_MSG} ""
+	@${ECHO_MSG} "	WITH_DEBUG=yes		Turns on debugging"
 	@${ECHO_MSG} "	WITH_PYTHON=yes		Turns on Python-Fu support"
 	@${ECHO_MSG} "	WITHOUT_PRINT=yes	Turns off GIMP printing"
 	@${ECHO_MSG} "	WITH_HTML_HELP_BROWSER=yes	Turns on the GIMP help browser"
