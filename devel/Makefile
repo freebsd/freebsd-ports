@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.30 1996/09/16 00:31:05 asami Exp $
+# $Id: Makefile,v 1.31 1996/09/21 09:51:13 asami Exp $
 #
 
     SUBDIR += SWIG
@@ -17,6 +17,20 @@
     SUBDIR += mkmf
     SUBDIR += mprof
     SUBDIR += noweb
+    SUBDIR += p5-BSD-Resource
+    SUBDIR += p5-C-Scan
+    SUBDIR += p5-ConfigReader
+    SUBDIR += p5-Curses
+    SUBDIR += p5-Data-Dumper
+    SUBDIR += p5-Data-Flow
+    SUBDIR += p5-File-BasicFlock
+    SUBDIR += p5-File-Lock
+    SUBDIR += p5-File-Slurp
+    SUBDIR += p5-File-Tools
+    SUBDIR += p5-Include
+    SUBDIR += p5-IniConf
+    SUBDIR += p5-Ioctl
+    SUBDIR += p5-Time
     SUBDIR += tkcvs
     SUBDIR += uulib
     SUBDIR += xxgdb
