@@ -29,7 +29,6 @@
     SUBDIR += binkd
     SUBDIR += boclient
     SUBDIR += bounce
-    SUBDIR += bpft
     SUBDIR += brouted
     SUBDIR += bsdproxy
     SUBDIR += cap
