@@ -1,4 +1,4 @@
-cool window manager developped in a very hot day in a winter
+Window Manager designed for speed, usability and consistency.
 
 When you want titlebars to be bottom ( default is top ),
  % make -DTITLE_BOTTOM install
@@ -7,9 +7,11 @@ When you want gnome option,
  % make -DGNOME install
 
 When you want i18n option,
- % make -DI18N install
+ % make -DUSE_I18N install
 
 When you want to compile with xlocale option,
  % make -DXLOCALE install
 
 'bsd-daemon.xpm' is from Steve Farrell.
+
+WWW: http://www.kiss.uni-lj.si/~k4fr0235/icewm/ 
