@@ -36,7 +36,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       <system>
 	<name>FreeBSD</name>
 	<range><ge>4.9</ge><lt>4.9_10</lt></range>
-	<range><ge>4.0</ge><lt>4.8_23</lt></range>
+	<range><ge>4.8</ge><lt>4.8_23</lt></range>
       </system>
     </affects>
     <description>
