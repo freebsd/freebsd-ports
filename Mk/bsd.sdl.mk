@@ -37,7 +37,7 @@ SDL_Include_MAINTAINER=		edwin@FreeBSD.org
 #
 # These are the current supported SDL modules
 #
-_USE_SDL_ALL=	gfx gui image mixer ldbad mm net sdl sound ttf
+_USE_SDL_ALL=	gfx gui image mixer mm net sdl sound ttf
 
 #
 # Variables used to determine what is needed:
@@ -59,10 +59,6 @@ _REQUIRES_gui=	sdl image ttf
 _VERSION_image=	10
 _SUBDIR_image=	graphics
 _REQUIRES_image=sdl
-
-_VERSION_ldbad=	4
-_SUBDIR_ldbad=	devel
-_REQUIRES_ldbad=sdl
 
 _VERSION_mixer=	2
 _SUBDIR_mixer=	audio
