@@ -7473,6 +7473,7 @@ ruby-sablot	ports/textproc/ruby-sablot
 ruby-sary	ports/textproc/ruby-sary
 ruby-sdl	ports/devel/ruby-sdl
 ruby-search-namazu	ports/databases/ruby-search-namazu
+ruby-serialport	ports/comms/ruby-serialport
 ruby-setup.rb	ports/devel/ruby-setup.rb
 ruby-slang	ports/devel/ruby-slang
 ruby-smf	ports/audio/ruby-smf
