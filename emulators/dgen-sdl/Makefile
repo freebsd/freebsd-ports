@@ -8,7 +8,7 @@
 PORTNAME=	dgen-sdl
 PORTVERSION=	1.20a
 CATEGORIES=	emulators
-MASTER_SITES=	http://www.humboldt1.com/~ognir/
+MASTER_SITES=	http://pknet.com/~joe/
 
 MAINTAINER=	sobomax@FreeBSD.org
 
