@@ -1778,6 +1778,7 @@ ewipe		ports/misc/ewipe
 exact		ports/mail/exact
 exctags		ports/devel/ctags
 execline	ports/lang/execline
+exifprobe	ports/graphics/exifprobe
 exiftags	ports/graphics/exiftags
 exim		ports/mail/exim
 exim-doc-html	ports/mail/exim-doc-html
