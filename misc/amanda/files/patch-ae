@@ -1,0 +1,19 @@
+--- man/amcleanup.8.orig	Mon May 20 11:11:25 1996
++++ man/amcleanup.8	Wed Dec  1 04:22:03 1999
+@@ -31,13 +31,13 @@
+ 
+ .PP
+ .nf
+-if [ -s /usr/adm/amanda/csd/amanda.log ]
++if [ -s /var/log/amanda/csd/amanda.log ]
+ then
+-	/usr/local/sbin/amcleanup csd
++	%%PREFIX%%/sbin/amcleanup csd
+ fi
+ .fi
+ .RS .5i
+-Putting the above in /etc/rc.local runs the Amanda
++Putting the above in %%PREFIX%%/rc.local runs the Amanda
+ cleanup process when needed as part of the reboot, eliminating the need
+ to run it by hand.
+ .RE
