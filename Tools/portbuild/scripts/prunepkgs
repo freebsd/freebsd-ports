@@ -1,0 +1,66 @@
+#!/bin/sh
+
+if [ $# -lt 2 ]; then
+   echo "usage: prunepkgs <indexfile> <pkgdir> [-dummy]"
+   return 1
+fi
+index=$1
+pkgdir=$2
+
+if [ $# -eq 3 -a "$3" = "-dummy" ]; then
+  dummy=1;
+else
+  dummy=0;
+fi
+
+testprunelink() {
+  if [ ! -e $1/ ]; then
+    dest=$(readlink $1)
+    echo "$1 -> $dest pruned."
+    if [ "${dummy}" = "0" ]; then 
+      rm -f $1
+    fi
+  fi
+}
+
+# Set up work dir
+
+tmpdir=$(mktemp -d -t prunepkgs)
+trap "rm -rf $tmpdir; exit 1" 1 2 3 5 10 13 15
+
+# Check for non-package files
+
+extras=$(find ${pkgdir} -type f \! \( -name INDEX -o -name CHECKSUM.MD5 -o -name \*.tgz -o -name \*.tbz \) )
+echo "==> Removing extra files"
+echo $extras
+if [ "x${extras}" != "x" ]; then
+  if [ "${dummy}" = "0" ]; then
+    rm -f ${extras}
+  fi
+fi
+
+# Check for files not present in INDEX
+echo "==> Removing extra package files"
+
+find $pkgdir/All -type f -name \*.tgz -o -name \*.tbz | sed -e "s,${pkgdir}/All/,," -e 's,\.tbz$,,' -e 's,\.tgz$,,' |sort > ${tmpdir}/files
+cut -f 1 -d '|' ${index} |sort > ${tmpdir}/packages
+
+extras=$(comm -2 -3 ${tmpdir}/files ${tmpdir}/packages)
+echo $extras
+if [ "${dummy}" = "0" ]; then
+  for i in $extras; do
+    rm -f $pkgdir/All/${i}.tgz $pkgdir/All/${i}.tbz
+  done
+fi
+
+rm -rf ${tmpdir}
+
+# Look for dead links and prune them
+echo "==> Removing dead symlinks"
+
+links=$(find $pkgdir -type l)
+for i in $links; do
+  testprunelink $i
+done
+
+
