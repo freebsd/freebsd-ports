@@ -3,7 +3,7 @@
 # Date created:		27 Oct 1994
 # Whom:			torstenb
 #
-# $Id: Makefile,v 1.10 1995/11/22 13:20:16 asami Exp $
+# $Id: Makefile,v 1.11 1996/01/25 03:00:28 ache Exp $
 #
 
 DISTNAME=       tcp_wrappers_7.2
@@ -16,7 +16,7 @@ MAINTAINER=	torstenb@FreeBSD.ORG
 ALL_TARGET=	freebsd
 
 post-install:
-	ldconfig -m ${PREFIX}/lib
+	/sbin/ldconfig -m ${PREFIX}/lib
 	gzip -9nf ${PREFIX}/man/man3/hosts_access.3 \
 	${PREFIX}/man/man5/hosts_access.5 ${PREFIX}/man/man5/hosts_options.5 \
 	${PREFIX}/man/man8/tcpd.8 ${PREFIX}/man/man8/tcpdchk.8 \
