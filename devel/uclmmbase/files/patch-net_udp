@@ -1,0 +1,10 @@
+--- src/net_udp.c	Tue Jun 29 12:21:37 2004
++++ src/net_udp.c	Thu Mar 24 13:17:14 2005
+@@ -44,7 +44,4 @@
+ #include "debug.h"
+ #include "memory.h"
+-#include "inet_pton.h"
+-#include "inet_ntop.h"
+-#include "vsnprintf.h"
+ #include "net_udp.h"
+ 
