@@ -14,6 +14,8 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	gena@NetVision.net.il
 
+LIB_DEPENDS=	c.3:${PORTSDIR}/misc/compat3x
+
 USE_X_PREFIX=	yes
 USE_XPM=	yes
 INSTALLS_SHLIB=	yes
