@@ -4,7 +4,7 @@
 # Date created:			  Mon Feb 03, 1997
 # Whom:				  David O'Brien (obrien@FreeBSD.org)
 #
-# $Id: Makefile,v 1.2 1997/02/11 04:40:17 obrien Exp $
+# $Id: Makefile,v 1.3 1997/09/22 17:48:30 max Exp $
 #
 
 DISTNAME=	gb2ps.2.02
@@ -20,7 +20,7 @@ DISTFILES=	${DISTNAME}.tar.gz  \
 		csong24.ccf.gz ckai24.ccf.gz cfang24.ccf.gz chei24.ccf.gz \
 		cfan24.ccf.gz
 
-MAINTAINER=     obrien@NUXI.com
+MAINTAINER=     obrien@FreeBSD.org
 
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 WRKSRC=		${WRKDIR}/GB2PS
@@ -36,6 +36,5 @@ do-install:
 	@${MKDIR} ${PREFIX}/share/doc/gb2ps
 	${INSTALL_MAN} ${WRKSRC}/gb2ps.help ${PREFIX}/share/doc/gb2ps
 .endif
-
 
 .include <bsd.port.mk>

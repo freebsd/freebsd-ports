@@ -4,9 +4,10 @@
 # Date created:			  Mon Feb 03, 1997
 # Whom:				  David O'Brien (obrien@FreeBSD.org)
 #
-# $Id: Makefile,v 1.1.1.1 1997/02/08 00:36:01 obrien Exp $
+# $Id: Makefile,v 1.2 1997/09/22 17:48:33 max Exp $
 #
 
+DISTNAME=	hc-3.0
 PKGNAME=	zh-hc-3.0
 CATEGORIES=	chinese
 MASTER_SITES=	ftp://ftp.ifcss.org/pub/software/unix/convert/  \
@@ -14,7 +15,7 @@ MASTER_SITES=	ftp://ftp.ifcss.org/pub/software/unix/convert/  \
 		ftp://ftp.cuhk.hk/pub/chinese/ifcss/software/unix/convert/
 DISTFILES=	hc-30.tar.gz  hc-supp.tab
 
-MAINTAINER=     obrien@NUXI.com
+MAINTAINER=     obrien@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/hc3
 EXTRACT_ONLY=	hc-30.tar.gz
