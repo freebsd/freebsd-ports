@@ -1,0 +1,60 @@
+etc/munin/VERSION.node
+etc/munin/munin-node.conf
+etc/munin/plugin-conf.d/plugins.conf
+etc/rc.d/munin-node.sh
+sbin/munin-node
+sbin/munin-node-configure
+sbin/munin-run
+share/munin/plugins/apache_accesses
+share/munin/plugins/apache_processes
+share/munin/plugins/apache_volume
+share/munin/plugins/bind9
+share/munin/plugins/cpu
+share/munin/plugins/df
+share/munin/plugins/df_inode
+share/munin/plugins/exim_mailqueue
+share/munin/plugins/exim_mailstats
+share/munin/plugins/hddtemp
+share/munin/plugins/if_
+share/munin/plugins/if_errcoll_
+share/munin/plugins/ircu
+share/munin/plugins/load
+share/munin/plugins/mailman
+share/munin/plugins/memory
+share/munin/plugins/multips
+share/munin/plugins/munin_graph
+share/munin/plugins/munin_update
+share/munin/plugins/mysql_bytes
+share/munin/plugins/mysql_isam_space_
+share/munin/plugins/mysql_queries
+share/munin/plugins/mysql_slowqueries
+share/munin/plugins/mysql_threads
+share/munin/plugins/named
+share/munin/plugins/netstat
+share/munin/plugins/open_files
+share/munin/plugins/plugins.history
+share/munin/plugins/pop_stats
+share/munin/plugins/postfix_mailqueue
+share/munin/plugins/postfix_mailstats
+share/munin/plugins/postfix_mailvolume
+share/munin/plugins/processes
+share/munin/plugins/ps_
+share/munin/plugins/psu_
+share/munin/plugins/samba
+share/munin/plugins/snmp__if_
+share/munin/plugins/spamstats
+share/munin/plugins/squid_cache
+share/munin/plugins/squid_icp
+share/munin/plugins/squid_requests
+share/munin/plugins/squid_traffic
+share/munin/plugins/surfboard
+share/munin/plugins/swap
+share/munin/plugins/sybase_space
+share/munin/plugins/vmstat
+@unexec rmdir %D/var/munin/plugin-state 2>/dev/null || true
+@unexec rmdir %D/var/munin 2>/dev/null || true
+@dirrm share/munin/plugins
+@unexec rmdir %D/share/munin 2>/dev/null || true
+@unexec rm -rf %D/etc/munin/plugins 2>/dev/null || true
+@unexec rmdir %D/etc/munin/plugin-conf.d 2>/dev/null || true
+@unexec rmdir %D/etc/munin 2>/dev/null || true
