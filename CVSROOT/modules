@@ -2553,6 +2553,7 @@ ircatlite	ports/irc/ircatlite
 ircd-hybrid	ports/irc/ircd-hybrid
 irchat-pj-emacs20	ports/irc/irchat-pj-emacs20
 irchat-pj-emacs21	ports/irc/irchat-pj-emacs21
+irchat-pj-xemacs-devel-mule	ports/irc/irchat-pj-xemacs-devel-mule
 irchat-pj-xemacs21-mule	ports/irc/irchat-pj-xemacs21-mule
 iroffer		ports/irc/iroffer
 irsim		ports/cad/irsim
