@@ -10,7 +10,7 @@ PORTVERSION=		0.9.2
 CATEGORIES=		mail
 MASTER_SITES=		http://mmj.dk/biabam/
 
-MAINTAINER=		greid@ukug.uk.freebsd.org
+MAINTAINER=		greid@FreeBSD.org
 
 NO_BUILD=		yes
 
