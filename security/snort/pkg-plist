@@ -1,4 +1,6 @@
 bin/snort
+etc/classification.config-sample
+etc/snort.conf-sample
 share/snort/CREDITS
 share/snort/RULES.SAMPLE
 share/snort/USAGE
@@ -9,7 +11,6 @@ share/snort/dos.rules
 share/snort/exploit.rules
 share/snort/finger.rules
 share/snort/ftp.rules
-share/snort/icmp-info.rules
 share/snort/icmp.rules
 share/snort/info.rules
 share/snort/local.rules
@@ -23,7 +24,6 @@ share/snort/shellcode.rules
 share/snort/smtp.rules
 share/snort/sql.rules
 share/snort/telnet.rules
-share/snort/virus.rules
 share/snort/web-cgi.rules
 share/snort/web-coldfusion.rules
 share/snort/web-frontpage.rules
