@@ -7,6 +7,7 @@ bin/xscreensaver-getimage-video
 bin/xscreensaver-gl-helper
 bin/xscreensaver-hacks/anemone
 bin/xscreensaver-hacks/ant
+bin/xscreensaver-hacks/antinspect
 bin/xscreensaver-hacks/antspotlight
 bin/xscreensaver-hacks/apollonian
 bin/xscreensaver-hacks/apple2
@@ -62,6 +63,7 @@ bin/xscreensaver-hacks/flurry
 bin/xscreensaver-hacks/flyingtoasters
 bin/xscreensaver-hacks/fontglide
 bin/xscreensaver-hacks/forest
+bin/xscreensaver-hacks/fuzzyflakes
 bin/xscreensaver-hacks/galaxy
 bin/xscreensaver-hacks/gears
 bin/xscreensaver-hacks/gflux
@@ -126,10 +128,12 @@ bin/xscreensaver-hacks/petri
 bin/xscreensaver-hacks/phosphor
 bin/xscreensaver-hacks/piecewise
 bin/xscreensaver-hacks/pipes
+bin/xscreensaver-hacks/polyhedra
 bin/xscreensaver-hacks/polyominoes
 bin/xscreensaver-hacks/polytopes
 bin/xscreensaver-hacks/pong
 bin/xscreensaver-hacks/popsquares
+bin/xscreensaver-hacks/providence
 bin/xscreensaver-hacks/pulsar
 bin/xscreensaver-hacks/pyro
 bin/xscreensaver-hacks/qix
@@ -198,6 +202,7 @@ share/xscreensaver/xscreensaver-demo.glade2
 share/xscreensaver/config/README
 share/xscreensaver/config/anemone.xml
 share/xscreensaver/config/ant.xml
+share/xscreensaver/config/antinspect.xml
 share/xscreensaver/config/antspotlight.xml
 share/xscreensaver/config/apollonian.xml
 share/xscreensaver/config/apple2.xml
@@ -256,6 +261,7 @@ share/xscreensaver/config/flurry.xml
 share/xscreensaver/config/flyingtoasters.xml
 share/xscreensaver/config/fontglide.xml
 share/xscreensaver/config/forest.xml
+share/xscreensaver/config/fuzzyflakes.xml
 share/xscreensaver/config/galaxy.xml
 share/xscreensaver/config/gears.xml
 share/xscreensaver/config/gflux.xml
@@ -320,10 +326,12 @@ share/xscreensaver/config/petri.xml
 share/xscreensaver/config/phosphor.xml
 share/xscreensaver/config/piecewise.xml
 share/xscreensaver/config/pipes.xml
+share/xscreensaver/config/polyhedra.xml
 share/xscreensaver/config/polyominoes.xml
 share/xscreensaver/config/polytopes.xml
 share/xscreensaver/config/pong.xml
 share/xscreensaver/config/popsquares.xml
+share/xscreensaver/config/providence.xml
 share/xscreensaver/config/pulsar.xml
 share/xscreensaver/config/pyro.xml
 share/xscreensaver/config/qix.xml
@@ -344,7 +352,7 @@ share/xscreensaver/config/slip.xml
 share/xscreensaver/config/sonar.xml
 share/xscreensaver/config/speedmine.xml
 share/xscreensaver/config/sphere.xml
-share/xscreensaver/config/sphereEversion.xml
+share/xscreensaver/config/sphereeversion.xml
 share/xscreensaver/config/spheremonics.xml
 share/xscreensaver/config/spiral.xml
 share/xscreensaver/config/spotlight.xml
