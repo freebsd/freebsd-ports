@@ -3,7 +3,7 @@
 # Date created:		23 April 1999
 # Whom:			obonilla
 #
-# $Id: Makefile,v 1.1.1.1 1999/04/30 16:36:22 taoka Exp $
+# $Id: Makefile,v 1.2 1999/05/09 16:41:29 steve Exp $
 #
 
 DISTNAME=	otcl-1.0a4
@@ -12,7 +12,7 @@ MASTER_SITES=	http://www-mash.cs.berkeley.edu/dist/
 
 MAINTAINER=	obonilla@fisicc-ufm.edu
 
-LIB_DEPENDS=    tcl80.1:${PORTSDIR}/lang/tcl80
+LIB_DEPENDS=    tk80.1:${PORTSDIR}/x11-toolkits/tk80
 
 USE_XLIB=	yes
 
