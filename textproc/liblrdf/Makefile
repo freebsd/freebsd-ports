@@ -5,12 +5,11 @@
 # $FreeBSD$
 
 PORTNAME=	liblrdf
-PORTVERSION=	0.3.2
-PORTREVISION=	1
+PORTVERSION=	0.3.5
 CATEGORIES=	textproc
 MASTER_SITES=	http://plugin.org.uk/releases/lrdf/
 
-MAINTAINER=	arved@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library for manipulating RDF files describing LADSPA plugins
 
 BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
