@@ -1,0 +1,11 @@
+--- Makefile.orig	Fri Oct 31 09:21:12 2003
++++ Makefile	Fri Oct 31 09:22:23 2003
+@@ -52,7 +52,7 @@
+ 	$(AR) -r gracetmpl.a gracetmpl.o
+ 
+ gracetmpldemo: gracetmpldemo.o gracetmpl.o
+-	$(CPP) -o gracetmpldemo gracetmpldemo.o gracetmpl.o
++	$(CPP) ${LDFLAGS} -o gracetmpldemo gracetmpldemo.o gracetmpl.o
+ 
+ envtest: envtest.o gracetmpl.o
+ 	$(CPP) -o envtest envtest.o gracetmpl.o
