@@ -1,0 +1,13 @@
+--- racoon.8.in.orig	Tue Jul  4 21:27:59 2000
++++ racoon.8.in	Wed Jul  5 16:17:43 2000
+@@ -97,8 +97,8 @@
+ .El
+ .\" 
+ .Sh FILES
+-.Bl -tag -width /usr/local/v6/etc/racoon.conf -compact
+-.It Pa /usr/local/v6/etc/racoon.conf
++.Bl -tag -width @sysconfdir@/racoon/racoon.conf -compact
++.It Pa @sysconfdir@/racoon/racoon.conf
+ default configuration file.
+ .It Pa /var/log/racoon.log
+ default log file.

@@ -1,0 +1,5 @@
+sbin/racoon
+etc/racoon/psk.txt.dist
+etc/racoon/racoon.conf.dist
+etc/racoon/remote.conf.dist
+@dirrm etc/racoon
