@@ -9313,7 +9313,7 @@ sqlite		ports/databases/sqlite
 sqlrelay	ports/databases/sqlrelay
 sqsh		ports/databases/sqsh
 squash		ports/audio/squash
-squeak3		ports/lang/squeak3
+squeak		ports/lang/squeak
 squeuer		ports/astro/squeuer
 squid		ports/www/squid
 squid24		ports/www/squid24
