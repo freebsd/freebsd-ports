@@ -334,6 +334,7 @@
     SUBDIR += sdlroids
     SUBDIR += seabattle
     SUBDIR += seahaven
+    SUBDIR += senken
     SUBDIR += senso
     SUBDIR += sex
     SUBDIR += sl
