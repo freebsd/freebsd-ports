@@ -362,45 +362,45 @@ share/fvwm2/pixmaps/xterm.xpm
 share/fvwm2/pixmaps/xv.xpm
 share/fvwm2/pixmaps/xv2.xpm
 share/fvwm2/pixmaps/xview.xpm
-%%GNOME%%share/gnome/fvwm/ConfigFvwmBacker
-%%GNOME%%share/gnome/fvwm/ConfigFvwmButtons
-%%GNOME%%share/gnome/fvwm/ConfigFvwmDefaults
-%%GNOME%%share/gnome/fvwm/ConfigFvwmIconBox
-%%GNOME%%share/gnome/fvwm/ConfigFvwmIconMan
-%%GNOME%%share/gnome/fvwm/ConfigFvwmIdent
-%%GNOME%%share/gnome/fvwm/ConfigFvwmPager
-%%GNOME%%share/gnome/fvwm/ConfigFvwmScroll
-%%GNOME%%share/gnome/fvwm/ConfigFvwmSetup
-%%GNOME%%share/gnome/fvwm/ConfigFvwmTaskBar
-%%GNOME%%share/gnome/fvwm/ConfigFvwmWinList
-%%GNOME%%share/gnome/fvwm/FvwmForm-Capture
-%%GNOME%%share/gnome/fvwm/FvwmForm-Form
-%%GNOME%%share/gnome/fvwm/FvwmForm-QuitVerify
-%%GNOME%%share/gnome/fvwm/FvwmForm-Rlogin
-%%GNOME%%share/gnome/fvwm/FvwmForm-RootCursor
-%%GNOME%%share/gnome/fvwm/FvwmForm-Setup
-%%GNOME%%share/gnome/fvwm/FvwmForm-Talk
-%%GNOME%%share/gnome/fvwm/FvwmForm-TalkHelp
-%%GNOME%%share/gnome/fvwm/FvwmScript-BaseConfig
-%%GNOME%%share/gnome/fvwm/FvwmScript-BellSetup
-%%GNOME%%share/gnome/fvwm/FvwmScript-Buttons
-%%GNOME%%share/gnome/fvwm/FvwmScript-Colorset
-%%GNOME%%share/gnome/fvwm/FvwmScript-Date
-%%GNOME%%share/gnome/fvwm/FvwmScript-FileBrowser
-%%GNOME%%share/gnome/fvwm/FvwmScript-Find
-%%GNOME%%share/gnome/fvwm/FvwmScript-KeyboardSetup
-%%GNOME%%share/gnome/fvwm/FvwmScript-PointerSetup
-%%GNOME%%share/gnome/fvwm/FvwmScript-Quit
-%%GNOME%%share/gnome/fvwm/FvwmScript-ScreenDump
-%%GNOME%%share/gnome/fvwm/FvwmScript-ScreenSetup
-%%GNOME%%share/gnome/fvwm/FvwmScript-Setup95
-%%GNOME%%share/gnome/fvwm/FvwmScript-WidgetDemo
-%%GNOME%%share/gnome/fvwm/fvwm-script-setup95.pl
-%%GNOME%%share/gnome/fvwm/system.fvwm2rc-sample-95
-%%GNOME%%@dirrm share/gnome/fvwm
-%%GNOME%%@unexec rmdir %D/share/gnome 2>/dev/null || true
+%%GNOMEDATADIR%%/ConfigFvwmBacker
+%%GNOMEDATADIR%%/ConfigFvwmButtons
+%%GNOMEDATADIR%%/ConfigFvwmDefaults
+%%GNOMEDATADIR%%/ConfigFvwmIconBox
+%%GNOMEDATADIR%%/ConfigFvwmIconMan
+%%GNOMEDATADIR%%/ConfigFvwmIdent
+%%GNOMEDATADIR%%/ConfigFvwmPager
+%%GNOMEDATADIR%%/ConfigFvwmScroll
+%%GNOMEDATADIR%%/ConfigFvwmSetup
+%%GNOMEDATADIR%%/ConfigFvwmTaskBar
+%%GNOMEDATADIR%%/ConfigFvwmWinList
+%%GNOMEDATADIR%%/FvwmForm-Capture
+%%GNOMEDATADIR%%/FvwmForm-Form
+%%GNOMEDATADIR%%/FvwmForm-QuitVerify
+%%GNOMEDATADIR%%/FvwmForm-Rlogin
+%%GNOMEDATADIR%%/FvwmForm-RootCursor
+%%GNOMEDATADIR%%/FvwmForm-Setup
+%%GNOMEDATADIR%%/FvwmForm-Talk
+%%GNOMEDATADIR%%/FvwmForm-TalkHelp
+%%GNOMEDATADIR%%/FvwmScript-BaseConfig
+%%GNOMEDATADIR%%/FvwmScript-BellSetup
+%%GNOMEDATADIR%%/FvwmScript-Buttons
+%%GNOMEDATADIR%%/FvwmScript-Colorset
+%%GNOMEDATADIR%%/FvwmScript-ComExample
+%%GNOMEDATADIR%%/FvwmScript-Date
+%%GNOMEDATADIR%%/FvwmScript-FileBrowser
+%%GNOMEDATADIR%%/FvwmScript-Find
+%%GNOMEDATADIR%%/FvwmScript-KeyboardSetup
+%%GNOMEDATADIR%%/FvwmScript-PointerSetup
+%%GNOMEDATADIR%%/FvwmScript-Quit
+%%GNOMEDATADIR%%/FvwmScript-ScreenDump
+%%GNOMEDATADIR%%/FvwmScript-ScreenSetup
+%%GNOMEDATADIR%%/FvwmScript-Setup95
+%%GNOMEDATADIR%%/FvwmScript-WidgetDemo
+%%GNOMEDATADIR%%/fvwm-script-ComExample.pl
+%%GNOMEDATADIR%%/fvwm-script-setup95.pl
+%%GNOMEDATADIR%%/system.fvwm2rc-sample-95
+@dirrm %%GNOMEDATADIR%%
 @dirrm share/fvwm2/pixmaps
 @dirrm share/fvwm2
-@dirrm share/fvwm
 @dirrm libexec/fvwm/%%FVWM_VERSION%%
 @dirrm libexec/fvwm

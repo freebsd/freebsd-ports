@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fvwm
-PORTVERSION=	2.4.3
+PORTVERSION=	2.4.4
 CATEGORIES=	x11-wm
 MASTER_SITES=	ftp://ftp.fvwm.org/pub/fvwm/version-2/ \
 		http://www.fvwm.org/generated/icon_download/
@@ -32,10 +32,10 @@ PLIST_SUB+=	FVWM_VERSION="${PORTVERSION}"
 
 .if defined(HAVE_GNOME)
 USE_GNOME=	yes
-PLIST_SUB+=	GNOME=""
+PLIST_SUB+=	GNOMEDATADIR="share/gnome/fvwm"
 .else
 CONFIGURE_ARGS+=	--disable-gnome
-PLIST_SUB+=	GNOME="@comment "
+PLIST_SUB+=	GNOMEDATADIR="share/fvwm"
 .endif
 
 MAN1=	FvwmAnimate.1 FvwmAuto.1 FvwmBacker.1 FvwmBanner.1 FvwmButtons.1 \
