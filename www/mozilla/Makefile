@@ -370,7 +370,7 @@ post-install:
 .if !defined(PACKAGE_BUILDING)
 	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 .endif
-.if defined(WITH_MENU_ENTRY)
+.if !defined(WITHOUT_MENU_ENTRY)
 	@-update-desktop-database
 .endif
 
