@@ -36,6 +36,7 @@
     SUBDIR += pdnmesh
     SUBDIR += pythoncad
     SUBDIR += qcad
+    SUBDIR += qcad-partslib
     SUBDIR += qfsm
     SUBDIR += qmls
     SUBDIR += sceptre
