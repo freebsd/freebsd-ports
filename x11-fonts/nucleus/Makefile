@@ -9,7 +9,7 @@ PORTNAME=	nucleus
 PORTVERSION=	0.77
 PORTREVISION=	2
 CATEGORIES=	x11-fonts
-MASTER_SITES=	http://dreamer.nitro.dk/linux/lfp/
+MASTER_SITES=	${MASTER_SITES_SOURCEFORGE}
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Another font package for X
