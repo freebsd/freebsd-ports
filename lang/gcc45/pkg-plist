@@ -25,32 +25,17 @@ bin/jcf-dump40
 %%LIBJAVA%%include/ffi.h
 %%LIBJAVA%%include/jni.h
 %%LIBJAVA%%include/jvmpi.h
+%%LIBJAVA%%lib/lib-org-xml-sax.a
+%%LIBJAVA%%lib/lib-org-w3c-dom.a
 %%LIBJAVA%%lib/libffi.la
 %%LIBJAVA%%lib/libffi.a
 %%LIBJAVA%%lib/logging.properties
-%%LIBJAVA%%libdata/pkgconfig/libgcj.pc
 %%LIBJAVA%%lib/security/classpath.security
 %%LIBJAVA%%lib/security/libgcj.security
 %%LIBJAVA%%@dirrm lib/security
-%%LIBJAVA%%lib/lib-org-xml-sax.la
-%%LIBJAVA%%lib/lib-org-xml-sax.a
-%%LIBJAVA%%lib/lib-org-w3c-dom.la
-%%LIBJAVA%%lib/lib-org-w3c-dom.a
-include/mf-runtime.h
-libexec/gcc/%%GNU_HOST%%/%%GCC_VER%%/cc1
-libexec/gcc/%%GNU_HOST%%/%%GCC_VER%%/cc1plus
-libexec/gcc/%%GNU_HOST%%/%%GCC_VER%%/jc1
-libexec/gcc/%%GNU_HOST%%/%%GCC_VER%%/jvgenmain
-libexec/gcc/%%GNU_HOST%%/%%GCC_VER%%/cc1obj
-libexec/gcc/%%GNU_HOST%%/%%GCC_VER%%/collect2
-libexec/gcc/%%GNU_HOST%%/%%GCC_VER%%/install-tools/fixinc.sh
-libexec/gcc/%%GNU_HOST%%/%%GCC_VER%%/install-tools/fixincl
-libexec/gcc/%%GNU_HOST%%/%%GCC_VER%%/install-tools/mkheaders
-@dirrm libexec/gcc/%%GNU_HOST%%/%%GCC_VER%%/install-tools
-@dirrm libexec/gcc/%%GNU_HOST%%/%%GCC_VER%%
-@unexec rmdir %D/libexec/gcc/%%GNU_HOST%% 2>/dev/null || true
-@unexec rmdir %D/libexec/gcc 2>/dev/null || true
+%%LIBJAVA%%libdata/pkgconfig/libgcj.pc
 %%LIBJAVA%%share/java/libgcj-%%GCC_VER%%.jar
+include/mf-runtime.h
 @comment Insert PLIST.lib here
 @comment -=[ begin PLIST.lib ]=-
 @comment -=[ end PLIST.lib ]=-
