@@ -76,6 +76,7 @@
     SUBDIR += dillo
     SUBDIR += drivel
     SUBDIR += drupal
+    SUBDIR += dtse
     SUBDIR += eldav.el
     SUBDIR += elinks
     SUBDIR += emacs-w3m
