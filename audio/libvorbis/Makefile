@@ -7,6 +7,7 @@
 
 PORTNAME=	libvorbis
 PORTVERSION=	1.0.r3
+PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://www.xiph.org/ogg/vorbis/download/ \
@@ -20,6 +21,7 @@ LIB_DEPENDS=	ogg.3:${PORTSDIR}/audio/libogg
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-ogg=${LOCALBASE}
+INSTALLS_SHLIB=	yes
 
 .if defined(NOPORTDOCS)
 MAKE_ENV=	DOC=""

@@ -7,6 +7,7 @@
 
 PORTNAME=	libogg
 PORTVERSION=	1.0.r3
+PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://www.xiph.org/ogg/vorbis/download/ \
@@ -17,6 +18,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/.r/rc/}
 MAINTAINER=	naddy@FreeBSD.org
 
 GNU_CONFIGURE=	yes
+INSTALLS_SHLIB=	yes
 
 .if defined(NOPORTDOCS)
 MAKE_ENV=	DOC=""
