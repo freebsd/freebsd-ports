@@ -8,13 +8,11 @@
 PORTNAME=	getmail
 PORTVERSION=	3.2.4
 CATEGORIES=	mail python
-MASTER_SITES=	http://www.qcc.ca/~charlesc/software/getmail-3.0/%SUBDIR%/
-MASTER_SITE_SUBDIR=	. old-versions
+MASTER_SITES=	http://www.qcc.ca/~charlesc/software/getmail-4/%SUBDIR%/
+MASTER_SITE_SUBDIR=	old-versions
 
 MAINTAINER=	sergei@FreeBSD.org
 COMMENT=	POP3 mail retriever with reliable Maildir/command delivery
-
-BROKEN=		"Unfetchable"
 
 USE_PYTHON=	yes
 USE_REINPLACE=	yes
