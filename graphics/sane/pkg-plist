@@ -4,6 +4,7 @@ bin/xcam
 etc/sane.d/apple.conf
 etc/sane.d/artec.conf
 etc/sane.d/coolscan.conf
+etc/sane.d/dll.conf
 etc/sane.d/dmc.conf
 etc/sane.d/epson.conf
 etc/sane.d/hp.conf

@@ -4,12 +4,13 @@
 # Whom:                 gary@hotlava.com
 #			obrien@FreeBSD.org
 #
-# $Id: Makefile,v 1.3 1998/04/30 02:38:03 obrien Exp $
+# $Id: Makefile,v 1.4 1998/05/26 08:17:56 dburr Exp $
 #
 
 DISTNAME=       sane-0.73
 CATEGORIES=	graphics
-MASTER_SITES=	ftp://ftp.mostang.com/pub/sane/
+MASTER_SITES=	ftp://ftp.mostang.com/pub/sane/ \
+		ftp://ftp.lahn.de/pub/platforms/linux/libs/
 
 MAINTAINER=	gary@hotlava.com
 
