@@ -1,0 +1,225 @@
+--- plug-ins/gpc/Makefile.am.orig	Wed May 27 23:47:43 1998
++++ plug-ins/gpc/Makefile.am	Wed May 27 23:48:43 1998
+@@ -1,11 +1,15 @@
+ ## Process this file with automake to produce Makefile.in
+ 
+-pluginlibdir = $(gimpplugindir)/plug-ins
++pluginlibdir = $(libdir)
++gimpincludedir = $(includedir)
+ 
+ pluginlib_LIBRARIES = libgpc.a
+ 
+ libgpc_a_SOURCES = \
+-	gpc.c gpc.h
++	gpc.c
++
++gimpinclude_HEADERS = \
++	gpc.h
+ 
+ INCLUDES = \
+ 	$(X_CFLAGS)			\
+--- plug-ins/gpc/Makefile.in.orig	Wed May 27 23:47:45 1998
++++ plug-ins/gpc/Makefile.in	Wed May 27 23:48:52 1998
+@@ -115,12 +115,16 @@
+ palettedata = @palettedata@
+ patterndata = @patterndata@
+ 
+-pluginlibdir = $(gimpplugindir)/plug-ins
++pluginlibdir = $(libdir)
++gimpincludedir = $(includedir)
+ 
+ pluginlib_LIBRARIES = libgpc.a
+ 
+ libgpc_a_SOURCES = \
+-	gpc.c gpc.h
++	gpc.c
++
++gimpinclude_HEADERS = \
++	gpc.h
+ 
+ INCLUDES = \
+ 	$(X_CFLAGS)			\
+@@ -163,6 +167,8 @@
+ MANS = $(man_MANS)
+ 
+ NROFF = nroff
++HEADERS =  $(gimpinclude_HEADERS)
++
+ DIST_COMMON =  Makefile.am Makefile.in
+ 
+ 
+@@ -170,17 +176,18 @@
+ 
+ TAR = tar
+ GZIP = --best
++DEP_FILES =  .deps/gpc.P
+ SOURCES = $(libgpc_a_SOURCES)
+ OBJECTS = $(libgpc_a_OBJECTS)
+ 
+-all: Makefile $(LIBRARIES) $(MANS)
++all: Makefile $(LIBRARIES) $(MANS) $(HEADERS)
+ 
+ .SUFFIXES:
+ .SUFFIXES: .S .c .lo .o .s
+ $(srcdir)/Makefile.in: @MAINT@ Makefile.am $(top_srcdir)/configure.in $(ACLOCAL_M4)
+-	cd $(top_srcdir) && $(AUTOMAKE) --gnu --include-deps plug-ins/gpc/Makefile
++	cd $(top_srcdir) && $(AUTOMAKE) --gnu plug-ins/gpc/Makefile
+ 
+-Makefile: $(srcdir)/Makefile.in  $(top_builddir)/config.status
++Makefile: $(srcdir)/Makefile.in  $(top_builddir)/config.status $(BUILT_SOURCES)
+ 	cd $(top_builddir) \
+ 	  && CONFIG_FILES=$(subdir)/$@ CONFIG_HEADERS= $(SHELL) ./config.status
+ 
+@@ -217,9 +224,6 @@
+ 	  rm -f $(DESTDIR)$(pluginlibdir)/$$p; \
+ 	done
+ 
+-.c.o:
+-	$(COMPILE) -c $<
+-
+ .s.o:
+ 	$(COMPILE) -c $<
+ 
+@@ -236,9 +240,6 @@
+ 
+ maintainer-clean-compile:
+ 
+-.c.lo:
+-	$(LIBTOOL) --mode=compile $(COMPILE) -c $<
+-
+ .s.lo:
+ 	$(LIBTOOL) --mode=compile $(COMPILE) -c $<
+ 
+@@ -299,6 +300,21 @@
+ 	@$(NORMAL_UNINSTALL)
+ 	$(MAKE) uninstall-man3
+ 
++install-gimpincludeHEADERS: $(gimpinclude_HEADERS)
++	@$(NORMAL_INSTALL)
++	$(mkinstalldirs) $(DESTDIR)$(gimpincludedir)
++	@list='$(gimpinclude_HEADERS)'; for p in $$list; do \
++	  if test -f "$$p"; then d= ; else d="$(srcdir)/"; fi; \
++	  echo " $(INSTALL_DATA) $$d$$p $(DESTDIR)$(gimpincludedir)/$$p"; \
++	  $(INSTALL_DATA) $$d$$p $(DESTDIR)$(gimpincludedir)/$$p; \
++	done
++
++uninstall-gimpincludeHEADERS:
++	@$(NORMAL_UNINSTALL)
++	list='$(gimpinclude_HEADERS)'; for p in $$list; do \
++	  rm -f $(DESTDIR)$(gimpincludedir)/$$p; \
++	done
++
+ tags: TAGS
+ 
+ ID: $(HEADERS) $(SOURCES) $(LISP)
+@@ -329,6 +345,11 @@
+ subdir = plug-ins/gpc
+ 
+ distdir: $(DISTFILES)
++	here=`cd $(top_builddir) && pwd`; \
++	top_distdir=`cd $(top_distdir) && pwd`; \
++	distdir=`cd $(distdir) && pwd`; \
++	cd $(top_srcdir) \
++	  && $(AUTOMAKE) --include-deps --build-dir=$$here --srcdir-name=$(top_srcdir) --output-dir=$$top_distdir --gnu plug-ins/gpc/Makefile
+ 	@for file in $(DISTFILES); do \
+ 	  d=$(srcdir); \
+ 	  test -f $(distdir)/$$file \
+@@ -336,6 +357,29 @@
+ 	  || cp -p $$d/$$file $(distdir)/$$file; \
+ 	done
+ 
++DEPS_MAGIC := $(shell mkdir .deps > /dev/null 2>&1 || :)
++
++-include $(DEP_FILES)
++
++mostlyclean-depend:
++
++clean-depend:
++
++distclean-depend:
++
++maintainer-clean-depend:
++	-rm -rf .deps
++
++%.o: %.c
++	@echo '$(COMPILE) -c $<'; \
++	$(COMPILE) -Wp,-MD,.deps/$(*F).P -c $<
++
++%.lo: %.c
++	@echo '$(LTCOMPILE) -c $<'; \
++	$(LTCOMPILE) -Wp,-MD,.deps/$(*F).p -c $<
++	@-sed -e 's/^\([^:]*\)\.o:/\1.lo \1.o:/' \
++	  < .deps/$(*F).p > .deps/$(*F).P
++	@-rm -f .deps/$(*F).p
+ info:
+ dvi:
+ check: all
+@@ -344,18 +388,19 @@
+ install-exec: 
+ 	@$(NORMAL_INSTALL)
+ 
+-install-data: install-pluginlibLIBRARIES install-man
++install-data: install-pluginlibLIBRARIES install-man install-gimpincludeHEADERS
+ 	@$(NORMAL_INSTALL)
+ 
+ install: install-exec install-data all
+ 	@:
+ 
+-uninstall: uninstall-pluginlibLIBRARIES uninstall-man
++uninstall: uninstall-pluginlibLIBRARIES uninstall-man uninstall-gimpincludeHEADERS
+ 
+ install-strip:
+ 	$(MAKE) INSTALL_PROGRAM='$(INSTALL_PROGRAM) -s' INSTALL_SCRIPT='$(INSTALL_PROGRAM)' install
+ installdirs:
+-	$(mkinstalldirs)  $(DATADIR)$(pluginlibdir) $(DESTDIR)$(mandir)/man3
++	$(mkinstalldirs)  $(DATADIR)$(pluginlibdir) $(DESTDIR)$(mandir)/man3 \
++		$(DATADIR)$(gimpincludedir)
+ 
+ 
+ mostlyclean-generic:
+@@ -373,22 +418,22 @@
+ 	-test -z "$(MAINTAINERCLEANFILES)" || rm -f $(MAINTAINERCLEANFILES)
+ 	-test -z "$(BUILT_SOURCES)" || rm -f $(BUILT_SOURCES)
+ mostlyclean:  mostlyclean-pluginlibLIBRARIES mostlyclean-compile \
+-		mostlyclean-libtool mostlyclean-tags \
++		mostlyclean-libtool mostlyclean-tags mostlyclean-depend \
+ 		mostlyclean-generic
+ 
+ clean:  clean-pluginlibLIBRARIES clean-compile clean-libtool clean-tags \
+-		clean-generic mostlyclean
++		clean-depend clean-generic mostlyclean
+ 
+ distclean:  distclean-pluginlibLIBRARIES distclean-compile \
+-		distclean-libtool distclean-tags distclean-generic \
+-		clean
++		distclean-libtool distclean-tags distclean-depend \
++		distclean-generic clean
+ 	-rm -f config.status
+ 	-rm -f libtool
+ 
+ maintainer-clean:  maintainer-clean-pluginlibLIBRARIES \
+ 		maintainer-clean-compile maintainer-clean-libtool \
+-		maintainer-clean-tags maintainer-clean-generic \
+-		distclean
++		maintainer-clean-tags maintainer-clean-depend \
++		maintainer-clean-generic distclean
+ 	@echo "This command is intended for maintainers to use;"
+ 	@echo "it deletes files that may require special tools to rebuild."
+ 
+@@ -398,10 +443,12 @@
+ mostlyclean-compile distclean-compile clean-compile \
+ maintainer-clean-compile mostlyclean-libtool distclean-libtool \
+ clean-libtool maintainer-clean-libtool install-man3 uninstall-man3 \
+-install-man uninstall-man tags mostlyclean-tags distclean-tags \
+-clean-tags maintainer-clean-tags distdir info dvi installcheck \
+-install-exec install-data install uninstall all installdirs \
+-mostlyclean-generic distclean-generic clean-generic \
++install-man uninstall-man uninstall-gimpincludeHEADERS \
++install-gimpincludeHEADERS tags mostlyclean-tags distclean-tags \
++clean-tags maintainer-clean-tags distdir mostlyclean-depend \
++distclean-depend clean-depend maintainer-clean-depend info dvi \
++installcheck install-exec install-data install uninstall all \
++installdirs mostlyclean-generic distclean-generic clean-generic \
+ maintainer-clean-generic clean mostlyclean distclean maintainer-clean
+ 
+ 
