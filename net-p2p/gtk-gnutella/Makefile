@@ -27,7 +27,7 @@
 #
 
 PORTNAME=	gtk-gnutella
-PORTVERSION=	0.94
+PORTVERSION=	0.95
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://gtk-gnutella.sourceforge.net/download/ \
@@ -80,6 +80,8 @@ LIB_DEPENDS+=		icuuc:${PORTSDIR}/devel/icu2
 
 # Add threading to the ld flags; icuuc requires these by default
 CONFIGURE_ARGS+=	-Dldflags=${PTHREAD_LIBS}
+.else
+CONFIGURE_ARGS+=	-Dd_icu=false
 .endif
 
 .if defined(WITH_PORTABILITY)

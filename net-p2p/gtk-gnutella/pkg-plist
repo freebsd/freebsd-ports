@@ -1,4 +1,6 @@
 bin/gtk-gnutella
+share/gtk-gnutella/bogons.txt
+share/gtk-gnutella/geo-ip.txt
 share/gtk-gnutella/gwcache.boot
 share/gtk-gnutella/hostiles.txt
 share/gtk-gnutella/pixmaps/arrow_down.xpm
@@ -12,6 +14,10 @@ share/gtk-gnutella/pixmaps/download.xpm
 share/gtk-gnutella/pixmaps/exit.xpm
 share/gtk-gnutella/pixmaps/filter.xpm
 share/gtk-gnutella/pixmaps/firewall.xpm
+share/gtk-gnutella/pixmaps/firewall_punchable.xpm
+share/gtk-gnutella/pixmaps/firewall_tcp.xpm
+share/gtk-gnutella/pixmaps/firewall_udp.xpm
+share/gtk-gnutella/pixmaps/firewall_udp_punchable.xpm
 share/gtk-gnutella/pixmaps/freeze.xpm
 share/gtk-gnutella/pixmaps/icon.xpm
 share/gtk-gnutella/pixmaps/leaf.xpm
@@ -21,13 +27,15 @@ share/gtk-gnutella/pixmaps/offline.xpm
 share/gtk-gnutella/pixmaps/online.xpm
 share/gtk-gnutella/pixmaps/save.xpm
 share/gtk-gnutella/pixmaps/smallserver.xpm
+share/gtk-gnutella/pixmaps/stock_form-time-field-16.xpm
 share/gtk-gnutella/pixmaps/thaw.xpm
 share/gtk-gnutella/pixmaps/ultra.xpm
 share/gtk-gnutella/pixmaps/upload.xpm
-share/gtk-gnutella/pixmaps/stock_form-time-field-16.xpm
+share/gtk-gnutella/pixmaps/warning.xpm
 share/locale/de/LC_MESSAGES/gtk-gnutella.mo
 share/locale/es/LC_MESSAGES/gtk-gnutella.mo
 share/locale/fr/LC_MESSAGES/gtk-gnutella.mo
+share/locale/ja/LC_MESSAGES/gtk-gnutella.mo
 share/locale/nl/LC_MESSAGES/gtk-gnutella.mo
 share/locale/hu/LC_MESSAGES/gtk-gnutella.mo
 @dirrm share/gtk-gnutella/pixmaps
