@@ -38,17 +38,17 @@ share/locale/pl/LC_MESSAGES/sawfish.mo
 share/locale/pt_PT/LC_MESSAGES/sawfish.mo
 share/locale/sv/LC_MESSAGES/sawfish.mo
 share/locale/tr/LC_MESSAGES/sawfish.mo
-share/control-center/Sawfish/.directory
-share/control-center/Sawfish/appearance-properties.desktop
-share/control-center/Sawfish/bindings-properties.desktop
-share/control-center/Sawfish/focus-properties.desktop
-share/control-center/Sawfish/match-properties.desktop
-share/control-center/Sawfish/maximize-properties.desktop
-share/control-center/Sawfish/misc-properties.desktop
-share/control-center/Sawfish/move-properties.desktop
-share/control-center/Sawfish/placement-properties.desktop
-share/control-center/Sawfish/sound-properties.desktop
-share/control-center/Sawfish/workspace-properties.desktop
+share/gnome/control-center/Sawfish/.directory
+share/gnome/control-center/Sawfish/appearance-properties.desktop
+share/gnome/control-center/Sawfish/bindings-properties.desktop
+share/gnome/control-center/Sawfish/focus-properties.desktop
+share/gnome/control-center/Sawfish/match-properties.desktop
+share/gnome/control-center/Sawfish/maximize-properties.desktop
+share/gnome/control-center/Sawfish/misc-properties.desktop
+share/gnome/control-center/Sawfish/move-properties.desktop
+share/gnome/control-center/Sawfish/placement-properties.desktop
+share/gnome/control-center/Sawfish/sound-properties.desktop
+share/gnome/control-center/Sawfish/workspace-properties.desktop
 share/gnome/apps/Settings/Sawfish/.directory
 share/gnome/apps/Settings/Sawfish/appearance-properties.desktop
 share/gnome/apps/Settings/Sawfish/bindings-properties.desktop
@@ -61,18 +61,18 @@ share/gnome/apps/Settings/Sawfish/placement-properties.desktop
 share/gnome/apps/Settings/Sawfish/sound-properties.desktop
 share/gnome/apps/Settings/Sawfish/workspace-properties.desktop
 share/gnome/wm-properties/Sawfish.desktop
-share/pixmaps/sawfish-appearance.png
-share/pixmaps/sawfish-edgeflip.png
-share/pixmaps/sawfish-focus.png
-share/pixmaps/sawfish-logo.png
-share/pixmaps/sawfish-matched.png
-share/pixmaps/sawfish-minmax.png
-share/pixmaps/sawfish-misc.png
-share/pixmaps/sawfish-moveresize.png
-share/pixmaps/sawfish-placement.png
-share/pixmaps/sawfish-shortcuts.png
-share/pixmaps/sawfish-tooltips.png
-share/pixmaps/sawfish-workspaces.png
+share/gnome/pixmaps/sawfish-appearance.png
+share/gnome/pixmaps/sawfish-edgeflip.png
+share/gnome/pixmaps/sawfish-focus.png
+share/gnome/pixmaps/sawfish-logo.png
+share/gnome/pixmaps/sawfish-matched.png
+share/gnome/pixmaps/sawfish-minmax.png
+share/gnome/pixmaps/sawfish-misc.png
+share/gnome/pixmaps/sawfish-moveresize.png
+share/gnome/pixmaps/sawfish-placement.png
+share/gnome/pixmaps/sawfish-shortcuts.png
+share/gnome/pixmaps/sawfish-tooltips.png
+share/gnome/pixmaps/sawfish-workspaces.png
 share/sawfish/%%VERSION%%/lisp/3d-hack.jl
 share/sawfish/%%VERSION%%/lisp/3d-hack.jlc
 share/sawfish/%%VERSION%%/lisp/anim-outline.jl
@@ -383,7 +383,7 @@ share/sawfish/%%VERSION%%/themes/smaker/theme.jl
 @dirrm libexec/sawfish/%%VERSION%%/%%GNUHOST%%
 @dirrm libexec/sawfish/%%VERSION%%
 @dirrm libexec/sawfish
-@dirrm share/control-center/Sawfish
+@dirrm share/gnome/control-center/Sawfish
 @dirrm share/gnome/apps/Settings/Sawfish
 @dirrm share/sawfish/%%VERSION%%/lisp
 @dirrm share/sawfish/%%VERSION%%/sounds
@@ -397,3 +397,6 @@ share/sawfish/%%VERSION%%/themes/smaker/theme.jl
 @dirrm share/sawfish/%%VERSION%%/themes/smaker
 @dirrm share/sawfish/%%VERSION%%/themes
 @dirrm share/sawfish/%%VERSION%%
+@dirrm share/sawfish/sounds
+@dirrm share/sawfish/themes
+@dirrm share/sawfish

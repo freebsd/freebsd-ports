@@ -1,0 +1,13 @@
+--- capplet/Makefile.in.orig	Wed Apr 26 21:12:29 2000
++++ capplet/Makefile.in	Tue Jun 13 16:02:14 2000
+@@ -29,9 +29,9 @@
+ override CFLAGS += $(GNOME_CC_CFLAGS)
+ override LIBS += $(GNOME_CC_LIBS)
+ 
+-G_CC_DIR = $(GNOMEDIR)/share/control-center
++G_CC_DIR = $(GNOMEDIR)/share/gnome/control-center
+ G_MENU_DIR = $(GNOMEDIR)/share/gnome/apps/Settings
+-G_PIXMAP_DIR = $(GNOMEDIR)/share/pixmaps
++G_PIXMAP_DIR = $(GNOMEDIR)/share/gnome/pixmaps
+ 
+ all : sawfish-capplet
