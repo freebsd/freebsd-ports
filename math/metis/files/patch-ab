@@ -17,20 +17,3 @@
   LD = $(CC) -L. 
   
   
-***************
-*** 21,27 ****
-  	$(CC) $(CFLAGS) -c $*.c
-  
-  ../libmetis.a: $(OBJS)
-! 	$(AR) $@ $(OBJS)
-  	$(RANLIB) $@
-  
-  clean:
---- 21,27 ----
-  	$(CC) $(CFLAGS) -c $*.c
-  
-  ../libmetis.a: $(OBJS)
-! 	$(AR) $(ARFLAGS) $@ $(OBJS)
-  	$(RANLIB) $@
-  
-  clean:
