@@ -6,11 +6,12 @@
 #
 
 PORTNAME=	quanta
-PORTVERSION= 	2.0.1
+PORTVERSION= 	3.0pr2a
 PORTEPOCH=	1
 CATEGORIES=	www kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
+DIST_SUBDIR=	${PORTNAME}
 
 .if !defined(NOPORTDOCS)
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
@@ -24,28 +25,19 @@ MAINTAINER=	jeremy@external.org
 
 LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 
-USE_KDELIBS_VER=2
+USE_KDELIBS_VER=3
 USE_XPM=	yes
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=
 CONFIGURE_ARGS+= --with-extra-includes=${LOCALBASE}/include \
-		--disable-closure
-.if defined(PARALLEL_PACKAGE_BUILD) || defined(WANT_KDE_NDEBUG)
-CONFIGURE_ARGS+=--disable-debug
-.endif
+		--disable-closure \
+                --enable-threads \
+                --disable-debug
 USE_GMAKE=	yes
 
 DOCS=		css html javascript php
 
-pre-configure:
-	@${PERL} -pi -e "s#lqt #lqt2 #g" ${WRKSRC}/quanta/Makefile.in
-	@${PERL} -pi -e "s@automake@automake14@g" ${WRKSRC}/configure
-
-	
-post-configure:
-	@${PERL} -pi -e "s@autoconf@autoconf213@g" ${WRKSRC}/Makefile
-	@${PERL} -pi -e "s@moc@moc2@g" ${WRKSRC}/configure
-	
 post-install:
 .if !defined(NOPORTDOCS)
 .for doc in ${DOCS}
@@ -55,5 +47,5 @@ post-install:
 	${CHOWN} -R root:wheel ${PREFIX}/share/apps/quanta/doc
 	find ${PREFIX}/share/apps/quanta/doc -type f | xargs ${CHMOD} 444
 .endif
-	
+
 .include <bsd.port.mk>
