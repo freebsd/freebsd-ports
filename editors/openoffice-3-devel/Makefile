@@ -87,7 +87,8 @@ BUILD_DEPENDS+=	zip:${PORTSDIR}/archivers/zip \
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
 		mng.1:${PORTSDIR}/graphics/libmng \
-		freetype.9:${PORTSDIR}/print/freetype2
+		freetype.9:${PORTSDIR}/print/freetype2 \
+		IDL-2.0:${PORTSDIR}/devel/libIDL
 .if defined(WITHOUT_JAVA)
 LIB_DEPENDS=	xslt.2:${PORTSDIR}/textproc/libxslt
 .else
