@@ -764,6 +764,7 @@ cdiff		ports/textproc/cdiff
 cdk		ports/devel/cdk
 cdlabelgen	ports/print/cdlabelgen
 cdoc		ports/devel/cdoc
+cdparanoia	ports/audio/cdparanoia
 cdpd		ports/net/cdpd
 cdplay		src/usr.sbin/cdplay
 cdplayer.app	ports/audio/cdplayer.app
