@@ -1,7 +1,0 @@
---- index-configuration/Makefile.in.orig	Wed Nov  1 15:07:46 2000
-+++ index-configuration/Makefile.in	Fri Nov  3 11:46:54 2000
-@@ -129,3 +129,3 @@
- 
--medusacronconfdir = $(sysconfdir)/cron.daily
-+medusacronconfdir = $(sysconfdir)
- 

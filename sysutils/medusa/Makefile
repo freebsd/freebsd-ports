@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	medusa
-PORTVERSION=	0.2.2
+PORTVERSION=	0.3.0
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	unstable/sources/medusa
@@ -22,8 +22,8 @@ USE_X_PREFIX=	yes
 USE_GNOME=	yes
 USE_LIBTOOL=	yes
 CONFIGURE_ARGS=	--enable-shared --enable-static
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
+		LIBS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 
 pre-patch:
 	@${PERL} -pi -e 's|-lpthread|-pthread|g ; \
