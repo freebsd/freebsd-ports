@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bz2
-PORTVERSION=	0.2.0
+PORTVERSION=	0.2.1
 CATEGORIES=	archivers ruby
 MASTER_SITES=	ftp://moulon.inra.fr/pub/ruby/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -29,15 +29,6 @@ DOCS=		Changes \
 		${RUBY_RD_HTML_FILES} \
 		docs/doc
 
-RUBY_REQUIRE=	Ruby >= 180
-
-.include <bsd.port.pre.mk>
-
-.if !defined(RUBY_PROVIDED)
-IGNORE=		only works with Ruby 1.8 or later
-RUBY_VER=	1.8	# This gets in effect when NO_IGNORE is defined
-.endif
-
 post-build:
 .if !defined(NOPORTDOCS)
 	cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} rdoc
@@ -45,7 +36,7 @@ post-build:
 
 post-install: doc-install
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
 
 doc-install:
 .if !defined(NOPORTDOCS)
