@@ -15,6 +15,7 @@
     SUBDIR += diablo
     SUBDIR += dnews
     SUBDIR += fidogate
+    SUBDIR += fidogate-ds
     SUBDIR += gnus-emacs20
     SUBDIR += golded+
     SUBDIR += grn

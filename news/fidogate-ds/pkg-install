@@ -1,0 +1,36 @@
+#!/bin/sh
+
+case $2 in
+PRE-INSTALL)
+	;;
+POST-INSTALL)
+	SPOOLDIR=${SPOOLDIR:=/var/spool/fido/gate}
+	BTBASEDIR=${BTBASEDIR:=/var/spool/fido/bt}
+	LOGDIR=${LOGDIR:=/var/log/fido/gate}
+	LOCKDIR=${LOCKDIR:=/var/run/fidogate}
+	VARDIR=${VARDIR:=${PREFIX}/var/fidogate}
+
+	mkdir -p $LOCKDIR
+	mkdir -p $LOGDIR
+	mkdir -p $BTBASEDIR/fbox
+	mkdir -p $BTBASEDIR/in/bad
+	mkdir -p $BTBASEDIR/in/tmpunpack
+	mkdir -p $BTBASEDIR/pin/bad
+	mkdir -p $BTBASEDIR/pin/tmpunpack
+	mkdir -p $BTBASEDIR/out
+	mkdir -p $BTBASEDIR/tick
+	mkdir -p $SPOOLDIR/outpkt/mail
+	mkdir -p $SPOOLDIR/outpkt/news
+	mkdir -p $SPOOLDIR/outrfc/mail
+	mkdir -p $SPOOLDIR/outrfc/news
+	mkdir -p $SPOOLDIR/toss/bad
+	mkdir -p $SPOOLDIR/toss/pack
+	mkdir -p $SPOOLDIR/toss/route
+	mkdir -p $SPOOLDIR/toss/toss
+	mkdir -p $VARDIR/seq
+	;;
+*)
+	echo >&2 "Unknown argument in $0 $@"
+	exit 1
+	;;
+esac
