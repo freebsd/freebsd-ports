@@ -1,0 +1,6 @@
+%%PEARDIR%%/Auth.php
+%%PEARDIR%%/Container.php
+%%PEARDIR%%/Container/DB.php
+%%PEARDIR%%/Container/File.php
+%%PEARDIR%%/Container/LDAP.php
+@dirrm %%PEARDIR%%/Container
