@@ -18,3 +18,5 @@ lib/wnn/ja_JP/rk.wnn6/mode
 lib/wnn/ja_JP/rk.wnn6/mode.hankata
 lib/wnn/ja_JP/rk.wnn6/mode.nohankata
 @dirrm lib/wnn/ja_JP/rk.wnn6
+@dirrm lib/wnn/ja_JP
+@dirrm lib/wnn
