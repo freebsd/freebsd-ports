@@ -1,13 +1,13 @@
 # New ports collection makefile for:	GNU emacs with dl
-# Version required:	20.5a
+# Version required:	20.6
 # Date created:		10 October 1998
 # Whom:			shige
 #
 # $FreeBSD$
 #
 
-DISTNAME=	emacs-20.5a
-PKGNAME=	emacs-dl-20.5a
+DISTNAME=	emacs-20.6
+PKGNAME=	emacs-dl-20.6
 CATEGORIES=	editors ipv6
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	emacs
@@ -19,14 +19,14 @@ PATCH_DIST_STRIP= -p1
 
 MAINTAINER=	shige@FreeBSD.org
 
-WRKSRC=		${WRKDIR}/emacs-${EMACS_VER}
-
 RUN_DEPENDS=	emacs-${EMACS_VER}:${PORTSDIR}/editors/emacs20
+
+WRKSRC=		${WRKDIR}/emacs-${EMACS_VER}
 
 USE_AUTOCONF=	yes
 USE_GMAKE=	yes
 MAKE_ENV=	INSTALL_SCRIPT="${INSTALL_SCRIPT}"
-EMACS_VER=	20.5
+EMACS_VER=	20.6
 CONFIGURE_TARGET=	${MACHINE_ARCH}--freebsd
 .if !defined(NO_X11)
 CONFIGURE_ARGS= --with-x-toolkit --with-pop

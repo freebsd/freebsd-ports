@@ -8,6 +8,6 @@
   	Warning: locale not supported by C library, locale unchanged
 
   If you complain about this message, type `make install USE_XPG4=YES'
-  at the "${PORTSDIR}/editors/japanese" directory to re-make this package.
+  at the "${PORTSDIR}/editors/emacs20-dl" directory to re-make this package.
 
 ****************************************************************************
