@@ -10,5 +10,3 @@ and copy the file example.modefile in /usr/X11R6/lib/X11/wmtimebomb
 Usage: wmtimebomb -t <time> -b <bombs> -x <width> -y <height> -s -c -h
 -s will start timebomb with clock in its title
 -c will start timebomb with counter in its title
-
-WWW: http://www.maliwan.org/wmtimebomb.shtml
