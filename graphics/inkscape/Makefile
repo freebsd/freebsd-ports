@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	inkscape
-PORTVERSION=	0.36
-PORTREVISION=	3
+PORTVERSION=	0.37
 CATEGORIES=	graphics gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -20,19 +19,33 @@ RUN_DEPENDS=	${SITE_PERL}/XML/XQL.pm:${PORTSDIR}/textproc/p5-XML-XQL
 
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
-USE_GNOME=	gnomeprefix gnomehack libglade2 libartlgpl2 libgnomeprintui
+USE_GNOME=	gnomeprefix gnomehack lthack intlhack libglade2 libartlgpl2 libgnomeprintui
 USE_REINPLACE=	yes
 USE_LIBTOOL=	yes
 CONFIGURE_ARGS=	--with-popt \
 		--with-gnome-print
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/freetype2 -I${X11BASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/freetype2 -I${X11BASE}/include -I${LOCALBASE}" \
+		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib -L${LOCALBASE}"
 
 MAN1=		inkscape.1
 
+.include <bsd.port.pre.mk>
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|<malloc.h>|<stdlib.h>|g' \
-		${WRKSRC}/src/helper/action.c \
-		${WRKSRC}/src/libarikkei/arikkei-token.c
+		${WRKSRC}/src/helper/action.cpp \
+		${WRKSRC}/src/libarikkei/arikkei-token.cpp
+	@${REINPLACE_CMD} -e 's|round|rint|g' \
+		${WRKSRC}/src/livarot/Shape.h \
+		${WRKSRC}/src/modules/gnome.cpp \
+		${WRKSRC}/src/object-edit.cpp \
+		${WRKSRC}/src/spiral-context.cpp \
+		${WRKSRC}/src/star-context.cpp
+.if ${OSVERSION} < 500000
+	@${REINPLACE_CMD} -e 's|<stdint.h>|<sys/types.h>|g' \
+		${WRKSRC}/src/livarot/*.h
+	@${REINPLACE_CMD} -e 's|isfinite|!isinf|g' \
+		${WRKSRC}/src/helper/*.cpp
+.endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
