@@ -1,0 +1,2 @@
+bin/dmake
+lib/dmake/startup.mk

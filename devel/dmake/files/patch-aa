@@ -1,0 +1,72 @@
+*** unix/bsd43/make.sh.orig	Thu Oct  6 18:26:53 1994
+--- unix/bsd43/make.sh	Sat Aug  5 18:39:51 1995
+***************
+*** 1,3 ****
+--- 1,5 ----
++ if [ ! -x dmake ]
++ then
+  mkdir objects
+  cc -c -I. -Iunix -Iunix/bsd43 -O infer.c
+  mv infer.o objects
+***************
+*** 51,69 ****
+  mv runargv.o objects
+  cc -c -I. -Iunix -Iunix/bsd43 -O unix/dcache.c
+  mv dcache.o objects
+- cc -c -I. -Iunix -Iunix/bsd43 -O unix/bsd43/putenv.c
+- mv putenv.o objects
+- cc -c -I. -Iunix -Iunix/bsd43 -O unix/bsd43/tempnam.c
+- mv tempnam.o objects
+- cc -c -I. -Iunix -Iunix/bsd43 -O unix/bsd43/utime.c
+- mv utime.o objects
+- cc -c -I. -Iunix -Iunix/bsd43 -O unix/bsd43/setvbuf.c
+- mv setvbuf.o objects
+  cc -O -o dmake  objects/infer.o objects/make.o objects/stat.o objects/expand.o \
+  objects/dmstring.o objects/hash.o objects/dag.o objects/dmake.o objects/path.o \
+  objects/imacs.o objects/sysintf.o objects/parse.o objects/getinp.o \
+  objects/quit.o objects/state.o objects/dmdump.o objects/macparse.o \
+  objects/rulparse.o objects/percent.o objects/function.o objects/arlib.o \
+  objects/dirbrk.o objects/rmprq.o objects/ruletab.o objects/runargv.o \
+! objects/dcache.o objects/putenv.o objects/tempnam.o objects/utime.o objects/setvbuf.o 
+  cp unix/bsd43/startup.mk startup.mk
+--- 53,64 ----
+  mv runargv.o objects
+  cc -c -I. -Iunix -Iunix/bsd43 -O unix/dcache.c
+  mv dcache.o objects
+  cc -O -o dmake  objects/infer.o objects/make.o objects/stat.o objects/expand.o \
+  objects/dmstring.o objects/hash.o objects/dag.o objects/dmake.o objects/path.o \
+  objects/imacs.o objects/sysintf.o objects/parse.o objects/getinp.o \
+  objects/quit.o objects/state.o objects/dmdump.o objects/macparse.o \
+  objects/rulparse.o objects/percent.o objects/function.o objects/arlib.o \
+  objects/dirbrk.o objects/rmprq.o objects/ruletab.o objects/runargv.o \
+! objects/dcache.o 
+  cp unix/bsd43/startup.mk startup.mk
++ fi
+*** unix/runargv.c-dist	Sat Aug  5 18:17:21 1995
+--- unix/runargv.c	Sat Aug  5 18:17:38 1995
+***************
+*** 77,83 ****
+--- 77,85 ----
+  char	*cmd;
+  {
+     extern  int  errno;
++ #ifndef __FreeBSD__
+     extern  char *sys_errlist[];
++ #endif
+     int          pid;
+     char         **argv;
+  
+*** makefile.orig	Thu Oct  6 18:30:22 1994
+--- makefile	Sat Aug  5 18:58:26 1995
+***************
+*** 89,91 ****
+--- 89,97 ----
+  	  tccswp msc40swp msc50swp msc51swp msc60swp \
+  	  bcc    bccswp   ztc      ztcswp
+  $(DOS_VER) :; make.bat $@
++ 
++ install:
++ 	install -c -s -m 755 dmake ${PREFIX}/bin
++ 	mkdir -p ${PREFIX}/lib/dmake
++ 	chmod 755 ${PREFIX}/lib/dmake
++ 	install -c -m 444 startup.mk ${PREFIX}/lib/dmake
