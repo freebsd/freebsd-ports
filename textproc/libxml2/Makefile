@@ -6,14 +6,16 @@
 #
 
 PORTNAME=	libxml2
-PORTVERSION=	2.3.7
+PORTVERSION=	2.3.8
 CATEGORIES=	textproc gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/libxml
 
 MAINTAINER=	sobomax@FreeBSD.org
 
+BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
 LIB_DEPENDS=	giconv.2:${PORTSDIR}/converters/libiconv
+RUN_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
 
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
@@ -26,5 +28,9 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 MAN1=		xml2-config.1 xmllint.1
 MAN4=		libxml.4
+
+pre-patch:
+	@find ${WRKSRC} -name Makefile.in | xargs ${PERL} -pi -e \
+		's|\$\(libdir\)/pkgconfig|\$\(prefix\)/libdata/pkgconfig|g'
 
 .include <bsd.port.mk>
