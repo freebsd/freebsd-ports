@@ -1,0 +1,31 @@
+--- src/terminate.c.orig	Thu Aug  7 18:57:35 2003
++++ src/terminate.c	Thu Aug  7 19:09:22 2003
+@@ -1,7 +1,7 @@
+ /* Termination functions, weak pointers.
+  */
+ 
+-#include <varargs.h>
++#include <stdarg.h>
+ 
+ #include "kernel.h"
+ 
+@@ -50,17 +50,11 @@
+  * Null is returned when the object has not been found.
+  */
+ /*VARARGS*/
+-Object Find_Object (va_alist) va_dcl {
++Object Find_Object (int type, GENERIC group, MATCHFUN match, ...) {
+     WEAK_NODE *p;
+-    int type;
+-    GENERIC group;
+-    MATCHFUN match;
+     va_list args;
+ 
+-    va_start (args);
+-    type = va_arg (args, int);
+-    group = va_arg (args, GENERIC);
+-    match = va_arg (args, MATCHFUN);
++    va_start (args, match);
+     for (p = first; p; p = p->next) {
+ 	if (TYPE(p->obj) != type || p->group != group)
+ 	    continue;
