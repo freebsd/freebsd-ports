@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.74 1998/05/18 08:32:45 tg Exp $
+# $Id: Makefile,v 1.75 1998/05/19 08:51:56 tg Exp $
 #
 
     SUBDIR += EZWGL
@@ -56,6 +56,7 @@
     SUBDIR += ppm2fli
     SUBDIR += qgl
     SUBDIR += qvplay
+    SUBDIR += rayshade
     SUBDIR += sane
     SUBDIR += sced
     SUBDIR += spigot
