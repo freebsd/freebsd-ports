@@ -3,13 +3,11 @@ share/faces/machine.tab
 share/faces/people.tab
 bin/compface
 bin/uncompface
-man/man1/uncompface.1.gz
 lib/libcompface.a
 lib/libcompface.so.1.0
 @exec /sbin/ldconfig -m %D/lib
 @unexec /sbin/ldconfig -R
 include/compface.h
-man/man3/uncompface.3.gz
 bin/icon2ikon 
 bin/ikon2icon
 bin/rs2icon
