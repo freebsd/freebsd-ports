@@ -1,7 +1,0 @@
-Subclasses Net::DAAP::Client and overrides methods to allow the
-module to provide suitable authentication tokens for iTunes 4.2 and
-4.5.
-
-Author: Richard Clamp <richardc@unixbeard.net>
-
-WWW: http://search.cpan.org/dist/Net-DAAP-Client-Auth/
