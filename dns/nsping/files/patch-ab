@@ -1,0 +1,28 @@
+--- nsping.c.orig	Fri Nov 12 15:30:42 1999
++++ nsping.c	Fri Nov 12 15:44:06 1999
+@@ -189,10 +189,14 @@
+ 
+ int guess_zone() {
+ 	char lhn[MAXDNAME];
++	struct hostent *hp;
+ 	char *cp;
+ 
+ 	if(gethostname(lhn, MAXDNAME) < 0) 
+ 		return(0);
++	if((hp = gethostbyname(lhn)) == NULL)
++		return(0);
++	strlcpy(lhn, hp->h_name, sizeof(lhn));
+ 
+ 	cp = strchr(lhn, '.');
+ 	if(!cp || !(*(++cp)))
+@@ -679,9 +683,7 @@
+ /* -------------------------------------------------------------------------- */
+ 
+  void usage() {
+-	 fprintf(stderr, "nsping [ -z <zone> | -h <hostname> ] -p <port> -t <timeout>\n"
+-		   "\t\t-a <local address> -P <local port>\n"
+-		   "\t\t-T <type> <-r | -R, recurse?>\n");
++	 fprintf(stderr, "Usage: nsping [-dR] [-c count] [-z zone | -h hostname] [-t timeout] [-p dport] [-P sport] [-a saddr] [-T querytype]\n");
+ 	 return;
+  }
+ 
