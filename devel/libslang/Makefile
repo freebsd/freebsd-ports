@@ -1,15 +1,15 @@
 # New ports collection makefile for:    S-Lang library
-# Version required:     1.3.10
+# Version required:     1.4.0
 # Date created:         11 July 1996
 # Whom:                 ache
 #
 # $FreeBSD$
 #
 
-DISTNAME=	slang-1.3.10
-PKGNAME=	libslang-1.3.10
+DISTNAME=	slang-1.4.0
+PKGNAME=	libslang-1.4.0
 CATEGORIES=	devel
-MASTER_SITES=	ftp://space.mit.edu/pub/davis/slang/v1.3/
+MASTER_SITES=	ftp://space.mit.edu/pub/davis/slang/v1.4/
 
 MAINTAINER=	xaa+ports@timewasters.nl
 
