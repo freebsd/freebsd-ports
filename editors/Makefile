@@ -17,7 +17,6 @@
     SUBDIR += bitmap-mule
     SUBDIR += bpatch
     SUBDIR += bvi
-    SUBDIR += codecommander
     SUBDIR += color-mate
     SUBDIR += cooledit
     SUBDIR += custom-emacs
@@ -55,6 +54,7 @@
     SUBDIR += joe
     SUBDIR += jove
     SUBDIR += koffice
+    SUBDIR += latte
     SUBDIR += le
     SUBDIR += leim20
     SUBDIR += lpe
