@@ -1,13 +1,7 @@
 bin/GP
-lib/GP/filters/DVI-Direct
-lib/GP/filters/Image-Direct
 lib/GP/filters/ImageMagick
-lib/GP/filters/TEXT-Direct
 lib/GP/filters/a2ps
-lib/GP/filters/a2ps-j
 lib/GP/filters/dvips
-lib/GP/filters/dvi2ps-j
-lib/GP/filters/jdvi2kps
 lib/GP/icons/printer.xbm
 lib/GP/icons/exit.xbm
 lib/GP/filetype
