@@ -1,21 +1,35 @@
---- lib/Makefile.in.orig	Thu Dec  2 14:11:14 1999
-+++ lib/Makefile.in	Sun Dec 26 16:54:42 1999
-@@ -75,6 +75,7 @@
- INSTALL = @INSTALL@
- INSTALL_PROGRAM = @INSTALL_PROGRAM@ $(AM_INSTALL_PROGRAM_FLAGS)
- INSTALL_DATA = @INSTALL_DATA@
-+INSTALL_LIB = @INSTALL_LIB@
- INSTALL_SCRIPT = @INSTALL_SCRIPT@
- transform = @program_transform_name@
+--- configure.in.orig	Thu Dec  2 14:10:30 1999
++++ configure.in	Sat Dec  4 17:59:13 1999
+@@ -213,6 +213,7 @@
+   AC_CHECK_LIB(crypt, crypt,
+ 	       LIB_CRYPT="-lcrypt"; cmu_have_crypt=yes,
+ 	       cmu_have_crypt=no))
++AC_SUBST(LIB_CRYPT)
  
-@@ -190,8 +191,8 @@
- 	$(mkinstalldirs) $(DESTDIR)$(libdir)
- 	@list='$(lib_LTLIBRARIES)'; for p in $$list; do \
- 	  if test -f $$p; then \
--	    echo "$(LIBTOOL)  --mode=install $(INSTALL) $$p $(DESTDIR)$(libdir)/$$p"; \
--	    $(LIBTOOL)  --mode=install $(INSTALL) $$p $(DESTDIR)$(libdir)/$$p; \
-+	    echo "$(LIBTOOL)  --mode=install $(INSTALL_LIB) $$p $(DESTDIR)$(libdir)/$$p"; \
-+	    $(LIBTOOL)  --mode=install $(INSTALL_LIB) $$p $(DESTDIR)$(libdir)/$$p; \
- 	  else :; fi; \
- 	done
+ CMU_SOCKETS
+ 
+@@ -503,15 +504,22 @@
+ 	    with_rc4=no)
+ 
+   if test "$with_rc4" = no; then
++
++	  dnl if openssl has been compiled with the rsaref2 libraries,
++	  dnl we need to include the rsaref libraries in the crypto check
++	  LIB_RSAREF=""
++	  AC_CHECK_LIB(rsaref, RSAPublicEncrypt,
++		  LIB_RSAREF="-lRSAglue -lrsaref"; cmu_have_rsaref=yes,
++		  cmu_have_rsaref=no)
++
+ 	  AC_CHECK_LIB(crypto, RC4_set_key,
+ 		  AC_CHECK_HEADER(openssl/rc4.h, [AC_DEFINE(WITH_SSL_RC4)
+                                                   LIB_RC4="-lcrypto";
+ 						  with_rc4="openssl"],
+ 			          AC_WARN([SSL: Disabling rc4 support]); 
+                                   with_rc4=no),
+-		       AC_WARN([SSL2: Disabling rc4 support]); with_rc4=no)
++		       AC_WARN([SSL2: Disabling rc4 support]); with_rc4=no, $LIB_RSAREF)
+   fi
+-
+   LIBS="$cmu_save_LIBS"
+ fi
  
