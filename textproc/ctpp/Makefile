@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ctpp
-PORTVERSION=	1.7
+PORTVERSION=	1.7.5
 CATEGORIES=	textproc devel
 MASTER_SITES=	http://www.reki.ru/products/ctpp/download/
 
@@ -25,5 +25,8 @@ CONFIGURE_ARGS+=	--enable-optimization
 .if defined(WITH_CTPP_DEBUG)
 CONFIGURE_ARGS+=	--enable-debug
 .endif
+
+post-patch:
+	@${RM} -f ${WRKSRC}/obj/*.o
 
 .include <bsd.port.mk>
