@@ -1,0 +1,8 @@
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Time/Piece/Piece.so
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Time/Piece/Piece.bs
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Time/Piece/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Time/Piece.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Time/Seconds.pm
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Time/Piece
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Time 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Time 2>/dev/null || true

@@ -532,6 +532,7 @@
     SUBDIR += p5-Time-HiRes
     SUBDIR += p5-Time-Object
     SUBDIR += p5-Time-Period
+    SUBDIR += p5-Time-Piece
     SUBDIR += p5-TimeDate
     SUBDIR += p5-TraceFuncs
     SUBDIR += p5-Tree-DAG_Node
