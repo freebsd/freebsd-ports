@@ -1,6 +1,5 @@
 bin/vamos
 include/vamos/body/Aerodynamic_Device.h
-include/vamos/body/Body.h
 include/vamos/body/Brake.h
 include/vamos/body/Car.h
 include/vamos/body/Clutch.h
@@ -14,6 +13,7 @@ include/vamos/body/Fuel_Tank.h
 include/vamos/body/Gauge.h
 include/vamos/body/Gl_Car.h
 include/vamos/body/Particle.h
+include/vamos/body/Rigid_Body.h
 include/vamos/body/Suspension.h
 include/vamos/body/Tire.h
 include/vamos/body/Transmission.h
@@ -136,6 +136,7 @@ lib/libvamos-world.so.0
 %%DATADIR%%/tracks/Imola.xml
 %%DATADIR%%/tracks/Indianapolis.xml
 %%DATADIR%%/tracks/Interlagos.xml
+%%DATADIR%%/tracks/Istanbul.xml
 %%DATADIR%%/tracks/Kyalami.xml
 %%DATADIR%%/tracks/Laguna_Seca.xml
 %%DATADIR%%/tracks/Magny-Cours.xml

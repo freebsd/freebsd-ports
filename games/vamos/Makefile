@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	vamos
-PORTVERSION=	0.5.2
+PORTVERSION=	0.5.3
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,7 +16,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An automotive simulation framework
 
 BUILD_DEPENDS=	${X11BASE}/lib/libplibul.a:${PORTSDIR}/x11-toolkits/plib
-LIB_DEPENDS=	sigc-1.2.5:${PORTSDIR}/devel/libsigc++12 \
+LIB_DEPENDS=	cppunit-1.10.2:${PORTSDIR}/devel/cppunit \
+		sigc-1.2.5:${PORTSDIR}/devel/libsigc++12 \
 		glut.3:${PORTSDIR}/graphics/libglut \
 		png.5:${PORTSDIR}/graphics/png
 
