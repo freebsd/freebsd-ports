@@ -1,5 +1,5 @@
---- hier.c.ORIG	Tue Sep 26 12:39:49 2000
-+++ hier.c	Tue Sep 26 12:41:07 2000
+--- hier.c.orig	Mon May 20 19:53:10 2002
++++ hier.c	Mon May 20 19:55:14 2002
 @@ -35,16 +35,6 @@
    d(auto_qmail,"users",auto_uido,auto_gidq,0755);
    d(auto_qmail,"bin",auto_uido,auto_gidq,0755);
@@ -17,7 +17,7 @@
  
    d(auto_qmail,"alias",auto_uida,auto_gidq,02755);
  
-@@ -64,46 +54,6 @@
+@@ -64,44 +54,7 @@
    z(auto_qmail,"queue/lock/sendmutex",0,auto_uids,auto_gidq,0600);
    p(auto_qmail,"queue/lock/trigger",auto_uids,auto_gidq,0622);
  
@@ -59,16 +59,14 @@
 -  c(auto_qmail,"doc","QLDAPNEWS",auto_uido,auto_gidq,0644);
 -  c(auto_qmail,"doc","QLDAPTODO",auto_uido,auto_gidq,0644);
 -  c(auto_qmail,"doc","QLDAPPICTURE",auto_uido,auto_gidq,0644);
--  c(auto_qmail,"doc","ANTISPAM",auto_uido,auto_gidq,0644);
--
++
+ 
    c(auto_qmail,"bin","qmail-queue",auto_uidq,auto_gidq,04711);
    c(auto_qmail,"bin","qmail-lspawn",auto_uido,auto_gidq,0700);
-   c(auto_qmail,"bin","qmail-start",auto_uido,auto_gidq,0700);
-@@ -153,110 +103,4 @@
-   c(auto_qmail,"bin","auth_pop",auto_uido,auto_gidq,0700);
-   c(auto_qmail,"bin","auth_imap",auto_uido,auto_gidq,0700);
-   c(auto_qmail,"bin","qmail-ldaplookup",auto_uido,auto_gidq,0700);
--
+@@ -160,109 +113,4 @@
+   c(auto_qmail,"bin","pbscheck",auto_uido,auto_gidq,0755);
+   c(auto_qmail,"bin","pbsdbd",auto_uido,auto_gidq,0755);
+ 
 -  c(auto_qmail,"man/man5","addresses.5",auto_uido,auto_gidq,0644);
 -  c(auto_qmail,"man/cat5","addresses.0",auto_uido,auto_gidq,0644);
 -  c(auto_qmail,"man/man5","envelopes.5",auto_uido,auto_gidq,0644);
