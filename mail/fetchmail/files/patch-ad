@@ -1,5 +1,5 @@
---- configure.orig	Tue Jan  4 15:59:12 2000
-+++ configure	Wed Jan 12 08:56:41 2000
+--- configure.orig	Sun Jan 16 10:07:09 2000
++++ configure	Sun Jan 30 21:03:36 2000
 @@ -1595,7 +1595,7 @@
  if test `uname` = "FreeBSD" 
  then
@@ -9,16 +9,16 @@
  fi
   
  # Check for Rhapsody special case: it doesn't like -s
-@@ -5553,7 +5553,7 @@
+@@ -5555,7 +5555,7 @@
  then
    echo "Configuring kerberosIV for `uname`"
    CEFLAGS="$CEFLAGS -DKERBEROS_V4 -I/usr/include/kerberosIV"
 -  LIBS="$LIBS -lkrb -ldes"
 +  LIBS="$LIBS -lkrb -ldes -lcom_err"
- elif test -n "$with_kerberos" -a -n "$with_kerberos5"
+ elif test -n "$with_kerberos" -a -n "$with_kerberos5" -a "$with_kerberos" != "no"
  then
      CEFLAGS="$CEFLAGS -DKERBEROS_V4 -I$with_kerberos/include"
-@@ -5584,7 +5584,7 @@
+@@ -5586,7 +5586,7 @@
  then
      CEFLAGS="$CEFLAGS -DKERBEROS_V4 -I$with_kerberos/include"
      LDEFLAGS="$LDEFLAGS -L$with_kerberos/lib"
@@ -27,7 +27,7 @@
  else
    if test "$with_kerberos" != "no"
    then
-@@ -5594,7 +5594,7 @@
+@@ -5596,7 +5596,7 @@
        then
          CEFLAGS="$CEFLAGS -DKERBEROS_V4 -I$dir/include"
          LDEFLAGS="$LDEFLAGS -L$dir/lib"
