@@ -1,7 +1,4 @@
 bin/straw
-@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/straw.schemas > /dev/null || /usr/bin/true
-etc/gconf/schemas/straw.schemas
-@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/straw.schemas > /dev/null || /usr/bin/true
 share/gnome/applications/straw.desktop
 share/gnome/pixmaps/straw.png
 share/gnome/straw/Config.py
@@ -43,12 +40,18 @@ share/gnome/straw/ItemStore.pyo
 share/gnome/straw/LookupManager.py
 share/gnome/straw/LookupManager.pyc
 share/gnome/straw/LookupManager.pyo
+share/gnome/straw/MVP.py
+share/gnome/straw/MVP.pyc
+share/gnome/straw/MVP.pyo
 share/gnome/straw/Main.py
 share/gnome/straw/Main.pyc
 share/gnome/straw/Main.pyo
 share/gnome/straw/MainWindow.py
 share/gnome/straw/MainWindow.pyc
 share/gnome/straw/MainWindow.pyo
+share/gnome/straw/MainloopManager.py
+share/gnome/straw/MainloopManager.pyc
+share/gnome/straw/MainloopManager.pyo
 share/gnome/straw/MessageManager.py
 share/gnome/straw/MessageManager.pyc
 share/gnome/straw/MessageManager.pyo
@@ -76,9 +79,6 @@ share/gnome/straw/PreferencesDialog.pyo
 share/gnome/straw/QueueDict.py
 share/gnome/straw/QueueDict.pyc
 share/gnome/straw/QueueDict.pyo
-share/gnome/straw/StrawURLOpener.py
-share/gnome/straw/StrawURLOpener.pyc
-share/gnome/straw/StrawURLOpener.pyo
 share/gnome/straw/SubscribeDialog.py
 share/gnome/straw/SubscribeDialog.pyc
 share/gnome/straw/SubscribeDialog.pyo
@@ -88,9 +88,15 @@ share/gnome/straw/SummaryItem.pyo
 share/gnome/straw/SummaryParser.py
 share/gnome/straw/SummaryParser.pyc
 share/gnome/straw/SummaryParser.pyo
+share/gnome/straw/Tray.py
+share/gnome/straw/Tray.pyc
+share/gnome/straw/Tray.pyo
 share/gnome/straw/URLFetch.py
 share/gnome/straw/URLFetch.pyc
 share/gnome/straw/URLFetch.pyo
+share/gnome/straw/ValueMonitor.py
+share/gnome/straw/ValueMonitor.pyc
+share/gnome/straw/ValueMonitor.pyo
 share/gnome/straw/__init__.py
 share/gnome/straw/__init__.pyc
 share/gnome/straw/__init__.pyo
@@ -101,6 +107,9 @@ share/gnome/straw/default_subscriptions.opml
 share/gnome/straw/error.py
 share/gnome/straw/error.pyc
 share/gnome/straw/error.pyo
+share/gnome/straw/feedfinder.py
+share/gnome/straw/feedfinder.pyc
+share/gnome/straw/feedfinder.pyo
 share/gnome/straw/feedparser.py
 share/gnome/straw/feedparser.pyc
 share/gnome/straw/feedparser.pyo
@@ -117,9 +126,8 @@ share/gnome/straw/image-broken.png
 share/gnome/straw/image-waiting.png
 share/gnome/straw/offline.png
 share/gnome/straw/online.png
-share/gnome/straw/rssfinder.py
-share/gnome/straw/rssfinder.pyc
-share/gnome/straw/rssfinder.pyo
+share/gnome/straw/pytrayicon.so
+share/gnome/straw/straw.css
 share/gnome/straw/straw.glade
 share/gnome/straw/straw.png
 share/gnome/straw/utils.py
@@ -127,12 +135,14 @@ share/gnome/straw/utils.pyc
 share/gnome/straw/utils.pyo
 share/locale/cs/LC_MESSAGES/straw.mo
 share/locale/de/LC_MESSAGES/straw.mo
+share/locale/en_CA/LC_MESSAGES/straw.mo
 share/locale/en_GB/LC_MESSAGES/straw.mo
 share/locale/es/LC_MESSAGES/straw.mo
 share/locale/fi/LC_MESSAGES/straw.mo
 share/locale/fr/LC_MESSAGES/straw.mo
 share/locale/nl/LC_MESSAGES/straw.mo
 share/locale/no/LC_MESSAGES/straw.mo
+share/locale/pt/LC_MESSAGES/straw.mo
 share/locale/pt_BR/LC_MESSAGES/straw.mo
 share/locale/ru/LC_MESSAGES/straw.mo
 share/locale/sr/LC_MESSAGES/straw.mo
