@@ -150,7 +150,6 @@ share/locale/fi/LC_MESSAGES/kedit.mo
 @dirrm share/doc/HTML/de/kcalc
 @dirrm share/doc/HTML/de
 @dirrm share/doc/HTML
-@dirrm share/doc
 @dirrm share/apps/knotes/pics
 @dirrm share/apps/knotes
 @dirrm share/apps/kjots/toolbar
