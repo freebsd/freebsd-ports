@@ -25,5 +25,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--x-include=${X11BASE}/include \
 		--x-libraries=${X11BASE}/lib \
 		--with-opengl-dir=${X11BASE}
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 
 .include <bsd.port.mk>
