@@ -7,7 +7,8 @@
 
 PORTNAME=	solidpop3d
 PORTVERSION=	0.15
-CATEGORIES=	mail
+PORTREVISION=	1
+CATEGORIES=	mail ipv6
 MASTER_SITES=	http://solidpop3d.pld.org.pl/ \
 		ftp://207.176.230.192/
 DISTNAME=	solid-pop3d-${PORTVERSION}
