@@ -24,5 +24,6 @@ EXTRACT_BEFORE_ARGS=
 EXTRACT_AFTER_ARGS=
 USE_XLIB=		yes
 USE_ZIP=		yes
+USE_PERL5_BUILD=	yes
 
 .include <bsd.port.mk>
