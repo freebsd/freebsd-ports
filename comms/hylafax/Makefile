@@ -1,17 +1,23 @@
 # ports collection makefile for:	hylafax
-# Version required:	v3.0pl0
+# Version required:	v3.0pl1
 # Date created:		16 May 1995
 # Whom:			Julian Stacey <jhs@freebsd.org>
 # To Replace:		flexfax v2.3beta038special
 # Name changed from flexfax to hylafax by author of both: Sam Leffler.
+#
+# $Id$
 
 DISTNAME=	hylafax-v3.0pl0
-PKGNAME=	hylafax-3.0.0
+PKGNAME=	hylafax-3.0.1
 CATEGORIES+=	comms
 KEYWORDS+=	fax
 MASTER_SITES=	ftp://ftp.sgi.com/sgi/fax/source/
 EXTRACT_SUFX=	-tar.gz
 HAS_CONFIGURE=	yes
+
+PATCH_SITES=	ftp://ftp.sgi.com/sgi/fax/source/
+PATCHFILES=	hylafax-v3.0pl0-patch01.gz 
+PATCH_DIST_STRIP=-p1
 
 MAINTAINER=	jhs@FreeBSD.org
 
