@@ -8,7 +8,7 @@
 PORTNAME=	rain
 PORTVERSION=	1.2.9.b1
 CATEGORIES=	security net
-MASTER_SITES=	http://rain.tenebrous.com/files/
+MASTER_SITES=	http://www.mirrors.wiretapped.net/security/packet-construction/rain/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.b/beta/}
 
 MAINTAINER=	pat@FreeBSD.org
