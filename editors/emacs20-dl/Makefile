@@ -3,7 +3,7 @@
 # Date created:		10 October 1998
 # Whom:			shige
 #
-# $Id: Makefile,v 1.1.1.1 1998/12/13 14:27:06 kuriyama Exp $
+# $Id: Makefile,v 1.2 1998/12/17 09:08:09 asami Exp $
 #
 
 DISTNAME=	emacs-20.3
@@ -20,6 +20,7 @@ MAINTAINER=	shige@kuis.kyoto-u.ac.jp
 RUN_DEPENDS=	emacs-20.3:${PORTSDIR}/editors/emacs20
 
 GNU_CONFIGURE=	yes
+USE_XLIB=	yes
 USE_GMAKE=	yes
 CONFIGURE_ARGS=	i386--freebsd --with-x-toolkit --with-pop
 MAKE_ENV=	INSTALL_SCRIPT="${INSTALL_SCRIPT}"

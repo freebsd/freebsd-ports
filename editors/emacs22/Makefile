@@ -3,7 +3,7 @@
 # Date created:		29 October 1994
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.32 1998/09/14 07:26:02 asami Exp $
+# $Id: Makefile,v 1.33 1999/01/02 12:26:10 kuriyama Exp $
 #
 
 DISTNAME=	emacs-19.34b
@@ -17,6 +17,7 @@ PLIST_SUB=	EMACS_VERSION=${EMACS_VERSION}
 NO_LATEST_LINK=	yes
 WRKSRC=		${WRKDIR}/emacs-19.34
 GNU_CONFIGURE=	yes
+USE_XLIB=	yes
 USE_GMAKE=	yes
 CONFIGURE_ARGS=	i386--freebsd --with-x-toolkit \
 		--sharedstatedir=/var/run
