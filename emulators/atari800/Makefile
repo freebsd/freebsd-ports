@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	atari800
-PORTVERSION=	1.2.2
+PORTVERSION=	1.2.3
 CATEGORIES=	emulators
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -24,6 +24,7 @@ NO_PACKAGE=	${RESTRICTED}
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 
 USE_XLIB=	yes
+USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--target=x11
@@ -38,9 +39,9 @@ post-extract:
 
 post-patch:
 	@${CP} ${FILESDIR}/atari800.cfg ${WRKSRC}
-	@${PERL} -pi -e 's|GUMBY|${DATADIR}|g' ${WRKSRC}/atari800.cfg
-	@${PERL} -pi -e 's|/etc|${DATADIR}|g' ${WRKSRC}/rt-config.c
-	@${PERL} -pi -e 's|tmpnam|mkstemp|g' ${WRKSRC}/devices.c \
+	@${REINPLACE_CMD} -e 's|GUMBY|${DATADIR}|g' ${WRKSRC}/atari800.cfg
+	@${REINPLACE_CMD} -e 's|/etc|${DATADIR}|g' ${WRKSRC}/rt-config.c
+	@${REINPLACE_CMD} -e 's|tmpnam|mkstemp|g' ${WRKSRC}/devices.c \
 		${WRKSRC}/compfile.c
 
 do-install:
