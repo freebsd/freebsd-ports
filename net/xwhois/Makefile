@@ -10,9 +10,7 @@ DISTNAME=	xwhois-0.4.0
 CATEGORIES=	net
 MASTER_SITES=	http://c64.org/~nr/ \
 		http://www.goatnet.ml.org/ \
-		ftp://sangis.kalix.net/pub/nr/xwhois/ \
-		ftp://c64.org/pub/nr/xwhois/ \
-		http://www.physics.adelaide.edu.au/~kkennawa/
+		ftp://sangis.kalix.net/pub/nr/xwhois/
 
 MAINTAINER=	billf@FreeBSD.org
 
