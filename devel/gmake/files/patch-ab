@@ -6,7 +6,7 @@
  @settitle GNU @code{make}
 +@dircategory Programming & development tools
 +@direntry
-+* Gmake: (make).        	The GNU Make utility
++* Gmake: (make).        	The GNU Make utility.
 +@end direntry
  @setchapternewpage odd
  @c %**end of header

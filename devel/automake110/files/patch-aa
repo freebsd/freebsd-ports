@@ -13,7 +13,7 @@
  @format
  START-INFO-DIR-ENTRY
 -* automake: (automake).		Making Makefile.in's
-+* Automake: (automake).		Making Makefile.in's
++* Automake: (automake).		Making Makefile.in's.
  END-INFO-DIR-ENTRY
  @end format
  @end ifinfo
