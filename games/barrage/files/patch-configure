@@ -1,0 +1,11 @@
+--- configure.orig	Tue Apr 22 23:50:13 2003
++++ configure	Tue Apr 22 23:55:27 2003
+@@ -1421,7 +1421,7 @@
+ 
+ 
+ 
+-src_dir="$datadir/games/barrage"
++src_dir="$datadir/barrage"
+ 
+ # Check whether --enable-install or --disable-install was given.
+ if test "${enable_install+set}" = set; then

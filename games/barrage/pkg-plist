@@ -1,0 +1,30 @@
+bin/barrage
+share/barrage/gfx/ammo.bmp
+share/barrage/gfx/crater.bmp
+share/barrage/gfx/cursors.bmp
+share/barrage/gfx/ft_neon.bmp
+share/barrage/gfx/ft_red.bmp
+share/barrage/gfx/ft_red14.bmp
+share/barrage/gfx/ft_yellow.bmp
+share/barrage/gfx/ground.bmp
+share/barrage/gfx/gun.bmp
+share/barrage/gfx/icons.bmp
+share/barrage/gfx/logo.bmp
+share/barrage/gfx/particles.bmp
+share/barrage/gfx/shots.bmp
+share/barrage/gfx/small_crater.bmp
+share/barrage/gfx/trees.bmp
+share/barrage/gfx/units.bmp
+share/barrage/sounds/autocannon.wav
+share/barrage/sounds/click.wav
+share/barrage/sounds/expl1.wav
+share/barrage/sounds/expl2.wav
+share/barrage/sounds/expl3.wav
+share/barrage/sounds/gunfire.wav
+share/barrage/sounds/highlight.wav
+share/barrage/sounds/scream1.wav
+share/barrage/sounds/scream2.wav
+@dirrm share/barrage/sounds
+@dirrm share/barrage/gfx
+@dirrm share/barrage
+@cwd /var/games
