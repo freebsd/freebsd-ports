@@ -1,0 +1,13 @@
+
+$FreeBSD$
+
+--- libmutt/configure	2002/07/18 16:53:06	1.1
++++ libmutt/configure	2002/07/18 16:53:15
+@@ -5192,6 +5192,7 @@
+ 
+ # This can be used to rebuild libtool when needed
+ LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
++$ac_aux_dir/ltconfig $LIBTOOL_DEPS
+ 
+ # Always use our own libtool.
+ LIBTOOL='$(SHELL) $(top_builddir)/libtool'
