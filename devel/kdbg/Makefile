@@ -9,7 +9,7 @@
 DISTNAME=	kdbg-1.0.1
 CATEGORIES=	devel kde
 MASTER_SITES=	http://members.telecom.at/~johsixt/ \
-		ftp://eudaptics.co.at/pub/people/jsixt/
+		ftp://ftp.eudaptics.co.at/pub/people/jsixt/
 
 MAINTAINER=	jedgar@fxp.org
 
