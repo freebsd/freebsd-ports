@@ -48,15 +48,18 @@ etc/arch.conf
 %%DATADIR%%/templates/icons/7.gif
 %%DATADIR%%/templates/icons/8.gif
 %%DATADIR%%/templates/icons/9.gif
-%%PYTHON_SITELIBDIR%%/CHM.py
-%%PYTHON_SITELIBDIR%%/CHM.pyo
-%%PYTHON_SITELIBDIR%%/CHM.pyc
-%%PYTHON_SITELIBDIR%%/chmlib.py
-%%PYTHON_SITELIBDIR%%/chmlib.pyc
-%%PYTHON_SITELIBDIR%%/chmlib.pyo
-%%PYTHON_SITELIBDIR%%/mod_chm.py
-%%PYTHON_SITELIBDIR%%/mod_chm.pyo
-%%PYTHON_SITELIBDIR%%/mod_chm.pyc
+%%PYTHON_SITELIBDIR%%/archmage.pth
+%%PYTHON_SITELIBDIR%%/archmage/CHM.py
+%%PYTHON_SITELIBDIR%%/archmage/CHM.pyc
+%%PYTHON_SITELIBDIR%%/archmage/CHM.pyo
+%%PYTHON_SITELIBDIR%%/archmage/_chmlib.so
+%%PYTHON_SITELIBDIR%%/archmage/chmlib.py
+%%PYTHON_SITELIBDIR%%/archmage/chmlib.pyc
+%%PYTHON_SITELIBDIR%%/archmage/chmlib.pyo
+%%PYTHON_SITELIBDIR%%/archmage/mod_chm.py
+%%PYTHON_SITELIBDIR%%/archmage/mod_chm.pyc
+%%PYTHON_SITELIBDIR%%/archmage/mod_chm.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/archmage
 @dirrm %%DATADIR%%/templates/icons
 @dirrm %%DATADIR%%/templates
 @dirrm %%DATADIR%%
