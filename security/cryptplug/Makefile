@@ -8,7 +8,8 @@
 PORTNAME=	cryptplug
 PORTVERSION=	0.3.15
 CATEGORIES=	security
-MASTER_SITES=	ftp://ftp.gnupg.org/gcrypt/alpha/cryptplug/
+MASTER_SITES=	${MASTER_SITE_GNUPG}
+MASTER_SITE_SUBDIR=	alpha/cryptplug
 
 MAINTAINER=	michaelnottebrock@gmx.net
 

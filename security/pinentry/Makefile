@@ -8,11 +8,12 @@
 PORTNAME=	pinentry
 PORTVERSION=	0.6.8
 CATEGORIES=	security
-MASTER_SITES=	ftp://ftp.gnupg.org/gcrypt/alpha/aegypten/ \
-		http://tigress.com/lofi/
+MASTER_SITES=	${MASTER_SITE_GNUPG} \
+		http://tigress.com/lofi/:lofi
+MASTER_SITE_SUBDIR=	alpha/aegypten
 DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.gz \
-		common.tar.gz \
-		jnlib.tar.gz
+		common.tar.gz:lofi\
+		jnlib.tar.gz:lofi
 
 MAINTAINER=	michaelnottebrock@gmx.net
 
