@@ -26,7 +26,7 @@ post-install:
 	fi
 	@if [ ! -f ${PREFIX}/etc/qpage-example.cf ]; then \
 		${ECHO} "Install ${PREFIX}/etc/qpage-example.cf file."; \
-		${INSTALL_SCRIPT} -m 660 ${WRKDIR}/${PORTNAME}-${PORTVERSION}/example.cf \
+		${INSTALL_SCRIPT} -m 640 ${WRKDIR}/${PORTNAME}-${PORTVERSION}/example.cf \
 			${PREFIX}/etc/qpage-example.cf; \
 	fi
 
