@@ -19,3 +19,5 @@ lib/libFLAC.so.0
 %%PORTDOCS%%share/doc/flac/images/logo.jpg
 %%PORTDOCS%%@dirrm share/doc/flac/images
 %%PORTDOCS%%@dirrm share/doc/flac
+%%XMMS%%@cwd %%X11BASE%%
+%%XMMS%%lib/xmms/Input/libxmms-flac.so

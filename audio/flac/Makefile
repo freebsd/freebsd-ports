@@ -8,6 +8,7 @@
 
 PORTNAME=	flac
 PORTVERSION=	0.10
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -18,6 +19,9 @@ MAINTAINER=	naddy@mips.inka.de
 .if defined(WITH_XMMS)
 BUILD_DEPENDS+=	xmms-config:${PORTSDIR}/audio/xmms
 LIB_DEPENDS+=	xmms.1:${PORTSDIR}/audio/xmms
+PLIST_SUB=	XMMS=""
+.else
+PLIST_SUB=	XMMS="@comment "
 .endif
 
 .if ${MACHINE_ARCH} == "i386"
@@ -34,7 +38,7 @@ USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
 
 post-install:
-.if !defined(NO_PORTDOCS)
+.if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/flac
 	${MKDIR} ${PREFIX}/share/doc/flac/images
 	${INSTALL_DATA} ${WRKSRC}/doc/*.html ${PREFIX}/share/doc/flac
