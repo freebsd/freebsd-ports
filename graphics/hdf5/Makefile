@@ -9,7 +9,7 @@
 PORTNAME=	hdf5
 PORTVERSION=	1.4.5
 CATEGORIES=	graphics
-MASTER_SITES=	ftp://hdf.ncsa.uiuc.edu/HDF5/hdf5-${PORTVERSION}/src/
+MASTER_SITES=	http://fresh.t-systems-sfr.com/unix/src/misc/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Hierarchical Data Format library (from NCSA)
