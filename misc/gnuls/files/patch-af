@@ -1,0 +1,22 @@
+*** man/dircolors.1.orig	Sat Feb 20 09:28:05 1999
+--- man/dircolors.1	Sat Feb 20 09:29:10 1999
+***************
+*** 37,45 ****
+  .B dircolors
+  is maintained as a Texinfo manual.  If the
+  .B info
+! and
+! .B dircolors
+! programs are properly installed at your site, the command
+  .IP
+  .B info dircolors
+  .PP
+--- 37,44 ----
+  .B dircolors
+  is maintained as a Texinfo manual.  If the
+  .B info
+! program and the full suite of GNU fileutils
+! are properly installed at your site, the command
+  .IP
+  .B info dircolors
+  .PP
