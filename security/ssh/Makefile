@@ -3,7 +3,7 @@
 # Date created:		30 Jul 1995
 # Whom:			torstenb@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.1.1.1 1995/10/07 01:19:27 torstenb Exp $
+# $Id: Makefile,v 1.2 1995/10/07 13:08:35 torstenb Exp $
 #
 
 DISTNAME=	ssh-1.2.10
@@ -40,9 +40,10 @@ CONFIGURE_ARGS+= --with-rsaref
 CONFIGURE_ARGS+= --with-socks
 .endif
 
-# Include tcp-wrapper support and identd support
-# Warning: untested !
-.if defined(USE_TCPWRAP_AND_IDENTD) && ${USE_TCPWRAP_AND_IDENTD} == YES
+# Include tcp-wrapper support (call remote identd)
+.if defined(USE_TCPWRAP) && ${USE_TCPWRAP} == YES
+CONFIGURE_ENV=  LDFLAGS=-L${PREFIX}/lib CFLAGS="${CFLAGS} -I${PREFIX}/include"
+BUILD_DEPENDS+= safe_finger:${PORTSDIR}/security/tcp_wrapper
 CONFIGURE_ARGS+= --with-libwrap
 .endif
 
