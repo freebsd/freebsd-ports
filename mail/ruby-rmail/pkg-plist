@@ -14,14 +14,194 @@
 @dirrm %%RUBY_SITELIBDIR%%/mail
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/mail/dot.rdeliver
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/mail/rdeliver.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/mail/rsendmail.rb
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/mail
 %%PORTDOCS%%%%RUBY_DOCDIR%%/mail/NEWS
 %%PORTDOCS%%%%RUBY_DOCDIR%%/mail/README
 %%PORTDOCS%%%%RUBY_DOCDIR%%/mail/THANKS
-%%PORTDOCS%%%%RUBY_DOCDIR%%/mail/created.rid
-%%PORTDOCS%%%%RUBY_DOCDIR%%/mail/fr_class_index.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/mail/fr_file_index.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/mail/fr_method_index.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/mail/index.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/mail/rdoc-style.css
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mail/doc/created.rid
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mail/doc/fr_class_index.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mail/doc/fr_file_index.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mail/doc/fr_method_index.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mail/doc/index.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mail/doc/rdoc-style.css
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mail/doc/classes/Deliver.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mail/doc/classes/Deliver.src/M000005.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mail/doc/classes/Deliver.src/M000006.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mail/doc/classes/Mail.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mail/doc/classes/Mail/Address.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mail/doc/classes/Mail/Address.src/M000098.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mail/doc/classes/Mail/Address.src/M000099.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mail/doc/classes/Mail/Address.src/M000100.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mail/doc/classes/Mail/Address.src/M000101.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mail/doc/classes/Mail/Address.src/M000102.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mail/doc/classes/Mail/Address.src/M000103.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mail/doc/classes/Mail/Address.src/M000104.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mail/doc/classes/Mail/Address.src/M000105.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mail/doc/classes/Mail/Address.src/M000106.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mail/doc/classes/Mail/Address.src/M000107.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mail/doc/classes/Mail/Address.src/M000108.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mail/doc/classes/Mail/Address.src/M000109.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mail/doc/classes/Mail/Address.src/M000110.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mail/doc/classes/Mail/Address/Parser.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mail/doc/classes/Mail/Address/Parser.src/M000111.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mail/doc/classes/Mail/Address/Parser.src/M000112.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mail/doc/classes/Mail/AddressTagger.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mail/doc/classes/Mail/AddressTagger.src/M000049.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mail/doc/classes/Mail/AddressTagger.src/M000050.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mail/doc/classes/Mail/AddressTagger.src/M000051.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mail/doc/classes/Mail/AddressTagger.src/M000052.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mail/doc/classes/Mail/Deliver.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mail/doc/classes/Mail/Deliver.src/M000007.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mail/doc/classes/Mail/Deliver.src/M000008.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mail/doc/classes/Mail/Deliver.src/M000009.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mail/doc/classes/Mail/Deliver/DeliveryError.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mail/doc/classes/Mail/Deliver/LockingError.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mail/doc/classes/Mail/Deliver/NotAFile.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mail/doc/classes/Mail/Deliver/NotAMailbox.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mail/doc/classes/Mail/Header.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mail/doc/classes/Mail/Header.src/M000053.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mail/doc/classes/Mail/Header.src/M000054.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mail/doc/classes/Mail/Header.src/M000055.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mail/doc/classes/Mail/Header.src/M000056.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mail/doc/classes/Mail/Header.src/M000057.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mail/doc/classes/Mail/Header.src/M000058.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mail/doc/classes/Mail/Header.src/M000059.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mail/doc/classes/Mail/Header.src/M000060.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mail/doc/classes/Mail/Header.src/M000061.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mail/doc/classes/Mail/Header.src/M000062.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mail/doc/classes/Mail/Header.src/M000063.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mail/doc/classes/Mail/Header.src/M000064.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mail/doc/classes/Mail/Header.src/M000065.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mail/doc/classes/Mail/Header.src/M000066.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mail/doc/classes/Mail/Header.src/M000067.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mail/doc/classes/Mail/Header.src/M000068.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mail/doc/classes/Mail/Header.src/M000069.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mail/doc/classes/Mail/Header.src/M000070.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mail/doc/classes/Mail/Header.src/M000071.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mail/doc/classes/Mail/Header.src/M000072.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mail/doc/classes/Mail/Header.src/M000073.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mail/doc/classes/Mail/Header.src/M000074.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mail/doc/classes/Mail/Header.src/M000075.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mail/doc/classes/Mail/Header.src/M000076.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mail/doc/classes/Mail/Header.src/M000077.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mail/doc/classes/Mail/Header.src/M000078.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mail/doc/classes/Mail/Header.src/M000079.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mail/doc/classes/Mail/Header.src/M000080.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mail/doc/classes/Mail/Header.src/M000081.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mail/doc/classes/Mail/Header.src/M000082.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mail/doc/classes/Mail/Header.src/M000083.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mail/doc/classes/Mail/Header.src/M000084.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mail/doc/classes/Mail/Header.src/M000085.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mail/doc/classes/Mail/Header.src/M000086.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mail/doc/classes/Mail/Header.src/M000087.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mail/doc/classes/Mail/Header.src/M000088.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mail/doc/classes/Mail/Header.src/M000089.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mail/doc/classes/Mail/Header.src/M000090.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mail/doc/classes/Mail/Header.src/M000091.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mail/doc/classes/Mail/Header.src/M000092.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mail/doc/classes/Mail/KeyedMailbox.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mail/doc/classes/Mail/KeyedMailbox.src/M000093.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mail/doc/classes/Mail/KeyedMailbox.src/M000094.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mail/doc/classes/Mail/KeyedMailbox.src/M000095.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mail/doc/classes/Mail/KeyedMailbox.src/M000096.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mail/doc/classes/Mail/KeyedMailbox.src/M000097.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mail/doc/classes/Mail/LDA.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mail/doc/classes/Mail/LDA.src/M000013.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mail/doc/classes/Mail/LDA.src/M000014.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mail/doc/classes/Mail/LDA.src/M000015.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mail/doc/classes/Mail/LDA.src/M000016.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mail/doc/classes/Mail/LDA.src/M000017.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mail/doc/classes/Mail/LDA.src/M000018.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mail/doc/classes/Mail/LDA.src/M000019.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mail/doc/classes/Mail/LDA.src/M000020.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mail/doc/classes/Mail/LDA.src/M000021.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mail/doc/classes/Mail/LDA.src/M000022.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mail/doc/classes/Mail/LDA.src/M000023.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mail/doc/classes/Mail/LDA.src/M000024.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mail/doc/classes/Mail/LDA.src/M000025.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mail/doc/classes/Mail/LDA.src/M000026.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mail/doc/classes/Mail/LDA/DeliveryComplete.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mail/doc/classes/Mail/LDA/DeliveryComplete.src/M000028.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mail/doc/classes/Mail/LDA/DeliveryDefer.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mail/doc/classes/Mail/LDA/DeliveryDefer.src/M000032.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mail/doc/classes/Mail/LDA/DeliveryPipeFailure.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mail/doc/classes/Mail/LDA/DeliveryPipeFailure.src/M000029.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mail/doc/classes/Mail/LDA/DeliveryReject.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mail/doc/classes/Mail/LDA/DeliveryReject.src/M000027.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mail/doc/classes/Mail/LDA/DeliverySuccess.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mail/doc/classes/Mail/LDA/DeliverySuccess.src/M000030.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mail/doc/classes/Mail/LDA/LoggingError.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mail/doc/classes/Mail/LDA/LoggingError.src/M000031.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mail/doc/classes/Mail/MTA.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mail/doc/classes/Mail/Message.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mail/doc/classes/Mail/Message.src/M000037.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mail/doc/classes/Mail/Message.src/M000038.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mail/doc/classes/Mail/Message.src/M000039.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mail/doc/classes/Mail/Message.src/M000040.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mail/doc/classes/Mail/Message.src/M000041.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mail/doc/classes/Mail/Message.src/M000042.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mail/doc/classes/Mail/Message.src/M000043.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mail/doc/classes/Mail/Message.src/M000044.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mail/doc/classes/Mail/Message.src/M000045.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mail/doc/classes/Mail/Message.src/M000046.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mail/doc/classes/Mail/Message.src/M000047.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mail/doc/classes/Mail/Message.src/M000048.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mail/doc/classes/Mail/Parser.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mail/doc/classes/Mail/Parser.src/M000035.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mail/doc/classes/Mail/Parser.src/M000036.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mail/doc/classes/Mail/Serialize.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mail/doc/classes/Mail/Serialize.src/M000033.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mail/doc/classes/Mail/Serialize.src/M000034.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mail/doc/classes/Mail/Serialize/Error.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mail/doc/classes/Mail/Utils.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mail/doc/classes/Mail/Utils.src/M000010.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mail/doc/classes/Mail/Utils.src/M000011.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mail/doc/classes/Mail/Utils.src/M000012.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mail/doc/files/bin/rdeliver_rb.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mail/doc/files/bin/rsendmail_rb.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mail/doc/files/bin/rsendmail_rb.src/M000001.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mail/doc/files/bin/rsendmail_rb.src/M000002.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mail/doc/files/bin/rsendmail_rb.src/M000003.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mail/doc/files/bin/rsendmail_rb.src/M000004.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mail/doc/files/mail/address_rb.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mail/doc/files/mail/deliver_rb.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mail/doc/files/mail/header_rb.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mail/doc/files/mail/keyed_mailbox_rb.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mail/doc/files/mail/lda_rb.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mail/doc/files/mail/message_rb.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mail/doc/files/mail/mta_rb.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mail/doc/files/mail/parser_rb.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mail/doc/files/mail/serialize_rb.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mail/doc/files/mail/tagged_rb.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mail/doc/files/mail/utils_rb.html
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/mail/doc/files/mail
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/mail/doc/files/bin/rsendmail_rb.src
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/mail/doc/files/bin
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/mail/doc/files
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/mail/doc/classes/Mail/Utils.src
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/mail/doc/classes/Mail/Serialize.src
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/mail/doc/classes/Mail/Serialize
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/mail/doc/classes/Mail/Parser.src
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/mail/doc/classes/Mail/Message.src
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/mail/doc/classes/Mail/LDA/LoggingError.src
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/mail/doc/classes/Mail/LDA/DeliverySuccess.src
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/mail/doc/classes/Mail/LDA/DeliveryReject.src
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/mail/doc/classes/Mail/LDA/DeliveryPipeFailure.src
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/mail/doc/classes/Mail/LDA/DeliveryDefer.src
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/mail/doc/classes/Mail/LDA/DeliveryComplete.src
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/mail/doc/classes/Mail/LDA.src
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/mail/doc/classes/Mail/LDA
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/mail/doc/classes/Mail/KeyedMailbox.src
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/mail/doc/classes/Mail/Header.src
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/mail/doc/classes/Mail/Deliver.src
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/mail/doc/classes/Mail/Deliver
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/mail/doc/classes/Mail/AddressTagger.src
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/mail/doc/classes/Mail/Address/Parser.src
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/mail/doc/classes/Mail/Address.src
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/mail/doc/classes/Mail/Address
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/mail/doc/classes/Mail
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/mail/doc/classes/Deliver.src
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/mail/doc/classes
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/mail/doc
 %%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/mail

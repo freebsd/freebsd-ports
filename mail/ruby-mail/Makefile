@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mail
-PORTVERSION=	0.6
+PORTVERSION=	0.7
 CATEGORIES=	mail ruby
 MASTER_SITES=	http://www.lickey.com/rubymail/download/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -21,7 +21,7 @@ NO_BUILD=	yes
 
 RUBY_SHEBANG_FILES=	${WRKSRC}/bin/*.rb
 
-DOCS=		NEWS README THANKS doc/*
+DOCS=		NEWS README THANKS doc
 EXAMPLES=	bin/*.rb dot.rdeliver
 
 do-install:
@@ -34,9 +34,8 @@ do-install:
 .endfor
 	${MKDIR} ${RUBY_DOCDIR}/${PORTNAME}
 .for f in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_DOCDIR}/${PORTNAME}/
+	${CP} -R ${WRKSRC}/${f} ${RUBY_DOCDIR}/${PORTNAME}/
 .endfor
-	${CP} -R ${WRKSRC}/doc/* ${RUBY_DOCDIR}/${PORTNAME}/
 .endif
 
 .include <bsd.port.mk>
