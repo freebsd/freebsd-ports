@@ -3,7 +3,7 @@
 # Date created:		5 Nov 1995
 # Whom:			Hideaki Ohmon <ohmon@sfc.keio.ac.jp>
 #
-# $Id: Makefile,v 1.2 1995/11/22 13:06:38 asami Exp $
+# $Id: Makefile,v 1.3 1996/03/25 04:31:33 asami Exp $
 #
 
 DISTNAME=	ptex3.1415.p2.1.4
@@ -24,7 +24,7 @@ DISTFILES=	ptex-2.1.4.tar.gz web-6.1.tar.gz web2c-6.1.tar.gz \
 EXTRACT_ONLY=	ptex-2.1.4.tar.gz web-6.1.tar.gz web2c-6.1.tar.gz \
 		xdvik-18f.tar.gz
 
-MAINTAINER=	ohmon@sfc.keio.ac.jp
+MAINTAINER=	masafumi@pobox.com
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=--prefix=${PREFIX}
