@@ -224,9 +224,7 @@ share/gnome/help/gnomeicu/uk/figures/sendurl.png
 share/gnome/help/gnomeicu/uk/figures/userinfo.png
 share/gnome/help/gnomeicu/uk/gnomeicu.xml
 share/gnome/omf/gnomeicu/gnomeicu-C.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnomeicu/gnomeicu-C.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnomeicu/gnomeicu-uk.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnomeicu/gnomeicu-uk.omf 2>/dev/null || /usr/bin/true
 share/gnome/pixmaps/gnome-gnomeicu.png
 share/gnome/sounds/gnomeicu/Auth.wav
 share/gnome/sounds/gnomeicu/File.wav
@@ -301,5 +299,3 @@ share/locale/zh_TW/LC_MESSAGES/gnomeicu.mo
 @dirrm share/gnome/gnomeicu/emoticons/AIM
 @dirrm share/gnome/gnomeicu/emoticons
 @dirrm share/gnome/gnomeicu
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnomeicu/gnomeicu-C.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnomeicu/gnomeicu-uk.omf 2>/dev/null || /usr/bin/true

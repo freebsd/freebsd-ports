@@ -299,8 +299,6 @@ share/locale/sq/LC_MESSAGES/conglomerate.mo
 share/locale/sr/LC_MESSAGES/conglomerate.mo
 share/locale/sr@Latn/LC_MESSAGES/conglomerate.mo
 share/locale/sv/LC_MESSAGES/conglomerate.mo
-@exec scrollkeeper-install -q %D/share/gnome/omf/conglomerate/conglomerate-C.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/conglomerate/conglomerate-C.omf 2>/dev/null || /usr/bin/true
 @dirrm share/gnome/pixmaps/conglomerate
 @dirrm share/gnome/omf/conglomerate
 @dirrm share/gnome/help/conglomerate/C/figures

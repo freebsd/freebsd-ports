@@ -12,9 +12,7 @@ share/gnome/help/gnome-mud/C/gnome-mud-manual.xml
 share/gnome/help/gnome-mud/C/gnome-mud-plugin-api.xml
 share/gnome/help/gnome-mud/C/monitor.py
 share/gnome/omf/gnome-mud/gnome-mud-manual-C.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-mud/gnome-mud-manual-C.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-mud/gnome-mud-plugin-api-C.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-mud/gnome-mud-plugin-api-C.omf 2>/dev/null || /usr/bin/true
 share/gnome/pixmaps/gnome-mud/connection-offline.png
 share/gnome/pixmaps/gnome-mud/connection-online.png
 share/gnome/pixmaps/gnome-mud/gnome-mud-tray-icon.png
@@ -40,5 +38,3 @@ share/locale/tr/LC_MESSAGES/gnome-mud.mo
 @dirrm share/gnome/help/gnome-mud/C/figures
 @dirrm share/gnome/help/gnome-mud/C
 @dirrm share/gnome/help/gnome-mud
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-mud/gnome-mud-manual-C.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-mud/gnome-mud-plugin-api-C.omf 2>/dev/null || /usr/bin/true

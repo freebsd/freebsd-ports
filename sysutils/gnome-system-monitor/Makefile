@@ -21,6 +21,7 @@ LIB_DEPENDS=	gtop-2.0.2:${PORTSDIR}/devel/libgtop2
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
+INSTALLS_OMF=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 USE_GNOME=	gnomeprefix intlhack gnomehack libgnomeui libwnck

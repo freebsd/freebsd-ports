@@ -56,7 +56,6 @@ share/gnome/mime-info/gchempaint.mime
 share/gnome/omf/gchempaint/gchempaint-C.omf
 share/gnome/pixmaps/gchempaint.png
 share/gnome/pixmaps/gchempaint_logo.png
-@exec scrollkeeper-install -q %D/share/gnome/omf/gchempaint/gchempaint-C.omf 2>/dev/null || /usr/bin/true
 share/locale/de/LC_MESSAGES/gchempaint.mo
 share/locale/fr/LC_MESSAGES/gchempaint.mo
 share/locale/it/LC_MESSAGES/gchempaint.mo
@@ -70,6 +69,5 @@ share/mime/packages/gchempaint.xml
 @dirrm share/gnome/help/gchempaint/C
 @dirrm share/gnome/help/gchempaint
 @dirrm share/gnome/omf/gchempaint
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gchempaint/gchempaint-C.omf 2>/dev/null || /usr/bin/true
 @exec update-mime-database %D/share/mime
 @unexec update-mime-database %D/share/mime

@@ -19,6 +19,7 @@ COMMENT=	GNOME 2 ghostscript viewer
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
+INSTALLS_OMF=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack intlhack libgnomeui desktopfileutils
 USE_GHOSTSCRIPT=yes

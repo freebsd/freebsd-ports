@@ -23,6 +23,7 @@ LIB_DEPENDS=	musicbrainz.4:${PORTSDIR}/audio/libmusicbrainz \
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
+INSTALLS_OMF=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack intlhack gnomeprefix libgnomeui
 USE_LIBTOOL_VER=15

@@ -21,6 +21,7 @@ LIB_DEPENDS=	audiofile.0:${PORTSDIR}/audio/libaudiofile \
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
+INSTALLS_OMF=	yes
 USE_GNOME=	gnomehack gnomeprefix gnometarget gtk20 libxml2
 USE_REINPLACE=	yes
 USE_GMAKE=	yes

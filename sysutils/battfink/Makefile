@@ -18,6 +18,7 @@ COMMENT=	An energy saving preferences app for GNOME
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
+INSTALLS_OMF=	yes
 USE_GNOME=	gnomehack gnomeprefix libgnomeui
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

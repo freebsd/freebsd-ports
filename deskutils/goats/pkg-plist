@@ -27,8 +27,6 @@ share/gnome/pixmaps/goats.png
 share/gnome/sounds/goat_bleat.au
 share/locale/es/LC_MESSAGES/goats-2.0.mo
 share/locale/ru/LC_MESSAGES/goats-2.0.mo
-@exec scrollkeeper-install -q %D/share/gnome/omf/goats/goats-C.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/goats/goats-C.omf 2>/dev/null || /usr/bin/true
 @dirrm share/gnome/omf/goats
 @dirrm share/gnome/help/goats/C/figures
 @dirrm share/gnome/help/goats/C

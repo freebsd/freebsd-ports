@@ -211,85 +211,45 @@ share/gnome/help/workspace-switcher/zh_TW/legal.xml
 share/gnome/help/workspace-switcher/zh_TW/workspace-switcher.xml
 share/gnome/idl/gnome-panel-2.0/GNOME_Panel.idl
 share/gnome/omf/gnome-panel/clock-C.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-panel/clock-C.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-panel/clock-de.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-panel/clock-de.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-panel/clock-es.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-panel/clock-es.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-panel/clock-fr.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-panel/clock-fr.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-panel/clock-it.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-panel/clock-it.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-panel/clock-ja.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-panel/clock-ja.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-panel/clock-ko.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-panel/clock-ko.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-panel/clock-sv.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-panel/clock-sv.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-panel/clock-zh_CN.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-panel/clock-zh_CN.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-panel/clock-zh_TW.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-panel/clock-zh_TW.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-panel/fish-applet-2-C.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-panel/fish-applet-2-C.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-panel/fish-applet-2-de.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-panel/fish-applet-2-de.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-panel/fish-applet-2-es.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-panel/fish-applet-2-es.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-panel/fish-applet-2-fr.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-panel/fish-applet-2-fr.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-panel/fish-applet-2-it.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-panel/fish-applet-2-it.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-panel/fish-applet-2-ja.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-panel/fish-applet-2-ja.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-panel/fish-applet-2-ko.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-panel/fish-applet-2-ko.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-panel/fish-applet-2-sv.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-panel/fish-applet-2-sv.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-panel/fish-applet-2-zh_CN.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-panel/fish-applet-2-zh_CN.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-panel/fish-applet-2-zh_TW.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-panel/fish-applet-2-zh_TW.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-panel/window-list-C.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-panel/window-list-C.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-panel/window-list-de.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-panel/window-list-de.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-panel/window-list-es.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-panel/window-list-es.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-panel/window-list-fr.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-panel/window-list-fr.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-panel/window-list-it.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-panel/window-list-it.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-panel/window-list-ja.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-panel/window-list-ja.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-panel/window-list-ko.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-panel/window-list-ko.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-panel/window-list-sv.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-panel/window-list-sv.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-panel/window-list-zh_CN.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-panel/window-list-zh_CN.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-panel/window-list-zh_TW.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-panel/window-list-zh_TW.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-panel/workspace-switcher-C.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-panel/workspace-switcher-C.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-panel/workspace-switcher-de.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-panel/workspace-switcher-de.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-panel/workspace-switcher-es.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-panel/workspace-switcher-es.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-panel/workspace-switcher-fr.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-panel/workspace-switcher-fr.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-panel/workspace-switcher-it.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-panel/workspace-switcher-it.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-panel/workspace-switcher-ja.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-panel/workspace-switcher-ja.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-panel/workspace-switcher-ko.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-panel/workspace-switcher-ko.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-panel/workspace-switcher-sv.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-panel/workspace-switcher-sv.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-panel/workspace-switcher-zh_CN.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-panel/workspace-switcher-zh_CN.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-panel/workspace-switcher-zh_TW.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-panel/workspace-switcher-zh_TW.omf 2>/dev/null || /usr/bin/true
 share/gnome/panel/gnome-panel-screenshot.glade
 share/gnome/panel/panel-properties-dialog.glade
 share/gnome/panel/panel-run-dialog.glade
@@ -475,43 +435,3 @@ share/locale/zh_TW/LC_MESSAGES/gnome-panel-2.0.mo
 @dirrm share/gnome/gnome-panel
 @dirrm share/doc/panel-applet
 @dirrm include/panel-2.0
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-panel/clock-C.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-panel/clock-de.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-panel/clock-es.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-panel/clock-fr.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-panel/clock-it.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-panel/clock-ja.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-panel/clock-ko.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-panel/clock-sv.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-panel/clock-zh_CN.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-panel/clock-zh_TW.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-panel/fish-applet-2-C.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-panel/fish-applet-2-de.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-panel/fish-applet-2-es.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-panel/fish-applet-2-fr.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-panel/fish-applet-2-it.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-panel/fish-applet-2-ja.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-panel/fish-applet-2-ko.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-panel/fish-applet-2-sv.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-panel/fish-applet-2-zh_CN.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-panel/fish-applet-2-zh_TW.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-panel/window-list-C.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-panel/window-list-de.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-panel/window-list-es.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-panel/window-list-fr.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-panel/window-list-it.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-panel/window-list-ja.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-panel/window-list-ko.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-panel/window-list-sv.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-panel/window-list-zh_CN.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-panel/window-list-zh_TW.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-panel/workspace-switcher-C.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-panel/workspace-switcher-de.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-panel/workspace-switcher-es.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-panel/workspace-switcher-fr.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-panel/workspace-switcher-it.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-panel/workspace-switcher-ja.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-panel/workspace-switcher-ko.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-panel/workspace-switcher-sv.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-panel/workspace-switcher-zh_CN.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-panel/workspace-switcher-zh_TW.omf 2>/dev/null || /usr/bin/true

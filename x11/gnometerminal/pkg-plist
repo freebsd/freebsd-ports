@@ -59,27 +59,16 @@ share/gnome/help/gnome-terminal/zh_TW/figures/terminal_window.png
 share/gnome/help/gnome-terminal/zh_TW/gnome-terminal.xml
 share/gnome/help/gnome-terminal/zh_TW/legal.xml
 share/gnome/omf/gnome-terminal/gnome-terminal-C.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-terminal/gnome-terminal-C.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-terminal/gnome-terminal-de.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-terminal/gnome-terminal-de.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-terminal/gnome-terminal-es.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-terminal/gnome-terminal-es.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-terminal/gnome-terminal-fr.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-terminal/gnome-terminal-fr.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-terminal/gnome-terminal-it.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-terminal/gnome-terminal-it.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-terminal/gnome-terminal-ja.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-terminal/gnome-terminal-ja.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-terminal/gnome-terminal-ko.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-terminal/gnome-terminal-ko.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-terminal/gnome-terminal-ro.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-terminal/gnome-terminal-ro.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-terminal/gnome-terminal-sv.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-terminal/gnome-terminal-sv.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-terminal/gnome-terminal-zh_CN.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-terminal/gnome-terminal-zh_CN.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-terminal/gnome-terminal-zh_TW.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-terminal/gnome-terminal-zh_TW.omf 2>/dev/null || /usr/bin/true
 share/gnome/pixmaps/gnome-terminal.png
 share/locale/am/LC_MESSAGES/gnome-terminal.mo
 share/locale/ar/LC_MESSAGES/gnome-terminal.mo
@@ -169,14 +158,3 @@ share/locale/zh_TW/LC_MESSAGES/gnome-terminal.mo
 @dirrm share/gnome/help/gnome-terminal
 @dirrm share/gnome/gnome-terminal/glade
 @dirrm share/gnome/gnome-terminal
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-terminal/gnome-terminal-C.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-terminal/gnome-terminal-de.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-terminal/gnome-terminal-es.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-terminal/gnome-terminal-fr.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-terminal/gnome-terminal-it.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-terminal/gnome-terminal-ja.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-terminal/gnome-terminal-ko.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-terminal/gnome-terminal-ro.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-terminal/gnome-terminal-sv.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-terminal/gnome-terminal-zh_CN.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-terminal/gnome-terminal-zh_TW.omf 2>/dev/null || /usr/bin/true

@@ -18,6 +18,7 @@ COMMENT=	Provide uniform access to data sources for the GNOME 2 environment
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
+INSTALLS_OMF=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack libgnomedb libgnomeprintui
 USE_PERL5=	yes

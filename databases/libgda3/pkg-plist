@@ -192,7 +192,6 @@ share/gnome/libgda/xml/gda-report-result.dtd
 share/gnome/libgda/xml/gda-xml-query.dtd
 share/gnome/libgda/xml/gda-xml-query.xsl
 share/gnome/omf/libgda/libgda-C.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/libgda/libgda-C.omf 2>/dev/null || /usr/bin/true
 share/locale/az/LC_MESSAGES/libgda-2.mo
 share/locale/ca/LC_MESSAGES/libgda-2.mo
 share/locale/cs/LC_MESSAGES/libgda-2.mo
@@ -240,4 +239,3 @@ share/locale/zh_TW/LC_MESSAGES/libgda-2.mo
 @dirrm include/libgda
 @dirrm include/libgda-report
 @dirrm etc/libgda
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/libgda/libgda-C.omf 2>/dev/null || /usr/bin/true

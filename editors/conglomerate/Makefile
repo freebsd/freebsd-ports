@@ -15,6 +15,7 @@ MAINTAINER=	pav@FreeBSD.org
 COMMENT=	GNOME2 visual XML editor with emphasis on DocBook editing
 
 USE_X_PREFIX=	yes
+INSTALLS_OMF=	yes
 USE_GMAKE=	yes
 USE_GNOME=	libgnomeui gtksourceview gnomeprefix gnomehack intlhack
 USE_LIBTOOL_VER=	15

@@ -94,9 +94,7 @@ share/gnome/maps/gnofract4d/vooon.map
 share/gnome/maps/gnofract4d/wild.map
 share/gnome/maps/gnofract4d/wine.map
 share/gnome/maps/gnofract4d/world.map
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnofract4d/gnofract4d-manual-C.omf 2>/dev/null || true
 share/gnome/omf/gnofract4d/gnofract4d-manual-C.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnofract4d/gnofract4d-manual-C.omf 2>/dev/null || true
 share/gnome/pixmaps/gnofract4d/deepen_now.png
 share/gnome/pixmaps/gnofract4d/explorer_mode.png
 share/gnome/pixmaps/gnofract4d/gnofract4d-logo.png

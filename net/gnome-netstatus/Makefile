@@ -18,6 +18,7 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A GNOME applet that shows network status
 
 USE_X_PREFIX=	yes
+INSTALLS_OMF=	yes
 USE_BZIP2=	yes
 GNOME_DESKTOP_VERSION=2
 USE_GNOME=	gnomehack intlhack gnomeprefix libgnome gnomepanel libglade2

@@ -451,7 +451,6 @@ share/gnome/idl/evolution-%%VERSION%%/evolution-calendar.idl
 share/gnome/mime-info/evolution-%%VERSION%%.keys
 share/gnome/mime-info/evolution-%%VERSION%%.mime
 share/gnome/omf/evolution/evolution-%%PORTVERSION%%-C.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/evolution/evolution-%%PORTVERSION%%-C.omf 2>/dev/null || /usr/bin/true
 share/gnome/pixmaps/evolution-%%VERSION%%.png
 share/locale/am/LC_MESSAGES/evolution-%%VERSION%%.mo
 share/locale/ar/LC_MESSAGES/evolution-%%VERSION%%.mo
@@ -558,5 +557,4 @@ share/locale/zh_TW/LC_MESSAGES/evolution-%%VERSION%%.mo
 @dirrm include/evolution-%%VERSION%%/e-conduit
 @dirrm include/evolution-%%VERSION%%/camel
 @dirrm include/evolution-%%VERSION%%
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/evolution/evolution-%%PORTVERSION%%-C.omf 2>/dev/null || /usr/bin/true
 @unexec update-desktop-database > /dev/null || /usr/bin/true

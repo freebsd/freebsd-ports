@@ -21,6 +21,7 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_PERL5=	yes
 USE_X_PREFIX=	yes
+INSTALLS_OMF=	yes
 USE_GNOME=	gnomehack gnomeprefix gnometarget intlhack libgnomeui
 USE_LIBTOOL_VER=15
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

@@ -20,6 +20,7 @@ LIB_DEPENDS=	sword.4:${PORTSDIR}/misc/sword
 RUN_DEPENDS=	${X11BASE}/lib/gnome-spell/libgnome-spell-component-0.3.so:${PORTSDIR}/textproc/gnomespell
 
 USE_X_PREFIX=	yes
+INSTALLS_OMF=	yes
 USE_GNOME=	gnomehack gnomeprefix gnometarget gtkhtml3 intlhack
 USE_REINPLACE=	yes
 USE_GMAKE=	yes

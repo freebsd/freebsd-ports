@@ -34,7 +34,6 @@ share/gnome/help/gtranslator/C/legal.xml
 share/gnome/mime-info/gtranslator.keys
 share/gnome/mime-info/gtranslator.mime
 share/gnome/omf/gtranslator/gtranslator-C.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gtranslator/gtranslator-C.omf 2>/dev/null || /usr/bin/true
 share/gnome/pixmaps/gnome-application-x-gmo.png
 share/gnome/pixmaps/gnome-application-x-po.png
 share/gnome/pixmaps/gtranslator.png
@@ -95,4 +94,3 @@ share/locale/zh_TW/LC_MESSAGES/gtranslator.mo
 @dirrm share/gnome/gtranslator/dtd
 @dirrm share/gnome/gtranslator/colorschemes
 @dirrm share/gnome/gtranslator
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gtranslator/gtranslator-C.omf 2>/dev/null || /usr/bin/true

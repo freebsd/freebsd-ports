@@ -36,6 +36,7 @@ HEADERS_SUFX=
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
+INSTALLS_OMF=	yes
 USE_GNOME=	gnomeprefix gnomehack intlhack libgnomeui desktopfileutils
 USE_LIBTOOL_VER=15
 USE_GMAKE=	yes

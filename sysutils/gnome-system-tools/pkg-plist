@@ -87,15 +87,10 @@ share/gnome/help/users-admin/C/figures/users-tool.png
 share/gnome/help/users-admin/C/legal.xml
 share/gnome/help/users-admin/C/users-admin.xml
 share/gnome/omf/gnome-system-tools/boot-admin-C.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-system-tools/boot-admin-C.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-system-tools/network-admin-C.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-system-tools/network-admin-C.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-system-tools/services-admin-C.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-system-tools/services-admin-C.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-system-tools/time-admin-C.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-system-tools/time-admin-C.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-system-tools/users-admin-C.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-system-tools/users-admin-C.omf 2>/dev/null || /usr/bin/true
 share/locale/am/LC_MESSAGES/gnome-system-tools.mo
 share/locale/ar/LC_MESSAGES/gnome-system-tools.mo
 share/locale/ar/LC_MESSAGES/setup-tools-backends.mo
@@ -250,8 +245,3 @@ share/setup-tool-backends/scripts/xml.pl
 @dirrm share/gnome-system-tools/pixmaps
 @dirrm share/gnome-system-tools/interfaces
 @dirrm share/gnome-system-tools
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-system-tools/boot-admin-C.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-system-tools/network-admin-C.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-system-tools/services-admin-C.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-system-tools/time-admin-C.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-system-tools/users-admin-C.omf 2>/dev/null || /usr/bin/true

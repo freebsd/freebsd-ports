@@ -41,12 +41,8 @@ share/gnome/help/netspeed_applet/ru/figures/settings.png
 share/gnome/help/netspeed_applet/ru/legal.xml
 share/gnome/help/netspeed_applet/ru/netspeed_applet.xml
 share/gnome/omf/netspeed_applet/netspeed_applet-C.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/netspeed_applet/netspeed_applet-C.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/netspeed_applet/netspeed_applet-cs.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/netspeed_applet/netspeed_applet-cs.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/netspeed_applet/netspeed_applet-de.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/netspeed_applet/netspeed_applet-de.omf 2>/dev/null || /usr/bin/true
-@exec scrollkeeper-install -q %D/share/gnome/omf/netspeed_applet/netspeed_applet-ru.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/netspeed_applet/netspeed_applet-ru.omf
 share/gnome/pixmaps/netspeed_applet.png
 share/locale/cs/LC_MESSAGES/netspeed_applet.mo
@@ -74,7 +70,3 @@ share/locale/zh_CN/LC_MESSAGES/netspeed_applet.mo
 @dirrm share/gnome/help/netspeed_applet/C/figures
 @dirrm share/gnome/help/netspeed_applet/C
 @dirrm share/gnome/help/netspeed_applet
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/netspeed_applet/netspeed_applet-C.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/netspeed_applet/netspeed_applet-cs.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/netspeed_applet/netspeed_applet-de.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/netspeed_applet/netspeed_applet-ru.omf 2>/dev/null || /usr/bin/true

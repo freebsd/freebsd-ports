@@ -19,6 +19,7 @@ LIB_DEPENDS=	gnome-mag.2:${PORTSDIR}/accessibility/gnomemag
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
+INSTALLS_OMF=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack intlhack libgnomeui atspi gnomespeech
 USE_LIBTOOL_VER=15

@@ -21,6 +21,7 @@ USE_GMAKE=	yes
 USE_INC_LIBTOOL_VER=	13
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+INSTALLS_OMF=	yes
 INSTALLS_SHLIB=	yes
 
 .include <bsd.port.pre.mk>

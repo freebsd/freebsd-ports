@@ -68,27 +68,16 @@ share/gnome/help/gcalctool/zh_TW/figures/gcalctool_scientific_window.png
 share/gnome/help/gcalctool/zh_TW/gcalctool.xml
 share/gnome/help/gcalctool/zh_TW/legal.xml
 share/gnome/omf/gcalctool/gcalctool-C.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gcalctool/gcalctool-C.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gcalctool/gcalctool-de.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gcalctool/gcalctool-de.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gcalctool/gcalctool-es.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gcalctool/gcalctool-es.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gcalctool/gcalctool-fr.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gcalctool/gcalctool-fr.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gcalctool/gcalctool-it.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gcalctool/gcalctool-it.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gcalctool/gcalctool-ja.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gcalctool/gcalctool-ja.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gcalctool/gcalctool-ko.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gcalctool/gcalctool-ko.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gcalctool/gcalctool-sv.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gcalctool/gcalctool-sv.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gcalctool/gcalctool-zh_CN.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gcalctool/gcalctool-zh_CN.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gcalctool/gcalctool-zh_HK.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gcalctool/gcalctool-zh_HK.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gcalctool/gcalctool-zh_TW.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gcalctool/gcalctool-zh_TW.omf 2>/dev/null || /usr/bin/true
 share/locale/am/LC_MESSAGES/gcalctool.mo
 share/locale/ar/LC_MESSAGES/gcalctool.mo
 share/locale/az/LC_MESSAGES/gcalctool.mo
@@ -171,14 +160,3 @@ share/locale/zh_TW/LC_MESSAGES/gcalctool.mo
 @dirrm share/gnome/help/gcalctool/C/figures
 @dirrm share/gnome/help/gcalctool/C
 @dirrm share/gnome/help/gcalctool
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gcalctool/gcalctool-C.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gcalctool/gcalctool-de.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gcalctool/gcalctool-es.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gcalctool/gcalctool-fr.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gcalctool/gcalctool-it.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gcalctool/gcalctool-ja.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gcalctool/gcalctool-ko.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gcalctool/gcalctool-sv.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gcalctool/gcalctool-zh_CN.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gcalctool/gcalctool-zh_HK.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gcalctool/gcalctool-zh_TW.omf 2>/dev/null || /usr/bin/true

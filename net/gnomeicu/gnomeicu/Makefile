@@ -20,6 +20,7 @@ LIB_DEPENDS=	gdbm.3:${PORTSDIR}/databases/gdbm
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
+INSTALLS_OMF=	yes
 USE_GNOME=	gnomeprefix gnomehack libglade2 gnomepanel lthack libxml2
 USE_GMAKE=	yes
 USE_LIBTOOL_VER=13

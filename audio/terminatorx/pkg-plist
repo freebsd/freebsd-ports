@@ -5,11 +5,9 @@ share/gnome/help/terminatorX/C/figures/signalflow.png
 share/gnome/mime-info/terminatorX.keys
 share/gnome/mime-info/terminatorX.mime
 share/gnome/omf/terminatorX/terminatorX-C.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/terminatorX/terminatorX-C.omf 2>/dev/null || /usr/bin/true
 share/gnome/pixmaps/terminatorX-app.png
 share/gnome/pixmaps/terminatorX-mime.png
 @dirrm share/gnome/omf/terminatorX
 @dirrm share/gnome/help/terminatorX/C/figures
 @dirrm share/gnome/help/terminatorX/C
 @dirrm share/gnome/help/terminatorX
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/terminatorX/terminatorX-C.omf 2>/dev/null || /usr/bin/true

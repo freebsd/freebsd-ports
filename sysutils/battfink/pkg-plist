@@ -13,7 +13,6 @@ share/gnome/battfink/icons/battfink-75.png
 share/gnome/battfink/icons/battfink-charge.png
 share/gnome/control-center-2.0/capplets/battfink-preferences.desktop
 share/gnome/omf/battfink/battfink-C.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/battfink/battfink-C.omf 2>/dev/null || /usr/bin/true
 share/gnome/pixmaps/battfink.png
 share/locale/az/LC_MESSAGES/battfink-0.1.mo
 share/locale/da/LC_MESSAGES/battfink-0.1.mo
@@ -41,4 +40,3 @@ share/locale/zh_TW/LC_MESSAGES/battfink-0.1.mo
 @dirrm share/gnome/battfink/help/C
 @dirrm share/gnome/battfink/help
 @dirrm share/gnome/battfink
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/battfink/battfink-C.omf 2>/dev/null || /usr/bin/true

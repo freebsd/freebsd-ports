@@ -78,13 +78,9 @@ share/gnome/help/gnopernicus/C/legal.xml
 share/gnome/help/gnopernicus/es/gnopernicus.xml
 share/gnome/help/gnopernicus/es/legal.xml
 share/gnome/omf/gnopernicus/brlmonitor-C.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnopernicus/brlmonitor-C.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnopernicus/brlmonitor-es.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnopernicus/brlmonitor-es.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnopernicus/gnopernicus-C.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnopernicus/gnopernicus-C.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnopernicus/gnopernicus-es.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnopernicus/gnopernicus-es.omf 2>/dev/null || /usr/bin/true
 share/gnome/pixmaps/gnopernicus.png
 share/locale/ar/LC_MESSAGES/gnopernicus.mo
 share/locale/az/LC_MESSAGES/gnopernicus.mo
@@ -167,7 +163,3 @@ share/locale/zh_TW/LC_MESSAGES/gnopernicus.mo
 @dirrm include/gnopernicus-1.0
 @dirrm etc/gnopernicus-1.0/translation_tables
 @dirrm etc/gnopernicus-1.0
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnopernicus/brlmonitor-C.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnopernicus/brlmonitor-es.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnopernicus/gnopernicus-C.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnopernicus/gnopernicus-es.omf 2>/dev/null || /usr/bin/true

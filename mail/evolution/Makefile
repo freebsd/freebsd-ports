@@ -23,6 +23,7 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_BISON=	yes
 USE_X_PREFIX=	yes
+INSTALLS_OMF=	yes
 USE_GNOME=	gnomeprefix gnomehack intlhack evolutiondataserver gal2 \
 		gtkhtml3 desktopfileutils
 USE_REINPLACE=	yes
