@@ -163,7 +163,7 @@ for i in `cat .logs | sort -t \\| +4`; do
     affby=$3
     test $affby = "0" -o $affby = "-1" && affby="&nbsp;"
     echo "<td align=\"right\">$affby</td><td align=\"right\">$4 Kb</td>" >> $of
-    echo "<td><a href=\"$1\">$2</a></td>" >> $of
+    echo "<td><a href=\"http://${master}/errorlogs/${arch}-errorlogs/${baselogdir}/$1\">$2</a></td>" >> $of
     echo "<td>$mailto</td>" >> $of
 
     echo "<td>" >> $of
@@ -196,7 +196,7 @@ for i in `cat .logs | sort -t \\| +5`; do
     echo "<tr>" >> $of
 
     echo "<td>$mailto</td>" >> $of
-    echo "<td><a href=\"$1\">$2</a></td>" >> $of
+    echo "<td><a href=\"http://${master}/errorlogs/${arch}-errorlogs/${baselogdir}/$1\">$2</a></td>" >> $of
 
     affby=$3
     test $affby = "0" -o $affby = "-1" && affby="&nbsp;"
@@ -238,7 +238,7 @@ for i in `cat .logs | sort -t \\| +7`; do
     echo "<a href=\"http://bento.freebsd.org/#$8\">$reason</a>" >> $of
     echo "</td>" >> $of
 
-    echo "<td><a href=\"$1\">$2</a></td>" >> $of
+    echo "<td><a href=\"http://${master}/errorlogs/${arch}-errorlogs/${baselogdir}/$1\">$2</a></td>" >> $of
 
     affby=$3
     test $affby = "0" -o $affby = "-1" && affby="&nbsp;"
@@ -272,7 +272,7 @@ for i in `cat .logs | sort -t \\| +9`; do
     date=$(echo ${10} | tr '_' ' ')
     echo "<td>$date</td>" >> $of
 
-    echo "<td><a href=\"$1\">$2</a></td>" >> $of
+    echo "<td><a href=\"http://${master}/errorlogs/${arch}-errorlogs/${baselogdir}/$1\">$2</a></td>" >> $of
 
     affby=$3
     test $affby = "0" -o $affby = "-1" && affby="&nbsp;"
