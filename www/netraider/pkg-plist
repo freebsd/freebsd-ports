@@ -1,0 +1,8 @@
+bin/konq
+bin/konq-embedded
+share/apps/khtml/css/html4.css
+share/apps/kssl/caroot/ca-bundle.crt
+share/config/charsets
+@unexec rmdir %D/share/config >/dev/null 2>&1 || true
+@unexec rmdir %D/share/apps/kssl/caroot >/dev/null 2>&1 || true
+@unexec rmdir %D/share/apps/khtml/css >/dev/null 2>&1 || true
