@@ -1,0 +1,20 @@
+--- macros.in.orig	Thu Oct  5 13:31:06 2000
++++ macros.in	Thu Oct  5 13:31:25 2000
+@@ -104,7 +104,7 @@
+ #	will be used if the per-platform macro file does not exist..
+ #
+ %_arch			@RPMCANONARCH@
+-%_vendor		@RPMCANONVENDOR@
++%_vendor		freebsd
+ %_os			@RPMCANONOS@
+ %_target_platform	%{_target_cpu}-%{_vendor}-%{_target_os}
+ #
+@@ -145,7 +145,7 @@
+ %_host			@host@
+ %_host_alias		@host_alias@
+ %_host_cpu		@host_cpu@
+-%_host_vendor		@host_vendor@
++%_host_vendor		unknown
+ %_host_os		@host_os@
+ %_target		%{_host}
+ %_target_alias		%{_host_alias}

@@ -1,0 +1,11 @@
+--- lib/macro.c.orig	Mon Jul 10 00:35:57 2000
++++ lib/macro.c	Wed Oct  4 23:04:43 2000
+@@ -1608,7 +1608,7 @@
+ 
+ #if defined(EVAL_MACROS)
+ 
+-char *macrofiles = "/usr/lib/rpm/macros:/etc/rpm/macros:~/.rpmmacros";
++char *macrofiles = "%%PREFIX%%/lib/rpm/macros:%%PREFIX%%/etc/rpm/macros:~/.rpmmacros";
+ 
+ int
+ main(int argc, char *argv[])

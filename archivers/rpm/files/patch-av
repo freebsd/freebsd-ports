@@ -1,0 +1,11 @@
+--- aclocal.m4.orig	Thu Sep 14 04:41:44 2000
++++ aclocal.m4	Wed Oct  4 04:45:55 2000
+@@ -738,7 +738,7 @@
+ 		  [CATOBJEXT=.gmo
+ 		   DATADIRNAME=share],
+ 		  [CATOBJEXT=.mo
+-		   DATADIRNAME=lib])
++		   DATADIRNAME=share])
+ 		INSTOBJEXT=.mo
+ 	      fi
+ 	    fi
