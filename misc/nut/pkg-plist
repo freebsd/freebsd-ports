@@ -2,8 +2,7 @@ bin/nut
 etc/nut/FOOD_DES.txt
 etc/nut/NUT_DATA.txt
 etc/nut/WEIGHT.txt
-etc/nut/sr15.nut
+etc/nut/sr16.nut
 %%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/sr15_doc.htm
 @dirrm etc/nut
 %%PORTDOCS%%@dirrm %%DOCSDIR%%

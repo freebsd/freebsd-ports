@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nut
-PORTVERSION=	8.10
+PORTVERSION=	9.0
 CATEGORIES=	misc
 MASTER_SITES=	http://www.lafn.org/~av832/
 PKGNAMEPREFIX=	health-
@@ -33,14 +33,14 @@ do-install:
 		${PREFIX}/etc/${PORTNAME}
 	${INSTALL_DATA} ${WRKSRC}/raw.data/WEIGHT.txt \
 		${PREFIX}/etc/${PORTNAME}
-	${INSTALL_DATA} ${WRKSRC}/raw.data/sr15.nut \
+	${INSTALL_DATA} ${WRKSRC}/raw.data/sr16.nut \
 		${PREFIX}/etc/${PORTNAME}
 	${INSTALL_MAN} ${WRKSRC}/nut.1 ${PREFIX}/man/man1
 
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-.for i in README sr15_doc.htm
+.for i in README
 	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
 .endfor
 .endif
