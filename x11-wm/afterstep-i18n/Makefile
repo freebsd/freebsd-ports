@@ -3,13 +3,14 @@
 # Date created:		23 October 1998
 # Whom:			issei@jp.FreeBSD.ORG
 #
-# $Id: Makefile,v 1.1.1.1 1998/11/15 22:08:01 kuriyama Exp $
+# $Id: Makefile,v 1.2 1998/11/16 19:41:11 billf Exp $
 #
 
 DISTNAME=	AfterStep-1.0
 PKGNAME=	afterstep-i18n-1.0
 CATEGORIES=	x11-wm
 MASTER_SITES=	ftp://ftp.afterstep.org/archives/ \
+		http://www.freebsd.org/~kuriyama/distfiles/ \
 		http://www.itlb.te.noda.sut.ac.jp/~manome/afterstep/archive/ \
 		http://www.itlb.te.noda.sut.ac.jp/~manome/afterstep/archive/icons/
 DISTFILES=      ${DISTNAME}.tar.gz \
