@@ -6,7 +6,7 @@
 # To use this, make it executable, and set your editinfo DEFAULT line:
 # DEFAULT   /path/to/this/program
 #
-# $Id$
+# $Id: cvsedit,v 1.2 1995/08/05 09:00:19 peter Exp $
 #
 
 # same rules as CVS
@@ -42,6 +42,14 @@ open(OUT, "> $tmpfile") ||
 $blank = 0;	# true if the last line was blank
 $first = 0;	# true if we have seen the first real text
 while(<IN>) {
+
+	# Dont let CVS: lines upset things, but maintain them in case
+	# the editor is re-entered.  NO CHANGES!!
+	if (/^CVS:/) {
+		print OUT;
+		next;
+	}
+
 	chop;		# strip trailing newline
 	s/[\s]+$//;	# strip trailing whitespace
 
@@ -54,12 +62,6 @@ while(<IN>) {
 		# Delete if they only have whitespace after them.
 		if (/^Reviewed by:$/ || /^Submitted by:/ ||
 		    /^Obtained from:$/) {
-			next;
-		}
-		# Dont let CVS: lines upset things, but maintain them in case
-		# the editor is re-entered.
-		if (/^CVS:/) {
-			print OUT "$_\n";
 			next;
 		}
 		if ($blank && $first) {
