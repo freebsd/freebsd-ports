@@ -1,5 +1,5 @@
-include/cdio/cdio.h
 include/cdio/cd_types.h
+include/cdio/cdio.h
 include/cdio/iso9660.h
 include/cdio/logging.h
 include/cdio/sector.h
@@ -7,12 +7,15 @@ include/cdio/types.h
 include/cdio/util.h
 include/cdio/version.h
 include/cdio/xa.h
-lib/libcdio.la
-lib/libcdio.so.0
 lib/libcdio.a
-lib/libiso9660.la
-lib/libiso9660.so.1
+lib/libcdio.la
+lib/libcdio.so
+lib/libcdio.so.0
 lib/libiso9660.a
-libdata/pkgconfig/libiso9660.pc
+lib/libiso9660.la
+lib/libiso9660.so
+lib/libiso9660.so.1
 libdata/pkgconfig/libcdio.pc
+libdata/pkgconfig/libiso9660.pc
+@unexec rmdir %D/libdata/pkgconfig 2>/dev/null || true
 @dirrm include/cdio
