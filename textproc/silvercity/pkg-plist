@@ -4,6 +4,9 @@ bin/cgi-styler-form.py
 %%PYTHON_SITELIBDIR%%/SilverCity/CPP.py
 %%PYTHON_SITELIBDIR%%/SilverCity/CPP.pyc
 %%PYTHON_SITELIBDIR%%/SilverCity/CPP.pyo
+%%PYTHON_SITELIBDIR%%/SilverCity/CSS.py
+%%PYTHON_SITELIBDIR%%/SilverCity/CSS.pyc
+%%PYTHON_SITELIBDIR%%/SilverCity/CSS.pyo
 %%PYTHON_SITELIBDIR%%/SilverCity/DispatchHandler.py
 %%PYTHON_SITELIBDIR%%/SilverCity/DispatchHandler.pyc
 %%PYTHON_SITELIBDIR%%/SilverCity/DispatchHandler.pyo
