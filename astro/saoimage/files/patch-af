@@ -1,0 +1,11 @@
+--- lin.c.orig	Tue Dec 21 03:58:46 1999
++++ lin.c	Mon Jun 19 21:57:26 2000
+@@ -161,7 +161,7 @@
+    "PC matrix is singular"};
+ 
+ 
+-#ifdef __convexc__
++#if defined(__convexc__) || defined(__STDC__)
+ #include <stdlib.h>
+ #else
+ #include <malloc.h>
