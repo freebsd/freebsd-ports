@@ -248,6 +248,7 @@
     SUBDIR += krdesktop
     SUBDIR += l2tpd
     SUBDIR += lam
+    SUBDIR += lam7
     SUBDIR += lambdamoo
     SUBDIR += latd
     SUBDIR += ldap2dns

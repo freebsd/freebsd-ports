@@ -5,18 +5,29 @@
 # $FreeBSD$
 #
 
-PORTNAME=      	lam
-PORTVERSION=   	6.5.9
-CATEGORIES=    	net parallel
-MASTER_SITES=  	http://www.lam-mpi.org/download/files/
+PORTNAME=	lam7
+PORTVERSION=	7.0.5
+CATEGORIES=	net parallel
+MASTER_SITES=	http://www.lam-mpi.org/download/files/
+DISTNAME=	lam-${PORTVERSION}
 
-MAINTAINER=    	bremner@unb.ca
+MAINTAINER=	jan.lentfer@web.de
 COMMENT=	Local Area Multicomputer MPI implementation
 
 USE_BZIP2=	yes
+USE_PERL5=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-rsh=ssh
 
+CONFLICTS=	lam-6.*
+
 .include "files/manpages"
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500800
+BUILD_DEPENDS+=	${SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp
+RUN_DEPENDS+=	${SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp
+.endif
+
+.include <bsd.port.post.mk>
