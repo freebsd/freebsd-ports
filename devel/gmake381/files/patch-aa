@@ -1,5 +1,5 @@
-*** Makefile.in.orig	Sat May 21 22:48:31 1994
---- Makefile.in	Sun Nov 20 01:03:03 1994
+*** Makefile.in.orig	Sun Nov  6 15:35:49 1994
+--- Makefile.in	Tue Jan  3 20:56:32 1995
 ***************
 *** 94,100 ****
   # Number to put on the man page filename.
@@ -17,3 +17,20 @@
   # Prefix to put on installed `make' man page file name.
   manprefix = $(binprefix)
   
+***************
+*** 206,212 ****
+  	 else true; fi
+  # Some systems can't deal with renaming onto a running binary.
+  	-rm -f $@.old
+! 	-mv $@ $@.old
+  	mv $@.new $@
+  
+  $(infodir)/make.info: make.info
+--- 206,212 ----
+  	 else true; fi
+  # Some systems can't deal with renaming onto a running binary.
+  	-rm -f $@.old
+! 	@if [ -w $@ ]; then mv $@ $@.old; fi
+  	mv $@.new $@
+  
+  $(infodir)/make.info: make.info
