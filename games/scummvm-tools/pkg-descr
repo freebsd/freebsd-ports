@@ -1,0 +1,10 @@
+This is a collection of various tools that may be useful to use in
+conjunction with ScummVM. It includes tools that will allow you to
+decompile and extract SCUMM scripts from various games, as well as
+graphics and sound. Of special note is the extract utility, which
+uses libmp3lame to compress a monster.sou file to about 25% its
+original size.
+
+WWW: http://scummvm.sourceforge.net/
+
+-Miguel Mendez <flynn@energyhq.es.eu.org>
