@@ -529,6 +529,7 @@
     SUBDIR += redland
     SUBDIR += replaceit
     SUBDIR += resume
+    SUBDIR += resume-extensions
     SUBDIR += rfcdiff
     SUBDIR += rl
     SUBDIR += rman
