@@ -2,7 +2,7 @@
 $FreeBSD$
 
 --- Make.common.in.orig	Fri Jul 20 18:22:50 2001
-+++ Make.common.in	Tue Sep 11 18:23:08 2001
++++ Make.common.in	Fri Dec 14 11:04:04 2001
 @@ -13,10 +13,10 @@
  datadir    = @datadir@
  libdir	   = @libdir@
@@ -16,3 +16,12 @@ $FreeBSD$
  man1dir    = $(mandir)/man1
  manext     = 1
  man8dir    = $(mandir)/man8
+@@ -38,7 +38,7 @@
+ # No way, to make make happy (except GNU), we cannot use := to append
+ # something to these, so that's why there is a leading _
+ XCFLAGS = @CFLAGS@
+-XCPPFLAGS = -I.. @CPPFLAGS@ @MCCPPFLAGS@ @GLIB_CFLAGS@
++XCPPFLAGS = -I$(mcsrcdir) -I.. @CPPFLAGS@ @MCCPPFLAGS@ @GLIB_CFLAGS@
+ XLDFLAGS = @LDFLAGS@
+ XDEFS = @DEFS@
+ XLIBS = @LIBS@
