@@ -565,6 +565,7 @@ bclock		ports/x11-clocks/bclock
 bcpp		ports/devel/bcpp
 bcwipe		ports/security/bcwipe
 bdfresize	ports/x11-fonts/bdfresize
+beacon-server	ports/net/beacon-server
 beav		ports/editors/beav
 beaver		ports/editors/beaver
 bebocd		ports/audio/bebocd
