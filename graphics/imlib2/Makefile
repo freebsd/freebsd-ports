@@ -3,7 +3,7 @@
 # Date created:        10 June 1997
 # Whom:                Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.6 1997/10/30 22:15:26 max Exp $
+# $Id: Makefile,v 1.7 1997/11/04 00:32:46 max Exp $
 #
 
 DISTNAME=	imlib_DR-0.5.1
@@ -18,6 +18,7 @@ RUN_DEPENDS=	djpeg:${PORTSDIR}/graphics/jpeg \
 
 USE_GMAKE=	yes
 USE_IMAKE=	yes
+WRKSRC=		${WRKDIR}/imlib-0.5.1
 
 post-patch:
 	$(CP) $(WRKSRC)/Imakefile $(WRKSRC)/Imakefile.pat
