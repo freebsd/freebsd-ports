@@ -1,0 +1,49 @@
+LIB=	Memchan
+SHLIB_MAJOR=	2
+SHLIB_MINOR=	2
+
+.PATH:	${.CURDIR}/generic
+
+.if exists(${.CURDIR}/Makefile.in)
+_SRCS!=		${MAKE} -f ${.CURDIR}/Makefile.in -V Memchan_SOURCES
+SRCS=		${_SRCS:S/@srcdir@\/generic\///}
+.endif
+
+TCL_VER?=	8.3
+LOCALBASE?=	/usr/local
+
+CFLAGS+=	-I${LOCALBASE}/include/tcl${TCL_VER} \
+		-DMEMCHAN_VERSION='"${SHLIB_MAJOR}.${SHLIB_MINOR}"'
+
+LDADD=		-L${LOCALBASE}/lib -ltcl${TCL_VER:S/.//}
+
+INTERNALLIB	= don't build the useless static version
+NOPROFILE	= don't care for profiling
+
+all: ${SHLIB_NAME} pkgIndex.tcl test
+
+pkgIndex.tcl:
+	echo 'package ifneeded ${LIB} ${SHLIB_MAJOR}.${SHLIB_MINOR} \
+		[list load [file join $$dir $(SHLIB_NAME)]]' > pkgIndex.tcl
+
+DIR             = lib/tcl${TCL_VER}/${LIB}
+SHLIBDIR        = ${PREFIX}/${DIR}
+MANDIR          = ${PREFIX}/man/man
+
+${SHLIBDIR}:
+	${MKDIR} ${SHLIBDIR}
+
+env:
+	@${ECHO} SHLIB_NAME=${SHLIB_NAME} SHLIB_LINK=${SHLIB_LINK} DIR=${DIR}
+
+beforeinstall: ${SHLIBDIR} pkgIndex.tcl
+	${INSTALL_DATA} pkgIndex.tcl ${SHLIBDIR}/pkgIndex.tcl
+
+.include <bsd.lib.mk>
+
+test:	${SHLIB_NAME} pkgIndex.tcl
+	echo '	set auto_path ${.OBJDIR}; cd ${.CURDIR}/tests; \
+		package require ${LIB} ${SHLIB_MAJOR}.${SHLIB_MINOR}; \
+		if {[catch {source all} msg]} { \
+			puts stderr $msg; exit -1 \
+		}' | ${LOCALBASE}/bin/tclsh${TCL_VER}
