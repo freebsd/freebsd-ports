@@ -1,0 +1,24 @@
+
+WDialog is an advanced system to create dialog-centric web applications.
+
+Feature list:
+
+ * Separation of the user interface (UI) definition from the backend
+   program.
+ * The UI definition is contained in an XML file.
+ * The dialogs have built-in persistency for session state.
+ * A powerful template system manages the combination of individual
+   HTML fragments to whole pages.
+ * The dialogs behave like GUI widgets.
+ * The callbacks are written in a real programming language (Objective
+   Caml, or Perl).
+ * The application can run as CGI as well as application server.
+ * The WDialog toolkit itself does not require any database as backend
+   store.
+ * WDialog preprocesses all web inputs, and ensures that minimum
+   security standards are fulfilled.
+
+WWW: http://wdialog.sourceforge.net/
+
+- Stephane Legrand
+  <stephane@freebsd.org>
