@@ -3,7 +3,7 @@
 # Date created:         2 Apr 1997
 # Whom:                 Choi Jun Ho <junker@jazz.snu.ac.kr>
 #
-# $Id: Makefile,v 1.4 1997/11/10 11:28:34 asami Exp $
+# $Id: Makefile,v 1.5 1998/08/09 00:14:53 steve Exp $
 #
 
 DISTNAME=	nh2ps-2.3
@@ -12,6 +12,8 @@ CATEGORIES=	korean print
 MASTER_SITES=	ftp://jazz.snu.ac.kr/pub/unix/util/nh2ps/
 
 MAINTAINER=	junker@jazz.snu.ac.kr
+
+BROKEN_ELF=	yes
 
 RUN_DEPENDS=    ${PREFIX}/share/ghostscript/5.10ft/hangul:${PORTSDIR}/korean/ftghostscript5
 
