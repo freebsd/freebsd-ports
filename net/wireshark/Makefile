@@ -3,14 +3,17 @@
 # Date created:        10 August 1998
 # Whom:                Bill Fumerola <billf@chc-chimes.com>
 #
-# $Id: Makefile,v 1.10 1999/05/25 18:24:34 mharo Exp $
+# $Id: Makefile,v 1.11 1999/05/29 03:55:12 steve Exp $
 #
 
-DISTNAME=	ethereal-0.6.2
+DISTNAME=	ethereal-0.6.3
 CATEGORIES=	net
-MASTER_SITES=	http://ethereal.zing.org/distribution/ \
+MASTER_SITES=	http://alpha1.linuxberg.com/files/x11/network/ \
+		http://www.linuxberg.com/files/x11/network/ \
+		http://jefnet.linuxberg.com/files/x11/network/ \
+		http://ethereal.zing.org/distribution/ \
 		http://ethereal.boehm.org/distribution/
-
+		
 MAINTAINER=	billf@FreeBSD.ORG
 
 LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
