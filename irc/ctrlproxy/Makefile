@@ -8,22 +8,23 @@
 
 PORTNAME=	ctrlproxy
 PORTVERSION=	2.5
+PORTREVISION=	1
 CATEGORIES=	irc
 MASTER_SITES=	http://jelmer.vernstok.nl/ctrlproxy/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	IRC proxy
+COMMENT=	Flexible IRC proxy
 
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt \
-		xml2.5:${PORTSDIR}/textproc/libxml2 \
 		pcre.0:${PORTSDIR}/devel/pcre \
 		tdb.1:${PORTSDIR}/databases/tdb
 
 USE_REINPLACE=	yes
-UES_OPENSSL=	yes
+USE_OPENSSL=	yes
+USE_GNOME=	libxml2 glib20
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+		LIBS="-L${LOCALBASE}/lib"
 USE_GMAKE=	yes
 MAKE_ENV=	LDFLAGS="-L${LOCALBASE}/lib"
 
