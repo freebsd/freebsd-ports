@@ -33,6 +33,7 @@
     SUBDIR += denemo
     SUBDIR += easytag
     SUBDIR += ecasound
+    SUBDIR += ecawave
     SUBDIR += esound
     SUBDIR += extace
     SUBDIR += fcplay
