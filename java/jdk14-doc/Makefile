@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	jdk-doc
-PORTVERSION=	${JDK_VERSION:S/_/./g:S/-beta/b1/}
+PORTVERSION=	${JDK_VERSION:S/_/./g:S/-beta/b/}
 CATEGORIES=	java
 MASTER_SITES=	#
 DISTNAME=	j2sdk-${JDK_VERSION:S/./_/g}-doc
@@ -24,9 +24,9 @@ PLIST_SUB+=	T=${TARGET_DIR:S/^${PREFIX}\///}
 TARGET_DIR?=	${PREFIX}/share/doc/jdk${JDK_MAJOR_VER}
 
 WRKSRC=		${WRKDIR}/docs
-JDK_VERSION=	1.4.0-beta
+JDK_VERSION=	1.4.0-beta2
 JDK_MAJOR_VER=	${JDK_VERSION:R}
-DOWNLOAD_URL=	http://java.sun.com/j2se/${JDK_MAJOR_VER}/\#download
+DOWNLOAD_URL=	http://java.sun.com/j2se/${JDK_MAJOR_VER}/\#documentation
 
 NO_BUILD=	yes
 USE_ZIP=	yes
