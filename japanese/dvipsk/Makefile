@@ -1,5 +1,5 @@
 # New ports collection makefile for:    dvipsk + jpatch
-# Version required:     5.78a + p1.4c
+# Version required:     5.78a + p1.4d
 # Date created:         25 Aug 1997
 # Whom:                 Makoto WATANABE <watanabe@zlab.phys.nagoya-u.ac.jp>
 #
@@ -9,11 +9,11 @@
 DISTNAME=	dvipsk-5.78a
 PKGNAME=	ja-dvipsk-5.78a
 CATEGORIES=	japanese print
-MASTER_SITES=	ftp://ftp.ascii.co.jp/pub/TeX/ascii-ptex/ptex218/ \
+MASTER_SITES=	ftp://ftp.ascii.co.jp/pub/TeX/ascii-ptex/dvips/ \
 		ftp://ftp.center.osaka-u.ac.jp/CTAN/dviware/dvipsk/ \
 		ftp://ftp.riken.go.jp/pub/CTAN/dviware/dvipsk/ \
 		ftp://ftp.u-aizu.ac.jp/pub/tex/CTAN/dviware/dvipsk/
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} dvipsk-jpatch-p1.4c.tar.gz
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} dvipsk-jpatch-p1.4d.tar.gz
 
 MAINTAINER=	watanabe@zlab.phys.nagoya-u.ac.jp
 
@@ -21,6 +21,7 @@ RUN_DEPENDS=	ptex-common:${PORTSDIR}/japanese/ptex-common
 
 MANUAL_PACKAGE_BUILD=	incompatible with other versions of dvipsk-*
 
+DIST_SUBDIR=	ptex
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_path_install="${INSTALL} -c -o ${BINOWN} -g ${BINGRP}"
