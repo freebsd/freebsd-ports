@@ -15,7 +15,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	sumikawa@FreeBSD.org
 COMMENT=	Simple battery meter
 
-NOT_FOR_ARCHS=	sparc64 alpha
+ONLY_FOR_ARCHS=	i386
 
 USE_IMAKE=	yes
 USE_X_PREFIX=	yes
