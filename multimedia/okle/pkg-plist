@@ -10,6 +10,7 @@ share/apps/okle/pics/enter.png
 share/apps/okle/pics/fastforward.png
 share/apps/okle/pics/forward.png
 share/apps/okle/pics/goup.png
+share/apps/okle/pics/mute.png
 share/apps/okle/pics/pause.png
 share/apps/okle/pics/play.png
 share/apps/okle/pics/playfast.png
@@ -24,9 +25,14 @@ share/apps/okle/pics/stepreverse.png
 share/apps/okle/pics/stop.png
 share/apps/okle/pics/subtitleselect.png
 share/apps/okle/pics/up.png
+share/apps/okle/pics/volume.png
+share/doc/HTML/en/okle/common
+share/doc/HTML/en/okle/index.cache.bz2
+share/doc/HTML/en/okle/index.docbook
 share/icons/hicolor/16x16/apps/okle.png
 share/icons/hicolor/32x32/apps/okle.png
 share/locale/de/LC_MESSAGES/okle.mo
+share/locale/es/LC_MESSAGES/okle.mo
 share/locale/hu/LC_MESSAGES/okle.mo
 share/locale/it/LC_MESSAGES/okle.mo
 share/locale/sv/LC_MESSAGES/okle.mo
@@ -45,7 +51,10 @@ share/locale/sv/LC_MESSAGES/okle.mo
 @unexec rmdir %D/share/icons/hicolor/16x16 2>/dev/null || true
 @unexec rmdir %D/share/icons/hicolor 2>/dev/null || true
 @unexec rmdir %D/share/icons 2>/dev/null || true
-@dirrm share/apps/okle/pics 
+@dirrm share/doc/HTML/en/okle
+@unexec rmdir %D/share/doc/HTML/en 2>/dev/null || true
+@unexec rmdir %D/share/doc/HTML 2>/dev/null || true
+@dirrm share/apps/okle/pics
 @dirrm share/apps/okle
 @unexec rmdir %D/share/apps 2>/dev/null || true
 @unexec rmdir %D/share/applnk/Multimedia 2>/dev/null || true
