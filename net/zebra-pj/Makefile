@@ -10,7 +10,7 @@ PORTVERSION=	0.91a
 CATEGORIES=	net ipv6
 MASTER_SITES=	ftp://ftp.zebra.org/pub/zebra/
 
-MAINTAINER=	andreas@FreeBSD.org
+MAINTAINER=	andreas_and_joe@tao.org.uk
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--sysconfdir=${PREFIX}/etc/zebra

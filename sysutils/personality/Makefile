@@ -10,7 +10,7 @@ PORTVERSION=	1.0
 CATEGORIES=	sysutils
 DISTFILES=	# none
 
-MAINTAINER=	andreas@FreeBSD.org
+MAINTAINER=	andreas_and_joe@tao.org.uk
 
 WRKSRC=		${WRKDIR}/src
 NO_BUILD=	YES

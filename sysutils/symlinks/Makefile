@@ -11,7 +11,7 @@ CATEGORIES=		sysutils
 MASTER_SITES=		${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	utils/file
 
-MAINTAINER=		andreas@FreeBSD.org
+MAINTAINER=		andreas_and_joe@tao.org.uk
 
 MAN8=			symlinks.8
 
