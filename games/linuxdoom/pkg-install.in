@@ -1,0 +1,9 @@
+#!/bin/sh
+if [ "$2" != "POST-INSTALL" ]; then
+  exit 0
+fi
+cat <<End_Of_Comment
+If you want to use a joystick, you'll need a kernel
+with joystick support.  Then you can calibrate it
+with @PREFIX@/libexec/doom/joystick4doom /dev/joy0 -c
+End_Of_Comment
