@@ -13,6 +13,7 @@ use lib $ENV{CVSROOT};
 use CVSROOT::cfg;
 my $CVSROOT = $ENV{CVSROOT} || die "Can't determine CVSROOT (commitcheck)!\n";
 
+die "No commits please while stuff gets moved around. Please try later.\n";
 
 # Check that the user is committing on the right machine.
 #
