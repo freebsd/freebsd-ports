@@ -1,0 +1,32 @@
+--- Makefile.orig	Sun Oct 31 18:25:08 1999
++++ Makefile	Sun Oct 31 19:03:04 1999
+@@ -1,23 +1,7 @@
+-BIN=mathopd
+-CC=gcc
+-CFLAGS=-O -Wall
+-CPPFLAGS=
+-LDFLAGS=
+-LDLIBS=
+-PREFIX=/usr/local
+-SBINDIR=$(PREFIX)/sbin
++PROG=	mathopd
++SRCS=	base64.c cgi.c config.c core.c dummy.c dump.c imap.c log.c \
++	main.c redirect.c request.c util.c
++BINDIR?=${PREFIX}/sbin
++NOMAN=	yes
+ 
+-OBJS=	base64.o cgi.o config.o core.o dummy.o dump.o imap.o log.o main.o \
+-	redirect.o request.o util.o
+-DEPENDS=mathopd.h Makefile
+-
+-all: $(BIN)
+-install: $(BIN)
+-	install $(BIN) $(SBINDIR)
+-$(BIN): $(OBJS)
+-	$(CC) $(LDFLAGS) -o $(BIN) $(OBJS) $(LDLIBS)
+-$(OBJS): $(DEPENDS)
+-.c.o:
+-	$(CC) -c $(CFLAGS) $(CPPFLAGS) $< -o $@
+-clean:
+-	rm -f $(BIN) $(OBJS)
++.include <bsd.prog.mk>

@@ -1,0 +1,13 @@
+Mathopd is a very small, yet very fast HTTP server for UN*X systems. 
+
+Mathopd is designed specifically to handle a large number of connections
+with minimal fuss. It contains no unnecessary add-ons, but it does the
+trick for most things. 
+
+Mathopd does not allocate any memory, once it has started up, and
+does not fork any processes (except for CGI scripts of course.)
+
+WWW: http://mathop.diva.nl/
+
+- Anton
+tobez@plab.ku.dk
