@@ -1,0 +1,13 @@
+lib/python1.5/site-packages/Stack/UserStack.py
+lib/python1.5/site-packages/Stack/UserStack.pyc
+lib/python1.5/site-packages/Stack/UserStack.pyo
+lib/python1.5/site-packages/Stack/__init__.py
+lib/python1.5/site-packages/Stack/__init__.pyc
+lib/python1.5/site-packages/Stack/__init__.pyo
+lib/python1.5/site-packages/Stack/stackbench.py
+lib/python1.5/site-packages/Stack/stackbench.pyc
+lib/python1.5/site-packages/Stack/stackbench.pyo
+lib/python1.5/site-packages/mxStack.so
+@dirrm lib/python1.5/site-packages/Stack
+share/doc/py-mxStack/mxStack.html
+@dirrm share/doc/py-mxStack
