@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mm
-PORTVERSION=	1.0.12
+PORTVERSION=	1.1.0
 CATEGORIES=	devel
 MASTER_SITES=	http://www.engelschall.com/sw/mm/ \
 		ftp://ftp.engelschall.com/sw/mm/

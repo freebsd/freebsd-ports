@@ -1,5 +1,5 @@
 MM - Shared Memory Library
-Copyright (c) 1999 Ralf S. Engelschall, All rights reserved.
+Copyright (c) 1999-2000 Ralf S. Engelschall, All rights reserved.
 
 The MM library is a 2-layer abstraction library which simplifies
 the usage of shared memory between forked (and this way strongly
