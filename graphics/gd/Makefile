@@ -3,7 +3,7 @@
 # Date created:         27 Mar 1998
 # Whom:                 jeff@cetlink.net
 #
-# $Id: Makefile,v 1.6 1999/07/13 23:59:52 asami Exp $
+# $Id: Makefile,v 1.7 1999/07/24 23:56:41 billf Exp $
 #
 
 DISTNAME=       gd-1.6.2
@@ -16,7 +16,9 @@ MAINTAINER=     jeff@cetlink.net
 LIB_DEPENDS=	png.3:${PORTSDIR}/graphics/png
 
 FETCH_BEFORE_ARGS=	-b
-GNU_CONFIGURE=	yes
+USE_LIBTOOL=		yes
+CONFIGURE_ENV+=		CFLAGS="${CFLAGS} -I${LOCALBASE}/include"
+CONFIGURE_ARGS+=	--includedir=${PREFIX}/include/gd
 
 pre-install:
 	${MKDIR} ${PREFIX}/include/gd
