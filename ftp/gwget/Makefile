@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	gwget
-PORTVERSION=	0.90
-PORTREVISION=	2
+PORTVERSION=	0.91
 CATEGORIES=	ftp www gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	gwget
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	radek@raadradd.com
 COMMENT=	A download manager for GNOME, based on wget
@@ -22,6 +21,8 @@ USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+
+GCONF_SCHEMAS=	gwget.schemas
 EPHY_VER=	1.4
 
 .include <bsd.port.pre.mk>
@@ -42,7 +43,7 @@ PLIST_SUB+=		EPIPHANY:="@comment "
 .endif # defined(WITH_EPIPHANY)
 
 post-patch:
-		@${REINPLACE_CMD} -e 's|epiphany/extensions|epiphany-${EPHY_VER}/extensions|' \
-			${WRKSRC}/epiphany-extension/Makefile.in
+	@${REINPLACE_CMD} -e 's|epiphany/extensions|epiphany-${EPHY_VER}/extensions|' \
+		${WRKSRC}/epiphany-extension/Makefile.in
 
 .include <bsd.port.post.mk>
