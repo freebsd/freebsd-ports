@@ -1,5 +1,5 @@
---- MT/drivers/AllInOneMT.c.orig	Sat Aug  9 14:06:19 2003
-+++ MT/drivers/AllInOneMT.c	Sat Aug  9 14:13:07 2003
+--- MT/drivers/allInOneMT.c.orig	Sat Aug  9 14:06:19 2003
++++ MT/drivers/allInOneMT.c	Sat Aug  9 14:13:07 2003
 @@ -35,7 +35,7 @@
  Chv             *rootchv ;
  ChvManager      *chvmanager ;
