@@ -1,0 +1,7 @@
+sbin/metalog
+%%PORTDOCS%%share/doc/metalog/COPYING
+%%PORTDOCS%%share/doc/metalog/NEWS
+%%PORTDOCS%%share/doc/metalog/README
+%%PORTDOCS%%@dirrm share/doc/metalog
+%%PORTDOCS%%share/examples/metalog/metalog.conf
+%%PORTDOCS%%@dirrm share/examples/metalog

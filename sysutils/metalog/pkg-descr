@@ -1,0 +1,13 @@
+Metalog is a modern replacement for syslogd and klogd. The logged messages can
+be dispatched according to their facility, urgency, program name and/or
+Perl-compatible regular expressions.
+
+Log files can be automatically rotated when they exceed a certain size or age.
+External shell scripts (ex: mail) can be launched when specific patterns are
+found.
+
+Metalog is easier to configure than syslogd and syslog-ng, accepts unlimited
+number of rules and has (switchable) memory bufferisation for maximal
+performance.
+
+WWW: http://metalog.sourceforge.net/

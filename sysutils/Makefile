@@ -120,6 +120,7 @@
     SUBDIR += manck
     SUBDIR += medusa
     SUBDIR += memtest
+    SUBDIR += metalog
     SUBDIR += mgeupsd
     SUBDIR += mixer
     SUBDIR += mkfile
