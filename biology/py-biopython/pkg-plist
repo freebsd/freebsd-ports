@@ -1,124 +1,143 @@
-lib/python1.5/site-packages/Bio/__init__.py
-lib/python1.5/site-packages/Bio/ParserSupport.py
-lib/python1.5/site-packages/Bio/Seq.py
-lib/python1.5/site-packages/Bio/Index.py
-lib/python1.5/site-packages/Bio/PropertyManager.py
-lib/python1.5/site-packages/Bio/File.py
-lib/python1.5/site-packages/Bio/Sequence.py
-lib/python1.5/site-packages/Bio/utils.py
-lib/python1.5/site-packages/Bio/SeqRecord.py
-lib/python1.5/site-packages/Bio/SwissProt/__init__.py
-lib/python1.5/site-packages/Bio/SwissProt/KeyWList.py
-lib/python1.5/site-packages/Bio/SwissProt/SProt.py
-lib/python1.5/site-packages/Bio/Blast/__init__.py
-lib/python1.5/site-packages/Bio/Blast/NCBIWWW.py
-lib/python1.5/site-packages/Bio/Blast/Record.py
-lib/python1.5/site-packages/Bio/Blast/NCBIStandalone.py
-lib/python1.5/site-packages/Bio/Enzyme/__init__.py
-lib/python1.5/site-packages/Bio/Enzyme/Enzyme.py
-lib/python1.5/site-packages/Bio/Fasta/__init__.py
-lib/python1.5/site-packages/Bio/Fasta/Fasta.py
-lib/python1.5/site-packages/Bio/PDB/__init__.py
-lib/python1.5/site-packages/Bio/Prosite/__init__.py
-lib/python1.5/site-packages/Bio/Prosite/Prosite.py
-lib/python1.5/site-packages/Bio/Prosite/Pattern.py
-lib/python1.5/site-packages/Bio/Prosite/Prodoc.py
-lib/python1.5/site-packages/Bio/Medline/Medline.py
-lib/python1.5/site-packages/Bio/Medline/PubMed.py
-lib/python1.5/site-packages/Bio/Medline/__init__.py
-lib/python1.5/site-packages/Bio/Data/IUPACData.py
-lib/python1.5/site-packages/Bio/Data/__init__.py
-lib/python1.5/site-packages/Bio/Data/CodonTable.py
-lib/python1.5/site-packages/Bio/Entrez/__init__.py
-lib/python1.5/site-packages/Bio/Tools/mathfns.py
-lib/python1.5/site-packages/Bio/Tools/__init__.py
-lib/python1.5/site-packages/Bio/Tools/Transcribe.py
-lib/python1.5/site-packages/Bio/Tools/listfns.py
-lib/python1.5/site-packages/Bio/Tools/stringfns.py
-lib/python1.5/site-packages/Bio/Tools/Translate.py
-lib/python1.5/site-packages/Bio/Tools/Classification/__init__.py
-lib/python1.5/site-packages/Bio/Tools/Classification/NaiveBayes.py
-lib/python1.5/site-packages/Bio/Tools/Classification/SVM.py
-lib/python1.5/site-packages/Bio/Tools/Classification/kNN.py
-lib/python1.5/site-packages/Bio/WWW/__init__.py
-lib/python1.5/site-packages/Bio/WWW/NCBI.py
-lib/python1.5/site-packages/Bio/WWW/ExPASy.py
-lib/python1.5/site-packages/Bio/WWW/SCOP.py
-lib/python1.5/site-packages/Bio/Alphabet/__init__.py
-lib/python1.5/site-packages/Bio/Alphabet/IUPAC.py
-lib/python1.5/site-packages/Bio/Encodings/IUPACEncoding.py
-lib/python1.5/site-packages/Bio/Encodings/__init__.py
-lib/python1.5/site-packages/Bio/SeqIO/__init__.py
-lib/python1.5/site-packages/Bio/SeqIO/FASTA.py
-lib/python1.5/site-packages/Bio/PDB/__init__.pyc
-lib/python1.5/site-packages/Bio/WWW/__init__.pyc
-lib/python1.5/site-packages/Bio/WWW/NCBI.pyc
-lib/python1.5/site-packages/Bio/WWW/ExPASy.pyc
-lib/python1.5/site-packages/Bio/WWW/SCOP.pyc
-lib/python1.5/site-packages/Bio/Data/IUPACData.pyc
-lib/python1.5/site-packages/Bio/Data/__init__.pyc
-lib/python1.5/site-packages/Bio/Data/CodonTable.pyc
-lib/python1.5/site-packages/Bio/Encodings/IUPACEncoding.pyc
-lib/python1.5/site-packages/Bio/Encodings/__init__.pyc
-lib/python1.5/site-packages/Bio/__init__.pyc
-lib/python1.5/site-packages/Bio/Blast/__init__.pyc
-lib/python1.5/site-packages/Bio/Blast/NCBIWWW.pyc
-lib/python1.5/site-packages/Bio/Blast/Record.pyc
-lib/python1.5/site-packages/Bio/Blast/NCBIStandalone.pyc
-lib/python1.5/site-packages/Bio/SeqIO/__init__.pyc
-lib/python1.5/site-packages/Bio/SeqIO/FASTA.pyc
-lib/python1.5/site-packages/Bio/ParserSupport.pyc
-lib/python1.5/site-packages/Bio/Medline/Medline.pyc
-lib/python1.5/site-packages/Bio/Medline/PubMed.pyc
-lib/python1.5/site-packages/Bio/Medline/__init__.pyc
-lib/python1.5/site-packages/Bio/Tools/mathfns.pyc
-lib/python1.5/site-packages/Bio/Tools/__init__.pyc
-lib/python1.5/site-packages/Bio/Tools/Transcribe.pyc
-lib/python1.5/site-packages/Bio/Tools/listfns.pyc
-lib/python1.5/site-packages/Bio/Tools/stringfns.pyc
-lib/python1.5/site-packages/Bio/Tools/Translate.pyc
-lib/python1.5/site-packages/Bio/Tools/Classification/__init__.pyc
-lib/python1.5/site-packages/Bio/Tools/Classification/NaiveBayes.pyc
-lib/python1.5/site-packages/Bio/Tools/Classification/SVM.pyc
-lib/python1.5/site-packages/Bio/Tools/Classification/kNN.pyc
-lib/python1.5/site-packages/Bio/Seq.pyc
-lib/python1.5/site-packages/Bio/Index.pyc
-lib/python1.5/site-packages/Bio/SwissProt/__init__.pyc
-lib/python1.5/site-packages/Bio/SwissProt/KeyWList.pyc
-lib/python1.5/site-packages/Bio/SwissProt/SProt.pyc
-lib/python1.5/site-packages/Bio/Fasta/__init__.pyc
-lib/python1.5/site-packages/Bio/Fasta/Fasta.pyc
-lib/python1.5/site-packages/Bio/Alphabet/__init__.pyc
-lib/python1.5/site-packages/Bio/Alphabet/IUPAC.pyc
-lib/python1.5/site-packages/Bio/PropertyManager.pyc
-lib/python1.5/site-packages/Bio/File.pyc
-lib/python1.5/site-packages/Bio/Sequence.pyc
-lib/python1.5/site-packages/Bio/utils.pyc
-lib/python1.5/site-packages/Bio/Entrez/__init__.pyc
-lib/python1.5/site-packages/Bio/Enzyme/__init__.pyc
-lib/python1.5/site-packages/Bio/Enzyme/Enzyme.pyc
-lib/python1.5/site-packages/Bio/SeqRecord.pyc
-lib/python1.5/site-packages/Bio/Prosite/__init__.pyc
-lib/python1.5/site-packages/Bio/Prosite/Prosite.pyc
-lib/python1.5/site-packages/Bio/Prosite/Pattern.pyc
-lib/python1.5/site-packages/Bio/Prosite/Prodoc.pyc
-lib/python1.5/site-packages/Bio/Tools/Classification/cSVM.so
-lib/python1.5/site-packages/Bio/Tools/clistfns.so
-lib/python1.5/site-packages/Bio/Tools/cmathfns.so
-lib/python1.5/site-packages/Bio/Tools/cstringfns.so
-@dirrm lib/python1.5/site-packages/Bio/WWW
-@dirrm lib/python1.5/site-packages/Bio/Tools/Classification
-@dirrm lib/python1.5/site-packages/Bio/Tools
-@dirrm lib/python1.5/site-packages/Bio/SwissProt
-@dirrm lib/python1.5/site-packages/Bio/SeqIO
-@dirrm lib/python1.5/site-packages/Bio/Prosite
-@dirrm lib/python1.5/site-packages/Bio/PDB
-@dirrm lib/python1.5/site-packages/Bio/Medline
-@dirrm lib/python1.5/site-packages/Bio/Fasta
-@dirrm lib/python1.5/site-packages/Bio/Enzyme
-@dirrm lib/python1.5/site-packages/Bio/Entrez
-@dirrm lib/python1.5/site-packages/Bio/Encodings
-@dirrm lib/python1.5/site-packages/Bio/Data
-@dirrm lib/python1.5/site-packages/Bio/Blast
-@dirrm lib/python1.5/site-packages/Bio/Alphabet
-@dirrm lib/python1.5/site-packages/Bio
+lib/%%PYTHON_VERSION%%/site-packages/Bio/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/ParserSupport.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Seq.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Index.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/PropertyManager.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/File.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Sequence.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/utils.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/SeqRecord.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/SwissProt/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/SwissProt/KeyWList.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/SwissProt/SProt.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Blast/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Blast/NCBIWWW.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Blast/Record.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Blast/NCBIStandalone.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Enzyme/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Enzyme/Enzyme.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Fasta/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Fasta/Fasta.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/PDB/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Prosite/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Prosite/Prosite.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Prosite/Pattern.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Prosite/Prodoc.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Medline/Medline.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Medline/PubMed.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Medline/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Data/IUPACData.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Data/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Data/CodonTable.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Entrez/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Tools/mathfns.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Tools/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Tools/Transcribe.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Tools/listfns.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Tools/stringfns.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Tools/Translate.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Tools/Classification/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Tools/Classification/NaiveBayes.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Tools/Classification/SVM.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Tools/Classification/kNN.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/WWW/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/WWW/NCBI.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/WWW/ExPASy.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/WWW/SCOP.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Alphabet/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Alphabet/IUPAC.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Encodings/IUPACEncoding.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Encodings/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/SeqIO/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/SeqIO/FASTA.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/PDB/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/WWW/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/WWW/NCBI.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/WWW/ExPASy.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/WWW/SCOP.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Data/IUPACData.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Data/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Data/CodonTable.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Encodings/IUPACEncoding.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Encodings/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Blast/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Blast/NCBIWWW.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Blast/Record.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Blast/NCBIStandalone.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/SeqIO/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/SeqIO/FASTA.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/ParserSupport.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Medline/Medline.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Medline/PubMed.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Medline/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Tools/mathfns.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Tools/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Tools/Transcribe.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Tools/listfns.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Tools/stringfns.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Tools/Translate.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Tools/Classification/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Tools/Classification/NaiveBayes.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Tools/Classification/SVM.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Tools/Classification/kNN.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Seq.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Index.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/SwissProt/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/SwissProt/KeyWList.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/SwissProt/SProt.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Fasta/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Fasta/Fasta.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Alphabet/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Alphabet/IUPAC.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/PropertyManager.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/File.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Sequence.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/utils.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Entrez/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Enzyme/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Enzyme/Enzyme.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/SeqRecord.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Prosite/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Prosite/Prosite.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Prosite/Pattern.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Prosite/Prodoc.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Tools/Classification/cSVM.so
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Tools/clistfns.so
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Tools/cmathfns.so
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Tools/cstringfns.so
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Gobase/Gobase.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Gobase/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Gobase/Gobase.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Gobase/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Rebase/Rebase.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Rebase/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Rebase/Rebase.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Rebase/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/SCOP/Dom.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/SCOP/Lin.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/SCOP/Location.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/SCOP/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/SCOP/Dom.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/SCOP/Lin.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/SCOP/Location.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/SCOP/__init__.pyc
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/Bio/WWW
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/Bio/Tools/Classification
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/Bio/Tools
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/Bio/SwissProt
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/Bio/SeqIO
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/Bio/Prosite
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/Bio/PDB
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/Bio/Medline
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/Bio/Fasta
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/Bio/Enzyme
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/Bio/Entrez
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/Bio/Encodings
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/Bio/Data
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/Bio/Blast
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/Bio/Alphabet
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/Bio/Gobase
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/Bio/Rebase
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/Bio/SCOP
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/Bio
