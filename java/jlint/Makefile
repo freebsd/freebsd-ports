@@ -7,6 +7,7 @@
 
 PORTNAME=	jlint
 PORTVERSION=	2.3
+PORTREVISION=	1
 CATEGORIES=	java
 MASTER_SITES=	http://artho.com/jlint/ \
 		http://www.metaverse.nl/~ernst/
