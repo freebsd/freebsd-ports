@@ -1,0 +1,5 @@
+This is a python extension module to enable python scripts to
+attach to sendmail's libmilter functionality.  Additional python
+modules provide for navigating and modifying MIME parts.
+
+WWW: http://www.bmsi.com/python/milter.html

@@ -1,0 +1,11 @@
+--- setup.py.orig	Sun Jun 16 02:34:20 2002
++++ setup.py	Thu Jun 27 03:17:51 2002
+@@ -4,7 +4,7 @@
+ if os.uname()[0] == "AIX":
+   libs = ["milter", "smutil"]
+ else:
+-  libs = ["milter", "sm"]
++  libs = ["milter"]
+ 
+ setup(name = "milter", version = "0.4.5",
+ 	description="Python interface to sendmail-8.1x milter API",
