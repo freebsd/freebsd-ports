@@ -6,14 +6,15 @@
 #
 
 PORTNAME=	thudboard
-PORTVERSION=	1.1
+PORTVERSION=	1.2
 CATEGORIES=	games
 MASTER_SITES=	http://www.million.nl/file/
 
 MAINTAINER=	Jan.Stocker@t-online.de
 COMMENT=	The Discworld Boardgame Board
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter \
+		${PYTHON_SITELIBDIR}/_xmlplus/sax/__init__.py:${PORTSDIR}/textproc/py-xml
 
 USE_PYTHON=	yes
 
