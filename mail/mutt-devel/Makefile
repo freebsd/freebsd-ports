@@ -24,7 +24,7 @@
 # have to set the variables COLORTERM=yes and COLORFGBG=color,color in your
 # environment to get slang function properly.
 #
-# If you want to install the mutt documentation in html format define:
+# If you want to install the mutt documentation in html and ps format define:
 #  WITH_MUTT_HTML
 #
 # If you do not want that the documentation is rebuilt using sgmlformat
@@ -128,6 +128,9 @@ RUN_DEPENDS=	ispell:${PORTSDIR}/textproc/ispell \
 		urlview:${PORTSDIR}/textproc/urlview
 .endif
 
+.if defined(WITH_MUTT_PS)
+WITH_MUTT_HTML=		yes
+.endif
 .if defined(WITH_MUTT_NCURSES_PORT)
 WITH_MUTT_NCURSES=	yes
 .endif
@@ -283,7 +286,7 @@ post-install:
 		PGP-Notes.txt ../ABOUT-NLS ../contrib/language* \
 		${PREFIX}/share/doc/mutt
 .if ${SGML_USED} == yes
-	@cd ${WRKSRC}/doc ; ${INSTALL_MAN} manual.latin1 \
+	@cd ${WRKSRC}/doc ; ${INSTALL_MAN} manual.latin1 manual.ps \
 		${PREFIX}/share/doc/mutt
 .endif
 .if defined(WITH_MUTT_NNTP)
