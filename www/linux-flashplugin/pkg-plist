@@ -2,6 +2,7 @@ lib/flash/ShockwaveFlash.class
 lib/flash/libflashplayer.so
 %%PLUGINSDIR%%/ShockwaveFlash.class
 %%PLUGINSDIR%%/libflashplayer.so
+@unexec rmdir -p %%PLUGINSDIR%% 2>/dev/null || true
 share/doc/flash/README.Linux
 @dirrm lib/flash
 @dirrm share/doc/flash
