@@ -3,15 +3,17 @@
 # Date created:				26 Jan 1998
 # Whom:					Josh Tiefenbach <josh@ican.net>
 #
-# $Id: Makefile,v 1.32 1998/11/21 20:13:46 steve Exp $
+# $Id: Makefile,v 1.33 1998/12/01 02:56:08 asami Exp $
 #
 
 DISTNAME=	mysql-3.22.10-beta
 PKGNAME=	mysql-3.22.10b
 CATEGORIES=	databases
-MASTER_SITES=	http://mysql.polaris.ca/Downloads/MySQL-3.22/ \
-		http://www.fh-wolfenbuettel.de/ftp/pub/database/mysql/Downloads/MySQL-3.22/ \
-		http://www.tcx.se/Downloads/MySQL-3.22/
+MASTER_SITES=	http://www.fh-wolfenbuettel.de/ftp/pub/database/mysql/Downloads/MySQL-3.22/ \
+		ftp://ftp.digex.net/pub/database/mysql/Downloads/MySQL-3.22/ \
+		ftp://ftp.bse.bg/pub/Unix/database/MySQL/ \
+		ftp://ftp.plig.net/pub/database/mysql/Downloads/MySQL-3.22/ \
+		ftp://ftp.sunet.se/pub/unix/databases/relational/mysql/Downloads/MySQL-3.22/
 
 MAINTAINER=	ibex@physik.TU-Berlin.DE
 
