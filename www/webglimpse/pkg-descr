@@ -1,0 +1,10 @@
+WebGlimpse adds search capabilities to your WWW site automatically and
+easily. It attaches a small search box to the bottom of every HTML page,
+and allows the search to cover the neighborhood of that page or the whole
+site. With WebGlimpse there is no need to construct separate search pages,
+and no need to interrupt the users from their browsings. All pages remain
+unchanged except for the extra search capabilities. It is even possible
+for the search to efficiently cover remote pages linked from your pages.
+(WebGlimpse will collect such remote pages to your disk and index them.)
+Installation, customization (e.g., deciding which pages to collect and
+which ones to index), and maintenance are easy.

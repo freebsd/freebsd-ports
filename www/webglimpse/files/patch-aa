@@ -1,0 +1,11 @@
+--- wginstall.bak	Fri Apr 24 03:41:34 1998
++++ wginstall	Mon Nov  2 07:18:17 1998
+@@ -3,7 +3,7 @@
+ # Ground-zero install script for webglimpse
+ # Tries to find location of perl and execute wginstall
+ 
+-perl_loc=`which perl`
++perl_loc=%PERL%
+ 
+ if [ -z $perl_loc ]
+ then

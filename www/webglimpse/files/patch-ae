@@ -1,0 +1,30 @@
+--- cgi-bin/webglimpse-fullsearch.orig	Mon Nov  2 08:52:04 1998
++++ cgi-bin/webglimpse-fullsearch	Mon Nov  2 08:53:25 1998
+@@ -159,19 +159,19 @@
+ print "<INPUT TYPE=submit VALUE=Submit>\n";
+ print "<br>\n";
+ print "<center>\n";
+-print "<INPUT NAME=case TYPE=checkbox>Case&#160;sensitive\n";
+-print "<!-- SPACES -->&#160;&#160;&#160;\n";
+-# print "<!-- SPACES -->&#160;&#160;&#160;&#160;&#160;&#160;&#160;\n";
+-print "<INPUT NAME=whole TYPE=checkbox>Partial&#160;match\n";
+-print "<!-- SPACES -->&#160;&#160;&#160;\n";
+-print "<INPUT NAME=lines TYPE=checkbox>Jump&#160;to&#160;line\n";
+-print "<!-- SPACES -->&#160;&#160;&#160;\n";
++print "<INPUT NAME=case TYPE=checkbox>Case&nbsp;sensitive\n";
++print "<!-- SPACES -->&nbsp;&nbsp;&nbsp;\n";
++# print "<!-- SPACES -->&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\n";
++print "<INPUT NAME=whole TYPE=checkbox>Partial&nbsp;match\n";
++print "<!-- SPACES -->&nbsp;&nbsp;&nbsp;\n";
++print "<INPUT NAME=lines TYPE=checkbox>Jump&nbsp;to&nbsp;line\n";
++print "<!-- SPACES -->&nbsp;&nbsp;&nbsp;\n";
+ print "<SELECT NAME=errors align=right>\n";
+ print "<OPTION>0\n";
+ print "<OPTION>1\n";
+ print "<OPTION>2\n";
+ print "</SELECT>\n";
+-print "misspellings&#160;allowed\n";
++print "misspellings&nbsp;allowed\n";
+ print "<br>\n";
+ print "</center>\n";
+ print "Return only files modified within the last <INPUT NAME=age size=5>\n";
