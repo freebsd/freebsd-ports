@@ -166,6 +166,7 @@
     SUBDIR += w3m-ssl
     SUBDIR += w3mir
     SUBDIR += wcol
+    SUBDIR += web2ldap
     SUBDIR += web500gw
     SUBDIR += webalizer
     SUBDIR += webalizer-2

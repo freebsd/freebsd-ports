@@ -1,0 +1,32 @@
+*** sbin/web2ldap.py.orig	Sat Jul 22 02:24:59 2000
+--- sbin/web2ldap.py	Sat Jul 22 02:25:26 2000
+***************
+*** 1,4 ****
+! #!/usr/bin/python
+  
+  ########################################################################
+  # web2ldap
+--- 1,4 ----
+! #!/usr/local/bin/python
+  
+  ########################################################################
+  # web2ldap
+***************
+*** 10,17 ****
+  import sys,os
+  
+  if os.name == 'posix':
+!   # For finding web2ldapcnf.py in /etc/web2ldap on Unix systems
+!   sys.path.append('/etc/web2ldap')
+  else:
+    # For finding web2ldapcnf.py in system dirs on Windows systems
+    for i in ['SystemRoot','windir']:
+--- 10,17 ----
+  import sys,os
+  
+  if os.name == 'posix':
+!   # For finding web2ldapcnf.py in /usr/local/web2ldap/etc/web2ldap on FreeBSD systems
+!   sys.path.append('/usr/local/web2ldap/etc/web2ldap')
+  else:
+    # For finding web2ldapcnf.py in system dirs on Windows systems
+    for i in ['SystemRoot','windir']:
