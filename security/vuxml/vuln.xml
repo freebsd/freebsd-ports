@@ -32,6 +32,39 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="ba13dc13-340d-11d9-ac1b-000d614f7fad">
+  <topic>samba -- potential remote DoS vulnerability</topic>
+    <affects>
+      <package>
+        <name>samba</name>
+	<range><ge>3</ge><lt>3.0.8,1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+      <p>Karol Wiesek at iDEFENSE reports:</p>
+        <blockquote cite="http://us4.samba.org/samba/security/CAN-2004-0930.html">
+          <p>A remote attacker could cause an smbd process to consume
+            abnormal amounts of system resources due to an input
+            validation error when matching filenames containing
+            wildcard characters.</p>
+	</blockquote>
+        <p>Although samba.org classifies this as a DoS vulnerability,
+          several members of the security community believe it may be
+          exploitable for arbitrary code execution.</p>
+      </body>
+    </description>
+    <references>
+      <freebsdpr>ports/73701</freebsdpr>
+      <cvename>CAN-2004-0930</cvename>
+      <url>http://us4.samba.org/samba/security/CAN-2004-0930.html</url>
+    </references>
+    <dates>
+      <discovery>2004-09-30</discovery>
+      <entry>2004-11-12</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="fc99c736-3499-11d9-98a7-0090962cff2a">
     <topic>gnats4 -- format string vulnerability</topic>
     <affects>
