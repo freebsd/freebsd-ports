@@ -8,7 +8,8 @@
 
 DISTNAME=       ImageMagick-5.1.1
 CATEGORIES=	graphics perl5
-MASTER_SITES=	ftp://ftp.wizards.dupont.com/pub/ImageMagick/ \
+MASTER_SITES=	http://people.FreeBSD.org/~asami/distfiles/ \
+		ftp://ftp.wizards.dupont.com/pub/ImageMagick/ \
 		ftp://ftp.u-aizu.ac.jp/pub/graphics/image/ImageMagick/ \
 		ftp://ftp.fifi.org/pub/ImageMagick/ \
 		ftp://gd.tuwien.ac.at/pub/graphics/ImageMagick/ \
