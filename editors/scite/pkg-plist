@@ -1,24 +1,23 @@
 bin/SciTE
-%%PORTDOCS%%%%DOCSDIR%%/PrintHi.png
-%%PORTDOCS%%%%DOCSDIR%%/SciBreak2.jpg
-%%PORTDOCS%%%%DOCSDIR%%/SciTE.html
-%%PORTDOCS%%%%DOCSDIR%%/SciTEDirector.html
-%%PORTDOCS%%%%DOCSDIR%%/SciTEDoc.html
-%%PORTDOCS%%%%DOCSDIR%%/SciTEDownload.html
-%%PORTDOCS%%%%DOCSDIR%%/SciTEExtension.html
-%%PORTDOCS%%%%DOCSDIR%%/SciTEExtras.html
-%%PORTDOCS%%%%DOCSDIR%%/SciTEIco.png
-%%PORTDOCS%%%%DOCSDIR%%/SciTEImage.html
-%%PORTDOCS%%%%DOCSDIR%%/SciTELexer.html
-%%PORTDOCS%%%%DOCSDIR%%/SciTERegEx.html
-%%PORTDOCS%%%%DOCSDIR%%/SciTETranslation.html
-%%PORTDOCS%%%%DOCSDIR%%/SciTEWord.jpg
-%%PORTDOCS%%%%DOCSDIR%%/demo.png
 share/gnome/applications/SciTE.desktop
 share/gnome/pixmaps/Sci48M.png
 %%DATADIR%%/Embedded.properties
+%%DATADIR%%/PrintHi.png
+%%DATADIR%%/SciBreak2.jpg
+%%DATADIR%%/SciTE.html
 %%DATADIR%%/SciTE.properties
+%%DATADIR%%/SciTEDirector.html
+%%DATADIR%%/SciTEDoc.html
+%%DATADIR%%/SciTEDownload.html
+%%DATADIR%%/SciTEExtension.html
+%%DATADIR%%/SciTEExtras.html
 %%DATADIR%%/SciTEGlobal.properties
+%%DATADIR%%/SciTEIco.png
+%%DATADIR%%/SciTEImage.html
+%%DATADIR%%/SciTELexer.html
+%%DATADIR%%/SciTERegEx.html
+%%DATADIR%%/SciTETranslation.html
+%%DATADIR%%/SciTEWord.jpg
 %%DATADIR%%/abbrev.properties
 %%DATADIR%%/ada.properties
 %%DATADIR%%/asm.properties
@@ -28,7 +27,9 @@ share/gnome/pixmaps/Sci48M.png
 %%DATADIR%%/conf.properties
 %%DATADIR%%/cpp.properties
 %%DATADIR%%/css.properties
+%%DATADIR%%/demo.png
 %%DATADIR%%/eiffel.properties
+%%DATADIR%%/erlang.properties
 %%DATADIR%%/escript.properties
 %%DATADIR%%/forth.properties
 %%DATADIR%%/fortran.properties
@@ -57,4 +58,3 @@ share/gnome/pixmaps/Sci48M.png
 %%DATADIR%%/vb.properties
 %%DATADIR%%/yaml.properties
 @dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
