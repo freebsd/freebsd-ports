@@ -1,22 +1,21 @@
 # New ports collection makefile for:	mc
-# Version required:	3.2.1
+# Version required:	4.0
 # Date created:		15 Jul 1995
 # Whom:			torstenb@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.9 1996/11/18 10:25:14 asami Exp $
+# $Id: Makefile,v 1.10 1997/05/25 21:24:32 torstenb Exp $
 #
 
-DISTNAME=	mc-3.2.1
+DISTNAME=	mc-4.0
 CATEGORIES=	misc
-MASTER_SITES=	${MASTER_SITE_GNU}
+MASTER_SITES=	${MASTER_SITE_SUNSITE}
+MASTER_SITE_SUBDIR=	utils/file/managers/mc
+
+MAINTAINER=	ports@FreeBSD.org
 
 GNU_CONFIGURE=	YES
-CONFIGURE_ARGS=	--with-ncurses
-STRIP=
-MAN1=		mc.1
+CONFIGURE_ARGS=	--with-ncurses --without-edit --without-subshell
+MAN1=		mc.1 mcedit.1
 MAN8=		mcserv.8
-
-post-install:
-	@/usr/bin/strip ${PREFIX}/bin/mc ${PREFIX}/sbin/mcserv
 
 .include <bsd.port.mk>

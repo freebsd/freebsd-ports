@@ -1,6 +1,6 @@
-*** Make.common.in.orig	Wed Sep 27 20:09:34 1995
---- Make.common.in	Wed Sep 27 20:10:42 1995
-***************
+*** Make.common.in.orig	Thu Jun 19 23:14:51 1997
+--- Make.common.in	Thu Jun 19 23:16:28 1997
+*************** exec_prefix = $(prefix)
 *** 14,19 ****
 --- 14,20 ----
   binprefix =
@@ -10,8 +10,8 @@
   libdir = $(exec_prefix)/lib/mc
   suppbindir = $(libdir)/bin
   tidir = $(libdir)/term
-***************
-*** 42,48 ****
+*************** AWK = @AWK@
+*** 45,51 ****
   # No way, to make make happy (except GNU), we cannot use := to append
   # something to these, so that's why there is a leading _
   XCFLAGS = @CFLAGS@
@@ -19,7 +19,7 @@
   XLDFLAGS = @LDFLAGS@
   XDEFS = @DEFS@
   XLIBS = @LIBS@
---- 43,49 ----
+--- 46,52 ----
   # No way, to make make happy (except GNU), we cannot use := to append
   # something to these, so that's why there is a leading _
   XCFLAGS = @CFLAGS@
