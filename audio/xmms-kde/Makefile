@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	xmms-kde
-PORTVERSION=	3.0.0
+PORTVERSION=	3.1
 CATEGORIES=	audio kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	xmmskde-${PORTVERSION}
 
 MAINTAINER=	jan@jungnickel.com
 COMMENT=	Integrates XMMS into the KDE3 Panel
@@ -28,7 +27,7 @@ CONFIGURE_ARGS+=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL} \
 USE_GNOME=	gtk12
 
 post-install:
-	${LN} -sf ${LOCALBASE}/share/doc/HTML/en/common \
-		${PREFIX}/share/doc/HTML/en/xmmskde/common
+	${LN} -sf ${PREFIX}/share/doc/HTML/en/xmms-kde/common \
+		${LOCALBASE}/share/doc/HTML/en/common
 
 .include <bsd.port.mk>
