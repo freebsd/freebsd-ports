@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	liblrdf
-PORTVERSION=	0.3.0
-PORTREVISION=	1
+PORTVERSION=	0.3.1
 CATEGORIES=	textproc
 MASTER_SITES=	http://plugin.org.uk/releases/lrdf/
 

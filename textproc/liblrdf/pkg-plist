@@ -3,6 +3,7 @@ include/lrdf_types.h
 lib/liblrdf.a
 lib/liblrdf.so
 lib/liblrdf.so.1
+lib/liblrdf.la
 share/ladspa/rdf/ladspa.rdfs
 libdata/pkgconfig/lrdf.pc
 @dirrm share/ladspa/rdf
