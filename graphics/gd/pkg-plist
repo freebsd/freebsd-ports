@@ -1,13 +1,19 @@
-bin/gddemo
-bin/giftogd
-bin/webgif
+bin/pngtogd
+bin/pngtogd2
+bin/gdtopng
+bin/gd2topng
+bin/gd2copypal
+bin/gdparttopng
+bin/webpng
 include/gd/gd.h
+include/gd/gd_io.h
 include/gd/gdfontg.h
 include/gd/gdfontl.h
 include/gd/gdfontmb.h
 include/gd/gdfonts.h
 include/gd/gdfontt.h
 lib/libgd.a
+lib/libgd.la
 share/examples/gd/demoin.gif
 share/examples/gd/index.html
 @dirrm include/gd
