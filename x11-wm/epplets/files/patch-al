@@ -1,5 +1,5 @@
---- epplets/Makefile.in.orig	Mon Jul 17 23:26:55 2000
-+++ epplets/Makefile.in	Mon Jul 17 23:32:29 2000
+--- epplets/Makefile.in.orig	Tue Jan  4 23:55:53 2000
++++ epplets/Makefile.in	Fri Aug 10 13:38:45 2001
 @@ -75,7 +75,7 @@
  LD = @LD@
  LDFLAGS = @LDFLAGS@
@@ -80,7 +80,43 @@
  
  # You can use the following command to generate this line:
  # ABOUT_DOCS = `(cd epplets && ls -1d *.ABOUT/* 2>/dev/null | grep -v CVS)`
-@@ -397,115 +397,115 @@
+@@ -275,7 +275,7 @@
+ E_Time_epplet_OBJECTS =  E-Time.o
+ E_Time_epplet_LDADD = $(LDADD)
+ E_Net_epplet_OBJECTS =  E-Net.o net.o
+-E_Net_epplet_LDADD = $(LDADD)
++E_Net_epplet_LDADD = $(LDADD) -lkvm
+ E_Cpu_epplet_OBJECTS =  E-Cpu.o
+ E_Biff_epplet_OBJECTS =  E-Biff.o mbox.o
+ E_Biff_epplet_LDADD = $(LDADD)
+@@ -289,7 +289,7 @@
+ E_Magic_epplet_OBJECTS =  E-Magic.o
+ E_Magic_epplet_LDADD = $(LDADD)
+ E_NetFlame_epplet_OBJECTS =  E-NetFlame.o net.o
+-E_NetFlame_epplet_LDADD = $(LDADD)
++E_NetFlame_epplet_LDADD = $(LDADD) -lkvm
+ E_Sys_epplet_OBJECTS =  E-Sys.o
+ E_ScreenShoot_epplet_OBJECTS =  E-ScreenShoot.o cloak.o utils.o
+ E_ScreenShoot_epplet_LDADD = $(LDADD)
+@@ -306,7 +306,7 @@
+ E_ScreenSave_epplet_OBJECTS =  E-ScreenSave.o cloak.o utils.o
+ E_ScreenSave_epplet_LDADD = $(LDADD)
+ E_NetGraph_epplet_OBJECTS =  E-NetGraph.o net.o
+-E_NetGraph_epplet_LDADD = $(LDADD)
++E_NetGraph_epplet_LDADD = $(LDADD) -lkvm
+ E_MoonClock_epplet_OBJECTS =  E-MoonClock.o CalcEphem.o Moon.o
+ E_MoonClock_epplet_LDADD = $(LDADD)
+ E_UrlWatch_epplet_OBJECTS =  E-UrlWatch.o utils.o
+@@ -352,6 +352,8 @@
+ 	    $(LIBTOOL)  --mode=install $(INSTALL_PROGRAM) $$p $(DESTDIR)$(bindir)/`echo $$p|sed 's/$(EXEEXT)$$//'|sed '$(transform)'|sed 's/$$/$(EXEEXT)/'`; \
+ 	  else :; fi; \
+ 	done
++	chgrp kmem $(bindir)/E-Net.epplet $(bindir)/E-NetFlame.epplet $(bindir)/E-NetGraph.epplet
++	chmod 2755 $(bindir)/E-Net.epplet $(bindir)/E-NetFlame.epplet $(bindir)/E-NetGraph.epplet
+ 
+ uninstall-binPROGRAMS:
+ 	@$(NORMAL_UNINSTALL)
+@@ -397,115 +399,121 @@
  
  maintainer-clean-libtool:
  
@@ -128,6 +164,8 @@
 +E-Net.epplet: $(E_Net_epplet_OBJECTS)
  	@rm -f E-Net.epplet
  	$(LINK) $(E_Net_epplet_LDFLAGS) $(E_Net_epplet_OBJECTS) $(E_Net_epplet_LDADD) $(LIBS)
++	@chgrp kmem E-Net.epplet
++	@chmod 2755 E-Net.epplet
  
 -E-Cpu.epplet: $(E_Cpu_epplet_OBJECTS) $(E_Cpu_epplet_DEPENDENCIES)
 +E-Cpu.epplet: $(E_Cpu_epplet_OBJECTS)
@@ -168,6 +206,8 @@
 +E-NetFlame.epplet: $(E_NetFlame_epplet_OBJECTS)
  	@rm -f E-NetFlame.epplet
  	$(LINK) $(E_NetFlame_epplet_LDFLAGS) $(E_NetFlame_epplet_OBJECTS) $(E_NetFlame_epplet_LDADD) $(LIBS)
++	@chgrp kmem E-NetFlame.epplet
++	@chmod 2755 E-NetFlame.epplet
  
 -E-Sys.epplet: $(E_Sys_epplet_OBJECTS) $(E_Sys_epplet_DEPENDENCIES)
 +E-Sys.epplet: $(E_Sys_epplet_OBJECTS)
@@ -213,6 +253,8 @@
 +E-NetGraph.epplet: $(E_NetGraph_epplet_OBJECTS)
  	@rm -f E-NetGraph.epplet
  	$(LINK) $(E_NetGraph_epplet_LDFLAGS) $(E_NetGraph_epplet_OBJECTS) $(E_NetGraph_epplet_LDADD) $(LIBS)
++	@chgrp kmem E-NetGraph.epplet
++	@chmod 2755 E-NetGraph.epplet
  
 -E-MoonClock.epplet: $(E_MoonClock_epplet_OBJECTS) $(E_MoonClock_epplet_DEPENDENCIES)
 +E-MoonClock.epplet: $(E_MoonClock_epplet_OBJECTS)
