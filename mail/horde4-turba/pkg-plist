@@ -53,6 +53,7 @@
 %%TURBADIR%%/lib/Source.php
 %%TURBADIR%%/lib/Turba.php
 %%TURBADIR%%/lib/api.php
+%%TURBADIR%%/lib/api.php.orig
 %%TURBADIR%%/lib/base.php
 %%TURBADIR%%/lib/version.php
 %%TURBADIR%%/locale/.htaccess
