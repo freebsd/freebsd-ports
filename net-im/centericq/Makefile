@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	centericq
-PORTVERSION=	4.9.4
+PORTVERSION=	4.9.5
 PORTREVISION=	0
 CATEGORIES=	net
 MASTER_SITES=	http://konst.org.ua/download/
@@ -24,7 +24,7 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -lstdc++"
-CONFIGURE_ARGS=	--with-openssl
+CONFIGURE_ARGS=	--with-openssl --disable-konst
 #CONFIGURE_ARGS=	--with-fribidi
 
 MAN1=	centericq.1 cicqconv.1 cicqsync.1
