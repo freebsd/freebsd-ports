@@ -4553,6 +4553,7 @@ liboop		ports/devel/liboop
 libopendaap	ports/devel/libopendaap
 libosip		ports/net/libosip
 libosip2	ports/net/libosip2
+libotf		ports/print/libotf
 libowfat	ports/devel/libowfat
 libpanelappletmm	ports/x11-toolkits/libpanelappletmm
 libpaper	ports/print/libpaper
