@@ -1,0 +1,6 @@
+share/doc/xdeview/HOWTO
+share/doc/xdeview/porting.notes
+bin/uuwish
+bin/xdeview
+man/man1/xdeview.1.gz
+@dirrm share/doc/xdeview
