@@ -7,7 +7,7 @@
 #
 
 PORTNAME?=	vim
-PATCHLEVEL=	14
+PATCHLEVEL=	32
 PORTVERSION=	6.1.${PATCHLEVEL}
 PORTREVISION?=	0
 CATEGORIES?=	editors
@@ -16,15 +16,14 @@ MASTER_SITES=	ftp://nuxi.ucdavis.edu/pub/vim/unix/ \
 		ftp://ftp.vim.org/pub/vim/unix/  \
 		ftp://ftp.is.co.za/applications/editors/vim/unix/  \
 		ftp://ftp.prz.tu-berlin.de/pub/unix/editors/vim/unix/  \
-		ftp://ftp.mirror.ac.uk/sites/ftp.vim.org/pub/vim/unix/ \
-		ftp://ftp.progsoc.uts.edu.au/pub/vim/unix/
+		ftp://ftp.mirror.ac.uk/sites/ftp.vim.org/pub/vim/unix/
 DISTNAME=	vim-${PORTVERSION:C/\.[0-9]*$//}
 
 PATCH_SITES=	${MASTER_SITES:S/unix/patches/}
 PATCHFILES!=    jot -s " " -w ${PORTVERSION:C/\.[0-9]*$//}.%03d  \
 			${PATCHLEVEL} 1 ${PATCHLEVEL}
 #	bits to remove
-BADPATCHES= 002
+BADPATCHES= 002 016 019 023
 .for p in ${BADPATCHES}
 PATCHFILES:=	${PATCHFILES:N6.1.${p}}
 .endfor
