@@ -1,15 +1,18 @@
-*** Imakefile.orig	Fri Nov 17 14:37:36 1989
---- Imakefile	Mon Jan  2 23:28:47 1995
-***************
-*** 1,5 ****
-  
-!      SCORE_FILE = -DSCORE_FILE=\"./xrobotscores\"
-        MAXSCORES = -DMAXSCORES=20
-             MAXX = -DMAXX=35
-             MAXY = -DMAXY=20
---- 1,5 ----
-  
-!      SCORE_FILE = -DSCORE_FILE=\"/usr/X11R6/lib/X11/xrobotscores\"
-        MAXSCORES = -DMAXSCORES=20
-             MAXX = -DMAXX=35
-             MAXY = -DMAXY=20
+--- Imakefile.orig	Fri Jan 23 01:14:38 1998
++++ Imakefile	Sat Dec  8 13:20:22 2001
+@@ -1,5 +1,5 @@
+ 
+-     SCORE_FILE = -DSCORE_FILE=\"./xrobotscores\"
++     SCORE_FILE = -DSCORE_FILE=\"__PREFIX__/lib/X11/xrobotscores\"
+       MAXSCORES = -DMAXSCORES=20
+            MAXX = -DMAXX=35
+            MAXY = -DMAXY=20
+@@ -14,6 +14,8 @@
+   SYS_LIBRARIES = -lm
+ 
+ all:: xrobots
++MANSUFFIX=6
++INSTPGMFLAGS = -s -g games -m 2755
+ 
+ ComplexProgramTarget(xrobots)
+ /*

@@ -1,0 +1,29 @@
+--- xrobots.man.orig	Sat Nov 18 09:37:40 1989
++++ xrobots.man	Sat Dec  8 22:47:26 2001
+@@ -3,7 +3,7 @@
+ .SH NAME
+ xrobots \- fight off villainous robots (X Windows)
+ .SH SYNOPSIS
+-.B /usr/games/xrobots 
++.B __PREFIX__/bin/xrobots 
+ .SH DESCRIPTION
+ .LP
+ As in robots(6), xrobots puts you into a world of evil robots (but in
+@@ -110,7 +110,7 @@
+ xrobots.scorefile
+ .RS
+ Set this to the path of your personal score file.  The file will be
+-created if it does not exist.  The default: /usr/games/lib/xrobots_scores
++created if it does not exist.  The default: __PREFIX__/lib/X11/xrobots_scores
+ .RE
+ .LP
+ xrobots.showmovement
+@@ -214,7 +214,7 @@
+ .LP
+ .SH FILES
+ .LP
+-/usr/games/lib/xrobots_scores \-\- the score file
++__PREFIX__/lib/X11/xrobots_scores \-\- the score file
+ .LP
+ .SH AUTHOR
+ .LP
