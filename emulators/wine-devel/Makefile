@@ -36,20 +36,16 @@ USE_REINPLACE=	yes
 BROKEN=		"Not supported on systems prior to FreeBSD 4.x"
 .endif
 
-.if !defined(NDEBUG)
+.if defined(DEBUG)
 STRIP=
-CFLAGS+=	-g
 .else
+CFLAGS=	-O2
+
 pre-extract:
-	@${ECHO} "NDEBUG has been set, building without debug info..."
-	@${ECHO} "This will save diskspace but it makes debugging harder."
-	@${ECHO} "If for example wine crashes and you would like to send"
-	@${ECHO} "the backtrace it then dumps to the developers (or"
-	@${ECHO} "comp.emulators.ms-windows.wine) it will be much more useful"
-	@${ECHO} "to them if you first rebuild without this and generate it again."
-	@${ECHO} "(If you're _not_ low on diskspace there is not really a reason to"
-	@${ECHO} "use this flag, the resulting wine won't use more VM or anything like"
-	@${ECHO} "that when running, only when it has to enter the debugger...)"
+	@${ECHO} "DEBUG has not been set, building without debug info."
+	@${ECHO} "This makes the disk footprint and packages much smaller,"
+	@${ECHO} "but debugging harder. If Wine crashes and you need to"
+	@${ECHO} "generate a backtrace, please rebuild with DEBUG defined."
 .endif
 
 post-extract:
