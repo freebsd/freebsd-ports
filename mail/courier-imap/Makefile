@@ -98,7 +98,7 @@ CONFIGURE_ARGS+=	\
 		--without-authpam
 .endif
 
-if !defined(WITH_CRAM)
+.if !defined(WITH_CRAM)
 CONFIGURE_ARGS+=	\
 		--without-authcram
 .else
