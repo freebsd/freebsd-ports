@@ -1,6 +1,6 @@
---- configure.orig	Sat Nov 11 10:43:52 2000
-+++ configure	Sun Nov 12 11:14:09 2000
-@@ -3174,7 +3174,7 @@
+--- configure.orig	Tue Feb 13 00:09:23 2001
++++ configure	Mon Feb 26 01:54:03 2001
+@@ -3239,7 +3239,7 @@
  fi
  if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
    echo "$ac_t""yes" 1>&6
@@ -9,7 +9,7 @@
  else
    echo "$ac_t""no" 1>&6
  fi
-@@ -5336,7 +5336,7 @@
+@@ -5401,7 +5401,7 @@
      PASSWD_LIBS="$PASSWD_LIBS -lkrb4 -ldes425 -lkrb5 -lk5crypto -lcrypt -lcom_err"
    elif test "$have_kerberos" = yes ; then
      # from Tim Showalter <tjs+@andrew.cmu.edu>
