@@ -7,10 +7,14 @@
 
 PORTNAME=	turba
 PORTVERSION=	1.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	mail www
-MASTER_SITES=	ftp://ftp.horde.org/pub/turba/tarballs/%SUBDIR%/
-MASTER_SITE_SUBDIR=	. old
+MASTER_SITES=	ftp://ftp.horde.org/pub/turba/				\
+		ftp://ftp.au.horde.org/pub/horde/turba/			\
+		ftp://ftp.es.horde.org/pub/turba/			\
+		ftp://ftp.it.horde.org/pub/mirror/horde.org/turba/	\
+		ftp://ftp.nl.horde.org/mirror/horde-ftp/pub/turba/	\
+		ftp://ftp.pt.horde.org/pub/horde-ftp/turba/
 
 MAINTAINER=	thierry@pompo.net
 
@@ -60,26 +64,6 @@ CONFDIR=	${TURBADIR}/config
 HORDE_INC=	${LOCALBASE}/etc/horde
 
 pre-install:
-# N.B.: database dependencies are binded with mod_php#, neither by Horde nor Turba.
-.if !defined(WITHOUT_SUPPORTED_DB)
-	@if ! ${LDCONFIG} -r | ${GREP} -q -e "mysqlclient.10" ; then \
-	 if ! ${LDCONFIG} -r | ${GREP} -q -e "pq.3" ; then \
-	  if ! ${LDCONFIG} -r | ${GREP} -q -e "sybdb.1" ; then \
-	   if ! ${LDCONFIG} -r | ${GREP} -q -e "ct.0" ; then \
-	    ${ECHO_MSG} "" ; \
-	    ${ECHO_MSG} "Please configure PHP with a database support." ; \
-	    ${ECHO_MSG} "MySQL, PostgreSQL and Sybase (CTLIB or DBLIB)" ; \
-	    ${ECHO_MSG} "can be used with PHP AND Turba." ; \
-	    ${ECHO_MSG} "" ; \
-	    ${ECHO_MSG} "(If everything will run on this machine, do not" ; \
-	    ${ECHO_MSG} " forget to install the database server-side!)" ; \
-	    ${ECHO_MSG} "" ; \
-	    ${FALSE} ; \
-	   fi ; \
-	  fi ; \
-	 fi ; \
-	fi
-.endif
 .if !defined(WITHOUT_LDAP)
 .if defined(WITH_LDAP1)
 	@if ! ${LDCONFIG} -r | ${GREP} -q -e "ldap.1"; then \

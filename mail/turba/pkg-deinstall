@@ -1,0 +1,27 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# Backup Turba config files, if needed.
+
+if [ x$2 != xDEINSTALL ]; then
+    exit
+fi
+
+if [ -z "${PACKAGE_BUILDING}" ]; then
+  for cf in `ls ${PKG_PREFIX}/www/horde/turba/config/*php`; do
+    diff -bBqw $cf $cf.dist >/dev/null 2>&1
+    case $? in
+      0)  # original config file, will be deleted by pkg-plist
+          ;;
+      1)  # config file has been updated, must be backuped
+          cp -p $cf $cf.previous
+          echo "===> Backing-up..."
+          echo "--->   $cf has been saved ***"
+          echo "--->      as $cf.previous ***"
+          ;;
+      *)  # not found?
+          ;;
+    esac
+  done
+fi
