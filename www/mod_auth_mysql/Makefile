@@ -6,7 +6,7 @@
 
 PORTNAME=	mod_auth_mysql
 PORTVERSION=	2.20
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	mod-auth-mysql
@@ -19,26 +19,9 @@ RUN_DEPENDS=	${LOCALBASE}/sbin/${AP_TARGET}:${PORTSDIR}/${APACHE_PORT}
 
 USE_MYSQL=	yes
 
-.include <bsd.port.pre.mk>
-
-.if exists(${APXS})
-APXS_WORKS!=	${APXS} -q TARGET 2>/dev/null || echo no
-.endif
-.if exists(${APXS}) && ${APXS_WORKS} != no
-AP_TARGET!=	${APXS} -q TARGET
-AP_SYSCONF!=	${APXS} -q SYSCONFDIR
-AP_INCLUDE!=	${APXS} -q INCLUDEDIR
-AP_LIBEXEC!=	${APXS} -q LIBEXECDIR
-.else
-AP_TARGET?=	httpd
-AP_SYSCONF?=	${PREFIX}/etc/apache
-AP_INCLUDE?=	${PREFIX}/include/apache
-AP_LIBEXEC?=	${PREFIX}/libexec/apache
-.endif
-
-AUTH_MYSQL_DOCS=	apache/manual/mod/mod_auth_mysql
-
-PLIST_SUB=	AUTH_MYSQL_DOCS="${AUTH_MYSQL_DOCS}"
+WANT_APACHE=	13
+AP_GENPLIST=	yes
+PORTDOCS=	README USAGE
 
 PKGMESSAGE=	${WRKSRC}/.install_notes
 
@@ -46,12 +29,15 @@ HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-mysql=${PREFIX} \
 		--with-apxs=${APXS}
 
+.include <bsd.port.pre.mk>
+.include "${PORTSDIR}/www/apache2/Makefile.modules.3rd"
+
 post-install:
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/${AUTH_MYSQL_DOCS}
-	@${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/${AUTH_MYSQL_DOCS}
-	@${INSTALL_DATA} ${WRKSRC}/USAGE ${PREFIX}/share/doc/${AUTH_MYSQL_DOCS}
-	@@(cd ${PREFIX}/share/doc && ${LN} -sf ${AUTH_MYSQL_DOCS} mod_auth_mysql)
+	${MKDIR} ${DOCSDIR}
+.for f in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
+.endfor
 .endif
 
 .include <bsd.port.post.mk>
