@@ -1,0 +1,74 @@
+#!/bin/sh
+#
+# Update the format of the failure file from the old-style (alphanumeric
+# date, and only tracks latest failure date).
+#
+# This must be called via:
+#
+#   lockf ${pb}/${arch}/${branch}/failure.lock ${pb}/scripts/updatefailure ${arch} ${branch}
+#
+# to avoid racing with any package builds in progress that might try to append to
+# these files.
+
+# configurable variables
+pb=/var/portbuild
+
+cleanup() {
+    echo "Problem writing new failure file!"
+    rm -f failure.new
+    exit 1
+}
+
+if [ $# -ne 2 ]; then
+    echo "updatefailure <arch> <branch>"
+    exit 1
+fi
+
+arch=$1
+branch=$2
+shift 2
+
+. ${pb}/${arch}/portbuild.conf
+. ${pb}/scripts/buildenv
+
+buildenv ${pb} ${arch} ${branch}
+
+home=${pb}/${arch}/${branch}
+cd $home
+
+echo "===> Updating old failure file"
+
+rm -f failure.new
+tr -s ' ' '_' < failure  > failure2
+mv failure2 failure
+
+IFS='|'
+while read dir name ver date count; do
+
+    entry=$(grep "^$dir|" newfailure)
+    if [ -z "$entry" ]; then
+	echo $dir not in newfailures
+	olddate=0
+    else
+	olddate=$(echo $entry | cut -f 4 -d \ )
+	echo $dir has olddate $olddate
+    fi
+
+    if (echo $olddate | grep '_'); then
+	date2=$(echo $olddate | tr -s '_' ' ')
+	echo $date2
+	olddate=$(date -j -f %+ "$date2" +%s)
+	echo Updating to $olddate
+    fi
+
+    if (echo $date | grep '_'); then
+	date2=$(echo $date | tr -s '_' ' ')
+	echo $date2
+	date=$(date -j -f %+ "$date2" +%s)
+	echo Updating to $date
+    fi
+
+    (echo "$dir|$name|$ver|$olddate|$date|$count" >> $home/failure.new) || cleanup
+done < $home/failure
+
+mv failure.new failure
