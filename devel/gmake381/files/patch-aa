@@ -1,7 +1,7 @@
-*** Makefile.in.orig	Mon Nov  7 00:35:49 1994
---- Makefile.in	Sun Jan 29 01:13:25 1995
+*** Makefile.in.orig	Wed Apr  5 08:41:26 1995
+--- Makefile.in	Sat Apr  8 17:49:22 1995
 ***************
-*** 94,100 ****
+*** 92,98 ****
   # Number to put on the man page filename.
   manext = 1
   # Prefix to put on installed `make' binary file name.
@@ -9,7 +9,7 @@
   # Prefix to put on installed `make' man page file name.
   manprefix = $(binprefix)
   
---- 94,100 ----
+--- 92,98 ----
   # Number to put on the man page filename.
   manext = 1
   # Prefix to put on installed `make' binary file name.
@@ -18,24 +18,18 @@
   manprefix = $(binprefix)
   
 ***************
-*** 206,212 ****
-  	 else true; fi
-  # Some systems can't deal with renaming onto a running binary.
-  	-rm -f $@.old
-! 	-mv $@ $@.old
-  	mv $@.new $@
+*** 186,191 ****
+--- 186,193 ----
   
-  $(infodir)/make.info: make.info
---- 206,212 ----
-  	 else true; fi
-  # Some systems can't deal with renaming onto a running binary.
-  	-rm -f $@.old
-! 	@if [ -w $@ ]; then mv $@ $@.old; fi
-  	mv $@.new $@
+  installdirs:
+  	$(SHELL) ${srcdir}/mkinstalldirs $(bindir) $(infodir) $(mandir)
++ 	rm -f $(bindir)/$(binprefix)make $(infodir)/make.info \
++ 		$(mandir)/$(manprefix)make.$(manext)
   
-  $(infodir)/make.info: make.info
+  $(bindir)/$(binprefix)make: make
+  	$(INSTALL_PROGRAM) make $@.new
 ***************
-*** 264,270 ****
+*** 260,266 ****
   	$(SHELL) config.status
   glob/Makefile: config.status $(srcdir)/glob/Makefile.in
   	$(SHELL) config.status
@@ -43,11 +37,12 @@
   stamp-config: config.status $(srcdir)/config.h.in
   	$(SHELL) config.status
   	touch stamp-config
---- 264,270 ----
+--- 262,269 ----
   	$(SHELL) config.status
   glob/Makefile: config.status $(srcdir)/glob/Makefile.in
   	$(SHELL) config.status
 ! config.h: stamp-config
+! 
   stamp-config: config.status $(srcdir)/config.h.in
   	$(SHELL) config.status
   	touch stamp-config
