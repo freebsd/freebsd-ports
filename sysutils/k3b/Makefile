@@ -7,6 +7,7 @@
 
 PORTNAME=	k3b
 PORTVERSION=	0.11.17
+PORTREVISION=	1
 CATEGORIES=	sysutils multimedia kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -19,7 +20,7 @@ EXTRA_PATCHES=	${.CURDIR}/../../x11/kde3/files/extrapatch-configure
 RUN_DEPENDS=	cdrecord:${PORTSDIR}/sysutils/cdrtools \
 		cdrdao:${PORTSDIR}/sysutils/cdrdao
 LIB_DEPENDS=	mad:${PORTSDIR}/audio/libmad \
-		id3tag:${PORTSDIR}/audio/libid3tag \
+		id3:${PORTSDIR}/audio/id3lib \
 		vorbis:${PORTSDIR}/audio/libvorbis \
 		FLAC:${PORTSDIR}/audio/flac
 
