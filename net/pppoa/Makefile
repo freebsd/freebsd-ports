@@ -6,41 +6,38 @@
 #
 
 PORTNAME=		pppoa
-PORTVERSION=		1.1b
+PORTVERSION=		1.2b2
 PORTEPOCH=		1
 CATEGORIES=		net
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE} \
-			http://www.xsproject.org/speedtouch/files/ \
-			http://www.alcatel.com/consumer/dsl/ \
-    			http://benoit.papillault.free.fr/speedtouch/
+MASTER_SITES=		http://download.ethomson.com/download/ \
+			${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	speedtouch
-DISTFILES=		${SPEEDTOUCH}.tar.gz ${ALCATELDRIVER}
+DISTFILES=		${SPEEDTOUCH}.tar.bz2 ${ALCATELDRIVER}
+EXTRACT_ONLY=		${SPEEDTOUCH}.tar.bz2
 
 MAINTAINER=		brian@FreeBSD.org
 COMMENT=	Run PPP over Alcatel's USB Speedtouch device
 
 HAS_CONFIGURE=		yes
-SPEEDTOUCH=		speedtouch-1.1b
+SPEEDTOUCH=		speedtouch-1.2-beta2
 ALCATELDRIVER=		speedmgmt.tar.gz
-NO_CDROM=		"http://www.alcatel.com/consumer/dsl/disclaimer_lx.htm"
-NO_PACKAGE=		"http://www.alcatel.com/consumer/dsl/disclaimer_lx.htm"
+NO_CDROM=		"http://www.speedtouchdsl.com/disclaimer_lx.htm"
+NO_PACKAGE=		"http://www.speedtouchdsl.com/disclaimer_lx.htm"
 RESTRICTED_FILES=	${ALCATELDRIVER}
 
 WRKSRC=			${WRKDIR}/${SPEEDTOUCH}
 
 MAN1=			modem_run.1 pppoa2.1 pppoa3.1
+USE_BZIP2=		yes
+
+post-extract:
+	${TAR} -zxf ${DISTDIR}/${ALCATELDRIVER} -C ${WRKSRC}
 
 post-install:
 	${INSTALL} -m 0755 -o root -g wheel -d ${LOCALBASE}/libdata
-	${INSTALL_DATA} ${WRKSRC}/../mgmt/mgmt.o ${LOCALBASE}/libdata
+	${INSTALL_DATA} ${WRKSRC}/mgmt/mgmt.o ${LOCALBASE}/libdata
 	${INSTALL_DATA} ${FILESDIR}/quick-install \
 	    ${LOCALBASE}/share/doc/speedtouch/.
 	@${CAT} ${LOCALBASE}/share/doc/speedtouch/quick-install
 
-.include <bsd.port.pre.mk>
-
-.if !exists(${DISTDIR}/${ALCATELDRIVER})
-IGNORE=	You must manually fetch the Alcatel driver distribution (${DISTDIR}/${ALCATELDRIVER}) via http://www.speedtouchdsl.com/dvrreg_lx.htm (select binary release 1.3.3), place it in ${DISTDIR} and then run make again
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
