@@ -16,10 +16,16 @@ PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	LaTeX previewer on Emacs
 
+.if defined(WITH_GHOSTSCRIPT_AFPL) && ${WITH_GHOSTSCRIPT_AFPL} == yes
+GSPORT?=	print/ghostscript-afpl
+.else
+GSPORT?=	print/ghostscript-gnu
+.endif
+
 BUILD_DEPENDS=	${LOCALBASE}/${EMACS_SITE_LISPDIR}/auctex/latex.el:${PORTSDIR}/print/auctex \
-		gs:${PORTSDIR}/print/ghostscript-gnu
+		gs:${PORTSDIR}/${GSPORT}
 RUN_DEPENDS=	${LOCALBASE}/${EMACS_SITE_LISPDIR}/auctex/latex.el:${PORTSDIR}/print/auctex \
-		gs:${PORTSDIR}/print/ghostscript-gnu \
+		gs:${PORTSDIR}/${GSPORT} \
 		mktexlsr:${PORTSDIR}/print/teTeX
 
 EMACS_PORT_NAME?=	emacs21
@@ -33,6 +39,14 @@ CONFIGURE_ARGS=	--with-emacs=${EMACS_CMD} \
 CONFIGURE_ARGS+=	--disable-8bit-test
 
 DOCS=	ChangeLog INSTALL PROBLEMS README latex/README-preview RELEASE TODO
+
+pre-fetch:
+.if !defined(WITH_GHOSTSCRIPT_AFPL) || ${WITH_GHOSTSCRIPT_AFPL} != yes
+	@${ECHO} ""
+	@${ECHO} "      Define WITH_GHOSTSCRIPT_AFPL=yes to use"
+	@${ECHO} "      AFPL Postscript interpreter instead of GNU one"
+	@${ECHO} ""
+.endif
 
 post-install:
 	mktexlsr
