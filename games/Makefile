@@ -120,6 +120,7 @@
     SUBDIR += lexter
     SUBDIR += libshhcards
     SUBDIR += lincity
+    SUBDIR += linux-q3ademo
     SUBDIR += linuxdoom
     SUBDIR += ltris
     SUBDIR += madbomber
