@@ -1,15 +1,15 @@
---- bin/Makefile.in.orig	Thu Jan 17 20:26:55 2002
-+++ bin/Makefile.in	Sun Feb  3 18:19:20 2002
-@@ -69,7 +69,7 @@
- 	$(CC) $(COFLAG) $(OBJ1) $(LIBS)
+--- bin/Makefile.in.orig	Wed Nov 13 18:01:51 2002
++++ bin/Makefile.in	Fri Aug 22 16:02:01 2003
+@@ -71,7 +71,7 @@
+ 	$(CC) $(COFLAG) $(LDFLAGS) $(OBJ1) $(LIBS)
  	$(RM) $(ALT)
  	for f in $(ALT); do \
 -	  $(LN) $(PRG1) $${f}; done
 +	  $(LN) -sf $(PRG1) $${f}; done
  
  $(PRG2): $(OBJ2)
- 	$(CC) $(COFLAG) $(CFLAGS) $(OBJ2)
-@@ -95,7 +95,7 @@
+ 	$(CC) $(COFLAG) $(LDFLAGS) $(OBJ2)
+@@ -97,7 +97,7 @@
  	fi
  	$(INSTALL) -m 555 $(PRG1) $(bindir)
  	for f in $(ALT); do \
@@ -18,7 +18,7 @@
  	$(INSTALL) -m 555 $(PRG2) $(bindir)
  	$(INSTALL) -m 555 $(PRG3) $(bindir)
  	-@if [ ! -d $(mandir) ]; then \
-@@ -103,7 +103,7 @@
+@@ -105,7 +105,7 @@
  	fi
  	$(INSTALL) -m 444 $(MAN1) $(mandir)
  	for f in $(MALT); do \

@@ -1,5 +1,5 @@
---- info/mew.texi~	Thu Aug  2 22:31:28 2001
-+++ info/mew.texi	Fri Aug  3 11:01:40 2001
+--- info/mew.texi.orig	Thu Jun 19 14:58:18 2003
++++ info/mew.texi	Fri Aug 22 16:17:16 2003
 @@ -1,6 +1,6 @@
  \input texinfo  @c -*-texinfo-*-
  @c %**start of header
