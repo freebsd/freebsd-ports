@@ -118,7 +118,7 @@
 +STATIC=-Wl,-Bstatic
 +DYNAMIC=-Wl,-Bdynamic
 +
-+LINK=$(CC)
++LINK=$(CXX)
  LINKFLAGS=
 +
 +# linker flags for linking applications
