@@ -24,15 +24,19 @@ COMMENT=	MOP Loader Daemon for netbooting DEC machines
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 #	MANDIR is concetenated to DESTDIR which all forms the man install dir...
 
-USE_PERL5_BUILD=	yes
+.include <bsd.port.pre.mk>
 
 MAKE_ENV=	DESTDIR=${PREFIX} MANDIR=/man/man NOMANCOMPRESS=true
+USE_REINPLACE=	yes
+.if ${OSVERSION} >= 502126
+USE_GCC=       3.3
+.endif
 MAN1=		mopprobe.1 moptrace.1 mopchk.1 mopa.out.1
 MAN8=		mopd.8
 
 do-configure:
-	@${PERL} -pi.orig -e 's:/usr/sbin:/sbin:' ${WRKSRC}/Makefile.inc
-	@${PERL} -pi.orig -e 's/MAN=/MAN8=/' ${WRKSRC}/mopd/Makefile
+	@${REINPLACE_CMD} -e 's:/usr/sbin:/sbin:' ${WRKSRC}/Makefile.inc
+	@${REINPLACE_CMD} -e 's/MAN=/MAN8=/' ${WRKSRC}/mopd/Makefile
 
 post-install:
 .if !defined(NOPORTDOCS)
@@ -41,4 +45,4 @@ post-install:
 		${DISTDIR}/VS3100-console-cmds.txt  ${PREFIX}/share/doc/mopd
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
