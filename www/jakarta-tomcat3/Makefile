@@ -7,6 +7,7 @@
 
 PORTNAME=	jakarta-tomcat
 PORTVERSION=	3.3.1
+PORTREVISION=	1
 CATEGORIES=	www java
 MASTER_SITES=	http://jakarta.apache.org/builds/jakarta-tomcat/release/v${PORTVERSION}/bin/ \
 		http://www.metaverse.nl/~ernst/ \
@@ -37,13 +38,10 @@ STDOUT_LOG=	${LOG_DIR}/stdout.log
 STDERR_LOG=	${LOG_DIR}/stderr.log
 AUTO_START?=	NO
 PID_FILE=	/var/run/${APP_SHORTNAME}.pid
-MANIFEST=	MANIFEST.MF
 REPLACE_FILES=	${FILESDIR}/daemonctl.c \
 		${FILESDIR}/${CONTROL_SCRIPT_NAME}.1 \
 		${FILESDIR}/${STARTUP_SCRIPT_NAME} \
-		${WRKSRC}/conf/server.xml \
-		${FILESDIR}/${MANIFEST}
-#		${WRKSRC}/conf/workers.properties
+		${WRKSRC}/conf/server.xml
 JAR_FILE=	lib/${APP_SHORTNAME}.jar
 JAVA_ARGS=	'"-Dtomcat.install=${APP_HOME}"'
 JAR_ARGS=	'"run"'
