@@ -1,2 +1,4 @@
 MD5 (osh-040812.tar.gz) = e76f380ba90ce99214fd133670d914ad
-SIZE(osh-040812.tar.gz) = 44663
+SIZE (osh-040812.tar.gz) = 44663
+MD5 (osh-040812-osh_c.patch) = 17ab2cfed78ac63ece1c539a8f9e93c2
+SIZE (osh-040812-osh_c.patch) = 7341
