@@ -6370,6 +6370,7 @@ pygist		ports/math/pygist
 pygmy		ports/mail/pygmy
 pygopherd	ports/net/pygopherd
 pymol		ports/biology/pymol
+pymsgauth	ports/mail/pymsgauth
 pyne		ports/news/pyne
 pypanda		ports/misc/pypanda
 pyrex		ports/devel/pyrex
