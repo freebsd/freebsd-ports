@@ -18,5 +18,4 @@ lib/X11/xzx/pl3-1.rom
 lib/X11/xzx/pl3-2.rom
 lib/X11/xzx/pl3-3.rom
 lib/X11/xzx/spectrum.rom
-man/man1/xzx.1.gz
 @dirrm lib/X11/xzx
