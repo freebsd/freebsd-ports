@@ -1,1 +1,4 @@
 bin/rlwrap
+etc/rlwrap/ftp
+etc/rlwrap/testclient
+@dirrm etc/rlwrap
