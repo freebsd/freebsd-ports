@@ -1,8 +1,5 @@
-
-$FreeBSD$
-
---- configure.orig	Fri Jun  7 18:58:41 2002
-+++ configure	Sat Jul 20 15:01:54 2002
+--- configure.orig	Fri Jun  7 11:58:41 2002
++++ configure	Tue Nov 12 17:40:49 2002
 @@ -6554,6 +6554,7 @@
  
  # This can be used to rebuild libtool when needed
@@ -24,3 +21,19 @@ $FreeBSD$
  	FAVOUR_LIBXML=1
  	SOUP_PKGCONFIG_REQUIRES="glib"
  
+@@ -9083,11 +9084,11 @@
+ fi
+ 
+ if test x$APXS != xno; then
+-	APACHE_CFLAGS="-I`apxs -q INCLUDEDIR CFLAGS`"
+-	APACHE_LIBS=`apxs -q LDFLAGS_SHLIB LIBS_SHLIB`
++#	APACHE_CFLAGS="-I`apxs -q INCLUDEDIR CFLAGS | sed -e 's|;;||g'`"
++#	APACHE_LIBS=`apxs -q LDFLAGS_SHLIB LIBS_SHLIB`
+ 
+-	save_CPPFLAGS=$CPPFLAGS
+-	CPPFLAGS=$APACHE_CFLAGS
++#	save_CPPFLAGS=$CPPFLAGS
++#	CPPFLAGS=$APACHE_CFLAGS
+ 
+ for ac_header in httpd.h http_config.h http_core.h http_log.h http_main.h http_protocol.h
+ do
