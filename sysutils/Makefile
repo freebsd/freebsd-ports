@@ -114,6 +114,7 @@
     SUBDIR += jailutils
     SUBDIR += kcpuload
     SUBDIR += kdeadmin3
+    SUBDIR += kdirstat
     SUBDIR += lavaps
     SUBDIR += lcdproc
     SUBDIR += lfm

@@ -1,0 +1,32 @@
+bin/kdirstat
+share/doc/HTML/en/kdirstat/index.docbook
+share/doc/HTML/en/kdirstat/kdirstat-config-cleanups.png
+share/doc/HTML/en/kdirstat/feedback-mail.png
+share/doc/HTML/en/kdirstat/kdirstat-main.png
+share/doc/HTML/en/kdirstat/kdirstat-config-tree-colors.png
+share/doc/HTML/en/kdirstat/index.cache.bz2
+share/doc/HTML/en/kdirstat/common
+share/apps/kdirstat/icons/hicolor/16x16/actions/symlink.png
+share/apps/kdirstat/icons/hicolor/32x32/actions/symlink.png
+share/apps/kdirstat/icons/hicolor/48x48/actions/symlink.png
+share/apps/kdirstat/icons/locolor/16x16/actions/symlink.png
+share/apps/kdirstat/kdirstatui.rc
+share/applnk/Utilities/kdirstat.desktop
+share/icons/locolor/32x32/apps/kdirstat.png
+share/icons/locolor/16x16/apps/kdirstat.png
+share/icons/hicolor/32x32/apps/kdirstat.png
+share/icons/hicolor/16x16/apps/kdirstat.png
+share/locale/ja/LC_MESSAGES/kdirstat.mo
+@dirrm share/doc/HTML/en/kdirstat
+@dirrm share/apps/kdirstat/icons/hicolor/16x16/actions
+@dirrm share/apps/kdirstat/icons/hicolor/16x16
+@dirrm share/apps/kdirstat/icons/hicolor/32x32/actions
+@dirrm share/apps/kdirstat/icons/hicolor/32x32
+@dirrm share/apps/kdirstat/icons/hicolor/48x48/actions
+@dirrm share/apps/kdirstat/icons/hicolor/48x48
+@dirrm share/apps/kdirstat/icons/hicolor
+@dirrm share/apps/kdirstat/icons/locolor/16x16/actions
+@dirrm share/apps/kdirstat/icons/locolor/16x16
+@dirrm share/apps/kdirstat/icons/locolor
+@dirrm share/apps/kdirstat/icons
+@dirrm share/apps/kdirstat
