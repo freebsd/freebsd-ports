@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	star
-PORTVERSION=	1.4
+PORTVERSION=	1.4.1
 CATEGORIES=	archivers
 MASTER_SITES=	ftp://ftp.fokus.gmd.de/pub/unix/star/
 
