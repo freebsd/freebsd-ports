@@ -1,0 +1,16 @@
+`mkid' is a simple, fast, high-capacity, language-independent
+identifier database tool.  Actually, the term `identifier' is too
+limiting--`mkid' stores tokens, be they program identifiers of any
+form, literal numbers, or words of human-readable text.  Database
+queries can be issued from the command-line, or from within emacs,
+serving as an augmented tags facility.
+
+`mkid' was originally written by Greg McGary <gkm@gnu.ai.mit.edu>
+and posted to comp.sources.unix in September 1987.  It was then
+maintained and enhanced by a loose knit group of programmers on the
+Internet led by Tom Horsley <Tom.Horsley@mail.hcsc.com>.  Tom released
+`mkid2' on comp.sources.unix in March, 1991.  Since then, Greg McGary
+has resumed maintenance and is releasing an improved version 3 under GPL.
+
+Version 3 is an interim release.  Version 4 will follow in the coming
+months and include a cscope clone plus other improvements.
