@@ -921,7 +921,8 @@ cricket		ports/net/cricket
 crimson		ports/textproc/crimson
 cron		src/usr.sbin/cron
 cronolog	ports/sysutils/cronolog
-crossfire	ports/games/crossfire
+crossfire-client	ports/games/crossfire-client
+crossfire-server	ports/games/crossfire-server
 crossgo32	ports/devel/crossgo32
 crossgo32-djgpp2	ports/devel/crossgo32-djgpp2
 crossgo32-djgpp2-pdcurses	ports/devel/crossgo32-djgpp2-pdcurses
@@ -1976,7 +1977,7 @@ gpc		ports/lang/gpc
 gperf		src/gnu/usr.bin/gperf
 gperiodic	ports/biology/gperiodic
 gpgme		ports/security/gpgme
-gphoto		ports/graphics/gphoto
+gphoto2		ports/graphics/gphoto2
 gplbp		ports/misc/gplbp
 gplot		ports/graphics/gplot
 gpp		ports/textproc/gpp
@@ -3210,7 +3211,6 @@ lbrate		ports/archivers/lbrate
 lbreakout	ports/games/lbreakout
 lc		ports/misc/lc
 lcc		ports/lang/lcc
-lclint		ports/devel/lclint
 lcms		ports/graphics/lcms
 ld		src/gnu/usr.bin/ld
 ldapmodule	ports/net/ldapmodule
@@ -6399,6 +6399,7 @@ spkrtest	src/usr.sbin/spkrtest
 spl		ports/lang/spl
 splay		ports/audio/splay
 splaytk		ports/audio/splaytk
+splint		ports/devel/splint
 split		src/usr.bin/split
 splitmpg	ports/graphics/splitmpg
 splitvt		ports/misc/splitvt
