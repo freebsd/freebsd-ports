@@ -19,9 +19,9 @@ indexfilename=$indexdir/INDEX
 portname=$(basename $filename .log)
 affected=$(($(grep -cF $portname < $indexfilename) -1))
 logsize=$(/bin/ls -sk $errordir/$filename | awk '{print $1}')
-dir=$(sed -n -e '3p' $errordir/$filename | grep '^with arguments' | awk '{print $4}' | \
+dir=$(sed -n -e '4p' $errordir/$filename | grep '^port directory:' | awk '{print $3}' | \
 		sed -e 's,^/[^/]*/[^/]*/,,')
-maintainer=$(sed -n -e '4p' $errordir/$filename | grep '^maintained by' | awk '{print $3}')
+maintainer=$(sed -n -e '3p' $errordir/$filename | grep '^maintained by' | awk '{print $3}')
 datetime=$(sed -n -e '5p' $errordir/$filename | grep '^build started at' | \
 		sed -e 's/build started at ...//' | tr ' ' '_' )
 
@@ -337,4 +337,4 @@ if grep -q "Trying build of .* even though it is marked BROKEN" $1; then
    broken="broken"
 fi
 
-echo "$filename|$portname|$affected|$logsize|$dir|$maintainer|$reason|$tag|$broken|$datetime"
+echo "$filename|$portname|$affected|$logsize|$dir|$maintainer|$reason|$tag|$broken|$datetime|$errordir"
