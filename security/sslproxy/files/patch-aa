@@ -1,0 +1,14 @@
+--- Makefile.orig	Sun Jun 14 15:52:50 1998
++++ Makefile	Sat Jun  5 16:24:40 1999
+@@ -12,9 +12,9 @@
+ # if you use cc, remove the -Wall and -g options
+ CC= gcc
+ 
+-SSLROOT= /usr/local/ssl
++SSLROOT= /usr/local
+ 
+-CFLAGS= -Wall -I$(SSLROOT)/include -O
++CFLAGS= -Wall -I$(SSLROOT)/include/openssl -O
+ # for Solaris 2.x add -DSOLARIS2, for SunOS add -DSUNOS and for HP-UX add
+ # -DHP to the CFLAGS variable
+ 
