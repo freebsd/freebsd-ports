@@ -37,7 +37,6 @@
     SUBDIR += confregdecode
     SUBDIR += cricket
     SUBDIR += darkstat
-    SUBDIR += dhcpconf
     SUBDIR += disco
     SUBDIR += docsis
     SUBDIR += driftnet
