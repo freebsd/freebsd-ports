@@ -8843,6 +8843,7 @@ tmpwatch	ports/sysutils/tmpwatch
 tn5250		ports/net/tn5250
 tnef		ports/converters/tnef
 tnef2txt	ports/textproc/tnef2txt
+tnftpd		ports/ftp/tnftpd
 tnt		ports/devel/tnt
 tochnog		ports/cad/tochnog
 togl		ports/graphics/togl
