@@ -1,15 +1,15 @@
 # New ports collection makefile for:    CSSC
-# Version required:     0.10beta.pl1
 # Date created:         31 Mar 1999
 # Whom:                 Oliver Fromme
 #
 # $FreeBSD$
 #
 
-DISTNAME=	CSSC-0.10beta.pl1
-PKGNAME=	cssc-0.10b.1
+PORTNAME=	cssc
+PORTVERSION=	0.10b.1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://alpha.gnu.org/gnu/CSSC/
+DISTNAME=	CSSC-0.10beta.pl1
 
 MAINTAINER=	olli@fromme.com
 

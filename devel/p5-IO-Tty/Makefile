@@ -1,16 +1,16 @@
 # New ports collection makefile for:	p5-IO-Tty
-# Version required:	0.02
 # Date created:		14 Jan 2000
 # Whom:			Will Andrews <andrews@technologist.com>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	IO-Tty-0.02
-PKGNAME=	p5-IO-Tty-0.02
+PORTNAME=	IO-Tty
+PORTVERSION=	0.02
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	IO
+PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	will@FreeBSD.org
 

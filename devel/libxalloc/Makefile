@@ -1,15 +1,15 @@
 # New ports collection makefile for:	libxalloc
-# Version required:			1.0.3
 # Date created:				12 April 1998
 # Whom:					Andrey Zakhvatov
 #
 # $FreeBSD$
 #
 
-DISTNAME=	xalloc-1.0.3
-PKGNAME=	libxalloc-1.0.3
+PORTNAME=	libxalloc
+PORTVERSION=	1.0.3
 CATEGORIES=	devel
 MASTER_SITES=	http://home.sol.no/~sverrehu/pub-unix/files/
+DISTNAME=	xalloc-${PORTVERSION}
 
 MAINTAINER=	obrien@FreeBSD.org
 

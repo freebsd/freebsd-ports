@@ -1,15 +1,15 @@
 # New ports collection makefile for: Sun fortran preprocessor fpp	
-# Version required:     1.1
 # Date created:		30 January 1996
 # Whom:		 	vazquez@iqm.unicamp.br	
 #
 # $FreeBSD$
 #
 
-DISTNAME=	fdfpp
-PKGNAME=	fpp-1.1
+PORTNAME=	fpp
+PORTVERSION=	1.1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.netlib.org/fortran/
+DISTNAME=	fdfpp
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	vazquez@iqm.unicamp.br

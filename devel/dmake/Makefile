@@ -1,20 +1,20 @@
 # New ports collection makefile for:	dmake
-# Version required:	4.1
 # Date created:		31 July 1995
 # Whom:			nils@guru.ims.uni-stuttgart.de
 #
 # $FreeBSD$
 #
 
-DISTNAME=	dmake-v4.1-src-export.all-unknown-all
-PKGNAME=	dmake-4.1
+PORTNAME=	dmake
+PORTVERSION=	4.1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://plg.uwaterloo.ca/pub/dmake/ \
 		http://dmake.wticorp.com/SourceDistribution/
+DISTNAME=	${PORTNAME}-v${PORTVERSION}-src-export.all-unknown-all
 
 MAINTAINER=	ports@FreeBSD.org
 
-WRKSRC=		${WRKDIR}/dmake
+WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_GMAKE=	yes
 MAKE_ENV=	CC=${CC}
 MAKEFILE=	makefile

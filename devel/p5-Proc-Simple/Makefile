@@ -1,16 +1,16 @@
 # New ports collection makefile for:    p5-Proc-Simple
-# Version required:			1.12
 # Date created:				June 26th 1997
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	Proc-Simple-1.12
-PKGNAME=	p5-Proc-Simple-1.12
+PORTNAME=	Proc-Simple
+PORTVERSION=	1.12
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Proc
+PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	jfitz@FreeBSD.org
 

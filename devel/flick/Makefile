@@ -1,15 +1,15 @@
 # New ports collection makefile for:	flick
-# Version required:	2.1
 # Date created:		21 Mar 1998
 # Whom:			giffunip@asme.org
 #
 # $FreeBSD$
 #
 
-DISTNAME=	flick-2.1-src
-PKGNAME=	flick-2.1
+PORTNAME=	flick
+PORTVERSION=	2.1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://flux.cs.utah.edu/flux/flick/2.1/
+DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=     ports@FreeBSD.org
 

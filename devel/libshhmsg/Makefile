@@ -1,15 +1,15 @@
 # New ports collection makefile for:	libshhmsg
-# Version required:			1.4.0
 # Date created:				1 May 1998
 # Whom:					Andrey Zakhvatov
 #
 # $FreeBSD$
 #
 
-DISTNAME=	shhmsg-1.4.0
-PKGNAME=	libshhmsg-1.4.0
+PORTNAME=	libshhmsg
+PORTVERSION=	1.4.0
 CATEGORIES=	devel
 MASTER_SITES=   http://home.sol.no/~sverrehu/pub-unix/files/
+DISTNAME=	shhmsg-${PORTVERSION}
 
 MAINTAINER=	obrien@FreeBSD.org
 

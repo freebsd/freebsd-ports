@@ -1,15 +1,15 @@
 # New ports collection makefile for:	omniORB
 # Date created:		14 May 1997
 # Whom:			ejc@bazzle.com
-# Version required:	2.8.0
 #
 # $FreeBSD$
 #
 
-DISTNAME=	omniORB_280
-PKGNAME=	omniORB-2.8.0
+PORTNAME=	omniORB
+PORTVERSION=	2.8.0
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.orl.co.uk/pub/omniORB/
+DISTNAME=	${PORTNAME}_${PORTVERSION:S/.//g}
 
 MAINTAINER=	ejc@bazzle.com
 

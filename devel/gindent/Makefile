@@ -1,16 +1,16 @@
 # New ports collection makefile for:   indent
-# Version required:    2.2.2
 # Date created:        28 August 1997
 # Whom:                Kapil Chowksey <kchowksey@hss.hns.com>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	indent-2.2.2
-PKGNAME=	gindent-2.2.2
+PORTNAME=	gindent
+PORTVERSION=	2.2.2
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	indent
+DISTNAME=	indent-${PORTVERSION}
 
 MAINTAINER=	kchowksey@hss.hns.com
 

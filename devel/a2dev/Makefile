@@ -1,12 +1,12 @@
 # New ports collection makefile for:    a2dev
-# Version required:     		1.0
 # Date created:         		1 July 1998
 # Whom:                 		Archie L. Cobbs <archie@whistle.com>
 #
 # $FreeBSD$
 #
 
-DISTNAME=		a2dev-1.2
+PORTNAME=		a2dev
+PORTVERSION=		1.2
 CATEGORIES=		devel
 MASTER_SITES=		ftp://ftp.whistle.com/pub/archie/a2dev/
 EXTRACT_SUFX=		.tgz

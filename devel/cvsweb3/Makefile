@@ -1,12 +1,12 @@
 # New ports collection makefile for:	cvsweb
-# Version required:	1.80
 # Date created:		27 Jun 1999
 # Whom:			SADA Kenji <sada@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	cvsweb-1.80
+PORTNAME=	cvsweb
+PORTVERSION=	1.80
 CATEGORIES=	devel www
 MASTER_SITES=	http://stud.fh-heilbronn.de/~zeller/download/
 

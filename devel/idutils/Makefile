@@ -1,12 +1,12 @@
 # New ports collection makefile for:	id-utils
-# Version required:	3.2
 # Date created:		22 Aug 1996
 # Whom:			pst@freebsd.org
 #
 # $FreeBSD$
 #
 
-DISTNAME=	id-utils-3.2
+PORTNAME=	id-utils
+PORTVERSION=	3.2
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	id-utils

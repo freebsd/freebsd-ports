@@ -1,16 +1,16 @@
 # New ports collection makefile for:	cccc
-# Version required:			2.1.1
 # Date created:				12 September 1997
 # Whom:					Andrey Zakhvatov
 #
 # $FreeBSD$
 #
 
-DISTNAME=		cccc-2.1.1.src
-PKGNAME=		cccc-2.1.1
+PORTNAME=		cccc
+PORTVERSION=		2.1.1
 CATEGORIES=		devel textproc www
 MASTER_SITES=		${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	devel/lang/c++
+DISTNAME=		${PORTNAME}-${PORTVERSION}.src
 
 MAINTAINER=		obrien@FreeBSD.org
 

@@ -1,15 +1,15 @@
 # New ports collection makefile for:	libcii
-# Version required:	1.1
 # Date created:		21 April 1998
 # Whom:			J Han <hjh@photino.com>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	cii11
-PKGNAME=	libcii-1.1
+PORTNAME=	libcii
+PORTVERSION=	1.1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.cs.princeton.edu/pub/packages/cii/
+DISTNAME=	cii11
 
 MAINTAINER=	hjh@photino.com
 

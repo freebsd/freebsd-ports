@@ -1,14 +1,14 @@
 # New ports collection makefile for:	m4
-# Version required:     1.4
 # Date created:		25 October 1994
 # Whom:			mr
 #
 # $FreeBSD$
 #
 
-DISTNAME=       m4-1.4
+PORTNAME=	m4
+PORTVERSION=	1.4
 CATEGORIES=	devel
-MASTER_SITES=   ${MASTER_SITE_GNU}
+MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	m4
 
 MAINTAINER=	ports@FreeBSD.org

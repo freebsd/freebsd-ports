@@ -1,19 +1,19 @@
 # New ports collection makefile for:    Imake
-# Version required:     3.3.6
 # Date created:         01 Mar 2000
 # Whom:                 max
 #
 # $FreeBSD$
 #
 
-DISTNAME=	X336src-1
-PKGNAME= 	imake-1.0
+PORTNAME= 	imake
+PORTVERSION= 	1.0
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.xfree86.org/pub/XFree86/3.3.6/source/ \
 		ftp://xfree86.cdrom.com/pub/XFree86/3.3.6/source/ \
 		ftp://ftp.lip6.fr/pub/X11/XFree86/XFree86-3.3.6/source/ \
 		ftp://ftp.cs.tu-berlin.de/pub/X/XFree86/3.3.6/source/ \
 		ftp://sunsite.doc.ic.ac.uk/packages/XFree86/3.3.6/source/
+DISTNAME=	X336src-1
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	max@FreeBSD.org

@@ -1,16 +1,16 @@
-# New ports collection makefile for:	m68kgcc-2.8.1
-# Version required:	2.8.1
+# New ports collection makefile for:	m68kgcc
 # Date created:		7 July 1998
 # Whom:			Jerry Hicks <jhicks@glenatl.glenayre.com>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	gcc-2.8.1
-PKGNAME=	m68kgcc-2.8.1
+PORTNAME=	gcc
+PORTVERSION=	2.8.1
 CATEGORIES=	devel
 MASTER_SITES=   ${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	gcc
+PKGNAMEPREFIX=	m68k
 
 MAINTAINER=	Jerry.Hicks@Glenayre.com
 

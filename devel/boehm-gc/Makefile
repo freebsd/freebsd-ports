@@ -1,16 +1,16 @@
 # New ports collection makefile for:	boehm-gc
-# Version required:	5.0alpha3
 # Date created:		15 November 1996
 # Whom:			Mike McGaughey <mmcg@cs.monash.edu.au>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	gc5.0alpha4
-PKGNAME=	boehm-gc-5.0a4
+PORTNAME=	boehm-gc
+PORTVERSION=	5.0a4
 CATEGORIES=	devel
 MASTER_SITES=	http://www.hpl.hp.com/personal/Hans_Boehm/gc/gc_source/	\
 		http://reality.sgi.com/boehm_mti/gc_source/
+DISTNAME=	gc5.0alpha4
 
 MAINTAINER=	mmcg@cs.monash.edu.au
 

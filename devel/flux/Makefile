@@ -1,12 +1,12 @@
 # New ports collection makefile for:	flux
-# Version required:	0.3.0
 # Date created:		18 Dec 1999
 # Whom:			Will Andrews <andrews@technologist.com>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	flux-0.3.0
+PORTNAME=	flux
+PORTVERSION=	0.3.0
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.styx.net/projects/flux/
 

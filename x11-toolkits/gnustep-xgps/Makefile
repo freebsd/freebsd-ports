@@ -1,16 +1,16 @@
 # New ports collection makefile for:    gnustep
-# Version required:     0.6.5
 # Date created:         03 October 1998
 # Whom:                 Thomas Gellekum <tg@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=       gstep-core-0.6.5
-PKGNAME=	gnustep-0.6.5
+PORTNAME=	gnustep
+PORTVERSION=	0.6.5
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.gnustep.org/pub/gnustep/core/ \
 		ftp://ftp.peanuts.org/Mirrors/GNUstep/gnustep/core/
+DISTNAME=       gstep-core-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 

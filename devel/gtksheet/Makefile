@@ -1,12 +1,12 @@
 # New ports collection makefile for:	gtksheet
-# Version required:		7.6
 # Date created:			Jun 22 1999
 # Whom:				Ying-Chieh Liao <ijliao@csie.nctu.edu.tw>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	gtksheet-8.0
+PORTNAME=	gtksheet
+PORTVERSION=	8.0
 CATEGORIES=	devel
 MASTER_SITES=	http://magnet.fsu.edu/~feiguin/gtk/src/
 

@@ -1,16 +1,17 @@
 # New ports collection makefile for:	p5-IniConf
-# Version required:			0.92
 # Date created:				October 21st 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	IniConf.pm-0.92
-PKGNAME=	p5-IniConf-0.92
+PORTNAME=	IniConf
+PORTVERSION=	0.92
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	IniConf
+DISTNAME=	${PORTNAME}.pm-${PORTVERSION}
+PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	jfitz@FreeBSD.org
 

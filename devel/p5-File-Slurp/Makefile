@@ -1,16 +1,16 @@
 # New ports collection makefile for:	p5-File-Slurp
-# Version required:			98.071901
 # Date created:				October 17th 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	File-Slurp-98.071901
-PKGNAME=	p5-File-Slurp-98.071901
+PORTNAME=	File-Slurp
+PORTVERSION=	98.071901
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	File
+PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	jfitz@FreeBSD.org
 

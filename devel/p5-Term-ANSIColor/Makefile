@@ -1,16 +1,17 @@
 # New ports collection makefile for:	ANSIColor
-# Version required:			1.01
 # Date created:				1 December 1999
 # Whom:	      				Denis Shaposhnikov <dsh@vlink.ru>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	ANSIColor-1.01
-PKGNAME=	p5-Term-ANSIColor-1.01
+PORTNAME=	Term-ANSIColor
+PORTVERSION=	1.01
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Term
+DISTNAME=	ANSIColor-1.01
+PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	dsh@vlink.ru
 

@@ -1,16 +1,16 @@
 # New ports collection makefile for:	pdcurses
-# Version required:	2.2
 # Date created:		Sun Jun 22 16:57:39 EST 1997
 # Whom:			Joel Sutton <sutton@aardvark.apana.org.au)
 #
 # $FreeBSD$
 #
 
-DISTNAME=	pdc22
-PKGNAME=	crossgo32-djgpp2-pdcurses-2.2
+PORTNAME=	crossgo32-djgpp2-pdcurses
+PORTVERSION=	2.2
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.simtel.net/pub/simtelnet/gnu/djgpp/v2tk/ \
 		ftp://ftp.cdrom.com/pub/simtelnet/gnu/djgpp/v2tk/
+DISTNAME=	pdc22
 
 MAINTAINER=	ports@FreeBSD.org
 
