@@ -13,20 +13,19 @@ MASTER_SITES=	http://prime.sourceforge.jp/freebsd/
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	A suffix array library and tools, which provide fast full-text search
 
-USE_GNOME=	glib12 gnomehack
+USE_GNOME=	glib20 gnomehack
 USE_REINPLACE=	yes
 
 GNU_CONFIGURE=	yes
 USE_AUTOMAKE_VER=	15
 AUTOMAKE_ARGS=	-a
 USE_LIBTOOL=	yes
-LIBTOOLFILES=
 INSTALLS_SHLIB=	yes
 
 MAN1=		sary.1	mksary.1
 
 pre-configure:
-	@cd ${WRKSRC} && ${ACLOCAL} && ${LIBTOOLIZE} && ${AUTOHEADER}
+	cd ${WRKSRC} && ${LIBTOOLIZE} && ${AUTOHEADER}
 
 post-patch:
 .if !defined(NOPORTDOCS)
@@ -34,6 +33,8 @@ post-patch:
 		${XARGS} ${REINPLACE_CMD} \
 		-e 's,^docsdir = .*,docsdir = \$$(datadir)/doc/sary,'
 .endif
+	@cd ${WRKSRC} && ${ACLOCAL}
+	${REINPLACE_CMD} -e 's,--no-verify,,' ${WRKSRC}/aclocal.m4
 
 post-install:
 .if !defined(NOPORTDOCS)
