@@ -38,6 +38,9 @@ CFLAGS+=	-O2
 .endif
 
 post-patch:
+# Speed up configure by not using 2 unneeded configure scripts.
+	@${ECHO_CMD} "" > ${WRKSRC}/lib/rtp/configure
+	@${ECHO_CMD} "" > ${WRKSRC}/lib/SDLAudio/configure
 	@${REINPLACE_CMD} \
 		-e 's|>&/|>/|; s|-Wmissing-declarations||; \
 			s|-Wmissing-prototypes||' \
