@@ -3,7 +3,7 @@
 # Date created:		19 December 1994
 # Whom:			janek
 #
-# $Id: Makefile,v 1.21 1998/12/12 01:48:39 jseger Exp $
+# $Id: Makefile,v 1.22 1999/03/24 17:38:00 steve Exp $
 #
 
 DISTNAME=	moxftp-2.2
@@ -15,7 +15,8 @@ EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.ORG
 
-HAS_CONFIGURE=	yes
+REQUIRES_MOTIF=	yes
+GNU_CONFIGURE=	yes
 USE_X_PREFIX=	yes
 MAN1=		${PROGRAM_NAME}.1
 PLIST_SUB=	PROGRAM_NAME=${PROGRAM_NAME} RESOURCE_NAME=${RESOURCE_NAME}
