@@ -1,0 +1,20 @@
+--- src/config/libvga.config.orig	Mon Mar  1 20:34:52 2004
++++ src/config/libvga.config	Mon Mar  1 20:35:32 2004
+@@ -31,7 +31,7 @@
+ # mouse DRMOUSE4DS# Digital Research double-wheeled mouse
+ # mouse none# None
+ 
+-mouse Microsoft
++mouse gpm
+ 
+ # Mouse/keyboard customisation by 101 (Attila Lendvai). If you have any good
+ # ideas you can reach me at 101@kempelen.inf.bme.hu
+@@ -101,7 +101,7 @@
+ # However, esp. with the Spacetec Spaceball you may
+ # want to specify a different device for svgalib to use
+ 
+-# mdev /dev/ttyS0 # mouse is at /dev/ttyS0
++mdev /dev/sysmouse
+ 
+ # Some multiprotocol mice will need one of the following:
+ 
