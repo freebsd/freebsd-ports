@@ -6,12 +6,10 @@
 #
 
 PORTNAME=	mldonkey
-PORTVERSION=	2.02.0
-PORTREVISION=	1
+PORTVERSION=	2.04.r1
 CATEGORIES=	net
-MASTER_SITES=	http://ernie.eit.uni-kl.de/mldonkey/ \
-		http://savannah.nongnu.org/download/mldonkey/stable/contributed/
-DISTNAME=	${PORTNAME}-${PORTVERSION:C/.0$/-0/}.shared.${ARCH}-${OPSYS}
+MASTER_SITES=	http://savannah.nongnu.org/download/mldonkey/release-2.04rc1/contributed/holger/
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/.r/rc/}-0.shared.${ARCH}-${OPSYS}-hl
 
 MAINTAINER=	holger@e-gitt.net
 COMMENT=	A OCAML client for eDonkey and Overnet peer-to-peer networks (core)
@@ -19,7 +17,7 @@ COMMENT=	A OCAML client for eDonkey and Overnet peer-to-peer networks (core)
 ONLY_FOR_ARCHS=	alpha i386
 USE_BZIP2=	yes
 NO_BUILD=	yes
-WRKSRC=		${WRKDIR}/${PORTNAME}-distrib-${PORTVERSION:C/.(.)$/-\1/}
+WRKSRC=		${WRKDIR}/${PORTNAME}-distrib-${PORTVERSION:S/.r/rc/}-0
 
 DIRNAME=	${HOME}/.mldonkey
 
@@ -33,7 +31,6 @@ post-patch:
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/mldonkey		${PREFIX}/bin/mldonkey-real
 	@${INSTALL_SCRIPT} ${FILESDIR}/kill_mldonkey	${PREFIX}/bin
-	@${INSTALL_SCRIPT} ${WRKSRC}/mldonkey_previewer	${PREFIX}/bin
 	@${INSTALL_SCRIPT} ${WRKDIR}/wrapper.sh		${PREFIX}/bin/mldonkey
 .ifndef(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
