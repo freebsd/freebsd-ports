@@ -1,5 +1,9 @@
 bin/blackbox
+bin/bsetbg
+bin/bsetroot
 bin/bstyleconvert
+lib/libbt.a
+libdata/pkgconfig/libbt.pc
 include/bt/Application.hh
 include/bt/Bitmap.hh
 include/bt/Color.hh
@@ -17,14 +21,12 @@ include/bt/Texture.hh
 include/bt/Timer.hh
 include/bt/Unicode.hh
 include/bt/Util.hh
-lib/libbt.a
-libdata/pkgconfig/libbt.pc
-%%DATADIR%%/menu
 %%DATADIR%%/styles/Blue
 %%DATADIR%%/styles/Gray
 %%DATADIR%%/styles/Green
 %%DATADIR%%/styles/Purple
 %%DATADIR%%/styles/Red
+%%DATADIR%%/menu
 @dirrm include/bt
 @dirrm %%DATADIR%%/styles
 @dirrm %%DATADIR%%

@@ -6,22 +6,37 @@
 #
 
 PORTNAME=	bbpager
-PORTVERSION=	0.3.1
+PORTVERSION=	0.4.0
 CATEGORIES=	x11-wm
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	bbtools
+MASTER_SITES=	http://halplant.com:88/software/src/
+DISTFILES=	${PORTNAME}-${PORTVERSION}-cvs.tar.gz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	A.J.Caines@halplant.com
 COMMENT=	A pager for the Blackbox window manager
 
+BUILD_DEPENDS=	blackbox:${PORTSDIR}/x11-wm/blackbox
+
 USE_X_PREFIX=	yes
+USE_GNOME=	gnomehack pkgconfig
+USE_GCC=	3.3+
 GNU_CONFIGURE=	yes
 
-PLIST_FILES=	bin/bbpager share/bbtools/bbpager.bb \
-		share/bbtools/bbpager.nobb share/bbtools/README.bbpager
+PORTDOCS=	README.bbpager
+PLIST_FILES=	bin/bbpager %%DATADIR%%/bbpager.rc
+PLIST_DIRS=	%%DATADIR%% %%DOCSDIR%%
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/src/bbpager ${PREFIX}/bin
+	@${MKDIR} ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/data/bbpager.rc ${DATADIR}/
 
 post-install:
-	@${ECHO_CMD} "@unexec rmdir %D/share/bbtools 2>/dev/null || true" \
-		>> ${TMPPLIST}
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+.for file in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/data/${file} ${DOCSDIR}/
+.endfor
+.endif
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
