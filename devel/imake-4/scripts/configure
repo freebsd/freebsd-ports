@@ -1,0 +1,48 @@
+#!/bin/sh
+# configuration scripts for imake/XFree86
+
+F=${WRKDIR}/.config
+
+configure () {
+rm -f $F
+
+if [ ${OSVERSION} -ge 300000 -a X${HasSecureRPC} != "X" ]; then
+    echo "#define HasSecureRPC ${HasSecureRPC}" >> $F
+fi
+if [ X${HasXdmAuth} != "X" ]; then
+    echo "#define HasXdmAuth ${HasXdmAuth}" >> $F
+fi
+if [ X${HasPam} != "X" ]; then
+    echo "#define HasPam ${HasPam}" >> $F
+fi
+if [ X${BuildPexExt} != "X" ]; then
+    echo "#define BuildPexExt ${BuildPexExt}" >> $F
+fi
+if [ X${BuildXinerama} != "X" ]; then
+    echo "#define BuildXinerama ${BuildXinerama}" >> $F
+fi
+if [ X${BuildXIE} != "X" ]; then
+    echo "#define BuildXIE ${BuildXIE}" >> $F
+fi
+
+cat >> $F <<EOF
+#define XF86CardDrivers         mga glint nv tga s3virge sis rendition \
+                                neomagic i740 tdfx \
+                                cirrus tseng trident chips apm \
+                                GlideDriver fbdev \
+                                ati r128 vga XF86ExtraCardDrivers
+EOF
+echo "#define XInputDrivers mouse dynapro elo2300 elographics magellan \
+	microtouch mutouch spaceorb wacom"  >> $F
+
+}
+
+configure
+
+cat $F >> ${WRKDIR}/xc/config/cf/xf86site.def
+
+echo "#define ProjectRoot ${PREFIX}" > ${WRKDIR}/xc/config/cf/host.def
+
+cd ${WRKDIR}/xc
+make Makefile.boot
+make -f xmakefile SUBDIRS="include config" VerifyOS Makefiles includes
