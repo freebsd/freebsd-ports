@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.286 1999/06/28 22:41:33 asami Exp $
+# $Id: Makefile,v 1.287 1999/07/26 18:16:51 sada Exp $
 #
 
     SUBDIR += IglooFTP
@@ -182,6 +182,7 @@
     SUBDIR += trafshow
     SUBDIR += ttcp
     SUBDIR += ttt
+    SUBDIR += tund
     SUBDIR += ucd-snmp
     SUBDIR += vnc
     SUBDIR += wais
