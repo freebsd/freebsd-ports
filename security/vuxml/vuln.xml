@@ -32,6 +32,37 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="26c9e8c6-1c99-11d9-814e-0001020eed82">
+    <topic>sharutils -- buffer overflows</topic>
+    <affects>
+      <package>
+	<name>sharutils</name>
+        <range><ge>0</ge></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>From Gentoo advisory GLSA 200410-01:</p>
+	<blockquote cite="http://www.gentoo.org/security/en/glsa/glsa-200410-01.xml">
+	  <p>sharutils contains two buffer overflows.  Ulf Harnhammar
+	    discovered a buffer overflow in shar.c, where the length
+	    of data returned by the wc command is not checked.
+	    Florian Schilhabel discovered another buffer overflow in
+	    unshar.c.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>11298</bid>
+      <url>http://www.gentoo.org/security/en/glsa/glsa-200410-01.xml</url>
+      <url>http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=265904</url>
+    </references>
+    <dates>
+      <discovery>2004-08-15</discovery>
+      <entry>2004-10-13</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="3030ae22-1c7f-11d9-81a4-0050fc56d258">
     <topic>mail-notification -- denial-of-service vulnerability</topic>
     <affects>
