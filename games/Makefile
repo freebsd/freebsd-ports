@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.71 1997/06/04 03:22:13 asami Exp $
+# $Id: Makefile,v 1.72 1997/06/04 05:24:08 asami Exp $
 #
 
     SUBDIR += acm
@@ -82,5 +82,6 @@
     SUBDIR += xtic
     SUBDIR += xtriangles
     SUBDIR += yamsweeper
+    SUBDIR += ztrack
 
 .include <bsd.port.subdir.mk>
