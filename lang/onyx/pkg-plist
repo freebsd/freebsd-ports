@@ -46,7 +46,7 @@ include/libonyx/tsd.h
 include/libonyx/xep.h
 lib/libonyx.a
 lib/libonyx.so
-lib/libonyx.so.8
+lib/libonyx.so.9
 share/onyx
 share/onyx-%%ONYX_VERSION%%/doc/html/contents.png
 share/onyx-%%ONYX_VERSION%%/doc/html/img1.png

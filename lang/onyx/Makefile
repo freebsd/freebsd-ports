@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	onyx
-PORTVERSION=	4.2.0
+PORTVERSION=	4.2.1
 CATEGORIES=	lang
 MASTER_SITES=	http://www.canonware.com/download/onyx/
 
