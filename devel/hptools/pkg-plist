@@ -1,0 +1,11 @@
+bin/makerom
+bin/rplcomp
+bin/sasm
+bin/sload
+%%PORTDOCS%%%%DOCSDIR%%/MAKEROM.DOC
+%%PORTDOCS%%%%DOCSDIR%%/RPLCOMP.DOC
+%%PORTDOCS%%%%DOCSDIR%%/RPLMAN.DOC
+%%PORTDOCS%%%%DOCSDIR%%/SASM.DOC
+%%PORTDOCS%%%%DOCSDIR%%/SLOAD.DOC
+%%PORTDOCS%%%%DOCSDIR%%/masd.pdf
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

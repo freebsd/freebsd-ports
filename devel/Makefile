@@ -244,6 +244,7 @@
     SUBDIR += gvd
     SUBDIR += happydoc
     SUBDIR += hp48cc
+    SUBDIR += hptools
     SUBDIR += hs-alex
     SUBDIR += hs-buddha
     SUBDIR += hs-c2hs
