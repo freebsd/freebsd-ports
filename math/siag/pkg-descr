@@ -1,18 +1,16 @@
 SIAG (Scheme In A Grid)
 =======================
-Siag is a spreadsheet based on X and Scheme. I originally
-wrote it out of frustration with the fact that almost no free,
-good looking applications were available for Linux. It is
-based on my old program Calc, which which I started
-writing in the late -80's. 
+Siag Office is a free office package for Unix, including word processor,
+spreadsheet  and  presentation  graphics.  It   is  a  bundling  of  the
+spreadsheet SIAG, the word processor PW, and the animation program Egon.
 
-Multiple user interfaces
+		The motto: "It sucks less!"
 
-In addition to the old Xt interface, Siag is now available
-with two alternative user interfaces. One of them is based
-on the Curses library and runs on plain text terminals. The
-other is based on Gtk, used by the Gnome desktop project. 
-All versions of Siag have the same fundamental
-functionality. 
+Includes tsiag  (the spreadsheet), that  works with ncurses  library for
+X-impaired.
+
+The nice thing about  it (besides the use of Scheme) is  that all of the
+sexiness of the interface is achieved  with Xaw3d -- no monsters like Qt
+or GTk.
 
 WWW: http://www.edu.stockholm.se/siag/

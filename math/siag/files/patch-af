@@ -1,0 +1,10 @@
+--- common/mkt1cfg.orig	Fri Mar 26 17:42:59 1999
++++ common/mkt1cfg	Tue Jun 22 14:42:16 1999
+@@ -10 +10 @@
+-	datadir="/usr/local/share"
++	datadir="${PREFIX}/share"
+@@ -19,2 +19,2 @@
+-echo "AFM=/usr/lib/ghostscript/fonts:/usr/lib/teTeX/texmf/fonts/afm/adobe/utopia:."
+-echo "TYPE1=/usr/lib/ghostscript/fonts:/usr/lib/teTeX/texmf/fonts/type1/adobe/utopia:."
++echo "AFM=${LOCALBASE}/share/ghostscript/fonts:${LOCALBASE}/share/texmf/fonts/afm/adobe/utopia:."
++echo "TYPE1=${LOCALBASE}/share/ghostscript/fonts:${LOCALBASE}/share/texmf/fonts/type1/adobe/utopia:."
