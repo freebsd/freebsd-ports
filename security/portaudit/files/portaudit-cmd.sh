@@ -33,13 +33,15 @@
 
 portaudit_confs()
 {
-	portaudit_dir=${portaudit_dir:-"%%DATABASEDIR%%"}
-	portaudit_filename=${portaudit_filename:-"auditfile.tbz"}
+	: ${portaudit_dir="%%DATABASEDIR%%"}
+	: ${portaudit_filename="auditfile.tbz"}
 
-	portaudit_fetch_env=${portaudit_fetch_env:-}
-	portaudit_fetch_cmd=${portaudit_fetch_cmd:-"fetch -1mp"}
+	: ${portaudit_fetch_env=""}
+	: ${portaudit_fetch_cmd="fetch -1mp"}
 
-	portaudit_sites=${portaudit_sites:-"http://www.FreeBSD.org/ports/"}
+	: ${portaudit_sites="http://www.FreeBSD.org/ports/"}
+
+	: ${portaudit_fixed=""}
 
 	if [ -r %%PREFIX%%/etc/portaudit.conf ]; then
 		. %%PREFIX%%/etc/portaudit.conf
@@ -126,16 +128,27 @@ portaudit_prerequisites()
 audit_installed()
 {
 	local rc=0
+	local osversion=`sysctl -n kern.osreldate`
+
+	fixedre=`echo -n $portaudit_fixed | tr -c '[:alnum:]- \t\n' 'x' | tr -s ' \t\n' '|'`
 
 	extract_auditfile | awk -F\| "$PRINTAFFECTED_AWK"'
-		BEGIN { vul=0 }
+		BEGIN { vul=0; fixedre="'"$fixedre"'" }
 		/^(#|\$)/ { next }
 		$2 !~ /'"$opt_restrict"'/ { next }
+		$1 ~ /^FreeBSD[<=>!]/ {
+			if (fixedre && $2 ~ fixedre) next
+			if (!system("'"$pkg_version"' -T \"FreeBSD-'"$osversion"'\" \"" $1 "\"")) {
+				print_affected("FreeBSD-'"$osversion"'", \
+					"To disable this check add the uuid to \`portaudit_fixed'"'"' in %%PREFIX%%/etc/portaudit.conf")
+			}
+			next
+		}
 		{
 			cmd="'"$pkg_info"' -E \"" $1 "\""
 			while((cmd | getline pkg) > 0) {
 				vul++
-				print_affected(pkg)
+				print_affected(pkg, "")
 			}
 			close(cmd)
 		}
@@ -186,7 +199,7 @@ audit_file()
 				if ($2 !~ /'"$opt_restrict"'/)
 					continue
 				vul++
-				print_affected(pkg)
+				print_affected(pkg, "")
 			}
 			close(cmd)
 		}
@@ -223,7 +236,7 @@ audit_args()
 				' | $pkg_version -T "$1" -`; then
 				VULCNT=$(($VULCNT+1))
 				echo "$VLIST" | awk -F\| "$PRINTAFFECTED_AWK"'
-					{ print_affected("'"$1"'") }
+					{ print_affected("'"$1"'", "") }
 				'
 			fi
 			;;
@@ -256,7 +269,7 @@ audit_cwd()
 			{ print }
 		' | $pkg_version -T "$PKGNAME" -`; then
 		echo "$VLIST" | awk -F\| "$PRINTAFFECTED_AWK"'
-			{ print_affected("'"$PKGNAME"'") }
+			{ print_affected("'"$PKGNAME"'", "") }
 		'
 		return 1
 	fi
@@ -400,31 +413,35 @@ prerequisites_checked=false
 
 if $opt_quiet; then
 	PRINTAFFECTED_AWK='
-		function print_affected(apkg) {
+		function print_affected(apkg, note) {
 			print apkg
 		}
 		'
 elif $opt_verbose; then
 	PRINTAFFECTED_AWK='
-		function print_affected(apkg) {
+		function print_affected(apkg, note) {
 			split(apkg, thepkg)
 			print "Affected package: " thepkg[1] " (matched by " $1 ")"
 			print "Type of problem: " $3 "."
 			split($2, ref, / /)
 			for (r in ref)
 				print "Reference: <" ref[r] ">"
+			if (note)
+				print "Note: " note
 			print ""
 		}
 		'
 else
 	PRINTAFFECTED_AWK='
-		function print_affected(apkg) {
+		function print_affected(apkg, note) {
 			split(apkg, thepkg)
 			print "Affected package: " thepkg[1]
 			print "Type of problem: " $3 "."
 			split($2, ref, / /)
 			for (r in ref)
 				print "Reference: <" ref[r] ">"
+			if (note)
+				print "Note: " note
 			print ""
 		}
 		'
