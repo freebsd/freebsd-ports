@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://sunsite.informatik.rwth-aachen.de/pub/comp/tex/teTeX/2.0/dis
 		${MASTER_SITE_TEX_CTAN}
 MASTER_SITE_SUBDIR=	systems/unix/teTeX/2.0/distrib/
 DISTFILES=	${TETEX_SRC} ${TETEX_TEXMF}
+EXTRACT_ONLY=	${TETEX_SRC}
 
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Thomas Esser's distribution of TeX & friends
@@ -29,7 +30,6 @@ PLIST_SUB+=	X11BITS="@comment "
 .endif
 DIST_SUBDIR=	teTeX
 WRKSRC=		${WRKDIR}/tetex-src-${PORTVERSION}
-EXTRACT_ONLY=	${TETEX_SRC}
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-multiplatform \
