@@ -102,6 +102,7 @@
     SUBDIR += gkrellmlaunch
     SUBDIR += gkrellscore
     SUBDIR += gkrellshoot
+    SUBDIR += gkrellshoot2
     SUBDIR += gkrellweather
     SUBDIR += gkrellweather2
     SUBDIR += gkx86info

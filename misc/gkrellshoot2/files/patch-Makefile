@@ -1,0 +1,17 @@
+--- Makefile.orig	Thu Jan 30 21:20:26 2003
++++ Makefile	Thu Jan 30 21:23:35 2003
+@@ -1,11 +1,12 @@
+ GTK_INCLUDE = `pkg-config gtk+-2.0 --cflags`
+ GTK_LIB = `pkg-config gtk+-2.0 --libs`
+ 
+-FLAGS = -O2 -Wall -fPIC $(GTK_INCLUDE) 
++CFLAGS = -fPIC $(GTK_INCLUDE) 
+ LIBS = $(GTK_LIB) 
+ LFLAGS = -shared
+ 
+-CC = gcc $(CFLAGS) $(FLAGS)
++CC?=    gcc
++CC+=    ${CFLAGS}
+ 
+ OBJS = gkrellshoot.o
+ 
