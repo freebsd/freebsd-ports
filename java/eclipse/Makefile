@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	R-2.1-200303272130
 DISTNAME=	eclipse-sourceBuild-srcIncluded-2.1
 DIST_SUBDIR=	eclipse
 
-MAINTAINER=	kan@FreeBSD.ORG
+MAINTAINER=	java@FreeBSD.ORG
 COMMENT=	An open extensible IDE for anything and nothing in particular
 
 LIB_DEPENDS=	gtk-x11-2.0:${PORTSDIR}/x11-toolkits/gtk20
