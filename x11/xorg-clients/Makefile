@@ -5,11 +5,10 @@
 # $FreeBSD$
 #
 
-PORTNAME=	clients
+PORTNAME=	xorg-clients
 PORTVERSION=	6.7.0
 CATEGORIES=	x11
 MASTER_SITES=	http://freedesktop.org/~xorg/X11R6.7.0/src/
-PKGNAMEPREFIX=	xorg-
 DISTFILES=	X11R6.7.0-src1.tar.gz \
 		X11R6.7.0-src2.tar.gz \
 		X11R6.7.0-src3.tar.gz
@@ -18,7 +17,10 @@ MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X client programs and related files from X.Org
 
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
-		fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig
+		expat.5:${PORTSDIR}/textproc/expat2 \
+		Xcursor.1:${PORTSDIR}/x11/XFree86-4-libraries \
+		png.5:${PORTSDIR}/graphics/png \
+		Xft.2:${PORTSDIR}/x11-fonts/libXft
 
 CONFLICTS=	XFree86-clients-*
 
