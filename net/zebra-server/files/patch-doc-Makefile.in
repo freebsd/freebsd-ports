@@ -1,0 +1,11 @@
+--- doc/Makefile.in.orig	Sun Dec 23 14:33:05 2001
++++ doc/Makefile.in	Sun Dec 23 14:34:23 2001
+@@ -73,7 +73,7 @@
+ YAZVERSION = @YAZVERSION@
+ yazconfig = @yazconfig@
+ 
+-docdir = $(pkgdatadir)/doc
++docdir = $(datadir)/doc/@PACKAGE@
+ 
+ doc_DATA = zebra.sgml gils.sgml zebra.txt zebra.ps zebra.html  zebra-1.html zebra-2.html zebra-3.html zebra-4.html zebra-5.html  zebra-6.html zebra-7.html zebra-8.html zebra-9.html
+ 
