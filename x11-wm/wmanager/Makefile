@@ -16,6 +16,12 @@ COMMENT=	X11 window manager selector
 
 LIB_DEPENDS=	fltk.1:${PORTSDIR}/x11-toolkits/fltk
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not compile (bad C++ code)"
+.endif
+
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
@@ -35,4 +41,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/.xinitrc ${EXAMPLESDIR}/xinitrc_sample
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

@@ -16,6 +16,12 @@ COMMENT=	A suite of routing policy tools to interact with the IRR
 
 LIB_DEPENDS=	tk83.1:${PORTSDIR}/x11-toolkits/tk83
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not compile (bad C++ code)"
+.endif
+
 USE_BISON=	yes
 USE_GMAKE=	yes
 USE_GCC=	2.95
@@ -36,4 +42,4 @@ post-patch:
 
 aLL_TARGET=	depend all
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

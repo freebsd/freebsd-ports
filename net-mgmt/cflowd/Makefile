@@ -22,6 +22,12 @@ COMMENT=	Flow analysis tool used for analyzing Cisco's NetFlow switching
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libArts.a:${PORTSDIR}/net/arts++
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not compile (bad C++ code)"
+.endif
+
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_BISON=	yes
@@ -41,4 +47,4 @@ post-install:
 	${INSTALL_SCRIPT} ${FILESDIR}/cflowd.sh \
 		${PREFIX}/etc/rc.d/cflowd-base.sh.sample
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

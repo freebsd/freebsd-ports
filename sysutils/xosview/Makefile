@@ -15,8 +15,14 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A graphical performance meter
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not compile (bad C++ code)"
+.endif
+
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 MAN1=		xosview.1
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

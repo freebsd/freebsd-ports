@@ -16,6 +16,12 @@ COMMENT=	A program to edit encoded mpeg streams
 
 LIB_DEPENDS=	netpbm.1:${PORTSDIR}/graphics/netpbm
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not compile (bad C++ code)"
+.endif
+
 USE_X_PREFIX=	yes
 
 post-extract:
@@ -29,4 +35,4 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/manual.ps ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

@@ -17,6 +17,12 @@ COMMENT=	Mailsync is a way of keeping a collection of mailboxes synchronized
 
 LIB_DEPENDS=	c-client4.8:${PORTSDIR}/mail/cclient
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not compile (bad C++ code)"
+.endif
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_GMAKE=	yes
@@ -42,4 +48,4 @@ do-install:
 	${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/examples/mailsync ${EXAMPLESDIR}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

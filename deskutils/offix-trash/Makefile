@@ -17,8 +17,14 @@ COMMENT=	Trash from OffiX
 
 LIB_DEPENDS=	Dnd++.1:${PORTSDIR}/x11/libdnd
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not compile (bad C++ code)"
+.endif
+
 GNU_CONFIGURE=	YES
 USE_GMAKE=	YES
 USE_X_PREFIX=	YES
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

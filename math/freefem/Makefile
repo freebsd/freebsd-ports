@@ -14,6 +14,12 @@ MASTER_SITE_SUBDIR=	kfem
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A language for the Finite Element Method
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not compile (bad C++ code)"
+.endif
+
 USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
@@ -38,4 +44,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/examples/*.pde ${EXAMPLESDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

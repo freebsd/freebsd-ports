@@ -21,6 +21,10 @@ WANT_GNOME=	yes
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not compile (bad C++ code)"
+.endif
+
 .if ${HAVE_GNOME:Mgnomelibs}!=""
 USE_GNOME+=	gnomeprefix gnomehack gnomelibs
 .else

@@ -41,6 +41,10 @@ pre-fetch:
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not compile (bad C++ code)"
+.endif
+
 .if ${OSVERSION} >= 500041
 EXTRA_PATCHES=	${FILESDIR}/extra-glibc-getopt.h
 .endif
