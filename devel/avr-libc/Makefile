@@ -8,7 +8,13 @@
 PORTNAME=	avr-libc
 PORTVERSION=	20000514
 CATEGORIES=	devel
-MASTER_SITES=	http://www1.itnet.pl/amelektr/avr/libc/
+# The canonical place for the distfile is:
+#MASTER_SITES=	http://www.amelek.gda.pl/avr/libc/
+# ... but until we could convert our avr-gcc to a
+# current version (which is by now only obtainable
+# directly from the gcc CVS repo), resort to the old
+# file here:
+MASTER_SITES=	ftp://ftp.ifbus.de/pub/outgoing/
 
 MAINTAINER=	joerg@freebsd.org
 
