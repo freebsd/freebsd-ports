@@ -7,6 +7,7 @@
 
 PORTNAME=	ct
 PORTVERSION=	2.1.1
+PORTREVISION=	1
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.tahi.org/release/ct/
 
