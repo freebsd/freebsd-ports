@@ -1,1 +1,5 @@
-Password generation utility for SAMBA for Python lang.
+This Python module can generate both LANMAN and NT 
+password hashes, suitable for use with Samba.
+
+Author: Barry Pederson <bp@barryp.org>
+WWW: http://barryp.org/software/py-smbpasswd

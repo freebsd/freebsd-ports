@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	smbpasswd
-PORTVERSION=	1.0
+PORTVERSION=	1.0.1
 CATEGORIES=	net python
 MASTER_SITES=	http://barryp.org/software/py-${PORTNAME}/files/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,7 +15,7 @@ DISTNAME=	py-${PORTNAME}-${PORTVERSION}
 MAINTAINER=	alecn2002@yandex.ru
 COMMENT=	SMB/CIFS password generation utility for Python
 
-USE_PYTHON=	yes
+USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes
 
 .include <bsd.port.mk>
