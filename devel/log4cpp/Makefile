@@ -1,0 +1,21 @@
+# ex:ts=8
+# New ports collection makefile for:	log4cpp
+# Date created:			May 1, 2001
+# Whom:				ijliao
+#
+# $FreeBSD$
+#
+
+PORTNAME=	log4cpp
+PORTVERSION=	0.2.4b
+CATEGORIES=	devel
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
+
+MAINTAINER=	ijliao@FreeBSD.org
+
+GNU_CONFIGURE=	yes
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:S,b,,}
+INSTALLS_SHLIB=	yes
+
+.include <bsd.port.mk>
