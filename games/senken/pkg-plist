@@ -1,0 +1,108 @@
+bin/senken
+bin/senkenserver
+share/senken/games/bigcity.game
+share/senken/games/easy.game
+share/senken/games/growcity.game
+share/senken/games/iowa.game
+share/senken/games/justplay.game
+share/senken/games/makemoney.game
+share/senken/img/tiles.data
+share/senken/img/aboutimg.xpm
+share/senken/img/f_small_green.bmp
+share/senken/img/terrain/Makefile.in
+share/senken/img/terrain/sea.png
+share/senken/img/zone/Makefile.in
+share/senken/img/zone/commerce.png
+share/senken/img/zone/farm.png
+share/senken/img/zone/farm_slope.png
+share/senken/img/zone/house.png
+share/senken/img/zone/industry.png
+share/senken/img/zone/office.png
+share/senken/img/road/Makefile.in
+share/senken/img/road/road_0.png
+share/senken/img/road/road_1.png
+share/senken/img/road/road_end_ne.png
+share/senken/img/road/road_end_nw.png
+share/senken/img/road/road_end_se.png
+share/senken/img/road/road_end_sw.png
+share/senken/img/road/road_ne.png
+share/senken/img/road/road_no___.png
+share/senken/img/road/road_no_ne.png
+share/senken/img/road/road_no_nw.png
+share/senken/img/road/road_no_se.png
+share/senken/img/road/road_no_sw.png
+share/senken/img/road/road_nw.png
+share/senken/img/road/road_se.png
+share/senken/img/road/road_sw.png
+share/senken/img/road/road_turn_e.png
+share/senken/img/road/road_turn_n.png
+share/senken/img/road/road_turn_s.png
+share/senken/img/road/road_turn_w.png
+share/senken/img/power/Makefile.in
+share/senken/img/power/nuclear-045.png
+share/senken/img/power/nuclear-135.png
+share/senken/img/power/nuclear-225.png
+share/senken/img/power/nuclear-315.png
+share/senken/img/government/Makefile.in
+share/senken/img/government/firedept-045.png
+share/senken/img/government/firedept-135.png
+share/senken/img/government/firedept-225.png
+share/senken/img/government/firedept-315.png
+share/senken/img/government/police-045.png
+share/senken/img/government/police-135.png
+share/senken/img/government/police-225.png
+share/senken/img/government/police-315.png
+share/senken/img/government/watertower-045.png
+share/senken/img/government/watertower-135.png
+share/senken/img/government/watertower-225.png
+share/senken/img/government/watertower-315.png
+share/senken/img/house/Makefile.in
+share/senken/img/house/house1-045.png
+share/senken/img/house/house1-135.png
+share/senken/img/house/house1-225.png
+share/senken/img/house/house1-315.png
+share/senken/img/house/house2-045.png
+share/senken/img/house/house2-135.png
+share/senken/img/house/house2-225.png
+share/senken/img/house/house2-315.png
+share/senken/img/industrial/Makefile.in
+share/senken/img/industrial/conserverie-045.png
+share/senken/img/industrial/conserverie-135.png
+share/senken/img/industrial/conserverie-225.png
+share/senken/img/industrial/conserverie-315.png
+share/senken/img/industrial/tanks-045.png
+share/senken/img/industrial/tanks-135.png
+share/senken/img/industrial/tanks-225.png
+share/senken/img/industrial/tanks-315.png
+share/senken/img/industrial/warehouse-045.png
+share/senken/img/industrial/warehouse-135.png
+share/senken/img/industrial/warehouse-225.png
+share/senken/img/industrial/warehouse-315.png
+share/senken/img/commercial/Makefile.in
+share/senken/img/commercial/foodstand-045.png
+share/senken/img/commercial/foodstand-135.png
+share/senken/img/commercial/foodstand-225.png
+share/senken/img/commercial/foodstand-315.png
+share/senken/img/commercial/gas-045.png
+share/senken/img/commercial/gas-135.png
+share/senken/img/commercial/gas-225.png
+share/senken/img/commercial/gas-315.png
+share/senken/img/commercial/hardware-045.png
+share/senken/img/commercial/hardware-135.png
+share/senken/img/commercial/hardware-225.png
+share/senken/img/commercial/hardware-315.png
+share/senken/img/commercial/restaurant-045.png
+share/senken/img/commercial/restaurant-135.png
+share/senken/img/commercial/restaurant-225.png
+share/senken/img/commercial/restaurant-315.png
+@dirrm share/senken/games
+@dirrm share/senken/img/terrain
+@dirrm share/senken/img/zone
+@dirrm share/senken/img/road
+@dirrm share/senken/img/power
+@dirrm share/senken/img/government
+@dirrm share/senken/img/house
+@dirrm share/senken/img/industrial
+@dirrm share/senken/img/commercial
+@dirrm share/senken/img
+@dirrm share/senken
