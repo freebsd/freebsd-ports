@@ -1,0 +1,29 @@
+--- gcc/configure.orig	Thu Aug 24 19:33:08 2000
++++ gcc/configure	Thu Aug 24 19:52:57 2000
+@@ -763,7 +763,7 @@
+     gcc_gxx_include_dir='${libsubdir}/include/g++'
+   else
+     topsrcdir=${srcdir}/.. . ${srcdir}/../config.if
+-    gcc_gxx_include_dir="\$(libsubdir)/\$(unlibsubdir)/..\`echo \$(exec_prefix) | sed -e 's|^\$(prefix)||' -e 's|/[^/]*|/..|g'\`/include/g++"-${libstdcxx_interface}
++    gcc_gxx_include_dir="\$(local_prefix)\`echo \$(exec_prefix) | sed -e 's|^\$(prefix)||' -e 's|/[^/]*|/..|g'\`/include/g++"-${libstdcxx_interface}
+   fi
+ fi
+ 
+@@ -8530,7 +8530,7 @@
+ # make and thus we'd get different behavior depending on where we built the
+ # sources.
+ if test x$exec_prefix = xNONE -o x$exec_prefix = x$prefix; then
+-    gcc_tooldir='$(libsubdir)/$(unlibsubdir)/../$(target_alias)'
++    gcc_tooldir='$(local_prefix)/$(target_alias)'
+ else
+ # An explanation of the sed strings:
+ #  -e 's|^\$(prefix)||'   matches and eliminates 'prefix' from 'exec_prefix'
+@@ -8554,7 +8554,7 @@
+ #   /foo        /foo/bar/ugg      ../../
+ #
+     dollar='$$'
+-    gcc_tooldir="\$(libsubdir)/\$(unlibsubdir)/\`echo \$(exec_prefix) | sed -e 's|^\$(prefix)||' -e 's|/\$(dollar)||' -e 's|^[^/]|/|' -e 's|/[^/]*|../|g'\`\$(target_alias)"
++    gcc_tooldir="\$(libdir)/\`echo \$(exec_prefix) | sed -e 's|^\$(prefix)||' -e 's|/\$(dollar)||' -e 's|^[^/]|/|' -e 's|/[^/]*|../|g'\`\$(target_alias)"
+ fi
+ 
+ 
