@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	libsndfile
-PORTVERSION=	0.0.26
+PORTVERSION=	0.0.27
 CATEGORIES=	audio
 MASTER_SITES=	http://www.zip.com.au/~erikd/libsndfile/
 
@@ -18,7 +18,7 @@ CONFIGURE_ARGS=	--enable-justsrc --disable-gcc-pipe
 INSTALLS_SHLIB=	yes
 
 PORTDOCS=	ChangeLog NEWS api.html bugs.html index.html libsndfile.jpg \
-		new_file_type.HOWTO sf_info.html
+		new_file_type.HOWTO sndfile_info.html
 
 pre-patch:
 	@${PERL} -pi -e 's|-g -O2 ||g' ${WRKSRC}/configure
