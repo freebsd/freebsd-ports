@@ -50,10 +50,10 @@ do-install:
 	@${CAT} ${PKGMESSAGE} | ${SED} -e 's,%%PREFIX%%,${PREFIX},g'
 .if defined(WITH_HINT)
 	@${MKDIR} ${PREFIX}/share/java/helium
-	@${INSTALL_DATA} ${DISTDIR}/Hint.jar ${PREFIX}/share/java/helium
+	@${INSTALL_DATA} ${DISTDIR}/Hint-${PORTVERSION}.jar ${PREFIX}/share/java/helium
 	@${ECHO_CMD} "To use Hint type"
 	@${ECHO_CMD}
-	@${ECHO_CMD} "java -DLVMPATH=\$$LVMPATH -jar ${PREFIX}/share/java/helium/Hint.jar"
+	@${ECHO_CMD} "java -DLVMPATH=\$$LVMPATH -jar ${PREFIX}/share/java/helium/Hint-${PORTVERSION}.jar"
 	@${ECHO_CMD}
 .endif
 
