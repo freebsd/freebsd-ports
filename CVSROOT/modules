@@ -419,13 +419,11 @@ autobook	ports/devel/autobook
 autocd		ports/audio/autocd
 autoconf	ports/devel/autoconf
 autoconf213	ports/devel/autoconf213
-autoconf254	ports/devel/autoconf254
 autoconf257	ports/devel/autoconf257
 autodia		ports/devel/autodia
 autogen		ports/devel/autogen
 automake	ports/devel/automake
 automake14	ports/devel/automake14
-automake16	ports/devel/automake16
 automake17	ports/devel/automake17
 autools		ports/audio/autools
 autorespond	ports/mail/autorespond
