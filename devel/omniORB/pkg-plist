@@ -192,101 +192,101 @@ lib/libomnisslTP.so.4.0
 lib/libomnithread.so
 lib/libomnithread.so.3
 lib/libomnithread.so.3.0
-lib/%%PYTHON_VERSION%%/site-packages/_omniidlmodule.so
-lib/%%PYTHON_VERSION%%/site-packages/_omniidlmodule.so.1
-lib/%%PYTHON_VERSION%%/site-packages/_omniidlmodule.so.1.0
-lib/%%PYTHON_VERSION%%/site-packages/omniidl/__init__.py
-lib/%%PYTHON_VERSION%%/site-packages/omniidl/__init__.pyc
-lib/%%PYTHON_VERSION%%/site-packages/omniidl/idlast.py
-lib/%%PYTHON_VERSION%%/site-packages/omniidl/idlast.pyc
-lib/%%PYTHON_VERSION%%/site-packages/omniidl/idltype.py
-lib/%%PYTHON_VERSION%%/site-packages/omniidl/idltype.pyc
-lib/%%PYTHON_VERSION%%/site-packages/omniidl/idlutil.py
-lib/%%PYTHON_VERSION%%/site-packages/omniidl/idlutil.pyc
-lib/%%PYTHON_VERSION%%/site-packages/omniidl/idlvisitor.py
-lib/%%PYTHON_VERSION%%/site-packages/omniidl/idlvisitor.pyc
-lib/%%PYTHON_VERSION%%/site-packages/omniidl/main.py
-lib/%%PYTHON_VERSION%%/site-packages/omniidl/main.pyc
-lib/%%PYTHON_VERSION%%/site-packages/omniidl/output.py
-lib/%%PYTHON_VERSION%%/site-packages/omniidl/output.pyc
-lib/%%PYTHON_VERSION%%/site-packages/omniidl_be/__init__.py
-lib/%%PYTHON_VERSION%%/site-packages/omniidl_be/__init__.pyc
-lib/%%PYTHON_VERSION%%/site-packages/omniidl_be/cxx/__init__.py
-lib/%%PYTHON_VERSION%%/site-packages/omniidl_be/cxx/__init__.pyc
-lib/%%PYTHON_VERSION%%/site-packages/omniidl_be/cxx/ast.py
-lib/%%PYTHON_VERSION%%/site-packages/omniidl_be/cxx/ast.pyc
-lib/%%PYTHON_VERSION%%/site-packages/omniidl_be/cxx/call.py
-lib/%%PYTHON_VERSION%%/site-packages/omniidl_be/cxx/call.pyc
-lib/%%PYTHON_VERSION%%/site-packages/omniidl_be/cxx/config.py
-lib/%%PYTHON_VERSION%%/site-packages/omniidl_be/cxx/config.pyc
-lib/%%PYTHON_VERSION%%/site-packages/omniidl_be/cxx/cxx.py
-lib/%%PYTHON_VERSION%%/site-packages/omniidl_be/cxx/cxx.pyc
-lib/%%PYTHON_VERSION%%/site-packages/omniidl_be/cxx/descriptor.py
-lib/%%PYTHON_VERSION%%/site-packages/omniidl_be/cxx/descriptor.pyc
-lib/%%PYTHON_VERSION%%/site-packages/omniidl_be/cxx/dynskel/__init__.py
-lib/%%PYTHON_VERSION%%/site-packages/omniidl_be/cxx/dynskel/__init__.pyc
-lib/%%PYTHON_VERSION%%/site-packages/omniidl_be/cxx/dynskel/main.py
-lib/%%PYTHON_VERSION%%/site-packages/omniidl_be/cxx/dynskel/main.pyc
-lib/%%PYTHON_VERSION%%/site-packages/omniidl_be/cxx/dynskel/tcstring.py
-lib/%%PYTHON_VERSION%%/site-packages/omniidl_be/cxx/dynskel/tcstring.pyc
-lib/%%PYTHON_VERSION%%/site-packages/omniidl_be/cxx/dynskel/template.py
-lib/%%PYTHON_VERSION%%/site-packages/omniidl_be/cxx/dynskel/template.pyc
-lib/%%PYTHON_VERSION%%/site-packages/omniidl_be/cxx/dynskel/typecode.py
-lib/%%PYTHON_VERSION%%/site-packages/omniidl_be/cxx/dynskel/typecode.pyc
-lib/%%PYTHON_VERSION%%/site-packages/omniidl_be/cxx/header/__init__.py
-lib/%%PYTHON_VERSION%%/site-packages/omniidl_be/cxx/header/__init__.pyc
-lib/%%PYTHON_VERSION%%/site-packages/omniidl_be/cxx/header/defs.py
-lib/%%PYTHON_VERSION%%/site-packages/omniidl_be/cxx/header/defs.pyc
-lib/%%PYTHON_VERSION%%/site-packages/omniidl_be/cxx/header/forward.py
-lib/%%PYTHON_VERSION%%/site-packages/omniidl_be/cxx/header/forward.pyc
-lib/%%PYTHON_VERSION%%/site-packages/omniidl_be/cxx/header/marshal.py
-lib/%%PYTHON_VERSION%%/site-packages/omniidl_be/cxx/header/marshal.pyc
-lib/%%PYTHON_VERSION%%/site-packages/omniidl_be/cxx/header/opers.py
-lib/%%PYTHON_VERSION%%/site-packages/omniidl_be/cxx/header/opers.pyc
-lib/%%PYTHON_VERSION%%/site-packages/omniidl_be/cxx/header/poa.py
-lib/%%PYTHON_VERSION%%/site-packages/omniidl_be/cxx/header/poa.pyc
-lib/%%PYTHON_VERSION%%/site-packages/omniidl_be/cxx/header/tcstring.py
-lib/%%PYTHON_VERSION%%/site-packages/omniidl_be/cxx/header/tcstring.pyc
-lib/%%PYTHON_VERSION%%/site-packages/omniidl_be/cxx/header/template.py
-lib/%%PYTHON_VERSION%%/site-packages/omniidl_be/cxx/header/template.pyc
-lib/%%PYTHON_VERSION%%/site-packages/omniidl_be/cxx/header/tie.py
-lib/%%PYTHON_VERSION%%/site-packages/omniidl_be/cxx/header/tie.pyc
-lib/%%PYTHON_VERSION%%/site-packages/omniidl_be/cxx/id.py
-lib/%%PYTHON_VERSION%%/site-packages/omniidl_be/cxx/id.pyc
-lib/%%PYTHON_VERSION%%/site-packages/omniidl_be/cxx/iface.py
-lib/%%PYTHON_VERSION%%/site-packages/omniidl_be/cxx/iface.pyc
-lib/%%PYTHON_VERSION%%/site-packages/omniidl_be/cxx/impl/__init__.py
-lib/%%PYTHON_VERSION%%/site-packages/omniidl_be/cxx/impl/__init__.pyc
-lib/%%PYTHON_VERSION%%/site-packages/omniidl_be/cxx/impl/main.py
-lib/%%PYTHON_VERSION%%/site-packages/omniidl_be/cxx/impl/main.pyc
-lib/%%PYTHON_VERSION%%/site-packages/omniidl_be/cxx/impl/template.py
-lib/%%PYTHON_VERSION%%/site-packages/omniidl_be/cxx/impl/template.pyc
-lib/%%PYTHON_VERSION%%/site-packages/omniidl_be/cxx/output.py
-lib/%%PYTHON_VERSION%%/site-packages/omniidl_be/cxx/output.pyc
-lib/%%PYTHON_VERSION%%/site-packages/omniidl_be/cxx/skel/__init__.py
-lib/%%PYTHON_VERSION%%/site-packages/omniidl_be/cxx/skel/__init__.pyc
-lib/%%PYTHON_VERSION%%/site-packages/omniidl_be/cxx/skel/main.py
-lib/%%PYTHON_VERSION%%/site-packages/omniidl_be/cxx/skel/main.pyc
-lib/%%PYTHON_VERSION%%/site-packages/omniidl_be/cxx/skel/mangler.py
-lib/%%PYTHON_VERSION%%/site-packages/omniidl_be/cxx/skel/mangler.pyc
-lib/%%PYTHON_VERSION%%/site-packages/omniidl_be/cxx/skel/poa.py
-lib/%%PYTHON_VERSION%%/site-packages/omniidl_be/cxx/skel/poa.pyc
-lib/%%PYTHON_VERSION%%/site-packages/omniidl_be/cxx/skel/template.py
-lib/%%PYTHON_VERSION%%/site-packages/omniidl_be/cxx/skel/template.pyc
-lib/%%PYTHON_VERSION%%/site-packages/omniidl_be/cxx/skutil.py
-lib/%%PYTHON_VERSION%%/site-packages/omniidl_be/cxx/skutil.pyc
-lib/%%PYTHON_VERSION%%/site-packages/omniidl_be/cxx/support.py
-lib/%%PYTHON_VERSION%%/site-packages/omniidl_be/cxx/support.pyc
-lib/%%PYTHON_VERSION%%/site-packages/omniidl_be/cxx/types.py
-lib/%%PYTHON_VERSION%%/site-packages/omniidl_be/cxx/types.pyc
-lib/%%PYTHON_VERSION%%/site-packages/omniidl_be/cxx/util.py
-lib/%%PYTHON_VERSION%%/site-packages/omniidl_be/cxx/util.pyc
-lib/%%PYTHON_VERSION%%/site-packages/omniidl_be/dump.py
-lib/%%PYTHON_VERSION%%/site-packages/omniidl_be/dump.pyc
-lib/%%PYTHON_VERSION%%/site-packages/omniidl_be/example.py
-lib/%%PYTHON_VERSION%%/site-packages/omniidl_be/example.pyc
-lib/%%PYTHON_VERSION%%/site-packages/omniidl_be/interactive.py
-lib/%%PYTHON_VERSION%%/site-packages/omniidl_be/interactive.pyc
+%%PYTHON_SITELIBDIR%%/_omniidlmodule.so
+%%PYTHON_SITELIBDIR%%/_omniidlmodule.so.1
+%%PYTHON_SITELIBDIR%%/_omniidlmodule.so.1.0
+%%PYTHON_SITELIBDIR%%/omniidl/__init__.py
+%%PYTHON_SITELIBDIR%%/omniidl/__init__.pyc
+%%PYTHON_SITELIBDIR%%/omniidl/idlast.py
+%%PYTHON_SITELIBDIR%%/omniidl/idlast.pyc
+%%PYTHON_SITELIBDIR%%/omniidl/idltype.py
+%%PYTHON_SITELIBDIR%%/omniidl/idltype.pyc
+%%PYTHON_SITELIBDIR%%/omniidl/idlutil.py
+%%PYTHON_SITELIBDIR%%/omniidl/idlutil.pyc
+%%PYTHON_SITELIBDIR%%/omniidl/idlvisitor.py
+%%PYTHON_SITELIBDIR%%/omniidl/idlvisitor.pyc
+%%PYTHON_SITELIBDIR%%/omniidl/main.py
+%%PYTHON_SITELIBDIR%%/omniidl/main.pyc
+%%PYTHON_SITELIBDIR%%/omniidl/output.py
+%%PYTHON_SITELIBDIR%%/omniidl/output.pyc
+%%PYTHON_SITELIBDIR%%/omniidl_be/__init__.py
+%%PYTHON_SITELIBDIR%%/omniidl_be/__init__.pyc
+%%PYTHON_SITELIBDIR%%/omniidl_be/cxx/__init__.py
+%%PYTHON_SITELIBDIR%%/omniidl_be/cxx/__init__.pyc
+%%PYTHON_SITELIBDIR%%/omniidl_be/cxx/ast.py
+%%PYTHON_SITELIBDIR%%/omniidl_be/cxx/ast.pyc
+%%PYTHON_SITELIBDIR%%/omniidl_be/cxx/call.py
+%%PYTHON_SITELIBDIR%%/omniidl_be/cxx/call.pyc
+%%PYTHON_SITELIBDIR%%/omniidl_be/cxx/config.py
+%%PYTHON_SITELIBDIR%%/omniidl_be/cxx/config.pyc
+%%PYTHON_SITELIBDIR%%/omniidl_be/cxx/cxx.py
+%%PYTHON_SITELIBDIR%%/omniidl_be/cxx/cxx.pyc
+%%PYTHON_SITELIBDIR%%/omniidl_be/cxx/descriptor.py
+%%PYTHON_SITELIBDIR%%/omniidl_be/cxx/descriptor.pyc
+%%PYTHON_SITELIBDIR%%/omniidl_be/cxx/dynskel/__init__.py
+%%PYTHON_SITELIBDIR%%/omniidl_be/cxx/dynskel/__init__.pyc
+%%PYTHON_SITELIBDIR%%/omniidl_be/cxx/dynskel/main.py
+%%PYTHON_SITELIBDIR%%/omniidl_be/cxx/dynskel/main.pyc
+%%PYTHON_SITELIBDIR%%/omniidl_be/cxx/dynskel/tcstring.py
+%%PYTHON_SITELIBDIR%%/omniidl_be/cxx/dynskel/tcstring.pyc
+%%PYTHON_SITELIBDIR%%/omniidl_be/cxx/dynskel/template.py
+%%PYTHON_SITELIBDIR%%/omniidl_be/cxx/dynskel/template.pyc
+%%PYTHON_SITELIBDIR%%/omniidl_be/cxx/dynskel/typecode.py
+%%PYTHON_SITELIBDIR%%/omniidl_be/cxx/dynskel/typecode.pyc
+%%PYTHON_SITELIBDIR%%/omniidl_be/cxx/header/__init__.py
+%%PYTHON_SITELIBDIR%%/omniidl_be/cxx/header/__init__.pyc
+%%PYTHON_SITELIBDIR%%/omniidl_be/cxx/header/defs.py
+%%PYTHON_SITELIBDIR%%/omniidl_be/cxx/header/defs.pyc
+%%PYTHON_SITELIBDIR%%/omniidl_be/cxx/header/forward.py
+%%PYTHON_SITELIBDIR%%/omniidl_be/cxx/header/forward.pyc
+%%PYTHON_SITELIBDIR%%/omniidl_be/cxx/header/marshal.py
+%%PYTHON_SITELIBDIR%%/omniidl_be/cxx/header/marshal.pyc
+%%PYTHON_SITELIBDIR%%/omniidl_be/cxx/header/opers.py
+%%PYTHON_SITELIBDIR%%/omniidl_be/cxx/header/opers.pyc
+%%PYTHON_SITELIBDIR%%/omniidl_be/cxx/header/poa.py
+%%PYTHON_SITELIBDIR%%/omniidl_be/cxx/header/poa.pyc
+%%PYTHON_SITELIBDIR%%/omniidl_be/cxx/header/tcstring.py
+%%PYTHON_SITELIBDIR%%/omniidl_be/cxx/header/tcstring.pyc
+%%PYTHON_SITELIBDIR%%/omniidl_be/cxx/header/template.py
+%%PYTHON_SITELIBDIR%%/omniidl_be/cxx/header/template.pyc
+%%PYTHON_SITELIBDIR%%/omniidl_be/cxx/header/tie.py
+%%PYTHON_SITELIBDIR%%/omniidl_be/cxx/header/tie.pyc
+%%PYTHON_SITELIBDIR%%/omniidl_be/cxx/id.py
+%%PYTHON_SITELIBDIR%%/omniidl_be/cxx/id.pyc
+%%PYTHON_SITELIBDIR%%/omniidl_be/cxx/iface.py
+%%PYTHON_SITELIBDIR%%/omniidl_be/cxx/iface.pyc
+%%PYTHON_SITELIBDIR%%/omniidl_be/cxx/impl/__init__.py
+%%PYTHON_SITELIBDIR%%/omniidl_be/cxx/impl/__init__.pyc
+%%PYTHON_SITELIBDIR%%/omniidl_be/cxx/impl/main.py
+%%PYTHON_SITELIBDIR%%/omniidl_be/cxx/impl/main.pyc
+%%PYTHON_SITELIBDIR%%/omniidl_be/cxx/impl/template.py
+%%PYTHON_SITELIBDIR%%/omniidl_be/cxx/impl/template.pyc
+%%PYTHON_SITELIBDIR%%/omniidl_be/cxx/output.py
+%%PYTHON_SITELIBDIR%%/omniidl_be/cxx/output.pyc
+%%PYTHON_SITELIBDIR%%/omniidl_be/cxx/skel/__init__.py
+%%PYTHON_SITELIBDIR%%/omniidl_be/cxx/skel/__init__.pyc
+%%PYTHON_SITELIBDIR%%/omniidl_be/cxx/skel/main.py
+%%PYTHON_SITELIBDIR%%/omniidl_be/cxx/skel/main.pyc
+%%PYTHON_SITELIBDIR%%/omniidl_be/cxx/skel/mangler.py
+%%PYTHON_SITELIBDIR%%/omniidl_be/cxx/skel/mangler.pyc
+%%PYTHON_SITELIBDIR%%/omniidl_be/cxx/skel/poa.py
+%%PYTHON_SITELIBDIR%%/omniidl_be/cxx/skel/poa.pyc
+%%PYTHON_SITELIBDIR%%/omniidl_be/cxx/skel/template.py
+%%PYTHON_SITELIBDIR%%/omniidl_be/cxx/skel/template.pyc
+%%PYTHON_SITELIBDIR%%/omniidl_be/cxx/skutil.py
+%%PYTHON_SITELIBDIR%%/omniidl_be/cxx/skutil.pyc
+%%PYTHON_SITELIBDIR%%/omniidl_be/cxx/support.py
+%%PYTHON_SITELIBDIR%%/omniidl_be/cxx/support.pyc
+%%PYTHON_SITELIBDIR%%/omniidl_be/cxx/types.py
+%%PYTHON_SITELIBDIR%%/omniidl_be/cxx/types.pyc
+%%PYTHON_SITELIBDIR%%/omniidl_be/cxx/util.py
+%%PYTHON_SITELIBDIR%%/omniidl_be/cxx/util.pyc
+%%PYTHON_SITELIBDIR%%/omniidl_be/dump.py
+%%PYTHON_SITELIBDIR%%/omniidl_be/dump.pyc
+%%PYTHON_SITELIBDIR%%/omniidl_be/example.py
+%%PYTHON_SITELIBDIR%%/omniidl_be/example.pyc
+%%PYTHON_SITELIBDIR%%/omniidl_be/interactive.py
+%%PYTHON_SITELIBDIR%%/omniidl_be/interactive.pyc
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/README.FIRST
 %%PORTDOCS%%%%DOCSDIR%%/README.unix
@@ -401,13 +401,13 @@ share/omniORB/idl/poa_include.idl
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/tex
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/omniORB
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm lib/%%PYTHON_VERSION%%/site-packages/omniidl_be/cxx/skel
-@dirrm lib/%%PYTHON_VERSION%%/site-packages/omniidl_be/cxx/impl
-@dirrm lib/%%PYTHON_VERSION%%/site-packages/omniidl_be/cxx/header
-@dirrm lib/%%PYTHON_VERSION%%/site-packages/omniidl_be/cxx/dynskel
-@dirrm lib/%%PYTHON_VERSION%%/site-packages/omniidl_be/cxx
-@dirrm lib/%%PYTHON_VERSION%%/site-packages/omniidl_be
-@dirrm lib/%%PYTHON_VERSION%%/site-packages/omniidl
+@dirrm %%PYTHON_SITELIBDIR%%/omniidl_be/cxx/skel
+@dirrm %%PYTHON_SITELIBDIR%%/omniidl_be/cxx/impl
+@dirrm %%PYTHON_SITELIBDIR%%/omniidl_be/cxx/header
+@dirrm %%PYTHON_SITELIBDIR%%/omniidl_be/cxx/dynskel
+@dirrm %%PYTHON_SITELIBDIR%%/omniidl_be/cxx
+@dirrm %%PYTHON_SITELIBDIR%%/omniidl_be
+@dirrm %%PYTHON_SITELIBDIR%%/omniidl
 @dirrm include/omnithread
 @dirrm include/omniORB4/internal
 @dirrm include/omniORB4
