@@ -1,0 +1,101 @@
+bin/giram
+bin/povfront
+etc/giram/0.3/giramrc
+etc/giram/0.3/giramrc_user
+etc/giram/0.3/gtkrc
+etc/giram/0.3/gtkrc_user
+etc/giram/0.3/ps-menurc
+lib/giram/0.3/color/color1.gcf
+lib/giram/0.3/finish/finish1
+lib/giram/0.3/giram_logo.ppm
+lib/giram/0.3/giram_splash.ppm
+lib/giram/0.3/modules/librender_flat.la
+lib/giram/0.3/modules/librender_flat.so
+lib/giram/0.3/modules/librender_gouraud.la
+lib/giram/0.3/modules/librender_gouraud.so
+lib/giram/0.3/modules/librender_hiddenfaces.la
+lib/giram/0.3/modules/librender_hiddenfaces.so
+lib/giram/0.3/modules/librender_povray.la
+lib/giram/0.3/modules/librender_povray.so
+lib/giram/0.3/modules/librender_raytracing.la
+lib/giram/0.3/modules/librender_raytracing.so
+lib/giram/0.3/modules/librender_wireframe.la
+lib/giram/0.3/modules/librender_wireframe.so
+lib/giram/0.3/normal/normal1
+lib/giram/0.3/pigment/pigment1
+lib/giram/0.3/shape/shape1
+lib/giram/0.3/texture/texture1
+lib/giram/0.3/tips/giram_conseils.fr.txt
+lib/giram/0.3/tips/giram_tips.txt
+lib/giram/0.3/user_install
+libexec/giram/plug-ins/Box
+libexec/giram/plug-ins/Rotate
+libexec/giram/plug-ins/Spheres
+%%DOCSDIR%%/Tutorial
+%%PORTDOCS%%%%EXAMPLESDIR%%/Cone.pov
+%%PORTDOCS%%%%EXAMPLESDIR%%/Disc.pov
+%%PORTDOCS%%%%EXAMPLESDIR%%/Giram.pov
+%%PORTDOCS%%%%EXAMPLESDIR%%/IntSphereBox1.pov
+%%PORTDOCS%%%%EXAMPLESDIR%%/IntSphereBox2.pov
+%%PORTDOCS%%%%EXAMPLESDIR%%/IntSphereBox3.pov
+%%PORTDOCS%%%%EXAMPLESDIR%%/IntSpherePlane1.pov
+%%PORTDOCS%%%%EXAMPLESDIR%%/IntSpherePlane2.pov
+%%PORTDOCS%%%%EXAMPLESDIR%%/IntSpherePlane3.pov
+%%PORTDOCS%%%%EXAMPLESDIR%%/Triangle.pov
+%%PORTDOCS%%%%EXAMPLESDIR%%/basicvue.pov
+%%PORTDOCS%%%%EXAMPLESDIR%%/basicvue2.pov
+%%PORTDOCS%%%%EXAMPLESDIR%%/basicvue3.pov
+%%PORTDOCS%%%%EXAMPLESDIR%%/basicvue4.pov
+%%PORTDOCS%%%%EXAMPLESDIR%%/box.pov
+%%PORTDOCS%%%%EXAMPLESDIR%%/checker.pov
+%%PORTDOCS%%%%EXAMPLESDIR%%/lollipop.pov
+%%PORTDOCS%%%%EXAMPLESDIR%%/superel1.pov
+%%PORTDOCS%%%%EXAMPLESDIR%%/superel2.pov
+%%PORTDOCS%%%%EXAMPLESDIR%%/superel3.pov
+%%PORTDOCS%%%%EXAMPLESDIR%%/test.pov
+%%PORTDOCS%%%%EXAMPLESDIR%%/torus.pov
+share/locale/ca/LC_MESSAGES/giram.mo
+share/locale/cs/LC_MESSAGES/giram.mo
+share/locale/da/LC_MESSAGES/giram.mo
+share/locale/de/LC_MESSAGES/giram.mo
+share/locale/el/LC_MESSAGES/giram.mo
+share/locale/en_GB/LC_MESSAGES/giram.mo
+share/locale/es/LC_MESSAGES/giram.mo
+share/locale/fi/LC_MESSAGES/giram.mo
+share/locale/fr/LC_MESSAGES/giram.mo
+share/locale/ga/LC_MESSAGES/giram.mo
+share/locale/gl/LC_MESSAGES/giram.mo
+share/locale/hr/LC_MESSAGES/giram.mo
+share/locale/hu/LC_MESSAGES/giram.mo
+share/locale/it/LC_MESSAGES/giram.mo
+share/locale/ja/LC_MESSAGES/giram.mo
+share/locale/ko/LC_MESSAGES/giram.mo
+share/locale/nl/LC_MESSAGES/giram.mo
+share/locale/no/LC_MESSAGES/giram.mo
+share/locale/pl/LC_MESSAGES/giram.mo
+share/locale/pt_BR/LC_MESSAGES/giram.mo
+share/locale/ro/LC_MESSAGES/giram.mo
+share/locale/ru/LC_MESSAGES/giram.mo
+share/locale/sk/LC_MESSAGES/giram.mo
+share/locale/sv/LC_MESSAGES/giram.mo
+share/locale/tr/LC_MESSAGES/giram.mo
+share/locale/uk/LC_MESSAGES/giram.mo
+share/locale/zh_CN/LC_MESSAGES/giram.mo
+share/locale/zh_TW/LC_MESSAGES/giram.mo
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+@dirrm %%DOCSDIR%%
+@dirrm libexec/giram/plug-ins
+@dirrm libexec/giram
+@dirrm lib/giram/0.3/tips
+@dirrm lib/giram/0.3/texture
+@dirrm lib/giram/0.3/shape
+@dirrm lib/giram/0.3/pigment
+@dirrm lib/giram/0.3/normal
+@dirrm lib/giram/0.3/modules
+@dirrm lib/giram/0.3/finish
+@dirrm lib/giram/0.3/color_map
+@dirrm lib/giram/0.3/color
+@dirrm lib/giram/0.3
+@dirrm lib/giram
+@dirrm etc/giram/0.3
+@dirrm etc/giram
