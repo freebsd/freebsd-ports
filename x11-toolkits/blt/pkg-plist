@@ -1,18 +1,32 @@
+bin/bltsh
+bin/bltsh24
 bin/bltwish
 bin/bltwish24
 include/blt.h
+include/bltChain.h
+include/bltTree.h
+include/bltVector.h
 lib/libBLT.a
 lib/libBLT24.a
 lib/libBLT24.so
 lib/libBLT24.so.2
+lib/libBLTlite.a
+lib/libBLTlite24.a
+lib/libBLTlite24.so
+lib/libBLTlite24.so.2
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %D/lib
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
+lib/blt2.4/NEWS
+lib/blt2.4/PROBLEMS
+lib/blt2.4/README
 lib/blt2.4/bltCanvEps.pro
 lib/blt2.4/bltDnd.tcl
 lib/blt2.4/bltDragdrop.tcl
 lib/blt2.4/bltGraph.pro
 lib/blt2.4/bltGraph.tcl
 lib/blt2.4/bltHierbox.tcl
+lib/blt2.4/bltHiertable.tcl
+lib/blt2.4/bltTabnotebook.tcl
 lib/blt2.4/bltTabset.tcl
 lib/blt2.4/dd_protocols/dd-color.tcl
 lib/blt2.4/dd_protocols/dd-file.tcl
@@ -74,6 +88,8 @@ lib/blt2.4/demos/bitmaps/hobbes_mask.xbm
 lib/blt2.4/demos/bitmaps/sharky.xbm
 lib/blt2.4/demos/bitmaps/xbob.xbm
 lib/blt2.4/demos/busy1.tcl
+lib/blt2.4/demos/busy2.tcl
+lib/blt2.4/demos/dnd1.tcl
 lib/blt2.4/demos/dragdrop1.tcl
 lib/blt2.4/demos/dragdrop2.tcl
 lib/blt2.4/demos/eps.tcl
@@ -88,6 +104,8 @@ lib/blt2.4/demos/hierbox1.tcl
 lib/blt2.4/demos/hierbox2.tcl
 lib/blt2.4/demos/hierbox3.tcl
 lib/blt2.4/demos/hierbox4.tcl
+lib/blt2.4/demos/hiertable1.tcl
+lib/blt2.4/demos/hiertable2.tcl
 lib/blt2.4/demos/htext.txt
 lib/blt2.4/demos/htext1.tcl
 lib/blt2.4/demos/images/blt98.gif
@@ -135,11 +153,16 @@ lib/blt2.4/demos/scripts/stipples.tcl
 lib/blt2.4/demos/scripts/xcolors.tcl
 lib/blt2.4/demos/spline.tcl
 lib/blt2.4/demos/stripchart1.tcl
+lib/blt2.4/demos/tabnotebook1.tcl
+lib/blt2.4/demos/tabnotebook2.tcl
+lib/blt2.4/demos/tabnotebook3.tcl
 lib/blt2.4/demos/tabset1.tcl
 lib/blt2.4/demos/tabset2.tcl
 lib/blt2.4/demos/tabset3.tcl
 lib/blt2.4/demos/tabset4.tcl
 lib/blt2.4/demos/winop1.tcl
+lib/blt2.4/htresize.xbm
+lib/blt2.4/htresize_m.xbm
 lib/blt2.4/pkgIndex.tcl
 lib/blt2.4/tclIndex
 @dirrm lib/blt2.4/demos/scripts

@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	blt
-PORTVERSION= 	2.4m
+PORTVERSION= 	2.4s
 CATEGORIES=	x11-toolkits tk82
-MASTER_SITES=	ftp://ftp.tcltk.com/pub/blt/ \
+MASTER_SITES=	ftp://ftp.tcltk.com/aa004735/pub/blt/ \
 		ftp://ftp.csl.sony.co.jp/pub/kjc/ttt-libs/
 DISTNAME=	BLT${PORTVERSION}
 
@@ -16,17 +16,19 @@ MAINTAINER=	kjc@csl.sony.co.jp
 
 LIB_DEPENDS=	tk82.1:${PORTSDIR}/x11-toolkits/tk82
 
-WRKSRC=		${WRKDIR}/blt2.4m
+WRKSRC=		${WRKDIR}/blt2.4s
 GNU_CONFIGURE=	yes
 MANN=		BLT.n barchart.n beep.n bgexec.n bitmap.n \
 		bltdebug.n busy.n cutbuffer.n dragdrop.n eps.n \
-		graph.n hierbox.n htext.n spline.n stripchart.n \
-		table.n tabset.n tile.n vector.n watch.n winop.n
+		graph.n hierbox.n hiertable.n htext.n spline.n \
+		stripchart.n table.n tabset.n tile.n vector.n \
+		watch.n winop.n
 
 .include <bsd.port.pre.mk>
 
 post-install:
 	${LN} -sf libBLT24.so.2 ${PREFIX}/lib/libBLT24.so
+	${LN} -sf libBLTlite24.so.2 ${PREFIX}/lib/libBLTlite24.so
 	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.post.mk>
