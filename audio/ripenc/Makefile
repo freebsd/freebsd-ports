@@ -10,7 +10,7 @@ PORTVERSION=	1.1
 CATEGORIES=	audio
 MASTER_SITES=	http://home.kc.rr.com/ripenc/
 
-MAINTAINER=	arved@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Script that automates the ripping, encoding, and naming of CD's
 
 WRKSRC=		${WRKDIR}/ripenc
