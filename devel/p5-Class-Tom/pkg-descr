@@ -1,0 +1,7 @@
+Class::Tom is a perl module that allows you to transport objects from
+one system to another without requiring that the packages the object
+relies on actually exist on the other machine.
+
+Author: James A. Duncan <j@mesduncan.co.uk>
+
+--will
