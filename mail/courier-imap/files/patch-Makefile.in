@@ -1,6 +1,6 @@
---- Makefile.in.orig	Tue Jul 20 01:54:19 2004
-+++ Makefile.in	Tue Jul 20 19:31:37 2004
-@@ -218,7 +218,7 @@
+--- Makefile.in.orig	Thu Dec  9 03:07:01 2004
++++ Makefile.in	Sun Jan  2 21:17:35 2005
+@@ -248,7 +248,7 @@
  	COPYING.GPL NEWS.html $(TEMPLFILES)\
  sysconftool
  sysconf_DATA = imapd.dist imapd-ssl.dist pop3d.dist pop3d-ssl.dist \
@@ -9,7 +9,7 @@
  
  libexec_SCRIPTS = imapd.rc imapd-ssl.rc pop3d.rc pop3d-ssl.rc
  HTML2TXT = `which lynx 2>/dev/null && echo "lynx -dump -nolist" && exit; echo "links -dump"`
-@@ -433,8 +433,8 @@
+@@ -506,8 +506,8 @@
  	  inst=`echo $$i | sed -e 's/\\.[0-9a-z]*$$//'`; \
  	  inst=`echo $$inst | sed -e 's/^.*\///'`; \
  	  inst=`echo $$inst | sed '$(transform)'`.$$ext; \
@@ -20,7 +20,7 @@
  	done
  uninstall-man1:
  	@$(NORMAL_UNINSTALL)
-@@ -478,8 +478,8 @@
+@@ -551,8 +551,8 @@
  	  inst=`echo $$i | sed -e 's/\\.[0-9a-z]*$$//'`; \
  	  inst=`echo $$inst | sed -e 's/^.*\///'`; \
  	  inst=`echo $$inst | sed '$(transform)'`.$$ext; \
@@ -31,11 +31,3 @@
  	done
  uninstall-man8:
  	@$(NORMAL_UNINSTALL)
-@@ -1055,6 +1055,7 @@
- 
- install-data-local: install-man
- 	for f in `cat authlib/modulelist ; . authlib/authdaemonrc ; echo $$authmodulelist ` ; do \
-+		continue ; \
- 		test "$$f" = "authpam" || continue ; \
- 		test -d $(DESTDIR)/etc/pam.d || continue ; \
- 		test -w $(DESTDIR)/etc/pam.d || continue ; \

@@ -1,4 +1,3 @@
-bin/authtest
 %%OPENSSLFLAG%%bin/couriertls
 bin/deliverquota
 bin/imapd
@@ -6,10 +5,6 @@ bin/maildiracl
 bin/maildirkw
 bin/maildirmake
 bin/pop3d
-%%AUTHDFLAG%%%%CONFDIR%%/authdaemonrc.dist
-%%LDAPFLAG%%%%CONFDIR%%/authldaprc.dist
-%%MYSQLFLAG%%%%CONFDIR%%/authmysqlrc.dist
-%%PGSQLFLAG%%%%CONFDIR%%/authpgsqlrc.dist
 %%CONFDIR%%/imapd-ssl.dist
 %%CONFDIR%%/imapd.cnf.dist
 %%CONFDIR%%/imapd.dist
@@ -21,51 +16,33 @@ bin/pop3d
 %%RCDIR%%/courier-imap-imapd-ssl.sh
 %%RCDIR%%/courier-imap-pop3d.sh
 %%RCDIR%%/courier-imap-pop3d-ssl.sh
-%%LIBEXECDIR%%/authlib/authcustom
-%%AUTHDFLAG%%%%LIBEXECDIR%%/authlib/authdaemon
-%%AUTHDFLAG%%%%LIBEXECDIR%%/authlib/authdaemond
-%%LDAPFLAG%%%%LIBEXECDIR%%/authlib/authdaemond.ldap
-%%LDAPFLAG%%%%LIBEXECDIR%%/authlib/authldap
-%%MYSQLFLAG%%%%LIBEXECDIR%%/authlib/authdaemond.mysql
-%%MYSQLFLAG%%%%LIBEXECDIR%%/authlib/authmysql
-%%PGSQLFLAG%%%%LIBEXECDIR%%/authlib/authdaemond.pgsql
-%%AUTHDFLAG%%%%LIBEXECDIR%%/authlib/authdaemond.plain
-%%PAMFLAG%%%%LIBEXECDIR%%/authlib/authpam
-%%PWDFLAG%%%%LIBEXECDIR%%/authlib/authpwd
-%%LIBEXECDIR%%/authlib/authuserdb
-%%VPOPMAILFLAG%%%%LIBEXECDIR%%/authlib/authvchkpw
 %%LIBEXECDIR%%/couriertcpd
 %%LIBEXECDIR%%/imapd-ssl.rc
 %%LIBEXECDIR%%/imapd.rc
 %%LIBEXECDIR%%/makedatprog
 %%LIBEXECDIR%%/pop3d-ssl.rc
 %%LIBEXECDIR%%/pop3d.rc
-sbin/authenumerate
-sbin/courierlogger
 sbin/imaplogin
-sbin/makeuserdb
 sbin/mkimapdcert
 sbin/mkpop3dcert
 sbin/pop3login
-sbin/pw2userdb
 sbin/sharedindexinstall
 sbin/sharedindexsplit
-sbin/userdb
-sbin/userdbpw
-sbin/vchkpw2userdb
-share/courier-imap/makeuserdb
 share/courier-imap/mkimapdcert
 share/courier-imap/mkpop3dcert
-share/courier-imap/pw2userdb
-share/courier-imap/userdb
-share/courier-imap/vchkpw2userdb
-%%DOCSDIR%%/AUTHORS
-%%DOCSDIR%%/ChangeLog
-%%DOCSDIR%%/INSTALL
-%%DOCSDIR%%/README
-%%AUTHDFLAG%%@unexec rmdir %D/var/authdaemon 2>/dev/null || true
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.proxy
+%%PORTDOCS%%%%DOCSDIR%%/README.imapkeywords.html
+%%PORTDOCS%%%%DOCSDIR%%/README.maildirfilter.html
+%%PORTDOCS%%%%DOCSDIR%%/README.maildirquota.txt
+%%PORTDOCS%%%%DOCSDIR%%/README.sharedfolders.txt
+%%PORTDOCS%%%%DOCSDIR%%/README.couriertls
 @unexec rmdir %D/var 2>/dev/null || true
-@dirrm %%DOCSDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm share/courier-imap
 @unexec rmdir %D/%%LIBEXECDIR%%/authlib 2>/dev/null || true
 @dirrm %%LIBEXECDIR%%
