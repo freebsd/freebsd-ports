@@ -1,0 +1,12 @@
+--- config.h.orig	Wed Jul 26 14:50:21 2000
++++ config.h	Wed Jul 26 14:50:25 2000
+@@ -7,6 +7,9 @@
+ 
+ #include <sys/stat.h>
+ #include <netdb.h>
++#include <sys/types.h>
++#include <sys/socket.h>
++#include <netinet/in.h>
+ #include <arpa/inet.h>
+ 
+ #include <libgnomeprint/gnome-print.h>

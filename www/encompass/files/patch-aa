@@ -1,0 +1,43 @@
+--- Makefile.orig	Mon Jul 24 01:21:31 2000
++++ Makefile	Wed Jul 26 15:39:07 2000
+@@ -1,11 +1,11 @@
+-CC = gcc
++#CC = gcc
+ RM = rm -rf
+-CFLAGS = -g `gnome-config --cflags gtk gnome gnomeui gtkhtml glibwww oaf` \
+-  `libwww-config --cflags`
++CFLAGS += `$(X11BASE)/bin/gnome-config --cflags gtk gnome gnomeui gtkhtml glibwww oaf` \
++  `$(LOCALBASE)/bin/libwww-config --cflags`
+ LDFLAGS = 
+-LIBS = `gnome-config --libs gtk gnome gnomeui gtkhtml glibwww oaf` \
+-  `libwww-config --libs` `gconf-config --libs gconf`
+-prefix = `gnome-config --prefix`
++LIBS = `$(X11BASE)/bin/gnome-config --libs gtk gnome gnomeui gtkhtml glibwww oaf` \
++  `$(LOCALBASE)/bin/libwww-config --libs` `$(X11BASE)/bin/gconf-config --libs gconf`
++prefix = $(PREFIX)
+ INSTALL = $(prefix)/bin/install -c
+ exec_prefix = ${prefix}
+ bindir = $(exec_prefix)/bin
+@@ -18,13 +18,15 @@
+ all: encompass
+ 
+ install: all
+-	strip encompass
+-	$(INSTALL) encompass $(bindir)/encompass
+-	cp -rf ../encompass.desktop $(prefix)/share/gnome/apps/Internet/encompass.desktop
+-	cp -rf ../pixmaps/ $(prefix)/share/
+-	cp -rf ../help/ $(prefix)/share/gnome/
+-	cp -rf ../sounds/ $(prefix)/share/
+-	cp -rf ../encompass.soundlist /etc/sound/events/
++	$(BSD_INSTALL_PROGRAM) encompass $(bindir)/encompass
++	$(BSD_INSTALL_DATA) ../encompass.desktop $(prefix)/share/gnome/apps/Internet/encompass.desktop
++	$(MKDIR) $(prefix)/share/gnome/pixmaps/encompass
++	$(BSD_INSTALL_DATA) ../pixmaps/encompass/* $(prefix)/share/gnome/pixmaps/encompass/
++	$(MKDIR) $(prefix)/share/gnome/help/encompass/C
++	$(BSD_INSTALL_DATA) ../help/encompass/C/* $(prefix)/share/gnome/help/encompass/C/
++	$(MKDIR) $(prefix)/share/gnome/sounds/encompass
++	$(BSD_INSTALL_DATA) ../sounds/encompass/* $(prefix)/share/gnome/sounds/encompass/
++	$(BSD_INSTALL_DATA) ../encompass.soundlist $(prefix)/etc/sound/events/
+ 
+ uninstall:
+ 	$(RM) $(bindir)/encompass \
