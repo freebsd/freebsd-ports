@@ -815,3 +815,5 @@ www/icons/world2.png
 @dirrm lib/apache2
 @dirrm include/apache2
 @dirrm etc/apache2
+@exec [ -d %%DESTDIR%%/var/log ] || mkdir -p %%DESTDIR%%/var/log
+@exec [ -d %%DESTDIR%%/var/run ] || mkdir -p %%DESTDIR%%/var/run
