@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.93 1997/02/18 08:36:56 tg Exp $
+# $Id: Makefile,v 1.94 1997/03/06 02:20:23 asami Exp $
 #
 
     SUBDIR += archie
@@ -13,6 +13,7 @@
     SUBDIR += dgd-lpmud
     SUBDIR += dgd-net
     SUBDIR += dip
+    SUBDIR += fping
     SUBDIR += freewais-sf
     SUBDIR += fspclient
     SUBDIR += ftpsearch
