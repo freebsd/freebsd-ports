@@ -9,7 +9,7 @@ PORTNAME=	wm2
 PORTVERSION=	4.0
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://www.all-day-breakfast.com/wm2/
-DISTNAME=	${PORTNAME}-4
+DISTNAME=	${PORTNAME}-${PORTVERSION:R}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A very simple window manager for X
@@ -20,8 +20,8 @@ ALL_TARGET=	depend wm2
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/wm2 ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/wm2
-	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/wm2
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
