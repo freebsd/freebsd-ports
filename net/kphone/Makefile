@@ -6,6 +6,7 @@
 
 PORTNAME=	kphone
 PORTVERSION=	4.0.3
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.wirlab.net/kphone/
 
