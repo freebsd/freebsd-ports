@@ -1,0 +1,11 @@
+--- Python/thread_pthread.h.orig	Tue Jun  3 00:25:45 1997
++++ Python/thread_pthread.h	Tue Jan  6 19:20:08 1998
+@@ -66,7 +66,7 @@
+ #    define PY_PTHREAD_D7
+ #  endif
+ 
+-#elif defined(__DGUX)
++#elif defined(__DGUX) || defined(__FreeBSD__)
+ #  define PY_PTHREAD_D6
+ 
+ #else /* Default case */
