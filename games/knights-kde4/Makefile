@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	knights
-PORTVERSION=	0.5.6
-PORTREVISION=	2
+PORTVERSION=	0.6
 CATEGORIES=	games kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	knights
@@ -17,12 +16,13 @@ COMMENT=	A KDE chess interface (gnuchess/crafty)
 
 RUN_DEPENDS=	crafty:${PORTSDIR}/games/crafty
 
-USE_KDELIBS_VER=3
-GNU_CONFIGURE=	yes
+USE_KDELIBS_VER=	3
+USE_REINPLACE=	yes
 USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	XML2POT=${TRUE} PO2XML=${TRUE}
 
-CONFIGURE_TARGET=
-CONFIGURE_ARGS+=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ENV=		XML2POT=${TRUE} PO2XML=${TRUE}
+post-patch:
+	@${REINPLACE_CMD} -e 's|-pthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
