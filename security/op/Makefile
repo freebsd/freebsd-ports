@@ -19,6 +19,7 @@ MAINTAINER=	cyrille.lefevre@laposte.net
 # Global variables
 #
 
+USE_REINPLACE=	yes
 BINMODE=	4555
 MAKE_ARGS=	BASE="${PREFIX}" \
 		OPTS='-Dbsdi -DOP_ACCESS=\"${CONF_DIR}/${CONF_FILE}\"' \
@@ -57,13 +58,13 @@ checkout-files:
 post-patch: patch-makefile patch-conf-file
 
 patch-makefile:
-	@${PERL} -pi.fbsd \
-		-e 's|(install)|$$1 -c| if (!/:/);s|CFLAGS=|CFLAGS+=|' \
+	@${REINPLACE_CMD} \
+		-e '/:/!s|\(install\)|\1 -c|;s|CFLAGS=|CFLAGS+=|' \
 		${WRKSRC}/Makefile
 
 patch-conf-file:
-	@${PERL} -pi.fbsd \
-		-e 's|^|#| if (!/^#|DEFAULT|MAGIC/);s|/usr/ucb:||' \
+	@${REINPLACE_CMD} -E \
+		-e '/^#|DEFAULT|MAGIC/!s|^|#|;s|/usr/ucb:||' \
 		${WRKSRC}/${CONF_FILE}
 
 # Post-install

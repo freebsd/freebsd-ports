@@ -18,6 +18,7 @@ MAINTAINER=	cyrille.lefevre@laposte.net
 
 STRIP=		#none
 
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 ALL_TARGET=	all info
@@ -61,7 +62,7 @@ remove-info-files:
 post-patch: patch-makefiles
 
 patch-makefiles:
-	@${PERL} -pi.fbsd -e 's|makeinfo|makeinfo --no-split|g' \
+	@${REINPLACE_CMD} -e 's|makeinfo|makeinfo --no-split|g' \
 		${WRKSRC}/Makefile.in
 
 #

@@ -15,6 +15,7 @@ MAINTAINER=	cyrille.lefevre@laposte.net
 # Global variables
 #
 
+USE_REINPLACE=	yes
 ALL_TARGET=	bsd
 BUILD_WRKSRC=	${WRKSRC}/src
 
@@ -34,7 +35,7 @@ DOC_FILES=	AUTHORS COPYING FAQ HISTORY INSTALL README TODO
 post-patch: patch-script patch-message
 
 patch-script:
-	@${PERL} -pi.fbsd -e 's.%%PREFIX%%.${PREFIX}.g' ${WRKSRC}/scripts/upchk
+	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/scripts/upchk
 
 patch-message:
 	@${SED} 's|%%PREFIX%%|${PREFIX}|g' ${MSG_FILE} > ${PKGMESSAGE}

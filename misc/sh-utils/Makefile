@@ -19,12 +19,10 @@ MAINTAINER=	cyrille.lefevre@laposte.net
 
 LIB_DEPENDS=	intl.2:${PORTSDIR}/devel/gettext
 
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--program-prefix=g
-
 USE_GMAKE=	yes
-# PREFIX isn't honored. force it w/ prefix.
-MAKE_ARGS=	prefix=${PREFIX}
+CONFIGURE_ARGS=	--program-prefix=g
 
 MAN1=	gbasename.1 gchroot.1 gdate.1 gdirname.1 gecho.1 genv.1 \
 	gexpr.1 gfalse.1 ggroups.1 ghostid.1 ghostname.1 gid.1 \
@@ -50,7 +48,7 @@ remove-info-files:
 
 do-patch:
 .if !defined(WITH_SUID)
-	@${PERL} -pi -e "s/u\+s/u\+w/g" ${WRKSRC}/src/Makefile.in
+	@${REINPLACE_CMD} -e 's/u\+s/u\+w/g' ${WRKSRC}/src/Makefile.in
 .endif
 
 # Post-install
