@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	libgphoto2
-PORTVERSION=	2.1.4
-PORTREVISION=	4
+PORTVERSION=	2.1.5
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gphoto
@@ -18,21 +17,28 @@ COMMENT=	A universal digital camera picture control tool
 LIB_DEPENDS=	usb-0.1.7:${PORTSDIR}/devel/libusb \
 		exif.10:${PORTSDIR}/graphics/libexif
 
-USE_BZIP2=	yes
-USE_GETTEXT=	yes
 USE_GNOME=	gnometarget pkgconfig
 USE_GETOPT_LONG=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
+USE_LIBTOOL_VER=	15
+LIBTOOLFILES=	configure libgphoto2_port/configure
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 INSTALLS_SHLIB=	yes
-PLIST_SUB=	VERSION=${PORTVERSION}
+PLIST_SUB=	VERSION="${PORTVERSION}"
 
 MAN3=		libgphoto2.3 libgphoto2_port.3
 
 CPPFLAGS=	-I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib
+
+.if defined(WITHOUT_NLS)
+CONFIGURE_ARGS+=	--disable-nls
+PLIST_SUB+=	NLS="@comment "
+.else
+USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
+.endif
 
 post-patch:
 .for file in configure libgphoto2_port/configure
