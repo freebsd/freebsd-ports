@@ -89,6 +89,6 @@ post-install:
 	@${CAT} ${PKGMESSAGE}
 
 test:
-	@(cd ${WRKSRC}; make test)
+	@(cd ${WRKSRC}; ${MAKE} test)
 
 .include <bsd.port.post.mk>
