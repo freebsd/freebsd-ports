@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	GiNaC
-PORTVERSION=	0.7.3
+PORTVERSION=	0.8.0
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftpthep.physik.uni-mainz.de/pub/GiNaC/ \
 		http://www.ginac.de/
@@ -19,7 +19,6 @@ LIB_DEPENDS=	cln.1:${PORTSDIR}/math/cln
 
 USE_LIBTOOL=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-cln-prefix=${PREFIX}
 
 USE_GMAKE=	yes
 USE_NEWGCC=	yes

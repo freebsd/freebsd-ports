@@ -5,9 +5,6 @@ include/ginac/add.h
 include/ginac/archive.h
 include/ginac/assertion.h
 include/ginac/basic.h
-include/ginac/clifford.h
-include/ginac/color.h
-include/ginac/coloridx.h
 include/ginac/constant.h
 include/ginac/ex.h
 include/ginac/expair.h
@@ -20,9 +17,6 @@ include/ginac/ginac.h
 include/ginac/idx.h
 include/ginac/indexed.h
 include/ginac/inifcns.h
-include/ginac/isospin.h
-include/ginac/lorentzidx.h
-include/ginac/lortensor.h
 include/ginac/lst.h
 include/ginac/matrix.h
 include/ginac/mul.h
@@ -34,9 +28,9 @@ include/ginac/power.h
 include/ginac/pseries.h
 include/ginac/registrar.h
 include/ginac/relational.h
-include/ginac/simp_lor.h
 include/ginac/structure.h
 include/ginac/symbol.h
+include/ginac/tensor.h
 include/ginac/tinfos.h
 include/ginac/version.h
 @dirrm include/ginac
@@ -45,10 +39,11 @@ info/ginac.info
 info/ginac.info-1
 info/ginac.info-2
 info/ginac.info-3
+info/ginac.info-4
 @exec install-info %D/info/ginac.info %D/info/dir
 lib/libginac.a
 lib/libginac.so
-lib/libginac-0.7.so.3
+lib/libginac-0.8.so.0
 share/aclocal/ginac.m4
 @dirrm share/doc/GiNaC/reference
 @dirrm share/doc/GiNaC/tutorial
