@@ -446,6 +446,7 @@
     SUBDIR += silc-doc
     SUBDIR += silc-server
     SUBDIR += sing
+    SUBDIR += sipcalc
     SUBDIR += sleuth
     SUBDIR += slirp
     SUBDIR += smbfs
