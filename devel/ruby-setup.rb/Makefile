@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	setup.rb
-PORTVERSION=	3.1.2
-PORTREVISION=	1
+PORTVERSION=	3.1.4
 CATEGORIES=	devel ruby
 MASTER_SITES=	http://www.loveruby.net/archive/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTNAME:R}
