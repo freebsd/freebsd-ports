@@ -3,7 +3,7 @@
 # Date created:		Mon Jan 11 11:53:54 EET 1999
 # Whom:			Martti Kuparinen <martti.kuparinen@ericsson.com>
 #
-# $Id: Makefile,v 1.2 1999/01/27 21:57:23 billf Exp $
+# $Id: Makefile,v 1.3 1999/03/29 14:54:37 dirk Exp $
 #
 
 DISTNAME=	stunnel-2.1
@@ -19,7 +19,11 @@ BUILD_DEPENDS=	openssl:${PORTSDIR}/security/openssl \
 		${PREFIX}/lib/libssl.a:${PORTSDIR}/security/openssl \
 		${PREFIX}/lib/libcrypto.a:${PORTSDIR}/security/openssl
 RUN_DEPENDS=	openssl:${PORTSDIR}/security/openssl
+
+.if defined(USA_RESIDENT) && ${USA_RESIDENT} == YES
 LIB_DEPENDS=	rsaref.2:${PORTSDIR}/security/rsaref
+MAKE_ENV+=	EXTRA_SSL_LIBS="-lRSAglue -lrsaref"
+.endif
 
 GNU_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}/stunnel
