@@ -43,7 +43,7 @@ post-install:
 .if defined (WITHOUT_XFT)
 CONFIGURE_ARGS+=	WITH_XFT=0
 .else
-LIB_DEPENDS+=		Xft.2:${PORTSDIR}/x11-fonts/Xft
+LIB_DEPENDS+=		Xft.2:${PORTSDIR}/x11-fonts/libXft
 .if defined (WITHOUT_ICONV)
 CONFIGURE_ARGS+=	WITH_ICONV=0
 .else
