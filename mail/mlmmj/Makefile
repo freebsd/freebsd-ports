@@ -6,17 +6,17 @@
 #
 
 PORTNAME=	mlmmj
-PORTVERSION=	1.0.0.r2
+PORTVERSION=	1.0.0.r4
 CATEGORIES=	mail
 MASTER_SITES=	http://mlmmj.mmj.dk/files/
-DISTNAME=	mlmmj-1.0.0-RC2
+DISTNAME=	mlmmj-1.0.0-RC4
 
 MAINTAINER=	xi@borderworlds.dk
 COMMENT=	Mailing list managing made joyful
 
 .if defined(WITH_PHP_WEBINTERFACE)
-USE_PHP=        yes
-WANT_PHP_WEB=   yes
+USE_PHP=	yes
+WANT_PHP_WEB=	yes
 .endif
 
 .if defined(WITH_PERL_WEBINTERFACE)
@@ -73,6 +73,14 @@ post-install:
 .if defined(WITH_PHP_WEBINTERFACE)
 	@${MKDIR} ${PREFIX}/www/mlmmj/php-user
 	@${INSTALL_DATA} ${WRKSRC}/contrib/web/php-user/* ${PREFIX}/www/mlmmj/php-user
+	@${MKDIR} ${PREFIX}/www/mlmmj/php-admin
+	@${INSTALL_DATA} ${WRKSRC}/contrib/web/php-admin/README ${PREFIX}/www/mlmmj/php-admin
+	@${MKDIR} ${PREFIX}/www/mlmmj/php-admin/htdocs
+	@${INSTALL_DATA} ${WRKSRC}/contrib/web/php-admin/htdocs/* ${PREFIX}/www/mlmmj/php-admin/htdocs
+	@${MKDIR} ${PREFIX}/www/mlmmj/php-admin/templates
+	@${INSTALL_DATA} ${WRKSRC}/contrib/web/php-admin/templates/* ${PREFIX}/www/mlmmj/php-admin/templates
+	@${MKDIR} ${PREFIX}/www/mlmmj/php-admin/conf
+	@${INSTALL_DATA} ${WRKSRC}/contrib/web/php-admin/conf/* ${PREFIX}/www/mlmmj/php-admin/conf
 .endif
 
 .include <bsd.port.mk>
