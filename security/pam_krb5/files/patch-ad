@@ -1,5 +1,5 @@
 --- pam_krb5_auth.c.orig	Tue Jan  4 19:08:51 2000
-+++ pam_krb5_auth.c	Mon Nov  6 10:46:08 2000
++++ pam_krb5_auth.c	Mon Nov  6 13:45:48 2000
 @@ -7,9 +7,11 @@
  
  static const char rcsid[] = "$Id: pam_krb5_auth.c,v 1.18 2000/01/04 08:44:08 fcusack Exp $";
@@ -12,17 +12,15 @@
  #include <strings.h>	/* strchr */
  #include <syslog.h>	/* syslog */
  #include <unistd.h>	/* chown */
-@@ -19,7 +21,9 @@
+@@ -19,6 +21,7 @@
  #include <security/pam_modules.h>
  
  #include <krb5.h>
 +#include <com_err.h>
  #include "pam_krb5.h"
-+#include "krb5compat.h"
  
  extern krb5_cc_ops krb5_mcc_ops;
- 
-@@ -42,7 +46,7 @@
+@@ -42,7 +45,7 @@
      krb5_get_init_creds_opt opts;
  
      int			pamret, i;
@@ -31,7 +29,7 @@
      char		*princ_name = NULL;
      char		*pass = NULL, *service = NULL;
      char		*prompt = NULL;
-@@ -74,13 +78,13 @@
+@@ -74,13 +77,13 @@
      }
  
      /* Get service name */
@@ -47,7 +45,7 @@
  	DLOG("krb5_init_context()", error_message(krbret));
  	return PAM_SERVICE_ERR;
      }
-@@ -93,7 +97,7 @@
+@@ -93,7 +96,7 @@
  	krb5_get_init_creds_opt_set_forwardable(&opts, 1);
  
      /* For CNS */
@@ -56,7 +54,7 @@
  	/* Solaris dtlogin doesn't call pam_end() on failure */
  	if (krbret != KRB5_CC_TYPE_EXISTS) {
  	    DLOG("krb5_cc_register()", error_message(krbret));
-@@ -103,14 +107,14 @@
+@@ -103,14 +106,14 @@
      }
  
      /* Get principal name */
@@ -73,7 +71,7 @@
  	DLOG("krb5_unparse_name()", error_message(krbret));
  	pamret = PAM_SERVICE_ERR;
  	goto cleanup2;
-@@ -126,18 +130,19 @@
+@@ -126,18 +129,19 @@
      (void) sprintf(prompt, "Password for %s: ", princ_name);
  
      if (try_first_pass || use_first_pass)
@@ -96,7 +94,7 @@
  	    DLOG("pam_set_item()", pam_strerror(pamh, pamret));
  	    free(pass);
  	    pamret = PAM_SERVICE_ERR;
-@@ -145,25 +150,26 @@
+@@ -145,25 +149,26 @@
  	}
  	free(pass);
  	/* Now we get it back from the library. */
@@ -128,7 +126,7 @@
  	    DLOG("pam_get_item()", pam_strerror(pamh, pamret));
  	    pamret = PAM_SERVICE_ERR;
  	    goto cleanup2;
-@@ -177,9 +183,8 @@
+@@ -177,9 +182,8 @@
      }
  
      /* Get a TGT */
@@ -140,7 +138,7 @@
  	DLOG("krb5_get_init_creds_password()", error_message(krbret));
  	if (try_first_pass && krbret == KRB5KRB_AP_ERR_BAD_INTEGRITY) {
  	    pass = NULL;
-@@ -193,17 +198,17 @@
+@@ -193,17 +197,17 @@
      strcpy(cache_name, "MEMORY:");
      (void) tmpnam(&cache_name[7]);
  
@@ -161,7 +159,7 @@
  	DLOG("krb5_cc_store_cred()", error_message(krbret));
  	(void) krb5_cc_destroy(pam_context, ccache);
  	pamret = PAM_SERVICE_ERR;
-@@ -224,7 +229,7 @@
+@@ -224,7 +228,7 @@
  	pamret = PAM_AUTH_ERR;
  	goto cleanup;
      }
@@ -170,7 +168,7 @@
  	DLOG("pam_set_data()", pam_strerror(pamh, pamret));
  	(void) krb5_cc_destroy(pam_context, ccache);
  	pamret = PAM_SERVICE_ERR;
-@@ -288,22 +293,22 @@
+@@ -288,22 +292,22 @@
  	else if (strcmp(argv[i], "no_ccache") == 0)
  	    return PAM_SUCCESS;
  	else if (strstr(argv[i], "ccache=") == argv[i])
@@ -197,7 +195,7 @@
  	DLOG("krb5_init_context()", error_message(krbret));
  	return PAM_SERVICE_ERR;
      }
-@@ -311,7 +316,8 @@
+@@ -311,7 +315,8 @@
      euid = geteuid(); /* Usually 0 */
  
      /* Retrieve the cache name */
@@ -207,7 +205,7 @@
  	DLOG("pam_get_data()", pam_strerror(pamh, pamret));
  	pamret = PAM_CRED_UNAVAIL;
  	goto cleanup3;
-@@ -340,7 +346,7 @@
+@@ -340,7 +345,7 @@
  	    pamret = PAM_BUF_ERR;
  	    goto cleanup3;
  	}
@@ -216,7 +214,7 @@
      } else {
  	/* cache_name was supplied */
  	char *p = calloc(PATH_MAX + 10, 1); /* should be plenty */
-@@ -357,10 +363,10 @@
+@@ -357,10 +362,10 @@
  	    if (*q == '%') {
  		q++;
  		if (*q == 'u') {
@@ -229,7 +227,7 @@
  		    p += strlen(p);
  		} else {
  		    /* Not a special token */
-@@ -375,24 +381,27 @@
+@@ -375,24 +380,27 @@
      }
  
      /* Initialize the new ccache */
@@ -261,7 +259,7 @@
  	DLOG("krb5_cc_start_seq_get()", error_message(krbret));
  	(void) krb5_cc_destroy(pam_context, ccache_perm);
  	pamret = PAM_SERVICE_ERR;
-@@ -400,9 +409,10 @@
+@@ -400,9 +408,10 @@
      }
  
      /* Copy the creds (should be two of them) */
@@ -275,7 +273,7 @@
  	    DLOG("krb5_cc_store_cred()", error_message(krbret));
  	    (void) krb5_cc_destroy(pam_context, ccache_perm);
  	    krb5_free_cred_contents(pam_context, &creds);
-@@ -432,7 +442,7 @@
+@@ -432,7 +441,7 @@
      }
  
      sprintf(cache_env_name, "KRB5CCNAME=%s", cache_name);
