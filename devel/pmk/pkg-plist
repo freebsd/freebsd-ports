@@ -1,0 +1,7 @@
+bin/pmk
+bin/pmkscan
+sbin/pmksetup
+share/pmk/pmkfile.sample
+share/pmk/pmk.conf.sample
+share/pmk/pmkscan.dat
+@dirrm share/pmk

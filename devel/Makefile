@@ -861,6 +861,7 @@
     SUBDIR += pkgconfig
     SUBDIR += ply
     SUBDIR += pmake
+    SUBDIR += pmk
     SUBDIR += popt
     SUBDIR += portcheckout
     SUBDIR += portlint
