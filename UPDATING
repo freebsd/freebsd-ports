@@ -6,6 +6,17 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20041107:
+  AFFECTS: all GNOME users
+  AUTHOR: adamw@FreeBSD.org and the rest of the FreeBSD/GNOME crew
+
+  Hey, 2.6! You don't have to be 2.6 anymore!
+  Do NOT use portupgrade(1) to update your GNOME 2.6 desktop to 2.8:
+  it won't work, and you'll have to recompile bunches of ports by hand
+  as a result. Use the gnome_upgrade.sh script to automate the upgrade
+  process. The script is available from
+    http://www.FreeBSD.org/gnome/gnome_upgrade.sh
+
 20041104:
   AFFECTS: users of security/clamav-devel
   AUTHOR: rob@debank.tv
