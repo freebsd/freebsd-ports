@@ -19,7 +19,7 @@
      can't handle either, let me know. */
   
 + /* Flag for Luigi Rizzo new sound driver (as opposed to VoxWare) */
-+ static luigi_driver = 0;
++ static int luigi_driver = 0;
 + 
   static int open_output(void)
   {
@@ -48,7 +48,7 @@
 +     if (i != -1)
 +       luigi_driver = 1;
 +   }
-+ #endif defined (AIOGFMT)
++ #endif
 + 
 +   ctl->cmsg(CMSG_INFO, VERB_VERBOSE, "Using %s sound driver",
 + 	    luigi_driver ? "luigi" : "VoxWare");
