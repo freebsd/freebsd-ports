@@ -10,14 +10,11 @@ PORTNAME=		linux_base-8
 PORTVERSION=		8.0
 PORTREVISION=		4
 CATEGORIES=		emulators linux
-MASTER_SITES=		${MASTER_SITE_REDHAT_LINUX}
-MASTER_SITE_SUBDIR=	${PORTVERSION}/${LANG}/os/${MACHINE_ARCH}/RedHat/RPMS
 MASTER_SITES=		${MASTER_SITE_REDHAT_LINUX} \
 			${MASTER_SITE_REDHAT_LINUX:S/$/:new/}
 MASTER_SITE_SUBDIR=    \
 			${PORTVERSION}/${LANG}/os/${MACHINE_ARCH}/RedHat/RPMS \
 			updates/${PORTVERSION}/${LANG}/os/${MACHINE_ARCH}/:new
-
 DISTFILES=		redhat-release-8.0-8.noarch.rpm \
 			glibc-common-2.3.2-4.80.8.${MACHINE_ARCH}.rpm:new \
 			glibc-2.3.2-4.80.8.${MACHINE_ARCH}.rpm:new \
@@ -51,10 +48,6 @@ DISTFILES=		redhat-release-8.0-8.noarch.rpm \
 			libgcc-3.2-7.${MACHINE_ARCH}.rpm \
 			freetype-2.1.2-7.${MACHINE_ARCH}.rpm \
 			zlib-1.1.4-8.8x.${MACHINE_ARCH}.rpm:new
-
-PATCH_SITES=		${MASTER_SITE_REDHAT_LINUX}
-PATCH_SITE_SUBDIR=	updates/${PORTVERSION}/${LANG}/os/${MACHINE_ARCH}
-PATCHFILES=		${UPDATES}
 
 MAINTAINER=		trevor@FreeBSD.org
 COMMENT=	Base set of packages needed in Linux mode (only for i386)
