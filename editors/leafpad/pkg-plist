@@ -1,13 +1,17 @@
 bin/leafpad
 share/gnome/applications/leafpad.desktop
 share/gnome/pixmaps/leafpad.png
+share/locale/ca/LC_MESSAGES/leafpad.mo
 share/locale/cs/LC_MESSAGES/leafpad.mo
 share/locale/de/LC_MESSAGES/leafpad.mo
 share/locale/es/LC_MESSAGES/leafpad.mo
 share/locale/fr/LC_MESSAGES/leafpad.mo
+share/locale/hu/LC_MESSAGES/leafpad.mo
+share/locale/it/LC_MESSAGES/leafpad.mo
 share/locale/ja/LC_MESSAGES/leafpad.mo
 share/locale/ru/LC_MESSAGES/leafpad.mo
 share/locale/sv/LC_MESSAGES/leafpad.mo
+share/locale/ta/LC_MESSAGES/leafpad.mo
 share/locale/zh_CN/LC_MESSAGES/leafpad.mo
 share/locale/zh_TW/LC_MESSAGES/leafpad.mo
 @exec update-desktop-database > /dev/null || true
