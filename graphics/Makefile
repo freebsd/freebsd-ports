@@ -94,7 +94,6 @@
     SUBDIR += gimp-devel
     SUBDIR += gimp-manual-html
     SUBDIR += gimp-manual-pdf
-    SUBDIR += gimp-manual-ps
     SUBDIR += gimp1
     SUBDIR += giram
     SUBDIR += gkrellkam
