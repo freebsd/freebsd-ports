@@ -161,7 +161,7 @@ MAKE_ENV=	CLIENT_ONLY="${CLIENT_ONLY}"
 
 post-install:
 	@${SED} "s|%%PREFIX%%|${PREFIX}|g" < ${FILESDIR}/mysql-client.sh > ${PREFIX}/etc/rc.d/000.mysql-client.sh
-	@${CHMOD} 750 ${PREFIX}/etc/rc.d/00mysql-client.sh
+	@${CHMOD} 750 ${PREFIX}/etc/rc.d/000.mysql-client.sh
 
 .endif
 
