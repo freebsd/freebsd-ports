@@ -16,6 +16,8 @@ DISTFILES=	Xerces-J-src.${PORTVERSION}${EXTRACT_SUFX} Xerces-J-tools.${PORTVERSI
 MAINTAINER=	herve.quiroz@esil.univ-mrs.fr
 COMMENT=	XML parser for Java
 
+CONFLICTS=	xml4j-4.*
+
 BUILD_DEPENDS=	${ANT}:${PORTSDIR}/devel/apache-ant
 
 USE_JAVA=	yes
