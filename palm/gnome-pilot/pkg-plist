@@ -22,7 +22,7 @@ lib/gnome-pilot/conduits/libfile_conduit.so
 lib/gnome-pilot/conduits/libtest_conduit.so
 lib/libgpilotd.a
 lib/libgpilotd.so
-lib/libgpilotd.so.2
+lib/libgpilotd.so.3
 lib/libgpilotdcm.a
 lib/libgpilotdcm.so
 lib/libgpilotdcm.so.2
@@ -35,16 +35,18 @@ libdata/pkgconfig/gnome-pilot-2.0.pc
 libexec/gpilot-applet
 libexec/gpilotd
 share/gnome/control-center-2.0/capplets/gpilotd-control-applet.desktop
-share/gnome/gnome-pilot-2/glade/pilot-applet.glade
 share/gnome/gnome-pilot/conduits/backup.conduit
 share/gnome/gnome-pilot/conduits/file.conduit
 share/gnome/gnome-pilot/conduits/test.conduit
 share/gnome/gnome-pilot/glade/gnome-palm.png
 share/gnome/gnome-pilot/glade/gnome-pilot-watermark.png
 share/gnome/gnome-pilot/glade/gpilotd-capplet.glade
+share/gnome/gnome-pilot/glade/pilot-applet.glade
+share/gnome/help/gnome-pilot/C/gnome-pilot.xml
 share/gnome/idl/gnome-pilot.idl
 share/gnome/mime-info/palm.keys
 share/gnome/mime-info/palm.mime
+share/gnome/omf/gnome-pilot/gnome-pilot-C.omf
 share/gnome/pixmaps/gnome-palm-conduit.png
 share/gnome/pixmaps/gnome-palm.png
 share/gnome/pixmaps/sync_broken.png
@@ -78,9 +80,10 @@ share/locale/tr/LC_MESSAGES/gnome-pilot.mo
 share/locale/uk/LC_MESSAGES/gnome-pilot.mo
 share/locale/vi/LC_MESSAGES/gnome-pilot.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-pilot.mo
+@dirrm share/gnome/omf/gnome-pilot
+@dirrm share/gnome/help/gnome-pilot/C
+@dirrm share/gnome/help/gnome-pilot
 @dirrm share/gnome/gnome-pilot/glade
-@dirrm share/gnome/gnome-pilot-2/glade
-@dirrm share/gnome/gnome-pilot-2
 @dirrm include/libgpilotdCM
 @dirrm include/gpilotd
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gpilot_applet/prefs
