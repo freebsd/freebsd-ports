@@ -22,6 +22,7 @@ COMMENT=	Wolfenstein: Enemy Territory (Linux version)
 
 ONLY_FOR_ARCHS=	i386
 USE_LINUX_PREFIX=	yes
+NO_PACKAGE=	Distfile is 258MB, set FORCE_PACKAGE if you really want to build this package
 RESTRICTED=	Redistribution is limited, see license
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
