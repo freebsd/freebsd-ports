@@ -16,7 +16,7 @@ MAINTAINER=	dirk@FreeBSD.org
 
 NO_BUILD=	YES
 NO_WRKSUBDIR=	YES
-SLAVEDIRS=	french/php_doc german/php_doc
+SLAVEDIRS=	french/php_doc german/php_doc japanese/php_doc
 USE_BZIP2=	YES
 
 PHP_LANG?=	en
@@ -35,8 +35,9 @@ pre-fetch:
 	@${ECHO}
 	@${ECHO} "You may set PHP_LANG to"
 	@${ECHO} "	de (german),"
-	@${ECHO} "	es (spanish) or"
-	@${ECHO} "	fr (french)"
+	@${ECHO} "	es (spanish),"
+	@${ECHO} "	fr (french) or"
+	@${ECHO} "	ja (japanese)"
 	@${ECHO} "to get a different language than the default one (english)."
 	@${ECHO}
 .endif
@@ -54,7 +55,7 @@ LOCAL_TMPDIR?=	/var/tmp/php_doc/tmp
 DISTSITE?=	http://www.php.net/distributions/manual/
 
 localfetch:
-.for lang in de en es fr
+.for lang in de en es fr ja
 	${MKDIR} ${LOCAL_DISTDIR}
 	[ -f ${LOCAL_DISTDIR}/php_manual_${lang}${EXTRACT_SUFX} ] || \
 	${FETCH_CMD} -o ${LOCAL_DISTDIR}/php_manual_${lang}${EXTRACT_SUFX} ${DISTSITE}php_manual_${lang}${EXTRACT_SUFX}
