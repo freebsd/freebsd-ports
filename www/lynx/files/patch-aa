@@ -605,3 +605,36 @@
   #endif /*MAXINT*/
   
   /* text strings for certain actions */
+*** src/LYJump.c.bak	Sat Dec 17 00:59:44 1994
+--- src/LYJump.c	Fri May 12 21:46:02 1995
+***************
+*** 7,12 ****
+--- 7,15 ----
+  #include "LYSignal.h"
+  
+  #include "LYLeaks.h"
++ #ifdef HAVE_UNISTD_H
++ #include <unistd.h>
++ #endif
+  
+  #ifdef VMS
+  #include <fab.h>
+*** src/LYShowInfo.c.bak	Sat Dec 17 00:59:46 1994
+--- src/LYShowInfo.c	Fri May 12 21:47:07 1995
+***************
+*** 133,139 ****
+  	      grp = getgrgid(dir_info.st_gid);
+  	      fprintf(fp0,"      Group name:  %s\n",grp->gr_name);
+  	      if (((dir_info.st_mode) & S_IFMT) == S_IFREG) {
+! 		 sprintf(temp,"       File size:  %d (bytes)\n",dir_info.st_size);
+  		 fprintf(fp0,"%s",temp);
+  	      }
+  /*
+--- 133,139 ----
+  	      grp = getgrgid(dir_info.st_gid);
+  	      fprintf(fp0,"      Group name:  %s\n",grp->gr_name);
+  	      if (((dir_info.st_mode) & S_IFMT) == S_IFREG) {
+! 		 sprintf(temp,"       File size:  %ld (bytes)\n",(long)dir_info.st_size);
+  		 fprintf(fp0,"%s",temp);
+  	      }
+  /*
