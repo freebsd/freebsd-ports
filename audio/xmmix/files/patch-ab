@@ -1,6 +1,5 @@
-diff -ruN ./XMmix.ad ../xmmix-1.2/XMmix.ad
---- ./XMmix.ad	Thu Nov 19 19:54:39 1998
-+++ ../xmmix-1.2/XMmix.ad	Thu Nov 19 19:55:11 1998
+--- XMmix.ad.orig	Mon Jul 15 02:48:58 1996
++++ XMmix.ad	Sat Nov 11 10:15:08 2000
 @@ -26,7 +26,7 @@
  !*
  

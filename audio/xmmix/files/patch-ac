@@ -1,0 +1,11 @@
+--- Imakefile.orig	Mon Jul 15 02:48:56 1996
++++ Imakefile	Sat Nov 11 10:15:06 2000
+@@ -43,7 +43,7 @@
+  * #include "Motif.tmpl"
+  * #include "Motif.rules"
+  */
+-LOCAL_LIBRARIES= XmClientLibs
++LOCAL_LIBRARIES= ${MOTIFLIB} ${XTOOLLIB} ${XLIB}
+ 
+ 
+ /*
