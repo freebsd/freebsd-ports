@@ -3,7 +3,7 @@
 # Date created:		3 Apr 1998
 # Whom:			giffunip@asme.org
 #
-# $Id: Makefile,v 1.3 1998/09/16 02:24:58 steve Exp $
+# $Id: Makefile,v 1.4 1998/11/21 07:27:34 steve Exp $
 #
 
 DISTNAME=	xcircuit-1.7
@@ -13,6 +13,8 @@ MASTER_SITES=	ftp://bach.ece.jhu.edu/pub/tim/	\
 MASTER_SITE_SUBDIR=apps/circuits
 
 MAINTAINER=     ports@FreeBSD.ORG
+
+BROKEN='bad MD5 checksum'
 
 USE_IMAKE=	yes
 XMKMF=		xmkmf
