@@ -44,5 +44,6 @@
     SUBDIR += metacity-theme-iridium-rounded
     SUBDIR += metacity-theme-microgui
     SUBDIR += metacity-themes
+    SUBDIR += sawfish-themes
 
 .include <bsd.port.subdir.mk>
