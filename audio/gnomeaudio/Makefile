@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/gnome-audio
 DISTNAME=	gnome-audio-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ade@FreeBSD.org
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
