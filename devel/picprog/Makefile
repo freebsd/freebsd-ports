@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	picprog
-PORTVERSION=	1.1
-PORTREVISION=	1
+PORTVERSION=	1.4
 CATEGORIES=	devel
 MASTER_SITES=	http://hyvatti.iki.fi/~jaakko/pic/
 
@@ -19,7 +18,7 @@ USE_GETOPT_LONG=	yes
 MAKE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
 MAN1=		picprog.1
-DOCS=		README picprog.html *.gif
+DOCS=		README picprog.html *.jpg *.png
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/picprog ${PREFIX}/bin
