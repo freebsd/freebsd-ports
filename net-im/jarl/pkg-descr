@@ -1,0 +1,9 @@
+Jarl is a Perl/Tk application that allows one to access a Jabber
+account and have full access to the Jabber IM system.  It runs on any
+platform that supports Perl and Tk, which at this time is most
+platforms.
+
+Jarl is going to be a full featured Jabber client that supports 100%
+of the features that the Jabber IM offers.
+
+WWW: http://jarl.sourceforge.net/

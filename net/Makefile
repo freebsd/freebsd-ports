@@ -223,6 +223,7 @@
     SUBDIR += jabber-jud
     SUBDIR += jabber-yahoo
     SUBDIR += jags
+    SUBDIR += jarl
     SUBDIR += javadc
     SUBDIR += jift
     SUBDIR += jumpgate
