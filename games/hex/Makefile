@@ -13,9 +13,8 @@ MASTER_SITES=	http://www.nott.ac.uk/~psystrj/ \
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	gdk_imlib.5:${PORTSDIR}/graphics/imlib
-
-USE_X_PREFIX=	YES
+USE_X_PREFIX=	yes
+USE_IMLIB=	yes
 MAKE_ENV=	GRAPHICPATH="${GRAPHICPATH}" LEVELPATH="${LEVELPATH}"
 
 GRAPHICPATH=	${PREFIX}/share/hex/graphics

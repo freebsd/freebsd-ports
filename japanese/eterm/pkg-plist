@@ -6,11 +6,9 @@ bin/Ettable
 bin/Etcolors
 bin/Etwinop
 lib/libEterm.a
-lib/libEterm.la
 lib/libEterm.so
 lib/libEterm.so.9
 lib/libmej.a
-lib/libmej.la
 lib/libmej.so
 lib/libmej.so.9
 share/Eterm/pix/014.jpg

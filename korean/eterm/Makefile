@@ -18,12 +18,12 @@ DISTNAME=	Eterm-${PORTVERSION}
 
 MAINTAINER=	hollywar@mail.holywar.net
 
-LIB_DEPENDS=	Imlib.5:${PORTSDIR}/graphics/imlib
 RUN_DEPENDS=    ${PREFIX}/lib/X11/fonts/local/hmm12.pcf.gz:${PORTSDIR}/korean/hanyangfonts
 
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
-GNU_CONFIGURE=	yes
+USE_IMLIB=	yes
+USE_LIBTOOL=	yes
 CONFIGURE_ENV=  LIBS="-L${LOCALBASE}/lib -lxpg4"
 MAN1=		Eterm.1
 

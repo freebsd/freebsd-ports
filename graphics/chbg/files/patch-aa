@@ -1,0 +1,20 @@
+--- configure.orig	Tue Oct  3 15:37:21 2000
++++ configure	Tue Oct  3 15:39:25 2000
+@@ -2547,7 +2547,7 @@
+   for ac_dir in $ac_dummy; do
+     test -z "$ac_dir" && ac_dir=.
+     if test -f $ac_dir/$ac_word; then
+-      ac_cv_prog_IMLIB_CONFIG=""yes""
++      ac_cv_prog_IMLIB_CONFIG=""imlib-config""
+       break
+     fi
+   done
+@@ -2562,7 +2562,7 @@
+   echo "$ac_t""no" 1>&6
+ fi
+ 
+-if eval "test x$IMLIB_CONFIG = xyes"; then
++if eval "test x$IMLIB_CONFIG != xno"; then
+ 	echo "$ac_t"""checking for gdk_imlib configuration using imlib-config script ..."" 1>&6
+ 	IMLIB_LIBS=`imlib-config --libs-gdk`
+ 	echo "$ac_t"""	gdk_imlib LDFLAGS=$IMLIB_LIBS"" 1>&6

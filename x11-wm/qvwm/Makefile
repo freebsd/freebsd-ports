@@ -12,10 +12,9 @@ MASTER_SITES=	ftp://www.qvwm.org/pub/qvwm/
 
 MAINTAINER=	nakai@FreeBSD.org
 
-LIB_DEPENDS=	Imlib.5:${PORTSDIR}/graphics/imlib \
-		esd.2:${PORTSDIR}/audio/esound
-
 USE_X_PREFIX=	yes
+USE_ESOUND=	yes
+USE_IMLIB=	yes
 USE_XPM=	yes
 GNU_CONFIGURE=	yes
 

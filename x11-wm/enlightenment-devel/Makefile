@@ -15,14 +15,14 @@ MASTER_SITES=	ftp://ftp.enlightenment.org/pub/enlightenment/enlightenment/ \
 
 MAINTAINER=	vanilla@FreeBSD.org
 
-LIB_DEPENDS=	esd.2:${PORTSDIR}/audio/esound \
-		Fnlib.0:${PORTSDIR}/graphics/fnlib \
-		Imlib.5:${PORTSDIR}/graphics/imlib \
+LIB_DEPENDS=	Fnlib.0:${PORTSDIR}/graphics/fnlib \
 		ghttp.1:${PORTSDIR}/www/libghttp \
 		intl.1:${PORTSDIR}/devel/gettext
 
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
+USE_ESOUND=	yes
+USE_IMLIB=	yes
 USE_FREETYPE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-fsstd --with-included-gettext

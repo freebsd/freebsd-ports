@@ -13,10 +13,10 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	billf@FreeBSD.org
 
-LIB_DEPENDS=	gdk_imlib.5:${PORTSDIR}/graphics/imlib
-
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
+USE_IMLIB=	yes
+
 MAN1=		qiv.1
 
 do-configure:

@@ -12,21 +12,17 @@ MASTER_SITES=	http://gtkgraph.linuxave.net/
 
 MAINTAINER=	jedgar@FreeBSD.org
 
-LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12 \
-		intl.1:${PORTSDIR}/devel/gettext \
-		gdk_imlib.5:${PORTSDIR}/graphics/imlib
+LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext
 
-GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
-
-USE_GMAKE=	yes
 USE_X_PREFIX=	yes
+USE_GMAKE=	yes
+USE_IMLIB=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-x
-CONFIGURE_ENV+=	CFLAGS="-I${LOCALBASE}/include ${CFLAGS}" \
-		GTK_CONFIG="${GTK_CONFIG}" \
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 
-pre-configure:
-	@${PERL} -pi.orig -e 's|-O2|${CFLAGS}|' ${WRKSRC}/configure
+pre-patch:
+	@${PERL} -pi -e 's|-lpthread|-pthread|g ; s|-O2|${CFLAGS}| ; \
+		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
 
 .include <bsd.port.mk>

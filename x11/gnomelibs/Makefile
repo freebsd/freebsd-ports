@@ -15,17 +15,14 @@ DISTNAME=	gnome-libs-${PORTVERSION}
 
 MAINTAINER=	ade@FreeBSD.org
 
-LIB_DEPENDS=	gdk_imlib.5:${PORTSDIR}/graphics/imlib \
-		ORBit.2:${PORTSDIR}/devel/ORBit \
-		esd.2:${PORTSDIR}/audio/esound
-
-GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
-GLIB_CONFIG?=	${LOCALBASE}/bin/glib12-config
+LIB_DEPENDS=	ORBit.2:${PORTSDIR}/devel/ORBit
 
 USE_X_PREFIX=	yes
 USE_XPM=	yes
 USE_PERL5=	yes
 USE_GMAKE=	yes
+USE_IMLIB=	yes
+USE_ESOUND=	yes
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 LIBTOOLFILES=	configure libart_lgpl/configure
@@ -33,8 +30,6 @@ CONFIGURE_ARGS=	--localstatedir=${PREFIX}/share/gnome \
 		--datadir=${PREFIX}/share/gnome \
 		--disable-test-gnome
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		GTK_CONFIG="${GTK_CONFIG}" \
-		GLIB_CONFIG="${GLIB_CONFIG}" \
 		LIBS="-L${LOCALBASE}/lib"
 
 MAN1=		gnome.1 gnome-config.1

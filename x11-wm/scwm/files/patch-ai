@@ -1,0 +1,11 @@
+--- src/callbacks.h.orig	Wed Sep 13 01:06:11 2000
++++ src/callbacks.h	Wed Sep 13 01:03:16 2000
+@@ -32,7 +32,7 @@
+ #endif
+ 
+ #ifdef HAVE_SCM_MAKE_HOOK
+-#define SCWM_MAKE_HOOK(name,args) scm_permanent_object(scm_make_named_hook((name),(args)))
++#define SCWM_MAKE_HOOK(name,args) scm_permanent_object(scm_create_hook((name),(args)))
+ #else
+ #define SCWM_MAKE_HOOK(name,args) SCM_EOL
+ #endif

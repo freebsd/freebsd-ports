@@ -14,14 +14,9 @@ MASTER_SITE_SUBDIR=	ume
 
 MAINTAINER=	ume@FreeBSD.org
 
-LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12 \
-		gdk_imlib.5:${PORTSDIR}/graphics/imlib
-
-GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
-
 USE_X_PREFIX=	yes
+USE_IMLIB=	yes
 USE_GMAKE=	yes
-MAKE_ENV=	GTK_CONFIG="${GTK_CONFIG}"
 
 INCLUDES=	gkrellm.h gkrellm_public_proto.h gkrellm_private_proto.h
 DOCS=		COPYRIGHT README Themes.html

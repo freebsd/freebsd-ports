@@ -14,12 +14,10 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	p@dancris.com
 
-LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12 \
-		Imlib.5:${PORTSDIR}/graphics/imlib
-
 USE_GMAKE=	yes
+USE_IMLIB=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	GTK_CONFIG="${X11BASE}/bin/gtk12-config" \
-		CFLAGS="-I${LOCALBASE}/include ${CFLAGS}"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LIBS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>

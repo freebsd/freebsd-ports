@@ -1,0 +1,20 @@
+--- src/scwm.c.orig	Wed Sep 13 00:27:42 2000
++++ src/scwm.c	Wed Sep 13 00:55:21 2000
+@@ -1838,7 +1838,7 @@
+ {
+   static SCM sym_arglist = SCM_UNDEFINED;
+   if (SCM_UNDEFINED == sym_arglist)
+-    sym_arglist = scm_permanent_object(((scm_cell *)scm_intern0("arglist"))->car);
++    sym_arglist = scm_permanent_object(SCM_CAR(scm_intern0("arglist")));
+   { /* scope */
+   SCM p = scm_make_gsubr(name,req,opt,var,fcn);
+   if (fDocumentPrimitiveFormals) {
+@@ -1859,7 +1859,7 @@
+      since events.c has the SCWM_GLOBAL_SYMBOL definition of it */
+   if (SCM_BOOL_F == sym_interactive)
+     sym_interactive = 
+-      scm_permanent_object(((scm_cell *)scm_intern0("interactive"))->car);
++      scm_permanent_object(SCM_CAR(scm_intern0("interactive")));
+   { /* scope */
+     SCM p = scwm_make_gsubr(name,req,opt,var,fcn,szArgList);
+     scm_set_procedure_property_x(p,sym_interactive,
