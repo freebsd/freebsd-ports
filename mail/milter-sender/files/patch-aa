@@ -1,0 +1,31 @@
+--- mk/FreeBSD.mk.bak	Wed Aug  6 23:36:55 2003
++++ mk/FreeBSD.mk	Sun Sep  7 11:40:21 2003
+@@ -17,8 +17,7 @@
+ #
+ # Absolute paths to supporting headers and libraries.
+ #
+-PREFIX = /usr/local/src
+-SNERT  = $(PREFIX)/com/snert
++SNERT  = $(WRKDIR)/com/snert
+ INCDIR = $(SNERT)/include/
+ LIBDIR = $(SNERT)/lib/
+ SRCDIR = $(SNERT)/src/lib/
+@@ -43,14 +42,14 @@
+ #       WIN32_API
+ #
+ 
+-CC      = gcc
+-CFLAGS  = -g $(DEBUG) -I$(INCDIR) $(EXTRA_CFLAGS) -D_REENTRANT -D_THREAD_SAFE\
++#CC      = gcc
++CFLAGS  += $(DEBUG) -I$(INCDIR) $(EXTRA_CFLAGS) -D_REENTRANT\
+         -DSERIALIZATION_API=SYSTEMV_API \
+         -DSHARED_MEMORY_API=SYSTEMV_API
+ #O_NAME  = -o$*$O
+ 
+-LD      = gcc
+-LDFLAGS = -L$(LIBDIR)
++#LD      = gcc
++LDFLAGS += -L$(LIBDIR)
+ E_FLAG	= -o
+ E_NAME	= $(E_FLAG)$@
+ 

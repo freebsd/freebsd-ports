@@ -1,0 +1,86 @@
+--- milter-sender/milter-sender.sh.bak	Tue Sep  2 21:12:30 2003
++++ milter-sender/milter-sender.sh	Sun Sep  7 12:09:08 2003
+@@ -10,15 +10,14 @@
+ # BEFORE:  mail
+ # KEYWORD: FreeBSD NetBSD
+ 
+-PROGRAM="/usr/local/sbin/milter-sender"
+-OPTIONS="-d 127.0.0.1 -s /etc/mail/sendmail.cf -R -u 3 unix:/var/lib/milter-sender/socket"
+-REQUIRED_DIR='/var/lib/milter-sender'
+-
+-FG_RED='\033[1;31m'
+-FG_GREEN='\033[1;32m'
+-FG_WHITE='\033[0;37m'
+-FG_BLACK='\033[0;30m'
+-FG_NORMAL=${FG_WHITE}
++if ! PREFIX=$(expr $0 : "\(/.*\)/etc/rc\.d/$(basename $0)\$"); then
++    echo "$0: Cannot determine the PREFIX" >&2
++    exit 1
++fi
++
++PROGRAM="${PREFIX}/sbin/milter-sender"
++OPTIONS="-d 127.0.0.1 -s /etc/mail/sendmail.cf -R -u 3 unix:${PREFIX}/lib/milter-sender/socket"
++REQUIRED_DIR="${PREFIX}/lib/milter-sender"
+ 
+ ##########################################################################
+ #	Nothing to be configured below this point.
+@@ -64,11 +63,10 @@
+ start()
+ {
+ 	NAME=`basename "$PROGRAM"`
+-        printf "Starting %s" $NAME
+ 
+ 	pid=`getpid "$PROGRAM"`
+ 	if [ X"$pid" != X ]; then
+-		printf '\r\033[71C['${FG_RED}'FAILED'${FG_NORMAL}']\n'
++		echo " milter-sender:FAILED"
+ 		return
+ 	fi
+ 
+@@ -78,17 +76,16 @@
+ 
+ 	pid=`getpid "$PROGRAM"`
+ 	if [ X"$pid" = X ]; then
+-		printf '\r\033[71C['${FG_RED}'FAILED'${FG_NORMAL}']\n'
++		echo " milter-sender:FAILED"
+ 		return
+ 	fi
+ 
+-	printf '\r\033[71C['${FG_GREEN}'  OK  '${FG_NORMAL}']\n'
++	echo -n " milter-sender"
+ }
+ 
+ stop()
+ {
+ 	NAME=`basename "$PROGRAM"`
+-        printf "Stopping %s" $NAME
+ 
+ 	pid=`getpid "$PROGRAM"`
+ 	if [ X"$pid" != X ]; then
+@@ -102,12 +99,12 @@
+ 		sleep 2
+ 		pid=`getpid "$PROGRAM"`
+ 		if [ X"$pid" != X ]; then
+-			printf '\r\033[71C['${FG_RED}'FAILED'${FG_NORMAL}']\n'
++			echo " milter-sender:FAILED"
+ 			return
+ 		fi
+ 	fi
+ 
+-	printf '\r\033[71C['${FG_GREEN}'  OK  '${FG_NORMAL}']\n'
++	echo -n " milter-sender"
+ }
+ 
+ case "$1" in
+@@ -124,9 +121,9 @@
+ status)
+ 	pid=`getpid "$PROGRAM"`
+ 	if [ X"$pid" != X ]; then
+-		printf '\r\033[72C['${FG_GREEN}${pid}${FG_NORMAL}']\n'
++		echo "milter-sender:${pid}"
+ 	else
+-		printf '\r\033[70C['${FG_RED}'STOPPED'${FG_NORMAL}']\n'
++		echo "milter-sender:STOPPED"
+ 	fi
+ 	;;
+ *)

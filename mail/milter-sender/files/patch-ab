@@ -1,0 +1,44 @@
+--- milter-sender/makefile.bak	Sun Aug 31 13:00:43 2003
++++ milter-sender/makefile	Sun Sep  7 11:43:19 2003
+@@ -24,23 +24,25 @@
+ #
+ MAILDIR		= /etc/mail
+ 
+-BINDIR		= /usr/local/sbin
+-STATEDIR	= /var/lib/$(MILTER)
++BINDIR          = ${PREFIX}/sbin
++STATEDIR        = ${PREFIX}/lib/$(MILTER)
+ 
+ #
+ # These assume that Berkley DB4 was configured with --prefix=/usr/local.
+ # Some systems supply older version of Berkley DB in /usr and so these
+ # options make sure the DB4 version is included first.
+ #
+-INC = -I/usr/local/BerkeleyDB.4.1/include -I/usr/local/include
+-LIB = -L/usr/local/BerkeleyDB.4.1/lib -L/usr/local/lib
++#INC = -I/usr/local/BerkeleyDB.4.1/include -I/usr/local/include
++#LIB = -L/usr/local/BerkeleyDB.4.1/lib -L/usr/local/lib
++INC=
++LIB=
+ 
+ #
+ # Linux
+ #
+-STARTUP_SCRIPT	= /etc/rc.d/init.d/$(MILTER)
+-POSIX_LIB = -lpthread
+-DB_LIB = -ldb
++#STARTUP_SCRIPT  = /etc/rc.d/init.d/$(MILTER)
++#POSIX_LIB = -lpthread
++#DB_LIB = -ldb
+ 
+ #
+ # Cobalt Qube 1 (old RedHat 5.1)
+@@ -60,7 +62,7 @@
+ #
+ # FreeBSD 4.8
+ #
+-#STARTUP_SCRIPT	= /etc/rc.d/$(MILTER)
++STARTUP_SCRIPT = ${PREFIX}/etc/rc.d/$(MILTER).sh
+ #POSIX_LIB = -pthread
+ #DB_LIB = -ldb
+ 
