@@ -38,13 +38,6 @@
  	append_desktop_menu (menu_bar);
  
  	gtk_box_pack_start (GTK_BOX (foo->hbox), menu_bar, FALSE, FALSE, 0);
---- panel/main.c.orig	Fri Jan 12 17:54:08 2001
-+++ panel/main.c	Mon Feb 26 19:55:27 2001
-@@ -153,3 +153,3 @@
- 
--	merge_main_dir = gnome_datadir_file("gnome/apps/");
-+	merge_main_dir = gnome_datadir_file("apps");
- 	merge_main_dir_len = merge_main_dir != NULL ? strlen (merge_main_dir) : 0;
 --- panel/menu.c.orig	Fri Apr 27 15:46:00 2001
 +++ panel/menu.c	Fri May  4 15:11:16 2001
 @@ -147,3 +147,3 @@
