@@ -15,7 +15,7 @@ COMMENT=	MIDI player
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} > 501000
+.if ${OSVERSION} > 500014
 BROKEN=		"Does not compile"
 .endif
 

@@ -15,15 +15,3 @@
  #define ISPERC(x)	(perc & (1 << x))
  #define ISGUS(x)	(play_gus & (1 << x))
  #define ISFM(x)		(play_fm & (1 << x))
-@@ -50,7 +50,11 @@
- #include <stdio.h>
- #include <string.h>
- #include <stdlib.h>
-+#ifdef __FreeBSD__
-+#include <machine/soundcard.h>
-+#else
- #include <sys/soundcard.h>
-+#endif
- #include <sys/ioctl.h>
- #ifdef linux
- #include <linux/awe_voice.h>
