@@ -1,11 +1,10 @@
+bin/tmda-address
 bin/tmda-check-address
 bin/tmda-clean
-bin/tmda-dated-address
 bin/tmda-filter
 bin/tmda-inject
 bin/tmda-keygen
-bin/tmda-keyword-address
-bin/tmda-sender-address
+bin/tmda-rfilter
 bin/tmda-sendmail
 lib/%%PYTHON_VERSION%%/site-packages/TMDA/Cookie.py
 lib/%%PYTHON_VERSION%%/site-packages/TMDA/Cookie.pyc
@@ -40,6 +39,8 @@ lib/%%PYTHON_VERSION%%/site-packages/TMDA/__init__.pyc
 %%PORTDOCS%%share/doc/tmda/contrib/printdbm
 %%PORTDOCS%%share/doc/tmda/contrib/qmail-smtpd_auth.patch
 %%PORTDOCS%%share/doc/tmda/contrib/sample.tmdarc
+%%PORTDOCS%%share/doc/tmda/contrib/setup.py
+%%PORTDOCS%%share/doc/tmda/contrib/setup.pyc
 %%PORTDOCS%%share/doc/tmda/contrib/tmda.spec
 %%PORTDOCS%%share/doc/tmda/htdocs/bugs.html
 %%PORTDOCS%%share/doc/tmda/htdocs/config-client.html
