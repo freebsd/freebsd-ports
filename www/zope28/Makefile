@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	zope
-PORTVERSION=	2.2.0
+PORTVERSION=	2.2.1b1
 CATEGORIES=	www python
 MASTER_SITES=	http://www.zope.org/Products/Zope/${PORTVERSION}/
 DISTNAME=	Zope-${PORTVERSION}-src
@@ -15,7 +15,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	nbm@FreeBSD.org
 
 BUILD_DEPENDS=	python1.5:${PORTSDIR}/lang/python
-RUN_DEPENDS=	${LOCALBASE}/sbin/apache:${PORTSDIR}/www/apache13-modssl
+#RUN_DEPENDS=	${LOCALBASE}/sbin/apache:${PORTSDIR}/www/apache13-modssl
 
 # Build has to be done in the final location after installing the sources
 # there. It were a major action to fix all paths otherwise.
@@ -25,12 +25,12 @@ do-build:	# empty, but needs to be there for the python dependency.
 # then on, data, cgi-bin and such. Thus, I decided that Zope belongs
 # there, too. I don't know whether this still applies to current apache
 # releases, though. I still run 2.2.8-STABLE.
-PLIST_SUB=	ZOPEBASEDIR=www/Zope-${PORTVERSION} CGIBINDIR=share/apache/cgi-bin VERSION=${PORTVERSION}
+PLIST_SUB=	ZOPEBASEDIR=www/Zope CGIBINDIR=www/cgi-bin.default VERSION=${PORTVERSION}
 WEBBASEDIR?=	${PREFIX}/www
-ZOPEBASEDIR?=	${WEBBASEDIR}/Zope-${PORTVERSION}
-CGI_BIN_DIR?=	${PREFIX}/share/apache/cgi-bin
+ZOPEBASEDIR?=	${WEBBASEDIR}/Zope
+CGI_BIN_DIR?=	${PREFIX}/www/cgi-bin.default
 APACHE_CONFDIR?=	${PREFIX}/etc/apache
-PYTHON15?=	${PREFIX}/bin/python1.5
+PYTHON15?=	${LOCALBASE}/bin/python1.5
 
 # I decided to consider the whole souce tree to be part of the package
 # since in there, Zope can live on its own. It does leave some *.o files
@@ -50,6 +50,7 @@ do-install:	#
 		${MV} Zope.cgi Zope.cgi.orig ; \
 		${ECHO} "#! ${CGI_BIN_DIR}/pcgi-wrapper" > Zope.cgi ; \
 		${CAT} Zope.cgi.orig >> Zope.cgi ; \
+		${MKDIR} ${CGI_BIN_DIR} ; \
 		${INSTALL} -o nobody -m 555 Zope.cgi pcgi/pcgi-wrapper ${CGI_BIN_DIR} ; \
 		${ECHO} "===>   Fixing permissions of Zope's own var directory..." ; \
 		${CHMOD} ugo+rwt var ; \
@@ -59,6 +60,7 @@ do-install:	#
 		${PYTHON15} zpasswd.py -u zopemaster -p test -e CLEARTEXT access ; \
 		${CHOWN} nobody access; \
 		${ECHO} "===>   Copying Apache config file changes to ${APACHE_CONFDIR}/apache.conf.Zope-Changes." ; \
+		${MKDIR} ${APACHE_CONFDIR} ; \
 		${CP} -p ${FILESDIR}/apache.conf.Zope-Changes ${APACHE_CONFDIR}/ ; \
 		${ECHO} "===>   Please have a look at this file and the instructions" ; \
 		${ECHO} "===>   therein and incorporate them to your apache.conf." ; \
