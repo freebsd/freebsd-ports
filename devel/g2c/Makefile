@@ -14,8 +14,6 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
-BROKEN=		"Configure fails"
-
 USE_REINPLACE=	yes
 USE_GNOMENG=	yes
 USE_GNOME=	gtk12 gnomehack
@@ -28,6 +26,8 @@ USE_GMAKE=	yes
 .if ${HAVE_GNOME:Mbonobo} != "" && ${HAVE_GNOME:Mgnomedb} != ""
 USE_GNOME+=	gnomeprefix bonobo gnomedb
 PKGNAMESUFFIX=	-gnome
+.else
+CONFIGURE_ARGS=	--disable-gnome
 .endif
 
 post-patch:
