@@ -95,7 +95,9 @@ do-install:
 		${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${INSTALL_TARGET})
 
 .include <bsd.port.pre.mk>
+.if defined(GNUSTEP_GUI_DEVEL)
 .if ${OSVERSION} > 500030
 CONFIGURE_ARGS+=	--disable-gsnd
+.endif
 .endif
 .include <bsd.port.post.mk>
