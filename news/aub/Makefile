@@ -4,7 +4,7 @@
 # Date created:			  Sun Oct 12, 1997
 # Whom:				  David O'Brien (obrien@cs.ucdavis.edu)
 #
-# $Id: Makefile,v 1.3 1997/10/18 06:11:16 obrien Exp $
+# $Id: Makefile,v 1.4 1998/11/03 09:29:15 obrien Exp $
 #
 
 DISTNAME=	aub
@@ -26,7 +26,7 @@ do-extract:
 	@${MKDIR} ${WRKDIR}
 
 pre-patch:
-	@${SED} -e '1,1s:/usr/local/bin/perl:!/usr/bin/perl:' \
+	@${SED} -e '1,1s:/usr/local/bin/perl:!${PERL5}:' \
 		-e 's:$SUM = "/bin/sum":$SUM = "/usr/bin/sum":' \
 		-e 's:/usr/tmp:/var/tmp:' \
 		${DISTDIR}/${DIST_SUBDIR}/aub > ${WRKDIR}/aub
