@@ -1,5 +1,5 @@
 bin/gtkam
-%%GIMP%%libexec/gimp/2.0/plug-ins/gtkam-gimp
+%%GIMP%%libexec/gimp/2.2/plug-ins/gtkam-gimp
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
