@@ -1,6 +1,6 @@
---- configure.orig	Mon Apr 19 15:48:25 2004
-+++ configure	Mon Apr 19 16:27:55 2004
-@@ -22815,6 +22815,8 @@
+--- configure.orig	Thu Aug 12 19:59:11 2004
++++ configure	Thu Aug 12 19:59:11 2004
+@@ -22922,6 +22922,8 @@
  if eval "test \"\${$as_ac_var+set}\" = set"; then
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
@@ -9,7 +9,7 @@
    cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -22897,6 +22899,7 @@
+@@ -23004,6 +23006,7 @@
  fi
  rm -f conftest.err conftest.$ac_objext \
        conftest$ac_exeext conftest.$ac_ext
@@ -17,84 +17,15 @@
  fi
  echo "$as_me:$LINENO: result: `eval echo '${'$as_ac_var'}'`" >&5
  echo "${ECHO_T}`eval echo '${'$as_ac_var'}'`" >&6
-@@ -22904,6 +22907,7 @@
+@@ -23011,6 +23014,7 @@
    cat >>confdefs.h <<_ACEOF
  #define `echo "HAVE_$ac_func" | $as_tr_cpp` 1
  _ACEOF
 + LIBS="-lintl $LIBS"
   have_ngettext=yes
- fi
- done
-@@ -25302,7 +25306,7 @@
- 
- 
- 
--for ac_header in sys/param.h sys/resource.h sys/vfs.h sys/mount.h sys/statfs.h sys/statvfs.h wctype.h
-+for ac_header in sys/param.h sys/resource.h sys/vfs.h sys/mount.h sys/statfs.h sys/statvfs.h sys/param.h wctype.h
- do
- as_ac_Header=`echo "ac_cv_header_$ac_header" | $as_tr_sh`
- if eval "test \"\${$as_ac_Header+set}\" = set"; then
-@@ -25463,6 +25467,9 @@
- cat confdefs.h >>conftest.$ac_ext
- cat >>conftest.$ac_ext <<_ACEOF
- /* end confdefs.h.  */
-+#ifdef HAVE_SYS_PARAM_H
-+#include <sys/param.h>
-+#endif
- #ifdef HAVE_SYS_VFS_H
- #include <sys/vfs.h>
- #endif
-@@ -25516,6 +25523,9 @@
- cat confdefs.h >>conftest.$ac_ext
- cat >>conftest.$ac_ext <<_ACEOF
- /* end confdefs.h.  */
-+#ifdef HAVE_SYS_PARAM_H
-+#include <sys/param.h>
-+#endif
- #ifdef HAVE_SYS_VFS_H
- #include <sys/vfs.h>
- #endif
-@@ -25591,6 +25601,9 @@
- cat confdefs.h >>conftest.$ac_ext
- cat >>conftest.$ac_ext <<_ACEOF
- /* end confdefs.h.  */
-+#ifdef HAVE_SYS_PARAM_H
-+#include <sys/param.h>
-+#endif
- #ifdef HAVE_SYS_VFS_H
- #include <sys/vfs.h>
- #endif
-@@ -25644,6 +25657,9 @@
- cat confdefs.h >>conftest.$ac_ext
- cat >>conftest.$ac_ext <<_ACEOF
- /* end confdefs.h.  */
-+#ifdef HAVE_SYS_PARAM_H
-+#include <sys/param.h>
-+#endif
- #ifdef HAVE_SYS_VFS_H
- #include <sys/vfs.h>
- #endif
-@@ -25720,6 +25736,9 @@
- cat >>conftest.$ac_ext <<_ACEOF
- /* end confdefs.h.  */
- #include <unistd.h>
-+#ifdef HAVE_SYS_PARAM_H
-+#include <sys/param.h>
-+#endif
- #ifdef HAVE_SYS_VFS_H
- #include <sys/vfs.h>
- #endif
-@@ -25780,6 +25799,9 @@
- cat >>conftest.$ac_ext <<_ACEOF
- /* end confdefs.h.  */
- #include <unistd.h>
-+#ifdef HAVE_SYS_PARAM_H
-+#include <sys/param.h>
-+#endif
- #ifdef HAVE_SYS_VFS_H
- #include <sys/vfs.h>
- #endif
-@@ -26788,8 +26810,8 @@
+ else
+   echo "$as_me:$LINENO: checking for ngettext in -lintl" >&5
+@@ -26981,8 +26985,8 @@
    done
  fi
  
@@ -105,7 +36,7 @@
  if test "${ac_cv_lib_bz2_bzCompressInit+set}" = set; then
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
-@@ -26808,11 +26830,11 @@
+@@ -27001,11 +27005,11 @@
  #endif
  /* We use char because int might match the return type of a gcc2
     builtin and then its argument prototype would still apply.  */
@@ -119,7 +50,7 @@
    ;
    return 0;
  }
-@@ -27943,7 +27965,7 @@
+@@ -28136,7 +28140,7 @@
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
  
@@ -128,7 +59,7 @@
  		cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -29572,6 +29594,9 @@
+@@ -29765,6 +29769,9 @@
  cat confdefs.h >>conftest.$ac_ext
  cat >>conftest.$ac_ext <<_ACEOF
  /* end confdefs.h.  */
@@ -138,7 +69,7 @@
  #include <sys/statfs.h>
  #include <sys/fstyp.h>
  _ACEOF
-@@ -29612,6 +29637,9 @@
+@@ -29805,6 +29812,9 @@
  cat confdefs.h >>conftest.$ac_ext
  cat >>conftest.$ac_ext <<_ACEOF
  /* end confdefs.h.  */
@@ -148,7 +79,7 @@
  #include <sys/statfs.h>
  #include <sys/vmount.h>
  _ACEOF
-@@ -31250,6 +31278,7 @@
+@@ -31432,6 +31442,7 @@
  s,@ORBIT_IDL@,$ORBIT_IDL,;t t
  s,@BONOBO_IDLDIR@,$BONOBO_IDLDIR,;t t
  s,@WARN_CFLAGS@,$WARN_CFLAGS,;t t

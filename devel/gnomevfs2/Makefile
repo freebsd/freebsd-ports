@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gnomevfs2
-PORTVERSION=	2.6.1.1
-PORTREVISION=	3
+PORTVERSION=	2.6.2
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/gnome-vfs/2.6
@@ -25,7 +24,7 @@ USE_X_PREFIX=	yes
 USE_GNOME=	gnomeprefix gnomehack gnomehier intlhack gnomemimedata gconf2 \
 		libbonobo
 USE_REINPLACE=	yes
-GNU_CONFIGURE=	yes
+USE_LIBTOOL_VER=15
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--disable-openssl \
 		--disable-gnutls \
