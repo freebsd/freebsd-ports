@@ -1,0 +1,10 @@
+This is a port of Mars_nwe, a free NetWare(tm) emulator for Linux and 
+UnixWare to FreeBSD. An original program was written by Martin Stover, 
+Marburg, Germany. Port to FreeBSD was made by Boris Popov (bp@butya.kz).
+
+	Notes given below related only to FreeBSD. For full description
+of Mars_nwe, please read mars_nwe/doc/README file.
+
+	Additional info available at http://www.dixi.ml.org/bp/
+
+If you have any questions do not hesitate to contact me at bp@butya.kz.
