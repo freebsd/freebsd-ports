@@ -3,13 +3,17 @@
 # Date created:		28 September 1994
 # Whom:			adam
 #
-# $Id: Makefile,v 1.17 1997/12/10 01:07:40 jseger Exp $
+# $Id: Makefile,v 1.18 1998/08/30 15:45:29 steve Exp $
 #
 
-DISTNAME=	cnews
+DISTNAME=	c-news
 PKGNAME=	cnews-cr.g
 CATEGORIES=	news
-MASTER_SITES=	ftp://ftp.zoo.toronto.edu/pub/
+MASTER_SITES=	ftp://ftp.cs.toronto.edu/pub/c-news/ \
+		ftp://ftp.funet.fi/pub/unix/news/cnews/ \
+		ftp://ftp.win.or.jp/pub/network/news/cnews/ \
+		ftp://ftp.redcom.ru/pub/unix/usenet/c-news/ \
+		ftp://ftp.mc.hik.se/pub/unix/news/c-news/
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.ORG
