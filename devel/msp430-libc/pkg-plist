@@ -97,6 +97,12 @@
 %%LIBC_TARG%%/lib/crt430x337.o
 %%LIBC_TARG%%/lib/crt430x412.o
 %%LIBC_TARG%%/lib/crt430x413.o
+%%LIBC_TARG%%/lib/crt430xE423.o
+%%LIBC_TARG%%/lib/crt430xE425.o
+%%LIBC_TARG%%/lib/crt430xE427.o
+%%LIBC_TARG%%/lib/crt430xW423.o
+%%LIBC_TARG%%/lib/crt430xW425.o
+%%LIBC_TARG%%/lib/crt430xW427.o
 %%LIBC_TARG%%/lib/crt430x435.o
 %%LIBC_TARG%%/lib/crt430x436.o
 %%LIBC_TARG%%/lib/crt430x437.o
