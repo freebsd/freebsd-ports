@@ -20,4 +20,10 @@ CONFIGURE_ARGS+=--prefix=${PREFIX}
 
 INSTALLS_SHLIB=	yes
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=		"Does not install on FreeBSD ${OSVERSION}"
+.endif
+
+.include <bsd.port.post.mk>
