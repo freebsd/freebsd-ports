@@ -18,7 +18,8 @@ LIB_DEPENDS=	gnet.1:${PORTSDIR}/net/gnet
 
 USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
-USE_GNOME=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gnomehack gnomeprefix libglade
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-gnome=yes --enable-debug=no
