@@ -11,12 +11,14 @@
 # you can generally build it cleanly from the source. - Doug
 
 PORTNAME=	bind84
-PORTVERSION=	8.4.4
-CATEGORIES?=	dns net
+PORTVERSION=	8.4.6
+CATEGORIES?=	dns net ipv6
 MASTER_SITES=	${MASTER_SITE_ISC}
 MASTER_SITE_SUBDIR=	bind/src/${PORTVERSION}
-DISTFILES=	bind-src.tar.gz bind-doc.tar.gz
+DISTFILES=	bind-src.tar.gz bind-doc.tar.gz \
+		bind-src.tar.gz.asc bind-doc.tar.gz.asc
 DIST_SUBDIR=	bind-${PORTVERSION}
+EXTRACT_ONLY=	bind-src.tar.gz bind-doc.tar.gz
 
 MAINTAINER=	DougB@FreeBSD.org
 COMMENT=	The Berkeley Internet Name Domain, an implementation of DNS
