@@ -18,10 +18,10 @@ MAINTAINER=     brian@FreeBSD.org
 NO_WRKSUBDIR=	YES
 EXTRACT_CMD=	${GZCAT}
 EXTRACT_BEFORE_ARGS=	# None
-EXTRACT_AFTER_ARGS=	> ${WRKSRC}/${DISTNAME}
+EXTRACT_AFTER_ARGS=	> ${WRKSRC}/uk.phone
 NO_BUILD=	YES
 
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/${DISTNAME} ${PREFIX}/share/misc
+	${INSTALL_DATA} ${WRKSRC}/uk.phone ${PREFIX}/share/misc
 
 .include <bsd.port.mk>
