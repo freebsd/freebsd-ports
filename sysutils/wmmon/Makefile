@@ -3,7 +3,7 @@
 # Date created:        27 November 1998
 # Whom:                Kris Kennaway <kkennawa@physics.adelaide.edu.au>
 #
-# $Id: Makefile,v 1.4 1999/01/18 06:43:01 asami Exp $
+# $Id: Makefile,v 1.5 1999/01/26 19:53:01 fenner Exp $
 #
 
 DISTNAME=	wmmon-1.0b2
@@ -35,8 +35,8 @@ post-patch:
 	@${CP} ${WRKDIR}/wmmon/Makefile.FreeBSD-2.2 ${WRKSRC}/Makefile
 .endif
 
-post-install:
-	@strip ${PREFIX}/bin/wmmon
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/wmmon ${PREFIX}/bin/wmmon
 
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/wmmon
