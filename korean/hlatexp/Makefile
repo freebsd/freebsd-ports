@@ -8,7 +8,8 @@
 PORTNAME=	hLaTeXp
 PORTVERSION=	1998.11.20
 CATEGORIES=	korean print
-MASTER_SITES=	ftp://knot.kaist.ac.kr/pub/htex/hlatexp/
+MASTER_SITES=	ftp://knot.kaist.ac.kr/pub/htex/hlatexp/ \
+		ftp://knot.kaist.ac.kr/pub/htex/htex-fonts/
 DISTFILES=	unpacked.tar.gz htex.tfm.tar.gz
 DIST_SUBDIR=	htex
 
