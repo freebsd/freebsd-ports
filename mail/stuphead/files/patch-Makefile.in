@@ -1,0 +1,17 @@
+--- Makefile.in.orig	Fri May  4 19:56:35 2001
++++ Makefile.in	Fri May  4 19:57:01 2001
+@@ -424,11 +424,11 @@
+ 	-rm -rf $(distdir)
+ 
+ install-data-local:
+-	@INSTALL@ -d -m755 $(GNOME_DATADIR)/gnome/apps/Internet
+-	@INSTALL@ -m644 stuphead.desktop $(GNOME_DATADIR)/gnome/apps/Internet
++	@INSTALL@ -d -m755 $(GNOME_DATADIR)/apps/Internet
++	@INSTALL@ -m644 stuphead.desktop $(GNOME_DATADIR)/apps/Internet
+ 
+ uninstall-local:
+-	rm -f $(GNOME_DATADIR)/gnome/apps/Internet/stuphead.desktop
++	rm -f $(GNOME_DATADIR)/apps/Internet/stuphead.desktop
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.

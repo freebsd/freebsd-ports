@@ -1,0 +1,11 @@
+--- src/stuphead.orig	Fri May  4 19:12:38 2001
++++ src/stuphead	Fri May  4 19:13:57 2001
+@@ -15,6 +15,8 @@
+ 	MOZILLA_HOME=/usr/local/lib/mozilla
+ elif [ -f ~/mozilla/libgtkembedmoz.so ]; then 
+ 	MOZILLA_HOME=~/mozilla
++elif [ -f /usr/X11R6/lib/mozilla/libgtkembedmoz.so ]; then 
++	MOZILLA_HOME=/usr/X11R6/lib/mozilla
+ fi
+ 
+ LD_LIBRARY_PATH=$MOZILLA_HOME:$LD_LIBRARY_PATH
