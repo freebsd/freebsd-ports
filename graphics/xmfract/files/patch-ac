@@ -1,0 +1,33 @@
+--- Makefile.in.orig	Wed Jun 21 00:46:53 1995
++++ Makefile.in	Thu Aug 10 23:20:55 2000
+@@ -37,6 +37,10 @@
+ 
+ SHELL = /bin/sh
+ 
++prefix = @prefix@
++
++INSTALL_DATA = @INSTALL_DATA@
++
+ DISTFILES = Makefile.in config.h.in configure install.sh readme \
+ configure.in manifest
+ 
+@@ -48,7 +52,7 @@
+ 
+ .SUFFIXES:
+ 
+-all install uninstall: config.h Makefile
++all install uninstall:: config.h Makefile
+ 	for subdir in $(SUBDIRS); do \
+ 	  echo making $@ in $$subdir; \
+ 	  (cd $$subdir && $(MAKE) $@) || exit 1; \
+@@ -56,6 +60,10 @@
+ 
+ check:
+ installcheck:
++
++install::
++	$(INSTALL_DATA) $(srcdir)/Xmfract.ad $(prefix)/lib/X11/app-defaults/Xmfract
++	$(INSTALL_DATA) $(srcdir)/xmfract.ini $(prefix)/lib/X11/xmfract
+ 
+ $(PROGS):
+ 	cd lib && $(MAKE) all

@@ -1,0 +1,22 @@
+--- src/Makefile.in.orig	Wed Jun 21 00:46:55 1995
++++ src/Makefile.in	Thu Aug 10 22:22:02 2000
+@@ -41,15 +41,15 @@
+ prefix = @prefix@
+ exec_prefix = @exec_prefix@
+ bindir = $(exec_prefix)/bin
+-libdir = $(prefix)/xmfract
++libdir = $(prefix)/lib/X11/xmfract
+ 
+ INSTALL = @INSTALL@
+ INSTALL_PROGRAM = @INSTALL_PROGRAM@
+ CC = @CC@
+-DEFS = @DEFS@
++DEFS = @DEFS@ -DXMFLACT_LIBDIR=\"$(libdir)\"
+ LIBS = @MALLOC_DEBUG_LIBS@ @X_LIBS@ @X_PRE_LIBS@ \
+-  @MOTIF_LIBS@ -lXm @MOTIF_POST_LIBS@ \
+-  @LIBXMU@ -lXt -lX11 @X_EXTRA_LIBS@ ../lib/libxmfra.a @LIBS@
++  @MOTIF_LIBS@ ${MOTIFLIB} @MOTIF_POST_LIBS@ \
++  @LIBXMU@ -lXext -lXt -lX11 @X_EXTRA_LIBS@ ../lib/libxmfra.a @LIBS@
+ CFLAGS = @MALLOC_DEBUG_INC@ @CFLAGS@ @MOTIF_CFLAGS@ @X_CFLAGS@
+ LDFLAGS = @LDFLAGS@
+ STRIP = strip

@@ -1,0 +1,11 @@
+--- etc/Makefile.in.orig	Wed Jun 21 00:47:16 1995
++++ etc/Makefile.in	Thu Aug 10 22:13:01 2000
+@@ -28,7 +28,7 @@
+ VPATH = @srcdir@
+ 
+ prefix = @prefix@
+-libdir = $(prefix)/xmfract
++libdir = $(prefix)/lib/X11/xmfract
+ INSTALL = @INSTALL@
+ INSTALL_DATA = @INSTALL_DATA@
+ RM = rm

@@ -1,0 +1,16 @@
+--- src/cmdfile.c.orig	Wed Jun 21 00:46:57 1995
++++ src/cmdfile.c	Thu Aug 10 22:13:02 2000
+@@ -382,9 +382,11 @@
+        */
+       tempstr = getenv("XMFRACTDIR");
+       if(tempstr == NULL) tempstr = getenv("FRACTDIR");
+-      if(tempstr != NULL)
++      if(tempstr != NULL) {
+         sprintf(fractdir, "%s", tempstr);
+-
++      } else {
++        sprintf(fractdir, XMFLACT_LIBDIR);
++      }
+       if(((ret = stat(fractdir, &st)) == -1) ||
+         ((st.st_mode & S_IFMT) != S_IFDIR))
+         {
