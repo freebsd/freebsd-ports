@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ecartis
-PORTVERSION=	1.0.0.s20030814
+PORTVERSION=	1.0.0.s20031228
 PORTEPOCH=	1
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.ecartis.org/pub/ecartis/snapshots/tar/
