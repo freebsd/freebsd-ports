@@ -3,7 +3,7 @@
 # Date created:		24 Oct 1998
 # Whom:			Seiichirou Hiraoka
 #
-# $Id$
+# $Id: Makefile,v 1.2 1998/11/19 16:06:41 flathill Exp $
 #
 
 DISTNAME=	xsystem35-BETA-19981114
@@ -13,7 +13,7 @@ MASTER_SITES=	http://ryo1207.aist-nara.ac.jp/unitbase/xsys35/down/
 
 MAINTAINER=	flathill@FreeBSD.ORG
 
-LIB_DEPENDS+=	gtk11.1:${PORTSDIR}/x11-toolkits/gtk11
+LIB_DEPENDS=	gtk11.1:${PORTSDIR}/x11-toolkits/gtk11
 
 USE_X_PREFIX=	YES
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
