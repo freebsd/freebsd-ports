@@ -1,7 +1,9 @@
 include/Hermes/H_Clear.h
+include/Hermes/H_Config.h
 include/Hermes/H_Conv.h
 include/Hermes/H_Format.h
 include/Hermes/H_Pal.h
+include/Hermes/H_Types.h
 include/Hermes/Hermes.h
 include/Hermes/Types.h
 lib/libHermes.a
@@ -13,7 +15,6 @@ share/doc/Hermes/AUTHORS
 share/doc/Hermes/CHANGES
 share/doc/Hermes/COPYING
 share/doc/Hermes/FAQ
-share/doc/Hermes/Hermes.spec
 share/doc/Hermes/README
 share/doc/Hermes/TODO
 share/doc/Hermes/TODO.conversion

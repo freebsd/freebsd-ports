@@ -1,12 +1,12 @@
 # New ports collection makefile for:	Hermes
-# Version required:			1.2.4
+# Version required:			1.2.5
 # Date created:				29 April 1999
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.1.1.1 1999/05/03 04:19:23 steve Exp $
+# $Id: Makefile,v 1.2 1999/06/05 19:00:28 mharo Exp $
 #
 
-DISTNAME=	Hermes-1.2.4
+DISTNAME=	Hermes-1.2.5
 CATEGORIES=	graphics
 MASTER_SITES=	http://hermes.terminal.at/files/
 
@@ -19,7 +19,7 @@ post-install:
 	@ ${LN} -sf libHermes.so.1 ${PREFIX}/lib/libHermes.so
 .if !defined(NOPORTDOCS)
 	@ ${MKDIR} ${PREFIX}/share/doc/Hermes
-.for file in AUTHORS CHANGES COPYING Hermes.spec README TODO TODO.conversion
+.for file in AUTHORS CHANGES COPYING README TODO TODO.conversion
 	@ ${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/Hermes
 .endfor
 	@ ${INSTALL_DATA} ${WRKSRC}/docs/FAQ ${PREFIX}/share/doc/Hermes
