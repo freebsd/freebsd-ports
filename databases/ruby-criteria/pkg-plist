@@ -4,5 +4,6 @@
 %%RUBY_SITELIBDIR%%/criteria/mysql.rb
 %%RUBY_SITELIBDIR%%/criteria/sql.rb
 @dirrm %%RUBY_SITELIBDIR%%/criteria
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ChangeLog
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/README.en
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%
