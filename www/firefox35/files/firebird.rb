@@ -33,7 +33,7 @@
   ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
   POSSIBILITY OF SUCH DAMAGE.
 
-  $Id: MoZiLLa.in,v 1.18 2002/12/18 02:40:58 alane Exp $
+  $Id: firebird.rb,v 1.2 2003/05/31 17:24:19 marcus Exp $
 
   2002-12-16 Alan Eldridge <alane@geeksrus.net>
 
@@ -68,10 +68,10 @@ end
 
 IO::popen("xwininfo -display #{$display} -root -tree") {
   |io|
-  if NAME != "phoenix"
+  if NAME != "firebird"
     $windows = io.grep(%r<"Mozilla"\s+"navigator:\s*browser">)
   else
-    $windows = io.grep(%r<Phoenix.*"Mozilla"\s+"navigator:\s*browser">)
+    $windows = io.grep(%r<MozillaFirebird-bin.*>)
   end
 }
 
