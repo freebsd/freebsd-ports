@@ -90,7 +90,6 @@
     SUBDIR += gubby
     SUBDIR += hbiff
     SUBDIR += hotwayd
-    SUBDIR += icqmail
     SUBDIR += ifile
     SUBDIR += im
     SUBDIR += imap-uw
