@@ -8,8 +8,7 @@
 PORTNAME=	esh
 PORTVERSION=	0.8.5
 CATEGORIES=	shells
-MASTER_SITES=	http://www.ukc.mirror.ac.uk/sites/ftp.freebsd.org/pub/FreeBSD/ports/distfiles/ \
-		http://gd.tuwien.ac.at/opsys/linux/gentoo/distfiles/ \
+MASTER_SITES=	http://gd.tuwien.ac.at/opsys/linux/gentoo/distfiles/ \
 		http://people.FreeBSD.org/~foxfair/distfiles/
 
 MAINTAINER=	ports@FreeBSD.org

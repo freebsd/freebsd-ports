@@ -8,8 +8,7 @@
 PORTNAME=	bjorb
 PORTVERSION=	0.5.5p1
 CATEGORIES=	security
-MASTER_SITES=	http://www.ukc.mirror.ac.uk/sites/ftp.freebsd.org/pub/FreeBSD/ports/distfiles/ \
-		http://people.FreeBSD.org/~foxfair/distfiles/
+MASTER_SITES=	http://people.FreeBSD.org/~foxfair/distfiles/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Secure TCP relay software with SSL
