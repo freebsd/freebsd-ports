@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	smokeping
-PORTVERSION=	1.18
+PORTVERSION=	1.19
 CATEGORIES=	net www
 MASTER_SITES=	http://people.ee.ethz.ch/~oetiker/webtools/smokeping/pub/
 
@@ -24,7 +24,7 @@ RUN_DEPENDS=	rrdtool:${PORTSDIR}/net/rrdtool \
 
 USE_PERL5=	yes
 
-MAN1=		EchoPing.pm.1 EchoPingChargen.pm.1 EchoPingDiscard.pm.1 \
+MAN1=		DNS.pm.1 EchoPing.pm.1 EchoPingChargen.pm.1 EchoPingDiscard.pm.1 \
 		EchoPingHttp.pm.1 EchoPingHttps.pm.1 EchoPingIcp.pm.1 EchoPingSmtp.pm.1 \
 		FPing.pm.1 FPing6.pm.1 IOSPing.pm.1 ParseConfig.pm.1 Smokeping.pm.1 \
 		base.pm.1 basefork.pm.1 basevars.pm.1 \
@@ -32,10 +32,9 @@ MAN1=		EchoPing.pm.1 EchoPingChargen.pm.1 EchoPingDiscard.pm.1 \
 		smokeping_config.1 smokeping_install.1
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
-SITE_PERL=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}
 DOCDIR=		${PREFIX}/share/doc/smokeping
 DOC1=		CHANGES CONTRIBUTORS COPYING COPYRIGHT README TODO
-DOC2=		EchoPing.pm EchoPingChargen.pm EchoPingDiscard.pm \
+DOC2=		DNS.pm EchoPing.pm EchoPingChargen.pm EchoPingDiscard.pm \
 		EchoPingHttp.pm EchoPingHttps.pm EchoPingIcp.pm EchoPingSmtp.pm \
 		FPing.pm FPing6.pm IOSPing.pm ParseConfig.pm Smokeping.pm \
 		base.pm basefork.pm basevars.pm smokeping.cgi \
