@@ -886,6 +886,7 @@ compupic	ports/graphics/compupic
 comserv		ports/comms/comserv
 concorde	ports/math/concorde
 confregdecode	ports/net/confregdecode
+conglomerate	ports/editors/conglomerate
 connect4	ports/games/connect4
 conquest	ports/games/conquest
 cons		ports/devel/cons
