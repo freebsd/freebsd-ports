@@ -1,0 +1,18 @@
+%%PORTDOCS%%share/doc/amavisd/FAQ
+%%PORTDOCS%%share/doc/amavisd/INSTALL
+%%PORTDOCS%%share/doc/amavisd/README
+%%PORTDOCS%%share/doc/amavisd/README.exim
+%%PORTDOCS%%share/doc/amavisd/README.milter
+%%PORTDOCS%%share/doc/amavisd/README.postfix
+%%PORTDOCS%%share/doc/amavisd/README.qmail
+%%PORTDOCS%%share/doc/amavisd/README.scanners
+%%PORTDOCS%%share/doc/amavisd/README.sendmail
+%%PORTDOCS%%share/doc/amavisd/amavis.html
+%%PORTDOCS%%share/doc/amavisd/amavis.m4
+%%PORTDOCS%%share/doc/amavisd/amavis.png
+%%PORTDOCS%%share/doc/amavisd/amavis.txt
+%%PORTDOCS%%@dirrm share/doc/amavisd
+etc/amavisd.conf
+etc/rc.d/amavisd-milter.sh
+sbin/amavis-milter
+sbin/amavisd
