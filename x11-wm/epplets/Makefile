@@ -11,7 +11,6 @@ PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	ftp://kde.planetmirror.com/pub/enlightenment/epplets/ \
 		ftp://ftp.dti.ad.jp/pub/X/enlightenment/epplets/
-
 DISTNAME=	epplet-base-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
