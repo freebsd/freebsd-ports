@@ -1,0 +1,66 @@
+===================================================================
+RCS file: /usr/local/cvsroot/dbdpg/dbdpg/dbdimp.c,v
+retrieving revision 1.101
+retrieving revision 1.102
+diff -p --unified=3 -r1.101 -r1.102
+--- dbdimp.c	2005/03/11 15:37:31	1.101
++++ dbdimp.c	2005/03/15 01:51:13	1.102
+@@ -1034,6 +1019,7 @@ void dbd_st_split_statement (sth, imp_st
+ 				newph->value = NULL;
+ 				newph->quoted = NULL;
+ 				newph->referenced = 0;
++				newph->defaultval = 1;
+ 				New(0, newph->fooname, newsize+1, char); /* freed in dbd_st_destroy */
+ 				if (!newph->fooname)
+ 					croak("No memory");
+@@ -1124,6 +1110,7 @@ void dbd_st_split_statement (sth, imp_st
+ 			newph->value = NULL;
+ 			newph->quoted = NULL;
+ 			newph->referenced = 0;
++			newph->defaultval = 1;
+ 			newph->fooname = NULL;
+ 			/* Let the correct segment point to it */
+ 			while (!currseg->placeholder)
+@@ -1269,7 +1256,7 @@ int dbd_st_prepare_statement (sth, imp_s
+ 			params = imp_sth->numphs;
+ 			paramTypes = calloc(imp_sth->numphs, sizeof(*paramTypes));
+ 			for (x=0,currph=imp_sth->ph; NULL != currph; currph=currph->nextph) {
+-				paramTypes[x++] = currph->bind_type->type_id;
++				paramTypes[x++] = currph->defaultval ? 0 : currph->bind_type->type_id;
+ 			}
+ 		}
+ 		result = PQprepare(imp_dbh->conn, imp_sth->prepare_name, statement, params, paramTypes);
+@@ -1424,12 +1410,14 @@ int dbd_bind_ph (sth, imp_sth, ph_name,
+ 		}
+  	}
+ 	else if (NULL == currph->bind_type) { /* "sticky" data type */
++		/* This is the default type, but we will honor defaultval if we can */
+ 		currph->bind_type = pg_type_data(VARCHAROID);
+ 		if (!currph->bind_type)
+ 			croak("Default type is bad!!!!???");
+ 	}
+
+ 	if (pg_type || sql_type) {
++		currph->defaultval = 0;
+ 		/* Possible re-prepare, depending on whether the type name also changes */
+ 		if (imp_sth->prepared_by_us && NULL != imp_sth->prepare_name)
+ 			reprepare=1;
+@@ -1685,7 +1673,7 @@ int dbd_st_execute (sth, imp_sth) /* <=
+ 			/* Populate paramTypes */
+ 			paramTypes = calloc(imp_sth->numphs, sizeof(*paramTypes));
+ 			for (x=0,currph=imp_sth->ph; NULL != currph; currph=currph->nextph) {
+-				paramTypes[x++] = currph->bind_type->type_id;
++				paramTypes[x++] = currph->defaultval ? 0 : currph->bind_type->type_id;
+ 			}
+
+ 			if (dbis->debug >= 10) {
+--- dbdimp.h	2005/03/18 13:10:05	1.1
++++ dbdimp.h	2005/03/18 13:10:32
+@@ -59,6 +59,7 @@
+ 	char  *quoted;              /* quoted version of the value, for PQexec only */
+ 	STRLEN quotedlen;           /* length of the quoted value */
+ 	bool   referenced;          /* used for PREPARE AS construction */
++	bool   defaultval;          /* is it using a generic 'default' value? */
+ 	sql_type_info_t* bind_type; /* type information for this placeholder */
+ 	struct ph_st *nextph;       /* more linked list goodness */
+ };
