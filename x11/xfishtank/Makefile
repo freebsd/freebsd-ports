@@ -14,7 +14,6 @@ MAINTAINER=	jacs@gnome.co.uk
 
 USE_IMAKE=	yes
 WRKSRC=		${WRKDIR}/xfishtank2.0
-NO_INSTALL_MANPAGES=	yes
 
 post-patch:
 	cd  ${WRKDIR}/xfishtank2.0; make clean
