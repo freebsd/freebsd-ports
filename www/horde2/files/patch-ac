@@ -1,0 +1,13 @@
+--- config/registry.php.dist.orig	Mon Oct 29 02:35:33 2001
++++ config/registry.php.dist	Fri Nov 16 23:16:28 2001
+@@ -1,8 +1,8 @@
+ <?php
+ // $Horde: horde/config/registry.php.dist,v 1.52 2001/10/29 01:35:33 chuck Exp $
+ 
+-// $this->registry['auth']['login'] = 'imp';
+-// $this->registry['auth']['logout'] = 'imp';
++//UNCOMMENTWHENINSTIMP$this->registry['auth']['login'] = 'imp';
++//UNCOMMENTWHENINSTIMP$this->registry['auth']['logout'] = 'imp';
+ // $this->registry['auth']['login'] = 'gollem';
+ // $this->registry['auth']['logout'] = 'gollem';
+ $this->registry['mail']['compose'] = 'imp';

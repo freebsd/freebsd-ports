@@ -1,0 +1,42 @@
+--- config/horde.php.dist.orig	Mon Sep 17 19:47:06 2001
++++ config/horde.php.dist	Fri Nov 16 23:38:28 2001
+@@ -77,7 +77,7 @@
+ 
+ // What backend should we use for authenticating users to Horde? Valid
+ // options are currently 'imap', 'ldap', 'mcal', 'sql', and 'ftp'.
+-$conf['auth']['driver'] = '';
++$conf['auth']['driver'] = 'imap';
+ 
+ // An array holding any parameters that the Auth object will need to
+ // function correctly. For IMAP, this is the server name, port,
+@@ -94,6 +94,10 @@
+ 
+ // What log driver should we use? Valid values are 'file', 'mcal',
+ // 'sql', and 'syslog'.
++// Warning: il you keep file, do not forget to add a line in your
++// /etc/newsyslog.conf
++// For example:
++// /var/log/horde.log                      600  5     100  *     Z
+ $conf['log']['type'] = 'file';
+ 
+ // What is the name of the log? For the 'file' driver, this is the
+@@ -126,12 +130,17 @@
+ // (meaning use system defaults and don't save any user preferences),
+ // 'session' (preferences only persist during the login), 'ldap', 
+ // and 'sql'.
+-$conf['prefs']['driver'] = 'none';
++$conf['prefs']['driver'] = 'sql';
+ 
+ // Any parameters that the preferences driver needs. This includes
+ // database or ldap server, username/password to connect with, etc.
+ $conf['prefs']['params'] = array();
+-
++$conf['prefs']['params']['phptype'] = 'mysql';
++$conf['prefs']['params']['hostspec'] = 'localhost';
++$conf['prefs']['params']['username'] = 'hordemgr';
++$conf['prefs']['params']['password'] = 'hordemgr';
++$conf['prefs']['params']['database'] = 'horde';
++$conf['prefs']['params']['table'] = 'horde_prefs';
+ 
+ /**
+  ** Cache System Settings

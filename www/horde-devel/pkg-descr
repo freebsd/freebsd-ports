@@ -1,0 +1,8 @@
+Horde-devel is a massive upgrade of the Horde Application Framework.
+
+Many components have been added or streamlined. Inter-application
+support is much more robust, a generic MIME_Viewer framework is
+included, the preferences system supports global or application scope
+for preferences, and assorted bugs have been fixed.
+
+WWW: http://www.horde.org/
