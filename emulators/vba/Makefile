@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	vba
-PORTVERSION=	1.7
-PORTREVISION=	1
+PORTVERSION=	1.7.1
 CATEGORIES=	emulators
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -21,7 +20,6 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--without-profiling
 USE_SDL=	yes
 WRKSRC=		${WRKDIR}/VisualBoyAdvance-${PORTVERSION}
 
@@ -36,8 +34,8 @@ CLAGS+=
 .endif
 
 DATA_FILES=	${WRKSRC}/src/VisualBoyAdvance.cfg
-PROG_FILES=	${WRKSRC}/src/VisualBoyAdvance
-DOC_FILES=	${WRKSRC}/COPYING ${WRKSRC}/AUTHORS ${WRKSRC}/NEWS ${WRKSRC}/README
+PROG_FILES=	${WRKSRC}/src/VisualBoyAdvance ${WRKSRC}/src/TestEmu
+DOC_FILES=	COPYING AUTHORS NEWS README ChangeLog INSTALL
 
 pre-everything::
 	@${ECHO_MSG} ""
@@ -49,18 +47,22 @@ pre-everything::
 	@${ECHO_MSG} "flag."
 	@${ECHO_MSG} ""
 
-post-extract:
-	rm -rf `find ${WRKSRC} -name '.deps'`
-
 do-install:
-	${INSTALL} -d ${TARGET_DIR} && \
-	${INSTALL_PROGRAM} ${PROG_FILES} ${TARGET_DIR} && \
-	${INSTALL_DATA} ${DATA_FILES} ${TARGET_DIR} && \
+	${INSTALL} -d ${TARGET_DIR}
+	${INSTALL_PROGRAM} ${PROG_FILES} ${TARGET_DIR}
+
+.if !exists (${PREFIX}/bin/VisualBoyAdvance.cfg)
+	${INSTALL_DATA} ${DATA_FILES} ${TARGET_DIR}
+.endif
 
 post-install:
 .ifndef(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-	${INSTALL_MAN} ${DOC_FILES} ${DOCSDIR}
+
+.for filename in ${DOC_FILES}
+	${INSTALL_MAN} ${WRKSRC}/${filename} ${DOCSDIR}
+.endfor
+
 .endif
 
 .include <bsd.port.post.mk>
