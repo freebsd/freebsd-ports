@@ -1,5 +1,5 @@
 #	from: @(#)bsd.subdir.mk	5.9 (Berkeley) 2/1/91
-#	$Id: bsd.port.subdir.mk,v 1.28 1999/01/29 12:51:43 asami Exp $
+#	$Id: bsd.port.subdir.mk,v 1.29 1999/04/12 09:03:41 asami Exp $
 #
 # The include file <bsd.port.subdir.mk> contains the default targets
 # for building ports subdirectories. 
@@ -28,7 +28,9 @@
 #		Creating README.html for package.
 #
 #	afterinstall, all, beforeinstall, build, checksum, clean,
-#	clean-for-cdrom, clean-restricted, configure, deinstall,
+#	clean-for-cdrom, clean-restricted,
+#	clean-for-cdrom-list, clean-restricted-list,
+#	configure, deinstall,
 #	depend, depends, describe, extract, fetch, fetch-list, ignorelist,
 #	install, package, package-loop, readmes, realinstall, reinstall, tags
 #
@@ -81,6 +83,7 @@ ${SUBDIR}::
 
 .for __target in all fetch fetch-list package package-loop extract configure \
 		 build clean clean-for-cdrom clean-restricted \
+		 clean-for-cdrom-list clean-restricted-list \
 		 deinstall depend depends describe distclean \
 		 reinstall tags checksum \
 		 ignorelist

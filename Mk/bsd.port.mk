@@ -1,7 +1,7 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4
 #
-#	$Id: bsd.port.mk,v 1.309 1999/04/08 07:13:38 asami Exp $
+#	$Id: bsd.port.mk,v 1.310 1999/04/23 02:20:45 stb Exp $
 #	$NetBSD: $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
@@ -12,9 +12,10 @@
 # There are two different types of "maintainers" in the whole ports
 # framework concept.  Maintainers of the bsd.port*.mk files
 # are listed below in the ${OPSYS}_MAINTAINER entries (this file
-# is used by multiple *BSD flavors).  You should consult them directly
-# if you have any questions/suggestions regarding this file since only
-# they are allowed to modify the master copies in the CVS repository!
+# is used by multiple *BSD flavors).  You should consult them
+# if you have any questions/suggestions regarding this file.
+#
+# DO NOT COMMIT CHANGES TO THIS FILE BY YOURSELF!
 
 FreeBSD_MAINTAINER=	asami@FreeBSD.ORG
 OpenBSD_MAINTAINER=	imp@OpenBSD.ORG
@@ -53,8 +54,8 @@ OpenBSD_MAINTAINER=	imp@OpenBSD.ORG
 #				  (default: ${DISTNAME}${EXTRACT_SUFX}).  Set this to
 #				  an empty string if the port doesn't require it.
 # EXTRACT_SUFX	- Suffix for archive names (default: .tar.bz2 if USE_BZIP2
-#				  is set, .tar.gz otherwise).  You never have to set both
-#				  DISTFILES and EXTRACT_SUFX.
+#				  is set, .zip if USE_ZIP is set, .tar.gz otherwise).  
+#				  You never have to set both DISTFILES and EXTRACT_SUFX.
 # MASTER_SITES	- Primary location(s) for distribution files if not found
 #				  locally.
 # PATCHFILES	- Name(s) of additional files that contain distribution
@@ -114,6 +115,8 @@ OpenBSD_MAINTAINER=	imp@OpenBSD.ORG
 #
 # USE_BZIP2		- Says that the port tarballs use bzip2, not gzip, for
 #				  compression.
+# USE_ZIP		- Says that the port distfile uses zip, not tar w/[bg]zip
+#				  for compression.
 # USE_GMAKE		- Says that the port uses gmake.
 # GMAKE			- Set to path of GNU make if not in $PATH (default: gmake).
 # USE_AUTOCONF	- Says that the port uses autoconf.  Implies GNU_CONFIGURE.
@@ -316,7 +319,8 @@ OpenBSD_MAINTAINER=	imp@OpenBSD.ORG
 # For extract:
 #
 # EXTRACT_CMD	- Command for extracting archive (default: "bzip2" if
-#				  USE_BZIP2 is set, "gzip" if not).
+#				  USE_BZIP2 is set, "unzip" if USE_ZIP is set, "gzip" 
+#				  otherwise).
 # EXTRACT_BEFORE_ARGS -
 #				  Arguments to ${EXTRACT_CMD} before filename
 #				  (default: "-dc").
@@ -470,6 +474,8 @@ DISTDIR?=		${PORTSDIR}/distfiles
 _DISTDIR?=		${DISTDIR}/${DIST_SUBDIR}
 .if defined(USE_BZIP2)
 EXTRACT_SUFX?=			.tar.bz2
+.elif defined(USE_ZIP)
+EXTRACT_SUFX?=			.zip
 .else
 EXTRACT_SUFX?=			.tar.gz
 .endif
@@ -565,6 +571,9 @@ MANCOMPRESSED?=	no
 
 .if defined(USE_BZIP2)
 BUILD_DEPENDS+=		bzip2:${PORTSDIR}/archivers/bzip2
+.endif
+.if defined(USE_ZIP)
+BUILD_DEPENDS+=		unzip:${PORTSDIR}/archivers/unzip
 .endif
 .if defined(USE_GMAKE)
 BUILD_DEPENDS+=		gmake:${PORTSDIR}/devel/gmake
@@ -698,12 +707,18 @@ TAR?=	/usr/bin/tar
 .endif
 
 # EXTRACT_SUFX is defined in .pre.mk section
+.if defined(USE_ZIP)
+EXTRACT_CMD?=			unzip
+EXTRACT_BEFORE_ARGS?=	-q
+EXTRACT_AFTER_ARGS?=	-d ${WRKDIR}
+.else
 EXTRACT_BEFORE_ARGS?=	-dc
 EXTRACT_AFTER_ARGS?=	| ${TAR} -xf -
 .if defined(USE_BZIP2)
 EXTRACT_CMD?=			bzip2
 .else
 EXTRACT_CMD?=			${GZIP_CMD}
+.endif
 .endif
 
 # Figure out where the local mtree file is
@@ -752,7 +767,7 @@ PKGMESSAGE?=		${PKGDIR}/MESSAGE
 PKG_CMD?=		/usr/sbin/pkg_create
 PKG_DELETE?=	/usr/sbin/pkg_delete
 .if !defined(PKG_ARGS)
-PKG_ARGS=		-v -c ${COMMENT} -d ${DESCR} -f ${TMPPLIST} -p ${PREFIX} -P "`${MAKE} package-depends | grep -v -E ${PKG_IGNORE_DEPENDS} | sort -u`" ${EXTRA_PKG_ARGS}
+PKG_ARGS=		-v -c ${COMMENT} -d ${DESCR} -f ${TMPPLIST} -p ${PREFIX} -P "`${MAKE} package-depends | ${GREP} -v -E ${PKG_IGNORE_DEPENDS} | sort -u`" ${EXTRA_PKG_ARGS}
 .if exists(${PKGINSTALL})
 PKG_ARGS+=		-i ${PKGINSTALL}
 .endif
@@ -826,7 +841,7 @@ MASTER_SITE_GNU+=	\
 	ftp://wuarchive.wustl.edu/systems/gnu/%SUBDIR%/ \
 	ftp://ftp.kddlabs.co.jp/pub/gnu/%SUBDIR%/ \
 	ftp://ftp.digex.net/pub/gnu/%SUBDIR%/ \
-	ftp://ftp.univ-evry.fr/pub/gnu/%SUBDIR%/ \
+	ftp://ftp.cs.ubc.ca/mirror2/gnu/%SUBDIR%/ \
 	ftp://ftp.cdrom.com/pub/gnu/%SUBDIR%/ \
 	ftp://ftp.duke.edu/pub/gnu/%SUBDIR%/ \
 	ftp://ftp.gamma.ru/pub/gnu/%SUBDIR%/ \
@@ -1289,14 +1304,18 @@ ignorelist:
 
 .if defined(RESTRICTED)
 clean-restricted:	delete-distfiles delete-package
+clean-restricted-list: delete-distfiles-list delete-package-list
 .else
 clean-restricted:
+clean-restricted-list:
 .endif
 
 .if defined(NO_CDROM)
 clean-for-cdrom:	delete-distfiles delete-package
+clean-for-cdrom-list:	delete-distfiles-list delete-package-list
 .else
 clean-for-cdrom:
+clean-for-cdrom-list:
 .endif
 
 .if defined(ALL_HOOK)
@@ -1501,7 +1520,7 @@ do-configure:
 	fi
 .if defined(HAS_CONFIGURE)
 	@(cd ${WRKSRC} && CC="${CC}" CXX="${CXX}" \
-	    CFLAGS="${CFLAGS}" \
+	    CFLAGS="${CFLAGS}" CXXFLAGS="${CXXFLAGS}" \
 	    INSTALL="/usr/bin/install -c -o ${BINOWN} -g ${BINGRP}" \
 	    INSTALL_DATA="${INSTALL_DATA}" \
 	    INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
@@ -1603,6 +1622,20 @@ delete-package:
 	@${RM} -f ${PKGFILE}
 .endif
 
+.if !target(delete-package-links-list)
+delete-package-links-list:
+	@${ECHO} ${RM} -f ${PACKAGES}/[a-z]*/${PKGNAME}${PKG_SUFX}
+.if !defined(NO_LATEST_LINK)
+	@${ECHO} ${RM} -f ${PKGLATESTFILE}
+.endif
+.endif
+
+.if !target(delete-package-list)
+delete-package-list:
+	@${MAKE} ${.MAKEFLAGS} delete-package-links-list
+	@${ECHO} ${RM} -f ${PKGFILE}
+.endif
+
 ################################################################
 # This is the "generic" port target, actually a macro used from the
 # six main targets.  See below for more.
@@ -1636,9 +1669,17 @@ _PORT_USE: .USE
 	@cd ${.CURDIR} && ${MAKE} ${.MAKEFLAGS} run-depends lib-depends
 .endif
 .if make(real-install)
+	@${MKDIR} ${PREFIX}
+	@if [ `id -u` != 0 ]; then \
+		if [ -w ${PREFIX}/ ]; then \
+			${ECHO_MSG} "Warning: not superuser, you may get some errors during installation."; \
+		else \
+			${ECHO_MSG} "Error: ${PREFIX}/ not writable."; \
+			${FALSE}; \
+		fi; \
+	fi
 .if !defined(NO_MTREE)
 	@if [ `id -u` = 0 ]; then \
-		${MKDIR} ${PREFIX}; \
 		if [ ! -f ${MTREE_FILE} ]; then \
 			${ECHO_MSG} "Error: mtree file \"${MTREE_FILE}\" is missing."; \
 			${ECHO_MSG} "Copy it from a suitable location (e.g., /usr/src/etc/mtree) and try again."; \
@@ -1648,7 +1689,7 @@ _PORT_USE: .USE
 		fi; \
 	else \
 		${ECHO_MSG} "Warning: not superuser, can't run mtree."; \
-		${ECHO_MSG} "Become root and try again to ensure correct permissions."; \
+		${ECHO_MSG} "You may want to become root and try again to ensure correct permissions."; \
 	fi
 .endif
 .endif
@@ -1842,6 +1883,20 @@ delete-distfiles:
 	fi)
 .if defined(DIST_SUBDIR)
 	-@${RMDIR} ${_DISTDIR}  
+.endif
+.endif
+
+.if !target(delete-distfiles-list)
+delete-distfiles-list:
+	@${ECHO} "# ${PKGNAME}"
+	@if [ "X${DISTFILES}${PATCHFILES}" != "X" -a -d ${_DISTDIR} ]; then \
+		cd ${_DISTDIR}; \
+		for file in ${DISTFILES} ${PATCHFILES}; do \
+			${ECHO} ${RM} -f ${_DISTDIR}/$$file; \
+		done; \
+	fi
+.if defined(DIST_SUBDIR)
+	@${ECHO} ${RMDIR} ${_DISTDIR}  
 .endif
 .endif
 
@@ -2215,7 +2270,18 @@ describe:
 		ABCD) ;; \
 		*) cd ${.CURDIR} && ${ECHO} -n `${MAKE} run-depends-list|sort -u`;; \
 	esac; \
+	${ECHO} -n "|"; \
+	cd ${.CURDIR} && ${ECHO} -n `${MAKE} www-site`; \
 	${ECHO} ""
+.endif
+
+.if !target(www-site)
+www-site:
+.if exists(${DESCR})
+	@${GREP} '^WWW: ' ${DESCR} | ${AWK} '{print $$2}' | head -1
+.else
+	@${ECHO}
+.endif
 .endif
 
 .if !target(readmes)
@@ -2246,7 +2312,7 @@ pretty-print-build-depends-list:
 .if defined(FETCH_DEPENDS) || defined(BUILD_DEPENDS) || \
 	defined(LIB_DEPENDS) || defined(DEPENDS)
 	@${ECHO} -n 'This port requires package(s) "'
-	@${ECHO} -n `grep '^${PKGNAME}|' ${PORTSDIR}/INDEX | awk -F\| '{print $$8;}'`
+	@${ECHO} -n `${GREP} '^${PKGNAME}|' ${PORTSDIR}/INDEX | awk -F\| '{print $$8;}'`
 	@${ECHO} '" to build.'
 .endif
 .endif
@@ -2255,7 +2321,7 @@ pretty-print-build-depends-list:
 pretty-print-run-depends-list:
 .if defined(RUN_DEPENDS) || defined(LIB_DEPENDS) || defined(DEPENDS)
 	@${ECHO} -n 'This port requires package(s) "'
-	@${ECHO} -n `grep '^${PKGNAME}|' ${PORTSDIR}/INDEX | awk -F\| '{print $$9;}'`
+	@${ECHO} -n `${GREP} '^${PKGNAME}|' ${PORTSDIR}/INDEX | awk -F\| '{print $$9;}'`
 	@${ECHO} '" to run.'
 .endif
 .endif
