@@ -10,6 +10,7 @@ include/sybdb.h
 include/syberror.h
 include/sybfront.h
 include/tds.h
+include/tdsconvert.h
 include/tdsutil.h
 include/tdsver.h
 lib/libct.a
