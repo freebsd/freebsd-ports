@@ -1,16 +1,17 @@
 # New ports collection makefile for:	enlightenment
-# Version required:		0.15.0-19990120
+# Version required:		0.15.5
 # Date created:			10 June 1997
 # Whom:				Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.33 1999/01/22 16:01:45 vanilla Exp $
+# $Id: Makefile,v 1.34 1999/03/15 18:30:06 nectar Exp $
 #
 
-DISTNAME=	enlightenment-0.15.0-19990120
-PKGNAME=	enlightenment-0.15.0
+DISTNAME=	enlightenment-0.15.5
 CATEGORIES=	x11-wm gnome
-MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	enlightenment
+MASTER_SITES=	ftp://www.rasterman.com/pub/enlightenment/enlightenment/ \
+		http://www.rasterman.com/files/ \
+		ftp://ftp.dti.ad.jp/pub/X/enlightenment/enlightenment/
+
 
 MAINTAINER=	vanilla@FreeBSD.ORG
 
@@ -19,20 +20,14 @@ LIB_DEPENDS=	esd.1:${PORTSDIR}/audio/esound \
 		gif.3:${PORTSDIR}/graphics/giflib \
 		Imlib.3:${PORTSDIR}/graphics/imlib \
 		tiff.4:${PORTSDIR}/graphics/tiff34 \
-		ttf.3:${PORTSDIR}/print/freetype
+		ttf.3:${PORTSDIR}/print/freetype \
+		ghttp.1:${PORTSDIR}/www/libghttp
 
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-fsstd
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS=-L${LOCALBASE}/lib
-
-WRKSRC=		${WRKDIR}/enlightenment-0.15.0
-
-pre-patch:
-.if defined(XLOCALE)
-	${PATCH} ${PATCH_ARGS} < ${FILESDIR}/patch-xlocale
-.endif
+CONFIGURE_ENV=	CFLAGS="-I${LOCALBASE}/include" \
+		LIBS="-L${LOCALBASE}/lib -lxpg4"
 
 .include <bsd.port.mk>
