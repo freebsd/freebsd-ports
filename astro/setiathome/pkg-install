@@ -9,16 +9,16 @@
 [ -z "${PKG_PREFIX}" ] && exit 1
 [ -n "${BATCH}" ] && exit 0
 
-PKG_NAME=$1
+PKG_NAME=${1%%-[0-9._]*}
 PKG_ACTION=$2
 
 # override these variables in ${PREFIX}/etc/rc.setiathome.conf
-seti_wrkdir=/var/db/setiathome		# working directory
+seti_wrkdir=/var/db/${PKG_NAME}		# working directory
 seti_user=nobody			# user id to run under
 seti_maxprocs=$(sysctl -n hw.ncpu)	# max. number of processes to start
 
 rcconf_dir=${PKG_PREFIX}/etc
-rcconf_file=rc.setiathome.conf
+rcconf_file=rc.${PKG_NAME}.conf
 rcconf_path=${rcconf_dir}/${rcconf_file}
 
 if [ -f ${rcconf_path} ]; then
@@ -26,12 +26,12 @@ if [ -f ${rcconf_path} ]; then
 fi
 
 rc_dir=${PKG_PREFIX}/etc/rc.d
-rc_file=setiathome.sh
+rc_file=${PKG_NAME}.sh
 rc_path=${rc_dir}/${rc_file}
 
 ncpu=$(sysctl -n hw.ncpu)
 
-case "$PKG_ACTION" in
+case "${PKG_ACTION}" in
 POST-INSTALL)
 
 echo "****  SETI@home requires a working directory for temporary files and a"

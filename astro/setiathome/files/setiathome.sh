@@ -9,7 +9,7 @@ rc_file=${0##*/}
 rc_arg=$1
 
 # override these variables in ${PREFIX}/etc/rc.setiathome.conf
-seti_wrkdir=/var/db/setiathome		# primary working directory
+seti_wrkdir=/var/db/${rc_file%.sh}	# primary working directory
 seti_std_args=-email			# command arguments for standard mode
 seti_reg_args=-login			# command arguments for register mode
 seti_proxy_args=			# proxy arguments
@@ -32,7 +32,7 @@ if [ -f ${rcconf_path} ]; then
 fi
 
 program_dir=${PREFIX}/sbin
-program_file=setiathome
+program_file=${rc_file%.sh}
 program_path=${program_dir}/${program_file}
 
 syslog_facility=daemon.err
@@ -93,7 +93,7 @@ restart)
 	;;
 
 status)
-	ps -auxww | egrep ${program_file} | egrep -v "($0|egrep)"
+	ps auxww | egrep ${program_file} | egrep -v "($0|egrep)"
 	;;
 
 register)
