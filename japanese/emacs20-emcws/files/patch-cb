@@ -1,8 +1,8 @@
---- src/s/freebsd.h.orig	Tue Apr 13 03:22:12 1999
-+++ src/s/freebsd.h	Sat Jul 24 01:30:10 1999
-@@ -45,6 +45,13 @@
- #define LIBS_SYSTEM -lutil
+--- src/s/freebsd.h.orig	Tue May  2 21:29:10 2000
++++ src/s/freebsd.h	Mon Nov  4 11:29:52 2002
+@@ -47,6 +47,13 @@
  #define LIBS_TERMCAP -ltermcap
+ #endif
  
 +/* Use XPG4 Library for FreeBSD */
 +#if __FreeBSD_version >= 220000
@@ -14,7 +14,7 @@
  #define SYSV_SYSTEM_DIR
  
  /* freebsd has POSIX-style pgrp behavior. */
-@@ -54,9 +61,16 @@
+@@ -56,9 +63,16 @@
  #ifdef __ELF__
  
  #define LD_SWITCH_SYSTEM
@@ -32,3 +32,11 @@
  #undef LIB_GCC
  #define LIB_GCC
  
+@@ -150,3 +164,7 @@
+    be seen again in a later read(2), without the CRs.  */
+ 
+ #define BROKEN_PTY_READ_AFTER_EAGAIN 1
++
++#if __FreeBSD_version >= 500000
++#define LD_SWITCH_SYSTEM_TEMACS -znocombreloc
++#endif
