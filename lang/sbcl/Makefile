@@ -7,6 +7,7 @@
 
 PORTNAME=	sbcl
 PORTVERSION=	0.7.14
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	sbcl
@@ -41,7 +42,8 @@ do-build:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/runtime/sbcl ${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/output/sbcl.core ${PREFIX}/lib
+	${MKDIR} ${PREFIX}/lib/sbcl
+	${INSTALL_DATA} ${WRKSRC}/output/sbcl.core ${PREFIX}/lib/sbcl
 	${INSTALL_MAN} ${WRKSRC}/doc/sbcl.1 ${PREFIX}/man/man1/
 	${MKDIR} ${DOCSDIR}
 	(cd ${WRKSRC} && ${INSTALL_DATA} BUGS COPYING CREDITS ${DOCSDIR})

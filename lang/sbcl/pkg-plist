@@ -1,5 +1,5 @@
 bin/sbcl
-lib/sbcl.core
+lib/sbcl/sbcl.core
 share/doc/sbcl/BUGS
 share/doc/sbcl/COPYING
 share/doc/sbcl/CREDITS
@@ -26,3 +26,4 @@ share/doc/sbcl/CREDITS
 %%PORTDOCS%%share/doc/sbcl/html/z1203.html
 %%PORTDOCS%%@dirrm share/doc/sbcl/html
 @dirrm share/doc/sbcl
+@dirrm lib/sbcl
