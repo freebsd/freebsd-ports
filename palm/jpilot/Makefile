@@ -11,6 +11,11 @@ DISTNAME=	jpilot-0.95
 CATEGORIES=	palm comms
 MASTER_SITES=	http://jpilot.linuxbox.com/
 
+PATCH_SITES=	${MASTER_SITES}
+PATCHFILES=	patch-1-datebook-0.95 \
+		patch-1-todo-0.95 \
+		patch-1-todo_gui-0.95
+
 MAINTAINER?=	varju@webct.com
 
 LIB_DEPENDS=	pisock.3:${PORTSDIR}/palm/pilot-link \
