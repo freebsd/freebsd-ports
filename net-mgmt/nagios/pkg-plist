@@ -5,20 +5,21 @@
 @exec chown nagios:nagios %D/var/nagios %D/var/nagios/archives
 @exec chown nagios:nogroup %D/var/nagios/rw
 bin/nagios
-etc/nagios/cgi.cfg.dist
-etc/nagios/checkcommands.cfg.dist
-etc/nagios/contactgroups.cfg.dist
-etc/nagios/contacts.cfg.dist
-etc/nagios/dependencies.cfg.dist
-etc/nagios/escalations.cfg.dist
-etc/nagios/hostextinfo.cfg.dist
-etc/nagios/hostgroups.cfg.dist
-etc/nagios/hosts.cfg.dist
-etc/nagios/misccommands.cfg.dist
-etc/nagios/nagios.cfg.dist
-etc/nagios/resource.cfg.dist
-etc/nagios/serviceextinfo.cfg.dist
-etc/nagios/services.cfg.dist
+etc/nagios/cgi.cfg-sample
+etc/nagios/checkcommands.cfg-sample
+etc/nagios/contactgroups.cfg-sample
+etc/nagios/contacts.cfg-sample
+etc/nagios/dependencies.cfg-sample
+etc/nagios/escalations.cfg-sample
+etc/nagios/hostextinfo.cfg-sample
+etc/nagios/hostgroups.cfg-sample
+etc/nagios/hosts.cfg-sample
+etc/nagios/misccommands.cfg-sample
+etc/nagios/nagios.cfg-sample
+etc/nagios/resource.cfg-sample
+etc/nagios/serviceextinfo.cfg-sample
+etc/nagios/services.cfg-sample
+etc/nagios/timeperiods.cfg-sample
 etc/rc.d/nagios.sh
 share/nagios/contexthelp/A1.html
 share/nagios/contexthelp/A2.html
@@ -177,6 +178,7 @@ share/nagios/docs/starting.html
 share/nagios/docs/statetypes.html
 share/nagios/docs/stoprestart.html
 share/nagios/docs/templaterecursion.html
+share/nagios/docs/templatetricks.html
 share/nagios/docs/timeperiods.html
 share/nagios/docs/toc.html
 share/nagios/docs/tuning.html
