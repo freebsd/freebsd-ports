@@ -26,8 +26,7 @@ MAINTAINER=	maurice@serc.rmit.edu.au
 GNU_CONFIGURE=	yes
 USE_XLIB=	yes
 USE_PERL5=	yes
-
-CONFIGURE_ENV=		R_PAPERSIZE=${PAPERSIZE}
+CONFIGURE_ENV=	R_PAPERSIZE=${PAPERSIZE}
 
 PAPERSIZE?=	letter
 .if ${PAPERSIZE} != letter && ${PAPERSIZE} != a4
@@ -37,7 +36,7 @@ PAPERSIZE?=	letter
 	@${FALSE}
 .endif
 
-ALL_TARGET=all help html
+ALL_TARGET=	all help html
 
 MAN1=	R.1
 

@@ -7,10 +7,10 @@ bin/debugsh
 bin/dlpsh
 bin/getrom
 bin/hinotes
-bin/install-hinote
 bin/iambicexample
 bin/ietf2datebook
 bin/install-datebook
+bin/install-hinote
 bin/install-memo
 bin/install-todos
 bin/install-user
@@ -41,8 +41,8 @@ include/pi-appinfo.h
 include/pi-appinfo.hxx
 include/pi-args.h
 include/pi-cmp.h
-include/pi-config.h
 include/pi-config-win32.h
+include/pi-config.h
 include/pi-datebook.h
 include/pi-datebook.hxx
 include/pi-dlp.h
@@ -62,10 +62,10 @@ include/pi-money.h
 include/pi-padp.h
 include/pi-serial.h
 include/pi-slp.h
+include/pi-sockaddr-win32.h
+include/pi-sockaddr.h
 include/pi-socket.h
 include/pi-source.h
-include/pi-sockaddr.h
-include/pi-sockaddr-win32.h
 include/pi-sync.h
 include/pi-syspkt.h
 include/pi-todo.h

@@ -1,4 +1,4 @@
-lib/libmhash.so.2
-lib/libmhash.so
-lib/libmhash.a
 include/mhash.h
+lib/libmhash.a
+lib/libmhash.so
+lib/libmhash.so.2
