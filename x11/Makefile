@@ -44,14 +44,10 @@
     SUBDIR += gmessage
     SUBDIR += gmrun
     SUBDIR += gnoclip
-    SUBDIR += gnome
-    SUBDIR += gnome-fifth-toe
     SUBDIR += gnome-swallow
     SUBDIR += gnome2
     SUBDIR += gnome2-fifth-toe
-    SUBDIR += gnomeapplets
     SUBDIR += gnomeapplets2
-    SUBDIR += gnomecore
     SUBDIR += gnomedesktop
     SUBDIR += gnomelibs
     SUBDIR += gnomemag
@@ -81,7 +77,6 @@
     SUBDIR += libsx
     SUBDIR += libxklavier
     SUBDIR += linux-gnomelibs
-    SUBDIR += linux-xalf
     SUBDIR += login.app
     SUBDIR += lupe
     SUBDIR += mgapdesk
@@ -130,7 +125,6 @@
     SUBDIR += wscan
     SUBDIR += wterm
     SUBDIR += x3270
-    SUBDIR += xalf
     SUBDIR += xaniroc
     SUBDIR += xantfarm
     SUBDIR += xautolock
