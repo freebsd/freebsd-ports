@@ -34,7 +34,7 @@ post-extract:
 
 do-build:
 		cd ${WRKSRC}; \
-		fpwmake; \
+		fpwmake > /dev/null; \
 		fpwmake catalogs
 
 do-install:
