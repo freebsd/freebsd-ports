@@ -59,7 +59,7 @@ PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 
 do-extract:
 	${MKDIR} ${WRKDIR}
-	${LN} -sf `cd ${PORTSDIR}/${RUBY_PORT} && ${MAKE} -V WRKDIR`/${PORTNAME} ${WRKDIR}/
+	${LN} -sf `cd ${PORTSDIR}/${RUBY_PORT}; ${MAKE} -V WRKDIR`/${PORTNAME} ${WRKDIR}/
 
 post-install:
 .if !defined(NOPORTDOCS)

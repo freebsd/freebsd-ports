@@ -28,7 +28,7 @@ XEMACSLISPDIR=	${PREFIX}/lib/xemacs/site-lisp
 
 do-extract:
 	${MKDIR} ${WRKDIR}
-	${LN} -sf `cd ${.CURDIR}/../ruby-rdtool && ${MAKE} -V WRKSRC`/utils ${WRKSRC}
+	${LN} -sf `cd ${.CURDIR}/../ruby-rdtool; ${MAKE} -V WRKSRC`/utils ${WRKSRC}
 
 do-install:
 	${MKDIR} ${XEMACSLISPDIR}/

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	webunit
-PORTVERSION=	20011019
+PORTVERSION=	20011022
 CATEGORIES=	www textproc ruby
 MASTER_SITES=	http://xp.jbt.co.jp/download/webunit/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -31,7 +31,7 @@ DOCS_EN=	index-en.html
 DOCS_JA=	index-ja.html TIPS-ja.html TODO-ja.sdf
 
 do-install:
-	cd ${WRKSRC} && ${RUBY} install.rb
+	cd ${WRKSRC}; ${RUBY} install.rb
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_EXAMPLESDIR}/${PORTNAME}
 .for f in ${EXAMPLES_EN}
