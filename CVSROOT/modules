@@ -4216,6 +4216,7 @@ p5-Crypt-UnixCrypt	ports/security/p5-Crypt-UnixCrypt
 p5-Curses	ports/devel/p5-Curses
 p5-Curses-Widgets	ports/devel/p5-Curses-Widgets
 p5-DBD-CSV	ports/databases/p5-DBD-CSV
+p5-DBD-InterBase	ports/databases/p5-DBD-InterBase
 p5-DBD-Pg	ports/databases/p5-DBD-Pg
 p5-DBD-Sybase	ports/databases/p5-DBD-Sybase
 p5-DBD-XBase	ports/databases/p5-DBD-XBase
