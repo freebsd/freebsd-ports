@@ -1,12 +1,12 @@
 # New ports collection makefile for:	sted
-# Version required:			0.2.2
 # Date created:				19 May 1998
 # Whom:					Andrey Zakhvatov
 #
 # $FreeBSD$
 #
 
-DISTNAME=	sted-0.2.2
+PORTNAME=	sted
+PORTVERSION=	0.2.2
 CATEGORIES=	editors
 MASTER_SITES=	http://user.tninet.se/~uxm165t/
 

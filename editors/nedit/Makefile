@@ -1,12 +1,12 @@
 # New ports collection makefile for:	nedit
-# Version required:			5.0.2
 # Date created:				7 April 1996
 # Whom:	Daniel Eischen <deischen@freebsd.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	nedit-5.1.1
+PORTNAME=	nedit
+PORTVERSION=	5.1.1
 CATEGORIES=	editors
 MASTER_SITES=	ftp://ftp.nedit.org/pub/v5_1_1/ \
 		ftp://ftp.nedit.org/pub/contrib/misc/

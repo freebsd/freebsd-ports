@@ -1,12 +1,12 @@
 # New ports collection makefile for:	GNU emacs
-# Version required:	20.6
 # Date created:		29 October 1994
 # Whom:			jkh
 #
 # $FreeBSD$
 #
 
-DISTNAME=	emacs-20.6
+PORTNAME=	emacs
+PORTVERSION=	20.6
 CATEGORIES=	editors ipv6
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	emacs

@@ -1,15 +1,15 @@
 # New ports collection makefile for:	joe
-# Version required:	2.8
 # Date created:		01 Jul 1995
 # Whom:			torstenb@FreeBSD.org
 #
 # $FreeBSD$
 #
 
-DISTNAME=	joe2.8
-PKGNAME=	joe-2.8
+PORTNAME=	joe
+PORTVERSION=	2.8
 CATEGORIES=	editors
 MASTER_SITES=	ftp://ftp.std.com/src/editors/
+DISTNAME=	${PORTNAME}${PORTVERSION}
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	will@FreeBSD.org

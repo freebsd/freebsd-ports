@@ -1,12 +1,12 @@
 # New ports collection makefile for:	hexedit
-# Version required:			1.0.0
 # Date created:				5 August 1998
 # Whom:					Andrey Zakhvatov
 #
 # $FreeBSD$
 #
 
-DISTNAME=		hexedit-1.1.0
+PORTNAME=		hexedit
+PORTVERSION=		1.1.0
 CATEGORIES=		editors
 MASTER_SITES=		http://www.chez.com/prigaux/ \
 			${MASTER_SITE_SUNSITE}

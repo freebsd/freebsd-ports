@@ -1,15 +1,15 @@
 # New ports collection makefile for:	FINE
-# Version required:		2.1
 # Date created:			17 August 1999
 # Whom:				Chris Piazza <cpiazza@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	fine2.3
-PKGNAME=	fine-2.3
+PORTNAME=	fine
+PORTVERSION=	2.3
 CATEGORIES=	editors
 MASTER_SITES=	ftp://razor.fer.uni-lj.si/pub/software/bojank/fine/
+DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	cpiazza@FreeBSD.org
 

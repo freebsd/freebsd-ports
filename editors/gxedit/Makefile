@@ -1,16 +1,16 @@
 # New ports collection makefile for:	gxedit
-# Version required:			1.23
 # Date created:				01 Jul 1998
 # Whom:					Dom Mitchell <dom@myrddin.demon.co.uk>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	GXedit1.23
-PKGNAME=	gxedit-1.23
+PORTNAME=	gxedit
+PORTVERSION=	1.23
 CATEGORIES=	editors
 MASTER_SITES=	http://mirrors.darkelf.net/GXedit/ \
 		http://www.linuxbox.com/~drow/GXedit/
+DISTNAME=	GXedit${PORTVERSION}
 
 MAINTAINER=	dom@myrddin.demon.co.uk
 

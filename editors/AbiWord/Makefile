@@ -1,15 +1,15 @@
 # New ports collection makefile for:    AbiWord
-# Version required:     0.7.6
 # Date created:         3 Mar 1999
 # Whom:                 Donald Burr <dburr@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	abi-${VERSION}
-PKGNAME=	AbiWord-${VERSION}
+PORTNAME=	AbiWord
+PORTVERSION=	${VERSION}
 CATEGORIES=	editors
 MASTER_SITES=	http://www.abisource.com/downloads/Version-${VERSION}/lf/
+DISTNAME=	abi-${VERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} expat-${VERSION}.tar.gz \
 		unixfonts-${VERSION}.tar.gz wv-${VERSION}.tar.gz
 

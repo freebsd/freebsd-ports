@@ -1,15 +1,15 @@
 # New ports collection makefile for:    Jed text editor
-# Version required:     0.98-7
 # Date created:         22 APR 1997
 # Whom:                 eric
 #
 # $FreeBSD$
 #
 
-DISTNAME=       jed0.98-7
-PKGNAME=        jed-0.98.7
+PORTNAME=	jed
+PORTVERSION=	0.98.7
 CATEGORIES=	editors
-MASTER_SITES=   ftp://space.mit.edu/pub/davis/jed/v0.98/
+MASTER_SITES=	ftp://space.mit.edu/pub/davis/jed/v0.98/
+DISTNAME=	${PORTNAME}0.98-7
 
 PATCH_SITES=   ftp://space.mit.edu/pub/davis/jed/v0.98/
 PATCHFILES=    BUGS
