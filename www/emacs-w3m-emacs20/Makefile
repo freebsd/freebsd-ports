@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	emacs-w3m
-PORTVERSION=	1.0
+PORTVERSION=	1.1.100
 CATEGORIES=	www elisp
 MASTER_SITES=	http://emacs-w3m.namazu.org/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
@@ -40,7 +40,7 @@ DOCSDIR_JA=	${PREFIX}/share/doc/ja/${PORTNAME}
 
 .include <bsd.port.pre.mk>
 
-.if ${EMACS_NAME} == xemacs
+.if (${EMACS_NAME} == "xemacs")
 XEMACS_ONLY?=		""
 EMACS_ONLY?=		"@comment "
 SEMI_FILE=		${LOCALBASE}/${EMACS_PACKAGESDIR}/lisp/semi/mime-setup.el
