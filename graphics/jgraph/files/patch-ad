@@ -1,0 +1,961 @@
+--- jgraph.1.orig	Fri Mar 19 16:27:09 1999
++++ jgraph.1	Wed Aug  4 16:42:13 1999
+@@ -307,7 +307,7 @@
+ command lets you explicitly enter one which will go directly into the 
+ jgraph output.  Its units are the 
+ final postscript units.  It's probably best to use the 
+-\fB\-p\FR 
++\fB\-p\fR 
+ option
+ to see what the bounding box is that jgraph produces, and then
+ alter that accordingly with
+@@ -333,10 +333,10 @@
+ These two commands allow the user to include strings or
+ files (the token specifies the filename) which will be copied directly 
+ into jgraph's output.
+-The \fIpreamble\fB is included at the beginning of the output
++The \fIpreamble\fR is included at the beginning of the output
+ (after some initial postscript to set things up for jgraph), 
+-and the \fIepilogue\fB is included at the end.  A good use for
+-the \fIpreamble\fB is to set up a postscript dictionary if you're
++and the \fIepilogue\fR is included at the end.  A good use for
++the \fIpreamble\fR is to set up a postscript dictionary if you're
+ using postscript marks.
+ .PD
+ .RE
+@@ -364,13 +364,13 @@
+ \fB\|{\fIinteger\fB\|}.  \fR
+ If the curve doesn't exist, then this command creates it and starts
+ editing it.  
+-\fINewcurve\fB
++\fINewcurve\fR
+ and 
+-\fIcurve\fB
++\fIcurve\fR
+ interact as 
+-\fInewgraph\fB
++\fInewgraph\fR
+ and
+-\fIgraph\fB
++\fIgraph\fR
+ do.
+ .TP
+ \fBnewline\fR  
+@@ -412,28 +412,28 @@
+ .ns
+ .TP
+ \fBcopystring \|[\fIinteger\fB\|]\fR
+-\fIString\fB
++\fIString\fR
+ and
+-\fIcopystring\fB
++\fIcopystring\fR
+ are to 
+-\fInewstring\fB
++\fInewstring\fR
+ as
+-\fIcurve\fB
++\fIcurve\fR
+ and
+-\fIcopycurve\fB
++\fIcopycurve\fR
+ are to
+-\fInewcurve.\fB
++\fInewcurve.\fR
+ .TP
+ \fBborder\fR
+ .br
+ .ns
+ .TP
+ \fBnoborder\fR
+-\fIBorder\fR\fB
++\fIBorder\fR
+ draws a square border around the area defined by the axes.
+-\fINoborder\fB
++\fINoborder\fR
+ specifies no border.
+-\fINoborder\fB
++\fINoborder\fR
+ is the default.  
+ .TP
+ \fBclip\fR
+@@ -441,15 +441,15 @@
+ .ns
+ .TP
+ \fBnoclip\fR
+-\fIClip\fB
++\fIClip\fR
+ specifies that all curves in the graph will be clipped -- that is,
+ no points outside of the of axes will be plotted.  Clipping can also be
+ specified on a per-curve basis.  The default is
+-\fInoclip.\fB
++\fInoclip.\fR
+ .TP
+ \fBinherit_axes\fR   
+ This is an old command which is kept for backward compatibility.
+-\fICopycurve.\fB
++\fICopycurve.\fR
+ is equivalent to:
+ .PP
+ .nf
+@@ -464,9 +464,9 @@
+ \fBy_translate \|[\fIfloat\fB\|]\fR   
+ By default, the bottom left-hand corner of each graph is at point
+ (0,0) (final postscript units).
+-\fIX_translate\fB
++\fIX_translate\fR
+ and
+-\fIY_translate\fB
++\fIY_translate\fR
+ translate the bottom left-hand corner of the graph 
+ \fB\|[\fIfloat\fB\|] \fR
+ inches.  The main use of this is to draw more than one graph on 
+@@ -474,12 +474,12 @@
+ page when it computes its bounding box for centering.  Thus, if
+ only one graph is drawn, it will always be centered on the page, 
+ regardless of its 
+-\fIX_translate\fB
++\fIX_translate\fR
+ and
+-\fIY_translate\fB
++\fIY_translate\fR
+ values.  These values are used for relative placement of the graphs.
+    To change the centering of the graphs, use
+-\fIbbox.\fB
++\fIbbox.\fR
+ .TP
+ \fBX \|[\fIfloat\fB\|]\fR
+ .br
+@@ -487,9 +487,9 @@
+ .TP
+ \fBY \|[\fIfloat\fB\|]\fR   
+ These are the same as 
+-\fIX\fB
++\fIX\fR
+ and 
+-\fIY\fB
++\fIY\fR
+ in the
+ Top-level commands, except that they let the user continue editing
+ the current graph.
+@@ -500,9 +500,9 @@
+ .B SIMPLE AXIS EDITING COMMANDS
+ These commands act on the current
+ axis as chosen by 
+-\fIxaxis\fB
++\fIxaxis\fR
+ or
+-\fIyaxis\fB
++\fIyaxis\fR
+ (see GRAPH EDITING COMMANDS). 
+ Axis editing terminates when a graph or top-level command is given. 
+ There are more advanced axis editing commands given below which have
+@@ -531,9 +531,9 @@
+ \fB\-p \fR
+ option.  Unless stated, all units (for example point
+ plotting, string plotting, etc.) will be in terms of the
+-\fImin\fB
++\fImin\fR
+ and
+-\fImax\fB
++\fImax\fR
+ values of the x and y axes.
+ .TP
+ \fBsize \|[\fIfloat\fB\|]\fR   
+@@ -556,9 +556,9 @@
+ \fB\-p \fR
+ for the value).  By default, each hash mark
+ will be labeled with its value.  
+-\fIHash\fB
++\fIHash\fR
+ and 
+-\fIshash\fB
++\fIshash\fR
+ are ignored if
+ the axes are logarithmic.
+ .TP
+@@ -571,11 +571,11 @@
+ \fBhash\fR
+ = -1.
+ If 
+-\fIhash\fB
++\fIhash\fR
+ is set by the user, 
+-\fIshash\fB
++\fIshash\fR
+ is defaulted to the
+-\fImin\fB
++\fImin\fR
+ value of the axis.
+ .TP
+ \fBmhash \|[\fIinteger\fB\|]\fR   
+@@ -609,7 +609,7 @@
+ If the precision is negative, then jgraph chooses a default:  For 
+ ``g'' and ``G'', the default is 6.  For ``e'' and ``E'', the default
+ is 0, and for ``f'', jgraph tries to determine a reasonable default.
+-Please read the man page of \fBprinf(1)\fR for a complete description
++Please read the man page of \fBprintf(1)\fR for a complete description
+ of how it formats floating point numbers.
+ .TP
+ \fBlabel\fR   
+@@ -623,57 +623,57 @@
+ \fBdraw_at \|[\fIfloat\fB\|]\fR   
+ Draw the axis line at this point on the other axis. 
+ The default is usually the other axis's 
+-\fImin, \fB
++\fImin, \fR
+ however if 
+-\fIhash_scale \fB
++\fIhash_scale \fR
+ is positive (see 
+-\fIhash_scale \fB
++\fIhash_scale \fR
+ under ADVANCED AXIS EDITING), it will be
+ the other axis's 
+-\fImax.\fB
++\fImax.\fR
+ .TP
+ \fBnodraw\fR   
+ Do not draw the axis, the hash marks or any labels.  This
+ is useful for plotting points with no axes, and for overlaying graphs
+ on top of one another with no clashes.  This is equivalent to
+-\fIno_draw_axis,\fB
+-\fIno_draw_axis_label,\fB
+-\fIno_draw_hash_marks,\fB
++\fIno_draw_axis,\fR
++\fIno_draw_axis_label,\fR
++\fIno_draw_hash_marks,\fR
+ and
+-\fIno_draw_hash_labels.\fB
++\fIno_draw_hash_labels.\fR
+ .TP
+ \fBdraw\fR   
+ Cancels the effect of 
+-\fInodraw.  \fB
++\fInodraw.  \fR
+ Default = 
+-\fIdraw.\fB
++\fIdraw.\fR
+ This is
+ equivalent to 
+-\fIdraw_axis,\fB
+-\fIdraw_axis_label,\fB
+-\fIdraw_hash_marks,\fB
++\fIdraw_axis,\fR
++\fIdraw_axis_label,\fR
++\fIdraw_hash_marks,\fR
+ and 
+-\fIdraw_hash_labels.\fB
++\fIdraw_hash_labels.\fR
+ .TP
+ \fBgrid_lines\fR
+ .br
+ .ns
+ .TP
+ \fBno_grid_lines\fR
+-\fIGrid_lines\fB
++\fIGrid_lines\fR
+ specifies to plot a grid line at each major hash
+ mark on this axis.  The default is 
+-\fIno_grid_lines.\fB
++\fIno_grid_lines.\fR
+ .TP
+ \fBmgrid_lines\fR
+ .br
+ .ns
+ .TP
+ \fBno_mgrid_lines\fR
+-\fIMgrid_lines\fB
++\fIMgrid_lines\fR
+ specifies to plot a grid line at each minor hash
+ mark on this axis.  The default is 
+-\fIno_mgrid_lines.\fB
++\fIno_mgrid_lines.\fR
+ .PD
+ .RE
+ .LP
+@@ -681,9 +681,9 @@
+ .B CURVE EDITING COMMANDS 
+ These commands act on the current curve as
+ chosen by 
+-\fInewcurve\fB
++\fInewcurve\fR
+ or 
+-\fIcurve\fB
++\fIcurve\fR
+ (see GRAPH EDITING COMMANDS).  Curve
+ editing terminates when a graph or top-level command is given.
+ .RS
+@@ -691,9 +691,9 @@
+ \fBpts \|[\|{\fIfloat\fB\|} \|{\fIfloat\fB\|}\|]*\fR   
+ This sets the points to plot in this
+ curve.  The first 
+-\fIfloat\fB
++\fIfloat\fR
+ is the x value, and the second 
+-\fIfloat\fB
++\fIfloat\fR
+ is the y
+ value of the point.  Points are plotted in the order specified.
+ This command stops reading points when a non-float is given.
+@@ -707,23 +707,23 @@
+ \fBy_epts \|[\|{\fIfloat\fB\|} \|{\fIfloat\fB\|} \|{\fIfloat\fB\|} \|{\fIfloat\fB\|}\|]*\fR   
+ This allows the user to specify points and ``confidence values'' (otherwise
+ known as ``error bars'').  The first two 
+-\fIfloats\fB
++\fIfloats\fR
+ specify the x and y values of
+ the point, as above.  If
+ \fBx_epts\fR
+ is specified,  then the second two
+-\fIfloats\fB
++\fIfloats\fR
+ specify range or confidence values
+ for the x value of the point.  
+ Error bars will be printed to each of these x values (using the 
+ original point's y value)
+ from the original point.  Similarly,
+-\fIy_epts\fB
++\fIy_epts\fR
+ specifies range or confidence values for the y value of the point.
+-\fIpts\fB
+-\fIx_epts\fB
++\fIpts\fR
++\fIx_epts\fR
+ and
+-\fIy_epts\fB
++\fIy_epts\fR
+ can all be intermixed. 
+ .TP
+ \fBmarktype\fR   
+@@ -744,12 +744,12 @@
+ the label will be printed one unit to the right and one unit below the
+ curve points (units are units of the x and y axes).
+ Default label values are 0 for x and y, and center justification.
+-  \fIPostscript:\fR See the \fIpostscript\fB token below.
+-  \fIEps:\fR See the \fIeps\fB token below.
++  \fIPostscript:\fR See the \fIpostscript\fR token below.
++  \fIEps:\fR See the \fIeps\fR token below.
+   \fINone\fR means that no mark will be
+ plotted (this is useful for drawing lines).  
+   There are four types of \fIgeneral\fR marks, which work using the 
+-\fIgmarks\fB command described below.  The four marktypes are 
++\fIgmarks\fR command described below.  The four marktypes are 
+ \fIgeneral\fR, \fIgeneral_nf\fR, \fIgeneral_bez\fR, and 
+ \fIgeneral_bez_nf\fR.
+   By default, a new mark is chosen for each curve.
+@@ -781,11 +781,11 @@
+ for 
+ \fIgray\fR
+ should be from 0 (black) to 1 (white).  Values for
+-\fIcolor\fR\fB
++\fIcolor\fR
+ should also be from 0 to 1.  They are RGB values, and thus define the 
+ amount of red, green and blue in the curve respectively.  Specifying
+ color nullifies the gray value, and vice versa.  The default is 
+-\fIgray 0\fB
++\fIgray 0\fR
+ .TP
+ \fBfill \|[\fIfloat\fB\|]\fR   
+ .br
+@@ -794,16 +794,16 @@
+ \fBcfill \|[\fIfloat\fB\| \|\fIfloat\fB\| \|\fIfloat\fB\|]\fR   
+ This sets the filling of marks which define an area
+ to fill (e.g.  \fIbox\fR, \fIcircle\fR, \fIxbar\fR).  
+-\fIfill\fB
++\fIfill\fR
+ defines a gray value, and 
+-\fIcfill\fB
++\fIcfill\fR
+ defines a color value (see 
+-\fIgray\fB
++\fIgray\fR
+ and
+-\fIcolor\fB
++\fIcolor\fR
+ above for a description of the units).
+ The default is 
+-\fIfill 0\fB
++\fIfill 0\fR
+ (black).
+ .TP
+ \fBpattern \fItoken\fB \|[\fIfloat\fB\|]\fR   
+@@ -837,17 +837,17 @@
+ .ns
+ .TP
+ \fBppattern \fItoken\fB \|[\fIfloat\fB\|]\fR   
+-\fIPoly\fB allows the user to make jgraph treat the curve as a 
++\fIPoly\fR allows the user to make jgraph treat the curve as a 
+ closed polygon (or in the case of a bezier, a closed bezier curve).
+-\fIpfill\fB, \fIpcfill\fB and \fIppattern\fB  specify the 
++\fIpfill\fR, \fIpcfill\fR and \fIppattern\fR  specify the 
+ filling of the polygon,
+-and work like \fIfill\fB, \fIcfill\fB and \fIpattern\fB above.  
+-The default is \fInopoly\fB.
++and work like \fIfill\fR, \fIcfill\fR and \fIpattern\fR above.  
++The default is \fInopoly\fR.
+ .TP
+ \fBgmarks \|[\|{\fIfloat\fB\|} \|{\fIfloat\fB\|}\|]*\fR   
+-\fIGmarks\fB
++\fIGmarks\fR
+ is a way for the user to define custom marks.  For each mark on 
+-\fI(x,y),\fB
++\fI(x,y),\fR
+ Each pair of 
+ \fB\|{\fIfloat_x\fB\|}, \|{\fIfloat_y\fB\|}, \fR
+ will define a point on the mark (x + 
+@@ -878,8 +878,8 @@
+ will be copied to the output once for every mark.  The postscript will
+ be set up so that when the string or file is put to the output, (0, 0) of
+ the the axes is in the middle of the mark, it is rotated by
+-\fImrotate\fB degrees, and scaled by 
+-(\fImarksize_x\fB / 2), \fImarksize_y\fB / 2).
++\fImrotate\fR degrees, and scaled by 
++(\fImarksize_x\fR / 2), \fImarksize_y\fR / 2).
+ Thus, the \fIbox\fR mark could be defined as:
+ .PP
+ .nf
+@@ -887,14 +887,14 @@
+                   1 1 lineto 1 -1 lineto -1 -1 lineto stroke
+ .fi
+ .PP
+-If the \fImarksize_x\fB is defined to be (0, 0), then jgraph does no
++If the \fImarksize_x\fR is defined to be (0, 0), then jgraph does no
+ scaling.  This is useful when the postscript has strings, and the 
+ user does not want the strings to be scaled.
+ .TP
+ \fBeps {\fItoken\fB\|}\fR   
+ This allows the user to include an encapsulated postscript file
+ and treat it as a mark.  It automatically sets the marktype to
+-\fIeps\fB.  The file will be scaled so that the bounding
++\fIeps\fR.  The file will be scaled so that the bounding
+ box is \fImarksize\fR units.  Among other things, this allows the
+ user to include whole jgraph files as marks.  Please see ad.jgr,
+ explained in HINTS AND EXAMPLE GRAPHS below for an example of this feature.
+@@ -912,17 +912,17 @@
+ .ns
+ .TP
+ \fBnorarrows\fR
+-\fIRarrows\fB
++\fIRarrows\fR
+ specifies to draw an arrow at the end of every line
+ segment in the curve.  
+-\fILarrows\fB
++\fILarrows\fR
+ specifies to draw an arrow at the beginning of every line segment.
+ The size of the arrows can be changed by using
+-\fIasize.\fB
++\fIasize.\fR
+ The default is
+-\fInolarrows\fB
++\fInolarrows\fR
+ and
+-\fInorarrows\fB.
++\fInorarrows\fR.
+   Arrows always go exactly to the point specified, with the exception 
+ of when the marktype is ``circle''.  In this case, the arrow goes to
+ the edge of the circle.
+@@ -940,9 +940,9 @@
+ .ns
+ .TP
+ \fBnorarrow\fR
+-This is analgous to the above, except that with \fIlarrow\fB, the
++This is analgous to the above, except that with \fIlarrow\fR, the
+ only arrow drawn is to the beginning of the first segment in the
+-curve, and with \fIrarrow\fB, the only arrow drawn is to the end
++curve, and with \fIrarrow\fR, the only arrow drawn is to the end
+ of the last segment.
+ .TP
+ \fBasize \|[\fIfloat\fB\|] \|[\fIfloat\fB\|]\fR   
+@@ -964,17 +964,17 @@
+ .TP
+ \fBapattern \fItoken\fB \|[\fIfloat\fB\|]\fR   
+ These control the grayness or color of arrowheads.  
+-\fIAfill\fB,
+-\fIacfill\fB
++\fIAfill\fR,
++\fIacfill\fR
+ and 
+-\fIapattern\fB
++\fIapattern\fR
+ work in the same way as 
+-\fIfill\fB,
+-\fIcfill\fB
++\fIfill\fR,
++\fIcfill\fR
+ and
+-\fIpattern\fB
++\fIpattern\fR
+ described above.  The default is
+-\fIafill 0\fB
++\fIafill 0\fR
+ (black).
+ .TP
+ \fBlinetype \|[\fItoken\fB\|]\fR   
+@@ -983,17 +983,17 @@
+ \fIdotdash\fR, \fIdotdotdash\fR, \fIdotdotdashdash\fR, \fIgeneral\fR, and
+ \fInone\fR.  The default is \fInone\fR.  \fIGeneral\fR lets the user define
+ his own linetype using the
+-\fIglines\fB
++\fIglines\fR
+ command described below.  Points are connected in the
+ order in which they are inserted using the 
+-\fIpts\fB
++\fIpts\fR
+ command.
+ .TP
+ \fBglines \|[\fIfloat\fB\|]*\fR   
+ This lets the user specify the exact dashing of a line.  The format
+ is as in postscript -- the first number is the length of the first
+ dash, the second is the length of the space after the first dash,
+-etc.  For example, \fIdotdash\fB could be defined as ``\fIglines\fB 5 3
++etc.  For example, \fIdotdash\fR could be defined as ``\fIglines\fR 5 3
+ 1 3''.  
+ .TP
+ \fBlinethickness \|[\fIfloat\fB\|]\fR   
+@@ -1007,7 +1007,7 @@
+ \fBnobezier\fR
+ .br
+ .ns
+-\fIBezier\fB
++\fIBezier\fR
+ specifies to use the curve's points to define successive bezier curves.
+ The first point is the starting point.  The next two are control points
+ for the bezier curve and the next point is the ending point.  If there
+@@ -1016,7 +1016,7 @@
+ point is the ending point.  Thus, a bezier must have a total of (3n + 1)
+ points, where n is at least 1.
+   In bezier curves, marks and arrows only apply to every third point.
+-\fINobezier\fB is the default.
++\fINobezier\fR is the default.
+ 
+ .TP
+ \fBclip\fR
+@@ -1026,16 +1026,16 @@
+ \fBnoclip\fR
+ This turns off clipping.  If clipping was specified for the 
+ entire graph, then 
+-\fInoclip\fB
++\fInoclip\fR
+ has no effect.
+-\fINoclip\fB
++\fINoclip\fR
+ is the default.
+ .TP
+ \fBlabel\fR   
+ This edits the label of this curve for the purposed of
+ drawing a legend.  (see LABEL EDITING COMMANDS and LEGEND EDITING
+ COMMANDS).  Unless the legend entry is 
+-\fIcustom\fB,
++\fIcustom\fR,
+ setting any label attribute except for the text itself
+ will have no effect.
+ .PD
+@@ -1082,7 +1082,7 @@
+ \fBhjr\fR   
+ These set the horizontal justification to left,
+ center, and right, respectively.  Default = 
+-\fIhjc.\fB
++\fIhjc.\fR
+ .TP
+ \fBvjt\fR
+ .br
+@@ -1095,18 +1095,18 @@
+ \fBvjb\fR   
+ These set the vertical justification to top
+ center, and bottom, respectively.  Default = 
+-\fIvjb.\fB
++\fIvjb.\fR
+ .TP
+ \fBrotate \|[\fIfloat\fB\|]\fR   
+ This will rotate the string 
+ \fB\|[\fIfloat\fB\|] \fR
+ degrees.  The point of rotation is defined by the
+-\fIvj\fB
++\fIvj\fR
+ and 
+-\fIhj\fB
++\fIhj\fR
+ commands.  For example, to rotate 90 degrees about the center of a string, 
+ one would use
+-\fIvjc hjc rotate 90.\fB
++\fIvjc hjc rotate 90.\fR
+ .TP
+ \fBlgray \|[\fIfloat\fB\|]\fR
+ .br
+@@ -1114,9 +1114,9 @@
+ .TP
+ \fBlcolor \|[\fIfloat\fB \fIfloat\fB \fIfloat\fB\|]\fR
+ These control the color or the grayness of the label.  It works just as
+-\fIgray\fB
++\fIgray\fR
+ and
+-\fIcolor\fB
++\fIcolor\fR
+ do for curves and axes.  The default depends on the context.  For example,
+ for strings and the title, the default is black.  For axis labels and hash
+ labels, the default is the color of the axis.  For text as marks, the
+@@ -1138,13 +1138,13 @@
+ of the entry's curve.  Thus, for example, if you wanted each entry's
+ fontsize to be 18, you had to set it in each entry's curve.  Now,
+ default legend entry characteristics are set using the 
+-\fIdefaults\fB
++\fIdefaults\fR
+ keyword.  Unless a
+-\fIcustom\fB
++\fIcustom\fR
+ legend is specified, these default values override any values set in 
+ the entry's curve.  Thus, to get all entries to have a fontsize of
+ 18, it must be set using 
+-\fIdefaults fontsize 18.\fB
++\fIdefaults fontsize 18.\fR
+ 
+ If legend editing seems cryptic, try the following example:
+ .PP
+@@ -1168,7 +1168,7 @@
+ .br
+ .ns
+ .TP
+-\fBoff\R
++\fBoff\fR
+ These turn printing of the legend on and off.  The default is on
+ (but, of course, if there are no curve labels defined, there will
+ be no legend).
+@@ -1223,16 +1223,16 @@
+ .br
+ .ns
+ .TP
+-\fIright\fB
++\fIright\fR
+ These will automatically produce a legend to the left or
+ the right of the graph.  
+-\fILeft\fB
++\fILeft\fR
+ is equivalent to 
+-\fIdefaults hjr vjc\fB
++\fIdefaults hjr vjc\fR
+ and
+-\fIright\fB
++\fIright\fR
+ is equivalent to 
+-\fIdefaults hjl vjc.\fB
++\fIdefaults hjl vjc.\fR
+ .TP
+ \fBtop\fR   
+ .br
+@@ -1241,13 +1241,13 @@
+ \fBbottom\fR
+ These will automatically produce a legend on the top or
+ the bottom of the graph.  
+-\fITop\fB
++\fITop\fR
+ is equivalent to 
+-\fIdefaults hjl vjb\fB
++\fIdefaults hjl vjb\fR
+  and
+-\fIbottom\fB
++\fIbottom\fR
+ is equivalent to
+-\fIdefaults hjl vjt.\fB
++\fIdefaults hjl vjt.\fR
+ .TP
+ \fBx \|[\fIfloat\fB\|]\fR
+ .br
+@@ -1256,23 +1256,23 @@
+ \fBy \|[\fIfloat\fB\|]\fR   
+ These are included mainly for backward compatability to earlier
+ versions of jgraph.  Setting 
+-\fIx\fB
++\fIx\fR
+ and 
+-\fIy\fB
++\fIy\fR
+ is equivalent to ``defaults x 
+-\fIfloat\fB
++\fIfloat\fR
+ y
+-\fIfloat\fB
++\fIfloat\fR
+ hjl vjt''
+ .TP
+ \fBcustom\fR   
+ This lets the user control where each individual legend
+ entry goes.  The values of the 
+-\fIdefaults\fB
++\fIdefaults\fR
+ fields are ignored, and instead, the values of the curve's
+ labels are used.  All justifications have defined results, except 
+ for 
+-\fIhjc\fB.
++\fIhjc\fR.
+ Similarly, rotation other than 0 is likely to produce bad effects.
+ .PD
+ .RE
+@@ -1292,13 +1292,13 @@
+ \fBcolor \|[\fIfloat\fB \fIfloat\fB \fIfloat\fB\|]\fR
+ These specify either the grayness of the axis or its color.  Values
+ for
+-\fIgray\fB
++\fIgray\fR
+ should be from 0 (black) to 1 (white).  Values for
+-\fIcolor\fB
++\fIcolor\fR
+ should also be from 0 to 1.  They are RGB values, and thus define the
+ amount of red, green and blue in the axis respectively.  Specifying
+ color nullifies the gray value, and vice versa.  The default is
+-\fIgray 0\fB.
++\fIgray 0\fR.
+ These values affect every part of the axis:  the label,
+ the hash marks and labels, the axis line and the grid lines.
+ .TP
+@@ -1319,21 +1319,21 @@
+ gridlines and the mgridlines to be different from those of the 
+ axis lines.
+ The default
+-\fIgrid_gray\fB
++\fIgrid_gray\fR
+ and
+-\fIgrid_color\fB
++\fIgrid_color\fR
+ is the same as the axis's
+-\fIgray\fB
++\fIgray\fR
+ and
+-\fIcolor\fB.
++\fIcolor\fR.
+ The default
+-\fImgrid_gray\fB
++\fImgrid_gray\fR
+ and
+-\fImgrid_color\fB
++\fImgrid_color\fR
+ is the same as 
+-\fIgrid_gray\fB
++\fIgrid_gray\fR
+ and
+-\fIgrid_color\fB.
++\fIgrid_color\fR.
+ .TP
+ \fBhash_at \|[\fIfloat\fB\|]\fR   
+ Draw a hash mark at this point.  No label is
+@@ -1349,17 +1349,17 @@
+ Edit the default characteristics of the hash labels. 
+ This is so that the user can change the fontsize, justification,
+ etc., of the hash labels.  Editing 
+-\fIhash_labels \fB
++\fIhash_labels \fR
+ is just like editing
+ normal labels (see LABEL EDITING COMMANDS), except that the 
+-\fI:,\fB
+-\fIx,\fB
++\fI:,\fR
++\fIx,\fR
+ and
+-\fIy\fB
++\fIy\fR
+ values are all ignored. Defaults for hash labels are as
+ follows: Fontsize=9, Font=``Times-Roman'', Justification is dependent
+ on whether it is the x or y axis and whether 
+-\fIhash_scale\fB
++\fIhash_scale\fR
+ is positive or negative.
+ .TP
+ \fBhash_scale \|[\fIfloat\fB\|]\fR   
+@@ -1372,7 +1372,7 @@
+ By default, the hash marks are drawn
+ either above or below the axis.  This command changes where they are
+ drawn.  
+-\fIHash_scale\fB
++\fIHash_scale\fR
+ still determines whether they are drawn above or
+ below this point, and their size.
+ .TP
+@@ -1380,10 +1380,10 @@
+ By default, the hash labels are
+ drawn either above or below the hash marks (again, this is dependent
+ on 
+-\fIhash_scale\fB).
++\fIhash_scale\fR).
+ This command changes where they are drawn. 
+ Justification and fontsize, etc., can be changed with the
+-\fIhash_labels\fB
++\fIhash_labels\fR
+ command.
+ .TP
+ \fBauto_hash_marks\fR
+@@ -1395,17 +1395,17 @@
+ not 
+ \fBjgraph \fR
+ will automatically create hash marks according to 
+-\fIhash,\fB
+-\fImhash\fB
++\fIhash,\fR
++\fImhash\fR
+ and
+-\fIshash\fB
++\fIshash\fR
+ (or 
+-\fIlog_base\fB
++\fIlog_base\fR
+ and
+-\fImhash\fB
++\fImhash\fR
+ for logarithmic axes). 
+ The default is 
+-\fIauto_hash_marks.\fB
++\fIauto_hash_marks.\fR
+ .TP
+ \fBauto_hash_labels\fR
+ .br
+@@ -1416,9 +1416,9 @@
+ not 
+ \fBjgraph \fR
+ will automatically create hash labels for the
+-\fIauto_hash_marks\fB.
++\fIauto_hash_marks\fR.
+ Default = 
+-\fIauto_hash_labels\fB.
++\fIauto_hash_labels\fR.
+ .TP
+ \fBdraw_axis\fR
+ .br
+@@ -1427,7 +1427,7 @@
+ \fBno_draw_axis\fR   
+ This toggles whether or not the axis
+ line is drawn.  Default = 
+-\fIdraw_axis.\fB
++\fIdraw_axis.\fR
+ .TP
+ \fBdraw_axis_label\fR
+ .br
+@@ -1436,10 +1436,10 @@
+ \fBno_draw_axis_label\fR   
+ This toggles whether or
+ not the axis label (as editted by the 
+-\fIlabel\fB
++\fIlabel\fR
+ command) is drawn.
+ Default = 
+-\fIdraw_axis_label.\fB
++\fIdraw_axis_label.\fR
+ .TP
+ \fBdraw_hash_marks\fR
+ .br
+@@ -1448,11 +1448,11 @@
+ \fBno_draw_hash_marks\fR   
+ This toggles whether or
+ not the hash marks (both automatic and those created with 
+-\fIhash_at\fB
++\fIhash_at\fR
+ and 
+-\fImhash_at\fB)
++\fImhash_at\fR)
+ are drawn.  Default = 
+-\fIdraw_hash_marks.\fB
++\fIdraw_hash_marks.\fR
+ .TP
+ \fBdraw_hash_labels\fR
+ .br
+@@ -1461,7 +1461,7 @@
+ \fBno_draw_hash_labels\fR   
+ This toggles whether or
+ not the hash labels are drawn.  Default = 
+-\fIdraw_hash_labels.\fB
++\fIdraw_hash_labels.\fR
+ .PD
+ .RE
+ .LP
+@@ -1470,19 +1470,19 @@
+ Hash labels are simply strings printed
+ along the appropriate axis.  As a default, they are printed at the
+ place denoted by the most recent 
+-\fIhash_at\fB
++\fIhash_at\fR
+ or 
+-\fImhash_at\fB
++\fImhash_at\fR
+ for this
+ axis, but this can be changed by the 
+-\fIat\fB
++\fIat\fR
+ command.  If there has been
+ no 
+-\fIhash_at\fB
++\fIhash_at\fR
+ or 
+-\fImhash_at,\fB
++\fImhash_at,\fR
+ then an
+-\fIat\fB
++\fIat\fR
+ command must be given, or
+ there will be an error.  Hash editing terminates when either one of
+ these commands is not given.
+@@ -1509,9 +1509,9 @@
+ .TP
+ \fBFunction plotting\fR
+ With the 
+-\fIinclude\fB
++\fIinclude\fR
+ and 
+-\fIshell\fB
++\fIshell\fR
+ statement, it's easy to
+ create a file of points of a function with a c or awk program, and
+ include it into a graph.  See the section HINTS AND EXAMPLE GRAPHS
+@@ -1529,7 +1529,7 @@
+ should be able to draw any kind of scatter/line/bar graph that
+ a user desires.  To embellish the graph with extra text, axes, lines,
+ etc., it is helpful to use 
+-\fIcopygraph.\fB
++\fIcopygraph.\fR
+ The following example graphs show a few examples of different features
+ of jgraph.  They should be in the directory JGRAPH_DIR.
+ .sp
+@@ -1544,7 +1544,7 @@
+ - ebars.jgr is a simple graph with error bars.
+ - sin.jgr shows how a sin function can be plotted using a simple c
+ program to produce the sin wave.  Moreover, this file shows a use of
+-\fIcopygraph\fB
++\fIcopygraph\fR
+ to plot an extra x and y axis at the 0 point.
+ .sp
+ - sin1.jgr is a further extension of sin.jgr only with one x and y
+@@ -1570,9 +1570,9 @@
+ - mab2.jgr is a graph created by Matt Blaze which shows how a 
+ complicated output graph can be quite concisely and simply stated.
+ In this graph, the x axis is a time line.  It shows usage of the 
+-\fIhash_label\fB
++\fIhash_label\fR
+ and
+-\fIhash_labels\fB
++\fIhash_labels\fR
+ commands, as well as displaying how jgraph lets you extract data from
+ output files with awk.
+ .sp
+@@ -1597,20 +1597,20 @@
+ .sp
+ To view these graphs, use jgraph -P, and view the resulting output
+ file with
+-\fIgs,\fB
++\fIgs,\fR
+ or a similar postscript viewer.
+ To make a hard copy of these graphs, pipe the output of jgraph 
+ -P directly to 
+-\fIlpr.\fB
++\fIlpr.\fR
+ 
+ .SH USING JGRAPH TO DRAW PICTURES
+ As hypercube.jgr and alb.jgr show, jgraph can be used as a postscript
+ preprocessor to make drawings.  There are two advantages 
+ using jgraph to draw pictures instead of using standard drawing tools like
+-\fIxfig\fB,
+-\fIfigtool\fB,
++\fIxfig\fR,
++\fIfigtool\fR,
+ or
+-\fIidraw\fB.
++\fIidraw\fR.
+ The first is that with jgraph, you know exactly where strings, lines,
+ boxes, etc, will end up, because you plot them explicitly.  The second
+ advantage is that for iterative drawings, with lots of patters, you

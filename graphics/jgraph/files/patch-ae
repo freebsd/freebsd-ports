@@ -1,0 +1,20 @@
+--- ex2.jgr.orig	Fri Mar 19 16:27:08 1999
++++ ex2.jgr	Thu Aug  5 15:34:14 1999
+@@ -25,7 +25,7 @@
+ newcurve
+   marktype none linetype solid
+   label : N log N / 35000
+-   pts shell : nawk \
++   pts shell : awk \
+      ' $5 != 0 { \
+        print $5,  $5 * log($5) / 35000}' \
+      data.txt
+@@ -52,7 +52,7 @@
+ newcurve\
+   marktype none linetype solid\
+   label : N log N / 35000\
+-   pts shell : nawk \\
++   pts shell : awk \\
+      ' $5 != 0 { \\
+        print $5,  $5 * log($5) / 35000}' \\
+      data.txt\

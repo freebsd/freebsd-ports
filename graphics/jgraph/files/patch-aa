@@ -1,0 +1,60 @@
+--- makefile.orig	Fri Aug  6 15:11:40 1999
++++ makefile	Fri Aug  6 15:17:05 1999
+@@ -18,6 +18,34 @@
+ 		show.o \
+ 		token.o
+ 
++
++EXAMPLE_SRC = \
++	acc.jgr \
++	ad.jgr \
++	alb.jgr \
++	bailey.jgr \
++	cube.jgr \
++	disk.jgr \
++	ebars.jgr \
++	ex1.jgr \
++	ex2.jgr \
++	data.txt \
++	g8.jgr \
++	g8col.jgr \
++	g9n10.jgr \
++	gpaper.jgr \
++	hypercube.jgr \
++	mab2.jgr \
++	mab2.times \
++	nr.jgr \
++	sin.pts \
++	sin1.jgr \
++	sin2.pts \
++	sin2.jgr \
++	sin3.pts \
++	sin3.jgr \
++	wortman.jgr
++
+ EXAMPLES = \
+ 	acc.jps		\
+ 	acc.eps		\
+@@ -58,14 +86,20 @@
+ .tex.dvi:
+ 	latex $*.tex
+ .c.o: 
+-	$(CC)  -c -g $*.c
++	$(CC) -c $(CFLAGS) $*.c
+ 
+ 
+ jgraph: $(OBJS)
+-	$(CC) -g $(OBJS) -lm -o jgraph
++	$(CC) $(CFLAGS) $(OBJS) -lm -o jgraph
+ 
+ sin:	sin.o
+ 	cc -o sin sin.o -lm
++
++install: jgraph
++	install -c -m 555 -o bin -g bin jgraph ${PREFIX}/bin
++	install -c -m 444 -o bin -g bin jgraph.1 ${PREFIX}/man/man1
++	-mkdir -p -m 755 ${PREFIX}/share/jgraph
++	install -c -m 444 -o bin -g bin $(EXAMPLE_SRC) ${PREFIX}/share/jgraph
+ 
+ ad.jps: cube.eps disk.eps
+ bailey.jps: bailey.pts

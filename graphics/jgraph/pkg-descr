@@ -1,0 +1,6 @@
+This is a port of jgraph, a powerful program for generating graphs
+in postscript format.  The Winter 1993 Usenix Technical Conference
+proceedings contains a paper describing jgraph.  Also, see the
+jgraph homepage for more details.
+
+WWW: http://www.cs.utk.edu/~plank/plank/jgraph/jgraph.html
