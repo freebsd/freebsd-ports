@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Module-Load-Conditional
-PORTVERSION=	0.06
+PORTVERSION=	0.08
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Module
@@ -16,14 +16,23 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Looking up Perl modules information/loading at runtime
 
 BUILD_DEPENDS=	${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple \
-		${SITE_PERL}/Module/Load.pm:${PORTSDIR}/devel/p5-Module-Load \
+		${RUN_DEPENDS}
+RUN_DEPENDS=	${SITE_PERL}/Module/Load.pm:${PORTSDIR}/devel/p5-Module-Load \
 		${SITE_PERL}/Locale/Maketext/Simple.pm:${PORTSDIR}/devel/p5-Locale-Maketext-Simple \
 		${SITE_PERL}/Params/Check.pm:${PORTSDIR}/devel/p5-Params-Check
-RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
 MAN3=	Module::Load::Conditional.3
+
+.if !defined(NOPORTDOCS)
+PORTDOCS=	README
+
+post-install:
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
+	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
+.endif
 
 .include <bsd.port.pre.mk>
 
