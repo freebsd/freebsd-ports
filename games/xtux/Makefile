@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	xtux
-PORTVERSION=	2000.12.30
+PORTVERSION=	2001.01.07
 CATEGORIES=	games
 MASTER_SITES=	http://xtux.sourceforge.net/
-DISTNAME=	xtux-src-20001230
+DISTNAME=	xtux-src-20010107
 
 MAINTAINER=	goranrunfeldt@home.se
 
