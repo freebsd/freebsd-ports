@@ -1,4 +1,1 @@
 bin/dirmngr
-@unexec install-info --delete %D/info/dirmngr.info %D/info/dir
-info/dirmngr.info
-@exec install-info %D/info/dirmngr.info  %D/info/dir
