@@ -1,0 +1,27 @@
+Scilab is a scientific software package for numerical computations in a
+user-friendly environment. It features:
+
+   Elaborate data structures (polynomial, rational and string matrices,
+      lists, multivariable linear systems,...).
+   Sophisticated interpreter and programming language with Matlab-like syntax.
+   Hundreds of built-in math functions (new primitives can easily be added).
+   Stunning graphics (2d, 3d, animation).
+   Open structure (easy interfacing with Fortran and C via online
+      dynamic link).
+   Many built-in libraries:
+        Linear Algebra (including sparse matrices, Kronecker form,
+      	 ordered Schur,...).
+        Control (Classical, LQG, H-infinity,...).
+        Package for LMI (Linear Matrix Inequalities) optimization.
+        Signal processing.
+        Simulation (various ode's, dassl,...).
+        Optimization (differentiable and non-differentiable, LQ solver).
+        Metanet (network analysis and optimization).
+   Symbolic capabilities through Maple interface.
+
+Note: To configure your local printers, add their names to the PRINTERS
+ variable in the scilab script.
+
+For more information see Scilab Home Page http://www-rocq.inria.fr/scilab/.
+
+-- P. Menezes (paulo@isr.uc.pt)
