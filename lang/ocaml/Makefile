@@ -6,17 +6,12 @@
 #
 
 PORTNAME=	ocaml
-PORTVERSION=	3.07.2
+PORTVERSION=	3.08.0
 CATEGORIES=	lang
-MASTER_SITES=	http://caml.inria.fr/distrib/${DISTNAME}/ \
-		ftp://ftp.inria.fr/INRIA/caml-light/${DISTNAME}/ \
-		ftp://ftp.kurims.kyoto-u.ac.jp/pub/lang/caml-light/${DISTNAME}/
+MASTER_SITES=	http://caml.inria.fr/distrib/${DISTNAME:S/.0$//}/ \
+		ftp://ftp.inria.fr/INRIA/caml-light/${DISTNAME:S/.0$//}/ \
+		ftp://ftp.kurims.kyoto-u.ac.jp/pub/lang/caml-light/${DISTNAME:S/.0$//}/
 PKGNAMESUFFIX=	${SFX}
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/.2$//}
-
-PATCH_SITES=	${MASTER_SITES}
-PATCHFILES=	${DISTNAME}-patch2.diffs
-PATCH_DIST_STRIP=-p1
 
 MAINTAINER?=	eugos@gmx.net
 COMMENT?=	The Objective Caml compiler and programming environment
@@ -46,15 +41,9 @@ LIB_DEPENDS+=	tk84.1:${PORTSDIR}/x11-toolkits/tk84
 HAS_CONFIGURE=	yes
 ALL_TARGET=	world.opt
 
-.if ${MACHINE_ARCH} != "i386"
-PLIST_SUB+=	PROF="@comment "
-.else
-PLIST_SUB+=	PROF=""
-.endif
-
-MAN1=		ocamlcp.1 ocamldep.1 ocamldebug.1 ocamlopt.1 ocamlrun.1 \
-		ocamlyacc.1 ocamlmktop.1 ocaml.1 ocamlc.1 ocamllex.1 \
-		ocamlprof.1 camlp4.1
+MAN1=		ocamlcp.1 ocamldep.1 ocamldebug.1 ocamldoc.1 ocamlopt.1 \
+		ocamlrun.1 ocamlyacc.1 ocamlmktop.1 ocaml.1 ocamlc.1 \
+		ocamllex.1 ocamlprof.1 camlp4.1
 MANN=		Arg.n Array.n ArrayLabels.n Bigarray.Array1.n \
 		Bigarray.Array2.n Bigarray.Array3.n Bigarray.Genarray.n \
 		Bigarray.n Buffer.n Callback.n CamlinternalOO.n Char.n \
@@ -77,7 +66,7 @@ MANN=		Arg.n Array.n ArrayLabels.n Bigarray.Array1.n \
 MLINKS=		ocamlc.1 ocamlc.opt.1 ocamlopt.1 ocamlopt.opt.1 \
 		camlp4.1 camlp4o.1 camlp4.1 camlp4r.1 camlp4.1 mkcamlp4.1 \
 		camlp4.1 camlp4o.opt.1 camlp4.1 camlp4r.opt.1 \
-		camlp4.1 ocpp.1 camlp4.1 camlp4sch.1
+		camlp4.1 ocpp.1
 
 CONFIGURE_ARGS=	-prefix ${PREFIX} -with-pthread
 
@@ -92,8 +81,10 @@ CONFIGURE_ARGS+=	-tkdefs "-I${LOCALBASE}/include/tcl8.4 -I${LOCALBASE}/include/t
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "sparc64"
-BROKEN=		"Coredump during build on sparc64"
+.if ${ARCH} != "i386"
+PLIST_SUB+=	PROF="@comment "
+.else
+PLIST_SUB+=	PROF=""
 .endif
 
 post-install:
