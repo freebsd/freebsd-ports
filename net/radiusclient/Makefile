@@ -9,7 +9,7 @@ PORTNAME=	radiusclient
 PORTVERSION=	0.3.2
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.cityline.net/pub/radiusclient/ \
-		ftp://ftp.ecrc.net/pub/netsw/Network/IP/Management/RADIUS/
+		ftp://ftp.ecrc.net//pub/netsw/net/ip/management/radius/
 
 MAINTAINER=	maurice@serc.rmit.edu.au
 COMMENT=	Client library and basic utilities for Radius authenticated login
