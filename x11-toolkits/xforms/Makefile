@@ -1,13 +1,13 @@
 # New ports collection makefile for:	xforms
-# Version required:	0.88
+# Version required:	0.88.1
 # Date created:		28 March 1997
 # Whom:			gena
 #
-# $Id: Makefile,v 1.14 1998/01/10 06:05:41 jdp Exp $
+# $Id: Makefile,v 1.15 1998/02/09 02:02:24 jseger Exp $
 #
 
 DISTNAME=	bxform-088
-PKGNAME=	xforms-0.88
+PKGNAME=	xforms-0.88.1
 CATEGORIES=	graphics x11
 MASTER_SITES=	ftp://bragg.phys.uwm.edu/pub/xforms/freeBSD/ \
 		ftp://ftp.via.ecp.fr/pub2/xforms/freeBSD/ \
