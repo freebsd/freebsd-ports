@@ -1386,6 +1386,7 @@ du		src/usr.bin/du
 du2ps		ports/sysutils/du2ps
 duhdraw		ports/graphics/duhdraw
 dump		src/sbin/dump
+dump9660	ports/sysutils/dump9660
 dumpasn1	ports/converters/dumpasn1
 dumpfs		src/sbin/dumpfs
 dumplfs		src/sbin/dumplfs
