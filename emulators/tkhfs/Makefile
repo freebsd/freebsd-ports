@@ -8,12 +8,12 @@
 
 DISTNAME=	tkhfs
 PKGNAME=	tkhfs-1.27
-CATEGORIES=	emulators tk41
+CATEGORIES=	emulators tk82
 MASTER_SITES=	ftp://ftp.obs-besancon.fr/pub/outgoing/
 
 MAINTAINER=	jmz@FreeBSD.org
 
 RUN_DEPENDS=	hfs:${PORTSDIR}/emulators/hfs \
-		wish4.1:${PORTSDIR}/x11-toolkits/tk41
+		wish8.2:${PORTSDIR}/x11-toolkits/tk82
 
 .include <bsd.port.mk>
