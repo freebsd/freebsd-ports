@@ -135,7 +135,13 @@
     SUBDIR += kappa20
     SUBDIR += kbanner
     SUBDIR += kcc
+    SUBDIR += kde2
     SUBDIR += kde2-i18n
+    SUBDIR += kdeaddons
+    SUBDIR += kdebase2
+    SUBDIR += kdelibs2
+    SUBDIR += kdenetwork2
+    SUBDIR += kdevelop
     SUBDIR += kdrill
     SUBDIR += kebook
     SUBDIR += kinput2-canna
@@ -252,9 +258,9 @@
     SUBDIR += onew-wnn6
     SUBDIR += onew-wnn7
     SUBDIR += p5-Jcode
-    SUBDIR += p5-jcode.pl
     SUBDIR += p5-Text-ChaSen
     SUBDIR += p5-Text-Kakasi
+    SUBDIR += p5-jcode.pl
     SUBDIR += p5-manual
     SUBDIR += p5-mkres
     SUBDIR += p5-nkf
@@ -297,6 +303,7 @@
     SUBDIR += ptex-sjis
     SUBDIR += pycodec
     SUBDIR += qkc
+    SUBDIR += qt23
     SUBDIR += rbnamazu
     SUBDIR += recjis
     SUBDIR += roget-fpw
@@ -308,9 +315,9 @@
     SUBDIR += ruby-man
     SUBDIR += ruby-romkan
     SUBDIR += ruby-slang
-    SUBDIR += ruby-uconv
     SUBDIR += ruby-tcltklib
     SUBDIR += ruby-tk
+    SUBDIR += ruby-uconv
     SUBDIR += ruby-usersguide
     SUBDIR += rxvt
     SUBDIR += ryaku-fpw
@@ -322,10 +329,10 @@
     SUBDIR += sj3
     SUBDIR += sjxa
     SUBDIR += skk
-    SUBDIR += skk10-elisp-emacs20
     SUBDIR += skk-elisp
     SUBDIR += skk-jisyo
     SUBDIR += skk-tools
+    SUBDIR += skk10-elisp-emacs20
     SUBDIR += skkfep
     SUBDIR += skkinput
     SUBDIR += skkserv
