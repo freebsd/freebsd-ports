@@ -38,10 +38,10 @@ WITH_SLANG=	yes
 BUILD_DEPENDS=	ispell:${PORTSDIR}/textproc/ispell
 RUN_DEPENDS=	ispell:${PORTSDIR}/textproc/ispell \
 		urlview:${PORTSDIR}/textproc/urlview
+.endif
 .if ${MACHINE_ARCH} != "alpha"
 #  coredump in sgmls
 WITH_DOCS=	yes
-.endif
 .endif
 
 LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
