@@ -1,0 +1,23 @@
+bin/methane
+%%PORTDOCS%%share/doc/super_methane_brothers/authors
+%%PORTDOCS%%share/doc/super_methane_brothers/history
+%%PORTDOCS%%share/doc/super_methane_brothers/html/block.gif
+%%PORTDOCS%%share/doc/super_methane_brothers/html/bug.gif
+%%PORTDOCS%%share/doc/super_methane_brothers/html/cookie.gif
+%%PORTDOCS%%share/doc/super_methane_brothers/html/gamepic.gif
+%%PORTDOCS%%share/doc/super_methane_brothers/html/gen.gif
+%%PORTDOCS%%share/doc/super_methane_brothers/html/info.htm
+%%PORTDOCS%%share/doc/super_methane_brothers/html/mbug.gif
+%%PORTDOCS%%share/doc/super_methane_brothers/html/potion.gif
+%%PORTDOCS%%share/doc/super_methane_brothers/html/puff.gif
+%%PORTDOCS%%share/doc/super_methane_brothers/html/spike.gif
+%%PORTDOCS%%share/doc/super_methane_brothers/html/spring.gif
+%%PORTDOCS%%share/doc/super_methane_brothers/html/sucker.gif
+%%PORTDOCS%%share/doc/super_methane_brothers/html/title.gif
+%%PORTDOCS%%share/doc/super_methane_brothers/html/turbo.gif
+%%PORTDOCS%%share/doc/super_methane_brothers/html/whirly.gif
+%%PORTDOCS%%share/doc/super_methane_brothers/html/zoom.gif
+%%PORTDOCS%%share/doc/super_methane_brothers/readme
+%%PORTDOCS%%share/doc/super_methane_brothers/todo
+%%PORTDOCS%%@dirrm share/doc/super_methane_brothers/html
+%%PORTDOCS%%@dirrm share/doc/super_methane_brothers
