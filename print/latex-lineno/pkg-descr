@@ -1,0 +1,4 @@
+The LaTeX package lineno.sty provides line numbers on paragraphs.
+After TeX has broken a paragraph into lines there will be line numbers
+attached to them, with the possibility to make references through the
+LaTeX \ref, \pageref cross reference mechanism.
