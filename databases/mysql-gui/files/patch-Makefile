@@ -1,6 +1,6 @@
 --- Makefile.orig	Wed Apr 11 21:12:20 2001
-+++ Makefile	Sun Aug 19 03:41:52 2001
-@@ -1,27 +1,51 @@
++++ Makefile	Mon Feb  3 18:19:49 2003
+@@ -1,27 +1,53 @@
  # --------------------- M a c r o s -------------------------------
 -CC          = gcc
 -CXX         = g++
@@ -19,7 +19,8 @@
 +BSD_INSTALL_PROGRAM?= install -C -c -s -o root -g wheel -m 555
 +PTHREAD_CFLAGS?= -D_THREAD_SAFE
 +PTHREAD_LIBS?=	-pthread
-+CPPFLAGS=	${PTHREAD_CFLAGS} \
++CPPFLAGS+=	${PTHREAD_CFLAGS} \
++		-DFLTK_1_0_COMPAT \
 +		-I. \
 +		-I${LOCALBASE}/include \
 +		-I${LOCALBASE}/include/mysql \
@@ -28,7 +29,8 @@
 +		-L${LOCALBASE}/lib/mysql \
 +		-L${X11BASE}/lib
 +LIBS=		-lsqlplus -lmysqlclient -lfleditor -lflvw -lfltk \
-+		-ljpeg -lGLU -lGL -lXext -lX11 -lintl -lm -lz ${PTHREAD_LIBS}
++		-ljpeg -lGLU -lGL -lXext -lX11 -lintl -lm -lz ${PTHREAD_LIBS} \
++		-lcipher
 +
 +TARGET=		mysqlgui
 +OBJS =		Fl_Dir.o Fl_Envelope.o Fl_Envelope_Scroll.o \
