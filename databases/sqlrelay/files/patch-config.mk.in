@@ -1,0 +1,25 @@
+--- config.mk.in.orig	Wed Jun 27 13:59:14 2001
++++ config.mk.in	Mon Jul  2 22:13:58 2001
+@@ -2,19 +2,20 @@
+ VPATH = @srcdir@
+ 
+ VERSION = @VERSION@
++SOVERSION = $(basename $(VERSION))
+ 
+ # installation directories
+ prefix = @prefix@
+ exec_prefix= @exec_prefix@
+ incdir = @includedir@
+ libdir = @libdir@
+-javadir = ${exec_prefix}/java
++javadir = ${exec_prefix}/share/java/classes
+ libexecdir = @libexecdir@
+ bindir = @bindir@
+ localstatedir = @localstatedir@
+ sysconfdir = @sysconfdir@
+ localstatedir = @localstatedir@
+-docdir = ${prefix}/doc/sqlrelay
++docdir = ${prefix}/share/doc/sqlrelay
+ tmpdir = ${localstatedir}/sqlrelay/tmp
+ cachedir = ${localstatedir}/sqlrelay/cache
+ 
