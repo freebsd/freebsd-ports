@@ -20,7 +20,7 @@ COMMENT=	A 3d penguin racing game using OpenGL
 LIB_DEPENDS=	tcl83.1:${PORTSDIR}/lang/tcl83
 
 USE_SDL=	mixer sdl
-USE_MESA=	yes
+USE_GL=	yes
 USE_GMAKE=	yes
 USE_AUTOMAKE_VER=	14
 AUTOMAKE_ARGS=	-a
@@ -40,7 +40,7 @@ post-extract:
 
 post-install:
 	${MKDIR} ${DATADIR}
-	(cd ${WORKDATA} && ${TAR} -c -f - *) | \
+	(${CHMOD} -R o+r ${WORKDATA} && cd ${WORKDATA} && ${TAR} -c -f - *) | \
 		(cd ${DATADIR} && ${TAR} -x -f - )
 
 .include <bsd.port.mk>
