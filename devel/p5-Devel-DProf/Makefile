@@ -3,7 +3,7 @@
 # Date created:				June 15th 1997
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#   $Id: Makefile,v 1.4 1998/08/12 09:57:48 asami Exp $
+#   $Id: Makefile,v 1.5 1998/09/15 21:31:35 asami Exp $
 #
 
 DISTNAME=	DProf-19970614
@@ -15,6 +15,11 @@ MASTER_SITE_SUBDIR=	Devel
 MAINTAINER=	jfitz@FreeBSD.ORG
 
 USE_PERL5=	YES
+
+OSVERSION!=     sysctl -n kern.osreldate
+.if ${OSVERSION} >= 300000
+BROKEN=         perl
+.endif
 
 MAN1PREFIX=	${PREFIX}
 MAN1=		dprofpp.1
