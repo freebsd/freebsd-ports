@@ -1,12 +1,12 @@
 # New ports collection makefile for:   htdig
-# Version required:    3.1.2
+# Version required:    3.1.3
 # Date created:        18 August 1998
 # Whom:                Bill Fumerola <billf@chc-chimes.com>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	htdig-3.1.2
+DISTNAME=	htdig-3.1.3
 CATEGORIES=	textproc www
 MASTER_SITES=	http://www.htdig.org/files/ \
 		${MASTER_SITE_SUNSITE} \
@@ -15,6 +15,10 @@ MASTER_SITES=	http://www.htdig.org/files/ \
 		ftp://ftp.loxinfo.co.th/pub/unix/www/ \
 		ftp://ftp.htdig.org/pub/htdig/
 MASTER_SITE_SUBDIR=	apps/www/indexing
+
+PATCH_SITES=	http://www.htdig.org/files/contrib/other/
+PATCHFILES=	htdig-3.1.3-urlparmbug.patch
+PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	billf@FreeBSD.org
 
@@ -26,17 +30,20 @@ CONFIGURE_ARGS= --with-cgi-bin-dir=${PREFIX}/www/cgi-bin \
 		--with-search-dir=${PREFIX}/www/data
 BUILD_TARGET=	depends all
 
-# XXX - Please see patches/patch-aa, as it modifies this
-# file too. This is wrong, and one day I'll make sed do
-# everything.
-
 post-patch:
 
-	${MV} ${WRKSRC}/CONFIG.in ${WRKSRC}/CONFIG.in.old
-	${SED} -e 's#htdocs#data#g' \
+	@ ${MV} ${WRKSRC}/CONFIG.in ${WRKSRC}/CONFIG.in.Dist
+	@ ${SED} -e 's#htdocs#data#g' \
 		-e 's#/conf#/etc#' \
 		-e 's#/common#/share/htdig#' \
 		-e 's#/db#/share/htdig#' \
-	${WRKSRC}/CONFIG.in.old > ${WRKSRC}/CONFIG.in
+	${WRKSRC}/CONFIG.in.Dist > ${WRKSRC}/CONFIG.in
+
+	@ ${MV} ${WRKSRC}/CONFIG ${WRKSRC}/CONFIG.Dist
+	@ ${SED} -e 's#htdocs#data#g' \
+		-e 's#/conf#/etc#' \
+		-e 's#/common#/share/htdig#' \
+		-e 's#/db#/share/htdig#' \
+	${WRKSRC}/CONFIG.Dist > ${WRKSRC}/CONFIG
 
 .include <bsd.port.mk>
