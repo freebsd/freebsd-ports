@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	getmail
-PORTVERSION=	3.1.7
+PORTVERSION=	3.2.0
 CATEGORIES=	mail python
 MASTER_SITES=	http://www.qcc.ca/~charlesc/software/getmail-3.0/%SUBDIR%/
 MASTER_SITE_SUBDIR=	. old-versions
@@ -26,7 +26,8 @@ DOCS=		CHANGELOG THANKS TODO docs.txt faq.txt getmail.txt \
 post-patch:
 	@cd ${WRKSRC} && \
 		${REINPLACE_CMD} -e 's!/usr/lib/getmail!${DATADIR}!' \
-		-e 's!/usr/bin/python!${PYTHON_CMD}!' ${SCRIPTS}
+		-e 's!`which python`!${PYTHON_CMD}!' \
+		-e 's!/usr/bin/python!${PYTHON_CMD}!' ${SCRIPTS} *.py
 
 do-install:
 	cd ${WRKSRC} && ${INSTALL_SCRIPT} ${SCRIPTS} ${PREFIX}/bin
