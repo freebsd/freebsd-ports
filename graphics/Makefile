@@ -149,7 +149,6 @@
     SUBDIR += png2html
     SUBDIR += pngcheck
     SUBDIR += pngcrush
-    SUBDIR += pnmtopng
     SUBDIR += povray
     SUBDIR += povray31
     SUBDIR += ppm2fli
