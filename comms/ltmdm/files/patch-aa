@@ -1,6 +1,16 @@
---- sys/dev/ltmdm/ltmdmsio.c.orig	Tue Mar 12 03:47:31 2002
-+++ sys/dev/ltmdm/ltmdmsio.c	Sun Mar  2 23:49:45 2003
-@@ -69,9 +69,13 @@
+--- sys/dev/ltmdm/ltmdmsio.c.orig	Tue Mar 12 12:17:31 2002
++++ sys/dev/ltmdm/ltmdmsio.c	Thu Mar  6 10:31:42 2003
+@@ -60,7 +60,9 @@
+ #include <sys/proc.h>
+ #include <sys/module.h>
+ #include <sys/conf.h>
++#if __FreeBSD_version < 500101
+ #include <sys/dkstat.h>
++#endif
+ #include <sys/fcntl.h>
+ #include <sys/interrupt.h>
+ #include <sys/kernel.h>
+@@ -69,9 +71,13 @@
  #include <machine/bus.h>
  #include <sys/rman.h>
  #if __FreeBSD_version >= 500000
@@ -14,7 +24,7 @@
  
  #include <pci/pcireg.h>
  #include <pci/pcivar.h>
-@@ -124,9 +128,11 @@
+@@ -124,9 +130,11 @@
  #endif
  
  #if __FreeBSD_version >= 500023 /* >= 20010912 */
@@ -27,7 +37,7 @@
  
  
  #define LOTS_OF_EVENTS  64  /* helps separate urgent events from input */
-@@ -256,7 +262,9 @@
+@@ -256,7 +264,9 @@
      bool_t  do_dcd_timestamp;
      struct timeval  timestamp;
      struct timeval  dcd_timestamp;
@@ -37,7 +47,15 @@
  
      u_long  bytes_in;       /* statistics */
      u_long  bytes_out;
-@@ -361,7 +369,11 @@
+@@ -352,6 +362,7 @@
+ #endif
+ 
+ static struct cdevsw sio_cdevsw = {
++#if __FreeBSD_version < 500105
+     /* open */  sioopen,
+     /* close */ sioclose,
+     /* read */  sioread,
+@@ -361,7 +372,11 @@
      /* mmap */  nommap,
      /* strategy */  nostrategy,
      /* name */  driver_name,
@@ -49,7 +67,34 @@
      /* dump */  nodump,
      /* psize */ nopsize,
  #if __FreeBSD_version < 430000
-@@ -1295,8 +1307,11 @@
+@@ -373,10 +388,25 @@
+     /* bmaj */  -1,
+     /* kqfilter */  ttykqfilter,
+ #else /* __FreeBSD_version >= 500000 */
+-    /* flags */ D_TTY | D_KQFILTER,
++    /* flags */ D_TTY,
+     /* kqfilter */  ttykqfilter,
+ #endif
+ #endif
++#else
++    .d_open = sioopen,
++    .d_close = sioclose,
++    .d_read = sioread,
++    .d_write = siowrite,
++    .d_ioctl = sioioctl,
++    .d_poll = ttypoll,
++    .d_name = driver_name,
++#ifdef MAJOR_AUTO
++    .d_maj = MAJOR_AUTO,
++#else
++    .d_maj = CDEV_MAJOR,
++#endif
++    .d_kqfilter = ttykqfilter,
++#endif
+ };
+ 
+ static  u_int   com_events; /* input chars + weighted output completions */
+@@ -1295,8 +1325,11 @@
      DPRINTF(1,("  x_chip_version    = %d\n", x_chip_version));
  
      com->flags = flags;
@@ -61,7 +106,7 @@
  
      /*
       * initialize the device registers as follows:
-@@ -1685,7 +1700,9 @@
+@@ -1685,7 +1718,9 @@
      s = splfunc();
      com->do_timestamp = FALSE;
      com->do_dcd_timestamp = FALSE;
@@ -71,7 +116,7 @@
      write_vuart_port(UART_CFCR, com->cfcr_image &= ~CFCR_SBREAK);
      {
          write_vuart_port(UART_IER, 0);
-@@ -1894,23 +1911,34 @@
+@@ -1894,23 +1929,34 @@
      u_char  recv_data;
      u_char  int_ctl;
      u_char  int_ctl_new;
@@ -106,7 +151,7 @@
          line_status = read_vuart_port(UART_LSR);
  
          /* input event? (check first to help avoid overruns) */
-@@ -2195,7 +2223,9 @@
+@@ -2195,7 +2241,9 @@
          break;
      default:
          splx(s);
@@ -116,7 +161,7 @@
          if (error == ENODEV)
              error = ENOTTY;
          return (error);
-@@ -2796,7 +2826,7 @@
+@@ -2796,7 +2844,7 @@
  #endif
  
  DRIVER_MODULE(ltmdm, pci, ltmdm_pci_driver, ltmdm_devclass, ltmdm_event, 0);
