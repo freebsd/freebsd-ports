@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cksfv
-PORTVERSION=	1.2
+PORTVERSION=	1.3
 CATEGORIES=	security
 MASTER_SITES=	http://www.fodder.org/cksfv/
 
@@ -21,7 +21,7 @@ MAKE_ENV+=	VERSION=${PORTVERSION}
 post-install:
 .if !defined(NOPORTDOCS)
 	@ ${MKDIR} ${PREFIX}/share/doc/cksfv
-	@ ${INSTALL_MAN} ${WRKSRC}/README ${PREFIX}/share/doc/cksfv
+	@ ${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/cksfv
 .endif
 
 .include <bsd.port.mk>
