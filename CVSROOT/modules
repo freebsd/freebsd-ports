@@ -1225,6 +1225,7 @@ dump9660	ports/sysutils/dump9660
 dumpasn1	ports/converters/dumpasn1
 dumpmpeg	ports/graphics/dumpmpeg
 dungeon		ports/games/dungeon
+dungeoncrawl	ports/games/dungeoncrawl
 durep		ports/sysutils/durep
 dv2jpg		ports/multimedia/dv2jpg
 dvdrip		ports/multimedia/dvdrip
