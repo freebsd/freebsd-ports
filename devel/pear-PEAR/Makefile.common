@@ -208,10 +208,9 @@ do-install-scriptfiles: do-install-scriptfiles-msg
 . if !empty(SCRIPTFILES)
 	@${ECHO_MSG} "===> Installing scripts in ${SCRIPTFILESDIR}."
 .  for file in ${SCRIPTFILES}
-	@${MV} ${WRKSRC}/pear-${file} ${WRKSRC}/${file}
+	@${CP} ${WRKSRC}/pear-${file} ${WRKSRC}/${file}
 	@${REINPLACE_CMD} -e "s|@php_bin@|${SCRIPTFILESDIR}/php|g" ${WRKSRC}/${file}
-	@${INSTALL_SCRIPTS} ${WRKSRC}/${file} ${SCRIPTFILESDIR}/${file}
-	@${CHMOD} 555 ${SCRIPTFILESDIR}/${file}
+	@${INSTALL_SCRIPT} ${WRKSRC}/${file} ${SCRIPTFILESDIR}/${file}
 .  endfor
 . endif
 
