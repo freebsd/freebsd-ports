@@ -15,6 +15,7 @@ t3x/r8/bin/txcg386e
 t3x/r8/bin/txcg86
 t3x/r8/bin/txcgexe
 t3x/r8/bin/txcgl
+t3x/r8/bin/txcguc
 t3x/r8/bin/txcm
 t3x/r8/bin/txdpf
 t3x/r8/bin/txdump
@@ -64,7 +65,7 @@ t3x/r8/doc/Bugs.sd
 t3x/r8/doc/Changes.sd
 t3x/r8/doc/FAQ.sd
 t3x/r8/doc/LICENSE
-t3x/r8/doc/README.sd
+t3x/r8/doc/README
 t3x/r8/doc/T3X.html
 t3x/r8/doc/classes.sd
 t3x/r8/doc/compiler.sd
@@ -85,6 +86,7 @@ t3x/r8/lib/ttyctl.x
 t3x/r8/static.txrc
 t3x/r8/system.txrc
 t3x/r8/txprint.rules
+t3x/r8/uc.txrc
 @unexec rm -f %D/t3x/r8/classes/CLASSND-
 @unexec rm -f %D/t3x/r8/classes/CLASSNDX
 @unexec rm -f %D/t3x/r8/classes/2/CLASSND-

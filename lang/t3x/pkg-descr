@@ -1,21 +1,9 @@
-T3X is a minimum procedural language. It is small, portable,
-procedural, block-structured, recursive, almost typeless,
-and to some degree object-oriented.
-Its syntax is a cross between Pascal and BCPL, but it is smaller
-and simpler. Portability is achieved by simplicity: only a basic
-set of operations and runtime classes is provided, which may be
-easily implemented on a variety of different platforms.
+T3X is a minimum procedural language: small, portable,
+block-structured, recursive, almost typeless, and to
+some degree object-oriented.
 
-This package contains ...
-
-- a bytecode compiler and optimizers
-- a Tcode interpreter
-- 386, 8086 (EXE), and Alpha AXP backends
-- A DOS/EXE generator for all platforms
-- runtime support for FreeBSD, NetBSD, Linux, DOS, Coherent
-- a Tcode examination utility
-- tools (pretty-printer, make utility, class manager)
-- the T3X user manual in HTML format
-- an online help system in structured document format
+This package contains the full optimizing T3X compiler
+with native 386, C, and bytecode back ends, complete
+documentation, and lots of tools.
 
 WWW: http://www.t3x.org/T3X/
