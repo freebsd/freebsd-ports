@@ -232,7 +232,6 @@
     SUBDIR += slrn
     SUBDIR += tcl76
     SUBDIR += tcl80
-    SUBDIR += tcl82
     SUBDIR += tcsh
     SUBDIR += tcsh-nls-asuka
     SUBDIR += tcsh-nls-ayanami
