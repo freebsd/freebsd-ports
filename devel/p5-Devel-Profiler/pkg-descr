@@ -5,7 +5,7 @@ It is meant to be a drop-in replacement for Devel::DProf.
 NOTE: If Devel::DProf works for your application then there is no reason
 to use this module.
 
-WWW: http://search.cpan.org/search?dist=Devel-Profiler
+WWW: http://search.cpan.org/dist/Devel-Profiler/
 
 -- Sergey Skvortsov
 skv@FreeBSD.org
