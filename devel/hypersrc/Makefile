@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	hypersrc
-PORTVERSION=	5.4.4
+PORTVERSION=	5.4.6
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.jimbrooks.org/hypersrc/%SUBDIR%/ \
 		http://www.home.earthlink.net/~jebrooks1/ftp/hypersrc/%SUBDIR%/
@@ -22,18 +22,21 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_PERL5=	yes
 USE_GNOME=	gnomelibs
-USE_BISON=	yes
 USE_GMAKE=	yes
 MAKEFILE=	GNUmakefile
+MAKE_ARGS=	CC="${CC}" C_OPTIMIZE="${CFLAGS}"
 
 MAN1=		hypersrc.1
 PLIST_FILES=	bin/hypersrc bin/Hypersrc.pl bin/ctags.pl
 
 post-patch:
-	@${PERL} -pi -e 's|"ctags"|"exctags"|g' ${WRKSRC}/Hypersrc.pl
-	@${PERL} -pi -e 's|"-i +m -x -u"|"-x"|g' ${WRKSRC}/ctags.pl
+	@${PERL} -pi -e 's|"ctags"|"${LOCALBASE}/bin/exctags"|g ; \
+		 s|"ctags.pl"|"${PREFIX}/bin/ctags.pl"|g' ${WRKSRC}/Hypersrc.pl
 
-post-install:
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/out/hypersrc ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/Hypersrc.pl ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/ctags.pl ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/hypersrc.1 ${MANPREFIX}/man/man1
 
 .include <bsd.port.mk>
