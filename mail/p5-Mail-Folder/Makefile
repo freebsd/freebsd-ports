@@ -3,7 +3,7 @@
 # Date created:				October 24th 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#   $Id: Makefile,v 1.2 1996/11/10 21:32:04 obrien Exp $
+#   $Id: Makefile,v 1.3 1996/11/17 07:42:42 obrien Exp $
 #
 
 DISTNAME=	MailFolder-0.03
@@ -17,14 +17,10 @@ MAINTAINER=	jfitz@FreeBSD.ORG
 BUILD_DEPENDS= 	perl5.003:${PORTSDIR}/lang/perl5
 RUN_DEPENDS=	perl5.003:${PORTSDIR}/lang/perl5
 
+MAN3=		Mail::Folder.3 Mail::Folder::Emaul.3 Mail::Folder::Mbox.3
+MANPREFIX=	${PREFIX}/lib/perl5
+
 do-configure:
 		@ cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PREFIX}/bin/perl Makefile.PL
-
-post-install:
-.if !defined(NOMANCOMPRESS)
-		@ for file in Mail::Folder Mail::Folder::Emaul Mail::Folder::Mbox; do \
-			gzip -9nf ${PREFIX}/lib/perl5/man/man3/$$file.3; \
-		done
-.endif     
 
 .include <bsd.port.mk>

@@ -3,7 +3,7 @@
 # Date created:				October 24th 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#   $Id: Makefile,v 1.2 1996/11/10 21:32:12 obrien Exp $
+#   $Id: Makefile,v 1.3 1996/11/17 07:42:45 obrien Exp $
 #
 
 DISTNAME=	MailTools-1.06
@@ -19,14 +19,12 @@ BUILD_DEPENDS= 	perl5.003:${PORTSDIR}/lang/perl5 \
 		${PREFIX}/lib/perl5/site_perl/Net/Domain.pm:${PORTSDIR}/net/p5-Net
 RUN_DEPENDS=	perl5.003:${PORTSDIR}/lang/perl5
 
+MAN3=		Mail::Address.3 Mail::Cap.3 Mail::Field.3 Mail::Header.3 \
+		Mail::Internet.3 Mail::MIME.3 Mail::Mailer.3 Mail::Send.3 \
+		Mail::Util.3
+MANPREFIX=	${PREFIX}/lib/perl5
+
 do-configure:
 		@ cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PREFIX}/bin/perl Makefile.PL
 
-post-install:
-.if !defined(NOMANCOMPRESS)
-		@ for file in Mail::Address Mail::Cap Mail::Field Mail::Header Mail::Internet Mail::MIME Mail::Mailer Mail::Send Mail::Util; do \
-			gzip -9nf ${PREFIX}/lib/perl5/man/man3/$$file.3; \
-		done
-.endif
-		
 .include <bsd.port.mk>

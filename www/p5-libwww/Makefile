@@ -3,18 +3,14 @@
 # Date created:				September 30th 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#   $Id: Makefile,v 1.1.1.1 1996/10/24 08:51:22 jfitz Exp $
+#   $Id: Makefile,v 1.2 1996/10/24 09:59:16 jfitz Exp $
 #
 
 DISTNAME=	libwww-perl-5.03
 PKGNAME=	p5-libwww-5.03
-CATEGORIES+=	www
-MASTER_SITES=	ftp://ftp.digital.com/pub/plan/perl/CPAN/modules/by-module/URI/ \
-		ftp://ftp.cdrom.com/pub/perl/CPAN/modules/by-module/URI/ \
-		ftp://ftp.cis.ufl.edu/pub/perl/CPAN/modules/by-module/URI/ \
-		ftp://ftp.leo.org/pub/comp/programming/languages/perl/CPAN/modules/by-module/URI/ \
-		ftp://ftp.demon.co.uk/pub/mirrors/perl/CPAN/modules/by-module/URI/ \
-		ftp://ftp.lab.kdd.co.jp/lang/perl/CPAN/modules/by-module/URI/
+CATEGORIES=	www
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
+MASTER_SITE_SUBDIR=	URI
 
 MAINTAINER=	jfitz@FreeBSD.ORG
 
@@ -23,14 +19,26 @@ BUILD_DEPENDS= 	perl5.003:${PORTSDIR}/lang/perl5 \
 		${PREFIX}/lib/perl5/site_perl/Net/FTP.pm:${PORTSDIR}/net/p5-Net
 RUN_DEPENDS=	perl5.003:${PORTSDIR}/lang/perl5
 
+MAN3=		File::CounterFile.3 File::Listing.3 Font::AFM.3 \
+		HTML::AsSubs.3 HTML::Element.3 HTML::Entities.3 \
+		HTML::FormatPS.3 HTML::FormatText.3 HTML::Formatter.3 \
+		HTML::HeadParser.3 HTML::LinkExtor.3 HTML::Parse.3 \
+		HTML::Parser.3 HTML::TreeBuilder.3 HTTP::Date.3 \
+		HTTP::Headers.3 HTTP::Message.3 HTTP::Negotiate.3 \
+		HTTP::Request.3 HTTP::Response.3 HTTP::Status.3 LWP.3 \
+		LWP::Debug.3 LWP::IO.3 LWP::MediaTypes.3 \
+		LWP::MemberMixin.3 LWP::Protocol.3 LWP::RobotUA.3 \
+		LWP::Simple.3 LWP::Socket.3 LWP::TkIO.3 LWP::UserAgent.3 \
+		MIME::Base64.3 MIME::QuotedPrint.3 URI::Escape.3 \
+		URI::URL.3 WWW::RobotRules.3 \
+		WWW::RobotRules::AnyDBM_File.3 lwpcook.3
+MANPREFIX=	${PREFIX}/lib/perl5
+
 do-configure:
 		@ cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PREFIX}/bin/perl Makefile.PL
 
 post-install:
 .if !defined(NOMANCOMPRESS)
-		@ for file in File::CounterFile File::Listing Font::AFM HTML::AsSubs HTML::Element HTML::Entities HTML::FormatPS HTML::FormatText HTML::Formatter HTML::HeadParser HTML::LinkExtor HTML::Parse HTML::Parser HTML::TreeBuilder HTTP::Date HTTP::Headers HTTP::Message HTTP::Negotiate HTTP::Request HTTP::Response HTTP::Status LWP LWP::Debug LWP::IO LWP::MediaTypes LWP::MemberMixin LWP::Protocol LWP::RobotUA LWP::Simple LWP::Socket LWP::TkIO LWP::UserAgent MIME::Base64 MIME::QuotedPrint URI::Escape URI::URL WWW::RobotRules WWW::RobotRules::AnyDBM_File lwpcook; do \
-			gzip -9nf ${PREFIX}/lib/perl5/man/man3/$$file.3; \
-		done
 		@ for file in lwp-mirror lwp-request lwp-rget; do \
 			gzip -9nf ${PREFIX}/man/man1/$$file.1; \
 		done

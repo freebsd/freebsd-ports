@@ -3,18 +3,14 @@
 # Date created:				September 30th 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#   $Id: Makefile,v 1.1.1.1 1996/10/24 08:32:19 jfitz Exp $
+#   $Id: Makefile,v 1.2 1996/10/24 09:59:22 jfitz Exp $
 #
 
 DISTNAME=	libnet-1.01
 PKGNAME=	p5-Net-1.01
-CATEGORIES+=	net
-MASTER_SITES=	ftp://ftp.digital.com/pub/plan/perl/CPAN/modules/by-module/Net/ \
-		ftp://ftp.cdrom.com/pub/perl/CPAN/modules/by-module/Net/ \
-		ftp://ftp.cis.ufl.edu/pub/perl/CPAN/modules/by-module/Net/ \
-		ftp://ftp.leo.org/pub/comp/programming/languages/perl/CPAN/modules/by-module/Net/ \
-		ftp://ftp.demon.co.uk/pub/mirrors/perl/CPAN/modules/by-module/Net/ \
-		ftp://ftp.lab.kdd.co.jp/lang/perl/CPAN/modules/by-module/Net/
+CATEGORIES=	net
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
+MASTER_SITE_SUBDIR=	Net
 
 MAINTAINER=	jfitz@FreeBSD.ORG
 
@@ -22,14 +18,12 @@ BUILD_DEPENDS= 	perl5.003:${PORTSDIR}/lang/perl5 \
 		${PREFIX}/lib/perl5/IO::Socket.pm:${PORTSDIR}/net/p5-IO
 RUN_DEPENDS=	perl5.003:${PORTSDIR}/lang/perl5
 
+MAN3=		Net::Time.3 Net::DummyInetd.3 Net::NNTP.3 Net::SNPP.3 \
+		Net::POP3.3 Net::Cmd.3 Net::SMTP.3 Net::Domain.3 \
+		Net::FTP.3 Net::Netrc.3 Net::Telnet.3
+MANPREFIX=	${PREFIX}/lib/perl5
+
 do-configure:
 		@ cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PREFIX}/bin/perl Makefile.PL
-
-post-install:
-.if !defined(NOMANCOMPRESS)
-		@ for file in Net::Time Net::DummyInetd Net::NNTP Net::SNPP Net::POP3 Net::Cmd Net::SMTP Net::Domain Net::FTP Net::Netrc Net::Telnet; do \
-			gzip -9nf ${PREFIX}/lib/perl5/man/man3/$$file.3; \
-		done
-.endif           
 
 .include <bsd.port.mk>

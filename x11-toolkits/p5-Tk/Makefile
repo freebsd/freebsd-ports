@@ -3,18 +3,14 @@
 # Date created:				October 21st 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#   $Id: Makefile,v 1.2 1996/10/24 09:23:56 jfitz Exp $
+#   $Id: Makefile,v 1.3 1996/10/24 09:59:32 jfitz Exp $
 #
 
 DISTNAME=	Tk400.200
 PKGNAME=	p5-Tk400-2.00
-CATEGORIES+=	x11
-MASTER_SITES=	ftp://ftp.digital.com/pub/plan/perl/CPAN/modules/by-module/Tk/ \
-		ftp://ftp.cdrom.com/pub/perl/CPAN/modules/by-module/Tk/ \
-		ftp://ftp.cis.ufl.edu/pub/perl/CPAN/modules/by-module/Tk/ \
-		ftp://ftp.leo.org/pub/comp/programming/languages/perl/CPAN/modules/by-module/Tk/ \
-		ftp://ftp.demon.co.uk/pub/mirrors/perl/CPAN/modules/by-module/Tk/ \
-		ftp://ftp.lab.kdd.co.jp/lang/perl/CPAN/modules/by-module/Tk/
+CATEGORIES=	x11
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
+MASTER_SITE_SUBDIR=	Tk
 
 MAINTAINER=	jfitz@FreeBSD.ORG
 
@@ -24,14 +20,20 @@ BUILD_DEPENDS= 	perl5.003:${PORTSDIR}/lang/perl5 \
 LIB_DEPENDS=	tk41\\.1\\.:${PORTSDIR}/x11/tk41
 RUN_DEPENDS=	perl5.003:${PORTSDIR}/lang/perl5
 
+MAN3=		Tk::After.3 Tk::Axis.3 Tk::ColorEditor.3 Tk::Dial.3 \
+		Tk::DragDrop::Common.3 Tk::DragDrop::SunConst.3 \
+		Tk::FileDialog.3 Tk::FileSelect.3 Tk::Font.3 \
+		Tk::Ghostscript.3 Tk::HTML::IO.3 Tk::IO.3 \
+		Tk::Internals.3 Tk::Parse.3 Tk::ROText.3 \
+		Tk::Table.3 Tk::Tcl-perl.3 Tk::TextUndo.3 \
+		Tk::UserGuide.3 Tk::WaitBox.3 Tk::pTk.3 blib.3
+MANPREFIX=	${PREFIX}/lib/perl5
+
 do-configure:
 		@ cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PREFIX}/bin/perl Makefile.PL
 
 post-install:
 .if !defined(NOMANCOMPRESS)
-		@ for file in Tk::After Tk::Axis Tk::ColorEditor Tk::Dial Tk::DragDrop::Common Tk::DragDrop::SunConst Tk::FileDialog Tk::FileSelect Tk::Font Tk::Ghostscript Tk::HTML::IO Tk::IO Tk::Internals Tk::Parse Tk::ROText Tk::Table Tk::Tcl-perl Tk::TextUndo Tk::UserGuide Tk::WaitBox Tk::pTk blib; do \
-			gzip -9nf ${PREFIX}/lib/perl5/man/man3/$$file.3; \
-		done
 		@ for file in tkweb; do \
 			gzip -9nf ${PREFIX}/man/man1/$$file.1; \
 		done

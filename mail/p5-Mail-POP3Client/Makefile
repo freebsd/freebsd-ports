@@ -3,7 +3,7 @@
 # Date created:				October 24th 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#   $Id: Makefile,v 1.2 1996/11/10 21:32:08 obrien Exp $
+#   $Id: Makefile,v 1.3 1996/11/17 07:42:44 obrien Exp $
 #
 
 DISTNAME=	POP3Client-1_14
@@ -17,14 +17,10 @@ MAINTAINER=	jfitz@FreeBSD.ORG
 BUILD_DEPENDS= 	perl5.003:${PORTSDIR}/lang/perl5
 RUN_DEPENDS=	perl5.003:${PORTSDIR}/lang/perl5
 
+MAN3=		Mail::POP3Client.3
+MANPREFIX=	${PREFIX}/lib/perl5
+
 do-configure:
 		@ cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PREFIX}/bin/perl Makefile.PL
-
-post-install:
-.if !defined(NOMANCOMPRESS)
-		@ for file in Mail::POP3Client; do \
-			gzip -9nf ${PREFIX}/lib/perl5/man/man3/$$file.3; \
-		done
-.endif     
 
 .include <bsd.port.mk>
