@@ -8,7 +8,10 @@
 PORTNAME=	keychain
 PORTVERSION=	1.9
 CATEGORIES=	security
-MASTER_SITES=	http://www.ibiblio.org/gentoo/distfiles/
+MASTER_SITES=	http://www.ibiblio.org/pub/Linux/distributions/gentoo/distfiles/ \
+		ftp://sunsite.dk/mirrors/gentoo/distfiles/ \
+		ftp://ftp.gtlib.cc.gatech.edu/pub/gentoo/distfiles/ \
+		ftp://ftp.gentoo.no/pub/linux/distributions/gentoo/distfiles/
 
 MAINTAINER=	ports@FreeBSD.org
 
