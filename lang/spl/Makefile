@@ -14,8 +14,6 @@ MASTER_SITES=	http://shakespearelang.sourceforge.net/download/
 MAINTAINER=	perky@FreeBSD.org
 COMMENT=	The Shakespeare programming language
 
-BROKEN=		Installs during build phase
-
 USE_BISON=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
@@ -24,13 +22,13 @@ ALL_EXAMPLES=	Makefile fibonacci.spl fibonacci2.spl guess.spl hello.spl \
 		primes.spl reverse.spl shakesbeer.spl
 
 post-patch:
-	@for f in ${WRKSRC}/Makefile ${WRKSRC}/examples/Makefile; do \
-	 ${REINPLACE_CMD} -i "" -e 's,= gcc,?= gcc,' -e 's,^CCFLAGS.*,CFLAGS += -Wall,' \
-		-e 's,CCFLAGS,CFLAGS,g' -e 's,^SPLPATH =.*,SPLPATH =${PREFIX},g' \
-		-e 's, spl/, ${PREFIX}/,g' $$f; \
-	done
+.for f in . examples
+	${REINPLACE_CMD} -e 's,= gcc,?= gcc,' -e 's,^CCFLAGS.*,CFLAGS += -Wall,' \
+		-e 's,CCFLAGS,CFLAGS,g' ${WRKSRC}/${f}/Makefile
+.endfor
 
-post-install:
+do-install:
+	${TAR} -C ${WRKSRC}/spl -cf - . | ${TAR} -C ${PREFIX} -xf -
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${EXAMPLESDIR}
 	cd ${WRKSRC}/examples && ${INSTALL_DATA} ${ALL_EXAMPLES} ${EXAMPLESDIR}
