@@ -1,0 +1,11 @@
+--- libdesk/tixImgXpm.c.orig	Fri Jul 30 11:36:18 2004
++++ libdesk/tixImgXpm.c	Fri Jul 30 11:36:30 2004
+@@ -63,8 +63,6 @@
+ #include "tkPort.h"*/
+ /*#include <tix.h>*/
+ 
+-EXTERN void		panic();
+-
+ /* constants used only in this file */
+ 
+ #define XPM_MONO		1
