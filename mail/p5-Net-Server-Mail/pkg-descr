@@ -1,0 +1,10 @@
+This module is a versatile and extensible implementation of the SMTP protocol
+and its different evolutions like ESMTP and LMTP. The event driven
+object-oriented API makes easy to incorporate the SMTP protocol to your
+programs.
+
+Other SMTPd implementations don't support useful ESMTP extensions and the LMTP
+protocol. Their interface design precludes adding them later. So I've decided
+to rewrite a complete implementation with extensibility in mind.
+
+WWW: http://rs.rhapsodyk.net/devel/net-server-mail/
