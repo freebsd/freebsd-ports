@@ -1,0 +1,30 @@
+bin/cutgen-2
+include/cut-2/cut.h
+%%PORTDOCS%%%%DOCSDIR%%/CHANGELOG
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/tutorial/Compute.c
+%%PORTDOCS%%%%DOCSDIR%%/tutorial/Compute.h
+%%PORTDOCS%%%%DOCSDIR%%/tutorial/Compute1.c
+%%PORTDOCS%%%%DOCSDIR%%/tutorial/Main.c
+%%PORTDOCS%%%%DOCSDIR%%/tutorial/TestCompute.c
+%%PORTDOCS%%%%DOCSDIR%%/tutorial/Tutorial.dvi
+%%PORTDOCS%%%%DOCSDIR%%/tutorial/Tutorial.pdf
+%%PORTDOCS%%%%DOCSDIR%%/tutorial/Tutorial.ps
+%%PORTDOCS%%%%EXAMPLESDIR%%/all-pass/Makefile
+%%PORTDOCS%%%%EXAMPLESDIR%%/all-pass/cut-pass.c
+%%PORTDOCS%%%%EXAMPLESDIR%%/bringup-failure/Makefile
+%%PORTDOCS%%%%EXAMPLESDIR%%/bringup-failure/cut-explode1.c
+%%PORTDOCS%%%%EXAMPLESDIR%%/bringup-failure/cut-explode2.c
+%%PORTDOCS%%%%EXAMPLESDIR%%/normal-failure/Makefile
+%%PORTDOCS%%%%EXAMPLESDIR%%/normal-failure/cut-explode.c
+%%PORTDOCS%%%%EXAMPLESDIR%%/simple-demo-pass/Makefile
+%%PORTDOCS%%%%EXAMPLESDIR%%/simple-demo-pass/cut-pass.c
+@dirrm include/cut-2
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/tutorial
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/all-pass
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/bringup-failure
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/normal-failure
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/simple-demo-pass
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
