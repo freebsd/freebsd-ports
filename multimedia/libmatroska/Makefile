@@ -37,7 +37,7 @@ do-configure:
 		-e 's|^(prefix).*$$|\1=${PREFIX}|; \
 			s,^(CXX|LD)[[:space:]]*=.*$$,\1=${CXX},; \
 			s|^(CXXFLAGS)[[:space:]]*=(.*)$$|\1+=\2|; \
-			s|^(LIBEBML_INCLUDE_DIR)[[:space:]]*=.*|\1=${LOCALBASE}/include/ebml|; \
+			s|^(LIBEBML_INCLUDE_DIR)[[:space:]]*=.*|\1=${LOCALBASE}/include|; \
 			s|^(LIBEBML_LIB_DIR)[[:space:]]*=.*|\1=${LOCALBASE}/lib|; \
 			s|^(INSTALL)[[:space:]]*=.*$$|\1=|; \
 			s|^(INSTALL_DIR_OPTS)[[:space:]]*=.*$$|\1=${INSTALL_DATA_DIR}|; \
