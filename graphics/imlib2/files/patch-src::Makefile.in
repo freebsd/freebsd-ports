@@ -1,26 +1,33 @@
---- src/Makefile.in.orig	Fri Sep 21 12:31:03 2001
-+++ src/Makefile.in	Sun Oct  7 18:25:33 2001
-@@ -93,7 +93,7 @@
+--- src/Makefile.in.orig	Mon Sep  8 11:12:28 2003
++++ src/Makefile.in	Mon Dec  8 04:42:05 2003
+@@ -99,10 +99,10 @@
+ # A list of all the files in the current directory which can be regenerated
  MAINTAINERCLEANFILES = Makefile.in loaderpath.h
  
- LDFLAGS = -L/usr/X11R6/lib
--INCLUDES = -I/usr/X11R6/include -I$(top_srcdir)/libltdl                        $(X_CFLAGS) -I$(prefix)/include -I$(includedir) 		       -I. -I$(top_srcdir) -I$(top_srcdir)/src 		       -I$(top_srcdir)/loaders
-+INCLUDES = -I/usr/X11R6/include $(X_CFLAGS) -I$(prefix)/include -I$(includedir) 		       -I. -I$(top_srcdir) -I$(top_srcdir)/src 		       -I$(top_srcdir)/loaders
+-LDFLAGS = -L/usr/X11R6/lib
++LDFLAGS = @LDFLAGS@
+ INCLUDES = -I. -I$(top_srcdir) -I$(top_srcdir)/src \
+-                       -I$(top_srcdir)/loaders -I$(top_srcdir)/libltdl \
+-                       $(freetype_cflags) -I/usr/X11R6/include $(X_CFLAGS) \
++                       -I$(top_srcdir)/loaders \
++                       $(freetype_cflags) $(X_CFLAGS) \
+                        -I$(prefix)/include -I$(includedir)
  
- MMX_SRCS = asm_blend.S asm_rgba.S asm_scale.S asm_rotate.S 		       asm_blend_cmod.S
+ MMX_SRCS = asm_blend.S asm_rgba.S asm_scale.S asm_rotate.S \
+@@ -128,10 +128,10 @@
  
-@@ -107,8 +107,8 @@
- EXTRA_libImlib2_la_SOURCES = rend.c ximage.c rgba.c color.c grab.c draw.c 			     context.c color.h context.h draw.h grab.h rend.h 			     rgba.h ximage.h $(MMX_SRCS)
- 
- libImlib2_la_LDFLAGS = -version-info 1:4:0
--@HAVE_MMX_TRUE@libImlib2_la_LIBADD = $(X_OBJS) @DLLDFLAGS@ $(MMX_OBJS)                        $(top_builddir)/libltdl/libltdlc.la                        $(x_libs) -lttf $(LDFLAGS)
--@HAVE_MMX_FALSE@libImlib2_la_LIBADD = $(X_OBJS) @DLLDFLAGS@                        $(top_builddir)/libltdl/libltdlc.la                        $(x_libs) -lttf $(LDFLAGS)
-+@HAVE_MMX_TRUE@libImlib2_la_LIBADD = $(X_OBJS) @DLLDFLAGS@ $(MMX_OBJS) -lltdl                        $(x_libs) -lttf $(LDFLAGS)
-+@HAVE_MMX_FALSE@libImlib2_la_LIBADD = $(X_OBJS) @DLLDFLAGS@ -lltdl                        $(x_libs) -lttf $(LDFLAGS)
- @HAVE_MMX_TRUE@libImlib2_la_DEPENDENCIES = $(top_builddir)/config.h $(X_OBJS) $(MMX_OBJS)
- @HAVE_MMX_FALSE@libImlib2_la_DEPENDENCIES = $(top_builddir)/config.h $(X_OBJS)
- 
-@@ -283,48 +283,48 @@
+ libImlib2_la_LDFLAGS = -version-info 2:0:1
+ @HAVE_MMX_TRUE@libImlib2_la_LIBADD = @HAVE_MMX_TRUE@$(X_OBJS) @DLLDFLAGS@ $(MMX_OBJS) \
+-@HAVE_MMX_TRUE@                       $(top_builddir)/libltdl/libltdlc.la \
++@HAVE_MMX_TRUE@                       -lltdl \
+ @HAVE_MMX_TRUE@                       $(x_libs) $(freetype_libs) $(LDFLAGS)
+ @HAVE_MMX_FALSE@libImlib2_la_LIBADD = @HAVE_MMX_FALSE@$(X_OBJS) @DLLDFLAGS@ \
+-@HAVE_MMX_FALSE@                       $(top_builddir)/libltdl/libltdlc.la \
++@HAVE_MMX_FALSE@                       -lltdl \
+ @HAVE_MMX_FALSE@                       $(x_libs) $(freetype_libs) $(LDFLAGS)
+ @HAVE_MMX_TRUE@libImlib2_la_DEPENDENCIES = @HAVE_MMX_TRUE@$(top_builddir)/config.h $(X_OBJS) $(MMX_OBJS)
+ @HAVE_MMX_FALSE@libImlib2_la_DEPENDENCIES = @HAVE_MMX_FALSE@$(top_builddir)/config.h $(X_OBJS)
+@@ -314,57 +314,57 @@
  	  fi; \
  	done
  api.lo api.o : api.c ../config.h common.h colormod.h image.h \
@@ -51,10 +58,22 @@
  filter.lo filter.o : filter.c common.h ../config.h colormod.h image.h \
 -	../libltdl/ltdl.h blend.h filter.h
 +	blend.h filter.h
- font.lo font.o : font.c ../config.h common.h colormod.h image.h \
--	../libltdl/ltdl.h blend.h font.h file.h updates.h rgbadraw.h \
-+	blend.h font.h file.h updates.h rgbadraw.h \
- 	rotate.h
+ font_draw.lo font_draw.o : font_draw.c ../config.h common.h colormod.h \
+-	image.h ../libltdl/ltdl.h blend.h font.h file.h updates.h \
++	image.h blend.h font.h file.h updates.h \
+ 	rgbadraw.h rotate.h
+ font_load.lo font_load.o : font_load.c ../config.h common.h colormod.h \
+-	image.h ../libltdl/ltdl.h blend.h font.h file.h updates.h \
++	image.h blend.h font.h file.h updates.h \
+ 	rgbadraw.h rotate.h
+ font_main.lo font_main.o : font_main.c ../config.h common.h colormod.h \
+-	image.h ../libltdl/ltdl.h blend.h font.h file.h updates.h \
++	image.h blend.h font.h file.h updates.h \
+ 	rgbadraw.h rotate.h
+ font_query.lo font_query.o : font_query.c ../config.h common.h \
+-	colormod.h image.h ../libltdl/ltdl.h blend.h font.h file.h \
++	colormod.h image.h blend.h font.h file.h \
+ 	updates.h rgbadraw.h rotate.h
  format.lo format.o : format.c format.h
  grab.lo grab.o : grab.c common.h ../config.h grab.h
  grad.lo grad.o : grad.c common.h ../config.h colormod.h image.h \
