@@ -6,18 +6,18 @@
 #
 
 PORTNAME=	unrar
-PORTVERSION=    3.20
-PORTEPOCH=      2
+PORTVERSION=	3.20
+PORTEPOCH=	2
 CATEGORIES=	archivers
-MASTER_SITES=   http://files10.rarlab.com/rar/
-DISTNAME=       unrarsrc-3.2.3
+MASTER_SITES=	http://files10.rarlab.com/rar/
+DISTNAME=	unrarsrc-3.2.3
 
 MAINTAINER=	ache@FreeBSD.org
 COMMENT=	Extract, view & test RAR archives
 
-WRKSRC=         ${WRKDIR}/unrar
+WRKSRC=		${WRKDIR}/unrar
 
-USE_GMAKE=      yes
+USE_GMAKE=	yes
 
 post-patch:
 	@${SED} -e 's|c++|${CXX}|g' -e 's|-O2|${CXXFLAGS}|g' \

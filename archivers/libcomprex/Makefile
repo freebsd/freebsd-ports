@@ -20,7 +20,7 @@ LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext \
 		curl.2:${PORTSDIR}/ftp/curl \
 		ltdl.4:${PORTSDIR}/devel/libltdl
 
-.if !exists(/usr/bin/bzip2) 
+.if !exists(/usr/bin/bzip2)
 LIB_DEPENDS+=	bz2.1:${PORTSDIR}/archivers/bzip2
 .endif
 

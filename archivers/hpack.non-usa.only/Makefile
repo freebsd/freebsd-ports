@@ -8,7 +8,7 @@
 PORTNAME=	hpack
 PORTVERSION=	0.79a
 CATEGORIES=	archivers
-MASTER_SITES=   ftp://src.doc.ic.ac.uk/Mirrors/sunsite.doc.ic.ac.uk/hpack/
+MASTER_SITES=	ftp://src.doc.ic.ac.uk/Mirrors/sunsite.doc.ic.ac.uk/hpack/
 DISTNAME=	hpack79src
 
 MAINTAINER=	ache@FreeBSD.org
@@ -17,7 +17,7 @@ COMMENT=	Multi-System Archiver with open keys PGP-based security
 NO_WRKSUBDIR=	yes
 MAKEFILE=	makefile
 ALL_TARGET=	freebsd
-INSTALL_TARGET= freebsd.install
+INSTALL_TARGET=	freebsd.install
 MAN1=		hpack.1
 USE_REINPLACE=	yes
 
