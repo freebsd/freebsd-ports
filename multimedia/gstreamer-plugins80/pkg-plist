@@ -1,8 +1,8 @@
 bin/gst-launch-ext-%%VERSION%%
 bin/gst-visualise-%%VERSION%%
+@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/gstreamer-%%VERSION%%.schemas >/dev/null || /usr/bin/true
 etc/gconf/schemas/gstreamer-%%VERSION%%.schemas
 @exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/gstreamer-%%VERSION%%.schemas >/dev/null || /usr/bin/true
-@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/gstreamer-%%VERSION%%.schemas >/dev/null || /usr/bin/true
 include/gstreamer-%%VERSION%%/gst/audio/gstaudiofilter.h
 include/gstreamer-%%VERSION%%/gst/audio/audioclock.h
 include/gstreamer-%%VERSION%%/gst/audio/audio.h
