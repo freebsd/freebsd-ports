@@ -3,11 +3,11 @@
 # Date created:		25 December 1994
 # Whom:			joerg
 #
-# $Id: Makefile,v 1.3 1995/04/15 03:45:36 asami Exp $
+# $Id: Makefile,v 1.4 1995/04/16 05:19:27 asami Exp $
 #
 
 DISTNAME=	cpm-1.1
-
+MASTER_SITES=	ftp://freefall.cdrom.com/pub/FreeBSD/LOCAL_PORTS/
 MAINTAINER=	joerg@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/cpm
