@@ -14,13 +14,18 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	rob@debank.tv
 COMMENT=	PHP frontend to postfix and mySQL
 
-USE_PHP=	mysql
 WANT_PHP_PEAR=	yes
 NO_BUILD=	yes
 FETCH_SITE=	http://high5.net/postfixadmin/download.php
 FETCH_BEFORE_ARGS=	-o ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}
 FETCH_CMD?=	/usr/bin/fetch -AR
 DISABLE_SIZE=	yes
+
+.if defined (WITH_PGSQL)
+USE_PHP=	pgsql
+.else
+USE_PHP=	mysql
+.endif
 
 do-fetch:
 		@${ECHO_MSG} ">> Attempting to fetch from ${FETCH_SITE}."
