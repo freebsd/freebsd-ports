@@ -28,6 +28,8 @@ lib/X11/xcin25/doc/modules/im_comm
 lib/X11/xcin25/doc/modules/zh_hex
 lib/X11/xcin25/tab/zh_TW.Big5/array30.cin
 lib/X11/xcin25/tab/zh_TW.Big5/array30.tab
+lib/X11/xcin25/tab/zh_TW.Big5/bims_pinyin.cin
+lib/X11/xcin25/tab/zh_TW.Big5/bims_pinyin.tab
 lib/X11/xcin25/tab/zh_TW.Big5/cantonese.cin
 lib/X11/xcin25/tab/zh_TW.Big5/cantonese.tab
 lib/X11/xcin25/tab/zh_TW.Big5/cj.cin

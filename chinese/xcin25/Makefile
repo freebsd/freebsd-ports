@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	xcin
-PORTVERSION=	2.5.2.p2
+PORTVERSION=	2.5.2p3
 CATEGORIES=	chinese x11
 MASTER_SITES=	ftp://xcin.linux.org.tw/pub/xcin/xcin/devel/
-DISTNAME=	xcin-2.5.2-pre2
+DISTNAME=	xcin-2.5.2-pre3
 
 MAINTAINER=	keith@freebsd.sinica.edu.tw
 
@@ -17,12 +17,14 @@ LIB_DEPENDS=	tabe.0:${PORTSDIR}/chinese/libtabe \
 		intl.1:${PORTSDIR}/devel/gettext
 BUILD_DEPENDS=	${LOCALBASE}/lib/libdb2.a:${PORTSDIR}/databases/db
 RUN_DEPENDS=	${X11BASE}/lib/X11/locale/zh_TW.Big5/XLC_LOCALE:${PORTSDIR}/x11/XFree86 \
-		${X11BASE}/lib/X11/fonts/local/kc15f.pcf.gz:${PORTSDIR}/chinese/kcfonts
+		${X11BASE}/lib/X11/fonts/local/kc15f.pcf.gz:${PORTSDIR}/chinese/kcfonts \
+		${LOCALBASE}/share/tabe/libtabe-0.1-4:${PORTSDIR}/chinese/libtabe
 
 WRKSRC=		${WRKDIR}/xcin-2.5
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
+		--x-libraries=${PREFIX}/lib \
 		--with-xcin-dir=${PREFIX}/lib/X11/xcin25 \
 		--with-dbinc=${LOCALBASE}/include/db2 \
 		--with-dblib=${LOCALBASE}/lib \
