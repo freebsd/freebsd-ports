@@ -1,0 +1,7 @@
+lib/perl5/site_perl/%%PERL_VER%%/Date/ICal/Duration.pm
+lib/perl5/site_perl/%%PERL_VER%%/Date/ICal.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Date/ICal/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Date/ICal
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Date 2>/dev/null || true
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Date/ICal
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Date 2>/dev/null || true
