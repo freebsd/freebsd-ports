@@ -4,6 +4,7 @@
 %%RUBY_SITELIBDIR%%/asp/compile.rb
 %%RUBY_SITELIBDIR%%/asp/globalasa.rb
 %%RUBY_SITELIBDIR%%/asp/goto.rb
+%%RUBY_SITELIBDIR%%/asp/params.rb
 %%RUBY_SITELIBDIR%%/asp/request.rb
 %%RUBY_SITELIBDIR%%/asp/response.rb
 %%RUBY_SITELIBDIR%%/asp/server.rb
@@ -25,6 +26,7 @@
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/test.asp
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/test.inc
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/trans.asp
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/upload.asp
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/xslt.asp
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/global-asa
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%
