@@ -23,6 +23,7 @@ pre-configure:
 	cd ${WRKSRC} ; ${RM} -rf dejagnu expect sim tcl texinfo
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/gdb/gdb ${PREFIX}/bin/${PORTNAME}
+	${INSTALL_PROGRAM} ${WRKSRC}/gdb/gdb \
+		${PREFIX}/bin/${PORTNAME}${PORTVERSION:S/.//g}
 
 .include <bsd.port.mk>
