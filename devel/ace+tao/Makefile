@@ -8,15 +8,14 @@
 PORTNAME?=	ace+tao
 PORTVERSION?=	${ACE_VERSION}+${TAO_VERSION}
 CATEGORIES=	devel
-# The distfile does not have version numbers, so try my mirror first
-MASTER_SITES=	http://deuce.doc.wustl.edu/ \
-		http://www.navicon.dk/mirrors/ace/deuce.doc.wustl.edu/
-DISTNAME?=	${PORTNAME:U}
+MASTER_SITES=	http://deuce.doc.wustl.edu/old_distribution/ \
+		http://www.navicon.dk/mirrors/ace/deuce.doc.wustl.edu/old_distribution/
+DISTNAME?=	ACE-${ACE_VERSION}+TAO-${TAO_VERSION}
 
 MAINTAINER=	sem@ciam.ru
 COMMENT?=	The Adaptive Communication Environment (ACE) with The ACE ORB (TAO)
 
-CONFLICTS=	ace-*
+CONFLICTS?=	ace-*
 
 ACE_VERSION=	5.3.6
 TAO_VERSION=	1.3.6
