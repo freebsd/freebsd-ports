@@ -4,27 +4,31 @@
 #
 # $FreeBSD$
 
-PORTNAME=	wmWeather
-PORTVERSION=	1.31
-PORTREVISION=	1
+PORTNAME=	wmweather
+PORTVERSION=	2.4.3
 CATEGORIES=	misc windowmaker
-MASTER_SITES= 	http://nis-www.lanl.gov/~mgh/WindowMaker/
+MASTER_SITES=	http://www.godisch.de/debian/wmweather/
 
 MAINTAINER=	kris@FreeBSD.org
 COMMENT=	A WMaker dockapp which displays meteorological data for your city
 
-WRKSRC=		${WRKDIR}/${DISTNAME}/Src
+LIB_DEPENDS=	curl.3:${PORTSDIR}/ftp/curl
 
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS+=CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
+WRKSRC=		${WRKDIR}/${DISTNAME}/src
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 USE_XPM=	yes
-ALL_TARGET=	clean all
 
-MAN1=		wmWeather.1
+MAN1=		wmweather.1
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/wmWeather ${PREFIX}/bin/
-	${INSTALL_SCRIPT} ${WRKSRC}/GrabWeather ${PREFIX}/bin/GrabWeather
-	${INSTALL_MAN} ${WRKSRC}/wmWeather.1 ${PREFIX}/man/man1/
+	${INSTALL_PROGRAM} ${WRKSRC}/wmweather ${PREFIX}/bin/
+	${LN} ${PREFIX}/bin/wmweather ${PREFIX}/bin/wmWeather
+	${INSTALL_MAN} ${WRKSRC}/wmweather.1 ${PREFIX}/man/man1/
+	${INSTALL_DATA} -m 644 ${WRKSRC}/wmweather.conf ${PREFIX}/etc/wmweather.conf.sample
+	test -f ${PREFIX}/etc/wmweather.conf || ${CP} ${PREFIX}/etc/wmweather.conf.sample ${PREFIX}/etc/wmweather.conf
 
 .include <bsd.port.mk>

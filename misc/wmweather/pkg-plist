@@ -1,2 +1,4 @@
 bin/wmWeather
-bin/GrabWeather
+bin/wmweather
+@unexec if cmp -s %D/etc/wmweather.conf %D/etc/wmweather.conf.sample; then rm -f %D/etc/wmweather.conf; fi
+etc/wmweather.conf.sample
