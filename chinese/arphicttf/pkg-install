@@ -1,0 +1,88 @@
+#!/bin/sh
+FONTDIR=${PKG_PREFIX}/lib/X11/fonts/TrueType
+if [ "$2" = "PRE-INSTALL" ]; then
+  echo "Please add ${FONTDIR} to your /etc/XF86Config file"
+  exit 0
+fi
+cd ${FONTDIR}
+
+echo "Updating fonts.dir & fonts.alias. This may take a while..."
+# Update fonts.dir
+touch fonts.dir
+sed -e '/ -ar-/d' -e '/ -arphic-/d' fonts.dir > fonts.dir.tmp
+# Add 16 new fonts
+numfonts=$(echo $(cat fonts.dir.tmp |wc -l) - 1 + 16 |bc)
+if [ ${numfonts} -le 16 ]; then # fonts.dir.tmp is empty
+  echo 16 > fonts.dir
+else
+  echo ${numfonts} > fonts.dir
+  sed -e 1d fonts.dir.tmp >> fonts.dir
+fi
+rm -f fonts.dir.tmp
+
+# The TTF filenames are so diverse that we can only iterate one
+# by one, instead of a generic for loop.
+
+# bkai00mp.ttf (Big5)
+echo bkai00mp.ttf -ar-kai-medium-r-normal--0-0-0-0-c-0-big5-0 >> fonts.dir
+echo ab=y:bkai00mp.ttf -ar-kai-bold-r-normal--0-0-0-0-c-0-big5-0 >> fonts.dir
+echo ai=0.3:bkai00mp.ttf -ar-kai-medium-i-normal--0-0-0-0-c-0-big5-0 >> fonts.dir
+echo ab=y:ai=0.3:bkai00mp.ttf -ar-kai-bold-i-normal--0-0-0-0-c-0-big5-0 >> fonts.dir
+
+# bsmi00lp.ttf (Big5)
+echo bsmi00lp.ttf -ar-ming-medium-r-normal--0-0-0-0-c-0-big5-0 >> fonts.dir
+echo ab=y:bsmi00lp.ttf -ar-ming-bold-r-normal--0-0-0-0-c-0-big5-0 >> fonts.dir
+echo ai=0.3:bsmi00lp.ttf -ar-ming-medium-i-normal--0-0-0-0-c-0-big5-0 >> fonts.dir
+echo ab=y:ai=0.3:bsmi00lp.ttf -ar-ming-bold-i-normal--0-0-0-0-c-0-big5-0 >> fonts.dir
+
+# gbsn00lp.ttf (GB)
+echo gbsn00lp.ttf -ar-sung-medium-r-normal--0-0-0-0-c-0-gb2312.1980-0 >> fonts.dir
+echo ab=y:gbsn00lp.ttf -ar-sung-bold-r-normal--0-0-0-0-c-0-gb2312.1980-0 >> fonts.dir
+echo ai=0.3:gbsn00lp.ttf -ar-sung-medium-i-normal--0-0-0-0-c-0-gb2312.1980-0 >> fonts.dir
+echo ab=y:ai=0.3:gbsn00lp.ttf -ar-sung-bold-i-normal--0-0-0-0-c-0-gb2312.1980-0 >> fonts.dir
+
+# gkai00mp.ttf (GB)
+echo bkai00mp.ttf -ar-kai-medium-r-normal--0-0-0-0-c-0-gb2312.1980-0 >> fonts.dir
+echo ab=y:bkai00mp.ttf -ar-kai-bold-r-normal--0-0-0-0-c-0-gb2312.1980-0 >> fonts.dir
+echo ai=0.3:bkai00mp.ttf -ar-kai-medium-i-normal--0-0-0-0-c-0-gb2312.1980-0 >> fonts.dir
+echo ab=y:ai=0.3:bkai00mp.ttf -ar-kai-bold-i-normal--0-0-0-0-c-0-gb2312.1980-0 >> fonts.dir
+
+
+# Update fonts.alias, font size ranges from 8 to 128.
+touch fonts.alias
+sed -e '/^-ar-/d' -e '/^-arphic-/d' fonts.alias > fonts.alias.tmp
+mv -f fonts.alias.tmp fonts.alias
+
+# Iterate four fonts, same as in fonts.dir.
+
+# bkai00mp.ttf (Big5)
+SIZE=8
+while [ ${SIZE} -le 128 ]
+do
+  echo -arphic-kai-medium-r-normal--${SIZE}-`expr ${SIZE} \* 10`-0-0-c-`expr ${SIZE} \* 10`-big5-0 -ar-kai-medium-r-normal--${SIZE}-`expr ${SIZE} \* 10`-0-0-c-`expr ${SIZE} \* 10`-big5-0 >> fonts.alias;
+  SIZE=`expr ${SIZE} + 1`;
+done
+
+# bsmi00lp.ttf (Big5)
+SIZE=8
+while [ ${SIZE} -le 128 ]
+do
+  echo -arphic-ming-medium-r-normal--${SIZE}-`expr ${SIZE} \* 10`-0-0-c-`expr ${SIZE} \* 10`-big5-0 -ar-ming-medium-r-normal--${SIZE}-`expr ${SIZE} \* 10`-0-0-c-`expr ${SIZE} \* 10`-big5-0 >> fonts.alias;
+  SIZE=`expr ${SIZE} + 1`;
+done
+
+# gbsn00lp.ttf (GB)
+SIZE=8
+while [ ${SIZE} -le 128 ]
+do
+  echo -arphic-sung-medium-r-normal--${SIZE}-`expr ${SIZE} \* 10`-0-0-c-`expr ${SIZE} \* 10`-gb2312.1980-0 -ar-sung-medium-r-normal--${SIZE}-`expr ${SIZE} \* 10`-0-0-c-`expr ${SIZE} \* 10`-gb2312.1980-0 >> fonts.alias;
+  SIZE=`expr ${SIZE} + 1`;
+done
+
+# gkai00mp.ttf (GB)
+SIZE=8
+while [ ${SIZE} -le 128 ]
+do
+  echo -arphic-kai-medium-r-normal--${SIZE}-`expr ${SIZE} \* 10`-0-0-c-`expr ${SIZE} \* 10`-gb2312.1980-0 -ar-kai-medium-r-normal--${SIZE}-`expr ${SIZE} \* 10`-0-0-c-`expr ${SIZE} \* 10`-gb2312.1980-0 >> fonts.alias;
+  SIZE=`expr ${SIZE} + 1`;
+done

@@ -1,0 +1,8 @@
+lib/X11/fonts/TrueType/ARPHICPL_Big5.TXT
+lib/X11/fonts/TrueType/ARPHICPL_Eng.TXT
+lib/X11/fonts/TrueType/ARPHICPL_GB.TXT
+lib/X11/fonts/TrueType/bkai00mp.ttf
+lib/X11/fonts/TrueType/bsmi00lp.ttf
+lib/X11/fonts/TrueType/gbsn00lp.ttf
+lib/X11/fonts/TrueType/gkai00mp.ttf
+@unexec rmdir %D/lib/X11/fonts/TrueType 2>/dev/null || true
