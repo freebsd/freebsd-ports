@@ -1,28 +1,33 @@
---- Makefile.in.orig	Sun Apr  1 06:48:18 2001
-+++ Makefile.in	Thu Jul 26 19:47:05 2001
-@@ -47,7 +47,7 @@
+--- Makefile.in.orig	Wed Nov  7 17:59:20 2001
++++ Makefile.in	Fri Dec  7 19:44:51 2001
+@@ -238,8 +238,8 @@
+ 	  if test -f $$p \
+ 	  ; then \
+ 	    f=`echo $$p1|sed '$(transform);s/$$/$(EXEEXT)/'`; \
+-	   echo " $(INSTALL_PROGRAM_ENV) $(INSTALL_PROGRAM) $$p $(DESTDIR)$(bindir)/$$f"; \
+-	   $(INSTALL_PROGRAM_ENV) $(INSTALL_PROGRAM) $$p $(DESTDIR)$(bindir)/$$f; \
++	   echo " $(INSTALL_PROGRAM_ENV) $(INSTALL_PROGRAM) $$p $(DESTDIR)$(bindir)/$$p"; \
++	   $(INSTALL_PROGRAM_ENV) $(INSTALL_PROGRAM) $$p $(DESTDIR)$(bindir)/$$p; \
+ 	  else :; fi; \
+ 	done
  
- # C compiler options: make's built-in rules use this variable
+@@ -341,8 +341,8 @@
+ 	  inst=`echo $$i | sed -e 's/\\.[0-9a-z]*$$//'`; \
+ 	  inst=`echo $$inst | sed -e 's/^.*\///'`; \
+ 	  inst=`echo $$inst | sed '$(transform)'`.$$ext; \
+-	  echo " $(INSTALL_DATA) $$file $(DESTDIR)$(man1dir)/$$inst"; \
+-	  $(INSTALL_DATA) $$file $(DESTDIR)$(man1dir)/$$inst; \
++	  echo " $(INSTALL_DATA) $$file $(DESTDIR)$(man1dir)/$$file"; \
++	  $(INSTALL_DATA) $$file $(DESTDIR)$(man1dir)/$$file; \
+ 	done
+ uninstall-man1:
+ 	@$(NORMAL_UNINSTALL)
+@@ -368,7 +368,7 @@
+ 	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
+ 	  f="`echo $$p | sed -e 's|^.*/||'`"; \
+ 	  echo " $(INSTALL_DATA) $$d$$p $(DESTDIR)$(sysconfdir)/$$f"; \
+-	  $(INSTALL_DATA) $$d$$p $(DESTDIR)$(sysconfdir)/$$f; \
++	  $(INSTALL_DATA) $$d$$p $(DESTDIR)$(sysconfdir)/$$f.dist; \
+ 	done
  
--CFLAGS = -O2 -fsigned-char -fomit-frame-pointer -pipe
-+CFLAGS += -fsigned-char -fomit-frame-pointer -pipe
- 
- # You may have to include some extra libraries
- # for some systems
-@@ -101,11 +101,11 @@
- 
- 	$(INSTALL_PROGRAM) -s termidx $(package_prefix)$(bindir)
- 
--	if [ -a $(package_prefix)$(sysconfdir)/joerc ]; then echo; else $(INSTALL_DATA) joerc $(package_prefix)$(sysconfdir); fi
--	if [ -a $(package_prefix)$(sysconfdir)/jmacsrc ]; then echo; else $(INSTALL_DATA) jmacsrc $(package_prefix)$(sysconfdir); fi
--	if [ -a $(package_prefix)$(sysconfdir)/jstarrc ]; then echo; else $(INSTALL_DATA) jstarrc $(package_prefix)$(sysconfdir); fi
--	if [ -a $(package_prefix)$(sysconfdir)/rjoerc ]; then echo; else $(INSTALL_DATA) rjoerc $(package_prefix)$(sysconfdir); fi
--	if [ -a $(package_prefix)$(sysconfdir)/jpicorc ]; then echo; else $(INSTALL_DATA) jpicorc $(package_prefix)$(sysconfdir); fi
-+	if [ -e $(package_prefix)$(sysconfdir)/joerc.dist ]; then echo; else $(INSTALL_DATA) joerc $(package_prefix)$(sysconfdir)/joerc.dist; fi
-+	if [ -e $(package_prefix)$(sysconfdir)/jmacsrc.dist ]; then echo; else $(INSTALL_DATA) jmacsrc $(package_prefix)$(sysconfdir)/jmacsrc.dist; fi
-+	if [ -e $(package_prefix)$(sysconfdir)/jstarrc.dist ]; then echo; else $(INSTALL_DATA) jstarrc $(package_prefix)$(sysconfdir)/jstarrc.dist; fi
-+	if [ -e $(package_prefix)$(sysconfdir)/rjoerc.dist ]; then echo; else $(INSTALL_DATA) rjoerc $(package_prefix)$(sysconfdir)/rjoerc.dist; fi
-+	if [ -e $(package_prefix)$(sysconfdir)/jpicorc.dist ]; then echo; else $(INSTALL_DATA) jpicorc $(package_prefix)$(sysconfdir)/jpicorc.dist; fi
- 
- 	rm -f $(package_prefix)$(man1dir)/joe.1
- 	$(INSTALL_DATA) joe.1 $(package_prefix)$(man1dir)
+ uninstall-sysconfDATA:
