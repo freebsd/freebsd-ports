@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	asmail
-PORTVERSION=	1.6
+PORTVERSION=	1.7
 CATEGORIES=	mail afterstep
 MASTER_SITES=	http://www.tigr.net/afterstep/download/asmail/
-MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Biff-type program, designed to match AfterStep
