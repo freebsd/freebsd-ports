@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	leoarg
-PORTVERSION=	2.2.2
+PORTVERSION=	2.2.3
 CATEGORIES=	devel
 MASTER_SITES=	http://home.pages.at/kingleo/development/
 DISTNAME=	LeoArg-${PORTVERSION}
@@ -21,5 +21,21 @@ INSTALLS_SHLIB=	yes
 MAN3=	LeoArg.3 LeoArg__InvalidOption.3 LeoArg__InvalidSetting.3 \
 	LeoArg__Option.3 LeoArg__Setting.3 LeoArg_cpp.3 LeoArg_hh.3 \
 	StringUtils_cpp.3 StringUtils_hh.3 namespace_StringUtils.3
+
+post-patch:
+.for file in Makefile.in doc/Makefile.in
+	@${PERL} -pi -e 's|^docdir|#docdir|g ; \
+		 s| install-data-local||g' ${WRKSRC}/${file}
+.endfor
+
+post-install:
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/html/*.* ${DOCSDIR}
+	@${MKDIR} ${EXAMPLESDIR}
+.for file in Makefile demo.sh leoargmain.cpp
+	${INSTALL_DATA} ${WRKSRC}/example/${file} ${EXAMPLESDIR}
+.endfor
+.endif
 
 .include <bsd.port.mk>
