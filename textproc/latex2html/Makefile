@@ -31,6 +31,7 @@ CONFIGURE_ARGS=	--with-perl=${PERL} \
 		--libdir=${DATADIR}
 
 MSG_FILE=	${PKGDIR}/pkg-message
+PKGMESSAGE=	${WRKDIR}/pkg-message
 
 # Local variables
 #
