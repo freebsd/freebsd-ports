@@ -32,6 +32,45 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="2b2b333b-6bd3-11d9-95f8-000a95bc6fae">
+    <topic>mc -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>mc</name>
+	<range><lt>4.6.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Andrew V. Samoilov reported several vulnerabilities that
+	  were corrected in MidnightCommand 4.6.0:</p>
+	<ul>
+	  <li>Format string issues (CAN-2004-1004)</li>
+	  <li>Buffer overflows (CAN-2004-1005)</li>
+	  <li>Denial-of-service, infinite loop (CAN-2004-1009)</li>
+	  <li>Denial-of-service, corrupted section header
+	    (CAN-2004-1090)</li>
+	  <li>Denial-of-service, null pointer dereference (CAN-2004-1091)</li>
+	  <li>Freeing unallocated memory (CAN-2004-1092)</li>
+	  <li>Using already freed memory (CAN-2004-1093)</li>
+	</ul>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-1004</cvename>
+      <cvename>CAN-2004-1005</cvename>
+      <cvename>CAN-2004-1009</cvename>
+      <cvename>CAN-2004-1090</cvename>
+      <cvename>CAN-2004-1091</cvename>
+      <cvename>CAN-2004-1092</cvename>
+      <cvename>CAN-2004-1093</cvename>
+    </references>
+    <dates>
+      <discovery>2004-12-01</discovery>
+      <entry>2005-01-21</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="c418d472-6bd1-11d9-93ca-000a95bc6fae">
     <topic>perl -- File::Path insecure file/directory permissions</topic>
     <affects>
