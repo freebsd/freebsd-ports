@@ -73,10 +73,6 @@ EOF
 elif [ "$2" = "POST-INSTALL" ]; then
 chown -R firebird:firebird $PKG_PREFIX/firebird
 
-# make lib ldconfig-compatible
-chown -R root:wheel $PKG_PREFIX/firebird/lib
-chmod -R g-w $PKG_PREFIX/firebird/lib
-
 # Turn everybody to read only.
 chmod -R o=r $PKG_PREFIX/firebird
 
@@ -92,7 +88,13 @@ for i in `find $PKG_PREFIX/firebird -print`
      fi
   done
 
+# make lib ldconfig-compatible
+chown -R root:wheel $PKG_PREFIX/firebird/lib
+chmod -R g-w $PKG_PREFIX/firebird/lib
 
+# Fix UDF load problem
+cd $PKG_PREFIX/firebird/lib
+ln -sf ib_util.so libib_util.so
 
 cd $PKG_PREFIX/firebird/bin
 
@@ -143,7 +145,15 @@ EOF
 cat >>/etc/inetd.conf <<EOF
 gds_db	stream	tcp	nowait	firebird	/usr/interbase/bin/gds_inet_server  gds_inet_server
 EOF
-kill -HUP `cat /var/run/inetd.pid`
-kill -HUP `cat /var/run/inetd.pid`
+if [ -f /var/run/inetd.pid ]; then
+	kill -HUP `cat /var/run/inetd.pid`
+fi
+
+# shared lib startup script
+if [ -d $PKG_PREFIX/etc/rc.d ]; then
+	(
+	echo "#!/bin/sh"; echo "[ -d $PKG_PREFIX/firebird/lib ] && /sbin/ldconfig -m $PKG_PREFIX/firebird/lib"
+	) > $PKG_PREFIX/etc/rc.d/000.firebird.sh
+fi
 
 fi
