@@ -1,0 +1,34 @@
+# New ports collection makefile for:	c2mdoc
+# Date created:		2 March 2004
+# Whom:			Bruce M. Simpson <bms@FreeBSD.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	c2mdoc
+PORTVERSION=	20040302
+CATEGORIES=	devel textproc
+MASTER_SITES=	#
+DISTFILES=
+
+MAINTAINER=	bms@FreeBSD.org
+COMMENT=	Script to generate mdoc(7) markup from C functions
+
+RUN_DEPENDS=	cproto:${PORTSDIR}/devel/cproto
+
+NOMAN=
+
+USE_REINPLACE=	yes
+NO_BUILD=	yes
+NO_WRKSUBDIR=	yes
+
+PKG_PLIST=	bin/c2mdoc libexec/c2mdoc.awk
+
+do-install:
+	${INSTALL_SCRIPT} ${FILESDIR}/c2mdoc.awk ${PREFIX}/libexec
+	${CP} ${FILESDIR}/c2mdoc ${WRKDIR}
+	${REINPLACE_CMD} -e "s|%%LIBEXECDIR%%|${PREFIX}/libexec|g;" \
+		${WRKDIR}/c2mdoc
+	${INSTALL_SCRIPT} ${WRKDIR}/c2mdoc ${PREFIX}/bin
+
+.include <bsd.port.mk>

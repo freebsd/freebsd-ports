@@ -1,0 +1,8 @@
+c2mdoc is a shell and awk script wrapper which abuses devel/cproto's parser
+to spit out function prototypes in a format ready to paste into FreeBSD
+developer documentation. c2man already claims to do such a thing, but seems
+crippled in the face of our kernel source. The toolchain used by this port
+whinges but still generates markup.
+
+Bruce
+bms@FreeBSD.org
