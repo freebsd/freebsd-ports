@@ -77,12 +77,12 @@ lib/OpenVerse/OpenVerse.tcl
 lib/OpenVerse/server.cfg
 lib/OpenVerse/server.tcl
 lib/OpenVerse/passageways.txt
-share/doc/OpenVerse/help/Technical.ohlp
-share/doc/OpenVerse/help/PServ.ohlp
-share/doc/OpenVerse/help/OpenVerse.ohlp
-share/doc/OpenVerse/help/About.ohlp
-share/doc/OpenVerse/help/FAQ.ohlp
-share/doc/OpenVerse/README
+%%PORTDOCS%%%%DOCSDIR%%/help/Technical.ohlp
+%%PORTDOCS%%%%DOCSDIR%%/help/PServ.ohlp
+%%PORTDOCS%%%%DOCSDIR%%/help/OpenVerse.ohlp
+%%PORTDOCS%%%%DOCSDIR%%/help/About.ohlp
+%%PORTDOCS%%%%DOCSDIR%%/help/FAQ.ohlp
+%%PORTDOCS%%%%DOCSDIR%%/README
 lib/OpenVerse/icons/jump.gif
 lib/OpenVerse/icons/locked.gif~
 lib/OpenVerse/icons/room.gif
@@ -99,6 +99,6 @@ lib/OpenVerse/icons/unlocked.gif~
 @dirrm lib/OpenVerse/plugins/Query
 @dirrm lib/OpenVerse/plugins
 @dirrm lib/OpenVerse/rooms
-@dirrm share/doc/OpenVerse/help
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/help
 @dirrm lib/OpenVerse/
-@dirrm share/doc/OpenVerse/
+%%PORTDOCS%%@dirrm %%DOCSDIR%% 
