@@ -3131,6 +3131,7 @@ libcabinet	ports/archivers/libcabinet
 libcache	ports/devel/libcache
 libcalendar	src/lib/libcalendar
 libcam		src/lib/libcam
+libcapsinetwork	ports/devel/libcapsinetwork
 libcdaudio	ports/audio/libcdaudio
 libcii		ports/devel/libcii
 libcipher	src/secure/lib/libcipher
