@@ -6081,6 +6081,7 @@ ruby-sdl	ports/devel/ruby-sdl
 ruby-search-namazu	ports/databases/ruby-search-namazu
 ruby-setup.rb	ports/devel/ruby-setup.rb
 ruby-slang	ports/devel/ruby-slang
+ruby-smf	ports/audio/ruby-smf
 ruby-snmp	ports/net/ruby-snmp
 ruby-soap	ports/net/ruby-soap
 ruby-sqlrelay	ports/databases/ruby-sqlrelay
