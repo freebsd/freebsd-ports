@@ -120,6 +120,7 @@
     SUBDIR += gracer
     SUBDIR += grande
     SUBDIR += greed
+    SUBDIR += groundhog
     SUBDIR += gru
     SUBDIR += grubinvaders
     SUBDIR += gshisen
