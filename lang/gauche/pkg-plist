@@ -1,9 +1,15 @@
+bin/gauche-cesconv
 bin/gauche-config
+bin/gauche-install
+bin/gauche-package
 bin/gosh
 lib/gauche/%%VERSION%%/%%TARGET%%/auxsys.so
 lib/gauche/%%VERSION%%/%%TARGET%%/binary.so
 lib/gauche/%%VERSION%%/%%TARGET%%/fcntl.so
+lib/gauche/%%VERSION%%/%%TARGET%%/gauche-cesconv
 lib/gauche/%%VERSION%%/%%TARGET%%/gauche-config
+lib/gauche/%%VERSION%%/%%TARGET%%/gauche-install
+lib/gauche/%%VERSION%%/%%TARGET%%/gauche-package
 lib/gauche/%%VERSION%%/%%TARGET%%/gosh
 lib/gauche/%%VERSION%%/%%TARGET%%/libcharconv.so
 lib/gauche/%%VERSION%%/%%TARGET%%/libgauche-uvector.so
@@ -18,6 +24,7 @@ lib/gauche/%%VERSION%%/%%TARGET%%/termios.so
 lib/gauche/%%VERSION%%/%%TARGET%%/threads.so
 lib/gauche/%%VERSION%%/include/gauche.h
 lib/gauche/%%VERSION%%/include/gauche/arch.h
+lib/gauche/%%VERSION%%/include/gauche/builtin-syms.h
 lib/gauche/%%VERSION%%/include/gauche/char_euc_jp.h
 lib/gauche/%%VERSION%%/include/gauche/char_none.h
 lib/gauche/%%VERSION%%/include/gauche/char_sjis.h
@@ -69,7 +76,6 @@ share/gauche/%%VERSION%%/lib/gauche/hook.scm
 share/gauche/%%VERSION%%/lib/gauche/interactive.scm
 share/gauche/%%VERSION%%/lib/gauche/interactive/info.scm
 share/gauche/%%VERSION%%/lib/gauche/interpolate.scm
-share/gauche/%%VERSION%%/lib/gauche/ioutil.scm
 share/gauche/%%VERSION%%/lib/gauche/let-opt.scm
 share/gauche/%%VERSION%%/lib/gauche/libutil.scm
 share/gauche/%%VERSION%%/lib/gauche/listener.scm
@@ -77,6 +83,7 @@ share/gauche/%%VERSION%%/lib/gauche/listutil.scm
 share/gauche/%%VERSION%%/lib/gauche/logger.scm
 share/gauche/%%VERSION%%/lib/gauche/logical.scm
 share/gauche/%%VERSION%%/lib/gauche/macroutil.scm
+share/gauche/%%VERSION%%/lib/gauche/matrix.scm
 share/gauche/%%VERSION%%/lib/gauche/modutil.scm
 share/gauche/%%VERSION%%/lib/gauche/mop/instance-pool.scm
 share/gauche/%%VERSION%%/lib/gauche/mop/propagate.scm
@@ -85,6 +92,10 @@ share/gauche/%%VERSION%%/lib/gauche/mop/validator.scm
 share/gauche/%%VERSION%%/lib/gauche/net.scm
 share/gauche/%%VERSION%%/lib/gauche/numerical.scm
 share/gauche/%%VERSION%%/lib/gauche/object.scm
+share/gauche/%%VERSION%%/lib/gauche/package.scm
+share/gauche/%%VERSION%%/lib/gauche/package/build.scm
+share/gauche/%%VERSION%%/lib/gauche/package/fetch.scm
+share/gauche/%%VERSION%%/lib/gauche/package/util.scm
 share/gauche/%%VERSION%%/lib/gauche/parameter.scm
 share/gauche/%%VERSION%%/lib/gauche/parseopt.scm
 share/gauche/%%VERSION%%/lib/gauche/portutil.scm
@@ -194,6 +205,7 @@ share/gauche/%%VERSION%%/lib/util/digest.scm
 share/gauche/%%VERSION%%/lib/util/isomorph.scm
 share/gauche/%%VERSION%%/lib/util/lcs.scm
 share/gauche/%%VERSION%%/lib/util/list.scm
+share/gauche/%%VERSION%%/lib/util/match.scm
 share/gauche/%%VERSION%%/lib/util/queue.scm
 share/gauche/%%VERSION%%/lib/util/record.scm
 share/gauche/%%VERSION%%/lib/util/toposort.scm
@@ -216,6 +228,7 @@ share/gauche/site/lib/.keepme
 @dirrm share/gauche/%%VERSION%%/lib/math
 @dirrm share/gauche/%%VERSION%%/lib/gauche/vm
 @dirrm share/gauche/%%VERSION%%/lib/gauche/serializer
+@dirrm share/gauche/%%VERSION%%/lib/gauche/package
 @dirrm share/gauche/%%VERSION%%/lib/gauche/mop
 @dirrm share/gauche/%%VERSION%%/lib/gauche/interactive
 @dirrm share/gauche/%%VERSION%%/lib/gauche
