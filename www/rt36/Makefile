@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rt3
-PORTVERSION?=	3.0.6
+PORTVERSION?=	3.0.7
 CATEGORIES=	www
 MASTER_SITES?=	http://www.fsck.com/pub/rt/release/ \
 		http://www.fsck.com/pub/rt/devel/ \
@@ -136,7 +136,6 @@ pre-install:
 
 post-install:
 	@${INSTALL_DATA} ${WRKSRC}/README ${RT_PATH}/README
-	@${INSTALL_SCRIPT} ${FILESDIR}/ap2mp2-fix.pl ${RT_PATH}/bin
 .if !defined(INITIAL_INSTALL)
 	@echo Upgrade of RT3 complete.
 .else
