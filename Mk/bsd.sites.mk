@@ -48,6 +48,7 @@ MASTER_SITE_COMP_SOURCES+=	\
 	ftp://rtfm.mit.edu/pub/usenet/comp.sources.%SUBDIR%/
 
 MASTER_SITE_FESTIVAL= \
+	http://www.festvox.org/packed/festival/%SUBDIR%/ \
 	http://www.speech.cs.cmu.edu/festival/cstr/festival/%SUBDIR%/ \
 	ftp://ftp.leb.net/pub/blinux/festival/mirror.festival_home/%SUBDIR%/ \
 	ftp://ftp.mayn.de/pub/linux/BLinux/festival/mirror.festival_home/%SUBDIR%/ \
