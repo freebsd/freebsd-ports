@@ -6,6 +6,7 @@
 
 PORTNAME=	qt
 PORTVERSION=	3.13
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits python
 MASTER_SITES=	http://www.river-bank.demon.co.uk/download/PyQt/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,7 +20,7 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/sip:${PORTSDIR}/devel/py-sip
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_QT_VER=	3
-USE_PYTHON=	2.3
+USE_PYTHON=	yes
 USE_REINPLACE=	yes
 
 .include <bsd.port.pre.mk>
