@@ -1,0 +1,513 @@
+bin/ccdensity
+bin/ccenergy
+bin/cceom
+bin/cceom-d
+bin/cchbar
+bin/cclambda
+bin/ccresponse
+bin/ccsort
+bin/cctriples
+bin/cints
+bin/cis
+bin/clag
+bin/cphf
+bin/cscf
+bin/dboc
+bin/detcas
+bin/detcasman
+bin/detci
+bin/extrema
+bin/geom
+bin/input
+bin/localize
+bin/mocube
+bin/mp2
+bin/mp2r12
+bin/oeprop
+bin/optking
+bin/psi2molden
+bin/psi3
+bin/psiclean
+bin/response
+bin/stable
+bin/tocprint
+bin/transqt
+include/ccfiles.h
+include/chkpt_params.h
+include/libbasis/basisset.h
+include/libbasis/combinate.h
+include/libbasis/gnorm.h
+include/libbasis/osrecur.h
+include/libbasis/overlap.h
+include/libbasis/rotation.h
+include/libbasis/shell.h
+include/libchkpt/chkpt.h
+include/libciomr/iomrparam.h
+include/libciomr/libciomr.h
+include/libderiv/libderiv.h
+include/libdpd/dpd.h
+include/libint/hrr_header.h
+include/libint/libint.h
+include/libint/vrr_header.h
+include/libipv1/ip_alloc.gbl
+include/libipv1/ip_cwk.gbl
+include/libipv1/ip_data.gbl
+include/libipv1/ip_error.gbl
+include/libipv1/ip_error.h
+include/libipv1/ip_global.h
+include/libipv1/ip_karray.gbl
+include/libipv1/ip_lib.h
+include/libipv1/ip_print.gbl
+include/libipv1/ip_read.gbl
+include/libipv1/ip_types.h
+include/libipv1/scan.gbl
+include/libipv1/tmpl.h
+include/libipv1/y.tab.gbl
+include/libiwl/iwl.h
+include/libpsio/psio.gbl
+include/libpsio/psio.h
+include/libqt/qt.h
+include/libr12/libr12.h
+include/masses.h
+include/physconst.h
+include/psifiles.h
+include/psitypes.h
+include/rgb.h
+include/symmetry.h
+include/vdw_radii.h
+lib/libPSI_basis.a
+lib/libPSI_chkpt.a
+lib/libPSI_ciomr.a
+lib/libPSI_deriv.a
+lib/libPSI_dpd.a
+lib/libPSI_int.a
+lib/libPSI_ipv1.a
+lib/libPSI_iwl.a
+lib/libPSI_psio.a
+lib/libPSI_qt.a
+lib/libPSI_r12.a
+@dirrm include/libr12
+@dirrm include/libqt
+@dirrm include/libpsio
+@dirrm include/libiwl
+@dirrm include/libipv1
+@dirrm include/libint
+@dirrm include/libdpd
+@dirrm include/libderiv
+@dirrm include/libciomr
+@dirrm include/libchkpt
+@dirrm include/libbasis
+%%PORTDOCS%%share/psi3/pbasis.dat
+%%PORTDOCS%%share/psi3/psi.dat
+%%PORTDOCS%%share/doc/psi3/libpsio.html
+%%PORTDOCS%%share/doc/psi3/libdpd.html
+%%PORTDOCS%%share/doc/psi3/cints.html
+%%PORTDOCS%%share/doc/psi3/CINTS/commandline.html
+%%PORTDOCS%%share/doc/psi3/CINTS/compile.html
+%%PORTDOCS%%share/doc/psi3/CINTS/description.html
+%%PORTDOCS%%share/doc/psi3/CINTS/examples.html
+%%PORTDOCS%%share/doc/psi3/CINTS/home.html
+%%PORTDOCS%%share/doc/psi3/CINTS/keywords.html
+%%PORTDOCS%%share/doc/psi3/CINTS/references.html
+%%PORTDOCS%%share/doc/psi3/CINTS/toc.html
+%%PORTDOCS%%share/doc/psi3/libqt.txt
+%%PORTDOCS%%share/doc/psi3/libiwl.txt
+%%PORTDOCS%%@dirrm share/doc/psi3/CINTS
+%%PORTDOCS%%@dirrm share/doc/psi3
+%%EXAMPLESDIR%%/MakeRules.in
+%%EXAMPLESDIR%%/INDEX
+%%EXAMPLESDIR%%/Basis_Tests/Benchmarks
+%%EXAMPLESDIR%%/Basis_Tests/input.dat
+%%EXAMPLESDIR%%/Basis_Tests/psi_test.pl
+%%EXAMPLESDIR%%/Basis_Tests/standard.input
+%%EXAMPLESDIR%%/MakeVars.in
+%%EXAMPLESDIR%%/Makefile.in
+%%EXAMPLESDIR%%/driver.test.pl
+%%EXAMPLESDIR%%/psitest.pl
+%%EXAMPLESDIR%%/runtest.pl.in
+%%EXAMPLESDIR%%/casscf-sp/Makefile.in
+%%EXAMPLESDIR%%/casscf-sp/casscf-sp.test.pl
+%%EXAMPLESDIR%%/casscf-sp/file14.ref
+%%EXAMPLESDIR%%/casscf-sp/input.dat
+%%EXAMPLESDIR%%/casscf-sp/output.ref
+%%EXAMPLESDIR%%/casscf-sp/Makefile
+%%EXAMPLESDIR%%/cc1/Makefile.in
+%%EXAMPLESDIR%%/cc1/cc1.test.pl
+%%EXAMPLESDIR%%/cc1/file11.ref
+%%EXAMPLESDIR%%/cc1/input.dat
+%%EXAMPLESDIR%%/cc1/output.ref
+%%EXAMPLESDIR%%/cc1/Makefile
+%%EXAMPLESDIR%%/cc10/Makefile.in
+%%EXAMPLESDIR%%/cc10/cc10.test.pl
+%%EXAMPLESDIR%%/cc10/input.dat
+%%EXAMPLESDIR%%/cc10/output.ref
+%%EXAMPLESDIR%%/cc10/Makefile
+%%EXAMPLESDIR%%/cc11/Makefile.in
+%%EXAMPLESDIR%%/cc11/cc11.test.pl
+%%EXAMPLESDIR%%/cc11/input.dat
+%%EXAMPLESDIR%%/cc11/output.ref
+%%EXAMPLESDIR%%/cc11/Makefile
+%%EXAMPLESDIR%%/cc12/Makefile.in
+%%EXAMPLESDIR%%/cc12/cc12.test.pl
+%%EXAMPLESDIR%%/cc12/input.dat
+%%EXAMPLESDIR%%/cc12/output.ref
+%%EXAMPLESDIR%%/cc12/Makefile
+%%EXAMPLESDIR%%/cc13/Makefile.in
+%%EXAMPLESDIR%%/cc13/cc13.test.pl
+%%EXAMPLESDIR%%/cc13/file11.ref
+%%EXAMPLESDIR%%/cc13/input.dat
+%%EXAMPLESDIR%%/cc13/output.ref
+%%EXAMPLESDIR%%/cc13/Makefile
+%%EXAMPLESDIR%%/cc14/Makefile.in
+%%EXAMPLESDIR%%/cc14/cc14.test.pl
+%%EXAMPLESDIR%%/cc14/file11.ref
+%%EXAMPLESDIR%%/cc14/input.dat
+%%EXAMPLESDIR%%/cc14/output.ref
+%%EXAMPLESDIR%%/cc14/Makefile
+%%EXAMPLESDIR%%/cc15/Makefile.in
+%%EXAMPLESDIR%%/cc15/cc15.test.pl
+%%EXAMPLESDIR%%/cc15/input.dat
+%%EXAMPLESDIR%%/cc15/output.ref
+%%EXAMPLESDIR%%/cc15/Makefile
+%%EXAMPLESDIR%%/cc16/Makefile.in
+%%EXAMPLESDIR%%/cc16/cc16.test.pl
+%%EXAMPLESDIR%%/cc16/input.dat
+%%EXAMPLESDIR%%/cc16/output.ref
+%%EXAMPLESDIR%%/cc16/Makefile
+%%EXAMPLESDIR%%/cc17/Makefile.in
+%%EXAMPLESDIR%%/cc17/cc17.test.pl
+%%EXAMPLESDIR%%/cc17/input.dat
+%%EXAMPLESDIR%%/cc17/output.ref
+%%EXAMPLESDIR%%/cc17/Makefile
+%%EXAMPLESDIR%%/cc18/Makefile.in
+%%EXAMPLESDIR%%/cc18/cc18.test.pl
+%%EXAMPLESDIR%%/cc18/input.dat
+%%EXAMPLESDIR%%/cc18/output.ref
+%%EXAMPLESDIR%%/cc18/Makefile
+%%EXAMPLESDIR%%/cc19/Makefile.in
+%%EXAMPLESDIR%%/cc19/cc19.test.pl
+%%EXAMPLESDIR%%/cc19/input.dat
+%%EXAMPLESDIR%%/cc19/output.ref
+%%EXAMPLESDIR%%/cc19/Makefile
+%%EXAMPLESDIR%%/cc2/Makefile.in
+%%EXAMPLESDIR%%/cc2/cc2.test.pl
+%%EXAMPLESDIR%%/cc2/file11.ref
+%%EXAMPLESDIR%%/cc2/input.dat
+%%EXAMPLESDIR%%/cc2/output.ref
+%%EXAMPLESDIR%%/cc2/Makefile
+%%EXAMPLESDIR%%/cc3/Makefile.in
+%%EXAMPLESDIR%%/cc3/cc3.test.pl
+%%EXAMPLESDIR%%/cc3/file11.ref
+%%EXAMPLESDIR%%/cc3/input.dat
+%%EXAMPLESDIR%%/cc3/output.ref
+%%EXAMPLESDIR%%/cc3/Makefile
+%%EXAMPLESDIR%%/cc4/Makefile.in
+%%EXAMPLESDIR%%/cc4/cc4.test.pl
+%%EXAMPLESDIR%%/cc4/input.dat
+%%EXAMPLESDIR%%/cc4/output.ref
+%%EXAMPLESDIR%%/cc4/Makefile
+%%EXAMPLESDIR%%/cc5/Makefile.in
+%%EXAMPLESDIR%%/cc5/cc5.test.pl
+%%EXAMPLESDIR%%/cc5/filesizes
+%%EXAMPLESDIR%%/cc5/input.dat
+%%EXAMPLESDIR%%/cc5/output.ref
+%%EXAMPLESDIR%%/cc5/Makefile
+%%EXAMPLESDIR%%/cc6/Makefile.in
+%%EXAMPLESDIR%%/cc6/cc6.test.pl
+%%EXAMPLESDIR%%/cc6/input.dat
+%%EXAMPLESDIR%%/cc6/output.ref
+%%EXAMPLESDIR%%/cc6/Makefile
+%%EXAMPLESDIR%%/cc7/Makefile.in
+%%EXAMPLESDIR%%/cc7/cc7.test.pl
+%%EXAMPLESDIR%%/cc7/input.dat
+%%EXAMPLESDIR%%/cc7/output.ref
+%%EXAMPLESDIR%%/cc7/Makefile
+%%EXAMPLESDIR%%/cc8/Makefile.in
+%%EXAMPLESDIR%%/cc8/cc8.test.pl
+%%EXAMPLESDIR%%/cc8/input.dat
+%%EXAMPLESDIR%%/cc8/output.ref
+%%EXAMPLESDIR%%/cc8/Makefile
+%%EXAMPLESDIR%%/cc9/Makefile.in
+%%EXAMPLESDIR%%/cc9/cc9.test.pl
+%%EXAMPLESDIR%%/cc9/input.dat
+%%EXAMPLESDIR%%/cc9/output.ref
+%%EXAMPLESDIR%%/cc9/Makefile
+%%EXAMPLESDIR%%/cis-sp/Makefile.in
+%%EXAMPLESDIR%%/cis-sp/cis-sp.test.pl
+%%EXAMPLESDIR%%/cis-sp/input.dat
+%%EXAMPLESDIR%%/cis-sp/output.ref
+%%EXAMPLESDIR%%/cis-sp/Makefile
+%%EXAMPLESDIR%%/cisd-sp/Makefile.in
+%%EXAMPLESDIR%%/cisd-sp/cisd-sp.test.pl
+%%EXAMPLESDIR%%/cisd-sp/input.dat
+%%EXAMPLESDIR%%/cisd-sp/output.ref
+%%EXAMPLESDIR%%/cisd-sp/Makefile
+%%EXAMPLESDIR%%/cisd-opt-numer/Makefile.in
+%%EXAMPLESDIR%%/cisd-opt-numer/cisd-opt-numer.test.pl
+%%EXAMPLESDIR%%/cisd-opt-numer/file11.ref
+%%EXAMPLESDIR%%/cisd-opt-numer/input.dat
+%%EXAMPLESDIR%%/cisd-opt-numer/output.ref
+%%EXAMPLESDIR%%/cisd-opt-numer/Makefile
+%%EXAMPLESDIR%%/dboc-rcisd1/Makefile.in
+%%EXAMPLESDIR%%/dboc-rcisd1/dboc-rcisd1.test.pl
+%%EXAMPLESDIR%%/dboc-rcisd1/input.dat
+%%EXAMPLESDIR%%/dboc-rcisd1/output.ref
+%%EXAMPLESDIR%%/dboc-rcisd1/Makefile
+%%EXAMPLESDIR%%/dboc-rhf1/Makefile.in
+%%EXAMPLESDIR%%/dboc-rhf1/dboc-rhf1.test.pl
+%%EXAMPLESDIR%%/dboc-rhf1/input.dat
+%%EXAMPLESDIR%%/dboc-rhf1/output.ref
+%%EXAMPLESDIR%%/dboc-rhf1/Makefile
+%%EXAMPLESDIR%%/dboc-rocisd1/Makefile.in
+%%EXAMPLESDIR%%/dboc-rocisd1/dboc-rocisd1.test.pl
+%%EXAMPLESDIR%%/dboc-rocisd1/input.dat
+%%EXAMPLESDIR%%/dboc-rocisd1/output.ref
+%%EXAMPLESDIR%%/dboc-rocisd1/Makefile
+%%EXAMPLESDIR%%/dboc-rohf1/Makefile.in
+%%EXAMPLESDIR%%/dboc-rohf1/dboc-rohf1.test.pl
+%%EXAMPLESDIR%%/dboc-rohf1/input.dat
+%%EXAMPLESDIR%%/dboc-rohf1/output.ref
+%%EXAMPLESDIR%%/dboc-rohf1/Makefile
+%%EXAMPLESDIR%%/dboc-uhf1/Makefile.in
+%%EXAMPLESDIR%%/dboc-uhf1/dboc-uhf1.test.pl
+%%EXAMPLESDIR%%/dboc-uhf1/input.dat
+%%EXAMPLESDIR%%/dboc-uhf1/output.ref
+%%EXAMPLESDIR%%/dboc-uhf1/Makefile
+%%EXAMPLESDIR%%/extrema-deloc/Makefile.in
+%%EXAMPLESDIR%%/extrema-deloc/extrema-deloc.pl.in
+%%EXAMPLESDIR%%/extrema-deloc/extrema-deloc.test.pl
+%%EXAMPLESDIR%%/extrema-deloc/file11.ref
+%%EXAMPLESDIR%%/extrema-deloc/input.dat
+%%EXAMPLESDIR%%/extrema-deloc/output.ref
+%%EXAMPLESDIR%%/extrema-deloc/Makefile
+%%EXAMPLESDIR%%/extrema-deloc/extrema-deloc.pl
+%%EXAMPLESDIR%%/extrema-zmat/Makefile.in
+%%EXAMPLESDIR%%/extrema-zmat/extrema-zmat.pl.in
+%%EXAMPLESDIR%%/extrema-zmat/extrema-zmat.test.pl
+%%EXAMPLESDIR%%/extrema-zmat/file11.ref
+%%EXAMPLESDIR%%/extrema-zmat/input.dat
+%%EXAMPLESDIR%%/extrema-zmat/output.ref
+%%EXAMPLESDIR%%/extrema-zmat/Makefile
+%%EXAMPLESDIR%%/extrema-zmat/extrema-zmat.pl
+%%EXAMPLESDIR%%/mp2-direct-sp/Makefile.in
+%%EXAMPLESDIR%%/mp2-direct-sp/input.dat
+%%EXAMPLESDIR%%/mp2-direct-sp/mp2-direct-sp.test.pl
+%%EXAMPLESDIR%%/mp2-direct-sp/output.ref
+%%EXAMPLESDIR%%/mp2-direct-sp/Makefile
+%%EXAMPLESDIR%%/mp2-oeprop/Makefile.in
+%%EXAMPLESDIR%%/mp2-oeprop/input.dat
+%%EXAMPLESDIR%%/mp2-oeprop/mp2-oeprop.test.pl
+%%EXAMPLESDIR%%/mp2-oeprop/output.ref
+%%EXAMPLESDIR%%/mp2-oeprop/Makefile
+%%EXAMPLESDIR%%/mp2-opt-numer/Makefile.in
+%%EXAMPLESDIR%%/mp2-opt-numer/file11.ref
+%%EXAMPLESDIR%%/mp2-opt-numer/input.dat
+%%EXAMPLESDIR%%/mp2-opt-numer/mp2-opt-numer.test.pl
+%%EXAMPLESDIR%%/mp2-opt-numer/output.ref
+%%EXAMPLESDIR%%/mp2-opt-numer/Makefile
+%%EXAMPLESDIR%%/mp2-sp/Makefile.in
+%%EXAMPLESDIR%%/mp2-sp/input.dat
+%%EXAMPLESDIR%%/mp2-sp/mp2-sp.test.pl
+%%EXAMPLESDIR%%/mp2-sp/output.ref
+%%EXAMPLESDIR%%/mp2-sp/Makefile
+%%EXAMPLESDIR%%/mp2r12-sp1/Makefile.in
+%%EXAMPLESDIR%%/mp2r12-sp1/input.dat
+%%EXAMPLESDIR%%/mp2r12-sp1/mp2r12-sp1.test.pl
+%%EXAMPLESDIR%%/mp2r12-sp1/output.ref
+%%EXAMPLESDIR%%/mp2r12-sp1/Makefile
+%%EXAMPLESDIR%%/psi_start/Makefile.in
+%%EXAMPLESDIR%%/psi_start/input.dat
+%%EXAMPLESDIR%%/psi_start/psi_start.pl.in
+%%EXAMPLESDIR%%/psi_start/psi_start.test.pl
+%%EXAMPLESDIR%%/psi_start/Makefile
+%%EXAMPLESDIR%%/psi_start/psi_start.pl
+%%EXAMPLESDIR%%/rhf-oeprop/Makefile.in
+%%EXAMPLESDIR%%/rhf-oeprop/input.dat
+%%EXAMPLESDIR%%/rhf-oeprop/mo.cube.ref
+%%EXAMPLESDIR%%/rhf-oeprop/output.ref
+%%EXAMPLESDIR%%/rhf-oeprop/Makefile
+%%EXAMPLESDIR%%/rhf-stab/Makefile.in
+%%EXAMPLESDIR%%/rhf-stab/input.dat
+%%EXAMPLESDIR%%/rhf-stab/output.ref
+%%EXAMPLESDIR%%/rhf-stab/rhf-stab.pl.in
+%%EXAMPLESDIR%%/rhf-stab/rhf-stab.test.pl
+%%EXAMPLESDIR%%/rhf-stab/Makefile
+%%EXAMPLESDIR%%/rhf-stab/rhf-stab.pl
+%%EXAMPLESDIR%%/rohf-stab/Makefile.in
+%%EXAMPLESDIR%%/rohf-stab/input.dat
+%%EXAMPLESDIR%%/rohf-stab/output.ref
+%%EXAMPLESDIR%%/rohf-stab/rohf-stab.pl.in
+%%EXAMPLESDIR%%/rohf-stab/rohf-stab.test.pl
+%%EXAMPLESDIR%%/rohf-stab/Makefile
+%%EXAMPLESDIR%%/rohf-stab/rohf-stab.pl
+%%EXAMPLESDIR%%/scf-freq/Makefile.in
+%%EXAMPLESDIR%%/scf-freq/file15.ref
+%%EXAMPLESDIR%%/scf-freq/file17.ref
+%%EXAMPLESDIR%%/scf-freq/input.dat
+%%EXAMPLESDIR%%/scf-freq/output.ref
+%%EXAMPLESDIR%%/scf-freq/scf-freq.test.pl
+%%EXAMPLESDIR%%/scf-freq/Makefile
+%%EXAMPLESDIR%%/scf-freq-numer/Makefile.in
+%%EXAMPLESDIR%%/scf-freq-numer/file11.ref
+%%EXAMPLESDIR%%/scf-freq-numer/input.dat
+%%EXAMPLESDIR%%/scf-freq-numer/output.ref
+%%EXAMPLESDIR%%/scf-freq-numer/scf-freq-numer.test.pl
+%%EXAMPLESDIR%%/scf-freq-numer/Makefile
+%%EXAMPLESDIR%%/scf-freq-symm-numer/Makefile.in
+%%EXAMPLESDIR%%/scf-freq-symm-numer/file11.ref
+%%EXAMPLESDIR%%/scf-freq-symm-numer/input.dat
+%%EXAMPLESDIR%%/scf-freq-symm-numer/output.ref
+%%EXAMPLESDIR%%/scf-freq-symm-numer/scf-freq-symm-numer.test.pl
+%%EXAMPLESDIR%%/scf-freq-symm-numer/Makefile
+%%EXAMPLESDIR%%/scf-opt/Makefile.in
+%%EXAMPLESDIR%%/scf-opt/file11.ref
+%%EXAMPLESDIR%%/scf-opt/input.dat
+%%EXAMPLESDIR%%/scf-opt/output.ref
+%%EXAMPLESDIR%%/scf-opt/scf-opt.test.pl
+%%EXAMPLESDIR%%/scf-opt/Makefile
+%%EXAMPLESDIR%%/scf-opt-numer/Makefile.in
+%%EXAMPLESDIR%%/scf-opt-numer/file11.ref
+%%EXAMPLESDIR%%/scf-opt-numer/input.dat
+%%EXAMPLESDIR%%/scf-opt-numer/output.ref
+%%EXAMPLESDIR%%/scf-opt-numer/scf-opt-numer.test.pl
+%%EXAMPLESDIR%%/scf-opt-numer/Makefile
+%%EXAMPLESDIR%%/scf-opt10/Makefile.in
+%%EXAMPLESDIR%%/scf-opt10/file11.ref
+%%EXAMPLESDIR%%/scf-opt10/input.dat
+%%EXAMPLESDIR%%/scf-opt10/output.ref
+%%EXAMPLESDIR%%/scf-opt10/scf-opt10.test.pl
+%%EXAMPLESDIR%%/scf-opt10/Makefile
+%%EXAMPLESDIR%%/scf-opt11/Makefile.in
+%%EXAMPLESDIR%%/scf-opt11/file11.ref
+%%EXAMPLESDIR%%/scf-opt11/input.dat
+%%EXAMPLESDIR%%/scf-opt11/output.ref
+%%EXAMPLESDIR%%/scf-opt11/scf-opt11.test.pl
+%%EXAMPLESDIR%%/scf-opt11/Makefile
+%%EXAMPLESDIR%%/scf-opt2/Makefile.in
+%%EXAMPLESDIR%%/scf-opt2/file11.ref
+%%EXAMPLESDIR%%/scf-opt2/input.dat
+%%EXAMPLESDIR%%/scf-opt2/output.ref
+%%EXAMPLESDIR%%/scf-opt2/scf-opt2.test.pl
+%%EXAMPLESDIR%%/scf-opt2/Makefile
+%%EXAMPLESDIR%%/scf-opt3/Makefile.in
+%%EXAMPLESDIR%%/scf-opt3/file11.ref
+%%EXAMPLESDIR%%/scf-opt3/input.dat
+%%EXAMPLESDIR%%/scf-opt3/output.ref
+%%EXAMPLESDIR%%/scf-opt3/scf-opt3.test.pl
+%%EXAMPLESDIR%%/scf-opt3/Makefile
+%%EXAMPLESDIR%%/scf-opt4/Makefile.in
+%%EXAMPLESDIR%%/scf-opt4/file11.ref
+%%EXAMPLESDIR%%/scf-opt4/input.dat
+%%EXAMPLESDIR%%/scf-opt4/output.ref
+%%EXAMPLESDIR%%/scf-opt4/scf-opt4.test.pl
+%%EXAMPLESDIR%%/scf-opt4/Makefile
+%%EXAMPLESDIR%%/scf-opt5/Makefile.in
+%%EXAMPLESDIR%%/scf-opt5/file11.ref
+%%EXAMPLESDIR%%/scf-opt5/input.dat
+%%EXAMPLESDIR%%/scf-opt5/output.ref
+%%EXAMPLESDIR%%/scf-opt5/scf-opt5.test.pl
+%%EXAMPLESDIR%%/scf-opt5/Makefile
+%%EXAMPLESDIR%%/scf-opt6/Makefile.in
+%%EXAMPLESDIR%%/scf-opt6/file11.ref
+%%EXAMPLESDIR%%/scf-opt6/input.dat
+%%EXAMPLESDIR%%/scf-opt6/output.ref
+%%EXAMPLESDIR%%/scf-opt6/scf-opt6.test.pl
+%%EXAMPLESDIR%%/scf-opt6/Makefile
+%%EXAMPLESDIR%%/scf-opt7/Makefile.in
+%%EXAMPLESDIR%%/scf-opt7/file11.ref
+%%EXAMPLESDIR%%/scf-opt7/input.dat
+%%EXAMPLESDIR%%/scf-opt7/output.ref
+%%EXAMPLESDIR%%/scf-opt7/scf-opt7.test.pl
+%%EXAMPLESDIR%%/scf-opt7/Makefile
+%%EXAMPLESDIR%%/scf-opt8/Makefile.in
+%%EXAMPLESDIR%%/scf-opt8/file11.ref
+%%EXAMPLESDIR%%/scf-opt8/input.dat
+%%EXAMPLESDIR%%/scf-opt8/output.ref
+%%EXAMPLESDIR%%/scf-opt8/scf-opt8.test.pl
+%%EXAMPLESDIR%%/scf-opt8/Makefile
+%%EXAMPLESDIR%%/scf-opt9/Makefile.in
+%%EXAMPLESDIR%%/scf-opt9/file11.ref
+%%EXAMPLESDIR%%/scf-opt9/input.dat
+%%EXAMPLESDIR%%/scf-opt9/output.ref
+%%EXAMPLESDIR%%/scf-opt9/scf-opt9.test.pl
+%%EXAMPLESDIR%%/scf-opt9/Makefile
+%%EXAMPLESDIR%%/scf-polar/Makefile.in
+%%EXAMPLESDIR%%/scf-polar/input.dat
+%%EXAMPLESDIR%%/scf-polar/output.ref
+%%EXAMPLESDIR%%/scf-polar/scf-polar.test.pl
+%%EXAMPLESDIR%%/scf-polar/Makefile
+%%EXAMPLESDIR%%/uhf-stab/Makefile.in
+%%EXAMPLESDIR%%/uhf-stab/input.dat
+%%EXAMPLESDIR%%/uhf-stab/output.ref
+%%EXAMPLESDIR%%/uhf-stab/uhf-stab.pl.in
+%%EXAMPLESDIR%%/uhf-stab/uhf-stab.test.pl
+%%EXAMPLESDIR%%/uhf-stab/Makefile
+%%EXAMPLESDIR%%/uhf-stab/uhf-stab.pl
+%%EXAMPLESDIR%%/uhf-stab-follow/Makefile.in
+%%EXAMPLESDIR%%/uhf-stab-follow/input.dat
+%%EXAMPLESDIR%%/uhf-stab-follow/output.ref
+%%EXAMPLESDIR%%/uhf-stab-follow/uhf-stab-follow.pl.in
+%%EXAMPLESDIR%%/uhf-stab-follow/uhf-stab-follow.test.pl
+%%EXAMPLESDIR%%/Makefile
+%%EXAMPLESDIR%%/MakeVars
+%%EXAMPLESDIR%%/MakeRules
+%%EXAMPLESDIR%%/runtest.pl
+@dirrm %%EXAMPLESDIR%%/uhf-stab-follow
+@dirrm %%EXAMPLESDIR%%/uhf-stab
+@dirrm %%EXAMPLESDIR%%/scf-polar
+@dirrm %%EXAMPLESDIR%%/scf-opt9
+@dirrm %%EXAMPLESDIR%%/scf-opt8
+@dirrm %%EXAMPLESDIR%%/scf-opt7
+@dirrm %%EXAMPLESDIR%%/scf-opt6
+@dirrm %%EXAMPLESDIR%%/scf-opt5
+@dirrm %%EXAMPLESDIR%%/scf-opt4
+@dirrm %%EXAMPLESDIR%%/scf-opt3
+@dirrm %%EXAMPLESDIR%%/scf-opt2
+@dirrm %%EXAMPLESDIR%%/scf-opt11
+@dirrm %%EXAMPLESDIR%%/scf-opt10
+@dirrm %%EXAMPLESDIR%%/scf-opt-numer
+@dirrm %%EXAMPLESDIR%%/scf-opt
+@dirrm %%EXAMPLESDIR%%/scf-freq-symm-numer
+@dirrm %%EXAMPLESDIR%%/scf-freq-numer
+@dirrm %%EXAMPLESDIR%%/scf-freq
+@dirrm %%EXAMPLESDIR%%/rohf-stab
+@dirrm %%EXAMPLESDIR%%/rhf-stab
+@dirrm %%EXAMPLESDIR%%/rhf-oeprop
+@dirrm %%EXAMPLESDIR%%/psi_start
+@dirrm %%EXAMPLESDIR%%/mp2r12-sp1
+@dirrm %%EXAMPLESDIR%%/mp2-sp
+@dirrm %%EXAMPLESDIR%%/mp2-opt-numer
+@dirrm %%EXAMPLESDIR%%/mp2-oeprop
+@dirrm %%EXAMPLESDIR%%/mp2-direct-sp
+@dirrm %%EXAMPLESDIR%%/extrema-zmat
+@dirrm %%EXAMPLESDIR%%/extrema-deloc
+@dirrm %%EXAMPLESDIR%%/dboc-uhf1
+@dirrm %%EXAMPLESDIR%%/dboc-rohf1
+@dirrm %%EXAMPLESDIR%%/dboc-rocisd1
+@dirrm %%EXAMPLESDIR%%/dboc-rhf1
+@dirrm %%EXAMPLESDIR%%/dboc-rcisd1
+@dirrm %%EXAMPLESDIR%%/cisd-sp
+@dirrm %%EXAMPLESDIR%%/cisd-opt-numer
+@dirrm %%EXAMPLESDIR%%/cis-sp
+@dirrm %%EXAMPLESDIR%%/cc9
+@dirrm %%EXAMPLESDIR%%/cc8
+@dirrm %%EXAMPLESDIR%%/cc7
+@dirrm %%EXAMPLESDIR%%/cc6
+@dirrm %%EXAMPLESDIR%%/cc5
+@dirrm %%EXAMPLESDIR%%/cc4
+@dirrm %%EXAMPLESDIR%%/cc3
+@dirrm %%EXAMPLESDIR%%/cc2
+@dirrm %%EXAMPLESDIR%%/cc19
+@dirrm %%EXAMPLESDIR%%/cc18
+@dirrm %%EXAMPLESDIR%%/cc17
+@dirrm %%EXAMPLESDIR%%/cc16
+@dirrm %%EXAMPLESDIR%%/cc15
+@dirrm %%EXAMPLESDIR%%/cc14
+@dirrm %%EXAMPLESDIR%%/cc13
+@dirrm %%EXAMPLESDIR%%/cc12
+@dirrm %%EXAMPLESDIR%%/cc11
+@dirrm %%EXAMPLESDIR%%/cc10
+@dirrm %%EXAMPLESDIR%%/cc1
+@dirrm %%EXAMPLESDIR%%/casscf-sp
+@dirrm %%EXAMPLESDIR%%/Basis_Tests
+@dirrm %%EXAMPLESDIR%%

@@ -32,6 +32,7 @@
     SUBDIR += oases
     SUBDIR += openbabel
     SUBDIR += p5-Chemistry-Elements
+    SUBDIR += psi3
     SUBDIR += ruby-dcl
     SUBDIR += ruby-dcl-gtk
     SUBDIR += ruby-gphys
