@@ -4,6 +4,7 @@
 
     SUBDIR += ispell
     SUBDIR += kde2-i18n
+    SUBDIR += koffice-i18n
     SUBDIR += php_doc
     SUBDIR += staroffice52
 
