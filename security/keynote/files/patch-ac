@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Mon Nov 29 11:36:21 1999
++++ Makefile.in	Fri Mar 24 19:22:32 2000
+@@ -41,7 +41,7 @@
+ YACCFLAGS = -d -p kn -b k
+ LEXFLAGS2 = -Pkv -s -i
+ LEXFLAGS = -Cr -Pkn -s -i
+-CFLAGS = -O2 -Wall # -g
++CFLAGS ?= -O2 -Wall # -g
+ RMFLAGS2 = -rf
+ RMFLAGS = -f
+ NROFFFLAGS = -mandoc
