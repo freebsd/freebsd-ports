@@ -16,7 +16,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S,%SUBDIR%,freetype,} \
 		ftp://ftp.freetype.org/pub/%SUBDIR%/
 MASTER_SITE_SUBDIR=	freetype2
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	kanou@khdd.net
 COMMENT=	Demo programs for FreeType2
 
 BUILD_DEPENDS+=	libtool:${PORTSDIR}/devel/libtool
