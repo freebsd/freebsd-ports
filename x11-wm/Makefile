@@ -40,6 +40,7 @@
     SUBDIR += mlvwm
     SUBDIR += olvwm
     SUBDIR += oroborus
+    SUBDIR += phluid
     SUBDIR += piewm
     SUBDIR += pwm
     SUBDIR += qlwm
