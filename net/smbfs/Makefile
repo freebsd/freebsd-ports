@@ -6,11 +6,19 @@
 #
 
 PORTNAME=	smbfs
-PORTVERSION=	1.3.4
+PORTVERSION=	1.3.5
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.butya.kz/pub/smbfs/
 
-MAINTAINER=	tokky@fdns.org
+MAINTAINER=	bp@freebsd.org
+
+NO_PACKAGE=     "Depends on kernel"
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 400000
+BROKEN=		"OS versions prior to 400000 is not supported"
+.endif
 
 .if defined(WITH_ICONV)
 pre-fetch:
@@ -40,4 +48,4 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/examples/dot.nsmbrc ${LOCALBASE}/etc/nsmb.conf.sample
 	@${INSTALL_SCRIPT} ${WRKSRC}/examples/smbfs.sh.sample ${LOCALBASE}/etc/rc.d/smbfs.sh.sample
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
