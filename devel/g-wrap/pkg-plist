@@ -1,6 +1,8 @@
 bin/g-wrap-config
 include/g-wrap-runtime-guile.h
 info/g-wrap.info
+info/g-wrap.info-1
+info/g-wrap.info-2
 lib/libg-wrap-runtime-guile.a
 lib/libg-wrap-runtime-guile.so
 lib/libg-wrap-runtime-guile.so.2
