@@ -168,6 +168,7 @@
     SUBDIR += tclplugin
     SUBDIR += tcltutor
     SUBDIR += tinycobol
+    SUBDIR += treecc
     SUBDIR += wamcc
     SUBDIR += yabasic
     SUBDIR += yap

@@ -1,0 +1,11 @@
+bin/treecc
+@unexec install-info --delete %D/info/treecc.info %D/info/dir
+info/treecc.info
+info/treecc.info-1
+info/treecc.info-2
+@exec install-info %D/info/treecc.info %D/info/dir
+share/treecc/cpp_skel.cc
+share/treecc/cpp_skel.h
+share/treecc/c_skel.c
+share/treecc/c_skel.h
+@dirrm share/treecc
