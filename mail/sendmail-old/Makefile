@@ -62,12 +62,6 @@ SITE+=	${FILESDIR}/site.config.m4.ipv6
 .if defined(SENDMAIL_WITH_SFIO)
 SITE+=	${FILESDIR}/site.config.m4.sfio
 .endif
-.if defined(SENDMAIL_WITH_TLS) || defined(WITH_TLS)
-.if ! exists(${DESTDIR}/etc/mail/mailer.conf)
-SITE+=	${FILESDIR}/site.config.m4.ssl
-.endif
-SITE+=	${FILESDIR}/site.config.m4.tls
-.endif
 .if defined(SENDMAIL_WITH_SASL)
 SITE+=	${FILESDIR}/site.config.m4.sasl
 .endif
@@ -88,11 +82,12 @@ SENDMAIL=	${PREFIX}/sbin/sendmail
 
 do-configure:
 	@${MV} ${WRKSRC}/devtools/OS/FreeBSD ${WRKSRC}/devtools/OS/FreeBSD.sed
-	${SED} -e "s,\`-pthread\',\`${PTHREAD_LIBS}\'," \
-		-e "s,\`-O\',\`${CFLAGS}\'," \
+	${SED} -e "s;\`-pthread\';\`${PTHREAD_LIBS}\';" \
+		-e "s;\`-O\';\`${CFLAGS}\';" \
 		${WRKSRC}/devtools/OS/FreeBSD.sed \
 		> ${WRKSRC}/devtools/OS/FreeBSD
-	${SED} -e "s=%%PREFIX%%=${PREFIX}=" -e "s=%%LOCALBASE%%=${LOCALBASE}=" \
+	${SED} -e "s=%%PREFIX%%=${PREFIX}=g" \
+		-e "s=%%LOCALBASE%%=${LOCALBASE}=g" \
 		${SITE} > ${WCONF}/site.config.m4
 
 .if ! defined(SENDMAIL_WITHOUT_MILTER)
@@ -177,6 +172,10 @@ mailer.conf:
 
 .if defined(SENDMAIL_WITH_TLS) || defined(WITH_TLS)
 .include "${PORTSDIR}/security/openssl/bsd.openssl.mk"
+.if ! defined(WITH_OPENSSL_BASE)
+SITE+=	${FILESDIR}/site.config.m4.ssl
+.endif
+SITE+=	${FILESDIR}/site.config.m4.tls
 .endif
 
 .if exists(${FILESDIR}/site.config.m4.local)
