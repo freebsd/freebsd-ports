@@ -33,7 +33,6 @@ LIB_DEPENDS+=	iconv.3:${PORTSDIR}/converters/libiconv
 
 .if ${RUBY_VER} < 1.7
 EXT_PORTS+=	${RUBY_SHIM18_PORT}
-EXTRA_PATCHES=	${PATCHDIR}/ruby16-patch-*
 .else
 EXT_PORTS+=	converters/ruby-iconv
 .endif
