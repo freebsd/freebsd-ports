@@ -8952,6 +8952,8 @@ py-bittornado	ports/net/py-bittornado
 py-bittornado-core	ports/net/py-bittornado-core
 py-bittorrent	ports/net/py-bittorrent
 py-bittorrent-core	ports/net/py-bittorrent-core
+py-bittorrent-core-devel	ports/net/py-bittorrent-core-devel
+py-bittorrent-devel	ports/net/py-bittorrent-devel
 py-bsddb	ports/databases/py-bsddb
 py-bsddb3	ports/databases/py-bsddb3
 py-bulksms	ports/comms/py-bulksms
