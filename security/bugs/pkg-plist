@@ -47,6 +47,7 @@ bugs-%%PORTVERSION%%/doc/fulldoc/images/3_9.gif
 bugs-%%PORTVERSION%%/doc/history/old_french.txt
 bugs-%%PORTVERSION%%/include/bstandard.h
 bugs-%%PORTVERSION%%/include/extra.h
+bugs-%%PORTVERSION%%/include/fpos_t.h
 bugs-%%PORTVERSION%%/include/isaac.h
 bugs-%%PORTVERSION%%/include/main.h
 bugs-%%PORTVERSION%%/include/misc.h
