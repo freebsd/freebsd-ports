@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mkvtoolnix
-PORTVERSION=	1.0.1
+PORTVERSION=	1.4.0
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://www.bunkus.org/videotools/mkvtoolnix/sources/ \
 		http://www.bunkus.org/videotools/mkvtoolnix/sources/old/
@@ -66,5 +66,7 @@ post-patch:
 		's!^(ACLOCAL|AUTOCONF|AUTOMAKE|AUTOHEADER).+$$!\1=${TRUE}!'
 	@${REINPLACE_CMD} -e 's|wx-config|${WXGTK_CONFIG}|' \
 		${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|malloc.h|stdlib.h|' \
+		${WRKSRC}/src/common/os.cpp
 
 .include <bsd.port.post.mk>
