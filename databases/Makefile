@@ -198,6 +198,7 @@
     SUBDIR += py-psycopg
     SUBDIR += py-pyPgSQL
     SUBDIR += py-sqlrelay
+    SUBDIR += py-sybase
     SUBDIR += pydbdesigner
     SUBDIR += qdbm
     SUBDIR += qt-mysql-plugin
