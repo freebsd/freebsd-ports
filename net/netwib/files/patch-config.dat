@@ -1,14 +1,20 @@
---- config.dat.orig	Wed Apr 10 03:06:53 2002
-+++ config.dat	Wed Apr 10 03:07:04 2002
-@@ -41,9 +41,9 @@
- ###  - MacOS_10_ppc : MacOS X under PowerPC
- ###  - Etc.
- #LCRZODEF_SYS=FreeBSD_3_i386
--#LCRZODEF_SYS=FreeBSD_4_i386
-+LCRZODEF_SYS=FreeBSD_4_i386
- #LCRZODEF_SYS=FreeBSD_4_alpha
--LCRZODEF_SYS=Linux_X_i386
-+#LCRZODEF_SYS=Linux_X_i386
- #LCRZODEF_SYS=Linux_X_ia64
- #LCRZODEF_SYS=Linux_X_alpha
- #LCRZODEF_SYS=MacOS_10_ppc
+
+$FreeBSD$
+
+--- config.dat.orig	Fri Jul 23 14:25:20 2004
++++ config.dat	Fri Jul 23 14:26:07 2004
+@@ -15,12 +15,12 @@
+ 
+ ##########################################################################
+ ### directories
+-NETWIBDEF_INSTPREFIX=/usr/local
++NETWIBDEF_INSTPREFIX=%%PREFIX%%
+ NETWIBDEF_INSTINCLUDE=${NETWIBDEF_INSTPREFIX}/include
+ NETWIBDEF_INSTLIB=${NETWIBDEF_INSTPREFIX}/lib
+ NETWIBDEF_INSTBIN=${NETWIBDEF_INSTPREFIX}/bin
+ NETWIBDEF_INSTMAN=${NETWIBDEF_INSTPREFIX}/man
+ NETWIBDEF_INSTMAN1=${NETWIBDEF_INSTMAN}/man1
+ NETWIBDEF_INSTMAN3=${NETWIBDEF_INSTMAN}/man3
+-NETWIBDEF_INSTDOC=${NETWIBDEF_INSTPREFIX}/doc
++NETWIBDEF_INSTDOC=${NETWIBDEF_INSTPREFIX}/share/doc/netwib
+ 

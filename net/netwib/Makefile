@@ -1,32 +1,32 @@
-# New ports collection makefile for:	lcrzo
-# Date created:		Wed Apr 10 02:42:20 CEST 2002
-# Whom:			king@v2project.com
+# New ports collection makefile for:	netwox
+# Date created:				23.07.2004
+# Whom:					janos.mohacsi@bsd.hu
 #
 # $FreeBSD$
 #
 
-PORTNAME=	lcrzo
-PORTVERSION=	4.17.0
-CATEGORIES=	security
-MASTER_SITES=	http://www.laurentconstantin.com/common/netw/netwib/download/v4/ \
-		http://fresh.t-systems-sfr.com/unix/src/privat2/
-EXTRACT_SUFX=	-src.tgz
+PORTNAME=	netwib
+PORTVERSION=	5.20.0
+CATEGORIES=	net devel ipv6
+MASTER_SITES=	http://www.laurentconstantin.com/common/netw/netwib/download/v5/ \
+		http://membres.lycos.fr/lauconstantin/common/netw/netwib/download/v5/ \
+		http://laurentconstantin.free.fr/common/netw/netwib/download/v5/
+DISTFILES=	${PORTNAME}-${PORTVERSION}-src.tgz ${PORTNAME}-${PORTVERSION}-doc_html.tgz
 
-MAINTAINER=	king@v2project.com
-COMMENT=	Lcrzo is a network library (used by Lcrzoex, network testing toolbox)
+MAINTAINER=	janos.mohacsi@bsd.hu
+COMMENT=	Netwib network programming library
 
-WRKSRC=		${WRKDIR}/${PKGNAME}-src/src
-ONLY_FOR_ARCHS=	i386 alpha
+BUILD_DEPENDS=	${LOCALBASE}/lib/libnet.a:${PORTSDIR}/net/libnet-devel
 
-MAN3=	lcrzo.3 lcrzo_address.3 lcrzo_conf.3 lcrzo_data.3 lcrzo_device.3 \
-	lcrzo_error.3 lcrzo_file.3 lcrzo_global.3 lcrzo_header.3 \
-	lcrzo_icmp.3 lcrzo_ipc.3 lcrzo_ipopt.3 lcrzo_list.3 lcrzo_misc.3 \
-	lcrzo_obso.3 lcrzo_packet.3 lcrzo_print.3 lcrzo_process.3 \
-	lcrzo_record.3 lcrzo_sniff.3 lcrzo_sock.3 lcrzo_spoof.3 \
-	lcrzo_string.3 lcrzo_tcpopt.3 lcrzo_time.3 lcrzo_types.3 lcrzo_wait.3 \
-	lcrzo_fd2.3 lcrzo_winhandle.3 lcrzo_kbd.3
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-src/src
+USE_REINPLACE=	yes
+MAN3=		netwib.3 netwib_dat.3 netwib_err.3 netwib_net.3 \
+		netwib_pkt.3 netwib_shw.3 netwib_sys.3
 
-post-patch:
-	cd ${WRKSRC} && ${SH} ${WRKSRC}/genemake
+do-configure:
+		@${REINPLACE_CMD} \
+		-e 's|%%PREFIX%%|${PREFIX}|' \
+		${WRKSRC}/config.dat
+		(cd ${WRKSRC} ; ${SH} ${WRKSRC}/genemake )
 
 .include <bsd.port.mk>

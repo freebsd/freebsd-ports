@@ -1,9 +1,16 @@
-Lcrzo is a network library, for network administrators 
-and network hackers. Its objective is to easily create network programs.
-This library provides network functionnalities for Ethernet, IP, UDP, TCP, 
-ICMP, ARP and RARP protocols. It supports spoofing, sniffing, client and 
-server creation. Furthermore, lcrzo contains high level functions dealing 
-with data storage and handling. Using all these functions, you can quickly 
-create a network test program.
+Netwib is a network library providing :
+  - network features :
+    + address conversion
+    + udp/tcp clients/servers
+    + packet encoding/decoding/displaying
+    + spoofing
+    + sniffing
+    + etc.
+  - and general features :
+    + data conversion
+    + linked list, hash
+    + portable threads
+    + etc.
+Using all these functions, a network program can be quickly created.
 
-WWW: http://www.laurentconstantin.com/en/lcrzo/
+WWW: http://www.laurentconstantin.com/en/netw/netwib/
