@@ -125,6 +125,7 @@ share/locale/pt/LC_MESSAGES/killustrator.mo
 share/locale/pt_BR/LC_MESSAGES/killustrator.mo
 share/locale/sk/LC_MESSAGES/killustrator.mo
 share/mimelnk/application/x-killustrator.kdelnk
+@dirrm share/icons/locolor
 @dirrm share/doc/HTML/de/killustrator
 @dirrm share/doc/HTML/en/killustrator
 @dirrm share/apps/killustrator/pics

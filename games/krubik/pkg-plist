@@ -31,7 +31,6 @@ share/locale/it/LC_MESSAGES/krubik.mo
 share/locale/nl/LC_MESSAGES/krubik.mo
 share/locale/pt/LC_MESSAGES/krubik.mo
 share/locale/sk/LC_MESSAGES/krubik.mo
-@dirrm share/applnk/Games
 @dirrm share/apps/krubik
 @dirrm share/doc/HTML/en/krubik/devel
 @dirrm share/doc/HTML/en/krubik

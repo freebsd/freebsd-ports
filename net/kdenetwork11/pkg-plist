@@ -768,7 +768,6 @@ share/toolbar/mini-ktalk.xpm
 @exec ln -sf libpbutton.so.0 %D/lib/ksirc/libpbutton.so
 @exec ln -sf libpalistbox.so.0 %D/lib/ksirc/libpalistbox.so
 @exec ln -sf libksirclistbox.so.0 %D/lib/ksirc/libksirclistbox.so
-@dirrm share/sounds
 @dirrm share/doc/HTML/it/ktalkd
 @dirrm share/doc/HTML/fr/ktalkd
 @dirrm share/doc/HTML/en/pws

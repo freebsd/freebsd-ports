@@ -30,6 +30,10 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${PREFIX}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 USE_GMAKE=	yes
 
+# generate KDE style mtree
+MTREE_CMD=	${CAT} ${MTREE_FILE} ${FILESDIR}/kde.dist | /usr/sbin/mtree
+MTREE_ARGS=	-U -d -e -p
+
 .include <bsd.port.pre.mk>
 
 LIBMAJOR=	3

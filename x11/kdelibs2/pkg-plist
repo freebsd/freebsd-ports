@@ -304,7 +304,51 @@ share/toolbar/viewzoom.xpm
 @exec ln -sf libkspell.so.%%LIBVER%% %D/lib/libkspell.so
 @exec ln -sf libmediatool.so.%%LIBVER%% %D/lib/libmediatool.so
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
+@exec mkdir -p %D/share/applnk/Applications
+@exec mkdir -p %D/share/applnk/Development
+@exec mkdir -p %D/share/applnk/Games
+@exec mkdir -p %D/share/applnk/Graphics
+@exec mkdir -p %D/share/applnk/Internet
+@exec mkdir -p %D/share/applnk/Multimedia
+@exec mkdir -p %D/share/applnk/Settings
+@exec mkdir -p %D/share/applnk/System
+@exec mkdir -p %D/share/applnk/Utilities
+@exec mkdir -p %D/share/doc/HTML/cs
+@exec mkdir -p %D/share/doc/HTML/da
+@exec mkdir -p %D/share/doc/HTML/de
+@exec mkdir -p %D/share/doc/HTML/el
+@exec mkdir -p %D/share/doc/HTML/es
+@exec mkdir -p %D/share/doc/HTML/fi
+@exec mkdir -p %D/share/doc/HTML/fr
+@exec mkdir -p %D/share/doc/HTML/hu
+@exec mkdir -p %D/share/doc/HTML/it
+@exec mkdir -p %D/share/doc/HTML/ja
+@exec mkdir -p %D/share/doc/HTML/nl
+@exec mkdir -p %D/share/doc/HTML/pl
+@exec mkdir -p %D/share/doc/HTML/pt
+@exec mkdir -p %D/share/doc/HTML/ru
+@exec mkdir -p %D/share/doc/HTML/sv
+@exec mkdir -p %D/share/doc/HTML/zh_CN.GB2312
+@exec mkdir -p %D/share/icons/large
+@exec mkdir -p %D/share/icons/mini
+@exec mkdir -p %D/share/mimelnk/application
+@exec mkdir -p %D/share/mimelnk/audio
+@exec mkdir -p %D/share/mimelnk/image
+@exec mkdir -p %D/share/mimelnk/inode
+@exec mkdir -p %D/share/mimelnk/text
+@exec mkdir -p %D/share/mimelnk/video
+@exec mkdir -p %D/share/sounds
+@exec mkdir -p %D/share/wallpapers
+@dirrm share/wallpapers
 @dirrm share/toolbar
+@dirrm share/sounds
+@dirrm share/mimelnk/video
+@dirrm share/mimelnk/text
+@dirrm share/mimelnk/inode
+@dirrm share/mimelnk/image
+@dirrm share/mimelnk/audio
+@dirrm share/mimelnk/application
+@dirrm share/mimelnk
 @unexec rmdir %D/share/locale/zh_TW.Big5/LC_MESSAGES 2>/dev/null || true
 @unexec rmdir %D/share/locale/zh_TW.Big5 2>/dev/null || true
 @unexec rmdir %D/share/locale/zh_CN.GB2312/LC_MESSAGES 2>/dev/null || true
@@ -376,28 +420,49 @@ share/toolbar/viewzoom.xpm
 @unexec rmdir %D/share/locale/br/LC_MESSAGES 2>/dev/null || true
 @unexec rmdir %D/share/locale/br 2>/dev/null || true
 @unexec rmdir %D/share/locale 2>/dev/null || true
+@unexec rm -f %D/share/doc/HTML/default
+@dirrm share/icons/mini
+@dirrm share/icons/large
+@dirrm share/icons
+@dirrm share/doc/HTML/zh_CN.GB2312
+@dirrm share/doc/HTML/sv
+@dirrm share/doc/HTML/ru
+@dirrm share/doc/HTML/pt
+@dirrm share/doc/HTML/pl
+@dirrm share/doc/HTML/nl
+@dirrm share/doc/HTML/ja
+@dirrm share/doc/HTML/it
+@dirrm share/doc/HTML/hu
+@dirrm share/doc/HTML/fr
+@dirrm share/doc/HTML/fi
+@dirrm share/doc/HTML/es
 @dirrm share/doc/HTML/en/kspell
 @dirrm share/doc/HTML/en/kfiledialog
 @dirrm share/doc/HTML/en/kdelibs
-@unexec rmdir %D/share/doc/HTML/it 2>/dev/null || true
-@unexec rmdir %D/share/doc/HTML/fr 2>/dev/null || true
-@unexec rmdir %D/share/doc/HTML/fi 2>/dev/null || true
-@unexec rmdir %D/share/doc/HTML/es 2>/dev/null || true
-@unexec rmdir %D/share/doc/HTML/en 2>/dev/null || true
-@unexec rmdir %D/share/doc/HTML/el 2>/dev/null || true
-@unexec rmdir %D/share/doc/HTML/de 2>/dev/null || true
-@unexec rmdir %D/share/doc/HTML/da 2>/dev/null || true
-@unexec rmdir %D/share/doc/HTML/cs 2>/dev/null || true
-@unexec rm -f %D/share/doc/HTML/default
-@unexec rmdir %D/share/doc/HTML 2>/dev/null || true
-@unexec rmdir %D/share/config 2>/dev/null || true
+@dirrm share/doc/HTML/en
+@dirrm share/doc/HTML/el
+@dirrm share/doc/HTML/de
+@dirrm share/doc/HTML/da
+@dirrm share/doc/HTML/cs
+@dirrm share/doc/HTML
+@dirrm share/config
 @dirrm share/apps/khtmlw/pics
 @dirrm share/apps/khtmlw
 @dirrm share/apps/kde/pics
 @dirrm share/apps/kde
 @dirrm share/apps/kab/pics
 @dirrm share/apps/kab
-@unexec rmdir %D/share/apps 2>/dev/null || true
+@dirrm share/apps
+@dirrm share/applnk/Utilities
+@dirrm share/applnk/System
+@dirrm share/applnk/Settings
+@dirrm share/applnk/Multimedia
+@dirrm share/applnk/Internet
+@dirrm share/applnk/Graphics
+@dirrm share/applnk/Games
+@dirrm share/applnk/Development
+@dirrm share/applnk/Applications
+@dirrm share/applnk
 @unexec rm -f %D/lib/libjscript.so
 @unexec rm -f %D/lib/libkab.so
 @unexec rm -f %D/lib/libkdecore.so
