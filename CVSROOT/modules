@@ -7747,3 +7747,4 @@ conserver-com	ports/comms/conserver-com
 flasm		ports/graphics/flasm
 dtdparse	ports/textproc/dtdparse
 xmlcharent	ports/textproc/xmlcharent
+jrefentry	ports/textproc/jrefentry
