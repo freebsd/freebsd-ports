@@ -1341,6 +1341,7 @@ domtools	ports/net/domtools
 donkey		ports/security/donkey
 dontspace	ports/games/dontspace
 doom		ports/games/doom
+doomlegacy	ports/games/doomlegacy
 dopewars	ports/games/dopewars
 dore		ports/graphics/dore
 dosboot		src/sys/i386/boot/dosboot
