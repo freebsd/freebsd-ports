@@ -8,7 +8,7 @@
 -CFLAGS = -O2
 -CFLAGS =
 +#CFLAGS = -g
-+CFLAGS ?= -O2
++CFLAGS ?= -O
 +#CFLAGS =
  
 -CC = gcc -Wall -g
