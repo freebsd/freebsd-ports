@@ -1,0 +1,4 @@
+gplink is a gp32 linking tool with support for upload, download delete files
+create and remove directories, run files, etc in the smc card on the GP32.
+
+WWW: http://dexy.mine.nu/gp32/gplink/
