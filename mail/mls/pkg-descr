@@ -1,0 +1,13 @@
+mls will read mailbox file in MBOX format and display various
+statistical data about it. You can specify input and ouput files (can
+be stdin/stdout), language used for output (in this version
+Slovak/English/Italian/Francais/Deutsch/Spanish/Serbian), error and
+diagnostic msgs are always printed in english. You can also specify
+text which will be displayed instead of standart title in output (can
+be used for automatic mailing of produced output).
+
+It also supports cache file for faster re-generation of stats from the
+same input file. It is useful when you want to show statistics on web
+- you can use HTML output & PHP wrapper.
+
+WWW: http://marki.host.sk/MLS/
