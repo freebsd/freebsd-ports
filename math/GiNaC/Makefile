@@ -34,10 +34,6 @@ LDFLAGS=	-L${LOCALBASE}/lib
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "amd64"
-BROKEN=		"Configure fails on amd64"
-.endif
-
 post-extract:
 	@${RM} -f ${WRKSRC}/doc/tutorial/ginac.info*
 

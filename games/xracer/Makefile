@@ -15,10 +15,6 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} xracer-data.tar.gz
 MAINTAINER=	troll@digitalspark.net
 COMMENT=	Awesome WipeOut clone for OpenGL and X11!
 
-.if ${MACHINE_ARCH} != i386
-BROKEN=		"Does not build on ${MACHINE_ARCH}"
-.endif
-
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
 
 USE_XLIB=	yes
@@ -29,6 +25,13 @@ USE_AUTOCONF_VER=	213
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include ${PTHREAD_CFLAGS}" \
 		LIBS="-L${LOCALBASE}/lib -L${X11BASE}/lib ${PTHREAD_LIBS}"
 CONFIGURE_ARGS=	--disable-esd
+
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} != i386 && ${ARCH} != "amd64"
+BROKEN=		"Does not build on ${ARCH}"
+.endif
+
 
 post-patch:
 	@${TOUCH} ${WRKSRC}/stamp-h.in
@@ -49,4 +52,4 @@ post-install:
 .endif
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
