@@ -5,9 +5,10 @@
 # $FreeBSD$
 
 PORTNAME=	sagasu
-PORTVERSION=	2.0.3
+PORTVERSION=	2.0.5
 CATEGORIES=	textproc gnome
-MASTER_SITES=	http://www3.sympatico.ca/sarrazip/dev/
+MASTER_SITES=	http://www3.sympatico.ca/sarrazip/dev/ \
+		http://demian.dyndns.org/src/
 
 MAINTAINER=	rael@vectorstar.net
 COMMENT=	Sagasu is a GNOME tool to find strings in a set of files
@@ -21,6 +22,8 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 MAN1=		sagasu.1
+
+PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ;' ${WRKSRC}/configure
