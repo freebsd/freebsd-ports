@@ -1,32 +1,41 @@
---- configure.orig	Fri May 24 06:40:55 2002
-+++ configure	Fri May 24 14:38:40 2002
-@@ -1966,9 +1966,9 @@
- fi
- 
- if test "$enable_gmp" = "yes" ; then
--	echo $ac_n "checking for __gmpz_init in -lgmp""... $ac_c" 1>&6
--echo "configure:1971: checking for __gmpz_init in -lgmp" >&5
--ac_lib_var=`echo gmp'_'__gmpz_init | sed 'y%./+-%__p_%'`
-+	echo $ac_n "checking for mpz_init in -lgmp""... $ac_c" 1>&6
-+echo "configure:1971: checking for mpz_init in -lgmp" >&5
-+ac_lib_var=`echo gmp'_'mpz_init | sed 'y%./+-%__p_%'`
- if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
-   echo $ac_n "(cached) $ac_c" 1>&6
+--- configure.orig	Sat Jan 18 22:23:21 2003
++++ configure	Sat Mar 15 11:51:16 2003
+@@ -6932,9 +6932,9 @@
+   gmp)
+     echo "$as_me:$LINENO: result: gmp" >&5
+ echo "${ECHO_T}gmp" >&6
+-    echo "$as_me:$LINENO: checking for __gmpz_init in -lgmp" >&5
+-echo $ECHO_N "checking for __gmpz_init in -lgmp... $ECHO_C" >&6
+-if test "${ac_cv_lib_gmp___gmpz_init+set}" = set; then
++    echo "$as_me:$LINENO: checking for mpz_init in -lgmp" >&5
++echo $ECHO_N "checking for mpz_init in -lgmp... $ECHO_C" >&6
++if test "${ac_cv_lib_gmp_mpz_init+set}" = set; then
+   echo $ECHO_N "(cached) $ECHO_C" >&6
  else
-@@ -1977,13 +1977,14 @@
- cat > conftest.$ac_ext <<EOF
- #line 1979 "configure"
+   ac_check_lib_save_LIBS=$LIBS
+@@ -6942,6 +6942,7 @@
+ cat >conftest.$ac_ext <<_ACEOF
+ #line $LINENO "configure"
  #include "confdefs.h"
 +#include <gmp.h>
- /* Override any gcc2 internal prototype to avoid an error.  */
- /* We use char because int might match the return type of a gcc2
-     builtin and then its argument prototype would still apply.  */
--char __gmpz_init();
  
- int main() {
--__gmpz_init()
+ /* Override any gcc2 internal prototype to avoid an error.  */
+ #ifdef __cplusplus
+@@ -6949,7 +6950,6 @@
+ #endif
+ /* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+-char __gmpz_init ();
+ #ifdef F77_DUMMY_MAIN
+ #  ifdef __cplusplus
+      extern "C"
+@@ -6959,7 +6959,8 @@
+ int
+ main ()
+ {
+-__gmpz_init ();
 +mpz_t integ;
 +mpz_init(integ)
- ; return 0; }
- EOF
- if { (eval echo configure:1990: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext}; then
+   ;
+   return 0;
+ }

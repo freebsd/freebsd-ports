@@ -1,6 +1,6 @@
---- src/gmpnumbers.cpp.orig	Sat Jan  4 21:21:22 2003
-+++ src/gmpnumbers.cpp	Sat Jan  4 22:22:56 2003
-@@ -70,25 +70,19 @@
+--- src/gmpnumbers.cpp.orig	Tue Dec 10 01:30:35 2002
++++ src/gmpnumbers.cpp	Sat Mar 15 12:02:41 2003
+@@ -81,25 +81,19 @@
  
  void initGMPNumber(GMPNumber& x, GMPNumber& y)
  {
@@ -11,8 +11,7 @@
    x.exp = y.exp;
  }
  
--void initGMPNumber(GMPNumber& x, long y=0)
-+void initGMPNumber(GMPNumber& x, long y)
+ void initGMPNumber(GMPNumber& x, long y)
  {
 -  mpz_t man;
 -  mpz_init_set_ui(man,y);
@@ -30,7 +29,7 @@
    x.exp = 0;
  }
  
-@@ -137,11 +131,9 @@
+@@ -148,11 +142,9 @@
      exp++;
    }
    if (!*man) {*man='0';*(man+1)='\0';neg=0;exp=0;}
@@ -44,7 +43,7 @@
    x.exp=exp;
  }
  
-@@ -158,7 +150,7 @@
+@@ -169,7 +161,7 @@
    free(str);
  }
  
@@ -53,7 +52,7 @@
  {
    long rawsize = mpz_sizeinbase(x.man,10);
    size_t size;
-@@ -229,7 +221,7 @@
+@@ -240,7 +232,7 @@
  }
  
  static LispStringPtr GMPNumberToString(GMPNumber& x, LispHashTable& h, 
