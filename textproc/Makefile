@@ -122,6 +122,7 @@
     SUBDIR += p5-Text-Wrapper
     SUBDIR += p5-Tk-XMLViewer
     SUBDIR += p5-Tree-Nary
+    SUBDIR += p5-URI-Find
     SUBDIR += p5-XML-DOM
     SUBDIR += p5-XML-DT
     SUBDIR += p5-XML-Dumper
