@@ -36,9 +36,9 @@ ANGBANDLIB?=	lib/${PORTNAME}
 ANGBANDBIN?=	bin/${PORTNAME}
 
 pre-patch:
-	@${PERL} -pi.orig -e 's|aclocal|${ACLOCAL}|; \
-		s|autoheader|${AUTOHEADER}|; \
-		s|automake|${AUTOMAKE}|; s|autoconf|${AUTOCONF}|' \
+	@${PERL} -pi.orig -e 's|^aclocal|${ACLOCAL}|; \
+		s|^autoheader|${AUTOHEADER}|; \
+		s|^automake|${AUTOMAKE}|; s|^autoconf|${AUTOCONF}|' \
 		${WRKSRC}/bootstrap
 
 pre-configure:
