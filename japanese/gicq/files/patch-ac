@@ -1,0 +1,13 @@
+--- Makefile.in.orig	Mon Sep  6 23:36:43 1999
++++ Makefile.in	Mon Sep  6 23:37:18 1999
+@@ -116,8 +116,8 @@
+ 
+ SUBDIRS = macros intl po pixmaps src doc
+ 
+-sysdir   = $(datadir)/gnome/apps/Applications
+-sys_DATA = gicq.desktop
++@INSIDE_GNOME_COMMON_TRUE@sysdir   = $(datadir)/gnome/apps/Applications
++@INSIDE_GNOME_COMMON_TRUE@sys_DATA = gicq.desktop
+ 
+ EXTRA_DIST = gicq.desktop
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4

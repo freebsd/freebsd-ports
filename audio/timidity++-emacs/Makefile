@@ -38,16 +38,14 @@ PKGMESSAGE=	${PKGDIR}/MESSAGE
 PLIST_SUB=	TIMID_LIBDIR=${TIMID_LIBDIR}
 DIST_SUBDIR=	timidity
 
-GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
-
 TIMID_LIBDIR=	${PREFIX}/lib/timidity
 
 .if ${INTERFACE} == "emacs"
 ELISPDIR=	${PREFIX}/share/emacs/site-lisp
 .elif ${INTERFACE} == "gtk"
 LINK=		gtkmidi
-INTERFACE_DEPS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
-CONFIGURE_ENV=	GTK_CONFIG=${GTK_CONFIG} SHLD="gcc -shared"
+USE_GTK=	yes
+CONFIGURE_ENV=	SHLD="gcc -shared"
 .elif ${INTERFACE} == "motif"
 LINK=		xmmidi
 REQUIRES_MOTIF=	yes

@@ -14,21 +14,21 @@ MAINTAINER=	t.vanklaveren@student.utwente.nl
 
 LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt \
 		xmms.1:${PORTSDIR}/audio/xmms
-RUN_DEPENDS=	${X11BASE}/bin/xmms:${PORTSDIR}/audio/xmms
 
-GLIB_CONFIG?=	${LOCALBASE}/bin/glib12-config
-GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
 # Vorbis doesn't depend on X, but it's needed for the XMMS plugin :-(
 USE_X_PREFIX=	yes
+USE_GTK=	yes
 USE_AUTOCONF=	yes
-GNU_CONFIGURE=	yes
-WRKSRC=		${WRKDIR}/vorbis
+
+MAN1=	ogg123.1 vorbize.1 oggenc.1
 
 post-build:
 	cd ${WRKSRC}/vorbis-tools/libao && ${SETENV} ${MAKE_ENV} ${MAKE}
 	cd ${WRKSRC}/vorbis-tools && ${SETENV} ${MAKE_ENV} ${MAKE} ${ALL_TARGET}
-	cd ${WRKSRC}/xmms && ${SETENV} ${MAKE_ENV} ${MAKE} GLIB_CONFIG=${GLIB_CONFIG} GTK_CONFIG=${GTK_CONFIG} target
+	cd ${WRKSRC}/xmms && ${SETENV} ${MAKE_ENV} ${MAKE} target
+
 do-install:
 # Install all vorbis libraries and headers by hand. There is no target for it.
 	${INSTALL_PROGRAM} ${WRKSRC}/lib/libvorbis.a ${PREFIX}/lib/
@@ -48,7 +48,5 @@ do-install:
 	${MKDIR} ${PREFIX}/include/vorbis/book
 	${INSTALL_DATA} ${WRKSRC}/include/vorbis/*.h ${PREFIX}/include/vorbis/
 	${INSTALL_DATA} ${WRKSRC}/include/vorbis/book/*.vqh ${PREFIX}/include/vorbis/book/
-
-MAN1=	ogg123.1 vorbize.1 oggenc.1
 
 .include <bsd.port.mk>

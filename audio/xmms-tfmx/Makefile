@@ -15,11 +15,9 @@ MAINTAINER=	anders@fix.no
 
 LIB_DEPENDS=	xmms.1:${PORTSDIR}/audio/xmms
 
-USE_LIBTOOL=	yes
+USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-
-GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
-
-CONFIGURE_ENV=	GTK_CONFIG="${GTK_CONFIG}"
+USE_GTK=	yes
+USE_LIBTOOL=	yes
 
 .include <bsd.port.mk>

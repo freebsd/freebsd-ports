@@ -14,20 +14,17 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12 \
-		jpeg.9:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
 
 ONLY_FOR_ARCHS=	i386
-
-GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
+INSTALL_TARGET=	bininstall
 
 USE_XLIB=	yes
+USE_GTK=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -pedantic" \
-		GTK_CONFIG="${GTK_CONFIG}" \
-		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--disable-asm
-INSTALL_TARGET=	bininstall
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -pedantic" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 MAN1=		cqcam.1
 MLINKS=		cqcam.1 webcam.1 \

@@ -15,12 +15,10 @@ DISTNAME=	gEDA-19990516
 
 MAINTAINER=	vanilla@FreeBSD.org
 
-LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12 \
-		guile.9:${PORTSDIR}/lang/guile
-
-GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
+LIB_DEPENDS=	guile.9:${PORTSDIR}/lang/guile
 
 USE_X_PREFIX=	yes
+USE_GTK=	yes
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--with-gtk-config=${GTK_CONFIG}

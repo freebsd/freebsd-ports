@@ -1,0 +1,12 @@
+--- doc/Makefile.in.orig	Mon Sep  6 23:46:58 1999
++++ doc/Makefile.in	Mon Sep  6 23:48:32 1999
+@@ -114,7 +114,8 @@
+ ZVT_LIBS = @ZVT_LIBS@
+ l = @l@
+ 
+-gicq_helpdir = $(datadir)/gnome/help/gicq/C
++@INSIDE_GNOME_COMMON_TRUE@gicq_helpdir = $(datadir)/gnome/help/gicq/C
++@INSIDE_GNOME_COMMON_FALSE@gicq_helpdir = $(datadir)/doc/gicq/C
+ 
+ gicq_help_DATA = 	\
+ 	index.html	\

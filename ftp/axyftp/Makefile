@@ -14,12 +14,10 @@ MASTER_SITES=	ftp://ftp.wxftp.seul.org/pub/wxftp/${PORTVERSION}/ \
 
 MAINTAINER=	kris@FreeBSD.org
 
-LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
-
+USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-GNU_CONFIGURE=  yes
-CONFIGURE_ENV=  GTK_CONFIG=${X11BASE}/bin/gtk12-config
-USE_X_PREFIX=   yes
+USE_GTK=	yes
+GNU_CONFIGURE=	yes
 
 MAN1=		axyftp.1
 

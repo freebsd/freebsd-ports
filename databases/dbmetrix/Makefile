@@ -13,16 +13,13 @@ MASTER_SITES=	ftp://ftp.tamos.net/pub/dbMetrix/ \
 
 MAINTAINER=	joseph@randomnetworks.com
 
-LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12 \
-		mysqlclient.6:${PORTSDIR}/databases/mysql322-client
+LIB_DEPENDS=	mysqlclient.6:${PORTSDIR}/databases/mysql322-client
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
 
-GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
-
+USE_GTK=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS= --with-mysql=${PREFIX} --prefix=${PREFIX}
-CONFIGURE_ENV=	GTK_CONFIG=${GTK_CONFIG}
+CONFIGURE_ARGS= --with-mysql=${PREFIX}
 
 pre-configure:
 	@${PERL} -pi -e "s.gtk-config.${GTK_CONFIG}.g" ${WRKSRC}/Makefile.in

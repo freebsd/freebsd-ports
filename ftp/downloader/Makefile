@@ -15,13 +15,14 @@ DISTNAME=	nt-${PORTVERSION}
 
 MAINTAINER=	andrew@chg.ru
 
-LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
+LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext
 
-GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
 MSGFMT_CMD=	${LOCALBASE}/bin/msgfmt
+
 WRKSRC=		${WRKDIR}/${DISTNAME}/main
-MAKE_ENV=	GTK_CONFIG="${GTK_CONFIG}" \
-		MSGFMT_CMD="${MSGFMT_CMD}"
+
+USE_GTK=	yes
+MAKE_ENV=	MSGFMT_CMD="${MSGFMT_CMD}"
 
 MAN1=		nt.1
 

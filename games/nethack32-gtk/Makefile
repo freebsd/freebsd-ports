@@ -10,7 +10,7 @@ PORTVERSION=	1.1.5
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.jnethack.org/pub/jnethack/ \
 		ftp://ftp.uu.net/systems/gnu/nethack/
-PKGNAMEPREFIX=	gtk-
+PKGNAMESUFFIX=	-gtk
 DISTNAME=	${PORTNAME}-3.2.2
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${GTK_PATCH}
 EXTRACT_ONLY=	nethack-3.2.2.tar.gz
@@ -21,9 +21,8 @@ PATCHFILES=	nh-3.2.2-3.2.3.diff \
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
-
 USE_XPM=	yes
+USE_GTK=	yes
 USE_GMAKE=	yes
 MAN6=		dgn_comp.6 dlb.6 lev_comp.6 nethack.6 recover.6
 

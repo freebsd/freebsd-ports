@@ -14,11 +14,8 @@ MASTER_SITE_SUBDIR=	games/strategy
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
+USE_GTK=	yes
 
-GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
-
-MAKE_ENV=	GTK_CONFIG="${GTK_CONFIG}"
 MAN6=		gtkballs.6
 
 do-install:
