@@ -222,6 +222,7 @@
     SUBDIR += libshhopt
     SUBDIR += libsigc++
     SUBDIR += libslang
+    SUBDIR += libstrfunc
     SUBDIR += libtai
     SUBDIR += libtar
     SUBDIR += libtecla

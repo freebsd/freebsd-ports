@@ -1,0 +1,7 @@
+bin/timetostr
+bin/strtotime
+bin/posdump
+include/strfunc.h
+lib/libstrfunc.a
+lib/libstrfunc.so
+lib/libstrfunc.so.7
