@@ -8,7 +8,7 @@
 PORTNAME=	libchk
 PORTVERSION=	1.6
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.iDaemons.org/distfiles/ \
+MASTER_SITES=	ftp://ftp.iDaemons.org/pub/distfiles/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	knu
 
