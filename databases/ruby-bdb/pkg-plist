@@ -9,6 +9,7 @@
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/bdb/recno.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/bdb/txn.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/bdb/wordlist
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/bdb/wordtest
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/bdb/tmp
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/bdb
 %%PORTDOCS%%%%RUBY_DOCDIR%%/bdb/Changes
