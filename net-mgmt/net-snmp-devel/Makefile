@@ -5,15 +5,28 @@
 # $FreeBSD$
 #
 
-PORTNAME=	net-snmp
+PORTNAME=	snmp
 PORTVERSION=	5.1
-PORTREVISION=	2
+PORTREVISION=	3
+PKGNAMEPREFIX=	net-
 CATEGORIES=	net-mgmt ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	net-snmp
+DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}
+
+.if defined(WITH_INETADDRESS_HACK)
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-snmplib::mib.c
+.endif
+.if !defined(WITH_TKMIB)
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-local:Makefile.in
+.endif
 
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	An extendable SNMP implementation
+
+.if defined(WITH_TKMIB)
+RUN_DEPEND=	${SITE_PERL}/${PERL_ARCH}/Tk.pm:${PORTSDIR}/x11-toolkits/p5-Tk
+.endif
 
 USE_REINPLACE=	yes
 USE_AUTOCONF_VER=257
@@ -26,27 +39,79 @@ NO_LATEST_LINK=	yes
 USE_PERL5=	yes
 .endif
 
-CONFIGURE_ARGS+=--enable-shared --with-mib-modules="${NET_SNMP_MIB_MODULES}" \
+CONFIGURE_ENV+=	PERLPROG="${PERL}" PSPROG="${PS_CMD}" SED="${SED}"
+CONFIGURE_ARGS+=--enable-shared --enable-internal-md5 \
+		--with-mib-modules="${_NET_SNMP_MIB_MODULES}" \
 		--with-default-snmp-version="${DEFAULT_SNMP_VERSION}" \
 		--with-sys-contact="${NET_SNMP_SYS_CONTACT}" \
 		--with-sys-location="${NET_SNMP_SYS_LOCATION}" \
 		--with-logfile="${NET_SNMP_LOGFILE}" \
 		--with-persistent-directory="${NET_SNMP_PERSISTENTDIR}" \
-		--with-gnu-ld --with-libwrap --with-libs="-lkvm -ldevstat" \
-		--with-defaults
-.if defined(WITHOUT_PERL)
-PLIST_SUB+=	WITHPERL="@comment "
-.else
-CONFIGURE_ARGS+=	--with-perl-modules
-PLIST_SUB+=	WITHPERL=""
+		--with-gnu-ld --with-libwrap --with-libs="-lkvm -ldevstat"
+
+.if defined(BATCH)
+CONFIGURE_ARGS+=--with-defaults
 .endif
 
+.if !defined(WITHOUT_DUMMY_VALUES)
+CONFIGURE_ARGS+=--with-dummy-values
+.endif
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITHOUT_PERL)
+PLIST_SUB+=	WITH_PERL="@comment "
+.else
+CONFIGURE_ARGS+=--enable-embedded-perl --with-perl-modules
+PLIST_SUB+=	WITH_PERL=""
+.endif
+
+.if defined(WITH_TKMIB)
+PLIST_SUB+=	WITH_TKMIB=""
+.else
+PLIST_SUB+=	WITH_TKMIB="@comment "
+.endif
+
+.if ${OSVERSION} >= 400014 && !defined(WITHOUT_IPV6)
+CONFIGURE_ARGS+=--enable-ipv6
+# --with-transport="UDPIPv6 TCPIPv6" --with-modules=mibII/ipv6"
+PLIST_SUB+=	WITH_IPV6=""
+.else
+PLIST_SUB+=	WITH_IPV6="@comment "
+.endif
+
+SHLIB_VERSION=	6
+PLIST_SUB+=	SHLIB_VERSION=${SHLIB_VERSION}
+LIBTOOL_SUB=	LTCONFIG=${LIBTOOL_SHAREDIR}/ltconfig${LIBTOOL_VERSION} \
+		LTMAIN=${LIBTOOL_SHAREDIR}/ltmain.sh
+SCRIPTS_SUB=	PREFIX=${PREFIX} PERL=${PERL}
+RC_SCRIPTS_SUB=	PREFIX=${PREFIX} RC_SUBR=${RC_SUBR}
+
 DEFAULT_SNMP_VERSION?=	3
-NET_SNMP_SYS_CONTACT?=	nobody@no.where
-NET_SNMP_SYS_LOCATION?=
+NET_SNMP_SYS_CONTACT?=	nobody@nowhere.invalid
+NET_SNMP_SYS_LOCATION?=	somewhere
 NET_SNMP_LOGFILE?=	/var/log/snmpd.log
 NET_SNMP_PERSISTENTDIR?=/var/net-snmp
-NET_SNMP_MIB_MODULES?=	host smux ucd-snmp/diskio
+NET_SNMP_MIB_MODULES?=	${NET_SNMP_MIB_MODULE_LIST}
+
+NET_SNMP_MIB_MODULE_LIST=host disman/event-mib smux mibII/mta_sendmail ucd-snmp/diskio
+_NET_SNMP_MIB_MODULES=
+.for module1 in ${NET_SNMP_MIB_MODULE_LIST}
+_module1=${module1}
+_define= false
+. for module2 in ${NET_SNMP_MIB_MODULES}
+_module2=${module2}
+.  if ${_module1} == ${_module2}
+_define= true
+.  endif
+. endfor
+. if ${_define} == true
+_NET_SNMP_MIB_MODULES+= ${module1}
+PLIST_SUB+=	WITH_${module1:C|.*/||:U}=""
+. else
+PLIST_SUB+=	WITH_${module1:C|.*/||:U}="@comment "
+. endif
+.endfor
 
 MAN1=		mib2c.1 \
 		snmpbulkget.1 snmpbulkwalk.1 snmpcmd.1 snmpconf.1 \
@@ -86,61 +151,112 @@ MAN3=		add_mibdir.3 add_module_replacement.3 default_store.3 \
 		netsnmp_stash_cache.3 netsnmp_utilities.3
 
 .if !defined(WITHOUT_PERL)
-MAN3PERL=	NetSNMP::default_store.3 NetSNMP::ASN.3 NetSNMP::OID.3 \
+MAN3PERL=	NetSNMP::ASN.3 NetSNMP::OID.3 NetSNMP::agent.3 \
 		NetSNMP::agent::default_store.3 \
-		NetSNMP::netsnmp_request_infoPtr.3 \
-		NetSNMP::agent.3 SNMP.3
+		NetSNMP::default_store.3 \
+		NetSNMP::netsnmp_request_infoPtr.3 SNMP.3
 MAN3PERLPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 _MANPAGES+=	${MAN3PERL:S%^%${MAN3PERLPREFIX}/man/man3/%}
 .endif
+
 MAN5=		snmp.conf.5 snmp_config.5 snmpd.conf.5 \
 		snmptrapd.conf.5 variables.5
 MAN8=		snmpd.8 snmptrapd.8
-BIN=		snmpbulkwalk snmpget snmpgetnext snmpnetstat snmpset \
+
+BIN_FILES=	snmpbulkwalk snmpget snmpgetnext snmpnetstat snmpset \
 		snmpstatus snmptest snmptranslate snmptrap snmpwalk
-SBIN=		snmpd snmptrapd
-
-STARTUP_FILE=	${PREFIX}/etc/rc.d/snmpd.sh
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 400014
-CONFIGURE_ARGS+=--enable-ipv6 \
-		--with-transports="UDP UDPIPv6 TCP TCPIPv6 Unix"
+SBIN_FILES=	snmpd snmptrapd
+STARTUP_DIR=	${PREFIX}/etc/rc.d
+STARTUP_FILES=	snmpd.sh snmptrapd.sh
+SCRIPT_FILES=	snmpcheck.def mib2c fixproc ipf-mod.pl snmpconf \
+		traptoemail
+.if defined(WITH_TKMIB)
+SCRIPT_FILES+=	tkmib
 .endif
+DOC_FILES=	AGENT.txt COPYING FAQ NEWS README \
+		README.agentx README.krb5 README.snmpv3 README.thread \
+		agent/mibgroup/README.smux
 
-SHLIB_VERSION=	6
-PLIST_SUB+=	shlib=${SHLIB_VERSION}
-RC_SCRIPTS_SUB=	PREFIX=${PREFIX} RC_SUBR=${RC_SUBR}
+PS_CMD?=	/bin/ps
 
-.if defined(WITH_INETADDRESS_HACK)
-EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-snmplib::mib.c
-.endif
+pre-everything::
+	@${ECHO_MSG}
+	@${ECHO_MSG} "You may use the following build options:"
+	@${ECHO_MSG}
+	@${ECHO_MSG} "WITH_INETADDRESS_HACK=yes	builds with the inetaddress hack"
+	@${ECHO_MSG} "WITH_TKMIB=yes		Install a graphical Perl/Tk/SNMP based mib browser"
+	@${ECHO_MSG} "WITHOUT_DUMMY_VALUES=yes	Provide 'placeholder' dummy values where"
+	@${ECHO_MSG} "				the necessary information is not available."
+	@${ECHO_MSG} "WITHOUT_PERL=yes		Install the perl modules along with the rest"
+	@${ECHO_MSG} "				of the net-snmp toolkit."
+	@${ECHO_MSG} "WITHOUT_IPV6=yes		Generate IPv6 ready version."
+	@${ECHO_MSG}
+	@${ECHO_MSG} "DEFAULT_SNMP_VERSION=\"3\"	Default version of SNMP to use."
+	@${ECHO_MSG} "NET_SNMP_SYS_CONTACT=\"${NET_SNMP_SYS_CONTACT}\""
+	@${ECHO_MSG} "				Default system contact."
+	@${ECHO_MSG} "NET_SNMP_SYS_LOCATION=\"${NET_SNMP_SYS_LOCATION}\""
+	@${ECHO_MSG} "				Default system location."
+	@${ECHO_MSG} "NET_SNMP_LOGFILE=\"${NET_SNMP_LOGFILE}\""
+	@${ECHO_MSG} "				Default log file location for snmpd."
+	@${ECHO_MSG} "NET_SNMP_PERSISTENTDIR=\"${NET_SNMP_PERSISTENTDIR}\""
+	@${ECHO_MSG} "				Default directory for persistent data storage."
+	@${ECHO_MSG} "NET_SNMP_MIB_MODULES=\"${NET_SNMP_MIB_MODULE_LIST}\""
+	@${ECHO_MSG} "				Optional mib modules that can be built into the"
+	@${ECHO_MSG} "				agent"
+	@${ECHO_MSG}
 
-post-patch:
-	@${REINPLACE_CMD} \
-		-e 's|%%LTCONFIG%%|${LIBTOOL_SHAREDIR}/ltconfig${LIBTOOL_VERSION}|g' \
-		-e 's|%%LTMAIN%%|${LIBTOOL_SHAREDIR}/ltmain.sh|g' \
+post-patch: patch-autoconf patch-script-files patch-startup-files
+
+patch-autoconf:
+	@${REINPLACE_CMD} ${LIBTOOL_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
 		${WRKSRC}/aclocal.m4
+
+patch-script-files:
+.for file in ${SCRIPT_FILES}
+	@${REINPLACE_CMD} ${SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
+		${WRKSRC}/local/${file}
+.endfor
+
+patch-startup-files:
+.for file in ${STARTUP_FILES}
+	@${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
+		${FILESDIR}/${file}.sample > ${WRKDIR}/${file}
+.endfor
+
+post-configure:
+	@${FIND} ${WRKSRC} -name Makefile | \
+	 ${XARGS} ${PERL} -pi -e 's|$$| -m 755| if /^INSTALL\s+=/'
 
 .if !defined(WITHOUT_PERL)
 post-build:
-	@${FIND} ${CONFIGURE_WRKSRC}/perl -name Makefile | \
-	 ${XARGS} ${PERL5} -pi -e 's/ doc_(perl|site|\$$\(INSTALLDIRS\))_install$$//'
+	${FIND} ${WRKSRC}/perl -name Makefile | \
+	 ${XARGS} ${PERL} -pi -e '\
+		s!^(PREFIX) = /usr/local!$$1 = ${PREFIX}!; \
+		s!^(INSTALLMAN3DIR) = /usr/local!$$1 = \$$\(PREFIX\)!; \
+		s! doc_(perl|site|\$$\(INSTALLDIRS\))_install$$!!; \
+		'
 .endif
 
-pre-install:
-	-@[ -f ${STARTUP_FILE} ] && \
-	 (${ECHO} "Remove old ${STARTUP_FILE} before install." && exit 1)
+post-install: strip-files install-startup-files install-doc-files display-message
 
-post-install:
-	@( cd ${PREFIX}/bin && ${STRIP_CMD} ${BIN} )
-	@( cd ${PREFIX}/sbin && ${STRIP_CMD} ${SBIN} )
-	@${FIND} ${PREFIX}/include/net-snmp ${PREFIX}/share/snmp/mibs -type f \
-		| ${XARGS} ${CHMOD} 644
-	@${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
-		${FILESDIR}/snmpd.sh.sample > ${STARTUP_FILE}
-	@${CHMOD} 755 ${STARTUP_FILE}
+strip-files:
+	@cd ${PREFIX}/bin; ${STRIP_CMD} ${BIN_FILES}
+	@cd ${PREFIX}/sbin; ${STRIP_CMD} ${SBIN_FILES}
+
+install-startup-files:
+.for file in ${STARTUP_FILES}
+	@${INSTALL_SCRIPT} ${WRKDIR}/${file} ${STARTUP_DIR}
+.endfor
+
+install-doc-files:
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+. for file in ${DOC_FILES}
+	@${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+. endfor
+.endif
+
+display-message:
 	@${ECHO_MSG}
 	@${CAT} ${PKGMESSAGE}
 

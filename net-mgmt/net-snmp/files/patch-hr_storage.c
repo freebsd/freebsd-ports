@@ -24,7 +24,7 @@
  #elif defined(MBSTAT_SYMBOL)
 +#if !defined(__FreeBSD__) || __FreeBSD_version < 500021
                  long_return = mbstat.m_mbufs;
-+#elif __FreeBSD_version < 500024
++#elif defined(freebsd5) && __FreeBSD_version < 500024
 +			/* mbuf stats disabled */
 +			return NULL;
 +#else
@@ -40,7 +40,7 @@
  #elif defined(MBSTAT_SYMBOL)
 +#if !defined(__FreeBSD__) || __FreeBSD_version < 500021
                  long_return = mbstat.m_clusters - mbstat.m_clfree;      /* unlikely, but... */
-+#elif __FreeBSD_version < 500024
++#elif defined(freebsd5) && __FreeBSD_version < 500024
 +			/* mbuf stats disabled */
 +			return NULL;
 +#else

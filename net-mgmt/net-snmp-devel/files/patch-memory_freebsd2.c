@@ -1,12 +1,14 @@
---- agent/mibgroup/ucd-snmp/memory_freebsd2.c.orig	Sat Nov  9 23:59:53 2002
-+++ agent/mibgroup/ucd-snmp/memory_freebsd2.c	Sat Aug 16 17:09:01 2003
-@@ -207,11 +207,13 @@
+--- agent/mibgroup/ucd-snmp/memory_freebsd2.c.orig	Sat Nov  9 15:59:53 2002
++++ agent/mibgroup/ucd-snmp/memory_freebsd2.c	Sat Feb 21 11:55:05 2004
+@@ -204,6 +204,7 @@
+     if (kd == NULL)
+         kd = kvm_openfiles(NULL, NULL, NULL, O_RDONLY, NULL);
+ 
++#if !defined(freebsd5)
      auto_nlist(NSWDEV_SYMBOL, (char *) &nswdev, sizeof(nswdev));
      auto_nlist(DMMAX_SYMBOL, (char *) &dmmax, sizeof(dmmax));
  
-+#if !defined(freebsd5)
-     sw = (struct swdevt *) malloc(nswdev * sizeof(*sw));
-     if (sw == NULL)
+@@ -212,6 +213,7 @@
          return;
  
      auto_nlist(SWDEVT_SYMBOL, (char *) sw, nswdev * sizeof(*sw));

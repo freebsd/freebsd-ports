@@ -1,23 +1,21 @@
---- agent/mibgroup/host/hr_system.c.orig	Fri Nov 14 14:45:55 2003
-+++ agent/mibgroup/host/hr_system.c	Fri Nov 14 14:46:01 2003
-@@ -276,11 +276,10 @@
-     struct utmp    *utmp_p;
- #endif
- 
-+#ifndef UTMP_HAS_NO_TYPE
-     setutent();
+--- agent/mibgroup/host/hr_system.c.orig	Sat Mar  1 05:35:13 2003
++++ agent/mibgroup/host/hr_system.c	Sun Feb  8 17:39:50 2004
+@@ -280,7 +280,6 @@
      while ((utmp_p = getutent()) != NULL) {
--#ifndef UTMP_HAS_NO_TYPE
+ #ifndef UTMP_HAS_NO_TYPE
          if (utmp_p->ut_type == USER_PROCESS) {
 -#endif
              /* This block of code fixes zombie user PIDs in the
                 utmp/utmpx file that would otherwise be counted as a
                 current user */
-@@ -293,6 +292,7 @@
+@@ -291,6 +290,10 @@
+             }
+             ++total;
          }
++#else
++	if (*utmp_p->ut_name != '~')
++            ++total;
++#endif
      }
      endutent();
-+#endif
      return total;
- }
- 

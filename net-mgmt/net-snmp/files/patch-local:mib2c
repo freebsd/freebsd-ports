@@ -1,0 +1,20 @@
+--- local/mib2c.orig	Fri Nov 14 02:28:39 2003
++++ local/mib2c	Wed Feb  4 09:05:44 2004
+@@ -1,5 +1,4 @@
+-#!/usr/bin/perl
+-#!/usr/bin/perl -w
++#!%%PERL%%
+ 
+ #
+ # $Id: mib2c,v 5.36 2003/11/14 01:28:39 rstory Exp $
+@@ -56,8 +55,8 @@
+ if($ENV{MIB2C_DIR}) {
+   push @def_search_dirs, $ENV{MIB2C_DIR};
+ }
+-push @def_search_dirs, "/usr/local/share/snmp/";
+-
++push @def_search_dirs, "%%PREFIX%%/share/snmp/";
++push @def_search_dirs, "%%PREFIX%%/etc/snmp/";
+ 
+ sub usage {
+     print "$0 [-h] [-c configfile] [-f prefix] mibNode\n\n";

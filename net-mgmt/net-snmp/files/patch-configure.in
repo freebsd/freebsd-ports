@@ -1,19 +1,47 @@
---- configure.in.orig	Fri Nov 14 13:32:10 2003
-+++ configure.in	Fri Nov 14 13:36:27 2003
-@@ -1357,7 +1357,7 @@
-   # fall back
+--- configure.in.orig	Thu Mar  6 07:41:13 2003
++++ configure.in	Tue May 27 14:53:22 2003
+@@ -1246,7 +1246,7 @@
+   dnl fall back
    CFLAG="-f"
  fi
 -for i in /vmunix /hp-ux /stand/vmunix /dev/ksyms /kernel/unix /kernel/genunix /netbsd /unix /kernel /bsd /mach_kernel
-+for i in /vmunix /hp-ux /stand/vmunix /dev/ksyms /kernel/unix /kernel/genunix /netbsd /unix /kernel /bsd /mach_kernel /boot/kernel/kernel
++for i in /vmunix /hp-ux /stand/vmunix /dev/ksyms /kernel/unix /kernel/genunix /netbsd /unix /kernel /bsd /mach_kernel /boot/kernel/kernel /dev/null
    do
    if test -f $i -o $CFLAG $i; then
      ac_cv_KERNEL_LOC="$i"
-@@ -1376,6 +1376,7 @@
- # Check for mount table location
- #
+@@ -1659,7 +1659,7 @@
+ AC_HEADER_SYS_WAIT
+ AC_CHECK_HEADERS(stdarg.h string.h fcntl.h limits.h sys/file.h sys/ioctl.h syslog.h unistd.h netinet/tcpip.h netinet/in.h netinet/ip.h netinet/ip_icmp.h net/if.h netdb.h sys/dmap.h machine/pte.h xti.h sys/sockio.h sys/socket.h sys/un.h fstab.h sys/fs.h mtab.h ufs/fs.h ufs/ffs/fs.h sys/fixpoint.h machine/param.h sys/vm.h vm/vm.h sys/vmmeter.h sys/vmparam.h sys/vmmac.h sys/vmsystm.h sys/mbuf.h sys/time.h sys/swap.h inet/mib2.h sys/statvfs.h sys/vfs.h sys/mnttab.h sys/user.h sys/proc.h sys/select.h mntent.h sys/mntent.h kstat.h utsname.h sys/utsname.h sys/cdefs.h getopt.h locale.h pthread.h sys/loadavg.h regex.h linux/tasks.h pwd.h grp.h utmpx.h)
+ # FreeBSD required headers
+-AC_CHECK_HEADERS(malloc.h sys/param.h net/if_dl.h sys/sysctl.h stdlib.h net/if_mib.h net/if_types.h net/if_var.h sys/queue.h osreldate.h machine/types.h sys/socketvar.h)
++AC_CHECK_HEADERS(malloc.h sys/param.h net/if_dl.h sys/sysctl.h stdlib.h net/if_mib.h net/if_types.h net/if_var.h sys/queue.h osreldate.h sys/socketvar.h)
+ # Linux
+ AC_CHECK_HEADERS(sys/conf.h netinet/in_systm.h netinet/tcp.h netinet/udp.h netinet/in_var.h netinet/if_ether.h netinet/ip_var.h netinet/tcp_timer.h netinet/tcp_var.h netinet/tcp_fsm.h netinet/udp_var.h netinet/icmp_var.h sys/protosw.h nlist.h ioctls.h asm/page.h netipx/ipx.h)
+ # NetBSD required headers
+@@ -1866,6 +1866,26 @@
+ dnl checking for 4.3 vs 4.4 rtentry.
+ AC_CACHE_CHECK(type of rtentry structure,ac_cv_RTENTRY_TYPE,
+ [
++
++dnl 4.4 compatible but renamed on FreeBSD
++AC_TRY_COMPILE([
++#include <sys/types.h>
++#define KERNEL
++#define _KERNEL
++#include <sys/socket.h>
++#undef KERNEL
++#undef _KERNEL
++#include <net/route.h>
++],[
++
++#ifndef STRUCT_RTENTRY_HAS_RT_DST
++#define rt_dst rt_nodes->rn_key
++#endif
++
++  struct rtentry rt; 
++  rt.rt_nodes[0].rn_bit = 1;
++  rt.rt_dst;
++  ], ac_cv_RTENTRY_TYPE="BSD-4.4")
  
-+# kuriyama: should /var/db/mounttab be used?
- AC_CACHE_CHECK(for mount table location,ac_cv_ETC_MNTTAB,
- [ac_cv_ETC_MNTTAB="unknown"
- for i in /etc/mnttab /etc/mtab /etc/filesystems
+ dnl 4.4 compat
+ AC_TRY_COMPILE([
