@@ -17,8 +17,8 @@ include/ext2fs/ext2fs.h
 include/ss/ss.h
 include/ss/ss_err.h
 include/uuid/uuid.h
-include/uuid/uuid_types.h
 info/libext2fs.info.gz
+lib/e2initrd_helper
 lib/libblkid.a
 lib/libblkid.so.1.0
 lib/libblkid.so.1
@@ -35,6 +35,13 @@ lib/libext2fs.a
 lib/libext2fs.so
 lib/libext2fs.so.2
 lib/libext2fs.so.2.4
+libdata/pkgconfig/blkid.pc
+libdata/pkgconfig/com_err.pc
+libdata/pkgconfig/e2p.pc
+libdata/pkgconfig/ext2fs.pc
+libdata/pkgconfig/ss.pc
+libdata/pkgconfig/uuid.pc
+@unexec rmdir %B 2>/dev/null || true
 lib/libss.a
 lib/libss.so.2.0
 lib/libss.so.2
@@ -68,11 +75,12 @@ share/ss/ct_c.sed
 %%NLS%%share/locale/cs/LC_MESSAGES/e2fsprogs.mo
 %%NLS%%share/locale/de/LC_MESSAGES/e2fsprogs.mo
 %%NLS%%share/locale/es/LC_MESSAGES/e2fsprogs.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/e2fsprogs.mo
 %%NLS%%share/locale/it/LC_MESSAGES/e2fsprogs.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/e2fsprogs.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/e2fsprogs.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/e2fsprogs.mo
-%%NLS%%@unexec for i in cs de es it pl sv tr ; do rmdir -p %D/share/locale/$i/LC_MESSAGES 2>/dev/null || true ; done
+%%NLS%%@unexec for i in cs de es fr it pl sv tr ; do rmdir -p %D/share/locale/$i/LC_MESSAGES 2>/dev/null || true ; done
 @dirrm share/ss
 @dirrm share/et
 @dirrm include/uuid
