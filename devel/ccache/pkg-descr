@@ -1,8 +1,6 @@
-This is a port ccache, a tool which aims to make sure that the
-compilation process is efficent as possible, and therefore take the
-minimum amount of time.
+ccache is a compiler cache.  It acts as a caching pre-processor to C/C++
+compilers, using the -E compiler switch and a hash to detect when a
+compilation can be satisfied from cache.  This often results in a 5 to 10
+times speedup in common compilations.
 
 WWW: http://ccache.samba.org/
-
-- Dominic
-dominic_marks@btinternet.com
