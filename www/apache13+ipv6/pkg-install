@@ -1,5 +1,5 @@
 #!/bin/sh
-# $FreeBSD: /tmp/pcvs/ports/www/apache13+ipv6/Attic/pkg-install,v 1.1 2001-10-23 04:41:45 sumikawa Exp $
+# $FreeBSD: /tmp/pcvs/ports/www/apache13+ipv6/Attic/pkg-install,v 1.2 2002-06-21 12:06:04 sumikawa Exp $
 #
 
 if [ "$2" != "PRE-INSTALL" ]; then
