@@ -4116,7 +4116,7 @@ checksum: fetch
 				${ECHO_MSG} ">> Checksum for $$file is set to IGNORE in distinfo file even though"; \
 				${ECHO_MSG} "   the file is not in the "'$$'"{IGNOREFILES} list."; \
 				OK="false"; \
-			elif [ "$$CKSUM2" = "$$CKSUM" ]; then \
+			elif ${EXPR} "$$CKSUM2" : ".*$$CKSUM" > /dev/null; then \
 				${ECHO_MSG} ">> Checksum OK for $$file."; \
 			else \
 				${ECHO_MSG} ">> Checksum mismatch for $$file."; \
