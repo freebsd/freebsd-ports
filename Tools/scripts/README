@@ -4,6 +4,8 @@ addport	- replacement for easy-import
 
 consistency-check -  check whether all your ports are installed properly,
                      what files have changed, and what new files there are.
+check-latest-link - search for duplicate LATEST_LINK values and send nag
+                    mails to the responsible maintainers
 checkcats.py - verify that master categories in all ports are correct and
                report any problems.
 checknewvers - checks for availability for a newest version of distfiles on
@@ -29,7 +31,9 @@ prdone  - checks in the port, attempting to fill out the commit message using
 portsearch - A utility for searching the ports tree. It allows more detailed
              search criteria than ``make search key=<string>'' and accepts
              all perl(1) regular expressions.
-
+tindex - script used to build INDEXes for supported FreeBSD branches, which
+         are the source of the 'make fetchindex' INDEXes, and the build
+         failure reports on ports@FreeBSD.org
 update-patches - generates updated patches.
 
 ----------------------------------------------------------------------
