@@ -1,0 +1,5 @@
+lib/perl5/site_perl/%%PERL_VER%%/File/Sort.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/File/Sort/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/File/Sort
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/File 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/File 2>/dev/null || true
