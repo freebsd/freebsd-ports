@@ -19,16 +19,10 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/wmtz
 USE_X_PREFIX=	yes
 USE_XPM=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 501000
-BROKEN=		"Does not compile"
-.endif
-
 post-install:
 	@${ECHO} "===>   Installing wmtzrc.default in ${PREFIX}/etc."
 	@${ECHO} "===>   Copy it to ~/.wmtzrc or ${PREFIX}/etc/wmtzrc and modify it."
 	@${INSTALL_DATA} ${WRKSRC}/wmtzrc ${PREFIX}/etc/wmtzrc.default
 	@${ECHO} "===>   Run wmtz --help for usage instructions"
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
