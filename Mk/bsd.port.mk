@@ -3011,8 +3011,8 @@ _PATCH_DEP=		extract
 _PATCH_SEQ=		patch-message patch-depends pre-patch pre-patch-script \
 				do-patch post-patch post-patch-script
 _CONFIGURE_DEP=	patch
-_CONFIGURE_SEQ=	configure-message patch-libtool build-depends lib-depends \
-				misc-depends pre-configure pre-configure-script \
+_CONFIGURE_SEQ=	build-depends lib-depends misc-depends configure-message \
+				patch-libtool pre-configure pre-configure-script \
 				do-configure post-configure post-configure-script
 _BUILD_DEP=		configure
 _BUILD_SEQ=		build-message pre-build pre-build-script do-build \
