@@ -1,0 +1,64 @@
+bin/ktagebuch
+lib/kde3/ktagebuch_mood.la
+lib/kde3/ktagebuch_mood.so
+lib/libktagebuch.la
+lib/libktagebuch.so
+lib/libktagebuch.so.1
+share/applnk/Applications/ktagebuch.desktop
+share/apps/ktagebuch/icons/crystalsvg/16x16/actions/textcolor.png
+share/apps/ktagebuch/icons/crystalsvg/32x32/actions/dayback.png
+share/apps/ktagebuch/icons/crystalsvg/32x32/actions/dayforward.png
+share/apps/ktagebuch/icons/crystalsvg/32x32/actions/lastentry.png
+share/apps/ktagebuch/icons/crystalsvg/32x32/actions/monthback.png
+share/apps/ktagebuch/icons/crystalsvg/32x32/actions/monthforward.png
+share/apps/ktagebuch/icons/crystalsvg/32x32/actions/newestentry.png
+share/apps/ktagebuch/icons/crystalsvg/32x32/actions/nextentry.png
+share/apps/ktagebuch/icons/crystalsvg/32x32/actions/previousentry.png
+share/apps/ktagebuch/icons/crystalsvg/32x32/actions/today.png
+share/apps/ktagebuch/icons/crystalsvg/32x32/actions/yearback.png
+share/apps/ktagebuch/icons/crystalsvg/32x32/actions/yearforward.png
+share/apps/ktagebuch/ktagebuchui.rc
+share/apps/ktagebuch/mood.plugin
+share/doc/HTML/de/ktagebuch/common
+share/doc/HTML/de/ktagebuch/find.png
+share/doc/HTML/de/ktagebuch/generaloptions.png
+share/doc/HTML/de/ktagebuch/index.cache.bz2
+share/doc/HTML/de/ktagebuch/index.docbook
+share/doc/HTML/de/ktagebuch/mainwindow.png
+share/doc/HTML/en/ktagebuch/common
+share/doc/HTML/en/ktagebuch/find.png
+share/doc/HTML/en/ktagebuch/generaloptions.png
+share/doc/HTML/en/ktagebuch/index.cache.bz2
+share/doc/HTML/en/ktagebuch/index.docbook
+share/doc/HTML/en/ktagebuch/mainwindow.png
+share/icons/hicolor/16x16/apps/ktagebuch.png
+share/icons/hicolor/32x32/apps/ktagebuch.png
+share/locale/de/LC_MESSAGES/ktagebuch.mo
+share/locale/es/LC_MESSAGES/ktagebuch.mo
+@unexec rmdir %D/share/locale/es/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/es 2>/dev/null || true
+@unexec rmdir %D/share/locale/de/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/de 2>/dev/null || true
+@unexec rmdir %D/share/locale 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/32x32/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/32x32 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/16x16/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/16x16 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor 2>/dev/null || true
+@unexec rmdir %D/share/icons 2>/dev/null || true
+@dirrm share/doc/HTML/en/ktagebuch
+@unexec rmdir %D/share/doc/HTML/en 2>/dev/null || true
+@dirrm share/doc/HTML/de/ktagebuch
+@unexec rmdir %D/share/doc/HTML/de 2>/dev/null || true
+@unexec rmdir %D/share/doc/HTML 2>/dev/null || true
+@dirrm share/apps/ktagebuch/icons/crystalsvg/32x32/actions
+@dirrm share/apps/ktagebuch/icons/crystalsvg/32x32
+@dirrm share/apps/ktagebuch/icons/crystalsvg/16x16/actions
+@dirrm share/apps/ktagebuch/icons/crystalsvg/16x16
+@dirrm share/apps/ktagebuch/icons/crystalsvg
+@dirrm share/apps/ktagebuch/icons
+@dirrm share/apps/ktagebuch
+@unexec rmdir %D/share/apps 2>/dev/null || true
+@unexec rmdir %D/share/applnk/Applications 2>/dev/null || true
+@unexec rmdir %D/share/applnk 2>/dev/null || true
+@unexec rmdir %D/lib/kde3 2>/dev/null || true
