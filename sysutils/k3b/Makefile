@@ -33,9 +33,7 @@ USE_KDELIBS_VER=	3
 USE_REINPLACE=	yes
 
 pre-configure:
-	${REINPLACE_CMD} "s,-pedantic ,,g; \
-			  s,-pthread,${PTHREAD_LIBS},g; \
-			  s,-O2 ,,g" ${WRKSRC}/configure
+	${REINPLACE_CMD} "s,-O2 ,,g" ${WRKSRC}/configure
 .for i in config.h.in Makefile.in
 	${TOUCH} ${WRKSRC}/${i}
 .endfor
