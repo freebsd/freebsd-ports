@@ -30,6 +30,7 @@
     SUBDIR += cmatrix
     SUBDIR += colorls
     SUBDIR += colortail
+    SUBDIR += cpuid
     SUBDIR += crosspad
     SUBDIR += cstream
     SUBDIR += cuecat
