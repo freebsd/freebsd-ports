@@ -1,5 +1,5 @@
---- Rules.make.orig	Thu Jul 11 08:11:51 2002
-+++ Rules.make	Thu Jul 11 08:23:03 2002
+--- Rules.make.orig	Wed Apr 30 11:42:37 2003
++++ Rules.make	Wed Apr 30 11:52:50 2003
 @@ -4,42 +4,42 @@
  #
  #- Building ----------------------------------------------------------
@@ -40,11 +40,12 @@
  #--- How we build shared libraries
  BUILD = -shared 
  #--- What are we trying to build?
- DEST = -o modules/_cmd.so
+-DEST = -o modules/pymol/_cmd.so
 -#--- Gcc Options for Linux
--CCOPT1 = -m486 -D__i686__ -ffast-math -Wall -ansi -Wmissing-prototypes
+-CCOPT1 = -march=i486 -D__i686__ -ffast-math -Wall -ansi -Wmissing-prototypes
++DEST = -o modules/_cmd.so
 +#--- Gcc Options for FreeBSD
-+CCOPT1 = #-m486 -D__i686__ -ffast-math -Wall -ansi -Wmissing-prototypes
++CCOPT1 = #-march=i486 -D__i686__ -ffast-math -Wall -ansi -Wmissing-prototypes
  #--- libraries for PyOpenGL 
  PYOGL_LIB =  -lglut -lGL -lGLU -lXmu -lXi
  #---------------------------------------------------------------------
