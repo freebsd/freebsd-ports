@@ -21,7 +21,7 @@ MAINTAINER=	ixtl@utmc.or.jp
 COMMENT=	Japanese LaTeX2HTML with JA patch
 
 RUN_DEPENDS=	platex:${PORTSDIR}/japanese/ptex \
-		dvips:${PORTSDIR}/japanese/dvipsk-vflib \
+		dvips:${PORTSDIR}/japanese/dvipsk \
 		gs:${PORTSDIR}/japanese/ghostscript-gnu-jpnfont \
 		anytopnm:${PORTSDIR}/graphics/netpbm
 
