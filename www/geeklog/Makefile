@@ -15,9 +15,15 @@ MAINTAINER=	vinc@freebsd-fr.org
 COMMENT=	GeekLog is a web content magagement system
 
 USE_MYSQL=	yes
-RUN_DEPENDS+=	${LOCALBASE}/libexec/apache/libphp4.so:${PORTSDIR}/www/mod_php4
 
 NO_BUILD=	yes
+RUN_DEPENDS+=	${LOCALBASE}/libexec/apache/libphp4.so:${PORTSDIR}/www/mod_php4
+.if defined(WITH_APACHE2)
+RUN_DEPENDS+=	${LOCALBASE}/libexec/apache2/libphp4.so:${PORTSDIR}/www/mod_php4
+.else
+RUN_DEPENDS+=	${LOCALBASE}/libexec/apache/libphp4.so:${PORTSDIR}/www/mod_php4
+.endif
+
 WWW_DIR=	${PREFIX}/www/data
 
 do-install:
