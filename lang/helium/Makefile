@@ -30,5 +30,6 @@ do-build:
 
 do-install:
 	@(cd ${WRKSRC}/heliumNT/src && ${GMAKE} install)
+	@${CAT} ${PKGMESSAGE} | ${SED} -e 's,%%PREFIX%%,${PREFIX},g'
 
 .include <bsd.port.mk>
