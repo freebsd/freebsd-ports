@@ -1,6 +1,7 @@
 bin/bdftops
 bin/dvipdf
 bin/eps2eps
+bin/escputil
 bin/fixmswrd.pl
 bin/font2c
 bin/gs
@@ -78,6 +79,7 @@ share/ghostscript/%%GS_VERSION%%/doc/Tester.htm
 share/ghostscript/%%GS_VERSION%%/doc/Unix-lpr.htm
 share/ghostscript/%%GS_VERSION%%/doc/Use.htm
 share/ghostscript/%%GS_VERSION%%/doc/Xfonts.htm
+share/ghostscript/%%GS_VERSION%%/gimp-print/README
 share/ghostscript/%%GS_VERSION%%/hpdj/README.hpdj
 share/ghostscript/%%GS_VERSION%%/hpdj/example.mdf
 share/ghostscript/%%GS_VERSION%%/hpdj/margins-A4.ps
@@ -485,6 +487,7 @@ share/ghostscript/fonts/z003034l.pfm
 @dirrm share/doc/ghostscript
 @dirrm share/ghostscript/%%GS_VERSION%%/doc
 @dirrm share/ghostscript/%%GS_VERSION%%/examples
+@dirrm share/ghostscript/%%GS_VERSION%%/gimp-print
 @dirrm share/ghostscript/%%GS_VERSION%%/hpdj
 @dirrm share/ghostscript/%%GS_VERSION%%/lib
 @dirrm share/ghostscript/%%GS_VERSION%%/pcl3
