@@ -171,6 +171,7 @@ linux_devtools		ports/devel/linux_devtools	GPL binaries
 linux-divx4linux	ports/multimedia/linux-divx4linux	Restrictive copyright
 linux-eagle		ports/cad/linux-eagle		Non-commercial usage only &
 			ports/german/linux-eagle	Sale for profit not permitted
+linux-gtk2		ports/x11-toolkits/linux-gtk2	LGPL binary, no source
 linux-ibm-*		ports/java/linux-ibm-jdk13	Redistribution of repackaged
 							binaries not permitted
 linuxq3ademo-*		ports/games/linux-q3ademo	Restrictive license by Loki Software
