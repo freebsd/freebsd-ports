@@ -1,12 +1,13 @@
+# $FreeBSD$
 # New ports collection makefile for:	xmradio
-# Version required:	0.5
-# Date created:		2 Feb 1999
+# Version required:	0.8
+# Date created:		1 Oct 1999
 # Whom:			runge@rostock.zgdv.de
 #
-# $FreeBSD$
+# $Id$
 #
 
-DISTNAME=	xmradio-0.6
+DISTNAME=	xmradio-0.8
 CATEGORIES=	audio
 MASTER_SITES=	http://www.rostock.zgdv.de/~runge/radio/
 
