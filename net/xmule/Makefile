@@ -1,15 +1,15 @@
-# New ports collection makefile for:	lmule
+# New ports collection makefile for:	xmule
 # Date created:		Tue Mar 11 05:06:20 UTC 2003
 # Whom:			Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-PORTNAME=	lmule
-PORTVERSION=	1.2.1
+PORTNAME=	xmule
+PORTVERSION=	1.4.0
 CATEGORIES=	net
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	lmule
+MASTER_SITE_SUBDIR=	xmule
 
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	Port of eMule eDonkey P2P client using wxWindows class library
@@ -20,6 +20,7 @@ LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext \
 RUN_DEPENDS=	wget:${PORTSDIR}/ftp/wget
 
 USE_X_PREFIX=	yes
+USE_BZIP2=	yes
 USE_GNOME=	gnomehier \
 		gnomehack \
 		gnomeprefix
@@ -32,13 +33,17 @@ CONFIGURE_ARGS=	--without-included-gettext \
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 
-WX_CONFIG?=	"${X11BASE}/bin/wx-config"
+WX_CONFIG?=	${X11BASE}/bin/wx-config
 
 post-patch:
 # it works for FreeBSD as well
 	@${REINPLACE_CMD} -E \
 		-e 's|(Linux)|FreeBSD/\1|' \
 		${WRKSRC}/src/*.cpp
+# remove ^M
+	@${REINPLACE_CMD} -E \
+		-e 's|||' \
+		${WRKSRC}/src/MD5Sum.cpp
 
 pre-configure:
 	@${FIND} ${WRKSRC} -type f -name "Makefile.in" | \
@@ -53,12 +58,12 @@ post-install:
 
 .if exists(${WX_CONFIG})
 # detect if wxgtk was linked against gtk1 or gtk2
-DECISION_GTK_1_OR_2!= ${WX_CONFIG} --cppflags
+DECISION_GTK_1_OR_2!=	${WX_CONFIG} --static --libs
 .else
 DECISION_GTK_1_OR_2=	""
 .endif
 
-.if (${DECISION_GTK_1_OR_2:Mgtk2} != "")
+.if ${DECISION_GTK_1_OR_2:M*glib-2.0} != ""
 USE_GNOME+=	gtk20
 .else
 USE_GNOME+=	gtk12
