@@ -19,6 +19,8 @@ MAINTAINER=	max@FreeBSD.org
 
 MANUAL_PACKAGE_BUILD=	installs/removes files also in the XFree86 port
 
+.include <bsd.port.pre.mk>
+
 .if ${OSVERSION} < 500000
 LATEST_LINK=	imake
 .else
@@ -39,4 +41,4 @@ do-configure:
 	  ${MAKE} Makefile.boot ; \
 	  ${MAKE} -f xmakefile SUBDIRS="include config" VerifyOS Makefiles includes)
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
