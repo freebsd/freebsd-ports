@@ -13,5 +13,6 @@ etc/rc.d/fcron.sh
 %%PORTDOCS%%share/doc/fcron/fcron-%%PORTVERSION%%/fcron.8.html
 %%PORTDOCS%%share/doc/fcron/fcron-%%PORTVERSION%%/fcrontab.1.html
 %%PORTDOCS%%share/doc/fcron/fcron-%%PORTVERSION%%/fcrontab.5.html
+%%PORTDOCS%%share/doc/fcron/fcron-%%PORTVERSION%%/fcron.conf.5.html
 %%PORTDOCS%%@dirrm share/doc/fcron/fcron-%%PORTVERSION%%
 %%PORTDOCS%%@dirrm share/doc/fcron
