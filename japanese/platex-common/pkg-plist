@@ -1,5 +1,5 @@
-lib/texmf/tex/latex2e/base/OMLcmr.fd
 lib/texmf/tex/latex2e/base/OMLcmm.fd
+lib/texmf/tex/latex2e/base/OMLcmr.fd
 lib/texmf/tex/latex2e/base/OMLenc.def
 lib/texmf/tex/latex2e/base/OMLlcmm.fd
 lib/texmf/tex/latex2e/base/OMScmr.fd
@@ -24,12 +24,16 @@ lib/texmf/tex/latex2e/base/T1cmr.fd
 lib/texmf/tex/latex2e/base/T1cmss.fd
 lib/texmf/tex/latex2e/base/T1cmtt.fd
 lib/texmf/tex/latex2e/base/T1enc.def
+lib/texmf/tex/latex2e/base/TS1cmr.fd
+lib/texmf/tex/latex2e/base/TS1cmss.fd
+lib/texmf/tex/latex2e/base/TS1cmtt.fd
 lib/texmf/tex/latex2e/base/Ucmr.fd
 lib/texmf/tex/latex2e/base/Ucmss.fd
 lib/texmf/tex/latex2e/base/Ucmtt.fd
 lib/texmf/tex/latex2e/base/Ulasy.fd
 lib/texmf/tex/latex2e/base/Ullasy.fd
 lib/texmf/tex/latex2e/base/alltt.sty
+lib/texmf/tex/latex2e/base/ansinew.def
 lib/texmf/tex/latex2e/base/applemac.def
 lib/texmf/tex/latex2e/base/article.cls
 lib/texmf/tex/latex2e/base/article.sty
@@ -41,11 +45,13 @@ lib/texmf/tex/latex2e/base/bk12.clo
 lib/texmf/tex/latex2e/base/book.cls
 lib/texmf/tex/latex2e/base/book.sty
 lib/texmf/tex/latex2e/base/cp437.def
+lib/texmf/tex/latex2e/base/cp437de.def
 lib/texmf/tex/latex2e/base/cp850.def
 lib/texmf/tex/latex2e/base/doc.sty
 lib/texmf/tex/latex2e/base/exscale.sty
 lib/texmf/tex/latex2e/base/flafter.sty
 lib/texmf/tex/latex2e/base/fleqn.clo
+lib/texmf/tex/latex2e/base/fleqn.sty
 lib/texmf/tex/latex2e/base/fontenc.sty
 lib/texmf/tex/latex2e/base/fontmath.ltx
 lib/texmf/tex/latex2e/base/fonttext.ltx
@@ -59,6 +65,7 @@ lib/texmf/tex/latex2e/base/latexsym.sty
 lib/texmf/tex/latex2e/base/latin1.def
 lib/texmf/tex/latex2e/base/latin2.def
 lib/texmf/tex/latex2e/base/leqno.clo
+lib/texmf/tex/latex2e/base/leqno.sty
 lib/texmf/tex/latex2e/base/letter.cls
 lib/texmf/tex/latex2e/base/letter.sty
 lib/texmf/tex/latex2e/base/ltnews.cls
@@ -66,8 +73,11 @@ lib/texmf/tex/latex2e/base/ltpatch.ltx
 lib/texmf/tex/latex2e/base/ltxdoc.cls
 lib/texmf/tex/latex2e/base/ltxguide.cls
 lib/texmf/tex/latex2e/base/makeidx.sty
+lib/texmf/tex/latex2e/base/minimal.cls
 lib/texmf/tex/latex2e/base/newlfont.sty
+lib/texmf/tex/latex2e/base/next.def
 lib/texmf/tex/latex2e/base/oldlfont.sty
+lib/texmf/tex/latex2e/base/openbib.sty
 lib/texmf/tex/latex2e/base/pict2e.sty
 lib/texmf/tex/latex2e/base/preload.ltx
 lib/texmf/tex/latex2e/base/proc.cls
@@ -112,6 +122,7 @@ lib/texmf/tex/platex2e/base/pl209.def
 lib/texmf/tex/platex2e/base/platex.ltx
 lib/texmf/tex/platex2e/base/plcore.ltx
 lib/texmf/tex/platex2e/base/pldefs.ltx
+lib/texmf/tex/platex2e/base/plext.sty
 lib/texmf/tex/platex2e/base/ptrace.sty
 lib/texmf/tex/platex2e/base/tarticle.cls
 lib/texmf/tex/platex2e/base/tarticle.sty
