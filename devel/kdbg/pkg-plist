@@ -1,0 +1,52 @@
+bin/kdbg
+share/applnk/Development/kdbg.kdelnk
+share/apps/kdbg/pics/brkcond.xpm
+share/apps/kdbg/pics/brkdis.xpm
+share/apps/kdbg/pics/brkena.xpm
+share/apps/kdbg/pics/brkpt.xpm
+share/apps/kdbg/pics/brktmp.xpm
+share/apps/kdbg/pics/execopen.xpm
+share/apps/kdbg/pics/pcinner.xpm
+share/apps/kdbg/pics/pcup.xpm
+share/apps/kdbg/pics/pgmfinish.xpm
+share/apps/kdbg/pics/pgmnext.xpm
+share/apps/kdbg/pics/pgmrun.xpm
+share/apps/kdbg/pics/pgmstep.xpm
+share/apps/kdbg/pics/pointer.xpm
+share/apps/kdbg/pics/search.xpm
+share/apps/kdbg/types/X11.kdbgtt
+share/apps/kdbg/types/glib.kdbgtt
+share/apps/kdbg/types/gtk+.kdbgtt
+share/apps/kdbg/types/kdecore.kdbgtt
+share/apps/kdbg/types/kdecore3.kdbgtt
+share/apps/kdbg/types/qt.kdbgtt
+share/apps/kdbg/types/qt2.kdbgtt
+share/doc/HTML/de/kdbg/index.html
+share/doc/HTML/de/kdbg/types.html
+share/doc/HTML/en/kdbg/index.html
+share/doc/HTML/en/kdbg/types.html
+share/doc/HTML/ru/kdbg/index.html
+share/doc/HTML/ru/kdbg/types.html
+share/icons/kdbg.xpm
+share/icons/mini/mini-kdbg.xpm
+share/locale/cs/LC_MESSAGES/kdbg.mo
+share/locale/da/LC_MESSAGES/kdbg.mo
+share/locale/de/LC_MESSAGES/kdbg.mo
+share/locale/es/LC_MESSAGES/kdbg.mo
+share/locale/fr/LC_MESSAGES/kdbg.mo
+share/locale/hr/LC_MESSAGES/kdbg.mo
+share/locale/it/LC_MESSAGES/kdbg.mo
+share/locale/no/LC_MESSAGES/kdbg.mo
+share/locale/pl/LC_MESSAGES/kdbg.mo
+share/locale/pt/LC_MESSAGES/kdbg.mo
+share/locale/ro/LC_MESSAGES/kdbg.mo
+share/locale/ru/LC_MESSAGES/kdbg.mo
+share/locale/sk/LC_MESSAGES/kdbg.mo
+share/locale/zh_CN.GB2312/LC_MESSAGES/kdbg.mo
+@dirrm share/applnk/Development
+@dirrm share/apps/kdbg/pics
+@dirrm share/apps/kdbg/types
+@dirrm share/apps/kdbg
+@dirrm share/doc/HTML/de/kdbg
+@dirrm share/doc/HTML/en/kdbg
+@dirrm share/doc/HTML/ru/kdbg
