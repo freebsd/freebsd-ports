@@ -331,6 +331,7 @@
     SUBDIR += libchipcard-kde
     SUBDIR += libcii
     SUBDIR += libcoro
+    SUBDIR += libcwd
     SUBDIR += libdict
     SUBDIR += libdlmalloc
     SUBDIR += libds
