@@ -36,10 +36,6 @@ USE_REINPLACE=	yes
 BROKEN=		"Not supported on systems prior to FreeBSD 4.x"
 .endif
 
-.if ${OSVERSION} >= 501106
-BROKEN=		"Broken by new ATA driver"
-.endif
-
 .if defined(DEBUG)
 STRIP=
 .else
