@@ -34,6 +34,9 @@ if [ $phase = 1 ]; then
 
   mtree -xcn -k uid,gid,mode -p / > /tmp/mtree
 
+  #Allow ports to notice they're being run on bento
+  export PACKAGE_BUILDING=1
+
   cd $dir || exit 1
   pkgname=$(make package-name)
   echo "================================================================"
@@ -81,7 +84,7 @@ else
       diff -b /tmp/list2 /tmp/list1 | grep '^>'
     fi
 
-    mtree -x -f /tmp/mtree -p / | egrep -v '^(var/tmp|tmp/|var/db/pkg/)' > /tmp/list3
+    mtree -x -f /tmp/mtree -p / | egrep -v '^(var/|tmp/|etc/shells.bak$|etc/services|compat$|etc/manpath.config|usr/local/share/nls/POSIX|usr/local/share/nls/en_US.US-ASCII)' > /tmp/list3
 
     cd /var/db/pkg
     if [ $(echo $(echo * | wc -c)) != 2 ]; then
