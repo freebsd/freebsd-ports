@@ -1,0 +1,8 @@
+'makepatch', containing a pair of programs, makepatch and applypatch, to
+assist in the generation and application of patch kits to synchronise
+source trees.
+
+-- jmc
+jmcoopr@webmail.bmi.net
+
+WWW: www.squirrel.nl/people/jvromans/tpj0403-0016.html

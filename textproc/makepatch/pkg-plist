@@ -1,0 +1,4 @@
+bin/applypatch
+bin/makepatch
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/makepatch/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/makepatch
