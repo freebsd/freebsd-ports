@@ -107,8 +107,9 @@ while [ "$1" ]; do
 		\"PostgreSQL\")
 			echo "LIB_DEPENDS+=	pq.2:\${PORTSDIR}/databases/postgresql7"
 			echo "CONFIGURE_ARGS+=--with-pgsql=\${PREFIX}/pgsql"
-			if /usr/bin/ldd ${PREFIX}/pgsql/bin/postgres | /usr/bin/grep -q "libssl"; then
-				LIBS="-lcrypto -lssl"
+			if /usr/bin/ldd ${PREFIX}/pgsql/bin/postgres 2> /dev/null | /usr/bin/grep -q "libssl"; then
+				echo "USE_OPENSSL=	yes"
+				LIBS="${LIBS} -L\${OPENSSLBASE}/lib -lcrypto -lssl"
 			fi
 			;;
 		\"SybaseDB\")
@@ -143,12 +144,10 @@ while [ "$1" ]; do
 			fi
 			;;
 		\"SNMP\")
-			echo "SNMP is DISABLED for now. Ignoring." > /dev/stderr
-			;;
-		\"nothing\")
-
 			echo "LIB_DEPENDS+=	snmp.4:\${PORTSDIR}/net/net-snmp"
 			echo "CONFIGURE_ARGS+=--with-snmp=\${PREFIX} --enable-ucd-snmp-hack"
+			echo "USE_OPENSSL=	yes"
+			LIBS="${LIBS} -L\${OPENSSLBASE}/lib -lcrypto -lssl"
 			;;
 		\"XML\")
 			echo "BUILD_DEPENDS+=	\${PREFIX}/lib/libexpat.a:\${PORTSDIR}/textproc/expat"
