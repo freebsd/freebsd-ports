@@ -1,5 +1,5 @@
---- lisp/un-define.el.original	Wed Mar  7 07:41:38 2001
-+++ lisp/un-define.el	Thu May 16 13:34:46 2002
+--- lisp/un-define.el.orig	Wed Mar  7 07:41:38 2001
++++ lisp/un-define.el	Thu May 16 22:15:03 2002
 @@ -610,13 +610,21 @@
  
   (mapcar
@@ -24,8 +24,8 @@
 +	 (mucs-define-coding-system
 +	  (nth 0 y) (nth 1 y) (nth 2 y)
 +	  (nth 3 y) (nth 4 y) (nth 5 y) (nth 6 y))
-+	 (coding-system-put (car y) 'alias-coding-systems (list (car x)))))
-+      (cdr x)))
++	 (coding-system-put (car y) 'alias-coding-systems (list (car x))))
++       (cdr x))))
    `((utf-8
       (utf-8-unix
        ?u "UTF-8 coding system"

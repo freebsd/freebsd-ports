@@ -7,6 +7,7 @@
 
 PORTNAME=	mule-ucs
 PORTVERSION=	0.84
+PORTREVISION=	1
 CATEGORIES=	converters elisp
 MASTER_SITES=	ftp://ftp.m17n.org/pub/mule/Mule-UCS/ \
 		ftp://ftp.etl.go.jp/pub/mule/Mule-UCS/ \
@@ -39,10 +40,14 @@ do-build:
 do-install:
 	@${MKDIR} ${MULEUCS_DESTDIR}
 	cd ${WRKSRC}/lisp; \
-	for dir in . big5conv jisx0213 reldata ; do \
+	for dir in . big5conv jisx0213 ; do \
 		${MKDIR} ${MULEUCS_DESTDIR}/$${dir} ; \
-		${INSTALL_DATA} $${dir}/*.el* ${MULEUCS_DESTDIR}/$${dir} ; \
+		${INSTALL_DATA} $${dir}/*.el ${MULEUCS_DESTDIR}/$${dir} ; \
+		${INSTALL_DATA} $${dir}/*.elc ${MULEUCS_DESTDIR}/$${dir} ; \
 	done
+	${MKDIR} ${MULEUCS_DESTDIR}/reldata
+	cd ${WRKSRC}/lisp; \
+		${INSTALL_DATA} reldata/*.el ${MULEUCS_DESTDIR}/reldata
 	@${RM} ${MULEUCS_DESTDIR}/big5conv/big5-comp.el
 	@${RM} ${MULEUCS_DESTDIR}/jisx0213/x0213-comp.el
 
