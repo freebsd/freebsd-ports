@@ -55,6 +55,7 @@
     SUBDIR += kworldwatch
     SUBDIR += launch.app
     SUBDIR += libdnd
+    SUBDIR += libgnome
     SUBDIR += libhelp
     SUBDIR += libsx
     SUBDIR += linux-gnomelibs
