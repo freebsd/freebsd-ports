@@ -1,22 +1,18 @@
-*** kfinger/finger.C.orig	Wed Apr 14 22:13:14 1999
---- kfinger/finger.C	Fri Apr 23 22:38:15 1999
+*** kfinger/finger.C~	Fri Sep  3 18:29:34 1999
+--- kfinger/finger.C	Fri Sep  3 18:34:24 1999
 ***************
-*** 12,20 ****
-  */
-  #include <netdb.h>
+*** 15,21 ****
+  #include <sys/types.h>
   #include <sys/socket.h>
   #include <sys/resource.h>
-- #include <sys/types.h>
   #include <stdlib.h>
 - #include <sys/time.h>
   #include <fcntl.h>
   #include <kapp.h>
---- 12,20 ----
-  */
-  #include <netdb.h>
-+ #include <sys/types.h>
-+ #include <sys/time.h>
+--- 15,21 ----
+  #include <sys/types.h>
   #include <sys/socket.h>
++ #include <sys/time.h>
   #include <sys/resource.h>
   #include <stdlib.h>
   #include <fcntl.h>

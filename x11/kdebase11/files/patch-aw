@@ -1,0 +1,29 @@
+*** kscreensaver/space.cpp~	Sat Aug  7 03:09:28 1999
+--- kscreensaver/space.cpp	Wed Sep  1 19:29:15 1999
+***************
+*** 70,73 ****
+--- 70,74 ----
+  
+  #include "GL/gl.h"
++ #include "GL/glut.h"
+  #include "GL/glu.h"
+  
+*** kscreensaver/pipes.cpp~	Wed Sep  1 19:31:37 1999
+--- kscreensaver/pipes.cpp	Wed Sep  1 19:33:18 1999
+***************
+*** 124,127 ****
+--- 124,128 ----
+  extern KLocale *glocale;
+  
++ #include "GL/glut.h"
+  #include "pipes.h"
+  #include <X11/Intrinsic.h>
+***************
+*** 135,138 ****
+--- 135,139 ----
+
+  #include "GL/gl.h"
++ #include "GL/glut.h"
+  #include "GL/glu.h"
+
+
