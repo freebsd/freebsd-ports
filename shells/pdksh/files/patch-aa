@@ -1,0 +1,17 @@
+--- jobs.c.orig	Tue Jul 13 18:50:56 1999
++++ jobs.c	Wed Jul 21 08:10:45 1999
+@@ -1846,6 +1846,7 @@
+ 	int		alen;
+ 	char		**ap;
+ 
++#if 0
+ 	if (t->type == TEXEC || t->type == TCOM) {
+ 		/* Causes problems when set -u is in effect, can also
+ 		   cause problems when array indices evaluated (may have
+@@ -1870,5 +1871,6 @@
+ 		}
+ 		*c = '\0';
+ 	} else
++#endif
+ 		snptreef(c, len, "%T", t);
+ }
