@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.29 1998/01/28 03:51:56 fenner Exp $
+# $Id: Makefile,v 1.30 1998/01/28 11:35:34 cracauer Exp $
 #
 
     SUBDIR += LPRng
@@ -24,6 +24,7 @@
     SUBDIR += su2
     SUBDIR += tcplist
     SUBDIR += tua
+    SUBDIR += upsd
     SUBDIR += xbatt
     SUBDIR += xcpustate
     SUBDIR += xdu
