@@ -216,6 +216,7 @@
     SUBDIR += jumpnbump
     SUBDIR += jzip
     SUBDIR += kbilliards
+    SUBDIR += kcheckers
     SUBDIR += kdegames3
     SUBDIR += klondike
     SUBDIR += knights
