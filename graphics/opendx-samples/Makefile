@@ -8,6 +8,7 @@
 
 PORTNAME=	opendx-samples
 PORTVERSION=	4.2.0
+PORTREVISION=	1
 CATEGORIES=	graphics math
 MASTER_SITES=	http://www.research.ibm.com/dx/srcDownload/srcArchive/ \
 	        http://opendx.npaci.edu/source/
@@ -15,8 +16,6 @@ DISTNAME=	dxsamples-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Example files for IBM's OpenDX
-
-BROKEN=		"Installs a world-writable directory"
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	SHELL=/bin/sh
