@@ -3,7 +3,7 @@
 # Date created:        21 Feb 1997
 # Whom:                Matthew Hunt <mph@pobox.com>
 #
-# $Id: Makefile,v 1.4 1997/10/27 09:48:01 tg Exp $
+# $Id: Makefile,v 1.5 1998/02/10 08:17:19 tg Exp $
 #
 
 DISTNAME=	angband-283
@@ -12,7 +12,7 @@ CATEGORIES=	games
 MASTER_SITES=	ftp://export.andrew.cmu.edu/angband/Source/
 DISTFILES=	angband-283.tar.gz ext-x11-283.tar.gz
 
-MAINTAINER=	mph@pobox.com
+MAINTAINER=	mph@freebsd.org
 
 USE_X11=	yes
 DIST_SUBDIR=	angband

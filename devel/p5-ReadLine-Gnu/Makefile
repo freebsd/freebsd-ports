@@ -3,7 +3,7 @@
 # Date created:				19 February 1998
 # Whom:	      				Matthew Hunt <mph@pobox.com>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/04/17 19:16:19 mph Exp $
 #
 
 DISTNAME=	Term-ReadLine-Gnu-0.09
@@ -12,7 +12,7 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Term
 
-MAINTAINER=	mph@pobox.com
+MAINTAINER=	mph@freebsd.org
 
 USE_PERL5=	YES
 
