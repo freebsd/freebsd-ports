@@ -2166,6 +2166,7 @@ hello		ports/misc/hello
 help2man	ports/misc/help2man
 heretic		ports/games/heretic
 heroes		ports/games/heroes
+hesinfo		src/usr.bin/hesinfo
 hesiod		ports/net/hesiod
 hevea		ports/textproc/hevea
 hex		ports/games/hex
