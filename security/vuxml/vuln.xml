@@ -204,10 +204,12 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       <bid>12075</bid>
       <cvename>CAN-2004-1308</cvename>
       <url>http://www.idefense.com/application/poi/display?id=174&amp;type=vulnerabilities</url>
+      <certvu>125598</certvu>
     </references>
     <dates>
       <discovery>2004-12-17</discovery>
       <entry>2005-01-06</entry>
+      <modified>2005-01-11</modified>
     </dates>
   </vuln>
 
