@@ -9,7 +9,8 @@
 PORTNAME=	g-wrap
 PORTVERSION=	1.1.11
 CATEGORIES=	devel
-MASTER_SITES=	http://www.gnucash.org/pub/g-wrap/source/
+MASTER_SITES=	http://www.gnucash.org/pub/g-wrap/source/ \
+		http://people.freebsd.org/~sobomax/
 
 MAINTAINER=	gnome@FreeBSD.org
 
