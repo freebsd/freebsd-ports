@@ -67,8 +67,8 @@ do-install:	# empty
 RUN_DEPENDS+=	epiphany:${PORTSDIR}/www/epiphany
 .endif
 
-.if ${ARCH} == "i386"
-RUN_DEPENDS+=	gnomemeeting:${PORTSDIR}/net/gnomemeeting
-.endif
+#.if ${ARCH} == "i386"
+#RUN_DEPENDS+=	gnomemeeting:${PORTSDIR}/net/gnomemeeting
+#.endif
 
 .include <bsd.port.post.mk>
