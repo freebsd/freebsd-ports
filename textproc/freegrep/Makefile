@@ -3,11 +3,11 @@
 # Date created:		8 June 1999
 # Whom:			Sheldon Hearn <sheldonh@freebsd.org>
 #
-# $Id: Makefile,v 1.2 1999/07/27 12:22:41 sheldonh Exp $
+# $Id: Makefile,v 1.3 1999/07/28 10:22:31 sheldonh Exp $
 #
 
-DISTNAME=	grep-0.8
-PKGNAME=	freegrep-0.8
+DISTNAME=	grep-0.9
+PKGNAME=	freegrep-0.9
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.freebsd.org/~des/software/
 
