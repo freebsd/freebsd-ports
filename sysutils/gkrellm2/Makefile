@@ -7,6 +7,7 @@
 
 PORTNAME=	gkrellm
 PORTVERSION=	2.0.1
+PORTREVISION=	1
 CATEGORIES=	sysutils ipv6
 DISTNAME=	${PORTNAME}-2.0.1a
 MASTER_SITES=	http://web.wt.net/~billw/gkrellm/ \
@@ -37,7 +38,7 @@ ALL_TARGET=	freebsd
 INSTALL_TARGET=	install_netbsd
 
 MAKE_ENV+=	LOCALEDIR=${PREFIX}/share/locale INCLUDEDIR=${PREFIX}/include \
-		INSTALLDIR=${PREFIX}/bin SINSTALLDIR=${PREFIX}/sbin \
+		INSTALLDIR=${PREFIX}/bin SINSTALLDIR=${PREFIX}/bin \
 		MANDIR=${MANPREFIX}/man/man1 SMANDIR=${MANPREFIX}/man/man8
 
 CFLAGS+=	-DSYSTEM_THEMES_DIR='\"${PREFIX}/share/gkrellm2/themes\"' \
