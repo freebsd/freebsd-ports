@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- src/controls/Makefile.in	2002/03/15 08:29:51	1.1
++++ src/controls/Makefile.in	2002/03/15 08:30:37
+@@ -145,7 +145,7 @@
+ cxxflags_set = @cxxflags_set@
+ l = @l@
+ 
+-INCLUDES =  	-I$(includedir) 					-I$(top_srcdir)/src/lib/ 				-DGNOMELOCALEDIR=\""$(prefix)/share/locale"\"	        -DGBF_DATADIR=\""$(datadir)"\" 				$(GNOME_INCLUDEDIR)					$(OAF_CFLAGS) 						$(BONOBO_CFLAGS) $(BONOBOX_CFLAGS)			$(GNOME_VFS_CFLAGS)					$(GTKHTML_CFLAGS)					$(GAL_CFLAGS)						$(GDL_CFLAGS)
++INCLUDES =  	-I$(includedir) 					-I$(top_srcdir)/src/lib/ 				-DGNOMELOCALEDIR=\""$(prefix)/share/locale"\"	        -DGBF_DATADIR=\""$(datadir)"\" 				$(GNOME_INCLUDEDIR)					$(OAF_CFLAGS) 						$(BONOBO_CFLAGS) $(BONOBOX_CFLAGS)			@VFS_CFLAGS@					$(GTKHTML_CFLAGS)					$(GAL_CFLAGS)						$(GDL_CFLAGS)
+ 
+ 
+ CFLAGS = @CFLAGS@ 	-DGNOME_DATADIR=\""$(datadir)"\"
