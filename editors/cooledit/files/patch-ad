@@ -1,0 +1,11 @@
+--- icon/iconmanager.c.orig	Mon Jun  7 14:43:54 1999
++++ icon/iconmanager.c	Mon Jun  7 14:44:08 1999
+@@ -443,7 +443,7 @@
+     if (p->x + 20 > WidthOfScreen (DefaultScreenOfDisplay (CDisplay)))
+ 	p->x = WidthOfScreen (DefaultScreenOfDisplay (CDisplay)) - 20;
+     if (*p->xpm_filename != '/')
+-	f = catstrs (LIBDIR, "/", p->xpm_filename, 0);
++	f = catstrs (DATADIR, "/", p->xpm_filename, 0);
+     else
+ 	f = p->xpm_filename;
+     w = CDrawIcon (catstrs ("_icon", itoa (n), 0), CRoot, p->x, p->y, f, p->title);

@@ -1,0 +1,23 @@
+--- pixmap/Makefile.in.orig	Mon Jun  7 14:39:02 1999
++++ pixmap/Makefile.in	Mon Jun  7 14:40:45 1999
+@@ -99,9 +99,9 @@
+ VERSION = @VERSION@
+ l = @l@
+ 
+-pixmapdir = $(libdir)/coolicon
++pixmapdir = $(datadir)/coolicon
+ 
+-pixmap_DATA = browse.xpm cooledit.xpm coolicon.config dynamite.xpm e.data launch.xpm 	manual.xpm mc.xpm netscape.xpm nscape.xpm phonedown.xpm phoneup.xpm printer.xpm 	spanner.xpm xterm.xpm xv.xpm cdrom_eject.xpm cdrom_view.xpm modify-xinitrc gmc.xpm 	lyx.xpm
++pixmap_DATA = browse.xpm cooledit.xpm dynamite.xpm e.data launch.xpm 	manual.xpm mc.xpm netscape.xpm nscape.xpm phonedown.xpm phoneup.xpm printer.xpm 	spanner.xpm xterm.xpm xv.xpm cdrom_eject.xpm cdrom_view.xpm gmc.xpm 	lyx.xpm
+ 
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = ../config.h
+@@ -227,8 +227,6 @@
+ 
+ 
+ install-data-local:
+-	chmod 0755 $(libdir)/coolicon/modify-xinitrc
+-	$(libdir)/coolicon/modify-xinitrc
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.

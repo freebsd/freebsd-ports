@@ -1,0 +1,11 @@
+--- lib/Makefile.in.orig	Mon Jun  7 15:25:44 1999
++++ lib/Makefile.in	Mon Jun  7 15:25:54 1999
+@@ -99,7 +99,7 @@
+ VERSION = @VERSION@
+ l = @l@
+ 
+-pythondir = $(libdir)/cooledit
++pythondir = $(datadir)/cooledit
+ 
+ python_DATA = global.py
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
