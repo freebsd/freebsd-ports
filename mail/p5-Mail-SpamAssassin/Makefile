@@ -7,12 +7,16 @@
 
 PORTNAME=	Mail-SpamAssassin
 PORTVERSION=	2.63
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail perl5
 MASTER_SITES=	http://spamassassin.org/released/ \
 		${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Mail
 PKGNAMEPREFIX=	p5-
+
+PATCH_SITES=	http://www.habeas.com/files/
+PATCHFILES=	SA-2.63-Habeas.diff
+PATCH_DIST_STRIP=	-p0
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A highly efficient mail filter for identifying spam
