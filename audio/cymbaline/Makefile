@@ -8,6 +8,7 @@
 
 PORTNAME=	cymbaline
 PORTVERSION=	0.9r
+PORTREVISION=	1
 CATEGORIES=	audio python
 MASTER_SITES=	http://www.silmarill.org/cymbaline/
 
@@ -21,7 +22,9 @@ NO_BUILD=	yes
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/cymbaline.py ${PREFIX}/bin/cymbaline
-	${INSTALL_DATA} ${WRKSRC}/mp3.py ${PYTHON_SITELIBDIR}
+.for file in ID3.py cycolors.py mp3.py
+	${INSTALL_DATA} ${WRKSRC}/${file} ${PYTHON_SITELIBDIR}
+.endfor
 
 .if !defined(NOPORTDOCS)
 post-install:
