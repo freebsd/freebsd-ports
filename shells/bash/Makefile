@@ -3,7 +3,7 @@
 # Date created:		21 August 1994
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.20 1996/12/27 11:40:41 ache Exp $
+# $Id: Makefile,v 1.21 1997/02/16 02:08:37 obrien Exp $
 #
 
 DISTNAME=	bash-2.0
@@ -19,6 +19,8 @@ MAINTAINER=	ache@FreeBSD.ORG
 GNU_CONFIGURE=	Yes
 MAN1=		bash.1 bashbug.1
 
+post-extract:
+	rm ${WRKSRC}/lib/glob/fnmatch.h
 
 post-install:
 .if !defined(NOPORTDOCS)
