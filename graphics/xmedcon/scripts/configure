@@ -18,7 +18,7 @@ analyze		"With Analyze (SPM)" ON \
 concorde	"With Concorde ÊPET" ON \
 dicom		"With DICOM 3.0 (implies acr/nema)" ON \
 dicom_ljpeg	"With DICOM 3.0 Lossless JPEG (implies acr/nema and dicom)" ON \
-ecat		"With ECAT 6.4" ON \
+ecat		"With ECAT 6.4 / 7.2" ON \
 gif		"With GIF87a/89a" ON \
 interfile	"With InterFile 3.3" ON \
 inw		"With INW (RUG)" ON \
