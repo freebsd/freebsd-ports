@@ -1,0 +1,8 @@
+The Gnome Canvas is an engine for structured graphics that offers a rich
+imaging model, high-performance rendering, and a powerful, high level API.
+It offers a choice of two rendering back-ends, one based on GDK for
+extremely fast display, and another based on Libart, a sophisticated,
+antialiased, alpha-compositing engine. This widget can be used for flexible
+display of graphics and for creating interactive user interface elements.
+
+WWW: http://search.cpan.org/dist/Gnome2-Canvas/
