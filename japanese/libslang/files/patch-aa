@@ -1,11 +1,78 @@
---- src/sltermin.c.orig	Sun Jul 26 15:57:36 1998
-+++ src/sltermin.c	Sun Jul 26 15:58:06 1998
-@@ -273,7 +273,7 @@
-      {
- 	tidir = Terminfo_Dirs[i];
- 	if ((tidir != NULL)
--	    && (sizeof (file) > strlen (tidir) + 2 + strlen (term)))
-+	    && (sizeof (file) > strlen (tidir) + 3 + strlen (term)))
- 	  {
- 	     sprintf (file, "%s/%c/%s", tidir, *term, term);
- 	     if (NULL != (fp = open_terminfo (file, ti)))
+*** configure.orig	Mon Apr 13 12:57:32 1998
+--- configure	Wed Apr 21 11:05:02 1999
+***************
+*** 1489,1519 ****
+  
+  echo $ac_n "checking SLANG_VERSION""... $ac_c" 1>&6
+  echo "configure:1492: checking SLANG_VERSION" >&5
+! slang_version=`grep "^#define  *SLANG_VERSION " $srcdir/src/slang.h |
+!                awk '{ print $3 }'`
+! slang_major_version=`echo $slang_version |
+!  awk '{ print int($1/10000) }'`
+! slang_minor_version=`echo $slang_version $slang_major_version |
+!  awk '{ print int(($1 - $2*10000)/100) }'`
+! slang_mminor_version=`echo $slang_version $slang_major_version $slang_minor_version |
+!  awk '{ print ($1 - $2*10000 - $3*100) }'`
+! 
+! slang_minor_version=$slang_minor_version.$slang_mminor_version
+  echo "$ac_t""$slang_major_version.$slang_minor_version" 1>&6
+  
+  
+  
+  
+  
+! if test "$GCC" = yes; then
+!   ELF_CC="gcc"
+!   ELF_CFLAGS="-O2 -fno-strength-reduce -fPIC"
+!   ELF_LINK="gcc -shared -Wl,-soname#"
+!   ELF_LINK_CMD="\$(ELF_LINK),\$(ELFLIB_MAJOR)"
+  else
+!   ELF_CC="cc"
+!   ELF_CFLAGS="-K pic"
+!   ELF_LINK="ld -G -z text"
+    ELF_LINK_CMD="\$(ELF_LINK)"
+  fi
+  
+--- 1489,1511 ----
+  
+  echo $ac_n "checking SLANG_VERSION""... $ac_c" 1>&6
+  echo "configure:1492: checking SLANG_VERSION" >&5
+! slang_major_version=2
+! slang_minor_version=0
+  echo "$ac_t""$slang_major_version.$slang_minor_version" 1>&6
+  
+  
+  
+  
+  
+! if [ "$PORTOBJFORMAT" = elf ]; then
+!   ELF_CC="\$(CC)"
+!   ELF_CFLAGS="\$(CFLAGS) -fPIC"
+!   ELF_LINK="\$(CC) -shared -Wl,-soname,\$(ELFLIB_MAJOR)"
+!   ELF_LINK_CMD="\$(ELF_LINK)"
+  else
+!   ELF_CC="\$(CC)"
+!   ELF_CFLAGS="\$(CFLAGS) -fPIC"
+!   ELF_LINK="ld -Bshareable -x"
+    ELF_LINK_CMD="\$(ELF_LINK)"
+  fi
+  
+***************
+*** 2033,2048 ****
+  
+  
+  echo ""
+- echo "Configuration complete.  You may need to edit src/Makefile."
+- echo "You are compiling SLANG with the following compiler configuration:"
+- echo "       CC =" "$CC"
+- echo "   CFLAGS =" "$CFLAGS"
+- echo "  LDFLAGS =" "$LDFLAGS"
+- echo ""
+- echo "   ELF_CC =" "$ELF_CC"
+- echo " ELF_LINK =" "$ELF_LINK"
+- echo "ELF_CFLAGS=" "$ELF_CFLAGS"
+- echo ""
+- echo "See also src/sl-feat.h for various features."
+- echo "Type 'make' to build normal library."
+- echo "On ELF systems, type 'make elf' to create ELF shared library."
+--- 2025,2027 ----
