@@ -31,6 +31,7 @@
     SUBDIR += dia
     SUBDIR += diacanvas
     SUBDIR += divx4linux
+    SUBDIR += divx4linux4
     SUBDIR += divxcalc
     SUBDIR += djvulibre
     SUBDIR += dore
