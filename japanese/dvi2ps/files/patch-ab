@@ -10,7 +10,7 @@
 + 
 + # change resolution according to your site.
 + define	RESOLUTION	300
-+ resolution		300
++ resolution		$RESOLUTION
 + 
 + define	f		/usr/local/lib/fonts
 + define	af		/usr/local/share/tex/jfonts/jfms

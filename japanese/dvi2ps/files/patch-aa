@@ -1,61 +1,60 @@
-*** Makefile.orig	Fri Oct  4 12:01:36 1996
---- Makefile	Fri Nov  8 21:35:39 1996
+*** Makefile.orig	Thu Dec 26 19:37:51 1996
+--- Makefile	Thu Dec 26 19:39:54 1996
 ***************
-*** 1,11 ****
-  # The following file and directory specifications may need changing at
+*** 2,8 ****
   # your site:
   #
+  # BINAREA and DVI2LIB are relative to PREFIX
+! PREFIX=/usr/local
   # where dvi2ps is installed
-! BINAREA=/usr/local/bin
+  BINAREA=${PREFIX}/bin
   #
-  # directory for dvi2ps: where the auxiliary files are installed
-! DVI2LIB=/usr/local/lib/dvi2ps
-  #
-  # name of default fontdesc file in your site
-  FONTDESC=fontdesc
---- 1,12 ----
-  # The following file and directory specifications may need changing at
+--- 2,8 ----
   # your site:
   #
-+ PREFIX?=	/usr/local
+  # BINAREA and DVI2LIB are relative to PREFIX
+! PREFIX?=/usr/local
   # where dvi2ps is installed
-! BINAREA=${PREFIX}/bin
+  BINAREA=${PREFIX}/bin
   #
-  # directory for dvi2ps: where the auxiliary files are installed
-! DVI2LIB=${PREFIX}/lib/dvi2ps
-  #
-  # name of default fontdesc file in your site
-  FONTDESC=fontdesc
 ***************
-*** 36,50 ****
-  # optional font formats
-  FONTF = -DVFLIB
-  # VFlib library (comment out next line if -DFVLIB is not included)
-! VFLIB = VFlib.a
+*** 42,60 ****
+  # 1) libVFlib.a and VF.h are installed in the standard directory
+  #VFLIB = -lVFlib
+  # 2) libVFlib.a and VF.h are installed in the non-standard directory
+! #VFLIB = -L${PREFIX}/lib -lVFlib
+! #VFLIBINC = -I${PREFIX}/include
+  # 3) use VFlib.a and VF.h in the source directory of VFlib
+! VFLIBSRCDIR = ../VFlib-2.22/src
+! VFLIB = ${VFLIBSRCDIR}/VFlib.a
+! VFLIBINC = -I${VFLIBSRCDIR}
   
   #
   CC=cc
   #
 ! CCFLAGS = -g
-  #CCFLAGS = -O		# SUN etc ...
-  #CCFLAGS = -O -traditional -DPOSIX	# 386bsd (gcc 1.X)
+  #CCFLAGS = -O		# SUNOS 4.X etc ...
 ! #CCFLAGS = -O -DPOSIX	# NetBSD FreeBSD (gcc 2.X), Linux
-  #CCFLAGS = -O -bsd	# NeXT
   #CCFLAGS = -O -DMSDOS -DPOSIX	# DJGCC (gcc 2.X)
-  #CCFLAGS = -O -DSYSV	# SysV
---- 37,51 ----
-  # optional font formats
-  FONTF = -DVFLIB
-  # VFlib library (comment out next line if -DFVLIB is not included)
+  #CCFLAGS = -O -DANSI -DPOSIX -DSYSV -DSYSVIO	# Solaris 2.X (SUNWpro/bin/cc)
+  #CCFLAGS = -O -DSYSVIO		# Solaris 2.X (/usr/ucb/cc -- not recommended)
+--- 42,60 ----
+  # 1) libVFlib.a and VF.h are installed in the standard directory
+  #VFLIB = -lVFlib
+  # 2) libVFlib.a and VF.h are installed in the non-standard directory
 ! VFLIB = -L${PREFIX}/lib -lVFlib
+! VFLIBINC = -I${PREFIX}/include
+  # 3) use VFlib.a and VF.h in the source directory of VFlib
+! #VFLIBSRCDIR = ../VFlib-2.22/src
+! #VFLIB = ${VFLIBSRCDIR}/VFlib.a
+! #VFLIBINC = -I${VFLIBSRCDIR}
   
   #
   CC=cc
   #
 ! #CCFLAGS = -g
-  #CCFLAGS = -O		# SUN etc ...
-  #CCFLAGS = -O -traditional -DPOSIX	# 386bsd (gcc 1.X)
+  #CCFLAGS = -O		# SUNOS 4.X etc ...
 ! CCFLAGS = -O -DPOSIX -m486	# NetBSD FreeBSD (gcc 2.X), Linux
-  #CCFLAGS = -O -bsd	# NeXT
   #CCFLAGS = -O -DMSDOS -DPOSIX	# DJGCC (gcc 2.X)
-  #CCFLAGS = -O -DSYSV	# SysV
+  #CCFLAGS = -O -DANSI -DPOSIX -DSYSV -DSYSVIO	# Solaris 2.X (SUNWpro/bin/cc)
+  #CCFLAGS = -O -DSYSVIO		# Solaris 2.X (/usr/ucb/cc -- not recommended)
