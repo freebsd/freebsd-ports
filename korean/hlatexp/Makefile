@@ -20,6 +20,7 @@ COMMENT=	Hangul (Korean) LaTeX2e system
 RUN_DEPENDS=	virtex:${PORTSDIR}/print/teTeX
 
 NO_BUILD=	YES
+USE_PERL=	YES
 
 TEXMF=		${PREFIX}/share/texmf
 TEXMFCNF=	${TEXMF}/web2c/texmf.cnf

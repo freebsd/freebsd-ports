@@ -16,6 +16,7 @@ COMMENT=	GNOME compliant browser of SMB shares
 
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack gnomelibs
+USE_PERL=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"

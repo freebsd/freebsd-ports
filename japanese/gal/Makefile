@@ -12,6 +12,8 @@ MASTERDIR=	${.CURDIR}/../../x11-toolkits/gal
 
 MAINTAINER=	ports@FreeBSD.org
 
+USE_PERL=	yes
+
 post-patch:
 	perl -pi -e  's/gdk_font_load(\s)\(.*\)/gdk_fontset_load$$1\("-misc-fixed-medium-r-normal--14-*-*-*-*-*-*-*"\)/' \
 		`${FIND} ${WRKSRC} -name "*.c" -print`

@@ -22,6 +22,7 @@ RUN_DEPENDS=	weblint:${PORTSDIR}/www/weblint
 
 USE_GMAKE=	yes
 USE_BZIP2=	yes
+USE_PERL=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	imlib
 GNU_CONFIGURE=	yes

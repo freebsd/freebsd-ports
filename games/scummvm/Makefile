@@ -20,6 +20,7 @@ LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12 \
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
+USE_PERL=	yes
 USE_REINPLACE=	yes
 
 MAN6=		scummvm.6

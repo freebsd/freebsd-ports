@@ -16,6 +16,7 @@ COMMENT=	Configurator for the Blackbox window manager
 
 USE_X_PREFIX=	yes
 USE_LIBTOOL=	yes
+USE_PERL=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=
 CONFIGURE_ARGS+=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}

@@ -30,6 +30,7 @@ EXTRACT_CMD=	${CAT}
 EXTRACT_BEFORE_ARGS=	-u
 NO_BUILD=	yes
 DIST_SUBDIR=	staroffice5
+USE_PERL=	yes
 WRKSRC=		${WRKDIR}/so51inst
 
 .include <bsd.port.pre.mk>

@@ -15,6 +15,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A puzzle of pushing objects to the goals
 
 USE_IMAKE=	yes
+USE_PERL=	yes
 USE_XPM=	yes
 WRKSRC=		${WRKDIR}/xsokoban
 ALL_TARGET=	xsokoban

@@ -205,6 +205,7 @@ DOCDIR=	doc
 .endif
 
 NO_MTREE=	yes
+USE_PERL=	yes
 
 .if !defined(_PREMKINCLUDED)
 .include <bsd.port.pre.mk>

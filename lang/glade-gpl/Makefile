@@ -20,6 +20,7 @@ BUILD_DEPENDS=	adagcc:${PORTSDIR}/lang/gnat
 USE_AUTOMAKE_VER=14
 CONFIGURE_ENV=	ADA=adagcc
 USE_GMAKE=	yes
+USE_PERL=	yes
 
 pre-configure:
 	${PERL} -pi -e "s@aclocal\)@${ACLOCAL})@g;\

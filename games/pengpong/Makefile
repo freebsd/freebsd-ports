@@ -20,6 +20,7 @@ SDL_CONFIG=	${LOCALBASE}/bin/sdl11-config
 
 NO_WRKSUBDIR=	yes
 MAKE_ENV=	SDL_CONFIG="${SDL_CONFIG}"
+USE_PERL=	yes
 
 DATAFILES=	24P_Copperplate_Blue.png ball.tga logo.jpg \
 		paddle.tga red.png

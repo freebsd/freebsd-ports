@@ -36,6 +36,7 @@ RUN_DEPENDS=	wish8.3:${PORTSDIR}/x11-toolkits/tk83 \
 		tclsh8.3:${PORTSDIR}/lang/tcl83
 .endif
 
+USE_PERL=	yes
 USE_XPM=	yes
 USE_GMAKE=	yes
 USE_AUTOCONF=	yes

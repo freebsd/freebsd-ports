@@ -23,6 +23,7 @@ COMMENT=	A C++ X GUI toolkit
 LATEST_LINK=	qt1
 USE_GCC=	2.95
 USE_GMAKE=	yes
+USE_PERL=	yes
 USE_X_PREFIX=	yes
 .if defined(MAKE_JOBS)
 MAKE_ARGS+=	MAKE="${GMAKE} -j${MAKE_JOBS}"

@@ -17,6 +17,7 @@ DIST_SUBDIR=	${PORTNAME}
 
 COMMENT=	Popular Half-Life mod server administration tool for Linux
 
+USE_PERL=	yes
 WRKSRC=		${WRKDIR}/Adminmod
 
 slaveport-post-extract:

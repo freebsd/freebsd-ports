@@ -25,6 +25,7 @@ DISTFILES2=	doom1v18.wad.gz
 
 ONLY_FOR_ARCHS=	i386
 
+USE_PERL=	yes
 USE_XLIB=	yes
 USE_ZIP=	yes
 NO_WRKSUBDIR=	yes

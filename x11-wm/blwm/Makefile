@@ -18,6 +18,7 @@ RUN_DEPENDS=	xsetbg:${PORTSDIR}/x11/xloadimage
 
 USE_AUTOCONF=	yes
 USE_AUTOMAKE=	yes
+USE_PERL=	yes
 GNU_CONFIGURE=	yes
 MAN1=		blwm.1x
 PLIST=		${WRKDIR}/pkg-plist

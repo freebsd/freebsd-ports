@@ -16,6 +16,7 @@ MAINTAINER=	jedgar@FreeBSD.org
 COMMENT=	Symbolic calculator for GNOME
 
 USE_X_PREFIX=	yes
+USE_PERL=	yes
 USE_GMAKE=	yes
 USE_GNOME=	yes
 GNU_CONFIGURE=	yes

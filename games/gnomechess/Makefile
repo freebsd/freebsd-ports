@@ -21,6 +21,7 @@ RUN_DEPENDS=	crafty:${PORTSDIR}/games/crafty
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	yes
+USE_PERL=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"

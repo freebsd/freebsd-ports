@@ -22,6 +22,7 @@ MAKE_ENV=	SDL_CONFIG=${SDL_CONFIG}
 WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
+USE_PERL=	yes
 
 post-patch:
 	@${PERL} -pi -e "s///" ${WRKSRC}/readme

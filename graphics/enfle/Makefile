@@ -26,6 +26,7 @@ LIB_DEPENDS+=	bz2.1:${PORTSDIR}/archivers/bzip2
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_LIBTOOL=	yes
+USE_PERL=	yes
 CONFIGURE_ARGS=	--enable-all-plugins \
 		--enable-plugins-dir \
 		--enable-loader=ungif \

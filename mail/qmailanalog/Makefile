@@ -40,6 +40,7 @@ MYSUBDIR?=
 QMPREFIX?=	${PREFIX}/${MYSUBDIR}
 
 NO_MTREE=	yes
+USE_PERL=	yes
 
 post-patch:
 	@perl -pi.bak -e "s|.usr.local.qmailanalog|${QMPREFIX}|" ${WRKSRC}/conf-home
