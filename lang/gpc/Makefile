@@ -7,7 +7,7 @@
 PORTNAME=	gpc
 PORTVERSION=	2.0
 CATEGORIES=	lang
-MASTER_SITES=	ftp://agnes.dida.physik.uni-essen.de/gnu-pascal/current/
+MASTER_SITES=	ftp://agnes.dida.physik.uni-essen.de/gnu-pascal/beta/
 DISTNAME=	gpc-19990118
 
 MAINTAINER=	antonz@library.ntu-kpi.kiev.ua
