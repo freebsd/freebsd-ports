@@ -7,11 +7,15 @@
 #
 
 DISTNAME=	mpg123-0.59r
-CATEGORIES=	audio
+CATEGORIES=	audio ipv6
 MASTER_SITES=	http://www.mpg123.de/mpg123/ \
 		http://www-ti.informatik.uni-tuebingen.de/~hippm/mpg123/ \
 		ftp://ftp.tu-clausthal.de/pub/unix/audio/mpg123/ \
 		http://ftp.tu-clausthal.de/pub/unix/audio/mpg123/
+
+PATCH_SITES=	ftp://ftp.kame.net/pub/kame/misc/
+PATCHFILES=	mpg123-059r-v6-20000111.diff.gz
+PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	jkoshy@freebsd.org
 
@@ -24,6 +28,10 @@ ONLY_FOR_ARCHS=	i386
 MAN1=		mpg123.1
 
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 400014
+MAKE_ENV+=	USE_INET6=yes
+.endif
 
 .if defined(OPT_ESOUND)
 ALL_TARGET=	freebsd-esd
