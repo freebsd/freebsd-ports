@@ -8,6 +8,8 @@
 pb=/var/portbuild
 . ${pb}/portbuild.conf
 
+. ${pb}/scripts/buildenv
+
 # wait 4 hours maximum
 timeout=14400
 
@@ -15,10 +17,12 @@ branch=$1
 command=$2
 shift 2
 
+buildenv ${pb} ${branch}
+
 # ssh -x doesn't work on some machines
 unset DISPLAY
 
-pkgname=$(basename $1 .tgz)
+pkgname=$(basename $1 ${PKGSUFFIX})
 buildroot=$(dirname $(dirname $0))
 
 if grep -qxF $pkgname ${buildroot}/${branch}/duds; then
