@@ -1,6 +1,5 @@
 #!/bin/sh
 #
-cd $WRKSRC
 #
 # If this is FreeBSD 2.2 or later, this will work.  Older FreeBSD versions
 # will set CFLAGS to "".  Life's a bitch.
@@ -11,6 +10,7 @@ if [ X"$CFLAGS" = X ] ; then
 	CFLAGS="-O2 -fno-strength-reduce"
 fi
 
+cd $WRKSRC
 echo "Setting CFLAGS to \"$CFLAGS\""
 sed -e "s/%CFLAGS%/${CFLAGS}/" makefile >makefile.new
 mv  -f makefile makefile.orig2
