@@ -6,8 +6,7 @@ is required for the users, and nothing more.
 
 Nstreams can parse the tcpdump output, or the files generated with the -w
 option of tcpdump. It can also directly sniff the data that occurs on the
-network (the use of tcpdump is however recommanded as long as nstreams is in
-version 0.99.x).
+network.
 
 This product was designed by HSC and coded by Renaud Deraison
 (deraison@cvs.nessus.org), author of the Nessus software (www.nessus.org). It
