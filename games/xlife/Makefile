@@ -3,7 +3,7 @@
 # Date created:         15 March 1995
 # Whom:                 asami
 #
-# $Id: Makefile,v 1.7 1997/09/09 02:52:07 asami Exp $
+# $Id: Makefile,v 1.8 1997/12/25 22:29:21 asami Exp $
 #
 
 DISTNAME=       xlife
@@ -17,6 +17,7 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	ports@FreeBSD.ORG
 
 USE_IMAKE=      yes
+MAN1=		xlife.1
 
 pre-install:
 	@(cd ${WRKSRC}; make install.patterns)
