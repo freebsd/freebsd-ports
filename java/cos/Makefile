@@ -6,15 +6,14 @@
 #
 
 PORTNAME=	cos
-PORTVERSION=	1.0
+PORTVERSION=	12Jun2000
 CATEGORIES=	java
 MASTER_SITES=	http://www.servlets.com/resources/com.oreilly.servlet/
-DISTNAME=	cos
 
 MAINTAINER=	noway@nohow.demon.co.uk
 
-RUN_DEPENDS=	${PREFIX}/jdk${JDK_VERSION}/bin/java:${PORTSDIR}/java/jdk \
-		${PREFIX}/bin/servletrunner:${PORTSDIR}/java/jsdk
+RUN_DEPENDS=	${LOCALBASE}/jdk${JDK_VERSION}/bin/java:${PORTSDIR}/java/jdk \
+		${LOCALBASE}/bin/servletrunner:${PORTSDIR}/java/jsdk
 
 USE_ZIP=	yes
 NO_WRKSUBDIR=	yes
