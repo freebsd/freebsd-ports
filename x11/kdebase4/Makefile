@@ -3,7 +3,7 @@
 # Date created:        28 October 1997
 # Whom:                Stefan Eßer <se@freebsd.org>
 #
-# $Id: Makefile,v 1.1.1.1 1997/11/01 14:28:20 se Exp $
+# $Id: Makefile,v 1.2 1997/11/03 00:25:42 se Exp $
 #
 
 DISTNAME=	kdebase-Beta1-3
@@ -29,8 +29,7 @@ LIB_DEPENDS=	qt\\.1\\.3[0-9]:${PORTSDIR}/x11/qt \
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	"--x-inc=$(X11BASE)/include -I$(PREFIX)/include -I$(PREFIX)/include/giflib" \
 		"--x-lib=$(X11BASE)/lib -L$(PREFIX)/lib" \
-		"--prefix=$(PREFIX)" \
-		"--datadir=$(PREFIX)/share/kde"
+		"--prefix=$(PREFIX)"
 
 WRKSRC=		${WRKDIR}/kdebase
 
