@@ -42,6 +42,9 @@ share/gaim/pixmaps/permadd.xpm
 share/gaim/pixmaps/permdel.xpm
 share/gaim/pixmaps/signing_on.xpm
 share/gaim/pixmaps/small.xpm
+share/gaim/pixmaps/smile_happy.xpm
+share/gaim/pixmaps/smile_sad.xpm
+share/gaim/pixmaps/smile_wink.xpm
 share/gaim/pixmaps/speaker.xpm
 share/gaim/pixmaps/strike.xpm
 share/gaim/pixmaps/underline.xpm
