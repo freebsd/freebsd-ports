@@ -7326,6 +7326,7 @@ povchem		ports/biology/povchem
 povray		ports/graphics/povray
 povray31	ports/graphics/povray31
 powerdns	ports/dns/powerdns
+powermanga	ports/games/powermanga
 powerpak	ports/games/powerpak
 powerpc-rtems-binutils	ports/devel/powerpc-rtems-binutils
 powerpc-rtems-g77	ports/devel/powerpc-rtems-g77
