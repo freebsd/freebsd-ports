@@ -33,6 +33,24 @@ share/gnome/help/bug-buddy/C/stylesheet-images/warning.png
 share/gnome/help/bug-buddy/C/submit-report.html
 share/gnome/help/bug-buddy/C/summary.html
 share/gnome/help/bug-buddy/C/system-config.html
+share/gnome/help/bug-buddy/it/authors.html
+share/gnome/help/bug-buddy/it/bugs.html
+share/gnome/help/bug-buddy/it/collect-debug-info.html
+share/gnome/help/bug-buddy/it/contact-info.html
+share/gnome/help/bug-buddy/it/debug-info.html
+share/gnome/help/bug-buddy/it/description.html
+share/gnome/help/bug-buddy/it/docbook.css
+share/gnome/help/bug-buddy/it/index.html
+share/gnome/help/bug-buddy/it/ln13.html
+share/gnome/help/bug-buddy/it/report-info.html
+share/gnome/help/bug-buddy/it/stylesheet-images/caution.png
+share/gnome/help/bug-buddy/it/stylesheet-images/important.png
+share/gnome/help/bug-buddy/it/stylesheet-images/note.png
+share/gnome/help/bug-buddy/it/stylesheet-images/tip.png
+share/gnome/help/bug-buddy/it/stylesheet-images/warning.png
+share/gnome/help/bug-buddy/it/submit-report.html
+share/gnome/help/bug-buddy/it/summary.html
+share/gnome/help/bug-buddy/it/system-config.html
 share/gnome/mime-info/bug-buddy.keys
 share/gnome/mime-info/bug-buddy.mime
 share/gnome/pixmaps/bug-buddy.png
@@ -55,12 +73,17 @@ share/locale/ko/LC_MESSAGES/bug-buddy.mo
 share/locale/nl/LC_MESSAGES/bug-buddy.mo
 share/locale/no/LC_MESSAGES/bug-buddy.mo
 share/locale/pl/LC_MESSAGES/bug-buddy.mo
+share/locale/pt_BR/LC_MESSAGES/bug-buddy.mo
 share/locale/ro/LC_MESSAGES/bug-buddy.mo
 share/locale/ru/LC_MESSAGES/bug-buddy.mo
+share/locale/sk/LC_MESSAGES/bug-buddy.mo
 share/locale/sl/LC_MESSAGES/bug-buddy.mo
 share/locale/sv/LC_MESSAGES/bug-buddy.mo
 share/locale/tr/LC_MESSAGES/bug-buddy.mo
 share/locale/uk/LC_MESSAGES/bug-buddy.mo
+@dirrm share/gnome/help/bug-buddy/it/stylesheet-images
+@dirrm share/gnome/help/bug-buddy/it/figures
+@dirrm share/gnome/help/bug-buddy/it
 @dirrm share/gnome/help/bug-buddy/C/stylesheet-images
 @dirrm share/gnome/help/bug-buddy/C/figures
 @dirrm share/gnome/help/bug-buddy/C
