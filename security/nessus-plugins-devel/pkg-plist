@@ -305,6 +305,11 @@ lib/nessus/plugins/roxen_counter.nasl
 lib/nessus/plugins/w3msql_overflow.nasl
 lib/nessus/plugins/winsatan.nasl
 lib/nessus/plugins/yahoo_dos.nasl
+lib/nessus/plugins/altavista_search.nasl
+lib/nessus/plugins/homefree.nasl
+lib/nessus/plugins/plusmail.nasl
+lib/nessus/plugins/ramcrash.nasl
+lib/nessus/plugins/website_pro.nasl
 lib/nessus/plugins_factory/Makefile
 lib/nessus/plugins_factory/libtool
 lib/nessus/plugins_factory/nessus.tmpl
