@@ -1,0 +1,59 @@
+%%SITE_PERL%%/Alzabo.pm
+%%SITE_PERL%%/Alzabo/BackCompat.pm
+%%SITE_PERL%%/Alzabo/ChangeTracker.pm
+%%SITE_PERL%%/Alzabo/Column.pm
+%%SITE_PERL%%/Alzabo/ColumnDefinition.pm
+%%SITE_PERL%%/Alzabo/Config.pm
+%%SITE_PERL%%/Alzabo/Create.pm
+%%SITE_PERL%%/Alzabo/Create/Column.pm
+%%SITE_PERL%%/Alzabo/Create/ColumnDefinition.pm
+%%SITE_PERL%%/Alzabo/Create/ForeignKey.pm
+%%SITE_PERL%%/Alzabo/Create/Index.pm
+%%SITE_PERL%%/Alzabo/Create/Schema.pm
+%%SITE_PERL%%/Alzabo/Create/Table.pm
+%%SITE_PERL%%/Alzabo/Debug.pm
+%%SITE_PERL%%/Alzabo/Design.pod
+%%SITE_PERL%%/Alzabo/Driver.pm
+%%SITE_PERL%%/Alzabo/Driver/MySQL.pm
+%%SITE_PERL%%/Alzabo/Driver/PostgreSQL.pm
+%%SITE_PERL%%/Alzabo/Exceptions.pm
+%%SITE_PERL%%/Alzabo/FAQ.pod
+%%SITE_PERL%%/Alzabo/ForeignKey.pm
+%%SITE_PERL%%/Alzabo/Index.pm
+%%SITE_PERL%%/Alzabo/Intro.pod
+%%SITE_PERL%%/Alzabo/MethodMaker.pm
+%%SITE_PERL%%/Alzabo/MySQL.pod
+%%SITE_PERL%%/Alzabo/PostgreSQL.pod
+%%SITE_PERL%%/Alzabo/QuickRef.pod
+%%SITE_PERL%%/Alzabo/RDBMSRules.pm
+%%SITE_PERL%%/Alzabo/RDBMSRules/MySQL.pm
+%%SITE_PERL%%/Alzabo/RDBMSRules/PostgreSQL.pm
+%%SITE_PERL%%/Alzabo/Runtime.pm
+%%SITE_PERL%%/Alzabo/Runtime/Column.pm
+%%SITE_PERL%%/Alzabo/Runtime/ColumnDefinition.pm
+%%SITE_PERL%%/Alzabo/Runtime/Cursor.pm
+%%SITE_PERL%%/Alzabo/Runtime/ForeignKey.pm
+%%SITE_PERL%%/Alzabo/Runtime/Index.pm
+%%SITE_PERL%%/Alzabo/Runtime/InsertHandle.pm
+%%SITE_PERL%%/Alzabo/Runtime/JoinCursor.pm
+%%SITE_PERL%%/Alzabo/Runtime/Row.pm
+%%SITE_PERL%%/Alzabo/Runtime/RowCursor.pm
+%%SITE_PERL%%/Alzabo/Runtime/RowState/Deleted.pm
+%%SITE_PERL%%/Alzabo/Runtime/RowState/InCache.pm
+%%SITE_PERL%%/Alzabo/Runtime/RowState/Live.pm
+%%SITE_PERL%%/Alzabo/Runtime/RowState/Potential.pm
+%%SITE_PERL%%/Alzabo/Runtime/Schema.pm
+%%SITE_PERL%%/Alzabo/Runtime/Table.pm
+%%SITE_PERL%%/Alzabo/Runtime/UniqueRowCache.pm
+%%SITE_PERL%%/Alzabo/SQLMaker.pm
+%%SITE_PERL%%/Alzabo/SQLMaker/MySQL.pm
+%%SITE_PERL%%/Alzabo/SQLMaker/PostgreSQL.pm
+%%SITE_PERL%%/Alzabo/Schema.pm
+%%SITE_PERL%%/Alzabo/Table.pm
+@dirrm %%SITE_PERL%%/Alzabo/SQLMaker
+@dirrm %%SITE_PERL%%/Alzabo/Runtime/RowState
+@dirrm %%SITE_PERL%%/Alzabo/Runtime
+@dirrm %%SITE_PERL%%/Alzabo/RDBMSRules
+@dirrm %%SITE_PERL%%/Alzabo/Driver
+@dirrm %%SITE_PERL%%/Alzabo/Create
+@dirrm %%SITE_PERL%%/Alzabo
