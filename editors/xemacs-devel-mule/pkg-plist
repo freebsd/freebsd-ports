@@ -67,6 +67,7 @@ lib/xemacs-%%XEMACS_VER%%/etc/TUTORIAL.th
 lib/xemacs-%%XEMACS_VER%%/etc/VEGETABLES
 lib/xemacs-%%XEMACS_VER%%/etc/XKeysymDB
 lib/xemacs-%%XEMACS_VER%%/etc/cbx.png
+lib/xemacs-%%XEMACS_VER%%/etc/configure-2.13
 lib/xemacs-%%XEMACS_VER%%/etc/ctags.1
 lib/xemacs-%%XEMACS_VER%%/etc/custom/check0.xpm
 lib/xemacs-%%XEMACS_VER%%/etc/custom/check1.xpm
@@ -899,7 +900,6 @@ lib/xemacs-%%XEMACS_VER%%/info/lispref.info-6
 lib/xemacs-%%XEMACS_VER%%/info/lispref.info-7
 lib/xemacs-%%XEMACS_VER%%/info/lispref.info-8
 lib/xemacs-%%XEMACS_VER%%/info/lispref.info-9
-lib/xemacs-%%XEMACS_VER%%/info/lispref.info-10
 lib/xemacs-%%XEMACS_VER%%/info/new-users-guide.info
 lib/xemacs-%%XEMACS_VER%%/info/standards.info
 lib/xemacs-%%XEMACS_VER%%/info/term.info
