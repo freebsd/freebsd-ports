@@ -1,0 +1,17 @@
+KFTPGrabber is a graphical ftp client for KDE.
+
+Features:
+  o multiple FTP sessions (tabs) 
+  o transfer queue 
+  o TLS/SSL support for encrypted connections 
+  o partial X509 certificate support for authentication 
+  o FXP transfer support (site-to-site) 
+  o OTP (one time password) support - s/key, md5, rmd160, sha1 
+  o drag and drop support 
+  o site bookmarking 
+  o encrypted bookmark support (password can be saved to KWallet) 
+  o distributed FTP support (PRET) 
+  o SSCN and CPSV support 
+  o skiplist 
+
+WWW: http://kftpgrabber.sourceforge.net/
