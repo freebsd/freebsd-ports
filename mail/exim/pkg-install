@@ -12,10 +12,11 @@
 #
 
 PKG_PREFIX=${PKG_PREFIX:=%%PREFIX%%}
+PKG_DESTDIR=${PKG_DESTDIR:=}
 
 user=%%EXIM_USER%%
 group=%%EXIM_GROUP%%
-logdir=%%LOGDIR%%
+logdir=$PKG_DESTDIR%%LOGDIR%%
 
 if [ "$2" = "PRE-INSTALL" ]; then
 	if ! /usr/bin/id ${user} > /dev/null; then
@@ -31,7 +32,7 @@ if [ "$2" = "PRE-INSTALL" ]; then
 fi
 
 if [ "$2" = "POST-INSTALL" ]; then
-	cf=$PKG_PREFIX/etc/exim/configure
+	cf=$PKG_DESTDIR$PKG_PREFIX/etc/exim/configure
 	if [ -e $cf ]; then
 		if /usr/bin/grep -q '^[^#]*hostlist.*relay_from_hosts.*=.*127.0.0.1' $cf
 		    then
@@ -49,7 +50,7 @@ if [ "$2" = "POST-INSTALL" ]; then
 			echo "============================================================"
 		fi
 	fi
-	if ! /usr/bin/grep -qs "^exim_enable" /etc/rc.conf
+	if ! /usr/bin/grep -qs "^exim_enable" $PKG_DESTDIR/etc/rc.conf
 	    then
 		echo
 		echo "Don't forget to add 'exim_enable=\"YES\"' to rc.conf(5)"

@@ -6,6 +6,18 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20040717:
+  AFFECTS: users of mail/exim on FreeBSD 5.x
+
+  The default location of the startup script has been changed to
+  ${PREFIX}/etc/rc.d. When you depend on the previous behaviour,
+  build the port with WITH_RCORDER=yes.
+
+  Setting WITH_OPENLDAP_VER and WITH_MYSQL_VER do not automatically
+  imply the corresponding WITH_ varibale. The use of these options
+  is discouraged, use the global settings (WANT_OPENLDAP_VER and
+  DEFAULT_MYSQL_VER) to set system wide defaults.
+
 20040709:
   AFFECTS: users of mail/sender-milter
   AUTHOR: vs@FreeBSD.org
