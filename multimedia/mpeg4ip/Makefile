@@ -92,18 +92,17 @@ post-extract:
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 502102
-BROKEN=		"Does not compile"
-.endif
-
 post-patch:
 	@${FIND} ${WRKSRC} -type f -name "*.[ch]" -or -name "*.cpp" | ${XARGS} -n 10 \
 		${REINPLACE_CMD} -e \
-		's|stdint\.h|inttypes.h|;s|malloc\.h|stdlib.h|'
+		's|<stdint.h>|<inttypes.h>|; \
+		s|<malloc.h>|<stdlib.h>|; \
+		s|<strstream.h>|<iostream>|'
 # replacing distfile's libs with ports' versions
 # CFLAGS safeness
 	@${REINPLACE_CMD} -E -e 's|lib/SDL/sdl-config|${SDL_CONFIG}|; \
-		s|^(SDL_LIBS=).+$$|\1"`${SDL_CONFIG} --libs`"|' \
+		s|^(SDL_LIBS=).+$$|\1"`${SDL_CONFIG} --libs`"|; \
+		s|-Wmissing-declarations||' \
 		${CONFIGURE_WRKSRC}/configure
 	@${FIND} ${WRKSRC} -type f -name "Makefile.in" | ${XARGS} \
 		-n 10 ${REINPLACE_CMD} -E -e \
