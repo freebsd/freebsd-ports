@@ -50,6 +50,7 @@ share/bzflag/l10n/bzflag_nl.po
 share/bzflag/l10n/bzflag_pt.po
 share/bzflag/l10n/bzflag_sv.po
 share/bzflag/l10n/bzflag_xx.po
+share/bzflag/l10n/ISO-639-2_values_8bits.txt
 share/bzflag/land.wav
 share/bzflag/laser.wav
 share/bzflag/lock.wav
@@ -61,6 +62,9 @@ share/bzflag/missile.wav
 share/bzflag/mountain1.png
 share/bzflag/mountain2.png
 share/bzflag/mountain3.png
+share/bzflag/mountain4.png
+share/bzflag/mountain5.png
+share/bzflag/mountain6.png
 share/bzflag/phantom.wav
 share/bzflag/pop.wav
 share/bzflag/purple_basetop.png
