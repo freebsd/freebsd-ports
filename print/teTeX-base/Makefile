@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	systems/unix/teTeX/2.0/distrib/
 DISTNAME=	${TETEX_SRC}
 DIST_SUBDIR=	teTeX
 
-MAINTAINER=	demon@FreeBSD.org
+MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Thomas Esser's distribution of TeX & friends (binaries)
 
 BUILD_DEPENDS=	${TEXMF_TREE}/LICENSE.texmf:${PORTSDIR}/print/teTeX-texmf \
@@ -95,8 +95,8 @@ FLAVOR+=	xdvik
 PLIST_SUB+=	XDVIK=""
 MAN1+=		xdvi.1 t1mapper.1 xdvizilla.1
 CONFLICTS+=	xdvi* ja-xdvi*
-.else
 USE_XLIB=	yes
+.else
 CONFIGURE_ARGS+=--without-xdvik \
 		--without-oxdvik
 PLIST_SUB+=	XDVIK="@comment "
