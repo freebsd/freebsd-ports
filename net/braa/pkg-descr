@@ -7,4 +7,4 @@ it's good to have a complete SNMP package including
 there is no ASN.1 parser in Braa, and all the SNMP OIDs need to
 be specified numerically.
 
-WWW:  http://s-tech.elsat.net.pl/braa/
+WWW: http://s-tech.elsat.net.pl/braa/

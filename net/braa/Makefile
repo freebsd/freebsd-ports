@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	braa
-PORTVERSION=	0.41
-PORTREVISION=	1
+PORTVERSION=	0.42
 CATEGORIES=	net
 MASTER_SITES=	http://s-tech.elsat.net.pl/braa/
 
@@ -16,20 +15,20 @@ COMMENT=	Tool for making SNMP queries
 
 LIB_DEPENDS=	netsnmp.6:${PORTSDIR}/net/net-snmp
 
+USE_GMAKE=	yes
 USE_REINPLACE=	yes
+LDFLAGS+=	-lcompat
 
 post-patch:
 .for file in Makefile
 	@${REINPLACE_CMD} -e \
 		's|CFLAGS =|CFLAGS?=${CFLAGS}|g ; \
 		s|LDFLAGS =|LDFLAGS?=${LDFLAGS}|g ; \
-		s|gcc|${CC}|g ; \
 		s|strip $$(OUT)||g' ${WRKSRC}/${file}
 .endfor
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} \
-		${PREFIX}/bin/
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
 
 post-install:
 .for i in ${PORTNAME}
