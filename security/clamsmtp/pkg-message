@@ -1,0 +1,17 @@
+Remember to modify /etc/rc.conf, change entry
+
+clamsmtpd_smtp="mysmtp.com:25"
+
+to your smtp server setting, and set
+
+clamsmtpd_enable="YES"
+
+to enable clamsmtpd.
+
+To work with postfix, put following lines in Postfix' main.cf:
+
+content_filter = scan:127.0.0.1:10026
+receive_override_options = no_address_mappings
+
+And modify master.cf to active it. See also
+http://memberwebs.com/nielsen/software/clamsmtp/postfix.html

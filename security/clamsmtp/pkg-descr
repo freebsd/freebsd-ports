@@ -1,0 +1,12 @@
+ClamSMTP is an SMTP filter that allows you to check for viruses using 
+the ClamAV anti-virus software. It accepts SMTP connections and forwards 
+the SMTP commands and responses to another SMTP server. The 'DATA' email 
+body is intercepted and scanned before forwarding.
+
+ClamSMTP aims to be lightweight, reliable, and simple rather than have a 
+myriad of options. It's written in C without major dependencies. If you 
+need more options then you could use something big like AMaViS which is 
+written in PERL and can do almost anything.
+
+Author:	Nielsen <nielsen at memberwebs.com>
+WWW:	http://memberwebs.com/nielsen/software/clamsmtp/
