@@ -3,11 +3,11 @@
 # Date created:		18 Mar 1996
 # Whom:			John Polstra <jdp@polstra.com>
 #
-# $Id: Makefile,v 1.2 1996/03/22 15:46:41 jdp Exp $
+# $Id: Makefile,v 1.3 1996/09/10 05:23:49 jdp Exp $
 #
 
 DISTNAME=	modula-3-3.5.3
-PKGNAME=	modula-3-3.5.3.1
+PKGNAME=	modula-3-3.5.3.2
 CATEGORIES+=	lang
 MASTER_SITES=	ftp://gatekeeper.dec.com/pub/DEC/Modula-3/release-3.5.3/
 DISTFILES=	boot-FreeBSD2.tar.gz m3cc.tar.gz m3.tar.gz
@@ -59,6 +59,10 @@ do-build:
 	    export PATH; \
 	    umask 022; \
 	    m3build
+
+pre-install:
+	@echo "Checking for conflicting shared libraries"
+	@PREFIX=${PREFIX} /bin/sh ${PKGDIR}/INSTALL ${PKGNAME} PRE-INSTALL
 
 do-install:
 	@echo "Setting owner and group of installed files"

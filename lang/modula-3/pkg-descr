@@ -41,8 +41,4 @@ the graphics packages, but not the (huge) separate projects such
 as netobj, zeus, obliq, and visual obliq.  You can change what is built
 by doing "make configure" and then editing "work/m3/src/m3makefile".
 
-NOTE: Despite appearances to the contrary, the shared library
-version numbers are not related to the version number of the DEC
-SRC release.
-
 -- John Polstra <jdp@polstra.com>
