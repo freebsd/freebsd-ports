@@ -2,6 +2,7 @@
 #
 
     SUBDIR += collections
+    SUBDIR += cos
     SUBDIR += guavac
     SUBDIR += infobus
     SUBDIR += jaf

@@ -1,0 +1,12 @@
+The com.oreilly.servlet package contains a set of useful utility classes
+for servlet developers. Included are classes to help servlets parse
+parameters, handle multipart requests (file uploads), generate multipart
+responses (server push), negotiate locales for internationalization,
+return files, manage socket connections, and act as RMI servers, among
+other things. There's even a class to help applets communicate with
+servlets. The package was developed by Jason Hunter for his book "Java
+Servlet Programming" published by O'Reilly.  See:
+
+WWW: http://www.servlets.com/resources/com.oreilly.servlet/index.html
+
+For more details.

@@ -1,0 +1,49 @@
+share/java/classes/cos.jar
+share/java/cos/readme.html
+share/java/cos/license.html
+share/java/cos/doc/AllNames.html
+share/java/cos/doc/Package-com.oreilly.servlet.html
+share/java/cos/doc/com.oreilly.servlet.CacheHttpServlet.html
+share/java/cos/doc/com.oreilly.servlet.CacheHttpServletResponse.html
+share/java/cos/doc/com.oreilly.servlet.CacheServletOutputStream.html
+share/java/cos/doc/com.oreilly.servlet.DaemonHttpServlet.html
+share/java/cos/doc/com.oreilly.servlet.HttpMessage.html
+share/java/cos/doc/com.oreilly.servlet.LocaleNegotiator.html
+share/java/cos/doc/com.oreilly.servlet.LocaleToCharsetMap.html
+share/java/cos/doc/com.oreilly.servlet.MultipartRequest.html
+share/java/cos/doc/com.oreilly.servlet.MultipartResponse.html
+share/java/cos/doc/com.oreilly.servlet.ParameterNotFoundException.html
+share/java/cos/doc/com.oreilly.servlet.ParameterParser.html
+share/java/cos/doc/com.oreilly.servlet.RemoteDaemonHttpServlet.html
+share/java/cos/doc/com.oreilly.servlet.RemoteHttpServlet.html
+share/java/cos/doc/com.oreilly.servlet.ServletUtils.html
+share/java/cos/doc/images/blue-ball-small.gif
+share/java/cos/doc/images/blue-ball.gif
+share/java/cos/doc/images/class-index.gif
+share/java/cos/doc/images/constructor-index.gif
+share/java/cos/doc/images/constructors.gif
+share/java/cos/doc/images/cyan-ball-small.gif
+share/java/cos/doc/images/cyan-ball.gif
+share/java/cos/doc/images/error-index.gif
+share/java/cos/doc/images/exception-index.gif
+share/java/cos/doc/images/green-ball-small.gif
+share/java/cos/doc/images/green-ball.gif
+share/java/cos/doc/images/interface-index.gif
+share/java/cos/doc/images/magenta-ball-small.gif
+share/java/cos/doc/images/magenta-ball.gif
+share/java/cos/doc/images/method-index.gif
+share/java/cos/doc/images/methods.gif
+share/java/cos/doc/images/package-index.gif
+share/java/cos/doc/images/red-ball-small.gif
+share/java/cos/doc/images/red-ball.gif
+share/java/cos/doc/images/variable-index.gif
+share/java/cos/doc/images/variables.gif
+share/java/cos/doc/images/yellow-ball-small.gif
+share/java/cos/doc/images/yellow-ball.gif
+share/java/cos/doc/packages.html
+share/java/cos/doc/tree.html
+@dirrm share/java/cos/doc/images
+@dirrm share/java/cos/doc
+@dirrm share/java/cos
+@unexec rmdir %D/share/java/classes > /dev/null 2>&1 || true
+@unexec rmdir %D/share/java > /dev/null 2>&1 || true
