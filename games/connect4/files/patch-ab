@@ -1,0 +1,49 @@
+*** c4.c.orig	Tue Apr 15 22:06:03 1997
+--- c4.c	Tue Apr 15 22:16:29 1997
+***************
+*** 11,16 ****
+--- 11,18 ----
+   *     BITNET:                  tcjones@WATER.bitnet
+   *     Canadian domain:         tcjones@dragon.uwaterloo.ca
+   *
++  * Patched by Joel Sutton, 15th April 1997
++  *     Changed gets calls to fgets. Changed inital prompt slightly.
+   */
+  
+  #include <stdio.h>
+***************
+*** 219,225 ****
+      register char *cp;
+  
+      printf("Would you like to go first? (yes/no) -> ");
+!     if (!gets(line)){
+          plot_finish();
+          fprintf(stderr, "Could not read input line.\n");
+          goodbye();
+--- 221,227 ----
+      register char *cp;
+  
+      printf("Would you like to go first? (yes/no) -> ");
+!     if (!fgets(line,256,stdin)){
+          plot_finish();
+          fprintf(stderr, "Could not read input line.\n");
+          goodbye();
+***************
+*** 620,627 ****
+          }
+      }
+  
+!     printf("Do you need help (n/y)? -> ");
+!     if (!gets(line)){
+          fprintf(stderr, "Could not read input line\n");
+          goodbye();
+      }
+--- 622,629 ----
+          }
+      }
+  
+!     printf("Do you need help (y/n)? -> ");
+!     if (!fgets(line,256,stdin)){
+          fprintf(stderr, "Could not read input line\n");
+          goodbye();
+      }
