@@ -1,0 +1,12 @@
+Mail::Verify provides a function CheckAddress function for verifying
+email addresses.  First the syntax of the email address is checked,
+then it verifies that there is at least one valid MX server accepting
+email for the domain.  Using the Net::DNS module and the IO::Socket
+module a list of MX records (or, falling back on a hosts A record)
+are checked to make sure at least one SMTP server is accepting
+connections.
+
+WWW: http://search.cpan.org/search?dist=Mail-Verify
+
+- Pete
+petef@databits.net
