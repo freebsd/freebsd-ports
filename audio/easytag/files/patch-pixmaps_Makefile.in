@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- pixmaps/Makefile.in.orig	Thu Aug 15 00:39:17 2002
++++ pixmaps/Makefile.in	Thu Aug 15 00:39:43 2002
+@@ -301,7 +301,7 @@
+ 
+ info-am:
+ 
+-install-data-am: install-iconDATA install-pixmapDATA
++install-data-am: install-pixmapDATA # install-iconDATA
+ 
+ install-exec-am:
+ 

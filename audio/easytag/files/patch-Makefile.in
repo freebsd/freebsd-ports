@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- Makefile.in.orig	Thu Aug 15 00:38:25 2002
++++ Makefile.in	Thu Aug 15 00:38:54 2002
+@@ -442,7 +442,7 @@
+ 
+ info-am:
+ 
+-install-data-am: install-gnome_menuDATA
++install-data-am: # install-gnome_menuDATA
+ 
+ install-exec-am:
+ 
