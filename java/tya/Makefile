@@ -3,7 +3,7 @@
 # Date created:		16 May 1999
 # Whom:			jake@checker.org
 #
-# $Id: Makefile,v 1.2 1999/06/28 02:22:39 billf Exp $
+# $Id: Makefile,v 1.3 1999/06/28 18:34:12 billf Exp $
 #
 
 DISTNAME=	tya13v2
@@ -16,7 +16,7 @@ MAINTAINER=	jake@checker.org
 
 BUILD_DEPENDS=	${PREFIX}/jdk1.1.8/bin/java:${PORTSDIR}/java/jdk
 
-WRKSRC=		${WRKDIR}/${PKGNAME}
+WRKSRC=		${WRKDIR}/tya1.3v2
 
 ONLY_FOR_ARCHS=	i386
 
