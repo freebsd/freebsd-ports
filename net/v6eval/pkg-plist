@@ -1,0 +1,486 @@
+v6eval/bin/00README
+v6eval/bin/pktbuf
+v6eval/bin/pktctl
+v6eval/bin/pktsend
+v6eval/bin/pktrecv
+v6eval/bin/checker
+v6eval/bin/autorun
+v6eval/bin/pktlint
+v6eval/bin/aix/cleardefr.rmt
+v6eval/bin/aix/clearnc.rmt
+v6eval/bin/aix/clearprefix.rmt
+v6eval/bin/aix/clearroute.rmt
+v6eval/bin/aix/ipsecClearAll.rmt
+v6eval/bin/aix/ipsecEnable.rmt
+v6eval/bin/aix/ipsecSetSAD.rmt
+v6eval/bin/aix/ipsecSetSPD.rmt
+v6eval/bin/aix/loginout.rmt
+v6eval/bin/aix/manualaddrconf.rmt
+v6eval/bin/aix/mtuconfig.rmt
+v6eval/bin/aix/ping6.rmt
+v6eval/bin/aix/reboot.rmt
+v6eval/bin/aix/reboot_async.rmt
+v6eval/bin/aix/route.rmt
+v6eval/bin/aix/rtadvd.rmt
+v6eval/bin/aix/tunnel.rmt
+v6eval/bin/hpux/cleardefr.rmt
+v6eval/bin/hpux/clearnc.rmt
+v6eval/bin/hpux/clearprefix.rmt
+v6eval/bin/hpux/clearroute.rmt
+v6eval/bin/hpux/ipsecClearAll.rmt
+v6eval/bin/hpux/ipsecEnable.rmt
+v6eval/bin/hpux/ipsecSetSAD.rmt
+v6eval/bin/hpux/ipsecSetSPD.rmt
+v6eval/bin/hpux/loginout.rmt
+v6eval/bin/hpux/manualaddrconf.rmt
+v6eval/bin/hpux/mtuconfig.rmt
+v6eval/bin/hpux/ping6.rmt
+v6eval/bin/hpux/reboot.rmt
+v6eval/bin/hpux/reboot_async.rmt
+v6eval/bin/hpux/route.rmt
+v6eval/bin/hpux/rtadvd.rmt
+v6eval/bin/hpux/tunnel.rmt
+v6eval/bin/kame-netbsd-i386/cleardefr.rmt
+v6eval/bin/kame-netbsd-i386/clearnc.rmt
+v6eval/bin/kame-netbsd-i386/clearprefix.rmt
+v6eval/bin/kame-netbsd-i386/clearroute.rmt
+v6eval/bin/kame-netbsd-i386/ipsecClearAll.rmt
+v6eval/bin/kame-netbsd-i386/ipsecEnable.rmt
+v6eval/bin/kame-netbsd-i386/ipsecSetSAD.rmt
+v6eval/bin/kame-netbsd-i386/ipsecSetSPD.rmt
+v6eval/bin/kame-netbsd-i386/loginout.rmt
+v6eval/bin/kame-netbsd-i386/manualaddrconf.rmt
+v6eval/bin/kame-netbsd-i386/mtuconfig.rmt
+v6eval/bin/kame-netbsd-i386/ping6.rmt
+v6eval/bin/kame-netbsd-i386/reboot.rmt
+v6eval/bin/kame-netbsd-i386/reboot_async.rmt
+v6eval/bin/kame-netbsd-i386/route.rmt
+v6eval/bin/kame-netbsd-i386/rtadvd.rmt
+v6eval/bin/kame-netbsd-i386/tunnel.rmt
+v6eval/bin/unknown/clearnc.rmt
+v6eval/bin/unknown/clearprefix.rmt
+v6eval/bin/unknown/cleardefr.rmt
+v6eval/bin/unknown/reboot.rmt
+v6eval/bin/unknown/reboot_async.rmt
+v6eval/bin/unknown/loginout.rmt
+v6eval/bin/unknown/manualaddrconf.rmt
+v6eval/bin/unknown/ping6.rmt
+v6eval/bin/unknown/clearroute.rmt
+v6eval/bin/unknown/route.rmt
+v6eval/bin/unknown/rtadvd.rmt
+v6eval/bin/unknown/ipsecClearAll.rmt
+v6eval/bin/unknown/ipsecSetSAD.rmt
+v6eval/bin/unknown/ipsecSetSPD.rmt
+v6eval/bin/unknown/ipsecEnable.rmt
+v6eval/bin/unknown/mtuconfig.rmt
+v6eval/bin/unknown/tunnel.rmt
+v6eval/bin/unknown/mip6EnableCN.rmt
+v6eval/bin/unknown/mip6EnableHA.rmt
+v6eval/bin/unknown/mip6EnableMN.rmt
+v6eval/bin/unknown/natpt.rmt
+v6eval/bin/kame-freebsd/clearnc.rmt
+v6eval/bin/kame-freebsd/clearprefix.rmt
+v6eval/bin/kame-freebsd/cleardefr.rmt
+v6eval/bin/kame-freebsd/reboot.rmt
+v6eval/bin/kame-freebsd/reboot_async.rmt
+v6eval/bin/kame-freebsd/loginout.rmt
+v6eval/bin/kame-freebsd/manualaddrconf.rmt
+v6eval/bin/kame-freebsd/ping6.rmt
+v6eval/bin/kame-freebsd/clearroute.rmt
+v6eval/bin/kame-freebsd/route.rmt
+v6eval/bin/kame-freebsd/rtadvd.rmt
+v6eval/bin/kame-freebsd/ipsecClearAll.rmt
+v6eval/bin/kame-freebsd/ipsecSetSAD.rmt
+v6eval/bin/kame-freebsd/ipsecSetSPD.rmt
+v6eval/bin/kame-freebsd/ipsecEnable.rmt
+v6eval/bin/kame-freebsd/mtuconfig.rmt
+v6eval/bin/kame-freebsd/tunnel.rmt
+v6eval/bin/kame-freebsd/mip6EnableCN.rmt
+v6eval/bin/kame-freebsd/mip6EnableHA.rmt
+v6eval/bin/kame-freebsd/mip6EnableMN.rmt
+v6eval/bin/hitachi-nr60/clearnc.rmt
+v6eval/bin/hitachi-nr60/reboot.rmt
+v6eval/bin/hitachi-nr60/reboot_async.rmt
+v6eval/bin/hitachi-nr60/loginout.rmt
+v6eval/bin/hitachi-nr60/manualaddrconf.rmt
+v6eval/bin/hitachi-nr60/ping6.rmt
+v6eval/bin/hitachi-nr60/clearroute.rmt
+v6eval/bin/hitachi-nr60/route.rmt
+v6eval/bin/hitachi-nr60/rtadvd.rmt
+v6eval/bin/hitachi-nr60/tunnel.rmt
+v6eval/bin/hitachi-nr60-v2/reboot.rmt
+v6eval/bin/hitachi-nr60-v2/manualaddrconf.rmt
+v6eval/bin/hitachi-nr60-v2/route.rmt
+v6eval/bin/hitachi-nr60-v2/ipsecClearAll.rmt
+v6eval/bin/hitachi-nr60-v2/ipsecSetSAD.rmt
+v6eval/bin/hitachi-nr60-v2/ipsecSetSPD.rmt
+v6eval/bin/hitachi-nr60-v2/ipsecEnable.rmt
+v6eval/bin/hitachi-gr2k/clearnc.rmt
+v6eval/bin/hitachi-gr2k/clearprefix.rmt
+v6eval/bin/hitachi-gr2k/cleardefr.rmt
+v6eval/bin/hitachi-gr2k/reboot.rmt
+v6eval/bin/hitachi-gr2k/reboot_async.rmt
+v6eval/bin/hitachi-gr2k/loginout.rmt
+v6eval/bin/hitachi-gr2k/manualaddrconf.rmt
+v6eval/bin/hitachi-gr2k/ping6.rmt
+v6eval/bin/hitachi-gr2k/clearroute.rmt
+v6eval/bin/hitachi-gr2k/route.rmt
+v6eval/bin/hitachi-gr2k/rtadvd.rmt
+v6eval/bin/hitachi-gr2k/tunnel.rmt
+v6eval/bin/linux-v6/clearnc.rmt
+v6eval/bin/linux-v6/clearprefix.rmt
+v6eval/bin/linux-v6/cleardefr.rmt
+v6eval/bin/linux-v6/reboot.rmt
+v6eval/bin/linux-v6/reboot_async.rmt
+v6eval/bin/linux-v6/loginout.rmt
+v6eval/bin/linux-v6/manualaddrconf.rmt
+v6eval/bin/linux-v6/ping6.rmt
+v6eval/bin/linux-v6/clearroute.rmt
+v6eval/bin/linux-v6/route.rmt
+v6eval/bin/linux-v6/tunnel.rmt
+v6eval/bin/ms-win2k/clearnc.rmt
+v6eval/bin/ms-win2k/clearprefix.rmt
+v6eval/bin/ms-win2k/cleardefr.rmt
+v6eval/bin/ms-win2k/reboot.rmt
+v6eval/bin/ms-win2k/reboot_async.rmt
+v6eval/bin/ms-win2k/loginout.rmt
+v6eval/bin/ms-win2k/manualaddrconf.rmt
+v6eval/bin/ms-win2k/ping6.rmt
+v6eval/bin/ms-win2k/clearroute.rmt
+v6eval/bin/ms-win2k/route.rmt
+v6eval/bin/ms-win2k/mtuconfig.rmt
+v6eval/bin/nec-libra/clearnc.rmt
+v6eval/bin/nec-libra/clearprefix.rmt
+v6eval/bin/nec-libra/cleardefr.rmt
+v6eval/bin/nec-libra/reboot.rmt
+v6eval/bin/nec-libra/reboot_async.rmt
+v6eval/bin/nec-libra/loginout.rmt
+v6eval/bin/nec-libra/manualaddrconf.rmt
+v6eval/bin/nec-libra/ping6.rmt
+v6eval/bin/nec-libra/route.rmt
+v6eval/bin/nec-libra/rtadvd.rmt
+v6eval/bin/nec-libra/mtuconfig.rmt
+v6eval/bin/nec-libra/tunnel.rmt
+v6eval/bin/nec-libra-utcpip/reboot.rmt
+v6eval/bin/nec-libra-utcpip/manualaddrconf.rmt
+v6eval/bin/nec-libra-utcpip/route.rmt
+v6eval/bin/nec-libra-utcpip/ipsecClearAll.rmt
+v6eval/bin/nec-libra-utcpip/ipsecSetSAD.rmt
+v6eval/bin/nec-libra-utcpip/ipsecSetSPD.rmt
+v6eval/bin/nec-libra-utcpip/ipsecEnable.rmt
+v6eval/bin/sun-solaris/clearnc.rmt
+v6eval/bin/sun-solaris/clearprefix.rmt
+v6eval/bin/sun-solaris/cleardefr.rmt
+v6eval/bin/sun-solaris/reboot.rmt
+v6eval/bin/sun-solaris/reboot_async.rmt
+v6eval/bin/sun-solaris/loginout.rmt
+v6eval/bin/sun-solaris/manualaddrconf.rmt
+v6eval/bin/sun-solaris/ping6.rmt
+v6eval/bin/sun-solaris/clearroute.rmt
+v6eval/bin/sun-solaris/route.rmt
+v6eval/bin/sun-solaris/rtadvd.rmt
+v6eval/bin/sun-solaris/ipsecClearAll.rmt
+v6eval/bin/sun-solaris/ipsecSetSAD.rmt
+v6eval/bin/sun-solaris/ipsecSetSPD.rmt
+v6eval/bin/sun-solaris/ipsecEnable.rmt
+v6eval/bin/sun-solaris/mtuconfig.rmt
+v6eval/bin/sun-solaris/tunnel.rmt
+v6eval/bin/yamaha-ws-one/clearnc.rmt
+v6eval/bin/yamaha-ws-one/reboot.rmt
+v6eval/bin/yamaha-ws-one/reboot_async.rmt
+v6eval/bin/yamaha-ws-one/loginout.rmt
+v6eval/bin/yamaha-ws-one/manualaddrconf.rmt
+v6eval/bin/yamaha-ws-one/ping6.rmt
+v6eval/bin/yamaha-ws-one/route.rmt
+v6eval/bin/yamaha-ws-one/tunnel.rmt
+v6eval/bin/cisco-ios/reboot.rmt
+v6eval/bin/cisco-ios/reboot_async.rmt
+v6eval/bin/cisco-ios/loginout.rmt
+v6eval/bin/cisco-ios/manualaddrconf.rmt
+v6eval/bin/cisco-ios/route.rmt
+v6eval/bin/cisco-ios/rtadvd.rmt
+v6eval/bin/cisco-ios/mtuconfig.rmt
+v6eval/bin/cisco-ios/00README
+v6eval/bin/iij-seil/clearnc.rmt
+v6eval/bin/iij-seil/clearprefix.rmt
+v6eval/bin/iij-seil/cleardefr.rmt
+v6eval/bin/iij-seil/reboot.rmt
+v6eval/bin/iij-seil/reboot_async.rmt
+v6eval/bin/iij-seil/loginout.rmt
+v6eval/bin/iij-seil/manualaddrconf.rmt
+v6eval/bin/iij-seil/ping6.rmt
+v6eval/bin/iij-seil/clearroute.rmt
+v6eval/bin/iij-seil/route.rmt
+v6eval/bin/iij-seil/rtadvd.rmt
+v6eval/bin/iij-seil/ipsecClearAll.rmt
+v6eval/bin/iij-seil/ipsecSetSAD.rmt
+v6eval/bin/iij-seil/ipsecSetSPD.rmt
+v6eval/bin/iij-seil/ipsecEnable.rmt
+v6eval/bin/iij-seil/mtuconfig.rmt
+v6eval/bin/iij-seil/tunnel.rmt
+v6eval/bin/iij-seil/00README
+v6eval/bin/netbsd-i386/clearnc.rmt
+v6eval/bin/netbsd-i386/clearprefix.rmt
+v6eval/bin/netbsd-i386/cleardefr.rmt
+v6eval/bin/netbsd-i386/reboot.rmt
+v6eval/bin/netbsd-i386/reboot_async.rmt
+v6eval/bin/netbsd-i386/loginout.rmt
+v6eval/bin/netbsd-i386/manualaddrconf.rmt
+v6eval/bin/netbsd-i386/ping6.rmt
+v6eval/bin/netbsd-i386/clearroute.rmt
+v6eval/bin/netbsd-i386/route.rmt
+v6eval/bin/netbsd-i386/rtadvd.rmt
+v6eval/bin/netbsd-i386/ipsecClearAll.rmt
+v6eval/bin/netbsd-i386/ipsecSetSAD.rmt
+v6eval/bin/netbsd-i386/ipsecSetSPD.rmt
+v6eval/bin/netbsd-i386/ipsecEnable.rmt
+v6eval/bin/netbsd-i386/mtuconfig.rmt
+v6eval/bin/netbsd-i386/tunnel.rmt
+v6eval/bin/mgcs-sj6/clearnc.rmt
+v6eval/bin/mgcs-sj6/clearprefix.rmt
+v6eval/bin/mgcs-sj6/cleardefr.rmt
+v6eval/bin/mgcs-sj6/reboot.rmt
+v6eval/bin/mgcs-sj6/reboot_async.rmt
+v6eval/bin/mgcs-sj6/loginout.rmt
+v6eval/bin/mgcs-sj6/manualaddrconf.rmt
+v6eval/bin/mgcs-sj6/ping6.rmt
+v6eval/bin/mgcs-sj6/clearroute.rmt
+v6eval/bin/mgcs-sj6/route.rmt
+v6eval/bin/mgcs-sj6/rtadvd.rmt
+v6eval/bin/mgcs-sj6/ipsecClearAll.rmt
+v6eval/bin/mgcs-sj6/ipsecSetSAD.rmt
+v6eval/bin/mgcs-sj6/ipsecSetSPD.rmt
+v6eval/bin/mgcs-sj6/ipsecEnable.rmt
+v6eval/bin/mgcs-sj6/mtuconfig.rmt
+v6eval/bin/mgcs-sj6/tunnel.rmt
+v6eval/bin/telebit-tbc2k/reboot.rmt
+v6eval/bin/telebit-tbc2k/reboot_async.rmt
+v6eval/bin/telebit-tbc2k/loginout.rmt
+v6eval/bin/telebit-tbc2k/manualaddrconf.rmt
+v6eval/bin/telebit-tbc2k/route.rmt
+v6eval/bin/telebit-tbc2k/rtadvd.rmt
+v6eval/bin/telebit-tbc2k/mtuconfig.rmt
+v6eval/bin/telebit-tbc2k/tunnel.rmt
+v6eval/bin/telebit-tbc2k/natpt.rmt
+v6eval/bin/manual/clearnc.rmt
+v6eval/bin/manual/clearprefix.rmt
+v6eval/bin/manual/cleardefr.rmt
+v6eval/bin/manual/reboot.rmt
+v6eval/bin/manual/reboot_async.rmt
+v6eval/bin/manual/loginout.rmt
+v6eval/bin/manual/manualaddrconf.rmt
+v6eval/bin/manual/ping6.rmt
+v6eval/bin/manual/clearroute.rmt
+v6eval/bin/manual/route.rmt
+v6eval/bin/manual/rtadvd.rmt
+v6eval/bin/manual/ipsecClearAll.rmt
+v6eval/bin/manual/ipsecSetSAD.rmt
+v6eval/bin/manual/ipsecSetSPD.rmt
+v6eval/bin/manual/ipsecEnable.rmt
+v6eval/bin/manual/mtuconfig.rmt
+v6eval/bin/manual/tunnel.rmt
+v6eval/bin/manual/mip6EnableCN.rmt
+v6eval/bin/manual/mip6EnableHA.rmt
+v6eval/bin/manual/mip6EnableMN.rmt
+v6eval/bin/manual/natpt.rmt
+v6eval/bin/freebsd-i386/cleardefr.rmt
+v6eval/bin/freebsd-i386/clearnc.rmt
+v6eval/bin/freebsd-i386/clearprefix.rmt
+v6eval/bin/freebsd-i386/clearroute.rmt
+v6eval/bin/freebsd-i386/ipsecClearAll.rmt
+v6eval/bin/freebsd-i386/ipsecEnable.rmt
+v6eval/bin/freebsd-i386/ipsecSetSAD.rmt
+v6eval/bin/freebsd-i386/ipsecSetSPD.rmt
+v6eval/bin/freebsd-i386/loginout.rmt
+v6eval/bin/freebsd-i386/manualaddrconf.rmt
+v6eval/bin/freebsd-i386/mtuconfig.rmt
+v6eval/bin/freebsd-i386/ping6.rmt
+v6eval/bin/freebsd-i386/reboot.rmt
+v6eval/bin/freebsd-i386/reboot_async.rmt
+v6eval/bin/freebsd-i386/route.rmt
+v6eval/bin/freebsd-i386/rtadvd.rmt
+v6eval/bin/freebsd-i386/tunnel.rmt
+v6eval/bin/freebsd43-i386/cleardefr.rmt
+v6eval/bin/freebsd43-i386/clearnc.rmt
+v6eval/bin/freebsd43-i386/clearprefix.rmt
+v6eval/bin/freebsd43-i386/clearroute.rmt
+v6eval/bin/freebsd43-i386/ipsecClearAll.rmt
+v6eval/bin/freebsd43-i386/ipsecEnable.rmt
+v6eval/bin/freebsd43-i386/ipsecSetSAD.rmt
+v6eval/bin/freebsd43-i386/ipsecSetSPD.rmt
+v6eval/bin/freebsd43-i386/loginout.rmt
+v6eval/bin/freebsd43-i386/manualaddrconf.rmt
+v6eval/bin/freebsd43-i386/mtuconfig.rmt
+v6eval/bin/freebsd43-i386/ping6.rmt
+v6eval/bin/freebsd43-i386/reboot.rmt
+v6eval/bin/freebsd43-i386/reboot_async.rmt
+v6eval/bin/freebsd43-i386/route.rmt
+v6eval/bin/freebsd43-i386/rtadvd.rmt
+v6eval/bin/freebsd43-i386/tunnel.rmt
+v6eval/bin/nec-mip6/cleardefr.rmt
+v6eval/bin/nec-mip6/clearnc.rmt
+v6eval/bin/nec-mip6/clearprefix.rmt
+v6eval/bin/nec-mip6/clearroute.rmt
+v6eval/bin/nec-mip6/ipsecClearAll.rmt
+v6eval/bin/nec-mip6/ipsecEnable.rmt
+v6eval/bin/nec-mip6/ipsecSetSAD.rmt
+v6eval/bin/nec-mip6/ipsecSetSPD.rmt
+v6eval/bin/nec-mip6/loginout.rmt
+v6eval/bin/nec-mip6/manualaddrconf.rmt
+v6eval/bin/nec-mip6/mip6EnableCN.rmt
+v6eval/bin/nec-mip6/mip6EnableHA.rmt
+v6eval/bin/nec-mip6/mip6EnableMN.rmt
+v6eval/bin/nec-mip6/mtuconfig.rmt
+v6eval/bin/nec-mip6/ping6.rmt
+v6eval/bin/nec-mip6/reboot.rmt
+v6eval/bin/nec-mip6/reboot_async.rmt
+v6eval/bin/nec-mip6/route.rmt
+v6eval/bin/nec-mip6/rtadvd.rmt
+v6eval/bin/nec-mip6/tunnel.rmt
+v6eval/bin/sfc-mip6/cleardefr.rmt
+v6eval/bin/sfc-mip6/clearnc.rmt
+v6eval/bin/sfc-mip6/clearprefix.rmt
+v6eval/bin/sfc-mip6/clearroute.rmt
+v6eval/bin/sfc-mip6/ipsecClearAll.rmt
+v6eval/bin/sfc-mip6/ipsecEnable.rmt
+v6eval/bin/sfc-mip6/ipsecSetSAD.rmt
+v6eval/bin/sfc-mip6/ipsecSetSPD.rmt
+v6eval/bin/sfc-mip6/loginout.rmt
+v6eval/bin/sfc-mip6/manualaddrconf.rmt
+v6eval/bin/sfc-mip6/mip6EnableCN.rmt
+v6eval/bin/sfc-mip6/mip6EnableHA.rmt
+v6eval/bin/sfc-mip6/mtuconfig.rmt
+v6eval/bin/sfc-mip6/ping6.rmt
+v6eval/bin/sfc-mip6/reboot.rmt
+v6eval/bin/sfc-mip6/reboot_async.rmt
+v6eval/bin/sfc-mip6/route.rmt
+v6eval/bin/sfc-mip6/rtadvd.rmt
+v6eval/bin/sfc-mip6/tunnel.rmt
+v6eval/bin/lcna/ipsecClearAll.rmt
+v6eval/bin/lcna/ipsecSetSAD.rmt
+v6eval/bin/lcna/mip6EnableCN.rmt
+v6eval/bin/lcna/reboot.rmt
+v6eval/bin/lcna/ipsecEnable.rmt
+v6eval/bin/lcna/ipsecSetSPD.rmt
+v6eval/bin/lcna/mip6EnableMN.rmt
+v6eval/bin/lcna/reboot_async.rmt
+v6eval/bin/mipl/mip6EnableMN.rmt
+v6eval/bin/nec-ix1k/clearnc.rmt
+v6eval/bin/nec-ix1k/manualaddrconf.rmt
+v6eval/bin/nec-ix1k/reboot.rmt
+v6eval/bin/nec-ix1k/route.rmt
+v6eval/bin/nec-ix1k/loginout.rmt
+v6eval/bin/nec-ix1k/ping6.rmt
+v6eval/bin/nec-ix1k/reboot_async.rmt
+v6eval/bin/openbsd-i386/cleardefr.rmt
+v6eval/bin/openbsd-i386/clearroute.rmt
+v6eval/bin/openbsd-i386/ipsecSetSAD.rmt
+v6eval/bin/openbsd-i386/manualaddrconf.rmt
+v6eval/bin/openbsd-i386/reboot.rmt
+v6eval/bin/openbsd-i386/rtadvd.rmt
+v6eval/bin/openbsd-i386/clearnc.rmt
+v6eval/bin/openbsd-i386/ipsecClearAll.rmt
+v6eval/bin/openbsd-i386/ipsecSetSPD.rmt
+v6eval/bin/openbsd-i386/mtuconfig.rmt
+v6eval/bin/openbsd-i386/reboot_async.rmt
+v6eval/bin/openbsd-i386/tunnel.rmt
+v6eval/bin/openbsd-i386/clearprefix.rmt
+v6eval/bin/openbsd-i386/ipsecEnable.rmt
+v6eval/bin/openbsd-i386/loginout.rmt
+v6eval/bin/openbsd-i386/ping6.rmt
+v6eval/bin/openbsd-i386/route.rmt
+v6eval/bin/usagi-i386/cleardefr.rmt
+v6eval/bin/usagi-i386/clearroute.rmt
+v6eval/bin/usagi-i386/ipsecSetSAD.rmt
+v6eval/bin/usagi-i386/manualaddrconf.rmt
+v6eval/bin/usagi-i386/ping6.rmt
+v6eval/bin/usagi-i386/route.rmt
+v6eval/bin/usagi-i386/clearnc.rmt
+v6eval/bin/usagi-i386/ipsecClearAll.rmt
+v6eval/bin/usagi-i386/ipsecSetSPD.rmt
+v6eval/bin/usagi-i386/mip6EnableMN.rmt
+v6eval/bin/usagi-i386/reboot.rmt
+v6eval/bin/usagi-i386/rtadvd.rmt
+v6eval/bin/usagi-i386/clearprefix.rmt
+v6eval/bin/usagi-i386/ipsecEnable.rmt
+v6eval/bin/usagi-i386/loginout.rmt
+v6eval/bin/usagi-i386/mtuconfig.rmt
+v6eval/bin/usagi-i386/reboot_async.rmt
+v6eval/bin/usagi-i386/tunnel.rmt
+v6eval/man/man1/pktctl.1.gz
+v6eval/man/man1/pktsend.1.gz
+v6eval/doc/00README
+v6eval/doc/INSTALL
+v6eval/doc/TODO
+v6eval/doc/CHANGELOG
+v6eval/doc/00README.v6eval
+v6eval/doc/00README.remotes
+v6eval/doc/INSTALL.v6eval
+v6eval/doc/TODO.v6eval
+v6eval/doc/CHANGELOG.v6eval
+v6eval/doc/COPYRIGHT
+v6eval/etc/tn.def.sample
+v6eval/etc/nut.def.sample
+v6eval/include/std.def
+v6eval/include/stdaddr.def
+v6eval/include/stdpacket.def
+v6eval/include/stdconst.def
+@unexec rmdir %D/v6eval/etc 2>/dev/null || true
+@dirrm v6eval/bin/kame-freebsd
+@dirrm v6eval/bin/hitachi-nr60
+@dirrm v6eval/bin/hitachi-nr60-v2
+@dirrm v6eval/bin/hitachi-gr2k
+@dirrm v6eval/bin/linux-v6
+@dirrm v6eval/bin/ms-win2k
+@dirrm v6eval/bin/nec-libra
+@dirrm v6eval/bin/nec-libra-utcpip
+@dirrm v6eval/bin/sun-solaris
+@dirrm v6eval/bin/yamaha-ws-one
+@dirrm v6eval/bin/cisco-ios
+@dirrm v6eval/bin/iij-seil
+@dirrm v6eval/bin/netbsd-i386
+@dirrm v6eval/bin/mgcs-sj6
+@dirrm v6eval/bin/telebit-tbc2k
+@dirrm v6eval/bin/manual
+@dirrm v6eval/bin/freebsd-i386
+@dirrm v6eval/bin/freebsd43-i386
+@dirrm v6eval/bin/unknown
+@dirrm v6eval/bin/aix
+@dirrm v6eval/bin/hpux
+@dirrm v6eval/bin/kame-netbsd-i386
+@dirrm v6eval/bin/nec-mip6
+@dirrm v6eval/bin/sfc-mip6
+@dirrm v6eval/bin/lcna
+@dirrm v6eval/bin/mipl
+@dirrm v6eval/bin/nec-ix1k
+@dirrm v6eval/bin/openbsd-i386
+@dirrm v6eval/bin/usagi-i386
+@dirrm v6eval/bin
+@dirrm v6eval/man/man1
+@dirrm v6eval/man/cat1
+@dirrm v6eval/man/man2
+@dirrm v6eval/man/cat2
+@dirrm v6eval/man/man3
+@dirrm v6eval/man/cat3
+@dirrm v6eval/man/man4
+@dirrm v6eval/man/cat4
+@dirrm v6eval/man/man5
+@dirrm v6eval/man/cat5
+@dirrm v6eval/man/man6
+@dirrm v6eval/man/cat6
+@dirrm v6eval/man/man7
+@dirrm v6eval/man/cat7
+@dirrm v6eval/man/man8
+@dirrm v6eval/man/cat8
+@dirrm v6eval/man/man9
+@dirrm v6eval/man/cat9
+@dirrm v6eval/man/mann
+@dirrm v6eval/man/catn
+@dirrm v6eval/man
+@dirrm v6eval/doc
+@unexec rmdir %D/v6eval/etc 2>/dev/null || true
+@dirrm v6eval/include
+@dirrm v6eval
+lib/perl5/site_perl/%%PERL_VER%%/V6evalTool.pm
+lib/perl5/site_perl/%%PERL_VER%%/V6evalCommon.pm
+lib/perl5/site_perl/%%PERL_VER%%/V6evalRemote.pm
