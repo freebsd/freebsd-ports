@@ -1,5 +1,7 @@
-bin/pcb-bin
 bin/pcb
+bin/pcb-bin
+bin/MergePCBPS
+bin/Merge_dimPCBPS
 share/pcb/default_font
 share/pcb/Pcb
 share/pcb/pcblib
@@ -12,9 +14,9 @@ share/pcb/QueryLibrary.sh
 share/pcb/qfp-ui
 share/pcb/m4/common.m4
 share/pcb/m4/TTL_74xx_DIL.m4
+share/pcb/m4/amphenol.m4
 share/pcb/m4/connector.m4
 share/pcb/m4/crystal.m4
-share/pcb/m4/geda.m4
 share/pcb/m4/generic.m4
 share/pcb/m4/genericsmt.m4
 share/pcb/m4/gtag.m4
@@ -31,11 +33,16 @@ share/pcb/m4/resistor_array.m4
 share/pcb/m4/texas_inst_amplifier.m4
 share/pcb/m4/texas_inst_voltage_reg.m4
 share/pcb/m4/transistor.m4
-share/pcb/m4/bga.inc
+share/pcb/m4/amp.m4
+share/pcb/m4/bourns.m4
+share/pcb/m4/geda.m4
+share/pcb/m4/johnstech.m4
+share/pcb/m4/minicircuits.m4
+share/pcb/m4/panasonic.m4
 share/pcb/m4/TTL_74xx_DIL.list
+share/pcb/m4/amphenol.list
 share/pcb/m4/connector.list
 share/pcb/m4/crystal.list
-share/pcb/m4/geda.list
 share/pcb/m4/generic.list
 share/pcb/m4/genericsmt.list
 share/pcb/m4/gtag.list
@@ -48,17 +55,31 @@ share/pcb/m4/optical.list
 share/pcb/m4/pci.list
 share/pcb/m4/resistor_0.25W.list
 share/pcb/m4/resistor_adjust.list
+share/pcb/m4/bga.inc
 share/pcb/m4/resistor_array.list
 share/pcb/m4/texas_inst_amplifier.list
 share/pcb/m4/texas_inst_voltage_reg.list
 share/pcb/m4/transistor.list
-share/pcb/m4/dil.inc
+share/pcb/m4/amp.list
+share/pcb/m4/bourns.list
+share/pcb/m4/geda.list
+share/pcb/m4/johnstech.list
+share/pcb/m4/minicircuits.list
+share/pcb/m4/panasonic.list
+share/pcb/m4/amp.inc
+share/pcb/m4/amphenol.inc
+share/pcb/m4/bourns.inc
 share/pcb/m4/connector.inc
+share/pcb/m4/dil.inc
 share/pcb/m4/geda.inc
 share/pcb/m4/genericsmt.inc
+share/pcb/m4/johnstech.inc
+share/pcb/m4/minicircuits.inc
 share/pcb/m4/misc.inc
+share/pcb/m4/panasonic.inc
 share/pcb/m4/pci.inc
 share/pcb/m4/plcc.inc
+share/pcb/m4/qfn.inc
 share/pcb/m4/qfp.inc
 share/pcb/m4/qfp2.inc
 share/pcb/m4/qfpdj.inc
@@ -72,7 +93,6 @@ share/pcb/newlib/2_pin_thru-hole_packages/1W_Carbon_Resistor
 share/pcb/newlib/2_pin_thru-hole_packages/CK05_type_Capacitor
 share/pcb/newlib/2_pin_thru-hole_packages/CK06_type_capacitor
 share/pcb/newlib/2_pin_thru-hole_packages/IRU1015-33CT_3.3V_reg_TO220
-share/pcb/newlib/2_pin_thru-hole_packages/Makefile.am
 share/pcb/newlib/2_pin_thru-hole_packages/RN55_type_0.1W_Resistor
 share/pcb/newlib/2_pin_thru-hole_packages/T1.75_LED
 share/pcb/newlib/analog-devices/ADC12138CIMSA
@@ -127,6 +147,9 @@ share/pcb/pcb.ps
 share/pcb/refcard.ps
 share/pcb/pcb.pdf
 share/pcb/refcard.pdf
+share/pcb/examples/libraries/example.inc
+share/pcb/examples/libraries/example.list
+share/pcb/examples/libraries/example.m4
 share/pcb/examples/LED
 share/pcb/examples/LED.NET
 share/pcb/examples/LED2
@@ -135,6 +158,7 @@ share/pcb/tools/gerbertotk.c
 share/pcb/tools/pcb2ncap.tgz
 share/pcb/tools/tgo2pcb.tcl
 share/pcb/tools/MergePCBPS
+share/pcb/tools/Merge_dimPCBPS
 share/pcb/tools/PCB2HPGL
 share/pcb/tutorial/tut1.pcb
 @dirrm share/pcb/m4
@@ -153,6 +177,7 @@ share/pcb/tutorial/tut1.pcb
 @dirrm share/pcb/newlib/tests
 @dirrm share/pcb/newlib/toko
 @dirrm share/pcb/newlib
+@dirrm share/pcb/examples/libraries
 @dirrm share/pcb/examples
 @dirrm share/pcb/tools
 @dirrm share/pcb/tutorial

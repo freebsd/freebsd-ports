@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pcb
-PORTVERSION=	20030815
+PORTVERSION=	20040215
 CATEGORIES=	cad
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -23,13 +23,5 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 GNU_CONFIGURE=	yes
 
 INFO=		pcb
-
-BROKEN=		"Fails to configure"
-DEPRECATED=     "Will be removed after April 7 if still broken"
-
-post-install:
-	install-info --section="Utilities" \
-	--entry="* PCB: (pcb).	Interactive printed circuit board layout system for X11" \
-	${PREFIX}/info/pcb.info ${PREFIX}/info/dir
 
 .include <bsd.port.mk>
