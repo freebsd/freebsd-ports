@@ -39,7 +39,7 @@ RUN_DEPENDS=	ispell:${PORTSDIR}/textproc/ispell \
 .endif
 .if ${MACHINE_ARCH} != "alpha"
 #  coredump in sgmls
-WITH_DOCS?=	yes
+WITH_SGML_DOCS?=yes
 .endif
 
 LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
@@ -51,7 +51,7 @@ LIB_DEPENDS+=	ncurses.5:${PORTSDIR}/devel/ncurses
 .if defined(WITH_MUTT_CYRUS_SASL)
 LIB_DEPENDS+=	sasl.8:${PORTSDIR}/security/cyrus-sasl
 .endif
-.if defined(WITH_DOCS) && ${WITH_DOCS} != "no"
+.if defined(WITH_SGML_DOCS) && ${WITH_SGML_DOCS} != "no"
 BUILD_DEPENDS+=	sgmlfmt:${PORTSDIR}/textproc/sgmlformat
 .endif
 
@@ -99,7 +99,7 @@ post-build:
 	${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-doc-ref
 	printf ",s|\$${PREFIX}|%s|g\nw\nq\n" ${PREFIX} | \
 		ed -s ${WRKSRC}/doc/mutt.man
-.if defined(WITH_DOCS) && ${WITH_DOCS} != "no"
+.if defined(WITH_SGML_DOCS) && ${WITH_SGML_DOCS} != "no"
 PLIST:=		${WRKDIR}/PLIST
 pre-install:
 	@${CAT} ${PKGDIR}/pkg-plist.htmlfiles >> ${PLIST}
@@ -114,7 +114,7 @@ post-install:
 	@${MKDIR} ${PREFIX}/share/doc/mutt && ${CHMOD} a+rx ${PREFIX}/share/doc/mutt
 	@cd ${WRKSRC}/doc ; ${INSTALL_MAN} manual.txt PGP-Notes.txt \
 		${PREFIX}/share/doc/mutt
-.if defined(WITH_DOCS) && ${WITH_DOCS} != "no"
+.if defined(WITH_SGML_DOCS) && ${WITH_SGML_DOCS} != "no"
 	${INSTALL} ${COPY} -o ${MANOWN} -g ${MANGRP} -m 0755 \
 	    -d ${PREFIX}/share/doc/mutt/html
 	${INSTALL_MAN} ${WRKSRC}/doc/*.html ${PREFIX}/share/doc/mutt/html
