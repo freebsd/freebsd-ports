@@ -1,0 +1,23 @@
+bin/silky
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+share/pixmaps/silky_icon.png
+share/silky/silky.glade
+share/silky/silky-channel.glade
+share/silky/silky-channel-label.glade
+share/silky/silky-query.glade
+share/silky/silky-query-label.glade
+share/locale/de/LC_MESSAGES/silky.mo
+share/locale/fi/LC_MESSAGES/silky.mo
+share/locale/it/LC_MESSAGES/silky.mo
+share/locale/sk/LC_MESSAGES/silky.mo
+share/locale/ru/LC_MESSAGES/silky.mo
+share/gnome/apps/Applications/silky.desktop
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@unexec rmdir %D/share/pixmaps 2>/dev/null || true
+@dirrm share/silky
