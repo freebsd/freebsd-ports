@@ -28,9 +28,14 @@ post-extract:
 post-patch:
 		cd ${WRKDIR}/${DISTNAME} && ${MAKE} depend
 
+post-build:
+		cd ${WRKDIR}/${DISTNAME} && ${MAKE} work.svol
+
 pre-install:
-		${MKDIR} ${PREFIX}/share/doc/p-interp
-		${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/README ${PREFIX}/share/doc/p-interp
-		${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/COPYING ${PREFIX}/share/doc/p-interp
+		${MKDIR} ${PREFIX}/share/p-interp
+		${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/README ${PREFIX}/share/p-interp
+		${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/COPYING ${PREFIX}/share/p-interp
+		${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/system.svol ${PREFIX}/share/p-interp
+		${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/work.svol ${PREFIX}/share/p-interp
 
 .include <bsd.port.post.mk>
