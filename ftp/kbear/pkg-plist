@@ -8,6 +8,7 @@ lib/kde3/kio_kbearftp.la
 lib/kde3/libkbeargftpimportfilter.la
 lib/kde3/libkbearncftpimportfilter.la
 lib/kde3/libkbearimportfilter.la
+lib/kde3/libkbearkrusaderimportfilter.la
 lib/kde3/libkbearwsftpimportfilter.la
 lib/kde3/libkbearwincommanderimportfilter.la
 lib/kde3/libkbearsitemanager.la
@@ -16,6 +17,7 @@ lib/kde3/kio_kbearftp.so
 lib/kde3/libkbeargftpimportfilter.so
 lib/kde3/libkbearncftpimportfilter.so
 lib/kde3/libkbearimportfilter.so
+lib/kde3/libkbearkrusaderimportfilter.so
 lib/kde3/libkbearwsftpimportfilter.so
 lib/kde3/libkbearwincommanderimportfilter.so
 lib/kde3/libkbearsitemanager.so
@@ -49,16 +51,33 @@ share/applnk/Internet/kbear.desktop
 share/doc/HTML/en/kbear/index.docbook
 share/doc/HTML/en/kbear/index.cache.bz2
 share/doc/HTML/en/kbear/common
+share/doc/HTML/en/kbear/index_en.pot
+share/doc/HTML/en/kbear/index-shifted.docbook
+
+share/doc/HTML/es/kbear/index_es.po
+share/doc/HTML/es/kbear/index.docbook
+share/doc/HTML/es/kbear/index.cache.bz2
+share/doc/HTML/es/kbear/common
+share/doc/HTML/fr/kbear/index.docbook
+share/doc/HTML/fr/kbear/index_fr.po
+share/doc/HTML/fr/kbear/index.cache.bz2
+share/doc/HTML/fr/kbear/common
 share/doc/HTML/sv/kbear/index.docbook
 share/doc/HTML/sv/kbear/index.cache.bz2
+share/doc/HTML/sv/kbear/index_sv.po
 share/doc/HTML/sv/kbear/common
 share/locale/sv/LC_MESSAGES/kbear.mo
+share/locale/pt/LC_MESSAGES/kbear.mo
+share/locale/fr/LC_MESSAGES/kbear.mo
+share/locale/nl/LC_MESSAGES/kbear.mo
+share/locale/cs/LC_MESSAGES/kbear.mo
 share/services/kbearftp.protocol
 share/apps/kbearsitemanager/kpartplugins/gftpimportfilterui.rc
 share/apps/kbearsitemanager/kpartplugins/ncftpimportfilterui.rc
 share/apps/kbearsitemanager/kpartplugins/kbearimportfilterui.rc
 share/apps/kbearsitemanager/kpartplugins/ws_ftpimportfilterui.rc
 share/apps/kbearsitemanager/kpartplugins/wincommanderimportfilterui.rc
+share/apps/kbearsitemanager/kpartplugins/krusaderimportfilterui.rc
 share/apps/konqiconview/kpartplugins/kbearsitemanagerui.rc
 share/apps/konqlistview/kpartplugins/kbearsitemanagerui.rc
 @dirrm include/kbear
@@ -73,4 +92,6 @@ share/apps/konqlistview/kpartplugins/kbearsitemanagerui.rc
 @dirrm share/apps/kbear/icons
 @dirrm share/apps/kbear
 @dirrm share/doc/HTML/en/kbear
+@dirrm share/doc/HTML/es/kbear
+@dirrm share/doc/HTML/fr/kbear
 @dirrm share/doc/HTML/sv/kbear
