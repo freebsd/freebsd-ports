@@ -110,7 +110,7 @@ post-build:
 	@ ${ECHO} "Detailed instructions, see INSTALL file under ${WRKDIR}...  "
 	@ ${ECHO} "------------------------------------------------------------"
 	@${RM} -f ${WRKDIR}/PLIST
-.for i in ${PLISTS} PLIST
+.for i in ${PLISTS} pkg-plist
 	${CAT} ${PKGDIR}/${i} >> ${WRKDIR}/PLIST
 .endfor
 .if defined(WITH_TCL)
