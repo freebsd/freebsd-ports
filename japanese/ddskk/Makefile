@@ -6,16 +6,16 @@
 #
 
 PORTNAME=	ddskk
-PORTVERSION=	11.6.0
+PORTVERSION=	12.2.0
 CATEGORIES=	japanese elisp
 MASTER_SITES=	http://openlab.ring.gr.jp/skk/maintrunk/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
-DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	yoichi@FreeBSD.org
 COMMENT=	Simple Kana to Kanji conversion program on Emacsen
 
 BUILD_DEPENDS=	${LOCALBASE}/${EMACS_VERSION_SITE_LISPDIR}/emu/emu.el:${PORTSDIR}/editors/apel${DEPPORT_SUFFIX}
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
 EMACS_PORT_NAME?=	emacs21
 .if (${EMACS_PORT_NAME} == emacs21)
@@ -24,19 +24,18 @@ DEPPORT_SUFFIX=
 DEPPORT_SUFFIX=	-${EMACS_PORT_NAME}
 PLIST=	${PKGDIR}/pkg-plist.${EMACS_PORT_NAME}
 .endif
-AMBIGUOUS_ELCS=	skk-jisx0213 skk-lookup
 
 USE_BZIP2=	yes
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-ALL_TARGET=	elc info
 
 SKK_LISPDIR=	${EMACS_VERSION_SITE_LISPDIR}/skk
-SKK_DOCS=	AUTHORS Codename Contributors FAQ.txt NEWS README
+SKK_DOCS=	AUTHORS.ja CODENAME.ja Contributors FAQ.ja NEWS.ja README
 SKK_EXAMPLES=	etc/Emacs.ad etc/dot.emacs etc/dot.skk
 
+ALL_TARGET=	elc info
+MAKE_ARGS+=	SKK_LISPDIR=${PREFIX}/${SKK_LISPDIR}
+
 post-install:
-.for i in ${AMBIGUOUS_ELCS}
-	${RM} -f ${PREFIX}/${SKK_LISPDIR}/${i}.elc
+.for i in skk-jisx0213 skk-lookup
 	${INSTALL_DATA} ${WRKSRC}/${i}.el ${PREFIX}/${SKK_LISPDIR}
 .endfor
 	${MKDIR} ${EXAMPLESDIR}
