@@ -14,12 +14,19 @@ MASTER_SITES=	http://savannah.nongnu.org/download/openexr/${PORTNAME}.pkg/${PORT
 MAINTAINER=	nork@FreeBSD.org
 COMMENT=	OpenEXR, a high dynamic-range (HDR) image file format developed by ILM
 
-USE_GCC=	3.1
+USE_GCC=	3.1+
 USE_LIBTOOL=	YES
 GNU_CONFIGURE=	YES
 INSTALLS_SHLIB=	YES
 
 .include <bsd.port.pre.mk>
+
+.if defined(USE_GCC) && ${USE_GCC} == 3.1+ && ${OSVERSION} < 500035
+CC=		gcc31
+CXX=		g++31
+BUILD_DEPENDS+=	gcc31:${PORTSDIR}/lang/gcc31
+MAKE_ENV+=	CC=${CC} CXX=${CXX}
+.endif
 
 .if !defined(WITHOUT_X11) && (defined(WITH_FLTK) || defined(WITH_FLTK_XUNICODE))
 .if defined(WITH_FLTK_XUNICODE)
