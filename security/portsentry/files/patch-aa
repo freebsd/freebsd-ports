@@ -5,7 +5,7 @@
  
  # Normal systems flags
 -CFLAGS = -O  
-+CFLAGS+= -O  -DPREFIX="${PREFIX}"
++CFLAGS+= -O  -DPREFIX=\"${PREFIX}\"
  
  # Debug mode for sentry
  #CFLAGS = -Wall -g -DDEBUG
