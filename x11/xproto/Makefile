@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xproto
-PORTVERSION=	6.6.1
-PORTREVISION=	2
+PORTVERSION=	6.6.2
 CATEGORIES=	x11
 MASTER_SITES=	http://pdx.freedesktop.org/~xlibs/release/
 
@@ -24,8 +23,5 @@ CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_GMAKE=	yes
 NO_BUILD=	yes
 USE_GNOME=	gnomehack
-
-post-extract:
-	@${CP} ${FILESDIR}/Xalloca.h ${WRKSRC}
 
 .include <bsd.port.mk>
