@@ -1,0 +1,13 @@
+--- docs/xml.texi.orig	Thu Feb 21 18:32:30 2002
++++ docs/xml.texi	Thu Feb 21 18:37:04 2002
+@@ -3,6 +3,10 @@
+ @setfilename xml.info
+ @settitle The Ada95 XML Library
+ @syncodeindex fn cp
++@dircategory Programming & development tools.
++@direntry
++* XmlAda: (xmlada)         	An XML processing library for Ada '95
++@end direntry
+ 
+ @set XMLVersion 0.5
+ 
