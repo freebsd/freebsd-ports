@@ -1,7 +1,6 @@
 # $FreeBSD$
 #
 
-#    SUBDIR += add please
+    SUBDIR += elmar-fonts
 
 .include <bsd.port.subdir.mk>
-    SUBDIR += elmar-fonts
