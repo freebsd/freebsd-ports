@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sopwith
-PORTVERSION=	1.4.0
+PORTVERSION=	1.5.0
 CATEGORIES=	games
 MASTER_SITES=	http://fraggle.despayre.org:81/stuffage/sopwith/
 DISTNAME=	sdl_${PORTNAME}-${PORTVERSION}
@@ -18,19 +18,9 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/sdl11-config:${PORTSDIR}/devel/sdl12
 USE_GTK=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	SDL_CONFIG=${PREFIX}/bin/sdl11-config
+CONFIGURE_ENV=	SDL_CONFIG=${LOCALBASE}/bin/sdl11-config
 USE_REINPLACE=	yes
 
-post-patch:
-	@${REINPLACE_CMD} -e 's/^extern void getmode.*//' \
-		${WRKSRC}/src/swtitle.h
-
-.if !defined(NOPORTDOCS)
-post-install:
-	${MKDIR} ${DOCSDIR}
-.for F in FAQ doc/license.txt doc/keys.txt doc/origdoc.txt
-	${INSTALL_DATA} ${WRKSRC}/${F} ${DOCSDIR}
-.endfor
-.endif
+MAN6=		sopwith.6
 
 .include <bsd.port.mk>
