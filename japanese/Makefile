@@ -2,6 +2,7 @@
 #
 
     SUBDIR += ASCIIdates98-fpw
+    SUBDIR += CGdic-fpw
     SUBDIR += Canna
     SUBDIR += FreeWnn-lib
     SUBDIR += FreeWnn-server
