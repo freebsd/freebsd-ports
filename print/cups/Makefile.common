@@ -14,12 +14,14 @@ CUPS_REVISION=	0
 CUPS_PORTVER=	${CUPS_VERSION}.${CUPS_REVISION}
 CUPS_PORTEPOCH=	0
 CUPS_FILESDIR=	${.CURDIR}/../../print/cups/files
+CUPS_ETCDIR=	${PREFIX}/etc/cups
+CUPS_RCDIR=	${PREFIX}/etc/rc.d
 CUPS_DOCSDIR=	${PREFIX}/share/doc/cups
 CUPS_SPOOLDIR=	/var/spool/cups
 
 # file, dir ownership
-CUPSGRP=	wheel
-CUPSOWN=	daemon
+CUPSGRP=	daemon
+CUPSOWN=	root
 
 ######################################################################
 # The rest of the file is for components (cups-base, cups-lpr) only.
@@ -54,7 +56,7 @@ CONFIGURE_ARGS+=	--localstatedir=/var		\
 			--with-cups-user=${CUPSOWN}	\
 			--with-cups-group=${CUPSGRP}	\
 			--with-docdir=${CUPS_DOCSDIR}	\
-			--with-rcdir=${PREFIX}/etc/rc.d
+			--with-rcdir=${CUPS_RCDIR}
 
 CONFIGURE_ARGS+=	CPPFLAGS="-I${PREFIX}/include"
 CONFIGURE_ARGS+=	CFLAGS="${CFLAGS} -I.. -I${PREFIX}/include"
