@@ -1,0 +1,61 @@
+#! /bin/sh
+#
+# $FreeBSD$
+
+PATH=/bin:/usr/bin:/usr/sbin
+
+case $2 in
+
+    POST-INSTALL)
+
+	echo "---> Starting install script:"
+
+	if [ -z "%%USER%%" -o -z "%%GROUP%%" ]; then
+	    echo "ERROR: A required pragma was empty"
+	    exit 1
+	fi
+
+	# Create group if required
+	if /usr/sbin/pw group show "%%GROUP%%" >/dev/null 2>&1; then
+	    echo "---> Using existing group \"%%GROUP%%\""
+	else
+	    echo "---> Adding group \"%%GROUP%%\""
+	    /usr/sbin/pw groupadd %%GROUP%% || exit 1
+	fi
+
+	# Create user if required
+	if /usr/sbin/pw user show "%%USER%%" >/dev/null 2>&1; then
+	    echo "---> Using existing user \"%%USER%%\""
+	else
+	    echo "---> Adding user \"%%USER%%\""
+	    /usr/sbin/pw useradd "%%USER%%" -g "%%GROUP%%" -h - \
+	    -d "%%DATADIR%%" -s "/sbin/nologin" -c "Postgrey Owner" || exit 1
+	fi
+
+	# Create home directory if required
+	if [ -d "%%DATADIR%%" ]; then
+	    echo "---> Using existing Postgrey database directory (%%DATADIR%%)"
+	    echo "     (There may be existing active postgrey databases - this installation"
+	    echo "     will attempt to preserve them.)"
+	    else
+	echo "---> Creating Postgrey database directory (%%DATADIR%%)"
+	    (umask 002 && /bin/mkdir -p "%%DATADIR%%") || exit 1
+	    /usr/sbin/chown -R "%%USER%%:%%GROUP%%" "%%DATADIR%%" || exit 1
+	    /bin/chmod g+s "%%DATADIR%%" || exit 1
+	fi
+    ;;
+
+    POST-DEINSTALL)
+
+	echo "---> Please, remember to remove the user and the group with :"
+	if /usr/sbin/pw user show "%%USER%%" >/dev/null 2>&1; then
+	    echo "       /usr/sbin/pw userdel -n %%USER%%"
+	fi
+	if /usr/sbin/pw group show "%%GROUP%%" >/dev/null 2>&1; then
+	    echo "       /usr/sbin/pw groupdel -n %%GROUP%%"
+	fi
+	echo "     as well as the databases."
+	echo "     If you're only updating, you can leave the things as they are."
+    ;;
+
+esac
