@@ -677,6 +677,8 @@
 %%PORTDOCS%%intel/compiler60/docs/ref/webhelp4.js
 %%PORTDOCS%%@dirrm intel/compiler60/docs/ref
 %%PORTDOCS%%@dirrm intel/compiler60/docs
+intel/compiler60/ia32/bin/real/ld
+@dirrm intel/compiler60/ia32/bin/real
 intel/compiler60/ia32/bin/Errormatch.txt
 intel/compiler60/ia32/bin/INTEL
 intel/compiler60/ia32/bin/icc
@@ -690,6 +692,7 @@ intel/compiler60/ia32/bin/icpc
 intel/compiler60/ia32/bin/icpc.cfg
 intel/compiler60/ia32/bin/icpcbin
 intel/compiler60/ia32/bin/icpi
+intel/compiler60/ia32/bin/ld
 intel/compiler60/ia32/bin/lmgrd.intel
 intel/compiler60/ia32/bin/lmutil
 intel/compiler60/ia32/bin/mcpcom
