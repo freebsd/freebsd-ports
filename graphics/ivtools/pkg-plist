@@ -1,10 +1,12 @@
 bin/comdraw
 bin/comterp
+bin/drawserv
 bin/drawtool
 bin/flipbook
 bin/graphdraw
 bin/iclass
 bin/idraw
+bin/ivgetjpg
 bin/ivtiftopnm
 bin/ivtmpnam
 bin/pnmtopgm
