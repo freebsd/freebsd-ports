@@ -1,5 +1,40 @@
 --- configure.orig	Mon Jan 14 20:33:50 2002
 +++ configure	Mon Jan 14 20:35:51 2002
+@@ -1024,7 +1024,7 @@
+ 	OpenBSD | FreeBSD | NetBSD)
+ 		# *BSD has important stuff (from ports) in
+ 		# /usr/local ...
+-		CFLAGS="$CFLAGS -I/usr/local/include -L/usr/local/lib"
++		CFLAGS="$CFLAGS -I%%LOCALBASE%%/include -L/%%LOCALBASE%%/lib"
+ 		PLUGINS="drv0-bsd.so snd-oss.so"
+ 		VBIFLAGS="-DBSD"
+ 		;;
+@@ -1529,10 +1529,10 @@
+     /usr/XFree86/include/X11  \
+                               \
+     /usr/include              \
+-    /usr/local/include        \
++    %%LOCALBASE%%/include        \
+     /usr/unsupported/include  \
+     /usr/athena/include       \
+-    /usr/local/x11r5/include  \
++    %%LOCALBASE%%/x11r5/include  \
+     /usr/lpp/Xamples/include  \
+                               \
+     /usr/openwin/include      \
+@@ -1604,10 +1604,10 @@
+     /usr/XFree86/lib/X11  \
+                           \
+     /usr/lib              \
+-    /usr/local/lib        \
++    %%LOCALBASE%%/lib        \
+     /usr/unsupported/lib  \
+     /usr/athena/lib       \
+-    /usr/local/x11r5/lib  \
++    %%LOCALBASE%%/x11r5/lib  \
+     /usr/lpp/Xamples/lib  \
+     /lib/usr/lib/X11	  \
+                           \
 @@ -2914,19 +2914,13 @@
  
  echo $ac_n "checking for X11 config directory""... $ac_c" 1>&6
@@ -20,5 +55,4 @@
 -fi
 +resdir=%%X11BASE%%/lib/X11
  echo "$ac_t""$resdir/app-defaults" 1>&6
- 
  
