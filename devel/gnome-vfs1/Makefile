@@ -7,7 +7,7 @@
 
 PORTNAME=	gnomevfs
 PORTVERSION=	1.0.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/gnome-vfs
@@ -44,12 +44,5 @@ pre-patch:
 		 s|\$\(datadir\)/locale|\$\(prefix\)/share/locale|g'
 	@find ${WRKSRC} -name 'xml-i18n-*' | xargs ${PERL} -pi -e \
 		's|/usr/local/bin/perl|${PERL}|g'
-
-post-install:
-	@if [ -L ${PREFIX}/include/libgnomevfs ]; then \
-		${RM} -f ${PREFIX}/include/libgnomevfs; \
-	fi
-	${LN} -sf ${PREFIX}/include/gnome-vfs-1.0/libgnomevfs \
-		${PREFIX}/include/libgnomevfs
 
 .include <bsd.port.mk>

@@ -10,12 +10,7 @@ etc/libIDLConf.sh
 @unexec if cmp -s %D/etc/orbitrc.default %D/etc/orbitrc; then rm -f %D/etc/orbitrc; fi
 etc/orbitrc.default
 @exec if [ ! -f %D/etc/orbitrc ] ; then cp -p %D/%F %B/orbitrc; fi
-include/IIOP
-include/ORBitservices
-include/ORBitutil
-include/libIDL
 include/libIDL-1.0/libIDL/IDL.h
-include/orb
 include/orbit-1.0/IIOP/IIOP-config.h
 include/orbit-1.0/IIOP/IIOP-types.h
 include/orbit-1.0/IIOP/IIOP.h
@@ -72,7 +67,6 @@ include/orbit-1.0/orb/poa.h
 include/orbit-1.0/orb/sequences.h
 include/orbit-1.0/orb/typecode.h
 include/orbit-1.0/orbit-idl2.h
-include/orbit-idl2.h
 @unexec install-info --delete %D/info/libIDL.info %D/info/dir
 info/libIDL.info
 @exec install-info %D/info/libIDL.info %D/info/dir

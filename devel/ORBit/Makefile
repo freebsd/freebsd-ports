@@ -7,7 +7,7 @@
 
 PORTNAME=	ORBit
 PORTVERSION=	0.5.13
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/ORBit
@@ -35,15 +35,5 @@ post-install:
 	@if [ ! -f ${PREFIX}/etc/orbitrc ]; then \
 		${CP} -p ${PREFIX}/etc/orbitrc.default ${PREFIX}/etc/orbitrc ; \
 	fi
-.for dir in IIOP ORBitservices ORBitutil orb orbit-idl2.h
-	@if [ -L ${PREFIX}/include/${dir} ]; then \
-		${RM} -f ${PREFIX}/include/${dir}; \
-	fi
-	@${LN} -sf ${PREFIX}/include/orbit-1.0/${dir} ${PREFIX}/include/${dir}
-.endfor
-	@if [ -L ${PREFIX}/include/libIDL ]; then \
-		${RM} -f ${PREFIX}/include/libIDL; \
-	fi
-	@${LN} -sf ${PREFIX}/include/libIDL-1.0/libIDL ${PREFIX}/include/libIDL
 
 .include <bsd.port.mk>
