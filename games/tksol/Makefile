@@ -3,12 +3,11 @@
 # Date created:         26 June 1995
 # Whom:                 thomas@ghpc8.ihf.rwth-aachen.de
 #
-# $Id: Makefile,v 1.1.1.1 1995/07/04 10:25:20 asami Exp $
+# $Id: Makefile,v 1.2 1995/11/28 07:54:57 tg Exp $
 #
 
 DISTNAME=       tksol-1.0
 CATEGORIES+=	games
-KEYWORDS+=	games x11 tk solitaire
 MASTER_SITES=	ftp://ftp.cs.umd.edu/pub/misc_software/tksol/
 EXTRACT_SUFX=	.tar.Z
 

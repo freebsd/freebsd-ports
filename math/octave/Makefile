@@ -3,12 +3,11 @@
 # Date created:		26 Apr 1995
 # Whom:			thomas@ghpc8.ihf.rwth-aachen.de
 #
-# $Id: Makefile,v 1.1.1.1 1995/05/02 07:18:20 asami Exp $
+# $Id: Makefile,v 1.2 1995/10/04 10:18:49 asami Exp $
 #
 
 DISTNAME=	octave-1.1.1
 CATEGORIES+=	math 
-KEYWORDS+=	math "numeric computation" matlab
 MASTER_SITES=	ftp://ftp.che.utexas.edu/pub/octave/
 
 MAINTAINER=	ports@FreeBSD.ORG
