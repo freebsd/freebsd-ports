@@ -1,0 +1,9 @@
+lib/libmodplug.so.0
+lib/libmodplug.so
+lib/libmodplug.la
+libdata/pkgconfig/libmodplug.pc
+include/libmodplug/stdafx.h
+include/libmodplug/sndfile.h
+include/libmodplug/it_defs.h
+include/libmodplug/modplug.h
+@dirrm include/libmodplug

@@ -164,6 +164,7 @@
     SUBDIR += libid3tag
     SUBDIR += libmad
     SUBDIR += libmikmod
+    SUBDIR += libmodplug
     SUBDIR += libmusicbrainz
     SUBDIR += libogg
     SUBDIR += libsamplerate
@@ -195,6 +196,7 @@
     SUBDIR += midimountain
     SUBDIR += mikmod
     SUBDIR += mixer.app
+    SUBDIR += modplugplay
     SUBDIR += mp32ogg
     SUBDIR += mp3_check
     SUBDIR += mp3asm
