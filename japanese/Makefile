@@ -1,6 +1,8 @@
-# $Id: Makefile,v 1.2 1995/03/20 12:49:48 asami Exp $
+# $Id: Makefile,v 1.3 1995/03/27 12:59:03 asami Exp $
 #
 # restricted: none
+#
+# doesn't compile: mh
 #
 SUBDIR= Canna Wnn kterm less nkf tcl tk
 
