@@ -17,6 +17,7 @@
     SUBDIR += libdivxdecore-devel
     SUBDIR += libdivxencore
     SUBDIR += libdv
+    SUBDIR += libdvbpsi
     SUBDIR += libdvdcss
     SUBDIR += libdvdplay
     SUBDIR += libdvdread
