@@ -205,6 +205,7 @@
     SUBDIR += qstat
     SUBDIR += quakeforge
     SUBDIR += quakeserver
+    SUBDIR += robocode
     SUBDIR += rocksndiamonds
     SUBDIR += rollemup
     SUBDIR += rt2-demo
