@@ -7,6 +7,7 @@
 
 PORTNAME=	orion
 PORTVERSION=	1.5.2
+PORTREVISION=	1
 CATEGORIES=	www java
 MASTER_SITES=	http://www.orionserver.com/distributions/ \
 		http://www.atlassian.com/software/orion/downloads/ \
@@ -45,8 +46,9 @@ GROUP_NAME?=	${USER_NAME}
 USER_ID?=	7104
 GROUP_ID?=	${USER_ID}
 PW?=		/usr/sbin/pw
-LISTEN_PORT?=	8090
-AUTO_START?=	YES
+HTTP_PORT?=	8090
+RMI_PORT?=	23791
+AUTO_START?=	NO
 
 pre-install:
 	@${ECHO} "Installation settings:"
@@ -57,7 +59,8 @@ pre-install:
 	@${ECHO} "   Location of Java port:   ${JAVA_PORT}"
 	@${ECHO} "   Using Jikes:             ${WITH_JIKES}"
 	@${ECHO} "   Running as (user/group): ${USER_NAME}/${GROUP_NAME} (${USER_ID}:${GROUP_ID})"
-	@${ECHO} "   Port to listen at:       ${LISTEN_PORT}"
+	@${ECHO} "   HTTP port:               ${HTTP_PORT}"
+	@${ECHO} "   RMI port:                ${RMI_PORT}"
 	@${ECHO} "   Starting after install:  ${AUTO_START}"
 
 do-install:
@@ -81,10 +84,15 @@ do-install:
 	> ${APP_HOME}/config/server.xml
 .endif
 
-	@# Configure the port to listen to
+	@# Configure the port for the HTTP server
 	${CAT} ${WRKSRC}/config/default-web-site.xml \
-	| ${SED} "/port=\"80\"/s//port=\"${LISTEN_PORT}\"/" \
+	| ${SED} "/port=\"80\"/s//port=\"${HTTP_PORT}\"/" \
 	> ${APP_HOME}/config/default-web-site.xml
+
+	@# Configure the port for the RMI server
+	${CAT} ${WRKSRC}/config/rmi.xml \
+	| ${SED} "/<rmi-server>/s//<rmi-server host=\"\[ALL\]\" port=\"${RMI_PORT}\">/" \
+	> ${ORION_HOME}/config/rmi.xml
 
 	@# Install the control script
 	${CAT} ${FILESDIR}/${APPCTL_NAME} \
