@@ -5124,6 +5124,7 @@ orville-write	ports/misc/orville-write
 osalp		ports/audio/osalp
 osf1_base	ports/emulators/osf1_base
 osg		ports/graphics/osg
+osgedit		ports/graphics/osgedit
 osh		ports/shells/osh
 osrtspproxy	ports/net/osrtspproxy
 otcl		ports/lang/otcl
