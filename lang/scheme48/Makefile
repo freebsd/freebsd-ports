@@ -14,6 +14,8 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER= 	nectar@FreeBSD.org
 
+FORBIDDEN=	emails love notes to authors on install
+
 GNU_CONFIGURE=  yes
 ALL_TARGET = 	enough
 STRIP=
