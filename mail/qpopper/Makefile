@@ -3,7 +3,7 @@
 # Date created:		1 April 1995
 # Whom:			pst
 #
-# $Id: Makefile,v 1.15 1997/04/23 04:27:18 ache Exp $
+# $Id: Makefile,v 1.16 1997/10/07 20:37:15 ache Exp $
 #
 
 DISTNAME=       qpopper2.4b2
@@ -49,7 +49,7 @@ do-install:
 	cd ${WRKSRC} && \
 		${INSTALL_PROGRAM} -o pop -m 4111 popauth ${PREFIX}/bin
 	cd ${WRKSRC} && \
-		${INSTALL_PROGRAM} -g mail -m 2111 popper ${PREFIX}/libexec
+		${INSTALL_PROGRAM} popper ${PREFIX}/libexec
 	cd ${WRKSRC} && \
 		${INSTALL_MAN} ${MAN8} ${PREFIX}/man/man8
 
