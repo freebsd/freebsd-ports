@@ -6,17 +6,19 @@
 #
 
 PORTNAME=	fine
-PORTVERSION=	2.3
+PORTVERSION=	2.4
 CATEGORIES=	editors
-# DEAD MASTER_SITES=	ftp://razor.fer.uni-lj.si/pub/software/bojank/fine/
-MASTER_SITES=	http://dccnet.linux.tucows.com/files/x11/office/
+MASTER_SITES=	http://www.lrv.fri.uni-lj.si/~bojank/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
-USE_GMAKE=	yes
+NO_WRKSUBDIR=	yes
+
 USE_QT_VER=	2
-WRKSRC=		${WRKDIR}/fine
+USE_GMAKE=	yes
+MAKE_ENV=	CXX="${CXX}" MOC="${MOC}" LIBQT="-l${QTNAME}" \
+		QTCPPFLAGS="${QTCPPFLAGS}" QTCFGLIBS="${QTCFGLIBS}"
 
 .include <bsd.port.pre.mk>
 
@@ -25,11 +27,8 @@ CFLAGS+=	-O0
 .endif
 
 do-install:
-	@${MKDIR} ${PREFIX}/share/fine
-	${INSTALL_DATA} ${WRKSRC}/.editor ${PREFIX}/share/fine/editor
-.for template in C++.template LaTeX.template h.template  html.template
-	${INSTALL_DATA} ${WRKSRC}/${template} ${PREFIX}/share/fine/
-.endfor
-	${INSTALL_PROGRAM} ${WRKSRC}/fine ${PREFIX}/bin
+	@${INSTALL_PROGRAM} ${WRKSRC}/fine ${PREFIX}/bin
+	@${MKDIR} ${DATADIR}
+	@${INSTALL_DATA} ${WRKSRC}/*.template ${DATADIR}
 
 .include <bsd.port.post.mk>
