@@ -7,6 +7,7 @@
 
 PORTNAME=	evolution
 PORTVERSION=	2.2.0
+PORTREVISION=	1
 CATEGORIES=	mail gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/2.2
@@ -95,8 +96,16 @@ PLIST_SUB+=	DBUS=""
 PLIST_SUB+=	DBUS="@comment "
 .endif
 
+post-patch:
+	@${SED} -e 's|%%PREFIX%%|${PREFIX}| ; \
+		s|%%EVO_VERSION%%|${EVO_VERSION}|' \
+		${FILESDIR}/evolibs.sh > ${WRKDIR}/evolibs.sh
+
 post-install:
 	@${LN} -sf ${PREFIX}/bin/evolution-${EVO_VERSION} \
 		${PREFIX}/bin/evolution
+	@${INSTALL_SCRIPT} -m 555 ${WRKDIR}/evolibs.sh \
+		${PREFIX}/etc/rc.d/000.evolibs.sh
+	-@update-desktop-database
 
 .include <bsd.port.post.mk>
