@@ -1,7 +1,6 @@
 bin/crafty
 lib/crafty/books.bin
 @dirrm lib/crafty
-man/man6/crafty.6.gz
 share/doc/crafty/crafty.doc
 share/doc/crafty/crafty.faq
 share/doc/crafty/read.me

@@ -1,5 +1,4 @@
 bin/battalion
-man/man6/battalion.6.gz
 share/battalion/battalion.sho
 share/battalion/DATA/road.data
 share/battalion/DATA/tank.data

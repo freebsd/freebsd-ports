@@ -1,7 +1,5 @@
 bin/block
 bin/bed
-man/man6/block.6.gz
-man/man6/bed.6.gz
 share/block/another.block
 share/block/complex.block
 share/block/default.block

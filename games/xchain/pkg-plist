@@ -1,5 +1,4 @@
 bin/xchain
-man/man6/xchain.6.gz
 share/doc/xchain/README
 share/doc/xchain/copyright
 @dirrm share/doc/xchain

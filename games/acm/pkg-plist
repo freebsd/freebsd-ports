@@ -1,7 +1,6 @@
 bin/acm
 bin/acms
 bin/kill-acms
-man/man6/acm.6.gz
 games/acm/default-scene
 games/acm/maui-scene
 games/acm/kauai-scene

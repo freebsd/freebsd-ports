@@ -56,7 +56,6 @@ share/games/tksol/cardbitmaps/s9
 share/games/tksol/downbitmaps/bk_circles
 share/games/tksol/downbitmaps/bk_darts
 share/games/tksol/downbitmaps/bk_lines
-man/man6/tksol.6.gz
 @dirrm share/games/tksol/cardbitmaps
 @dirrm share/games/tksol/downbitmaps
 @dirrm share/games/tksol

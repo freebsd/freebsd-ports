@@ -1,7 +1,6 @@
 bin/gnushogi
 bin/gnushogir
 libexec/gnushogix
-man/man6/gnushogi.6.gz
 share/doc/gnushogi/BOOKFILES
 share/doc/gnushogi/CHANGES
 share/doc/gnushogi/CONTRIB
