@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- tools/templates/Makefile.in	2001/08/06 08:15:18	1.1
++++ tools/templates/Makefile.in	2001/08/06 08:15:53
+@@ -148,7 +148,7 @@
+ 
+ EXTRA_DIST = $(TEMPLATE_FILES)
+ 
+-gdatemplatesdir = $(prefix)/share/gda/templates
++gdatemplatesdir = $(prefix)/share/gnome/gda/templates
+ gdatemplates_DATA = $(TEMPLATE_FILES)
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = ../../config.h

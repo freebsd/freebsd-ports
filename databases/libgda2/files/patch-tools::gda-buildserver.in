@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- tools/gda-buildserver.in	2001/08/06 08:16:41	1.1
++++ tools/gda-buildserver.in	2001/08/06 08:16:54
+@@ -7,7 +7,7 @@
+ CC=@CC@
+ shell=@shell@
+ 
+-TEMPLATES_DIR="${prefix}/share/gda/templates"
++TEMPLATES_DIR="${prefix}/share/gnome/gda/templates"
+ TMPL_C_FILES="gda-srv-command.c gda-srv-connection.c gda-srv-recordset.c main-srv.c"
+ TMPL_H_FILES="gda-srv.h"
+ 

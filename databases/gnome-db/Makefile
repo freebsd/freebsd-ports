@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gnomedb
-PORTVERSION=	0.2.10
-PORTREVISION=	1
+PORTVERSION=	0.2.90
 CATEGORIES=	databases gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/gnome-db
@@ -15,8 +14,7 @@ DISTNAME=	gnome-db-${PORTVERSION}
 
 MAINTAINER=	gnome@FreeBSD.org
 
-LIB_DEPENDS=	bonobo.2:${PORTSDIR}/devel/bonobo \
-		gda-client.0:${PORTSDIR}/databases/libgda
+LIB_DEPENDS=	gda-client.0:${PORTSDIR}/databases/libgda
 
 USE_X_PREFIX=	yes
 USE_GNOMECTRL=	yes
