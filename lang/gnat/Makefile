@@ -18,7 +18,7 @@ PORTVERSION=	3.14p
 CATEGORIES=	lang
 MASTER_SITES=	ftp://cs.nyu.edu/pub/gnat/${PORTVERSION}/ \
 		${MASTER_SITE_LOCAL} ${MASTER_SITE_GNU}
-MASTER_SITE_SUBDIR=	deischen/gcc .
+MASTER_SITE_SUBDIR=	gcc deischen/gcc .
 DISTFILES=	${GNATNAME}.tgz gcc-2.8.1.tar.gz
 
 MAINTAINER=	eischen@vigrid.com
