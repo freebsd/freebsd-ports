@@ -2,6 +2,7 @@ bin/cvs
 bin/cvsbug
 bin/rcs2log
 share/cvs/contrib/README
+share/cvs/contrib/check_cvs
 share/cvs/contrib/clmerge
 share/cvs/contrib/cln_hist
 share/cvs/contrib/commit_prep
