@@ -314,3 +314,6 @@ lib/nessus/plugins_factory/Makefile
 lib/nessus/plugins_factory/libtool
 lib/nessus/plugins_factory/nessus.tmpl
 @dirrm lib/nessus/plugins_factory
+@dirrm lib/nessus/plugins
+@dirrm lib/nessus
+@dirrm etc/nessus
