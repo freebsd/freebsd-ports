@@ -1,5 +1,5 @@
-*** Makefile.orig	Wed Aug 30 12:47:16 1995
---- Makefile	Sun Mar 17 04:52:26 1996
+*** Makefile~	Sat Jul 13 12:46:57 1996
+--- Makefile	Fri Sep 13 03:15:16 1996
 ***************
 *** 4,11 ****
   #
@@ -20,16 +20,16 @@
   #### C Compiler Flags ####
   #
 ***************
-*** 96,102 ****
-  #	    USTAT	  - ustat(), no statfs etc.
+*** 107,113 ****
+  # prompt first. Don't forget to activate the /AutoPPP/ line in login.config!
   #
   #CFLAGS=-Wall -O2 -pipe -DSECUREWARE -DUSE_POLL
 ! CFLAGS=-O2 -Wall -pipe
   #CFLAGS=-O -DSVR4
   #CFLAGS=-O -DSVR4 -DSVR42
   #CFLAGS=-O -DUSE_POLL
---- 96,102 ----
-  #	    USTAT	  - ustat(), no statfs etc.
+--- 107,113 ----
+  # prompt first. Don't forget to activate the /AutoPPP/ line in login.config!
   #
   #CFLAGS=-Wall -O2 -pipe -DSECUREWARE -DUSE_POLL
 ! #CFLAGS=-O2 -Wall -pipe
@@ -37,7 +37,7 @@
   #CFLAGS=-O -DSVR4 -DSVR42
   #CFLAGS=-O -DUSE_POLL
 ***************
-*** 132,138 ****
+*** 144,150 ****
   # For FreeBSD, add "-lutil" if the linker complains about
   # 	"utmp.o: unresolved symbod _login"
   #
@@ -45,7 +45,7 @@
   #LDFLAGS=-lprot -lsocket
   #LDFLAGS=-s -shlib
   #LDFLAGS=-lsocket
---- 132,138 ----
+--- 144,150 ----
   # For FreeBSD, add "-lutil" if the linker complains about
   # 	"utmp.o: unresolved symbod _login"
   #
@@ -54,7 +54,7 @@
   #LDFLAGS=-s -shlib
   #LDFLAGS=-lsocket
 ***************
-*** 227,235 ****
+*** 251,259 ****
   # please use the "mg.echo" program provided in the compat/ subdirectory.
   # Set ECHO="mg.echo" and INSTALL_MECHO to mg.echo
   #
@@ -63,8 +63,8 @@
 ! # INSTALL_MECHO=mg.echo
   
   #
-  # for mgetty, that's it. If you want to use Klaus Weidner's voice
---- 227,235 ----
+  # for mgetty, that's it. If you want to use the voice
+--- 251,259 ----
   # please use the "mg.echo" program provided in the compat/ subdirectory.
   # Set ECHO="mg.echo" and INSTALL_MECHO to mg.echo
   #
@@ -73,26 +73,26 @@
 ! INSTALL_MECHO=mg.echo
   
   #
-  # for mgetty, that's it. If you want to use Klaus Weidner's voice
+  # for mgetty, that's it. If you want to use the voice
 ***************
 *** 530,536 ****
+  install: install.bin install.doc
   
-  install: install-bin install-doc
-  
-! install-bin: mgetty sendfax login.config mgetty.config sendfax.config
+  install.bin: mgetty sendfax kvg newslock \
+! 		login.config mgetty.config sendfax.config 
   #
   # binaries
   #
 --- 530,536 ----
+  install: install.bin install.doc
   
-  install: install-bin install-doc
-  
-! install-bin: mgetty sendfax login.config #mgetty.config sendfax.config
+  install.bin: mgetty sendfax kvg newslock \
+! 		login.config #mgetty.config sendfax.config 
   #
   # binaries
   #
 ***************
-*** 547,561 ****
+*** 548,562 ****
   # data files + directories
   #
   	test -d $(LIBDIR)  || \
@@ -108,7 +108,7 @@
   	test -f $(CONFDIR)/dialin.config || \
   		$(INSTALL) -o root -m 600 dialin.config $(CONFDIR)/
   #
---- 547,561 ----
+--- 548,562 ----
   # data files + directories
   #
   	test -d $(LIBDIR)  || \

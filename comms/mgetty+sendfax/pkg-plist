@@ -5,6 +5,7 @@ bin/faxrunq
 bin/g3cat
 bin/g3topbm
 bin/kvg
+bin/newslock
 bin/mg.echo
 bin/pbmtog3
 etc/mgetty+sendfax/dialin.config
@@ -28,8 +29,10 @@ man/man4/mgettydefs.4
 man/man5/faxqueue.5
 man/man8/sendfax.8
 man/man8/mgetty.8
+man/man8/callback.8
 sbin/mgetty
 sbin/sendfax
+sbin/faxrunqd
 @cd /var/spool
 @exec mkdir -p %D/fax/incoming
 @exec mkdir -p %D/fax/outgoing
