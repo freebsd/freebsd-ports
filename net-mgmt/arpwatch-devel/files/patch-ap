@@ -1,14 +1,35 @@
---- ../arpwatch.orig/util.c	Fri Oct 13 18:49:03 2000
-+++ ./util.c	Wed Sep 10 13:03:27 2003
-@@ -53,6 +53,7 @@
+--- util.c.orig	Fri Oct 13 18:49:03 2000
++++ util.c	Fri Jun 11 12:35:32 2004
+@@ -20,7 +20,7 @@
+  */
+ #ifndef lint
+ static const char rcsid[] =
+-    "@(#) $Id: util.c,v 1.9 2000/10/13 22:48:55 leres Exp $ (LBL)";
++    "@(#) $Id: util.c,v 1.5 2004/06/10 19:48:37 mdg Exp $ (LBL)";
+ #endif
+
+ /*
+@@ -39,6 +39,7 @@
+ #include <stdlib.h>
+ #include <string.h>
+ #include <syslog.h>
++#include <dirent.h>
+
+ #include "gnuc.h"
+ #ifdef HAVE_OS_PROTO_H
+@@ -53,8 +54,11 @@
 
  char *arpdir = ARPDIR;
  char *arpfile = ARPFILE;
 +char *etherfile = ETHERFILE;
  char *ethercodes = ETHERCODES;
 
++struct ifdesc *if_desc = NULL;
++
  /* Broadcast ethernet addresses */
-@@ -105,7 +106,7 @@
+ u_char zero[6] = { 0, 0, 0, 0, 0, 0 };
+ u_char allones[6] = { 0xff, 0xff, 0xff, 0xff, 0xff, 0xff };
+@@ -105,7 +109,7 @@
  dump(void)
  {
  	register int fd;
@@ -17,7 +38,7 @@
 
  	(void)sprintf(oldarpfile, "%s-", arpfile);
  	(void)sprintf(newarpfile, "%s.new", arpfile);
-@@ -130,6 +131,32 @@
+@@ -130,6 +134,32 @@
  		syslog(LOG_ERR, "rename %s -> %s: %m", newarpfile, arpfile);
  		return(0);
  	}
@@ -50,17 +71,72 @@
  	return(1);
  }
 
-@@ -138,7 +165,9 @@
+@@ -138,7 +168,64 @@
  readdata(void)
  {
  	register FILE *f;
 +	char line[1024];
++	char buf[MAXNAMLEN];
++	char path[MAXNAMLEN + 1];
++	int len, i;
++	DIR *dirp;
++	struct dirent *dp;
++	struct ifdesc *idp;
++
++	/* interface descriptions */
++	if ((dirp = opendir(arpdir)) == NULL)
++	  {
++	    syslog(LOG_ERR, "opendir(%s)", arpdir);
++	    return(0);
++	  }
++
++	idp = if_desc = (struct ifdesc *) malloc(sizeof(struct ifdesc));
++	idp->name = idp->desc = NULL;
++	idp->next = NULL;
++
++	while ((dp = readdir(dirp)) != NULL)
++	  {
++	    if (dp->d_type == DT_LNK)
++	      {
++		for (i=0; i < dp->d_namlen; i++)
++		  path[i] = dp->d_name[i];
++
++		path[dp->d_namlen] = '\0';
++
++		if ((len = readlink(path, buf, MAXNAMLEN)) == -1)
++		  {
++		    syslog(LOG_ERR, "readlink(path) failed");
++		    return(0);
++		  }
++
++		buf[len] = '\0';
++
++		idp->next = (struct ifdesc *) malloc(sizeof(struct ifdesc));
++		idp = idp->next;
++		idp->next = NULL;
++		asprintf(&idp->name, "%s", path);
++		asprintf(&idp->desc, "%s", buf);
++	      }
++	  }
++
++	if (if_desc->next == NULL)
++	  {
++	    free(if_desc);
++	    idp = if_desc = NULL;
++	  }
++	else
++	  {
++	    idp = if_desc;
++	    if_desc = if_desc->next;
++	    free(idp);
++	    idp = NULL;
++	  }
 
 +	/* arp.dat */
  	if ((f = fopen(arpfile, "r")) == NULL) {
  		syslog(LOG_ERR, "fopen(%s): %m", arpfile);
  		return(0);
-@@ -147,6 +176,15 @@
+@@ -147,6 +234,15 @@
  		(void)fclose(f);
  		return(0);
  	}

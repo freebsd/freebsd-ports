@@ -1,5 +1,14 @@
 --- report.c.orig	Sat Sep 30 19:41:10 2000
-+++ report.c	Tue Apr 13 14:39:50 2004
++++ report.c	Fri Jun 11 12:35:32 2004
+@@ -20,7 +20,7 @@
+  */
+ #ifndef lint
+ static const char rcsid[] =
+-    "@(#) $Id: report.c,v 1.46 2000/09/30 23:41:04 leres Exp $ (LBL)";
++    "@(#) $Id: report.c,v 1.8 2004/06/10 19:56:57 mdg Exp $ (LBL)";
+ #endif
+
+ /*
 @@ -45,6 +45,8 @@
 
  #include <ctype.h>
@@ -18,7 +27,16 @@
  static int cdepth;	/* number of outstanding children */
 
  static char *fmtdate(time_t);
-@@ -232,15 +236,16 @@
+@@ -77,6 +81,8 @@
+ RETSIGTYPE reaper(int);
+ static int32_t gmt2local(void);
+
++extern struct ifdesc *if_desc;
++
+ static char *
+ fmtdelta(register time_t t)
+ {
+@@ -232,28 +238,37 @@
  }
 
  void
@@ -38,7 +56,12 @@
  	char *watchee = WATCHEE;
  	char *sendmail = PATH_SENDMAIL;
  	char *unknown = "<unknown>";
-@@ -251,9 +256,15 @@
+ 	char buf[132];
++	char *newif, *newif_old;
+ 	static int init = 0;
++	struct ifdesc *idp = if_desc;
+
+ 	/* No report until we're initialized */
  	if (initializing)
  		return;
 
@@ -55,7 +78,7 @@
  			return;
  		}
  		f = stdout;
-@@ -270,7 +281,7 @@
+@@ -270,7 +285,7 @@
  		}
 
  		/* Syslog this event too */
@@ -64,7 +87,35 @@
 
  		/* Update child depth */
  		++cdepth;
-@@ -303,13 +314,32 @@
+@@ -286,6 +301,7 @@
+
+ 		/* Child */
+ 		closelog();
++
+ 		(void)strcpy(tempfile, "/tmp/arpwatch.XXXXXX");
+ 		if ((fd = mkstemp(tempfile)) < 0) {
+ 			syslog(LOG_ERR, "mkstemp(%s) %m", tempfile);
+@@ -300,16 +316,52 @@
+ 			syslog(LOG_ERR, "unlink(%s): %m", tempfile);
+ 	}
+
++	newif = newif_old = NULL;
++	if (interface != NULL)
++	  for (idp = if_desc; idp != NULL; idp = idp->next)
++	    if (strcmp(idp->name, interface) == 0)
++	      asprintf(&newif, "%s (%s)", interface, idp->desc);
++
++	if (newif == NULL && interface != NULL)
++	  asprintf(&newif, "%s", interface);
++
++	if (old_interface != NULL)
++	  for (idp = if_desc; idp != NULL; idp = idp->next)
++	    if (strcmp(idp->name, old_interface) == 0)
++	      asprintf(&newif_old, "%s (%s)", old_interface, idp->desc);
++
++	if (newif_old == NULL && old_interface != NULL)
++	  asprintf(&newif_old, "%s", old_interface);
++
  	(void)fprintf(f, "From: %s\n", watchee);
  	(void)fprintf(f, "To: %s\n", watcher);
  	hn = gethname(a);
@@ -92,15 +143,27 @@
 +	if (event & FLIPFLOP)
 +	  (void)fprintf(f, fmt, "event", "flip flop");
 +
-+	(void)fprintf(f, fmt, "interface", interface);
++	(void)fprintf(f, fmt, "interface", newif);
 +
 +	if (old_interface != NULL)
-+	  (void)fprintf(f, fmt, "old interface", old_interface);
++	  (void)fprintf(f, fmt, "old interface", newif_old);
 +
  	(void)fprintf(f, fmt, "hostname", hn);
  	(void)fprintf(f, fmt, "ip address", intoa(a));
  	(void)fprintf(f, fmt, "ethernet address", e2str(e1));
-@@ -344,6 +374,25 @@
+@@ -339,11 +391,37 @@
+ 	}
+
+ 	(void)rewind(f);
++
++	if (newif != NULL)
++	  free(newif);
++
++	if (newif_old != NULL)
++	  free(newif_old);
++
+ 	if (dup2(fileno(f), fileno(stdin)) < 0) {
+ 		syslog(LOG_ERR, "dup2: %m");
  		exit(1);
  	}
  	/* XXX Need to freopen()? */
