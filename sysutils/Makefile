@@ -152,6 +152,7 @@
     SUBDIR += wmavgload
     SUBDIR += wmbattery
     SUBDIR += wmcpuload
+    SUBDIR += wmcube
     SUBDIR += wmfire
     SUBDIR += wmfsm
     SUBDIR += wmhm

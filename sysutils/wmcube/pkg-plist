@@ -1,0 +1,6 @@
+bin/wmcube
+%%PORTDOCS%%share/doc/wmcube/CHANGES
+%%PORTDOCS%%share/doc/wmcube/COPYING
+%%PORTDOCS%%share/doc/wmcube/README
+%%PORTDOCS%%share/doc/wmcube/TODO
+%%PORTDOCS%%@dirrm share/doc/wmcube
