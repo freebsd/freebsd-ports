@@ -371,6 +371,7 @@
     SUBDIR += msend
     SUBDIR += msntp
     SUBDIR += mtr
+    SUBDIR += mu-conference
     SUBDIR += mudix
     SUBDIR += mute-net
     SUBDIR += mute-net-gui
