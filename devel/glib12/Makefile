@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	glib
-PORTVERSION=	1.2.7
+PORTVERSION=	1.2.8
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.gimp.org/pub/gtk/v1.2/ \
 		ftp://ftp.cs.umn.edu/pub/gimp/gtk/v1.2/ \

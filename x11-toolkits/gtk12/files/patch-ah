@@ -1,0 +1,39 @@
+--- docs/Makefile.in.orig	Fri Sep 24 09:13:34 1999
++++ docs/Makefile.in	Sat Oct  9 22:15:26 1999
+@@ -99,7 +99,7 @@
+ LT_RELEASE = @LT_RELEASE@
+ LT_REVISION = @LT_REVISION@
+ MAINT = @MAINT@
+-MAKEINFO = @MAKEINFO@
++MAKEINFO = @MAKEINFO@ --no-split
+ MKINSTALLDIRS = @MKINSTALLDIRS@
+ NM = @NM@
+ OBJDUMP = @OBJDUMP@
+@@ -128,7 +128,7 @@
+ 
+ info_TEXINFOS = gdk.texi gtk.texi 
+ 
+-man_MANS = gtk-config.1
++man_MANS = gtk@LT_RELEASE@-config.1
+ 
+ TUTORIAL_FR_FILES = html/gtk_tut_fr-1.html   	html/gtk_tut_fr-2.html   	html/gtk_tut_fr-3.html   	html/gtk_tut_fr-4.html   	html/gtk_tut_fr-5.html   	html/gtk_tut_fr-6.html   	html/gtk_tut_fr-7.html   	html/gtk_tut_fr-8.html   	html/gtk_tut_fr-9.html   	html/gtk_tut_fr-10.html  	html/gtk_tut_fr-11.html  	html/gtk_tut_fr-12.html  	html/gtk_tut_fr-13.html  	html/gtk_tut_fr-14.html  	html/gtk_tut_fr-15.html  	html/gtk_tut_fr-16.html  	html/gtk_tut_fr-17.html  	html/gtk_tut_fr-18.html  	html/gtk_tut_fr-19.html  	html/gtk_tut_fr-20.html  	html/gtk_tut_fr-21.html  	html/gtk_tut_fr-22.html  	html/gtk_tut_fr-23.html  	html/gtk_tut_fr-24.html  	html/gtk_tut_fr.html text/gtk_tut_fr.txt
+ 
+@@ -146,7 +146,7 @@
+ 
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = ../config.h
+-CONFIG_CLEAN_FILES =  gtk-config.1
++CONFIG_CLEAN_FILES =  gtk@LT_RELEASE@-config.1
+ TEXI2DVI = texi2dvi
+ INFO_DEPS = gdk.info gtk.info
+ DVIS = gdk.dvi gtk.dvi
+@@ -174,6 +174,9 @@
+ 
+ gtk-config.1: $(top_builddir)/config.status gtk-config.1.in
+ 	cd $(top_builddir) && CONFIG_FILES=$(subdir)/$@ CONFIG_HEADERS= $(SHELL) ./config.status
++
++gtk@LT_RELEASE@-config.1: gtk-config.1
++	cp gtk-config.1 gtk@LT_RELEASE@-config.1
+ 
+ gdk.info: gdk.texi
+ gdk.dvi: gdk.texi
