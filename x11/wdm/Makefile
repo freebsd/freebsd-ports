@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wdm
-PORTVERSION=	1.27
+PORTVERSION=	1.28
 CATEGORIES=	x11 windowmaker
 MASTER_SITES=	http://voins.program.ru/wdm/ \
 		http://www.de.freebsd.org/de/gif/bsd/ \
@@ -28,7 +28,7 @@ USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" \
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" \
 		DEF_SERVER="${DEF_SERVER}"
 CONFIGURE_ARGS=	--with-logdir=/var/log \
 		--with-runlockdir=/var/run \
@@ -45,7 +45,7 @@ CONFIGURE_ARGS=	--with-logdir=/var/log \
 MAN1=	wdm.1 wdmLogin.1
 
 CPPFLAGS=	-I${LOCALBASE}/include -DCSRG_BASED -DHAS_SETUSERCONTEXT
-LDFLAGS=	-L${LOCALBASE}/lib
+LDFLAGS=	-L${LOCALBASE}/lib -lintl
 
 DEF_SERVER?=	${X11BASE}/bin/X
 
