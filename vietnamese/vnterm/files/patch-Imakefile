@@ -13,7 +13,7 @@
   OSMINORVERSION = OSMinorVersion
  
 +  VNLIBDIR      = ../lib
-+  VNINCDIR      = /usr/local/include/viet
++  VNINCDIR      = $(LOCALBASE)/include/viet
 +  VNFONTXDIR    = ../fonts/X
 +
     MAIN_DEFINES = -DUTMP $(TTYGROUPDEF) $(PUCCPTYDDEF) \
