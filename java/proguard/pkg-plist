@@ -44,3 +44,4 @@ share/proguard/examples/servlets.pro
 @dirrm share/proguard/docs/manual
 @dirrm share/proguard/docs
 @dirrm share/proguard/examples
+@dirrm share/proguard
