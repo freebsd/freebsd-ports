@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	sms
-PORTVERSION=	2.0.0
+PORTVERSION=	2.0.1
 CATEGORIES=	polish
 MASTER_SITES=	http://ceti.pl/~miki/komputery/download/sms/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	pyzmen@kam.pl
 COMMENT=	Send SMS to cellular phones in Poland (Idea, ERA, Plus)
 
 LIB_DEPENDS=	curl.3:${PORTSDIR}/ftp/curl \
