@@ -6,6 +6,23 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20041116:
+  AFFECTS: users of www/bricolage
+  AUTHOR: ports@rbt.ca
+
+  Bricolage may now be run on mod_perl compiled as a DSO for Apache
+  when following these guidelines:
+
+  http://perl.apache.org/docs/1.0/guide/install.html#When_DSO_can_be_Used
+
+  To do this, you will need to:
+    pkg_delete -f apache-mod_perl
+    pkg_delete -f p5-libapreq-static
+    portupgrade -rR bricolage
+
+  Bricolage will rebuild mod_perl, apache and libapreq using their standard
+  versions.
+
 20041115:
   AFFECTS: users of sysutils/portupgrade
   AUTHOR: lofi@FreeBSD.org

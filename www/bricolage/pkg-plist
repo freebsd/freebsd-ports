@@ -15,6 +15,13 @@ bricolage/upgrade/1.8.0/new_lang_pref_options.pl
 bricolage/upgrade/1.8.1/contrib_type_secret.pl
 bricolage/upgrade/1.8.1/fix_orphan_assets.pl
 bricolage/upgrade/1.8.1/grp_grp_name.pl
+bricolage/upgrade/1.8.2/add_missing_job_constraints.pl
+bricolage/upgrade/1.8.2/add_missing_job_fks.pl
+bricolage/upgrade/1.8.2/default_media_type.pl
+bricolage/upgrade/1.8.2/delete_old_jobs.pl
+bricolage/upgrade/1.8.2/delete_template_obj_files.pl
+bricolage/upgrade/1.8.2/job_text_columns.pl
+bricolage/upgrade/1.8.2/media_type_not_null.pl
 bricolage/comp/admin/alerts/dhandler
 bricolage/comp/admin/alerts/recip
 bricolage/comp/admin/control/change_user/dhandler
@@ -2771,6 +2778,7 @@ share/bricolage/Pg.sql
 @dirrm %%SITE_PERL%%/Bric
 @dirrm %%SITE_PERL%%/mach/auto/Bric
 @dirrm %%SITE_PERL%%/mach/auto/bric_bin
+@dirrm bricolage/upgrade/1.8.2
 @dirrm bricolage/upgrade/1.8.1
 @dirrm bricolage/upgrade/1.8.0
 @dirrm bricolage/upgrade/lib
