@@ -14,7 +14,7 @@ EXTRACT_SUFX=
 
 MAINTAINER=	jedgar@FreeBSD.org
 
-RUN_DEPENDS=	lynx:${PORTSDIR}/www/lynx
+RUN_DEPENDS=	w3m:${PORTSDIR}/www/w3m
 
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
@@ -26,6 +26,7 @@ do-extract:
 do-configure:
 	@${PERL} -pi.orig -e 's|/etc/rfc|${PREFIX}/etc/rfc|' ${WRKDIR}/${DISTNAME}
 	@${PERL} -pi.orig -e 's|/etc/nmap|${PREFIX}/share/misc/nmap|' ${WRKDIR}/${DISTNAME}
+	@${PERL} -pi.orig -e 's|lynx|w3m|' ${WRKDIR}/${DISTNAME}
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/rfc ${PREFIX}/bin/rfc
