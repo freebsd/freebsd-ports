@@ -1,13 +1,21 @@
---- pan/gui.h.orig	Mon Jan 10 19:57:05 2000
-+++ pan/gui.h	Mon Jan 10 19:58:24 2000
-@@ -27,6 +27,10 @@
+--- pan/gui.h.orig	Tue Feb 15 13:47:56 2000
++++ pan/gui.h	Tue Feb 22 22:29:46 2000
+@@ -21,6 +21,7 @@
+ #ifndef __GUI_H__
+ #define __GUI_H__
+ 
++#include <sys/types.h>
+ #include <gtk/gtkwidget.h>
+ #include <libgnomeui/gnome-app.h>
+ #include <libgnomeui/gnome-app-helper.h>
+@@ -28,6 +29,10 @@
+ #include "article.h"
  #include "group.h"
  #include "status-item.h"
- 
++
 +#if defined(__FreeBSD__)
 +typedef u_long ulong;
 +#endif
-+
+ 
  extern GtkWidget *groups_vbox;
  extern GtkWidget *articlelist_ctree;
- extern GtkWidget *text_box;
