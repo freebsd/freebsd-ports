@@ -83,7 +83,7 @@
 ***************
 *** 22,27 ****
 --- 22,28 ----
-  static char rcsid[]="$Header: /a/ncvs/ports/cad/magic/patches/patch-aa,v 1.2 1995/01/22 15:59:54 ats Exp $";
+  static char rcsid[]="$Header: /a/ncvs/ports/cad/magic/patches/patch-aa,v 1.3 1995/01/29 21:56:58 ats Exp $";
   #endif  not lint
   
 + #include <sys/types.h>
@@ -227,7 +227,7 @@
 ***************
 *** 19,24 ****
 --- 19,25 ----
-  static char rcsid[] = "$Header: /a/ncvs/ports/cad/magic/patches/patch-aa,v 1.2 1995/01/22 15:59:54 ats Exp $";
+  static char rcsid[] = "$Header: /a/ncvs/ports/cad/magic/patches/patch-aa,v 1.3 1995/01/29 21:56:58 ats Exp $";
   #endif  not lint
   
 + #include <stdlib.h>
@@ -327,8 +327,53 @@
       extern char* sprintf();
   #endif
   #endif
-*** graphics/Makefile.ORIG	Mon Sep 19 23:41:05 1994
---- graphics/Makefile	Sun Jan 22 14:44:19 1995
+*** scmos/Makefile.ORIG	Thu Aug  4 22:17:03 1994
+--- scmos/Makefile	Thu Feb 23 18:54:29 1995
+***************
+*** 75,81 ****
+  uufile: $(SRC)
+  	uuencode scmos_tech.tar.Z scmos_tech.tar.Z > scmos_tech.uu
+  
+! clean:;
+  	rm -f scmos.tech$(VERSION) scmos-ibm.tech$(VERSION) \
+  	      scmos-hp.tech$(VERSION) *.tar.Z *.tar .version3 .version4
+  
+--- 75,81 ----
+  uufile: $(SRC)
+  	uuencode scmos_tech.tar.Z scmos_tech.tar.Z > scmos_tech.uu
+  
+! clean:
+  	rm -f scmos.tech$(VERSION) scmos-ibm.tech$(VERSION) \
+  	      scmos-hp.tech$(VERSION) *.tar.Z *.tar .version3 .version4
+  
+*** doc/Makefile.ORIG	Thu Aug  4 22:30:40 1994
+--- doc/Makefile	Fri Feb 24 09:03:09 1995
+***************
+*** 106,109 ****
+  	cd tutcells; make install CADDIR=${CADDIR}
+  
+  force:
+! 	
+--- 106,109 ----
+  	cd tutcells; make install CADDIR=${CADDIR}
+  
+  force:
+! 
+*** doc/man/Makefile.ORIG	Wed Jul 13 21:06:03 1994
+--- doc/man/Makefile	Fri Feb 24 09:06:26 1995
+***************
+*** 206,209 ****
+  	cp prleak.8 ${MANDIR}/man8
+  
+  force:
+! 	
+--- 206,209 ----
+  	cp prleak.8 ${MANDIR}/man8
+  
+  force:
+! 
+*** graphics/Makefile.orig	Mon Sep 19 23:41:19 1994
+--- graphics/Makefile	Fri Feb 24 09:14:43 1995
 ***************
 *** 10,16 ****
   LIB=	${MAGICDIR}/lib
@@ -346,12 +391,70 @@
   #
   # Configuration for flags and libraries
   #
-*** Makefile.orig	Tue Sep 20 22:55:57 1994
---- Makefile	Sun Jan 29 18:57:47 1995
 ***************
-*** 41,46 ****
---- 41,48 ----
-  CADDIR		= `:findcad`
+*** 140,146 ****
+  installhelp:
+  	@(for i in ${HELPER_PROGS}; \
+  	  do \
+! 		make ${MFLAGS} CADDIR=${CADDIR} ${BIN}/$$i; \
+  	  done)
+  
+  installhdrs: ${H}/${MODULE}.h ${H}/graphicsInt.h ${H}/glyphs.h \
+--- 140,146 ----
+  installhelp:
+  	@(for i in ${HELPER_PROGS}; \
+  	  do \
+! 		${MAKE} ${MFLAGS} CADDIR=${CADDIR} ${BIN}/$$i; \
+  	  done)
+  
+  installhdrs: ${H}/${MODULE}.h ${H}/graphicsInt.h ${H}/glyphs.h \
+*** Makefile.orig	Tue Sep 20 22:55:57 1994
+--- Makefile	Fri Feb 24 14:58:41 1995
+***************
+*** 18,23 ****
+--- 18,24 ----
+  #
+  
+  SHELL=/bin/sh
++ MAKE=gmake
+  
+  #
+  # NOTE: tiles and tech must be before database in this list
+***************
+*** 38,65 ****
+  		  :status Makefile READ_ME
+  DIRS		= include cadlib
+  CMD		= echo Need to define your command via 'make cmd CMD=command'
+! CADDIR		= `:findcad`
+  CADDIR_SUB	= `../:findcad`
+  
+  everything: ${MODULES} .config
+  	/bin/csh :makeall installhdrs ${MODULES}
+  	/bin/csh :makeall install ${MODULES}
+  	/bin/csh :makemains ${PROGRAMS}
+  
+  install: everything directories install-tech
+! 	cd windows; make installcad CADDIR=${CADDIR_SUB}
+  	cd doc; make installcad CADDIR=${CADDIR_SUB}
+! 	/bin/csh :execmod "make installcad CADDIR=${CADDIR}" ${PROGRAMS}
+  
+  install-tech:
+! 	cd scmos; make install CADDIR=${CADDIR_SUB}
+  
+  directories:
+! 	:mkdir ${CADDIR}/bin
+! 	:mkdir ${CADDIR}/lib
+! 	:mkdir ${CADDIR}/lib/magic
+! 	:mkdir ${CADDIR}/lib/magic/sys
+! 	:mkdir ${CADDIR}/man
+  
+  # Remakes the binary in 'lib', if needed.  Used for recompiling on 
+  # a remote machine.
+--- 39,68 ----
+  		  :status Makefile READ_ME
+  DIRS		= include cadlib
+  CMD		= echo Need to define your command via 'make cmd CMD=command'
+! CADDIR		= `./:findcad`
   CADDIR_SUB	= `../:findcad`
   
 + all: everything
@@ -359,13 +462,32 @@
   everything: ${MODULES} .config
   	/bin/csh :makeall installhdrs ${MODULES}
   	/bin/csh :makeall install ${MODULES}
+  	/bin/csh :makemains ${PROGRAMS}
+  
+  install: everything directories install-tech
+! 	cd windows; ${MAKE} installcad CADDIR=${CADDIR_SUB}
+  	cd doc; make installcad CADDIR=${CADDIR_SUB}
+! 	/bin/csh :execmod "${MAKE} installcad CADDIR=${CADDIR}" ${PROGRAMS}
+  
+  install-tech:
+! 	cd scmos; ${MAKE} install CADDIR=${CADDIR_SUB}
+  
+  directories:
+! 	./:mkdir ${CADDIR}/bin
+! 	./:mkdir ${CADDIR}/lib
+! 	./:mkdir ${CADDIR}/lib/magic
+! 	./:mkdir ${CADDIR}/lib/magic/sys
+! 	./:mkdir ${CADDIR}/man
+  
+  # Remakes the binary in 'lib', if needed.  Used for recompiling on 
+  # a remote machine.
 ***************
 *** 146,149 ****
   	echo ${MODULES}
   
   forceit:
 ! 	
---- 148,151 ----
+--- 149,152 ----
   	echo ${MODULES}
   
   forceit:
