@@ -161,6 +161,7 @@
     SUBDIR += mziq
     SUBDIR += napster
     SUBDIR += nas
+    SUBDIR += nogger
     SUBDIR += normalize
     SUBDIR += nosefart
     SUBDIR += nspmod
