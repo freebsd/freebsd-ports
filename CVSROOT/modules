@@ -399,6 +399,7 @@ aswiki		ports/www/aswiki
 at-spi		ports/x11-toolkits/at-spi
 atari800	ports/emulators/atari800
 aterm		ports/x11/aterm
+atitd		ports/games/atitd
 atk		ports/devel/atk
 atlas		ports/devel/atlas
 atlast		ports/lang/atlast
