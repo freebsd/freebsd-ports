@@ -1,0 +1,13 @@
+#!/bin/sh
+
+if [ "$2" = "POST-DEINSTALL" ]; then
+	echo "Updating content cache to let LaTeX know about the new style files:"
+	if [ -x ${PKG_PREFIX}/bin/mktexlsr ]; then
+		${PKG_PREFIX}/bin/mktexlsr
+	elif [ -x /usr/local/bin/mktexlsr ]; then
+		/usr/local/bin/mktexlsr
+	else
+		echo "Could not find mktexlsr. Please run it manually to update"
+		echo "LaTeX's content cache."
+	fi
+fi
