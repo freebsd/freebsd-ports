@@ -42,6 +42,12 @@ BUILD_DEPENDS+=	${LOCALBASE}/lib/libldap.a:${PORTSDIR}/net/openldap
 CONFIGURE_ENV+=	CFLAGS="-I/usr/local/include -g" LDFLAGS=-L/usr/local/lib
 .endif
 
+.if defined(WITH_MYSQL)
+MODULES:=$(MODULES):mod_sqlpw:mod_mysql
+LIB_DEPENDS+=	mysqlclient.6:${PORTSDIR}/databases/mysql322-client
+CONFIGURE_ENV+=	CFLAGS="-I${PREFIX}/include/mysql" LDFLAGS="-L${PREFIX}/lib/mysql"
+.endif
+
 .if !empty(MODULES)
 CONFIGURE_ARGS+= --with-modules=${MODULES}
 .endif
