@@ -97,6 +97,7 @@
     SUBDIR += netcdf
     SUBDIR += newmat
     SUBDIR += ngraph
+    SUBDIR += nsc2ke
     SUBDIR += ntl
     SUBDIR += octave
     SUBDIR += oleo
