@@ -7,6 +7,7 @@
 
 PORTNAME=	portscanner
 PORTVERSION=	1.2
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.ameth.org/~veilleux/PortScan/
 DISTNAME=	PortScanner-${PORTVERSION}
