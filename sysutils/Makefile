@@ -439,6 +439,7 @@
     SUBDIR += wots
     SUBDIR += wtail
     SUBDIR += x86info
+    SUBDIR += xacpim
     SUBDIR += xapply
     SUBDIR += xbatt
     SUBDIR += xbattbar

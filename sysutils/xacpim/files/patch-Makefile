@@ -1,0 +1,9 @@
+--- Makefile.orig	Fri May 21 16:07:48 2004
++++ Makefile	Fri May 21 16:08:03 2004
+@@ -1,5 +1,4 @@
+-CC	= gcc
+-CFLAGS	= -O2 -ansi -Wall -L/usr/X11R6/lib -I/usr/X11R6/include
++CFLAGS	+= -L/usr/X11R6/lib -I/usr/X11R6/include
+ 
+ OBJS	= main.o graphics.o sys.o osdep/freebsd.o
+ 
