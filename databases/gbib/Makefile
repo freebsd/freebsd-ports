@@ -20,6 +20,8 @@ PATCH_DIST_STRIP=       -p1
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Editor/browser for BibTeX bibliographic databases
 
+LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
+
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomelibs
 USE_REINPLACE=	yes
