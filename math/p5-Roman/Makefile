@@ -15,6 +15,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	philip@paeps.cx
 
 NO_BUILD=	yes
+USE_PERL5_RUN=	yes
 
 SITE_PERL=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}
 
