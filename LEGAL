@@ -228,7 +228,7 @@ pgp*			ports/security/pgp*	Various locality restrictions
 pklin*			ports/archivers/pkzip	Shareware
 platon-*		ports/biology/platon	US$ 5000 for commercial users,
 						(free for academic)
-ppunpack-*		ports/archivers/ppunpack	No commercial redistribution
+ppsmall-*		ports/archivers/ppunpack	No commercial redistribution
 prodosemu.*		ports/emulators/prodosemu	Restrictive copyright on the ROM image
 punkbuster*		ports/net/punkbuster*	Restricted binary distribution
 qkmj-*			ports/games/qkmj	Do not sell for profit
@@ -243,7 +243,7 @@ quake106.zip		ports/games/quakeserver	Shareware
 radiator		ports/net/radiator	Commercial software
 radius*			ports/net/radius	Binary redistribution only,
 						no fee allowed
-rar-*			ports/archivers/rar	Only unmodified original package can be distributed
+rarbsd-*		ports/archivers/rar	Only unmodified original package can be distributed
 rarlnx*			ports/archivers/linux_rar	Only unmodified original package can be distributed
 ringtonetools-*		ports/misc/ringtonetools	Not free for commercial orgs
 rkive3.1.tar.gz		ports/news/rkive	Restrictive copyright
@@ -307,6 +307,7 @@ win32-codecs		ports/multimedia/win32-codecs Licensing status of the
 						codecs is unknown. 
 wxg/ja-wxg-1.0b-1.tgz	ports/japanese/wxg	Redistribution not allowed
 xbarcode-*.tar.gz	ports/graphics/xbarcode	Must not be sold
+xephem-*		ports/astro/xephem	Personal use only
 xev*.tar.gz		ports/games/xbat	Possible copyright infringement
 xgs-*			ports/emulators/xgs	Contains ROM (C) by Apple
 xhime*.tgz		ports/games/xhime	Contains commercial character
