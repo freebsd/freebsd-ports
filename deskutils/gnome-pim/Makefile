@@ -20,9 +20,11 @@ LIB_DEPENDS=	panel_applet.4:${PORTSDIR}/x11/gnomecore
 LIB_DEPENDS+=	gpilotd.0:${PORTSDIR}/palm/gnomepilot
 PILOTINC=	"-I${LOCALBASE}/pilot/include"
 PILOTLIB=	"-L${LOCALBASE}/pilot/lib"
+PLIST_SUB+=	GNOMEPILOT:=""
 .else
 PILOTARGS=	--without-pisock --disable-pilotlinktest
 EXTRA_PATCHES=	${FILESDIR}/patch.nopilot
+PLIST_SUB+=	GNOMEPILOT:="@comment "
 .endif
 
 GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
@@ -47,10 +49,5 @@ pre-patch:
 	@find ${WRKSRC} -name "Makefile.in" | xargs ${PERL} -pi -e \
 		's|\$\(datadir\)/gnome/|\$\(datadir\)/|g ; \
 		 s|\$\(datadir\)/locale|\$\(prefix\)/share/locale|g'
-
-.if defined(WITH_GNOMEPILOT)
-post-install:
-	@${CAT} ${PKGDIR}/PLIST.pilot >> ${TMPPLIST}
-.endif
 
 .include <bsd.port.mk>
