@@ -1,28 +1,36 @@
---- Xbae.tmpl.orig	Thu Jul 10 03:15:47 1997
-+++ Xbae.tmpl	Sun May 30 09:43:38 1999
-@@ -11,7 +11,7 @@
- XCOMM yes as the demos may have trouble finding the shared library.
- 
- #define DoNormalLib		YES
--#define DoSharedLib		NO /* Don't define if you want the demos! */
-+#define DoSharedLib		YES /* Don't define if you want the demos! */
- #define DoDebugLib		NO
- 
- XCOMM Some of the examples use Wcl.  If you haven't got Wcl, it doesn't
-@@ -93,9 +93,9 @@
-    LOCAL_LDFLAGS = -L../../src $(EXTRA_LDOPTIONS)
- 
- #if HaveXpm
-- LOCAL_LIBRARIES = -lXbae -lXm -lXpm $(X11R6_LIBS) $(EDITRES_LIBS) -lXt -lX11 $(SVR4_LIBS)
-+ LOCAL_LIBRARIES = -lXbae ${MOTIFLIB} -lXpm $(X11R6_LIBS) $(EDITRES_LIBS) -lXt -lX11 $(SVR4_LIBS)
- #else
-- LOCAL_LIBRARIES = -lXbae -lXm $(X11R6_LIBS) $(EDITRES_LIBS) -lXt -lX11 $(SVR4_LIBS)
-+ LOCAL_LIBRARIES = -lXbae ${MOTIFLIB} $(X11R6_LIBS) $(EDITRES_LIBS) -lXt -lX11 $(SVR4_LIBS)
- #endif
-          DEPLIBS =
-         INCLUDES = -I../../src
-@@ -172,4 +172,3 @@
- osaber:
-         XCOMM load $(ALLDEFINES) $(OBJS)
- #endif
--
+*** Xbae.tmpl.orig	Tue Jul 27 11:21:55 1999
+--- Xbae.tmpl	Wed Sep  8 18:00:52 1999
+***************
+*** 12,18 ****
+  
+  #define DoNormalLib		YES
+  #define DoSharedLib		YES
+! #define DoDebugLib		YES
+  
+  #include <Library.tmpl>
+  
+--- 12,18 ----
+  
+  #define DoNormalLib		YES
+  #define DoSharedLib		YES
+! #define DoDebugLib		NO
+  
+  #include <Library.tmpl>
+  
+***************
+*** 138,144 ****
+     LOCAL_LDFLAGS = -L../../src $(EXTRA_LDOPTIONS)
+  
+  #if HaveXpm
+!  LOCAL_LIBRARIES = -lXbae -lXm -lXpm $(X11R6_LIBS) $(EDITRES_LIBS) -lXt -lX11 $(SVR4_LIBS)
+  #else
+   LOCAL_LIBRARIES = -lXbae -lXm $(X11R6_LIBS) $(EDITRES_LIBS) -lXt -lX11 $(SVR4_LIBS)
+  #endif
+--- 138,144 ----
+     LOCAL_LDFLAGS = -L../../src $(EXTRA_LDOPTIONS)
+  
+  #if HaveXpm
+!  LOCAL_LIBRARIES = -lXbae ${MOTIFLIB} -lXpm $(X11R6_LIBS) $(EDITRES_LIBS) -lXt -lX11 $(SVR4_LIBS)
+  #else
+   LOCAL_LIBRARIES = -lXbae -lXm $(X11R6_LIBS) $(EDITRES_LIBS) -lXt -lX11 $(SVR4_LIBS)
+  #endif
