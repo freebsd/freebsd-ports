@@ -45,6 +45,6 @@ do-install:
 	    ${CPIO} -pdmuv -R${SHAREOWN}:${SHAREGRP} ${DATADIR})
 	${LN} -s ${LINUXBASE}/usr/lib/libstdc++-2-libc6.1-1-2.9.0.so \
 		${DATADIR}/lib/libstdc++-libc6.1-2.so.3
-	${INSTALL_PROGRAM} ${WRKDIR}/nwn ${PREFIX}/bin/
+	${INSTALL_SCRIPT} ${WRKDIR}/nwn ${PREFIX}/bin/
 
 .include <bsd.port.mk>
