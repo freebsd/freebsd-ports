@@ -7,7 +7,9 @@ bin/lplayer-bin
 %%DATADIR%%/images/lplayerlogo.png
 %%DATADIR%%/images/lplayerlogo2.png
 %%DATADIR%%/images/lplayerlogo3.png
+%%DATADIR%%/images/minimal.png
 %%DATADIR%%/images/next.png
+%%DATADIR%%/images/normal.png
 %%DATADIR%%/images/play.png
 %%DATADIR%%/images/playnow.png
 %%DATADIR%%/images/previous.png
