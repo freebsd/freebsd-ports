@@ -100,29 +100,34 @@ END
     echo "#define FreeBSDBuildXxserv YES" >> $LOCALDEF
 
     # Check Wraphelp.c
-    WH=$WRKDIR/xc/lib/Xdmcp/Wraphelp.c
-    cpwh=NO
-    if [ -f $WH ] ; then
-	cpwh=SOURCE
-    elif [ -f $DISTDIR/xc/Wraphelp.c ] ; then
-	cpwh=$DISTDIR/xc/Wraphelp.c
-    else
-	echo "==> Warnning: Wraphelp.c not found, DES support NOT enabled."
+    if [ $HasXdmAuth = DEFAULT ]; then
+	HasXdmAuth=$(awk '/^#define.*HasXdmAuth/ {print $3}' $ORIGDEF|tail -1)
     fi
-    if [ X$cpwh != XNO -a X$cpwh != XSOURCE ]; then
-	tr -d '\r' < $cpwh > $WH
+
+    cpwh=NO
+    if [ $HasXdmAuth = YES ]; then
+	WH=$WRKDIR/xc/lib/Xdmcp/Wraphelp.c
+	if [ -f $WH ] ; then
+	    cpwh=SOURCE
+	elif [ -f $DISTDIR/xc/Wraphelp.c ] ; then
+	    cpwh=$DISTDIR/xc/Wraphelp.c
+	else
+	    echo "==> You must fetch USA-legal Wraphelp.c manually"
+	    echo "==> and put it to ${DISTDIR}/xc/."
+	    exit 1
+	fi
+	if [ X$cpwh != XNO -a X$cpwh != XSOURCE ]; then
+	    tr -d '\r' < $cpwh > $WH
+	fi
     fi
 
     # Copy ORIGDEF to DESTDEF
     rm -f $DESTDEF
+    grep -v '#define.*HasXdmAuth' $ORIGDEF >> $DESTDEF
     if [ $cpwh = NO ] ; then
-	grep -v '#define.*HasXdmAuth' $ORIGDEF >> $DESTDEF
 	echo "#define HasXdmAuth NO" >> $DESTDEF
     else
-	if [ X$HasXdmAuth != XDEFAULT -a X$HasXdmAuth != X ]; then
-	    echo "#define HasXdmAuth $HasXdmAuth" >> $LOCALDEF
-        fi
-	cp -f $ORIGDEF $DESTDEF
+	echo "#define HasXdmAuth YES" >> $DESTDEF
     fi
 
     # copy generated config to host.def
