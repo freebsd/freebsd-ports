@@ -1,0 +1,17 @@
+patch-ag
+
+--- func/event/include/token.h.old	Fri Jan 21 15:53:54 2000
++++ func/event/include/token.h	Fri Jan 21 15:54:10 2000
+@@ -9,9 +9,9 @@
+ ****************************************************************************/
+ 
+ // symbolic name
+-const AUTO = -1;
+-const MAX_NUM_RATTR = 5;
+-const MAX_NUM_IATTR = 3;
++const int AUTO = -1;
++const int MAX_NUM_RATTR = 5;
++const int MAX_NUM_IATTR = 3;
+ 
+ class Token
+   {

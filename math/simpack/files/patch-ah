@@ -1,0 +1,24 @@
+--- func/event/include/queuing.h.old	Fri Jan 21 15:58:43 2000
++++ func/event/include/queuing.h	Fri Jan 21 15:59:06 2000
+@@ -31,15 +31,15 @@
+     enum YesNo {NO, YES};
+     enum Switch {OFF, ON};
+     enum TrueFalse {FALSE, TRUE};
+-    const NOT_FOUND    =  -1; // in Event
+-    const MAX_NAME_LEN = 100; // in Facility
+-    const ES_STG_LEN   =  24; // in Estatus and Event
+-    const BFR_SIZ      = 222; // in Facility & Future
+-    const TINY_BFR_SIZ =  16;
++    const int NOT_FOUND    =  -1; // in Event
++    const int MAX_NAME_LEN = 100; // in Facility
++    const int ES_STG_LEN   =  24; // in Estatus and Event
++    const int BFR_SIZ      = 222; // in Facility & Future
++    const int TINY_BFR_SIZ =  16;
+ 
+ // Class dfns:
+ 
+-    const MAX_NUM_ATTR = 5; // for old style token, for compatibility mode
++    const int MAX_NUM_ATTR = 5; // for old style token, for compatibility mode
+     struct TOKEN // old style token
+       {
+       float attr [MAX_NUM_ATTR];
