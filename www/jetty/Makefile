@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	jetty
-PORTVERSION=	3.1.4
+PORTVERSION=	4.0.2
 CATEGORIES=	www java
 MASTER_SITES=	http://download.sourceforge.net/jetty/ \
 		ftp://jetty.mortbay.com/pub/
@@ -24,12 +24,12 @@ NO_BUILD=	yes
 PLIST_SUB=      JETTY_VERSION=${PORTVERSION}
 
 post-extract:
-	find ${WRKSRC} -name CVS -delete
-	find ${WRKSRC} -name .cvsignore -delete
+	${FIND} ${WRKSRC} -name CVS -delete
+	${FIND} ${WRKSRC} -name .cvsignore -delete
 
 do-install:
 	@${MKDIR} ${PREFIX}/share/java/${PORTNAME}-${PORTVERSION}
-	@(cd ${WRKSRC} && ${TAR} -c -f - [^src]* ) \
+	@(cd ${WRKSRC} && ${TAR} -c --exclude 'src/*' --exclude 'src1.4/*' -f - ./ ) \
 		| (cd ${PREFIX}/share/java/${PORTNAME}-${PORTVERSION} && ${TAR} --unlink -x -f -)
 
 post-install:
