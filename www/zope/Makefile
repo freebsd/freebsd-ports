@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.zope.org/Products/Zope/${PORTVERSION}/${PORTVERSION}/
 DISTNAME=	Zope-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	estartu@augusta.de
 COMMENT=	An object-based web application platform
 
 BUILD_DEPENDS+=	${LOCALBASE}/lib/${PYTHON_VERSION}/site-packages/_xmlplus/sax/expatreader.py:${PORTSDIR}/textproc/py-xml
