@@ -12,7 +12,7 @@ MASTER_SITES=	http://leb.net/OffiX/
 DISTNAME=	dnd.${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	lukin@okbmei.msk.su
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Drag and drop library
 
 USE_XLIB=	yes
