@@ -8,7 +8,9 @@
 PORTNAME=	idesk
 PORTVERSION=	0.3.5
 CATEGORIES=	x11
-MASTER_SITES=	http://linuxhelp.hn.org/
+MASTER_SITES=	http://linuxhelp.hn.org/ \
+		ftp://sunsite.informatik.rwth-aachen.de/pub/comp/Linux/gentoo/distfiles/ \
+		ftp://metalab.unc.edu/pub/Linux/distributions/gentoo/distfiles/
 
 MAINTAINER=	sascha@root-login.org
 COMMENT=	Place launch icons directly on your desktop
