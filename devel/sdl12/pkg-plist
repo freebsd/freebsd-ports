@@ -24,7 +24,7 @@ include/SDL/SDL_video.h
 include/SDL/begin_code.h
 include/SDL/close_code.h
 lib/libSDL-1.0.so
-lib/libSDL-1.0.so.0
+lib/libSDL-1.0.so.2
 lib/libSDL.a
 lib/libSDL.la
 lib/libSDL.so
@@ -36,7 +36,6 @@ share/doc/SDL/BUGS
 share/doc/SDL/COPYING
 share/doc/SDL/CREDITS
 share/doc/SDL/README
-share/doc/SDL/TODO
 share/doc/SDL/WhatsNew
 share/doc/SDL/audio/examples.html
 share/doc/SDL/audio/funclist.html
@@ -58,41 +57,6 @@ share/doc/SDL/video/examples.html
 share/doc/SDL/video/funclist.html
 share/doc/SDL/video/functions.html
 share/doc/SDL/video/index.html
-share/examples/SDL/COPYING
-share/examples/SDL/Makefile.am
-share/examples/SDL/Makefile.in
-share/examples/SDL/README
-share/examples/SDL/acinclude.m4
-share/examples/SDL/aclocal.m4
-share/examples/SDL/autogen.sh
-share/examples/SDL/checkkeys.c
-share/examples/SDL/configure
-share/examples/SDL/configure.in
-share/examples/SDL/graywin.c
-share/examples/SDL/icon.bmp
-share/examples/SDL/install-sh
-share/examples/SDL/loopwave.c
-share/examples/SDL/missing
-share/examples/SDL/mkinstalldirs
-share/examples/SDL/picture.xbm
-share/examples/SDL/sample.bmp
-share/examples/SDL/sample.wav
-share/examples/SDL/testalpha.c
-share/examples/SDL/testbitmap.c
-share/examples/SDL/testcdrom.c
-share/examples/SDL/testerror.c
-share/examples/SDL/testhread.c
-share/examples/SDL/testkeys.c
-share/examples/SDL/testlock.c
-share/examples/SDL/testsprite.c
-share/examples/SDL/testtimer.c
-share/examples/SDL/testtypes.c
-share/examples/SDL/testver.c
-share/examples/SDL/testvidinfo.c
-share/examples/SDL/testwin.c
-share/examples/SDL/testwm.c
-share/examples/SDL/threadwin.c
-@dirrm share/examples/SDL
 @dirrm share/doc/SDL/video
 @dirrm share/doc/SDL/threads
 @dirrm share/doc/SDL/images
