@@ -16,10 +16,6 @@ DISTFILES=	${PORTNAME}-src-${PORTVERSION}.tar.gz \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An arcade-style, top-scrolling space shooter
 
-BROKEN=		Broken pkg-plist
-EXPIRATION_DATE=2005-02-18
-DEPRECATED=	${BROKEN}
-
 LIB_DEPENDS=	vorbis.3:${PORTSDIR}/audio/libvorbis \
 		smpeg.1:${PORTSDIR}/multimedia/smpeg \
 		openal.0:${PORTSDIR}/audio/openal
@@ -32,11 +28,11 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/chromium ${PREFIX}/bin
 	${MKDIR} ${DATADIR}/data
 	(cd ${WRKSRC}/data && \
-		${TAR} -c -f - png fonts wav --exclude "*CVS*" --exclude "*xvpics*") | \
+		${TAR} -c -f - --exclude "*CVS*" --exclude "*xvpics*" png fonts wav) | \
 		(cd ${DATADIR}/data && ${TAR} -x -f - )
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-	(cd ${WRKSRC}/data/doc && ${TAR} -c -f - * --exclude "*CVS*") | \
+	(cd ${WRKSRC}/data/doc && ${TAR} -c -f - --exclude "*CVS*" *) | \
 		(cd ${DOCSDIR} && ${TAR} -x -f - )
 .endif
 
