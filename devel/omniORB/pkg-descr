@@ -1,7 +1,7 @@
-WWW: http://www.orl.co.uk/omniORB/omniORB.html
+WWW: http://www.uk.research.att.com/omniORB/omniORB.html
 
 omniORB2 is an Object Request Broker (ORB) which implements
-specification 2.0 of the Common Object Request Broker Architecture (CORBA).
+specification 2.3 of the Common Object Request Broker Architecture (CORBA).
 Further information on CORBA can be found at http://www.omg.org
 
 Technical highlights
@@ -12,6 +12,12 @@ C++ language binding is supported.
 The IDL compiler uses the compiler front end from Sun, and
 generates C++ language mapping conforming to the latest revision of
 the CORBA specification.
+
+TypeCode and type Any are supported.
+
+DynAny is supported (CORBA 2.2) 
+
+The Dynamic Invocation and Dynamic Skeleton interfaces are supported 
 
 The Internet Inter-ORB Protocol (IIOP) is used as the native protocol.
 
@@ -44,9 +50,7 @@ following features are not supported in the current release.
 Support for these features will be included shortly in
 a future release of omniORB2.
 
-`Typecode' and the type `Any' are not supported. 
-The Dynamic Invocation Interface (DII) is not supported. 
-The Dynamic Skeleton Interface (DSI) is not supported. 
+Portable Object Adaptor (POA)
 
 Missing features
 ----------------
@@ -56,5 +60,5 @@ We are not currently planning on adding support for these features.
 
 The BOA only supports the persistent server activation policy. Other
 dynamic activation and deactivation polices are not supported.
-omniORB2 does not has its own Interface Repository.
 
+omniORB2 does not has its own Interface Repository.
