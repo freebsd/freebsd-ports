@@ -6,7 +6,7 @@
 
 PORTNAME=	powerman
 PORTVERSION=	1.0.19
-CATEGORIES=	sysutils
+CATEGORIES=	sysutils parallel
 MASTER_SITES=	ftp://ftp.llnl.gov/pub/linux/powerman/
 EXTRACT_SUFX=	.tgz
 
