@@ -1,12 +1,12 @@
---- Makefile.orig	Mon Jul 21 14:47:18 2003
-+++ Makefile	Mon Jul 21 14:47:23 2003
-@@ -28,9 +28,6 @@
+--- Makefile.orig       Wed Aug 13 07:53:54 2003
++++ Makefile    Wed Aug 13 07:54:02 2003
+@@ -27,9 +27,6 @@
  
  # --------------------------------------------------------------------
  
--CC       = gcc
--CFLAGS   = -g -O2 -Wall
+-CC = gcc
+-CFLAGS = -g -O2 -Wall
 -
- BINDIR   = $(DESTDIR)$(XROOT)/bin
- MANDIR   = $(DESTDIR)$(XROOT)/man/man1
- CFGDIR   = $(DESTDIR)/etc/X11/windowlab
+ BINDIR = $(DESTDIR)$(XROOT)/bin
+ MANDIR = $(DESTDIR)$(XROOT)/man/man1
+ CFGDIR = $(DESTDIR)/etc/X11/windowlab
