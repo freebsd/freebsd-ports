@@ -1,26 +1,26 @@
 # New ports collection makefile for:	siag (Scheme In A Grid)
-# Version required:	3.1.18
+# Version required:	3.2.0
 # Date created:		27 Jan 1998
 # Whom:			mi@aldan.algebra.com
 #
 # $FreeBSD$
 #
 
-DISTNAME=	siag-3.1.18
+DISTNAME=	siag-3.2.0
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.edu.stockholm.se/pub/siag/ \
 		ftp://ftp.icm.edu.pl/site/siag/
 
 MAINTAINER=	mi@aldan.algebra.com
 
-BROKEN=		'only siag-3.1.22.tar.gz available'
-
 LIB_DEPENDS=	Xaw3d.6:${PORTSDIR}/x11-toolkits/Xaw3d \
 		Xpm.4:${PORTSDIR}/graphics/xpm
 RUN_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot \
+		mswordview:${PORTSDIR}/textproc/mswordview \
 		catdoc:${PORTSDIR}/textproc/catdoc
 
 GNU_CONFIGURE=	yes
+MAKEFLAGS=	"-j 2"
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 

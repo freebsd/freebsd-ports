@@ -1,0 +1,23 @@
+--- pw/pw.scm	Sat Feb  5 13:16:43 2000
++++ pw/pw.scm	Fri Feb 25 11:46:39 2000
+@@ -539,2 +539,2 @@
+-		        "*.txt" "catdoc %s > %s"
+-		        "*.rtf" "cp %s %s"))
++		        "*.txt" "exec catdoc '%s' > '%s'"
++		        "*.rtf" "exec cp '%s' '%s'"))
+@@ -543,2 +543,2 @@
+-			"*.txt" "blaha < %s > %s"
+-			"*.txt" "blaha < %s > %s"))
++			"*.txt" "exec blaha < '%s' > '%s'"
++			"*.txt" "exec blaha < '%s' > '%s'"))
+@@ -547,2 +547,2 @@
+-                        "*.html" "mswordview -n %s -o %s"
+-                        "*.rtf" "cp %s %s"))
++                        "*.html" "exec mswordview -n '%s' -o '%s'"
++                        "*.rtf" "exec cp '%s' '%s'"))
+@@ -551 +551 @@
+-			"*.txt" "groff -Tascii -mandoc %s > %s"
++			"*.txt" "exec groff -Tascii -mandoc '%s' > '%s'"
+@@ -555 +555 @@
+-			"*.rtf" "2rtf %s %s"
++			"*.rtf" "exec 2rtf '%s' '%s'"

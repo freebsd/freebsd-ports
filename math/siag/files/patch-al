@@ -1,0 +1,10 @@
+--- siag/siag.scm	Sat Jan 29 19:34:20 2000
++++ siag/siag.scm	Fri Feb 25 11:45:18 2000
+@@ -1024 +1024 @@
+-		        "*.csv" "xls2csv %s > %s"
++		        "*.csv" "exec xls2csv '%s' > '%s'"
+@@ -1028,2 +1028,2 @@
+-			"*.txt" "blaha < %s > %s"
+-			"*.txt" "blaha < %s > %s")))
++			"*.txt" "exec blaha < '%s' > '%s'"
++			"*.txt" "exec blaha < '%s' > '%s'")))

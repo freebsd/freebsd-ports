@@ -6,21 +6,27 @@ bin/xedplus
 bin/xfiler
 bin/runcmd
 bin/gvu
+bin/siaghelp
 share/siag/siod/siod.scm
 share/siag/common/bitmaps/blank.xpm
 share/siag/common/bitmaps/bold.xpm
 share/siag/common/bitmaps/borders.xpm
+share/siag/common/bitmaps/book-closed.xpm
+share/siag/common/bitmaps/book-open.xpm
 share/siag/common/bitmaps/copy.xpm
 share/siag/common/bitmaps/copyright.xpm
 share/siag/common/bitmaps/cut.xpm
-share/siag/common/bitmaps/egon_fg.xpm
+share/siag/common/bitmaps/egon.xpm
 share/siag/common/bitmaps/fld_open.xpm
-share/siag/common/bitmaps/floppy3.xpm
 share/siag/common/bitmaps/grid.xpm
+share/siag/common/bitmaps/gvu.xpm
+share/siag/common/bitmaps/handlebg.xpm
 share/siag/common/bitmaps/hcenter.xpm
 share/siag/common/bitmaps/hleft.xpm
 share/siag/common/bitmaps/hright.xpm
+share/siag/common/bitmaps/icons.xpm
 share/siag/common/bitmaps/info.xpm
+share/siag/common/bitmaps/insert.xpm
 share/siag/common/bitmaps/italic.xpm
 share/siag/common/bitmaps/new.xpm
 share/siag/common/bitmaps/next.xpm
@@ -31,14 +37,17 @@ share/siag/common/bitmaps/plotter.xpm
 share/siag/common/bitmaps/preview.xpm
 share/siag/common/bitmaps/previous.xpm
 share/siag/common/bitmaps/printer.xpm
-share/siag/common/bitmaps/pw_fg.xpm
+share/siag/common/bitmaps/pw.xpm
 share/siag/common/bitmaps/redo.xpm
-share/siag/common/bitmaps/siag_fg.xpm
+share/siag/common/bitmaps/save.xpm
+share/siag/common/bitmaps/siag.xpm
+share/siag/common/bitmaps/siagoffice.xpm
 share/siag/common/bitmaps/sigma.xpm
 share/siag/common/bitmaps/sortaz.xpm
 share/siag/common/bitmaps/sortza.xpm
 share/siag/common/bitmaps/spell.xpm
 share/siag/common/bitmaps/stop.xpm
+share/siag/common/bitmaps/overwrite.xpm
 share/siag/common/bitmaps/uchar.xpm
 share/siag/common/bitmaps/uline.xpm
 share/siag/common/bitmaps/undo.xpm
@@ -50,7 +59,6 @@ share/siag/common/bitmaps/home.xpm
 share/siag/common/bitmaps/quit.xpm
 share/siag/common/bitmaps/reload.xpm
 share/siag/common/bitmaps/search.xpm
-share/siag/common/bitmaps/ksiag.xpm
 share/siag/common/bitmaps/SO3.xpm
 share/siag/common/bitmaps/center.xpm
 share/siag/common/bitmaps/compress.xpm
@@ -71,7 +79,60 @@ share/siag/common/bitmaps/sortmode.xpm
 share/siag/common/bitmaps/unknown.xpm
 share/siag/common/bitmaps/viewmode.xpm
 share/siag/common/bitmaps/xedplus.xpm
+share/siag/common/bitmaps/xfiler.xpm
 share/siag/common/bitmaps/xterm16.xpm
+share/siag/common/bitmaps/gnome/back.xpm
+share/siag/common/bitmaps/gnome/bold.xpm
+share/siag/common/bitmaps/gnome/cancel.xpm
+share/siag/common/bitmaps/gnome/copy.xpm
+share/siag/common/bitmaps/gnome/cut.xpm
+share/siag/common/bitmaps/gnome/fld_open.xpm
+share/siag/common/bitmaps/gnome/forward.xpm
+share/siag/common/bitmaps/gnome/hcenter.xpm
+share/siag/common/bitmaps/gnome/hleft.xpm
+share/siag/common/bitmaps/gnome/home.xpm
+share/siag/common/bitmaps/gnome/hright.xpm
+share/siag/common/bitmaps/gnome/info.xpm
+share/siag/common/bitmaps/gnome/italic.xpm
+share/siag/common/bitmaps/gnome/new.xpm
+share/siag/common/bitmaps/gnome/next.xpm
+share/siag/common/bitmaps/gnome/paste.xpm
+share/siag/common/bitmaps/gnome/play.xpm
+share/siag/common/bitmaps/gnome/previous.xpm
+share/siag/common/bitmaps/gnome/printer.xpm
+share/siag/common/bitmaps/gnome/quit.xpm
+share/siag/common/bitmaps/gnome/redo.xpm
+share/siag/common/bitmaps/gnome/reload.xpm
+share/siag/common/bitmaps/gnome/save.xpm
+share/siag/common/bitmaps/gnome/saveas.xpm
+share/siag/common/bitmaps/gnome/search.xpm
+share/siag/common/bitmaps/gnome/spell.xpm
+share/siag/common/bitmaps/gnome/stop.xpm
+share/siag/common/bitmaps/gnome/uchar.xpm
+share/siag/common/bitmaps/gnome/undo.xpm
+share/siag/common/bitmaps/kde/back.xpm
+share/siag/common/bitmaps/kde/cancel.xpm
+share/siag/common/bitmaps/kde/copy.xpm
+share/siag/common/bitmaps/kde/cut.xpm
+share/siag/common/bitmaps/kde/fld_open.xpm
+share/siag/common/bitmaps/kde/forward.xpm
+share/siag/common/bitmaps/kde/home.xpm
+share/siag/common/bitmaps/kde/info.xpm
+share/siag/common/bitmaps/kde/larger.xpm
+share/siag/common/bitmaps/kde/new.xpm
+share/siag/common/bitmaps/kde/next.xpm
+share/siag/common/bitmaps/kde/paste.xpm
+share/siag/common/bitmaps/kde/play.xpm
+share/siag/common/bitmaps/kde/preview.xpm
+share/siag/common/bitmaps/kde/previous.xpm
+share/siag/common/bitmaps/kde/printer.xpm
+share/siag/common/bitmaps/kde/quit.xpm
+share/siag/common/bitmaps/kde/reload.xpm
+share/siag/common/bitmaps/kde/save.xpm
+share/siag/common/bitmaps/kde/saveas.xpm
+share/siag/common/bitmaps/kde/search.xpm
+share/siag/common/bitmaps/kde/smaller.xpm
+share/siag/common/bitmaps/kde/stop.xpm
 share/siag/common/any2xpm
 share/siag/common/readpfa
 share/siag/common/colors.scm
@@ -90,6 +151,7 @@ share/siag/common/dictionary.fr
 share/siag/common/dictionary.no
 share/siag/common/dictionary.hr
 share/siag/common/dictionary.da
+share/siag/common/dictionary.pl
 share/siag/xcommon/StringDefs.scm
 share/siag/xcommon/form.scm
 share/siag/siag/123.scm
@@ -124,6 +186,7 @@ share/siag/plugins/dummy.scm
 share/siag/plugins/plugin.scm
 share/siag/xfiler/FilesMagic
 share/siag/xfiler/Filesrc
+share/siag/xfiler/makeicons
 libexec/siag/plugins/dummy
 libexec/siag/plugins/image
 libexec/siag/plugins/hello
@@ -132,7 +195,6 @@ libexec/siag/plugins/text
 libexec/siag/plugins/form
 libexec/siag/plugins/clipart
 share/doc/siag/siod/siod.html
-share/doc/siag/common/siaghelp
 share/doc/siag/common/COPYING.LIB
 share/doc/siag/common/Copyright
 share/doc/siag/common/credits.html
@@ -148,7 +210,6 @@ share/doc/siag/common/bitmaps/borders.gif
 share/doc/siag/common/bitmaps/copyright.gif
 share/doc/siag/common/bitmaps/egon_fg.gif
 share/doc/siag/common/bitmaps/fld_open.gif
-share/doc/siag/common/bitmaps/floppy3.gif
 share/doc/siag/common/bitmaps/grid.gif
 share/doc/siag/common/bitmaps/hcenter.gif
 share/doc/siag/common/bitmaps/hleft.gif
@@ -164,6 +225,7 @@ share/doc/siag/common/bitmaps/preview.gif
 share/doc/siag/common/bitmaps/previous.gif
 share/doc/siag/common/bitmaps/printer.gif
 share/doc/siag/common/bitmaps/pw_fg.gif
+share/doc/siag/common/bitmaps/save.gif
 share/doc/siag/common/bitmaps/siag_fg.gif
 share/doc/siag/common/bitmaps/sigma.gif
 share/doc/siag/common/bitmaps/stop.gif
@@ -171,13 +233,10 @@ share/doc/siag/common/bitmaps/uchar.gif
 share/doc/siag/common/bitmaps/uline.gif
 share/doc/siag/common/bitmaps/vbottom.gif
 share/doc/siag/common/bitmaps/vtop.gif
-share/doc/siag/xcommon/CHANGES
 share/doc/siag/xcommon/TODO
 share/doc/siag/xcommon/filesel.html
 share/doc/siag/xcommon/form.scm
 share/doc/siag/siag/BUGS
-share/doc/siag/siag/CHANGES
-share/doc/siag/siag/COPYING
 share/doc/siag/siag/README
 share/doc/siag/siag/TODO
 share/doc/siag/siag/c-expr.html
@@ -232,8 +291,6 @@ share/doc/siag/siag/examples/tables.wk1
 share/doc/siag/siag/examples/tcltest.siag
 share/doc/siag/siag/data.scm
 share/doc/siag/pw/BUGS
-share/doc/siag/pw/CHANGES
-share/doc/siag/pw/COPYING
 share/doc/siag/pw/TODO
 share/doc/siag/pw/commands.html
 share/doc/siag/pw/concepts.html
@@ -271,8 +328,6 @@ share/doc/siag/pw/examples/styles2.pw
 share/doc/siag/pw/examples/svenska.pw
 share/doc/siag/pw/examples/svenska.rtf
 share/doc/siag/egon/BUGS
-share/doc/siag/egon/CHANGES
-share/doc/siag/egon/COPYING
 share/doc/siag/egon/TODO
 share/doc/siag/egon/commands.html
 share/doc/siag/egon/concepts.html
@@ -291,25 +346,26 @@ share/doc/siag/egon/examples/bounce.egon
 share/doc/siag/egon/examples/ms.egon
 share/doc/siag/egon/examples/propeller.egon
 share/doc/siag/egon/examples/rondo.egon
-share/doc/siag/common/COPYING
 share/doc/siag/plugins/README
-share/doc/siag/plugins/CHANGES
 share/doc/siag/xedplus/xedplus.html
-share/doc/siag/xedplus/CHANGES
 share/doc/siag/xedplus/README
 share/doc/siag/xedplus/TODO
 share/doc/siag/xfiler/xfiler.html
 share/doc/siag/xfiler/README
-share/doc/siag/xfiler/CHANGES
 share/doc/siag/xfiler/TODO
 share/doc/siag/gvu/README
-share/doc/siag/gvu/COPYING
-share/doc/siag/gvu/CHANGES
 share/doc/siag/gvu/TODO
 share/doc/siag/gvu/gs.interface
 share/doc/siag/gvu/comments.doc
 share/doc/siag/gvu/gvu.html
 share/doc/siag/gvu/copyright.html
+share/doc/siag/AUTHORS
+share/doc/siag/FILES
+share/doc/siag/NLS
+share/doc/siag/COPYING
+share/doc/siag/README
+@dirrm share/siag/common/bitmaps/kde
+@dirrm share/siag/common/bitmaps/gnome
 @dirrm share/siag/common/bitmaps
 @dirrm share/siag/common
 @dirrm share/siag/xcommon
@@ -337,6 +393,6 @@ share/doc/siag/gvu/copyright.html
 @dirrm share/doc/siag/xfiler
 @dirrm share/doc/siag/gvu
 @dirrm share/doc/siag
-@exec echo Examples  and  documentation  went  into  %D/share/doc. Note, that the Siag's wordprocessor. the Pathetic Writer (or pw) is install  in %D/bin/pw. Depending on  your users' PATH it  may  or may  not  interfere  with simple  invocation  of /usr/sbin/pw. | fmt
+@exec echo Examples  and  documentation  went  into  %D/share/doc. Note, that the Siag's wordprocessor. the Pathetic Writer (or pw) is installed  in %D/bin/pw. Depending on  your users' PATH it  may  or may  not  interfere  with simple  invocation  of /usr/sbin/pw. | fmt
 @exec echo
 @exec test -e %D/lib/X11/app-defaults/Siag && echo "It seems, you have old app-defaults file(s) from Siag. Consider removing it(them) if new siag fails to come up" | fmt; true
