@@ -9,6 +9,9 @@ share/apps/ktuberling/sounds/de/ohr.wav
 share/apps/ktuberling/sounds/de/ohrring.wav
 share/apps/ktuberling/sounds/de/schnurrbart.wav
 share/apps/ktuberling/sounds/de/uhr.wav
+share/doc/HTML/de/KRegExpEditor/common
+share/doc/HTML/de/KRegExpEditor/index.cache.bz2
+share/doc/HTML/de/KRegExpEditor/index.docbook
 share/doc/HTML/de/aktion/aktion.png
 share/doc/HTML/de/aktion/aktiontoolbar.png
 share/doc/HTML/de/aktion/common
@@ -78,6 +81,10 @@ share/doc/HTML/de/common/web-docbottom.png
 share/doc/HTML/de/common/web-doctop.png
 share/doc/HTML/de/common/x11-license.html
 share/doc/HTML/de/common/xml.dcl
+share/doc/HTML/de/glossary/common
+share/doc/HTML/de/glossary/index.cache.bz2
+share/doc/HTML/de/glossary/index.docbook
+share/doc/HTML/de/glossary/kdeprintingglossary.docbook
 share/doc/HTML/de/kab/common
 share/doc/HTML/de/kab/fehler.png
 share/doc/HTML/de/kab/index.cache.bz2
@@ -87,6 +94,9 @@ share/doc/HTML/de/kab/kab-using.png
 share/doc/HTML/de/kaddressbook/common
 share/doc/HTML/de/kaddressbook/index.cache.bz2
 share/doc/HTML/de/kaddressbook/index.docbook
+share/doc/HTML/de/kalarm/common
+share/doc/HTML/de/kalarm/index.cache.bz2
+share/doc/HTML/de/kalarm/index.docbook
 share/doc/HTML/de/kandy/common
 share/doc/HTML/de/kandy/index.cache.bz2
 share/doc/HTML/de/kandy/index.docbook
@@ -118,6 +128,7 @@ share/doc/HTML/de/kate/mdi.docbook
 share/doc/HTML/de/kate/menus.docbook
 share/doc/HTML/de/kate/part.docbook
 share/doc/HTML/de/kate/plugins.docbook
+share/doc/HTML/de/kate/regular-expressions.docbook
 share/doc/HTML/de/katomic/common
 share/doc/HTML/de/katomic/index.cache.bz2
 share/doc/HTML/de/katomic/index.docbook
@@ -466,6 +477,9 @@ share/doc/HTML/de/kjots/index.docbook
 share/doc/HTML/de/kjumpingcube/common
 share/doc/HTML/de/kjumpingcube/index.cache.bz2
 share/doc/HTML/de/kjumpingcube/index.docbook
+share/doc/HTML/de/klettres/common
+share/doc/HTML/de/klettres/index.cache.bz2
+share/doc/HTML/de/klettres/index.docbook
 share/doc/HTML/de/klines/common
 share/doc/HTML/de/klines/index.cache.bz2
 share/doc/HTML/de/klines/index.docbook
@@ -485,6 +499,9 @@ share/doc/HTML/de/klprfax/index.docbook
 share/doc/HTML/de/kmail/common
 share/doc/HTML/de/kmail/index.cache.bz2
 share/doc/HTML/de/kmail/index.docbook
+share/doc/HTML/de/kmenuedit/common
+share/doc/HTML/de/kmenuedit/index.cache.bz2
+share/doc/HTML/de/kmenuedit/index.docbook
 share/doc/HTML/de/kmessedwords/common
 share/doc/HTML/de/kmessedwords/index.cache.bz2
 share/doc/HTML/de/kmessedwords/index.docbook
@@ -550,6 +567,19 @@ share/doc/HTML/de/knotes/index.docbook
 share/doc/HTML/de/koncd/common
 share/doc/HTML/de/koncd/index.cache.bz2
 share/doc/HTML/de/koncd/index.docbook
+share/doc/HTML/de/konq-plugins/archiver.docbook
+share/doc/HTML/de/konq-plugins/babel.docbook
+share/doc/HTML/de/konq-plugins/common
+share/doc/HTML/de/konq-plugins/dirfilter.docbook
+share/doc/HTML/de/konq-plugins/domtree.docbook
+share/doc/HTML/de/konq-plugins/imgallery.docbook
+share/doc/HTML/de/konq-plugins/index.cache.bz2
+share/doc/HTML/de/konq-plugins/index.docbook
+share/doc/HTML/de/konq-plugins/kuick.docbook
+share/doc/HTML/de/konq-plugins/mediaplayer.docbook
+share/doc/HTML/de/konq-plugins/settings.docbook
+share/doc/HTML/de/konq-plugins/uachanger.docbook
+share/doc/HTML/de/konq-plugins/validators.docbook
 share/doc/HTML/de/konqueror/cmndline.png
 share/doc/HTML/de/konqueror/common
 share/doc/HTML/de/konqueror/dirtree.png
@@ -596,6 +626,9 @@ share/doc/HTML/de/kpat/man.docbook
 share/doc/HTML/de/kpf/common
 share/doc/HTML/de/kpf/index.cache.bz2
 share/doc/HTML/de/kpf/index.docbook
+share/doc/HTML/de/kpilot/common
+share/doc/HTML/de/kpilot/index.cache.bz2
+share/doc/HTML/de/kpilot/index.docbook
 share/doc/HTML/de/kpoker/common
 share/doc/HTML/de/kpoker/index.cache.bz2
 share/doc/HTML/de/kpoker/index.docbook
@@ -1146,6 +1179,7 @@ share/locale/de/flag.png
 @dirrm share/doc/HTML/de/kreversi
 @dirrm share/doc/HTML/de/kppp
 @dirrm share/doc/HTML/de/kpoker
+@dirrm share/doc/HTML/de/kpilot
 @dirrm share/doc/HTML/de/kpf
 @dirrm share/doc/HTML/de/kpat
 @dirrm share/doc/HTML/de/kpaint
@@ -1156,6 +1190,7 @@ share/locale/de/flag.png
 @dirrm share/doc/HTML/de/konsole
 @dirrm share/doc/HTML/de/konquest
 @dirrm share/doc/HTML/de/konqueror
+@dirrm share/doc/HTML/de/konq-plugins
 @dirrm share/doc/HTML/de/koncd
 @dirrm share/doc/HTML/de/knotes
 @dirrm share/doc/HTML/de/knode
@@ -1166,12 +1201,14 @@ share/locale/de/flag.png
 @dirrm share/doc/HTML/de/kmidi
 @dirrm share/doc/HTML/de/kmid
 @dirrm share/doc/HTML/de/kmessedwords
+@dirrm share/doc/HTML/de/kmenuedit
 @dirrm share/doc/HTML/de/kmail
 @dirrm share/doc/HTML/de/klprfax
 @dirrm share/doc/HTML/de/klpq
 @dirrm share/doc/HTML/de/kljettool
 @dirrm share/doc/HTML/de/klipper
 @dirrm share/doc/HTML/de/klines
+@dirrm share/doc/HTML/de/klettres
 @dirrm share/doc/HTML/de/kjumpingcube
 @dirrm share/doc/HTML/de/kjots
 @dirrm share/doc/HTML/de/kit
@@ -1214,13 +1251,16 @@ share/locale/de/flag.png
 @dirrm share/doc/HTML/de/kasteroids
 @dirrm share/doc/HTML/de/karm
 @dirrm share/doc/HTML/de/kandy
+@dirrm share/doc/HTML/de/kalarm
 @dirrm share/doc/HTML/de/kaddressbook
 @dirrm share/doc/HTML/de/kab
+@dirrm share/doc/HTML/de/glossary
 @dirrm share/doc/HTML/de/common
 @dirrm share/doc/HTML/de/artsbuilder
 @dirrm share/doc/HTML/de/ark
 @dirrm share/doc/HTML/de/amor
 @dirrm share/doc/HTML/de/aktion
+@dirrm share/doc/HTML/de/KRegExpEditor
 @dirrm share/doc/HTML/de
 @dirrm share/apps/ktuberling/sounds/de
 @dirrm share/apps/ktuberling/sounds

@@ -1,6 +1,7 @@
 bin/ical2vcal
 bin/kabcfrontend
 bin/kalarm
+bin/kalarmautostart
 bin/kalarmd
 bin/kandy
 bin/kandy_client
@@ -357,38 +358,21 @@ share/servicetypes/calendardecoration.desktop
 share/servicetypes/calendarplugin.desktop
 share/servicetypes/korganizerpart.desktop
 share/servicetypes/kpilotconduit.desktop
-@comment directories
-@dirrm share/servicetypes
 @dirrm share/services/korganizer
-@dirrm share/services
 @dirrm share/icons/locolor/32x32/apps
 @dirrm share/icons/locolor/32x32
 @dirrm share/icons/locolor/16x16/apps
 @dirrm share/icons/locolor/16x16
 @dirrm share/icons/locolor
 @dirrm share/icons/hicolor/48x48/apps
-@dirrm share/icons/hicolor/48x48
 @dirrm share/icons/hicolor/32x32/apps
-@dirrm share/icons/hicolor/32x32
 @dirrm share/icons/hicolor/22x22/apps
-@dirrm share/icons/hicolor/22x22/actions
-@dirrm share/icons/hicolor/22x22
-@dirrm share/icons/hicolor/16x16/apps
-@dirrm share/icons/hicolor/16x16/actions
-@dirrm share/icons/hicolor/16x16
-@dirrm share/icons/hicolor
-@dirrm share/icons
 @dirrm share/doc/HTML/en/kpilot
 @dirrm share/doc/HTML/en/korganizer
 @dirrm share/doc/HTML/en/knotes
 @dirrm share/doc/HTML/en/karm
 @dirrm share/doc/HTML/en/kandy
 @dirrm share/doc/HTML/en/kalarm
-@dirrm share/doc/HTML/en
-@dirrm share/doc/HTML
-@dirrm share/doc
-@dirrm share/config
-@dirrm share/autostart
 @dirrm share/apps/kpilot/icons/hicolor/16x16/actions
 @dirrm share/apps/kpilot/icons/hicolor/16x16
 @dirrm share/apps/kpilot/icons/hicolor
@@ -443,13 +427,11 @@ share/servicetypes/kpilotconduit.desktop
 @dirrm share/apps/kalarm/icons/hicolor
 @dirrm share/apps/kalarm/icons
 @dirrm share/apps/kalarm
-@dirrm share/apps
 @dirrm share/applnk/Utilities
 @dirrm share/applnk/Settings/System
 @dirrm share/applnk/Settings
 @dirrm share/applnk/Applications
 @dirrm share/applnk
-@dirrm lib/kde3
 @dirrm include/kpilot
 @dirrm include/korganizer
 @dirrm include/kgantt

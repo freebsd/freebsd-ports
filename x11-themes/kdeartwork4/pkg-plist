@@ -2790,9 +2790,6 @@ share/wallpapers/simple_wallpaper.jpg
 share/wallpapers/sunday_brunch.jpg
 share/wallpapers/vegetative_fog.jpg
 share/wallpapers/winter_theme_1.jpg
-@comment directories
-@dirrm share/wallpapers
-@dirrm share/sounds
 @dirrm share/icons/slick/64x64/mimetypes
 @dirrm share/icons/slick/64x64/filesystems
 @dirrm share/icons/slick/64x64/apps
@@ -2862,8 +2859,6 @@ share/wallpapers/winter_theme_1.jpg
 @dirrm share/icons/Locolor/16x16/actions
 @dirrm share/icons/Locolor/16x16
 @dirrm share/icons/Locolor
-@dirrm share/icons
-@dirrm share/config
 @dirrm share/apps/kworldclock/maps/rainfall
 @dirrm share/apps/kworldclock/maps/mggd
 @dirrm share/apps/kworldclock/maps/depths
@@ -2875,17 +2870,3 @@ share/wallpapers/winter_theme_1.jpg
 @dirrm share/apps/kworldclock
 @dirrm share/apps/kwin/icewm-themes/Model
 @dirrm share/apps/kwin/icewm-themes/MenschMaschine
-@dirrm share/apps/kwin/icewm-themes
-@dirrm share/apps/kwin
-@dirrm share/apps/kthememgr/Themes
-@dirrm share/apps/kthememgr
-@dirrm share/apps/kstyle/themes
-@dirrm share/apps/kstyle
-@dirrm share/apps/kscreensaver
-@dirrm share/apps
-@dirrm share/applnk/System/ScreenSavers
-@dirrm share/applnk/System
-@dirrm share/applnk
-@dirrm lib/kde3/plugins/styles
-@dirrm lib/kde3/plugins
-@dirrm lib/kde3

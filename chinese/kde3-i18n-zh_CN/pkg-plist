@@ -39,6 +39,7 @@ share/doc/HTML/zh_CN/common/x11-license.html
 share/doc/HTML/zh_CN/common/xml.dcl
 share/doc/HTML/zh_CN/kdevelop/tip.database
 share/locale/zh_CN/LC_MESSAGES/aktion.mo
+share/locale/zh_CN/LC_MESSAGES/amor.mo
 share/locale/zh_CN/LC_MESSAGES/appletproxy.mo
 share/locale/zh_CN/LC_MESSAGES/ark.mo
 share/locale/zh_CN/LC_MESSAGES/artsbuilder.mo
@@ -83,6 +84,7 @@ share/locale/zh_CN/LC_MESSAGES/katetextfilter.mo
 share/locale/zh_CN/LC_MESSAGES/katexmltools.mo
 share/locale/zh_CN/LC_MESSAGES/katomic.mo
 share/locale/zh_CN/LC_MESSAGES/kbabel.mo
+share/locale/zh_CN/LC_MESSAGES/kbattleship.mo
 share/locale/zh_CN/LC_MESSAGES/kblackbox.mo
 share/locale/zh_CN/LC_MESSAGES/kbounce.mo
 share/locale/zh_CN/LC_MESSAGES/kcalc.mo
@@ -236,6 +238,7 @@ share/locale/zh_CN/LC_MESSAGES/knotify.mo
 share/locale/zh_CN/LC_MESSAGES/kolourpicker.mo
 share/locale/zh_CN/LC_MESSAGES/kompare.mo
 share/locale/zh_CN/LC_MESSAGES/koncd.mo
+share/locale/zh_CN/LC_MESSAGES/konqsidebar_mediaplayer.mo
 share/locale/zh_CN/LC_MESSAGES/konqueror.mo
 share/locale/zh_CN/LC_MESSAGES/konquest.mo
 share/locale/zh_CN/LC_MESSAGES/konsole.mo
@@ -257,6 +260,7 @@ share/locale/zh_CN/LC_MESSAGES/kppp.mo
 share/locale/zh_CN/LC_MESSAGES/kppplogview.mo
 share/locale/zh_CN/LC_MESSAGES/kprinter.mo
 share/locale/zh_CN/LC_MESSAGES/kreadconfig.mo
+share/locale/zh_CN/LC_MESSAGES/kregexpeditor.mo
 share/locale/zh_CN/LC_MESSAGES/kreversi.mo
 share/locale/zh_CN/LC_MESSAGES/kruler.mo
 share/locale/zh_CN/LC_MESSAGES/krunapplet.mo

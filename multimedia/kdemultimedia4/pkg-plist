@@ -936,40 +936,45 @@ share/services/kfile_ogg.desktop
 share/services/kfile_wav.desktop
 share/services/kmixctrl_restore.desktop
 share/servicetypes/audiomidi.desktop
-@comment empty dirs
+@exec /bin/mkdir -p %D/share/apps/kscd/cddb/soundtrack
+@exec /bin/mkdir -p %D/share/apps/kscd/cddb/rock
+@exec /bin/mkdir -p %D/share/apps/kscd/cddb/reggae
+@exec /bin/mkdir -p %D/share/apps/kscd/cddb/newage
+@exec /bin/mkdir -p %D/share/apps/kscd/cddb/misc
+@exec /bin/mkdir -p %D/share/apps/kscd/cddb/jazz
+@exec /bin/mkdir -p %D/share/apps/kscd/cddb/folk
+@exec /bin/mkdir -p %D/share/apps/kscd/cddb/data
+@exec /bin/mkdir -p %D/share/apps/kscd/cddb/country
+@exec /bin/mkdir -p %D/share/apps/kscd/cddb/classical
+@exec /bin/mkdir -p %D/share/apps/kscd/cddb/blues
+@exec /bin/mkdir -p %D/share/apps/kscd/cddb/rock
 @exec /bin/mkdir -p %D/share/apps/kscd/cddb/blues
 @exec /bin/mkdir -p %D/share/apps/kscd/cddb/classical
-@exec /bin/mkdir -p %D/share/apps/kscd/cddb/country
-@exec /bin/mkdir -p %D/share/apps/kscd/cddb/data
-@exec /bin/mkdir -p %D/share/apps/kscd/cddb/folk
 @exec /bin/mkdir -p %D/share/apps/kscd/cddb/jazz
-@exec /bin/mkdir -p %D/share/apps/kscd/cddb/misc
 @exec /bin/mkdir -p %D/share/apps/kscd/cddb/newage
-@exec /bin/mkdir -p %D/share/apps/kscd/cddb/reggae
-@exec /bin/mkdir -p %D/share/apps/kscd/cddb/rock
 @exec /bin/mkdir -p %D/share/apps/kscd/cddb/soundtrack
-@comment directories
-@dirrm share/servicetypes
-@dirrm share/services
-@dirrm share/mimelnk/text
-@dirrm share/mimelnk/audio
-@dirrm share/mimelnk/application
-@dirrm share/mimelnk
+@exec /bin/mkdir -p %D/share/apps/kscd/cddb/reggae
+@exec /bin/mkdir -p %D/share/apps/kscd/cddb/folk
+@exec /bin/mkdir -p %D/share/apps/kscd/cddb/country
+@exec /bin/mkdir -p %D/share/apps/kscd/cddb/misc
+@exec /bin/mkdir -p %D/share/apps/kscd/cddb/data
+@exec /bin/mkdir -p %D/share/apps/kscd/cddb/rock
+@exec /bin/mkdir -p %D/share/apps/kscd/cddb/blues
+@exec /bin/mkdir -p %D/share/apps/kscd/cddb/classical
+@exec /bin/mkdir -p %D/share/apps/kscd/cddb/jazz
+@exec /bin/mkdir -p %D/share/apps/kscd/cddb/newage
+@exec /bin/mkdir -p %D/share/apps/kscd/cddb/soundtrack
+@exec /bin/mkdir -p %D/share/apps/kscd/cddb/reggae
+@exec /bin/mkdir -p %D/share/apps/kscd/cddb/folk
+@exec /bin/mkdir -p %D/share/apps/kscd/cddb/country
+@exec /bin/mkdir -p %D/share/apps/kscd/cddb/misc
+@exec /bin/mkdir -p %D/share/apps/kscd/cddb/data
 @dirrm share/icons/locolor/32x32/apps
 @dirrm share/icons/locolor/32x32
 @dirrm share/icons/locolor
 @dirrm share/icons/hicolor/48x48/apps
-@dirrm share/icons/hicolor/48x48
 @dirrm share/icons/hicolor/32x32/apps
-@dirrm share/icons/hicolor/32x32
 @dirrm share/icons/hicolor/22x22/apps
-@dirrm share/icons/hicolor/22x22/actions
-@dirrm share/icons/hicolor/22x22
-@dirrm share/icons/hicolor/16x16/apps
-@dirrm share/icons/hicolor/16x16/actions
-@dirrm share/icons/hicolor/16x16
-@dirrm share/icons/hicolor
-@dirrm share/icons
 @dirrm share/doc/HTML/en/noatun
 @dirrm share/doc/HTML/en/kscd
 @dirrm share/doc/HTML/en/kmix
@@ -978,10 +983,6 @@ share/servicetypes/audiomidi.desktop
 @dirrm share/doc/HTML/en/artsbuilder/images
 @dirrm share/doc/HTML/en/artsbuilder
 @dirrm share/doc/HTML/en/aktion
-@dirrm share/doc/HTML/en
-@dirrm share/doc/HTML
-@dirrm share/doc
-@dirrm share/config
 @dirrm share/apps/noatun/skins/winamp/Winamp
 @dirrm share/apps/noatun/skins/winamp
 @dirrm share/apps/noatun/skins/kaiman/k9
@@ -1040,7 +1041,6 @@ share/servicetypes/audiomidi.desktop
 @dirrm share/apps/kmid
 @dirrm share/apps/kicker/applets
 @dirrm share/apps/kicker
-@dirrm share/apps/kconf_update
 @dirrm share/apps/kaboodle/icons/hicolor/22x22/actions
 @dirrm share/apps/kaboodle/icons/hicolor/22x22
 @dirrm share/apps/kaboodle/icons/hicolor/16x16/actions
@@ -1055,16 +1055,12 @@ share/servicetypes/audiomidi.desktop
 @dirrm share/apps/artsbuilder
 @dirrm share/apps/aktion/toolbar
 @dirrm share/apps/aktion
-@dirrm share/apps
 @dirrm share/applnk/Settings/Sound
 @dirrm share/applnk/Settings
 @dirrm share/applnk/Multimedia
 @dirrm share/applnk
 @dirrm lib/mcop/Noatun
 @dirrm lib/mcop/Arts/Environment
-@dirrm lib/mcop/Arts
-@dirrm lib/mcop
-@dirrm lib/kde3
 @dirrm include/noatun
 @dirrm include/mpeglib_artsplug
 @dirrm include/mpeglib/util/yaf/yafxplayer
@@ -1082,4 +1078,3 @@ share/servicetypes/audiomidi.desktop
 @dirrm include/mpeglib/frame
 @dirrm include/mpeglib/decoder
 @dirrm include/mpeglib
-@dirrm include/arts

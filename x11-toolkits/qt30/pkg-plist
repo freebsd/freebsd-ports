@@ -1,4 +1,3 @@
-@comment files/links
 bin/assistant
 bin/designer
 bin/linguist
@@ -136,6 +135,7 @@ include/qfontmetrics.h
 include/qframe.h
 include/qftp.h
 include/qgarray.h
+include/qgb18030codec.h
 include/qgbkcodec.h
 include/qgcache.h
 include/qgdict.h
@@ -472,10 +472,10 @@ mkspecs/solaris-64/qmake.conf
 mkspecs/solaris-64/qplatformdefs.h
 mkspecs/solaris-cc/qmake.conf
 mkspecs/solaris-cc/qplatformdefs.h
-mkspecs/solaris-g++/qmake.conf
-mkspecs/solaris-g++/qplatformdefs.h
 mkspecs/solaris-g++-64/qmake.conf
 mkspecs/solaris-g++-64/qplatformdefs.h
+mkspecs/solaris-g++/qmake.conf
+mkspecs/solaris-g++/qplatformdefs.h
 mkspecs/solaris-kcc/qmake.conf
 mkspecs/solaris-kcc/qplatformdefs.h
 mkspecs/sunos-g++/qmake.conf
@@ -492,10 +492,10 @@ mkspecs/unixware7-g++/qplatformdefs.h
 mkspecs/win32-borland/qmake.conf
 mkspecs/win32-borland/qplatformdefs.h
 mkspecs/win32-g++/qmake.conf
+mkspecs/win32-icc/qmake.conf
 mkspecs/win32-icc/qplatformdefs.h
 mkspecs/win32-icc/win32app.dsp
 mkspecs/win32-icc/win32dll.dsp
-mkspecs/win32-icc/qmake.conf
 mkspecs/win32-icc/win32lib.dsp
 mkspecs/win32-msvc/qmake.conf
 mkspecs/win32-msvc/qplatformdefs.h
@@ -2298,7 +2298,6 @@ templates/Configuration_Dialog.ui
 templates/Dialog_with_Buttons_(Bottom).ui
 templates/Dialog_with_Buttons_(Right).ui
 templates/Tab_Dialog.ui
-@comment directories
 @dirrm templates
 @dirrm share/doc/qt
 %%IMAGE_PLUGINS%%@dirrm plugins/imageformats
@@ -2307,8 +2306,8 @@ templates/Tab_Dialog.ui
 @dirrm mkspecs/win32-watcom
 @dirrm mkspecs/win32-visage
 @dirrm mkspecs/win32-msvc
-@dirrm mkspecs/win32-g++
 @dirrm mkspecs/win32-icc
+@dirrm mkspecs/win32-g++
 @dirrm mkspecs/win32-borland
 @dirrm mkspecs/unixware7-g++
 @dirrm mkspecs/unixware7-cc
@@ -2318,8 +2317,8 @@ templates/Tab_Dialog.ui
 @dirrm mkspecs/tru64-cxx
 @dirrm mkspecs/sunos-g++
 @dirrm mkspecs/solaris-kcc
-@dirrm mkspecs/solaris-g++
 @dirrm mkspecs/solaris-g++-64
+@dirrm mkspecs/solaris-g++
 @dirrm mkspecs/solaris-cc
 @dirrm mkspecs/solaris-64
 @dirrm mkspecs/sco-g++

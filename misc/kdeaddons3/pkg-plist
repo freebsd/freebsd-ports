@@ -175,47 +175,11 @@ share/icons/locolor/32x32/apps/ktimemon.png
 share/mimelnk/application/x-webarchive.desktop
 share/services/kuickplugin.desktop
 share/services/webarchivethumbnail.desktop
-@comment directories
-@dirrm share/services
-@dirrm share/mimelnk/application
-@dirrm share/mimelnk
-@dirrm share/icons/locolor/32x32/apps
-@dirrm share/icons/locolor/32x32
-@dirrm share/icons/locolor/16x16/apps
-@dirrm share/icons/locolor/16x16
-@dirrm share/icons/locolor
-@dirrm share/icons/hicolor/48x48/apps
-@dirrm share/icons/hicolor/48x48
-@dirrm share/icons/hicolor/32x32/apps
-@dirrm share/icons/hicolor/32x32
-@dirrm share/icons/hicolor/22x22/apps
-@dirrm share/icons/hicolor/22x22/actions
-@dirrm share/icons/hicolor/22x22
-@dirrm share/icons/hicolor/16x16/apps
-@dirrm share/icons/hicolor/16x16/actions
-@dirrm share/icons/hicolor/16x16
-@dirrm share/icons/hicolor
-@dirrm share/icons
 @dirrm share/doc/HTML/en/konq-plugins
 @dirrm share/doc/HTML/en/kicker-applets
 @dirrm share/doc/HTML/en/kate-plugins
-@dirrm share/doc/HTML/en
-@dirrm share/doc/HTML
-@dirrm share/doc
-@dirrm share/apps/noatun
-@dirrm share/apps/konqsidebartng/entries
-@dirrm share/apps/konqsidebartng/add
-@dirrm share/apps/konqsidebartng
-@dirrm share/apps/konqlistview/kpartplugins
-@dirrm share/apps/konqlistview
-@dirrm share/apps/konqiconview/kpartplugins
-@dirrm share/apps/konqiconview
 @dirrm share/apps/knewsticker/scripts
-@dirrm share/apps/knewsticker
-@dirrm share/apps/kicker/applets
-@dirrm share/apps/kicker
 @dirrm share/apps/khtml/kpartplugins
-@dirrm share/apps/khtml
 @dirrm share/apps/katexmltools
 @dirrm share/apps/kate/plugins/katexmltools
 @dirrm share/apps/kate/plugins/katetextfilter
@@ -224,9 +188,3 @@ share/services/webarchivethumbnail.desktop
 @dirrm share/apps/kate/plugins/kateinsertcommand
 @dirrm share/apps/kate/plugins/katehtmltools
 @dirrm share/apps/kate/plugins
-@dirrm share/apps/kate
-@dirrm share/apps
-@dirrm share/applnk/Settings/FileBrowsing
-@dirrm share/applnk/Settings
-@dirrm share/applnk
-@dirrm lib/kde3

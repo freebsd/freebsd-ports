@@ -81,26 +81,14 @@ share/icons/hicolor/32x32/apps/kuser.png
 share/icons/hicolor/48x48/apps/kpackage.png
 share/icons/hicolor/48x48/apps/kuser.png
 share/mimelnk/application/x-debian-package.desktop
-@comment directories
-@dirrm share/mimelnk/application
-@dirrm share/mimelnk
 @dirrm share/icons/hicolor/48x48/apps
-@dirrm share/icons/hicolor/48x48
 @dirrm share/icons/hicolor/32x32/apps
-@dirrm share/icons/hicolor/32x32
-@dirrm share/icons/hicolor/16x16/apps
-@dirrm share/icons/hicolor/16x16
-@dirrm share/icons/hicolor
-@dirrm share/icons
 @dirrm share/doc/HTML/en/kwuftpd
 @dirrm share/doc/HTML/en/kuser
 @dirrm share/doc/HTML/en/ksysv
 @dirrm share/doc/HTML/en/kpackage
 @dirrm share/doc/HTML/en/kdat
 @dirrm share/doc/HTML/en/kcron
-@dirrm share/doc/HTML/en
-@dirrm share/doc/HTML
-@dirrm share/doc
 @dirrm share/apps/kuser/pics
 @dirrm share/apps/kuser/icons/hicolor/22x22/actions
 @dirrm share/apps/kuser/icons/hicolor/22x22
@@ -110,6 +98,5 @@ share/mimelnk/application/x-debian-package.desktop
 @dirrm share/apps/kpackage/toolbar
 @dirrm share/apps/kpackage/pics
 @dirrm share/apps/kpackage
-@dirrm share/apps
 @dirrm share/applnk/System
 @dirrm share/applnk

@@ -549,9 +549,9 @@ share/applnk/System/kfmclient_dir.desktop
 share/applnk/System/kfmclient_html.desktop
 share/applnk/System/kmenuedit.desktop
 share/applnk/System/konquerorsu.desktop
-share/applnk/System/kpersonalizer.desktop
 share/applnk/System/konsole.desktop
 share/applnk/System/konsolesu.desktop
+share/applnk/System/kpersonalizer.desktop
 share/applnk/System/ksysguard.desktop
 share/applnk/Toys/.directory
 share/applnk/Toys/ktip.desktop
@@ -2155,9 +2155,9 @@ share/icons/locolor/32x32/apps/kcmfontinst.png
 share/locale/en_US/entry.desktop
 share/locale/l10n/C/entry.desktop
 share/locale/l10n/C/flag.png
-share/locale/l10n/africa.desktop
 share/locale/l10n/ae/entry.desktop
 share/locale/l10n/ae/flag.png
+share/locale/l10n/africa.desktop
 share/locale/l10n/ag/entry.desktop
 share/locale/l10n/ag/flag.png
 share/locale/l10n/ar/entry.desktop
@@ -2428,7 +2428,6 @@ share/services/searchproviders/msdn.desktop
 share/services/searchproviders/nl-teletekst.desktop
 share/services/searchproviders/php.desktop
 share/services/searchproviders/python.desktop
-share/services/searchproviders/realnames.desktop
 share/services/searchproviders/rfc.desktop
 share/services/searchproviders/rpmfind.desktop
 share/services/searchproviders/ruby_application_archive.desktop
@@ -2544,24 +2543,20 @@ share/wallpapers/kde_passion.jpg
 share/wallpapers/kdm_bg.jpg
 share/wallpapers/only_k.jpg
 share/wallpapers/triplegears.jpg
-@comment empty dirs
-@exec /bin/mkdir -p %D/share/apps/kscreensaver
-@exec /bin/mkdir -p %D/share/fonts/override
 @exec /bin/mkdir -p %D/share/templates/.source/emptydir
-@comment directories
+@exec /bin/mkdir -p %D/share/templates/.source/emptydir
+@exec /bin/mkdir -p %D/share/templates/.source/emptydir
+@exec /bin/mkdir -p %D/share/fonts/override
+@exec /bin/mkdir -p %D/share/fonts/override
+@exec /bin/mkdir -p %D/share/apps/kscreensaver
 @dirrm share/wallpapers
 @dirrm share/templates/.source/emptydir
 @dirrm share/templates/.source
 @dirrm share/templates
 @dirrm share/sounds
-@dirrm share/servicetypes
 @dirrm share/services/useragentstrings
 @dirrm share/services/searchproviders
-@dirrm share/services/kded
-@dirrm share/services
 @dirrm share/mimelnk/print
-@dirrm share/mimelnk/application
-@dirrm share/mimelnk
 @dirrm share/locale/l10n/za
 @dirrm share/locale/l10n/ye
 @dirrm share/locale/l10n/vn
@@ -2659,29 +2654,13 @@ share/wallpapers/triplegears.jpg
 @dirrm share/locale/l10n/C
 @dirrm share/locale/l10n
 @dirrm share/locale/en_US
-@dirrm share/locale
 @dirrm share/icons/locolor/32x32/apps
 @dirrm share/icons/locolor/32x32
 @dirrm share/icons/locolor/16x16/apps
 @dirrm share/icons/locolor/16x16
 @dirrm share/icons/locolor
-@dirrm share/icons/hicolor/48x48/filesystems
 @dirrm share/icons/hicolor/48x48/apps
-@dirrm share/icons/hicolor/48x48
-@dirrm share/icons/hicolor/32x32/filesystems
-@dirrm share/icons/hicolor/32x32/devices
 @dirrm share/icons/hicolor/32x32/apps
-@dirrm share/icons/hicolor/32x32/actions
-@dirrm share/icons/hicolor/32x32
-@dirrm share/icons/hicolor/22x22/actions
-@dirrm share/icons/hicolor/22x22
-@dirrm share/icons/hicolor/16x16/filesystems
-@dirrm share/icons/hicolor/16x16/devices
-@dirrm share/icons/hicolor/16x16/apps
-@dirrm share/icons/hicolor/16x16/actions
-@dirrm share/icons/hicolor/16x16
-@dirrm share/icons/hicolor
-@dirrm share/icons
 @dirrm share/fonts/override
 @dirrm share/fonts
 @dirrm share/doc/HTML/en/kwrite
@@ -2707,12 +2686,7 @@ share/wallpapers/triplegears.jpg
 @dirrm share/doc/HTML/en/kcontrol
 @dirrm share/doc/HTML/en/kate
 @dirrm share/doc/HTML/en/kaddressbook
-@dirrm share/doc/HTML/en
-@dirrm share/doc/HTML
-@dirrm share/doc
 @dirrm share/config/kdm
-@dirrm share/config
-@dirrm share/autostart
 @dirrm share/apps/naughtyapplet/pics
 @dirrm share/apps/naughtyapplet
 @dirrm share/apps/kwrite
@@ -2813,11 +2787,9 @@ share/wallpapers/triplegears.jpg
 @dirrm share/apps/kdeprintfax
 @dirrm share/apps/kdeprint_part
 @dirrm share/apps/kdeprint/template
-@dirrm share/apps/kdeprint
 @dirrm share/apps/kdcop
 @dirrm share/apps/kcontrol/pics
 @dirrm share/apps/kcontrol
-@dirrm share/apps/kconf_update
 @dirrm share/apps/kcmusb
 @dirrm share/apps/kcmlocale/pics
 @dirrm share/apps/kcmlocale
@@ -2846,7 +2818,6 @@ share/wallpapers/triplegears.jpg
 @dirrm share/apps/kate/icons/hicolor/16x16
 @dirrm share/apps/kate/icons/hicolor
 @dirrm share/apps/kate/icons
-@dirrm share/apps/kate
 @dirrm share/apps/kappfinder/apps/WordProcessing
 @dirrm share/apps/kappfinder/apps/Utilities/XUtilities
 @dirrm share/apps/kappfinder/apps/Utilities
@@ -2878,7 +2849,6 @@ share/wallpapers/triplegears.jpg
 @dirrm share/apps/drkonqi
 @dirrm share/apps/clockapplet/pics
 @dirrm share/apps/clockapplet
-@dirrm share/apps
 @dirrm share/applnk/WordProcessing
 @dirrm share/applnk/Utilities
 @dirrm share/applnk/Toys
@@ -2918,7 +2888,5 @@ share/wallpapers/triplegears.jpg
 @dirrm share/applnk/Applications
 @dirrm share/applnk/.hidden
 @dirrm share/applnk
-@dirrm lib/kde3
 @dirrm include/kwin
 @dirrm include/ksgrd
-@dirrm include/kate
