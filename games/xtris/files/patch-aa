@@ -1,7 +1,11 @@
---- Makefile.orig	Wed Apr  9 20:02:03 1997
-+++ Makefile	Wed Sep 24 13:28:50 1997
-@@ -11,19 +11,19 @@
- CC = gcc
+--- Makefile.orig	Sun Dec 14 20:43:35 1997
++++ Makefile	Sun Aug 29 20:28:11 1999
+@@ -8,22 +8,22 @@
+ ###################
+ 
+ # change this to your favorite ANSI C compiler
+-CC = gcc
++CC? = gcc
  
  # change this to the directory where you want the xtris binaries installed
 -BINDIR = /usr/local/bin
@@ -13,7 +17,7 @@
  
  # change according to taste and local custom...
 -CFLAGS = -O3 -D__USE_FIXED_PROTOTYPES__
-+CFLAGS = -O3 -D__USE_FIXED_PROTOTYPES__ -I${PREFIX}/include
++CFLAGS += -D__USE_FIXED_PROTOTYPES__ -I${PREFIX}/include
  
  # on Solaris and similar systems, you'll need to uncomment this:
  # EXTRALIBS = -lnsl -lsocket 
