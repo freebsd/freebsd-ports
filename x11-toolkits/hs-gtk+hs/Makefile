@@ -17,6 +17,8 @@ COMMENT=	A GTK+ Binding for Haskell
 OPTIONS=	GHC5 "Build for ghc5" off \
 		IHASKELL "Build with iHaskell" off
 
+BROKEN=		"Build fails"
+
 USE_GNOME=	glib12 gtk12
 
 .include <bsd.port.pre.mk>
