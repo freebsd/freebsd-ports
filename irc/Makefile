@@ -38,6 +38,7 @@
     SUBDIR += pure-xemacs21-mule
     SUBDIR += py-irclib
     SUBDIR += quirc
+    SUBDIR += rbot
     SUBDIR += roxirc
     SUBDIR += ruby-irc
     SUBDIR += ruby-rica

@@ -1,0 +1,24 @@
+rbot is a ruby IRC bot. Think of him as a ruby infobot, with more and different 
+features, and a nicer plugin scheme. His main features include: 
+
+   * Runtime configuration via irc chat 
+   * User authentication and access levels for using different bot features 
+   * Built in infobot-style keywords. See example session below. 
+   * Support for underlying fact database (infobot fact files), which can be 
+     overridden or supplemented by runtime keyword controls 
+   * Powerful plugin architecture, comes with plugins for: 
+	* DNS queries 
+	* Babelfish translation 
+	* Google searching 
+	* Excuse generation 
+	* Insult generation 
+	* Karma 
+	* Per-channel quote storage, searching and retrieval 
+	* Reminders 
+	* rot13 translation 
+	* Check the spelling of a word 
+	* Webserver Server: header examination 
+	* RPG dice rolling (thanks to David Dorward) 
+   * Multi-language support - comes with english definition only so far
+
+WWW: http://linuxbrit.co.uk/rbot/
