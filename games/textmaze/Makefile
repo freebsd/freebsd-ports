@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	textmaze
-PORTVERSION=	0.5
+PORTVERSION=	1.0
 CATEGORIES=	games perl5
 MASTER_SITES=	http://www.robobunny.com/projects/textmaze/
 DISTNAME=	${PORTNAME}_v${PORTVERSION}
