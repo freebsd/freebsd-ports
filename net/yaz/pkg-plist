@@ -65,6 +65,8 @@ include/yaz/zes-update0.h
 include/yaz/zoom.h
 lib/libyaz.a
 lib/libyaz.la
+lib/libyazmalloc.a
+lib/libyazmalloc.la
 lib/libyazthread.a
 lib/libyazthread.la
 share/aclocal/yaz.m4
@@ -73,12 +75,10 @@ share/doc/yaz/asn.html
 share/doc/yaz/asn.oid.html
 share/doc/yaz/asn.pdu.html
 share/doc/yaz/asn.preparing.html
-share/doc/yaz/asn.xml
 share/doc/yaz/client.commands.html
 share/doc/yaz/client.html
 share/doc/yaz/client.invoking.html
 share/doc/yaz/client.searching.html
-share/doc/yaz/client.xml
 share/doc/yaz/comstack.addresses.html
 share/doc/yaz/comstack.client.html
 share/doc/yaz/comstack.common.html
@@ -87,26 +87,19 @@ share/doc/yaz/comstack.html
 share/doc/yaz/comstack.introduction.html
 share/doc/yaz/comstack.server.html
 share/doc/yaz/comstack.summary.html
-share/doc/yaz/comstack.xml
-share/doc/yaz/frontend.xml
+share/doc/yaz/credits.html
 share/doc/yaz/future.html
-share/doc/yaz/future.xml
 share/doc/yaz/indexdata.html
-share/doc/yaz/indexdata.xml
 share/doc/yaz/installation.html
 share/doc/yaz/installation.unix.html
 share/doc/yaz/installation.win32.html
-share/doc/yaz/installation.xml
 share/doc/yaz/introduction.html
-share/doc/yaz/introduction.xml
 share/doc/yaz/license.html
 share/doc/yaz/license.other.html
-share/doc/yaz/license.xml
 share/doc/yaz/odr.debugging.html
 share/doc/yaz/odr.html
 share/doc/yaz/odr.programming.html
 share/doc/yaz/odr.use.html
-share/doc/yaz/odr.xml
 share/doc/yaz/server.backend.html
 share/doc/yaz/server.backendfunctions.html
 share/doc/yaz/server.frontend.html
@@ -116,17 +109,14 @@ share/doc/yaz/server.main.html
 share/doc/yaz/tools.html
 share/doc/yaz/tools.nmem.html
 share/doc/yaz/tools.oid.html
-share/doc/yaz/tools.xml
 share/doc/yaz/yaz.html
 share/doc/yaz/yaz.pdf
-share/doc/yaz/yaz.xml
 share/doc/yaz/zoom.events.html
 share/doc/yaz/zoom.html
 share/doc/yaz/zoom.options.html
+share/doc/yaz/zoom.query.html
 share/doc/yaz/zoom.records.html
 share/doc/yaz/zoom.resultsets.html
-share/doc/yaz/zoom.search.html
-share/doc/yaz/zoom.xml
 share/yaz/ill/ill.tcl
 share/yaz/ill/ill9702.asn
 share/yaz/ill/item-req.asn
@@ -173,5 +163,6 @@ share/yaz/z39.50/z3950v3.asn
 @dirrm share/yaz/z39.50
 @dirrm share/yaz/tab
 @dirrm share/yaz/ill
+@dirrm share/yaz
 @dirrm share/doc/yaz
 @dirrm include/yaz
