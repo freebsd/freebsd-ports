@@ -1,0 +1,111 @@
+--- imattr.c.orig	Tue Mar  3 20:58:22 1998
++++ imattr.c	Fri Mar 19 14:24:12 1999
+@@ -127,6 +127,11 @@
+ static int getFontSet( IMIC *, unsigned int, int, int, char *, int ) ;
+ static int getLineSpace( IMIC *, unsigned int, int, int, char *, int ) ;
+ static int getCursor( IMIC *, unsigned int, int, int, char *, int ) ;
++ 
++#ifndef	ORIGINAL
++static int setFilterEvents( IMIC *, char *, int, int, int, int );
++static int getFilterEvents( IMIC *, unsigned int, int, int, char *, int );
++#endif
+ 
+ static ICAttribute icAttributes[] = {
+   { XNInputStyle, TYPE_CARD32, OP_C|OP_G,
+@@ -135,6 +140,8 @@
+     setClientWindow, getClientWindow },
+   { XNFocusWindow, TYPE_WINDOW, OP_C|OP_S|OP_G,
+     setFocusWindow, getFocusWindow },
++  { XNFilterEvents, TYPE_CARD32, OP_C|OP_S|OP_G,
++    setFilterEvents, getFilterEvents },
+   { XNPreeditAttributes, TYPE_NESTED_LIST, OP_C|OP_S|OP_G,
+     setPreeditAttributes, getPreeditAttributes },
+   { XNStatusAttributes, TYPE_NESTED_LIST, OP_C|OP_S|OP_G,
+@@ -495,6 +502,26 @@
+   return 0 ;
+ }
+ 
++#ifndef	ORIGINAL
++/* ARGSUSED */
++static int
++setFilterEvents
++( IMIC *icp, char *value, int len, int order, int nest, int op )
++{
++  unsigned long filter_events;
++
++  CHECK_ICATTR_SIZE(4, IMBadSomething);
++
++  filter_events = (unsigned long)getC32(value, order);
++
++  if (!(icp->common_attr.set_mask & ATTR_MASK_FILTER_EVENTS) ||
++      filter_events != icp->common_attr.filter_events) {
++    icp->common_attr.change_mask |= ATTR_MASK_FILTER_EVENTS;
++  }
++  return 0;
++}
++#endif
++
+ /* ARGSUSED */
+ static int setPreeditAttributes
+ ( IMIC *icp, char *value, int len, int order, int nest, int op )
+@@ -1061,6 +1088,35 @@
+   }
+ }
+ 
++#ifndef	ORIGINAL
++/* ARGSUSED */
++static int
++getFilterEvents
++( IMIC *icp, unsigned int id, int nest, int offset,
++  char *data, int len )
++{
++  IMConnection *conn = icp->im->connection;
++
++  if (!(icp->common_attr.set_mask & ATTR_MASK_FILTER_EVENTS)) {
++    /* fill default value */
++    fillCommonDefault(icp, (unsigned long)ATTR_MASK_FILTER_EVENTS);
++  }
++
++  if (icp->common_attr.set_mask & ATTR_MASK_FILTER_EVENTS) {
++    IMPutC16(conn, id);		/* attribute ID */
++    IMPutC16(conn, 4);		/* value length */
++    IMPutC32(conn, icp->common_attr.filter_events);
++  }
++  else {
++    /* no default is available */
++    IMCancelRequest(conn, offset);
++    IMSendError(conn, IMBadSomething, icp->im->id, icp->id,
++                "filter events not specified yet");
++    return -1;
++  }
++}
++#endif
++
+ /* ARGSUSED */
+ static int getArea
+ ( IMIC *icp, unsigned int id, int nest,
+@@ -1383,6 +1439,12 @@
+       icp->focus_profile = icp->client_profile ;
+     }
+   }
++#ifndef	ORIGINAL
++  if (mask & ATTR_MASK_FILTER_EVENTS) {
++    ap->filter_events = NoEventMask;
++    ap->set_mask |= ATTR_MASK_FILTER_EVENTS;
++  }
++#endif
+ }
+ 
+ static int getNaturalLineSpace( IMIC *icp )
+@@ -1520,6 +1582,11 @@
+       SENDERROR( IMBadFocusWindow, "invalid focus window ID" ) ;
+     }
+   }
++#ifndef	ORIGINAL
++  if (mask & ATTR_MASK_FILTER_EVENTS) {
++    SENDERROR(IMBadSomething, "filter events not support");
++  }
++#endif
+ 
+   return ret ;
+ #undef SENDERROR

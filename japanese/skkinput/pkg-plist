@@ -6,5 +6,7 @@ share/doc/skkinput/FAQ.jis
 share/doc/skkinput/PROGRAM.jis
 share/doc/skkinput/README.jis
 share/doc/skkinput/TODO.jis
+share/doc/skkinput/dot.skkinput
 share/doc/skkinput/skkinput.doc
+share/doc/skkinput/skkinputlisp.doc
 @dirrm share/doc/skkinput
