@@ -1,13 +1,12 @@
-# $Id: Makefile,v 1.23 1995/10/30 17:32:34 pst Exp $
+# $Id: Makefile,v 1.24 1995/11/02 08:21:27 asami Exp $
 #
 
-RESTRICTED += ashe		# requires motif
     SUBDIR += axe
+    SUBDIR += beav
     SUBDIR += e93
     SUBDIR += emacs
     SUBDIR += jove
     SUBDIR += mule
-    SUBDIR += tkHTML
     SUBDIR += uemacs
     SUBDIR += uzap
     SUBDIR += vile
