@@ -28,7 +28,7 @@ MAN1=		dlpsh.1 ietf2datebook.1 install-datebook.1 \
 MAN7=		pilot-link.7
 
 post-install:
-	@{$SED} "s|%%PREFIX%%|${PREFIX}|g" < ${FILESDIR}/pilot-link.sh > ${PREFIX}/etc/rc.d/pilot-link.sh
+	@{$SED} "s|%%PREFIX%%|${PREFIX}|g" < ${FILESDIR}/pilot-link.sh > ${LOCALBASE}/etc/rc.d/pilot-link.sh
 	@${CHMOD} 750 ${LOCALBASE}/etc/rc.d/pilot-link.sh
 
 .include <bsd.port.mk>
