@@ -1,5 +1,5 @@
---- Makefile.in.orig	Fri May  1 15:47:40 1998
-+++ misc/Makefile.in	Fri Aug  7 23:13:23 1998
+--- misc/Makefile.in.orig	Fri May  1 14:47:40 1998
++++ misc/Makefile.in	Thu Dec  3 20:11:52 1998
 @@ -164,10 +164,8 @@
  	@list='$(lisp_LISP)'; for p in $$list; do \
  	  if test -f "$$p"; then d= ; else d="$(srcdir)/"; fi; \
@@ -11,3 +11,14 @@
  	  else : ; fi; \
  	done
  
+--- doc/Makefile.in.orig	Thu Dec  3 20:12:35 1998
++++ doc/Makefile.in	Thu Dec  3 20:12:51 1998
+@@ -79,7 +79,7 @@
+ LIBOBJS = @LIBOBJS@
+ LIBTOOL = @LIBTOOL@
+ LN_S = @LN_S@
+-MAKEINFO = @MAKEINFO@
++MAKEINFO = @MAKEINFO@ --no-split
+ MKINSTALLDIRS = @MKINSTALLDIRS@
+ MSGFMT = @MSGFMT@
+ NM = @NM@

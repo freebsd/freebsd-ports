@@ -1,6 +1,5 @@
-diff -uNr ../gg/misc/locale.alias ./misc/locale.alias
---- ../gg/misc/locale.alias	Sun Oct 20 00:40:54 1996
-+++ ./misc/locale.alias	Mon Jul 20 12:49:42 1998
+--- misc/locale.alias.orig	Sat Oct 19 23:40:54 1996
++++ misc/locale.alias	Thu Dec  3 20:11:52 1998
 @@ -40,6 +40,7 @@
  icelandic       is_IS.ISO-8859-1
  italian         it_CH.ISO-8859-1
@@ -9,4 +8,3 @@ diff -uNr ../gg/misc/locale.alias ./misc/locale.alias
  norwegian       no_NO.ISO-8859-1
  polish          pl_PL.ISO-8859-2
  portuguese      pt_PT.ISO-8859-1
-
