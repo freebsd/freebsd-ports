@@ -19,6 +19,3 @@ share/locale/fr/LC_MESSAGES/fetchmail.mo
 share/locale/gl/LC_MESSAGES/fetchmail.mo
 share/locale/pl/LC_MESSAGES/fetchmail.mo
 share/locale/pt_BR/LC_MESSAGES/fetchmail.mo
-@unexec rmdir %D/share/locale/*/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/* 2>/dev/null || true
-@unexec rmdir %D/share/locale 2>/dev/null || true
