@@ -1,19 +1,17 @@
 # Ports collection makefile for:    dhcp
-# Version required:     2.0b1pl6
+# Version required:     2.0b1pl16
 # Date created:         7 Mar 1996
 # Whom:                 se
 #
-# $Id: Makefile,v 1.21 1999/01/13 03:37:28 scrappy Exp $
+# $Id: Makefile,v 1.22 1999/02/10 18:24:23 obrien Exp $
 #
 
-DISTNAME=       dhcp-2.0b1pl6
-PKGNAME=	isc-dhcp2.b1.6
+DISTNAME=       dhcp-2.0b1pl16
+PKGNAME=	isc-dhcp2.b1.16
 CATEGORIES=	net
 MASTER_SITES=   ftp://ftp.isc.org/isc/dhcp/
 
 MAINTAINER=	jseger@FreeBSD.org
-
-BROKEN='port installs two files into /etc (dhclient.conf & dhclient-script) rather than PREFIX/etc.  The port does not install required dhclient-script at all.'
 
 Y2K=		http://www.isc.org/y2k.html
 
@@ -28,7 +26,6 @@ _MANPAGES+=	${CAT8:S%^%${MANPREFIX}/man/cat8/%}
 
 post-install:
 	${TOUCH} /var/db/dhcpd.leases
-	${TOUCH} /etc/dhclient.conf
 .for file in dhclient dhcpd dhcrelay
 	if [ -f ${PREFIX}/sbin/${file} ]; then \
 		strip ${PREFIX}/sbin/${file}; \
