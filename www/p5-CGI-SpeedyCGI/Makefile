@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	CGI-SpeedyCGI
-PORTVERSION=	2.21
-PORTREVISION=	3
+PORTVERSION=	2.22
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	CGI
@@ -18,11 +17,35 @@ COMMENT=	Speed up perl CGI scripts by running them persistently
 
 PERL_CONFIGURE=	yes
 
+.include <bsd.port.pre.mk>
+
+APXS?=		${LOCALBASE}/sbin/apxs
+
+# define WITHOUT_APACHE to prevent mod_speedycgi from being built even if Apache is installed
+
+.if !exists(${APXS}) || defined(WITHOUT_APACHE)
+PLIST_SUB+=	APACHE="@comment "
+CONFIGURE_ENV+=	WITHOUT_APACHE=yes
+.else
+PLIST_SUB+=	APACHE=""
+.if exists(${APXS})
+APXS_WORKS!=	${APXS} -q TARGET 2>/dev/null || echo no
+.endif
+.if exists(${APXS}) && ${APXS_WORKS} != no
+AP_LIBEXEC!=	${APXS} -q LIBEXECDIR
+.else
+AP_LIBEXEC?=	${PREFIX}/libexec/apache
+.endif
+PLIST_SUB+=	AP_LIBEXEC=${AP_LIBEXEC:S/^${PREFIX}\///}
+.endif
+
 post-configure:
-	@${PERL} -pi.bak -e 's,^PREFIX = /usr$$,PREFIX = ${PREFIX},g' ${WRKSRC}/*/Makefile
+	@${PERL} -pi -e 's,^PREFIX = /usr$$,PREFIX = ${PREFIX},g;' \
+		     -e 's,/usr/local,${PREFIX},g;' \
+		${WRKSRC}/Makefile ${WRKSRC}/*/Makefile
 
 post-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/speedy/speedy ${PREFIX}/bin/speedy_suid
 	@${CHMOD} 4755 ${PREFIX}/bin/speedy_suid
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
