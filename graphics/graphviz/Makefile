@@ -1,35 +1,34 @@
 # New ports collection makefile for:    graphviz
-# Version required:     1.21
+# Version required:     1.4
 # Date created:         03 Feb 1998
 # Whom:                 Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.5 1998/09/26 23:11:01 steve Exp $
+# $Id: Makefile,v 1.6 1998/10/05 02:57:52 steve Exp $
 #
 
-DISTNAME=       graphviz_1_21
-PKGNAME=	graphviz-1.21
-CATEGORIES=	graphics tk42
+DISTNAME=       graphviz_1_4.src.unix
+PKGNAME=	graphviz-1.4
+CATEGORIES=	graphics tk80
 MASTER_SITES=	# http://www.research.att.com/sw/tools/graphviz/
-EXTRACT_SUFX=	.src.unix.tgz
 
 MAINTAINER=	ports@FreeBSD.ORG
 
-BROKEN=		fetch
+LIB_DEPENDS=	tk80.1:${PORTSDIR}/x11-toolkits/tk80
 
-LIB_DEPENDS=	tk42.1:${PORTSDIR}/x11-toolkits/tk42
-
-RESTRICTED=	"Can't be fetched without license"
-NO_PACKAGE=	${RESTRICTED}
+RESTRICTED=	"Cannot be fetched without license"
+#NO_PACKAGE=	${RESTRICTED}
 NO_CDROM=	${RESTRICTED}
-WRKSRC=		${WRKDIR}/src/src
+WRKSRC=		${WRKDIR}/gv1.4
 MAKEFILE=	makefile
-MAN1=		dot.1 dotty.1 lefty.1 neato.1 tcldot.1
+MAN1=		dot.1 dotty.1 lefty.1 neato.1
+MANN=		tcldot.n
 
-SELFILEDIR=	${WRKSRC}/cmd/lefty/ws/x11/libfilereq
+DOCDIR=		${PREFIX}/share/doc/graphviz
 
 post-install:
-	${INSTALL_DATA} ${WRKSRC}/../doc/*.ps ${PREFIX}/share/doc/graphviz
-	${INSTALL_DATA} ${WRKSRC}/../doc/*.html ${PREFIX}/share/doc/graphviz
-	@${GZIP_CMD} ${PREFIX}/share/doc/graphviz/*.ps
+	@${MKDIR} ${DOCDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/*.ps ${DOCDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/*.html ${DOCDIR}
+	@${GZIP_CMD} ${DOCDIR}/*.ps
 
 .include <bsd.port.mk>
