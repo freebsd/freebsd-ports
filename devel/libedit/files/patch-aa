@@ -1,0 +1,12 @@
+diff -ru configure.in.orig configure.in
+--- configure.in.orig	Sat Feb  9 12:38:59 2002
++++ configure.in	Sat Feb  9 18:34:59 2002
+@@ -169,7 +169,7 @@
+ 
+ dnl Library settings.
+ LIB_DIRS="lib"
+-LIB_MAJOR="2"
++LIB_MAJOR="5"
+ LIB_MINOR="6"
+ LIB_A="libedit.a"
+ LIB_A_LINKS=

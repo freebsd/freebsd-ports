@@ -1,0 +1,4 @@
+include/histedit.h
+lib/libedit.a
+lib/libedit.so.5
+lib/libedit.so
