@@ -18,7 +18,7 @@ LIB_DEPENDS=	xvidcore.0:${PORTSDIR}/graphics/xvid \
 		mp3lame.0:${PORTSDIR}/audio/lame \
 		mad.1:${PORTSDIR}/audio/mad
 BUILD_DEPENDS=	\
-	${LINUXBASE}/usr/include/divx/decore.h:${PORTSDIR}/multimedia/divx4linux \
+	${LINUXBASE}/usr/include/divx/decore.h:${PORTSDIR}/multimedia/linux-divx4linux \
 	${X11BASE}/include/X11/extensions/Xvlib.h:${PORTSDIR}/graphics/xv
 
 WRKSRC=		${WRKDIR}/avidemux-0.9pre16
