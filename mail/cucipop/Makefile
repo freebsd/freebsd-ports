@@ -11,7 +11,7 @@
 PORTNAME=	cucipop
 PORTVERSION=	1.31
 PORTREVISION=	1
-CATEGORIES=	mail
+CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.informatik.rwth-aachen.de/pub/packages/cucipop/
 
 .include <bsd.port.pre.mk>
