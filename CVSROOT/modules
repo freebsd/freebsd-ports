@@ -999,6 +999,7 @@ clanlib		ports/devel/clanlib
 clanlib-devel	ports/devel/clanlib-devel
 claraocr	ports/graphics/claraocr
 clarence	ports/math/clarence
+classpath	ports/java/classpath
 clean		ports/sysutils/clean
 clean-theme-gtk	ports/x11-themes/clean-theme-gtk
 cleanfeed	ports/news/cleanfeed
