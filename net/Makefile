@@ -229,6 +229,7 @@
     SUBDIR += konverse
     SUBDIR += kopete
     SUBDIR += krdesktop
+    SUBDIR += kxicq-devel
     SUBDIR += kxicq2
     SUBDIR += lam
     SUBDIR += lambdamoo
