@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	haproxy
-PORTVERSION=	1.1.24
+PORTVERSION=	1.1.25
 CATEGORIES=	net www
-MASTER_SITES=	http://w.ods.org/tools/haproxy/ \
-		http://w.ods.org/tools/haproxy/old/
+MASTER_SITES=	http://w.ods.org/tools/haproxy/src/ \
+		http://w.ods.org/tools/haproxy/src/old/
 
 MAINTAINER=	sheepkiller@cultdeadsheep.org
 COMMENT=	High-performance and highly-robust TCP/HTTP load balancer
