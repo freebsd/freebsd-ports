@@ -193,6 +193,7 @@
     SUBDIR += prcs
     SUBDIR += pth
     SUBDIR += pth-devel
+    SUBDIR += py-htmlkit
     SUBDIR += py-kjbuckets
     SUBDIR += py-kqueue
     SUBDIR += py-mxDateTime

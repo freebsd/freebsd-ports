@@ -1,0 +1,17 @@
+From the web site:
+
+	HtmlKit is a free, open source Python package that assists in the
+	dynamic generation of HTML content. HtmlKit was inspired by HTMLgen
+	and uses it's basic design ideas:
+
+	    objects for HTML primatives 
+	    overriding "__str__" to allow these objects behave as strings 
+
+	but with a flexible and simplified rendering framework.
+	HtmlKit is compatible with HTMLgen and most projects can fairly easily
+	switch between or use both packages.
+
+WWW: http://www.dekorte.com/Software/Python/HtmlKit/
+
+  -Kelly
+   kbyanc@posi.net
