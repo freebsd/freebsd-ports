@@ -8720,6 +8720,7 @@ yes		src/usr.bin/yes
 ymessenger	ports/net/ymessenger
 yodl		ports/textproc/yodl
 yorick		ports/lang/yorick
+yorick-doc	ports/lang/yorick-doc
 youbin		ports/mail/youbin
 yp_mkdb		src/usr.sbin/yp_mkdb
 ypbind		src/usr.sbin/ypbind
