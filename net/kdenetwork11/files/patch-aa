@@ -1,19 +1,15 @@
-*** kppp/opener.h~	Sat Dec 19 22:28:22 1998
---- kppp/opener.h	Thu Dec 31 00:22:12 1998
+*** kppp/opener.cpp~	Fri Jan 22 21:28:43 1999
+--- kppp/opener.cpp	Fri Feb  5 23:12:08 1999
 ***************
-*** 32,38 ****
-    bool createAuthFile(int authMethod, char *username, char *password);
-    bool removeAuthFile(int authMethod);
-    const char* authFile(int authMethod, int version = Original);
+*** 44,48 ****
+  #include <netinet/in.h>
+  #include <signal.h>
+! #include <wait.h>
   
--   enum { Original=0x100, New=0x200, Old=0x400 } Version;
-    int socket;
-    char lockfile[MaxPathLen+1];
---- 32,38 ----
-    bool createAuthFile(int authMethod, char *username, char *password);
-    bool removeAuthFile(int authMethod);
-+   enum { Original=0x100, New=0x200, Old=0x400 } Version;
-    const char* authFile(int authMethod, int version = Original);
+  #include "kpppconfig.h"
+--- 44,48 ----
+  #include <netinet/in.h>
+  #include <signal.h>
+! #include <sys/wait.h>
   
-    int socket;
-    char lockfile[MaxPathLen+1];
+  #include "kpppconfig.h"
