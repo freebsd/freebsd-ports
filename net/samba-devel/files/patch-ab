@@ -1,23 +1,23 @@
---- param/loadparm.c.orig	Fri Feb  2 00:42:53 2001
-+++ param/loadparm.c	Fri Feb  2 00:45:23 2001
-@@ -108,6 +108,7 @@
- 	char *szAddPrinterCommand;
+--- param/loadparm.c.orig	Sat Oct 13 22:09:31 2001
++++ param/loadparm.c	Tue Oct 16 17:16:46 2001
+@@ -107,6 +107,7 @@
  	char *szDeletePrinterCommand;
+ 	char *szOs2DriverMap;
  	char *szLockDir;
 +	char *szPidDir;
  	char *szRootdir;
  	char *szDefaultService;
  	char *szDfree;
-@@ -948,6 +949,8 @@
+@@ -986,6 +987,8 @@
  	{"auto services", P_STRING, P_GLOBAL, &Globals.szAutoServices, NULL, NULL, FLAG_DOS_STRING},
  	{"lock dir", P_STRING, P_GLOBAL, &Globals.szLockDir, NULL, NULL, 0}, 
  	{"lock directory", P_STRING, P_GLOBAL, &Globals.szLockDir, NULL, NULL, 0},
 +	{"pidfile dir", P_STRING, P_GLOBAL, &Globals.szPidDir, NULL, NULL, 0},
 +	{"pidfile directory", P_STRING, P_GLOBAL, &Globals.szPidDir, NULL, NULL, 0},
  #ifdef WITH_UTMP
- 	{"utmp dir", P_STRING, P_GLOBAL, &Globals.szUtmpDir, NULL, NULL, 0},
  	{"utmp directory", P_STRING, P_GLOBAL, &Globals.szUtmpDir, NULL, NULL, 0},
-@@ -1171,6 +1174,7 @@
+ 	{"wtmp directory", P_STRING, P_GLOBAL, &Globals.szWtmpDir, NULL, NULL, 0},
+@@ -1220,6 +1223,7 @@
  	string_set(&Globals.szPasswdProgram, PASSWD_PROGRAM);
  	string_set(&Globals.szPrintcapname, PRINTCAP_NAME);
  	string_set(&Globals.szLockDir, LOCKDIR);
@@ -25,9 +25,9 @@
  #ifdef WITH_UTMP
  	string_set(&Globals.szUtmpDir, "");
  	string_set(&Globals.szWtmpDir, "");
-@@ -1403,6 +1407,7 @@
- FN_GLOBAL_STRING(lp_addprinter_cmd, &Globals.szAddPrinterCommand)
+@@ -1469,6 +1473,7 @@
  FN_GLOBAL_STRING(lp_deleteprinter_cmd, &Globals.szDeletePrinterCommand)
+ FN_GLOBAL_STRING(lp_os2_driver_map, &Globals.szOs2DriverMap)
  FN_GLOBAL_STRING(lp_lockdir, &Globals.szLockDir)
 +FN_GLOBAL_STRING(lp_piddir, &Globals.szPidDir)
  #ifdef WITH_UTMP

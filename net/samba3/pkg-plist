@@ -53,21 +53,22 @@ sbin/smbd
 sbin/swat
 %%PORTDOCS%%share/doc/samba/COPYING
 %%PORTDOCS%%share/doc/samba/Manifest
-%%PORTDOCS%%share/doc/samba/NT4-Locking.reg
-%%PORTDOCS%%share/doc/samba/NT4_PlainPassword.reg
 %%PORTDOCS%%share/doc/samba/README
 %%PORTDOCS%%share/doc/samba/README.FreeBSD
 %%PORTDOCS%%share/doc/samba/README.swat
 %%PORTDOCS%%share/doc/samba/Read-Manifest-Now
+%%PORTDOCS%%share/doc/samba/Registry/NT4-Locking.reg
+%%PORTDOCS%%share/doc/samba/Registry/NT4_PlainPassword.reg
+%%PORTDOCS%%share/doc/samba/Registry/Win2000_PlainPassword.reg
+%%PORTDOCS%%share/doc/samba/Registry/Win95_PlainPassword.reg
+%%PORTDOCS%%share/doc/samba/Registry/Win98_PlainPassword.reg
+%%PORTDOCS%%share/doc/samba/Registry/Win9X-CacheHandling.reg
+%%PORTDOCS%%share/doc/samba/Registry/WinME_PlainPassword.reg
+%%PORTDOCS%%share/doc/samba/Registry/WinXP_SignOrSeal.reg
+%%PORTDOCS%%share/doc/samba/Registry/WindowsTerminalServer.reg
 %%PORTDOCS%%share/doc/samba/Roadmap
 %%PORTDOCS%%share/doc/samba/THANKS
 %%PORTDOCS%%share/doc/samba/WHATSNEW.txt
-%%PORTDOCS%%share/doc/samba/Win2000_PlainPassword.reg
-%%PORTDOCS%%share/doc/samba/Win95_PlainPassword.reg
-%%PORTDOCS%%share/doc/samba/Win98_PlainPassword.reg
-%%PORTDOCS%%share/doc/samba/Win9X-CacheHandling.reg
-%%PORTDOCS%%share/doc/samba/WinME_PlainPassword.reg
-%%PORTDOCS%%share/doc/samba/WindowsTerminalServer.reg
 %%PORTDOCS%%share/doc/samba/announce
 %%PORTDOCS%%share/doc/samba/faq/Samba-Server-FAQ-1.html
 %%PORTDOCS%%share/doc/samba/faq/Samba-Server-FAQ-2.html
@@ -159,7 +160,7 @@ sbin/swat
 %%PORTDOCS%%share/doc/samba/textdocs/RoutedNetworks.txt
 %%PORTDOCS%%share/doc/samba/textdocs/SCO.txt
 %%PORTDOCS%%share/doc/samba/textdocs/SMBTAR.notes
-%%PORTDOCS%%share/doc/samba/textdocs/SSLeay.txt
+%%PORTDOCS%%share/doc/samba/textdocs/Samba-OpenSSL.txt
 %%PORTDOCS%%share/doc/samba/textdocs/Speed.txt
 %%PORTDOCS%%share/doc/samba/textdocs/Speed2.txt
 %%PORTDOCS%%share/doc/samba/textdocs/Tracing.txt
@@ -180,7 +181,6 @@ share/examples/samba/LDAP/import_smbpasswd.pl
 share/examples/samba/LDAP/ldapchpasswd
 share/examples/samba/LDAP/ldapsync.pl
 share/examples/samba/LDAP/samba.schema
-
 share/examples/samba/README
 share/examples/samba/VFS/.cvsignore
 share/examples/samba/VFS/Makefile
@@ -467,6 +467,7 @@ share/swat/using_samba/this_edition.html
 @dirrm share/examples/samba/VFS/block
 @dirrm share/examples/samba/VFS
 @dirrm share/examples/samba
+%%PORTDOCS%%@dirrm share/doc/samba/Registry
 %%PORTDOCS%%@dirrm share/doc/samba/textdocs
 %%PORTDOCS%%@dirrm share/doc/samba/htmldocs
 %%PORTDOCS%%@dirrm share/doc/samba/faq
