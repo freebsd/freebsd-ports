@@ -23,8 +23,8 @@ CTARGETS+=	vbsfilter-${PORTVERSION}
 LIBS+=		${PTHREAD_LIBS}
 CFLAGS+=	-Wall ${PTHREAD_CFLAGS:S=""==}
 .if !defined(SENDMAIL_MILTER_IN_BASE)
-CFLAGS+=	-I$(LOCALBASE)/include
-LDFLAGS+=	-L$(LOCALBASE)/lib
+CFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 .endif
 
 .include <bsd.port.pre.mk>
@@ -57,7 +57,7 @@ do-extract:
 .for i in ${CTARGETS}
 ${i}:
 	cd ${WRKSRC} && \
-	$(CC) $(CFLAGS) $(LDFLAGS) -o ${i} ${i}.c $(LIBS) $(FLAGS)
+	${CC} ${CFLAGS} ${LDFLAGS} -o ${i} ${i}.c ${LIBS} ${FLAGS}
 
 .endfor
 

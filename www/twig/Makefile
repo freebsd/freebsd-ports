@@ -45,7 +45,7 @@ do-install:
 	@${CP} ${WRKSRC}/config/${i} ${PREFIX}/${TWIG}/config/${i}-dist
 	@if test ! -f ${PREFIX}/${TWIG}/config/${i} ; then \
 		${CP} ${WRKSRC}/config/${i} ${PREFIX}/${TWIG}/config/${i}; \
-        fi
+	fi
 .endfor
-	
+
 .include <bsd.port.mk>

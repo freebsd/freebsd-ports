@@ -25,7 +25,6 @@ USE_X_PREFIX=	yes
 INSTALLS_SHLIB=	yes
 USE_LIBTOOL=	yes
 LIBTOOLFILES=	aclocal.m4 test/aclocal.m4
-PLIST_SUB+=	PREFIX=${LOCALBASE}
 CONFIGURE_ARGS+=	--enable-static --enable-shared --enable-production
 CONFIGURE_ARGS+=	--disable-build-Xlt --disable-build-Xbae
 CONFIGURE_ARGS+=	--enable-build-12 --disable-build-20
@@ -52,10 +51,10 @@ MAN3 =	ApplicationShell.3 Composite.3 Constraint.3 Core.3 \
 	XmTextField.3 XmToggleButton.3 XmToggleButtonGadget.3 XmVendorShell.3 \
 	XmWorld.3
 
-MAN5 = VirtualBindings.5 mwmrc.5
+MAN5 =	VirtualBindings.5 mwmrc.5
 
 .if defined(HAVE_MOTIF) && !defined(PARALLEL_PACKAGE_BUILD)
-IS_INTERACTIVE= yes
+IS_INTERACTIVE=	yes
 pre-extract:
 	@${ECHO} "***********************************************************"
 	@${ECHO} "*                      W a r n i n g                      *"

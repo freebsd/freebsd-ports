@@ -21,8 +21,8 @@ CTARGETS+=	rays-filter
 CFLAGS+=	-Wall ${PTHREAD_CFLAGS:S=""==}
 LIBS+=		${PTHREAD_LIBS}
 .if !defined(SENDMAIL_MILTER_IN_BASE)
-CFLAGS+=	-I$(LOCALBASE)/include
-LDFLAGS+=	-L$(LOCALBASE)/lib
+CFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 .endif
 ETCFILES=	header-list.conf mail-filter.conf string-list.conf
 BINFILES=	mf-reset mf-start mf-stop mf-archive mf-analyze mf-memory
@@ -53,7 +53,7 @@ pre-fetch:
 .for i in ${CTARGETS}
 ${i}:
 	cd ${WRKSRC} && \
-	$(CC) $(CFLAGS) $(LDFLAGS) -o ${i} ${i}.c $(LIBS) $(FLAGS)
+	${CC} ${CFLAGS} ${LDFLAGS} -o ${i} ${i}.c ${LIBS} ${FLAGS}
 
 .endfor
 

@@ -35,8 +35,8 @@ info/lsh.info
 info/nettle.info
 info/nettle.info-1
 info/nettle.info-2
-@exec install-info --section="Miscellaneous" --entry="* LSH: (lsh).			lsh secure remote shell documentation." %D/info/lsh.info %D/info/dir
-@exec install-info --section="GNU Libraries" --entry="* Nettle: (nettle).		A low-level cryptographics library." %D/info/nettle.info %D/info/dir
+@exec install-info %D/info/lsh.info %D/info/dir
+@exec install-info %D/info/nettle.info %D/info/dir
 lib/libnettle.a
 sbin/lsh-execuv
 %%KRB%%sbin/lsh-krb-checkpw

@@ -11,6 +11,7 @@ CATEGORIES=	net ipv6
 MASTER_SITES=	${MASTER_SITE_ISC} \
 		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/bind9/${ISCVERSION}/,} \
 		${MASTER_SITES_DLZ:S/$/:dlz/}
+MASTER_SITE_SUBDIR=	bind-dlz/:dlz
 PKGNAMESUFFIX=	-dlz
 DISTFILES=	bind-${ISCVERSION}.tar.gz \
 	   	DLZ-${DLZVERSION}${EXTRACT_SUFX}:dlz
@@ -19,7 +20,6 @@ MAINTAINER=	dinoex@FreeBSD.org
 
 POSTGRESQL_PORT?=	databases/postgresql7
 MASTER_SITES_DLZ=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	bind-dlz/:dlz
 
 ISCVERSION=	9.2.1
 DLZVERSION=	0.3.0
@@ -42,23 +42,23 @@ NO_DESCRIBE=yes
 .if defined(WITH_POSTGRESQL_DRIVER)
 .if !defined(WITHOUT_POSTGRESQL_DRIVER)
 LIB_DEPENDS=	pq.3:${PORTSDIR}/${POSTGRESQL_PORT}
-CONFIGURE_ARGS+= --with-dlz-postgres
+CONFIGURE_ARGS+=	--with-dlz-postgres
 .endif
 .endif
 
 .if defined(WITH_MYSQL_DRIVER)
 LIB_DEPENDS+=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client
-CONFIGURE_ARGS+= --with-dlz-mysql
+CONFIGURE_ARGS+=	--with-dlz-mysql
 .endif
 
 .if defined(WITH_FILESYSTEM_DRIVER)
 .if !defined(WITHOUT_FILESYSTEM_DRIVER)
-CONFIGURE_ARGS+= --with-dlz-filesystem
+CONFIGURE_ARGS+=	--with-dlz-filesystem
 .endif
 .endif
 
 .if defined(WITH_STUB_DRIVER)
-CONFIGURE_ARGS+= --with-dlz-stub
+CONFIGURE_ARGS+=	--with-dlz-stub
 .endif
 
 WRKSRC=		${WRKDIR}/bind-${ISCVERSION}
@@ -177,7 +177,7 @@ post-clean:
 .if defined(WITH_OPENSSL)
 .if !defined(WITHOUT_OPENSSL)
 .include "${PORTSDIR}/security/openssl/Makefile.ssl"
-CONFIGURE_ARGS+= --with-openssl=${OPENSSLBASE}
+CONFIGURE_ARGS+=	--with-openssl=${OPENSSLBASE}
 .endif
 .endif
 
