@@ -1,0 +1,29 @@
+--- components/gatherer/catdoc/charsets/Makefile.in.orig	Sat Jun  8 17:12:36 2002
++++ components/gatherer/catdoc/charsets/Makefile.in	Wed Nov 13 10:03:59 2002
+@@ -1,5 +1,7 @@
+ SHELL = /bin/sh
+ INSTALL = @INSTALL@
++INSTALL_BIN = @INSTALL_PROGRAM@
++INSTALL_LIB = @INSTALL_DATA@
+ 
+ srcdir = @srcdir@
+ top_srcdir = @top_srcdir@
+@@ -29,13 +31,13 @@
+ clean:
+ install: install-dirs install-spc install-charsets
+ install-spc: tex.spc ascii.spc tex.rpl ascii.rpl
+-	    $(INSTALL) -m 644 $(srcdir)/ascii.spc $(installroot)$(LIB_DIR)/ascii$(SPEC_EXT)
+-	    $(INSTALL) -m 644 $(srcdir)/tex.spc $(installroot)$(LIB_DIR)/tex$(SPEC_EXT)
+-	    $(INSTALL) -m 644 $(srcdir)/ascii.rpl $(installroot)$(LIB_DIR)/ascii$(REPL_EXT)
+-	    $(INSTALL) -m 644 $(srcdir)/tex.rpl $(installroot)$(LIB_DIR)/tex$(REPL_EXT)
++	    $(INSTALL_LIB) $(srcdir)/ascii.spc $(installroot)$(LIB_DIR)/ascii$(SPEC_EXT)
++	    $(INSTALL_LIB) $(srcdir)/tex.spc $(installroot)$(LIB_DIR)/tex$(SPEC_EXT)
++	    $(INSTALL_LIB) $(srcdir)/ascii.rpl $(installroot)$(LIB_DIR)/ascii$(REPL_EXT)
++	    $(INSTALL_LIB) $(srcdir)/tex.rpl $(installroot)$(LIB_DIR)/tex$(REPL_EXT)
+ install-charsets:
+ 	for i in $(srcdir)/*.txt; do\
+-	   $(INSTALL) -m 0644 $$i $(installroot)$(LIB_DIR);\
++	   $(INSTALL_LIB) -m 0644 $$i $(installroot)$(LIB_DIR);\
+ 	done
+ install-dirs:
+ 	$(top_srcdir)/mkinstalldirs $(installroot)$(LIB_DIR)

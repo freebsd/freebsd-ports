@@ -1,0 +1,11 @@
+--- components/broker/swish/Makefile.in.orig	Wed Nov  5 03:14:43 1997
++++ components/broker/swish/Makefile.in	Wed Nov 13 10:11:37 2002
+@@ -15,7 +15,7 @@
+ prefix = @prefix@
+ bindir = $(prefix)/lib/broker
+ 
+-INSTALL_PROG = @INSTALL@
++INSTALL_PROG = @INSTALL_PROGRAM@
+ 
+ TEMPLATEDIR = ../../../src/common
+ TEMPLATESRC = $(srcdir)/$(TEMPLATEDIR)
