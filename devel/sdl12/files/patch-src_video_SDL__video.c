@@ -1,15 +1,15 @@
 
 $FreeBSD$
 
---- src/video/SDL_video.c	2001/01/21 20:11:02	1.1
-+++ src/video/SDL_video.c	2001/01/21 20:11:59
+--- src/video/SDL_video.c.orig	Mon Mar 19 19:39:06 2001
++++ src/video/SDL_video.c	Sun Apr  8 01:34:24 2001
 @@ -60,6 +60,9 @@
- #ifdef ENABLE_SVGALIB
- 	&SVGALIB_bootstrap,
+ #ifdef ENABLE_GGI
+ 	&GGI_bootstrap,
  #endif
 +#ifdef ENABLE_VGL
 +	&VGL_bootstrap,
 +#endif
- #ifdef ENABLE_AALIB
-     &AALIB_bootstrap,
+ #ifdef ENABLE_SVGALIB
+ 	&SVGALIB_bootstrap,
  #endif
