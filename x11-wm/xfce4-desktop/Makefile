@@ -30,6 +30,7 @@ USE_GETTEXT=	yes
 USE_GNOME=	gtk20
 USE_X_PREFIX=	yes
 USE_LIBTOOL_VER=15
+USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CFLAGS=-I${LOCALBASE}/include \
@@ -37,5 +38,8 @@ CONFIGURE_ENV=	CFLAGS=-I${LOCALBASE}/include \
 		LIBS=-L${LOCALBASE}/lib
 
 MAN1=		xfdesktop.1
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|G_INLINE_FUNC||g' ${WRKSRC}/src/xfce-desktop.c
 
 .include <bsd.port.mk>
