@@ -54,7 +54,7 @@ HAS_CONFIGURE=	yes
 USE_GMAKE=	yes
 QT_NONSTANDARD=	yes	# non-standard configure arguments
 CONFIGURE_ARGS+=--prefix ${PREFIX} --perl ${PERL} --make ${GMAKE} \
-		--install ${INSTALL}
+		--install "${INSTALL}"
 
 .if !defined(NOPORTDOCS) && !defined(HAVE_LATEX)
 pre-everything::
