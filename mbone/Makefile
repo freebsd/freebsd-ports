@@ -1,6 +1,5 @@
 # $FreeBSD$
 #
-    SUBDIR += wbd
 
     SUBDIR += imm
     SUBDIR += nte
@@ -10,11 +9,11 @@
     SUBDIR += rqm
     SUBDIR += rtpmon
     SUBDIR += rtptools
-    SUBDIR += rqm
     SUBDIR += sdr
     SUBDIR += speak_freely
     SUBDIR += vat
     SUBDIR += vic
     SUBDIR += wb
+    SUBDIR += wbd
 
 .include <bsd.port.subdir.mk>
