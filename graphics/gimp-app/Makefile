@@ -19,6 +19,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/.pre/pre/}
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A GNU Image Manipulation Program (unstable development version)
 
+BUILD_DEPENDS=	intltool-extract:${PORTSDIR}/textproc/intltool
 LIB_DEPENDS=	aa.1:${PORTSDIR}/graphics/aalib \
 		exif.10:${PORTSDIR}/graphics/libexif \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
