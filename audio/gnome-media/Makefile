@@ -7,6 +7,7 @@
 
 PORTNAME=	gnomemedia2
 PORTVERSION=	2.0.0
+PORTREVISION=	1
 CATEGORIES=	audio gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	2.0.0/releases/gnome-2.0-desktop-final
@@ -17,7 +18,7 @@ MAINTAINER=	gnome@FreeBSD.org
 
 RUN_DEPENDS=	sox:${PORTSDIR}/audio/sox
 LIB_DEPENDS=	gnomeui-2.0:${PORTSDIR}/x11-toolkits/libgnomeui \
-		gailutil.16:${PORTSDIR}/x11-toolkits/gail
+		gailutil.17:${PORTSDIR}/x11-toolkits/gail
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
