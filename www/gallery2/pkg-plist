@@ -1,7 +1,7 @@
-%%PORTDOCS%%share/doc/gallery/AUTHORS
-%%PORTDOCS%%share/doc/gallery/ChangeLog
-%%PORTDOCS%%share/doc/gallery/README
-%%PORTDOCS%%share/doc/gallery/UPGRADING
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/UPGRADING
 %%GALLERYDIR%%/Version.php
 %%GALLERYDIR%%/add_comment.php
 %%GALLERYDIR%%/add_photo.php
@@ -179,5 +179,5 @@
 @dirrm %%GALLERYDIR%%/classes/database/mysql
 @dirrm %%GALLERYDIR%%/classes/database
 @dirrm %%GALLERYDIR%%/classes
-%%PORTDOCS%%@dirrm share/doc/gallery
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @unexec rmdir %D/%%GALLERYDIR%% 2>/dev/null || true
