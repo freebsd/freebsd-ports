@@ -1,8 +1,7 @@
-lib/python2.4/site-packages/cairo/__init__.py
-lib/python2.4/site-packages/cairo/__init__.pyc
-lib/python2.4/site-packages/cairo/__init__.pyo
-lib/python2.4/site-packages/cairo/_cairo.so
-%%GTK%%lib/python2.4/site-packages/cairo/gtk.so
-lib/python2.4/site-packages/cairo/numpy.so
-@dirrm lib/python2.4/site-packages/cairo
-@dirrm lib/python2.4/site-packages
+%%PYTHON_SITELIBDIR%%/cairo/__init__.py
+%%PYTHON_SITELIBDIR%%/cairo/__init__.pyc
+%%PYTHON_SITELIBDIR%%/cairo/__init__.pyo
+%%PYTHON_SITELIBDIR%%/cairo/_cairo.so
+%%GTK%%%%PYTHON_SITELIBDIR%%/cairo/gtk.so
+%%PYTHON_SITELIBDIR%%/cairo/numpy.so
+@dirrm %%PYTHON_SITELIBDIR%%/cairo
