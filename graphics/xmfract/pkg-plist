@@ -296,5 +296,7 @@ lib/X11/xmfract/help/help.95
 lib/X11/xmfract/help/help.96
 lib/X11/xmfract/help/help.97
 lib/X11/xmfract/help/help.98
+lib/X11/xmfract/help/help.99
+lib/X11/xmfract/xmfract.ini
 @dirrm lib/X11/xmfract/help
 @dirrm lib/X11/xmfract
