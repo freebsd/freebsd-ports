@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	exim
-PORTVERSION=	3.951
+PORTVERSION=	3.952
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.csx.cam.ac.uk/pub/software/email/exim/Testing/ \
 		http://www.exim.org/ftp/Testing/ \
 		ftp://ftp.is.co.za/networking/mail/transport/exim/Testing/
-DISTFILES=	exim-3.951.tar.bz2 exim-texinfo-3.951.tar.bz2
+DISTFILES=	exim-3.952.tar.bz2 exim-texinfo-3.951.tar.bz2
 
 MAINTAINER=	sheldonh@FreeBSD.org
 
