@@ -1,20 +1,15 @@
 #!/bin/sh
-echo "---------------------------------------------------------"
-echo "Define NOTTF if you do not want to install BIG5 MOE TTF,"
-echo "and NOCHMOD to disable chmod 1777 pk/tfm fonts directory."
-echo "---------------------------------------------------------"
-
+PATH=/bin:/usr/bin; export PATH
 #
 # Check to see if we have teTeX-0.9 installed, just grep ttf2pk
 # in mktexpk. Not a preferred method, but it seems there is no
 # other way solving this.
 #
-if [ -z "`grep ttf2pk ${PREFIX}/bin/mktexpk`" ]
+if [ -z "`head -1 ${PREFIX}/share/texmf/doc/tetex/README |grep 1\.0`" ]
 then
-	echo "------------------------------------" 
-	echo "You do not have teTeX-0.9 installed!"
-	echo "CJK needs that to function correctly."
-	echo "Press Ctrl-C to exit."
-	echo "------------------------------------"
-	read key
+	echo "-------------------------------------------" 
+	echo " You do not have teTeX-1.0 installed!"
+	echo " CJK 4.3.0 needs that to function properly."
+	echo "-------------------------------------------"
+	exit 1
 fi
