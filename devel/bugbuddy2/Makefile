@@ -1,26 +1,29 @@
-# New ports collection makefile for:	bugbuddy
-# Date created:				23rd February 2000
-# Whom:					Ade Lovett <ade@FreeBSD.org>
+# New ports collection makefile for:	bugbuddy2
+# Date created:				14 May 2002
+# Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	bugbuddy
-PORTVERSION=	2.0.8
-PORTREVISION=	1
+PORTVERSION=	2.1.5
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	stable/sources/bug-buddy
+MASTER_SITE_SUBDIR=	pre-gnome2/releases/gnome-2.0-desktop-20020509
 DISTNAME=	bug-buddy-${PORTVERSION}
 
 MAINTAINER=	gnome@FreeBSD.org
 
+LIB_DEPENDS=	gnomeui-2.0:${PORTSDIR}/x11-toolkits/libgnomeui
+
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_GNOME=	yes
 USE_LIBTOOL=	yes
+CONFIGURE_ARGS=	--localstatedir=${PREFIX}/share/gnome \
+		--datadir=${PREFIX}/share/gnome
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
+CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 
 pre-patch:
 	@${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS}|g ; \

@@ -63,6 +63,7 @@
     SUBDIR += bonobo-conf
     SUBDIR += boost
     SUBDIR += bugbuddy
+    SUBDIR += bugbuddy2
     SUBDIR += bugzilla
     SUBDIR += c2lib
     SUBDIR += c2man
