@@ -6,21 +6,19 @@
 #
 
 PORTNAME=	mytop
-PORTVERSION=	0.9
+PORTVERSION=	1.0
 CATEGORIES=	databases
-MASTER_SITES=	http://public.yahoo.com/~jzawodn/mytop/
+MASTER_SITES=	http://jeremy.zawodny.com/mysql/mytop/
 
 MAINTAINER=	leeym@leeym.com
 
 RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Term/ReadKey.pm:${PORTSDIR}/devel/p5-Term-ReadKey \
+		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Term/ANSIColor.pm:${PORTSDIR}/devel/p5-Term-ANSIColor \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql
+		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes
 
 PERL_CONFIGURE=	yes
 
 MAN1=		mytop.1
-
-post-configure:
-	@${PERL} -pi.fbsd -e 's@INSTALLMAN1DIR = /usr/local/man/man1@INSTALLMAN1DIR = ${PREFIX}/man/man1@g' ${WRKSRC}/Makefile
 
 .include <bsd.port.mk>
