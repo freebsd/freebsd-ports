@@ -8,5 +8,15 @@ allow inclusion in LaTeX documents).
 To enjoy the beautiful colors, specify "*customization: -color" in your 
 .Xdefaults or .Xresources file.
 
-To obtain full capability, we recommend you to install the transfig
-package too.
+Xfig is internationlized from version 3.2.  To use i18n feature, type
+$ xfig -international  [-inputStyle OverTheSpot]
+Xfig acts as non-i18n version without -international option. If you put 
+"Fig.international: true" into your resource file, -international option may 
+omitted.
+
+ja_JP.EUC is tested for input, display, and printing.
+For zh_CN.eucCN and ko_KR.eucKR, only display is confirmed.
+
+Read /usr/X11R6/lib/X11/xfig/xfig.html for more information.
+
+WWW: http://www.xfig.org/
