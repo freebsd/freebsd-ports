@@ -289,6 +289,7 @@ alphabet_sounds_fr	ports/french/alphabet_sounds_fr
 alsaplayer	ports/audio/alsaplayer
 althea		ports/mail/althea
 altivore	ports/security/altivore
+am-utils	ports/sysutils/am-utils
 amanda-client	ports/misc/amanda-client
 amanda-server	ports/misc/amanda-server
 amap		ports/security/amap
