@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	f-prot
-PORTVERSION=	4.3.4
+PORTVERSION=	4.4.0
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.i-scream.org/pub/ftp.f-prot.com/pub/bsd/ \
 		http://www.i-scream.org/pub/ftp.f-prot.com/pub/bsd/
@@ -16,7 +16,7 @@ MAINTAINER=	tim@bishnet.net
 COMMENT=	F-Prot Antivirus for BSD Workstations
 
 RUN_DEPENDS=	${SITE_PERL}/HTTP/Request.pm:${PORTSDIR}/www/p5-libwww \
-		${PREFIX}/f-prot/SIGN.DEF:${PORTSDIR}/security/f-prot-sig
+		${LOCALBASE}/f-prot/SIGN.DEF:${PORTSDIR}/security/f-prot-sig
 
 NO_PACKAGE=	Free for personal use only
 NO_CDROM=	Free for personal use only
