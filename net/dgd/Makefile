@@ -3,14 +3,14 @@
 # Date created:		23 August 1994
 # Whom:			adam
 #
-# $Id: Makefile,v 1.69 1997/03/04 06:11:58 adam Exp $
+# $Id: Makefile,v 1.70 1997/03/10 03:34:54 adam Exp $
 #
 
 DISTNAME=	dgd-1.0.102
 DISTFILES=	dgd-1.0.91.tar.gz
 CATEGORIES=	net lang
 MASTER_SITES=	ftp://ftp.lysator.liu.se/pub/lpmud/drivers/dgd/ \
-		ftp://ftp.veda.is(pub/mud/dgd/ \
+		ftp://ftp.veda.is/pub/mud/dgd/ \
 		ftp://ftp.dreamlabs.com/pub/mud/dgd/
 
 PATCH_SITES=	ftp://ftp.lysator.liu.se/pub/lpmud/drivers/dgd/patches/ \
