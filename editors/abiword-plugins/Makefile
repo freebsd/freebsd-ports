@@ -7,6 +7,7 @@
 
 PORTNAME=	abiword
 PORTVERSION=	2.2.5
+PORTREVISION=	1
 CATEGORIES=	editors
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.abisource.com/downloads/%SUBDIR%/${PORTVERSION}/source/
@@ -48,28 +49,28 @@ PLIST_SUB+=		AIKSAURUS:=""
 PLIST_SUB+=		AIKSAURUS:="@comment "
 .endif
 
-.if defined(WITH_APPLIX) || defined(PACKAGE_BUILDING)
+.if !defined(WITHOUT_APPLIX)
 CONFIGURE_ARGS+=	--enable-applix
 PLIST_SUB+=		APPLIX:=""
 .else
 PLIST_SUB+=		APPLIX:="@comment "
 .endif
 
-.if defined(WITH_BABELFISH) || defined(PACKAGE_BUILDING)
+.if !defined(WITHOUT_BABELFISH)
 CONFIGURE_ARGS+=	--enable-babelfish
 PLIST_SUB+=		BABELFISH:=""
 .else
 PLIST_SUB+=		BABELFISH:="@comment "
 .endif
 
-.if defined(WITH_BMP) || defined(PACKAGE_BUILDING)
+.if !defined(WITHOUT_BMP)
 CONFIGURE_ARGS+=	--enable-bmp
 PLIST_SUB+=		BMP:=""
 .else
 PLIST_SUB+=		BMP:="@comment "
 .endif
 
-.if defined(WITH_BZ2ABW) || defined(PACKAGE_BUILDING)
+.if !defined(WITHOUT_BZ2ABW)
 CONFIGURE_ARGS+=	--enable-bz2abw \
 			--with-bzip2=/usr
 PLIST_SUB+=		BZ2ABW:=""
@@ -84,7 +85,7 @@ PLIST_SUB+=		CLARISWORKS:=""
 PLIST_SUB+=		CLARISWORKS:="@comment "
 .endif
 
-.if defined(WITH_COMMAND) || defined(PACKAGE_BUILDING)
+.if !defined(WITHOUT_COMMAND)
 CONFIGURE_ARGS+=	--enable-abicommand
 PLIST_SUB+=		COMMAND:=""
 .else
@@ -105,7 +106,7 @@ PLIST_SUB+=		EML:=""
 PLIST_SUB+=		EML:="@comment "
 .endif
 
-.if defined(WITH_FREETRANSLATION) || defined(PACKAGE_BUILDING)
+.if !defined(WITHOUT_FREETRANSLATION)
 CONFIGURE_ARGS+=	--enable-freetranslation
 PLIST_SUB+=		FREETRANSLATION:=""
 .else
@@ -120,7 +121,7 @@ PLIST_SUB+=		GDICT:=""
 PLIST_SUB+=		GDICT:="@comment "
 .endif
 
-.if defined(WITH_GOOGLE) || defined(PACKAGE_BUILDING)
+.if !defined(WITHOUT_GOOGLE)
 CONFIGURE_ARGS+=	--enable-google
 PLIST_SUB+=		GOOGLE:=""
 .else
@@ -155,7 +156,7 @@ PLIST_SUB+=		LATEX:=""
 PLIST_SUB+=		LATEX:="@comment "
 .endif
 
-.if defined(WITH_MSWRITE) || defined(PACKAGE_BUILDING)
+.if !defined(WITHOUT_MSWRITE)
 CONFIGURE_ARGS+=	--enable-mswrite
 PLIST_SUB+=		MSWRITE:=""
 .else
@@ -200,7 +201,7 @@ PLIST_SUB+=		SDW:=""
 PLIST_SUB+=		SDW:="@comment "
 .endif
 
-.if defined(WITH_SHELL) || defined(PACKAGE_BUILDING)
+.if !defined(WITHOUT_SHELL)
 CONFIGURE_ARGS+=	--enable-shell
 PLIST_SUB+=		SHELL:=""
 .else
@@ -214,14 +215,14 @@ PLIST_SUB+=		T602:=""
 PLIST_SUB+=		T602:="@comment "
 .endif
 
-.if defined(WITH_URLDICT) || defined(PACKAGE_BUILDING)
+.if !defined(WITHOUT_URLDICT)
 CONFIGURE_ARGS+=	--enable-urldict
 PLIST_SUB+=		URLDICT:=""
 .else
 PLIST_SUB+=		URLDICT:="@comment "
 .endif
 
-.if defined(WITH_WIKIPEDIA) || defined(PACKAGE_BUILDING)
+.if !defined(WITHOUT_WIKIPEDIA)
 CONFIGURE_ARGS+=	--enable-wikipedia
 PLIST_SUB+=		WIKIPEDIA:=""
 .else
@@ -244,7 +245,7 @@ PLIST_SUB+=		WORDPERFECT:=""
 PLIST_SUB+=		WORDPERFECT:="@comment "
 .endif
 
-.if defined(WITH_XSLFO) || defined(PACKAGE_BUILDING)
+.if !defined(WITHOUT_XSLFO)
 CONFIGURE_ARGS+=	--enable-xsl-fo
 PLIST_SUB+=		XSLFO:=""
 .else
@@ -268,26 +269,13 @@ PLIST_SUB+=		SVG:="@comment "
 pre-everything::
 	@${ECHO_MSG} "You may specify the following on the command line:"
 	@${ECHO_MSG} ""
+	@${ECHO_MSG} "To enable plugins:"
+	@${ECHO_MSG} "========================================================"
 .if !defined(WITH_AIKSAURUS)
 	@${ECHO_MSG} "WITH_AIKSAURUS=yes	English language thesaurus."
 .endif
-.if !defined(WITH_APPLIX)
-	@${ECHO_MSG} "WITH_APPLIX=yes		Import/Export Applix Word files."
-.endif
-.if !defined(WITH_BABELFISH)
-	@${ECHO_MSG} "WITH_BABELFISH=yes	Translate selected text."
-.endif
-.if !defined(WITH_BMP)
-	@${ECHO_MSG} "WITH_BMP=yes		View Bitmap Images."
-.endif
-.if !defined(WITH_BZ2ABW)
-	@${ECHO_MSG} "WITH_BZ2ABW=yes		Import/Export BZ2 compressed AbiWord files."
-.endif
 .if !defined(WITH_CLARISWORKS)
 	@${ECHO_MSG} "WITH_CLARISWORKS=yes	Import/Export Clarisworks files."
-.endif
-.if !defined(WITH_COMMAND)
-	@${ECHO_MSG} "WITH_COMMAND=yes	Allows command line control of AbiWord."
 .endif
 .if !defined(WITH_DOCBOOK)
 	@${ECHO_MSG} "WITH_DOCBOOK=yes	Import/export Docbook files."
@@ -295,29 +283,20 @@ pre-everything::
 .if !defined(WITH_EML)
 	@${ECHO_MSG} "WITH_EML=yes		Import/export as MS Outlook Email files."
 .endif
-.if !defined(WITH_FREETRANSLATION)
-	@${ECHO_MSG} "WITH_FREETRANSLATION=yes	Translate selected text."
-.endif
 .if !defined(WITH_GDICT)
 	@${ECHO_MSG} "WITH_GDICT=yes		Look up definitions of selected text."
-.endif
-.if !defined(WITH_GOOGLE)
-	@${ECHO_MSG} "WITH_GOOGLE=yes		Search Google for your selected text."
 .endif
 .if !defined(WITH_HANCOM)
 	@${ECHO_MSG} "WITH_HANCOM=yes		Hancom Word Importer. Only does text."
 .endif
 .if !defined(WITH_HRTEXT)
-	@${ECHO_MSG} "WITH_HRTEXT=yes		Export text with "newsgroup" markup."
+	@${ECHO_MSG} "WITH_HRTEXT=yes		Export text with \"newsgroup\" markup."
 .endif
 .if !defined(WITH_JPEG)
 	@${ECHO_MSG} "WITH_JPEG=yes		View JPEG Images."
 .endif
 .if !defined(WITH_LATEX)
 	@${ECHO_MSG} "WITH_LATEX=yes		LaTeX export."
-.endif
-.if !defined(WITH_MSWRITE)
-	@${ECHO_MSG} "WITH_MSWRITE=yes	Import MSWrite files."
 .endif
 .if !defined(WITH_NROFF)
 	@${ECHO_MSG} "WITH_NROFF=yes		Nroff/Man file format."
@@ -334,17 +313,8 @@ pre-everything::
 .if !defined(WITH_SDW)
 	@${ECHO_MSG} "WITH_SDW=yes		Import StarOffice 5.x files."
 .endif
-.if !defined(WITH_SHELL)
-	@${ECHO_MSG} "WITH_SHELL=yes		Execute shell commands from within AbiWord."
-.endif
 .if !defined(WITH_T602)
 	@${ECHO_MSG} "WITH_T602=yes		Import T602 files."
-.endif
-.if !defined(WITH_URLDICT)
-	@${ECHO_MSG} "WITH_URLDICT=yes	Url dictionary."
-.endif
-.if !defined(WITH_WIKIPEDIA)
-	@${ECHO_MSG} "WITH_WIKIPEDIA=yes	Search online encyclopedia for selected text."
 .endif
 .if !defined(WITH_WMF)
 	@${ECHO_MSG} "WITH_WMF=yes		View Windows Metafiles."
@@ -352,8 +322,44 @@ pre-everything::
 .if !defined(WITH_WORDPERFECT)
 	@${ECHO_MSG} "WITH_WORDPERFECT=yes	Import/export Wordperfect files."
 .endif
-.if !defined(WITH_XSLFO)
-	@${ECHO_MSG} "WITH_XSLFO=yes		Import/export XSL-FO."
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "To disable plugins:"
+	@${ECHO_MSG} "========================================================"
+.if !defined(WITH_APPLIX)
+	@${ECHO_MSG} "WITHOUT_APPLIX=yes	Import/Export Applix Word files."
+.endif
+.if !defined(WITHOUT_BABELFISH)
+	@${ECHO_MSG} "WITHOUT_BABELFISH=yes	Translate selected text."
+.endif
+.if !defined(WITHOUT_BMP)
+	@${ECHO_MSG} "WITHOUT_BMP=yes		View Bitmap Images."
+.endif
+.if !defined(WITHOUT_BZ2ABW)
+	@${ECHO_MSG} "WITHOUT_BZ2ABW=yes	Import/Export BZ2 compressed AbiWord files."
+.endif
+.if !defined(WITHOUT_COMMAND)
+	@${ECHO_MSG} "WITHOUT_COMMAND=yes	Allows command line control of AbiWord."
+.endif
+.if !defined(WITHOUT_FREETRANSLATION)
+	@${ECHO_MSG} "WITHOUT_FREETRANSLATION=yes	Translate selected text."
+.endif
+.if !defined(WITHOUT_GOOGLE)
+	@${ECHO_MSG} "WITHOUT_GOOGLE=yes	Search Google for your selected text."
+.endif
+.if !defined(WITHOUT_MSWRITE)
+	@${ECHO_MSG} "WITHOUT_MSWRITE=yes	Import MSWrite files."
+.endif
+.if !defined(WITHOUT_SHELL)
+	@${ECHO_MSG} "WITHOUT_SHELL=yes	Execute shell commands from within AbiWord."
+.endif
+.if !defined(WITHOUT_URLDICT)
+	@${ECHO_MSG} "WITHOUT_URLDICT=yes	Url dictionary."
+.endif
+.if !defined(WITHOUT_WIKIPEDIA)
+	@${ECHO_MSG} "WITHOUT_WIKIPEDIA=yes	Search online encyclopedia for selected text."
+.endif
+.if !defined(WITHOUT_XSLFO)
+	@${ECHO_MSG} "WITHOUT_XSLFO=yes	Import/export XSL-FO."
 .endif
 
 post-patch:
