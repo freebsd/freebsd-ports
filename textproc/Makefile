@@ -5,6 +5,7 @@
 
     SUBDIR += 2bsd-diff
     SUBDIR += Ebnf2ps
+    SUBDIR += add-css-links
     SUBDIR += af-aspell
     SUBDIR += aft
     SUBDIR += agrep

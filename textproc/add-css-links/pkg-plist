@@ -1,0 +1,2 @@
+share/xsl/xhtml/add-css-links.xsl
+@unexec rmdir %D/share/xsl/xhtml 2>/dev/null || true
