@@ -1,15 +1,14 @@
 Quixote is yet another framework for developing Web applications in
 Python.  The design goals were:
 
-- To make the templating language as similar to Python in semantics as
-  possible.  The aim is to make as many of the skills and structural
-  techniques used in writing regular Python code applicable to Web
-  applications built using Quixote.
 - To allow easy development of Web applications where the accent is more on
   complicated programming logic than complicated templating.
-- The entire system should be implementable in a week or two.
-- No magical behaviour.  When it's not obvious what to do in a certain case,
-  Quixote refuses to guess.  
+- To make the templating language as similar to Python as possible, in both
+  syntax and semantics.  The aim is to make as many of the skills and
+  structural techniques used in writing regular Python code applicable to Web
+  applications built using Quixote.                   
+- No magic.  When it's not obvious what to do in a certain case, Quixote
+  refuses to guess.                                  
 
 Quixote works by using a Python package to store all the code and HTML for a
 Web-based application.  There's a simple framework for publishing code and
@@ -17,7 +16,8 @@ objects on the Web, and the publishing loop can be customized by subclassing
 the Publisher class.  You can think of it as a toolkit to build your own
 smaller, simpler version of Zope, specialized for your application.
 
-Author:   A.M. Kuchling <akuchlin@mems-exchange.org>
+Authors:  A.M. Kuchling, Neil Schemenauer, Greg Ward
+          <{akuchlin,nascheme,gward}@mems-exchange.org>
 WWW:      http://www.mems-exchange.org/software/quixote/
 See also: http://www.amk.ca/python/writing/mx-architecture/
 
