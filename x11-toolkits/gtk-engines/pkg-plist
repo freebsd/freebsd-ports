@@ -1,0 +1,106 @@
+share/themes/Metal/ICON.png
+share/themes/Metal/README.html
+share/themes/Metal/gtk/gtkrc
+share/themes/Notif/ICON.png
+share/themes/Notif/README.html
+share/themes/Notif/gtk/gtkrc
+share/themes/Pixmap/ICON.png
+share/themes/Pixmap/README.html
+share/themes/Pixmap/gtk/arrow_down1.png
+share/themes/Pixmap/gtk/arrow_down2.png
+share/themes/Pixmap/gtk/arrow_down3.png
+share/themes/Pixmap/gtk/arrow_left1.png
+share/themes/Pixmap/gtk/arrow_left2.png
+share/themes/Pixmap/gtk/arrow_left3.png
+share/themes/Pixmap/gtk/arrow_right1.png
+share/themes/Pixmap/gtk/arrow_right2.png
+share/themes/Pixmap/gtk/arrow_right3.png
+share/themes/Pixmap/gtk/arrow_up1.png
+share/themes/Pixmap/gtk/arrow_up2.png
+share/themes/Pixmap/gtk/arrow_up3.png
+share/themes/Pixmap/gtk/brown_bg1.png
+share/themes/Pixmap/gtk/brown_bg2.png
+share/themes/Pixmap/gtk/button1.png
+share/themes/Pixmap/gtk/button2.png
+share/themes/Pixmap/gtk/button3.png
+share/themes/Pixmap/gtk/button4.png
+share/themes/Pixmap/gtk/button5.png
+share/themes/Pixmap/gtk/button6.png
+share/themes/Pixmap/gtk/button7.png
+share/themes/Pixmap/gtk/button8.png
+share/themes/Pixmap/gtk/button9.png
+share/themes/Pixmap/gtk/button_def.png
+share/themes/Pixmap/gtk/check1.png
+share/themes/Pixmap/gtk/check2.png
+share/themes/Pixmap/gtk/curve_bg1.png
+share/themes/Pixmap/gtk/entry1.png
+share/themes/Pixmap/gtk/entry2.png
+share/themes/Pixmap/gtk/extension_bottom1.png
+share/themes/Pixmap/gtk/extension_left1.png
+share/themes/Pixmap/gtk/extension_right1.png
+share/themes/Pixmap/gtk/extension_top1.png
+share/themes/Pixmap/gtk/focus.png
+share/themes/Pixmap/gtk/frame1.png
+share/themes/Pixmap/gtk/frame2.png
+share/themes/Pixmap/gtk/frame_gap.png
+share/themes/Pixmap/gtk/frame_gap_top_end.png
+share/themes/Pixmap/gtk/frame_gap_top_start.png
+share/themes/Pixmap/gtk/gap_bottom.png
+share/themes/Pixmap/gtk/gap_bottom_end.png
+share/themes/Pixmap/gtk/gap_bottom_start.png
+share/themes/Pixmap/gtk/gap_left.png
+share/themes/Pixmap/gtk/gap_left_end.png
+share/themes/Pixmap/gtk/gap_left_start.png
+share/themes/Pixmap/gtk/gap_right.png
+share/themes/Pixmap/gtk/gap_right_end.png
+share/themes/Pixmap/gtk/gap_right_start.png
+share/themes/Pixmap/gtk/gap_top.png
+share/themes/Pixmap/gtk/gap_top_end.png
+share/themes/Pixmap/gtk/gap_top_start.png
+share/themes/Pixmap/gtk/gtkrc
+share/themes/Pixmap/gtk/handle_vert_thumb.png
+share/themes/Pixmap/gtk/hline.png
+share/themes/Pixmap/gtk/menubar.png
+share/themes/Pixmap/gtk/notebook1.png
+share/themes/Pixmap/gtk/option1.png
+share/themes/Pixmap/gtk/option2.png
+share/themes/Pixmap/gtk/option_menu.png
+share/themes/Pixmap/gtk/progressbar.png
+share/themes/Pixmap/gtk/ruler_horiz.png
+share/themes/Pixmap/gtk/ruler_vert.png
+share/themes/Pixmap/gtk/scrollbar_horiz1.png
+share/themes/Pixmap/gtk/scrollbar_thumb.png
+share/themes/Pixmap/gtk/scrollbar_thumb2.png
+share/themes/Pixmap/gtk/scrollbar_vert1.png
+share/themes/Pixmap/gtk/shadow1.png
+share/themes/Pixmap/gtk/shadow2.png
+share/themes/Pixmap/gtk/trough.png
+share/themes/Pixmap/gtk/vline.png
+share/themes/Redmond95/ICON.png
+share/themes/Redmond95/README.html
+share/themes/Redmond95/gtk/gtkrc
+share/themes/engines/libmetal.a
+share/themes/engines/libmetal.la
+share/themes/engines/libmetal.so
+share/themes/engines/libmetal.so.0
+share/themes/engines/libnotif.a
+share/themes/engines/libnotif.la
+share/themes/engines/libnotif.so
+share/themes/engines/libnotif.so.0
+share/themes/engines/libpixmap.a
+share/themes/engines/libpixmap.la
+share/themes/engines/libpixmap.so
+share/themes/engines/libpixmap.so.0
+share/themes/engines/libredmond95.a
+share/themes/engines/libredmond95.la
+share/themes/engines/libredmond95.so
+share/themes/engines/libredmond95.so.0
+@dirrm share/themes/Metal/gtk
+@dirrm share/themes/Metal
+@dirrm share/themes/Notif/gtk
+@dirrm share/themes/Notif
+@dirrm share/themes/Pixmap/gtk
+@dirrm share/themes/Pixmap
+@dirrm share/themes/Redmond95/gtk
+@dirrm share/themes/Redmond95
+@dirrm share/themes/engines
