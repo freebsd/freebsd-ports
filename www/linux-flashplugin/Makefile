@@ -20,7 +20,6 @@ COMMENT=	The official Macromedia Flash Player for Linux Netscape and Opera
 ONLY_FOR_ARCHS=	i386
 USE_LINUX=	yes
 
-NO_PACKAGE=	"Redistribution not allowed"
 RESTRICTED=	"Redistribution not allowed"
 
 NO_BUILD=	yes
