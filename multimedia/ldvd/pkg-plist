@@ -1,0 +1,12 @@
+bin/ldvd9to5
+etc/ldvd9to5.conf
+%%DATADIR%%/INSTALL.de
+%%DATADIR%%/INSTALL.en
+%%DATADIR%%/README.de
+%%DATADIR%%/README.en
+%%DATADIR%%/COPYING
+%%DATADIR%%/modules/extract.pm
+%%DATADIR%%/modules/info.pm
+%%DATADIR%%/modules/util.pm
+@dirrm %%DATADIR%%/modules
+@dirrm %%DATADIR%%
