@@ -1,0 +1,39 @@
+#!/bin/sh
+#
+#	$FreeBSD$
+#
+# Created by: hetzels@westbend.net
+
+#set -vx
+
+PKG_BATCH=${BATCH:=NO}
+
+PKG_PREFIX=${PKG_PREFIX:=/usr/local}
+
+# delete sasldb database
+
+delete_sasldb() {
+	[ -f %D/etc/sasldb.db -a ! -s %D/etc/sasldb.db ] && rm %D/etc/sasldb.db
+}
+
+# This should really be uninstalled by Sendmail
+
+sendmail_conf() {
+	if [ -f ${PKG_PREFIX}/lib/sasl/Sendmail.conf ]; then
+		echo "pwcheck_method: pwcheck" > ${PKG_PREFIX}/lib/sasl/Sendmail.conf.tmp
+		if cmp -s ${PKG_PREFIX}/lib/sasl/Sendmail.conf ${PKG_PREFIX}/lib/sasl/Sendmail.conf.tmp; then
+			rm -f ${PKG_PREFIX}/lib/sasl/Sendmail.conf
+		fi
+		rm -f ${PKG_PREFIX}/lib/sasl/Sendmail.conf.tmp
+	fi
+}
+
+case $2 in
+	DEINSTALL)
+		delete_sasldb
+		sendmail_conf
+		;;
+	POST-DEINSTALL)
+		;;
+
+esac
