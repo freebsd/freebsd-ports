@@ -58,9 +58,7 @@ NO_FILTER_SHLIBS=	yes
 NO_MTREE=		yes
 PLIST=			${WRKDIR}/pkg-plist
 
-.ifdef USE_LINUX
-.error You have `USE_LINUX' variable defined either in environment or in make(1) arguments. Please undefine and try again.
-.endif
+.undef USE_LINUX
 
 .include <bsd.port.pre.mk>
 DBPATH=			/var/lib/rpm
