@@ -20,7 +20,7 @@ fi
    logs="$dir/gen"
    pkgs="$ports/packages/All"
 scripts="$dir"
-   xdep="XFree86-3.3.6_10"
+   xdep_re="^XFree86-3.3.6_1[0-9]$"
 
 #
 ##############################################################################
@@ -76,7 +76,7 @@ if [ X$ans != Xn -a X$ans != XN ]; then
   for disc in `cat config | grep -v '#' | sed -e 's/[ 	].*//'`; do
     echo "disc $disc" >> $logs/need.ALL
     $scripts/print-cdrom-packages.sh `echo $disc | sed -e 's/^disc//'` \
-      $ports | grep -v $xdep | tee $logs/need.$disc >> $logs/need.ALL
+      $ports | grep -Ev $xdep_re | tee $logs/need.$disc >> $logs/need.ALL
   done
 fi
 
