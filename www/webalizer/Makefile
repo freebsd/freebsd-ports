@@ -7,7 +7,7 @@
 
 PORTNAME=	webalizer
 PORTVERSION=	2.1.10
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES+=	www
 MASTER_SITES=	ftp://ftp.mrunix.net/pub/webalizer/ \
 		ftp://ftp.dinoex.de/pub/FreeBSD/distfiles/
@@ -25,6 +25,8 @@ GNU_CONFIGURE=	yes
 DOCSDIR?=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
 EXAMPLESDIR?=	${PREFIX}/share/examples/${PKGNAMEPREFIX}${PORTNAME}
 GD_PORT?=	graphics/gd
+
+CONFLICTS=	geolizer-2*
 
 .if defined(BATCH)
 # no cosmetique spaces allowed
