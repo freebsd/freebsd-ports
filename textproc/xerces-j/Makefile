@@ -47,7 +47,7 @@ JARFILES+=	xercesSamples.jar
 PLIST_FILES+=	${JARFILES:S,^,%%JAVAJARDIR%%/,}
 
 TOOLS_JARFILES=	resolver.jar stylebook-1.0-b2.jar bin/xjavac.jar
-CLASSPATH!=	echo ${TOOLS_JARFILES:S,^,tools/,} | ${TR} " " ":"
+CLASSPATH!=	${ECHO_CMD} ${TOOLS_JARFILES:S,^,tools/,} | ${TR} " " ":"
 MAKE_ENV=	CLASSPATH=${CLASSPATH}
 
 post-extract:
