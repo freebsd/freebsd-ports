@@ -112,6 +112,7 @@
     SUBDIR += id3ren
     SUBDIR += id3tool
     SUBDIR += id3v2
+    SUBDIR += juk
     SUBDIR += juke
     SUBDIR += ksmp3play
     SUBDIR += ladspa

@@ -1,0 +1,11 @@
+--- juk/jukui.rc.orig	Mon Feb 17 08:36:00 2003
++++ juk/jukui.rc	Mon Mar  3 12:24:34 2003
+@@ -15,7 +15,7 @@
+ 		<Separator/>
+ 
+ 		<Action name="file_save"/>
+-		<Action name="file_saveas"/>
++		<Action name="file_save_as"/>
+ 
+ 		<Separator/>
+ 
