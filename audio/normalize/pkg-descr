@@ -1,0 +1,7 @@
+Normalize is an overly complicated tool for adjusting the volume of
+wave files to a standard volume level.  This is useful for things like
+creating mp3 mixes, where different recording levels on different
+albums can cause the volume to vary greatly from song to song.
+
+- George Reid
+greid@ukug.uk.freebsd.org
