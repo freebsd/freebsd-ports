@@ -1,9 +1,11 @@
 %%APPS%%bin/PathFinder
 %%APPS%%bin/adie
 %%APPS%%bin/calculator
+bin/fox-config
 bin/reswrap
 bin/shutterbug
 include/fox-%%MAJORVER%%/FX4Splitter.h
+include/fox-%%MAJORVER%%/FX7Segment.h
 include/fox-%%MAJORVER%%/FXAccelTable.h
 include/fox-%%MAJORVER%%/FXApp.h
 include/fox-%%MAJORVER%%/FXArray.h
@@ -17,8 +19,8 @@ include/fox-%%MAJORVER%%/FXBitmapView.h
 include/fox-%%MAJORVER%%/FXButton.h
 include/fox-%%MAJORVER%%/FXCURCursor.h
 include/fox-%%MAJORVER%%/FXCanvas.h
-include/fox-%%MAJORVER%%/FXCharset.h
 include/fox-%%MAJORVER%%/FXCheckButton.h
+include/fox-%%MAJORVER%%/FXChoiceBox.h
 include/fox-%%MAJORVER%%/FXColorBar.h
 include/fox-%%MAJORVER%%/FXColorDialog.h
 include/fox-%%MAJORVER%%/FXColorSelector.h
@@ -41,6 +43,10 @@ include/fox-%%MAJORVER%%/FXDirBox.h
 include/fox-%%MAJORVER%%/FXDirDialog.h
 include/fox-%%MAJORVER%%/FXDirList.h
 include/fox-%%MAJORVER%%/FXDirSelector.h
+include/fox-%%MAJORVER%%/FXDockBar.h
+include/fox-%%MAJORVER%%/FXDockHandler.h
+include/fox-%%MAJORVER%%/FXDockSite.h
+include/fox-%%MAJORVER%%/FXDockTitle.h
 include/fox-%%MAJORVER%%/FXDocument.h
 include/fox-%%MAJORVER%%/FXDragCorner.h
 include/fox-%%MAJORVER%%/FXDrawable.h
@@ -72,6 +78,7 @@ include/fox-%%MAJORVER%%/FXGLSphere.h
 include/fox-%%MAJORVER%%/FXGLTriangleMesh.h
 include/fox-%%MAJORVER%%/FXGLViewer.h
 include/fox-%%MAJORVER%%/FXGLVisual.h
+include/fox-%%MAJORVER%%/FXGUISignal.h
 include/fox-%%MAJORVER%%/FXGZStream.h
 include/fox-%%MAJORVER%%/FXGradientBar.h
 include/fox-%%MAJORVER%%/FXGroupBox.h
@@ -80,8 +87,12 @@ include/fox-%%MAJORVER%%/FXHeader.h
 include/fox-%%MAJORVER%%/FXHorizontalFrame.h
 include/fox-%%MAJORVER%%/FXICOIcon.h
 include/fox-%%MAJORVER%%/FXICOImage.h
+include/fox-%%MAJORVER%%/FXIFFIcon.h
+include/fox-%%MAJORVER%%/FXIFFImage.h
 include/fox-%%MAJORVER%%/FXIcon.h
+include/fox-%%MAJORVER%%/FXIconDict.h
 include/fox-%%MAJORVER%%/FXIconList.h
+include/fox-%%MAJORVER%%/FXIconSource.h
 include/fox-%%MAJORVER%%/FXId.h
 include/fox-%%MAJORVER%%/FXImage.h
 include/fox-%%MAJORVER%%/FXImageFrame.h
@@ -101,6 +112,7 @@ include/fox-%%MAJORVER%%/FXMat3f.h
 include/fox-%%MAJORVER%%/FXMat4d.h
 include/fox-%%MAJORVER%%/FXMat4f.h
 include/fox-%%MAJORVER%%/FXMatrix.h
+include/fox-%%MAJORVER%%/FXMemMap.h
 include/fox-%%MAJORVER%%/FXMemoryStream.h
 include/fox-%%MAJORVER%%/FXMenuBar.h
 include/fox-%%MAJORVER%%/FXMenuButton.h
@@ -131,6 +143,8 @@ include/fox-%%MAJORVER%%/FXProgressBar.h
 include/fox-%%MAJORVER%%/FXProgressDialog.h
 include/fox-%%MAJORVER%%/FXQuatd.h
 include/fox-%%MAJORVER%%/FXQuatf.h
+include/fox-%%MAJORVER%%/FXRASIcon.h
+include/fox-%%MAJORVER%%/FXRASImage.h
 include/fox-%%MAJORVER%%/FXRGBIcon.h
 include/fox-%%MAJORVER%%/FXRGBImage.h
 include/fox-%%MAJORVER%%/FXRadioButton.h
@@ -160,6 +174,7 @@ include/fox-%%MAJORVER%%/FXSlider.h
 include/fox-%%MAJORVER%%/FXSphered.h
 include/fox-%%MAJORVER%%/FXSpheref.h
 include/fox-%%MAJORVER%%/FXSpinner.h
+include/fox-%%MAJORVER%%/FXSplashWindow.h
 include/fox-%%MAJORVER%%/FXSplitter.h
 include/fox-%%MAJORVER%%/FXSpring.h
 include/fox-%%MAJORVER%%/FXStatusBar.h
@@ -203,7 +218,6 @@ include/fox-%%MAJORVER%%/FXVec4d.h
 include/fox-%%MAJORVER%%/FXVec4f.h
 include/fox-%%MAJORVER%%/FXVerticalFrame.h
 include/fox-%%MAJORVER%%/FXVisual.h
-include/fox-%%MAJORVER%%/FXWString.h
 include/fox-%%MAJORVER%%/FXWindow.h
 include/fox-%%MAJORVER%%/FXWizard.h
 include/fox-%%MAJORVER%%/FXXBMIcon.h
@@ -280,10 +294,17 @@ lib/libFOX-%%MAJORVER%%.so.%%SHVER%%
 %%PORTDOCS%%%%DOCSDIR%%/html/glview.png
 %%PORTDOCS%%%%DOCSDIR%%/html/goals.html
 %%PORTDOCS%%%%DOCSDIR%%/html/goggles.png
+%%PORTDOCS%%%%DOCSDIR%%/html/gpgkey.html
 %%PORTDOCS%%%%DOCSDIR%%/html/guiupdate.html
 %%PORTDOCS%%%%DOCSDIR%%/html/header.html
 %%PORTDOCS%%%%DOCSDIR%%/html/home.html
 %%PORTDOCS%%%%DOCSDIR%%/html/icons.html
+%%PORTDOCS%%%%DOCSDIR%%/html/iims1.png
+%%PORTDOCS%%%%DOCSDIR%%/html/iims1_small.png
+%%PORTDOCS%%%%DOCSDIR%%/html/iims2.png
+%%PORTDOCS%%%%DOCSDIR%%/html/iims2_small.png
+%%PORTDOCS%%%%DOCSDIR%%/html/iims3.png
+%%PORTDOCS%%%%DOCSDIR%%/html/iims3_small.png
 %%PORTDOCS%%%%DOCSDIR%%/html/ill.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/ilr.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/imagedebugger.gif
@@ -303,7 +324,7 @@ lib/libFOX-%%MAJORVER%%.so.%%SHVER%%
 %%PORTDOCS%%%%DOCSDIR%%/html/nerd_inside.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/news.html
 %%PORTDOCS%%%%DOCSDIR%%/html/news1.html
-%%PORTDOCS%%%%DOCSDIR%%/html/oldfox.html
+%%PORTDOCS%%%%DOCSDIR%%/html/news2.html
 %%PORTDOCS%%%%DOCSDIR%%/html/oll.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/olr.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/opengl_logo.png
@@ -313,6 +334,7 @@ lib/libFOX-%%MAJORVER%%.so.%%SHVER%%
 %%PORTDOCS%%%%DOCSDIR%%/html/page.css
 %%PORTDOCS%%%%DOCSDIR%%/html/pathfinder.html
 %%PORTDOCS%%%%DOCSDIR%%/html/pathfinder.png
+%%PORTDOCS%%%%DOCSDIR%%/html/pdiary.jpg
 %%PORTDOCS%%%%DOCSDIR%%/html/printdialog.png
 %%PORTDOCS%%%%DOCSDIR%%/html/progress.png
 %%PORTDOCS%%%%DOCSDIR%%/html/projects.html
@@ -329,18 +351,11 @@ lib/libFOX-%%MAJORVER%%.so.%%SHVER%%
 %%PORTDOCS%%%%DOCSDIR%%/html/serialization.html
 %%PORTDOCS%%%%DOCSDIR%%/html/sgitextedit.png
 %%PORTDOCS%%%%DOCSDIR%%/html/slingerzbutton1.gif
-%%PORTDOCS%%%%DOCSDIR%%/html/ss1.png
-%%PORTDOCS%%%%DOCSDIR%%/html/ss1_small.png
-%%PORTDOCS%%%%DOCSDIR%%/html/ss2.png
-%%PORTDOCS%%%%DOCSDIR%%/html/ss2_small.png
-%%PORTDOCS%%%%DOCSDIR%%/html/ss3.png
-%%PORTDOCS%%%%DOCSDIR%%/html/ss3_small.png
 %%PORTDOCS%%%%DOCSDIR%%/html/styles.css
 %%PORTDOCS%%%%DOCSDIR%%/html/table.png
 %%PORTDOCS%%%%DOCSDIR%%/html/timers.html
 %%PORTDOCS%%%%DOCSDIR%%/html/tmp_vision_snap.jpg
 %%PORTDOCS%%%%DOCSDIR%%/html/top.html
-%%PORTDOCS%%%%DOCSDIR%%/html/tux.jpg
 %%PORTDOCS%%%%DOCSDIR%%/html/tux_small.jpg
 %%PORTDOCS%%%%DOCSDIR%%/html/udine_physics.jpg
 %%PORTDOCS%%%%DOCSDIR%%/html/vorhour1.jpg
@@ -361,6 +376,7 @@ lib/libFOX-%%MAJORVER%%.so.%%SHVER%%
 %%PORTDOCS%%%%DOCSDIR%%/html/xfe.png
 %%PORTDOCS%%%%DOCSDIR%%/html/xfe_small.png
 %%PORTDOCS%%%%DOCSDIR%%/html/xml.html
+%%PORTDOCS%%%%DOCSDIR%%/html/xtc.gif
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm include/fox-%%MAJORVER%%/chart
