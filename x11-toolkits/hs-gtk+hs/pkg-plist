@@ -1,11 +1,17 @@
 bin/gtkhs-config
+lib/gtk+hs-%%PORTVERSION%%/ghc5/gtkhs.conf
+lib/gtk+hs-%%PORTVERSION%%/ghc5/gdkHS.o
+lib/gtk+hs-%%PORTVERSION%%/ghc5/glibHS.o
+lib/gtk+hs-%%PORTVERSION%%/ghc5/gtkHS.o
+lib/gtk+hs-%%PORTVERSION%%/ghc5/libgdkHS.a
+lib/gtk+hs-%%PORTVERSION%%/ghc5/libglibHS.a
+lib/gtk+hs-%%PORTVERSION%%/ghc5/libgtkHS.a
 lib/gtk+hs-%%PORTVERSION%%/ghc5/import/gdk/Gdk.hi
 lib/gtk+hs-%%PORTVERSION%%/ghc5/import/gdk/GdkColor.hi
 lib/gtk+hs-%%PORTVERSION%%/ghc5/import/gdk/GdkDrawable.hi
 lib/gtk+hs-%%PORTVERSION%%/ghc5/import/gdk/GdkEvents.hi
 lib/gtk+hs-%%PORTVERSION%%/ghc5/import/gdk/GdkFont.hi
 lib/gtk+hs-%%PORTVERSION%%/ghc5/import/gdk/GdkGC.hi
-lib/gtk+hs-%%PORTVERSION%%/ghc5/import/gdk/GdkMarsh.hi
 lib/gtk+hs-%%PORTVERSION%%/ghc5/import/gdk/GdkPixmap.hi
 lib/gtk+hs-%%PORTVERSION%%/ghc5/import/gdk/GdkTypes.hi
 lib/gtk+hs-%%PORTVERSION%%/ghc5/import/gdk/GdkVisual.hi
@@ -19,26 +25,31 @@ lib/gtk+hs-%%PORTVERSION%%/ghc5/import/glib/GThread.hi
 lib/gtk+hs-%%PORTVERSION%%/ghc5/import/glib/GTimer.hi
 lib/gtk+hs-%%PORTVERSION%%/ghc5/import/glib/GTypes.hi
 lib/gtk+hs-%%PORTVERSION%%/ghc5/import/gtk/Gtk.hi
+lib/gtk+hs-%%PORTVERSION%%/ghc5/import/gtk/GtkAccelGroup.hi
 lib/gtk+hs-%%PORTVERSION%%/ghc5/import/gtk/GtkAdjustment.hi
 lib/gtk+hs-%%PORTVERSION%%/ghc5/import/gtk/GtkAdjustmentSignal.hi
+lib/gtk+hs-%%PORTVERSION%%/ghc5/import/gtk/GtkAlignment.hi
 lib/gtk+hs-%%PORTVERSION%%/ghc5/import/gtk/GtkBin.hi
 lib/gtk+hs-%%PORTVERSION%%/ghc5/import/gtk/GtkBox.hi
 lib/gtk+hs-%%PORTVERSION%%/ghc5/import/gtk/GtkButton.hi
-lib/gtk+hs-%%PORTVERSION%%/ghc5/import/gtk/GtkButtonSignal.hi
 lib/gtk+hs-%%PORTVERSION%%/ghc5/import/gtk/GtkCList.hi
 lib/gtk+hs-%%PORTVERSION%%/ghc5/import/gtk/GtkCListSignal.hi
 lib/gtk+hs-%%PORTVERSION%%/ghc5/import/gtk/GtkCTree.hi
 lib/gtk+hs-%%PORTVERSION%%/ghc5/import/gtk/GtkCheckButton.hi
+lib/gtk+hs-%%PORTVERSION%%/ghc5/import/gtk/GtkCheckMenuItem.hi
+lib/gtk+hs-%%PORTVERSION%%/ghc5/import/gtk/GtkCheckMenuItemSignal.hi
+lib/gtk+hs-%%PORTVERSION%%/ghc5/import/gtk/GtkCombo.hi
 lib/gtk+hs-%%PORTVERSION%%/ghc5/import/gtk/GtkCompat.hi
 lib/gtk+hs-%%PORTVERSION%%/ghc5/import/gtk/GtkContainer.hi
 lib/gtk+hs-%%PORTVERSION%%/ghc5/import/gtk/GtkData.hi
 lib/gtk+hs-%%PORTVERSION%%/ghc5/import/gtk/GtkDrawingArea.hi
 lib/gtk+hs-%%PORTVERSION%%/ghc5/import/gtk/GtkEditable.hi
-lib/gtk+hs-%%PORTVERSION%%/ghc5/import/gtk/GtkEditableSignal.hi
 lib/gtk+hs-%%PORTVERSION%%/ghc5/import/gtk/GtkEntry.hi
 lib/gtk+hs-%%PORTVERSION%%/ghc5/import/gtk/GtkEnums.hi
+lib/gtk+hs-%%PORTVERSION%%/ghc5/import/gtk/GtkEventBox.hi
 lib/gtk+hs-%%PORTVERSION%%/ghc5/import/gtk/GtkFileSel.hi
 lib/gtk+hs-%%PORTVERSION%%/ghc5/import/gtk/GtkFrame.hi
+lib/gtk+hs-%%PORTVERSION%%/ghc5/import/gtk/GtkHandleBox.hi
 lib/gtk+hs-%%PORTVERSION%%/ghc5/import/gtk/GtkHBox.hi
 lib/gtk+hs-%%PORTVERSION%%/ghc5/import/gtk/GtkHPaned.hi
 lib/gtk+hs-%%PORTVERSION%%/ghc5/import/gtk/GtkHScale.hi
@@ -58,22 +69,29 @@ lib/gtk+hs-%%PORTVERSION%%/ghc5/import/gtk/GtkMenuBar.hi
 lib/gtk+hs-%%PORTVERSION%%/ghc5/import/gtk/GtkMenuItem.hi
 lib/gtk+hs-%%PORTVERSION%%/ghc5/import/gtk/GtkMenuItemSignal.hi
 lib/gtk+hs-%%PORTVERSION%%/ghc5/import/gtk/GtkMisc.hi
+lib/gtk+hs-%%PORTVERSION%%/ghc5/import/gtk/GtkNotebook.hi
 lib/gtk+hs-%%PORTVERSION%%/ghc5/import/gtk/GtkObject.hi
 lib/gtk+hs-%%PORTVERSION%%/ghc5/import/gtk/GtkObjectSignal.hi
+lib/gtk+hs-%%PORTVERSION%%/ghc5/import/gtk/GtkOptionMenu.hi
 lib/gtk+hs-%%PORTVERSION%%/ghc5/import/gtk/GtkPaned.hi
+lib/gtk+hs-%%PORTVERSION%%/ghc5/import/gtk/GtkPixmap.hi
+lib/gtk+hs-%%PORTVERSION%%/ghc5/import/gtk/GtkProgress.hi
+lib/gtk+hs-%%PORTVERSION%%/ghc5/import/gtk/GtkProgressBar.hi
 lib/gtk+hs-%%PORTVERSION%%/ghc5/import/gtk/GtkRadioButton.hi
+lib/gtk+hs-%%PORTVERSION%%/ghc5/import/gtk/GtkRadioMenuItem.hi
 lib/gtk+hs-%%PORTVERSION%%/ghc5/import/gtk/GtkRange.hi
+lib/gtk+hs-%%PORTVERSION%%/ghc5/import/gtk/GtkRuler.hi
 lib/gtk+hs-%%PORTVERSION%%/ghc5/import/gtk/GtkScale.hi
 lib/gtk+hs-%%PORTVERSION%%/ghc5/import/gtk/GtkScrollbar.hi
 lib/gtk+hs-%%PORTVERSION%%/ghc5/import/gtk/GtkScrolledWindow.hi
 lib/gtk+hs-%%PORTVERSION%%/ghc5/import/gtk/GtkSeparator.hi
 lib/gtk+hs-%%PORTVERSION%%/ghc5/import/gtk/GtkSignal.hi
-lib/gtk+hs-%%PORTVERSION%%/ghc5/import/gtk/GtkStatusBar.hi
+lib/gtk+hs-%%PORTVERSION%%/ghc5/import/gtk/GtkStatusbar.hi
 lib/gtk+hs-%%PORTVERSION%%/ghc5/import/gtk/GtkStyle.hi
 lib/gtk+hs-%%PORTVERSION%%/ghc5/import/gtk/GtkTable.hi
 lib/gtk+hs-%%PORTVERSION%%/ghc5/import/gtk/GtkText.hi
 lib/gtk+hs-%%PORTVERSION%%/ghc5/import/gtk/GtkToggleButton.hi
-lib/gtk+hs-%%PORTVERSION%%/ghc5/import/gtk/GtkToggleButtonSignal.hi
+lib/gtk+hs-%%PORTVERSION%%/ghc5/import/gtk/GtkTooltips.hi
 lib/gtk+hs-%%PORTVERSION%%/ghc5/import/gtk/GtkTree.hi
 lib/gtk+hs-%%PORTVERSION%%/ghc5/import/gtk/GtkTreeItem.hi
 lib/gtk+hs-%%PORTVERSION%%/ghc5/import/gtk/GtkTreeItemSignal.hi
@@ -84,23 +102,24 @@ lib/gtk+hs-%%PORTVERSION%%/ghc5/import/gtk/GtkVScale.hi
 lib/gtk+hs-%%PORTVERSION%%/ghc5/import/gtk/GtkVScrollbar.hi
 lib/gtk+hs-%%PORTVERSION%%/ghc5/import/gtk/GtkVSeparator.hi
 lib/gtk+hs-%%PORTVERSION%%/ghc5/import/gtk/GtkVersion.hi
+lib/gtk+hs-%%PORTVERSION%%/ghc5/import/gtk/GtkViewport.hi
 lib/gtk+hs-%%PORTVERSION%%/ghc5/import/gtk/GtkWidget.hi
-lib/gtk+hs-%%PORTVERSION%%/ghc5/import/gtk/GtkWidgetSignal.hi
 lib/gtk+hs-%%PORTVERSION%%/ghc5/import/gtk/GtkWindow.hi
 lib/gtk+hs-%%PORTVERSION%%/ghc5/include/GtkAdjustmentSignal_stub.h
-lib/gtk+hs-%%PORTVERSION%%/ghc5/include/GtkButtonSignal_stub.h
+lib/gtk+hs-%%PORTVERSION%%/ghc5/include/GtkButton_stub.h
+lib/gtk+hs-%%PORTVERSION%%/ghc5/include/GtkCheckMenuItemSignal_stub.h
 lib/gtk+hs-%%PORTVERSION%%/ghc5/include/GtkCListSignal_stub.h
 lib/gtk+hs-%%PORTVERSION%%/ghc5/include/GtkCList_stub.h
 lib/gtk+hs-%%PORTVERSION%%/ghc5/include/GtkCTree_stub.h
-lib/gtk+hs-%%PORTVERSION%%/ghc5/include/GtkEditableSignal_stub.h
+lib/gtk+hs-%%PORTVERSION%%/ghc5/include/GtkEditable_stub.h
 lib/gtk+hs-%%PORTVERSION%%/ghc5/include/GtkItemSignal_stub.h
 lib/gtk+hs-%%PORTVERSION%%/ghc5/include/GtkListSignal_stub.h
 lib/gtk+hs-%%PORTVERSION%%/ghc5/include/GtkMenuItemSignal_stub.h
 lib/gtk+hs-%%PORTVERSION%%/ghc5/include/GtkObjectSignal_stub.h
-lib/gtk+hs-%%PORTVERSION%%/ghc5/include/GtkToggleButtonSignal_stub.h
+lib/gtk+hs-%%PORTVERSION%%/ghc5/include/GtkToggleButton_stub.h
 lib/gtk+hs-%%PORTVERSION%%/ghc5/include/GtkTreeItemSignal_stub.h
 lib/gtk+hs-%%PORTVERSION%%/ghc5/include/GtkTypeUtils_stub.h
-lib/gtk+hs-%%PORTVERSION%%/ghc5/include/GtkWidgetSignal_stub.h
+lib/gtk+hs-%%PORTVERSION%%/ghc5/include/GtkWidget_stub.h
 lib/gtk+hs-%%PORTVERSION%%/ghc5/include/gMarsh.h
 lib/gtk+hs-%%PORTVERSION%%/ghc5/include/gtkAdjustment.h
 lib/gtk+hs-%%PORTVERSION%%/ghc5/include/gtkCTree.h
@@ -109,11 +128,9 @@ lib/gtk+hs-%%PORTVERSION%%/ghc5/include/gtkHaskell.h
 lib/gtk+hs-%%PORTVERSION%%/ghc5/include/gtkObject.h
 lib/gtk+hs-%%PORTVERSION%%/ghc5/include/gtkStyle.h
 lib/gtk+hs-%%PORTVERSION%%/ghc5/include/gtkToggleButton.h
+lib/gtk+hs-%%PORTVERSION%%/ghc5/include/gtkTooltips.h
 lib/gtk+hs-%%PORTVERSION%%/ghc5/include/gtkWidget.h
 lib/gtk+hs-%%PORTVERSION%%/ghc5/include/haskell.h
-lib/gtk+hs-%%PORTVERSION%%/ghc5/libgdkHS.a
-lib/gtk+hs-%%PORTVERSION%%/ghc5/libglibHS.a
-lib/gtk+hs-%%PORTVERSION%%/ghc5/libgtkHS.a
 @dirrm lib/gtk+hs-%%PORTVERSION%%/ghc5/include
 @dirrm lib/gtk+hs-%%PORTVERSION%%/ghc5/import/gdk
 @dirrm lib/gtk+hs-%%PORTVERSION%%/ghc5/import/glib
@@ -121,3 +138,5 @@ lib/gtk+hs-%%PORTVERSION%%/ghc5/libgtkHS.a
 @dirrm lib/gtk+hs-%%PORTVERSION%%/ghc5/import
 @dirrm lib/gtk+hs-%%PORTVERSION%%/ghc5
 @dirrm lib/gtk+hs-%%PORTVERSION%%
+@exec %D/bin/gtkhs-config --package-conf | %D/bin/ghc-pkg -u -g
+@unexec %D/bin/ghc-pkg -r gtkhs
