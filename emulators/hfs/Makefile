@@ -1,8 +1,19 @@
+# New ports collection makefile for:    hfs
+# Version required:     0.37
+# Date created:         17 November 1994
+# Whom:                 jmz
+#
+# $Id$
+#
+
 DISTNAME=	hfs0_37
-MASTER_SITES=	ftp://ftp.obs-besancon.fr/pub/outgoing/
+PKGNAME=	hfs-0.37
 CATEGORIES+=	utilities
-USE_GMAKE=	yes
+MASTER_SITES=	ftp://ftp.obs-besancon.fr/pub/outgoing/
+
 MAINTAINER=	jmz@FreeBSD.org
+
+USE_GMAKE=	yes
 
 .include <bsd.port.mk>
 

@@ -1,12 +1,24 @@
-DISTFILES=      iozone-2.01.shar.gz
+# New ports collection makefile for:    iozone
+# Version required:     2.01
+# Date created:         26 September 1994
+# Whom:                 jmz
+#
+# $Id$
+#
+
 DISTNAME=       iozone
-MASTER_SITES=   ftp://ftp.cs.uni-sb.de/pub/others/
+PKGNAME=	iozone-2.01
 CATEGORIES+=	utilities
+MASTER_SITES=   ftp://ftp.cs.uni-sb.de/pub/others/
+DISTFILES=      iozone-2.01.shar.gz
+
+MAINTAINER=	jmz@FreeBSD.org
+
+EXEC_DEPENDS=   gunshar:${PORTSDIR}/archivers/gshar+gunshar
+
 EXTRACT_CMD=    ( gzcat | /usr/local/bin/gunshar )
 EXTRACT_ARGS=   <
 NO_WRKSUBDIR=   YES
-EXEC_DEPENDS=   gunshar:${PORTSDIR}/archivers/gshar+gunshar
-MAINTAINER=	jmz@FreeBSD.org
 
 pre-extract: depends
 

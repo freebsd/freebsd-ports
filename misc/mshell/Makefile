@@ -1,9 +1,20 @@
+# New ports collection makefile for:    mshell
+# Version required:     93/3/3
+# Date created:         24 September 1994
+# Whom:                 jmz
+#
+# $Id$
+#
+
 DISTNAME=	mshell
-DISTFILES=	7432.Z
-MASTER_SITES=	ftp://src.doc.ic.ac.uk/usenet/alt.sources/articles/07000-07999/
+PKGNAME=	mshell-1.0
 CATEGORIES+=	utilities
-NO_WRKSUBDIR=	yes
+MASTER_SITES=	ftp://src.doc.ic.ac.uk/usenet/alt.sources/articles/07000-07999/
+DISTFILES=	7432.Z
+
 MAINTAINER=	jmz@FreeBSD.org
+
+NO_WRKSUBDIR=	yes
 
 EXTRACT_COOKIE?=	${.CURDIR}/.extract_done
 
