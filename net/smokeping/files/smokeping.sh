@@ -13,7 +13,7 @@ start)
         ;;
 restart)
         [ -r ${PREFIX}/etc/smokeping/config ] && \
-	    su -f -m smokeping -c ${PREFIX}/bin/smokeping --restart > /dev/null && \
+	    su -f -m smokeping -c "${PREFIX}/bin/smokeping --restart" > /dev/null && \
 	    echo -n ' smokeping'
         ;;
 stop)
