@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	zthread
-PORTVERSION=	1.5.1
-PORTREVISION=	1
+PORTVERSION=	2.3.1
 CATEGORIES=	devel
-MASTER_SITES=	http://www.cs.buffalo.edu/~crahen/projects/zthread/ \
-		${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	ZThread-${PORTVERSION}
 
@@ -18,11 +16,13 @@ MAINTAINER=	wjv@FreeBSD.org
 COMMENT=	A platform-independent object-oriented C++ threading library
 
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--without-ftime
 USE_GMAKE=	yes
-USE_LIBTOOL_VER=	13
 INSTALLS_SHLIB=	yes
-EXAMPLESDIR=	${PREFIX}/share/examples/${PORTNAME}
 
+.if !defined(NOPORTDOCS)
+PORTDOCS=	*
+.endif
 
 .include <bsd.port.pre.mk>
 
@@ -30,14 +30,23 @@ EXAMPLESDIR=	${PREFIX}/share/examples/${PORTNAME}
 BROKEN=		"Does not compile on ${ARCH}; mixes pointers and ints"
 .endif
 
+.if ${OSVERSION} < 500000
+USE_GCC=	3.3
+.endif
+
+post-extract:
+	@${FIND} ${WRKSRC} -name CVS -type d -delete
+
 post-install:
+	@${FIND} ${PREFIX}/include/zthread -type f | \
+		${SED} 's,^${PREFIX}/,,' >> ${TMPPLIST}
+	@${ECHO_CMD} "@dirrm include/zthread" >> ${TMPPLIST}
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}/html ${EXAMPLESDIR}
+	@${MKDIR} ${DOCSDIR}/html
 .for docfile in AUTHORS ChangeLog NEWS README TODO
 	${INSTALL_DATA} ${WRKSRC}/${docfile} ${DOCSDIR}
 .endfor
-	${INSTALL_DATA} ${WRKSRC}/doc/html/* ${DOCSDIR}/html
-	${INSTALL_DATA} ${WRKSRC}/examples/* ${EXAMPLESDIR}
+	${CP} -R ${WRKSRC}/doc/html/ ${DOCSDIR}/html
 .endif
 
 .include <bsd.port.post.mk>
