@@ -1,5 +1,6 @@
 @comment $FreeBSD$
 bin/qmail-scanner-queue.pl
+bin/qs2mrtg.pl
 %%SPOOLDIR%%/quarantine-attachments.sample
 %%SPOOLDIR%%/quarantine-attachments.txt
 @unexec rmdir %%SPOOLDIR%%/archives/cur 2>/dev/null || true
