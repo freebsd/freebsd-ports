@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	libarchive
-PORTVERSION=	2004.03.22
+PORTVERSION=	2004.04.08
 CATEGORIES=	archivers devel
 MASTER_SITES=	http://people.freebsd.org/~kientzle/libarchive/src/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/./-/g}
@@ -21,9 +21,7 @@ MAKE_FLAGS+=	INCLUDEDIR=${PREFIX}/include \
 
 PLIST_FILES=	include/archive.h \
 		include/archive_entry.h \
-		lib/libarchive.a \
-		lib/libarchive.so \
-		lib/libarchive.so.1
+		lib/libarchive.a
 .if !defined(NOPROFILE)
 PLIST_FILES+=	lib/libarchive_p.a
 .endif
@@ -72,8 +70,8 @@ MAN3=		archive.3 \
 		archive_read_new.3 \
 		archive_read_next_header.3 \
 		archive_read_open.3 \
+		archive_read_open_fd.3 \
 		archive_read_open_file.3 \
-		archive_read_open_tar.3 \
 		archive_read_set_bytes_per_block.3 \
 		archive_read_support_compression_all.3 \
 		archive_read_support_compression_bzip2.3 \
@@ -90,6 +88,7 @@ MAN3=		archive.3 \
 		archive_write_header.3 \
 		archive_write_new.3 \
 		archive_write_open.3 \
+		archive_write_open_fd.3 \
 		archive_write_open_file.3 \
 		archive_write_prepare.3 \
 		archive_write_set_bytes_in_last_block.3 \
