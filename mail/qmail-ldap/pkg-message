@@ -31,3 +31,7 @@ If you've built this port with TLS support (WITH_TLS=yes)
 # makes a certificate request
 4) do "make certificate-req"
 
+=====><=====
+
+Now, you need to use it. Check a little FreeBSD specific how-to at
+http://freebsd.cg.nu/postfixqmail-ldap.html
