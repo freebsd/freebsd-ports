@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	upclient
-PORTVERSION=	5.0.b6
+PORTVERSION=	5.0.b7
 CATEGORIES=	misc
 MASTER_SITES=	http://uptimes.wonko.com/files/
 DISTNAME=	${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}
@@ -19,7 +19,6 @@ MAINTAINER=	cyrille.lefevre@laposte.net
 LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 
 USE_REINPLACE=	yes
-USE_GMAKE=	yes
 ALL_TARGET=	bsd
 BUILD_WRKSRC=	${WRKSRC}/src
 
@@ -74,7 +73,7 @@ install-man:
 		${MAN8PREFIX}/man/man8
 
 install-sample:
-	@${INSTALL_DATA} -m 600 ${WRKSRC}/src/products/upclient.conf \
+	@${INSTALL_DATA} -g kmem -m 640 ${WRKSRC}/src/products/upclient.conf \
 		${PREFIX}/etc/upclient.conf.sample
 
 install-script:

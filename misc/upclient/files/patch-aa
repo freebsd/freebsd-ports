@@ -1,33 +1,35 @@
---- src/Makefile.orig	Sat Nov 30 03:29:55 2002
-+++ src/Makefile	Wed Dec 18 01:29:34 2002
+--- src/Makefile.orig	Wed Dec 18 01:01:16 2002
++++ src/Makefile	Mon Feb  3 20:18:03 2003
 @@ -34,7 +34,7 @@
  #
-   PROGRAMNAME = upclient
- # UPCLIENT_VERSION = "5.0b6"
+   PROGRAMNAME = UpClient
+ # UPCLIENT_VERSION = "5.0b7"
 -  UPCLIENT_VERSION = `grep '\#define UPCLIENT_VERSION ' version.h | sed -e 's@\#define UPCLIENT_VERSION @@g' | tr -d '"'`
-+  UPCLIENT_VERSION = `sed -n 's/"//g;/\#define UPCLIENT_VERSION /s///p' version.h`
- ################################################################################
++  UPCLIENT_VERSION =  `sed -n 's/"//g;/\#define UPCLIENT_VERSION /s///p' version.h`
+ #########################################################################
  
- binname = upclient
-@@ -44,7 +44,7 @@
  
+@@ -46,7 +46,7 @@
+ OPTIMIZATION_CFLAGS=-O3
  
  # System directories
 -prefix = /usr/local
 +prefix = %%PREFIX%%
  #prefix = /sw
- #prefix = /opt/${PROGRAMNAME}
- 
-@@ -55,7 +55,7 @@
- sbindir = ${exec_prefix}/sbin
+ #prefix = /opt/${binname}
+ #prefix = /tmp/upclient
+@@ -59,8 +59,8 @@
  datadir = ${prefix}/share
  sysconfdir = ${prefix}/etc
+ #sysconfdir = /etc
 -localstatedir = ${prefix}/var
+-#localstatedir = /var
++#localstatedir = ${prefix}/var
 +localstatedir = /var
+ destdir=
  
- # Further Reading
- # Filesystem Hierarchy Standard 2.2 May 24, 2001
-@@ -82,9 +82,9 @@
+ 
+@@ -90,9 +90,9 @@
  
  ## [x86] FreeBSD (4.7-RC)
  ## assumes gettext installed in /usr/local

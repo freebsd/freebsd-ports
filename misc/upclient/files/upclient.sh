@@ -49,7 +49,7 @@ start)
 			"${config_path}."
                 exit 72
 	fi
-	if grep -qs "^[$ws]*AuthKey[$ws]*=[$ws]*<your_authkey>" ${config_path}
+	if grep -qs "^[$ws]*AuthKey[$ws]*=[$ws]*your_authkey" ${config_path}
 	then
 		logger -sp ${syslog_facility} -t ${program_file} \
 			"unable to start: AuthKey isn't configured in" \

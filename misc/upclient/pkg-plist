@@ -16,5 +16,8 @@ sbin/upclient
 %%PORTDOCS%%share/doc/upclient/TODO
 %%PORTDOCS%%share/doc/upclient/UptimesProtocol5
 share/locale/de/LC_MESSAGES/upclient.mo
+share/locale/es/LC_MESSAGES/upclient.mo
 share/locale/fr/LC_MESSAGES/upclient.mo
+share/locale/it/LC_MESSAGES/upclient.mo
+share/locale/nl/LC_MESSAGES/upclient.mo
 %%PORTDOCS%%@dirrm share/doc/upclient

@@ -1,5 +1,5 @@
---- src/stats-bsd.c.orig	Sat Nov 30 03:27:16 2002
-+++ src/stats-bsd.c	Wed Dec 18 03:28:16 2002
+--- src/stats-bsd.c.orig	Wed Dec 18 01:01:17 2002
++++ src/stats-bsd.c	Mon Feb  3 20:20:12 2003
 @@ -64,6 +64,8 @@
  
  #include "locale.h"     /* gettext */
@@ -67,17 +67,8 @@
  }
  
  #if !defined __MACH__   /* Mach kernel stuff is in stats-mach.c */
-@@ -245,7 +245,7 @@
- 
-             for (state = 0; state < CPUSTATES; state++) {
-                 time += ctime[state] - stime[state];
--                if (!(state == CPU_STATE_IDLE)) {
-+                if (!(state == CP_IDLE)) {
-                     nonidlecpu += (float)(ctime[state] - stime[state]);
-                 }
-             }
-@@ -258,6 +258,10 @@
- 
+@@ -259,6 +259,10 @@
+            /* store values for next calculation interval */
              for (state = 0; state < CPUSTATES; state++)
                  stime[state] = ctime[state];
 +#if defined DEBUG
@@ -87,7 +78,7 @@
          }
      }
      else {
-@@ -268,17 +272,13 @@
+@@ -269,17 +273,13 @@
          cfg_SendUsage = 0;
          cfg_SendIdle = 0;
      }
@@ -106,7 +97,7 @@
  
      boottimesecs = initBoottime();
  
-@@ -293,7 +293,7 @@
+@@ -294,7 +294,7 @@
  #endif /* DEBUG */
      }
      else {
@@ -115,7 +106,7 @@
                "getUptime() boottime.tv_sec");
      }
  }
-@@ -306,19 +306,18 @@
+@@ -307,19 +307,18 @@
           double *IdlePercent, char *osname, char *osversion, char *cpu,
           double *loadavg)
  {
