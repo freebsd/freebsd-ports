@@ -1,6 +1,6 @@
 bin/AbiWord
 bin/AbiWord_d
-bin/AbiWord_s
+%%NOGNOME:%%bin/AbiWord_s
 bin/abiword
 bin/ttftool
 share/AbiSuite/AbiWord/help/de-DE/about.html
@@ -570,7 +570,10 @@ share/AbiSuite/icons/abiword_16.xpm
 share/AbiSuite/icons/abiword_48.png
 share/AbiSuite/icons/abiword_48.tif
 share/AbiSuite/icons/abiword_48.xpm
+%%GNOME:%%share/AbiSuite/icons/abiword_logo.xpm
 share/AbiSuite/templates/normal.awt
+%%GNOME:%%share/gnome/apps/Applications/abiword.desktop
+%%GNOME:%%share/gnome/pixmaps/abiword_48.png
 @dirrm share/AbiSuite/templates
 @dirrm share/AbiSuite/icons
 @dirrm share/AbiSuite/fonts
