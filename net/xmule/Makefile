@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xmule
-PORTVERSION=	1.8.0
+PORTVERSION=	1.8.1
 CATEGORIES=	net
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	xmule
@@ -18,6 +18,8 @@ LIB_DEPENDS=	expat.5:${PORTSDIR}/textproc/expat2 \
 		wx_gtk2-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk2
 RUN_DEPENDS=	wget:${PORTSDIR}/ftp/wget
 
+BROKEN=	SIGSEGVs too easily. Help to fix it is highly appreciated
+
 USE_GETTEXT=	yes
 USE_X_PREFIX=	yes
 USE_BZIP2=	yes
@@ -26,13 +28,18 @@ USE_GNOME=	gnomehier \
 		gnomeprefix
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
-USE_SIZE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-included-gettext \
+		--with-gtk-prefix=${X11BASE} \
+		--with-libiconv-prefix=${LOCALBASE} \
 		--with-libintl-prefix=${LOCALBASE} \
+		--enable-debug \
 		--with-wx-config=${WX_CONFIG}
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
-		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib ${PTHREAD_LIBS}"
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} ${PTHREAD_CFLAGS}" \
+		LDFLAGS="${LDFLAGS} ${PTHREAD_LIBS}"
+
+# for debugging purposes
+STRIP=
 
 WX_CONFIG?=	${X11BASE}/bin/wxgtk2-2.4-config
 
