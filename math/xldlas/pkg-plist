@@ -11,3 +11,5 @@ share/xldlas/help/tutorial_data.lda
 share/xldlas/help/test.help
 share/xldlas/help/filter.help
 share/xldlas/help/.directory
+@dirrm share/xldlas/help
+@dirrm share/xldlas

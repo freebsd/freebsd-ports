@@ -35,3 +35,7 @@ lib/xlispstat/Autoload/autoload.lsp
 lib/xlispstat/xlisp
 lib/xlispstat/xlisp.wks
 lib/xlispstat/xlisp.hlp
+@dirrm lib/xlispstat/Autoload
+@dirrm lib/xlispstat/Data
+@dirrm lib/xlispstat/Examples
+@dirrm lib/xlispstat
