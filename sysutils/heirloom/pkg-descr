@@ -1,0 +1,17 @@
+The Heirloom Toolchest is a collection of standard Unix utilities.
+Highlights are:
+
+* Derived from original Unix material released as open source by Caldera. 
+* Up to four versions of each utility corresponding to SVID3/SVR4,
+  SVID4/SVR4.2MP, POSIX.2/SUSV2, and 4BSD (SVR4 /usr/ucb).
+* Support for lines of arbitrary length and in many cases binary input data. 
+* Support for multibyte character sets, especially UTF-8. 
+* More than 100 individual utilities including bc, cpio, diff, ed, file,
+  find, grep, man, nawk, oawk, pax, ps, sed, sort, spell, and tar.
+* The cpio utility can read and write zip files, GNU tar files, and
+  the cpio formats of Cray UNICOS, SGI IRIX (-K), SCO UnixWare (-c)
+  and Tru64 UNIX (-e). It is also available with the pax interface.
+* Extensive documentation including a manual page for any utility. 
+* Runs on Linux, Solaris, Open UNIX, and FreeBSD. 
+
+WWW: http://heirloom.sourceforge.net/
