@@ -258,6 +258,7 @@
     SUBDIR += glui
     SUBDIR += gmake
     SUBDIR += gnome-vfsmm
+    SUBDIR += gnome2-hacker-tools
     SUBDIR += gnomebuild
     SUBDIR += gnomecommon
     SUBDIR += gnomecrash
