@@ -3,18 +3,14 @@
 # Date created:				October 20th 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#   $Id: Makefile,v 1.3 1996/10/24 10:58:01 asami Exp $
+#   $Id: Makefile,v 1.4 1996/10/24 11:18:40 asami Exp $
 #
 
 DISTNAME=	C-Scan-0.3
 PKGNAME=	p5-C-Scan-0.3
-CATEGORIES+=	devel
-MASTER_SITES=	ftp://ftp.digital.com/pub/plan/perl/CPAN/modules/by-module/C/ \
-		ftp://ftp.cdrom.com/pub/perl/CPAN/modules/by-module/C/ \
-		ftp://ftp.cis.ufl.edu/pub/perl/CPAN/modules/by-module/C/ \
-		ftp://ftp.leo.org/pub/comp/programming/languages/perl/CPAN/modules/by-module/C/ \
-		ftp://ftp.demon.co.uk/pub/mirrors/perl/CPAN/modules/by-module/C/ \
-		ftp://ftp.lab.kdd.co.jp/lang/perl/CPAN/modules/by-module/C/
+CATEGORIES=	devel
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
+MASTER_SITE_SUBDIR=	C
 
 MAINTAINER=	jfitz@FreeBSD.ORG
 
@@ -22,14 +18,10 @@ BUILD_DEPENDS= 	perl5.003:${PORTSDIR}/lang/perl5 \
 		${PREFIX}/lib/perl5/site_perl/Data/Flow.pm:${PORTSDIR}/devel/p5-Data-Flow
 RUN_DEPENDS=	perl5.003:${PORTSDIR}/lang/perl5
 
+MAN3=		C::Scan.3
+MANPREFIX=	${PREFIX}/lib/perl5
+
 do-configure:
 		@ cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PREFIX}/bin/perl Makefile.PL
-
-post-install:
-.if !defined(NOMANCOMPRESS)
-		@ for file in C::Scan; do \
-			gzip -9nf ${PREFIX}/lib/perl5/man/man3/$$file.3; \
-		done
-.endif
 
 .include <bsd.port.mk>

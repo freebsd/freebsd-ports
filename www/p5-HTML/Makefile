@@ -3,18 +3,14 @@
 # Date created:				October 20th 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#   $Id: Makefile,v 1.1.1.1 1996/10/24 08:42:50 jfitz Exp $
+#   $Id: Makefile,v 1.2 1996/10/24 09:58:48 jfitz Exp $
 #
 
 DISTNAME=	HTML-0.6
 PKGNAME=	p5-HTML-0.6
-CATEGORIES+=	www
-MASTER_SITES=	ftp://ftp.digital.com/pub/plan/perl/CPAN/modules/by-module/HTML/ \
-		ftp://ftp.cdrom.com/pub/perl/CPAN/modules/by-module/HTML/ \
-		ftp://ftp.cis.ufl.edu/pub/perl/CPAN/modules/by-module/HTML/ \
-		ftp://ftp.leo.org/pub/comp/programming/languages/perl/CPAN/modules/by-module/HTML/ \
-		ftp://ftp.demon.co.uk/pub/mirrors/perl/CPAN/modules/by-module/HTML/ \
-		ftp://ftp.lab.kdd.co.jp/lang/perl/CPAN/modules/by-module/HTML/
+CATEGORIES=	www
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
+MASTER_SITE_SUBDIR=	HTML
 
 MAINTAINER=	jfitz@FreeBSD.ORG
 

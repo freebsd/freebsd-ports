@@ -3,18 +3,14 @@
 # Date created:				October 19th 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#   $Id: Makefile,v 1.1.1.1 1996/10/24 08:28:51 jfitz Exp $
+#   $Id: Makefile,v 1.2 1996/10/24 09:57:30 jfitz Exp $
 #
 
 DISTNAME=	perl_archie.1.5
 PKGNAME=	p5-Archie-1.5
-CATEGORIES+=	net
-MASTER_SITES=	ftp://ftp.digital.com/pub/plan/perl/CPAN/modules/by-module/Archie/ \
-		ftp://ftp.cdrom.com/pub/perl/CPAN/modules/by-module/Archie/ \
-		ftp://ftp.cis.ufl.edu/pub/perl/CPAN/modules/by-module/Archie/ \
-		ftp://ftp.leo.org/pub/comp/programming/languages/perl/CPAN/modules/by-module/Archie/ \
-		ftp://ftp.demon.co.uk/pub/mirrors/perl/CPAN/modules/by-module/Archie/ \
-		ftp://ftp.lab.kdd.co.jp/lang/perl/CPAN/modules/by-module/Archie/
+CATEGORIES=	net
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
+MASTER_SITE_SUBDIR=	Archie
 
 MAINTAINER=	jfitz@FreeBSD.ORG
 
