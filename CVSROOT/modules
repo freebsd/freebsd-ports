@@ -407,7 +407,6 @@ artswrapper	ports/audio/artswrapper
 artwiz-aleczapka	ports/x11-fonts/artwiz-aleczapka
 artwiz-fonts	ports/x11-fonts/artwiz-fonts
 as31		ports/devel/as31
-as80		ports/devel/as80
 asapm		ports/sysutils/asapm
 asbutton	ports/misc/asbutton
 asc		ports/games/asc
@@ -856,7 +855,6 @@ cdrdao		ports/sysutils/cdrdao
 cdroot		ports/sysutils/cdroot
 cdrtools	ports/sysutils/cdrtools
 cdrtools-devel	ports/sysutils/cdrtools-devel
-cel		ports/lang/cel
 celestia	ports/astro/celestia
 centericq	ports/net/centericq
 cfe		ports/misc/cfe
@@ -1107,7 +1105,6 @@ crossfire-server	ports/games/crossfire-server
 crossgo32	ports/devel/crossgo32
 crossgo32-djgpp2	ports/devel/crossgo32-djgpp2
 crossgo32-djgpp2-pdcurses	ports/devel/crossgo32-djgpp2-pdcurses
-crossgo32-f77	ports/lang/crossgo32-f77
 crossip		ports/dns/crossip
 crosspad	ports/misc/crosspad
 crossword	ports/games/crossword
@@ -2440,7 +2437,6 @@ glui		ports/devel/glui
 glunarclock	ports/astro/glunarclock
 gm4		ports/devel/m4
 gma		ports/games/gma
-gmail		ports/mail/gmail
 gmake		ports/devel/gmake
 gman		ports/misc/gman
 gmanedit	ports/editors/gmanedit
@@ -2885,7 +2881,6 @@ hashcash	ports/mail/hashcash
 hashish		ports/security/hashish
 haskell-mode.el	ports/lang/haskell-mode.el
 hatari		ports/emulators/hatari
-hawk		ports/net/hawk
 hayes		ports/multimedia/hayes
 hb		ports/misc/hb
 hbiff		ports/mail/hbiff
@@ -4477,7 +4472,6 @@ libgtk-java	ports/x11-toolkits/libgtk-java
 libgtkeditor	ports/x11-toolkits/libgtkeditor
 libgtkhtml	ports/www/libgtkhtml
 libgtop2	ports/devel/libgtop2
-libh		ports/misc/libh
 libhash		ports/devel/libhash
 libhoard	ports/devel/libhoard
 libhome		ports/misc/libhome
@@ -5838,7 +5832,6 @@ openoffice-2.0-devel	ports/editors/openoffice-2.0-devel
 openproducer	ports/graphics/openproducer
 openquicktime	ports/multimedia/openquicktime
 openradius	ports/net/openradius
-openreg		ports/net/openreg
 openrm		ports/graphics/openrm
 opensc		ports/security/opensc
 opensc-esteid	ports/security/opensc-esteid
@@ -8237,7 +8230,6 @@ qslim		ports/graphics/qslim
 qssl		ports/devel/qssl
 qstat		ports/games/qstat
 qt-bluecurve-theme	ports/x11-toolkits/qt-bluecurve-theme
-qt-designer	ports/devel/qt-designer
 qt-ibase-plugin	ports/databases/qt-ibase-plugin
 qt-mysql-plugin	ports/databases/qt-mysql-plugin
 qt-odbc-plugin	ports/databases/qt-odbc-plugin
@@ -9752,7 +9744,6 @@ uemacs		ports/editors/uemacs
 uf-view		ports/misc/uf-view
 ufmcontrol-i18n	ports/audio/ufmcontrol-i18n
 uhexen		ports/games/uhexen
-uisp		ports/devel/uisp
 uk-aspell	ports/ukrainian/aspell
 uk-gd		ports/ukrainian/gd
 uk-iceb		ports/ukrainian/iceb
@@ -10035,7 +10026,6 @@ webstats	ports/www/webstats
 webstone	ports/www/webstone
 webstone-ssl	ports/www/webstone-ssl
 weechat		ports/irc/weechat
-weedns_sc	ports/dns/weedns_sc
 weewm		ports/x11-wm/weewm
 wesnoth		ports/games/wesnoth
 wfb2sql		ports/databases/wfb2sql
