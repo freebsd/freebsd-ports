@@ -14,6 +14,8 @@ MAINTAINER=	keichii@iteration.net
 
 PREFIX=		${LOCALBASE}/
 
+USE_GMAKE=	yes
+
 MAN1=		txt2pdbdoc.1 pdbtxt2html.1 html2pdbtxt.1
 MAN4=		pdb.4 doc.4
 
