@@ -22,6 +22,7 @@ www/data.default/phpPgAdmin/footer.inc.php
 www/data.default/phpPgAdmin/french.inc.php
 www/data.default/phpPgAdmin/func_edit.php
 www/data.default/phpPgAdmin/func_properties.php
+www/data.default/phpPgAdmin/german.inc.php
 www/data.default/phpPgAdmin/grp_admin.php
 www/data.default/phpPgAdmin/header.inc.php
 www/data.default/phpPgAdmin/images/.cvsignore
