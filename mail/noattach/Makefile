@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	noattach
-PORTVERSION=	1.0beta12
+PORTVERSION=	1.0
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.rhnet.is/pub/noattach/
 
@@ -17,6 +17,7 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libmilter.a:${PORTSDIR}/mail/sendmail
 CFLAGS+=	${PTHREAD_CFLAGS:S=""==}
 FLAGS+=		${PTHREAD_LIBS}
 GNU_CONFIGURE=	yes
+MAN8=		noattach.8
 DOCSFILES=	AUTHORS THANKS COPYING INSTALL NEWS README TODO ChangeLog
 SAMPLEFILES=	README noattach.patterns noattach.patterns.johncon
 .if defined(SENDMAIL_WITH_LDAP)
@@ -43,6 +44,7 @@ do-install:
 		${PREFIX}/etc/rc.d/noattach.sh.sample
 	${INSTALL_DATA} ${WRKSRC}/examples/noattach.patterns \
 		 ${PREFIX}/etc/noattach.patterns-dist
+	${INSTALL_MAN} ${WRKSRC}/doc/noattach.8 ${PREFIX}/man/man8/
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${MKDIR} ${EXAMPLESDIR}

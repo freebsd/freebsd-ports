@@ -4,7 +4,7 @@ matches one of the regular expressions in a given pattern file and rejects
 those emails that match.
 Filenames are rfc2047 or rfc2231 decoded if needed.
 
-This program needs sendmail version 8.12.1 or newer to be compiled with
-libsm and libmilter.
+This program needs sendmail version 8.12.2 or newer to be compiled with
+libmilter.                                                             
 
 WWW: http://freshmeat.net/projects/noattach/
