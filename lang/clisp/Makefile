@@ -30,7 +30,7 @@ BUILD_DIRNAME=${CONFIGURE_TARGET}
 
 # These came from clisp-2.27's "configure" on my 4.1.1-R system.
 MAKEMAKE_ARGS=--prefix=${PREFIX} --with-readline --with-gettext \
-	--with-dynamic-ffi
+	--with-dynamic-ffi --with-module=regexp --with-export-syscalls
 
 # The post-install target uses these to fix permissions.
 DATA_PATHS=${PREFIX}/lib/clisp ${PREFIX}/share/doc/clisp \

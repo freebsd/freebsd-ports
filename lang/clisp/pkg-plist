@@ -28,6 +28,10 @@ lib/clisp/full/lispinit.mem
 lib/clisp/full/makevars
 lib/clisp/full/modules.h
 lib/clisp/full/modules.o
+lib/clisp/full/regex.o
+lib/clisp/full/regexi.o
+lib/clisp/full/regexp.dvi
+lib/clisp/full/regexp.o
 lib/clisp/linkkit/clisp.h
 lib/clisp/linkkit/modules.c
 lib/clisp/linkkit/modules.d
