@@ -6,19 +6,20 @@
 # $FreeBSD$
 #
 
-PORTNAME=	ncftp3
-PORTVERSION=	3.0.3
+PORTNAME=	ncftp
+PORTVERSION=	3.0.4
 PORTREVISION=	0
 CATEGORIES=	ftp ipv6
 MASTER_SITES=	ftp://ftp.ncftp.com/ncftp/
 DISTNAME=	ncftp-${PORTVERSION}-src
 
 PATCH_SITES=	ftp://ftp.kame.net/pub/kame/misc/
-PATCHFILES=	ncftp-303-v6-20010421.diff.gz
+PATCHFILES=	ncftp-304-v6-20011102.diff.gz
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	obrien@FreeBSD.org
 
+LATEST_LINK=	ncftp3
 WRKSRC=		${WRKDIR}/${DISTNAME:S/-src//}
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
