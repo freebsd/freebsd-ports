@@ -14,7 +14,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}x
 MAINTAINER=	tiamat@comset.net
 COMMENT=	An OpenGL arcade space shoot-em-up with interesting physics
 
-LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2
+LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
+		freetype.9:${PORTSDIR}/print/freetype2
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
