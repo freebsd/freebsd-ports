@@ -1,5 +1,5 @@
---- configure.orig	Mon Mar 21 15:43:36 1994
-+++ configure	Fri Oct 11 13:14:59 1996
+--- configure.orig	Mon Mar 21 16:43:36 1994
++++ configure	Fri Dec 11 20:36:18 1998
 @@ -165,7 +165,7 @@
      ANAME=Mftp
      TYPE="-DMOTIF"
@@ -18,3 +18,12 @@
  EOF
    if xmkmf >/dev/null 2>/dev/null && test -f Makefile; then
      eval `make acfindx`
+@@ -830,7 +830,7 @@
+ # Do we have the Xmu library.
+ #
+ if test -f "${x_libraries}/libXmu.a"; then
+-    LIBSX="$LIBSX -lXmu"
++    LIBSX="$LIBSX -lXmu -lSM -lICE"
+ else
+     if test "x${HP_X11}" != "x" &&
+        test -f "${x_libraries}/${HP_X11}/libXmu.a" ; then
