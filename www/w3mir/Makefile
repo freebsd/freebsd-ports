@@ -3,7 +3,7 @@
 # Date created:                         9 May 1998
 # Whom:                                 ache
 #
-# $Id: Makefile,v 1.5 1998/05/09 16:57:39 hoek Exp $
+# $Id: Makefile,v 1.6 1998/07/09 18:32:33 ache Exp $
 #
 
 DISTNAME=       w3mir-1.0.3
@@ -12,7 +12,7 @@ MASTER_SITES=   http://www.math.uio.no/~janl/w3mir/
 
 MAINTAINER=     ache@freebsd.org
 
-BUILD_DEPENDS=	${PREFIX}/lib/perl5/site_perl/LWP.pm:${PORTSDIR}/www/p5-libwww
+BUILD_DEPENDS=	${PREFIX}/lib/perl5/site_perl/${PERL_VER}/LWP.pm:${PORTSDIR}/www/p5-libwww
 
 USE_PERL5=	Yes
 
