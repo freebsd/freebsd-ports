@@ -46,6 +46,7 @@
     SUBDIR += mkhybrid
     SUBDIR += mkhybrid12
     SUBDIR += mkisofs
+    SUBDIR += muse
     SUBDIR += no-login
     SUBDIR += npadmin
     SUBDIR += obliterate
