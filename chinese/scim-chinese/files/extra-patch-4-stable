@@ -1,0 +1,10 @@
+--- src/scim_special_table.cpp.orig	Wed Aug  4 20:10:57 2004
++++ src/scim_special_table.cpp	Wed Aug  4 20:11:13 2004
+@@ -23,6 +23,7 @@
+ #include <time.h>
+ #include <scim.h>
+ #include "scim_special_table.h"
++#include <cstdio>
+ 
+ static inline String
+ _trim_blank (const String &str)
