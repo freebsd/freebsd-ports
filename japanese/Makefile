@@ -38,6 +38,8 @@
     SUBDIR += chimera
     SUBDIR += csrd
     SUBDIR += dbskkd-cdb
+    SUBDIR += ddskk
+    SUBDIR += ddskk-emacs20
     SUBDIR += deepforest
     SUBDIR += devil-fpw
     SUBDIR += diclookup-emacs20
