@@ -5153,6 +5153,7 @@ p5-Date-Roman	ports/devel/p5-Date-Roman
 p5-Date-Simple	ports/devel/p5-Date-Simple
 p5-DateConvert	ports/devel/p5-DateConvert
 p5-DateTime	ports/devel/p5-DateTime
+p5-DateTime-Calendar-Christian	ports/devel/p5-DateTime-Calendar-Christian
 p5-DateTime-Calendar-Julian	ports/devel/p5-DateTime-Calendar-Julian
 p5-DateTime-LeapSecond	ports/devel/p5-DateTime-LeapSecond
 p5-DateTime-Precise	ports/devel/p5-DateTime-Precise
