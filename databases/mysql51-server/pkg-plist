@@ -37,6 +37,7 @@ lib/mysql/libmystrings.a
 lib/mysql/libmysys.a
 lib/mysql/libnisam.a
 libexec/mysqld
+share/doc/mysql/Flags/argentina.gif
 share/doc/mysql/Flags/australia.gif
 share/doc/mysql/Flags/austria.gif
 share/doc/mysql/Flags/brazil.gif
