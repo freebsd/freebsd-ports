@@ -1,5 +1,5 @@
---- Makefile.orig	Sun Dec 17 00:44:10 2000
-+++ Makefile	Wed Jan 10 03:45:22 2001
+--- Makefile.orig	Sat Dec 16 16:44:10 2000
++++ Makefile	Fri Jan 12 19:12:32 2001
 @@ -8,7 +8,7 @@
  CXXFLAGS=-Wall -O2 $(SOLARIS_TYPECASTED_X11_HEADERS)
  endif
@@ -9,6 +9,21 @@
  # -ggdb
  
  export CXXFLAGS LOCALEDIR
+@@ -21,10 +21,10 @@
+ endif
+ 
+ LOCALEDIR=$(DEST)/share/locale
+-PTHREAD=-lpthread
+-GTKCONFIG=gtk-config
+-GLIBCONFIG=glib-config
+-MAKE=make
++PTHREAD?=-lpthread
++GTKCONFIG?=gtk-config
++GLIBCONFIG?=glib-config
++MAKE?=make
+ 
+ #next strings were added for BSD support
+ ifeq ($(OSTYPE),BSD)
 @@ -39,8 +39,8 @@
  MAKE=gmake
  endif
