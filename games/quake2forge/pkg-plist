@@ -7,8 +7,8 @@ bin/quake2
 %%SDLGL:%%lib/quake2/ref_sdlgl.la
 %%GL:%%lib/quake2/ref_glx.so
 %%GL:%%lib/quake2/ref_glx.la
-%%GL:%%lib/quake2/ref_tdfx.so
-%%GL:%%lib/quake2/ref_tdfx.la
+%%SVGA:%%%%GL:%%lib/quake2/ref_tdfx.so
+%%SVGA:%%%%GL:%%lib/quake2/ref_tdfx.la
 lib/quake2/ref_softx.so
 lib/quake2/ref_softx.la
 lib/quake2/baseq2/game.so
