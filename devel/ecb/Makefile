@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ecb
-PORTVERSION=	2.27
+PORTVERSION=	2.30
 CATEGORIES=	devel elisp
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	ecb
@@ -48,6 +48,10 @@ PLIST_SUB+=	ICONS=""
 .endif
 
 INFO=		ecb
+
+.if !defined(NOPORTDOCS)
+PORTDOCS=	NEWS README RELEASE_NOTES
+.endif
 
 pre-everything::
 .if !defined(WITHOUT_ICONS)
@@ -91,7 +95,7 @@ do-install:
 
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-.for i in NEWS README RELEASE_NOTES
+.for i in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
 .endfor
 .endif
