@@ -1,19 +1,22 @@
-*** ./sequencer/src/Record_LINUX.c.orig	Mon Aug  5 00:08:18 1996
---- ./sequencer/src/Record_LINUX.c	Mon Aug  5 00:08:33 1996
+*** Makefile.FreeBSD.orig	Wed Sep 11 06:04:21 1996
+--- Makefile.FreeBSD	Thu Aug 28 15:53:28 1997
 ***************
-*** 24,30 ****
-  #undef POSIX_PLEASE
-  #undef _POSIX_SOURCE
+*** 265,270 ****
+--- 265,281 ----
+  		( $(EXPORTATION) ; cd $(ROSEGARDEN)/topbox/src ; \
+  		  $(MAKE) depend )
   
-! #include <sys/soundcard.h>
-  #include <sys/ioctl.h>
-  #include <errno.h>
-  
---- 24,30 ----
-  #undef POSIX_PLEASE
-  #undef _POSIX_SOURCE
-  
-! #include <machine/soundcard.h>
-  #include <sys/ioctl.h>
-  #include <errno.h>
-  
++ install:
++ 		$(MKDIR) $(PREFIX)/lib/rosegarden
++ 		$(MKDIR) $(PREFIX)/lib/rosegarden/music
++ 		$(INSTALL_PROGRAM) ./bin/rosegarden $(PREFIX)/bin
++ 		$(INSTALL_PROGRAM) ./bin/editor $(PREFIX)/lib/rosegarden
++ 		$(INSTALL_PROGRAM) ./bin/sequencer $(PREFIX)/lib/rosegarden
++ 		$(INSTALL_DATA) ./common/help/* $(PREFIX)/lib/rosegarden
++ 		$(INSTALL_DATA) ./common/synth-patches/std.sb $(PREFIX)/lib/rosegarden
++ 		$(INSTALL_DATA) ./common/music/*.rose $(PREFIX)/lib/rosegarden/music
++ 		$(INSTALL_DATA) Rosegarden $(X11BASE)/lib/X11/app-defaults/
++ 
+  clean:
+  		( $(EXPORTATION) ; cd $(ROSEGARDEN)/lists/src ; \
+  		  $(MAKE) clean )
