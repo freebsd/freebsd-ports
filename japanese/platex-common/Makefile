@@ -3,7 +3,7 @@
 # Date created:		5 Nov 1995
 # Whom:			Hideaki Ohmon <ohmon@sfc.keio.ac.jp>
 #
-# $Id: Makefile,v 1.15 1997/04/30 03:18:03 asami Exp $
+# $Id: Makefile,v 1.16 1997/09/14 21:35:44 max Exp $
 #
 
 DISTNAME=	platex2e
@@ -15,6 +15,7 @@ DISTFILES=	base-9612.tar.gz ecfonts-1.0.tar.gz
 
 MAINTAINER=	max@FreeBSD.ORG
 
+BROKEN=		"This port is out of date and must be modified to use the latest pTeX"
 BUILD_DEPENDS=  ptex:${PORTSDIR}/japanese/ptex2
 RUN_DEPENDS=    ptex:${PORTSDIR}/japanese/ptex2
 
