@@ -7,12 +7,15 @@
 #
 
 PORTNAME=	rsync
-PORTVERSION=	2.6.0
+PORTVERSION=	2.6.1
 CATEGORIES=	net ipv6
-MASTER_SITES=	ftp://samba.anu.edu.au/pub/rsync/  \
-		ftp://sunsite.auc.dk/pub/unix/rsync/  \
-		ftp://ftp.sunet.se/pub/unix/admin/rsync/  \
-		ftp://ftp.fu-berlin.de/pub/unix/network/rsync/
+MASTER_SITES=	http://rsync.samba.org/ftp/%SUBDIR%/ \
+		ftp://rsync.samba.org/pub/%SUBDIR%/ \
+		ftp://samba.anu.edu.au/pub/%SUBDIR%/  \
+		ftp://sunsite.auc.dk/pub/unix/%SUBDIR%/  \
+		ftp://ftp.sunet.se/pub/unix/admin/%SUBDIR%/  \
+		ftp://ftp.fu-berlin.de/pub/unix/network/%SUBDIR%/
+MASTER_SITE_SUBDIR=	rsync
 
 MAINTAINER=	eik@FreeBSD.org
 COMMENT=	A network file distribution/synchronization utility
@@ -21,9 +24,11 @@ COMMENT=	A network file distribution/synchronization utility
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
 .endif
 
+USE_RC_SUBR=	yes
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-debug
+CONFIGURE_ARGS=	--disable-debug \
+		--with-rsyncd-conf=${PREFIX}/etc/rsyncd.conf
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 .if defined(WITH_POPT_PORT)
@@ -38,12 +43,6 @@ PORTDOCS=	NEWS README csprotocol.txt tech_report.tex
 .endif
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500038
-RC_SUBR?=	/etc/rc.subr
-.else
-USE_RC_SUBR=	yes
-.endif
 
 SED_SCRIPT+=	-e 's,%%PREFIX%%,${PREFIX},g' \
 		-e 's,%%RC_SUBR%%,${RC_SUBR},g'
@@ -60,10 +59,6 @@ CONFIGURE_ARGS+=	--with-rsh=rsh
 CONFIGURE_ARGS+=	--enable-ipv6
 .else
 CONFIGURE_ARGS+=	--disable-ipv6
-.endif
-
-.if ${OSVERSION} >= 500043
-EXTRA_PATCHES=	${FILESDIR}/extra-patch-socket.c
 .endif
 
 MAN1=		rsync.1
@@ -88,7 +83,7 @@ post-build:
 post-install:
 	@${STRIP_CMD} ${PREFIX}/bin/rsync
 	@${INSTALL_DATA} ${FILESDIR}/rsyncd.conf.sample ${PREFIX}/etc/
-	@[ -f ${PREFIX}/etc/rsyncd.conf ] || cp ${PREFIX}/etc/rsyncd.conf.sample ${PREFIX}/etc/rsyncd.conf
+	@[ -f ${PREFIX}/etc/rsyncd.conf ] || ${CP} ${PREFIX}/etc/rsyncd.conf.sample ${PREFIX}/etc/rsyncd.conf
 	@${INSTALL_SCRIPT} ${WRKDIR}/rsyncd.sh ${PREFIX}/etc/rc.d/
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
