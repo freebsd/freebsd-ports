@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.simon.org.ua/ipa/
 
 MAINTAINER=	simon@simon.org.ua
 
+NO_PACKAGE=	"Needs to be built uniquely for each site"
 ALL_TARGET=	FreeBSD
 
 MAN5=		ipa.5 ipa.conf.5
