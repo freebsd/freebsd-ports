@@ -1,0 +1,18 @@
+
+Sced is a program for creating 3d scenes, then exporting them to a wide
+variety of rendering programs. Programs supported are:
+ POVray, Rayshade, any VRML browser, anything that reads Pixar's RIB
+ format, and Radiance. Plus a couple of local formats, for me.
+
+Sced uses constraints to allow for the accurate placement of
+objects, and provides a maintenance system for keeping this
+constraints satisfied as the scene is modified.
+
+Getting it:
+Sced is available from:
+  http://http.cs.berkeley.edu/~schenney/sced/sced.html
+  ftp://ftp.cs.su.oz.au/stephen/sced
+  ftp://ftp.povray.org/pub/pov/modellers/sced (soon)
+The first page is also the sced home page.
+
+-Julian Assange (proff@iq.org)
