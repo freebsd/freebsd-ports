@@ -25,23 +25,24 @@ BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/devel/omniORB:patch
 CONFIGURE_WRKSRC=	${WRKSRC}/build
 BUILD_WRKSRC=	${CONFIGURE_WRKSRC}
 INSTALL_WRKSRC=	${CONFIGURE_WRKSRC}
-OMNIORB_WRKSRC!=	cd $(.CURDIR)/../omniORB && ${MAKE} -V WRKSRC
+OMNIORB_WRKSRC!=	cd ${.CURDIR}/../omniORB && ${MAKE} -V WRKSRC
 
 USE_PYTHON=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 MAKEFILE=	GNUmakefile
+INSTALLS_SHLIB=	yes
 
 CONFIGURE_SCRIPT=	../configure
-CONFIGURE_ENV+= CC=${CC} CFLAGS="${CFLAGS}" CXX=${CXX} CXXFLAGS="${CXXFLAGS}" \
+CONFIGURE_ENV+=	CC=${CC} CFLAGS="${CFLAGS}" CXX=${CXX} CXXFLAGS="${CXXFLAGS}" \
 		CPP=${CPP} PYTHON=${PYTHON_CMD}
-CONFIGURE_ARGS=	--with-openssl=/usr --with-omniorb=$(LOCALBASE)
+CONFIGURE_ARGS=	--with-openssl=/usr --with-omniorb=${LOCALBASE}
 
 CPIO=		cpio --quiet -pdum
 
 MODULEDIRS=	CosNaming CosNaming__POA omniORB
-DOCDIR=		${PREFIX}/share/doc/omniORBpy
-EGDIR=		${PREFIX}/share/examples/omniORBpy
+DOCSDIR=	${PREFIX}/share/doc/omniORBpy
+EXAMPLESDIR=	${PREFIX}/share/examples/omniORBpy
 
 pre-configure:
 	@ ${MKDIR} ${CONFIGURE_WRKSRC}
@@ -49,14 +50,14 @@ pre-configure:
 
 pre-install:
 .if !defined(NOPORTDOCS)
-	@ ${MKDIR} ${DOCDIR}/html
-	@ ${MKDIR} ${DOCDIR}/tex
-	@ ${INSTALL_DATA} ${WRKSRC}/doc/omniORBpy.* ${DOCDIR}
-	@ ${INSTALL_DATA} ${WRKSRC}/doc/omniORBpy/* ${DOCDIR}/html
-	@ ${INSTALL_DATA} ${WRKSRC}/doc/tex/* ${DOCDIR}/tex
-	@ ${MKDIR} ${EGDIR}
+	@ ${MKDIR} ${DOCSDIR}/html
+	@ ${MKDIR} ${DOCSDIR}/tex
+	@ ${INSTALL_DATA} ${WRKSRC}/doc/omniORBpy.* ${DOCSDIR}
+	@ ${INSTALL_DATA} ${WRKSRC}/doc/omniORBpy/* ${DOCSDIR}/html
+	@ ${INSTALL_DATA} ${WRKSRC}/doc/tex/* ${DOCSDIR}/tex
+	@ ${MKDIR} ${EXAMPLESDIR}
 	@ cd ${WRKSRC}/examples && find . \
-	  | ${CPIO} -R ${SHAREOWN}:${SHAREGRP} ${EGDIR}
+	  | ${CPIO} -R ${SHAREOWN}:${SHAREGRP} ${EXAMPLESDIR}
 .endif
 
 .include <bsd.port.mk>
