@@ -9,7 +9,7 @@ PORTNAME=	gnomemeeting
 PORTVERSION=	0.85.1
 PORTREVISION=	2
 CATEGORIES=	net gnome
-MASTER_SITES=	http://www.gnomemeeting.org/downloads/latest/sources/
+MASTER_SITES=	http://www.gnomemeeting.org/downloads/0.85/sources/
 DISTNAME=	GnomeMeeting-0.85.1
 
 MAINTAINER=	roger@FreeBSD.org
