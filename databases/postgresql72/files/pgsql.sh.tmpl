@@ -1,0 +1,40 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# For postmaster startup options, edit $PGDATA/postgresql.conf
+
+PREFIX=%%PREFIX%%
+PGBIN=${PREFIX}/bin
+
+case $1 in
+start)
+    [ -d ${PREFIX}/lib ] && /sbin/ldconfig -m ${PREFIX}/lib
+    touch /var/log/pgsql
+    chmod 600 /var/log/pgsql
+    chown pgsql:pgsql /var/log/pgsql
+    [ -x ${PGBIN}/pg_ctl ] && {
+	su -l pgsql -c \
+	    '[ -d ${PGDATA} ] && exec %%PREFIX%%/bin/pg_ctl start -s -w -l /var/log/pgsql'
+	echo -n ' pgsql'
+    }
+    ;;
+
+stop)
+    [ -x ${PGBIN}/pg_ctl ] && {
+	su -l pgsql -c 'exec %%PREFIX%%/bin/pg_ctl stop -s -m fast'
+	echo -n ' pgsql'
+    }
+    ;;
+
+status)
+    [ -x ${PGBIN}/pg_ctl ] && {
+	exec su -l pgsql -c 'exec %%PREFIX%%/bin/pg_ctl status'
+    }
+    ;;
+
+*)
+    echo "usage: `basename $0` {start|stop|status}" >&2
+    exit 64
+    ;;
+esac
