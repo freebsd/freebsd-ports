@@ -18,7 +18,7 @@ NO_BUILD=	yes
 PKGMESSAGE=	${WRKDIR}/pkg-message
 INSTDIR?=	${PORTNAME}-${PORTVERSION}
 PLIST_SUB=	INSTDIR=${INSTDIR}
-BROKEN=		"CSS probem."
+FORBIDDEN=	"due to cross-site scripting vulnerabilities"
 
 do-install:
 	@ cd ${WRKSRC} && INSTDIR=${PREFIX}/${INSTDIR} ${PYTHON_CMD} viewcvs-install
