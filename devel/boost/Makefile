@@ -32,8 +32,7 @@ OPTIONS=	VERBOSE_BUILD	"Show compiler messages"	off \
 
 UNIQ=		/usr/bin/uniq
 BOOST_LIBS=	date_time filesystem prg_exec_monitor program_options \
-		python regex signals test_exec_monitor thread \
-		unit_test_framework
+		regex signals test_exec_monitor unit_test_framework
 BOOST_SHARED_LIB_VER=	2
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
@@ -61,6 +60,7 @@ MAKE_ENV+=	PYTHON_ROOT="${LOCALBASE}"\
 		PYTHON_VERSION="${PYTHON_VERSION}"\
 		PYTHON_INCLUDES="${PYTHON_INCLUDEDIR}"\
 		PYTHON_LIB_PATH="${PYTHON_LIBDIR}"
+BOOST_LIBS+=	python
 .if defined(WITH_PYSTE)
 RUN_DEPENDS+=	gccxml:${PORTSDIR}/devel/gccxml \
 		${PYTHON_SITELIBDIR}/elementtree/ElementTree.py:${PORTSDIR}/devel/py-elementtree
@@ -129,6 +129,7 @@ PLIST_SUB+=	BOOST_THREADS="@comment "
 .else
 BJAM_BUILD+=	<threading>multi
 PLIST_SUB+=	BOOST_THREADS=""
+BOOST_LIBS+=	thread
 .endif
 
 .if defined (WITHOUT_OPTIMIZED_CFLAGS)
