@@ -1,0 +1,9 @@
+bin/xestic
+bin/estic.res
+etc/pbx/estic.ini.generic_example
+etc/pbx/estic.ini.freebsd_example
+etc/pbx/aliases.example
+var/log/pbx/debug 
+etc/pbx/config
+share/doc/estic/README
+share/doc/estic/estic.doc

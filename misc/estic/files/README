@@ -1,0 +1,301 @@
+.nf \" This file gets installed as .../man/man1/estic_freebsd.1
+
+		NOTES ON ESTIC IN FREEBSD (/usr/ports/comms/estic/)
+		By Julian Stacey <jhs@freebsd.org> November 1996
+		 
+INDEX
+	1	EXAMPLE CONFIG FILE
+	2	C++ & FreeBSD VERSIONS
+	3	COPYING & USAGE RIGHTS
+	4	WEB REFERENCES FOR ISTEC PROTOCOL etc
+	5	SERIAL DC HANDSHAKING
+	6	PEOPLE WHO MAY BE INTERESTED IN THIS PORT
+	7	BUGS & PROBLEMS
+--------------------------------------------------------------------------------
+1   Example Config File
+=======================
+For /etc/pbx/estic.ini
+	[ESTIC]
+	SettingsFile    = "~/.estic-rc"
+	[Port]
+	PortName        = "/dev/istec"
+	[Printing]
+	Headline        = "Phone Bill"
+	[Windows]
+	ShowDateTime    = Minutes
+	ShowInfoOnStartup = no
+	[Call-Logs]
+	LogFile1 = "/var/log/pbx/%Y.%m
+	LogZeroCostCalls        = yes
+	[Alias]
+	AliasFile       = "/home/your_name/.estic-aliases"
+	AutoReadAliases = on            ; on/off/yes/no/1/0 mvglich
+	[Debug]
+	WaitAfterCall   = 500
+	DiagModeUpdate  = auto
+	DebugLog        = "/var/log/pbx/debug"
+	[Firmware]
+--------------------------------------------------------------------------------
+2   C++ & FreeBSD Versions
+==========================
+This package uses C++, which comes standard with FreeBSD.
+	uz@ says it's ok with FreeBSD 2.1.0 with g++ 2.6.3
+	jhs@ confirms it runs with src/ current (Oct 8 20:36 src-cur.2289.gz)
+	with c++ --version 2.6.3
+--------------------------------------------------------------------------------
+3   Copying & Usage Rights
+==========================
+Ref. Makefile NO_CDROM & NO_PACKAGE...
+
+There are somewhat restrictive conditions (in German) in the sources,
+which I've duplicated & translated ...
+
+  {--------
+  * Generic Original by "Ullrich von Bassewitz" <uz@ibb.schwaben.com>
+  + Generic Translation by "Julian H. Stacey"	<jhs@FreeBSD.org>
+  
+  Die ESTIC-Sourcen bzw. die ESTIC Binaries dürfen unter folgenden
+  Bedingungen weitergegeben werden:
+  The ESTIC sources & binaries may be distributed under the following conditions
+  
+    * Die Weitergabe geschieht im kompletten Paket mit Dokumentation.
+    + Distribution as complete package including documentation.
+  
+    * Die Weitergabe geschieht kostenlos. Dies bedeutet insbesondere,
+      daß ESTIC nicht ohne meine vorherige, schriftliche Genehmigung auf
+      CD-ROMS vertrieben werden darf, genauso sind Mailboxen/FTP-Server
+      ausgeschlossen, bei denen der Zugang zu den Daten nicht frei für
+      jedermann ist.
+    + Distribution to be free of charge, This means in particular,
+      that ESTIC may not without my prior written permission be sold on CD-ROMs,
+      neither may it be provided on mailbox systems or FTP servers that only
+      offer restricted non public access.
+  
+    * Es dürfen keine geänderten Sourcen weitergegeben werden. Die Weitergabe
+      von geänderten Binaries, sowie diffs zu den Sourcen ist hingegen
+      zulässig. Das soll keine Schikane sein, sondern nur verhindern, daß
+      mehrere verschiedene Versionen der Sourcen auf dem Netz verfügbar
+      sind, was zwangslaeufig mit unnoetigem Aufwand fuer mich verbunden ist.
+    + No changed sources may be distributed.  The distribution of changed
+      binaries & diffs to the sources is however allowed.
+     This is not intended as chicanery, but to hinder multiple availability
+     of multiple versions of source on the net, which would create excess work
+     for me.
+  
+    * Binaries, die durch Änderungen an den Sourcen erstellt wurden
+      unterliegen weiterhin den hier angegebenen Bedingungen, d.h. es ist
+      keine kommerzielle Verwertung oder ein kommerzieller Vertrieb ohne
+      meine vorherige, schriftliche(!) Zustimmung erlaubt.
+    + Binaries produced from changed sources come under these conditions,
+     .... no commercial value added ... sales ... allowed, without my prior
+     written agreement.
+  
+  Ansonsten bin ich durchaus gesprächsbereit, d.h. wer aus irgendwelchen
+  Gründen gegen eine der hier angegebenen Bestimmungen verstossen will, der
+  kann sich gerne an mich wenden.
+  ... I'm open to discuss proposed breaches of these requirements.
+  --------}
+
+  So I wrote & got a release...
+
+  {--------
+  From: uz@wuschel.ibb.schwaben.com (Ullrich von Bassewitz)
+  Subject: Re: FreeBSD Ports wrapper for Estic-1.30
+  To: jhs@freebsd.org
+  Date: Mon, 23 Sep 1996 19:15:16 +0100 (MET DST)
+  
+  > May we have your permission to put your unchanged generic distribution
+  > sources (ie currently estic-1.30.zip on the FreeBSD CD-ROMs please ?
+  > (FreeBSD is a non profit org. like X inc & FSF,
+  > but Walnut Creek (who provide a free host for our co-ordination,
+  > at http://www.freebsd.org 
+  > (& others occasionally) take snaps & release of FreeBSD
+  > & provide the whole sources + binaries of all src + ports
+  
+  No problem. You are allowed to do so. The paragraph you cited is thought to
+  help control who earns money selling my code, but I've no problems with that
+  in the case of freebsd cdroms.
+  --------}
+
+  {--------
+  From: uz@wuschel.ibb.schwaben.com (Ullrich von Bassewitz)
+  Subject: Re: istec 1008
+  To: jhs@freebsd.org
+  Date: Tue, 19 Nov 1996 09:41:14 +0100 (MET)
+  
+  > I lost (or filed obscurely) the earlier permission you gave me,
+  > for FreeBSD to store your sources & a packaged binary on the FreeBSD CD-Roms,
+  > maybe you could give me some words again please, which I'll embed straight
+  > in the wrapper & not loose this time ;-)
+  
+  I will change that in the next version anyway. So, you may distribute ESTIC
+  as you like, as long as you leave the archive files intact.
+  --------}
+
+--------------------------------------------------------------------------------
+4   References
+==============
+http://africa.geomic.uni-oldenburg.de/~joey/Linux/istec-befehle
+	Istec 1008 intern
+	Da das Interesse gro_ ist (meines auch), hier der etwas
+	aufbereitete Text. Vielen vielen Dank an Hergen Lehmann, der sich die  
+	M|he des Reverse-Engineering gemacht hat. <p>
+	From: HERGEN_LEHMANN@TBX.BerliNet.DE (Hergen Lehmann)
+
+http://www.schwaben.de/home/uz/istecprot.html
+	Urspr&uuml;ngliche Version des Textes von Hergen Lehmann.
+	Kleinere Erweiterungen/Korrekturen von Ullrich von Bassewitz.
+	Erweiterungen der Version 1.93/1.95 von Paul Barnard (Emmerich),
+	deutsche &Uuml;bersetzung von Ullrich von Bassewitz.
+	Weitere Tips und Hinweise von Norbert Richter (Autor von PMISTEC).
+
+http://www.symmetrix.ch/Public/janti/isdnfaq.html
+	Author: c.dura@atlantis.cl.sub.de
+	Frequently Asked Questions zu ISDN
+	Dieses FAQ versteht sich also Informationsquelle fuer ISDN Einsteiger
+
+http://africa.geomic.uni-oldenburg.de/~joey/Linux/isdn-istec-befehle.html
+	<h1>ISTEC 1008 intern</h1>
+	Da das Interesse gro&szlig; ist (meines auch), hier der etwas
+	aufbereitete Text. Vielen vielen Dank an <a 
+	href="mailto:Hergen_Lehmann@TBX.BerliNet.DE">Hergen Lehmann</a>, 
+	der sich die
+	M&uuml;he des Reverse-Engineering gemacht hat. <p>
+
+http://www.snafu.de/~drebert/istec.html
+	<HTML><HEAD><TITLE>Istec Firmenware</TITLE></HEAD>^M
+
+http://www.emmerich.com/telekom/links.htm
+	<title>Links zu Interessanten Pages</title>
+
+http://www.bestweb.com/intfun/jrs/euroinfo.html
+	EuroISDN Telekom-Tarife+Technik
+--------------------------------------------------------------------------------
+5	Serial DC Handshaking
+=============================
+
+From: AmIstec (another package) / CE-Istec.LiesMich
+  WICHTIGER HINWEIS ZU DEN NEUEN ISTEC-ANLAGEN MIT CE-ZEICHEN!!
+  =============================================================
+	 
+  Die neuen Istec-Anlagen mit CE-Zeichen funktionieren leider
+  nicht mehr ohne weiteres an Nicht-Dosen, weil Emmerich die
+  serielle Schnittstelle galvanisch von der Anlage entkoppeln
+  mu_te. Die f|r die Daten|bertragung erforderlichen Spannungen
+  werden daher einfach von von den DTR- und RTS-Leitungen  
+  bezogen. Dazu wird bei der Originalsoftware DTR auf logisch 1
+  und RTS auf logisch 0 gesetzt um so die negative bzw. positive
+  Spannung der Istec zur Verf|gung zu stellen.
+
+  Leider ist das gezielte Setzen einzelner Signalleitungen im
+  serial.device des Amiga nicht vorgesehen. Hier werden immer
+  beide Leitungen auf logisch 1 gesetzt.
+
+  Um die Spannungsversorgung trotzdem zu ermvglichen, kann man
+  einen Schnittstellenadapter basteln, der die erforderlichen
+  Spannungen von Pin 9 und 10 des Amiga-Ports auf die beiden
+  Signalleitungen umlegt. Nach einiger \berlegung und durch die
+  Mithilfe von Christian Buchner ist es mir aber gelungen zu
+  ermvglichen, da_ mit AmIstec auch die neuen Istec-Anlagen
+  ohne diesen Hardwarezusatz am Amiga betrieben werden kvnnen.
+  Dazu wird die DTR-Leitung direkt |ber die Hardware gesetzt,
+  soda_ die Istec genau das bekommt, was sie erwartet. Dieser
+  Patch wird durch den Tooltype CEPATCH aktiviert bzw. bei
+  einem CLI-Aufruf als Parameter mitgegeben. 
+
+From: uz@wuschel.ibb.schwaben.com (Ullrich von Bassewitz)
+To: jhs@freebsd.org
+Date: Thu, 14 Nov 1996 14:44:52 +0100 (MET)
+
+  Oliver von Bueren <ovb@swissmail.com> ... sent me changes a few days ago. His
+  changes are relative to version 1.40 and they seem to work for him. The only
+  change that was new for me, was a call to DTROff (a function of the serial
+  port class). If this is really needed (and he stated that he checked the
+  pins with a voltmeter), this means that there is an error in the serial
+  module. The DTR pin should be inactive if there is no hardware handshaking
+  enabled as is the case with ESTIC.
+  
+  
+  The only thing that was really new for me was the call to DTROff. I will
+  check the serial module, since this call cures a symptom and not the error
+  itself (but you may use it anyway).
+  
+  If you make any changes (apart from those in Oliver's diffs), I would like
+  to hear from it. I got a few mails from FreeBSD people and I would like to
+  incorporate any changes that make ESTIC work for FreeBSD into the main
+  release. This little work saves me lots of emails :-)
+--------------------------------------------------------------------------------
+6   People who may be interested in this port
+=============================================
+People who may be interested in this port as it evolves:
+	"Ullrich von Bassewitz" <uz@ibb.schwaben.com>,
+	"Oliver von Bueren"	<ovb@swissmail.com>,
+	"Julian H. Stacey"	<jhs@FreeBSD.org>,
+	"Peter Dieth"		<dieth@seicom.net>,
+	"Terry Lambert" 	<terry@cs.weber.edu>,
+	"Christian Kratzer"	<ck@toplink.de>,
+	"Torsten Blum"		<torstenb@tlk.de>,
+	"Greg Lehey"		<grog@lemis.de>,
+	"Robert Eckardt"	<roberte@mep.ruhr-uni-bochum.de>
+
+To give the FreeBSD `powers that be' confidence to commit this wrapper,
+I append a quote: (which can be deleted once the port is committed).
+
+> From: Robert Eckardt <roberte@mep.ruhr-uni-bochum.de>
+> Subject: Re: your mail
+> Date: Thu, 21 Nov 1996 01:51:23 +0100 (MET)
+>
+> ....
+> No, as stated above, it works fine now.
+> Just getting the 1.40 zip-file, applying the ports and changing the
+> config file was sufficient. 
+> Now you have another data point in the sets of working configurations.
+------
+> From: Robert Eckardt <roberte@mep.ruhr-uni-bochum.de>
+> Subject: Re: ESTIC
+> To: uz@ibb.schwaben.com
+> Date: Thu, 21 Nov 1996 10:55:36 +0100 (MET)
+> Cc: roberte@mep.ruhr-uni-bochum.de, jhs@freebsd.org, uz@ibb.schwaben.com
+> 
+> > /usr/X11 is usually a link to /usr/X11R6. I don't know if this is true with
+> > FreeBSD but most Linux distributions have it.
+> 
+> FreeBSD does not have it by default.
+> The X11 dir was changed in many other places in the makefiles, so may
+> be it would be a good idea to change it in the last place too.
+> In fact, one could use perhaps some make-var X11ROOT (don't know what's
+> standard).
+> 
+> Nevertheless, it's a graet port for a very useful program.
+
+--------------------------------------------------------------------------------
+7	Bugs & Problems 
+=======================
+- I have to start it as 	xestic -display :0	else I get
+  Internal error: ScrInit: Cannot open display, file xsrc/console.cc, line 898
+- When it starts I (jhs) get
+	Malloc warning: free(): junk pointer (too high)
+  but after that it runs fine.
+- Alt X does not exit properly.
+- Strange error messages if a file does not exist, 
+	First I get a nice error message:
+		Cannot open the alias file!
+	ESC
+	only then do I get the nasty one I remembered
+		Internal error: Call to abstract method (= 0)
+		file strmable.cc
+		line 46
+	Source shows:
+		void Streamable::Store (Stream&) const
+		{
+	  46	    ABSTRACT ();
+		}
+- Mouse cursor strangely converts to skull & crossbones.
+- Alt X does not exit properly.
+  UZ wrote:
+  > This is usually because of a wrong setting for the modifier keys. ESTIC
+  > uses Mod4 for Alt and Mod3 for Alt-Gr. Unfortunately, there is no standard
+  > modifier key mapping, not even for the x86 unices, which use the same
+  > keyboard layout.
+
+--------------------------------------------------------------------------------
