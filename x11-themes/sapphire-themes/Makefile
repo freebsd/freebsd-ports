@@ -13,6 +13,7 @@ MASTER_SITES=	http://jpj.net/~trevor/${PORTNAME}/
 EXTRACT_SUFX=	.tar
 
 MAINTAINER=	trevor@FreeBSD.org
+COMMENT=	Themes for sapphire
 
 RUN_DEPENDS=	xli:${PORTSDIR}/graphics/xli \
 		xloadimage:${PORTSDIR}/x11/xloadimage \

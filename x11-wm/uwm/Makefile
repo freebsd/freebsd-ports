@@ -14,6 +14,7 @@ MASTER_SITES=	${MASTER_SITE_NETBSD}
 DISTNAME=	X.V11R3uwm
 
 MAINTAINER=	trevor@FreeBSD.org
+COMMENT=	X11R3 window manager
 
 MAN1=		uwm.1
 PLIST=		${WRKDIR}/pkg-plist

@@ -12,6 +12,7 @@ MASTER_SITES=	http://stud.fbi.fh-darmstadt.de/~koenig/pub/
 EXTRACT_SUFX=	.py
 
 MAINTAINER=	trevor@FreeBSD.org
+COMMENT=	Game to challenge short-term memory
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter
 

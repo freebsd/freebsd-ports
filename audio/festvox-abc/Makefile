@@ -15,6 +15,7 @@ DISTNAME=	voice_abc_di-2.0
 DIST_SUBDIR=	festival
 
 MAINTAINER=	trevor@FreeBSD.org
+COMMENT=	Mexican Spanish male voice for Festival speech synthesis system
 
 RUN_DEPENDS=	festival:${.CURDIR}/../festival \
 		${LOCALBASE}/share/festival/lib/ogi_spanish/ogi_span_mx_lts.scm:${.CURDIR}/../festogi-spanish \

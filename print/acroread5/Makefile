@@ -17,6 +17,7 @@ DISTNAME=	linux-506
 DIST_SUBDIR=	acroread
 
 MAINTAINER=	trevor@FreeBSD.org
+COMMENT=	View, distribute and print PDF documents
 
 ONLY_FOR_ARCHS=	i386
 

@@ -11,6 +11,7 @@ CATEGORIES=	x11-wm
 MASTER_SITES=	http://www.red-bean.com/~decklin/aewm/
 
 MAINTAINER=	trevor@FreeBSD.org
+COMMENT=	ICCCM-compliant window manager based on 9wm
 
 ALL_TARGET=	aewm
 GTKCLIENTS=	aemenu-gtk aepanel-gtk

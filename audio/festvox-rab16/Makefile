@@ -16,6 +16,7 @@ DISTNAME=	festvox_rablpc16k
 DIST_SUBDIR=	festival
 
 MAINTAINER=	trevor@FreeBSD.org
+COMMENT=	16 kHz British English male voice for Festival
 
 RUN_DEPENDS=	festival:${.CURDIR}/../festival \
 		${LOCALBASE}/share/festival/lib/dicts/wsj.wp39.poslexR:${.CURDIR}/../festlex-poslex \

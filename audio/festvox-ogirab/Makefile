@@ -15,6 +15,7 @@ DISTNAME=	voice_ogirab_di-2.0
 DIST_SUBDIR=	festival
 
 MAINTAINER=	trevor@FreeBSD.org
+COMMENT=British English male voice for Festival (non-commercial use only)
 
 RUN_DEPENDS=	festival:${.CURDIR}/../festival \
 		${LOCALBASE}/share/festival/lib/dicts/ogi_lex.out:${.CURDIR}/../festlex-ogi

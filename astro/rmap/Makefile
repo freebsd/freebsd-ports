@@ -12,6 +12,7 @@ CATEGORIES=	astro
 MASTER_SITES=	http://www.reza.net/rmap/
 
 MAINTAINER=	trevor@FreeBSD.org
+COMMENT=	Generates images of the Earth centered at a particular location
 
 LIB_DEPENDS=	gd.2:${PORTSDIR}/graphics/gd \
 		gnugetopt.1:${PORTSDIR}/devel/libgnugetopt

@@ -16,6 +16,7 @@ DISTNAME=	festvox_kedlpc8k
 DIST_SUBDIR=	festival
 
 MAINTAINER=	trevor@FreeBSD.org
+COMMENT=	American English male voice, sampled at 8 kHz, for Festival
 
 RUN_DEPENDS=	festival:${.CURDIR}/../festival \
 		${LOCALBASE}/share/festival/lib/dicts/wsj.wp39.poslexR:${.CURDIR}/../festlex-poslex \

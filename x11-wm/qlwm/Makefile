@@ -13,6 +13,7 @@ CATEGORIES=	x11-wm
 MASTER_SITES=	http://www.netcologne.de/~nc-lindenal/qlwm/
 
 MAINTAINER=	trevor@FreeBSD.org
+COMMENT=	Qt-based window manager
 
 DOCDIR=		share/doc/${PORTNAME}
 DOCS=		CHANGES README

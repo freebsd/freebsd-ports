@@ -21,6 +21,7 @@ DISTFILES=	ascii.zip \
 DIST_SUBDIR=	csound
 
 MAINTAINER=	trevor@FreeBSD.org
+COMMENT=	Manuals for Csound
 
 RUN_DEPENDS=	csound:${PORTSDIR}/audio/csound
 

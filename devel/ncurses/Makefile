@@ -12,6 +12,7 @@ MASTER_SITES=		${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	ncurses
 
 MAINTAINER=		trevor@FreeBSD.org
+COMMENT=		Library for terminal-independent, full-screen output
 
 LIB_DEPENDS=		utf-8:${PORTSDIR}/converters/libutf-8
 

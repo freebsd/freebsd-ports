@@ -15,6 +15,7 @@ MASTER_SITES=	ftp://argeas.cs-net.gr/pub/unix/mcrypt/ \
 		ftp://ftp.ntua.gr/pub/security/mcrypt/
 
 MAINTAINER=	trevor@FreeBSD.org
+COMMENT=	Replacement for crypt(1)
 
 BUILD_DEPENDS=	autoconf:${PORTSDIR}/devel/autoconf \
 		automake:${PORTSDIR}/devel/automake

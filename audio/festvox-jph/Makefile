@@ -15,6 +15,7 @@ DISTNAME=	voice_jph_di-2.0
 DIST_SUBDIR=	festival
 
 MAINTAINER=	trevor@FreeBSD.org
+COMMENT=	American English male voice for Festival
 
 RESTRICTED=	no-commercial-use
 

@@ -14,6 +14,7 @@ MASTER_SITES=	http://www.lls.se/~johanb/august/
 DISTNAME=	${PORTNAME}${PORTVERSION}.src
 
 MAINTAINER=	trevor@FreeBSD.org
+COMMENT=	HTML editor for the experienced Web author
 
 RUN_DEPENDS=	weblint:${PORTSDIR}/www/weblint \
 		identify:${PORTSDIR}/graphics/ImageMagick \

@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.linuxlabs.com/software/download/
 EXTRACT_SUFX=	.src.tar.gz
 
 MAINTAINER=	trevor@FreeBSD.org
+COMMENT=	Displays a verse from Yoga Sutras of Patanjali
 
 USE_REINPLACE=	yes
 

@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gecc
 
 MAINTAINER=	trevor@FreeBSD.org
+COMMENT=Group-enabled cluster compiler for cached, distributed compilation
 
 .include <bsd.port.pre.mk>
 .if ${OSVERSION} < 500039

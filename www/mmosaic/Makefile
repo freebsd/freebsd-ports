@@ -16,6 +16,7 @@ MASTER_SITES=	ftp://ftp.enst.fr/pub/mbone/mMosaic/ \
 DISTNAME=	mMosaic-${PORTVERSION}
 
 MAINTAINER=	trevor@FreeBSD.org
+COMMENT=	Web browser based on Mosaic, but with many modernizations
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 

@@ -14,6 +14,7 @@ MASTER_SITES=	ftp://ftp.cs.uu.nl/pub/GNU/LilyPond/v1.3/ \
 		ftp://sca.uwaterloo.ca/pub/lilypond/v1.3/
 
 MAINTAINER=	trevor@FreeBSD.org
+COMMENT=	The GNU music typesetter
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/latex:${PORTSDIR}/print/teTeX
 LIB_DEPENDS=	guile.10:${PORTSDIR}/lang/guile

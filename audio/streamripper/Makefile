@@ -11,6 +11,7 @@ CATEGORIES=	audio
 MASTER_SITES=	http://streamripper.sourceforge.net/dl/
 
 MAINTAINER=	trevor@FreeBSD.org
+COMMENT=	Splits SHOUTcast stream into tracks
 
 GNU_CONFIGURE=	yes
 

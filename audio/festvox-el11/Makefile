@@ -16,6 +16,7 @@ DISTNAME=	festvox_ellpc11k
 DIST_SUBDIR=	festival
 
 MAINTAINER=	trevor@FreeBSD.org
+COMMENT=	Castilian Spanish male voice for Festival
 
 RUN_DEPENDS=	festival:${.CURDIR}/../festival
 

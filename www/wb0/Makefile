@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://atrey.karlin.mff.cuni.cz/pub/local/clock/wb0/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	trevor@FreeBSD.org
+COMMENT=	Web browser for svgalib which can show pictures
 
 RUN_DEPENDS=	lynx:${PORTSDIR}/www/lynx-current
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \

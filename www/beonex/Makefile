@@ -14,6 +14,7 @@ MASTER_SITES=	http://ftp.ibiblio.org/pub/packages/infosystems/WWW/clients/beonex
 DISTNAME=	beonex-comm-${PORTVERSION}-stable-1-source-tarball
 
 MAINTAINER=	trevor@FreeBSD.org
+COMMENT=	Open-source browser, HTML editor, mail and news client
 
 BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip \
 		freetype-config:${PORTSDIR}/print/freetype2

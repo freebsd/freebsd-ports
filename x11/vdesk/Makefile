@@ -11,6 +11,7 @@ CATEGORIES=	x11
 MASTER_SITES=	http://azz.us-lot.org/files/
 
 MAINTAINER=	trevor@FreeBSD.org
+COMMENT=	Command-line utility for setting up and using virtual desktops
 
 PLIST=		${WRKDIR}/pkg-plist
 RESTRICTED=	"no license"

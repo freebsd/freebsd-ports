@@ -15,6 +15,7 @@ DISTNAME=	OGIspanish-2.0
 DIST_SUBDIR=	festival
 
 MAINTAINER=	trevor@FreeBSD.org
+COMMENT=	Mexican Spanish support for Festival
 
 RUN_DEPENDS=	festival:${.CURDIR}/../festival
 

@@ -13,6 +13,7 @@ DISTNAME=	unwindows
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	trevor@FreeBSD.org
+COMMENT=	Magnifying utility which updates continuously
 
 ALL_TARGET=	dynamag
 NO_INSTALL_MANPAGES=	yes

@@ -16,6 +16,7 @@ DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	trevor@FreeBSD.org
+COMMENT=	Animated musical demo for X11
 
 GNU_CONFIGURE=	yes
 ONLY_FOR_ARCHS=	i386

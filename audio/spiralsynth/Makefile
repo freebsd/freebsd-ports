@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.pawfal.org/SpiralSynth/dload/
 DISTNAME=	SpiralSynth-${PORTVERSION}
 
 MAINTAINER=	trevor@FreeBSD.org
+COMMENT=	MIDI-capable synthesizer for X
 
 LIB_DEPENDS=	fltk.1:${PORTSDIR}/x11-toolkits/fltk
 

@@ -11,6 +11,7 @@ CATEGORIES=	devel graphics
 MASTER_SITES=	http://www.akhphd.au.dk/~bertho/cvsgraph/release/
 
 MAINTAINER=	trevor@FreeBSD.org
+COMMENT=	Graph the life story of a file under CVS or RCS
 
 LIB_DEPENDS=	gd.2:${PORTSDIR}/graphics/gd \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \

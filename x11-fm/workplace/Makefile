@@ -16,6 +16,7 @@ PATCH_SITES=	${MASTER_SITES}
 PATCHFILES=	workplace-1.0.a3+tj1.diff.gz
 
 MAINTAINER=	trevor@FreeBSD.org
+COMMENT=	File manager and launcher
 
 GNU_CONFIGURE=	yes
 USE_GNOMENG=	yes

@@ -13,6 +13,7 @@ MASTER_SITES=		${MASTER_SITE_LOCAL} \
 MASTER_SITE_SUBDIR=	jkoshy
 
 MAINTAINER=		trevor@FreeBSD.org
+COMMENT=		Wrapper to ease merging of changes between CVS branches
 
 PLIST=			${WRKDIR}/pkg-plist
 USE_PERL5=		yes

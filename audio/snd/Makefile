@@ -13,6 +13,7 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=		trevor@FreeBSD.org
+COMMENT=		Multitracking sound editor and utilities
 
 LIB_DEPENDS=		gsl.4:${PORTSDIR}/math/gsl \
 			intl.4:${PORTSDIR}/devel/gettext

@@ -14,6 +14,7 @@ EXTRACT_SUFX=
 EXTRACT_ONLY=
 
 MAINTAINER=	trevor@FreeBSD.org
+COMMENT=	Splits a unified diff into pieces which patch one file each
 
 NO_BUILD=	YES
 NO_WRKSUBDIR=	YES

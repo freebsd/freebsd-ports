@@ -15,6 +15,7 @@ DISTNAME=	voice_hvs_di-2.0
 DIST_SUBDIR=	festival
 
 MAINTAINER=	trevor@FreeBSD.org
+COMMENT=	Mexican Spanish female voice for Festival
 
 RESTRICTED=	no-commercial-use
 

@@ -16,6 +16,7 @@ DISTNAME=	festlex_OALD
 DIST_SUBDIR=	festival
 
 MAINTAINER=	trevor@FreeBSD.org
+COMMENT=	Oxford Advanced Learner's pronunciation dictionary for Festival
 
 RUN_DEPENDS=	festival:${.CURDIR}/../festival
 
