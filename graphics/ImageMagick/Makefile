@@ -9,7 +9,6 @@
 DISTNAME=       ImageMagick-4.2.9
 CATEGORIES=	graphics perl5
 MASTER_SITES=	ftp://ftp.wizards.dupont.com/pub/ImageMagick/ \
-		ftp://ftp.cci.fr/pub/unix/gfx/ImageMagick/ \
 		ftp://ftp.u-aizu.ac.jp/pub/graphics/image/ImageMagick/ \
 		ftp://ftp.fifi.org/pub/ImageMagick/ \
 		ftp://gd.tuwien.ac.at/pub/graphics/ImageMagick/ \
