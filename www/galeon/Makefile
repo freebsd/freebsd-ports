@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	galeon
-PORTVERSION=	1.0.3
+PORTVERSION=	1.2.0
 CATEGORIES=	www gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,11 +15,13 @@ MAINTAINER=	gnome@FreeBSD.org
 
 BUILD_DEPENDS=	${X11BASE}/include/mozilla/gtkembedmoz/gtkmozembed.h:${PORTSDIR}/www/mozilla-headers \
 		${X11BASE}/lib/${MOZILLA}/libgtkembedmoz.so:${PORTSDIR}/www/${MOZILLA} \
-		msgfmt-new:${PORTSDIR}/devel/gettext-devel
+		msgfmt-new:${PORTSDIR}/devel/gettext-devel \
+		nautilus:${PORTSDIR}/x11-fm/nautilus
 LIB_DEPENDS=	giconv.2:${PORTSDIR}/converters/libiconv
-RUN_DEPENDS=	${X11BASE}/lib/${MOZILLA}/libgtkembedmoz.so:${PORTSDIR}/www/${MOZILLA}
+RUN_DEPENDS=	${X11BASE}/lib/${MOZILLA}/libgtkembedmoz.so:${PORTSDIR}/www/${MOZILLA} \
+		nautilus:${PORTSDIR}/x11-fm/nautilus
 
-BROKEN=		"b0rken with Mozilla-0.9.9"
+#BROKEN=		"b0rken with Mozilla-0.9.9"
 
 #WITH_FULL_MOZILLA=	"Problems with missed scrollbars when linked with mozilla-embedded"
 
