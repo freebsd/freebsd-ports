@@ -6,7 +6,7 @@
 # To use this, make it executable, and set your editinfo DEFAULT line:
 # DEFAULT   /path/to/this/program
 #
-# $Id: cvsedit,v 1.4 1995/08/05 13:13:50 peter Exp $
+# $Id: cvsedit,v 1.5 1995/08/13 16:38:07 peter Exp $
 #
 
 # same rules as CVS
@@ -61,7 +61,7 @@ while(<IN>) {
 	} else {
 		# Delete if they only have whitespace after them.
 		if (/^Reviewed by:$/i ||
-		    /^Submitted by:/i ||
+		    /^Submitted by:$/i ||
 		    /^Obtained from:$/i ||
 		    /^CC:$/i) {
 			next;
