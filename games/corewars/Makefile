@@ -22,6 +22,7 @@ GNU_CONFIGURE=	yes
 
 CONFIGURE_ENV=	GTK_CONFIG="${GTK_CONFIG}" \
 		GLIB_CONFIG="${GLIB_CONFIG}"
+MAKE_ENV=	FREEBSD_CFLAGS="${CFLAGS}"
 
 post-install:
 	@strip ${PREFIX}/bin/corewars

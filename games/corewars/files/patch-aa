@@ -1,5 +1,5 @@
---- src/Makefile.in.orig	Sat Mar  4 18:12:42 2000
-+++ src/Makefile.in	Sat Mar  4 18:12:55 2000
+--- src/Makefile.in.orig	Fri Mar  3 13:37:26 2000
++++ src/Makefile.in	Mon Mar  6 23:29:17 2000
 @@ -95,7 +95,7 @@
  
  AM_YFLAGS = -d -t
@@ -9,3 +9,12 @@
  DEFS = @DEFS@ -DDATADIR="\"${pkgdatadir}\""
  mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
  CONFIG_HEADER = config.h
+@@ -113,7 +113,7 @@
+ LEX_OUTPUT_ROOT = @LEX_OUTPUT_ROOT@
+ LEXLIB = @LEXLIB@
+ CFLAGS = @CFLAGS@
+-COMPILE = $(CC) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
++COMPILE = $(CC) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) $(FREEBSD_CFLAGS)
+ CCLD = $(CC)
+ LINK = $(CCLD) $(AM_CFLAGS) $(CFLAGS) $(LDFLAGS) -o $@
+ DIST_COMMON =  ./stamp-h.in Makefile.am Makefile.in config.h.in lex.c \
