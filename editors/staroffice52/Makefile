@@ -49,20 +49,23 @@ ADABAS_DIST=	soa-5_2-ga-bin-linux-en.bin
 .include <bsd.port.pre.mk>
 
 SIZE!=		/bin/df -k . | ${TAIL} -n 1 | ${AWK} '{print $$4}'
-LINPROCFS!=	/sbin/mount | /usr/bin/grep linprocfs | ${AWK} '{print $1}'
+LINPROCFS!=	/sbin/mount | /usr/bin/grep ^linprocfs | ${AWK} '{print $1}'
+PROCFS!=	/sbin/mount | /usr/bin/grep ^procfs | ${AWK} '{print $1}'
 
 pre-fetch:
-.if ${LINPROCFS}
+.if ${LINPROCFS} && ${PROCFS}
 	@${ECHO}
-	@${ECHO} Check if linprocfs is running: YES
+	@${ECHO} Check if procfs and linprocfs is running: YES
 .else
 	@${ECHO} -----------------------------------------------------------
 	@${ECHO}
-	@${ECHO} Staroffice setup needs a running linprocfs, which is not
-	@${ECHO} activated on your system. Please read the linprocfs\(5\)
-	@${ECHO} manpage and add the following line to /etc/fstab:
+	@${ECHO} Staroffice setup needs a running procfs and linprocfs,
+	@${ECHO} which may not be activated on your system. Please read the
+	@${ECHO} procfs\(5\) and linprocfs\(5\) manpages and ensure the
+	@${ECHO} the following lines are in /etc/fstab:
 	@${ECHO}
 	@${ECHO} linproc /compat/linux/proc linprocfs rw 0 0
+	@${ECHO} proc /proc procfs rw 0 0
 	@${ECHO}
 	@${ECHO} -----------------------------------------------------------
 	@${FALSE}
