@@ -1,7 +1,7 @@
 lib/libapreq.so
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/libapreq/include/apache_request.h
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/libapreq/include/apache_cookie.h
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/libapreq/include/multipart_buffer.h
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/libapreq/include/apache_multipart_buffer.h
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/libapreq/libapreq.bs
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/libapreq/libapreq.so
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/Request/Request.so
