@@ -1,5 +1,5 @@
 # New ports collection makefile for:    xearth
-# Date created:         29 October 1995
+# Date created:         29 October 1994
 # Whom:                 piero
 #
 # $FreeBSD$
