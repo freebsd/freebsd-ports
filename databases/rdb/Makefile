@@ -9,7 +9,8 @@
 DISTNAME=	RDB-2.6d
 PKGNAME=	rdb-2.6d
 CATEGORIES=	databases
-MASTER_SITES=	ftp://ftp.rand.org/pub/RDB-hobbs/
+MASTER_SITES=	ftp://ftp.rand.org/pub/RDB-hobbs/ \
+		ftp://ftp.sunet.se/pub/unix/databases/flat-file/
 
 MAINTAINER=	ports@FreeBSD.org
 
