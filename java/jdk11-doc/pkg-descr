@@ -1,7 +1,6 @@
-Documentation for Sun's Java Development Kit (JDK) version 1.1. It contains
-release information, API documentation, guides to new features and tool
-documentation.
+Java Development Kit 1.1 Documentation. Contains release information,
+API documentation, guides to new features and tool documentation.
 
-The documentation will be installed in ${PREFIX}/jdk1.1.8/docs/.
+The documentation will be installed in ${PREFIX}/share/doc/jdk1.1/
 
-WWW: http://www.freebsd.org/java/
+WWW: http://java.sun.com/jdk/1.1/docs/
