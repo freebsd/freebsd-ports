@@ -39,6 +39,7 @@ FREEBSD_MODULE_SITES=	\
 USE_SUBMAKE=	yes
 USE_LINUX=	yes
 VMDIR=		${PREFIX}/lib/vmware
+SRC_BASE?=	/usr/src
 
 ONLY_FOR_ARCHS=	i386
 USE_XLIB=	yes
@@ -58,7 +59,7 @@ BROKEN=		"Systems prior to 400013 is out of support"
 BROKEN=		"This software absolutely requires Linux procfs support"
 .endif
 
-.if !exists(/sys/Makefile)
+.if !exists(/${SRC_BASE}/Makefile)
 BROKEN=		"Kernel source files required"
 .endif
 
