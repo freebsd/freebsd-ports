@@ -11,7 +11,7 @@ PORTREVISION=		1
 CATEGORIES=		devel
 MASTER_SITES=		http://freedesktop.org/software/${PORTNAME}/releases/
 
-MAINTAINER=		jylefort@brutele.be
+MAINTAINER=		gnome@FreeBSD.org
 COMMENT=		A couple of command line utilities for working with desktop entries
 
 LIB_DEPENDS=		popt:${PORTSDIR}/devel/popt
