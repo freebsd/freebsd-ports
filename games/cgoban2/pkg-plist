@@ -1,0 +1,3 @@
+bin/cgoban2
+share/java/cgoban2/cgoban.jar
+@dirrm share/java/cgoban2
