@@ -1,7 +1,6 @@
-@cwd /usr/local
 bin/chkconf
 bin/ircd
 lib/ircd/example.conf
 lib/ircd/ircd.m4
 lib/ircd/ircd.motd
-man/man8/ircd.8
+man/man8/ircd.8.gz
