@@ -12,7 +12,7 @@ CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	mjpeg
 
-MAINTAINER=	lioux@FreeBSD.org
+MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	Set of tools to record/playback/edit videos in MPEG format
 
 LIB_DEPENDS=	aviplay.0:${PORTSDIR}/multimedia/avifile
