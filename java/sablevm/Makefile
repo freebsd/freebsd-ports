@@ -45,6 +45,12 @@ SABLEVMDIR=	${PORTNAME}-${PORTVERSION}
 NATIVEDIR=	${PORTNAME}-native-library-${PORTVERSION}
 CLASSESDIR=	${PORTNAME}-class-library-${PORTVERSION}
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "alpha"
+BROKEN=		"Does not compile on alpha"
+.endif
+
 # Conditionally compile the gnome-dependent stuff
 .if !defined(WITH_GNOMELIBS) && !exists(${X11BASE}/include/gnome-1.0/libart_lgpl/art_misc.h)
 EXTRA_PATCHES=	${PATCHDIR}/extra-patch-aa ${PATCHDIR}/extra-patch-ab
@@ -111,4 +117,4 @@ pre-install:
 		    > ${PREFIX}/lib/sablevm/lib/security/classpath.security
 		@echo "===>    ${SABLEVMDIR}"
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
