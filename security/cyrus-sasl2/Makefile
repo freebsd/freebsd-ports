@@ -90,6 +90,10 @@ MYSQL=	"@comment "
 CONFIGURE_ARGS+=--with-devrandom=/dev/urandom
 .endif
 
+.if defined(WITH_ALWAYSTRUE)
+CONFIGURE_ARGS+=--enable-alwaystrue
+.endif
+
 .if defined(WITHOUT_OTP)
 CONFIGURE_ARGS+=--disable-otp
 OTP=	"@comment "
