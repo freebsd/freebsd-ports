@@ -1,15 +1,15 @@
 # New ports collection makefile for:	stunnel
-# Version required:	3.3
+# Version required:	3.4a
 # Date created:		Mon Jan 11 11:53:54 EET 1999
 # Whom:			Martti Kuparinen <martti.kuparinen@ericsson.com>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	stunnel-3.3
+DISTNAME=	stunnel-3.4a
 CATEGORIES=	security
-MASTER_SITES=	http://mike.daewoo.com.pl/computer/stunnel/ \
-		http://opensores.thebunker.net/pub/mirrors/stunnel/ \
+MASTER_SITES=	http://opensores.thebunker.net/pub/mirrors/stunnel/ \
+		http://mike.daewoo.com.pl/computer/stunnel/ \
 		ftp://ftp.fu-berlin.de/unix/security/stunnel/ \
 		ftp://ftp.uni-freiburg.de/pub/net/stunnel/ \
 		ftp://ftp.all.de/pub2/unix/security/stunnel/
