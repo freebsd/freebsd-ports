@@ -6,17 +6,19 @@
 #
 
 PORTNAME=	zope
-PORTVERSION=	2.2.2
-PORTREVISION=	1
+PORTVERSION=	2.2.4
+PORTREVISION=	0
 CATEGORIES=	www python
 MASTER_SITES=	http://www.zope.org/Products/Zope/${PORTVERSION}/ \
-		http://www.zope.org/Products/Zope/Hotfix_2000-10-02/ \
-		http://www.zope.org/Products/Zope/Hotfix_2000-10-11/
+		http://www.zope.org/Products/Zope/Hotfix_2000-12-08/ \
+		http://www.zope.org/Products/Zope/Hotfix_2000-12-15a/ \
+		http://www.zope.org/Products/Zope/Hotfix_2000-12-18/
 DISTNAME=	Zope-${PORTVERSION}-src
 EXTRACT_SUFX=	.tgz
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		Hotfix_2000-10-02.tar.gz \
-		Hotfix_2000-10-11.tgz
+		Hotfix_2000-12-08.tgz \
+		Hotfix_2000-12-15a.tgz \
+		Hotfix_2000-12-18.tgz
 
 MAINTAINER=	nbm@FreeBSD.org
 

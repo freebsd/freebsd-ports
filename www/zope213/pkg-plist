@@ -566,12 +566,16 @@ etc/rc.d/zope.sh
 %%ZOPEBASEDIR%%/lib/python/Products/ExternalMethod/methodEdit.dtml
 %%ZOPEBASEDIR%%/lib/python/Products/ExternalMethod/version.txt
 %%ZOPEBASEDIR%%/lib/python/Products/ExternalMethod/www/function.gif
-%%ZOPEBASEDIR%%/lib/python/Products/Hotfix_2000-10-02/__init__.py
-%%ZOPEBASEDIR%%/lib/python/Products/Hotfix_2000-10-02/__init__.pyc
-%%ZOPEBASEDIR%%/lib/python/Products/Hotfix_2000-10-02/README.txt
-%%ZOPEBASEDIR%%/lib/python/Products/Hotfix_2000-10-11/__init__.py
-%%ZOPEBASEDIR%%/lib/python/Products/Hotfix_2000-10-11/__init__.pyc
-%%ZOPEBASEDIR%%/lib/python/Products/Hotfix_2000-10-11/README.txt
+%%ZOPEBASEDIR%%/lib/python/Products/Hotfix_2000-12-08/README.txt
+%%ZOPEBASEDIR%%/lib/python/Products/Hotfix_2000-12-08/__init__.py
+%%ZOPEBASEDIR%%/lib/python/Products/Hotfix_2000-12-08/__init__.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/Hotfix_2000-12-15a/README.txt
+%%ZOPEBASEDIR%%/lib/python/Products/Hotfix_2000-12-15a/README.txt~
+%%ZOPEBASEDIR%%/lib/python/Products/Hotfix_2000-12-15a/__init__.py
+%%ZOPEBASEDIR%%/lib/python/Products/Hotfix_2000-12-15a/__init__.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/Hotfix_2000-12-18/README.txt
+%%ZOPEBASEDIR%%/lib/python/Products/Hotfix_2000-12-18/__init__.py
+%%ZOPEBASEDIR%%/lib/python/Products/Hotfix_2000-12-18/__init__.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/MIMETools/MIMETag.py
 %%ZOPEBASEDIR%%/lib/python/Products/MIMETools/MIMETag.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/MIMETools/README.txt
@@ -712,6 +716,27 @@ etc/rc.d/zope.sh
 %%ZOPEBASEDIR%%/lib/python/Products/OFSP/help/Zope-Permission.stx
 %%ZOPEBASEDIR%%/lib/python/Products/OFSP/help/Zope-Permission_Add.stx
 %%ZOPEBASEDIR%%/lib/python/Products/OFSP/help/Zope-Permission_Edit.stx
+%%ZOPEBASEDIR%%/lib/python/Products/OFSP/help/dtml-call.stx
+%%ZOPEBASEDIR%%/lib/python/Products/OFSP/help/dtml-comment.stx
+%%ZOPEBASEDIR%%/lib/python/Products/OFSP/help/dtml-funcs.stx
+%%ZOPEBASEDIR%%/lib/python/Products/OFSP/help/dtml-if.stx
+%%ZOPEBASEDIR%%/lib/python/Products/OFSP/help/dtml-in.stx
+%%ZOPEBASEDIR%%/lib/python/Products/OFSP/help/dtml-let.stx
+%%ZOPEBASEDIR%%/lib/python/Products/OFSP/help/dtml-math.stx
+%%ZOPEBASEDIR%%/lib/python/Products/OFSP/help/dtml-mime.stx
+%%ZOPEBASEDIR%%/lib/python/Products/OFSP/help/dtml-raise.stx
+%%ZOPEBASEDIR%%/lib/python/Products/OFSP/help/dtml-return.stx
+%%ZOPEBASEDIR%%/lib/python/Products/OFSP/help/dtml-sendmail.stx
+%%ZOPEBASEDIR%%/lib/python/Products/OFSP/help/dtml-sqlgroup.stx
+%%ZOPEBASEDIR%%/lib/python/Products/OFSP/help/dtml-sqltest.stx
+%%ZOPEBASEDIR%%/lib/python/Products/OFSP/help/dtml-sqlvar.stx
+%%ZOPEBASEDIR%%/lib/python/Products/OFSP/help/dtml-string.stx
+%%ZOPEBASEDIR%%/lib/python/Products/OFSP/help/dtml-tree.stx
+%%ZOPEBASEDIR%%/lib/python/Products/OFSP/help/dtml-try.stx
+%%ZOPEBASEDIR%%/lib/python/Products/OFSP/help/dtml-unless.stx
+%%ZOPEBASEDIR%%/lib/python/Products/OFSP/help/dtml-var.stx
+%%ZOPEBASEDIR%%/lib/python/Products/OFSP/help/dtml-whrandom.stx
+%%ZOPEBASEDIR%%/lib/python/Products/OFSP/help/dtml-with.stx
 %%ZOPEBASEDIR%%/lib/python/Products/OFSP/images/File_icon.gif
 %%ZOPEBASEDIR%%/lib/python/Products/OFSP/images/Folder_icon.gif
 %%ZOPEBASEDIR%%/lib/python/Products/OFSP/images/Image_icon.gif
@@ -1312,8 +1337,9 @@ etc/rc.d/zope.sh
 @dirrm %%ZOPEBASEDIR%%/lib/python/Products/ExternalMethod/help
 @dirrm %%ZOPEBASEDIR%%/lib/python/Products/ExternalMethod/www
 @dirrm %%ZOPEBASEDIR%%/lib/python/Products/ExternalMethod
-@dirrm %%ZOPEBASEDIR%%/lib/python/Products/Hotfix_2000-10-02
-@dirrm %%ZOPEBASEDIR%%/lib/python/Products/Hotfix_2000-10-11
+@dirrm %%ZOPEBASEDIR%%/lib/python/Products/Hotfix_2000-12-08
+@dirrm %%ZOPEBASEDIR%%/lib/python/Products/Hotfix_2000-12-15a
+@dirrm %%ZOPEBASEDIR%%/lib/python/Products/Hotfix_2000-12-18
 @dirrm %%ZOPEBASEDIR%%/lib/python/Products/MIMETools
 @dirrm %%ZOPEBASEDIR%%/lib/python/Products/MailHost/help
 @dirrm %%ZOPEBASEDIR%%/lib/python/Products/MailHost/release
