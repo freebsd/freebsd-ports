@@ -961,6 +961,7 @@
     SUBDIR += p5-Tree-DAG_Node
     SUBDIR += p5-UNIVERSAL-exports
     SUBDIR += p5-UNIVERSAL-moniker
+    SUBDIR += p5-Unix-Statgrab
     SUBDIR += p5-VCP
     SUBDIR += p5-VCS
     SUBDIR += p5-VCS-CVS

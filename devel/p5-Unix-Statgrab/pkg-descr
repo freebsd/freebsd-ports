@@ -1,0 +1,7 @@
+Unix::Statgrab is a wrapper for libstatgrab, as available from
+http://www.i-scream.org/libstatgrab/. It is a reasonably portable
+attempt to query interesting stats about your computer. It covers
+information on the operating system, CPU, memory usage, network
+interfaces, hard-disks etc.
+
+WWW: http://search.cpan.org/dist/Unix-Statgrab/
