@@ -1,5 +1,5 @@
---- src/Makefile.in.orig	Thu Nov 19 00:28:38 1998
-+++ src/Makefile.in	Thu Nov 19 00:30:14 1998
+--- src/Makefile.in.orig	Fri Jan 14 23:02:09 2000
++++ src/Makefile.in	Fri Jan 14 23:02:43 2000
 @@ -126,6 +126,10 @@
  #define LIBS_MACHINE
  #endif
@@ -23,6 +23,15 @@
  #else
  #define LINKER $(CC) -nostdlib -rdynamic -Wl,-rpath,${archlibdir}
  #endif
+@@ -569,7 +577,7 @@
+ #define LIBS_TERMCAP
+ termcapobj = termcap.o tparam.o
+ #else /* LIBS_TERMCAP */
+-termcapobj = tparam.o
++termcapobj = terminfo.o
+ #endif /* LIBS_TERMCAP */
+ #endif /* ! defined (TERMINFO) */
+ 
 @@ -814,7 +822,7 @@
     duplicated symbols.  If the standard libraries were compiled
     with GCC, we might need gnulib again after them.  */
