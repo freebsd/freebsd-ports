@@ -340,6 +340,7 @@
     SUBDIR += ticker.app
     SUBDIR += timelimit
     SUBDIR += tmpwatch
+    SUBDIR += top
     SUBDIR += toshctl
     SUBDIR += tree
     SUBDIR += ttyload
