@@ -6,12 +6,12 @@ bin/word-list-compress
 include/aspell.h
 include/pspell/pspell.h
 lib/libaspell-common-%%PORTVERSION%%.so
-lib/libaspell-common.la
+lib/libaspell-common.a
 lib/libaspell-common.so
-lib/libaspell.la
+lib/libaspell.a
 lib/libaspell.so
 lib/libaspell.so.15
-lib/libpspell.la
+lib/libpspell.a
 lib/libpspell.so
 lib/libpspell.so.15
 share/aspell/ASCII.dat
