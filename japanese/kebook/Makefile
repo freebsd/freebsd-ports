@@ -18,6 +18,8 @@ LIB_DEPENDS=	kdecore.3:${PORTSDIR}/x11/kdelibs11 \
 BUILD_DEPENDS=	msgfmt:${PORTSDIR}/devel/gettext
 RUN_DEPENDS=	kfm:${PORTSDIR}/x11/kdebase11
 
+BROKEN=		"KDE 1.x is no longer in the ports tree"
+
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_NEWGCC=	yes
