@@ -21,6 +21,11 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-scores=/var/games/nighthawk.scores --enable-sound
 MAN6=		nighthawk.6
 
+post-patch:
+	@${PERL} -pi -e "s/malloc.h/stdlib.h/g" ${WRKSRC}/src/floor.cc \
+		${WRKSRC}/src/ship.cc ${WRKSRC}/src_sound/nighthawk_sound.c \
+		${WRKSRC}/src_sound/funkload.c ${WRKSRC}/src_sound/dsp_mixxer.c 
+
 post-install:
 	${CHOWN} root:games ${PREFIX}/bin/nighthawk
 	${CHMOD} g+s ${PREFIX}/bin/nighthawk
