@@ -3,7 +3,7 @@
 # Date created:		Sun Jan  3 19:36:27 CET 1999
 # Whom:			Dirk Froemberg <dirk@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.27 1999/03/06 11:36:22 dirk Exp $
+# $Id: Makefile,v 1.28 1999/03/26 08:42:48 dirk Exp $
 #
 
 DISTNAME=	openssl-0.9.2b
@@ -12,6 +12,9 @@ MASTER_SITES=	http://www.openssl.org/source/ \
 		ftp://ftp.openssl.org/source/ \
 		ftp://ftp.sunet.se/pub/security/tools/net/openssl/source/ \
 		ftp://ftp.cert.dfn.de/pub/tools/net/openssl/source/
+
+PATCH_SITES=	${MASTER_SITES}
+PATCHFILES=	openssl-0.9.2b-rsaoaep.patch
 
 MAINTAINER=	dirk@FreeBSD.ORG
 
