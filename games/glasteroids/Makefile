@@ -18,6 +18,7 @@ MAKEFILE=	Makefile.FreeBSD
 WRKSRC=		${WRKDIR}/Glasteroids
 
 USE_X_PREFIX=	yes
+MAKE_ENV=	PTHREAD_LIBS="${PTHREAD_LIBS}"
 USE_MESA=	yes
 
 pre-build:
