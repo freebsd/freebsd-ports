@@ -16,7 +16,6 @@ COMMENT=	Version control system
 
 LIB_DEPENDS=	db4:${PORTSDIR}/databases/db4 \
 		neon.23:${PORTSDIR}/www/neon \
-		expat.4:${PORTSDIR}/textproc/expat2 \
 		apr-0.9:${PORTSDIR}/devel/apr
 
 INSTALLS_SHLIB=	yes
