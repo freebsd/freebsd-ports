@@ -6,14 +6,12 @@
 #
 
 PORTNAME=	rman
-PORTVERSION= 	3.0.8
+PORTVERSION= 	3.0.9
 CATEGORIES=	textproc
-MASTER_SITES=   ftp://ftp.cs.berkeley.edu/ucb/people/phelps/tcltk/
-EXTRACT_SUFX=	.tar.Z
+MASTER_SITES=	ftp://polyglot.sourceforge.net/pub/polyglotman/
 
 MAINTAINER=	tg@FreeBSD.org
 
-NO_CDROM=	"License required"
 MAN1=		rman.1
 
 post-install:

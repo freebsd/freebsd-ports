@@ -1,26 +1,39 @@
---- Makefile.orig	Mon Dec  1 07:32:00 1997
-+++ Makefile	Mon Dec  8 16:42:52 1997
-@@ -15,17 +15,17 @@
- #    this must be a directory that's in your bin PATH.
- # MANDIR holds the man page.
- 
--BINDIR = /private/share/bin
--#BINDIR = /usr/local/bin
--MANDIR = /home/auspex/h/bair/phelps/man/man1
--#MANDIR = /usr/local/man/man1
-+#BINDIR = /private/share/bin
-+BINDIR = ${PREFIX}/bin
-+#MANDIR = /home/auspex/h/bair/phelps/man/man1
-+MANDIR = ${PREFIX}/man/man1
- 
- 
- ### if you have GNU gcc v2.x, use these definitions
- 
--CC = gcc
-+# CC = gcc
- # if you don't have gcc v2.x, try -O for CFLAGS
--CFLAGS = -O2 -finline-functions
-+CFLAGS += -finline-functions
- 
- ### if you just have a standard UNIX, use these instead of GNU.
- ### CC must be an ANSI C compiler
+*** Makefile.orig	Wed Jun 21 18:05:56 2000
+--- Makefile	Mon Jun 26 20:15:01 2000
+***************
+*** 15,31 ****
+  #    this must be a directory that's in your bin PATH.
+  # MANDIR holds the man page.
+  
+! BINDIR = /usr/local/bin
+  #BINDIR = //C/bin
+! MANDIR = /home/auspex/h/bair/phelps/man/man1
+! #MANDIR = /usr/local/man/man1
+  
+  
+  ### if you have GNU gcc v2.x, use these definitions
+  
+! CC = gcc
+  # if you don't have gcc v2.x, try -O for CFLAGS
+! CFLAGS = -O2 -finline-functions
+  
+  ### if you just have a standard UNIX, use these instead of GNU.
+  ### CC must be an ANSI C compiler
+--- 15,31 ----
+  #    this must be a directory that's in your bin PATH.
+  # MANDIR holds the man page.
+  
+! BINDIR = ${PREFIX}/bin
+  #BINDIR = //C/bin
+! #MANDIR = /home/auspex/h/bair/phelps/man/man1
+! MANDIR = ${PREFIX}/man/man1
+  
+  
+  ### if you have GNU gcc v2.x, use these definitions
+  
+! #CC = gcc
+  # if you don't have gcc v2.x, try -O for CFLAGS
+! CFLAGS += -finline-functions
+  
+  ### if you just have a standard UNIX, use these instead of GNU.
+  ### CC must be an ANSI C compiler
