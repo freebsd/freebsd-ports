@@ -1,11 +1,11 @@
---- ../amaya/Makefile.in.orig	Tue Mar  7 11:45:48 2000
-+++ ../amaya/Makefile.in	Sun Apr 16 04:39:12 2000
+--- ../amaya/Makefile.in.orig	Thu Nov 23 09:03:30 2000
++++ ../amaya/Makefile.in	Sat Dec 30 01:39:48 2000
 @@ -10,7 +10,7 @@
  include ../Options
  
- INCLUDES= -DHAVE_CONFIG_H $(AMAYA_INCLUDES) $(X_FLAGS)
+ INCLUDES= -DHAVE_CONFIG_H $(AMAYA_INCLUDES) $(EXPAT_INCLUDES) $(X_FLAGS)
 -XMLIB   = -lXm
-+XMLIB   = ${MOTIFLIB} 
- LIBS	=  $(AMAYA_LIBWWW_LIBS) $(AMAYA_PLUGIN_LIBS) \
- 	  $(AMAYA_MATH_LIBS) $(AMAYA_GRAPH_LIBS) $(AMAYA_ANNOT_LIBS) \
++XMLIB   = ${MOTIFLIB}
+ LIBS	=  $(AMAYA_PLUGIN_LIBS) $(AMAYA_ANNOT_LIBS) \
+ 	   $(AMAYA_LIBWWW_LIBS) $(AMAYA_MATH_LIBS) $(AMAYA_GRAPH_LIBS) \
            -L../tablelib -L../thotlib -L.. -lThotTable -lThotEditor \

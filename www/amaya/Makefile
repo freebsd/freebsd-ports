@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	amaya
-PORTVERSION=	3.2.1
+PORTVERSION=	4.2.1
 CATEGORIES= 	www
 MASTER_SITES=	http://www.w3.org/Amaya/Distribution/ \
 		ftp://ftp.w3.org/pub/amaya/
 DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	croyle@gelemna.org
+MAINTAINER=	ports@freebsd.org
 
 USE_MOTIF=	yes
 USE_XLIB=	yes

@@ -1,0 +1,12 @@
+--- ../thotlib/include/ustring.h.orig	Thu Dec 21 06:07:13 2000
++++ ../thotlib/include/ustring.h	Sat Dec 30 01:45:55 2000
+@@ -5,7 +5,9 @@
+ #ifdef _WINDOWS
+ #include <windows.h>
+ #endif /* _WINDOWS */
++#ifdef _I18N_
+ #include <wchar.h>
++#endif /* _I18N_ */
+ 
+ #ifdef _WINDOWS
+ #define strncasecmp _strnicmp
