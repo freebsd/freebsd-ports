@@ -24,4 +24,6 @@ USE_X_PREFIX=	yes
 USE_LIBTOOL=	yes
 CONFIGURE_ARGS=	--with-gtk-config=${GTK_CONFIG}
 
+MAN1=		gschem.1 gnetlist.1
+
 .include <bsd.port.mk>
