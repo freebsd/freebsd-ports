@@ -12,8 +12,8 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://unc.dl.sourceforge.net/sourceforge/tentakel/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	mchopra@engmail.uwaterloo.ca
-COMMENT=	A shell script to execute commands on parallel hosts by ssh or rsh
+MAINTAINER=	chopra@soulwax.net
+COMMENT=	sh script to execute commands on parallel hosts via ssh/rsh
 
 NO_BUILD=	yes
 MAN1=		tentakel.1

@@ -10,8 +10,8 @@ PORTVERSION=	1.4
 CATEGORIES=	graphics ruby www
 MASTER_SITES=	http://plig.net/~ture/rubyphoto/files/
 
-MAINTAINER=	mchopra@engmail.uwaterloo.ca
-COMMENT=	A program for creating image galleries for the web
+MAINTAINER=	chopra@soulwax.net
+COMMENT=	A program for creating web image galleries
 
 LIB_DEPENDS=	expat.4:${PORTSDIR}/textproc/expat2
 RUN_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick \
