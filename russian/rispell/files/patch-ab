@@ -1,0 +1,19 @@
+*** makedict.cxx.bak	Tue Sep 23 19:04:44 1997
+--- makedict.cxx	Tue Dec 16 20:30:21 1997
+***************
+*** 274,280 ****
+      }
+      fputs("nroffchars      ().\\\\*\n"
+  	  "texchars        ()\\[]{}<\\>\\\\$*.%\n"
+! 	  "wordchars [\\xc0-\\xdf] [\\xe0-\\xff]\n"
+  	  "suffixes\n\n", f);
+  
+      for (int flag = 0; suffixes[flag] != NULL; flag++) { 
+--- 274,280 ----
+      }
+      fputs("nroffchars      ().\\\\*\n"
+  	  "texchars        ()\\[]{}<\\>\\\\$*.%\n"
+! 	  "wordchars [\\xa3\\xc0-\\xdf] [\\xb3\\xe0-\\xff]\n"
+  	  "suffixes\n\n", f);
+  
+      for (int flag = 0; suffixes[flag] != NULL; flag++) { 

@@ -1,0 +1,17 @@
+*** russian.aff.bak	Tue Sep 23 19:12:38 1997
+--- russian.aff	Tue Dec 16 20:33:07 1997
+***************
+*** 1,6 ****
+  nroffchars      ().\\*
+  texchars        ()\[]{}<\>\\$*.%
+! wordchars [\xc0-\xdf] [\xe0-\xff]
+  suffixes
+  
+  flag A:
+--- 1,6 ----
+  nroffchars      ().\\*
+  texchars        ()\[]{}<\>\\$*.%
+! wordchars [\xa3\xc0-\xdf] [\xb3\xe0-\xff]
+  suffixes
+  
+  flag A:
