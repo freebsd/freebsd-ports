@@ -5,9 +5,9 @@
 # $FreeBSD$
 
 PORTNAME=	happy
-PORTVERSION=	1.11
+PORTVERSION=	1.13
 CATEGORIES=	devel
-MASTER_SITES=	http://www.haskell.org/happy/dist/1.11/
+MASTER_SITES=	http://www.haskell.org/happy/dist/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	simonmar@microsoft.com
@@ -24,6 +24,8 @@ BUILD_DEPENDS+=	${LOCALBASE}/share/sgml/docbook/dsssl/modular:${PORTSDIR}/textpr
 WRKSRC=		${WRKDIR}/${DISTNAME:S/-src//g}
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
+
+PLIST_SUB=	HAPPY_VERSION=${PORTVERSION}
 
 BOOT_COOKIE = ${WRKDIR}/.boot_done
 
