@@ -1,5 +1,14 @@
---- automake.in.orig	Wed Nov 24 16:04:56 1999
-+++ automake.in	Wed Nov 24 16:07:15 1999
+--- automake.in	Fri Jan 15 14:42:36 1999
++++ automake.in	Tue Apr 18 09:10:36 2000
+@@ -2367,7 +2367,7 @@
+ 	$output_rules .= "\t  d=\$(srcdir); \\\n";
+     }
+     $output_rules .= ("\t  if test -d \$\$d/\$\$file; then \\\n"
+-		      . "\t    cp -pr \$\$/\$\$file \$(distdir)/\$\$file; \\\n"
++		      . "\t    cp -pr \$\$d/\$\$file \$(distdir)/\$\$file; \\\n"
+ 		      . "\t  else \\\n"
+ 		      . "\t    test -f \$(distdir)/\$\$file \\\n"
+ 		      . "\t    || ln \$\$d/\$\$file \$(distdir)/\$\$file 2> /dev/null \\\n"
 @@ -6907,7 +6907,7 @@
  				$trailer = "; error while making link: $!\n";
  			    }
