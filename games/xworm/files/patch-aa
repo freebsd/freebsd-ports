@@ -1,6 +1,6 @@
---- Makefile	Wed May  7 16:28:12 1997
-+++ /home/andy/tmp/wrk/Makefile	Wed Mar 18 23:40:31 1998
-@@ -6,6 +6,7 @@
+--- Makefile.orig	Wed May  7 11:28:12 1997
++++ Makefile	Sun Sep 27 12:19:42 1998
+@@ -6,21 +6,26 @@
  HPFLAGS = -O -D_HPUX_SOURCE
  SUNFLAGS = -O
  LINUXFLAGS = -O
@@ -8,7 +8,15 @@
  
  INCDIR = -I/usr/include/X11R5 -I/usr/include -I/usr/X11R6/include
  
-@@ -18,9 +19,10 @@
+ HPLINK = -L/usr/local/lib/X11R5 -lXt -lX11 -lm
+ SUNLINK = -L/usr/local/lib/X11R5 -lXt -lX11 -lm -lsocket -lnsl -lICE -lSM
+ LINUXLINK = -L/usr/X11R6/lib -lXt -lX11 -lm
++.if ${PORTOBJFORMAT} == "elf"
++LINUXLINK+= -Wl,-rpath,$(X11BASE)/lib
++.endif
+ 
+ all: 
+ 	@echo "Makefile for XWorm v1.02 - written by The Last Viking (C) 1995-97 Ekran Design."
  	@echo " "
  	@echo "type:"
  	@echo " "
@@ -22,7 +30,7 @@
  	@echo " "
  	@echo "xworm.font, xworm.grid and xworm.raw has to be in the same directory as xworm"
  	@echo "please check the Makefile if you have problems compiling the program"
-@@ -33,6 +35,9 @@
+@@ -33,6 +38,9 @@
  
  linux: xworm.c
  	$(CC) $(LINUXFLAGS) $(INCDIR) xworm.c -o xworm $(LINUXLINK)
