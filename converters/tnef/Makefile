@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tnef
-PORTVERSION=	1.2.1
+PORTVERSION=	1.2.3.1
 CATEGORIES=	converters mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -19,12 +19,13 @@ USE_GETOPT_LONG=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 MAN1=		tnef.1
-DOCS=		AUTHORS NEWS README THANKS TODO
+PORTDOCS=		AUTHORS NEWS README THANKS TODO
+PLIST_FILES=	bin/tnef
 
 .if !defined(NOPORTDOCS)
 post-install:
 	@${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif
 
 # This target is intended to be run by the port maintainer.
