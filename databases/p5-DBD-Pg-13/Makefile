@@ -3,7 +3,7 @@
 # Date created:				June 17th 1997
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-# $Id: Makefile,v 1.8 1998/09/15 21:31:31 asami Exp $
+# $Id: Makefile,v 1.9 1998/10/12 04:14:43 jseger Exp $
 #
 
 DISTNAME=	DBD-Pg-0.72
@@ -18,6 +18,7 @@ BUILD_DEPENDS=	${PREFIX}/lib/perl5/site_perl/DBI.pm:${PORTSDIR}/databases/p5-DBI
 		${PREFIX}/pgsql/lib/libpq.so.1.1:${PORTSDIR}/databases/postgresql
 
 BROKEN_ELF=	depends on postgresql
+BROKEN=		build
 
 USE_PERL5=	YES
 
