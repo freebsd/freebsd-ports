@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.136 1997/06/03 19:16:19 max Exp $
+# $Id: Makefile,v 1.137 1997/06/03 22:53:51 asami Exp $
 #
 
     SUBDIR += FWF
@@ -14,6 +14,7 @@
     SUBDIR += camltk41
     SUBDIR += ctwm
     SUBDIR += dclock
+    SUBDIR += enlightenment
     SUBDIR += etlfonts
     SUBDIR += emiclock
     SUBDIR += emu
