@@ -133,7 +133,7 @@ post-extract:
 	${MKDIR} ${WRKDIR}/texmf-tmp
 	cd ${WRKDIR} && \
 		${MV} ${INSTDIRS} texmf-tmp && \
-		${RM} -f ptex/platex/base/.cvsignore
+		${RM} -f texmf-tmp/ptex/platex/base/.cvsignore
 
 pre-configure:
 	${SETENV} ${MAKE_ENV} ${MKTEXLSR} ${WRKDIR}/texmf-tmp
