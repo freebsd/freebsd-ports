@@ -1,4 +1,4 @@
-XFIG 3.0 - Facility for Interactive Generation of figures under X11
+XFIG 3.1.2 - Facility for Interactive Generation of figures under X11
 
 Xfig is a menu-driven tool that allows the user to draw and manipulate objects
 interactively in an X window.  The resulting pictures can be saved, printed
@@ -7,3 +7,6 @@ allow inclusion in LaTeX documents).
 
 To enjoy the beautiful colors, specify "*customization: -color" in your 
 .Xdefaults or .Xresources file.
+
+To obtain full capability, we recommend you to install the transfig
+package too.
