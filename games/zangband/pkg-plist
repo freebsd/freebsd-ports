@@ -1,0 +1,149 @@
+@owner games
+@group games
+@mode 664
+%%ANGBANDBIN%%
+@exec chmod 2755 %D/%%ANGBANDBIN%%
+@unexec rm -f %D/%%ANGBANDLIB%%/data/*
+@unexec cmp -s %D/%%ANGBANDLIB%%/apex/scores.raw %D/%%ANGBANDLIB%%/apex/z_scores.raw && rm %D/%%ANGBANDLIB%%/apex/scores.raw || true
+@unexec cmp -s %D/%%ANGBANDLIB%%/apex/scores.raw /dev/null && rm %D/%%ANGBANDLIB%%/apex/scores.raw || true
+%%ANGBANDLIB%%/apex/readme.txt
+%%ANGBANDLIB%%/apex/z_scores.raw
+@exec test -f %D/%%ANGBANDLIB%%/apex/scores.raw || touch %D/%%ANGBANDLIB%%/apex/scores.raw
+%%ANGBANDLIB%%/bone/delete.me
+%%ANGBANDLIB%%/edit/a_info.txt
+%%ANGBANDLIB%%/edit/e_info.txt
+%%ANGBANDLIB%%/edit/f_info.txt
+%%ANGBANDLIB%%/edit/k_info.txt
+%%ANGBANDLIB%%/edit/misc.txt
+%%ANGBANDLIB%%/edit/q_info.txt
+%%ANGBANDLIB%%/edit/q_oberon.txt
+%%ANGBANDLIB%%/edit/q_random.txt
+%%ANGBANDLIB%%/edit/q_serpen.txt
+%%ANGBANDLIB%%/edit/r_info.txt
+%%ANGBANDLIB%%/edit/t_info.txt
+%%ANGBANDLIB%%/edit/v_info.txt
+%%ANGBANDLIB%%/edit/w_info.txt
+%%ANGBANDLIB%%/file/a_cursed.txt
+%%ANGBANDLIB%%/file/a_high.txt
+%%ANGBANDLIB%%/file/a_low.txt
+%%ANGBANDLIB%%/file/a_med.txt
+%%ANGBANDLIB%%/file/chainswd.txt
+%%ANGBANDLIB%%/file/crime.txt
+%%ANGBANDLIB%%/file/dead.txt
+%%ANGBANDLIB%%/file/death.txt
+%%ANGBANDLIB%%/file/elvish.txt
+%%ANGBANDLIB%%/file/error.txt
+%%ANGBANDLIB%%/file/mondeath.txt
+%%ANGBANDLIB%%/file/monfear.txt
+%%ANGBANDLIB%%/file/monfrien.txt
+%%ANGBANDLIB%%/file/monspeak.txt
+%%ANGBANDLIB%%/file/news.txt
+%%ANGBANDLIB%%/file/readme.txt
+%%ANGBANDLIB%%/file/rumors.txt
+%%ANGBANDLIB%%/file/sample.txt
+%%ANGBANDLIB%%/file/silly.txt
+%%ANGBANDLIB%%/file/timefun.txt
+%%ANGBANDLIB%%/file/timenorm.txt
+%%ANGBANDLIB%%/file/w_cursed.txt
+%%ANGBANDLIB%%/file/w_high.txt
+%%ANGBANDLIB%%/file/w_low.txt
+%%ANGBANDLIB%%/file/w_med.txt
+%%ANGBANDLIB%%/help/attack.hlp
+%%ANGBANDLIB%%/help/attack.txt
+%%ANGBANDLIB%%/help/birth.hlp
+%%ANGBANDLIB%%/help/birth.txt
+%%ANGBANDLIB%%/help/bldg.txt
+%%ANGBANDLIB%%/help/charattr.hlp
+%%ANGBANDLIB%%/help/charattr.txt
+%%ANGBANDLIB%%/help/command.hlp
+%%ANGBANDLIB%%/help/command.txt
+%%ANGBANDLIB%%/help/commdesc.hlp
+%%ANGBANDLIB%%/help/commdesc.txt
+%%ANGBANDLIB%%/help/defend.hlp
+%%ANGBANDLIB%%/help/defend.txt
+%%ANGBANDLIB%%/help/dungeon.hlp
+%%ANGBANDLIB%%/help/dungeon.txt
+%%ANGBANDLIB%%/help/gambling.txt
+%%ANGBANDLIB%%/help/general.hlp
+%%ANGBANDLIB%%/help/general.txt
+%%ANGBANDLIB%%/help/help.hlp
+%%ANGBANDLIB%%/help/helpinfo.txt
+%%ANGBANDLIB%%/help/magic.hlp
+%%ANGBANDLIB%%/help/magic.txt
+%%ANGBANDLIB%%/help/monster.hlp
+%%ANGBANDLIB%%/help/monster.txt
+%%ANGBANDLIB%%/help/objects.hlp
+%%ANGBANDLIB%%/help/objects.txt
+%%ANGBANDLIB%%/help/option.hlp
+%%ANGBANDLIB%%/help/option.txt
+%%ANGBANDLIB%%/help/pref.hlp
+%%ANGBANDLIB%%/help/pref.txt
+%%ANGBANDLIB%%/help/readme.txt
+%%ANGBANDLIB%%/help/spoiler.hlp
+%%ANGBANDLIB%%/help/town.hlp
+%%ANGBANDLIB%%/help/town.txt
+%%ANGBANDLIB%%/help/version.txt
+%%ANGBANDLIB%%/help/wizard.txt
+%%ANGBANDLIB%%/info/delete.me
+%%ANGBANDLIB%%/pref/colors.prf
+%%ANGBANDLIB%%/pref/font-ami.prf
+%%ANGBANDLIB%%/pref/font-dos.prf
+%%ANGBANDLIB%%/pref/font-ibm.prf
+%%ANGBANDLIB%%/pref/font-mac.prf
+%%ANGBANDLIB%%/pref/font-mon.prf
+%%ANGBANDLIB%%/pref/font-win.prf
+%%ANGBANDLIB%%/pref/font-x11.prf
+%%ANGBANDLIB%%/pref/font-xxx.prf
+%%ANGBANDLIB%%/pref/font.prf
+%%ANGBANDLIB%%/pref/graf-ami.prf
+%%ANGBANDLIB%%/pref/graf-dos.prf
+%%ANGBANDLIB%%/pref/graf-gcu.prf
+%%ANGBANDLIB%%/pref/graf-ibm.prf
+%%ANGBANDLIB%%/pref/graf-lsl.prf
+%%ANGBANDLIB%%/pref/graf-mac.prf
+%%ANGBANDLIB%%/pref/graf-new.prf
+%%ANGBANDLIB%%/pref/graf-win.prf
+%%ANGBANDLIB%%/pref/graf-x11.prf
+%%ANGBANDLIB%%/pref/graf-xaw.prf
+%%ANGBANDLIB%%/pref/graf-xpj.prf
+%%ANGBANDLIB%%/pref/graf-xxx.prf
+%%ANGBANDLIB%%/pref/graf.prf
+%%ANGBANDLIB%%/pref/pref-acn.prf
+%%ANGBANDLIB%%/pref/pref-ami.prf
+%%ANGBANDLIB%%/pref/pref-emx.prf
+%%ANGBANDLIB%%/pref/pref-gcu.prf
+%%ANGBANDLIB%%/pref/pref-gtk.prf
+%%ANGBANDLIB%%/pref/pref-key.prf
+%%ANGBANDLIB%%/pref/pref-mac.prf
+%%ANGBANDLIB%%/pref/pref-win.prf
+%%ANGBANDLIB%%/pref/pref-x11.prf
+%%ANGBANDLIB%%/pref/pref.prf
+%%ANGBANDLIB%%/pref/spell-xx.prf
+%%ANGBANDLIB%%/pref/user-win.prf
+%%ANGBANDLIB%%/pref/user.prf
+%%ANGBANDLIB%%/pref/xtra-gcu.prf
+%%ANGBANDLIB%%/pref/xtra-new.prf
+%%ANGBANDLIB%%/pref/xtra-xxx.prf
+%%ANGBANDLIB%%/save/delete.me
+%%ANGBANDLIB%%/script/delete.me
+%%ANGBANDLIB%%/user/delete.me
+%%ANGBANDLIB%%/xtra/delete.me
+@exec mkdir %D/%%ANGBANDLIB%%/data
+@exec chown -R games:games %D/%%ANGBANDLIB%%/apex %D/%%ANGBANDLIB%%/data
+@exec chmod 775 %D/%%ANGBANDLIB%%
+@exec chmod -R ug+rw,o-rw %D/%%ANGBANDLIB%%/*
+@exec chmod -R o+r %D/%%ANGBANDLIB%%/help %D/%%ANGBANDLIB%%/xtra
+@exec chmod 1777 %D/%%ANGBANDLIB%%/save %D/%%ANGBANDLIB%%/user
+@dirrm %%ANGBANDLIB%%/apex
+@dirrm %%ANGBANDLIB%%/bone
+@dirrm %%ANGBANDLIB%%/data
+@dirrm %%ANGBANDLIB%%/edit
+@dirrm %%ANGBANDLIB%%/file
+@dirrm %%ANGBANDLIB%%/help
+@dirrm %%ANGBANDLIB%%/info
+@dirrm %%ANGBANDLIB%%/pref
+@dirrm %%ANGBANDLIB%%/save
+@dirrm %%ANGBANDLIB%%/script
+@dirrm %%ANGBANDLIB%%/user
+@dirrm %%ANGBANDLIB%%/xtra
+@dirrm %%ANGBANDLIB%%
