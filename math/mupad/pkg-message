@@ -1,9 +1,10 @@
-To use this software you must accept license agreement "LICENSE"
-which found at /usr/local/mupad/.
+The installation has a memory limit of 10 MB.
+To remove this limit, you will need to enter a registration key,
+which is for free for non-commercial users.
+Commercial users should contact SciFace software or their local distributor.
+http://www.mupad.org/muptan.html
+--
+Fixed single-user licenses for the following versions of MuPAD
+are available free of charge:
+http://research.mupad.de/licenses.html
 
-Excutables are in /usr/local/mupad/share/bin/, you can add it to your $PATH.
-
-Free Personal Licenses is available at
-http://www.sciface.com/personal.shtml
-http://www.sciface.com/mupad_download/
-Specify the MuPAD version as `MuPAD for Linux/PC 2.5'
