@@ -8,9 +8,7 @@ share/sapphire/themes/default.theme
 share/sapphire/themes/gray.theme
 share/sapphire/themes/rose.theme
 share/sapphire/themes/slate.theme
-share/sapphire/wmconfig/wmconf
 @dirrm share/doc/sapphire
 @dirrm share/sapphire/menu
 @dirrm share/sapphire/themes
-@dirrm share/sapphire/wmconfig
 @dirrm share/sapphire

@@ -1,62 +1,47 @@
---- sapphire.inst.orig	Tue Feb 22 08:30:53 2000
-+++ sapphire.inst	Fri Mar 24 03:27:02 2000
+--- data.inst.orig	Tue Nov  7 02:39:24 2000
++++ data.inst	Tue Nov  7 02:44:11 2000
 @@ -1,4 +1,4 @@
 -#!/bin/bash
 +#!/bin/sh
  #
- # Sapphire 0.14.1
+ # Sapphire 0.15.4 and above
  #
-@@ -9,6 +9,8 @@
- # 21 Feb 2000 at 18:10
- # frankhale@yahoo.com
- #
+@@ -16,6 +16,8 @@
+ CONFIGURATION_PATH=/usr/local/share/sapphire
+ ###############################################################
+ 
 +DATADIR=%%PREFIX%%/share/sapphire
 +
- if [ -d ~/.sapphire ]
+ if [ -d $CONFIGURATION_PATH ]
  then
- 	echo "~/.sapphire directory exists";
-@@ -21,12 +23,12 @@
- if [ -d ~/.sapphire/themes ]
+ 	echo "$CONFIGURATION_PATH directory already exists";
+@@ -28,12 +30,12 @@
+ if [ -d $CONFIGURATION_PATH/themes ]
  then
- 	echo "~/.sapphire/themes directory exists, copying themes there";	
--	cp data/themes/* ~/.sapphire/themes
-+	cp -pPR $DATADIR/themes/* ~/.sapphire/themes
+ 	echo "$CONFIGURATION_PATH directory already exists, copying over current themes";	
+-	cp data/themes/* $CONFIGURATION_PATH/themes
++	cp -pPR DATADIR/themes/* $CONFIGURATION_PATH/themes
  else
- 	mkdir ~/.sapphire/themes
- 	echo "created directory ~/.sapphire/themes";
+ 	mkdir $CONFIGURATION_PATH/themes
+ 	echo "created directory $CONFIGURATION_PATH/themes";
  	
--	cp data/themes/* ~/.sapphire/themes
-+	cp -pPR $DATADIR/themes/* ~/.sapphire/themes
- 	echo "themes were copied to ~/.sapphire/themes";
+-	cp data/themes/* $CONFIGURATION_PATH/themes
++	cp -pPR DATADIR/themes/* $CONFIGURATION_PATH/themes
+ 	echo "themes were copied to $CONFIGURATION_PATH/themes";
  fi
  	
-@@ -34,12 +36,12 @@
- if [ -d ~/.sapphire/menu ]
+@@ -41,12 +43,12 @@
+ if [ -d $CONFIGURATION_PATH/menu ]
  then
- 	echo "~/.sapphire/menu directory exists, copying menu files there";
--	cp data/menu/* ~/.sapphire/menu
-+	cp $DATADIR/menu/* ~/.sapphire/menu
+ 	echo "$CONFIGURATION_PATH/menu directory already exists, copying over current menu files";
+-	cp data/menu/* $CONFIGURATION_PATH/menu
++	cp -pPR DATADIR/menu/* $CONFIGURATION_PATH/menu
  else
- 	mkdir ~/.sapphire/menu
- 	echo "created directory ~/.sapphire/menu";	
+ 	mkdir $CONFIGURATION_PATH/menu
+ 	echo "created directory $CONFIGURATION_PATH/menu";	
  	
--	cp data/menu/* ~/.sapphire/menu
-+	cp $DATADIR/menu/* ~/.sapphire/menu
- 	echo "menu files were copied to ~/.sapphire/menu";
- fi
- 
-@@ -47,12 +49,12 @@
- if [ -d ~/.sapphire/wmconfig ]
- then
- 	echo "~/.sapphire/wmconfig directory exists, copying configuration files there";
--	cp data/wmconfig/* ~/.sapphire/wmconfig		
-+	cp $DATADIR/wmconfig/* ~/.sapphire/wmconfig		
- else
- 	mkdir ~/.sapphire/wmconfig
- 	echo "created directory ~/.sapphire/wmconfig";
- 
--	cp data/wmconfig/* ~/.sapphire/wmconfig
-+	cp $DATADIR/wmconfig/* ~/.sapphire/wmconfig
- 	echo "configuration files were copied to ~/.sapphire/wmconfig";	
+-	cp data/menu/* $CONFIGURATION_PATH/menu
++	cp -pPR DATADIR/menu/* $CONFIGURATION_PATH/menu
+ 	echo "menu files were copied to $CONFIGURATION_PATH/menu";
  fi
  
