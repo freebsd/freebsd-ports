@@ -1,0 +1,18 @@
+--- src/Makefile	Sat Dec 21 04:45:00 1996
++++ /home/andy/tmp/wrk/src/Makefile	Thu May 21 22:10:24 1998
+@@ -9,13 +9,13 @@
+ 
+ # Add -DVERBOSE_CGI_LOGS if you want logs of CGI program start and stop times
+ 
+-CMDARGS = -c -O2
++CMDARGS = -c ${CFLAGS}
+ 
+ # Change these if necessary
+ 
+ YACC = bison -y
+ LEX = flex
+-CC = gcc
++#CC = gcc
+ 
+ all:	boa
+ 
