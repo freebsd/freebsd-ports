@@ -1,5 +1,5 @@
---- src/Makefile.freebsd.orig	Mon Dec 16 16:08:16 1996
-+++ src/Makefile.freebsd	Sun Dec 22 13:38:43 1996
+--- src/Makefile.freebsd.orig	Mon May 18 23:18:48 1998
++++ src/Makefile.freebsd	Mon May 18 23:19:26 1998
 @@ -1,6 +1,6 @@
  SHELL = /bin/sh
 -MAKE = make

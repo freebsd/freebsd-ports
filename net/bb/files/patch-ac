@@ -1,0 +1,11 @@
+--- runbb.sh.orig	Mon May 18 23:22:46 1998
++++ runbb.sh	Mon May 18 23:23:15 1998
+@@ -16,7 +16,7 @@
+ #
+ # BBHOME IS THE ROOT DIRECTORY OF BIG BROTHER!!!
+ # YOU MUST SET THE NEXT LINE TO WHERE BB LIVES
+-BBHOME="" 
++BBHOME="!!PREFIX!!/bb" 
+ 
+ export BBHOME
+ 

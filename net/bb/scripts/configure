@@ -1,17 +1,12 @@
 #!/bin/sh
 
-# $Id$
+# $Id: configure,v 1.3 1997/10/13 20:19:25 andreas Exp $
 
 cd $WRKSRC || exit 1
 
-mv runbb.sh runbb.sh.orig
-sed -e "s:/home/sean/bb:$PREFIX/bb:g" \
-	< runbb.sh.orig \
-	> runbb.sh
-
 HOSTNAME=`hostname`
 
-mv $WRKSRC/etc/bb-hosts $WRKSRC/etc/bb-hosts.orig
-sed -e "s:@@IP@@:172.16.1.1:" -e "s:@@HOST@@:$HOSTNAME:g" \
-	< $FILESDIR/bb-hosts \
-	> $WRKSRC/etc/bb-hosts
+perl -pi -e "s=!!PREFIX!!=$PREFIX=" ${WRKSRC}/www/bb-pager.sh
+perl -pi -e "s=!!HOSTNAME!!=$HOSTNAME=" ${WRKSRC}/www/bb-pager.sh
+perl -pi -e "s=!!PREFIX!!=$PREFIX=" ${WRKSRC}/runbb.sh
+perl -pi -e "s=!!HOSTNAME!!=$HOSTNAME=g" ${WRKSRC}/etc/bb-hosts

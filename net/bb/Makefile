@@ -3,22 +3,28 @@
 # Date created:         So  17 Nov 1996 16:59:23 MET
 # Whom:                 Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.21 1998/01/31 11:44:35 andreas Exp $
+# $Id: Makefile,v 1.22 1998/01/31 11:58:55 andreas Exp $
 #
 
-DISTNAME=	bb-1.06a
+DISTNAME=	bb-1.06c
 CATEGORIES=	net
 MASTER_SITES=	http://freefall.freebsd.org/~andreas/download/
 
 MAINTAINER=	andreas@FreeBSD.ORG
-
-BUILD_DEPENDS=	${PREFIX}/sbin/httpd:${PORTSDIR}/www/apache
 
 # The FreeBSD Ports Team has permission to include this in our CDROM
 # from the author, but others who wish to do likewise will have to
 # contact Sean MacGuire <sean@iti.qc.ca>.
 
 WRKSRC=		${WRKDIR}/bb
+
+pre-configure:
+	@echo "==================================================="
+	@echo "You need to install a WWW Server to use this port"
+	@echo "For example: - apache or "
+	@echo "             - apache-ssl
+	@echo "port."
+	@echo "==================================================="
 
 post-configure:
 	( cd ${WRKSRC}/doc; ${SH} bbconfig freebsd )
@@ -80,6 +86,11 @@ do-install:
 .endfor
 	${INSTALL_DATA} ${WRKSRC}/www/logs/later \
 				${PREFIX}/bb/www/logs/later
+.for file in	README footer iti-s01 iti-s01.html iti-s01.iti.qc.ca \
+		iti-s01.iti.qc.ca.html router-000.htm
+	${INSTALL_DATA} ${WRKSRC}/www/notes/$(file) \
+		${PREFIX}/bb/www/notes
+.endfor
 	@${RM} -f ${PREFIX}/www/data/bb
 	@ln -sf ${PREFIX}/bb/www ${PREFIX}/www/data/bb
 	@ln -sf bb.html ${PREFIX}/bb/www/index.html
@@ -107,6 +118,5 @@ do-install:
 	@echo "Look here for a life sample:"
 	@echo "        http://www.menet.umn.edu/~clolson/bb/bb.html"
 	@echo ""
-	@echo "Have fun doing it remotely - Andreas ///"
 
 .include <bsd.port.mk>

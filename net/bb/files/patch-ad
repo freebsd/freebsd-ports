@@ -1,0 +1,30 @@
+--- etc/bb-hosts.orig	Mon May 18 23:25:35 1998
++++ etc/bb-hosts	Mon May 18 23:28:20 1998
+@@ -1,14 +1,16 @@
+ #
+ # THE BIG BROTHER HOSTS FILE
+ #
+-192.168.116.1	iti-s01.iti.qc.com # BBPAGER BBNET BBDISPLAY ftp smtp pop3 http://iti-s01/
+-192.168.117.1	ns.iti.qc.com # ftp smtp dns
+-group <H3><I>Web Servers</I></H3>
+-192.168.117.2	ns2.iti.qc.com # ftp smtp 
+-192.168.117.3	ns3.iti.qc.com # ftp smtp 
+-192.168.117.4	ns4.iti.qc.com # ftp smtp 
+-group <H3><I>Modem Banks</I></H3>
+-dialup	modem-bank1 192.168.117.1 16
+-dialup	modem-bank2 192.168.117.17 16
+-dialup	modem-bank3 192.168.117.33 16
+-summary	canada.bc 192.168.116.1 http://www.iti.qc.com/iti/users/sean/bb/
++172.16.1.1	!!HOSTNAME!! # BBPAGER BBNET BBDISPLAY ftp smtp pop3 http://!!HOSTNAME!!/
++#
++#192.168.116.1	iti-s01.iti.qc.com # BBPAGER BBNET BBDISPLAY ftp smtp pop3 http://iti-s01/
++#192.168.117.1	ns.iti.qc.com # ftp smtp dns
++#group <H3><I>Web Servers</I></H3>
++#192.168.117.2	ns2.iti.qc.com # ftp smtp 
++#192.168.117.3	ns3.iti.qc.com # ftp smtp 
++#192.168.117.4	ns4.iti.qc.com # ftp smtp 
++#group <H3><I>Modem Banks</I></H3>
++#dialup	modem-bank1 192.168.117.1 16
++#dialup	modem-bank2 192.168.117.17 16
++#dialup	modem-bank3 192.168.117.33 16
++#summary	canada.bc 192.168.116.1 http://www.iti.qc.com/iti/users/sean/bb/
