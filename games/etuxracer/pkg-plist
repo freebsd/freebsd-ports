@@ -1,0 +1,71 @@
+bin/tuxracer
+share/tuxracer/courses/1/course.tcl
+share/tuxracer/courses/1/elev.rgb
+share/tuxracer/courses/1/terrain.rgb
+share/tuxracer/courses/1/trees.rgb
+share/tuxracer/courses/10/course.tcl
+share/tuxracer/courses/10/elev.rgb
+share/tuxracer/courses/10/terrain.rgb
+share/tuxracer/courses/10/trees.rgb
+share/tuxracer/courses/11/course.tcl
+share/tuxracer/courses/11/elev.rgb
+share/tuxracer/courses/11/terrain.rgb
+share/tuxracer/courses/11/trees.rgb
+share/tuxracer/courses/2/course.tcl
+share/tuxracer/courses/2/elev.rgb
+share/tuxracer/courses/2/terrain.rgb
+share/tuxracer/courses/2/trees.rgb
+share/tuxracer/courses/3/course.tcl
+share/tuxracer/courses/3/elev.rgb
+share/tuxracer/courses/3/terrain.rgb
+share/tuxracer/courses/3/trees.rgb
+share/tuxracer/courses/4/course.tcl
+share/tuxracer/courses/4/elev.rgb
+share/tuxracer/courses/4/terrain.rgb
+share/tuxracer/courses/4/trees.rgb
+share/tuxracer/courses/5/course.tcl
+share/tuxracer/courses/5/elev.rgb
+share/tuxracer/courses/5/terrain.rgb
+share/tuxracer/courses/5/trees.rgb
+share/tuxracer/courses/6/course.tcl
+share/tuxracer/courses/6/elev.rgb
+share/tuxracer/courses/6/terrain.rgb
+share/tuxracer/courses/6/trees.rgb
+share/tuxracer/courses/7/course.tcl
+share/tuxracer/courses/7/elev.rgb
+share/tuxracer/courses/7/terrain.rgb
+share/tuxracer/courses/7/trees.rgb
+share/tuxracer/courses/8/course.tcl
+share/tuxracer/courses/8/elev.rgb
+share/tuxracer/courses/8/terrain.rgb
+share/tuxracer/courses/8/trees.rgb
+share/tuxracer/courses/9/course.tcl
+share/tuxracer/courses/9/elev.rgb
+share/tuxracer/courses/9/terrain.rgb
+share/tuxracer/courses/9/trees.rgb
+share/tuxracer/courses/common/background1.rgb
+share/tuxracer/courses/common/background2.rgb
+share/tuxracer/courses/common/background3.rgb
+share/tuxracer/courses/common/ice.rgb
+share/tuxracer/courses/common/rock.rgb
+share/tuxracer/courses/common/snow.rgb
+share/tuxracer/courses/common/standard_light.tcl
+share/tuxracer/courses/common/tree.rgb
+share/tuxracer/courses/common/tree_polyhedron.tcl
+share/tuxracer/courses/common/tux_moonwalk.tcl
+share/tuxracer/courses/common/tux_walk.tcl
+share/tuxracer/tux.tcl
+@dirrm share/tuxracer/courses/common
+@dirrm share/tuxracer/courses/9
+@dirrm share/tuxracer/courses/8
+@dirrm share/tuxracer/courses/7
+@dirrm share/tuxracer/courses/6
+@dirrm share/tuxracer/courses/5
+@dirrm share/tuxracer/courses/4
+@dirrm share/tuxracer/courses/3
+@dirrm share/tuxracer/courses/2
+@dirrm share/tuxracer/courses/11
+@dirrm share/tuxracer/courses/10
+@dirrm share/tuxracer/courses/1
+@dirrm share/tuxracer/courses
+@dirrm share/tuxracer

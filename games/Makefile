@@ -176,6 +176,7 @@
     SUBDIR += tkmoo
     SUBDIR += tksol
     SUBDIR += trojka
+    SUBDIR += tuxracer
     SUBDIR += tvp
     SUBDIR += nil
     SUBDIR += nonsense
