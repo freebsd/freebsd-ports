@@ -20,7 +20,14 @@ BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml \
 		ocamlfind:${PORTSDIR}/devel/ocaml-findlib
 
 USE_GMAKE=	yes
-ALL_TARGET=	all opt doc
+ALL_TARGET=	all opt
+ALL_TARGET=    all opt
+.if !defined(NOPORTDOCS)
+ALL_TARGET+=	doc
+PLIST_SUB+=	PORTDOCS=""
+.else
+PLIST_SUB+=	PORTDOCS="@comment "
+.endif
 DOCSDIR=	${PREFIX}/share/doc/ocaml/${PORTNAME}
 
 post-install:
