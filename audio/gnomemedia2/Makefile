@@ -1,13 +1,13 @@
 # New ports collection makefile for:	gnome-media
-# Version required:			1.0.1
+# Version required:			1.0.9.1
 # Date created:				20 January 1999
 # Whom:					Jeremy Lea <reg@shale.csir.co.za>
 #
-# $Id: Makefile,v 1.2 1999/04/08 18:07:35 steve Exp $
+# $Id: Makefile,v 1.3 1999/05/30 03:56:37 steve Exp $
 #
 
-DISTNAME=	gnome-media-1.0.1
-PKGNAME=	gnomemedia-1.0.1
+DISTNAME=	gnome-media-1.0.9.1
+PKGNAME=	gnomemedia-1.0.9.1
 CATEGORIES=	audio gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/gnome-media

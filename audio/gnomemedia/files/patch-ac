@@ -48,3 +48,23 @@
  
  
  Audio_DATA = gtcd.desktop
+--- cddbslave/Makefile.in.orig	Thu Jul 15 07:55:51 1999
++++ cddbslave/Makefile.in	Fri Jul 16 00:02:50 1999
+@@ -123,7 +123,7 @@
+ cxxflags_set = @cxxflags_set@
+ l = @l@
+ 
+-INCLUDES = -I$(includedir) $(GNOME_INCLUDEDIR)         -DGNOMELOCALEDIR=\""$(datadir)/locale"\"
++INCLUDES = -I$(includedir) $(GNOME_INCLUDEDIR)         -DGNOMELOCALEDIR=\""$(prefix)/share/locale"\"
+ 
+ 
+ bin_PROGRAMS = cddbslave cddbsubmit
+@@ -137,7 +137,7 @@
+ cddbsubmit_LDADD = $(GNOME_LIBDIR) 			$(GNOME_LIBS) 			$(GHTTP_LIB) 			$(INTLLIBS)
+ 
+ 
+-gnomedatadir = $(datadir)/gnome
++gnomedatadir = $(datadir)
+ 
+ gnomedata_DATA = cddb-submit-methods
+ 
