@@ -3,38 +3,47 @@
 # $FreeBSD$
 #
 # For postmaster startup options, edit $PGDATA/postgresql.conf
+#
+# Note that PGDATA is set in ~pgsql/.profile, don't try to manipulate it here!
+#
 
 PREFIX=%%PREFIX%%
 PGBIN=${PREFIX}/bin
+logfile=/var/log/pgsql
 
 case $1 in
 start)
-    [ -d ${PREFIX}/lib ] && /sbin/ldconfig -m ${PREFIX}/lib
-    touch /var/log/pgsql
-    chmod 600 /var/log/pgsql
-    chown pgsql:pgsql /var/log/pgsql
+    touch ${logfile}
+    chmod 600 ${logfile}
+    chown pgsql:pgsql ${logfile}
     [ -x ${PGBIN}/pg_ctl ] && {
 	su -l pgsql -c \
-	    '[ -d ${PGDATA} ] && exec %%PREFIX%%/bin/pg_ctl start -s -w -l /var/log/pgsql'
+	    "[ -d \${PGDATA} ] && exec ${PREFIX}/bin/pg_ctl start -s -w -l ${logfile}"
 	echo -n ' pgsql'
     }
     ;;
 
 stop)
     [ -x ${PGBIN}/pg_ctl ] && {
-	su -l pgsql -c 'exec %%PREFIX%%/bin/pg_ctl stop -s -m fast'
+	su -l pgsql -c "exec ${PREFIX}/bin/pg_ctl stop -s -m fast"
 	echo -n ' pgsql'
+    }
+    ;;
+
+restart)
+    [ -x ${PGBIN}/pg_ctl ] && {
+	exec su -l pgsql -c "exec ${PREFIX}/bin/pg_ctl restart -s -m fast"
     }
     ;;
 
 status)
     [ -x ${PGBIN}/pg_ctl ] && {
-	exec su -l pgsql -c 'exec %%PREFIX%%/bin/pg_ctl status'
+	exec su -l pgsql -c "exec ${PREFIX}/bin/pg_ctl status"
     }
     ;;
 
 *)
-    echo "usage: `basename $0` {start|stop|status}" >&2
+    echo "usage: `basename $0` {start|stop|restart|status}" >&2
     exit 64
     ;;
 esac
