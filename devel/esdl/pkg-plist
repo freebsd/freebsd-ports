@@ -45,6 +45,17 @@ lib/erlang/lib/esdl-0.93.0131/ebin/sdl_keyboard.beam
 lib/erlang/lib/esdl-0.93.0131/ebin/sdl_mouse.beam
 lib/erlang/lib/esdl-0.93.0131/ebin/sdl_util.beam
 lib/erlang/lib/esdl-0.93.0131/ebin/sdl_video.beam
+lib/erlang/lib/esdl-0.93.0131/include/gl.hrl
+lib/erlang/lib/esdl-0.93.0131/include/glu.hrl
+lib/erlang/lib/esdl-0.93.0131/include/old_gl.hrl
+lib/erlang/lib/esdl-0.93.0131/include/sdl.hrl
+lib/erlang/lib/esdl-0.93.0131/include/sdl_active.hrl
+lib/erlang/lib/esdl-0.93.0131/include/sdl_audio.hrl
+lib/erlang/lib/esdl-0.93.0131/include/sdl_events.hrl
+lib/erlang/lib/esdl-0.93.0131/include/sdl_joystick.hrl
+lib/erlang/lib/esdl-0.93.0131/include/sdl_keyboard.hrl
+lib/erlang/lib/esdl-0.93.0131/include/sdl_mouse.hrl
+lib/erlang/lib/esdl-0.93.0131/include/sdl_video.hrl
 lib/erlang/lib/esdl-0.93.0131/priv/sdl_driver.so
 lib/erlang/lib/esdl-0.93.0131/src/esdl.hrl
 lib/erlang/lib/esdl-0.93.0131/src/gl.erl
