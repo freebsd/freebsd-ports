@@ -1,5 +1,6 @@
 # $FreeBSD$
 #
+    SUBDIR += jdictionary-eng-hun
     SUBDIR += hu-phone
     SUBDIR += hu-zipcodes
     SUBDIR += ispell
