@@ -1,0 +1,11 @@
+--- gdk--/gdk--/window.cc.orig	Mon May 10 00:08:58 1999
++++ gdk--/gdk--/window.cc	Mon May 10 00:24:00 1999
+@@ -57,7 +57,7 @@
+ Gdk_Window::Gdk_Window(const Gdk_WindowAttr  &attributes,
+ 		       gint attributes_mask):Gdk_Drawable(0)
+   {
+-   create(NULL,attributes,attributes_mask);
++   create((Gdk_Window &)gdk_root_parent,attributes,attributes_mask);
+   }
+ 
+ Gdk_Window::~Gdk_Window()
