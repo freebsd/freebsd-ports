@@ -56,6 +56,7 @@ USE_GNOME=	libgnome
 # Build gnome-console
 .if defined(WITH_GNOMECONSOLE)
 CONFIGURE_ARGS+=	--enable-gnome
+PLIST_SUB+=		GNOMECONS=""
 .else
 # We didn't need GTK (it's not possible to put WANT_GNOME in an .if statement!)
 WITHOUT_GNOME=		yes
@@ -66,6 +67,7 @@ PLIST_SUB+=		GNOMECONS="@comment "
 .if defined(WITH_WXCONSOLE)
 CONFIGURE_ARGS+=	--enable-wx-console
 LIB_DEPENDS+=		wx_gtk-2.4:${PORTSDIR}/x11-toolkits/wxgtk
+PLIST_SUB+=		WXCONS=""
 .else
 # We didn't need GTK (it's not possible to put WANT_GNOME in an .if statement!)
 WITHOUT_GNOME=		yes
