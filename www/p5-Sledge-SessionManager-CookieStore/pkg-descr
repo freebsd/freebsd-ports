@@ -1,0 +1,4 @@
+Sledge::SessionManager::CookieStore is a Sledge extension that stores
+session data to HTTP cookies.
+
+WWW:	http://sl.edge.jp/
