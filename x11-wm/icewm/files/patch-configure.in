@@ -1,5 +1,5 @@
---- configure.in.orig	Fri Jul 26 19:06:25 2002
-+++ configure.in	Fri Jul 26 19:09:33 2002
+--- configure.in.orig	Mon Jul  1 01:05:18 2002
++++ configure.in	Tue Jul 30 21:46:40 2002
 @@ -108,15 +108,15 @@
  AC_ARG_ENABLE(i18n,
    [  --enable-i18n           Enable internationalization],
@@ -25,7 +25,7 @@
        ICE_CHECK_NL_ITEM(_NL_MESSAGES_CODESET,
          [ ice_nl_codesets="${ice_nl_codesets} _NL_MESSAGES_CODESET," ])
        ICE_CHECK_NL_ITEM(_NL_CTYPE_CODESET_NAME,
-@@ -125,10 +125,10 @@
+@@ -125,10 +125,11 @@
          [ ice_nl_codesets="${ice_nl_codesets} CODESET," ])
  
        if test "${ice_nl_codesets}" = ""; then
@@ -37,10 +37,11 @@
 +dnl *** return any information about the locale's codeset. Check your manuals.
 +dnl *** Ask your vendor. Contact icewm-devel@lists.sourceforge.net when you know 
 +dnl *** the name of the locale-dependent parameter for your platform.])
++         true
        fi
        
        ice_nl_codesets="${ice_nl_codesets} 0"
-@@ -164,7 +164,7 @@
+@@ -164,7 +165,7 @@
          [  --unicode-set=CODESET   your iconv's unicode set in machine endian encoding
                            (e.g. WCHAR_T, UCS-4-INTERNAL, UCS-4LE, UCS-4BE)],
  	   AC_DEFINE_UNQUOTED(CONFIG_UNICODE_SET, "$with_unicode_set"),
@@ -49,7 +50,7 @@
  
        ice_sufficent_iconv=no
        ICE_CHECK_CONVERSION(ISO-8859-1,$with_unicode_set,no,$ice_libiconv,
-@@ -203,7 +203,7 @@
+@@ -203,7 +204,7 @@
    features="${features} nls"
    TARGETS=$TARGETS' nls'
  
@@ -58,7 +59,7 @@
  fi
  
  dnl ======================================================= /proc/wm-session ===
-@@ -464,7 +464,7 @@
+@@ -464,7 +465,7 @@
  
  	AC_DEFINE(CONFIG_GNOME_MENUS, 1, [Define to make IceWM more GNOME-friendly])
        else
