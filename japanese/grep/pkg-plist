@@ -1,5 +1,9 @@
 bin/jgrep
 bin/jegrep
 bin/jfgrep
-share/doc/ja/grep/README.MB
-@dirrm share/doc/ja/grep
+@unexec install-info --delete %D/info/grep.info %D/info/dir
+info/grep.info
+@exec install-info %D/info/grep.info %D/info/dir
+%%PORTDOCS%%share/doc/ja-grep/README.MB
+%%PORTDOCS%%share/doc/ja-grep/README.mlb
+%%PORTDOCS%%@dirrm share/doc/ja-grep
