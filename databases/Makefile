@@ -178,6 +178,7 @@
     SUBDIR += ruby-postgres
     SUBDIR += ruby-rdbc1
     SUBDIR += ruby-search-namazu
+    SUBDIR += ruby-sqlite
     SUBDIR += ruby-sqlrelay
     SUBDIR += sqlite
     SUBDIR += sqlrelay
