@@ -1,16 +1,19 @@
---- tkinfo.orig	Fri Feb  7 05:34:36 1997
-+++ tkinfo	Fri Feb  7 09:44:40 1997
-@@ -7,11 +7,11 @@
- # uses the same directory as where this shell script is installed.
- # You might consider installing the scripts into "/usr/local/lib/tkinfo",
- # and using LIBDIR=/usr/local/lib/tkinfo instead.
--LIBDIR=`dirname $0`
-+LIBDIR=`dirname $0`/../share/tk/tkinfo
- #LIBDIR=/usr/local/lib/tkinfo
+--- tkinfo.orig	Thu Mar  6 02:07:29 1997
++++ tkinfo	Thu Mar  6 11:41:30 1997
+@@ -1,6 +1,6 @@
+ #!/bin/sh
+ # This is a Tcl/Tk script to be interpreted by wish (Tk4.0 or better): \
+-exec wish "$0" "$@"
++exec wish4.1 "$0" "$@"
  
- # Set the name (or path) of the wish binary.  Normally just ``wish''.
--WISH=wish
-+WISH=wish4.1
+ ##########################################################################
+ # Version of TkInfo:
+@@ -443,7 +443,7 @@
+ proc tkiInit { } {
+     global tki env auto_path tkiEmbed geometry
  
- exec $WISH -file $LIBDIR/tkinfo.tcl -name tkinfo ${1+"$@"}
- exit 1
+-    set defInfoPath [list . \
++    set defInfoPath [list . /usr/share/info \
+       /usr/info /usr/local/info /usr/local/gnu/info \
+       /usr/local/emacs/info /usr/local/lib/emacs/info \
+       /usr/lib/xemacs/info /usr/local/lib/xemacs/info \
