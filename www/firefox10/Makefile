@@ -127,6 +127,12 @@ pre-install:
 	@${TOUCH} ${PLIST}
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} \
 		Makefile ${MAKE_ARGS} install
+.for ii in mac win
+.for jj in / .jar
+	@${RM} -rf ${FAKEDIR}/lib/mozilla-1.6/chrome/en-${ii}${jj}
+.endfor
+.endfor
+
 .if !defined (WITH_HEADERS)
 	@${RM} -fr ${FAKEDIR}/share/idl ${FAKEDIR}/include
 .endif
