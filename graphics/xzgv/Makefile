@@ -17,13 +17,20 @@ COMMENT=	An image viewer with thumbnail-based file selector for X
 
 USE_X_PREFIX=	yes
 USE_GNOME=	imlib
+USE_REINPLACE=	yes
 USE_GMAKE=	yes
 
 MAN1=		xzgv.1
 
 post-patch:
-	@${PERL} -pi -e 's|^CC|#CC|g ; \
+	@${REINPLACE_CMD} -e 's|^CC|#CC|g ; \
 		 s|^CFLAGS|#CFLAGS|g ; \
 		 s|^PREFIX|#PREFIX|g' ${WRKSRC}/config.mk
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_MMX) && (${ARCH} == "i386")
+CFLAGS+=	-DINTERP_MMX
+.endif
+
+.include <bsd.port.post.mk>
