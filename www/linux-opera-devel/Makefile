@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	opera
-PORTVERSION=	6.03.20020813
+PORTVERSION=	6.11.20021129
 CATEGORIES=	www linux
-MASTER_SITES=	http://opera.online.no/linux/603/final/en/qt_static/ \
-		ftp://ftp.opera.com/pub/opera/linux/603/final/en/qt_static/
+MASTER_SITES=	http://opera.online.no/linux/611/final/en/i386/static/ \
+		ftp://ftp.opera.com/pub/opera/linux/611/final/en/i386/static/
 PKGNAMEPREFIX=	linux-
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/03./03-/}.1-static-qt.i386
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/11./11-/}.1-static-qt.i386
 
 MAINTAINER=	des@FreeBSD.org
 
@@ -20,23 +20,12 @@ RUN_DEPENDS=	${LINUXBASE}/usr/X11R6/lib/libXm.so.2:${PORTSDIR}/x11-toolkits/linu
 
 USE_BZIP2=	yes
 USE_LINUX=	yes
-USE_REINPLACE=	yes
 ONLY_FOR_ARCHS=	i386
 
 NO_BUILD=	yes
 NO_FILTER_SHLIBS=yes
 
-do-configure:
-	${REINPLACE_CMD} -e \
-	    's|%%PREFIX%%|${PREFIX}|g; s|%%DATADIR%%|${DATADIR}|g'\
-	    ${WRKSRC}/install.sh
-
 do-install:
-	(cd ${WRKSRC} && ./install.sh \
-	    --exec_prefix=${DATADIR}/bin \
-	    --wrapperdir=${PREFIX}/bin \
-	    --docdir=${DOCSDIR} \
-	    --sharedir=${DATADIR} \
-	    --plugindir=${DATADIR}/plugins )
+	(cd ${WRKSRC} && ./install.sh --prefix="${PREFIX}")
 
 .include <bsd.port.mk>
