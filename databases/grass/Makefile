@@ -7,7 +7,7 @@
 
 PORTNAME=	grass
 PORTVERSION=	5.0.2
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://grass.itc.it/grass50/source/ \
@@ -41,7 +41,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}${PORTVERSION}
 
 USE_ICONV=	yes
 USE_XLIB=	yes
-USE_MESA=	yes
+USE_GL=		yes
 USE_PERL5=	yes
 USE_BISON=	yes
 USE_GMAKE=	yes
@@ -59,6 +59,11 @@ CONFIGURE_ARGS=	--with-includes=${LOCALBASE}/include \
 		--with-lapack \
 		--with-nls \
 		--without-motif
+CONFIGURE_ENV=	LIBS="${PTHREAD_LIBS}"
+CFLAGS+=	${PTHREAD_CFLAGS}
+
+HOSTNAME!=	hostname
+PLIST_SUB=	HOSTNAME="${HOSTNAME}"
 
 .include <bsd.port.pre.mk>
 
