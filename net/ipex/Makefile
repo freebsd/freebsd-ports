@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ipex
-PORTVERSION=	2.3.4
+PORTVERSION=	2.3.5
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	ipex
@@ -20,12 +20,8 @@ GNU_CONFIGURE=	yes
 
 .include <bsd.port.pre.mk>
 
-.if !defined(NOPORTDOCS)
-post-install:
-	@${MKDIR} ${DOCSDIR}
-.for file in ipex-HOWTO.pdf ipex-HOWTO.txt pcap_exprs.txt regexps.txt rfc0768.txt rfc0792.txt rfc0793.txt
-	@${INSTALL_DATA} ${WRKSRC}/doc/${file} ${DOCSDIR}
-.endfor
+.if ${OSVERSION} >= 500000
+BROKEN=		"currently does not support -CURRENT"
 .endif
 
 .include <bsd.port.post.mk>
