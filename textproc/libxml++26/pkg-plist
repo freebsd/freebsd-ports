@@ -1,34 +1,34 @@
-include/libxml++-1.0/libxml++/api_export.h
-include/libxml++-1.0/libxml++/attribute.h
-include/libxml++-1.0/libxml++/document.h
-include/libxml++-1.0/libxml++/dtd.h
-include/libxml++-1.0/libxml++/exceptions/exception.h
-include/libxml++-1.0/libxml++/exceptions/internal_error.h
-include/libxml++-1.0/libxml++/exceptions/parse_error.h
-include/libxml++-1.0/libxml++/exceptions/validity_error.h
-include/libxml++-1.0/libxml++/io/ostreamoutputbuffer.h
-include/libxml++-1.0/libxml++/io/outputbuffer.h
-include/libxml++-1.0/libxml++/keepblanks.h
-include/libxml++-1.0/libxml++/libxml++.h
-include/libxml++-1.0/libxml++/nodes/cdatanode.h
-include/libxml++-1.0/libxml++/nodes/commentnode.h
-include/libxml++-1.0/libxml++/nodes/contentnode.h
-include/libxml++-1.0/libxml++/nodes/element.h
-include/libxml++-1.0/libxml++/nodes/entityreference.h
-include/libxml++-1.0/libxml++/nodes/node.h
-include/libxml++-1.0/libxml++/nodes/processinginstructionnode.h
-include/libxml++-1.0/libxml++/nodes/textnode.h
-include/libxml++-1.0/libxml++/noncopyable.h
-include/libxml++-1.0/libxml++/parsers/domparser.h
-include/libxml++-1.0/libxml++/parsers/parser.h
-include/libxml++-1.0/libxml++/parsers/saxparser.h
-lib/libxml++-1.0.a
-lib/libxml++-1.0.so
-lib/libxml++-1.0.so.1
-libdata/pkgconfig/libxml++-1.0.pc
-@dirrm include/libxml++-1.0/libxml++/exceptions
-@dirrm include/libxml++-1.0/libxml++/io
-@dirrm include/libxml++-1.0/libxml++/nodes
-@dirrm include/libxml++-1.0/libxml++/parsers
-@dirrm include/libxml++-1.0/libxml++
-@dirrm include/libxml++-1.0
+include/libxml++-%%API_VERSION%%/libxml++/attribute.h
+include/libxml++-%%API_VERSION%%/libxml++/document.h
+include/libxml++-%%API_VERSION%%/libxml++/dtd.h
+include/libxml++-%%API_VERSION%%/libxml++/exceptions/exception.h
+include/libxml++-%%API_VERSION%%/libxml++/exceptions/internal_error.h
+include/libxml++-%%API_VERSION%%/libxml++/exceptions/parse_error.h
+include/libxml++-%%API_VERSION%%/libxml++/exceptions/validity_error.h
+include/libxml++-%%API_VERSION%%/libxml++/io/ostreamoutputbuffer.h
+include/libxml++-%%API_VERSION%%/libxml++/io/outputbuffer.h
+include/libxml++-%%API_VERSION%%/libxml++/keepblanks.h
+include/libxml++-%%API_VERSION%%/libxml++/libxml++.h
+include/libxml++-%%API_VERSION%%/libxml++/nodes/cdatanode.h
+include/libxml++-%%API_VERSION%%/libxml++/nodes/commentnode.h
+include/libxml++-%%API_VERSION%%/libxml++/nodes/contentnode.h
+include/libxml++-%%API_VERSION%%/libxml++/nodes/element.h
+include/libxml++-%%API_VERSION%%/libxml++/nodes/entityreference.h
+include/libxml++-%%API_VERSION%%/libxml++/nodes/node.h
+include/libxml++-%%API_VERSION%%/libxml++/nodes/processinginstructionnode.h
+include/libxml++-%%API_VERSION%%/libxml++/nodes/textnode.h
+include/libxml++-%%API_VERSION%%/libxml++/noncopyable.h
+include/libxml++-%%API_VERSION%%/libxml++/parsers/domparser.h
+include/libxml++-%%API_VERSION%%/libxml++/parsers/parser.h
+include/libxml++-%%API_VERSION%%/libxml++/parsers/saxparser.h
+include/libxml++-%%API_VERSION%%/libxml++/parsers/textreader.h
+lib/libxml++-%%VERSION%%.a
+lib/libxml++-%%VERSION%%.so
+lib/libxml++-%%VERSION%%.so.1
+libdata/pkgconfig/libxml++-%%API_VERSION%%.pc
+@dirrm include/libxml++-%%API_VERSION%%/libxml++/exceptions
+@dirrm include/libxml++-%%API_VERSION%%/libxml++/io
+@dirrm include/libxml++-%%API_VERSION%%/libxml++/nodes
+@dirrm include/libxml++-%%API_VERSION%%/libxml++/parsers
+@dirrm include/libxml++-%%API_VERSION%%/libxml++
+@dirrm include/libxml++-%%API_VERSION%%
