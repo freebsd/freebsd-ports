@@ -21,9 +21,9 @@ USE_XPM=	yes
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--with-defaultdir=${PREFIX} \
-		--with-tclincludedir=${PREFIX}/include/tcl8.2 \
-		--with-tkincludedir=${PREFIX}/include/tk8.2 \
-		--with-tclscriptdir=${PREFIX}/lib/tcl8.2 \
-		--with-tkscriptdir=${PREFIX}/lib/tk8.2
+		--with-tclincludedir=${PREFIX}/include/tcl8.3 \
+		--with-tkincludedir=${PREFIX}/include/tk8.3 \
+		--with-tclscriptdir=${PREFIX}/lib/tcl8.3 \
+		--with-tkscriptdir=${PREFIX}/lib/tk8.3
 
 .include <bsd.port.mk>

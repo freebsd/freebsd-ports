@@ -7,3 +7,5 @@ this architecture, we can implement a large variety of agent based
 models. Our initial target is Unix machines running GNU Objective C
 and X windows: the source code is freely available under GNU Licensing
 terms.
+
+WWW: http://www.swarm.org/
