@@ -3,7 +3,7 @@
 # Date created:		3 Nov 1996
 # Whom:			Mita Yoshio <mita@jp.FreeBSD.org>
 #
-# $Id: Makefile,v 1.1.1.1 1997/01/29 03:56:04 max Exp $
+# $Id: Makefile,v 1.2 1997/01/30 07:49:54 max Exp $
 #
 
 DISTNAME=	dserver2.2betapl2
@@ -13,7 +13,6 @@ MASTER_SITES=	ftp://ftp.pu-toyama.ac.jp/pub/misc/ \
 		ftp://ports.jp.FreeBSD.org/pub/FreeBSD-jp/ports-jp/LOCAL_PORTS/
 DISTFILES=	dserver2.2betapl2.tar.gz dserver2.2betapl2.addtable.tar.gz \
 		diclookup-mule-2.3.0.add.tar.gz
-EXTRACT_ONLY=	dserver2.2betapl2.tar.gz dserver2.2betapl2.addtable.tar.gz
 
 MAINTAINER=	mita@jp.FreeBSD.org
 
@@ -21,6 +20,7 @@ RUN_DEPENDS=	jless:${PORTSDIR}/japanese/less \
 		${X11BASE}/lib/X11/fonts/non-cjk/fonts.dir:${PORTSDIR}/x11/etlfonts
 BUILD_DEPENDS=	mule:${PORTSDIR}/japanese/mule-wnn
 
+EXTRACT_ONLY=	dserver2.2betapl2.tar.gz dserver2.2betapl2.addtable.tar.gz
 WRKSRC=		${WRKDIR}/dserver
 USE_GMAKE=	yes
 
