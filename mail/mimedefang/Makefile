@@ -29,7 +29,7 @@ MAN7=	mimedefang-protocol.7
 MAN8=	mimedefang.8 mimedefang.pl.8 mimedefang-multiplexor.8
 
 .if !exists( /usr/include/libmilter/mfapi.h )
-IGNORE=	"requires libmilter installed in the base system, upgrade your FreeBSD"
+BUILD_DEPENDS+=	${LOCALBASE}/include/libmilter/mfapi.h:${PORTSDIR}/mail/sendmail
 .endif
 
 post-install:
