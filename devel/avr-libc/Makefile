@@ -17,8 +17,7 @@ COMMENT=	A C and math library for the Atmel AVR controller family
 
 BUILD_DEPENDS=	avr-as:${PORTSDIR}/devel/avr-binutils \
 		avr-ld:${PORTSDIR}/devel/avr-binutils \
-		avr-gcc:${PORTSDIR}/devel/avr-gcc \
-		${GMAKE}:${PORTSDIR}/devel/gmake
+		avr-gcc:${PORTSDIR}/devel/avr-gcc
 RUN_DEPENDS=	avr-as:${PORTSDIR}/devel/avr-binutils \
 		avr-ld:${PORTSDIR}/devel/avr-binutils \
 		avr-gcc:${PORTSDIR}/devel/avr-gcc
@@ -29,6 +28,7 @@ BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen \
 .endif
 
 USE_BZIP2=	yes
+USE_GMAKE=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ENV=	CC=avr-gcc PREFIX=${PREFIX}
 CONFIGURE_SCRIPT= doconf
@@ -54,7 +54,7 @@ do-build:
 		(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ./domake MAKE=${GMAKE})
 
 do-install:
-		rm -f ${TMPPLIST}; cat ${PLIST_DOC} ${PLIST} > ${TMPPLIST}
+		${RM} -f ${TMPPLIST}; ${CAT} ${PLIST_DOC} ${PLIST} > ${TMPPLIST}
 		(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ./domake MAKE=${GMAKE} install)
 		${MKDIR} ${PREFIX}/share/doc/avr-libc
 		${MKDIR} ${PREFIX}/share/doc/avr-libc/examples
