@@ -43,6 +43,9 @@ bin/cunlog
 bin/filcon
 bin/filerepair
 bin/hoard
+bin/logbandwidth
+bin/logcmls
+bin/logreintegration
 bin/parser
 bin/removeinc
 bin/repair
