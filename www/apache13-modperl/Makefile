@@ -96,6 +96,7 @@ CONFIGURE_ARGS+=--prefix=${PREFIX} \
 		--enable-shared=max \
 		--activate-module=src/modules/perl/libperl.a \
 		--enable-module=perl \
+		${EXPAT_CONF} \
 		${SUEXEC_CONF}
 
 CFLAGS+=-DDOCUMENT_LOCATION=\\\\\"${DOCUMENT_ROOT}\\\\\" \
