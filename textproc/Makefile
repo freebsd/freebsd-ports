@@ -425,7 +425,6 @@
     SUBDIR += p5-XML-RAI
     SUBDIR += p5-XML-RSS
     SUBDIR += p5-XML-RSS-JavaScript
-    SUBDIR += p5-XML-RSS-Parser
     SUBDIR += p5-XML-RegExp
     SUBDIR += p5-XML-SAX
     SUBDIR += p5-XML-SAX-Base
