@@ -1,11 +1,17 @@
---- Makefile.orig	Sat Mar  3 23:03:42 2001
-+++ Makefile	Sat Mar  3 23:03:59 2001
-@@ -1,7 +1,7 @@
- 
- CPPFLAGS = -O3
+--- Makefile.orig	Wed Feb 28 18:28:31 2001
++++ Makefile	Fri Jan 25 22:31:09 2002
+@@ -1,12 +1,11 @@
+-
+-CPPFLAGS = -O3
++CXXFLAGS ?= -O
  VERSION = 0.7
--BIN = /usr/local/bin
-+BIN = %%PREFIX%%/bin
+ BIN = /usr/local/bin
  
  all: oproute
  
+ oproute: oproute.cpp oproute.h main.cpp
+-	g++ $(CPPFLAGS) -o oproute oproute.cpp main.cpp jivastring.cpp
++	${CXX} $(CXXFLAGS) -o oproute oproute.cpp main.cpp jivastring.cpp
+ 
+ install: all
+ 	install -d $(BIN)
