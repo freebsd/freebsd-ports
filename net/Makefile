@@ -109,6 +109,7 @@
     SUBDIR += etherboot
     SUBDIR += ethereal
     SUBDIR += ethereal-lite
+    SUBDIR += etunnel
     SUBDIR += fcptools
     SUBDIR += fidelio
     SUBDIR += firetalk
