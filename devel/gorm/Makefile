@@ -29,4 +29,10 @@ USE_GNUSTEP_BUILD=	yes
 USE_GNUSTEP_INSTALL=	yes
 .include "${PORTSDIR}/devel/gnustep/bsd.gnustep.mk"
 
+.if defined(WITH_GNUSTEP_DEVEL)
+PLIST_SUB+=	PALETTES=System/Library/ApplicationSupport/Palettes
+.else
+PLIST_SUB+=	PALETTES=System/Developer/Palettes
+.endif
+
 .include <bsd.port.post.mk>
