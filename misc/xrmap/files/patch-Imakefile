@@ -1,5 +1,5 @@
---- Imakefile.orig	Wed Feb 12 10:25:02 2003
-+++ Imakefile	Mon Mar 17 23:18:07 2003
+--- Imakefile.orig	Wed Apr 30 09:09:43 2003
++++ Imakefile	Wed Apr 30 09:20:21 2003
 @@ -1,14 +1,15 @@
  XCOMM Should install to /usr or /usr/local ??
 -DESTDIR=/usr
@@ -42,7 +42,7 @@
  
  #endif
  
-@@ -62,26 +63,30 @@
+@@ -62,27 +63,32 @@
  ComplexProgramTarget(xrmap)
  
  install.man::
@@ -62,6 +62,9 @@
  	cd postscript ; rm -f *~
 -	cp -fR postscript  $(DESTDIR)$(SHAREDIR)
 +	cp -fR postscript  $(SHAREDIR)
+ 	cd themes ; rm -f *~
+-	cp -fR themes  $(DESTDIR)$(SHAREDIR)
++	cp -fR themes  $(SHAREDIR)
  	if [ -d i18n ] ; then cd i18n ; rm -f *~ ; fi
 -	if [ -d i18n ] ; then cp -fR i18n $(DESTDIR)$(SHAREDIR) ; fi
 -	$(MKDIRHIER) $(DESTDIR)$(SHAREDIR)/flags
@@ -76,11 +79,11 @@
 +	if [ -d pdfmaps ] ; then cp -fR pdfmaps $(SHAREDIR) ; fi
 +	if [ -d factbook ] ; then cp -fR factbook $(SHAREDIR) ; fi
 +	$(MKDIRHIER) $(SHAREDIR)/doc
- 	cp -f CHANGES EXAMPLE.rc INSTALL LICENSE MAPEDIT README \
--		midi_cfg/README.midi TODO WARNING $(DESTDIR)$(SHAREDIR)/doc
-+		midi_cfg/README.midi TODO WARNING $(SHAREDIR)/doc
+ 	cp -f CHANGES INSTALL LICENSE MAPEDIT README TODO WARNING \
+-		midi_cfg/README.midi $(DESTDIR)$(SHAREDIR)/doc
+-	cd examples ; cp -f * $(DESTDIR)$(SHAREDIR)/doc
++		midi_cfg/README.midi $(SHAREDIR)/doc
++	cd examples ; cp -f * $(SHAREDIR)/doc
  	cd editkit ; make install
--	cat WARNING
+ 	cat WARNING
  
- clean::
- 	cd tools ; make clean

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xrmap
-PORTVERSION=	2.26
+PORTVERSION=	2.27
 CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.ac-grenoble.fr/ge/geosciences/xrmap/ \
 		ftp://ftp.ac-grenoble.fr/ge/geosciences/xrmap/data/ \
@@ -26,7 +26,7 @@ USE_REINPLACE=	yes
 MAN1=	xrmap.1
 
 CIAFILE=	CIA_WDB2.jpd.bz2
-XRMAPFILE=	xrmap-2.26.tar.bz2
+XRMAPFILE=	xrmap-2.27.tar.bz2
 DISTFILE=	anthems-1.1.tar.bz2 \
 		factbook_text_2002.tar.bz2 factbook_html_2002.tar.bz2 \
 		flags-1.1.tar.bz2 hymns-1.2.tar.bz2
