@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Mon Oct  7 13:47:05 2002
++++ Makefile.in	Fri Nov 22 14:23:28 2002
+@@ -154,7 +154,7 @@
+ 	then echo $$r/texinfo/makeinfo/makeinfo ; \
+ 	else if (makeinfo --version \
+ 	  | egrep 'texinfo[^0-9]*([1-3][0-9]|[4-9])') >/dev/null 2>&1; \
+-        then echo makeinfo; else echo $$s/missing makeinfo; fi; fi`
++        then echo makeinfo --no-split ; else echo $$s/missing makeinfo; fi; fi`
+ 
+ # This just becomes part of the MAKEINFO definition passed down to
+ # sub-makes.  It lets flags be given on the command line while still
