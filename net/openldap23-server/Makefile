@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		openldap
-PORTVERSION=		${OPENLDAP_VERSION}.a
+PORTVERSION=		2.2.2.b
 PORTREVISION=		${OPENLDAP_PORTVERSION}
 CATEGORIES=		net databases
 MASTER_SITES=		ftp://ftp.OpenLDAP.org/pub/OpenLDAP/%SUBDIR%/ \
@@ -26,17 +26,14 @@ MASTER_SITES=		ftp://ftp.OpenLDAP.org/pub/OpenLDAP/%SUBDIR%/ \
 			ftp://ftp.plig.org/pub/OpenLDAP/%SUBDIR%/
 MASTER_SITE_SUBDIR=	openldap-test
 PKGNAMESUFFIX=		${OPENLDAP_PKGNAMESUFFIX}
-DISTNAME=		openldap-${OPENLDAP_VERSION}alpha
+DISTNAME=		${PORTNAME}-${PORTVERSION:S/.b/beta/}
 EXTRACT_SUFX=		.tgz
 
 MAINTAINER=		eik@FreeBSD.org
 COMMENT?=		Open source LDAP server implementation
 
-OPENLDAP_VERSION=	2.2.0
-
 LATEST_LINK=		${PKGNAMEPREFIX}openldap22${PKGNAMESUFFIX}
-CONFLICTS=		openldap12-* \
-			${PKGNAMEPREFIX}${PORTNAME}-client-2.[013-9].*
+CONFLICTS=		${PKGNAMEPREFIX}${PORTNAME}-client-2.[013-9].*
 
 WANT_OPENLDAP_VER?=	22
 .if ${WANT_OPENLDAP_VER} != 22
@@ -48,26 +45,35 @@ OPENLDAP_PORTVERSION=	0
 OPENLDAP_PKGNAMESUFFIX?=-client
 OPENLDAP_PKGFILESUFX?=	.client
 
+.if !defined(NOPORTDOCS)
+PORTDOCS=		drafts rfc
+.endif
+
 .if defined(USE_OPENLDAP)
 .error You have `USE_OPENLDAP' defined either in your environment or in make(1) arguments.
 .endif
 .else
-OPENLDAP_PORTVERSION=	2
+OPENLDAP_PORTVERSION=	0
 OPENLDAP_PKGNAMESUFFIX?=-server
 OPENLDAP_PKGFILESUFX?=
 
-USE_OPENLDAP=		yes
+RUN_DEPENDS=		${LOCALBASE}/lib/libldap.so.2:${PORTSDIR}/net/openldap22-client
 CONFLICTS+=		${PKGNAMEPREFIX}${PORTNAME}-server-2.[013-9].*
 .endif
 
-#USE_OPENSSL=		yes
+USE_OPENSSL=		yes
 USE_REINPLACE=		yes
 USE_LIBTOOL_VER=	14
 
 DESCR=			${PKGDIR}/pkg-descr${OPENLDAP_PKGFILESUFX}
-PLIST=			${WRKDIR}/pkg-plist
+PLIST=			${PKGDIR}/pkg-plist${OPENLDAP_PKGFILESUFX}
 PKGINSTALL=		${WRKDIR}/pkg-install
 PKGMESSAGE=		${WRKDIR}/pkg-message
+PKGDEINSTALL=		${WRKDIR}/pkg-deinstall
+
+SCHEMATA=		corba core cosine \
+			dyngroup inetorgperson java \
+			misc nis openldap
 
 LDAP_RUN_DIR?=		${DESTDIR}/var/run/openldap
 LOCALSTATEDIR?=		${DESTDIR}/var/db
@@ -80,7 +86,8 @@ PLIST_SUB+=		LDAP_RUN_DIR=${LDAP_RUN_DIR} \
 
 SED_SCRIPT=		-e 's,%%PREFIX%%,${PREFIX},g' \
 			-e 's,%%LDAP_RUN_DIR%%,${LDAP_RUN_DIR},g' \
-			-e 's,%%DATABASEDIR%%,${DATABASEDIR},g'
+			-e 's,%%DATABASEDIR%%,${DATABASEDIR},g' \
+			-e 's,%%SLURPDIR%%,${SLURPDIR},g'
 
 CONFIGURE_ARGS=		--with-threads \
 			--with-tls=openssl \
@@ -177,8 +184,7 @@ CONFIGURE_ARGS+=	--enable-wrappers
 # end of client/server specific configuration
 .endif
 
-# math.h uses _REENTRANT and stdio.h uses _THREAD_SAFE, so define both.
-CPPFLAGS+=		-D_REENTRANT ${PTHREAD_CFLAGS} \
+CPPFLAGS+=		${PTHREAD_CFLAGS} \
 			-I${LOCALBASE}/include
 LDFLAGS+=		-L${LOCALBASE}/lib
 
@@ -242,9 +248,9 @@ post-build:
 .for script in slapd slurpd
 	@${SED} ${SED_SCRIPT} ${FILESDIR}/${script}.sh >${WRKDIR}/${script}.sh
 .endfor
-.for text in pkg-install pkg-message
-	@if [ -f ${MASTERDIR}/${text}${OPENLDAP_PKGFILESUFX} ]; then \
-		${SED} ${SED_SCRIPT} ${MASTERDIR}/${text}${OPENLDAP_PKGFILESUFX} \
+.for text in pkg-install pkg-message pkg-deinstall
+	@if [ -f ${PKGDIR}/${text}${OPENLDAP_PKGFILESUFX} ]; then \
+		${SED} ${SED_SCRIPT} ${PKGDIR}/${text}${OPENLDAP_PKGFILESUFX} \
 		>${WRKDIR}/${text}; \
 	fi
 .endfor
@@ -256,18 +262,6 @@ test: build
 .endif
 
 pre-install:
-	@${CP} ${MASTERDIR}/pkg-plist${OPENLDAP_PKGFILESUFX} ${PLIST}
-.if defined(CLIENT_ONLY)
-.if !defined(NOPORTDOCS)
-	@for dir in rfc drafts; do \
-		${FIND} ${WRKSRC}/doc/$${dir} -maxdepth 1 -type f \
-			| ${SED} -e "s,^${WRKSRC}/doc/,%%DOCSDIR%%/," \
-			>>${PLIST}; \
-		${ECHO_CMD} "@dirrm %%DOCSDIR%%/$${dir}" >>${PLIST}; \
-	done
-	@${ECHO_CMD} "@dirrm %%DOCSDIR%%" >>${PLIST}
-.endif
-.endif
 	@if [ -f ${PKGINSTALL} ]; then \
 		${SETENV} "PKG_PREFIX=${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL; \
 	fi
@@ -276,15 +270,28 @@ post-install:
 .if defined(CLIENT_ONLY)
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	@for dir in rfc drafts; do \
+	@for dir in drafts rfc; do \
 		${MKDIR} ${DOCSDIR}/$${dir}; \
-		${FIND} ${WRKSRC}/doc/$${dir} -maxdepth 1 -type f \
-			-exec ${INSTALL_DATA} {} ${DOCSDIR}/$${dir} \; ; \
+		${INSTALL_DATA} ${WRKSRC}/doc/$${dir}/* ${DOCSDIR}/$${dir}; \
 	done
 .endif
 .else
+	@for schema in ${SCHEMATA}; do \
+		${ECHO_CMD} "@unexec if cmp -s %D/etc/openldap/schema/$${schema}.schema" \
+			"%D/etc/openldap/schema/$${schema}.schema.default; then" \
+			"rm -f %D/etc/openldap/schema/$${schema}.schema; fi" >>${TMPPLIST}; \
+		${ECHO_CMD} "etc/openldap/schema/$${schema}.schema.default" >>${TMPPLIST}; \
+		${ECHO_CMD} "@exec [ -f %B/$${schema}.schema ] || cp %B/%f %B/$${schema}.schema" >>${TMPPLIST}; \
+	done
+	@${ECHO_CMD} "@unexec rmdir %D/etc/openldap/schema 2>/dev/null || true" >>${TMPPLIST}
+	@${ECHO_CMD} "@unexec rmdir %D/etc/openldap 2>/dev/null || true" >>${TMPPLIST}
+#	currently the only way to participate in rcorder(8)
+	@if [ "${RC_DIR}" != "${PREFIX}" ]; then \
+		${ECHO_CMD} "@cwd ${RC_DIR}" >>${TMPPLIST}; \
+	fi
 .for script in slapd slurpd
 	@${INSTALL_SCRIPT} ${WRKDIR}/${script}.sh ${RC_DIR}/${script}${RC_SUFX}
+	@${ECHO_CMD} "${script}${RC_SUFX}" >>${TMPPLIST}
 .endfor
 	@${MKDIR} ${LDAP_RUN_DIR}
 .endif

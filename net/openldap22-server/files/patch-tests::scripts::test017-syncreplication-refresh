@@ -1,0 +1,71 @@
+--- tests/scripts/test017-syncreplication-refresh	Mon Oct  6 16:57:32 2003
++++ tests/scripts/test017-syncreplication-refresh	Sun Oct 19 15:33:58 2003
+@@ -44,9 +44,6 @@
+ fi
+ BACKEND=$SAVE
+ 
+-echo "Waiting 5 seconds to wait for master to start..."
+-sleep 5
+-
+ echo "Using ldapsearch to check that master slapd is running..."
+ for i in 0 1 2 3 4 5; do
+ 	$LDAPSEARCH -s base -b "$MONITOR" -h $LOCALHOST -p $PORT \
+@@ -59,22 +56,28 @@
+ 	sleep 5
+ done
+ 
++if test $RC != 0 ; then
++	echo "ldapsearch failed ($RC)!"
++	kill -HUP $PID
++	exit $RC
++fi
++
+ echo "Using ldapadd to create the context prefix entry in the master..."
+ $LDAPADD -D "$MANAGERDN" -h $LOCALHOST -p $PORT -w $PASSWD < \
+ 	$LDIFORDEREDCP > /dev/null 2>&1
+ RC=$?
+ if test $RC != 0 ; then
+ 	echo "ldapadd failed ($RC)!"
+-	kill -HUP $PID $SLAVEPID
++	kill -HUP $PID
+ 	exit $RC
+ fi
+ 
+ echo "Starting slave slapd on TCP/IP port $R1SLAVEPORT..."
+ . $CONFFILTER $BACKEND $MONITORDB < $R1SRSLAVECONF > $R1REPLCONF
+ $SLAPD -f $R1REPLCONF -h $R1SLAVEURI -d $LVL $TIMING > $R1SLAVELOG 2>&1 &
+-R1SLAVEPID=$!
++SLAVEPID=$!
+ if test $WAIT != 0 ; then
+-    echo SLAVEPID $R1SLAVEPID
++    echo SLAVEPID $SLAVEPID
+     read foo
+ fi
+ 
+@@ -90,6 +93,12 @@
+ 	sleep 5
+ done
+ 
++if test $RC != 0 ; then
++	echo "ldapsearch failed ($RC)!"
++	kill -HUP $PID
++	exit $RC
++fi
++
+ echo "Using ldapadd to populate the master directory..."
+ $LDAPADD -D "$MANAGERDN" -h $LOCALHOST -p $PORT -w $PASSWD < \
+ 	$LDIFORDEREDNOCP > /dev/null 2>&1
+@@ -203,11 +212,11 @@
+ 
+ if test $RC != 0 ; then
+ 	echo "ldapsearch failed at slave ($RC)!"
+-	kill -HUP $PID $R1SLAVEPID
++	kill -HUP $PID $SLAVEPID
+ 	exit $RC
+ fi
+ 
+-kill -HUP $PID $R1SLAVEPID
++kill -HUP $PID $SLAVEPID
+ 
+ SEARCHOUT=$MASTEROUT
+ LDIF=$R1SLAVEOUT
