@@ -32,18 +32,20 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 CONFIGURE_TARGET=	${ARCH}-pc-freebsd${OSREL:C/\..*//}
 
+.if defined(PACKAGE_BUILDING) || defined(PARALLEL_PACKAGE_BUILD)
+.undef WITHOUT_GNOME
+WITH_GNOME=	yes
+.endif
+
 .include <bsd.port.pre.mk>
 
-.if defined(HAVE_GNOME) || defined(PACKAGE_BUILDING)
-.undef WITHOUT_GNOME
+.if defined(HAVE_GNOME)
 USE_GNOME=	yes
 CONFIGURE_ARGS+=--enable-capplet
-PLIST_SUB+=	GNOME:=""
 .else
 CONFIGURE_ARGS+=--disable-capplet \
 		--disable-gnome-widgets \
 		--without-gdk-pixbuf
-PLIST_SUB+=	GNOME:="@comment "
 .endif
 
 pre-patch:
