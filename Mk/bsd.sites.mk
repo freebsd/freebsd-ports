@@ -230,8 +230,7 @@ MASTER_SITE_SOURCEWARE+= \
 MASTER_SITE_SOURCEFORGE+= \
 	http://us.dl.sourceforge.net/%SUBDIR%/ \
 	http://eu.dl.sourceforge.net/%SUBDIR%/ \
-	ftp://us.dl.sourceforge.net/%SUBDIR%/ \
-	ftp://eu.dl.sourceforge.net/%SUBDIR%/ \
+	ftp://us.dl.sourceforge.net/pub/sourceforge/%SUBDIR%/ \
 	ftp://ftp.kddlabs.co.jp/sourceforge/%SUBDIR%/ \
 	ftp://ftp.chg.ru/pub/sourceforge/%SUBDIR%/
 
