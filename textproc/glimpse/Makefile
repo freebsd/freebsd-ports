@@ -3,13 +3,13 @@
 # Date created:         22 Dec 1995
 # Whom:                 chuckr@glue.umd.edu
 #
-# $Id: Makefile,v 1.6 1995/11/26 10:48:20 asami Exp $
+# $Id: Makefile,v 1.1.1.1 1996/01/15 10:12:29 asami Exp $
 #
 
 DISTNAME=       glimpse-3.0.src
 PKGNAME=	glimpse-3.0b
 CATEGORIES+=	misc
-MASTER_SITES=   ftp://cs.arizona.edu/glimpse/
+MASTER_SITES=   ftp://ftp.cs.arizona.edu/glimpse/
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	chuckr@glue.umd.edu
