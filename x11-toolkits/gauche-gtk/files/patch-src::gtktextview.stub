@@ -1,0 +1,11 @@
+--- src/gtktextview.stub.orig	Sun Jul 13 10:40:20 2003
++++ src/gtktextview.stub	Sun Jul 13 10:41:03 2003
+@@ -35,7 +35,7 @@
+    (cursor-visible :type <uint>)
+    (need-im-reset :type <uint>)
+    (just-selected-element :type <uint>)
+-   (disable-scroll-on-focus :type <uint>)
++   ;; (disable-scroll-on-focus :type <uint>) ;; doesn't exist in gtk-2.2.2
+    (onscreen-validated :type <uint>)
+    (mouse-cursor-obscured :type <uint>)
+    ;; text-window :type (UNKNOWN . GtkTextWindow*)
