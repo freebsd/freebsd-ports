@@ -402,6 +402,12 @@
 %%NLS%%%%GALLERYDIR%%/locale/gl_ES/gl_ES-gallery_config.po
 %%NLS%%%%GALLERYDIR%%/locale/gl_ES/gl_ES-gallery_core.po
 %%NLS%%%%GALLERYDIR%%/locale/gl_ES/gl_ES-nls.php
+%%NLS%%%%GALLERYDIR%%/locale/he_IL/LC_MESSAGES/he_IL-gallery_config.mo
+%%NLS%%%%GALLERYDIR%%/locale/he_IL/LC_MESSAGES/he_IL-gallery_core.mo
+%%NLS%%%%GALLERYDIR%%/locale/he_IL/flagimage/he_IL.gif
+%%NLS%%%%GALLERYDIR%%/locale/he_IL/he_IL-gallery_config.po
+%%NLS%%%%GALLERYDIR%%/locale/he_IL/he_IL-gallery_core.po
+%%NLS%%%%GALLERYDIR%%/locale/he_IL/he_IL-nls.php
 %%NLS%%%%GALLERYDIR%%/locale/he_IL.utf8/LC_MESSAGES/he_IL.utf8-gallery_config.mo
 %%NLS%%%%GALLERYDIR%%/locale/he_IL.utf8/LC_MESSAGES/he_IL.utf8-gallery_core.mo
 %%NLS%%%%GALLERYDIR%%/locale/he_IL.utf8/flagimage/he_IL.utf8.gif
@@ -486,6 +492,12 @@
 %%NLS%%%%GALLERYDIR%%/locale/ru_RU.cp1251/ru_RU.cp1251-gallery_config.po
 %%NLS%%%%GALLERYDIR%%/locale/ru_RU.cp1251/ru_RU.cp1251-gallery_core.po
 %%NLS%%%%GALLERYDIR%%/locale/ru_RU.cp1251/ru_RU.cp1251-nls.php
+%%NLS%%%%GALLERYDIR%%/locale/sk_SK/LC_MESSAGES/sk_SK-gallery_config.mo
+%%NLS%%%%GALLERYDIR%%/locale/sk_SK/LC_MESSAGES/sk_SK-gallery_core.mo
+%%NLS%%%%GALLERYDIR%%/locale/sk_SK/flagimage/sk_SK.gif
+%%NLS%%%%GALLERYDIR%%/locale/sk_SK/sk_SK-gallery_config.po
+%%NLS%%%%GALLERYDIR%%/locale/sk_SK/sk_SK-gallery_core.po
+%%NLS%%%%GALLERYDIR%%/locale/sk_SK/sk_SK-nls.php
 %%NLS%%%%GALLERYDIR%%/locale/sl_SI/LC_MESSAGES/sl_SI-gallery_config.mo
 %%NLS%%%%GALLERYDIR%%/locale/sl_SI/LC_MESSAGES/sl_SI-gallery_core.mo
 %%NLS%%%%GALLERYDIR%%/locale/sl_SI/flagimage/sl_SI.gif
@@ -899,6 +911,9 @@
 %%NLS%%@dirrm %%GALLERYDIR%%/locale/sl_SI/flagimage
 %%NLS%%@dirrm %%GALLERYDIR%%/locale/sl_SI/LC_MESSAGES
 %%NLS%%@dirrm %%GALLERYDIR%%/locale/sl_SI
+%%NLS%%@dirrm %%GALLERYDIR%%/locale/sk_SK/flagimage
+%%NLS%%@dirrm %%GALLERYDIR%%/locale/sk_SK/LC_MESSAGES
+%%NLS%%@dirrm %%GALLERYDIR%%/locale/sk_SK
 %%NLS%%@dirrm %%GALLERYDIR%%/locale/ru_RU.koi8r/flagimage
 %%NLS%%@dirrm %%GALLERYDIR%%/locale/ru_RU.koi8r/LC_MESSAGES
 %%NLS%%@dirrm %%GALLERYDIR%%/locale/ru_RU.koi8r
@@ -941,6 +956,9 @@
 %%NLS%%@dirrm %%GALLERYDIR%%/locale/he_IL.utf8/flagimage
 %%NLS%%@dirrm %%GALLERYDIR%%/locale/he_IL.utf8/LC_MESSAGES
 %%NLS%%@dirrm %%GALLERYDIR%%/locale/he_IL.utf8
+%%NLS%%@dirrm %%GALLERYDIR%%/locale/he_IL/flagimage
+%%NLS%%@dirrm %%GALLERYDIR%%/locale/he_IL/LC_MESSAGES
+%%NLS%%@dirrm %%GALLERYDIR%%/locale/he_IL
 %%NLS%%@dirrm %%GALLERYDIR%%/locale/fr_FR/flagimage
 %%NLS%%@dirrm %%GALLERYDIR%%/locale/fr_FR/LC_MESSAGES
 %%NLS%%@dirrm %%GALLERYDIR%%/locale/fr_FR
