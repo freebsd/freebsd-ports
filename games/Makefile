@@ -238,6 +238,7 @@
     SUBDIR += rtcw-paks
     SUBDIR += rubix
     SUBDIR += scid
+    SUBDIR += scummvm
     SUBDIR += sdlroids
     SUBDIR += seabattle
     SUBDIR += seahaven
