@@ -1,14 +1,14 @@
 # New ports collection makefile for:	Blackbox
-# Version required:	0.40.13
+# Version required:	0.50.0
 # Date created:		June 15, 1998
 # Whom:			Brian Handy <handy@physics.montana.edu>
 #
-# $Id: Makefile,v 1.12 1998/11/05 02:59:40 jkoshy Exp $
+# $Id: Makefile,v 1.13 1998/11/11 22:39:48 mph Exp $
 #
 
-DISTNAME=	blackbox-0.40.13
+DISTNAME=	blackbox-0.50.0
 CATEGORIES=	x11-wm
-MASTER_SITES=	http://linux.wiw.org/blackbox/sources/
+MASTER_SITES=	ftp://balance.wiw.org/pub/blackbox/
 
 MAINTAINER=	ports@FreeBSD.ORG
 

@@ -1,4 +1,5 @@
 bin/blackbox
+bin/bsetroot
 share/Blackbox/rc
 share/Blackbox/menu
 share/Blackbox/styles/blackmagic
@@ -13,5 +14,6 @@ share/Blackbox/styles/pnoid
 share/Blackbox/styles/slatebox
 share/Blackbox/styles/steelblue
 share/Blackbox/styles/steelbox
+share/Blackbox/styles/stylesmenu
 @dirrm share/Blackbox/styles
 @dirrm share/Blackbox
