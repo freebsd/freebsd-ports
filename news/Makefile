@@ -39,6 +39,7 @@
     SUBDIR += pan
     SUBDIR += pgpmoose
     SUBDIR += plor
+    SUBDIR += pyne
     SUBDIR += rkive
     SUBDIR += slnr
     SUBDIR += slrn
