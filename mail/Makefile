@@ -108,6 +108,7 @@
     SUBDIR += p5-Mail-Sendmail
     SUBDIR += p5-Mail-Tools
     SUBDIR += pathalias
+    SUBDIR += pflogsumm
     SUBDIR += pgp4pine
     SUBDIR += pgpsendmail
     SUBDIR += pine4
