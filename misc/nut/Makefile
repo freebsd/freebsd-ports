@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nut
-PORTVERSION=	9.14
+PORTVERSION=	9.15
 CATEGORIES=	misc
 MASTER_SITES=	http://www.lafn.org/~av832/
 PKGNAMEPREFIX=	health-
