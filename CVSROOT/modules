@@ -2717,6 +2717,7 @@ hs-idoc		ports/devel/hs-idoc
 hs-popenhs	ports/devel/hs-popenhs
 hs-tclhaskell-ghc	ports/devel/hs-tclhaskell-ghc
 hs-uni		ports/devel/hs-uni
+hsetroot	ports/graphics/hsetroot
 hsftp		ports/ftp/hsftp
 htdig		ports/textproc/htdig
 htdump		ports/www/htdump
