@@ -1,4 +1,5 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Regexp/Common/.packlist
+%%SITE_PERL%%/Regexp/Common/SEN.pm
 %%SITE_PERL%%/Regexp/Common/URI/fax.pm
 %%SITE_PERL%%/Regexp/Common/URI/file.pm
 %%SITE_PERL%%/Regexp/Common/URI/http.pm
