@@ -3,14 +3,15 @@
 # Date created:         Tue Feb  7 12:02:49  1995
 # Whom:                 hsu
 #
-# $Id: Makefile,v 1.5 1995/04/01 12:45:46 jkh Exp $
+# $Id: Makefile,v 1.6 1995/04/04 04:56:34 hsu Exp $
 #
 
 DISTNAME=       Mesa-1.1.3beta
 MASTER_SITES=   ftp://iris.ssec.wisc.edu/pub/misc/
 CATEGORIES+=	graphics
 WRKSRC=		${WRKDIR}/Mesa
-USE_GMAKE=
+USE_GMAKE=	yes
+USE_X11=	yes
 ALL_TARGET=	freebsd
 # won't install until I convert the Makefiles to Imakefiles
 NO_INSTALL=	yes
