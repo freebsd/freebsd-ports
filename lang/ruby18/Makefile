@@ -7,7 +7,6 @@
 
 PORTNAME=	ruby${RUBY_R}
 PORTVERSION=	${RUBY_PORTVERSION}
-PORTREVISION=	1
 CATEGORIES=	lang ruby ipv6
 MASTER_SITES=		${MASTER_SITE_RUBY}
 MASTER_SITE_SUBDIR=	${MASTER_SITE_SUBDIR_RUBY}
@@ -32,7 +31,7 @@ PLIST_SUB+=	ONIGURUMA=""
 PLIST_SUB+=	ONIGURUMA="@comment "
 .endif
 
-USE_BZIP2=	yes
+#USE_BZIP2=	yes
 USE_OPENSSL=	yes
 
 RUBY_VER=	1.8
@@ -182,6 +181,8 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/ext/syslog/syslog.txt ${RUBY_DOCDIR}
 	${INSTALL_DATA} ${WRKSRC}/ext/zlib/doc/zlib.rd ${RUBY_DOCDIR}
 	${CP} -R ${WRKSRC}/doc/* ${RUBY_DOCDIR}/
+	cd ${INSTALL_WRKSRC}; \
+	${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} install-doc
 .endif
 	@${ECHO} "Deinstalling obsoleted packages that are now part of ruby..."
 	@cd ${PKG_DBDIR}; for portname in ${OBSOLETED_MODULES}; do \
