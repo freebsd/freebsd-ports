@@ -7,7 +7,7 @@
 
 PORTNAME=	openoffice
 PORTVERSION=	1.0.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES+=	editors
 MASTER_SITES+=	http://ny1.mirror.openoffice.org/%SUBDIR%/ \
 		http://ftp.gwdg.de/pub/misc/openoffice/%SUBDIR%/ \
@@ -261,6 +261,15 @@ pre-fetch:
 	@${ECHO} "quality of glyphs at small bitmap sizes."
 	@${ECHO}
 .endif
+.if !defined(WITH_GIF_LZW_COMPRESSION)
+	@${ECHO}
+	@${ECHO} "You may set WITH_GIF_LZW_COMPRESSION=YES"
+	@${ECHO} "If you want to make compressed gif images"
+	@${ECHO}
+	@${ECHO} "If must have license from the Unisys and IBM patents"
+	@${ECHO} "to enable this option to get compressed GIF images."
+	${ECHO}
+.endif
 .if ${OSVERSION} < 450002
 	@${ECHO}
 	@${ECHO} "OS-VERSION ${OSVERSION} too low"
@@ -375,6 +384,18 @@ post-patch:
 		${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/optpatch-freetype+patch ; \
 	fi
 .endif
+.if !defined(WITH_GIF_LZW_COMPRESSION)
+	@if [ "`echo ${PATCHDIR}/gifpatch-*`" != "${PATCHDIR}/gifpatch-*" ]; then \
+		${ECHO_MSG} "===>  Removing GIF LZW compression for ${PKGNAME}" ; \
+		if [ ${PATCH_DEBUG_TMP} = yes ]; then \
+		${ECHO_MSG} "===>   Applying GIF LZW compression ${OPSYS} patch" ; \
+		fi; \
+		${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/gifpatch-goodies+source+filter.vcl+egif+giflzwc.cxx ; \
+		${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/gifpatch-goodies+source+filter.vcl+egif+giflzwc_disabled.cxx ; \
+		${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/gifpatch-goodies+source+filter.vcl+egif+makefile.mk ; \
+	fi
+.endif
+
 .if defined(WITH_DEBUG)
 	@if [ "`echo ${PATCHDIR}/debugpatch-*`" != "${PATCHDIR}/debugpatch-*" ]; then \
 		${ECHO_MSG} "===>  Applying additional debug ${OPSYS} patches for ${PKGNAME}" ; \
