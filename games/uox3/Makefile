@@ -9,7 +9,7 @@
 DISTNAME=	uox3v6902-linux
 PKGNAME=	uox3-0.69.02
 CATEGORIES=	games
-MASTER_SITES=	ftp://ftp.Powered-By.AC/pub/uox3/
+MASTER_SITES=	ftp://ftp.borg-cube.com/pub/uox3/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} tqpsworld${EXTRACT_SUFX}
 
 MAINTAINER=	dburr@FreeBSD.org
