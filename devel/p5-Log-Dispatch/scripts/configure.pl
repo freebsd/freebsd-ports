@@ -3,6 +3,7 @@ use strict;
 
 unless (defined $ENV{WRKDIRPREFIX} and
 	defined $ENV{REALCURDIR} and
+	defined $ENV{MKDIR} and
 	defined $ENV{LOCALBASE})
 {
    die "this script should not be run like that!\n";
@@ -12,6 +13,7 @@ my $batch = $ENV{BATCH} || 0;
 
 my $makedir = "$ENV{WRKDIRPREFIX}$ENV{REALCURDIR}";
 my $makefile = "$makedir/Makefile.inc";
+my $mkdircmd = $ENV{MKDIR};
 exit if -f $makefile;
 
 my @modules = (
@@ -54,7 +56,7 @@ sub generate_makefile_inc
 {
    my @modules = @_;
 
-   mkdir $makedir, 0777;
+   system("$mkdircmd $makedir");
    open INC, "> $makefile" or die "open: $makefile: $!\n";
 
    for my $m (@modules) {
