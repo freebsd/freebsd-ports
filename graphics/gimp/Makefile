@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gimp
-PORTVERSION=	2.2.2
+PORTVERSION=	2.2.3
 PORTEPOCH=	1
 CATEGORIES=	graphics gnome
 MASTER_SITES=	ftp://ftp.gimp.org/pub/%SUBDIR%/ \
@@ -21,14 +21,6 @@ MASTER_SITE_SUBDIR=	gimp/v${PORTVERSION:R}
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A GNU Image Manipulation Program
 
-LIB_DEPENDS=	aa.1:${PORTSDIR}/graphics/aalib \
-		exif.10:${PORTSDIR}/graphics/libexif \
-		jpeg.9:${PORTSDIR}/graphics/jpeg \
-		mng.1:${PORTSDIR}/graphics/libmng \
-		png.5:${PORTSDIR}/graphics/png \
-		tiff.4:${PORTSDIR}/graphics/tiff \
-		wmf.2:${PORTSDIR}/graphics/libwmf
-
 CONFLICTS=	gimp-1.*
 
 SHLIBVER?=	200
@@ -38,7 +30,7 @@ USE_X_PREFIX=	yes
 USE_XPM=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL_VER=15
-USE_GNOME=	gnomehack intltool intlhack gtk20 libartlgpl2 librsvg2
+USE_GNOME=	gnomehack intltool intlhack gtk20 libartlgpl2
 WANT_GNOME=	yes
 INSTALLS_SHLIB=	yes
 LIBTOOLFLAGS=	--disable-ltlibs --release-ignore
@@ -54,6 +46,66 @@ GIMP_DISTFILE=	${DISTDIR}/${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
 
 MAN1=	gimp.1 gimp-2.2.1 gimp-remote.1 gimp-remote-2.2.1 gimptool-2.0.1
 MAN5=	gimprc.5 gimprc-2.2.5
+
+.if defined(WITHOUT_WMF) && !exists(${LOCALBASE}/bin/libwmf-config)
+PLIST_SUB+=		WMF="@comment "
+.else
+LIB_DEPENDS+=		wmf.2:${PORTSDIR}/graphics/libwmf
+PLIST_SUB+=		WMF=""
+.endif
+
+.if defined(WITHOUT_RSVG2) && !exists(${X11BASE}/bin/rsvg)
+PLIST_SUB+=		SVG="@comment "
+.else
+USE_GNOME+=		librsvg2
+PLIST_SUB+=		SVG=""
+.endif
+
+.if defined(WITHOUT_AA)
+CONFIGURE_ARGS+=	--without-aa
+PLIST_SUB+=		AA="@comment "
+.else
+LIB_DEPENDS+=		aa.1:${PORTSDIR}/graphics/aalib
+PLIST_SUB+=		AA=""
+.endif
+
+.if defined(WITHOUT_EXIF)
+CONFIGURE_ARGS+=	--without-libexif
+.else
+LIB_DEPENDS+=		exif.10:${PORTSDIR}/graphics/libexif
+.endif
+
+.if defined(WITHOUT_MNG)
+CONFIGURE_ARGS+=	--without-libmng
+PLIST_SUB+=		MNG="@comment "
+.else
+LIB_DEPENDS+=		mng.1:${PORTSDIR}/graphics/libmng
+PLIST_SUB+=		MNG=""
+.endif
+
+.if defined(WITHOUT_PNG)
+CONFIGURE_ARGS+=	--without-libpng
+PLIST_SUB+=		PNG="@comment "
+.else
+LIB_DEPENDS+=		png.5:${PORTSDIR}/graphics/png
+PLIST_SUB+=		PNG=""
+.endif
+
+.if defined(WITHOUT_JPEG)
+CONFIGURE_ARGS+=	--without-libjpeg
+PLIST_SUB+=		JPEG="@comment "
+.else
+LIB_DEPENDS+=		jpeg.9:${PORTSDIR}/graphics/jpeg
+PLIST_SUB+=		JPEG:=""
+.endif
+
+.if defined(WITHOUT_TIFF)
+CONFIGURE_ARGS+=	--without-libtiff
+PLIST_SUB+=		TIFF="@comment "
+.else
+LIB_DEPENDS+=		tiff.4:${PORTSDIR}/graphics/tiff
+PLIST_SUB+=		TIFF=""
+.endif
 
 .if defined(WITH_DEBUG)
 CONFIGURE_ARGS+=	--enable-debug
@@ -110,6 +162,14 @@ pre-everything::
 	@${ECHO_MSG} "	WITHOUT_PRINT=yes	Turns off GIMP printing"
 	@${ECHO_MSG} "	WITH_HTML_HELP_BROWSER=yes	Turns on the GIMP help browser"
 	@${ECHO_MSG} "	WITH_MP=yes 		Turns on multiple-processor support"
+	@${ECHO_MSG} "	WITHOUT_WMF=yes		Turns off wmf support"
+	@${ECHO_MSG} "	WITHOUT_RSVG2=yes	Turns off rsvg2 support"
+	@${ECHO_MSG} "	WITHOUT_AA=yes		Turns off aa support"
+	@${ECHO_MSG} "	WITHOUT_EXIF=yes	Turns off exif support"
+	@${ECHO_MSG} "	WITHOUT_MNG=yes		Turns off mng support"
+	@${ECHO_MSG} "	WITHOUT_PNG=yes		Turns off png support"
+	@${ECHO_MSG} "	WITHOUT_JPEG=yes	Turns off jpeg support"
+	@${ECHO_MSG} "	WITHOUT_TIFF=yes	Turns off tiff support"
 	@${ECHO_MSG} ""
 
 .if defined(GNOME_ENABLED)
