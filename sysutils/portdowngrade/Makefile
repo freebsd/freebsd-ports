@@ -28,5 +28,6 @@ USE_GMAKE=	yes
 USE_BZIP2=	yes
 
 MAN1=		portdowngrade.1
+PLIST_FILES=	sbin/portdowngrade
 
 .include <bsd.port.mk>

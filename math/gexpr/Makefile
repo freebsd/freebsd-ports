@@ -20,6 +20,7 @@ USE_GETOPT_LONG=yes
 MAKE_ENV=	CPPFLAGS="${CPPFLAGS}" \
 		LDFLAGS="${LDFLAGS}"
 
-MAN1=	gexpr.1
+MAN1=		gexpr.1
+PLIST_FILES=	bin/gexpr
 
 .include <bsd.port.mk>

@@ -21,6 +21,7 @@ USE_RUBY=	yes
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
+PLIST_FILES=	%%RUBY_SITELIBDIR%%/htmlsplit.rb
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/htmlsplit.rb ${RUBY_SITELIBDIR}/

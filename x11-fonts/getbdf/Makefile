@@ -15,6 +15,7 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	ache@FreeBSD.org
 COMMENT=	Convert any X server font to .bdf format
 
+PLIST_FILES=	bin/getbdf
 USE_PERL5_BUILD=yes
 USE_X_PREFIX=	yes
 NO_WRKSUBDIR=	yes

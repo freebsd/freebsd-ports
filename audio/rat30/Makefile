@@ -21,6 +21,7 @@ WRKSRC=		${WRKDIR}/rat-3.0
 USE_GMAKE=	yes
 MAN1=		rat.1
 MANCOMPRESSED=	no
+PLIST_FILES=	bin/rat30
 
 LATEST_LINK=	rat30
 

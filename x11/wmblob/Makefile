@@ -13,6 +13,7 @@ MASTER_SITES=	http://dockapps.org/files/155/205/
 MAINTAINER=	pat@FreeBSD.org
 COMMENT=	Showing moving blobs
 
+PLIST_FILES=	bin/wmblob
 USE_X_PREFIX=	yes
 USE_XPM=	yes
 USE_BZIP2=	yes

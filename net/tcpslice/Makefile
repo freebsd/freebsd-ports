@@ -15,6 +15,7 @@ MAINTAINER=	smace@freebsd.org
 COMMENT=	A tool for extracting portions of pcap files
 
 MAN1=		tcpslice.1
+PLIST_FILES=	sbin/tcpslice
 
 GNU_CONFIGURE=	yes
 

@@ -14,6 +14,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	wjv@FreeBSD.org
 COMMENT=	A Python module to parse or write comma-separated value (CSV) files
 
+PLIST_FILES=	%%PYTHON_SITELIBDIR%%/csv.so
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 

@@ -17,6 +17,7 @@ COMMENT=	A GTK client for the StaticCling dynamic DNS service
 
 BUILD_DEPENDS=	wget:${PORTSDIR}/ftp/wget
 
+PLIST_FILES=	bin/staticcharge
 WRKSRC=		${WRKDIR}/staticcharge
 USE_GNOME=	gtk12
 USE_X_PREFIX=	yes

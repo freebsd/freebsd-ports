@@ -23,6 +23,7 @@ COMMENT=	A molecular visualization program with special functions
 USE_MOTIF=	YES
 
 ALL_TARGET=	mage
+PLIST_FILES=	bin/kinemage
 
 # When the time comes to use the actual master site, this snippet
 # will replace the carriage returns with newlines

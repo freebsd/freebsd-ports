@@ -15,6 +15,7 @@ MAINTAINER=	jedgar@FreeBSD.org
 COMMENT=	An optimizer for PNG files
 
 MAKEFILE=	Makefile.gcc
+PLIST_FILES=	bin/pngcrush
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/pngcrush ${PREFIX}/bin

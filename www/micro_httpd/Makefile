@@ -18,6 +18,7 @@ COMMENT=	An extremely small web server
 USE_REINPLACE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 MAN8=		micro_httpd.8
+PLIST_FILES=	sbin/micro_httpd
 
 post-patch:
 	@${REINPLACE_CMD} -e "s:/usr/local/sbin:${PREFIX}/sbin:g; \

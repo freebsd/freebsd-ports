@@ -16,6 +16,7 @@ MAINTAINER=	petef@FreeBSD.org
 COMMENT=	Meta source fake-out script for building ksb tools
 
 NO_BUILD=	yes
+PLIST_FILES=	bin/makeme
 WRKSRC=		${WRKDIR}/${PORTNAME}-0.6
 
 do-install:

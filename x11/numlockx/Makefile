@@ -16,6 +16,7 @@ MAINTAINER=	jb.quenot@caraldi.com
 COMMENT=	This little thingy allows you to start X with NumLock turned on
 
 GNU_CONFIGURE=	yes
+PLIST_FILES=	bin/numlockx
 USE_X_PREFIX=	yes
 
 # Needed for the "configure" program to find XTest and XKB header files

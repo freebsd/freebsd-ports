@@ -21,6 +21,7 @@ USE_PERL5=	yes
 NO_WRKSUBDIR=	yes
 
 MAN1=		pxytest.1
+PLIST_FILES=	bin/pxytest
 
 pre-patch:
 	@${SED} '1s:^#!/usr/bin/perl:#!${PERL}:' < ${_DISTDIR}${DISTFILES} > ${WRKSRC}/pxytest

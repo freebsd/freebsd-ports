@@ -17,5 +17,6 @@ HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX}
 
 MAN8=		dhcping.8
+PLIST_FILES=	bin/dhcping
 
 .include <bsd.port.mk>

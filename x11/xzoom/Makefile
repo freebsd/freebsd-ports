@@ -17,5 +17,6 @@ COMMENT=	Magnify, rotate, mirror the image on the X screen
 
 USE_IMAKE=	yes
 MAN1=		xzoom.1
+PLIST_FILES=	bin/xzoom
 
 .include <bsd.port.mk>

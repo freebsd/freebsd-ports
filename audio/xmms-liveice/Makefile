@@ -20,6 +20,7 @@ RUN_DEPENDS=	lame:${PORTSDIR}/audio/lame
 
 WRKSRC=		${WRKDIR}/LiveIce-1.0.0
 
+PLIST_FILES=	lib/xmms/Effect/libliveice.so
 USE_X_PREFIX=	yes
 USE_GNOME=	gtk12
 USE_LIBTOOL=	yes

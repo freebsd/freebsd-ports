@@ -21,5 +21,6 @@ USE_GNOME=	glib12
 
 MAN1=		scli.1
 INFO=		scli
+PLIST_FILES=	bin/scli
 
 .include <bsd.port.mk>

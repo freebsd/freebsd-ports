@@ -22,6 +22,7 @@ CONFIGURE_ENV=	CAT=${CAT} \
 		INCLUDES="-I${X11BASE}/include" \
 		LDLIBS="-lm -L${X11BASE}/lib -lX11" \
 		MORELIBS=""
+PLIST_FILES=	bin/xworld
 STRIP=		#don't strip out image data on install
 
 do-install:

@@ -20,6 +20,7 @@ LIB_DEPENDS=	ldap:${PORTSDIR}/net/openldap12
 USE_GMAKE=	true
 WRKSRC=		${WRKDIR}
 ALL_TARGET=	smunged
+PLIST_FILES=	sbin/smunged
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/smunged ${PREFIX}/sbin/smunged

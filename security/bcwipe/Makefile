@@ -19,7 +19,8 @@ NO_CDROM=	yes
 USE_REINPLACE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-MAN1=	bcwipe.1
+MAN1=		bcwipe.1
+PLIST_FILES=	bin/bcwipe
 
 post-patch:
 	@${REINPLACE_CMD} -e "s,^CFLAGS,#CFLAGS,g" ${WRKSRC}/Makefile

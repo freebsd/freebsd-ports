@@ -17,6 +17,7 @@ COMMENT=	VNC Session Recorder To Format (Movie) swf
 LIB_DEPENDS=	ming:${PORTSDIR}/graphics/ming
 
 GNU_CONFIGURE=	yes
+PLIST_FILES=	bin/vnc2swf
 USE_GMAKE=	yes
 
 CONFIGURE_ARGS=	--with-ming=${LOCALBASE}/lib

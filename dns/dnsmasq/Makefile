@@ -15,7 +15,8 @@ COMMENT=	A caching DNS forwarder
 
 USE_REINPLACE=	yes
 
-MAN8=	dnsmasq.8
+MAN8=		dnsmasq.8
+PLIST_FILES=	sbin/dnsmasq
 
 post-patch:
 	@${REINPLACE_CMD} -e \

@@ -14,6 +14,7 @@ MAINTAINER=	markp@FreeBSD.org
 COMMENT=	A tcp connection redirection utility
 
 MAN1=		redir.1
+PLIST_FILES=	bin/redir
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/redir ${PREFIX}/bin

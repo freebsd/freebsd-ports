@@ -17,6 +17,7 @@ COMMENT=	A powerful make utility
 
 WRKSRC=		${WRKDIR}/xmake
 MAN1=		xmake.1
+PLIST_FILES=	bin/xmake
 
 pre-build:
 	@${RM} -rf ${WRKSRC}/obj

@@ -20,7 +20,8 @@ BUILD_DEPENDS=	${LOCALBASE}/include/lcrzo_debugdefs.h:${PORTSDIR}/security/lcrzo
 
 WRKSRC=		${WRKDIR}/${PKGNAME}-src/src
 
-MAN1=	lcrzoex.1
+MAN1=		lcrzoex.1
+PLIST_FILES=	bin/lcrzoex
 
 post-patch:
 	cd ${WRKSRC} && ${SH} ${WRKSRC}/genemake

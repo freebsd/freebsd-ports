@@ -15,6 +15,7 @@ MAINTAINER=	roman@xpert.com
 COMMENT=	Makes ISO images suitable to boot on sparc systems
 
 MAN1=		mksunbootcd.1
+PLIST_FILES=	bin/mksunbootcd
 
 GNU_CONFIGURE=	yes
 

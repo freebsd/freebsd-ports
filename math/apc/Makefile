@@ -18,5 +18,6 @@ LIB_DEPENDS=	forms.1:${PORTSDIR}/x11-toolkits/xforms
 USE_X_PREFIX=	yes
 MAN1=		apc.1
 MANCOMPRESSED=	yes
+PLIST_FILES=	bin/apc
 
 .include <bsd.port.mk>

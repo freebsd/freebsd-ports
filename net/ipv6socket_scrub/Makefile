@@ -15,6 +15,7 @@ MAINTAINER=	janos.mohacsi@bsd.hu
 COMMENT=	Checks IPv6 portability of C source code
 
 MAN1=		ipv6socket_scrub.1
+PLIST_FILES=	bin/ipv6socket_scrub
 
 WRKSRC=			${WRKDIR}/${DISTNAME}/src
 RESTRICTED=		"not redistributable, license agreement required"

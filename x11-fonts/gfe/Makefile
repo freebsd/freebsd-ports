@@ -16,6 +16,7 @@ MAINTAINER=	bms@spc.org
 COMMENT=	GTK+-based .bdf font editor for X
 
 GNU_CONFIGURE=	yes
+PLIST_FILES=	bin/gfe
 USE_GNOME=	gtk12
 USE_XPM=	yes
 

@@ -15,6 +15,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION:C/\.//g}_src${EXTSUFFIX}
 MAINTAINER=	corecode@corecode.ath.cx
 COMMENT=	A tool to normalize the gain of mp3 files
 
+PLIST_FILES=	bin/mp3gain
 USE_REINPLACE=	yes
 USE_ZIP=	yes
 

@@ -20,5 +20,6 @@ GNU_CONFIGURE=	YES
 WRKSRC=		${WRKDIR}/icmpmonitor
 
 MAN1=		icmpmonitor.1
+PLIST_FILES=	bin/icmpmonitor
 
 .include <bsd.port.mk>

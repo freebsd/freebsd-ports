@@ -27,6 +27,7 @@ NO_BUILD=	yes
 USE_REINPLACE=	yes
 
 MAN1=		code2html.1
+PLIST_FILES=	bin/code2html
 
 do-configure:
 	@${MV} ${WRKSRC}/code2html ${WRKSRC}/code2html.orig

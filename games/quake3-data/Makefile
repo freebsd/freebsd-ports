@@ -20,6 +20,7 @@ COMMENT=	Quake 3 for Linux .pk3 files
 # directory hierarchy for us.
 RUN_DEPENDS=	${LOCALBASE}/usr/games/quake3/q3ded:${PORTSDIR}/games/q3server
 
+PLIST_FILES=	usr/games/quake3/baseq3/pak0.pk3
 ONLY_FOR_ARCHS=	i386
 USE_LINUX_PREFIX=	yes
 EXTRACT_ONLY=	# Don't extract anything

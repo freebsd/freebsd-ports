@@ -21,6 +21,7 @@ USE_X_PREFIX=	yes
 USE_XPM=	yes
 
 MAN1=		wmapm.1
+PLIST_FILES=	bin/wmapm
 
 BINMODE=	2755
 BINGRP=		operator

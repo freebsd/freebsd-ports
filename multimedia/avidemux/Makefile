@@ -22,6 +22,7 @@ LIB_DEPENDS=	mp3lame.0:${PORTSDIR}/audio/lame \
 BUILD_DEPENDS=	\
 	${X11BASE}/include/X11/extensions/Xvlib.h:${PORTSDIR}/graphics/xv
 
+PLIST_FILES=	bin/avidemux
 USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	gtk12

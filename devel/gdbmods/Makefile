@@ -17,6 +17,7 @@ MAINTAINER=	bms@spc.org
 COMMENT=	Wrapper for gdb -k to provide kld symbol information
 
 NO_BUILD=	yes
+PLIST_FILES=	bin/gdbmods
 
 do-install:
 	${INSTALL_SCRIPT} ${DISTDIR}/${DIST_SUBDIR}/${DISTFILES} ${PREFIX}/bin

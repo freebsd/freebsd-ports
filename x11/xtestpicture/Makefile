@@ -15,5 +15,6 @@ COMMENT=	Create a full-screen image to adjust your monitor
 
 USE_IMAKE=	yes
 MAN1=		xtestpicture.1
+PLIST_FILES=	bin/xtestpicture
 
 .include <bsd.port.mk>

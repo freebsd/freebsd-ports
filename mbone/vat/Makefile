@@ -30,6 +30,7 @@ USE_AUTOCONF=	yes
 CONFIGURE_ARGS=	--with-gsm=${GSM_WORK}
 INSTALL_TARGET=	install install-man
 MAN1=		vat.1
+PLIST_FILES=	bin/vat
 
 .include <bsd.port.pre.mk>
 

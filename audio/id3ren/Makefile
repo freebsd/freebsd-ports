@@ -14,6 +14,7 @@ DISTNAME=	id3ren97a
 MAINTAINER=	jonny@jonny.eng.br
 COMMENT=	Mpeg Audio Layer 3 util: rename files, edit tags, search, etc
 
+PLIST_FILES=	bin/id3ren
 USE_ZIP=	yes
 USE_REINPLACE=	yes
 WRKSRC=		${WRKDIR}/id3ren/src

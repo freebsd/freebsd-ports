@@ -23,6 +23,7 @@ GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
 
 MAN1=		gtkfind.1
+PLIST_FILES=	bin/gtkfind
 
 post-patch:
 	${REINPLACE_CMD} -e "s,-O2,${CFLAGS}," ${WRKSRC}/configure ${WRKSRC}/Makefile.in	

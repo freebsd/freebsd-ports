@@ -22,6 +22,7 @@ USE_GNOME=	gtk20
 
 MANCOMPRESSED=	yes
 MAN1=		wistumbler2.1
+PLIST_FILES=	bin/wistumbler2
 
 .if !exists(/sys/dev/owi/if_ieee80211.h)
 BROKEN=	You need to upgrade you system

@@ -16,6 +16,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 MAINTAINER=	roman@xpert.com
 COMMENT=	Command line utility to create GutenPalm's zTXT format databases
 
+PLIST_FILES=	bin/makeztxt
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_GMAKE=	yes
 

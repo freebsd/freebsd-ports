@@ -16,6 +16,7 @@ COMMENT=	Converts text files to PostScript including Japanese
 
 RUN_DEPENDS=	nkf:${PORTSDIR}/japanese/nkf
 
+PLIST_FILES=	bin/t2ps
 WRKSRC=		${WRKDIR}/t2ps-dir
 
 do-install:

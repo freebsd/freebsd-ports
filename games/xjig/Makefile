@@ -18,6 +18,7 @@ COMMENT=	Jigsaw puzzle game for X11
 USE_XLIB=	yes
 MAKEFILE=	Makefile.Linux
 MAN1=		xjig.1
+PLIST_FILES=	bin/xjig
 
 do-install:
 	@ ${INSTALL_PROGRAM} ${WRKSRC}/xjig ${PREFIX}/bin/xjig

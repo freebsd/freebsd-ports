@@ -20,6 +20,7 @@ RESTRICTED=	"Contact author personally regarding commercial use"
 NO_WRKSUBDIR=	yes
 MAKEFILE=	${FILESDIR}/Makefile
 
+PLIST_FILES=	bin/bicom
 USE_ZIP=	yes
 
 do-install:

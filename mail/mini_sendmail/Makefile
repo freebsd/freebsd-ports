@@ -15,6 +15,7 @@ MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Tiny MTA with only smart relay capability
 
 MAN8=		mini_sendmail.8
+PLIST_FILES=	bin/mini_sendmail
 
 do-build:
 	cd ${WRKSRC} && \

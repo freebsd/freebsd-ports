@@ -16,6 +16,7 @@ COMMENT=	Paragraph reformatter for email
 
 ALL_TARGET=
 MAN1=		par.1
+PLIST_FILES=	bin/par
 
 do-configure:
 	(cd ${WRKSRC}; ${CP} protoMakefile Makefile)

@@ -16,6 +16,7 @@ COMMENT=	XMMS input plugin for playing MPC Musepack (.mpc, .mp+) files
 
 LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms
 
+PLIST_FILES=	lib/xmms/Input/xmms-mpegplus-1.8.0.so
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gtk12

@@ -15,6 +15,7 @@ COMMENT=	Stone is a TCP/IP packet repeater in the application layer
 
 MAN1=		${PORTNAME}.1
 MANLANG=	"" ja
+PLIST_FILES=	bin/stone
 
 USE_REINPLACE=   yes
 

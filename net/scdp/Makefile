@@ -17,6 +17,7 @@ COMMENT=	"Tool that sends CDP (CISCO Discovery Protocol) Packets"
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libnet.a:${PORTSDIR}/net/libnet
 
+PLIST_FILES=	bin/scdp
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes

@@ -15,6 +15,7 @@ MAINTAINER=	tuxsuximus@hotmail.com
 COMMENT=	Converts NASM syntax assembly code to HTML code
 
 MAN1=		asm2html.1
+PLIST_FILES=	bin/asm2html
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS+=--prefix=${PREFIX}
 

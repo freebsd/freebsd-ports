@@ -24,6 +24,7 @@ GTK_CFLAGS?=	`${GTK_CONFIG} --cflags`
 MAKE_ARGS+=	CFLAGS="${CPPFLAGS} ${CFLAGS} -Wall ${GTK_CFLAGS}" \
 		LDFLAGS="${LDFLAGS}" \
 		GTK_LIBS="${GTK_LIBS}"
+PLIST_FILES=	bin/wmfishtime
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/wmfishtime ${PREFIX}/bin

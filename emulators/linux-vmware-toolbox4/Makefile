@@ -17,6 +17,7 @@ COMMENT=VMware toolbox for guest OS (for VMware 4.x, Linux version)
 
 DISTDIR=	${MOUNT_PT}
 IGNOREFILES=	${DISTFILES}
+PLIST_FILES=	bin/linux-vmware-toolbox
 WRKSRC=		${WRKDIR}/vmware-tools-distrib
 STRIP=
 

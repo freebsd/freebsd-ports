@@ -18,5 +18,6 @@ GNU_CONFIGURE=	yes
 USE_X_PREFIX=	yes
 
 MAN1=		xwrits.1
+PLIST_FILES=	bin/xwrits
 
 .include <bsd.port.mk>

@@ -18,6 +18,7 @@ COMMENT=	Analyze diagnostic error output from compilers and other processors
 MANSECTS=	1
 MAN1=		error.1
 MANCOMPRESSED=	maybe
+PLIST_FILES=	bin/error
 
 # MAN page COMPression SUFFIX
 .if !defined(NOMANCOMPRESS)

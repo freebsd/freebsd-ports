@@ -14,4 +14,6 @@ MASTER_SITE_SUBDIR=	peter
 MAINTAINER=	peter@FreeBSD.org
 COMMENT=	Hexpert - a simple but flexible binary file editor
 
+PLIST_FILES=	bin/hex
+
 .include <bsd.port.mk>

@@ -18,5 +18,6 @@ USE_BZIP2=	yes
 
 MAN1=		fortunelock.1
 MANCOMPRESSED=	no
+PLIST_FILES=	bin/fortunelock
 
 .include <bsd.port.mk>

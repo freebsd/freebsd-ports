@@ -15,6 +15,7 @@ DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 MAINTAINER=	gmarco@giovannelli.it
 COMMENT=	A free spreadsheet with graphical user interface
 
+PLIST_FILES=	bin/abs
 USE_XLIB=	yes
 USE_XPM=	yes
 USE_REINPLACE=	yes

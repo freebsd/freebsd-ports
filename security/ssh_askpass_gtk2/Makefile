@@ -19,6 +19,7 @@ USE_X_PREFIX=		yes
 USE_GNOME=		gtk20
 
 MAN1=			ssh-askpass-gtk2.1
+PLIST_FILES=		bin/ssh-askpass-gtk2
 
 do-install:
 	cd ${WRKSRC};\

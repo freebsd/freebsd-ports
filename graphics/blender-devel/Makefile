@@ -17,6 +17,7 @@ COMMENT=	3D modeling/rendering/animation/gaming package
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png
 
+PLIST_FILES=	bin/blender
 USE_X_PREFIX=	yes
 USE_BZIP2=	yes
 USE_REINPLACE=	yes

@@ -17,6 +17,7 @@ DISTNAME=	flasm141src
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Command line assembler/disassembler of flash actionscript bytecode
 
+PLIST_FILES=	bin/flasm
 USE_ZIP=	YES
 USE_GMAKE=	YES
 USE_BISON=	YES

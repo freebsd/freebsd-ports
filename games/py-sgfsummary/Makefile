@@ -18,6 +18,7 @@ COMMENT=	SGF Summarizer
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/sgflib.py:${PORTSDIR}/games/py-sgflib
 
+PLIST_FILES=	bin/sgfsummary.py
 USE_PYTHON=	yes
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}${PORTVERSION}

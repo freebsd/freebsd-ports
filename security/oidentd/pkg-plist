@@ -1,4 +1,0 @@
-sbin/oidentd
-etc/oidentd.conf.sample
-etc/oidentd_masq.conf.sample
-etc/rc.d/oidentd.sh

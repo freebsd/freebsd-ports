@@ -16,6 +16,7 @@ COMMENT=	A simple menu patterened for use with ratpoison
 USE_X_PREFIX=	yes
 ALL_TARGET=	ratmenu
 MAN1=		ratmenu.1
+PLIST_FILES=	bin/ratmenu
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ratmenu ${PREFIX}/bin

@@ -20,6 +20,7 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg	\
 		ungif.5:${PORTSDIR}/graphics/libungif	\
 		Imlib.5:${PORTSDIR}/graphics/imlib
 
+PLIST_FILES=	bin/show
 USE_XLIB=	yes
 USE_X_PREFIX=	yes
 

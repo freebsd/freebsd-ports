@@ -19,6 +19,7 @@ COMMENT=	Create lock files for use in shell scripts
 HAS_CONFIGURE=	yes
 
 MAN1=		shlock.1
+PLIST_FILES=	bin/shlock
 
 WRKSRC=		${WRKDIR}/inn-${PORTVERSION}
 

@@ -19,6 +19,7 @@ USE_PERL5_RUN=	yes
 
 NO_BUILD=	yes
 MAN1=		kripp.1
+PLIST_FILES=	bin/kripp
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/kripp ${PREFIX}/bin

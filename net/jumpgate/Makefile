@@ -16,5 +16,6 @@ COMMENT=	TCP connection forwarder
 GNU_CONFIGURE=	yes
 
 MAN8=		jumpgate.8
+PLIST_FILES=	sbin/jumpgate
 
 .include <bsd.port.mk>

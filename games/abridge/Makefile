@@ -20,5 +20,6 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-wx-config=${X11BASE}/bin/wxgtk2-2.4-config
 
 MAN1=		abridge.1
+PLIST_FILES=	bin/abridge
 
 .include <bsd.port.mk>

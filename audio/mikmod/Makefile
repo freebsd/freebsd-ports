@@ -24,5 +24,6 @@ CONFIGURE_ARGS+=	--enable-color-interface
 .endif
 
 MAN1=		mikmod.1
+PLIST_FILES=	bin/mikmod
 
 .include <bsd.port.mk>

@@ -28,5 +28,6 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/cvsdelta.1 ${PREFIX}/man/man1/
 
 MAN1=		cvsdelta.1
+PLIST_FILES=	bin/cvsdelta
 
 .include <bsd.port.mk>

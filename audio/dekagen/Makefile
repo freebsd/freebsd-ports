@@ -32,6 +32,7 @@ RUN_DEPENDS+=	cdparanoia:${PORTSDIR}/audio/cdparanoia
 
 MAN1=		dekagen.1
 MANCOMPRESSED=	yes
+PLIST_FILES=	bin/dekagen
 
 .include <bsd.port.pre.mk>
 

@@ -17,6 +17,7 @@ DISTNAME=		bttv-0.6.4
 MAINTAINER=		roger@freebsd.org
 COMMENT=	Get Videotext/Teletext (.vtx) and other VBI data from TV channels
 
+PLIST_FILES=		bin/vbidecode
 WRKSRC=			${WRKDIR}/bttv/apps/vbidecode
 
 .include <bsd.port.pre.mk>

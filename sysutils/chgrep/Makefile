@@ -20,6 +20,7 @@ USE_GMAKE=	yes
 USE_SIZE=	yes
 
 MAN1=		chgrep.1
+PLIST_FILES=	bin/chgrep
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/chgrep \

@@ -18,5 +18,6 @@ COMMENT=	Visual binary file editor
 RESTRICTED=	"Restrictive copyright"
 NO_WRKSUBDIR=	yes
 MAN1=		uzap.1
+PLIST_FILES=	bin/uzap
 
 .include <bsd.port.mk>

@@ -19,6 +19,7 @@ USE_REINPLACE=	yes
 RESTRICTED=	License problem
 
 MAN1=		pftpd.1 rpad.1
+PLIST_FILES=	sbin/pftpd
 
 .include <bsd.port.pre.mk>
 

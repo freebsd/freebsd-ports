@@ -14,6 +14,7 @@ MASTER_SITES=	http://dominia.org/djao/limit/
 MAINTAINER=	gslin@ccca.nctu.edu.tw
 COMMENT=	Limit the number of simultaneous connections from a single client IP address
 
+PLIST_FILES=	libexec/apache/mod_limitipconn.so
 USE_APACHE=	yes
 USE_REINPLACE=	yes
 

@@ -16,6 +16,7 @@ COMMENT=	A Fluxbox utility to create and manage icons on the desktop
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		Xft.2:${PORTSDIR}/x11-fonts/Xft
 
+PLIST_FILES=	bin/fbdesk
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 

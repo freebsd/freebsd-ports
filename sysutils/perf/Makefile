@@ -17,6 +17,7 @@ LIB_DEPENDS=	xview.3:${PORTSDIR}/x11-toolkits/xview
 
 USE_IMAKE=		yes
 MAN1=			perf.1
+PLIST_FILES=		bin/perf
 XFREE86_HTML_MAN=	no
 
 do-install:

@@ -20,5 +20,6 @@ MAKE_ENV+=	CPPFLAGS="${CPPFLAGS}" \
 		LDFLAGS="${LDFLAGS}"
 
 MAN8=		forkbomb.8
+PLIST_FILES=	sbin/forkbomb
 
 .include <bsd.port.mk>

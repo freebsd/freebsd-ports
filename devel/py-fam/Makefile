@@ -17,6 +17,7 @@ COMMENT=	Python Interface to the File Alteration Monitor
 
 LIB_DEPENDS=	fam.0:${PORTSDIR}/devel/fam
 
+PLIST_FILES=	%%PYTHON_SITELIBDIR%%/_fam.so
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 

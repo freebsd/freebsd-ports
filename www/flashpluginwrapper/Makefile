@@ -24,6 +24,7 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 CONFLICTS=	linuxpluginwrapper-*
 
 IGNORE=		"Please use www/linuxpluginwrapper.  This port should be obsolated.  But, if you cannot use it by any reason, please set NO_IGNORE and you can use this."
+PLIST_FILES=	lib/libflashplayer.so.1
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,/usr/X11R6,${X11BASE},' \

@@ -17,6 +17,7 @@ COMMENT=	Retrieve process/core file stack traces
 ONLY_FOR_ARCHS=	i386
 
 MANCOMPRESSED=	yes
-MAN1=	pstack.1
+MAN1=		pstack.1
+PLIST_FILES=	bin/pstack
 
 .include <bsd.port.mk>

@@ -19,6 +19,7 @@ COMMENT=	A python extension module for the Spread group communcations package
 
 LIB_DEPENDS=	spread.1:${PORTSDIR}/net/spread
 
+PLIST_FILES=	%%PYTHON_SITELIBDIR%%/spread.so
 USE_REINPLACE=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes

@@ -27,6 +27,7 @@ WRKSRC=		${WRKDIR}/pgpsrc
 USE_GMAKE=	yes
 
 MAN1=		pgp.1
+PLIST_FILES=	bin/pgp
 
 LATEST_LINK=	pgp6
 

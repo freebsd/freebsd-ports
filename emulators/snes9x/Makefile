@@ -15,6 +15,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:R}-${PORTVERSION:E}-src
 MAINTAINER=	green@FreeBSD.org
 COMMENT=	Super Nintendo Entertainment System(SNES) Emulator
 
+PLIST_FILES=	bin/snes9x
 WRKSRC=		${WRKDIR}/${DISTNAME}/${PORTNAME}
 
 USE_X_PREFIX=	YES

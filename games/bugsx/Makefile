@@ -23,6 +23,7 @@ EXTRACT_CMD=		${TAR}
 EXTRACT_BEFORE_ARGS=	-xf
 EXTRACT_AFTER_ARGS=	# empty
 MAN1=		bugsx.1
+PLIST_FILES=	bin/bugsx
 
 post-install:
 	${STRIP_CMD} ${PREFIX}/bin/bugsx

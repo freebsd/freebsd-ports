@@ -25,5 +25,6 @@ RUN_DEPENDS=	${PREFIX}/bin/gpg:${PORTSDIR}/security/gnupg
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-gpg-path=${PREFIX}/bin/gpg
+PLIST_FILES=	bin/pgpgpg
 
 .include <bsd.port.mk>

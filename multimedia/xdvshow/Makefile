@@ -18,6 +18,7 @@ COMMENT=	DV/RTP viewer
 
 LIB_DEPENDS=	dv.3:${PORTSDIR}/multimedia/libdv
 
+PLIST_FILES=	bin/xdvshow
 GNU_CONFIGURE=		YES
 USE_AUTOCONF_VER=	253
 

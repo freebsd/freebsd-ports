@@ -33,5 +33,6 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 CONFIGURE_ENV+=	WX_CONFIG="${X11BASE}/bin/wxgtk2-2.4-config"
 .endif
 USE_GMAKE=	yes
+PLIST_FILES=	bin/hashish
 
 .include <bsd.port.mk>

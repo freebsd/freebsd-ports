@@ -17,6 +17,7 @@ RUN_DEPENDS=	pine:${PORTSDIR}/mail/pine4
 
 NO_WRKSUBDIR=	YES
 NO_BUILD=	YES
+PLIST_FILES=	etc/pine.conf
 
 do-fetch:
 

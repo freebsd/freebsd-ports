@@ -21,5 +21,6 @@ LIB_DEPENDS+=	ncurses.5:${PORTSDIR}/devel/ncurses
 .endif
 
 MAN1=	rexima.1
+PLIST_FILES=	bin/rexima
 
 .include <bsd.port.post.mk>

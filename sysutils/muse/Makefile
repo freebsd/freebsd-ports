@@ -15,5 +15,6 @@ COMMENT=	Shows memory usage data
 
 MAN1=		muse.1
 MANCOMPRESSED=	yes
+PLIST_FILES=	bin/muse
 
 .include <bsd.port.mk>

@@ -22,5 +22,6 @@ GNU_CONFIGURE=	YES
 USE_GMAKE=	YES
 USE_X_PREFIX=	YES
 MAN1=		clipboard.1
+PLIST_FILES=	bin/clipboard
 
 .include <bsd.port.mk>

@@ -19,5 +19,6 @@ COMMENT=	Transparent analog clock for x11
 NO_WRKSUBDIR=	yes
 USE_IMAKE=	yes
 MAN1=		tclock.1
+PLIST_FILES=	bin/tclock
 
 .include <bsd.port.mk>

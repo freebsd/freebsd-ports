@@ -23,6 +23,7 @@ USE_REINPLACE=	yes
 MAKE_FLAGS=
 MAKEFILE=
 MAN1=		${PORTNAME}.1
+PLIST_FILES=	bin/Tee
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,CFLAGS=,CFLAGS+=,' -e 's,^DEBUG,#DEBUG,'\

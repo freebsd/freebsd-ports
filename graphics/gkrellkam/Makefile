@@ -25,6 +25,7 @@ USE_GNOME=	imlib
 USE_GMAKE=	yes
 
 MAN5=		gkrellkam-list.5
+PLIST_FILES=	libexec/gkrellm/plugins/gkrellkam.so
 
 do-install:
 	@${INSTALL_DATA} ${WRKSRC}/gkrellkam.so \

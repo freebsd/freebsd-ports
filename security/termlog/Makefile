@@ -16,5 +16,6 @@ COMMENT=	Monitor or log multiple system terminals synchronously (real-time)
 
 MAN1=		termlog.1
 MANCOMPRESSED=	yes
+PLIST_FILES=	bin/termlog
 
 .include <bsd.port.mk>

@@ -18,5 +18,6 @@ COMMENT=	Displays large japanese letters on the standard output
 WRKSRC=		${WRKDIR}/${PORTNAME}2
 ALL_TARGET=	kbanner
 MAN1=		kbanner.1
+PLIST_FILES=	bin/kbanner
 
 .include <bsd.port.mk>

@@ -20,6 +20,7 @@ BUILD_DEPENDS=	${X11BASE}/include/gkrellm2/gkrellm.h:${PORTSDIR}/sysutils/gkrell
 RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm2 \
 		import:${PORTSDIR}/graphics/ImageMagick
 
+PLIST_FILES=	libexec/gkrellm2/plugins/gkrellshoot.so
 WRKSRC=		${WRKDIR}/gkrellShoot-${PORTVERSION}
 USE_X_PREFIX=	yes
 

@@ -17,6 +17,7 @@ COMMENT=	Create resources for tgif, vfontcap, .., for Japanese TrueType fonts
 
 RUN_DEPENDS=	mkttfdir:${PORTSDIR}/print/perlftlib
 
+PLIST_FILES=	bin/mkres.pl
 USE_PERL5=	yes
 NO_WRKSUBDIR=	yes
 

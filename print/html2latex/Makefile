@@ -17,5 +17,6 @@ COMMENT=	Convert HTML document into LaTeX
 
 MAN1=		html2latex.1
 MANCOMPRESSED=	yes
+PLIST_FILES=	bin/html2latex
 
 .include <bsd.port.mk>

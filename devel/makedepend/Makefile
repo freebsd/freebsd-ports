@@ -19,6 +19,7 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/makedepend
 GNU_CONFIGURE=	YES
 
 MAN1=		makedepend.1
+PLIST_FILES=	bin/makedepend
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/makedepend ${PREFIX}/bin

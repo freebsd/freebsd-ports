@@ -17,6 +17,7 @@ COMMENT=	Utility to display files or streams in random order
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 MAN1=		rand.1
+PLIST_FILES=	bin/rand
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/rand ${PREFIX}/bin

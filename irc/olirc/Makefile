@@ -17,6 +17,7 @@ COMMENT=	A small irc client using GTK+
 
 LIB_DEPENDS=	tcl82.1:${PORTSDIR}/lang/tcl82
 
+PLIST_FILES=	bin/olirc
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	gtk12

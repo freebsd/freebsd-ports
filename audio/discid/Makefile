@@ -14,6 +14,7 @@ DISTNAME=	${PORTNAME}-freebsd-${PORTVERSION}
 MAINTAINER=	ob@breuninger.org
 COMMENT=	Identify audio cd in your drive
 
+PLIST_FILES=	bin/discid
 WRKSRC=		${WRKDIR}/freebsd
 
 MAKE_ARGS=	discid

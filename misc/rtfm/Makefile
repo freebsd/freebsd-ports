@@ -15,5 +15,6 @@ MAINTAINER=	chris@FreeBSD.org
 COMMENT=	A FreeBSD documentation search mechanism
 
 MAN1=		rtfm.1
+PLIST_FILES=	bin/rtfm
 
 .include <bsd.port.mk>

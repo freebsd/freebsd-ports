@@ -27,6 +27,7 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/rate ${PREFIX}/bin/rate
 	${INSTALL_MAN} ${WRKSRC}/doc/rate.1 ${PREFIX}/man/man1
 
-MAN1=	rate.1
+MAN1=		rate.1
+PLIST_FILES=	bin/rate
 
 .include <bsd.port.mk>

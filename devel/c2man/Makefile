@@ -18,5 +18,6 @@ COMMENT=	Generates man pages from C sources
 NO_WRKSUBDIR=	yes
 
 MAN1=	c2man.1
+PLIST_FILES=	bin/c2man
 
 .include <bsd.port.mk>

@@ -15,6 +15,8 @@ DISTNAME=	PortScanner-${PORTVERSION}
 MAINTAINER=	billf@FreeBSD.org
 COMMENT=	A simple and easy to use TCP port scanner
 
+PLIST_FILES=	bin/portscanner
+
 do-build:
 	@ ${CC} -o ${WRKSRC}/portscanner ${CFLAGS} ${WRKSRC}/portscanner.c
 

@@ -16,6 +16,7 @@ COMMENT=	HTML documentation tool for Haskell
 
 BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc
 
+PLIST_FILES=	bin/hdoc
 USE_SIZE=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes

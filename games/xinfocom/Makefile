@@ -15,8 +15,9 @@ DISTFILES=		unix8m.tgz
 MAINTAINER=		mph@freebsd.org
 COMMENT=	An Infocom game interpreter for X11
 
-WRKSRC=			${WRKDIR}/xinfocom
+PLIST_FILES=	bin/xinfocom
+WRKSRC=		${WRKDIR}/xinfocom
 
-USE_IMAKE=		yes
+USE_IMAKE=	yes
 
 .include <bsd.port.mk>

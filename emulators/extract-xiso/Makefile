@@ -16,6 +16,7 @@ EXTRACT_SUFX=   .zip
 MAINTAINER=	king@v2project.com
 COMMENT=	This tool will extract files form  xdvdfs (xbox iso) image
 
+PLIST_FILES=	bin/extract-xiso
 WRKSRC=		${WRKDIR}/freebsd
 NO_BUILD=       yes
 USE_ZIP=        yes

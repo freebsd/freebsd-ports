@@ -22,6 +22,7 @@ NO_WRKSUBDIR=	yes
 MAKE_ENV+=	FREEBSD=1
 
 MAN1=		s3switch.1
+PLIST_FILES=	bin/s3switch
 
 ONLY_FOR_ARCHS=	i386
 

@@ -17,6 +17,7 @@ COMMENT=	A perl script to convert text files to PDF files
 RUN_DEPENDS=    ${SITE_PERL}/PDF/Create.pm:${PORTSDIR}/textproc/p5-PDF-Create
 
 NO_BUILD=	yes
+PLIST_FILES=	bin/ascii2pdf
 
 .include <bsd.port.pre.mk>
 

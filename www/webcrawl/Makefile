@@ -19,6 +19,7 @@ COMMENT=	Download web sites without user interaction by following links
 ALL_TARGET=
 
 MAN1=		webcrawl.1
+PLIST_FILES=	bin/webcrawl
 
 do-install:
 		@ ${INSTALL_PROGRAM} ${WRKSRC}/webcrawl ${PREFIX}/bin/

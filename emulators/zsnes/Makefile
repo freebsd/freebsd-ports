@@ -26,6 +26,7 @@ USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 
 MAN1=		zsnes.1
+PLIST_FILES=	bin/zsnes
 
 # non-portable, for a portable version see emulators/snes9x
 ONLY_FOR_ARCHS=	i386

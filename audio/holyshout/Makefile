@@ -16,6 +16,7 @@ COMMENT=	Streaming audio to Icecast/shoutcast supports multiple bitrate stream
 
 LIB_DEPENDS=	shout.2:${PORTSDIR}/audio/libshout
 
+PLIST_FILES=	bin/holyshout
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 

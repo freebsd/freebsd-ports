@@ -20,6 +20,7 @@ RUN_DEPENDS=	wine:${PORTSDIR}/emulators/wine
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 ONLY_FOR_ARCHS=	i386
+PLIST_FILES=	bin/winetools
 USE_LINUX=	yes
 
 BRANDELF?=	/usr/bin/brandelf

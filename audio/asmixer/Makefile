@@ -16,6 +16,7 @@ MAINTAINER=	mtm@identd.net
 COMMENT=	A mixer control for X, and specifically the AfterStep Window Manager
 
 MAN1=		${PORTNAME}.1x
+PLIST_FILES=	bin/asmixer
 
 USE_X_PREFIX=	yes
 USE_XPM=	yes

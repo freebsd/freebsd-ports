@@ -22,6 +22,7 @@ EXTRACT_BEFORE_ARGS=	<
 EXTRACT_AFTER_ARGS=	# empty
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
+PLIST_FILES=	bin/adcomplain
 
 post-patch:
 	cd ${WRKSRC}; \

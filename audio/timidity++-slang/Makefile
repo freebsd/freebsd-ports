@@ -11,5 +11,6 @@ MAINTAINER=	yatt@luna2.org
 COMMENT=	Slang interface for TiMidity++
 
 MASTERDIR=	${.CURDIR}/../../audio/timidity++-emacs
+PLIST_FILES=	lib/timidity/interface_s.so
 
 .include "${MASTERDIR}/Makefile"

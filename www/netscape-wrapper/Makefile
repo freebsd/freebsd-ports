@@ -17,6 +17,7 @@ COMMENT=	Netscape wrapper to avoid multiple invocation and more
 RUN_DEPENDS=	netscape-remote:${PORTSDIR}/www/netscape-remote
 
 NO_WRKSUBDIR=	yes
+PLIST_FILES=	bin/netscape
 
 do-build:
 	${SED} 's,%%PREFIX%%,${PREFIX},g' ${FILESDIR}/netscape.sh > ${WRKSRC}/netscape.sh

@@ -21,6 +21,7 @@ NO_WRKSUBDIR=	YES
 EXTRACT_CMD=	${CP}
 EXTRACT_BEFORE_ARGS=
 EXTRACT_AFTER_ARGS=	.
+PLIST_FILES=	bin/squidclients
 
 do-install:
 		@ ${INSTALL_SCRIPT} ${WRKDIR}/${DISTNAME} ${PREFIX}/bin/squidclients

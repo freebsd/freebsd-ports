@@ -18,5 +18,6 @@ COMMENT=	A nice network monitor for WindowMaker
 USE_IMAKE=	yes
 
 MAN1=		wmnet2.1
+PLIST_FILES=	bin/wmnet2
 
 .include <bsd.port.mk>

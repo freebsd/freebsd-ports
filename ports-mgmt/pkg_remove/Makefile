@@ -17,6 +17,7 @@ COMMENT=	Utility to uninstall packages
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
+PLIST_FILES=	bin/pkg_remove
 SRC=		${.CURDIR}/src
 
 do-fetch:

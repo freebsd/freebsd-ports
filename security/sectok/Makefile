@@ -23,5 +23,6 @@ INSTALLS_SHLIB= yes
 WRKSRC=         ${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 MAN1=		sectok.1
+PLIST_FILES=	bin/sectok
 
 .include <bsd.port.mk>

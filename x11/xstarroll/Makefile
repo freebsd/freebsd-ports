@@ -20,5 +20,6 @@ USE_XPM=	yes
 
 MAN1=		xstarroll.1
 MANCOMPRESSED=	yes
+PLIST_FILES=	bin/xstarroll
 
 .include <bsd.port.mk>

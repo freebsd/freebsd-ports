@@ -30,6 +30,7 @@ USE_REINPLACE=	yes
 MAN8=		pfstat.8
 
 MANCOMPRESSED=	no
+PLIST_FILES=	bin/pfstat
 
 CFLAGS+=	-I${LOCALBASE}/include/pf
 

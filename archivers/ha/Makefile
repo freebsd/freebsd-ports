@@ -17,6 +17,7 @@ MAINTAINER=	ache@FreeBSD.org
 COMMENT=	The HA archiver using the HSC compression method
 
 NO_WRKSUBDIR=	yes
+PLIST_FILES=	bin/ha
 MAKEFILE=	makefile.nix
 ALL_TARGET=	ha
 USE_GMAKE=	yes

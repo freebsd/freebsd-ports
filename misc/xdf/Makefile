@@ -16,6 +16,7 @@ COMMENT=	A graphical disk space viewer for X
 
 LIB_DEPENDS=    xview.3:${PORTSDIR}/x11-toolkits/xview
 
+PLIST_FILES=	bin/xdf
 USE_XLIB=	yes
 USE_X_PREFIX=   yes
 USE_GMAKE=      yes

@@ -14,6 +14,7 @@ MASTER_SITES=	http://www.weewm.org/download/
 MAINTAINER=	ppl@nbnet.nb.ca
 COMMENT=	Fast and ultra light windowmanager with total keyboard control
 
+PLIST_FILES=	bin/weewm
 USE_X_PREFIX=	yes
 
 do-install:

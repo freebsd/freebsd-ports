@@ -20,6 +20,7 @@ USE_BZIP2=	yes
 
 MAN1=		qsf.1
 MANCOMPRESSED=	no
+PLIST_FILES=	bin/qsf
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/qsf ${PREFIX}/bin/qsf

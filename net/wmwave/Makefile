@@ -23,6 +23,7 @@ MAKE_ENV=	MANPREFIX=${MANPREFIX}
 
 MAN1=		wmwave.1
 MANCOMPRESSED=	yes
+PLIST_FILES=	bin/wmwave
 
 # configure is a no-op for this port.
 do-configure:

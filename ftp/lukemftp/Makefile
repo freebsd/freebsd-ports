@@ -16,6 +16,7 @@ COMMENT=	Enhanced ftp client from NetBSD
 GNU_CONFIGURE=	yes
 
 MAN1=		lukemftp.1
+PLIST_FILES=	bin/lukemftp
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/ftp ${PREFIX}/bin/lukemftp

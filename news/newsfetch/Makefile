@@ -19,6 +19,7 @@ MAKE_ENV=	BINDIR="${PREFIX}/bin" MANDIR="${PREFIX}/man/man"
 
 MAN1=		newsfetch.1
 MANCOMPRESSED=	maybe
+PLIST_FILES=	bin/newsfetch
 
 do-configure:
 	cd ${WRKSRC} && ( \

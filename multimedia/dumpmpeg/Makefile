@@ -23,6 +23,7 @@ SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	SDL_CONFIG=${SDL_CONFIG}
 
-MAN1=	dumpmpeg.1
+MAN1=		dumpmpeg.1
+PLIST_FILES=	bin/dumpmpeg
 
 .include <bsd.port.mk>

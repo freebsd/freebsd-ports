@@ -21,6 +21,7 @@ ONLY_FOR_ARCHS=	i386
 
 MAN1=		iSiloBSD.1
 MANCOMPRESSED=	no
+PLIST_FILES=	bin/iSiloBSD
 
 post-extract:
 	${CP} ${FILESDIR}/Makefile ${FILESDIR}/iSiloBSD.1 ${WRKDIR}

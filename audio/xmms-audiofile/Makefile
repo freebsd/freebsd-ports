@@ -18,6 +18,7 @@ LIB_DEPENDS=	audiofile.0:${PORTSDIR}/audio/libaudiofile
 BUILD_DEPENDS=	xmms-config:${PORTSDIR}/multimedia/xmms
 RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
 
+PLIST_FILES=	lib/xmms/Input/libaf.so
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gtk12

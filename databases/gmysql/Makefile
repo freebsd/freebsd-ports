@@ -22,5 +22,6 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-mysql=${PREFIX}
 
 MAN1=		gmysql.1
+PLIST_FILES=	bin/gmysql
 
 .include <bsd.port.mk>

@@ -15,6 +15,7 @@ MAINTAINER=	mph@freebsd.org
 COMMENT=	A PostScript pretty-printer for C source
 
 MAN1=		c2ps.1
+PLIST_FILES=	bin/c2ps
 MAKE_ENV=	DEFAULT_PAPER_TYPE=${PS}
 
 PAPERSIZE?=	letter

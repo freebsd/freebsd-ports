@@ -18,6 +18,7 @@ COMMENT=	Xcmd is a front-end for starting programs under X11
 USE_IMAKE=	yes
 
 MANCOMPRESSED=	yes
-MAN1=	xcmd.1
+MAN1=		xcmd.1
+PLIST_FILES=	bin/xcmd
 
 .include <bsd.port.mk>

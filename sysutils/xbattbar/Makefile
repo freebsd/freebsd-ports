@@ -21,5 +21,6 @@ USE_IMAKE=	yes
 USE_X_PREFIX=	yes
 WRKSRC=		${WRKDIR}/xbattbar-${PORTVERSION}
 MAN1=		xbattbar.1
+PLIST_FILES=	bin/xbattbar
 
 .include <bsd.port.mk>

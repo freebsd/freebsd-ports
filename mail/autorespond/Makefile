@@ -17,6 +17,7 @@ MAINTAINER=	roam@FreeBSD.org
 COMMENT=	Simple autoresponder for qmail
 
 MAN1=		autorespond.1
+PLIST_FILES=	bin/autorespond
 
 .if defined(WITHOUT_MDOC_MANPAGE)
 AR_MANPAGE=	${WRKSRC}/autorespond.1

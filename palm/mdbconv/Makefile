@@ -15,6 +15,7 @@ MAINTAINER=	knu@FreeBSD.org
 COMMENT=	Converts CSV to MobileDB database
 
 NO_WRKSUBDIR=	yes
+PLIST_FILES=	bin/mdbconv
 
 pre-build:
 	${CP} ${FILESDIR}/Makefile ${WRKSRC}

@@ -13,6 +13,8 @@ MASTER_SITES=	http://www.de.freebsd.org/~eserte/distfiles/
 MAINTAINER=	eserte@cs.tu-berlin.de
 COMMENT=	PostScript (created by dvips) to ascii converter
 
+PLIST_FILES=	bin/dvips2ascii
+
 do-build:
 	${MV} ${WRKSRC}/dvips2ascii ${WRKSRC}/dvips2ascii.orig
 	${SED} -e 's;#!.*perl;#!${PERL};' \

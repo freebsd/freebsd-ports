@@ -21,5 +21,6 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 PERL_CONFIGURE=	yes
 
 MAN3=		Crypt::DES_EDE3.3
+PLIST_FILES=	%%SITE_PERL%%/Crypt/DES_EDE3.pm
 
 .include <bsd.port.mk>

@@ -16,6 +16,7 @@ MAINTAINER=	leeym@FreeBSD.org
 COMMENT=	SQL*PLUS with commandline editing, history, and name completion
 
 MAKEFILE=	makefile
+PLIST_FILES=	bin/gqlplus
 USE_GMAKE=	yes
 
 do-install:

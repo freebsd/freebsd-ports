@@ -20,6 +20,7 @@ USE_GNOME=	gtk20
 USE_X_PREFIX=	yes
 
 MAN1=		gtk-send-pr.1
+PLIST_FILES=	bin/gtk-send-pr
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/gtk-send-pr ${PREFIX}/bin

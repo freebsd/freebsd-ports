@@ -17,6 +17,7 @@ COMMENT=	Menu Editor for the XFce desktop environment
 LIB_DEPENDS=	xfce4util.1:${PORTSDIR}/x11/libxfce4util \
 		xfcegui4.1:${PORTSDIR}/x11-toolkits/libxfce4gui
 
+PLIST_FILES=	bin/xfce4-menueditor
 USE_GNOME=	gtk20 libxml2
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes

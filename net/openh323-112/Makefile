@@ -35,6 +35,7 @@ PATCH_DEPENDS=  ${NONEXISTENT}:${PORTSDIR}/comms/ixj:patch
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+PLIST_FILES=	bin/simph323
 USE_BISON=	yes
 
 USE_GMAKE=	yes

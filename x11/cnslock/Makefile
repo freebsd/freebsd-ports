@@ -15,6 +15,7 @@ MASTER_SITES=	http://www.dockapps.com/download.php/id/181/ \
 MAINTAINER=	danfe@regency.nsu.ru
 COMMENT=	A visual indicator of the states of the three "lock" buttons
 
+PLIST_FILES=	bin/cnslock
 USE_GETOPT_LONG=yes
 USE_GNOME=	gtk12
 USE_X_PREFIX=	yes

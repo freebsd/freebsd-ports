@@ -14,6 +14,7 @@ MASTER_SITES=	http://members.chello.nl/~h.lai/gnome-clipboard-daemon/
 MAINTAINER=	mezz7@cox.net
 COMMENT=	A program that keeps the content of your X clipboard in memory
 
+PLIST_FILES=	bin/gnome-clipboard-daemon
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	gtk20

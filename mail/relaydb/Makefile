@@ -15,6 +15,7 @@ COMMENT=	Spam relay database
 
 MAN8=		relaydb.8
 MANCOMPRESSED=	yes
+PLIST_FILES=	bin/relaydb
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/relaydb ${PREFIX}/bin

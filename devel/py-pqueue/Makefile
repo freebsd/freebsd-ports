@@ -15,6 +15,7 @@ DISTNAME=	PQueue-${PORTVERSION}
 MAINTAINER=	perky@FreeBSD.org
 COMMENT=	Fibonacci-Heap based Priority-Queue Extension for Python
 
+PLIST_FILES=	%%PYTHON_SITELIBDIR%%/pqueuemodule.so
 USE_BZIP2=	yes
 USE_PYTHON=	yes
 GNU_CONFIGURE=	yes

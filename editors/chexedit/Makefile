@@ -23,3 +23,4 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/docs/hexedit.1 ${PREFIX}/man/man1/chexedit.1
 
 .include <bsd.port.mk>
+PLIST_FILES=	bin/chexedit

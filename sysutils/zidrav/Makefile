@@ -26,6 +26,7 @@ MANCOMPRESSED=	maybe
 NOMANCOMPRESS=	true
 MANEXT=		# empty
 NO_INSTALL_MANPAGES=	yes
+PLIST_FILES=	bin/zidrav
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/zidrav ${PREFIX}/bin

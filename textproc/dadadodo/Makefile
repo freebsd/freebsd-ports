@@ -13,6 +13,7 @@ MASTER_SITES=	http://www.jwz.org/dadadodo/
 MAINTAINER=	markp@FreeBSD.org
 COMMENT=	Text processor which analyses text and generates random sentences
 
+PLIST_FILES=	bin/dadadodo
 USE_REINPLACE=	yes
 
 pre-patch:

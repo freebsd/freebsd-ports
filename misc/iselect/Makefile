@@ -16,6 +16,7 @@ COMMENT=	Interactive Selection Tool
 
 HAS_CONFIGURE=	yes
 
-MAN1=	iselect.1
+MAN1=		iselect.1
+PLIST_FILES=	bin/iselect
 
 .include <bsd.port.mk>

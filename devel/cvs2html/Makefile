@@ -15,6 +15,7 @@ EXTRACT_SUFX=	.gz
 MAINTAINER=	sada@FreeBSD.org
 COMMENT=	Perl script to turn ``cvs log'' output into HTML
 
+PLIST_FILES=	bin/cvs2html
 USE_PERL5=	yes
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes

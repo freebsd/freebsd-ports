@@ -18,6 +18,7 @@ BUILD_DEPENDS=	/compat/linux/usr/bin/gcc:${PORTSDIR}/devel/linux_devtools-6
 
 ONLY_FOR_ARCHS=	i386
 MAN1=		linux_kdump.1
+PLIST_FILES=	bin/linux_kdump
 
 .include <bsd.port.pre.mk>
 

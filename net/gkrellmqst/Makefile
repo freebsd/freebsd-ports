@@ -20,6 +20,7 @@ BUILD_DEPENDS=	${X11BASE}/include/gkrellm/gkrellm.h:${PORTSDIR}/sysutils/gkrellm
 RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm \
 		qstat:${PORTSDIR}/games/qstat
 
+PLIST_FILES=	libexec/gkrellm/plugins/qst.so
 WRKSRC=		${WRKDIR}/${PORTNAME:S/mq/m_q/}
 USE_X_PREFIX=	yes
 USE_GNOME=	imlib

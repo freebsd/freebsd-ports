@@ -17,6 +17,7 @@ COMMENT=	SambaSentinel is a gtk-frontend to smbstatus with additional features
 
 RUN_DEPENDS=	jags:${PORTSDIR}/net/jags
 
+PLIST_FILES=	bin/SambaSentinel
 WRKSRC=		${WRKDIR}/SambaSentinel
 USE_GMAKE=	yes
 USE_XPM=	yes

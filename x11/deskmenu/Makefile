@@ -15,6 +15,7 @@ MASTER_SITES=	http://matt.peterson.org/FreeBSD/ports/ \
 MAINTAINER=	matt@peterson.org
 COMMENT=	X11 application launcher
 
+PLIST_FILES=	bin/deskmenu
 USE_X_PREFIX=	yes
 USE_GNOME=	gtk12
 USE_GMAKE=	yes

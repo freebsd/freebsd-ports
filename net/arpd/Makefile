@@ -21,6 +21,7 @@ RUN_DEPENDS=	${LOCALBASE}/lib/libdnet.a:${PORTSDIR}/net/libdnet \
 GNU_CONFIGURE=	yes
 WRKSRC=	${WRKDIR}/${PORTNAME}
 
-MAN8=	arpd.8
+MAN8=		arpd.8
+PLIST_FILES=	sbin/arpd
 
 .include <bsd.port.mk>

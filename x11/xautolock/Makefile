@@ -18,5 +18,6 @@ COMMENT=	Used to activate xlock after a user defined time of inactivity
 
 USE_IMAKE=	yes
 MAN1=		xautolock.1
+PLIST_FILES=	bin/xautolock
 
 .include <bsd.port.mk>

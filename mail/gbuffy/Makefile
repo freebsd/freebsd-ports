@@ -17,6 +17,7 @@ COMMENT=	A GTK+ multiple mailbox "biff" program
 LIB_DEPENDS=	PropList.2:${PORTSDIR}/devel/libPropList \
 		compface.1:${PORTSDIR}/mail/faces
 
+PLIST_FILES=	bin/gbuffy
 USE_X_PREFIX=	yes
 USE_GTK=	yes
 GNU_CONFIGURE=	yes

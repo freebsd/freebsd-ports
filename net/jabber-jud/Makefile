@@ -17,6 +17,7 @@ COMMENT=	Jabber User Directory module
 
 BUILD_DEPENDS=	${LOCALBASE}/sbin/jabberd:${PORTSDIR}/net/jabber
 
+PLIST_FILES=	lib/jabber/jud.so
 USE_GMAKE=	yes
 
 post-patch:

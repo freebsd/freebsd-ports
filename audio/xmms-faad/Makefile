@@ -30,6 +30,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}/plugins/xmms
 
 DESCR=		${PORTSDIR}/audio/faad/pkg-descr
 MD5_FILE=	${PORTSDIR}/audio/faad/distinfo
+PLIST_FILES=	lib/xmms/Input/libaac-XMMS.so
 
 post-patch:
 	@${REINPLACE_CMD} -e \

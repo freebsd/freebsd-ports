@@ -16,5 +16,6 @@ COMMENT=	HTTP network traffic grabber and extractor
 LIB_DEPENDS=	ngrep.1:${PORTSDIR}/net/ngrep-lib
 
 MAN8=		httpgrabber.8
+PLIST_FILES=	bin/httpgrabber
 
 .include <bsd.port.mk>

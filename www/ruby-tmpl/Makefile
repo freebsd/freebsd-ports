@@ -21,6 +21,8 @@ USE_RUBY=	yes
 
 NO_BUILD=	yes
 
+PLIST_FILES=	%%RUBY_SITELIBDIR%%/ruby-tmpl.rb
+
 do-install:
 	cd ${WRKSRC}; ${RUBY} install.rb
 

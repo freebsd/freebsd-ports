@@ -22,6 +22,7 @@ EXTRACT_AFTER_ARGS=	| ${SED} -e '1,16d' | ${SH}
 WRKSRC=			${WRKDIR}/poppassd
 ALL_TARGET=	poppassd
 MAN8=		poppassd.8
+PLIST_FILES=	libexec/poppassd
 
 do-install:
 	@ ${INSTALL_PROGRAM} ${WRKSRC}/poppassd ${PREFIX}/libexec

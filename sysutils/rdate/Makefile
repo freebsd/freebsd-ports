@@ -16,6 +16,7 @@ MAINTAINER=	cracauer@cons.org
 COMMENT=	Sets the clock of the local host to the time of another host
 
 MAN8=		rdate.8
+PLIST_FILES=	sbin/rdate
 
 post-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/rdate ${PREFIX}/sbin/.

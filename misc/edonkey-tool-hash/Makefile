@@ -16,6 +16,7 @@ DISTNAME=	ed2k_hash-${PORTVERSION}
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	Both calculates 'eDonkey/Overnet hashes' producing ed2k:// file links
 
+PLIST_FILES=	bin/edonkey-tool-hash
 USE_REINPLACE=	yes
 USE_LIBTOOL=	yes
 GNU_CONFIGURE=	yes

@@ -20,6 +20,7 @@ COMMENT=	Python interface to the Expat XML parser
 LIB_DEPENDS=	expat.4:${PORTSDIR}/textproc/expat2
 
 DIST_SUBDIR=	python
+PLIST_FILES=	lib/%%PYTHON_VERSION%%/site-packages/pyexpat.so
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 WRKSRC=		${PYTHON_WRKSRC}/Modules

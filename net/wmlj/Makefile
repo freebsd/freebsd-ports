@@ -21,5 +21,6 @@ GNU_CONFIGURE=	yes
 USE_GNOME=	gtk12
 
 MAN1=		wmlj.1
+PLIST_FILES=	bin/wmlj
 
 .include <bsd.port.mk>

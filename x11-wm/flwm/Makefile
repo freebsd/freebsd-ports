@@ -23,5 +23,6 @@ MAKE_ENV+=	PTHREAD_LIBS=${PTHREAD_LIBS}
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 MAN1=		flwm.1
+PLIST_FILES=	bin/flwm
 
 .include <bsd.port.mk>

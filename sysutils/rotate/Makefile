@@ -15,5 +15,6 @@ COMMENT=	log rotate
 
 MAN1=	rotate.1
 MANCOMPRESSED=	yes
+PLIST_FILES=	bin/rotate
 
 .include <bsd.port.mk>

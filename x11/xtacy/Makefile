@@ -18,6 +18,7 @@ COMMENT=	An X11 trippy color-cycling toy
 
 USE_IMAKE=	yes
 MAN1=		xtacy.1
+PLIST_FILES=	bin/xtacy
 
 WRKSRC=		${WRKDIR}/Xtacy
 

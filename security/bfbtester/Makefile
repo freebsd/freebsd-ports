@@ -16,6 +16,7 @@ MAINTAINER=	mikeh@FreeBSD.org
 COMMENT=	A security tool for testing binaries for overflows
 
 HAS_CONFIGURE=	yes
+PLIST_FILES=	bin/bfbtester
 USE_GMAKE=	yes
 
 .include <bsd.port.mk>

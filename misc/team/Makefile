@@ -17,5 +17,6 @@ COMMENT=	Portable multi-buffered tape streaming utility
 
 MAN1=		team.1
 MANCOMPRESSED=	maybe
+PLIST_FILES=	bin/team
 
 .include <bsd.port.mk>

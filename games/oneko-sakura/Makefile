@@ -22,6 +22,7 @@ COMMENT=	A cat, Sakura or Tomoyo chasing a mouse all over the screen
 USE_IMAKE=	yes
 USE_REINPLACE=	yes
 MAN6=		oneko.6
+PLIST_FILES=	bin/oneko
 NO_CDROM=	"Including derivatives from CARDCAPTOR SAKURA. See http://www.clamp.f-2.co.jp/"
 RESTRICTED_FILES=	${PATCHFILES}
 

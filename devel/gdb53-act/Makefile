@@ -14,6 +14,7 @@ PKGNAMESUFFIX=	-act
 MAINTAINER=	john@johnrshannon.com
 COMMENT=	GDB 5.3 modified by ACT for Ada programming language
 
+PLIST_FILES=	bin/gdbada
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-suffix=ada

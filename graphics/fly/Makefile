@@ -17,6 +17,7 @@ COMMENT=	Simple drawing language to generate GIFs on the fly
 #BUILD_DEPENDS=	${PREFIX}/lib/libgd\.a #can't use ports' gd..
 
 MAKE_ENV=	PREFIX="${PREFIX}"
+PLIST_FILES=	bin/fly
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/fly ${PREFIX}/bin

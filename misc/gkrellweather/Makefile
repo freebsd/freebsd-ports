@@ -26,6 +26,7 @@ MAKE_ENV=	PTHREAD_LIBS="${PTHREAD_LIBS}" \
 ALL_TARGET=	${PORTNAME}.so
 
 PKGMESSAGE=	${DESCR}
+PLIST_FILES=	libexec/gkrellm/plugins/gkrellweather.so
 
 do-install:
 	@${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.so \

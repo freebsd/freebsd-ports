@@ -15,6 +15,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	clsung@dragon2.net
 COMMENT=	Creates top-10 lists of the messages in a mailbox
 
+PLIST_FILES=	bin/mboxstats
 USE_REINPLACE=	yes
 
 post-patch:

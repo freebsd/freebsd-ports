@@ -17,7 +17,8 @@ COMMENT=	Yacc-to-Latex pretty printer/convertor
 
 NO_BUILD=	yes
 
-MAN1=	y2l.1
+MAN1=		y2l.1
+PLIST_FILES=	bin/y2l
 
 do-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/y2l ${PREFIX}/bin

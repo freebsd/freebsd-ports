@@ -18,5 +18,6 @@ GNU_CONFIGURE=	yes
 ALL_TARGET=	nslint
 INSTALL_TARGET=	install install-man
 MAN8=		nslint.8
+PLIST_FILES=	bin/nslint
 
 .include <bsd.port.mk>

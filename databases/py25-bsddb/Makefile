@@ -54,6 +54,7 @@ USE_REINPLACE=	yes
 WRKSRC=		${PYTHON_WRKSRC}/Modules
 MD5_FILE=	${PORTSDIR}/lang/python/distinfo
 MAKE_ENV=	BSDDB_VERSION=${DBVERSION}
+PLIST_FILES=	%%PYTHON_SITELIBDIR%%/_bsddb.so
 
 post-extract:
 	@${CP} ${FILESDIR}/setup.py ${WRKSRC}

@@ -15,6 +15,7 @@ MAINTAINER=	uwe.pierau@tu-clausthal.de
 COMMENT=	A tool for finding common mistakes in LaTeX documents
 
 MAN1=		lacheck.1
+PLIST_FILES=	bin/lacheck
 ALL_TARGET=	lacheck lacheck.1
 
 do-install:

@@ -18,6 +18,7 @@ COMMENT=	A friendly API to libxml for Ruby
 BUILD_DEPENDS=	${LOCALBASE}/bin/xml2-config:${PORTSDIR}/textproc/libxml2
 LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2
 
+PLIST_FILES=	%%RUBY_SITEARCHLIBDIR%%/xml/libxml.so
 USE_BZIP2=	yes
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes

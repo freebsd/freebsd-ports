@@ -19,6 +19,7 @@ NO_BUILD=	yes
 USE_REINPLACE=	yes
 
 MAN1=		rfc.1
+PLIST_FILES=	bin/rfc
 
 do-configure:
 	@${REINPLACE_CMD} -e 's|/usr/local/etc/rfc|${PREFIX}/etc/rfc| ; \

@@ -27,6 +27,7 @@ SRCLIBDIR?=	src/.libs
 
 INSTALLS_SHLIB=	yes
 LDCONFIG_DIRS=	%%X11BASE%%/lib/xmms/General
+PLIST_FILES=	lib/xmms/General/libinfopipe.so
 
 do-install:
 	cd ${WRKSRC}/${SRCLIBDIR};\

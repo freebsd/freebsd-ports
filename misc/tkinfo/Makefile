@@ -17,6 +17,7 @@ RUN_DEPENDS=	wish8.3:${PORTSDIR}/x11-toolkits/tk83
 
 NO_BUILD=	yes
 MAN1=		tkinfo.1
+PLIST_FILES=	bin/tkinfo
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/tkinfo ${PREFIX}/bin

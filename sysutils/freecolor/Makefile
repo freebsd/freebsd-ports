@@ -16,5 +16,6 @@ COMMENT=	Displays free memory as a bargraph
 LIB_DEPENDS=	statgrab.3:${PORTSDIR}/devel/libstatgrab
 
 GNU_CONFIGURE=	yes
+PLIST_FILES=	bin/freecolor
 
 .include <bsd.port.mk>

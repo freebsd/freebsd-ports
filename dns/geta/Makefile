@@ -20,5 +20,6 @@ GNU_CONFIGURE=	yes
 USE_PERL5_BUILD=yes
 
 NO_INSTALL_MANPAGES=	yes
+PLIST_FILES=		bin/geta
 
 .include <bsd.port.mk>

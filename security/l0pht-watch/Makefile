@@ -14,6 +14,7 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	dom@happygiraffe.net
 COMMENT=	A program to report on what goes on in /tmp
 
+PLIST_FILES=	bin/temp-watch
 WRKSRC=		${WRKDIR}/temp-watch
 
 ALL_TARGET=	OpenBSD

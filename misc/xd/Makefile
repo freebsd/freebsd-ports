@@ -16,5 +16,6 @@ COMMENT=	Yet another dump utility
 
 MAN1=		xd.1
 MANCOMPRESSED=	maybe
+PLIST_FILES=	bin/xd
 
 .include <bsd.port.mk>

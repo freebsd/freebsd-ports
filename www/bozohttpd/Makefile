@@ -22,5 +22,6 @@ MAKE_ARGS+=	'LDFLAGS+= -lcrypt'
 
 MAN8=		bozohttpd.8
 MANCOMPRESSED=	maybe
+PLIST_FILES=	libexec/bozohttpd
 
 .include <bsd.port.mk>

@@ -16,5 +16,6 @@ COMMENT=	A tool for resizing BDF format font
 GNU_CONFIGURE=	yes
 USE_X_PREFIX=	yes
 MAN1=		bdfresize.1
+PLIST_FILES=	bin/bdfresize
 
 .include <bsd.port.mk>

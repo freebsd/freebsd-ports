@@ -19,6 +19,7 @@ WRKSRC=		${WRKDIR}/bash_completion
 NO_BUILD=	yes
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
+PLIST_FILES=	etc/bash_completion
 
 pre-patch:
 	@${SED} 's|%%PREFIX%%|${PREFIX}|g' ${PKGDIR}/pkg-message >${PKGMESSAGE}

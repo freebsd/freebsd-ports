@@ -16,5 +16,6 @@ COMMENT=	The world's most useless WindowMaker dock app
 USE_IMAKE=	yes
 USE_XPM=	yes
 MAN1=		wmeyes.1
+PLIST_FILES=	bin/wmeyes
 
 .include <bsd.port.mk>

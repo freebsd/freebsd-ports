@@ -18,5 +18,6 @@ COMMENT=	List information about file(s) and directories
 WRKSRC=		${WRKDIR}/sls
 
 MAN1=		sls.1
+PLIST_FILES=	bin/sls
 
 .include <bsd.port.mk>

@@ -26,6 +26,7 @@ EXTRACT_CMD=	rpm2cpio
 EXTRACT_BEFORE_ARGS=
 EXTRACT_AFTER_ARGS= | ${CPIO} -id --quiet
 NO_BUILD=	yes
+PLIST_FILES=	bin/xmovie
 USE_X_PREFIX=	yes
 WRKSRC=		${WRKDIR}/usr/bin
 

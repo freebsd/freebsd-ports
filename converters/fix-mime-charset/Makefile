@@ -27,6 +27,7 @@ CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 
 MAN1=		fix-mime-charset.1
+PLIST_FILES=	bin/fix-mime-charset
 
 post-install:
 .if !defined(NOPORTDOCS)

@@ -26,6 +26,7 @@ CONFIGURE_ARGS= --enable-transparency --enable-xpm-background \
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include/WINGs"
 
 MAN1=		wterm.1
+PLIST_FILES=	bin/wterm
 
 post-extract:
 	${RM} -f ${WRKSRC}/config.cache

@@ -25,6 +25,8 @@ WRKSRC=		${WRKDIR}/cd-write
 IGNORE=		"FreeBSD 3.X or greater is required to support this port"
 .endif
 
+PLIST_FILES=	bin/cd-write
+
 pre-build:
 	@cd ${WRKSRC}; ${ECHO_CMD} all: cd-write >> Makefile
 	@cd ${WRKSRC}/c++tk; ${MV} Makefile Makefile~; \

@@ -17,5 +17,6 @@ USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${X11BASE}/include" \
 		LDFLAGS="${LDFLAGS} -L${X11BASE}/lib"
+PLIST_FILES=	bin/xsc
 
 .include <bsd.port.mk>

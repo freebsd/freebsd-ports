@@ -16,6 +16,7 @@ COMMENT=	Root window parameter setting background for X
 
 LIB_DEPENDS=	Imlib2.2:${PORTSDIR}/graphics/imlib2
 
+PLIST_FILES=	bin/hsetroot
 USE_X_PREFIX=	YES
 
 GNU_CONFIGURE=	YES

@@ -22,6 +22,7 @@ ONLY_FOR_ARCHS=	i386
 USE_LINUX=	yes
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
+PLIST_FILES=	bin/edonkey-tool-recovermet
 STRIP=
 
 STRIP_CMD=	${LINUXBASE}/usr/bin/strip

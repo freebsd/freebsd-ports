@@ -28,5 +28,6 @@ CFLAGS+=	${PTHREAD_CFLAGS}
 CONFIGURE_ENV+=	LIBS="${PTHREAD_LIBS}"
 
 ONLY_FOR_ARCHS=	i386
+PLIST_FILES=	bin/gogo-petit
 
 .include <bsd.port.mk>

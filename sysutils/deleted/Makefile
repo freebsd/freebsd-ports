@@ -16,6 +16,7 @@ COMMENT=	Daemon for garbdge collection in directories with temporary files
 
 MAN1=		deleted.1
 MANCOMPRESSED=	yes
+PLIST_FILES=	bin/deleted
 BINMODE=	4555
 
 post-install:

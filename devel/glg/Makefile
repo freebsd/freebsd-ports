@@ -18,6 +18,7 @@ MASTER_SITE_SUBDIR=	kris
 MAINTAINER=	lo_gafet@users.sourceforge.net
 COMMENT=	Open Application Builder (code generator) for the GTK and/or GNOME
 
+PLIST_FILES=	bin/glg
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gtk12

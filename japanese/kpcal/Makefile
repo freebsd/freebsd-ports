@@ -22,7 +22,8 @@ COMMENT=	Make Calendar in Postscript format
 
 USE_REINPLACE=	yes
 ALL_TARGET=	kpcal
-MAN1=	kpcal.1
+MAN1=		kpcal.1
+PLIST_FILES=	bin/kpcal
 
 post-patch:
 	${REINPLACE_CMD} -e 's/long/time_t/' ${WRKSRC}/kpcal.c

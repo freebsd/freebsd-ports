@@ -19,5 +19,6 @@ COMMENT=	Network aware cat
 USE_GETOPT_LONG=yes
 GNU_CONFIGURE=	yes
 MAN1=		ncat.1
+PLIST_FILES=	bin/ncat
 
 .include <bsd.port.mk>

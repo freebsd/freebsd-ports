@@ -22,5 +22,6 @@ ALL_TARGET=	default
 
 MAN1=		6tunnel.1
 MANCOMPRESSED=	no
+PLIST_FILES=	bin/6tunnel
 
 .include <bsd.port.mk>

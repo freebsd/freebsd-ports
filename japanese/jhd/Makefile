@@ -17,6 +17,7 @@ BUILD_DEPENDS=	nkf:${PORTSDIR}/japanese/nkf
 
 MANLANG=	ja
 MAN1=		jhd.1
+PLIST_FILES=	bin/jhd
 
 post-build:
 	cd ${WRKSRC}; \

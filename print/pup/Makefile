@@ -15,6 +15,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}_src
 MAINTAINER=	klaus.goger@reflex.at
 COMMENT=	A GTK+ printer setup and maintaining tool
 
+PLIST_FILES=	bin/pup
 USE_GNOME=	gtk12
 USE_REINPLACE=	yes
 

@@ -18,6 +18,7 @@ COMMENT=	An XMMS non-static OpenGL stereogram visualization plugin
 BUILD_DEPENDS=	xmms-config:${PORTSDIR}/multimedia/xmms
 RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
 
+PLIST_FILES=	lib/xmms/Visualization/libfishmatic.so
 USE_X_PREFIX=   yes
 USE_GNOME=      gtk12
 USE_GMAKE=	yes

@@ -14,6 +14,7 @@ MAINTAINER=	cperciva@daemonology.net
 COMMENT=	Builds FFS images
 
 MAN8=		makefs.8
+PLIST_FILES=	sbin/makefs
 
 do-build:
 	cd ${WRKSRC} && ${SH} -xe build.sh

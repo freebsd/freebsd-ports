@@ -18,6 +18,7 @@ LIB_DEPENDS=	mikmod.2:${PORTSDIR}/audio/libmikmod
 WRKSRC=		${WRKDIR}/simplemod
 
 ALL_TARGET=	simplemod
+PLIST_FILES=	bin/simplemod
 
 do-install:
 	${INSTALL} -o 0 -g 0 -s ${WRKSRC}/simplemod ${PREFIX}/bin

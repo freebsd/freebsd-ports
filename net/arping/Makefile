@@ -18,6 +18,7 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libnet.a:${PORTSDIR}/net/libnet
 LDFLAGS+=	-lpcap
 
 MAN8=		arping.8
+PLIST_FILES=	sbin/arping
 
 do-build:
 	cd ${WRKSRC} &&  \

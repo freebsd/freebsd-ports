@@ -19,6 +19,7 @@ COMMENT=	A server for the linux network block device (nbd)
 WRKSRC=		${WRKDIR}/nbd-2.6
 
 HAS_CONFIGURE=	yes
+PLIST_FILES=	bin/nbd-server
 CONFIGURE_ARGS+=	--prefix=${PREFIX}
 USE_GMAKE=	yes
 

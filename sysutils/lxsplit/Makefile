@@ -15,6 +15,7 @@ DISTNAME=	lxsplit
 MAINTAINER=	kiesel@schlund.de
 COMMENT=	Simple program to split or join files
 
+PLIST_FILES=	bin/lxsplit
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 do-install:

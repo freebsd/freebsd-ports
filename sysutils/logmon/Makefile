@@ -17,6 +17,7 @@ MAINTAINER=	gslin@ccca.nctu.edu.tw
 COMMENT=	An ncurses-based split window log monitoring program
 
 GNU_CONFIGURE=	yes
+PLIST_FILES=	bin/logmon
 USE_GMAKE=	yes
 
 .include <bsd.port.mk>

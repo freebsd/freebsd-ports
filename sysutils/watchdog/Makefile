@@ -16,6 +16,7 @@ COMMENT=	"Watchdog daemon for the AMD Elan sc520 system-on-chip."
 
 MAN8=		watchdogd.8
 MANCOMPRESSED=	yes
+PLIST_FILES=	bin/watchdogd
 
 .include <bsd.port.pre.mk>
 

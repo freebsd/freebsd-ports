@@ -13,6 +13,7 @@ MASTER_SITES=	http://www.inetarena.com/~wms/comp/backfract/
 MAINTAINER=	patrick@FreeBSD.org
 COMMENT=	Fractal image animated wallpaper program
 
+PLIST_FILES=	bin/backfract
 GNU_CONFIGURE=	yes
 USE_PERL5_BUILD=yes
 USE_X_PREFIX=	yes

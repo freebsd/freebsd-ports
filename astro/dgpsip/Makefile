@@ -16,5 +16,6 @@ COMMENT=	Differential GPS over IP communication device
 GNU_CONFIGURE=	yes
 
 MAN1=	dgpsip.1
+PLIST_FILES=	bin/dgpsip
 
 .include <bsd.port.mk>

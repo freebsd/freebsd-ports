@@ -18,6 +18,7 @@ COMMENT=	Systray icon plugin for X-Chat
 
 RUN_DEPENDS=	xchat:${PORTSDIR}/irc/xchat2
 
+PLIST_FILES=	lib/xchat/plugins/systray.so
 WRKSRC=		${WRKDIR}/xchat-systray-integration-${PORTVERSION}
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes

@@ -24,6 +24,7 @@ CONFIGURE_ARGS+=	--perl=${PERL}
 NO_BUILD=	yes
 
 MAN1=		wots.1
+PLIST_FILES=	bin/wots
 
 post-extract:
 	@${CHMOD} a+x ${WRKSRC}/Configure

@@ -14,6 +14,7 @@ MASTER_SITES=	http://www.inxsoft.net/wmsolar/
 MAINTAINER=	pat@FreeBSD.org
 COMMENT=	A dockapp that displays the solar system viewed from top
 
+PLIST_FILES=	bin/wmSolar
 WRKSRC=		${WRKDIR}/wmSolar
 USE_X_PREFIX=	yes
 USE_XPM=	yes

@@ -24,5 +24,6 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 
 NOMAN=
+PLIST_FILES=	bin/gxset
 
 .include <bsd.port.mk>

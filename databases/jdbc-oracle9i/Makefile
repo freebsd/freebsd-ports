@@ -26,6 +26,7 @@ NO_CDROM=	'Must be downloaded direct from Oracle via www interface'
 NO_PACKAGE=	'Must be downloaded direct from Oracle via www interface'
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
+PLIST_FILES=	share/java/classes/classes111_01.zip
 
 .include <bsd.port.pre.mk>
 

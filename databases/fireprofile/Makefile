@@ -20,5 +20,6 @@ COMMENT=	Library to help profiling where programs are using MySQL
 BUILD_DEPENDS=	${LOCALBASE}/include/mysql/mysql.h:${PORTSDIR}/databases/mysql323-server
 
 MAN3=		libfireprofile.3
+PLIST_FILES=	lib/libfireprofile.so
 
 .include <bsd.port.mk>

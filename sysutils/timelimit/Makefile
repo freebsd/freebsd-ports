@@ -15,6 +15,7 @@ MAINTAINER=	roam@FreeBSD.org
 COMMENT=	"Limit the absolute execution time of a process"
 
 MAN8=		timelimit.8
+PLIST_FILES=	bin/timelimit
 
 do-install:
 		${INSTALL_PROGRAM} ${WRKSRC}/timelimit ${PREFIX}/bin

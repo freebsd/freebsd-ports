@@ -26,6 +26,7 @@ RUN_DEPENDS+=	${LINUXBASE}/usr/X11R6/lib/libGL.so.1:${PORTSDIR}/graphics/linux_d
 RUN_DEPENDS+=	${LINUXBASE}/lib/libGL.so:${PORTSDIR}/graphics/linux_glx
 .endif
 
+PLIST_FILES=	bin/atitd
 USE_LINUX=	yes
 USE_MESA=	yes
 

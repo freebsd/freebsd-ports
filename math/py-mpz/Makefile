@@ -18,6 +18,7 @@ COMMENT=	Python bindings to the GNU Multiple Precision library
 
 LIB_DEPENDS=	gmp.6:${PORTSDIR}/math/libgmp4
 
+PLIST_FILES=	lib/%%PYTHON_VERSION%%/site-packages/mpz.so
 DIST_SUBDIR=	python
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes

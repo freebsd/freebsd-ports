@@ -19,6 +19,8 @@ NO_BUILD=	yes
 
 NO_WRKSUBDIR=	yes
 
+PLIST_FILES=	bin/tkdiff
+
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/tkdiff-3.05.tcl.txt ${PREFIX}/bin/tkdiff
 

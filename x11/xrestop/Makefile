@@ -24,6 +24,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CFLAGS=-I${X11BASE}/include \
 		LDFLAGS=-L${X11BASE}/lib
 
-MAN1=	xrestop.1
+MAN1=		xrestop.1
+PLIST_FILES=	bin/xrestop
 
 .include <bsd.port.mk>

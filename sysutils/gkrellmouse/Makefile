@@ -18,6 +18,7 @@ COMMENT=	Mouse odometer plugin for GKrellM
 BUILD_DEPENDS=	${X11BASE}/include/gkrellm/gkrellm.h:${PORTSDIR}/sysutils/gkrellm
 RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm
 
+PLIST_FILES=	libexec/gkrellm/plugins/gkmouse.so
 WRKSRC=		${WRKDIR}/${DISTNAME:S/_/-/}
 USE_X_PREFIX=	yes
 USE_GNOME=	imlib

@@ -19,5 +19,6 @@ USE_GNOME=	gtk20
 USE_AUTOMAKE_VER=	15
 AUTOMAKE_ARGS=	--add-missing
 USE_GMAKE=	yes
+PLIST_FILES=	bin/gpkgdep
 
 .include <bsd.port.mk>

@@ -21,6 +21,7 @@ GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
 
 MAN1=		apachetop.1
+PLIST_FILES=	sbin/apachetop
 
 post-configure:
 	${REINPLACE_CMD} \

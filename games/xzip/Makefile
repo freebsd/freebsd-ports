@@ -25,5 +25,6 @@ ALL_TARGET=
 USE_XLIB=		yes
 
 MAN1=			xzip.1
+PLIST_FILES=		bin/xzip
 
 .include <bsd.port.mk>

@@ -18,5 +18,6 @@ USE_IMAKE=	yes
 
 MAN1=		xprompt.1
 MANCOMPRESSED=	yes
+PLIST_FILES=	bin/xprompt
 
 .include <bsd.port.mk>

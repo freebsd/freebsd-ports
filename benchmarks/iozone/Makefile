@@ -25,6 +25,7 @@ MAKE_ARGS=	freebsd
 ALL_TARGET=
 
 MAN1=		iozone.1
+PLIST_FILES=	bin/iozone
 
 do-install:
 	${STRIP_CMD} ${WRKSRC}/iozone

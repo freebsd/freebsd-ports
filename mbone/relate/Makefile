@@ -19,6 +19,7 @@ RUN_DEPENDS=	rat30:${PORTSDIR}/mbone/rat30 \
 		nte:${PORTSDIR}/mbone/nte \
 		vic:${PORTSDIR}/mbone/vic
 
+PLIST_FILES=	bin/relate
 WRKSRC=		${WRKDIR}/relate
 
 .include <bsd.port.mk>

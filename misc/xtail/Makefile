@@ -17,7 +17,8 @@ COMMENT=	Watches the growth of files or directories
 
 HAS_CONFIGURE=	yes
 
-MAN1=	xtail.1
+MAN1=		xtail.1
+PLIST_FILES=	bin/xtail
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/xtail ${PREFIX}/bin

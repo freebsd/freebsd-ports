@@ -16,6 +16,7 @@ COMMENT=	Small web server serving "301 Moved Permanently" only
 ALL_TARGET=	depend all
 
 MAN1=		webredirect.1
+PLIST_FILES=	bin/webredirect
 
 .include <bsd.port.pre.mk>
 

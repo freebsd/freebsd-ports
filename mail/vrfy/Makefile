@@ -19,6 +19,7 @@ COMMENT=	Verify mail address
 WRKSRC=		${WRKDIR}
 MAN1=		vrfy.1
 MANCOMPRESSED=	yes
+PLIST_FILES=	bin/vrfy
 
 post-install:
 	${INSTALL_MAN} ${WRKDIR}/${MAN1} ${PREFIX}/man/man1/

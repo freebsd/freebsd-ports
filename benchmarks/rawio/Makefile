@@ -17,6 +17,7 @@ COMMENT=	Test performance of low-level storage devices
 
 NO_WRKSUBDIR=	yes
 MAN1=		rawio.1
+PLIST_FILES=	bin/rawio
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/rawio ${PREFIX}/bin

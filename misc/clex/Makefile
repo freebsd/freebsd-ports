@@ -19,5 +19,6 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 GNU_CONFIGURE=	yes
 
 MAN1=		clex.1
+PLIST_FILES=	bin/clex
 
 .include <bsd.port.mk>

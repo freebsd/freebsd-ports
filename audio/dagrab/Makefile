@@ -16,6 +16,7 @@ MAINTAINER=	clkao@CirX.ORG
 COMMENT=	Read audio tracks from a CD into wav sound files
 
 MAN1=		dagrab.1
+PLIST_FILES=	bin/dagrab
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/dagrab ${PREFIX}/bin

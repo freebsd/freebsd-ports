@@ -23,6 +23,7 @@ USE_GMAKE=	yes
 
 MAN1=		xzgv.1
 INFO=		xzgv
+PLIST_FILES=	bin/xzgv
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|^CC|#CC|g ; \

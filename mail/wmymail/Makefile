@@ -20,5 +20,6 @@ RUN_DEPENDS=	fetchmail:${PORTSDIR}/mail/fetchmail
 USE_X_PREFIX=	yes
 
 NOMAN=
+PLIST_FILES=	bin/wmymail
 
 .include <bsd.port.mk>

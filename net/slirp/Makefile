@@ -26,6 +26,7 @@ USE_PERL5_BUILD=	yes
 GNU_CONFIGURE=	yes
 
 MAN1=		slirp.1
+PLIST_FILES=	bin/slirp
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/slirp ${PREFIX}/bin

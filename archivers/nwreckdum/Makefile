@@ -13,6 +13,8 @@ MASTER_SITES=	http://freebsd.nsu.ru/distfiles/
 MAINTAINER=	danfe@regency.nsu.ru
 COMMENT=	Utility for extracting/creating Quake PAK files
 
+PLIST_FILES=	bin/nwreckdum
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
 

@@ -17,6 +17,7 @@ COMMENT=	Displays filesystem usage of mountpoints in a nice WindowMaker dockapp
 WRKSRC=		${WRKDIR}/${DISTNAME}/wmfsm
 
 MAKEFILE=	Makefile.bsd
+PLIST_FILES=	bin/wmfsm
 
 USE_X_PREFIX=	yes
 USE_XPM=	yes

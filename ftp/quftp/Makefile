@@ -21,6 +21,7 @@ GNU_CONFIGURE=	yes
 CFLAGS+=	-L${PREFIX}/lib ${PTHREAD_LIBS}
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
-MAN1=	quftp.1
+MAN1=		quftp.1
+PLIST_FILES=	bin/quftp
 
 .include <bsd.port.mk>

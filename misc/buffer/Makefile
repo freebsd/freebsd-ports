@@ -17,5 +17,6 @@ COMMENT=	Buffer sporadic I/O for faster tape and pipe throughput
 USE_BZIP2=	yes
 NO_WRKSUBDIR=	yes
 MAN1=		buffer.1
+PLIST_FILES=	bin/buffer
 
 .include <bsd.port.mk>

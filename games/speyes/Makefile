@@ -13,6 +13,7 @@ MASTER_SITES=	http://okb-1.org/speyes/
 MAINTAINER=	jedgar@FreeBSD.org
 COMMENT=	WindowMaker dockapp/xeyes clone using SouthPark characters
 
+PLIST_FILES=	bin/speyes
 USE_IMAKE=	yes
 USE_XPM=	yes
 

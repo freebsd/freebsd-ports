@@ -13,6 +13,7 @@ MASTER_SITES=	http://www.pldaniels.com/ripmime/
 MAINTAINER=	jus@security.za.net
 COMMENT=	Extracts attached files out of a MIME encoded email package
 
+PLIST_FILES=	bin/ripmime
 USE_REINPLACE=	yes
 
 pre-build:

@@ -18,7 +18,8 @@ COMMENT=	Search text files for complex regular expressions
 USE_RUBY=	yes
 NO_BUILD=	yes
 
-MAN1=	glark.1
+MAN1=		glark.1
+PLIST_FILES=	bin/glark
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/glark ${PREFIX}/bin

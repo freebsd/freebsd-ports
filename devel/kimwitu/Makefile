@@ -18,7 +18,8 @@ COMMENT=	A tool for processing trees (i.e. terms)
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 ALL_TARGET=	
 
-MAN1=	kc.1
+MAN1=		kc.1
+PLIST_FILES=	bin/kc
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/Gen/kc ${PREFIX}/bin

@@ -21,5 +21,6 @@ MAKE_ENV=	CPPFLAGS="${CPPFLAGS}" \
 		LDFLAGS="${LDFLAGS}"
 
 MAN1=		pwgen.1
+PLIST_FILES=	bin/pwgen
 
 .include <bsd.port.mk>

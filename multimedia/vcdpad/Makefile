@@ -15,6 +15,7 @@ MASTER_SITES=	http://www.nocrew.org/software/vcdpad/
 MAINTAINER=	ijliao@FreeBSD.org
 COMMENT=	A program to pad vcd mpegs
 
+PLIST_FILES=	bin/vcdpad
 USE_GMAKE=	yes
 
 .include <bsd.port.mk>

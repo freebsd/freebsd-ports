@@ -16,6 +16,7 @@ COMMENT=	Debugger for assembly level programs
 GNU_CONFIGURE=	yes
 
 MAN8=		ald.8
+PLIST_FILES=	bin/ald
 ONLY_FOR_ARCHS=	i386
 
 .include <bsd.port.mk>

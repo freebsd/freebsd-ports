@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	chuck@pkix.net
 COMMENT=	Accrete is a physical simulation of solar system planet formation
 
+PLIST_FILES=	bin/accrete
 USE_REINPLACE=	yes
 
 post-patch:

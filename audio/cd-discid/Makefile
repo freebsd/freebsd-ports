@@ -19,5 +19,6 @@ WRKSRC=		${WRKDIR}/${PKGNAME}
 MAKE_ARGS=	prefix=${PREFIX} mandir=${PREFIX}/man/man1
 
 MAN1=	cd-discid.1
+PLIST_FILES=	bin/cd-discid
 
 .include <bsd.port.mk>

@@ -22,6 +22,7 @@ BUILD_DEPENDS=	xmms-config:${PORTSDIR}/multimedia/xmms \
 		nasm:${PORTSDIR}/devel/nasm
 RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
 
+PLIST_FILES=	lib/xmms/Visualization/libgoom.so
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gdkpixbuf

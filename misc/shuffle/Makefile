@@ -25,6 +25,8 @@ MANCOMPSUFFIX=	.gz
 MANCOMPSUFFIX=
 .endif
 
+PLIST_FILES=	bin/shuffle
+
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/shuffle ${PREFIX}/bin/shuffle
 .for __s in ${MANSECTS}

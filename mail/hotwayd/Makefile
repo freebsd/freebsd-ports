@@ -23,6 +23,7 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 
 MAN1=		hotwayd.1
+PLIST_FILES=	sbin/hotwayd
 
 post-install:
 	@${CAT} ${PKGMESSAGE}

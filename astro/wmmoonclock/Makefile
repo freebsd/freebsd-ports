@@ -21,6 +21,7 @@ USE_XPM=	yes
 USE_GMAKE=	yes
 
 MAN1=		wmmoonclock.1
+PLIST_FILES=	bin/wmmoonclock
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/wmMoonClock ${PREFIX}/bin/wmmoonclock

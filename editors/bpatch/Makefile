@@ -16,5 +16,6 @@ COMMENT=	A hex editor that doesn't load the whole file at once
 
 MAN1=		bpatch.1
 NO_WRKSUBDIR=   yes
+PLIST_FILES=	bin/bpatch
 
 .include <bsd.port.mk>

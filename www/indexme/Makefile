@@ -19,6 +19,7 @@ USE_PERL5=	yes
 WRKSRC=		${WRKDIR}/indexme
 NO_BUILD=	yes
 MAN1=		indexme.1
+PLIST_FILES=	bin/indexme
 
 do-install:
 		@ ${INSTALL_SCRIPT} ${WRKSRC}/indexme ${PREFIX}/bin

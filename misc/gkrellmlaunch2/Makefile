@@ -18,6 +18,7 @@ COMMENT=	An application launcher plugin for GKrellM
 BUILD_DEPENDS=	${X11BASE}/include/gkrellm/gkrellm.h:${PORTSDIR}/sysutils/gkrellm
 RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm
 
+PLIST_FILES=	libexec/gkrellm/plugins/gkrellmlaunch.so
 USE_X_PREFIX=	yes
 USE_GNOME=	imlib
 ALL_TARGET=	${PORTNAME}.so

@@ -17,6 +17,7 @@ COMMENT=	Converts mbox mailboxes to Maildir
 
 RUN_DEPENDS=	${SITE_PERL}/Date/Parse.pm:${PORTSDIR}/devel/p5-TimeDate
 
+PLIST_FILES=	bin/mb2md
 USE_PERL5_RUN=	yes
 EXTRACT_CMD=	${GZIP_CMD} -cd > ${DISTNAME}
 WRKSRC=		${.CURDIR}

@@ -15,5 +15,6 @@ COMMENT=	A network bandwidth monitor intended for the WindowMaker dock
 
 USE_XPM=	yes
 MAN1=		wmnet.1
+PLIST_FILES=	bin/wmnet
 
 .include <bsd.port.mk>

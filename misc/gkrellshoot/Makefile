@@ -19,6 +19,7 @@ BUILD_DEPENDS=	${X11BASE}/include/gkrellm/gkrellm.h:${PORTSDIR}/sysutils/gkrellm
 RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm \
 		import:${PORTSDIR}/graphics/ImageMagick
 
+PLIST_FILES=	libexec/gkrellm/plugins/gkrellshoot.so
 WRKSRC=		${WRKDIR}/gkrellShoot-${PORTVERSION}
 USE_X_PREFIX=	yes
 USE_GNOME=	imlib

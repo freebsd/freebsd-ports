@@ -23,7 +23,8 @@ LIBNET_CONFIG?=	${LOCALBASE}/bin/libnet-config
 USE_SIZE=	yes
 USE_REINPLACE=	yes
 
-MAN8=	angst.8
+MAN8=		angst.8
+PLIST_FILES=	sbin/angst
 
 post-patch:
 	@${REINPLACE_CMD} -e "s,^CC,#CC,g ; \

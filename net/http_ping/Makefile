@@ -17,6 +17,7 @@ COMMENT=	Sends HTTP requests every few seconds and times how long they take
 WRKSRC=		${WRKDIR}/${PORTNAME}
 MAN1=		http_ping.1
 MANCOMPRESSED=	no
+PLIST_FILES=	bin/http_ping
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/http_ping ${PREFIX}/bin

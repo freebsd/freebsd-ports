@@ -18,5 +18,6 @@ COMMENT=	Splits standard input and pipes into a command
 USE_GETOPT_LONG=yes
 GNU_CONFIGURE=	yes
 MAN1=		xin.1
+PLIST_FILES=	bin/xin
 
 .include <bsd.port.mk>

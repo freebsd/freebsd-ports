@@ -18,5 +18,6 @@ COMMENT=	Kanji code conversion Filter
 INSTALL_TARGET=	install install.man
 MANLANG=	ja
 MAN1=		kcc.1
+PLIST_FILES=	bin/kcc
 
 .include <bsd.port.mk>

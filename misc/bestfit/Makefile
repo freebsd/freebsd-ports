@@ -15,6 +15,7 @@ COMMENT=	Optimally choose files to be put on a CD (or other media)
 
 MAN1=		bestfit.1
 MANCOMPRESSED=	no
+PLIST_FILES=	bin/bestfit
 
 GNU_CONFIGURE=	yes
 

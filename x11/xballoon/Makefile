@@ -20,5 +20,6 @@ USE_XPM=	yes
 
 MAN1=		xballoon.1
 MANCOMPRESSED=	yes
+PLIST_FILES=	bin/xballoon
 
 .include <bsd.port.mk>

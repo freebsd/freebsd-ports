@@ -21,7 +21,8 @@ do-extract:
 	@ ${MKDIR} ${WRKDIR}
 	@ ${CP} -RP ${.CURDIR}/src ${WRKDIR}
 
-MAN8=	personality.8
+MAN8=		personality.8
+PLIST_FILES=	sbin/personality
 
 do-install:
 	@ ${INSTALL_SCRIPT} ${WRKSRC}/personality ${PREFIX}/sbin

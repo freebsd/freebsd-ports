@@ -17,6 +17,7 @@ COMMENT=	OpenBSD's netcat: cleaner code, familiar interface, IPv6 support
 MANSECTS=	1
 MAN1=		nc.1
 MANCOMPRESSED=	maybe
+PLIST_FILES=	bin/nc
 
 CFLAGS+=	-DIPSEC
 MAKE_ENV=	LDADD="${LDADD} -lipsec"

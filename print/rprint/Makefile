@@ -18,6 +18,7 @@ USE_REINPLACE=	yes
 
 MAN1=		rprint.1
 MANCOMPRESSED=	yes
+PLIST_FILES=	bin/rprint
 
 post-patch:
 	@${REINPLACE_CMD} -e "s/^(CC|CFLAGS).+//g" ${WRKSRC}/Makefile

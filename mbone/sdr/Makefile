@@ -17,6 +17,7 @@ COMMENT=	Multicast Session Directory
 LIB_DEPENDS=	tk82.1:${PORTSDIR}/x11-toolkits/tk82
 BUILD_DEPENDS=	${LOCALBASE}/lib/libuclmmbase.a:${PORTSDIR}/devel/uclmmbase
 
+PLIST_FILES=	bin/sdr
 WRKSRC=		${WRKDIR}/sdr/freebsd
 HAS_CONFIGURE=	yes
 USE_GMAKE=	yes

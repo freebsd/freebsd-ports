@@ -19,5 +19,6 @@ LIB_DEPENDS=	wraster.4:${PORTSDIR}/x11-wm/windowmaker
 USE_X_PREFIX=	yes
 
 MAN1=		wmglobe.1
+PLIST_FILES=	bin/wmglobe
 
 .include <bsd.port.mk>

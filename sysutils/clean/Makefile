@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	chuck@pkix.net
 COMMENT=	Automatically remove unwanted files
 
-MAN1=	clean.1
+MAN1=		clean.1
+PLIST_FILES=	bin/clean
 
 .include <bsd.port.mk>

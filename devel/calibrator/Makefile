@@ -16,6 +16,7 @@ MAINTAINER=		bms@FreeBSD.org
 COMMENT=		Cache Profiling Tool
 
 NO_WRKSUBDIR=		yes
+PLIST_FILES=		bin/calibrator
 
 do-extract:
 	${MKDIR} ${WRKSRC}

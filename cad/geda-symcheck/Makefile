@@ -31,5 +31,6 @@ CONFIGURE_ARGS=	--enable-gdgeda
 INSTALLS_SHLIB=	yes
 
 MAN1=		gsymcheck.1
+PLIST_FILES=	bin/gsymcheck
 
 .include <bsd.port.mk>

@@ -17,6 +17,7 @@ COMMENT=	Siemens PocketReader
 
 USE_LINUX=	YES
 NO_BUILD=	YES
+PLIST_FILES=	bin/pocketreader
 
 WRKSRC=		${WRKDIR}/linux
 

@@ -15,7 +15,8 @@ COMMENT=	A delay program with feedback to the user
 
 GNU_CONFIGURE=	yes
 
-MAN1=	delay.1
+MAN1=		delay.1
+PLIST_FILES=	bin/delay
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/delay ${PREFIX}/bin

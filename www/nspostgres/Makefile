@@ -26,6 +26,7 @@ WRKSRC=		${WRKDIR}/nspostgres
 
 USE_GMAKE=	yes
 MAKE_ENV+=	POSTGRES=${PREFIX} BUILDPREFIX=${PREFIX}
+PLIST_FILES=	aolserver/bin/nspostgres.so
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/nspostgres.so ${PREFIX}/aolserver/bin

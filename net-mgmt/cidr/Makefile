@@ -19,6 +19,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 ALL_TARGET=	cidr
 
 MAN1=		cidr.1
+PLIST_FILES=	bin/cidr
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/cidr ${PREFIX}/bin/cidr

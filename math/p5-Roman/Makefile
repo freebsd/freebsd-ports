@@ -16,6 +16,7 @@ MAINTAINER=	philip@paeps.cx
 COMMENT=	Perl module to convert between Arabic and Roman numerals
 
 NO_BUILD=	yes
+PLIST_FILES=	%%SITE_PERL%%/Roman.pm
 USE_PERL5_RUN=	yes
 
 do-install:

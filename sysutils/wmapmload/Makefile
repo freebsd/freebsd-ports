@@ -20,6 +20,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-prefix=""
 
 MAN1=		${PORTNAME}.1
+PLIST_FILES=	bin/wmapmload
 
 BINMODE=	2755
 BINGRP=		operator

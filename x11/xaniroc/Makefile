@@ -17,6 +17,7 @@ COMMENT=	Animate your root-cursor
 
 USE_IMAKE=	yes
 MAN1=		xaniroc.1
+PLIST_FILES=	bin/xaniroc
 
 post-extract:
 	${MV} ${WRKSRC}/manpage.1 ${WRKSRC}/xaniroc.man

@@ -18,5 +18,6 @@ RESTRICTED=	"May not be sold, may not be used commercially."
 GNU_CONFIGURE=	yes
 
 MAN1=		shorten.1
+PLIST_FILES=	bin/shorten
 
 .include <bsd.port.mk>

@@ -13,6 +13,7 @@ MASTER_SITES=	http://www.topfx.com/dist/
 MAINTAINER=	webmaster@topfx.com
 COMMENT=	A console Brooktree (bktr) TV tuner
 
+PLIST_FILES=	bin/bsdbktr_tvtune
 WRKSRC=	${WRKDIR}/${PORTNAME}
 ALL_TARGET=	bsdbktr_tvtune
 

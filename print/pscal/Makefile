@@ -14,6 +14,7 @@ MAINTAINER=	markp@FreeBSD.org
 COMMENT=	A utility for generating Postscript calendars
 
 NO_BUILD=	yes
+PLIST_FILES=	bin/pscal
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/pscal ${PREFIX}/bin

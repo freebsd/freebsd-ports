@@ -14,5 +14,6 @@ MAINTAINER=	roam@FreeBSD.org
 COMMENT=	"A simple utility for sending/receiving data over a TCP or a Unix-domain socket"
 
 GNU_CONFIGURE=	yes
+PLIST_FILES=	bin/tcpcat
 
 .include <bsd.port.mk>

@@ -15,5 +15,6 @@ COMMENT=	X interface tool
 
 USE_IMAKE=	yes
 MAN1=		xwit.1
+PLIST_FILES=	bin/xwit
 
 .include <bsd.port.mk>

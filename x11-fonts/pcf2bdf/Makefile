@@ -17,6 +17,7 @@ COMMENT=	Convert X font from PCF to BDF
 NO_WRKSUBDIR=	YES
 
 MAN1=		pcf2bdf.1
+PLIST_FILES=	bin/pcf2bdf
 
 do-build:
 	${CXX} ${CXXFLAGS} -o ${WRKSRC}/pcf2bdf ${WRKSRC}/pcf2bdf.cc

@@ -16,6 +16,7 @@ MAINTAINER=	cracauer@cons.org
 COMMENT=	dd(1)-like tool, precise bandwidth limiting/reporting, fifo, TCP, audio support
 
 MAN1=		cstream.1
+PLIST_FILES=	bin/cstream
 
 GNU_CONFIGURE=	yes
 

@@ -13,6 +13,7 @@ MASTER_SITES=	http://www.waimea.org/wampager/
 MAINTAINER=	danfe@regency.nsu.ru
 COMMENT=	A mini pager for the waimea window manager
 
+PLIST_FILES=	bin/wampager
 USE_X_PREFIX=	yes
 
 do-install:

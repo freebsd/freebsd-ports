@@ -31,6 +31,7 @@ MAKEFILE=	makefile.bsf
 ALL_TARGET=	pico
 
 MAN1=		pico.1
+PLIST_FILES=	bin/pico
 
 post-patch:
 	${CP} ${WRKSRC}/osdep/os-bsf.h ${WRKSRC}/osdep/os-bsf.h.presed

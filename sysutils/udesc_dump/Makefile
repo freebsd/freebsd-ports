@@ -15,6 +15,7 @@ COMMENT=	udesc_dump, showes USB descriptors
 
 MAN8=		udesc_dump.8
 MANCOMPRESSED=	yes
+PLIST_FILES=	bin/udesc_dump
 
 MAKE_ENV+=	MANDIR=${PREFIX}/man/man
 

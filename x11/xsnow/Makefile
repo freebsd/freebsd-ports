@@ -17,6 +17,7 @@ COMMENT=	Create a snowy and Santa-y desktop
 USE_IMAKE=	yes
 USE_XPM=	yes
 MAN6=		xsnow.6
+PLIST_FILES=	bin/xsnow
 
 pre-build:
 	@cd ${WRKSRC} && ${MV} Makefile Makefile~  && ${SED} \

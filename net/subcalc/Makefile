@@ -16,5 +16,6 @@ COMMENT=	Advanced IP/IPv6 subnet calculation and discovery
 
 MAN1=	subcalc.1
 MANCOMPRESSED=	yes
+PLIST_FILES=	bin/subcalc
 
 .include <bsd.port.mk>

@@ -20,5 +20,6 @@ COMMENT=	Extract pages from DVI files
 SCRIPTS_ENV=	CFLAGS="${CFLAGS}"
 
 MAN1=		dviselect.1
+PLIST_FILES=	bin/dviselect
 
 .include <bsd.port.mk>

@@ -16,6 +16,7 @@ COMMENT=	Xwindows interface for the RadioREVEAL and RadioTrack FM radio cards!
 
 LIB_DEPENDS=	forms.1:${PORTSDIR}/x11-toolkits/xforms
 
+PLIST_FILES=	bin/xtuner
 USE_IMAKE=	YES
 USE_XPM=	YES
 

@@ -36,6 +36,8 @@ CFLAGS+=	-DHAVE_ALTQ=1
 IGNORE=		"Only for 5.0 and above"
 .endif
 
+PLIST_FILES=	sbin/pftop
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/pftop ${PREFIX}/sbin
 	${INSTALL_MAN} ${WRKSRC}/pftop.8 ${PREFIX}/man/man8

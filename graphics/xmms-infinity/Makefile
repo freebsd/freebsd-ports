@@ -23,6 +23,7 @@ SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
 
 CONFIGURE_ENV=	SDL_CONFIG="${SDL_CONFIG}"
 
+PLIST_FILES=	lib/xmms/Visualization/libinfinite.so
 GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes

@@ -16,6 +16,7 @@ DISTNAME=	py-freebsd-${PORTVERSION}
 MAINTAINER=	perky@FreeBSD.org
 COMMENT=	Python interface to FreeBSD-specific system libraries
 
+PLIST_FILES=	lib/%%PYTHON_VERSION%%/site-packages/freebsd.so
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 

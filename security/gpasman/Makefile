@@ -14,6 +14,7 @@ MASTER_SITES=	http://gpasman.nl.linux.org/
 MAINTAINER=	domi@saargate.de
 COMMENT=	A password manager that stores password information encrypted
 
+PLIST_FILES=	bin/gpasman
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	gtk12

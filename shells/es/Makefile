@@ -20,5 +20,6 @@ CONFIGURE_ARGS= --with-readline
 
 ALL_TARGET=	es
 MAN1=		es.1
+PLIST_FILES=	bin/es
 
 .include <bsd.port.mk>

@@ -21,6 +21,7 @@ NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
 MAN1=		demoroniser.1
+PLIST_FILES=	bin/demoroniser
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/demoroniser.pl ${PREFIX}/bin/demoroniser

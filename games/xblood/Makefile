@@ -19,5 +19,6 @@ USE_X_PREFIX=	yes
 
 MAN1=		xblood.1
 MANCOMPRESSED=	yes
+PLIST_FILES=	bin/xblood
 
 .include <bsd.port.mk>
