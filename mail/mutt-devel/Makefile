@@ -363,8 +363,7 @@ SGML_NEEDED=	yes
 PATCHFILES+=	p0-patch-${DW_MBOX_PATCH_VERSION}.dw.mbox-hook.1:dw
 .endif
 .if defined(WITH_MUTT_SIDEBAR_PATCH)
-.error The WITH_MUTT_SIDEBAR_PATCH does not work at the moment.
-PATCHFILES+=	patch-1.5.7i.sidebar.20050203.txt:thomer
+PATCHFILES+=	patch-1.5.8i.sidebar.20050224.txt:thomer
 .endif
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/i$//}
