@@ -11,7 +11,8 @@ CATEGORIES=	net ipv6
 MASTER_SITES=	ftp://ftp.ethereal.com/pub/ethereal/%SUBDIR%/ \
 		ftp://gd.tuwien.ac.at/infosys/security/ethereal/%SUBDIR%/ \
 		ftp://ftp.sunet.se/pub/network/monitoring/ethereal/%SUBDIR%/ \
-		ftp://the.wiretapped.net/pub/security/packet-sniffing/ethereal/%SUBDIR%/
+		ftp://ftp.mirrors.wiretapped.net/pub/security/packet-capture/ethereal/%SUBDIR%/ \
+		http://www.mirrors.wiretapped.net/pub/security/packet-capture/ethereal/%SUBDIR%/
 MASTER_SITE_SUBDIR=	. old-versions
 
 MAINTAINER=	billf@FreeBSD.org
