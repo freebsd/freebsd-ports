@@ -1,6 +1,4 @@
 etc/postfix/LICENSE
-etc/postfix/main.cf
-etc/postfix/master.cf
 etc/postfix/postfix-script
 etc/postfix/sample-access
 etc/postfix/sample-aliases.cf
@@ -47,3 +45,5 @@ sbin/smtp-sink
 sbin/smtp-source
 @exec mkdir -p -m 0755 /var/spool/postfix
 @exec chown root:wheel /var/spool/postfix
+@dirrm libexec/postfix
+@unexec rmdir %D/etc/postfix 2>/dev/null || true

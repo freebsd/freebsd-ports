@@ -33,45 +33,58 @@ yesno() {
     done
 }
 
-if pw groupshow "${group}" 2>/dev/null; then
-    echo "You already have a group \"${group}\", so I will use it."
-else
-    echo "You need a group \"${group}\"."
-    if yesno "Would you like me to create it" y; then
-        pw groupadd ${group} -h - || exit
-        echo "Done."
+if [ x"$2" = xPRE-INSTALL ]; then
+    if pw groupshow "${group}" 2>/dev/null; then
+        echo "You already have a group \"${group}\", so I will use it."
     else
-        echo "Please create it, and try again."
-        exit 1
+        echo "You need a group \"${group}\"."
+        if yesno "Would you like me to create it" y; then
+            pw groupadd ${group} -h - || exit
+            echo "Done."
+        else
+            echo "Please create it, and try again."
+            exit 1
+        fi
     fi
+
+    if pw groupshow "${group2}" 2>/dev/null; then
+        echo "You already have a group \"${group2}\", so I will use it."
+    else
+        echo "You need a group \"${group2}\"."
+        if yesno "Would you like me to create it" y; then
+            pw groupadd ${group2} -h - || exit
+            echo "Done."
+        else
+            echo "Please create it, and try again."
+            exit 1
+        fi
+    fi
+
+    if pw user show "${user}" 2>/dev/null; then
+        echo "You already have a user \"${user}\", so I will use it."
+    else
+        echo "You need a user \"${user}\"."
+        if yesno "Would you like me to create it" y; then
+            pw useradd ${user} -g ${group} -h - -d /nonexistent \
+                -s /nonexistent -c "Postfix Mail System" || exit
+            echo "Done."
+        else
+            echo "Please create it, and try again."
+            exit 1
+        fi
+    fi
+
 fi
 
-if pw groupshow "${group2}" 2>/dev/null; then
-    echo "You already have a group \"${group2}\", so I will use it."
-else
-    echo "You need a group \"${group2}\"."
-    if yesno "Would you like me to create it" y; then
-        pw groupadd ${group2} -h - || exit
-        echo "Done."
-    else
-        echo "Please create it, and try again."
-        exit 1
+if [ x"$2" = xPOST-INSTALL ]; then
+    if [ ! -e ${PKG_PREFIX}/etc/postfix/main.cf ]; then
+        cp -p ${PKG_PREFIX}/etc/postfix/sample-main.cf \
+	    ${PKG_PREFIX}/etc/postfix/main.cf
     fi
-fi
-
-if pw user show "${user}" 2>/dev/null; then
-    echo "You already have a user \"${user}\", so I will use it."
-else
-    echo "You need a user \"${user}\"."
-    if yesno "Would you like me to create it" y; then
-        pw useradd ${user} -g ${group} -h - -d /nonexistent \
-            -s /nonexistent -c "Postfix Mail System" || exit
-        echo "Done."
-    else
-        echo "Please create it, and try again."
-        exit 1
+    if [ ! -e ${PKG_PREFIX}/etc/postfix/master.cf ]; then
+        cp -p ${PKG_PREFIX}/etc/postfix/sample-master.cf \
+	    ${PKG_PREFIX}/etc/postfix/master.cf
     fi
+    chown root:maildrop ${PKG_PREFIX}/sbin/postdrop
+    chmod 2755 ${PKG_PREFIX}/sbin/postdrop
 fi
-
-chown root:maildrop ${PREFIX}/sbin/postdrop
-chmod 2755 ${PREFIX}/sbin/postdrop
