@@ -222,7 +222,6 @@
     SUBDIR += linux_dri
     SUBDIR += linux_glide
     SUBDIR += linux_glx
-    SUBDIR += linux_mesa
     SUBDIR += linux_mesa3
     SUBDIR += lodju
     SUBDIR += maverik
