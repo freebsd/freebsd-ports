@@ -3,7 +3,7 @@
 # Date created:         Mon Nov 18 21:28:43 CST 1996
 # Whom:                 erich@FreeBSD.org
 #
-# $Id: Makefile,v 1.13 1997/12/01 08:05:34 tg Exp $
+# $Id: Makefile,v 1.15 1997/12/16 23:25:34 erich Exp $
 #
 
 MAJOR=	0
@@ -36,8 +36,8 @@ USE_X11=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/tcl8.0 \
-		  -I${LOCALBASE}/include/tk8.0 -I${LOCALBASE}/include/tiff34" \
-			LIBS=-L${LOCALBASE}/lib INSTALL_SCRIPT='$${INSTALL} -m 755'
+		-I${LOCALBASE}/include/tk8.0 -I${LOCALBASE}/include/tiff34" \
+		LIBS=-L${LOCALBASE}/lib INSTALL_SCRIPT='$${INSTALL} -m 755'
 CONFIGURE_ARGS=  --with-tcl=tcl80 --with-tk=tk80
 
 DATASTUFF=  brushes palettes gradients patterns
