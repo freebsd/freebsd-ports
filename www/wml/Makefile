@@ -14,13 +14,16 @@ MASTER_SITES=	http://thewml.org/distrib/ \
 MAINTAINER=	delta@lackas.net
 COMMENT=	Website META Language, webdesign toolkit for HTML generation
 
+LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
+
 USE_PERL5=	yes
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-perl=${PERL5}
-PLIST_SUB+=	ARCH=${ARCH}-freebsd
-
-BROKEN=		"Broken pkg-plist"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+USE_LIBTOOL_VER=	15
+LIBTOOLFILES=	wml_backend/p2_mp4h/configure
+PLIST_SUB+=	ARCH=${LOCAL_PERL_ARCH}
 
 CAT1=	wml_aux_txt2html.1 wml_aux_tidy.1 wml_p4_gm4.1
 
@@ -54,6 +57,8 @@ CAT7=	wml_barebone.7 \
 MAN7=	wml_intro.7 wml_macros.7 wml_tutorial.7 wml_faq.7 wml_tags.7
 
 .include <bsd.port.pre.mk>
+
+LOCAL_PERL_ARCH!=	${PERL5} -MConfig -e 'print "$$Config{archname}"'
 
 .if ${ARCH} == "amd64"
 BROKEN=		"Build fails on amd64 (needs to build shared libraries with -fPIC)"
