@@ -3,13 +3,14 @@
 # Date created:		9 Jan 1997
 # Whom:			pst
 #
-# $Id: Makefile,v 1.11 1997/12/31 16:50:59 pst Exp $
+# $Id: Makefile,v 1.12 1998/05/30 16:45:51 steve Exp $
 #
 
 DISTNAME=	imap-4.1.BETA
 PKGNAME=	imap-uw-4.1b
 CATEGORIES=	mail
-MASTER_SITES=	ftp://ftp.cac.washington.edu/imap/
+MASTER_SITES=	http://www.freebsd.org/~steve/ \
+		ftp://ftp.cac.washington.edu/imap/
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	imap-uw@freebsd.ady.ro
