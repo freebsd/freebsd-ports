@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Class-Autouse
-PORTVERSION=	1.11
+PORTVERSION=	1.14
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Class
@@ -24,7 +24,6 @@ PERL_CONFIGURE=	yes
 MAN3=		Class::Autouse.3
 
 post-patch:
-	@${RM} ${WRKSRC}/prefork.pm
 	@${PERL} -pi -e 's/^auto_install.*$$//' ${WRKSRC}/Makefile.PL
 
 .include <bsd.port.mk>
