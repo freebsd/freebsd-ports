@@ -27,6 +27,7 @@ ANT?=		${LOCALBASE}/bin/ant
 ANT_TARGET=	jar
 .else
 ANT_TARGET=	jar javadoc
+PORTDOCS=	*
 .endif
 JAVASHAREDIR=	${PREFIX}/share/java
 JARDIR=		${JAVASHAREDIR}/classes
