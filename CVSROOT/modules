@@ -8377,6 +8377,7 @@ solitaire	ports/math/solitaire
 soltaire	ports/math/solitaire
 songprint	ports/audio/songprint
 sonice		ports/audio/sonice
+sonytv		ports/misc/sonytv
 sopwith		ports/games/sopwith
 soqt		ports/x11-toolkits/soqt
 sortmail	ports/mail/sortmail
