@@ -1,0 +1,18 @@
+Biabam Is A Bash Attachment Mailer
+
+To use BIABAM use the following syntax (yes, it is on my todo list, to add
+switches so the syntax get's like mailing with commandline Mutt):
+
+echo <body> | biabam <attachment> -s <subject> <recipient>
+
+Example:
+echo "Here is the tarball you requested" | \
+  biabam foobar-0.7.8.tar.gz -s "Answer to your request" john@doe.org
+
+If no text is piped into biabam, it will wait for text on standard input
+(finish with CTRL-D)
+
+BIABAM also works with the Bourne shell (/bin/sh).
+
+- George Reid
+greid@ukug.uk.freebsd.org

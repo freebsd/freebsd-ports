@@ -8,6 +8,7 @@
     SUBDIR += autorespond
     SUBDIR += balsa
     SUBDIR += bbmail
+    SUBDIR += biabam
     SUBDIR += biffer
     SUBDIR += bsmtp
     SUBDIR += bulk_mailer
