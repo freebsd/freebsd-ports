@@ -24,7 +24,7 @@ post-extract:
 
 do-patch:
 	@(${SED} -e 's,/usr/local/bin/perl,${PERL},1' ${WRKSRC}/${DISTNAME} \
-		> foo && ${MV} foo ${WRKSRC}/${DISTNAME})
+		> ${WRKDIR}/foo && ${MV} ${WRKDIR}/foo ${WRKSRC}/${DISTNAME})
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${DISTNAME} ${PREFIX}/bin
