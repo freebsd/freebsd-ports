@@ -1,9 +1,27 @@
 
 $FreeBSD$
 
---- configure	2001/09/28 13:29:15	1.1
-+++ configure	2001/09/28 13:29:37
-@@ -3974,7 +3974,7 @@
+--- configure.orig	Fri Oct  5 16:18:14 2001
++++ configure	Fri Oct  5 16:21:24 2001
+@@ -2481,6 +2481,9 @@
+ 
+ GNOME_PRINT_LIBS=`gnome-config --libs print`
+ 
++_CPPFLAGS="$CPPFLAGS"
++CPPFLAGS="$CPPFLAGS `gnome-config --cflags print`"
++
+ 
+ ac_safe=`echo "libgnomeprint/gnome-print-frgba.h" | sed 'y%./+-%__p_%'`
+ echo $ac_n "checking for libgnomeprint/gnome-print-frgba.h""... $ac_c" 1>&6
+@@ -2590,6 +2593,7 @@
+   echo "$ac_t""no" 1>&6
+ fi
+ 
++CPPFLAGS="$_CPPFLAGS"
+ 
+ ALL_LINGUAS="ca da de es et fr ga gl hu it ja no ru sl sv tr uk pl pt_BR"
+ 
+@@ -3974,7 +3978,7 @@
  fi
  
  
@@ -12,7 +30,7 @@ $FreeBSD$
  	   fi
  	
  else
-@@ -4096,7 +4096,7 @@
+@@ -4096,7 +4100,7 @@
          
  	BUILD_INCLUDED_LIBINTL=yes
  	USE_INCLUDED_LIBINTL=yes
