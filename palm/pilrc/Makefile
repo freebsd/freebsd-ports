@@ -6,18 +6,18 @@
 #
 
 PORTNAME=	pilrc
-PORTVERSION=	2.9p9
-PORTREVISION=	1
+PORTVERSION=	3.1
 CATEGORIES=	palm
-MASTER_SITES=	http://www.ardiri.com/download/files/palm/
-EXTRACT_SUFX=	.tgz
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Resource compiler for Pilot applications
 
-WRKSRC=		${WRKDIR}/pilrc-${PORTVERSION}
+WRKSRC=		${WRKDIR}/pilrc-${PORTVERSION}/unix
+CONFIGURE_ARGS+=	--enable-pilrcui
 
-USE_GNOME=	gtk12
+USE_GNOME=	gnometarget gtk12
 GNU_CONFIGURE=	yes
 
 do-install:
