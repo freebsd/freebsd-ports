@@ -3,7 +3,7 @@
 # Date created:         31 Aug 1995
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.2 1995/09/23 17:19:06 ache Exp $
+# $Id: Makefile,v 1.3 1995/11/16 03:12:43 asami Exp $
 #
 
 PKGNAME=        ru-X11
@@ -19,27 +19,12 @@ NO_CONFIGURE=   YES
 NO_PATCH=       YES
 NO_BUILD=       YES
 USE_X11=        YES
-PACKAGE_NOINSTALL= YES
 
 XLIB = ${X11BASE}/lib/X11
 INSTALL_DATA = ${INSTALL} -c -m 644 -o ${BINOWN} -g ${BINGRP}
 
-fetch:
-	@true
-
-extract:
-	@true
-
-patch:
-	@true
-
-configure:
-	@true
-
-build:
-	@true
-
-install: depends
+do-install:
+	${INSTALL_DATA} ${FILESDIR}/xmodmap ${XLIB}/xinit/.Xmodmap
 	if [ -d ${XLIB}/locale ] ; then \
 		if [ ! -d ${XLIB}/locale/koi8-r ] ; then \
 			mkdir ${XLIB}/locale/koi8-r; \
@@ -107,6 +92,5 @@ install: depends
 			cat ${FILESDIR}/nls_alias_list >> ${XLIB}/nls/nls.alias; \
 		}; \
 	fi
-	@${MAKE} ${.MAKEFLAGS} fake-pkg
 
 .include <bsd.port.mk>
