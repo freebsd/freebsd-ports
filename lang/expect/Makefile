@@ -3,14 +3,13 @@
 # Whom:			pst
 # Version required:	5.25
 #
-# $Id: Makefile,v 1.27 1997/12/05 10:58:51 tg Exp $
+# $Id: Makefile,v 1.28 1997/12/29 11:42:10 asami Exp $
 #
 
 DISTNAME=	expect
 PKGNAME=	expect-5.25
 CATEGORIES=	lang tcl80 tk80
-MASTER_SITES=	http://expect.nist.gov/ \
-		ftp://expect.nist.gov/mel/div826/subject/expect/
+MASTER_SITES=	http://expect.nist.gov/
 
 MAINTAINER=	ports@freebsd.org
 
