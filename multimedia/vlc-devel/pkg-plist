@@ -3,6 +3,8 @@ include/videolan/dvdcss.h
 lib/libdvdcss.a
 lib/libdvdcss.so.0.0.1
 lib/videolan/vlc/dsp.so
+lib/videolan/vlc/gtk.so
+lib/videolan/vlc/sdl.so
 lib/videolan/vlc/x11.so
 lib/videolan/vlc/xvideo.so
 share/videolan/default8x16.psf

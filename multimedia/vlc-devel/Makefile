@@ -24,7 +24,6 @@ CONFIGURE_ENV=	PATH_GTKCONFIG="${PREFIX}/bin/gtk12-config" \
 		SDL_CONFIG="${LOCALBASE}/bin/sdl11-config"
 USE_GTK=	yes
 USE_GMAKE=	yes
-USE_X_PREFIX=	yes
 USE_BZIP2=	yes
 
 pre-patch:
