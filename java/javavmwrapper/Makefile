@@ -23,7 +23,7 @@ SRC=		${.CURDIR}/src
 SCRIPTS=	classpath javavmwrapper
 # This is normally defined by bsd.java.mk when USE_JAVA is defined, but
 # we can't do that here since it would result in a circular dependency
-JAVAJARDIR=	${PREFIX}/share/java/classes
+JAVALIBDIR=	${LOCALBASE}/share/java/classes
 
 do-fetch:
 	@${DO_NADA}
@@ -31,7 +31,7 @@ do-fetch:
 do-configure:
 .for _script in ${SCRIPTS}
 	${SED} -e 's|%%PREFIX%%|${PREFIX}|;' \
-	       -e 's|%%JAVAJARDIR%%|${JAVAJARDIR}|;' \
+	       -e 's|%%JAVALIBDIR%%|${JAVALIBDIR}|;' \
 		<${SRC}/${_script}.sh >${WRKDIR}/${_script}.sh
 .endfor
 

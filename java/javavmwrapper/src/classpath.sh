@@ -3,9 +3,9 @@
 # $FreeBSD$
 #
 
-JAVAJARDIR=%%JAVAJARDIR%%
+JAVALIBDIR=%%JAVALIBDIR%%
 
 echo -n .
-find -s ${JAVAJARDIR} -name '*.jar' | while read jar ; do
+find -s ${JAVALIBDIR} -name '*.jar' | while read jar ; do
 	echo -n ":${jar}"
 done
