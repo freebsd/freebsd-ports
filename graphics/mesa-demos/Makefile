@@ -17,7 +17,7 @@ PKGNAMEPREFIX=	mesa-
 DISTFILES=	MesaDemos-${PORTVERSION}${EXTRACT_SUFX}:sf \
 		MesaLib-${PORTVERSION}${EXTRACT_SUFX}:sf
 
-MAINTAINER=	anholt@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OpenGL demos distributed with Mesa
 
 LIB_DEPENDS=	glut.3:${PORTSDIR}/graphics/libglut
