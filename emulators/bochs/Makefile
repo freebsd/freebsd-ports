@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	bochs
-PORTVERSION=	1.2.1
+PORTVERSION=	1.3
 PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	emulators
@@ -182,7 +182,9 @@ install-fonts:
 install-docs:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}/html
-	@${INSTALL_MAN} ${WRKSRC}/docs-html/* ${DOCSDIR}/html
+	@${INSTALL_MAN} ${WRKSRC}/docs-html/*.html ${DOCSDIR}/html
+	@${INSTALL_DATA} ${WRKSRC}/docs-html/*.gif ${DOCSDIR}/html
+	@${INSTALL_MAN} ${WRKSRC}/docs-html/*.txt ${DOCSDIR}/html
 	@${MV} ${DOCSDIR}/html/*.txt ${DOCSDIR}
 .endif
 

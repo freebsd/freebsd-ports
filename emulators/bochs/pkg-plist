@@ -5,13 +5,14 @@ libexec/bochs.bin
 share/bochs/bios/BIOS-bochs-2-processors
 share/bochs/bios/BIOS-bochs-4-processors
 share/bochs/bios/BIOS-bochs-latest
+share/bochs/bios/VGABIOS-cbothamy-0.2a
+share/bochs/bios/VGABIOS-cbothamy-0.2a-README
 share/bochs/bios/VGABIOS-elpin-2.40
 share/bochs/bios/VGABIOS-elpin-LICENSE
 share/bochs/bochsrc.sample
 share/bochs/font/fonts.dir
 share/bochs/font/vga.pcf.gz
 %%PORTDOCS%%share/doc/bochs/cvs-structure.txt
-%%PORTDOCS%%share/doc/bochs/html/00README
 %%PORTDOCS%%share/doc/bochs/html/3rdparty.license.html
 %%PORTDOCS%%share/doc/bochs/html/Linux.html
 %%PORTDOCS%%share/doc/bochs/html/Minix.html
@@ -31,6 +32,7 @@ share/bochs/font/vga.pcf.gz
 %%PORTDOCS%%share/doc/bochs/html/guestNT.html
 %%PORTDOCS%%share/doc/bochs/html/index.html
 %%PORTDOCS%%share/doc/bochs/html/install.html
+%%PORTDOCS%%share/doc/bochs/html/iodebug.html
 %%PORTDOCS%%share/doc/bochs/html/instrumentation.html
 %%PORTDOCS%%share/doc/bochs/html/mtools.html
 %%PORTDOCS%%share/doc/bochs/html/smp-simulation.html
