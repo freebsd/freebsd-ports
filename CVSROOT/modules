@@ -2324,6 +2324,7 @@ ja-addttfont	ports/japanese/addttfont
 ja-another-htmllint	ports/japanese/another-htmllint
 ja-aterm	ports/japanese/aterm
 ja-balsa	ports/japanese/balsa
+ja-bdf-fonts	ports/japanese/bdf-fonts
 ja-bible_names-fpw	ports/japanese/bible_names-fpw
 ja-binder	ports/japanese/binder
 ja-bjfilter360	ports/japanese/bjfilter360
