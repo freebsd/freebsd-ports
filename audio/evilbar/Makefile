@@ -14,6 +14,7 @@ MAINTAINER=	jens@arnfast.net
 COMMENT=	Minimalistic statusbar with XMMS control, APM status and clock
 
 GNU_CONFIGURE=	yes
+USE_REINPLACE=	yes
 
 MAN1=		evilbar.1 launch_evilbar.1
 
@@ -40,5 +41,9 @@ pre-everything::
 	@${ECHO_MSG} "You can enable APM status by defining WITH_APM."
 .endif
 	@${ECHO_MSG}
+
+post-patch:
+	@${REINPLACE_CMD} -e '/for as_dir in/s/:/$$PATH_SEPARATOR/g' \
+		${WRKSRC}/configure
 
 .include <bsd.port.mk>
