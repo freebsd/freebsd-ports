@@ -1,0 +1,6 @@
+c2html is  a  syntax highlighter for C   source  code that produces  a
+highlighted html   file as  output. The output   can  be  read by  any
+graphical WWW-Browser.  If the  browser understands the tags to change
+font colors  (as Netscape does) the  output will look like highlighted
+by emacs.  Otherwise it will  not look  so   nice, but readability  is
+increased too.
