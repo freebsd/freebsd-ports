@@ -30,6 +30,8 @@ CONFIGURE_ARGS= --with-etcdir=${PREFIX}/etc --enable-debug
 #is writeable by that group.  Beware the security implications!
 #CONFIGURE_ARGS+= --enable-group-writeability
 
+.include <bsd.port.pre.mk>
+
 # Include support for ssh1 client backward compatibility
 USE_SSH1?=	YES
 # Include tcp_wrappers support (automaticlly YES if /usr/include/tcpd.h exists)
@@ -40,10 +42,11 @@ USE_TIS?=	NO
 # Include support for the SecureID card
 USE_SECUREID?=	NO
 
-.if defined(USE_SSH1) && ${USE_SSH1} == YES
+.if ${OSVERSION} < 400016 && defined(USE_SSH1) && ${USE_SSH1} == YES
 BUILD_DEPENDS+=	ssh1:${PORTSDIR}/security/ssh
 RUN_DEPENDS+=	ssh1:${PORTSDIR}/security/ssh
 .endif
+
 .if defined(USE_SECUREID) && ${USE_SECUREID} == YES
 CONFIGURE_ARGS+= --with-secureid
 .endif
@@ -76,6 +79,11 @@ PORTDOCS=	CHANGES LICENSING README
 PLIST=		${PKGDIR}/PLIST.ssh2_only
 .endif
 
+.if exists(/usr/sbin/sshd)
+post-patch:
+	@cd ${WRKSRC} && ${PATCH} --quiet < ${FILESDIR}/use-base-openssh.diff
+.endif
+
 post-install:
 .if defined(USE_SSH1) && ${USE_SSH1} == YES
 .for i in ssh ssh-keygen ssh-add ssh-agent scp
@@ -98,4 +106,4 @@ post-install:
 		${CHMOD} 751 ${PREFIX}/etc/rc.d/sshd.sh; \
 	fi
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
