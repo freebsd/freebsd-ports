@@ -185,6 +185,7 @@
     SUBDIR += gnome-vnc
     SUBDIR += gnomeicu2
     SUBDIR += gnomemeeting
+    SUBDIR += gnomenetstatus
     SUBDIR += gnometelnet
     SUBDIR += gnosamba
     SUBDIR += gnu-finger

@@ -1,0 +1,40 @@
+etc/gconf/gconf.xml.defaults/apps/netstatus_applet/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/netstatus_applet/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/netstatus_applet/prefs/%gconf.xml
+etc/gconf/schemas/netstatus.schemas
+libdata/bonobo/servers/GNOME_NetstatusApplet_Factory.server
+libexec/gnome-netstatus-applet
+share/gnome/gnome-2.0/ui/GNOME_NetstatusApplet.xml
+share/gnome/gnome-netstatus/gnome-netstatus.glade
+share/gnome/icons/gnome-netstatus/gnome-netstatus-disconn.png
+share/gnome/icons/gnome-netstatus/gnome-netstatus-error.png
+share/gnome/icons/gnome-netstatus/gnome-netstatus-idle.png
+share/gnome/icons/gnome-netstatus/gnome-netstatus-rx.png
+share/gnome/icons/gnome-netstatus/gnome-netstatus-tx.png
+share/gnome/icons/gnome-netstatus/gnome-netstatus-txrx.png
+share/gnome/pixmaps/gnome-netstatus-tx.png
+share/locale/az/LC_MESSAGES/gnome-netstatus.mo
+share/locale/cs/LC_MESSAGES/gnome-netstatus.mo
+share/locale/de/LC_MESSAGES/gnome-netstatus.mo
+share/locale/el/LC_MESSAGES/gnome-netstatus.mo
+share/locale/es/LC_MESSAGES/gnome-netstatus.mo
+share/locale/fr/LC_MESSAGES/gnome-netstatus.mo
+share/locale/it/LC_MESSAGES/gnome-netstatus.mo
+share/locale/ja/LC_MESSAGES/gnome-netstatus.mo
+share/locale/ms/LC_MESSAGES/gnome-netstatus.mo
+share/locale/nl/LC_MESSAGES/gnome-netstatus.mo
+share/locale/pl/LC_MESSAGES/gnome-netstatus.mo
+share/locale/pt/LC_MESSAGES/gnome-netstatus.mo
+share/locale/ru/LC_MESSAGES/gnome-netstatus.mo
+share/locale/sr/LC_MESSAGES/gnome-netstatus.mo
+share/locale/sr@Latn/LC_MESSAGES/gnome-netstatus.mo
+share/locale/sv/LC_MESSAGES/gnome-netstatus.mo
+share/locale/tr/LC_MESSAGES/gnome-netstatus.mo
+share/locale/vi/LC_MESSAGES/gnome-netstatus.mo
+share/locale/wa/LC_MESSAGES/gnome-netstatus.mo
+share/locale/zh_CN/LC_MESSAGES/gnome-netstatus.mo
+@dirrm share/gnome/icons/gnome-netstatus
+@dirrm share/gnome/gnome-netstatus
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/netstatus_applet/prefs
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/netstatus_applet
+@dirrm etc/gconf/gconf.xml.defaults/apps/netstatus_applet
