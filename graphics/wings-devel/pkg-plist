@@ -51,6 +51,7 @@ lib/erlang/lib/wings-%%VERSION%%/ebin/wings_menu.beam
 lib/erlang/lib/wings-%%VERSION%%/ebin/wings_menu_util.beam
 lib/erlang/lib/wings-%%VERSION%%/ebin/wings_move.beam
 lib/erlang/lib/wings-%%VERSION%%/ebin/wings_outliner.beam
+lib/erlang/lib/wings-%%VERSION%%/ebin/wings_pb.beam
 lib/erlang/lib/wings-%%VERSION%%/ebin/wings_pick.beam
 lib/erlang/lib/wings-%%VERSION%%/ebin/wings_plugin.beam
 lib/erlang/lib/wings-%%VERSION%%/ebin/wings_pref.beam
@@ -81,9 +82,10 @@ lib/erlang/lib/wings-%%VERSION%%/plugins/autouv/auv_pick.beam
 lib/erlang/lib/wings-%%VERSION%%/plugins/autouv/auv_placement.beam
 lib/erlang/lib/wings-%%VERSION%%/plugins/autouv/auv_seg_ui.beam
 lib/erlang/lib/wings-%%VERSION%%/plugins/autouv/auv_segment.beam
-lib/erlang/lib/wings-%%VERSION%%/plugins/autouv/auv_snap.beam
+lib/erlang/lib/wings-%%VERSION%%/plugins/autouv/auv_texture.beam
 lib/erlang/lib/wings-%%VERSION%%/plugins/autouv/auv_util.beam
 lib/erlang/lib/wings-%%VERSION%%/plugins/autouv/wpc_autouv.beam
+lib/erlang/lib/wings-%%VERSION%%/plugins/autouv/wpc_snap.beam
 lib/erlang/lib/wings-%%VERSION%%/plugins/commands/README
 lib/erlang/lib/wings-%%VERSION%%/plugins/commands/wpc_region.beam
 lib/erlang/lib/wings-%%VERSION%%/plugins/commands/wpc_turnedge.beam
@@ -98,6 +100,7 @@ lib/erlang/lib/wings-%%VERSION%%/plugins/import_export/README
 lib/erlang/lib/wings-%%VERSION%%/plugins/import_export/wpc_3ds.beam
 lib/erlang/lib/wings-%%VERSION%%/plugins/import_export/wpc_ai.beam
 lib/erlang/lib/wings-%%VERSION%%/plugins/import_export/wpc_am.beam
+lib/erlang/lib/wings-%%VERSION%%/plugins/import_export/wpc_hlines.beam
 lib/erlang/lib/wings-%%VERSION%%/plugins/import_export/wpc_obj.beam
 lib/erlang/lib/wings-%%VERSION%%/plugins/import_export/wpc_opengl.beam
 lib/erlang/lib/wings-%%VERSION%%/plugins/import_export/wpc_ply.beam
@@ -149,6 +152,7 @@ lib/erlang/lib/wings-%%VERSION%%/src/wings_menu.erl
 lib/erlang/lib/wings-%%VERSION%%/src/wings_menu_util.erl
 lib/erlang/lib/wings-%%VERSION%%/src/wings_move.erl
 lib/erlang/lib/wings-%%VERSION%%/src/wings_outliner.erl
+lib/erlang/lib/wings-%%VERSION%%/src/wings_pb.erl
 lib/erlang/lib/wings-%%VERSION%%/src/wings_pick.erl
 lib/erlang/lib/wings-%%VERSION%%/src/wings_plugin.erl
 lib/erlang/lib/wings-%%VERSION%%/src/wings_pref.erl
