@@ -6,16 +6,15 @@
 #
 
 PORTNAME=	mulberry
-PORTVERSION=	2.2.1
+PORTVERSION=	3.1
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.cyrusoft.com/pub/Mulberry/v${PORTVERSION:S/./_/g}/
-DIST_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/./_/g}-rh6
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
-DISTCRYPTO=	MulberryS${EXTRACT_SUFX}
 EXTRACT_SUFX=	.tgz
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
+DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	yds@CoolRat.org
+MAINTAINER=	girgen@pingpong.net
 COMMENT=	A scalable high-performance GUI internet Mail User Agent
 
 USE_LINUX=	yes
@@ -26,8 +25,9 @@ ONLY_FOR_ARCHS=	i386
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_CRYPTO)
-NO_CDROM=	Contains cryptography (can't redistribute)
-NO_PACKAGE=	Contains cryptography (can't place on server for distribution)
+DISTCRYPTO=	${PORTNAME}-s-${PORTVERSION:S/./_/g}-rh6${EXTRACT_SUFX}
+NO_CDROM=	Contains cryptography (cannot redistribute)
+NO_PACKAGE=	Contains cryptography (cannot place on server for distribution)
 .if !exists(${DISTDIR}/${DIST_SUBDIR}/${DISTCRYPTO})
 IGNORE=	You must manually fetch the Linux RedHat 6.x ${DISTCRYPTO} Plug-ins tarball from https://www.cyrusoft.com/cgi-bin/crypto and place it in ${DISTDIR}/${DIST_SUBDIR}/ and then run 'make -DWITH_CRYPTO install' again
 .endif
