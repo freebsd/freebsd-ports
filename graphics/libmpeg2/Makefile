@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libmpeg2
-PORTVERSION=	0.2.0
+PORTVERSION=	0.2.1
 CATEGORIES=	graphics
 MASTER_SITES=	http://libmpeg2.sourceforge.net/files/
 DISTNAME=	mpeg2dec-${PORTVERSION}
@@ -14,7 +14,6 @@ DISTNAME=	mpeg2dec-${PORTVERSION}
 MAINTAINER=	lioux@FreeBSD.org
 
 USE_XLIB=	yes
-USE_AUTOCONF=   yes
 USE_LIBTOOL=	yes
 
 CONFIGURE_ARGS= --enable-shared
@@ -26,8 +25,7 @@ CONFIGURE_ARGS+=	--enable-mga
 .ifdef(WITH_SDL)
 LIB_DEPENDS+=	SDL-1.1.4:${PORTSDIR}/devel/sdl12
 
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-libvo::configure.incl \
-		${FILESDIR}/extra-patch-libvo::video_out_sdl.c
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-libvo::configure.incl
 SDL_CONFIG?=    ${LOCALBASE}/bin/sdl11-config
 
 CONFIGURE_ENV+=  SDL_CONFIG="${SDL_CONFIG}"
@@ -46,11 +44,16 @@ pre-everything::
 .endif
 	@${ECHO_MSG} "====>"
 
+post-patch:
+	@${PERL} -pi -e 's|<SDL/|<SDL11/|' ${WRKSRC}/libvo/*
+	@${PERL} -pi -e 's|-O3||;s|<termio.h>|<termios.h>|' ${WRKSRC}/configure
+
 post-configure:
 	@${LN} -sf ${LOCALBASE}/bin/libtool ${WRKSRC}
 # Libtool fix code kindly provided by Mr. Maxim Sobolev <sobomax@FreeBSD.org>
 	@${PERL} -pi.orig \
-		-e 's|^deplibs_check_method=.*|deplibs_check_method=pass_all|' \
+		-e 's|^deplibs_check_method=.*|deplibs_check_method=pass_all|; \
+		s|(install_ltlibs=)yes|\1no|' \
 		${WRKSRC}/libtool
 
 post-install:

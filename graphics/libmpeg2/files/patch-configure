@@ -1,0 +1,16 @@
+--- configure.orig	Wed Apr 24 16:42:58 2002
++++ configure	Wed Apr 24 16:43:14 2002
+@@ -2546,13 +2546,6 @@
+ #define ARCH_X86
+ EOF
+ 
+-	case "$host_alias" in
+-	i386-*) OPT_CFLAGS="$CFLAGS -mcpu=i386";;
+-	i486-*) OPT_CFLAGS="$CFLAGS -mcpu=i486";;
+-	i586-*) OPT_CFLAGS="$CFLAGS -mcpu=pentium";;
+-	i686-*) OPT_CFLAGS="$CFLAGS -mcpu=pentiumpro";;
+-	k6-*)   OPT_CFLAGS="$CFLAGS -mcpu=k6";;
+-	esac
+ 	echo "$as_me:2556: checking if $CC supports $OPT_CFLAGS flags" >&5
+ echo $ECHO_N "checking if $CC supports $OPT_CFLAGS flags... $ECHO_C" >&6
+     SAVE_CFLAGS="$CFLAGS"
