@@ -137,7 +137,10 @@
 %%GCC28SUBDIR%%/include/g++/tree.h
 %%GCC28SUBDIR%%/include/g++/type_traits.h
 %%GCC28SUBDIR%%/include/g++/vector.h
+%%GCC28SUBDIR%%/libiberty.a
+%%GCC28SUBDIR%%/libstdc++.a
 %%GNUHOST%%/include/_G_config.h
 %%GNUHOST%%/lib/libiberty.a
 @dirrm %%GCC28SUBDIR%%/include/g++/std
 @dirrm %%GCC28SUBDIR%%/include/g++
+@dirrm %%GNUHOST%%/lib
