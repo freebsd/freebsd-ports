@@ -269,6 +269,7 @@ lib/python1.5/lib-dynload/parsermodule.so
 lib/python1.5/lib-dynload/resource.so
 lib/python1.5/lib-dynload/rgbimgmodule.so
 lib/python1.5/lib-dynload/rotormodule.so
+lib/python1.5/lib-dynload/shamodule.so
 lib/python1.5/lib-dynload/syslogmodule.so
 lib/python1.5/lib-dynload/termios.so
 lib/python1.5/lib-dynload/timingmodule.so
