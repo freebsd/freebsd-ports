@@ -1,30 +1,123 @@
 #!/bin/sh
 #
 # $FreeBSD$
+#
 
-smbspool=/var/spool/samba
-pidfiledir=/var/run
-smbd=/usr/local/sbin/smbd
-nmbd=/usr/local/sbin/nmbd
+# PROVIDE: nmbd smbd
+%%WINBIND%%# PROVIDE: winbindd
+# REQUIRE: NETWORKING SERVERS named %%CUPS%%
+# BEFORE: DAEMON
+# KEYWORD: FreeBSD shutdown
 
-# start
-if [ "x$1" = "x" -o "x$1" = "xstart" ]; then
-	if [ -f $smbd ]; then
-		if [ -d $smbspool ]; then
-			rm -f $smbspool/*
-		fi
-		echo -n ' Samba'
-		$nmbd -D
-		$smbd -D
-	fi
+#
+# Add the following lines to /etc/rc.conf to enable samba:
+#
+#samba_enable="YES"
+#
+# or, for fine grain control
+#
+#nmbd_enable="YES"
+#smbd_enable="YES"
+%%WINBIND%%#winbindd_enable="YES"
+#
 
-# stop
-elif [ "x$1" = "xstop" ]; then
-	kill `cat $pidfiledir/smbd.pid`
-	kill `cat $pidfiledir/nmbd.pid`
+. %%RC_SUBR%%
 
-# restart
-elif [ "x$1" = "xrestart" ]; then
-	$0 stop
-	$0 start
+name=samba
+rcvar=`set_rcvar`
+
+load_rc_config $name
+# Set defaults
+samba_config=${samba_config:-"%%SAMBA_CONFIG%%"}
+# Config file is required
+if [ ! -r ${samba_config} ]; then
+    warn "${samba_config} is not readable."
+    case $1 in
+	force*) : ;;
+	*) exit 1 ;;
+    esac
 fi
+
+if test -n ${samba_enable:-""} && checkyesno samba_enable; then
+    nmbd_enable=${nmbd_enable:-"YES"}
+    smbd_enable=${smbd_enable:-"YES"}
+%%WINBIND%%    winbindd_enable=${winbindd_enable:-"YES"}
+%%WINBIND%%    # Check, that winbind is actally configured
+%%WINBIND%%    if [ ! "`egrep -i '(idmap.*uid|winbind.*uid)' ${samba_config} 2>/dev/null | egrep -v [\#\;]`" ]; then
+%%WINBIND%%    	#warn "Winbind support is not configured"
+%%WINBIND%%	winbindd_enable="NO"
+%%WINBIND%%    fi
+fi
+
+# Hack until run_rc_command() get rid of exit()
+samba_stop() {
+    pid=$(check_pidfile ${pidfile} ${command})
+    if [ -z ${pid} ]; then
+	echo "${name} not running? (check ${pidfile})."
+	return 1
+    fi
+    echo "Stopping ${command}."
+    kill -${sig_stop:-TERM} ${pid}
+    [ $? -ne 0 ] && [ -z "$rc_force" ] && return 1
+    wait_for_pids ${pid}
+}
+
+nmbd_precmd() {
+    # XXX: Never delete winbindd_idmap, winbindd_cache and group_mapping
+    if [ -d "%%SAMBA_LOCKDIR%%" ]; then
+	echo "Starting SAMBA: removing stale tdbs :"
+	for file in connections.tdb locking.tdb messages.tdb \
+		    sessionid.tdb unexpected.tdb brlock.tdb \
+		    namelist.debug
+	do
+	    rm -vf "%%SAMBA_LOCKDIR%%/$file"
+	done
+    fi
+}
+
+# nmbd
+name=nmbd
+rcvar=`set_rcvar`
+command="%%PREFIX%%/sbin/${name}"
+required_dirs="%%SAMBA_LOCKDIR%%"
+pidfile=%%SAMBA_RUNDIR%%/${name}.pid
+start_precmd="nmbd_precmd"
+stop_cmd="samba_stop"
+# Defaults
+nmbd_enable=${nmbd_enable:-"NO"}
+nmbd_flags=${nmbd_flags:-"-D"}
+command_args="-s ${samba_config}"
+
+load_rc_config $name
+run_rc_command "$1"
+
+# smbd
+name=smbd
+rcvar=`set_rcvar`
+command="%%PREFIX%%/sbin/${name}"
+pidfile=%%SAMBA_RUNDIR%%/${name}.pid
+start_precmd=":"
+stop_cmd="samba_stop"
+# Defaults
+smbd_enable=${smbd_enable:-"NO"}
+smbd_flags=${smbd_flags:-"-D"}
+command_args="-s ${samba_config}"
+
+load_rc_config $name
+run_rc_command "$1"
+%%WINBIND%%
+%%WINBIND%%# winbindd
+%%WINBIND%%name=winbindd
+%%WINBIND%%rcvar=`set_rcvar`
+%%WINBIND%%command="%%PREFIX%%/sbin/${name}"
+%%WINBIND%%required_dirs="%%SAMBA_LOCKDIR%%"
+%%WINBIND%%pidfile=%%SAMBA_RUNDIR%%/${name}.pid
+%%WINBIND%%start_precmd=":"
+%%WINBIND%%stop_cmd="samba_stop"
+%%WINBIND%%# Defaults
+%%WINBIND%%winbindd_enable=${winbindd_enable:-"NO"}
+%%WINBIND%%winbindd_flags=${winbindd_flags:-""}
+%%WINBIND%%command_args="-s ${samba_config}"
+%%WINBIND%%
+%%WINBIND%%load_rc_config $name
+%%WINBIND%%run_rc_command "$1"

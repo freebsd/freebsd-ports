@@ -82,7 +82,8 @@ etc/codepages/unicode_map.ISO8859-9
 etc/codepages/unicode_map.KOI8-R
 etc/codepages/unicode_map.KOI8-U
 @dirrm etc/codepages
-etc/rc.d/samba.sh.sample
+@unexec %D/etc/rc.d/samba.sh forcestop 2>/dev/null || true
+etc/rc.d/samba.sh
 etc/smb.conf.default
 %%AUDIT%%lib/samba/audit.so
 %%RECYCLE%%lib/samba/recycle.so

@@ -21,7 +21,7 @@ COMMENT=	A free SMB and CIFS client and server for UNIX
 
 CONFLICTS=	samba-2.2.* samba-3.0.* sharity-light-1.*
 
-SAMBA_VERSION=		2.2.9
+SAMBA_VERSION=		2.2.10
 SAMBA_JA_VERSION=	1.0
 
 USE_BZIP2=	yes
@@ -60,9 +60,14 @@ BUILD_VFS=	""
 VARDIR=		/var
 SAMBA_SPOOL=	${VARDIR}/spool/samba
 SAMBA_LOGDIR=	${VARDIR}/log
+SAMBA_RUNDIR=	${VARDIR}/run
+SAMBA_LOCKDIR=	${VARDIR}/db/samba
 SAMBA_PRIVATE=	${PREFIX}/private
 SAMBA_CONFDIR=	${PREFIX}/etc
+SAMBA_SWATDIR=	${PREFIX}/share/swat
 SAMBA_VFSDIR=	${PREFIX}/lib/samba
+SAMBA_CONFIG=	${SAMBA_CONFDIR}/smb.conf
+
 SCRIPTS_ENV=	WRKDIRPREFIX="${WRKDIRPREFIX}" \
 		TOUCH="${TOUCH}" \
 		MKDIR="${MKDIR}" \
@@ -70,20 +75,22 @@ SCRIPTS_ENV=	WRKDIRPREFIX="${WRKDIRPREFIX}" \
 		SAMBA_OPTIONS="${SAMBA_OPTIONS}" \
 		REALCURDIR="${.CURDIR}"
 # sample files
-STARTUP_SCRIPT=	${PREFIX}/etc/rc.d/samba.sh.sample
+STARTUP_SCRIPT=	${PREFIX}/etc/rc.d/samba.sh
 SAMPLE_CONFIG=	${SAMBA_CONFDIR}/smb.conf.default
+
+.include <bsd.port.pre.mk>
+
+USE_RC_SUBR=	yes
 
 CONFIGURE_ARGS=	--with-i18n-swat \
 		--libdir=${SAMBA_CONFDIR} \
-		--localstatedir=${VARDIR} --with-swatdir=${PREFIX}/share/swat \
-		--with-lockdir=${VARDIR}/db/samba \
+		--localstatedir=${VARDIR} --with-swatdir=${SAMBA_SWATDIR} \
+		--with-lockdir=${SAMBA_LOCKDIR} \
 		--with-logfilebase=${SAMBA_LOGDIR} \
 		--with-privatedir=${SAMBA_PRIVATE} \
 		--with-piddir=${VARDIR}/run \
 		--with-pam --with-pam_smbpass \
 		--with-included-popt
-
-.include <bsd.port.pre.mk>
 
 .if defined(WITH_SYSLOG)
 CONFIGURE_ARGS+=	--with-syslog
@@ -116,6 +123,9 @@ LDAPSAM=	""
 .if defined(WITH_WINBIND)
 CONFIGURE_ARGS+=	--with-winbind
 WINBIND=	""
+WINBIND_FILTER=	${SED} -e 's|%%WINBIND%%||g'
+.else
+WINBIND_FILTER=	${GREP} -v '^%%WINBIND%%'
 .endif
 
 .if defined(WITH_WINBIND_AUTH_CHALLENGE)
@@ -179,6 +189,16 @@ PLIST_SUB=	AUDIT=${AUDIT} \
 		WINBIND=${WINBIND} \
 		SMBSH=${SMBSH}
 
+RC_SCRIPTS_SUB=	PREFIX=${PREFIX} \
+		CUPS=${CUPS} \
+		RC_SUBR=${RC_SUBR} \
+		SAMBA_CONFDIR=${SAMBA_CONFDIR} \
+		SAMBA_CONFIG=${SAMBA_CONFIG} \
+		SAMBA_LOGDIR=${SAMBA_LOGDIR} \
+		SAMBA_RUNDIR=${SAMBA_RUNDIR} \
+		SAMBA_LOCKDIR=${SAMBA_LOCKDIR} \
+		SAMBA_SPOOL=${SAMBA_SPOOL}
+
 post-patch:
 	${FIND} ${WRKSRC}/.. -name '*.orig' -delete
 
@@ -187,8 +207,8 @@ pre-build:
 	(cd ${WRKSRC} && make proto)
 
 post-build:
-	${SED} 's:/usr/local:${PREFIX}:g' ${FILESDIR}/samba.sh.sample \
-		> ${WRKDIR}/samba.sh.sample
+	${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
+	   ${FILESDIR}/samba.sh.sample | ${WINBIND_FILTER} > ${WRKDIR}/samba.sh.sample
 .if defined(WITH_RECYCLE) || defined(WITH_AUDIT)
 	cd ${WRKSRC}/../examples/VFS; \
 		./configure;${MAKE}; \
