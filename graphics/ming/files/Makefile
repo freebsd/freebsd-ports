@@ -1,16 +1,17 @@
 # $FreeBSD$
 
 LIB=		ming
-SHLIB_MAJOR?=	1
+SHLIB_MAJOR?=	2
 SHLIB_MINOR?=	0
 CFLAGS+=	-I${.CURDIR}/actioncompiler -I${.CURDIR}/blocks -I${LOCALBASE}/include
 LDADD=		-lm
 SRCS=		blocklist.c \
 		displaylist.c \
+		ming.c \
 		movie.c \
 		movieclip.c \
 		position.c \
-		shape.c \
+		shape_util.c \
 		actioncompiler/compile.c \
 		actioncompiler/compileaction.c \
 		actioncompiler/compiler.tab.c \
@@ -43,6 +44,7 @@ SRCS=		blocklist.c \
 		blocks/text.c \
 		blocks/textfield.c
 INCS=		blocklist.h \
+		blocktypes.h \
 		displaylist.h \
 		fill.h \
 		libming.h \
@@ -50,8 +52,7 @@ INCS=		blocklist.h \
 		movie.h \
 		movieclip.h \
 		position.h \
-		shape.h \
-		blocks/swf.h
+		shape_util.h
 
 NOMAN=		YES
 LIBDIR=		${LOCALBASE}/lib
@@ -77,7 +78,10 @@ beforeinstall: _includeinstall
 _includeinstall: pre-_includeinstall
 
 pre-_includeinstall:
-	mkdir -p ${INCDIR}/blocks
+	mkdir -p ${DESTDIR}${INCDIR}/blocks ${DESTDIR}${INCDIR}/c++
 
 beforeinstall:
-	mv ${INCDIR}/swf.h ${INCDIR}/blocks/
+	${INSTALL} -C -o ${INCOWN} -g ${INCGRP} -m ${INCMODE} \
+		${.CURDIR}/blocks/swf.h ${INCDIR}/blocks/
+	${INSTALL} -C -o ${INCOWN} -g ${INCGRP} -m ${INCMODE} \
+		${.CURDIR}/c++/ming.h ${INCDIR}/c++/
