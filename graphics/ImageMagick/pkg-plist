@@ -1,4 +1,4 @@
-lib/libMagick.so.3.8
+lib/libMagick.so.3.9
 @exec ldconfig -m %D/lib
 lib/libMagick.a
 @exec ranlib %D/%F
@@ -13,6 +13,7 @@ man/man1/identify.1.gz
 man/man1/mogrify.1.gz
 man/man1/combine.1.gz
 man/man1/ImageMagick.1.gz
+man/man1/xtp.1.gz
 bin/display
 bin/montage
 bin/import
@@ -21,12 +22,15 @@ bin/convert
 bin/identify
 bin/mogrify
 bin/combine
-include/magick.h
-include/image.h
-include/gems.h
-include/compress.h
-include/utility.h
-include/X.h
-include/widget.h
-include/PreRvIcccm.h
-include/plug-ins.h
+bin/xtp
+include/magick/magick.h
+include/magick/image.h
+include/magick/gems.h
+include/magick/compress.h
+include/magick/monitor.h
+include/magick/error.h
+include/magick/utility.h
+include/magick/X.h
+include/magick/widget.h
+include/magick/PreRvIcccm.h
+include/magick/plug-ins.h
