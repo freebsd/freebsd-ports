@@ -7,14 +7,21 @@
 
 PORTNAME=	dhisd
 PORTVERSION=	5.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	dns
 MASTER_SITES=	ftp://ftp.dhis.org/pub/dhis/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	marius@alchemy.franken.de
 COMMENT=	DHIS server for dynamic updates on the server using specific engines
 
-LIB_DEPENDS=	gmp.3:${PORTSDIR}/math/libgmp-freebsd
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} > 500023
+LIB_DEPENDS=	gmp.6:${PORTSDIR}/math/libgmp4
+CFLAGS+=	-I${PREFIX}/include
+LDFLAGS+=	-L${PREFIX}/lib
+MAKE_ENV+=	LDFLAGS="${LDFLAGS}"
+.endif
 
 DOCFILES=	CONTRIBUTORS COPYRIGHT INSTALL MODULES README
 USE_REINPLACE=	yes
@@ -69,9 +76,6 @@ post-install:
 	@${ECHO} "or the files in ${DOCSDIR}"
 	@${ECHO} "Read INSTALL and INSTALL.bsd at least for the setup information of dhisd."
 .endif
-	@${ECHO} ""
-	@${ECHO} "For information on this port, check the following site:"
-	@${ECHO} "http://bsltwr.dhis.org/dhis/"
 	@${ECHO} "--------------------------------------------------------------------------"
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
