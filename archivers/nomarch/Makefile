@@ -8,6 +8,7 @@
 
 PORTNAME=	nomarch
 PORTVERSION=	1.3
+PORTREVISION=	1
 CATEGORIES=	archivers
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	utils/compress
@@ -15,16 +16,12 @@ MASTER_SITE_SUBDIR=	utils/compress
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extracts files from the old `.arc' archive format
 
-LIB_DEPENDS=	gnugetopt:${PORTSDIR}/devel/libgnugetopt
-
+USE_GETOPT_LONG=yes
 USE_REINPLACE=	yes
+MAKE_ENV=	CPPFLAGS="${CPPFLAGS}" \
+		LDFLAGS="${LDFLAGS}"
 
 MAN1=	nomarch.1
-
-post-patch:
-	@${REINPLACE_CMD} -e "s,^CC,#CC,g ; s,^CFLAGS,#CFLAGS,g ; \
-		s,^PREFIX,#PREFIX,g ; \
-		s,%%LOCALBASE%%,${LOCALBASE},g" ${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/nomarch ${PREFIX}/bin
