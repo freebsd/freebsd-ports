@@ -33,12 +33,7 @@ CONFIGURE_ENV=	XML2_CONFIG="${XML2_CONFIG}" XMMS_CONFIG="${XMMS_CONFIG}"
 
 .include <bsd.port.pre.mk>
 
-.if ${HAVE_GNOME:Mlibpanel}!=""
-USE_GNOME+=	libpanel gnomeprefix
-PLIST_SUB+=	DATADIR="share/gnome"
-.else
 PLIST_SUB+=	DATADIR="share"
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|<xml|<libxml/xml|g' ${WRKSRC}/configure
