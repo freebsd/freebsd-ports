@@ -7,9 +7,9 @@
 #
 
 PORTNAME=	john
-PORTVERSION=	1.6.34
+PORTVERSION=	1.6.37
 CATEGORIES=	security
-MASTER_SITES=	http://www.openwall.com/john/dl/ \
+MASTER_SITES=	http://www.openwall.com/john/a/ \
 		ftp://ftp.ru.openwall.com/pub/projects/john/
 DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.gz \
 		${PORTNAME}-1.6.tar.gz

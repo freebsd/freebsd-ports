@@ -1,6 +1,11 @@
---- params.h	Sun Sep 15 20:19:20 2002
-+++ params.h	Wed Jan 15 23:50:29 2003
-@@ -26,8 +26,8 @@
+--- params.h.orig	Mon Feb 23 17:07:38 2004
++++ params.h	Sun Apr 18 19:16:14 2004
+@@ -22,12 +22,12 @@
+  * will probably want to set this to 1 for their builds of John.
+  */
+ #ifndef JOHN_SYSTEMWIDE
+-#define JOHN_SYSTEMWIDE			0
++#define JOHN_SYSTEMWIDE			1
  #endif
  
  #if JOHN_SYSTEMWIDE
@@ -22,10 +27,10 @@
  #if JOHN_SYSTEMWIDE
  #define CFG_PRIVATE_FULL_NAME		JOHN_PRIVATE_HOME "/john.conf"
  #define CFG_PRIVATE_ALT_NAME		JOHN_PRIVATE_HOME "/john.ini"
-@@ -78,7 +78,7 @@
- #define LOG_NAME			"$JOHN/john.pot"
- #define RECOVERY_NAME			"$JOHN/restore"
+@@ -82,7 +82,7 @@
  #endif
+ #define LOG_SUFFIX			".log"
+ #define RECOVERY_SUFFIX			".rec"
 -#define WORDLIST_NAME			"$JOHN/password.lst"
 +#define WORDLIST_NAME		"%%PREFIX%%/share/john/password.lst"
  
