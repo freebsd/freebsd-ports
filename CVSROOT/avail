@@ -6,6 +6,7 @@
 #
 
 group|meisters|peter,jdp,markm,joe
+group|core|peter,imp,rwatson,wes,kuriyama,grog,jhb,markm,murray
 # Pick up the list of bad users from ncvs/CVSROOT/badcommitters  See that
 # file for details
 group|penaltybox|!badcommitters
@@ -17,6 +18,8 @@ avail||doc
 avail||ports
 avail||projects
 avail||src
+unavail||CVSROOT/badcommitters
+avail|:core|CVSROOT/badcommitters
 unavail||src/contrib/binutils,src/contrib/file
 avail|obrien|src/contrib/binutils,src/contrib/file
 unavail||src/contrib/tcpdump
