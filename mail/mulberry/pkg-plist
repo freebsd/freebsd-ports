@@ -1,0 +1,26 @@
+bin/mulberry
+lib/mulberry/Plug-ins/CRAMMD5Plugin.so
+lib/mulberry/Plug-ins/CommunicatorAdbkIOPlugin.so
+lib/mulberry/Plug-ins/DIGESTMD5Plugin.so
+lib/mulberry/Plug-ins/Eudora4AdbkIOPlugin.so
+lib/mulberry/Plug-ins/EudoraAdbkIOPlugin.so
+%%CRYPTO%%lib/mulberry/Plug-ins/GPGPlugin.so
+lib/mulberry/Plug-ins/GSSAPIPlugin.so
+lib/mulberry/Plug-ins/ISpellPlugin.so
+lib/mulberry/Plug-ins/KerberosPlugin.so
+lib/mulberry/Plug-ins/NTLMPlugin.so
+lib/mulberry/Plug-ins/NetscapeAdbkIOPlugin.so
+lib/mulberry/Plug-ins/POPPASSDPlugin.so
+lib/mulberry/Plug-ins/PineAdbkIOPlugin.so
+lib/mulberry/Plug-ins/QuickmailAdbkIOPlugin.so
+%%CRYPTO%%lib/mulberry/Plug-ins/SSLPlugin.so
+lib/mulberry/Plug-ins/URLPASSDPlugin.so
+@dirrm lib/mulberry/Plug-ins
+@dirrm lib/mulberry
+%%PORTDOCS%%share/doc/mulberry/CHANGES
+%%PORTDOCS%%share/doc/mulberry/CHANGES-DEV
+%%PORTDOCS%%share/doc/mulberry/Mulberry_License
+%%PORTDOCS%%@dirrm share/doc/mulberry
+share/pixmaps/mulberry.png
+share/pixmaps/mulberry.xpm
+@unexec rmdir %D/share/pixmaps 2>/dev/null || true

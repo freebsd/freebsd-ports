@@ -1,0 +1,9 @@
+Mulberry is a high-performance, scalable, and graphically groovy internet
+mail client. It uses the IMAP (IMAP4rev1, IMAP4, and IMAP2bis) protocol for
+accessing mail messages on a server, the standard SMTP protocol for sending
+messages, and does lots and lots of things with MIME parts for mixed text
+and "attachments" of many different types of files and data. Support for
+POP3 and Local accounts, full disconnected IMAP support, PGP/GPG,
+SSL/STARTTLS, local and SIEVE support for filtering and much more!
+
+WWW: http://www.cyrusoft.com/mulberry/

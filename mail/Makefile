@@ -110,6 +110,7 @@
     SUBDIR += mmr
     SUBDIR += movemail
     SUBDIR += mreport
+    SUBDIR += mulberry
     SUBDIR += mutt
     SUBDIR += mutt-devel
     SUBDIR += muttzilla
