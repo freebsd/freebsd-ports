@@ -1,8 +1,8 @@
 %%RUBY_SITEARCHLIBDIR%%/calendar.so
 %%RUBY_SITEARCHLIBDIR%%/getdate.so
 %%RUBY_SITEARCHLIBDIR%%/sdn.so
-%%RUBY_SITELIBDIR%%/calclass.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/calendar/cal.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/calendar/calclass.rb
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/calendar
 %%PORTDOCS%%%%RUBY_DOCDIR%%/calendar/README.en
 %%PORTDOCS%%%%RUBY_DOCDIR%%/calendar/README.sdncal20
