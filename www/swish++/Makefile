@@ -29,6 +29,12 @@ MAN3=	WWW.3
 MAN4=	swish++.conf.4 swish++.index.4
 MAN8=	searchd.8 searchmonitor.8
 
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} >= 500800
+BROKEN=		"Broken pkg-plist"
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e '/^#error/d' ${WRKSRC}/config.h
 .for file in searchd searchmonitor
@@ -38,4 +44,4 @@ post-patch:
 post-install:
 	${INSTALL_SCRIPT} ${FILESDIR}/swish++.sh ${PREFIX}/etc/rc.d
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
