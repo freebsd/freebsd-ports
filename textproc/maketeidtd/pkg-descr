@@ -1,0 +1,8 @@
+A perl-script to generate customized TEI-DTDs by chosing element and entity
+sets or providing user-defined modifications. Can generate either SGML or XML
+DTDs.
+
+WWW: http://www.tei-c.org/Software/maketeidtd/
+
+-- Henrik Motakef
+   <henrik.motakef@web.de>

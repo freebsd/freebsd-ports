@@ -127,6 +127,7 @@
     SUBDIR += linuxdoc
     SUBDIR += ltxml
     SUBDIR += makepatch
+    SUBDIR += maketeidtd
     SUBDIR += man2html
     SUBDIR += manued.el
     SUBDIR += mgdiff
