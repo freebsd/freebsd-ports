@@ -24,6 +24,7 @@ include/libxml2/libxml/xmlIO.h
 include/libxml2/libxml/xmlerror.h
 include/libxml2/libxml/xmlmemory.h
 include/libxml2/libxml/xmlversion.h
+include/libxml2/libxml/xmlwin32version.h
 include/libxml2/libxml/xpath.h
 include/libxml2/libxml/xpathInternals.h
 include/libxml2/libxml/xpointer.h
