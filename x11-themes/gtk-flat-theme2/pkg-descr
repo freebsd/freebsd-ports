@@ -1,5 +1,11 @@
-This theme engine gives gtk+ a flattened appearance with elements taken from
-the MacOS and Metal uis. Modified from the default and metal theme engines;
-the colors and background pixmaps are fully customizable.
+This theme is a port of the GTK+ Flat theme to GTK+ 2.x.  It 
+features the same configurability and looks as the original 
+GTK+ theme.
 
-WWW: http://themes.freshmeat.net/projects/flat/
+WWW: http://themes.freshmeat.net/projects/gtk2flat/
+
+ - Philip
+
+-- 
+Philip Paeps
+philip@paeps.cx

@@ -1,26 +1,25 @@
-# New ports collection makefile for:	gtk-flat-theme
-# Date Created:				31 October 2000
-# Whom:				 	Maxim Sobolev <sobomax@FreeBSD.org>
+# New ports collection makefile for:	gtk-flat-theme2
+# Date Created:				14 March 2003
+# Whom:				 	Philip Paeps <philip@paeps.cx>
 #
 # $FreeBSD$
 #
 
-PORTNAME=	gtk-flat-theme
+PORTNAME=	gtk-flat-theme2
 PORTVERSION=	0.1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_THEMES}
-MASTER_SITE_SUBDIR=	flat
-DISTNAME=	flat-1.2.x
+MASTER_SITE_SUBDIR=	gtk2flat
+DISTNAME=	gtk2flat-default
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A GTK+ theme engine which gives GTK+ a flattened appearance
+MAINTAINER=	philip@paeps.cx
+COMMENT=	A port of the Flat GTK+ engine to GTK+ 2.0
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+WRKSRC=		${WRKDIR}/gtk-flat-theme-2.0
 
 USE_X_PREFIX=	yes
-USE_GNOMENG=	yes
-USE_GNOME=	gtk12
 USE_LIBTOOL=	yes
 USE_GMAKE=	yes
+USE_GNOME=	gnomehack gtk20
 
 .include <bsd.port.mk>
