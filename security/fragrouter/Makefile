@@ -8,9 +8,7 @@
 PORTNAME=	fragrouter
 PORTVERSION=	1.6
 CATEGORIES=	security
-# mastersite disappeared in October 2002
-MASTER_SITES=	# http://www.anzen.com/research/nidsbench/
-MASTER_SITE_SUBDIR=kris
+MASTER_SITES=	http://monkey.org/~dugsong/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool for testing network IDS implementations
