@@ -46,4 +46,8 @@ CONFIGURE_ARGS+= --with-gmp-lib=${LOCALBASE}/lib \
 		--with-gmp-inc=${LOCALBASE}/include
 .endif
 
+.if ${OSVERSION} >= 502102
+FORBIDDEN=	"Does not respect PTHREAD_{CFLAGS,LIBS}"
+.endif
+
 .include <bsd.port.post.mk>
