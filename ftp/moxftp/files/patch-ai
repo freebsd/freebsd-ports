@@ -1,0 +1,83 @@
+--- List.c.orig	Sat May 21 05:10:09 1994
++++ List.c	Sat Nov 11 03:53:50 2000
+@@ -52,7 +52,7 @@
+ 
+ /* $Log: List.c,v $
+  * Revision 1.2  1994/03/21  21:30:28  jones
+- * Use XmREVISION instead of XmUPDATE_LEVEL.
++ * Use XmVERSION instead of XmUPDATE_LEVEL.
+  *
+  * Revision 1.1  1994/03/14  18:55:53  jones
+  * Initial revision
+@@ -93,7 +93,7 @@
+ #if defined(MOTIF)
+ #include <Xm/XmP.h>
+ #include <Xm/Xm.h>
+-#if XmREVISION==2
++#if XmVERSION==2
+ #include <Xm/PrimitiveP.h>
+ #endif
+ #endif
+@@ -339,8 +339,8 @@
+ #endif
+ #if defined(MOTIF)
+   {
+-#if defined(XmREVISION)
+-#if XmREVISION>=2&&defined(XmInheritBorderHighlight)
++#if defined(XmVERSION)
++#if XmVERSION>=2&&defined(XmInheritBorderHighlight)
+       XmInheritBorderHighlight,         /* border_highlight   */
+       XmInheritBorderUnhighlight,       /* border_unhighlight */
+ #else
+@@ -402,10 +402,10 @@
+ String * params;
+ Cardinal *num_params;
+ {
+-#if XmREVISION==1
++#if XmVERSION==1 && !defined(LESSTIF_REVISION) && LESSTIF_REVISION<88
+      _XmPrimitiveFocusIn((XmPrimitiveWidget)w, (XEvent*)event);
+ #endif
+-#if XmREVISION==2
++#if XmVERSION==2
+      _XmPrimitiveFocusIn((XmPrimitiveWidget)w, (XEvent*)event, NULL, 0);
+ #endif
+ }
+@@ -417,10 +417,10 @@
+ String * params;
+ Cardinal *num_params;
+ {
+-#if XmREVISION==1
++#if XmVERSION==1 && !defined(LESSTIF_REVISION) && LESSTIF_REVISION<88
+     _XmPrimitiveFocusOut((XmPrimitiveWidget)w, event);
+ #endif
+-#if XmREVISION==2
++#if XmVERSION==2
+     _XmPrimitiveFocusOut((XmPrimitiveWidget)w, event, NULL, 0);
+ #endif
+ }
+@@ -433,10 +433,10 @@
+ Cardinal *num_params;
+ {
+      XmProcessTraversal(w, XmTRAVERSE_CURRENT);
+-#if XmREVISION==1
++#if XmVERSION==1 && !defined(LESSTIF_REVISION) && LESSTIF_REVISION<88
+     _XmPrimitiveEnter((XmPrimitiveWidget)w, (XEvent*)event);
+ #endif
+-#if XmREVISION==2
++#if XmVERSION==2
+     _XmPrimitiveEnter((XmPrimitiveWidget)w, (XEvent*)event, NULL, 0);
+ #endif
+ }
+@@ -448,10 +448,10 @@
+ String * params;
+ Cardinal *num_params;
+ {
+-#if XmREVISION==1
++#if XmVERSION==1 && !defined(LESSTIF_REVISION) && LESSTIF_REVISION<88
+      _XmPrimitiveLeave((XmPrimitiveWidget)w, (XEvent*)event);
+ #endif
+-#if XmREVISION==2
++#if XmVERSION==2
+      _XmPrimitiveLeave((XmPrimitiveWidget)w, (XEvent*)event, NULL, 0);
+ #endif
+ }

@@ -1,0 +1,11 @@
+--- LabelQUICK.c.orig	Sat May 21 05:09:24 1994
++++ LabelQUICK.c	Sat Nov 11 03:53:50 2000
+@@ -40,7 +40,7 @@
+ #if defined(MOTIF)
+ #include <Xm/XmP.h>
+ #include <Xm/Xm.h>
+-#if XmREVISION==2
++#if XmVERSION==2
+ #include <Xm/PrimitiveP.h>
+ #endif
+ #endif

@@ -1,0 +1,11 @@
+--- ListSWP.h.orig	Tue Mar 15 03:58:20 1994
++++ ListSWP.h	Sat Nov 11 03:53:50 2000
+@@ -69,7 +69,7 @@
+ 
+ #if defined(MOTIF)
+ #include <Xm/XmP.h>
+-#if XmREVISION==2
++#if XmVERSION==2
+ #include <Xm/ManagerP.h>
+ #endif
+ #endif

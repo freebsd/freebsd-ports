@@ -1,19 +1,11 @@
-*** oldarchie.c    Mon Oct  2 14:02:08 1995
---- archie.c       Mon Oct  2 14:09:28 1995
-***************
-*** 163,169 ****
-      char *host;
-      int i;
-  
-!     archie = lpopen("type archie", "r");
-      if (fgets(string, sizeof(string), archie) != NULL) {
-        if ((cp = bsdstrstr(string, "not found")) != NULL) {
-             lpclose(archie);
---- 163,169 ----
-      char *host;
-      int i;
-  
-!     archie = lpopen("which archie", "r");
-      if (fgets(string, sizeof(string), archie) != NULL) {
-        if ((cp = bsdstrstr(string, "not found")) != NULL) {
-             lpclose(archie);
+--- archie.c.orig	Sat May 21 05:11:43 1994
++++ archie.c	Sat Nov 11 03:53:49 2000
+@@ -160,7 +160,7 @@
+     char *host;
+     int i;
+ 
+-    archie = lpopen("type archie", "r");
++    archie = lpopen("which archie", "r");
+     if (fgets(string, sizeof(string), archie) != NULL) {
+ 	if ((cp = bsdstrstr(string, "not found")) != NULL) {
+     	     lpclose(archie);
