@@ -7,4 +7,4 @@ It provides C, C++ and Fortran compilers plus other related tools.
 This package is a meta port that depends on other packages:
   mingw-binutils, mingw-bin-msvcrt, mingw-gcc
 
-WWW: http://www.geocities.com/Tokyo/Towers/6162/gcc.html
+WWW: http://www.mingw.org/

@@ -6,16 +6,20 @@
 #
 
 PORTNAME=	bin-msvcrt
-PORTVERSION=	2000.03.27
+PORTVERSION=	1.0
+PORTEPOCH=	1
 CATEGORIES=	devel
-MASTER_SITES=	ftp://ftp.xraylith.wisc.edu/pub/khan/gnu-win32/mingw32/runtime/
-PKGNAMEPREFIX=	mingw-
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/./-/g}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	mingw
+PKGNAMEPREFIX= 	mingw-
+DIST_SUBDIR=	mingw
 
-MAINTAINER=	tino@pa2.so-net.ne.jp
+MAINTAINER=	doc@hisio.safenet.pl
+
+DISTFILES = mingw-runtime-1.0-20010604${EXTRACT_SUFX} \
+		w32api-1.0-20010606${EXTRACT_SUFX}
 
 NO_MTREE=	yes
-USE_ZIP=	yes
 NO_WRKSUBDIR=	yes
 
 post-extract:
