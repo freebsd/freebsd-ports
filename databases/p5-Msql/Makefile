@@ -18,17 +18,13 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libmsql.a:${PORTSDIR}/databases/msql \
 		${LOCALBASE}/lib/perl5/site_perl/Data/ShowTable.pm:${PORTSDIR}/devel/p5-Data-ShowTable \
 		${LOCALBASE}/lib/perl5/site_perl/DBI.pm:${PORTSDIR}/databases/p5-DBI
 
-CONFIGURE_ENV+=	PREFIX=${PREFIX} MSQL_HOME=${PREFIX}
+BROKEN=		DEPENDS on databases/msql which is currently BROKEN, also perl5 upgrade
 
-USE_PERL5=	YES
+PERL_CONFIGURE=	YES
+CONFIGURE_ENV+=	PREFIX=${PREFIX} MSQL_HOME=${PREFIX}
 
 MAN1=		pmsql.1 dbimon.1
 MAN3=		Msql.3 DBD::mSQL.3
 MAN3PREFIX=	${PREFIX}/lib/perl5
-
-BROKEN=		DEPENDS on databases/msql which is currently BROKEN, also perl5 upgrade
-
-do-configure:
-		@cd ${WRKSRC}; ${SETENV} ${CONFIGURE_ENV} ${PERL5} Makefile.PL
 
 .include <bsd.port.mk>

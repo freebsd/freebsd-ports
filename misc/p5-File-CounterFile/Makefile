@@ -14,12 +14,9 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	wchao@isi.edu
 
-USE_PERL5=	yes
+PERL_CONFIGURE=	yes
 
 MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		File::CounterFile.3
-
-do-configure:
-	@cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PERL5} Makefile.PL
 
 .include <bsd.port.mk>

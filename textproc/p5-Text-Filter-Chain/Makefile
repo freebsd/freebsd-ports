@@ -16,7 +16,6 @@ MAINTAINER=	tobez@tobez.org
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Text/Filter.pm:${PORTSDIR}/textproc/p5-Text-Filter
 
-USE_PERL5=	yes
 PERL_CONFIGURE=	yes
 
 MAN3=		Text::Filter::Chain.3

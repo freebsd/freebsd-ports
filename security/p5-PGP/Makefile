@@ -16,15 +16,12 @@ MAINTAINER=	ports@FreeBSD.org
 
 BUILD_DEPENDS=	pgp:${PORTSDIR}/security/pgp
 
-USE_PERL5=	yes
+PERL_CONFIGURE=	yes
 
 MAN3=		PGP::Pipe.3
 MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 pre-configure:
 		@${CP} ${WRKSRC}/PGP/Pipe.pm ${WRKSRC}
-
-do-configure:
-		@ cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PERL5} Makefile.PL
 
 .include <bsd.port.mk>

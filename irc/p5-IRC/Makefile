@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	jedgar@fxp.org
 
-USE_PERL5=	yes
+PERL_CONFIGURE=	yes
 
 MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		\
@@ -22,8 +22,5 @@ MAN3=		\
 		Net::DCC.3 \
 		Net::Event.3 \
 		Net::IRC.3
-
-do-configure:
-	@cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PERL5} Makefile.PL
 
 .include <bsd.port.mk>

@@ -1,7 +1,6 @@
-       Converts data to/from stringified form, appropriate for
-       saving-to/reading-from permanent storage.
+Converts data to/from stringified form, appropriate for
+saving-to/reading-from permanent storage.
 
-       Deals with objects, circular lists, repeated appearence of
-       the same refence. Does not deal with overloaded stringify
-       operator yet.
-
+Deals with objects, circular lists, repeated appearence of
+the same refence. Does not deal with overloaded stringify
+operator yet.

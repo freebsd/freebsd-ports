@@ -12,12 +12,12 @@ MASTER_SITES=	http://www.ooblick.com/software/coldsync/
 
 MAINTAINER=	arensb@ooblick.com
 
-USE_PERL5=	YES
+PERL_CONFIGURE=	YES
 
-CONFIGURE_ARGS=	PREFIX=${PREFIX}
-
-MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
+# Just so that the .packlist conforms to reality
+NOMANCOMPRESS=	yes
 MAN1=		pdbdump.1
+MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Palm::Address.3 \
 		Palm::Datebook.3 \
 		Palm::Mail.3 \
@@ -26,11 +26,5 @@ MAN3=		Palm::Address.3 \
 		Palm::Raw.3 \
 		Palm::StdAppInfo.3 \
 		Palm::ToDo.3
-
-# Just so that the .packlist conforms to reality
-NOMANCOMPRESS=	yes
-
-do-configure:
-		@ cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PERL5} Makefile.PL ${CONFIGURE_ARGS}
 
 .include <bsd.port.mk>

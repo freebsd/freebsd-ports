@@ -42,4 +42,3 @@
        Net::DNS::RR is the base class for DNS resource record
        (RR) objects in the answer, authority, and additional
        sections of a DNS packet.
-

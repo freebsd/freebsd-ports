@@ -15,14 +15,10 @@ DISTNAME=	${PORTNAME}-Perl-${PORTVERSION}
 
 MAINTAINER=	vanilla@FreeBSD.org
 
-USE_PERL5=	yes
-USE_IMLIB=	yes
+USE_GTK=	yes
+PERL_CONFIGURE=	yes
 
 MAN3=		Gtk::GtkColorSelectButton.3
 MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
-
-do-configure:
-	@cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PERL5} Makefile.PL \
-	CC="${CC}" CCFLAGS="${CFLAGS}"
 
 .include <bsd.port.mk>

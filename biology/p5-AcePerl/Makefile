@@ -15,7 +15,6 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bio@freebsd.net
 
-USE_PERL5=	YES
 PERL_CONFIGURE=	YES
 
 MAN3=		Ace::Sequence::Feature.3 \

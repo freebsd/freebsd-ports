@@ -18,7 +18,7 @@ MAINTAINER=	demon@FreeBSD.org
 RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/GD.pm:${PORTSDIR}/graphics/p5-GD \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/GD/Text/Align.pm:${PORTSDIR}/graphics/p5-GD-TextUtil
 
-USE_PERL5=	YES
+PERL_CONFIGURE=	YES
 
 MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		GD::Graph.3 \
@@ -26,8 +26,5 @@ MAN3=		GD::Graph.3 \
 		GD::Graph::Error.3 \
 		GD::Graph::FAQ.3 \
 		GD::Graph::colour.3
-
-do-configure:
-		@cd ${WRKSRC}; ${SETENV} ${CONFIGURE_ENV} ${PERL5} Makefile.PL
 
 .include <bsd.port.mk>

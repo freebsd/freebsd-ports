@@ -20,13 +20,9 @@ LIB_DEPENDS=	gtkgl.5:${PORTSDIR}/x11-toolkits/gtkglarea
 
 BROKEN=		"It need p5-OpenGL, I will commit p5-OpenGl soon!"
 
-USE_PERL5=	yes
 USE_MESA=	yes
 USE_GTK=	yes
+PERL_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}/${PORTNAME}
-
-do-configure:
-	@cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PERL5} Makefile.PL \
-	CC="${CC}" CCFLAGS="${CFLAGS} -L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>

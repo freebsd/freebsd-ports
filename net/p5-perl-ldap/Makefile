@@ -19,6 +19,8 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Convert/ASN1.pm:${PO
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5 \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/IO/Socket/SSL.pm:${PORTSDIR}/security/p5-IO-Socket-SSL
 
+PERL_CONFIGURE=	yes
+
 MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Net::LDAP::Control::VLVResponse.3 \
 		Net::LDAP::Entry.3 \
@@ -43,8 +45,5 @@ MAN3=		Net::LDAP::Control::VLVResponse.3 \
 		Net::LDAP::Constant.3 \
 		Net::LDAP::Reference.3 \
 		Net::LDAP::RFC.3
-
-do-configure:
-	@ cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PERL5} Makefile.PL
 
 .include <bsd.port.mk>

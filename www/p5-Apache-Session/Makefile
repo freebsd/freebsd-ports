@@ -17,7 +17,7 @@ MAINTAINER=	frank@exit.com
 BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/mod_perl.pm:${PORTSDIR}/www/mod_perl \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Storable.pm:${PORTSDIR}/devel/p5-Storable
 
-USE_PERL5=	yes
+PERL_CONFIGURE=	yes
 
 MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Apache::Session.3 \
@@ -43,8 +43,5 @@ MAN3=		Apache::Session.3 \
 		Apache::Session::Store::Postgres.3 \
 		Apache::Session::Store::Sybase.3 \
 		Apache::Session::Sybase.3
-
-do-configure:
-		@cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PERL5} Makefile.PL
 
 .include <bsd.port.mk>

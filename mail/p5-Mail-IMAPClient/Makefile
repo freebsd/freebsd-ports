@@ -14,7 +14,6 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
 
-USE_PERL5=	yes
 PERL_CONFIGURE=	yes
 
 INSTALL_TARGET=	pure_site_install

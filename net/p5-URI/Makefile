@@ -16,7 +16,8 @@ MAINTAINER=	ache@FreeBSD.org
 
 BUILD_DEPENDS=	${PREFIX}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64
 
-USE_PERL5=	yes
+PERL_CONFIGURE=	yes
+
 MAN3=	URI.3 \
 	URI::data.3 \
 	URI::Escape.3 \
@@ -25,10 +26,6 @@ MAN3=	URI.3 \
 	URI::ldap.3 \
 	URI::URL.3 \
 	URI::WithBase.3
-
 MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
-
-do-configure:
-	@cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PERL5} Makefile.PL
 
 .include <bsd.port.mk>

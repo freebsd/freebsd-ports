@@ -20,7 +20,7 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Digest.
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64 \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/HTML/Parser.pm:${PORTSDIR}/www/p5-HTML-Parser
 
-USE_PERL5=	yes
+PERL_CONFIGURE=	yes
 
 MAN1=		lwp-download.1 \
 		lwp-mirror.1 \
@@ -53,11 +53,5 @@ MAN3=		Bundle::LWP.3 \
 		lwpcook.3
 
 MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
-
-do-configure:
-	@cd ${WRKSRC}; \
-	${SETENV} ${MAKE_ENV} ${PERL} Makefile.PL PREFIX=${PREFIX} \
-		INSTALLMAN1DIR=${PREFIX}/man/man1 \
-		INSTALLSCRIPT=${PREFIX}/bin
 
 .include <bsd.port.mk>

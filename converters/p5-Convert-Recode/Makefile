@@ -16,7 +16,7 @@ MAINTAINER=	demon@FreeBSD.org
 
 RUN_DEPENDS=	recode:${PORTSDIR}/converters/recode
 
-USE_PERL5=	YES
+PERL_CONFIGURE=	YES
 
 MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Convert::Recode.3
@@ -24,8 +24,5 @@ MAN3=		Convert::Recode.3
 post-patch:
 		${PERL} -pi -e 's#recode -\$$#${LOCALBASE}/bin/recode -\$$#' \
 		${WRKSRC}/Recode.pm
-
-do-configure:
-		@cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PERL5} Makefile.PL
 
 .include <bsd.port.mk>

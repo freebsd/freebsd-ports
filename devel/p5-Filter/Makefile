@@ -14,19 +14,11 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
 
-USE_PERL5=	yes
+PERL_CONFIGURE=	yes
 
 MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Filter::Util::Call.3 Filter::Util::Exec.3 Filter::cpp.3 \
 		Filter::decrypt.3 Filter::exec.3 Filter::sh.3 Filter::tee.3 \
 		perlfilter.3
-
-do-configure:
-		@cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PERL5} Makefile.PL \
-			CC="${CC}" CCFLAGS="${CFLAGS}"
-		@${PERL} -i -p \
-			-e 's/^(CC = ).*/$$1 ${CC}/;' \
-			-e 's/^(CCFLAGS = ).*/$$1 ${CFLAGS}/' \
-			`find ${WRKSRC} -name Makefile`
 
 .include <bsd.port.mk>

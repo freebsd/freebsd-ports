@@ -14,13 +14,10 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	martti.kuparinen@iki.fi
 
-USE_PERL5=	YES
+PERL_CONFIGURE=	YES
 
 MAN3=		IMAP::Admin.3
 MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
-
-do-configure:
-		@ cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PERL5} Makefile.PL
 
 post-install:
 	@${MKDIR} ${PREFIX}/share/examples/p5-IMAP-Admin

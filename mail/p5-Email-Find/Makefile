@@ -16,7 +16,6 @@ MAINTAINER=	tobez@tobez.org
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Email/Valid.pm:${PORTSDIR}/mail/p5-Email-Valid
 
-USE_PERL5=	yes
 PERL_CONFIGURE=	yes
 
 MAN3=		Email::Find.3

@@ -14,23 +14,20 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	jmz@FreeBSD.org
 
-USE_PERL5=	yes
+PERL_CONFIGURE=	yes
 
 MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		ExtUtils::F77.3
 
 .include <bsd.port.pre.mk>
 .if ${OSVERSION} >= 400005
-F2CLIB= -lg2c
+F2CLIB=	-lg2c
 .else
-F2CLIB= -lf2c
+F2CLIB=	-lf2c
 .endif
 
 post-patch:
 	@cd ${WRKSRC}; ${PERL5} -i.orig -pe \
 		's/(.*Freebsd.*lib )(-lf2c)(.*)/$$1 ${F2CLIB} $$3/' F77.pm
-
-do-configure:
-	@cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PERL5} Makefile.PL
 
 .include <bsd.port.post.mk>

@@ -16,7 +16,6 @@ MAINTAINER=	ports@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-3.6
 
-USE_PERL5=	yes
 PERL_CONFIGURE=	yes
 
 MAN3=		Net::SNMP.3

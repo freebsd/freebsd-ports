@@ -14,15 +14,11 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	vanilla@FreeBSD.ORG
 
-USE_PERL5=	yes
+PERL_CONFIGURE=	yes
 
+MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Net::Daemon.3 \
 		Net::Daemon::Log.3 \
 		Net::Daemon::Test.3
-
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
-
-do-configure:
-		@ cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PERL5} Makefile.PL
 
 .include <bsd.port.mk>

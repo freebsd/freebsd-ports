@@ -18,7 +18,6 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libcrack.a:${PORTSDIR}/security/cracklib
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 SITE_PERL=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}
-USE_PERL5=	yes
 PERL_CONFIGURE=	yes
 CONFIGURE_ARGS+=INC="-I${LOCALBASE}/include"
 

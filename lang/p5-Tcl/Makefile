@@ -16,15 +16,10 @@ MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	tcl82.1:${PORTSDIR}/lang/tcl82
 
-USE_PERL5=	yes
-
+PERL_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Tcl.3
-
-do-configure:
-		@cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PERL5} Makefile.PL \
-			CC="${CC}" CCFLAGS="${CFLAGS}"
 
 .include <bsd.port.mk>

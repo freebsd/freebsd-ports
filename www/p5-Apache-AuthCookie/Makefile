@@ -12,17 +12,16 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Apache
 PKGNAMEPREFIX=	p5-
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/mod_perl.pm:${PORTSDIR}/www/mod_perl \
-		${PREFIX}/sbin/apxs:${PORTSDIR}/www/${APACHE_PORT}
-RUN_DEPENDS=	${BUILD_DEPENDS}
-
 MAINTAINER=	ports@FreeBSD.org
+
+BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/mod_perl.pm:${PORTSDIR}/www/mod_perl \
+		${LOCALBASE}/sbin/apxs:${PORTSDIR}/www/${APACHE_PORT}
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
 APACHE_PORT?=	apache13
 CURUSER?=	`whoami`
 CURGRP?=	`groups | awk '{print $1}'`
 TESTPORT?=	8228
-USE_PERL5=	yes
 PERL_CONFIGURE=	yes
 CONFIGURE_ENV+=	APACHE="${PREFIX}/sbin/apache" \
 		TESTUSER="${CURUSER}" \

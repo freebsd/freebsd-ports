@@ -15,7 +15,6 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	tobez@tobez.org
 
-USE_PERL5=	yes
 PERL_CONFIGURE=	yes
 
 MAN3=		Text::Format.3

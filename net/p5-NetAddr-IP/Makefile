@@ -14,12 +14,9 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@freebsd.org
 
-USE_PERL5=	yes
+PERL_CONFIGURE=	yes
+
 MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		NetAddr::IP.3
-
-do-configure:
-	@cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PERL5} Makefile.PL \
-		PREFIX=${PREFIX}
 
 .include <bsd.port.mk>

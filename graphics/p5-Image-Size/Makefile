@@ -14,14 +14,11 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
 
-USE_PERL5=	YES
+PERL_CONFIGURE=	YES
 CONFIGURE_ARGS=	PREFIX=${PREFIX}
 
 MAN1=		imgsize.1
 MAN3=		Image::Size.3
 MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
-
-do-configure:
-		@ cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PERL5} Makefile.PL ${CONFIGURE_ARGS}
 
 .include <bsd.port.mk>

@@ -15,7 +15,7 @@ MAINTAINER=	ilia@cgu.chel.su
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI
 
-USE_PERL5=	yes
+PERL_CONFIGURE=	yes
 
 GZIP=		-9
 
@@ -24,9 +24,6 @@ MAN1=		dbfdump.1 indexdump.1
 MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		XBase::FAQ.3 XBase::Memo.3 XBase::Index.3 XBase.3 \
 		DBD::XBase.3 XBase::Base.3
-
-do-configure:
-		@cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PERL5} Makefile.PL
 
 post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/dbfdump ${PREFIX}/bin

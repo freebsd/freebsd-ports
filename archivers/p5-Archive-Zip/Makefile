@@ -16,7 +16,6 @@ MAINTAINER=	ports@FreeBSD.org
 
 USE_ZIP=	yes
 
-USE_PERL5=	yes
 PERL_CONFIGURE=	yes
 
 MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}

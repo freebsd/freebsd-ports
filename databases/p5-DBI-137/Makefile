@@ -16,7 +16,7 @@ MAINTAINER=	vanilla@FreeBSD.org
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/RPC/PlServer.pm:${PORTSDIR}/net/p5-PlRPC
 
-USE_PERL5=	yes
+PERL_CONFIGURE=	yes
 
 MAN1=		dbiproxy.1 \
 		dbish.1
@@ -33,9 +33,5 @@ MAN3=		Bundle::DBI.3 \
 		DBI::W32ODBC.3 \
 		Win32::DBIODBC.3
 MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
-
-do-configure:
-		@cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PERL5} Makefile.PL \
-			PREFIX="${PREFIX}" CC="${CC}" CCFLAGS="${CFLAGS}"
 
 .include <bsd.port.mk>

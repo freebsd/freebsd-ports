@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	demon@FreeBSD.org
 
-USE_PERL5=	YES
+PERL_CONFIGURE=	YES
 
 MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		SyslogScan::ByGroup.3 SyslogScan::Delivery.3 \
@@ -23,8 +23,5 @@ MAN3=		SyslogScan::ByGroup.3 SyslogScan::Delivery.3 \
 		SyslogScan::SendmailLineTo.3 SyslogScan::SendmailUtil.3 \
 		SyslogScan::Summary.3 SyslogScan::SyslogEntry.3 \
 		SyslogScan::Usage.3 SyslogScan::WhereIs.3 read_mail_log.3
-
-do-configure:
-		@cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PERL5} Makefile.PL
 
 .include <bsd.port.mk>

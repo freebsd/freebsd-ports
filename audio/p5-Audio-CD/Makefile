@@ -16,13 +16,9 @@ MAINTAINER=	roman@xpert.com
 
 LIB_DEPENDS=	cdaudio.1:${PORTSDIR}/audio/libcdaudio
 
-USE_PERL5=	YES
+PERL_CONFIGURE=	YES
 
 MAN3=		Audio::CD.3
 MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
-
-do-configure:
-	@cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PERL5} Makefile.PL \
-		CC="${CC}" CCFLAGS="${CFLAGS}"
 
 .include <bsd.port.mk>

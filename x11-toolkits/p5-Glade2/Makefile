@@ -18,12 +18,8 @@ MAINTAINER=	vanilla@FreeBSD.org
 BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Gtk.pm:${PORTSDIR}/x11-toolkits/p5-Gtk
 LIB_DEPENDS=	glade.4:${PORTSDIR}/devel/libglade
 
-USE_PERL5=	yes
 USE_GNOME=	yes
+PERL_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}/${PORTNAME}
-
-do-configure:
-	@cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PERL5} Makefile.PL \
-	CC="${CC}" CCFLAGS="${CFLAGS} -L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>

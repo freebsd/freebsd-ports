@@ -16,7 +16,7 @@ MAINTAINER=	demon@FreeBSD.org
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/HTML/Tagset.pm:${PORTSDIR}/www/p5-HTML-Tagset
 
-USE_PERL5=	yes
+PERL_CONFIGURE=	yes
 
 MAN3=		HTML::Entities.3 \
 		HTML::Filter.3 \
@@ -24,11 +24,6 @@ MAN3=		HTML::Entities.3 \
 		HTML::LinkExtor.3 \
 		HTML::Parser.3 \
 		HTML::TokeParser.3
-
 MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
-
-do-configure:
-		@cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PERL5} Makefile.PL \
-			CC="${CC}" CCFLAGS="${CFLAGS}"
 
 .include <bsd.port.mk>

@@ -15,7 +15,7 @@ DISTNAME=	Time-modules-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
-USE_PERL5=	YES
+PERL_CONFIGURE=	YES
 
 MAN3=		Time::CTime.3 \
 		Time::DaysInMonth.3 \
@@ -23,8 +23,5 @@ MAN3=		Time::CTime.3 \
 		Time::ParseDate.3 \
 		Time::Timezone.3
 MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
-
-do-configure:
-		@ cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PERL5} Makefile.PL
 
 .include <bsd.port.mk>

@@ -14,7 +14,6 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	leo@florida.sarang.net
 
-USE_PERL5=	yes
 PERL_CONFIGURE=	yes
 
 MAN3=		MP3::ID3v1Tag.3

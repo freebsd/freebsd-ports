@@ -17,7 +17,6 @@ MAINTAINER=	tobez@tobez.org
 BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Time/ParseDate.pm:${PORTSDIR}/devel/p5-Time
 RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Time/ParseDate.pm:${PORTSDIR}/devel/p5-Time
 
-USE_PERL5=	yes
 PERL_CONFIGURE=	yes
 
 MAN3=		Schedule::Cron.3

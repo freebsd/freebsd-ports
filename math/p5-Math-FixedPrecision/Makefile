@@ -20,8 +20,7 @@ MAINTAINER=	ports@FreeBSD.org
 BROKEN=		"Needs Perl 5.6.0 for Math::BigFloat"
 .endif
 
-USE_PERL5=	yes
-PERL_CONFIGURE= yes
+PERL_CONFIGURE=	yes
 
 MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Math::FixedPrecision.3
