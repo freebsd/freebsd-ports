@@ -7,7 +7,7 @@
 
 PORTNAME=	scrollkeeper
 PORTVERSION=	0.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	textproc gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		${MASTER_SITE_GNOME:S,%SUBDIR%,stable/sources/scrollkeeper,}

@@ -14,37 +14,6 @@ lib/libscrollkeeper.a
 lib/libscrollkeeper.so
 lib/libscrollkeeper.so.0
 share/gnome/omf/scrollkeeper/scrollkeeper_manual-C.omf
-@comment There be dragons here. These are all symlinks which have to
-@comment be removed before the linked directories, or they will fail
-@comment the pkg_delete MD5 check.  Don't just sort this plist :)
-share/gnome/scrollkeeper/Templates/bg_BG
-share/gnome/scrollkeeper/Templates/bg_BG.cp1251
-share/gnome/scrollkeeper/Templates/de_AT
-share/gnome/scrollkeeper/Templates/en
-share/gnome/scrollkeeper/Templates/en_AU
-share/gnome/scrollkeeper/Templates/en_GB
-share/gnome/scrollkeeper/Templates/en_SE
-share/gnome/scrollkeeper/Templates/en_UK
-share/gnome/scrollkeeper/Templates/en_US
-share/gnome/scrollkeeper/Templates/es_DO
-share/gnome/scrollkeeper/Templates/es_ES
-share/gnome/scrollkeeper/Templates/es_GT
-share/gnome/scrollkeeper/Templates/es_HN
-share/gnome/scrollkeeper/Templates/es_MX
-share/gnome/scrollkeeper/Templates/es_PA
-share/gnome/scrollkeeper/Templates/es_PE
-share/gnome/scrollkeeper/Templates/es_SV
-share/gnome/scrollkeeper/Templates/ja_JP.eucJP
-share/gnome/scrollkeeper/Templates/no
-share/gnome/scrollkeeper/Templates/no_NY
-share/gnome/scrollkeeper/Templates/pt_PT
-share/gnome/scrollkeeper/Templates/sr_YU
-share/gnome/scrollkeeper/Templates/sv_SE
-share/gnome/scrollkeeper/Templates/zh_CN
-share/gnome/scrollkeeper/Templates/zh_CN.GB2312
-share/gnome/scrollkeeper/Templates/zh_TW
-share/gnome/scrollkeeper/Templates/zh_TW.Big5
-@comment Here endeth the dragons, and beginneth the rest of the real files
 share/gnome/scrollkeeper/Templates/C/scrollkeeper_cl.xml
 share/gnome/scrollkeeper/Templates/af/scrollkeeper_cl.xml
 share/gnome/scrollkeeper/Templates/ar/scrollkeeper_cl.xml
@@ -170,6 +139,37 @@ share/locale/sl/LC_MESSAGES/scrollkeeper.mo
 share/locale/sv/LC_MESSAGES/scrollkeeper.mo
 share/locale/tr/LC_MESSAGES/scrollkeeper.mo
 share/locale/uk/LC_MESSAGES/scrollkeeper.mo
+@comment These are all symlinks which have to be removed
+@comment "specially", or they will fail the pkg_delete MD5
+@comment check.  Don't just sort this plist :)
+@unexec /bin/rm -f %D/share/gnome/scrollkeeper/Templates/bg_BG
+@unexec /bin/rm -f %D/share/gnome/scrollkeeper/Templates/bg_BG.cp1251
+@unexec /bin/rm -f %D/share/gnome/scrollkeeper/Templates/de_AT
+@unexec /bin/rm -f %D/share/gnome/scrollkeeper/Templates/en
+@unexec /bin/rm -f %D/share/gnome/scrollkeeper/Templates/en_AU
+@unexec /bin/rm -f %D/share/gnome/scrollkeeper/Templates/en_GB
+@unexec /bin/rm -f %D/share/gnome/scrollkeeper/Templates/en_SE
+@unexec /bin/rm -f %D/share/gnome/scrollkeeper/Templates/en_UK
+@unexec /bin/rm -f %D/share/gnome/scrollkeeper/Templates/en_US
+@unexec /bin/rm -f %D/share/gnome/scrollkeeper/Templates/es_DO
+@unexec /bin/rm -f %D/share/gnome/scrollkeeper/Templates/es_ES
+@unexec /bin/rm -f %D/share/gnome/scrollkeeper/Templates/es_GT
+@unexec /bin/rm -f %D/share/gnome/scrollkeeper/Templates/es_HN
+@unexec /bin/rm -f %D/share/gnome/scrollkeeper/Templates/es_MX
+@unexec /bin/rm -f %D/share/gnome/scrollkeeper/Templates/es_PA
+@unexec /bin/rm -f %D/share/gnome/scrollkeeper/Templates/es_PE
+@unexec /bin/rm -f %D/share/gnome/scrollkeeper/Templates/es_SV
+@unexec /bin/rm -f %D/share/gnome/scrollkeeper/Templates/ja_JP.eucJP
+@unexec /bin/rm -f %D/share/gnome/scrollkeeper/Templates/no
+@unexec /bin/rm -f %D/share/gnome/scrollkeeper/Templates/no_NY
+@unexec /bin/rm -f %D/share/gnome/scrollkeeper/Templates/pt_PT
+@unexec /bin/rm -f %D/share/gnome/scrollkeeper/Templates/sr_YU
+@unexec /bin/rm -f %D/share/gnome/scrollkeeper/Templates/sv_SE
+@unexec /bin/rm -f %D/share/gnome/scrollkeeper/Templates/zh_CN
+@unexec /bin/rm -f %D/share/gnome/scrollkeeper/Templates/zh_CN.GB2312
+@unexec /bin/rm -f %D/share/gnome/scrollkeeper/Templates/zh_TW
+@unexec /bin/rm -f %D/share/gnome/scrollkeeper/Templates/zh_TW.Big5
+@comment Here endeth the dragons
 @dirrm share/gnome/scrollkeeper/TOC
 @dirrm share/gnome/scrollkeeper/Templates/zh
 @dirrm share/gnome/scrollkeeper/Templates/wa
