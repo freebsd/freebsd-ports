@@ -1,6 +1,5 @@
-@unexec %%MKCATALOG%% -c %D/share/xml/catalog -q deinstall xmlcharent
+@comment $FreeBSD$
 share/xml/xmlcharent/catalog
-@exec %%MKCATALOG%% -c %D/share/xml/catalog -q install xmlcharent
 share/xml/xmlcharent/iso-amsa.ent
 share/xml/xmlcharent/iso-amsb.ent
 share/xml/xmlcharent/iso-amsc.ent
@@ -21,5 +20,3 @@ share/xml/xmlcharent/iso-num.ent
 share/xml/xmlcharent/iso-pub.ent
 share/xml/xmlcharent/iso-tech.ent
 @dirrm share/xml/xmlcharent
-share/doc/xmlcharent/entities-2002-03-19.html
-@dirrm share/doc/xmlcharent
