@@ -20,10 +20,11 @@ PATCH_SITES=	ftp://ftp.xfree.org/pub/XFree86/3.3.6/fixes/ \
 		ftp://ftp.lip6.fr/pub/X11/XFree86/XFree86-3.3.6/fixes/ \
 		ftp://ftp.cs.tu-berlin.de/pub/X/XFree86/3.3.6/fixes/ \
 		ftp://sunsite.doc.ic.ac.uk/packages/XFree86/3.3.6/fixes/
-PATCHFILES= 	fix-01-r128	
+PATCHFILES= 	fix-01-r128
 
 MAINTAINER=	jmz@FreeBSD.org
 
+WRKSRC=		${WRKDIR}/${DIST_SUBDIR}
 IS_INTERACTIVE=	yes	# configure script asks questions
 .if (${MACHINE} != "alpha")
 #NO_PACKAGE=	package available from XFree86

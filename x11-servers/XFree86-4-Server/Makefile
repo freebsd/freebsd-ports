@@ -17,6 +17,7 @@ DISTFILES=	X400src-1.tgz X400src-2.tgz
 
 MAINTAINER=	jmz@FreeBSD.org
 
+WRKSRC=		${WRKDIR}/${DIST_SUBDIR}
 .if (${MACHINE} != "alpha")
 #NO_PACKAGE=	package available from XFree86
 .endif
