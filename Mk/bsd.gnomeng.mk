@@ -1,7 +1,3 @@
-.if defined(USE_GNOMENG)
-USE_REINPLACE=	yes
-.endif
-
 .if !defined(_POSTMKINCLUDED)
 
 # Please make sure all changes to this file are past through the maintainer.
@@ -24,7 +20,7 @@ _USE_GNOME_ALL=	gnomehack gnomeprefix gnomehier gnomeaudio esound libghttp \
 		glib12 gtk12 libxml gdkpixbuf imlib orbit gnomelibs \
 		gnomecanvas oaf gnomemimedata gconf gnomevfs gnomecc \
 		gnomeprint bonobo libgda gnomedb libglade gal glibwww gtkhtml \
-		gnomecore
+		gnomecore gnomeaudio
 
 gnomehack_PRE_PATCH=	${FIND} ${WRKSRC} -name "Makefile.in*" | ${XARGS} ${REINPLACE_CMD} -e \
 				's|[(]GNOME_datadir[)]/gnome/|(datadir)/|g ; \
@@ -39,9 +35,10 @@ gnomehack_PRE_PATCH=	${FIND} ${WRKSRC} -name "Makefile.in*" | ${XARGS} ${REINPLA
 gnomehier_RUN_DEPENDS=	${X11BASE}/share/gnome/.keep_me:${PORTSDIR}/misc/gnomehier
 gnomehier_DETECT=	${X11BASE}/share/gnome/.keep_me
 
+GNOME_HTML_DIR?=	${PREFIX}/share/doc
 gnomeprefix_CONFIGURE_ARGS=--localstatedir=${PREFIX}/share/gnome \
 			   --datadir=${PREFIX}/share/gnome \
-			   --with-html-dir=${PREFIX}/share/doc \
+			   --with-html-dir=${GNOME_HTML_DIR} \
 			   --disable-gtk-doc
 gnomeprefix_USE_GNOME_IMPL=gnomehier
 
@@ -128,10 +125,11 @@ oaf_PKGNAMESUFFIX=	-oaf
 oaf_DETECT=		${OAF_CONFIG}
 oaf_USE_GNOME_IMPL=	glib12 orbit libxml
 
+gnomemimedata_BUILD_DEPENDS=${X11BASE}/libdata/pkgconfig/gnome-mime-data-2.0.pc:${PORTSDIR}/misc/gnomemimedata
 gnomemimedata_RUN_DEPENDS=${X11BASE}/libdata/pkgconfig/gnome-mime-data-2.0.pc:${PORTSDIR}/misc/gnomemimedata
 gnomemimedata_PKGNAMESUFFIX=-gnomemimedata
 gnomemimedata_DETECT=	${X11BASE}/libdata/pkgconfig/gnome-mime-data-2.0.pc
-gnomemimedata_USE_GNOME_IMPL=gnomelibs
+gnomemimedata_USE_GNOME_IMPL=gnomehier
 
 GCONF_CONFIG?=		${X11BASE}/bin/gconf-config
 gconf_LIB_DEPENDS=	gconf-1.1:${PORTSDIR}/devel/gconf
@@ -147,7 +145,7 @@ gnomevfs_CONFIGURE_ENV=	GNOME_VFS_CONFIG="${GNOME_VFS_CONFIG}"
 gnomevfs_MAKE_ENV=	GNOME_VFS_CONFIG="${GNOME_VFS_CONFIG}"
 gnomevfs_PKGNAMESUFFIX=	-gnomevfs
 gnomevfs_DETECT=	${GNOME_VFS_CONFIG}
-gnomevfs_USE_GNOME_IMPL=gnomemimedata gconf
+gnomevfs_USE_GNOME_IMPL=gnomemimedata gconf gnomelibs
 
 gnomecc_LIB_DEPENDS=	capplet.5:${PORTSDIR}/sysutils/gnomecontrolcenter
 gnomecc_PKGNAMESUFFIX=	-gnomecc
@@ -157,12 +155,12 @@ gnomecc_USE_GNOME_IMPL=	gnomevfs
 gnomeprint_LIB_DEPENDS=	gnomeprint.16:${PORTSDIR}/print/gnomeprint
 gnomeprint_PKGNAMESUFFIX=-gnomeprint
 gnomeprint_DETECT=	${X11BASE}/etc/printConf.sh
-gnomeprint_USE_GNOME_IMPL=gnomecc
+gnomeprint_USE_GNOME_IMPL=gnomelibs gnomecanvas
 
 bonobo_LIB_DEPENDS=	bonobo.2:${PORTSDIR}/devel/bonobo
 bonobo_PKGNAMESUFFIX=	-bonobo
 bonobo_DETECT=		${X11BASE}/etc/bonoboConf.sh
-bonobo_USE_GNOME_IMPL=	gnomeprint
+bonobo_USE_GNOME_IMPL=	oaf gnomeprint
 
 GDA_CONFIG?=		${X11BASE}/bin/gda-config
 libgda_LIB_DEPENDS=	gda-client.0:${PORTSDIR}/databases/libgda
@@ -170,7 +168,7 @@ libgda_CONFIGURE_ENV=	GDA_CONFIG="${GDA_CONFIG}"
 libgda_MAKE_ENV=	GDA_CONFIG="${GDA_CONFIG}"
 libgda_PKGNAMESUFFIX=	-libgda
 libgda_DETECT=		${GDA_CONFIG}
-libgda_USE_GNOME_IMPL=	bonobo
+libgda_USE_GNOME_IMPL=	gconf bonobo
 
 GNOMEDB_CONFIG?=	${X11BASE}/bin/gnomedb-config
 gnomedb_LIB_DEPENDS=	gnomedb.0:${PORTSDIR}/databases/gnomedb
@@ -196,12 +194,12 @@ gal_USE_GNOME_IMPL=	libglade
 glibwww_LIB_DEPENDS=	glibwww.1:${PORTSDIR}/www/glibwww
 glibwww_PKGNAMESUFFIX=	-glibwww
 glibwww_DETECT=		${X11BASE}/etc/glibwwwConf.sh
-glibwww_USE_GNOME_IMPL=	gnomecc
+glibwww_USE_GNOME_IMPL=	gnomelibs
 
 gtkhtml_LIB_DEPENDS=	gtkhtml.21:${PORTSDIR}/www/gtkhtml
 gtkhtml_PKGNAMESUFFIX=	-gtkhtml
 gtkhtml_DETECT=		${X11BASE}/etc/gtkhtmlConf.sh
-gtkhtml_USE_GNOME_IMPL=	glibwww
+gtkhtml_USE_GNOME_IMPL=	glibwww gal ghttp gnomecc
 
 gnomecore_LIB_DEPENDS=	panel_applet.5:${PORTSDIR}/x11/gnomecore
 gnomecore_PKGNAMESUFFIX=-gnome
@@ -236,7 +234,7 @@ gnomecore_USE_GNOME_IMPL=gtkhtml gnomeaudio
 #
 # .include <bsd.port.pre.mk>
 #
-# .if ${HAVE_GNOME:S/foo//}!=${HAVE_GNOME:S/  / /g}
+# .if defined(HAVE_GNOME) && ${HAVE_GNOME:Mfoo}!=""
 # ... Do some things ...
 # USE_GNOME=		foo
 # .else
@@ -244,6 +242,7 @@ gnomecore_USE_GNOME_IMPL=gtkhtml gnomeaudio
 # .endif
 
 .if defined(WANT_GNOME) && !defined(WITHOUT_GNOME)
+_USE_GNOME_SAVED:=${USE_GNOME}
 . for component in ${_USE_GNOME_ALL}
 .  if exists(${${component}_DETECT}) || defined(WITH_GNOME)
 HAVE_GNOME+=	${component}
@@ -296,10 +295,10 @@ pre-patch:
 	@${GNOME_PRE_PATCH}
 .endif
 
-.if defined(WANT_GNOME) && !defined(USE_GNOME)
+.if defined(WANT_GNOME) && ${_USE_GNOME_SAVED}==${USE_GNOME}
 PLIST_SUB+=	GNOME:="@comment " NOGNOME:=""
 .endif
-.if defined(WANT_GNOME) && defined(USE_GNOME)
+.if defined(WANT_GNOME) && ${_USE_GNOME_SAVED}!=${USE_GNOME}
 PLIST_SUB+=	GNOME:="" NOGNOME:="@comment "
 .endif
 
