@@ -1,7 +1,7 @@
-*** Makefile.orig	Tue Mar 26 03:22:25 1996
---- Makefile	Sat Jun 21 02:40:03 1997
+*** Makefile.orig	Fri Mar 21 12:27:21 1997
+--- Makefile	Mon Sep 14 15:54:25 1998
 ***************
-*** 46,52 ****
+*** 47,53 ****
   #REAL_DAEMON_DIR=/usr/sbin
   #
   # BSD 4.4
@@ -9,7 +9,7 @@
   #
   # HP-UX SCO Unicos
   #REAL_DAEMON_DIR=/etc
---- 46,52 ----
+--- 47,53 ----
   #REAL_DAEMON_DIR=/usr/sbin
   #
   # BSD 4.4
@@ -18,7 +18,7 @@
   # HP-UX SCO Unicos
   #REAL_DAEMON_DIR=/etc
 ***************
-*** 137,143 ****
+*** 138,144 ****
   
   freebsd:
   	@make REAL_DAEMON_DIR=$(REAL_DAEMON_DIR) STYLE=$(STYLE) \
@@ -26,7 +26,7 @@
   	EXTRA_CFLAGS=-DSYS_ERRLIST_DEFINED VSYSLOG= all
   
   linux:
---- 137,143 ----
+--- 138,144 ----
   
   freebsd:
   	@make REAL_DAEMON_DIR=$(REAL_DAEMON_DIR) STYLE=$(STYLE) \
@@ -35,7 +35,7 @@
   
   linux:
 ***************
-*** 361,367 ****
+*** 391,397 ****
   # the ones provided with this source distribution. The environ.c module
   # implements setenv(), getenv(), and putenv().
   
@@ -43,7 +43,7 @@
   #AUX_OBJ= environ.o
   #AUX_OBJ= environ.o strcasecmp.o
   
---- 361,367 ----
+--- 391,397 ----
   # the ones provided with this source distribution. The environ.c module
   # implements setenv(), getenv(), and putenv().
   
@@ -52,7 +52,7 @@
   #AUX_OBJ= environ.o strcasecmp.o
   
 ***************
-*** 424,430 ****
+*** 454,460 ****
   # host name aliases. Compile with -DSOLARIS_24_GETHOSTBYNAME_BUG to work
   # around this. The workaround does no harm on other Solaris versions.
   
@@ -60,7 +60,7 @@
   #BUGS = -DGETPEERNAME_BUG -DBROKEN_FGETS -DINET_ADDR_BUG
   #BUGS = -DGETPEERNAME_BUG -DBROKEN_FGETS -DSOLARIS_24_GETHOSTBYNAME_BUG
   
---- 424,430 ----
+--- 454,460 ----
   # host name aliases. Compile with -DSOLARIS_24_GETHOSTBYNAME_BUG to work
   # around this. The workaround does no harm on other Solaris versions.
   
@@ -69,7 +69,7 @@
   #BUGS = -DGETPEERNAME_BUG -DBROKEN_FGETS -DSOLARIS_24_GETHOSTBYNAME_BUG
   
 ***************
-*** 442,448 ****
+*** 472,478 ****
   # If your system supports vsyslog(), comment out the following definition.
   # If in doubt leave it in, it won't harm.
   
@@ -77,7 +77,7 @@
   
   # End of the system dependencies.
   #################################
---- 442,448 ----
+--- 472,478 ----
   # If your system supports vsyslog(), comment out the following definition.
   # If in doubt leave it in, it won't harm.
   
@@ -86,7 +86,7 @@
   # End of the system dependencies.
   #################################
 ***************
-*** 461,467 ****
+*** 491,497 ****
   # Uncomment the next definition to turn on the language extensions
   # (examples: allow, deny, banners, twist and spawn).
   # 
@@ -94,7 +94,7 @@
   
   ################################################################
   # Optional: Changing the default disposition of logfile records
---- 461,467 ----
+--- 491,497 ----
   # Uncomment the next definition to turn on the language extensions
   # (examples: allow, deny, banners, twist and spawn).
   # 
@@ -103,7 +103,7 @@
   ################################################################
   # Optional: Changing the default disposition of logfile records
 ***************
-*** 484,490 ****
+*** 514,520 ****
   #
   # The LOG_XXX names below are taken from the /usr/include/syslog.h file.
   
@@ -111,7 +111,7 @@
   
   # The syslog priority at which successful connections are logged.
   
---- 484,491 ----
+--- 514,521 ----
   #
   # The LOG_XXX names below are taken from the /usr/include/syslog.h file.
   
@@ -121,7 +121,7 @@
   # The syslog priority at which successful connections are logged.
   
 ***************
-*** 559,565 ****
+*** 590,596 ****
   # look for access control information. Watch out for the quotes and
   # backslashes when you make changes.
   
@@ -129,7 +129,7 @@
   
   ####################################################
   # Optional: dealing with host name/address conflicts
---- 560,566 ----
+--- 591,597 ----
   # look for access control information. Watch out for the quotes and
   # backslashes when you make changes.
   
@@ -138,7 +138,7 @@
   ####################################################
   # Optional: dealing with host name/address conflicts
 ***************
-*** 579,585 ****
+*** 610,616 ****
   # Paranoid mode implies hostname lookup. In order to disable hostname
   # lookups altogether, see the next section.
   
@@ -146,7 +146,7 @@
   
   ########################################
   # Optional: turning off hostname lookups
---- 580,586 ----
+--- 611,617 ----
   # Paranoid mode implies hostname lookup. In order to disable hostname
   # lookups altogether, see the next section.
   
@@ -155,7 +155,7 @@
   ########################################
   # Optional: turning off hostname lookups
 ***************
-*** 625,633 ****
+*** 657,665 ****
   # Protection against weird shells or weird make programs.
   
   SHELL	= /bin/sh
@@ -165,7 +165,7 @@
   	$(BUGS) $(SYSTYPE) $(AUTH) $(UMASK) \
   	-DREAL_DAEMON_DIR=\"$(REAL_DAEMON_DIR)\" $(STYLE) $(KILL_OPT) \
   	-DSEVERITY=$(SEVERITY) -DRFC931_TIMEOUT=$(RFC931_TIMEOUT) \
---- 626,639 ----
+--- 658,671 ----
   # Protection against weird shells or weird make programs.
   
   SHELL	= /bin/sh
@@ -181,7 +181,7 @@
   	-DREAL_DAEMON_DIR=\"$(REAL_DAEMON_DIR)\" $(STYLE) $(KILL_OPT) \
   	-DSEVERITY=$(SEVERITY) -DRFC931_TIMEOUT=$(RFC931_TIMEOUT) \
 ***************
-*** 652,660 ****
+*** 684,692 ****
   	refuse.c tcpdchk.8 setenv.c inetcf.c inetcf.h scaffold.c \
   	scaffold.h tcpdmatch.8 README.NIS
   
@@ -191,12 +191,12 @@
   
   # Invalidate all object files when the compiler options (CFLAGS) have changed.
   
---- 658,687 ----
+--- 690,720 ----
   	refuse.c tcpdchk.8 setenv.c inetcf.c inetcf.h scaffold.c \
   	scaffold.h tcpdmatch.8 README.NIS
   
 ! LIB     = libwrap.a
-! SLIB    = libwrap.so.7.6
+! SLIB    = libwrap.so.7
 ! 
 ! all other: config-check $(LIB) $(SLIB) tcpd tcpdmatch try-from safe_finger tcpdchk
 ! 
@@ -205,6 +205,7 @@
 ! 		tcpd.h ${PREFIX}/include
 ! 	${INSTALL} -o ${BINOWN} -g ${BINGRP} -c -m 644 \
 ! 		$(LIB) $(SLIB) ${PREFIX}/lib
+! 	(cd ${PREFIX}/lib;ln -sf $(SLIB) `echo $(SLIB) | sed 's/\.so.*$$/.so/'`)
 ! 	ranlib ${PREFIX}/lib/$(LIB)
 ! 	${INSTALL} -o ${BINOWN} -g ${BINGRP} -cs -m ${BINMODE} \
 ! 		tcpd ${PREFIX}/libexec
@@ -223,7 +224,7 @@
   # Invalidate all object files when the compiler options (CFLAGS) have changed.
   
 ***************
-*** 671,697 ****
+*** 703,729 ****
   	$(AR) $(ARFLAGS) $(LIB) $(LIB_OBJ)
   	-$(RANLIB) $(LIB)
   
@@ -251,13 +252,14 @@
   
   shar:	$(KIT)
   	@shar $(KIT)
---- 698,728 ----
+--- 731,762 ----
   	$(AR) $(ARFLAGS) $(LIB) $(LIB_OBJ)
   	-$(RANLIB) $(LIB)
   
 ! $(SLIB): $(LIB_OBJ:S/o$/so/g) shdata.so
 ! 	rm -f $(SLIB)
-! 	ld -Bshareable -o $(SLIB) $(LIB_OBJ:S/o$/so/g) shdata.so
+! 	$(CC) -o $(SLIB) -shared -Wl,-rpath,${PREFIX}/lib -Wl,-soname,$(SLIB) $(LIB_OBJ:S/o$/so/g) shdata.so
+! 	ln -sf $(SLIB) `echo $(SLIB) | sed 's/\.so.*$$/.so/'`
 ! 
 ! tcpd:   tcpd.o $(SLIB)
 ! 	$(CC) $(CFLAGS) -o $@ tcpd.o -L. -lwrap $(LIBS)
@@ -284,7 +286,7 @@
   shar:	$(KIT)
   	@shar $(KIT)
 ***************
-*** 707,713 ****
+*** 739,745 ****
   
   clean:
   	rm -f tcpd miscd safe_finger tcpdmatch tcpdchk try-from *.[oa] core \
@@ -292,7 +294,7 @@
   
   tidy:	clean
   	chmod -R a+r .
---- 738,744 ----
+--- 772,778 ----
   
   clean:
   	rm -f tcpd miscd safe_finger tcpdmatch tcpdchk try-from *.[oa] core \
