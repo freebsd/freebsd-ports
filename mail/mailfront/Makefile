@@ -6,28 +6,26 @@
 #
 
 PORTNAME=	mailfront
-PORTVERSION=	0.85
+PORTVERSION=	0.86
 CATEGORIES=	mail
 MASTER_SITES=	http://untroubled.org/mailfront/
 
 MAINTAINER=	sergei@kolobov.com
 COMMENT=	Mail server network protocol front-ends
 
-BUILD_DEPENDS=	${LOCALBASE}/include/cvm/module.h:${PORTSDIR}/devel/bglibs
+BUILD_DEPENDS=	${LOCALBASE}/lib/libbg-unix.a:${PORTSDIR}/devel/bglibs
 
-BGLIBS_ROOT?=	${LOCALBASE}
 QMAIL_ROOT?=	/var/qmail
 
-CFLAGS+=	-I${BGLIBS_ROOT}/include
-LDFLAGS+=	-L${BGLIBS_ROOT}/lib
-
-DOCS=		ANNOUNCEMENT NEWS README TODO *.html
+DOCS=		NEWS README TODO *.html
 
 pre-build:
-	${ECHO_CMD} ${PREFIX}/bin    > ${WRKSRC}/conf-bin
-	${ECHO_CMD} ${CC} ${CFLAGS}  > ${WRKSRC}/conf-cc
-	${ECHO_CMD} ${CC} ${LDFLAGS} > ${WRKSRC}/conf-ld
-	${ECHO_CMD} ${QMAIL_ROOT}    > ${WRKSRC}/conf-qmail
+	${ECHO_CMD} "${LOCALBASE}/include/bglibs" > ${WRKSRC}/conf-bgincs
+	${ECHO_CMD} "${LOCALBASE}/lib"		> ${WRKSRC}/conf-bglibs
+	${ECHO_CMD} "${PREFIX}/bin"		> ${WRKSRC}/conf-bin
+	${ECHO_CMD} "${CC} ${CFLAGS}"		> ${WRKSRC}/conf-cc
+	${ECHO_CMD} "${CC} ${LDFLAGS}"		> ${WRKSRC}/conf-ld
+	${ECHO_CMD} "${QMAIL_ROOT}"		> ${WRKSRC}/conf-qmail
 
 do-install:
 	cd ${WRKSRC} && ./installer
