@@ -16,8 +16,10 @@ DISTFILES=	exim-3.22.tar.gz exim-texinfo-3.20.tar.gz
 
 MAINTAINER=	sheldonh@FreeBSD.org
 
-# If WITHOUT_X11 is not defined, the eximon monitor, which requires X, will
-# be built. Comment it out unless you have or want XFree86 installed!
+# If WITHOUT_X11 is not defined, the eximon monitor, which requires X,
+# will be built.  If you do not have XFree86 installed and you do not
+# want to install it, define WITHOUT_X11 during the build.  This will
+# disable eximon, the Exim monitor.
 .if !defined(WITHOUT_X11)
 USE_XLIB=	yes
 .endif
