@@ -5,12 +5,12 @@
 # $FreeBSD$
 #
 
-PORTNAME=	py-wxPython
-PORTVERSION=	2.3.1
+PORTNAME=	wxPython
+PORTVERSION=	2.3.2.1
 CATEGORIES=	x11-toolkits python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	wxpython
-DISTNAME=	wxPython-${PORTVERSION}
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sobomax@FreeBSD.ORG
 
@@ -43,6 +43,12 @@ do-install:
 	@${MKDIR} ${DEMO_DIR}
 .for glob in *.py *.pyc
 	@${INSTALL_DATA} ${WRKSRC}/demo/${glob} ${DEMO_DIR}
+.endfor
+.for dir in bitmaps bmp_source data
+	@${MKDIR} ${DEMO_DIR}/${dir}
+.for glob in *
+	@${INSTALL_DATA} ${WRKSRC}/demo/${dir}/${glob} ${DEMO_DIR}/${dir}
+.endfor
 .endfor
 
 .include <bsd.port.mk>

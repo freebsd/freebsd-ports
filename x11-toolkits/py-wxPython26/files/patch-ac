@@ -1,9 +1,6 @@
-
-$FreeBSD$
-
---- setup.py.orig	Tue May 22 19:02:54 2001
-+++ setup.py	Mon May 28 19:58:15 2001
-@@ -86,6 +86,16 @@
+--- setup.py.orig	Thu Dec 20 18:33:42 2001
++++ setup.py	Sun Jan 20 11:00:24 2002
+@@ -111,6 +111,16 @@
  
  
  #----------------------------------------------------------------------
@@ -20,13 +17,13 @@ $FreeBSD$
  # Check for build flags on the command line
  #----------------------------------------------------------------------
  
-@@ -229,9 +239,10 @@
+@@ -277,9 +287,10 @@
                 ]
      libdirs = []
      libs = []
 +    libs.extend(sys_libs)
  
-     cflags = os.popen(WX_CONFIG + ' --cflags', 'r').read()[:-1] + ' ' + \
+     cflags = os.popen(WX_CONFIG + ' --cxxflags', 'r').read()[:-1] + ' ' + \
 -             os.popen('gtk-config --cflags', 'r').read()[:-1]
 +             os.popen(gtk_config + ' --cflags', 'r').read()[:-1]
      cflags = string.split(cflags)
