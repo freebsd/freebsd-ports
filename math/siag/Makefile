@@ -3,7 +3,7 @@
 # Date created:		27 Jan 1998
 # Whom:			mi@aldan.algebra.com
 #
-# $Id: Makefile,v 1.16 1999/06/25 21:30:04 cpiazza Exp $
+# $Id: Makefile,v 1.17 1999/07/04 10:43:39 obrien Exp $
 #
 
 DISTNAME=	siag-3.1.18
@@ -61,7 +61,7 @@ post-install:
 	@test -e ${PREFIX}/lib/X11/app-defaults/Siag && ${ECHO} \
 		"It seems, you have old app-defaults file(s) from Siag.\
 		 Consider removing it(them) if new siag fails to come up" |\
-		fmt || true
+		fmt || ${TRUE}
 
 post-patch:
 	# Fixing makefiles to put docs in ${LOCALBASE}/share/doc/siag

@@ -3,7 +3,7 @@
 # Date created:		25 November 1998
 # Whom:			Sheldon Hearn <axl@iafrica.com>
 #
-# $Id: Makefile,v 1.1.1.1 1998/12/01 02:15:41 jkoshy Exp $
+# $Id: Makefile,v 1.2 1999/06/21 11:07:15 sheldonh Exp $
 #
 
 DISTNAME=	marc-search.4.3
@@ -33,7 +33,7 @@ do-configure:
 .if !defined(PUB_HTML) || !defined(DOCROOT) || !defined(SCRIPTDIR)
 	@echo "You must tailor the port Makefile and set PUB_HTML, DOCROOT,"
 	@echo "and SCRIPTDIR to match your site configuration."
-	@false
+	@${FALSE}
 .else
 	${CP} ${FILESDIR}/marc-search.conf ${WRKSRC}/
 	for i in marc-search.cgi marc-search.conf ; do \

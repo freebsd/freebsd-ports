@@ -3,7 +3,7 @@
 # Date created:         Thur Sept 25, 1996
 # Whom:                 David O'Brien (obrien@cs.ucdavis.edu)
 #
-# $Id: Makefile,v 1.8 1999/03/30 01:55:28 obrien Exp $
+# $Id: Makefile,v 1.9 1999/08/22 18:59:58 mharo Exp $
 #
 
 DISTNAME=	nlxb318e
@@ -26,7 +26,7 @@ pre-fetch:
 	@${ECHO} "This software has /usr/local hardcoded into it."
 	@${ECHO} "Sorry, but with PREFIX = ${PREFIX}, vscan will not work correctly."
 	@${ECHO} ""
-	@false
+	@${FALSE}
 .endif
 
 post-extract:

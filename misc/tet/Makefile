@@ -3,7 +3,7 @@
 # Date created:		02 Oct 1998
 # Whom:			jkoshy
 #
-# $Id: Makefile,v 1.6 1999/02/11 09:05:38 jkoshy Exp $
+# $Id: Makefile,v 1.7 1999/08/22 18:59:15 mharo Exp $
 #
 
 DISTNAME=		tet3.2e-unsup
@@ -32,9 +32,9 @@ pre-extract:
 	@echo "You must set it to the directory where you would like "
 	@echo "this port to reside before attempting extraction."
 	@echo
-	@false
+	@${FALSE}
 .else
-	@true
+	@${TRUE}
 .endif
 
 # remove the TET_ROOT directory if it exists

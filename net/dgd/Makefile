@@ -3,7 +3,7 @@
 # Date created:		23 August 1994
 # Whom:			adam
 #
-# $Id: Makefile,v 1.77 1998/07/20 15:01:52 adam Exp $
+# $Id: Makefile,v 1.78 1999/08/22 18:59:22 mharo Exp $
 #
 
 DISTNAME=	dgd-1.1p6
@@ -44,7 +44,7 @@ post-build:
 
 do-install:
 	@-mv ${PREFIX}/dgd/bin/driver ${PREFIX}/dgd/bin/driver.old
-	@tar -C ${WRKDIR} -cf - `grep '^dgd/' ${PKGDIR}/PLIST` \
+	@tar -C ${WRKDIR} -cf - `${GREP} '^dgd/' ${PKGDIR}/PLIST` \
 		| tar -C ${PREFIX} -xpf -
 
 .include <bsd.port.mk>

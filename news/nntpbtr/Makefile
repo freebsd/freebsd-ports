@@ -3,7 +3,7 @@
 # Date created:         1 July 1996
 # Whom:                 dk
 #
-# $Id: Makefile,v 1.4 1997/08/10 19:22:26 fenner Exp $
+# $Id: Makefile,v 1.5 1997/08/10 22:31:23 fenner Exp $
 #
 
 DISTNAME=       nntpbtr-1.7
@@ -20,7 +20,7 @@ post-extract:
 	@${RM} -rf ${WRKSRC}/RCS
 
 pre-build:
-	cd ${FILESDIR} ; pax -rw -l -u dbz ${WRKDIR} || true
+	cd ${FILESDIR} ; pax -rw -l -u dbz ${WRKDIR} || ${TRUE}
 	cd ${WRKDIR}/dbz ; ${CC} ${CFLAGS} -c -I. dbz.c
 
 .include <bsd.port.mk>

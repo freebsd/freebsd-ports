@@ -3,7 +3,7 @@
 # Date created:		18 August 1997
 # Whom:			Jonathan Hanna
 #
-# $Id: Makefile,v 1.6 1999/08/22 18:58:29 mharo Exp $
+# $Id: Makefile,v 1.7 1999/08/22 23:32:40 mharo Exp $
 #
 
 DISTNAME=	edict-19990714
@@ -77,7 +77,7 @@ do-install:
 			instfile=`${BASENAME} $$file .gz` ; \
 			if ${GZIP_CMD} -cd ${_DISTDIR}/$$file > ${DATADIR}/$$instfile ; \
 			then \
-				true ; \
+				${TRUE} ; \
 			else \
 				exit 1; \
 			fi \
@@ -86,7 +86,7 @@ do-install:
 			instfile=`${BASENAME} $$file .Z` ; \
 			if ${GZIP_CMD} -cd ${_DISTDIR}/$$file > ${DATADIR}/$$instfile ; \
 			then \
-				true ; \
+				${TRUE} ; \
 			else \
 				exit 1; \
 			fi \
@@ -95,7 +95,7 @@ do-install:
 			instfile=`${BASENAME} $$file .zip` ; \
 			if unzip -o ${_DISTDIR}/$$file $$instfile -d ${DATADIR} ; \
 			then \
-				true ; \
+				${TRUE} ; \
 			else \
 				exit 1; \
 			fi \

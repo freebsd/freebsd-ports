@@ -3,7 +3,7 @@
 # Date created:         22 July 1999
 # Whom:                 mi@aldan.algebra.com
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/07/30 17:04:02 ache Exp $
 
 DISTNAME=	koi8rPS-1.0
 CATEGORIES=	russian print
@@ -70,7 +70,7 @@ do-install:
 	###	${PREFIX}/share/ghostscript/5.50/Fontmap
 	### for GhostScript to use cyrillic fonts.
 	#################################################################
-	@test -t 0 && test -t 1 && ${ECHO} -n "Press enter" && read junk || true
+	@test -t 0 && test -t 1 && ${ECHO} -n "Press enter" && read junk || ${TRUE}
 .else
 	@if ${GREP} -q ArialCyrMT-BoldItalic "${FONTMAP}" ; then \
 		${ECHO} Apparently, Fontmap already lists this fonts. Ok. \

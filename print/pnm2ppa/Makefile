@@ -3,7 +3,7 @@
 # Date created:		18 November 1998
 # Whom:			smace@freebsd.org
 #
-# $Id: Makefile,v 1.3 1998/11/23 08:54:39 asami Exp $
+# $Id: Makefile,v 1.4 1999/05/10 02:39:19 smace Exp $
 #
 
 DISTNAME=	ppa-0.8.6
@@ -29,7 +29,7 @@ pre-configure:
 	@${ECHO} "720 -- HP720 family (HP 722C, etc.)"
 	@${ECHO} "820 -- HP820 family"
 	@${ECHO} "1000 -- HP820 family"
-	@false
+	@${FALSE}
 .endif
 .if !defined(PAPERSIZE)
 	@${ECHO}

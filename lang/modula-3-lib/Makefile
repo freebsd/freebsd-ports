@@ -3,7 +3,7 @@
 # Date created:		28 Oct 1996
 # Whom:			John Polstra <jdp@polstra.com>
 #
-# $Id: Makefile,v 1.15 1999/08/22 18:58:51 mharo Exp $
+# $Id: Makefile,v 1.16 1999/08/22 23:32:52 mharo Exp $
 #
 
 DISTNAME=	modula-3-lib-3.6
@@ -136,10 +136,10 @@ do-install:
 	@echo "Installing shared libraries"
 	@cd ${temp_prefix}; \
 	    umask 022; \
-	    grep '^lib/m3/' ${PLIST}.real | \
+	    ${GREP} '^lib/m3/' ${PLIST}.real | \
 		cpio -dump -R ${BINOWN}.${BINGRP} ${PREFIX}
 	@cd ${PREFIX}; \
-	    grep '^lib/m3/' ${PLIST}.real | xargs ${CHMOD} go=u-w; \
+	    ${GREP} '^lib/m3/' ${PLIST}.real | xargs ${CHMOD} go=u-w; \
 	    find -X lib/m3 -type d | xargs ${CHOWN} ${BINOWN}.${BINGRP}; \
 	    find -X lib/m3 -type d | xargs ${CHMOD} 755
 	@echo "Installing copyright notice"

@@ -3,7 +3,7 @@
 # Date created:         		26 November 1997
 # Whom:                 		Archie L. Cobbs <archie@whistle.com>
 #
-# $Id: Makefile,v 1.8 1999/07/22 18:37:04 archie Exp $
+# $Id: Makefile,v 1.9 1999/07/31 21:48:34 archie Exp $
 
 DISTNAME=		skip-1.0
 CATEGORIES=		security
@@ -50,7 +50,7 @@ MAN4=			skipd.conf.4 raw_keys.4
 post-patch:
 	@find ${WRKSRC} -name '*.orig' -print | xargs rm
 	@cd ${WRKSRC}; \
-	FILES=`find . -type f -print | xargs grep -l @@PREFIX@@`; \
+	FILES=`find . -type f -print | xargs ${GREP} -l @@PREFIX@@`; \
 	for FILE in $$FILES; do \
 	  sed 's!@@PREFIX@@!${PREFIX}!g' < $$FILE > $$FILE.new ; \
 	  mv $$FILE.new $$FILE; \
