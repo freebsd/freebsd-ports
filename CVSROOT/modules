@@ -3631,6 +3631,7 @@ libafterimage	ports/graphics/libafterimage
 libalias	src/lib/libalias
 libao		ports/audio/libao
 libarc		ports/archivers/libarc
+libargparse	ports/devel/libargparse
 libart		ports/graphics/libart
 libast		ports/devel/libast
 libatm		src/lib/libatm
