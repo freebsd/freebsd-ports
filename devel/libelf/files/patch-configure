@@ -1,5 +1,8 @@
---- configure.old	Thu Feb 20 16:26:13 2003
-+++ configure	Thu Feb 20 16:28:04 2003
+
+$FreeBSD$
+
+--- configure.orig	Wed May  7 21:28:06 2003
++++ configure	Sat Jul 12 13:54:26 2003
 @@ -1123,7 +1123,7 @@
  
  fi
@@ -9,21 +12,28 @@
  do
  ac_safe=`echo "$ac_hdr" | sed 'y%./+-%__p_%'`
  echo $ac_n "checking for $ac_hdr""... $ac_c" 1>&6
-@@ -1220,7 +1220,7 @@
- # Check whether --enable-compat or --disable-compat was given.
- if test "${enable_compat+set}" = set; then
-   enableval="$enable_compat"
--  libelf_enable_compat="$enableval"
-+  DO_COMPAT="$enableval"
- else
-   
-   if test "$ac_cv_header_libelf_h$ac_cv_header_nlist_h$ac_cv_header_gelf_h" = yesyesyes
 @@ -3039,7 +3039,7 @@
  fi
  
      case "$host" in
--      *-linux*)
-+      *-linux*|*-freebsd*)
+-      *-linux*|*-gnu*)
++      *-linux*|*-gnu*|*-freebsd*)
  	if test "$GCC" = yes; then
  	  
    
+@@ -3096,13 +3096,12 @@
+ 	    then
+ 	      SHLIB='$(PACKAGE)-$(VERSION).so'
+ 	    else
+-	      SHLIB='$(PACKAGE).so.$(VERSION)'
++	      SHLIB='$(PACKAGE).so.$(MAJOR)'
+ 	    fi
+ 	    SHLINK='$(PACKAGE).so'
+ 	    SONAME='$(PACKAGE).so.$(MAJOR)'
+-	    LINK_SHLIB='$(CC) -shared -Wl,-soname,$(SONAME)'
++	    LINK_SHLIB='$(CC) -shared -Wl,-soname,$(SONAME) $(LDFLAGS)'
+ 	    INSTALL_SHLIB='$(INSTALL_PROGRAM)'
+-	    DEPSHLIBS='-lc'
+ 	  else
+ 	    echo "configure: warning: shared libraries not supported for $host" 1>&2
+ 	    mr_enable_shared=no
