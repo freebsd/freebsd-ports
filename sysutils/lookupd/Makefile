@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	lookupd
-PORTVERSION=	0.3.a
+PORTVERSION=	0.3.b
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.rsu.ru/~bushman/lookupd/downloads/
 
