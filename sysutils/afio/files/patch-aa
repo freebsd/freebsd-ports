@@ -1,38 +1,48 @@
-Index: Makefile
-@@ -26,7 +26,7 @@
+--- Makefile.orig	Tue Nov  7 13:16:12 1995
++++ Makefile	Mon Jan  6 00:52:41 1997
+@@ -26,7 +26,8 @@
  c	= -DHAVEMEMCMP
  ##  Define DEFFMTCMD to being how to format the media you use the most
  ##		This is the DEFault FoRMat CoManD. 
--d	= -DDEFFMTCMD='"/bin/fdformat /dev/fd0H1440"'
+-d	= -DDEFFMTCMD='"fdformat /dev/fd0H1440"'
++#d	= -DDEFFMTCMD='"fdformat /dev/fd0H1440"'
 +d	= -DDEFFMTCMD='"/usr/sbin/fdformat -f 1440 /dev/fd0.1440"'
  ##  Define LONGZFILE if you want .Z to be tagged on the end of a 14 char
  ##	file name (or longer for BSD) in the archive when the file is compressed
  #e	= -DLONGZFILE
-@@ -54,24 +54,29 @@
+@@ -43,6 +44,11 @@
+ 
+ g	= -DHAVEFNMATCH
+ 
++## Define HAVE_PARAM_H if your system has sys/param.h.  This is used for BSD
++#  detection.
++
++h	= -DHAVE_PARAM_H
++
+ # fnmatch() is in the gnu C library, so it is directly available on
+ # Linux.  If your system (e.g. SCO) does not have the gnu C library,
+ # unpack the archive gnu.fnmatch.tar.gz and uncomment the following
+@@ -54,15 +60,16 @@
  # Please read the COPYING.LIB file in this archive if you plan to
  # redistribute afio executables with this library linked in.
  
--CFLAGS = -s -O2 -fomit-frame-pointer
-+CPPFLAGS = $1 $2 $3 $4 $5 $6 $7 $8 $9 $a $b $c $d $e $f $g $I
-+
-+CFLAGS = -O2 -fomit-frame-pointer -fno-strength-reduce $(CPPFLAGS)
- #CFLAGS =  -fomit-frame-pointer
- #CFLAGS = -Wall  -fomit-frame-pointer
+-CFLAGS1 = -s -O2 -fomit-frame-pointer
++#CFLAGS1 = -s -O2 -fomit-frame-pointer
+ #CFLAGS1 =  -fomit-frame-pointer
+ #CFLAGS1 = -Wall  -fomit-frame-pointer
++CFLAGS1 = -O2 -fomit-frame-pointer -fno-strength-reduce
  
  CC=gcc
  
  
--CPPFLAGS = $1 $2 $3 $4 $5 $6 $7 $8 $9 $a $b $c $d $e $f $g $I
--LDFLAGS = -s -N 
-+#LDFLAGS = -s -N 
+-CFLAGS = ${CFLAGS1} $1 $2 $3 $4 $5 $6 $7 $8 $9 $a $b $c $d $e $f $g $I
+-LDFLAGS = -s
++CFLAGS = ${CFLAGS1} $1 $2 $3 $4 $5 $6 $7 $8 $9 $a $b $c $d $e $f $g $h $I
 +#LDFLAGS = -s
-+
-+all : afio
  
  afio : afio.o compfile.o exten.o match.o $M
-+	$(CC) $(LDFLAGS) $? -o $@
- 
- clean:
+ 	${CC} ${LDFLAGS} afio.o compfile.o exten.o match.o $M -o afio
+@@ -71,8 +78,8 @@
  	rm -f *.o afio
  
  install: afio
@@ -42,40 +52,4 @@ Index: Makefile
 +	install -c -o bin -g bin afio.1 ${PREFIX}/man/man1
  
  tarfile: clean
- 	{ cd .. ; tar zcvf /root/src/tbackup/afio.2.4.1.tgz afio.2.4.1 }
-Index: afio.h
-@@ -194,9 +194,9 @@
-   char sb_link[PATHSIZE];
- } Stat;
- 
--#define	STAT(name, asb)		stat(name, &(asb)->sb_stat)
--#define	FSTAT(fd, asb)		fstat(fd, &(asb)->sb_stat)
--#define	LSTAT(name, asb)	lstat(name, &(asb)->sb_stat)
-+#define	STAT(name, asb)		(stat(name, (((asb)->sb_stat.st_rdev = 0), &(asb)->sb_stat)) ? -1 : ((((asb)->sb_stat.st_mode & S_IFMT) == S_IFREG) ? ((asb)->sb_stat.st_rdev = 0) : 0))
-+#define	FSTAT(fd, asb)		(fstat(fd, (((asb)->sb_stat.st_rdev = 0), &(asb)->sb_stat)) ? -1 : ((((asb)->sb_stat.st_mode & S_IFMT) == S_IFREG) ? ((asb)->sb_stat.st_rdev = 0) : 0))
-+#define	LSTAT(name, asb)	(lstat(name, (((asb)->sb_stat.st_rdev = 0), &(asb)->sb_stat)) ? -1 : ((((asb)->sb_stat.st_mode & S_IFMT) == S_IFREG) ? ((asb)->sb_stat.st_rdev = 0) : 0))
- #define	sb_dev		sb_stat.st_dev
- #define	sb_ino		sb_stat.st_ino
- #define	sb_mode		sb_stat.st_mode
-@@ -215,9 +215,9 @@
-  * File status without symbolic links.
-  */
- typedef struct stat Stat;
--#define	STAT(name, asb)		stat(name, asb)
--#define	FSTAT(fd, asb)		fstat(fd, asb)
--#define	LSTAT(name, asb)	stat(name, asb)
-+#define	STAT(name, asb)		(stat(name, (((asb)->st_rdev = 0), asb)) ? -1 : ((((asb)->sb_stat.st_mode & S_IFMT) == S_IFREG) ? ((asb)->sb_stat.st_rdev = 0) : 0))
-+#define	FSTAT(fd, asb)		(fstat(fd, (((asb)->st_rdev = 0), asb)) ? -1 : ((((asb)->sb_stat.st_mode & S_IFMT) == S_IFREG) ? ((asb)->sb_stat.st_rdev = 0) : 0))
-+#define	LSTAT(name, asb)	(stat(name, (((asb)->st_rdev = 0), asb)) ? -1 : ((((asb)->sb_stat.st_mode & S_IFMT) == S_IFREG) ? ((asb)->sb_stat.st_rdev = 0) : 0))
- #define	sb_dev		st_dev
- #define	sb_ino		st_ino
- #define	sb_mode		st_mode
-@@ -371,7 +371,7 @@
- #ifndef MKDIR
- int rmdir ();
- #endif
--#ifndef linux
-+#if !defined (linux) && !defined(__FreeBSD__)
- VOIDFN (*signal ())();
- #endif
-      int fswrite ();
+ 	{ cd .. ; tar zcvf /root/src/tbackup/afio.2.4.2.tgz afio.2.4.2 }
