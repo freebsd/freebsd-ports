@@ -1,0 +1,16 @@
+--- Makefile-ooo	Fri Dec  5 13:20:58 2003
++++ Makefile	Thu Aug 12 00:12:06 2004
+@@ -52,11 +52,11 @@
+ 
+ ## FreeBSD builds
+ freebsd.mesa:
+-	./configure FREEBSD MESA FLTK TK TCL IMD VRPN PYTHON PTHREADS LIBTACHYON NUMPY SILENT
++	./configure FREEBSD MESA FLTK TK TCL IMD PYTHON PTHREADS NUMPY SILENT
+ 
+ # FreeBSD doesn't have hardware good accelleration support
+ freebsd.opengl:
+-	./configure FREEBSD OPENGL FLTK TK IMD VRPN SILENT SPACEBALL TCL PTHREADS ACTC LIBTACHYON PYTHON NUMPY
++	./configure FREEBSD OPENGL FLTK TK IMD SILENT TCL PTHREADS PYTHON NUMPY
+ 
+ 
+ 

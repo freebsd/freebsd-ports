@@ -43,6 +43,7 @@
     SUBDIR += ruby-dcl-gtk
     SUBDIR += ruby-gphys
     SUBDIR += vis5d+
+    SUBDIR += vmd
     SUBDIR += xloops-ginac
     SUBDIR += xmakemol
 
