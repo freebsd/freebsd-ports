@@ -1,4 +1,7 @@
 include/mysql/mysql++
+include/mysql/defs
+include/mysql/define_short
+include/mysql/undef_short
 include/mysql/bad_query.hh
 include/mysql/coldata1.hh
 include/mysql/coldata2.hh

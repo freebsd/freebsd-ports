@@ -7,13 +7,14 @@
 
 PORTNAME=	mysql++
 PORTVERSION=	1.7
+PORTREVISION=	1
 CATEGORIES=	databases devel
 MASTER_SITES=	http://gd.tuwien.ac.at/db/mysql/mysql++/ \
 		http://www.mysql.com/Downloads/mysql++/
 
 MAINTAINER=	mico@bsd.hu
 
-LIB_DEPENDS=	mysqlclient:${PORTSDIR}/databases/mysql323-client
+LIB_DEPENDS=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ENV=	CXXFLAGS="${CXXFLAGS} -D_FIX_FOR_BSD_ "
@@ -35,7 +36,8 @@ do-install:
 	@${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/examples/*.cc ${PREFIX}/share/examples/mysql++
 	@${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/doc/man-text/* ${PREFIX}/share/doc/mysql++
 	@mkdir -p ${PREFIX}/include/mysql
-	@${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/sqlplusint/mysql++ ${WRKDIR}/${DISTNAME}/sqlplusint/*.hh ${PREFIX}/include/mysql
+	@(cd ${WRKDIR}/${DISTNAME}/sqlplusint/; \
+	 ${INSTALL_DATA} mysql++ defs undef_short define_short *.hh ${PREFIX}/include/mysql)
 	@${INSTALL_DATA} ${FILESDIR}/README ${PREFIX}/share/examples/mysql++
 
 .include <bsd.port.mk>
