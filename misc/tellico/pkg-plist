@@ -19,6 +19,7 @@ share/doc/HTML/en/bookcase/index.docbook
 share/icons/hicolor/16x16/apps/bookcase.png
 share/icons/hicolor/32x32/apps/bookcase.png
 share/locale/de/LC_MESSAGES/bookcase.mo
+share/locale/es/LC_MESSAGES/bookcase.mo
 share/locale/hu/LC_MESSAGES/bookcase.mo
 share/locale/it/LC_MESSAGES/bookcase.mo
 share/locale/nb/LC_MESSAGES/bookcase.mo
