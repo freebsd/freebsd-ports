@@ -1,66 +1,141 @@
 #!/bin/sh
-
 #
-# Set up the work area and run setiathome to login or register
+# $FreeBSD$
+#
+# Set up the work area and run SETI@home to login or register.
 #
 
-seti_rcdir=${PKG_PREFIX}/etc/rc.d	# startup directory
-seti_script=setiathome.sh		# startup script
+[ $# != 2 ] && exit 1
+[ -z "${PKG_PREFIX}" ] && exit 1
+[ -n "${BATCH}" ] && exit 0
+
+PKG_NAME=$1
+PKG_ACTION=$2
+
+# override these variables in ${PREFIX}/etc/rc.setiathome.conf
 seti_wrkdir=/var/db/setiathome		# working directory
 seti_user=nobody			# user id to run under
-seti_maxprocs=`sysctl -n hw.ncpu`	# max. number of processes to start
+seti_maxprocs=$(sysctl -n hw.ncpu)	# max. number of processes to start
 
-if [ -f ${PKG_PREFIX}/etc/setiathome.conf ]; then
-	. ${PKG_PREFIX}/etc/setiathome.conf
+rcconf_dir=${PKG_PREFIX}/etc
+rcconf_file=rc.setiathome.conf
+rcconf_path=${rcconf_dir}/${rcconf_file}
+
+if [ -f ${rcconf_path} ]; then
+	. ${rcconf_path}
 fi
 
-case $2 in
-	POST-INSTALL)
-		if [ -n "${PACKAGE_BUILDING}" ]; then
-			exit 0
-		fi
+rc_dir=${PKG_PREFIX}/etc/rc.d
+rc_file=setiathome.sh
+rc_path=${rc_dir}/${rc_file}
 
-		echo "****  setihome requires a working directory for temporary files and"
-		echo "      a brief registration process."
-		echo
-		echo "      Would you like to set up a working directory in ${seti_wrkdir},"
-		if [ ${seti_maxprocs} -gt 1 ]; then
-			if [ `sysctl -n hw.ncpu` -eq ${seti_maxprocs} ]; then
-				echo "      register with SETI@home, and let me arrange for ${seti_maxprocs} setiathome"
-				echo "      processes (one for each of your `sysctl -n hw.ncpu` CPUs) to be started automatically"
-				echo -n "      as user \`${seti_user}' [Y/n]? "
-			else
-				echo "      register with SETI@home, and let me arrange for ${seti_maxprocs} setiathome"
-				echo "      processes (as configured) to be started automatically"
-				echo -n "      as user \`${seti_user}' [Y/n]? "
-			fi
+ncpu=$(sysctl -n hw.ncpu)
+
+case "$PKG_ACTION" in
+POST-INSTALL)
+
+echo "****  SETI@home requires a working directory for temporary files and a"
+echo "      brief registration process."
+echo
+echo "      Would you like to set up a working directory in ${seti_wrkdir},"
+	if [ ${seti_maxprocs} -gt 1 ]; then
+echo "      register with SETI@home, and let me arrange for ${ncpu} setiathome"
+		if [ ${ncpu} -eq ${seti_maxprocs} ]; then
+echo "      processes (one for each of your ${ncpu} CPUs) to be started"
+echo -n "      automatically as user \`${seti_user}'? [Y/n] "
 		else
-			echo "      register with SETI@home, and let me arrange for setiathome to be"
-			echo -n "      started automatically as user \`${seti_user}' [Y/n]? "
+echo "      processes (as configured) to be started automatically as user"
+echo -n "      \`${seti_user}'? [Y/n] "
 		fi
-		read a
-		echo ""
-		if [ "X$a" = "XN" -o "X$a" = "Xn" ]; then
-			echo ""
-			echo "Please set up the working directory yourself.  You can use"
-			echo "${seti_rcdir}/${seti_script} register"
-			echo "to do so. See setiathome(1) for details."
-			exit 0
-		fi
+	else
+echo "      register with SETI@home, and let me arrange for setiathome to be"
+echo -n "      started automatically as user \`${seti_user}'? [Y/n] "
+	fi
+	read a
+echo
+	if [ "X$a" = "XN" -o "X$a" = "Xn" ]; then
+echo "****  Please set up the working directory yourself.  You may use"
+echo "            ${rc_path} register"
+echo "      to do so. See setiathome(1) for details."
+		exit 0
+	fi
+	${rc_path} register
+	if [ ! -f ${seti_wrkdir}/user_info.sah ]; then
+echo "unable to start setiathome: it seems registration or login failed."
+echo "See setiathome(1) for details."
+		exit 0
+	fi
+	${rc_path} start > /dev/null
+echo
+echo "****  Congratulations!  Your system now participates in the search for"
+echo "      extra-terrestrial intelligence.  Be sure to visit the home page"
+echo "      at http://setiathome.ssl.berkeley.edu/"
+echo "      See setiathome(1) for further details."
+	;;
 
-		${seti_rcdir}/${seti_script} register
+DEINSTALL)
+	if [ ! -d ${seti_wrkdir} ]; then
+		exit 0
+	fi
 
-		if [ ! -f ${seti_wrkdir}/user_info.sah ]; then
-			echo "unable to start setiathome: it seems registration or login failed."
-			exit 0
-		fi
-		${seti_rcdir}/${seti_script} start >/dev/null
-		echo
-		echo "****  Congratulations!  Your system now participates in the search for extra-"
-		echo "      terrestrial intelligence.  Be sure to visit the home page at"
-		echo "      http://setiathome.ssl.berkeley.edu/"
-		echo "      See setiathome(1) for further details."
-		;;
+	${rc_path} stop > /dev/null
 
+echo "****  SETI@home working directory and temporary files have to be"
+echo "      removed to complete the deinstallation process.  Of course,"
+echo "      you may prefer to keep them for futher researchs?  Would you"
+echo "      like to remove it as well as all temporary files it may"
+echo -n "      contains? [y/N] "
+	read a
+echo
+	if [ "X$a" != "XY" -a "X$a" != "Xy" ]; then
+echo "****  SETI@home working directory and temporary files left untouched."
+		exit 0
+	fi
+	for i in ${seti_wrkdir}/.??* ${seti_wrkdir}/*; do
+		case "${i}" in
+		"${seti_wrkdir}/.??*"|"${seti_wrkdir}/*")
+			continue
+			;;
+		*/.tkseti*|*.sah)
+			[ -f ${i} ] || continue
+			rm -f ${i}
+			;;
+		*)
+			[ -d ${i} ] || continue
+			for j in ${seti_wrkdir}/*; do
+				case "${j}" in
+				"${seti_wrkdir}/*")
+					continue
+					;;
+				*/.tkseti*|*.sah)
+					[ -f ${j} ] || continue
+					rm -f ${j}
+					;;
+				esac
+			done
+			rmdir ${i}
+			;;
+		esac
+	done
+	rmdir ${seti_wrkdir}
+	if [ -d ${seti_wrkdir} ]; then
+echo "****  SETI@home working directory can't be removed since it contains"
+echo "      non SETI@home files or directories.  You have to remove it"
+echo "      manually.  You can use"
+echo "            rm -rf ${seti_wrkdir}"
+echo "      to do so, but think about it twince before."
+	else
+echo "****  SETI@home working directory and temporary files removed."
+	fi
+	;;
+
+PRE-INSTALL|POST-DEINSTALL)
+	;;
+
+*)
+echo "usage: $0 <PKG_NAME> {PRE-INSTALL|POST-INSTALL|DEINSTALL|POST-DEINSTALL}" >&2
+	exit 1
+	;;
 esac
+
 exit 0
