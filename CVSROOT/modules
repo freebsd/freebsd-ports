@@ -8842,6 +8842,7 @@ py-flowtools	ports/net-mgmt/py-flowtools
 py-fltk		ports/x11-toolkits/py-fltk
 py-fngrab	ports/net/py-fngrab
 py-fonttools	ports/print/py-fonttools
+py-forgetsql	ports/databases/py-forgetsql
 py-fortran	ports/devel/py-fortran
 py-fox		ports/x11-toolkits/py-fox
 py-fpconst	ports/math/py-fpconst
