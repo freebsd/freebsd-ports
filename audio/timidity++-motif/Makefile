@@ -38,6 +38,12 @@ CONFIGURE_ENV+=	LDFLAGS=-export-dynamic
 TIMID_DIR=	${PREFIX}/lib/timidity
 LINK=		xmmidi
 
+post-configure:
+	@${MV} ${WRKSRC}/interface/Makefile ${WRKSRC}/interface/Makefile.orig
+	@${SED} -e 's^m_so_libs = $$^m_so_libs = -L/usr/X11R6/lib ${MOTIFLIB} -lXt -lXext -lSM -lICE -lX11 ^' \
+		-e 's^dynamic_targets = $$^dynamic_targets = interface_m.so^' \
+	${WRKSRC}/interface/Makefile.orig > ${WRKSRC}/interface/Makefile
+
 do-build:
 	cd ${WRKSRC}/interface; ${MAKE}
 
