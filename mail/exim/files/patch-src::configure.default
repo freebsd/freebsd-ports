@@ -9,17 +9,17 @@
  never_users = root
  
  
-@@ -365,7 +367,8 @@
+@@ -378,7 +380,8 @@
    allow_fail
    allow_defer
-   data = ${lookup{$local_part}lsearch{/etc/aliases}}
+   data = ${lookup{$local_part}lsearch{SYSTEM_ALIASES_FILE}}
 -# user = exim
 +  user = mailnull
 +  group = mail
    file_transport = address_file
    pipe_transport = address_pipe
  
-@@ -399,6 +402,7 @@
+@@ -412,6 +415,7 @@
    file_transport = address_file
    pipe_transport = address_pipe
    reply_transport = address_reply
@@ -27,7 +27,7 @@
  
  
  # This router matches local user mailboxes.
-@@ -442,8 +446,8 @@
+@@ -455,8 +459,8 @@
    delivery_date_add
    envelope_to_add
    return_path_add

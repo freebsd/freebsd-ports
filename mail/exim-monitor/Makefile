@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	exim-monitor
-PORTVERSION=	4.10
+PORTVERSION=	4.12
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.csx.cam.ac.uk/pub/software/email/exim/exim4/ \
 		http://www.exim.org/ftp/exim4/ \

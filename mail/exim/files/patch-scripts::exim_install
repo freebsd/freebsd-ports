@@ -1,50 +1,41 @@
---- scripts/exim_install.orig	Fri Nov 23 17:31:15 2001
-+++ scripts/exim_install	Wed Dec 19 14:38:06 2001
-@@ -293,30 +293,15 @@
+--- scripts/exim_install.orig	Wed Dec 18 12:28:00 2002
++++ scripts/exim_install	Mon Jan  6 11:11:46 2003
+@@ -330,9 +330,8 @@
+   echo $com ' ' ${CONFIGURE_FILE}
+   echo $com Therefore, skipping automatic installation.
  
- echo $com ""
- 
--if [ ! -f ${CONFIGURE_FILE} ]; then
+-elif [ ! -f ${CONFIGURE_FILE} ]; then
 -  echo $com Installing default configuration in ${CONFIGURE_FILE}
 -  echo $com because there is no existing configuration file.
--  echo ${MKDIR} -p `${DIRNAME} ${CONFIGURE_FILE}`
--  ${real} ${MKDIR} -p `${DIRNAME} ${CONFIGURE_FILE}`
--  echo ${CP} ../src/configure.default ${CONFIGURE_FILE}
--  ${real} ${CP} ../src/configure.default ${CONFIGURE_FILE}
-+  echo $com Installing default configuration file in ${CONFIGURE_FILE%/*}/configure.default
-+  ${real} mkdir -p ${CONFIGURE_FILE%/*}
-+  echo ${CP} ../src/configure.default ${CONFIGURE_FILE%/*}
-+  ${real} ${CP} ../src/configure.default ${CONFIGURE_FILE%/*}
-   if [ $? -ne 0 ]; then
-     echo $com ""
-     echo $com "*** Exim installation ${ver}failed ***"
-     exit 1
++else
++  echo $com Installing default configuration in ${CONFIGURE_FILE}.default
+   if [ "${SYSTEM_ALIASES_FILE}" = "" ] ; then
+     SYSTEM_ALIASES_FILE=/etc/aliases
+     echo $com This configuration has system aliases in ${SYSTEM_ALIASES_FILE}.
+@@ -343,7 +342,7 @@
+ 
+   echo sed -e '\\'
+   echo "  \"/SYSTEM_ALIASES_FILE/ s'SYSTEM_ALIASES_FILE'${SYSTEM_ALIASES_FILE}'\"" '\\'
+-  echo "  ../src/configure.default > \${CONFIGURE_FILE}"
++  echo "  ../src/configure.default > \${CONFIGURE_FILE}.default"
+ 
+   # I can't find a way of writing this using the ${real} feature because
+   # it seems that the output redirection always happens, even when -n was
+@@ -352,7 +351,7 @@
+   if [ "$real" = "" ] ; then
+     sed -e \
+       "/SYSTEM_ALIASES_FILE/ s'SYSTEM_ALIASES_FILE'${SYSTEM_ALIASES_FILE}'" \
+-      ../src/configure.default > ${CONFIGURE_FILE}
++      ../src/configure.default > ${CONFIGURE_FILE}.default
+   else
+     true
    fi
--  if [ ! -f /etc/aliases ]; then
--    echo $com '****'
--    echo $com Installing a dummy /etc/aliases file because you do not have
--    echo $com one, and the default configuration requires it. You should
--    echo $com edit /etc/aliases and at least create an alias for postmaster.
--    echo $com '***'
--    echo ${CP} ../src/aliases.default /etc/aliases
--    ${real} ${CP} ../src/aliases.default /etc/aliases
--  fi
+@@ -372,8 +371,6 @@
+     ${real} ${CP} ../src/aliases.default ${SYSTEM_ALIASES_FILE}
+   fi
+ 
 -else
 -  echo $com Configuration file ${CONFIGURE_FILE} already exists
--fi
+ fi
  
  # Install info files if the directory is defined and the Texinfo
- # source documentation is present.
-@@ -338,12 +323,6 @@
-   echo $com Info installation directory is ${INFO_DIRECTORY}
-   echo $com ""
- 
--  makeinfo --no-split --output exim_overview.info ../doc/oview.texinfo
--  echo ${CP} exim_overview.info ${INFO_DIRECTORY}
--  ${real} ${CP} exim_overview.info ${INFO_DIRECTORY}
--  install-info --section="Exim" \
--      --entry "* Overview: (exim_overview).    Overview of the Exim system" \
--      ${INFO_DIRECTORY}/exim_overview.info ${INFO_DIRECTORY}/dir
-   makeinfo --no-split --output exim.info ../doc/spec.texinfo
-   echo ${CP} exim.info ${INFO_DIRECTORY}
-   ${real} ${CP} exim.info ${INFO_DIRECTORY}
