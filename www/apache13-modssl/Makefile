@@ -32,7 +32,6 @@ MASTER_SITES_MODSSL=	http://www.modssl.org/source/ \
 		ftp://ftp.fu-berlin.de/unix/security/mod_ssl/ \
 		ftp://ftp.ntrl.net/pub/mirror/ralfsw/mod_ssl/ \
 		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/www/mod_ssl/source,}
-USE_OPENSSL=	YES
 
 .include <bsd.port.pre.mk>
 
