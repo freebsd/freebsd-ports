@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.dreamind.de/debian/dists/sid/main/source/x11/ \
 		http://matt.peterson.org/FreeBSD/ports/
 DISTNAME=	${PORTNAME}_${PORTVERSION}-1
 
-MAINTAINER=	olgeni@FreeBSD.org
+MAINTAINER=	matt@peterson.org
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
