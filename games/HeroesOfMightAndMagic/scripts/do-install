@@ -21,11 +21,11 @@ ${INSTALL_DATA} ${CD}/icon.bmp ${CD}/icon.xpm ${GAMEDIR}
 
 # INSTALL_PROGRAM (its parameter -s) currupts the file. Using cp.
 cp ${CD}/bin/x86/heroes3 ${GAMEDIR}
+chmod 755 ${GAMEDIR}/heroes3
 brandelf -t Linux ${GAMEDIR}/heroes3
 ln -sf ${GAMEDIR}/heroes3 ${LOCALBASE}/bin/heroes3
 touch ${GAMEDIR}/data/hiscore.dat
 chmod 666 ${GAMEDIR}/data/hiscore.dat
-cat ${PKGDIR}/files/pkg-plist.base > ${PLIST}
 
 # Basis packet
 if [ $BASIC = YES ]; then
@@ -43,18 +43,13 @@ if [ $SCENARIO = YES ]; then
 	echo Installing Scenarios
 	mkdir -p ${GAMEDIR}/maps
 	${INSTALL_DATA} ${CD}/maps/* ${GAMEDIR}/maps
-	cat ${PKGDIR}/files/pkg-plist.scenario >> ${PLIST}
 else
 	ln -sf ${CD}/maps ${GAMEDIR}/maps
-	echo ${GAMESUBDIR}/maps >> ${PLIST}
 fi
 
 # Neither sound nor Music, make the whole data tree a link
 if [ $GRAPHIC = NO -a $MUSIC = NO ]; then
         ln -sf ${CD}/data/video ${GAMEDIR}/data/video
-	echo ${GAMESUBDIR}/data/video >> ${PLIST}
-else
-	cat ${PKGDIR}/files/pkg-plist.video >> ${PLIST}
 fi
 
 # Graphics (recommended)
@@ -77,7 +72,6 @@ if [ $VIDEOS = YES ]; then
 	echo Installing Videos
 	mkdir -p ${GAMEDIR}/data/video
 	${INSTALL_DATA} ${CD}/data/video/*.mpg ${GAMEDIR}/data/video
-	cat ${PKGDIR}/files/pkg-plist.video >> ${PLIST}
 elif [ $GRAPHIC = YES ]; then
 # Music is installed, so create links
 	cd $CD/data/video
@@ -92,14 +86,9 @@ if [ $MUSIC = YES ]; then
 	echo Installing Music
 	mkdir -p ${GAMEDIR}/mp3
 	${INSTALL_DATA} ${CD}/mp3/* ${GAMEDIR}/mp3
-	cat ${PKGDIR}/files/pkg-plist.music >> ${PLIST}
 else
 	ln -sf ${CD}/mp3 ${GAMEDIR}/mp3
-	echo ${GAMESUBDIR}/mp3 >> ${PLIST}	
 fi
-
-	echo @dirrm ${GAMESUBDIR}/data >> ${PLIST}
-	echo @dirrm ${GAMESUBDIR} >> ${PLIST}
 
 # Goodbye message
 if [ $BASIC = YES -a $GRAPHIC = YES ]; then
