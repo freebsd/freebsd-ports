@@ -261,6 +261,7 @@
     SUBDIR += p5-Penguin-Easy
     SUBDIR += p5-PerlMenu
     SUBDIR += p5-Proc-Background
+    SUBDIR += p5-Proc-Daemon
     SUBDIR += p5-Proc-Simple
     SUBDIR += p5-ReadLine-Gnu
     SUBDIR += p5-ReadLine-Perl
