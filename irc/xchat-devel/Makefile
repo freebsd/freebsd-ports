@@ -3,7 +3,7 @@
 # Date created:			17 Nov 1998
 # Whom:				Jim Mock <jim@phrantic.phear.net>
 #
-# $Id: Makefile,v 1.7 1999/03/21 13:18:17 flathill Exp $
+# $Id: Makefile,v 1.8 1999/03/31 15:23:16 steve Exp $
 #
 
 DISTNAME=	xchat-0.9.4
