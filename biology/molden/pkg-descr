@@ -4,7 +4,7 @@ Visualizing the results of molecular orbital calculations
  3) density:  contour plot or 3D view for electron density and MO coefficient
 Everything what you want about MO calculation can be seen.
 
-WWW: http://www.caos.kun.nl/~schaft/molden/molden.html
+WWW: http://www.cmbi.kun.nl/~schaft/molden/molden.html
 
 You must set the environmental variable ether ORIGINALBINARY=yes or 
 MYBINARY=yes. The latter will be used for building up your own binary, 
