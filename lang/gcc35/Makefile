@@ -119,15 +119,9 @@ post-patch:
 	    ${SRCDIR}/gcc/version.c
 
 pre-configure:
-	@# Keep from running `autoconf' and `autoheader' since we modified
-	@# configure.in by patching it.
-	@${TOUCH} ${SRCDIR}/gcc/configure
-	@${TOUCH} ${SRCDIR}/gcc/cstamp-h.in
-	@${MKDIR} ${CONFIGURE_WRKSRC}
-	@${RM} -f ${SRCDIR}/gcc/*/*.info*
-
-pre-build:
 	cd ${SRCDIR} ; contrib/gcc_update --touch
+	@${RM} -f ${SRCDIR}/gcc/*/*.info*
+	@${MKDIR} ${CONFIGURE_WRKSRC}
 
 pre-install:
 	${MKDIR} ${PREFIX}/info
