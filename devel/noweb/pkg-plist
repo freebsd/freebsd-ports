@@ -1,6 +1,7 @@
 bin/htmltoc
 bin/nodefs
 bin/noindex
+bin/noroff
 bin/noroots
 bin/notangle
 bin/nountangle
@@ -12,6 +13,7 @@ bin/sl2h
 share/noweb/autodefs.c
 share/noweb/autodefs.icon
 share/noweb/autodefs.pascal
+share/noweb/autodefs.promela
 share/noweb/autodefs.sml
 share/noweb/autodefs.tex
 share/noweb/autodefs.yacc
@@ -24,22 +26,26 @@ share/noweb/markup
 share/noweb/mnt
 share/noweb/noidx
 share/noweb/nt
+share/noweb/tmac.w
 share/noweb/toascii
 share/noweb/tohtml
 share/noweb/totex
+share/noweb/toroff
 share/noweb/unmarkup
 share/noweb/tex/noweb.sty
 share/noweb/tex/nwmac.tex
-man/man1/htmltoc.1.gz
+man/man1/cpif.1.gz
 man/man1/nodefs.1.gz
-man/man1/noindex.1.gz
 man/man1/noroots.1.gz
+man/man1/noweb.1.gz
+man/man1/noindex.1.gz
+man/man1/nuweb2noweb.1.gz
 man/man1/notangle.1.gz
+man/man1/sl2h.1.gz
+man/man1/htmltoc.1.gz
 man/man1/nountangle.1.gz
 man/man1/noweave.1.gz
-man/man1/noweb.1.gz
-man/man1/cpif.1.gz
-man/man1/sl2h.1.gz
-man/man1/nowebstyle.1.gz
-man/man1/nuweb2noweb.1.gz
-man/man1/nowebfilters.1.gz
+man/man7/nowebstyle.7.gz
+man/man7/nowebfilters.7.gz
+@dirrm share/noweb/tex
+@dirrm share/noweb
