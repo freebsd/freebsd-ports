@@ -1,18 +1,20 @@
 # New ports collection makefile for:	coda
-# Version required:			4.6.5
-# Date created:				19 June 1998
-# Whom:					Robert V. Baron <rvb@cs.cmu.edu>
+# Version required:	5.2.0
+# Date created:		11 May 1999
+# Whom:			Ying-Chieh Liao <ijliao@csie.nctu.edu.tw>
 #
-# $Id: Makefile,v 1.2 1998/10/06 15:51:02 rvb Exp $
+# $Id$
 #
 
-DISTNAME=	coda-doc-4.6.5-3
-PKGNAME=	coda-doc-4.6.5.3
+DISTNAME=	coda-doc-5.2.0-1
+PKGNAME=	coda-doc-5.2.0.1
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.coda.cs.cmu.edu/pub/coda/doc/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	rvb@cs.cmu.edu
+MAINTAINER=	ijliao@csie.nctu.edu.tw
+
+WRKSRC=		${WRKDIR}/usr
 
 MAN1=		cfs.1 \
 		clog.1 \
@@ -58,13 +60,11 @@ MAN3=		histo.3 \
 MAN5=		backuplogs.5 \
 		dumpfile.5 \
 		dumplist.5 \
-		groups_coda.5 \
 		maxgroupid.5 \
 		multicastagents.5 \
 		multicastgroups.5 \
-		passwd_coda.5 \
+		passwd.coda.5 \
 		servers.5 \
-		user_coda.5 \
 		vicetab.5 \
 		volumelist.5 \
 		vrdb.5 \
@@ -73,24 +73,21 @@ MAN5=		backuplogs.5 \
 		vstab.5
 MAN8=		au.8 \
 		auth2.8 \
-		authmon.8 \
 		backup.8 \
 		bldvldb.8 \
+		codasrv.8 \
 		createvol.8 \
 		createvol_rep.8 \
 		initpw.8 \
 		merge.8 \
 		norton.8  \
-		pcfgen.8 \
+		pdbtool.8 \
 		purgevol.8 \
 		purgevol_rep.8 \
-		pwd2pdb.8 \
 		readdump.8 \
 		replay.8 \
-		srv.8 \
 		startserver.8 \
 		updateclnt.8 \
-		updatemon.8 \
 		updatesrv.8 \
 		venus.8 \
 		volutil.8 \
