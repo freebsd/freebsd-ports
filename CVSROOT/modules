@@ -4172,6 +4172,7 @@ linux-ac3d	ports/graphics/linux-ac3d
 linux-acu	ports/sysutils/linux-acu
 linux-afaapps	ports/sysutils/linux-afaapps
 linux-agsatellite	ports/net/linux-agsatellite
+linux-allegro		ports/devel/linux-allegro
 linux-arts	ports/audio/linux-arts
 linux-atk	ports/devel/linux-atk
 linux-beonex	ports/www/linux-beonex
