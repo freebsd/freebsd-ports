@@ -3,7 +3,7 @@
 # Date created:				17 Jan 1999
 # Whom:					Vanilla I. Shu <vanilla@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.7 1999/04/08 18:08:30 steve Exp $
+# $Id: Makefile,v 1.8 1999/05/09 17:20:53 steve Exp $
 #
 
 DISTNAME=	gnome-pim-1.0.7
@@ -17,17 +17,16 @@ MAINTAINER=	nacai@iname.com
 BUILD_DEPENDS=	panel:${PORTSDIR}/x11/gnomecore
 RUN_DEPENDS=	panel:${PORTSDIR}/x11/gnomecore
 
+GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
+
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=${PREFIX}/share/gnome \
 		--datadir=${PREFIX}/share/gnome \
-		--with-gnome=${X11BASE}
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
-		GTK_CONFIG="${X11BASE}/bin/gtk12-config" \
-		LIBS="-L${LOCALBASE}/lib -L${X11BASE}/lib -lxpg4"
-
-post-install:
-	@${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
+		--with-gnome=${PREFIX}
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		GTK_CONFIG="${GTK_CONFIG}" \
+		LIBS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>
