@@ -16,7 +16,7 @@ PATCHFILES=	bugseeker2demo.sh.diff
 
 MAINTAINER=	ernst@jollem.com
 
-RUN_DEPENDS=	${LOCALBASE}/linux-jdk1.3.0/bin/java:${PORTSDIR}/java/linux-jdk13
+RUN_DEPENDS=	${LOCALBASE}/linux-jdk1.3.1/bin/java:${PORTSDIR}/java/linux-jdk13
 
 NO_BUILD=	YES
 

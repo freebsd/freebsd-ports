@@ -30,7 +30,7 @@ PORTTITLE=	Orion Server
 ORIONCTL_NAME=	orionctl
 ORIONCTL_DEST=	${PREFIX}/bin/${ORIONCTL_NAME}
 RC_SCRIPT=	${PREFIX}/etc/rc.d/${PORTNAME}.sh
-JAVA_HOME?=	${LOCALBASE}/linux-jdk1.3.0
+JAVA_HOME?=	${LOCALBASE}/linux-jdk1.3.1
 TARGET_PREFIX?=	${PREFIX}/${PKGBASE}${PORTVERSION}
 
 .include <bsd.port.pre.mk>
