@@ -11,7 +11,7 @@ PKGNAME=		maelstrom-3.0.1
 CATEGORIES=		games
 MASTER_SITES=		http://www.devolution.com/~slouken/projects/Maelstrom/src/
 
-MAINTAINER=		ports@FreeBSD.org
+MAINTAINER=		sobomax@altavista.net
 
 LIB_DEPENDS=		Xpm.4:${PORTSDIR}/graphics/xpm \
 			SDL-1.0.2:${PORTSDIR}/devel/sdl

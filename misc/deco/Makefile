@@ -12,7 +12,7 @@ CATEGORIES=		misc
 MASTER_SITES=		ftp://ftp.cronyx.ru/cronyx/deco/
 EXTRACT_SUFX=		.tgz
 
-MAINTAINER=		ports@FreeBSD.org
+MAINTAINER=		dima@Chg.RU
 
 WRKSRC=			${WRKDIR}/deco
 GNU_CONFIGURE=		yes
