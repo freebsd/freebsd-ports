@@ -1,4 +1,8 @@
 bin/lame
+include/lame.h
+lib/libmp3lame.a
+lib/libmp3lame.so
+lib/libmp3lame.so.%%LIB_VERSION%%
 share/doc/lame/contributors.html
 share/doc/lame/examples.html
 share/doc/lame/history.html
