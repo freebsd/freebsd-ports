@@ -12,7 +12,8 @@ CATEGORIES=	editors ipv6
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	emacs
 
-PATCH_SITES=	http://www.etl.go.jp/~tomo/comp/emacsen/
+PATCH_SITES=	ftp://ftp.m17n.org/pub/mule/dynamic-loading/ \
+		http://www.etl.go.jp/~tomo/comp/emacsen/
 PATCHFILES=	emacs-20.4-dl3.diff.gz
 PATCH_DIST_STRIP= -p1
 
