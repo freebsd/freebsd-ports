@@ -3,7 +3,7 @@
 @@ -1,7 +1,9 @@
 -XPMLIB = -L/usr/X11R6/lib -lXpm -lm -ljpeg -lpng -lz -ltiff -lgif
 -WMAKER = -L/usr/local/lib -lWMaker -lWINGs -lwraster -lPropList
-+XPMLIB = -L@X11BASE@/lib -lXpm -lm -ljpeg -lpng -lz -ltiff -lgif
++XPMLIB = -L@X11BASE@/lib -lXpm -lm -ljpeg -lpng -lz -ltiff -lungif
 +WMAKER = -L@LOCALBASE@/lib -lWMaker -lWINGs -lwraster -lPropList
   
  LOCAL_LIBRARIES = $(WMAKER) $(XPMLIB) $(XLIB)
