@@ -1,0 +1,48 @@
+--- Makefile.in.bak	Thu Jan 11 11:38:15 2001
++++ Makefile.in	Mon Aug 18 19:17:55 2003
+@@ -117,16 +117,16 @@
+ $(srcdir)/Makefile.in: Makefile.am $(top_srcdir)/configure.in $(ACLOCAL_M4) 
+ 	cd $(top_srcdir) && $(AUTOMAKE) --gnu Makefile
+ 
+-Makefile: $(srcdir)/Makefile.in  $(top_builddir)/config.status $(BUILT_SOURCES)
+-	cd $(top_builddir) \
+-	  && CONFIG_FILES=$@ CONFIG_HEADERS= $(SHELL) ./config.status
++#Makefile: $(srcdir)/Makefile.in  $(top_builddir)/config.status $(BUILT_SOURCES)
++#        cd $(top_builddir) \
++#          && CONFIG_FILES=$@ CONFIG_HEADERS= $(SHELL) ./config.status
+ 
+ $(ACLOCAL_M4):  configure.in 
+ 	cd $(srcdir) && $(ACLOCAL)
+ 
+-config.status: $(srcdir)/configure $(CONFIG_STATUS_DEPENDENCIES)
+-	$(SHELL) ./config.status --recheck
+-$(srcdir)/configure: $(srcdir)/configure.in $(ACLOCAL_M4) $(CONFIGURE_DEPENDENCIES)
++#config.status: $(srcdir)/configure $(CONFIG_STATUS_DEPENDENCIES)
++#        $(SHELL) ./config.status --recheck
++#$(srcdir)/configure: $(srcdir)/configure.in $(ACLOCAL_M4) $(CONFIGURE_DEPENDENCIES)
+ 	cd $(srcdir) && $(AUTOCONF)
+ 
+ config.h: stamp-h
+@@ -139,14 +139,14 @@
+ 	  && CONFIG_FILES= CONFIG_HEADERS=config.h \
+ 	     $(SHELL) ./config.status
+ 	@echo timestamp > stamp-h 2> /dev/null
+-$(srcdir)/config.h.in: $(srcdir)/stamp-h.in
+-	@if test ! -f $@; then \
+-		rm -f $(srcdir)/stamp-h.in; \
+-		$(MAKE) $(srcdir)/stamp-h.in; \
+-	else :; fi
+-$(srcdir)/stamp-h.in: $(top_srcdir)/configure.in $(ACLOCAL_M4) 
+-	cd $(top_srcdir) && $(AUTOHEADER)
+-	@echo timestamp > $(srcdir)/stamp-h.in 2> /dev/null
++#$(srcdir)/config.h.in: $(srcdir)/stamp-h.in
++#        @if test ! -f $@; then \
++#                rm -f $(srcdir)/stamp-h.in; \
++#                $(MAKE) $(srcdir)/stamp-h.in; \
++#        else :; fi
++#$(srcdir)/stamp-h.in: $(top_srcdir)/configure.in $(ACLOCAL_M4)
++#        cd $(top_srcdir) && $(AUTOHEADER)
++#        @echo timestamp > $(srcdir)/stamp-h.in 2> /dev/null
+ 
+ mostlyclean-hdr:
+ 
