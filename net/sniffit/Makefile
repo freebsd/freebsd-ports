@@ -10,10 +10,12 @@ PORTNAME=	sniffit
 PORTVERSION=	0.3.7b
 PORTREVISION=	2
 CATEGORIES=	net security
-MASTER_SITES=	http://reptile.rug.ac.be/~coder/sniffit/files/
+MASTER_SITES=	http://reptile.rug.ac.be/~coder/sniffit/files/ \
+		http://www.mavetju.org/download/adopted/
 DISTNAME=	sniffit.0.3.7.beta
 
-PATCH_SITES=	${MASTER_SITE_DEBIAN_POOL}
+PATCH_SITES=	${MASTER_SITE_DEBIAN_POOL} \
+		http://www.mavetju.org/download/adopted/
 PATCHFILES=	sniffit_0.3.7.beta-10.diff.gz
 PATCH_DIST_STRIP=	-p1
 
