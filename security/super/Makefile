@@ -4,7 +4,7 @@
 # Date created:			  Fri Mar 18, 1997
 # Whom:				  David O'Brien (obrien@NUXI.com)
 #
-# $Id: Makefile,v 1.1.1.1 1997/04/24 08:02:43 obrien Exp $
+# $Id: Makefile,v 1.2 1998/11/19 09:19:18 obrien Exp $
 #
 
 DISTNAME=	super-3.11.6
@@ -14,6 +14,8 @@ MASTER_SITES=	ftp://phobos.caltech.edu/users/will/  \
 		ftp://ftp.infodrom.north.de/pub/unix/utilities/super/
 
 MAINTAINER=     obrien@FreeBSD.org
+
+BROKEN=		build
 
 GNU_CONFIGURE=	yes
 MAN1=		super.1 setuid.1
