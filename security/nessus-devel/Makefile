@@ -4,7 +4,7 @@
 #
 
 PORTNAME=	nessus-devel
-PORTVERSION=	1.2.0
+PORTVERSION=	1.2.1
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.cis.fed.gov/pub/nessus/nessus-${PORTVERSION}/src/ \
 		ftp://ftp.nessus.org/pub/nessus/nessus-${PORTVERSION}/src/ \
@@ -38,7 +38,7 @@ CONFIGURE_ARGS+=--disable-gtk
 CONFIGURE_ARGS+=	--sharedstatedir=${PREFIX}/etc/nessus/com \
 			--localstatedir=${PREFIX}/etc/nessus/var
 
-MAN1=		nessus.1 nessus-mkrand.1
+MAN1=		nessus.1 nessus-mkrand.1 nessus-mkcert-client.1
 MAN8=		nessusd.8 nessus-adduser.8 nessus-mkcert.8 nessus-rmuser.8
 
 post-install:
