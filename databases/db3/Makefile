@@ -10,8 +10,7 @@ PORTVERSION=	3.3.11
 PORTREVISION=	2
 PORTEPOCH?=	1
 CATEGORIES=	databases
-#MASTER_SITES=	http://www.sleepycat.com/update/snapshot/
-MASTER_SITES=	ftp://sleepycat1.inetu.net/releases/
+MASTER_SITES=	http://downloads.sleepycat.com/
 DISTNAME=	db-${PORTVERSION}
 DIST_SUBDIR=	bdb
 
