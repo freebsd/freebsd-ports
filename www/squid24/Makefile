@@ -1,12 +1,12 @@
 # New ports collection makefile for:	squid
-# Version required:	1.1.6
+# Version required:	1.1.7
 # Date created:		Thu Nov  7 00:53:18 WST 1996
 # Whom:			Peter Wemm <peter@freebsd.org>
 #
-# $Id: Makefile,v 1.21 1997/02/08 16:19:15 peter Exp $
+# $Id: Makefile,v 1.22 1997/02/20 17:17:32 peter Exp $
 #
 
-DISTNAME=	squid-1.1.6
+DISTNAME=	squid-1.1.7
 CATEGORIES=	www
 MASTER_SITES=  \
 	ftp://squid.nlanr.net/pub/squid-1.1/ \
@@ -15,8 +15,10 @@ MASTER_SITES=  \
 	ftp://ftp.net.lut.ac.uk/squid/squid-1.1/
 EXTRACT_SUFX=	-src.tar.gz
 
-PATCH_SITES+=   http://squid.nlanr.net/Squid/1.1/1.1.6/
-PATCHFILES+=    fixes.patch
+#Sigh. cannot use this since the author botched it so badly. :-(
+#see patches/patch-ab
+#PATCH_SITES+=   http://squid.nlanr.net/Squid/1.1/1.1.7/
+#PATCHFILES+=    fixes.patch
 
 MAINTAINER=	peter@freebsd.org
 
@@ -38,7 +40,9 @@ MAKEFILE=	makefile
 #MAKE_ENV+=	USERAGENT_OPT="-DUSE_USERAGENT_LOG=1"
 #MAKE_ENV+=	KILL_PARENT_OPT="-DKILL_PARENT_OPT"
 #MAKE_ENV+=	USE_POLL_OPT="-DUSE_POLL"
-#MAKE_ENV+=	ANON_OPT="-DUSE_ANONYMIZER"
+# do NOT define both USE_SPLAY_TREE and USE_BIN_TREE at the same time!
+#MAKE_ENV+=	USE_SPLAY_TREE="-DUSE_SPLAY_TREE"
+#MAKE_ENV+=	USE_BIN_TREE="-DUSE_BIN_TREE"
 
 post-install:
 .for file in cachemgr.cgi client dnsserver ftpget pinger squid
