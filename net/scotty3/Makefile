@@ -6,11 +6,11 @@
 # $FreeBSD$
 #
 
-DISTNAME=	scotty-2.1.9
+DISTNAME=	scotty-2.1.10
 CATEGORIES=	net tk82
 MASTER_SITES=	ftp://ftp.ibr.cs.tu-bs.de/pub/local/tkined/
 
-MAINTAINER=	phk@freebsd.org
+MAINTAINER=	dima@Chg.RU
 
 LIB_DEPENDS=	tk82.1:${PORTSDIR}/x11-toolkits/tk82
 
@@ -23,10 +23,10 @@ WRKSRC=${WRKDIR}/${DISTNAME}/unix
 MAN1=		tkined.1 scotty.1
 MAN8=		ntping.8 straps.8
 MANN=		Tnm.n cmip.n dns.n gdmo.n http.n icmp.n ined.n job.n \
-		mib.n msqltcl.n netdb.n ntp.n rpc.n snmp.n sunrpc.n \
+		mib.n netdb.n ntp.n rpc.n snmp.n sunrpc.n \
 		syslog.n udp.n
 PLIST_SUB=	FREEBSD_VERSION=${FREEBSD_VERSION} \
-		SCOTTY_VERSION=2.1.9 TKINED_VERSION=1.4.9
+		SCOTTY_VERSION=2.1.10 TKINED_VERSION=1.4.10
 FREEBSD_VERSION!=	echo `uname -m`-`uname`-`uname -r`
 
 pre-install:
