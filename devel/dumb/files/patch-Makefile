@@ -1,0 +1,16 @@
+--- Makefile.orig	Sat Feb 26 15:24:14 2005
++++ Makefile	Sat Feb 26 15:25:07 2005
+@@ -186,10 +186,10 @@
+ OFLAGS := -O2 -ffast-math -fomit-frame-pointer
+ DBGFLAGS := -DDEBUGMODE=1 -g3
+ 
+-CFLAGS_RELEASE := -Iinclude $(WFLAGS) $(OFLAGS)
+-CFLAGS_DEBUG := -Iinclude $(WFLAGS) $(DBGFLAGS)
++CFLAGS_RELEASE := -Iinclude -I$(PREFIX)/include $(WFLAGS) $(OFLAGS) 
++CFLAGS_DEBUG := -Iinclude -I$(PREFIX)/include $(WFLAGS) $(DBGFLAGS)
+ 
+-LDFLAGS := -s
++LDFLAGS := -s -L$(PREFIX)/lib
+ 
+ 
+ CORE_EXAMPLES_OBJ := $(addprefix examples/, $(notdir $(patsubst %.c, %.o, $(CORE_EXAMPLES))))
