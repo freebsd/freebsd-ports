@@ -1,0 +1,15 @@
+QuiXML is an XML library for Ruby written in C, utilizing the expat
+library for parsing XML string buffers.  It uses only Ruby native data
+structures to store its XML data internally, so how they are generated
+is completely open.  The library both parses and generates XML,
+precisely or with pretty printing and automatic encoding/decoding
+special characters (<, >, &, ', and ").  Transmutations to/from
+attribute string values and Ruby objects can occur when
+reading/writing XML, allowing for a limited degree of object
+marshalling.  Element path addressing makes it easy to find one or
+more nodes using literal strings, regular expressions or any other
+object which supports Ruby case-equality to match against XML node
+names and attributes.
+
+Author:	sdodell <sean@celsoft.com>
+WWW:	http://quixml.rubyforge.org/
