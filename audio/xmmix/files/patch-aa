@@ -16,7 +16,7 @@
   * #include "Motif.rules"
   */
 -LOCAL_LIBRARIES= XmClientLibs
-+LOCAL_LIBRARIES= ${MOTIFLIB} XawClientLibs
++LOCAL_LIBRARIES= ${MOTIFLIB} ${XTOOLLIB} ${XLIB}
  
  
  /*
