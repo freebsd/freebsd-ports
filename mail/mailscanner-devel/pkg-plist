@@ -380,6 +380,7 @@ libexec/MailScanner/update_virus_scanners
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/README.FreeBSD.port
 %%PORTDOCS%%%%DOCSDIR%%/README.sql-logging
+%%PORTDOCS%%%%DOCSDIR%%/Sophos.install.freebsd
 %%PORTDOCS%%%%DOCSDIR%%/building.txt
 %%PORTDOCS%%%%DOCSDIR%%/donations.shtml
 %%PORTDOCS%%%%DOCSDIR%%/downloadgraphs.shtml
@@ -410,8 +411,10 @@ libexec/MailScanner/update_virus_scanners
 %%PORTDOCS%%%%DOCSDIR%%/install/mcafee.shtml
 %%PORTDOCS%%%%DOCSDIR%%/install/mcp/Conf.pm.patch.2.55
 %%PORTDOCS%%%%DOCSDIR%%/install/mcp/Conf.pm.patch.2.60
+%%PORTDOCS%%%%DOCSDIR%%/install/mcp/Conf.pm.patch.2.61
 %%PORTDOCS%%%%DOCSDIR%%/install/mcp/PerMsgStatus.pm.patch.2.55
 %%PORTDOCS%%%%DOCSDIR%%/install/mcp/PerMsgStatus.pm.patch.2.60
+%%PORTDOCS%%%%DOCSDIR%%/install/mcp/PerMsgStatus.pm.patch.2.61
 %%PORTDOCS%%%%DOCSDIR%%/install/mcp/index.html
 %%PORTDOCS%%%%DOCSDIR%%/install/mime-tools-patch.txt
 %%PORTDOCS%%%%DOCSDIR%%/install/mime-tools-patch2.txt

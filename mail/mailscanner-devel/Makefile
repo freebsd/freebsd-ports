@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	MailScanner
-PORTVERSION=	4.26.1
-PORTREVISION=	1
+PORTVERSION=	4.26.4
 CATEGORIES=	mail
 MASTER_SITES=	http://www.sng.ecs.soton.ac.uk/mailscanner/files/4/tar/
 PKGNAMESUFFIX=	-devel
@@ -29,7 +28,9 @@ BUILD_DEPENDS=	\
 
 RUN_DEPENDS=	${BUILD_DEPENDS} \
 		${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash2 \
-		${LOCALBASE}/bin/tnef:${PORTSDIR}/converters/tnef
+		${LOCALBASE}/bin/tnef:${PORTSDIR}/converters/tnef \
+		${LOCALBASE}/bin/wget:${PORTSDIR}/ftp/wget \
+		${LOCALBASE}/bin/unzip:${PORTSDIR}/archivers/unzip
 
 CONFLICTS=	MailScanner-[0-9]*
 
@@ -82,6 +83,15 @@ do-build:
 		${WRKSRC}/lib/MailScanner/ConfigDefs.pl
 	${PERL} -pi \
 		-e 's,/bin/sed,/usr/bin/sed,g;' ${WRKSRC}/lib/MailScanner/SystemDefs.pm
+	${PERL} -pi -e \
+		's,/usr/bin/clamscan,${LOCALBASE}/bin/clamscan,g;' \
+		${WRKSRC}/lib/clamav-wrapper
+	${PERL} -pi -e \
+		's,/usr/bin/wget,${LOCALBASE}/bin/wget,g;' \
+		${WRKSRC}/lib/sophos-autoupdate
+	${PERL} -pi -e \
+		's,/usr/bin/unzip,${LOCALBASE}/bin/unzip,g;' \
+		${WRKSRC}/lib/sophos-autoupdate
 
 do-install:
 	# Step 1: Install libexec files
@@ -148,6 +158,8 @@ do-install:
 	cd ${WRKSRC}/docs/man && \
 		${INSTALL_MAN} ${MAN5} ${MAN5PREFIX}/man/man5 && \
 		${INSTALL_MAN} ${MAN8} ${MAN8PREFIX}/man/man8
+	# Sophos install script
+	${INSTALL_SCRIPT} ${FILESDIR}/Sophos.install.freebsd ${DOCSDIR}
 .if exists(${PREFIX}/etc/MailScanner/MailScanner.conf)
 	# Upgrading MailScanner.conf file... Please wait
 	@${WRKSRC}/bin/upgrade_MailScanner_conf \
