@@ -1,0 +1,12 @@
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/GPS/Garmin/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/GPS/Garmin.pm
+lib/perl5/site_perl/%%PERL_VER%%/GPS/Garmin/Constant.pm
+lib/perl5/site_perl/%%PERL_VER%%/GPS/Garmin/Handler.pm
+lib/perl5/site_perl/%%PERL_VER%%/GPS/Serial.pm
+lib/perl5/site_perl/%%PERL_VER%%/auto/GPS/Garmin/Handler/autosplit.ix
+lib/perl5/site_perl/%%PERL_VER%%/auto/GPS/Garmin/autosplit.ix
+lib/perl5/site_perl/%%PERL_VER%%/auto/GPS/Serial/autosplit.ix
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/auto/GPS/Garmin/Handler
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/auto/GPS/Garmin
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/auto/GPS/Serial
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/GPS/Garmin
