@@ -16,6 +16,8 @@ COMMENT=	Full featured SQL-based hypertext search engine
 
 RUN_DEPENDS+=	${APXS}:${PORTSDIR}/${APACHE_PORT}
 
+FORBIDDEN=	Remotely exploitable buffer overflow
+
 MAN1=		indexer.1
 MAN5=		indexer.conf.5
 
