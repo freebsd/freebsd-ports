@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xsane
-PORTVERSION=	0.56
+PORTVERSION=	0.60
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.wolfsburg.de/~rauch/sane/ \
 		http://gd.tuwien.ac.at/hci/sane/xsane/ \
@@ -24,24 +24,15 @@ GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
 
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
-GNU_CONFIGURE=	yes
+USE_AUTOCONF=	yes
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		GTK_CONFIG="${GTK_CONFIG}" \
+		LIBS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS=	--enable-intl-patch
 
 MAN1=		xsane.1
 
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		GTK_CONFIG="${GTK_CONFIG}"
-
-CONFIGURE_ARGS=	--enable-intl-patch
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 300000
-CONFIGURE_ENV+=	LIBS="-Wl,--rpath -Wl,${LOCALBASE}/lib/sane -L${LOCALBASE}/lib"
-.else
-CONFIGURE_ENV+=	LIBS="-Wl,--rpath -Wl,${LOCALBASE}/lib/sane -L${LOCALBASE}/lib -lcam"
-.endif
-
 post-install:
-	@${CAT} ${PKGDIR}/MESSAGE
+	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
