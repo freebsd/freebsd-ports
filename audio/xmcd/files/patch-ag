@@ -1,19 +1,11 @@
-*** ./install.sh.orig	Wed May 16 15:58:57 2001
---- ./install.sh	Sat Jul  7 02:37:04 2001
-***************
-*** 1132,1138 ****
-  make_dir $ARCHLIB $DIRPERM $OWNER $GROUP
-  make_dir $DISCOGDIR $GDIRPERM $OWNER $GROUP
-  
-! if [ -n "$MANDIR" ]
-  then
-  	make_dir $MANDIR $DIRPERM $OWNER $GROUP
-  fi
---- 1132,1138 ----
-  make_dir $ARCHLIB $DIRPERM $OWNER $GROUP
-  make_dir $DISCOGDIR $GDIRPERM $OWNER $GROUP
-  
-! if [ -n "$MANDIR" -a ! -d "$MANDIR" ]
-  then
-  	make_dir $MANDIR $DIRPERM $OWNER $GROUP
-  fi
+--- install.sh.orig	Mon Nov  4 05:17:09 2002
++++ install.sh	Mon Nov  4 05:16:44 2002
+@@ -1120,7 +1120,7 @@
+ make_dir $ARCHLIB $DIRPERM $OWNER $GROUP
+ make_dir $DISCOGDIR $GDIRPERM $OWNER $GROUP
+ 
+-if [ -n "$MANDIR" ]
++if [ -n "$MANDIR" -a ! -d "$MANDIR" ]
+ then
+ 	make_dir $MANDIR $DIRPERM $OWNER $GROUP
+ fi

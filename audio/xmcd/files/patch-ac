@@ -1,12 +1,10 @@
-*** cda_d/Imakefile.orig	Wed May 16 15:59:15 2001
---- cda_d/Imakefile	Sat Jul  7 02:48:15 2001
-***************
-*** 143,148 ****
---- 143,149 ----
-  #endif	/* LinuxArchitecture OpenBSDArchitecture */
-  #endif	/* SunArchitecture */
-  
-+ MANSUFFIX=1
-  
-  /*
-   * C Source files
+--- cda_d/Imakefile.orig	Mon Nov  4 06:44:55 2002
++++ cda_d/Imakefile	Mon Nov  4 05:06:59 2002
+@@ -186,6 +186,7 @@
+ #endif	/* LinuxArchitecture OpenBSDArchitecture */
+ #endif	/* SunArchitecture */
+ 
++MANSUFFIX=1
+ 
+ /*
+  * C Source files
