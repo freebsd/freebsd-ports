@@ -15,7 +15,7 @@ MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
-		freetype.7:${PORTSDIR}/print/freetype2 \
+		freetype.8:${PORTSDIR}/print/freetype2 \
 		tk83.1:${PORTSDIR}/x11-toolkits/tk83
 
 USE_XPM=	yes

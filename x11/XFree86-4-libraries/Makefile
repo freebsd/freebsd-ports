@@ -17,7 +17,7 @@ DISTFILES=	X410src-1.tgz
 MAINTAINER=	taguchi@tohoku.iij.ad.jp
 
 BUILD_DEPENDS=	imake:${PORTSDIR}/devel/imake-4
-LIB_DEPENDS=	freetype.7:${PORTSDIR}/print/freetype2
+LIB_DEPENDS=	freetype.8:${PORTSDIR}/print/freetype2
 RUN_DEPENDS=	mkhtmlindex:${PORTSDIR}/devel/imake-4
 
 XFREE86_VERSION=	4

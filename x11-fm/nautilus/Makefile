@@ -17,7 +17,7 @@ MAINTAINER=	gnome@FreeBSD.org
 BUILD_DEPENDS=	freetype-config:${PORTSDIR}/print/freetype2 \
 		msgfmt-new:${PORTSDIR}/devel/gettext-devel
 LIB_DEPENDS=	medusa.0:${PORTSDIR}/sysutils/medusa \
-		freetype.7:${PORTSDIR}/print/freetype2 \
+		freetype.8:${PORTSDIR}/print/freetype2 \
 		eel.0:${PORTSDIR}/x11-toolkits/eel
 
 WITHOUT_MOZILLA=	"Broken with Mozilla 0.9.7."

@@ -20,7 +20,7 @@ MAINTAINER=	kanou@mil.allnet.ne.jp
 
 BUILD_DEPENDS+=	libtool:${PORTSDIR}/devel/libtool
 BUILD_DEPENDS+=	${FREETYPE_WRKSRC}/config.mk:${PORTSDIR}/print/freetype2:build
-LIB_DEPENDS=	freetype.7:${PORTSDIR}/print/freetype2
+LIB_DEPENDS=	freetype.8:${PORTSDIR}/print/freetype2
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes

@@ -15,7 +15,7 @@ DISTNAME=	gnome-print-${PORTVERSION}
 MAINTAINER=	gnome@FreeBSD.org
 
 BUILD_DEPENDS=	freetype-config:${PORTSDIR}/print/freetype2	# XXX
-LIB_DEPENDS=	freetype.7:${PORTSDIR}/print/freetype2
+LIB_DEPENDS=	freetype.8:${PORTSDIR}/print/freetype2
 RUN_DEPENDS=	gs:${PORTSDIR}/print/ghostscript-gnu
 
 PLIST_SUB=	VERSION=${PORTVERSION}
