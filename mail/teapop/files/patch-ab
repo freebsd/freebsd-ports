@@ -1,0 +1,30 @@
+--- teapop/pop_auth.c.orig	Mon Nov 13 02:03:11 2000
++++ teapop/pop_auth.c	Wed Mar 28 23:58:33 2001
+@@ -111,7 +111,11 @@
+ #endif /* ALLOW_APOP */
+ 				pop_cmd_capa(NULL, pinfo);
+ 				continue;
++#ifdef ALLOW_APOP
+ 			case 4:
++#else
++			case 3:
++#endif /* ALLOW_APOP */
+ 				return 1;
+ 			}
+ 			/* If we get this far we have a good USER or APOP */
+@@ -158,7 +162,14 @@
+ 
+ #ifdef VPOP
+ 		ptr = pop_string_find(pinfo->userid, DIVIDERS);
+-		if (ptr != NULL) {
++		if (ptr == NULL) {
++			syslog(LOG_ERR, "pop_auth: malloc failure");
++			pop_socket_send(pinfo->out, "%s %s", POP_ERR,
++				POP_WRONG);
++			exit(0);
++		}
++		if (*ptr != '\0') {
++			/* domain delimiters found */
+ 			strcpy(pinfo->domain, ptr+1);
+ 			*ptr = '\0';
+ 		} else
