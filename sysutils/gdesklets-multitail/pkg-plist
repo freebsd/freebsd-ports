@@ -1,8 +1,16 @@
-share/gnome/gdesklets/Displays/MultiTail/dark-theme/gfx/bg.png
-share/gnome/gdesklets/Displays/MultiTail/dark-theme/multitail.display
-share/gnome/gdesklets/Displays/MultiTail/light-theme/gfx/bg.png
-share/gnome/gdesklets/Displays/MultiTail/light-theme/multitail.display
-share/gnome/gdesklets/Displays/MultiTail/trans-theme/multitail.display
+share/gnome/gdesklets/Displays/MultiTail/README
+share/gnome/gdesklets/Displays/MultiTail/gfx/dark/bg.png
+share/gnome/gdesklets/Displays/MultiTail/gfx/dark/bottom-left.png
+share/gnome/gdesklets/Displays/MultiTail/gfx/dark/bottom-right.png
+share/gnome/gdesklets/Displays/MultiTail/gfx/dark/top-left.png
+share/gnome/gdesklets/Displays/MultiTail/gfx/dark/top-right.png
+share/gnome/gdesklets/Displays/MultiTail/gfx/light/bg.png
+share/gnome/gdesklets/Displays/MultiTail/gfx/light/bottom-left.png
+share/gnome/gdesklets/Displays/MultiTail/gfx/light/bottom-right.png
+share/gnome/gdesklets/Displays/MultiTail/gfx/light/top-left.png
+share/gnome/gdesklets/Displays/MultiTail/gfx/light/top-right.png
+share/gnome/gdesklets/Displays/MultiTail/gfx/trans.png
+share/gnome/gdesklets/Displays/MultiTail/multitail.display
 share/gnome/gdesklets/Sensors/MultiTail/__init__.py
 share/gnome/gdesklets/Sensors/MultiTail/__init__.pyc
 share/gnome/gdesklets/Sensors/MultiTail/filter.py
@@ -13,10 +21,8 @@ share/gnome/gdesklets/Sensors/MultiTail/tailbook.py
 share/gnome/gdesklets/Sensors/MultiTail/tailbook.pyc
 share/gnome/gdesklets/Sensors/MultiTail/watchlist.py
 share/gnome/gdesklets/Sensors/MultiTail/watchlist.pyc
-@dirrm share/gnome/gdesklets/Displays/MultiTail/dark-theme/gfx
-@dirrm share/gnome/gdesklets/Displays/MultiTail/dark-theme
-@dirrm share/gnome/gdesklets/Displays/MultiTail/light-theme/gfx
-@dirrm share/gnome/gdesklets/Displays/MultiTail/light-theme
-@dirrm share/gnome/gdesklets/Displays/MultiTail/trans-theme
+@dirrm share/gnome/gdesklets/Displays/MultiTail/gfx/dark
+@dirrm share/gnome/gdesklets/Displays/MultiTail/gfx/light
+@dirrm share/gnome/gdesklets/Displays/MultiTail/gfx
 @dirrm share/gnome/gdesklets/Displays/MultiTail
 @dirrm share/gnome/gdesklets/Sensors/MultiTail
