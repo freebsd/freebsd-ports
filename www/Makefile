@@ -207,7 +207,7 @@
     SUBDIR += mod_trigger
     SUBDIR += mod_tsunami
     SUBDIR += mod_watch
-    SUBDIR += mod_webapp-apache2
+#    SUBDIR += mod_webapp-apache2
     SUBDIR += mod_zap
     SUBDIR += moinmoin
     SUBDIR += momspider
