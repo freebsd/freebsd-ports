@@ -6,25 +6,32 @@
 #
 
 PORTNAME=	slrn
-PORTVERSION=	0.9.7.1
+PORTVERSION=	0.9.7.2
 CATEGORIES=	news ipv6
-MASTER_SITES=	ftp://slrn.sourceforge.net/pub/slrn/
-DISTNAME=	slrn-0.9.7.1
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	xaa+ports@timewasters.nl
+MAINTAINER=	petef@FreeBSD.org
 
 LIB_DEPENDS=	slang.1:${PORTSDIR}/devel/libslang
 
+USE_GMAKE=	yes
+
 GNU_CONFIGURE=	yes
-ALL_TARGET=	all slrnpull
-MAN1=		slrn.1
+CONFIGURE_ARGS=	--enable-ipv6 --disable-inews --with-slrnpull
 
-CONFIGURE_ARGS=	--enable-ipv6 --disable-inews
-
-.if defined(WITH_SSL)
+.if !defined(WITHOUT_SSL)
 USE_OPENSSL=	YES
 CONFIGURE_ARGS+=	--with-ssl
 .endif
+
+ALL_TARGET=	all slrnpull
+
+MAN1=		slrn.1
+
+post-patch:
+	@${PERL} -pi -e 's,/usr/lib/sendmail,/usr/sbin/sendmail,' \
+		${WRKSRC}/src/slrnfeat.h
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/${MACHINE_ARCH}objs/slrn ${PREFIX}/bin
@@ -32,12 +39,9 @@ do-install:
 	@${MKDIR} ${PREFIX}/share/examples/slrn
 	${INSTALL_DATA} ${WRKSRC}/doc/slrn.rc ${PREFIX}/share/examples/slrn
 	@${MKDIR} ${PREFIX}/share/examples/slrn/slrnpull
-	${INSTALL_DATA} ${WRKSRC}/doc/slrnpull/README ${PREFIX}/share/examples/slrn/slrnpull
-	${INSTALL_DATA} ${WRKSRC}/doc/slrnpull/SETUP ${PREFIX}/share/examples/slrn/slrnpull
-	${INSTALL_DATA} ${WRKSRC}/doc/slrnpull/score ${PREFIX}/share/examples/slrn/slrnpull
-	${INSTALL_DATA} ${WRKSRC}/doc/slrnpull/slrn.rc ${PREFIX}/share/examples/slrn/slrnpull
-	${INSTALL_DATA} ${WRKSRC}/doc/slrnpull/slrnpull.conf ${PREFIX}/share/examples/slrn/slrnpull
-	${INSTALL_DATA} ${WRKSRC}/doc/slrnpull/slrnpull.sh ${PREFIX}/share/examples/slrn/slrnpull
+.for file in FAQ README SETUP score slrn.rc slrnpull.conf slrnpull.sh
+	${INSTALL_DATA} ${WRKSRC}/doc/slrnpull/${file} ${PREFIX}/share/examples/slrn/slrnpull
+.endfor
 	${INSTALL_MAN} ${WRKSRC}/doc/slrn.1 ${PREFIX}/man/man1
 
 .include <bsd.port.mk>
