@@ -1,243 +1,244 @@
 bin/sdoc
 lib/xemacs/site-lisp/sdoc-helper.el
 lib/xemacs/site-lisp/sdoc-mode.el
-%%PORTDOCS%%share/doc/smartdoc/COPYING.txt
-%%PORTDOCS%%share/doc/smartdoc/OroLICENSE.txt
-%%PORTDOCS%%share/doc/smartdoc/README
-%%PORTDOCS%%share/doc/smartdoc/README.sdoc
-%%PORTDOCS%%share/doc/smartdoc/README_en.html
-%%PORTDOCS%%share/doc/smartdoc/README_ja.html
-%%PORTDOCS%%share/doc/smartdoc/XalanLICENSE.txt
-%%PORTDOCS%%share/doc/smartdoc/XercesLICENSE.txt
-%%PORTDOCS%%share/doc/smartdoc/doc/quick/Dl.sdoc
-%%PORTDOCS%%share/doc/smartdoc/doc/quick/Figure.sdoc
-%%PORTDOCS%%share/doc/smartdoc/doc/quick/HelloWorld.sdoc
-%%PORTDOCS%%share/doc/smartdoc/doc/quick/HelloWorld_ja.sdoc
-%%PORTDOCS%%share/doc/smartdoc/doc/quick/NaturalP.sdoc
-%%PORTDOCS%%share/doc/smartdoc/doc/quick/Ol.sdoc
-%%PORTDOCS%%share/doc/smartdoc/doc/quick/P.sdoc
-%%PORTDOCS%%share/doc/smartdoc/doc/quick/Sample.java
-%%PORTDOCS%%share/doc/smartdoc/doc/quick/Sample.java.cdata
-%%PORTDOCS%%share/doc/smartdoc/doc/quick/Sample.java.escape
-%%PORTDOCS%%share/doc/smartdoc/doc/quick/SmartDoc.properties
-%%PORTDOCS%%share/doc/smartdoc/doc/quick/TableBasic.sdoc
-%%PORTDOCS%%share/doc/smartdoc/doc/quick/TableCSV.sdoc
-%%PORTDOCS%%share/doc/smartdoc/doc/quick/TreeTable.sdoc
-%%PORTDOCS%%share/doc/smartdoc/doc/quick/Ul.sdoc
-%%PORTDOCS%%share/doc/smartdoc/doc/quick/figure.eps
-%%PORTDOCS%%share/doc/smartdoc/doc/quick/figure.gif
-%%PORTDOCS%%share/doc/smartdoc/doc/quick/quick.sdoc
-%%PORTDOCS%%share/doc/smartdoc/doc/quick/sample.console
-%%PORTDOCS%%share/doc/smartdoc/doc/refman/README.euc
-%%PORTDOCS%%share/doc/smartdoc/doc/refman/README.sjis
-%%PORTDOCS%%share/doc/smartdoc/doc/refman/SmartDoc.properties
-%%PORTDOCS%%share/doc/smartdoc/doc/refman/adapter.sdoc
-%%PORTDOCS%%share/doc/smartdoc/doc/refman/bibElement.sdoc
-%%PORTDOCS%%share/doc/smartdoc/doc/refman/command.sdoc
-%%PORTDOCS%%share/doc/smartdoc/doc/refman/commonAttr.sdoc
-%%PORTDOCS%%share/doc/smartdoc/doc/refman/documentElement.sdoc
-%%PORTDOCS%%share/doc/smartdoc/doc/refman/html3.sdoc
-%%PORTDOCS%%share/doc/smartdoc/doc/refman/html4.sdoc
-%%PORTDOCS%%share/doc/smartdoc/doc/refman/index.sdoc
-%%PORTDOCS%%share/doc/smartdoc/doc/refman/javahelp.sdoc
-%%PORTDOCS%%share/doc/smartdoc/doc/refman/latex2e.sdoc
-%%PORTDOCS%%share/doc/smartdoc/doc/refman/normalizer.sdoc
-%%PORTDOCS%%share/doc/smartdoc/doc/refman/plain.sdoc
-%%PORTDOCS%%share/doc/smartdoc/doc/refman/pure.sdoc
-%%PORTDOCS%%share/doc/smartdoc/doc/refman/revised.sdoc
-%%PORTDOCS%%share/doc/smartdoc/doc/refman/src/adapter/autoimage.sdoc
-%%PORTDOCS%%share/doc/smartdoc/doc/refman/src/adapter/bean/sample.sdoc
-%%PORTDOCS%%share/doc/smartdoc/doc/refman/src/adapter/csv.sdoc
-%%PORTDOCS%%share/doc/smartdoc/doc/refman/src/adapter/intro.sdoc
-%%PORTDOCS%%share/doc/smartdoc/doc/refman/src/adapter/jdbc/jdbc.sdoc
-%%PORTDOCS%%share/doc/smartdoc/doc/refman/src/adapter/none.sdoc
-%%PORTDOCS%%share/doc/smartdoc/doc/refman/src/adapter/sdoc.sdoc
-%%PORTDOCS%%share/doc/smartdoc/doc/refman/src/adapter/stable.sdoc
-%%PORTDOCS%%share/doc/smartdoc/doc/refman/src/adapter/text.sdoc
-%%PORTDOCS%%share/doc/smartdoc/doc/refman/src/adapter/xslt/conv.xsl
-%%PORTDOCS%%share/doc/smartdoc/doc/refman/src/adapter/xslt/data.xml
-%%PORTDOCS%%share/doc/smartdoc/doc/refman/src/adapter/xslt/sample.sdoc
-%%PORTDOCS%%share/doc/smartdoc/doc/refman/src/bib/article.sdoc
-%%PORTDOCS%%share/doc/smartdoc/doc/refman/src/bib/author.sdoc
-%%PORTDOCS%%share/doc/smartdoc/doc/refman/src/bib/bibliography.sdoc
-%%PORTDOCS%%share/doc/smartdoc/doc/refman/src/bib/bibliopole.sdoc
-%%PORTDOCS%%share/doc/smartdoc/doc/refman/src/bib/book.sdoc
-%%PORTDOCS%%share/doc/smartdoc/doc/refman/src/bib/edition.sdoc
-%%PORTDOCS%%share/doc/smartdoc/doc/refman/src/bib/editor.sdoc
-%%PORTDOCS%%share/doc/smartdoc/doc/refman/src/bib/journal.sdoc
-%%PORTDOCS%%share/doc/smartdoc/doc/refman/src/bib/month.sdoc
-%%PORTDOCS%%share/doc/smartdoc/doc/refman/src/bib/number.sdoc
-%%PORTDOCS%%share/doc/smartdoc/doc/refman/src/bib/pages.sdoc
-%%PORTDOCS%%share/doc/smartdoc/doc/refman/src/bib/publisher.sdoc
-%%PORTDOCS%%share/doc/smartdoc/doc/refman/src/bib/subtitle.sdoc
-%%PORTDOCS%%share/doc/smartdoc/doc/refman/src/bib/title.sdoc
-%%PORTDOCS%%share/doc/smartdoc/doc/refman/src/bib/uri.sdoc
-%%PORTDOCS%%share/doc/smartdoc/doc/refman/src/bib/volume.sdoc
-%%PORTDOCS%%share/doc/smartdoc/doc/refman/src/bib/year.sdoc
-%%PORTDOCS%%share/doc/smartdoc/doc/refman/src/command/locale.sdoc
-%%PORTDOCS%%share/doc/smartdoc/doc/refman/src/command/localeEn.sdoc
-%%PORTDOCS%%share/doc/smartdoc/doc/refman/src/command/localeJa.sdoc
-%%PORTDOCS%%share/doc/smartdoc/doc/refman/src/commonAttr/adapter.sdoc
-%%PORTDOCS%%share/doc/smartdoc/doc/refman/src/commonAttr/class.sdoc
-%%PORTDOCS%%share/doc/smartdoc/doc/refman/src/commonAttr/format.sdoc
-%%PORTDOCS%%share/doc/smartdoc/doc/refman/src/commonAttr/id.sdoc
-%%PORTDOCS%%share/doc/smartdoc/doc/refman/src/commonAttr/idref.sdoc
-%%PORTDOCS%%share/doc/smartdoc/doc/refman/src/commonAttr/key.sdoc
-%%PORTDOCS%%share/doc/smartdoc/doc/refman/src/commonAttr/locale.sdoc
-%%PORTDOCS%%share/doc/smartdoc/doc/refman/src/commonAttr/normalizer.sdoc
-%%PORTDOCS%%share/doc/smartdoc/doc/refman/src/commonAttr/src.sdoc
-%%PORTDOCS%%share/doc/smartdoc/doc/refman/src/commonAttr/style.sdoc
-%%PORTDOCS%%share/doc/smartdoc/doc/refman/src/commonAttr/title.sdoc
-%%PORTDOCS%%share/doc/smartdoc/doc/refman/src/commonAttr/xmllang.sdoc
-%%PORTDOCS%%share/doc/smartdoc/doc/refman/src/commonAttr/xmlspace.sdoc
-%%PORTDOCS%%share/doc/smartdoc/doc/refman/src/element/a.sdoc
-%%PORTDOCS%%share/doc/smartdoc/doc/refman/src/element/abbr.sdoc
-%%PORTDOCS%%share/doc/smartdoc/doc/refman/src/element/acronym.sdoc
-%%PORTDOCS%%share/doc/smartdoc/doc/refman/src/element/appendix.sdoc
-%%PORTDOCS%%share/doc/smartdoc/doc/refman/src/element/attribute.sdoc
-%%PORTDOCS%%share/doc/smartdoc/doc/refman/src/element/b.sdoc
-%%PORTDOCS%%share/doc/smartdoc/doc/refman/src/element/blockquote.sdoc
-%%PORTDOCS%%share/doc/smartdoc/doc/refman/src/element/body.sdoc
-%%PORTDOCS%%share/doc/smartdoc/doc/refman/src/element/chapter.sdoc
-%%PORTDOCS%%share/doc/smartdoc/doc/refman/src/element/cite.sdoc
-%%PORTDOCS%%share/doc/smartdoc/doc/refman/src/element/code.sdoc
-%%PORTDOCS%%share/doc/smartdoc/doc/refman/src/element/col.sdoc
-%%PORTDOCS%%share/doc/smartdoc/doc/refman/src/element/colgroup.sdoc
-%%PORTDOCS%%share/doc/smartdoc/doc/refman/src/element/console.sdoc
-%%PORTDOCS%%share/doc/smartdoc/doc/refman/src/element/dd.sdoc
-%%PORTDOCS%%share/doc/smartdoc/doc/refman/src/element/dfn.sdoc
-%%PORTDOCS%%share/doc/smartdoc/doc/refman/src/element/div.sdoc
-%%PORTDOCS%%share/doc/smartdoc/doc/refman/src/element/dl.sdoc
-%%PORTDOCS%%share/doc/smartdoc/doc/refman/src/element/doc.sdoc
-%%PORTDOCS%%share/doc/smartdoc/doc/refman/src/element/dt.sdoc
-%%PORTDOCS%%share/doc/smartdoc/doc/refman/src/element/em.sdoc
-%%PORTDOCS%%share/doc/smartdoc/doc/refman/src/element/equation.sdoc
-%%PORTDOCS%%share/doc/smartdoc/doc/refman/src/element/figure.sdoc
-%%PORTDOCS%%share/doc/smartdoc/doc/refman/src/element/fyi.sdoc
-%%PORTDOCS%%share/doc/smartdoc/doc/refman/src/element/head.sdoc
-%%PORTDOCS%%share/doc/smartdoc/doc/refman/src/element/head2.sdoc
-%%PORTDOCS%%share/doc/smartdoc/doc/refman/src/element/i.sdoc
-%%PORTDOCS%%share/doc/smartdoc/doc/refman/src/element/img.sdoc
-%%PORTDOCS%%share/doc/smartdoc/doc/refman/src/element/index.sdoc
-%%PORTDOCS%%share/doc/smartdoc/doc/refman/src/element/kbd.sdoc
-%%PORTDOCS%%share/doc/smartdoc/doc/refman/src/element/li.sdoc
-%%PORTDOCS%%share/doc/smartdoc/doc/refman/src/element/native.sdoc
-%%PORTDOCS%%share/doc/smartdoc/doc/refman/src/element/note.sdoc
-%%PORTDOCS%%share/doc/smartdoc/doc/refman/src/element/ol.sdoc
-%%PORTDOCS%%share/doc/smartdoc/doc/refman/src/element/p.sdoc
-%%PORTDOCS%%share/doc/smartdoc/doc/refman/src/element/part.sdoc
-%%PORTDOCS%%share/doc/smartdoc/doc/refman/src/element/pre.sdoc
-%%PORTDOCS%%share/doc/smartdoc/doc/refman/src/element/program.sdoc
-%%PORTDOCS%%share/doc/smartdoc/doc/refman/src/element/q.sdoc
-%%PORTDOCS%%share/doc/smartdoc/doc/refman/src/element/samp.sdoc
-%%PORTDOCS%%share/doc/smartdoc/doc/refman/src/element/section.sdoc
-%%PORTDOCS%%share/doc/smartdoc/doc/refman/src/element/span.sdoc
-%%PORTDOCS%%share/doc/smartdoc/doc/refman/src/element/strong.sdoc
-%%PORTDOCS%%share/doc/smartdoc/doc/refman/src/element/subsection.sdoc
-%%PORTDOCS%%share/doc/smartdoc/doc/refman/src/element/subsubsection.sdoc
-%%PORTDOCS%%share/doc/smartdoc/doc/refman/src/element/table.sdoc
-%%PORTDOCS%%share/doc/smartdoc/doc/refman/src/element/tbody.sdoc
-%%PORTDOCS%%share/doc/smartdoc/doc/refman/src/element/td.sdoc
-%%PORTDOCS%%share/doc/smartdoc/doc/refman/src/element/tfoot.sdoc
-%%PORTDOCS%%share/doc/smartdoc/doc/refman/src/element/th.sdoc
-%%PORTDOCS%%share/doc/smartdoc/doc/refman/src/element/thead.sdoc
-%%PORTDOCS%%share/doc/smartdoc/doc/refman/src/element/title.sdoc
-%%PORTDOCS%%share/doc/smartdoc/doc/refman/src/element/tnote.sdoc
-%%PORTDOCS%%share/doc/smartdoc/doc/refman/src/element/tr.sdoc
-%%PORTDOCS%%share/doc/smartdoc/doc/refman/src/element/tt.sdoc
-%%PORTDOCS%%share/doc/smartdoc/doc/refman/src/element/ul.sdoc
-%%PORTDOCS%%share/doc/smartdoc/doc/refman/src/element/var.sdoc
-%%PORTDOCS%%share/doc/smartdoc/doc/refman/src/hello/HelloWorld.sdoc
-%%PORTDOCS%%share/doc/smartdoc/doc/refman/src/hello/HelloWorld_ja.sdoc
-%%PORTDOCS%%share/doc/smartdoc/doc/refman/src/intro/demo.sdoc
-%%PORTDOCS%%share/doc/smartdoc/doc/refman/src/normalizer/console.sdoc
-%%PORTDOCS%%share/doc/smartdoc/doc/refman/src/normalizer/csv.sdoc
-%%PORTDOCS%%share/doc/smartdoc/doc/refman/src/normalizer/href.sdoc
-%%PORTDOCS%%share/doc/smartdoc/doc/refman/src/normalizer/image.sdoc
-%%PORTDOCS%%share/doc/smartdoc/doc/refman/src/normalizer/javasrc.sdoc
-%%PORTDOCS%%share/doc/smartdoc/doc/refman/src/normalizer/line.sdoc
-%%PORTDOCS%%share/doc/smartdoc/doc/refman/src/normalizer/natural.sdoc
-%%PORTDOCS%%share/doc/smartdoc/doc/refman/src/normalizer/naturallabel.sdoc
-%%PORTDOCS%%share/doc/smartdoc/doc/refman/src/normalizer/none.sdoc
-%%PORTDOCS%%share/doc/smartdoc/doc/refman/src/normalizer/program.sdoc
-%%PORTDOCS%%share/doc/smartdoc/doc/refman/src/normalizer/regex.sdoc
-%%PORTDOCS%%share/doc/smartdoc/doc/refman/src/normalizer/space.sdoc
-%%PORTDOCS%%share/doc/smartdoc/doc/refman/src/normalizer/tag.sdoc
-%%PORTDOCS%%share/doc/smartdoc/doc/refman/src/normalizer/tex.sdoc
-%%PORTDOCS%%share/doc/smartdoc/doc/refman/src/plain/sample.sdoc
-%%PORTDOCS%%share/doc/smartdoc/doc/refman/src/plain/sample_ascii.txt
-%%PORTDOCS%%share/doc/smartdoc/doc/refman/src/plain/sample_jis.txt
-%%PORTDOCS%%share/doc/smartdoc/doc/refman/src/structure/attr.sdoc
-%%PORTDOCS%%share/doc/smartdoc/doc/refman/src/structure/block.sdoc
-%%PORTDOCS%%share/doc/smartdoc/doc/refman/src/structure/framework.sdoc
-%%PORTDOCS%%share/doc/smartdoc/doc/refman/src/structure/head.sdoc
-%%PORTDOCS%%share/doc/smartdoc/doc/refman/src/structure/image.sdoc
-%%PORTDOCS%%share/doc/smartdoc/doc/refman/src/structure/index.sdoc
-%%PORTDOCS%%share/doc/smartdoc/doc/refman/src/structure/link.sdoc
-%%PORTDOCS%%share/doc/smartdoc/doc/refman/src/structure/list.sdoc
-%%PORTDOCS%%share/doc/smartdoc/doc/refman/src/structure/logical.sdoc
-%%PORTDOCS%%share/doc/smartdoc/doc/refman/src/structure/math.sdoc
-%%PORTDOCS%%share/doc/smartdoc/doc/refman/src/structure/note.sdoc
-%%PORTDOCS%%share/doc/smartdoc/doc/refman/src/structure/program.sdoc
-%%PORTDOCS%%share/doc/smartdoc/doc/refman/src/structure/quote.sdoc
-%%PORTDOCS%%share/doc/smartdoc/doc/refman/src/structure/special.sdoc
-%%PORTDOCS%%share/doc/smartdoc/doc/refman/src/structure/table.sdoc
-%%PORTDOCS%%share/doc/smartdoc/doc/refman/src/structure/text.sdoc
-%%PORTDOCS%%share/doc/smartdoc/doc/refman/structure.sdoc
-%%PORTDOCS%%share/doc/smartdoc/doc/sample/Sample.java
-%%PORTDOCS%%share/doc/smartdoc/doc/sample/SmartDoc.properties.dvi2ps
-%%PORTDOCS%%share/doc/smartdoc/doc/sample/SmartDoc.properties.dvips
-%%PORTDOCS%%share/doc/smartdoc/doc/sample/figure.eps
-%%PORTDOCS%%share/doc/smartdoc/doc/sample/figure.gif
-%%PORTDOCS%%share/doc/smartdoc/doc/sample/html.html
-%%PORTDOCS%%share/doc/smartdoc/doc/sample/latex.tex
-%%PORTDOCS%%share/doc/smartdoc/doc/sample/sample.console
-%%PORTDOCS%%share/doc/smartdoc/doc/sample/sample.sdoc
-%%PORTDOCS%%share/doc/smartdoc/doc/sampleI18N/Sample.java
-%%PORTDOCS%%share/doc/smartdoc/doc/sampleI18N/SmartDoc.properties.dvi2ps
-%%PORTDOCS%%share/doc/smartdoc/doc/sampleI18N/SmartDoc.properties.dvips
-%%PORTDOCS%%share/doc/smartdoc/doc/sampleI18N/data.csv
-%%PORTDOCS%%share/doc/smartdoc/doc/sampleI18N/figure.eps
-%%PORTDOCS%%share/doc/smartdoc/doc/sampleI18N/figure.gif
-%%PORTDOCS%%share/doc/smartdoc/doc/sampleI18N/html.html
-%%PORTDOCS%%share/doc/smartdoc/doc/sampleI18N/latex.tex
-%%PORTDOCS%%share/doc/smartdoc/doc/sampleI18N/sample.console
-%%PORTDOCS%%share/doc/smartdoc/doc/sampleI18N/sample.sdoc
+%%DOCSDIR%%/COPYING.txt
+%%DOCSDIR%%/OroLICENSE.txt
+%%DOCSDIR%%/README
+%%DOCSDIR%%/README.sdoc
+%%DOCSDIR%%/README_en.html
+%%DOCSDIR%%/README_ja.html
+%%DOCSDIR%%/XalanLICENSE.txt
+%%DOCSDIR%%/XercesLICENSE.txt
+%%DOCSDIR%%/doc/quick/Dl.sdoc
+%%DOCSDIR%%/doc/quick/Figure.sdoc
+%%DOCSDIR%%/doc/quick/HelloWorld.sdoc
+%%DOCSDIR%%/doc/quick/HelloWorld_ja.sdoc
+%%DOCSDIR%%/doc/quick/NaturalP.sdoc
+%%DOCSDIR%%/doc/quick/Ol.sdoc
+%%DOCSDIR%%/doc/quick/P.sdoc
+%%DOCSDIR%%/doc/quick/Sample.java
+%%DOCSDIR%%/doc/quick/Sample.java.cdata
+%%DOCSDIR%%/doc/quick/Sample.java.escape
+%%DOCSDIR%%/doc/quick/SmartDoc.properties
+%%DOCSDIR%%/doc/quick/TableBasic.sdoc
+%%DOCSDIR%%/doc/quick/TableCSV.sdoc
+%%DOCSDIR%%/doc/quick/TreeTable.sdoc
+%%DOCSDIR%%/doc/quick/Ul.sdoc
+%%DOCSDIR%%/doc/quick/figure.eps
+%%DOCSDIR%%/doc/quick/figure.gif
+%%DOCSDIR%%/doc/quick/quick.sdoc
+%%DOCSDIR%%/doc/quick/sample.console
+%%DOCSDIR%%/doc/refman/README.euc
+%%DOCSDIR%%/doc/refman/README.sjis
+%%DOCSDIR%%/doc/refman/SmartDoc.properties
+%%DOCSDIR%%/doc/refman/adapter.sdoc
+%%DOCSDIR%%/doc/refman/bibElement.sdoc
+%%DOCSDIR%%/doc/refman/command.sdoc
+%%DOCSDIR%%/doc/refman/commonAttr.sdoc
+%%DOCSDIR%%/doc/refman/documentElement.sdoc
+%%DOCSDIR%%/doc/refman/html3.sdoc
+%%DOCSDIR%%/doc/refman/html4.sdoc
+%%DOCSDIR%%/doc/refman/index.sdoc
+%%DOCSDIR%%/doc/refman/javahelp.sdoc
+%%DOCSDIR%%/doc/refman/latex2e.sdoc
+%%DOCSDIR%%/doc/refman/normalizer.sdoc
+%%DOCSDIR%%/doc/refman/plain.sdoc
+%%DOCSDIR%%/doc/refman/pure.sdoc
+%%DOCSDIR%%/doc/refman/revised.sdoc
+%%DOCSDIR%%/doc/refman/src/adapter/autoimage.sdoc
+%%DOCSDIR%%/doc/refman/src/adapter/bean/sample.sdoc
+%%DOCSDIR%%/doc/refman/src/adapter/csv.sdoc
+%%DOCSDIR%%/doc/refman/src/adapter/intro.sdoc
+%%DOCSDIR%%/doc/refman/src/adapter/jdbc/jdbc.sdoc
+%%DOCSDIR%%/doc/refman/src/adapter/none.sdoc
+%%DOCSDIR%%/doc/refman/src/adapter/sdoc.sdoc
+%%DOCSDIR%%/doc/refman/src/adapter/stable.sdoc
+%%DOCSDIR%%/doc/refman/src/adapter/text.sdoc
+%%DOCSDIR%%/doc/refman/src/adapter/xslt/conv.xsl
+%%DOCSDIR%%/doc/refman/src/adapter/xslt/data.xml
+%%DOCSDIR%%/doc/refman/src/adapter/xslt/sample.sdoc
+%%DOCSDIR%%/doc/refman/src/bib/article.sdoc
+%%DOCSDIR%%/doc/refman/src/bib/author.sdoc
+%%DOCSDIR%%/doc/refman/src/bib/bibliography.sdoc
+%%DOCSDIR%%/doc/refman/src/bib/bibliopole.sdoc
+%%DOCSDIR%%/doc/refman/src/bib/book.sdoc
+%%DOCSDIR%%/doc/refman/src/bib/edition.sdoc
+%%DOCSDIR%%/doc/refman/src/bib/editor.sdoc
+%%DOCSDIR%%/doc/refman/src/bib/journal.sdoc
+%%DOCSDIR%%/doc/refman/src/bib/month.sdoc
+%%DOCSDIR%%/doc/refman/src/bib/number.sdoc
+%%DOCSDIR%%/doc/refman/src/bib/pages.sdoc
+%%DOCSDIR%%/doc/refman/src/bib/publisher.sdoc
+%%DOCSDIR%%/doc/refman/src/bib/subtitle.sdoc
+%%DOCSDIR%%/doc/refman/src/bib/title.sdoc
+%%DOCSDIR%%/doc/refman/src/bib/uri.sdoc
+%%DOCSDIR%%/doc/refman/src/bib/volume.sdoc
+%%DOCSDIR%%/doc/refman/src/bib/year.sdoc
+%%DOCSDIR%%/doc/refman/src/command/locale.sdoc
+%%DOCSDIR%%/doc/refman/src/command/localeEn.sdoc
+%%DOCSDIR%%/doc/refman/src/command/localeJa.sdoc
+%%DOCSDIR%%/doc/refman/src/commonAttr/adapter.sdoc
+%%DOCSDIR%%/doc/refman/src/commonAttr/class.sdoc
+%%DOCSDIR%%/doc/refman/src/commonAttr/format.sdoc
+%%DOCSDIR%%/doc/refman/src/commonAttr/id.sdoc
+%%DOCSDIR%%/doc/refman/src/commonAttr/idref.sdoc
+%%DOCSDIR%%/doc/refman/src/commonAttr/key.sdoc
+%%DOCSDIR%%/doc/refman/src/commonAttr/locale.sdoc
+%%DOCSDIR%%/doc/refman/src/commonAttr/normalizer.sdoc
+%%DOCSDIR%%/doc/refman/src/commonAttr/src.sdoc
+%%DOCSDIR%%/doc/refman/src/commonAttr/style.sdoc
+%%DOCSDIR%%/doc/refman/src/commonAttr/title.sdoc
+%%DOCSDIR%%/doc/refman/src/commonAttr/xmllang.sdoc
+%%DOCSDIR%%/doc/refman/src/commonAttr/xmlspace.sdoc
+%%DOCSDIR%%/doc/refman/src/element/a.sdoc
+%%DOCSDIR%%/doc/refman/src/element/abbr.sdoc
+%%DOCSDIR%%/doc/refman/src/element/acronym.sdoc
+%%DOCSDIR%%/doc/refman/src/element/appendix.sdoc
+%%DOCSDIR%%/doc/refman/src/element/attribute.sdoc
+%%DOCSDIR%%/doc/refman/src/element/b.sdoc
+%%DOCSDIR%%/doc/refman/src/element/blockquote.sdoc
+%%DOCSDIR%%/doc/refman/src/element/body.sdoc
+%%DOCSDIR%%/doc/refman/src/element/chapter.sdoc
+%%DOCSDIR%%/doc/refman/src/element/cite.sdoc
+%%DOCSDIR%%/doc/refman/src/element/code.sdoc
+%%DOCSDIR%%/doc/refman/src/element/col.sdoc
+%%DOCSDIR%%/doc/refman/src/element/colgroup.sdoc
+%%DOCSDIR%%/doc/refman/src/element/console.sdoc
+%%DOCSDIR%%/doc/refman/src/element/dd.sdoc
+%%DOCSDIR%%/doc/refman/src/element/dfn.sdoc
+%%DOCSDIR%%/doc/refman/src/element/div.sdoc
+%%DOCSDIR%%/doc/refman/src/element/dl.sdoc
+%%DOCSDIR%%/doc/refman/src/element/doc.sdoc
+%%DOCSDIR%%/doc/refman/src/element/dt.sdoc
+%%DOCSDIR%%/doc/refman/src/element/em.sdoc
+%%DOCSDIR%%/doc/refman/src/element/equation.sdoc
+%%DOCSDIR%%/doc/refman/src/element/figure.sdoc
+%%DOCSDIR%%/doc/refman/src/element/fyi.sdoc
+%%DOCSDIR%%/doc/refman/src/element/head.sdoc
+%%DOCSDIR%%/doc/refman/src/element/head2.sdoc
+%%DOCSDIR%%/doc/refman/src/element/i.sdoc
+%%DOCSDIR%%/doc/refman/src/element/img.sdoc
+%%DOCSDIR%%/doc/refman/src/element/index.sdoc
+%%DOCSDIR%%/doc/refman/src/element/kbd.sdoc
+%%DOCSDIR%%/doc/refman/src/element/li.sdoc
+%%DOCSDIR%%/doc/refman/src/element/native.sdoc
+%%DOCSDIR%%/doc/refman/src/element/note.sdoc
+%%DOCSDIR%%/doc/refman/src/element/ol.sdoc
+%%DOCSDIR%%/doc/refman/src/element/p.sdoc
+%%DOCSDIR%%/doc/refman/src/element/part.sdoc
+%%DOCSDIR%%/doc/refman/src/element/pre.sdoc
+%%DOCSDIR%%/doc/refman/src/element/program.sdoc
+%%DOCSDIR%%/doc/refman/src/element/q.sdoc
+%%DOCSDIR%%/doc/refman/src/element/samp.sdoc
+%%DOCSDIR%%/doc/refman/src/element/section.sdoc
+%%DOCSDIR%%/doc/refman/src/element/span.sdoc
+%%DOCSDIR%%/doc/refman/src/element/strong.sdoc
+%%DOCSDIR%%/doc/refman/src/element/subsection.sdoc
+%%DOCSDIR%%/doc/refman/src/element/subsubsection.sdoc
+%%DOCSDIR%%/doc/refman/src/element/table.sdoc
+%%DOCSDIR%%/doc/refman/src/element/tbody.sdoc
+%%DOCSDIR%%/doc/refman/src/element/td.sdoc
+%%DOCSDIR%%/doc/refman/src/element/tfoot.sdoc
+%%DOCSDIR%%/doc/refman/src/element/th.sdoc
+%%DOCSDIR%%/doc/refman/src/element/thead.sdoc
+%%DOCSDIR%%/doc/refman/src/element/title.sdoc
+%%DOCSDIR%%/doc/refman/src/element/tnote.sdoc
+%%DOCSDIR%%/doc/refman/src/element/tr.sdoc
+%%DOCSDIR%%/doc/refman/src/element/tt.sdoc
+%%DOCSDIR%%/doc/refman/src/element/ul.sdoc
+%%DOCSDIR%%/doc/refman/src/element/var.sdoc
+%%DOCSDIR%%/doc/refman/src/hello/HelloWorld.sdoc
+%%DOCSDIR%%/doc/refman/src/hello/HelloWorld_ja.sdoc
+%%DOCSDIR%%/doc/refman/src/intro/demo.sdoc
+%%DOCSDIR%%/doc/refman/src/normalizer/console.sdoc
+%%DOCSDIR%%/doc/refman/src/normalizer/csv.sdoc
+%%DOCSDIR%%/doc/refman/src/normalizer/href.sdoc
+%%DOCSDIR%%/doc/refman/src/normalizer/image.sdoc
+%%DOCSDIR%%/doc/refman/src/normalizer/javasrc.sdoc
+%%DOCSDIR%%/doc/refman/src/normalizer/line.sdoc
+%%DOCSDIR%%/doc/refman/src/normalizer/natural.sdoc
+%%DOCSDIR%%/doc/refman/src/normalizer/naturallabel.sdoc
+%%DOCSDIR%%/doc/refman/src/normalizer/none.sdoc
+%%DOCSDIR%%/doc/refman/src/normalizer/program.sdoc
+%%DOCSDIR%%/doc/refman/src/normalizer/regex.sdoc
+%%DOCSDIR%%/doc/refman/src/normalizer/space.sdoc
+%%DOCSDIR%%/doc/refman/src/normalizer/tag.sdoc
+%%DOCSDIR%%/doc/refman/src/normalizer/tex.sdoc
+%%DOCSDIR%%/doc/refman/src/plain/sample.sdoc
+%%DOCSDIR%%/doc/refman/src/plain/sample_ascii.txt
+%%DOCSDIR%%/doc/refman/src/plain/sample_jis.txt
+%%DOCSDIR%%/doc/refman/src/structure/attr.sdoc
+%%DOCSDIR%%/doc/refman/src/structure/block.sdoc
+%%DOCSDIR%%/doc/refman/src/structure/framework.sdoc
+%%DOCSDIR%%/doc/refman/src/structure/head.sdoc
+%%DOCSDIR%%/doc/refman/src/structure/image.sdoc
+%%DOCSDIR%%/doc/refman/src/structure/index.sdoc
+%%DOCSDIR%%/doc/refman/src/structure/link.sdoc
+%%DOCSDIR%%/doc/refman/src/structure/list.sdoc
+%%DOCSDIR%%/doc/refman/src/structure/logical.sdoc
+%%DOCSDIR%%/doc/refman/src/structure/math.sdoc
+%%DOCSDIR%%/doc/refman/src/structure/note.sdoc
+%%DOCSDIR%%/doc/refman/src/structure/program.sdoc
+%%DOCSDIR%%/doc/refman/src/structure/quote.sdoc
+%%DOCSDIR%%/doc/refman/src/structure/special.sdoc
+%%DOCSDIR%%/doc/refman/src/structure/table.sdoc
+%%DOCSDIR%%/doc/refman/src/structure/text.sdoc
+%%DOCSDIR%%/doc/refman/structure.sdoc
+%%DOCSDIR%%/doc/sample/Sample.java
+%%DOCSDIR%%/doc/sample/SmartDoc.properties.dvi2ps
+%%DOCSDIR%%/doc/sample/SmartDoc.properties.dvips
+%%DOCSDIR%%/doc/sample/figure.eps
+%%DOCSDIR%%/doc/sample/figure.gif
+%%DOCSDIR%%/doc/sample/html.html
+%%DOCSDIR%%/doc/sample/latex.tex
+%%DOCSDIR%%/doc/sample/sample.console
+%%DOCSDIR%%/doc/sample/sample.sdoc
+%%DOCSDIR%%/doc/sampleI18N/Sample.java
+%%DOCSDIR%%/doc/sampleI18N/SmartDoc.properties.dvi2ps
+%%DOCSDIR%%/doc/sampleI18N/SmartDoc.properties.dvips
+%%DOCSDIR%%/doc/sampleI18N/data.csv
+%%DOCSDIR%%/doc/sampleI18N/figure.eps
+%%DOCSDIR%%/doc/sampleI18N/figure.gif
+%%DOCSDIR%%/doc/sampleI18N/html.html
+%%DOCSDIR%%/doc/sampleI18N/latex.tex
+%%DOCSDIR%%/doc/sampleI18N/sample.console
+%%DOCSDIR%%/doc/sampleI18N/sample.sdoc
 share/emacs/site-lisp/sdoc-helper.el
 share/emacs/site-lisp/sdoc-mode.el
-share/examples/smartdoc/html4/article.css
-share/examples/smartdoc/pure/PureSmartDoc.dtd
-share/examples/smartdoc/pure/PureSmartDoc.rlx
-share/examples/smartdoc/pure/article.css
-share/examples/smartdoc/sdoc-helper.el
-share/examples/smartdoc/sdoc-mode.el
-share/examples/smartdoc/sdoc2html.xsl
+%%EXAMPLESDIR%%/html4/article.css
+%%EXAMPLESDIR%%/pure/PureSmartDoc.dtd
+%%EXAMPLESDIR%%/pure/PureSmartDoc.rlx
+%%EXAMPLESDIR%%/pure/article.css
+%%EXAMPLESDIR%%/sdoc-helper.el
+%%EXAMPLESDIR%%/sdoc-mode.el
+%%EXAMPLESDIR%%/sdoc2html.xsl
 share/java/classes/SmartDoc.jar
 share/xml/smartdoc/PureSmartDoc.dtd
 share/xml/smartdoc/catalog
 @dirrm share/xml/smartdoc
-@dirrm share/examples/smartdoc/pure
-@dirrm share/examples/smartdoc/html4
-@dirrm share/examples/smartdoc
+@unexec rmdir %D/share/java/classes 2>/dev/null || true
+@dirrm %%EXAMPLESDIR%%/pure
+@dirrm %%EXAMPLESDIR%%/html4
+@dirrm %%EXAMPLESDIR%%
 @unexec rmdir %D/share/emacs/site-lisp 2>/dev/null || true
-%%PORTDOCS%%@dirrm share/doc/smartdoc/doc/sampleI18N
-%%PORTDOCS%%@dirrm share/doc/smartdoc/doc/sample
-%%PORTDOCS%%@dirrm share/doc/smartdoc/doc/refman/src/structure
-%%PORTDOCS%%@dirrm share/doc/smartdoc/doc/refman/src/plain
-%%PORTDOCS%%@dirrm share/doc/smartdoc/doc/refman/src/normalizer
-%%PORTDOCS%%@dirrm share/doc/smartdoc/doc/refman/src/intro
-%%PORTDOCS%%@dirrm share/doc/smartdoc/doc/refman/src/hello
-%%PORTDOCS%%@dirrm share/doc/smartdoc/doc/refman/src/element
-%%PORTDOCS%%@dirrm share/doc/smartdoc/doc/refman/src/commonAttr
-%%PORTDOCS%%@dirrm share/doc/smartdoc/doc/refman/src/command
-%%PORTDOCS%%@dirrm share/doc/smartdoc/doc/refman/src/bib
-%%PORTDOCS%%@dirrm share/doc/smartdoc/doc/refman/src/adapter/xslt
-%%PORTDOCS%%@dirrm share/doc/smartdoc/doc/refman/src/adapter/jdbc
-%%PORTDOCS%%@dirrm share/doc/smartdoc/doc/refman/src/adapter/bean
-%%PORTDOCS%%@dirrm share/doc/smartdoc/doc/refman/src/adapter
-%%PORTDOCS%%@dirrm share/doc/smartdoc/doc/refman/src
-%%PORTDOCS%%@dirrm share/doc/smartdoc/doc/refman
-%%PORTDOCS%%@dirrm share/doc/smartdoc/doc/quick
-%%PORTDOCS%%@dirrm share/doc/smartdoc/doc
-%%PORTDOCS%%@dirrm share/doc/smartdoc
+@dirrm %%DOCSDIR%%/doc/sampleI18N
+@dirrm %%DOCSDIR%%/doc/sample
+@dirrm %%DOCSDIR%%/doc/refman/src/structure
+@dirrm %%DOCSDIR%%/doc/refman/src/plain
+@dirrm %%DOCSDIR%%/doc/refman/src/normalizer
+@dirrm %%DOCSDIR%%/doc/refman/src/intro
+@dirrm %%DOCSDIR%%/doc/refman/src/hello
+@dirrm %%DOCSDIR%%/doc/refman/src/element
+@dirrm %%DOCSDIR%%/doc/refman/src/commonAttr
+@dirrm %%DOCSDIR%%/doc/refman/src/command
+@dirrm %%DOCSDIR%%/doc/refman/src/bib
+@dirrm %%DOCSDIR%%/doc/refman/src/adapter/xslt
+@dirrm %%DOCSDIR%%/doc/refman/src/adapter/jdbc
+@dirrm %%DOCSDIR%%/doc/refman/src/adapter/bean
+@dirrm %%DOCSDIR%%/doc/refman/src/adapter
+@dirrm %%DOCSDIR%%/doc/refman/src
+@dirrm %%DOCSDIR%%/doc/refman
+@dirrm %%DOCSDIR%%/doc/quick
+@dirrm %%DOCSDIR%%/doc
+@dirrm %%DOCSDIR%%
 @unexec rmdir %D/lib/xemacs/site-lisp 2>/dev/null || true
