@@ -1,19 +1,128 @@
-etc/gconf/gconf.xml.defaults/schemas/apps/quick_lounge_applet/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/quick_lounge_applet/prefs/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/quick-lounge-applet/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/quick-lounge-applet/prefs/%gconf.xml
 etc/gconf/schemas/quick-lounge.schemas
-lib/libquicklounge-applet.a
-lib/libquicklounge-applet.so
-lib/libquicklounge-applet.so.0
 libdata/bonobo/servers/GNOME_QuickLoungeApplet_Factory.server
+libexec/quick-lounge-applet
 share/gnome/gnome-2.0/ui/GNOME_QuickLoungeApplet.xml
+share/gnome/help/quick-lounge/C/figures/quick-lounge_down.png
+share/gnome/help/quick-lounge/C/figures/quick-lounge_end.png
+share/gnome/help/quick-lounge/C/figures/quick-lounge_start.png
+share/gnome/help/quick-lounge/C/figures/quick-lounge_up.png
+share/gnome/help/quick-lounge/C/figures/quick-lounge_window.png
+share/gnome/help/quick-lounge/C/legal.xml
+share/gnome/help/quick-lounge/C/quick-lounge.xml
+share/gnome/help/quick-lounge/de/figures/quick-lounge_down.png
+share/gnome/help/quick-lounge/de/figures/quick-lounge_end.png
+share/gnome/help/quick-lounge/de/figures/quick-lounge_more.png
+share/gnome/help/quick-lounge/de/figures/quick-lounge_start.png
+share/gnome/help/quick-lounge/de/figures/quick-lounge_up.png
+share/gnome/help/quick-lounge/de/figures/quick-lounge_window.png
+share/gnome/help/quick-lounge/de/legal.xml
+share/gnome/help/quick-lounge/de/quick-lounge.xml
+share/gnome/help/quick-lounge/es/figures/quick-lounge_down.png
+share/gnome/help/quick-lounge/es/figures/quick-lounge_end.png
+share/gnome/help/quick-lounge/es/figures/quick-lounge_more.png
+share/gnome/help/quick-lounge/es/figures/quick-lounge_start.png
+share/gnome/help/quick-lounge/es/figures/quick-lounge_up.png
+share/gnome/help/quick-lounge/es/figures/quick-lounge_window.png
+share/gnome/help/quick-lounge/es/legal.xml
+share/gnome/help/quick-lounge/es/quick-lounge.xml
+share/gnome/help/quick-lounge/fr/figures/quick-lounge_down.png
+share/gnome/help/quick-lounge/fr/figures/quick-lounge_end.png
+share/gnome/help/quick-lounge/fr/figures/quick-lounge_more.png
+share/gnome/help/quick-lounge/fr/figures/quick-lounge_start.png
+share/gnome/help/quick-lounge/fr/figures/quick-lounge_up.png
+share/gnome/help/quick-lounge/fr/figures/quick-lounge_window.png
+share/gnome/help/quick-lounge/fr/legal.xml
+share/gnome/help/quick-lounge/fr/quick-lounge.xml
+share/gnome/help/quick-lounge/it/figures/quick-lounge_down.png
+share/gnome/help/quick-lounge/it/figures/quick-lounge_end.png
+share/gnome/help/quick-lounge/it/figures/quick-lounge_more.png
+share/gnome/help/quick-lounge/it/figures/quick-lounge_start.png
+share/gnome/help/quick-lounge/it/figures/quick-lounge_up.png
+share/gnome/help/quick-lounge/it/figures/quick-lounge_window.png
+share/gnome/help/quick-lounge/it/legal.xml
+share/gnome/help/quick-lounge/it/quick-lounge.xml
+share/gnome/help/quick-lounge/ja/figures/quick-lounge_down.png
+share/gnome/help/quick-lounge/ja/figures/quick-lounge_end.png
+share/gnome/help/quick-lounge/ja/figures/quick-lounge_more.png
+share/gnome/help/quick-lounge/ja/figures/quick-lounge_start.png
+share/gnome/help/quick-lounge/ja/figures/quick-lounge_up.png
+share/gnome/help/quick-lounge/ja/figures/quick-lounge_window.png
+share/gnome/help/quick-lounge/ja/legal.xml
+share/gnome/help/quick-lounge/ja/quick-lounge.xml
+share/gnome/help/quick-lounge/ko/figures/quick-lounge_down.png
+share/gnome/help/quick-lounge/ko/figures/quick-lounge_end.png
+share/gnome/help/quick-lounge/ko/figures/quick-lounge_more.png
+share/gnome/help/quick-lounge/ko/figures/quick-lounge_start.png
+share/gnome/help/quick-lounge/ko/figures/quick-lounge_up.png
+share/gnome/help/quick-lounge/ko/figures/quick-lounge_window.png
+share/gnome/help/quick-lounge/ko/legal.xml
+share/gnome/help/quick-lounge/ko/quick-lounge.xml
+share/gnome/help/quick-lounge/sv/figures/quick-lounge_down.png
+share/gnome/help/quick-lounge/sv/figures/quick-lounge_end.png
+share/gnome/help/quick-lounge/sv/figures/quick-lounge_more.png
+share/gnome/help/quick-lounge/sv/figures/quick-lounge_start.png
+share/gnome/help/quick-lounge/sv/figures/quick-lounge_up.png
+share/gnome/help/quick-lounge/sv/figures/quick-lounge_window.png
+share/gnome/help/quick-lounge/sv/legal.xml
+share/gnome/help/quick-lounge/sv/quick-lounge.xml
+share/gnome/help/quick-lounge/zh_CN/figures/quick-lounge_down.png
+share/gnome/help/quick-lounge/zh_CN/figures/quick-lounge_end.png
+share/gnome/help/quick-lounge/zh_CN/figures/quick-lounge_more.png
+share/gnome/help/quick-lounge/zh_CN/figures/quick-lounge_start.png
+share/gnome/help/quick-lounge/zh_CN/figures/quick-lounge_up.png
+share/gnome/help/quick-lounge/zh_CN/figures/quick-lounge_window.png
+share/gnome/help/quick-lounge/zh_CN/legal.xml
+share/gnome/help/quick-lounge/zh_CN/quick-lounge.xml
+share/gnome/help/quick-lounge/zh_HK/figures/quick-lounge_down.png
+share/gnome/help/quick-lounge/zh_HK/figures/quick-lounge_end.png
+share/gnome/help/quick-lounge/zh_HK/figures/quick-lounge_more.png
+share/gnome/help/quick-lounge/zh_HK/figures/quick-lounge_start.png
+share/gnome/help/quick-lounge/zh_HK/figures/quick-lounge_up.png
+share/gnome/help/quick-lounge/zh_HK/figures/quick-lounge_window.png
+share/gnome/help/quick-lounge/zh_HK/legal.xml
+share/gnome/help/quick-lounge/zh_HK/quick-lounge.xml
+share/gnome/help/quick-lounge/zh_TW/figures/quick-lounge_down.png
+share/gnome/help/quick-lounge/zh_TW/figures/quick-lounge_end.png
+share/gnome/help/quick-lounge/zh_TW/figures/quick-lounge_more.png
+share/gnome/help/quick-lounge/zh_TW/figures/quick-lounge_start.png
+share/gnome/help/quick-lounge/zh_TW/figures/quick-lounge_up.png
+share/gnome/help/quick-lounge/zh_TW/figures/quick-lounge_window.png
+share/gnome/help/quick-lounge/zh_TW/legal.xml
+share/gnome/help/quick-lounge/zh_TW/quick-lounge.xml
+share/gnome/omf/quick-lounge-applet/quick-lounge-C.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/quick-lounge-applet/quick-lounge-C.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/quick-lounge-applet/quick-lounge-de.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/quick-lounge-applet/quick-lounge-de.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/quick-lounge-applet/quick-lounge-es.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/quick-lounge-applet/quick-lounge-es.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/quick-lounge-applet/quick-lounge-fr.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/quick-lounge-applet/quick-lounge-fr.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/quick-lounge-applet/quick-lounge-it.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/quick-lounge-applet/quick-lounge-it.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/quick-lounge-applet/quick-lounge-ja.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/quick-lounge-applet/quick-lounge-ja.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/quick-lounge-applet/quick-lounge-ko.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/quick-lounge-applet/quick-lounge-ko.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/quick-lounge-applet/quick-lounge-sv.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/quick-lounge-applet/quick-lounge-sv.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/quick-lounge-applet/quick-lounge-zh_CN.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/quick-lounge-applet/quick-lounge-zh_CN.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/quick-lounge-applet/quick-lounge-zh_HK.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/quick-lounge-applet/quick-lounge-zh_HK.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/quick-lounge-applet/quick-lounge-zh_TW.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/quick-lounge-applet/quick-lounge-zh_TW.omf 2>/dev/null || /usr/bin/true
 share/gnome/pixmaps/quick-lounge-applet.png
 share/gnome/quick-lounge/glade/quick-lounge.glade
 share/locale/az/LC_MESSAGES/quick-lounge-applet.mo
+share/locale/ca/LC_MESSAGES/quick-lounge-applet.mo
 share/locale/cs/LC_MESSAGES/quick-lounge-applet.mo
 share/locale/de/LC_MESSAGES/quick-lounge-applet.mo
 share/locale/el/LC_MESSAGES/quick-lounge-applet.mo
 share/locale/es/LC_MESSAGES/quick-lounge-applet.mo
 share/locale/fr/LC_MESSAGES/quick-lounge-applet.mo
+share/locale/hr/LC_MESSAGES/quick-lounge-applet.mo
 share/locale/it/LC_MESSAGES/quick-lounge-applet.mo
 share/locale/ja/LC_MESSAGES/quick-lounge-applet.mo
 share/locale/ko/LC_MESSAGES/quick-lounge-applet.mo
@@ -22,11 +131,48 @@ share/locale/nl/LC_MESSAGES/quick-lounge-applet.mo
 share/locale/no/LC_MESSAGES/quick-lounge-applet.mo
 share/locale/pl/LC_MESSAGES/quick-lounge-applet.mo
 share/locale/pt/LC_MESSAGES/quick-lounge-applet.mo
+share/locale/pt_BR/LC_MESSAGES/quick-lounge-applet.mo
+share/locale/sk/LC_MESSAGES/quick-lounge-applet.mo
 share/locale/sr/LC_MESSAGES/quick-lounge-applet.mo
 share/locale/sr@Latn/LC_MESSAGES/quick-lounge-applet.mo
 share/locale/sv/LC_MESSAGES/quick-lounge-applet.mo
 share/locale/zh_CN/LC_MESSAGES/quick-lounge-applet.mo
 @dirrm share/gnome/quick-lounge/glade
 @dirrm share/gnome/quick-lounge
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/quick_lounge_applet/prefs
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/quick_lounge_applet
+@dirrm share/gnome/omf/quick-lounge-applet
+@dirrm share/gnome/help/quick-lounge/zh_TW/figures
+@dirrm share/gnome/help/quick-lounge/zh_TW
+@dirrm share/gnome/help/quick-lounge/zh_HK/figures
+@dirrm share/gnome/help/quick-lounge/zh_HK
+@dirrm share/gnome/help/quick-lounge/zh_CN/figures
+@dirrm share/gnome/help/quick-lounge/zh_CN
+@dirrm share/gnome/help/quick-lounge/sv/figures
+@dirrm share/gnome/help/quick-lounge/sv
+@dirrm share/gnome/help/quick-lounge/ko/figures
+@dirrm share/gnome/help/quick-lounge/ko
+@dirrm share/gnome/help/quick-lounge/ja/figures
+@dirrm share/gnome/help/quick-lounge/ja
+@dirrm share/gnome/help/quick-lounge/it/figures
+@dirrm share/gnome/help/quick-lounge/it
+@dirrm share/gnome/help/quick-lounge/fr/figures
+@dirrm share/gnome/help/quick-lounge/fr
+@dirrm share/gnome/help/quick-lounge/es/figures
+@dirrm share/gnome/help/quick-lounge/es
+@dirrm share/gnome/help/quick-lounge/de/figures
+@dirrm share/gnome/help/quick-lounge/de
+@dirrm share/gnome/help/quick-lounge/C/figures
+@dirrm share/gnome/help/quick-lounge/C
+@dirrm share/gnome/help/quick-lounge
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/quick-lounge-applet/prefs
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/quick-lounge-applet
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/quick-lounge-applet/quick-lounge-C.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/quick-lounge-applet/quick-lounge-de.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/quick-lounge-applet/quick-lounge-es.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/quick-lounge-applet/quick-lounge-fr.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/quick-lounge-applet/quick-lounge-it.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/quick-lounge-applet/quick-lounge-ja.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/quick-lounge-applet/quick-lounge-ko.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/quick-lounge-applet/quick-lounge-sv.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/quick-lounge-applet/quick-lounge-zh_CN.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/quick-lounge-applet/quick-lounge-zh_HK.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/quick-lounge-applet/quick-lounge-zh_TW.omf 2>/dev/null || /usr/bin/true
