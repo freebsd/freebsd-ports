@@ -9,7 +9,7 @@
 PORTNAME=	gtkdatabox
 PORTVERSION=	0.1.13.0
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	http://www.eudoxos.de/gtk/download/gtkdatabox/
+MASTER_SITES=	http://www.eudoxos.de/gtk/gtkdatabox/download/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Display large amounts of numerical data fast and easy
