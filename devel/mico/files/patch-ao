@@ -1,0 +1,19 @@
+--- admin/mico-shld.def.in.orig	Mon Jul 26 20:44:44 1999
++++ admin/mico-shld.def.in	Mon Sep 27 23:32:57 1999
+@@ -50,10 +50,15 @@
+ outfile=` echo "$outfile" | sed -e 's/\.o$//' `'.@SOEXT@'
+ 
+ ldcmd="@SHARED_CC@ @PICFLAGS@ @LDSOFLAGS@ @DLFLAGS@ $libdirs @LDFLAGS@ -o $outfile \
+- $args" # @LIBS@
++-Wl,-soname,$outfile $args" # @LIBS@
+ 
+ echo "$ldcmd"
+ eval "$ldcmd" || exit
++
++symlink=` echo "$outfile" | sed 's/\.[1234567890]$//' `
++
++lncmd="ln -s $outfile $symlink"
++eval "$lncmd" || exit
+ 
+ # for HP-UX
+ chmod 555 "$outfile"

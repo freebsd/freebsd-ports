@@ -1,0 +1,34 @@
+--- configure.in.orig	Tue Dec  7 00:36:14 1999
++++ configure.in	Mon Jan 10 18:07:54 2000
+@@ -170,7 +170,7 @@
+ # extra dirs
+ #
+ 
+-wi_EXTRA_DIRS(no, /usr/local /local /user/local /usr/share /opt /opt/local $QTDIR $GTKDIR $TCLDIR $SSLDIR)
++wi_EXTRA_DIRS(no, /usr/local /local /user/local /usr/share /opt /opt/local /usr/X11R6 $QTDIR $GTKDIR $TCLDIR $SSLDIR, tcl8.2 )
+ 
+ #
+ # misc
+@@ -320,7 +320,12 @@
+     CONF_OBJ_SIZE_LIMIT=yes
+     ;;
+   *bsd*)
+-    CONF_SOEXT=so.1.0
++    if test "X$PORTOBJFORMAT" = "Xelf"; then
++      CONF_SHARED_CC="$CXX -shared -Wl,-x "
++      CONF_SOEXT=so.1
++    else
++      CONF_SOEXT=so.1.0
++    fi
+     ;;
+   *cygwin32*)
+     have_cdk=yes;
+@@ -600,7 +605,7 @@
+ 
+ if test X"$QTDIR" != X; then
+   HAVE_QT=yes
+-  AC_PATH_PROG(MOC, moc, no)
++  AC_PATH_PROG(MOC, moc"$QTVER", no)
+   if test X"$MOC" = Xno; then
+     AC_MSG_WARN(cannot find moc. QT parts disabled.)
+     HAVE_QT=no

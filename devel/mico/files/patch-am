@@ -1,0 +1,168 @@
+--- MakeVars.in.orig	Wed May 12 18:19:51 1999
++++ MakeVars.in	Wed May 12 18:20:40 1999
+@@ -25,7 +25,7 @@
+ exec_prefix	= @exec_prefix@
+ SRCDIR		= @ABSSRCDIR@
+ INSTDIR		= $(exec_prefix)
+-SHARED_INSTDIR	= $(prefix)
++SHARED_INSTDIR	= $(prefix)/share
+ 
+ 
+ HAVE_REPO	= @HAVE_REPO@
+--- demo/MakeVars.orig	Wed May 12 18:32:24 1999
++++ demo/MakeVars	Wed May 12 18:32:47 1999
+@@ -78,14 +78,14 @@
+ endif
+ 
+ install:
+-	$(IDIRCMD) $(INSTDIR)/doc/mico/examples/$(INSTALL_DIR)
++	$(IDIRCMD) $(SHARED_INSTDIR)/doc/mico/examples/$(INSTALL_DIR)
+ 	test -z "$(INSTALL_SRCS)" || \
+ 	  eval 'for i in $(INSTALL_SRCS); do \
+-	    $(ISRCCMD) $$i $(INSTDIR)/doc/mico/examples/$(INSTALL_DIR); \
++	    $(ISRCCMD) $$i $(SHARED_INSTDIR)/doc/mico/examples/$(INSTALL_DIR); \
+ 	  done'
+ 	test -z "$(INSTALL_SCRIPTS)" || \
+ 	  eval 'for i in $(INSTALL_SCRIPTS); do \
+-	    $(ISCRIPTCMD) $$i $(INSTDIR)/doc/mico/examples/$(INSTALL_DIR); \
++	    $(ISCRIPTCMD) $$i $(SHARED_INSTDIR)/doc/mico/examples/$(INSTALL_DIR); \
+ 	  done'
+ 
+ ifeq (.depend, $(wildcard .depend))
+--- demo/Makefile.orig	Wed May 12 18:29:55 1999
++++ demo/Makefile	Wed May 12 18:30:12 1999
+@@ -64,12 +64,12 @@
+ 	for i in $(DIRS); do $(MAKE) -C $$i clean || exit 1; done
+ 
+ install:
+-	$(IDIRCMD) $(INSTDIR)/doc/mico/examples
++	$(IDIRCMD) $(SHARED_INSTDIR)/doc/mico/examples
+ 	sed -e s/@MICO_VERSION@/$(VERSION)/g \
+ 		< MakeVars.install > MakeVars.install.ver
+-	$(ISRCCMD) MakeVars.install.ver $(INSTDIR)/doc/mico/examples/MakeVars
++	$(ISRCCMD) MakeVars.install.ver $(SHARED_INSTDIR)/doc/mico/examples/MakeVars
+ 	rm -f MakeVars.install.ver
+-	$(ISRCCMD) README $(INSTDIR)/doc/mico/examples
++	$(ISRCCMD) README $(SHARED_INSTDIR)/doc/mico/examples
+ 	for i in $(INST_DIRS); do $(MAKE) -C $$i install || exit 1; done
+ 
+ install-cd: install
+--- demo/interop/Makefile.orig	Wed May 12 18:30:42 1999
++++ demo/interop/Makefile	Wed May 12 18:31:17 1999
+@@ -30,7 +30,7 @@
+ 	for i in $(DIRS); do $(MAKE) -C $$i clean || exit 1; done
+ 
+ install:
+-	$(IDIRCMD) $(INSTDIR)/doc/mico/examples/interop
+-	$(ISRCCMD) Makefile $(INSTDIR)/doc/mico/examples/interop
+-	$(ISRCCMD) README $(INSTDIR)/doc/mico/examples/interop
++	$(IDIRCMD) $(SHARED_INSTDIR)/doc/mico/examples/interop
++	$(ISRCCMD) Makefile $(SHARED_INSTDIR)/doc/mico/examples/interop
++	$(ISRCCMD) README $(SHARED_INSTDIR)/doc/mico/examples/interop
+ 	for i in $(DIRS); do $(MAKE) -C $$i install || exit 1; done
+--- demo/poa/Makefile.orig	Wed May 12 18:33:14 1999
++++ demo/poa/Makefile	Wed May 12 18:33:28 1999
+@@ -13,7 +13,7 @@
+ 	rm -f *.o core *~ .depend
+ 
+ install:
+-	$(IDIRCMD) $(INSTDIR)/doc/mico/examples/poa
+-	$(ISRCCMD) Makefile $(INSTDIR)/doc/mico/examples/poa
+-	$(ISRCCMD) README $(INSTDIR)/doc/mico/examples/poa
++	$(IDIRCMD) $(SHARED_INSTDIR)/doc/mico/examples/poa
++	$(ISRCCMD) Makefile $(SHARED_INSTDIR)/doc/mico/examples/poa
++	$(ISRCCMD) README $(SHARED_INSTDIR)/doc/mico/examples/poa
+ 	for i in $(DIRS); do $(MAKE) -C $$i install || exit 1; done
+--- demo/redlich/Makefile.orig	Wed May 12 18:33:38 1999
++++ demo/redlich/Makefile	Wed May 12 18:33:52 1999
+@@ -33,7 +33,7 @@
+ 	for i in $(DIRS); do $(MAKE) -C $$i clean || exit 1; done
+ 
+ install:
+-	$(IDIRCMD) $(INSTDIR)/doc/mico/examples/redlich
+-	$(ISRCCMD) Makefile $(INSTDIR)/doc/mico/examples/redlich
+-	$(ISRCCMD) README $(INSTDIR)/doc/mico/examples/redlich
++	$(IDIRCMD) $(SHARED_INSTDIR)/doc/mico/examples/redlich
++	$(ISRCCMD) Makefile $(SHARED_INSTDIR)/doc/mico/examples/redlich
++	$(ISRCCMD) README $(SHARED_INSTDIR)/doc/mico/examples/redlich
+ 	for i in $(DIRS); do $(MAKE) -C $$i install || exit 1; done
+--- man/Makefile.orig	Wed May 12 18:27:23 1999
++++ man/Makefile	Wed May 12 18:27:40 1999
+@@ -26,9 +26,9 @@
+ 
+ install:
+ 	for i in $(DIRS); do \
+-	  $(IDIRCMD) $(SHARED_INSTDIR)/man/$$i; \
++	  $(IDIRCMD) $(prefix)/man/$$i; \
+ 	  for j in $$i/*.[1-9]; do $(IMANCMD) $$j \
+-		$(SHARED_INSTDIR)/man/$$i/; done; \
++		$(prefix)/man/$$i/; done; \
+ 	done
+ 
+ install-cd: install
+--- demo/boa/Makefile.orig	Mon Sep 27 22:52:48 1999
++++ demo/boa/Makefile	Mon Sep 27 22:53:43 1999
+@@ -31,7 +31,7 @@
+ 	for i in $(DIRS); do $(MAKE) -C $$i clean || exit 1; done
+ 
+ install:
+-	$(IDIRCMD) $(INSTDIR)/doc/mico/examples/boa
+-	$(ISRCCMD) Makefile $(INSTDIR)/doc/mico/examples/boa
+-	$(ISRCCMD) README $(INSTDIR)/doc/mico/examples/boa
++	$(IDIRCMD) $(SHARED_INSTDIR)/doc/mico/examples/boa
++	$(ISRCCMD) Makefile $(SHARED_INSTDIR)/doc/mico/examples/boa
++	$(ISRCCMD) README $(SHARED_INSTDIR)/doc/mico/examples/boa
+ 	for i in $(DIRS); do $(MAKE) -C $$i install || exit 1; done
+--- demo/dispatcher/Makefile.orig	Mon Sep 27 22:54:58 1999
++++ demo/dispatcher/Makefile	Mon Sep 27 22:55:23 1999
+@@ -27,8 +27,8 @@
+ 	rm -f *.o core *~ .depend
+ 
+ install:
+-	$(IDIRCMD) $(INSTDIR)/doc/mico/examples/dispatcher
+-	$(ISRCCMD) Makefile $(INSTDIR)/doc/mico/examples/dispatcher
+-	$(ISRCCMD) README $(INSTDIR)/doc/mico/examples/dispatcher
++	$(IDIRCMD) $(SHARED_INSTDIR)/doc/mico/examples/dispatcher
++	$(ISRCCMD) Makefile $(SHARED_INSTDIR)/doc/mico/examples/dispatcher
++	$(ISRCCMD) README $(SHARED_INSTDIR)/doc/mico/examples/dispatcher
+ 	test -z "$(DIRS)" || \
+ 	  eval 'for i in $(DIRS); do $(MAKE) -C $$i install || exit 1; done'
+--- demo/obv/Makefile.orig	Mon Sep 27 22:56:17 1999
++++ demo/obv/Makefile	Mon Sep 27 22:56:39 1999
+@@ -13,7 +13,7 @@
+ 	rm -f *.o core *~ .depend
+ 
+ install:
+-	$(IDIRCMD) $(INSTDIR)/doc/mico/examples/obv
+-	$(ISRCCMD) Makefile $(INSTDIR)/doc/mico/examples/obv
+-	$(ISRCCMD) README $(INSTDIR)/doc/mico/examples/obv
++	$(IDIRCMD) $(SHARED_INSTDIR)/doc/mico/examples/obv
++	$(ISRCCMD) Makefile $(SHARED_INSTDIR)/doc/mico/examples/obv
++	$(ISRCCMD) README $(SHARED_INSTDIR)/doc/mico/examples/obv
+ 	for i in $(DIRS); do $(MAKE) -C $$i install || exit 1; done
+--- demo/services/Makefile.orig	Mon Sep 27 22:57:19 1999
++++ demo/services/Makefile	Mon Sep 27 22:57:43 1999
+@@ -13,7 +13,7 @@
+ 	rm -f *.o core *~ .depend
+ 
+ install:
+-	$(IDIRCMD) $(INSTDIR)/doc/mico/examples/services
+-	$(ISRCCMD) Makefile $(INSTDIR)/doc/mico/examples/services
+-	$(ISRCCMD) README $(INSTDIR)/doc/mico/examples/services
++	$(IDIRCMD) $(SHARED_INSTDIR)/doc/mico/examples/services
++	$(ISRCCMD) Makefile $(SHARED_INSTDIR)/doc/mico/examples/services
++	$(ISRCCMD) README $(SHARED_INSTDIR)/doc/mico/examples/services
+ 	for i in $(DIRS) stream-sound; do $(MAKE) -C $$i install || exit 1; done
+--- demo/siegel/Makefile.orig	Mon Jan 10 23:43:52 2000
++++ demo/siegel/Makefile	Mon Jan 10 23:44:19 2000
+@@ -33,7 +33,7 @@
+ 	for i in $(DIRS); do $(MAKE) -C $$i clean || exit 1; done
+ 
+ install:
+-	$(IDIRCMD) $(INSTDIR)/doc/mico/examples/siegel
+-	$(ISRCCMD) Makefile $(INSTDIR)/doc/mico/examples/siegel
+-	$(ISRCCMD) README $(INSTDIR)/doc/mico/examples/siegel
++	$(IDIRCMD) $(SHARED_INSTDIR)/doc/mico/examples/siegel
++	$(ISRCCMD) Makefile $(SHARED_INSTDIR)/doc/mico/examples/siegel
++	$(ISRCCMD) README $(SHARED_INSTDIR)/doc/mico/examples/siegel
+ 	for i in $(DIRS); do $(MAKE) -C $$i install || exit 1; done
