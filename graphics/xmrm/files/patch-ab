@@ -1,0 +1,11 @@
+--- const.h.orig	Mon Mar  9 17:00:00 1998
++++ const.h	Tue Mar 28 15:23:34 2000
+@@ -3,7 +3,7 @@
+ //   Programming: Gerhard Waldhör, Andreas Artmann
+ 
+ #include <stdio.h>
+-#include <malloc.h>
++#include <stdlib.h>
+ #include <errno.h>
+ #include <math.h>
+ 

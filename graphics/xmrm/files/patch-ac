@@ -1,0 +1,20 @@
+--- io.cc.orig	Mon Mar  9 17:00:00 1998
++++ io.cc	Tue Mar 28 15:27:12 2000
+@@ -87,7 +87,7 @@
+ extern ControlClass control;
+ 
+ /* Constructor: */
+-ControlClass::ControlClass()
++void ControlClass::ControlClassInit()
+ {
+   int i;
+  
+@@ -1720,7 +1720,7 @@
+ //    extension--;
+     
+     i=0;
+-    number = ".000.";
++    strcpy(number, ".000.");
+     while ( !(extension = strstr(extension,number)) && i<=999 )
+     {
+       i++;
