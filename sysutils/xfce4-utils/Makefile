@@ -6,14 +6,11 @@
 #
 
 PORTNAME=	xfce4-utils
-PORTVERSION=	3.99.3
+PORTVERSION=	4.0.0
 CATEGORIES=	sysutils xfce
-MASTER_SITES=	http://www.xfce.org/archive/xfce4-rc3/src/ \
-		ftp://ftp.unix-ag.org/user/bmeurer/xfce4/rc3/separate/ \
-		http://usuarios.lycos.es/xfce4/tarballs/rc3/separate/ \
-		http://linux.imp.mx/xfce4/rc2/xfce4-rc3/src/
+MASTER_SITES=	http://www.xfce.org/archive/xfce-${PORTVERSION}/src/ \
+		http://linux.imp.mx/xfce4/xfce_${PORTVERSION}/src/
 DISTNAME=	xfce-utils-${PORTVERSION}
-DIST_SUBDIR=	xfce4
 
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	XFce 4 essential utilities and scripts
@@ -23,7 +20,6 @@ LIB_DEPENDS=	xfce4util.1:${PORTSDIR}/x11/libxfce4util \
 		xfce4mcs-manager.1:${PORTSDIR}/sysutils/xfce4-mcs-manager
 
 USE_GNOME=	gtk20
-#USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
