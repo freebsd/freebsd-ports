@@ -7,6 +7,7 @@
 
 PORTNAME=	linux-opera
 PORTVERSION=	5.0
+PORTREVISION=	1
 CATEGORIES=	www linux
 MASTER_SITES=	http://opera.online.no/linux/tgz/500/ \
 		ftp://ftp.opera.com/pub/opera/linux/500/ \
