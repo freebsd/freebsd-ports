@@ -1,12 +1,12 @@
 # New ports collection makefile for:	libglade
-# Version required:			0.8
+# Version required:			0.9
 # Date created:				18 August 1999
 # Whom:					Ade Lovett <ade@lovett.com>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	libglade-0.8
+DISTNAME=	libglade-0.9
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/libglade
