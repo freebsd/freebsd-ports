@@ -1,3 +1,5 @@
+etc/rc.d/apache.sh
+@unexec rm %D/etc/rc.d/apache.sh
 sbin/httpd
 www/cgi-bin
 www/data
