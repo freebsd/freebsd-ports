@@ -1030,6 +1030,7 @@
     SUBDIR += pharmacy
     SUBDIR += php-dbg
     SUBDIR += php-xdebug
+    SUBDIR += php4-pcre
     SUBDIR += phptags
     SUBDIR += physfs
     SUBDIR += picasm
