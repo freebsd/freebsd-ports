@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pure-ftpd
-PORTVERSION=	1.0.16a
+PORTVERSION=	1.0.16b
 PORTREVISION=	0
 CATEGORIES=	ftp ipv6
 MASTER_SITES=	ftp://ftp.pureftpd.org/pub/pure-ftpd/releases/ \
@@ -43,6 +43,7 @@ CONFIGURE_ARGS+=	--with-everything \
 			--with-paranoidmsg \
 			--with-virtualchroot \
 			--with-tls \
+			--with-largefile \
 			--sysconfdir=${PREFIX}/etc
 # language support requested?
 .if defined(WITH_LANG)
