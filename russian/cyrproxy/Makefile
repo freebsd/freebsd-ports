@@ -17,8 +17,8 @@ COMMENT=	Cyrillic proxy for network protocols
 
 .include <bsd.port.pre.mk>
 
-.if ${MACHINE_ARCH} == alpha
-BROKEN=		"Does not compile on ${MACHINE_ARCH}"
+.if ${ARCH} == alpha || ${ARCH} == sparc64
+BROKEN=		"Does not compile on ${ARCH}"
 .endif
 
 do-install:
