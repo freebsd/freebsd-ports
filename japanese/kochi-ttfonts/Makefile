@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	kochi-ttfonts
-PORTVERSION=	20020727
+PORTVERSION=	20030118
 CATEGORIES=	japanese x11-fonts
 MASTER_SITES=	http://www.on.cs.keio.ac.jp/~yasu/linux/fonts/ \
 		${MASTER_SITE_PORTS_JP}
-DISTFILES=	kochi-mincho-0.2.${PORTVERSION}.tar.bz2 \
-		kochi-gothic-0.2.${PORTVERSION}.tar.bz2
+DISTFILES=	kochi-mincho-0.2.${MINCHO_VER}.tar.bz2 \
+		kochi-gothic-0.2.${GOTHIC_VER}.tar.bz2
 
 MAINTAINER=	kanou@mil.allnet.ne.jp
 
@@ -19,6 +19,8 @@ USE_X_PREFIX=	yes
 USE_BZIP2=	yes
 NO_BUILD=	yes
 
+MINCHO_VER=	20020727
+GOTHIC_VER=	${PORTVERSION}
 FONTSDIR=	lib/X11/fonts/TrueType
 MAKE_ENV=	FONTSDIR=${FONTSDIR}
 PLIST_SUB=	FONTSDIR=${FONTSDIR}
