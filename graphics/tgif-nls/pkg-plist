@@ -1,15 +1,26 @@
 bin/tgif
-lib/X11/app-defaults/Tgif
-lib/X11/ja_JP.EUC/app-defaults/Tgif
-lib/X11/tgif/eq4-2x.sym
-lib/X11/tgif/eq4-ps2epsi.sym
-lib/X11/tgif/eq4-epstool.sym
-lib/X11/tgif/eq4.sym
+bin/tgif-nls
+lib/X11/tgif/tgif.Xdefaults
 lib/X11/tgif/tgificon.eps
 lib/X11/tgif/tgificon.obj
 lib/X11/tgif/tgificon.xbm
 lib/X11/tgif/tgificon.xpm
 lib/X11/tgif/tangram.sym
+lib/X11/tgif/eq4.sym
+lib/X11/tgif/eq4-2x.sym
+lib/X11/tgif/eq4-ps2epsi.sym
+lib/X11/tgif/eq4-epstool.sym
 lib/X11/tgif/keys.obj
-share/locale/ja/LC_MESSAGES/tgif.mo
+share/doc/tgif/Copyright
+share/doc/tgif/HISTORY
+share/doc/tgif/README
+share/examples/tgif/an-sr-flip-flop.obj
+share/examples/tgif/example.tex
+share/examples/tgif/fonts.obj
+share/examples/tgif/keys.obj
+share/examples/tgif/launch-demo.obj
+share/examples/tgif/launch-demo-1.obj
+share/examples/tgif/slide-demo.obj
+@dirrm share/doc/tgif
+@dirrm share/examples/tgif
 @dirrm lib/X11/tgif

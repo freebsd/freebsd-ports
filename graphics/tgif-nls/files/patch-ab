@@ -1,34 +1,18 @@
---- Tgif.tmpl.orig	Sun May 30 05:32:54 1999
-+++ Tgif.tmpl	Sun May 30 05:33:12 1999
-@@ -41,6 +41,15 @@
- XIMPDEFINES      =
- #endif
- 
-+#define IHaveSubdirs
-+
-+SUBDIRS = po
-+
-+#define PassCDebugFlags 'CDEBUGFLAGS=$(CDEBUGFLAGS)'
-+
-+MakeSubdirs($(SUBDIRS))
-+DependSubdirs($(SUBDIRS))
-+
- PROGRAMS	= tgif XCOMM prtgif frontend11.o testdrive
- XCOMM CDEBUGFLAGS= -g -Wall
- XCOMM INSTPGMFLAGS= -s
-@@ -48,7 +57,7 @@
+--- Tgif.tmpl.orig	Thu Jan 20 12:56:09 2000
++++ Tgif.tmpl	Thu Jan 20 12:59:33 2000
+@@ -48,7 +48,7 @@
+ XCOMM BINDIR	= /u/halfmoon/bin
  XCOMM MANPATH	= /u/halfmoon/man
  XCOMM TGIFDIR	= /u/halfmoon/lib/X11/tgif
- TGIFDIR		= $(LIBDIR)/tgif
 -LOCALEDIR	= /usr/share/locale
 +LOCALEDIR	= $(PREFIX)/share/locale
  DIRDEFINES	= -DTGIF_PATH=\"$(TGIFDIR)\" -DPSFILE_MOD=0664 \@@\
                    -DLOCALEDIR=\"$(LOCALEDIR)\" \@@\
                    -DTELEPORT_ATTR=\"warp_to=\" -DTMP_DIR=\"/tmp/\" \@@\
-@@ -58,14 +67,16 @@
-                   -DOBJ_FILE_EXT=\"obj\" -DSYM_FILE_EXT=\"sym\" \@@\
+@@ -59,14 +59,16 @@
                    -DTEXT_FILE_EXT=\"txt\" -DPIN_FILE_EXT=\"pin\"
- MISCDEFINES	= -D_BACKGROUND_DONT_FORK -D_USE_XDRAWPOINT_TO_PUT_A_POINT
+ MISCDEFINES	= -D_BACKGROUND_DONT_FORK -D_USE_XDRAWPOINT_TO_PUT_A_POINT \@@\
+                   -D_USE_PS_ADOBE_STRING=\"3.0/3.0\"
 -MOREDEFINES	=
 +MOREDEFINES	= -DUSE_XT_INITIALIZE -D_ENABLE_NLS
  
@@ -38,21 +22,9 @@
  
  DEPLIBS		= $(DEPXLIB)
 -LOCAL_LIBRARIES	= $(XLIB)
--XCOMM LOCAL_LIBRARIES	= $(XMULIB) $(XTOOLLIB) $(XLIB)
-+XCOMM LOCAL_LIBRARIES	= $(XLIB)
-+LOCAL_LIBRARIES	= $(XMULIB) $(XTOOLLIB) $(XLIB)
++LOCAL_LIBRARIES	= $(XLIB) $(XTOOLLIB) $(XLIB)
+ XCOMM LOCAL_LIBRARIES	= $(XMULIB) $(XTOOLLIB) $(XLIB)
  XCOMM SYS_LIBRARIES	= -ldl -lm
--SYS_LIBRARIES	= -lm
-+SYS_LIBRARIES	= -lm -lcompat
+ SYS_LIBRARIES	= -lm
 +EXTRA_INCLUDES	+= -I$(LOCALBASE)/include
 +EXTRA_LIBRARIES	+= -L$(LOCALBASE)/lib -lintl
-
---- po/Po.tmpl.orig	Sun Apr  4 03:27:53 1999
-+++ po/Po.tmpl	Sun May 30 05:33:12 1999
-@@ -8,5 +8,5 @@
- MKINSTALLDIRS	= install -d
- 
- DESTDIR		=
--SYSNLSDIR	= /usr/share/locale
-+SYSNLSDIR	= $(PREFIX)/share/locale
- NLSDIR		= $(DESTDIR)$(SYSNLSDIR)
