@@ -21,9 +21,7 @@ USE_KDELIBS_VER=3
 GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
-_NO_KDE_FIXPTHREAD=	yes
 
-.include <bsd.port.pre.mk>
 pre-patch:
 	${REINPLACE_CMD} -e '23s/^$$/#include <unistd.h>/' \
 		${WRKSRC}/kmess/kmessview.cpp
@@ -31,7 +29,7 @@ pre-patch:
 		${WRKSRC}/kmess/network/mimemessage.h
 	${REINPLACE_CMD} -e '35s|^$$|#include <netinet/in.h>|' \
 		${WRKSRC}/kmess/network/msnconnection.h
-	${REINPLACE_CMD} -e 's,-pedantic ,,g' ${WRKSRC}/configure
+	${REINPLACE_CMD} -e 's/-pedantic //g; s/-O2//g; \
+		s/-lpthread/${PTHREAD_LIBS}/g' ${WRKSRC}/configure
 
-.include "${PORTSDIR}/x11/kde3/Makefile.kde"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
