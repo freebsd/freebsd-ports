@@ -396,7 +396,6 @@ x11/xalf||2003-07-15|removed as part of GNOME 1.4 desktop phase out
 x11/linux-xalf||2003-07-15|removed as part of GNOME 1.4 desktop phase out
 x11/gnome||2003-07-15|removed as part of GNOME 1.4 desktop phase out
 x11/gnome-fifth-toe||2003-07-15|removed as part of GNOME 1.4 desktop phase out
-editors/gedit||2003-07-15|removed as part of GNOME 1.4 desktop phase out
 x11-wm/sawfish||2003-07-15|removed as part of GNOME 1.4 desktop phase out
 audio/gnomemedia||2003-07-15|removed as part of GNOME 1.4 desktop phase out
 sysutils/gtop||2003-07-15|removed as part of GNOME 1.4 desktop phase out
@@ -1379,3 +1378,4 @@ devel/bugbuddy2|devel/bugbuddy|2005-01-24|moved to non-versioned directory
 x11-toolkits/eel2|x11-toolkits/eel|2005-01-25|moved to non-versioned directory
 graphics/eog2|graphics/eog|2005-01-25|moved to non-versioned directory
 x11/gdm2|x11/gdm|2005-01-25|moved to non-versioned directory
+editors/gedit2|editors/gedit|2005-01-25|moved to non-versioned directory

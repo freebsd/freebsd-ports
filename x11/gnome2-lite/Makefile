@@ -21,7 +21,7 @@ RUN_DEPENDS=	${X11BASE}/libexec/cdplayer_applet2:${PORTSDIR}/x11/gnomeapplets2 \
 	 	gnome-dictionary:${PORTSDIR}/deskutils/gnomeutils2 \
 		eog:${PORTSDIR}/graphics/eog \
 		gnome-control-center:${PORTSDIR}/sysutils/gnomecontrolcenter2 \
-		gedit:${PORTSDIR}/editors/gedit2 \
+		gedit:${PORTSDIR}/editors/gedit \
 		gnome-terminal:${PORTSDIR}/x11/gnometerminal \
 		gnome-session:${PORTSDIR}/x11/gnomesession \
 		gnome-system-monitor:${PORTSDIR}/sysutils/gnomesystemmonitor \
