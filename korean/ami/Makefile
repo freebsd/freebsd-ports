@@ -22,15 +22,14 @@ GNU_CONFIGURE=	YES
 USE_GMAKE=	YES
 CONFIGURE_ENV=	GLIB_CONFIG=${LOCALBASE}/bin/glib12-config \
 		GTK_CONFIG=${X11BASE}/bin/gtk12-config
-CONFIGURE_ARGS+= --with-hangul-keyboard=2 --enable-gnome-applet
+CONFIGURE_ARGS+= --with-hangul-keyboard=2
 
-# gnome support
+# gnome panel applet support
 #.if defined(WITH_GNOME_APPLET)
-#PKGNAMESUFFIX=	-gnome
-#RUN_DEPENDS+=	panel:${PORTSDIR}/x11/gnomecore
-#LIB_DEPENDS+=	gnome.4:${PORTSDIR}/x11/gnomelibs
-#CONFIGURE_ARGS+= --enable-gnome-applet
-#.endif
+PKGNAMESUFFIX=	-gnome
+RUN_DEPENDS+=	panel:${PORTSDIR}/x11/gnomecore
+CONFIGURE_ARGS+= --enable-gnome-applet
+.endif
 
 post-build:
 	@cd ${WRKSRC}/hanjadic; \
