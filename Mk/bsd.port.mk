@@ -133,7 +133,9 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  compression.
 # USE_ZIP		- Says that the port distfile uses zip, not tar w/[bg]zip
 #				  for compression.
-# USE_NEWGCC	- Says that the port requirest the latest gcc, either in
+# USE_GCC295	- Says that the port requirest this version of gcc, either in
+#				  the system or installed from a port.
+# USE_GCC30		- Says that the port requirest this version of gcc, either in
 #				  the system or installed from a port.
 # USE_GMAKE		- Says that the port uses gmake.
 # GMAKE			- Set to path of GNU make if not in $PATH (default: gmake).
@@ -801,10 +803,16 @@ LIBTOOLFILES?=		configure
 .endif
 LIBTOOLFLAGS?=		--disable-ltlibs
 .endif
-.if defined(USE_NEWGCC) && ${OSVERSION} < 400012
+.if defined(USE_GCC295) && ${OSVERSION} < 400012
 CC=				gcc295
 CXX=			g++295
 BUILD_DEPENDS+=	gcc295:${PORTSDIR}/lang/gcc295
+MAKE_ENV+=		CC=${CC} CXX=${CXX}
+.endif
+.if defined(USE_GCC30) && ${OSVERSION} < 500999
+CC=				gcc30
+CXX=			g++30
+BUILD_DEPENDS+=	gcc30:${PORTSDIR}/lang/gcc30
 MAKE_ENV+=		CC=${CC} CXX=${CXX}
 .endif
 
