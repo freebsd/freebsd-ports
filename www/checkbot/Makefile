@@ -11,7 +11,7 @@ CATEGORIES=	www perl5
 MASTER_SITES=	http://degraaff.org/checkbot/ \
 		http://wolfram.schneider.org/src/
 
-MAINTAINER=	wosch@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A WWW link verifier, similar to momspider
 
 RUN_DEPENDS=	${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww \
