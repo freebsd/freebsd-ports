@@ -1,7 +1,10 @@
 %%PORTDOCS%%bin/CImg_test
-include/CImg.h
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES.txt
+%%PORTDOCS%%%%DOCSDIR%%/CImg.doxygen
 %%PORTDOCS%%%%DOCSDIR%%/README.txt
 %%PORTDOCS%%%%DOCSDIR%%/download.shtml
+%%PORTDOCS%%%%DOCSDIR%%/favicon.ico
+%%PORTDOCS%%%%DOCSDIR%%/favicon.png
 %%PORTDOCS%%%%DOCSDIR%%/head.html
 %%PORTDOCS%%%%DOCSDIR%%/head_reference.html
 %%PORTDOCS%%%%DOCSDIR%%/img/CImgLogo.jpg
@@ -10,7 +13,6 @@ include/CImg.h
 %%PORTDOCS%%%%DOCSDIR%%/img/FAQ_item.jpg
 %%PORTDOCS%%%%DOCSDIR%%/img/LastNews.jpg
 %%PORTDOCS%%%%DOCSDIR%%/img/download_item.jpg
-%%PORTDOCS%%%%DOCSDIR%%/img/inria_logo.gif
 %%PORTDOCS%%%%DOCSDIR%%/img/item_codesample.jpg
 %%PORTDOCS%%%%DOCSDIR%%/img/item_getting.jpg
 %%PORTDOCS%%%%DOCSDIR%%/img/item_intro.jpg
@@ -39,6 +41,7 @@ include/CImg.h
 %%PORTDOCS%%%%DOCSDIR%%/img/ss_mini_000014.jpg
 %%PORTDOCS%%%%DOCSDIR%%/img/ss_mini_000015.jpg
 %%PORTDOCS%%%%DOCSDIR%%/img/ss_mini_000016.jpg
+%%PORTDOCS%%%%DOCSDIR%%/img/ss_mini_000017.jpg
 %%PORTDOCS%%%%DOCSDIR%%/img/ss_odykill.jpg
 %%PORTDOCS%%%%DOCSDIR%%/img/ss_optflow.jpg
 %%PORTDOCS%%%%DOCSDIR%%/img/ss_paint.jpg
@@ -46,57 +49,19 @@ include/CImg.h
 %%PORTDOCS%%%%DOCSDIR%%/img/ss_render3d.jpg
 %%PORTDOCS%%%%DOCSDIR%%/img/ss_restoration.jpg
 %%PORTDOCS%%%%DOCSDIR%%/img/ss_rotozoom.jpg
+%%PORTDOCS%%%%DOCSDIR%%/img/ss_shadebobs.jpg
 %%PORTDOCS%%%%DOCSDIR%%/img/ss_tetris.jpg
 %%PORTDOCS%%%%DOCSDIR%%/img/ss_triangle.jpg
 %%PORTDOCS%%%%DOCSDIR%%/img/ss_volume3d.jpg
 %%PORTDOCS%%%%DOCSDIR%%/img/tutorial.jpg
 %%PORTDOCS%%%%DOCSDIR%%/index.shtml
 %%PORTDOCS%%%%DOCSDIR%%/news.html
-%%PORTDOCS%%%%DOCSDIR%%/reference/annotated.html
-%%PORTDOCS%%%%DOCSDIR%%/reference/doxygen.css
-%%PORTDOCS%%%%DOCSDIR%%/reference/doxygen.png
-%%PORTDOCS%%%%DOCSDIR%%/reference/functions.html
-%%PORTDOCS%%%%DOCSDIR%%/reference/functions_func.html
-%%PORTDOCS%%%%DOCSDIR%%/reference/functions_rela.html
-%%PORTDOCS%%%%DOCSDIR%%/reference/functions_vars.html
-%%PORTDOCS%%%%DOCSDIR%%/reference/group__cimg__drawing.html
-%%PORTDOCS%%%%DOCSDIR%%/reference/group__cimg__environment.html
-%%PORTDOCS%%%%DOCSDIR%%/reference/group__cimg__exceptions.html
-%%PORTDOCS%%%%DOCSDIR%%/reference/group__cimg__structure.html
-%%PORTDOCS%%%%DOCSDIR%%/reference/group__cimg__tutorial.html
-%%PORTDOCS%%%%DOCSDIR%%/reference/hierarchy.html
-%%PORTDOCS%%%%DOCSDIR%%/reference/index.html
-%%PORTDOCS%%%%DOCSDIR%%/reference/modules.html
-%%PORTDOCS%%%%DOCSDIR%%/reference/namespacecimg.html
-%%PORTDOCS%%%%DOCSDIR%%/reference/namespacemembers.html
-%%PORTDOCS%%%%DOCSDIR%%/reference/namespacemembers_func.html
-%%PORTDOCS%%%%DOCSDIR%%/reference/namespacemembers_vars.html
-%%PORTDOCS%%%%DOCSDIR%%/reference/namespaces.html
-%%PORTDOCS%%%%DOCSDIR%%/reference/structCImg-members.html
-%%PORTDOCS%%%%DOCSDIR%%/reference/structCImg.html
-%%PORTDOCS%%%%DOCSDIR%%/reference/structCImgArgumentException-members.html
-%%PORTDOCS%%%%DOCSDIR%%/reference/structCImgArgumentException.html
-%%PORTDOCS%%%%DOCSDIR%%/reference/structCImgDisplay-members.html
-%%PORTDOCS%%%%DOCSDIR%%/reference/structCImgDisplay.html
-%%PORTDOCS%%%%DOCSDIR%%/reference/structCImgDisplayException-members.html
-%%PORTDOCS%%%%DOCSDIR%%/reference/structCImgDisplayException.html
-%%PORTDOCS%%%%DOCSDIR%%/reference/structCImgException-members.html
-%%PORTDOCS%%%%DOCSDIR%%/reference/structCImgException.html
-%%PORTDOCS%%%%DOCSDIR%%/reference/structCImgIOException-members.html
-%%PORTDOCS%%%%DOCSDIR%%/reference/structCImgIOException.html
-%%PORTDOCS%%%%DOCSDIR%%/reference/structCImgInstanceException-members.html
-%%PORTDOCS%%%%DOCSDIR%%/reference/structCImgInstanceException.html
-%%PORTDOCS%%%%DOCSDIR%%/reference/structCImgROI-members.html
-%%PORTDOCS%%%%DOCSDIR%%/reference/structCImgROI.html
-%%PORTDOCS%%%%DOCSDIR%%/reference/structCImgStats-members.html
-%%PORTDOCS%%%%DOCSDIR%%/reference/structCImgStats.html
-%%PORTDOCS%%%%DOCSDIR%%/reference/structCImgl-members.html
-%%PORTDOCS%%%%DOCSDIR%%/reference/structCImgl.html
 %%PORTDOCS%%%%DOCSDIR%%/screenshots.shtml
+%%PORTDOCS%%%%EXAMPLESDIR%%/CImg_test.cpp
 %%PORTDOCS%%%%EXAMPLESDIR%%/Makefile
-%%PORTDOCS%%%%EXAMPLESDIR%%/README.txt
 %%PORTDOCS%%%%EXAMPLESDIR%%/fade_images.cpp
 %%PORTDOCS%%%%EXAMPLESDIR%%/hough_transform.cpp
+%%PORTDOCS%%%%EXAMPLESDIR%%/image_registration.cpp
 %%PORTDOCS%%%%EXAMPLESDIR%%/img/background.jpg
 %%PORTDOCS%%%%EXAMPLESDIR%%/img/brain.png
 %%PORTDOCS%%%%EXAMPLESDIR%%/img/cdrom.png
@@ -133,9 +98,7 @@ include/CImg.h
 %%PORTDOCS%%%%EXAMPLESDIR%%/img/tomato.png
 %%PORTDOCS%%%%EXAMPLESDIR%%/inpainter.cpp
 %%PORTDOCS%%%%EXAMPLESDIR%%/inrcast.cpp
-%%PORTDOCS%%%%EXAMPLESDIR%%/inrcrop.cpp
 %%PORTDOCS%%%%EXAMPLESDIR%%/odykill.cpp
-%%PORTDOCS%%%%EXAMPLESDIR%%/optical_flow.cpp
 %%PORTDOCS%%%%EXAMPLESDIR%%/pde_TschumperleDeriche2D.cpp
 %%PORTDOCS%%%%EXAMPLESDIR%%/pde_TschumperleDeriche3D.cpp
 %%PORTDOCS%%%%EXAMPLESDIR%%/pde_heatflow2D.cpp
@@ -143,7 +106,6 @@ include/CImg.h
 %%PORTDOCS%%%%EXAMPLESDIR%%/render3d.cpp
 %%PORTDOCS%%%%EXAMPLESDIR%%/tetris.cpp
 %%PORTDOCS%%%%EXAMPLESDIR%%/tutorial.cpp
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/reference
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/img
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/img

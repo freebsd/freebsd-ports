@@ -1,117 +1,28 @@
---- examples/Makefile.orig	Fri Aug  6 17:35:46 2004
-+++ examples/Makefile	Mon Oct 11 22:43:13 2004
-@@ -1,57 +1,57 @@
--#--------------------------------------------------------------------------------------
--#
--#  Makefile :             Makefile for compiling CImg examples
--#
--#  Author :               David Tschumperlé
--#
--#  Institution :          ODYSSEE, INRIA Sophia Antipolis.
--#
--#  Contact :              David.Tschumperle@sophia.inria.fr
--#
--#  Date :                 Project started november 1999.
--#
--# -----------------------------------------------------------------------------------
--
--# Set correct variables and paths
+--- examples/Makefile.orig	Wed Oct 20 16:49:34 2004
++++ examples/Makefile	Wed Oct 20 21:16:24 2004
+@@ -7,14 +7,14 @@
+ # -----------------------------------------------------------------------------------
+ 
+ # Set correct variables and paths
 -CC         = g++ -O4 -Wall -ansi -ffast-math
 -X11PATH    = /usr/X11R6
--X11FLAGS   = -I$(X11PATH)/include -L$(X11PATH)/lib -lX11
--
--# Compilation rules
--.cpp:
--	@echo "> Compiling '$*'"
--	@$(CC) -o $* $< $(CFLAGS) $(X11FLAGS) $(LDFLAGS)
--linux:
--	make "LDFLAGS=-lm -lpthread -Wl,-rpath $(X11PATH)/lib" all
--solaris:
--	make "LDFLAGS=-lm -lpthread -R$(X11PATH)/lib -lnsl -lsocket" all
--
--all: fade_images \
--     inpainter \
--     odykill \
--     pslider \
--     inrcast \
--     inrcrop \
--     optical_flow \
--     hough_transform \
--     render3d \
--     tutorial \
--     tetris \
--     pde_heatflow2D \
--     pde_TschumperleDeriche2D
--
--clean:
--	rm -f *.exe *~ \
--	fade_images \
--        inpainter \
--        odykill \
--        pslider \
--        inrcast \
--        inrcrop \
--        optical_flow \
--        hough_transform \
--        render3d \
--        tutorial \
--        tetris \
--        pde_heatflow2D \
--        pde_TschumperleDeriche2D
-+#--------------------------------------------------------------------------------------
-+#
-+#  Makefile :             Makefile for compiling CImg examples
-+#
-+#  Author :               David Tschumperlé
-+#
-+#  Institution :          ODYSSEE, INRIA Sophia Antipolis.
-+#
-+#  Contact :              David.Tschumperle@sophia.inria.fr
-+#
-+#  Date :                 Project started november 1999.
-+#
-+# -----------------------------------------------------------------------------------
-+
-+# Set correct variables and paths
 +CC         = $(CXX)
 +#X11PATH    = /usr/X11R6
-+X11FLAGS   = -I$(X11PATH)/include -L$(X11PATH)/lib -lX11
-+
-+# Compilation rules
-+.cpp:
-+	@echo "> Compiling '$*'"
-+	$(CC) -o $* $< $(CPPFLAGS) -Wall -ansi -ffast-math $(X11FLAGS) $(LDFLAGS)
-+linux:
-+	make "LDFLAGS=-lm -lpthread -Wl,-rpath $(X11PATH)/lib" all
-+solaris:
-+	make "LDFLAGS=-lm -lpthread -R$(X11PATH)/lib -lnsl -lsocket" all
-+
-+all: fade_images \
-+     inpainter \
-+     odykill \
-+     pslider \
-+     inrcast \
-+     inrcrop \
-+     optical_flow \
-+     hough_transform \
-+     render3d \
-+     tutorial \
-+     tetris \
-+     pde_heatflow2D \
-+     pde_TschumperleDeriche2D
-+
-+clean:
-+	rm -f *.exe *~ *.orig \
-+	fade_images \
-+        inpainter \
-+        odykill \
-+        pslider \
-+        inrcast \
-+        inrcrop \
-+        optical_flow \
-+        hough_transform \
-+        render3d \
-+        tutorial \
-+        tetris \
-+        pde_heatflow2D \
-+        pde_TschumperleDeriche2D
+ X11FLAGS   = -I$(X11PATH)/include -L$(X11PATH)/lib -lX11
+ 
+ # Compilation rules
+ .cpp:
+ 	@echo -e "\n** Compiling '$*'\n"
+-	@$(CC) -o $* $< $(CFLAGS) $(X11FLAGS) $(LDFLAGS)
++	@$(CC) -o $* $< $(CPPFLAGS) -Wall -ansi -ffast-math $(X11FLAGS) $(LDFLAGS)
+ linux:
+ 	make "LDFLAGS=-lm -lpthread -Wl,-rpath $(X11PATH)/lib" all
+ solaris:
+@@ -37,6 +37,7 @@
+ 
+ clean:
+ 	rm -f *.exe *~ \
++	Makefile.orig \
+         CImg_test \
+ 	fade_images \
+         inpainter \
