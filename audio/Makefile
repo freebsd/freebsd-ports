@@ -66,6 +66,7 @@
     SUBDIR += shorten
     SUBDIR += sidplay
     SUBDIR += snowstar
+    SUBDIR += soundtracker
     SUBDIR += sox
     SUBDIR += splay
     SUBDIR += splaytk

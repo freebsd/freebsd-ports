@@ -1,0 +1,7 @@
+--- app/Makefile.in.orig	Mon Nov 29 01:49:07 1999
++++ app/Makefile.in		Mon Nov 29 01:49:59 1999
+@@ -466,3 +466,3 @@
+ install-exec-local:
+-	chown root.root $(bindir)/soundtracker
++	chown root.wheel $(bindir)/soundtracker
+ 	chmod +s $(bindir)/soundtracker
