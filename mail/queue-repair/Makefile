@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	queue-repair
-PORTVERSION=	0.8.6
-PORTREVISION=	1
+PORTVERSION=	0.9.0
 CATEGORIES=	mail python
 MASTER_SITES=	http://www.qcc.ca/~charlesc/software/queue_repair/
 
@@ -22,7 +21,7 @@ QMAIL_DIR?=	/var/qmail
 USE_PYTHON=	yes
 USE_REINPLACE=	yes
 
-DOCS=		BLURB CHANGELOG TODO docs.txt
+DOCS=		BLURB CHANGELOG TODO
 
 do-build:
 	${REINPLACE_CMD} -e 's,^#!/usr/bin/python,#!${PYTHON_CMD},' \
@@ -35,9 +34,7 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/queue_repair.py ${PREFIX}/bin/queue-repair
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for file in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
-.endfor
+	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>

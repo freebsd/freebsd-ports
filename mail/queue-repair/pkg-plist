@@ -1,6 +1,6 @@
+@comment $FreeBSD$
 bin/queue-repair
-%%PORTDOCS%%share/doc/queue-repair/BLURB
-%%PORTDOCS%%share/doc/queue-repair/CHANGELOG
-%%PORTDOCS%%share/doc/queue-repair/TODO
-%%PORTDOCS%%share/doc/queue-repair/docs.txt
-%%PORTDOCS%%@dirrm share/doc/queue-repair
+%%PORTDOCS%%%%DOCSDIR%%/BLURB
+%%PORTDOCS%%%%DOCSDIR%%/CHANGELOG
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
