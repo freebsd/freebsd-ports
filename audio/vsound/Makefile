@@ -8,10 +8,9 @@
 PORTNAME=	vsound
 PORTVERSION=	0.6
 CATEGORIES=	audio
-MASTER_SITES=	http://rsidd.online.fr/ \
-		http://www.zorg.org/vsound/
+MASTER_SITES=	http://www.zorg.org/vsound/
 
-MAINTAINER=	rsidd@online.fr
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utility for capturing audio streams from programs with OSS output
 
 BUILD_DEPENDS=	sox:${PORTSDIR}/audio/sox
