@@ -7,6 +7,7 @@
 
 PORTNAME=	xdeview
 PORTVERSION=	0.5.18
+PORTREVISION=	1
 CATEGORIES=	converters tcl84 tk84
 MASTER_SITES=	http://www.fpx.de/fp/Software/UUDeview/download/
 DISTNAME=	uudeview-${PORTVERSION}
