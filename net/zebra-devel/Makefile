@@ -3,10 +3,10 @@
 # Date created:		So  31 Mai 1998 11:00:30 CEST
 # Whom:			Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.12 1999/04/20 03:54:43 steve Exp $
+# $Id: Makefile,v 1.13 1999/05/09 18:24:05 itojun Exp $
 #
 
-DISTNAME=	zebra-0.64.1
+DISTNAME=	zebra-0.68
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.zebra.org/pub/zebra/
 # you might need debugging, it's a developer release !
