@@ -6,7 +6,7 @@
  @settitle V.E.R.A@. --- Virtual Entity of Relevant Acronyms
 +@dircategory Miscellaneous
 +@direntry
-+* VERA: (vera).			A list dealing with computational acronyms.
++* VERA: (vera).		A list dealing with computational acronyms.
 +@end direntry
  @setchapternewpage on
  @c %**end of header
