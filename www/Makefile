@@ -42,7 +42,6 @@
     SUBDIR += httperf
     SUBDIR += hypermail
     SUBDIR += ijb
-    SUBDIR += latte
     SUBDIR += libghttp
     SUBDIR += libwww
     SUBDIR += libxpg4-ns
