@@ -19,3 +19,8 @@ capabilities:
     * Uses sendmail OR direct SMTP or other MA
     * Supports Delivery Status Notifications - DSN ESMTP sendmail-8.7
     * Supports PGP/MIME and "old-style PGP message receipt"
+
+WWW: http://www.dtek.chalmers.se/~maf/ratatosk/
+
+- Pete
+petef@databits.net

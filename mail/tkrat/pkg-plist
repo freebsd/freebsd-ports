@@ -47,12 +47,12 @@ lib/tkratlib/text_balText_fr.tcl
 lib/tkratlib/text_changes_fr.tcl
 lib/tkratlib/text_help_fr.tcl
 lib/tkratlib/text_t_fr.tcl
-share/doc/tkrat/CONFIGURATION
-share/doc/tkrat/COPYRIGHT
-share/doc/tkrat/README
-share/doc/tkrat/interface
-share/doc/tkrat/userprocs
-share/doc/tkrat/userproc.example
+%%PORTDOCS%%share/doc/tkrat/CONFIGURATION
+%%PORTDOCS%%share/doc/tkrat/COPYRIGHT
+%%PORTDOCS%%share/doc/tkrat/README
+%%PORTDOCS%%share/doc/tkrat/interface
+%%PORTDOCS%%share/doc/tkrat/userprocs
+%%PORTDOCS%%share/doc/tkrat/userproc.example
+%%PORTDOCS%%@dirrm share/doc/tkrat
 @dirrm lib/tkratlib
-@dirrm share/doc/tkrat
 @dirrm lib/ratatosk
