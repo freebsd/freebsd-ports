@@ -1,7 +1,8 @@
-# $Id: Makefile,v 1.12 1996/08/09 08:16:50 asami Exp $
+# $Id: Makefile,v 1.13 1996/08/23 06:48:49 tg Exp $
 #
 
     SUBDIR += arc
+    SUBDIR += bzip
     SUBDIR += freeze
     SUBDIR += gshar+gunshar
     SUBDIR += ha
