@@ -16,6 +16,7 @@ lib/vile/vile-fdl-filt
 lib/vile/vile-diff-filt
 lib/vile/vile-esql-filt
 lib/vile/vile-html-filt
+lib/vile/vile-imake-filt
 lib/vile/vile-latex-filt
 lib/vile/vile-lex-filt
 lib/vile/vile-m4-filt
@@ -24,11 +25,14 @@ lib/vile/vile-make-filt
 lib/vile/vile-mms-filt
 lib/vile/vile-nr-filt
 lib/vile/vile-perl-filt
+lib/vile/vile-pl-filt
 lib/vile/vile-py-filt
 lib/vile/vile-rcs-filt
 lib/vile/vile-rexx-filt
 lib/vile/vile-sccs-filt
+lib/vile/vile-sed-filt
 lib/vile/vile-sh-filt
+lib/vile/vile-sml-filt
 lib/vile/vile-spell-filt
 lib/vile/vile-sql-filt
 lib/vile/vile-tags-filt
@@ -64,6 +68,7 @@ share/vile/perl/Visit.pm
 share/vile/perl/capture.pm
 share/vile/perl/directory.pm
 share/vile/perl/dirlist.pm
+share/vile/perl/gdb.pm
 share/vile/perl/hgrep.pm
 share/vile/perl/lock.pm
 share/vile/perl/mime.pl
@@ -72,10 +77,12 @@ share/vile/perl/search.pm
 share/vile/perl/shell.pm
 share/vile/perl/spell.pm
 share/vile/perl/winops.pm
+share/vile/color-ls.rc
 share/vile/digraphs.rc
 share/vile/manpage.rc
 share/vile/palettes.rc
 share/vile/pictmode.rc
+share/vile/shifts.rc
 share/vile/vileinit.rc
 share/vile/vileperl.rc
 share/vile/vile.hlp
@@ -83,7 +90,9 @@ share/vile/c.keywords
 share/vile/cpp.keywords
 share/vile/filters.rc
 share/vile/pas.keywords
+share/vile/pc.keywords
 share/vile/vile.keywords
+share/vile/vim.keywords
 share/vile/ada.keywords
 share/vile/awk.keywords
 share/vile/bat.keywords
@@ -110,6 +119,7 @@ share/vile/rcs.keywords
 share/vile/rexx.keywords
 share/vile/sccs.keywords
 share/vile/sh.keywords
+share/vile/sml.keywords
 share/vile/spell.rc
 share/vile/sql.keywords
 share/vile/tags.keywords
@@ -119,10 +129,12 @@ share/vile/tcl.keywords
 share/vile/ti.keywords
 share/vile/xres.keywords
 share/vile/xs.keywords
+share/vile/macros/color-ls.rc
 share/vile/macros/digraphs.rc
 share/vile/macros/manpage.rc
 share/vile/macros/palettes.rc
 share/vile/macros/pictmode.rc
+share/vile/macros/shifts.rc
 share/vile/macros/vileinit.rc
 share/vile/macros/vilemenu.rc
 share/vile/macros/vileperl.rc

@@ -1,6 +1,5 @@
 bin/xvile
 bin/xvile-pager
-bin/vileget
 bin/xshell.sh
 lib/xvile/vile-c-filt
 lib/xvile/vile-crypt
@@ -17,6 +16,7 @@ lib/xvile/vile-fdl-filt
 lib/xvile/vile-diff-filt
 lib/xvile/vile-esql-filt
 lib/xvile/vile-html-filt
+lib/xvile/vile-imake-filt
 lib/xvile/vile-latex-filt
 lib/xvile/vile-lex-filt
 lib/xvile/vile-m4-filt
@@ -25,11 +25,14 @@ lib/xvile/vile-make-filt
 lib/xvile/vile-mms-filt
 lib/xvile/vile-nr-filt
 lib/xvile/vile-perl-filt
+lib/xvile/vile-pl-filt
 lib/xvile/vile-py-filt
 lib/xvile/vile-rcs-filt
 lib/xvile/vile-rexx-filt
 lib/xvile/vile-sccs-filt
+lib/xvile/vile-sed-filt
 lib/xvile/vile-sh-filt
+lib/xvile/vile-sml-filt
 lib/xvile/vile-spell-filt
 lib/xvile/vile-sql-filt
 lib/xvile/vile-tags-filt
@@ -65,6 +68,7 @@ share/xvile/vile/perl/Visit.pm
 share/xvile/vile/perl/capture.pm
 share/xvile/vile/perl/directory.pm
 share/xvile/vile/perl/dirlist.pm
+share/xvile/vile/perl/gdb.pm
 share/xvile/vile/perl/hgrep.pm
 share/xvile/vile/perl/lock.pm
 share/xvile/vile/perl/mime.pl
@@ -73,19 +77,23 @@ share/xvile/vile/perl/search.pm
 share/xvile/vile/perl/shell.pm
 share/xvile/vile/perl/spell.pm
 share/xvile/vile/perl/winops.pm
+@unexec rm -f %D/share/xvile/vile/.vilemenu
+share/xvile/vile/color-ls.rc
 share/xvile/vile/digraphs.rc
 share/xvile/vile/manpage.rc
 share/xvile/vile/palettes.rc
 share/xvile/vile/pictmode.rc
+share/xvile/vile/shifts.rc
 share/xvile/vile/vileinit.rc
 share/xvile/vile/vileperl.rc
 share/xvile/vile/vile.hlp
-share/xvile/vile/.vilemenu
 share/xvile/vile/c.keywords
 share/xvile/vile/cpp.keywords
 share/xvile/vile/filters.rc
 share/xvile/vile/pas.keywords
+share/xvile/vile/pc.keywords
 share/xvile/vile/vile.keywords
+share/xvile/vile/vim.keywords
 share/xvile/vile/ada.keywords
 share/xvile/vile/awk.keywords
 share/xvile/vile/bat.keywords
@@ -112,6 +120,7 @@ share/xvile/vile/rcs.keywords
 share/xvile/vile/rexx.keywords
 share/xvile/vile/sccs.keywords
 share/xvile/vile/sh.keywords
+share/xvile/vile/sml.keywords
 share/xvile/vile/spell.rc
 share/xvile/vile/sql.keywords
 share/xvile/vile/tags.keywords
@@ -121,17 +130,19 @@ share/xvile/vile/tcl.keywords
 share/xvile/vile/ti.keywords
 share/xvile/vile/xres.keywords
 share/xvile/vile/xs.keywords
-share/xvile/vile/yacc.keywords
+share/xvile/macros/color-ls.rc
 share/xvile/macros/digraphs.rc
 share/xvile/macros/manpage.rc
 share/xvile/macros/palettes.rc
 share/xvile/macros/pictmode.rc
+share/xvile/macros/shifts.rc
 share/xvile/macros/vileinit.rc
 share/xvile/macros/vilemenu.rc
 share/xvile/macros/vileperl.rc
 share/xvile/macros/vile-pager
+share/xvile/vile/yacc.keywords
 @dirrm share/xvile/vile/perl/Vile
 @dirrm share/xvile/vile/perl
-@dirrm share/xvile/vile
 @dirrm share/xvile/macros
+@dirrm share/xvile/vile
 @dirrm share/xvile
