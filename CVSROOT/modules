@@ -10090,6 +10090,7 @@ scand		ports/net/scand
 scandoc		ports/devel/scandoc
 scanlogd	ports/security/scanlogd
 scanssh		ports/security/scanssh
+scare		ports/games/scare
 sccmilter	ports/mail/sccmilter
 scdp		ports/net-mgmt/scdp
 sced		ports/graphics/sced
