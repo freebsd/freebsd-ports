@@ -8,7 +8,8 @@
 PORTNAME=	numlockx
 PORTVERSION=	1.0
 CATEGORIES=	x11
-MASTER_SITES=	http://dforce.sh.cvut.cz/~seli/en/numlockx/
+MASTER_SITES=	http://caraldi.com/jbq/numlockx/ \
+	http://dforce.sh.cvut.cz/~seli/en/numlockx/
 
 MAINTAINER=	jb.quenot@caraldi.com
 COMMENT=	This little thingy allows you to start X with NumLock turned on
