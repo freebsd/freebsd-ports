@@ -11,6 +11,6 @@ MASTERDIR=	${.CURDIR}/../../net/ppxp
 
 MAINTAINER=	sada@FreeBSD.org
 
-USE_TCLJP=	yes
+WITH_TCLJP=	yes
 
 .include "${MASTERDIR}/Makefile"
