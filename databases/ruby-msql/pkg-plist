@@ -1,0 +1,15 @@
+%%RUBY_SITEARCHLIBDIR%%/msql.so
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/msql/Shakespeare.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/msql/msql.ry
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/msql/msqladmin.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/msql/msqldump.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/msql/msqlexport.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/msql/msqlm.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/msql/msqlparse.rb
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/msql
+%%PORTDOCS%%%%RUBY_DOCDIR%%/msql/msql.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/msql/msql.rd
+%%PORTDOCS%%%%RUBY_DOCDIR%%/msql/readme.en.txt
+%%PORTDOCS%%%%RUBY_DOCDIR%%/msql/ja/readme.ja.txt
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/msql/ja
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/msql
