@@ -1,0 +1,11 @@
+--- configure.orig	Thu Mar 13 17:21:08 2003
++++ configure	Thu Mar 13 17:21:15 2003
+@@ -611,7 +611,7 @@
+ # Check whether --with-default_fonts or --without-default_fonts was given.
+ if test "${with_default_fonts+set}" = set; then
+   withval="$with_default_fonts"
+-  defaultfonts="$withval"
++  default_fonts="$withval"
+ else
+   default_fonts=yes
+ fi
