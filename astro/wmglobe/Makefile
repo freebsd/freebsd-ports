@@ -14,12 +14,7 @@ MASTER_SITES=	http://perso.linuxfr.org/jdumont/wmg/ \
 
 MAINTAINER=	andrews@technologist.com
 
-LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm \
-		jpeg.9:${PORTSDIR}/graphics/jpeg \
-		png.3:${PORTSDIR}/graphics/png \
-		tiff.4:${PORTSDIR}/graphics/tiff \
-		ungif.5:${PORTSDIR}/graphics/libungif \
-		wraster.3:${PORTSDIR}/x11-wm/windowmaker
+LIB_DEPENDS=	wraster.3:${PORTSDIR}/x11-wm/windowmaker
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
@@ -27,7 +22,7 @@ USE_GMAKE=	yes
 MAN1=		wmglobe.1
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/wmglobe ${PREFIX}/bin/
+	${INSTALL_PROGRAM} ${WRKSRC}/wmglobe ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/wmglobe.1 ${PREFIX}/man/man1
 
 .include <bsd.port.mk>
