@@ -1,0 +1,41 @@
+--- configure.orig	Tue Jan 25 00:19:49 2000
++++ configure	Tue Jan 25 00:20:51 2000
+@@ -2045,14 +2045,14 @@
+   libmikmod_threads=-lpthread
+ else
+   echo "$ac_t""no" 1>&6
+-echo $ac_n "checking for pthread_create in -lc_r""... $ac_c" 1>&6
+-echo "configure:2050: checking for pthread_create in -lc_r" >&5
++echo $ac_n "checking for pthread_create in -pthread""... $ac_c" 1>&6
++echo "configure:2050: checking for pthread_create in -pthread" >&5
+ ac_lib_var=`echo c_r'_'pthread_create | sed 'y%./+-%__p_%'`
+ if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
+   ac_save_LIBS="$LIBS"
+-LIBS="-lc_r  $LIBS"
++LIBS="-pthread  $LIBS"
+ cat > conftest.$ac_ext <<EOF
+ #line 2058 "configure"
+ #include "confdefs.h"
+@@ -2080,7 +2080,7 @@
+ fi
+ if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
+   echo "$ac_t""yes" 1>&6
+-  libmikmod_threads=-lc_r
++  libmikmod_threads=-pthread
+ else
+   echo "$ac_t""no" 1>&6
+ fi
+@@ -3681,9 +3681,9 @@
+ #define HAVE_PTHREAD 1
+ EOF
+ 
+-	CFLAGS="$CFLAGS -D_REENTRANT"
++	CFLAGS="$CFLAGS -D_REENTRANT -D_THREAD_SAFE"
+ 	LIBRARY_LIB="$libmikmod_threads $LIBRARY_LIB"
+-	REENTRANT="-D_REENTRANT"
++	REENTRANT="-D_REENTRANT -D_THREAD_SAFE"
+ fi
+ 		
+ # =================
