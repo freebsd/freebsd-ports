@@ -479,7 +479,7 @@ pre-configure:
 	@${ECHO_CMD} "You can use one and only one database back-end at once."
 	@${FALSE}
 .endif
-.if defined(WITH_NEURAL_NET) && !(defined(HAVE_MYSQL) || defined(WITH_POSTGRESQL))
+.if defined(WITH_NEURAL_NET) && !(defined(USE_MYSQL) || defined(WITH_POSTGRESQL))
 	@${ECHO_CMD} "You need MySQL or POSTGRESQL to use neural networking."
 	@${FALSE}
 .endif
