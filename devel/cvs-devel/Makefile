@@ -6,24 +6,22 @@
 #
 
 PORTNAME=	cvs
-PORTVERSION=	1.11.5
-PORTREVISION=	1
+PORTVERSION=	1.11.15
 CATEGORIES=	devel ipv6
 MASTER_SITES=	http://ftp.cvshome.org/%SUBDIR%/ \
 		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,misc/cvs/&,}
-MASTER_SITE_SUBDIR=	${DISTNAME}
+MASTER_SITE_SUBDIR=	release/stable/${DISTNAME}
 PKGNAMESUFFIX=	+ipv6
 
 PATCH_SITES=	ftp://ftp.kame.net/pub/kame/misc/
-PATCHFILES=	${DISTNAME}-v6-20030123.diff.gz
+PATCHFILES=	${DISTNAME}-v6-20040416.diff.gz
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	sumikawa@FreeBSD.org
-COMMENT=	IPv6 enabled cvs.  You can use IPv6 connection when using pserver
-
-FORBIDDEN=	http://vuxml.freebsd.org/0792e7a7-8e37-11d8-90d1-0020ed76ef5a.html
+COMMENT=		IPv6 enabled cvs.  You can use IPv6 connection when using pserver
 
 GNU_CONFIGURE=	yes
+USE_BZIP2=	yes
 #USE_GMAKE=	yes
 CONFIGURE_ARGS=	--enable-ipv6 --without-gssapi \
 		--with-editor="vi" \

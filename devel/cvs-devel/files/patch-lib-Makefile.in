@@ -1,38 +1,35 @@
---- lib/Makefile.in.orig	Fri Jan 17 06:36:42 2003
-+++ lib/Makefile.in	Thu Jan 23 01:39:54 2003
-@@ -132,8 +132,6 @@
- 	getline.c \
+--- lib/Makefile.in.orig	Mon Sep 29 19:05:58 2003
++++ lib/Makefile.in	Tue Sep 30 11:25:43 2003
+@@ -173,8 +173,6 @@
  	getopt.c \
  	getopt1.c \
+ 	getpass.c \
 -	md5.c \
 -	regex.c \
  	savecwd.c \
  	sighandle.c \
  	stripslash.c \
-@@ -168,7 +166,7 @@
+@@ -210,7 +208,7 @@
  libcvs_a_DEPENDENCIES = @LIBOBJS@
  am_libcvs_a_OBJECTS = argmatch.$(OBJEXT) getdate.$(OBJEXT) \
  	getline.$(OBJEXT) getopt.$(OBJEXT) getopt1.$(OBJEXT) \
--	md5.$(OBJEXT) regex.$(OBJEXT) savecwd.$(OBJEXT) \
-+	savecwd.$(OBJEXT) \
- 	sighandle.$(OBJEXT) stripslash.$(OBJEXT) xgetwd.$(OBJEXT) \
- 	yesno.$(OBJEXT)
+-	getpass.$(OBJEXT) md5.$(OBJEXT) regex.$(OBJEXT) \
++	getpass.$(OBJEXT) \
+ 	savecwd.$(OBJEXT) sighandle.$(OBJEXT) stripslash.$(OBJEXT) \
+ 	xgetwd.$(OBJEXT) yesno.$(OBJEXT)
  libcvs_a_OBJECTS = $(am_libcvs_a_OBJECTS)
-@@ -189,8 +187,8 @@
- @AMDEP_TRUE@	$(DEPDIR)/valloc.Po $(DEPDIR)/waitpid.Po \
+@@ -228,7 +226,6 @@
  @AMDEP_TRUE@	./$(DEPDIR)/argmatch.Po ./$(DEPDIR)/getdate.Po \
  @AMDEP_TRUE@	./$(DEPDIR)/getline.Po ./$(DEPDIR)/getopt.Po \
--@AMDEP_TRUE@	./$(DEPDIR)/getopt1.Po ./$(DEPDIR)/md5.Po \
--@AMDEP_TRUE@	./$(DEPDIR)/regex.Po ./$(DEPDIR)/savecwd.Po \
-+@AMDEP_TRUE@	./$(DEPDIR)/getopt1.Po \
-+@AMDEP_TRUE@	./$(DEPDIR)/savecwd.Po \
- @AMDEP_TRUE@	./$(DEPDIR)/sighandle.Po ./$(DEPDIR)/stripslash.Po \
- @AMDEP_TRUE@	./$(DEPDIR)/xgetwd.Po ./$(DEPDIR)/yesno.Po
- COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) \
-@@ -250,8 +248,6 @@
- @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/getline.Po@am__quote@
+ @AMDEP_TRUE@	./$(DEPDIR)/getopt1.Po ./$(DEPDIR)/getpass.Po \
+-@AMDEP_TRUE@	./$(DEPDIR)/md5.Po ./$(DEPDIR)/regex.Po \
+ @AMDEP_TRUE@	./$(DEPDIR)/savecwd.Po ./$(DEPDIR)/sighandle.Po \
+ @AMDEP_TRUE@	./$(DEPDIR)/stripslash.Po ./$(DEPDIR)/xgetwd.Po \
+ @AMDEP_TRUE@	./$(DEPDIR)/yesno.Po
+@@ -289,8 +286,6 @@
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/getopt.Po@am__quote@
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/getopt1.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/getpass.Po@am__quote@
 -@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/md5.Po@am__quote@
 -@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/regex.Po@am__quote@
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/savecwd.Po@am__quote@
