@@ -10,47 +10,6 @@ bin/arm-rtems-nm
 bin/arm-rtems-strip
 bin/arm-rtems-as
 bin/arm-rtems-ld
-@unexec install-info --delete %D/info/bfd.info %D/info/dir
-@unexec install-info --delete %D/info/binutils.info %D/info/dir
-@unexec install-info --delete %D/info/as.info %D/info/dir
-@unexec install-info --delete %D/info/ld.info %D/info/dir
-info/bfd.info
-info/bfd.info-1
-info/bfd.info-2
-info/bfd.info-3
-info/bfd.info-4
-info/bfd.info-5
-info/bfd.info-6
-info/bfd.info-7
-info/bfd.info-8
-info/bfd.info-9
-info/binutils.info
-info/binutils.info-1
-info/binutils.info-2
-info/binutils.info-3
-info/as.info
-info/as.info-1
-info/as.info-2
-info/as.info-3
-info/as.info-4
-info/as.info-5
-info/as.info-6
-info/as.info-7
-info/as.info-8
-info/as.info-9
-info/as.info-10
-info/as.info-11
-info/ld.info
-info/ld.info-1
-info/ld.info-2
-info/ld.info-3
-info/ld.info-4
-info/ld.info-5
-info/ld.info-6
-@exec install-info %D/info/ld.info %D/info/dir
-@exec install-info %D/info/as.info %D/info/dir
-@exec install-info %D/info/binutils.info %D/info/dir
-@exec install-info %D/info/bfd.info %D/info/dir
 lib/libiberty.a
 arm-rtems/bin/nm
 arm-rtems/bin/strip
