@@ -1,7 +1,7 @@
 Zoo is used to create and maintain collections of files in compressed
 form.  It uses a Lempel-Ziv compression algorithm that gives space
 savings in the range of 20% to 80% depending on the type of file
-data. Zoo can store and selectively extract multiple generations of
+data.  Zoo can store and selectively extract multiple generations of
 the same file.  Data can be recovered from damaged archives by
 skipping the damaged portion and locating undamaged data with the help
 of fiz(1).
