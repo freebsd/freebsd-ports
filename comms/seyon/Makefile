@@ -3,15 +3,18 @@
 # Date created:		3 October 1994
 # Whom:			Michael Elbel (me)
 #
-# $$
+# $Id$
 #
 
 DISTNAME=	Seyon-2.14b
-DISTFILES=	Seyon-2.14b-tar.Z
-WRKSRC=		${WRKDIR}/seyon
-USE_IMAKE=	yes
+PKGNAME=	seyon-2.14b
+CATEGORIES+=	comms x11
 MASTER_SITES=	ftp://sipb.mit.edu/pub/seyon/
-CATEGORIES+=	comms
+DISTFILES=	Seyon-2.14b-tar.Z
+
 MAINTAINER=	me@FreeBSD.org
+
+USE_IMAKE=	yes
+WRKSRC=		${WRKDIR}/seyon
 
 .include <bsd.port.mk>
