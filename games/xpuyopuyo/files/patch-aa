@@ -1,31 +1,12 @@
-Only in .: Makefile
-diff -ru /tmp/xpuyopuyo-0.1.1/Makefile.in ./Makefile.in
---- /tmp/xpuyopuyo-0.1.1/Makefile.in	Sun Sep 19 07:34:55 1999
-+++ ./Makefile.in	Sun Sep 19 19:54:09 1999
-@@ -119,8 +119,8 @@
- pfield.o pmanip.o ppiece.o pplayer.o pwindow.o pgame.o
- xpuyopuyo_DEPENDENCIES = 
+diff -ru /tmp/xpuyopuyo-0.2.3/Makefile.in ./Makefile.in
+--- /tmp/xpuyopuyo-0.2.3/Makefile.in	Sat Sep 25 18:11:27 1999
++++ ./Makefile.in	Fri Oct  8 10:34:51 1999
+@@ -135,7 +135,7 @@
+ @GTK_FALSE@xpuyopuyo_DEPENDENCIES =  libxpuyopuyo.a
+ @GTK_TRUE@xpuyopuyo_DEPENDENCIES =  libxpuyopuyo.a
  xpuyopuyo_LDFLAGS = 
 -CFLAGS = @CFLAGS@
--COMPILE = $(CC) $(DEFS) $(INCLUDES) $(CPPFLAGS) $(CFLAGS)
 +CFLAGS += @CFLAGS@
-+COMPILE = $(CC) $(DEFS) $(INCLUDES) $(CPPFLAGS) $(CFLAGS) $(X_CFLAGS)
- LINK = $(CC) $(CFLAGS) $(LDFLAGS) -o $@
- DIST_COMMON =  README AUTHORS COPYING ChangeLog INSTALL Makefile.am \
- Makefile.in NEWS TODO aclocal.m4 config.guess config.h.in config.sub \
-Only in .: config.cache
-Only in .: config.h
-Only in .: config.log
-Only in .: config.status
-Only in .: getopt.o
-Only in .: getopt1.o
-Only in .: pai.o
-Only in .: pfield.o
-Only in .: pgame.o
-Only in .: pimg.o
-Only in .: pmanip.o
-Only in .: ppiece.o
-Only in .: pplayer.o
-Only in .: pwindow.o
-Only in .: xpuyopuyo
-Only in .: xpuyopuyo.o
+ COMPILE = $(CC) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
+ LTCOMPILE = $(LIBTOOL) --mode=compile $(CC) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
+ CCLD = $(CC)
