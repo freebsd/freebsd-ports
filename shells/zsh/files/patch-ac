@@ -1,13 +1,100 @@
---- Doc/zsh.texi.orig	Thu Dec 19 09:00:10 1996
-+++ Doc/zsh.texi	Mon Jun 16 20:35:02 1997
-@@ -2,6 +2,10 @@
- @c %**start of header
- @setfilename zsh.info
- @settitle    zsh
-+@dircategory Shells
-+@direntry
-+* Zsh: (zsh).                   The Z shell.
-+@end direntry
- @c %**end of header
- 
- @setchapternewpage odd
+*** Doc/zsh.texi.orig	Fri Sep  3 16:44:37 1999
+--- Doc/zsh.texi	Sun Feb 13 12:02:35 2000
+***************
+*** 2,7 ****
+--- 2,11 ----
+  @c %**start of header
+  @setfilename zsh.info
+  @settitle    zsh
++ @dircategory Shells
++ @direntry
++ * Zsh: (zsh).                   The Z shell.
++ @end direntry
+  @c %**end of header
+  
+  @ifinfo
+***************
+*** 834,840 ****
+  A character may be @dfn{quoted} (that is, made to stand for itself) by
+  preceding it with a @code{\}.  @code{\} followed by a newline is
+  ignored.  All characters enclosed between a pair of single quotes
+! (@t{@value{dsq}}) are quoted, except the first character of @code{histchars}
+  (@code{!} by default).  A single quote cannot appear within single
+  quotes.  Inside double quotes (@code{""}), parameter and command
+  substitution occurs, and @code{\} quotes the characters @code{\},
+--- 838,844 ----
+  A character may be @dfn{quoted} (that is, made to stand for itself) by
+  preceding it with a @code{\}.  @code{\} followed by a newline is
+  ignored.  All characters enclosed between a pair of single quotes
+! (@t{'}@t{'}) are quoted, except the first character of @code{histchars}
+  (@code{!} by default).  A single quote cannot appear within single
+  quotes.  Inside double quotes (@code{""}), parameter and command
+  substitution occurs, and @code{\} quotes the characters @code{\},
+***************
+*** 1622,1628 ****
+  @code{histchars} parameter which is @code{!} by default and may occur 
+  anywhere on the command line; history substitutions do not nest.  The 
+  @code{!} can be escaped with @code{\} or can be enclosed between a pair of 
+! single quotes (@t{@value{dsq}}) 
+  to suppress its special meaning. Double quotes will not work for this.
+  
+  @noindent
+--- 1626,1632 ----
+  @code{histchars} parameter which is @code{!} by default and may occur 
+  anywhere on the command line; history substitutions do not nest.  The 
+  @code{!} can be escaped with @code{\} or can be enclosed between a pair of 
+! single quotes (@t{'}@t{'})
+  to suppress its special meaning. Double quotes will not work for this.
+  
+  @noindent
+***************
+*** 5183,5189 ****
+  @cindex rc, quoting style
+  @cindex quoting style, rc
+  @pindex RC_QUOTES
+! Allow the character sequence @t{@value{dsq}} to signify a single quote within
+  singly quoted strings.
+  
+  @item RCS (+f)
+--- 5187,5193 ----
+  @cindex rc, quoting style
+  @cindex quoting style, rc
+  @pindex RC_QUOTES
+! Allow the character sequence @t{'}@t{'} to signify a single quote within
+  singly quoted strings.
+  
+  @item RCS (+f)
+***************
+*** 7008,7014 ****
+  use is
+  
+  @example
+! compctl -D -f + -H 0 @value{dsq} -X '(No file found; using history)'
+  @end example
+  
+  which forces completion to look back in the history list for a word if no
+--- 7012,7018 ----
+  use is
+  
+  @example
+! compctl -D -f + -H 0 @t{'}@t{'} -X '(No file found; using history)'
+  @end example
+  
+  which forces completion to look back in the history list for a word if no
+***************
+*** 7071,7077 ****
+  name completion performed on the first word in the range.  For example,
+  
+  @example
+! compctl -x 'r[-exec,;]' -l @value{dsq} -- find
+  @end example
+  
+  completes arguments between @code{-exec} and the following @code{;} (or the
+--- 7075,7081 ----
+  name completion performed on the first word in the range.  For example,
+  
+  @example
+! compctl -x 'r[-exec,;]' -l @t{'}@t{'} -- find
+  @end example
+  
+  completes arguments between @code{-exec} and the following @code{;} (or the
