@@ -17,11 +17,13 @@ COMMENT=	M68000 virtual machine library
 
 USE_LIBTOOL_VER=13
 USE_REINPLACE=	yes
-LIBTOOLFLAGS=	--disable-ltlibs --release-ignore
 INSTALLS_SHLIB=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^#define _POSIX_C_SOURCE 199506L/d' \
 		${WRKSRC}/memory.cc ${WRKSRC}/memory_map.cc ${WRKSRC}/version.cc
+	${REINPLACE_CMD} -e '/^LTLIBRELEASE=/d' \
+		-e '/^LIBTOOL=/s^\$$(top_builddir)/libtool^${LIBTOOL}^' \
+		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 
 .include <bsd.port.mk>
