@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gliv
-PORTVERSION=	1.4.5
+PORTVERSION=	1.5.2
 CATEGORIES=	graphics
 MASTER_SITES=	http://gliv.tuxfamily.org/
 
@@ -19,11 +19,11 @@ LIB_DEPENDS=	gdk_pixbuf.2:${PORTSDIR}/graphics/gdk-pixbuf \
 RUN_DEPENDS=	${LOCALBASE}/bin/convert:${PORTSDIR}/graphics/ImageMagick
 
 USE_BZIP2=	yes
-USE_GTK=	yes
+USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
+USE_GTK=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
-		LIBS="-L${LOCALBASE}/lib -L${X11BASE}/lib -lXext -lX11" \
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" \
 		GDK_PIXBUF_CONFIG=${X11BASE}/bin/gdk-pixbuf-config \
 		MAGICK_CONFIG=${LOCALBASE}/bin/Magick-config
 CONFIGURE_ARGS=	--disable-gtk2
@@ -31,7 +31,11 @@ CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 MAN1=		gliv.1
 
+CPPFLAGS=	-I${LOCALBASE}/include -I${X11BASE}/include ${PTHREAD_CFLAGS}
+LDFLAGS=	-L${LOCALBASE}/lib -L${X11BASE}/lib -lXext -lX11 -lgnugetopt
+
 post-patch:
-	@${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e \
+		's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
