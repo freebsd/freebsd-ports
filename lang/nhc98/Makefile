@@ -69,11 +69,19 @@ pre-fetch:
 post-patch:
 	@${PERL} -pi.orig -e 's|-O3|${CFLAGS}|' ${WRKSRC}/Makefile.inc
 
+pre-install:
+.if exists(${PREFIX}/bin/hmake) && !defined(OVERRIDE_HMAKE)
+	@${ECHO} ""
+	@${ECHO} "It seems that there is already a version of hmake installed on"
+	@${ECHO} "this system. Since hmake is part of nhc98, please deinstall it,"
+	@${ECHO} "or define OVERRIDE_HMAKE to override the installed version."
+	@${ECHO} ""
+	@${FALSE}
+.endif
 # We need this to ensure that the libs will be installed into
 # ${PREFIX}/lib/nhc98. Otherwise the libs will be installed
 # into the build directory. The configure option won't work in the
 # ports system.
-pre-install:
 	${RM} -f ${WRKSRC}/include/*.orig
 	${SED} -e "s#LIBDIR=.*##" \
 	       < ${WRKSRC}/targets/ix86-FreeBSD/config.cache \
