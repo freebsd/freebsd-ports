@@ -60,6 +60,8 @@ CONFIGURE_ARGS+=	--suffix=""
 
 PLIST_SUB+=	M17N_ONLY="" NO_M17N="@comment "
 .else
+EXTRA_PATCHES=	${PATCHDIR}/extra-patch-configure-no-m17n \
+		${PATCHDIR}/extra-patch-etc.c-no-m17n
 PLIST_SUB+=	M17N_ONLY="@comment " NO_M17N=""
 .endif
 
@@ -71,6 +73,7 @@ DOCS_JP=	${DOCS} README.SSL README.cookie \
 		README.keymap README.mailcap README.menu
 
 PLIST_SUB+=	JAPANESE_ONLY=""
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-search.c-japanese
 .else
 PLIST_SUB+=	JAPANESE_ONLY="@comment "
 .endif
@@ -92,12 +95,18 @@ DOCS+=		README.img
 DOCS_JP+=	README.img
 PLIST_SUB+=	INLINE_IMAGE_ONLY=""
 
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-image.c-img
+
 PKGMESSAGE=	${MASTERDIR}/pkg-message
 .else
 PLIST_SUB+=	INLINE_IMAGE_ONLY="@comment "
 
 # Don't use pkg-message
 PKGMESSAGE=	${NONEXISTENT}
+.endif
+
+.if defined(M17N)
+.undef EXTRA_PATCHES
 .endif
 
 pre-everything::
@@ -111,18 +120,6 @@ pre-everything::
 pre-extract:
 .if !defined(WITHOUT_SSL)
 	@${ECHO_MSG} "You can disable support for SSL by defining WITHOUT_SSL."
-.endif
-
-post-extract:
-.if defined(INLINE_IMAGE) && !defined(M17N)
-	${SED} -e "s,w3m/0.2.5,w3m/0.2.4+cvs," < ${WRKSRC}/version.c.in > ${WRKSRC}/version.c.in.tmp
-	${MV} ${WRKSRC}/version.c.in.tmp ${WRKSRC}/version.c.in
-.endif
-
-post-patch:
-.if defined(INLINE_IMAGE) && !defined(M17N)
-	${SED} -e "s,w3m/0.2.4+cvs-img-2.2,w3m/0.2.5-img-2.2," < ${WRKSRC}/version.c.in > ${WRKSRC}/version.c.in.tmp
-	${MV} ${WRKSRC}/version.c.in.tmp ${WRKSRC}/version.c.in
 .endif
 
 post-install:
