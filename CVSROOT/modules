@@ -2824,7 +2824,6 @@ gnulibiberty	ports/devel/gnulibiberty
 gnuls		ports/misc/gnuls
 gnumail		ports/mail/gnumail
 gnumeric	ports/math/gnumeric
-gnumeric2	ports/math/gnumeric2
 gnump3d		ports/audio/gnump3d
 gnunet		ports/net/gnunet
 gnupg		ports/security/gnupg
@@ -3650,7 +3649,6 @@ ja-gicq		ports/japanese/gicq
 ja-gn-gnspool	ports/japanese/gn-gnspool
 ja-gnome	ports/japanese/gnome
 ja-gnomelibs	ports/japanese/gnomelibs
-ja-gnumeric	ports/japanese/gnumeric
 ja-gorua	ports/japanese/gorua
 ja-gqmpeg	ports/japanese/gqmpeg
 ja-grep		ports/japanese/grep
@@ -12060,7 +12058,6 @@ zh-gb2ps	ports/chinese/gb2ps
 zh-gbfs		ports/chinese/gbfs
 zh-gbscript	ports/chinese/gbscript
 zh-gcin		ports/chinese/gcin
-zh-gnumeric	ports/chinese/gnumeric
 zh-gugod-clean	ports/chinese/gugod-clean
 zh-hanzim	ports/chinese/hanzim
 zh-hc		ports/chinese/hc
