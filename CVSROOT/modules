@@ -1918,6 +1918,7 @@ freebsd-uucp	ports/net/freebsd-uucp
 freecell-solver	ports/games/freecell-solver
 freeciv		ports/games/freeciv
 freeciv-gtk	ports/games/freeciv-gtk
+freecolor	ports/sysutils/freecolor
 freedialog	ports/misc/freedialog
 freedroid	ports/games/freedroid
 freedt		ports/sysutils/freedt
