@@ -17,7 +17,7 @@ BUILD_DEPENDS=	lrz:${PORTSDIR}/comms/lrzsz
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
 #USE_GMAKE=     yes
-GNU_CONFIGURE=	YES
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-user=news
 CONFIGURE_ARGS+=--with-group=dialer
 CONFIGURE_ARGS+=--with-execdir=${PREFIX}/libexec/uconnect

@@ -21,6 +21,7 @@ USE_X_PREFIX=	yes
 USE_GTK=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+BREAKS_IF_PEDANTIC=	yes
 CONFIGURE_ARGS+=	--with-tclinclude=${LOCALBASE}/include/tcl8.3
 CONFIGURE_ARGS+=	--with-tcllib=${LOCALBASE}/lib/tcl8.3
 LIBS+=		-lgnugetopt
