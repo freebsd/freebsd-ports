@@ -8,7 +8,7 @@
 PORTNAME=	pcal
 PORTVERSION=	4.7.1
 CATEGORIES=	print
-MASTER_SITES=	http://fronzek.akshor.com/pcal/
+MASTER_SITES=	http://www.sunpoint.net/~pcal/
 
 MAINTAINER=	mwest@uct.ac.za
 COMMENT=	PostScript calendar program
