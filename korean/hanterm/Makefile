@@ -9,7 +9,7 @@
 DISTNAME=	hanterm-3.1.3
 PKGNAME=	ko-hanterm-3.1.3
 CATEGORIES=	korean x11
-MASTER_SITES=	http://elf.kaist.ac.kr/hanterm/pub/ \
+MASTER_SITES=	ftp://ftp.kr.freebsd.org/pub/FreeBSD-kr/distfiles/ \
 		http://www.freebsd.org/~sada/distfiles/
 
 MAINTAINER=	cjh@kr.freebsd.org
