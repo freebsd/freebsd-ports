@@ -7,7 +7,7 @@
 
 PORTNAME=	twig
 PORTVERSION=	2.7.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www mail
 MASTER_SITES=	http://www.informationgateway.org/download/
 
@@ -16,14 +16,13 @@ COMMENT=	Web Based Email Client and Scheduler
 
 .if !defined(WITHOUT_PHP_DEPENDS)
 .if !defined(WITH_PHP3)
-USE_PHP=	yes
+USE_PHP=	ctype imap openssl pgsql pcre posix session tokenizer xml zlib
 .else
 RUN_DEPENDS+=	${LOCALBASE}/libexec/apache/libphp3.so:${PORTSDIR}/${PHP3_PORT}
 .endif
 .endif
 
 NO_BUILD=	YES
-PHP_PORT?=	${PORTSDIR}/www/mod_php4-twig
 PHP3_PORT?=	www/mod_php3
 TWIG?=		www/data-dist/twig
 PLIST_SUB+=	TWIG=${TWIG}

@@ -7,20 +7,20 @@
 
 PORTNAME=	dtc
 PORTVERSION=	0.12.0.6
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.gplhost.com/pub/dtc/bsd/
 
 MAINTAINER=	thomas@goirand.fr
 COMMENT=	A hosting web GUI for admin and accounting apache/named/proftpd/qmail
 
-RUN_DEPENDS=	php:${PHP_PORT} \
-		${LOCALBASE}/share/pear/Crypt/CBC.php:${PORTSDIR}/security/pear-Crypt_CBC \
+RUN_DEPENDS=	${LOCALBASE}/share/pear/Crypt/CBC.php:${PORTSDIR}/security/pear-Crypt_CBC \
 		${LOCALBASE}/libexec/proftpd:${PORTSDIR}/ftp/proftpd-mysql \
 		${LOCALBASE}/libexec/apache2/mod_log_sql.so:${PORTSDIR}/www/mod_log_sql2 \
 		${LOCALBASE}/bin/webalizer:${PORTSDIR}/www/webalizer \
 		${QMAIL_DIR}/bin/qmail-start:${PORTSDIR}/mail/qmail
 
-PHP_PORT=${PORTSDIR}/lang/php4-dtc
+USE_PHP=	session mysql sockets gd
 QMAIL_DIR?=	/var/qmail
 
 DTCROOT?=	www/dtc

@@ -7,6 +7,7 @@
 
 PORTNAME=	jffnms
 PORTVERSION=	0.7.8
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=${PORTNAME}
@@ -16,10 +17,10 @@ COMMENT=	Very advanced network monitoring and control system
 
 RUN_DEPENDS=	neato:${PORTSDIR}/graphics/graphviz \
 		rrdtool:${PORTSDIR}/net/rrdtool \
-		php:${PORTSDIR}/lang/php4-nms \
 		nmap:${PORTSDIR}/security/nmap \
 		${LOCALBASE}/sbin/tmpwatch:${PORTSDIR}/sysutils/tmpwatch
 
+USE_PHP=	gd snmp sockets
 USE_MYSQL=	yes
 USE_REINPLACE=	yes
 
