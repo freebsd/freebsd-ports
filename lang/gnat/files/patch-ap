@@ -1,0 +1,20 @@
+--- ada/a-adaint.c.orig	Tue Feb 12 17:24:15 2002
++++ ada/a-adaint.c	Tue Feb 12 17:21:56 2002
+@@ -590,6 +590,17 @@
+     strcpy (tmp_filename, pname);
+     free (pname);
+   }
++#elif defined (__FreeBSD__)
++  {
++    int fd;
++
++    strcpy (tmp_filename, "/tmp/gnat-XXXXXX");
++    fd = mkstemp (tmp_filename);
++    if (fd < 0)
++      strcpy (tmp_filename, "");
++    else
++      close (fd);
++  }
+ #else
+   tmpnam (tmp_filename);
+ #endif
