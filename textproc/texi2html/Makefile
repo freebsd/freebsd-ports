@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	texi2html
-PORTVERSION=	1.66
-PORTREVISION=	2
+PORTVERSION=	1.70
+PORTREVISION=	3
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.cvshome.org/files/70/10/
 
