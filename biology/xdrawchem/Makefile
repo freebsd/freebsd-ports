@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xdrawchem
-PORTVERSION=	0.99.7
+PORTVERSION=	1.7.3
 CATEGORIES=	biology
 MASTER_SITES=	http://www.prism.gatech.edu/~gte067k/xdrawchem/
 EXTRACT_SUFX=	.tgz
@@ -14,39 +14,24 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	trevor@FreeBSD.org
 COMMENT=	Chemical drawing program
 
-MAKE_ENV=	QTDIR="${X11BASE}"
-PLIST=		${WRKDIR}/pkg-plist
+CFLAGS+=	-O0
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+GNU_CONFIGURE=	yes
+QTCFGLIBS+=	${PTHREAD_LIBS}
+QTCPPFLAGS+=	${PTHREAD_CFLAGS}
 USE_GMAKE=	yes
-USE_QT_VER=	2
+USE_QT_VER=	3
+USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:S/a//}
 
-pre-build:
-	cd ${WRKSRC}; \
-		${CXX} ${CXXFLAGS} -O0 -c -DRINGHOME="\"${PREFIX}/share/xdrawchem/\"" -I${X11BASE}/include/qt2 -o molecule_tools.o molecule_tools.cpp
-
-pre-install:
-	${ECHO_CMD} bin/xdrawchem > ${PLIST}
-	${LS} ${WRKSRC}/ring | \
-		${SED} -e 's:^:share/xdrawchem/:' >> ${PLIST}
-	${ECHO_CMD} @dirrm share/xdrawchem >> ${PLIST}
-.if !defined(NOPORTDOCS)
-	cd ${WRKSRC} && ${LS} *txt | \
-		${SED} -e 's:^:share/doc/xdrawchem/:' >> ${PLIST}
-	${ECHO_CMD} @dirrm share/doc/xdrawchem >> ${PLIST}
-	${LS} ${WRKSRC}/save | \
-		${SED} -e 's:^:share/examples/xdrawchem/:' >> ${PLIST}
-	${ECHO_CMD} @dirrm share/examples/xdrawchem >> ${PLIST}
-.endif
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/xdrawchem ${PREFIX}/bin
-	${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/ring/* ${DATADIR}
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/save/* ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/*txt ${DOCSDIR}
-.endif
+post-patch:
+	@${REINPLACE_CMD} -e \
+		's|^CPPFLAGS = -I/usr/X11R6/include|CPPFLAGS = @CPPFLAGS@|g ; \
+		 s|^CXXFLAGS = -g|CXXFLAGS = @CXXFLAGS@|g' \
+			${WRKSRC}/xdrawchem/Makefile.in
+	@${REINPLACE_CMD} -e \
+		's|malloc\.h|stdlib.h|g' ${WRKSRC}/xdrawchem/application_ob.cpp
+	@${REINPLACE_CMD} -e \
+		's|lround|(long int)rint|g' ${WRKSRC}/xdrawchem/*.cpp
 
 .include <bsd.port.mk>
