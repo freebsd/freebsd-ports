@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	gtk-sharp
-PORTVERSION=	0.93
+PORTVERSION=	1.0
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	gtk-sharp
+MASTER_SITES=	http://mono2.ximian.com/archive/${PORTVERSION}/
 
 MAINTAINER=	coop9211@uidaho.edu
 COMMENT=	GTK+ and GNOME interfaces for the .NET runtime
@@ -25,13 +24,7 @@ USE_PERL5_RUN=	yes
 USE_GNOME=	gnomehack libgnomedb gtkhtml3 vte librsvg2
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|^#!/usr/bin/perl|#!${PERL}|' \
-		${WRKSRC}/parser/gapi.pl \
-		${WRKSRC}/parser/gapi2xml.pl \
-		${WRKSRC}/parser/gapi_pp.pl
-
-pre-configure:
-	@${FIND} ${WRKSRC} -name '*.config.in' | ${XARGS} ${REINPLACE_CMD} -e \
-		's|@LIB_PREFIX@.*@LIB_SUFFIX@|.so|g'
+	@${FIND} ${WRKSRC} -name '*.pl' | ${XARGS} ${REINPLACE_CMD} -e \
+		's|^#!/usr/bin/perl|#!${PERL}|'
 
 .include <bsd.port.mk>
