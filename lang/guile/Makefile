@@ -24,14 +24,15 @@ INSTALLS_SHLIB=	yes
 USE_GNOME=	gnometarget
 CONFIGURE_ARGS=	--with-threads
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib" \
-		MAKEINFO="makeinfo --no-split"
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 GUILE_VER=	1.6
 PLIST_SUB=	GUILE_VER=${GUILE_VER}
 
 REINPLACE_FILES=	libguile/gc.c libguile/mallocs.c \
 			libguile/ports.c libguile/smob.c
+
+INFO=		goops guile-tut guile r5rs
 
 post-extract:
 	cd ${WRKSRC}; ${CHMOD} u+w ${REINPLACE_FILES}

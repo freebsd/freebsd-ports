@@ -7,9 +7,6 @@ include/rep.h
 include/rep_lisp.h
 include/rep_regexp.h
 include/rep_subrs.h
-@unexec install-info --delete %D/info/librep.info %D/info/dir
-info/librep.info
-@exec install-info %D/info/librep.info %D/info/dir
 lib/librep.la
 lib/librep.so
 lib/librep.so.12

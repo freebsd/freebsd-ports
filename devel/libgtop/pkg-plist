@@ -47,9 +47,6 @@ include/libgtop-1.0/glibtop/xmalloc.h
 include/libgtop-1.0/glibtop_machine.h
 include/libgtop-1.0/glibtop_server.h
 include/libgtop-1.0/glibtop_suid.h
-@unexec install-info --delete %D/info/libgtop.info %D/info/dir
-info/libgtop.info
-@exec install-info --section="Programming \& development tools" --entry="* libgtop: (libgtop).	libgtop programming manual" %D/info/libgtop.info %D/info/dir
 lib/libgtop.a
 lib/libgtop.so
 lib/libgtop.so.1

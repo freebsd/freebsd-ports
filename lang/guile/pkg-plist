@@ -99,18 +99,6 @@ include/libguile/vectors.h
 include/libguile/version.h
 include/libguile/vports.h
 include/libguile/weaks.h
-@unexec install-info --delete %D/info/goops.info %D/info/dir
-info/goops.info
-@exec install-info %D/info/goops.info %D/info/dir
-@unexec install-info --delete %D/info/guile-tut.info %D/info/dir
-info/guile-tut.info
-@exec install-info %D/info/guile-tut.info %D/info/dir
-@unexec install-info --delete %D/info/guile.info %D/info/dir
-info/guile.info
-@exec install-info %D/info/guile.info %D/info/dir
-@unexec install-info --delete %D/info/r5rs.info %D/info/dir
-info/r5rs.info
-@exec install-info %D/info/r5rs.info %D/info/dir
 lib/libguile-ltdl.a
 lib/libguile-ltdl.la
 lib/libguile-ltdl.so
