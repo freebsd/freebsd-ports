@@ -1,3 +1,6 @@
 bin/gspoof
-%%PORTDOCS%%share/doc/gspoof/README
-%%PORTDOCS%%@dirrm share/doc/gspoof
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%DATADIR%%/pixmap/icon.png
+@dirrm %%DATADIR%%/pixmap
+@dirrm %%DATADIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
