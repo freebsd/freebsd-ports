@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	nano
-PORTVERSION=	1.0.9
-PORTREVISION=	1
+PORTVERSION=	1.2.0
 CATEGORIES=	editors
-MASTER_SITES=	${MASTER_SITE_GNU} \
-		http://www.nano-editor.org/dist/v1.0/
+MASTER_SITES=	http://www.nano-editor.org/dist/v1.2/ \
+		${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	naddy@FreeBSD.org
+COMMENT=	Nano's ANOther editor, an enhanced free Pico Clone
 
 LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 
@@ -22,5 +22,6 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 MAN1=		nano.1
+MAN5=		nanorc.5
 
 .include <bsd.port.mk>
