@@ -1,0 +1,25 @@
+--- Lib/myconf	Sat Aug 19 03:08:08 2000
++++ Lib/myconf.new	Mon Jun 23 01:32:48 2003
+@@ -31,17 +31,17 @@
+ gcc myctest.c -o myctest
+ rm myctest.c
+ 
+-if [ `myctest |cut -d' ' -f 1` != 4 ]
++if [ `./myctest |cut -d' ' -f 1` != 4 ]
+     then echo "Error : sizeof(long)!=4"
+ fi
+-if [ `myctest |cut -d' ' -f 2` != 2 ]
++if [ `./myctest |cut -d' ' -f 2` != 2 ]
+     then echo "Error : sizeof(short)!=2"
+ fi
+-if [ `myctest |cut -d' ' -f 3` != 4 ]
++if [ `./myctest |cut -d' ' -f 3` != 4 ]
+     then echo "Error  :sizeof(int)!=4"
+ fi
+ 
+-if [ `myctest |cut -d' ' -f 4` = LITTLE ]
++if [ `./myctest |cut -d' ' -f 4` = LITTLE ]
+     then 
+     echo "#ifndef LITT_ENDIAN" >defendian.h
+     echo "#define LITT_ENDIAN 1" >>defendian.h 
+
