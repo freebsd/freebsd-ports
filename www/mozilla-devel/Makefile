@@ -23,7 +23,7 @@ BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip \
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
 		mng.1:${PORTSDIR}/graphics/libmng \
-		freetype.9:${PORTSDIR}/print/freetype2
+		Xft2.2:${PORTSDIR}/x11-fonts/Xft
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
@@ -111,6 +111,9 @@ BROKEN="You must upgrade your freetype port to 1.3.1_2 or higher before installi
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \
 		${WRKSRC}/build/unix/run-mozilla.sh
+	@${REINPLACE_CMD} -e 's|X11/Xft/Xft\.h|X11/Xft/Xft2.h|g' \
+		${WRKSRC}/gfx/src/gtk/nsDrawingSurfaceGTK.cpp \
+		${WRKSRC}/gfx/src/gtk/nsFontMetricsXft.h
 
 post-build:
 	${SED} -e "s;@PREFIX@;${PREFIX};g" \
