@@ -14,9 +14,6 @@ DISTNAME=	${PORTNAME}-${ZEBRAVER}-${PORTVERSION}
 MAINTAINER=	sumikawa@FreeBSD.org
 COMMENT=		Patched Zebra
 
-BUILD_DEPENDS=	automake:${PORTSDIR}/devel/automake \
-		autoheader:${PORTSDIR}/devel/autoconf253
-
 USE_SUBMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--sysconfdir=${PREFIX}/etc/zebra --enable-vtysh
@@ -28,9 +25,8 @@ ZEBRAVER=	0.94
 MAN1=		vtysh.1
 MAN8=		bgpd.8 ospf6d.8 ospfd.8 ripd.8 ripngd.8 zebra.8
 
-pre-configure:
-	@( cd ${WRKSRC}; ${SH} update-autotools )
 .if !defined(BATCH)
+pre-configure:
 	@${RM} -f ${WRKDIRPREFIX}${.CURDIR}/Makefile.inc
 
 post-clean:
