@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	xmms-scrobbler
-PORTVERSION=	0.3.7
+PORTVERSION=	0.3.8
 CATEGORIES=	audio
 MASTER_SITES=	http://static.audioscrobbler.com/plugins/ \
 		http://www.pipian.com/stuffforchat/
@@ -25,6 +25,10 @@ USE_GMAKE=	yes
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 
 PLIST_FILES=	lib/xmms/General/libxmms_scrobbler.so
+
+.if defined(WITH_DEBUG)
+CONFIGURE_ARGS+=	--enable-debug
+.endif
 
 .if defined(WITH_APE)
 CONFIGURE_ARGS+=	--enable-prefer-ape
