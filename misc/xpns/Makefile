@@ -9,7 +9,7 @@
 DISTNAME=	pns_source
 PKGNAME=	xpns-1.0
 CATEGORIES=	misc cad
-MASTER_SITES=	ftp://ftp.informatik.uni-stuttgart.de/pub/petri-nets/
+MASTER_SITES=	http://www.ee.uwa.edu.au/~braunl/pns/ftp/
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	giffunip@asme.org
