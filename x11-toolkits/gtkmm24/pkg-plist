@@ -811,7 +811,6 @@ share/doc/gtkmm-2.0/reference/html/classGlib_1_1Value__Pointer-members.html
 share/doc/gtkmm-2.0/reference/html/classGlib_1_1Value__Pointer.html
 share/doc/gtkmm-2.0/reference/html/classGlib_1_1Value__Pointer__inherit__graph.gif
 share/doc/gtkmm-2.0/reference/html/classGlib_1_1Value__inherit__graph.gif
-share/doc/gtkmm-2.0/reference/html/classGlib_1_1unconst.html
 share/doc/gtkmm-2.0/reference/html/classGlib_1_1ustring-members.html
 share/doc/gtkmm-2.0/reference/html/classGlib_1_1ustring.html
 share/doc/gtkmm-2.0/reference/html/classGlib_1_1ustring__Iterator-members.html
@@ -1352,7 +1351,6 @@ share/doc/gtkmm-2.0/reference/html/classSigC_1_1ConnectionNode.html
 share/doc/gtkmm-2.0/reference/html/classSigC_1_1ConnectionNode__inherit__graph.gif
 share/doc/gtkmm-2.0/reference/html/classSigC_1_1Object.html
 share/doc/gtkmm-2.0/reference/html/classSigC_1_1Object__inherit__graph.gif
-share/doc/gtkmm-2.0/reference/html/classSigC_1_1manage.html
 share/doc/gtkmm-2.0/reference/html/class_8h.html
 share/doc/gtkmm-2.0/reference/html/class__GtkBoxChild.html
 share/doc/gtkmm-2.0/reference/html/class__GtkBoxChild__inherit__graph.gif
@@ -1473,8 +1471,6 @@ share/doc/gtkmm-2.0/reference/html/inherit__graph__109.gif
 share/doc/gtkmm-2.0/reference/html/inherit__graph__11.gif
 share/doc/gtkmm-2.0/reference/html/inherit__graph__110.gif
 share/doc/gtkmm-2.0/reference/html/inherit__graph__111.gif
-share/doc/gtkmm-2.0/reference/html/inherit__graph__112.gif
-share/doc/gtkmm-2.0/reference/html/inherit__graph__113.gif
 share/doc/gtkmm-2.0/reference/html/inherit__graph__12.gif
 share/doc/gtkmm-2.0/reference/html/inherit__graph__13.gif
 share/doc/gtkmm-2.0/reference/html/inherit__graph__14.gif
