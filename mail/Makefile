@@ -286,7 +286,7 @@
     SUBDIR += pear-Mail_Mime
     SUBDIR += pear-Net_Cyrus
     SUBDIR += pear-Net_IMAP
-    SUBDIR += pear-mailparse
+    SUBDIR += pecl-mailparse
     SUBDIR += perdition
     SUBDIR += pflogstats
     SUBDIR += pflogsumm
