@@ -7,7 +7,7 @@
 
 PORTNAME=	Server
 PORTVERSION=	4.3.0
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	x11-servers
 MASTER_SITES=	${MASTER_SITE_XFREE:S/$/:x/} \
 		${MASTER_SITE_LOCAL:S/$/:local/}
@@ -25,19 +25,43 @@ EXTRACT_ONLY=	X430src-1.tgz \
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	XFree86-4 X server and related programs
 
-.for pf in patch-savage-pci-id patch-alpha_video.c patch-Pci.h \
-	patch-r128_driver.c patch-mga_driver.c patch-xkbInit.c patch-radeon_dri.c \
-	patch-mga_dri.c patch-nv_driver.c patch-nv_setup.c patch-int10-generic.c \
-	patch-radeon_cursor.c patch-radeon_reg.h patch-smi \
-	patch-libc_wrapper.c patch-xf86-common-Imakefile patch-loader-Imakefile \
-	patch-loader-elfloader.c patch-bsd-Imakefile patch-bsd-bsdResource.c \
-	patch-bus-Imakefile \
-	patch-compiler.h patch-os-support_Imakefile patch-bsd_Imakefile \
-	patch-freebsdPci.c patch-bus_Imakefile patch-xf86Sbus.h patch-loader.c \
-	patch-Sbus.c patch-elfloader.c patch-FreeBSD.cf \
-	patch-sunffb_Imakefile patch-xf86sym.c patch-xf86Events.c patch-ftfuncs.c
-EXTRA_PATCHES+=		${FILESDIR}/${pf}
-.endfor
+EXTRA_PATCHES+= \
+	${FILESDIR}/patch-FreeBSD.cf \
+	${FILESDIR}/patch-Pci.h \
+	${FILESDIR}/patch-Sbus.c \
+	${FILESDIR}/patch-alpha_video.c \
+	${FILESDIR}/patch-bsd-Imakefile \
+	${FILESDIR}/patch-bsd-bsdResource.c \
+	${FILESDIR}/patch-bsd_Imakefile \
+	${FILESDIR}/patch-bus-Imakefile \
+	${FILESDIR}/patch-bus_Imakefile \
+	${FILESDIR}/patch-compiler.h \
+	${FILESDIR}/patch-dirfile.c \
+	${FILESDIR}/patch-elfloader.c \
+	${FILESDIR}/patch-freebsdPci.c \
+	${FILESDIR}/patch-ftfuncs.c \
+	${FILESDIR}/patch-int10-generic.c \
+	${FILESDIR}/patch-libc_wrapper.c \
+	${FILESDIR}/patch-loader-Imakefile \
+	${FILESDIR}/patch-loader-elfloader.c \
+	${FILESDIR}/patch-loader.c \
+	${FILESDIR}/patch-mga_dri.c \
+	${FILESDIR}/patch-mga_driver.c \
+	${FILESDIR}/patch-nv_driver.c \
+	${FILESDIR}/patch-nv_setup.c \
+	${FILESDIR}/patch-os-support_Imakefile \
+	${FILESDIR}/patch-r128_driver.c \
+	${FILESDIR}/patch-radeon_cursor.c \
+	${FILESDIR}/patch-radeon_dri.c \
+	${FILESDIR}/patch-radeon_reg.h \
+	${FILESDIR}/patch-savage-pci-id \
+	${FILESDIR}/patch-smi \
+	${FILESDIR}/patch-sunffb_Imakefile \
+	${FILESDIR}/patch-xf86-common-Imakefile \
+	${FILESDIR}/patch-xf86Events.c \
+	${FILESDIR}/patch-xf86Sbus.h \
+	${FILESDIR}/patch-xf86sym.c \
+	${FILESDIR}/patch-xkbInit.c
 SCRIPTS_ENV=		OSVERSION=${OSVERSION} \
 			BuildXF86DRI=${BuildXF86DRI} \
 			WITH_DEBUG="${WITH_DEBUG}"
