@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ntl
-PORTVERSION=	4.2a
+PORTVERSION=	5.0c
 CATEGORIES=	math
 MASTER_SITES=	http://www.shoup.net/ntl/
 
@@ -16,7 +16,6 @@ USE_GMAKE=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 MAKEFILE=	makefile
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	'GMP=on'
 MAKE_ARGS=	"DOCDIR=${LOCALBASE}/share/doc"
 
 do-install:
