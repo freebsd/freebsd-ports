@@ -32,6 +32,39 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="f3017ce1-32a4-11d9-a9e7-0001020eed82">
+    <topic>socat -- format string vulnerability</topic>
+    <affects>
+      <package>
+	<name>socat</name>
+	<range><lt>1.4.0.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Socat Security Advisory 1 states:</p>
+	<blockquote cite="http://www.dest-unreach.org/socat/advisory/socat-adv-1.html">
+	  <p>socat up to version 1.4.0.2 contains a syslog() based
+	    format string vulnerability. This issue was originally
+	    reported by CoKi on 19 Oct.2004 <a
+	      href="http://www.nosystem.com.ar/advisories/advisory-07.txt">http://www.nosystem.com.ar/advisories/advisory-07.txt</a>.
+	    Further investigation showed that this vulnerability could
+	    under some circumstances lead to local or remote execution
+	    of arbitrary code with the privileges of the socat
+	    process.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.dest-unreach.org/socat/advisory/socat-adv-1.html</url>
+      <url>http://www.nosystem.com.ar/advisories/advisory-07.txt</url>
+    </references>
+    <dates>
+      <discovery>2004-10-18</discovery>
+      <entry>2004-11-10</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="9ff4c91e-328c-11d9-a9e7-0001020eed82">
     <topic>libxml -- remote buffer overflows</topic>
     <affects>
