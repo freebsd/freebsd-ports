@@ -4417,6 +4417,7 @@ mmc		ports/mail/mmc
 mmencode	ports/converters/mmencode
 mmix		ports/lang/mmix
 mmosaic		ports/www/mmosaic
+mmpython	ports/multimedia/mmpython
 mmr		ports/mail/mmr
 mmsclient	ports/multimedia/mmsclient
 mmtk		ports/science/mmtk
