@@ -16,7 +16,7 @@ DISTNAME=	JSearch_source-${PORTVERSION}
 
 MAINTAINER=	lioux@linf.unb.br
 
-BUILD_DEPENDS=	nonexistent:${JXPORT}:patch
+BUILD_DEPENDS=	${NONEXISTENT}:${JXPORT}:patch
 LIB_DEPENDS=	jx-1_5_3.1:${JXPORT}
 
 WRKSRC=		${WRKDIR}/JX-1.5.3
@@ -63,14 +63,15 @@ EXTRALIB_PREFIX=		${PREFIX}/lib/jx
 EXTRALIBDIRS=			lib make
 EXTRALIBFILES_MAKE_WRKSRC=	include/make
 EXTRALIBFILES_MAKE_FILES=	jsearch_constants
+
+.include <bsd.port.pre.mk>
+
 # main jx distribution port wrksrc
 JXPORT=		${PORTSDIR}/x11-toolkits/jx
-JXPORT_WRKSRC=	${JXPORT}/work/JX-1.5.3
+JXPORT_WRKSRC!=	cd ${JXPORT} && ${MAKE} -V WRKSRC
 # main jx distribution files needed for building
 COPY_JXDIRS=	include lib libjcore
 COPY_JXFILES=	Makefile
-
-.include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 300000
 ALL_TARGET=	freebsd3.x
