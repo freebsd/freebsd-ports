@@ -1,5 +1,5 @@
---- src/ieee1394io.h.orig	Sun Mar 28 20:42:50 2004
-+++ src/ieee1394io.h	Tue Apr 13 11:14:32 2004
+--- src/ieee1394io.h.orig	Sat Jul  3 02:01:32 2004
++++ src/ieee1394io.h	Thu Aug 12 21:11:41 2004
 @@ -20,10 +20,13 @@
  #ifndef _IEEE1394IO_H
  #define _IEEE1394IO_H 1
@@ -18,30 +18,35 @@
  	int	port;
  
  	/// the handle to the ieee1394 subsystem
--	static raw1394handle_t handle;
-+	//static raw1394handle_t handle;
+-	raw1394handle_t handle;
++	//raw1394handle_t handle;
  
  public:
  
-@@ -130,7 +133,7 @@
+@@ -128,11 +131,11 @@
+ 	void StopReceive( void );
+ 	bool StartThread( void );
  	void StopThread( void );
+-	int Handler( int channel, size_t length, quadlet_t *data );
++	//int Handler( int channel, size_t length, quadlet_t *data );
+ 	void *Thread();
  
  private:
--	static int Handler( raw1394handle_t handle, int channel, size_t length, quadlet_t *data );
-+	//static int Handler( raw1394handle_t handle, int channel, size_t length, quadlet_t *data );
- 	static void* Thread( void *arg );
+-	static int HandlerProxy( raw1394handle_t handle, int channel, size_t length, quadlet_t *data );
++	//static int HandlerProxy( raw1394handle_t handle, int channel, size_t length, quadlet_t *data );
+ 	static void* ThreadProxy( void *arg );
  };
  
-@@ -171,7 +174,7 @@
- 	static pthread_mutex_t avc_mutex;
+@@ -174,7 +177,7 @@
+ 	pthread_mutex_t avc_mutex;
  
  	/// the handle to the ieee1394 subsystem
--	static raw1394handle_t avc_handle;
-+	//static raw1394handle_t avc_handle;
+-	raw1394handle_t avc_handle;
++	//raw1394handle_t avc_handle;
  
  public:
  	AVC( int crd = 0 );
-@@ -195,7 +198,7 @@
+@@ -198,7 +201,7 @@
  	int getNodeId( const char *guid );
  
  private:
