@@ -1,0 +1,10 @@
+Mail::Procmailrc is a pure Perl module that can read and write
+procmail(1) compatible rc files. The intent behind its creation was
+to provide an abstracted interface for web clients wishing to edit
+procmailrc files, but it could be used in any number of useful ways
+(e.g., a procmail rc pretty printer--how useful is that!?).
+
+Mail::Procmailrc does not process mail in any form; it only reads and
+writes procmail(1) rc files.
+
+WWW: http://scott.wiersdorf.org/perl/
