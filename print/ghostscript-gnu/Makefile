@@ -3,12 +3,12 @@
 # Date created:		Tue Jun 10 21:58:54 CEST 1997
 # Whom:			Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.7 1997/08/27 06:52:42 andreas Exp $
+# $Id: Makefile,v 1.8 1997/08/27 16:00:04 andreas Exp $
 #
 
 DISTNAME=	ghostscript-5.03
 CATEGORIES=	print
-MASTER_SITES=	ftp://ftp.cs.wisc.edu/ghost/aladdin/ \
+MASTER_SITES=	ftp://ftp.cs.wisc.edu/ghost/aladdin/gs503/ \
 		ftp://bonk.ethz.ch/gs-driver-distrib/
 DISTFILES=	${GS_SOURCES} ${GS_FONTS_STD} ${GS_FONTS_OTHER} \
 		${HP850_DRV}
