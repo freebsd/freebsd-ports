@@ -274,6 +274,7 @@
     SUBDIR += userinfo
     SUBDIR += userlist
     SUBDIR += usermin
+    SUBDIR += utcount
     SUBDIR += uwatch
     SUBDIR += vcp
     SUBDIR += videogen
