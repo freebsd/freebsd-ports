@@ -1,5 +1,5 @@
---- server/dda/voxware/auvoxware.c.orig	Thu Jul 25 09:42:28 2002
-+++ server/dda/voxware/auvoxware.c	Sat Oct 26 02:54:26 2002
+--- server/dda/voxware/auvoxware.c.orig	Sat Oct 23 08:44:47 2004
++++ server/dda/voxware/auvoxware.c	Mon Nov 15 21:13:49 2004
 @@ -133,7 +133,7 @@
  
  #include <stdio.h>
@@ -9,40 +9,19 @@
  #include <getopt.h>
  #endif
  #include <sys/types.h>
-@@ -171,16 +171,11 @@
- #include <sys/param.h>
- #include <assert.h>
- 
--#ifdef __FreeBSD__
--# include <machine/soundcard.h>
--# include <machine/pcaudioio.h>
-+#ifdef __NetBSD__
-+# include <sys/ioctl.h>
-+# include <soundcard.h>
- #else
--# ifdef __NetBSD__
--#  include <sys/ioctl.h>
--#  include <soundcard.h>
--# else
--#  include <sys/soundcard.h>
--# endif
-+# include <sys/soundcard.h>
- #endif
- 
- #include <audio/audio.h>
-@@ -659,7 +654,11 @@
-     if(sndStatOut.fd == -1)
+@@ -670,7 +670,11 @@
+   if(sndStatOut.fd == -1)
      {
-        while ((sndStatOut.fd = open(sndStatOut.device, 
+       while ((sndStatOut.fd = open(sndStatOut.device, 
 +#if defined(__FreeBSD__)
-+				    sndStatOut.howToOpen|extramode, 
++                                   sndStatOut.howToOpen|extramode, 
 +#else
- 				    sndStatOut.howToOpen|O_SYNC|extramode, 
+                                    sndStatOut.howToOpen|O_SYNC|extramode, 
 +#endif
- 				    0666)) == -1 && wait)
-        {
-            osLogMsg("openDevice: waiting on output device\n");
-@@ -1310,6 +1309,11 @@
+                                    0666)) == -1 && wait)
+         {
+           osLogMsg("openDevice: waiting on output device\n");
+@@ -1330,6 +1334,11 @@
  /*
   * Setup soundcard at maximum audio quality.
   */
@@ -54,7 +33,7 @@
  static void setupSoundcard(sndStatPtr)
  SndStat* sndStatPtr;
  {
-@@ -1472,7 +1476,11 @@
+@@ -1571,7 +1580,11 @@
  		   sndStatOut.device, sndStatOut.howToOpen);
  	
  	if ((fd = open(sndStatOut.device, 
@@ -65,4 +44,4 @@
 +#endif
  	  {
  	    UNIDENTMSG;
- 	    return AuFalse;
+             osLogMsg("Output open(%s) failed: %s\n",
