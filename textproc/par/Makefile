@@ -3,23 +3,21 @@
 # Date created:         6 Aug 1997
 # Whom:                 mark@grondar.za
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1997/08/06 14:36:48 markm Exp $
 #
 
-DISTNAME=       par-1.50
-DISTFILES=	Par150.tar.gz
+DISTNAME=       Par150
+PKGNAME=        par-1.50
 CATEGORIES=	textproc
 MASTER_SITES=   http://www.cs.berkeley.edu/~amc/Par/
-WRKSRC=		${WRKDIR}/Par150
-
-ALL_TARGET=
 
 MAINTAINER=	mark@grondar.za
 
+ALL_TARGET=
 MAN1=		par.1
 
 do-configure:
-	(cd ${WRKSRC}; cp protoMakefile Makefile)
+	(cd ${WRKSRC}; ${CP} protoMakefile Makefile)
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/par ${PREFIX}/bin
