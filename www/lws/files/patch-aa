@@ -1,0 +1,11 @@
+--- ca/check_cert	Tue Dec 14 11:52:06 2004
++++ ca/check_cert	Fri Dec 17 11:01:37 2004
+@@ -76,7 +76,7 @@
+ 	fi
+ 	if [ ! -r "${1}" ]; then
+ 		echo check_cert: Generating new RSA key pair for "${1}"
+-		( HOME="${CA_DIR}" openssl genrsa -out "${1}" 1024 \
++		( RANDFILE="${CA_DIR}/.rnd" openssl genrsa -out "${1}" 1024 \
+ 		    >/dev/null 2>&1 )
+ 	fi
+ }

@@ -30,7 +30,9 @@ etc/lws/ca/ca.key
 etc/lws/ca/cert.cfg
 etc/lws/ca/certs/01.pem
 etc/lws/ca/check_cert
+etc/lws/ca/check_cert.orig
 etc/lws/ca/index
+etc/lws/ca/index.attr
 etc/lws/ca/index.old
 etc/lws/ca/serial
 etc/lws/ca/serial.old
