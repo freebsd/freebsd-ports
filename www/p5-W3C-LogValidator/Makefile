@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	W3C-LogValidator
-PORTVERSION=	0.4.1
+PORTVERSION=	0.5
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	W3C
@@ -21,12 +21,11 @@ BUILD_DEPENDS=	${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww \
 		${SITE_PERL}/Mail/Sendmail.pm:${PORTSDIR}/mail/p5-Mail-Sendmail
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-BROKEN=		Incomplete pkg-plist
-
 PERL_CONFIGURE=	yes
 
 MAN3=	W3C::LogValidator.3 \
 	W3C::LogValidator::Basic.3 \
+	W3C::LogValidator::Config.3 \
 	W3C::LogValidator::CSSValidator.3 \
 	W3C::LogValidator::HTMLValidator.3 \
 	W3C::LogValidator::SurveyEngine.3 \
@@ -38,17 +37,16 @@ MAN3=	W3C::LogValidator.3 \
 
 .if ${PERL_LEVEL} < 500800
 BUILD_DEPENDS+=	${SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp
+.endif
+
 .if ${PERL_LEVEL} < 500600
 post-patch:
-	@${PERL} -pi -e 's/^our ([^;=]+)/use vars qw($$1); $$1/;' \
-		${WRKSRC}/lib/W3C/LogValidator.pm ${WRKSRC}/lib/W3C/LogValidator/*
-.endif
+	@${FIND} ${WRKSRC} -name "*.pm" | \
+		${XARGS} ${PERL5} -pi -e 's/^our ([^;=]+)/use vars qw(\1); \1/;'
 .endif
 
 post-install:
-.if !defined(NOPORTDOCS)
 	@${MKDIR} ${EXAMPLESDIR}
 	@${INSTALL_DATA} ${WRKSRC}/samples/logprocess.conf ${EXAMPLESDIR}
-.endif
 
 .include <bsd.port.post.mk>

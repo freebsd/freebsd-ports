@@ -9,8 +9,8 @@ bin/logprocess.pl
 %%SITE_PERL%%/W3C/LogValidator/Output/Raw.pm
 %%SITE_PERL%%/W3C/LogValidator/SurveyEngine.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/W3C/LogValidator/.packlist
-%%PORTDOCS%%%%EXAMPLESDIR%%/logprocess.conf
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+%%EXAMPLESDIR%%/logprocess.conf
+@dirrm %%EXAMPLESDIR%%
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/W3C/LogValidator
 @unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/W3C 2>/dev/null || true
 @dirrm %%SITE_PERL%%/W3C/LogValidator/Output
