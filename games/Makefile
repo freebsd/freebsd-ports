@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.214 1999/06/30 16:35:33 sada Exp $
+# $Id: Makefile,v 1.215 1999/07/03 06:39:01 cpiazza Exp $
 #
 
     SUBDIR += 3dc
@@ -103,6 +103,7 @@
     SUBDIR += tinymux
     SUBDIR += tksol
     SUBDIR += tvp
+    SUBDIR += omega
     SUBDIR += uox3
     SUBDIR += wmeyes
     SUBDIR += wmtictactoe
