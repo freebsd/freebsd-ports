@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	squishdot
-PORTVERSION=	1.4.0
+PORTVERSION=	1.5.0
 CATEGORIES=	www zope
 MASTER_SITES=	http://squishdot.org/Download/Squishdot/ \
 		http://www.zope.org/Members/chrisw/Squishdot/

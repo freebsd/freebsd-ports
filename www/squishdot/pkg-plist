@@ -37,9 +37,13 @@
 %%ZOPEBASEDIR%%/lib/python/Products/Squishdot/Updaters/1-2-x_1-3-0.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/Squishdot/Updaters/1-3-0_1-4-0.py
 %%ZOPEBASEDIR%%/lib/python/Products/Squishdot/Updaters/1-3-0_1-4-0.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/Squishdot/Updaters/1-4-x_1-5-0.py
+%%ZOPEBASEDIR%%/lib/python/Products/Squishdot/Updaters/1-4-x_1-5-0.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/Squishdot/Updaters/README.TXT
 %%ZOPEBASEDIR%%/lib/python/Products/Squishdot/Updaters/__init__.py
 %%ZOPEBASEDIR%%/lib/python/Products/Squishdot/Updaters/__init__.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/Squishdot/Updaters/fix_indexes.py
+%%ZOPEBASEDIR%%/lib/python/Products/Squishdot/Updaters/fix_indexes.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/Squishdot/Updaters/fix_replies.py
 %%ZOPEBASEDIR%%/lib/python/Products/Squishdot/Updaters/fix_replies.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/Squishdot/Updaters/fix_threading.py
@@ -122,6 +126,8 @@
 %%ZOPEBASEDIR%%/lib/python/Products/Squishdot/stripogram/html2text.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/Squishdot/stripogram/license.txt
 %%ZOPEBASEDIR%%/lib/python/Products/Squishdot/stripogram/readme.txt
+%%ZOPEBASEDIR%%/lib/python/Products/Squishdot/stripogram/setup.py
+%%ZOPEBASEDIR%%/lib/python/Products/Squishdot/stripogram/setup.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/Squishdot/stripogram/testStripogram.py
 %%ZOPEBASEDIR%%/lib/python/Products/Squishdot/stripogram/testStripogram.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/Squishdot/tests/__init__.py
@@ -129,6 +135,8 @@
 %%ZOPEBASEDIR%%/lib/python/Products/Squishdot/tests/base.py
 %%ZOPEBASEDIR%%/lib/python/Products/Squishdot/tests/base.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/Squishdot/tests/test.txt
+%%ZOPEBASEDIR%%/lib/python/Products/Squishdot/tests/testCounts.py
+%%ZOPEBASEDIR%%/lib/python/Products/Squishdot/tests/testCounts.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/Squishdot/tests/testMail.py
 %%ZOPEBASEDIR%%/lib/python/Products/Squishdot/tests/testMail.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/Squishdot/tests/testMailHTMLArticle.mailre
