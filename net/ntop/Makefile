@@ -48,14 +48,22 @@ MAN8=		ntop.8
 ##    WITH_LSOF:          Add lsof as dependency.
 ##    WITH_PCAP:          Enable libpcap support.
 ##    WITH_PCAP_PORT:     Use libpcap from ports.
-##    WITH_RRD:           Enablerrdtool support.
+##    WITH_RRD:           Enable rrdtool support.
 ##    WITH_XMLDUMP:       Enable XML Dump support.
 ##
-##    WITHOUT_GDBM:       Disable gdbm support.
 ##    WITHOUT_TCPWRAPPER: Disable TCP wrapper support.
 ##
+OPTIONS=	LOCALE "Enable locale (i18n) support." Off \
+		LSOF "Add lsof as dependency." Off \
+		PCAP "Enable libpcap support." Off \
+		PCAP_PORT "Use libpcap from ports." Off \
+		RRD "Enablerrdtool support." Off \
+		XMLDUMP "Enable XML Dump support." Off \
+		TCPWRAPPER "Enable TCP wrapper support" On
 
-.if !defined(WITHOUT_TCPWRAPPER)
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_TCPWRAPPER)
 CONFIGURE_ARGS+=	--with-tcpwrap
 .endif
 
@@ -124,4 +132,4 @@ post-install:
 post-clean:
 	@${RM} -f ${WRKDIRPREFIX}${.CURDIR}/Makefile.inc
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
