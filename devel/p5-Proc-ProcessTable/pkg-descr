@@ -1,5 +1,3 @@
-DESCRIPTION
-===========
 This module is a first crack at providing a consistent interface to
 Unix (and maybe other multitasking OS's) process table information.
 The impetus for this came about with my frustration at having to parse
