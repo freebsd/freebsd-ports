@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	crossword
-PORTVERSION=	0.8.1
+PORTVERSION=	0.8.3
 CATEGORIES=	games
 MASTER_SITES=	http://www.ldc.usb.ve/~96-28234/
 
