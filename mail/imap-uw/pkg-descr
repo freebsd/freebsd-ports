@@ -12,8 +12,8 @@ pop2    stream  tcp     nowait  root    /usr/local/libexec/ipop2d   ipop2d
 pop3    stream  tcp     nowait  root    /usr/local/libexec/ipop3d   ipop3d
 imap4   stream  tcp     nowait  root    /usr/local/libexec/imapd    imapd
 
-If you compiled in PAM authentication support then you also have to add the
-following lines to your /etc/pam.conf:
+If PAM authentication support has been compiled in you may need to add the
+following lines to /etc/pam.conf:
 
 imap	auth	required	pam_unix.so			try_first_pass
 imap	account	required	pam_unix.so			try_first_pass

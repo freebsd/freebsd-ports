@@ -21,7 +21,7 @@ MAINTAINER=	imap-uw@freebsd.ady.ro
 
 Y2K=		http://www.washington.edu/imap/IMAP-FAQs/FAQ-00002.html
 
-PAMAUTH?=	no
+PAMAUTH?=	yes
 .if ${PAMAUTH} != "no"
 ALL_TARGET=	bfp
 .else
@@ -48,8 +48,7 @@ post-configure:
 	@${ECHO_MSG} ">> The c-client shared library will be named ${SHLIBNAME}"
 .if ${PAMAUTH} != "no"
 	@${ECHO_MSG} ">> Building with PAM support"
-.else
-	@${ECHO_MSG} ">> You can use PAM authentication building with \"PAMAUTH=yes\""
+	@${ECHO_MSG} ">> You can disable PAM support building with \"PAMAUTH=no\""
 .endif
 
 post-build:
