@@ -6,24 +6,17 @@
 #
 
 PORTNAME=	nickle
-PORTVERSION=	2.00
-PORTREVISION=	1
+PORTVERSION=	2.28
 CATEGORIES=	lang
 MASTER_SITES=	http://www.nickle.org/release/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A desk calculator language
 
-USE_BZIP2=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
-MAN1=	nickle.1
+MAN1=		nickle.1
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500113
-BROKEN=         "Does not compile"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
