@@ -3,7 +3,7 @@
 # Date created:				18 June 1997
 # Whom:					koshy@india.hp.com
 #
-# $Id: Makefile,v 1.6 1998/11/26 05:45:51 asami Exp $
+# $Id: Makefile,v 1.7 1998/11/28 23:10:26 asami Exp $
 #
 
 DISTNAME=	MHonArc2.3.3
@@ -18,10 +18,15 @@ MASTER_SITES=	http://www.oac.uci.edu/indiv/ehood/tar/ \
 MAINTAINER=	jkoshy@freebsd.org
 
 USE_PERL5=	Yes
-
 NO_BUILD=	Yes
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 300003
+BROKEN=		installs in /usr/local/local/lib/perl5
+.endif
 
 do-install:
 	cd ${WRKSRC} && ${PERL5} install.me -prefix ${PREFIX} -batch
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
