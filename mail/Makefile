@@ -106,6 +106,7 @@
     SUBDIR += gnumail
     SUBDIR += gotmail
     SUBDIR += grepmail
+    SUBDIR += gtray
     SUBDIR += gubby
     SUBDIR += hashcash
     SUBDIR += hbiff
