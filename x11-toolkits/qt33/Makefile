@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	qt
-PORTVERSION=	2.1.0
+PORTVERSION=	2.1.1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	ftp://ftp.trolltech.com/qt/source/
 DISTNAME=	${PORTNAME}-x11-${PORTVERSION}
@@ -36,7 +36,7 @@ RESTRICTED=	'Requires a license from UNISYS'
 .endif
 
 .if !defined(NOPORTDOCS)
-.include "files/manpages"
+.include "${.CURDIR}/files/manpages"
 .endif
 
 pre-configure:
@@ -58,7 +58,9 @@ do-install:
 	${INSTALL_SCRIPT} bin/qt20fix ${PREFIX}/bin ; \
 	${INSTALL_SCRIPT} bin/qtrename140 ${PREFIX}/bin ; \
 	${INSTALL_DATA} include/*.h ${PREFIX}/include/qt2 ; \
-	${INSTALL_DATA} lib/* ${PREFIX}/lib )
+	${INSTALL_DATA} lib/libqgl.a ${PREFIX}/lib ; \
+	${INSTALL_DATA} lib/libqxt.a ${PREFIX}/lib ; \
+	${INSTALL_DATA} lib/libqt2.so.3 ${PREFIX}/lib )
 	${LN} -sf libqt2.so.3 ${PREFIX}/lib/libqt2.so
 	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 .if !defined(NOPORTDOCS)
@@ -71,6 +73,7 @@ do-install:
 	${INSTALL_DATA} README ${PREFIX}/share/doc/qt2 ; \
 	${INSTALL_DATA} README.QT ${PREFIX}/share/doc/qt2 ; \
 	${INSTALL_DATA} changes-2.1.0 ${PREFIX}/share/doc/qt2 ; \
+	${INSTALL_DATA} changes-2.1.1 ${PREFIX}/share/doc/qt2 ; \
 	${INSTALL_DATA} doc/html/* ${PREFIX}/share/doc/qt2/html ; \
 	${INSTALL_MAN} doc/man/man3/q* ${PREFIX}/man/man3 )
 .endif
