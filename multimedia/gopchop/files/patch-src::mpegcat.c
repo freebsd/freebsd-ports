@@ -1,22 +1,22 @@
---- src/mpegcat.c.orig	Mon Apr 14 12:21:04 2003
-+++ src/mpegcat.c	Tue May  6 21:46:58 2003
-@@ -390,11 +390,19 @@
- 			break;
+--- src/mpegcat.c.orig	Sun Apr 27 12:08:37 2003
++++ src/mpegcat.c	Sun Jun  8 16:50:36 2003
+@@ -392,11 +392,19 @@
+                 break;
  
- 		case 'n':
+             case 'n':
 +#ifdef __FreeBSD__
-+			num_bytes = strtoll(optarg, NULL, 10);
++                num_bytes = strtoll(optarg, NULL, 10);
 +#else
- 			num_bytes = atoll(optarg);
+                 num_bytes = atoll(optarg);
 +#endif
- 			break;
+                 break;
  
- 		case 'b':
+             case 'b':
 +#ifdef __FreeBSD__
-+			begin_at = strtoll(optarg, NULL, 10);
++                begin_at = num_bytes = strtoll(optarg, NULL, 10);
 +#else
- 			begin_at = atoll(optarg);
+                 begin_at = atoll(optarg);
 +#endif
- 			break;
+                 break;
  
- 		case 'w':
+             case 'w':
