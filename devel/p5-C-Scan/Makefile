@@ -1,13 +1,13 @@
-# New ports collection makefixle for:	p5-C-Scan
-# Version required:			0.4
+# New ports collection makefile for:	p5-C-Scan
+# Version required:			0.5
 # Date created:				October 20th 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#   $Id: Makefile,v 1.8 1997/06/24 18:43:06 jfitz Exp $
+# $Id: Makefile,v 1.9 1997/09/14 02:54:12 jfitz Exp $
 #
 
-DISTNAME=	C-Scan-0.4
-PKGNAME=	p5-C-Scan-0.4
+DISTNAME=	C-Scan-0.5
+PKGNAME=	p5-C-Scan-0.5
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	C

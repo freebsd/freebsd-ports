@@ -79,4 +79,3 @@
 
        vdecls        Value: a reference to a list of extern
                      variable declarations.
-
