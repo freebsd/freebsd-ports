@@ -1,6 +1,4 @@
 bin/screem
-etc/gconf/gconf.xml.defaults/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/screem/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/screem/editor/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/screem/editor/print/%gconf.xml
@@ -8,8 +6,6 @@ etc/gconf/gconf.xml.defaults/apps/screem/general/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/screem/hint/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/screem/linkview/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/screem/ui/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/screem/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/screem/editor/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/screem/editor/print/%gconf.xml
@@ -212,28 +208,18 @@ share/screem/pixmaps/tr.xpm
 @dirrm share/gnome/screem
 @dirrm share/gnome/pixmaps/screem/splash
 @dirrm share/gnome/pixmaps/screem
-@dirrm share/gnome/pixmaps
 @dirrm share/gnome/omf/screem
-@dirrm share/gnome/omf
-@dirrm share/gnome/mime-info
 @dirrm share/gnome/help/screem/C/figures
 @dirrm share/gnome/help/screem/C
 @dirrm share/gnome/help/screem
-@dirrm share/gnome/help
-@dirrm share/gnome/applications
-@dirrm share/gnome/application-registry
-@dirrm share/gnome
 @dirrm lib/screem/plugins
 @dirrm lib/screem
-@dirrm etc/gconf/schemas
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/screem/ui
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/screem/hint
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/screem/general
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/screem/editor/print
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/screem/editor
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/screem
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps
-@dirrm etc/gconf/gconf.xml.defaults/schemas
 @dirrm etc/gconf/gconf.xml.defaults/apps/screem/ui
 @dirrm etc/gconf/gconf.xml.defaults/apps/screem/linkview
 @dirrm etc/gconf/gconf.xml.defaults/apps/screem/hint
@@ -241,8 +227,5 @@ share/screem/pixmaps/tr.xpm
 @dirrm etc/gconf/gconf.xml.defaults/apps/screem/editor/print
 @dirrm etc/gconf/gconf.xml.defaults/apps/screem/editor
 @dirrm etc/gconf/gconf.xml.defaults/apps/screem
-@dirrm etc/gconf/gconf.xml.defaults/apps
-@dirrm etc/gconf/gconf.xml.defaults
-@dirrm etc/gconf
 @exec scrollkeeper-install -q %D/share/gnome/omf/screem/screem-C.omf 2>/dev/null || /usr/bin/true
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/screem/screem-C.omf 2>/dev/null || /usr/bin/true
