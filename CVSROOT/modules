@@ -3647,6 +3647,7 @@ libgda		ports/databases/libgda
 libgda2		ports/databases/libgda2
 libgdgeda	ports/graphics/libgdgeda
 libgeda		ports/cad/libgeda
+libgenome	ports/biology/libgenome
 libgetline	ports/devel/libgetline
 libggi		ports/graphics/libggi
 libghthash	ports/devel/libghthash
