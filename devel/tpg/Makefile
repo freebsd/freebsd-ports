@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tpg
-PORTVERSION=	2.1.5
+PORTVERSION=	3.0.0
 CATEGORIES=	devel python
 MASTER_SITES=	http://christophe.delord.free.fr/soft/tpg/
 DISTNAME=	${PORTNAME:U}-${PORTVERSION}
@@ -14,14 +14,14 @@ DISTNAME=	${PORTNAME:U}-${PORTVERSION}
 MAINTAINER=	sergei@FreeBSD.org
 COMMENT=	Parser generator in Python
 
-USE_PYTHON=		yes
+USE_PYTHON=		2.2+
 USE_PYDISTUTILS=	yes
 
 NO_BUILD=	yes
 
 DOCS=		ChangeLog README THANKS doc/*.html doc/tpg.css \
 		doc/*.png doc/tpg.pdf
-EXAMPLES=	examples/calc/*
+EXAMPLES=	examples/*
 
 post-install:
 	@${MKDIR} ${EXAMPLESDIR}

@@ -1,20 +1,7 @@
 bin/tpg
-%%PYTHON_SITELIBDIR%%/tpg/Release.py
-%%PYTHON_SITELIBDIR%%/tpg/Release.pyc
-%%PYTHON_SITELIBDIR%%/tpg/Release.pyo
-%%PYTHON_SITELIBDIR%%/tpg/__init__.py
-%%PYTHON_SITELIBDIR%%/tpg/__init__.pyc
-%%PYTHON_SITELIBDIR%%/tpg/__init__.pyo
-%%PYTHON_SITELIBDIR%%/tpg/base.py
-%%PYTHON_SITELIBDIR%%/tpg/base.pyc
-%%PYTHON_SITELIBDIR%%/tpg/base.pyo
-%%PYTHON_SITELIBDIR%%/tpg/codegen.py
-%%PYTHON_SITELIBDIR%%/tpg/codegen.pyc
-%%PYTHON_SITELIBDIR%%/tpg/codegen.pyo
-%%PYTHON_SITELIBDIR%%/tpg/parser.py
-%%PYTHON_SITELIBDIR%%/tpg/parser.pyc
-%%PYTHON_SITELIBDIR%%/tpg/parser.pyo
-@dirrm %%PYTHON_SITELIBDIR%%/tpg
+%%PYTHON_SITELIBDIR%%/tpg.py
+%%PYTHON_SITELIBDIR%%/tpg.pyc
+%%PYTHON_SITELIBDIR%%/tpg.pyo
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/THANKS
@@ -27,9 +14,7 @@ bin/tpg
 %%PORTDOCS%%%%DOCSDIR%%/tpg11.html
 %%PORTDOCS%%%%DOCSDIR%%/tpg13.html
 %%PORTDOCS%%%%DOCSDIR%%/tpg14.html
-%%PORTDOCS%%%%DOCSDIR%%/tpg17.html
-%%PORTDOCS%%%%DOCSDIR%%/tpg20.html
-%%PORTDOCS%%%%DOCSDIR%%/tpg23.html
+%%PORTDOCS%%%%DOCSDIR%%/tpg19.html
 %%PORTDOCS%%%%DOCSDIR%%/tpg6.html
 %%PORTDOCS%%%%DOCSDIR%%/tpg7.html
 %%PORTDOCS%%%%DOCSDIR%%/tpg8.html
@@ -37,9 +22,6 @@ bin/tpg
 %%PORTDOCS%%%%DOCSDIR%%/tpgch1.html
 %%PORTDOCS%%%%DOCSDIR%%/tpgch10.html
 %%PORTDOCS%%%%DOCSDIR%%/tpgch11.html
-%%PORTDOCS%%%%DOCSDIR%%/tpgch12.html
-%%PORTDOCS%%%%DOCSDIR%%/tpgch13.html
-%%PORTDOCS%%%%DOCSDIR%%/tpgch14.html
 %%PORTDOCS%%%%DOCSDIR%%/tpgch2.html
 %%PORTDOCS%%%%DOCSDIR%%/tpgch3.html
 %%PORTDOCS%%%%DOCSDIR%%/tpgch4.html
@@ -53,10 +35,7 @@ bin/tpg
 %%PORTDOCS%%%%DOCSDIR%%/tpgpa1.html
 %%PORTDOCS%%%%DOCSDIR%%/tpgpa2.html
 %%PORTDOCS%%%%DOCSDIR%%/tpgpa3.html
-%%PORTDOCS%%%%DOCSDIR%%/tpgpa4.html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%EXAMPLESDIR%%/calc.g
-%%EXAMPLESDIR%%/calc.py
-%%EXAMPLESDIR%%/calc2.py
-%%EXAMPLESDIR%%/notation.py
+%%EXAMPLESDIR%%/calc.pyg
+%%EXAMPLESDIR%%/notation.pyg
 @dirrm %%EXAMPLESDIR%%
