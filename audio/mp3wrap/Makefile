@@ -16,9 +16,11 @@ MAINTAINER=	q@uni.de
 COMMENT=	Utility to merge mp3 files (and other formats)
 
 GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 MAN1=		mp3wrap.1
+PLIST_FILES=	bin/mp3wrap
 
 .include <bsd.port.mk>
