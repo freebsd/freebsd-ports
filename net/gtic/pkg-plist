@@ -1,0 +1,8 @@
+etc/gtic/areagroups.sample
+etc/gtic/areas.sample
+etc/gtic/config.sample
+etc/gtic/domains.sample
+etc/gtic/help.sample
+etc/gtic/users.sample
+sbin/gtic
+@dirrm etc/gtic

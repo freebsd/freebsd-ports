@@ -1,0 +1,11 @@
+--- src/toss.c.orig	Mon Jul  6 16:04:30 1998
++++ src/toss.c	Sun Sep 12 15:41:01 1999
+@@ -873,7 +873,7 @@
+       
+     if(announce_f)
+ 		{
+-      fprintf(announce_f,"AREA: %-15s FILE: %s\n",curarea->name,cur->file);
++      fprintf(announce_f,">AREA: %-15s FILE: %s\n",curarea->name,cur->file);
+ 			if(pub_path && pub_url &&
+ 				strlen(curarea->path)>=strlen(pub_path) &&
+ 				strncmp(curarea->path,pub_path,strlen(pub_path))==0) 

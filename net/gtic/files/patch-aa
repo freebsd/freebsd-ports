@@ -1,0 +1,24 @@
+--- CONFIG.orig	Mon Jul  6 16:09:40 1998
++++ CONFIG	Sun Aug 22 14:40:57 1999
+@@ -2,7 +2,7 @@
+ VERSION = "1.3b"
+ 
+ # Main configuration file.
+-CONFIG = "/etc/gtic/config"
++CONFIG = "${PREFIX}/etc/gtic/config"
+ 
+ # Path to other configuration files (also see default config file).
+ CONFIGDIR = "/etc/gtic"
+@@ -15,10 +15,10 @@
+ GROUP = gtic
+ 
+ # Name of C compiler.
+-CC = gcc
++#CC = gcc
+ 
+ # Compiler flags.
+-CFLAGS=-Wall -g
++#CFLAGS=-Wall -g
+ 
+ # Defines for gtic's sources use.
+ DEFINES = ${OPTS} -DCONFIG=\"${CONFIG}\" -DVERSION=\"${VERSION}\"
