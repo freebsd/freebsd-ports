@@ -17,11 +17,9 @@
  
  The meaning of "key id" is to be taken broadly in this context:  You
  can either put a numerical key ID here, an e-mail address, or even
---- doc/muttrc.man.head	Sun Dec 22 20:50:22 2002
-+++ doc/muttrc.man.head	Thu Mar 20 21:38:47 2003
-@@ -286,7 +286,10 @@
- specify the ID of the public key to be used when encrypting messages
- to a certain recipient.  The meaning of "key ID" is to be taken
+--- doc/muttrc.man.head.orig	Sun Dec 22 20:50:22 2002
++++ doc/muttrc.man.head	Sat Mar 22 23:43:27 2003
+@@ -288,3 +288,6 @@
  broadly: This can be a different e-mail address, a numerical key ID,
 -or even just an arbitrary search string.
 +or even just an arbitrary search string.  You may use multiple
@@ -29,8 +27,6 @@
 +\fBpgp-hook\fPs result in the use of multiple \fIkey-id\fPs for
 +recipient.
  .TP
- \fBpush\fP \fIstring\fP
- This command adds the named \fIstring\fP to the keyboard buffer.
 --- hook.c	Tue Jan 21 13:25:21 2003
 +++ hook.c	Thu Mar 20 21:38:47 2003
 @@ -117,7 +117,11 @@
