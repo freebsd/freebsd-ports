@@ -1,0 +1,9 @@
+--- etc/sbfile/ilusbls.c.orig   Sat Oct 11 08:56:44 1997
++++ etc/sbfile/ilusbls.c        Sat Oct 11 08:57:33 1997
+@@ -1,5 +1,6 @@
+ #include <stdio.h>
+ #include <string.h>
++#include <sys/types.h>
+
+ #if defined(WIN32)
+ #include <windows.h>
