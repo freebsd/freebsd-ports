@@ -1,13 +1,12 @@
-bin/rox
 apps/ROX-Filer/AppIcon.xpm
 apps/ROX-Filer/AppRun
 apps/ROX-Filer/FreeBSD-ix86/ROX-Filer
 apps/ROX-Filer/Help/COPYING
 apps/ROX-Filer/Help/Changes
+apps/ROX-Filer/Help/Manual-fr.ps
 apps/ROX-Filer/Help/Manual.ps
 apps/ROX-Filer/Help/README
 apps/ROX-Filer/Help/TODO
-apps/ROX-Filer/Styles
 apps/ROX-Filer/Messages/README
 apps/ROX-Filer/Messages/de.gmo
 apps/ROX-Filer/Messages/fr.gmo
@@ -17,7 +16,8 @@ apps/ROX-Filer/Messages/nl.gmo
 apps/ROX-Filer/Messages/pl.gmo
 apps/ROX-Filer/Messages/ru.gmo
 apps/ROX-Filer/Options.xml
-apps/ROX-Filer/pixmaps/zoom.xpm
+apps/ROX-Filer/Styles
+apps/ROX-Filer/pixmaps/application.xpm
 apps/ROX-Filer/pixmaps/close.xpm
 apps/ROX-Filer/pixmaps/details.xpm
 apps/ROX-Filer/pixmaps/error.xpm
@@ -30,10 +30,11 @@ apps/ROX-Filer/pixmaps/refresh.xpm
 apps/ROX-Filer/pixmaps/symlink.xpm
 apps/ROX-Filer/pixmaps/unknown.xpm
 apps/ROX-Filer/pixmaps/up.xpm
-apps/ROX-Filer/pixmaps/application.xpm
-@dirrm apps/ROX-Filer/FreeBSD-ix86
+apps/ROX-Filer/pixmaps/zoom.xpm
+bin/rox
+@dirrm apps/ROX-Filer/pixmaps
 @dirrm apps/ROX-Filer/Messages
 @dirrm apps/ROX-Filer/Help
-@dirrm apps/ROX-Filer/pixmaps
+@dirrm apps/ROX-Filer/FreeBSD-ix86
 @dirrm apps/ROX-Filer
 @unexec rmdir %D/apps 2>/dev/null || true
