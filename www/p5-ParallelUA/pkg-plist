@@ -3,6 +3,7 @@ lib/perl5/site_perl/%%PERL_VER%%/LWP/Parallel.pm
 lib/perl5/site_perl/%%PERL_VER%%/LWP/Parallel/Protocol.pm
 lib/perl5/site_perl/%%PERL_VER%%/LWP/Parallel/Protocol/ftp.pm
 lib/perl5/site_perl/%%PERL_VER%%/LWP/Parallel/Protocol/http.pm
+lib/perl5/site_perl/%%PERL_VER%%/LWP/Parallel/Protocol/https.pm
 lib/perl5/site_perl/%%PERL_VER%%/LWP/Parallel/RobotUA.pm
 lib/perl5/site_perl/%%PERL_VER%%/LWP/Parallel/UserAgent.pm
 lib/perl5/site_perl/%%PERL_VER%%/LWP/ParallelUA.pm

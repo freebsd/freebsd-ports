@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	DBI
-PORTVERSION=	1.13
+PORTVERSION=	1.14
 CATEGORIES=	databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	DBI
@@ -22,6 +22,7 @@ MAN1=		dbiproxy.1 \
 		dbish.1
 MAN3=		Bundle::DBI.3 \
 		DBD::ADO.3 \
+		DBD::Multiplex.3 \
 		DBD::Proxy.3 \
 		DBI.3 \
 		DBI::DBD.3 \
