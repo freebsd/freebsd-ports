@@ -1,0 +1,61 @@
+--- configure~	Mon Nov 18 10:20:48 1996
++++ configure	Mon Nov 18 10:21:54 1996
+@@ -2324,7 +2324,7 @@
+ EOF
+ cat >> $CONFIG_STATUS <<EOF
+ 
+-CONFIG_FILES=\${CONFIG_FILES-"Makefile app/Makefile plug-ins/Makefile"}
++CONFIG_FILES=\${CONFIG_FILES-"Makefile app/Makefile plug-ins/Makefile gimprc"}
+ EOF
+ cat >> $CONFIG_STATUS <<\EOF
+ for ac_file in .. $CONFIG_FILES; do if test "x$ac_file" != x..; then
+--- configure.in~	Mon Nov 18 10:37:13 1996
++++ configure.in	Mon Nov 18 10:37:25 1996
+@@ -221,4 +221,4 @@
+ AC_SUBST(_SHLIBS_)
+ 
+ dnl Output the Makefiles
+-AC_OUTPUT(Makefile app/Makefile plug-ins/Makefile)
++AC_OUTPUT(Makefile app/Makefile plug-ins/Makefile gimprc)
+--- Makefile.in~	Mon Nov 18 11:11:16 1996
++++ Makefile.in	Mon Nov 18 11:12:22 1996
+@@ -16,7 +16,7 @@
+ # set the MAKE variable if necessary
+ @SET_MAKE@
+ 
+-INSTALL	=	./install-sh -c
++INSTALL	=	/usr/bin/install -c
+ 
+ all:
+ 	( cd gtk ; $(MAKE) )
+@@ -24,22 +24,22 @@
+ 	( cd app ; $(MAKE) )
+ 
+ install:
+-	$(INSTALL) -d $(libdir)/gimp
+-	$(INSTALL) -d $(libdir)/gimp/brushes
+-	$(INSTALL) -m 644 gimprc $(libdir)/gimp
++	$(INSTALL) -d $(datadir)/gimp
++	$(INSTALL) -d $(datadir)/gimp/brushes
++	$(INSTALL) -m 644 gimprc $(datadir)/gimp
+ 	for brush in brushes/*; do \
+           echo $$brush; \
+-	  $(INSTALL) -m 644 "$$brush" $(libdir)/gimp/brushes; \
++	  $(INSTALL) -m 644 "$$brush" $(datadir)/gimp/brushes; \
+ 	done
+-	$(INSTALL) -d $(libdir)/gimp/palettes
++	$(INSTALL) -d $(datadir)/gimp/palettes
+ 	for palette in palettes/*; do \
+           echo $$palette; \
+-	  $(INSTALL) -m 644 "$$palette" $(libdir)/gimp/palettes; \
++	  $(INSTALL) -m 644 "$$palette" $(datadir)/gimp/palettes; \
+ 	done
+-	$(INSTALL) -d $(libdir)/gimp/patterns
++	$(INSTALL) -d $(datadir)/gimp/patterns
+ 	for pattern in patterns/*; do \
+           echo $$pattern; \
+-	  $(INSTALL) -m 644 "$$pattern" $(libdir)/gimp/patterns; \
++	  $(INSTALL) -m 644 "$$pattern" $(datadir)/gimp/patterns; \
+ 	done
+ 	( cd plug-ins ; $(MAKE) install )
+ 	( cd app ; $(MAKE) install )

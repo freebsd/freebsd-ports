@@ -1,0 +1,49 @@
+--- app/fileops.c~	Mon Nov 18 09:57:19 1996
++++ app/fileops.c	Mon Nov 18 09:58:01 1996
+@@ -289,7 +289,7 @@
+       gtk_file_selection_set_ok_callback (filesel, file_open_ok_callback, open_options);
+       gtk_file_selection_set_cancel_callback (filesel, file_cancel_callback, open_options);
+ 
+-      if (gdisp && gdisp->gimage->has_filename)
++      if (gdisp && gdisp->gimage && gdisp->gimage->has_filename)
+ 	gtk_file_selection_set_filename (filesel, gimage_filename (gdisp->gimage));
+ 
+       gtk_widget_show (filesel);
+@@ -297,7 +297,7 @@
+ 
+   if (! GTK_WIDGET_VISIBLE (filesel))
+     {
+-      if (gdisp && gdisp->gimage->has_filename)
++      if (gdisp && gdisp->gimage && gdisp->gimage->has_filename)
+ 	gtk_file_selection_set_filename (filesel, gimage_filename (gdisp->gimage));
+       gtk_widget_show (filesel);
+     }
+@@ -353,7 +353,7 @@
+       gtk_file_selection_set_ok_callback (filesel, file_save_ok_callback, save_options);
+       gtk_file_selection_set_cancel_callback (filesel, file_cancel_callback, save_options);
+ 
+-      if (gdisplay && gdisplay->gimage->has_filename)
++      if (gdisplay && gdisplay->gimage && gdisplay->gimage->has_filename)
+ 	gtk_file_selection_set_filename (filesel, gimage_filename (gdisplay->gimage));
+ 
+       gtk_widget_show (filesel);
+@@ -363,7 +363,7 @@
+ 
+   if (! GTK_WIDGET_VISIBLE (filesel))
+     {
+-      if (gdisplay && gdisplay->gimage->has_filename)
++      if (gdisplay && gdisplay->gimage && gdisplay->gimage->has_filename)
+ 	gtk_file_selection_set_filename (filesel, gimage_filename (gdisplay->gimage));
+ 
+       gtk_widget_show (filesel);
+--- app/progress.c~	Mon Nov 18 11:03:58 1996
++++ app/progress.c	Mon Nov 18 11:04:07 1996
+@@ -57,7 +57,7 @@
+   progress->callback_data = callback_data;
+   progress->pixmap = NULL;
+ 
+-  progress->shell = gtk_window_new (title, GTK_WINDOW_TOPLEVEL);
++  progress->shell = gtk_window_new (title, GTK_WINDOW_DIALOG);
+   gtk_widget_set_uposition (progress->shell, progress_x, progress_y);
+   main_vbox = gtk_vbox_new (FALSE, 5);
+   gtk_container_add (progress->shell, main_vbox);
