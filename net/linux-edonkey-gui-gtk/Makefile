@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	edonkey
-PORTVERSION=	0.2.0.a
+PORTVERSION=	0.2.0.a.${SNAPSHOT_DATE:S/-/./g}
 CATEGORIES=	net linux
 MASTER_SITES=	http://users.aber.ac.uk/tpm01/
 PKGNAMEPREFIX=	linux-
 PKGNAMESUFFIX=	-gui-gtk
-DISTNAME=	linux_gui_alpha_unstable
-EXTRACT_SUFX=
+DISTNAME=	ed2k_linux_gui_0.2-${SNAPSHOT_DATE}
 
 MAINTAINER=	lioux@FreeBSD.org
 
@@ -34,15 +33,12 @@ BRANDELF?=	/usr/bin/brandelf
 BRANDELF?=	brandelf
 .endif
 
-BINARY_NAME=	linux-edonkey-gui-gtk
-
-do-extract:
-	@${RM} -rf ${WRKDIR}
-	@${MKDIR} ${WRKDIR}
-	@${CP} ${DISTDIR}/${DISTNAME} ${WRKSRC}/${BINARY_NAME}
+BINARY_NAME=	linux_gui_unstable
+BINARY_NAME_INSTALL=	linux-edonkey-gui-gtk
+SNAPSHOT_DATE=	2002-02-22
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/${BINARY_NAME} ${PREFIX}/bin
+	@${INSTALL_PROGRAM} ${WRKSRC}/${BINARY_NAME} ${PREFIX}/bin/${BINARY_NAME_INSTALL}
 
 .include <bsd.port.pre.mk>
 
