@@ -14,14 +14,23 @@ DISTNAME=	make-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
+.if !defined(WITHOUT_NLS)
+LIB_DEPENDS=	intl.2:${PORTSDIR}/devel/gettext
+.endif
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--program-prefix=g \
-		--with-included-gettext
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -DHAVE_LOCALE_H -DHAVE_LC_MESSAGES" \
-		LDFLAGS="-L${LOCALBASE}/lib" MAKEINFO="/usr/bin/makeinfo"
+CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ARGS+=--program-prefix=g
+.if !defined(WITHOUT_NLS)
+CONFIGURE_ARGS+=--with-libiconv-prefix=${LOCALBASE} \
+		--with-libintl-prefix=${LOCALBASE}
+PLIST_SUB=	NLS=""
+.else
+CONFIGURE_ARGS+=--disable-nls
+PLIST_SUB=	NLS="@comment "
+.endif
+CONFIGURE_ENV+=	MAKEINFO="/usr/bin/makeinfo --no-split"
 
 MAN1=		gmake.1
 
