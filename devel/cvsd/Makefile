@@ -7,12 +7,11 @@
 #
 
 PORTNAME=	cvsd
-PORTVERSION=	0.9.16
+PORTVERSION=	0.9.17
 CATEGORIES=	devel
 MASTER_SITES=	http://tiefighter.et.tudelft.nl/~arthur/cvsd/
 
 MAINTAINER=	ports@FreeBSD.org
-
 
 USE_PERL5=	yes
 USE_REINPLACE=	yes
