@@ -1,0 +1,42 @@
+bin/freepopsd
+etc/freepops/config.lua.sample
+%%DOCSDIR%%/MANUAL.txt
+%%DATADIR%%/lua/aggregator.lua
+%%DATADIR%%/lua/aol.lua
+%%DATADIR%%/lua/browser.lua
+%%DATADIR%%/lua/common.lua
+%%DATADIR%%/lua/config.lua
+%%DATADIR%%/lua/cookie.lua
+%%DATADIR%%/lua/davmail.lua
+%%DATADIR%%/lua/flatnuke.lua
+%%DATADIR%%/lua/foo.lua
+%%DATADIR%%/lua/freepops.lua
+%%DATADIR%%/lua/gmail.lua
+%%DATADIR%%/lua/hotmail.lua
+%%DATADIR%%/lua/httpmail.lua
+%%DATADIR%%/lua/kernel.lua
+%%DATADIR%%/lua/libero.lua
+%%DATADIR%%/lua/lycos.lua
+%%DATADIR%%/lua/mailcom.lua
+%%DATADIR%%/lua/mimer.lua
+%%DATADIR%%/lua/plugins2xml.lua
+%%DATADIR%%/lua/popforward.lua
+%%DATADIR%%/lua/serialize.lua
+%%DATADIR%%/lua/skeleton.lua
+%%DATADIR%%/lua/squirrelmail.lua
+%%DATADIR%%/lua/supereva.lua
+%%DATADIR%%/lua/support.lua
+%%DATADIR%%/lua/table2xml.lua
+%%DATADIR%%/lua/tin.lua
+%%DATADIR%%/lua/tre.lua
+%%DATADIR%%/lua/xml2table.lua
+%%DATADIR%%/lua/yahoo.lua
+@dirrm %%DATADIR%%/lua_unofficial
+@dirrm %%DATADIR%%/lua
+@dirrm %%DATADIR%%
+@dirrm %%DOCSDIR%%
+@unexec rmdir %D/etc/freepops 2>/dev/null || true
+@exec mkdir -p %D/share/freepops/lua
+@exec mkdir -p %D/share/freepops/lua_unofficial
+@exec mkdir -p %D/share/doc/freepops
+@exec mkdir -p %D/etc/freepops

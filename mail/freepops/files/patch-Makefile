@@ -1,0 +1,35 @@
+--- ../freepops-0.0.23/Makefile	Thu Dec 23 18:36:38 2004
++++ ./Makefile	Mon Feb 14 16:36:23 2005
+@@ -55,20 +55,20 @@
+ 	
+ install: all
+ 	$(H)mkdir -p $(PREFIX)
+-	$(H)mkdir -p $(PREFIX)bin
+-	$(H)mkdir -p $(PREFIX)share/freepops/lua/
+-	$(H)mkdir -p $(PREFIX)share/freepops/lua_unofficial/
+-	$(H)mkdir -p $(PREFIX)share/doc/freepops/
+-	$(H)mkdir -p $(PREFIX)share/man/man1/
+-	$(H)mkdir -p $(DESTDIR)/etc/freepops
+-	$(H)cp src/freepopsd$(EXECSUFFIX) $(PREFIX)bin
++	$(H)mkdir -p $(PREFIX)/bin
++	$(H)mkdir -p $(PREFIX)/share/freepops/lua/
++	$(H)mkdir -p $(PREFIX)/share/freepops/lua_unofficial/
++	$(H)mkdir -p $(PREFIX)/share/doc/freepops/
++	$(H)mkdir -p $(PREFIX)/man/man1/
++	$(H)mkdir -p $(PREFIX)/etc/freepops
++	$(H)cp src/freepopsd$(EXECSUFFIX) $(PREFIX)/bin
+ 	$(H)cp src/lua/*.lua modules/include/*.lua config.lua \
+-		$(PREFIX)share/freepops/lua/
+-	$(H)cp doc/freepopsd.1  $(PREFIX)share/man/man1/
+-	$(H)cp doc/manual*.pdf  $(PREFIX)share/doc/freepops/ 2>/dev/null ||\
+-		cp doc/MANUAL.txt  $(PREFIX)share/doc/freepops/ 2>/dev/null || \
++		$(PREFIX)/share/freepops/lua/
++	$(H)cp doc/freepopsd.1  $(PREFIX)/man/man1/
++	$(H)cp doc/manual*.pdf  $(PREFIX)/share/doc/freepops/ 2>/dev/null ||\
++		cp doc/MANUAL.txt  $(PREFIX)/share/doc/freepops/ 2>/dev/null || \
+ 		true
+-	$(H)cp config.lua $(DESTDIR)/etc/freepops/
++	$(H)cp config.lua $(PREFIX)/etc/freepops/config.lua.sample
+ 
+ uninstall:
+ 	$(H)rm -f $(DESTDIR)/etc/freepops/config.lua

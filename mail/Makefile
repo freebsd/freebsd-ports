@@ -95,6 +95,7 @@
     SUBDIR += filtermail
     SUBDIR += firemime
     SUBDIR += firepay
+    SUBDIR += freepops
     SUBDIR += ftrack
     SUBDIR += gbuffy
     SUBDIR += gdesklets-enhallmail
