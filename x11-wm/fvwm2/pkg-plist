@@ -1,4 +1,5 @@
 bin/fvwm2
+bin/FvwmCommand
 bin/xpmroot
 lib/X11/fvwm2/pixmaps/Jlock.xpm
 lib/X11/fvwm2/pixmaps/Jnews.xpm
@@ -138,29 +139,40 @@ lib/X11/fvwm2/pixmaps/ccode.icon
 lib/X11/fvwm2/pixmaps/hcode.icon
 lib/X11/fvwm2/pixmaps/ocode.icon
 lib/X11/fvwm2/pixmaps/prog.icon
-libexec/fvwm/2.2.2/FvwmAnimate
-libexec/fvwm/2.2.2/FvwmAudio
-libexec/fvwm/2.2.2/FvwmAuto
-libexec/fvwm/2.2.2/FvwmBacker
-libexec/fvwm/2.2.2/FvwmBanner
-libexec/fvwm/2.2.2/FvwmButtons
-libexec/fvwm/2.2.2/FvwmCpp
-libexec/fvwm/2.2.2/FvwmEvent
-libexec/fvwm/2.2.2/FvwmForm
-libexec/fvwm/2.2.2/FvwmIconBox
-libexec/fvwm/2.2.2/FvwmIconMan
-libexec/fvwm/2.2.2/FvwmIdent
-libexec/fvwm/2.2.2/FvwmM4
-libexec/fvwm/2.2.2/FvwmPager
-libexec/fvwm/2.2.2/FvwmRearrange
-libexec/fvwm/2.2.2/FvwmCascade
-libexec/fvwm/2.2.2/FvwmTile
-libexec/fvwm/2.2.2/FvwmSave
-libexec/fvwm/2.2.2/FvwmSaveDesk
-libexec/fvwm/2.2.2/FvwmScroll
-libexec/fvwm/2.2.2/FvwmTalk
-libexec/fvwm/2.2.2/FvwmWinList
+libexec/fvwm/2.2.4/FvwmAnimate
+libexec/fvwm/2.2.4/FvwmAudio
+libexec/fvwm/2.2.4/FvwmAuto
+libexec/fvwm/2.2.4/FvwmBacker
+libexec/fvwm/2.2.4/FvwmBanner
+libexec/fvwm/2.2.4/FvwmButtons
+libexec/fvwm/2.2.4/FvwmCpp
+libexec/fvwm/2.2.4/FvwmEvent
+libexec/fvwm/2.2.4/FvwmForm
+libexec/fvwm/2.2.4/FvwmIconBox
+libexec/fvwm/2.2.4/FvwmIconMan
+libexec/fvwm/2.2.4/FvwmIdent
+libexec/fvwm/2.2.4/FvwmM4
+libexec/fvwm/2.2.4/FvwmPager
+libexec/fvwm/2.2.4/FvwmRearrange
+libexec/fvwm/2.2.4/FvwmCascade
+libexec/fvwm/2.2.4/FvwmTile
+libexec/fvwm/2.2.4/FvwmSave
+libexec/fvwm/2.2.4/FvwmSaveDesk
+libexec/fvwm/2.2.4/FvwmScroll
+libexec/fvwm/2.2.4/FvwmTalk
+libexec/fvwm/2.2.4/FvwmWinList
+libexec/fvwm/2.2.4/FvwmCommandS
+libexec/fvwm/2.2.4/FvwmConfig
+libexec/fvwm/2.2.4/FvwmConsole
+libexec/fvwm/2.2.4/FvwmConsoleC
+libexec/fvwm/2.2.4/FvwmConsoleC.pl
+libexec/fvwm/2.2.4/FvwmDebug
+libexec/fvwm/2.2.4/FvwmGoodStuff
+libexec/fvwm/2.2.4/FvwmPipe
+libexec/fvwm/2.2.4/FvwmScript
+libexec/fvwm/2.2.4/FvwmTaskBar
+libexec/fvwm/2.2.4/FvwmWharf
 @dirrm lib/X11/fvwm2/pixmaps
 @dirrm lib/X11/fvwm2
-@dirrm libexec/fvwm/2.2.2
+@dirrm libexec/fvwm/2.2.4
 @dirrm libexec/fvwm
