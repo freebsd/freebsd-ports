@@ -1,0 +1,17 @@
+diff -r -u sim/ppc/ppc-spr-table /local2/gcc/ppc/gdb+dejagnu-20011007/sim/ppc/ppc-spr-table
+--- sim/ppc/ppc-spr-table	Thu Apr 15 18:35:11 1999
++++ /local2/gcc/ppc/gdb+dejagnu-20011007/sim/ppc/ppc-spr-table	Fri Oct 12 11:05:25 2001
+@@ -69,6 +69,7 @@
+ MMCR1:956:0:0
+ PMC3:957:0:0
+ PMC4:958:0:0
++SDA:959:0:0
+ DMISS:976:0:0
+ DCMP:977:0:0
+ HASH1:978:0:0
+@@ -85,4 +86,4 @@
+ THRM1:1020:0:0
+ THRM2:1021:0:0
+ THRM3:1022:0:0
+-HID15:1023:0:0
++PIR:1023:0:0
