@@ -154,6 +154,7 @@ share/gnome/help/gnumeric/C/copying-moving.html
 share/gnome/help/gnumeric/C/copying-moving.sgml
 share/gnome/help/gnumeric/C/correlation-tool.html
 share/gnome/help/gnumeric/C/covariance-tool.html
+share/gnome/help/gnumeric/C/cutandpaste.html
 share/gnome/help/gnumeric/C/data-and-time-formatting.html
 share/gnome/help/gnumeric/C/data-entry.html
 share/gnome/help/gnumeric/C/data-menu.html
@@ -516,6 +517,7 @@ share/gnome/help/gnumeric/C/gnumeric-critbinom.html
 share/gnome/help/gnumeric/C/gnumeric-cumipmt.html
 share/gnome/help/gnumeric/C/gnumeric-cumprinc.html
 share/gnome/help/gnumeric/C/gnumeric-date.html
+share/gnome/help/gnumeric/C/gnumeric-date2unix.html
 share/gnome/help/gnumeric/C/gnumeric-datedif.html
 share/gnome/help/gnumeric/C/gnumeric-datevalue.html
 share/gnome/help/gnumeric/C/gnumeric-daverage.html
@@ -579,6 +581,7 @@ share/gnome/help/gnumeric/C/gnumeric-gammaln.html
 share/gnome/help/gnumeric/C/gnumeric-gcd.html
 share/gnome/help/gnumeric/C/gnumeric-geomean.html
 share/gnome/help/gnumeric/C/gnumeric-gestep.html
+share/gnome/help/gnumeric/C/gnumeric-getenv.html
 share/gnome/help/gnumeric/C/gnumeric-getpivotdata.html
 share/gnome/help/gnumeric/C/gnumeric-gnumericxversion.html
 share/gnome/help/gnumeric/C/gnumeric-growth.html
@@ -777,6 +780,7 @@ share/gnome/help/gnumeric/C/gnumeric-true.html
 share/gnome/help/gnumeric/C/gnumeric-trunc.html
 share/gnome/help/gnumeric/C/gnumeric-ttest.html
 share/gnome/help/gnumeric/C/gnumeric-type.html
+share/gnome/help/gnumeric/C/gnumeric-unix2date.html
 share/gnome/help/gnumeric/C/gnumeric-upper.html
 share/gnome/help/gnumeric/C/gnumeric-value.html
 share/gnome/help/gnumeric/C/gnumeric-var.html
