@@ -13,7 +13,7 @@ MASTER_SITES=   ftp://ftp.distributed.net/pub/dcti/v2.8009/ \
 .include <bsd.port.pre.mk>
 .if ${ARCH} == "i386"
 DISTFILES=      dnetc460-freebsd-x86-elf.tar.gz
-.elif ${ARCH} == "i386"
+.elif ${ARCH} == "alpha"
 BROKEN=         "No longer available.  Please contact dbaker@distributed.net if you would like to build the native Alpha port"
 .endif
 
