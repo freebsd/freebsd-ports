@@ -14,40 +14,8 @@ All ports committers are allowed to commit to this file.
 	The default version of Ruby is now 1.8 on all platforms
 	including the i386.
 
-	Users on the i386 platform need to follow the below
-	instructions to cope with this upgrade.
-
-	If you are a ruby developer and want to keep ruby 1.6 as
-	default, please add RUBY_DEFAULT_VER=1.6 to /etc/make.conf.
-
-	Otherwise, please run the following series of commands to
-	migrate to ruby 1.8:
-
-	1) Reinstall portupgrade manually (and as a result ruby 1.8
-	   will be installed):
-
-	   $ pkg_delete portupgrade-\*
-	   $ (cd /usr/ports/sysutils/portupgrade; make install clean)
-
-	2) Reinstall everything that depends on ruby 1.6 to use ruby
-	   1.8 instead:
-
-	   $ portupgrade -fr lang/ruby16
-
-	3) Reinstall ruby 1.8 (because the previous step kills
-	   symlinks)
-
-	   $ portupgrade -f lang/ruby18
-
-	4) Deinstall ruby 1.6 stuff (if you are paranoia)
-
-	   $ pkg_deinstall -ri lang/ruby16
-
-	5) If the above commands do now work somehow and portupgrade
-	starts causing LoadError, please reinstall portupgrade
-	manually again.  Whenever you get confused, you can just
-	deinstall portupgrade and all the ruby stuff (run "pkg_delete
-	-r ruby-\*") and reinstall portupgrade as a last resort.
+	Users on the i386 platform need to follow the instructions
+	described in the UPDATING file to cope with this upgrade.
 
 	Next time ruby is major upgraded, you won't need to do this
 	kind of messy work because some subtle changes have been made
