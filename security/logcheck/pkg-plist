@@ -1,0 +1,6 @@
+bin/logtail
+etc/logcheck.hacking.sample
+etc/logcheck.ignore.sample
+etc/logcheck.sh
+etc/logcheck.violations.ignore.sample
+etc/logcheck.violations.sample

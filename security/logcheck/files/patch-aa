@@ -1,0 +1,72 @@
+--- Makefile.orig	Sun Oct 31 09:07:29 1999
++++ Makefile	Fri Dec 24 16:37:46 1999
+@@ -5,6 +5,8 @@
+ # Thanks to rbulling@obscure.org for cleaning this Makefile up..
+ #
+ 
++SYSTYPE=freebsd
++
+ # Generic compiler
+  CC = cc
+ # GNU..
+@@ -35,19 +37,7 @@
+ # Debug mode for logtail
+ # CFLAGS = -g -DDEBUG
+ 
+-all:
+-		@echo "Usage: make <systype>"
+-		@echo "<systype> is one of: "
+-		@echo "  linux, bsdos, freebsd, sun, generic, hpux, digital"
+-		@echo "" 
+-		@echo "NOTE: This will make and install the package in these" 
+-		@echo "      directories:" 
+-		@echo "        logcheck configuration files : $(INSTALLDIR)" 
+-		@echo "        logcheck.sh shell script     : $(INSTALLDIR_SH)" 
+-		@echo "        logtail program              : $(INSTALLDIR_BIN)" 
+-		@echo "" 
+-		@echo "Edit the makefile if you wish to change these paths." 
+-		@echo "Any existing files will be overwritten."
++all: build
+ 
+ clean:		
+ 		/bin/rm ./src/logtail ./src/logtail.o
+@@ -60,27 +50,29 @@
+ 		/bin/rm $(INSTALLDIR)/logcheck.violations.ignore
+ 		/bin/rm $(INSTALLDIR_BIN)/logtail
+ 
+-install:	
++build:	
+ 		@echo "Making $(SYSTYPE)"
+ 		$(CC) $(CFLAGS) -o ./src/logtail ./src/logtail.c
++
++install:
+ 		@echo "Creating temp directory $(TMPDIR)"
+ 		@if [ ! -d $(TMPDIR) ]; then /bin/mkdir $(TMPDIR); fi
+ 		@echo "Setting temp directory permissions"
+ 		chmod 700 $(TMPDIR)
+ 		@echo "Copying files"
+-		cp ./systems/$(SYSTYPE)/logcheck.hacking $(INSTALLDIR)
+-		cp ./systems/$(SYSTYPE)/logcheck.violations $(INSTALLDIR)
+-		cp ./systems/$(SYSTYPE)/logcheck.violations.ignore $(INSTALLDIR)
+-		cp ./systems/$(SYSTYPE)/logcheck.ignore $(INSTALLDIR)
+-		cp ./systems/$(SYSTYPE)/logcheck.sh $(INSTALLDIR_SH)
++		cp ./systems/$(SYSTYPE)/logcheck.hacking $(INSTALLDIR)/logcheck.hacking.sample
++		cp ./systems/$(SYSTYPE)/logcheck.violations $(INSTALLDIR)/logcheck.violations.sample
++		cp ./systems/$(SYSTYPE)/logcheck.violations.ignore $(INSTALLDIR)/logcheck.violations.ignore.sample
++		cp ./systems/$(SYSTYPE)/logcheck.ignore $(INSTALLDIR)/logcheck.ignore.sample
++		cp ./systems/$(SYSTYPE)/logcheck.sh $(INSTALLDIR_SH)/logcheck.sh
+ 		cp ./src/logtail $(INSTALLDIR_BIN)
+ 		@echo "Setting permissions"
+ 		chmod 700 $(INSTALLDIR_SH)/logcheck.sh
+ 		chmod 700 $(INSTALLDIR_BIN)/logtail
+-		chmod 600 $(INSTALLDIR)/logcheck.violations.ignore
+-		chmod 600 $(INSTALLDIR)/logcheck.violations
+-		chmod 600 $(INSTALLDIR)/logcheck.hacking
+-		chmod 600 $(INSTALLDIR)/logcheck.ignore
++		chmod 600 $(INSTALLDIR)/logcheck.violations.ignore.sample
++		chmod 600 $(INSTALLDIR)/logcheck.violations.sample
++		chmod 600 $(INSTALLDIR)/logcheck.hacking.sample
++		chmod 600 $(INSTALLDIR)/logcheck.ignore.sample
+ 		@echo "Done. Don't forget to set your crontab."		
+ 
+ generic:		

@@ -27,6 +27,7 @@
     SUBDIR += libident
     SUBDIR += libmcrypt
     SUBDIR += libparanoia
+    SUBDIR += logcheck
     SUBDIR += mhash
     SUBDIR += nbaudit
     SUBDIR += nessus

@@ -1,0 +1,14 @@
+----------------------------------------------------------------------------
+
+   Remember to copy the sample files to the real file names.
+   Here is an example what you need to do:
+
+       cd %%PREFIX%%/etc/
+       cp logcheck.ignore.sample logcheck.ignore
+       cp logcheck.violations.ignore.sample logcheck.violations.ignore
+       cp logcheck.violations.sample logcheck.violations
+       cp logcheck.hacking.sample logcheck.hacking
+
+   Note that logcheck is started with %%PREFIX%%/etc/logcheck.sh
+
+----------------------------------------------------------------------------
