@@ -1,0 +1,37 @@
+--- util/sctomat/Makefile.orig	Wed Mar 12 02:47:26 1997
++++ util/sctomat/Makefile	Tue Sep 21 03:37:35 1999
+@@ -5,7 +5,7 @@
+ #
+ # sctomat makefile
+ 
+-BINDIR=	../../bin
++BINDIR=	%%PREFIX%%/bin
+ 
+ ##
+ ##  (1) Choosing your compiler
+@@ -32,7 +32,7 @@
+ ##
+ 
+ CHIPMUNKCC = gcc
+-CC = $(CHIPMUNKCC)
++CC ?= $(CHIPMUNKCC)
+ 
+ ##
+ ## (2) Adding appropriate flags
+@@ -76,13 +76,13 @@
+ ##   -m68040              : for 68040 and 68060
+ ##
+   
+-CFLAGS = 
++CFLAGS += -DBSD -DF_OK=0
+ 
+-scope_to_mat:     savemat.o scope_to_mat.o
++all:     savemat.o scope_to_mat.o
+ 	$(CC) savemat.o scope_to_mat.o -lm -o scope_to_mat
+ 
+ install:  scope_to_mat  
+-	cp scope_to_mat $(BINDIR)  
++	install -c -s scope_to_mat $(BINDIR)  
+ 
+ clean:
+ 	-rm -f *.o scope_to_mat

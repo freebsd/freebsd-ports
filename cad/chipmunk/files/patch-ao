@@ -1,0 +1,17 @@
+--- util/conscripts/Makefile.orig	Wed Mar 12 02:47:25 1997
++++ util/conscripts/Makefile	Tue Sep 21 03:36:32 1999
+@@ -18,11 +18,11 @@
+ #
+ # mconvert makefile
+ 
+-BINDIR=	../../bin
++BINDIR=	%%PREFIX%%/bin
+ 
+ install:    
+-	cp mconvert $(BINDIR)  
+-	cp unmconvert $(BINDIR)  
++	install -c mconvert $(BINDIR)  
++	install -c unmconvert $(BINDIR)  
+ 
+ clean:
+ 	-rm -f *.o 
