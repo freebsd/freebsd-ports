@@ -60,6 +60,7 @@
     SUBDIR += login.app
     SUBDIR += lupe
     SUBDIR += mgapdesk
+    SUBDIR += mlterm
     SUBDIR += offix-clipboard
     SUBDIR += offix-execute
     SUBDIR += p5-X11-Protocol
