@@ -42,7 +42,7 @@ DISTOBJFORMAT=	ELF
 .endif
 
 MAINDIST=	${DISTNAME}${EXTRACT_SUFX}
-.if defined(WITH_MINORUPDATE)
+.if !defined(WITHOUT_MINORUPDATE)
  UPDATEDIST=	update${EXTRACT_SUFX}
 .endif
 
@@ -72,8 +72,8 @@ pre-fetch:
 	${ECHO} "*****************************************************************";	\
 	${FALSE}									\
 	)
-.if !defined(WITH_MINORUPDATE)
-	@${ECHO} "If you dare apply the buggy minor update from the vendor, define \"WITH_MINORUPDATE\"."
+.if !defined(WITHOUT_MINORUPDATE)
+	@${ECHO} "If you don't want to apply the buggy minor update from the vendor, define \"WITHOUT_MINORUPDATE\"."
 .endif
 
 post-extract:
@@ -83,7 +83,7 @@ post-patch:
 	@cd ${WRKSRC}/vje30/bin && ${RM} swingall.jar
 	@find ${WRKSRC} -name '*.orig' -delete
 	@${CP} ${FILESDIR}/vje.sh ${WRKSRC}/etc/rc.d/
-.if defined(WITH_MINORUPDATE)
+.if !defined(WITHOUT_MINORUPDATE)
 	@${MV} ${WRKDIR}/vje ${WRKSRC}/vje30/bin/
 .endif
 
@@ -95,7 +95,7 @@ do-install:
 	@${CHMOD} a+x ${PREFIX}/etc/rc.d/vje.sh
 	@${CHMOD} a+w ${PREFIX}/vje30/dic/vjed95m.dic
 	@[ X${PREFIX} = X"/usr/local" ] || (${LN} -s ${PREFIX}/vje30 /usr/local/; ${LN} -s ${PREFIX}/etc/vje30 /usr/local/etc/)
-.if defined(WITH_MINORUPDATE)
+.if !defined(WITHOUT_MINORUPDATE)
 	@${CP} ${WRKDIR}/vjed.bin /tmp/
 	@${ECHO} '' | ${WRKDIR}/vjesetup
 	@${RM} /tmp/vjed.bin
