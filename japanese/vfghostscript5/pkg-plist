@@ -101,6 +101,7 @@ share/ghostscript/5.10vflib/examples/snowflak.ps
 share/ghostscript/5.10vflib/examples/tiger.ps
 share/ghostscript/5.10vflib/examples/waterfal.ps
 share/ghostscript/5.10vflib/font2c.ps
+share/ghostscript/5.10vflib/gdevmjc.ps
 share/ghostscript/5.10vflib/gs_btokn.ps
 share/ghostscript/5.10vflib/gs_ccfnt.ps
 share/ghostscript/5.10vflib/gs_cff.ps

@@ -3,7 +3,7 @@
 # Date created:		26 Aug 1997
 # Whom:			Mita Yoshio <mita@jp.FreeBSD.org>
 #
-# $Id: Makefile,v 1.30 1999/04/16 23:35:00 sada Exp $
+# $Id: Makefile,v 1.31 1999/06/14 00:58:03 taoka Exp $
 #
 
 DISTNAME=	ghostscript-5.10
@@ -106,7 +106,6 @@ post-patch:
 	@${CAT} ${WRKSRC}/gdev10v.mak >> ${WRKSRC}/unix-gcc.mak
 	@${CAT} ${WRKSRC}/gdevdmpr.mak >> ${WRKSRC}/unix-gcc.mak
 	@${CAT} ${WRKSRC}/gdevlips.mak >> ${WRKSRC}/unix-gcc.mak
-#	@${CAT} ${WRKSRC}/mjc.dev >> ${WRKSRC}/unix-gcc.mak
 	@${CAT} ${WRKSRC}/gdevrpdl.mak >> ${WRKSRC}/unix-gcc.mak
 	@${CAT} ${WRKSRC}/gdevmjc.mak >> ${WRKSRC}/unix-gcc.mak
 	@${CAT} ${WRKSRC}/gdevalps.mak >> ${WRKSRC}/unix-gcc.mak
@@ -133,6 +132,7 @@ post-install:
 	  ${CP} ${PRINTER}/gdevmjc-0.8/README.noz ${DOC_DIR}/gdevmjc-0.8/ ; \
 	  ${CP} ${PRINTER}/gdevmjc-0.8/README.mje ${DOC_DIR}/gdevmjc-0.8/ ; \
 	  ${CP} ${PRINTER}/gdevmjc-0.8/cpem.doc ${DOC_DIR}/gdevmjc-0.8/ ; \
+	  ${CP} ${PRINTER}/gdevmjc-0.8/MJ700V2C.FAQ ${DOC_DIR}/gdevmjc.0.8/ ; \
 	  ${CP} ${PRINTER}/gdevalps-0.2/README.gdevalps ${DOC_DIR}/README.gdevalps ; \
 	  ${CP} ${PRINTER}/gdevmd2k-0.2a/README.jis ${DOC_DIR}/gdevmd2k.jis ; \
 	  ${CP} ${PRINTER}/gdevrpdl-1.2-510/gdevrpdl.doc ${DOC_DIR} ; \
@@ -141,6 +141,7 @@ post-install:
 	  ${CP} ${PRINTER}/gdevdmpr/dmp_site.ps ${GSINST_DIR} ; \
 	  ${CP} ${PRINTER}/gdevdmpr/escp_24.src ${GSINST_DIR} ; \
 	  ${CP} ${PRINTER}/gdevdmpr/testpage.ps ${GSINST_DIR} ; \
+	  ${CP} ${PRINTER}/gdevmjc-0.8/gdevmjc.ps ${GSINST_DIR} ; \
 	)
 .if defined(PDFENCRYPT)
 	@${CP} -f ${DISTDIR}/pdf_sec.ps ${GSINST_DIR}
