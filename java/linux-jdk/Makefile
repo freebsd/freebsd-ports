@@ -17,8 +17,8 @@ MAINTAINER=	K.J.Koster@kpn.com
 
 RUN_DEPENDS=	/compat/linux/usr/i486-linux-libc5/lib/libc.so.5:${PORTSDIR}/emulators/linux_base
 
-NO_CDROM=	"License doesn't allow distribution with fee"
-NO_PACKAGE=	"License doesn't allow binary distributions"
+NO_CDROM=	"License doesn\'t allow distribution with fee"
+NO_PACKAGE=	"License doesn\'t allow binary distributions"
 
 ONLY_FOR_ARCHS=	i386
 
