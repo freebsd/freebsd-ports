@@ -1,15 +1,21 @@
---- client/dhclient.8.orig	Mon May  1 19:11:36 2000
-+++ client/dhclient.8	Fri Jan 26 05:12:37 2001
-@@ -34,7 +34,7 @@
+--- client/dhclient.8.orig	Thu Mar  1 23:11:12 2001
++++ client/dhclient.8	Thu Mar 22 04:04:29 2001
+@@ -34,12 +34,12 @@
  .B -q
  ]
  [
 -.B -c
 +.B -1
  ]
++[
+ .B -r
+ ]
  [
+-[
  .B -lf
-@@ -49,6 +49,10 @@
+ .I lease-file
+ ]
+@@ -52,6 +52,10 @@
  .I config-file
  ]
  [
@@ -20,9 +26,9 @@
  .B -s
  server
  ]
-@@ -174,17 +178,25 @@
- flag prevents any messages other than errors from being printed to the
- standard error descriptor.
+@@ -184,17 +188,25 @@
+ .B -r
+ flag explicitly releases the current lease.
  .PP
 +The
 +.B -1
@@ -50,7 +56,7 @@
  flags, respectively, followed by the name of the file.   This can be
  particularly useful if, for example,
  .B DBDIR
-@@ -206,10 +218,12 @@
+@@ -216,10 +228,12 @@
  .SH CONFIGURATION
  The syntax of the dhclient.conf(8) file is discussed seperately.
  .SH FILES
