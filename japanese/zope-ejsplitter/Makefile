@@ -13,10 +13,8 @@ MASTER_SITES=	http://www005.upp.so-net.ne.jp/nakagami/Download/
 MAINTAINER=	yasi@yasi.to
 COMMENT=	A Japanese word splitter for searching text in Zope Products
 
-BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/japanese.pth:${PORTSDIR}/japanese/pycodec
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/japanese.pth:${PORTSDIR}/japanese/pycodec
-
-BROKEN=		Broken dependency
+BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/japanese.pth:${PORTSDIR}/japanese/pycodec-zope
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/japanese.pth:${PORTSDIR}/japanese/pycodec-zope
 
 USE_PYTHON=	yes
 USE_ZOPE=	yes
