@@ -1,3 +1,5 @@
 share/apache/cgi-bin/gnuinfo
 share/apache/cgi-bin/gnuinfo.local
 share/apache/cgi-bin/gnuinfo.X11R6
+@dirrm share/apache/cgi-bin
+@dirrm share/apache
