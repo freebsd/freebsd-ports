@@ -1,17 +1,17 @@
 # New ports collection makefile for:	srm
 # Date created:				25 Oct 2000
-# Whom:					Keith J. Jones <keith.jones@ieee.org>
+# Whom:					Keith J. Jones <kjones@antihackertoolkit.com>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	srm
-PORTVERSION=	1.2.2
+PORTVERSION=	1.2.6
 CATEGORIES=	security sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	srm
 
-MAINTAINER=	keith.jones@ieee.org
+MAINTAINER=	kjones@antihackertoolkit.com
 
 USE_LIBTOOL=	YES
 
