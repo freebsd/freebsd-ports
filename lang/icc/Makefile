@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	icc
-PORTVERSION=	7.1.017
+PORTVERSION=	7.1.018
 #PORTREVISION=	1
 CATEGORIES=	lang linux devel
 MASTER_SITES=
@@ -46,7 +46,7 @@ CPIO?=		/usr/bin/cpio
 OBJCOPY?=	/usr/bin/objcopy
 
 .if !exists(${DISTDIR}/${DIST_SUBDIR}/${DISTNAME}${EXTRACT_SUFX})
-IGNORE=	"Please manually download ${DISTFILES} from ${ICC_SITE}, ${ICC_SITE}clin/noncom.htm or https://premier.intel.com/ \(whichever has the file, to access premier.intel.com you have to register at http://www.intel.com/software/products/registrationcenter/index.htm\). With a little bit of luck it may also be available from ftp://download.intel.com/software/products/compilers/downloads/. Put it into ${DISTDIR} and run make again"
+IGNORE=	"Please manually download ${DISTFILES} from ${ICC_SITE}, ${ICC_SITE}clin/noncom.htm or https://premier.intel.com/ \(whichever has the file; to access premier.intel.com you have to register at http://www.intel.com/software/products/registrationcenter/index.htm; LOOK AT ALL 3 LOCATIONS, not every version is everywhere, but premier.intel.com has always the newest version\). With a little bit of luck it may also be available from ftp://download.intel.com/software/products/compilers/downloads/. Put it into ${DISTDIR} and run make again"
 .endif
 
 .if exists(${LINUXBASE}/boot/kernel.h) || \
@@ -63,12 +63,12 @@ post-extract:
 		${FILESDIR}/cpio-exclude_noportdocs >>${WRKDIR}/cpio-exclude
 .endif
 .for i in \
-	intel-icc7-7.1-16.i386.rpm
-#	intel-iidb7-7.1-33.i386.rpm \
-#	intel-isubh7-7.1-16.i386.rpm \
-#	intel-ecc7-7.1-16.ia64.rpm \
-#	intel-eidb7-7.1-33.ia64.rpm \
-#	intel-esubh7-7.1-16.ia64.rpm
+	intel-icc7-7.1-18.i386.rpm
+#	intel-iidb7-7.1-36.i386.rpm \
+#	intel-isubh7-7.1-18.i386.rpm \
+#	intel-ecc7-7.1-18.ia64.rpm \
+#	intel-eidb7-7.1-36.ia64.rpm \
+#	intel-esubh7-7.1-18.ia64.rpm
 	@cd ${WRKSRC} && rpm2cpio 2>/dev/null ${i} | \
 		${CPIO} -idfuE ${WRKDIR}/cpio-exclude --quiet
 .endfor

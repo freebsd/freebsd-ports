@@ -775,7 +775,7 @@ intel/%%COMPILERDIR%%/docs/csupport
 %%PORTDOCS%%intel/%%COMPILERDIR%%/docs/flex_ug.pdf
 %%PORTDOCS%%intel/%%COMPILERDIR%%/docs/icid.htm
 %%PORTDOCS%%intel/%%COMPILERDIR%%/docs/icpi.htm
-%%PORTDOCS%%intel/%%COMPILERDIR%%/docs/notes/icc_fixes.txt
+@comment %%PORTDOCS%%intel/%%COMPILERDIR%%/docs/notes/icc_fixes.txt
 %%PORTDOCS%%intel/%%COMPILERDIR%%/docs/notes/icc_issues.txt
 %%PORTDOCS%%@dirrm intel/%%COMPILERDIR%%/docs/notes
 %%PORTDOCS%%intel/%%COMPILERDIR%%/docs/ref/ann_entr.htm
