@@ -60,7 +60,7 @@ install-data:
 	@${INSTALL_DATA} ${WRKSRC}/grenouillerc.sample ${PREFIX}/etc
 
 install-doc:
-.if !defined(NOPORTSDOC)
+.if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for file in ${DOC_FILES}
 	@${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}

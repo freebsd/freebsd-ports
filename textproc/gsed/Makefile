@@ -60,7 +60,7 @@ install-sample-files:
 .endfor
 
 install-doc-files:
-.if !defined(NOPORTSDOC)
+.if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for file in ${DOC_FILES}
 	@${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
