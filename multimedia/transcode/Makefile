@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	transcode
-PORTVERSION=	0.6.7
-PORTREVISION=	1
+PORTVERSION=	0.6.8
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.zebra.fh-weingarten.de/~transcode/pre/
 
@@ -28,8 +27,9 @@ CONFIGURE_ENV=	CFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
 CONFIGURE_ARGS=	--program-transform-name=""
 USE_REINPLACE=	yes
 
-MAN1=	avifix.1 avimerge.1 avisplit.1 avisync.1 tccat.1 tcdemux.1 \
-	tcprobe.1 tcscan.1 transcode.1 tcextract.1 tcdecode.1 tcmodinfo.1
+MAN1=	avifix.1 aviindex.1 avimerge.1 avisplit.1 avisync.1 tccat.1 tcdemux.1 \
+	tcprobe.1 tcscan.1 transcode.1 tcextract.1 tcdecode.1 tcmodinfo.1 \
+	tcxmlcheck.1
 
 .include <bsd.port.pre.mk>
 
@@ -240,8 +240,7 @@ pre-everything::
 .endif
 .if !defined(WITH_IMAGEMAGICK)
 	@${ECHO_MSG}
-	@${ECHO_MSG} "You can enable ImageMagick-dependent modules by defining"
-	@${ECHO_MSG} "WITH_IMAGEMAGICK."
+	@${ECHO_MSG} "You can enable ImageMagick-dependent modules by defining WITH_IMAGEMAGICK."
 .endif
 .if !defined(WITH_SDL)
 	@${ECHO_MSG}
