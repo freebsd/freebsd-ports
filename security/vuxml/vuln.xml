@@ -156,44 +156,164 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <topic>php -- vulnerability in RFC 1867 file upload processing</topic>
     <affects>
       <package>
-        <name>mod_php4-twig</name>
+        <name>php4-bcmath</name>
+        <name>php4-bz2</name>
+        <name>php4-calendar</name>
         <name>php4-cgi</name>
-        <name>php4-cli</name>
-        <name>php4-dtc</name>
-        <name>php4-horde</name>
-        <name>php4-nms</name>
-        <name>php4</name>
+        <name>php4-crack</name>
+        <name>php4-ctype</name>
+        <name>php4-curl</name>
+        <name>php4-dba</name>
+        <name>php4-dbase</name>
+        <name>php4-dbx</name>
+        <name>php4-dio</name>
+        <name>php4-domxml</name>
+        <name>php4-exif</name>
+        <name>php4-filepro</name>
+        <name>php4-ftp</name>
+        <name>php4-gd</name>
+        <name>php4-gettext</name>
+        <name>php4-gmp</name>
+        <name>php4-iconv</name>
+        <name>php4-imap</name>
+        <name>php4-interbase</name>
+        <name>php4-ldap</name>
+        <name>php4-mbstring</name>
+        <name>php4-mcal</name>
+        <name>php4-mcrypt</name>
+        <name>php4-mcve</name>
+        <name>php4-mhash</name>
+        <name>php4-ming</name>
+        <name>php4-mnogosearch</name>
+        <name>php4-mssql</name>
+        <name>php4-mysql</name>
+        <name>php4-ncurses</name>
+        <name>php4-odbc</name>
+        <name>php4-openssl</name>
+        <name>php4-oracle</name>
+        <name>php4-overload</name>
+        <name>php4-pcntl</name>
+        <name>php4-pcre</name>
+        <name>php4-pear</name>
+        <name>php4-pgsql</name>
+        <name>php4-posix</name>
+        <name>php4-readline</name>
+        <name>php4-recode</name>
+        <name>php4-session</name>
+        <name>php4-shmop</name>
+        <name>php4-snmp</name>
+        <name>php4-sockets</name>
+        <name>php4-sybase_ct</name>
+        <name>php4-sysvmsg</name>
+        <name>php4-sysvsem</name>
+        <name>php4-sysvshm</name>
+        <name>php4-tokenizer</name>
+        <name>php4-wddx</name>
+        <name>php4-xml</name>
+        <name>php4-xmlrpc</name>
+        <name>php4-xslt</name>
+        <name>php4-yp</name>
+        <name>php4-zlib</name>
         <range><le>4.3.8_2</le></range>
       </package>
       <package>
-        <name>mod_php</name>
         <name>mod_php4</name>
-	<range><ge>4</ge><le>4.3.8_2,1</le></range>
+        <range><le>4.3.8_2,1</le></range>
       </package>
       <package>
-        <name>php5</name>
+        <name>php4-pspell</name>
+        <range><le>4.3.8_3</le></range>
+      </package>
+      <package>
+        <name>php5-bcmath</name>
+        <name>php5-bz2</name>
+        <name>php5-calendar</name>
         <name>php5-cgi</name>
-        <name>php5-cli</name>
+        <name>php5-ctype</name>
+        <name>php5-curl</name>
+        <name>php5-dba</name>
+        <name>php5-dbase</name>
+        <name>php5-dbx</name>
+        <name>php5-dio</name>
+        <name>php5-dom</name>
+        <name>php5-exif</name>
+        <name>php5-filepro</name>
+        <name>php5-ftp</name>
+        <name>php5-gd</name>
+        <name>php5-gettext</name>
+        <name>php5-gmp</name>
+        <name>php5-iconv</name>
+        <name>php5-imap</name>
+        <name>php5-interbase</name>
+        <name>php5-ldap</name>
+        <name>php5-mbstring</name>
+        <name>php5-mcrypt</name>
+        <name>php5-mcve</name>
+        <name>php5-mhash</name>
+        <name>php5-ming</name>
+        <name>php5-mnogosearch</name>
+        <name>php5-mssql</name>
+        <name>php5-mysql</name>
+        <name>php5-mysqli</name>
+        <name>php5-ncurses</name>
+        <name>php5-odbc</name>
+        <name>php5-openssl</name>
+        <name>php5-oracle</name>
+        <name>php5-pcntl</name>
+        <name>php5-pcre</name>
+        <name>php5-pear</name>
+        <name>php5-pgsql</name>
+        <name>php5-posix</name>
+        <name>php5-readline</name>
+        <name>php5-recode</name>
+        <name>php5-session</name>
+        <name>php5-shmop</name>
+        <name>php5-simplexml</name>
+        <name>php5-snmp</name>
+        <name>php5-soap</name>
+        <name>php5-sockets</name>
+        <name>php5-sqlite</name>
+        <name>php5-sybase_ct</name>
+        <name>php5-sysvmsg</name>
+        <name>php5-sysvsem</name>
+        <name>php5-sysvshm</name>
+        <name>php5-tidy</name>
+        <name>php5-tokenizer</name>
+        <name>php5-wddx</name>
+        <name>php5-xml</name>
+        <name>php5-xmlrpc</name>
+        <name>php5-xsl</name>
+        <name>php5-yp</name>
+        <name>php5-zlib</name>
         <range><le>5.0.1</le></range>
       </package>
       <package>
         <name>mod_php5</name>
         <range><le>5.0.1,1</le></range>
       </package>
+      <package>
+        <name>php5-pspell</name>
+        <range><le>5.0.1_1</le></range>
+      </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-        <p>Stefano Di Paolo reports that a bug in PHP's processing of
-          RFC 1867 file uploads that may allow a remote attacker to
-          overwrite arbitrary files.</p>
+	<p>Stefano Di Paola discovered an issue with PHP that
+	  could allow someone to upload a file to any directory
+	  writeable by the httpd process. Any sanitizing performed on
+	  the prepended directory path is ignored. This bug can only
+	  be triggered if the $_FILES element name contains an
+	  underscore.</p>
       </body>
     </description>
     <references>
       <mlist msgid="1095268057.2818.20.camel@localhost">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=109534848430404</mlist>
+      <mlist msgid="1096478151.3220.6.camel@localhost">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=109648426331965</mlist>
     </references>
     <dates>
       <discovery>2004-09-15</discovery>
-      <entry>2004-10-05</entry>
+      <entry>2004-09-15</entry>
+      <modified>2004-10-12</modified>
     </dates>
   </vuln>
 
