@@ -17,7 +17,8 @@ DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
 
-RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/gtk.so:${PORTSDIR}/x11-toolkits/ruby-gtk
+RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/gtk.so:${PORTSDIR}/x11-toolkits/ruby-gtk \
+		${RUBY_SITEARCHLIBDIR}/gnome.so:${PORTSDIR}/x11/ruby-gnome
 LIB_DEPENDS=	glade.4:${PORTSDIR}/devel/libglade
 
 USE_RUBY=	yes
