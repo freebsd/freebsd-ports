@@ -18,6 +18,12 @@ MAN5=		vsftpd.conf.5
 
 MAN8=		vsftpd.8
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500035
+BROKEN=		"Does not compile on 5.0"
+.endif
+
 post-patch:
 	@${PERL} -pi -e 's@/etc/vsftpd.conf@${PREFIX}/etc/vsftpd.conf@' \
 		${WRKSRC}/defs.h
@@ -42,4 +48,4 @@ do-install:
 	@${PERL5} ${PKGINSTALL}
 	@${MKDIR} /var/ftp
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
