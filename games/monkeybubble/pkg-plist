@@ -1,4 +1,3 @@
-bin/gsttest
 bin/monkey-bubble
 bin/monkey-srv
 etc/gconf/schemas/monkey-bubble.schemas
