@@ -11,7 +11,7 @@ CATEGORIES=	x11-wm
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	phluid
 
-LIB_DEPENDS=	Imlib2.1:${PORTSDIR}/graphics/imlib2
+LIB_DEPENDS=	Imlib2.2:${PORTSDIR}/graphics/imlib2
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	a window manager that emphasizes efficiency, speed, and beauty
