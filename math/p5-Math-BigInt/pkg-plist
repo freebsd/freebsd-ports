@@ -1,0 +1,8 @@
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Math-BigInt/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/Math/BigFloat.pm
+lib/perl5/site_perl/%%PERL_VER%%/Math/BigInt.pm
+lib/perl5/site_perl/%%PERL_VER%%/Math/BigInt/Calc.pm
+lib/perl5/site_perl/%%PERL_VER%%/Math/BigInt/Scalar.pm
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Math-BigInt
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Math/BigInt 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Math 2>/dev/null || true

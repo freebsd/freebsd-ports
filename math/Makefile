@@ -65,6 +65,7 @@
     SUBDIR += p5-Graph
     SUBDIR += p5-Math-Base85
     SUBDIR += p5-Math-Bezier
+    SUBDIR += p5-Math-BigInt
     SUBDIR += p5-Math-BigIntFast
     SUBDIR += p5-Math-Currency
     SUBDIR += p5-Math-Expr

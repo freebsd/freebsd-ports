@@ -1,0 +1,9 @@
+Math::BigInt - Arbitrary size integer math package for perl.
+
+This is a complete rewrite of Math::BigInt, Math::BigFloat and friends,
+which are included with the standard system perl.
+
+WWW: http://search.cpan.org/search?dist=Math-BigInt
+
+-Anton
+<tobez@FreeBSD.org>
