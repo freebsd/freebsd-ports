@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	filelight
-PORTVERSION=	0.6.0
+PORTVERSION=	0.6.4
 CATEGORIES=	sysutils kde
 MASTER_SITES=	http://www.methylblue.com/filelight/
 
@@ -18,11 +18,10 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
-
 post-patch:
-	@${CP} ${FILESDIR}/mntent* ${WRKSRC}/filelight
-	@${REINPLACE_CMD} -e 's/-O2//g; s/-pedantic //g' \
-		 ${CONFIGURE_WRKSRC}/configure
+	@${CP} ${FILESDIR}/mntent* ${WRKSRC}/src
+	@${REINPLACE_CMD} -e 's/-O2//g' ${WRKSRC}/${CONFIGURE_SCRIPT}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+.include "${PORTSDIR}/x11/kde3/Makefile.kde"
+.include <bsd.port.post.mk>
