@@ -17,7 +17,7 @@ MAINTAINER=	shige@FreeBSD.org
 # distfile version
 BITMAP_VER=		8.3
 BITMAPDOCDIR=	share/doc/bitmap
-BITMAP_FONT=	${X11BASE}/lib/X11/fonts/local/etl8x16-bitmap.pcf.gz
+BITMAP_FONT=	${X11BASE}/lib/X11/fonts/local/bitmap16.pcf.gz
 
 # emacs20
 EMACS_PORT_NAME=	emacs20
