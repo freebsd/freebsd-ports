@@ -350,7 +350,7 @@
  char *fmt;
  {
 --- ceptd/modeminit.c.orig	Wed May 25 19:36:12 1994
-+++ ceptd/modeminit.c	Mon Sep  1 16:42:04 2003
++++ ceptd/modeminit.c	Sat Sep  6 22:04:39 2003
 @@ -82,6 +82,7 @@
  
  extern int errno;
@@ -594,6 +594,15 @@
         !!(s&TIOCM_DTR), !!(s&TIOCM_DSR), !!(s&TIOCM_RTS), !!(s&TIOCM_CTS),
         !!(s&TIOCM_CD ), !!(s&TIOCM_ST ), !!(s&TIOCM_SR ),  !!(s&TIOCM_RI),
         !!(s&TIOCM_LE ));
+@@ -544,7 +546,7 @@
+    /* put my pid in it
+     */
+ #ifdef	ASCIIPID
+-   (void) sprintf(apid, "%09d", getpid());
++   (void) sprintf(apid, "%10d", getpid());
+    (void) write(fd, apid, strlen(apid));
+ #else
+    pid = getpid();
 --- ceptd/level2.c.orig	Wed May 25 19:36:12 1994
 +++ ceptd/level2.c	Mon Sep  1 16:41:00 2003
 @@ -126,7 +126,7 @@
