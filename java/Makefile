@@ -109,6 +109,7 @@
     SUBDIR += phpeclipse_phphelp
     SUBDIR += phpeclipse_sql
     SUBDIR += phpeclipse_tidy
+    SUBDIR += poseidon
     SUBDIR += proguard
     SUBDIR += sablevm
     SUBDIR += shujit
