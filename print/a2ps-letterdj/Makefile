@@ -1,0 +1,12 @@
+# New ports collection makefile for:    a2ps (letterdj)
+# Version required:     4.10.3
+# Date created:         15 July 1998
+# Whom:                 Chuck Robey (chuckr@freebsd.org)
+#
+# $Id$
+#
+
+PAPERSIZE=	letterdj
+MASTERDIR=	${.CURDIR}/../a2ps-letter
+
+.include "${MASTERDIR}/Makefile"
