@@ -9,6 +9,9 @@ applications in the Python language.
 Note that the current release is alpha quality, and not yet deemed to be
 stable.
 
+This port includes optional support for Biopython-CORBA, a CORBA interface
+built to the BioCorba standard (http://biocorba.org/).
+
 Authors: <biopython-dev@biopython.org>
 WWW:     http://biopython.org/
 

@@ -7,6 +7,7 @@
 
 PORTNAME=	biopython
 PORTVERSION=	1.00.a3
+PORTREVISION=	1
 CATEGORIES=	biology python
 MASTER_SITES=	http://www.biopython.org/Download/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -21,6 +22,7 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/Martel/__init__.py:${PORTSDIR}/textproc/py-mar
 		${PYTHON_SITELIBDIR}/mx/TextTools/__init__.py:${PORTSDIR}/lang/py-mx-base
 
 USE_PYTHON=	yes
+PYTHON_SETUP=	${SETENV} ${MAKE_ENV} ${PYTHON_CMD} setup.py
 PLIST_SUB+=	PLIST_CORBA=${PLIST_CORBA} PLIST_OMNIORB=${PLIST_OMNIORB} \
 		PLIST_FNORB=${PLIST_FNORB}
 CPIO=		cpio --quiet -pdum -R
@@ -36,13 +38,13 @@ EXAMPLESDIR=	${PREFIX}/share/examples/${PORTNAME}
 #   huge and building the C++ source is a lengthy process.  The omniORBpy
 #   Python bindings are used.
 # - Fnorb is a tiny, lightweight ORB and is excellent for testing purposes.
+#   Its licence is non-free.
 # - ORBit is a very popular and elegant ORB.  The ORBit-Python bindings are
 #   used.
-# Since Fnorb is distributed under a non-free licence and ORBit support in
-# Biopython-CORBA is reputedly not yet stable, "omniorb" is the default.
-CORBA_ORB?=	omniorb
+# Note:  If unspecified, "orbit" is assumed as default.
+CORBA_ORB?=	orbit
 
-CORBA_VERSION=	0.2.1
+CORBA_VERSION=	0.3.0
 CORBA_DISTNAME=	biopython-corba-${CORBA_VERSION}
 CORBA_WRKSRC=	${WRKDIR}/${CORBA_DISTNAME}
 DISTFILES+=	${CORBA_DISTNAME}${EXTRACT_SUFX}
@@ -57,7 +59,6 @@ PLIST_FNORB=	"@comment "
 BUILD_DEPENDS+=	${PYTHON_SITELIBDIR}/Fnorb/__init__.py:${PORTSDIR}/devel/fnorb
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/Fnorb/__init__.py:${PORTSDIR}/devel/fnorb
 CORBA_ORBNAME=	Fnorb
-EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-build_helper.py
 PLIST_OMNIORB=	"@comment "
 PLIST_FNORB=	""
 .elif ${CORBA_ORB} == "orbit"
@@ -81,48 +82,47 @@ pre-fetch:
 post-configure:
 .if defined(WITH_CORBA)
 	@ ${PERL} -pi.orig -e \
-	  "/^orb_implementation/ && s/omniORB/${CORBA_ORBNAME}/" \
+	  "/^orb_implementation/ && s/ORBit/${CORBA_ORBNAME}/" \
 	  ${CORBA_WRKSRC}/BioCorba/biocorbaconfig.py
 .endif
 
 do-build:
-	@ cd ${WRKSRC} && ${PYTHON_CMD} setup.py build
+	@ cd ${WRKSRC} && ${PYTHON_SETUP} build
 .if defined(WITH_CORBA)
-	@ cd ${CORBA_WRKSRC} && ${PYTHON_CMD} setup.py build
+	@ cd ${CORBA_WRKSRC} && ${PYTHON_SETUP} build
 .endif
 
 pre-install:
 	@ ${SH} ${PKGREQ} INSTALL
 
 do-install:
-	@ cd ${WRKSRC} && ${PYTHON_CMD} setup.py install -c -O1 \
+	@ cd ${WRKSRC} && ${PYTHON_SETUP} install -c -O1 \
 	  --prefix=${PREFIX}
 .if defined(WITH_CORBA)
-	@ cd ${CORBA_WRKSRC} && ${PYTHON_CMD} setup.py install -c -O1 \
+	@ cd ${CORBA_WRKSRC} && ${PYTHON_SETUP} install -c -O1 \
 	  --prefix=${PREFIX}
 .endif
 
 post-install:
 .if !defined(NOPORTDOCS)
 	@ ${MKDIR} ${DOCSDIR}
-.for docfiles in *.txt *.tex *.py
+.for docfiles in *.pdf *.py *.tex *.txt
 	@ ${INSTALL_DATA} ${WRKSRC}/Doc/${docfiles} ${DOCSDIR}
 .endfor
 	@ ${MKDIR} ${EXAMPLESDIR}
-	@ ${INSTALL_DATA} ${WRKSRC}/Doc/examples/*.py ${EXAMPLESDIR}
-	@ cd ${WRKSRC} && find Scripts \
+	@ ${INSTALL_DATA} ${WRKSRC}/Doc/examples/* ${EXAMPLESDIR}
+	@ cd ${WRKSRC}/Scripts && find * \
 	  | ${CPIO} ${SHAREOWN}:${SHAREGRP} ${EXAMPLESDIR}
 .if defined(WITH_CORBA)
 	@ ${MKDIR} ${DOCSDIR}/BioCorba
-.for docfiles in *.tex *.pdf
+.for docfiles in *.html *.pdf *.tex *.txt
 	@ ${INSTALL_DATA} ${CORBA_WRKSRC}/Doc/${docfiles} ${DOCSDIR}/BioCorba
 .endfor
 	@ ${MKDIR} ${EXAMPLESDIR}/BioCorba
-	@ cd ${CORBA_WRKSRC}/Doc/examples && find * \
-	  | ${CPIO} ${SHAREOWN}:${SHAREGRP} ${EXAMPLESDIR}/BioCorba
-	@ ${MKDIR} ${EXAMPLESDIR}/BioCorba/Scripts
+	@ ${INSTALL_DATA} ${CORBA_WRKSRC}/Doc/examples/* \
+	  ${EXAMPLESDIR}/BioCorba
 	@ ${INSTALL_DATA} ${CORBA_WRKSRC}/Scripts/* \
-	  ${EXAMPLESDIR}/BioCorba/Scripts
+	  ${EXAMPLESDIR}/BioCorba
 .endif	# defined(WITH_CORBA)
 .endif	# !defined(NOPORTDOCS)
 
