@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	kmess
-PORTVERSION=	1.2.1
+PORTVERSION=	1.3
 CATEGORIES=	net kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -24,10 +24,12 @@ _NO_KDE_FIXPTHREAD=	yes
 
 .include <bsd.port.pre.mk>
 pre-patch:
-	${REINPLACE_CMD} -e '23s/^.*$$/#include <unistd.h>/' \
+	${REINPLACE_CMD} -e '23s/^$$/#include <unistd.h>/' \
 		${WRKSRC}/kmess/kmessview.cpp
-	${REINPLACE_CMD} -e '20s/^.*$$/#include <ctype.h>/' \
+	${REINPLACE_CMD} -e '20s/^$$/#include <ctype.h>/' \
 		${WRKSRC}/kmess/network/mimemessage.h
+	${REINPLACE_CMD} -e '35s|^$$|#include <netinet/in.h>|' \
+		${WRKSRC}/kmess/network/msnconnection.h
 	${REINPLACE_CMD} -e 's,-pedantic ,,g' ${WRKSRC}/configure
 
 .include "${PORTSDIR}/x11/kde3/Makefile.kde"
