@@ -6,6 +6,12 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20040504:
+  AFFECTS: users of mail/drac
+
+  The "drac_flags" rc.conf(5) variable has been renamed to "dracd_flags".
+  See the pkg-message or script for details.
+
 20040501:
   AFFECTS: users of www/apache13
 

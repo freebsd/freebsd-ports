@@ -1,34 +1,26 @@
 #!/bin/sh
+# $FreeBSD$
 
-if ! PREFIX=$(/bin/expr $0 : "\(/.*\)/etc/rc\.d/${0##*/}\$"); then
-	echo "$0: Cannot determine the PREFIX" >&2
-	exit 64
-fi
+# PROVIDE: dracd
+# REQUIRE: DAEMON
+# BEFORE: LOGIN
+# KEYWORD: FreeBSD shutdown
 
-if [ -r /etc/defaults/rc.conf ]; then
-	. /etc/defaults/rc.conf
-	source_rc_confs
-elif [ -r /etc/rc.conf ]; then
-	. /etc/rc.conf
-fi
+# Define these dracd_* variables in one of these files:
+#       /etc/rc.conf
+#       /etc/rc.conf.local
+#       /etc/rc.conf.d/dracd
+#
+# DO NOT CHANGE THESE DEFAULT VALUES HERE
+#
+dracd_enable="NO"
+dracd_flags=""
 
-case "$1" in
-start)
-	case ${dracd_enable:-NO} in
-	[Yy][Ee][Ss])
-		${dracd_program:-${PREFIX}/sbin/rpc.dracd} ${drac_flags} && echo -n ' dracd'
-		;;
-	esac
-	;;
-stop)
-	case ${dracd_enable:-NO} in
-	[Yy][Ee][Ss])
-		/usr/bin/killall rpc.dracd >/dev/null 2>&1 && echo -n ' dracd'
-	esac
-	;;
-*)
-	echo "Usage: `basename $0` {start|stop}" >&2
-	;;
-esac
+. %%RC_SUBR%%
 
-exit 0
+name="dracd"
+rcvar=`set_rcvar`
+command="%%PREFIX%%/sbin/rpc.dracd"
+
+load_rc_config $name
+run_rc_command "$1"
