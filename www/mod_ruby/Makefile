@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mod_ruby
-PORTVERSION=	0.9.4
+PORTVERSION=	0.9.5
 CATEGORIES=	www ruby
 MASTER_SITES=	http://www.modruby.net/archive/
 DIST_SUBDIR=	ruby
