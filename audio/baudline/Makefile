@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	baudline
-PORTVERSION=	0.89
+PORTVERSION=	0.90
 CATEGORIES=	audio
-MASTER_SITES=	http://www.geocities.com/sigfriedblip/baudline/
+MASTER_SITES=	http://www.geocities.com/sigfriedblip/baudline/ \
+		http://members.telocity.com/~eriko/baudline/
 DISTNAME=	baudline_${PORTVERSION:S/.p/pre/}_i686
 
 MAINTAINER=	dyeske@yahoo.com
