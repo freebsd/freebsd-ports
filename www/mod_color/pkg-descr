@@ -1,0 +1,6 @@
+mod_color is a syntax colorer module for Apache.  Each site may
+specify the color, style and font face of each lexical element
+via the .htaccess file. This file may also provide the directive
+to disableor re-enable) any processing by this module. 
+
+WWW: http://www.dimensional.com/~bgiles/mod_color/

@@ -113,6 +113,7 @@
     SUBDIR += mod_auth_pam
     SUBDIR += mod_auth_pgsql
     SUBDIR += mod_backhand
+    SUBDIR += mod_color
     SUBDIR += mod_csacek
     SUBDIR += mod_dav
     SUBDIR += mod_dtcl
