@@ -1,5 +1,6 @@
 bin/gconf-config
 bin/gconf-config-1
+bin/gconf-sanity-check-1
 bin/gconfd-1
 bin/gconftool
 bin/gconftool-1
@@ -55,7 +56,7 @@ share/locale/sl/LC_MESSAGES/GConf.mo
 share/locale/sv/LC_MESSAGES/GConf.mo
 share/locale/tr/LC_MESSAGES/GConf.mo
 share/locale/uk/LC_MESSAGES/GConf.mo
-share/locale/zh_CN.GB2312/LC_MESSAGES/GConf.mo
+share/locale/zh_CN/LC_MESSAGES/GConf.mo
 @exec mkdir -p %D/etc/gconf/gconf.xml.defaults/apps
 @exec mkdir -p %D/etc/gconf/gconf.xml.defaults/schemas/apps
 @unexec rm -f %D/etc/gconf/gconf.xml.defaults/%%gconf.xml 2>/dev/null || true
