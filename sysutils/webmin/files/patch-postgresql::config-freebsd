@@ -1,6 +1,9 @@
---- postgresql/config-freebsd.orig	Sat Mar 16 07:14:55 2002
-+++ postgresql/config-freebsd	Sat Mar 16 07:15:01 2002
-@@ -1,11 +1,11 @@
+
+$FreeBSD$
+
+--- postgresql/config-freebsd.orig
++++ postgresql/config-freebsd
+@@ -1,16 +1,16 @@
  basedb=template1
  pass=
 -hba_conf=/usr/local/pgsql/data/pg_hba.conf
@@ -18,3 +21,10 @@
 -plib=/usr/local/lib
 +plib=%%PREFIX%%/lib
  nodbi=0
+-dump_cmd=/usr/local/bin/pg_dump
+-rstr_cmd=/usr/local/bin/pg_restore
++dump_cmd=%%PREFIX%%/bin/pg_dump
++rstr_cmd=%%PREFIX%%/bin/pg_restore
+ sameunix=0
+ access=*: *
+ blob_mode=0
