@@ -5,7 +5,7 @@
  sawfishdir='${datadir}/sawfish'
  lispdir='${sawfishdir}/${version}/lisp'
 -localedir='${sawfishdir}/${version}/locale'
-+localedir='${datadir}/locale'
++localedir='${prefix}/share/locale'
  sawfishexecdir='${libexecdir}/sawfish/${version}/${host_type}'
  
  dnl Checks for programs.

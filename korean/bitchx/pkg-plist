@@ -1,3 +1,9 @@
+%%NOGNOME:%%bin/BitchX
+%%NOGNOME:%%bin/BitchX-1.0c16+H1
+%%GNOME:%%bin/gtkBitchX
+%%GNOME:%%bin/gtkBitchX-1.0c16+H1
+bin/bx
+%%NOGNOME:%%bin/scr-bx
 share/bx/BitchX.quit
 share/bx/BitchX.ircnames
 share/bx/BitchX.reasons
@@ -907,6 +913,7 @@ share/bx/plugins/encrypt.so
 share/bx/plugins/fserv.so
 share/bx/plugins/hint.so
 share/bx/plugins/nap.so
+%%GNOME:%%share/bx/plugins/nicklist.so
 share/bx/plugins/pkga.so
 share/bx/plugins/possum.so
 share/bx/plugins/qmail.so
@@ -953,19 +960,25 @@ share/bx/translation/SWEDISH_NAMES_COM
 share/bx/translation/SWISS
 share/bx/translation/UNITED_KINGDOM
 share/bx/translation/UNITED_KINGDOM_COM
+%%NOGNOME:%%share/bx/wserv
 share/doc/bitchx/bxfaq.html
+@dirrm share/doc/bitchx
+@dirrm share/bx/translation
+@dirrm share/bx/script
+@dirrm share/bx/plugins
+@dirrm share/bx/help/8_Scripts
+@dirrm share/bx/help/7_Docs
+@dirrm share/bx/help/6_Functions
+@dirrm share/bx/help/5_Programming/on
+@dirrm share/bx/help/5_Programming
+@dirrm share/bx/help/4_Misc/window
+@dirrm share/bx/help/4_Misc/set
+@dirrm share/bx/help/4_Misc/bind
+@dirrm share/bx/help/4_Misc
+@dirrm share/bx/help/3_Operators
+@dirrm share/bx/help/2_Queries
 @dirrm share/bx/help/1_General/dcc
 @dirrm share/bx/help/1_General/ctcp
 @dirrm share/bx/help/1_General
-@dirrm share/bx/help/2_Queries
-@dirrm share/bx/help/3_Operators
-@dirrm share/bx/help/4_Misc/bind
-@dirrm share/bx/help/4_Misc/set
-@dirrm share/bx/help/4_Misc/window
-@dirrm share/bx/help/4_Misc
-@dirrm share/bx/help/5_Programming/on
-@dirrm share/bx/help/5_Programming
-@dirrm share/bx/help/6_Functions
-@dirrm share/bx/help/7_Docs
-@dirrm share/bx/help/8_Scripts
-@dirrm share/doc/bitchx
+@dirrm share/bx/help
+@dirrm share/bx

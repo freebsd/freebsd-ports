@@ -12,25 +12,23 @@ MASTER_SITES=	http://chaos2.org/xscorch/
 
 MAINTAINER=	will@FreeBSD.org
 
-LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12 \
-		mikmod.2:${PORTSDIR}/audio/libmikmod
-.if defined(WITH_GNOME)
-LIB_DEPENDS+=	gnome.4:${PORTSDIR}/x11/gnomelibs
-.endif
+LIB_DEPENDS=	mikmod.2:${PORTSDIR}/audio/libmikmod
 
-GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
 USE_X_PREFIX=	yes
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=--with-gtk
-.if defined(WITH_GNOME)
-CONFIGURE_ARGS+=--with-gnome
-.else
-CONFIGURE_ARGS+=--without-gnome
-.endif
-CONFIGURE_ENV+=	GTK_CONFIG="${GTK_CONFIG}"
 USE_GMAKE=	yes
-CFLAGS+=	-g
+USE_GTK=	yes
+WANT_GNOME=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--with-gtk
 
 MAN6=		xscorch.6
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if defined(HAVE_GNOME)
+USE_GNOME=	yes
+.else
+CONFIGURE_ARGS+=	--without-gnome
+.endif
+
+.include <bsd.port.post.mk>

@@ -1,19 +1,11 @@
-*** Visualization/Makefile.in.org	Wed Jun 14 13:21:50 2000
---- Visualization/Makefile.in	Wed Jun 14 13:22:09 2000
-***************
-*** 148,154 ****
-  sidplay_library = @sidplay_library@
-  xmmsdir = @xmmsdir@
-  
-! SUBDIRS = blur_scope sanalyzer opengl_spectrum
-  mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
-  CONFIG_HEADER = ../config.h
-  CONFIG_CLEAN_FILES = 
---- 148,154 ----
-  sidplay_library = @sidplay_library@
-  xmmsdir = @xmmsdir@
-  
-! SUBDIRS = blur_scope sanalyzer
-  mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
-  CONFIG_HEADER = ../config.h
-  CONFIG_CLEAN_FILES = 
+--- Visualization/Makefile.in.orig	Mon Jan 31 10:44:44 2000
++++ Visualization/Makefile.in	Sun Feb 27 01:37:39 2000
+@@ -125,7 +125,7 @@
+ sidplay_library = @sidplay_library@
+ xmmsdir = @xmmsdir@
+ 
+-SUBDIRS = blur_scope sanalyzer opengl_spectrum
++SUBDIRS = blur_scope sanalyzer
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = ../config.h
+ CONFIG_CLEAN_FILES = 

@@ -14,4 +14,4 @@
  
  install:	gaddr
 -		cp gaddr /usr/X11R6/bin/gaddr
-+		@/usr/bin/install -c -o 0 -g 0 -s -m 755 gaddr ${PREFIX}/bin
++		${BSD_INSTALL_PROGRAM} gaddr ${PREFIX}/bin

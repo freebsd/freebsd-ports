@@ -19,36 +19,31 @@ PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	hollywar@mail.holywar.net
 
-.if defined(WITH_GNOME)
-LIB_DEPENDS=	gnome.4:${PORTSDIR}/x11/gnomelibs
-.endif
-
-#PATCH_DIST_ARGS=       -d ${WRKDIR}/ --forward --quiet -E ${PATCH_DIST_STRIP}
-GLIB_CONFIG?=	${LOCALBASE}/bin/glib12-config
-GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
 WRKSRC=         ${WRKDIR}/BitchX
+
 USE_AUTOCONF=	yes
 USE_GMAKE=	yes
-.if defined(WITH_GNOME)
-CONFIGURE_ARGS+=	--with-plugins --with-gtk --enable-sound
-.else
-CONFIGURE_ARGS+=	--with-plugins --without-gtk
-.endif
-CONFIGURE_ARGS+=	--exec-prefix="${PREFIX}/share"	\
-			--bindir="${PREFIX}/bin" \
-			--datadir="${PREFIX}/share" \
-			--libdir="${PREFIX}/share"
-
+WANT_ESOUND=	yes
+WANT_GNOME=	yes
+CONFIGURE_ARGS=	--with-plugins \
+		--exec-prefix="${PREFIX}/share"	\
+		--bindir="${PREFIX}/bin" \
+		--datadir="${PREFIX}/share" \
+		--libdir="${PREFIX}/share"
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		GLIB_CONFIG="${GLIB_CONFIG}" \
-		GTK_CONFIG="${GTK_CONFIG}"
+		LIBS="-L{LOCALBASE}/lib"
 
-MAKE_ENV+=	INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
-		INSTALL_DATA="${INSTALL_DATA}"
+.include <bsd.port.pre.mk>
 
-.if !defined(WITH_GNOME)
-pre-extract:
-	@${ECHO} "You can add hooks for GNOME by defining WITH_GNOME"
+.if defined(HAVE_GNOME)
+USE_GNOME=	yes
+CONFIGURE_ARGS+=--with-gtk
+.else
+CONFIGURE_ARGS+=--without-gtk
+.endif
+.if defined(HAVE_ESOUND)
+USE_ESOUND=	yes
+CONFIGURE_ARGS+=--enable-sound
 .endif
 
 post-install:
@@ -61,21 +56,5 @@ post-install:
 	${RMDIR} ${PREFIX}/share/bx/help/4_Misc/fset
 	${RMDIR} ${PREFIX}/share/bx/help/4_Misc/wset
 .endif
-.if defined(WITH_GNOME)
-	@${ECHO} bin/gtkBitchX >> ${TMPPLIST}
-	@${ECHO} bin/gtkBitchX-1.0c16+H1 >> ${TMPPLIST}
-	@${ECHO} share/bx/plugins/nicklist.so >> ${TMPPLIST}
-.else
-	@${ECHO} bin/bx >> ${TMPPLIST}
-	@${ECHO} bin/BitchX >> ${TMPPLIST}
-	@${ECHO} bin/BitchX-1.0c16+H1 >> ${TMPPLIST}
-	@${ECHO} bin/scr-bx >> ${TMPPLIST}
-	@${ECHO} share/bx/wserv >> ${TMPPLIST}
-.endif
-	@${ECHO} @dirrm share/bx/help >> ${TMPPLIST}
-	@${ECHO} @dirrm share/bx/plugins >> ${TMPPLIST}
-	@${ECHO} @dirrm share/bx/script >> ${TMPPLIST}
-	@${ECHO} @dirrm share/bx/translation >> ${TMPPLIST}
-	@${ECHO} @dirrm share/bx >> ${TMPPLIST}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

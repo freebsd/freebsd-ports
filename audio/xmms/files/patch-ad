@@ -5,7 +5,7 @@
  fi
  
 -
-+if [ x"${HAVE_ESD_OVERRIDE}" != x"" ]; then
++if [ x"${HAVE_ESOUND}" != x"yes" ]; then
 +  have_esd=no
 +fi
  
@@ -16,21 +16,12 @@
    rm -f conf.mikmodtest
  
 -
-+if [ x"${HAVE_MIKMOD_OVERRIDE}" != x"" ]; then
++if [ x"${HAVE_MIKMOD}" != x"yes" ]; then
 +  have_mikmod=no
 +fi
  
  if test "x$have_mikmod" = xyes; then
    HAVE_MIKMOD_TRUE=
-@@ -5549,7 +5553,7 @@
-   cat conftest.$ac_ext >&5
-   rm -rf conftest*
-   CATOBJEXT=.mo
--		   DATADIRNAME=lib
-+		   DATADIRNAME=share
- fi
- rm -f conftest*
- 		INSTOBJEXT=.mo
 @@ -7171,14 +7175,14 @@
  
  if test -n "$GCC"
@@ -48,3 +39,14 @@
  		ARCH_DEFINES="-DI386_ASSEM"
  		arch_type=ix86
  	;;
+@@ -7885,10 +7889,6 @@
+       *) # Relative path.
+         ac_sub_cache_file="$ac_dots$cache_file" ;;
+       esac
+-  case "$ac_given_INSTALL" in
+-        [/$]*) INSTALL="$ac_given_INSTALL" ;;
+-        *) INSTALL="$ac_dots$ac_given_INSTALL" ;;
+-        esac
+ 
+       echo "running ${CONFIG_SHELL-/bin/sh} $ac_sub_configure $ac_sub_configure_args --cache-file=$ac_sub_cache_file --srcdir=$ac_sub_srcdir"
+       # The eval makes quoting arguments work.

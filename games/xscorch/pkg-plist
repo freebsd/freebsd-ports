@@ -1,11 +1,11 @@
 bin/xscorch
-share/xscorch/sounds/stamp
-share/xscorch/images/xscorch-icon.xpm
-share/xscorch/images/xscorch-logo.xpm
-share/xscorch/copying.txt
-share/xscorch/xscorch.txt
-share/xscorch/tankprofiles
-share/xscorch/tankprofiles~
-@dirrm share/xscorch/sounds
-@dirrm share/xscorch/images
-@dirrm share/xscorch
+%%DATADIR%%/xscorch/sounds/stamp
+%%DATADIR%%/xscorch/images/xscorch-icon.xpm
+%%DATADIR%%/xscorch/images/xscorch-logo.xpm
+%%DATADIR%%/xscorch/copying.txt
+%%DATADIR%%/xscorch/xscorch.txt
+%%DATADIR%%/xscorch/tankprofiles
+%%DATADIR%%/xscorch/tankprofiles~
+@dirrm %%DATADIR%%/xscorch/sounds
+@dirrm %%DATADIR%%/xscorch/images
+@dirrm %%DATADIR%%/xscorch

@@ -1,0 +1,10 @@
+--- scripts/wget.pl.orig	Thu Mar 16 09:11:14 2000
++++ scripts/wget.pl	Fri Apr  7 22:06:14 2000
+@@ -1,6 +1,6 @@
+ #! /usr/bin/perl
+ quit ("Wget not installed") if $wwwget eq "";
+ 
+-$rc = system ("$wwwget --quiet -c --tries=0 -O$tmpfile '$url'");
++$rc = system ("$wwwget --q -o $tmpfile '$url'");
+ 
+ quit ("HTTP response error.") if $rc;

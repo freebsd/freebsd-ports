@@ -1,0 +1,53 @@
+--- src/Makefile.in.orig	Tue Oct  3 16:00:11 2000
++++ src/Makefile.in	Tue Oct  3 16:05:56 2000
+@@ -123,12 +123,12 @@
+ l = @l@
+ perlpath = @perlpath@
+ sedpath = @sedpath@
+-@GNOMEAPPLET_TRUE@bin_PROGRAMS = gaim_applet
++@GNOMEAPPLET_TRUE@bin_PROGRAMS = gaim_applet gaim
+ @GNOMEAPPLET_FALSE@bin_PROGRAMS = gaim
+-@GNOMEAPPLET_TRUE@gaim_applet_SOURCES = about.c 			aim.c 			away.c 			browser.c 			buddy.c 			buddy_chat.c 			conversation.c 			dialogs.c 			gaimrc.c 			gnome_applet_mgr.c 			gtkhtml.c 			gtkticker.c 			html.c 			idle.c 			network.c 			oscar.c 			perl.c 			plugins.c 			prefs.c 			proxy.c 			rvous.c 			server.c 			sound.c 			ticker.c 			toc.c 			util.c
+-@GNOMEAPPLET_TRUE@gaim_applet_DEPENDENCIES = ../libfaim/libfaim.a
+-@GNOMEAPPLET_FALSE@gaim_SOURCES = about.c 		aim.c 		away.c 		browser.c 		buddy.c 		buddy_chat.c 		conversation.c 		dialogs.c 		gaimrc.c 		gnome_applet_mgr.c 		gtkhtml.c 		gtkticker.c 		html.c 		idle.c 		network.c 		oscar.c 		perl.c 		plugins.c 		prefs.c 		proxy.c 		rvous.c 		server.c 		sound.c 		ticker.c 		toc.c 		util.c
+-@GNOMEAPPLET_FALSE@gaim_DEPENDENCIES = ../libfaim/libfaim.a
++gaim_applet_SOURCES = about.c 			aim.c 			away.c 			browser.c 			buddy.c 			buddy_chat.c 			conversation.c 			dialogs.c 			gaimrc.c 			gnome_applet_mgr.c 			gtkhtml.c 			gtkticker.c 			html.c 			idle.c 			network.c 			oscar.c 			perl.c 			plugins.c 			prefs.c 			proxy.c 			rvous.c 			server.c 			sound.c 			ticker.c 			toc.c 			util.c
++gaim_applet_DEPENDENCIES = ../libfaim/libfaim.a
++gaim_SOURCES = about.c 		aim.c 		away.c 		browser.c 		buddy.c 		buddy_chat.c 		conversation.c 		dialogs.c 		gaimrc.c 		gnome_applet_mgr.c 		gtkhtml.c 		gtkticker.c 		html.c 		idle.c 		network.c 		oscar.c 		perl.c 		plugins.c 		prefs.c 		proxy.c 		rvous.c 		server.c 		sound.c 		ticker.c 		toc.c 		util.c
++gaim_DEPENDENCIES = ../libfaim/libfaim.a
+ 
+ CFLAGS = @CFLAGS@ -DLOCALEDIR=\"$(prefix)/share/locale\"
+ 
+@@ -142,20 +142,20 @@
+ DEFS = @DEFS@ -I. -I$(srcdir) -I..
+ CPPFLAGS = @CPPFLAGS@
+ LDFLAGS = @LDFLAGS@
+-@GNOMEAPPLET_TRUE@gaim_applet_OBJECTS =  about.o aim.o away.o browser.o \
+-@GNOMEAPPLET_TRUE@buddy.o buddy_chat.o conversation.o dialogs.o \
+-@GNOMEAPPLET_TRUE@gaimrc.o gnome_applet_mgr.o gtkhtml.o gtkticker.o \
+-@GNOMEAPPLET_TRUE@html.o idle.o network.o oscar.o perl.o plugins.o \
+-@GNOMEAPPLET_TRUE@prefs.o proxy.o rvous.o server.o sound.o ticker.o \
+-@GNOMEAPPLET_TRUE@toc.o util.o
++gaim_applet_OBJECTS =  about.o aim.o away.o browser.o \
++buddy.o buddy_chat.o conversation.o dialogs.o \
++gaimrc.o gnome_applet_mgr.o gtkhtml.o gtkticker.o \
++html.o idle.o network.o oscar.o perl.o plugins.o \
++prefs.o proxy.o rvous.o server.o sound.o ticker.o \
++toc.o util.o
+ gaim_applet_LDADD = $(LDADD)
+ gaim_applet_LDFLAGS = 
+-@GNOMEAPPLET_FALSE@gaim_OBJECTS =  about.o aim.o away.o browser.o \
+-@GNOMEAPPLET_FALSE@buddy.o buddy_chat.o conversation.o dialogs.o \
+-@GNOMEAPPLET_FALSE@gaimrc.o gnome_applet_mgr.o gtkhtml.o gtkticker.o \
+-@GNOMEAPPLET_FALSE@html.o idle.o network.o oscar.o perl.o plugins.o \
+-@GNOMEAPPLET_FALSE@prefs.o proxy.o rvous.o server.o sound.o ticker.o \
+-@GNOMEAPPLET_FALSE@toc.o util.o
++gaim_OBJECTS =  about.o aim.o away.o browser.o \
++buddy.o buddy_chat.o conversation.o dialogs.o \
++gaimrc.o gnome_applet_mgr.o gtkhtml.o gtkticker.o \
++html.o idle.o network.o oscar.o perl.o plugins.o \
++prefs.o proxy.o rvous.o server.o sound.o ticker.o \
++toc.o util.o
+ gaim_LDADD = $(LDADD)
+ gaim_LDFLAGS = 
+ COMPILE = $(CC) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)

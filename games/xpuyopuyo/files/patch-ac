@@ -1,0 +1,11 @@
+--- configure.in.orig	Mon Jun 26 00:35:33 2000
++++ configure.in	Sun Oct  1 13:56:50 2000
+@@ -145,7 +145,7 @@
+    GNOME_PIXMAPS=""
+ else
+    GNOME=1
+-   GNOME_DESKTOP=`$GNOME_CONFIG --datadir`/gnome/apps/Games/
++   GNOME_DESKTOP=`$GNOME_CONFIG --datadir`/apps/Games/
+    GNOME_PIXMAPS=`$GNOME_CONFIG --datadir`/pixmaps/
+    echo "GNOME features enabled"
+    echo "GNOME desktop directory:  $GNOME_DESKTOP"
