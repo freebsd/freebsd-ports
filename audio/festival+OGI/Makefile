@@ -45,6 +45,12 @@ RESTRICTED=	no-commercial-use
 PLIST=		${WRKDIR}/pkg-plist
 .endif
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not build"
+.endif
+
 WRKSRC=		${WRKDIR}
 
 USE_GMAKE=	yes
@@ -145,4 +151,4 @@ do-install:
 	${INSTALL_MAN} ${FESTIVAL}/doc/festival.1 ${PREFIX}/man/man1/festival.1
 	${INSTALL_MAN} ${FESTIVAL}/doc/festival_client.1 ${PREFIX}/man/man1/festival_client.1
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

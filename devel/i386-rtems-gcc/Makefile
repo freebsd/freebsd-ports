@@ -23,6 +23,12 @@ PATCH_SITES=	ftp://ftp.oarcorp.com/pub/rtems/snapshots/c_tools/source/ \
 MAINTAINER=	jeh@FreeBSD.org
 COMMENT=	FSF C/C++-gcc-3.2.1 base-port for RTEMS development
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not build"
+.endif
+
 LCLTARGET?=	i386-rtems
 
 GCCNAME=	gcc-3.2.1
@@ -76,4 +82,4 @@ post-install:
 	@install-info ${PREFIX}/info/cpp.info ${PREFIX}/info/dir
 	@install-info ${PREFIX}/info/gcc.info ${PREFIX}/info/dir
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

@@ -18,6 +18,12 @@ COMMENT=	Another Chinese GB2312 and Big5 X11 input server
 BUILD_DEPENDS=	mysql:${PORTSDIR}/databases/mysql323-client
 RUN_DEPENDS=	mysql:${PORTSDIR}/databases/mysql323-client
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not build"
+.endif
+
 USE_XLIB=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
@@ -34,4 +40,4 @@ post-install:
 	@echo "					-phj@cn.freebsd.org"
 	@echo
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

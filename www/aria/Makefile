@@ -16,6 +16,12 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/.t/test/}
 MAINTAINER=	nakai@FreeBSD.org
 COMMENT=	Yet another download tool
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not build"
+.endif
+
 USE_BZIP2=	yes
 USE_GNOME=	gtk12
 USE_OPENSSL=	yes
@@ -39,4 +45,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/README.euc ${PREFIX}/share/doc/${PORTNAME}/
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
