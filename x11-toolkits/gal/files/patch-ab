@@ -1,0 +1,7 @@
+--- Makefile.in.orig	Thu Oct  5 18:09:06 2000
++++ Makefile.in	Thu Oct  5 21:24:04 2000
+@@ -138,3 +138,3 @@
+ 
+-confexecdir = $(libdir)
++confexecdir = $(sysconfdir)
+ confexec_DATA = galConf.sh 

@@ -1,0 +1,80 @@
+etc/galConf.sh
+include/gal/e-paned/e-hpaned.h
+include/gal/e-paned/e-paned.h
+include/gal/e-paned/e-vpaned.h
+include/gal/e-table/e-cell-checkbox.h
+include/gal/e-table/e-cell-text.h
+include/gal/e-table/e-cell-toggle.h
+include/gal/e-table/e-cell-tree.h
+include/gal/e-table/e-cell.h
+include/gal/e-table/e-table-click-to-add.h
+include/gal/e-table/e-table-col-dnd.h
+include/gal/e-table/e-table-col.h
+include/gal/e-table/e-table-config.h
+include/gal/e-table/e-table-defines.h
+include/gal/e-table/e-table-field-chooser-dialog.h
+include/gal/e-table/e-table-field-chooser-item.h
+include/gal/e-table/e-table-field-chooser.h
+include/gal/e-table/e-table-group-container.h
+include/gal/e-table/e-table-group-leaf.h
+include/gal/e-table/e-table-group.h
+include/gal/e-table/e-table-header-item.h
+include/gal/e-table/e-table-header.h
+include/gal/e-table/e-table-item.h
+include/gal/e-table/e-table-model.h
+include/gal/e-table/e-table-one.h
+include/gal/e-table/e-table-scrolled.h
+include/gal/e-table/e-table-selection-model.h
+include/gal/e-table/e-table-simple.h
+include/gal/e-table/e-table-sort-info.h
+include/gal/e-table/e-table-sorted-variable.h
+include/gal/e-table/e-table-sorted.h
+include/gal/e-table/e-table-sorter.h
+include/gal/e-table/e-table-subset-variable.h
+include/gal/e-table/e-table-subset.h
+include/gal/e-table/e-table-text-model.h
+include/gal/e-table/e-table-tooltip.h
+include/gal/e-table/e-table.h
+include/gal/e-table/e-tree-model.h
+include/gal/e-table/e-tree-simple.h
+include/gal/e-text/e-entry.h
+include/gal/e-text/e-text-event-processor-emacs-like.h
+include/gal/e-text/e-text-event-processor-types.h
+include/gal/e-text/e-text-event-processor.h
+include/gal/e-text/e-text-model.h
+include/gal/e-text/e-text.h
+include/gal/util/e-util.h
+include/gal/util/e-xml-utils.h
+include/gal/widgets/color-group.h
+include/gal/widgets/color-palette.h
+include/gal/widgets/e-canvas-utils.h
+include/gal/widgets/e-canvas-vbox.h
+include/gal/widgets/e-canvas.h
+include/gal/widgets/e-colors.h
+include/gal/widgets/e-cursors.h
+include/gal/widgets/e-font.h
+include/gal/widgets/e-gui-utils.h
+include/gal/widgets/e-popup-menu.h
+include/gal/widgets/e-printable.h
+include/gal/widgets/e-reflow-sorted.h
+include/gal/widgets/e-reflow.h
+include/gal/widgets/e-scroll-frame.h
+include/gal/widgets/e-unicode.h
+include/gal/widgets/gtk-combo-box.h
+include/gal/widgets/gtk-combo-stack.h
+include/gal/widgets/gtk-combo-text.h
+include/gal/widgets/widget-color-combo.h
+include/gal/widgets/widget-pixmap-combo.h
+lib/libgal.a
+lib/libgal.so
+lib/libgal.so.0
+share/gnome/etable/glade/e-table-config.glade
+share/gnome/etable/glade/e-table-field-chooser.glade
+share/gnome/etable/glade/e-table-group.glade
+@dirrm share/gnome/etable/glade
+@dirrm share/gnome/etable
+@dirrm include/gal/widgets
+@dirrm include/gal/util
+@dirrm include/gal/e-text
+@dirrm include/gal/e-table
+@dirrm include/gal/e-paned
