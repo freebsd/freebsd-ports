@@ -1,5 +1,6 @@
 bin/metacity
 bin/metacity-message
+bin/metacity-properties
 bin/metacity-theme-viewer
 bin/metacity-window-demo
 etc/gconf/gconf.xml.defaults/apps/metacity/%gconf.xml
@@ -12,6 +13,8 @@ etc/gconf/gconf.xml.defaults/schemas/apps/metacity/global_keybindings/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/metacity/window_keybindings/%gconf.xml
 etc/gconf/schemas/metacity.schemas
 libexec/metacity-dialog
+share/gnome/control-center-2.0/capplets/metacity-properties.desktop
+share/gnome/metacity/glade/metacity-properties.glade
 share/gnome/metacity/icons/metacity-window-demo.png
 share/gnome/metacity/themes/Atlanta/metacity-theme-1.xml
 share/gnome/metacity/themes/Bright/metacity-theme-1.xml
@@ -79,10 +82,15 @@ share/gnome/metacity/themes/Gorilla/inactive-maximize-button.png
 share/gnome/metacity/themes/Gorilla/inactive-menu-button.png
 share/gnome/metacity/themes/Gorilla/inactive-minimize-button.png
 share/gnome/metacity/themes/Gorilla/metacity-theme-1.xml
+share/gnome/pixmaps/metacity-properties.png
 share/gnome/wm-properties/metacity.desktop
+share/locale/az/LC_MESSAGES/metacity.mo
+share/locale/ca/LC_MESSAGES/metacity.mo
 share/locale/da/LC_MESSAGES/metacity.mo
+share/locale/de/LC_MESSAGES/metacity.mo
 share/locale/es/LC_MESSAGES/metacity.mo
 share/locale/gl/LC_MESSAGES/metacity.mo
+share/locale/it/LC_MESSAGES/metacity.mo
 share/locale/ja/LC_MESSAGES/metacity.mo
 share/locale/ko/LC_MESSAGES/metacity.mo
 share/locale/lv/LC_MESSAGES/metacity.mo
@@ -95,6 +103,7 @@ share/locale/sk/LC_MESSAGES/metacity.mo
 share/locale/sv/LC_MESSAGES/metacity.mo
 share/locale/tr/LC_MESSAGES/metacity.mo
 share/locale/uk/LC_MESSAGES/metacity.mo
+share/locale/zh_TW/LC_MESSAGES/metacity.mo
 @dirrm share/gnome/wm-properties
 @dirrm share/gnome/metacity/themes/Gorilla
 @dirrm share/gnome/metacity/themes/Esco
@@ -103,7 +112,10 @@ share/locale/uk/LC_MESSAGES/metacity.mo
 @dirrm share/gnome/metacity/themes/Atlanta
 @dirrm share/gnome/metacity/themes
 @dirrm share/gnome/metacity/icons
+@dirrm share/gnome/metacity/glade
 @dirrm share/gnome/metacity
+@dirrm share/gnome/control-center-2.0/capplets
+@dirrm share/gnome/control-center-2.0
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/metacity/window_keybindings
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/metacity/global_keybindings
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/metacity/general
