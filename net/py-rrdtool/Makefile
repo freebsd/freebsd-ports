@@ -19,9 +19,18 @@ COMMENT=	Python C extension module to access RRDtool files
 LIB_DEPENDS=	rrd:${PORTSDIR}/net/rrdtool
 
 USE_PYTHON=	yes
+USE_REINPLACE=	yes
 WRKSRC=		${WRKDIR}/PyRRDtool/src
+
+.include <bsd.port.pre.mk>
+
+post-patch:
+.if ${PYTHON_REL} >= 230
+	@${REINPLACE_CMD} -e 's,@DEFS@,,g' ${WRKSRC}/Makefile.pre.in
+.endif
+	@${REINPLACE_CMD} -e 's,/usr/local,${LOCALBASE},g' ${WRKSRC}/Setup.in
 
 do-configure:
 	@(cd ${WRKSRC} ; ${MAKE} -f Makefile.pre.in boot)
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
