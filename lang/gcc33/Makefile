@@ -6,7 +6,7 @@
 # $FreeBSD$
 #
 
-SNAPDATE=2003-11-03
+SNAPDATE=2003-12-01
 
 PORTNAME=	gcc
 PORTVERSION=	3.3.3
@@ -162,7 +162,7 @@ post-install:
 	-${MV} -f ${PREFIX}/lib/libgcj.* ${TARGLIB}
 	${RM} -f ${PREFIX}/lib/libiberty.a
 	${RM} -f ${TARGLIB}/*.la
-.for info in cpp cppinternals g77 gcc gccint gcj fastjar
+.for info in ${INFO}
 	install-info ${PREFIX}/info/${info}.info ${PREFIX}/info/dir
 .endfor
 # I am sick and tired of the anonyance that man pages can only be generated if
