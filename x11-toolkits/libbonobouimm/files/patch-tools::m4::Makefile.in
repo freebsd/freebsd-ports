@@ -1,13 +1,13 @@
---- tools/m4/Makefile.in.orig	Fri May 23 11:34:03 2003
-+++ tools/m4/Makefile.in	Fri May 23 11:35:44 2003
-@@ -102,8 +102,8 @@
- 
- # Install the .m4, files:
- 
--tools_m4_includedir = $(libdir)/libgnomemm-2.0/proc/m4
--tools_m4_include_HEADERS = convert_libbonoboui.m4
+--- tools/m4/Makefile.in.orig	Mon Aug 25 20:48:51 2003
++++ tools/m4/Makefile.in	Mon Aug 25 20:49:56 2003
+@@ -170,8 +170,8 @@
+ # than putting them in separate directories and expecting packages
+ # to provide correct m4 include arguments.
+ # We should probably do this properly some time. TODO.
+-tools_m4_includedir = $(libdir)/gtkmm-2.0/proc/m4
+-tools_m4_include_HEADERS = $(files_tools_m4_install)
 +tools_m4_includedir = $(libdir)/libbonobouimm-2.0/proc/m4
 +tools_m4_include_HEADERS = $(files_tools_m4)
+ subdir = tools/m4
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
  mkinstalldirs = $(SHELL) $(top_srcdir)/scripts/mkinstalldirs
- CONFIG_HEADER = ../../bonobomm/libbonobouimmconfig.h
- CONFIG_CLEAN_FILES = 
