@@ -12,6 +12,7 @@ lib/xcoral/edt.sc
 lib/xcoral/example.sc
 lib/xcoral/french.sc
 lib/xcoral/hack-filename.sc
+lib/xcoral/hanoi.sc
 lib/xcoral/head.sc
 lib/xcoral/html.sc
 lib/xcoral/java.sc
@@ -197,6 +198,25 @@ share/doc/xcoral/HTML/node143.html
 share/doc/xcoral/HTML/node144.html
 share/doc/xcoral/HTML/node145.html
 share/doc/xcoral/HTML/node146.html
+share/doc/xcoral/HTML/icons/blueball.gif
+share/doc/xcoral/HTML/icons/greenball.gif
+share/doc/xcoral/HTML/icons/orangeball.gif
+share/doc/xcoral/HTML/icons/pinkball.gif
+share/doc/xcoral/HTML/icons/purpleball.gif
+share/doc/xcoral/HTML/icons/redball.gif
+share/doc/xcoral/HTML/icons/whiteball.gif
+share/doc/xcoral/HTML/icons/yellowball.gif
+share/doc/xcoral/HTML/icons/contents_motif.gif
+share/doc/xcoral/HTML/icons/cross_ref_motif.gif
+share/doc/xcoral/HTML/icons/foot_motif.gif
+share/doc/xcoral/HTML/icons/index_motif.gif
+share/doc/xcoral/HTML/icons/next_motif.gif
+share/doc/xcoral/HTML/icons/next_motif_gr.gif
+share/doc/xcoral/HTML/icons/previous_motif.gif
+share/doc/xcoral/HTML/icons/previous_motif_gr.gif
+share/doc/xcoral/HTML/icons/up_motif.gif
+share/doc/xcoral/HTML/icons/up_motif_gr.gif
+share/doc/xcoral/HTML/icons/mybg.jpg
 share/doc/xcoral/HTML/node147.html
 share/doc/xcoral/HTML/node148.html
 share/doc/xcoral/HTML/node149.html
@@ -456,8 +476,7 @@ share/doc/xcoral/HTML/xcoral.html
 share/doc/xcoral/xcoral-card.ps
 share/doc/xcoral/xcoral-session.gif
 share/doc/xcoral/README
-share/doc/xcoral/xcoral-3.14.ps
-@exec mkdir -p %D/share/doc/xcoral/HTML/icons
+share/doc/xcoral/xcoral-3.2.ps
 @dirrm share/doc/xcoral/HTML/icons
 @dirrm share/doc/xcoral/HTML
 @dirrm share/doc/xcoral
