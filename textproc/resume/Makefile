@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	resume
-PORTVERSION=	1.4.2
+PORTVERSION=	1.5.0
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	xmlresume
@@ -16,20 +16,25 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	fuyuki@hadaly.org
 
 NO_BUILD=	yes
+USE_REINPLACE=	yes
 
-XMLDIR=		${PREFIX}/share/xml/${PORTNAME}
+JAVALIBDIR=	${PREFIX}/share/java/classes
+
+post-patch:
+	${REINPLACE_CMD} -e 's|\.\./\.\./css|css|' ${WRKSRC}/xsl/params.xsl
+	${FIND} ${WRKSRC} -name '*.bak' -delete
 
 do-install:
 	${MKDIR} ${PREFIX}/share/xml/${PORTNAME}
 	${CP} -R ${WRKSRC}/dtd/* ${PREFIX}/share/xml/${PORTNAME}
 	${MKDIR} ${PREFIX}/share/xsl/${PORTNAME}
 	${CP} -R ${WRKSRC}/xsl/* ${PREFIX}/share/xsl/${PORTNAME}
+	${MKDIR} ${JAVALIBDIR}
+	${INSTALL_DATA} ${WRKSRC}/java/*.jar ${JAVALIBDIR}
 
 post-install:
 	${MKDIR} ${EXAMPLESDIR}
-.for i in css examples/*
-	${CP} -R ${WRKSRC}/${i} ${EXAMPLESDIR}
-.endfor
+	${CP} -R ${WRKSRC}/examples/* ${EXAMPLESDIR}
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${CP} -R ${WRKSRC}/doc/* ${DOCSDIR}

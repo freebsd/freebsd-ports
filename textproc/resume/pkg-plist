@@ -5,11 +5,20 @@ share/xml/resume/resume.dtd
 @dirrm share/xml/resume
 share/xsl/resume/country/br.xsl
 share/xsl/resume/country/de.xsl
+share/xsl/resume/country/es.xsl
 share/xsl/resume/country/fr.xsl
 share/xsl/resume/country/it.xsl
 share/xsl/resume/country/nl.xsl
 share/xsl/resume/country/uk.xsl
 share/xsl/resume/country/us.xsl
+share/xsl/resume/format/css/NOTICE
+share/xsl/resume/format/css/blueorange.css
+share/xsl/resume/format/css/compact.css
+share/xsl/resume/format/css/cssClasses.sh
+share/xsl/resume/format/css/cssClasses.txt
+share/xsl/resume/format/css/gray.css
+share/xsl/resume/format/css/original.css
+share/xsl/resume/format/css/professional.css
 share/xsl/resume/format/fo.xsl
 share/xsl/resume/format/html.xsl
 share/xsl/resume/format/text.xsl
@@ -53,10 +62,12 @@ share/xsl/resume/params.xsl
 @dirrm share/xsl/resume/output
 @dirrm share/xsl/resume/misc
 @dirrm share/xsl/resume/lib
+@dirrm share/xsl/resume/format/css
 @dirrm share/xsl/resume/format
 @dirrm share/xsl/resume/country
 @dirrm share/xsl/resume
 @unexec rmdir %D/share/xsl 2>/dev/null || true
+share/java/classes/xmlresume-filter.jar
 share/examples/resume/Makefile
 share/examples/resume/addressing/Makefile
 share/examples/resume/addressing/README
@@ -69,16 +80,8 @@ share/examples/resume/addressing/nz.xml
 share/examples/resume/addressing/uk.xml
 share/examples/resume/addressing/untagged.xml
 share/examples/resume/addressing/usa.xml
-share/examples/resume/css/compact.css
-share/examples/resume/css/resume1.css
-share/examples/resume/css/resume2.css
-share/examples/resume/css/resume3.css
-share/examples/resume/css/resume4.css
-share/examples/resume/css/resume_contemporary.css
-share/examples/resume/css/resume_professional.css
 share/examples/resume/example1.xml
 share/examples/resume/example2.xml
-@dirrm share/examples/resume/css
 @dirrm share/examples/resume/addressing
 @dirrm share/examples/resume
 %%PORTDOCS%%share/doc/resume/authors/index.html
@@ -201,14 +204,15 @@ share/examples/resume/example2.xml
 %%PORTDOCS%%share/doc/resume/manual/html/element.year.html
 %%PORTDOCS%%share/doc/resume/manual/html/element.zip.html
 %%PORTDOCS%%share/doc/resume/manual/html/elementref.html
-%%PORTDOCS%%share/doc/resume/manual/html/getting-started.convert.about.html
-%%PORTDOCS%%share/doc/resume/manual/html/getting-started.convert.html
-%%PORTDOCS%%share/doc/resume/manual/html/getting-started.convert.install.html
-%%PORTDOCS%%share/doc/resume/manual/html/getting-started.convert.next-steps.html
-%%PORTDOCS%%share/doc/resume/manual/html/getting-started.convert.software.html
-%%PORTDOCS%%share/doc/resume/manual/html/getting-started.convert.testing.html
-%%PORTDOCS%%share/doc/resume/manual/html/getting-started.create.html
+%%PORTDOCS%%share/doc/resume/manual/html/getting-started.explore.about.html
+%%PORTDOCS%%share/doc/resume/manual/html/getting-started.explore.create.html
+%%PORTDOCS%%share/doc/resume/manual/html/getting-started.explore.features.html
+%%PORTDOCS%%share/doc/resume/manual/html/getting-started.explore.html
+%%PORTDOCS%%share/doc/resume/manual/html/getting-started.explore.next-steps.html
 %%PORTDOCS%%share/doc/resume/manual/html/getting-started.html
+%%PORTDOCS%%share/doc/resume/manual/html/getting-started.setup.html
+%%PORTDOCS%%share/doc/resume/manual/html/getting-started.setup.install.html
+%%PORTDOCS%%share/doc/resume/manual/html/getting-started.setup.software.html
 %%PORTDOCS%%share/doc/resume/manual/html/gfdl-1.html
 %%PORTDOCS%%share/doc/resume/manual/html/gfdl-10.html
 %%PORTDOCS%%share/doc/resume/manual/html/gfdl-11.html
