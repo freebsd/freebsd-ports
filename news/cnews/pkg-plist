@@ -18,7 +18,6 @@ bin/postnews
 bin/readnews
 include/dbz.h
 lib/libcnews.a
-@exec ranlib %D/%F
 %%NEWSBIN%%/batch/batchcheck
 %%NEWSBIN%%/batch/batcher
 %%NEWSBIN%%/batch/batchih
