@@ -1,0 +1,5 @@
+This is Business::OnlinePayment::AuthorizeNet, an Business::OnlinePayment
+backend module for Authorize.Net.  It is only useful if you have a merchant
+account with Authorize.Net: http://www.authorize.net
+
+This module has been updated and now implements Authorize.Net API version 3.1.
