@@ -3,13 +3,13 @@
 # Date created:		June 19, 1997
 # Whom:			jfieber
 #
-# $Id: Makefile,v 1.5 1998/02/08 22:54:57 steve Exp $
+# $Id: Makefile,v 1.6 1998/06/27 05:19:43 asami Exp $
 #
 
 DISTNAME=	isoENTS
 PKGNAME=	iso8879-1986
 CATEGORIES=	textproc
-MASTER_SITES=	http://www.sil.org/sgml/
+MASTER_SITES=	${MASTER_SITE_BACKUP}
 EXTRACT_SUFX=	.zip
 
 MAINTAINER=	jfieber@FreeBSD.ORG
