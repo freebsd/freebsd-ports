@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libgringotts
-PORTVERSION=	1.1.1
+PORTVERSION=	1.1.2
 CATEGORIES=	security
 MASTER_SITES=	http://devel.pluto.linux.it/projects/libGringotts/current/ \
 		ftp://ftp.nuug.no/pub/anders/distfiles/
@@ -28,10 +28,10 @@ post-patch:
 
 pre-install:
 .if defined(NOPORTDOCS)
-	${REINPLACE_CMD} -E "s|^(SUBDIRS =.*) docs|\1|" ${WRKSRC}/Makefile
+	${REINPLACE_CMD} -E -e "s|^(SUBDIRS =.*) docs|\1|" ${WRKSRC}/Makefile
+	${REINPLACE_CMD} -E -e "s|^(install-data-am:.*)install-libgringottsdocDATA|\1|" ${WRKSRC}/Makefile
 .else
-	${REINPLACE_CMD} -E "s|^(documentationdir = .*/libgringotts)-.*|\1|" \
-		${WRKSRC}/docs/Makefile
+	${REINPLACE_CMD} -E "s|^(libgringottsdocdir =).*|\1 $$\(datadir\)/doc/libgringotts|" ${WRKSRC}/docs/Makefile ${WRKSRC}/Makefile
 .endif
 
 .include <bsd.port.mk>
