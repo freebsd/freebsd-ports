@@ -17,6 +17,7 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/bison:${PORTSDIR}/devel/bison
 
 OPTIONS=	X11 "Enable X11 support" on
 OPTIONS+=	DEBUG "Enable extra debug output" off
+OPTIONS+=	OPTIMIZED_CFLAGS "Compile with -O3" off
 
 CONFIGURE_ARGS=	--with-includes="${JAVA_HOME}/include ${LOCALBASE}/include"
 
@@ -30,6 +31,10 @@ LIB_DEPENDS+=	gtk-x11-2.0:${PORTSDIR}/x11-toolkits/gtk20
 
 .if defined(WITH_DEBUG)
 CFLAGS+=	-DJMPDEBUG -g
+.endif
+
+.if defined(WITH_OPTIMIZED_CFLAGS)
+CFLAGS+=	-O3
 .endif
 
 USE_LIBTOOL_VER=15
