@@ -28,26 +28,32 @@ System/Applications/ProjectCenter.app/Resources/ProjectCentre_prefs.tiff
 System/Applications/ProjectCenter.app/Resources/ProjectCentre_run.tiff
 System/Applications/ProjectCenter.app/Resources/ProjectCentre_settings.tiff
 System/Applications/ProjectCenter.app/Resources/ProjectCentre_uml.tiff
+System/Applications/ProjectCenter.app/stamp.make
 System/Headers/ProjectCenter/FileCreator.h
 System/Headers/ProjectCenter/PCBrowserController.h
 System/Headers/ProjectCenter/PCBundleLoader.h
 System/Headers/ProjectCenter/PCDataSource.h
 System/Headers/ProjectCenter/PCDefines.h
+System/Headers/ProjectCenter/PCEditor+UInterface.h
 System/Headers/ProjectCenter/PCEditor.h
 System/Headers/ProjectCenter/PCEditorController.h
 System/Headers/ProjectCenter/PCEditorView+Highlighting.h
 System/Headers/ProjectCenter/PCEditorView.h
+System/Headers/ProjectCenter/PCFileManager+UInterface.h
 System/Headers/ProjectCenter/PCFileManager.h
 System/Headers/ProjectCenter/PCHistoryController.h
 System/Headers/ProjectCenter/PCMakefileFactory.h
 System/Headers/ProjectCenter/PCProject+ComponentHandling.h
 System/Headers/ProjectCenter/PCProject.h
+System/Headers/ProjectCenter/PCProject+UInterface.h
 System/Headers/ProjectCenter/PCProjectBuilder.h
 System/Headers/ProjectCenter/PCProjectDebugger.h
 System/Headers/ProjectCenter/PCProjectEditor.h
+System/Headers/ProjectCenter/PCProjectManager+UInterface.h
 System/Headers/ProjectCenter/PCProjectManager.h
 System/Headers/ProjectCenter/PCServer.h
 System/Headers/ProjectCenter/PCSplitView.h
+System/Headers/ProjectCenter/PCTextFinder+UInterface.h
 System/Headers/ProjectCenter/PCTextFinder.h
 System/Headers/ProjectCenter/PreferenceController.h
 System/Headers/ProjectCenter/ProjectBuilder.h
@@ -67,16 +73,20 @@ System/Library/ProjectCenter/PCAppProj.bundle/Resources/Info-gnustep.plist
 System/Library/ProjectCenter/PCAppProj.bundle/Resources/Info-project.plist
 System/Library/ProjectCenter/PCAppProj.bundle/Resources/PC.proj
 System/Library/ProjectCenter/PCAppProj.bundle/Resources/main.m
+System/Library/ProjectCenter/PCAppProj.bundle/stamp.make
 System/Library/ProjectCenter/PCBaseFileTypes.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/PCBaseFileTypes
 System/Library/ProjectCenter/PCBaseFileTypes.bundle/Resources/Info-gnustep.plist
 System/Library/ProjectCenter/PCBaseFileTypes.bundle/Resources/cfile.template
 System/Library/ProjectCenter/PCBaseFileTypes.bundle/Resources/cheader.template
 System/Library/ProjectCenter/PCBaseFileTypes.bundle/Resources/class.template
+System/Library/ProjectCenter/PCBaseFileTypes.bundle/Resources/gsmarkup.template
 System/Library/ProjectCenter/PCBaseFileTypes.bundle/Resources/header.template
 System/Library/ProjectCenter/PCBaseFileTypes.bundle/Resources/protocol.template
+System/Library/ProjectCenter/PCBaseFileTypes.bundle/stamp.make
 System/Library/ProjectCenter/PCBundleProj.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/PCBundleProj
 System/Library/ProjectCenter/PCBundleProj.bundle/Resources/Info-gnustep.plist
 System/Library/ProjectCenter/PCBundleProj.bundle/Resources/PC.proj
+System/Library/ProjectCenter/PCBundleProj.bundle/stamp.make
 System/Library/ProjectCenter/PCBaseFileTypes.bundle/Resources/nsviewclass.template
 System/Library/ProjectCenter/PCBaseFileTypes.bundle/Resources/nsviewheader.template
 System/Library/ProjectCenter/PCGormProj.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/PCGormProj
@@ -86,15 +96,34 @@ System/Library/ProjectCenter/PCGormProj.bundle/Resources/PC.proj
 System/Library/ProjectCenter/PCGormProj.bundle/Resources/baseInterface.classes
 System/Library/ProjectCenter/PCGormProj.bundle/Resources/baseInterface.gorm
 System/Library/ProjectCenter/PCGormProj.bundle/Resources/main.m
+System/Library/ProjectCenter/PCGormProj.bundle/stamp.make
 System/Library/ProjectCenter/PCLibProj.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/PCLibProj
 System/Library/ProjectCenter/PCLibProj.bundle/Resources/Info-gnustep.plist
 System/Library/ProjectCenter/PCLibProj.bundle/Resources/PC.proj
 System/Library/ProjectCenter/PCLibProj.bundle/Resources/Version
+System/Library/ProjectCenter/PCLibProj.bundle/stamp.make
+System/Library/ProjectCenter/PCRenaissanceProj.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/PCRenaissanceProj
+System/Library/ProjectCenter/PCRenaissanceProj.bundle/Resources/Info-gnustep.plist
+System/Library/ProjectCenter/PCRenaissanceProj.bundle/Resources/PC.proj
+System/Library/ProjectCenter/PCRenaissanceProj.bundle/Resources/main.m
+System/Library/ProjectCenter/PCRenaissanceProj.bundle/Resources/AppController.m
+System/Library/ProjectCenter/PCRenaissanceProj.bundle/Resources/AppController.h
+System/Library/ProjectCenter/PCRenaissanceProj.bundle/Resources/Main.gsmarkup
+System/Library/ProjectCenter/PCRenaissanceProj.bundle/Resources/MainMenu-GNUstep.gsmarkup
+System/Library/ProjectCenter/PCRenaissanceProj.bundle/Resources/MainMenu-OSX.gsmarkup
+System/Library/ProjectCenter/PCRenaissanceProj.bundle/Resources/Info-project.plist
+System/Library/ProjectCenter/PCRenaissanceProj.bundle/stamp.make
 System/Library/ProjectCenter/PCToolProj.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/PCToolProj
 System/Library/ProjectCenter/PCToolProj.bundle/Resources/Info-gnustep.plist
 System/Library/ProjectCenter/PCToolProj.bundle/Resources/Info-project.plist
 System/Library/ProjectCenter/PCToolProj.bundle/Resources/PC.proj
 System/Library/ProjectCenter/PCToolProj.bundle/Resources/main.m
+System/Library/ProjectCenter/PCToolProj.bundle/stamp.make
+@dirrm System/Library/ProjectCenter/PCRenaissanceProj.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
+@dirrm System/Library/ProjectCenter/PCRenaissanceProj.bundle/%%GNU_ARCH%%/%%OPSYS%%
+@dirrm System/Library/ProjectCenter/PCRenaissanceProj.bundle/%%GNU_ARCH%%
+@dirrm System/Library/ProjectCenter/PCRenaissanceProj.bundle/Resources
+@dirrm System/Library/ProjectCenter/PCRenaissanceProj.bundle
 @dirrm System/Library/ProjectCenter/PCToolProj.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
 @dirrm System/Library/ProjectCenter/PCToolProj.bundle/%%GNU_ARCH%%/%%OPSYS%%
 @dirrm System/Library/ProjectCenter/PCToolProj.bundle/%%GNU_ARCH%%
