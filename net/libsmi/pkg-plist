@@ -4,9 +4,9 @@ bin/smiquery
 bin/smistrip
 include/smi.h
 lib/libsmi.a
-lib/libsmi.la
 lib/libsmi.so
 lib/libsmi.so.2
+share/aclocal/libsmi.m4
 share/smi/mibs/iana/IANA-ADDRESS-FAMILY-NUMBERS-MIB
 share/smi/mibs/iana/IANA-LANGUAGE-MIB
 share/smi/mibs/iana/IANA-RTPROTO-MIB
@@ -81,6 +81,7 @@ share/smi/mibs/ietf/IPMROUTE-STD-MIB
 share/smi/mibs/ietf/IPOA-MIB
 share/smi/mibs/ietf/IPV6-ICMP-MIB
 share/smi/mibs/ietf/IPV6-MIB
+share/smi/mibs/ietf/IPV6-MLD-MIB
 share/smi/mibs/ietf/IPV6-TC
 share/smi/mibs/ietf/IPV6-TCP-MIB
 share/smi/mibs/ietf/IPV6-UDP-MIB
@@ -99,6 +100,7 @@ share/smi/mibs/ietf/OSPF-TRAP-MIB
 share/smi/mibs/ietf/P-BRIDGE-MIB
 share/smi/mibs/ietf/PARALLEL-MIB
 share/smi/mibs/ietf/PIM-MIB
+share/smi/mibs/ietf/PINT-MIB
 share/smi/mibs/ietf/PPP-BRIDGE-NCP-MIB
 share/smi/mibs/ietf/PPP-IP-NCP-MIB
 share/smi/mibs/ietf/PPP-LCP-MIB
@@ -184,3 +186,4 @@ share/smi/mibs/tubs/TUBS-SMI
 @dirrm share/smi/mibs/tubs
 @dirrm share/smi/mibs
 @dirrm share/smi
+@exec mkdir %D/share/smi/mibs/site
