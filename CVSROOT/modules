@@ -7785,6 +7785,7 @@ php5-pgsql	ports/databases/php5-pgsql
 php5-readline	ports/devel/php5-readline
 php5-recode	ports/converters/php5-recode
 php5-shmop	ports/devel/php5-shmop
+php5-snmp	ports/net-mgmt/php5-snmp
 php5-soap	ports/net/php5-soap
 php5-sockets	ports/net/php5-sockets
 php5-sqlite	ports/databases/php5-sqlite
