@@ -273,5 +273,3 @@ include/bitmaps/zoo.xbm
 share/OffiX/Files.ad
 share/OffiX/FilesMagic
 share/OffiX/Filesrc
-share/OffiX/editor.help
-@dirrm share/OffiX
