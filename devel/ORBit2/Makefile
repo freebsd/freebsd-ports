@@ -3,7 +3,7 @@
 # Date Created:			16 Aug 1998
 # Whom:				Chia-liang Kao <clkao@CirX.ORG>
 #
-# $Id: Makefile,v 1.1.1.1 1998/08/19 06:15:08 vanilla Exp $
+# $Id: Makefile,v 1.2 1998/08/19 22:51:05 asami Exp $
 #
 
 DISTNAME=	ORBit-0.2.1
@@ -13,8 +13,6 @@ MASTER_SITES=	ftp://ftp.gnome.org/pub/ORBit/
 MAINTAINER=	clkao@CirX.ORG
 
 LIB_DEPENDS=	glib11\\.0\\.:${PORTSDIR}/devel/glib
-
-BROKEN=		patch
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
