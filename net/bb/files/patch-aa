@@ -1,11 +1,11 @@
---- src/Makefile.freebsd.orig	Mon May 18 23:18:48 1998
-+++ src/Makefile.freebsd	Mon May 18 23:19:26 1998
+--- src/Makefile.freebsd.orig	Sun Jun 27 12:02:36 1999
++++ src/Makefile.freebsd	Sun Jun 27 12:03:08 1999
 @@ -1,6 +1,6 @@
  SHELL = /bin/sh
 -MAKE = make
 -CC = gcc
-+MAKE?= make
-+CC?= gcc
++MAKE ?= make
++CC ?= gcc
  
  # FLAGS REQUIRED FOR PORTING
  # SUNOS 4.1.4, HPUX 10.0, and LINUX NEED NOTHING DEFINED

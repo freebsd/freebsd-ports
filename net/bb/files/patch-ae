@@ -1,0 +1,12 @@
+--- web/bb-ack.sh.orig	Sun Jun 27 12:16:54 1999
++++ web/bb-ack.sh	Sun Jun 27 12:18:05 1999
+@@ -30,7 +30,8 @@
+ # ************* NOTICE!!! ************
+ # BBWEB MUST BE SET CORRECTLY FOR THIS TO WORK
+ 
+-BBWEB="http://INSERT-WEB-HOST-HERE/bb/";
++#BBWEB="http://INSERT-WEB-HOST-HERE/bb/";
++BBWEB="http://!!WEBHOST!!/bb/";
+ 
+ 
+ . $BBHOME/etc/bbdef.sh

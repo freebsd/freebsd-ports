@@ -1,0 +1,20 @@
+--- doc/bbclient.orig	Sun Jun 27 15:33:09 1999
++++ doc/bbclient	Sun Jun 27 15:35:28 1999
+@@ -95,13 +95,15 @@
+ 
+ cd ../..
+ echo "*** Creating tar file for Big Brother on $CLIENT"
+-tar cvf bb-${CLIENT}.tar `cat /tmp/BBLIST`
++# this might be better then polluting ../.. which would be ${PREFIX}
++mkdir -p !!PREFIX!!/share/bb/bbclients
++tar cvzf !!PREFIX!!/share/bb/bbclients/bb-${CLIENT}.tar.gz `cat /tmp/BBLIST`
+ rm -f /tmp/BBLIST
+ 
+ echo "*** Done.
+ 
+ The Big Brother Client archive has been created.  It's called:
+ 	bb-${CLIENT}.tar
+-and lives in the directory above the bb directory.
++and lives in the directory !!PREFIX!!/share/bb/bbclients
+ 
+ You can now install Big Brother on ${CLIENT}"

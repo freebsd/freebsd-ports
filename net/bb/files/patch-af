@@ -1,0 +1,12 @@
+--- web/bb-hist.sh.orig	Sun Jun 27 12:17:15 1999
++++ web/bb-hist.sh	Sun Jun 27 12:18:22 1999
+@@ -13,7 +13,8 @@
+ # ************* NOTICE!!! ************
+ # BBWEB MUST BE SET CORRECTLY FOR THIS TO WORK
+ #
+-BBWEB="http://INSERT-WEB-HOST-HERE/bb/"
++#BBWEB="http://INSERT-WEB-HOST-HERE/bb/"
++BBWEB="http://!!WEBHOST!!/bb/"
+ export BBWEB
+ 
+ # BBHOME IS THE ROOT DIRECTORY OF BIG BROTHER!!!
