@@ -20,7 +20,7 @@ COMMENT=	X11/XFree86 core distribution (complete, using mini/meta-ports)
 LIB_DEPENDS=	X11.6:${PORTSDIR}/x11/XFree86-4-libraries
 RUN_DEPENDS=	xvinfo:${PORTSDIR}/x11/XFree86-4-clients \
 	${X11BASE}/lib/X11/doc/ddx.txt:${PORTSDIR}/x11/XFree86-4-documents \
-	${X11BASE}/lib/X11/doc/html/X.7.html:${PORTSDIR}/x11/XFree86-4-manuals \
+	${X11BASE}/man/man7/X.7.gz:${PORTSDIR}/x11/XFree86-4-manuals \
 	${FONT100DPI}:${PORTSDIR}/x11-fonts/XFree86-4-font100dpi \
 	${FONT75DPI}:${PORTSDIR}/x11-fonts/XFree86-4-font75dpi \
 	${FONTCYR}:${PORTSDIR}/x11-fonts/XFree86-4-fontCyrillic \

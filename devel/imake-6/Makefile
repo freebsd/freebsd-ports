@@ -6,14 +6,12 @@
 #
 
 PORTNAME=	imake
-PORTVERSION=	6.7.0
-PORTREVISION=	2
+PORTVERSION=	6.8.1
 CATEGORIES=	devel
-MASTER_SITES=	http://freedesktop.org/~xorg/X11R6.7.0/src/ \
-		${MASTER_SITE_XORG} \
-MASTER_SITE_SUBDIR=	R6.7/tars
-DISTFILES=	X11R6.7.0-src1.tar.gz \
-		X11R6.7.0-src3.tar.gz
+MASTER_SITES=	${MASTER_SITE_XORG}
+MASTER_SITE_SUBDIR=	X11R${PORTVERSION}/tars
+DISTFILES=	X11R${PORTVERSION}-src1.tar.gz \
+		X11R${PORTVERSION}-src3.tar.gz
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Imake and other utilities from X.Org
@@ -56,9 +54,6 @@ pre-configure:
 	@${REINPLACE_CMD} -e 's|%%PTHREAD_CFLAGS%%|${PTHREAD_CFLAGS}|g ; \
 		s|%%PTHREAD_LIBS%%|${PTHREAD_LIBS}|g' \
 		${WRKSRC}/cf/FreeBSD.cf
-
-post-install:
-	@${MKHTMLINDEX} ${PREFIX}/lib/X11/doc/html
 
 .if ${X_WINDOW_SYSTEM:L} != xorg
 IGNORE=		is part of X.Org. For switching to X.Org, read UPDATING entry 20040723

@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	xorg-documents
-PORTVERSION=	6.7.0
+PORTVERSION=	6.8.1
 CATEGORIES=	x11
-MASTER_SITES=	http://freedesktop.org/~xorg/X11R6.7.0/src/ \
-		${MASTER_SITE_XORG}
-MASTER_SITE_SUBDIR=	R6.7/tars
-DISTFILES=	X11R6.7.0-src1.tar.gz \
-		X11R6.7.0-src6.tar.gz
+MASTER_SITES=	${MASTER_SITE_XORG}
+MASTER_SITE_SUBDIR=	X11R6.8.1/tars
+DISTFILES=	X11R${PORTVERSION}-src1.tar.gz \
+		X11R${PORTVERSION}-src6.tar.gz
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Documentation of X11 protocol and libraries from X.Org

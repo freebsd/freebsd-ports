@@ -47,6 +47,7 @@ echo "#define HasFontconfig YES"		>> $F
 echo "#define FontconfigDir ${PREFIX}"		>> $F
 echo "#define HasLibpng YES"			>> $F
 echo "#define LibpngDir ${LOCALBASE}"		>> $F
+echo "#define BuildHtmlManPages NO"		>> $F
 # Never install something to outside ${X11BASE}
 echo "#define NothingOutsideProjectRoot YES"	>> $F
 

@@ -5,36 +5,47 @@
 # $FreeBSD$
 #
 
-PORTNAME=	dri
-PORTVERSION=	5.0.2
-PORTEPOCH=	2
+PORTNAME=	xfree86-dri
+PORTVERSION=	4.4.0
 CATEGORIES=	graphics
-MASTER_SITES=	${MASTER_SITE_XORG}
-DISTFILES=	X11R6.7.0-src1.tar.gz \
-		X11R6.7.0-src3.tar.gz
+MASTER_SITES=	${MASTER_SITE_XFREE}
+MASTER_SITE_SUBDIR=	${PORTVERSION}
+DISTFILES=	XFree86-4.4.0-src-1.tgz \
+		XFree86-4.4.0-src-2.tgz \
+		XFree86-4.4.0-src-3.tgz
 
-MAINTAINER=	anholt@FreeBSD.org
-COMMENT=	OpenGL hardware acceleration drivers for the DRI
+MAINTAINER=	x11@FreeBSD.org
+COMMENT=	OpenGL hardware acceleration drivers for XFree86
 
-EXTRA_PATCHES+=		${CF_PATCHES}
+CONFLICTS=	dri-[5-9].*
 
-USE_XLIB=		yes
+EXTRA_PATCHES+=		${FILESDIR}/patch-GL-Imakefile
 
 ONLY_FOR_ARCHS=		i386 alpha amd64
 
 XBUILD_DIRS=		lib/GL
 XINSTALL_DIRS=		lib/GL/mesa/src/drv
 
-.include "${.CURDIR}/../../x11-servers/xorg-server/Makefile.inc"
+.include "${.CURDIR}/../../x11/XFree86-4-libraries/Makefile.inc"
 .include <bsd.port.pre.mk>
+
+.if ${X_WINDOW_SYSTEM:L} != xfree86-4
+IGNORE= is part of XFree86. For X.Org use graphics/dri port. See ports/UPDATING entry 20040723 for further information.
+.endif
+
 .if ${ARCH} == i386
 PLIST_SUB+=	I386=""
 .else
 PLIST_SUB+=	I386="@comment "
 .endif
-.if ${ARCH} == amd64
-PLIST_SUB+=	NO_AMD64="@comment "
+.if ${ARCH} == alpha
+PLIST_SUB+=	ALPHA_NA="@comment "
 .else
-PLIST_SUB+=	NO_AMD64=""
+PLIST_SUB+=	ALPHA_NA=""
+.endif
+.if ${ARCH} == amd64
+PLIST_SUB+=	AMD64_NA="@comment "
+.else
+PLIST_SUB+=	AMD64_NA=""
 .endif
 .include <bsd.port.post.mk>

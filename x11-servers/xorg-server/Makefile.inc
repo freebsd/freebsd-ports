@@ -16,6 +16,7 @@ DIST_SUBDIR?=	xorg
 WRKSRC?=	${WRKDIR}/xc
 USE_X_PREFIX?=	no
 PREFIX?=	${X11BASE}
+MTREE_FILE=	/etc/mtree/BSD.x11-4.dist
 
 USE_IMAKE=	YES
 .if defined(XMAN_DIRS)
@@ -41,17 +42,10 @@ CF_PATCHES=	${PORTSDIR}/x11-servers/xorg-server/files/patch-FreeBSD.cf \
 
 SERVER_PATCHES=	${PORTSDIR}/x11-servers/xorg-server/files/patch-Xserver-Imakefile \
 		${PORTSDIR}/x11-servers/xorg-server/files/patch-alpha_video.c \
-		${PORTSDIR}/x11-servers/xorg-server/files/patch-bus-Imakefile \
-		${PORTSDIR}/x11-servers/xorg-server/files/patch-fb-renderfixes.diff \
-		${PORTSDIR}/x11-servers/xorg-server/files/patch-kernel-Imakefile \
-		${PORTSDIR}/x11-servers/xorg-server/files/patch-loadmod.c \
 		${PORTSDIR}/x11-servers/xorg-server/files/patch-man-Imakefile \
 		${PORTSDIR}/x11-servers/xorg-server/files/patch-os-Imakefile \
 		${PORTSDIR}/x11-servers/xorg-server/files/patch-savage-pci-id \
-		${PORTSDIR}/x11-servers/xorg-server/files/patch-xf86Events.c \
-		${PORTSDIR}/x11-servers/xorg-server/files/patch-xf86fbman.c \
 		${PORTSDIR}/x11-servers/xorg-server/files/patch-xf86sym.c \
-		${PORTSDIR}/x11-servers/xorg-server/files/patch-xf86drmCompat.c \
 		${PORTSDIR}/x11-servers/xorg-server/files/patch-xkbout.c \
 		${PORTSDIR}/x11-servers/xorg-server/files/patch-xorgconfig.c
 
@@ -91,6 +85,5 @@ do-install:
 	@for dir in ${XMAN_DIRS}; do \
 		cd ${WRKSRC}/$${dir} && ${SETENV} ${MAKE_ENV} ${MAKE} install.man; \
 	done
-	@${MKHTMLINDEX} ${PREFIX}/lib/X11/doc/html
 .endif
 

@@ -69,6 +69,5 @@ do-install:
 	@for dir in ${XINSTALL_MAN_DIRS}; do \
 		cd ${WRKSRC}/$${dir} && ${SETENV} ${MAKE_ENV} ${MAKE} install.man; \
 	done
-	@${MKHTMLINDEX} ${PREFIX}/lib/X11/doc/html
 .endif
 

@@ -1,6 +1,6 @@
---- config/cf/X11.tmpl.orig	Fri Apr  2 13:47:10 2004
-+++ config/cf/X11.tmpl	Sun May 30 12:46:35 2004
-@@ -576,7 +576,7 @@
+--- config/cf/X11.tmpl.orig	Fri Sep  3 09:18:18 2004
++++ config/cf/X11.tmpl	Fri Sep 10 20:29:12 2004
+@@ -616,7 +616,7 @@
  #define BuildXft1Library	BuildRenderLibrary
  #endif
  #ifndef UseFontconfig
@@ -9,27 +9,21 @@
  #endif
  #ifndef BuildFontconfigLibrary
  #define BuildFontconfigLibrary	(UseFontconfig && !HasFontconfig)
-@@ -1543,7 +1543,14 @@
+@@ -1606,7 +1606,7 @@
  #endif
  
  #ifndef PsWrap
-+#if defined(UseInstalled) || defined(UseInstalledPrograms)
-+#define PsWrap pswrap
-+#define PsWrapDependency /**/
-+#else
- #define PsWrap $(PSWRAPSRC)/pswrap
-+#define PsWrapDependency HostProgramTargetName($(PSWRAP))
-+#endif
-+         PSWRAP = PsWrap
- #endif
- 
- #ifndef ResourceConfigurationManagement
-@@ -1615,7 +1622,7 @@
+-# ifndef UseInstalled
++# if !defined(UseInstalled) && !defined(UseInstalledPrograms)
+ #  define PsWrap $(PSWRAPSRC)/pswrap
+ # else
+ #  define PsWrap pswrap
+@@ -1683,7 +1683,7 @@
  
       INSTAPPFLAGS = $(INSTDATFLAGS)	/* XXX - this should go away - XXX */
  
 -#if UseInstalledX11
 +#if UseInstalledX11 || UseInstalledClients
-               RGB = $(BINDIR)/rgb
-             FONTC = $(BINDIR)/bdftopcf
-       MKFONTSCALE = $(BINDIR)/mkfontscale
+               RGB = $(XBINDIR)/rgb
+             FONTC = $(XBINDIR)/bdftopcf
+       MKFONTSCALE = $(XBINDIR)/mkfontscale

@@ -1,0 +1,11 @@
+--- lib/Xdamage/Imakefile.orig	Fri Oct  1 17:42:44 2004
++++ lib/Xdamage/Imakefile	Fri Oct  1 17:44:54 2004
+@@ -61,7 +61,7 @@
+ 	RemoveFile($@)
+ 	sh ../Xcursor/config-subst $(SUBSTVARS) < xdamage.pc.in > $@
+ 
+-InstallNonExecFile(xdamage.pc,$(USRLIBDIR)/pkgconfig)
++InstallNonExecFile(xdamage.pc,$(PROJECTROOT)/libdata/pkgconfig)
+ 
+ clean::
+ 	RemoveFile(xdamage.pc)

@@ -6,35 +6,52 @@
 #
 
 PORTNAME=	dri
-PORTVERSION=	5.0.2
+PORTVERSION=	6.2
 PORTEPOCH=	2
 CATEGORIES=	graphics
-MASTER_SITES=	${MASTER_SITE_XORG}
-DISTFILES=	X11R6.7.0-src1.tar.gz \
-		X11R6.7.0-src3.tar.gz
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	anholt
+DISTFILES=	Mesa-6.2-20041124.tar.bz2	\
+		drm-20041124.tar.bz2
 
 MAINTAINER=	anholt@FreeBSD.org
 COMMENT=	OpenGL hardware acceleration drivers for the DRI
 
-EXTRA_PATCHES+=		${CF_PATCHES}
+BUILD_DEPENDS=	makedepend:${X_IMAKE_PORT}
 
-USE_XLIB=		yes
+CONFLICTS=	xfree86-dri-*
 
-ONLY_FOR_ARCHS=		i386 alpha amd64
+WRKSRC=		${WRKDIR}/Mesa
+USE_X_PREFIX=	yes
+USE_BZIP2=	yes
+USE_GMAKE=	yes
 
-XBUILD_DIRS=		lib/GL
-XINSTALL_DIRS=		lib/GL/mesa/src/drv
+ONLY_FOR_ARCHS=	i386 alpha amd64
 
-.include "${.CURDIR}/../../x11-servers/xorg-server/Makefile.inc"
+DRIMODDIR=	${PREFIX}/lib/modules/dri
+
 .include <bsd.port.pre.mk>
+do-install:
+.if ${ARCH} == i386
+	${INSTALL_PROGRAM} ${WRKSRC}/lib/i810_dri.so ${DRIMODDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/lib/i830_dri.so ${DRIMODDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/lib/i915_dri.so ${DRIMODDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/lib/unichrome_dri.so ${DRIMODDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/lib/tdfx_dri.so ${DRIMODDIR}
+.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/lib/mach64_dri.so ${DRIMODDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/lib/mga_dri.so ${DRIMODDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/lib/r128_dri.so ${DRIMODDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/lib/r200_dri.so ${DRIMODDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/lib/radeon_dri.so ${DRIMODDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/lib/savage_dri.so ${DRIMODDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/lib/sis_dri.so ${DRIMODDIR}
+
 .if ${ARCH} == i386
 PLIST_SUB+=	I386=""
+ALL_TARGET=	freebsd-dri-x86
 .else
 PLIST_SUB+=	I386="@comment "
-.endif
-.if ${ARCH} == amd64
-PLIST_SUB+=	NO_AMD64="@comment "
-.else
-PLIST_SUB+=	NO_AMD64=""
+ALL_TARGET=	freebsd-dri
 .endif
 .include <bsd.port.post.mk>

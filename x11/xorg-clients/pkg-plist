@@ -52,6 +52,7 @@ bin/xcutsel
 bin/xditview
 bin/xdm
 bin/xdpyinfo
+bin/xdriinfo
 bin/xedit
 bin/xev
 bin/xeyes
@@ -81,8 +82,14 @@ bin/xman
 bin/xmessage
 bin/xmh
 bin/xmodmap
+bin/xmore
 bin/xon
+bin/xphelloworld
+bin/xplsprinters
+bin/xprehashprinterlist
 bin/xprop
+bin/xpsimplehelloworld
+bin/xpxthelloworld
 bin/xrandr
 bin/xrdb
 bin/xrefresh
@@ -141,6 +148,7 @@ lib/X11/app-defaults/XFontSel
 lib/X11/app-defaults/XLoad
 lib/X11/app-defaults/XLogo
 lib/X11/app-defaults/XLogo-color
+lib/X11/app-defaults/XMore
 lib/X11/app-defaults/XSm
 lib/X11/app-defaults/Xditview
 lib/X11/app-defaults/Xditview-chrtr
@@ -344,17 +352,26 @@ lib/X11/twm/system.twmrc
 lib/X11/x11perfcomp/fillblnk
 lib/X11/x11perfcomp/perfboth
 lib/X11/x11perfcomp/perfratio
+@unexec if cmp -s %D/lib/X11/xdm/GiveConsole.default %D/lib/X11/xdm/GiveConsole; then rm -f %D/lib/X11/xdm/GiveConsole; fi
 lib/X11/xdm/GiveConsole.default
+@unexec if cmp -s %D/lib/X11/xdm/TakeConsole.default %D/lib/X11/xdm/TakeConsole; then rm -f %D/lib/X11/xdm/TakeConsole; fi
 lib/X11/xdm/TakeConsole.default
+@unexec if cmp -s %D/lib/X11/xdm/Xaccess.default %D/lib/X11/xdm/Xaccess; then rm -f %D/lib/X11/xdm/Xaccess; fi
 lib/X11/xdm/Xaccess.default
+@unexec if cmp -s %D/lib/X11/xdm/Xresources.default %D/lib/X11/xdm/Xresources; then rm -f %D/lib/X11/xdm/Xresources; fi
 lib/X11/xdm/Xresources.default
+@unexec if cmp -s %D/lib/X11/xdm/Xservers.default %D/lib/X11/xdm/Xservers; then rm -f %D/lib/X11/xdm/Xservers; fi
 lib/X11/xdm/Xservers.default
+@unexec if cmp -s %D/lib/X11/xdm/Xsession.default %D/lib/X11/xdm/Xsession; then rm -f %D/lib/X11/xdm/Xsession; fi
 lib/X11/xdm/Xsession.default
+@unexec if cmp -s %D/lib/X11/xdm/Xsetup_0.default %D/lib/X11/xdm/Xsetup_0; then rm -f %D/lib/X11/xdm/Xsetup_0; fi
 lib/X11/xdm/Xsetup_0.default
+@unexec if cmp -s %D/lib/X11/xdm/Xwilling.default %D/lib/X11/xdm/Xwilling; then rm -f %D/lib/X11/xdm/Xwilling; fi
 lib/X11/xdm/Xwilling.default
 lib/X11/xdm/chooser
 lib/X11/xdm/pixmaps/xorg-bw.xpm
 lib/X11/xdm/pixmaps/xorg.xpm
+@unexec if cmp -s %D/lib/X11/xdm/xdm-config.default %D/lib/X11/xdm/xdm-config; then rm -f %D/lib/X11/xdm/xdm-config; fi
 lib/X11/xdm/xdm-config.default
 lib/X11/xedit/lisp/indent.lsp
 lib/X11/xedit/lisp/lisp.lsp
@@ -373,6 +390,7 @@ lib/X11/xedit/lisp/progmodes/xlog.lsp
 lib/X11/xedit/lisp/progmodes/xrdb.lsp
 lib/X11/xedit/lisp/syntax.lsp
 lib/X11/xedit/lisp/xedit.lsp
+@unexec if cmp -s %D/lib/X11/xinit/xinitrc.default %D/lib/X11/xinit/xinitrc; then rm -f %D/lib/X11/xinit/xinitrc; fi
 lib/X11/xinit/xinitrc.default
 lib/X11/xkb/README
 lib/X11/xkb/README.config
@@ -493,6 +511,7 @@ lib/X11/xkb/rules/sgi.lst
 lib/X11/xkb/rules/sun
 lib/X11/xkb/rules/sun.lst
 lib/X11/xkb/rules/xfree86
+lib/X11/xkb/rules/xfree86.lst
 lib/X11/xkb/rules/xorg
 lib/X11/xkb/rules/xorg-it.lst
 lib/X11/xkb/rules/xorg.lst
@@ -733,6 +752,14 @@ lib/X11/xkb/types/pc
 lib/X11/xkb/xkbcomp
 lib/X11/xman.help
 lib/X11/xsm/system.xsm
+@dirrm lib/X11/icons/redglass/cursors
+@dirrm lib/X11/icons/redglass
+@dirrm lib/X11/icons/whiteglass/cursors
+@dirrm lib/X11/icons/whiteglass
+@dirrm lib/X11/icons/handhelds/cursors
+@dirrm lib/X11/icons/handhelds
+@dirrm lib/X11/icons/default
+@dirrm lib/X11/xkb/geometry/ibm
 
 @comment xterm workaround
 bin/resize

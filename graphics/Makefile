@@ -516,6 +516,7 @@
     SUBDIR += xfig
     SUBDIR += xfpovray
     SUBDIR += xfractint
+    SUBDIR += xfree86-dri
     SUBDIR += xglurbules
     SUBDIR += xgrasp
     SUBDIR += xli

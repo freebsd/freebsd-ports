@@ -47,6 +47,7 @@ for i in \
 	BuildCyrillicFonts \
 	BuildLatin2Fonts \
 	BuildPlugin \
+	BuildHtmlManPages \
 	LibHeaders \
 	LibInstall \
 	ForceNormalLib \

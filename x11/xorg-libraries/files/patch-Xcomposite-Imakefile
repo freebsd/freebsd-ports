@@ -1,0 +1,11 @@
+--- lib/Xcomposite/Imakefile.orig	Fri Oct  1 17:42:38 2004
++++ lib/Xcomposite/Imakefile	Fri Oct  1 17:43:22 2004
+@@ -61,7 +61,7 @@
+ 	RemoveFile($@)
+ 	sh ../Xcursor/config-subst $(SUBSTVARS) < xcomposite.pc.in > $@
+ 
+-InstallNonExecFile(xcomposite.pc,$(USRLIBDIR)/pkgconfig)
++InstallNonExecFile(xcomposite.pc,$(PROJECTROOT)/libdata/pkgconfig)
+ 
+ clean::
+ 	RemoveFile(xcomposite.pc)

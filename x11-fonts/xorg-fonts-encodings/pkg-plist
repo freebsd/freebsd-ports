@@ -16,6 +16,9 @@ lib/X11/fonts/encodings/iso8859-6.16.enc
 lib/X11/fonts/encodings/iso8859-6.8x.enc
 lib/X11/fonts/encodings/large/big5.eten-0.enc.gz
 lib/X11/fonts/encodings/large/big5hkscs-0.enc.gz
+lib/X11/fonts/encodings/large/cns11643-1.enc.gz
+lib/X11/fonts/encodings/large/cns11643-2.enc.gz
+lib/X11/fonts/encodings/large/cns11643-3.enc.gz
 lib/X11/fonts/encodings/large/encodings.dir
 lib/X11/fonts/encodings/large/gb18030.2000-0.enc.gz
 lib/X11/fonts/encodings/large/gb18030.2000-1.enc.gz
@@ -41,6 +44,7 @@ lib/X11/fonts/encodings/mulearabic-0.enc
 lib/X11/fonts/encodings/mulearabic-1.enc
 lib/X11/fonts/encodings/mulearabic-2.enc
 lib/X11/fonts/encodings/mulelao-1.enc
+lib/X11/fonts/encodings/suneu-greek.enc
 lib/X11/fonts/encodings/tcvn-0.enc
 lib/X11/fonts/encodings/tis620-2.enc
 lib/X11/fonts/encodings/viscii1.1-1.enc.gz

@@ -5,16 +5,14 @@
 # $FreeBSD$
 #
 
-PORTNAME=	manpages
-PORTVERSION=	6.7.0
+PORTNAME=	xorg-manpages
+PORTVERSION=	6.8.1
 CATEGORIES=	x11
-MASTER_SITES=	http://freedesktop.org/~xorg/X11R6.7.0/src/ \
-		${MASTER_SITE_XORG}
-MASTER_SITE_SUBDIR=	R6.7/tars
-PKGNAMEPREFIX=	xorg-
-DISTFILES=	X11R6.7.0-src1.tar.gz \
-		X11R6.7.0-src3.tar.gz
-EXTRACT_ONLY=	X11R6.7.0-src1.tar.gz
+MASTER_SITES=	${MASTER_SITE_XORG}
+MASTER_SITE_SUBDIR=	X11R6.8.1/tars
+DISTFILES=	X11R${PORTVERSION}-src1.tar.gz \
+		X11R${PORTVERSION}-src3.tar.gz
+EXTRACT_ONLY=	X11R${PORTVERSION}-src1.tar.gz
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X.Org library manual pages
@@ -28,7 +26,7 @@ XINCLUDE_DIRS=	${XMAN_DIRS}
 
 post-extract:
 	(cd ${WRKDIR} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} \
-		${DISTDIR}/${DIST_SUBDIR}/X11R6.7.0-src3.tar.gz | \
+		${DISTDIR}/${DIST_SUBDIR}/X11R6.8.1-src3.tar.gz | \
 		${TAR} -xf - xc/programs/Xserver);
 
 .include "${.CURDIR}/../../x11-servers/xorg-server/Makefile.inc"

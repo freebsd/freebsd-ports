@@ -1,0 +1,11 @@
+--- programs/Xserver/hw/xfree86/xf86cfg/Imakefile.orig	Sat Sep 11 15:11:04 2004
++++ programs/Xserver/hw/xfree86/xf86cfg/Imakefile	Sat Sep 11 15:11:07 2004
+@@ -25,6 +25,8 @@
+ SNPRINTFOBJS = snprintf.o
+ #endif
+ 
++XAWLIB = -lXaw
++
+ SRCS	=\
+ 	accessx.c\
+ 	card-cfg.c\

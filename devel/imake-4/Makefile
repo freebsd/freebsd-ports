@@ -73,7 +73,4 @@ pre-configure:
 		s|%%PTHREAD_LIBS%%|${PTHREAD_LIBS}|g' \
 		${WRKSRC}/cf/FreeBSD.cf
 
-post-install:
-	@${MKHTMLINDEX} ${PREFIX}/lib/X11/doc/html
-
 .include <bsd.port.post.mk>

@@ -25,13 +25,19 @@ EXTRACT_AFTER_ARGS=	| ${TAR} -xf - ${EXTRACT_TARGET}
 PROJECTROOT=		-DProjectRoot=${PREFIX}
 DIST_SUBDIR=		xc
 WRKSRC=			${WRKDIR}/xc/doc/man
+CFGDIR=			${WRKDIR}/xc/config
 INSTALL_TARGET=		install.man
+
+pre-configure:
+	@${MKDIR} ${CFGDIR}
+	@${CP} ${PREFIX}/lib/X11/config/* ${CFGDIR}
+	@${ECHO} "#define BuildHtmlManPages NO" >>${CFGDIR}/xf86site.def
 
 do-configure:
 	(cd ${WRKSRC} && \
-	 imake -DUseInstalled ${PROJECTROOT} -I${PREFIX}/lib/X11/config \
+	 imake -DUseInstalled ${PROJECTROOT} -I${CFGDIR} \
 		-DTOPDIR=../.. -DCURDIR=.; \
-	 ${MAKE} Makefiles ; \
+	 ${MAKE} Makefiles CONFIGDIR=${CFGDIR} ; \
 	 ${MAKE} includes ; \
 	 ${MAKE} depend)
 

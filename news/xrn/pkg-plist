@@ -1,6 +1,5 @@
 bin/xrn
 lib/X11/app-defaults/XRn
-lib/X11/doc/html/xrn.1.html
 %%PORTDOCS%%share/doc/xrn/COMMON-PROBLMS
 %%PORTDOCS%%share/doc/xrn/COPYRIGHT
 %%PORTDOCS%%share/doc/xrn/CREDITS

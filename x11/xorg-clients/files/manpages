@@ -50,6 +50,7 @@ MAN1=	Xmark.1 \
 	xditview.1 \
 	xdm.1 \
 	xdpyinfo.1 \
+	xdriinfo.1 \
 	xedit.1 \
 	xev.1 \
 	xeyes.1 \
@@ -76,8 +77,14 @@ MAN1=	Xmark.1 \
 	xmessage.1 \
 	xmh.1 \
 	xmodmap.1 \
+	xmore.1 \
 	xon.1 \
+	xphelloworld.1 \
+	xplsprinters.1 \
+	xprehashprinterlist.1 \
 	xprop.1 \
+	xpsimplehelloworld.1 \
+	xpxthelloworld.1 \
 	xrandr.1 \
 	xrdb.1 \
 	xrefresh.1 \
