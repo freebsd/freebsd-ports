@@ -60,7 +60,7 @@ MASTER_SITE_APACHE_HTTPD+=	\
 	ftp://ftp.forthnet.gr/pub/www/apache/dist/httpd/%SUBDIR%/ \
 	ftp://sunsite.srce.hr/mirrors/ftp.apache.org/apache/dist/httpd/%SUBDIR%/ \
 	ftp://ebizlab.hit.bme.hu/pub/apache/dist/httpd/%SUBDIR%/ \
-	ftp://xenia.sote.hu/pub/linux/mirrors/www.apache.org/dist/httpd/%SUBDIR%/ \
+	ftp://xenia.sote.hu/pub/mirrors/www.apache.org/httpd/%SUBDIR%/ \
 	ftp://ftp.esat.net/mirrors/ftp.apache.org/dist/httpd/%SUBDIR%/ \
 	ftp://ftp.heanet.ie/mirrors/www.apache.org/dist/httpd/%SUBDIR%/ \
 	ftp://ftp.rhnet.is/pub/apache/httpd/%SUBDIR%/ \
@@ -68,7 +68,6 @@ MASTER_SITE_APACHE_HTTPD+=	\
 	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/apache/dist/httpd/&,} \
 	ftp://ftp.nuri.net/pub/apache/dist/httpd/%SUBDIR%/ \
 	ftp://ftp.sogang.ac.kr/www/apache/dist/httpd/%SUBDIR%/ \
-	ftp://ftp.xgate.co.kr/pub/mirror/apache/dist/httpd/%SUBDIR%/ \
 	ftp://apache.unam.mx/pub/apache/dist/httpd/%SUBDIR%/ \
 	ftp://ftp.azc.uam.mx/mirrors/apache/dist/httpd/%SUBDIR%/ \
 	ftp://ftp.task.gda.pl/pub/www/apache/dist/httpd/%SUBDIR%/ \
@@ -80,7 +79,6 @@ MASTER_SITE_APACHE_HTTPD+=	\
 	ftp://apache.rinet.ru/pub/mirror/apache.org/dist/httpd/%SUBDIR%/ \
 	ftp://ftp.chg.ru/pub/WWW/apache/dist/httpd/%SUBDIR%/ \
 	ftp://ftp.sunet.se/pub/www/servers/apache/dist/httpd/%SUBDIR%/ \
-	ftp://swamp.chl.chalmers.se/pub/apache/dist/httpd/%SUBDIR%/ \
 	ftp://apache.mirrors.rossfell.co.uk/mirrors/apache/dist/httpd/%SUBDIR%/ \
 	ftp://ftp.flirble.org/pub/web/apache/dist/httpd/%SUBDIR%/ \
 	ftp://ftp.gbnet.net/pub/apache/dist/httpd/%SUBDIR%/ \
@@ -90,17 +88,15 @@ MASTER_SITE_APACHE_HTTPD+=	\
 	ftp://apache.valueclick.com/pub/apache/dist/httpd/%SUBDIR%/ \
 	ftp://ftp.apache.inetcosmos.org/pub/apache/dist/httpd/%SUBDIR%/ \
 	ftp://ftp.ccs.neu.edu/net/mirrors/Apache/dist/httpd/%SUBDIR%/ \
-	ftp://ftp.digex.net/pub/packages/network/apache/httpd/%SUBDIR%/ \
-	ftp://ftp.epix.net/pub/apache/dist/httpd/%SUBDIR%/ \
+	ftp://ftp.epix.net/pub/apache/httpd/%SUBDIR%/ \
 	ftp://ftp.knowledge.com/pub/mirrors/apache/dist/httpd/%SUBDIR%/ \
-	ftp://ftp.rge.com/pub/infosystems/apache/dist/httpd/%SUBDIR%/ \
-	ftp://ftp.sunsite.utk.edu/pub/apache/dist/httpd/%SUBDIR%/ \
+	ftp://ftp.rge.com/pub/infosystems/apache/httpd/%SUBDIR%/ \
 	ftp://ftp.tux.org/pub/net/apache/dist/httpd/%SUBDIR%/ \
 	ftp://mirror.telentente.com/pub/apache/dist/httpd/%SUBDIR%/ \
 	ftp://www.ibiblio.org/pub/packages/infosystems/WWW/servers/apache/httpd/%SUBDIR%/ \
 	ftp://ftp.saix.net/pub/apache/dist/httpd/%SUBDIR%/ \
-	ftp://ftpza.co.za/pub/mirrors/apache/httpd/%SUBDIR%/ \
-	${MASTER_SITE_APACHE:S,%SUBDIR%,httpd/&,}
+	ftp://ftp.insync.za.net/pub/mirrors/apache.org/httpd/%SUBDIR%/ \
+	${MASTER_SITE_APACHE:S,dist/%SUBDIR%,mirror/httpd/%SUBDIR%,}
 
 MASTER_SITE_APACHE_JAKARTA+=	\
 	http://jakarta.apache.org/builds/%SUBDIR%/ \
