@@ -23,6 +23,5 @@
 # supported.  There can be only one entry that matches a given
 # repository.
 
-# peter's edit post-processor..
+# Sanity check commit messages for obvious problems
 DEFAULT			$CVSROOT/CVSROOT/logcheck
-

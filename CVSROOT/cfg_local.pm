@@ -29,15 +29,16 @@ $UNEXPAND_RCSID = 1;
 $MAILCMD = "/usr/local/bin/mailsend -H";
 $MAIL_BRANCH_HDR  = "X-FreeBSD-CVS-Branch";
 $ADD_TO_LINE = 0;
+$MAILBANNER = "FreeBSD ports repository";
 
 # Sanity check to make sure we've been run through the wrapper and are
-# now primary group 'ncvs'.
+# now primary group 'pcvs'.
 #
 $COMMITCHECK_EXTRA = sub {
 	my $GRP=`/usr/bin/id -gn`;
 	chomp $GRP;
-	unless ( $GRP =~ /^ncvs$/ ) {
-		print "You do not have group ncvs (commitcheck)!\n";
+	unless ( $GRP =~ /^pcvs$/ ) {
+		print "You do not have group pcvs (commitcheck)!\n";
 		exit 1;	# We could return false here.  But there's
 			# nothing to stop us taking action here instead.
 	}
@@ -50,7 +51,7 @@ my $hostname = `/bin/hostname`;
 die "Can't determine hostname!\n" if $? >> 8;
 chomp $hostname;
 if ($hostname =~ /^repoman\.freebsd\.org$/i) {
-	$MAILADDRS='cvs-committers@FreeBSD.org cvs-all@FreeBSD.org';
+	$MAILADDRS='ports-committers@FreeBSD.org cvs-ports@FreeBSD.org cvs-all@FreeBSD.org';
 	$MAILADDRS = 'cvs@FreeBSD.org' if $DEBUG;
 
 	@COMMIT_HOSTS = qw(repoman.freebsd.org);
@@ -59,35 +60,7 @@ if ($hostname =~ /^repoman\.freebsd\.org$/i) {
 
 @LOG_FILE_MAP = (
 	'CVSROOT'	=> '^CVSROOT/',
-	'distrib'	=> '^distrib/',
-	'doc'		=> '^doc/',
 	'ports'		=> '^ports/',
-	'projects'	=> '^projects/',
-	'www'		=> '^www/',
-
-	'bin'		=> '^src/bin/',
-	'contrib'	=> '^src/contrib/',
-	'crypto'	=> '^src/crypto/',
-	'eBones'	=> '^src/eBones/',
-	'etc'		=> '^src/etc/',
-	'games'		=> '^src/games/',
-	'gnu'		=> '^src/gnu/',
-	'include'	=> '^src/include/',
-	'kerberos5'	=> '^src/kerberos5/',
-	'kerberosIV'	=> '^src/kerberosIV/',
-	'lib'		=> '^src/lib/',
-	'libexec'	=> '^src/libexec/',
-	'lkm'		=> '^src/lkm/',
-	'release'	=> '^src/release/',
-	'sbin'		=> '^src/sbin/',
-	'secure'	=> '^src/secure/',
-	'share'		=> '^src/share/',
-	'sys'		=> '^src/sys/',
-	'tools'		=> '^src/tools/',
-	'usrbin'	=> '^src/usr\.bin/',
-	'usrsbin'	=> '^src/usr\.sbin/',
-	'user'		=> '^src/',
-
 	'other'		=> '.*'
 );
 

@@ -697,6 +697,7 @@ if ($input_params =~ /Imported sources/) {
 
 	&do_changes_file(@text);
 	&mail_notification(@text);
+	system("/usr/local/bin/awake", $directory);
 	&cleanup_tmpfiles();
 	exit 0;
 }
@@ -895,6 +896,7 @@ for (my $i = 0; ; $i++) {
 	&mail_notification(@log_msg);
 }
 
+system("/usr/local/bin/awake", $directory);
 &cleanup_tmpfiles();
 exit 0;
 # EOF
