@@ -14,17 +14,13 @@ MASTER_SITES=	http://www.oberhumer.com/opensource/pysol/download/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python extension module to play sounds and background music
 
-LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12 \
-		smpeg.1:${PORTSDIR}/multimedia/smpeg \
-		SDL_mixer.2:${PORTSDIR}/audio/sdl_mixer
-
-SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
+LIB_DEPENDS=	smpeg.1:${PORTSDIR}/multimedia/smpeg
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 
+USE_SDL=	mixer sdl
 USE_BZIP2=	yes
 USE_PYTHON=	yes
 HAS_CONFIGURE=	yes
-CONFIGURE_ENV=	SDL_CONFIG="${SDL_CONFIG}"
 
 .include <bsd.port.mk>
