@@ -1,0 +1,11 @@
+--- src/main.c	Mon Sep  1 10:50:28 2003
++++ src/main.c	Sun Nov 30 03:17:29 2003
+@@ -65,7 +65,7 @@
+
+ int quit_services, max_cycles;
+
+-char *services_config = "srvx.conf";
++char *services_config = "../etc/srvx.conf";
+
+ char **services_argv;
+ int services_argc;

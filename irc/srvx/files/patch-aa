@@ -1,0 +1,25 @@
+--- Makefile.in	Sun Oct 12 22:37:15 2003
++++ Makefile.in	Sun Nov 30 04:31:56 2003
+@@ -519,12 +519,17 @@
+
+ install-exec-local:
+ 	$(INSTALL) -d -m 755 $(prefix)
+-	$(INSTALL) -m 744 ./src/srvx $(prefix)
+-	$(INSTALL) -m 644 $(srcdir)/src/*.help $(prefix)
+-	$(INSTALL) -m 600 $(srcdir)/srvx.conf.example $(prefix)
+-	$(INSTALL) -m 644 $(srcdir)/sockcheck.conf.example $(prefix)
++	$(INSTALL) -d -m 755 $(prefix)/etc
++	$(INSTALL) -d -m 755 $(prefix)/share
++	$(INSTALL) -d -m 755 $(prefix)/share/doc
++	$(INSTALL) -d -m 755 $(prefix)/share/doc/srvx
++	$(INSTALL) -d -m 755 $(prefix)/bin
++	$(INSTALL) -m 744 ./src/srvx $(prefix)/bin/srvx
++	$(INSTALL) -m 644 $(srcdir)/src/*.help $(prefix)/share/doc/srvx/
++	$(INSTALL) -m 600 $(srcdir)/srvx.conf.example $(prefix)/etc/
++	$(INSTALL) -m 644 $(srcdir)/sockcheck.conf.example $(prefix)/etc/
+ 	@echo
+-	@echo srvx-$(VERSION) has been installed to $(prefix)
++	@echo srvx-$(VERSION) has been installed to $(prefix)/bin
+ 	@echo Remember to edit srvx.conf.example and sockcheck.conf.example
+ 	@echo And of course, ./srvx --help before starting.
+ 	@echo
