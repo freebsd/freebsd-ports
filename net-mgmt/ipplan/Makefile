@@ -6,29 +6,46 @@
 #
 
 PORTNAME=	ipplan
-PORTVERSION=	4.0.2
+PORTVERSION=	4.0.4
 CATEGORIES=	net-mgmt
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	iptrack
-DISTNAME=	${PORTNAME}-4.02
+DISTNAME=	${PORTNAME}-4.04
 
 MAINTAINER=	mt@primats.org.ua
 COMMENT=	IP address management and tracking
 
-USE_PHP=	gettext
-USE_MYSQL=	yes
 USE_REINPLACE=	yes
-
+NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 IPPLANDIR?=	share/${PORTNAME}
+PKGMESSAGE=	${WRKDIR}/pkg-message
 PLIST_SUB=	IPPLANDIR=${IPPLANDIR}
 
-NO_BUILD=	yes
+USE_PHP=	gettext pcre xml zlib
+
+.if !defined(WITHOUT_MYSQL)
+USE_PHP+=	mysql
+.endif
+
+.if defined(WITH_PGSQL)
+USE_PHP+=	pgsql
+.endif
+
+.if defined(WITH_SNMP)
+USE_PHP+=	snmp
+.endif
+
+post-patch:
+	@${SED} -e 's|%IPPLANDIR%|${PREFIX}/${IPPLANDIR}|g' ${MASTERDIR}/pkg-message > ${PKGMESSAGE}
+.if defined(WITH_PGSQL)
+	@${REINPLACE_CMD} -e 's|INSTALL|INSTALL-POSTGRESQL|g' ${PKGMESSAGE}
+.endif
 
 do-install:
 	@${MKDIR} ${PREFIX}/${IPPLANDIR}
 	@${CP} -R ${WRKSRC}/* ${PREFIX}/${IPPLANDIR}
 	@${FIND} ${PREFIX}/${IPPLANDIR} -name '*.orig' -delete
-	@${SED} -e 's|%IPPLANDIR%|${PREFIX}/${IPPLANDIR}|g' ${PKGMESSAGE}
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
