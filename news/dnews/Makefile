@@ -3,10 +3,11 @@
 # Date created:		Thu May 29 17:16:36 CEST 1997
 # Whom:			Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id$
+# $Id: Makefile,v 1.3 1997/05/29 15:22:13 andreas Exp $
 #
 
 DISTNAME=	dnews
+PKGNAME=	dnews-4.2j
 CATEGORIES=	news
 MASTER_SITES=	ftp://ftp.netwinsite.com/pub/netwinsite/dnews/
 DISTFILES=	dnews42j_freebsd.tar.Z
