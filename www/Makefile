@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.124 1999/04/12 16:49:28 dirk Exp $
+# $Id: Makefile,v 1.125 1999/04/13 22:51:31 dirk Exp $
 #
 
     SUBDIR += Mosaic         # requires Motif
@@ -24,6 +24,7 @@
     SUBDIR += chimera
     SUBDIR += chimera2
     SUBDIR += comline
+    SUBDIR += evg
     SUBDIR += fxhtml
     SUBDIR += gn
     SUBDIR += grail
@@ -41,6 +42,7 @@
     SUBDIR += linux-netscape4
     SUBDIR += lynx
     SUBDIR += lynx-current
+    SUBDIR += lynx-ssl
     SUBDIR += mapedit
     SUBDIR += marc-search
     SUBDIR += mhonarc
