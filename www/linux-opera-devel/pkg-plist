@@ -139,6 +139,10 @@ share/opera/buttons/defsmall/tile.gif
 share/opera/buttons/defsmall/tilevert.gif
 share/opera/buttons/defsmall/update.gif
 share/opera/buttons/defsmall/url.gif
+share/opera/buttons/examples/example_big.ini
+share/opera/buttons/examples/example_small.ini
+share/opera/buttons/examples/opera_22x22.png
+share/opera/buttons/examples/opera_32x32.png
 share/opera/help/access.htm
 share/opera/help/alpha.htm
 share/opera/help/bookmark.htm
@@ -192,6 +196,7 @@ share/opera/styles/wml.css
 @dirrm share/opera/images
 @dirrm share/opera/icons
 @dirrm share/opera/help
+@dirrm share/opera/buttons/examples
 @dirrm share/opera/buttons/defsmall
 @dirrm share/opera/buttons/default
 @dirrm share/opera/buttons
