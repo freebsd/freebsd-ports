@@ -4,4 +4,3 @@ This is a beta release of the Internet Software Consortium
 DHCP Server (ISC dhcpd).  In this Beta release, support for the core
 DHCP protocol is provided.  BOOTP support is also provided for
 backwards compatibility. 
-
