@@ -20,14 +20,17 @@ MAN5=		proto.5
 MLINKS=		mk9660.8 dump9660.8
 USE_REINPLACE=	yes
 
-.include <bsd.port.pre.mk>
-
-# 386(=i386), alpha, sparc
-# PowerPC should be OK, too
-OBJTYPE!=	${UNAME} -m | ${SED} -e 's;i.86;386;'
-MAKE_ENV	+= systype=${OPSYS} objtype=${OBJTYPE}
+ONLY_FOR_ARCHS=	alpha i386 powerpc
+OBJTYPE=	${MACHINE_ARCH:S/i386/386/:S/powerpc/power/}
+MAKE_ENV=	systype=${OPSYS} objtype=${OBJTYPE}
 
 post-patch:
-	${REINPLACE_CMD} -e 's,@@LOCAL@@,${PREFIX},g' ${WRKSRC}/Makefile
+	${REINPLACE_CMD} -e 's|@@LOCAL@@|${PREFIX}|g' ${WRKSRC}/Makefile
+	${REINPLACE_CMD} -e 's|CC=.*|CC=${CC}|' \
+		-e 's|XCFLAGS=.*|XCFLAGS=${CFLAGS} -DFREEBSD|' \
+		${WRKSRC}/Make.FreeBSD
+# The assembly files require pre-processing
+	cd ${WRKSRC}/libunix; \
+		for f in *.s; do ${MV} $$f $${f%.s}.S; done
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
