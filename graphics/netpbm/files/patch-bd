@@ -1,6 +1,6 @@
---- pbm/Makefile.orig	Wed May 30 14:59:56 2001
-+++ pbm/Makefile	Tue Jun 26 00:00:00 2001
-@@ -47,6 +47,7 @@
+--- pbm/Makefile.orig	Fri Aug 17 13:40:04 2001
++++ pbm/Makefile	Wed Sep  5 00:00:00 2001
+@@ -52,6 +52,7 @@
  
  # Library objects to be built and linked by Makefile.common:
  LIBOBJECTS = libpm.o libpbm1.o libpbm2.o libpbm3.o libpbm4.o libpbm5.o 
@@ -8,20 +8,16 @@
  ifneq (${VMS}x,x)
  LIBOBJECTS += libpbmvms.o
  endif
-@@ -59,30 +60,25 @@
- 
- MERGENAME = pbmmerge
- 
--INTERFACE_HEADERS = pbm.h
-+INTERFACE_HEADERS = pbm.h pm.h
+@@ -68,26 +69,21 @@
  
  .PHONY: all
- all:	$(BINARIES)
+ all:	$(LIBPBM) $(BINARIES) $(EXTRA_STATICLIB)
 -	$(MAKE) -C pbmtoppa all
  
  .PHONY: merge
- merge: $(MERGENAME)
+-merge: $(MERGENAME)
 -	$(MAKE) -C pbmtoppa all
++merge: $(MERGENAME) $(EXTRA_STATICLIB)
  
  .PHONY: install.bin
  install.bin: install.bin.common
@@ -40,7 +36,7 @@
  
  HEADERLINKS = pm_config.h version.h compile.h
  
-@@ -104,6 +100,5 @@
+@@ -109,6 +105,5 @@
  .PHONY: clean
  clean: clean.common
  	rm -f thinkjettopbm.c

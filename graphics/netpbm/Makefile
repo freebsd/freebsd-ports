@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	netpbm
-PORTVERSION=	9.16
+PORTVERSION=	9.17
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -21,8 +21,6 @@ LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
 USE_GMAKE=	yes
 MAKE_ENV=	LN="${LN}" RANLIB="${RANLIB}"
 MAKEFILE=	GNUmakefile
-ALL_TARGET=	merge
-INSTALL_TARGET=	install-merge install-dev
 INSTALLS_SHLIB=	yes
 
 .include <bsd.port.pre.mk>
@@ -32,7 +30,6 @@ INSTALLS_SHLIB=	yes
 post-patch:
 	@${PERL} -pi -e 's|%%X11BASE%%|${X11BASE}|g' ${WRKSRC}/pm_config.h
 	@${PERL} -pi -e 's|<shhopt.h>|<pm_shhopt.h>|g' ${WRKSRC}/pbm/pm.h
-	@${ECHO} '#include "pm.h"' > ${WRKSRC}/pbmplus.h
 	@${CP} ${FILESDIR}/Makefile.config.FreeBSD ${WRKSRC}/Makefile.config
 	@${LN} -sf ${WRKSRC}/shhopt/shhopt.h ${WRKSRC}/shhopt/pm_shhopt.h
 
