@@ -436,6 +436,7 @@
     SUBDIR += simscan
     SUBDIR += sma
     SUBDIR += smail
+    SUBDIR += smc-milter
     SUBDIR += smtpclient
     SUBDIR += smtpd
     SUBDIR += smtpfeed
