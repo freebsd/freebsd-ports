@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	cooledit
-PORTVERSION=	3.15.3
+PORTVERSION=	3.17.2
 CATEGORIES=	editors
 MASTER_SITES= 	${MASTER_SITE_SUNSITE} \
 		http://www.netins.net/showcase/Comput-IT/cooledit/src/
-MASTER_SITE_SUBDIR=	apps/editors/X
+MASTER_SITE_SUBDIR=	apps/editors/X/cooledit
 
 MAINTAINER=	brett@peloton.runet.edu
 
