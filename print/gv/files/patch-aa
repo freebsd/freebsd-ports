@@ -1,5 +1,5 @@
---- config.Unix.orig	Fri Jun  6 15:00:00 1997
-+++ config.Unix	Mon Jun  9 14:45:19 1997
+--- config.Unix.orig	Sat Jun  7 07:00:00 1997
++++ config.Unix	Wed Feb 21 06:47:59 2001
 @@ -32,10 +32,10 @@
  XCOMM --------------------------------------------------------------------
  XCOMM  Destination directories.
@@ -9,7 +9,7 @@
 -      GV_LIBDIR    = /usr/local/lib/gv/
 -      GV_MANDIR    = /usr/local/man/man1/
 +      GV_BINDIR    = $(BINDIR)
-+      GV_DOCDIR    = /usr/X11R6/share/doc/gv/
++      GV_DOCDIR    = $(PREFIX)/share/doc/gv/
 +      GV_LIBDIR    = $(LIBDIR)/gv/
 +      GV_MANDIR    = $(MANDIR)
  
