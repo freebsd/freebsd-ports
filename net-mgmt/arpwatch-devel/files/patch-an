@@ -1,5 +1,5 @@
 --- report.c.orig	Sat Sep 30 19:41:10 2000
-+++ report.c	Mon Mar 29 14:24:36 2004
++++ report.c	Tue Apr 13 14:39:50 2004
 @@ -45,6 +45,8 @@
 
  #include <ctype.h>
@@ -64,11 +64,13 @@
 
  		/* Update child depth */
  		++cdepth;
-@@ -304,12 +315,31 @@
+@@ -303,13 +314,32 @@
+ 	(void)fprintf(f, "From: %s\n", watchee);
  	(void)fprintf(f, "To: %s\n", watcher);
  	hn = gethname(a);
- 	if (!isdigit(*hn))
+-	if (!isdigit(*hn))
 -		(void)fprintf(f, "Subject: %s (%s)\n", title, hn);
++	if (hn != NULL)
 +		(void)fprintf(f, "Subject: Arpwatch Event (%s)\n", hn);
  	else {
 -		(void)fprintf(f, "Subject: %s\n", title);
