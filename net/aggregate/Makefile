@@ -8,10 +8,8 @@
 PORTNAME=	aggregate
 PORTVERSION=	1.6
 CATEGORIES=	net
-MASTER_SITES=	http://dist.automagic.org/ \
-		http://dist1.automagic.org/ \
-		http://dist2.automagic.org/ \
-		http://dist3.automagic.org/
+MASTER_SITES=	ftp://ftp.isc.org/isc/aggregate/ \
+		http://software.automagic.org/aggregate/
 
 MAINTAINER=	jabley@automagic.org
 COMMENT=	Optimise a list of route prefixes to help make nice short filters
