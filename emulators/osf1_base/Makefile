@@ -8,7 +8,7 @@
 #
 
 DISTNAME=	netscape-4.7-1.alpha
-PKGNAME=	osf1_base-5.0
+PKGNAME=	osf1_base-4.0f
 CATEGORIES=	emulators
 MASTER_SITES=	ftp://ftp.digital.com/private/netscape/
 EXTRACT_SUFX=	.rpm
