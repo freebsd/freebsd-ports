@@ -1,0 +1,9 @@
+*WARNING* *WARNING* *WARNING* *WARNING* *WARNING* *WARNING*
+------------------------------------------------------------
+There is a bug in Q3 server regarding server log placement.
+Temporary workaround for this problem is to run Q3 server in
+a non-root environment. You may create a separate account for
+this or use an existing one as long as it does not have super-
+user privileges and manually do a recursive change in ownership
+to Q3 server and any mods you install accordingly.
+------------------------------------------------------------
