@@ -14,6 +14,9 @@ CATEGORIES=	security net
 MASTER_SITES=	${MASTER_SITE_NETBSD}
 MASTER_SITE_SUBDIR=	.
 
+DEPRECATED=	http://vuxml.freebsd.org/b7cb488c-8349-11d8-a41f-0020ed76ef5a.html (security)
+EXPIRATION_DATE=November 21, 2004
+
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OpenBSD IKE daemon
 
