@@ -1,24 +1,25 @@
 # New ports collection makefile for:   xdino
-# Version required:    V5.3
+# Version required:    5.4.1
 # Date created:        12 October 1996
 # Whom:                Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.1.1.1 1996/11/16 12:49:18 asami Exp $
+# $Id: Makefile,v 1.2 1997/01/03 09:37:08 obrien Exp $
 #
 
-DISTNAME=	xdino
-PKGNAME=        xdino-5.3
+DISTNAME=        xdino-5.4.1
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
-MASTER_SITE_SUBDIR=	games/puzzles
+MASTER_SITE_SUBDIR=	games/xpuzzles
 
 MAINTAINER=	Nakai@Mlab.t.u-tokyo.ac.jp
 
+WRKSRC=		${WRKDIR}/xdino
 USE_IMAKE=	yes
+MAN1=		xdino.1
 
 post-install:
-	@chmod 755 ${PREFIX}/bin/xdino
-	@/usr/sbin/chown ${BINOWN}.${BINGRP} ${PREFIX}/bin/xdino
+	@${INSTALL_PROGRAM} ${WRKSRC}/xdino ${PREFIX}/bin
 	@${INSTALL_DATA} ${WRKSRC}/Dino.ad ${PREFIX}/lib/X11/app-defaults/Dino
+	@${INSTALL_MAN} ${WRKSRC}/xdino.man ${PREFIX}/man/man1/xdino.1
 
 .include <bsd.port.mk>
