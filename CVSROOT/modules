@@ -4020,6 +4020,7 @@ lkm_wcd		src/lkm/wcd
 lla		ports/net/lla
 llnlxdir	ports/ftp/llnlxdir
 llnlxftp	ports/ftp/llnlxftp
+lm-solve	ports/games/lm-solve
 lmbench		ports/benchmarks/lmbench
 lmd		ports/net/lmd
 lmmon		ports/sysutils/lmmon
