@@ -1,12 +1,10 @@
-lib/libautotrace.a
 bin/autotrace
 bin/autotrace-config
-share/aclocal/autotrace.m4
-@unexec rmdir %D/share/aclocal 2>/dev/null || true
-lib/pkgconfig/autotrace.pc
-@unexec rmdir %D/libdata/pkgconfig 2>/dev/null || true
-include/autotrace/types.h
 include/autotrace/autotrace.h
-include/autotrace/input.h
 include/autotrace/exception.h
+include/autotrace/input.h
+include/autotrace/types.h
+lib/libautotrace.a
+libdata/pkgconfig/autotrace.pc
+share/aclocal/autotrace.m4
 @dirrm include/autotrace

@@ -7,7 +7,7 @@
 
 PORTNAME=	autotrace
 PORTVERSION=	0.30
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -27,7 +27,6 @@ LIB_DEPENDS=	jbig.1:${PORTSDIR}/graphics/jbigkit \
 LIB_DEPENDS+=	bz2.1:${PORTSDIR}/archivers/bzip2
 .endif
 
-USE_AUTOCONF=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib" \
 		CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/ming"
@@ -38,7 +37,7 @@ MAN1=		autotrace.1
 
 pre-patch:
 	@${REINPLACE_CMD} -e \
-		's|\$$\(libdir\)/pkgconfig|\$$\(prefix\)/libdata/pkgconfig|' \
+		's|[(]libdir[)]/pkgconfig|(prefix)/libdata/pkgconfig|' \
 		${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>
