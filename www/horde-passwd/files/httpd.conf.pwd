@@ -1,0 +1,30 @@
+# This is included in Apache's httpd.conf for horde-passwd
+#
+# For security, don't serve pages from the horde-passwd configuration and
+# library directories.
+#
+<Directory "/home/httpd/html/horde/passwd/config">
+    order deny,allow
+    deny from all
+</Directory>
+<Directory "/home/httpd/html/horde/passwd/lib">
+    order deny,allow
+    deny from all
+</Directory>
+<Directory "/home/httpd/html/horde/passwd/locale">
+    order deny,allow
+    deny from all
+</Directory>
+<Directory "/home/httpd/html/horde/passwd/po">
+    order deny,allow
+    deny from all
+</Directory>
+<Directory "/home/httpd/html/horde/passwd/scripts">
+    order deny,allow
+    deny from all
+</Directory>
+<Directory "/home/httpd/html/horde/passwd/templates">
+    order deny,allow
+    deny from all
+</Directory>
+# End of horde-passwd configuration ================

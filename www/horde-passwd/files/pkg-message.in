@@ -1,0 +1,33 @@
+************************************************************************
+horde-passwd has been installed in %%PWDDIR%% with your blank
+configuration files.
+
+horde-passwd requires a password changing mechanism.  Probably the
+easier one is the port mail/poppassd.  Choose one and change the
+configuration files conf.php and backend.php, located in
+%%CONFDIR%%/
+
+To enable horde-passwd at your horde installation, add the following
+lines to your horde registry file, at
+%%HCONFDIR%%/registry.php
+
+----8<--------8<--------8<--------8<--------8<--------8<--------8<----
+$this->applications['passwd'] = array(
+    'fileroot' => dirname(__FILE__) . '/../passwd',
+    'webroot' => $this->applications['horde']['webroot'] . '/passwd',
+    'icon' => $this->applications['horde']['webroot'] . '/passwd/graphics/lock.gif',
+    'name' => _("Password"),
+    'allow_guests' => false,
+    'show' => true,
+    'status' => 'active'
+);
+----8<--------8<--------8<--------8<--------8<--------8<--------8<----
+
+To integrate horde-passwd and IMP, edit the file
+horde/imp/config/conf.php and include 'passwd' in the list of menu
+apps, for example, it might look like the following:
+
+$conf['menu']['apps'] = array('turba','passwd');
+
+To protect your configuration files, you have to restart Apache.
+************************************************************************
