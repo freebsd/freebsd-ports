@@ -8,11 +8,8 @@
 PORTNAME=	ffsrecov
 PORTVERSION=	0.1
 CATEGORIES=	sysutils
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	jmg
+MASTER_SITES=	http://www.funkthat.com/~jmg/
 DISTNAME=	ffsrecov
-
-MAINTAINER=	jmg@freebsd.org
 
 MAN8=		ffsrecov.8
 
