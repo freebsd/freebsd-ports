@@ -9890,6 +9890,7 @@ v		ports/x11-toolkits/v
 v6eval		ports/net/v6eval
 vMac		ports/emulators/vMac
 valgrind	ports/devel/valgrind
+valgrind-snapshot	ports/devel/valgrind-snapshot
 vamos		ports/games/vamos
 varconf		ports/devel/varconf
 varkon		ports/cad/varkon
