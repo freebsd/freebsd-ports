@@ -269,6 +269,7 @@
     SUBDIR += pl-aspell
     SUBDIR += pspell
     SUBDIR += pspell-ispell
+    SUBDIR += pt-aspell
     SUBDIR += py-4suite
     SUBDIR += py-HyperText
     SUBDIR += py-asv
