@@ -7,17 +7,17 @@
 #
 
 PORTNAME=	fastdb
-PORTVERSION=	2.57
+PORTVERSION=	2.58
 CATEGORIES=	databases
 MASTER_SITES=	http://www.garret.ru/~knizhnik/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	osa@FreeBSD.org.ru
 COMMENT=	Main Memory Relational Database Management System
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_GMAKE=	yes
-MAKE_ENV=	OSTYPE="${OPSYS:L}" \
+MAKE_ENV=	OSTYPE="${OPSYS}" \
 		PREFIX="${PREFIX}" \
 		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}"
