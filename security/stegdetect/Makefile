@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	stegdetect
-PORTVERSION=	0.2
+PORTVERSION=	0.3
 CATEGORIES=	security
 MASTER_SITES=	http://www.outguess.org/
 
@@ -16,5 +16,9 @@ MAINTAINER=	markp@FreeBSD.org
 GNU_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 MAN1=		stegdetect.1
+
+pre-patch:
+	@${PERL} -pi -e 's@\$$\(JPEGLIB\)@\$$\(JPEGLIB\) \-lcrypto@' \
+		${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>
