@@ -9,6 +9,7 @@ PORTNAME=	opera
 PKGNAMEPREFIX=	linux-
 OPERAVERSION=	6.0-20020412
 PORTVERSION=	${OPERAVERSION:S/-/./}
+PORTREVISION=	1
 CATEGORIES=	www linux
 MASTER_SITES=	http://opera.online.no/linux/600/beta2/ \
 		ftp://ftp.opera.com/pub/opera/linux/600/beta2/

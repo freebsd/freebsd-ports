@@ -1,12 +1,13 @@
 --- install.sh.orig	Fri Apr 12 14:01:42 2002
-+++ install.sh	Sat Apr 20 16:50:05 2002
-@@ -727,6 +727,14 @@
++++ install.sh	Fri Apr 26 13:41:08 2002
+@@ -727,6 +727,15 @@
      /usr/lib/j2re1.3/plugin/i386/netscape4 \\"
  	;;
  
 +	i386:FreeBSD)
 +	    wrapper_plugin_paths="
 +    %%PREFIX%%/Acrobat[45]/bin \\
++    %%PREFIX%%/lib/netscape-linux/plugins \\
 +    %%PREFIX%%/linux-jdk1.3.1/jre/plugin/i386/ns4 \\
 +    %%PREFIX%%/linux-ibm-jdk1.3.0/jre/bin \\
 +    %%PREFIX%%/linux-jdk1.4.0b3/jre/plugin/i386/ns4 \\"
@@ -15,7 +16,7 @@
  	mips*:Linux)
  	    wrapper_plugin_paths=''
  	;;
-@@ -783,7 +791,7 @@
+@@ -783,7 +792,7 @@
  
  # Acrobat Reader
  for BINDIR in \\
