@@ -125,6 +125,7 @@ post-build:
 		${XARGS} ${RMDIR} 2> /dev/null || ${TRUE}
 
 pre-install:
+	${RM} -f ${PLIST}
 	${TOUCH} -f ${PLIST}
 	if [ ! -x ${PREFIX}/bin/mozilla -a ! -L ${PREFIX}/bin/mozilla ]; then \
 	    ${ECHO_CMD} bin/mozilla >> ${PLIST} ; \
