@@ -23,6 +23,7 @@ etc/rc.d/nullmail.sh
 %%LOCALSTATEDIR_RM%%var/nullmailer/tmp
 @unexec rm -f %%LOCALSTATEDIR%%/var/nullmailer/trigger
 @dirrm etc/nullmailer
+@dirrm libexec/nullmailer
 %%LOCALSTATEDIR_RM%%var/nullmailer
 %%LOCALSTATEDIR_RM%%var
 @unexec if [ -n "$BATCH" ]; then echo "Warning: In batch mode, I will do 'rmuser -y nullmail'"; rmuser -y nullmail; fi
