@@ -1,0 +1,3 @@
+Clint is a testbed for static source-code checking techniques. It is
+currently designed to check C++ for common programmer errors and suggest
+improvements.

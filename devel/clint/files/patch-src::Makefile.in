@@ -1,0 +1,11 @@
+--- src/Makefile.in.orig	Tue May  1 16:52:17 2001
++++ src/Makefile.in	Tue May  1 16:52:26 2001
+@@ -107,7 +107,7 @@
+ 
+ CXXFLAGS = -Wall -pedantic -ansi -W @CXXFLAGS@ -DPKGLIBDIR="\"$(pkglibdir)\""
+ bin_PROGRAMS = clint
+-clint_LDFLAGS = -ldl -rdynamic
++clint_LDFLAGS = -rdynamic
+ subdir = src
+ mkinstalldirs = $(SHELL) $(top_srcdir)/config/mkinstalldirs
+ CONFIG_HEADER = ../config.h

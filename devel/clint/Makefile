@@ -1,0 +1,28 @@
+# ex:ts=8
+# New ports collection makefile for:	clint
+# Date created:			May 1, 2001
+# Whom:				ijliao
+#
+# $FreeBSD$
+#
+
+PORTNAME=	clint
+PORTVERSION=	0.1.2
+CATEGORIES=	devel
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
+
+MAINTAINER=	ijliao@FreeBSD.org
+
+USE_PYTHON=	yes
+GNU_CONFIGURE=	yes
+USE_GMAKE=	yes
+INSTALLS_SHLIB=	yes
+
+post-patch:
+	@${PERL} -pi -e "s,-lpthread,${PTHREAD_LIBS},g" ${WRKSRC}/configure
+
+post-install:
+	@install-info ${PREFIX}/info/clint.info ${PREFIX}/info/dir
+
+.include <bsd.port.mk>
