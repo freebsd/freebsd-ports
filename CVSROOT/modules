@@ -221,6 +221,7 @@ adom		ports/games/adom
 adonthell	ports/games/adonthell
 adpcm		ports/audio/adpcm
 adtool		ports/sysutils/adtool
+advancecomp	ports/archivers/advancecomp
 adzap		ports/www/adzap
 adzap2squirm	ports/www/adzap2squirm
 aee		ports/editors/aee
