@@ -1003,8 +1003,7 @@ PLIST_SUB+=		PERL_VERSION=${PERL_VERSION} \
 				PERL_VER=${PERL_VER} \
 				PERL_ARCH=${PERL_ARCH}
 
-.if exists(/usr/bin/perl5) && ${OSVERSION} >= 300000
-# 3.0-current after perl5 import
+.if exists(/usr/bin/perl5) && ${OSVERSION} >= 300000 && ${OSVERSION} < 500036
 .if !exists(/usr/bin/perl${PERL_VERSION}) && defined(USE_PERL5)
 pre-everything::
 	@${ECHO_CMD} "Error: you don't have the right version of perl in /usr/bin."
