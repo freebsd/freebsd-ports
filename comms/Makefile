@@ -24,6 +24,7 @@
     SUBDIR += sms_client
     SUBDIR += snooper
     SUBDIR += sredird
+    SUBDIR += tits
     SUBDIR += tkhylafax
     SUBDIR += viewfax
     SUBDIR += vpb2
