@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	frontline
-PORTVERSION=	0.5.3
-PORTREVISION=	1
+PORTVERSION=	0.5.4
 CATEGORIES=	graphics gnome
-MASTER_SITES=	http://autotrace.sourceforge.net/frontline/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	autotrace
 
 MAINTAINER=	gnome@FreeBSD.org
 
