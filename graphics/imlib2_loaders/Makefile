@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	enlightenment
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extra image loader plugins for Imlib 2
 
-LIB_DEPENDS=	Imlib2.1:${PORTSDIR}/graphics/imlib2 \
+LIB_DEPENDS=	Imlib2.2:${PORTSDIR}/graphics/imlib2 \
 		edb.1:${PORTSDIR}/databases/edb
 
 USE_X_PREFIX=	yes
