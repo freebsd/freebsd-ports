@@ -7690,3 +7690,4 @@ semantic	ports/devel/semantic
 semantic-emacs20	ports/devel/semantic-emacs20
 semi113-emacs19	ports/editors/semi113-emacs19
 conserver-com	ports/comms/conserver-com
+flasm		ports/graphics/flasm
