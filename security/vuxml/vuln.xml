@@ -32,6 +32,37 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="ac619d06-3ef8-11d9-8741-c942c075aa41">
+    <topic> Security Vulnerability With Java Plugin</topic>
+    <affects>
+      <package>
+	<name>jdk</name>
+	<range><ge>1.4.0</ge><le>1.4.2_6</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+      <p>
+      The Sun Java Plugin capability in Java 2 Runtime Environment
+      (JRE) 1.4.2_01, 1.4.2_04, and possibly earlier versions, does
+      not properly restrict access between Javascript and Java
+      applets during data transfer, which allows remote attackers
+      to load unsafe classes and execute arbitrary code.
+      </p>
+      </body>
+    </description>
+    <references>
+      <url>http://sunsolve.sun.com/search/document.do?assetkey=1-26-57591-1&amp;searchclause=%22category:security%22%20%22availability,%20security%22</url>
+      <url>http://www.securityfocus.com/archive/1/382072</url>
+      <cvename>CAN-2004-1029</cvename>
+      <mlist msgid="20041123070248.GA25385@jouko.iki.fi">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=110125046627909</mlist>
+    </references>
+    <dates>
+      <discovery>2004-11-24</discovery>
+      <entry>2004-11-25</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="1a32e8ee-3edb-11d9-8699-00065be4b5b6">
     <topic>ProZilla -- server response buffer overflow vulnerabilities</topic>
     <affects>
