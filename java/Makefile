@@ -96,6 +96,7 @@
     SUBDIR += netcomponents
     SUBDIR += netrexx
     SUBDIR += openjit
+    SUBDIR += phpeclipse
     SUBDIR += proguard
     SUBDIR += sablevm
     SUBDIR += shujit
