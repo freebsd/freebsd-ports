@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.21 1997/11/23 23:40:21 fenner Exp $
+# $Id: Makefile,v 1.22 1997/12/18 03:48:38 alex Exp $
 #
 
     SUBDIR += aftp
@@ -30,6 +30,7 @@
     SUBDIR += x48
     SUBDIR += xcopilot
     SUBDIR += xgs
+    SUBDIR += xmame
     SUBDIR += xzx
 
 .include <bsd.port.subdir.mk>
