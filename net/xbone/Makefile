@@ -6,60 +6,48 @@
 #
 
 PORTNAME=	XBone
-PORTVERSION=	2.0
-PORTREVISION=	2
-CATEGORIES=	net
-MASTER_SITES=	http://www.isi.edu/xbone/software/x-bone/
+PORTVERSION=	3.0
+CATEGORIES=	net perl5
+MASTER_SITES=	http://www.isi.edu/xbone/software/xbone/
 
-MAINTAINER=	yushunwa@isi.edu
-COMMENT=	A system for dynamic internet overlay deployment and management
-
-.include <bsd.port.pre.mk>
-.if ${OSVERSION} < 320000
-BROKEN=	"X-Bone does not support FreeBSD prior to 3.2"
-.endif
+MAINTAINER=	xbone@isi.edu
+COMMENT=	Deploys and manages IP-based VPNs (aka "virtual Internets")
 
 USE_GMAKE=	yes
-USE_PERL5=	yes
 IS_INTERACTIVE=	yes
 NO_BUILD=	yes
+USE_PERL5=	yes
 
-.if !defined(OPTION) || ${OPTION}!=RD && ${OPTION}!=OMGUI
-pre-fetch:
-	@${ECHO} ""
-	@${ECHO} "! You must set variable OPTION=OMGUI or OPTION=RD."
-	@${ECHO} "  OMGUI: Install & configure the system for:"
-	@${ECHO} "         (1) X-Bone Overlay Manager"
-	@${ECHO} "         (2) X-Bone GUI files (html & CGI scripts)"
-	@${ECHO} "         (3) X-Bone Overlay DNS server"
-	@${ECHO} "  ** NORMALLY, YOU ONLY NEED ONE OMGUI-HOST TO RUN XBONE."
-	@${ECHO} ""
-	@${ECHO} "  RD: Install the X-Bone Resource Daemon which enables the"
-	@${ECHO} "      system to participate in overlays as either a host"
-	@${ECHO} "      or a router."
-	@${ECHO} "  **  YOU NEED MULTIPLE RD-HOSTS TO CONSTRUCT OVERLAYS."
-	@${FALSE}
-.elif defined(OPTION)
-.if ${OPTION}==RD
-BUILD_DEPENDS=	${SITE_PERL}/Net/Netmask.pm:${PORTSDIR}/net-mgmt/p5-Net-Netmask \
-		${SITE_PERL}/${PERL_ARCH}/Net/SSLeay.pm:${PORTSDIR}/security/p5-Net-SSLeay
-INSTALL_TARGET=	rd
-PLIST=		${PKGDIR}/pkg-plist.rd
-.else
-BUILD_DEPENDS=	${PREFIX}/sbin/httpsd:${PORTSDIR}/www/apache13-ssl\
-		${SITE_PERL}/CGI/Carp.pm:${PORTSDIR}/www/p5-CGI.pm \
-		${SITE_PERL}/Mail/Sendmail.pm:${PORTSDIR}/mail/p5-Mail-Sendmail \
-		${SITE_PERL}/Net/Netmask.pm:${PORTSDIR}/net-mgmt/p5-Net-Netmask\
-		${SITE_PERL}/File/CounterFile.pm:${PORTSDIR}/misc/p5-File-CounterFile \
+INSTALL_TARGET=	node
+
+BUILD_DEPENDS=	${SITE_PERL}/AppConfig.pm:${PORTSDIR}/devel/p5-AppConfig \
+		${SITE_PERL}/IO/Socket/SSL.pm:${PORTSDIR}/security/p5-IO-Socket-SSL \
+		${SITE_PERL}/${PERL_ARCH}/IO/Socket/Multicast.pm:${PORTSDIR}/net/p5-IO-Socket-Multicast \
+		${SITE_PERL}/IO/Socket/INET6.pm:${PORTSDIR}/net/p5-IO-INET6 \
+		${SITE_PERL}/Parallel/ForkManager.pm:${PORTSDIR}/devel/p5-Parallel-ForkManager \
+		${SITE_PERL}/Parse/RecDescent.pm:${PORTSDIR}/devel/p5-Parse-RecDescent \
+		${SITE_PERL}/Graph/Base.pm:${PORTSDIR}/math/p5-Graph \
+		${SITE_PERL}/NetAddr/IP.pm:${PORTSDIR}/net-mgmt/p5-NetAddr-IP \
+		${SITE_PERL}/Net/IP.pm:${PORTSDIR}/net-mgmt/p5-Net-IP \
+		${SITE_PERL}/Net/Netmask.pm:${PORTSDIR}/net-mgmt/p5-Net-Netmask \
+		${SITE_PERL}/${PERL_ARCH}/Net/DNS.pm:${PORTSDIR}/dns/p5-Net-DNS \
+		${SITE_PERL}/LWP/Simple.pm:${PORTSDIR}/www/p5-libwww \
+		${SITE_PERL}/${PERL_ARCH}/XML/LibXML.pm:${PORTSDIR}/textproc/p5-XML-LibXML \
+		${SITE_PERL}/XML/Simple.pm:${PORTSDIR}/textproc/p5-XML-Simple \
 		${SITE_PERL}/${PERL_ARCH}/Net/SSLeay.pm:${PORTSDIR}/security/p5-Net-SSLeay \
-		${SITE_PERL}/Parse/RecDescent.pm:${PORTSDIR}/devel/p5-Parse-RecDescent
-INSTALL_TARGET=	omgui
-MAKE_ARGS=	PERL5=${PERL5} SYS=${SYS}
-.endif
+		${SITE_PERL}/Mail/Sendmail.pm:${PORTSDIR}/mail/p5-Mail-Sendmail \
+		${SITE_PERL}/${PERL_ARCH}/Socket6.pm:${PORTSDIR}/net/p5-Socket6
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 470000
+FORBIDDEN=	"X-Bone ${PORTVERSION} does not support FreeBSD prior to 4.7"
 .endif
 
-MAN1=		xb-pick.1
-MAN5=		XB_Defs.pm.5 Xbone_daemon.conf.5 Xbone_daemon.state.5
-MAN8=		X-Bone.8 xb-daemon.8 xb-overlay-manager.8 xb-config.8
+USE_PERL5=	yes
+NO_BUILD=	yes
+
+MAN5=		XB_Params.pm.5 xbone.conf.5
+MAN8=		X-Bone.8 xb-node-daemon.8 xb-config.8
 
 .include <bsd.port.post.mk>
