@@ -6,21 +6,21 @@
 #
 
 PORTNAME=	XML_RPC
-PORTVERSION=	1.1.0
+DISTVERSION=	1.2.0RC1
 CATEGORIES=	devel www pear
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	antonio@php.net
 COMMENT=	PHP implementation of the XML-RPC protocol
 
 USE_PHP=	yes
 WANT_PHP_PEAR=	yes
 
 CATEGORY=	XML
-FILES=		RPC.php RPC/Server.php
+FILES=		RPC.php RPC/Server.php RPC/Dump.php
 
 post-extract:
 	@${MKDIR} ${WRKSRC}/RPC
-	@${MV} ${WRKSRC}/Server.php ${WRKSRC}/RPC
+	@${MV} ${WRKSRC}/Server.php ${WRKSRC}/Dump.php ${WRKSRC}/RPC
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/pear-PEAR/Makefile.common"

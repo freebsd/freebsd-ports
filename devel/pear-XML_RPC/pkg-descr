@@ -1,8 +1,4 @@
-XML-RPC is a spec and a set of implementations that allow software running
-on disparate operating systems, running in different environments to make
-procedure calls over the Internet.
-
-And this is a PEAR-ified version of useful inc's XML-RPC for PHP.
+A PEAR-ified version of Useful Inc's XML-RPC for PHP.
 It has support for HTTP transport, proxies and authentication.
 
-WWW: http://pear.php.net/package/XML_RPC
+WWW: http://pear.php.net/package/XML_RPC/
