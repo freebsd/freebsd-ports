@@ -9,11 +9,15 @@
 # WITH_GDBM=yes		Enable database extensions using GDBM (default: off)
 # WITH_USERDB=yes	Enable optional userdb authentication
 # WITH_MAILDIRQUOTA=yes Enable optional support for maildir quotas
+# WITH_TRASHQUOTA=yes   Include deleted messages, and the Trash folder,
+#                       in the estimated quota usage for maildirs.
+#			Requires WITH_MAILDIRQUOTA.
 # MAILDROP_SUID=<uid>,
 # MAILDROP_SGID=<gid>	Maildrop will be installed with suid permissions for
 #			MAILDROP_SUID, and sgid permissions for MAILDROP_SGID.
 #			If undefined, these values default to "root" and "mail"
 #			respectively, which should be suitable for most systems.
+# MAILDROP_TRUSTED_USERS=<user> Specify users allowed to use the -d option
 # NO_MAILWRAPPER=yes	If defined, let configure guess which sendmail binary
 #			to use
 # WITH_LDAP=yes		Enable experimental virtual user LDAP support
@@ -21,6 +25,7 @@
 
 PORTNAME=	maildrop
 PORTVERSION=	1.6.3
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	courier
@@ -64,6 +69,9 @@ PLIST_SUB+=	USERDB="@comment "
 
 .if defined(WITH_MAILDIRQUOTA)
 CONFIGURE_ARGS+=	--enable-maildirquota
+.if defined(WITH_TRASHQUOTA)
+CONFIGURE_ARGS+=	--with-trashquota
+.endif
 EXTRA_TARGET+=	install-deliverquota
 PLIST_SUB+=	MAILDIRQUOTA=""
 .else
@@ -76,6 +84,10 @@ CONFIGURE_ARGS+=	--enable-sendmail=/usr/sbin/sendmail
 
 .if exists(${LOCALBASE}/lib/libfam.so.0)
 LIB_DEPENDS+=	fam.0:${PORTSDIR}/devel/fam
+.endif
+
+.if defined(MAILDROP_TRUSTED_USERS)
+CONFIGURE_ARGS+=	--enable-trusted-users="${MAILDROP_TRUSTED_USERS}"
 .endif
 
 .if defined(WITH_LDAP)
