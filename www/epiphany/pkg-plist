@@ -159,6 +159,8 @@ share/locale/zh_TW/LC_MESSAGES/epiphany.mo
 @dirrm share/gnome/omf/epiphany
 @dirrm share/gnome/help/epiphany/eu/figures
 @dirrm share/gnome/help/epiphany/eu
+@dirrm share/gnome/help/epiphany/es/figures
+@dirrm share/gnome/help/epiphany/es
 @dirrm share/gnome/help/epiphany/C/figures
 @dirrm share/gnome/help/epiphany/C
 @dirrm share/gnome/help/epiphany
