@@ -3,7 +3,7 @@
 # Date created:         26 Dec 1994
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.3 1995/04/12 04:54:01 asami Exp $
+# $Id: Makefile,v 1.4 1996/08/28 17:32:38 ache Exp $
 #
 
 DISTNAME=       lha-114c
@@ -13,5 +13,7 @@ MASTER_SITES=   ftp://ftp.leo.chubu.ac.jp/pub/tools/
 EXTRACT_SUFX=   .tgz
 
 MAINTAINER=     ache@FreeBSD.ORG
+
+RESTRICTED=     "if distributed without network, author must be informed, see DESCR"
 
 .include <bsd.port.mk>
