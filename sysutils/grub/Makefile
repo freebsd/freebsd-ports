@@ -8,7 +8,7 @@
 PORTNAME=	grub
 PORTVERSION=	0.92
 CATEGORIES=	sysutils
-MASTER_SITES=	ftp://alpha.gnu.org/gnu/grub/
+MASTER_SITES=	http://www.gnu.org/software/grub/
 
 MAINTAINER=	jedgar@FreeBSD.org
 
