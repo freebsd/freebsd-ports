@@ -1,0 +1,15 @@
+bin/cache-init
+bin/cache-update
+bin/find-updated
+bin/portindex
+@unexec if cmp -s %D/etc/portindex.cfg.sample %D/etc/portindex.cfg ; then rm -f %D/etc/portindex.cfg ; fi
+etc/portindex.cfg.sample
+@exec [ ! -f %B/portindex.cfg ] && cp -p %B/%f %B/portindex.cfg || true
+%%SITE_PERL%%/FreeBSD/Portindex/Config.pm
+%%SITE_PERL%%/FreeBSD/Portindex/Port.pm
+%%SITE_PERL%%/FreeBSD/Portindex/Tree.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/FreeBSD/Portindex/.packlist
+@dirrm %%SITE_PERL%%/FreeBSD/Portindex
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/FreeBSD/Portindex
+@unexec rmdir %D/%%SITE_PERL%%/FreeBSD 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/FreeBSD 2>/dev/null || true

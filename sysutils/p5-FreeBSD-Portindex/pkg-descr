@@ -1,0 +1,13 @@
+
+cache-init, cache-update, find-updated and portindex are a set of perl
+scripts built around the common core of the FreeBSD::Portindex
+modules. Their use is to generate and maintain the ports INDEX or
+INDEX-5 files speedily and efficiently. Ultimately they work in a very
+similar way to the standard make index command, except that the
+FreeBSD::Portindex tools keep a cache of the make describe output from
+each port, and can update that cached data incrementally as the ports
+tree itself is updated.
+
+WWW: http://www.infracaninophile.co.uk/portindex/
+
+- Matthew Seaman <m.seaman@infracaninophile.co.uk>

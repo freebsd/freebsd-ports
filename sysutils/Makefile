@@ -283,6 +283,7 @@
     SUBDIR += p5-File-Which
     SUBDIR += p5-Filesys-DiskFree
     SUBDIR += p5-Filesys-DiskSpace
+    SUBDIR += p5-FreeBSD-Portindex
     SUBDIR += p5-LJ-Cache
     SUBDIR += p5-LJ-TextMessage
     SUBDIR += p5-Quota
