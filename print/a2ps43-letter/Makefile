@@ -6,8 +6,8 @@
 # $FreeBSD$
 #
 
-PORTNAME=	a2ps-${PAPERSIZE} 
-PORTVERSION=	4.3 
+PORTNAME=	a2ps-${PAPERSIZE}
+PORTVERSION=	4.3
 CATEGORIES=	print
 MASTER_SITES=	ftp://ftp.imag.fr/archive/postscript/format.translators/
 DISTNAME=	a2ps.V4.3

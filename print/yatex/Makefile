@@ -5,8 +5,8 @@
 # $FreeBSD$
 #
 
-PORTNAME?=	yatex 
-PORTVERSION?=	1.67 
+PORTNAME?=	yatex
+PORTVERSION?=	1.67
 CATEGORIES?=	print elisp
 MASTER_SITES=	http://www.yatex.org/
 DISTNAME=	yatex1.67

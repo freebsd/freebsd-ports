@@ -5,8 +5,8 @@
 # $FreeBSD$
 #
 
-PORTNAME=	html2latex 
-PORTVERSION=	0.9c 
+PORTNAME=	html2latex
+PORTVERSION=	0.9c
 CATEGORIES=	print
 # I can't seem to find the original dist site
 MASTER_SITES=	ftp://ftp.interface-business.de/pub/outgoing/

@@ -5,8 +5,8 @@
 # $FreeBSD$
 #
 
-PORTNAME=	xdvi 
-PORTVERSION=	pl20 
+PORTNAME=	xdvi
+PORTVERSION=	pl20
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	applications
@@ -27,7 +27,7 @@ IS_INTERACTIVE=	yes
 
 MAN1=		xdvi.1
 
-do-install: 
+do-install:
 	@${MKDIR} ${PREFIX}/man/man1
 	@${MKDIR} ${PREFIX}/bin
 	@(cd ${WRKSRC}; ${GMAKE} install.man \

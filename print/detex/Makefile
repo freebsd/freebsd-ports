@@ -6,8 +6,8 @@
 # $FreeBSD$
 #
 
-PORTNAME=	detex 
-PORTVERSION=	2.6 
+PORTNAME=	detex
+PORTVERSION=	2.6
 CATEGORIES=	print
 MASTER_SITES=	ftp://ftp.cs.purdue.edu/pub/trinkle/
 EXTRACT_SUFX=	.tar

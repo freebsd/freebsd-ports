@@ -5,8 +5,8 @@
 # $FreeBSD$
 #
 
-PORTNAME=	klyx 
-PORTVERSION=	0.10.0 
+PORTNAME=	klyx
+PORTVERSION=	0.10.0
 CATEGORIES=	print kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR= unstable/apps/office

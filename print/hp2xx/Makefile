@@ -5,8 +5,8 @@
 # $FreeBSD$
 #
 
-PORTNAME=	hp2xx 
-PORTVERSION=	3.20 
+PORTNAME=	hp2xx
+PORTVERSION=	3.20
 CATEGORIES=	print x11
 MASTER_SITES=	ftp://ftp.rz.uni-duesseldorf.de/pub/graphics/ \
 		ftp://ftp.uni-bielefeld.de/pub/systems/FreeBSD/lkoeller/

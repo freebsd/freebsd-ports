@@ -5,8 +5,8 @@
 # $FreeBSD$
 #
 
-PORTNAME=	cmpsfont 
-PORTVERSION=	1.0 
+PORTNAME=	cmpsfont
+PORTVERSION=	1.0
 CATEGORIES=	print
 MASTER_SITES=	ftp://ftp.ams.org/pub/tex/psfonts/cm/
 DISTNAME=	cmps

@@ -5,8 +5,8 @@
 # $FreeBSD$
 #
 
-PORTNAME=	xmbibtex 
-PORTVERSION=	1.5 
+PORTNAME=	xmbibtex
+PORTVERSION=	1.5
 CATEGORIES=	print databases
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	apps/tex

@@ -5,8 +5,8 @@
 # $FreeBSD$
 #
 
-PORTNAME=	mpage 
-PORTVERSION=	2.5 
+PORTNAME=	mpage
+PORTVERSION=	2.5
 CATEGORIES=	print
 MASTER_SITES=	ftp://ftp.mesa.nl/pub/mpage/
 EXTRACT_SUFX=	.tgz

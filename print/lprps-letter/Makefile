@@ -6,8 +6,8 @@
 # $FreeBSD$
 #
 
-PORTNAME=	lprps-${PAPERSIZE} 
-PORTVERSION=	2.5 
+PORTNAME=	lprps-${PAPERSIZE}
+PORTVERSION=	2.5
 CATEGORIES=	print
 MASTER_SITES=	ftp://ftp.jclark.com/pub/lprps/
 DISTNAME=	lprps-2.5
@@ -25,7 +25,7 @@ PS!=		echo ${PAPERSIZE} | awk '{print toupper($$1)}'
 
 .if ${PAPERSIZE} != a4 && ${PAPERSIZE} != letter
 .BEGIN:
-	@${ECHO} "Error: invalid value for PAPERSIZE: \"${PAPERSIZE}\"" 
+	@${ECHO} "Error: invalid value for PAPERSIZE: \"${PAPERSIZE}\""
 	@${ECHO} "Possible values are:  a4 or letter"
 	@${FALSE}
 .endif

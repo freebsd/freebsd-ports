@@ -6,8 +6,8 @@
 # $FreeBSD$
 #
 
-PORTNAME=	mp-${PAPERSIZE} 
-PORTVERSION=	3.0.1 
+PORTNAME=	mp-${PAPERSIZE}
+PORTVERSION=	3.0.1
 CATEGORIES=	print
 MASTER_SITES=	ftp://ftp.NUXI.com/pub/misc/ \
 		ftp://ftp.win.tue.nl/pub/mail/

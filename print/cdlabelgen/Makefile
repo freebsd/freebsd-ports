@@ -5,8 +5,8 @@
 # $FreeBSD$
 #
 
-PORTNAME=	cdlabelgen 
-PORTVERSION=	1.5.0 
+PORTNAME=	cdlabelgen
+PORTVERSION=	1.5.0
 CATEGORIES=	print
 MASTER_SITES=	http://www.red-bean.com/~bwf/software/cdlabelgen/
 

@@ -6,8 +6,8 @@
 #
 .include <bsd.port.pre.mk>
 
-PORTNAME=	acroread 
-PORTVERSION=	4.05 
+PORTNAME=	acroread
+PORTVERSION=	4.05
 CATEGORIES=	print linux
 MASTER_SITES=	ftp://ftp-pac.adobe.com/pub/adobe/acrobatreader/unix/4.x/
 .if ${ARCH} == "i386"

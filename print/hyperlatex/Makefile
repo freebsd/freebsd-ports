@@ -5,8 +5,8 @@
 # $FreeBSD$
 #
 
-PORTNAME=	Hyperlatex 
-PORTVERSION=	2.3.1 
+PORTNAME=	Hyperlatex
+PORTVERSION=	2.3.1
 CATEGORIES=	print
 MASTER_SITES=	ftp://ftp.cs.uni-magdeburg.de/pub/ipe/
 

@@ -6,8 +6,8 @@
 # $FreeBSD$
 #
 
-PORTNAME=	gv 
-PORTVERSION=	3.5.8 
+PORTNAME=	gv
+PORTVERSION=	3.5.8
 CATEGORIES=	print
 MASTER_SITES=	ftp://ftpthep.physik.uni-mainz.de/pub/gv/unix/  \
 		${MASTER_SITE_TEX_CTAN}

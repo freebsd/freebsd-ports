@@ -5,8 +5,8 @@
 # $FreeBSD$
 #
 
-PORTNAME=	pdq 
-PORTVERSION=	2.1.1 
+PORTNAME=	pdq
+PORTVERSION=	2.1.1
 CATEGORIES=	print
 MASTER_SITES=	ftp://feynman.tam.uiuc.edu/pub/pdq/
 EXTRACT_SUFX=	.tgz

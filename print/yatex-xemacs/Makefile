@@ -5,8 +5,8 @@
 # $FreeBSD$
 #
 
-PORTNAME=	yatex-xemacs 
-PORTVERSION=	1.67 
+PORTNAME=	yatex-xemacs
+PORTVERSION=	1.67
 
 XEMACS=		yes
 

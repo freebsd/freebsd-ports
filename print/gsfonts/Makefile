@@ -5,8 +5,8 @@
 # $FreeBSD$
 #
 
-PORTNAME=	gsfonts 
-PORTVERSION=	5.10 
+PORTNAME=	gsfonts
+PORTVERSION=	5.10
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_GNU} \
 		ftp://ftp.cs.wisc.edu/ghost/gnu/gs510/

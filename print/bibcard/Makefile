@@ -6,8 +6,8 @@
 # $FreeBSD$
 #
 
-PORTNAME=	bibcard 
-PORTVERSION=	0.6.4 
+PORTNAME=	bibcard
+PORTVERSION=	0.6.4
 CATEGORIES=	print databases
 MASTER_SITES=	ftp://crl.nmsu.edu/pub/misc/
 DISTNAME=	bibcard.6.4

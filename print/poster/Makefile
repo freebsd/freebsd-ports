@@ -5,8 +5,8 @@
 # $FreeBSD$
 #
 
-PORTNAME=	poster 
-PORTVERSION=	1.0 
+PORTNAME=	poster
+PORTVERSION=	1.0
 CATEGORIES=	print
 MASTER_SITES=	ftp://ftp.ics.ele.tue.nl/pub/users/jos/poster/
 DISTNAME=	poster

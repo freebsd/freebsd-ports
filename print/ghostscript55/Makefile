@@ -5,8 +5,8 @@
 # $FreeBSD$
 #
 
-PORTNAME=	ghostscript 
-PORTVERSION=	5.50 
+PORTNAME=	ghostscript
+PORTVERSION=	5.50
 CATEGORIES=	print
 MASTER_SITES=	ftp://ftp.cs.wisc.edu/ghost/aladdin/gs550/ \
 		http://www.erdw.ethz.ch/~bonk/ftp/gs-driver-distrib/ \
@@ -16,7 +16,7 @@ DISTFILES=	${GS_SOURCES} ${GS_FONTS_STD} ${GS_FONTS_OTHER} \
 
 MAINTAINER=	andreas@FreeBSD.org
 
-Y2K=		http://www.cs.wisc.edu/~ghost/aladdin/y2k.html 
+Y2K=		http://www.cs.wisc.edu/~ghost/aladdin/y2k.html
 
 BUILD_DEPENDS=	/nonexistent:${PORTSDIR}/graphics/jpeg:extract \
 		/nonexistent:${PORTSDIR}/graphics/png:extract \

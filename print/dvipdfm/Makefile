@@ -5,8 +5,8 @@
 # $FreeBSD$
 #
 
-PORTNAME=		dvipdfm 
-PORTVERSION=		0.12.7b 
+PORTNAME=		dvipdfm
+PORTVERSION=		0.12.7b
 CATEGORIES=		print
 MASTER_SITES=		http://odo.kettering.edu/dvipdfm/
 

@@ -5,8 +5,8 @@
 # $FreeBSD$
 #
 
-PORTNAME=	apsfilter 
-PORTVERSION=	5.3.3 
+PORTNAME=	apsfilter
+PORTVERSION=	5.3.3
 CATEGORIES=	print
 MASTER_SITES=	http://people.FreeBSD.org/~andreas/apsfilter/download/
 
