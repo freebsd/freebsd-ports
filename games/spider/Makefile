@@ -9,8 +9,9 @@
 DISTNAME=	spider
 PKGNAME=	spider-1.1
 CATEGORIES=	games
-MASTER_SITES=	ftp://ftp.uni-koeln.de/windows/xcontrib/ \
-		http://www.lovett.com/~ade/FreeBSD/
+MASTER_SITES=	${MASTER_SITE_SUNSITE}
+MASTER_SITE_SUBDIR=	games/solitaires
+EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
 

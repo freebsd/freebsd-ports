@@ -1,0 +1,11 @@
+--- spider.man.orig	Sun Sep 29 02:46:06 1991
++++ spider.man	Wed Jan 18 00:00:00 2000
+@@ -53,7 +53,7 @@
+ Specifies the time (in microseconds) to pause between each move when
+ showing a Replay.  The default is 200.
+ .TP 8
+-.B "roundsCards (\fPclass\fB RoundCards)"
++.B "roundCards (\fPclass\fB RoundCards)"
+ Specifies whether to use rounded cards are not.  Rounded cards look
+ better, but are considerably slower.  The default is "on".
+ .TP 8

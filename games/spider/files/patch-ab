@@ -1,0 +1,20 @@
+--- Imakefile.orig	Sun Sep 29 02:46:02 1991
++++ Imakefile	Wed Jan 18 00:00:00 2000
+@@ -8,7 +8,7 @@
+         SPLIT = split
+         CAT = cat
+ /***** Note: probably want to define this to be something else *****/
+-        HELPDIR = help
++        HELPDIR = LibDir/spider
+ 
+ /***** Note:  Used to over-ride some declarations in the default Imakefile
+               configurations.  If you want to use some of these things, then
+@@ -16,7 +16,7 @@
+               definitions to what you would like them to be below.  Delete
+               or comment out those you do not wish to use  *****/
+ #ifndef OverrideDefs
+-#define OverrideDefs YES
++#define OverrideDefs NO
+ #endif
+ 
+ #if OverrideDefs
