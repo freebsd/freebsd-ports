@@ -6,23 +6,20 @@
 #
 
 PORTNAME=	cvs2html
-PORTVERSION=	1.69
+PORTVERSION=	1.75
 CATEGORIES=	devel perl5
-MASTER_SITES=	http://www.sslug.dk/cvs2html/utils/
-DISTNAME=	${PORTNAME}
-EXTRACT_SUFX=
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	sada
+EXTRACT_SUFX=	.gz
+EXTRACT_AFTER_ARGS=	> ${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sada@FreeBSD.org
 
 USE_PERL5=	yes
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
-do-extract:
-	@${MKDIR} ${WRKDIR}
-	@${CP} ${DISTDIR}/${DISTNAME} ${WRKDIR}
-
 do-install:
-	${INSTALL_SCRIPT} ${WRKDIR}/${DISTNAME} ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${PREFIX}/bin
 
 .include <bsd.port.mk>
