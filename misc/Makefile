@@ -379,6 +379,7 @@
     SUBDIR += xdf
     SUBDIR += xenmenu
     SUBDIR += xfce4-iconbox
+    SUBDIR += xfce4-panel-themes
     SUBDIR += xgas
     SUBDIR += xless
     SUBDIR += xosd
