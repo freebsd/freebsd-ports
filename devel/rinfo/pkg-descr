@@ -1,0 +1,5 @@
+This program gives information about files checked out with RCS.
+Only RCS repositories located in "RCS" subdirectories are analyzed.  
+
+- Mark Chapman
+markc@ctgi.net
