@@ -1,0 +1,12 @@
+--- server/Imakefile.orig	Sun Dec  2 15:57:38 2001
++++ server/Imakefile	Fri Dec 28 18:00:27 2001
+@@ -105,6 +105,9 @@
+ # if defined(LinuxArchitecture)
+     RCMANDIR = $(FILEMANDIR)
+     RCMANSUFFIX = 5nas
++# elif defined(FreeBSDArchitecture)
++    RCMANDIR = $(FILEMANDIR)
++    RCMANSUFFIX = $(FILEMANSUFFIX)
+ # else
+     RCMANDIR = $(MANDIR)
+     RCMANSUFFIX = 5x
