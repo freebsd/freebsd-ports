@@ -6,29 +6,25 @@
 #
 
 PORTNAME=	mod_auth_any
-PORTVERSION=	1.0.2
-PORTREVISION=	1
+PORTVERSION=	1.3.2
 CATEGORIES=	www
-MASTER_SITES=	ftp://ftp.itlab.musc.edu/pub/toolbox/mod_auth_any/
-EXTRACT_SUFX=	.tgz
+MASTER_SITES=	http://www.itlab.musc.edu/webNIS/dist/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sheepkiller@cultdeadsheep.org
 COMMENT=	Apache module to use any command line program to authenticate a user
 
 BUILD_DEPENDS=	${APXS}:${APACHE_PORT}
 RUN_DEPENDS=	${APXS}:${APACHE_PORT}
 
+WRKSRC=		${WRKDIR}/${PORTNAME}
+
 APXS?=		${LOCALBASE}/sbin/apxs
 APACHE_PORT?=	${PORTSDIR}/www/apache13
 
-post-patch:
-	@${CAT} ${FILESDIR}/bash_single_quote_escape_string.c >> \
-		${WRKSRC}/${PORTNAME}.c
-
 do-build:
-	@cd ${WRKSRC} && ${APXS} -c ${PORTNAME}.c
+	@cd ${WRKSRC}/src && ${APXS} -c ${PORTNAME}.c
 
 do-install:
-	${APXS} -i -A -n ${PORTNAME:S/mod_//g} ${WRKSRC}/${PORTNAME}.so
+	${APXS} -i -A -n ${PORTNAME:S/mod_//g} ${WRKSRC}/src/${PORTNAME}.so
 
 .include <bsd.port.mk>
