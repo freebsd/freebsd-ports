@@ -1,11 +1,14 @@
---- src/Makefile.orig	Fri Feb 13 18:08:35 2004
-+++ src/Makefile	Fri Feb 13 18:08:59 2004
-@@ -19,7 +19,7 @@
- export CFLAGS += -Wall -DVERSION=\"$(VERSION)\" -DGTK_DISABLE_DEPRECATED -DGNOME_DISABLE_DEPRECATED -DUSE_TCL_STUBS
+--- src/Makefile.orig	Tue Jun 15 14:05:05 2004
++++ src/Makefile	Tue Jun 15 14:05:49 2004
+@@ -18,9 +18,9 @@
+ # for releases use -Os, this makes the lib 15% smaller 
+ CFLAGS += -Wall 
  
- ADDCFLAGS += $(shell pkg-config --cflags gtk+-2.0)
--export TCL_VERSION := $(shell echo 'puts $$tcl_version' | tclsh)
-+export TCL_VERSION := 84
+-TCL_VERSION := $(shell echo 'puts $$tcl_version' | tclsh)
++TCL_VERSION := 84
  
- LIBS := $(shell pkg-config --libs gtk+-2.0) -ltclstub$(TCL_VERSION)
+-export ADDCFLAGS := -DVERSION=\"$(VERSION)\" -DGTK_DISABLE_DEPRECATED -DGNOME_DISABLE_DEPRECATED -DUSE_TCL_STUBS $(shell pkg-config --cflags gtk+-2.0) 
++export ADDCFLAGS := -DVERSION=\"$(VERSION)\" -DUSE_TCL_STUBS $(shell pkg-config --cflags gtk+-2.0) 
+ 
+ export LIBS := $(shell pkg-config --libs gtk+-2.0) -ltclstub$(TCL_VERSION)
  
