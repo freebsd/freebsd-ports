@@ -13,6 +13,7 @@ MAINTAINER=	castor@alumni.caltech.edu
 
 NO_WRKSUBDIR=yes
 NO_CHECKSUM=yes
+NO_PACKAGE="Redistribution license from Lucent Technologies required."
 RESTRICTED="Redistribution license from Lucent Technologies required."
 MAKEFILE=makefile
 
