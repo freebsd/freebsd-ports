@@ -7,7 +7,7 @@
 
 PORTNAME?=	ispell
 PORTVERSION?=	3.2.06
-PORTREVISION?=	6
+PORTREVISION?=	7
 CATEGORIES+=	textproc
 MASTER_SITES=	http://fmg-www.cs.ucla.edu/geoff/tars/
 DISTNAME=	ispell-3.2.06		# needed for slave ports / options
@@ -142,7 +142,7 @@ EXTRA_DICT+=	${FIDICTFILE} ${FIAFFIXFILE}
 .endif
 .if defined(ISPELL_PL)
 MASTER_SITE_SUBDIR=	ispell-pl
-MASTER_SITES+=	${MASTER_SITE_LOCAL}
+MASTER_SITES+=	${MASTER_SITE_SOURCEFORGE}
 PLDISTFILE=	ispell-pl-20021127.tar.gz
 MASKBITS?=	64
 EXTRA_DICT+=	${PLDISTFILE}
