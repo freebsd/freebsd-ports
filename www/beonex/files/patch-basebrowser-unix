@@ -1,0 +1,28 @@
+$FreeBSD$
+
+"Install files necessary for viewing pages in Asian languages using
+ports based on mozilla-embedded (galeon, skipstone etc.)"
+
+author:  Takashi KANAMARU <kanamaru@sekine-lab.ei.tuat.ac.jp>
+
+--- embedding/config/basebrowser-unix.orig	Thu Feb  7 23:50:19 2002
++++ embedding/config/basebrowser-unix	Tue Mar 12 17:06:08 2002
+@@ -203,12 +204,12 @@
+ components/unicharutil.xpt
+ components/libchardet.so
+ ; optional - on english only systems
+-; components/libucvja.so for japanese
+-; components/libucvko.so for korean
+-; components/libucvcn.so for simplified chinese
+-; components/libucvtw.so for traditional chinese
+-; components/libucvtw2.so for traditional chinese
+-; components/libucvibm.so for ibm
++components/libucvja.so
++components/libucvko.so
++components/libucvcn.so
++components/libucvtw.so
++components/libucvtw2.so
++components/libucvibm.so
+ 
+ 
+ res/language.properties

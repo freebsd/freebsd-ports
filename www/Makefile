@@ -27,6 +27,7 @@
     SUBDIR += auth_ldap
     SUBDIR += awstats
     SUBDIR += bacon
+    SUBDIR += beonex
     SUBDIR += bk2site
     SUBDIR += bkmrkconv
     SUBDIR += bluefish

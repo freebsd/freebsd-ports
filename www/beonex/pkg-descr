@@ -1,0 +1,9 @@
+This is the Beonex Communicator suite (Web browser, HTML editor, e-mail user
+agent, news reader, address book, and spell-checker).  It is based on Mozilla,
+but with extra emphasis on security and privacy.
+
+Because of a security bug, the Chatzilla IRC client is not included in this
+port.  Support for SVG and threading are disabled because of compilation
+problems.  Java has not been tested.
+
+WWW:  http://beonex.com/
