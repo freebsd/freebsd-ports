@@ -1,5 +1,5 @@
---- Imakefile.orig	Wed Oct  7 22:24:59 1998
-+++ Imakefile	Wed Oct  7 22:27:00 1998
+--- Imakefile.orig	Thu Jun 14 00:25:24 2001
++++ Imakefile	Thu Jun 14 00:26:01 2001
 @@ -6,13 +6,15 @@
  /* if, for whatever reason, you're unable to get the JPEG library to compile
   * on your machine, *COMMENT OUT* the following line
@@ -80,7 +80,7 @@
  
   
  InstallProgram(xv,$(BINDIR))
-@@ -266,7 +282,7 @@
+@@ -266,16 +282,16 @@
  InstallProgram(xvpictoppm,$(BINDIR))
  
  #ifdef HavePDS
@@ -88,4 +88,18 @@
 +NormalProgramTarget(vdcomp,$(OBJS3),$(DEPLIBS),$(LOCAL_LIBRARIES),-lxpg4)
  InstallProgram(vdcomp,$(BINDIR))
  #endif
+ 
+  
+-InstallManPageLong(docs/xv,$(MANDIR),xv)
+-InstallManPageLong(docs/bggen,$(MANDIR),bggen)
+-InstallManPageLong(docs/xcmap,$(MANDIR),xcmap)
+-InstallManPageLong(docs/xvp2p,$(MANDIR),xvpictoppm)
+-InstallManPageLong(docs/vdcomp,$(MANDIR),vdcomp)
++InstallManPage(xv,$(MANDIR))
++InstallManPage(bggen,$(MANDIR))
++InstallManPage(xcmap,$(MANDIR))
++InstallManPage(xvp2p,$(MANDIR))
++InstallManPage(vdcomp,$(MANDIR))
+ 
+ InstallNonExecFile(xv_mgcsfx.sample,$(MGCSFXDIR))
  
