@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.172 1998/10/26 11:58:59 vanilla Exp $
+# $Id: Makefile,v 1.173 1998/11/12 01:35:23 smace Exp $
 #
 
     SUBDIR += acron
@@ -25,6 +25,7 @@
     SUBDIR += gnomeutils
     SUBDIR += gnuls
     SUBDIR += gone
+    SUBDIR += gtkfind
     SUBDIR += gyvescm
     SUBDIR += iselect
     SUBDIR += jargon
