@@ -40,6 +40,7 @@
     SUBDIR += gtk20
     SUBDIR += gtkada
     SUBDIR += gtkbe
+    SUBDIR += gtkdatabox
     SUBDIR += gtkextra
     SUBDIR += gtkextra--
     SUBDIR += gtkglarea
