@@ -6602,6 +6602,7 @@ p5-DBD-PgPP	ports/databases/p5-DBD-PgPP
 p5-DBD-PgSPI	ports/databases/p5-DBD-PgSPI
 p5-DBD-RAM	ports/databases/p5-DBD-RAM
 p5-DBD-SQLite	ports/databases/p5-DBD-SQLite
+p5-DBD-SQLite2	ports/databases/p5-DBD-SQLite2
 p5-DBD-Sybase	ports/databases/p5-DBD-Sybase
 p5-DBD-XBase	ports/databases/p5-DBD-XBase
 p5-DBD-mysql	ports/databases/p5-DBD-mysql
