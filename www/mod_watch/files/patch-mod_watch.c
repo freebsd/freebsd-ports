@@ -1,5 +1,5 @@
---- mod_watch.c.orig	Thu Mar 14 03:44:07 2002
-+++ mod_watch.c	Wed Oct 15 22:37:21 2003
+--- mod_watch.c.orig	Wed Nov 27 15:20:42 2002
++++ mod_watch.c	Thu Jun  3 13:54:49 2004
 @@ -41,6 +41,10 @@
   * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
   */
@@ -11,42 +11,12 @@
  #ifndef SPOOLDIR
  #define SPOOLDIR		"/var/spool/mod_watch/"
  #endif
-@@ -1037,22 +1041,22 @@
- 	if (shLock(shtable) && MutexLock(mutex))
- 		goto error0;
+@@ -74,7 +78,7 @@
  
--	ap_rprintf(r, "
--<html>
--<style type='text/css'>
--th {
--	font-family: Verdana, Arial, Helvetica, sans-serif;
--	font-size: 10pt;
--	background-color: #0080D7;
--	color: #ffffff;
--}
--.normal, p, ul, td {
--	font-family: Verdana, Arial, Helvetica, sans-serif;
--	font-size: 10pt;
--	color: #000000;
--}
--</style>
--<body>
-+	ap_rprintf(r, "\n\
-+<html>\n\
-+<style type='text/css'>\n\
-+th {\n\
-+	font-family: Verdana, Arial, Helvetica, sans-serif;\n\
-+	font-size: 10pt;\n\
-+	background-color: #0080D7;\n\
-+	color: #ffffff;\n\
-+}\n\
-+.normal, p, ul, td {\n\
-+	font-family: Verdana, Arial, Helvetica, sans-serif;\n\
-+	font-size: 10pt;\n\
-+	color: #000000;\n\
-+}\n\
-+</style>\n\
-+<body>\n\
- "
- );
+ #define MODULE			"mod_watch"
+ #define AUTHOR			"achowe@snert.com"
+-#define VERSION			"3.17"
++#define VERSION			"3.18"
+ #define COPYRIGHT_DATE		"2001, 2002"
  
+ #include "httpd.h"

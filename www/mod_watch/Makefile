@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	mod_watch
-PORTVERSION=	3.12
-PORTREVISION=	1
+PORTVERSION=	3.18
 CATEGORIES=	www
-MASTER_SITES=	http://www.snert.com/Software/mod_watch/ \
+MASTER_SITES=	http://www.snert.com/Software/download/ \
 		ftp://ftp.nuug.no/pub/anders/distfiles/
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//g}
 EXTRACT_SUFX=	.tgz
@@ -26,6 +25,7 @@ MAKE_ARGS+=	APXS="${APXS}"
 
 ALL_TARGET=	build-dynamic
 
+RDOCS=	CHANGES.TXT LICENSE.TXT notes-conf.txt notes-support.txt
 DOCS=	apache2mrtg.html index.shtml mailto.js mod_watch.html style.css
 DOCS_HTMLIMAGES=	apache-header-476-62.png mrpixel.gif mrtg-bar.png \
 			sun-logo.jpg wave1.jpg
@@ -40,8 +40,9 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/nfields.pl ${PREFIX}/sbin
 .if !defined(NOPORTDOCS)
 	@${INSTALL} -d -m 0755 ${DOCSDIR}/html/Img
-	${INSTALL_DATA} ${WRKSRC}/CHANGES.TXT ${DOCSDIR}/
-	${INSTALL_DATA} ${WRKSRC}/LICENSE.TXT ${DOCSDIR}/
+.for f in ${RDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}/
+.endfor
 .for f in ${DOCS}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}/html/
 .endfor
