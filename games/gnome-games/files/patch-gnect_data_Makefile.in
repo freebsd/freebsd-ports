@@ -1,0 +1,30 @@
+--- gnect/data/Makefile.in.orig	Sun May 25 13:52:25 2003
++++ gnect/data/Makefile.in	Sun May 25 13:56:14 2003
+@@ -300,7 +300,7 @@
+ install-exec-am:
+ install-exec: install-exec-am
+ 
+-install-data-am: install-GamesDATA install-schemaDATA \
++install-data-am: install-GamesDATA install-schemaDATA install-data-local \
+ 		install-soundlistDATA install-themeDATA \
+ 		install-velenaDATA
+ install-data: install-data-am
+@@ -351,7 +351,7 @@
+ maintainer-clean: maintainer-clean-am
+ 
+ .PHONY: uninstall-GamesDATA install-GamesDATA uninstall-schemaDATA \
+-install-schemaDATA uninstall-soundlistDATA install-soundlistDATA \
++install-schemaDATA install-data-local uninstall-soundlistDATA install-soundlistDATA \
+ uninstall-themeDATA install-themeDATA uninstall-velenaDATA \
+ install-velenaDATA tags distdir info-am info dvi-am dvi check check-am \
+ installcheck-am installcheck install-exec-am install-exec \
+@@ -363,6 +363,9 @@
+ @INTLTOOL_DESKTOP_RULE@
+ @INTLTOOL_SCHEMAS_RULE@
+ @INTLTOOL_SOUNDLIST_RULE@
++
++install-data-local:
++	-GCONF_CONFIG_SOURCE=$(GCONF_SCHEMA_CONFIG_SOURCE) $(GCONFTOOL) --makefile-install-rule $(srcdir)/$(schema_DATA)
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
