@@ -1,5 +1,5 @@
---- gcc/Makefile.in.orig	Fri Aug 13 03:46:55 1999
-+++ gcc/Makefile.in	Fri Sep  1 21:15:38 2000
+--- gcc-2.95.2/gcc/Makefile.in.orig	Fri Aug 13 03:46:55 1999
++++ gcc-2.95.2/gcc/Makefile.in	Fri Sep  1 21:15:38 2000
 @@ -400,7 +400,7 @@
  MAYBE_USE_COLLECT2 = @maybe_use_collect2@
  # It is convenient for configure to add the assignment at the beginning,
