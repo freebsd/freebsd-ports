@@ -11,7 +11,7 @@ CATEGORIES=	textproc gnome
 MASTER_SITES=	http://aspell.sourceforge.net/
 DISTNAME=	${PORTNAME}-.30
 
-MAINTAINER=	ade@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	gnome.4:${PORTSDIR}/x11/gnomelibs \
 		aspell.8:${PORTSDIR}/textproc/aspell

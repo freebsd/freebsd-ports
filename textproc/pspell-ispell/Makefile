@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	pspell
 DISTNAME=	${PORTNAME}-.10.2
 
-MAINTAINER=	ade@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 BUILD_DEPENDS=	ispell:${PORTSDIR}/textproc/ispell
 LIB_DEPENDS=	pspell.2:${PORTSDIR}/textproc/pspell
