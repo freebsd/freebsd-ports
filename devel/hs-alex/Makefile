@@ -31,6 +31,12 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 PLIST_SUB=	PORTVERSION="${PORTVERSION}"
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} > 503001
+BROKEN=		"Does not compile on FreeBSD >= 5.x"
+.endif
+
 .if !defined(NOPORTDOCS)
 post-build:
 	${GMAKE} -C ${WRKSRC}/alex/doc ps
@@ -44,4 +50,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/alex/doc/alex.ps ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
