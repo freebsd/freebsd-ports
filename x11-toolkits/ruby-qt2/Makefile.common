@@ -8,5 +8,21 @@ RUBY_QT2_DISTNAME=	ruby-qt2-${RUBY_QT2_VERSION}
 RUBY_QT2_PORTDIR=	${PORTSDIR}/x11-toolkits/ruby-qt2
 
 RUBY_QT2_WRKSRC=	${WRKDIR}/qt2
+RUBY_QT2_CONFIGURE_ARGS= \
+			--with-qt2-include=${X11BASE}/include/qt2 \
+			--with-qt2-lib=${X11BASE}/lib \
+			--with-x11-dir=${X11BASE}
+.if ${OSVERSION} >= 500018
+RUBY_QT2_CONFIGURE_ARGS+= \
+			--with-ldflags=-lc_r \
+			--with-qt2=qt2-mt
+.else
+.if ${PORTNAME} == qt2gl
+BROKEN=	"Qt2's GL support is only supported on 5-CURRENT due to a problem with the thread library."
+.endif
+
+RUBY_QT2_CONFIGURE_ARGS+= \
+			--with-qt2=qt2
+.endif
 
 MD5_FILE=		${RUBY_QT2_PORTDIR}/distinfo
