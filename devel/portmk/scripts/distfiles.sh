@@ -223,12 +223,11 @@ chksumfiles()
       /^$/ { next }
       /^<>$/ { isignore=0; next }
       {
-        if (isignore !=0) {
+        sub(/:[^:]+$/, "")
+        if (isignore !=0)
           ignore[$0]=1
-        } else if (!($0 in ignore)) {
-          sub(/:[^:]+$/, "")
+        else if (!($0 in ignore))
           print
-        }
       }
     '
 }
@@ -381,45 +380,54 @@ fetch_file()
 {
   [ $# -eq 5 ] || return 1
 
-  fetch_reget="${FETCH_REGET}"
   SORTED_MASTER_SITES_TMP=`get_master_sites_sorted "$1" "$2"`
-  for site in $_MASTER_SITE_OVERRIDE \
-      $SORTED_MASTER_SITES_TMP $_MASTER_SITE_BACKUP; do
-    $ECHO_MSG ">> Attempting to fetch from $site${4:+ (${4#*=} bytes)}."
-    case "$site" in
-    *%FILE%*)
-      # this expression uses ctrl-A as delimiters
-      url=`echo "$site" | $SED -E -e 's/$; s%FILE%'"$file"'g'`;;
-    *)
-      url="$site$file";;
-    esac
-    if $fetch_cmd "$url" "$3" "$4"; then
-      [ -f "$file" ] || continue
-      [ -z "$5" ] && return 0
-      for cksum2 in $5; do
-        case "${cksum2#*=}" in
-        IGNORE)
-          return 0;;
-        *)
-          CKSUM=`do_hash "${cksum2%%=*}" < "$file"`
-          if [ "${cksum2#*=}" = "$CKSUM" ]; then
-            $ECHO_MSG ">> Checksum OK (${cksum2%%=*}) for $file."
-            return 0
-          fi;;
-        esac
-      done
-      $ECHO_MSG ">> Checksum mismatch for $_file."
-      if [ "$fetch_reget" -gt 0 ]; then
-        $ECHO_MSG "===>  Refetch for $fetch_reget more times."
-        $RM -f "$file"
-        fetch_reget=$(($fetch_reget-1))
-      else
-        $ECHO_MSG ">> To get this file from more mirrors," \
-            "type \"make FETCH_REGET=99 [other args]\"."
-        $ECHO_MSG "===>  Giving up on fetching $_file."
-        return 1
+  reget=false
+  [ -f "$file" ] && reget=true
+  while true; do
+    fetch_reget="${FETCH_REGET}"
+    for site in $_MASTER_SITE_OVERRIDE \
+        $SORTED_MASTER_SITES_TMP $_MASTER_SITE_BACKUP; do
+      $ECHO_MSG ">> Attempting to fetch from $site${4:+ (${4#*=} bytes)}."
+      case "$site" in
+      *%FILE%*)
+        # this expression uses ctrl-A as delimiters
+        url=`echo "$site" | $SED -E -e 's/$; s%FILE%'"$file"'g'`;;
+      *)
+        url="$site$file";;
+      esac
+      if $fetch_cmd "$url" "$3" "$4"; then
+        reget=false
+        [ -f "$file" ] || continue
+        [ -z "$5" ] && return 0
+        for cksum2 in $5; do
+          case "${cksum2#*=}" in
+          IGNORE)
+            return 0;;
+          *)
+            CKSUM=`do_hash "${cksum2%%=*}" < "$file"`
+            if [ "${cksum2#*=}" = "$CKSUM" ]; then
+              $ECHO_MSG ">> Checksum OK (${cksum2%%=*}) for $file."
+              return 0
+            fi;;
+          esac
+        done
+        $ECHO_MSG ">> Checksum mismatch for $_file."
+        if [ "$fetch_reget" -gt 0 ]; then
+          $ECHO_MSG "===>  Refetch for $fetch_reget more times."
+          $RM -f "$file"
+          fetch_reget=$(($fetch_reget-1))
+        else
+          $ECHO_MSG ">> To get this file from more mirrors," \
+              "type \"make FETCH_REGET=99 [other args]\"."
+          $ECHO_MSG "===>  Giving up on fetching $_file."
+          return 1
+        fi
       fi
-    fi
+    done
+    $reget || break
+    $ECHO_MSG "===>  Distfile rerolled? Trying to refetch from start."
+    $RM -f "$file"
+    reget=false
   done
   $ECHO_MSG ">> Couldn't fetch it - please try to retrieve this"
   $ECHO_MSG ">> file manually into $_DISTDIR and try again."
@@ -481,7 +489,7 @@ do_fetch()
         fileexists=true
       else
         fileexists=false
-        if [ -L $file ]; then
+        if [ -L "$_DISTDIR/$file" ]; then
           $ECHO_MSG ">> $_DISTDIR/$file is a broken symlink."
           $ECHO_MSG ">> Perhaps a filesystem (most likely a CD) isn't mounted?"
           $ECHO_MSG ">> Please correct this problem and try again."
