@@ -3,10 +3,11 @@
 # Date created:		Aug 17 1996
 # Whom:			chuckr
 #
-# $Id: Makefile,v 1.11 1996/08/24 03:51:00 chuckr Exp $
+# $Id: Makefile,v 1.12 1996/08/24 17:12:05 chuckr Exp $
 #
 
 DISTNAME=	itcl2.1
+PKGNAME=	itcl-2.1
 GNU_CONFIGURE=	yes
 CATEGORIES+=	lang
 MASTER_SITES=	ftp://ftp.neosoft.com/pub/tcl/NEW/
