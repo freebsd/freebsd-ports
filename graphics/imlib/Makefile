@@ -30,4 +30,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc/imlib \
 		--disable-gtktest
 
+pre-configure:
+	${PERL} -pi -e "s^%%LOCALBASE%%^${LOCALBASE}^" ${WRKSRC}/imlib-config.in
+
 .include <bsd.port.mk>

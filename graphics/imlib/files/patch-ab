@@ -1,0 +1,11 @@
+--- ./imlib-config.in.org	Thu Aug 26 08:09:25 1999
++++ ./imlib-config.in	Fri Mar  3 11:08:41 2000
+@@ -3,7 +3,7 @@
+ # Shamelessly ripped form gtk's gtk-config.in
+ #
+ 
+-gx_libs="@SUPPORT_LIBS@"
++gx_libs="-L%%LOCALBASE%%/lib @SUPPORT_LIBS@"
+ gdk_gx_libs=" @GDK_SUPPORT_LIBS@"
+ gdk_libs="@LIBS@"
+ 
