@@ -20,6 +20,7 @@ MAINTAINER=	sobomax@FreeBSD.org
 
 USE_BZIP2=	yes
 USE_REINPLACE=	yes
+INSTALLS_SHLIB=	yes
 
 .if defined(WANT_GGI)
 LIB_DEPENDS=	ggi.2:${PORTSDIR}/graphics/libggi
