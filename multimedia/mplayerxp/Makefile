@@ -7,6 +7,7 @@
 
 PORTNAME=	mplayer
 PORTVERSION=	0.90.0.4
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://ftp.mplayerhq.hu/MPlayer/releases/ \
 		http://www.mplayerhq.hu/MPlayer/releases/ \
@@ -46,7 +47,7 @@ DOCFILES=       DVB bugreports.html cd-dvd.html codecs-in.html \
 
 .include <bsd.port.pre.mk>
 
-.if exists(${LOCALBASE}/lib/libdvdread.so.2)
+.if exists(${LOCALBASE}/lib/libdvdcss.so.2)
 WITH_DVD=	yes
 .endif
 
@@ -80,7 +81,11 @@ CONFIGURE_ARGS+=	--enable-gui
 .endif
 
 .if defined(WITH_DVD)
+.if !defined(WITH_LIBDVDREAD)
+LIB_DEPENDS+=	dvdcss.2:${PORTSDIR}/graphics/libdvdcss
+.else
 LIB_DEPENDS+=	dvdread.2:${PORTSDIR}/graphics/libdvdread
+.endif
 .endif
 
 .if defined(WITH_SVGALIB)
@@ -156,6 +161,10 @@ pre-everything::
 .if !defined(WITH_DVD)
 	@${ECHO_MSG} "You can enable DVD support by defining WITH_DVD."
 .endif
+.if defined(WITH_DVD) && !defined(WITH_LIBDVDREAD)
+	@${ECHO_MSG} "You can replace mplayer internal DVD routines with libdvdread"
+	@${ECHO_MSG} "support by defining WITH_LIBDVDREAD."
+.endif
 .if !defined(WITH_SVGALIB)
 	@${ECHO_MSG} "You can enable SVGALIB support by defining WITH_SVGALIB."
 .endif
@@ -195,7 +204,9 @@ pre-everything::
 .endif # ARCH == i386
 
 pre-configure:
+.if defined(WITH_LIBDVDREAD)
 	@${RM} -Rf ${WRKSRC}/libmpdvdkit/
+.endif
 
 post-install:
 	@${MKDIR} ${DATADIR}
