@@ -11,12 +11,12 @@ a) have a look at the ${PREFIX}/www/data/cfg/mrtg.cfg" file.
 you must at least set the 'WorkDir:' variable and qmail log paths
 (search for '/var/log/supervise/qmail' and adapt to your system)
 b) configure qmrtg.conf. Defaults are fine generally. At least copy
-${PREFIX}/qmrtg.conf.sample to "qmrtg.conf".
+${PREFIX}/etc/qmrtg.conf.sample to "qmrtg.conf".
 c) make mrtg run automatically. Using cron, put that in "/etc/crontab": 
 
 */5 * * * *   root /usr/local/bin/mrtg \
          /usr/local/www/data/qmrtg/cfg/mrtg.cfg 1>/dev/null 2>&1
 
 Note: to skip qmrtg reporting your mx' whole history at the first call,
-run the following before "c)"
+run the following before point "c)"
 $ qmrtgsync.sh

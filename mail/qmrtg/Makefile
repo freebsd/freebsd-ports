@@ -7,13 +7,12 @@
 
 PORTNAME=	qmrtg
 PORTVERSION=	0.5.7
+PORTREVISION=	1
 CATEGORIES=	mail net-mgmt
 MASTER_SITES=	http://dev.publicshout.org/qmrtg/download/
 
 MAINTAINER=	mij@bitchx.it
 COMMENT=	A simple tool for monitoring and graphing qmail activity through MRTG
-
-BROKEN=		"Creates the /nonexistent directory"
 
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash2     \
 		mrtg:${PORTSDIR}/net-mgmt/mrtg
@@ -23,7 +22,9 @@ USE_GMAKE=	yes
 
 # this is the local apache documentroot
 WWWROOTDIR?=	${PREFIX}/www/data
-QMRTG_DBDIR?=	${PORT_DBDIR}/../${PORTNAME}
+QMRTG_DBDIR?=	/var/db/${PORTNAME}
+
+PLIST_SUB=	QMRTG_DBDIR=${QMRTG_DBDIR}
 
 post-install:
 # in_stall manpages
