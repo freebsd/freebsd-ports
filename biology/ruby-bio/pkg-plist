@@ -6,11 +6,17 @@ etc/bioinformatics/seqdatabase.ini.sample
 @exec [ ! -f %B/etc/bioinformatics/seqdatabase.ini ] && cp %B/%f %B/etc/bioinformatics/seqdatabase.ini
 @dirrm etc/bioinformatics
 %%RUBY_SITELIBDIR%%/bio.rb
+%%RUBY_SITELIBDIR%%/bio/alignment.rb
+%%RUBY_SITELIBDIR%%/bio/appl/alignfactory.rb
 %%RUBY_SITELIBDIR%%/bio/appl/blast.rb
+%%RUBY_SITELIBDIR%%/bio/appl/blast/format0.rb
 %%RUBY_SITELIBDIR%%/bio/appl/blast/format8.rb
 %%RUBY_SITELIBDIR%%/bio/appl/blast/report.rb
 %%RUBY_SITELIBDIR%%/bio/appl/blast/rexml.rb
+%%RUBY_SITELIBDIR%%/bio/appl/blast/wublast.rb
 %%RUBY_SITELIBDIR%%/bio/appl/blast/xmlparser.rb
+%%RUBY_SITELIBDIR%%/bio/appl/clustalw.rb
+%%RUBY_SITELIBDIR%%/bio/appl/clustalw/report.rb
 %%RUBY_SITELIBDIR%%/bio/appl/emboss.rb
 %%RUBY_SITELIBDIR%%/bio/appl/fasta.rb
 %%RUBY_SITELIBDIR%%/bio/appl/fasta/format10.rb
@@ -18,6 +24,8 @@ etc/bioinformatics/seqdatabase.ini.sample
 %%RUBY_SITELIBDIR%%/bio/appl/genscan/report.rb
 %%RUBY_SITELIBDIR%%/bio/appl/hmmer.rb
 %%RUBY_SITELIBDIR%%/bio/appl/hmmer/report.rb
+%%RUBY_SITELIBDIR%%/bio/appl/mafft.rb
+%%RUBY_SITELIBDIR%%/bio/appl/mafft/report.rb
 %%RUBY_SITELIBDIR%%/bio/appl/psort.rb
 %%RUBY_SITELIBDIR%%/bio/appl/psort/report.rb
 %%RUBY_SITELIBDIR%%/bio/appl/sosui/report.rb
@@ -86,9 +94,11 @@ etc/bioinformatics/seqdatabase.ini.sample
 @dirrm %%RUBY_SITELIBDIR%%/bio/appl/targetp
 @dirrm %%RUBY_SITELIBDIR%%/bio/appl/sosui
 @dirrm %%RUBY_SITELIBDIR%%/bio/appl/psort
+@dirrm %%RUBY_SITELIBDIR%%/bio/appl/mafft
 @dirrm %%RUBY_SITELIBDIR%%/bio/appl/hmmer
 @dirrm %%RUBY_SITELIBDIR%%/bio/appl/genscan
 @dirrm %%RUBY_SITELIBDIR%%/bio/appl/fasta
+@dirrm %%RUBY_SITELIBDIR%%/bio/appl/clustalw
 @dirrm %%RUBY_SITELIBDIR%%/bio/appl/blast
 @dirrm %%RUBY_SITELIBDIR%%/bio/appl
 @dirrm %%RUBY_SITELIBDIR%%/bio
@@ -117,6 +127,7 @@ etc/bioinformatics/seqdatabase.ini.sample
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/README
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/BioRuby.rd.ja
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/Design.rd.ja
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/KEGG_API.rd.ja
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/TODO.rd.ja
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/Tutorial.rd.ja
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/ja
