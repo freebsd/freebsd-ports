@@ -3060,7 +3060,6 @@ koog		ports/audio/koog
 korelib		ports/devel/korelib
 kp		ports/misc/kp
 kpasswdd	src/libexec/kpasswdd
-kpilot		ports/palm/kpilot
 kpp		ports/devel/kpp
 kproject	ports/deskutils/kproject
 kprop		src/eBones/kprop
