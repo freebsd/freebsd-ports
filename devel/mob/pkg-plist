@@ -1,1 +1,3 @@
 bin/inspector
+share/doc/mob/mob.ps
+@dirrm share/doc/mob
