@@ -7,7 +7,7 @@
 
 PORTNAME=	tads
 PORTVERSION=	2.5.7
-CATEGORIES=	games
+CATEGORIES=	games lang
 MASTER_SITES=	http://www.ifarchive.org/if-archive/programming/tads2/source/
 DISTNAME=	tads23-unix
 
