@@ -3,6 +3,18 @@ bin/xminicom
 bin/runscript
 bin/ascii-xfr
 etc/minicom/minicom.users
+share/locale/cs_CZ/LC_MESSAGES/minicom.mo
+share/locale/es/LC_MESSAGES/minicom.mo
+share/locale/fi_FI/LC_MESSAGES/minicom.mo
+share/locale/fr/LC_MESSAGES/minicom.mo
+share/locale/ja/LC_MESSAGES/minicom.mo
+share/locale/ja_JP.SJIS/LC_MESSAGES/minicom.mo
+share/locale/pl/LC_MESSAGES/minicom.mo
+share/locale/pt_BR/LC_MESSAGES/minicom.mo
+share/locale/ru/LC_MESSAGES/minicom.mo
+@unexec rmdir %D/share/locale/*/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/* 2>/dev/null || true
+@unexec rmdir %D/share/locale 2>/dev/null || true
 @exec /usr/sbin/chown uucp %D/etc/minicom
 @unexec rmdir %D/etc/minicom 2>/dev/null || true
 %%PORTDOCS%%share/doc/minicom/AUTHORS
