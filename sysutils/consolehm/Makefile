@@ -15,5 +15,7 @@ MAINTAINER=	mmuir@es.co.nz
 
 WRKSRC=		${WRKDIR}/consolehm/consolehm
 GNU_CONFIGURE=	yes
+MAN8=		chm.8
+MANCOMPRESSED=	maybe
 
 .include <bsd.port.mk>
