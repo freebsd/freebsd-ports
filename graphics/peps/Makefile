@@ -15,10 +15,24 @@ MASTER_SITE_SUBDIR=	petef
 MAINTAINER=	petef@FreeBSD.org
 COMMENT=	Converts EPS images to anti-aliased PGM bitmaps
 
-RUN_DEPENDS=	gs:${PORTSDIR}/print/ghostscript-gnu \
+.if defined(WITH_GHOSTSCRIPT_AFPL) && ${WITH_GHOSTSCRIPT_AFPL} == yes
+GSPORT?=	print/ghostscript-afpl
+.else
+GSPORT?=	print/ghostscript-gnu
+.endif
+
+RUN_DEPENDS=	gs:${PORTSDIR}/${GSPORT} \
 		pnmtopng:${PORTSDIR}/graphics/netpbm
 
 USE_REINPLACE=	yes
+
+pre-fetch:
+.if !defined(WITH_GHOSTSCRIPT_AFPL) || ${WITH_GHOSTSCRIPT_AFPL} != yes
+	@${ECHO} ""
+	@${ECHO} "      Define WITH_GHOSTSCRIPT_AFPL=yes to use"
+	@${ECHO} "      AFPL Postscript interpreter instead of GNU one"
+	@${ECHO} ""
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's!cc -O3!${CC} ${CFLAGS}!' ${WRKSRC}/Makefile
