@@ -1,0 +1,11 @@
+--- ./src/url.c.org	Sun Mar 26 01:26:06 1995
++++ ./src/url.c	Fri Sep 22 23:53:00 1995
+@@ -173,7 +173,7 @@
+   }
+ 
+   len = strlen(protocol) + strlen(hostname) + strlen(filename) +
+-        strlen(delim) + 11;
++        strlen(anchor) + strlen(delim) + strlen(delim2) + strlen(delim3) + 11;
+   u = alloc_mem(len + 1);
+   if (up->port == 0)
+   {
