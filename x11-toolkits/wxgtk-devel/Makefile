@@ -34,9 +34,11 @@ CONFIGURE_ARGS=	--with-libpng=sys \
 		--with-zlib=sys \
 		--with-opengl
 CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS} \
+			  -I${WRKSRC}/include \
 			  -I${LOCALBASE}/include \
 			  -I${X11BASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -liconv \
+		LDFLAGS="${PTHREAD_LIBS} \
+			 -L${LOCALBASE}/lib -liconv \
 			 -L${X11BASE}/lib" \
 		GTK_CONFIG_2_0="no"
 
