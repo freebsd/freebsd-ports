@@ -8,7 +8,7 @@
 PORTNAME=	jdk
 PORTVERSION=	${JDK_VERSION}b${JDK_BETALEVEL}
 CATEGORIES=	java devel
-MASTER_SITES=	# http://www.sun.com/software/communitysource/java2/
+MASTER_SITES=	# http://www.sun.com/software/java2/download.html
 #		 http://www.eyesbeyond.com/freebsddom/java/jdk.html
 DISTFILES=	${PORTNAME}${JDK_VERSION:S/./_/g}-src${EXTRACT_SUFX} \
 		freebsd-jdk122-patches-${JDK_BETALEVEL}.tar.gz
@@ -70,7 +70,7 @@ IGNORE=		"You can not legally distribute pre-compiled binaries"
 
 .for file in ${DISTFILES}
 .if !exists(${DISTDIR}/${file})
-IGNORE=You must manually fetch the source distribution and FreeBSD patches (${DISTFILES}) from http://www.sun.com/software/communitysource/java2/ and http://www.eyesbeyond.com/freebsddom/java/jdk.html, place it in ${DISTDIR} and then run make again
+IGNORE=You must manually fetch the source distribution and FreeBSD patches (${DISTFILES}) from http://www.sun.com/software/java2/download.html and http://www.eyesbeyond.com/freebsddom/java/jdk.html, place it in ${DISTDIR} and then run make again
 .endif
 .endfor
 
