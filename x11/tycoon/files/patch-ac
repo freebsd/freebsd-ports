@@ -1,0 +1,38 @@
+--- xbackdrop/Imakefile.orig	Sat Mar  9 05:41:13 1996
++++ xbackdrop/Imakefile	Sun Nov 23 20:36:15 1997
+@@ -1,24 +1,28 @@
+-XBACKDROP_DIR = /usr/lib/X11/backdrops
++XCOMM
++XCOMM FBSD--SF--I'm not sure about this location--backdrops??
++XCOMM
++XBACKDROP_DIR = ${LIBDIR}/backdrops
++
+ SRCS = xbackdrop.c xbackdrop_cb.c xbackdrop_main.c newbg.c newbg_cb.c
+ OBJS = xbackdrop.o xbackdrop_cb.o xbackdrop_main.o newbg.o newbg_cb.o
+ XCOMM for LINUX: 
+-EXTRA_LIBRARIES  = -L/usr/local/lib -L/u/grad/mitnits/lib -lforms -lXpm -lm XCOMM 
++XCOMM EXTRA_LIBRARIES  = -L/usr/local/lib -L/u/grad/mitnits/lib -lforms -lXpm -lm XCOMM 
+ 
+-XCOMM FOR Solaris
+-XCOMM EXTRA_LIBRARIES  = -L/usr/local/lib -L/u/grad/mitnits/lib -lforms -lXpm -lm -lnsl
++XCOMM FOR FreeBSD
++EXTRA_LIBRARIES  = -lxforms -lXpm -lm
+ 
+ 
+-EXTRA_INCLUDES = -I/usr/local/include -I/u/grad/mitnits/lib -I.
++EXTRA_INCLUDES = -I.
+ EXTRA_DEFINES =  -DXBACKDROP_DIR=\"$(XBACKDROP_DIR)\"
+ LDLIBS = $(EXTRA_LIBRARIES) $(EXTENSIONLIB) $(XLIB)
+ 
+ ComplexProgramTarget(xbackdrop)
+ 
+-install::	xbackdrop                                                  @@\
++install::	xbackdrop                                            @@\
+ 	@if [ -d $(XBACKDROP_DIR) ]; then set +x; \                  @@\
+ 	else (set -x; $(MKDIRHIER) $(XBACKDROP_DIR)); fi             @@\
+ 	cp backdrops/?* $(XBACKDROP_DIR);                            @@\
+-	chown root.root $(XBACKDROP_DIR) $(XBACKDROP_DIR)/?*;        @@\
++	chown root.daemon $(XBACKDROP_DIR) $(XBACKDROP_DIR)/?*;      @@\
+ 	chmod 0755 $(XBACKDROP_DIR);                                 @@\
+ 	chmod 0644 $(XBACKDROP_DIR)/?*;                              @@\
+ 
