@@ -67,7 +67,7 @@ post-patch:
 post-install:
 	${INSTALL_DATA}	${WRKSRC}/auditd.conf ${PREFIX}/etc/auditd.conf.sample
 .if !defined(NOPORTDOCS)
-	${INSTALL} -d -o root -g wheel -m 0775 ${DOCSDIR}
+	${INSTALL} -d -o root -g wheel -m 0755 ${DOCSDIR}
 .for f in ${DOCS}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
 .endfor
