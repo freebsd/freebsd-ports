@@ -18,7 +18,7 @@ MASTER_SITE_SUBDIR=	. old related/postfix
 DISTNAME=	snapshot-${PORTVERSION}
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	dwcjr@inethouston.net
+MAINTAINER=	dwcjr@FreeBSD.org
 
 MAN1=	mailq.1 newaliases.1 postalias.1 postcat.1 postconf.1 postdrop.1 \
 	postfix.1 postkick.1 postlock.1 postlog.1 postmap.1 postsuper.1 \
