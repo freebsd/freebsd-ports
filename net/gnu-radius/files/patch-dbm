@@ -1,0 +1,11 @@
+--- radiusd/builddbm.c.orig	Wed Dec  8 14:22:52 2004
++++ radiusd/builddbm.c	Wed Dec  8 14:23:11 2004
+@@ -57,7 +57,7 @@
+ 
+         if (2 + check_len + reply_len > closure->pair_buffer_size) {
+                 grad_log(L_ERR, "%s:%d: %s",
+-                         closure->filename, sym->lineno,
++                         closure->filename, sym->loc.line,
+ 		         _("too many attributes"));
+                 return -1;
+         }
