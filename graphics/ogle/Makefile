@@ -19,8 +19,6 @@ LIB_DEPENDS=	a52.0:${PORTSDIR}/audio/liba52 \
 		xml2.5:${PORTSDIR}/textproc/libxml2
 
 USE_XLIB=	yes
-USE_AUTOCONF=	yes
-USE_AUTOMAKE=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
 CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include"
@@ -50,6 +48,10 @@ post-patch:
 		${WRKSRC}/configure.in
 .endif
 	@${PERL} -pi -e "s|%%X11BASE%%|${X11BASE}|" ${WRKSRC}/scripts/ogle.in
+
+pre-configure:
+	@${TOUCH} `find -E ${WRKSRC} -regex ".*Makefile\.(am|in)"`
+	@${TOUCH} ${WRKSRC}/configure.in ${WRKSRC}/configure
 
 post-configure:
 	@${LN} -sf ${LOCALBASE}/bin/libtool ${WRKSRC}
