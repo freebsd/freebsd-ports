@@ -1,6 +1,6 @@
---- users.c.orig	Thu Sep 19 20:04:29 1996
-+++ users.c	Mon Sep 23 21:44:51 1996
-@@ -30,6 +30,10 @@
+--- users.c.orig	Fri Jun 19 05:27:37 1998
++++ users.c	Thu Dec  3 13:27:15 1998
+@@ -32,6 +32,10 @@
  static char sccsid[] =
  "@(#)users.c	1.12 Copyright 1992 Livingston Enterprises Inc";
  
@@ -11,7 +11,7 @@
  #include	<sys/types.h>
  #include	<sys/socket.h>
  #include	<sys/time.h>
-@@ -48,18 +52,30 @@
+@@ -50,18 +54,30 @@
  #	if defined(SOLARIS)
  #		include	</usr/ucbinclude/dbm.h>
  #	else
@@ -41,11 +41,11 @@
 +
  static int parse_record P__((char *name, char *linep,
  	VALUE_PAIR **check_first, VALUE_PAIR **reply_first));
- extern int user_read P__((FILE **userfd, char *name, char *content));
-@@ -97,7 +113,15 @@
+ extern int user_read P__((FILE **userfp_p, char *name, char *content));
+@@ -99,7 +115,15 @@
  {
  #if defined(DBM_MODE)
- 	(void)userfd;
+ 	(void)userfp_p;
 +#if defined(USE_NDBM)
 +	if(!(dbp=dbm_open(infoname, O_RDONLY, NULL))) {
 +		return(-1);
@@ -56,21 +56,21 @@
  	return dbminit(infoname);
 +#endif
  #else
- 	*userfd = fopen(infoname, "r");
- 	return *userfd == (FILE *)NULL;
-@@ -120,7 +144,11 @@
+ 	*userfp_p = fopen(infoname, "r");
+ 	return *userfp_p == (FILE *)NULL;
+@@ -122,7 +146,11 @@
  {
  #if defined(DBM_MODE)
- 	(void)userfd;
+ 	(void)userfp;
 +#if defined(USE_NDBM)
 +	dbm_close(dbp);
 +#else
  	dbmclose();
 +#endif
  #else
- 	fclose(userfd);
- #endif
-@@ -210,7 +238,11 @@
+ 	DEBUG("userinfo_close: fclosing fp=%p\n", userfp );
+ 	fclose(userfp);
+@@ -219,7 +247,11 @@
  #ifdef DBM_MODE
  	named.dptr = name;
  	named.dsize = strlen(name)+1;
@@ -81,8 +81,8 @@
 +#endif
  	if(contentd.dsize != 0) {	/* name found */
  		*user_data = contentd.dptr;
- 		userinfo_close(userfd);
-@@ -219,7 +251,11 @@
+ 		userinfo_close(userfp);
+@@ -228,7 +260,11 @@
  
  	named.dptr = "DEFAULT";
  	named.dsize = sizeof("DEFAULT");
@@ -93,4 +93,4 @@
 +#endif
  	if(contentd.dsize != 0) {	/* DEFAULT found */
  		*user_data = contentd.dptr;
- 		userinfo_close(userfd);
+ 		userinfo_close(userfp);

@@ -1,6 +1,6 @@
---- builddbm.c.orig	Wed May 22 20:30:36 1996
-+++ builddbm.c	Mon Sep 23 21:48:02 1996
-@@ -30,6 +30,10 @@
+--- builddbm.c.orig	Tue Jun  2 09:32:29 1998
++++ builddbm.c	Thu Dec  3 13:18:30 1998
+@@ -32,6 +32,10 @@
  static char sccsid[] =
  "@(#)builddbm.c	1.4 Copyright 1992 Livingston Enterprises Inc";
  
@@ -11,7 +11,7 @@
  #if defined(SOLARIS)
  #       include <sys/uio.h>
  #       include <unistd.h>
-@@ -37,7 +41,11 @@
+@@ -39,7 +43,11 @@
  #       include <fcntl.h>
  #       include </usr/ucbinclude/dbm.h>
  #else
@@ -23,7 +23,7 @@
  #endif  /* SOLARIS */
  
  #include	<sys/types.h>
-@@ -59,8 +67,13 @@
+@@ -61,8 +69,13 @@
  char		*progname;
  char		*radius_dir;
  char		*radius_users;
@@ -35,9 +35,9 @@
  char		dirfile[256];
 +#endif
  char		dbmname[256];
- FILE		*userfd;
+ FILE		*userfp;
  FILE		*errf;
-@@ -124,6 +137,20 @@
+@@ -126,6 +139,20 @@
  		}
  	}
  
@@ -58,16 +58,16 @@
  	sprintf(pagfile, "%s/%s.pag", radius_dir, radius_users);
  	if((fd = open(pagfile, O_WRONLY | O_CREAT | O_TRUNC, 0600)) < 0) {
  		fprintf(errf, "%s: Couldn't open %s for writing\n",
-@@ -143,7 +170,7 @@
+@@ -145,7 +172,7 @@
  		fprintf(errf, "%s: Couldn't dbminit(%s)\n", progname, dbmname);
  		exit(-1);
  	}
 -
 +#endif
- 	userfd = (FILE *)NULL;
+ 	userfp = (FILE *)NULL;
  	curParseLine = 0;
- 	while(user_read(&userfd, name, content) == 0) {
-@@ -153,7 +180,11 @@
+ 	while(user_read(&userfp, name, content) == 0) {
+@@ -155,7 +182,11 @@
  		}
  		named.dptr = name;
  		named.dsize = strlen(name)+1;
@@ -79,7 +79,7 @@
  		if(contentd.dsize != 0) {	/* name found */
  			warn("Skipping duplicate record\n\tfor user '%s'", name);
  			continue;
-@@ -162,13 +193,21 @@
+@@ -164,13 +195,21 @@
  		named.dsize = strlen(name)+1;
  		contentd.dptr = content;
  		contentd.dsize = strlen(content)+1;
