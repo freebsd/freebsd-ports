@@ -66,7 +66,6 @@
     SUBDIR += logsurfer
     SUBDIR += lv
     SUBDIR += magicpoint
-    SUBDIR += makeself
     SUBDIR += man.el
     SUBDIR += mc
     SUBDIR += mgp-mode.el

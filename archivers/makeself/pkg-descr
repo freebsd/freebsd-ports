@@ -1,0 +1,10 @@
+makeself is a (very small) shell script that makes neat
+self-extracting shell scripts, and allows you to specify a "setup"
+command to execute upon finishing.
+
+It's sorta like the Windows winzip self-extracting archives.
+
+WWW: http://www.lokigames.com/~megastep/makeself/
+Author: Stephane Peter <megastep@lokigames.com>
+
+- Will <andrews@technologist.com>
