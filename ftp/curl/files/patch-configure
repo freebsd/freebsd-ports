@@ -1,6 +1,6 @@
---- configure.orig	Mon Oct 18 01:22:10 2004
-+++ configure	Mon Dec 13 14:59:23 2004
-@@ -24217,8 +24217,10 @@
+--- configure.orig	Mon Dec 20 11:39:59 2004
++++ configure	Thu Feb 17 19:07:53 2005
+@@ -24438,8 +24438,10 @@
    *)
          PKGTEST="no"
      EXTRA_SSL=$OPT_SSL
@@ -11,3 +11,12 @@
      ;;
    esac
  
+@@ -31950,7 +31952,7 @@
+ main ()
+ {
+ #ifndef basename
+-  char *p = (char *) basename;
++  char *(*p)(const char *) = basename;
+ #endif
+ 
+   ;

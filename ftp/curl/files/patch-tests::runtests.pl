@@ -1,11 +1,11 @@
---- tests/runtests.pl.orig	Tue Dec 21 09:55:34 2004
-+++ tests/runtests.pl	Tue Dec 21 09:55:07 2004
-@@ -1599,7 +1599,7 @@
-     }
-     elsif ($ARGV[0] eq "-c") {
-         # use this path to curl instead of default
--        $CURL=$ARGV[1];
-+        $CURL=$DBGCURL=$ARGV[1];
-         shift @ARGV;
-     }
-     elsif ($ARGV[0] eq "-d") {
+--- tests/runtests.pl.orig	Sat Mar 12 03:40:30 2005
++++ tests/runtests.pl	Sat Mar 12 03:40:39 2005
+@@ -29,7 +29,7 @@
+ @INC=(@INC, $ENV{'srcdir'}, ".");
+ 
+ require "getpart.pm"; # array functions
+-require "valgrind.pm"; # valgrind report parser
++#require "valgrind.pm"; # valgrind report parser
+ 
+ my $srcdir = $ENV{'srcdir'} || '.';
+ my $HOSTIP="127.0.0.1";
