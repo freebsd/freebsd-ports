@@ -10,9 +10,9 @@ You may have to set some variables in the path configuration file for
 kpathsea /usr/local/share/texmf/web2c/texmf.cnf so that the program
 can find PK fonts, Virtual fonts and TFM files. For example,
 
-PKFONTS = .:/usr/local/lib/fonts//:{$dbfonts,$VARTEXFONTS}//pk/$MAKETEX_MODE//
-VFFONTS = .:/usr/local/share/fonts/vf-a2bk:$dbfonts//vf//
-TFMFONTS = .:/usr/local/share/fonts/vf-a2bk:{$dbfonts,$VARTEXFONTS}//tfm//
+PKFONTS = .:/usr/local/lib/fonts//:{$TEXMF/fonts:$VARTEXFONTS}//pk//
+VFFONTS = .:/usr/local/share/fonts/vf-a2bk:$TEXMF/fonts//vf//
+TFMFONTS = .:/usr/local/share/fonts/vf-a2bk:{$TEXMF/fonts:$VARTEXFONTS}//tfm//
 
 - Makoto WATANABE
 watanabe@zlab.phys.nagoya-u.ac.jp
