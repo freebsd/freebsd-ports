@@ -4,7 +4,7 @@ You have installed mod_tsunami.
 
 Use these directives in your httpd.conf:
 
-TsunamiActive		On/Off
+TsunamiEngine		On/Off
 TsunamiMaxConnections	number_of_maximum_slots_per_web_directory
 
 When the value of TsunamiMaxConnections is set to '0' (default behaviour),
