@@ -1,31 +1,31 @@
---- src/Makefile.orig	Sun Oct 29 17:38:13 2000
-+++ src/Makefile	Thu Nov 16 22:46:12 2000
+--- src/Makefile.orig	Tue Apr 17 00:31:55 2001
++++ src/Makefile	Tue Apr 17 00:30:46 2001
 @@ -1,22 +1,22 @@
 -PREFIX=/usr/local
-+PREFIX?=/usr/local
- VERSION = 0.6.1
++PREFIX=${X11BASE}
+ VERSION = 0.7.2
  MILESTONE = M18
  
 -MOZILLA_INCLUDES = -I/usr/include/mozilla -I/usr/local/include/mozilla
 -MOZILLA_LIBS = -L/usr/lib/mozilla -L/usr/local/lib/mozilla -lgtkembedmoz -lplds4 -lplc4 -lnspr4 -lgtksuperwin -lxpcom
 +MOZILLA_INCLUDES = -I${X11BASE}/include/mozilla
-+MOZILLA_LIBS = -L${X11BASE}/lib/mozilla-embedded -lgtkembedmoz -lplds4 -lplc4 -lnspr4 -lgtksuperwin -lxpcom
++MOZILLA_LIBS = -L${X11BASE}/lib/mozilla -lgtkembedmoz -lplds4 -lplc4 -lnspr4 -lgtksuperwin -lxpcom
  
  #my stuff
- #MOZILLA_INCLUDES = -I/usr/moz/package/include
- #MOZILLA_LIBS = -L/usr/moz/package/bin/ -lgtkembedmoz -lplds4 -lplc4 -lnspr4 -lgtksuperwin -lxpcom
+ #MOZILLA_INCLUDES = -I/usr/moz/mozilla/package/include
+ #MOZILLA_LIBS = -L/usr/moz/mozilla/package/bin/ -lgtkembedmoz -lplds4 -lplc4 -lnspr4 -lgtksuperwin -lxpcom 
  
 -GTK_LIBS = $(shell gtk-config --libs)
 -GTK_INCLUDES = $(shell gtk-config --cflags)
 +GTK_LIBS = $(shell $(GTK_CONFIG) --libs)
 +GTK_INCLUDES = $(shell $(GTK_CONFIG) --cflags)
  
- SOURCES = main.c callbacks.c moz_callbacks.c support.c ipc.c bookmarks.c interface.c interface-notebook.c history.c crash.c skipstone_config.c mozilla.cpp 
- OBJS = main.o callbacks.o moz_callbacks.o support.o ipc.o bookmarks.o interface.o interface-notebook.o history.o crash.o skipstone-config.o mozilla.o
+ SOURCES = main.c go.c callbacks.c moz_callbacks.c support.c ipc.c bookmarks.c interface.c interface-notebook.c history.c crash.c skipstone_config.c context.c mozilla.cpp
+ OBJS = main.o go.o callbacks.o moz_callbacks.o support.o ipc.o bookmarks.o interface.o interface-notebook.o history.o crash.o skipstone-config.o context.o mozilla.o
  DOWNLOADOBJS = skipdownload.o
--FLAGS = -g -O2 -Wall -D$(MILESTONE) -I.. $(GTK_INCLUDES) $(MOZILLA_INCLUDES)
+-FLAGS = -g -O2 -Wall -I.. $(GTK_INCLUDES) $(MOZILLA_INCLUDES) 
 -LIBS = -g $(GTK_LIBS) $(MOZILLA_LIBS) -lpthread
-+FLAGS = -g -Wall -D$(MILESTONE) -I.. $(GTK_INCLUDES) $(MOZILLA_INCLUDES) -D_THREAD_SAFE -pthread
++FLAGS = -g -O2 -Wall -I.. $(GTK_INCLUDES) $(MOZILLA_INCLUDES) -D_THREAD_SAFE -pthread
 +LIBS = -g $(GTK_LIBS) $(MOZILLA_LIBS)
  CC = gcc $(FLAGS) 
  CXX = c++ -fno-rtti $(FLAGS)
