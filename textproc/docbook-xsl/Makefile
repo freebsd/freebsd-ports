@@ -9,7 +9,7 @@ PORTNAME=	docbook-xsl
 PORTVERSION=	1.62.3
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR= docbook
+MASTER_SITE_SUBDIR=	docbook
 
 MAINTAINER=	des@freebsd.org
 COMMENT=	XSL DocBook stylesheets
@@ -50,6 +50,7 @@ post-install:
 	@${SED} -e 's,@XMLCATMGR@,${XMLCATMGR},g ; \
 			s,@CATALOG_PORTS_XML@,${CATALOG_PORTS},g' \
 			< ${FILESDIR}/pkg-deinstall.in > ${PKGDEINSTALL}
-	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+	@${SETENV} PKG_PREFIX=${PREFIX} \
+			${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.mk>
