@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	zsh
-PORTVERSION=	3.0.7
+PORTVERSION=	3.0.8
 CATEGORIES=	shells
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://ftp.sterling.com/zsh/ \
@@ -31,7 +31,6 @@ CONFIGURE_ENV+=	"LDFLAGS=-static"
 
 post-build:
 # Fix ".so" macro problem by using "soelim" command.
-	@echo HERE!!!
 	@(cd ${WRKSRC} ; \
 		${LN} -sf ./Doc man1 ; \
 		if [ ! -f ./man1/zshall.1.source ]; then \
