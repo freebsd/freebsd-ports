@@ -9,9 +9,9 @@ PORTNAME=	serialmail
 PORTVERSION=	0.75
 CATEGORIES=	mail
 MASTER_SITES=	http://cr.yp.to/software/ \
-		ftp://ftp.qmail.org/pub/koobera.math.uic.edu/pub/software/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	tom
+		ftp://ftp.gbnet.net/pub/qmail/ \
+		ftp://ftp.de.uu.net/pub/unix/mail/qmail/ \
+		ftp://ftp.iway.fr/pub/unix/mail/qmail/
 
 MAINTAINER=	tom@FreeBSD.org
 
