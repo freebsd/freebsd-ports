@@ -773,7 +773,6 @@
     SUBDIR += ytalk
     SUBDIR += zabbix-agent
     SUBDIR += zebra
-    SUBDIR += zebra-devel
     SUBDIR += zebra-server
     SUBDIR += ztelnet
 
