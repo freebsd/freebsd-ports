@@ -8,7 +8,7 @@
 PORTNAME=	plone
 PORTVERSION=	1.0.5
 CATEGORIES=	www zope
-MASTER_SITES= 	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	plone
 DISTNAME=	CMFPlone1.0.5
 DIST_SUBDIR=	zope
@@ -16,7 +16,7 @@ DIST_SUBDIR=	zope
 MAINTAINER=	filippo@widestore.net
 COMMENT=	A user friendly implementation of the CMF written on top of ZOPE
 
-RUN_DEPENDS= ${LOCALBASE}/${SZOPEBASEDIR}/lib/python/Products/CMFDefault/__init__.py:${PORTSDIR}/www/zope-cmf13
+RUN_DEPENDS=	${LOCALBASE}/${SZOPEBASEDIR}/lib/python/Products/CMFDefault/__init__.py:${PORTSDIR}/www/zope-cmf13
 
 CONFLICTS=	zope-formulator-*
 
@@ -28,12 +28,12 @@ WRKSRC=		${WRKDIR}/CMFPlone-1.0.5
 MODULES=	CMFPlone DCWorkflow Formulator i18n
 
 # You can change this in the environment if you like.
-SZOPEBASEDIR?=          www/Zope
+SZOPEBASEDIR?=	www/Zope
 
 # Don't change these
-ZOPEBASEDIR=            ${PREFIX}/${SZOPEBASEDIR}
+ZOPEBASEDIR=		${PREFIX}/${SZOPEBASEDIR}
 ZOPEPRODUCTNAME=
-ZOPEPRODUCTDIR=         lib/python/Products
+ZOPEPRODUCTDIR=		lib/python/Products
 
 PLIST_SUB=		ZOPEBASEDIR=${SZOPEBASEDIR}
 
