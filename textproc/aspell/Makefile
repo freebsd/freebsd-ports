@@ -3,7 +3,7 @@
 # Date created:		7 December 1998
 # Whom:			Josh Gilliam <josh@quick.net>
 #
-# $Id: Makefile,v 1.4 1999/04/23 22:45:13 jseger Exp $
+# $Id: Makefile,v 1.6 1999/08/17 19:36:53 cpiazza Exp $
 #
 
 DISTNAME=	aspell-.27.2
@@ -13,7 +13,7 @@ MASTER_SITES=	http://metalab.unc.edu/kevina/aspell/ \
 		ftp://ftp.kddlabs.co.jp/pub/Tools/aspell/ \
 		ftp://maroon.webmaster.com/pub/aspell/
 
-MAINTAINER=	josh@quick.net
+MAINTAINER=	ade@lovett.com
 
 .include <bsd.port.pre.mk>
 .if ${OSVERSION} < 400004
