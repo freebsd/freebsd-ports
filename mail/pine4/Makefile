@@ -16,8 +16,6 @@ DISTNAME?=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER?=	pine@freebsd.ady.ro
 
-FORBIDDEN=	"Remotely exploitable buffer overflows."
-
 Y2K=		http://www.washington.edu/pine/QandA/sysadmins.html#Millenium
 
 MAN1=		pine.1 pico.1 pilot.1
@@ -31,6 +29,11 @@ LIB_DEPENDS=	c-client4.7:${PORTSDIR}/mail/cclient
 .if defined(WITH_LDAP)
 LDAP_PREFIX?=	${LOCALBASE}
 BUILD_DEPENDS+=	${LDAP_PREFIX}/lib/libldap.a:${PORTSDIR}/net/ldap
+.endif
+
+pre-fetch:
+.if !defined(BATCH) && !defined(PACKAGE_BUILDING)
+	${SH} pkg-install
 .endif
 
 post-patch:

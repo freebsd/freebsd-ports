@@ -13,11 +13,14 @@ DISTNAME=	pine${PORTVERSION}
 
 MAINTAINER=	avatar@www.mmlab.cse.yzu.edu.tw
 
-FORBIDDEN=	"Remotely exploitable buffer overflows."
-
 NO_LATEST_LINK= yes
 
 MAN1= 		pine.1 pico.1 pilot.1
+
+pre-fetch:
+.if !defined(BATCH) && !defined(PACKAGE_BUILDING)
+	${SH} pkg-install
+.endif
 
 post-patch:
 	for i in ${WRKSRC}/doc/pine.1 \
