@@ -2255,6 +2255,7 @@ gringotts	ports/security/gringotts
 grip		ports/audio/grip
 grn		ports/news/grn
 groff		src/gnu/usr.bin/groff
+groundhog	ports/games/groundhog
 growfs		src/sbin/growfs
 grpn		ports/math/grpn
 gru		ports/games/gru
