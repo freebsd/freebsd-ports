@@ -7,6 +7,7 @@
 
 PORTNAME=	xfce
 PORTVERSION=	4.0.3.1
+PORTREVISION=	1
 CATEGORIES=	x11-wm xfce
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -25,6 +26,17 @@ RUN_DEPENDS=	${X11BASE}/lib/xfce4/mcs-plugins/ui_plugin.so:${PORTSDIR}/sysutils/
 		xfce4-iconbox:${PORTSDIR}/misc/xfce4-iconbox \
 		${X11BASE}/lib/gtk-2.0/2.2.0/engines/libxfce.so:${PORTSDIR}/x11-toolkits/gtk-xfce-engine
 
+.if exists(${X11BASE}/bin/gdm)
+WITH_GDM=	yes
+.endif
+
+.if defined(WITH_GDM)
+RUN_DEPENDS+=	${X11BASE}/bin/gdm:${PORTSDIR}/x11/gdm2
+PLIST_SUB+=	GDM=""
+.else
+PLIST_SUB+=	GDM="@comment"
+.endif
+
 .if !defined(WITHOUT_EXTRAS)
 .if !defined(WITHOUT_THEMES)
 RUN_DEPENDS+=	${X11BASE}/share/xfce4/themes/BeOS/terminal.png:${PORTSDIR}/misc/xfce4-panel-themes \
@@ -41,7 +53,14 @@ RUN_DEPENDS+=	${X11BASE}/lib/xfce4/panel-plugins/libmixer.so:${PORTSDIR}/audio/x
 
 LATEST_LINK=	xfce4
 NO_BUILD=	yes
+USE_X_PREFIX=	yes
 
 do-install:	# empty
+
+post-install:
+.if defined(WITH_GDM)
+	@${INSTALL_SCRIPT} ${FILESDIR}/XFce4 ${X11BASE}/etc/gdm/Sessions
+	@${INSTALL_DATA} ${FILESDIR}/XFce4.desktop ${X11BASE}/etc/dm/Sessions
+.endif
 
 .include <bsd.port.mk>

@@ -1,0 +1,7 @@
+#!/bin/sh
+
+xfce-mcs-manager
+xfwm4 --daemon
+xftaskbar4 &
+xfdesktop &
+exec xfce4-panel
