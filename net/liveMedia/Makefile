@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	liveMedia
-PORTVERSION=	2003.02.06a
+PORTVERSION=	2003.02.08
 PORTEPOCH=	1
 CATEGORIES=	net devel
 MASTER_SITES=	http://www.LIVE.COM/liveMedia/public/
@@ -21,7 +21,11 @@ NO_CDROM=	'dated material'
 WRKSRC=		${WRKDIR}/live
 PLIST=		${WRKDIR}/pkg-plist
 
+HAS_CONFIGURE=	YES
 USE_REINPLACE=	YES
+
+CONFIGURE_SCRIPT=	genMakefiles
+CONFIGURE_ARGS=		fixed-${OPSYS:L}
 
 BasicUsageEnvironment=	\
 		BasicUsageEnvironment/include/BasicHashTable.hh \
@@ -108,8 +112,8 @@ liveMedia=		\
 post-extract:
 	@${CP} ${FILESDIR}/config.fixed-${OPSYS:L} ${WRKSRC}/
 
-do-configure:
-	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ./genMakefiles fixed-${OPSYS:L})
+#do-configure:
+#	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ./genMakefiles fixed-${OPSYS:L})
 
 pre-install:
 	@${RM} -f ${PLIST}
