@@ -6,27 +6,22 @@
 #
 
 PORTNAME=	gliv
-PORTVERSION=	1.5.3
+PORTVERSION=	1.6
 CATEGORIES=	graphics
 MASTER_SITES=	http://gliv.tuxfamily.org/
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	gdk_pixbuf.2:${PORTSDIR}/graphics/gdk-pixbuf \
-		gnugetopt.1:${PORTSDIR}/devel/libgnugetopt \
-		gtkgl.5:${PORTSDIR}/x11-toolkits/gtkglarea
+LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt \
+		gtkgl-2.0.1:${PORTSDIR}/x11-toolkits/gtkglarea2
 RUN_DEPENDS=	${LOCALBASE}/bin/convert:${PORTSDIR}/graphics/ImageMagick
 
 USE_BZIP2=	yes
-USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
-USE_GNOMENG=	yes
-USE_GNOME=	gtk12
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" \
-		GDK_PIXBUF_CONFIG=${X11BASE}/bin/gdk-pixbuf-config
-CONFIGURE_ARGS=	--disable-gtk2
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
 MAN1=		gliv.1
 
@@ -35,7 +30,7 @@ LDFLAGS=	-L${LOCALBASE}/lib -L${X11BASE}/lib -lXext -lX11 -lgnugetopt \
 		${PTHREAD_LIBS}
 
 post-patch:
-	@${REINPLACE_CMD} -e \
-		's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|LDFLAGS="[\$$]CFLAGS|LDFLAGS="\$$LDFLAGS|g ; \
+		 s|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
