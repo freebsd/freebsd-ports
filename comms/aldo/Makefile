@@ -22,10 +22,6 @@ PLIST_FILES=	bin/aldo
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 502126
-BROKEN=		"Does not compile on FreeBSD >= 5.x"
-.endif
-
 .if ${OSVERSION} < 500000
 USE_GCC=	3.3
 MAKE_ENV+=	CXX="${CXX}"
