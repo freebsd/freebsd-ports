@@ -1,0 +1,40 @@
+# New ports collection makefile for:	abc2mtex
+# Date created:				28 May 2001
+# Whom:					joerg
+#
+# $FreeBSD$
+#
+
+PORTNAME=		abc2mtex
+PORTVERSION=		1.6.1
+CATEGORIES=		print
+MASTER_SITES=		${MASTER_SITE_TEX_CTAN}
+MASTER_SITE_SUBDIR=	support/abc2mtex
+DISTNAME=		${PORTNAME}${PORTVERSION}
+
+MAINTAINER=		joerg@freebsd.org
+
+RUN_DEPENDS=		musixtex:${PORTSDIR}/print/musixtex
+
+NO_WRKSUBDIR=		yes
+
+EXAMPLE_FILES=	English.abc Jigs.abc Reels.abc Strspys.abc
+DOC_FILES=	usrguide.ps
+BIN_FILES=	abc2mtex abc2mtex \
+		search abc_search \
+		sort_in abc_sort_in
+
+do-install:
+	cd ${WRKSRC}; \
+	${MKDIR} ${PREFIX}/share/doc/${PORTNAME}; \
+	${INSTALL_DATA} ${DOC_FILES} ${PREFIX}/share/doc/${PORTNAME}; \
+	${MKDIR} ${PREFIX}/share/doc/${PORTNAME}/examples; \
+	${INSTALL_DATA} ${EXAMPLE_FILES} ${PREFIX}/share/doc/${PORTNAME}/examples;
+	set -- ${BIN_FILES}; \
+	while [ $$# -gt 0 ] ; do \
+		src=$$1; tgt=$$2; shift; shift; \
+		${ECHO} "Installing $$src as ${PREFIX}/bin/$$tgt"; \
+		${INSTALL_PROGRAM} ${WRKSRC}/$$src ${PREFIX}/bin/$$tgt; \
+	done
+
+.include <bsd.port.mk>
