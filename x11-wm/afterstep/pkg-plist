@@ -52,3 +52,4 @@ include/X11/pixmaps/writeletter.xpm
 @dirrm lib/X11/afterstep/backgrounds
 @dirrm lib/X11/afterstep/sounds
 @dirrm lib/X11/afterstep
+@dirrm include/X11/pixmaps
