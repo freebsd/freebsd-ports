@@ -1,7 +1,8 @@
---- Makefile.orig	Mon Oct 13 08:41:56 1997
-+++ Makefile	Tue Sep  8 01:44:22 1998
+--- Makefile.orig	Mon Sep 28 21:48:41 1998
++++ Makefile	Tue Nov 24 14:19:18 1998
 @@ -1,15 +1,15 @@
- # Root of installation. Subdirectories will be ${DESTDIR}/etc,
+-# Root of installation. Subdirectories will be ${DESTDIR}/etc,
++TARGETS=	atalk
  # ${DESTDIR}/bin, and ${DESTDIR}/lib.
 -DESTDIR=/usr/local/atalk
 +DESTDIR=${PREFIX}
@@ -39,3 +40,13 @@
  
   
  # Location of the AFS and Kerberos libraries and include files.  Uncomment
+@@ -74,7 +74,8 @@
+ 	    ETCDIR="${ETCDIR}" LIBDIR="${LIBDIR}" INCDIR="${INCDIR}" \
+ 	    DESTDIR="${DESTDIR}" MANDIR="${MANDIR}" \
+ 	    TCPWRAPDIR="${TCPWRAPDIR}" PAMDIR="${PAMDIR}" \
+-	    AFSDIR="${AFSDIR}" KRBDIR="${KRBDIR}" DESDIR="${DESDIR}" $@
++	    AFSDIR="${AFSDIR}" KRBDIR="${KRBDIR}" DESDIR="${DESDIR}" \
++	    OPTOPTS="${CFLAGS}" $@
+ 
+ FRC:
+ 

@@ -1,5 +1,13 @@
 --- sys/freebsd/Makefile.orig	Fri Sep 18 05:19:27 1998
-+++ sys/freebsd/Makefile	Tue Nov 24 01:22:24 1998
++++ sys/freebsd/Makefile	Tue Nov 24 14:12:32 1998
+@@ -1,6 +1,6 @@
+ # FreeBSD specific defines, passed to subdirectories.
+ DEFS=	-DBSD4_4
+-OPTOPTS=	-O2
++#OPTOPTS=	-O2
+ CC=	gcc
+ INSTALL=	install
+ AFPLIBS=	-lcrypt -lrpcsvc
 @@ -23,7 +23,8 @@
  FRC:
  
