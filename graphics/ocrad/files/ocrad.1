@@ -1,0 +1,114 @@
+.TH OCRAD 1 "30 December 2003" "0.6" "GNU Ocrad"
+.SH NAME
+ocrad \- Optical Character Recognition
+.SH SYNOPSIS
+.I ocrad
+\-afhivV \-b NUMBER \-l MODE \-o FILE \-x FILE [FILES ...]
+.Sh DESCRIPTION
+.LP
+.I ocrad
+is an OCR (Optical Character Recognition) program
+implemented as a filter and based on a feature extraction method. It
+reads a bitmap image in pbm format and outputs text in ISO\-8859\-1
+(Latin\-1) charset.  Also includes a layout analyser able to separate
+the columns or blocks of text normally found on printed pages.  It can
+be used as a stand\-alone console application, or as a backend to other
+programs.
+.SH OPTIONS
+.TP
+.I "\-a", "\-\-append"
+Append generated text to the output file instead of overwriting it.
+.TP
+.I "\-b NUMBER", "\-\-block=NUMBER"
+Process only the specified text block, beginning from 1.
+Is only useful when used in conjunction with layout analysis (see below).
+.TP
+.I "\-D LEVEL", "\-\-debug=LEVEL"
+The Levels are:
+.nf
+100 - Show raw block list, unordered
+ 99 - Show recursive block list, unordered
+ 98 - Show main block list, unordered
+ 97 - Show recursive block list, ordered
+ 96 - Show main block list, ordered
+ 95..90 - reserved
+ 89 - Show all blocks from every character
+ 88 - Show main black blocks from every character
+ 87 - Show guess list for every character
+ 86 - Show best guess for every character
+.fi
+.TP
+.I "\-f", "\-\-force"
+Force overwrite of output file.
+.TP
+.I "\-h", "\-\-help"
+Print an informative help message describing the options and then exit.
+.TP
+.I "\-i", "\-\-invert"
+Invert image levels (white on black).
+.TP
+.I "\-l MODE", "\-\-layout=MODE"
+Enable page layout analysis. The meaning of
+.I MODE
+is: 
+.nf
+`0' no analysis at all,
+`1' column separation,
+`2' full analysis.
+.fi
+.TP
+.I "\-o FILE"
+Place the output into
+.I FILE
+instead of into the standard output.
+.TP
+.I "\-v", "\-\-verbose"
+Verbose mode.
+.TP
+.I "\-V", "\-\-version"
+Print the version number of Ocrad on the standard output and then exit.
+.TP
+.I "\-x FILE"
+Write (export) OCR Results File to
+.I FILE
+\.
+.SH BUGS
+If you find a bug in GNU Ocrad, please send electronic mail to
+<bug-ocrad@gnu.org>. Include the version number, which you can find by
+running `ocrad \-\-version'.
+.SH CAVEATS
+.IP \(bu 2
+Scan directly in b/w mode. Convert from grayscale only if you know what
+you are doing.
+.IP \(bu 2
+For better results the characters should be at least 20 pixels high.
+.IP \(bu 2
+Merged characters are always a problem. Try to avoid them.
+.IP \(bu 2
+Very bold or very light (broken) characters are also a problem.
+.IP \(bu 2
+Always see with your own eyes the pbm file before blaming Ocrad for the
+results. Remember the saying, "garbage in, garbage out".
+.SH TODO
+.IP \(bu 2
+Deal with broken characters.
+.IP \(bu 2
+Make a better layout detector. Every character on its line.
+.IP \(bu 2
+Separate (more) merged characters.
+.IP \(bu 2
+Deal better with frames, lines, pictures, etc.
+.IP \(bu 2
+Change to ISO_8859\-15 (update for ISO_8859\-1 with euro sign).
+.IP \(bu 2
+Add an option for recognizing ISO_8859\-9 chars (Turkish).
+.SH GETTING
+.I ocrad
+is available from http://www.gnu.org/software/ocrad/ocrad.html
+.SH AUTHOR
+.nf
+Antonio Diaz <ant_diaz@teleline.es>
+.fi
+.SH HISTORY
+.I ocrad
+0.6 was released in December 2003.

@@ -1,8 +1,8 @@
---- Makefile.in.orig	Sat Oct 18 01:29:16 2003
-+++ Makefile.in	Sun Nov 16 18:18:58 2003
+--- Makefile.in.orig	Thu Dec 18 11:11:05 2003
++++ Makefile.in	Tue Dec 30 20:20:01 2003
 @@ -4,13 +4,14 @@
  
- DISTNAME = ocrad-0.5
+ DISTNAME = ocrad-0.6
  
 -CXX = g++
 -INSTALL = install
@@ -35,8 +35,8 @@
  
  %.o : %.cc
  	$(CXX) $(CXXFLAGS) -c -o $@ $<
-@@ -42,6 +43,7 @@
- textline.o   : block.h character.h iso_8859_1.h textline.h
+@@ -43,6 +44,7 @@
+ recognize2.o : block.h character.h iso_8859_1.h textline.h
  textblock.o  : block.h character.h textline.h textblock.h
  main.o       : block.h blockmap.h bitmap.h character.h textline.h textblock.h
 +	$(CXX) $(CXXFLAGS) $(CPPFLAGS) -c main.cc
