@@ -14,4 +14,7 @@ MAINTAINER=	walt@erudition.net
 
 MAN8=		monitord.8
 
+post-install:
+	@${CP} ${WRKSRC}/monitord.conf ${PREFIX}/etc/monitord.conf.dist
+
 .include <bsd.port.mk>
