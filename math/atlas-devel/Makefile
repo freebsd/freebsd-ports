@@ -24,6 +24,12 @@ INSTALLS_SHLIB= yes
 USE_REINPLACE=  yes
 PKGNAMESUFFIX=  -devel
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 501000 && ${MACHINE_ARCH} == "alpha"
+USE_GCC=3.3
+.endif
+
 # only affects for lapack sub project
 .if defined(WITH_OPTIMIZED_FLAGS)
 FFLAGS+= -pipe -O3 -ffast-math -finline-functions -fstrength-reduce -funroll-loops -fexpensive-optimizations
@@ -31,8 +37,6 @@ FFLAGS+= -pipe -O3 -ffast-math -finline-functions -fstrength-reduce -funroll-loo
 FFLAGS+= -mfancy-math-387 -mpreferred-stack-boundary=3 -malign-double
 .endif # i386
 .endif
-
-.include <bsd.port.pre.mk>
 
 post-patch:
 .if !defined(WITH_OPTIMIZED_FLAGS)
