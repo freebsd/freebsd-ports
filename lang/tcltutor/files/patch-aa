@@ -1,0 +1,40 @@
+--- ../TclTutor/Makefile	Sat Nov 11 23:11:44 2000
++++ Makefile	Sat Nov 11 23:37:04 2000
+@@ -0,0 +1,8 @@
++#
++# Fake makefile to copy everything into the right directory.
++#
++
++install:
++	mkdir -p /usr/local/share/doc/TclTutor
++	install -c -g wheel -o root -m 0644 *.lsn *.cfg /usr/local/share/doc/TclTutor
++	install -c -g wheel -o root -m 0755 scaler.tcl htmllib.tcl TclTutor.tcl /usr/local/bin
+--- ../TclTutor/TclTutor.tcl	Tue May  9 02:50:40 2000
++++ TclTutor.tcl	Sat Nov 11 22:58:07 2000
+@@ -1,6 +1,6 @@
+ #!/bin/sh 
+ # \
+-exec wish "$0" "$@"
++exec wish8.2 "$0" "$@"
+ 
+ ;# NAME:   TclTutor.tcl
+ ;# AUTHOR: Clif Flynt
+@@ -214,6 +214,8 @@
+     set Tutor(Tcl.lessonFile) "G:/TCL_STUFF/TclTutor/TclTutor/Tcl0.lsn"
+ }
+ 
++set Tutor(lessonHome) "/usr/local/share/doc/TclTutor/"
++set Tutor(Tcl.lessonFile) "Tcl0.lsn"
+ 
+ # Initialize the various state indices.
+ 
+--- ../TclTutor/htmllib.tcl	Tue May  9 02:50:39 2000
++++ htmllib.tcl	Sat Nov 11 22:17:29 2000
+@@ -1,6 +1,6 @@
+ #!/bin/sh
+ # \
+-exec wish "$0" ${1+"$@"}
++exec wish8.2 "$0" ${1+"$@"}
+        
+ # CONFIGURATION DETAIL: SET THIS FOR YOUR IMAGE VIEWER:
+ #  (xli, xv, ee, etc)
