@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	opendchub
-PORTVERSION=	0.7.12
+PORTVERSION=	0.7.14
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -18,15 +18,13 @@ USE_PERL5=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-
-post-patch:
-	@${PERL} -pi -e 's|crypt\.h||g ; \
-		 s|malloc\.h||g' ${WRKSRC}/configure
+CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include"
 
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/Documentation/* ${DOCSDIR}
 .endif
 
 .include <bsd.port.pre.mk>
