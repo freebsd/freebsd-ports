@@ -9,7 +9,6 @@
 
 PORTNAME=	apache+ssl
 PORTVERSION=	${APACHE_VERSION}.${APACHE_SSL_VERSION}
-PORTREVISION=	3
 CATEGORIES=	www security
 MASTER_SITES=	${MASTER_SITE_APACHE_HTTPD} \
 		${MASTER_SITES_APACHE_SSL:S/$/:ssl/}
@@ -18,16 +17,56 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		apache_${APACHE_VERSION}+ssl_${APACHE_SSL_VERSION}${EXTRACT_SUFX}:ssl
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sheepkiller@cultdeadsheep.org
 COMMENT=	Apache-SSL: Apache secure webserver integrating OpenSSL
 
-APACHE_VERSION=		1.3.27
-APACHE_SSL_VERSION=	1.48
-USE_OPENSSL=	yes
-USE_PERL5=	yes
-HAS_CONFIGURE=	yes
-MAN1=		dbmmanage.1 htdigest.1 htpasswd.1
-MAN8=		ab.8 httpsdctl.8 apxs.8 httpsd.8 logresolve.8 rotatelogs.8
+APACHE_VERSION=		1.3.28
+APACHE_SSL_VERSION=	1.49
+USE_OPENSSL=		yes
+USE_PERL5=		yes
+HAS_CONFIGURE=		yes
+
+MASTER_SITES_APACHE_SSL= \
+		ftp://ftp.ox.ac.uk/pub/crypto/SSL/Apache-SSL/ \
+		ftp://ftp.it.net.au/mirrors/crypto/SSL/Apache-SSL/ \
+		ftp://ftp.sekure.net/pub/apache-ssl/ \
+		ftp://opensores.thebunker.net/pub/mirrors/apache-ssl/
+
+APACHE_HARD_SERVER_LIMIT?=	512
+
+.if defined(WITH_APACHE_SUEXEC)
+
+APACHE_SUEXEC_DOCROOT?=	${DOCUMENT_ROOT}
+APACHE_SUEXEC_LOG?=	/var/log/httpsd-suexec.log
+APACHE_SUEXEC_USERDIR?=	public_html
+APACHE_SUEXEC_UIDMIN?=	1000
+APACHE_SUEXEC_GIDMIN?=	1000
+APACHE_SUEXEC_CALLER?=	www
+
+SUEXEC_CONF= \
+	--enable-suexec \
+	--suexec-docroot=${APACHE_SUEXEC_DOCROOT} \
+	--suexec-caller=${APACHE_SUEXEC_CALLER} \
+	--suexec-uidmin=${APACHE_SUEXEC_UIDMIN} \
+	--suexec-gidmin=${APACHE_SUEXEC_GIDMIN} \
+	--suexec-logfile=${APACHE_SUEXEC_LOG} \
+	--suexec-userdir=${APACHE_SUEXEC_USERDIR} \
+	--suexec-safepath=${DEFAULT_PATH}
+
+.if defined(APACHE_SUEXEC_UMASK)
+SUEXEC_CONF+=	--suexec-umask=${APACHE_SUEXEC_UMASK}
+.endif
+
+PLIST_SUB+=	SUB_SUEXEC=""
+SUEXEC_MAN=	suexec.8
+
+.else	# !SUEXEC
+
+SUEXEC_CONF=
+PLIST_SUB+=	SUB_SUEXEC="@comment "
+SUEXEC_MAN=
+
+.endif  # !SUEXEC
 
 #
 # Set APACHE_PERF_TUNING env. variable to YES to get maximum performance
@@ -39,7 +78,6 @@ CONFIGURE_ARGS=	\
 		--server-gid=www \
 		--with-perl=${PERL} \
 		--with-layout=GNU \
-		--suexec-docroot=${PREFIX}/www/data \
 		--without-confadjust \
 		--enable-shared=remain \
 		--enable-module=most \
@@ -50,13 +88,14 @@ CONFIGURE_ARGS=	\
 		--localstatedir=/var \
 		--datadir=${PREFIX}/www \
 		--proxycachedir=${PREFIX}/www/proxy \
-		--libexecdir=${PREFIX}/libexec/apache
+		--libexecdir=${PREFIX}/libexec/apache \
+		${SUEXEC_CONF}
 
-OPTIM=		-DHARD_SERVER_LIMIT=512 \
+OPTIM=		-DHARD_SERVER_LIMIT=${APACHE_HARD_SERVER_LIMIT} \
 		-DDOCUMENT_LOCATION=\\"${PREFIX}/www/data/\\" \
 		-DDEFAULT_PATH=\\"/bin:/usr/bin:${PREFIX}/bin\\"
 
-.if defined(APACHE_PERF_TUNING) && ${APACHE_PERF_TUNING} == YES
+.if defined(APACHE_PERF_TUNING)
 OPTIM+=		-DBUFFERED_LOGS
 CFLAGS+=	-O6 -fomit-frame-pointer
 .endif
@@ -64,11 +103,9 @@ CFLAGS+=	-O6 -fomit-frame-pointer
 CONFIGURE_ENV+=	OPTIM='${OPTIM}'
 CONFIGURE_ENV+=	EXTRA_SSL_LIBS="-L${OPENSSLLIB} -L${LOCALBASE}/lib"
 
-MASTER_SITES_APACHE_SSL= \
-		ftp://ftp.ox.ac.uk/pub/crypto/SSL/Apache-SSL/ \
-		ftp://ftp.it.net.au/mirrors/crypto/SSL/Apache-SSL/ \
-		ftp://ftp.sekure.net/pub/apache-ssl/ \
-		ftp://opensores.thebunker.net/pub/mirrors/apache-ssl/ 
+MAN1=		dbmmanage.1 htdigest.1 htpasswd.1
+MAN8=		ab.8 httpsdctl.8 apxs.8 httpsd.8 logresolve.8 rotatelogs.8 \
+		${SUEXEC_MAN}
 
 .include <bsd.port.pre.mk>
 
@@ -77,6 +114,15 @@ post-extract:
 
 post-patch:
 	@cd ${WRKSRC} && ${SETENV} PREFIX=${PREFIX} ./FixPatch ${OPENSSLBASE}
+
+post-install:
+	@${ECHO_CMD} ""
+	@${ECHO_CMD} "                       !!!! WARNING !!!!"
+	@${ECHO_CMD} " Next PORTREVISION will be a complete resync with apache13 ports layout"
+	@${ECHO_CMD} " Will change:"
+	@${ECHO_CMD} "      - Default log file names"
+	@${ECHO_CMD} "      - Default DocumentRoot (${PREFIX}/www/htdocs => ${PREFIX}/www/data)"
+	@${ECHO_CMD} ""
 
 certificate:
 	-${MKDIR} ${PREFIX}/etc/apache/certs
