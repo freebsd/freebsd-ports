@@ -6,15 +6,12 @@
 #
 
 PORTNAME=	snort
-PORTVERSION=	1.8.1
-PORTREVISION=	1
+PORTVERSION=	1.8.2
 CATEGORIES=	security
 MASTER_SITES=	http://snort.sourcefire.com/releases/
-DISTNAME=	${PORTNAME}-1.8.1-RELEASE
 
 MAINTAINER=	kris@FreeBSD.org
 
-WRKSRC=		${WRKDIR}/snort-1.8.1-RELEASE
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-mysql=no --with-odbc=no --with-postgresql=no
 MAN8=		snort.8
