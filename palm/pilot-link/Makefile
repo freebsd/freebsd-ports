@@ -7,6 +7,7 @@
 
 PORTNAME=	pilot-link
 PORTVERSION=	0.9.5
+PORTREVISION=	1
 CATEGORIES=	palm comms tk83
 MASTER_SITES=	http://www.gnu-designs.com/pilot-link/source/
 DISTNAME=	${PORTNAME}.${PORTVERSION}
@@ -20,12 +21,10 @@ USE_BZIP2=	yes
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 USE_PERL5=	yes
-PREFIX=		${LOCALBASE}/pilot
-CONFIGURE_ARGS=	--with-perl5=${PERL5} --with-libiconv=${LOCALBASE}
 
 MAN1=		dlpsh.1 ietf2datebook.1 install-datebook.1 \
 		install-hinote.1 install-memo.1 install-user.1 \
-		pilot-xfer.1 read-ical.1
+		pilot-addresses.1 pilot-xfer.1 read-ical.1
 MAN7=		pilot-link.7
 
 CFLAGS+=	-I${LOCALBASE}/include
@@ -43,7 +42,13 @@ post-patch:
 	${RM} -f ${WRKSRC}/getopt*
 
 post-install:
-	@${SED} "s|%%PREFIX%%|${PREFIX}|g" < ${FILESDIR}/pilot-link.sh > ${LOCALBASE}/etc/rc.d/pilot-link.sh
-	@${CHMOD} 750 ${LOCALBASE}/etc/rc.d/pilot-link.sh
+	@${SED} "s|%%PREFIX%%|${PREFIX}/pilot|g" < ${FILESDIR}/pilot-link.sh \
+		> ${PREFIX}/etc/rc.d/pilot-link.sh
+	@${CHMOD} 750 ${PREFIX}/etc/rc.d/pilot-link.sh
 
 .include <bsd.port.mk>
+
+# Leave this here -- we need to override the default CONFIGURE_ARGS.
+CONFIGURE_ARGS=	--with-perl5=${PERL5} --with-libiconv=${LOCALBASE} \
+		--prefix=${PREFIX}/pilot ${CONFIGURE_TARGET} \
+		--mandir=${PREFIX}/man

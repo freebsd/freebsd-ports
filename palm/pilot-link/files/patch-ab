@@ -1,12 +1,5 @@
 --- configure.orig	Sat Aug 21 10:57:14 1999
 +++ configure	Sat Aug 21 11:05:26 1999
-@@ -10,5 +10,5 @@
- # Defaults:
- ac_help=
--ac_default_prefix=/usr/local
-+ac_default_prefix=/usr/local/pilot
- # Any additions from configure.in:
- ac_help="$ac_help
 @@ -876,9 +876,9 @@
  # Use test -z because SunOS4 sh mishandles braces in ${var-val}.
  # It thinks the first close brace ends the variable substitution.
