@@ -1,3 +1,4 @@
+# ex:ts=8
 # Ports collection makefile for:    conserver
 # Date created:         22 November 1997
 # Whom:                 Peter Wemm <peter@netplex.com.au>
@@ -13,7 +14,7 @@ MASTER_SITES=	ftp://ftp.uu.net/vendor/bitsko/config-mgmt/ \
 DISTNAME=	conserver-5.21-Beta
 EXTRACT_SUFX=	.shar.gz
 
-MAINTAINER=	peter@FreeBSD.org
+MAINTAINER=	obrien@FreeBSD.org
 
 EXTRACT_CMD=	zcat
 EXTRACT_BEFORE_ARGS=
