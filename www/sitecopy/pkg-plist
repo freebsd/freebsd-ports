@@ -1,1 +1,9 @@
 bin/sitecopy
+share/sitecopy/changes.awk
+share/doc/sitecopy/AUTHORS
+share/doc/sitecopy/COPYING
+share/doc/sitecopy/ChangeLog
+share/doc/sitecopy/README
+share/doc/sitecopy/RELEASE
+share/doc/sitecopy/examplerc
+@unexec rm -f %D/share/doc/sitecopy
