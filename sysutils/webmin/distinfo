@@ -3,6 +3,7 @@ MD5 (apache-1.100-3.wbm.gz) = 4c67e708abed11f80deba716d9c86dcc
 MD5 (dhcpd-1.100-1.wbm.gz) = dabf0b526719d5bda56b8edf5017c0f5
 MD5 (file-1.100-2.wbm.gz) = 33b8f0f3c408b74ed7423f45f4ae5069
 MD5 (ldap-useradmin-1.100-1.wbm.gz) = 0186d93d848fafbf83b93a88247592a0
+MD5 (lpadmin-1.100-1.wbm.gz) = ee94ed97ea4dede17b6b780b02344a0e
 MD5 (mysql-1.100-1.wbm.gz) = 17b0004275c0981cf5505c6cf9377f50
 MD5 (nis-1.100-1.wbm.gz) = 3f1d13c4c069964fc4751f87aed7b310
 MD5 (qmailadmin-1.100-1.wbm.gz) = 74355acfba3b6eff196a10ab6a950525
