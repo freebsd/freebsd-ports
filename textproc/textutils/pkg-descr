@@ -1,0 +1,10 @@
+GNU text utilities
+
+The Free Software Foundation's text processing utilities, for rearranging,
+reformatting and generally mangling text.
+
+Many of the utilities exist in the FreeBSD base collection, but the GNU
+versions have added functionality, which is sometimes useful.
+
+Note that the texinfo documentation refers to these utilities
+without the "g" prefix (cat rather than gcat, etc.).
