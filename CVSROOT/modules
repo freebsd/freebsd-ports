@@ -804,6 +804,7 @@ civ2demo	ports/games/civ2demo
 cjk-lyx		ports/print/cjk-lyx
 cksfv		ports/security/cksfv
 cl-asdf		ports/devel/cl-asdf
+cl-asdf-clisp	ports/devel/cl-asdf-clisp
 cl-lml		ports/www/cl-lml
 clamav		ports/security/clamav
 clanbomber	ports/games/clanbomber
