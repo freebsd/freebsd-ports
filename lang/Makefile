@@ -43,6 +43,7 @@
     SUBDIR += itcl
     SUBDIR += lcc
     SUBDIR += libobjects
+    SUBDIR += librep
     SUBDIR += logo
     SUBDIR += lua
     SUBDIR += m3gdb
