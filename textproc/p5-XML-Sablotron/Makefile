@@ -27,6 +27,7 @@ CONFIGURE_ARGS=	LIBS='-L${LOCALBASE}/lib -lexpat -lsablot -liconv' \
 post-patch:
 		@${PERL} -pi -e 's,%%PREFIX%%,${PREFIX},g' \
 			${WRKSRC}/Sablotron/Makefile.PL
+		@${PERL} -pi -e 's/^our /my /;' ${WRKSRC}/Makefile.PL
 
 MAN3=		XML::Sablotron.3 XML::Sablotron::DOM.3 \
 		XML::Sablotron::SAXBuilder.3
