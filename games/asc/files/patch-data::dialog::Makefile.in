@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- data/dialog/Makefile.in	2002/10/01 12:21:59	1.1
++++ data/dialog/Makefile.in	2002/10/01 12:23:35
+@@ -89,7 +89,7 @@
+ VERSION = @VERSION@
+ asc_version = @asc_version@
+ 
+-pkgdatadir = $(datadir)/games/@PACKAGE@
++pkgdatadir = $(datadir)/@PACKAGE@
+ 
+ pkgdata_DATA = asc_dlg.zip
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs

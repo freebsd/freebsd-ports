@@ -1,34 +1,18 @@
 
 $FreeBSD$
 
---- source/tools/linux/Makefile.in.orig	Fri Oct 12 03:37:29 2001
-+++ source/tools/linux/Makefile.in	Mon Oct 22 11:57:55 2001
-@@ -91,15 +91,15 @@
- asc_bin2text_SOURCES = bin2text.cpp     basestrm.cpp misc.cpp ascstring.cpp loadpcxc.cpp palette.cpp sgstream.cpp newfont.cpp basegfx.cpp graphicset.cpp gameoptions.cpp CLoadable.cpp Named.cpp Property.cpp PropertyGroup.cpp stack.cpp buildingtype.cpp typen.cpp vehicletype.cpp password.cpp strtmesg.cpp textfileparser.cpp terraintype.cpp objecttype.cpp textfiletags.cpp itemrepository.cpp 
- asc_weaponguide_SOURCES = weaponguide.cpp  basestrm.cpp misc.cpp ascstring.cpp loadpcxc.cpp palette.cpp sgstream.cpp newfont.cpp basegfx.cpp graphicset.cpp gameoptions.cpp CLoadable.cpp Named.cpp Property.cpp PropertyGroup.cpp stack.cpp buildingtype.cpp typen.cpp vehicletype.cpp password.cpp strtmesg.cpp textfileparser.cpp terraintype.cpp objecttype.cpp textfiletags.cpp itemrepository.cpp
+--- source/tools/linux/Makefile.in.orig	Sat Apr 27 23:06:16 2002
++++ source/tools/linux/Makefile.in	Tue Oct  1 15:36:31 2002
+@@ -111,7 +111,7 @@
+ asc_weaponguide_SOURCES = weaponguide.cpp  basestrm.cpp misc.cpp ascstring.cpp loadpcxc.cpp palette.cpp sgstream.cpp newfont.cpp basegfx.cpp graphicset.cpp gameoptions.cpp CLoadable.cpp Named.cpp Property.cpp PropertyGroup.cpp stack.cpp buildingtype.cpp typen.cpp vehicletype.cpp password.cpp strtmesg.cpp textfileparser.cpp terraintype.cpp objecttype.cpp textfiletags.cpp stringtokenizer.cpp itemrepository.cpp
+ asc_raw2pcx_SOURCES = raw2pcx.cpp      basestrm.cpp misc.cpp ascstring.cpp loadpcxc.cpp palette.cpp sgstream.cpp newfont.cpp basegfx.cpp graphicset.cpp gameoptions.cpp CLoadable.cpp Named.cpp Property.cpp PropertyGroup.cpp stack.cpp buildingtype.cpp typen.cpp vehicletype.cpp password.cpp strtmesg.cpp textfileparser.cpp terraintype.cpp objecttype.cpp textfiletags.cpp stringtokenizer.cpp
  
--asc_mount_LDADD = -lSDL -lSDLmm -lpthread @LDADDLIBBZ2@
--asc_demount_LDADD = -lSDL -lSDLmm -lpthread @LDADDLIBBZ2@
--#asc_gfx2pcx_LDADD    = ../../sdl/libsdl.a -lSDL -lSDLmm -lpthread @LDADDLIBBZ2@
--asc_makegfx_LDADD = ../../sdl/libsdl.a -lSDL -lSDLmm -lpthread @LDADDLIBBZ2@
--asc_mntgraph_LDADD = ../../sdl/libsdl.a -lSDL -lSDLmm -lpthread @LDADDLIBBZ2@
--asc_viewid_LDADD = ../../sdl/libsdl.a -lSDL -lSDLmm -lpthread @LDADDLIBBZ2@
--asc_tank2pcx_LDADD = ../../sdl/libsdl.a -lSDL -lSDLmm -lpthread @LDADDLIBBZ2@
--asc_bin2text_LDADD = ../../sdl/libsdl.a -lSDL -lSDLmm -lpthread @LDADDLIBBZ2@
--asc_weaponguide_LDADD = ../../sdl/libsdl.a -lSDL -lSDLmm -lpthread @LDADDLIBBZ2@
-+asc_mount_LDADD = -lSDLmm @LDADDLIBBZ2@
-+asc_demount_LDADD = -lSDLmm @LDADDLIBBZ2@
-+#asc_gfx2pcx_LDADD    = ../../sdl/libsdl.a -lSDLmm @LDADDLIBBZ2@
-+asc_makegfx_LDADD = ../../sdl/libsdl.a -lSDLmm @LDADDLIBBZ2@
-+asc_mntgraph_LDADD = ../../sdl/libsdl.a -lSDLmm @LDADDLIBBZ2@
-+asc_viewid_LDADD = ../../sdl/libsdl.a -lSDLmm @LDADDLIBBZ2@
-+asc_tank2pcx_LDADD = ../../sdl/libsdl.a -lSDLmm @LDADDLIBBZ2@
-+asc_bin2text_LDADD = ../../sdl/libsdl.a -lSDLmm @LDADDLIBBZ2@
-+asc_weaponguide_LDADD = ../../sdl/libsdl.a -lSDLmm @LDADDLIBBZ2@
- mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
- CONFIG_HEADER = ../../../config.h
- CONFIG_CLEAN_FILES = 
-@@ -107,7 +107,7 @@
+-asc_mount_LDADD = @SDL_LIBS@ @SDLMM_LIBS@ -lpthread @LDADDLIBBZ2@ $(top_builddir)/source/tools/lib/libasc_cmd.la
++asc_mount_LDADD = @SDL_LIBS@ @SDLMM_LIBS@ @LDADDLIBBZ2@ $(top_builddir)/source/tools/lib/libasc_cmd.la
+ asc_demount_LDADD = @SDL_LIBS@ @SDLMM_LIBS@ @LDADDLIBBZ2@ $(top_builddir)/source/tools/lib/libasc_cmd.la
+ asc_makegfx_LDADD = $(top_builddir)/source/sdl/libsdl.la @LDADDLIBBZ2@ $(top_builddir)/source/tools/lib/libasc_cmd.la
+ asc_viewid_LDADD = $(top_builddir)/source/sdl/libsdl.la @LDADDLIBBZ2@ $(top_builddir)/source/tools/lib/libasc_cmd.la
+@@ -125,7 +125,7 @@
  
  
  DEFS = @DEFS@ -I. -I$(srcdir) -I../../..

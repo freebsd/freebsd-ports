@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	asc
-PORTVERSION=	1.9.5.4
+PORTVERSION=	1.10.2
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	asc-hq
@@ -14,13 +14,12 @@ DISTNAME=	${PORTNAME}-source-${PORTVERSION}
 
 MAINTAINER=	sobomax@FreeBSD.org
 
-BROKEN=		Does not configure
-
 LIB_DEPENDS=	SDL-1.1.4:${PORTSDIR}/devel/sdl12 \
 		SDL_image.10:${PORTSDIR}/graphics/sdl_image \
 		gnugetopt.1:${PORTSDIR}/devel/libgnugetopt \
 		SDLmm.8:${PORTSDIR}/devel/sdlmm \
-		SDL_mixer.2:${PORTSDIR}/audio/sdl_mixer
+		SDL_mixer.2:${PORTSDIR}/audio/sdl_mixer \
+		paragui.3:${PORTSDIR}/x11-toolkits/paragui
 .if !exists(/usr/bin/bzip2)
 LIB_DEPENDS+=	bz2.1:${PORTSDIR}/archivers/bzip2
 .endif

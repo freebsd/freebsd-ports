@@ -1,9 +1,9 @@
 
 $FreeBSD$
 
---- source/unix/global_os.h.orig	Mon Sep  3 17:26:45 2001
-+++ source/unix/global_os.h	Mon Sep  3 17:32:50 2001
-@@ -53,8 +53,8 @@
+--- source/unix/global_os.h	2002/10/01 12:34:15	1.1
++++ source/unix/global_os.h	2002/10/01 12:34:29
+@@ -60,8 +60,8 @@
   #define global_os_h_included
  
    #ifndef minimalIO
@@ -14,7 +14,7 @@ $FreeBSD$
     #include sdlheader
    #endif 
  
-@@ -77,7 +77,7 @@
+@@ -84,7 +84,7 @@
    #endif
  
    #define CASE_SENSITIVE_FILE_NAMES 1
