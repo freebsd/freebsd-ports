@@ -21,6 +21,7 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 CONFIGURE_WRKSRC=	${WRKSRC}/mixkit/build
 BUILD_WRKSRC=	${WRKSRC}/mixkit/src
 
+USE_GETOPT_LONG=	yes
 USE_MESA=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
@@ -36,11 +37,6 @@ LDFLAGS=	-L${LOCALBASE}/lib -L${X11BASE}/lib ${PTHREAD_LIBS}
 
 .if ${OSVERSION} > 500034
 CFLAGS+=	-DMIX_ANSI_IOSTREAMS -fpermissive
-.endif
-
-.if !exists(/usr/include/getopt.h)
-LIB_DEPENDS+=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
-LDFLAGS+=	-lgnugetopt
 .endif
 
 post-extract:

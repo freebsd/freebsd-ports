@@ -17,6 +17,7 @@ COMMENT=	A DVI to text/plain translator
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libkpathsea.a:${PORTSDIR}/print/teTeX
 
+USE_GETOPT_LONG=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
@@ -27,11 +28,6 @@ MAN1=	catdvi.1
 
 CPPFLAGS=	-I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib
-
-.if !exists(/usr/include/getopt.h)
-LIB_DEPENDS+=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
-LDFLAGS+=	-lgnugetopt
-.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/catdvi ${PREFIX}/bin

@@ -17,15 +17,11 @@ COMMENT=	Convert PNM images to PPA for some HP printers
 RUN_DEPENDS=	gs:${PORTSDIR}/print/ghostscript-gnu \
 		enscript:${PORTSDIR}/print/enscript-letter
 
+USE_GETOPT_LONG=	yes
 MAKE_ENV=	LDFLAGS="${LDFLAGS}"	
+CFLAGS+=	${CPPFLAGS}
 
 MAN1=		pnm2ppa.1
-
-.if !exists(/usr/include/getopt.h)
-LIB_DEPENDS+=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
-CFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib -lgnugetopt
-.endif
 
 post-patch:
 	@${SED} -e "s:%%PREFIX%%:${PREFIX}:g" \

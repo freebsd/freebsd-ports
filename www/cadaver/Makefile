@@ -16,6 +16,7 @@ COMMENT=	Commandline client for DAV
 LIB_DEPENDS=	expat.4:${PORTSDIR}/textproc/expat2 \
 		neon.23:${PORTSDIR}/www/neon
 
+USE_GETOPT_LONG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
@@ -27,11 +28,6 @@ MAN1=	cadaver.1
 
 CPPFLAGS=	-I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib
-
-.if !exists(/usr/include/getopt.h)
-LIB_DEPENDS+=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
-LDFLAGS+=	-lgnugetopt
-.endif
 
 .if !defined(WITHOUT_OPENSSL)
 USE_OPENSSL=	yes
