@@ -8,8 +8,7 @@
 PORTNAME=	crossgo32-djgpp2
 PORTVERSION=	2.01
 CATEGORIES=	devel
-MASTER_SITES=	ftp://ftp.simtel.net/pub/simtelnet/gnu/djgpp/v2/old/ \
-		ftp://ftp.cdrom.com/pub/simtelnet/gnu/djgpp/v2/old/
+MASTER_SITES=	http://safariexamples.informit.com/0672322242/Software/DJGPP/v2/old/
 DISTNAME=	djcrx201
 
 MAINTAINER=	ports@FreeBSD.org
