@@ -5046,6 +5046,7 @@ openvrml	ports/www/openvrml
 openwebmail	ports/mail/openwebmail
 openzz		ports/devel/openzz
 opera		ports/www/opera
+ophoto		ports/graphics/ophoto
 opieinfo	src/usr.bin/opieinfo
 opiekey		src/usr.bin/opiekey
 opiepasswd	src/usr.bin/opiepasswd
