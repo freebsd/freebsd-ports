@@ -8,9 +8,8 @@
 PORTNAME=	xmp
 PORTVERSION=	2.0.4
 CATEGORIES=	audio
-MASTER_SITES=	http://xmp.helllabs.org/pkg/%SUBDIR%/ \
-		http://xmp.linuxave.net/pkg/%SUBDIR%/
-MASTER_SITE_SUBDIR=	${PORTVERSION}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
