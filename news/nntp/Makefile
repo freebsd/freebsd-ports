@@ -16,7 +16,7 @@ PATCH_SITES=	ftp://ftp.lan-ks.de/pub/c-news/ \
 		ftp://ftp.dinoex.org/pub/c-news/
 PATCHFILES=	nntp-patch-y2k
 
-MAINTAINER=	dinoex@freebsd.org
+MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	NNTP with NOV support
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libcnews.a:${PORTSDIR}/news/cnews
