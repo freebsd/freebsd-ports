@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.117 1999/04/03 01:09:02 steve Exp $
+# $Id: Makefile,v 1.118 1999/04/03 01:42:19 steve Exp $
 #
 
     SUBDIR += 4va
@@ -54,6 +54,7 @@
     SUBDIR += kdegraphics11
     SUBDIR += killustrator
     SUBDIR += lfview
+    SUBDIR += libimg
     SUBDIR += mpeg-lib
     SUBDIR += mpeg2codec
     SUBDIR += mpeg2play
