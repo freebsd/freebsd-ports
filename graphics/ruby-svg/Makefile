@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	svg
-PORTVERSION=	1.0.0
+PORTVERSION=	1.0.1
 CATEGORIES=	graphics ruby
-MASTER_SITES=	http://downloads.sourceforge.jp/ruby-svg/509/
+MASTER_SITES=	http://downloads.sourceforge.jp/ruby-svg/1018/
 MASTER_SITE_SUBDIR=	knu
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	ruby-${PORTNAME}-${PORTVERSION}
@@ -22,8 +22,8 @@ USE_RUBY=	yes
 
 NO_BUILD=	yes
 
-DOCS_EN=	doc/README.en.rd
-DOCS_JA=	doc/README.ja.rd
+DOCS_EN=	README.en.rd
+DOCS_JA=	README.ja.rd
 
 do-install:
 	${MKDIR} ${RUBY_SITELIBDIR}/svg
