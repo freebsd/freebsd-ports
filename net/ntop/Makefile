@@ -46,7 +46,7 @@ CONFIGURE_ARGS+=	--enable-tcpwrap
 
 .include <bsd.port.pre.mk>
 .if ${OSVERSION} < 400014
-LIB_DEPENDS+=	ssl.2:${PORTSDIR}/security/openssl
+LIB_DEPENDS+=	ssl.3:${PORTSDIR}/security/openssl
 CONFIGURE_ARGS+=	--with-ossl-root=${LOCALBASE}
 .endif
 
