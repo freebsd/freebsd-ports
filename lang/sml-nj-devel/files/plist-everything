@@ -19,6 +19,8 @@ smlnj/lib/mlrisc-tools/CM/%%MLARCH%%-unix/prec-parser.cm
 smlnj/lib/mlrisc-tools/CM/%%MLARCH%%-unix/sml-ast.cm
 smlnj/lib/mlrisc-tools/CM/%%MLARCH%%-unix/source-map.cm
 smlnj/lib/pgraph-util.cm/CM/%%MLARCH%%-unix/pgraph-util.cm
+smlnj/src/runtime/config/gen-posix-names.sh.orig
+smlnj/src/runtime/objs/mk.%%MLARCH%%-freebsd.orig
 @dirrm smlnj/lib/eXene.cm/CM/%%MLARCH%%-unix
 @dirrm smlnj/lib/eXene.cm/CM
 @dirrm smlnj/lib/eXene.cm
