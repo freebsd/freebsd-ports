@@ -7,15 +7,14 @@
 #
 
 PORTNAME=	regina
-PORTVERSION=	3.2
-PORTREVISION=	1
+PORTVERSION=	3.3
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}-rexx
 PKGNAMEPREFIX=	rexx-
 DISTNAME=	Regina-REXX-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	g.gonter@ieee.org
 COMMENT=	A Rexx interpreter
 
 CONFLICTS=	rexx-imc-*
@@ -31,6 +30,9 @@ MAN1=	regina.1
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|-pthread|${PTHREAD_LIBS}|g" ${WRKSRC}/configure
+
+post-configure:
+	@${REINPLACE_CMD} -e "s|-xchar=unsigned||g" ${WRKSRC}/Makefile
 
 post-install:
 	@${INSTALL_SCRIPT} ${FILESDIR}/rxstack.sh ${PREFIX}/etc/rc.d

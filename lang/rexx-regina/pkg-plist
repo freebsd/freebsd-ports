@@ -17,6 +17,7 @@ lib/libtest2.so
 %%DATADIR%%/es.mtb
 %%DATADIR%%/newstr.rexx
 %%DATADIR%%/no.mtb
+%%DATADIR%%/pl.mtb
 %%DATADIR%%/pt.mtb
 %%DATADIR%%/rexxcps.rexx
 %%DATADIR%%/timeconv.rexx
