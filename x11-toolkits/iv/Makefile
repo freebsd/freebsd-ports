@@ -3,12 +3,13 @@
 # Date created:		23.sept.1994
 # Whom:			adam
 #
-# $Id: Makefile,v 1.7 1995/05/29 12:42:41 asami Exp $
+# $Id: Makefile,v 1.8 1995/05/31 06:01:49 asami Exp $
 #
 
 VERSION=	3.1
 # don't change this to "=" !
 DISTNAME?=	iv-${VERSION}
+CATEGORIES=	x11
 MASTER_SITES=	ftp://interviews.stanford.edu/pub/
 EXTRACT_SUFX=	.tar.Z
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
