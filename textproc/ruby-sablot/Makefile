@@ -7,6 +7,7 @@
 
 PORTNAME=	sablot
 PORTVERSION=	0.5.2
+PORTREVISION=	1
 CATEGORIES=	textproc ruby
 MASTER_SITES=	http://www.rubycolor.org/arc/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -14,7 +15,7 @@ DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
 
-LIB_DEPENDS=	sablot.65:${PORTSDIR}/textproc/sablotron \
+LIB_DEPENDS=	sablot.70:${PORTSDIR}/textproc/sablotron \
 		iconv.2:${PORTSDIR}/converters/iconv \
 		expat.2:${PORTSDIR}/textproc/expat2
 
