@@ -13,6 +13,7 @@ DISTNAME=	fastDNAml_${PORTVERSION}
 
 MAINTAINER=	mzaki@e-mail.ne.jp
 
+USE_GMAKE=	yes
 do-build:
 	@(cd ${WRKSRC}/source; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${ALL_TARGET})
 
