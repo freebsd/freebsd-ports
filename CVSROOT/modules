@@ -8983,6 +8983,7 @@ upclient	ports/misc/upclient
 updatedd	ports/dns/updatedd
 uplog		ports/net/uplog
 upnp		ports/devel/upnp
+uppc-kmod	ports/palm/uppc-kmod
 ups-debug	ports/devel/ups-debug
 upsd		ports/sysutils/upsd
 upsmon		ports/sysutils/upsmon
