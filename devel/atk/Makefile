@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	atk
-PORTVERSION=	1.0.2
+PORTVERSION=	1.0.3
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNOME} \
 		ftp://ftp.gtk.org/pub/gtk/v2.0/
-MASTER_SITE_SUBDIR=	2.0.0/releases/gnome-2.0-desktop-final
+MASTER_SITE_SUBDIR=	2.0.0/sources/${PORTNAME}
 #MASTER_SITES=	ftp://ftp.gimp.org/pub/%SUBDIR%/ \
 #		ftp://ftp.cs.umn.edu/pub/gimp/%SUBDIR%/ \
 #		http://www.ameth.org/gimp/%SUBDIR%/ \
