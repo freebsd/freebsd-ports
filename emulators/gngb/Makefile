@@ -27,6 +27,8 @@ PLIST_FILES=	bin/gngb
 CPPFLAGS=	-I${LOCALBASE}/include -I${X11BASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib -L${X11BASE}/lib
 
+MAN1=		gngb.1
+
 .if defined(WITH_GL)
 USE_GL=		yes
 .else
