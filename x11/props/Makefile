@@ -23,6 +23,8 @@ USE_IMAKE=	yes
 
 .if ${OSVERSION} >= 502000
 BROKEN=		"Does not compile"
+.else
+BROKEN=		"Incorrect pkg-plist"
 .endif
 
 post-install:
