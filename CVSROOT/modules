@@ -598,6 +598,7 @@ bgpq		ports/net/bgpq
 bgrab		ports/news/bgrab
 bgrot		ports/x11/bgrot
 biabam		ports/mail/biabam
+bib2html	ports/textproc/bib2html
 bibcard		ports/print/bibcard
 bibcursed	ports/print/bibcursed
 bibelot		ports/palm/bibelot
