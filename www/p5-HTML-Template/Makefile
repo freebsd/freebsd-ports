@@ -14,20 +14,19 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	kuriyama@FreeBSD.org
 
-.include <bsd.port.pre.mk>
-
-.if !exists(${PREFIX}/lib/perl5/5.6.1/File/Spec.pm)
-BUILD_DEPENDS=	${PERL_INC}/File/Spec.pm:${PORTSDIR}/devel/p5-File-Spec
-RUN_DEPENDS=	${PERL_INC}/File/Spec.pm:${PORTSDIR}/devel/p5-File-Spec
-.endif
-
 PERL_CONFIGURE=	yes
 
 MAN3=		HTML::Template.3
 MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
-PERL_INC=	${PREFIX}/lib/perl5/site_perl/${PERL_VER}
 
 post-patch:
-	${PERL} -i -pe 's@%%PERL_INC%%@${PERL_INC}@' ${WRKSRC}/Template.pm
+	${PERL} -i -pe 's@%%PERL_INC%%@${SITE_PERL}@' ${WRKSRC}/Template.pm
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
+
+# ${PERL} defined after bsd.port.post.mk.  So place this after .include line.
+USE_FILESPEC!=	${PERL} -MFile::Spec -e 'print $$File::Spec::VERSION<0.82'
+.if (${USE_FILESPEC} == 1)
+BUILD_DEPENDS+=	${SITE_PERL}/File/Spec.pm:${PORTSDIR}/devel/p5-File-Spec
+RUN_DEPENDS+=	${SITE_PERL}/File/Spec.pm:${PORTSDIR}/devel/p5-File-Spec
+.endif
