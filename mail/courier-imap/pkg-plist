@@ -4,6 +4,7 @@ bin/maildirmake
 bin/pop3d
 etc/courier-imap/authdaemonrc.dist
 %%MYSQLFLAG%%etc/courier-imap/authmysqlrc.dist
+%%PGSQLFLAG%%etc/courier-imap/authpgsqlrc.dist
 etc/courier-imap/imapd-ssl.dist
 etc/courier-imap/imapd.cnf.dist
 etc/courier-imap/imapd.dist
@@ -14,6 +15,7 @@ etc/courier-imap/quotawarnmsg.example
 libexec/courier-imap/authlib/authdaemon
 libexec/courier-imap/authlib/authdaemond
 %%MYSQLFLAG%%libexec/courier-imap/authlib/authdaemond.mysql
+%%PGSQLFLAG%%libexec/courier-imap/authlib/authdaemond.pgsql
 libexec/courier-imap/authlib/authdaemond.plain
 libexec/courier-imap/couriertcpd
 libexec/courier-imap/deliverquota
