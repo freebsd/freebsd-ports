@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	adodb
-PORTVERSION=	4.11
+PORTVERSION=	4.20
 CATEGORIES=	databases www
 MASTER_SITES=	http://phplens.com/lens/dl/
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}
@@ -33,14 +33,17 @@ DOCS=	docs-adodb.htm docs-datadict.htm docs-perf.htm docs-session.htm \
 	license.txt old-changelog.htm readme.htm readme.txt tips_portable_sql.htm \
 	tute.htm
 
-ICONS=	adodb.gif adodb.png adodb2.gif adodb2.png
+ICONS=	adodb.gif adodb2.gif
 
 BASE=	adodb-csvlib.inc.php adodb-datadict.inc.php adodb-error.inc.php \
 	adodb-errorhandler.inc.php adodb-errorpear.inc.php adodb-exceptions.inc.php \
 	adodb-iterator.inc.php adodb-lib.inc.php adodb-pager.inc.php \
 	adodb-pear.inc.php adodb-perf.inc.php adodb-php4.inc.php adodb-time.inc.php \
-	adodb-xmlschema.inc.php adodb-xmlschema.zip adodb.inc.php \
-	pivottable.inc.php rsfilter.inc.php server.php toexport.inc.php tohtml.inc.php
+	adodb-time.zip adodb-xmlschema.inc.php adodb.inc.php \
+	pivottable.inc.php rsfilter.inc.php server.php toexport.inc.php tohtml.inc.php \
+	xmlschema.dtd
+
+CONTRIB=toxmlrpc.inc.php
 
 DATADICT=datadict-access.inc.php datadict-db2.inc.php datadict-generic.inc.php \
 	datadict-ibase.inc.php datadict-informix.inc.php datadict-mssql.inc.php \
@@ -75,6 +78,8 @@ SESSION=adodb-compress-bzip2.php adodb-compress-gzip.php \
 	old/adodb-cryptsession.php old/adodb-session-clob.php \
 	old/adodb-session.php old/crypt.inc.php
 
+XSL=	convert-0.1-0.2.xsl convert-0.2-0.1.xsl
+
 TESTS=	benchmark.php client.php test-datadict.php test.php test2.php \
 	test3.php test4.php test5.php test_rs_array.php testcache.php \
 	testdatabases.inc.php testgenid.php testmssql.php testoci8.php \
@@ -82,11 +87,15 @@ TESTS=	benchmark.php client.php test-datadict.php test.php test2.php \
 	time.php tmssql.php xmlschema.xml
 
 do-install:
-	@${MKDIR} ${PREFIX}/${ADODB_DIR} ${PREFIX}/${ADODB_DIR}/datadict \
-		${PREFIX}/${ADODB_DIR}/drivers ${PREFIX}/${ADODB_DIR}/lang \
-		${PREFIX}/${ADODB_DIR}/perf ${PREFIX}/${ADODB_DIR}/session/old
+	@${MKDIR} ${PREFIX}/${ADODB_DIR} ${PREFIX}/${ADODB_DIR}/contrib \
+		${PREFIX}/${ADODB_DIR}/datadict ${PREFIX}/${ADODB_DIR}/drivers \
+		${PREFIX}/${ADODB_DIR}/lang ${PREFIX}/${ADODB_DIR}/perf \
+		${PREFIX}/${ADODB_DIR}/session/old ${PREFIX}/${ADODB_DIR}/xsl
 .for FILE in ${BASE}
 	${INSTALL_DATA} ${WRKSRC}/${FILE} ${PREFIX}/${ADODB_DIR}/${FILE}
+.endfor
+.for FILE in ${CONTRIB}
+	${INSTALL_DATA} ${WRKSRC}/contrib/${FILE} ${PREFIX}/${ADODB_DIR}/contrib/${FILE}
 .endfor
 .for FILE in ${DATADICT}
 	${INSTALL_DATA} ${WRKSRC}/datadict/${FILE} ${PREFIX}/${ADODB_DIR}/datadict/${FILE}
@@ -102,6 +111,9 @@ do-install:
 .endfor
 .for FILE in ${SESSION}
 	${INSTALL_DATA} ${WRKSRC}/session/${FILE} ${PREFIX}/${ADODB_DIR}/session/${FILE}
+.endfor
+.for FILE in ${XSL}
+	${INSTALL_DATA} ${WRKSRC}/xsl/${FILE} ${PREFIX}/${ADODB_DIR}/xsl/${FILE}
 .endfor
 
 .if defined(WITH_TESTS)
