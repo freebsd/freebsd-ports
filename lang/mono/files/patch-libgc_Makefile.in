@@ -1,11 +1,11 @@
---- libgc/Makefile.in.orig	Sat Jun 12 15:40:48 2004
-+++ libgc/Makefile.in	Sat Jun 12 15:41:15 2004
-@@ -120,7 +120,7 @@
- 
+--- libgc/Makefile.in.orig	Tue Nov  2 21:37:01 2004
++++ libgc/Makefile.in	Tue Nov  2 21:39:34 2004
+@@ -278,7 +278,7 @@
+ target_alias = @target_alias@
+ target_all = @target_all@
  AUTOMAKE_OPTIONS = foreign
- 
 -SUBDIRS = include doc
 +SUBDIRS = include
  
- noinst_LTLIBRARIES = libmonogc.la
- 
+ #
+ # libtool is not capable of creating shared/static versions of a convenience

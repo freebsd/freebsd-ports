@@ -1,48 +1,48 @@
-@unexec gacutil /u glib-sharp.dll /f /package gtk-sharp /gacdir %D/lib > /dev/null || /usr/bin/true
+@unexec gacutil /u glib-sharp.dll /f /package gtk-sharp /root %D/lib /gacdir %D/lib > /dev/null || /usr/bin/true
 lib/mono/gtk-sharp/glib-sharp.dll
-@exec gacutil /i glib-sharp.dll /f /package gtk-sharp /gacdir %D/lib > /dev/null
-@unexec gacutil /u pango-sharp.dll /f /package gtk-sharp /gacdir %D/lib > /dev/null || /usr/bin/true
+@exec gacutil /i glib-sharp.dll /f /package gtk-sharp /root %D/lib /gacdir %D/lib > /dev/null
+@unexec gacutil /u pango-sharp.dll /f /package gtk-sharp /root %D/lib /gacdir %D/lib > /dev/null || /usr/bin/true
 lib/mono/gtk-sharp/pango-sharp.dll
-@exec gacutil /i pango-sharp.dll /f /package gtk-sharp /gacdir %D/lib > /dev/null
-@unexec gacutil /u atk-sharp.dll /f /package gtk-sharp /gacdir %D/lib > /dev/null || /usr/bin/true
+@exec gacutil /i pango-sharp.dll /f /package gtk-sharp /root %D/lib /gacdir %D/lib > /dev/null
+@unexec gacutil /u atk-sharp.dll /f /package gtk-sharp /root %D/lib /gacdir %D/lib > /dev/null || /usr/bin/true
 lib/mono/gtk-sharp/atk-sharp.dll
-@exec gacutil /i atk-sharp.dll /f /package gtk-sharp /gacdir %D/lib > /dev/null
-@unexec gacutil /u gdk-sharp.dll /f /package gtk-sharp /gacdir %D/lib > /dev/null || /usr/bin/true
+@exec gacutil /i atk-sharp.dll /f /package gtk-sharp /root %D/lib /gacdir %D/lib > /dev/null
+@unexec gacutil /u gdk-sharp.dll /f /package gtk-sharp /root %D/lib /gacdir %D/lib > /dev/null || /usr/bin/true
 lib/mono/gtk-sharp/gdk-sharp.dll
-@exec gacutil /i gdk-sharp.dll /f /package gtk-sharp /gacdir %D/lib > /dev/null
+@exec gacutil /i gdk-sharp.dll /f /package gtk-sharp /root %D/lib /gacdir %D/lib > /dev/null
 @unexec gacutil /u gtk-sharp.dll /f /package gtk-sharp /gacdir %D/lib > /dev/null || /usr/bin/true
 lib/mono/gtk-sharp/gtk-sharp.dll
-@exec gacutil /i gtk-sharp.dll /f /package gtk-sharp /gacdir %D/lib > /dev/null
-@unexec gacutil /u glade-sharp.dll /f /package gtk-sharp /gacdir %D/lib > /dev/null || /usr/bin/true
+@exec gacutil /i gtk-sharp.dll /f /package gtk-sharp /root %D/lib /gacdir %D/lib > /dev/null
+@unexec gacutil /u glade-sharp.dll /f /package gtk-sharp /root %D/lib /gacdir %D/lib > /dev/null || /usr/bin/true
 lib/mono/gtk-sharp/glade-sharp.dll
-@exec gacutil /i glade-sharp.dll /f /package gtk-sharp /gacdir %D/lib > /dev/null
-@unexec gacutil /u art-sharp.dll /f /package gtk-sharp /gacdir %D/lib > /dev/null || /usr/bin/true
+@exec gacutil /i glade-sharp.dll /f /package gtk-sharp /root %D/lib /gacdir %D/lib > /dev/null
+@unexec gacutil /u art-sharp.dll /f /package gtk-sharp /root %D/lib /gacdir %D/lib > /dev/null || /usr/bin/true
 lib/mono/gtk-sharp/art-sharp.dll
-@exec gacutil /i art-sharp.dll /f /package gtk-sharp /gacdir %D/lib > /dev/null
-@unexec gacutil /u gnome-sharp.dll /f /package gtk-sharp /gacdir %D/lib > /dev/null || /usr/bin/true
+@exec gacutil /i art-sharp.dll /f /package gtk-sharp /root %D/lib /gacdir %D/lib > /dev/null
+@unexec gacutil /u gnome-sharp.dll /f /package gtk-sharp /root %D/lib /gacdir %D/lib > /dev/null || /usr/bin/true
 lib/mono/gtk-sharp/gnome-sharp.dll
-@exec gacutil /i gnome-sharp.dll /f /package gtk-sharp /gacdir %D/lib > /dev/null
-@unexec gacutil /u gda-sharp.dll /f /package gtk-sharp /gacdir %D/lib > /dev/null || /usr/bin/true
+@exec gacutil /i gnome-sharp.dll /f /package gtk-sharp /root %D/lib /gacdir %D/lib > /dev/null
+@unexec gacutil /u gda-sharp.dll /f /package gtk-sharp /root %D/lib /gacdir %D/lib > /dev/null || /usr/bin/true
 lib/mono/gtk-sharp/gda-sharp.dll
-@exec gacutil /i gda-sharp.dll /f /package gtk-sharp /gacdir %D/lib > /dev/null
-@unexec gacutil /u gnomedb-sharp.dll /f /package gtk-sharp /gacdir %D/lib > /dev/null || /usr/bin/true
+@exec gacutil /i gda-sharp.dll /f /package gtk-sharp /root %D/lib /gacdir %D/lib > /dev/null
+@unexec gacutil /u gnomedb-sharp.dll /f /package gtk-sharp /root %D/lib /gacdir %D/lib > /dev/null || /usr/bin/true
 lib/mono/gtk-sharp/gnomedb-sharp.dll
-@exec gacutil /i gnomedb-sharp.dll /f /package gtk-sharp /gacdir %D/lib > /dev/null
-@unexec gacutil /u gtkhtml-sharp.dll /f /package gtk-sharp /gacdir %D/lib > /dev/null || /usr/bin/true
+@exec gacutil /i gnomedb-sharp.dll /f /package gtk-sharp /root %D/lib /gacdir %D/lib > /dev/null
+@unexec gacutil /u gtkhtml-sharp.dll /f /package gtk-sharp /root %D/lib /gacdir %D/lib > /dev/null || /usr/bin/true
 lib/mono/gtk-sharp/gtkhtml-sharp.dll
-@exec gacutil /i gtkhtml-sharp.dll /f /package gtk-sharp /gacdir %D/lib > /dev/null
-@unexec gacutil /u gconf-sharp.dll /f /package gtk-sharp /gacdir %D/lib > /dev/null || /usr/bin/true
+@exec gacutil /i gtkhtml-sharp.dll /f /package gtk-sharp /root %D/lib /gacdir %D/lib > /dev/null
+@unexec gacutil /u gconf-sharp.dll /f /package gtk-sharp /root %D/lib /gacdir %D/lib > /dev/null || /usr/bin/true
 lib/mono/gtk-sharp/gconf-sharp.dll
-@exec gacutil /i gconf-sharp.dll /f /package gtk-sharp /gacdir %D/lib > /dev/null
-@unexec gacutil /u gconf-sharp-peditors.dll /f /package gtk-sharp /gacdir %D/lib > /dev/null || /usr/bin/true
+@exec gacutil /i gconf-sharp.dll /f /package gtk-sharp /root %D/lib /gacdir %D/lib > /dev/null
+@unexec gacutil /u gconf-sharp-peditors.dll /f /package gtk-sharp /root %D/lib /gacdir %D/lib > /dev/null || /usr/bin/true
 lib/mono/gtk-sharp/gconf-sharp-peditors.dll
-@exec gacutil /i gconf-sharp-peditors.dll /f /package gtk-sharp /gacdir %D/lib > /dev/null
-@unexec gacutil /u rsvg-sharp.dll /f /package gtk-sharp /gacdir %D/lib > /dev/null || /usr/bin/true
+@exec gacutil /i gconf-sharp-peditors.dll /f /package gtk-sharp /root %D/lib /gacdir %D/lib > /dev/null
+@unexec gacutil /u rsvg-sharp.dll /f /package gtk-sharp /root %D/lib /gacdir %D/lib > /dev/null || /usr/bin/true
 lib/mono/gtk-sharp/rsvg-sharp.dll
-@exec gacutil /i rsvg-sharp.dll /f /package gtk-sharp /gacdir %D/lib > /dev/null
-@unexec gacutil /u vte-sharp.dll /f /package gtk-sharp /gacdir %D/lib > /dev/null || /usr/bin/true
+@exec gacutil /i rsvg-sharp.dll /f /package gtk-sharp /root %D/lib /gacdir %D/lib > /dev/null
+@unexec gacutil /u vte-sharp.dll /f /package gtk-sharp /root %D/lib /gacdir %D/lib > /dev/null || /usr/bin/true
 lib/mono/gtk-sharp/vte-sharp.dll
-@exec gacutil /i vte-sharp.dll /f /package gtk-sharp /gacdir %D/lib > /dev/null
+@exec gacutil /i vte-sharp.dll /f /package gtk-sharp /root %D/lib /gacdir %D/lib > /dev/null
 bin/gapi-codegen
 bin/gapi-fixup
 bin/gapi-fixup.exe
