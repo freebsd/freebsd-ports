@@ -3,18 +3,17 @@
 # Date created:		27 Oct 1998
 # Whom:			Abel Chow <achow@transoft.net>
 #
-# $Id: Makefile,v 1.7 1999/04/26 07:24:09 mharo Exp $
+# $Id: Makefile,v 1.8 1999/07/06 01:07:35 cpiazza Exp $
 #
 
-DISTNAME=	tidy2jul99
-PKGNAME=	tidy-0.7.99.1
+DISTNAME=	tidy7jul99
+PKGNAME=	tidy-0.7.99.2
 CATEGORIES=	www
 MASTER_SITES=	http://www.w3.org/People/Raggett/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	saken@hotel.rmta.org
 
-WRKSRC=		${WRKDIR}/tidy
 ALL_TARGET=	tidy
 
 DOCFILES=	Overview.html tidy.gif release-notes.html grid.gif config.txt
