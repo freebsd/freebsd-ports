@@ -1,0 +1,6 @@
+unix2dos and dos2unix are utilities that convert
+ASCII files from the DOS cr/lf format to the UNIX
+lf format
+
+-Oscar Bonilla
+obonilla@fisicc-ufm.edu
