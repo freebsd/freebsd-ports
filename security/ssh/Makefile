@@ -1,17 +1,17 @@
 # New ports collection makefile for:	ssh
-# Version required:     1.2.16
+# Version required:     1.2.17
 # Date created:		30 Jul 1995
 # Whom:			torstenb@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.34 1996/10/16 04:55:58 ache Exp $
+# $Id: Makefile,v 1.35 1996/11/18 11:39:31 asami Exp $
 #
 # Maximal ssh package requires YES values for
 # USE_PERL, USE_TCPWRAP
 #
 
-DISTNAME=       ssh-1.2.16
+DISTNAME=       ssh-1.2.17
 CATEGORIES=	security net
-MASTER_SITES=   ftp://ftp.cs.hut.fi/pub/ssh/
+MASTER_SITES=   ftp://ftp.funet.fi/pub/unix/security/login/ssh/
 
 MAINTAINER=	torstenb@FreeBSD.ORG
 
@@ -20,7 +20,7 @@ MAINTAINER=	torstenb@FreeBSD.ORG
 .if defined(USA_RESIDENT) && ${USA_RESIDENT} == YES
 DISTFILES=	${DISTNAME}.tar.gz rsaref2.tar.gz
 MASTER_SITES=	\
-	ftp://ftp.cs.hut.fi/pub/ssh/ \
+	ftp://ftp.funet.fi/pub/unix/security/login/ssh/ \
 	ftp://nic.funet.fi/pub/crypt/mirrors/ftp.dsi.unimi.it/applied-crypto/ \
 	ftp://rzsun2.informatik.uni-hamburg.de/pub/virus/crypt/ripem/ \
 	ftp://ftp.dsi.unimi.it/pub/security/crypt/math/ \

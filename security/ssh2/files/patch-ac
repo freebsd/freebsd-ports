@@ -4,7 +4,7 @@
 *** 159,170 ****
   SHELL = /bin/sh
   
-  GMPDIR 		= gmp-2.0.2
+  GMPDIR 		= gmp-2.0.2-ssh-2
 ! GMPLIBS 	= -L$(GMPDIR) -lgmp
 ! GMPDEP 		= $(GMPDIR)/gmp.h $(GMPDIR)/libgmp.a
   
@@ -17,7 +17,7 @@
 --- 159,176 ----
   SHELL = /bin/sh
   
-  GMPDIR 		= gmp-2.0.2
+  GMPDIR 		= gmp-2.0.2-ssh-2
 ! # We have the same libgmp in the system, so use it instead
 ! GMPINCDIR       = /usr/include
 ! GMPLIBDIR       = /usr/lib
@@ -38,7 +38,7 @@
   	$(CC) -o rfc-pg rfc-pg.c
   
   .c.o:
-! 	$(CC) -c -I. -I$(srcdir)/$(GMPDIR) -I$(srcdir)/$(ZLIBDIR) $(DEFS) -DHOST_KEY_FILE=\"$(HOST_KEY_FILE)\" -DHOST_CONFIG_FILE=\"$(HOST_CONFIG_FILE)\" -DSERVER_CONFIG_FILE=\"$(SERVER_CONFIG_FILE)\" -DSSH_PROGRAM=\"$(SSH_PROGRAM)\" -DETCDIR=\"$(etcdir)\" -DPIDDIR=\"$(piddir)\" -DBINDIR=\"$(bindir)\" $(CFLAGS) $(X_CFLAGS) $<
+! 	$(CC) -c -I. -I$(srcdir)/$(GMPDIR) -I$(srcdir)/$(ZLIBDIR) $(DEFS) -DHOST_KEY_FILE=\"$(HOST_KEY_FILE)\" -DHOST_CONFIG_FILE=\"$(HOST_CONFIG_FILE)\" -DSERVER_CONFIG_FILE=\"$(SERVER_CONFIG_FILE)\" -DSSH_PROGRAM=\"$(SSH_PROGRAM)\" -DETCDIR=\"$(etcdir)\" -DPIDDIR=\"$(piddir)\" -DSSH_BINDIR=\"$(bindir)\" $(CFLAGS) $(X_CFLAGS) $<
   
   sshd: $(SSHD_OBJS) $(GMPDEP) $(RSAREFDEP) $(ZLIBDEP)
   	-rm -f sshd
@@ -46,7 +46,7 @@
   	$(CC) -o rfc-pg rfc-pg.c
   
   .c.o:
-! 	$(CC) -c -I. -I$(GMPINCDIR) -I$(ZLIBINCDIR) $(DEFS) -DHOST_KEY_FILE=\"$(HOST_KEY_FILE)\" -DHOST_CONFIG_FILE=\"$(HOST_CONFIG_FILE)\" -DSERVER_CONFIG_FILE=\"$(SERVER_CONFIG_FILE)\" -DSSH_PROGRAM=\"$(SSH_PROGRAM)\" -DETCDIR=\"$(etcdir)\" -DPIDDIR=\"$(piddir)\" -DBINDIR=\"$(bindir)\" $(CFLAGS) $(X_CFLAGS) $<
+! 	$(CC) -c -I. -I$(GMPINCDIR) -I$(ZLIBINCDIR) $(DEFS) -DHOST_KEY_FILE=\"$(HOST_KEY_FILE)\" -DHOST_CONFIG_FILE=\"$(HOST_CONFIG_FILE)\" -DSERVER_CONFIG_FILE=\"$(SERVER_CONFIG_FILE)\" -DSSH_PROGRAM=\"$(SSH_PROGRAM)\" -DETCDIR=\"$(etcdir)\" -DPIDDIR=\"$(piddir)\" -DSSH_BINDIR=\"$(bindir)\" $(CFLAGS) $(X_CFLAGS) $<
   
   sshd: $(SSHD_OBJS) $(GMPDEP) $(RSAREFDEP) $(ZLIBDEP)
   	-rm -f sshd
@@ -112,7 +112,7 @@
 *** 462,488 ****
   
   clean:
-  	-rm -f *.o minfd.h gmon.out *core $(PROGRAMS) gen_minfd rfc-pg
+  	-rm -f *.o gmon.out *core $(PROGRAMS) rfc-pg
 ! 	cd $(GMPDIR); $(MAKE) clean
   #	cd $(RSAREFSRCDIR); rm -f *.o *.a
 ! 	cd $(ZLIBDIR); $(MAKE) clean
@@ -128,19 +128,19 @@
   	-mkdir $(DISTNAME)
   	cp $(DISTFILES) $(DISTNAME)
   	-rm $(DISTNAME)/config.h
-! 	tar cf - $(GMPDIR) | (cd $(DISTNAME); tar xf -)
-! 	cd $(DISTNAME)/$(GMPDIR); $(MAKE) clean
+! 	tar pcf - $(GMPDIR) | (cd $(DISTNAME); tar pxf -)
+! 	cd $(DISTNAME)/$(GMPDIR); $(MAKE) distclean
   #	tar cf - $(RSAREFDIR) | (cd $(DISTNAME); tar xf -)
   #	cd $(DISTNAME)/$(RSAREFSRCDIR); rm -f *.o *.a
-! 	tar cf - $(ZLIBDIR) | (cd $(DISTNAME); tar xf -)
+! 	tar pcf - $(ZLIBDIR) | (cd $(DISTNAME); tar pxf -)
 ! 	cd $(DISTNAME)/$(ZLIBDIR); rm -f *.o *.a
-  	tar cf $(DISTNAME).tar $(DISTNAME)
+  	tar pcf $(DISTNAME).tar $(DISTNAME)
   	-rm -f $(DISTNAME).tar.gz
   	gzip $(DISTNAME).tar
 --- 468,494 ----
   
   clean:
-  	-rm -f *.o minfd.h gmon.out *core $(PROGRAMS) gen_minfd rfc-pg
+  	-rm -f *.o gmon.out *core $(PROGRAMS) rfc-pg
 ! #	cd $(GMPDIR); $(MAKE) clean
   #	cd $(RSAREFSRCDIR); rm -f *.o *.a
 ! #       cd $(ZLIBDIR); $(MAKE) clean
@@ -156,11 +156,11 @@
   	-mkdir $(DISTNAME)
   	cp $(DISTFILES) $(DISTNAME)
   	-rm $(DISTNAME)/config.h
-! #       tar cf - $(GMPDIR) | (cd $(DISTNAME); tar xf -)
-! #	cd $(DISTNAME)/$(GMPDIR); $(MAKE) clean
+! #       tar pcf - $(GMPDIR) | (cd $(DISTNAME); tar pxf -)
+! #	cd $(DISTNAME)/$(GMPDIR); $(MAKE) distclean
   #	tar cf - $(RSAREFDIR) | (cd $(DISTNAME); tar xf -)
   #	cd $(DISTNAME)/$(RSAREFSRCDIR); rm -f *.o *.a
-! #       tar cf - $(ZLIBDIR) | (cd $(DISTNAME); tar xf -)
+! #       tar pcf - $(ZLIBDIR) | (cd $(DISTNAME); tar pxf -)
 ! #       cd $(DISTNAME)/$(ZLIBDIR); rm -f *.o *.a
   	tar cf $(DISTNAME).tar $(DISTNAME)
   	-rm -f $(DISTNAME).tar.gz
