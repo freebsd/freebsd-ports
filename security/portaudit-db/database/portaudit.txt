@@ -27,3 +27,4 @@ scorched3d<0.37.2|http://marc.theaimsgroup.com/?l=bugtraq&m=108152473130133&w=2 
 super<3.23.0|http://www.secunia.com/advisories/11899 http://www.debian.org/security/2004/dsa-522 http://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0579|super format string vulnerability|fae06c04-c38c-11d8-8898-000d6111a684
 mailman<2.1.5|http://mail.python.org/pipermail/mailman-announce/2004-May/000072.html http://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0412 http://www.osvdb.org/6422|mailman allows 3rd parties to retrieve member passwords|2a405a43-c396-11d8-8898-000d6111a684
 roundup<0.7.3|http://www.osvdb.org/6691 http://xforce.iss.net/xforce/xfdb/16350 http://securityfocus.com/bid/10495 http://mail.python.org/pipermail/python-announce-list/2004-May/003126.html|Roundup remote file disclosure vulnerability|40800696-c3b0-11d8-864c-02e0185c0b53
+sqwebmail<4.0.5|http://www.securityfocus.com/archive/1/366595|Sqwebmail XSS vulnerability|c3e56efa-c42f-11d8-864c-02e0185c0b53
