@@ -1,5 +1,5 @@
---- tyman/Imakefile.orig	Thu Sep 18 23:53:43 1997
-+++ tyman/Imakefile	Fri Sep 19 00:07:48 1997
+--- tyman/Imakefile.orig	Fri Mar  1 22:37:02 1996
++++ tyman/Imakefile	Wed Nov  1 08:11:48 2000
 @@ -2,14 +2,14 @@
  SRCS = tyman.c tyman_cb.c tyman_main.c
  OBJS = tyman.o tyman_cb.o tyman_main.o
@@ -14,9 +14,10 @@
  
  
 -EXTRA_INCLUDES  = -I/usr/local/include -I/u/grad/mitnits/lib -I.
-+EXTRA_INCLUDES  = -I.
 -EXTRA_DEFINES  = -DICON_DIR=\"/usr/include/X11/pixmaps\"
++EXTRA_INCLUDES  = -I.
 +EXTRA_DEFINES  = -DICON_DIR=\"${INCDIR}/pixmaps/\"
  LDLIBS = $(EXTRA_LIBRARIES) $(EXTENSIONLIB) $(XLIB)
  
- ComplexProgramTarget(tyman)
+-ComplexProgramTarget(tyman)
++ComplexProgramTargetNoMan(tyman)

@@ -1,5 +1,5 @@
---- xbackdrop/Imakefile.orig	Sat Mar  9 05:41:13 1996
-+++ xbackdrop/Imakefile	Sun Nov 23 20:36:15 1997
+--- xbackdrop/Imakefile.orig	Sat Mar  9 22:41:13 1996
++++ xbackdrop/Imakefile	Wed Nov  1 08:19:17 2000
 @@ -1,24 +1,28 @@
 -XBACKDROP_DIR = /usr/lib/X11/backdrops
 +XCOMM
@@ -24,7 +24,8 @@
  EXTRA_DEFINES =  -DXBACKDROP_DIR=\"$(XBACKDROP_DIR)\"
  LDLIBS = $(EXTRA_LIBRARIES) $(EXTENSIONLIB) $(XLIB)
  
- ComplexProgramTarget(xbackdrop)
+-ComplexProgramTarget(xbackdrop)
++ComplexProgramTargetNoMan(xbackdrop)
  
 -install::	xbackdrop                                                  @@\
 +install::	xbackdrop                                            @@\
