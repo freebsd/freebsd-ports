@@ -16,7 +16,7 @@ MAINTAINER?=	gnome@FreeBSD.org
 LIB_DEPENDS=	gnomeole2.0:${PORTSDIR}/devel/libole2 \
 		gbrun.0:${PORTSDIR}/lang/gnomebasic \
 		giconv.2:${PORTSDIR}/converters/libiconv \
-		psiconv.7:${PORTSDIR}/converters/psiconv
+		psiconv.8:${PORTSDIR}/converters/psiconv
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes

@@ -25,7 +25,7 @@ BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip \
 		giconv:${PORTSDIR}/converters/libiconv
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		giconv.2:${PORTSDIR}/converters/libiconv \
-		psiconv.7:${PORTSDIR}/converters/psiconv
+		psiconv.8:${PORTSDIR}/converters/psiconv
 
 DIST_SUBDIR=	AbiWord
 
