@@ -50,7 +50,7 @@ NOMAN1=		MakeTeXPK.1 access.1 afm2tfm.1 allcm.1 allec.1 allneeded.1 \
 		virtex.1 vptovf.1 weave.1 xdvi.1
 
 TETEX_SRC=	teTeX-src-1.0.7.tar.gz
-TETEX_TEXMF=	teTeX-texmf-1.0.1.tar.gz
+TETEX_TEXMF=	teTeX-texmf-1.0.2.tar.gz
 LIBPNG_PREFIX?=	${LOCALBASE}
 LIBWWW_PREFIX?=	${LOCALBASE}
 TEXMF_TREE=	${PREFIX}/share/texmf
