@@ -5,7 +5,7 @@
  
  # WISHPROG can be a full path or just program name.
 -WISHPROG	= wish
-+WISHPROG	= wish8.1
++WISHPROG	= wish8.2
  
  # Set GNATS=network if you _are_ using the GNATS daemon "gnatsd".
  # Set GNATS=local   if you're going to access disk files directly.
