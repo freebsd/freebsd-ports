@@ -4,7 +4,7 @@
 # Date created:			09 Aug 1996
 # Whom:				Masafumi NAKANE <max@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.15 1998/10/20 01:43:12 steve Exp $
+# $Id: Makefile,v 1.16 1998/12/10 03:09:13 steve Exp $
 #
 
 DISTNAME=	youbin-2.13
@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://nuis.nuie.nagoya-u.ac.jp/info/nagoya-u/ \
 
 MAINTAINER=	max@FreeBSD.ORG
 
-BROKEN=		see PR# 6180 about exploitable security hole
+FORBIDDEN=	see PR# 6180 about exploitable security hole
 
 LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
 

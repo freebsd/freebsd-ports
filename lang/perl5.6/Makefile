@@ -3,7 +3,7 @@
 # Date created:		16 April 1995
 # Whom:			markm
 #
-# $Id: Makefile,v 1.26 1998/10/12 06:51:07 markm Exp $
+# $Id: Makefile,v 1.27 1998/11/11 05:37:25 asami Exp $
 #
 
 DISTNAME=	perl5.005_02
@@ -21,7 +21,7 @@ CONFIGURE_ARGS=		-sde -Dprefix=${PREFIX}
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} > 300003
-BROKEN= perl is in system
+FORBIDDEN= perl is in system
 .endif
 
 MAN1=	a2p.1 c2ph.1 h2ph.1 h2xs.1 perl.1 perl5004delta.1 \
