@@ -11,7 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.gpad.ac.ru/pub/FreeBSD/distfiles/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	dima@chg.ru
+MAINTAINER=	demon@FreeBSD.org
 
 GNU_CONFIGURE=	yes
 

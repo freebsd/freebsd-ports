@@ -11,7 +11,7 @@ CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.iae.nl/pub/users/grimaldo/
 DISTNAME=	quotes-1.6-2
 
-MAINTAINER=	dima@Chg.RU
+MAINTAINER=	demon@FreeBSD.org
 
 NO_BUILD=	yes
 USE_PERL5=	yes

@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.indexdata.dk/pub/yaz/ \
 MASTER_SITE_SUBDIR=	jeh
 DISTNAME=	zap-${PORTVERSION}
 
-MAINTAINER=	dima@Chg.RU
+MAINTAINER=	demon@FreeBSD.org
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/yaz-config:${PORTSDIR}/net/yaz \
 		${LOCALBASE}/sbin/apxs:${PORTSDIR}/www/apache13

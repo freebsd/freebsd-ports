@@ -11,7 +11,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	ftp://ftp.gpad.ac.ru/pub/FreeBSD/distfiles/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
-MAINTAINER=	dima@Chg.RU
+MAINTAINER=	demon@FreeBSD.org
 
 USE_PERL5=	yes
 NO_BUILD=	yes

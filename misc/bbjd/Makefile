@@ -11,7 +11,7 @@ CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	games/strategy
 
-MAINTAINER=	dima@chg.ru
+MAINTAINER=	demon@FreeBSD.org
 
 USE_GMAKE=	yes
 WRKSRC=		${WRKDIR}/bbjd

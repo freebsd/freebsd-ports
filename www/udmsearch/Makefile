@@ -12,7 +12,7 @@ MASTER_SITES=	http://mysearch.udm.net/Download/	\
 		ftp://ftp.izhcom.ru/pub/unix/UdmSearch/	\
 		http://mirror.kuenzler.ch/udmsearch/Download/
 
-MAINTAINER=	dima@Chg.RU
+MAINTAINER=	demon@FreeBSD.org
 
 MAN1=		indexer.1
 MAN5=		indexer.conf.5

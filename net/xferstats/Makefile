@@ -11,7 +11,7 @@ CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.wu-ftpd.org/pub/support/	\
 		ftp://ftp.gpad.ac.ru/pub/FreeBSD/distfiles/
 
-MAINTAINER=	dima@Chg.RU
+MAINTAINER=	demon@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/xferstats
 

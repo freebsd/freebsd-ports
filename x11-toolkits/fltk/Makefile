@@ -16,7 +16,7 @@ MASTER_SITES=	ftp://ftp.fltk.org/pub/fltk/${VERSION}/ \
 		ftp://ftp.kddlabs.co.jp/pub/lang/fltk/${VERSION}/
 DISTNAME=	${PORTNAME}-${VERSION}-source
 
-MAINTAINER=	dima@chg.ru
+MAINTAINER=	demon@FreeBSD.org
 
 .if defined(WITH_XUNICODE)
 PATCH_VERSION=	20000625

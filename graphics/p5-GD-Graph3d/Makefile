@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	GD
 DISTNAME=	GDGraph3d-${PORTVERSION}
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	dima@Chg.RU
+MAINTAINER=	demon@FreeBSD.org
 
 RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/GD/Graph.pm:${PORTSDIR}/graphics/p5-GD-Graph
 

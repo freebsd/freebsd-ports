@@ -11,7 +11,7 @@ CATEGORIES=	sysutils afterstep
 MASTER_SITES=	http://www.tigr.net/afterstep/as-apps/download/ascpu/	\
 		ftp://ftp.gpad.ac.ru/pub/FreeBSD/distfiles/
 
-MAINTAINER=	dima@Chg.RU
+MAINTAINER=	demon@FreeBSD.org
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
 

@@ -11,7 +11,7 @@ CATEGORIES=	net gnome
 MASTER_SITES=	http://gnomba.darkcorner.net/tars/ \
 		ftp://ftp.gpad.ac.ru/pub/FreeBSD/distfiles/
 
-MAINTAINER=	dima@Chg.RU
+MAINTAINER=	demon@FreeBSD.org
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes

@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.nikhef.nl/pub/network/	\
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	dima@Chg.RU
+MAINTAINER=	demon@FreeBSD.org
 
 RELEASEDATE=	991603
 NO_WRKSUBDIR=	yes

@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	billf
 DISTNAME=	squidtimes-1.12-freebsd.bin
 EXTRACT_SUFX=
 
-MAINTAINER=	dima@chg.ru
+MAINTAINER=	demon@FreeBSD.org
 
 NO_BUILD=	YES
 NO_WRKSUBDIR=	YES
