@@ -102,6 +102,7 @@
     SUBDIR += dnrd
     SUBDIR += dns_balance
     SUBDIR += dnssecwalker
+    SUBDIR += dnstop
     SUBDIR += dnstracer
     SUBDIR += dnsutl
     SUBDIR += dnswalk
