@@ -9,36 +9,14 @@
 DISTNAME=	aspell-.28.3
 PKGNAME=	aspell-0.28.3
 CATEGORIES=	textproc
-MASTER_SITES=	http://metalab.unc.edu/kevina/aspell/ \
-		ftp://ftp.kddlabs.co.jp/pub/Tools/aspell/ \
-		ftp://maroon.webmaster.com/pub/aspell/
+MASTER_SITES=	http://download.sourceforge.net/aspell/
 
-MAINTAINER=	ade@lovett.com
+MAINTAINER=	ade@FreeBSD.org
 
 USE_NEWGCC=	yes
 USE_LIBTOOL=	yes
-CONFIGURE_ENV=	CXXFLAGS="${CXXFLAGS} -I${WRKSRC}"
+CONFIGURE_ENV+=	CXXFLAGS="${CXXFLAGS} -I${WRKSRC}"
 USE_GMAKE=	yes
-MAKE_ARGS=	NOPORTDOCS=${NOPORTDOCS}
-
-WORDLIST?=	/usr/share/dict/words
-
-.if !exists(${WORDLIST})
-WORDLIST=	${WRKSRC}/english.wl
-.endif
-
-post-patch:
-	@${MV} ${WRKSRC}/Makefile.in ${WRKSRC}/Makefile.in.pre_sed
-	@${SED} -e 's%@WORDLIST@%${WORDLIST}%' \
-	< ${WRKSRC}/Makefile.in.pre_sed > ${WRKSRC}/Makefile.in
-	@${ECHO_MSG} "===>  Using ${WORDLIST} as English word list."
-
-pre-install:
-	@${RM} -f ${WRKSRC}/manual/man-html/C_Credits.html \
-	          ${WRKSRC}/manual/man-html/D_Glossary.html \
-	          ${WRKSRC}/manual/man-html/E_Copyright.html \
-	          ${WRKSRC}/manual/man-text/C_Credits.txt \
-	          ${WRKSRC}/manual/man-text/D_Glossary.txt \
-	          ${WRKSRC}/manual/man-text/E_Copyright.txt
+MAKE_ARGS+=	NOPORTDOCS=${NOPORTDOCS}
 
 .include <bsd.port.mk>
