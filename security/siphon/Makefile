@@ -20,6 +20,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Passive host OS identifier using characteristics of sniffed traffic
 
 BROKEN=		"Does not fetch"
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2004-06-18
 
 WRKSRC=		${WRKDIR}/siphon-v.666
 
