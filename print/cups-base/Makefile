@@ -37,7 +37,7 @@ post-patch:
 pre-install:
 	@${ECHO_MSG} "===>" Stopping cupsd ...
 	-killall cupsd || ${TRUE}
-	${RM} -fr ${PREFIX}/etc/cups/certs/* || ${TRUE}
+	${RMDIR} ${PREFIX}/etc/cups/certs/* || ${TRUE}
 
 post-install:
 	${MKDIR} ${CUPS_ETCDIR}
