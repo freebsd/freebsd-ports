@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	BitTornado
-PORTVERSION=	0.2.0
+PORTVERSION=	0.3.1
 PORTEPOCH=	1
 CATEGORIES?=	net python ipv6
 MASTER_SITES=	http://e.scarywater.net/bt/download/ \
@@ -14,7 +14,7 @@ MASTER_SITES=	http://e.scarywater.net/bt/download/ \
 		http://www.hypermax.net.au/~gamr/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	sw@gegenunendlich.de
+MAINTAINER=	janos.mohacsi@bsd.hu
 COMMENT?=	An extended BitTorrent peer-to-peer tool for distributing files
 
 CONFLICTS=	py??-*[Bb]it[Tt]orrent*
