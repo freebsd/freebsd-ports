@@ -1,5 +1,5 @@
---- poppassd.c.orig	Wed Aug 21 17:02:02 1996
-+++ poppassd.c	Sat Jun 22 11:32:44 1996
+--- poppassd.c.orig	Mon Mar 31 16:00:34 1997
++++ poppassd.c	Mon Mar 31 16:03:16 1997
 @@ -13,11 +13,11 @@
   * 
   * Doesn't actually change any passwords itself.  It simply listens for
@@ -32,23 +32,28 @@
   * back to the client in the final 500 response, and a new version of the
   * code to find the next free pty, is by Norstad.
   *        
-@@ -145,6 +145,7 @@
+@@ -145,8 +145,9 @@
  static char *P1[] =
     {"Old password:",
      "Changing password for *.\nOld password:",
 +    "Changing local password for *.\nOld password:",
      "Changing password for * on *.\nOld password:",
-     "Changing NIS password for * on *.\nOld password:",
+-    "Changing NIS password for * on *.\nOld password:",
++    "Changing NIS password for * on *.\nOld Password: ",
      "Changing password for *\n*'s Old password:",
-@@ -165,6 +166,7 @@
+     ""};
+ 
+@@ -165,7 +166,9 @@
      
  static char *P4[] =
     {"\n",
 +    "\npasswd: rebuilding the database...\npasswd: done\n",
      "NIS entry changed on *\n",
++    "\n\nNIS password has been changed on *.\n",
      ""};
  
-@@ -186,11 +188,7 @@
+ 
+@@ -186,11 +189,7 @@
       
       *user = *oldpass = *newpass = 0;
       
@@ -61,7 +66,7 @@
       
       WriteToClient ("200 poppassd v%s hello, who are you?", VERSION);
       ReadFromClient (line);
-@@ -218,6 +216,7 @@
+@@ -218,6 +217,7 @@
  
       if (chkPass (user, oldpass, pw) == FAILURE)
       {
@@ -69,7 +74,7 @@
  	  WriteToClient ("500 Old password is incorrect.");
  	  exit(1);
       }
-@@ -264,28 +263,28 @@
+@@ -264,28 +264,28 @@
  
  	  if ((wpid = waitpid (pid, &wstat, 0)) < 0)
  	  {
@@ -102,16 +107,38 @@
  	       WriteToClient ("500 Server error (abnormal exit), get help!");
  	       exit (1);
  	  }
-@@ -306,7 +305,7 @@
+@@ -304,17 +304,19 @@
+      }
+      else      /* Child */
       {
- 	  /*
- 	   * Become the user trying who's password is being changed.  We're
+-	  /*
+-	   * Become the user trying who's password is being changed.  We're
 -	   * about to exec /bin/passwd with is setuid root anyway, but this
-+	   * about to exec /usr/bin/passwd with is setuid root anyway, but this
- 	   * way it looks to the child completely like it's being run by
- 	   * the normal user, which makes it do its own password verification
- 	   * before doing any thing.  In theory, we've already verified the
-@@ -324,7 +323,7 @@
+-	   * way it looks to the child completely like it's being run by
+-	   * the normal user, which makes it do its own password verification
+-	   * before doing any thing.  In theory, we've already verified the
+-	   * password, but this extra level of checking doesn't hurt.  Besides,
+-	   * the way I do it here, if somebody manages to change somebody
+-	   * else's password, you can complain to your vendor about security
+-	   * holes, not to me!
+-	   */
++          /* Start new session - gets rid of controlling terminal. */
++   
++          if (setsid() < 0) {
++               syslog(LOG_ERR, "setsid failed: %m");
++               return(0);
++	  }
++
++	  /* Set login name */
++
++	  if (setlogin(user) < 0) {
++	       syslog(LOG_ERR, "setlogin failed: %m");
++	       return(0);
++          }
+ 	  setuid (pw->pw_uid);
+ 	  setgid (pw->pw_gid);
+ 	  dochild (master, slavedev, user);
+@@ -324,7 +326,7 @@
  /*
   * dochild
   *
@@ -120,7 +147,21 @@
   *
   * Code adapted from "Advanced Programming in the UNIX Environment"
   * by W. Richard Stevens.
-@@ -387,10 +386,10 @@
+@@ -338,13 +340,6 @@
+    int slave;
+    struct termios stermios;
+ 
+-   /* Start new session - gets rid of controlling terminal. */
+-   
+-   if (setsid() < 0) {
+-      syslog(LOG_ERR, "setsid failed: %m");
+-      return(0);
+-   }
+-
+    /* Open slave pty and acquire as new controlling terminal. */
+ 
+    if ((slave = open(slavedev, O_RDWR)) < 0) {
+@@ -387,10 +382,10 @@
        return(0);
     }
  
@@ -134,7 +175,7 @@
        return(0);
     }
  }
-@@ -408,15 +407,20 @@
+@@ -408,15 +403,20 @@
   *
   * Modified by Norstad to remove assumptions about number of pty's allocated
   * on this UNIX box.
@@ -156,7 +197,7 @@
     dirp = opendir("/dev");
     while ((dp = readdir(dirp)) != NULL) {
        if (strncmp(dp->d_name, "pty", 3) == 0 && strlen(dp->d_name) == 5) {
-@@ -485,7 +489,7 @@
+@@ -485,9 +485,11 @@
       }
  
       writestring(master, pswd);
@@ -164,8 +205,12 @@
 +     sleep(2);
       if (!expect(master, P4, buf)) return FAILURE;
  
++     close(master);
++
       return SUCCESS;
-@@ -566,6 +570,7 @@
+ }
+ 
+@@ -566,6 +568,7 @@
  	}
  	n += m;
  	buf[n] = 0;
