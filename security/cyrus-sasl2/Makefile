@@ -81,7 +81,17 @@ WANT_MYSQL_VER=	323
 .endif
 .if defined(WITH_MYSQL)
 USE_MYSQL=	YES
-CONFIGURE_ARGS+=--enable-sql --with-mysql=${PREFIX}
+CONFIGURE_ARGS+=--with-mysql=${PREFIX}
+.endif
+
+.if defined(WITH_PGSQL)
+POSTGRESQL_PORT?=	databases/postgresql-client
+LIB_DEPENDS+=	pq.3:${PORTSDIR}/${POSTGRESQL_PORT}
+CONFIGURE_ARGS+=--with-pgsql=${PREFIX}
+.endif
+
+.if defined(WITH_MYSQL) || defined(WITH_PGSQL)
+CONFIGURE_ARGS+=--enable-sql
 .else
 SQL=	"@comment "
 .endif
