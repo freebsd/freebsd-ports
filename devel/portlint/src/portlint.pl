@@ -17,14 +17,14 @@
 # OpenBSD and NetBSD will be accepted.
 #
 # $FreeBSD$
-# $Id: portlint.pl,v 1.48 2004/06/06 01:04:42 marcus Exp $
+# $Id: portlint.pl,v 1.49 2004/06/06 17:02:32 marcus Exp $
 #
 
-use vars qw/ $opt_a $opt_A $opt_b $opt_c $opt_h $opt_t $opt_v $opt_M $opt_N $opt_B $opt_V /;
+use vars qw/ $opt_a $opt_A $opt_b $opt_C $opt_c $opt_h $opt_t $opt_v $opt_M $opt_N $opt_B $opt_V /;
 use Getopt::Std;
 use File::Find;
 use IPC::Open2;
-#use strict;
+use strict;
 
 my ($err, $warn);
 my ($extrafile, $parenwarn, $committer, $verbose, $usetabs, $newport);
@@ -40,7 +40,7 @@ $portdir = '.';
 # version variables
 my $major = 2;
 my $minor = 6;
-my $micro = 3;
+my $micro = 4;
 
 sub l { '[{(]'; }
 sub r { '[)}]'; }
@@ -61,8 +61,6 @@ my $manstrict = 0;
 my $newxdef = 1;
 my $automan = 1;
 my $autoinfo = 1;
-my $use_no_size = 0;
-my $use_no_checksum = 0;
 my $manchapters = '123456789ln';
 my $localbase = '/usr/local';
 
@@ -220,7 +218,7 @@ EOF
 }
 
 # Read bsd.sites.mk
-$sites_mk = "$portsdir/Mk/bsd.sites.mk";
+my $sites_mk = "$portsdir/Mk/bsd.sites.mk";
 open(MK, $sites_mk) || die "$sites_mk: $!";
 my @site_groups = grep($_ = /^MASTER_SITE_(\w+)/ && $1, <MK>);
 close(MK);
@@ -229,7 +227,7 @@ $cmd = join(' -V MASTER_SITE_', "make $makeenv -f - all", @site_groups);
 
 $i = 0;
 
-open2(IN, OUT, $cmd);
+open2(\*IN, \*OUT, $cmd);
 
 print OUT <<EOF;
 all:
@@ -255,14 +253,14 @@ close(IN);
 #
 my @checker = ($makevar{DESCR}, 'Makefile', $makevar{MD5_FILE});
 my %checker = (
-				$makevar{DESCR} => 'checkdescr',
-				'Makefile' => 'checkmakefile',
-				$makevar{MD5_FILE} => 'checkdistinfo',
+	$makevar{DESCR} => \&checkdescr,
+	'Makefile' => \&checkmakefile,
+	$makevar{MD5_FILE} => \&TRUE
 );
 if ($extrafile) {
 	my @files = (
 				 <$makevar{SCRIPTDIR}/*>,
-				 @makevar{DESCR,PLIST,PKGINSTALL,PKGDEINSTALL,PKGREQ,PKGMESSAGE}
+				 @makevar{qw(DESCR PLIST PKGINSTALL PKGDEINSTALL PKGREQ PKGMESSAGE)}
 				);
 
 	foreach my $i (@files) {
@@ -271,10 +269,10 @@ if ($extrafile) {
 		if ($i =~ /\bpkg-plist$/
 		 || ($multiplist && $i =~ /\bpkg-plist/)) {
 			unshift(@checker, $i);
-			$checker{$i} = 'checkplist';
+			$checker{$i} = \&checkplist;
 		} else {
 			push(@checker, $i);
-			$checker{$i} = 'checkpathname';
+			$checker{$i} = \&checkpathname;
 		}
 	}
 }
@@ -282,7 +280,7 @@ foreach my $i (<$makevar{PATCHDIR}/patch-*>) {
 	next if (! -T $i);
 	next if (defined $checker{$i});
 	push(@checker, $i);
-	$checker{$i} = 'checkpatch';
+	$checker{$i} = \&checkpatch;
 }
 foreach my $i (@checker) {
 	print "OK: checking $i.\n" if ($verbose);
@@ -494,35 +492,6 @@ if ($err || $warn) {
 	print "looks fine.\n";
 }
 exit $err;
-
-#
-# distinfo
-#
-sub checkdistinfo {
-		my($file) = @_;
-		my($sizefound) = 0;
-		my(@distinfo) = ();
-		my(@distfiles) = ();
-
-		open(IN, "< $file") || return 0;
-		@distinfo = <IN>;
-		close(IN);
-
-		@distfiles = split(/\s+/, $makevar{DISTFILES});
-
-		foreach my $distfile (@distfiles) {
-			if (!(grep /^SIZE \(([^\)]*\/)?$distfile\)/, @distinfo) &&
-				!$use_no_size) {
-				&perror("WARN: $file: no SIZE entry found for $distfile.");
-			}
-			if (!(grep /^MD5 \(([^\)]*\/)?$distfile\)/, @distinfo) &&
-				!$use_no_checksum) {
-				&perror("WARN: $file: no MD5 entry found for $distfile.");
-			}
-		}
-
-		1;
-}
 
 #
 # pkg-descr
@@ -969,6 +938,7 @@ sub checkmakefile {
 	my($pkg_version, $versiondir, $versionfile) = ('', '', '');
 	my $useindex = 0;
 	my %deprecated = ();
+	my %autocmdnames = ();
 
 	open(IN, "< $file") || return 0;
 	$rawwhole = '';
@@ -1122,7 +1092,6 @@ sub checkmakefile {
 	#$whole =~ s/\n\n+/\n/g;
 	print "OK: checking NO_CHECKSUM.\n" if ($verbose);
 	if ($whole =~ /\nNO_CHECKSUM/) {
-		$use_no_checksum = 1;
 		my $lineno = &linenumber($`);
 		&perror("FATAL: $file [$lineno]: use of NO_CHECKSUM discouraged. ".
 			"it is intended to be a user variable.");
@@ -1363,13 +1332,6 @@ pax perl printf rm rmdir ruby sed sh sort touch tr which xargs xmkmf
 		if ($1 =~ /gnomehack/) {
 			$use_gnome_hack = 1;
 		}
-	}
-
-	#
-	# whole file: check for NO_SIZE
-	#
-	if ($whole =~ /^NO_SIZE[?:]?=/m) {
-		$use_no_size = 1;
 	}
 
 	#
