@@ -20,6 +20,8 @@ EXTRA_PATCHES+=	${QMAIL_PORT_PATCHDIR}/patch-ab ${QMAIL_PORT_PATCHDIR}/patch-ac
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	A SECURE, reliable, and FAST MTA for UNIX systems WITH LDAP support
 
+CONFLICTS=	nss-* emboss-* digest-*
+
 USE_OPENLDAP=	yes
 PKGNAMESUFFIX:=	${PKGNAMESUFFIX}2
 

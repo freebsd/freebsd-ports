@@ -15,7 +15,7 @@ DISTFILES=
 MAINTAINER?=	eik@FreeBSD.org
 COMMENT?=	Message digest wrapper utility
 
-CONFLICTS?=	nss-[0-9]* emboss-[0-9]*
+CONFLICTS?=	nss-[0-9]* emboss-[0-9]* qmail-ldap2-*
 
 GNU_CONFIGURE=	yes
 NO_WRKSUBDIR=	yes
