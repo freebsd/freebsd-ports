@@ -22,6 +22,7 @@ RUN_DEPENDS+=	autoconf:${PORTSDIR}/devel/autoconf \
 		ktranslator:${PORTSDIR}/devel/ktranslator \
 		kdoc:${PORTSDIR}/textproc/kdoc \
 		kiconedit:${PORTSDIR}/graphics/kdegraphics2 \
+		ark:${PORTSDIR}/misc/kdeutils2 \
 		glimpse:${PORTSDIR}/textproc/glimpse \
 		designer:${PORTSDIR}/devel/qt-designer \
 		linguist:${PORTSDIR}/devel/linguist \
