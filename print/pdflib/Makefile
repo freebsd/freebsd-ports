@@ -6,26 +6,23 @@
 #
 
 PORTNAME=	pdflib
-PORTVERSION=	5.0.3
-PORTREVISION=	1
+PORTVERSION=	6.0.0
 CATEGORIES=	print
-MASTER_SITES=	http://www.pdflib.com/products/pdflib/download/503src/
-DISTNAME=	PDFlib-Lite-${PORTVERSION}-Unix-src
+MASTER_SITES=	http://www.pdflib.com/products/pdflib/download/${PORTVERSION:S/.//g}src/
+DISTNAME=	PDFlib-Lite-${PORTVERSION}
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	A C library for dynamically generating PDF
 
 RESTRICTED=	"many odd restrictions on usage and distribution"
 
-LATEST_LINK?=	${PORTNAME}
 INSTALLS_SHLIB=	yes
 USE_LIBTOOL_VER=13
 USE_GNOME=	lthack
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-cxx \
-		--with-java=no \
+CONFIGURE_ARGS=	--with-java=no \
 		--with-py=no \
 		--with-tcl=no
 
@@ -40,7 +37,7 @@ PLIST_SUB=	PERL="@comment "
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e "s|\(PDFLIB_LTCURRENT\)=4|\1=6|g" ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e "s|\(PDFLIB_LTCURRENT\)=5|\1=7|g" ${WRKSRC}/configure
 
 post-install:
 	${MKDIR} ${DATADIR}/fonts
