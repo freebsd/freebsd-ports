@@ -309,6 +309,7 @@
     SUBDIR += libdict
     SUBDIR += libdjbdns
     SUBDIR += libdlmalloc
+    SUBDIR += libds
     SUBDIR += libdsp
     SUBDIR += libedit
     SUBDIR += libelf
