@@ -27,7 +27,7 @@ post-patch:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/multitail ${PREFIX}/bin/
 	${INSTALL_MAN} ${WRKSRC}/multitail.1 ${MANPREFIX}/man/man1
-	${INSTALL_DATA} ${WRKSRC}/multitail.conf ${PREFIX}/etc
+	${INSTALL_DATA} ${WRKSRC}/multitail.conf ${PREFIX}/etc/multitail.conf.sample
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/readme.txt ${DOCSDIR}
