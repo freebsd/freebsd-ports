@@ -1,0 +1,182 @@
+#!/bin/sh
+###############################################################################
+###
+### From @(#) Photo Image Print System -Setup script
+###     Mon Apr 23 2001 sk
+### in pips900-2.1.i386.tgz
+### by taoka
+
+SCRIPT_PATH=%%PREFIX%%/libexec/pips%%PRTYPE%%/scripts
+PRT_MODEL=%%PRT_MODEL%%
+PIPS_COMMAND=pips%%PRTYPE%%
+PIPS_FILTER_PATH=%%PREFIX%%/libexec/%%BASE_NAME%%/filter%%PRTYPE%%.rev
+
+SETUP_PATH=%%PREFIX%%/libexec/pips%%PRTYPE%%/setup
+EKPDRC=%%LINUXBASE%%/etc/ekpdrc
+VERSION=%%VERSION%%
+DEF_PRT_PATH=/dev/ulpt0
+WITH_EKPD=%%WITH_EKPD%%
+
+
+#/etc/services
+SERV_FILE=/etc/services
+SERV_BACK=${SERV_FILE}.bak
+SERV_NAME=cbtd
+PORT=35586/tcp
+COMMENT=""
+
+PRT_NAME_LOW=`echo $PRT_MODEL | tr '[A-Z]' '[a-z]'`
+
+. $SCRIPT_PATH/en.lc
+
+trap 'echo; printf "$F_TXT"
+    exit 1' 0
+
+ID=`id | sed -e 's/uid=//' -e 's/(.*//'`
+
+if [ $ID -ne 0 ]; then
+    echo must run as root.
+    exit 0;
+fi
+
+echo "-----------------------------------------------"
+echo ""
+echo "           Photo Image Print System"
+echo ""
+echo "                 Setup script"
+echo ""
+echo "-----------------------------------------------"
+
+echo Please select locale to use.
+echo Select : en ja #de es fr it ko nl pt zh zh_TW
+echo -n '(english) > '
+
+read SET_LANG
+case $SET_LANG in
+#    [Dd][Ee] ) . $SCRIPT_PATH/de.lc ;;
+#    [Ee][Ss] ) . $SCRIPT_PATH/es.lc ;;
+#    [Ff][Rr] ) . $SCRIPT_PATH/fr.lc ;;
+#    [Ii][Tt] ) . $SCRIPT_PATH/it.lc ;;
+    [Jj][Aa] ) . $SCRIPT_PATH/ja.lc ;;
+#    [Kk][Oo] ) . $SCRIPT_PATH/ko.lc ;;
+#    [Nn][Ll] ) . $SCRIPT_PATH/nl.lc ;;
+#    [Pp][Tt] ) . $SCRIPT_PATH/pt.lc ;;
+#    [Zz][Hh] ) . $SCRIPT_PATH/zh.lc ;;
+#    [Zz][Hh]_[Tt][Ww] ) . $SCRIPT_PATH/zh_TW.lc ;;
+    *);;
+esac
+
+printf "$A_TXT"
+echo
+
+while :
+do
+    printf "$B_TXT"
+    echo -n "($DEF_PRT_PATH) > "
+    
+    read PRT_PATH
+
+    if [ -z $PRT_PATH ]; then
+	PRT_PATH=$DEF_PRT_PATH
+    fi
+
+    if [ -n $PRT_PATH -a -r $PRT_PATH -a -w $PRT_PATH ]; then
+	break;
+    fi
+    echo "$PRT_PATH : No such file or directory."
+done
+
+while :
+do
+    printf "$D_TXT"
+    echo -n '(Yes/no) > '
+
+    read ANSWER
+    case $ANSWER in
+	[Yy] | [Yy]es | YES ) break ;;
+	[Nn] | [Nn]o | NO ) exit 0 ;;
+	* ) echo ? ;;
+    esac
+done
+
+trap 0
+printf "$E1_TXT"
+#echo $PRT_NAME
+printf "$E2_TXT"
+
+
+#/etc/ekpdrc
+if [ -s $EKPDRC ]; then
+    cp $EKPDRC $EKPDRC.bak
+fi
+
+cat <<EOF >$EKPDRC
+PrinterName = $PRT_NAME_LOW
+PrinterDevicePath = $PRT_PATH
+DummyDevicePath = /var/ekpd/ekplp0
+CommandServerPort = 35586
+EOF
+
+#/etc/services
+if [ X"$WITH_EKPD" != X ]; then
+  if sed 's/#.*//' ${SERV_FILE} | grep -qw ${SERV_NAME}; then
+      printf "$S1_TXT"
+  else
+      printf "$S2_TXT"
+      cp -f ${SERV_FILE} ${SERV_BACK}
+      printf "$S3_TXT"
+      
+      if sed 's/#.*//' ${SERV_FILE} | grep -qw ${PORT}; then
+  	  sed 's,^\([^#]*[ 	]'${PORT}'\),\1	'${SERV_NAME}, ${SERV_BACK} > ${SERV_FILE}
+      else
+  	  echo "${SERV_NAME}		${PORT}   #${COMMENT}" >> ${SERV_FILE}
+      fi
+      echo "${SERV_FILE} was changed."
+  fi
+fi
+
+#/etc/printcap
+if [ -s /etc/printcap ]; then
+    KEY=`grep "# written for $PIPS_COMMAND" /etc/printcap`
+    if [ -n "$KEY" ]; then
+	mv /etc/printcap /etc/printcap.bak
+
+	SPOOLDIR=`cat /etc/printcap.bak | sed -n "/# written for $PIPS_COMMAND/,/# $PIPS_COMMAND  end/p" | grep ":sd=" | sed -e "s/^.*:sd=//" -e "s/:.*$//"`
+	rm -rf $SPOOLDIR
+
+	sed -e "/# written for $PIPS_COMMAND/,/# $PIPS_COMMAND  end/d" < /etc/printcap.bak > /etc/printcap
+
+    else
+	cp /etc/printcap /etc/printcap.bak
+
+    fi
+else
+    touch /etc/printcap
+fi
+
+if [ X"$WITH_EKPD" != X ]; then
+    tmp_PRT_PATH=/var/ekpd/ekplp0
+else
+    tmp_PRT_PATH=$PRT_PATH
+fi
+
+cat <<EOF >>/etc/printcap
+# written for $PIPS_COMMAND
+$PRT_NAME_LOW|EPSON $PRT_MODEL:\\
+	:sd=/var/spool/lpd/$PRT_NAME_LOW:\\
+	:mx#0:\\
+	:sh:\\
+	:lp=$tmp_PRT_PATH:\\
+	:if=$PIPS_FILTER_PATH:\\
+	:lf=/var/log/lpd-errs:
+# $PIPS_COMMAND  end
+EOF
+
+OLDMASK=`umask`
+umask 000
+
+mkdir -p /var/spool/lpd/$PRT_NAME_LOW
+chown daemon:daemon /var/spool/lpd/$PRT_NAME_LOW; chmod 770 /var/spool/lpd/$PRT_NAME_LOW
+
+umask $OLDMASK
+exit 0
