@@ -1656,6 +1656,7 @@ egcs		ports/lang/egcs
 eggcreator	ports/irc/eggcreator
 eggdrop		ports/irc/eggdrop
 egoboo		ports/games/egoboo
+egroupware	ports/deskutils/egroupware
 ehnt		ports/net-mgmt/ehnt
 eieio		ports/devel/eieio
 eieio-emacs20	ports/devel/eieio-emacs20
