@@ -49,7 +49,7 @@ OPTIONS=	KAFFE_AWT_X "Use AWT widgets with X" On \
 .include <bsd.port.pre.mk>
 
 .if !defined(WITH_KAFFE_AWT_X) && !defined(WITH_KAFFE_AWT_QT) && !defined(WITH_KAFFE_AWT_NO)
-BROKEN=	"Choose one of the options in 'make config'"
+IGNORE=	You must choose one of the options in 'make config' to install
 .endif
 
 .if defined(WITH_KAFFE_AWT_X)
