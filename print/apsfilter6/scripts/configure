@@ -11,23 +11,23 @@ if [ "$BATCH" != "yes" ]; then
 /usr/bin/dialog --title "supported file types" --clear \
 	--checklist "\n\
 Select file types you want to print:" -1 -1 14	\
-LETTER		"LETTER printing"		OFF	\
-LETTERDJ	"LETTERDJ printing"		ON	\
-A4		"A4 printing"			OFF	\
-PS		"Postscript and PDF files"	ON	\
-SAMBA		"Windows Remote-Print Support"	ON	\
-ATALK		"AppleTalk Remote-Print Support" OFF	\
-ENCRYPTED_PDF	"Encrypted PDF files"		ON	\
-ASCII		"ASCII/English Text/Scripts"	ON	\
-MAIL		"Mail/News articles"		ON	\
-DVI		"TeX DVI files"			OFF	\
-HTML		"HTML documents"		OFF	\
-TROFF		"Troff documents"		ON	\
-JPEG		"JPEG pictures"			OFF	\
-TIFF		"TIFF pictures"			OFF	\
-PBM		"GIF/PNM/PBM/PPM/BMP pictures"	ON	\
-FIG		"XFIG drawings"			OFF	\
-FAXG3		"Fax Group 3 files"		OFF	\
+A4		"A4 papersize"					ON	\
+LETTER		"letter papersize"				OFF	\
+LETTERDJ	"letter + special DeskJet adjustements"		OFF	\
+GS		"Postscript for non-PS printer, needs X11"	ON	\
+GS_PDF_CRYPT	"print encrypted PDF files using gs"		ON	\
+PSUTILS		"for pseudo duplex printing + paper handling"	ON	\
+A2PS		"ASCII files in different styles/orientation"	ON	\
+ACROREAD4	"PDF files, needs Linux emulation"		ON	\
+CONVERT		"support for lots of graphic file formats"	ON	\
+DVIPS		"TeX DVI files"					OFF	\
+FIG2DEV		"XFIG drawings"					OFF	\
+HTML2PS		"HTML documents"				OFF	\
+TROFF		"Troff documents"				OFF	\
+ATALK		"remote printing on AppleTalk remote printer"	OFF	\
+SAMBA		"remote printing on Windows remote printer"	OFF	\
+BZIP2		"print bunzip2 compressed documents"		OFF	\
+FREEZE		"print freeze compressed documents"		OFF	\
 2> /tmp/apsfilter-checklist.$$
 
 retval=$?
@@ -52,6 +52,10 @@ exec > ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
 
 while [ "$1" ]; do
     case $1 in
+	\"A4\")
+		PAPERSIZE=a4
+		echo "PAPERSIZE=a4"
+		;;
 	\"LETTER\")
 		PAPERSIZE=letter
 		echo "PAPERSIZE=letter"
@@ -60,37 +64,14 @@ while [ "$1" ]; do
 		PAPERSIZE=letterdj
 		echo "PAPERSIZE=letterdj"
 		;;
-	\"A4\")
-		PAPERSIZE=a4
-		echo "PAPERSIZE=a4"
-		;;
-	\"PS\")
+	\"GS\")
 		echo RUN_DEPENDS+=gs:${PORTSDIR}/print/ghostscript6
 		;;
-	\"SAMBA\")
-		echo RUN_DEPENDS+=smbclient:${PORTSDIR}/net/samba
-		;;
-	\"ATALK\")
-		echo RUN_DEPENDS+=pap:${PORTSDIR}/net/netatalk
-		;;
-	\"ENCRYPTED_PDF\")
+	\"GS_PDF_CRYPT\")
 		echo RUN_DEPENDS+=gs:${PORTSDIR}/print/ghostscript6
 		echo PDFENCRYPT=YES
 		;;
-	\"ASCII\")
-		case $PAPERSIZE in
-		    letter)
-			echo RUN_DEPENDS+=a2ps:${PORTSDIR}/print/a2ps-letter
-			;;
-		    letterdj)
-			echo RUN_DEPENDS+=a2ps:${PORTSDIR}/print/a2ps-letterdj
-			;;
-		    a4)
-			echo RUN_DEPENDS+=a2ps:${PORTSDIR}/print/a2ps-a4
-			;;
-		esac
-		;;
-	\"MAIL\")
+	\"PSUTILS\")
 		case $PAPERSIZE in
 		    letter)
 			echo RUN_DEPENDS+=psnup:${PORTSDIR}/print/psutils-letter
@@ -103,10 +84,32 @@ while [ "$1" ]; do
 			;;
 		esac
 		;;
-	\"DVI\")
+	\"A2PS\")
+		case $PAPERSIZE in
+		    letter)
+			echo RUN_DEPENDS+=a2ps:${PORTSDIR}/print/a2ps-letter
+			;;
+		    letterdj)
+			echo RUN_DEPENDS+=a2ps:${PORTSDIR}/print/a2ps-letterdj
+			;;
+		    a4)
+			echo RUN_DEPENDS+=a2ps:${PORTSDIR}/print/a2ps-a4
+			;;
+		esac
+		;;
+	\"ACROREAD4\")
+		echo RUN_DEPENDS+=acroread4:${PORTSDIR}/print/acroread4
+		;;
+	\"CONVERT\")
+		echo RUN_DEPENDS+=convert:${PORTSDIR}/graphics/ImageMagick
+		;;
+	\"DVIPS\")
 		echo RUN_DEPENDS+=dvips:${PORTSDIR}/print/teTeX
 		;;
-	\"HTML\")
+	\"FIG2DEV\")
+		echo RUN_DEPENDS+=fig2dev:${PORTSDIR}/print/transfig
+		;;
+	\"HTML2PS\")
 		case $PAPERSIZE in
 		    letter)
 		      echo RUN_DEPENDS+=html2ps:${PORTSDIR}/print/html2ps-letter
@@ -122,20 +125,17 @@ while [ "$1" ]; do
 	\"TROFF\")
 		TROFF=YES
 		;;
-	\"JPEG\")
-		echo RUN_DEPENDS+=cjpeg:${PORTSDIR}/graphics/jpeg
+	\"ATALK\")
+		echo RUN_DEPENDS+=pap:${PORTSDIR}/net/netatalk
 		;;
-	\"TIFF\")
-		echo LIB_DEPENDS+=tiff.4:${PORTSDIR}/graphics/tiff
+	\"SAMBA\")
+		echo RUN_DEPENDS+=smbclient:${PORTSDIR}/net/samba
 		;;
-	\"PBM\")
-		echo RUN_DEPENDS+=anytopnm:${PORTSDIR}/graphics/netpbm
+	\"BZIP2\")
+		echo RUN_DEPENDS+=bunzip2:${PORTSDIR}/archivers/bzip2
 		;;
-	\"FIG\")
-		echo RUN_DEPENDS+=fig2dev:${PORTSDIR}/print/transfig
-		;;
-	\"FAXG3\")
-		echo RUN_DEPENDS+=g3cat:${PORTSDIR}/comms/mgetty+sendfax
+	\"FREEZE\")
+		echo RUN_DEPENDS+=smbclient:${PORTSDIR}/archivers/freeze
 		;;
     esac
     shift
