@@ -1,0 +1,7 @@
+bin/vmips
+bin/vmipstool
+etc/vmipsrc
+include/vmips/asm_regnames.h
+@dirrm include/vmips
+%%DATADIR%%/ld.script
+@dirrm %%DATADIR%%

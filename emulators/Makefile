@@ -90,6 +90,7 @@
     SUBDIR += vgba-bin
     SUBDIR += vice
     SUBDIR += visualos
+    SUBDIR += vmips
     SUBDIR += vmsbackup
     SUBDIR += vmware-guestd3
     SUBDIR += vmware-guestd4
