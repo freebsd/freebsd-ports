@@ -2103,7 +2103,6 @@ gnomeres_applet ports/x11/gnomeres_applet
 gnomermind	ports/games/gnomermind
 gnomesession	ports/x11/gnomesession
 gnomespell	ports/textproc/gnomespell
-gnomespell-devel	ports/textproc/gnomespell-devel
 gnomesword	ports/misc/gnomesword
 gnomesystemmonitor	ports/sysutils/gnomesystemmonitor
 gnometelnet	ports/net/gnometelnet
