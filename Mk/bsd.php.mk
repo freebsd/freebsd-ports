@@ -33,7 +33,7 @@ PHP_Include_MAINTAINER=	ale@FreeBSD.org
 PHP_VER?=	4
 .if !defined(PHP_EXT_DIR)
 PHP_EXT_DIR=	20020429
-.if exists(${LOCALBASE}/include/apache2/apr.h)
+.if exists(${LOCALBASE}/include/apache2/httpd.h)
 APACHE_MPM!=	${APXS} -q MPM_NAME
 .if ${APACHE_MPM} == "worker"
 PHP_EXT_DIR:=	${PHP_EXT_DIR}-zts
