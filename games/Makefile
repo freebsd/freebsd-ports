@@ -104,6 +104,7 @@
     SUBDIR += mangband
     SUBDIR += merlin
     SUBDIR += mindfocus
+    SUBDIR += mindguard
     SUBDIR += mirrormagic
     SUBDIR += miscom
     SUBDIR += nethack

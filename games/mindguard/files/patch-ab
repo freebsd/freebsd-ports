@@ -1,0 +1,20 @@
+--- mindguard.c.orig	Sun May 21 23:03:01 2000
++++ mindguard.c	Fri Jul 28 00:01:43 2000
+@@ -356,7 +356,7 @@
+ 				sprintf(car_path, "%s/MindGuard/carriers/", getenv("HOME"));
+ 				break;
+ 			case 2:
+-				strcpy(car_path, "/usr/local/share/MindGuard/carriers/");
++				strcpy(car_path, X11BASE "/share/mindguard/");
+ 				break;
+ 			default:
+ 				break;
+@@ -424,7 +424,7 @@
+ {
+     int result = FALSE, len;
+     static int i;
+-    char word[4];
++    char word[5];
+     FILE *file;
+ 
+     if ((file = fopen (path, "r")) != NULL)
