@@ -3,12 +3,12 @@
 # Date created:         02 Aug 1996
 # Whom:                 shanee@rabbit.augusta.de
 #
-# $Id: Makefile,v 1.7 1996/11/18 11:23:42 asami Exp $
+# $Id: Makefile,v 1.8 1997/04/20 13:18:59 wosch Exp $
 #
 
 DISTNAME=	tkcvs-6.0
 CATEGORIES=	devel tk41
-MASTER_SITES=	ftp://ftp.neosoft.com/pub/tcl/NEW/
+MASTER_SITES=	ftp://ftp.neosoft.com/pub/tcl/sorted/apps/
 
 MAINTAINER=	shanee@rabbit.augusta.de
 
