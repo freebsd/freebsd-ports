@@ -1,0 +1,19 @@
+--- Gorilla/gtk-2.0/gtkrc.orig	Sun Sep 14 10:14:29 2003
++++ Gorilla/gtk-2.0/gtkrc	Sun Sep 14 10:14:45 2003
+@@ -1,7 +1,5 @@
+ # Gorilla gtk theme
+ # (c) 2002-2003 Jakub 'jimmac' Steiner <jimmac@ximian.com>
+-include "iconrc"
+-
+ style "gorilla-default"
+ {
+   GtkWidget::interior_focus = 1
+@@ -48,6 +46,8 @@
+   engine "industrial" {}
+ 
+ }
++
++include "iconrc"
+ 
+ style "gorilla-unrounded" = "gorilla-default"
+ {
