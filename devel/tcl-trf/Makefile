@@ -7,7 +7,7 @@
 
 PORTNAME=	Trf
 PORTVERSION=	2.1p2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel tcl83
 MASTER_SITES=	http://www.oche.de/~akupries/soft/trf/download/
 PKGNAMEPREFIX=	tcl-
@@ -42,10 +42,13 @@ post-extract:
 
 post-patch:
 	# Make direct calls to -lbz2
-	${REINPLACE_CMD} -e 's,bz\.([^(]+),BZ2_bz\u\1,g' \
+	${REINPLACE_CMD} -E 's,bz\.([^(]+),BZ2_bz\1,g' \
+		${WRKSRC}/generic/bz2.c
+	${REINPLACE_CMD} -E \
+		's,BZ2_bzcomp,BZ2_bzComp,g;s,BZ2_bzdecomp,BZ2_bzDecomp,g' \
 		${WRKSRC}/generic/bz2.c
 	# Make direct calls to -lz
-	${REINPLACE_CMD} -e 's,zf\.([^(]+),\1,g' ${WRKSRC}/generic/adler.c \
+	${REINPLACE_CMD} -E 's,zf\.([^(]+),\1,g' ${WRKSRC}/generic/adler.c \
 		${WRKSRC}/generic/crc_zlib.c ${WRKSRC}/generic/zip.c
 
 post-install:
