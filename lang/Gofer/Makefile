@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	gofer
-PORTVERSION=	2.30a
+PORTVERSION=	2.30b
 CATEGORIES=	lang
-MASTER_SITES=	ftp://cs.nott.ac.uk/nott-fp/languages/haskell/gofer/
-DISTNAME=	gofer230a
+MASTER_SITES=	http://www.cse.ogi.edu/~mpj/goferarc/
+DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}
 
 MAINTAINER=	ports@FreeBSD.org
 
@@ -18,18 +18,20 @@ LIBDIR=		${PREFIX}/lib/Gofer
 MAN1=		gofer.1
 
 do-install:
-	${MKDIR} ${LIBDIR}
+	@${MKDIR} ${LIBDIR}
 	${INSTALL_DATA} ${WRKDIR}/*.prelude ${LIBDIR}
 	${INSTALL_DATA} ${WRKDIR}/src/prelude.h ${LIBDIR}
 	${INSTALL_DATA} ${WRKDIR}/src/gofc.h ${LIBDIR}
-	/usr/bin/perl -pi -e "s|#include \"prelude.h\"|#include \"${LIBDIR}/prelude.h\"|" ${LIBDIR}/gofc.h
+	${PERL} -pi -e "s|#include \"prelude.h\"|#include \"${LIBDIR}/prelude.h\"|" ${LIBDIR}/gofc.h
 	${INSTALL_DATA} ${WRKDIR}/src/runtime.o ${LIBDIR}
 	${INSTALL_SCRIPT} ${WRKDIR}/scripts/gofer ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKDIR}/scripts/goferc ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKDIR}/src/gofer ${LIBDIR}
 	${INSTALL_PROGRAM} ${WRKDIR}/src/gofc ${LIBDIR}
 	${INSTALL_MAN} ${WRKDIR}/docs/gofer.1 ${PREFIX}/man/man1
-	${MKDIR} ${LIBDIR}/docs
-	${INSTALL_DATA} ${WRKDIR}/docs/* ${LIBDIR}/docs
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${PREFIX}/share/doc/Gofer
+	${INSTALL_DATA} ${WRKDIR}/docs/* ${PREFIX}/share/doc/Gofer
+.endif
 
 .include <bsd.port.mk>
