@@ -3,7 +3,7 @@
 # Date created:		9 January 1998
 # Whom:			desmo@bandwidth.org
 #
-# $Id: Makefile,v 1.1.1.1 1998/01/15 06:44:49 jkh Exp $
+# $Id: Makefile,v 1.2 1998/01/18 10:55:32 asami Exp $
 #
 
 DISTNAME=	ircd-hybrid-5
@@ -13,7 +13,8 @@ MASTER_SITES=	ftp://ftp.vol.com/pub/ircd/
 MAINTAINER=	desmo@bandwidth.org
 
 GNU_CONFIGURE=	yes
-IS_INTERACTIVE=	yes
+
+MAN8=		ircd.8
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/ircd.8 ${MANPREFIX}/man/man8
