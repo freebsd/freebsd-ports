@@ -8,109 +8,116 @@
 
 PORTNAME=	faces
 PORTVERSION=	1.7.7
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.cs.indiana.edu/pub/faces/faces/
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Visual mail, user and print face server
-
-LIB_DEPENDS=    intl.4:${PORTSDIR}/devel/gettext
 
 NO_PACKAGE=	"Too many configuration options available to set usefull defaults"
 
-HAS_CONFIGURE=	yes
-CONFIGURE_ARGS= --prefix=${LOCALBASE} --enable-imap --enable-pop \
-		--enable-name-unknown --with-spooldir=/var/mail \
-		--with-facedir=${LOCALBASE}/share/faces
-
-.if defined(WITHOUT_X11)
-CONFIGURE_ARGS+=--without-x
-PLIST_SUB+=     APPDEF="@comment "
-.else # with X11
-PLIST_SUB+=     APPDEF=""
-USE_GTK=yes
-# NAS is only possible with X11
-.if !defined(WITHOUT_AUDIO)
-.if defined(USE_NAS)
-CONFIGURE_ARGS+=--enable-audio --with-audio-cmd=${X11BASE}/bin/auplay
-RUN_DEPENDS=	auplay:${PORTSDIR}/audio/nas
-PLAY_COMMAND=	auplay
-.endif # USE_NAS
-.endif # WITHOUT_AUDIO
-.endif # WITHOUT_X11
-
-.if !defined(WITHOUT_AUDIO)
-.if defined(USE_SOX)
-CONFIGURE_ARGS+=--enable-audio --with-audio-cmd=${LOCALBASE}/bin/play
-RUN_DEPENDS=	play:${PORTSDIR}/audio/sox
-PLAY_COMMAND=	play
-.else
-CONFIGURE_ARGS+=--enable-audio --with-audio-cmd=${LOCALBASE}/bin/rplay
-RUN_DEPENDS=	rplay:${PORTSDIR}/audio/rplay
-PLAY_COMMAND=	rplay
-.endif # USE_SOX
-.endif # WITHOUT_AUDIO
-
-CONFIGURE_ENV=  CPPFLAGS="-I${LOCALBASE}/include -I../compface" \
-		CFLAGS="-I${LOCALBASE}/include -I../compface" \
-		LIBS="-L${LOCALBASE}/lib -L../compface"
-
-.if defined(USE_GTK)
-CONFIGURE_ENV+= GTK_CONFIG="${X11BASE}/bin/gtk12-config"
-.endif
-
+USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
-MAN1=		compface.1 faces.1
+
+MAN1=		compface.1
 MAN3=		compface.3
 MLINKS=		compface.1 uncompface.1 \
 		compface.3 uncompface.3
 
+.if defined(WITHOUT_X11)
+PLIST_SUB+=     X11="@comment "
+WITH_AUDIO=	# none
+.else # with X11
+PLIST_SUB+=     X11=""
+USE_GNOME=	gnomehack gtk12
+GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ENV=	CPPFLAGS="-I../compface -I${LOCALBASE}/include" \
+		LDFLAGS="-L../compface -L${LOCALBASE}/lib"
+CONFIGURE_ARGS=	--enable-imap --enable-pop \
+		--enable-name-unknown --with-spooldir=/var/mail \
+		--with-facedir=${DATADIR}
+MAN1+=		faces.1
+# Audio support is only possible with X11
+.if defined(WITHOUT_AUDIO)
+WITH_AUDIO=	# none
+.else
+WITH_AUDIO?=	rplay
+.endif
+.endif
+
+.if ${WITH_AUDIO} == "nas"
+CONFIGURE_ARGS+=	--enable-audio --with-audio-cmd=${X11BASE}/bin/auplay
+RUN_DEPENDS=	auplay:${PORTSDIR}/audio/nas
+.endif
+.if ${WITH_AUDIO} == "sox"
+CONFIGURE_ARGS+=	--enable-audio --with-audio-cmd=${LOCALBASE}/bin/play
+RUN_DEPENDS=	play:${PORTSDIR}/audio/sox
+.endif
+.if ${WITH_AUDIO} == "rplay"
+CONFIGURE_ARGS+=	--enable-audio --with-audio-cmd=${LOCALBASE}/bin/rplay
+RUN_DEPENDS=	rplay:${PORTSDIR}/audio/rplay
+.endif
+
 pre-everything::
-	@${ECHO_MSG} "***"
-	@${ECHO_MSG} "*** Note: You can use the following options:"
-	@${ECHO_MSG} "***       -DWITHOUT_AUDIO build without audio support!"
-	@${ECHO_MSG} "***       -DWITHOUT_X11   build without X11/GTK support!"
-	@${ECHO_MSG} "***       -DWITH_NAS      build with NAS audio support. Needs X11!"
-	@${ECHO_MSG} "***       -DWITH_SOX      build with SOX audio support!"
-	@${ECHO_MSG} "*** The default is X11/GTK with rplay audio support!"
-	@${ECHO_MSG} "***"
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "${PORTNAME} has the following tunables:"
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "	WITHOUT_X11=yes		build without X11/GTK support"
+	@${ECHO_MSG} "	WITHOUT_AUDIO=yes	build without audio support"
+	@${ECHO_MSG} "	WITH_AUDIO=nas		build with NAS audio support"
+	@${ECHO_MSG} "	WITH_AUDIO=sox		build with SOX audio support"
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "The default is X11/GTK with rplay audio support"
+	@${ECHO_MSG} ""
 
 # I have no better idea up to now
 # Insall the working Makefile for compface from the old faces port
 # This was much less complex an builds the shared libs, too
-post-configure:
-	${CP} ${FILESDIR}/Makefile.compface ${WRKSRC}/compface/Makefile
-	${CP} -pf ${WRKSRC}/faces/faces.man ${WRKSRC}/faces/faces.man.orig
-	${SED} -e "s%/usr/local/faces%${LOCALBASE}/share/faces%" \
-	       -e "s%/var/spool/mail%/var/mail%" < ${WRKSRC}/faces/faces.man.orig > ${WRKSRC}/faces/faces.man
-	${LN} ${WRKSRC}/faces/faces.man ${WRKSRC}/faces/faces.1
-	${CP} -pf ${WRKSRC}/faces/Faces.ad ${WRKSRC}/faces/Faces.ad.orig
-.if !defined(WITHOUT_AUDIO)
-.if defined(USE_NAS)
-	${SED} -e "s%rplay%auplay%" < ${WRKSRC}/faces/Faces.ad.orig > ${WRKSRC}/faces/Faces.ad
+post-patch:
+	@${REINPLACE_CMD} -e "s%/usr/local/faces%${DATADIR}%g ; \
+		 s%/var/spool/mail%/var/mail%g" ${WRKSRC}/faces/faces.man
+	@${LN} -sf ${WRKSRC}/faces/faces.man ${WRKSRC}/faces/faces.1
+.if ${WITH_AUDIO} == ""
+	@${REINPLACE_CMD} -e "s%^faces.audioSupport.*%faces.audioSupport:		false%" ${WRKSRC}/faces/Faces.ad
 .endif
-.if defined(USE_SOX)
-	${SED} -e "s%rplay%play%" < ${WRKSRC}/faces/Faces.ad.orig > ${WRKSRC}/faces/Faces.ad
+.if ${WITH_AUDIO} == "nas"
+	@${REINPLACE_CMD} -e "s%rplay%auplay%" ${WRKSRC}/faces/Faces.ad
 .endif
-# For rplay we have nothing to do!
-.else # WITHOUT_AUDIO
-	${SED} -e "s%^faces.audioSupport.*%faces.audioSupport:		false%" < ${WRKSRC}/faces/Faces.ad.orig > ${WRKSRC}/faces/Faces.ad
-.endif # WITHOUT_AUDIO
+.if ${WITH_AUDIO} == "sox"
+	@${REINPLACE_CMD} -e "s%rplay%play%" ${WRKSRC}/faces/Faces.ad
+.endif
 
-post-install:
+do-build:
+	cd ${WRKSRC}/compface && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} \
+		${FILESDIR}/Makefile.compface ${MAKE_ARGS} ${ALL_TARGET}
 .if !defined(WITHOUT_X11)
-	${CP} -f ${WRKSRC}/faces/Faces.ad ${X11BASE}/lib/X11/app-defaults/Faces
+	cd ${WRKSRC}/faces && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} \
+		${MAKEFILE} ${MAKE_ARGS} ${ALL_TARGET}
+.endif
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/compface/compface ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/compface/uncompface ${PREFIX}/bin
+	${INSTALL_DATA} ${WRKSRC}/compface/compface.h ${PREFIX}/include
+	${INSTALL_DATA} ${WRKSRC}/compface/libcompface.a ${PREFIX}/lib
+	${INSTALL_DATA} ${WRKSRC}/compface/libcompface.so.1 ${PREFIX}/lib
+	${LN} -sf libcompface.so.1 ${PREFIX}/lib/libcompface.so
+	${INSTALL_MAN} ${WRKSRC}/compface/compface.1 ${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/compface/compface.3 ${MANPREFIX}/man/man3
+	${INSTALL_SCRIPT} ${FILESDIR}/ikon2xbm ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${FILESDIR}/xbm2ikon ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${FILESDIR}/xbmcut48 ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${FILESDIR}/xbmsize48 ${PREFIX}/bin
+.if !defined(WITHOUT_X11)
+	${INSTALL_PROGRAM} ${WRKSRC}/faces/faces ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/faces/faces.1 ${MANPREFIX}/man/man1
+	${INSTALL_DATA} ${WRKSRC}/faces/Faces.ad ${X11BASE}/lib/X11/app-defaults/Faces
 .endif
 .if !defined(NOPORTDOCS)
-	if [ ! -e ${LOCALBASE}/share/doc/${PORTNAME} ]; then \
-		${MKDIR} ${LOCALBASE}/share/doc/${PORTNAME}; \
-	       	${CP} -f ${WRKSRC}/README ${LOCALBASE}/share/doc/${PORTNAME}; \
-	fi
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
-	${INSTALL_SCRIPT} ${FILESDIR}/ikon2xbm ${LOCALBASE}/bin
-	${INSTALL_SCRIPT} ${FILESDIR}/xbm2ikon ${LOCALBASE}/bin
-	${INSTALL_SCRIPT} ${FILESDIR}/xbmcut48 ${LOCALBASE}/bin
-	${INSTALL_SCRIPT} ${FILESDIR}/xbmsize48 ${LOCALBASE}/bin
 
 .include <bsd.port.mk>
