@@ -1,0 +1,6 @@
+This package is a Perl interface to famous library PARI for
+numerical/scientific/number-theoretic calculations. It allows use of most
+PARI functions as Perl functions, and (almost) seamless merging of PARI
+and Perl data.
+
+-- Michael
