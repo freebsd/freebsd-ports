@@ -7,7 +7,7 @@
 
 PORTNAME=	saslauthd
 PORTVERSION=	2.1.20
-#PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	security ipv6
 MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/%SUBDIR%/ \
 		ftp://ftp.westbend.net/pub/cyrus-mail/%SUBDIR%/ \
@@ -133,8 +133,14 @@ do-build:
 	cd ${WRKSRC}/include && ${MAKE}
 	cd ${WRKSRC}/sasldb && ${MAKE}
 	cd ${WRKSRC}/saslauthd && ${MAKE}
+	cd ${WRKSRC}/saslauthd && ${MAKE} saslcache
+	cd ${WRKSRC}/saslauthd && ${MAKE} testsaslauthd
 
 post-install:
+	@${INSTALL_PROGRAM} ${WRKSRC}/saslauthd/saslcache \
+		${PREFIX}/sbin/saslcache
+	@${INSTALL_PROGRAM} ${WRKSRC}/saslauthd/testsaslauthd \
+		${PREFIX}/sbin/testsaslauthd
 	${GZIP_CMD} ${MAN8PREFIX}/man/cat8/saslauthd.8
 	@${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
 		${FILESDIR}/saslauthd.sh > ${PREFIX}/etc/rc.d/saslauthd.sh
