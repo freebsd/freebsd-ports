@@ -29,4 +29,8 @@ CONFIGURE_ARGS=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 GCONF_SCHEMAS=	netstatus.schemas
 
+post-patch:
+	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} -e \
+		's|[(]datadir[)]/icons/hicolor|(prefix)/share/icons/hicolor|g'
+
 .include <bsd.port.mk>
