@@ -7,7 +7,7 @@
 
 PORTNAME=	webmin
 PORTVERSION=	1.100
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.webmin.com/updates/ \
 		${MASTER_SITE_SOURCEFORGE}
@@ -31,10 +31,12 @@ WEBMIN_MODULES=	apache-1.100-3.wbm.gz \
 		ldap-useradmin-1.100-1.wbm.gz \
 		lpadmin-1.100-2.wbm.gz \
 		mon-1.100-2.wbm.gz \
+		mount-1.100-8.wbm.gz \
 		mysql-1.100-1.wbm.gz \
 		nis-1.100-1.wbm.gz \
 		qmailadmin-1.100-1.wbm.gz \
-		squid-1.100-3.wbm.gz \
+		samba-1.100-6.wbm.gz \
+		squid-1.100-5.wbm.gz \
 		updown-1.100-4.wbm.gz
 
 WEBMIN_THEMES=
