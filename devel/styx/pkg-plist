@@ -57,6 +57,7 @@ include/styx/symbols.h
 include/styx/sysbase0.h
 include/styx/sysbase1.h
 include/styx/syscbhdl.h
+@dirrm include/styx
 share/doc/styx/doc/STYX_ANT.HTM
 share/doc/styx/doc/STYX_CFG.HTM
 share/doc/styx/doc/STYX_CIM.HTM
