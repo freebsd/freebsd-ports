@@ -1,0 +1,23 @@
+--- src/tmail/Makefile.orig	Wed Nov 27 04:13:15 2002
++++ src/tmail/Makefile	Wed Nov 27 04:14:09 2002
+@@ -23,17 +23,11 @@
+ 
+ # Get local definitions from c-client directory
+ 
+-CC = `cat $C/CCTYPE`
+-CFLAGS = -I$C `cat $C/CFLAGS`
+-LDFLAGS = $(CCLIENTLIB) `cat $C/LDFLAGS`
++CFLAGS+=	-DNFSKLUDGE -I$(LOCALBASE)/include/c-client
++LDFLAGS+=	-L$(LOCALBASE)/lib -lc-client4
+ 
+-tmail: $(CCLIENTLIB) tmail.o
++tmail: tmail.o
+ 	$(CC) $(CFLAGS) -o tmail tmail.o $(LDFLAGS)
+-
+-tmail.o: $C/mail.h $C/misc.h $C/osdep.h
+-
+-$(CCLIENTLIB):
+-	cd $C;make
+ 
+ clean:
+ 	rm -f *.o tmail
