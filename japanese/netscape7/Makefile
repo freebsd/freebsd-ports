@@ -14,7 +14,6 @@ DISTFILES=	AIM.xpi \
 		browser.xpi \
 		defljajp.xpi \
 		flash.xpi \
-		jre.xpi \
 		langjajp.xpi \
 		mail.xpi \
 		psm.xpi \
