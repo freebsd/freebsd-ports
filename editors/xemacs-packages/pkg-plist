@@ -688,6 +688,8 @@ lib/xemacs/xemacs-packages/lisp/edit-utils/permanent-buffers.el
 lib/xemacs/xemacs-packages/lisp/edit-utils/permanent-buffers.elc
 lib/xemacs/xemacs-packages/lisp/edit-utils/popper.el
 lib/xemacs/xemacs-packages/lisp/edit-utils/popper.elc
+lib/xemacs/xemacs-packages/lisp/edit-utils/power-macros.el
+lib/xemacs/xemacs-packages/lisp/edit-utils/power-macros.elc
 lib/xemacs/xemacs-packages/lisp/edit-utils/recent-files.el
 lib/xemacs/xemacs-packages/lisp/edit-utils/recent-files.elc
 lib/xemacs/xemacs-packages/lisp/edit-utils/redo.el
@@ -1453,6 +1455,8 @@ lib/xemacs/xemacs-packages/lisp/xemacs-devel/auto-autoloads.el
 lib/xemacs/xemacs-packages/lisp/xemacs-devel/auto-autoloads.elc
 lib/xemacs/xemacs-packages/lisp/xemacs-devel/bench.el
 lib/xemacs/xemacs-packages/lisp/xemacs-devel/bench.elc
+lib/xemacs/xemacs-packages/lisp/xemacs-devel/checkdoc.el
+lib/xemacs/xemacs-packages/lisp/xemacs-devel/checkdoc.elc
 lib/xemacs/xemacs-packages/lisp/xemacs-devel/custom-load.el
 lib/xemacs/xemacs-packages/lisp/xemacs-devel/custom-load.elc
 lib/xemacs/xemacs-packages/lisp/xemacs-devel/docref.el
