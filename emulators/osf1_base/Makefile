@@ -23,7 +23,7 @@ RESTRICTED=	Not allowed to redistribute on our FTP site or CDROMs
 PREFIX=			/usr/compat/osf1
 EXTRACT_CMD=		rpm2cpio
 EXTRACT_BEFORE_ARGS=
-EXTRACT_AFTER_ARGS=	|cpio -idumv
+EXTRACT_AFTER_ARGS=	|cpio -idum
 NO_WRKSUBDIR=		yes
 NO_BUILD=		yes
 NO_FILTER_SHLIBS=	yes
@@ -45,6 +45,10 @@ do-install:
 	@${TAR} --exclude usr/local/* -xpzf \
 		${WRKSRC}/usr/local/netscape/netscape-all-4.7.tar.gz \
 		-C ${PREFIX}
+	@cd ${PREFIX}/usr/shlib ; ${LN} -sf libc.so libc_r.so
+	@cd ${PREFIX}/usr/shlib ; ${LN} -sf libc.so libpthread.so
+	@cd ${PREFIX}/usr/shlib ; ${LN} -sf libc.so libpthreads.so
+	@touch ${PREFIX}/etc/sia/siainitgood
 	@${RM} ${PREFIX}/usr/bin/netscape
 	@${RMDIR} ${PREFIX}/usr/bin
 
