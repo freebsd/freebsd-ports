@@ -3,12 +3,12 @@
 # Date created:		16 January 1997
 # Whom:			Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.7 1998/08/07 22:56:38 asami Exp $
+# $Id: Makefile,v 1.8 1998/09/21 22:21:37 steve Exp $
 #
 
 DISTNAME=	neXtaw-0.5.1
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	http://www.inf.ufrgs.br/~kojima/nextaw/
+MASTER_SITES=	http://www.freebsd.org/~tg/		
 EXTRACT_SUFX=	.tar.gz.bin
 
 MAINTAINER=	tg@FreeBSD.ORG
