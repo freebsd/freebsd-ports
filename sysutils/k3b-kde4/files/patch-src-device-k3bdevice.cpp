@@ -1,5 +1,5 @@
---- src/device/k3bdevice.cpp.orig	Sun Nov 28 01:22:29 2004
-+++ src/device/k3bdevice.cpp	Sun Jan  2 09:30:08 2005
+--- src/device/k3bdevice.cpp.orig	Thu Feb 24 09:15:57 2005
++++ src/device/k3bdevice.cpp	Wed Mar 23 19:44:55 2005
 @@ -57,6 +57,13 @@
  
  #endif // Q_OS_LINUX
@@ -58,7 +58,7 @@
    else if( vendor().startsWith("MATSHITA") ) {
      if( description().startsWith("CD-R   CW-7501") ) {
        m_writeModes = TAO|SAO;
-@@ -2663,10 +2691,12 @@
+@@ -2673,10 +2701,12 @@
  {
    // if the device is already opened we do not close it
    // to allow fast multible method calls in a row
@@ -71,7 +71,7 @@
  
    // header size is 8
    unsigned char* buffer = 0;
-@@ -2752,13 +2782,16 @@
+@@ -2762,13 +2792,16 @@
      delete [] buffer;
    }
      

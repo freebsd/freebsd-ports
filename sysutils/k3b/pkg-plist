@@ -207,6 +207,10 @@ share/icons/crystalsvg/16x16/apps/k3b.png
 share/icons/crystalsvg/32x32/apps/k3b.png
 share/icons/crystalsvg/48x48/apps/k3b.png
 share/icons/crystalsvg/64x64/apps/k3b.png
+share/icons/hicolor/16x16/apps/k3b.png
+share/icons/hicolor/32x32/apps/k3b.png
+share/icons/hicolor/48x48/apps/k3b.png
+share/icons/hicolor/64x64/apps/k3b.png
 share/mimelnk/application/x-k3b.desktop
 share/sounds/k3b_error1.wav
 share/sounds/k3b_success1.wav
