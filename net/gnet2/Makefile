@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	gnet
-PORTVERSION=	1.0.4
+PORTVERSION=	1.1.0
 CATEGORIES=	net
-MASTER_SITES=	http://www.eecs.umich.edu/~dhelder/misc/gnet/src/
+MASTER_SITES=	http://www.gnetlibrary.org/src/
 
 MAINTAINER=	nakai@FreeBSD.org
 
