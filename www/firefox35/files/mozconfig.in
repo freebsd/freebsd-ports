@@ -32,7 +32,6 @@ ac_add_options --with-system-mng=@LOCALBASE@
 # set compile/link features
 ac_add_options --with-pthreads
 ac_add_options --enable-reorder
-ac_add_options --enable-strip
 ######################################################################
 # disable unneeded/unavailable
 ac_add_options --disable-auto-deps
@@ -48,9 +47,11 @@ ac_add_options --enable-extensions=cookie,xml-rpc,xmlextras,p3p,pref,transformii
 # conditional from port Makefile
 if test -n "$WITH_DEBUG"; then
     ac_add_options --enable-debug
+    ac_add_options --disable-strip
 else
     ac_add_options --disable-debug
     ac_add_options --enable-optimize
+    ac_add_options --enable-strip
 fi # test -n "$WITH_DEBUG"
 if test -n "$WITH_LOGGING"; then
     ac_add_options --enable-logging
