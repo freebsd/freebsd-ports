@@ -14,8 +14,6 @@ include/gimp-1.3/libgimp/gimpbrushselect_pdb.h
 include/gimp-1.3/libgimp/gimpchannel.h
 include/gimp-1.3/libgimp/gimpchannel_pdb.h
 include/gimp-1.3/libgimp/gimpcolor_pdb.h
-include/gimp-1.3/libgimp/gimpcolordisplay.h
-include/gimp-1.3/libgimp/gimpcolorselector.h
 include/gimp-1.3/libgimp/gimpcompat.h
 include/gimp-1.3/libgimp/gimpconvert_pdb.h
 include/gimp-1.3/libgimp/gimpdisplay_pdb.h
@@ -40,7 +38,6 @@ include/gimp-1.3/libgimp/gimpmenu.h
 include/gimp-1.3/libgimp/gimpmessage_pdb.h
 include/gimp-1.3/libgimp/gimpmisc_pdb.h
 include/gimp-1.3/libgimp/gimpmisctools_pdb.h
-include/gimp-1.3/libgimp/gimpmodule.h
 include/gimp-1.3/libgimp/gimppainttools_pdb.h
 include/gimp-1.3/libgimp/gimppalettes_pdb.h
 include/gimp-1.3/libgimp/gimppaletteselect_pdb.h
@@ -66,6 +63,7 @@ include/gimp-1.3/libgimp/gimpundo_pdb.h
 include/gimp-1.3/libgimp/gimpunit_pdb.h
 include/gimp-1.3/libgimpbase/gimpbase.h
 include/gimp-1.3/libgimpbase/gimpbasetypes.h
+include/gimp-1.3/libgimpbase/gimpdatafiles.h
 include/gimp-1.3/libgimpbase/gimpenv.h
 include/gimp-1.3/libgimpbase/gimplimits.h
 include/gimp-1.3/libgimpbase/gimpparasite.h
@@ -85,6 +83,9 @@ include/gimp-1.3/libgimpmath/gimpmathtypes.h
 include/gimp-1.3/libgimpmath/gimpmatrix.h
 include/gimp-1.3/libgimpmath/gimpmd5.h
 include/gimp-1.3/libgimpmath/gimpvector.h
+include/gimp-1.3/libgimpmodule/gimpmodule.h
+include/gimp-1.3/libgimpmodule/gimpmoduledb.h
+include/gimp-1.3/libgimpmodule/gimpmoduletypes.h
 include/gimp-1.3/libgimpproxy/gimpchannel.h
 include/gimp-1.3/libgimpproxy/gimpobject.h
 include/gimp-1.3/libgimpproxy/gimpproxytypes.h
@@ -96,11 +97,18 @@ include/gimp-1.3/libgimpwidgets/gimpbutton.h
 include/gimp-1.3/libgimpwidgets/gimpchainbutton.h
 include/gimp-1.3/libgimpwidgets/gimpcolorarea.h
 include/gimp-1.3/libgimpwidgets/gimpcolorbutton.h
+include/gimp-1.3/libgimpwidgets/gimpcolordisplay.h
+include/gimp-1.3/libgimpwidgets/gimpcolornotebook.h
+include/gimp-1.3/libgimpwidgets/gimpcolorscale.h
+include/gimp-1.3/libgimpwidgets/gimpcolorscales.h
+include/gimp-1.3/libgimpwidgets/gimpcolorselect.h
+include/gimp-1.3/libgimpwidgets/gimpcolorselector.h
 include/gimp-1.3/libgimpwidgets/gimpdialog.h
 include/gimp-1.3/libgimpwidgets/gimpfileselection.h
 include/gimp-1.3/libgimpwidgets/gimphelpui.h
 include/gimp-1.3/libgimpwidgets/gimpoffsetarea.h
 include/gimp-1.3/libgimpwidgets/gimppatheditor.h
+include/gimp-1.3/libgimpwidgets/gimppickbutton.h
 include/gimp-1.3/libgimpwidgets/gimppixmap.h
 include/gimp-1.3/libgimpwidgets/gimpquerybox.h
 include/gimp-1.3/libgimpwidgets/gimpsizeentry.h
@@ -123,6 +131,9 @@ lib/libgimpcolor-1.3.so.%%SHLIBVER%%
 lib/libgimpmath-1.3.a
 lib/libgimpmath-1.3.so
 lib/libgimpmath-1.3.so.%%SHLIBVER%%
+lib/libgimpmodule-1.3.a
+lib/libgimpmodule-1.3.so
+lib/libgimpmodule-1.3.so.%%SHLIBVER%%
 lib/libgimpui-1.3.a
 lib/libgimpui-1.3.so
 lib/libgimpui-1.3.so.%%SHLIBVER%%
@@ -140,6 +151,7 @@ libdata/pkgconfig/gimpui-1.3.pc
 libexec/gimp/1.3/modules/libcdisplay_gamma.so
 libexec/gimp/1.3/modules/libcdisplay_highcontrast.so
 libexec/gimp/1.3/modules/libcolorsel_triangle.so
+libexec/gimp/1.3/modules/libcolorsel_water.so
 libexec/gimp/1.3/plug-ins/AlienMap
 libexec/gimp/1.3/plug-ins/AlienMap2
 libexec/gimp/1.3/plug-ins/CEL
@@ -296,15 +308,12 @@ libexec/gimp/1.3/plug-ins/xwd
 libexec/gimp/1.3/plug-ins/zealouscrop
 share/aclocal/gimp-1.4.m4
 share/doc/gimp/libgimp/gimpdefinitions.html
-share/doc/gimp/libgimp/gimpmodule.html
 share/doc/gimp/libgimp/index.html
 share/doc/gimp/libgimp/index.sgml
 share/doc/gimp/libgimp/libgimp-gimp.html
 share/doc/gimp/libgimp/libgimp-gimpbrushes.html
 share/doc/gimp/libgimp/libgimp-gimpchannel.html
 share/doc/gimp/libgimp/libgimp-gimpcolor.html
-share/doc/gimp/libgimp/libgimp-gimpcolordisplay.html
-share/doc/gimp/libgimp/libgimp-gimpcolorselector.html
 share/doc/gimp/libgimp/libgimp-gimpconvert.html
 share/doc/gimp/libgimp/libgimp-gimpdisplay.html
 share/doc/gimp/libgimp/libgimp-gimpdrawable.html
@@ -322,7 +331,6 @@ share/doc/gimp/libgimp/libgimp-gimplayer.html
 share/doc/gimp/libgimp/libgimp-gimpmenu.html
 share/doc/gimp/libgimp/libgimp-gimpmessage.html
 share/doc/gimp/libgimp/libgimp-gimpmisc.html
-share/doc/gimp/libgimp/libgimp-gimpmodule.html
 share/doc/gimp/libgimp/libgimp-gimppalette.html
 share/doc/gimp/libgimp/libgimp-gimppatterns.html
 share/doc/gimp/libgimp/libgimp-gimppixelrgn.html
@@ -339,6 +347,7 @@ share/doc/gimp/libgimp/libgimpui.html
 share/doc/gimp/libgimpbase/index.html
 share/doc/gimp/libgimpbase/index.sgml
 share/doc/gimp/libgimpbase/libgimpbase-gimpbasetypes.html
+share/doc/gimp/libgimpbase/libgimpbase-gimpdatafiles.html
 share/doc/gimp/libgimpbase/libgimpbase-gimpenv.html
 share/doc/gimp/libgimpbase/libgimpbase-gimplimits.html
 share/doc/gimp/libgimpbase/libgimpbase-gimpparasite.html
@@ -364,21 +373,38 @@ share/doc/gimp/libgimpmath/libgimpmath-gimpmatrix.html
 share/doc/gimp/libgimpmath/libgimpmath-gimpmd5.html
 share/doc/gimp/libgimpmath/libgimpmath-gimpvector.html
 share/doc/gimp/libgimpmath/libgimpmath.html
+share/doc/gimp/libgimpmodule/gimpmodule.html
+share/doc/gimp/libgimpmodule/gimpmoduledb.html
+share/doc/gimp/libgimpmodule/index.html
+share/doc/gimp/libgimpmodule/index.sgml
+share/doc/gimp/libgimpmodule/libgimpmodule.html
+share/doc/gimp/libgimpwidgets/gimpbutton.html
 share/doc/gimp/libgimpwidgets/gimpchainbutton.html
 share/doc/gimp/libgimpwidgets/gimpcolorbutton.html
+share/doc/gimp/libgimpwidgets/gimpcolordisplay.html
+share/doc/gimp/libgimpwidgets/gimpcolornotebook.html
+share/doc/gimp/libgimpwidgets/gimpcolorscale.html
+share/doc/gimp/libgimpwidgets/gimpcolorscales.html
+share/doc/gimp/libgimpwidgets/gimpcolorselect.html
+share/doc/gimp/libgimpwidgets/gimpcolorselector.html
+share/doc/gimp/libgimpwidgets/gimpdialog.html
 share/doc/gimp/libgimpwidgets/gimpfileselection.html
 share/doc/gimp/libgimpwidgets/gimppatheditor.html
+share/doc/gimp/libgimpwidgets/gimppickbutton.html
 share/doc/gimp/libgimpwidgets/gimppixmap.html
 share/doc/gimp/libgimpwidgets/gimpsizeentry.html
 share/doc/gimp/libgimpwidgets/gimpunitmenu.html
 share/doc/gimp/libgimpwidgets/index.html
 share/doc/gimp/libgimpwidgets/index.sgml
-share/doc/gimp/libgimpwidgets/libgimpwidgets-gimpdialog.html
+share/doc/gimp/libgimpwidgets/libgimpwidgets-colordisplay.html
+share/doc/gimp/libgimpwidgets/libgimpwidgets-colorselector.html
+share/doc/gimp/libgimpwidgets/libgimpwidgets-gimpcolorarea.html
 share/doc/gimp/libgimpwidgets/libgimpwidgets-gimphelpui.html
 share/doc/gimp/libgimpwidgets/libgimpwidgets-gimpquerybox.html
 share/doc/gimp/libgimpwidgets/libgimpwidgets-gimpstock.html
 share/doc/gimp/libgimpwidgets/libgimpwidgets-gimpwidgets.html
-share/doc/gimp/libgimpwidgets/libgimpwidgets.html
+share/doc/gimp/libgimpwidgets/libgimpwidgets-utils.html
+share/doc/gimp/libgimpwidgets/libgimpwidgets-widgets.html
 share/gimp/brushes/10x10square.gbr
 share/gimp/brushes/10x10squareBlur.gbr
 share/gimp/brushes/11circle.gbr
@@ -874,6 +900,10 @@ share/gimp/themes/Default/images/preferences/tool-options.png
 share/gimp/themes/Default/images/stock-all-16.png
 share/gimp/themes/Default/images/stock-anchor-16.png
 share/gimp/themes/Default/images/stock-char-picker-22.png
+share/gimp/themes/Default/images/stock-color-picker-black-18.png
+share/gimp/themes/Default/images/stock-color-picker-gray-18.png
+share/gimp/themes/Default/images/stock-color-picker-white-18.png
+share/gimp/themes/Default/images/stock-color-triangle-16.png
 share/gimp/themes/Default/images/stock-convert-grayscale-16.png
 share/gimp/themes/Default/images/stock-convert-indexed-16.png
 share/gimp/themes/Default/images/stock-convert-rgb-16.png
@@ -925,7 +955,45 @@ share/gimp/themes/Default/images/stock-selection-to-channel-16.png
 share/gimp/themes/Default/images/stock-selection-to-path-16.png
 share/gimp/themes/Default/images/stock-shrink-16.png
 share/gimp/themes/Default/images/stock-swap-colors-12.png
+share/gimp/themes/Default/images/stock-tool-airbrush-22.png
+share/gimp/themes/Default/images/stock-tool-bezier-select-22.png
+share/gimp/themes/Default/images/stock-tool-blend-22.png
+share/gimp/themes/Default/images/stock-tool-blur-22.png
+share/gimp/themes/Default/images/stock-tool-brightness-contrast-22.png
+share/gimp/themes/Default/images/stock-tool-bucket-fill-22.png
+share/gimp/themes/Default/images/stock-tool-by-color-select-22.png
+share/gimp/themes/Default/images/stock-tool-clone-22.png
+share/gimp/themes/Default/images/stock-tool-color-balance-22.png
+share/gimp/themes/Default/images/stock-tool-color-picker-22.png
+share/gimp/themes/Default/images/stock-tool-crop-22.png
+share/gimp/themes/Default/images/stock-tool-curves-22.png
+share/gimp/themes/Default/images/stock-tool-dodge-22.png
+share/gimp/themes/Default/images/stock-tool-ellipse-select-22.png
+share/gimp/themes/Default/images/stock-tool-eraser-22.png
+share/gimp/themes/Default/images/stock-tool-flip-22.png
+share/gimp/themes/Default/images/stock-tool-free-select-22.png
+share/gimp/themes/Default/images/stock-tool-fuzzy-select-22.png
+share/gimp/themes/Default/images/stock-tool-histogram-22.png
+share/gimp/themes/Default/images/stock-tool-hue-saturation-22.png
+share/gimp/themes/Default/images/stock-tool-ink-22.png
+share/gimp/themes/Default/images/stock-tool-iscissors-22.png
+share/gimp/themes/Default/images/stock-tool-levels-22.png
+share/gimp/themes/Default/images/stock-tool-measure-22.png
+share/gimp/themes/Default/images/stock-tool-move-22.png
 share/gimp/themes/Default/images/stock-tool-options-16.png
+share/gimp/themes/Default/images/stock-tool-paintbrush-22.png
+share/gimp/themes/Default/images/stock-tool-path-22.png
+share/gimp/themes/Default/images/stock-tool-pencil-22.png
+share/gimp/themes/Default/images/stock-tool-perspective-22.png
+share/gimp/themes/Default/images/stock-tool-posterize-22.png
+share/gimp/themes/Default/images/stock-tool-rect-select-22.png
+share/gimp/themes/Default/images/stock-tool-rotate-22.png
+share/gimp/themes/Default/images/stock-tool-scale-22.png
+share/gimp/themes/Default/images/stock-tool-shear-22.png
+share/gimp/themes/Default/images/stock-tool-smudge-22.png
+share/gimp/themes/Default/images/stock-tool-text-22.png
+share/gimp/themes/Default/images/stock-tool-threshold-22.png
+share/gimp/themes/Default/images/stock-tool-zoom-22.png
 share/gimp/themes/Default/images/stock-vchain-24.png
 share/gimp/themes/Default/images/stock-vchain-broken-24.png
 share/gimp/themes/Default/images/stock-warning-16.png
@@ -1052,6 +1120,7 @@ share/locale/zh_TW/LC_MESSAGES/gimp14-script-fu.mo
 share/locale/zh_TW/LC_MESSAGES/gimp14-std-plug-ins.mo
 share/locale/zh_TW/LC_MESSAGES/gimp14.mo
 @dirrm share/doc/gimp/libgimpwidgets
+@dirrm share/doc/gimp/libgimpmodule
 @dirrm share/doc/gimp/libgimpmath
 @dirrm share/doc/gimp/libgimpcolor
 @dirrm share/doc/gimp/libgimpbase
@@ -1084,6 +1153,7 @@ share/locale/zh_TW/LC_MESSAGES/gimp14.mo
 @dirrm include/gimp-1.3/libgimpwidgets
 @dirrm include/gimp-1.3/libgimptool
 @dirrm include/gimp-1.3/libgimpproxy
+@dirrm include/gimp-1.3/libgimpmodule
 @dirrm include/gimp-1.3/libgimpmath
 @dirrm include/gimp-1.3/libgimpcolor
 @dirrm include/gimp-1.3/libgimpbase
