@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gtkam
-PORTVERSION=	0.1.10
-PORTREVISION=	1
+PORTVERSION=	0.1.11
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gphoto
@@ -18,16 +17,16 @@ COMMENT=	Download and view files from various digital cameras
 LIB_DEPENDS=	exif-gtk.4:${PORTSDIR}/graphics/libexif-gtk \
 		gphoto2.2:${PORTSDIR}/graphics/libgphoto2
 
-USE_BZIP2=	yes
 USE_X_PREFIX=	yes
-USE_REINPLACE=	yes
+WANT_GNOME=	yes
+USE_GNOME=	gnomehack gnomehier gnometarget gtk20
 GNU_CONFIGURE=	yes
-USE_GNOME=	libbonoboui
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	--without-gnome
 
 MAN1=		gtkam.1
+
+.include <bsd.port.pre.mk>
 
 .if exists(${X11BASE}/lib/libgimp-1.3.so)
 WITH_GIMP=	yes
@@ -37,8 +36,18 @@ WITH_GIMP=	yes
 LIB_DEPENDS+=	gimp-1.3:${PORTSDIR}/graphics/gimp-devel
 PLIST_SUB+=	GIMP=""
 .else
-CONFIGURE_ARGS=	--without-gimp
+CONFIGURE_ARGS+=	--without-gimp
 PLIST_SUB+=	GIMP="@comment "
+.endif
+
+.if ${HAVE_GNOME:Mlibgnomeui}!=""
+PKGNAMESUFFIX=	-gnome
+USE_GNOME+=	gnomeprefix libgnomeui
+MAKE_ENV+=	GNOME_SUBDIRS="help omf-install"
+DATADIR=	${PREFIX}/share/gnome/${PORTNAME}
+.else
+CONFIGURE_ARGS+=	--without-bonobo-activation --without-gnome
+MAKE_ENV+=	GNOME_SUBDIRS=""
 .endif
 
 pre-everything::
@@ -52,11 +61,13 @@ pre-everything::
 post-patch:
 	@${REINPLACE_CMD} -e 's|-g -Wall||g' ${WRKSRC}/configure
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
-		's| install-gtkamdocDATA||g ; \
-		 s|images/gtkam|gtkam/images|g ; \
-		 s|^test_fsel_LDFLAGS =.*|test_fsel_LDFLAGS = \$$(EXIF_LIBS)|g'
+		's|images/gtkam|gtkam/images|g'
 
 post-install:
+	${INSTALL_DATA} ${WRKSRC}/gtkam.desktop \
+		${PREFIX}/share/gnome/applications
+	${INSTALL_DATA} ${WRKSRC}/gtkam.png \
+		${PREFIX}/share/gnome/pixmaps
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for file in AUTHORS NEWS README
@@ -64,4 +75,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
