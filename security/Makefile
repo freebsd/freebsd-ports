@@ -11,8 +11,10 @@
     SUBDIR += crack
     SUBDIR += cyrus-sasl
     SUBDIR += donkey
+    SUBDIR += dsniff
     SUBDIR += fakebo
     SUBDIR += firewalk
+    SUBDIR += fragrouter
     SUBDIR += fwtk
     SUBDIR += gnupg
     SUBDIR += gpasman
@@ -73,6 +75,7 @@
     SUBDIR += tcp_wrapper
     SUBDIR += tripwire
     SUBDIR += vscan
+    SUBDIR += whisker
     SUBDIR += xinetd
     SUBDIR += zebedee
 
