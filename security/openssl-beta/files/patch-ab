@@ -1,0 +1,11 @@
+--- util/mk1mf.pl.ORG	Sat Aug 10 15:52:08 1996
++++ util/mk1mf.pl	Sat Aug 10 15:52:30 1996
+@@ -154,7 +154,7 @@
+ 
+ if ($ranlib ne "")
+ 	{
+-	$ranlib="RANLIB=\$(SRC_D)$o$ranlib";
++	$ranlib="\$(SRC_D)$o$ranlib";
+ 	}
+ 
+ if ($msdos)
