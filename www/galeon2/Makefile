@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	galeon2
-PORTVERSION=	1.3.14a
-PORTREVISION=	1
+PORTVERSION=	1.3.15
 CATEGORIES=	www gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://osdn.dl.sourceforge.net/sourceforge/galeon/
@@ -32,7 +31,7 @@ HEADERS_SUFX=
 .if ${WITH_MOZILLA}=="mozilla-devel" || ${WITH_MOZILLA}=="mozilla-devel-gtk2"
 MOZILLA=	mozilla-devel
 HEADERS_SUFX=	-devel
-MOZ_CONFIGURE_ARGS=	--with-mozilla-snapshot="1.7b"
+MOZ_CONFIGURE_ARGS=	--with-mozilla-snapshot="1.7rc2"
 .else
 MOZILLA=	mozilla
 HEADERS_SUFX=
