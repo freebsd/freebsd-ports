@@ -1,15 +1,13 @@
 %%PYTHON_SITELIBDIR%%/pycurl.so
-%%PORTDOCS%%share/examples/py-curl/basicfirst.py
-%%PORTDOCS%%share/examples/py-curl/basicfirst2.py
-%%PORTDOCS%%share/examples/py-curl/test.py
-%%PORTDOCS%%share/examples/py-curl/test_cb.py
-%%PORTDOCS%%share/examples/py-curl/test_debug.py
-%%PORTDOCS%%share/examples/py-curl/test_getinfo.py
-%%PORTDOCS%%share/examples/py-curl/test_gtk.py
-%%PORTDOCS%%share/examples/py-curl/test_post.py
-%%PORTDOCS%%share/examples/py-curl/test_post2.py
-%%PORTDOCS%%share/examples/py-curl/test_stringio.py
-%%PORTDOCS%%share/examples/py-curl/test_xmlrpc.py
-%%PORTDOCS%%share/examples/py-curl/test_xmlrpc2.py
-%%PORTDOCS%%share/examples/py-curl/xmlrpc_curl.py
-%%PORTDOCS%%@dirrm share/examples/py-curl
+share/doc/py-curl/COPYING
+share/doc/py-curl/INSTALL
+share/doc/py-curl/README
+share/doc/py-curl/TODO
+share/examples/py-curl/basicfirst.py
+share/examples/py-curl/curl.py
+share/examples/py-curl/gtkhtml_demo.py
+share/examples/py-curl/retriever.py
+share/examples/py-curl/sfquery.py
+share/examples/py-curl/xmlrpc_curl.py
+@dirrm share/examples/py-curl
+@dirrm share/doc/py-curl

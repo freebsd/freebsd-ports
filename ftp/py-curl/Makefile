@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	curl
-PORTVERSION=	7.9.7
+PORTVERSION=	7.9.8.4
 CATEGORIES=	ftp python
-MASTER_SITES=	http://pycurl.sourceforge.net/
+MASTER_SITES=	http://pycurl.sourceforge.net/download/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	py${PORTNAME}-${PORTVERSION}
 
@@ -18,18 +18,13 @@ LIB_DEPENDS=	curl.2:${PORTSDIR}/ftp/curl
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
-PLIST_SUB+=	PYTHON_SITELIBDIR="lib/${PYTHON_VERSION}/site-packages"
+USE_REINPLACE=	yes
+EXTRACT_AFTER_ARGS=	| ${TAR} -xf - 2>/dev/null || true
 
 post-patch:
-.for file in ${REPATCHFILES}
-	${PERL} -pi -e 's@"include"@"${LOCALBASE}/include"],library_dirs=["${LOCALBASE}/lib"@' \
+	${REINPLACE_CMD} -e 's@\(curl-config --\)@${LOCALBASE}/bin/\1@g' \
+		-e 's@os.path.join("doc", "pycurl")@"share/doc/py-curl"@g' \
+		-e 's@os.path.join("d.*"examples")@"share/examples/py-curl"@g' \
 		${WRKSRC}/setup.py
-.endfor
-
-.if !defined(NOPORTDOCS)
-post-install:
-	${MKDIR} ${PREFIX}/share/examples/py-curl
-	cd ${WRKSRC} && ${INSTALL_DATA} tests/* ${PREFIX}/share/examples/py-curl
-.endif
 
 .include <bsd.port.mk>
