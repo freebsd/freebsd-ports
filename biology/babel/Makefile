@@ -7,7 +7,7 @@
 
 PORTNAME=	babel
 PORTVERSION=	1.6
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	biology converters
 MASTER_SITES=	http://smog.com/chem/babel/files/ \
 		http://www.ccl.net/cca/software/UNIX/babel/ \
