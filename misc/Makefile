@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.68 1995/11/27 03:38:03 asami Exp $
+# $Id: Makefile,v 1.69 1996/01/15 10:40:08 asami Exp $
 #
 
     SUBDIR += amanda
@@ -6,6 +6,7 @@
     SUBDIR += buffer
     SUBDIR += chord
     SUBDIR += colorls
+    SUBDIR += ctk
     SUBDIR += git
     SUBDIR += glimpse
     SUBDIR += ical
