@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	liveMedia
-PORTVERSION=	2003.10.27
+PORTVERSION=	2003.11.06
 PORTEPOCH=	1
 CATEGORIES=	net devel
 MASTER_SITES=	http://www.LIVE.COM/liveMedia/public/
@@ -140,6 +140,8 @@ post-extract:
 	@${CP} ${FILESDIR}/config.fixed-${OPSYS:L} ${WRKSRC}/
 
 post-build:
+	@${RM} -f ${PLIST}
+	@${TOUCH} ${PLIST}
 	@${ECHO_CMD} bin/playSIP  >> ${PLIST}
 	@${ECHO_CMD} bin/openRTSP >> ${PLIST}
 	@${ECHO_CMD} bin/sapWatch >> ${PLIST}
@@ -162,8 +164,6 @@ post-build:
 	@${CAT} ${.CURDIR}/pkg-plist >> ${PLIST}
 
 pre-install:
-	@${RM} -f ${PLIST}
-	@${TOUCH} ${PLIST}
 	@${INSTALL_DATADIR} ${PREFIX}/live
 	@${INSTALL_DATADIR} ${PREFIX}/live/groupsock
 	@${INSTALL_DATADIR} ${PREFIX}/live/liveMedia
