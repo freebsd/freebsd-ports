@@ -14,6 +14,8 @@ CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.remotesensing.org/pub/libtiff/ \
 		http://libtiff.maptools.org/dl/
 DISTNAME=	${PORTNAME}-v${PORTVERSION}
+DISTFILES=	${PORTNAME}-v${PORTVERSION}${EXTRACT_SUFX} ${LZW_DIST}
+PKGNAMESUFFIX?=	${TIFF_SUFFIX}${PKGNAMESUFFIX2}
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Tools and library routines for working with TIFF images
@@ -113,4 +115,30 @@ MLINKS=	TIFFError.3t          TIFFSetErrorHandler.3t \
 	TIFFtile.3t           TIFFTileRowSize.3t \
 	TIFFtile.3t           TIFFVTileSize.3t
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_TIFF_LZW_KIT)
+TIFF_SUFFIX=	-lzw
+LZKIT=		libtiff-lzw-compression-kit
+LZKIT_VER=	1.5
+LZW_DIST=	${LZKIT}-${LZKIT_VER}${EXTRACT_SUFX}
+RESTRICTED=	"Redistribution not allowed"
+
+.if !exists(${DISTDIR}/${LZW_DIST})
+IGNORE=	Due to patent enforcement from Unisys you must manually\
+	fetch ${LZW_DIST} from ftp://ftp.remotesensing.org/libtiff\
+	and place it in ${DISTDIR}. \
+	To use this patch legally you must live in a country where the patent\
+	does not apply or you must obtain a license from Unisys
+.endif
+
+post-patch:
+	@${CP} -f ${WRKDIR}/${LZKIT}-${LZKIT_VER}/tif_lzw.c ${WRKSRC}/libtiff
+.else
+
+pre-everything::
+	@${ECHO_MSG} "===> Enable LZW Compression by defining WITH_TIFF_LZW_KIT"
+
+.endif
+
+.include <bsd.port.post.mk>
