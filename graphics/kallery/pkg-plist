@@ -1,0 +1,29 @@
+bin/kallery
+share/doc/HTML/en/kallery/index.docbook
+share/doc/HTML/en/kallery/index.cache.bz2
+share/doc/HTML/en/kallery/common
+share/applnk/Applications/kallery.desktop
+share/icons/locolor/32x32/apps/kallery.png
+share/icons/locolor/16x16/apps/kallery.png
+share/icons/hicolor/16x16/apps/kallery.png
+share/icons/hicolor/32x32/apps/kallery.png
+share/apps/kallery/images/kallery.png
+share/apps/kallery/images/back.png
+share/apps/kallery/images/next.png
+share/apps/kallery/images/prev.png
+share/apps/kallery/templates/gallery/gallery.template
+share/apps/kallery/templates/gallery/gallery_frame.template
+share/apps/kallery/templates/fullsize/fullsize_bottom.template
+share/apps/kallery/templates/fullsize/fullsize_near.template
+share/apps/kallery/templates/fullsize/fullsize_top.template
+share/apps/kallery/templates/fullsize/fullsize_top_bottom.template
+share/apps/kallery/htmls/blank.htm
+share/apps/kallery/htmls/main_frame.htm
+share/locale/hu/LC_MESSAGES/kallery.mo
+@dirrm share/doc/HTML/en/kallery
+@dirrm share/apps/kallery/images
+@dirrm share/apps/kallery/templates/gallery
+@dirrm share/apps/kallery/templates/fullsize
+@dirrm share/apps/kallery/templates
+@dirrm share/apps/kallery/htmls
+@dirrm share/apps/kallery
