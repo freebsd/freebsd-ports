@@ -7,6 +7,7 @@
 
 PORTNAME=	opera
 PORTVERSION=	7.23.20031119
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.sunet.se/pub/www/clients/Opera/unix/freebsd/723/final/en/ \
 		ftp://sunsite.cnlab-switch.ch/mirror/opera/unix/freebsd/723/final/en/ \
@@ -24,8 +25,6 @@ MAINTAINER=	avleeuwen@piwebs.com
 COMMENT=	A blazingly fast, full-featured, standards-compliant browser
 
 CONFLICTS=	linux-opera-*
-
-LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
