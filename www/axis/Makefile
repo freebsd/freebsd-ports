@@ -45,7 +45,7 @@ GROUP=		www
 #
 # Change install directory by JDK version
 #
-.if defined(JAVA_VER) && (${JAVA_VER} == 1.4.1)
+.if defined(JAVA_PORT_VERSION) && (${JAVA_PORT_VERSION} == "1.4.1")
 LIB_SUBDIR=		endorsed
 .else
 LIB_SUBDIR=		ext
