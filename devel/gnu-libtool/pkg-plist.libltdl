@@ -1,6 +1,0 @@
-@comment $FreeBSD$
-include/ltdl.h
-lib/libltdl.a
-lib/libltdl.la
-lib/libltdl.so
-lib/libltdl.so.4

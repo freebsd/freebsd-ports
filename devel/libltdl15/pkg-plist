@@ -1,0 +1,6 @@
+@comment $FreeBSD: /tmp/pcvs/ports/devel/libltdl15/Attic/pkg-plist,v 1.1 2003-07-02 18:52:29 ade Exp $
+include/ltdl.h
+lib/libltdl.a
+lib/libltdl.la
+lib/libltdl.so
+lib/libltdl.so.4

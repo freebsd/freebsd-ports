@@ -15,7 +15,7 @@ INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--enable-ltdl-install
 BUILD_WRKSRC=	${WRKSRC}/libltdl
 INSTALL_WRKSRC=	${WRKSRC}/libltdl
-DESCR=		${PKGDIR}/pkg-descr.libltdl
-PLIST=		${PKGDIR}/pkg-plist.libltdl
+DESCR=		${.CURDIR}/pkg-descr
+PLIST=		${.CURDIR}/pkg-plist
 
 .include "${MASTERDIR}/Makefile"
