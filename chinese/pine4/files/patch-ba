@@ -1,5 +1,5 @@
---- pine/mailcmd.c.orig	Tue Oct 12 06:13:50 1999
-+++ pine/mailcmd.c	Thu Oct 14 13:29:28 1999
+--- pine/mailcmd.c.orig	Wed Nov 17 09:51:48 1999
++++ pine/mailcmd.c	Fri Nov 19 18:24:04 1999
 @@ -115,39 +115,39 @@
  /*
   * List of Select options used by apply_* functions...
@@ -529,7 +529,7 @@
  
      if(state->io_error_on_stream) {
 @@ -1844,7 +1839,7 @@
-     if(msgno_any_exceptions(stream, msgmap, MSG_EX_DELETE)
+     if(msgno_any_deletedparts(stream, msgmap)
         && want_to("Saved copy will NOT include entire message!  Continue",
  		  'y', 'n', NO_HELP, WT_FLUSH_IN | WT_SEQ_SENSITIVE) != 'y'){
 -	cmd_cancelled("Save message");
@@ -824,24 +824,26 @@
                                        old_folder);
                  }
              }
-@@ -5018,13 +5012,13 @@
+@@ -5018,14 +5012,13 @@
  
      /* UWIN doesn't want to see this message */
      if(!ps_global->nr_mode)
 -      q_status_message7(SM_ORDER, 0, 4, "%s \"%s\" opened with %s message%s%s",
-+      q_status_message7(SM_ORDER, 0, 4, "%s \"%s\" 已開啟，共 %s 封信%s",
++      q_status_message7(SM_ORDER, 0, 4, "%s \"%s\" 已開啟，共 %s 封信",
  			IS_NEWS(ps_global->mail_stream)
 -			  ? "News group" : "Folder",
 +			  ? "新聞組群" : "信件匣",
  			pretty_fn(newfolder),
  			comatose(mn_get_total(ps_global->msgmap)),
- 			plural(mn_get_total(ps_global->msgmap)),
+-			plural(mn_get_total(ps_global->msgmap)),
 -			READONLY_FOLDER ? " READONLY" : "",
+-			NULL, NULL);
 +			READONLY_FOLDER ? " 唯讀" : "",
- 			NULL, NULL);
++			NULL, NULL, NULL);
  
  #ifdef	_WINDOWS
-@@ -5191,9 +5185,9 @@
+     mswin_settitle(pretty_fn(newfolder));
+@@ -5191,9 +5184,9 @@
      char ing[4];
  
      if(final_msg)
@@ -853,7 +855,7 @@
  
      buff1[0] = '\0';
      buff2[0] = '\0';
-@@ -5202,7 +5196,7 @@
+@@ -5202,7 +5195,7 @@
                     stream->mailbox));
          if(!stream->rdonly){
  
@@ -862,7 +864,7 @@
  	    flush_status_messages(1);
  
  	    /*
-@@ -5255,10 +5249,8 @@
+@@ -5255,10 +5248,8 @@
  		}
  		else{
  		    sprintf(prompt_b,
@@ -875,7 +877,7 @@
  		    ret = want_to(prompt_b, 'y', 0, NO_HELP, WT_NORM);
  		}
  
-@@ -5269,13 +5261,10 @@
+@@ -5269,13 +5260,10 @@
  
  		if(ret == 'y'){
  		    sprintf(buff2,
@@ -890,7 +892,7 @@
  			long2string(delete_count));
  		    if(final_msg)
  		      *final_msg = cpystr(buff2);
-@@ -5348,17 +5337,15 @@
+@@ -5348,17 +5336,15 @@
  
  		if(stream->nmsgs){
  		    sprintf(buff2,
@@ -912,7 +914,7 @@
  			ing, pretty_fn(folder));
  		}
  
-@@ -5377,7 +5364,7 @@
+@@ -5377,7 +5363,7 @@
  		  q_status_message(SM_ORDER,
  		      F_ON(F_AUTO_READ_MSGS,ps_global) ? 0 : 3, 5, moved_msg);
  
@@ -921,7 +923,7 @@
  			ing, pretty_fn(folder));
  
  		if(F_ON(F_NEWS_CATCHUP, ps_global)){
-@@ -5414,7 +5401,7 @@
+@@ -5414,7 +5400,7 @@
  	    }
              else
  	      sprintf(buff2,
@@ -930,7 +932,7 @@
  			ing, pretty_fn(folder));
  
  	    if(final_msg)
-@@ -6033,18 +6020,18 @@
+@@ -6093,18 +6079,18 @@
      if(in_index && F_ON(F_PRINT_INDEX, state)){
  	char m[10];
  	static ESCKEY_S prt_opts[] = {
@@ -954,7 +956,7 @@
  	    if(agg)
  	      restore_selected(msgmap);
  
-@@ -6061,11 +6048,11 @@
+@@ -6121,11 +6107,11 @@
      }
  
      if(do_index)
@@ -969,7 +971,7 @@
  
      if(open_printer(prompt) < 0){
  	if(agg)
-@@ -6329,7 +6316,7 @@
+@@ -6389,7 +6375,7 @@
  	    /* else fall thru as if cancelled */
  
  	  case 1 :
@@ -978,7 +980,7 @@
  	    done++;
  	    break;
  
-@@ -6642,7 +6629,7 @@
+@@ -6725,7 +6711,7 @@
      sel_opts = sel_opts2;
      if(old_tot = any_lflagged(msgmap, MN_SLCT)){
  	i = get_lflag(state->mail_stream, msgmap, mn_get_cur(msgmap), MN_SLCT);
@@ -987,7 +989,7 @@
  	sel_opts += 2;			/* disable extra options */
  	switch(q = radio_buttons(sel_pmt1, q_line, sel_opts1, 'c', 'x', help,
  				 RB_NORM)){
-@@ -6686,7 +6673,7 @@
+@@ -6769,7 +6755,7 @@
       */
      switch(q){
        case 'x':				/* cancel */
@@ -996,7 +998,7 @@
  	return;
  
        case 'c' :			/* select/unselect current */
-@@ -6895,14 +6882,14 @@
+@@ -6978,14 +6964,14 @@
  	sel_opts3[i].ch      = '*';
  	sel_opts3[i].rval    = '*';
  	sel_opts3[i].name    = "*";
@@ -1013,7 +1015,7 @@
      }
  
      /*
-@@ -6914,7 +6901,7 @@
+@@ -6997,7 +6983,7 @@
  	sel_opts3[i].ch      = 'b';
  	sel_opts3[i].rval    = 'b';
  	sel_opts3[i].name    = "B";
@@ -1022,7 +1024,7 @@
      }
  
      if(F_ON(F_ENABLE_PRYNT, state)){
-@@ -6985,7 +6972,7 @@
+@@ -7068,7 +7054,7 @@
  	break;
  
        case 'x' :			/* cancel */
@@ -1031,7 +1033,7 @@
  	rv = 0;
  	break;
  
-@@ -7102,7 +7089,7 @@
+@@ -7185,7 +7171,7 @@
  	*t = '\0';
  
          if(r == 1 || numbers[0] == '\0'){
@@ -1040,7 +1042,7 @@
  	    return(1);
          }
  	else
-@@ -7228,7 +7215,7 @@
+@@ -7311,7 +7297,7 @@
  			     prompt, sel_date_opt, help, &flags);
  	switch (r){
  	  case 1 :
@@ -1049,7 +1051,7 @@
  	    return(1);
  
  	  case 3 :
-@@ -7350,15 +7337,15 @@
+@@ -7433,15 +7419,15 @@
  	ekey[0].ch    = ctrl('T');
  	ekey[0].name  = "^T";
  	ekey[0].rval  = 10;
@@ -1068,7 +1070,7 @@
  	break;
  
        case 's' :
-@@ -7366,7 +7353,7 @@
+@@ -7449,7 +7435,7 @@
  	ekey[0].ch    = ctrl('X');
  	ekey[0].name  = "^X";
  	ekey[0].rval  = 13;
@@ -1077,7 +1079,7 @@
  	break;
  
        case 'a' :
-@@ -7477,7 +7464,7 @@
+@@ -7560,7 +7546,7 @@
      }
  
      if(type == 'x' || r == 'x'){
@@ -1086,7 +1088,7 @@
  	return(1);
      }
  
-@@ -7735,7 +7722,7 @@
+@@ -7818,7 +7804,7 @@
  			  NO_HELP, RB_NORM);
  			  
  	if(s == 'x'){
@@ -1095,7 +1097,7 @@
  	    return(1);
  	}
  	else if(s == '!')
-@@ -7832,7 +7819,7 @@
+@@ -7915,7 +7901,7 @@
  
      /*----- String together the prompt ------*/
      tmp[1] = '\0';
@@ -1104,7 +1106,7 @@
      for(i = 0; state->sort_types[i] != EndofList; i++) {
  	sorts[i].rval	   = i;
  	p = sorts[i].label = sort_name(state->sort_types[i]);
-@@ -7849,7 +7836,7 @@
+@@ -7932,7 +7918,7 @@
      sorts[i].ch     = 'r';
      sorts[i].rval   = 'r';
      sorts[i].name   = cpystr("R");
@@ -1113,7 +1115,7 @@
      sorts[++i].ch   = -1;
      help = h_select_sort;
  
-@@ -7862,7 +7849,7 @@
+@@ -7945,7 +7931,7 @@
      }
      else{
  	retval = 0;

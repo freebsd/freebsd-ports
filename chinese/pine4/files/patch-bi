@@ -1,6 +1,6 @@
---- pine/reply.c.orig	Tue Oct 12 01:30:36 1999
-+++ pine/reply.c	Thu Oct 14 15:00:52 1999
-@@ -108,9 +108,9 @@
+--- pine/reply.c.orig	Tue Nov  9 02:24:35 1999
++++ pine/reply.c	Fri Nov 19 16:18:24 1999
+@@ -110,9 +110,9 @@
  /*
   * Little defs to keep the code a bit neater...
   */
@@ -13,7 +13,7 @@
  #define SIGDASHES	"-- "
  
  
-@@ -341,7 +341,7 @@
+@@ -343,7 +343,7 @@
  	  role = combine_inherited_role(role);
  	else{				/* cancel reply */
  	    role = NULL;
@@ -22,7 +22,7 @@
  	    goto done_early;
  	}
      }
-@@ -603,7 +603,7 @@
+@@ -605,7 +605,7 @@
  #endif
  
      /* partially formatted outgoing message */
@@ -31,7 +31,7 @@
  	      role, fcc.tptr, &reply, redraft_pos, NULL, NULL, 0);
    done:
      pine_free_body(&body);
-@@ -681,7 +681,7 @@
+@@ -683,7 +683,7 @@
  			 (ADDRESS *) NULL, env->from, 0);
  
      if(ret == 'x') {
@@ -40,7 +40,7 @@
  	return(0);
      }
  
-@@ -730,7 +730,7 @@
+@@ -732,7 +732,7 @@
  	       || (*saved_cc || *saved_resent))){
  	    *flags &= ~RSF_QUERY_REPLY_ALL;
  	    if((ret=want_to(ALL_PMT,'n','x',NO_HELP,WT_SEQ_SENSITIVE)) == 'x'){
@@ -49,21 +49,8 @@
  		return(0);
  	    }
  	    else if(ret == 'y')
-@@ -830,9 +830,9 @@
-     PAT_S          *curpat, *pat;
-     PAT_STATE       pstate;
-     static ESCKEY_S ekey[] = {
--	{'y', 'y', "Y", "Yes"},
--	{'n', 'n', "N", "No Role"},
--	{ctrl('T'), 2, "^T", "To Select Alternate Role"},
-+	{'y', 'y', "Y", "是"},
-+	{'n', 'n', "N", "否"},
-+	{ctrl('T'), 2, "^T", "選擇替代角色"},
- 	{-1, 0, NULL, NULL}};
- 
-     if(!nonempty_patterns() || !role)
-@@ -884,11 +884,11 @@
-       curpat = first_pattern(ROLE_DO_ROLES, &pstate);
+@@ -890,21 +890,21 @@
+     }
  
      if(flags & ROLE_REPLY)
 -      prompt_fodder = "Reply";
@@ -77,7 +64,20 @@
  
      done = 0;
      while(!done){
-@@ -1504,8 +1504,8 @@
+ 	if(curpat){
+ 	    help = h_role_confirm;
+ 	    ekey[0].name  = "Y";
+-	    ekey[0].label = "Yes";
++	    ekey[0].label = "是";
+ 	    ekey[1].name  = "N";
+-	    ekey[1].label = "No Role";
+-	    ekey[2].label = "To Select Alternate Role";
++	    ekey[1].label = "否";
++	    ekey[2].label = "選擇替代角色";
+ 	    if(curpat->patgrp && curpat->patgrp->nick)
+ 	      sprintf(prompt, "Use role \"%.40s\" for %s? ",
+ 		      curpat->patgrp->nick, prompt_fodder);
+@@ -1523,8 +1523,8 @@
  {
      int ret, edited = 0;
      static ESCKEY_S rtq_opts[] = {
@@ -88,7 +88,7 @@
  	{-1, 0, NULL, NULL},	                  /* may be overridden below */
  	{-1, 0, NULL, NULL}
      };
-@@ -1515,19 +1515,18 @@
+@@ -1534,19 +1534,18 @@
        return(1);
  
      while(1){
@@ -114,7 +114,7 @@
  	}
  	else
  	  rtq_opts[2].ch    = -1;
-@@ -1538,7 +1537,7 @@
+@@ -1557,7 +1556,7 @@
  				   rtq_opts, edited ? 'y' : 'n',
  				   'x', NO_HELP, RB_SEQ_SENSITIVE)){
  	  case 'x':
@@ -123,7 +123,7 @@
  	    return(-1);
  
  	  case 'r':
-@@ -1557,7 +1556,7 @@
+@@ -1576,7 +1575,7 @@
  
  		    switch(optionally_enter(buf, ps->ttyo->screen_rows > 4
  					    ? -FOOTER_ROWS(ps_global) : -1,
@@ -132,7 +132,7 @@
  					    NULL, NO_HELP, &flags)){
  		      case 0:		/* entry successful, continue */
  			if(flags & OE_USER_MODIFIED){
-@@ -1570,7 +1569,7 @@
+@@ -1589,7 +1588,7 @@
  			break;
  
  		      case 1:
@@ -141,7 +141,7 @@
  
  		      case -1:
  			return(-1);
-@@ -2579,9 +2578,9 @@
+@@ -2653,9 +2652,9 @@
      ENVELOPE *env, *outgoing;
  {
      int    ret = 1;
@@ -154,7 +154,7 @@
  				   {-1, 0, NULL, NULL} };
  
      if(env->newsgroups && *env->newsgroups && !reply_poster_followup(env))
-@@ -2605,7 +2604,7 @@
+@@ -2679,7 +2678,7 @@
  
  	case 'x' :		/* cancel or unknown response */
  	default  :
@@ -163,7 +163,7 @@
  	  ret = 0;
  	  break;
        }
-@@ -2613,7 +2612,7 @@
+@@ -2687,7 +2686,7 @@
      if(ret > 1){
  	if(env->followup_to){
  	    q_status_message(SM_ORDER, 2, 3,
@@ -172,7 +172,7 @@
  	    outgoing->newsgroups = cpystr(env->followup_to);
  	}
  	else if(!outgoing->newsgroups)
-@@ -3249,7 +3248,7 @@
+@@ -3323,7 +3322,7 @@
  	     : 0;
  
      if(ret == 'x'){
@@ -181,7 +181,7 @@
  	so_give((STORE_S **)&msgtext);
  	goto clean;
      }
-@@ -3263,7 +3262,7 @@
+@@ -3337,7 +3336,7 @@
  	  role = combine_inherited_role(role);
  	else{				/* cancel reply */
  	    role = NULL;
@@ -190,7 +190,7 @@
  	    so_give((STORE_S **)&msgtext);
  	    goto clean;
  	}
-@@ -3458,7 +3457,7 @@
+@@ -3532,7 +3531,7 @@
        pine_simple_send(outgoing, &body, NULL, NULL, NULL, 1);
      else			/* partially formatted outgoing message */
        pine_send(outgoing, &body,
@@ -199,7 +199,7 @@
  		role, NULL, NULL, redraft_pos, NULL, NULL, FALSE);
  
    clean:
-@@ -3481,7 +3480,7 @@
+@@ -3555,7 +3554,7 @@
      mail_gc(ps->mail_stream, GC_TEXTS);
  #endif
      q_status_message(SM_ORDER | SM_DING, 4, 5,
@@ -208,7 +208,7 @@
      goto clean;
  }
  
-@@ -3861,7 +3860,7 @@
+@@ -3979,7 +3978,7 @@
  		if(confirm_role(ROLE_COMPOSE, &role))
  		  role = combine_inherited_role(role);
  		else{			/* cancel */

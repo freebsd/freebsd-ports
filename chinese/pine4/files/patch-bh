@@ -1,5 +1,5 @@
---- pine/pine.h.orig	Tue Oct 12 06:14:28 1999
-+++ pine/pine.h	Thu Oct 14 12:35:27 1999
+--- pine/pine.h.orig	Wed Nov 17 08:14:14 1999
++++ pine/pine.h	Fri Nov 19 16:18:24 1999
 @@ -357,7 +357,7 @@
  			   && (s) && !strucmp((s),"X-VCARD")))
  #define	MIME_VCARD_A(a)	MIME_VCARD((a)->body->type, (a)->body->subtype)
@@ -134,7 +134,7 @@
  			 {MC_TAB,1,{TAB}}, \
  			 KS_NONE}
  
-@@ -2819,7 +2819,7 @@
+@@ -2831,7 +2831,7 @@
  } ATABLE_S;
  
  
