@@ -39,6 +39,7 @@
     SUBDIR += l0pht-watch
     SUBDIR += libident
     SUBDIR += libmcrypt
+    SUBDIR += libmcrypt-nm
     SUBDIR += libparanoia
     SUBDIR += librsaintl
     SUBDIR += logcheck
@@ -56,7 +57,6 @@
     SUBDIR += openssh
     SUBDIR += openssh-askpass
     SUBDIR += openssl
-    SUBDIR += p
     SUBDIR += p5-Authen-PAM
     SUBDIR += p5-Authen-Radius
     SUBDIR += p5-Crypt-CBC
