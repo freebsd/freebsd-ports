@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	lavaps
-PORTVERSION=	1.17
+PORTVERSION=	1.18
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.isi.edu/~johnh/SOFTWARE/LAVAPS/
 
