@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	POE
-PORTVERSION=	0.18
+PORTVERSION=	0.19
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN} http://poe.perl.org/poedown/
 MASTER_SITE_SUBDIR=	POE
@@ -22,6 +22,7 @@ BUILD_DEPENDS=	\
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+PLIST_SUB=	EXAMPLESDIR="share/examples/${PORTNAME}"
 PERL_CONFIGURE=	yes
 
 MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
@@ -40,8 +41,9 @@ MAN3=		POE.3 POE::Component.3 POE::Component::Client::TCP.3 \
 
 post-install:
 .ifndef(NOPORTDOCS)
-		@${MKDIR} ${PREFIX}/share/examples/${PKGNAMEPREFIX}${PORTNAME}
-		${INSTALL_DATA} ${WRKSRC}/samples/* ${PREFIX}/share/examples/${PKGNAMEPREFIX}${PORTNAME}
+	@${ECHO_MSG} "===>   Installing examples for ${PKGNAME}"
+	@${MKDIR} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/samples/* ${EXAMPLESDIR}
 .endif
 
 .include <bsd.port.mk>
