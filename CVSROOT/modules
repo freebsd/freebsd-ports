@@ -944,6 +944,7 @@ cvsupit		ports/net/cvsupit
 cvsutils	ports/devel/cvsutils
 cvsweb		ports/devel/cvsweb
 cvsweb-converters	ports/sysutils/cvsweb-converters
+cvswrap		ports/devel/cvswrap
 cweb		ports/devel/cweb
 cwish		ports/misc/cwish
 cwtext		ports/textproc/cwtext
