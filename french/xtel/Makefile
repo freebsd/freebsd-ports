@@ -15,6 +15,8 @@ MAINTAINER=	thierry@thomas.as
 
 LIB_DEPENDS+=	jpeg.9:${PORTSDIR}/graphics/jpeg
 
+.include <bsd.port.pre.mk>
+
 # Remark: Xtel can serve a network, and emulate TVR and I-Minitel, but this is
 # the first release of this port, and these functionnalities have not (yet)
 # been implemented.
@@ -73,8 +75,6 @@ post-install:
 	@${ECHO}
 	@${CAT} ${WRKDIR}/pkg-message | ${SED} -e "s:%%PREFIX%%:${PREFIX}:g"
 	@${ECHO}
-
-.include <bsd.port.pre.mk>
 
 .if ${XFREE86_VERSION} == 4
 BUILD_DEPENDS+=	mkfontdir:${PORTSDIR}/x11/XFree86-4-clients
