@@ -1,6 +1,55 @@
---- configure.orig	Mon Feb  3 02:20:35 2003
-+++ configure	Tue Feb  4 22:00:37 2003
-@@ -13115,7 +13116,7 @@
+--- configure.orig	Mon Feb 10 01:26:24 2003
++++ configure	Fri Feb 14 13:11:41 2003
+@@ -3535,10 +3535,10 @@
+ #include "confdefs.h"
+ #include <libintl.h>
+ extern int _nl_msg_cat_cntr;
+-extern int *_nl_domain_bindings;
++extern int *libintl_nl_domain_bindings;
+ int main() {
+ bindtextdomain ("", "");
+-return (int) gettext ("") + _nl_msg_cat_cntr + *_nl_domain_bindings
++return (int) gettext ("") + _nl_msg_cat_cntr + *libintl_nl_domain_bindings
+ ; return 0; }
+ EOF
+ if { (eval echo configure:3545: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext}; then
+@@ -3924,7 +3924,7 @@
+ #include "confdefs.h"
+ #include <libintl.h>
+ extern int _nl_msg_cat_cntr;
+-extern int *_nl_domain_bindings;
++extern int *libintl_nl_domain_bindings;
+ extern
+ #ifdef __cplusplus
+ "C"
+@@ -3932,7 +3932,7 @@
+ const char *_nl_expand_alias ();
+ int main() {
+ bindtextdomain ("", "");
+-return (int) gettext ("") + _nl_msg_cat_cntr + *_nl_domain_bindings + *_nl_expand_alias (0)
++return (int) gettext ("") + _nl_msg_cat_cntr + *libintl_nl_domain_bindings + *_nl_expand_alias (0)
+ ; return 0; }
+ EOF
+ if { (eval echo configure:3939: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext}; then
+@@ -3952,7 +3952,7 @@
+ #include "confdefs.h"
+ #include <libintl.h>
+ extern int _nl_msg_cat_cntr;
+-extern int *_nl_domain_bindings;
++extern int *libintl_nl_domain_bindings;
+ extern
+ #ifdef __cplusplus
+ "C"
+@@ -3960,7 +3960,7 @@
+ const char *_nl_expand_alias ();
+ int main() {
+ bindtextdomain ("", "");
+-return (int) gettext ("") + _nl_msg_cat_cntr + *_nl_domain_bindings + *_nl_expand_alias (0)
++return (int) gettext ("") + _nl_msg_cat_cntr + *libintl_nl_domain_bindings + *_nl_expand_alias (0)
+ ; return 0; }
+ EOF
+ if { (eval echo configure:3967: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext}; then
+@@ -13115,7 +13115,7 @@
  echo "configure:13116: checking for gtkhtml < 1.1" >&5
      GTKHTML_LIBS=`$GNOME_CONFIG --libs gtkhtml`
      GTKHTML_CFLAGS=`$GNOME_CONFIG --cflags gtkhtml`
