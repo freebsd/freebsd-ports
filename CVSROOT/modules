@@ -5297,6 +5297,7 @@ png		ports/graphics/png
 png2html	ports/graphics/png2html
 pngcheck	ports/graphics/pngcheck
 pngcrush	ports/graphics/pngcrush
+pngquant	ports/graphics/pngquant
 pnm2ppa		ports/print/pnm2ppa
 pnpinfo		src/usr.sbin/pnpinfo
 poedit		ports/editors/poedit
