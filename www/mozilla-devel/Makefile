@@ -172,7 +172,8 @@ post-patch:
 .if !defined(WITHOUT_XFT)
 	@${REINPLACE_CMD} -e 's|X11/Xft/Xft\.h|X11/Xft/Xft2.h|g' \
 		${WRKSRC}/gfx/src/gtk/nsDrawingSurfaceGTK.cpp \
-		${WRKSRC}/gfx/src/gtk/nsFontMetricsXft.h
+		${WRKSRC}/gfx/src/gtk/nsFontMetricsXft.h \
+		${WRKSRC}/gfx/src/gtk/nsDeviceContextGTK.cpp
 .endif
 	@${REINPLACE_CMD} -e 's|%%MOZILLA%%|${MOZILLA}|g' \
 		-e 's|%%HEADERS_SUFX%%|-devel|g' \
