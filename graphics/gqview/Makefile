@@ -7,6 +7,7 @@
 
 PORTNAME=	gqview
 PORTVERSION=	1.4.0
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,20 +17,20 @@ COMMENT=	Another gtk2-based graphic file viewer
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 
+CONFLICTS=	gqview-devel-*
+
 USE_X_PREFIX=	yes
-USE_GNOME=	gtk20
-USE_GETTEXT=	yes
-USE_ICONV=	yes
+USE_GNOME=	gnomehier gtk20
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib"
-
-CONFLICTS=	gqview-devel-1.3.*
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 MAN1=		gqview.1
 
-.if !defined(NOPORTDOCS)
 post-install:
+	${INSTALL_DATA} ${WRKSRC}/gqview.desktop ${PREFIX}/share/gnome/apps/Graphics
+	${INSTALL_DATA} ${WRKSRC}/gqview.png ${PREFIX}/share/gnome/pixmaps
+.if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
