@@ -7,6 +7,7 @@
 
 PORTNAME=	libnids
 PORTVERSION=	1.16
+PORTREVISION=	1
 CATEGORIES=	net security
 MASTER_SITES=	http://www.packetfactory.net/projects/libnids/dist/
 
