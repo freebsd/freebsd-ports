@@ -1,9 +1,9 @@
 # New ports collection makefile for:    xpilot
-# Version required:	3.6.1
+# Version required:	4.1.0
 # Date created:         18 July 1995
 # Whom:                 jmacd
 #
-# $Id: Makefile,v 1.15 1999/04/11 22:28:01 jseger Exp $
+# $Id: Makefile,v 1.16 1999/06/21 11:07:04 sheldonh Exp $
 #
 
 DISTNAME=       xpilot-4.1.0
