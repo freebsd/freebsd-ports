@@ -24,9 +24,6 @@ USE_GNOME=	gtk20
 IGNORE=	just makes a humming noise
 .endif
 
-DEPRECATED=	does not work on FreeBSD versions > 5.0
-EXPIRATION_DATE=	2005-02-17
-
 PLIST_FILES=	bin/nogger
 .ifndef(NOPORTDOCS)
 .for ii in COPYING README Thanks
