@@ -4,23 +4,59 @@ if [ "${LOCALBASE}a" = "a" ]; then
 	LOCALBASE=/usr/local
 fi
 
-JAVA_HOME=${LOCALBASE}/linux-jdk1.2.2
-ORION_HOME=${LOCALBASE}/orion
+NAME=orion
+ORION_HOME=${LOCALBASE}/orion1.4.5
 LOG=${ORION_HOME}/log/orion.log
 PID_FILE=/var/run/orion.pid
+JAR_FILE=${ORION_HOME}/orion.jar
+
+if [ "${JAVA_HOME}a" = "a" ]; then
+	JAVA_HOME=${LOCALBASE}/linux-jdk1.3.0
+fi
+JAVA_CMD=${JAVA_HOME}/bin/java
+
+# TODO: Check if we are being run at boot time right now
+
 
 case "$1" in
 	start)
-		if [ -r ${ORION_HOME}/orion.jar ]; then
-			rm -rf ${PID_FILE}
-			touch ${PID_FILE}
-			chown root:wheel ${PID_FILE}
-			chmod 600 ${PID_FILE}
-			echo -n ' orion'
-			( cd ${ORION_HOME} && ${JAVA_HOME}/bin/java -jar orion.jar & echo $! > ${PID_FILE} ) > ${LOG} 2>&1
+		# Make sure the Orion directory does exist
+		if [ ! -d ${ORION_HOME} ]; then
+			echo ""
+			echo "${NAME}: ERROR: Unable to find Orion home directory at ${ORION_HOME}."
+			exit 64
 		fi
+
+		# Make sure the Orion JAR file exists
+		if [ ! -r ${JAR_FILE} ]; then
+			echo ""
+			echo "${NAME}: ERROR: Unable to find Orion JAR file at ${JAR_FILE}."
+			exit 64
+		fi
+
+		# Make sure the Java VM can be found
+		if [ ! -x ${JAVA_CMD} ]; then
+			echo ""
+			echo "${NAME}: ERROR: Unable to find Java VM at ${JAVA_HOME}."
+			exit 64
+		fi
+
+		# Create the process ID file
+		rm -rf ${PID_FILE}
+		touch ${PID_FILE}
+		chown root:wheel ${PID_FILE}
+		chmod 600 ${PID_FILE}
+
+		echo -n ' orion'
+		( cd ${ORION_HOME} && ${JAVA_CMD} -jar orion.jar & echo $! > ${PID_FILE} ) > ${LOG} 2>&1
 		;;
 	stop)
+		if [ ! -e ${PID_FILE} ]; then
+			echo ""
+			echo "${NAME}: ERROR: Unable to find Orion PID file at ${PID_FILE}."
+			exit 64
+		fi
+
 		/bin/kill `cat ${PID_FILE}`
 		echo -n ' orion'
 		;;
