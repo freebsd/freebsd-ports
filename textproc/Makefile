@@ -325,6 +325,7 @@
     SUBDIR += rotix
     SUBDIR += rtf2htm
     SUBDIR += rtfreader
+    SUBDIR += rubber
     SUBDIR += ruby-amatch
     SUBDIR += ruby-amrita
     SUBDIR += ruby-csv
