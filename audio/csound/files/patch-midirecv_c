@@ -1,0 +1,11 @@
+--- midirecv.c.orig	Fri Aug 18 19:09:11 2000
++++ midirecv.c	Wed Oct 11 16:00:18 2000
+@@ -3,6 +3,8 @@
+ #include "midiops.h"
+ #include "oload.h"
+ 
++#include <sys/ioctl_compat.h>
++#undef SGI
+ #ifdef SGI
+ #    include <sys/termio.h>
+ #    include <sys/stropts.h>
