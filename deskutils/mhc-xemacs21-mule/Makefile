@@ -5,8 +5,8 @@
 # $FreeBSD$
 #
 
-MASTERDIR=	${.CURDIR}/../../deskutils/mhc-emacs20
-MAINTAINER=	yoichi@eken.phys.nagoya-u.ac.jp
+MASTERDIR=	${.CURDIR}/../../deskutils/mhc
+MAINTAINER=	yoichi@FreeBSD.org
 
 EMACS_PORT_NAME=	xemacs21-mule
 
