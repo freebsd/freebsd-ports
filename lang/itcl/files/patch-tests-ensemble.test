@@ -1,0 +1,11 @@
+--- tests/ensemble.test.orig	Fri Oct 24 20:00:39 2003
++++ tests/ensemble.test	Fri Oct 24 20:00:53 2003
+@@ -46,7 +46,7 @@
+
+ test ensemble-1.5 {invoking parts with improper arguments} {
+     list [catch "test_numbers three x" msg] $msg
+-} {1 {no value given for parameter "y" to "test_numbers three"}}
++} {1 {wrong # args: should be "test_numbers three x y z"}}
+
+ test ensemble-1.6 {errors trigger a usage summary} {
+     list [catch "test_numbers foo x y" msg] $msg
