@@ -1,0 +1,247 @@
+This is a first port of kphone 2.1 from Linux to FreeBSD and NetBSD (as
+of 28/11/2002)
+
+Get the original sources for kphone 2.1 from
+http://www.wirlab.net/kphone/kphone-2.1.tgz
+
+use patch -l to apply the patch (ignoring whitespaces)
+
+FreeBSD:
+To configure I used
+
+setenv LIBQT "-pthread -lqt-mt"
+
+./configure --with-qt-libraries=/usr/X11R6/lib --with-extra-libs=/usr/local/lib
+--prefix=/usr/local
+
+then in kphone/Makefile change -lpthread into -phread in kphone_LDADD.
+
+NetBSD:
+
+setenv LIBQT="-lqt-mt"
+
+./configure --prefix=/usr/local --with-qt-dir=/usr/X11R6/qt3 --with-extra-libs=/usr/pkg/lib --with-extra-includes=/usr/pkg/include
+
+then in kphone/Makefile add -lossaudio to kphone_LDADD.
+
+On both platforms use gmake.
+
+Please send feedback to Georg Schwarz (geos@epost.de). Thanks.
+Your response is appreciated.
+
+
+*** kphone-2.1.orig/./kphone/dspoutoss.h	Tue Apr 16 11:38:27 2002
+--- kphone-2.1/./kphone/dspoutoss.h	Wed Nov 27 21:05:03 2002
+***************
+*** 1,7 ****
+--- 1,11 ----
+  #ifndef DSPOUTOSS_H_INCLUDED
+  #define DSPOUTOSS_H_INCLUDED
+  
++ #ifdef __NetBSD__
++ #include <soundcard.h>
++ #else 
+  #include <sys/soundcard.h>
++ #endif
+  #include <dspout.h>
+  
+  /**
+*** kphone-2.1.orig/./dissipate2/messagesocket.h	Tue Sep  3 10:31:48 2002
+--- kphone-2.1/./dissipate2/messagesocket.h	Sat Nov 23 23:34:57 2002
+***************
+*** 26,31 ****
+--- 26,35 ----
+  #define MESSAGESOCKET_H_INCLUDED
+  
+  #include <netdb.h>
++ #ifdef __FreeBSD__
++ #include <sys/types.h>
++ #include <netinet/in_systm.h>
++ #endif
+  #include <netinet/in.h>
+  
+  /**
+*** kphone-2.1.orig/./dissipate2/sipprotocol.cpp	Tue Aug 27 14:01:34 2002
+--- kphone-2.1/./dissipate2/sipprotocol.cpp	Sat Nov 23 23:22:55 2002
+***************
+*** 8,13 ****
+--- 8,16 ----
+  #include <stdio.h>
+  #include <stdlib.h>
+  #include <siputil.h>
++ #ifdef __FreeBSD__
++ #include <sys/types.h>
++ #endif
+  #include <extern_md5.h>
+  #include <base64.h>
+  #include <sipprotocol.h>
+*** kphone-2.1.orig/./dissipate2/siputil.cpp	Tue Apr 16 13:33:37 2002
+--- kphone-2.1/./dissipate2/siputil.cpp	Wed Nov 27 19:46:09 2002
+***************
+*** 3,10 ****
+--- 3,19 ----
+  #include <sys/utsname.h>
+  #include <sys/socket.h>
+  #include <sys/time.h>
++ #ifdef __NetBSD__
++ #include <errno.h>
++ #else
+  #include <sys/errno.h>
++ #endif
++ #ifdef __linux__
+  #include <features.h>
++ #endif
++ #if defined(__FreeBSD__) || defined(__NetBSD__)
++ #include <ifaddrs.h>
++ #endif
+  #include <net/if_arp.h>
+  #include <net/route.h>
+  #include <sys/ioctl.h>
+***************
+*** 26,31 ****
+--- 35,42 ----
+  /* max number of network interfaces*/
+  #define MAX_IF 5
+  
++ #ifdef __linux__
++ 
+  /* Path to the route entry in proc filesystem */
+  #define PROCROUTE "/proc/net/route"
+  
+***************
+*** 41,46 ****
+--- 52,59 ----
+  #define SIOCGIFCOUNT 0x8935
+  #endif
+  
++ #endif /* not Linux */
++ 
+  char iface[16];
+  
+  
+***************
+*** 62,67 ****
+--- 75,82 ----
+   */
+  char *getdefaultdev()
+  {
++ #ifdef __linux__
++ 
+          FILE *fp = fopen( PROCROUTE, "r");
+          char buff[4096], gate_addr[128], net_addr[128];
+          char mask_addr[128];
+***************
+*** 85,90 ****
+--- 100,107 ----
+                          return iface;
+          }
+          fclose(fp);
++ #endif /* Linux */
++ 
+  /* didn't find a default gateway */
+          return NULL;
+  }
+***************
+*** 92,103 ****
+  
+  void findFqdn( void )
+  {
+!         int sock, err, if_count, i, j = 0;
+          struct ifconf netconf;
+          char buffer[32*MAX_IF];
+!         char if_name[10][21];
+!         char if_addr[10][21];
+          char *default_ifName;
+          netconf.ifc_len = 32 * MAX_IF;
+          netconf.ifc_buf = buffer;
+          sock=socket( PF_INET, SOCK_DGRAM, 0 );
+--- 109,146 ----
+  
+  void findFqdn( void )
+  {
+!         int if_count, i, j = 0;
+! #if !(defined(__FreeBSD__) || defined(__NetBSD__))
+!         int sock, err;
+          struct ifconf netconf;
+          char buffer[32*MAX_IF];
+! #endif
+!         char if_name[MAX_IF][21];
+!         char if_addr[MAX_IF][21];
+          char *default_ifName;
++ #if defined(__FreeBSD__) || defined(__NetBSD__)
++         struct ifaddrs *ifp, *oifp;
++         
++         if(getifaddrs(&ifp) < 0 )
++                 printf( "Error with getifaddrs(): %i.\n", errno );
++         oifp=ifp; /* save ifp */
++         for (if_count = 0; ifp != NULL; ifp = ifp->ifa_next) {
++                 if(ifp->ifa_addr->sa_family != AF_INET) continue;
++ 
++         if ( strncmp( ifp->ifa_name, "lo", 2 ) != 0 ) {
++                 if(j == MAX_IF) printf( "Error: cannot handle more than %d interfaces.\n",MAX_IF);
++                 else
++                 {
++                         strncpy( if_name[j], ifp->ifa_name, 20);
++                         strncpy( if_addr[j], inet_ntoa(((struct sockaddr_in *)ifp->ifa_addr)->sin_addr ), 20);
++                         j++;
++                 }
++                 }
++         if_count++;
++         }
++         if (oifp != NULL) freeifaddrs(oifp);
++ 
++ #else /* not FreeBSD or NetBSD */
+          netconf.ifc_len = 32 * MAX_IF;
+          netconf.ifc_buf = buffer;
+          sock=socket( PF_INET, SOCK_DGRAM, 0 );
+***************
+*** 105,118 ****
+--- 148,169 ----
+          if ( err < 0 ) printf( "Error in ioctl: %i.\n", errno );
+          close( sock );
+          if_count = netconf.ifc_len / 32;
++ #endif
+          printf( "Found %i interfaces.\n", if_count );
++ #if !(defined(__FreeBSD__) || defined(__NetBSD__))
+          for( i = 0; i < if_count; i++ ) {
+                  if( strcmp( netconf.ifc_req[i].ifr_name, "lo" ) != 0 ) {
++                         if(j == MAX_IF) printf( "Error: cannot handle more than %d interfaces.\n",MAX_IF);
++                         else
++                         {
+                                  strncpy( if_name[j], netconf.ifc_req[i].ifr_name, 20 );
+                                  strncpy( if_addr[j], inet_ntoa(((struct sockaddr_in*)(&netconf.ifc_req[i].ifr_addr))->sin_addr), 20 );
+                                  j++;
+                          }
+                  }
++         }
++ #endif /* not FreeBSD or NetBSD */
++ 
+          if( j == 1 ) {
+                  dissipate_our_fqdn = strdup( if_addr[0] );
+          } else {
+*** kphone-2.1.orig/./dissipate2/udpmessagesocket.cpp	Tue Sep 10 08:10:26 2002
+--- kphone-2.1/./dissipate2/udpmessagesocket.cpp	Wed Nov 27 19:13:41 2002
+***************
+*** 1,5 ****
+--- 1,9 ----
+  #include <sys/types.h>
+  #include <sys/socket.h>
++ #if defined(__FreeBSD__) || defined(__NetBSD__)
++ #include <netinet/in_systm.h>
++ #include <netinet/in.h>
++ #endif
+  #include <netinet/ip.h>
+  #include <errno.h>
+  #include <string.h>
+***************
+*** 9,14 ****
+--- 13,21 ----
+  #include <strings.h>
+  #include <udpmessagesocket.h>
+  
++ #ifndef SOL_IP
++ #define SOL_IP SOL_SOCKET
++ #endif
+  
+  UDPMessageSocket::UDPMessageSocket( void )
+  {
