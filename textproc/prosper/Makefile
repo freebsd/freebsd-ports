@@ -7,6 +7,7 @@
 
 PORTNAME=	prosper
 PORTVERSION=	1.00.4
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,8 +18,7 @@ MAINTAINER=	thierry@pompo.net
 
 BUILD_DEPENDS=	mktexlsr:${PORTSDIR}/print/teTeX
 RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX \
-		ps2pdf:${PORTSDIR}/print/ghostscript-gnu \
-		acroread4:${PORTSDIR}/print/acroread4
+		ps2pdf:${PORTSDIR}/print/ghostscript-gnu
 
 NO_BUILD=	yes
 
