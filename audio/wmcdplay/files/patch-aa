@@ -1,5 +1,5 @@
---- cdctl.h.orig	Sun Dec 13 12:43:20 1998
-+++ cdctl.h	Sun Dec 13 12:43:20 1998
+--- cdctl.h.orig	Sat Sep  5 11:11:26 1998
++++ cdctl.h	Thu Nov 25 17:35:34 1999
 @@ -30,7 +30,8 @@
  #include <sys/stat.h>
  #include <fcntl.h>
@@ -52,7 +52,7 @@
               status_state=ssNoCD;
            break;
           }
-@@ -172,9 +173,13 @@
+@@ -172,9 +173,14 @@
     }
     void doStatus(){
        if(cdfdopen){
@@ -62,14 +62,15 @@
 +         struct ioc_read_subchannel sc;
 +         struct cd_sub_channel_info csci;
 +         sc.address_format=CD_MSF_FORMAT;
++         sc.track = 0;
 +         sc.data=&csci;
 +         sc.data_len=sizeof(csci);
-+         sc.data_format=CD_MEDIA_CATALOG;
++         sc.data_format=CD_CURRENT_POSITION;
 +         if(ioctl(cdfd, CDIOCREADSUBCHANNEL, &sc)){
              if(status_state!=ssNoCD)
                 status_state=ssTrayOpen;
  	    status_track=0;
-@@ -185,18 +190,18 @@
+@@ -185,18 +191,18 @@
              if(status_state==ssNoCD || status_state==ssTrayOpen)
  	       readTOC();
              int start,now,stop;
@@ -92,7 +93,7 @@
  	        if(tskOurPlay){
                     status_state=ssPlaying;
  	           selecttrack();
-@@ -212,7 +217,7 @@
+@@ -212,7 +218,7 @@
                  if(tskOurPlay){
                     start = cd_trklist[status_track].track_start;
                     stop = start + cd_trklist[status_track].track_len - _CDCTL_SENSITIVITY;
@@ -101,7 +102,7 @@
  	           if(now>0 && (now<start || now>=stop)){
                        status_state=ssPlaying;
                        selecttrack();
-@@ -227,7 +232,7 @@
+@@ -227,7 +233,7 @@
  
                     status_state=ssStopped;
              }
@@ -110,7 +111,7 @@
              if(cd_trklist[status_track].track_data)
                 status_state=ssData;
           }
-@@ -235,19 +240,21 @@
+@@ -235,19 +241,21 @@
     }
     void setVolume(int l, int r){
        if(cdfdopen){
@@ -140,7 +141,7 @@
        }
     }
     int getVolumeL(){
-@@ -296,12 +303,30 @@
+@@ -296,12 +304,30 @@
     void readTOC(){
        if(cd_trklist!=NULL)
           free(cd_trklist);
@@ -174,7 +175,7 @@
        for(int i=0;i<=cd_tracks;i++){
           if(i==cd_tracks)
              te.cdte_track=CDROM_LEADOUT;
-@@ -320,10 +345,11 @@
+@@ -320,10 +346,11 @@
           else
              cd_len = this_addr;
        }
@@ -188,7 +189,7 @@
           for(status_track=0;status_track<cd_tracks;status_track++){
              if(status_pos<cd_trklist[status_track].track_start+cd_trklist[status_track].track_len)
                 break;
-@@ -331,24 +357,24 @@
+@@ -331,24 +358,24 @@
        }
     }
     void play(){
@@ -223,7 +224,7 @@
     }
     void select(int trk){
        status_track=trk;
-@@ -357,10 +383,10 @@
+@@ -357,10 +384,10 @@
           if(cd_trklist[status_track].track_data){
  
               #ifdef _CDCTL_HARD_STOP
