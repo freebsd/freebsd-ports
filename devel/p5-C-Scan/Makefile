@@ -3,7 +3,7 @@
 # Date created:				October 20th 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#   $Id: Makefile,v 1.1.1.1 1996/10/24 07:55:29 jfitz Exp $
+#   $Id: Makefile,v 1.2 1996/10/24 09:57:55 jfitz Exp $
 #
 
 DISTNAME=	C-Scan-0.3
@@ -19,7 +19,7 @@ MASTER_SITES=	ftp://ftp.digital.com/pub/plan/perl/CPAN/modules/by-module/C/ \
 MAINTAINER=	jfitz@FreeBSD.ORG
 
 BUILD_DEPENDS= 	perl5.003:${PORTSDIR}/lang/perl5 \
-		${PREFIX}/lib/perl5/site_perl/Data/Flow.pm:${PORTSDIR}/perl5/Data-Flow
+		${PREFIX}/lib/perl5/site_perl/Data/Flow.pm:${PORTSDIR}/perl5/p5-Data-Flow
 RUN_DEPENDS=	perl5.003:${PORTSDIR}/lang/perl5
 
 do-configure:
