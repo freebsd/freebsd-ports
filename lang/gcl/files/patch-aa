@@ -1,0 +1,21 @@
+--- info/gcl-si.texi.orig	Wed Mar  8 18:08:53 1995
++++ info/gcl-si.texi	Sun Oct 12 17:14:04 1997
+@@ -9,7 +9,6 @@
+ @c ! unbalanced parens in @def arguments.
+ @c ignore these by using 's' to scroll error messages in tex.
+ 
+-
+ @c @smallbook
+ @setfilename gcl-si.info
+ @synindex vr fn
+@@ -21,6 +20,10 @@
+ 
+ @setchapternewpage odd
+ @ifinfo
++@dircategory GNU Common Lisp
++@direntry
++* GCL Systems Internals: (gcl-si).	GCL SYSTEM INTERNALS Manual
++@end direntry
+ This is a Texinfo GCL SYSTEM INTERNALS Manual
+ 
+ Copyright 1994 William F. Schelter
