@@ -14,7 +14,7 @@ echo "browser langenus regus xpcom" > /tmp/checklist.tmp.$$;
 /usr/bin/dialog --title "Mozilla component selection" --clear \
 	--checklist "\n\
 Choose which components of Mozilla to download and install. \n\
-Press the space bar to toggle selections." -1 -1 7 \
+Press the space bar to toggle selections." -1 -1 6 \
 "deflenus"	"American English profile defaults (8 kB)"		ON \
 "inspector"	"DOM inspector (240 kB)"				ON \
 "mail"		"Mozilla Mail and News (1824 kB)"			ON \
