@@ -72,6 +72,7 @@ share/gnome/pixmaps/gedit-plugin-manager.png
 share/gnome/pixmaps/shell-output-logo.png
 share/locale/ar/LC_MESSAGES/gedit-2.0.mo
 share/locale/az/LC_MESSAGES/gedit-2.0.mo
+share/locale/be/LC_MESSAGES/gedit-2.0.mo
 share/locale/bg/LC_MESSAGES/gedit-2.0.mo
 share/locale/ca/LC_MESSAGES/gedit-2.0.mo
 share/locale/cs/LC_MESSAGES/gedit-2.0.mo

@@ -686,7 +686,9 @@ share/gnome/xbill/pixmaps/suse.xpm
 share/gnome/xbill/pixmaps/toaster.xpm
 share/gnome/xbill/pixmaps/turbolinux.xpm
 share/gnome/xbill/pixmaps/wingdows.xpm
+share/locale/am/LC_MESSAGES/gnome-games.mo
 share/locale/ar/LC_MESSAGES/gnome-games.mo
+share/locale/be/LC_MESSAGES/gnome-games.mo
 share/locale/bg/LC_MESSAGES/gnome-games.mo
 share/locale/ca/LC_MESSAGES/gnome-games.mo
 share/locale/cs/LC_MESSAGES/gnome-games.mo
