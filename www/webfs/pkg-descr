@@ -1,0 +1,23 @@
+This is a simple http server for purely static content.  You can
+use it to serve the content of a ftp server via http for example.
+It is also nice to export some files quickly by starting an http
+server in a few seconds without editing a config file first.
+
+Features/Design:
+================
+ * single process: select() + non-blocking I/O
+ * automatically generates directory listings when asked for a
+   directory (check for index.html available as option), caches
+   the listings.
+ * no config file, just a few switches.  Try "webfsd -h" for a
+   list.
+ * Uses ${PREFIX}/etc/webfsd/mime.types to map file extentions
+   to mime/types (not included).
+ * supports keep-alive and pipelined requests.
+ * serves byte ranges.
+ * optional logging in common log file format.
+
+WWW: http://www.IN-Berlin.DE/User/kraxel/webfs.html
+
+- Chris D. Faulhaber
+jedgar@fxp.org
