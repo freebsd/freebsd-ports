@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnomelibs
-PORTVERSION= 	1.2.7
+PORTVERSION= 	1.2.8
 CATEGORIES=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/gnome-libs

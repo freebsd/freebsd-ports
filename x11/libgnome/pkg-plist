@@ -159,6 +159,7 @@ include/libgnomeui/gnome-stock.h
 include/libgnomeui/gnome-types.h
 include/libgnomeui/gnome-uidefs.h
 include/libgnomeui/gnome-window-icon.h
+include/libgnomeui/gnome-window.h
 include/libgnomeui/gnome-winhints.h
 include/libgnomeui/gnometypebuiltins.h
 include/libgnomeui/gtk-clock.h
