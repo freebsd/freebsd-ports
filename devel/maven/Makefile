@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	maven
-PORTVERSION=	1.0.r2
+PORTVERSION=	1.0
 CATEGORIES=	devel java
-MASTER_SITES=	http://nagoya.apache.org/mirror/%SUBDIR%/binaries/
-MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	${PORTNAME}-1.0-rc2
+MASTER_SITES=	${MASTER_SITE_APACHE}
+MASTER_SITE_SUBDIR=	${PORTNAME}/binaries
 
 MAINTAINER=	rui@ruilopes.com
 COMMENT=	Java project management and project comprehension tool
@@ -19,24 +18,26 @@ USE_BZIP2=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.3+
 NO_BUILD=	YES
-DIR=		share/java/maven
-PLIST_SUB=	DIR=${DIR}
+DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 post-configure:
-	@${SED} -e 's,%%PREFIX%%,${PREFIX},g' \
-		-e 's,%%DIR%%,${DIR},g' pkg-message > ${PKGMESSAGE}
+	@${SED} -e 's,%%DATADIR%%,${DATADIR},g' pkg-message > ${PKGMESSAGE}
 
+BINFILES=	install_repo.sh maven
+DIRECTORIES=	lib lib/endorsed plugins
 do-install:
-	@cd ${WRKSRC} && ${FIND} . \! -name '*.bat' \! -name repository \
-		| ${CPIO} -pduv -R ${LIBOWN}:${LIBGRP} ${PREFIX}/${DIR}
-	${CHMOD} -R ${LIBMODE} ${PREFIX}/${DIR}
-	${CHOWN} -R ${BINOWN}:${BINGRP} ${PREFIX}/${DIR}/bin
-	${CHMOD} -R ${BINMODE} ${PREFIX}/${DIR}/bin
-	${CHOWN} ${SHAREOWN}:${SHAREGRP} ${PREFIX}/${DIR}/bin/*.conf
-	${CHMOD} ${SHAREMODE} ${PREFIX}/${DIR}/bin/*.conf
-	${FIND} ${PREFIX}/${DIR} -type d | ${XARGS} ${CHMOD} +rx
-	${LN} -fs ${PREFIX}/${DIR}/bin/maven ${PREFIX}/bin
+	${MKDIR} ${DATADIR}/bin
+.for file in ${BINFILES}
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/${file} ${DATADIR}/bin
+.endfor
+	${LN} -fs ${DATADIR}/bin/maven ${PREFIX}/bin
+	${INSTALL_DATA} ${WRKSRC}/bin/forehead.conf ${DATADIR}/bin
+	${INSTALL_DATA} ${WRKSRC}/*.xsd ${DATADIR}
+.for dir in ${DIRECTORIES}
+	${MKDIR} ${DATADIR}/${dir}
+	${INSTALL_DATA} ${WRKSRC}/${dir}/*.jar ${DATADIR}/${dir}
+.endfor
 
 post-install:
 .if !defined(BATCH)
@@ -45,6 +46,6 @@ post-install:
 
 # This target is only meant to be used by the port maintainer.
 x-generate-plist:
-	(/usr/ports/Tools/scripts/plist -d -m /etc/mtree/BSD.local.dist ${PREFIX}|sed -E 's,^share/nls/.+$$,,g;s,${DIR},%%DIR%%,g'|tr -s '\n') > temp-pkg-plist
+	(${PORTSDIR}/Tools/scripts/plist -d -m ${MTREE_FILE} ${PREFIX}|${SED} -E 's,.*share/nls/.+$$,,g;s,${DATADIR:S,^${PREFIX}/,,},%%DATADIR%%,g'|${TR} -s '\n') > temp-pkg-plist
 
 .include <bsd.port.mk>
