@@ -1,6 +1,6 @@
---- linuxx86/hinst.orig	Wed Sep  5 16:47:26 2001
-+++ linuxx86/hinst	Tue Jan 22 00:15:59 2002
-@@ -1965,10 +1965,31 @@
+--- linuxx86/hinst.orig	Wed Aug 22 14:52:20 2001
++++ linuxx86/hinst	Tue Jan 22 11:15:58 2002
+@@ -1961,10 +1961,32 @@
  #
  ###############################################################################
  
@@ -10,6 +10,7 @@
 +	\(SYSV\),)
 +		NETSCAPE_DIR="$1"
 +		PLUGIN_PATH="$s/plugins"
++		FOUND_NS="TRUE"
 +	esac
 +}
 +
@@ -34,3 +35,32 @@
  PLUGIN_NAME=npica.so
  PLUGIN_CLASS=ICAClObj.class
  
+@@ -2004,14 +2026,12 @@
+   $ECHO_CMD $integrate_netscape1
+   search_ok=0
+   
+-  if (test -d "/usr/lib/netscape"\
+-   || test -d "/usr/local/netscape"\
+-   || test -d "/opt/netscape"\
+-   || test -d "/usr/local/lib/netscape")
+-  then
++  case ${FOUND_NS} in
++  TRUE)
+   	$ECHO_CMD $integrate_netscape3
+   	found_netscape 
+-  else
++	;;
++  *) 
+ 	echo_no_nl $integrate_netscape2
+  	getyesno $INSTALLER_NO
+ 	if [ "$ANSWER" = "$INSTALLER_YES" ]
+@@ -2020,7 +2040,8 @@
+ 	else
+   		$ECHO_CMD $integrate_netscape6
+ 	fi
+-  fi;
++	;;
++  esac;
+ }
+ 
+ ################################################################################
