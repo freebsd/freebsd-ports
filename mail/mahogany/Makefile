@@ -21,6 +21,7 @@ BUILD_DEPENDS+=		swig:${PORTSDIR}/devel/swig11
 BUILD_DEPENDS+=		latex2html:${PORTSDIR}/textproc/latex2html
 .endif
 
+USE_PYTHON=		yes
 PYTHON_VERSION=		python1.5
 USE_AUTOCONF_VER=	213
 USE_GMAKE=		yes

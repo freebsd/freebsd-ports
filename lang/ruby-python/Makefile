@@ -19,6 +19,7 @@ COMMENT=	Ruby extension library for embedding Python in Ruby
 
 BUILD_DEPENDS=	${NONEXISTENT}:${PYTHON_PORTSDIR}:-DWITHOUT_THREADS
 
+USE_PYTHON=	yes
 PYTHON_VERSION?=	python1.5
 
 USE_RUBY=	yes
