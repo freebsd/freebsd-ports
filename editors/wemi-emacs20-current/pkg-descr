@@ -30,7 +30,7 @@ WEMI, Library of MIME feature for GNU Emacs for emacs20.
   MUAs.  They are released as separated packages.
 
   WEMI is installed the following directory tree:
-	${PREFIX}/share/emacs/site-lisp/semi/	--- WEMI
+	${LOCALBASE}/share/emacs/site-lisp/semi/	--- WEMI
 
 *** Caution!! ***
 
