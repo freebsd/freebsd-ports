@@ -139,8 +139,6 @@ ask_distrib FreeBSD.cvs /home/ncvs . \
     "main source tree, except crypto code"
 ask_distrib FreeBSD-crypto.cvs /home/ncvs . \
     "crypto code"
-ask_distrib FreeBSD-crypto-rsa.cvs /home/ncvs . \
-    "crypto RSA code"
 ask_distrib FreeBSD-www.current /usr/local/www . \
     "installed World Wide Web data"
 ask_distrib FreeBSD-gnats.current /home/gnats gnats \
