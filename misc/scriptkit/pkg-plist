@@ -6,6 +6,4 @@ include/ScriptKit/SKInterpreter.h
 include/ScriptKit/SKScript.h
 include/ScriptKit/ScriptKit.h
 lib/libsk.a
-@exec /sbin/ldconfig -m %B
-@unexec /sbin/ldconfig -R
 @dirrm include/ScriptKit
