@@ -90,6 +90,16 @@ System/Library/ProjectCenter/PCToolProj.bundle/Resources/Info-project.plist
 System/Library/ProjectCenter/PCToolProj.bundle/Resources/Info.plist
 System/Library/ProjectCenter/PCToolProj.bundle/Resources/PC.proj
 System/Library/ProjectCenter/PCToolProj.bundle/Resources/main.m
+Local/Library/ProjectCenter/PCGormProj.bundle/Contents/Info.plist
+Local/Library/ProjectCenter/PCGormProj.bundle/Contents/Resources
+Local/Library/ProjectCenter/PCGormProj.bundle/Resources/Info-gnustep.plist
+Local/Library/ProjectCenter/PCGormProj.bundle/Resources/Info-project.plist
+Local/Library/ProjectCenter/PCGormProj.bundle/Resources/Info.plist
+Local/Library/ProjectCenter/PCGormProj.bundle/Resources/PC.proj
+Local/Library/ProjectCenter/PCGormProj.bundle/Resources/baseInterface.classes
+Local/Library/ProjectCenter/PCGormProj.bundle/Resources/baseInterface.gorm
+Local/Library/ProjectCenter/PCGormProj.bundle/Resources/main.m
+Local/Library/ProjectCenter/PCGormProj.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/PCGormProj
 @dirrm System/Library/ProjectCenter/PCToolProj.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
 @dirrm System/Library/ProjectCenter/PCToolProj.bundle/%%GNU_ARCH%%/%%OPSYS%%
 @dirrm System/Library/ProjectCenter/PCToolProj.bundle/%%GNU_ARCH%%
@@ -127,6 +137,12 @@ System/Library/ProjectCenter/PCToolProj.bundle/Resources/main.m
 @dirrm System/Applications/ProjectCenter.app/%%GNU_ARCH%%
 @dirrm System/Applications/ProjectCenter.app/Resources
 @dirrm System/Applications/ProjectCenter.app
+@dirrm Local/Library/ProjectCenter/PCGormProj.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
+@dirrm Local/Library/ProjectCenter/PCGormProj.bundle/%%GNU_ARCH%%/%%OPSYS%%
+@dirrm Local/Library/ProjectCenter/PCGormProj.bundle/%%GNU_ARCH%%
+@dirrm Local/Library/ProjectCenter/PCGormProj.bundle/Resources
+@dirrm Local/Library/ProjectCenter/PCGormProj.bundle/Contents
+@dirrm Local/Library/ProjectCenter/PCGormProj.bundle
 @unexec rmdir %D/System/Library 2>/dev/null || true
 @unexec rmdir %D/System/Libraries 2>/dev/null || true
 @unexec rmdir %D/System/Headers 2>/dev/null || true
