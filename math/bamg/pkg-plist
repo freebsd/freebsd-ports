@@ -1,0 +1,34 @@
+bin/bamg
+bin/bamg-g
+bin/cvmsh2
+bin/drawbdmesh
+%%PORTDOCS%%%%DOCSDIR%%/bamg.ps.gz
+%%PORTDOCS%%%%EXAMPLESDIR%%/NACA012/ad.sh
+%%PORTDOCS%%%%EXAMPLESDIR%%/NACA012/adap.sh
+%%PORTDOCS%%%%EXAMPLESDIR%%/NACA012/adap.sh-g
+%%PORTDOCS%%%%EXAMPLESDIR%%/NACA012/data
+%%PORTDOCS%%%%EXAMPLESDIR%%/NACA012/data-orign
+%%PORTDOCS%%%%EXAMPLESDIR%%/NACA012/naca.awk
+%%PORTDOCS%%%%EXAMPLESDIR%%/NACA012/plot.fv
+%%PORTDOCS%%%%EXAMPLESDIR%%/NACA012/plot.fv-1
+%%PORTDOCS%%%%EXAMPLESDIR%%/quadloop/dotest.pl
+%%PORTDOCS%%%%EXAMPLESDIR%%/square/circle_g.msh
+%%PORTDOCS%%%%EXAMPLESDIR%%/square/doadapt
+%%PORTDOCS%%%%EXAMPLESDIR%%/square/dotest
+%%PORTDOCS%%%%EXAMPLESDIR%%/square/l_g.msh
+%%PORTDOCS%%%%EXAMPLESDIR%%/square/octogone_g.msh
+%%PORTDOCS%%%%EXAMPLESDIR%%/square/square_g.msh
+%%PORTDOCS%%%%EXAMPLESDIR%%/square/square_raf_ani_g.mtr
+%%PORTDOCS%%%%EXAMPLESDIR%%/square/square_raf_g.msh
+%%PORTDOCS%%%%EXAMPLESDIR%%/square/square_raf_g.mtr
+%%PORTDOCS%%%%EXAMPLESDIR%%/test/dotest-o.pl
+%%PORTDOCS%%%%EXAMPLESDIR%%/test/dotest.pl
+%%PORTDOCS%%%%EXAMPLESDIR%%/test/dotest1.pl
+%%PORTDOCS%%%%EXAMPLESDIR%%/test/dotest2.pl
+%%PORTDOCS%%%%EXAMPLESDIR%%/test/dotest3.pl
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/NACA012
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/quadloop
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/square
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/test
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%

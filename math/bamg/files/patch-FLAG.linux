@@ -1,0 +1,23 @@
+--- FLAG.linux.orig	Fri May 29 18:33:51 1998
++++ FLAG.linux	Fri Dec 19 11:24:28 2003
+@@ -1,12 +1,11 @@
+-CXX=g++
+ longlong = -DLONGLONG
+-O =   -O $(longlong) 
+-G = -g  $(longlong) 
+-CXXFLAGS= $(O) 
+-CXXGRAPHIC =  -I/usr/include/X11R6  -DDRAWING   -DDEBUG 
++O =   $(longlong) 
++G =
++CXXFLAGS+= $(O) 
++CXXGRAPHIC = $(CXXFLAGS) -I$(X11BASE)/include -DDRAWING -DDEBUG 
+ CXXLINKFLAG =  
+-X11LIB = -L/usr/lib/X11R6 -L/usr/X11R6/lib    -lX11
+-X11INCLUDE= -I/usr/include/X11R6
++X11LIB = -L$(X11BASE)/lib -lX11
++X11INCLUDE= -I$(X11BASE)/include
+ STDLIB = 
+-F77FLAGS = 
+-F77 = f77
++F77FLAGS = $(FFLAGS)
++F77 = $(F77)
