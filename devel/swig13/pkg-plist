@@ -1,4 +1,5 @@
 bin/swig
+bin/swig%%VER%%
 lib/libswigpl.a
 lib/libswigpl.la
 lib/libswigpl.so
