@@ -35,7 +35,7 @@ post-install:
 	@${ECHO_CMD} "ORBIIOPIPv4=0" > ${PREFIX}/etc/orbit2rc.default
 	@${ECHO_CMD} "ORBIIOPIPv6=0" >> ${PREFIX}/etc/orbit2rc.default
 	@if [ ! -f ${PREFIX}/etc/orbit2rc ]; then \
-		${CP} -p ${PREFIX}/etc/orbitrc.default ${PREFIX}/etc/orbit2rc ; \
+		${CP} -p ${PREFIX}/etc/orbit2rc.default ${PREFIX}/etc/orbit2rc ; \
 	fi
 
 .include <bsd.port.mk>
