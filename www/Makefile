@@ -292,6 +292,7 @@
     SUBDIR += p5-libwww
     SUBDIR += peacock
     SUBDIR += pgdriver
+    SUBDIR += php-templates
     SUBDIR += phpnuke
     SUBDIR += plugger
     SUBDIR += pruby
