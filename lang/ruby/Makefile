@@ -58,6 +58,8 @@ PLIST_SUB+=	IF_DEFAULT=${IF_DEFAULT} \
 IRB_WITHOUT_SUFFIX=	${LOCALBASE}/bin/irb
 IRB_WITH_SUFFIX=	${IRB_WITHOUT_SUFFIX}${_RUBY_SUFFIX}
 
+OBSOLETED_MODULES=	sha1 shell syslog timex urb uri
+
 post-patch:
 	find ${WRKSRC} -name '*.orig' -delete
 .for d in Win32API
@@ -132,6 +134,17 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/ext/syslog/syslog.txt ${RUBY_DOCDIR}/syslog
 	${CP} -R ${WRKSRC}/doc/* ${RUBY_DOCDIR}/
 .endif
+	@${ECHO} "Deinstalling obsoleted packages that are now part of ruby..."
+	@cd ${PKG_DBDIR}; for portname in ${OBSOLETED_MODULES}; do \
+		for pkg in ${RUBY_PKGNAMEPREFIX}$$portname-*; do \
+			if [ -d $$pkg ]; then \
+				${ECHO} "---> $$pkg"; \
+				${PKG_DELETE} -f $$pkg; \
+			fi; \
+		done; \
+	done
+	@${ECHO_CMD} "@exec ${ECHO_CMD} \"Deinstalling obsoleted packages that are now part of ruby...\"" >> ${TMPPLIST}
+	@${ECHO_CMD} "@exec cd ${PKG_DBDIR} && for portname in ${OBSOLETED_MODULES}; do for pkg in ${RUBY_PKGNAMEPREFIX}\$$portname-*; do if [ -d \$$pkg ]; then ${ECHO_CMD} \"---> \$$pkg\"; ${PKG_DELETE} -f \$$pkg; fi; done; done" >> ${TMPPLIST}
 	@${CAT} ${PKGMESSAGE}
 
 test:
