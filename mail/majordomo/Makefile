@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	majordomo
-PORTVERSION= 	1.94.4
+PORTVERSION= 	1.94.5
 CATEGORIES=	mail
-MASTER_SITES=	ftp://ftp.sgi.com/other/majordomo/1.94.4/ \
-		ftp://ftp-europe.sgi.com/other/majordomo/1.94.4/
-#		ftp://ftp.greatcircle.com/pub/majordomo/1.94.3/ \
+MASTER_SITES=	ftp://ftp.greatcircle.com/pub/majordomo/1.94.5/ \
+		ftp://ftp.sgi.com/other/majordomo/1.94.5/
 EXTRACT_SUFX=   .tgz
 
 MAINTAINER=	jfitz@FreeBSD.org
@@ -69,9 +68,9 @@ post-install:
 		@ ${CHMOD} 660 ${PREFIX}/majordomo/lists/test-l.passwd
 		@ ${CHOWN} -R majordom.majordom ${PREFIX}/majordomo/lists
 		@ ${CHMOD} -R 664 ${PREFIX}/majordomo/lists
-		@ ${CHMOD} 775 ${PREFIX}/majordomo/lists
-		@ ${CHMOD} 775 ${PREFIX}/majordomo/lists/test-l.archive
-		@ ${CHMOD} 775 ${PREFIX}/majordomo/lists/test-l-digest.archive
+		@ ${CHMOD} 755 ${PREFIX}/majordomo/lists
+		@ ${CHMOD} 755 ${PREFIX}/majordomo/lists/test-l.archive
+		@ ${CHMOD} 755 ${PREFIX}/majordomo/lists/test-l-digest.archive
 		@ ${CHMOD} 660 ${PREFIX}/majordomo/lists/*.passwd
 .if !defined(BATCH)
 		@ /usr/bin/more -e ${FILESDIR}/post-install-notes
