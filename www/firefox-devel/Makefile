@@ -129,7 +129,6 @@ pre-install:
 # package, replacing the traditional pkg-plist file.
 	@${RM} -rf ${FAKEDIR} ${PLIST}
 	@${MKDIR} ${FAKEDIR}/lib/browser_plugins
-	@${TOUCH} ${PLIST}
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} \
 		Makefile ${MAKE_ARGS} install
 .for ii in mac win
