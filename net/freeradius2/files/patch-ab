@@ -1,10 +1,9 @@
---- src/modules/rlm_mschap/rlm_mschap.c.orig	Mon Jan 21 11:20:42 2002
-+++ src/modules/rlm_mschap/rlm_mschap.c	Fri Jul  5 00:44:19 2002
-@@ -258,11 +258,15 @@
- {
+--- src/modules/rlm_mschap/rlm_mschap.c.orig	Tue Apr  8 11:53:05 2003
++++ src/modules/rlm_mschap/rlm_mschap.c	Tue Apr  8 11:53:32 2003
+@@ -260,10 +260,15 @@
  	SHA1_CTX Context;
  	char hash[20];
--	
+ 	
 +	const char *name;
 +
 +	name = strchr(user_name, '\\');
