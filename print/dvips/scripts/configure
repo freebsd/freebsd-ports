@@ -83,4 +83,9 @@ echo "OPT = -O2 -funsigned-char"  >> ${WRKSRC}/Makefile
 echo "BINDIR=$PREFIX/bin"  >> ${WRKSRC}/Makefile
 echo "FLIBS=-lm" >> ${WRKSRC}/Makefile
 
+# already part of LaTeX 
+for i in bookman.sty chancery.sty palatino.sty times.sty; do
+    rm -f ${WRKSRC}/PSlatex/$i
+done
+
 exit 0;
