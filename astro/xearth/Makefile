@@ -22,13 +22,14 @@ MAN1=		xearth.1
 # Copy the list of FreeBSD sites
 post-install:
 	${MKDIR} ${PREFIX}/lib/X11/xearth
-	${CP} ${FILESDIR}/freebsd.core.markers ${PREFIX}/lib/X11/xearth
-	${CP} ${FILESDIR}/freebsd.committers.markers ${PREFIX}/lib/X11/xearth
-	${CP} ${FILESDIR}/freebsd.ftp.markers ${PREFIX}/lib/X11/xearth
+	${INSTALL_DATA} ${FILESDIR}/freebsd.core.markers ${PREFIX}/lib/X11/xearth
+	${INSTALL_DATA} ${FILESDIR}/freebsd.committers.markers ${PREFIX}/lib/X11/xearth
+	${INSTALL_DATA} ${FILESDIR}/freebsd.ftp.markers ${PREFIX}/lib/X11/xearth
 	${ECHO} "# All of FreeBSD's committers, including core :)" > \
 	    ${PREFIX}/lib/X11/xearth/freebsd.core_and_committers.markers
 	${GREP} -hv '^[[:space:]]*#' ${FILESDIR}/freebsd.core.markers \
 	    ${FILESDIR}/freebsd.committers.markers >> \
 	    ${PREFIX}/lib/X11/xearth/freebsd.core_and_committers.markers
+	${CHMOD} 0444 ${PREFIX}/lib/X11/xearth/freebsd.core_and_committers.markers
 
 .include <bsd.port.mk>
