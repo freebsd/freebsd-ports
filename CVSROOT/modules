@@ -6735,6 +6735,7 @@ tmac		src/contrib/groff/tmac
 tmake		ports/devel/tmake
 tmda		ports/mail/tmda
 tmetric		ports/benchmarks/tmetric
+tmpwatch	ports/sysutils/tmpwatch
 tn3270		src/usr.bin/tn3270
 tn5250		ports/net/tn5250
 tnef		ports/converters/tnef
