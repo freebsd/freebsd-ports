@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wmclockmon
-PORTVERSION=	0.1.3
+PORTVERSION=	0.2.1
 CATEGORIES=	x11-clocks windowmaker
 MASTER_SITES=	http://tnemeth.free.fr/projets/programmes/
 
@@ -14,10 +14,17 @@ MAINTAINER=	pat@FreeBSD.org
 
 USE_X_PREFIX=	yes
 USE_XPM=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gtk12
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-prefix=""
 
 MAN1=		${PORTNAME}.1
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|gtk-config|${GTK_CONFIG}|g' \
+		${WRKSRC}/wmclockmon-config/Makefile.in
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/src/wmclockmon ${PREFIX}/bin
