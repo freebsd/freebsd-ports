@@ -1,4 +1,3 @@
-pgsql/bin/pgaccess
 pgsql/bin/pgtclsh
 pgsql/bin/pgtksh
 pgsql/include/libpgtcl.h

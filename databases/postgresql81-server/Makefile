@@ -6,7 +6,7 @@
 # $FreeBSD$
 #
 
-DISTNAME=	postgresql-6.5.1
+DISTNAME=	postgresql-6.5.2
 CATEGORIES=	databases
 MASTER_SITES=	ftp://ftp.postgresql.org/pub/ \
 		ftp://ftp.iodynamics.com/pub/mirror/postgresql/ \
@@ -106,13 +106,14 @@ post-patch:
 		${WRKSRC}/Makefile.global.in.old \
 		>> ${WRKSRC}/Makefile.global.in
 
-.if defined(USE_TCL)
-	@ ${MV} ${WRKSRC}/bin/pgaccess/pgaccess.tcl \
-		${WRKSRC}/bin/pgaccess/pgaccess.tcl.orig
-	@ ${SED} -e "s=/usr/bin/wish=`/usr/bin/which wish8.0`=" \
-		${WRKSRC}/bin/pgaccess/pgaccess.tcl.orig \
-		>> ${WRKSRC}/bin/pgaccess/pgaccess.tcl
-.endif
+# pgaccess (accidentally?) removed from distribution, so leave it for now
+#.if defined(USE_TCL)
+#	@ ${MV} ${WRKSRC}/bin/pgaccess/pgaccess.tcl \
+#		${WRKSRC}/bin/pgaccess/pgaccess.tcl.orig
+#	@ ${SED} -e "s=/usr/bin/wish=`/usr/bin/which wish8.0`=" \
+#		${WRKSRC}/bin/pgaccess/pgaccess.tcl.orig \
+#		>> ${WRKSRC}/bin/pgaccess/pgaccess.tcl
+#.endif
 
 post-build:
 

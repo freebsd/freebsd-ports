@@ -26,7 +26,7 @@
 -	@echo other applications, copy the postgresql.jar file to a public
 -	@echo "place (under unix this could be /usr/local/lib) and add it"
 +	@echo other applications, add the path
-+	@echo !!JAVA_HOME!!/share/java/postgresql.jar
++	@echo !!PREFIX!!/share/java/postgresql.jar
  	@echo to the class path.
  	@echo
  	@echo Then either add -Djdbc.drivers=postgresql.Driver to the
