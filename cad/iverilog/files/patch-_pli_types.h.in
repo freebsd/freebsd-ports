@@ -1,0 +1,25 @@
+--- _pli_types.h.in	Wed Nov 12 11:38:44 2003
++++ _pli_types.h.in.new	Fri Jan 30 01:44:38 2004
+@@ -45,7 +45,21 @@
+ typedef signed char    PLI_BYTE8;
+ typedef unsigned char  PLI_UBYTE8;
+ 
+-# define PLI_UINT64_FMT PRIu64
++#ifndef PRIu64
++
++#if defined(__i386__) || defined(__powerpc__)
++#define PLI_UINT64_FMT "llu"
++#endif /* defined(__i386__) || defined(__powerpc__) */
++
++#if defined(__sparc64__) || defined(__alpha__) || defined(__amd64__) || defined(__ia64__)
++#define PLI_UINT64_FMT "lu"
++#endif /* defined(__sparc64__) || defined(__alpha__) || defined(__amd64__) || defined(__ia64__) */
++
++#else /* PRIu64 defined */
++
++#define PLI_UINT64_FMT PRIu64
++
++#endif /* PRIu64 */
+ 
+ #else
+ 
