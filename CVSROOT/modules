@@ -2143,6 +2143,7 @@ gnuserv		ports/editors/gnuserv
 gnuserv-emacs20	ports/editors/gnuserv-emacs20
 gnushogi	ports/games/gnushogi
 gnustep		ports/devel/gnustep
+gnustep-art	ports/x11-toolkits/gnustep-art
 gnustep-back	ports/x11-toolkits/gnustep-back
 gnustep-base	ports/lang/gnustep-base
 gnustep-examples	ports/misc/gnustep-examples
