@@ -1,3 +1,4 @@
+bin/wmftofig
 bin/wmftogif
 bin/xwmf
 include/Xwmfapi.h
