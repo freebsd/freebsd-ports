@@ -7,7 +7,7 @@
 
 PORTNAME?=	ispell
 PORTVERSION?= 	3.1.20c
-CATEGORIES=	textproc elisp
+CATEGORIES+=	textproc elisp
 MASTER_SITES=	ftp://ftp.cs.ucla.edu/pub/ispell-3.1/ \
 		ftp://ftp.kiarchive.ru/pub/unix/text/ispell/
 DISTNAME=	ispell-3.1

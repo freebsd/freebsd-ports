@@ -10,6 +10,7 @@ MAINTAINER=     alex@FreeBSD.org
 ISPELL_DENEU=	yes
 PORTNAME=	ispell
 PORTVERSION= 	19991219
+CATEGORIES=	german
 PKGNAMESUFFIX=	-neu
 MASTERDIR=      ${.CURDIR}/../../textproc/ispell
 
