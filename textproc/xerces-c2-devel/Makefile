@@ -63,6 +63,10 @@ CONFIGURE_ARGS+=	-t ${TRANSCODER}
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 502102
+FORBIDDEN=		"Does not respect PTHREAD_{CFLAGS,LIBS}"
+.endif
+
 .if defined(DEBUG)
 PKGNAMESUFFIX+=		-debug
 CONFIGURE_ARGS+=	-d

@@ -53,5 +53,10 @@ post-install:
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502102
+FORBIDDEN=	"Does not respect PTHREAD_{CFLAGS,LIBS}"
+.endif
+
 .include "${LICQ_PORT}/Makefile.inc"
 .include <bsd.port.post.mk>
