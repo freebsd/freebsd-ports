@@ -1,0 +1,11 @@
+--- Makefile.in~	Wed Aug  1 15:12:53 2001
++++ Makefile.in	Wed Aug  1 15:13:00 2001
+@@ -755,7 +755,7 @@
+ 	(fullname=gawk-`./gawk --version | sed 1q | awk '{print $$3}'` ; \
+ 	cd $(DESTDIR)$(bindir); \
+ 	$(LN) gawk $$fullname ; \
+-	if [ ! -f awk ]; \
++	if ! /usr/bin/which -s awk; \
+ 	then	$(LN_S) gawk awk; \
+ 	fi; exit 0)
+ 
