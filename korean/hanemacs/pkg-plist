@@ -10,8 +10,8 @@ bin/emacsclient
 @exec if [ ! -d %d/share/hanemacs/19.34/site-lisp ]; then mkdir -p %D/share/hanemacs/19.34/site-lisp; fi
 @comment these two can fail if other ports are installed, no need to
 @comment scare user in that case
-@dirrm %D/share/hanemacs/site-lisp
-@dirrm %D/share/hanemacs/19.34/site-lisp
+@unexec %D/share/hanemacs/site-lisp 2>/dev/null || true
+@unexec %D/share/hanemacs/19.34/site-lisp 2>/dev/null || true
 man/man1/emacs.1.gz
 man/man1/etags.1.gz
 man/man1/ctags.1.gz
@@ -137,7 +137,6 @@ share/hanemacs/19.34/etc/COPYING
 share/hanemacs/19.34/etc/DEBUG
 share/hanemacs/19.34/etc/DISTRIB
 share/hanemacs/19.34/etc/DOC-19.34.1
-share/hanemacs/19.34/etc/DOC-19.34.2
 share/hanemacs/19.34/etc/FAQ
 share/hanemacs/19.34/etc/FTP
 share/hanemacs/19.34/etc/GNU
