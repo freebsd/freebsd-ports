@@ -1,0 +1,11 @@
+--- makefile.orig	Thu Mar  2 02:51:10 1995
++++ makefile	Sat May  1 15:14:08 1999
+@@ -3,7 +3,7 @@
+ # There should be no changes for most UNIX compilers.
+ ###########################################################
+ 
+-MFLAGS = -O
++MFLAGS = $(CFLAGS)
+ DEFS = system.h globals.h marker.h
+ BASELINE =  mpeg.o codec.o huffman.o io.o chendct.o lexer.o marker.o me.o mem.o stat.o stream.o transform.o
+ 

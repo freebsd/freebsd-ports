@@ -1,0 +1,13 @@
+                 MPEG, CCITT H.261 (P*64), JPEG 
+  Image and Image sequence compression/decompression C software engines.
+
+The Portable Video Research Group at Stanford have developed
+image/image sequence compression and decompression engines (codecs)
+for MPEG, CCITT H.261, and JPEG. The primary goal of these codecs is
+to provide the functionality - these codecs are not optimized for
+speed, rather completeness, and some of the code is kludgey.
+
+Development of MPEG, P64, and JPEG engines has not been the primary
+goal of the Portable Video Research Group.  Our research has been
+focused on software and hardware for portable wireless digital video
+communication.  The charter of this group ended in the summer of 1994.
