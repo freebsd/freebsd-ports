@@ -9,7 +9,7 @@ PORTNAME?=	bugzilla
 PORTVERSION?=	2.16.5
 CATEGORIES?=	devel
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
-MASTER_SITE_SUBDIR=	webtools
+MASTER_SITE_SUBDIR=	webtools webtools/archived
 
 MAINTAINER?=	ports@FreeBSD.org
 COMMENT?=	Bug-tracking system developed by Mozilla Project
@@ -31,8 +31,6 @@ RUN_DEPENDS+=	${SITE_PERL}/MIME/Parser.pm:${PORTSDIR}/mail/p5-MIME-Tools
 .if defined(WITH_BUG_EXPORT_AND_IMPORT)
 RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser
 .endif
-
-BROKEN=		Unfetchable
 
 CONFLICTS?=	ja-bugzilla-2.*
 
