@@ -71,7 +71,6 @@ lib/%%PYTHON_VERSION%%/site-packages/mmpython/disc/discinfo.pyo
 lib/%%PYTHON_VERSION%%/site-packages/mmpython/disc/dvdinfo.py
 lib/%%PYTHON_VERSION%%/site-packages/mmpython/disc/dvdinfo.pyc
 lib/%%PYTHON_VERSION%%/site-packages/mmpython/disc/dvdinfo.pyo
-lib/%%PYTHON_VERSION%%/site-packages/mmpython/disc/ifoparser.so
 lib/%%PYTHON_VERSION%%/site-packages/mmpython/disc/vcdinfo.py
 lib/%%PYTHON_VERSION%%/site-packages/mmpython/disc/vcdinfo.pyc
 lib/%%PYTHON_VERSION%%/site-packages/mmpython/disc/vcdinfo.pyo

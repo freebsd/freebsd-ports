@@ -6,21 +6,24 @@
 #
 
 PORTNAME=	mmpython
-PORTVERSION=	0.2
+PORTVERSION=	0.3
 CATEGORIES=	multimedia python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	mmpython_${PORTVERSION:C/\./-/}
+# The mmpython folks keep changing their release naming scheme.
+#DISTNAME=	mmpython_${PORTVERSION:C/\./-/}
 
 MAINTAINER=	larse@isi.edu
 COMMENT=	Retrieves metadata from mp3, ogg, avi, jpg and other formats
 
 LIB_DEPENDS=	dvdread.3:${PORTSDIR}/multimedia/libdvdread
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
+# The mmpython folks keep changing their release naming scheme.
+#WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USE_BZIP2=	yes
+# The mmpython folks keep changing their release archiver.
+#USE_BZIP2=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 
