@@ -6,7 +6,7 @@
 #
 
 PORTNAME?=	bugzilla
-PORTVERSION?=	2.16.7
+PORTVERSION?=	2.18
 CATEGORIES?=	devel
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
 MASTER_SITE_SUBDIR=	webtools webtools/archived
@@ -14,14 +14,19 @@ MASTER_SITE_SUBDIR=	webtools webtools/archived
 MAINTAINER?=	ports@FreeBSD.org
 COMMENT?=	Bug-tracking system developed by Mozilla Project
 
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Mysql.pm:${PORTSDIR}/databases/p5-Mysql \
+RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql \
 		${SITE_PERL}/Date/Parse.pm:${PORTSDIR}/devel/p5-TimeDate \
 		${SITE_PERL}/${PERL_ARCH}/Template.pm:${PORTSDIR}/www/p5-Template-Toolkit \
-		${SITE_PERL}/Text/Wrap.pm:${PORTSDIR}/textproc/p5-Text-Tabs+Wrap
+		${SITE_PERL}/Text/Wrap.pm:${PORTSDIR}/textproc/p5-Text-Tabs+Wrap \
+		${SITE_PERL}/Data/Dumper/Simple.pm:${PORTSDIR}/devel/p5-Data-Dumper-Simple \
+		${SITE_PERL}/File/Spec.pm:${PORTSDIR}/devel/p5-File-Spec \
+		${SITE_PERL}/PatchReader.pm:${PORTSDIR}/devel/p5-PatchReader
 
 .if !defined(WITHOUT_BUG_CHARTING_MODULES)
 RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/GD.pm:${PORTSDIR}/graphics/p5-GD \
-		${SITE_PERL}/Chart/Base.pm:${PORTSDIR}/graphics/p5-chart
+		${SITE_PERL}/Chart/Base.pm:${PORTSDIR}/graphics/p5-chart \
+		${SITE_PERL}/GD/Graph.pm:${PORTSDIR}/graphics/p5-GD-Graph \
+		${SITE_PERL}/GD/Text.pm:${PORTSDIR}/graphics/p5-GD-TextUtil
 .endif
 
 .if defined(WITH_BUG_MAILING_MODULES)
@@ -48,8 +53,7 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 
 BUGZILLADIR?=	www/data/bugzilla
 BUGZILLADOCS=	html images txt rel_notes.txt
-BONSAIPERLWC=	*.cgi *.pl *.pm processmail syncshadowdb contrib/*.pl
-SENDMAILWC=	*.pl *.pm processmail contrib/*.pl
+SENDMAILWC=	*.pl *.pm contrib/*.pl Bugzilla/*.pm
 
 PLIST_SUB+=	BUGZILLADIR=${BUGZILLADIR}
 
@@ -78,10 +82,6 @@ post-patch:
 	@${FIND} ${WRKSRC} -name .cvsignore -type f -exec ${RM} -f {} \;
 	@${FIND} ${WRKSRC} -name README.docs -type f -exec ${RM} -f {} \;
 	@${FIND} ${WRKSRC} -name \*.orig -type f -exec ${RM} -f {} \;
-.for i in ${BONSAIPERLWC}
-	@${REINPLACE_CMD} -e 's@#!/usr/bonsaitools/bin/perl@#!/usr/bin/perl@' \
-		${WRKSRC}/$i
-.endfor
 .for i in ${SENDMAILWC}
 	@${REINPLACE_CMD} -e 's@/usr/lib/sendmail@/usr/sbin/sendmail@' \
 		${WRKSRC}/$i
@@ -97,23 +97,24 @@ do-install:
 	${MKDIR} ${PREFIX}/${BUGZILLADIR}
 	${FIND} ${WRKSRC} \! -type d -maxdepth 1 \! -name UPGRADING* -exec \
 		${INSTALL_SCRIPT} {} ${PREFIX}/${BUGZILLADIR} \;
-	${TAR} -C ${WRKSRC} -cf - template css | ${TAR} --unlink -C ${PREFIX}/${BUGZILLADIR} -xf -
+	${TAR} -C ${WRKSRC} -cf - Bugzilla template css js skins | ${TAR} --unlink -C ${PREFIX}/${BUGZILLADIR} -xf -
+
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${TAR} -C ${WRKSRC}/docs -cf - . | ${TAR} --unlink -C ${DOCSDIR} -xf -
 .endif
+
 .if defined(WITH_CONTRIB)
-	${MKDIR} ${PREFIX}/${BUGZILLADIR}/contrib ${PREFIX}/${BUGZILLADIR}/contrib/cmdline
-	cd ${WRKSRC}/contrib; ${INSTALL_SCRIPT} BugzillaEmail.pm bug_email.pl \
-		bugzilla_email_append.pl cvs-update.sh gnats2bz.pl jb2bz.py \
-		mysqld-watcher.pl yp_nomail.sh ${PREFIX}/${BUGZILLADIR}/contrib
-	cd ${WRKSRC}/contrib/cmdline; ${INSTALL_SCRIPT} buglist bugs \
-		query.conf ${PREFIX}/${BUGZILLADIR}/contrib/cmdline
+	${MKDIR} ${PREFIX}/${BUGZILLADIR}/contrib
+	@cd ${WRKSRC}/contrib && \
+		${FIND} . -type d -exec ${MKDIR} "${PREFIX}/${BUGZILLADIR}/contrib/{}" \; && \
+		${FIND} . -type f -exec ${INSTALL_DATA} "{}" "${PREFIX}/${BUGZILLADIR}/contrib/{}" \;
+.endif
+
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}/contrib
 	cd ${WRKSRC}/contrib; ${INSTALL_DATA} README README.Mailif \
 		bugmail_help.html bugzilla.procmailrc ${DOCSDIR}/contrib
-.endif
 .endif
 
 post-install:
