@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Test-Pod
-PORTVERSION=	0.96
+PORTVERSION=	1.02
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Test
@@ -25,11 +25,4 @@ PERL_CONFIGURE=	yes
 
 MAN3=		Test::Pod.3
 
-.include <bsd.port.pre.mk>
-
-# utf8 stuffs of Pod::Simple
-.if ${PERL_LEVEL} < 500600
-IGNORE=		Port requires perl 5.6.x or later. Install lang/perl5 then try again
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
