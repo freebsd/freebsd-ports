@@ -11,7 +11,7 @@ CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	gforth
 
-MAINTAINER=	clefevre@poboxes.com
+MAINTAINER=	clefevre@redirect.to
 
 #
 # Global variables

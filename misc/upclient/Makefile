@@ -12,7 +12,7 @@ MASTER_SITES=	http://uptimes.atomicvoid.net/files/ \
 		ftp://ftp.uptimes.net/pub/uptimes/ \
 		http://www.uptimes.net/download/
 
-MAINTAINER=	clefevre@poboxes.com
+MAINTAINER=	clefevre@redirect.to
 
 ALL_TARGET=	bsd
 BUILD_WRKSRC=	${WRKSRC}/src
