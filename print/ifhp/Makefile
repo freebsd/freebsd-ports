@@ -7,18 +7,17 @@
 
 PORTNAME=	ifhp
 PORTVERSION=	3.5.7
-CATEGORIES=	    print
+CATEGORIES=	print
 MASTER_SITES=	ftp://ftp.lprng.com/pub/%SUBDIR%/ \
 		ftp://ftp.cise.ufl.edu/pub/mirrors/%SUBDIR%/ \
 		ftp://ftp.cs.umn.edu/pub/%SUBDIR%/ \
 		ftp://ftp.informatik.uni-hamburg.de/pub/os/unix/utils/%SUBDIR%/ \
 		ftp://ftp.uni-paderborn.de/pub/unix/printer/%SUBDIR%/
-MASTER_SITE_SUBDIR=  LPRng/ifhp
+MASTER_SITE_SUBDIR=	LPRng/ifhp
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=papowell@astart.com
+MAINTAINER=	papowell@astart.com
 COMMENT=	IFHP - A highly configurable print filter for LPRng
-
 
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
@@ -27,13 +26,13 @@ CONFIGURE_ARGS= \
 	--with-ldopts="-L${LOCALBASE}/lib" \
 	--with-ccopts="-I${LOCALBASE}/include"
 .if defined(PREFIX)
-  CONFIGURE_ARGS+=  --prefix="${PREFIX}"
+	CONFIGURE_ARGS+=	--prefix="${PREFIX}"
 .endif
 .if defined(SYSCONFDIR)
-  CONFIGURE_ARGS+=  --sysconfdir="${SYSCONFDIR}"
+	CONFIGURE_ARGS+=	--sysconfdir="${SYSCONFDIR}"
 .endif
 
-MAN8=ifhp.8 textps.8
+MAN8=	ifhp.8 textps.8
 
 pre-everything::
 	@${ECHO_MSG} "If you want to replace the default printing system with LPRng, use:"
@@ -50,7 +49,7 @@ pre-everything::
 	@${ECHO_MSG} "Configuring with '${CONFIGURE_ARGS}'"
 
 post-install:
-.if !defined(NOPORTSDOCS)
+.if !defined(NOPORTDOCS)
 	@${INSTALL} -d -o ${SHAREOWN} -g ${SHAREGRP} -m 0555 ${DOCSDIR}
 .for ext in html pdf ppt ps txt gif jpg png
 	@for i in `ls ${WRKSRC}/HOWTO |${GREP} "\.${ext}$$"`; \
