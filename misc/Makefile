@@ -257,7 +257,6 @@
     SUBDIR += pybliographer
     SUBDIR += pypanda
     SUBDIR += qbrew
-    SUBDIR += qhacc
     SUBDIR += qlas
     SUBDIR += qmc
     SUBDIR += quantlib
