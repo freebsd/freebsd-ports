@@ -18,6 +18,11 @@ RESTRICTED=	"Non-redistributable beta"
 WRKSRC=		${WRKDIR}/tracker
 INSTALL_TARGET=	install install.info
 
+post-patch:
+	@${SED} -e 's,machine/soundcard.h,sys/soundcard.h,' < \
+		${WRKSRC}/Arch/PCux/audio.c > ${WRKSRC}/Arch/PCux/audio.c.new
+	@${MV} ${WRKSRC}/Arch/PCux/audio.c.new ${WRKSRC}/Arch/PCux/audio.c
+
 post-install:
 	@install-info ${PREFIX}/info/tracker.info ${PREFIX}/info/dir
 .if !defined(NOPORTDOCS)

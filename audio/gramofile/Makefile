@@ -15,6 +15,13 @@ MAINTAINER=	nox@jelal.kn-bremen.de
 ALL_TARGET=	gramofile
 USE_GMAKE=	yes
 
+post-patch:
+.for file in bplay.c sndfunc.c
+	@${SED} -e 's,machine/soundcard.h,sys/soundcard.h,' < \
+		${WRKSRC}/bplaysrc/${file} > ${WRKSRC}/bplaysrc/${file}.new
+	@${MV} ${WRKSRC}/bplaysrc/${file}.new ${WRKSRC}/bplaysrc/${file}
+.endfor
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/gramofile ${WRKSRC}/bplay_gramo ${PREFIX}/bin
 	${MKDIR} ${PREFIX}/share/doc/gramofile

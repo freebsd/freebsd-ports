@@ -32,7 +32,7 @@ post-patch:
 		s,-lpthread,${PTHREAD_LIBS},g ; \
 		s,/usr/local,${PREFIX},g" ${WRKSRC}/Makefile
 	@${GREP} -lR "linux/" ${WRKSRC} | ${XARGS} \
-		${PERL} -pi -e "s,linux/,machine/,g"
+		${PERL} -pi -e "s,linux/,sys/,g"
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/rawrec ${PREFIX}/bin

@@ -15,6 +15,11 @@ MAINTAINER=	3d@FreeBSD.org
 GNU_CONFIGURE=	yes
 USE_NEWGCC=	yes
 
+post-patch:
+	@${SED} -e 's,machine/soundcard.h,sys/soundcard.h,' \
+	    < ${WRKSRC}/output.c > ${WRKSRC}/output.c.new
+	@${MV} ${WRKSRC}/output.c.new ${WRKSRC}/output.c
+
 pre-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/ac3dec
