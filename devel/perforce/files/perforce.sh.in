@@ -24,7 +24,7 @@ start)
     fi
     if [ -x $p4web -a x$PERFORCE_WEB_START = xyes ]; then
         echo -n ' p4web'
-        su -fm $PERFORCE_USER -c "$p4web $PERFORCE_WEB_OPTIONS > /dev/null 2>&1 &"
+        su -fm $PERFORCE_USER -c "$p4web $PERFORCE_WEB_OPTIONS &" >/dev/null 2>&1
     fi
 
     ;;
