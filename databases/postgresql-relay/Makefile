@@ -20,6 +20,7 @@ PLIST_FILES=	bin/postgresql-relay \
 
 USE_REINPLACE=	yes
 USE_RC_SUBR=	yes
+USE_PERL5_BUILD=yes
 
 post-extract:
 	${CP} ${FILESDIR}/postgresql-relay.sh ${WRKDIR}
