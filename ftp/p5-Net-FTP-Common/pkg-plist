@@ -1,0 +1,5 @@
+%%SITE_PERL%%/TestConfig.pm
+%%SITE_PERL%%/Net/FTP/Common.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/FTP/Common/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/FTP/Common
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/FTP
