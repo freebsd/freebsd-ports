@@ -1,0 +1,2 @@
+lib/xine/plugins/xineplug_inp_dvdnav.so
+@unexec rmdir %D/lib/xine/plugins 2>/dev/null || true
