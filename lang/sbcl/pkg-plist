@@ -214,6 +214,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Profiling.html
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Quit.html
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Read-Errors.html
+%%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Resolution-of-Name-Conflicts.html
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Running-from-Emacs.html
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Running-from-Shell.html
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Runtime-Options.html
@@ -265,6 +266,8 @@
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Variable-sb_002ddebug_003a_002atrace_002dencapsulate_002ddefault_002a.html
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Variable-sb_002ddebug_003a_002atrace_002dindentation_002dstep_002a.html
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Variable-sb_002ddebug_003a_002atrace_002dvalues_002a.html
+%%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Variable-sb_002dext_003a_002acompiler_002dprint_002dvariable_002dalist_002a.html
+%%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Variable-sb_002dext_003a_002adebug_002dprint_002dvariable_002dalist_002a.html
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Variable-sb_002dext_003a_002aed_002dfunctions_002a.html
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Variable-sb_002dext_003a_002ainvoke_002ddebugger_002dhook_002a.html
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Variable-sb_002dext_003a_002amodule_002dprovider_002dfunctions_002a.html
@@ -376,17 +379,6 @@ lib/sbcl/sb-grovel/sb-grovel.fasl
 lib/sbcl/sb-grovel/sb-grovel.texinfo
 lib/sbcl/sb-grovel/test-passed
 lib/sbcl/sb-introspect/sb-introspect.fasl
-lib/sbcl/sb-md5/.cvsignore
-lib/sbcl/sb-md5/Makefile
-lib/sbcl/sb-md5/README
-lib/sbcl/sb-md5/md5-tests.fasl
-lib/sbcl/sb-md5/md5-tests.lisp
-lib/sbcl/sb-md5/md5.fasl
-lib/sbcl/sb-md5/md5.lisp
-lib/sbcl/sb-md5/sb-md5.asd
-lib/sbcl/sb-md5/sb-md5.fasl
-lib/sbcl/sb-md5/sb-md5.texinfo
-lib/sbcl/sb-md5/test-passed
 lib/sbcl/sb-posix/.cvsignore
 lib/sbcl/sb-posix/Makefile
 lib/sbcl/sb-posix/README
@@ -483,7 +475,6 @@ lib/sbcl/systems/sb-aclrepl.asd
 lib/sbcl/systems/sb-bsd-sockets.asd
 lib/sbcl/systems/sb-cltl2.asd
 lib/sbcl/systems/sb-grovel.asd
-lib/sbcl/systems/sb-md5.asd
 lib/sbcl/systems/sb-posix.asd
 lib/sbcl/systems/sb-rotate-byte.asd
 lib/sbcl/systems/sb-rt.asd
@@ -502,7 +493,6 @@ lib/sbcl/systems/sb-simple-streams.asd
 @dirrm lib/sbcl/sb-posix/test-lab
 @dirrm lib/sbcl/sb-posix/alien
 @dirrm lib/sbcl/sb-posix
-@dirrm lib/sbcl/sb-md5
 @dirrm lib/sbcl/sb-introspect
 @dirrm lib/sbcl/sb-grovel
 @dirrm lib/sbcl/sb-executable
