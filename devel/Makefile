@@ -905,6 +905,7 @@
     SUBDIR += p5-Module-Info-File
     SUBDIR += p5-Module-Install
     SUBDIR += p5-Module-Load
+    SUBDIR += p5-Module-Load-Conditional
     SUBDIR += p5-Module-Pluggable
     SUBDIR += p5-Module-Pluggable-Ordered
     SUBDIR += p5-Module-Reload
