@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	vls
-PORTVERSION=	0.5.4
-PORTREVISION=	2
+PORTVERSION=	0.5.6
 CATEGORIES=	net multimedia
 MASTER_SITES=	http://download.videolan.org/pub/videolan/vls/${PORTVERSION}/
 
@@ -20,6 +19,7 @@ LIB_DEPENDS+=	dvdcss.2:${PORTSDIR}/multimedia/libdvdcss \
 		dvdread.3:${PORTSDIR}/multimedia/libdvdread
 .endif
 
+USE_BZIP2=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
@@ -29,18 +29,16 @@ CONFIGURE_ARGS+=	--with-dvbpsi=${LOCALBASE}
 .if !defined(WITHOUT_DVD)
 CONFIGURE_ARGS+=	--with-dvdcss=${LOCALBASE} \
 			--with-dvdread=${LOCALBASE}
-PLIST_SUB+=		WITHDVD=""
+PLIST_FILES+=	lib/videolan/vls/dvdreader.so
 .else
 CONFIGURE_ARGS+=	--disable-dvd
-PLIST_SUB+=		WITHDVD="@comment "
 .endif
 
 pre-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
+	${MKDIR} ${DOCSDIR}/developer
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}/
-	${INSTALL_DATA} ${WRKSRC}/doc/vls-guide.sgml ${DOCSDIR}/
-	${CP} -pR ${WRKSRC}/doc/developer ${DOCSDIR}/
+	${CP} -pR ${WRKSRC}/doc/developer/*.* ${DOCSDIR}/developer/
 .endif
 
 .include <bsd.port.pre.mk>
