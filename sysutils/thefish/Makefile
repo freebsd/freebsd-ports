@@ -33,7 +33,7 @@ PLIST_FILES=	bin/thefish
 
 pre-everything::
 .if !defined(WITHOUT_X11) && !defined(NO_GUI)
-	@${CAT} ${PKGMESSAGE}
+	@${ECHO_CMD} "- To build The Fish without the Qt or GTK+ UI, define NO_GUI or WITHOUT_X11"
 .endif
 .if !defined(WITH_QT) && !defined(NO_GUI) && !defined(WITHOUT_X11)
 	@${ECHO_CMD} "- You can replace the GTK+ interface with a Qt version by defining WITH_QT"
