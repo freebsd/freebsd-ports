@@ -1,47 +1,71 @@
 # New ports collection makefile for:	Internationalized fvwm2
-# Version required:	2.0.46
+# Version required:	2.2
 # Date created:		20 Jan 1996
 # Whom:			peter
 #
-# $Id: Makefile,v 1.14 1998/09/15 11:13:35 asami Exp $
+# $Id: Makefile,v 1.15 1998/09/17 00:32:57 asami Exp $
 #
 
-DISTNAME=	fvwm-2.0.46
+DISTNAME=	fvwm-${FVWM_DISTVER}
+PKGNAME=	fvwm-i18n-${FVWM_DISTVER}
 CATEGORIES=	x11-wm
-MASTER_SITES=	ftp://ftp.ics.es.osaka-u.ac.jp/pub/CFAN/sources/2.0.x/ \
-		ftp://ftp.ics.es.osaka-u.ac.jp/pub/CFAN/fvwm-users-jp/kits/ \
-		ftp://ftp.TokyoNet.AD.JP/pub/X/fvwm/sources/2.0.x/ \
-		ftp://ftp.TokyoNet.AD.JP/pub/X/fvwm/fvwm-users-jp/kits/ \
-		ftp://ftp.hpc.uh.edu/pub/fvwm/version-2/
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} fvwm-users-jp-kits.97Oct04.tar.gz
+MASTER_SITES=	ftp://ftp.fvwm.org/pub/fvwm/version-2/
+
+PATCH_SITES=	ftp://ftp.ics.es.osaka-u.ac.jp/pub/CFAN/fvwm-users-jp/I18N_MB/
+PATCHFILES=	fvwm-${FVWM_DISTVER}-I18N_MB-${FVWM_PATCHVER}.patch
 
 MAINTAINER=	matusita@jp.freebsd.org
 
+.if !defined(USE_XPM) || ${USE_XPM} != NO
 LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
+.endif
 
-USE_IMAKE=	yes
-MAN1= 		FvwmAudio.1 FvwmAuto.1 FvwmBacker.1 FvwmBanner.1 \
-		FvwmButtons.1 FvwmCascade.1 FvwmCpp.1 FvwmForm.1 \
-		FvwmIconBox.1 FvwmIconMan.1 FvwmIdent.1 FvwmM4.1 FvwmPager.1 \
-		FvwmSave.1 FvwmSaveDesk.1 FvwmScroll.1 FvwmTalk.1 FvwmTile.1 \
-		FvwmWinList.1 fvwm2.1 xpmroot.1
-MANCOMPRESSED=	yes
+GNU_CONFIGURE=	yes
+USE_X_PREFIX=	yes
+MAN1=		fvwm2.1 xpmroot.1 FvwmAnimate.1 FvwmAudio.1 FvwmAuto.1 \
+		FvwmBacker.1 FvwmBanner.1 FvwmButtons.1 FvwmCommand.1 \
+		FvwmConfig.1 FvwmConsole.1 FvwmConsoleC.pl.1 FvwmCpp.1 \
+		FvwmDebug.1 FvwmEvent.1 FvwmForm.1 FvwmGoodStuff.1 \
+		FvwmIconBox.1 FvwmIconMan.1 FvwmIdent.1 FvwmM4.1 \
+		FvwmPager.1 FvwmRearrange.1 FvwmSave.1 FvwmSaveDesk.1 \
+		FvwmScript.1 FvwmScroll.1 FvwmTalk.1 FvwmTaskBar.1 \
+		FvwmWharf.1 FvwmWinList.1
+MANCOMPRESSED=	no
 
-# filenames.
-PATCH_FIXIT=	kits/patch/fix-2.0.46
-PATCH_I18N=	kits/patch/PATCH.I18N
-USE_PATCHFILES=	${PATCH_FIXIT} ${PATCH_I18N}
+FVWM_DISTVER=	2.2
+FVWM_PATCHVER=	1999042001
+FVWM_DIR=	lib/X11/fvwm2
+RC_FILES=	decor_examples new-features system.fvwm2rc \
+		system.fvwm2rc-sample-1 system.fvwm2rc-sample-2
 
-pre-patch:
-	@for i in ${USE_PATCHFILES}; do \
-		${PATCH} ${PATCH_DIST_ARGS} < ${WRKDIR}/$$i; \
-	 done;
+PLIST_SUB=	FVWM_DISTVER=${FVWM_DISTVER} FVWM_DIR=${FVWM_DIR}
+
+CONFIGURE_ARGS+= --enable-extras --enable-kanji
+CONFIGURE_ARGS+= --sysconfdir=${PREFIX}/${FVWM_DIR}/${FVWM_DISTVER}
+CONFIGURE_ARGS+= --with-iconpath=${PREFIX}/${FVWM_DIR}/pixmaps:/usr/include/X11/bitmaps:/usr/include/X11/pixmaps
+
+pre-configure:
+	@${TOUCH} ${WRKSRC}/aclocal.m4
+	@${TOUCH} ${WRKSRC}/stamp-h.in
+	@find ${WRKSRC} -name Makefile.in -exec ${TOUCH} \{} \;
 
 post-install:
-	@${MKDIR} ${PREFIX}/lib/X11/fvwm2/pixmaps
+	@${MKDIR} ${PREFIX}/${FVWM_DIR}/${FVWM_DISTVER}
+	@for i in ${RC_FILES}; do \
+		${INSTALL_DATA} ${WRKSRC}/sample.fvwmrc/$$i \
+				${PREFIX}/${FVWM_DIR}/${FVWM_DISTVER}/$$i; \
+	done
+	@${MKDIR} ${PREFIX}/${FVWM_DIR}/pixmaps
 	${INSTALL_DATA} ${WRKSRC}/icons/*.xpm ${WRKSRC}/icons/*.xbm \
 			${WRKSRC}/icons/*.bitmap ${WRKSRC}/icons/*.icon \
-		${PREFIX}/lib/X11/fvwm2/pixmaps
-	@${CAT} ${PKGDIR}/MESSAGE
+		${PREFIX}/${FVWM_DIR}/pixmaps
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if defined(USE_RPLAY) && ${USE_RPLAY} == YES || \
+    exists(${LOCALBASE}/lib/librplay.a) && \
+    (!defined(USE_RPLAY) || ${USE_RPLAY} != NO)
+BUILD_DEPENDS=  rplay:${PORTSDIR}/audio/rplay
+.endif
+
+.include <bsd.port.post.mk>
