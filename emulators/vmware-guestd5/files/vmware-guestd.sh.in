@@ -41,7 +41,7 @@ unset start_cmd
 stop_precmd="${checkvm_cmd}"
 unset stop_cmd
 command="${PREFIX}/sbin/vmware-guestd"
-command_args=">/dev/null 2>&1"
+command_args="--halt-command '/sbin/shutdown -p now' >/dev/null 2>&1"
 pidfile="/var/run/${name}.pid"
 
 load_rc_config $name
