@@ -1,0 +1,18 @@
+Opera 7 is a substantial upgrade, with code rewritten from the rendering engine
+and up, resulting in the fastest, smallest, most full-featured desktop browser
+ever released.
+
+-New rendering engine
+Opera's new rendering engine supports W3C's DOM (Document Object Model) level 2,
+non-standard dynamic HTML (DHTML), CSS1 and CSS2, ECMAScript, and has improved
+HTML 4.01 support, as well as complete support for WML 1.3 and 2.0. It is
+faster, smaller and can dynamically change documents through DOM.
+
+-M2 -- new e-mail client
+Opera's new e-mail client, M2, automatically categorizes and sorts e-mail
+messages by contact and has an integrated spam filter. Innovative features such
+as QuickReply and QuickFind lets users answer or find e-mails at unrivalled
+speed. M2 supports POP3, IMAP, ESMTP, and threaded display of mailing lists.
+In addition, M2 supports news servers with password authentication.
+
+WWW: http://www.opera.com/

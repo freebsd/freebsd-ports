@@ -1,0 +1,9 @@
+--- config/opera6rc.orig	Mon Jul 19 23:00:06 2004
++++ config/opera6rc	Mon Jul 19 23:00:16 2004
+@@ -1,5 +1,5 @@
+ ; Put any default settings here that are overridable by users
+ 
+ [User Prefs]
+-Language Files Directory=/usr/share/opera/locale/
++Language Files Directory=%%PREFIX%%/share/opera/locale/
+ 
