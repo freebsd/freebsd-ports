@@ -188,6 +188,7 @@
     SUBDIR += pgen
     SUBDIR += pgp4pine
     SUBDIR += pgpsendmail
+    SUBDIR += pine-pgp-filters
     SUBDIR += pine4
     SUBDIR += pm-lib
     SUBDIR += pmail

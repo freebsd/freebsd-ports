@@ -1,0 +1,8 @@
+libexec/ppf_decrypt
+libexec/ppf_encrypt
+libexec/ppf_mime
+libexec/ppf_sign
+libexec/ppf_verify
+%%PORTDOCS%%share/doc/pine-pgp-filters/INSTALL
+%%PORTDOCS%%share/doc/pine-pgp-filters/README
+%%PORTDOCS%%@dirrm share/doc/pine-pgp-filters
