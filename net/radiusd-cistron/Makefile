@@ -6,16 +6,18 @@
 #
 
 PORTNAME=	radiusd-cistron
-PORTVERSION=	1.6.4
+PORTVERSION=	1.6.6
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.cistron.nl/pub/people/miquels/radius/ \
 		ftp://ftp.freeradius.org/pub/radius/
 
-FORBIDDEN=	"Remotely exploitable buffer overflow"
-
 MAINTAINER=	john@nlc.net.au
 
+# FORBIDDEN=	"Remotely exploitable buffer overflow"
+
 MAKEFILE=	Makefile.BSD
+RADIUS_DIR=	${PREFIX}/etc/raddb
+MAKE_ENV+=	RADIUS_DIR="${RADIUS_DIR}"
 
 MAN1=		radlast.1 radtest.1 raduse.1 radwho.1 radzap.1
 MAN5=		clients.5rad naslist.5rad
@@ -29,10 +31,9 @@ do-install:
 	@${MKDIR} -m 700 /var/log/radacct
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/radiusd-cistron
-	${INSTALL_DATA} ${WRKSRC}/COPYRIGHT.Cistron ${PREFIX}/share/doc/radiusd-cistron
-	${INSTALL_DATA} ${WRKSRC}/COPYRIGHT.Livingston ${PREFIX}/share/doc/radiusd-cistron
+	${INSTALL_DATA} ${WRKSRC}/COPYRIGHT ${PREFIX}/share/doc/radiusd-cistron
 	${INSTALL_DATA} ${WRKSRC}/doc/ChangeLog ${PREFIX}/share/doc/radiusd-cistron
-	${INSTALL_DATA} ${WRKSRC}/doc/INSTALL.OLD ${PREFIX}/share/doc/radiusd-cistron
+	${INSTALL_DATA} ${WRKSRC}/INSTALL ${PREFIX}/share/doc/radiusd-cistron
 	${INSTALL_DATA} ${WRKSRC}/doc/README ${PREFIX}/share/doc/radiusd-cistron
 	${INSTALL_DATA} ${WRKSRC}/doc/README.Y2K ${PREFIX}/share/doc/radiusd-cistron
 	${INSTALL_DATA} ${WRKSRC}/doc/README.cisco ${PREFIX}/share/doc/radiusd-cistron
