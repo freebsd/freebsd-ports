@@ -205,11 +205,11 @@ cat >> $F <<END
 END
 else
 cat >> $F <<END
-#define XF86SvgaDrivers         nv et4000 et3000 pvga1 gvga ati sis tvga8900 \
+#define XF86SvgaDrivers         nv et4000 et3000 pvga1 gvga r128 ati sis tvga8900 \
                                 cirrus ncr77c22 compaq mga oak al2101 ali \
                                 cl64xx video7 ark mx realtek apm s3_savage s3v \
                                 s3_svga neo chips cyrix rendition p9x00 \
-				spc8110 i740 tdfx generic
+				spc8110 i740 tdfx i810 smi generic
 
 #define XF86Vga16Drivers	et4000 et3000 ncr77c22 ati sis tvga8900 oak \
 				cl64xx generic 
@@ -363,12 +363,6 @@ else
 fi
 
 echo
-yesno "Do you want to compile with threads support? (experimental)"
-if [ $answ = YES ]; then
-    THREADS_PATCH=$FILESDIR/BSD-threads.diff
-else
-    THREADS_PATCH=
-fi
 echo
 echo "End of configuration questions. No more user input required"
 echo
@@ -378,11 +372,6 @@ configure
 
 if [ X$cpwh != XNO ]; then
   cp $cpwh $WH
-fi
-
-if [ X$THREADS_PATCH != X ]; then
-    echo "===>  Applying threads patches"
-    patch -s -d $WRKDIR  -E -p0 <  $THREADS_PATCH
 fi
 
 cat $F >>  $WRKDIR/xc/config/cf/xf86site.def
