@@ -1,6 +1,6 @@
---- telnet/Makefile.orig	Sat Aug  2 14:30:16 1997
-+++ telnet/Makefile	Thu Aug  5 03:54:01 1999
-@@ -6,14 +6,12 @@
+--- telnet/Makefile.orig	Sat Aug  2 01:30:16 1997
++++ telnet/Makefile	Tue Feb  1 09:16:29 2000
+@@ -6,17 +6,11 @@
  PROG=	telnet
  
  
@@ -9,12 +9,15 @@
 -	-I../lib/libbsd/include -I../lib \
 -	-I$(SSLTOP)/include
 +CFLAGS+= -DKLUDGELINEMODE -DUSE_TERMIO -DAUTHENTICATE -DUSE_SSL \
-+	-DFILIO_H -I../lib -I../lib/libbsd/include \
-+	-I$(SSLTOP)/include -I$(SSLTOP)/include/openssl
++	-DFILIO_H -I../lib -I../lib/libbsd/include -I$(OPENSSLINC)/openssl
  
  
- LIBS=   ../lib/libtelnet/libtelnet.a \
+-LIBS=   ../lib/libtelnet/libtelnet.a \
 -	../lib/libbsd/libbsd.a \
-         $(SSLTOP)/lib/libssl.a \
- 	$(SSLTOP)/lib/libcrypto.a 
- #	$(SSLTOP)/lib/libdes.a
+-        $(SSLTOP)/lib/libssl.a \
+-	$(SSLTOP)/lib/libcrypto.a 
+-#	$(SSLTOP)/lib/libdes.a
++LIBS=   ../lib/libtelnet/libtelnet.a
+ 
+ OBJS=	authenc.o commands.o main.o network.o ring.o sys_bsd.o telnet.o \
+ 	terminal.o tn3270.o utilities.o 
