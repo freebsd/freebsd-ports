@@ -1,0 +1,11 @@
+Open Source Development with CVS is a book published by Coriolis
+Inc. as part of the Coriolis OpenPress series. Chapters 2, 4, 6, 8, 9,
+and 10 -- comprising a complete introduction, tutorial and reference
+to CVS -- are being released free under the terms of the GNU General
+Public License.
+
+This port installs HTML, GNU Info, PDF, and Postscript formats.
+
+WWW: http://cvsbook.red-bean.com/
+
+--AlanE <ports@geeksrus.net>

@@ -102,6 +102,7 @@
     SUBDIR += cvs2cl
     SUBDIR += cvs2html
     SUBDIR += cvs2p4
+    SUBDIR += cvsbook
     SUBDIR += cvsd
     SUBDIR += cvsgraph
     SUBDIR += cvslines
