@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	linuxpluginwrapper
-PORTVERSION=	20040727
+PORTVERSION=	20040822
 PORTREVISION=	0
 CATEGORIES=	www linux
 MASTER_SITES=	http://people.FreeBSD.org/~nork/distfiles/ \
