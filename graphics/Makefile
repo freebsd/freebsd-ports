@@ -105,6 +105,7 @@
     SUBDIR += plotutils
     SUBDIR += png
     SUBDIR += png2html
+    SUBDIR += pngcrush
     SUBDIR += pnmtopng
     SUBDIR += povray
     SUBDIR += povray31
