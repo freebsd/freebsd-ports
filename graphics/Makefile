@@ -324,6 +324,7 @@
     SUBDIR += morpheus
     SUBDIR += mrsidviewer
     SUBDIR += multivideo
+    SUBDIR += mxp
     SUBDIR += netpbm
     SUBDIR += nip
     SUBDIR += nurbs++

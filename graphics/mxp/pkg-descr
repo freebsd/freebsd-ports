@@ -1,0 +1,14 @@
+Mxp (Mandelbrot explorer) is an X application for computing and exploring
+Mandelbrot sets.  Features of mxp include:
+        - zoom and un-zoom
+        - dynamic resizing of drawing window
+        - setup save/load
+        - asynchronous image generation (buttons always work)
+        - GIF output
+        - animation
+        - nine color schemes
+        - color rotation
+        - color change options
+        - detailed statistics
+
+WWW:  http://www.ibiblio.org/pub/Linux/apps/math/fractals/
