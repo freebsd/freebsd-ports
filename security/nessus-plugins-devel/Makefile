@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	nessus-plugins-devel
-PORTVERSION=	2.2.2a
+PORTVERSION=	2.3.0
 CATEGORIES=	security
-MASTER_SITES=	ftp://ftp.nessus.org/pub/nessus/nessus-${PORTVERSION}/src/ \
-		ftp://ftp.gwdg.de/pub/linux/misc/nessus/nessus-${PORTVERSION}/src/ \
-		http://ftp.gwdg.de/pub/linux/misc/nessus/nessus-${PORTVERSION}/src/ \
-		ftp://sunsite.cnlab-switch.ch/mirror/nessus/nessus-${PORTVERSION}/src/ \
-		ftp://ftp.au.nessus.org/pub/nessus/nessus-${PORTVERSION}/src/ \
-		ftp://ftp.ayamura.org/pub/nessus/nessus-${PORTVERSION}/src/
+MASTER_SITES=	ftp://ftp.nessus.org/pub/nessus/experimental/nessus-${PORTVERSION}/src/ \
+		ftp://ftp.gwdg.de/pub/linux/misc/nessus/experimental/nessus-${PORTVERSION}/src/ \
+		http://ftp.gwdg.de/pub/linux/misc/nessus/experimental/nessus-${PORTVERSION}/src/ \
+		ftp://sunsite.cnlab-switch.ch/mirror/nessus/experimental/nessus-${PORTVERSION}/src/ \
+		ftp://ftp.au.nessus.org/pub/nessus/experimental/nessus-${PORTVERSION}/src/ \
+		ftp://ftp.ayamura.org/pub/nessus/experimental/nessus-${PORTVERSION}/src/
 DISTNAME=	nessus-plugins-${PORTVERSION}
 
 MAINTAINER=	udo.schweigert@siemens.com
@@ -23,8 +23,7 @@ CONFLICTS=	nessus-plugins-[0-9]*
 
 BUILD_DEPENDS=	${LOCALBASE}/include/nessus/nessus-devel.h:${PORTSDIR}/security/nessus-devel
 RUN_DEPENDS=	${LOCALBASE}/include/nessus/nessus-devel.h:${PORTSDIR}/security/nessus-devel \
-		nmap:${PORTSDIR}/security/nmap \
-		wget:${PORTSDIR}/ftp/wget
+		nmap:${PORTSDIR}/security/nmap
 
 DIST_SUBDIR=	nessus
 WRKSRC=		${WRKDIR}/nessus-plugins
