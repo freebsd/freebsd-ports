@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	python
-PORTVERSION=	2.4.a0.20040311
+PORTVERSION=	2.4.a1
 CATEGORIES=	lang python ipv6
 MASTER_SITES=	${PYTHON_MASTER_SITES}
 MASTER_SITE_SUBDIR=	${PYTHON_MASTER_SITE_SUBDIR}
@@ -115,6 +115,8 @@ post-extract:
 		${WRKSRC}/Tools/scripts/pydoc > ${WRKDIR}/pydoc2.4
 	${SED} -e '1s,^.*$$,#!${PREFIX}/bin/${PYTHON_VERSION},' \
 		${WRKSRC}/Tools/scripts/idle > ${WRKDIR}/idle2.4
+	${SED} -e '1s,^.*$$,#!${PREFIX}/bin/${PYTHON_VERSION},' \
+		${WRKSRC}/Lib/smtpd.py > ${WRKDIR}/smtpd2.4.py
 
 post-patch:
 	${REINPLACE_CMD} -e 's,\(PY_VERSION.*\)2\.4a0,\1${PORTVERSION},g' \
@@ -170,7 +172,7 @@ post-install:
 
 	@# additional files installing by ports
 	${INSTALL_SCRIPT} ${WRKDIR}/pydoc2.4 ${WRKDIR}/idle2.4 \
-		${PREFIX}/bin
+		${WRKDIR}/smtpd2.4.py ${PREFIX}/bin
 	@${MKDIR} ${MANPREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/Misc/python.man \
 		${MANPREFIX}/man/man1/${PYTHON_VERSION}.1

@@ -93,7 +93,7 @@ Python_Include_MAINTAINER=	perky@FreeBSD.org
 #				the distutils are in the base distribution.
 #
 # PYNUMERIC:	Dependency line for the numeric extension. Py-Numeric-17
-# 				is the last release that works with Python versions older
+#				is the last release that works with Python versions older
 #				than 1.6.
 #
 # PYXML:		Dependency line for the XML extension. As of Python-2.0,
@@ -101,7 +101,11 @@ Python_Include_MAINTAINER=	perky@FreeBSD.org
 #
 # USE_PYTHON_PREFIX:	Says that the port installs in ${PYTHONBASE}.
 #
-# USE_PYDISTUTILS:	Use distutils as do-build and do-install target.
+# USE_PYDISTUTILS:	Use distutils as do-configure, do-build and do-install
+#					targets.
+#
+# PYDISTUTILS_CONFIGUREARGS:	Arguments to config with distutils.
+#								default: <empty>
 #
 # PYDISTUTILS_BUILDARGS:	Arguments to build with distutils.
 #							default: <empty>
@@ -131,6 +135,19 @@ _PYTHON_VERSION!=	${_PYTHON_CMD} -c \
 					'import sys; print sys.version[:3]' 2> /dev/null \
 					|| ${ECHO_CMD} ${_PYTHON_PORTBRANCH}
 .endif	# defined(PYTHON_VERSION)
+
+.if !defined(USE_PYTHON)
+.if defined(USE_PYTHON_BUILD)
+USE_PYTHON=		${USE_PYTHON_BUILD}
+.elif defined(USE_PYTHON_RUN)
+USE_PYTHON=		${USE_PYTHON_RUN}
+.else
+USE_PYTHON=		any
+.endif	# defined(USE_PYTHON_BUILD)
+.else
+USE_PYTHON_BUILD=	yes
+USE_PYTHON_RUN=		yes
+.endif	# !defined(USE_PYTHON)
 
 # Validate Python version whether it meets USE_PYTHON version restriction.
 _PYTHON_VERSION_CHECK!=		${ECHO_CMD} "${USE_PYTHON}" | \
@@ -185,7 +202,7 @@ PYTHON_PORTVERSION=	${_PYTHON_PORTVERSION}
 
 # Python-2.4
 .if ${PYTHON_VERSION} == "python2.4"
-PYTHON_PORTVERSION?=2.4.a0.20040311
+PYTHON_PORTVERSION?=2.4.a1
 PYTHON_PORTSDIR=	${PORTSDIR}/lang/python-devel
 PYTHON_REL=			240
 PYTHON_SUFFIX=		24
@@ -231,16 +248,16 @@ check-makevars::
 	@${FALSE}
 .endif
 
-.if defined(PYTHON_REL) && ${PYTHON_REL} >= 240
-PYTHON_MASTER_SITES=		${MASTER_SITE_LOCAL}
-PYTHON_MASTER_SITE_SUBDIR=	perky
-PYTHON_DISTFILE=			Python-${PYTHON_PORTVERSION}.tgz
-.else
 PYTHON_MASTER_SITES=		${MASTER_SITE_PYTHON}
+.if defined(PYTHON_REL) && ${PYTHON_REL} == 240
+PYTHON_MASTER_SITE_SUBDIR=	ftp/python/2.4
+PYTHON_DISTFILE=			Python-${PYTHON_PORTVERSION:S/2.4./2.4/}.tar.gz
+PYTHON_WRKSRC=				${WRKDIR}/Python-${PYTHON_PORTVERSION:S/2.4./2.4/}
+.else
 PYTHON_MASTER_SITE_SUBDIR=	ftp/python/${PYTHON_PORTVERSION}
 PYTHON_DISTFILE=			Python-${PYTHON_PORTVERSION}.tgz
-.endif	# defined(PYTHON_REL) && ${PYTHON_REL} < 160
 PYTHON_WRKSRC=				${WRKDIR}/Python-${PYTHON_PORTVERSION}
+.endif	# defined(PYTHON_REL) && ${PYTHON_REL} == 240
 
 PYTHON_INCLUDEDIR=		${PYTHONBASE}/include/${PYTHON_VERSION}
 PYTHON_LIBDIR=			${PYTHONBASE}/lib/${PYTHON_VERSION}
@@ -254,6 +271,7 @@ PYTHONPREFIX_LIBDIR=		${PYTHON_LIBDIR:S;${PYTHONBASE};${PREFIX};}
 PYTHONPREFIX_SITELIBDIR=	${PYTHON_SITELIBDIR:S;${PYTHONBASE};${PREFIX};}
 
 PYSETUP?=				setup.py
+PYDISTUTILS_CONFIGUREARGS?=
 PYDISTUTILS_BUILDARGS?=
 PYDISTUTILS_INSTALLARGS?=	-c -O1 --prefix=${PREFIX}
 
@@ -278,8 +296,12 @@ PYEXPAT=		${PYTHON_LIBDIR}/lib-dynload/pyexpat.so:${PYTHON_PORTSDIR}
 PYTHON_NO_DEPENDS?=		NO
 
 .if ${PYTHON_NO_DEPENDS} == "NO"
+.if defined(USE_PYTHON_BUILD)
 BUILD_DEPENDS+=	${PYTHON_CMD}:${PYTHON_PORTSDIR}
+.endif
+.if defined(USE_PYTHON_RUN)
 RUN_DEPENDS+=	${PYTHON_CMD}:${PYTHON_PORTSDIR}
+.endif
 .endif		# ${PYTHON_NO_DEPENDS} == "NO"
 
 .if defined(USE_ZOPE)
@@ -316,6 +338,11 @@ Python_Post_Include=			bsd.python.mk
 
 # py-distutils support
 .if defined(USE_PYDISTUTILS)
+.if !target(do-configure)
+do-configure:
+	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} ${PYSETUP} config ${PYDISTUTILS_CONFIGUREARGS})
+.endif
+
 .if !target(do-build)
 do-build:
 	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} ${PYSETUP} build ${PYDISTUTILS_BUILDARGS})
