@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gkrellmms
-PORTVERSION=	2.1.7
+PORTVERSION=	2.1.8
 CATEGORIES=	audio
 MASTER_SITES=	http://gkrellm.luon.net/files/
 
