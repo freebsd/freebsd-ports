@@ -14,8 +14,8 @@ BROWSER_ARC=    ${BROWSER_NAME}-linux
 MASTERDIR_LINUX= ${.CURDIR}/../linux-netscape47-communicator
 NSUBDIR=	lib/netscape-linux
 START_SCRIPT=	${MASTERDIR_LINUX}/files/start.sh.in
-# for 4.78, temporary
-BROWSER_VERSION=      4.78
+# for 4.79, temporary
+BROWSER_VERSION=      4.79
 
 post-patch:
 	${PATCH} ${PATCH_DIST_ARGS} < ${MASTERDIR_LINUX}/files/patch-aa
