@@ -14,4 +14,6 @@ COMMENT=	KDE Lush complete iconset
 
 WRKSRC=		"${WRKDIR}/${PORTNAME}"
 
+BROKEN=		"Unfetchable"
+
 .include "${.CURDIR}/../kde-icons-noia/Makefile.icons"
