@@ -13,6 +13,8 @@ For output via esd do:
 NAS and direct output are documented in section 23 of the users'
 manual.
 
+If you need the OGI extensions, install ports/audio/festival+OGI instead.
+
 WWW:  http://www.cstr.ed.ac.uk/projects/festival/
 
 Trevor Johnson
