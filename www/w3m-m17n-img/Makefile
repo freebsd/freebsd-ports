@@ -16,5 +16,6 @@ PLIST=		${MASTERDIR}/pkg-plist
 
 M17N=		yes
 INLINE_IMAGE=	yes
+CONFLICTS=	ja-w3m-0.5.* ja-w3m-img-0.5.* w3m-0.5.* w3m-m17n-0.5.* w3m-img-0.5.*
 
 .include "${MASTERDIR}/Makefile"
