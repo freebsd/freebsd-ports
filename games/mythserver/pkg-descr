@@ -1,0 +1,14 @@
+This is the source code for Bungie's MythII metaserver, the
+backend server system that supported MythII online play over
+the Internet for several years. The day has come for Bungie's
+MythII server to be retired. This source code for the server
+is being released so that the Myth community will have a
+starting point for creating their own Myth server system,
+should the need or desire to do so arise.
+
+Visit these following web pages for more information:
+
+WWW: http://www.bungie.net/site/3
+
+- Miguel Mendez
+flynn@energyhq.homeip.net
