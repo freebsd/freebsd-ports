@@ -4347,6 +4347,7 @@ matrix-kmod	ports/misc/matrix-kmod
 mavbiff		ports/mail/mavbiff
 maverik		ports/graphics/maverik
 mawk		ports/lang/mawk
+maxima		ports/math/maxima
 mayavi		ports/science/mayavi
 mboxgrep	ports/mail/mboxgrep
 mbr		src/sys/boot/i386/mbr
