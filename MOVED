@@ -510,3 +510,6 @@ x11/libpanel||2003-08-12|removed as part of GNOME 1.4 desktop phase out
 x11-fm/file_applet_menu||2003-08-12|removed as part of GNOME 1.4 desktop phase out
 x11-toolkits/panel--||2003-08-12|removed as part of GNOME 1.4 desktop phase out
 mail/flink||2003-08-12|removed as part of GNOME 1.4 desktop phase out
+net/openldap20|net/openldap20-server|2003-08-13|split into -client and -server
+net/openldap21|net/openldap21-server|2003-08-13|split into -client and -server
+net/openldap22|net/openldap22-server|2003-08-13|split into -client and -server
