@@ -1,0 +1,28 @@
+
+    Ghostview -- An X11 user interface for ghostscript.
+
+Ghostview is full function user interface for ghostscript 2.4 and later.
+
+Brief list of features:
+  - Ghostview parses any known version of Adobe's Document Structuring
+    Conventions.
+  - Page size is automatically determined from the Document Structuring
+    Comments.  The user is able to override the values from the comments.
+  - Window size is set to the bounding box for Encapsulated PostScript figures.
+  - Default page size is Letter and can be changed via Xresources or
+    application defaults file to A4 (or any other valid size) for our
+    European friends.
+  - Scrollbars appear when necessary.
+  - Page orientation is automatically determined from the Document Structuring
+    Comments.  The user is able to override the values from the comments.
+  - Ability to view at 4 orientations: Portrait, Landscape, Upside-down,
+    and Seascape (for those who rotate landscape the other direction).
+  - Ability to restrict rendering to grayscale or monochrome.   (Requires
+    ghostscript 2.6.1.)
+  - Ability to mark pages for printing, or saving.  (Good for people that
+    printed a 100 page document and lost page 59 due to a printer jam.)
+  - Can popup zoom windows at printer resolution
+    (1 display dot = 1 printer dot).
+
+    The Ghostview distribution includes a Ghostview Widget that people
+    are encouraged to use in other programs.
