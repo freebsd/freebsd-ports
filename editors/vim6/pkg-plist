@@ -19,3 +19,4 @@ bin/gvimdiff
 @comment Insert PLIST.share-vim here
 @comment -=[ begin PLIST.share-vim ]=-
 @comment -=[ end PLIST.share-vim ]=-
+@dirrm share/vim
