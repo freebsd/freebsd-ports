@@ -1,6 +1,6 @@
---- ./src/unix/sysdep/mixer-drivers/oss.c.orig	Sun Sep  8 01:13:30 2002
-+++ ./src/unix/sysdep/mixer-drivers/oss.c	Sun Sep  8 01:13:35 2002
-@@ -28,9 +28,7 @@
+--- src/unix/sysdep/dsp-drivers/oss.c.orig	Fri May  3 02:53:54 2002
++++ src/unix/sysdep/dsp-drivers/oss.c	Thu Oct 31 12:46:35 2002
+@@ -29,9 +29,7 @@
  #include <sys/types.h>
  #include <sys/stat.h>
  #include <sys/ioctl.h>

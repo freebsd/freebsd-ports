@@ -11,7 +11,7 @@ PORTVERSION=	0.56.2
 MAINTAINER=	stijn@win.tue.nl
 
 MASTERDIR=	${.CURDIR}/../xmame
-PATCHDIR=	$(.CURDIR)/files
+PATCHDIR=	${.CURDIR}/files
 COMMENT=	${.CURDIR}/pkg-comment
 DESCR=		${.CURDIR}/pkg-descr
 
