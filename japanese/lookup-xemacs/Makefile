@@ -11,4 +11,8 @@ PKGNAME=	ja-lookup-xemacs-1.0
 MASTERDIR=	${.CURDIR}/../lookup-mule
 EMACS=		xemacs
 
+.if defined(PARALLEL_PACKAGE_BUILD)
+FORBIDDEN=	hang
+.endif
+
 .include	"${MASTERDIR}/Makefile"
