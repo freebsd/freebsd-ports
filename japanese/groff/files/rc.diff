@@ -1,0 +1,20 @@
+--- tmac/eqnrc.orig	Tue Mar 25 23:40:57 1997
++++ tmac/eqnrc	Fri May  2 23:37:04 1997
+@@ -51,6 +51,7 @@
+ ifdef ascii ! define n %1% !
+ ifdef latin1 ! define n %1% !
+ ifdef koi8-r ! define n %1% !
++ifdef nippon ! define n %1% !
+ ifdef n !
+ set nroff 1
+ !
+--- tmac/troffrc.orig	Tue Mar 25 23:40:57 1997
++++ tmac/troffrc	Fri May  2 23:37:43 1997
+@@ -13,6 +13,7 @@
+ .do ds troffrc!ascii tmac.tty
+ .do ds troffrc!latin1 tmac.tty
+ .do ds troffrc!koi8-r tmac.tty
++.do ds troffrc!nippon tmac.tty
+ .do ds troffrc!lj4 tmac.lj4
+ .do if d troffrc!\*[.T] \
+ .	do mso \*[troffrc!\*[.T]]
