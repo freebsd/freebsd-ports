@@ -3,11 +3,11 @@
 # Date created:		28 September 1994
 # Whom:			adam
 #
-# $Id: Makefile,v 1.10 1995/04/24 09:21:52 asami Exp $
+# $Id: Makefile,v 1.11 1995/07/02 12:40:13 asami Exp $
 #
 
 DISTNAME=	cnews
-PKGNAME=	cnews-cr.e
+PKGNAME=	cnews-cr.g
 CATEGORIES+=	news
 MASTER_SITES=	ftp://ftp.zoo.toronto.edu/pub/
 EXTRACT_SUFX=	.tar.Z
