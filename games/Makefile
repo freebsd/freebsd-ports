@@ -143,6 +143,7 @@
     SUBDIR += hlserver-admin
     SUBDIR += hlserver-cs
     SUBDIR += hlserver-dod
+    SUBDIR += hlserver-esf
     SUBDIR += hlserver-existence
     SUBDIR += hlserver-fa
     SUBDIR += hlserver-flf
