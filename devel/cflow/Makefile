@@ -14,5 +14,7 @@ MASTER_SITE_SUBDIR=	devel/lang/c
 MAINTAINER=	dchapes@zeus.leitch.com
 
 USE_GMAKE=	yes
+MAN1=		cflow.1
+MANCOMPRESSED=	yes
 
 .include <bsd.port.mk>
