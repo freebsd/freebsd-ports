@@ -23,7 +23,12 @@ USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	gtk12
 
+.include <bsd.port.pre.mk>
+.if ${ARCH} == "amd64"
+CFLAGS=	-fPIC
+.endif
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/liba52dec.so ${PREFIX}/lib/xmms/Input/
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
