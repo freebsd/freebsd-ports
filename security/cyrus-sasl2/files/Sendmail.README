@@ -1,11 +1,14 @@
-How to enable SMTP AUTH with FreeBSD default Sendmail 8.11
+How to enable SMTP AUTH with FreeBSD default Sendmail
 
 1) Add the following to  /etc/make.conf:
 
     # Add SMTP AUTH support to Sendmail
-    SENDMAIL_CFLAGS+=	-I/usr/local/include/sasl -DSASL -D_FFR_UNSAFE_SASL
+    SENDMAIL_CFLAGS+=	-I/usr/local/include/sasl -DSASL
     SENDMAIL_LDFLAGS+=	-L/usr/local/lib
     SENDMAIL_LDADD+=	-lsasl
+
+    NOTE: Sendmail 8.10 - 8.11 needS -D_FFR_UNSAFE_SASL added
+          to SENDMAIL_CFLAGS, if you need the GroupReadableSASLFile option
 
 2) Rebuild FreeBSD (make buildworld, ...)
 
@@ -15,10 +18,17 @@ How to enable SMTP AUTH with FreeBSD default Sendmail 8.11
 
 4) Add the following to your sendmail.mc file:
 
+   dnl The group needs to be mail in order to read the sasldb file
+   define(`confRUN_AS_USER',`root:mail')dnl
+
    TRUST_AUTH_MECH(`DIGEST-MD5 CRAM-MD5')dnl
    define(`confAUTH_MECHANISMS',`DIGEST-MD5 CRAM-MD5')dnl
+
+   dnl Use the following for Sendmail 8.12
    define(`confDONT_BLAME_SENDMAIL',`GroupReadableSASLDBFile')dnl
-   define(`confRUN_AS_USER',`root:mail')dnl
+
+   dnl Use the following for Sendmail 8.10 - 8.11
+   define(`confDONT_BLAME_SENDMAIL',`GroupReadableSASLFile')dnl
 
  ----
 
@@ -36,6 +46,6 @@ How to enable SMTP AUTH with FreeBSD default Sendmail 8.11
    Communicator will use SASL Authentication when sendmail is compiled with
    SASL.
 
-   The DONT_BLAME_SENDMAIL option GroupReadableSASLFile is needed when you
+   The DONT_BLAME_SENDMAIL option GroupReadableSASL[DB]File is needed when you
    are using cyrus-imapd and sendmail on the same server that requires access
    to the sasldb database.
