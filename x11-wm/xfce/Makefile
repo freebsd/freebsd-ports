@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xfce
-PORTVERSION=	3.8.14
+PORTVERSION=	3.8.14c
 CATEGORIES=	x11-wm
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.xfce.org/archive/
@@ -15,6 +15,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	nakai@FreeBSD.org
 
 LIB_DEPENDS=	audiofile.0:${PORTSDIR}/audio/libaudiofile \
+		giconv.2:${PORTSDIR}/converters/libiconv \
 		gdk_pixbuf.2:${PORTSDIR}/graphics/gdk-pixbuf
 
 USE_X_PREFIX=	yes
@@ -23,7 +24,7 @@ USE_XPM=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--with-conf-dir=${PREFIX}/etc/xfce \
 		--with-data-dir=${PREFIX}/share/xfce \
 		--with-locale-dir=${PREFIX}/share/locale \
@@ -57,9 +58,10 @@ pre-everything::
 pre-patch:
 	@${PERL} -pi -e \
 		's|DATADIRNAME=lib|DATADIRNAME=share|g ; \
-		 s|USE_INCLUDED_LIBINTL=yes|#USE_INCLUDED_LIBINTL=yes|g ; \
-		 s|\$$\(top_builddir\)/intl/libintl.a|-lintl|g' ${WRKSRC}/configure
+		s|<iconv.h>|<giconv.h>|g ; \
+		s|-liconv|-lgiconv|g' ${WRKSRC}/configure
 	@${PERL} -pi -e 's|gtk-config|${GTK_CONFIG:T}|g' ${WRKSRC}/xfce/setup.c
+	@${PERL} -pi -e 's|<iconv.h>|<giconv.h>|g' ${WRKSRC}/xfmenu/xfmenu.c
 	@${PERL} -pi -e 's|xfplay|internal|g' ${WRKSRC}/other/xfsoundrc.in
 
 .include <bsd.port.post.mk>
