@@ -8,7 +8,7 @@
 PORTNAME=	wmthemeinstall
 PORTVERSION=	0.62
 CATEGORIES=	x11-wm
-MASTER_SITES=	http://hellblazer.linuxprojects.net/projects/wmthemeinstall/download/
+MASTER_SITES=	http://www.jeremias.net/wmthemeinstall/download/
 
 MAINTAINER=	adam-ports@blacktabby.org
 
@@ -18,9 +18,10 @@ USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GTK=	yes
 GNU_CONFIGURE=	yes
+USE_REINPLACE=	yes
 
 pre-build:
-	@${PERL} -pi -e "s:/usr/local:${PREFIX}:g" ${WRKSRC}/wmOptions.c
+	@${REINPLACE_CMD} -e "s|/usr/local|${PREFIX}|g" ${WRKSRC}/wmOptions.c
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/wmthemeinstall ${PREFIX}/bin
