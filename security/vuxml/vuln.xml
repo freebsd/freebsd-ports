@@ -32,6 +32,39 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="bdad9ada-8a52-11d9-9e53-000a95bc6fae">
+    <topic>lighttpd -- script source disclosure vulnerability</topic>
+    <affects>
+      <package>
+        <name>lighttpd</name>
+        <range><lt>1.3.8</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>The lighttpd website reports:</p>
+	<blockquote cite="http://article.gmane.org/gmane.comp.web.lighttpd/1171">
+          <p>In lighttpd 1.3.7 and below it is possible to fetch the source
+            files which should be handled by CGI or FastCGI applications.</p>
+        </blockquote>
+	<p>The vulnerability is in the handling of urlencoded trailing
+	  NUL bytes.  Installations that do not use CGI or FastCGI are
+	  not affected.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2005-0453</cvename>
+      <mlist>http://article.gmane.org/gmane.comp.web.lighttpd/1171</mlist>
+      <url>http://www.lighttpd.net/news/</url>
+      <url>http://xforce.iss.net/xforce/xfdb/19350</url>
+      <bid>12567</bid>
+    </references>
+    <dates>
+      <discovery>2005-02-12</discovery>
+      <entry>2005-03-01</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="53e711ed-8972-11d9-9ff8-00306e01dda2">
     <topic>phpbb -- privilege elevation and path disclosure</topic>
     <affects>
