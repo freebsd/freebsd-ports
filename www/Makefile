@@ -90,6 +90,7 @@
     SUBDIR += drupal
     SUBDIR += dtse
     SUBDIR += dummyflash
+    SUBDIR += eaccelerator
     SUBDIR += eldav.el
     SUBDIR += elinks
     SUBDIR += emacs-w3m
@@ -683,7 +684,6 @@
     SUBDIR += tinyproxy
     SUBDIR += trac
     SUBDIR += transproxy
-    SUBDIR += turck-mmcache
     SUBDIR += twhttpd
     SUBDIR += twig
     SUBDIR += twiki

@@ -1670,6 +1670,7 @@ e2fsprogs	ports/sysutils/e2fsprogs
 e3		ports/editors/e3
 e4graph		ports/devel/e4graph
 e93		ports/editors/e93
+eaccelerator	ports/www/eaccelerator
 earthview	ports/misc/earthview
 easydiff	ports/textproc/easydiff
 easygtk		ports/x11-toolkits/easygtk
@@ -10965,7 +10966,6 @@ tund		ports/net/tund
 tuneradio	ports/audio/tuneradio
 tunesbrowser	ports/audio/tunesbrowser
 turba		ports/mail/turba
-turck-mmcache	ports/www/turck-mmcache
 tux-aqfh	ports/games/tux-aqfh
 tuxcards	ports/deskutils/tuxcards
 tuxkart		ports/games/tuxkart
