@@ -58,7 +58,14 @@ LIB_DEPENDS+=	png.5:${PORTSDIR}/graphics/png
 CONFIGURE_ARGS+=	--without-png
 .endif
 
-.if !defined(WITH_TIFF)
+.if !defined(WITHOUT_PNM)
+CONFIGURE_ARGS+=	--with-pnm
+LIB_DEPENDS+=	netpbm.1:${PORTSDIR}/graphics/netpbm
+.else
+CONFIGURE_ARGS+=	--without-pnm
+.endif
+
+.if !defined(WITHOUT_TIFF)
 CONFIGURE_ARGS+=	--with-tiff
 LIB_DEPENDS+=	tiff.4:${PORTSDIR}/graphics/tiff
 .else
