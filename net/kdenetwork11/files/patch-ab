@@ -1,0 +1,28 @@
+*** kmail/kmacctlocal.cpp~	Sat Feb 28 15:56:44 1998
+--- kmail/kmacctlocal.cpp	Sat Feb 28 15:57:14 1998
+***************
+*** 42,46 ****
+  void KMAcctLocal::init(void)
+  {
+!   mLocation = "/var/spool/mail/";
+    mLocation.detach();
+    mLocation += getenv("USER");
+--- 42,46 ----
+  void KMAcctLocal::init(void)
+  {
+!   mLocation = "/var/mail/";
+    mLocation.detach();
+    mLocation += getenv("USER");
+***************
+*** 99,103 ****
+  void KMAcctLocal::readConfig(KConfig& config)
+  {
+!   QString defaultPath("/var/spool/mail/");
+    defaultPath += getenv("USER");
+  
+--- 99,103 ----
+  void KMAcctLocal::readConfig(KConfig& config)
+  {
+!   QString defaultPath("/var/mail/");
+    defaultPath += getenv("USER");
+  
