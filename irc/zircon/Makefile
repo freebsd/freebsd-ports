@@ -3,7 +3,7 @@
 # Date created:		19 Aug 1995
 # Whom:			jkh / pst
 #
-# $Id: Makefile,v 1.14 1997/07/14 12:50:14 jkh Exp $
+# $Id: Makefile,v 1.15 1997/07/14 12:54:05 jkh Exp $
 #
 
 DISTNAME=	zircon-1.18.31
@@ -27,7 +27,7 @@ BUILD_DEPENDS=	wish4.1:${PORTSDIR}/x11/tk41
 RUN_DEPENDS=	wish4.1:${PORTSDIR}/x11/tk41
 .endif
 
-install:
+do-install:
 	(cd ${WRKSRC} && ./installZircon)
 
 .include <bsd.port.mk>
