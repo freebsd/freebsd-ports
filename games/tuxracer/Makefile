@@ -16,7 +16,7 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.gz \
 
 MAINTAINER=	anholt@teleport.com
 
-LIB_DEPENDS=	SDL-1.1.3:${PORTSDIR}/devel/sdl12 \
+LIB_DEPENDS=	SDL_mixer.2:${PORTSDIR}/audio/sdl_mixer \
 		tcl83.1:${PORTSDIR}/lang/tcl83
 
 USE_MESA=	yes
@@ -35,8 +35,8 @@ WORKDATA=	${WRKDIR}/${PORTNAME}-data-${PORTVERSION}
 COURSEDIRS=	1 2 3 4 5 6 7 8 9 10 11
 
 post-install:
-	${MKDIR} ${DATADIR}/courses
+	${MKDIR} ${DATADIR}
 	(cd ${WORKDATA} && ${TAR} -c -f - *) | \
-		(cd ${SHAREDIR} && ${TAR} -x -f - )
+		(cd ${DATADIR} && ${TAR} -x -f - )
 
 .include <bsd.port.mk>
