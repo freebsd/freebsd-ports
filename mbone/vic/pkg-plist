@@ -1,4 +1,3 @@
-@cwd /usr/local
 bin/vic
 bin/histtolut
-man/manl/vic.l
+man/man1/vic.1.gz

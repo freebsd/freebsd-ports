@@ -1,24 +1,14 @@
-*** main.cc.orig	Wed Dec 14 17:11:18 1994
---- main.cc	Wed Dec 14 17:12:59 1994
-***************
-*** 464,472 ****
-  	signal(SIGTERM, (void (*)(int ...))adios);
-  #endif
-! #elif defined(__osf__) ||  defined(__hpux__) || defined(__NetBSD__)
-  	signal(SIGINT, (void (*)(int))adios);
-  	signal(SIGHUP, (void (*)(int))adios);
-  	signal(SIGTERM, (void (*)(int))adios);
-! #ifdef __NetBSD__
-  	signal(SIGSYS, (void (*)(int))noXShm);
-  #endif
---- 464,473 ----
-  	signal(SIGTERM, (void (*)(int ...))adios);
-  #endif
-! #elif defined(__osf__) ||  defined(__hpux__) || defined(__NetBSD__) || defined(__FreeBSD__)
-  	signal(SIGINT, (void (*)(int))adios);
-  	signal(SIGHUP, (void (*)(int))adios);
-  	signal(SIGTERM, (void (*)(int))adios);
-! #if defined(__NetBSD__) /*|| defined(__FreeBSD__)*/
-! 	/* XXX: -DNOSHM should not be conditionalized on just machine(i386) */
-  	signal(SIGSYS, (void (*)(int))noXShm);
-  #endif
+--- grabber-qcam.cc.orig	Sat Nov  2 23:22:46 1996
++++ grabber-qcam.cc	Sat Nov  2 23:23:34 1996
+@@ -84,6 +84,11 @@
+ #define CIF_HEIGHT 288
+ 
+ /*XXX*/
++#ifndef QC_MAX_CONTRAST
++#define	QC_MAX_CONTRAST	255
++#endif
++
++/*XXX*/
+ #define VOLATILE volatile
+ 
+ class QcamGrabber : public Grabber {

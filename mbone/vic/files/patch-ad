@@ -1,0 +1,12 @@
+--- main.cc.orig	Sun Nov  3 16:17:04 1996
++++ main.cc	Sun Nov  3 16:17:05 1996
+@@ -425,6 +425,9 @@
+ #endif
+ 	signal(SIGINT, ciao);
+ 	signal(SIGTERM, ciao);
++#ifdef __FreeBSD__
++	signal(SIGSYS, (sig_t)noXShm);
++#endif
+ 
+ #ifdef WIN32
+ 	TkSetPlatformInit(TkPlatformInit);
