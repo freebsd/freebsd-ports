@@ -1,0 +1,18 @@
+Paraget implements getting a single file in parallel from different mirror
+sites.
+
+Given that there are mirror-sites for the file one is downloading, one can
+in principle accomplish a much greater bandwidth by downloading from all
+the sites in parallel . This is accomplished by dividing the file being
+fetched into several pieces, and by getting each piece from a different
+server, and then re-assembling them.
+   
+If there are enough mirror sites, this partitioning makes it so that the
+bottleneck is now placed at the client end, maxing the client's connection.
+
+Paraget is designed to not only do basic n -equal-piece partitioning of a
+file and sending requests out to n servers for data, but to also be dynamic
+during the downloading process. For example if one server is too slow, and
+paraget was done with faster server downloading its piece
+
+WWW: http://paraget.sourceforge.net/
