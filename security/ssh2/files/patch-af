@@ -55,7 +55,7 @@
   		   &from);
   
 + #ifdef HAVE_LOGIN_CAP_H
-+       lc = login_getclass(pw);
++       lc = login_getclass(pw->pw_class);
 + #endif
 + 
         /* Check if .hushlogin exists.  Note that we cannot use userfile
@@ -165,7 +165,7 @@
 !   login_cap_t *lc;
 !   char *real_shell;
 !   
-!   lc = login_getclass(pw);
+!   lc = login_getclass(pw->pw_class);
 !   auth_checknologin(lc);
 ! #else /* !HAVE_LOGIN_CAP_H */
     /* Check /etc/nologin. */
