@@ -30,7 +30,7 @@ MAN8=		vpnc.8
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "amd64"
-BROKEN=		"Crashes on startup"
+IGNORE=		"Crashes on startup"
 .endif
 
 post-patch:
