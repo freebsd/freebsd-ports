@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	mftrace
-PORTVERSION=	1.0.26
+PORTVERSION=	1.0.27
 CATEGORIES=	print
 MASTER_SITES=	http://www.xs4all.nl/~hanwen/mftrace/
 
