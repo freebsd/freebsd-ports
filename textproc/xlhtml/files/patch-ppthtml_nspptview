@@ -1,0 +1,23 @@
+--- ppthtml/nspptview.orig	Sun Jun 22 08:47:02 2003
++++ ppthtml/nspptview	Sun Jun 22 08:49:18 2003
+@@ -1,7 +1,7 @@
+ #!/bin/csh
+ 
+ if ($#argv != 1) then
+-    echo "Usage: $0 file.doc"
++    echo "Usage: $0 file.ppt"
+     exit 1
+ endif
+ 
+@@ -12,9 +12,8 @@
+ #set tmp = /tmp/$com:t.$$
+ #set html = $tmp.html
+ 
+-set tmp = `mktemp -q /tmp/nspptview.XXXXXX` || exit 1
+-set tmp2 = `mktemp -q $tmp/nspptview.XXXXXX` || exit 1
+-set html = $tmp2.html
++set tmp = `mktemp -t nspptview.XXXXXX` || exit 1
++set html = $tmp.html
+  
+ ppthtml $source > $html
+ if ((!(-r $html)) | ($status)) then

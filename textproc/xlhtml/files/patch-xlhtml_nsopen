@@ -1,0 +1,14 @@
+--- xlhtml/nsopen.orig	Sun Jun 22 01:17:52 2003
++++ xlhtml/nsopen	Sun Jun 22 01:18:51 2003
+@@ -12,9 +12,9 @@
+ endif
+ 
+ #Try to open file in an existing netscape window
+-(netscape -no-about-splash -remote "openFile(${file})") >& /dev/null
++(mozilla -remote "openFile(${file})") >& /dev/null
+ 
+ #if this fails, it means that netscape is not running, so start it
+ if ($status) then
+-  netscape -no-about-splash -no-install file:${file}
++  mozilla file:${file}
+ endif
