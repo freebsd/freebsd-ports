@@ -6,17 +6,19 @@
 #
 
 PORTNAME=	irclib
-PORTVERSION=	0.3.2
+PORTVERSION=	0.3.3
 CATEGORIES=	irc python
-MASTER_SITES=	http://joel.rosdahl.net/hacks/ \
-		http://fallin.lv/distfiles/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	python-irclib
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	python-irclib-${PORTVERSION}
 
 MAINTAINER=	perky@fallin.lv
 
 USE_PYTHON=	yes
 
-PLIST_SUB+=	PYTHON_SITELIBDIR=${PYTHON_SITELIBDIR:S/^${LOCALBASE}\///g}
+PLIST_SUB+=	PYTHON_SITELIBDIR=${PYTHON_SITELIBDIR:S,^${LOCALBASE}/,,g} \
+		EXAMPLESDIR=${EXAMPLESDIR:S,^${PREFIX}/,,g}
 EXAMPLEFILES=	ircbot.py irccat irccat2 servermap testbot.py
 
 do-build:
@@ -27,9 +29,7 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/irclib.py* ${PYTHON_SITELIBDIR}/
 	@${MKDIR} ${PREFIX}/share/examples/${PORTNAME}
 .for file in ${EXAMPLEFILES}
-	@${INSTALL_SCRIPT} ${WRKSRC}/${file} ${PREFIX}/share/examples/${PORTNAME}/
+	@${INSTALL_SCRIPT} ${WRKSRC}/${file} ${EXAMPLESDIR}/
 .endfor
-	@${MKDIR} ${PREFIX}/share/doc/${PORTNAME}
-	@${INSTALL_DATA} ${WRKSRC}/doc/* ${PREFIX}/share/doc/${PORTNAME}/
 
 .include <bsd.port.mk>

@@ -1,24 +1,9 @@
-share/doc/irclib/index.html
-share/doc/irclib/indices.html
-share/doc/irclib/ircbot.Channel.html
-share/doc/irclib/ircbot.IRCDict.html
-share/doc/irclib/ircbot.SingleServerIRCBot.html
-share/doc/irclib/ircbot.html
-share/doc/irclib/irclib.Connection.html
-share/doc/irclib/irclib.DCCConnection.html
-share/doc/irclib/irclib.Event.html
-share/doc/irclib/irclib.IRC.html
-share/doc/irclib/irclib.IRCError.html
-share/doc/irclib/irclib.ServerConnection.html
-share/doc/irclib/irclib.ServerConnectionError.html
-share/doc/irclib/irclib.SimpleIRCClient.html
-share/doc/irclib/irclib.html
-share/doc/irclib/pythondoc.css
-share/examples/irclib/ircbot.py
-share/examples/irclib/irccat
-share/examples/irclib/irccat2
-share/examples/irclib/servermap
-share/examples/irclib/testbot.py
+%%EXAMPLESDIR%%/ircbot.py
+%%EXAMPLESDIR%%/irccat
+%%EXAMPLESDIR%%/irccat2
+%%EXAMPLESDIR%%/servermap
+%%EXAMPLESDIR%%/testbot.py
+@dirrm %%EXAMPLESDIR%%
 @cwd %%LOCALBASE%%
 %%PYTHON_SITELIBDIR%%/irclib.py
 %%PYTHON_SITELIBDIR%%/irclib.pyc
