@@ -7,6 +7,7 @@
 
 PORTNAME=	reportlab
 PORTVERSION=	1.14
+PORTREVISION=	1
 CATEGORIES=	print python
 MASTER_SITES=	ftp://ftp.reportlab.com/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,14 +20,17 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_imaging.so:${PORTSDIR}/graphics/py-imaging
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
+USE_PYTHON_PREFIX=	yes
+USE_REINPLACE=	yes
 NO_WRKSUBDIR=	yes
 
-REPORTLABDIR=	${PREFIX}/lib/${PYTHON_VERSION}/site-packages/reportlab
+REPORTLABDIR=	${PYTHON_SITELIBDIR}/reportlab
 DOCDIR=		${PREFIX}/share/doc/reportlab
 EXAMPLEDIR=	${PREFIX}/share/examples/reportlab
 
 post-patch:
 	${MV} ${WRKSRC}/reportlab/lib/setup.py ${WRKDIR}
+	${REINPLACE_CMD} 's|/usr/local|${LOCALBASE}|g' ${WRKSRC}/reportlab/rl_config.py
 
 post-install:
 	${MKDIR} ${REPORTLABDIR}/fonts
@@ -37,10 +41,12 @@ post-install:
 
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${EXAMPLEDIR}
-	cd ${WRKSRC}/reportlab/demos; tar cpf - * | (cd ${EXAMPLEDIR}; tar xpf -)
+	cd ${WRKSRC}/reportlab/demos; ${TAR} cpf - * | (cd ${EXAMPLEDIR}; ${TAR} xpf -)
 
 	@${MKDIR} ${DOCDIR}
 	${INSTALL_DATA} ${WRKSRC}/reportlab/docs/*.pdf ${DOCDIR}
 .endif
+
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
