@@ -1,0 +1,17 @@
+This is a release of Zircon, an X11 interface to Internet Relay Chat.
+The software is written in tcl/tk and uses the tcl-dp TCP extensions
+to provide network communications. Suggestions for improvements to
+Zircon are welcome. I am particularly interested in making the
+system useful for those users in groups where JIPS and other national
+character sets are used.
+
+Zircon has more features than you could possibly imagine and
+implements nearly everything that the irc II clients support as well
+as many other useful and interesting features. This reflects the power
+of tcl/tk *not* the fact that I am a wonderful programmer (I am, but
+that is a side issue :-)) tcl/tk is a wonderful system and you need it
+on your machine *NOW*.
+
+Please send all reports, comments and suggestions to: 
+
+        zircon@catless.newcastle.ac.uk
