@@ -175,6 +175,7 @@
     SUBDIR += pantomime
     SUBDIR += pantomime-ssl
     SUBDIR += pathalias
+    SUBDIR += pear-Mail_Mime
     SUBDIR += perdition
     SUBDIR += pflogsumm
     SUBDIR += pgen

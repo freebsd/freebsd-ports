@@ -159,6 +159,8 @@
     SUBDIR += p5-User
     SUBDIR += paicc
     SUBDIR += pdumpfs
+    SUBDIR += pear-File
+    SUBDIR += pear-Log
     SUBDIR += penv
     SUBDIR += perf
     SUBDIR += personality

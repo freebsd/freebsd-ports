@@ -1,0 +1,10 @@
+%%PEARDIR%%/Log/composite.php
+%%PEARDIR%%/Log/console.php
+%%PEARDIR%%/Log/file.php
+%%PEARDIR%%/Log/mail.php
+%%PEARDIR%%/Log/mcal.php
+%%PEARDIR%%/Log/observer.php
+%%PEARDIR%%/Log/sql.php
+%%PEARDIR%%/Log/syslog.php
+%%PEARDIR%%/Log.php
+@dirrm %%PEARDIR%%/Log

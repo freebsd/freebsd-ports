@@ -431,6 +431,8 @@
     SUBDIR += pchar
     SUBDIR += pcnfsd
     SUBDIR += pdnsd
+    SUBDIR += pear-Net_Sieve
+    SUBDIR += pear-Net_Socket
     SUBDIR += pen
     SUBDIR += perldap
     SUBDIR += pfinger
