@@ -1,11 +1,22 @@
---- src/libs/tgfclient/screen.cpp.orig	Mon Feb 14 23:09:32 2005
-+++ src/libs/tgfclient/screen.cpp	Mon Feb 14 23:22:49 2005
-@@ -36,6 +36,8 @@
- #include <process.h>
- #endif /* WIN32 */
+--- ./src/libs/tgfclient/screen.cpp.orig	Fri Feb  4 23:29:59 2005
++++ ./src/libs/tgfclient/screen.cpp	Mon Feb 28 19:21:11 2005
+@@ -52,6 +52,19 @@
+ #include <X11/extensions/Xrandr.h>
+ #endif // USE_RANDR_EXT
  
-+#include <publib.h>
++#if defined(__FreeBSD__)
++static char *strndup(const char *str, int len) {
++	char *ret;
 +
- #include <tgfclient.h>
- #include "gui.h"
- #include "fg_gm.h"
++	if ((str == NULL || len < 0)) return(NULL);
++	ret = (char *)malloc(len + 1);
++	if (ret == NULL) return(NULL);
++	memcpy(ret, str, len);
++	ret[len] = '\0';
++	return(ret);
++}
++#endif
++
+ static int GfScrWidth;
+ static int GfScrHeight;
+ static int GfViewWidth;
