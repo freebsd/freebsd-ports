@@ -3,7 +3,7 @@
 # Date created:		16 Mar 1996
 # Whom:			Hideaki Ohmon <ohmon@tom.sfc.keio.ac.jp>
 #
-# $Id: Makefile,v 1.10 1998/10/30 08:35:38 asami Exp $
+# $Id: Makefile,v 1.11 1998/11/07 10:50:01 asami Exp $
 #
 
 DISTNAME=	pkfonts
@@ -18,6 +18,7 @@ DISTFILES=	pk${RESOLUTION}.tar.gz
 DIST_SUBDIR=	pkfonts
 EXTRACT_ONLY=	# extracted directly in install target
 NO_BUILD=	yes
+PLIST=		${PKGDIR}/${RESOLUTION}.list
 
 .if !defined(RESOLUTION)
 RESOLUTION=	300
