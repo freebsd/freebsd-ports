@@ -8,7 +8,10 @@
 PORTNAME=	phylip
 PORTVERSION=	3.62
 CATEGORIES=	biology
-MASTER_SITES=	ftp://evolution.genetics.washington.edu/pub/phylip/
+MASTER_SITES=	ftp://evolution.genetics.washington.edu/pub/phylip/ \
+		http://bioinformatics.weizmann.ac.il/software/linkage_and_mapping/phylip/ \
+		${MASTER_SITE_GENTOO}
+MASTER_SITE_SUBDIR=	distfiles
 
 MAINTAINER=	dbader@ece.unm.edu
 COMMENT=	A Phylogeny Inference Package
