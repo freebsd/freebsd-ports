@@ -332,6 +332,7 @@ libexec/fvwm/%%VER%%/FvwmConsoleC
 libexec/fvwm/%%VER%%/FvwmConsoleC.pl
 libexec/fvwm/%%VER%%/FvwmCpp
 libexec/fvwm/%%VER%%/FvwmDebug
+libexec/fvwm/%%VER%%/FvwmDragWell
 libexec/fvwm/%%VER%%/FvwmEvent
 libexec/fvwm/%%VER%%/FvwmForm
 libexec/fvwm/%%VER%%/FvwmIconBox
