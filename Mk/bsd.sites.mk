@@ -48,6 +48,22 @@ MASTER_SITE_COMP_SOURCES+=	\
 	ftp://ftp.funet.fi/pub/archive/comp.sources.%SUBDIR%/ \
 	ftp://rtfm.mit.edu/pub/usenet/comp.sources.%SUBDIR%/
 
+#
+# FreeBSD mirror sites
+#
+# For the full list, see the Handbook:
+#
+#    http://www.FreeBSD.org/doc/en_US.ISO8859-1/books/handbook/mirrors-ftp.html
+#
+MASTER_SITE_FREEBSD+=	\
+	ftp://ftp.FreeBSD.org/pub/FreeBSD/%SUBDIR%/ \
+	ftp://ftp.se.FreeBSD.org/pub/FreeBSD/%SUBDIR%/ \
+	ftp://ftp.jp.FreeBSD.org/pub/FreeBSD/%SUBDIR%/ \
+	ftp://ftp.uk.FreeBSD.org/pub/FreeBSD/%SUBDIR%/ \
+	ftp://ftp.ru.FreeBSD.org/pub/FreeBSD/%SUBDIR%/ \
+	ftp://ftp.nectec.or.th/pub/FreeBSD/%SUBDIR%/ \
+	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,FreeBSD/&,}
+
 MASTER_SITE_GNOME+=	\
 	ftp://ftp.yggdrasil.com/mirrors/site/ftp.gnome.org/pub/GNOME/%SUBDIR%/ \
 	ftp://ftp.rpmfind.net/linux/gnome.org/%SUBDIR%/ \
