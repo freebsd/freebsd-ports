@@ -14,6 +14,8 @@ MASTER_SITES=	http://shakespearelang.sourceforge.net/download/
 MAINTAINER=	perky@FreeBSD.org
 COMMENT=	The Shakespeare programming language
 
+BROKEN=		Installs during build phase
+
 USE_BISON=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
