@@ -7,7 +7,7 @@
 
 PORTNAME=	wedit
 PORTVERSION=	0.9.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel editors
 MASTER_SITES=	http://www.q-software-solutions.com/download/weditpub/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-libc6-src
