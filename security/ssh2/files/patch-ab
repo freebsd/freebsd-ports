@@ -1,19 +1,19 @@
-*** configure.orig	Fri Oct  6 21:16:53 1995
---- configure	Fri Oct  6 21:17:16 1995
+*** configure.orig	Fri Oct  4 17:00:44 1996
+--- configure	Wed Oct 16 06:32:03 1996
 ***************
-*** 3621,3627 ****
+*** 5092,5098 ****
   EOF
   cat >> $CONFIG_STATUS <<EOF
   
-! CONFIG_FILES=\${CONFIG_FILES-"Makefile sshd.8 ssh.1 make-ssh-known-hosts.1"}
+! CONFIG_FILES=\${CONFIG_FILES-"Makefile sshd.8 ssh.1 make-ssh-known-hosts.1 zlib-1.0.3/Makefile"}
   EOF
   cat >> $CONFIG_STATUS <<\EOF
   for ac_file in .. $CONFIG_FILES; do if test "x$ac_file" != x..; then
---- 3621,3627 ----
+--- 5092,5098 ----
   EOF
   cat >> $CONFIG_STATUS <<EOF
   
-! CONFIG_FILES=\${CONFIG_FILES-"Makefile sshd.8 ssh.1 make-ssh-known-hosts.1 make-ssh-known-hosts.pl"}
+! CONFIG_FILES=\${CONFIG_FILES-"Makefile sshd.8 ssh.1 make-ssh-known-hosts.1 make-ssh-known-hosts.pl zlib-1.0.3/Makefile"}
   EOF
   cat >> $CONFIG_STATUS <<\EOF
   for ac_file in .. $CONFIG_FILES; do if test "x$ac_file" != x..; then
