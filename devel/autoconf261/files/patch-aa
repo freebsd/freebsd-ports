@@ -1,19 +1,21 @@
-*** Makefile.in.orig	Sat Jul  1 18:18:43 1995
---- Makefile.in	Sat Jul  1 18:19:38 1995
-***************
-*** 138,144 ****
-  	-if test -f autoscan; then \
-  	$(INSTALL_PROGRAM) autoscan $(bindir)/`echo autoscan|sed '$(transform)'`; \
-  	for i in acfunctions acheaders acidentifiers acprograms \
-! 	  acmakevars; do \
-  	$(INSTALL_DATA) $(srcdir)/$$i $(acdatadir)/$$i; \
-  	done; \
-  	else :; fi
---- 138,144 ----
-  	-if test -f autoscan; then \
-  	$(INSTALL_PROGRAM) autoscan $(bindir)/`echo autoscan|sed '$(transform)'`; \
-  	for i in acfunctions acheaders acidentifiers acprograms \
-! 	  acmakevars config.guess config.sub; do \
-  	$(INSTALL_DATA) $(srcdir)/$$i $(acdatadir)/$$i; \
-  	done; \
-  	else :; fi
+--- ./Makefile.in.org	Wed Nov 22 10:09:44 1995
++++ ./Makefile.in	Thu Mar 28 23:02:49 1996
+@@ -131,15 +131,15 @@
+ 	*) echo Error: Autoconf requires GNU m4 1.1 or later; exit 1 ;; \
+ 	esac
+ 	for p in $(ASCRIPTS); do \
+-	  $(INSTALL_PROGRAM) $$p $(bindir)/`echo $$p|sed '$(transform)'`; \
++	  $(INSTALL) $$p $(bindir)/`echo $$p|sed '$(transform)'`; \
+ 	done
+ 	for i in $(M4FILES) acconfig.h; do \
+ 	$(INSTALL_DATA) $(srcdir)/$$i $(acdatadir)/$$i; \
+ 	done
+ 	-if test -f autoscan; then \
+-	$(INSTALL_PROGRAM) autoscan $(bindir)/`echo autoscan|sed '$(transform)'`; \
++	$(INSTALL) autoscan $(bindir)/`echo autoscan|sed '$(transform)'`; \
+ 	for i in acfunctions acheaders acidentifiers acprograms \
+-	  acmakevars; do \
++	  acmakevars config.guess config.sub; do \
+ 	$(INSTALL_DATA) $(srcdir)/$$i $(acdatadir)/$$i; \
+ 	done; \
+ 	else :; fi
