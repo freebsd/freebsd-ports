@@ -6,6 +6,7 @@ lib/xine/plugins/input_stdin_fifo.so
 lib/xine/plugins/input_vcd.so
 share/doc/xine/FAQ
 share/doc/xine/README
+share/doc/xine/README.freebsd
 share/doc/xine/README.syncfb
 share/doc/xine/bug_report_form
 share/xine/skins/default/arrowdn.png
