@@ -131,6 +131,7 @@
     SUBDIR += mars_nwe
     SUBDIR += merlinmon
     SUBDIR += micq
+    SUBDIR += mmucl
     SUBDIR += mopd
     SUBDIR += mpd
     SUBDIR += mpd-netgraph
