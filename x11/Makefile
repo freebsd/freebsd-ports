@@ -86,6 +86,7 @@
     SUBDIR += qrash
     SUBDIR += ruby-X11
     SUBDIR += ruby-gnome
+    SUBDIR += ruby-gnome-all
     SUBDIR += ruby-panel-applet
     SUBDIR += rxvt
     SUBDIR += rxvt-devel
