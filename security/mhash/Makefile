@@ -6,15 +6,15 @@
 #
 
 PORTNAME=	mhash
-PORTVERSION=	0.6.1
+PORTVERSION=	0.8.2
 CATEGORIES=	security
-MASTER_SITES=	http://schumann.cx/mhash/dl/
+MASTER_SITES=	http://mhash.sourceforge.net/dl/
 
-MAINTAINER=	nsayer@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 
 INSTALLS_SHLIB=	yes
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+= --with-LDFLAGS='-lc_r'
+USE_LIBTOOL=	yes
+CONFIGURE_ARGS+= --with-LDFLAGS="-pthread"
 
 MAN3=		mhash.3
 
