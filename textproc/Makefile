@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.45 1999/03/28 14:17:34 kuriyama Exp $
+# $Id: Makefile,v 1.46 1999/04/13 15:29:00 taoka Exp $
 #
 
     SUBDIR += agrep
@@ -8,6 +8,9 @@
     SUBDIR += catdoc
     SUBDIR += dict
     SUBDIR += docbook
+    SUBDIR += docbook-241
+    SUBDIR += docbook-300
+    SUBDIR += docbook-310
     SUBDIR += docbook-xml
     SUBDIR += docproj
     SUBDIR += dsssl-docbook-modular
