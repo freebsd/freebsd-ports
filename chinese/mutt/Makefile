@@ -9,7 +9,11 @@
 CATEGORIES=	chinese
 
 MASTERDIR=	${.CURDIR}/../../mail/mutt-devel
-REVISEDATE=	20030807
+REVISEDATE=	20040617
+PORTREVISION=	${REVISEDATE}
+
+# XXX: Currently PORTREVISION assignment is not functional. Master port
+# needs to be fixed.
 
 MAINTAINER=	clive@FreeBSD.org
 COMMENT=	The Mongrel of Mail User Agents with Chinese support
