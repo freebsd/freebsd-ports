@@ -19,6 +19,8 @@ PATCH_DIST_ARGS=	-d ${WRKSRC} -p1
 MAINTAINER=	statue@freebsd.sinica.edu.tw
 COMMENT=	GB Chinese console
 
+FORBIDDEN=	"Buffer overflows yielding uid root"
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_REINPLACE=	yes
 REINPLACE_ARGS=	# empty
