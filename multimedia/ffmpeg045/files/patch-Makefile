@@ -1,30 +1,26 @@
---- Makefile.orig	Wed Aug 15 10:11:45 2001
-+++ Makefile	Tue Sep 25 15:10:12 2001
-@@ -3,8 +3,8 @@
- #
- include config.mak
+--- Makefile.orig	Sun Sep  1 15:07:34 2002
++++ Makefile	Tue Oct  8 13:51:49 2002
+@@ -6,12 +6,12 @@
  
--CFLAGS= $(OPTFLAGS) -Wall -g -I./libavcodec -I./libav 
--LDFLAGS= -g 
-+CFLAGS= $(OPTFLAGS) -Wall -I./libavcodec -I./libav -I$(LOCALBASE)/include 
-+LDFLAGS= -L$(LOCALBASE)/lib
- ifeq ($(TARGET_GPROF),yes)
- CFLAGS+=-p
- LDFLAGS+=-p
-@@ -19,13 +19,13 @@
- 	$(MAKE) -C libav all
+ VPATH=$(SRC_PATH)
  
- ffmpeg: ffmpeg.o libav/libav.a libavcodec/libavcodec.a
--	gcc $(LDFLAGS) -o $@ $^ -lm
-+	$(CC) $(LDFLAGS) -o $@ $^ -lm
+-CFLAGS= $(OPTFLAGS) -Wall -g -I. -I$(SRC_PATH) -I$(SRC_PATH)/libavcodec -I$(SRC_PATH)/libav -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_GNU_SOURCE
++CFLAGS= $(OPTFLAGS) -Wall -I. -I$(SRC_PATH) -I$(SRC_PATH)/libavcodec -I$(SRC_PATH)/libav -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_GNU_SOURCE
+ ifeq ($(CONFIG_DARWIN),yes)
+ LDFLAGS+= -g -d
+ FFSLDFLAGS= -Wl,-bind_at_load
+ else
+-LDFLAGS+= -g -Wl,--warn-common
++LDFLAGS+= -Wl,--warn-common
+ FFSLDFLAGS= -Wl,-E
+ endif
+
+@@ -60,7 +60,7 @@
+ ffserver$(EXE): ffserver.o $(DEP_LIBS)
+ 	$(CC) $(LDFLAGS) $(FFSLDFLAGS) \
+ 		-o $@ ffserver.o -L./libavcodec -L./libav \
+-              -lavformat -lavcodec -ldl $(EXTRALIBS) 
++		-lavformat -lavcodec $(EXTRALIBS) 
  
- ffserver: ffserver.o libav/libav.a libavcodec/libavcodec.a
--	gcc $(LDFLAGS) -o $@ $^ -lm
-+	$(CC) $(LDFLAGS) -o $@ $^ -lm -lgnugetopt
- 
- %.o: %.c
--	gcc $(CFLAGS) -c -o $@ $< 
-+	$(CC) $(CFLAGS) -c -o $@ $< 
- 
- install: all
- 	install -s -m 755 $(PROG) $(prefix)/bin
+ ffplay: ffmpeg$(EXE)
+ 	ln -sf $< $@
