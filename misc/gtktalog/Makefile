@@ -27,6 +27,12 @@ DOCS=	AUTHORS BUGS ChangeLog NEWS README TODO
 
 CONFIGURE_ENV=	XGETTEXT=${LOCALBASE}/bin/xgettext
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502102
+BROKEN=		"Broken pkg-plist"
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e "s@-lpthread@${PTHREAD_LIBS}@" ${WRKSRC}/configure
 	@${REINPLACE_CMD} -E "s@^(Applicationsdir = ).*@\1${PREFIX}/share/gnome/apps/Applications@" ${WRKSRC}/Makefile.in
@@ -46,4 +52,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
