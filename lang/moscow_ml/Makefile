@@ -27,12 +27,6 @@ USE_PERL5=	yes
 USE_REINPLACE=	yes
 MAKE_ENV=	LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "sparc64"
-BROKEN=		"Configure fails on sparc64"
-.endif
-
 post-patch:
 	${FIND} ${WRKSRC} -name Makefile | ${XARGS} \
 		${REINPLACE_CMD} -e "s,-O2,${CFLAGS} -I${LOCALBASE}/include,"
@@ -51,4 +45,4 @@ post-install:
 	if [ -f $${file} ]; then \
 	$(LN) -sf $${file} $(PREFIX)/bin; fi; done
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
