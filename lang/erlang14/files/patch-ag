@@ -1,0 +1,33 @@
+--- lib/os_mon/c_src/memsup.c.orig	Mon Sep 20 23:05:24 1999
++++ lib/os_mon/c_src/memsup.c	Sat Dec  2 22:23:25 2000
+@@ -89,6 +89,12 @@
+ #include <ioLib.h>
+ #include <memLib.h>
+ #endif
++#ifdef __FreeBSD__
++#include <sys/types.h>
++#include <sys/sysctl.h>
++#include <sys/vmmeter.h>
++#include <vm/vm_param.h>
++#endif
+ 
+ /* commands */
+ #include "memsup.h"
+@@ -172,6 +178,16 @@
+     load_statistics();
+     *tot = (latest.numBytesFree + latest.numBytesAlloc) >> shiftleft;
+     *used = latest.numBytesAlloc >> shiftleft;
++#elif defined(__FreeBSD__)
++    int mib[2];
++    size_t len;
++    struct vmtotal memory;
++    mib[0] = CTL_VM;
++    mib[1] = VM_METER;
++    len = sizeof memory;
++    sysctl(mib, 2, &memory, &len, NULL, 0);
++    *tot = memory.t_vm >> shiftleft;
++    *used = memory.t_avm >> shiftleft;
+ #elif defined(_SC_AVPHYS_PAGES)	/* Does this exist on others than Solaris2? */
+     unsigned long avPhys, phys, pgSz;
+     
+# End

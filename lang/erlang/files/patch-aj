@@ -1,0 +1,18 @@
+--- ./erts/etc/unix/Install.src.orig	Wed Jan 17 17:18:57 2001
++++ ./erts/etc/unix/Install.src	Wed Jan 17 17:35:40 2001
+@@ -97,7 +97,8 @@
+   chmod 755 start_erl
+ fi
+ 
+-if [ -d $ERL_ROOT/lib/sasl* ]
++set $ERL_ROOT/lib/sasl*
++if [ -d $1 ]
+ then
+     (cd $ERL_ROOT/releases
+      echo %I_VSN% %I_SYSTEM_VSN% > start_erl.data)
+@@ -171,4 +172,4 @@
+     ./misc/format_man_pages $ERL_ROOT
+ fi
+ 
+-
++exit 0

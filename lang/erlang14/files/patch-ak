@@ -1,0 +1,11 @@
+--- lib/inets/examples/Makefile.orig	Tue Nov 28 20:35:48 2000
++++ lib/inets/examples/Makefile	Tue Nov 28 20:36:24 2000
+@@ -176,7 +176,7 @@
+ 	$(INSTALL_DIR) $(RELSYSDIR)/examples/server_root/auth
+ 	$(INSTALL_DATA) $(AUTH_FILES) $(RELSYSDIR)/examples/server_root/auth
+ 	$(INSTALL_DIR) $(RELSYSDIR)/examples/server_root/cgi-bin
+-	$(INSTALL_PROGRAM) $(CGI_FILES) $(RELSYSDIR)/examples/server_root/cgi-bin
++	$(INSTALL_SCRIPT) $(CGI_FILES) $(RELSYSDIR)/examples/server_root/cgi-bin
+ 	$(INSTALL_DIR) $(RELSYSDIR)/examples/server_root/conf
+ 	$(INSTALL_DATA) $(CONF_FILES) $(RELSYSDIR)/examples/server_root/conf
+ 	$(INSTALL_DIR) $(RELSYSDIR)/examples/server_root/htdocs/open

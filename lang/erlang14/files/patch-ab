@@ -1,0 +1,12 @@
+--- lib/inets/priv/Makefile.orig	Tue Nov 28 20:38:31 2000
++++ lib/inets/priv/Makefile	Tue Nov 28 20:38:38 2000
+@@ -57,7 +57,7 @@
+ 
+ release_spec: opt
+ 	$(INSTALL_DIR) $(RELSYSDIR)/priv/bin
+-	$(INSTALL_PROGRAM) $(EXECUTABLES) $(RELSYSDIR)/priv/bin
++	$(INSTALL_SCRIPT) $(EXECUTABLES) $(RELSYSDIR)/priv/bin
+ 
+ release_docs_spec:
+
+# End
