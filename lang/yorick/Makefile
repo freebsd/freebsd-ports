@@ -9,6 +9,7 @@
 #          1.5.02 port by ports@FreeBSD.org,
 #                 from submission by Ed Alley <wea@llnl.gov>
 #          1.5.07 port by David H. Munro <munro1@llnl.gov>
+#          1.5.12 port by David H. Munro <munro1@llnl.gov>, 01/Nov/02
 # 1.5.07 notes:
 # (1) info pages installed in PREFIX/info for consistency with other apps
 #     -- really should be in PREFIX/share/info
@@ -25,10 +26,9 @@
 #          1.5.08 replaces 1.5.07 infant mortality
 
 PORTNAME=	yorick
-PORTVERSION=	1.5.08
+PORTVERSION=	1.5.12
 CATEGORIES=	lang math
-MASTER_SITES=	ftp://ftp-icf.llnl.gov/pub/Yorick/ \
-		ftp://wuarchive.wustl.edu/languages/yorick/
+MASTER_SITES=	ftp://ftp-icf.llnl.gov/pub/Yorick/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	munro1@llnl.gov
@@ -40,6 +40,7 @@ USE_XLIB=	yes
 MAKE_ARGS=	Y_HOME="${PREFIX}/lib/${PORTNAME}" Y_SITE="${DATADIR}" \
 		Y_DOCDIR=/dev/null
 MAN1=		yorick.1 gist.1
+INFO=		yorick
 
 PORTDOCS=	FILE_FORMATS README drat.doc drat.tex graph.doc hex.doc \
 		library.doc math.doc refs.pdf refs.ps refs.tex std.doc \
@@ -52,16 +53,9 @@ do-configure:
 post-build:
 .if !defined(NOPORTDOCS)
 	cd ${WRKSRC}/doc; make yorick.info
-	${GZIP_CMD} ${WRKSRC}/doc/yorick.info*
 .endif
 
 post-install:
-.if !exists(${PREFIX}/bin)
-	@${MKDIR} ${PREFIX}/bin
-.endif
-.if !exists(${PREFIX}/man/man1)
-	@${MKDIR} ${PREFIX}/man/man1
-.endif
 .for file in gist yorick
 	${INSTALL_MAN} ${WRKSRC}/doc/${file}.1 ${PREFIX}/man/man1
 	@${STRIP_CMD} ${PREFIX}/lib/${PORTNAME}/bin/${file}
@@ -77,13 +71,10 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/${file} ${DOCSDIR}
 .endfor
 	@${LN} -sf ../doc/${PORTNAME} ${DATADIR}/doc
-.if !exists(${PREFIX}/info)
-	@${MKDIR} ${PREFIX}/info
-.endif
 	for f in ${WRKSRC}/doc/yorick.info*; do \
 	  ${INSTALL_DATA} $$f ${PREFIX}/info; \
 	done
-	install-info ${PREFIX}/info/yorick.info.gz ${PREFIX}/info/dir
+	install-info ${PREFIX}/info/yorick.info ${PREFIX}/info/dir
 .endif
 
 .include <bsd.port.mk>
