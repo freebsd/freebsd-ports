@@ -7,16 +7,25 @@
 #
 
 PORTNAME=	salias
-PORTVERSION=	0.2.1
-CATEGORIES=	misc python
+PORTVERSION=	0.3.1
+CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	py-${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A command-line tool to alias arguments of other programs
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
+USE_BZIP2=	yes
+USE_GNOME=	glib20
+GNU_CONFIGURE=	yes
+
+MAN1=		salias.1
+DOCS=		NEWS README
+
+.if !defined(NOPORTDOCS)
+post-install:
+	@${MKDIR} ${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
+.endif
 
 .include <bsd.port.mk>
