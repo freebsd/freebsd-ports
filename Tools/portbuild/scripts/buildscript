@@ -128,6 +128,12 @@ else
     kill $(jobid %1)
   fi
 
+  if [ -e ${dir}/.keep ]; then
+	cd ${dir}
+	objdir=$(make -V WRKDIR)
+	tar cvfjC /tmp/work.tbz ${objdir}/.. work
+  fi
+
   echo "================================================================"
   echo -n "build ended at "
   date
