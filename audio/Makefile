@@ -87,6 +87,7 @@
     SUBDIR += linux-realplayer
     SUBDIR += litestream
     SUBDIR += lopster
+    SUBDIR += mad
     SUBDIR += maplay
     SUBDIR += mikmod
     SUBDIR += mixer.app
