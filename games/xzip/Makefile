@@ -3,17 +3,16 @@
 # Date created:				28 June 1998
 # Whom:					Matthew Hunt <mph@FreeBSD.org>
 #
-# $Id: Makefile,v 1.2 1998/07/02 00:39:50 asami Exp $
+# $Id: Makefile,v 1.3 1998/07/02 00:41:19 asami Exp $
 #
 
 DISTNAME=		xzip170
 PKGNAME=		xzip-1.7.0
 CATEGORIES=		games
-MASTER_SITES=   	http://www.cfug.org/infocom/
+MASTER_SITES=   	ftp://ftp.gmd.de/if-archive/infocom/interpreters/zip/
+EXTRACT_SUFX=		.tar.Z
 
 MAINTAINER=		mph@freebsd.org
-
-BROKEN=			fetch
 
 WRKSRC=			${WRKDIR}/xzip
 ALL_TARGET=

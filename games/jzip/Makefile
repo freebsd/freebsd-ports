@@ -3,13 +3,13 @@
 # Date created:				7 May 1998
 # Whom:					Matthew Hunt <mph@FreeBSD.org>
 #
-# $Id: Makefile,v 1.1.1.1 1998/05/08 02:38:34 mph Exp $
+# $Id: Makefile,v 1.2 1998/06/14 02:26:35 mph Exp $
 #
 
 DISTNAME=		jzip201g
 PKGNAME=		jzip-2.0.1g
 CATEGORIES=		games
-MASTER_SITES=   	http://www.cfug.org/infocom/
+MASTER_SITES=   	http://www.freebsd.org/~mph/distfiles/
 EXTRACT_SUFX=		.zip
 
 MAINTAINER=		mph@freebsd.org
