@@ -1,7 +1,7 @@
-*** man/dircolors.1.orig	Sat Feb 20 09:28:05 1999
---- man/dircolors.1	Sat Feb 20 09:29:10 1999
+*** man/dircolors.1.orig	Sun Aug 31 14:05:39 2003
+--- man/dircolors.1	Sun Aug 31 14:06:07 2003
 ***************
-*** 37,45 ****
+*** 43,51 ****
   .B dircolors
   is maintained as a Texinfo manual.  If the
   .B info
@@ -11,7 +11,7 @@
   .IP
   .B info dircolors
   .PP
---- 37,44 ----
+--- 43,50 ----
   .B dircolors
   is maintained as a Texinfo manual.  If the
   .B info

@@ -1,20 +1,19 @@
-*** Makefile.in.orig	Fri Feb 19 19:24:40 1999
---- Makefile.in	Fri Feb 19 19:27:05 1999
+*** Makefile.in.orig	Sun Aug 31 14:13:23 2003
+--- Makefile.in	Sun Aug 31 14:13:37 2003
 ***************
-*** 92,98 ****
+*** 121,127 ****
   
   AUTOMAKE_OPTIONS = gnits 1.2h
   
 ! SUBDIRS = lib intl src doc man m4 po tests
+  EXTRA_DIST = Makefile.maint GNUmakefile ChangeLog-1997 \
+    .kludge-stamp .prev-version
   
-  # Remove this file here (it is created via configure), not from within intl.
-  DISTCLEANFILES = intl/libintl.h
---- 92,99 ----
+--- 121,127 ----
   
   AUTOMAKE_OPTIONS = gnits 1.2h
   
-! #SUBDIRS = lib intl src doc man m4 po tests
-! SUBDIRS = lib intl src man 
+! SUBDIRS = lib intl src man
+  EXTRA_DIST = Makefile.maint GNUmakefile ChangeLog-1997 \
+    .kludge-stamp .prev-version
   
-  # Remove this file here (it is created via configure), not from within intl.
-  DISTCLEANFILES = intl/libintl.h

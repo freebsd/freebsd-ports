@@ -1,7 +1,7 @@
-*** man/vdir.1.orig	Sat Feb 20 09:29:29 1999
---- man/vdir.1	Sat Feb 20 09:30:04 1999
+*** man/vdir.1.orig	Sun Aug 31 14:07:48 2003
+--- man/vdir.1	Sun Aug 31 14:08:01 2003
 ***************
-*** 174,182 ****
+*** 199,207 ****
   .B vdir
   is maintained as a Texinfo manual.  If the
   .B info
@@ -11,7 +11,7 @@
   .IP
   .B info vdir
   .PP
---- 174,181 ----
+--- 199,206 ----
   .B vdir
   is maintained as a Texinfo manual.  If the
   .B info

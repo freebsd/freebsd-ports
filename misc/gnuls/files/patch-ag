@@ -1,7 +1,7 @@
-*** man/dir.1.orig	Sat Feb 20 09:29:26 1999
---- man/dir.1	Sat Feb 20 09:29:45 1999
+*** man/dir.1.orig	Sun Aug 31 14:06:52 2003
+--- man/dir.1	Sun Aug 31 14:07:07 2003
 ***************
-*** 174,182 ****
+*** 199,207 ****
   .B dir
   is maintained as a Texinfo manual.  If the
   .B info
@@ -11,7 +11,7 @@
   .IP
   .B info dir
   .PP
---- 174,181 ----
+--- 199,206 ----
   .B dir
   is maintained as a Texinfo manual.  If the
   .B info

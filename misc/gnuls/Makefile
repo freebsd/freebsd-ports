@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gnuls
-PORTVERSION=	4.0
-PORTREVISION=	1
+PORTVERSION=	4.1
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	fileutils
@@ -25,7 +24,7 @@ MAN1=		gnuls.1 dircolors.1 dir.1 vdir.1
 .if defined(WITH_ACL_SUPPORT)
 PATCHFILES=	gnuls-acl-20010825.patch
 PATCH_SITES=	${MASTER_SITE_LOCAL}
-PATCH_SITE_SUBDIR= jedgar
+PATCH_SITE_SUBDIR=	jedgar
 .else
 pre-fetch:
 	@${ECHO} "To build this port with ACL support, define"

@@ -1,52 +1,42 @@
-*** man/Makefile.in.orig	Sat Nov 14 10:46:12 1998
---- man/Makefile.in	Sat Feb 20 09:20:26 1999
+*** man/Makefile.in.orig	Sun Aug 31 13:59:34 2003
+--- man/Makefile.in	Sun Aug 31 14:00:15 2003
 ***************
-*** 88,96 ****
-  YACC = @YACC@
+*** 118,126 ****
   l = @l@
+  
   
 ! man_MANS = chgrp.1 chmod.1 chown.1 cp.1 dir.1 dd.1 df.1 dircolors.1 \
 !   du.1 ginstall.1 ln.1 ls.1 mkdir.1 mkfifo.1 mknod.1 mv.1 rm.1 rmdir.1 \
-!   sync.1 touch.1 vdir.1
+!   shred.1 sync.1 touch.1 vdir.1
+  
   man_aux = $(man_MANS:.1=.x)
   
-  EXTRA_DIST = $(man_MANS) $(HELP2MAN) $(man_aux) \
---- 88,94 ----
-  YACC = @YACC@
+--- 118,124 ----
   l = @l@
   
+  
 ! man_MANS = dir.1 dircolors.1 gnuls.1 vdir.1
+  
   man_aux = $(man_MANS:.1=.x)
   
-  EXTRA_DIST = $(man_MANS) $(HELP2MAN) $(man_aux) \
 ***************
-*** 117,123 ****
+*** 148,154 ****
+  NROFF = nroff
+  DIST_COMMON = Makefile.am Makefile.in
   
-  TAR = tar
-  GZIP = --best
-! all: Makefile $(MANS)
+! all: all-am
   
   .SUFFIXES:
-  $(srcdir)/Makefile.in: Makefile.am $(top_srcdir)/configure.in $(ACLOCAL_M4)
---- 115,125 ----
   
-  TAR = tar
-  GZIP = --best
-! all: freebsd_setup Makefile $(MANS)
+--- 146,156 ----
+  NROFF = nroff
+  DIST_COMMON = Makefile.am Makefile.in
+  
+! all: freebsd-setup all-am
 ! 
-! freebsd_setup:
+! freebsd-setup:
 ! 	@cp ls.1 gnuls.1
 ! 	@cp ls.x gnuls.x
   
   .SUFFIXES:
-  $(srcdir)/Makefile.in: Makefile.am $(top_srcdir)/configure.in $(ACLOCAL_M4)
-***************
-*** 228,234 ****
-  uninstall all installdirs mostlyclean-generic distclean-generic \
-  clean-generic maintainer-clean-generic clean mostlyclean distclean \
-  maintainer-clean
-- 
   
-  # For additional rules usually of interest only to the maintainer,
-  # see GNUmakefile and Makefile.maint.
---- 230,235 ----
