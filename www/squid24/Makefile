@@ -3,7 +3,7 @@
 # Date created:		Thu Nov  7 00:53:18 WST 1996
 # Whom:			Peter Wemm <peter@freebsd.org>
 #
-# $Id: Makefile,v 1.44 1998/02/16 13:16:37 asami Exp $
+# $Id: Makefile,v 1.45 1998/03/05 06:43:03 peter Exp $
 #
 
 DISTNAME=	squid-1.2.beta16
@@ -16,8 +16,8 @@ MASTER_SITES=  \
 	ftp://ftp.net.lut.ac.uk/squid/squid-1.2.beta/
 EXTRACT_SUFX=	-src.tar.gz
 
-#PATCH_SITES+=   http://squid.nlanr.net/Squid/1.2.beta/
-#PATCHFILES+=    1.2.beta16.patches
+PATCH_SITES+=   http://squid.nlanr.net/Squid/1.2.beta/
+PATCHFILES+=    1.2.beta16.patch
 
 MAINTAINER=	peter@freebsd.org
 
