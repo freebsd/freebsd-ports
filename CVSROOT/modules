@@ -4510,6 +4510,7 @@ libmtrie	ports/devel/libmtrie
 libmusicbrainz	ports/audio/libmusicbrainz
 libnet		ports/net/libnet
 libnet-devel	ports/net/libnet-devel
+libnetdude	ports/net/libnetdude
 libneural	ports/math/libneural
 libnewmail	ports/mail/libnewmail
 libnids		ports/net/libnids
