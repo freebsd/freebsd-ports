@@ -7842,6 +7842,7 @@ sendmail-sasl	ports/mail/sendmail-sasl
 senken		ports/games/senken
 senso		ports/games/senso
 sentinel	ports/mail/sentinel
+seq2		ports/misc/seq2
 seqio		ports/biology/seqio
 serialmail	ports/mail/serialmail
 serveez		ports/net/serveez
