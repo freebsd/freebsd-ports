@@ -17,9 +17,11 @@ include/tix/generic/tixTList.h
 include/tix/unix/tixUnixInt.h
 include/tix/unix/tixUnixPort.h
 lib/libtix4180.so.1.2
+lib/libtix4180.so
 lib/libtixsam4180.so.1.2
-@exec /sbin/ldconfig -m %B
-@unexec /sbin/ldconfig -R
+lib/libtixsam4180.so
+@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
+@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 share/tix4.1/bitmaps/act_fold.gif
 share/tix4.1/bitmaps/act_fold.xbm
 share/tix4.1/bitmaps/act_fold.xpm

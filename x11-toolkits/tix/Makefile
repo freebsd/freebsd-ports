@@ -3,7 +3,7 @@
 # Date created:		22 December 1996
 # Whom:			Thomas Gellekum <tg@freebsd.org>
 #
-# $Id: Makefile,v 1.17 1998/08/07 23:56:52 asami Exp $
+# $Id: Makefile,v 1.18 1998/09/25 10:05:14 asami Exp $
 #
 
 DISTNAME=	Tix4.1.0.006
@@ -32,6 +32,9 @@ MANN=		BtnBox.n Balloon.n ChkList.n Destroy.n ComboBox.n Control.n \
 		Select.n StdBBox.n TixIntro.n Tree.n Utils.n Wm.n compound.n \
 		pixmap.n tix.n
 
+TIX_LIB=	libtix4180.so
+TIXSAM_LIB=	libtixsam4180.so
+
 pre-configure:
 	@(cd ${WRKSRC}/.. && \
 	    CC="${CC}" ac_cv_path_CC="${CC}" CFLAGS="${CFLAGS}" \
@@ -44,8 +47,10 @@ post-install:
 	    ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${INSTALL_TARGET})
 	@${MKDIR} ${PREFIX}/man/man1
 	@mv ${PREFIX}/man/mann/tixwish.1 ${PREFIX}/man/man1
-	@ln -sf ${PREFIX}/bin/tixwish4.1.8.0 ${PREFIX}/bin/tixwish
-	${LDCONFIG} -m ${PREFIX}/lib
+	${LN} -fs ${PREFIX}/bin/tixwish4.1.8.0 ${PREFIX}/bin/tixwish
+	${LN} -fs ${TIX_LIB_FILE} ${PREFIX}/lib/${TIX_LIB}
+	${LN} -fs ${TIXSAM_LIB_FILE} ${PREFIX}/lib/${TIXSAM_LIB}
+	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 .for dir in generic unix
 	@${MKDIR} ${PREFIX}/include/tix/${dir}
 	${INSTALL_DATA} ${WRKSRC}/../../${dir}/*.h ${PREFIX}/include/tix/${dir}
@@ -55,3 +60,11 @@ post-install:
 	/bin/ln -sf ../../tix.h ${PREFIX}/include/tix/generic
 
 .include <bsd.port.mk>
+
+.if ${PORTOBJFORMAT} == "elf"
+TIX_LIB_FILE=	${TIX_LIB}.1
+TIXSAM_LIB_FILE=${TIXSAM_LIB}.1
+.else
+TIX_LIB_FILE=	${TIX_LIB}.1.2
+TIXSAM_LIB_FILE=${TIXSAM_LIB}.1.2
+.endif

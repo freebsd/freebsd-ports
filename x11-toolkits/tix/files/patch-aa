@@ -1,5 +1,5 @@
 --- configure.orig	Thu Sep 25 20:32:47 1997
-+++ configure	Tue Dec  2 11:39:39 1997
++++ configure	Sun Oct  4 20:21:17 1998
 @@ -1060,6 +1060,7 @@
  
  if test "$val" != ""; then
@@ -34,36 +34,6 @@
  
  #--------------------------------------------------------------------
  #	Find out the top level source directory of the Tix package.
-@@ -1227,25 +1229,25 @@
- 
-     # The main Tix library
-     #
--    eval "TIX_LIB_FILE=libtix${TCL_SHARED_LIB_SUFFIX}"
-+    eval "TIX_LIB_FILE=libtix`echo ${VERSION} | tr -d .`.so.1.2"
-     TIX_MAKE_LIB="\${SHLIB_LD} -o ${TIX_LIB_FILE} \${OBJS} ${SHLIB_LD_LIBS}"
- 
-     # The Tcl SAM library
-     #
-     VERSION=8.0
--    eval "TCL_SAM_FILE=libtclsam${TCL_SHARED_LIB_SUFFIX}"
-+    eval "TCL_SAM_FILE=libtclsam`echo ${VERSION} | tr -d .`.so.1.2"
-     TCL_MAKE_SAM="\${SHLIB_LD} -o ${TCL_SAM_FILE} \${TCL_SAM_OBJS} ${SHLIB_LD_LIBS}"
-     
-     # The Tk SAM library
-     #
-     VERSION=8.0
--    eval "TK_SAM_FILE=libtksam${TCL_SHARED_LIB_SUFFIX}"
-+    eval "TK_SAM_FILE=libtksam`echo ${VERSION} | tr -d .`.so.1.2"
-     TK_MAKE_SAM="\${SHLIB_LD} -o ${TK_SAM_FILE} \${TK_SAM_OBJS} ${SHLIB_LD_LIBS}"
-     
-     # The Tix SAM library
-     #
-     VERSION=${BIN_VERSION}
--    eval "TIX_SAM_FILE=libtixsam${TCL_SHARED_LIB_SUFFIX}"
-+    eval "TIX_SAM_FILE=libtixsam`echo ${VERSION} | tr -d .`.so.1.2"
-     TIX_MAKE_SAM="\${SHLIB_LD} -o ${TIX_SAM_FILE} \${TIX_SAM_OBJS} ${SHLIB_LD_LIBS}"
- 
- else
 @@ -1707,15 +1709,15 @@
  s%@SHLIB_VERSION@%$SHLIB_VERSION%g
  s%@DL_LIBS@%$DL_LIBS%g
