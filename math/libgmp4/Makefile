@@ -16,7 +16,6 @@ DISTNAME=	gmp-${PORTVERSION}
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	A free library for arbitrary precision arithmetic
 
-CONFLICTS=	libgmp-2*
 USE_REINPLACE=	yes
 USE_GNOME=	lthack
 USE_INC_LIBTOOL_VER=13
