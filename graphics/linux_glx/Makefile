@@ -27,5 +27,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/libGL.so ${PREFIX}/lib
 	${INSTALL_PROGRAM} ${WRKSRC}/libGLU.so ${PREFIX}/lib
 	${INSTALL_PROGRAM} ${WRKSRC}/libglut.so ${PREFIX}/lib
+post-install:
+	@ ${PREFIX}/sbin/ldconfig
 
 .include <bsd.port.mk>
