@@ -1,0 +1,18 @@
+--- Makefile.in.old	Fri Jan 12 16:54:53 2001
++++ Makefile.in	Fri Jan 12 16:55:56 2001
+@@ -65,11 +65,11 @@
+ 
+ install: write mesg amin huh helpers
+ 	./install-sh -d $(bindir)
+-	$(INSTALL) -o root -g $(groupid) -m 6711 write $(bindir)
++	$(INSTALL) -m 6711 write $(bindir)
+ 	-(cd $(bindir); $(LN) write jot; $(LN) write tel; $(LN) write telegram)
+-	$(INSTALL) -o root -m 4711 mesg $(bindir)
+-	$(INSTALL) -o root -m 4711 amin $(bindir)
+-	$(INSTALL) -o root -m 4711 huh $(bindir)
++	$(INSTALL) -m 4711 mesg $(bindir)
++	$(INSTALL) -m 4711 amin $(bindir)
++	$(INSTALL) -m 4711 huh $(bindir)
+ 	$(INSTALL) -m 4711 helpers $(bindir)
+ 	./install-sh -d $(sysconfdir)
+ 	$(INSTALL) -m 644 orville.conf $(sysconfdir)
