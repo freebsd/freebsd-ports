@@ -1,4 +1,5 @@
 %%RUBY_SITELIBDIR%%/setup.rb
+%%PORTDOCS%%%%RUBY_DOCDIR%%/setup.rb/TODO
 %%PORTDOCS%%%%RUBY_DOCDIR%%/setup.rb/changes.html
 %%PORTDOCS%%%%RUBY_DOCDIR%%/setup.rb/index.html
 %%PORTDOCS%%%%RUBY_DOCDIR%%/setup.rb/usage.html
