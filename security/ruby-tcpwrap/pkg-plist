@@ -1,9 +1,9 @@
-lib/ruby/site_ruby/%%RUBY_VER%%/%%RUBY_ARCH%%/tcpwrap.so
-share/examples/ruby/tcpwrap/echod.rb
-@dirrm share/examples/ruby/tcpwrap
-share/doc/ruby/tcpwrap/README.en
-share/doc/ruby/tcpwrap/tcpwrap.html.en
-share/doc/ruby/tcpwrap/ja/README.ja
-share/doc/ruby/tcpwrap/ja/tcpwrap.html.ja
-@dirrm share/doc/ruby/tcpwrap/ja
-@dirrm share/doc/ruby/tcpwrap
+%%RUBY_SITEARCHLIBDIR%%/tcpwrap.so
+%%RUBY_EXAMPLESDIR%%/tcpwrap/echod.rb
+@dirrm %%RUBY_EXAMPLESDIR%%/tcpwrap
+%%RUBY_DOCDIR%%/tcpwrap/README.en
+%%RUBY_DOCDIR%%/tcpwrap/tcpwrap.html.en
+%%RUBY_DOCDIR%%/tcpwrap/ja/README.ja
+%%RUBY_DOCDIR%%/tcpwrap/ja/tcpwrap.html.ja
+@dirrm %%RUBY_DOCDIR%%/tcpwrap/ja
+@dirrm %%RUBY_DOCDIR%%/tcpwrap

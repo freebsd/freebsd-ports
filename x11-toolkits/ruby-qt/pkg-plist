@@ -1,136 +1,136 @@
-lib/ruby/site_ruby/%%RUBY_VER%%/%%RUBY_ARCH%%/qt.so
-lib/ruby/site_ruby/%%RUBY_VER%%/qt.rb
-share/examples/ruby/qt/aclock/README.qt.orig
-share/examples/ruby/qt/aclock/aclock.rb
-share/examples/ruby/qt/aclock/aclock_lib.rb
-share/examples/ruby/qt/application/application.rb
-share/examples/ruby/qt/application/application_lib.rb
-share/examples/ruby/qt/application/fileopen.xpm
-share/examples/ruby/qt/application/fileprint.xpm
-share/examples/ruby/qt/application/filesave.xpm
-share/examples/ruby/qt/classbrows/rbbr_rb.rb
-share/examples/ruby/qt/classbrows/rbbr_qt.rb
-share/examples/ruby/qt/classbrows/qtbrows2.rb
-share/examples/ruby/qt/classbrows/splitter.rb
-share/examples/ruby/qt/connect/connect.rb
-share/examples/ruby/qt/connect/README.orig
-share/examples/ruby/qt/cursor/README.orig
-share/examples/ruby/qt/cursor/cursor.rb
-share/examples/ruby/qt/cursor/cb.xbm
-share/examples/ruby/qt/cursor/cm.xbm
-share/examples/ruby/qt/dclock/README.qt.orig
-share/examples/ruby/qt/dclock/dclock.rb
-share/examples/ruby/qt/dclock/dclock_sub.rb
-share/examples/ruby/qt/forever/README.orig
-share/examples/ruby/qt/forever/forever2.rb
-share/examples/ruby/qt/forever/forever.rb
-share/examples/ruby/qt/hello/README.orig
-share/examples/ruby/qt/hello/hello_lib.rb
-share/examples/ruby/qt/hello/hello.rb
-share/examples/ruby/qt/hello2/hello.rb
-share/examples/ruby/qt/hello_simple/hello.rb
-share/examples/ruby/qt/movies/README.orig
-share/examples/ruby/qt/movies/movies.rb
-share/examples/ruby/qt/movies/trolltech.gif
-share/examples/ruby/qt/pinguin/pinguin.xpm
-share/examples/ruby/qt/pinguin/pixbutton.rb
-share/examples/ruby/qt/rubyedit/rubyedit.rb
-share/examples/ruby/qt/rubyedit/rubyedit_lib.rb
-share/examples/ruby/qt/rubyedit/editcopy.xpm
-share/examples/ruby/qt/rubyedit/editcut.xpm
-share/examples/ruby/qt/rubyedit/fileopen.xpm
-share/examples/ruby/qt/rubyedit/fileprint.xpm
-share/examples/ruby/qt/rubyedit/filesave.xpm
-share/examples/ruby/qt/rubyedit/editpaste.xpm
-share/examples/ruby/qt/rubyedit/readme.txt
-share/examples/ruby/qt/rubyedit/kde2ps
-share/examples/ruby/qt/rubyedit/rubyedit_win.rb
-share/examples/ruby/qt/scribble/qtscribble.rb
-share/examples/ruby/qt/scribble/qtscribble_win.rb
-share/examples/ruby/qt/signal/hello_signal.rb
-share/examples/ruby/qt/signal/hello_signal_jp.rb
-share/examples/ruby/qt/widgets/widgets.rb
-share/examples/ruby/qt/widgets/aclock_lib.rb
-share/examples/ruby/qt/widgets/dclock_lib.rb
-share/examples/ruby/qt/widgets/qt.bmp
-share/examples/ruby/qt/widgets/trolltech.bmp
-share/examples/ruby/qt/widgets/trolltech.gif
-share/examples/ruby/qt/widgets/widgets_win.rb
-share/examples/ruby/qt/xform/image.any
-share/examples/ruby/qt/xform/README.orig
-share/examples/ruby/qt/xform/xform.rb
-@dirrm share/examples/ruby/qt/aclock
-@dirrm share/examples/ruby/qt/application
-@dirrm share/examples/ruby/qt/classbrows
-@dirrm share/examples/ruby/qt/connect
-@dirrm share/examples/ruby/qt/cursor
-@dirrm share/examples/ruby/qt/dclock
-@dirrm share/examples/ruby/qt/forever
-@dirrm share/examples/ruby/qt/hello
-@dirrm share/examples/ruby/qt/hello2
-@dirrm share/examples/ruby/qt/hello_simple
-@dirrm share/examples/ruby/qt/movies
-@dirrm share/examples/ruby/qt/pinguin
-@dirrm share/examples/ruby/qt/rubyedit
-@dirrm share/examples/ruby/qt/scribble
-@dirrm share/examples/ruby/qt/signal
-@dirrm share/examples/ruby/qt/widgets
-@dirrm share/examples/ruby/qt/xform
-@dirrm share/examples/ruby/qt
-share/doc/ruby/qt/tutorial/README.qt.orig
-share/doc/ruby/qt/tutorial/t1/t1.rb
-share/doc/ruby/qt/tutorial/t10/cannon.rb
-share/doc/ruby/qt/tutorial/t10/lcdrange.rb
-share/doc/ruby/qt/tutorial/t10/t10.rb
-share/doc/ruby/qt/tutorial/t11/cannon.rb
-share/doc/ruby/qt/tutorial/t11/lcdrange.rb
-share/doc/ruby/qt/tutorial/t11/t11.rb
-share/doc/ruby/qt/tutorial/t12/cannon.rb
-share/doc/ruby/qt/tutorial/t12/lcdrange.rb
-share/doc/ruby/qt/tutorial/t12/t12.rb
-share/doc/ruby/qt/tutorial/t13/cannon.rb
-share/doc/ruby/qt/tutorial/t13/cannonj.rb
-share/doc/ruby/qt/tutorial/t13/gamebrd.rb
-share/doc/ruby/qt/tutorial/t13/gamebrdj.rb
-share/doc/ruby/qt/tutorial/t13/lcdrange.rb
-share/doc/ruby/qt/tutorial/t13/t13.rb
-share/doc/ruby/qt/tutorial/t13/t13j.rb
-share/doc/ruby/qt/tutorial/t14/cannon.rb
-share/doc/ruby/qt/tutorial/t14/gamebrd.rb
-share/doc/ruby/qt/tutorial/t14/lcdrange.rb
-share/doc/ruby/qt/tutorial/t14/t14.rb
-share/doc/ruby/qt/tutorial/t2/t2.rb
-share/doc/ruby/qt/tutorial/t3/t3.rb
-share/doc/ruby/qt/tutorial/t4/t4.rb
-share/doc/ruby/qt/tutorial/t5/t5.rb
-share/doc/ruby/qt/tutorial/t6/t6.rb
-share/doc/ruby/qt/tutorial/t7/cannon.rb
-share/doc/ruby/qt/tutorial/t7/lcdmain.rb
-share/doc/ruby/qt/tutorial/t7/lcdrange.rb
-share/doc/ruby/qt/tutorial/t7/lcdsub.rb
-share/doc/ruby/qt/tutorial/t7/t7.rb
-share/doc/ruby/qt/tutorial/t8/cannon.rb
-share/doc/ruby/qt/tutorial/t8/lcdrange.rb
-share/doc/ruby/qt/tutorial/t8/t8.rb
-share/doc/ruby/qt/tutorial/t9/cannon.rb
-share/doc/ruby/qt/tutorial/t9/lcdrange.rb
-share/doc/ruby/qt/tutorial/t9/t9.rb
-@dirrm share/doc/ruby/qt/tutorial/t1
-@dirrm share/doc/ruby/qt/tutorial/t10
-@dirrm share/doc/ruby/qt/tutorial/t11
-@dirrm share/doc/ruby/qt/tutorial/t12
-@dirrm share/doc/ruby/qt/tutorial/t13
-@dirrm share/doc/ruby/qt/tutorial/t14
-@dirrm share/doc/ruby/qt/tutorial/t2
-@dirrm share/doc/ruby/qt/tutorial/t3
-@dirrm share/doc/ruby/qt/tutorial/t4
-@dirrm share/doc/ruby/qt/tutorial/t5
-@dirrm share/doc/ruby/qt/tutorial/t6
-@dirrm share/doc/ruby/qt/tutorial/t7
-@dirrm share/doc/ruby/qt/tutorial/t8
-@dirrm share/doc/ruby/qt/tutorial/t9
-@dirrm share/doc/ruby/qt/tutorial
-share/doc/ruby/qt/README.txt
-share/doc/ruby/qt/ja/README.jp
-@dirrm share/doc/ruby/qt/ja
-@dirrm share/doc/ruby/qt
+%%RUBY_SITEARCHLIBDIR%%/qt.so
+%%RUBY_SITELIBDIR%%/qt.rb
+%%RUBY_EXAMPLESDIR%%/qt/aclock/README.qt.orig
+%%RUBY_EXAMPLESDIR%%/qt/aclock/aclock.rb
+%%RUBY_EXAMPLESDIR%%/qt/aclock/aclock_lib.rb
+%%RUBY_EXAMPLESDIR%%/qt/application/application.rb
+%%RUBY_EXAMPLESDIR%%/qt/application/application_lib.rb
+%%RUBY_EXAMPLESDIR%%/qt/application/fileopen.xpm
+%%RUBY_EXAMPLESDIR%%/qt/application/fileprint.xpm
+%%RUBY_EXAMPLESDIR%%/qt/application/filesave.xpm
+%%RUBY_EXAMPLESDIR%%/qt/classbrows/rbbr_rb.rb
+%%RUBY_EXAMPLESDIR%%/qt/classbrows/rbbr_qt.rb
+%%RUBY_EXAMPLESDIR%%/qt/classbrows/qtbrows2.rb
+%%RUBY_EXAMPLESDIR%%/qt/classbrows/splitter.rb
+%%RUBY_EXAMPLESDIR%%/qt/connect/connect.rb
+%%RUBY_EXAMPLESDIR%%/qt/connect/README.orig
+%%RUBY_EXAMPLESDIR%%/qt/cursor/README.orig
+%%RUBY_EXAMPLESDIR%%/qt/cursor/cursor.rb
+%%RUBY_EXAMPLESDIR%%/qt/cursor/cb.xbm
+%%RUBY_EXAMPLESDIR%%/qt/cursor/cm.xbm
+%%RUBY_EXAMPLESDIR%%/qt/dclock/README.qt.orig
+%%RUBY_EXAMPLESDIR%%/qt/dclock/dclock.rb
+%%RUBY_EXAMPLESDIR%%/qt/dclock/dclock_sub.rb
+%%RUBY_EXAMPLESDIR%%/qt/forever/README.orig
+%%RUBY_EXAMPLESDIR%%/qt/forever/forever2.rb
+%%RUBY_EXAMPLESDIR%%/qt/forever/forever.rb
+%%RUBY_EXAMPLESDIR%%/qt/hello/README.orig
+%%RUBY_EXAMPLESDIR%%/qt/hello/hello_lib.rb
+%%RUBY_EXAMPLESDIR%%/qt/hello/hello.rb
+%%RUBY_EXAMPLESDIR%%/qt/hello2/hello.rb
+%%RUBY_EXAMPLESDIR%%/qt/hello_simple/hello.rb
+%%RUBY_EXAMPLESDIR%%/qt/movies/README.orig
+%%RUBY_EXAMPLESDIR%%/qt/movies/movies.rb
+%%RUBY_EXAMPLESDIR%%/qt/movies/trolltech.gif
+%%RUBY_EXAMPLESDIR%%/qt/pinguin/pinguin.xpm
+%%RUBY_EXAMPLESDIR%%/qt/pinguin/pixbutton.rb
+%%RUBY_EXAMPLESDIR%%/qt/rubyedit/rubyedit.rb
+%%RUBY_EXAMPLESDIR%%/qt/rubyedit/rubyedit_lib.rb
+%%RUBY_EXAMPLESDIR%%/qt/rubyedit/editcopy.xpm
+%%RUBY_EXAMPLESDIR%%/qt/rubyedit/editcut.xpm
+%%RUBY_EXAMPLESDIR%%/qt/rubyedit/fileopen.xpm
+%%RUBY_EXAMPLESDIR%%/qt/rubyedit/fileprint.xpm
+%%RUBY_EXAMPLESDIR%%/qt/rubyedit/filesave.xpm
+%%RUBY_EXAMPLESDIR%%/qt/rubyedit/editpaste.xpm
+%%RUBY_EXAMPLESDIR%%/qt/rubyedit/readme.txt
+%%RUBY_EXAMPLESDIR%%/qt/rubyedit/kde2ps
+%%RUBY_EXAMPLESDIR%%/qt/rubyedit/rubyedit_win.rb
+%%RUBY_EXAMPLESDIR%%/qt/scribble/qtscribble.rb
+%%RUBY_EXAMPLESDIR%%/qt/scribble/qtscribble_win.rb
+%%RUBY_EXAMPLESDIR%%/qt/signal/hello_signal.rb
+%%RUBY_EXAMPLESDIR%%/qt/signal/hello_signal_jp.rb
+%%RUBY_EXAMPLESDIR%%/qt/widgets/widgets.rb
+%%RUBY_EXAMPLESDIR%%/qt/widgets/aclock_lib.rb
+%%RUBY_EXAMPLESDIR%%/qt/widgets/dclock_lib.rb
+%%RUBY_EXAMPLESDIR%%/qt/widgets/qt.bmp
+%%RUBY_EXAMPLESDIR%%/qt/widgets/trolltech.bmp
+%%RUBY_EXAMPLESDIR%%/qt/widgets/trolltech.gif
+%%RUBY_EXAMPLESDIR%%/qt/widgets/widgets_win.rb
+%%RUBY_EXAMPLESDIR%%/qt/xform/image.any
+%%RUBY_EXAMPLESDIR%%/qt/xform/README.orig
+%%RUBY_EXAMPLESDIR%%/qt/xform/xform.rb
+@dirrm %%RUBY_EXAMPLESDIR%%/qt/aclock
+@dirrm %%RUBY_EXAMPLESDIR%%/qt/application
+@dirrm %%RUBY_EXAMPLESDIR%%/qt/classbrows
+@dirrm %%RUBY_EXAMPLESDIR%%/qt/connect
+@dirrm %%RUBY_EXAMPLESDIR%%/qt/cursor
+@dirrm %%RUBY_EXAMPLESDIR%%/qt/dclock
+@dirrm %%RUBY_EXAMPLESDIR%%/qt/forever
+@dirrm %%RUBY_EXAMPLESDIR%%/qt/hello
+@dirrm %%RUBY_EXAMPLESDIR%%/qt/hello2
+@dirrm %%RUBY_EXAMPLESDIR%%/qt/hello_simple
+@dirrm %%RUBY_EXAMPLESDIR%%/qt/movies
+@dirrm %%RUBY_EXAMPLESDIR%%/qt/pinguin
+@dirrm %%RUBY_EXAMPLESDIR%%/qt/rubyedit
+@dirrm %%RUBY_EXAMPLESDIR%%/qt/scribble
+@dirrm %%RUBY_EXAMPLESDIR%%/qt/signal
+@dirrm %%RUBY_EXAMPLESDIR%%/qt/widgets
+@dirrm %%RUBY_EXAMPLESDIR%%/qt/xform
+@dirrm %%RUBY_EXAMPLESDIR%%/qt
+%%RUBY_DOCDIR%%/qt/tutorial/README.qt.orig
+%%RUBY_DOCDIR%%/qt/tutorial/t1/t1.rb
+%%RUBY_DOCDIR%%/qt/tutorial/t10/cannon.rb
+%%RUBY_DOCDIR%%/qt/tutorial/t10/lcdrange.rb
+%%RUBY_DOCDIR%%/qt/tutorial/t10/t10.rb
+%%RUBY_DOCDIR%%/qt/tutorial/t11/cannon.rb
+%%RUBY_DOCDIR%%/qt/tutorial/t11/lcdrange.rb
+%%RUBY_DOCDIR%%/qt/tutorial/t11/t11.rb
+%%RUBY_DOCDIR%%/qt/tutorial/t12/cannon.rb
+%%RUBY_DOCDIR%%/qt/tutorial/t12/lcdrange.rb
+%%RUBY_DOCDIR%%/qt/tutorial/t12/t12.rb
+%%RUBY_DOCDIR%%/qt/tutorial/t13/cannon.rb
+%%RUBY_DOCDIR%%/qt/tutorial/t13/cannonj.rb
+%%RUBY_DOCDIR%%/qt/tutorial/t13/gamebrd.rb
+%%RUBY_DOCDIR%%/qt/tutorial/t13/gamebrdj.rb
+%%RUBY_DOCDIR%%/qt/tutorial/t13/lcdrange.rb
+%%RUBY_DOCDIR%%/qt/tutorial/t13/t13.rb
+%%RUBY_DOCDIR%%/qt/tutorial/t13/t13j.rb
+%%RUBY_DOCDIR%%/qt/tutorial/t14/cannon.rb
+%%RUBY_DOCDIR%%/qt/tutorial/t14/gamebrd.rb
+%%RUBY_DOCDIR%%/qt/tutorial/t14/lcdrange.rb
+%%RUBY_DOCDIR%%/qt/tutorial/t14/t14.rb
+%%RUBY_DOCDIR%%/qt/tutorial/t2/t2.rb
+%%RUBY_DOCDIR%%/qt/tutorial/t3/t3.rb
+%%RUBY_DOCDIR%%/qt/tutorial/t4/t4.rb
+%%RUBY_DOCDIR%%/qt/tutorial/t5/t5.rb
+%%RUBY_DOCDIR%%/qt/tutorial/t6/t6.rb
+%%RUBY_DOCDIR%%/qt/tutorial/t7/cannon.rb
+%%RUBY_DOCDIR%%/qt/tutorial/t7/lcdmain.rb
+%%RUBY_DOCDIR%%/qt/tutorial/t7/lcdrange.rb
+%%RUBY_DOCDIR%%/qt/tutorial/t7/lcdsub.rb
+%%RUBY_DOCDIR%%/qt/tutorial/t7/t7.rb
+%%RUBY_DOCDIR%%/qt/tutorial/t8/cannon.rb
+%%RUBY_DOCDIR%%/qt/tutorial/t8/lcdrange.rb
+%%RUBY_DOCDIR%%/qt/tutorial/t8/t8.rb
+%%RUBY_DOCDIR%%/qt/tutorial/t9/cannon.rb
+%%RUBY_DOCDIR%%/qt/tutorial/t9/lcdrange.rb
+%%RUBY_DOCDIR%%/qt/tutorial/t9/t9.rb
+@dirrm %%RUBY_DOCDIR%%/qt/tutorial/t1
+@dirrm %%RUBY_DOCDIR%%/qt/tutorial/t10
+@dirrm %%RUBY_DOCDIR%%/qt/tutorial/t11
+@dirrm %%RUBY_DOCDIR%%/qt/tutorial/t12
+@dirrm %%RUBY_DOCDIR%%/qt/tutorial/t13
+@dirrm %%RUBY_DOCDIR%%/qt/tutorial/t14
+@dirrm %%RUBY_DOCDIR%%/qt/tutorial/t2
+@dirrm %%RUBY_DOCDIR%%/qt/tutorial/t3
+@dirrm %%RUBY_DOCDIR%%/qt/tutorial/t4
+@dirrm %%RUBY_DOCDIR%%/qt/tutorial/t5
+@dirrm %%RUBY_DOCDIR%%/qt/tutorial/t6
+@dirrm %%RUBY_DOCDIR%%/qt/tutorial/t7
+@dirrm %%RUBY_DOCDIR%%/qt/tutorial/t8
+@dirrm %%RUBY_DOCDIR%%/qt/tutorial/t9
+@dirrm %%RUBY_DOCDIR%%/qt/tutorial
+%%RUBY_DOCDIR%%/qt/README.txt
+%%RUBY_DOCDIR%%/qt/ja/README.jp
+@dirrm %%RUBY_DOCDIR%%/qt/ja
+@dirrm %%RUBY_DOCDIR%%/qt

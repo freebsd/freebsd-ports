@@ -1,7 +1,7 @@
-lib/ruby/site_ruby/%%RUBY_VER%%/%%RUBY_ARCH%%/eb.so
-share/examples/ruby/eb/ja/test.rb
-@dirrm share/examples/ruby/eb/ja
-@dirrm share/examples/ruby/eb
-share/doc/ruby/eb/ja/eb.html
-@dirrm share/doc/ruby/eb/ja
-@dirrm share/doc/ruby/eb
+%%RUBY_SITEARCHLIBDIR%%/eb.so
+%%RUBY_EXAMPLESDIR%%/eb/ja/test.rb
+@dirrm %%RUBY_EXAMPLESDIR%%/eb/ja
+@dirrm %%RUBY_EXAMPLESDIR%%/eb
+%%RUBY_DOCDIR%%/eb/ja/eb.html
+@dirrm %%RUBY_DOCDIR%%/eb/ja
+@dirrm %%RUBY_DOCDIR%%/eb

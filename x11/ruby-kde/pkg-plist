@@ -1,55 +1,55 @@
-lib/ruby/site_ruby/%%RUBY_VER%%/%%RUBY_ARCH%%/kde.so
-lib/ruby/site_ruby/%%RUBY_VER%%/kde.rb
-share/examples/ruby/kde/classbrows/kdebrows.rb
-share/examples/ruby/kde/classbrows/rbbr_qt.rb
-share/examples/ruby/kde/classbrows/rbbr_rb.rb
-share/examples/ruby/kde/classbrows/rbdump.rb
-share/examples/ruby/kde/classbrows/kdebrows2.rb
-share/examples/ruby/kde/kapp/kapp1.rb
-share/examples/ruby/kde/kredit/kredit_lib.pot
-share/examples/ruby/kde/kredit/kde2ps
-share/examples/ruby/kde/kredit/kredit.rb
-share/examples/ruby/kde/kredit/kredit.rb.po
-share/examples/ruby/kde/kredit/kredit.rb.pot
-share/examples/ruby/kde/kredit/kredit_lib.rb
-share/examples/ruby/kde/kredit/readme.txt
-share/examples/ruby/kde/kredit/kredit.po
-share/examples/ruby/kde/kredit/kredit.mo
-share/examples/ruby/kde/kredit/kredit.rb.mo
-share/examples/ruby/kde/kredit/make_pot
-share/examples/ruby/kde/ksc/pics/circle_fill.xpm
-share/examples/ruby/kde/ksc/pics/fileopen.xpm
-share/examples/ruby/kde/ksc/pics/filefloppy.xpm
-share/examples/ruby/kde/ksc/pics/fileprint.xpm
-share/examples/ruby/kde/ksc/pics/editcopy.xpm
-share/examples/ruby/kde/ksc/pics/editcut.xpm
-share/examples/ruby/kde/ksc/pics/editpaste.xpm
-share/examples/ruby/kde/ksc/pics/arrow.xpm
-share/examples/ruby/kde/ksc/pics/pen.xpm
-share/examples/ruby/kde/ksc/pics/line.xpm
-share/examples/ruby/kde/ksc/pics/circle.xpm
-share/examples/ruby/kde/ksc/pics/rectangle.xpm
-share/examples/ruby/kde/ksc/pics/erase.xpm
-share/examples/ruby/kde/ksc/pics/filenew.xpm
-share/examples/ruby/kde/ksc/scarea.rb
-share/examples/ruby/kde/ksc/scglobal.rb
-share/examples/ruby/kde/ksc/scwindow.rb
-share/examples/ruby/kde/ksc/ksc.rb.pot
-share/examples/ruby/kde/ksc/ksc.rb.po
-share/examples/ruby/kde/ksc/ksc.rb.mo
-share/examples/ruby/kde/ksc/ksc.rb
-share/examples/ruby/kde/ksc/make_pot
-share/examples/ruby/kde/kwidgets/kwid.rb
-share/examples/ruby/kde/slider/kslider3.rb
-@dirrm share/examples/ruby/kde/classbrows
-@dirrm share/examples/ruby/kde/kapp
-@dirrm share/examples/ruby/kde/kredit
-@dirrm share/examples/ruby/kde/ksc/pics
-@dirrm share/examples/ruby/kde/ksc
-@dirrm share/examples/ruby/kde/kwidgets
-@dirrm share/examples/ruby/kde/slider
-@dirrm share/examples/ruby/kde
-share/doc/ruby/kde/README.txt
-share/doc/ruby/kde/ja/README.jp.txt
-@dirrm share/doc/ruby/kde/ja
-@dirrm share/doc/ruby/kde
+%%RUBY_SITEARCHLIBDIR%%/kde.so
+%%RUBY_SITELIBDIR%%/kde.rb
+%%RUBY_EXAMPLESDIR%%/kde/classbrows/kdebrows.rb
+%%RUBY_EXAMPLESDIR%%/kde/classbrows/rbbr_qt.rb
+%%RUBY_EXAMPLESDIR%%/kde/classbrows/rbbr_rb.rb
+%%RUBY_EXAMPLESDIR%%/kde/classbrows/rbdump.rb
+%%RUBY_EXAMPLESDIR%%/kde/classbrows/kdebrows2.rb
+%%RUBY_EXAMPLESDIR%%/kde/kapp/kapp1.rb
+%%RUBY_EXAMPLESDIR%%/kde/kredit/kredit_lib.pot
+%%RUBY_EXAMPLESDIR%%/kde/kredit/kde2ps
+%%RUBY_EXAMPLESDIR%%/kde/kredit/kredit.rb
+%%RUBY_EXAMPLESDIR%%/kde/kredit/kredit.rb.po
+%%RUBY_EXAMPLESDIR%%/kde/kredit/kredit.rb.pot
+%%RUBY_EXAMPLESDIR%%/kde/kredit/kredit_lib.rb
+%%RUBY_EXAMPLESDIR%%/kde/kredit/readme.txt
+%%RUBY_EXAMPLESDIR%%/kde/kredit/kredit.po
+%%RUBY_EXAMPLESDIR%%/kde/kredit/kredit.mo
+%%RUBY_EXAMPLESDIR%%/kde/kredit/kredit.rb.mo
+%%RUBY_EXAMPLESDIR%%/kde/kredit/make_pot
+%%RUBY_EXAMPLESDIR%%/kde/ksc/pics/circle_fill.xpm
+%%RUBY_EXAMPLESDIR%%/kde/ksc/pics/fileopen.xpm
+%%RUBY_EXAMPLESDIR%%/kde/ksc/pics/filefloppy.xpm
+%%RUBY_EXAMPLESDIR%%/kde/ksc/pics/fileprint.xpm
+%%RUBY_EXAMPLESDIR%%/kde/ksc/pics/editcopy.xpm
+%%RUBY_EXAMPLESDIR%%/kde/ksc/pics/editcut.xpm
+%%RUBY_EXAMPLESDIR%%/kde/ksc/pics/editpaste.xpm
+%%RUBY_EXAMPLESDIR%%/kde/ksc/pics/arrow.xpm
+%%RUBY_EXAMPLESDIR%%/kde/ksc/pics/pen.xpm
+%%RUBY_EXAMPLESDIR%%/kde/ksc/pics/line.xpm
+%%RUBY_EXAMPLESDIR%%/kde/ksc/pics/circle.xpm
+%%RUBY_EXAMPLESDIR%%/kde/ksc/pics/rectangle.xpm
+%%RUBY_EXAMPLESDIR%%/kde/ksc/pics/erase.xpm
+%%RUBY_EXAMPLESDIR%%/kde/ksc/pics/filenew.xpm
+%%RUBY_EXAMPLESDIR%%/kde/ksc/scarea.rb
+%%RUBY_EXAMPLESDIR%%/kde/ksc/scglobal.rb
+%%RUBY_EXAMPLESDIR%%/kde/ksc/scwindow.rb
+%%RUBY_EXAMPLESDIR%%/kde/ksc/ksc.rb.pot
+%%RUBY_EXAMPLESDIR%%/kde/ksc/ksc.rb.po
+%%RUBY_EXAMPLESDIR%%/kde/ksc/ksc.rb.mo
+%%RUBY_EXAMPLESDIR%%/kde/ksc/ksc.rb
+%%RUBY_EXAMPLESDIR%%/kde/ksc/make_pot
+%%RUBY_EXAMPLESDIR%%/kde/kwidgets/kwid.rb
+%%RUBY_EXAMPLESDIR%%/kde/slider/kslider3.rb
+@dirrm %%RUBY_EXAMPLESDIR%%/kde/classbrows
+@dirrm %%RUBY_EXAMPLESDIR%%/kde/kapp
+@dirrm %%RUBY_EXAMPLESDIR%%/kde/kredit
+@dirrm %%RUBY_EXAMPLESDIR%%/kde/ksc/pics
+@dirrm %%RUBY_EXAMPLESDIR%%/kde/ksc
+@dirrm %%RUBY_EXAMPLESDIR%%/kde/kwidgets
+@dirrm %%RUBY_EXAMPLESDIR%%/kde/slider
+@dirrm %%RUBY_EXAMPLESDIR%%/kde
+%%RUBY_DOCDIR%%/kde/README.txt
+%%RUBY_DOCDIR%%/kde/ja/README.jp.txt
+@dirrm %%RUBY_DOCDIR%%/kde/ja
+@dirrm %%RUBY_DOCDIR%%/kde
