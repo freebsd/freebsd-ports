@@ -46,6 +46,7 @@ share/icewm/icons/xterm_16x16.xpm
 share/icewm/icons/xterm_32x32.xpm
 share/icewm/icons/xv_16x16.xpm
 share/icewm/icons/xv_32x32.xpm
+share/icewm/keys
 share/icewm/ledclock/a.xpm
 share/icewm/ledclock/colon.xpm
 share/icewm/ledclock/dot.xpm
@@ -93,6 +94,8 @@ share/icewm/themes/gtk2/restoreI.xpm
 share/icewm/themes/metal2/closeA.xpm
 share/icewm/themes/metal2/closeI.xpm
 share/icewm/themes/metal2/default.theme
+share/icewm/themes/metal2/depthA.xpm
+share/icewm/themes/metal2/depthI.xpm
 share/icewm/themes/metal2/dframeAB.xpm
 share/icewm/themes/metal2/dframeABL.xpm
 share/icewm/themes/metal2/dframeABR.xpm
