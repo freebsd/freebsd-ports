@@ -64,6 +64,7 @@
     SUBDIR += lupe
     SUBDIR += mgapdesk
     SUBDIR += mlterm
+    SUBDIR += multi-gnome-terminal
     SUBDIR += offix-clipboard
     SUBDIR += offix-execute
     SUBDIR += p5-X11-Protocol
