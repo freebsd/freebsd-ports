@@ -22,7 +22,13 @@ NOMANCOMPRESS=	yes
 MAN1=		bash.1 bash_builtins.1
 INFO=		bash
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "ia64"
+BROKEN=		"Does not compile on ia64"
+.endif
+
 post-install:
 	@install-info ${PREFIX}/info/bash.info ${PREFIX}/info/dir
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
