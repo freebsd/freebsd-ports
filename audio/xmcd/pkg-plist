@@ -111,7 +111,6 @@ lib/X11/xmcd/help/WwCancel.btn
 lib/X11/xmcd/help/WwGo.btn
 lib/X11/xmcd/help/WwSearch.opt
 lib/X11/xmcd/help/WwSelect.rbx
-lib/X11/xmcd/cddb/misc/4102560a
 lib/X11/xmcd/pixmaps/xmcd.icon
 lib/X11/xmcd/pixmaps/xmcd_a.px
 lib/X11/xmcd/pixmaps/xmcd_b.px
@@ -157,23 +156,21 @@ lib/X11/xmcd/config/.tbl/Yamaha
 lib/X11/xmcd/config/config.sh
 man/man1/xmcd.1.gz
 man/man1/cda.1.gz
-man/man1/cddbcmd.1.gz
-man/man1/wm2xmcd.1.gz
 @dirrm lib/X11/xmcd/docs
 @dirrm lib/X11/xmcd/pixmaps
 @dirrm lib/X11/xmcd/help
 @dirrm lib/X11/xmcd/config/.tbl
 @dirrm lib/X11/xmcd/config
-@dirrm lib/X11/xmcd/cddb/soundtrack
-@dirrm lib/X11/xmcd/cddb/rock
-@dirrm lib/X11/xmcd/cddb/reggae
-@dirrm lib/X11/xmcd/cddb/newage
-@dirrm lib/X11/xmcd/cddb/misc
-@dirrm lib/X11/xmcd/cddb/jazz
-@dirrm lib/X11/xmcd/cddb/folk
-@dirrm lib/X11/xmcd/cddb/data
-@dirrm lib/X11/xmcd/cddb/country
-@dirrm lib/X11/xmcd/cddb/classical
-@dirrm lib/X11/xmcd/cddb/blues
-@dirrm lib/X11/xmcd/cddb
-@dirrm lib/X11/xmcd
+@unexec rmdir lib/X11/xmcd/cddb/soundtrack 2>/dev/null || true
+@unexec rmdir lib/X11/xmcd/cddb/rock 2>/dev/null || true
+@unexec rmdir lib/X11/xmcd/cddb/reggae 2>/dev/null || true
+@unexec rmdir lib/X11/xmcd/cddb/newage 2>/dev/null || true
+@unexec rmdir lib/X11/xmcd/cddb/misc 2>/dev/null || true
+@unexec rmdir lib/X11/xmcd/cddb/jazz 2>/dev/null || true
+@unexec rmdir lib/X11/xmcd/cddb/folk 2>/dev/null || true
+@unexec rmdir lib/X11/xmcd/cddb/data 2>/dev/null || true
+@unexec rmdir lib/X11/xmcd/cddb/country 2>/dev/null || true
+@unexec rmdir lib/X11/xmcd/cddb/classical 2>/dev/null || true
+@unexec rmdir lib/X11/xmcd/cddb/blues 2>/dev/null || true
+@unexec rmdir lib/X11/xmcd/cddb 2>/dev/null || true
+@unexec rmdir lib/X11/xmcd 2>/dev/null || true

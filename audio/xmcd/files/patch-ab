@@ -1,8 +1,8 @@
-*** install.sh.orig	Tue Aug 12 19:12:27 1997
---- install.sh	Sun Sep  7 16:23:43 1997
+*** install.sh.orig	Sat May 23 00:31:42 1998
+--- install.sh	Wed Aug 12 17:24:14 1998
 ***************
-*** 48,53 ****
---- 48,56 ----
+*** 46,51 ****
+--- 46,54 ----
   ERRFILE=/tmp/xmcd.err
   TMPFILE=/tmp/xmcdinst.$$
   
@@ -13,7 +13,7 @@
   # Utility functions
   #
 ***************
-*** 586,592 ****
+*** 594,600 ****
   
   while :
   do
@@ -21,7 +21,7 @@
   	then
   		if [ -d "$ANS" ]
   		then
---- 589,599 ----
+--- 597,607 ----
   
   while :
   do
@@ -34,7 +34,7 @@
   		if [ -d "$ANS" ]
   		then
 ***************
-*** 634,640 ****
+*** 642,648 ****
   
   while :
   do
@@ -42,7 +42,7 @@
   	then
   		if [ -d "$ANS" ]
   		then
---- 641,651 ----
+--- 649,659 ----
   
   while :
   do
@@ -55,7 +55,7 @@
   		if [ -d "$ANS" ]
   		then
 ***************
-*** 657,663 ****
+*** 665,671 ****
   APPDEFAULTSDIR=$LIBDIR/app-defaults
   while :
   do
@@ -63,7 +63,7 @@
   	then
   		if [ -d "$ANS" ]
   		then
---- 668,678 ----
+--- 676,686 ----
   APPDEFAULTSDIR=$LIBDIR/app-defaults
   while :
   do
@@ -76,15 +76,15 @@
   		if [ -d "$ANS" ]
   		then
 ***************
-*** 680,686 ****
+*** 688,694 ****
   XMCDLIB=$LIBDIR/xmcd
   while :
   do
 ! 	if getstr "\nEnter xmcd library directory\n[${XMCDLIB}]:"
   	then
-  		if [ -d "$ANS" ]
-  		then
---- 695,705 ----
+  		UDIR="$ANS"
+  		if [ -d "$UDIR" ]
+--- 703,713 ----
   XMCDLIB=$LIBDIR/xmcd
   while :
   do
@@ -94,10 +94,10 @@
 ! 		break
 ! 	elif getstr "\nEnter xmcd library directory\n[${XMCDLIB}]:"
   	then
-  		if [ -d "$ANS" ]
-  		then
+  		UDIR="$ANS"
+  		if [ -d "$UDIR" ]
 ***************
-*** 733,739 ****
+*** 742,748 ****
   $ECHO "\n\nThe on-line manual directory is where the man pages in"
   $ECHO "in the xmcd package will be installed."
   
@@ -105,7 +105,7 @@
   then
   	MANDIR=$ANS
   fi
---- 752,761 ----
+--- 761,770 ----
   $ECHO "\n\nThe on-line manual directory is where the man pages in"
   $ECHO "in the xmcd package will be installed."
   
@@ -117,7 +117,7 @@
   	MANDIR=$ANS
   fi
 ***************
-*** 758,764 ****
+*** 767,773 ****
   		MANSUFFIX=1
   	fi
   
@@ -125,7 +125,7 @@
   	then
   		MANSUFFIX=$ANS
   	fi
---- 780,789 ----
+--- 789,798 ----
   		MANSUFFIX=1
   	fi
   
@@ -136,3 +136,22 @@
   	then
   		MANSUFFIX=$ANS
   	fi
+***************
+*** 939,954 ****
+  fi
+  
+  # Run device-dependent config script
+- if [ -r $XMCDLIB/config/config.sh ]
+- then
+- 	$SHELL $XMCDLIB/config/config.sh
+- 	if [ $? != 0 ]
+- 	then
+- 		logerr -n "$XMCDLIB/config/config.sh failed."
+- 	fi
+- else
+- 	logerr -p "Cannot execute $XMCDLIB/config/config.sh"
+- fi
+  
+  # Demo cddb file
+  if [ -d $XMCDLIB/cddb/misc ]
+--- 964,969 ----

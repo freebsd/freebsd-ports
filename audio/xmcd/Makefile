@@ -3,7 +3,7 @@
 # Date created:		16 Februar 1995
 # Whom:			Gennady Sorokopud <gena@NetVision.net.il>
 #
-# $Id: Makefile,v 1.8 1997/09/08 13:20:10 tg Exp $
+# $Id: Makefile,v 1.9 1998/05/27 03:07:06 mph Exp $
 #
 
 DISTNAME=	xmcd-2.3
@@ -14,8 +14,10 @@ MAINTAINER=	deischen@iworks.InterWorks.org
 
 REQUIRES_MOTIF=	yes
 USE_IMAKE=	yes
-IS_INTERACTIVE=	yes	# asks a lot of questions
 
 MAN1=		cddbcmd.1 wm2xmcd.1
+
+post-install:
+	@${CAT} ${PKGDIR}/MESSAGE
 
 .include <bsd.port.mk>
