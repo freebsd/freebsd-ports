@@ -7,6 +7,7 @@
 
 PORTNAME=	smokeping
 PORTVERSION=	1.16
+PORTREVISION=	1
 CATEGORIES=	net www
 MASTER_SITES=	http://people.ee.ethz.ch/~oetiker/webtools/smokeping/pub/
 
@@ -18,6 +19,7 @@ RUN_DEPENDS=	rrdtool:${PORTSDIR}/net/rrdtool \
 		${SITE_PERL}/CGI.pm:${PORTSDIR}/www/p5-CGI.pm \
 		${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5 \
 		${SITE_PERL}/Pod/Usage.pm:${PORTSDIR}/textproc/p5-PodParser \
+		${SITE_PERL}/Net/SMTP.pm:${PORTSDIR}/net/p5-Net \
 		${LOCALBASE}/sbin/fping:${PORTSDIR}/net/fping
 
 USE_PERL5=	yes
