@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	khacc
-PORTVERSION=	1.7.9
+PORTVERSION=	3.0
 CATEGORIES=	finance
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	qhacc
@@ -26,10 +26,6 @@ MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \
 		AUTOHEADER="${TRUE}"
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500035
-CXXFLAGS+=	-fpermissive
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e \

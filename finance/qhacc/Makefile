@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	qhacc
-PORTVERSION=	2.9.9
+PORTVERSION=	3.0
 CATEGORIES=	finance
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -36,10 +36,6 @@ USE_MYSQL=	yes
 .endif
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500035
-CXXFLAGS+=	-fpermissive
-.endif
 
 .if defined(WITH_MYSQL)
 CONFIGURE_ARGS+=	--enable-mysql \
