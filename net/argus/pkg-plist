@@ -1,8 +1,10 @@
-bin/adjacency
 bin/argus
-bin/connections
-bin/dnstats
+bin/fullra
 bin/ra
+bin/raconnections
+bin/racount
+bin/radjacency
+bin/radnstats
 bin/raservices
 bin/rasort
 include/cons_def.h
@@ -10,6 +12,7 @@ include/cons_out.h
 share/doc/argus/CA-95.01
 share/doc/argus/CA-95.01.scan.sh
 share/doc/argus/README
+share/doc/argus/README.argus
 share/doc/argus/configs
 share/doc/argus/dailyscan.sh
 share/doc/argus/policy.conf
