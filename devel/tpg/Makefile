@@ -7,9 +7,9 @@
 #
 
 PORTNAME=	tpg
-PORTVERSION=	0.1.6
+PORTVERSION=	0.1.9
 CATEGORIES=	devel python
-MASTER_SITES=	http://christophe.delord.free.fr/en/tpg/
+MASTER_SITES=	http://christophe.delord.free.fr/soft/tpg/
 DISTNAME=	${PORTNAME:U}-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
