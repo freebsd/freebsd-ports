@@ -1,0 +1,53 @@
+#!/bin/sh
+#
+# $FreeBSD$
+
+PKGNAME=$1
+PKG_DBDIR=${PKG_DBDIR:-/var/db/pkg}
+
+die () {
+    echo $* >&2
+    exit 1
+}
+
+delete_modules () {
+    modules="
+	dl
+	fileutils
+	fnmatch
+	racc-runtime
+	strscan
+    "
+
+    echo "Deinstalling modules being replaced by $PKGNAME..."
+
+    cd $PKG_DBDIR || die "$PKG_DBDIR is not found"
+
+    for portname in $modules; do
+	for pkg in $RUBY_PKGNAMEPREFIX$portname-*; do
+	    if [ -d $pkg ]; then
+		echo "---> $pkg"
+		/usr/sbin/pkg_delete -f $pkg
+	    fi
+	done
+    done
+}
+
+RUBY_PKGNAMEPREFIX=$(expr "$PKGNAME" : '\([^-]*-\)')
+
+if [ -z $RUBY_PKGNAMEPREFIX ]; then
+    die "Cannot determine RUBY_PKGNAMEPREFIX from '$PKGNAME'."
+fi
+
+case $2 in
+    PRE-INSTALL)
+	delete_modules
+	;;
+    POST-INSTALL)
+	;;
+    *)
+	die "usage: sh $0 \$PKGNAME { PRE-INSTALL | POST-INSTALL }"
+	;;
+esac
+
+exit 0
