@@ -1,0 +1,11 @@
+--- configure.orig	Sun Sep  7 22:33:01 2003
++++ configure	Sun Sep  7 22:35:58 2003
+@@ -4696,7 +4696,7 @@
+ 
+ 
+ USEOSS=no
+-if test -e /usr/include/linux/soundcard.h;
++if test -e /usr/include/sys/soundcard.h;
+ then
+   USEOSS=yes
+   echo "*** open sound system header file detected ***"
