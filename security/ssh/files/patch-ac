@@ -1,0 +1,24 @@
+*** login.c.bak	Thu Jun  6 15:39:34 1996
+--- login.c	Mon Jun 17 19:56:43 1996
+***************
+*** 236,241 ****
+--- 236,254 ----
+    strncpy(u.ut_user, user, sizeof(u.ut_user));
+  #endif /* HAVE_NAME_IN_UTMP */
+  #ifdef HAVE_HOST_IN_UTMP
++ #ifdef __FreeBSD__
++   if (strlen(host) > UT_HOSTSIZE) {
++ 	  struct hostent *hp = gethostbyname(host);
++ 
++ 	  if (hp != NULL) {
++ 		  struct in_addr in;
++ 
++ 		  memmove(&in, hp->h_addr, sizeof(in));
++ 		  host = inet_ntoa(in);
++ 	  } else
++ 		  host = "invalid hostname";
++   }
++ #endif
+    strncpy(u.ut_host, host, sizeof(u.ut_host));
+  #endif /* HAVE_HOST_IN_UTMP */
+  #ifdef HAVE_ADDR_IN_UTMP
