@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	slony1
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.2
 CATEGORIES=	databases
 MASTER_SITES=	http://developer.postgresql.org/~wieck/slony1/download/
 
@@ -25,6 +25,7 @@ EXTRA_PATCHES=	${FILESDIR}/extra-GNUmakefile.in
 RUN_DEPENDS=	${LOCALBASE}/bin/postmaster:${PGSQL_PORT}
 
 GNU_CONFIGURE=	yes
+USE_BISON=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 PGSQL_SRC=	`cd ${PGSQL_PORT}; make -V WRKSRC`
