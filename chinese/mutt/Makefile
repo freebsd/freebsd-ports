@@ -8,7 +8,6 @@
 
 CATEGORIES=	chinese
 
-PORTREVISION=	7
 MASTERDIR=	${.CURDIR}/../../mail/mutt-devel
 REVISEDATE=	20030807
 
