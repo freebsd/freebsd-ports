@@ -11,7 +11,7 @@ CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.mcs.anl.gov/pub/mpi/
 
 PATCH_SITES=	ftp://ftp.mcs.anl.gov/pub/mpi/patch/1.2.1/
-#PATCHFILES=	this-space-reserved-for-future-use
+PATCHFILES=	5487 5524
 
 MAINTAINER=	dbader@eece.unm.edu
 
