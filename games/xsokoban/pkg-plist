@@ -136,3 +136,9 @@ lib/X11/xsokoban/screens/screen.88
 lib/X11/xsokoban/screens/screen.89
 lib/X11/xsokoban/screens/screen.9
 lib/X11/xsokoban/screens/screen.90
+@dirrm lib/X11/xsokoban/bitmaps/defaults
+@dirrm lib/X11/xsokoban/bitmaps
+@dirrm lib/X11/xsokoban/saves
+@dirrm lib/X11/xsokoban/scores
+@dirrm lib/X11/xsokoban/screens
+@dirrm lib/X11/xsokoban
