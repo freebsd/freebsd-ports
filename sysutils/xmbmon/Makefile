@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xmbmon
-PORTVERSION=	201
+PORTVERSION=	202
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.nt.phys.kyushu-u.ac.jp/shimizu/download/
 .if defined(WITHOUT_X11)
@@ -14,18 +14,21 @@ PKGNAMESUFFIX=	-nox11
 .endif
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
+PATCH_SITES=	${MASTER_SITES}
+PATCHFILES=	xmbmon200202it87.diff
+
 MAINTAINER=	kaz@kobe1995.net
 COMMENT=	X/tty motherboard monitor for LM78/79, W8378x, AS99127F and VT82C686
 
 GNU_CONFIGURE=	yes
 .if defined(WITHOUT_X11)
-MAKE_ARGS+=	DOCSDIR='$(DOCSDIR)' INSTALL_DATA='$(INSTALL_DATA)'
 PLIST_SUB=	X11_ONLY="@comment "
 .else
 USE_XLIB=	yes
-MAKE_ARGS+=	DOCSDIR='$(DOCSDIR)' INSTALL_DATA='$(INSTALL_DATA)'
 PLIST_SUB=	X11_ONLY=""
 .endif
+
+MAKE_ARGS+=	DOCSDIR='$(DOCSDIR)' INSTALL_DATA='$(INSTALL_DATA)'
 
 pre-everything::
 	@${ECHO_CMD} ""
@@ -36,7 +39,7 @@ pre-everything::
 
 post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}
 	(cd ${WRKSRC}; ${MAKE} ${MAKE_ARGS} install-doc)
 .endif
 
