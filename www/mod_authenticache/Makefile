@@ -10,7 +10,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://killa.net/infosec/mod_authenticache/
 DIST_SUBDIR=	apache
 
-MAINTAINER=	sheeepkiller@cultdeadsheep.org
+MAINTAINER=	sheepkiller@cultdeadsheep.org
 COMMENT=	A generic credential caching module for Apache 2.0.x
 
 BUILD_DEPENDS=	${LOCALBASE}/sbin/apxs:${PORTSDIR}/www/apache2

@@ -10,7 +10,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://www.unixpapa.com/software/
 DIST_SUBDIR=	apache
 
-MAINTAINER=	sheeepkiller@cultdeadsheep.org
+MAINTAINER=	sheepkiller@cultdeadsheep.org
 COMMENT=	Allows users authentication based on external mechanisms
 
 BUILD_DEPENDS=	${LOCALBASE}/sbin/apxs:${PORTSDIR}/www/apache2
