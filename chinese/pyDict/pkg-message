@@ -1,0 +1,8 @@
+
+---------------------------------------------------------
+If you experience problems displaying Chinese, first make
+sure that you have correct locale settings, then copy
+/usr/X11R6/lib/X11/pyDict/gtkrc.zh_TW.big5.sample to
+~/.gtkrc.zh_TW.big5 and try again.
+---------------------------------------------------------
+
