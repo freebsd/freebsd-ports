@@ -57,9 +57,6 @@ taginfo		CVSROOT taginfo
 3dc		ports/games/3dc
 3dm		ports/sysutils/3dm
 3dpong		ports/games/3dpong
-40upgrade	ports/misc/40upgrade
-41upgrade	ports/misc/41upgrade
-42upgrade	ports/misc/42upgrade
 44bsd-csh	ports/shells/44bsd-csh
 44bsd-hunt	ports/games/44bsd-hunt
 44bsd-more	ports/misc/44bsd-more
