@@ -1,13 +1,13 @@
 # New ports collection makefile for:	astyle
-# Version required:	1.10.1
+# Version required:	1.10.4
 # Date created:		31 Jan 1999
 # Whom:			Don Croyle <croyle@gelemna.ft-wayne.in.us>
 #
-# $Id: Makefile,v 1.1.1.1 1999/04/03 01:26:17 steve Exp $
+# $Id: Makefile,v 1.2 1999/07/22 04:20:45 cpiazza Exp $
 #
 
-DISTNAME=	astyle_1.10.1_src
-PKGNAME=	astyle-1.10.1
+DISTNAME=	astyle_1.10.4_src
+PKGNAME=	astyle-1.10.4
 CATEGORIES= 	devel textproc
 MASTER_SITES=	http://gene.md.huji.ac.il/~tald/astyle/stable/src/ \
 		http://www.infonex.com/~dacroyle/freebsd/
@@ -15,8 +15,7 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	croyle@gelemna.ft-wayne.in.us
 
-WRKSRC=		${WRKDIR}/astyle_1.10.1
-ALL_TARGET=	astyle
+WRKSRC=		${WRKDIR}/astyle_1.10.4
 
 post-extract:
 	perl -pi -e 's/\r//' ${WRKSRC}/*
@@ -27,5 +26,9 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/astyle ${PREFIX}/bin/
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${PREFIX}/share/doc/astyle
+	${INSTALL_DATA} ${WRKSRC}/astyle.html ${PREFIX}/share/doc/astyle
+.endif
 
 .include <bsd.port.mk>
