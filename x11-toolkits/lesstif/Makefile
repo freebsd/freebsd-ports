@@ -1,12 +1,12 @@
 # New ports collection makefile for:	lesstif
-# Version required:	0.71
+# Version required:	0.77
 # Date created:		December 10, 1996
 # Whom:			1wardd@airmail.net
 #
-# $Id: Makefile,v 1.2 1997/02/16 15:08:19 andreas Exp $
+# $Id: Makefile,v 1.3 1997/02/19 06:33:59 asami Exp $
 #
 
-DISTNAME=	lesstif-0.76
+DISTNAME=	lesstif-0.77
 CATEGORIES=	x11
 MASTER_SITES=	ftp://ftp.hungry.com/pub/hungry/lesstif/
 
