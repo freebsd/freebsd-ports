@@ -2,6 +2,7 @@
 #
     SUBDIR += w3m
     SUBDIR += uniksc
+    SUBDIR += pycodec
     SUBDIR += texinfo
 
     SUBDIR += FreeWnn-lib
