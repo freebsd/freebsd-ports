@@ -7,7 +7,7 @@ time you update your ports collection, before attempting any port
 upgrades.
 
 20041107:
-  AFFECTS: all GNOME users
+  AFFECTS: all users who have any GNOME libraries installed
   AUTHOR: adamw@FreeBSD.org and the rest of the FreeBSD/GNOME crew
 
   Hey, 2.6! You don't have to be 2.6 anymore!
