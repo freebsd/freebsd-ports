@@ -16,10 +16,10 @@ etc/gconf/gconf.xml.defaults/schemas/apps/file-roller/ui/%gconf.xml
 etc/gconf/schemas/file-roller.schemas
 lib/bonobo/libfile-roller-component.so
 libdata/bonobo/servers/File_Roller_Component.server
-%%PORTDOCS%%share/doc/fileroller/AUTHORS
-%%PORTDOCS%%share/doc/fileroller/NEWS
-%%PORTDOCS%%share/doc/fileroller/README
-%%PORTDOCS%%share/doc/fileroller/TODO
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODO
 share/gnome/application-registry/file-roller.applications
 share/gnome/applications/file-roller.desktop
 share/gnome/file-roller/glade/file_roller.glade
@@ -193,7 +193,7 @@ share/locale/zh_TW/LC_MESSAGES/file-roller.mo
 @dirrm share/gnome/help/file-roller
 @dirrm share/gnome/file-roller/glade
 @dirrm share/gnome/file-roller
-@dirrm share/doc/fileroller
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/file-roller/ui
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/file-roller/listing
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/file-roller/general
