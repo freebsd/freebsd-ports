@@ -6,12 +6,13 @@
 #
 
 PORTNAME=	fvwm
-PORTVERSION=	2.4.5
+PORTVERSION=	2.4.6
 CATEGORIES=	x11-wm
 MASTER_SITES=	ftp://ftp.fvwm.org/pub/fvwm/version-2/ \
 		http://www.fvwm.org/generated/icon_download/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} fvwm_icons.tgz
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
+USE_BZIP2=	yes
 
 MAINTAINER=	petef@FreeBSD.org
 
