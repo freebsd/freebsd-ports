@@ -25,12 +25,12 @@ do-install:
 	cd ${WRKSRC}/../lib; ${CP} -R -p * ${MALIB}; \
 	   cd ${MALIB}; \
 	   touch file/wizards.txt; \
-	   ${CHMOD} 750 *; ${CHOWN} -R games.games *; \
+	   ${CHMOD} 750 *; ${CHOWN} -R root.games *; \
 	   ${CHMOD} 755 user;
 	cd ${WRKSRC}; \
-	   ${INSTALL_PROGRAM} -o games -g games -m 4550 \
+	   ${INSTALL_PROGRAM} -o root -g games -m 2550 \
 		mangband ${PREFIX}/bin; \
-	   ${INSTALL_PROGRAM} -o games -g games -m 550 \
+	   ${INSTALL_PROGRAM} -o root -g games -m 550 \
 		mangconsole ${PREFIX}/bin; \
 	   ${INSTALL_PROGRAM} mangclient ${PREFIX}/bin
 
