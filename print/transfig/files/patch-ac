@@ -1,15 +1,22 @@
---- fig2dev/Imakefile.orig	Fri Apr 20 02:19:38 2001
-+++ fig2dev/Imakefile	Tue Jun  5 23:18:08 2001
-@@ -28,7 +28,7 @@
+--- fig2dev/Imakefile.orig	Fri Dec 20 02:33:44 2002
++++ fig2dev/Imakefile	Wed Jan  8 08:36:50 2003
+@@ -20,13 +20,13 @@
  XCOMM You should point XFIGLIBDIR to the same directory you did when you compiled
- XCOMM and installed xfig.  This will be made automatic in the future.
+ XCOMM and installed xfig.
  
 -XFIGLIBDIR =	/usr/local/lib/X11/xfig
 +XFIGLIBDIR =	$(LIBDIR)/xfig
  
  XCOMM ******
  XCOMM If your system has the strerror() function (doesn't have sys_errlist) then
-@@ -47,7 +47,7 @@
+ XCOMM comment out NEED_STRERROR with an XCOMM comment.
+ 
+-NEED_STRERROR = -DNEED_STRERROR
++XCOMM NEED_STRERROR = -DNEED_STRERROR
+ 
+ XCOMM The following probably only applies to Windows 9x/NT:
+ XCOMM If your system can open files in text and binary modes and has the
+@@ -39,7 +39,7 @@
  XCOMM inline functions. With the "INLINE" keyword, you should notice that
  XCOMM the display will be a bit faster in complex figures
  
@@ -18,18 +25,18 @@
  
  XCOMM ****************
  XCOMM Change RGB if necessary, to point to your rgb.txt color database
-@@ -65,8 +65,8 @@
- #define USEPNG
+@@ -60,8 +60,8 @@
+ XCOMM are in different places
  
  #ifdef USEPNG
 -PNGLIBDIR = $(USRLIBDIR)
 -PNGINC = -I/usr/include/X11
 +PNGLIBDIR = ${LOCALBASE}/lib
-+PNGINC = -I${LOCALBASE}/include
++PNGINC = -I${LOCALBASE}/include/libpng
  #endif
  
  XCOMM ****************
-@@ -78,11 +78,11 @@
+@@ -73,11 +73,11 @@
  XCOMM Change XPMINC if necessary to point to the include file for xpm (xpm.h)
  XCOMM
  
@@ -43,18 +50,7 @@
  #endif
  
  XCOMM ****************
-@@ -104,8 +104,8 @@
- 
- #ifdef USEJPEG
- #ifdef USEINSTALLEDJPEG
--JPEGLIBDIR = /usr/local/lib
--JPEGINCDIR = /usr/include/X11
-+JPEGLIBDIR = ${LOCALBASE}/lib
-+JPEGINCDIR = ${LOCALBASE}/include
- #else
- JPEGLIBDIR = ../jpeg
- JPEGINCDIR = $(JPEGLIBDIR)
-@@ -158,7 +158,7 @@
+@@ -126,23 +126,23 @@
  
  #ifdef I18N
  I18N_DEFS = -DI18N 
@@ -63,3 +59,40 @@
  I18N_DEV_DEFS = $(I18N_DEFS) -DFIG2DEV_LIBDIR=\\\"$(FIG2DEV_LIBDIR)\\\"
  
  install::
+ 	[ -d $(DESTDIR)$(FIG2DEV_LIBDIR) ] || mkdir $(DESTDIR)$(FIG2DEV_LIBDIR)
+-	$(INSTALL) -c dev/japanese.ps $(DESTDIR)$(FIG2DEV_LIBDIR)
++	$(INSTALL) $(INSTALLFLAGS) $(INSTDATFLAGS)  dev/japanese.ps $(DESTDIR)$(FIG2DEV_LIBDIR)
+ 	( cd $(DESTDIR)$(FIG2DEV_LIBDIR); \
+ 	  rm -f ja.ps ja_JP.ps ja_JP.ujis.ps ja_JP.eucJP.ps ja_JP.EUC.ps; \
+ 	  $(LN) japanese.ps ja.ps; $(LN) japanese.ps ja_JP.ps; \
+ 	  $(LN) japanese.ps ja_JP.ujis.ps; $(LN) japanese.ps ja_JP.eucJP.ps; \
+ 	  $(LN) japanese.ps ja_JP.EUC.ps )
+-	$(INSTALL) -c  dev/korean.ps $(DESTDIR)$(FIG2DEV_LIBDIR)
++	$(INSTALL) $(INSTALLFLAGS) $(INSTDATFLAGS)  dev/korean.ps $(DESTDIR)$(FIG2DEV_LIBDIR)
+ 	( cd $(DESTDIR)$(FIG2DEV_LIBDIR); \
+ 	  rm -f ko.ps ko_KR.ps ko_KR.eucKR.ps ko_KR.EUC.ps; \
+ 	  $(LN) korean.ps ko.ps; $(LN) korean.ps ko_KR.ps; \
+ 	  $(LN) korean.ps ko_KR.eucKR.ps; $(LN) korean.ps ko_KR.EUC.ps )
+-	$(INSTALL) -c  dev/cs_CZ.ps $(DESTDIR)$(FIG2DEV_LIBDIR)
++	$(INSTALL) $(INSTALLFLAGS) $(INSTDATFLAGS)  dev/cs_CZ.ps $(DESTDIR)$(FIG2DEV_LIBDIR)
+ 	( cd $(DESTDIR)$(FIG2DEV_LIBDIR); \
+ 	  rm -f hr_HR.ps hu_HU.ps pl_PL.ps ro_RO.ps sk_SK.ps sl_SI.ps; \
+ 	  $(LN) cs_CZ.ps hr_HR.ps; $(LN) cs_CZ.ps hu_HU.ps; \
+@@ -177,7 +177,7 @@
+ 
+ IMAKE_DEFINES = $(DUSEPNG) $(DUSEXPM)
+ 
+-DEVDEFINES = $(DUSEPNG) $(DUSEXPM) $(XPMINC) $(DDNFSS) $(DDA4) \
++DEVDEFINES = $(DUSEPNG) $(DUSEXPM) $(PNGINC) $(XPMINC) $(DDNFSS) $(DDA4) \
+ 		$(DDLATEX2E_GRAPHICS) $(DDEPSFIG) $(DDIBMGEC) $(DDDVIPS) $(I18N_DEV_DEFS)
+ 
+ #define IHaveSubdirs
+@@ -233,7 +233,7 @@
+ 	else (set -x; $(MKDIRHIER) $(DESTDIR)$(XFIGLIBDIR)/bitmaps ); fi ; \
+ 	echo Copying bitmap files for tk to $(DESTDIR)$(XFIGLIBDIR)/bitmaps ; \
+ 	for f in * ; do \
+-	      $(INSTALL) -c $$f $(DESTDIR)$(XFIGLIBDIR)/bitmaps ; \
++	      $(INSTALL) $(INSTALLFLAGS) $(INSTDATFLAGS) $$f $(DESTDIR)$(XFIGLIBDIR)/bitmaps ; \
+ 	done) ; 
+ 
+ install.all::
