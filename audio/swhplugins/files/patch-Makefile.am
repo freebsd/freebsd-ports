@@ -1,6 +1,6 @@
---- Makefile.am.orig	Fri Nov  1 21:10:34 2002
-+++ Makefile.am	Sun Nov  3 17:54:07 2002
-@@ -1,31 +1,31 @@
+--- Makefile.am.orig	Wed Jan  1 20:30:03 2003
++++ Makefile.am	Wed Jan  1 20:29:32 2003
+@@ -1,28 +1,26 @@
  VERSION = @VERSION@
  
  SOBS =	amp_1181.so debug_1184.so diode_1185.so \
@@ -22,31 +22,28 @@
 +	dyson_compress_1403.so crossover_dist_1404.so \
  	valve_rect_1405.so split_1406.so alias_1407.so \
 -	satan_maximiser_1408.so karaoke_1409.so gate_1410.so \
-+	karaoke_1409.so \
++	karaoke_1409.so\
  	comb_splitter_1411.so wave_terrain_1412.so \
 -	hard_limiter_1413.so smooth_decimate_1414.so fm_osc_1415.so \
 -	analogue_osc_1416.so rate_shifter_1417.so freq_tracker_1418.so \
 -	mod_delay_1419.so matrix_st_ms_1420.so matrix_ms_st_1421.so \
 -	matrix_spatialiser_1422.so plate_1423.so gong_1424.so \
 -	sc1_1425.so sc2_1426.so sc3_1427.so zm1_1428.so inv_1429.so \
+-	chebstortion_1430.so bode_shifter_1431.so bode_shifter_cv_1432.so \
+-	am_pitchshift_1433.so \
 -	mbeq_1197.so pitch_scale_1193.so pitch_scale_1194.so imp_1199.so
-+	hard_limiter_1413.so smooth_decimate_1414.so \
+-
++	hard_limiter_1413.so smooth_decimate_1414.so\
 +	rate_shifter_1417.so freq_tracker_1418.so \
 +	matrix_st_ms_1420.so matrix_ms_st_1421.so \
-+	 plate_1423.so gong_1424.so \
++	plate_1423.so gong_1424.so \
 +	zm1_1428.so inv_1429.so \
++	chebstortion_1430.so \
 +	mbeq_1197.so pitch_scale_1193.so pitch_scale_1194.so
- 
- SUBDIRS = util gsm gverb
+ SUBDIRS = util gsm gverb metadata
  
  # Wacky stuff to stop automake getting confused
- EXTRA_DIST = *.xml *.c *.h *.dtd *.pl *.css impulses/*.h
--LINK = ld -shared -Bsymbolic -lc -lm -o $@
-+LINK = ld -shared -Bsymbolic -L/usr/local/lib -L/usr/local/lib -L/usr/local/lib -lc -lm -o $@
- pkgbin_PROGRAMS = $(SOBS)
- pkgbindir = @prefix@/lib/ladspa
- DESTDIR = $(INSTALL_ROOT)
-@@ -39,17 +39,6 @@
+@@ -41,17 +39,6 @@
  pitch_scale_1194_so_SOURCES = pitch_scale_1194.so.c
  mbeq_1197_so_LDADD = $(FFTLIBS)
  mbeq_1197_so_SOURCES = mbeq_1197.so.c
