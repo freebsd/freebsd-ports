@@ -37,6 +37,7 @@ PHP_DISTDIR=	distributions
 
 SLAVEDIRS=	lang/php4
 
+USE_BZIP2=	yes
 USE_SUBMAKE=	yes
 USE_AUTOCONF_VER=213
 
