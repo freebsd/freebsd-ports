@@ -5,8 +5,7 @@ FreeBSD.  Using it you can
  o set/clear/enable/disable breakpoints in Modula-3 programs
  o inspect the values of variables and evaluate Modula-3 expressions
  o view and inspect stack frames
-
-Thread support seems not to work right now.
+ o switch between threads, if you're careful to switch back again
 
 This debugger is much more useful if your Modula-3 libraries contain
 debugging symbols.  To accomplish that, do a "make configure" of the
