@@ -1,11 +1,11 @@
---- StarterBar/__init__.py.orig	Sun Nov  9 16:16:45 2003
-+++ StarterBar/__init__.py	Sun Nov  9 16:16:59 2003
-@@ -413,7 +413,7 @@
+--- StarterBar/__init__.py.orig	Fri Jun 25 00:28:11 2004
++++ StarterBar/__init__.py	Fri Jun 25 00:31:02 2004
+@@ -572,7 +572,7 @@
          cmd = self.__icon_set.get_icon(index).get_command()
          cmd = cmd.replace("%U", file)
  
--        os.system("cd ~ && " + cmd + " & disown")
-+        os.system("cd ~ && " + cmd + " &")
-         self.__animator.unhilight()
-         if (self._get_config("animation")):
-             self.__animator.jump(index)
+-        os.system("cd ~ && exec " + cmd + " & disown")
++        os.system("cd ~ && exec " + cmd + " &")
+ 
+ 
+     #
