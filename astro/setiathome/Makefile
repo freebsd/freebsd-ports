@@ -6,7 +6,7 @@
 
 PORTNAME=	setiathome
 PORTVERSION?=	3.08
-PORTREVISION?=	2
+PORTREVISION?=	3
 CATEGORIES?=	astro
 MASTER_SITES=	ftp://ftp.cdrom.com/pub/setiathome/ \
 		ftp://alien.ssl.berkeley.edu/pub/
