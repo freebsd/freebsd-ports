@@ -1,0 +1,37 @@
+--- libglut/Makefile.in.orig	Thu Dec 16 05:30:14 1999
++++ libglut/Makefile.in	Fri Dec 31 04:34:53 1999
+@@ -13,9 +13,9 @@
+ # These define the name/version of the shared library we're building
+ # ------------------------------------------------------------------
+ LIBNAME = glut
+-GLUTREV_major = 3
+-GLUTREV_minor = 7
+-SOGLUTREV = ${GLUTREV_major}.${GLUTREV_minor}
++GLUTREV_major = ${GLUTVER}
++GLUTREV_minor = 
++SOGLUTREV = ${GLUTREV_major}${GLUTREV_minor}
+ GLUTLIB = lib${LIBNAME}.so.${SOGLUTREV}
+ 
+ # Source and Object definitions
+@@ -113,8 +113,8 @@
+ 	@if [ -d ${INSTALL_libdir} ]; then set +x; \
+ 	else (set -x; ${MKDIR} ${INSTALL_libdir}); fi
+ 	${INSTALL} ${INSTALLFLAGS} ${INSTBINFLAGS} ${GLUTLIB} ${INSTALL_libdir}
+-	${RM} ${INSTALL_libdir}/lib${LIBNAME}.so.${GLUTREV_major} ;\
+-	${LN} ${GLUTLIB} ${INSTALL_libdir}/lib${LIBNAME}.so.${GLUTREV_major}
++#	${RM} ${INSTALL_libdir}/lib${LIBNAME}.so.${GLUTREV_major} ;\
++#	${LN} ${GLUTLIB} ${INSTALL_libdir}/lib${LIBNAME}.so.${GLUTREV_major}
+ 	${RM} ${INSTALL_libdir}/lib${LIBNAME}.so ;\
+ 	${LN} ${GLUTLIB} ${INSTALL_libdir}/lib${LIBNAME}.so
+ else
+@@ -139,8 +139,8 @@
+ 	${CC} -o ./$@~ ${SHARED_LDFLAGS} -Wl,-soname,lib${LIBNAME}.so.${GLUTREV_major} ${OBJS} ${MATHLIBS}
+ 	${RM} $@
+ 	${MV} $@~ $@
+-	${RM} lib${LIBNAME}.so.${GLUTREV_major}
+-	${LN} $@ lib${LIBNAME}.so.${GLUTREV_major}
++#	${RM} lib${LIBNAME}.so.${GLUTREV_major}
++#	${LN} $@ lib${LIBNAME}.so.${GLUTREV_major}
+ 	${RM} lib${LIBNAME}.so
+ 	${LN} $@ lib${LIBNAME}.so
+ 

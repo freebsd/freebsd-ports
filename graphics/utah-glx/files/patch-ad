@@ -1,0 +1,12 @@
+--- Makefile.in.orig	Wed Mar 22 22:25:54 2000
++++ Makefile.in	Fri Apr 28 03:51:47 2000
+@@ -40,7 +40,8 @@
+ 		( cd $$i && ${MAKE} $@ ) || exit 1; \
+ 	done
+ 	test -s ${sysconfdir}/glx.conf || \
+-		${INSTALL} -m 644 glx.conf ${sysconfdir}/glx.conf
++		${INSTALL} -c -m 644 glx.conf ${sysconfdir}/glx.conf
++	${INSTALL} -c -m 644 glx.conf ${sysconfdir}/glx.conf.default
+ 
+ real-clean:
+ 	${RM} config.status
