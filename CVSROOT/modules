@@ -3578,6 +3578,7 @@ kldload		src/sbin/kldload
 kldstat		src/sbin/kldstat
 kldunload	src/sbin/kldunload
 kldxref		src/usr.sbin/kldxref
+klh10		ports/emulators/klh10
 klist		src/eBones/klist
 klondike	ports/games/klondike
 klone		ports/lang/klone
