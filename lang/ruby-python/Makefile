@@ -15,22 +15,20 @@ DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
 
-PYTHON_VERSION=	python1.5
+PYTHON_VERSION?=	python1.5
 
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
+CONFIGURE_ARGS=	--with-python="${PYTHON_VERSION}" --with-pthread
 INSTALL_TARGET=	site-install
-
-post-configure:
-	${PERL} -i -pe 's/-lc\b/-lc_r/g' ${WRKSRC}/Makefile
 
 post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${RUBY_EXAMPLESDIR}/python/Lib
+	${MKDIR} ${RUBY_EXAMPLESDIR}/python
+	${CP} -R ${WRKSRC}/examples/ ${RUBY_EXAMPLESDIR}/python/
 	${MKDIR} ${RUBY_DOCDIR}/python/ja
-	cd ${WRKSRC}/examples; find . -exec ${INSTALL_DATA} {} ${RUBY_EXAMPLESDIR}/python/{} \;
 	${INSTALL_DATA} ${WRKSRC}/ChangeLog ${WRKSRC}/README ${WRKSRC}/doc/* \
 		${RUBY_DOCDIR}/python/
 	${INSTALL_DATA} ${WRKSRC}/README.ja ${WRKSRC}/doc-ja/* \
