@@ -11,7 +11,7 @@ CATEGORIES=	mail
 MASTER_SITES=	http://www.linuxmagic.com/opensource/qmail/qmail-remove/
 
 MAINTAINER=	clement@FreeBSD.org
-COMMENT=	Removes messages from your qmail queue baed on a particular string
+COMMENT=	Removes messages from your qmail queue based on a particular string
 
 PORTDOCS=	INSTALL LICENSE README
 
