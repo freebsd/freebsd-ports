@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	postgresql_autodoc
-PORTVERSION=	0.99
+PORTVERSION=	1.00
 CATEGORIES=	databases
 MASTER_SITES=	http://www.rbt.ca/autodoc/
-DISTNAME=	postgresql_autodoc_${PORTVERSION}
 
 MAINTAINER=	olgeni@FreeBSD.org
 
@@ -23,7 +22,7 @@ NO_BUILD=	yes
 WRKSRC=		${WRKDIR}
 
 post-patch:
-	@${REINPLACE_CMD} -e "s,/usr/local/bin/perl,${PERL},g" ${WRKSRC}/postgresql_autodoc.pl
+	@${REINPLACE_CMD} -e "s,/usr/bin/perl,${PERL},g" ${WRKSRC}/postgresql_autodoc.pl
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/postgresql_autodoc.pl ${PREFIX}/bin/postgresql_autodoc
