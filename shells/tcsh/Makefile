@@ -3,11 +3,11 @@
 # Date created:		22 August 1994
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.15 1996/11/18 14:13:54 asami Exp $
+# $Id: Makefile,v 1.16 1996/12/16 01:40:08 ache Exp $
 #
 
-PKGNAME=        tcsh-6.07.02
 DISTNAME=       tcsh-6.07
+PKGNAME=        tcsh-6.07.02
 CATEGORIES=	shells
 MASTER_SITES=   ftp://ftp.deshaw.com/pub/tcsh/
 
