@@ -1,4 +1,4 @@
-This is the cistron radiusd server. radiusd is a server that handles
-access-requests for user authentication from radius clients. These
+This is the Cistron RADIUS daemon. Radiusd is a daemon that handles
+remote authentication requests and accounting for RADIUS clients. The
 clients may be terminal servers, Network Access Servers or other
 RADIUS servers.

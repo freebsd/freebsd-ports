@@ -1,1 +1,4 @@
-A remote authentication server (radius daemon).
+Cistron RADIUS daemon. A remote authentication and accouting server.
+
+NOTE: This version of radiusd-cistron is in BETA, although it appears
+to work reliably.

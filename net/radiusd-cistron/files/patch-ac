@@ -1,11 +1,19 @@
-diff -u --recursive src/log.c.orig src/log.c
---- src/log.c.orig	Tue Feb 11 02:50:28 1997
-+++ src/log.c	Fri Apr 10 22:38:39 1998
-@@ -10,6 +10,7 @@
- #include	<stdlib.h>
- #include	<unistd.h>
- #include	<stdarg.h>
-+#include	<time.h>
- #include	"radiusd.h"
+--- src/conf.h.orig	Mon Oct  5 23:51:13 1998
++++ src/conf.h	Fri Oct 23 13:32:58 1998
+@@ -1,6 +1,6 @@
+ /* Default Database File Names */
  
- extern char	*radlog_dir;
+-#define RADIUS_DIR		"/etc/raddb"
++#define RADIUS_DIR		PREFIX "/etc/raddb"
+ #define RADACCT_DIR		"/var/log/radacct"
+ #define RADLOG_DIR		"/var/log"
+ 
+@@ -14,7 +14,7 @@
+ #define RADIUS_HUNTGROUPS	"huntgroups"
+ #define RADIUS_REALMS		"realms"
+ 
+-#define RADUTMP			"/var/log/radutmp"
++#define RADUTMP			"/var/run/radutmp"
+ #define RADWTMP			"/var/log/radwtmp"
+ 
+ #define RADIUS_PID		"/var/run/radiusd.pid"

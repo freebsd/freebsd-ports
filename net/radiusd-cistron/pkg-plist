@@ -1,26 +1,37 @@
 bin/radlast
+bin/radtest
 bin/raduse
 bin/radwho
 bin/radzap
 sbin/checkrad
 sbin/radiusd
+sbin/radwatch
 etc/raddb/clients
 etc/raddb/dictionary
 etc/raddb/dictionary.ascend
 etc/raddb/dictionary.compat
-etc/raddb/dictionary.merit
+etc/raddb/dictionary.livingston
+etc/raddb/dictionary.tunnel
+etc/raddb/dictionary.usr
 etc/raddb/hints
 etc/raddb/huntgroups
 etc/raddb/naslist
+etc/raddb/naspasswd
+etc/raddb/realms
 etc/raddb/users
-share/doc/radiusd-cistron/COPYRIGHT
+share/doc/radiusd-cistron/COPYRIGHT.Cistron
+share/doc/radiusd-cistron/COPYRIGHT.Livingston
 share/doc/radiusd-cistron/ChangeLog
 share/doc/radiusd-cistron/INSTALL.OLD
 share/doc/radiusd-cistron/README
+share/doc/radiusd-cistron/README.cisco
 share/doc/radiusd-cistron/README.pam
+share/doc/radiusd-cistron/README.proxy
 share/doc/radiusd-cistron/README.simul
+share/doc/radiusd-cistron/README.usersfile
 etc/rc.d/radiusd.sh
 @dirrm etc/raddb
 @dirrm share/doc/radiusd-cistron
-@unexec rm -rf /var/log/radacct
 @unexec rm -f /var/log/radius.log
+@unexec rm -f /var/run/radiusd.pid
+@unexec echo "Leaving /var/run/radutmp, /var/log/radwtmp and /var/log/radacct alone."
