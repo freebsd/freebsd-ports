@@ -20,9 +20,10 @@ PLIST_SUB+=	T=${TARGET_DIR:S/^${PREFIX}\///}
 TARGET_DIR?=	${PREFIX}/share/doc/jdk${JDK_MAJOR_VER}
 
 WRKSRC=		${WRKDIR}/docs
-JDK_VERSION=	1.4.0
+JDK_VERSION=	1.4.1
 JDK_MAJOR_VER=	${JDK_VERSION:R}
-DOWNLOAD_URL=	http://java.sun.com/Download6?config-file=j2sdk-${JDK_VERSION:S/./_/g}-docs.config
+BUNDLE_ID=	7065
+DOWNLOAD_URL=	http://java.sun.com/webapps/download/Display?BundleId=${BUNDLE_ID}
 
 NO_BUILD=	yes
 USE_ZIP=	yes
@@ -33,8 +34,26 @@ USE_ZIP=	yes
 IGNORE=You must manually fetch ${DISTNAME}${EXTRACT_SUFX} from ${DOWNLOAD_URL}, place it in ${DISTDIR} and then run make again
 .endif
 
+pre-install:
+	@${ECHO_CMD} -n ">> Removing ${PLIST}..."
+	@${RM} -f ${PLIST}
+	@${TOUCH} ${PLIST}
+	@${ECHO_CMD} " [ DONE ]"
+ 
 do-install:
-	${MKDIR} ${TARGET_DIR}
-	${CP} -r ${WRKSRC}/* ${TARGET_DIR}
+	@${ECHO_CMD} -n ">> Creating directory ${TARGET_DIR}..."
+	@${MKDIR} ${TARGET_DIR}
+	@${ECHO_CMD} " [ DONE ]"
+
+	@${ECHO_CMD} -n ">> Copying files..."
+	@${CP} -r ${WRKSRC}/* ${TARGET_DIR}
+	@${ECHO_CMD} " [ DONE ]"
+
+	@${ECHO_CMD} -n ">> Creating packing list..."
+	@${FIND} ${TARGET_DIR} -type f -print | \
+		${SED} "s,${PREFIX}/*,," >> ${PLIST}
+	@${FIND} ${TARGET_DIR} -type d -print | sort -r | \
+		${SED} -e "s,${PREFIX}/*,," -e "s,^,@dirrm ,g" >> ${PLIST}
+	@${ECHO_CMD} " [ DONE ]"
 
 .include <bsd.port.post.mk>
