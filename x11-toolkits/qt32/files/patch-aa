@@ -1,26 +1,6 @@
---- configs/freebsd-g++-shared.orig	Fri Sep 24 18:21:55 1999
-+++ configs/freebsd-g++-shared	Fri Oct  1 22:07:46 1999
-@@ -1,33 +1,33 @@
- # Compiling
--SYSCONF_CXX		= g++
--SYSCONF_CC		= gcc
-+SYSCONF_CXX		= $(SYS_CXX)
-+SYSCONF_CC		= $(SYS_CC)
- 
- # Compiling with support libraries
--SYSCONF_CXXFLAGS_X11	= -I/usr/X11R6/include
-+SYSCONF_CXXFLAGS_X11	= -I$(X11BASE)/include
- SYSCONF_CXXFLAGS_QT	= -I$(QTDIR)/include
--SYSCONF_CXXFLAGS_OPENGL	= -I/usr/X11R6/include
-+SYSCONF_CXXFLAGS_OPENGL	= -I$(X11BASE)/include
- 
- # Compiline YACC output
- SYSCONF_CXXFLAGS_YACC     = -Wno-unused -Wno-parentheses
- 
- # Linking with support libraries
- # X11
--SYSCONF_LFLAGS_X11	= -L/usr/X11R6/lib
-+SYSCONF_LFLAGS_X11	= -L$(X11BASE)/lib
+--- configs/freebsd-g++-shared.orig	Thu Feb 17 01:55:56 2000
++++ configs/freebsd-g++-shared	Sat Feb 26 20:25:51 2000
+@@ -16,7 +16,7 @@
  SYSCONF_LIBS_X11	= -lXext -lX11 -lm
  # Qt, Qt+OpenGL
  SYSCONF_LFLAGS_QT	= -L$(QTDIR)/lib
@@ -28,28 +8,21 @@
 +SYSCONF_LIBS_QT		= -lqt2
  SYSCONF_LIBS_QT_OPENGL	= -lqgl
  # OpenGL
--SYSCONF_LFLAGS_OPENGL	= -L/usr/X11R6/lib
-+SYSCONF_LFLAGS_OPENGL	= -L$(X11BASE)/lib
- SYSCONF_LIBS_OPENGL	= -lMesaGL -lMesaGLU -lXmu
- # Yacc
- SYSCONF_LIBS_YACC	= 
- 
+ SYSCONF_LFLAGS_OPENGL	= -L/usr/X11R6/lib
+@@ -27,7 +27,7 @@
  # Linking applications
--SYSCONF_LINK		= g++
-+SYSCONF_LINK		= $(SYS_CXX)
+ SYSCONF_LINK		= g++
  SYSCONF_LFLAGS		= 
 -SYSCONF_LIBS		= 
 +SYSCONF_LIBS		= -lxpg4
  
  # Link flags shared objects
  SYSCONF_LFLAGS_SHOBJ	= -shared
-@@ -40,17 +40,27 @@
- #   - Place target in $(DESTDIR) - which has a trailing /
+@@ -41,16 +41,26 @@
  #   - Usually needs to incorporate $(VER_MAJ), $(VER_MIN) and $(VER_PATCH)
  #
--SYSCONF_LINK_SHLIB	= g++
+ SYSCONF_LINK_SHLIB	= g++
 -SYSCONF_LINK_TARGET_SHARED	= lib$(TARGET).so.$(VER_MAJ).$(VER_MIN).$(VER_PATCH)
-+SYSCONF_LINK_SHLIB	= $(SYS_CXX)
 +ifeq ($(PORTOBJFORMAT),elf)
 +SYSCONF_LINK_TARGET_SHARED	= lib$(TARGET).so.$(VER_MAJ)
  SYSCONF_LINK_LIB_SHARED	=  $(SYSCONF_LINK_SHLIB) -shared  \
@@ -77,14 +50,3 @@
  
  # Linking static libraries
  #   - Build the $(TARGET) library, eg. lib$(TARGET).a
-@@ -61,8 +71,8 @@
- SYSCONF_LINK_LIB_STATIC	= rm -f $(DESTDIR)$(SYSCONF_LINK_TARGET_STATIC) ; \
- 				 $(SYSCONF_AR) $(DESTDIR)$(SYSCONF_LINK_TARGET_STATIC) $(OBJECTS) $(OBJMOC) 
- # Compiling application source
--SYSCONF_CXXFLAGS	= -pipe -O2
--SYSCONF_CFLAGS		= -pipe -O2
-+SYSCONF_CXXFLAGS	= $(SYS_CXXFLAGS)
-+SYSCONF_CFLAGS		= $(SYS_CXXFLAGS)
- # Compiling library source
- SYSCONF_CXXFLAGS_LIB	= -fPIC
- SYSCONF_CFLAGS_LIB	= -fPIC
