@@ -61,6 +61,7 @@
     SUBDIR += linux-gtk
     SUBDIR += linux-openmotif
     SUBDIR += neXtaw
+    SUBDIR += notif2
     SUBDIR += open-motif
     SUBDIR += open-motif-devel
     SUBDIR += p5-GdkImlib
