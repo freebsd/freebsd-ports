@@ -54,4 +54,10 @@ post-install:
 	@${TAR} -C ${WRKSRC}/misc -cf - . | ${TAR} -C ${EXAMPLESDIR} -xf -
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} > 501101
+BROKEN=		gcc33 does not support varargs.h
+.endif
+
+.include <bsd.port.post.mk>
