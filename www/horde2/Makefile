@@ -37,6 +37,7 @@ RUN_DEPENDS=	${BUILD_DEPENDS}						\
 		${PEARDIR}/Log.php:${PORTSDIR}/sysutils/pear-Log		\
 		${PEARDIR}/Mail/mime.php:${PORTSDIR}/mail/pear-Mail_Mime
 
+NO_PACKAGE=	Packaging problem due to dependences with pear
 NO_BUILD=	yes
 USE_REINPLACE=	yes
 
