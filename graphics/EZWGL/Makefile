@@ -3,13 +3,13 @@
 # Date created:				4 May 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.13 1998/11/21 07:27:35 steve Exp $
+# $Id: Makefile,v 1.14 1999/01/02 19:51:36 steve Exp $
 #
 
-DISTNAME=	EZWGL-1.40
+DISTNAME=	EZWGL-1.40c
 CATEGORIES=	graphics devel
 MASTER_SITES=	ftp://ftp.ma.utexas.edu/pub/mzou/
-DISTFILES=	${DISTNAME}-demo.tgz ${DISTNAME}-doc.tgz ${DISTNAME}-src.tgz
+DISTFILES=	EZWGL-1.40-doc.tgz ${DISTNAME}-src.tgz
 
 MAINTAINER=	andy@icc.surw.chel.su
 
@@ -30,11 +30,23 @@ VERSION=	1.4
 .endif
 
 pre-install:
-	-@ ${RM} ${WRKSRC}/demos/Makefile.orig
-	-@ ${RM} ${WRKSRC}/demos/DnD/Makefile.orig
-	-@ ${RM} ${WRKSRC}/demos/GL/Makefile.orig
-	-@ ${RM} ${WRKSRC}/demos/Message/Makefile.orig
-	-@ ${MV} ${WRKSRC}/doc/man3/EZ_RegisterCompositeWidget,3 ${WRKSRC}/doc/man3/EZ_RegisterCompositeWidget.3
+.for file in Makefile.orig animate btnbox clock counter hanoi locator meter puzzle
+	-@ ${RM} ${WRKSRC}/demos/${file}
+.endfor
+.for file in Makefile.orig src1 src2 target1 target2
+	-@ ${RM} ${WRKSRC}/demos/DnD/${file}
+.endfor
+.for file in setroot transparent
+	-@ ${RM} ${WRKSRC}/demos/Glass/${file}
+.endfor
+.for file in Makefile.orig gears image julia pendulum
+	-@ ${RM} ${WRKSRC}/demos/GL/${file}
+.endfor
+.for file in Makefile.orig client server
+	-@ ${RM} ${WRKSRC}/demos/Message/${file}
+.endfor
+	-@ ${RMDIR} ${WRKDIR}/EZWGL-1.40/doc/html/misc
+	-@ ${MV} ${WRKDIR}/EZWGL-1.40/doc/man3/EZ_RegisterCompositeWidget,3 ${WRKDIR}/EZWGL-1.40/doc/man3/EZ_RegisterCompositeWidget.3
 	-@ ${RM} ${WRKSRC}/examples/Makefile.orig
 
 do-install:
@@ -43,7 +55,7 @@ do-install:
 	@ ${INSTALL_DATA} ${WRKSRC}/lib/libEZ.so.${VERSION} ${PREFIX}/lib
 	@ ${LN} -sf libEZ.so.${VERSION} ${PREFIX}/lib/libEZ.so
 .for file in ${MAN3}
-	@ ${INSTALL_MAN} ${WRKSRC}/doc/man3/${file} ${PREFIX}/man/man3
+	@ ${INSTALL_MAN} ${WRKDIR}/EZWGL-1.40/doc/man3/${file} ${PREFIX}/man/man3
 .endfor
 	@ ${MKDIR} ${PREFIX}/share/examples/EZ
 	@ cd ${WRKSRC}/examples; tar cf - * | \
@@ -55,7 +67,7 @@ do-install:
 post-install:
 .if !defined(NOPORTDOCS)
 	@ ${MKDIR} ${PREFIX}/share/doc/EZ
-	@ cd ${WRKSRC}/doc; tar cf - html ps | \
+	@ cd ${WRKDIR}/EZWGL-1.40/doc; tar cf - html ps | \
 		(cd ${PREFIX}/share/doc/EZ; tar --unlink -xf - )
 .endif
 	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib

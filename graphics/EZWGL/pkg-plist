@@ -959,45 +959,6 @@ share/examples/EZ/cbutton.c
 share/examples/EZ/cloth.gif
 share/examples/EZ/cursor.c
 share/examples/EZ/demo.c
-share/examples/EZ/demos/DnD/src2.c
-share/examples/EZ/demos/DnD/target2.c
-share/examples/EZ/demos/DnD/Makefile
-share/examples/EZ/demos/DnD/src1.c
-share/examples/EZ/demos/DnD/target1.c
-share/examples/EZ/demos/DnD/README
-share/examples/EZ/demos/GL/pendulum.c
-share/examples/EZ/demos/GL/gears.c
-share/examples/EZ/demos/GL/image.c
-share/examples/EZ/demos/GL/julia.c
-share/examples/EZ/demos/GL/flowers.xpm
-share/examples/EZ/demos/GL/guilin.gif
-share/examples/EZ/demos/GL/Makefile
-share/examples/EZ/demos/GL/README
-share/examples/EZ/demos/Makefile
-share/examples/EZ/demos/Message/client.c
-share/examples/EZ/demos/Message/server.c
-share/examples/EZ/demos/Message/Makefile
-share/examples/EZ/demos/Message/README
-share/examples/EZ/demos/README
-share/examples/EZ/demos/animate.c
-share/examples/EZ/demos/btnbox.c
-share/examples/EZ/demos/burning/borrar-0.xpm
-share/examples/EZ/demos/burning/borrar-1.xpm
-share/examples/EZ/demos/burning/borrar-2.xpm
-share/examples/EZ/demos/burning/borrar-3.xpm
-share/examples/EZ/demos/burning/borrar-4.xpm
-share/examples/EZ/demos/burning/borrar-5.xpm
-share/examples/EZ/demos/burning/borrar-6.xpm
-share/examples/EZ/demos/burning/borrar-7.xpm
-share/examples/EZ/demos/burning/borrar-8.xpm
-share/examples/EZ/demos/burning/README
-share/examples/EZ/demos/burning/README.~1~
-share/examples/EZ/demos/clock.c
-share/examples/EZ/demos/counter.c
-share/examples/EZ/demos/hanoi.c
-share/examples/EZ/demos/locator.c
-share/examples/EZ/demos/meter.c
-share/examples/EZ/demos/puzzle.c
 share/examples/EZ/entry.c
 share/examples/EZ/fileselector.c
 share/examples/EZ/flistbox.c
@@ -1022,17 +983,60 @@ share/examples/EZ/tree.c
 share/examples/EZ/twotails.xpm
 share/examples/EZ/workarea.c
 share/examples/EZ/xevent.c
+share/examples/EZ/demos/Makefile
+share/examples/EZ/demos/README
+share/examples/EZ/demos/animate.c
+share/examples/EZ/demos/btnbox.c
+share/examples/EZ/demos/clock.c
+share/examples/EZ/demos/counter.c
+share/examples/EZ/demos/guilin.gif
+share/examples/EZ/demos/hanoi.c
+share/examples/EZ/demos/locator.c
+share/examples/EZ/demos/meter.c
+share/examples/EZ/demos/puzzle.c
+share/examples/EZ/demos/DnD/src2.c
+share/examples/EZ/demos/DnD/target2.c
+share/examples/EZ/demos/DnD/Makefile
+share/examples/EZ/demos/DnD/src1.c
+share/examples/EZ/demos/DnD/target1.c
+share/examples/EZ/demos/DnD/README
+share/examples/EZ/demos/GL/Makefile
+share/examples/EZ/demos/GL/README
+share/examples/EZ/demos/GL/flowers.xpm
+share/examples/EZ/demos/GL/gears.c
+share/examples/EZ/demos/GL/guilin.gif
+share/examples/EZ/demos/GL/image.c
+share/examples/EZ/demos/GL/julia.c
+share/examples/EZ/demos/GL/pendulum.c
+share/examples/EZ/demos/Glass/Makefile
+share/examples/EZ/demos/Glass/README
+share/examples/EZ/demos/Glass/setroot.c
+share/examples/EZ/demos/Glass/transparent.c
+share/examples/EZ/demos/Glass/widget.c
+share/examples/EZ/demos/Message/client.c
+share/examples/EZ/demos/Message/server.c
+share/examples/EZ/demos/Message/Makefile
+share/examples/EZ/demos/Message/README
+share/examples/EZ/demos/burning/borrar-0.xpm
+share/examples/EZ/demos/burning/borrar-1.xpm
+share/examples/EZ/demos/burning/borrar-2.xpm
+share/examples/EZ/demos/burning/borrar-3.xpm
+share/examples/EZ/demos/burning/borrar-4.xpm
+share/examples/EZ/demos/burning/borrar-5.xpm
+share/examples/EZ/demos/burning/borrar-6.xpm
+share/examples/EZ/demos/burning/borrar-7.xpm
+share/examples/EZ/demos/burning/borrar-8.xpm
 @dirrm share/doc/EZ/html/images
 @dirrm share/doc/EZ/html/manp
 @dirrm share/doc/EZ/html/manual/images
 @dirrm share/doc/EZ/html/manual
-@dirrm share/doc/EZ/html/misc
 @dirrm share/doc/EZ/html/screenshots
 @dirrm share/doc/EZ/html
 @dirrm share/doc/EZ/ps
 @dirrm share/doc/EZ
 @dirrm share/examples/EZ/demos/DnD
 @dirrm share/examples/EZ/demos/GL
+@dirrm share/examples/EZ/demos/Glass
 @dirrm share/examples/EZ/demos/Message
 @dirrm share/examples/EZ/demos/burning
 @dirrm share/examples/EZ/demos
