@@ -1,14 +1,15 @@
---- config.h.orig	Thu Dec 31 22:48:16 1998
-+++ config.h	Mon Jan 18 02:18:32 1999
-@@ -1,6 +1,6 @@
+--- config.h.orig	Sat Mar  6 13:16:31 1999
++++ config.h	Sat Mar  6 13:17:25 1999
+@@ -1,7 +1,7 @@
  /* configuration file - precompile options */
+ 
  #define USE_NET
 -#undef BG_ON_START
 +#define BG_ON_START
  #define GTK_1_1
  #undef GTKEDITOR_PATCH
  
-@@ -62,9 +62,9 @@
+@@ -77,9 +77,9 @@
  /* paths */
  
  #define NETSCAPE "/usr/local/bin/netscape -remote"
