@@ -12,6 +12,7 @@ MD5 (rpm/glib-1.2.9-1.i386.rpm) = 63a7a9d22c1d2f38a59c919ffda35c9c
 MD5 (rpm/libtermcap-2.0.8-26.i386.rpm) = 52a57b5fa1f146adf3dcf4f552a8e5b8
 MD5 (rpm/bash-2.04-21.i386.rpm) = 99a6c7fd6730e97697f658b007dbd927
 MD5 (rpm/bzip2-1.0.1-3.i386.rpm) = 2f6c5671617dcd0a7facc84d4428841a
+MD5 (rpm/compat-libstdc++-6.2-2.9.0.14.i386.rpm) = 5cf1e116fd22b5117e78df717068a244
 MD5 (rpm/ncurses-5.2-8.i386.rpm) = ca4b2077429920820489d40800e5a803
 MD5 (rpm/info-4.0-20.i386.rpm) = 4600aeee40e404584c30f2b94fc6eed8
 MD5 (rpm/fileutils-4.0.36-4.i386.rpm) = bb2c343c6df36d9bdde4bea8dd6ca111
