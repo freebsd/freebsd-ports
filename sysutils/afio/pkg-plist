@@ -1,12 +1,15 @@
 bin/afio
 share/doc/afio/README
 share/doc/afio/SCRIPTS
-share/example/afio/afiodump.example
-share/example/afio/DONTDUMP
-share/example/afio/README
-share/example/afio/backup
-share/example/afio/restore
-share/example/afio/x.dot
-share/example/afio/x.home
+share/examples/afio/afiodump.example
+share/examples/afio/DONTDUMP
+share/examples/afio/README
+share/examples/afio/backup
+share/examples/afio/pgp_read
+share/examples/afio/pgp_write
+share/examples/afio/restore
+share/examples/afio/tapechange
+share/examples/afio/x.dot
+share/examples/afio/x.home
 @dirrm share/doc/afio
-@dirrm share/example/afio
+@dirrm share/examples/afio
