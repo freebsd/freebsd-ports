@@ -115,7 +115,6 @@ GNUstep/Apps/WPrefs.app/xpm/whandling.xpm
 GNUstep/Apps/WPrefs.app/xpm/windowfocus.xpm
 GNUstep/Apps/WPrefs.app/xpm/workspace.xpm
 GNUstep/Apps/WPrefs.app/xpm/xis.xpm
-bin/dockit
 bin/geticonset
 bin/getstyle
 bin/seticons
@@ -249,7 +248,6 @@ share/WindowMaker/Styles/Pastel
 share/WindowMaker/Styles/Pink
 share/WindowMaker/Styles/Pumpkin
 share/WindowMaker/Styles/Purple
-share/WindowMaker/Styles/Rainbow
 share/WindowMaker/Styles/Red
 share/WindowMaker/Styles/RednBlue
 share/WindowMaker/Styles/ShinyBrown
@@ -262,6 +260,7 @@ share/WindowMaker/Themes/Night
 share/WindowMaker/Themes/OpenStep
 share/WindowMaker/Themes/Pastel
 share/WindowMaker/autostart.sh
+share/WindowMaker/exitscript.sh
 share/WindowMaker/menu
 share/WindowMaker/menu.cz
 share/WindowMaker/menu.de
@@ -281,6 +280,7 @@ share/WindowMaker/menu.no
 share/WindowMaker/menu.pt
 share/WindowMaker/menu.ru
 share/WindowMaker/menu.se
+share/WindowMaker/menu.sl
 share/WindowMaker/menu.tr
 share/WindowMaker/plmenu
 share/WindowMaker/wmmacros

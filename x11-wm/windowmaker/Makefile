@@ -1,12 +1,12 @@
 # New ports collection makefile for:	WindowMaker
-# Version required:	0.20.1
+# Version required:	0.20.2
 # Date created:		August 13, 1997
 # Whom:			handy@physics.montana.edu
 #
-# $Id: Makefile,v 1.34 1998/09/30 13:24:39 tg Exp $
+# $Id: Makefile,v 1.35 1998/10/19 10:57:04 tg Exp $
 
-DISTNAME=	WindowMaker-0.20.1
-PKGNAME=	windowmaker-0.20.1
+DISTNAME=	WindowMaker-0.20.2
+PKGNAME=	windowmaker-0.20.2
 CATEGORIES=	x11-wm
 MASTER_SITES=	ftp://ftp.windowmaker.org/pub/beta/srcs/ \
 		ftp://ftp.io.com/pub/mirror/windowmaker/beta/srcs/ \
@@ -15,7 +15,6 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DATAFILES}
 
 MAINTAINER=	handy@physics.montana.edu
 
-RUN_DEPENDS=	wish8.0:${PORTSDIR}/x11-toolkits/tk80
 LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm \
 		gif.3:${PORTSDIR}/graphics/giflib \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
@@ -28,31 +27,16 @@ CONFIGURE_ENV=	X11BASE=${X11BASE}
 CONFIGURE_ARGS=	--with-pixmapdir=${PREFIX}/include/X11/pixmaps \
 	--with-nlsdir=${LOCALBASE}/lib/locale \
 	--with-gfx-libs="-L${LOCALBASE}/lib" \
-	--with-gfx-incs="-I${LOCALBASE}/include/tiff34 -I${LOCALBASE}/include"
+	--with-gfx-incs="-I${LOCALBASE}/include/tiff34 -I${LOCALBASE}/include" \
+	--disable-debug
 
 MAN1=	geticonset.1x getstyle.1x seticons.1x setstyle.1x \
 	wdwrite.1x wmaker.1x wmsetbg.1x wxcopy.1x wxpaste.1x
 
 DATAFILES=	WindowMaker-data.tar.gz
 
-post-extract:
-	cd ${WRKSRC}; ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} libPropList.tar.gz
-
 post-patch:
 	@perl -pi -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/WPrefs.app/Paths.c
-
-pre-configure:
-	@(cd ${WRKSRC}/libPropList && CC="${CC}" CXX="${CXX}" \
-	    ac_cv_path_CC="${CC}" CFLAGS="${CFLAGS} -fPIC" \
-	    INSTALL="/usr/bin/install -c -o ${BINOWN} -g ${BINGRP}" \
-	    INSTALL_DATA="${INSTALL_DATA}" \
-	    INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
-	    INSTALL_SCRIPT="${INSTALL_SCRIPT}" \
-	    ${CONFIGURE_ENV} ./${CONFIGURE_SCRIPT} ${CONFIGURE_ARGS}; \
-	    ${MAKE} ${MAKE_ENV})
-
-pre-install:
-	@(cd ${WRKSRC}/libPropList; ${MAKE} ${MAKE_ENV} install)
 
 post-install:
 	${MKDIR} ${PREFIX}/share/WindowMaker/Pixmaps/
