@@ -11,7 +11,7 @@
 package cfg;
 use strict;
 use vars qw($DEBUG $FILE_PREFIX $MAILADDRS $MAILBANNER $MAILCMD
-	    $MAIL_BRANCH_HDR $MAIL_ON_DIR_CREATION
+	    $MAIL_BRANCH_HDR $MAIL_ON_DIR_CREATION $MAIL_TRANSFORM
 	    $TMPDIR %TEMPLATE_HEADERS
 	    $CHECK_HEADERS $LAST_FILE $PID $IDHEADER $UNEXPAND_RCSID);
 
@@ -108,6 +108,40 @@ $MAIL_ON_DIR_CREATION = 0;
 # using this header (leave off the trailing ':').  Use "" if you don't
 # want one.
 $MAIL_BRANCH_HDR  = "X-CVS-Branch";
+
+# This is a way to post-process the log email before it is mailed.
+# Some people find it useful to use this to create URLs in their
+# commit mails to show the patch in a web page (using cvsweb) for
+# instance.
+#
+# The $MAIL_TRANSFORM variable should be "" if you don't want to
+# use this feature.  Otherwise it should be a reference to a
+# subroutine that is passed the email message as a list, and returns
+# the modified list to the log_accum.pl script.  The list has one
+# element per email line, with no trailing line feeds.  This function
+# shouldn't add them.  If $DEBUG is switched on the log_accum.pl
+# script will show the before and after on stdout at commit time.
+$MAIL_TRANSFORM = "";
+###$MAIL_TRANSFORM = sub {
+###	my @input = @_;
+###	my @output = ();
+###
+###	while (1) {
+###		my $line = shift @input;
+###		last if $line =~ /^$/;
+###
+###		push @output, $line;
+###	}
+###
+###	push @output, "";
+###
+###	foreach my $line (@input) {
+###		push @output, "Q: $line";
+###	}
+###
+###	return @output;
+###};
+
 
 
 ##############################################################

@@ -430,10 +430,6 @@ sub mail_notification {
 
 	print "Mailing the commit message...\n";
 
-	my @mailaddrs = &read_logfile($MAIL_FILE);
-	open MAIL, "| $cfg::MAILCMD $cfg::MAILADDRS"
-	    or die "Please check $cfg::MAILCMD.";
-
 # This is turned off since the To: lines go overboard.
 # Also it has bit-rotted since, and can't just be switched on again.
 # - but keep it for the time being in case we do something like cvs-stable
@@ -446,6 +442,8 @@ sub mail_notification {
 #	}
 #	print(MAIL "\n");
 
+	my @email = ();
+
 	my $subject = 'Subject: cvs commit:';
 	my @subj = &read_logfile($SUBJ_FILE);
 	my $subjlines = 0;
@@ -457,7 +455,7 @@ sub mail_notification {
 				if ($subjlines > 2) {
 					$subject .= " ...";
 				}
-				print MAIL $subject, "\n";
+				push @email, $subject;
 				if ($subjlines > 2) {
 					$subject = "";
 					last LINE;
@@ -472,18 +470,39 @@ sub mail_notification {
 			$subjwords++;
 		}
 	}
-	print MAIL "$subject\n" if $subject;
+	push @email, $subject if $subject;
 
 	# If required add a header to the mail msg showing
 	# which branches were modified during the commit.
 	if ($cfg::MAIL_BRANCH_HDR) {
 		my %tags = map { $_ => 1 } &read_logfile($TAGS_FILE);
-		print MAIL $cfg::MAIL_BRANCH_HDR, ": ";
-		print MAIL join(",", sort keys %tags), "\n";
+		push @email, $cfg::MAIL_BRANCH_HDR . ": " .
+		    join(",", sort keys %tags);
 	}
 
-	print MAIL "\n";
-	print MAIL join("\n", @text);
+	push @email, "";
+	push @email, @text;
+
+	# Transform the email message?
+	if (defined($cfg::MAIL_TRANSFORM) && $cfg::MAIL_TRANSFORM) {
+		die 'log_accum.pl: $cfg::MAIL_TRANSFORM isn\'t a sub!'
+		    unless ref($cfg::MAIL_TRANSFORM) eq "CODE";
+
+		if ($cfg::DEBUG) {
+			print "Email transform.\n";
+			print map { "Before: $_\n" } @email;
+		}
+
+		@email = &$cfg::MAIL_TRANSFORM(@email);
+
+		print map { "After: $_\n" } @email if $cfg::DEBUG;
+	}
+
+	# Send the email.
+	my @mailaddrs = &read_logfile($MAIL_FILE);
+	open MAIL, "| $cfg::MAILCMD $cfg::MAILADDRS"
+	    or die "Please check $cfg::MAILCMD.";
+	print MAIL map { "$_\n" } @email;
 	close MAIL;
 }
 
