@@ -1,5 +1,5 @@
---- make/paths.mk.orig	Sat Jun 12 12:13:14 2004
-+++ make/paths.mk	Sat Jun 12 12:13:04 2004
+--- make/paths.mk.orig	Wed Nov 13 05:54:37 2002
++++ make/paths.mk	Fri Sep 17 13:22:23 2004
 @@ -61,7 +61,7 @@
  dvilj_latex2e_macrodir = $(texinputdir)/latex/dvilj
  
@@ -9,3 +9,12 @@
  
  # The top-level font directory.
  fontdir = $(texmf)/fonts
+@@ -80,7 +80,7 @@
+ fontnamedir = $(texmf)/fontname
+ 
+ # For dvips configuration files, psfonts.map, etc.
+-dvipsdir = $(texmf)/dvips
++dvipsdir = $(texmf)/dvips-ptex
+ 
+ # For dvips .pro files, gsftopk's render.ps, etc.
+ psheaderdir = $(dvipsdir)
