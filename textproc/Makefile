@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.19 1998/04/22 16:53:13 mph Exp $
+# $Id: Makefile,v 1.20 1998/04/29 10:59:21 tg Exp $
 #
 
     SUBDIR += agrep
@@ -14,6 +14,7 @@
     SUBDIR += iso8879
     SUBDIR += ispell
     SUBDIR += jade
+    SUBDIR += latex2html
     SUBDIR += linuxdoc
     SUBDIR += mgdiff
     SUBDIR += par
