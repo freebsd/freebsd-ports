@@ -28,6 +28,7 @@ share/corewars/harmless.cw
 share/corewars/helper.cw
 share/corewars/hidebomb.cw
 share/corewars/hitchhiker.cw
+share/corewars/immortal.cw
 share/corewars/imp-killer-cascade.cw
 share/corewars/imp_commander.cw
 share/corewars/impgrabber.cw
@@ -36,6 +37,8 @@ share/corewars/impkiller2.cw
 share/corewars/impkiller3.cw
 share/corewars/impkiller4.cw
 share/corewars/impkiller5.cw
+share/corewars/jumpback.cw
+share/corewars/jumpback2.cw
 share/corewars/jumpup.cw
 share/corewars/killmover.cw
 share/corewars/killmover2.cw
