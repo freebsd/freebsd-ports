@@ -18,10 +18,12 @@ MAINTAINER=	trevor@FreeBSD.org
 MAN1=		uwm.1
 PLIST=		${WRKDIR}/pkg-plist
 USE_IMAKE=	yes
+USE_REINPLACE=	yes
+REINPLACE_ARGS=	-i'' -E
 WRKSRC=		${WRKDIR}/X.V11R3/clients/uwm
 
 post-patch:
-	${PERL} -pi -e 's:/usr/lib/X11:${PREFIX}/lib/X11:g' ${WRKSRC}/uwm.man
+	${REINPLACE_CMD} 's:/usr/lib/X11:${PREFIX}/lib/X11:g' ${WRKSRC}/uwm.man
 
 pre-install:
 	${ECHO_CMD} bin/uwm > ${PLIST}

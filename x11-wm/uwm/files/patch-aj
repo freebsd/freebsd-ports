@@ -1,7 +1,8 @@
+$FreeBSD$
 $NetBSD: patch-aj,v 1.1 2000/01/19 07:24:07 itohy Exp $
 
 --- Menu.c.orig	Sat Oct  1 09:41:13 1988
-+++ Menu.c	Mon Oct 16 09:10:20 2000
++++ Menu.c	Wed Sep 25 14:50:55 2002
 @@ -84,6 +84,14 @@
  	char **oldenviron;
  	extern char **environ, **newenviron;
@@ -31,3 +32,11 @@ $NetBSD: patch-aj,v 1.1 2000/01/19 07:24:07 itohy Exp $
  	return(status);
  }
  
+@@ -129,7 +140,6 @@
+     char *hlname;			/* Pointer to hi-liter name. */
+     char *strbuf;			/* String buffer for IsTextNL. */
+     Bool checkMotion = TRUE;		/* To Restore Cursor Position */
+-    char *malloc();
+     int funcbutton;			/* function button for window select */
+ 
+     /*

@@ -1,7 +1,8 @@
+$FreeBSD$
 $NetBSD: patch-ab,v 1.2 2000/01/19 07:24:07 itohy Exp $
 
 --- uwm.c.orig	Sun Oct 23 13:21:55 1988
-+++ uwm.c	Mon Oct 16 08:58:41 2000
++++ uwm.c	Wed Sep 25 14:53:13 2002
 @@ -41,9 +41,18 @@
  
  #include "uwm.h"
@@ -50,7 +51,15 @@ $NetBSD: patch-ab,v 1.2 2000/01/19 07:24:07 itohy Exp $
  #define gray_width 16
  #define gray_height 16
  static char gray_bits[] = {
-@@ -115,6 +145,10 @@
+@@ -103,7 +133,6 @@
+     GC gc;			/* graphics context for gray background */
+     XImage grayimage;		/* for gray background */
+     XGCValues xgc;		/* to create font GCs */
+-    char *malloc();
+     Bool fallbackMFont = False,	/* using default GC font for menus, */
+          fallbackPFont = False,	/* popups, */
+          fallbackIFont = False;	/* icons */
+@@ -115,6 +144,10 @@
  #ifdef PROFIL
      signal(SIGTERM, ptrap);
  #endif
@@ -61,7 +70,7 @@ $NetBSD: patch-ab,v 1.2 2000/01/19 07:24:07 itohy Exp $
  
      /*
       * Set up internal defaults.
-@@ -369,7 +403,7 @@
+@@ -369,7 +402,7 @@
      if (IFontInfo == NULL) {
          fprintf(stderr, "uwm: Unable to open icon font '%s', using server default.\n",
                  IFontName);
@@ -70,7 +79,7 @@ $NetBSD: patch-ab,v 1.2 2000/01/19 07:24:07 itohy Exp $
  	fallbackIFont = True;
      }
      PFontInfo = XLoadQueryFont(dpy, PFontName);
-@@ -379,7 +413,7 @@
+@@ -379,7 +412,7 @@
  	if (fallbackIFont)
  	    PFontInfo = IFontInfo;
  	else
@@ -79,7 +88,7 @@ $NetBSD: patch-ab,v 1.2 2000/01/19 07:24:07 itohy Exp $
  	fallbackPFont = True;
      }
      MFontInfo = XLoadQueryFont(dpy, MFontName);
-@@ -389,7 +423,7 @@
+@@ -389,7 +422,7 @@
  	if (fallbackIFont || fallbackPFont)
  	    MFontInfo = fallbackPFont ? PFontInfo : IFontInfo;
  	else
@@ -88,7 +97,7 @@ $NetBSD: patch-ab,v 1.2 2000/01/19 07:24:07 itohy Exp $
  	fallbackMFont = True;
      }
  
-@@ -685,7 +719,11 @@
+@@ -685,7 +718,11 @@
   */
  InitBindings()
  {
@@ -100,7 +109,7 @@ $NetBSD: patch-ab,v 1.2 2000/01/19 07:24:07 itohy Exp $
      char *tempfile;		/* Temporary filename. */
      register FILE *fp;		/* Temporary file pointer. */
      register char **ptr;	/* Default bindings string array pointer. */
-@@ -699,15 +737,26 @@
+@@ -699,15 +736,26 @@
  	exit (1);
      }
      strcpy (tempfile, TEMPFILE);
@@ -127,7 +136,7 @@ $NetBSD: patch-ab,v 1.2 2000/01/19 07:24:07 itohy Exp $
      fclose(fp);
  
      /*
-@@ -717,6 +766,7 @@
+@@ -717,6 +765,7 @@
          perror("uwm: cannot open temp file");
          exit(1);
      }
