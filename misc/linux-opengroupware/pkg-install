@@ -42,11 +42,15 @@ POST-INSTALL)
 WRITE-DEFAULTS-FIRSTTIME)
 
 	OGO='ogo'
+	OGO_GROUP='skyrix'
 	SU='/usr/bin/su'
 	ME=`hostname`
 	DW='Defaults write'
 	DR='Defaults read'
 
+	#just to be sure I am already there... weird issue if not
+	mkdir -p /compat/linux/opt/opengroupware.org/.libFoundation/Defaults
+	chown -Rh ${OGO}:${OGO_GROUP} /compat/linux/opt/opengroupware.org/.libFoundation
 	if [ ! -e /compat/linux/opt/opengroupware.org/.libFoundation/Defaults/NSGlobalDomain.plist ] 2>/dev/null; then
 		echo "There seems to be no previous OGo installation..."
 		echo "going to write \`Defaults\` to .libFoundation/Defaults/NSGlobalDomain.plist"
@@ -63,8 +67,8 @@ WRITE-DEFAULTS-FIRSTTIME)
 		${SU} -l ${OGO} -c "${DW} NSGlobalDomain WOPort localhost:19999" >/dev/null 2>&1
 		${SU} -l ${OGO} -c "${DW} NSGlobalDomain TimeZoneName GMT" >/dev/null 2>&1
 		${SU} -l ${OGO} -c "${DW} NSGlobalDomain Languages '{English}'" >/dev/null 2>&1
+		${SU} -l ${OGO} -c "${DW} NSGlobalDomain LSTimeZones '(GMT, MET, PST, CET, EET, EST, HST, MST, NZ, \"GMT+0100\", \"GMT+0200\", \"GMT+0300\", \"GMT+0400\", \"GMT+0500\", \"GMT+0600\", \"GMT+0700\", \"GMT+0800\", \"GMT+0900\", \"GMT+1000\", \"GMT+1100\", \"GMT+1200\", \"GMT-0100\", \"GMT-0200\", \"GMT-0300\", \"GMT-0400\", \"GMT-0500\", \"GMT-0600\", \"GMT-0700\", \"GMT-0800\", \"GMT-0900\", \"GMT-1000\", \"GMT-1100\", \"GMT-1200\")'" >/dev/null 2>&1
 
-		${SU} -l ${OGO} -c "${DW} " >/dev/null 2>&1
 		echo "done."
 	else
 		echo "I think you've already installed OGo before..."
@@ -78,6 +82,8 @@ COPY-TEMPLATES)
 	OGO_USER='ogo'
 	OGO_GROUP='skyrix'
 
+	#just to be sure I am already there... weird issue if not
+	mkdir -p /compat/linux/opt/opengroupware.org/.libFoundation/Defaults
 	if [ ! -e /compat/linux/opt/opengroupware.org/.libFoundation/Defaults/OpenGroupware.plist ] 2>/dev/null; then
 		echo "OpenGroupware.plist not found..."
 		echo "thus I am using the one coming with the port."

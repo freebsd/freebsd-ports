@@ -1,11 +1,11 @@
---- opt/opengroupware.org/.bash_profile.dist	Wed Jul 23 21:30:12 2003
-+++ opt/opengroupware.org/.bash_profile	Wed Jul 23 21:24:53 2003
-@@ -3,7 +3,7 @@
- # new files can be read/written by the opengroupware user.
- umask 007 
- 
+--- opt/opengroupware.org/.bash_profile.orig  Tue Apr 27 11:56:09 2004
++++ opt/opengroupware.org/.bash_profile       Sun Jul 18 22:24:31 2004
+@@ -5,7 +5,7 @@
+ #remove the comment in front of the next line if you're on RedHat9/FC1/FC2
+ #and if you are running SUSE9.1 
+ #export LD_ASSUME_KERNEL=2.4.1
 -source /opt/opengroupware.org/OpenGroupware.org.sh
 +source /compat/linux/opt/opengroupware.org/OpenGroupware.org.sh
- 
  export SASL_PATH="${GNUSTEP_USER_ROOT}/Library/Plugins/Plain.plugin/$GNUSTEP_HOST_CPU/$GNUSTEP_HOST_OS/$LIBRARY_COMBO"
- 
+ export PYTHONPATH=${GNUSTEP_USER_ROOT}/Tools
+ export PILOTPORT="net:any:14238"
