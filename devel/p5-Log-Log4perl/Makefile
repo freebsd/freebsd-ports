@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Log-Log4perl
-PORTVERSION=	0.47
+PORTVERSION=	0.48
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Log
@@ -33,6 +33,7 @@ MAN3=		Log::Log4perl.3 \
 		Log::Log4perl::Appender::TestBuffer.3 \
 		Log::Log4perl::Appender::TestFileCreeper.3 \
 		Log::Log4perl::Config.3 \
+		Log::Log4perl::Config::BaseConfigurator.3 \
 		Log::Log4perl::Config::DOMConfigurator.3 \
 		Log::Log4perl::Config::PropertyConfigurator.3 \
 		Log::Log4perl::Config::Watch.3 \
@@ -65,12 +66,6 @@ MAN3=		Log::Log4perl.3 \
 
 .if ${PERL_LEVEL} < 500601
 BUILD_DEPENDS+=	${SITE_PERL}/File/Spec.pm:${PORTSDIR}/devel/p5-File-Spec
-.endif
-
-.if ${PERL_LEVEL} <= 500503
-# make PREFIX-clean under perl 5.005_03
-post-configure:
-	@${PERL} -pi -e 's,/usr/local/,\$${PREFIX}/,g' ${WRKSRC}/Makefile
 .endif
 
 .include <bsd.port.post.mk>

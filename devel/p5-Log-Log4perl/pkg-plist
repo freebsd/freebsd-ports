@@ -11,6 +11,7 @@
 %%SITE_PERL%%/Log/Log4perl/Appender/TestBuffer.pm
 %%SITE_PERL%%/Log/Log4perl/Appender/TestFileCreeper.pm
 %%SITE_PERL%%/Log/Log4perl/Config.pm
+%%SITE_PERL%%/Log/Log4perl/Config/BaseConfigurator.pm
 %%SITE_PERL%%/Log/Log4perl/Config/DOMConfigurator.pm
 %%SITE_PERL%%/Log/Log4perl/Config/PropertyConfigurator.pm
 %%SITE_PERL%%/Log/Log4perl/Config/Watch.pm
