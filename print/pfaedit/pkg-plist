@@ -53,6 +53,7 @@ lib/libuninameslist.so.0
 %%PORTDOCS%%share/doc/pfaedit/FontSample.png
 %%PORTDOCS%%share/doc/pfaedit/GSUB-Order.png
 %%PORTDOCS%%share/doc/pfaedit/GenerateFamily.png
+%%PORTDOCS%%share/doc/pfaedit/GenerateOptions.png
 %%PORTDOCS%%share/doc/pfaedit/GlossaryFS.html
 %%PORTDOCS%%share/doc/pfaedit/GlossaryFrame.html
 %%PORTDOCS%%share/doc/pfaedit/GridFit.png
@@ -184,6 +185,7 @@ lib/libuninameslist.so.0
 %%PORTDOCS%%share/doc/pfaedit/fontinfo-panose.png
 %%PORTDOCS%%share/doc/pfaedit/fontinfo-private.png
 %%PORTDOCS%%share/doc/pfaedit/fontinfo-ps.png
+%%PORTDOCS%%share/doc/pfaedit/fontinfo-tex.png
 %%PORTDOCS%%share/doc/pfaedit/fontinfo-ttfname.png
 %%PORTDOCS%%share/doc/pfaedit/fontinfo-ttfvals.png
 %%PORTDOCS%%share/doc/pfaedit/fontinfo.html
@@ -250,6 +252,7 @@ lib/libuninameslist.so.0
 %%PORTDOCS%%share/doc/pfaedit/metricsview.html
 %%PORTDOCS%%share/doc/pfaedit/newanchor.png
 %%PORTDOCS%%share/doc/pfaedit/newfont.png
+%%PORTDOCS%%share/doc/pfaedit/non-standard.html
 %%PORTDOCS%%share/doc/pfaedit/o-baddir.png
 %%PORTDOCS%%share/doc/pfaedit/o1.png
 %%PORTDOCS%%share/doc/pfaedit/o2.png
