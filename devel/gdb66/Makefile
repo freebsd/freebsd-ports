@@ -6,25 +6,32 @@
 # $FreeBSD$
 #
 
-SNAPDATE=	2003-03-11
+SNAPDATE=	2004-03-23
 SNAPVER=	${SNAPDATE:S/-//g}
 
 PORTNAME=	gdb
-PORTVERSION=	5.3
+PORTVERSION=	6
 PORTREVISION=	${SNAPVER}
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEWARE}
-MASTER_SITE_SUBDIR=	gdb/snapshots/branch
-DISTNAME=	gdb+dejagnu-weekly-5.3.0.90_${SNAPVER}
+MASTER_SITE_SUBDIR=	gdb/snapshots/current
+DISTNAME=	gdb+dejagnu-weekly-${SNAPVER}
 
-MAINTAINER=	mp@FreeBSD.org
-COMMENT=	GNU GDB 5.3 developmental snapshot
+MAINTAINER=	obrien@FreeBSD.org
+COMMENT=	GNU GDB 6
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/-weekly//}
 USE_BZIP2=	yes
 USE_GMAKE=	yes
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--program-suffix=53
+CONFIGURE_ARGS=	--program-suffix=6
+
+post-patch:
+	@${REINPLACE_CMD} -e 's/$$/ [FreeBSD]/' ${WRKSRC}/gdb/version.in
+
+do-patch: post-patch
+	@${ECHO} 'FreeBSD-specific patches disabled for now, until upgraded.'
 
 pre-configure:
 	cd ${WRKSRC} ; ${RM} -rf dejagnu expect sim tcl texinfo
@@ -35,7 +42,11 @@ do-install:
 
 cklatest:
 	ncftpls \
-	    ftp://mirrors.rcn.net/mirrors/sources.redhat.com/${MASTER_SITE_SUBDIR}/  \
+	    ftp://sources.redhat.com/pub/${MASTER_SITE_SUBDIR}/  \
 	    | ${GREP} gdb+dejagnu-weekly
 
 .include <bsd.port.mk>
+
+.if ${ARCH} == "amd64"
+CONFIGURE_TARGET=	x86_64-portbld-freebsd${OSREL}
+.endif
