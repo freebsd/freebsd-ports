@@ -251,8 +251,7 @@ MASTER_SITE_SUNSITE+=	\
 	http://www.ibiblio.org/pub/Linux/%SUBDIR%/ \
 	http://linux.dsi.internet2.edu/%SUBDIR%/ \
 	ftp://ftp.unicamp.br/pub/systems/Linux/%SUBDIR%/ \
-	ftp://ftp.tuwien.ac.at/z3/opsys/linux/ibiblio/%SUBDIR%/ \
-	ftp://ftp.univie.ac.at/systems/linux/metalab/%SUBDIR%/ \
+	ftp://ftp.tuwien.ac.at/pub/linux/ibiblio/%SUBDIR%/ \
 	ftp://sunsite.cnlab-switch.ch/mirror/linux/sunsite/%SUBDIR%/ \
 	ftp://ftp.cs.tu-berlin.de/pub/linux/Mirrors/sunsite.unc.edu/%SUBDIR%/ \
 	ftp://ftp.fu-berlin.de/unix/linux/mirrors/sunsite.unc.edu/%SUBDIR%/ \
