@@ -1,5 +1,5 @@
---- src/Makefile.in.orig	Wed Nov 10 22:28:19 2004
-+++ src/Makefile.in	Wed Nov 10 22:35:34 2004
+--- src/Makefile.in.orig	Mon Feb  7 02:21:49 2005
++++ src/Makefile.in	Mon Feb  7 02:22:46 2005
 @@ -61,7 +61,7 @@
  	sj-about.$(OBJEXT) sj-extracting.$(OBJEXT) $(am__objects_1) \
  	$(am__objects_2)
@@ -9,11 +9,11 @@
  DEFAULT_INCLUDES = -I. -I$(srcdir) -I.
  depcomp = $(SHELL) $(top_srcdir)/depcomp
  am__depfiles_maybe = depfiles
-@@ -228,7 +228,7 @@
+@@ -233,7 +233,7 @@
  target_alias = @target_alias@
  
  # General compiler flags
--AM_CFLAGS = -Wall -Werror -export-dynamic -W -Wno-unused-parameter
+-AM_CFLAGS = -Wall -export-dynamic -W -Wno-unused-parameter
 +AM_CFLAGS = -Wall -export-dynamic -W
  
  # General CPP flags. When I can demand automake 1.8, this can become
