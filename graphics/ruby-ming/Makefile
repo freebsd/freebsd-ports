@@ -3,54 +3,39 @@
 # Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
 #
 # $FreeBSD$
-#
 
 PORTNAME=	ming
-PORTVERSION=	0.2a
+PORTVERSION=	0.2a.${RUBY_MING_VERSION}
 CATEGORIES=	graphics ruby
-MASTER_SITES=	# none
+MASTER_SITES=	http://madscientist.jp/~ikegami/sources/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
-DISTFILES=	# none
+DISTNAME=	${PORTNAME}-ruby-${RUBY_MING_VERSION}
+DIST_SUBDIR=	ruby
 
-MAINTAINER=	knu@FreeBSD.org
-COMMENT=	Ruby module for Ming which allows you to create Flash 4/5 movies
+MAINTAINER=	don@na.rim.or.jp
+COMMENT=	Yet another Ming module for Ruby
 
-EXTRACT_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/graphics/ming:patch
-BUILD_DEPENDS=	${SWIG}:${PORTSDIR}/devel/swig13
 LIB_DEPENDS=	ming.3:${PORTSDIR}/graphics/ming
 
+RUBY_MING_VERSION=	0.1.6
+
 USE_RUBY=	yes
-USE_RUBY_EXTCONF=	yes
+USE_RUBY_SETUP=	yes
+CONFIGURE_ARGS=	-- --with-ming-include=${PREFIX}/include/ming --with-ming-lib=${PREFIX}/lib
 
-MD5_FILE=	${.CURDIR}/../ming/distinfo
-
-WRKSRC=		${WRKDIR}/${DISTNAME}/rb_ext
-CONFIGURE_ARGS=	--with-ming-include="${LOCALBASE}/include/ming"
-MAKE_ARGS=	SWIG="${SWIG}"
-INSTALL_TARGET=	site-install
-
-SWIG=		swig1.3
-
-EXAMPLES=	../examples/rb/*.rb
-
-do-extract:
-	${MKDIR} ${WRKDIR}
-	${LN} -s `cd ${PORTSDIR}/graphics/ming; ${MAKE} -V WRKDIR`/* ${WRKDIR}/
-
-post-extract:
-	${LN} -sf ../ming.i ${WRKSRC}/
-
-pre-configure:
-	cd ${CONFIGURE_WRKSRC}; \
-	${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} depend ${MAKE_ARGS} ming_wrap.c; \
-	${RM} -f depend
+DOCS_EN=	ChangeLog README.en Usage_en.txt fonts.en
+DOCS_JA=	README.ja Usage_ja.txt fonts.ja progress.rd
 
 post-install:
-	${INSTALL_DATA} ${WRKSRC}/ming.rb ${RUBY_SITELIBDIR}/
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_MODEXAMPLESDIR}
-.for f in ${EXAMPLES}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODEXAMPLESDIR}/
+	${INSTALL_DATA} ${WRKSRC}/examples/* ${RUBY_MODEXAMPLESDIR}/
+	${MKDIR} ${RUBY_MODDOCDIR}/ja
+.for f in ${DOCS_EN}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/
+.endfor
+.for f in ${DOCS_JA}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/ja/
 .endfor
 .endif
 
