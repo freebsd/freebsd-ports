@@ -7,6 +7,7 @@
 
 PORTNAME=	kazehakase
 PORTVERSION=	0.2.2
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_JP}
 MASTER_SITE_SUBDIR=	${PORTNAME}/12370/
@@ -26,19 +27,29 @@ USE_REINPLACE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include ${PTHREAD_CFLAGS}" \
 		LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 
-OPTIONS=	MIGEMO "Enable Migemo (Japanese incremental search)" Off \
-		ESTRAIER "Enable a full-text search system" Off \
-		IMAGEMAGICK "Enable Thumbnail support" Off
-
 FLASHPLAYER=	${LOCALBASE}/lib/libflashplayer.so.1
 
 .if defined(WITH_MIGEMO)
 USE_RUBY=	yes
+USE_PERL=	yes
 BUILD_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/uconv.so:${PORTSDIR}/japanese/ruby-uconv
 RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/uconv.so:${PORTSDIR}/japanese/ruby-uconv
 .endif
 
 .include <bsd.port.pre.mk>
+
+# !!! gtk-webcore higly experimental right now and not very stable !!!
+# See https://mail.gna.org/public/kazehakase-devel/2004-10/msg00001.html
+# on how to use gtk-webcore with kazehakase. and yes you still have to
+# have mozilla even if you don't use it in kazehakase.
+.if defined(WITH_GTKWEBCORE)
+LIB_DEPENDS+=	nrcit.0:${PORTSDIR}/www/osb-nrcit
+CONFIGURE_ARGS+=--enable-gtk-webcore
+.endif
+
+.if defined(WITH_THUMBNAIL) || exists(${LOCALBASE}/bin/gs)
+USE_GHOSTSCRIPT=yes
+.endif
 
 .if !defined(WITH_MOZILLA)
 WITH_MOZILLA=	mozilla
@@ -54,18 +65,8 @@ HEADERS_SUFX=
 .endif
 .endif
 
-.if exists(${LOCALBASE}/bin/migemo)
-.if exists(${RUBY_SITEARCHLIBDIR}/uconv.so)
-WITH_MIGEMO=	yes
-.endif
-.endif
-
 .if exists(${LOCALBASE}/bin/estxview)
 WITH_ESTRAIER=	yes
-.endif
-
-.if exists(${LOCALBASE}/bin/convert)
-WITH_IMAGEMAGICK=yes
 .endif
 
 .if defined(WITH_MIGEMO)
@@ -76,27 +77,39 @@ CONFIUGURE_ARGS+=	--enable-migemo
 .endif
 .endif
 
-.if defined(WITH_ESTRAIER)
+.if !defined(WITHOUT_ESTRAIER)
 RUN_DEPENDS+=	estxview:${PORTSDIR}/japanese/estraier
-.endif
-
-.if defined(WITH_IMAGEMAGICK)
-RUN_DEPENDS+=	convert:${PORTSDIR}/graphics/ImageMagick
 .endif
 
 pre-everything::
 	@${ECHO_MSG} ""
-	@${ECHO_MSG} " By default this port uses www/mozilla for Gecko support, but you can"
+	@${ECHO_MSG} "Enable Migemo (Japanese incremental search by defining WITH_MIGEMO"
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "Enable Thumbnail support by definining WITH_THUMBNAIL"
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "Disable Estraier, A full-text search engine for searching your history"
+	@${ECHO_MSG} " by defining WITHOUT_ESTRAIER"
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} " By default ${PORTNAME} uses www/mozilla for Gecko support, but you can"
 	@${ECHO_MSG} " change this by defining WITH_MOZILLA to one of the following values:"
-	@${ECHO_MSG}
+	@${ECHO_MSG} ""
 	@${ECHO_MSG} " mozilla "
 	@${ECHO_MSG} " mozilla-devel "
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} " Currently you are using ${WITH_MOZILLA}"
+	@${ECHO_MSG} ""
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|mozilla-gtkmozembed|mozilla-gtkmozembed${HEADERS_SUFX}|g' \
 		${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|/usr/share/migemo|${LOCALBASE}/share/migemo|; \
+		s|=beginner|=medium|' ${WRKSRC}/etc/kzrc
+.if defined(WITH_MIGEMO)
+	@${REINPLACE_CMD} -e 's|migemo=fals|migemo=tru|' ${WRKSRC}/etc/kzrc
+.endif
+.if defined(WITH_THUMBNAIL)
+	@${ECHO_MSG} "create_thumbnail=true" >> ${WRKSRC}/etc/kzrc
+.endif
 
 post-configure:
 	@${REINPLACE_CMD} -e 's|%%FLASHPLAYER%%|${FLASHPLAYER}|; \
