@@ -15,20 +15,25 @@ DISTNAME=	${PORTNAME}-KXL-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Zanac type game
 
-BUILD_DEPENDS=	${X11BASE}/include/KXL.h:${PORTSDIR}/games/kxl
+BUILD_DEPENDS=	${X11BASE}/lib/libKXL-1.1.5.so:${PORTSDIR}/games/kxl
+RUN_DEPENDS=	${X11BASE}/lib/libKXL-1.1.5.so:${PORTSDIR}/games/kxl
 
 NO_CDROM=	Possible copyright infringement
 
 USE_X_PREFIX=	yes
+USE_REINPLACE=	yes
+USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-USE_AUTOCONF_VER=	253
-ACLOCAL=	aclocal
+MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \
+		AUTOHEADER="${TRUE}"
 
-pre-configure:
-	cd ${WRKDIR}/${DISTNAME} && ${ACLOCAL}
-	cd ${WRKDIR}/${DISTNAME} && touch depcomp
+post-patch:
+	@${REINPLACE_CMD} -e \
+		's|^inst_path=.*$$|inst_path="$${datadir}/grande"|g ; \
+		 s|^score_path=.*$$|score_path="$${datadir}/grande/score"|g' \
+			${WRKSRC}/configure
 
 pre-install:
-	${MKDIR} ${PREFIX}/share/${PORTNAME}/score
+	@${MKDIR} ${DATADIR}/score
 
 .include <bsd.port.mk>
