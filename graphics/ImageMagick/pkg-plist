@@ -102,6 +102,7 @@ lib/ImageMagick/config/type.mgk
 lib/ImageMagick/config/type-ghostscript.mgk
 lib/ImageMagick/config/type-solaris.mgk
 lib/ImageMagick/config/type-windows.mgk
+%%Q8%%lib/ImageMagick/modules-Q8/coders/.keep
 %%Q8%%%%MODULES%%lib/ImageMagick/modules-Q8/coders/art.la
 %%Q8%%%%MODULES%%lib/ImageMagick/modules-Q8/coders/art.so
 %%Q8%%%%MODULES%%lib/ImageMagick/modules-Q8/coders/avi.la
@@ -280,8 +281,10 @@ lib/ImageMagick/config/type-windows.mgk
 %%Q8%%%%MODULES%%lib/ImageMagick/modules-Q8/coders/xwd.so
 %%Q8%%%%MODULES%%lib/ImageMagick/modules-Q8/coders/yuv.la
 %%Q8%%%%MODULES%%lib/ImageMagick/modules-Q8/coders/yuv.so
+%%Q8%%lib/ImageMagick/modules-Q8/filters/.keep
 %%Q8%%%%MODULES%%lib/ImageMagick/modules-Q8/filters/analyze.la
 %%Q8%%%%MODULES%%lib/ImageMagick/modules-Q8/filters/analyze.so
+%%Q16%%lib/ImageMagick/modules-Q16/coders/.keep
 %%Q16%%%%MODULES%%lib/ImageMagick/modules-Q16/coders/art.la
 %%Q16%%%%MODULES%%lib/ImageMagick/modules-Q16/coders/art.so
 %%Q16%%%%MODULES%%lib/ImageMagick/modules-Q16/coders/avi.la
@@ -460,6 +463,7 @@ lib/ImageMagick/config/type-windows.mgk
 %%Q16%%%%MODULES%%lib/ImageMagick/modules-Q16/coders/xwd.so
 %%Q16%%%%MODULES%%lib/ImageMagick/modules-Q16/coders/yuv.la
 %%Q16%%%%MODULES%%lib/ImageMagick/modules-Q16/coders/yuv.so
+%%Q16%%lib/ImageMagick/modules-Q16/filters/.keep
 %%Q16%%%%MODULES%%lib/ImageMagick/modules-Q16/filters/analyze.la
 %%Q16%%%%MODULES%%lib/ImageMagick/modules-Q16/filters/analyze.so
 lib/libMagick++.a
