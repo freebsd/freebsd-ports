@@ -12,8 +12,7 @@ MASTER_SITES=	http://www.idiap.ch/~gobry/bulb/
 
 MAINTAINER=	smoberly@xavier.dyndns.org
 
-LIB_DEPENDS=	panel_applet.2:${PORTSDIR}/x11/gnomecore \
-		intl.1:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=	panel_applet.4:${PORTSDIR}/x11/gnomecore
 
 GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
 

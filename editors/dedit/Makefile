@@ -7,14 +7,14 @@
 
 PORTNAME=	dedit
 PORTVERSION=	0.5.6
-CATEGORIES=	editors
+CATEGORIES=	editors gnome
 MASTER_SITES=	ftp://ftp.debian.org/debian/dists/unstable/main/source/editors/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	nakai@FreeBSD.org
 
 LIB_DEPENDS=	iconv.0:${PORTSDIR}/converters/iconv \
-		gnome.3:${PORTSDIR}/x11/gnomelibs
+		gnome.4:${PORTSDIR}/x11/gnomelibs
 BUILD_DEPENDS=	automake:${PORTSDIR}/devel/automake
 
 WRKSRC=		${WRKDIR}/dedit-0.5.6
@@ -25,8 +25,7 @@ USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 USE_AUTOCONF=	yes
 CONFIGURE_ARGS=	--localstatedir=${PREFIX}/share/gnome \
-		--datadir=${PREFIX}/share/gnome \
-		--with-gnome=${PREFIX}
+		--datadir=${PREFIX}/share/gnome
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASSE}/include" \
 		GTK_CONFIG="${GTK_CONFIG}" \
 		LIBS="-L${LOCALBASE}/lib -liconv"

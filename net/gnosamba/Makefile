@@ -7,12 +7,12 @@
 
 PORTNAME=	gnosamba
 PORTVERSION=	0.3.3
-CATEGORIES=	net
+CATEGORIES=	net gnome
 MASTER_SITES=	http://www.open-systems.com/gnosamba/
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	gnomeui.3:${PORTSDIR}/x11/gnomelibs
+LIB_DEPENDS=	gnome.4:${PORTSDIR}/x11/gnomelibs
 
 GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
 

@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	unstable/sources/gIDE
 
 MAINTAINER=	ade@FreeBSD.org
 
-LIB_DEPENDS=	gnomeui.3:${PORTSDIR}/x11/gnomelibs \
+LIB_DEPENDS=	gnome.4:${PORTSDIR}/x11/gnomelibs \
 		glade.3:${PORTSDIR}/devel/libglade \
 		guile.6:${PORTSDIR}/lang/guile
 

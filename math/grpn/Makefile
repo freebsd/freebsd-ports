@@ -7,7 +7,7 @@
 
 PORTNAME=	grpn
 PORTVERSION=	1.1.1
-CATEGORIES=	math gnome
+CATEGORIES=	math
 MASTER_SITES=	http://wilkins.ne.mediaone.net/grpn/
 
 MAINTAINER=	jedgar@fxp.org

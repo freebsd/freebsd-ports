@@ -26,7 +26,6 @@ share/locale/ja/LC_MESSAGES/gide.mo
 @dirrm share/gnome/gide/glade
 @dirrm share/gnome/gide/extra
 @dirrm share/gnome/gide
-@unexec rmdir %D/share/gnome/apps/Development 2>/dev/null || true
 @dirrm lib/gide/plugins/%%VERSION%%
 @dirrm lib/gide/plugins
 @dirrm lib/gide
