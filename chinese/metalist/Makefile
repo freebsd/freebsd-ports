@@ -21,8 +21,6 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-D
 RUN_DEPENDS=	${BUILD_DEPENDS} \
 		${LOCALBASE}/libexec/apache/libperl.so:${PORTSDIR}/www/mod_perl
 
-BROKEN=		"Inconsistent dependencies (mysql-client 3.x and 4.x)"
-
 LIB_PERL=	${LOCALBASE}/lib/perl5/${PERL_VER}
 DOCS=		README README.metalist INSTALL
 
