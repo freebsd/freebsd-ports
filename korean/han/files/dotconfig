@@ -1,0 +1,18 @@
+INCDIR  = %%WRKSRC%%/include
+LIB     = %%WRKSRC%%/lib/libgon.a
+DISTDIR = %%DISTDIR%%
+
+TOPDIR	= %%PREFIX%%
+BINDIR	= $(TOPDIR)/bin
+LIBDIR	= $(TOPDIR)/etc
+FONTDIR	= $(TOPDIR)/share/fonts/han
+CONFIG_NAME = han.cfg
+OPTS    = -DCONFIG_NAME=\"$(LIBDIR)/$(CONFIG_NAME)\" -I$(INCDIR)
+CFLAGS  = -O -Wall $(OPTS)
+LD      = gcc $(CFLAGS)
+RM      = rm -f
+INSTALL = install -c -s
+SUBDIRS = lib src font # tools
+
+HAS_VGA = HAS_VGA
+FLD_BDF = FLD_BDF

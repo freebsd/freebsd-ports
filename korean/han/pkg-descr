@@ -1,0 +1,17 @@
+Han-1.0fb
+---------
+
+HAN is a hangul console. This is an alpha version. Supported video card is
+VGA only, and, supported font are Minix/V and BDF. This program requires
+shared memory.
+
+This version supports ko_KR.euc.
+
+Orignal kon written by manabe@papilio.tutics.tut.ac.jp.
+FreeBSD port of kon is done by ogura@st.rim.or.jp.
+
+Han written by nsroh@juno.kaist.ac.kr, hanmaum@baram.kaist.ac.kr.
+FreeBSD port of han is done by yujeny@pandora.snu.ac.kr. 
+
+--
+Port by Choi Jun Ho <junker@jazz.snu.ac.kr>
