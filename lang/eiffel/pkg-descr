@@ -8,18 +8,8 @@ from introduction/about.txt:
   The Language" (Prentice Hall, 1992). Many other books are available on the
   language and the method. The language is non-proprietary. 
 
-  The aim of Eiffel is to improve the quality of software systems and the
-  productivity of the development process. It particularly promotes the
-  production of software that has the following qualities: reliability
-  (absence of bugs) extendibility (ease of change) reusability (reliance of
-  libraries of packaged components) and portability (adaptability on many
-  platforms with full source compatibility). Eiffel also makes it possible
-  to produce compilers, such as ISE's, which generate extremely efficient
-  code. 
-
 More docs are in ``${PREFIX}/eiffel/doc'' and ``${PREFIX}/eiffel/introduction''
 Some examples are in ``${PREFIX}/eiffel/examples''.
 
-eric.
 --
-erich@rrnet.com
+erich@freebsd.org
