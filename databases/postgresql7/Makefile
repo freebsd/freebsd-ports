@@ -3,7 +3,7 @@
 # Date created:		November 13, 1998
 # Whom:			Marc G. Fournier <scrappy@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.29 1998/11/22 21:33:19 scrappy Exp $
+# $Id: Makefile,v 1.30 1998/11/24 05:09:06 asami Exp $
 #
 
 DISTNAME=	postgresql-v6.4
@@ -65,6 +65,13 @@ pre-fetch:
 .else
 	@${ECHO_MSG} "Building PostgreSQL with \"libpgtcl\"."
 .endif
+
+post-patch:
+
+	@ ${MV} ${WRKSRC}/template/freebsd ${WRKSRC}/template/freebsd.orig
+	@ ${SED} -e 's#CFLAGS:-O2 -m486 -pipe#CFLAGS:${CFLAGS}#' \
+		-e 's#USE_LOCALE:no#USE_LOCALE:yes#' \
+	${WRKSRC}/template/freebsd.orig >> ${WRKSRC}/template/freebsd
 
 post-build:
 	@ ${ECHO} "------------------------------------------------------------"
