@@ -1,5 +1,5 @@
---- eplaser/gdevescv.c.orig	Thu Oct 30 21:41:16 2003
-+++ eplaser/gdevescv.c	Thu Dec 18 17:51:49 2003
+--- eplaser/gdevescv.c.orig	Mon May 17 14:25:19 2004
++++ eplaser/gdevescv.c	Mon Aug  2 14:01:21 2004
 @@ -37,10 +37,6 @@
  
   */
@@ -22,7 +22,7 @@
  /* ---------------- Device definition ---------------- */
  
  /* Device procedures */
-@@ -335,6 +335,16 @@
+@@ -342,6 +342,16 @@
  };
  
  /* Vector device implementation */
@@ -39,7 +39,7 @@
  private int escv_beginpage(P1(gx_device_vector * vdev));
  private int escv_setfillcolor(P2(gx_device_vector * vdev, const gx_drawing_color * pdc));
  private int escv_setstrokecolor(P2(gx_device_vector * vdev, const gx_drawing_color * pdc));
-@@ -343,10 +353,25 @@
+@@ -350,10 +360,25 @@
  private int escv_setflat(P2(gx_device_vector * vdev, floatp flatness));
  private int escv_setlogop(P3(gx_device_vector * vdev, gs_logical_operation_t lop, 
  			       gs_logical_operation_t diff));
@@ -65,7 +65,7 @@
  private int escv_beginpath(P2(gx_device_vector * vdev, gx_path_type_t type));
  private int escv_moveto(P6(gx_device_vector * vdev, floatp x0, floatp y0,
  			   floatp x, floatp y, gx_path_type_t type));
-@@ -359,6 +384,7 @@
+@@ -366,6 +391,7 @@
  				floatp x_start, floatp y_start, gx_path_type_t type));
  
  private int escv_endpath(P2(gx_device_vector * vdev, gx_path_type_t type));
@@ -73,3 +73,12 @@
  private int escv_setlinewidth(gx_device_vector * vdev, floatp width);
  private int escv_setlinecap(gx_device_vector * vdev, gs_line_cap cap);
  private int escv_setlinejoin(gx_device_vector * vdev, gs_line_join join);
+@@ -1671,7 +1697,7 @@
+ 		 gs_logical_operation_t lop, const gx_clip_path * pcpath)
+ {
+     gx_device_vector const	*vdev = (gx_device_vector *) dev;
+-    gx_device_escv const	*pdev = (gx_device_escv *) dev;
++    gx_device_escv		*pdev = (gx_device_escv *) dev;
+     stream			*s = gdev_vector_stream(vdev);
+ 
+     if (w <= 0 || h <= 0) return 0;
