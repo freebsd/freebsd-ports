@@ -1,8 +1,8 @@
-lib/perl5/man/man3/Compress::Zlib.3.gz
-lib/perl5/site_perl/Compress/Zlib.pm
-lib/perl5/site_perl/auto/Compress/Zlib/autosplit.ix
-lib/perl5/site_perl/i386-freebsd/auto/Compress/Zlib/Zlib.bs
-lib/perl5/site_perl/i386-freebsd/auto/Compress/Zlib/Zlib.so
-lib/perl5/site_perl/i386-freebsd/auto/Compress/Zlib/.packlist
-@dirrm lib/perl5/site_perl/i386-freebsd/auto/Compress/Zlib
-@dirrm lib/perl5/site_perl/auto/Compress/Zlib
+lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/Compress/Zlib.pm
+lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/Compress/Zlib/autosplit.ix
+lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/Compress/Zlib/Zlib.bs
+lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/Compress/Zlib/Zlib.so
+lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/Compress/Zlib/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/Compress/Zlib
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/Compress
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/Compress
