@@ -8,7 +8,7 @@
 PORTNAME=	xjumpx
 PORTVERSION=	1.4
 CATEGORIES=	games
-MASTER_SITES=	http://www19.xdsl.ne.jp/~cdr/soft/dl/
+MASTER_SITES=	http://fenix.ne.jp/~cdrtk/soft/dl/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Improved version of xjump
