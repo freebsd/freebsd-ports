@@ -8,7 +8,7 @@
 
 PORTNAME=	wmapp
 PORTVERSION=	0.0.4.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-toolkits windowmaker
 MASTER_SITES=	http://www.princeton.edu/~kmccarty/downloads/
 
@@ -20,7 +20,6 @@ USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 CFLAGS+=	-I${X11BASE}/include
-MAKE_ENV=	LFLAGS="-L. -L${X11BASE}/lib -lXpm -lXext -lX11 -lwmapp"
 ALL_TARGET=	# empty
 PLIST_FILES=	lib/libwmapp.a
 
@@ -34,6 +33,6 @@ do-install:
 	@${FIND} ${PREFIX}/include/wmapp -type f | \
 		${SED} 's,^${PREFIX}/,,' >> ${TMPPLIST}
 	@${ECHO_CMD} "@dirrm include/wmapp" >> ${TMPPLIST}
-	${INSTALL_PROGRAM} ${WRKSRC}/libwmapp.a ${PREFIX}/lib
+	${INSTALL_DATA} ${WRKSRC}/libwmapp.a ${PREFIX}/lib
 
 .include <bsd.port.mk>
