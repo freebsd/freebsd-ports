@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.15 1995/11/26 13:49:33 asami Exp $
+# $Id: Makefile,v 1.16 1995/11/26 21:25:36 asami Exp $
 #
 
     SUBDIR += blas
@@ -8,7 +8,7 @@
     SUBDIR += gnuplot
     SUBDIR += hexcalc
     SUBDIR += linpack
-RESTRICTED += maxima (license required)
+    SUBDIR += maxima
     SUBDIR += octave
     SUBDIR += oleo
     SUBDIR += xgraph
