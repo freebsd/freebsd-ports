@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	scrollz
-PORTVERSION=	1.9.3
+PORTVERSION=	1.9.4
 CATEGORIES=	irc ipv6
 MASTER_SITES=	ftp://ftp.scrollz.com/pub/ScrollZ/source/
 DISTNAME=	ScrollZ-${PORTVERSION}
@@ -23,6 +23,8 @@ CONFIGURE_ARGS+=	--enable-ipv6 --with-ssl
 MAKE_ENV+=	IRCLIB="${PREFIX}/share/scrollz"
 
 PLIST_SUB+=	SCROLLZ_VER="${PORTVERSION}"
+
+MAN1=	scrollz.1
 
 post-patch:
 	@${PERL} -pi -e 's!^IRCLIB =!IRCLIB ?=!' ${WRKSRC}/Makefile.in
