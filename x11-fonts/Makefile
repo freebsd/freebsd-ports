@@ -7,7 +7,6 @@
     SUBDIR += XFree86-4-fontDefaultBitmaps
     SUBDIR += XFree86-4-fontEncodings
     SUBDIR += XFree86-4-fontScalable
-    SUBDIR += Xft
     SUBDIR += Xg
     SUBDIR += artwiz-fonts
     SUBDIR += bdfresize
