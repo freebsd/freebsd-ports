@@ -1,0 +1,4 @@
+lib/php/%%EXT_DIR%%/mmcache.so
+%%PORTDOCS%%share/doc/turck-mmcache/README
+@unexec rmdir %D/lib/php/%%EXT_DIR%% 2> /dev/null || true
+%%PORTDOCS%%@dirrm share/doc/turck-mmcache
