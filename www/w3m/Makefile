@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTNAME?=	w3m
+PORTNAME=	w3m
 PORTVERSION?=	${W3M_VER}
 CATEGORIES?=	www ipv6
 MASTER_SITES=	ftp://ei5nazha.yz.yamagata-u.ac.jp/w3m/dev/ \
@@ -18,7 +18,7 @@ MAINTAINER=	nobutaka@nobutaka.com
 BUILD_DEPENDS=	${LOCALBASE}/lib/libgc.a:${PORTSDIR}/devel/boehm-gc
 
 W3M_VER=	0.1.7
-WRKSRC=		${WRKDIR}/w3m
+WRKSRC=		${WRKDIR}/${PORTNAME}
 MAN1=		w3m.1
 MANLANG=	""
 CFLAGS=		-pipe
