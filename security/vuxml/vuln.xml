@@ -32,6 +32,55 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="ad74a1bd-16d2-11d9-bc4a-000c41e2cdad">
+    <topic>php -- php_variables memory disclosure</topic>
+    <affects>
+      <package>
+        <name>mod_php4-twig</name>
+        <name>php4-cgi</name>
+        <name>php4-cli</name>
+        <name>php4-dtc</name>
+        <name>php4-horde</name>
+        <name>php4-nms</name>
+        <name>php4</name>
+        <range><le>4.3.8_2</le></range>
+      </package>
+      <package>
+        <name>mod_php</name>
+        <name>mod_php4</name>
+	<range><ge>4</ge><le>4.3.8_2,1</le></range>
+      </package>
+      <package>
+        <name>php5</name>
+        <name>php5-cgi</name>
+        <name>php5-cli</name>
+        <range><le>5.0.1</le></range>
+      </package>
+      <package>
+        <name>mod_php5</name>
+        <range><le>5.0.1,1</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Stefano Di Paola reports:</p>
+	<blockquote cite="http://marc.theaimsgroup.com/?l=bugtraq&amp;m=109527531130492">
+          <p>Bad array parsing in php_variables.c could lead to show
+            arbitrary memory content such as pieces of php code
+            and other data.  This affects all GET, POST or COOKIES
+            variables.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <mlist msgid="1095267581.2818.13.camel@localhost">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=109527531130492</mlist>
+    </references>
+    <dates>
+      <discovery>2004-09-15</discovery>
+      <entry>2004-10-05</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="fffacc93-16cb-11d9-bc4a-000c41e2cdad">
     <topic>xv -- exploitable buffer overflows</topic>
     <affects>
@@ -64,7 +113,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       </body>
     </description>
     <references>
-      <url>http://marc.theaimsgroup.com/?l=bugtraq&amp;m=109302498125092</url>
+      <mlist msgid="20040820032605.360e43e3.infamous41md@hotpop.com">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=109302498125092</mlist>
     </references>
     <dates>
       <discovery>2004-08-20</discovery>
