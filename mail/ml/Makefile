@@ -8,7 +8,8 @@
 PORTNAME=	ml
 PORTVERSION=	3.4
 CATEGORIES=	mail
-MASTER_SITES=	http://ftp.rge.com/pub/mail/ml/
+# mastersite disappeared in October 2003
+MASTER_SITES=	# http://ftp.rge.com/pub/mail/ml/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An X11 IMAP client
