@@ -159,7 +159,6 @@
     SUBDIR += jslice
     SUBDIR += juno-2
     SUBDIR += kdc2tiff
-    SUBDIR += kdegraphics2
     SUBDIR += kdegraphics3
     SUBDIR += kisomandel
     SUBDIR += kludge3d
