@@ -245,6 +245,7 @@
     SUBDIR += ntfsprogs
     SUBDIR += nut
     SUBDIR += nvclock
+    SUBDIR += nvtv
     SUBDIR += nwclient
     SUBDIR += nwclient602
     SUBDIR += obliterate
