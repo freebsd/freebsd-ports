@@ -1,11 +1,8 @@
 --- ./configure.org	Tue Nov 26 15:20:17 1996
 +++ ./configure	Wed May 28 21:55:16 1997
-@@ -1,4 +1,4 @@
+@@ -1,1 +1,1 @@
 -#!/bin/sh
 +#!/usr/local/bin/bash
- #	$Id: configure,v 1.401 1996/11/23 17:28:45 sam Rel $
- #
- # HylaFAX Facsimile Software
 @@ -239,7 +241,7 @@
  test -d /usr/ucb && PATH=$PATH:/usr/ucb			# Sun and others
  test -d /usr/contrib/bin && PATH=$PATH:/usr/contrib/bin	# BSDi
