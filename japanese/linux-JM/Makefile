@@ -35,7 +35,7 @@ MANPAGES_OTHERS= \
 	mpg123 \
 	ncftp netatalk \
 	rdate \
-	smbfs sudo \
+	sudo \
 	uudeview \
 	wu-ftpd
 

@@ -28,7 +28,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/.r/rc/:S/.a/a/}
 MAINTAINER=	timur@gnu.org
 COMMENT=	A free SMB and CIFS client and server for UNIX
 
-CONFLICTS=	ja-samba-2.* samba-3.* sharity-light-1.* samba-libsmbclient-3.*
+CONFLICTS=	ja-samba-2.* samba-2.* sharity-light-1.* samba-libsmbclient-3.*
 
 OPTIONS=	CUPS		"With CUPS printing support" on \
 		LDAP		"With LDAP support" on \
