@@ -1,0 +1,9 @@
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/IO/Socket/Multicast.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/IO/Socket/Multicast/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/IO/Socket/Multicast/Multicast.bs
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/IO/Socket/Multicast/Multicast.so
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/IO/Socket
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/IO
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/IO/Socket/Multicast
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/IO/Socket
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/IO

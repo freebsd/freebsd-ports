@@ -1,0 +1,8 @@
+From the README:
+    The IO::Socket::Multicast module subclasses IO::Socket::INET to enable
+    you to manipulate multicast groups. With this module (and an operating
+    system that supports multicasting), you will be able to receive incoming
+    multicast transmissions and generate your own outgoing multicast
+    packets.
+
+- Kelly Yancey <kbyanc@FreeBSD.org>
