@@ -1,0 +1,70 @@
+--- extract.c.orig	Mon Jun 17 16:59:16 2002
++++ extract.c	Fri Mar 14 13:01:27 2003
+@@ -13,7 +13,6 @@
+ #include <sys/stat.h>
+ #include <netdb.h>
+ #include <errno.h>
+-#include <malloc.h>
+ #include <unistd.h>
+ #include <netinet/in.h>
+ #include <netinet/in_systm.h>
+@@ -22,7 +21,6 @@
+ 
+ 
+ #include <ftlib.h>
+-#include <fmt.h>
+ #include "extract.h"
+ #include "chario.h"
+ #include "parser.h"
+--- chario.c.orig	Mon Jun 17 16:59:16 2002
++++ chario.c	Fri Mar 14 13:01:27 2003
+@@ -11,7 +11,7 @@
+ #include <stdio.h>
+ #include <sys/stat.h>
+ #include <string.h>
+-#include <malloc.h>
++#include <stdlib.h>
+ #include "stdunix.h"
+ 
+ #include "chario.h"
+--- grammar.y.orig	Mon Jun 17 16:59:16 2002
++++ grammar.y	Fri Mar 14 13:01:27 2003
+@@ -13,7 +13,7 @@
+ #include <netdb.h>
+ #include <sys/types.h>
+ #include <netinet/in.h>
+-#include <malloc.h>
++#include <stdlib.h>
+ #include "lex.h"
+ #include "chario.h"
+ #include "parser.h"
+--- lex.c.orig	Mon Jun 17 16:59:16 2002
++++ lex.c	Fri Mar 14 13:01:27 2003
+@@ -9,15 +9,13 @@
+ */
+ #include <stdio.h>
+ #include <ctype.h>
+-#include <malloc.h>
++#include <stdlib.h>
+ #include "y.tab.h"
+ #include "lex.h"
+ #include "chario.h"
+ 
+ #define TRUE 1
+ #define FALSE 0
+-
+-extern int atoi(char *);
+ 
+ static int buflen = 0;
+ static int bufptr = 0;
+--- builder.c.orig	Fri Mar 14 13:03:45 2003
++++ builder.c	Fri Mar 14 13:03:55 2003
+@@ -8,7 +8,7 @@
+ 
+ */
+ #include <stdio.h>
+-#include <malloc.h>
++#include <stdlib.h>
+ #include "stdunix.h"
+ 
+ #include "parser.h"
