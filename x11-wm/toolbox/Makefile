@@ -8,7 +8,7 @@
 
 DISTNAME=	toolbox-0.4.6
 CATEGORIES= 	x11-wm
-MASTER_SITES=	http://rfk.masslinux.com/
+MASTER_SITES=	http://www2.bc.edu/~kelleyry/toolbox/
 
 MAINTAINER=	cpiazza@FreeBSD.org
 
