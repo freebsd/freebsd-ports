@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	e2fsprogs
-PORTVERSION=	1.35.w20040131
-PORTREVISION=	2
+PORTVERSION=	1.35.w20040131.20040224135102
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -24,8 +23,10 @@ WRKSRC=	${WRKDIR}/${PORTNAME}-1.35
 
 USE_GCC=	3.3
 PATCH_STRIP=	-p1
+USE_AUTOCONF=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
+INSTALL_TARGET=	install install-libs
 INSTALLS_SHLIB=	yes
 NO_FILTER_SHLIBS=	yes
 GNU_CONFIGURE=	yes
@@ -38,15 +39,16 @@ PLIST_SUB=	NLS="@comment "
 MAKE_ARGS+=	STATIC_LIBS="../lib/libext2fs.a ../lib/libcom_err.a ../lib/libblkid.a  ../lib/libuuid.a ${LOCALBASE}/lib/libintl.a ${LOCALBASE}/lib/libiconv.a"
 PLIST_SUB=	NLS=""
 .endif
-.if ${MACHINE_ARCH} == "alpha"
-CFLAGS+=	-mieee
-.endif
 
 CONFLICTS=	ossp-uuid-*
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
-MAN1=	chattr.1 lsattr.1 uuidgen.1
+MAN1=	chattr.1 lsattr.1 uuidgen.1 compile_et.1 mk_cmds.1
+MAN3=	libuuid.3 uuid_clear.3 com_err.3 uuid_compare.3 uuid_copy.3 \
+	uuid_generate.3 uuid_is_null.3 uuid_parse.3 uuid_time.3 \
+	uuid_unparse.3 uuid_generate_random.3 uuid_generate_time.3 \
+	libblkid.3
 MAN8=	badblocks.8 debugfs.8 dumpe2fs.8 e2fsck.8 e2image.8 e2label.8 \
 	mke2fs.8 mklost+found.8 resize2fs.8 tune2fs.8 \
 	fsck.ext2.8 fsck.ext3.8 mkfs.ext2.8 mkfs.ext3.8 \
@@ -62,7 +64,8 @@ pre-everything::
 	@${ECHO_CMD} "-------------------------------------------------------------"
 
 post-extract:
-	${CHMOD} u+w ${WRKSRC}/po/*.po ${WRKSRC}/po/*.pot
+	${CHMOD} u+w ${WRKSRC}/po/*.po ${WRKSRC}/po/*.pot \
+		${WRKSRC}/${CONFIGURE_SCRIPT}
 
 post-patch:
 	${REINPLACE_CMD} -e 's|-DRESOURCE_TRACK||' ${WRKSRC}/e2fsck/Makefile.in
@@ -73,7 +76,7 @@ post-patch:
 	-e '/Exit status is 0/ N;s/Exit status is 0\n/Exit status is 0/' \
 	${WRKSRC}/tests/m_*/expect.1
 .if ${MACHINE_ARCH} == "alpha" || ${MACHINE_ARCH} == "sparc64"
-	${RM} -r ${WRKSRC}/tests/m_large_file
+	${RM} -rf ${WRKSRC}/tests/m_large_file
 .endif
 
 pre-install:
@@ -90,13 +93,6 @@ post-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/fsck_ext2fs ${PREFIX}/sbin/
 	${INSTALL_PROGRAM} ${WRKSRC}/e2fsck/e2fsck.shared ${PREFIX}/sbin/e2fsck
 	${INSTALL_PROGRAM} ${WRKSRC}/e2fsck/e2fsck.static ${PREFIX}/sbin/e2fsck.static
-	${MKDIR} ${PREFIX}/include/ext2fs
-	${INSTALL_DATA} ${WRKSRC}/lib/ext2fs/*.h ${PREFIX}/include/ext2fs/
-	${MKDIR} ${PREFIX}/include/uuid
-	${INSTALL_DATA} ${WRKSRC}/lib/uuid/*.h ${PREFIX}/include/uuid/
-.for i in e2p ext2fs uuid
-	${INSTALL_DATA} ${WRKSRC}/lib/${i}/lib${i}.a ${PREFIX}/lib/
-.endfor
 	@${ECHO_MSG}
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO_MSG}
