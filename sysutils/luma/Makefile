@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	luma
-PORTVERSION=	1.6
-PORTREVISION=	1
+PORTVERSION=	2.0
 CATEGORIES=	sysutils net-mgmt
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	${PORTNAME}-${PORTVERSION}
+# MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	http://home.tu-clausthal.de/~ifwd/luma/
+# MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	alecn2002@yandex.ru
 COMMENT=	A graphical tool for accessing and managing LDAP servers
@@ -36,6 +35,5 @@ do-configure:
 
 pre-install:
 	${MV} ${WRKSRC}/share/man ${WRKSRC}/
-	${RM} ${WRKSRC}/lib/luma/base/utils/backend/\.\#mkpasswd.py.1.9
 
 .include <bsd.port.post.mk>
