@@ -12,10 +12,10 @@ MASTER_SITES=	http://download.sourceforge.net/sketch/
 
 MAINTAINER=	ports@FreeBSD.org
 
-BUILD_DEPENDS=	${PREFIX}/include/python1.5/Imaging.h:${PORTSDIR}/graphics/py-imaging
-RUN_DEPENDS=	python:${PORTSDIR}/lang/python \
-		${PREFIX}/lib/python1.5/site-packages/_imaging.so:${PORTSDIR}/graphics/py-imaging \
-		${PREFIX}/lib/python1.5/site-packages/xml/__init__.py:${PORTSDIR}/textproc/py-xml
+BUILD_DEPENDS=	${LOCALBASE}/include/python1.5/Imaging.h:${PORTSDIR}/graphics/py-imaging
+RUN_DEPENDS=	${LOCALBASE}/bin/python:${PORTSDIR}/lang/python \
+		${LOCALBASE}/lib/python1.5/site-packages/_imaging.so:${PORTSDIR}/graphics/py-imaging \
+		${LOCALBASE}/lib/python1.5/site-packages/xml/__init__.py:${PORTSDIR}/textproc/py-xml
 
 SKETCHDIR=	${PREFIX}/share/sketch
 SKETCHDOCDIR=	${PREFIX}/share/doc/sketch
@@ -29,22 +29,22 @@ do-build:
 	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} python setup.py build)
 
 do-install:
-	${MKDIR} ${SKETCHDIR}
+	@${MKDIR} ${SKETCHDIR}
 .for dir in Filter Pax Plugins Resources Script Sketch
-	(cd ${WRKSRC}; tar -c -f - --exclude-from=${FILESDIR}/excludelist ${dir}) | \
-	    (cd ${SKETCHDIR}/; tar xf -)
+	(cd ${WRKSRC}; ${TAR} cf - --exclude-from=${FILESDIR}/excludelist ${dir}) | \
+	    (cd ${SKETCHDIR}; ${TAR} xf -)
 .endfor
 	(cd ${WRKSRC}; ${INSTALL_SCRIPT} finishinst.py sk2ps.py sketch.py ${SKETCHDIR})
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${SKETCHDOCDIR}
-	(cd ${WRKSRC}; tar cf - ${SKETCHDOCS}) | (cd ${SKETCHDOCDIR}; tar xf -)
+	@${MKDIR} ${SKETCHDOCDIR}
+	(cd ${WRKSRC}; ${TAR} cf - ${SKETCHDOCS}) | (cd ${SKETCHDOCDIR}; ${TAR} xf -)
 .endif
-	${MKDIR} ${SKETCHEXDIR}
-	(cd ${WRKSRC}/Examples; tar cf - .) | (cd ${SKETCHEXDIR}; tar xf -)
+	@${MKDIR} ${SKETCHEXDIR}
+	(cd ${WRKSRC}/Examples; ${TAR} cf - .) | (cd ${SKETCHEXDIR}; ${TAR} xf -)
 	(cd ${SKETCHDIR}; python finishinst.py)
 	${SED} -e "s|@PREFIX@|${PREFIX}|g" < ${FILESDIR}/sketch.in > ${PREFIX}/bin/sketch
-	${CHMOD} +x ${PREFIX}/bin/sketch
+	${CHMOD} ${BINMODE} ${PREFIX}/bin/sketch
 	${SED} -e "s|@PREFIX@|${PREFIX}|g" < ${FILESDIR}/sk2ps.in > ${PREFIX}/bin/sk2ps
-	${CHMOD} +x ${PREFIX}/bin/sk2ps
+	${CHMOD} ${BINMODE} ${PREFIX}/bin/sk2ps
 
 .include <bsd.port.mk>
