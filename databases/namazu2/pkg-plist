@@ -74,7 +74,6 @@ share/namazu/filter/compress.pl
 share/namazu/filter/deb.pl
 share/namazu/filter/dvi.pl
 share/namazu/filter/excel.pl
-share/namazu/filter/gfilter.pl
 share/namazu/filter/gzip.pl
 share/namazu/filter/hdml.pl
 share/namazu/filter/hnf.pl
@@ -94,6 +93,7 @@ share/namazu/filter/tex.pl
 share/namazu/pl/codeconv.pl
 share/namazu/pl/conf.pl
 share/namazu/pl/gettext.pl
+share/namazu/pl/gfilter.pl
 share/namazu/pl/htmlsplit.pl
 share/namazu/pl/nmzidx.pl
 share/namazu/pl/seed.pl
