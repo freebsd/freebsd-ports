@@ -4,22 +4,31 @@ bin/jpico
 bin/jstar
 bin/rjoe
 bin/termidx
-@unexec if cmp -s %D/etc/jmacsrc.dist %D/etc/jmacsrc; then rm -f %D/etc/jmacsrc; fi
-etc/jmacsrc.dist
-@exec if [ ! -f %D/etc/jmacsrc ]; then cp %D/etc/%f %D/etc/jmacsrc; fi
-@unexec if cmp -s %D/etc/joerc.dist %D/etc/joerc; then rm -f %D/etc/joerc; fi
-etc/joerc.dist
-@exec if [ ! -f %D/etc/joerc ]; then cp %D/etc/%f %D/etc/joerc; fi
-@unexec if cmp -s %D/etc/jpicorc.dist %D/etc/jpicorc; then rm -f %D/etc/jpicorc; fi
-etc/jpicorc.dist
-@exec if [ ! -f %D/etc/jpicorc ]; then cp %D/etc/%f %D/etc/jpicorc; fi
-@unexec if cmp -s %D/etc/jstarrc.dist %D/etc/jstarrc; then rm -f %D/etc/jstarrc; fi
-etc/jstarrc.dist
-@exec if [ ! -f %D/etc/jstarrc ]; then cp %D/etc/%f %D/etc/jstarrc; fi
-@unexec if cmp -s %D/etc/rjoerc.dist %D/etc/rjoerc; then rm -f %D/etc/rjoerc; fi
-etc/rjoerc.dist
-@exec if [ ! -f %D/etc/rjoerc ]; then cp %D/etc/%f %D/etc/rjoerc; fi
-%%PORTDOCS%%share/doc/joe/INFO
-%%PORTDOCS%%share/doc/joe/README
-%%PORTDOCS%%share/doc/joe/CommandList
-%%PORTDOCS%%@dirrm share/doc/joe
+@unexec if cmp -s %D/etc/joe/jmacsrc.dist %D/etc/joe/jmacsrc; then rm -f %D/etc/joe/jmacsrc; fi
+etc/joe/jmacsrc.dist
+@exec if [ ! -f %D/etc/joe/jmacsrc ]; then cp %D/etc/joe/%f %D/etc/joe/jmacsrc; fi
+@unexec if cmp -s %D/etc/joe/joerc.dist %D/etc/joe/joerc; then rm -f %D/etc/joe/joerc; fi
+etc/joe/joerc.dist
+@exec if [ ! -f %D/etc/joe/joerc ]; then cp %D/etc/joe/%f %D/etc/joe/joerc; fi
+@unexec if cmp -s %D/etc/joe/jpicorc.dist %D/etc/joe/jpicorc; then rm -f %D/etc/joe/jpicorc; fi
+etc/joe/jpicorc.dist
+@exec if [ ! -f %D/etc/joe/jpicorc ]; then cp %D/etc/joe/%f %D/etc/joe/jpicorc; fi
+@unexec if cmp -s %D/etc/joe/jstarrc.dist %D/etc/joe/jstarrc; then rm -f %D/etc/joe/jstarrc; fi
+etc/joe/jstarrc.dist
+@exec if [ ! -f %D/etc/joe/jstarrc ]; then cp %D/etc/joe/%f %D/etc/joe/jstarrc; fi
+@unexec if cmp -s %D/etc/joe/rjoerc.dist %D/etc/joe/rjoerc; then rm -f %D/etc/joe/rjoerc; fi
+etc/joe/rjoerc.dist
+@exec if [ ! -f %D/etc/joe/rjoerc ]; then cp %D/etc/joe/%f %D/etc/joe/rjoerc; fi
+etc/joe/syntax/c.jsf
+etc/joe/syntax/conf.jsf
+etc/joe/syntax/perl.jsf
+etc/joe/syntax/php.jsf
+etc/joe/syntax/python.jsf
+etc/joe/syntax/sh.jsf
+etc/joe/syntax/verilog.jsf
+%%PORTDOCS%%%%DOCSDIR%%/CommandList
+%%PORTDOCS%%%%DOCSDIR%%/INFO
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm etc/joe/syntax
+@dirrm etc/joe
