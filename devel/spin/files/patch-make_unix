@@ -1,6 +1,6 @@
 --- make_unix.orig	Mon Apr  7 20:30:46 2003
 +++ make_unix	Mon Apr  7 20:31:36 2003
-@@ -12,8 +12,9 @@
+@@ -9,8 +9,9 @@
  # [a more up-to-date book documenting Spin will appear in 2003]
  
  # CC=gcc		# or any other ansi compatible c compiler
