@@ -1,0 +1,11 @@
+--- configure.in.orig	Mon Apr  8 22:31:30 2002
++++ configure.in	Mon Apr  8 22:52:21 2002
+@@ -105,7 +105,7 @@
+ dnl `header'.
+ define(MOO_FUNC_DECL_CHECK, [
+ changequote(,)dnl
+-pattern="[^_a-zA-Z0-9]$2 *\("
++pattern="[^_a-zA-Z0-9]$2\)? *\("
+ changequote([,])dnl
+ AC_PROGRAM_EGREP($pattern, [
+ #include <$1>
