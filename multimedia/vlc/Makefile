@@ -627,7 +627,7 @@ CONFIGURE_ENV+=	LIBS="-L/usr/lib -lcipher"
 
 pre-everything::
 	@${ECHO_MSG} ""
-	@${ECHO_MSG} "Take a careful look at the begning of the Makefile in order"
+	@${ECHO_MSG} "Take a careful look at the beginning of the Makefile in order"
 	@${ECHO_MSG} "to learn how to tune VLC towards you personal preferences!"
 	@${ECHO_MSG} "For example, make WITH_MOZILLA_PLUGIN=firefox"
 .if defined(WITH_SPEEX) && exists(${LOCALBASE}/include/speex.h)
