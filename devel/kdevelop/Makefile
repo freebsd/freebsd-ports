@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	kdevelop
-PORTVERSION=	2.1.3
+PORTVERSION=	2.1.5
 CATEGORIES?=	devel kde
 MASTER_SITES=	${MASTER_SITE_KDE}
-MASTER_SITE_SUBDIR=	stable/3.0.3/src
+MASTER_SITE_SUBDIR=	stable/kdevelop-${PORTVERSION}/src
 DISTNAME=	${KDE_DISTNAME}
 DIST_SUBDIR=	KDE
 
@@ -26,14 +26,15 @@ RUN_DEPENDS+=	autoconf:${PORTSDIR}/devel/autoconf \
 		a2ps:${PORTSDIR}/print/a2ps-letter
 .endif
 
-KDE_DISTNAME=		${PORTNAME}-${PORTVERSION}_for_KDE_3.0
+KDE_DISTNAME=		${PORTNAME}-${PORTVERSION}_for_KDE_3.1
 USE_KDELIBS_VER=3
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+= --with-qtdoc-dir=${X11BASE}/share/doc/qt/html
 
-.include "${.CURDIR}/../../x11/kde3/Makefile.kde"
+.include <bsd.port.pre.mk>
+.include "${PORTSDIR}/x11/kde3/Makefile.kde"
 
 pre-everything::
 .if !defined(WITH_OPTIONAL_DEPENDS)
@@ -43,4 +44,4 @@ pre-everything::
 	@${ECHO_MSG}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
