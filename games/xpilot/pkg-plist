@@ -5,6 +5,7 @@ bin/xp-mapedit
 share/xpilot/sounds
 share/xpilot/defaults
 share/xpilot/robots
+share/xpilot/password
 share/xpilot/maps/CAMD.xp
 share/xpilot/maps/blood-music2.xp
 share/xpilot/maps/cloudscape.xp
