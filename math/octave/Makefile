@@ -26,6 +26,8 @@ USE_PERL5_BUILD=yes
 
 .if ${OSVERSION} < 500000
 BROKEN=		"Does not compile on FreeBSD 4.x"
+.else
+BROKEN=		"Does not compile on FreeBSD >= 5.x"
 .endif
 
 .if ${PORTOBJFORMAT} == "elf"
