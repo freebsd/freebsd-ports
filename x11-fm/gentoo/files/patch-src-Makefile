@@ -1,6 +1,6 @@
---- src/Makefile.Dist	Sun Apr 29 02:43:21 2001
-+++ src/Makefile	Sat Aug 11 22:38:12 2001
-@@ -71,25 +71,23 @@
+--- src/Makefile.orig	Sun Apr 29 11:43:21 2001
++++ src/Makefile	Sat Jan  1 02:59:03 2000
+@@ -71,25 +71,24 @@
  	  window.o menus.o\
  	  ../widgets/odemilbutton.o ../widgets/odscrolledbox.o ../widgets/odlabel.o
  
@@ -16,7 +16,9 @@
 -CFLAGS_64BIT = -Wall -Wmissing-prototypes $(DEBUG) `gtk-config --cflags`\
 +CFLAGS_64BIT = $(DEBUG) `gtk-config --cflags`\
  		-I/usr/X11R6/include -I../widgets -DGENTOO_PACKAGE='"gentoo"'\
- 		-DGENTOO_LOCALEDIR='"/home/emil/data/projects/gentoo/locale"'
+-		-DGENTOO_LOCALEDIR='"/home/emil/data/projects/gentoo/locale"'
++		-DGENTOO_LOCALEDIR='"/home/emil/data/projects/gentoo/locale"' \
++		-I.
  
  # Most files compile with the flags that are 64-bit compliant, plus some
  # more to ensure ANSI compatibility.
