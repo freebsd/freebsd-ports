@@ -1,36 +1,68 @@
---- Makefile.orig	Sun Dec 19 04:20:02 1999
-+++ Makefile	Thu Nov  9 05:47:33 2000
-@@ -625,14 +625,14 @@
+--- Makefile~	Wed Jun  6 12:07:35 2001
++++ Makefile	Sun Jul  8 03:48:21 2001
+@@ -504,16 +504,16 @@
+ # ${LIBDIR}		where *.a files are installed
+ #
+ #BINDIR= /usr/local/bin
+-BINDIR= /usr/bin
++BINDIR= ${PREFIX}/bin
+ 
+ #SHAREDIR= /usr/local/lib
+-SHAREDIR= /usr/share
++SHAREDIR= ${PREFIX}/share
+ 
+ #INCDIR= /usr/local/include
+-INCDIR= /usr/include
++INCDIR= ${PREFIX}/include
+ 
+ #LIBDIR= /usr/local/lib
+-LIBDIR= /usr/lib
++LIBDIR= ${PREFIX}/lib
+ 
+ # By default, these values are based on the above 4 values
+ # --------------------------------------------------------
+@@ -540,7 +540,7 @@
+ #MANDIR=
+ #MANDIR= /usr/local/man/man1
+ #MANDIR= /usr/man/man1
+-MANDIR= /usr/share/man/man1
++MANDIR= ${PREFIX}/man/man1
+ #MANDIR= /usr/man/u_man/man1
+ #MANDIR= /usr/contrib/man/man1
+ 
+@@ -633,8 +633,8 @@
+ #
+ # If in doubt, set USE_READLINE, READLINE_LIB and READLINE_INCLUDE to nothing.
+ #
+-USE_READLINE=
+-#USE_READLINE= -DUSE_READLINE
++#USE_READLINE=
++USE_READLINE= -DUSE_READLINE
+ #
+ #READLINE_LIB=
+ READLINE_LIB= -lreadline -lhistory -lncurses
+@@ -729,6 +729,7 @@
+ #
+ MAKE_FILE= Makefile
+ #MAKE_FILE=
++MANDIR= ${PREFIX}/man/man1
+ 
+ # If you do not wish to use purify, leave PURIFY commented out.
+ #
+@@ -813,13 +814,13 @@
  CCOPT= ${DEBUG} ${NO_SHARED}
  CCMISC=
  #
--CFLAGS= ${CCWARN} ${CCOPT} ${CCMISC}
-+CFLAGS+= ${CCWARN} ${CCOPT} ${CCMISC}
- ICFLAGS= ${CCWARN} ${CCMISC}
+-CFLAGS= -DSRC ${CCWARN} ${CCOPT} ${CCMISC}
+-ICFLAGS= -DSRC ${CCWARN} ${CCMISC}
++CFLAGS+= -DSRC
++ICFLAGS= ${CFLAGS}
  #
  LDFLAGS= ${NO_SHARED} ${LD_NO_SHARED}
  ILDFLAGS=
  #
- LCC= gcc
--CC= ${PURIFY} ${LCC}
-+CC?= ${PURIFY} ${LCC}
+-LCC= gcc
++LCC= cc
+ CC= ${PURIFY} ${LCC}
  #
  ###
- #
-@@ -1073,7 +1073,7 @@
- all: .hsrc ${TARGETS}
- 
- calc: .hsrc ${CALC_LIBS} ${CALCOBJS}
--	${CC} ${LDFLAGS} ${CALCOBJS} ${CALC_LIBS} ${LD_DEBUG} ${READLINE_LIB} -o calc
-+	${CC} ${CFLAGS} ${LDFLAGS} ${CALCOBJS} ${CALC_LIBS} ${LD_DEBUG} ${READLINE_LIB} -o calc
- 
- libcalc.a: ${LIBOBJS} ${MAKE_FILE}
- 	-rm -f libcalc.a
-@@ -1200,6 +1200,7 @@
- 	${Q}echo '' >> endian_calc.h
- 	${Q}echo '' >> endian_calc.h
- 	${Q}echo '/* what byte order are we? */' >> endian_calc.h
-+	${Q}echo '#include <sys/types.h>' >> endian_calc.h
- 	-${Q}if [ X"${BYTE_ORDER}" = X ]; then \
- 	    if [ -f /usr/include/endian.h ]; then \
- 		echo '#include <endian.h>' >> endian_calc.h; \
