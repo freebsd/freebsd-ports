@@ -3,7 +3,7 @@
 # Date created:		19 October 1996
 # Whom:			pgs
 #
-# $Id: Makefile,v 1.1.1.1 1997/02/25 14:21:15 tg Exp $
+# $Id: Makefile,v 1.2 1997/02/26 09:44:44 asami Exp $
 #
 
 DISTNAME=	Plotmtv1.4.0
@@ -20,9 +20,9 @@ ALL_TARGET=	World
 MAN1=		plotmtv.1
 
 post-install:
-	${INSTALL_MAN} $(WRKSRC)/Docs/plotmtv.man $(PREFIX)/man/man1/plotmtv.1
+	${INSTALL_MAN} ${WRKSRC}/Docs/plotmtv.man ${PREFIX}/man/man1/plotmtv.1
 .if !defined(NOPORTDOCS)
-	mkdir -p ${PREFIX}/share/doc/plotmtv
+	${MKDIR} ${PREFIX}/share/doc/plotmtv
 	${INSTALL_DATA} ${WRKSRC}/Docs/DataFormat.ps.Z \
 		${PREFIX}/share/doc/plotmtv/
 .endif
