@@ -5,6 +5,8 @@ eclipse/features/org.eclipse.cdt_%%RELEASEVERSION%%/feature.xml
 eclipse/features/org.eclipse.cdt_%%RELEASEVERSION%%/license.html
 eclipse/plugins/org.eclipse.cdt.core.linux_%%RELEASEVERSION%%/cdt_linux.jar
 eclipse/plugins/org.eclipse.cdt.core.linux_%%RELEASEVERSION%%/fragment.xml
+eclipse/plugins/org.eclipse.cdt.core.linux_%%RELEASEVERSION%%/os/linux/ia64/libpty.so
+eclipse/plugins/org.eclipse.cdt.core.linux_%%RELEASEVERSION%%/os/linux/ia64/libspawner.so
 eclipse/plugins/org.eclipse.cdt.core.linux_%%RELEASEVERSION%%/os/linux/ppc/libpty.so
 eclipse/plugins/org.eclipse.cdt.core.linux_%%RELEASEVERSION%%/os/linux/ppc/libspawner.so
 eclipse/plugins/org.eclipse.cdt.core.linux_%%RELEASEVERSION%%/os/linux/x86/libpty.so
@@ -145,7 +147,9 @@ eclipse/plugins/org.eclipse.cdt.debug.ui_%%RELEASEVERSION%%/icons/full/obj16/rea
 eclipse/plugins/org.eclipse.cdt.debug.ui_%%RELEASEVERSION%%/icons/full/obj16/readwrite_obj.gif
 eclipse/plugins/org.eclipse.cdt.debug.ui_%%RELEASEVERSION%%/icons/full/obj16/readwrite_obj_disabled.gif
 eclipse/plugins/org.eclipse.cdt.debug.ui_%%RELEASEVERSION%%/icons/full/obj16/register_obj.gif
+eclipse/plugins/org.eclipse.cdt.debug.ui_%%RELEASEVERSION%%/icons/full/obj16/registerd_obj.gif
 eclipse/plugins/org.eclipse.cdt.debug.ui_%%RELEASEVERSION%%/icons/full/obj16/registergroup_obj.gif
+eclipse/plugins/org.eclipse.cdt.debug.ui_%%RELEASEVERSION%%/icons/full/obj16/registergroupd_obj.gif
 eclipse/plugins/org.eclipse.cdt.debug.ui_%%RELEASEVERSION%%/icons/full/obj16/showpaths_obj.gif
 eclipse/plugins/org.eclipse.cdt.debug.ui_%%RELEASEVERSION%%/icons/full/obj16/signal_obj.gif
 eclipse/plugins/org.eclipse.cdt.debug.ui_%%RELEASEVERSION%%/icons/full/obj16/var_aggr.gif
@@ -220,7 +224,6 @@ eclipse/plugins/org.eclipse.cdt.make.ui_%%RELEASEVERSION%%/icons/actions/build_m
 eclipse/plugins/org.eclipse.cdt.make.ui_%%RELEASEVERSION%%/icons/ctool16/alphab_sort_co.gif
 eclipse/plugins/org.eclipse.cdt.make.ui_%%RELEASEVERSION%%/icons/ctool16/convert-normal.gif
 eclipse/plugins/org.eclipse.cdt.make.ui_%%RELEASEVERSION%%/icons/ctool16/make.gif
-eclipse/plugins/org.eclipse.cdt.make.ui_%%RELEASEVERSION%%/icons/ctool16/makefile.gif
 eclipse/plugins/org.eclipse.cdt.make.ui_%%RELEASEVERSION%%/icons/ctool16/newc_app.gif
 eclipse/plugins/org.eclipse.cdt.make.ui_%%RELEASEVERSION%%/icons/ctool16/newcc_app.gif
 eclipse/plugins/org.eclipse.cdt.make.ui_%%RELEASEVERSION%%/icons/ctool16/segment_edit.gif
@@ -247,6 +250,7 @@ eclipse/plugins/org.eclipse.cdt.make.ui_%%RELEASEVERSION%%/icons/obj16/error_obj
 eclipse/plugins/org.eclipse.cdt.make.ui_%%RELEASEVERSION%%/icons/obj16/include_obj.gif
 eclipse/plugins/org.eclipse.cdt.make.ui_%%RELEASEVERSION%%/icons/obj16/irule_obj.gif
 eclipse/plugins/org.eclipse.cdt.make.ui_%%RELEASEVERSION%%/icons/obj16/macro_obj.gif
+eclipse/plugins/org.eclipse.cdt.make.ui_%%RELEASEVERSION%%/icons/obj16/makefile.gif
 eclipse/plugins/org.eclipse.cdt.make.ui_%%RELEASEVERSION%%/icons/obj16/relation_obj.gif
 eclipse/plugins/org.eclipse.cdt.make.ui_%%RELEASEVERSION%%/icons/obj16/target_obj.gif
 eclipse/plugins/org.eclipse.cdt.make.ui_%%RELEASEVERSION%%/icons/obj16/trule_obj.gif
@@ -301,7 +305,11 @@ eclipse/plugins/org.eclipse.cdt.ui_%%RELEASEVERSION%%/icons/full/build16/config-
 eclipse/plugins/org.eclipse.cdt.ui_%%RELEASEVERSION%%/icons/full/clcl16/alphab_sort_co.gif
 eclipse/plugins/org.eclipse.cdt.ui_%%RELEASEVERSION%%/icons/full/clcl16/clear_co.gif
 eclipse/plugins/org.eclipse.cdt.ui_%%RELEASEVERSION%%/icons/full/clcl16/collapseall.gif
+eclipse/plugins/org.eclipse.cdt.ui_%%RELEASEVERSION%%/icons/full/clcl16/definingtype_sort_co.gif
 eclipse/plugins/org.eclipse.cdt.ui_%%RELEASEVERSION%%/icons/full/clcl16/fields_co.gif
+eclipse/plugins/org.eclipse.cdt.ui_%%RELEASEVERSION%%/icons/full/clcl16/history_list.gif
+eclipse/plugins/org.eclipse.cdt.ui_%%RELEASEVERSION%%/icons/full/clcl16/impl_co.gif
+eclipse/plugins/org.eclipse.cdt.ui_%%RELEASEVERSION%%/icons/full/clcl16/inher_co.gif
 eclipse/plugins/org.eclipse.cdt.ui_%%RELEASEVERSION%%/icons/full/clcl16/lock_co.gif
 eclipse/plugins/org.eclipse.cdt.ui_%%RELEASEVERSION%%/icons/full/clcl16/metharg_obj.gif
 eclipse/plugins/org.eclipse.cdt.ui_%%RELEASEVERSION%%/icons/full/clcl16/open_incl.gif
@@ -312,16 +320,26 @@ eclipse/plugins/org.eclipse.cdt.ui_%%RELEASEVERSION%%/icons/full/clcl16/segment_
 eclipse/plugins/org.eclipse.cdt.ui_%%RELEASEVERSION%%/icons/full/clcl16/shift_l_edit.gif
 eclipse/plugins/org.eclipse.cdt.ui_%%RELEASEVERSION%%/icons/full/clcl16/shift_r_edit.gif
 eclipse/plugins/org.eclipse.cdt.ui_%%RELEASEVERSION%%/icons/full/clcl16/static_co.gif
+eclipse/plugins/org.eclipse.cdt.ui_%%RELEASEVERSION%%/icons/full/clcl16/sub_co.gif
+eclipse/plugins/org.eclipse.cdt.ui_%%RELEASEVERSION%%/icons/full/clcl16/super_co.gif
 eclipse/plugins/org.eclipse.cdt.ui_%%RELEASEVERSION%%/icons/full/clcl16/synced.gif
+eclipse/plugins/org.eclipse.cdt.ui_%%RELEASEVERSION%%/icons/full/clcl16/th_automatic.gif
+eclipse/plugins/org.eclipse.cdt.ui_%%RELEASEVERSION%%/icons/full/clcl16/th_horizontal.gif
+eclipse/plugins/org.eclipse.cdt.ui_%%RELEASEVERSION%%/icons/full/clcl16/th_showqualified.gif
+eclipse/plugins/org.eclipse.cdt.ui_%%RELEASEVERSION%%/icons/full/clcl16/th_single.gif
+eclipse/plugins/org.eclipse.cdt.ui_%%RELEASEVERSION%%/icons/full/clcl16/th_vertical.gif
 eclipse/plugins/org.eclipse.cdt.ui_%%RELEASEVERSION%%/icons/full/ctool16/convert-normal.gif
 eclipse/plugins/org.eclipse.cdt.ui_%%RELEASEVERSION%%/icons/full/ctool16/newc_app.gif
 eclipse/plugins/org.eclipse.cdt.ui_%%RELEASEVERSION%%/icons/full/ctool16/newc_lib.gif
 eclipse/plugins/org.eclipse.cdt.ui_%%RELEASEVERSION%%/icons/full/ctool16/newcc_app.gif
 eclipse/plugins/org.eclipse.cdt.ui_%%RELEASEVERSION%%/icons/full/ctool16/newcc_lib.gif
+eclipse/plugins/org.eclipse.cdt.ui_%%RELEASEVERSION%%/icons/full/ctool16/newcfile_wiz.gif
 eclipse/plugins/org.eclipse.cdt.ui_%%RELEASEVERSION%%/icons/full/ctool16/newclass_wiz.gif
 eclipse/plugins/org.eclipse.cdt.ui_%%RELEASEVERSION%%/icons/full/ctool16/newcprj_wiz.gif
 eclipse/plugins/org.eclipse.cdt.ui_%%RELEASEVERSION%%/icons/full/ctool16/newfile_wiz.gif
 eclipse/plugins/org.eclipse.cdt.ui_%%RELEASEVERSION%%/icons/full/ctool16/newfolder_wiz.gif
+eclipse/plugins/org.eclipse.cdt.ui_%%RELEASEVERSION%%/icons/full/ctool16/newhfile_wiz.gif
+eclipse/plugins/org.eclipse.cdt.ui_%%RELEASEVERSION%%/icons/full/ctool16/newsrcfldr_wiz.gif
 eclipse/plugins/org.eclipse.cdt.ui_%%RELEASEVERSION%%/icons/full/ctool16/next_error_nav.gif
 eclipse/plugins/org.eclipse.cdt.ui_%%RELEASEVERSION%%/icons/full/ctool16/prev_error_nav.gif
 eclipse/plugins/org.eclipse.cdt.ui_%%RELEASEVERSION%%/icons/full/ctool16/prj_obj.gif
@@ -333,7 +351,11 @@ eclipse/plugins/org.eclipse.cdt.ui_%%RELEASEVERSION%%/icons/full/cview16/cview.g
 eclipse/plugins/org.eclipse.cdt.ui_%%RELEASEVERSION%%/icons/full/dlcl16/alphab_sort_co.gif
 eclipse/plugins/org.eclipse.cdt.ui_%%RELEASEVERSION%%/icons/full/dlcl16/clear_co.gif
 eclipse/plugins/org.eclipse.cdt.ui_%%RELEASEVERSION%%/icons/full/dlcl16/collapseall.gif
+eclipse/plugins/org.eclipse.cdt.ui_%%RELEASEVERSION%%/icons/full/dlcl16/definingtype_sort_co.gif
 eclipse/plugins/org.eclipse.cdt.ui_%%RELEASEVERSION%%/icons/full/dlcl16/fields_co.gif
+eclipse/plugins/org.eclipse.cdt.ui_%%RELEASEVERSION%%/icons/full/dlcl16/history_list.gif
+eclipse/plugins/org.eclipse.cdt.ui_%%RELEASEVERSION%%/icons/full/dlcl16/impl_co.gif
+eclipse/plugins/org.eclipse.cdt.ui_%%RELEASEVERSION%%/icons/full/dlcl16/inher_co.gif
 eclipse/plugins/org.eclipse.cdt.ui_%%RELEASEVERSION%%/icons/full/dlcl16/lock_co.gif
 eclipse/plugins/org.eclipse.cdt.ui_%%RELEASEVERSION%%/icons/full/dlcl16/metharg_obj.gif
 eclipse/plugins/org.eclipse.cdt.ui_%%RELEASEVERSION%%/icons/full/dlcl16/open_incl.gif
@@ -343,16 +365,32 @@ eclipse/plugins/org.eclipse.cdt.ui_%%RELEASEVERSION%%/icons/full/dlcl16/segment_
 eclipse/plugins/org.eclipse.cdt.ui_%%RELEASEVERSION%%/icons/full/dlcl16/shift_l_edit.gif
 eclipse/plugins/org.eclipse.cdt.ui_%%RELEASEVERSION%%/icons/full/dlcl16/shift_r_edit.gif
 eclipse/plugins/org.eclipse.cdt.ui_%%RELEASEVERSION%%/icons/full/dlcl16/static_co.gif
+eclipse/plugins/org.eclipse.cdt.ui_%%RELEASEVERSION%%/icons/full/dlcl16/sub_co.gif
+eclipse/plugins/org.eclipse.cdt.ui_%%RELEASEVERSION%%/icons/full/dlcl16/super_co.gif
 eclipse/plugins/org.eclipse.cdt.ui_%%RELEASEVERSION%%/icons/full/dlcl16/synced.gif
+eclipse/plugins/org.eclipse.cdt.ui_%%RELEASEVERSION%%/icons/full/dlcl16/th_automatic.gif
+eclipse/plugins/org.eclipse.cdt.ui_%%RELEASEVERSION%%/icons/full/dlcl16/th_horizontal.gif
+eclipse/plugins/org.eclipse.cdt.ui_%%RELEASEVERSION%%/icons/full/dlcl16/th_showqualified.gif
+eclipse/plugins/org.eclipse.cdt.ui_%%RELEASEVERSION%%/icons/full/dlcl16/th_single.gif
+eclipse/plugins/org.eclipse.cdt.ui_%%RELEASEVERSION%%/icons/full/dlcl16/th_vertical.gif
+eclipse/plugins/org.eclipse.cdt.ui_%%RELEASEVERSION%%/icons/full/dtool16/newcfile_wiz.gif
 eclipse/plugins/org.eclipse.cdt.ui_%%RELEASEVERSION%%/icons/full/dtool16/newclass_wiz.gif
 eclipse/plugins/org.eclipse.cdt.ui_%%RELEASEVERSION%%/icons/full/dtool16/newcprj_wiz.gif
 eclipse/plugins/org.eclipse.cdt.ui_%%RELEASEVERSION%%/icons/full/dtool16/newfile_wiz.gif
+eclipse/plugins/org.eclipse.cdt.ui_%%RELEASEVERSION%%/icons/full/dtool16/newfolder_wiz.gif
+eclipse/plugins/org.eclipse.cdt.ui_%%RELEASEVERSION%%/icons/full/dtool16/newhfile_wiz.gif
+eclipse/plugins/org.eclipse.cdt.ui_%%RELEASEVERSION%%/icons/full/dtool16/newsrcfldr_wiz.gif
 eclipse/plugins/org.eclipse.cdt.ui_%%RELEASEVERSION%%/icons/full/dtool16/next_error_nav.gif
+eclipse/plugins/org.eclipse.cdt.ui_%%RELEASEVERSION%%/icons/full/dtool16/opentype.gif
 eclipse/plugins/org.eclipse.cdt.ui_%%RELEASEVERSION%%/icons/full/dtool16/prev_error_nav.gif
 eclipse/plugins/org.eclipse.cdt.ui_%%RELEASEVERSION%%/icons/full/elcl16/alphab_sort_co.gif
 eclipse/plugins/org.eclipse.cdt.ui_%%RELEASEVERSION%%/icons/full/elcl16/clear_co.gif
 eclipse/plugins/org.eclipse.cdt.ui_%%RELEASEVERSION%%/icons/full/elcl16/collapseall.gif
+eclipse/plugins/org.eclipse.cdt.ui_%%RELEASEVERSION%%/icons/full/elcl16/definingtype_sort_co.gif
 eclipse/plugins/org.eclipse.cdt.ui_%%RELEASEVERSION%%/icons/full/elcl16/fields_co.gif
+eclipse/plugins/org.eclipse.cdt.ui_%%RELEASEVERSION%%/icons/full/elcl16/history_list.gif
+eclipse/plugins/org.eclipse.cdt.ui_%%RELEASEVERSION%%/icons/full/elcl16/impl_co.gif
+eclipse/plugins/org.eclipse.cdt.ui_%%RELEASEVERSION%%/icons/full/elcl16/inher_co.gif
 eclipse/plugins/org.eclipse.cdt.ui_%%RELEASEVERSION%%/icons/full/elcl16/lock_co.gif
 eclipse/plugins/org.eclipse.cdt.ui_%%RELEASEVERSION%%/icons/full/elcl16/metharg_obj.gif
 eclipse/plugins/org.eclipse.cdt.ui_%%RELEASEVERSION%%/icons/full/elcl16/open_incl.gif
@@ -362,15 +400,29 @@ eclipse/plugins/org.eclipse.cdt.ui_%%RELEASEVERSION%%/icons/full/elcl16/segment_
 eclipse/plugins/org.eclipse.cdt.ui_%%RELEASEVERSION%%/icons/full/elcl16/shift_l_edit.gif
 eclipse/plugins/org.eclipse.cdt.ui_%%RELEASEVERSION%%/icons/full/elcl16/shift_r_edit.gif
 eclipse/plugins/org.eclipse.cdt.ui_%%RELEASEVERSION%%/icons/full/elcl16/static_co.gif
+eclipse/plugins/org.eclipse.cdt.ui_%%RELEASEVERSION%%/icons/full/elcl16/sub_co.gif
+eclipse/plugins/org.eclipse.cdt.ui_%%RELEASEVERSION%%/icons/full/elcl16/super_co.gif
 eclipse/plugins/org.eclipse.cdt.ui_%%RELEASEVERSION%%/icons/full/elcl16/synced.gif
+eclipse/plugins/org.eclipse.cdt.ui_%%RELEASEVERSION%%/icons/full/elcl16/th_automatic.gif
+eclipse/plugins/org.eclipse.cdt.ui_%%RELEASEVERSION%%/icons/full/elcl16/th_horizontal.gif
+eclipse/plugins/org.eclipse.cdt.ui_%%RELEASEVERSION%%/icons/full/elcl16/th_showqualified.gif
+eclipse/plugins/org.eclipse.cdt.ui_%%RELEASEVERSION%%/icons/full/elcl16/th_single.gif
+eclipse/plugins/org.eclipse.cdt.ui_%%RELEASEVERSION%%/icons/full/elcl16/th_vertical.gif
+eclipse/plugins/org.eclipse.cdt.ui_%%RELEASEVERSION%%/icons/full/etool16/newcfile_wiz.gif
 eclipse/plugins/org.eclipse.cdt.ui_%%RELEASEVERSION%%/icons/full/etool16/newclass_wiz.gif
 eclipse/plugins/org.eclipse.cdt.ui_%%RELEASEVERSION%%/icons/full/etool16/newcprj_wiz.gif
 eclipse/plugins/org.eclipse.cdt.ui_%%RELEASEVERSION%%/icons/full/etool16/newfile_wiz.gif
+eclipse/plugins/org.eclipse.cdt.ui_%%RELEASEVERSION%%/icons/full/etool16/newfolder_wiz.gif
+eclipse/plugins/org.eclipse.cdt.ui_%%RELEASEVERSION%%/icons/full/etool16/newhfile_wiz.gif
+eclipse/plugins/org.eclipse.cdt.ui_%%RELEASEVERSION%%/icons/full/etool16/newsrcfldr_wiz.gif
 eclipse/plugins/org.eclipse.cdt.ui_%%RELEASEVERSION%%/icons/full/etool16/next_error_nav.gif
+eclipse/plugins/org.eclipse.cdt.ui_%%RELEASEVERSION%%/icons/full/etool16/opentype.gif
 eclipse/plugins/org.eclipse.cdt.ui_%%RELEASEVERSION%%/icons/full/etool16/prev_error_nav.gif
 eclipse/plugins/org.eclipse.cdt.ui_%%RELEASEVERSION%%/icons/full/eview16/buildconsole.gif
 eclipse/plugins/org.eclipse.cdt.ui_%%RELEASEVERSION%%/icons/full/eview16/c_pers.gif
 eclipse/plugins/org.eclipse.cdt.ui_%%RELEASEVERSION%%/icons/full/eview16/cbrowsing_pers.gif
+eclipse/plugins/org.eclipse.cdt.ui_%%RELEASEVERSION%%/icons/full/eview16/chierch_pers.gif
+eclipse/plugins/org.eclipse.cdt.ui_%%RELEASEVERSION%%/icons/full/eview16/class_hi.gif
 eclipse/plugins/org.eclipse.cdt.ui_%%RELEASEVERSION%%/icons/full/eview16/cprojects.gif
 eclipse/plugins/org.eclipse.cdt.ui_%%RELEASEVERSION%%/icons/full/eview16/members.gif
 eclipse/plugins/org.eclipse.cdt.ui_%%RELEASEVERSION%%/icons/full/eview16/namespaces.gif
@@ -411,6 +463,7 @@ eclipse/plugins/org.eclipse.cdt.ui_%%RELEASEVERSION%%/icons/full/obj16/fldr_obj.
 eclipse/plugins/org.eclipse.cdt.ui_%%RELEASEVERSION%%/icons/full/obj16/function_obj.gif
 eclipse/plugins/org.eclipse.cdt.ui_%%RELEASEVERSION%%/icons/full/obj16/h_file_obj.gif
 eclipse/plugins/org.eclipse.cdt.ui_%%RELEASEVERSION%%/icons/full/obj16/hfolder_obj.gif
+eclipse/plugins/org.eclipse.cdt.ui_%%RELEASEVERSION%%/icons/full/obj16/incc_obj.gif
 eclipse/plugins/org.eclipse.cdt.ui_%%RELEASEVERSION%%/icons/full/obj16/include_obj.gif
 eclipse/plugins/org.eclipse.cdt.ui_%%RELEASEVERSION%%/icons/full/obj16/includes_container.gif
 eclipse/plugins/org.eclipse.cdt.ui_%%RELEASEVERSION%%/icons/full/obj16/info_obj.gif
@@ -438,13 +491,14 @@ eclipse/plugins/org.eclipse.cdt.ui_%%RELEASEVERSION%%/icons/full/obj16/typedef_o
 eclipse/plugins/org.eclipse.cdt.ui_%%RELEASEVERSION%%/icons/full/obj16/union_obj.gif
 eclipse/plugins/org.eclipse.cdt.ui_%%RELEASEVERSION%%/icons/full/obj16/unknown_obj.gif
 eclipse/plugins/org.eclipse.cdt.ui_%%RELEASEVERSION%%/icons/full/obj16/unknown_type_obj.gif
+eclipse/plugins/org.eclipse.cdt.ui_%%RELEASEVERSION%%/icons/full/obj16/using_obj.gif
 eclipse/plugins/org.eclipse.cdt.ui_%%RELEASEVERSION%%/icons/full/obj16/var_declaration_obj.gif
 eclipse/plugins/org.eclipse.cdt.ui_%%RELEASEVERSION%%/icons/full/obj16/variable_local_obj.gif
 eclipse/plugins/org.eclipse.cdt.ui_%%RELEASEVERSION%%/icons/full/obj16/variable_obj.gif
 eclipse/plugins/org.eclipse.cdt.ui_%%RELEASEVERSION%%/icons/full/obj16/warning_obj.gif
-eclipse/plugins/org.eclipse.cdt.ui_%%RELEASEVERSION%%/icons/full/opentype16/opentype.gif
 eclipse/plugins/org.eclipse.cdt.ui_%%RELEASEVERSION%%/icons/full/ovr16/c_ovr.gif
 eclipse/plugins/org.eclipse.cdt.ui_%%RELEASEVERSION%%/icons/full/ovr16/error_co.gif
+eclipse/plugins/org.eclipse.cdt.ui_%%RELEASEVERSION%%/icons/full/ovr16/focus_ovr.gif
 eclipse/plugins/org.eclipse.cdt.ui_%%RELEASEVERSION%%/icons/full/ovr16/path_inherit_co.gif
 eclipse/plugins/org.eclipse.cdt.ui_%%RELEASEVERSION%%/icons/full/ovr16/static_co.gif
 eclipse/plugins/org.eclipse.cdt.ui_%%RELEASEVERSION%%/icons/full/ovr16/template_co.gif
@@ -454,10 +508,15 @@ eclipse/plugins/org.eclipse.cdt.ui_%%RELEASEVERSION%%/icons/full/wizban/addpath_
 eclipse/plugins/org.eclipse.cdt.ui_%%RELEASEVERSION%%/icons/full/wizban/c_app_wiz.gif
 eclipse/plugins/org.eclipse.cdt.ui_%%RELEASEVERSION%%/icons/full/wizban/fieldrefact_wiz.gif
 eclipse/plugins/org.eclipse.cdt.ui_%%RELEASEVERSION%%/icons/full/wizban/methrefact_wiz.gif
+eclipse/plugins/org.eclipse.cdt.ui_%%RELEASEVERSION%%/icons/full/wizban/newcfile_wiz.gif
 eclipse/plugins/org.eclipse.cdt.ui_%%RELEASEVERSION%%/icons/full/wizban/newclass_wiz.gif
 eclipse/plugins/org.eclipse.cdt.ui_%%RELEASEVERSION%%/icons/full/wizban/newcprj_wiz.gif
+eclipse/plugins/org.eclipse.cdt.ui_%%RELEASEVERSION%%/icons/full/wizban/newfile_wiz.gif
+eclipse/plugins/org.eclipse.cdt.ui_%%RELEASEVERSION%%/icons/full/wizban/newfolder_wiz.gif
+eclipse/plugins/org.eclipse.cdt.ui_%%RELEASEVERSION%%/icons/full/wizban/newhfile_wiz.gif
 eclipse/plugins/org.eclipse.cdt.ui_%%RELEASEVERSION%%/icons/full/wizban/newmngc_app.gif
 eclipse/plugins/org.eclipse.cdt.ui_%%RELEASEVERSION%%/icons/full/wizban/newmngcc_app.gif
+eclipse/plugins/org.eclipse.cdt.ui_%%RELEASEVERSION%%/icons/full/wizban/newsrcfldr_wiz.gif
 eclipse/plugins/org.eclipse.cdt.ui_%%RELEASEVERSION%%/icons/full/wizban/prj_obj.gif
 eclipse/plugins/org.eclipse.cdt.ui_%%RELEASEVERSION%%/icons/full/wizban/typerefact_wiz.gif
 eclipse/plugins/org.eclipse.cdt.ui_%%RELEASEVERSION%%/plugin.properties
@@ -482,8 +541,6 @@ eclipse/plugins/org.eclipse.cdt_%%RELEASEVERSION%%/plugin.xml
 eclipse/plugins/org.eclipse.cdt_%%RELEASEVERSION%%/samplesExtensionContent.xml
 eclipse/plugins/org.eclipse.cdt_%%RELEASEVERSION%%/tutorialsExtensionContent.xml
 eclipse/plugins/org.eclipse.cdt_%%RELEASEVERSION%%/whatsNewExtensionContent.xml
-share/nls/POSIX
-share/nls/en_US.US-ASCII
 @dirrm eclipse/plugins/org.eclipse.cdt_%%RELEASEVERSION%%/css/graphics/obj_48
 @dirrm eclipse/plugins/org.eclipse.cdt_%%RELEASEVERSION%%/css/graphics
 @dirrm eclipse/plugins/org.eclipse.cdt_%%RELEASEVERSION%%/css
@@ -491,7 +548,6 @@ share/nls/en_US.US-ASCII
 @dirrm eclipse/plugins/org.eclipse.cdt_%%RELEASEVERSION%%
 @dirrm eclipse/plugins/org.eclipse.cdt.ui_%%RELEASEVERSION%%/icons/full/wizban
 @dirrm eclipse/plugins/org.eclipse.cdt.ui_%%RELEASEVERSION%%/icons/full/ovr16
-@dirrm eclipse/plugins/org.eclipse.cdt.ui_%%RELEASEVERSION%%/icons/full/opentype16
 @dirrm eclipse/plugins/org.eclipse.cdt.ui_%%RELEASEVERSION%%/icons/full/obj16
 @dirrm eclipse/plugins/org.eclipse.cdt.ui_%%RELEASEVERSION%%/icons/full/eview16
 @dirrm eclipse/plugins/org.eclipse.cdt.ui_%%RELEASEVERSION%%/icons/full/etool16
@@ -554,6 +610,7 @@ share/nls/en_US.US-ASCII
 @dirrm eclipse/plugins/org.eclipse.cdt.core_%%RELEASEVERSION%%
 @dirrm eclipse/plugins/org.eclipse.cdt.core.linux_%%RELEASEVERSION%%/os/linux/x86
 @dirrm eclipse/plugins/org.eclipse.cdt.core.linux_%%RELEASEVERSION%%/os/linux/ppc
+@dirrm eclipse/plugins/org.eclipse.cdt.core.linux_%%RELEASEVERSION%%/os/linux/ia64
 @dirrm eclipse/plugins/org.eclipse.cdt.core.linux_%%RELEASEVERSION%%/os/linux
 @dirrm eclipse/plugins/org.eclipse.cdt.core.linux_%%RELEASEVERSION%%/os
 @dirrm eclipse/plugins/org.eclipse.cdt.core.linux_%%RELEASEVERSION%%
