@@ -7,7 +7,7 @@
 
 PORTNAME=	gnome
 PORTVERSION=	1.4.1b2
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	japanese x11 gnome
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -17,7 +17,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Japanese "meta-port" for the GNOME integrated X11 desktop
 
 LIB_DEPENDS=	gnome.5:${PORTSDIR}/japanese/gnomelibs \
-		gal.22:${PORTSDIR}/japanese/gal
+		gal.23:${PORTSDIR}/japanese/gal
 RUN_DEPENDS=	gnumeric:${PORTSDIR}/japanese/gnumeric
 
 NO_BUILD=	yes
