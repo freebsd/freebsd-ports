@@ -17,6 +17,7 @@
     SUBDIR += amarok
     SUBDIR += amp
     SUBDIR += ample
+    SUBDIR += amrcoder
     SUBDIR += anthem
     SUBDIR += arts
     SUBDIR += artswrapper
