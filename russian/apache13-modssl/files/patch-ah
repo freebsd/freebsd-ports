@@ -1,18 +1,18 @@
---- src/modules/ssl/Makefile.tmpl.orig	Thu Dec 30 15:58:07 1999
-+++ src/modules/ssl/Makefile.tmpl	Wed Feb  9 11:43:49 2000
-@@ -122,6 +122,11 @@
+--- src/modules/ssl/Makefile.tmpl.orig	Mon Jan  1 19:48:52 2001
++++ src/modules/ssl/Makefile.tmpl	Mon Oct 22 20:45:05 2001
+@@ -128,6 +128,11 @@
  ##  END-USER AREA
  ##
  
 +# This requires special handling to get the correct versions of include files:
 +#     ../../include/fnmatch.h instead of /usr/include/fnmatch.h
-+#     /usr/include/opssl/*.h instead of /usr/local/include/openssl.h
++#     /usr/include/openssl/*.h instead of /usr/local/include/openssl.h
 +MY_CFLAGS= $(INCLUDES0) $(SSL_CFLAGS) $(INCLUDES1) $(EXTRA_INCLUDES) $(CFLAGS)
 +
  all: lib
  
  lib: $(LIB)
-@@ -138,10 +143,10 @@
+@@ -144,10 +149,10 @@
  .SUFFIXES: .o .lo
  
  .c.o:
@@ -25,7 +25,7 @@
  
  clean:
  	rm -f $(OBJS) $(OBJS_PIC) 
-@@ -186,7 +191,7 @@
+@@ -201,7 +206,7 @@
  depend:
  	cp Makefile.tmpl Makefile.tmpl.bak \
  	    && sed -ne '1,/^# DO NOT REMOVE/p' Makefile.tmpl > Makefile.new \

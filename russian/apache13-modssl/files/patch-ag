@@ -1,6 +1,17 @@
---- conf/httpd.conf-dist.orig	Mon Feb 21 08:30:46 2000
-+++ conf/httpd.conf-dist	Mon May 29 16:48:49 2000
-@@ -354,7 +354,22 @@
+--- conf/httpd.conf-dist.orig	Tue Nov  6 11:37:00 2001
++++ conf/httpd.conf-dist	Tue Nov  6 11:37:59 2001
+@@ -92,8 +92,8 @@
+ # server ignore these files altogether by using "/dev/null" (for Unix) or
+ # "nul" (for Win32) for the arguments to the directives.
+ #
+-#ResourceConfig conf/srm.conf
+-#AccessConfig conf/access.conf
++ResourceConfig /dev/null
++AccessConfig   /dev/null
+ 
+ #
+ # Timeout: The number of seconds before receives and sends time out.
+@@ -383,7 +383,22 @@
  # directory index.  Separate multiple entries with spaces.
  #
  <IfModule mod_dir.c>
@@ -24,7 +35,7 @@
  </IfModule>
  
  #
-@@ -473,7 +488,7 @@
+@@ -503,7 +518,7 @@
  # define per-<VirtualHost> access logfiles, transactions will be
  # logged therein and *not* in this file.
  #
@@ -33,7 +44,7 @@
  
  #
  # If you would like to have agent and referer logfiles, uncomment the
-@@ -486,7 +501,7 @@
+@@ -516,7 +531,7 @@
  # If you prefer a single logfile with access, agent, and referer information
  # (Combined Logfile Format) you can use the following directive.
  #
@@ -42,7 +53,7 @@
  
  #
  # Optionally add a line containing the server version and virtual host
-@@ -708,13 +723,17 @@
+@@ -793,13 +808,17 @@
      # For example, the PHP 3.x module (not part of the Apache distribution - see
      # http://www.php.net) will typically use:
      #
