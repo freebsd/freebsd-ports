@@ -3,7 +3,7 @@
 # Date created:		Tue Jun 10 21:58:54 CEST 1997
 # Whom:			Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.28 1998/12/27 22:31:29 asami Exp $
+# $Id: Makefile,v 1.29 1999/01/04 03:35:58 steve Exp $
 #
 
 DISTNAME=	ghostscript-5.50
@@ -15,6 +15,8 @@ DISTFILES=	${GS_SOURCES} ${GS_FONTS_STD} ${GS_FONTS_OTHER} \
 		${HP850_DRV} ${DECRYPT_PDF}
 
 MAINTAINER=	andreas@FreeBSD.ORG
+
+Y2K=		http://www.cs.wisc.edu/~ghost/aladdin/y2k.html 
 
 BUILD_DEPENDS=	/nonexistent:${PORTSDIR}/graphics/jpeg:extract \
 		/nonexistent:${PORTSDIR}/graphics/png:extract \
