@@ -1,0 +1,3 @@
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Digest/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/Digest.pm
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Digest 2>/dev/null || true
