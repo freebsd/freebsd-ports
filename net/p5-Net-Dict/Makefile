@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net-Dict
-PORTVERSION=	2.06
+PORTVERSION=	2.07
 CATEGORIES=	net perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Net
@@ -15,19 +15,14 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	fuyuki@hadaly.org
 COMMENT=	A simple client API for the DICT protocol
 
-RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Net/Cmd.pm:${PORTSDIR}/net/p5-Net
-# if you want to run dict(1):
-#RUN_DEPENDS+=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/AppConfig/Std.pm:${PORTSDIR}/devel/p5-AppConfig-Std
-# if you want to run tkdict(1) too:
-#RUN_DEPENDS+=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Tk.pm:${PORTSDIR}/x11-toolkits/p5-Tk
+BUILD_DEPENDS=	${SITE_PERL}/Net/Cmd.pm:${PORTSDIR}/net/p5-Net
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
-
-MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
-MAN1=		dict.1 tkdict.1
 MAN3=		Net::Dict.3
 
 post-patch:
-	${PERL} -pi -e 's/^&configure.*$$//' ${WRKSRC}/Makefile.PL
+	${PERL} -pi -e '$$_="" if /(&configure|EXE_FILES)/' \
+		${WRKSRC}/Makefile.PL
 
 .include <bsd.port.mk>
