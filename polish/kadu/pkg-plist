@@ -7,7 +7,6 @@ include/kadu/config_dialog.h
 include/kadu/config_file.h
 include/kadu/dcc.h
 include/kadu/debug.h
-include/kadu/dock_widget.h
 include/kadu/emoticons.h
 include/kadu/events.h
 include/kadu/expimp.h
@@ -23,6 +22,7 @@ include/kadu/modules.h
 include/kadu/modules/autoaway.h
 include/kadu/modules/autoresponder.h
 include/kadu/modules/default_sms.h
+include/kadu/modules/docking.h
 include/kadu/modules/dsp_sound.h
 include/kadu/modules/encryption.h
 include/kadu/modules/player_external.h
@@ -30,6 +30,10 @@ include/kadu/modules/simlite.h
 include/kadu/modules/sms.h
 include/kadu/modules/sound.h
 include/kadu/modules/sound_desc.h
+include/kadu/modules/voice.h
+include/kadu/modules/voice_arts.h
+include/kadu/modules/voice_dsp.h
+include/kadu/modules/x11_docking.h
 include/kadu/password.h
 include/kadu/pending_events.h
 include/kadu/pending_msgs.h
@@ -42,9 +46,6 @@ include/kadu/updates.h
 include/kadu/userbox.h
 include/kadu/userinfo.h
 include/kadu/userlist.h
-include/kadu/voice.h
-include/kadu/voice_arts.h
-include/kadu/voice_dsp.h
 share/kadu/AUTHORS
 share/kadu/COPYING
 share/kadu/ChangeLog
@@ -55,6 +56,7 @@ share/kadu/modules/autoaway.desc
 share/kadu/modules/autoresponder.desc
 share/kadu/modules/autoresponder.so
 share/kadu/modules/default_sms.desc
+share/kadu/modules/docking.desc
 share/kadu/modules/dsp_sound.desc
 share/kadu/modules/dsp_sound.so
 share/kadu/modules/encryption.desc
@@ -69,6 +71,7 @@ share/kadu/modules/translations/autoresponder_pl.qm
 share/kadu/modules/translations/default_sms_de.qm
 share/kadu/modules/translations/default_sms_it.qm
 share/kadu/modules/translations/default_sms_pl.qm
+share/kadu/modules/translations/dsp_sound_it.qm
 share/kadu/modules/translations/dsp_sound_pl.qm
 share/kadu/modules/translations/encryption_it.qm
 share/kadu/modules/translations/encryption_pl.qm
@@ -79,6 +82,8 @@ share/kadu/modules/translations/sms_it.qm
 share/kadu/modules/translations/sms_pl.qm
 share/kadu/modules/translations/sound_it.qm
 share/kadu/modules/translations/sound_pl.qm
+share/kadu/modules/voice.desc
+share/kadu/modules/x11_docking.desc
 share/kadu/themes/emoticons/gadu-gadu/1/8P.gif
 share/kadu/themes/emoticons/gadu-gadu/1/8P_na.gif
 share/kadu/themes/emoticons/gadu-gadu/1/beksa.gif
@@ -372,9 +377,11 @@ share/kadu/themes/icons/default/invisible_d.png
 share/kadu/themes/icons/default/invisible_d_m.png
 share/kadu/themes/icons/default/invisible_m.png
 share/kadu/themes/icons/default/key_enter.png
+share/kadu/themes/icons/default/loading.png
 share/kadu/themes/icons/default/mail_generic.png
 share/kadu/themes/icons/default/message.png
 share/kadu/themes/icons/default/mobile.png
+share/kadu/themes/icons/default/msgbox_warning.png
 share/kadu/themes/icons/default/mute.png
 share/kadu/themes/icons/default/newuser.png
 share/kadu/themes/icons/default/offline.png

@@ -6,17 +6,17 @@
 #
 
 PORTNAME=		kadu
-PORTVERSION=		0.3.8
+PORTVERSION=		0.3.8.20040502
 PORTEPOCH=		1
 CATEGORIES=		polish net
-MASTER_SITES=		http://www.kadu.net/download/stable/
-DISTNAME=		${PORTNAME}-${PORTVERSION}
+MASTER_SITES=		http://www.kadu.net/download/snapshots/
+DISTNAME=		${PORTNAME}-20040502
 
 MAINTAINER=		jacek@combit.com.pl
 COMMENT=		QT Gadu-Gadu client
 
-LIB_DEPENDS=		gadu.3:${PORTSDIR}/polish/ekg:install\
-			gsm.1:${PORTSDIR}/audio/gsm:install
+LIB_DEPENDS=		gadu.3:${PORTSDIR}/polish/ekg\
+			gsm.1:${PORTSDIR}/audio/gsm
 
 USE_BZIP2=		yes
 USE_GMAKE=		yes
