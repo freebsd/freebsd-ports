@@ -1,13 +1,13 @@
 # New ports collection makefile for:	afterstep
-# Version required:	1.0pre6
+# Version required:	1.0
 # Date created:		October 29th 1996
 # Whom:			jfitz@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.15 1997/03/23 16:22:41 jfitz Exp $
+# $Id: Makefile,v 1.16 1997/03/30 06:04:54 jfitz Exp $
 #
 
-DISTNAME=	AfterStep-1.0pre6
-PKGNAME=	afterstep-1.0pr6
+DISTNAME=	AfterStep-1.0
+PKGNAME=	afterstep-1.0
 CATEGORIES=	x11
 MASTER_SITES=	ftp://afterstep.foo.net/pub/AfterStep/
 
@@ -43,7 +43,7 @@ post-install:
 		${INSTALL_DATA} ${WRKSRC}/icons/8bit/*.xpm ${PREFIX}/include/X11/pixmaps/
 .endif
 		@ ${MKDIR} -p ${PREFIX}/lib/X11/afterstep/doc/
-		@for file in CHANGES CREDITS README README.8bit FAQ module-interface.txt; do \
+		@for file in CHANGES CREDITS README README.8bit INSTALL FAQ module-interface.txt; do \
 			${INSTALL_DATA} ${WRKSRC}/$$file ${PREFIX}/lib/X11/afterstep/doc/; \
 		done
 

@@ -26,6 +26,7 @@ lib/X11/afterstep/doc/CREDITS
 lib/X11/afterstep/doc/README
 lib/X11/afterstep/doc/README.8bit
 lib/X11/afterstep/doc/FAQ
+lib/X11/afterstep/doc/INSTALL
 lib/X11/afterstep/doc/module-interface.txt
 lib/X11/afterstep/sounds/bong.au
 lib/X11/afterstep/sounds/clink.au
