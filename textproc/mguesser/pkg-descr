@@ -1,0 +1,4 @@
+Mguesser is a utility which guesses the corresponding charset and
+language for the data piped from standard input.
+
+WWW: http://www.mnogosearch.org/guesser/

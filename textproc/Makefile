@@ -75,6 +75,7 @@
     SUBDIR += ltxml
     SUBDIR += man2html
     SUBDIR += mgdiff
+    SUBDIR += mguesser
     SUBDIR += mkcatalog
     SUBDIR += mswordview
     SUBDIR += nfbtrans
