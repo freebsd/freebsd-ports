@@ -1,0 +1,5 @@
+The workbench has been installed into ${PREFIX}/lib/uni.
+
+The two helper scripts ghchtk and ghcihtk have been installed into
+${PREFIX}/bin and can be used to easily add the Htk package-conf to the
+ghc(i) command line.
