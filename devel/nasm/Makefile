@@ -19,5 +19,7 @@ do-install:
 	cd ${WRKSRC} && \
 	${INSTALL_PROGRAM} nasm ndisasm ${PREFIX}/bin &&\
 	${INSTALL_MAN} nasm.1 ndisasm.1 ${PREFIX}/man/man1
+	$(MKDIR) -p $(PREFIX)/share/nasm
+	${INSTALL_MAN} $(WRKSRC)/*.doc $(PREFIX)/share/nasm
 
 .include <bsd.port.mk>
