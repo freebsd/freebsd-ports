@@ -1,6 +1,9 @@
 **********************************************************************
-
+ HEADS UP: The Fish now defaults to GTK+ 2.x. GTK+ 1.2 is still
+ supported, but will be eventually dropped. Users are encouraged to
+ use the GTK+ 2.0 version.
+ ---------------------------------------------------------------------
  If you want to build The Fish without the GTK+ UI, use make -DNO_GUI
- If you prefer to use GTK+ 2.0 instead of 1.2, use make -DWITH_GTK2
+ If you prefer to use GTK+ 1.2 instead of 2.0, use make -DWITH_GTK12
 
 **********************************************************************
