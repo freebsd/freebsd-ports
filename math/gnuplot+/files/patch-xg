@@ -1,7 +1,6 @@
-# vector-clip
---- graphics.c.ORIG	Wed Sep 15 16:30:29 1999
-+++ graphics.c	Thu Dec  2 13:16:57 1999
-@@ -1369,7 +1369,6 @@
+--- graphics.c.orig	Wed Jan 24 14:58:50 2001
++++ graphics.c	Wed Jan 24 14:58:51 2001
+@@ -1373,7 +1373,6 @@
  
      /* label first y axis tics */
      if (ytics) {
@@ -9,7 +8,7 @@
  	/* set the globals ytick2d_callback() needs */
  
  	if (rotate_ytics && (*t->text_angle) (1)) {
-@@ -1388,8 +1387,8 @@
+@@ -1392,8 +1391,8 @@
  	else
  	    tic_mirror = -1;	/* no thank you */
  
@@ -20,7 +19,7 @@
  	    tic_direction = -1;
  	    if (ytics & TICS_MIRROR)
  		tic_mirror = tic_start;
-@@ -1409,7 +1408,6 @@
+@@ -1413,7 +1412,6 @@
      }
      /* label first x axis tics */
      if (xtics) {
@@ -28,7 +27,7 @@
  	/* set the globals xtick2d_callback() needs */
  
  	if (rotate_xtics && (*t->text_angle) (1)) {
-@@ -1426,8 +1424,8 @@
+@@ -1430,8 +1428,8 @@
  	    tic_mirror = ytop;
  	else
  	    tic_mirror = -1;	/* no thank you */
@@ -39,7 +38,7 @@
  	    tic_direction = -1;
  	    if (xtics & TICS_MIRROR)
  		tic_mirror = tic_start;
-@@ -1454,7 +1452,6 @@
+@@ -1458,7 +1456,6 @@
      /* label second y axis tics */
      if (y2tics) {
  	/* set the globalss ytick2d_callback() needs */
@@ -47,7 +46,7 @@
  
  	if (rotate_y2tics && (*t->text_angle) (1)) {
  	    tic_hjust = CENTRE;
-@@ -1470,8 +1467,8 @@
+@@ -1474,8 +1471,8 @@
  	    tic_mirror = xleft;
  	else
  	    tic_mirror = -1;	/* no thank you */
@@ -58,7 +57,7 @@
  	    tic_direction = 1;
  	    if (y2tics & TICS_MIRROR)
  		tic_mirror = tic_start;
-@@ -1490,7 +1487,6 @@
+@@ -1494,7 +1491,6 @@
      }
      /* label second x axis tics */
      if (x2tics) {
@@ -66,7 +65,7 @@
  	/* set the globals xtick2d_callback() needs */
  
  	if (rotate_x2tics && (*t->text_angle) (1)) {
-@@ -1507,8 +1503,8 @@
+@@ -1511,8 +1507,8 @@
  	    tic_mirror = ybot;
  	else
  	    tic_mirror = -1;	/* no thank you */
@@ -77,7 +76,7 @@
  	    tic_direction = 1;
  	    if (x2tics & TICS_MIRROR)
  		tic_mirror = tic_start;
-@@ -1560,45 +1556,58 @@
+@@ -1564,45 +1560,58 @@
  
      x_axis = FIRST_X_AXIS;
      y_axis = FIRST_Y_AXIS;	/* chose scaling */
@@ -102,7 +101,7 @@
 -	(*t->move) (axis_zero[FIRST_X_AXIS], ybot);
 -	(*t->vector) (axis_zero[FIRST_X_AXIS], ytop);
 +    else {
-+	axis_zero[FIRST_X_AXIS] = map_y(0.0);
++	axis_zero[FIRST_Y_AXIS] = map_y(0.0);
 +	if (xzeroaxis.l_type > -3) {
 +	    term_apply_lp_properties(&xzeroaxis);
 +	    (*t->move) (xleft, axis_zero[FIRST_Y_AXIS]);
@@ -114,7 +113,7 @@
 +    else if (x_min <= 0.0 && x_max <= 0.0)
 +	axis_zero[FIRST_Y_AXIS] = xright;
 +    else {
-+	axis_zero[FIRST_Y_AXIS] = map_x(0.0);
++	axis_zero[FIRST_X_AXIS] = map_x(0.0);
 +	if ((yzeroaxis.l_type > -3) && !is_log_x) {
 +	    term_apply_lp_properties(&yzeroaxis);
 +	    (*t->move) (axis_zero[FIRST_X_AXIS], ybot);
@@ -145,7 +144,7 @@
 -	(*t->move) (axis_zero[SECOND_X_AXIS], ybot);
 -	(*t->vector) (axis_zero[SECOND_X_AXIS], ytop);
 +    else {
-+	axis_zero[SECOND_X_AXIS] = map_y(0.0);
++	axis_zero[SECOND_Y_AXIS] = map_y(0.0);
 +	if (x2zeroaxis.l_type > -3) {
 +	    term_apply_lp_properties(&x2zeroaxis);
 +	    (*t->move) (xleft, axis_zero[SECOND_Y_AXIS]);
@@ -157,7 +156,7 @@
 +    else if (x_min <= 0.0 && x_max <= 0.0)
 +	axis_zero[SECOND_Y_AXIS] = xright;
 +    else {
-+	axis_zero[SECOND_Y_AXIS] = map_x(0.0);
++	axis_zero[SECOND_X_AXIS] = map_x(0.0);
 +	if ((y2zeroaxis.l_type > -3) && !is_log_x2) {
 +	    term_apply_lp_properties(&y2zeroaxis);
 +	    (*t->move) (axis_zero[SECOND_X_AXIS], ybot);
@@ -166,7 +165,7 @@
      }
      /* DRAW PLOT BORDER */
      if (draw_border) {
-@@ -2739,14 +2748,61 @@
+@@ -2754,14 +2763,61 @@
      int i;
      int x1, y1, x2, y2;
      struct termentry *t = term;
