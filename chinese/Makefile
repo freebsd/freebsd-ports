@@ -83,6 +83,7 @@
     SUBDIR += p5-Lingua-ZH-Numbers
     SUBDIR += p5-Lingua-ZH-TaBE
     SUBDIR += p5-Lingua-ZH-Toke
+    SUBDIR += p5-Lingua-ZH-Wrap
     SUBDIR += pine4
     SUBDIR += pyDict
     SUBDIR += qe
