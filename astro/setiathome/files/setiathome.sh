@@ -1,5 +1,6 @@
 #!/bin/sh
-
+#
+# $FreeBSD$
 #
 # Start or stop setiathome, or set up working directory and register
 #
@@ -10,6 +11,7 @@ seti_bindir=!!SUBDIR!!			# exec directory relative to ${PREFIX}
 seti_command=setiathome			# command name
 seti_std_args=-email			# command arguments for standard mode
 seti_reg_args=-login			# command arguments for register mode
+seti_proxy_args=			# proxy arguments
 seti_user=nobody			# user id to run as
 seti_nice=1				# nice level to run at
 seti_maxprocs=`sysctl -n hw.ncpu`	# max. number of processes to start
@@ -50,7 +52,7 @@ case $1 in
 			su -fm ${seti_user} -c "\
 				(cd ${seti_wrkdir}/${i} && \
 				 exec ${PREFIX}/${seti_bindir}/${seti_command} \
-				 ${seti_std_args} \
+				 ${seti_std_args} ${seti_proxy_args} \
 				 ${seti_nice+-nice} ${seti_nice} >/dev/null &)"
 			echo -n " SETI@home"
 		done
@@ -65,6 +67,7 @@ case $1 in
 		mkdir -p ${seti_wrkdir}
 		chown ${seti_user} ${seti_wrkdir}
 		chmod u=Xrw,g=Xr,o=Xr ${seti_wrkdir}
+		seti_dontlogin=no
 		if [ -f ${seti_wrkdir}/user_info.sah ]; then
 			echo "      It seems you have already registered with SETI@home.  Would you like"
 			echo -n "      to repeat the procedure? [Y/n] "
@@ -78,7 +81,7 @@ case $1 in
 			su -fm ${seti_user} -c "\
 				cd ${seti_wrkdir} && \
 				exec ${PREFIX}/${seti_bindir}/${seti_command} \
-				${seti_reg_args}"
+				${seti_reg_args} ${seti_proxy_args}"
 		fi
 
 		if [ ${seti_maxprocs} -gt 1 ]; then
