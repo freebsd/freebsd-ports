@@ -22,6 +22,12 @@ USE_PERL5=	yes
 
 DOCDIR=${PREFIX}/share/doc/ccdoc
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=		"Does not compile on FreeBSD ${OSVERSION} (gcc3.3 string continuation)"
+.endif
+
 pre-patch:
 	@${ECHO} "Stripping ^M from all the files..."
 	@${FIND} ${WRKSRC} -type f | ${XARGS} perl -pi -e 's/\r//'
@@ -44,4 +50,4 @@ post-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/autodoc/* ${DOCDIR}/autodoc
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
