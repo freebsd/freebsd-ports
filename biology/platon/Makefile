@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	platon
-PORTVERSION=	2000.06.05
+PORTVERSION=	2001.03.09
 CATEGORIES=	biology
 MASTER_SITES=	ftp://xraysoft.chem.uu.nl/pub/unix/
 DISTNAME=	platon
@@ -36,6 +36,7 @@ MAKE_ENV+=	HAVE_G2C=yes
 pre-patch:
 	(cd ${WRKDIR}/${DISTNAME} && ${GUNZIP_CMD} platon.f.Z)
 	${SED} 's,%%X11BASE%%,${X11BASE},g' ${FILESDIR}/Makefile > ${WRKDIR}/${DISTNAME}/Makefile
+	(cd ${WRKDIR}/${DISTNAME} && ${GUNZIP_CMD} xdrvr.c.gz)
 
 pre-install:
 	strip ${WRKDIR}/${DISTNAME}/platon
