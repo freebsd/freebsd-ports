@@ -7,12 +7,12 @@
 #
 
 PORTNAME=	txt2regex
-PORTVERSION=	0.3.1
+PORTVERSION=	0.4
 CATEGORIES=	misc
 MASTER_SITES=	http://txt2regex.sourceforge.net/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ijliao@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash2 \
 		gseq:${PORTSDIR}/misc/sh-utils
