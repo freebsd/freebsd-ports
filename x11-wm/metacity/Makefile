@@ -7,6 +7,7 @@
 
 PORTNAME=	metacity
 PORTVERSION=	2.3.377
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://people.redhat.com/~hp/metacity/
 DIST_SUBDIR=	gnome2
@@ -22,8 +23,9 @@ USE_LIBTOOL=	yes
 CONFIGURE_ARGS= --localstatedir=${PREFIX}/share/gnome \
 		--datadir=${PREFIX}/share/gnome \
 		--disable-gtk-doc
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
+CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 
 pre-patch:
 	@${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
