@@ -1,4 +1,3 @@
-@cwd /usr/local
 bin/irsim
 bin/ifsim
 bin/h2a

@@ -1,4 +1,3 @@
-@cwd /usr/local
 bin/hpack
 lib/hpack
 etc/hpack.cfg
