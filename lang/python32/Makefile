@@ -36,35 +36,36 @@ PLIST_SUB=	PYVER=${PYTHON_VERSION:S/python//}
 DEMODIR=	${PREFIX}/share/examples/${PYTHON_VERSION}
 TOOLSDIR=	${PREFIX}/share/${PYTHON_VERSION}
 
-#
-# If you don't want to use Python's thread module, you need to set
-# WITHOUT_THREADS.
-#
-.if !defined(WITHOUT_THREADS)
+OPTIONS=	THREADS "Enable thread support" on \
+		HUGE_STACK_SIZE "Use a larger thread stack" off \
+		UCS2 "Use UCS2 instead of UCS4 for unicode support" off \
+		PYMALLOC "Uses python's internal malloc" on
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_THREADS)
 CONFIGURE_ARGS+=	--with-threads
 CFLAGS+=		${PTHREAD_CFLAGS}
-.if !defined(WANT_HUGE_STACK_SIZE)
+.if defined(WITHOUT_HUGE_STACK_SIZE)
 CFLAGS+=		-DTHREAD_STACK_SIZE=0x20000
 .else
 CFLAGS+=		-DTHREAD_STACK_SIZE=0x100000
-.endif # !defined(WANT_HUGE_STACK_SIZE)
+.endif # defined(WITHOUT_HUGE_STACK_SIZE)
 CONFIGURE_ENV+=		LDFLAGS="${PTHREAD_LIBS} ${LDFLAGS}"
 .else
 CONFIGURE_ARGS+=	--without-threads
 .if defined(LDFLAGS)
 CONFIGURE_ENV+=		LDFLAGS="${LDFLAGS}"
 .endif # defined(LDFLAGS)
-.endif # !defined(WITHOUT_THREADS)
+.endif # defined(WITH_THREADS)
 
-.if !defined(WITH_UCS2)
+.if defined(WITHOUT_UCS2)
 CONFIGURE_ARGS+=	--enable-unicode=ucs4
 .endif
 
 .if defined(WITHOUT_PYMALLOC)
 CONFIGURE_ARGS+=        --without-pymalloc
 .endif
-
-.include <bsd.port.pre.mk>
 
 .if ${ARCH} == i386
 PLIST_SUB+=	X86_ONLY=""
@@ -166,7 +167,7 @@ post-install:
 	${INSTALL_PROGRAM} \
 		${SHARED_WRKSRC}/${PYTHON_VERSION:S/thon/thon-shared/} \
 		${PREFIX}/bin
- 
+
 	@# additional files installing by ports
 	${INSTALL_SCRIPT} ${WRKDIR}/pydoc2.4 ${WRKDIR}/idle2.4 \
 		${PREFIX}/bin
