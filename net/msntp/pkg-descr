@@ -1,0 +1,7 @@
+MSNTP can be used as a SNTP client to query a NTP or SNTP server and
+either display the time or set the local system's time (given suitable
+privilege).  It can be run as an interactive command, in a cron job or
+as a daemon.  It can be run as a daemon to provide a SNTP server for
+other clients.
+
+Author:	N.M. Maclaren at the University of Cambridge
