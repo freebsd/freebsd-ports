@@ -1,0 +1,19 @@
+*** shared.c~	Thu Dec 14 20:41:02 1989
+--- shared.c	Sun Nov 20 00:59:30 1994
+***************
+*** 58,64 ****
+  #include "bitmap/window.bits"
+  #include "bitmap/anti.bits"
+  
+! char *sprintf();    /* UNIX brain damage */
+  
+  /* All in and out movements except up */
+  #define NOUPBITS   DLEAVE | LLEAVE | RLEAVE | HENTER | VENTER
+--- 58,64 ----
+  #include "bitmap/window.bits"
+  #include "bitmap/anti.bits"
+  
+! /* char *sprintf();    /* UNIX brain damage */
+  
+  /* All in and out movements except up */
+  #define NOUPBITS   DLEAVE | LLEAVE | RLEAVE | HENTER | VENTER

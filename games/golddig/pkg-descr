@@ -1,0 +1,10 @@
+Golddig is a fast action game designed for use with the X window
+system.  
+Makelev is used to create and edit new levels which can be used by
+golddig.
+
+The goal in golddig is to pick up all the gold pieces and then go to
+the next level without getting eaten by one of the bad guys.  The gold
+pieces are distinctive small circular coins.  After picking up all of
+the gold, the player must get to an open door or the top row of the
+level.  After accomplishing this, the game will start the next level.

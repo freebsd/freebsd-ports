@@ -1,0 +1,251 @@
+This patch is not required to compile/run golddig. Its only purpose is to 
+improve the game (IMHO)  --jmz
+
+*** golddig.c~	Thu Dec 14 20:41:03 1989
+--- golddig.c	Sun Nov 20 01:23:40 1994
+***************
+*** 29,34 ****
+--- 29,38 ----
+  
+  #define EVMASK KeyPressMask | ExposureMask | ButtonPressMask | FocusChangeMask
+  
++ int x_lives, x_initial_score;
++ #define TURBO 15
++ int x_turbo = TURBO;
++ 
+  int newlevel = 0;       /* Non-zero if a new level was just drawn */
+  struct itimerval cycletime; /* Structure used when setting up timer */
+  /* These are the graphics cursors used for drawing the player at */
+***************
+*** 167,177 ****
+      puts("z,<,q,u,R13 - make hole left");
+      puts("x,>,e,o,R15 - make hole right");
+      puts("r,y,R7 - put down any held item");
+!     puts("1-9 - change the game speed");
+      puts("\n^S,^Z - pause the game");
+      puts("^Q,^Y - reactivate the game");
+      puts("^C - kill the game");
+      puts("^R - redraw the screen");
+      break;
+    /* A space bar changes the command to STAND */
+    case XK_space:    case XK_R11:
+--- 171,182 ----
+      puts("z,<,q,u,R13 - make hole left");
+      puts("x,>,e,o,R15 - make hole right");
+      puts("r,y,R7 - put down any held item");
+!     puts("0-9 - change the game speed (0 is *very* fast)");
+      puts("\n^S,^Z - pause the game");
+      puts("^Q,^Y - reactivate the game");
+      puts("^C - kill the game");
+      puts("^R - redraw the screen");
++     puts("^A - restart the level");
+      break;
+    /* A space bar changes the command to STAND */
+    case XK_space:    case XK_R11:
+***************
+*** 251,256 ****
+--- 256,262 ----
+    regen_tree();
+    /* Freeze action until a key is pressed */
+    newlevel = 1;
++   x_initial_score = score;
+  }
+  
+  /* Move player one movement */
+***************
+*** 299,304 ****
+--- 305,311 ----
+         ((code & UPLEVEL) && ! (code & INACTIVE)))  {
+        /* Increment the level number */
+        levelnum ++;
++       x_lives++;
+        /* Load the next level in if the current one is done */
+        init_level();
+        /* Redraw the level */
+***************
+*** 309,316 ****
+        return;
+      }
+      /* If the block is a killer block, kill the player */
+!     if(code & KILLIN)
+        died("was crushed");
+    }
+    /* Do not let PUTDOWN order stay after movement has started */
+    else if(curorder == PUTDOWN)
+--- 316,332 ----
+        return;
+      }
+      /* If the block is a killer block, kill the player */
+!     if(code & KILLIN) {
+!       if(--x_lives) { /* restart level */
+! 	  goldleft = 0; player.ypos = 0; code |= UPLEVEL; code |= INACTIVE;
+! 	  score = x_initial_score;
+! 	  init_level();
+! 	  redrawall();
+! 	  XFlush(disp);
+! 	  return;
+!       }
+        died("was crushed");
++     }
+    }
+    /* Do not let PUTDOWN order stay after movement has started */
+    else if(curorder == PUTDOWN)
+***************
+*** 350,357 ****
+    /* Check if the player is overlapping one of the bad guys while not */
+    /* holding armor. */
+    if(! (fast_lookup[player.hold].code & ARMOR) &&
+!      overlap_badguy(player.xpos,player.ypos,-1))
+      died("was eaten");
+    /* Redraw player if he moved.  Redraw occasionally anyway. */
+    if(player.xpos != player.xold || player.ypos != player.yold ||
+       (curtick & 0xf) == 0)
+--- 366,382 ----
+    /* Check if the player is overlapping one of the bad guys while not */
+    /* holding armor. */
+    if(! (fast_lookup[player.hold].code & ARMOR) &&
+!      overlap_badguy(player.xpos,player.ypos,-1)) {
+!       if(--x_lives) { /* restart level */
+! 	  goldleft = 0; player.ypos = 0;
+! 	  score = x_initial_score;
+! 	  init_level();
+! 	  redrawall();
+! 	  XFlush(disp);
+! 	  return;
+!       } 
+      died("was eaten");
++   }
+    /* Redraw player if he moved.  Redraw occasionally anyway. */
+    if(player.xpos != player.xold || player.ypos != player.yold ||
+       (curtick & 0xf) == 0)
+***************
+*** 422,428 ****
+            sscanf(argv[i]+2,"%d",&speed);
+        }
+        else {
+!         printf("usage: golddig [-l <level>] [-s <speed 1-9>] [<world name>]\n");
+          exit(1);
+        }
+      }
+--- 447,453 ----
+            sscanf(argv[i]+2,"%d",&speed);
+        }
+        else {
+!         printf("usage: golddig [-l <level>] [-s <speed 0-9>] [<world name>]\n");
+          exit(1);
+        }
+      }
+***************
+*** 434,440 ****
+    }
+    /* remember what the starting level was */
+    levelstart = levelnum;
+! 
+    /* start up x windows and all graphics cursors for drawing level */
+    xstart(EVMASK);
+    /* reassemble the graphics cursors to prepare for actual play */
+--- 459,467 ----
+    }
+    /* remember what the starting level was */
+    levelstart = levelnum;
+!   x_lives = 6 - levelnum;
+!   if (x_lives < 1)
+!       x_lives = 1;
+    /* start up x windows and all graphics cursors for drawing level */
+    xstart(EVMASK);
+    /* reassemble the graphics cursors to prepare for actual play */
+***************
+*** 467,475 ****
+    init_level();
+   
+    /* initialize timer structure according to speed */
+!   if(speed <= 0)
+      speed = 1;
+!   if(speed <= 5)
+      cycletime.it_interval.tv_usec = (5-speed) * 50000 + 125000;
+    else
+      cycletime.it_interval.tv_usec = 625000 / speed;
+--- 494,504 ----
+    init_level();
+   
+    /* initialize timer structure according to speed */
+!   if(speed < 0)
+      speed = 1;
+!   if(speed == 0)
+!     cycletime.it_interval.tv_usec = 625000 / x_turbo;
+!   else if(speed <= 5)
+      cycletime.it_interval.tv_usec = (5-speed) * 50000 + 125000;
+    else
+      cycletime.it_interval.tv_usec = 625000 / speed;
+***************
+*** 517,528 ****
+          case XK_R: case XK_r:
+            redrawall();
+            break;
+          }
+        /* Pressing a number changes the game speed */
+!       else if(keyhit >= XK_1 && keyhit <= XK_9) {
+          speed = (int) (keyhit - XK_0);
+          /* Compute new cycle delay */
+!         if(speed <= 5)
+            cycletime.it_interval.tv_usec = (5-speed) * 50000 + 125000;
+          else
+            cycletime.it_interval.tv_usec = 625000 / speed;
+--- 546,569 ----
+          case XK_R: case XK_r:
+            redrawall();
+            break;
++         /*  ^A restarts the current level */
++         case XK_A: case XK_a:
++ 	  if(--x_lives) { /*  restart level */
++ 	      goldleft = 0; player.ypos = 0;
++ 	      score = x_initial_score;
++ 	      init_level();
++ 	      redrawall();
++ 	  } else
++ 	      died("was abandoned");
++ 	  break;
+          }
+        /* Pressing a number changes the game speed */
+!       else if(keyhit >= XK_0 && keyhit <= XK_9) {
+          speed = (int) (keyhit - XK_0);
+          /* Compute new cycle delay */
+! 	if(speed == 0)
+!           cycletime.it_interval.tv_usec = 625000 / x_turbo;
+!         else if(speed <= 5)
+            cycletime.it_interval.tv_usec = (5-speed) * 50000 + 125000;
+          else
+            cycletime.it_interval.tv_usec = 625000 / speed;
+*** shared.c~	Sun Nov 20 00:59:30 1994
+--- shared.c	Sun Nov 20 01:25:00 1994
+***************
+*** 279,287 ****
+  void draw_score()
+  {
+    char buf[50];
+  
+    /* Build the output string */
+!   sprintf(buf,"score: %d  level: %d  speed: %d",score,levelnum,speed);
+    /* Clear the current score line */
+    XFillRectangle(disp,wind,blackgc,0,ysize << 4,xsize << 4,SCORESIZE);
+    /* Actually draw the text */
+--- 279,288 ----
+  void draw_score()
+  {
+    char buf[50];
++   extern int x_lives;
+  
+    /* Build the output string */
+!   sprintf(buf,"score: %d  level: %d  speed: %d  lives: %d",score,levelnum,speed,x_lives);
+    /* Clear the current score line */
+    XFillRectangle(disp,wind,blackgc,0,ysize << 4,xsize << 4,SCORESIZE);
+    /* Actually draw the text */
+*** makelev.c~	Thu Dec 14 20:40:34 1989
+--- makelev.c	Sun Nov 20 01:54:47 1994
+***************
+*** 1,3 ****
+--- 1,4 ----
++ int x_lives;
+  /* This program was written by Alexander Siegel in September of 1989   */
+  /* at Cornell University.  It may may copied freely for private use or */
+  /* public dispersion provided that this comment is not removed.  This  */
