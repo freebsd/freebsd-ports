@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.177 1998/08/18 02:41:13 vanilla Exp $
+# $Id: Makefile,v 1.178 1998/08/24 01:56:48 steve Exp $
 #
 
     SUBDIR += SSLtelnet
@@ -122,7 +122,6 @@
     SUBDIR += ttt
     SUBDIR += ucd-snmp
     SUBDIR += vnc
-    SUBDIR += vncjava
     SUBDIR += wais
     SUBDIR += wget
     SUBDIR += wide-dhcp
