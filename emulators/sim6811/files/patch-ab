@@ -1,0 +1,76 @@
+*** sim6811.1~	Wed Sep  6 10:58:03 1995
+--- sim6811.1	Wed Sep  6 10:59:11 1995
+***************
+*** 0 ****
+--- 1,71 ----
++ .Dd June 5, 1993
++ .Dt sim6811 1
++ .Os BSD 4
++ .Sh NAME
++ .Nm sim6811
++ .Nd very simple and crude simulator for the 6811
++ .Sh SYNOPSIS
++ .Nm sim6811
++ .Ar s19-file
++ .Sh DESCRIPTION
++ .Ar s19-file
++ is a Motorola s19 assembler output file
++ 
++ some instructions aren't there yet (notably converning multiplication
++ and interrupts) and the interface only allows stepping.  this should
++ be easily rectifiable, however, and the simple structure should make
++ grafting on a graphical interface quite simple.
++ 
++ to run the simulator, just provide the name of an object file on the
++ command line.  the object file must be in s19 format, and must include
++ a reset vector in order to tell the simulator where to start
++ execution.  simulation proceeds one instruction at a time, with a
++ register and page zero memory dump being performed at each step.
++ 
++ several simple commands are supported, but additional commands to
++ modify memory, cause interrupts and simulate the special registers
++ would all be nice, and relatively easy to add.
++ 
++ .Sh COMMANDS
++ 
++ The current
++ .Nm sim6811
++ command set includes
++ 
++ .Bl -tag -width Ds
++ 
++ .Nm l [address [n]]
++ .br
++ .ti 8
++ disassemble n instructions starting at address
++ 
++ .Nm g [address [n]]
++ .br
++ .ti 8
++ go starting at address for n steps.  
++ 
++ .Nm s [n]
++ .br
++ .ti 8
++ step n times (n=1 default)
++ 
++ .Nm b [address[cnt]]
++ .br
++ .ti 8
++ set a breakpoint, which will stop cnt times
++ 
++ .Nm t [address[cnt]]
++ .br
++ .ti 8
++ set a temporary breakpoint.
++ 
++ .Nm <empty-line>
++ .br
++ .ti 8
++ step once
++ 
++ .Sh HISTORY
++ .Nm sim6811
++ was written by Ted Dunning <ted@nmsu.edu>. This manual page was created out of
++ various C-sources by Eric L. Hernes <erich@rrnet.com>.  Some example sources
++ and s19 files can be found in ftp://crl.nmsu.edu/pub/non-lexical/6811

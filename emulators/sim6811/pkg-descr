@@ -1,0 +1,14 @@
+from main.c:
+
+  very simple and crude simulator for the 6811
+
+  some instructions aren't there yet (notably converning multiplication
+  and interrupts) and the interface only allows stepping.  this should
+  be easily rectifiable, however, and the simple structure should make
+  grafting on a graphical interface quite simple.
+
+I am calling this version 1.6, to reflect the revision number of
+sim.h, which appears to be common to all (three) source files.
+
+eric.
+erich@rrnet.com

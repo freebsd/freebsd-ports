@@ -1,0 +1,43 @@
+*** Makefile~	Wed Sep  6 10:15:18 1995
+--- Makefile	Wed Sep  6 11:00:51 1995
+***************
+*** 1,15 ****
+! BINDIR = /usr/unsupported/bin
+  CC = gcc
+! CFLAGS = -g -Wall  -DINLINE=inline
+! CFLAGS += -O2 -DINLINE=inline
+! sim: main.o sim.o dis.o
+! 	$(CC) $(CFLAGS) main.o sim.o dis.o -o sim $(LDLIBS)
+  sim.o: sim.h
+  main.o: sim.h
+  dis.o: sim.h
+  
+! install:	sim
+! 	cp sim $(BINDIR)/sim6811
+  
+  sharfile: sim.h Makefile sim.c main.c dis.c
+  	shar -C  sim.h Makefile sim.c main.c dis.c >sharfile
+--- 1,23 ----
+! BINDIR = ${PREFIX}/bin
+! MANDIR=  ${PREFIX}/man/man1
+! 
+  CC = gcc
+! CFLAGS = -O2 -DINLINE=inline
+! 
+! all: sim6811
+! 
+! sim6811: main.o sim.o dis.o
+! 	$(CC) $(CFLAGS) main.o sim.o dis.o -o $@ $(LDLIBS)
+! 
+  sim.o: sim.h
+  main.o: sim.h
+  dis.o: sim.h
+  
+! install: sim6811
+! 	cp sim6811 $(BINDIR)/sim6811
+! 	strip ${BINDIR}/sim6811
+! 	cp sim6811.1 ${MANDIR}
+! 	gzip -9nf ${MANDIR}/sim6811.1
+  
+  sharfile: sim.h Makefile sim.c main.c dis.c
+  	shar -C  sim.h Makefile sim.c main.c dis.c >sharfile
