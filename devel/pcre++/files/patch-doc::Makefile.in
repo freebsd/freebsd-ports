@@ -1,0 +1,13 @@
+--- doc/Makefile.in.orig	Wed Jun 25 11:56:02 2003
++++ doc/Makefile.in	Wed Jun 25 11:56:17 2003
+@@ -232,8 +232,8 @@
+ 
+ 
+ install-data-local:
+-	$(INSTALL) -m 755 -d $(prefix)/doc/libpcre++-$(VERSION)
+-	$(INSTALL) -m 644 $(DOC_FILES) $(prefix)/doc/libpcre++-$(VERSION)/
++	$(INSTALL) -m 755 -d $(prefix)/share/doc/libpcre++-$(VERSION)
++	$(INSTALL) -m 644 $(DOC_FILES) $(prefix)/share/doc/libpcre++-$(VERSION)/
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.

@@ -7,11 +7,11 @@
 #
 
 PORTNAME=	pcre++
-PORTVERSION=	0.6
+PORTVERSION=	0.9.2
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.daemon.de/scip/Apps/pcre++/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ponomarew@oberon.net
 COMMENT=	A wrapper class around the pcre library
 
 LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
@@ -26,16 +26,9 @@ CONFIGURE_ENV=	CPPFLAGS="`${PCRE_CONFIG} --cflags`" \
 INSTALLS_SHLIB=	yes
 
 MAN3=	Pcre.3
+PLIST_SUB=	VERSION=0.9.2
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-I/usr/local/include||g ; \
-		 s|-L/usr/local/lib||g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|-O -g|\@CXXFLAGS\@|g' ${WRKSRC}/Makefile.in
-
-post-install:
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/html/*.* ${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>
