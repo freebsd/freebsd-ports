@@ -1,0 +1,99 @@
+--- plugins/archiver/bz2/Makefile.in.orig	Thu Aug 17 22:51:32 2000
++++ plugins/archiver/bz2/Makefile.in	Thu Dec  7 02:11:37 2000
+@@ -90,7 +90,7 @@
+ saver_dirs = @saver_dirs@
+ 
+ lib_LTLIBRARIES = archiver_bz2.la
+-archiver_bz2_la_LDFLAGS = -module
++archiver_bz2_la_LDFLAGS = -module -avoid-version
+ libdir = @Plugins_archiver_dir@
+ LIBS = -lbz2
+ 
+--- plugins/archiver/dri/Makefile.in.orig	Thu Aug 17 22:51:32 2000
++++ plugins/archiver/dri/Makefile.in	Thu Dec  7 02:12:59 2000
+@@ -90,7 +90,7 @@
+ saver_dirs = @saver_dirs@
+ 
+ lib_LTLIBRARIES = archiver_dri.la
+-archiver_dri_la_LDFLAGS = -module
++archiver_dri_la_LDFLAGS = -module -avoid-version
+ libdir = @Plugins_archiver_dir@
+ LIBS = 
+ 
+--- plugins/archiver/exe/Makefile.in.orig	Thu Aug 17 22:51:33 2000
++++ plugins/archiver/exe/Makefile.in	Thu Dec  7 02:13:10 2000
+@@ -90,7 +90,7 @@
+ saver_dirs = @saver_dirs@
+ 
+ lib_LTLIBRARIES = archiver_exe.la
+-archiver_exe_la_LDFLAGS = -module
++archiver_exe_la_LDFLAGS = -module -avoid-version
+ libdir = @Plugins_archiver_dir@
+ LIBS = 
+ 
+--- plugins/archiver/gz/Makefile.in.orig	Thu Aug 17 22:51:34 2000
++++ plugins/archiver/gz/Makefile.in	Thu Dec  7 02:13:12 2000
+@@ -90,7 +90,7 @@
+ saver_dirs = @saver_dirs@
+ 
+ lib_LTLIBRARIES = archiver_gz.la
+-archiver_gz_la_LDFLAGS = -module
++archiver_gz_la_LDFLAGS = -module -avoid-version
+ libdir = @Plugins_archiver_dir@
+ LIBS = -lz
+ 
+--- plugins/archiver/libarc/Makefile.in.orig	Thu Aug 17 22:51:35 2000
++++ plugins/archiver/libarc/Makefile.in	Thu Dec  7 02:13:15 2000
+@@ -90,7 +90,7 @@
+ saver_dirs = @saver_dirs@
+ 
+ lib_LTLIBRARIES = archiver_libarc.la
+-archiver_libarc_la_LDFLAGS = -module
++archiver_libarc_la_LDFLAGS = -module -avoid-version
+ libdir = @Plugins_archiver_dir@
+ LIBS = -larc
+ 
+--- plugins/archiver/misc/Makefile.in.orig	Thu Aug 17 22:51:36 2000
++++ plugins/archiver/misc/Makefile.in	Thu Dec  7 02:13:19 2000
+@@ -91,7 +91,7 @@
+ 
+ EXTRA_DIST = miscfmt.txt miscloader.sample
+ lib_LTLIBRARIES = archiver_misc.la
+-archiver_misc_la_LDFLAGS = -module
++archiver_misc_la_LDFLAGS = -module -avoid-version
+ libdir = @Plugins_archiver_dir@
+ LIBS = 
+ 
+--- plugins/archiver/one/Makefile.in.orig	Thu Aug 17 22:51:37 2000
++++ plugins/archiver/one/Makefile.in	Thu Dec  7 02:13:22 2000
+@@ -90,7 +90,7 @@
+ saver_dirs = @saver_dirs@
+ 
+ lib_LTLIBRARIES = archiver_one.la
+-archiver_one_la_LDFLAGS = -module
++archiver_one_la_LDFLAGS = -module -avoid-version
+ libdir = @Plugins_archiver_dir@
+ LIBS = 
+ 
+--- plugins/archiver/pak/Makefile.in.orig	Thu Aug 17 22:51:37 2000
++++ plugins/archiver/pak/Makefile.in	Thu Dec  7 02:13:25 2000
+@@ -90,7 +90,7 @@
+ saver_dirs = @saver_dirs@
+ 
+ lib_LTLIBRARIES = archiver_pak.la
+-archiver_pak_la_LDFLAGS = -module
++archiver_pak_la_LDFLAGS = -module -avoid-version
+ libdir = @Plugins_archiver_dir@
+ LIBS = 
+ 
+--- plugins/archiver/tar/Makefile.in.orig	Thu Aug 17 22:51:38 2000
++++ plugins/archiver/tar/Makefile.in	Thu Dec  7 02:13:28 2000
+@@ -90,7 +90,7 @@
+ saver_dirs = @saver_dirs@
+ 
+ lib_LTLIBRARIES = archiver_tar.la
+-archiver_tar_la_LDFLAGS = -module
++archiver_tar_la_LDFLAGS = -module -avoid-version
+ libdir = @Plugins_archiver_dir@
+ LIBS = 
+ 
