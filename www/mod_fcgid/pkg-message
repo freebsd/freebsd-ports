@@ -1,0 +1,10 @@
+************************************************************
+To enable this module, add something like the following
+lines to your server configuration file:
+
+  LoadModule fcgid_module libexec/apache2/mod_fcgid.so
+
+  <IfModule mod_fcgid.c>
+    AddHandler fcgid-script .fcgi
+  </IfModule>
+************************************************************
