@@ -29,6 +29,7 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/elisp/*el ${PREFIX}/${EMACS_SITE_LISPDIR}/distel
 	@${INSTALL_DATA} ${WRKSRC}/elisp/*elc ${PREFIX}/${EMACS_SITE_LISPDIR}/distel
 	@${INSTALL_DATA} ${WRKSRC}/elisp/*elc ${PREFIX}/${EMACS_SITE_LISPDIR}/distel
+	@${MKDIR} ${DOCSDIR}
 	@for FILE in ${DISTEL_DOCS}; do \
 		${INSTALL_DATA} ${WRKSRC}/$${FILE} ${DOCSDIR}; \
 	done
