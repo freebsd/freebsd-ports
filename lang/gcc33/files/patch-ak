@@ -1,15 +1,32 @@
---- gcc/configure.orig	Wed Dec  2 11:22:52 1998
-+++ gcc/configure	Tue Feb  9 02:21:19 1999
-@@ -2748,20 +2748,21 @@
+--- gcc/configure.orig	Mon Mar  8 10:06:10 1999
++++ gcc/configure	Sat Mar 13 19:08:06 1999
+@@ -2395,6 +2395,15 @@
+  			thread_file='posix'
+  		fi
+ 		;;
++	alpha*-*-freebsd*)
++		tm_file="${tm_file} freebsd.h alpha/freebsd.h alpha/freebsd-elf.h"
++		xm_file="${xm_file} xm-freebsd.h"
++		target_cpu_default="MASK_GAS"
++		tmake_file="t-freebsd alpha/t-crtbe"
++		xmake_file=none
++		fixincludes=fixinc.wrap
++		gas=yes gnu_ld=yes
++		;;
+ 	alpha*-*-netbsd*)
+ 		tm_file="${tm_file} alpha/elf.h alpha/netbsd.h alpha/netbsdl-elf.h"
+ 		xm_file="xm-netbsd.h ${xm_file}"
+@@ -2851,21 +2860,21 @@
  # Next line turned off because both 386BSD and BSD/386 use GNU ld.
  #		use_collect2=yes
  		;;
 -	i[34567]86-*-freebsdelf*)
 -		tm_file="i386/i386.h i386/att.h linux.h i386/freebsd-elf.h i386/perform.h"
 +	i[34567]86-*-freebsdaout*)
-+		tm_file=i386/freebsd.h
++		tm_file=i386/freebsd-aout.h
  		# On FreeBSD, the headers are already ok, except for math.h.
  		fixincludes=fixinc.wrap
+-		extra_parts="crtbegin.o crtbeginS.o crtend.o crtendS.o"
  		tmake_file=i386/t-freebsd
 -		gas=yes
 -		gnu_ld=yes
