@@ -1,0 +1,11 @@
+--- siag/railway.c.orig	Sun Jun  6 10:30:40 1999
++++ siag/railway.c	Tue Jun 22 13:59:53 1999
+@@ -375,7 +375,7 @@
+ void ref_expander(buffer *buf, char *src, char *dest,
+ 		char *brk, char *tmpl, char *rng)
+ {
+-	int a1_refs = buf->a1_refs;
++	int a1_refs = buf ? buf->a1_refs : 0;
+ 	ref_state state = REF_START;
+ 	char *exp;
+ 	char *start, *end;

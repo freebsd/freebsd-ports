@@ -1,29 +1,72 @@
 # New ports collection makefile for:	siag (Scheme In A Grid)
-# Version required:	2.80
+# Version required:	3.1.18
 # Date created:		27 Jan 1998
-# Whom:			ports@freebsd.org
+# Whom:			mi@aldan.algebra.com
 #
-# $Id: Makefile,v 1.12 1998/12/10 17:24:33 vanilla Exp $
+# $Id: Makefile,v 1.13 1999/04/20 00:02:10 mharo Exp $
 #
 
-DISTNAME=	siag-3.1.9
+DISTNAME=	siag-3.1.18
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.edu.stockholm.se/pub/siag/ \
 		ftp://ftp.icm.edu.pl/site/siag/
-#DISTFILES=	${DISTNAME}${EXTRACT_SUFX} tsiag-3.0.7.tar.gz
 
 MAINTAINER=	ports@freebsd.org
 
 LIB_DEPENDS=	Xaw3d.6:${PORTSDIR}/x11-toolkits/Xaw3d \
-		Xpm.4:${PORTSDIR}/graphics/xpm \
-		guile.4:${PORTSDIR}/lang/guile
+		Xpm.4:${PORTSDIR}/graphics/xpm
+RUN_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot \
+		catdoc:${PORTSDIR}/textproc/catdoc
 
-BROKEN=	'installs into doc, not share/doc and needs more testing (probably simple)'
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV+= LOCALBASE=${LOCALBASE}
+
+CPPFLAGS+=	-I${LOCALBASE}/include
+
+.if defined(GUILE)
+LIB_DEPENDS+=	guile.4:${PORTSDIR}/lang/guile
+.endif
+
+.if !defined(NOGDBM)
+BUILD_DEPENDS+=	${LOCALBASE}/lib/libgdbm.a:${PORTSDIR}/databases/gdbm
+CPPFLAGS+=	-DGDBM
+.endif
+
+.if !defined(NOT1)
+BUILD_DEPENDS+=	${LOCALBASE}/lib/libt1.a:${PORTSDIR}/devel/t1lib
+.endif
+
+.if !defined(NOTCL)
+# Feel free to try other versions of TCL here:
+LIB_DEPENDS+=	tcl80:${PORTSDIR}/lang/tcl80
+CPPFLAGS+=	-I${LOCALBASE}/include/tcl8.0
+CONFIGURE_ARGS+=--with-tcl=tcl80
+.endif
+
+CONFIGURE_ENV+= LOCALBASE=${LOCALBASE} \
+			LDFLAGS=-L${LOCALBASE}/lib \
+			CPPFLAGS="${CPPFLAGS}"
+
 USE_X_PREFIX=	yes
 
+MAN1=	xedplus.1 xfiler.1 gvu.1 siod.1 siag.1 pw.1 egon.1 dummy_plugin.1
+
 post-install:
-	@${CAT} ${PKGDIR}/MESSAGE
+	# Examples  and  documentation went  into  ${PREFIX}/share/doc
+	# Note, that the Siag's wordprocessor. the Pathetic Writer (or
+	# pw)  is installed  in  ${PREFIX}/bin/pw.  Depending on  your
+	# users'  PATH  it  may  or  may  not  interfere  with  simple
+	# invocation of /usr/sbin/pw.
+	@test -e ${PREFIX}/lib/X11/app-defaults/Siag && ${ECHO} \
+		"It seems, you have old app-defaults file(s) from Siag.\
+		 Consider removing it(them) if new siag fails to come up" |\
+		fmt || true
+
+post-patch:
+	# Fixing makefiles to put docs in ${LOCALBASE}/share/doc/siag
+	for m in `find ${WRKSRC} -name Makefile.in |\
+			xargs ${GREP} -l doc\\/siag`; do \
+		${MV} $$m $$m.orig; \
+		${SED} s@doc/siag@share/doc/siag@ < $$m.orig > $$m; \
+	done
 
 .include <bsd.port.mk>
