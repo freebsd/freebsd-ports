@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=		gambas
-PORTVERSION=		0.91
+PORTVERSION=		0.92
 CATEGORIES=		lang
 MASTER_SITES=		http://gambas.sourceforge.net/
 
@@ -19,7 +19,7 @@ RUN_DEPENDS=		pgrep:${PORTSDIR}/sysutils/pkill
 USE_KDELIBS_VER=	3
 USE_GETTEXT=		yes
 USE_BZIP2=		yes
-USE_LIBTOOL=		yes
+USE_LIBTOOL_VER=	13
 LIBTOOLFILES=		configure libltdl/configure
 LIBTOOLFLAGS=		# none
 USE_GMAKE=		yes
@@ -105,5 +105,7 @@ post-patch:
 	@${REINPLACE_CMD} -e "s|# FreeBSD-Doc-Comment||" ${WRKSRC}/Makefile.in
 .endif
 	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/Makefile.in
+	@${RM} ${WRKSRC}/examples/Database/DataReportExample/Fconn.class.orig	\
+		${WRKSRC}/examples/Database/DataReportExample/Fmain.class.orig
 
 .include <bsd.port.post.mk>
