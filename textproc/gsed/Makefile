@@ -7,12 +7,12 @@
 
 PORTNAME=	sed
 PORTVERSION=	3.02
+PKGNAMEPREFIX=	g
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-PKGNAMEPREFIX=	g
 
-MAINTAINER=	clefevre@citeweb.net
+MAINTAINER=	cyrille.lefevre@laposte.net
 
 # Global variables
 #

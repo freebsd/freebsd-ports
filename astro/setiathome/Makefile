@@ -15,7 +15,7 @@ MASTER_SITES=	ftp://ftp.cdrom.com/pub/setiathome/ \
 DISTNAME=	${PORTNAME}-${PORTVERSION}.${PORT_HOST}
 EXTRACT_SUFX=	.tar
 
-MAINTAINER=	clefevre@citeweb.net
+MAINTAINER?=	cyrille.lefevre@laposte.net
 
 .include <bsd.port.pre.mk>
 

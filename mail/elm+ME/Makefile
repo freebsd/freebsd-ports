@@ -29,7 +29,7 @@ PATCHFILES=	${DISTNAME:S/+/+PL/}a.patch.gz
 PATCHLEVEL=	a
 PATCH_DIST_STRIP=	-p1
 
-MAINTAINER=	clefevre@citeweb.net
+MAINTAINER=	cyrille.lefevre@laposte.net
 
 LIB_DEPENDS=	giconv.2:${PORTSDIR}/converters/libiconv
 

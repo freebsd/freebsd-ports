@@ -11,7 +11,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	http://www.oasis-open.org/docbook/tools/dtm/
 DISTNAME=	${PORTNAME}
 
-MAINTAINER=	clefevre@citeweb.net
+MAINTAINER=	cyrille.lefevre@laposte.net
 
 .include <bsd.port.pre.mk>
 
