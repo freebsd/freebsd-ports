@@ -1,0 +1,20 @@
+diff -c -r ./Makefile ../hcode2.1-mailpatch2-old/Makefile
+*** ./Makefile	Mon Mar 31 22:16:45 1997
+--- ../hcode2.1-mailpatch2-old/Makefile	Mon Mar 31 22:15:35 1997
+***************
+*** 3,9 ****
+  SRC = hcode.c conv.c in.c out.c mail.c
+  OBJ = $(SRC:.c=.o)
+  
+! CFLAGS =
+  #CFLAGS = -g 
+  BINDIR = $HOME/bin
+  
+--- 3,9 ----
+  SRC = hcode.c conv.c in.c out.c mail.c
+  OBJ = $(SRC:.c=.o)
+  
+! CFLAGS = -O
+  #CFLAGS = -g 
+  BINDIR = $HOME/bin
+  
