@@ -31,7 +31,7 @@ RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper \
 WRKSRC=		${WRKDIR}/control/make
 
 JDK_VERSION=	1.4.2
-JDK_PATCHSET_VERSION=	5
+JDK_PATCHSET_VERSION=	6
 
 SUN_LINUX_JDK_VERSION=  1.4.2
 
@@ -262,6 +262,10 @@ do-install:
 	cd ${JDKIMAGEDIR_G} && ${FIND} . \
 	  | ${CPIO} -pdmu -R ${LIBOWN}:${LIBGRP} ${PREFIX}/jdk${JDK_VERSION}
 .endif
+	${INSTALL_DATA} ${FILESDIR}/cacerts \
+		${PREFIX}/jdk${JDK_VERSION}/jre/lib/security/cacerts
+	${INSTALL_DATA} ${FILESDIR}/cacerts \
+		${PREFIX}/jdk${JDK_VERSION}/jre/javaws/cacerts
 
 post-install:
 	@${LOCALBASE}/bin/registervm "${PREFIX}/jdk${JDK_VERSION}/bin/java # FREEBSD-JDK${JDK_VERSION}"
