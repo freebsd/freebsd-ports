@@ -34,14 +34,14 @@ CONFLICTS=	webalizer-2*
 .include <bsd.port.pre.mk>
 
 CONFIGURE_ARGS+=	--enable-dns \
-			--with-etcdir=${LOCALBASE}/etc \
+			--with-etcdir=${PREFIX}/etc \
 			--with-gdlib=${LOCALBASE}/lib \
 			--with-gd=${LOCALBASE}/include \
 			--enable-geoip \
 			--with-geoip-lib=${LOCALBASE}/lib \
 			--with-geoip-inc=${LOCALBASE}/include \
 			--with-language=english
-CONFIGURE_ENV+=	LDFLAGS="-L${PREFIX}/lib"
+CONFIGURE_ENV+=	LDFLAGS="-L${LOCALBASE}/lib"
 CFLAGS+=	-DLINKLIST_MAX_STRING=256
 MAN1=		${PKGNAMEPREFIX}webalizer.1
 DOC1=		CHANGES Copyright INSTALL \
