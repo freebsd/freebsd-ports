@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	FileSystemSite
-PORTVERSION=	1.2
+PORTVERSION=	1.3
 CATEGORIES=	www zope
-MASTER_SITES=	http://www.zope.org/Members/k_vertigo/Products/FileSystemSite/default/
+MASTER_SITES=	http://zope.org/Members/philikon/${PORTNAME}/${PORTVERSION}/
 PKGNAMEPREFIX=	zope-
-DISTNAME=	FileSystemSite-${PORTVERSION}
+DISTNAME=	${PORTNAME}-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	x@Vex.Net
