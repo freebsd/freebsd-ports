@@ -1,0 +1,12 @@
+XHTML_Table will execute SQL queries and return the results (as a
+scalar 'string') wrapped in XHTML tags.
+
+This module was created to fill a need for a quick and easy way to
+create 'on the fly' XHTML tables from SQL queries for the purpose
+of 'quick and dirty' reporting. It is not intended for serious
+production use, although it use is viable for prototyping and just
+plain fun.
+
+WWW: http://search.cpan.org/search?dist=DBIx-XHTML_Table
+
+Seamus Venasse <svenasse@polaris.ca>
