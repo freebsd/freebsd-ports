@@ -477,6 +477,7 @@
     SUBDIR += resin2
     SUBDIR += resin3
     SUBDIR += retawq
+    SUBDIR += rnews
     SUBDIR += roundup
     SUBDIR += roxen
     SUBDIR += rt2

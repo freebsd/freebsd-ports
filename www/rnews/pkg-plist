@@ -1,0 +1,46 @@
+%%DOCSDIR%%/CHANGELOG
+%%DOCSDIR%%/INSTALL
+%%DOCSDIR%%/LICENSE
+%%DOCSDIR%%/README
+%%DOCSDIR%%/magpierss/AUTHORS
+%%DOCSDIR%%/magpierss/CHANGES
+%%DOCSDIR%%/magpierss/ChangeLog
+%%DOCSDIR%%/magpierss/INSTALL
+%%DOCSDIR%%/magpierss/NEWS
+%%DOCSDIR%%/magpierss/README
+%%DOCSDIR%%/magpierss/TROUBLESHOOTING
+www/rnews/auth.php
+www/rnews/default_icon.png
+www/rnews/foot.php
+www/rnews/functions.inc
+www/rnews/head.php
+www/rnews/index.php
+www/rnews/magpierss
+www/rnews/magpierss-0.5.2/cookbook
+www/rnews/magpierss-0.5.2/extlib/Snoopy.class.inc
+www/rnews/magpierss-0.5.2/htdocs/cookbook.html
+www/rnews/magpierss-0.5.2/htdocs/index.html
+www/rnews/magpierss-0.5.2/rss_cache.inc
+www/rnews/magpierss-0.5.2/rss_fetch.inc
+www/rnews/magpierss-0.5.2/rss_parse.inc
+www/rnews/magpierss-0.5.2/rss_utils.inc
+www/rnews/magpierss-0.5.2/scripts/README
+www/rnews/magpierss-0.5.2/scripts/magpie_debug.php
+www/rnews/magpierss-0.5.2/scripts/magpie_simple.php
+www/rnews/magpierss-0.5.2/scripts/magpie_slashbox.php
+www/rnews/magpierss-0.5.2/scripts/simple_smarty.php
+www/rnews/magpierss-0.5.2/scripts/smarty_plugin/modifier.rss_date_parse.php
+www/rnews/magpierss-0.5.2/scripts/templates/simple.smarty
+www/rnews/prefs.php
+www/rnews/redirect.php
+www/rnews/rnews_config.php
+@dirrm www/rnews/magpierss-0.5.2/scripts/templates
+@dirrm www/rnews/magpierss-0.5.2/scripts/smarty_plugin
+@dirrm www/rnews/magpierss-0.5.2/scripts
+@dirrm www/rnews/magpierss-0.5.2/htdocs
+@dirrm www/rnews/magpierss-0.5.2/extlib
+@dirrm www/rnews/magpierss-0.5.2/cache
+@dirrm www/rnews/magpierss-0.5.2
+@dirrm www/rnews
+@dirrm %%DOCSDIR%%/magpierss
+@dirrm %%DOCSDIR%%

@@ -1,0 +1,17 @@
+===============================================================
+Rnews is now installed. You may have to follow this steps to
+make it work correctly.
+
+1: edit rnews_config.php to suit your site's configuration
+2: create a database with the name you gave in rnews_config.inc
+   $ mysql -u root
+   mysql> CREATE DATABASE rnews_db;
+   mysql> quit
+3: go to http://your.site/some/dir/rnews/
+   by default, the DocumentRoot variable of your httpd.conf
+   must be "%%PREFIX%%/www/"
+
+If the configuration was done correctly, and php is able to 
+connect to the mysql server, you should be able to create a new
+account and start adding rss sources!
+===============================================================
