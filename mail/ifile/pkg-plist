@@ -1,11 +1,6 @@
 @comment $FreeBSD$
-lib/libargp.a
-include/argp.h
-lib/libifile.a
-include/ifile/ifile.h
 bin/ifile
 bin/ifilter.mh
 bin/irefile.mh
 bin/knowledge_base.mh
 bin/news2mail
-@dirrm include/ifile
