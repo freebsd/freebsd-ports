@@ -19,7 +19,6 @@ EXTRACT_ONLY=
 
 .if !defined(LANGDIST)
 DICTMETAPORT=	yes
-.endif
 LANGDIST?=	bg_BG.zip ca_ES.zip hr_HR.zip cs_CZ.zip \
 		da_DK.zip nl_NL.zip en_CA.zip en_GB.zip \
 		en_US.zip fr_FR.zip de_DE.zip de_CH.zip \
@@ -33,6 +32,7 @@ HYPHDIST?=	hyph_cs.zip hyph_da.zip hyph_de_DE.zip \
 		hyph_it.zip hyph_nl.zip hyph_pt_BR.zip \
 		hyph_pt_PT.zip hyph_ru.zip hyph_sk.zip \
 		hyph_sl.zip hyph_uk.zip
+.endif
 
 SORT?=	/usr/bin/sort
 CUT?=	/usr/bin/cut
