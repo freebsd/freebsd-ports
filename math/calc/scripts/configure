@@ -1,0 +1,12 @@
+#!/bin/sh
+
+if [ $# != 3 ]; then exit 1; fi
+
+F=$3/Makefile
+
+chmod +w $F || exit 1;
+
+echo "BINDIR= /usr/local/bin" >> $F || exit 1;
+echo "TOPDIR= /usr/local/lib" >> $F 
+echo "MANDIR=/usr/local/man/man1" >> $F
+echo "CCOPT= -Wall -Wno-implicit -Wno-comment" >> $F

@@ -1,0 +1,77 @@
+@cd /usr/local
+@owner bin
+@mode 555
+bin/calc
+@mode 444
+lib/calc/help/intro 
+lib/calc/help/overview 
+lib/calc/help/help 
+lib/calc/help/assoc 
+lib/calc/help/builtin 
+lib/calc/help/command 
+lib/calc/help/config 
+lib/calc/help/define 
+lib/calc/help/environment 
+lib/calc/help/expression 
+lib/calc/help/file 
+lib/calc/help/history 
+lib/calc/help/interrupt 
+lib/calc/help/list 
+lib/calc/help/mat 
+lib/calc/help/operator 
+lib/calc/help/statement 
+lib/calc/help/types 
+lib/calc/help/usage 
+lib/calc/help/variable 
+lib/calc/help/todo 
+lib/calc/help/credit 
+lib/calc/help/bindings 
+lib/calc/help/altbind 
+lib/calc/help/changes 
+lib/calc/help/libcalc 
+lib/calc/help/stdlib 
+lib/calc/help/bugs 
+lib/calc/help/full
+lib/calc/help/obj
+lib/calc/README 
+lib/calc/bigprime.cal
+lib/calc/chrem.cal
+lib/calc/cryrand.cal
+lib/calc/deg.cal
+lib/calc/ellip.cal
+lib/calc/lucas.cal
+lib/calc/lucas_chk.cal
+lib/calc/lucas_tbl.cal
+lib/calc/mersenne.cal
+lib/calc/mod.cal
+lib/calc/nextprim.cal
+lib/calc/nextprime.cal
+lib/calc/pell.cal
+lib/calc/pi.cal
+lib/calc/pollard.cal
+lib/calc/poly.cal
+lib/calc/psqrt.cal
+lib/calc/quat.cal
+lib/calc/randmprime.cal
+lib/calc/regress.cal
+lib/calc/solve.cal
+lib/calc/sumsq.cal
+lib/calc/surd.cal
+lib/calc/test1000.cal
+lib/calc/unitfrac.cal
+lib/calc/varargs.cal
+@mode 644
+lib/calc/libcalc.a
+@mode 444
+lib/calc/alloc.h 
+lib/calc/args.h 
+lib/calc/cmath.h 
+lib/calc/endian.h 
+lib/calc/have_malloc.h 
+lib/calc/have_stdlib.h 
+lib/calc/have_string.h 
+lib/calc/longbits.h 
+lib/calc/qmath.h 
+lib/calc/stdarg.h 
+lib/calc/zmath.h 
+man/man1/calc.1
