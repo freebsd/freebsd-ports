@@ -82,8 +82,62 @@
                   (void)write(fd, (char *)&ut, sizeof(ut));
                   (void)close(fd);
           }
-*** pcnfsd_print.c	Sat Feb 27 08:48:13 1993
---- pcnfsd_print.c	Thu Oct  6 14:37:50 1994
+*** pcnfsd_print.c	Fri Jan 29 23:52:04 1993
+--- pcnfsd_print.c	Thu Apr 27 12:43:01 1995
+***************
+*** 395,407 ****
+  	        */
+  		if(!xcmd) {
+  #ifdef BSD_STYLE_PRINT
+! #ifdef BSD386
+  			sprintf(cmdbuf, "/usr/bin/lpr -P%s -C%s -J%s %s",
+  				pr, system, user, new_pathname);
+  #else
+  			sprintf(cmdbuf, "/usr/ucb/lpr -P%s -C%s -J%s %s",
+  				pr, system, user, new_pathname);
+! #endif BSD386
+  #endif BSD_STYLE_PRINT
+  #ifdef SVR4_STYLE_PRINT
+  			sprintf(cmdbuf, "/usr/bin/lp -c -d%s %s",
+--- 395,407 ----
+  	        */
+  		if(!xcmd) {
+  #ifdef BSD_STYLE_PRINT
+! #if (defined(BSD) && (BSD >= 199103))
+  			sprintf(cmdbuf, "/usr/bin/lpr -P%s -C%s -J%s %s",
+  				pr, system, user, new_pathname);
+  #else
+  			sprintf(cmdbuf, "/usr/ucb/lpr -P%s -C%s -J%s %s",
+  				pr, system, user, new_pathname);
+! #endif
+  #endif BSD_STYLE_PRINT
+  #ifdef SVR4_STYLE_PRINT
+  			sprintf(cmdbuf, "/usr/bin/lp -c -d%s %s",
+***************
+*** 686,696 ****
+  char *cp;
+  int saw_system;
+  
+! #ifdef BSD386
+  	p = popen("/usr/sbin/lpc status", "r");
+  #else
+  	p = popen("/usr/etc/lpc status", "r");
+! #endif BSD386
+  	if(p == NULL) {
+  		printers = list_virtual_printers();
+  		return(1);
+--- 686,696 ----
+  char *cp;
+  int saw_system;
+  
+! #if (defined(BSD) && (BSD >= 199103))
+  	p = popen("/usr/sbin/lpc status", "r");
+  #else
+  	p = popen("/usr/etc/lpc status", "r");
+! #endif
+  	if(p == NULL) {
+  		printers = list_virtual_printers();
+  		return(1);
 ***************
 *** 975,981 ****
 --- 975,985 ----
@@ -98,3 +152,78 @@
   
   	p = su_popen(user, buff, MAXTIME_FOR_QUEUE);
   	if(p == NULL) {
+***************
+*** 1234,1244 ****
+  	sprintf(pname, "%s:", pn);
+  	n = strlen(pname);
+  
+! #ifdef BSD386
+  	sprintf(cmd, "/usr/sbin/lpc status %s", pn);
+  #else
+  	sprintf(cmd, "/usr/etc/lpc status %s", pn);
+! #endif BSD386
+  	p = popen(cmd, "r");
+  	if(p == NULL) {
+  		msg_out("rpc.pcnfsd: unable to popen() lpc status");
+--- 1238,1248 ----
+  	sprintf(pname, "%s:", pn);
+  	n = strlen(pname);
+  
+! #if (defined(BSD) && (BSD >= 199103))
+  	sprintf(cmd, "/usr/sbin/lpc status %s", pn);
+  #else
+  	sprintf(cmd, "/usr/etc/lpc status %s", pn);
+! #endif
+  	p = popen(cmd, "r");
+  	if(p == NULL) {
+  		msg_out("rpc.pcnfsd: unable to popen() lpc status");
+***************
+*** 1404,1414 ****
+  	if(suspicious(id))
+  		return(PC_RES_NO_SUCH_JOB);
+  
+! #ifdef BSD386
+  		sprintf(cmdbuf, "/usr/bin/lprm -P%s %s", pr, id);
+  #else
+  		sprintf(cmdbuf, "/usr/ucb/lprm -P%s %s", pr, id);
+! #endif BSD386
+  		if ((fd = su_popen(user, cmdbuf, MAXTIME_FOR_CANCEL)) == NULL) {
+  			msg_out("rpc.pcnfsd: su_popen failed");
+  			return(PC_RES_FAIL);
+--- 1408,1418 ----
+  	if(suspicious(id))
+  		return(PC_RES_NO_SUCH_JOB);
+  
+! #if (defined(BSD) && (BSD >= 199103))
+  		sprintf(cmdbuf, "/usr/bin/lprm -P%s %s", pr, id);
+  #else
+  		sprintf(cmdbuf, "/usr/ucb/lprm -P%s %s", pr, id);
+! #endif
+  		if ((fd = su_popen(user, cmdbuf, MAXTIME_FOR_CANCEL)) == NULL) {
+  			msg_out("rpc.pcnfsd: su_popen failed");
+  			return(PC_RES_FAIL);
+***************
+*** 1487,1497 ****
+  char default_cmd[] = "lp $FILE";
+  #endif SVR4_STYLE_PRINT
+  #ifdef BSD_STYLE_PRINT
+! #ifdef BSD386
+  char default_cmd[] = "/usr/bin/lpr $FILE";
+  #else
+  char default_cmd[] = "/usr/ucb/lpr $FILE";
+! #endif BSD386
+  #endif BSD_STYLE_PRINT
+  
+  void
+--- 1491,1501 ----
+  char default_cmd[] = "lp $FILE";
+  #endif SVR4_STYLE_PRINT
+  #ifdef BSD_STYLE_PRINT
+! #if (defined(BSD) && (BSD >= 199103))
+  char default_cmd[] = "/usr/bin/lpr $FILE";
+  #else
+  char default_cmd[] = "/usr/ucb/lpr $FILE";
+! #endif
+  #endif BSD_STYLE_PRINT
+  
+  void
