@@ -6,14 +6,15 @@
 #
 
 PORTNAME=	gswitchit_applet
-PORTVERSION=	0.61
+PORTVERSION=	0.70
 CATEGORIES=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gswitchit
 
 MAINTAINER=	sobomax@FreeBSD.org
 
-LIB_DEPENDS=	gdk_pixbuf.2:${PORTSDIR}/graphics/gdk-pixbuf
+LIB_DEPENDS=	gdk_pixbuf.2:${PORTSDIR}/graphics/gdk-pixbuf \
+		gconf-1.1:${PORTSDIR}/devel/gconf
 
 USE_X_PREFIX=	yes
 USE_GNOME=	yes
