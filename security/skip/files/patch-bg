@@ -1,6 +1,6 @@
 diff -ur --unidirectional-new-file skipsrc-1.0.orig/skip/freebsd/skip_os.h skipsrc-1.0/skip/freebsd/skip_os.h
 --- skipsrc-1.0.orig/skip/freebsd/skip_os.h	Fri Oct 25 13:12:43 1996
-+++ skipsrc-1.0/skip/freebsd/skip_os.h	Tue Jan 13 11:19:16 1998
++++ skipsrc-1.0/skip/freebsd/skip_os.h	Sun Apr 12 15:52:01 1998
 @@ -54,7 +54,6 @@
  #ifndef KERNEL
  #include <stdio.h>
@@ -93,7 +93,19 @@ diff -ur --unidirectional-new-file skipsrc-1.0.orig/skip/freebsd/skip_os.h skips
  
  #define ALIGNED(x)		(((unsigned int)(x)&(skip_alignment - 1)) == 0)
  
-@@ -205,26 +225,21 @@
+@@ -182,7 +202,11 @@
+ /*
+  * 4.x timing defines
+  */
++#if __FreeBSD__ >= 3
++#define SKIP_ES_CURRENTTIME	((long)time_second)
++#else
+ #define SKIP_ES_CURRENTTIME	(time.tv_sec)
++#endif
+ #define SKIP_ES_DELTATIME(then)	(SKIP_ES_CURRENTTIME - then)
+ 
+ /*
+@@ -205,26 +229,21 @@
  }
  
  /*
@@ -130,7 +142,7 @@ diff -ur --unidirectional-new-file skipsrc-1.0.orig/skip/freebsd/skip_os.h skips
  #else /* KERNEL */
  
  /*
-@@ -251,37 +266,12 @@
+@@ -251,37 +270,12 @@
  #endif
  #define	STATIC
  
@@ -170,7 +182,7 @@ diff -ur --unidirectional-new-file skipsrc-1.0.orig/skip/freebsd/skip_os.h skips
  #define KEYMGR			"/dev/skip_key"
  
  /*
-@@ -306,12 +296,6 @@
+@@ -306,12 +300,6 @@
  /* General purpose */
  
  typedef unsigned char byte;

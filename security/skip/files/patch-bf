@@ -1,6 +1,6 @@
 diff -ur --unidirectional-new-file skipsrc-1.0.orig/skip/freebsd/skip_es.c skipsrc-1.0/skip/freebsd/skip_es.c
 --- skipsrc-1.0.orig/skip/freebsd/skip_es.c	Fri Oct 25 13:12:42 1996
-+++ skipsrc-1.0/skip/freebsd/skip_es.c	Tue Mar  3 16:58:54 1998
++++ skipsrc-1.0/skip/freebsd/skip_es.c	Sun Apr 12 15:51:32 1998
 @@ -81,6 +81,11 @@
  static unsigned short	skip_pktid;
  static skip_softc_t	skip_softc[SKIP_MAX_OPENS];
@@ -71,7 +71,21 @@ diff -ur --unidirectional-new-file skipsrc-1.0.orig/skip/freebsd/skip_es.c skips
                                          decryptbuf->m_len, decryptbuf->m_data);
  
  	} 
-@@ -2005,7 +2026,7 @@
+@@ -1910,6 +1931,13 @@
+ 		 */
+                 IPADDRCOPY(&params.tunnel_addr, &newip->ip_dst);
+ 
++		/* 
++		 * insert different source address if specified 
++		 */
++
++		if(params.source != 0)
++			(&newip->ip_src)->s_addr = params.source;
++
+ 		encryptbuf->m_len += sizeof (struct ip);
+ 
+ 		/*
+@@ -2005,7 +2033,7 @@
  			if (params.kp_alg) {
  				newip->ip_p = SKIP_NEXT_ESP;
  			} else {
@@ -80,7 +94,21 @@ diff -ur --unidirectional-new-file skipsrc-1.0.orig/skip/freebsd/skip_es.c skips
  			}
  		}
  		skip_if->stats.skip_if_raw_out++;
-@@ -2097,7 +2118,7 @@
+@@ -2028,6 +2056,13 @@
+ 		 * insert tunnel address as destination
+ 		 */
+ 		IPADDRCOPY(&params.tunnel_addr, &newip->ip_dst);
++
++		/* 
++		 * insert different source address if specified 
++		 */
++
++		if(params.source != 0) 
++			(&newip->ip_src)->s_addr = params.source;
+ 	}
+ 
+ 	if (params.s_nsid == 0) {
+@@ -2097,7 +2132,7 @@
  	register skip_param_t   *params = &res->params;
  	register struct ip      *ip = mtod(original, struct ip *);
  	int                     rc, s, iphlen;
@@ -89,7 +117,7 @@ diff -ur --unidirectional-new-file skipsrc-1.0.orig/skip/freebsd/skip_es.c skips
  
  	SKIP_PRINT("skip_decrypt_done", params);
  
-@@ -2125,7 +2146,7 @@
+@@ -2125,7 +2160,7 @@
  	 */
  	outbuf = (res->modes & SKIP_CRYPT_ON) ? m : original;
  

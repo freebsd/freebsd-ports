@@ -1,0 +1,13 @@
+
+diff -ur --unidirectional-new-file skipsrc-1.0.orig/skip/include/skip_types.h skipsrc-1.0/skip/include/skip_types.h
+--- skipsrc-1.0.orig/skip/include/skip_types.h	Fri Oct 25 13:12:45 1996
++++ skipsrc-1.0/skip/include/skip_types.h	Sun Apr 12 15:29:53 1998
+@@ -142,6 +142,7 @@
+ 	unsigned char		flags;		/* ACL info for this system */
+ 	struct in_addr		mask;		/* network/host mask */
+ 	struct in_addr		tunnel_addr;	/* tunneling address */
++	unsigned long		source;		/* source address */
+ } skip_param_t;
+ 
+ /*
+
