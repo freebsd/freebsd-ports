@@ -1,0 +1,23 @@
+# New ports collection makefile for:   pppload
+# Version required:    1.0
+# Date created:        30 January 1998
+# Whom:                Sean Cole <scole@aracnet.com>
+#
+# $Id: Makefile,v 1.2 1998/02/16 09:10:52 asami Exp $
+#
+
+DISTNAME=	pppload-1.0
+CATEGORIES=	x11
+MASTER_SITES=	http://sunsite.unc.edu/pub/Linux/system/network/serial/ppp/
+
+MAINTAINER=	ports@FreeBSD.ORG
+
+BUILD_DEPENDS=	moc:${PORTSDIR}/x11/qt
+LIB_DEPENDS=	qt:${PORTSDIR}/x11/qt
+
+MAN1=		pppload.1
+
+BROKEN=		install
+USE_GMAKE=	yes
+
+.include <bsd.port.mk>
