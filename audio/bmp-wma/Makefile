@@ -21,4 +21,10 @@ PLIST_FILES=	lib/bmp/Input/libwma.so
 GNU_CONFIGURE=	yes
 USE_X_PREFIX=	yes
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "i386"
+CONFIGURE_ARGS+=	--enable-x86
+.endif
+
+.include <bsd.port.post.mk>
