@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	jabberd
-PORTVERSION=	2.0.5
+PORTVERSION=	2.0.6
 CATEGORIES=	net
 MASTER_SITES=	http://www.jabberstudio.org/files/jabberd2/
-DISTNAME=	${PORTNAME}-2.0s5
+DISTNAME=	${PORTNAME}-2.0s6
 DIST_SUBDIR=	jabber
 
 MAINTAINER=	kirk@strauser.com
