@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bksh
-PORTVERSION=	1.3
+PORTVERSION=	1.7
 CATEGORIES=	sysutils
 MASTER_SITES=	http://anarcat.ath.cx/software/distfiles/
 
