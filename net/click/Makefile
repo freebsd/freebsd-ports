@@ -68,17 +68,17 @@ BROKEN=         "Does not compile (bad C++ code)"
 .endif
 
 post-install:
-	@strip ${PREFIX}/bin/click
-	@strip ${PREFIX}/bin/click-align
-	@strip ${PREFIX}/bin/click-check
-	@strip ${PREFIX}/bin/click-combine
-	@strip ${PREFIX}/bin/click-uncombine
-	@strip ${PREFIX}/bin/click-devirtualize
-	@strip ${PREFIX}/bin/click-fastclassifier
-	@strip ${PREFIX}/bin/click-flatten
-	@strip ${PREFIX}/bin/click-mkmindriver
-	@strip ${PREFIX}/bin/click-undead
-	@strip ${PREFIX}/bin/click-xform
+	@${STRIP_CMD} ${PREFIX}/bin/click
+	@${STRIP_CMD} ${PREFIX}/bin/click-align
+	@${STRIP_CMD} ${PREFIX}/bin/click-check
+	@${STRIP_CMD} ${PREFIX}/bin/click-combine
+	@${STRIP_CMD} ${PREFIX}/bin/click-uncombine
+	@${STRIP_CMD} ${PREFIX}/bin/click-devirtualize
+	@${STRIP_CMD} ${PREFIX}/bin/click-fastclassifier
+	@${STRIP_CMD} ${PREFIX}/bin/click-flatten
+	@${STRIP_CMD} ${PREFIX}/bin/click-mkmindriver
+	@${STRIP_CMD} ${PREFIX}/bin/click-undead
+	@${STRIP_CMD} ${PREFIX}/bin/click-xform
 	@${MKDIR} ${CONFDIR}
 	${INSTALL_DATA} ${WRKSRC}/conf/fake-iprouter.click ${CONFDIR}
 	${INSTALL_DATA} ${WRKSRC}/conf/ip.clickpat ${CONFDIR}

@@ -64,6 +64,6 @@ do-install:
 .endif
 
 post-install:
-	strip ${PREFIX}/sbin/tac_plus
+	${STRIP_CMD} ${PREFIX}/sbin/tac_plus
 
 .include <bsd.port.mk>

@@ -30,6 +30,6 @@ do-configure:
 	@(cd ${WRKSRC}; ./cnf/bin/aleph-setup -o)
 
 post-install:
-	@strip ${PREFIX}/bin/aleph
+	@${STRIP_CMD} ${PREFIX}/bin/aleph
 
 .include <bsd.port.mk>

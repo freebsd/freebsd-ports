@@ -30,6 +30,6 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/contrib/emacs/* ${DATADIR}/contrib/emacs
 	${INSTALL_DATA} ${WRKSRC}/contrib/vim/* ${DATADIR}/contrib/vim
 .endif
-	@strip ${PREFIX}/bin/ncamlrun
+	@${STRIP_CMD} ${PREFIX}/bin/ncamlrun
 
 .include <bsd.port.mk>

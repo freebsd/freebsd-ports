@@ -135,7 +135,7 @@ post-install:
 	${RM} ${PREFIX}/share/mule/19.34/etc/DOC-19.34.1
 # note that any2ps rcs-checkin are scripts
 .for file in b2m coco ctags emacsclient etags m2ps
-	strip ${PREFIX}/bin/${file}
+	${STRIP_CMD} ${PREFIX}/bin/${file}
 .endfor
 	if [ ! -f ${PREFIX}/share/mule/${EMACS_VERSION}/info/dir ]; then \
 	  ${MKDIR} ${PREFIX}/share/mule/${EMACS_VERSION}/info; \

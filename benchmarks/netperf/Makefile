@@ -31,8 +31,8 @@ post-patch:
 .endfor
 
 post-install:
-	strip ${PREFIX}/netperf/netperf
-	strip ${PREFIX}/netperf/netserver
+	${STRIP_CMD} ${PREFIX}/netperf/netperf
+	${STRIP_CMD} ${PREFIX}/netperf/netserver
 	${INSTALL_MAN} ${WRKSRC}/netperf.man ${PREFIX}/man/man1/netperf.1
 	${INSTALL_MAN} ${WRKSRC}/netserver.man ${PREFIX}/man/man1/netserver.1
 .if !defined(NOPORTDOCS)

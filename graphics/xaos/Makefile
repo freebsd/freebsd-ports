@@ -37,7 +37,7 @@ CFLAGS=		-DHAVE_SYS_PARAM_H \
 MAN6=		xaos.6
 
 post-install:
-	strip ${PREFIX}/bin/xaos
+	${STRIP_CMD} ${PREFIX}/bin/xaos
 	install-info ${PREFIX}/info/xaos.info ${PREFIX}/info/dir
 
 .include <bsd.port.mk>

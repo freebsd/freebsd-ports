@@ -23,6 +23,6 @@ MAN8=		wmhm.8
 MANCOMPRESSED=	yes
 
 post-install:
-	strip ${PREFIX}/bin/wmhm
+	${STRIP_CMD} ${PREFIX}/bin/wmhm
 
 .include <bsd.port.mk>

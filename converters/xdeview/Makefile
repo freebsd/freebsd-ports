@@ -36,7 +36,7 @@ MAN1=		xdeview.1
 DOCFILES=	${FILESDIR}/porting.notes
 
 post-install:
-	strip ${PREFIX}/bin/uuwish
+	${STRIP_CMD} ${PREFIX}/bin/uuwish
 .if !defined(NOPORTDOCS)
 	@${ECHO_MSG} "===>  Installing documents to ${DOCSDIR}"
 	@${MKDIR} ${DOCSDIR}

@@ -21,6 +21,6 @@ USE_GNOME=	gtk12
 USE_LIBTOOL=	yes
 
 post-install:
-	strip ${PREFIX}/lib/xmms/Input/xmms-mpegplus-1.8.0.so
+	${STRIP_CMD} ${PREFIX}/lib/xmms/Input/xmms-mpegplus-1.8.0.so
 
 .include <bsd.port.mk>

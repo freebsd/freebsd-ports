@@ -26,7 +26,7 @@ do-build:
 
 do-install:
 	cd ${WRKSRC}/obj/${OPSYS}; ${MAKE} ${INSTALL_TARGET} PREFIX=${PREFIX}
-	strip ${PREFIX}/bin/dbsc ${PREFIX}/bin/dbsd
+	${STRIP_CMD} ${PREFIX}/bin/dbsc ${PREFIX}/bin/dbsd
 	${MKDIR} ${EXDIR}
 	cd ${WRKSRC}/sample; ${CP} -p ${EXS} ${EXDIR}
 .if !defined(NOPORTDOCS)

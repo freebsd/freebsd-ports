@@ -41,7 +41,7 @@ post-install:
 .for f in ${BINS}
 	@${CHMOD} ${BINMODE} ${PREFIX}/bin/${f}
 	@${CHOWN} ${BINOWN}:${BINGRP} ${PREFIX}/bin/${f}
-	@strip ${PREFIX}/bin/${f}
+	@${STRIP_CMD} ${PREFIX}/bin/${f}
 .endfor
 .for f in ${MAN1}
 	@${CHMOD} ${MANMODE} ${PREFIX}/man/man1/${f}

@@ -67,9 +67,9 @@ pre-install:
 post-install:
 .for STRIP in alist lformat lguide lindex list listall lseen ltrace mkballot \
 template templist title
-	strip ${PREFIX}/bin/${STRIP}
+	${STRIP_CMD} ${PREFIX}/bin/${STRIP}
 .endfor
-	strip ${PREFIX}/libexec/moviedb/mkdb
+	${STRIP_CMD} ${PREFIX}/libexec/moviedb/mkdb
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/moviedb
 .for DOC in ADDS-GUIDE ChangeLog FAQ FUTURES INSTRUCTIONS manual.tex

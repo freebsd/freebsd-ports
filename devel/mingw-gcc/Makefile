@@ -59,7 +59,7 @@ post-install:
 	  i386-mingw32msvc-protoize \
 	  i386-mingw32msvc-unprotoize; \
 	do \
-	  strip ${PREFIX}/bin/$${file}; \
+	  ${STRIP_CMD} ${PREFIX}/bin/$${file}; \
 	done
 
 .include <bsd.port.mk>

@@ -164,7 +164,7 @@ pre-build:
 
 post-install::
 .for file in b2m ctags ellcc etags gnuclient xemacs-${XEMACS_VER}
-	strip ${PREFIX}/bin/${file}
+	${STRIP_CMD} ${PREFIX}/bin/${file}
 .endfor
 # For some reason install no longer makes ${PREFIX}/lib/xemacs/site-lisp.
 # Do what PLIST does for pkg_add.

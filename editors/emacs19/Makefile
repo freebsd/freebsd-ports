@@ -33,7 +33,7 @@ MAN1=		emacs.1 etags.1 ctags.1
 
 post-install:
 .for file in emacs-19.34 emacsclient etags ctags b2m
-	strip ${PREFIX}/bin/${file}
+	${STRIP_CMD} ${PREFIX}/bin/${file}
 .endfor
 .for info in emacs vip viper forms gnus mh-e cl sc dired-x ediff ccmode message
 	install-info ${PREFIX}/info/${info} ${PREFIX}/info/dir

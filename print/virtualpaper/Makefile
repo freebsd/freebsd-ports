@@ -85,7 +85,7 @@ do-install:
 	    cd ${WRKSRC}/$${i} && ${PREFIX}/bin/m3build && \
 		${PREFIX}/bin/m3ship; \
 	done
-	@for i in ${PROGS}; do strip ${PREFIX}/$$i; done
+	@for i in ${PROGS}; do ${STRIP_CMD} ${PREFIX}/$$i; done
 	@${MKDIR} ${PREFIX}/share/${PORTNAME}
 	@${INSTALL_DATA} ${WRKSRC}/src/COPYRIGHT ${PREFIX}/share/${PORTNAME}
 

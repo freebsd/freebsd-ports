@@ -23,6 +23,6 @@ USE_GMAKE=	yes
 MAKE_ARGS=	UISTYLE=text CFLAGS=""
 
 post-install:
-	strip ${PREFIX}/bin/unison
+	${STRIP_CMD} ${PREFIX}/bin/unison
 
 .include <bsd.port.mk>

@@ -126,7 +126,7 @@ pre-install:
 .endif
 
 post-install:
-	@strip ${PREFIX}/bin/mutt
+	@${STRIP_CMD} ${PREFIX}/bin/mutt
 	${INSTALL_DATA} ${WRKSRC}/Muttrc ${PREFIX}/etc/Muttrc.dist
 .if !defined(NOPORTDOCS)
 	@${ECHO} "===>   Installing Mutt documentation"

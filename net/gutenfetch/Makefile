@@ -24,6 +24,6 @@ USE_GMAKE=	yes
 MAN1=		gutenfetch.1
 
 post-install:
-	strip ${PREFIX}/bin/gutenfetch
+	${STRIP_CMD} ${PREFIX}/bin/gutenfetch
 
 .include <bsd.port.mk>

@@ -19,7 +19,7 @@ USE_GCC=	2.95
 USE_QT_VER=	1
 
 post-install:
-	strip ${PREFIX}/bin/peq
-	strip ${PREFIX}/bin/xpeq
+	${STRIP_CMD} ${PREFIX}/bin/peq
+	${STRIP_CMD} ${PREFIX}/bin/xpeq
 
 .include <bsd.port.mk>

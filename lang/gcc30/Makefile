@@ -95,7 +95,7 @@ post-install:
 		${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${GCC_REV}/collect2 \
 		${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${GCC_REV}/f771 ; \
 	do \
-		strip $$prog ; \
+		${STRIP_CMD} $$prog ; \
 	done )
 .for file in gcc g++ cpp g++filt gcov ${CONFIGURE_TARGET}-gcc ${CONFIGURE_TARGET}-g++
 	${MV} -f ${PREFIX}/bin/${file} ${PREFIX}/bin/${file}30

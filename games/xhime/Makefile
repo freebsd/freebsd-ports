@@ -23,7 +23,7 @@ MAN6=		xhime.6
 NO_CDROM=	'contains commercial character data'
 
 post-install:
-	strip ${PREFIX}/bin/xhime
+	${STRIP_CMD} ${PREFIX}/bin/xhime
 	${INSTALL_MAN} ${WRKSRC}/xhime-man.euc \
 		${PREFIX}/man/ja/man6
 	${MV} ${PREFIX}/man/ja/man6/xhime-man.euc ${PREFIX}/man/ja/man6/xhime.6

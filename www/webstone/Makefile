@@ -33,10 +33,10 @@ do-install:
 	@${MKDIR} ${WRKSRC}/../bin/runs
 	@${TOUCH} ${WRKSRC}/../bin/runs/keepme
 .for file in webclient webmaster genrand
-	strip ${PREFIX}/webstone/bin/${file}
+	${STRIP_CMD} ${PREFIX}/webstone/bin/${file}
 .endfor
 .for file in ws20_cgi ws25_cgi
-	strip ${PREFIX}/webstone/lgm/${file}
+	${STRIP_CMD} ${PREFIX}/webstone/lgm/${file}
 .endfor
 
 post-install:

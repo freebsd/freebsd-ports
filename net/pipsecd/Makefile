@@ -34,6 +34,6 @@ do-install:
 .endif
 
 post-install:
-	strip ${PREFIX}/sbin/pipsecd
+	${STRIP_CMD} ${PREFIX}/sbin/pipsecd
 
 .include <bsd.port.mk>

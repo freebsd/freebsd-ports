@@ -34,7 +34,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ccdoc_dev/ccdoc/bin_freebsd_opt/ccdoc.exe ${PREFIX}/bin/ccdoc
 
 post-install:
-	strip ${PREFIX}/bin/ccdoc
+	${STRIP_CMD} ${PREFIX}/bin/ccdoc
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCDIR}
 	${INSTALL_MAN} ${WRKSRC}/doc/*.html ${WRKSRC}/doc/*.txt ${WRKSRC}/doc/*.gif ${DOCDIR}

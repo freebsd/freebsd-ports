@@ -116,6 +116,6 @@ post-install:
 	@cd ${WRKSRC}/otherlibs/labltk/examples_camltk; \
 		${INSTALL_DATA} [A-Za-hj-z]* ${EXAMPLESDIR}/camltk
 .endif
-	@strip ${PREFIX}/bin/ocamlrun ${PREFIX}/bin/ocamlyacc
+	@${STRIP_CMD} ${PREFIX}/bin/ocamlrun ${PREFIX}/bin/ocamlyacc
 
 .include <bsd.port.mk>

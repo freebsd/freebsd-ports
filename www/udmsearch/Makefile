@@ -59,8 +59,8 @@ pre-install:
 post-install:
 	@cp -R ${WRKSRC}/create ${PREFIX}/share/udmsearch
 	@${INSTALL_DATA} ${WRKSRC}/INSTALL ${PREFIX}/share/doc/udmsearch
-	@strip ${PREFIX}/sbin/indexer
-	@strip ${PREFIX}/share/udmsearch/search.cgi
+	@${STRIP_CMD} ${PREFIX}/sbin/indexer
+	@${STRIP_CMD} ${PREFIX}/share/udmsearch/search.cgi
 	@${ECHO}
 	@${CAT} ${PKGMESSAGE}
 

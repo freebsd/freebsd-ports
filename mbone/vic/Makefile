@@ -36,7 +36,7 @@ pre-patch:
 		's|malloc.h|stdlib.h|'
 
 post-install:
-	strip ${PREFIX}/bin/vic
-	strip ${PREFIX}/bin/histtolut
+	${STRIP_CMD} ${PREFIX}/bin/vic
+	${STRIP_CMD} ${PREFIX}/bin/histtolut
 
 .include <bsd.port.mk>

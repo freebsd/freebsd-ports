@@ -19,6 +19,6 @@ LIB_DEPENDS=	slang.1:${PORTSDIR}/devel/libslang
 GNU_CONFIGURE=	yes
 
 post-install:
-	strip ${PREFIX}/bin/slsc ${PREFIX}/share/slsc/vprint
+	${STRIP_CMD} ${PREFIX}/bin/slsc ${PREFIX}/share/slsc/vprint
 
 .include <bsd.port.mk>

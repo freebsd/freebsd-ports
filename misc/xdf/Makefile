@@ -20,6 +20,6 @@ USE_X_PREFIX=   yes
 USE_GMAKE=      yes
 
 post-install:
-	strip ${PREFIX}/bin/xdf
+	${STRIP_CMD} ${PREFIX}/bin/xdf
 
 .include <bsd.port.mk>

@@ -74,7 +74,7 @@ post-patch:
 	@${PERL} -pi -e 's!-O2 -ffast-math!!' ${WRKSRC}/kvutils/Makefile.am
 .endif
 
-#	strip ${PREFIX}/bin/ecaconvert ${PREFIX}/bin/ecafixdc \
+#	${STRIP_CMD} ${PREFIX}/bin/ecaconvert ${PREFIX}/bin/ecafixdc \
 #${PREFIX}/bin/ecanormalize ${PREFIX}/bin/ecaplay ${PREFIX}/bin/ecasignalview \
 #${PREFIX}/bin/ecasound ${PREFIX}/bin/ecasound-config ${PREFIX}/bin/ecasoundc-config
 

@@ -30,6 +30,6 @@ CONFIGURE_ARGS=	--with-tclconfig=${PREFIX}/lib/tcl8.3 \
 MAN1=		ical.1
 
 post-install:
-	@strip ${PREFIX}/bin/${DISTNAME}
+	@${STRIP_CMD} ${PREFIX}/bin/${DISTNAME}
 
 .include <bsd.port.mk>

@@ -22,7 +22,7 @@ GNU_CONFIGURE=	yes
 
 .if !target(post-install) && (${PORTNAME} == "hydra")
 post-install:
-	@strip ${PREFIX}/bin/hydra
+	@${STRIP_CMD} ${PREFIX}/bin/hydra
 .endif
 
 .include <bsd.port.post.mk>

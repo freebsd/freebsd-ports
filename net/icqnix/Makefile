@@ -29,7 +29,7 @@ BROKEN=		"Configure fails"
 .endif
 
 post-install:
-	@strip ${PREFIX}/bin/icqnix
-	@strip ${PREFIX}/bin/icqnix.install
+	@${STRIP_CMD} ${PREFIX}/bin/icqnix
+	@${STRIP_CMD} ${PREFIX}/bin/icqnix.install
 
 .include <bsd.port.post.mk>

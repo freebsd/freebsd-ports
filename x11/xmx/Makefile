@@ -19,6 +19,6 @@ USE_X_PREFIX=	yes
 MAN1=		xmx.1
 
 post-install:
-	@strip ${PREFIX}/bin/xmx
+	@${STRIP_CMD} ${PREFIX}/bin/xmx
 
 .include <bsd.port.mk>

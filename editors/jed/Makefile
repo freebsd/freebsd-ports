@@ -36,11 +36,11 @@ pre-install:
 	${LN} -sf ${WRKSRC}/autoconf/mkinsdir.sh  ${WRKSRC}/
 
 post-install:
-	strip ${PREFIX}/bin/jed
-	strip ${PREFIX}/bin/rgrep
-	strip ${PREFIX}/lib/jed/bin/getmail
+	${STRIP_CMD} ${PREFIX}/bin/jed
+	${STRIP_CMD} ${PREFIX}/bin/rgrep
+	${STRIP_CMD} ${PREFIX}/lib/jed/bin/getmail
 .for f in ${XJED}
-	strip ${PREFIX}/bin/$f
+	${STRIP_CMD} ${PREFIX}/bin/$f
 .endfor
 #	${CP} -R ${WRKSRC}/lib/* ${PREFIX}/lib/jed/lib
 	${INSTALL_DATA} ${WRKSRC}/lib/vms_shell.com ${PREFIX}/lib/jed/lib

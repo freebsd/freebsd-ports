@@ -25,7 +25,7 @@ DOCS=		ChangeLog INSTALL LICENSE NEWS README TODO
 
 post-build:
 .for file in ${PROGS}
-	@strip ${WRKSRC}/${file}
+	@${STRIP_CMD} ${WRKSRC}/${file}
 .endfor
 	@cd ${WRKSRC} && ${MAKE} test
 

@@ -37,7 +37,7 @@ pre-install:
 	@${MKDIR} ${PREFIX}/share/bro
 
 post-install:
-	@strip ${PREFIX}/sbin/bro
+	@${STRIP_CMD} ${PREFIX}/sbin/bro
 	@${INSTALL_DATA} ${WRKSRC}/policy/*.* ${PREFIX}/share/bro
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/bro

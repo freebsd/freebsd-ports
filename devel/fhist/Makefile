@@ -30,7 +30,7 @@ post-extract:
 
 post-install:
 .for file in fhist fcomp fmerge
-	strip ${PREFIX}/bin/${file}
+	${STRIP_CMD} ${PREFIX}/bin/${file}
 	(cd ${WRKSRC}/lib/en/man1; soelim ${file}.1 > tmp; \
 	${INSTALL_MAN} tmp ${PREFIX}/man/man1/${file}.1)
 .endfor

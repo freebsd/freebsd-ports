@@ -47,7 +47,7 @@ INFO_NOAUTO=	bfd.info binutils.info as.info ld.info \
 
 post-install:
 .for F in ${BINARIES}
-	@strip ${PREFIX}/bin/${PKGNAMEPREFIX}$F
+	@${STRIP_CMD} ${PREFIX}/bin/${PKGNAMEPREFIX}$F
 	@${LN} -f ${PREFIX}/bin/${PKGNAMEPREFIX}$F \
 		${PREFIX}/${PKGNAMEPREFIX:S/-$//}/bin/$F
 .endfor

@@ -20,5 +20,5 @@ USE_XPM=	yes
 MAN1=		xteddy.1
 
 post-install:
-		strip ${PREFIX}/bin/xteddy
+		${STRIP_CMD} ${PREFIX}/bin/xteddy
 .include <bsd.port.mk>

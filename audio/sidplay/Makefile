@@ -24,6 +24,6 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-base-${PORTVERSION}
 GNU_CONFIGURE=	yes
 
 post-install:
-	strip ${PREFIX}/bin/sidplay ${PREFIX}/bin/sid2wav ${PREFIX}/bin/sidcon
+	${STRIP_CMD} ${PREFIX}/bin/sidplay ${PREFIX}/bin/sid2wav ${PREFIX}/bin/sidcon
 
 .include <bsd.port.mk>

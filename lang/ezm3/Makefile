@@ -63,7 +63,7 @@ do-install:
 	@${RM} -rf ${WRKSRC}/${TARGET}
 	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} \
 		${MAKEFILE} ${MAKE_ARGS} ${INSTALL_TARGET})
-	@for i in ${PROGS}; do strip ${PREFIX}/$$i; done
+	@for i in ${PROGS}; do ${STRIP_CMD} ${PREFIX}/$$i; done
 	@${MKDIR} ${PREFIX}/share/ezm3
 	@${INSTALL_DATA} ${WRKSRC}/src/COPYRIGHT ${PREFIX}/share/ezm3
 

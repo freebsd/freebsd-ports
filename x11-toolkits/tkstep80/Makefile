@@ -35,7 +35,7 @@ PKGDEINSTALL=	${PORTSDIR}/x11-toolkits/tk82/pkg-deinstall.wish
 
 post-install:
 	@${RM} ${PREFIX}/lib/tkstep8.0/demos/*.orig
-	strip ${PREFIX}/bin/wishstep8.0
+	${STRIP_CMD} ${PREFIX}/bin/wishstep8.0
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/tkstep
 	${INSTALL_DATA}	${WRKDIR}/tk8.0.4/README.TkStep \

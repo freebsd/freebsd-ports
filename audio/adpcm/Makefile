@@ -37,6 +37,6 @@ do-install:
 	uudecode -p ${WRKSRC}/hello.adpcm.uu > ${PREFIX}/share/doc/adpcm/hello.adpcm
 
 post-install:
-	strip ${PREFIX}/lib/libadpcm.so.${LIBVERSION}
+	${STRIP_CMD} ${PREFIX}/lib/libadpcm.so.${LIBVERSION}
 
 .include <bsd.port.mk>

@@ -87,7 +87,7 @@ post-build:
 
 post-install:
 .for f in ${BINS}
-	strip ${PREFIX}/${f}
+	${STRIP_CMD} ${PREFIX}/${f}
 .endfor
 	${INSTALL_SCRIPT} ${WRKDIR}/slapd.sh ${PREFIX}/etc/rc.d/slapd.sh.sample
 

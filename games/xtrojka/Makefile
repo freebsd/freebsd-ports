@@ -23,6 +23,6 @@ pre-install:
 	${MKDIR} ${PREFIX}/share/xtrojka
 
 post-install:
-	strip ${PREFIX}/bin/xtrojka
+	${STRIP_CMD} ${PREFIX}/bin/xtrojka
 
 .include <bsd.port.mk>

@@ -23,7 +23,7 @@ MAN1=		sloccount.1
 
 post-install:
 .for file in lexcount1 c_count java_count php_count
-	@strip ${PREFIX}/bin/${file}
+	@${STRIP_CMD} ${PREFIX}/bin/${file}
 .endfor
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}

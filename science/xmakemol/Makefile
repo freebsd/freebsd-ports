@@ -22,5 +22,5 @@ pre-configure:
 	cd ${WRKSRC}; ${CHMOD} 755 config.guess config.sub configure install-sh missing mkinstalldirs
 
 post-install:
-	strip ${PREFIX}/bin/xmakemol
+	${STRIP_CMD} ${PREFIX}/bin/xmakemol
 .include <bsd.port.post.mk>

@@ -27,7 +27,7 @@ pre-patch:
 post-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/vMac \
 	    ${PREFIX}/bin
-	@strip ${PREFIX}/bin/vMac
+	@${STRIP_CMD} ${PREFIX}/bin/vMac
 	@ ${MKDIR} ${PREFIX}/share/doc/vMac
 	${INSTALL_DATA} ${WRKSRC}/CREDITS \
 	    ${PREFIX}/share/doc/vMac

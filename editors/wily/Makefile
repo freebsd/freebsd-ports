@@ -42,7 +42,7 @@ WILYDOCFILES=	index.html intro.html download.html credits.html FAQ.html \
 
 # The default Wily makefile does not install any documentation.  Rectify.
 post-install:
-	strip ${PREFIX}/bin/wily
+	${STRIP_CMD} ${PREFIX}/bin/wily
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${WILYDOCDIR} ${WILYTUTEDIR}
 	set -e; for f in ${WILYDOCFILES}; do \

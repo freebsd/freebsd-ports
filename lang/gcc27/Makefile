@@ -69,7 +69,7 @@ post-install:
 		${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${GCC_VER}/cc1obj \
 		${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${GCC_VER}/cc1plus \
 		${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${GCC_VER}/cpp ; \
-	    do strip $$prog ; \
+	    do ${STRIP_CMD} $$prog ; \
 	done)
 	@${MV} -f ${PREFIX}/bin/gcc ${PREFIX}/bin/gcc27
 	@${MV} -f ${PREFIX}/bin/g++ ${PREFIX}/bin/g++27

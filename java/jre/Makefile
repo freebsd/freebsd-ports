@@ -51,7 +51,7 @@ DISTFILES=	jre${JRE_VERSION}i_ELF.V1999-11-9.tar.gz
 
 do-build:
 	@for file in ${STRIPFILES}; do \
-		strip ${WRKSRC}/$$file; \
+		${STRIP_CMD} ${WRKSRC}/$$file; \
 	done
 
 do-install:

@@ -148,7 +148,7 @@ post-install:
 		${PREFIX}/bin/${CONFIGURE_TARGET}-gcc \
 		${TARGLIB}/cpp0 ${TARGLIB}/collect2 ${TARGLIB}/f771 ; \
 	do \
-		strip $$prog ; \
+		${STRIP_CMD} $$prog ; \
 	done )
 .for file in gcc g++ cpp g++filt gcov ${CONFIGURE_TARGET}-gcc ${CONFIGURE_TARGET}-g++ gcj gcjh jv-scan jcf-dump jar grepjar
 	${MV} -f ${PREFIX}/bin/${file} ${PREFIX}/bin/${file}32

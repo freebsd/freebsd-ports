@@ -26,7 +26,7 @@ post-configure:
 	@${ECHO_CMD} "LOCALBASE=${LOCALBASE}" >> ${WRKSRC}/${MAKEFILE}
 
 post-install:
-	@strip ${PREFIX}/bin/xshogi
+	@${STRIP_CMD} ${PREFIX}/bin/xshogi
 	@${CHMOD} 755 ${PREFIX}/bin/xshogi
 	@${CHOWN} ${BINOWN}:${BINGRP} ${PREFIX}/bin/xshogi
 	${INSTALL_MAN} ${WRKSRC}/xshogi.man ${PREFIX}/man/man6/xshogi.6

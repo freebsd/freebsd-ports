@@ -176,7 +176,7 @@ pre-install:
 
 post-install:
 	@PKG_PREFIX="${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
-	@strip ${PREFIX}/libexec/courier/modules/*/*
+	@${STRIP_CMD} ${PREFIX}/libexec/courier/modules/*/*
 	@${LN} -f ${SYSCONFDIR}/maildrop ${SYSCONFDIR}/maildropfilter
 	@${INSTALL_DATA} /dev/null ${SYSCONFDIR}/locallowercase
 	@${INSTALL_SCRIPT} ${FILESDIR}/courier.sh ${PREFIX}/etc/rc.d

@@ -27,8 +27,8 @@ TEX_DIR=		${PREFIX}/share/texmf/tex/latex
 TEXHASH=		${PREFIX}/bin/texhash
 
 post-install:
-	strip ${PREFIX}/bin/hevea
-	strip ${PREFIX}/bin/hacha
+	${STRIP_CMD} ${PREFIX}/bin/hevea
+	${STRIP_CMD} ${PREFIX}/bin/hacha
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/hevea
 	${INSTALL_DATA} ${DISTDIR}/${PORTNAME}-${PORTVERSION}-manual.pdf ${PREFIX}/share/doc/hevea

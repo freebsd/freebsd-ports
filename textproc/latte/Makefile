@@ -21,7 +21,7 @@ MAKE_FLAGS=	CONF_ARGS="--prefix=${PREFIX}"
 CONFIGURE_ARGS+=	--enable-shared
 
 post-install:
-	strip ${PREFIX}/bin/latte-html
+	${STRIP_CMD} ${PREFIX}/bin/latte-html
 	${LN} -sf ${PREFIX}/bin/latte-html ${PREFIX}/bin/latte
 	${CP} -Rp ${WRKSRC}/tests ${PREFIX}/share/latte/
 

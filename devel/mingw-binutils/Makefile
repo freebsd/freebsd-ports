@@ -49,11 +49,11 @@ post-install:
 	  addr2line ar as c++filt dlltool gasp ld nm \
 	  objcopy objdump ranlib size strings strip windres; \
 	do \
-	  strip ${PREFIX}/bin/i386-mingw32msvc-$${file}; \
+	  ${STRIP_CMD} ${PREFIX}/bin/i386-mingw32msvc-$${file}; \
 	done
 	@for file in ar as dlltool ld nm ranlib strip; \
 	do \
-	  strip ${PREFIX}/i386-mingw32msvc/bin/$${file}; \
+	  ${STRIP_CMD} ${PREFIX}/i386-mingw32msvc/bin/$${file}; \
 	done
 
 .include <bsd.port.mk>

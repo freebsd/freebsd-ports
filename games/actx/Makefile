@@ -37,7 +37,7 @@ pre-configure:
 
 post-install:
 # strip binary
-	@strip ${PREFIX}/bin/actx
+	@${STRIP_CMD} ${PREFIX}/bin/actx
 # install japanese manual
 	@${INSTALL_MAN} ${WRKSRC}/actx.jman ${PREFIX}/man/ja/man1/actx.1
 	@${GZIP_CMD} ${PREFIX}/man/ja/man1/actx.1

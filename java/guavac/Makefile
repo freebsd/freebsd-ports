@@ -28,6 +28,6 @@ pre-install:
 	@${CHMOD} +x ${WRKSRC}/mkinstalldirs
 
 post-install:
-	@strip ${PREFIX}/bin/guavac ${PREFIX}/bin/guavad
+	@${STRIP_CMD} ${PREFIX}/bin/guavac ${PREFIX}/bin/guavad
 
 .include <bsd.port.post.mk>

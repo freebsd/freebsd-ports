@@ -25,6 +25,6 @@ EXTRACT_AFTER_ARGS=	# empty
 MAN1=		bugsx.1
 
 post-install:
-	strip ${PREFIX}/bin/bugsx
+	${STRIP_CMD} ${PREFIX}/bin/bugsx
 
 .include <bsd.port.mk>

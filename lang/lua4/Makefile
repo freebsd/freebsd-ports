@@ -45,7 +45,7 @@ do-install:
 	@ ${LN} -s ${PREFIX}/lib/liblualib.so.4 ${PREFIX}/lib/liblualib.so
 
 post-install:
-	@strip ${PREFIX}/bin/lua
-	@strip ${PREFIX}/bin/luac
+	@${STRIP_CMD} ${PREFIX}/bin/lua
+	@${STRIP_CMD} ${PREFIX}/bin/luac
 
 .include <bsd.port.mk>

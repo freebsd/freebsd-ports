@@ -22,7 +22,7 @@ do-install:
 
 .if !target(post-install) && (${PORTNAME} == "dcetest")
 post-install:
-	@strip ${PREFIX}/bin/dcetest
+	@${STRIP_CMD} ${PREFIX}/bin/dcetest
 .endif
 
 .include <bsd.port.mk>

@@ -27,6 +27,6 @@ BROKEN=         "Does not compile (bad C++ code)"
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/vbidecode ${PREFIX}/bin
-	@strip ${PREFIX}/bin/vbidecode
+	@${STRIP_CMD} ${PREFIX}/bin/vbidecode
 
 .include <bsd.port.post.mk>

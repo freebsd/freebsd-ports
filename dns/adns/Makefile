@@ -24,6 +24,6 @@ PLIST_SUB+=	LIBVERSION="${LIBVERSION}"
 
 post-install:
 	@${LN} -sf libadns.so.${LIBVERSION} ${PREFIX}/lib/libadns.so
-	strip ${PREFIX}/bin/adnslogres ${PREFIX}/bin/adnshost
+	${STRIP_CMD} ${PREFIX}/bin/adnslogres ${PREFIX}/bin/adnshost
 
 .include <bsd.port.mk>
