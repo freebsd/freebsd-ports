@@ -3,7 +3,7 @@
 # Date created:		01 May 1996
 # Whom:			masafumi
 #
-# $Id: Makefile,v 1.3 1996/09/20 05:46:52 max Exp $
+# $Id: Makefile,v 1.4 1996/09/20 20:29:03 max Exp $
 #
 
 DISTNAME=	pine3.95
@@ -38,8 +38,8 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/pico ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/pilot ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/pine ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/libc-client.so.1.3 $(PREFIX)/lib
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/libpico.so.1.3 $(PREFIX)/lib
+	${INSTALL_DATA} ${WRKSRC}/bin/libc-client.so.1.3 $(PREFIX)/lib
+	${INSTALL_DATA} ${WRKSRC}/bin/libpico.so.1.3 $(PREFIX)/lib
 	${INSTALL_MAN} ${WRKSRC}/doc/pico.1 ${PREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/doc/pilot.1 ${PREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/doc/pine.1 ${PREFIX}/man/man1
