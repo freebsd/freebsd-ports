@@ -20,6 +20,8 @@ RUN_DEPENDS=	${X11BASE}/lib/${MOZILLA}/libgtkembedmoz.so:${PORTSDIR}/www/${MOZIL
 
 WITH_FULL_MOZILLA=	"Problems with SSL, general performance, and usability"
 
+BROKEN=	"Does not work with Mozilla 1.1"
+
 .if !defined(WITH_FULL_MOZILLA)
 MOZILLA=	mozilla-embedded
 .else
