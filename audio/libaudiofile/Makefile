@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libaudiofile
-PORTVERSION=	0.2.3
+PORTVERSION=	0.2.4
 CATEGORIES=	audio
 MASTER_SITES=	ftp://oss.sgi.com/projects/audiofile/download/ \
 		${MASTER_SITE_GNOME}
