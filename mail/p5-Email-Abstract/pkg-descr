@@ -1,0 +1,10 @@
+Email::Abstract provides module writers with the ability to write
+representation-independent mail handling code. For instance, in the
+cases of Mail::Thread or Mail::ListDetector, a key part of the code
+involves reading the headers from a mail object. Where previously
+one would either have to specify the mail class required, or to
+build a new object from scratch, Email::Abstract can be used to
+perform certain simple operations on an object regardless of its
+underlying representation.
+
+WWW: http://search.cpan.org/dist/Email-Abstract/
