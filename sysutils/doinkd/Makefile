@@ -3,17 +3,17 @@
 # Date created:	12 March 1997
 # Whom:	Andrew <andrew@ugh.net.au>, Iain Templeton <iain@ugh.net.au>
 #
-# $Id$
+# $Id: Makefile,v 1.2 1997/03/25 08:19:32 obrien Exp $
 #
 
 DISTNAME=	idled-1.16
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.cs.hope.edu/pub/idled/
 
-MAINTAINER=     andrew@ugh.net.au, iain@ugh.net.au
+MAINTAINER=     andrew@ugh.net.au
 
 NO_CDROM=	non-profit use and distribution only
-NOMANCOMPRESS=	compressed already
+MANCOMPRESSED=	yes
 MAN5=		idled.cf.5
 MAN8=		idled.8
 
