@@ -11,7 +11,7 @@ CATEGORIES=	ftp
 MASTER_SITES=	http://gftp.seul.org/ \
 		ftp://gftp.seul.org/pub/gftp/
 
-MAINTAINER=	ports@FreeBSD.Org
+MAINTAINER=	lehmann@ans-netz.de
 
 USE_X_PREFIX=	yes
 USE_GTK=	yes
