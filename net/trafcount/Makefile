@@ -19,11 +19,14 @@ STARTUP=		trafcount.sh
 MAN1=			trafcount.1
 
 MAN_COMPRESSED=		no
+USE_REINPLACE=		yes
 
 post-patch:
-	@${PERL} -pi.fbsd -e 's@kmoddir=/modules@kmoddir=${PREFIX}/libexec@g' ${WRKSRC}/trafcount.sh
-	@${PERL} -pi.fbsd -e 's@/usr/local@${PREFIX}@g' \
-		${WRKSRC}/client/Makefile ${WRKSRC}/module/Makefile ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's@kmoddir=/modules@kmoddir=${PREFIX}/libexec@g' \
+		${WRKSRC}/trafcount.sh
+	@${REINPLACE_CMD} -e 's@/usr/local@${PREFIX}@g' \
+		${WRKSRC}/client/Makefile ${WRKSRC}/module/Makefile \
+		${WRKSRC}/Makefile
 
 .if !exists(/usr/src/sys/Makefile)
 BROKEN=			"Kernel source files required"
