@@ -11,7 +11,7 @@ CATEGORIES=	biology
 MASTER_SITES=	ftp://ftp.ncbi.nlm.nih.gov/toolbox/ncbi_tools/old/${PORTVERSION:S/.//g}/
 DISTNAME=	ncbi
 
-MAINTAINER=	tonym@angis.org.au
+MAINTAINER=	tonym@biolateral.com.au
 
 USE_MOTIF=	yes
 
