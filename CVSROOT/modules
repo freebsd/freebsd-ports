@@ -3701,6 +3701,7 @@ khacc		ports/finance/khacc
 kile		ports/editors/kile
 kiltdown	ports/mail/kiltdown
 kimagemapeiditor	ports/graphics/kimagemapeditor
+kimdaba		ports/graphics/kimdaba
 kimwitu		ports/devel/kimwitu
 kimwitu++	ports/devel/kimwitu++
 kinemage	ports/biology/kinemage
