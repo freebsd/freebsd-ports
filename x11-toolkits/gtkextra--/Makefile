@@ -25,10 +25,4 @@ USE_GNOME=	gtk12
 INSTALLS_SHLIB=	yes
 CONFIGURE_ENV=	PERL="${PERL}"
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502126
-BROKEN=		"Configure fails on FreeBSD >= 5.x"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
