@@ -1,4 +1,7 @@
 share/aspell/sk.dat
 share/aspell/sk.multi
 share/aspell/sk.rws
+share/aspell/sk-extend.multi
+share/aspell/sk-extend.rws
+share/aspell/slovak-extend.alias
 share/aspell/slovak.alias
