@@ -1,3 +1,4 @@
+@comment $FreeBSD$
 bin/gforth-0.5.0
 @exec ln -fs %f %B/gforth
 @unexec rm -f %B/gforth
@@ -9,23 +10,10 @@ bin/gforthmi-0.5.0
 @unexec rm -f %B/gforthmi
 @unexec install-info --delete %D/info/gforth.info %D/info/dir
 info/gforth.info
-info/gforth.info-1
-info/gforth.info-10
-info/gforth.info-11
-info/gforth.info-12
-info/gforth.info-13
-info/gforth.info-14
-info/gforth.info-2
-info/gforth.info-3
-info/gforth.info-4
-info/gforth.info-5
-info/gforth.info-6
-info/gforth.info-7
-info/gforth.info-8
-info/gforth.info-9
 @exec install-info %D/info/gforth.info %D/info/dir
 lib/gforth/0.5.0/gforth-ditc
 lib/gforth/0.5.0/gforth.fi
+@exec mkdir -p %D/lib/gforth/site-forth
 share/emacs/site-lisp/gforth.el
 share/gforth/0.5.0/TAGS
 share/gforth/0.5.0/add.fs
@@ -179,7 +167,7 @@ share/gforth/0.5.0/vt100.fs
 share/gforth/0.5.0/vt100key.fs
 share/gforth/0.5.0/wordinfo.fs
 share/gforth/0.5.0/wordsets.fs
-share/gforth/site-forth/siteinit.fs
+@exec mkdir -p %D/share/gforth/site-forth
 @dirrm share/gforth/site-forth
 @dirrm share/gforth/0.5.0/test
 @dirrm share/gforth/0.5.0/kernel
@@ -187,28 +175,12 @@ share/gforth/site-forth/siteinit.fs
 @dirrm share/gforth/0.5.0/doc
 @dirrm share/gforth/0.5.0/compat
 @dirrm share/gforth/0.5.0/asm
-@dirrm share/gforth/0.5.0/arch/sparc
-@dirrm share/gforth/0.5.0/arch/shboom
-@dirrm share/gforth/0.5.0/arch/power
-@dirrm share/gforth/0.5.0/arch/misc
 @dirrm share/gforth/0.5.0/arch/mips
-@dirrm share/gforth/0.5.0/arch/m68k
-@dirrm share/gforth/0.5.0/arch/ia64
-@dirrm share/gforth/0.5.0/arch/hppa
-@dirrm share/gforth/0.5.0/arch/h8
-@dirrm share/gforth/0.5.0/arch/generic
-@dirrm share/gforth/0.5.0/arch/c165
-@dirrm share/gforth/0.5.0/arch/avr
 @dirrm share/gforth/0.5.0/arch/alpha
-@dirrm share/gforth/0.5.0/arch/8086
-@dirrm share/gforth/0.5.0/arch/6502
-@dirrm share/gforth/0.5.0/arch/4stack
 @dirrm share/gforth/0.5.0/arch/386
 @dirrm share/gforth/0.5.0/arch
 @dirrm share/gforth/0.5.0
 @dirrm share/gforth
-@unexec rmdir %D/share/emacs/site-lisp 2>/dev/null || true
-@unexec rmdir %D/share/emacs 2>/dev/null || true
 @dirrm lib/gforth/site-forth
 @dirrm lib/gforth/0.5.0
 @dirrm lib/gforth
