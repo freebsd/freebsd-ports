@@ -25,6 +25,7 @@ bin/svk
 %%SITE_PERL%%/SVK/Command/Patch.pm
 %%SITE_PERL%%/SVK/Command/Propdel.pm
 %%SITE_PERL%%/SVK/Command/Propedit.pm
+%%SITE_PERL%%/SVK/Command/Propget.pm
 %%SITE_PERL%%/SVK/Command/Proplist.pm
 %%SITE_PERL%%/SVK/Command/Propset.pm
 %%SITE_PERL%%/SVK/Command/Resolved.pm
@@ -53,11 +54,13 @@ bin/svk
 %%SITE_PERL%%/SVK/Notify.pm
 %%SITE_PERL%%/SVK/Patch.pm
 %%SITE_PERL%%/SVK/Target.pm
+%%SITE_PERL%%/SVK/Target/Universal.pm
 %%SITE_PERL%%/SVK/Util.pm
 %%SITE_PERL%%/SVK/XD.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/SVK/.packlist
 @dirrm %%SITE_PERL%%/SVK/I18N
 @dirrm %%SITE_PERL%%/SVK/Editor
 @dirrm %%SITE_PERL%%/SVK/Command
+@dirrm %%SITE_PERL%%/SVK/Target
 @dirrm %%SITE_PERL%%/SVK
 @unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/SVK 2>/dev/null || true
