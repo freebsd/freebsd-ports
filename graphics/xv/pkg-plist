@@ -6,5 +6,6 @@ bin/xcmap
 bin/xvpictoppm
 man/man1/xv.1.gz
 man/man1/bggen.1.gz
+man/man1/vdcomp.1.gz
 man/man1/xcmap.1.gz
 man/man1/xvpictoppm.1.gz
