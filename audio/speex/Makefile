@@ -18,6 +18,8 @@ COMMENT=	An open-source patent-free voice codec
 
 LIB_DEPENDS=	ogg.5:${PORTSDIR}/audio/libogg
 
+CONFLICTS=	speex-devel-*
+
 USE_GNOME=	gnomehack
 USE_GETOPT_LONG=	yes
 USE_REINPLACE=	yes
