@@ -6009,6 +6009,7 @@ p5-Sledge-Plugin-NoCache	ports/www/p5-Sledge-Plugin-NoCache
 p5-Sledge-Plugin-ScratchPad	ports/www/p5-Sledge-Plugin-ScratchPad
 p5-Sledge-Plugin-SessionAutoCleanup	ports/www/p5-Sledge-Plugin-SessionAutoCleanup
 p5-Sledge-SessionManager-CookieStore	ports/www/p5-Sledge-SessionManager-CookieStore
+p5-Sledge-Template-Expr	ports/www/p5-Sledge-Template-Expr
 p5-Socket6	ports/net/p5-Socket6
 p5-Socks	ports/net/p5-Socks
 p5-Sort-ArbBiLex	ports/textproc/p5-Sort-ArbBiLex
