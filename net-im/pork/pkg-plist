@@ -2,8 +2,10 @@ bin/pork
 %%DATADIR%%/QUICK_START
 %%DATADIR%%/examples/perl/acro.pl
 %%DATADIR%%/examples/perl/event_test.pl
+%%DATADIR%%/examples/perl/irc.pl
 %%DATADIR%%/examples/perl/np.pl
 %%DATADIR%%/examples/perl/signon.pl
+%%DATADIR%%/examples/perl/wh.pl
 %%DATADIR%%/help/blist/add_block
 %%DATADIR%%/help/blist/add_permit
 %%DATADIR%%/help/blist/away
@@ -256,6 +258,7 @@ bin/pork
 %%DATADIR%%/help/win/bind_next
 %%DATADIR%%/help/win/clear
 %%DATADIR%%/help/win/close
+%%DATADIR%%/help/win/dump
 %%DATADIR%%/help/win/erase
 %%DATADIR%%/help/win/list
 %%DATADIR%%/help/win/next
