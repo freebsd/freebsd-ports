@@ -41,8 +41,8 @@ post-patch:
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 500000
-BUILD_DEPENDS+= ${LOCALBASE}/include/gmp.h:${PORTSDIR}/math/libgmp4
-CONFIGURE_ARGS+= --with-gmp-lib=${LOCALBASE}/lib \
+BUILD_DEPENDS+=	${LOCALBASE}/include/gmp.h:${PORTSDIR}/math/libgmp4
+CONFIGURE_ARGS+=	--with-gmp-lib=${LOCALBASE}/lib \
 		--with-gmp-inc=${LOCALBASE}/include
 .endif
 
