@@ -34,6 +34,8 @@ lib/Ngraph/fitrslt.nsc
 lib/Ngraph/fitrslt.tcl
 lib/Ngraph/gra2ps
 lib/Ngraph/gra2ps.ini
+lib/Ngraph/gra2wmf
+lib/Ngraph/gra2wmf.ini
 lib/Ngraph/ja/Ngraph
 lib/Ngraph/legend.nsc
 lib/Ngraph/legend.tcl
