@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gtk
-PORTVERSION=	1.3.1
+PORTVERSION=	1.3.2
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	ftp://ftp.gimp.org/pub/gtk/v1.3/ \
 		ftp://ftp.cs.umn.edu/pub/gimp/gtk/v1.3/ \
@@ -17,7 +17,7 @@ MAINTAINER=	vanilla@FreeBSD.org
 
 NO_LATEST_LINK=	"Unstable, development version."
 
-LIB_DEPENDS=	glib-1.3.1:${PORTSDIR}/devel/glib13 \
+LIB_DEPENDS=	glib-1.3.2:${PORTSDIR}/devel/glib13 \
 		pango.0:${PORTSDIR}/x11-toolkits/pango \
 		png.4:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff \
@@ -29,8 +29,9 @@ USE_XPM=	yes
 USE_PERL5=	yes
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+PLIST_SUB=	GTK_VERSION="${PORTVERSION}"
 
 MAN1=		gtk-config-2.0.1
 
