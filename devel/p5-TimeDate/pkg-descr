@@ -1,0 +1,19 @@
+This is the perl5 TimeDate distribution. It requires perl version 5.003
+or later
+
+This distribution replaces my earlier GetDate distribution, which was
+only a date parser. The date parser contained in this distribution
+is far superior to the yacc based parser, and a *lot* fatser.
+
+The parser contained here will only parse absolute dates, if you want a date
+parser that can parse relative dates then take a look at the
+Time modules by David Muir on CPAN.
+
+The file Local.pm.new which is included in this distribution is a patched 
+version of Time::Local which comes with perl. It fixes two problems
+
+    - It determines the zone offset based on now rather than epoch
+    - It fixes a problem with looping forever when a year > 1900 is passed in
+
+Please report any bugs/suggestions to <Graham.Barr@tiuk.ti.com>
+Copyright 1996 Graham Barr. All rights reserved.
