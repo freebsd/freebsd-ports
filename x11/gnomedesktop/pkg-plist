@@ -207,19 +207,12 @@ share/locale/zh_TW/LC_MESSAGES/gnome-desktop-2.0.mo
 @unexec rmdir %D/share/locale/yo 2> /dev/null || true
 @dirrm share/gnome/omf/gnome-desktop
 @dirrm share/gnome/help/lgpl/eu
-@dirrm share/gnome/help/lgpl/C
-@dirrm share/gnome/help/lgpl
 @dirrm share/gnome/help/gpl/eu
-@dirrm share/gnome/help/gpl/C
-@dirrm share/gnome/help/gpl
 @dirrm share/gnome/help/gnome-feedback/eu
 @dirrm share/gnome/help/gnome-feedback/C
 @dirrm share/gnome/help/gnome-feedback
 @dirrm share/gnome/help/fdl/eu
-@dirrm share/gnome/help/fdl/C
-@dirrm share/gnome/help/fdl
 @dirrm share/gnome/gnome-about/headers
-@dirrm share/gnome/gnome-about
 @dirrm include/gnome-desktop-2.0/libgnomeui
 @dirrm include/gnome-desktop-2.0/libgnome
 @dirrm include/gnome-desktop-2.0
