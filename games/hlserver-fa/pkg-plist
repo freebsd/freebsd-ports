@@ -1,12 +1,12 @@
-%%HLDSDIR%%firearms/1024_textscheme.txt
-%%HLDSDIR%%firearms/1152_textscheme.txt
-%%HLDSDIR%%firearms/1280_textscheme.txt
-%%HLDSDIR%%firearms/1600_textscheme.txt
-%%HLDSDIR%%firearms/320_textscheme.txt
-%%HLDSDIR%%firearms/400_textscheme.txt
-%%HLDSDIR%%firearms/512_textscheme.txt
-%%HLDSDIR%%firearms/640_textscheme.txt
-%%HLDSDIR%%firearms/800_textscheme.txt
+%%PORTDOCS%%n%%HLDSDIR%%firearms/1024_textscheme.txt
+%%PORTDOCS%%%%HLDSDIR%%firearms/1152_textscheme.txt
+%%PORTDOCS%%%%HLDSDIR%%firearms/1280_textscheme.txt
+%%PORTDOCS%%%%HLDSDIR%%firearms/1600_textscheme.txt
+%%PORTDOCS%%%%HLDSDIR%%firearms/320_textscheme.txt
+%%PORTDOCS%%%%HLDSDIR%%firearms/400_textscheme.txt
+%%PORTDOCS%%%%HLDSDIR%%firearms/512_textscheme.txt
+%%PORTDOCS%%%%HLDSDIR%%firearms/640_textscheme.txt
+%%PORTDOCS%%%%HLDSDIR%%firearms/800_textscheme.txt
 %%HLDSDIR%%firearms/cached.wad
 %%HLDSDIR%%firearms/cl_dlls/client.dll
 %%HLDSDIR%%firearms/commands.txt
@@ -308,54 +308,54 @@
 %%HLDSDIR%%firearms/listenserver.cfg
 %%HLDSDIR%%firearms/mapcycle.txt
 %%HLDSDIR%%firearms/maps/ctisdps_mexico.bsp
-%%HLDSDIR%%firearms/maps/ctisdps_mexico.txt
+%%PORTDOCS%%%%HLDSDIR%%firearms/maps/ctisdps_mexico.txt
 %%HLDSDIR%%firearms/maps/obj_omaha.bsp
-%%HLDSDIR%%firearms/maps/obj_omaha.txt
+%%PORTDOCS%%%%HLDSDIR%%firearms/maps/obj_omaha.txt
 %%HLDSDIR%%firearms/maps/obj_wartorn.bsp
-%%HLDSDIR%%firearms/maps/obj_wartorn.txt
+%%PORTDOCS%%%%HLDSDIR%%firearms/maps/obj_wartorn.txt
 %%HLDSDIR%%firearms/maps/ps_bridge.bsp
-%%HLDSDIR%%firearms/maps/ps_bridge.txt
+%%PORTDOCS%%%%HLDSDIR%%firearms/maps/ps_bridge.txt
 %%HLDSDIR%%firearms/maps/ps_coldwar.bsp
-%%HLDSDIR%%firearms/maps/ps_coldwar.txt
+%%PORTDOCS%%%%HLDSDIR%%firearms/maps/ps_coldwar.txt
 %%HLDSDIR%%firearms/maps/ps_crash.bsp
 %%HLDSDIR%%firearms/maps/ps_crash.fwp
-%%HLDSDIR%%firearms/maps/ps_crash.txt
+%%PORTDOCS%%%%HLDSDIR%%firearms/maps/ps_crash.txt
 %%HLDSDIR%%firearms/maps/ps_dangerzone.bsp
-%%HLDSDIR%%firearms/maps/ps_dangerzone.txt
+%%PORTDOCS%%%%HLDSDIR%%firearms/maps/ps_dangerzone.txt
 %%HLDSDIR%%firearms/maps/ps_desertcrisis.bsp
-%%HLDSDIR%%firearms/maps/ps_desertcrisis.txt
+%%PORTDOCS%%%%HLDSDIR%%firearms/maps/ps_desertcrisis.txt
 %%HLDSDIR%%firearms/maps/ps_greatoutdoors.bsp
-%%HLDSDIR%%firearms/maps/ps_greatoutdoors.txt
+%%PORTDOCS%%%%HLDSDIR%%firearms/maps/ps_greatoutdoors.txt
 %%HLDSDIR%%firearms/maps/ps_inlands.bsp
 %%HLDSDIR%%firearms/maps/ps_invasion.bsp
-%%HLDSDIR%%firearms/maps/ps_invasion.txt
+%%PORTDOCS%%%%HLDSDIR%%firearms/maps/ps_invasion.txt
 %%HLDSDIR%%firearms/maps/ps_island.bsp
-%%HLDSDIR%%firearms/maps/ps_island.txt
+%%PORTDOCS%%%%HLDSDIR%%firearms/maps/ps_island.txt
 %%HLDSDIR%%firearms/maps/ps_marie.bsp
-%%HLDSDIR%%firearms/maps/ps_marie.txt
+%%PORTDOCS%%%%HLDSDIR%%firearms/maps/ps_marie.txt
 %%HLDSDIR%%firearms/maps/ps_nightstalkers.bsp
-%%HLDSDIR%%firearms/maps/ps_nightstalkers.txt
+%%PORTDOCS%%%%HLDSDIR%%firearms/maps/ps_nightstalkers.txt
 %%HLDSDIR%%firearms/maps/ps_outlands.bsp
-%%HLDSDIR%%firearms/maps/ps_outlands.txt
+%%PORTDOCS%%%%HLDSDIR%%firearms/maps/ps_outlands.txt
 %%HLDSDIR%%firearms/maps/ps_river.bsp
-%%HLDSDIR%%firearms/maps/ps_river.txt
+%%PORTDOCS%%%%HLDSDIR%%firearms/maps/ps_river.txt
 %%HLDSDIR%%firearms/maps/ps_sand.bsp
-%%HLDSDIR%%firearms/maps/ps_sand.txt
+%%PORTDOCS%%%%HLDSDIR%%firearms/maps/ps_sand.txt
 %%HLDSDIR%%firearms/maps/ps_sandblast.bsp
-%%HLDSDIR%%firearms/maps/ps_sandblast.txt
+%%PORTDOCS%%%%HLDSDIR%%firearms/maps/ps_sandblast.txt
 %%HLDSDIR%%firearms/maps/ps_street.bsp
-%%HLDSDIR%%firearms/maps/ps_street.txt
+%%PORTDOCS%%%%HLDSDIR%%firearms/maps/ps_street.txt
 %%HLDSDIR%%firearms/maps/ps_swamp.bsp
-%%HLDSDIR%%firearms/maps/ps_swamp.txt
+%%PORTDOCS%%%%HLDSDIR%%firearms/maps/ps_swamp.txt
 %%HLDSDIR%%firearms/maps/ps_ub61.bsp
-%%HLDSDIR%%firearms/maps/ps_ub61.txt
+%%PORTDOCS%%%%HLDSDIR%%firearms/maps/ps_ub61.txt
 %%HLDSDIR%%firearms/maps/sd_durandal.bsp
-%%HLDSDIR%%firearms/maps/sd_durandal.txt
-%%HLDSDIR%%firearms/maps/sd_durandal_readme.txt
+%%PORTDOCS%%%%HLDSDIR%%firearms/maps/sd_durandal.txt
+%%PORTDOCS%%%%HLDSDIR%%firearms/maps/sd_durandal_readme.txt
 %%HLDSDIR%%firearms/maps/sd_woods.bsp
-%%HLDSDIR%%firearms/maps/sd_woods.txt
+%%PORTDOCS%%%%HLDSDIR%%firearms/maps/sd_woods.txt
 %%HLDSDIR%%firearms/maps/tc_iwojima.bsp
-%%HLDSDIR%%firearms/maps/tc_iwojima.txt
+%%PORTDOCS%%%%HLDSDIR%%firearms/maps/tc_iwojima.txt
 %%HLDSDIR%%firearms/media/launch_deny1.wav
 %%HLDSDIR%%firearms/media/launch_deny2.wav
 %%HLDSDIR%%firearms/media/launch_dnmenu1.wav
@@ -366,71 +366,71 @@
 %%HLDSDIR%%firearms/media/logo.avi
 %%HLDSDIR%%firearms/menus/40mmgl.txt
 %%HLDSDIR%%firearms/menus/9mmlc.txt
-%%HLDSDIR%%firearms/menus/Quick Config Tokens.txt
-%%HLDSDIR%%firearms/menus/acpsa.txt
-%%HLDSDIR%%firearms/menus/adrenaline.txt
-%%HLDSDIR%%firearms/menus/aesa.txt
-%%HLDSDIR%%firearms/menus/akimbo.txt
-%%HLDSDIR%%firearms/menus/anaconda.txt
-%%HLDSDIR%%firearms/menus/arbt.txt
-%%HLDSDIR%%firearms/menus/argl.txt
-%%HLDSDIR%%firearms/menus/arms.txt
-%%HLDSDIR%%firearms/menus/art1.txt
-%%HLDSDIR%%firearms/menus/art2.txt
-%%HLDSDIR%%firearms/menus/artac.txt
-%%HLDSDIR%%firearms/menus/assault.txt
-%%HLDSDIR%%firearms/menus/atsrscp.txt
-%%HLDSDIR%%firearms/menus/autoshot.txt
-%%HLDSDIR%%firearms/menus/ba.txt
-%%HLDSDIR%%firearms/menus/bandages.txt
-%%HLDSDIR%%firearms/menus/berserker.txt
-%%HLDSDIR%%firearms/menus/bfsmg.txt
-%%HLDSDIR%%firearms/menus/bparscp.txt
-%%HLDSDIR%%firearms/menus/buildmortar.txt
-%%HLDSDIR%%firearms/menus/carbine.txt
-%%HLDSDIR%%firearms/menus/classes.txt
-%%HLDSDIR%%firearms/menus/claymore.txt
-%%HLDSDIR%%firearms/menus/custom.txt
-%%HLDSDIR%%firearms/menus/dismantle.txt
-%%HLDSDIR%%firearms/menus/expert.txt
-%%HLDSDIR%%firearms/menus/fire support.txt
-%%HLDSDIR%%firearms/menus/flash.txt
-%%HLDSDIR%%firearms/menus/fm1.txt
-%%HLDSDIR%%firearms/menus/fm2.txt
-%%HLDSDIR%%firearms/menus/frag.txt
-%%HLDSDIR%%firearms/menus/givebandage.txt
-%%HLDSDIR%%firearms/menus/hcmmg.txt
-%%HLDSDIR%%firearms/menus/hcmsmg.txt
-%%HLDSDIR%%firearms/menus/heavy.txt
-%%HLDSDIR%%firearms/menus/helmet.txt
-%%HLDSDIR%%firearms/menus/hospice.txt
-%%HLDSDIR%%firearms/menus/lead.txt
-%%HLDSDIR%%firearms/menus/legs.txt
-%%HLDSDIR%%firearms/menus/light.txt
-%%HLDSDIR%%firearms/menus/marine.txt
-%%HLDSDIR%%firearms/menus/marker.txt
-%%HLDSDIR%%firearms/menus/marksman.txt
-%%HLDSDIR%%firearms/menus/medium.txt
-%%HLDSDIR%%firearms/menus/ms1.txt
-%%HLDSDIR%%firearms/menus/ms2.txt
-%%HLDSDIR%%firearms/menus/natoarscp.txt
-%%HLDSDIR%%firearms/menus/nomen.txt
-%%HLDSDIR%%firearms/menus/quick config.txt
-%%HLDSDIR%%firearms/menus/reqart.txt
-%%HLDSDIR%%firearms/menus/rvsascp.txt
-%%HLDSDIR%%firearms/menus/sa3rb.txt
-%%HLDSDIR%%firearms/menus/saiga.txt
-%%HLDSDIR%%firearms/menus/sasil.txt
-%%HLDSDIR%%firearms/menus/smgsil.txt
-%%HLDSDIR%%firearms/menus/srscp.txt
-%%HLDSDIR%%firearms/menus/stealth.txt
-%%HLDSDIR%%firearms/menus/stg24.txt
-%%HLDSDIR%%firearms/menus/tac12.txt
-%%HLDSDIR%%firearms/menus/tacarlcm.txt
-%%HLDSDIR%%firearms/menus/tacsmg.txt
-%%HLDSDIR%%firearms/menus/treat.txt
-%%HLDSDIR%%firearms/menus/veteran.txt
-%%HLDSDIR%%firearms/menus/vetran.txt
+%%PORTDOCS%%%%HLDSDIR%%firearms/menus/Quick Config Tokens.txt
+%%PORTDOCS%%%%HLDSDIR%%firearms/menus/acpsa.txt
+%%PORTDOCS%%%%HLDSDIR%%firearms/menus/adrenaline.txt
+%%PORTDOCS%%%%HLDSDIR%%firearms/menus/aesa.txt
+%%PORTDOCS%%%%HLDSDIR%%firearms/menus/akimbo.txt
+%%PORTDOCS%%%%HLDSDIR%%firearms/menus/anaconda.txt
+%%PORTDOCS%%%%HLDSDIR%%firearms/menus/arbt.txt
+%%PORTDOCS%%%%HLDSDIR%%firearms/menus/argl.txt
+%%PORTDOCS%%%%HLDSDIR%%firearms/menus/arms.txt
+%%PORTDOCS%%%%HLDSDIR%%firearms/menus/art1.txt
+%%PORTDOCS%%%%HLDSDIR%%firearms/menus/art2.txt
+%%PORTDOCS%%%%HLDSDIR%%firearms/menus/artac.txt
+%%PORTDOCS%%%%HLDSDIR%%firearms/menus/assault.txt
+%%PORTDOCS%%%%HLDSDIR%%firearms/menus/atsrscp.txt
+%%PORTDOCS%%%%HLDSDIR%%firearms/menus/autoshot.txt
+%%PORTDOCS%%%%HLDSDIR%%firearms/menus/ba.txt
+%%PORTDOCS%%%%HLDSDIR%%firearms/menus/bandages.txt
+%%PORTDOCS%%%%HLDSDIR%%firearms/menus/berserker.txt
+%%PORTDOCS%%%%HLDSDIR%%firearms/menus/bfsmg.txt
+%%PORTDOCS%%%%HLDSDIR%%firearms/menus/bparscp.txt
+%%PORTDOCS%%%%HLDSDIR%%firearms/menus/buildmortar.txt
+%%PORTDOCS%%%%HLDSDIR%%firearms/menus/carbine.txt
+%%PORTDOCS%%%%HLDSDIR%%firearms/menus/classes.txt
+%%PORTDOCS%%%%HLDSDIR%%firearms/menus/claymore.txt
+%%PORTDOCS%%%%HLDSDIR%%firearms/menus/custom.txt
+%%PORTDOCS%%%%HLDSDIR%%firearms/menus/dismantle.txt
+%%PORTDOCS%%%%HLDSDIR%%firearms/menus/expert.txt
+%%PORTDOCS%%%%HLDSDIR%%firearms/menus/fire support.txt
+%%PORTDOCS%%%%HLDSDIR%%firearms/menus/flash.txt
+%%PORTDOCS%%%%HLDSDIR%%firearms/menus/fm1.txt
+%%PORTDOCS%%%%HLDSDIR%%firearms/menus/fm2.txt
+%%PORTDOCS%%%%HLDSDIR%%firearms/menus/frag.txt
+%%PORTDOCS%%%%HLDSDIR%%firearms/menus/givebandage.txt
+%%PORTDOCS%%%%HLDSDIR%%firearms/menus/hcmmg.txt
+%%PORTDOCS%%%%HLDSDIR%%firearms/menus/hcmsmg.txt
+%%PORTDOCS%%%%HLDSDIR%%firearms/menus/heavy.txt
+%%PORTDOCS%%%%HLDSDIR%%firearms/menus/helmet.txt
+%%PORTDOCS%%%%HLDSDIR%%firearms/menus/hospice.txt
+%%PORTDOCS%%%%HLDSDIR%%firearms/menus/lead.txt
+%%PORTDOCS%%%%HLDSDIR%%firearms/menus/legs.txt
+%%PORTDOCS%%%%HLDSDIR%%firearms/menus/light.txt
+%%PORTDOCS%%%%HLDSDIR%%firearms/menus/marine.txt
+%%PORTDOCS%%%%HLDSDIR%%firearms/menus/marker.txt
+%%PORTDOCS%%%%HLDSDIR%%firearms/menus/marksman.txt
+%%PORTDOCS%%%%HLDSDIR%%firearms/menus/medium.txt
+%%PORTDOCS%%%%HLDSDIR%%firearms/menus/ms1.txt
+%%PORTDOCS%%%%HLDSDIR%%firearms/menus/ms2.txt
+%%PORTDOCS%%%%HLDSDIR%%firearms/menus/natoarscp.txt
+%%PORTDOCS%%%%HLDSDIR%%firearms/menus/nomen.txt
+%%PORTDOCS%%%%HLDSDIR%%firearms/menus/quick config.txt
+%%PORTDOCS%%%%HLDSDIR%%firearms/menus/reqart.txt
+%%PORTDOCS%%%%HLDSDIR%%firearms/menus/rvsascp.txt
+%%PORTDOCS%%%%HLDSDIR%%firearms/menus/sa3rb.txt
+%%PORTDOCS%%%%HLDSDIR%%firearms/menus/saiga.txt
+%%PORTDOCS%%%%HLDSDIR%%firearms/menus/sasil.txt
+%%PORTDOCS%%%%HLDSDIR%%firearms/menus/smgsil.txt
+%%PORTDOCS%%%%HLDSDIR%%firearms/menus/srscp.txt
+%%PORTDOCS%%%%HLDSDIR%%firearms/menus/stealth.txt
+%%PORTDOCS%%%%HLDSDIR%%firearms/menus/stg24.txt
+%%PORTDOCS%%%%HLDSDIR%%firearms/menus/tac12.txt
+%%PORTDOCS%%%%HLDSDIR%%firearms/menus/tacarlcm.txt
+%%PORTDOCS%%%%HLDSDIR%%firearms/menus/tacsmg.txt
+%%PORTDOCS%%%%HLDSDIR%%firearms/menus/treat.txt
+%%PORTDOCS%%%%HLDSDIR%%firearms/menus/veteran.txt
+%%PORTDOCS%%%%HLDSDIR%%firearms/menus/vetran.txt
 %%HLDSDIR%%firearms/models/LILLY.mdl
 %%HLDSDIR%%firearms/models/REEDS.mdl
 %%HLDSDIR%%firearms/models/beachmdl.mdl
@@ -844,39 +844,37 @@
 %%HLDSDIR%%firearms/sprites/snp_psg_320.spr
 %%HLDSDIR%%firearms/sprites/snp_psg_640.spr
 %%HLDSDIR%%firearms/sprites/speech.spr
-%%HLDSDIR%%firearms/sprites/weapon_9mmlc.txt
-%%HLDSDIR%%firearms/sprites/weapon_ak47.txt
-%%HLDSDIR%%firearms/sprites/weapon_anaconda.txt
-%%HLDSDIR%%firearms/sprites/weapon_aug.txt
-%%HLDSDIR%%firearms/sprites/weapon_benelli.txt
-%%HLDSDIR%%firearms/sprites/weapon_ber92f.txt
-%%HLDSDIR%%firearms/sprites/weapon_ber93r.txt
-%%HLDSDIR%%firearms/sprites/weapon_bizon.txt
-%%HLDSDIR%%firearms/sprites/weapon_claymore.txt
-%%HLDSDIR%%firearms/sprites/weapon_coltgov.txt
-%%HLDSDIR%%firearms/sprites/weapon_desert.txt
-%%HLDSDIR%%firearms/sprites/weapon_famas.txt
-%%HLDSDIR%%firearms/sprites/weapon_flashbang.txt
-%%HLDSDIR%%firearms/sprites/weapon_frag.txt
-%%HLDSDIR%%firearms/sprites/weapon_g36e.txt
-%%HLDSDIR%%firearms/sprites/weapon_g3a3.txt
-%%HLDSDIR%%firearms/sprites/weapon_knife.txt
-%%HLDSDIR%%firearms/sprites/weapon_m11.txt
-%%HLDSDIR%%firearms/sprites/weapon_m16.txt
-%%HLDSDIR%%firearms/sprites/weapon_m4.txt
-%%HLDSDIR%%firearms/sprites/weapon_m60.txt
-%%HLDSDIR%%firearms/sprites/weapon_m79.txt
-%%HLDSDIR%%firearms/sprites/weapon_m82.txt
-%%HLDSDIR%%firearms/sprites/weapon_mc51.txt
-%%HLDSDIR%%firearms/sprites/weapon_mp5a5.txt
-%%HLDSDIR%%firearms/sprites/weapon_mp5k.txt
-%%HLDSDIR%%firearms/sprites/weapon_psg1.txt
-%%HLDSDIR%%firearms/sprites/weapon_saiga.txt
-%%HLDSDIR%%firearms/sprites/weapon_sterling.txt
-%%HLDSDIR%%firearms/sprites/weapon_stg24.txt
+%%PORTDOCS%%%%HLDSDIR%%firearms/sprites/weapon_9mmlc.txt
+%%PORTDOCS%%%%HLDSDIR%%firearms/sprites/weapon_ak47.txt
+%%PORTDOCS%%%%HLDSDIR%%firearms/sprites/weapon_anaconda.txt
+%%PORTDOCS%%%%HLDSDIR%%firearms/sprites/weapon_aug.txt
+%%PORTDOCS%%%%HLDSDIR%%firearms/sprites/weapon_benelli.txt
+%%PORTDOCS%%%%HLDSDIR%%firearms/sprites/weapon_ber92f.txt
+%%PORTDOCS%%%%HLDSDIR%%firearms/sprites/weapon_ber93r.txt
+%%PORTDOCS%%%%HLDSDIR%%firearms/sprites/weapon_bizon.txt
+%%PORTDOCS%%%%HLDSDIR%%firearms/sprites/weapon_claymore.txt
+%%PORTDOCS%%%%HLDSDIR%%firearms/sprites/weapon_coltgov.txt
+%%PORTDOCS%%%%HLDSDIR%%firearms/sprites/weapon_desert.txt
+%%PORTDOCS%%%%HLDSDIR%%firearms/sprites/weapon_famas.txt
+%%PORTDOCS%%%%HLDSDIR%%firearms/sprites/weapon_flashbang.txt
+%%PORTDOCS%%%%HLDSDIR%%firearms/sprites/weapon_frag.txt
+%%PORTDOCS%%%%HLDSDIR%%firearms/sprites/weapon_g36e.txt
+%%PORTDOCS%%%%HLDSDIR%%firearms/sprites/weapon_g3a3.txt
+%%PORTDOCS%%%%HLDSDIR%%firearms/sprites/weapon_knife.txt
+%%PORTDOCS%%%%HLDSDIR%%firearms/sprites/weapon_m11.txt
+%%PORTDOCS%%%%HLDSDIR%%firearms/sprites/weapon_m16.txt
+%%PORTDOCS%%%%HLDSDIR%%firearms/sprites/weapon_m4.txt
+%%PORTDOCS%%%%HLDSDIR%%firearms/sprites/weapon_m60.txt
+%%PORTDOCS%%%%HLDSDIR%%firearms/sprites/weapon_m79.txt
+%%PORTDOCS%%%%HLDSDIR%%firearms/sprites/weapon_m82.txt
+%%PORTDOCS%%%%HLDSDIR%%firearms/sprites/weapon_mc51.txt
+%%PORTDOCS%%%%HLDSDIR%%firearms/sprites/weapon_mp5a5.txt
+%%PORTDOCS%%%%HLDSDIR%%firearms/sprites/weapon_mp5k.txt
+%%PORTDOCS%%%%HLDSDIR%%firearms/sprites/weapon_psg1.txt
+%%PORTDOCS%%%%HLDSDIR%%firearms/sprites/weapon_saiga.txt
+%%PORTDOCS%%%%HLDSDIR%%firearms/sprites/weapon_sterling.txt
+%%PORTDOCS%%%%HLDSDIR%%firearms/sprites/weapon_stg24.txt
 %%HLDSDIR%%firearms/user.scr
-@exec mkdir %D/%%HLDSDIR%%firearms/SAVE
-@exec mkdir %D/%%HLDSDIR%%firearms/logs
 @dirrm %%HLDSDIR%%firearms/sprites
 @dirrm %%HLDSDIR%%firearms/sound/weapons
 @dirrm %%HLDSDIR%%firearms/sound/radio
@@ -889,10 +887,9 @@
 @dirrm %%HLDSDIR%%firearms/models/player/blue1
 @dirrm %%HLDSDIR%%firearms/models/player
 @dirrm %%HLDSDIR%%firearms/models
-@dirrm %%HLDSDIR%%firearms/menus
+%%PORTDOCS%%@dirrm %%HLDSDIR%%firearms/menus
 @dirrm %%HLDSDIR%%firearms/media
 @dirrm %%HLDSDIR%%firearms/maps
-@dirrm %%HLDSDIR%%firearms/logs
 @dirrm %%HLDSDIR%%firearms/gfx/vgui
 @dirrm %%HLDSDIR%%firearms/gfx/shell
 @dirrm %%HLDSDIR%%firearms/gfx/env
@@ -900,5 +897,6 @@
 @dirrm %%HLDSDIR%%firearms/events
 @dirrm %%HLDSDIR%%firearms/dlls
 @dirrm %%HLDSDIR%%firearms/cl_dlls
-@dirrm %%HLDSDIR%%firearms/SAVE
-@dirrm %%HLDSDIR%%firearms
+@unexec rmdir %D/%%HLDSDIR%%firearms/SAVE 2>/dev/null || true
+@unexec rmdir %D/%%HLDSDIR%%firearms/logs 2>/dev/null || true
+@unexec rmdir %D/%%HLDSDIR%%firearms 2>/dev/null || echo "If you are permanently removing this port, you should do a ``rm -rf ${PKG_PREFIX}/%%HLDSDIR%%firearms`` to remove any configuration files and logs left." | fmt

@@ -16,8 +16,6 @@ DISTFILES=	svencoop19.tar.gz svencoop19_patch.tar.gz
 
 MAINTAINER=	lioux@FreeBSD.org
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
-
 HALFLIFE_COUNTERSTRIKE_MASTER=	${.CURDIR}/../hlserver-cs
 
 .include "${HALFLIFE_COUNTERSTRIKE_MASTER}/Makefile"

@@ -14,7 +14,6 @@ MASTER_SITES=	http://ftp1download.gamespy.com/fileplanet/fpnew/action/half-life/
 		ftp://fileplanet.ngi.it/fileplanet/fpnew/action/half-life/official/ \
 		http://www.jetstreamgames.co.nz/files/pub/gamespyftp1/fpnew/action/half-life/official/ \
 		ftp://ftp1.terian.net/mirrors/fileplanet/fpnew/action/half-life/official/ \
-		ftp://ftp1.terian.net/mirrors/fileplanet/fpnew/action/half-life/official/ \
 		ftp://ftp2.terian.net/mirrors/fileplanet/fpnew/action/half-life/official/
 DISTNAME=	op4-linux-${PORTVERSION:S/.//g}
 

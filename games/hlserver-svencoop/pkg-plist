@@ -1,6 +1,6 @@
 %%HLDSDIR%%svencoop/PlaySvenCoop.pif
-%%HLDSDIR%%svencoop/README.html
-%%HLDSDIR%%svencoop/SC_WebSite.url
+%%PORTDOCS%%%%HLDSDIR%%svencoop/README.html
+%%PORTDOCS%%%%HLDSDIR%%svencoop/SC_WebSite.url
 %%HLDSDIR%%svencoop/SvenCoop.qst
 %%HLDSDIR%%svencoop/autoexec.cfg
 %%HLDSDIR%%svencoop/cached.wad
@@ -147,35 +147,35 @@
 %%HLDSDIR%%svencoop/models/p_uzi.mdl
 %%HLDSDIR%%svencoop/models/player/aswat/aswat.bmp
 %%HLDSDIR%%svencoop/models/player/aswat/aswat.mdl
-%%HLDSDIR%%svencoop/models/player/aswat/aswat.txt
+%%PORTDOCS%%%%HLDSDIR%%svencoop/models/player/aswat/aswat.txt
 %%HLDSDIR%%svencoop/models/player/barney/barney.bmp
 %%HLDSDIR%%svencoop/models/player/gina/gina.bmp
 %%HLDSDIR%%svencoop/models/player/gman/gman.bmp
 %%HLDSDIR%%svencoop/models/player/gordon/gordon.bmp
-%%HLDSDIR%%svencoop/models/player/gs/gs&gstc_readme.txt
+%%PORTDOCS%%%%HLDSDIR%%svencoop/models/player/gs/gs&gstc_readme.txt
 %%HLDSDIR%%svencoop/models/player/gs/gs.bmp
 %%HLDSDIR%%svencoop/models/player/gs/gs.mdl
 %%HLDSDIR%%svencoop/models/player/helmet/helmet.bmp
-%%HLDSDIR%%svencoop/models/player/homer1/README.TXT
+%%PORTDOCS%%%%HLDSDIR%%svencoop/models/player/homer1/README.TXT
 %%HLDSDIR%%svencoop/models/player/homer1/homer1.bmp
-%%HLDSDIR%%svencoop/models/player/homer1/homer1.mdl
+%%PORTDOCS%%%%HLDSDIR%%svencoop/models/player/homer1/homer1.mdl
 %%HLDSDIR%%svencoop/models/player/knute_and_bolte/knute_and_bolte.bmp
 %%HLDSDIR%%svencoop/models/player/knute_and_bolte/knute_and_bolte.mdl
-%%HLDSDIR%%svencoop/models/player/knute_and_bolte/readme.txt
+%%PORTDOCS%%%%HLDSDIR%%svencoop/models/player/knute_and_bolte/readme.txt
 %%HLDSDIR%%svencoop/models/player/obi09/obi09.bmp
 %%HLDSDIR%%svencoop/models/player/obi09/obi09.mdl
-%%HLDSDIR%%svencoop/models/player/obi09/obi09.txt
+%%PORTDOCS%%%%HLDSDIR%%svencoop/models/player/obi09/obi09.txt
 %%HLDSDIR%%svencoop/models/player/punisher/punisher.bmp
 %%HLDSDIR%%svencoop/models/player/punisher/punisher.mdl
-%%HLDSDIR%%svencoop/models/player/punisher/punisher.txt
+%%PORTDOCS%%%%HLDSDIR%%svencoop/models/player/punisher/punisher.txt
 %%HLDSDIR%%svencoop/models/player/robo/robo.bmp
 %%HLDSDIR%%svencoop/models/player/scientist/scientist.bmp
 %%HLDSDIR%%svencoop/models/player/skeleton/skeleton.bmp
 %%HLDSDIR%%svencoop/models/player/skeleton/skeleton.mdl
-%%HLDSDIR%%svencoop/models/player/trinityrage/TRINITYrage.txt
+%%PORTDOCS%%%%HLDSDIR%%svencoop/models/player/trinityrage/TRINITYrage.txt
 %%HLDSDIR%%svencoop/models/player/trinityrage/trinityrage.bmp
 %%HLDSDIR%%svencoop/models/player/trinityrage/trinityrage.mdl
-%%HLDSDIR%%svencoop/models/player/yodan/readme.txt
+%%PORTDOCS%%%%HLDSDIR%%svencoop/models/player/yodan/readme.txt
 %%HLDSDIR%%svencoop/models/player/yodan/yodan.bmp
 %%HLDSDIR%%svencoop/models/player/yodan/yodan.mdl
 %%HLDSDIR%%svencoop/models/v_2uzis.mdl
@@ -262,4 +262,6 @@
 @dirrm %%HLDSDIR%%svencoop/events
 @dirrm %%HLDSDIR%%svencoop/dlls
 @dirrm %%HLDSDIR%%svencoop/cl_dlls
-@dirrm %%HLDSDIR%%svencoop
+@unexec rmdir %D/%%HLDSDIR%%svencoop/SAVE 2>/dev/null || true
+@unexec rmdir %D/%%HLDSDIR%%svencoop/logs 2>/dev/null || true
+@unexec rmdir %D/%%HLDSDIR%%svencoop 2>/dev/null || echo "If you are permanently removing this port, you should do a ``rm -rf ${PKG_PREFIX}/%%HLDSDIR%%svencoop`` to remove any configuration files and logs left." | fmt

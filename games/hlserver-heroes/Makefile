@@ -14,7 +14,7 @@ DISTFILES=	hero10.zip HLH101.zip
 MAINTAINER=	lioux@FreeBSD.org
 
 USE_ZIP=	yes
-EXTRACT_BEFORE_ARGS=	-o
+EXTRACT_BEFORE_ARGS=	-o -qq
 
 WRKSRC=		${WRKDIR}/Heroes
 
