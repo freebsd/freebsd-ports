@@ -1,0 +1,11 @@
+--- audioplugin/MP3/Makefile.in.orig	Mon Sep 24 20:03:44 2001
++++ audioplugin/MP3/Makefile.in	Mon Sep 24 20:04:00 2001
+@@ -90,7 +90,7 @@
+ 
+ 
+ install: all
+-	-cp -f  quicktime_codec_ms.so quicktime_codec_.mp3.so $(libdir)
++	$(BSD_INSTALL_DATA) quicktime_codec_ms.so quicktime_codec_.mp3.so $(libdir)
+ 
+ 
+ quicktime_codec_ms.so: $(OBJS) codec_MP3_ms.o
