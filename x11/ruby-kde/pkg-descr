@@ -1,0 +1,6 @@
+This is a KDE extension library for Ruby (http://www.ruby-lang.org/)
+developed with SWIG (http://www.swig.org/) and Ruby module for SWIG
+(swigruby; www.goto.info.waseda.ac.jp/%7Efukusima/ruby/swig-j.html).
+
+Author:	Nobuyuki Horie <horie@smail.u-shizuoka-ken.ac.jp>
+WWW:	http://sfns.u-shizuoka-ken.ac.jp/geneng/horie_hp/ruby/index.html
