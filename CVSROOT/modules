@@ -6177,7 +6177,6 @@ pkfonts300	ports/print/pkfonts300
 pkfonts360	ports/print/pkfonts360
 pkfonts400	ports/print/pkfonts400
 pkfonts600	ports/print/pkfonts600
-pkg_install	ports/sysutils/pkg_install
 pkg_remove	ports/sysutils/pkg_remove
 pkg_tree	ports/sysutils/pkg_tree
 pkgconfig	ports/devel/pkgconfig
@@ -6329,6 +6328,7 @@ ports_palm	ports/palm
 ports_pam_krb5	ports/security/pam_krb5
 ports_patch	ports/devel/patch
 ports_picobsd	ports/picobsd
+ports_pkg_install	ports/sysutils/pkg_install
 ports_portuguese	ports/portuguese
 ports_pr	ports/comms/pr
 ports_print	ports/print
