@@ -11,6 +11,7 @@
     SUBDIR += afsp
     SUBDIR += alienwah
     SUBDIR += alsaplayer
+    SUBDIR += amarok
     SUBDIR += amp
     SUBDIR += ample
     SUBDIR += arts
