@@ -23,9 +23,13 @@ USE_REINPLACE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
 HAS_CONFIGURE=	yes
 USE_GMAKE=	yes
+MAKE_ARGS=	CXX="${CXX}" CXXFLAGS="${CXXFLAGS}"
 ALL_TARGET=	# empty
 
 PLIST_FILES=	lib/libustl.a
+
+do-configure:
+	cd ${WRKSRC} && ./configure
 
 post-patch:
 	@${REINPLACE_CMD} -e "s,/bin/bash,${LOCALBASE}/bin/bash," ${WRKSRC}/configure
