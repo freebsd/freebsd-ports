@@ -1,11 +1,11 @@
---- lib/setup.py.orig	Mon Jul 23 20:38:19 2001
-+++ lib/setup.py	Sat Mar 23 09:14:04 2002
+--- reportlab/lib/setup.py.orig	Sun May 26 18:30:32 2002
++++ reportlab/lib/setup.py	Fri May 31 07:38:09 2002
 @@ -7,7 +7,7 @@
  	import os, sys
  	from distutils.core import setup, Extension
  
--	if sys.platform in ['win32', 'sunos5', 'freebsd4', 'aix4', 'mac']:
-+	if sys.platform in ['win32', 'sunos5', 'freebsd4', 'freebsd5', 'aix4', 'mac']:
+-	if sys.platform in ['win32', 'sunos5', 'freebsd4', 'aix4', 'mac', 'darwin']:
++	if sys.platform in ['win32', 'sunos5', 'freebsd4', 'freebsd5', 'aix4', 'mac', 'darwin']:
  		LIBS=[]
  	else:
  		raise ValueError, "Don't know about platform:"+sys.platform
