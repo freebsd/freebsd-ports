@@ -3,7 +3,7 @@
 # Date created:		So  21 Jun 1998 16:09:39 CEST
 # Whom:			Stefan Herrmann <stefan@asterix.webaffairs.net>
 #
-# $Id: Makefile,v 1.78 1999/06/18 02:40:11 billf Exp $
+# $Id: Makefile,v 1.79 1999/06/26 11:53:00 dirk Exp $
 #
 
 DISTNAME=	apache_${VERSION_APACHE}
@@ -130,7 +130,7 @@ post-install:
 .for i in README LICENSE ABOUT_APACHE
 	${INSTALL_DATA} ${WRKSRC}/$i ${APACHEDOCDIR}
 .endfor
-.for i in CODING_STANDARDS EXTENSION_STATUS LICENSE
+.for i in CODING_STANDARDS LICENSE
 	${INSTALL_DATA} ${WRKDIR}/php-${VERSION_PHP3}/$i ${PHP3DOCDIR}
 .endfor
 	@${ECHO} "Docs reside in ${APACHEDOCDIR}"
