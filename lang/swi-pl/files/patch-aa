@@ -1,6 +1,6 @@
---- Makefile.in.orig	Fri Nov 10 00:19:19 2000
-+++ Makefile.in	Tue Jan  2 06:58:30 2001
-@@ -68,7 +68,7 @@
+--- src/Makefile.in.orig	Wed Apr 10 04:09:31 2002
++++ src/Makefile.in	Mon Nov 18 17:27:20 2002
+@@ -71,7 +71,7 @@
  CWFLAGS=@CWFLAGS@
  CIFLAGS=@CIFLAGS@
  CMFLAGS=@CMFLAGS@
@@ -9,17 +9,8 @@
  LDFLAGS=@LDFLAGS@
  
  PLFOREIGN=@PLFOREIGN@
-@@ -318,7 +318,7 @@
- 		$(INSTALL_DATA) pl.1 $(plmandir)/$(PL).$(mansec)
- 		$(INSTALL_DATA) $(srcdir)/plrc.1 $(plmandir)/plrc.$(mansec)
- 		$(INSTALL_DATA) $(srcdir)/plld.1 $(plmandir)/plld.$(mansec)
--		$(INSTALL_DATA) $(srcdir)/readline.3 $(plmandir)/readline.$(lmansec)
-+		#$(INSTALL_DATA) $(srcdir)/readline.3 $(plmandir)/readline.$(lmansec)
- 		-if [ ! -d $(man_prefix) ]; then $(MKDIR) $(man_prefix); fi
- 		-if [ ! -d $(mandir)  ];    then $(MKDIR) $(mandir);     fi
- 		-$(INSTALL_DATA) $(plmandir)/$(PL).$(mansec) $(mandir)
-@@ -326,10 +326,11 @@
- 		-$(INSTALL_DATA) $(plmandir)/plld.$(mansec) $(mandir)
+@@ -344,16 +344,17 @@
+ 		-$(INSTALL_DATA) $(srcdir)/plld.1 $(smandir)/plld.$(mansec)
  
  install_rlman:
 -		-if [ ! -d $(lmandir) ]; then $(MKDIR) $(lmandir); fi
@@ -31,6 +22,13 @@
 +#		-if [ ! -r $(lmandir)/readline.$(lmansec) ]; then \
 +#		  $(INSTALL_DATA) $(srcdir)/readline.3 $(lmandir)/readline.$(lmansec); \
 +#		fi
+ 
+ install-lman::
+ 		$(INSTALL_DATA) pl.1 $(plmandir)/$(PL).$(mansec)
+ 		$(INSTALL_DATA) $(srcdir)/plrc.1 $(plmandir)/plrc.$(mansec)
+ 		$(INSTALL_DATA) $(srcdir)/plld.1 $(plmandir)/plld.$(mansec)
+-		$(INSTALL_DATA) $(srcdir)/readline.3 $(plmandir)/readline.$(lmansec)
++#		$(INSTALL_DATA) $(srcdir)/readline.3 $(plmandir)/readline.$(lmansec)
  
  #
  # runtime-only environment installation
