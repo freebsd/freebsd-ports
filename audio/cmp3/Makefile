@@ -11,7 +11,7 @@ CATEGORIES=	audio
 MASTER_SITES=	http://www.personal.psu.edu/users/n/k/nkk104/cmp3/
 DISTNAME=	cmp3-2.0pre4
 
-MAINTAINER=	cpiazza@FreeBSD.org
+MAINTAINER= 	ports@FreeBSD.org
 
 RUN_DEPENDS= 	mpg123:${PORTSDIR}/audio/mpg123
 
