@@ -36,6 +36,11 @@ CONFIGURE_ARGS+=	--without-python
 MAN1=		honeydctl.1
 MAN8=		honeyd.8
 
+.include <bsd.port.pre.mk>
+.if ${OSVERSION} < 500000
+LIB_DEPENDS+=	edit.5:${PORTSDIR}/devel/libedit
+.endif
+
 .if !defined(WITH_PYTHON)
 pre-everything::
 	@${ECHO_MSG} "===>"
@@ -57,4 +62,4 @@ post-install:
 			${DATADIR}/scripts/snmp && \
 		${INSTALL_SCRIPT} *.pl ${DATADIR}/scripts/snmp
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
