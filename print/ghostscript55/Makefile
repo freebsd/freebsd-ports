@@ -3,7 +3,7 @@
 # Date created:		Tue Jun 10 21:58:54 CEST 1997
 # Whom:			Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.32 1999/01/23 07:05:22 vanilla Exp $
+# $Id: Makefile,v 1.33 1999/05/15 01:14:34 andreas Exp $
 #
 
 DISTNAME=	ghostscript-5.50
@@ -57,8 +57,8 @@ pre-fetch:
 .endif
 
 post-extract:
-	${LN} -s ${WRKDIRPREFIX}${PORTSDIR}/graphics/jpeg/work/jpeg-6b ${WRKSRC}/jpeg
-	${LN} -s ${WRKDIRPREFIX}${PORTSDIR}/graphics/png/work/libpng-1.0.3 ${WRKSRC}/libpng
+	${LN} -s ${WRKDIRPREFIX}${.CURDIR}/../../graphics/jpeg/work/jpeg-6b ${WRKSRC}/jpeg
+	${LN} -s ${WRKDIRPREFIX}${.CURDIR}/../../graphics/png/work/libpng-1.0.3 ${WRKSRC}/libpng
 	${MV} ${WRKSRC}/devs.mak ${WRKSRC}/devs.mak.bak
 	cd ${WRKSRC} && unzip -Lao ${DISTDIR}/${HP850_DRV}
 	${MV} ${WRKSRC}/devs.mak.bak ${WRKSRC}/devs.mak

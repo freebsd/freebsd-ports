@@ -3,7 +3,7 @@
 # Date created:         22 November 1994
 # Whom:                 ljo (orig)
 #
-# $Id: Makefile,v 1.17 1999/05/04 23:22:03 steve Exp $
+# $Id: Makefile,v 1.18 1999/05/12 09:56:52 asami Exp $
 #
 
 DISTNAME=	xview3.2p1-X11R6
@@ -18,7 +18,7 @@ DEPENDS=	${PORTSDIR}/x11-toolkits/xview:install
 
 USE_X_PREFIX=	yes
 EXTRACT_ONLY=	# empty
-WRKSRC=		${WRKDIRPREFIX}${PORTSDIR}/x11-toolkits/xview/work/${DISTNAME}
+WRKSRC=		${WRKDIRPREFIX}${.CURDIR}/../xview/work/${DISTNAME}
 ALL_TARGET=	Clients
 INSTALL_TARGET=	'SUBDIRS=clients' install install.man
 
