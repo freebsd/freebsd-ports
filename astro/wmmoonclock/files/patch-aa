@@ -1,0 +1,17 @@
+*** Makefile.orig	Fri Jan  8 10:01:25 1999
+--- Makefile	Thu Feb  4 23:29:11 1999
+***************
+*** 1,6 ****
+! CC     = gcc
+! CFLAGS = -O2
+! INCDIR = -I/usr/X11R6/include/X11
+  DESTDIR= /usr/X11R6
+  LIBDIR = -L/usr/X11R6/lib
+  
+--- 1,6 ----
+! CC     ?= gcc
+! CFLAGS ?= -O2
+! INCDIR = -I/usr/X11R6/share/include
+  DESTDIR= /usr/X11R6
+  LIBDIR = -L/usr/X11R6/lib
+  
