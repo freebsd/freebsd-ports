@@ -1,0 +1,5 @@
+PROG=	mkmupfnt
+NOMAN=
+
+.include <bsd.prog.mk>
+

@@ -102,6 +102,7 @@
     SUBDIR += mp-a4
     SUBDIR += mp-letter
     SUBDIR += mpage
+    SUBDIR += mup
     SUBDIR += musixtex
     SUBDIR += muttprint
     SUBDIR += nenscript
