@@ -1,0 +1,532 @@
+o http://www.openoffice.org/issues/show_bug.cgi?id=43561
+o sdkbugfix02
+
+Index: odk/util/odk_rules.pmk
+===================================================================
+RCS file: /cvs/api/odk/util/odk_rules.pmk,v
+retrieving revision 1.13
+diff -u -r1.13 odk_rules.pmk
+--- odk/util/odk_rules.pmk	7 Mar 2005 17:31:28 -0000	1.13
++++ odk/util/odk_rules.pmk	28 Mar 2005 03:09:30 -0000
+@@ -62,354 +62,355 @@
+ 
+ 
+ $(DESTDIR)$/index.html : $(PRJ)$/index.html
+-	+-rm -f $@ >& $(NULLDEV)
+-	$(MY_TEXTCOPY) $(MY_TEXTCOPY_SOURCEPRE) $(PRJ)$/index.html $(MY_TEXTCOPY_TARGETPRE) $@
++	+-rm -f "$@" >& $(NULLDEV)
++	$(MY_TEXTCOPY) $(MY_TEXTCOPY_SOURCEPRE) $(PRJ)$/index.html $(MY_TEXTCOPY_TARGETPRE) "$@"
+ 
+ $(DESTDIREXAMPLES)$/examples.html : $(PRJ)$/docs$/examples.html
+-	+-rm -f $@ >& $(NULLDEV)
+-	$(MY_TEXTCOPY) $(MY_TEXTCOPY_SOURCEPRE) $(PRJ)$/docs$/examples.html $(MY_TEXTCOPY_TARGETPRE) $@
++	+-rm -f "$@" >& $(NULLDEV)
++	$(MY_TEXTCOPY) $(MY_TEXTCOPY_SOURCEPRE) $(PRJ)$/docs$/examples.html $(MY_TEXTCOPY_TARGETPRE) "$@"
+ 
+ $(DESTDIRDOCU)$/%.html : $(PRJ)$/docs$/%.html
+-	+-rm -f $@ >& $(NULLDEV)
+-	$(MY_TEXTCOPY) $(MY_TEXTCOPY_SOURCEPRE) $< $(MY_TEXTCOPY_TARGETPRE) $@
++	+-rm -f "$@" >& $(NULLDEV)
++	$(MY_TEXTCOPY) $(MY_TEXTCOPY_SOURCEPRE) $< $(MY_TEXTCOPY_TARGETPRE) "$@"
+ 
+ $(DESTDIRDOCU)$/%.css : $(PRJ)$/docs$/%.css
+-	+-rm -f $@ >& $(NULLDEV)
+-	$(MY_TEXTCOPY) $(MY_TEXTCOPY_SOURCEPRE) $< $(MY_TEXTCOPY_TARGETPRE) $@
++	+-rm -f "$@" >& $(NULLDEV)
++	$(MY_TEXTCOPY) $(MY_TEXTCOPY_SOURCEPRE) $< $(MY_TEXTCOPY_TARGETPRE) "$@"
+ 
+ $(DESTDIRDOCUIMAGES)$/% : $(PRJ)$/docs$/images$/%
+-	+-rm -f $@ >& $(NULLDEV)
+-	$(MY_COPY) $< $@
++	+-rm -f "$@" >& $(NULLDEV)
++	$(MY_COPY) $< "$@"
+ 
+ $(DESTDIRDOCU)$/DevStudioWizards$/images$/% : $(PRJ)$/docs$/DevStudioWizards$/images$/% 
+-	+-rm -f $@ >& $(NULLDEV)
+-	$(MY_COPY) $< $@
++	+-rm -f "$@" >& $(NULLDEV)
++	$(MY_COPY) $< "$@"
+ 
+ $(DESTDIR)$/configure : $(PRJ)$/configure
+-	+-rm -f $@ >& $(NULLDEV)
+-	$(MY_TEXTCOPY) $(MY_TEXTCOPY_SOURCEPRE) $(PRJ)$/configure $(MY_TEXTCOPY_TARGETPRE) $@
++	+-rm -f "$@" >& $(NULLDEV)
++	$(MY_TEXTCOPY) $(MY_TEXTCOPY_SOURCEPRE) $(PRJ)$/configure $(MY_TEXTCOPY_TARGETPRE) "$@"
+ .IF "$(GUI)"=="UNX" || "$(USE_SHELL)"!="4nt"
+-	+-chmod 755 $@
++	+-chmod 755 "$@"
+ .ENDIF
+ 
+ $(DESTDIR)$/configure.pl : $(PRJ)$/configure.pl
+-	+-rm -f $@ >& $(NULLDEV)
+-	$(MY_TEXTCOPY) $(MY_TEXTCOPY_SOURCEPRE) $(PRJ)$/configure.pl $(MY_TEXTCOPY_TARGETPRE) $@
++	+-rm -f "$@" >& $(NULLDEV)
++	$(MY_TEXTCOPY) $(MY_TEXTCOPY_SOURCEPRE) $(PRJ)$/configure.pl $(MY_TEXTCOPY_TARGETPRE) "$@"
+ .IF "$(GUI)"=="UNX" || "$(USE_SHELL)"!="4nt"
+-	+-chmod 755 $@
++	+-chmod 755 "$@"
+ .ENDIF
+ 
+ $(DESTDIR)$/config.guess : $(SOLARENV)$/bin$/config.guess
+-	+-rm -f $@ >& $(NULLDEV)
+-	$(MY_TEXTCOPY) $(MY_TEXTCOPY_SOURCEPRE) $(SOLARENV)$/bin$/config.guess $(MY_TEXTCOPY_TARGETPRE) $@
++	+-rm -f "$@" >& $(NULLDEV)
++	$(MY_TEXTCOPY) $(MY_TEXTCOPY_SOURCEPRE) $(SOLARENV)$/bin$/config.guess $(MY_TEXTCOPY_TARGETPRE) "$@"
+ .IF "$(GUI)"=="UNX" || "$(USE_SHELL)"!="4nt"
+-	+-chmod 755 $@
++	+-chmod 755 "$@"
+ .ENDIF
+ 
+ $(DESTDIR)$/config.sub : $(SOLARENV)$/bin$/config.sub
+-	+-rm -f $@ >& $(NULLDEV)
+-	$(MY_TEXTCOPY) $(MY_TEXTCOPY_SOURCEPRE) $(SOLARENV)$/bin$/config.sub $(MY_TEXTCOPY_TARGETPRE) $@
++	+-rm -f "$@" >& $(NULLDEV)
++	$(MY_TEXTCOPY) $(MY_TEXTCOPY_SOURCEPRE) $(SOLARENV)$/bin$/config.sub $(MY_TEXTCOPY_TARGETPRE) "$@"
+ .IF "$(GUI)"=="UNX" || "$(USE_SHELL)"!="4nt"
+-	+-chmod 755 $@
++	+-chmod 755 "$@"
+ .ENDIF
+ 
+ $(DESTDIR)$/setsdkenv_unix : $(PRJ)$/setsdkenv_unix
+-	+-rm -f $@ >& $(NULLDEV)
+-	$(MY_TEXTCOPY) $(MY_TEXTCOPY_SOURCEPRE) $< $(MY_TEXTCOPY_TARGETPRE) $@
++	+-rm -f "$@" >& $(NULLDEV)
++	$(MY_TEXTCOPY) $(MY_TEXTCOPY_SOURCEPRE) $< $(MY_TEXTCOPY_TARGETPRE) "$@"
+ .IF "$(GUI)"=="UNX" || "$(USE_SHELL)"!="4nt"
+-	+-chmod 755 $@
++	+-chmod 755 "$@"
+ .ENDIF
+ 
+ $(DESTDIR)$/setsdkenv_unix.%.in : $(PRJ)$/setsdkenv_unix.%.in
+-	+-rm -f $@ >& $(NULLDEV)
+-	$(MY_TEXTCOPY) $(MY_TEXTCOPY_SOURCEPRE) $< $(MY_TEXTCOPY_TARGETPRE) $@
++	+-rm -f "$@" >& $(NULLDEV)
++	$(MY_TEXTCOPY) $(MY_TEXTCOPY_SOURCEPRE) $< $(MY_TEXTCOPY_TARGETPRE) "$@"
+ .IF "$(GUI)"=="UNX" || "$(USE_SHELL)"!="4nt"
+-	+-chmod 644 $@
++	+-chmod 644 "$@"
+ .ENDIF
+ 
+ $(DESTDIR)$/configureWindows.bat : $(PRJ)$/configureWindows.bat
+-	+-rm -f $@ >& $(NULLDEV)
+-	$(MY_TEXTCOPY) $(MY_TEXTCOPY_SOURCEPRE) $(PRJ)$/configureWindows.bat $(MY_TEXTCOPY_TARGETPRE) $@
++	+-rm -f "$@" >& $(NULLDEV)
++	$(MY_TEXTCOPY) $(MY_TEXTCOPY_SOURCEPRE) $(PRJ)$/configureWindows.bat $(MY_TEXTCOPY_TARGETPRE) "$@"
+ 
+ $(DESTDIR)$/setsdkenv_windows.bat : $(PRJ)$/setsdkenv_windows.bat
+-	+-rm -f $@ >& $(NULLDEV)
+-	$(MY_TEXTCOPY) $(MY_TEXTCOPY_SOURCEPRE) $(PRJ)$/setsdkenv_windows.bat $(MY_TEXTCOPY_TARGETPRE) $@
++	+-rm -f "$@" >& $(NULLDEV)
++	$(MY_TEXTCOPY) $(MY_TEXTCOPY_SOURCEPRE) $(PRJ)$/setsdkenv_windows.bat $(MY_TEXTCOPY_TARGETPRE) "$@"
+ 
+ $(DESTDIR)$/cfgWin.js : $(PRJ)$/cfgWin.js
+-	+-rm -f $@ >& $(NULLDEV)
+-	$(MY_TEXTCOPY) $(MY_TEXTCOPY_SOURCEPRE) $(PRJ)$/cfgWin.js $(MY_TEXTCOPY_TARGETPRE) $@
++	+-rm -f "$@" >& $(NULLDEV)
++	$(MY_TEXTCOPY) $(MY_TEXTCOPY_SOURCEPRE) $(PRJ)$/cfgWin.js $(MY_TEXTCOPY_TARGETPRE) "$@"
+ 
+ $(DESTDIREXAMPLES)$/%.sxw : $(PRJ)$/examples$/%.sxw 
+-	+-rm -f $@ >& $(NULLDEV)
+-	$(MY_COPY) $< $@
++	+-rm -f "$@" >& $(NULLDEV)
++	$(MY_COPY) $< "$@"
+ 
+ $(DESTDIREXAMPLES)$/%.odt : $(PRJ)$/examples$/%.odt
+-	+-rm -f $@ >& $(NULLDEV)
+-	$(MY_COPY) $< $@
++	+-rm -f "$@" >& $(NULLDEV)
++	$(MY_COPY) $< "$@"
+ 
+ $(DESTDIREXAMPLES)$/%.ods : $(PRJ)$/examples$/%.ods
+-	+-rm -f $@ >& $(NULLDEV)
+-	$(MY_COPY) $< $@
++	+-rm -f "$@" >& $(NULLDEV)
++	$(MY_COPY) $< "$@"
+ 
+ $(DESTDIREXAMPLES)$/%.odg : $(PRJ)$/examples$/%.odg
+-	+-rm -f $@ >& $(NULLDEV)
+-	$(MY_COPY) $< $@
++	+-rm -f "$@" >& $(NULLDEV)
++	$(MY_COPY) $< "$@"
+ 
+ $(DESTDIREXAMPLES)$/%.odp : $(PRJ)$/examples$/%.odp 
+-	+-rm -f $@ >& $(NULLDEV)
+-	$(MY_COPY) $< $@
++	+-rm -f "$@" >& $(NULLDEV)
++	$(MY_COPY) $< "$@"
+ 
+ $(DESTDIREXAMPLES)$/%.xlb : $(PRJ)$/examples$/%.xlb 
+-	+-rm -f $@ >& $(NULLDEV)
+-	$(MY_COPY) $< $@
++	+-rm -f "$@" >& $(NULLDEV)
++	$(MY_COPY) $< "$@"
+ 
+ $(DESTDIREXAMPLES)$/%.xdl : $(PRJ)$/examples$/%.xdl 
+-	+-rm -f $@ >& $(NULLDEV)
+-	$(MY_COPY) $< $@
++	+-rm -f "$@" >& $(NULLDEV)
++	$(MY_COPY) $< "$@"
+ 
+ $(DESTDIREXAMPLES)$/%.gif : $(PRJ)$/examples$/%.gif 
+-	+-rm -f $@ >& $(NULLDEV)
+-	$(MY_COPY) $< $@
++	+-rm -f "$@" >& $(NULLDEV)
++	$(MY_COPY) $< "$@"
+ 
+ $(DESTDIREXAMPLES)$/%.jpg : $(PRJ)$/examples$/%.jpg 
+-	+-rm -f $@ >& $(NULLDEV)
+-	$(MY_COPY) $< $@
++	+-rm -f "$@" >& $(NULLDEV)
++	$(MY_COPY) $< "$@"
+ 
+ $(DESTDIREXAMPLES)$/%.wmf : $(PRJ)$/examples$/%.wmf 
+-	+-rm -f $@ >& $(NULLDEV)
+-	$(MY_COPY) $< $@
++	+-rm -f "$@" >& $(NULLDEV)
++	$(MY_COPY) $< "$@"
+ 
+ $(DESTDIREXAMPLES)$/%.nsf : $(PRJ)$/examples$/%.nsf 
+-	+-rm -f $@ >& $(NULLDEV)
+-	$(MY_COPY) $< $@
++	+-rm -f "$@" >& $(NULLDEV)
++	$(MY_COPY) $< "$@"
+ 
+ $(DESTDIREXAMPLES)$/%.pdf : $(PRJ)$/examples$/%.pdf 
+-	+-rm -f $@ >& $(NULLDEV)
+-	$(MY_COPY) $< $@
++	+-rm -f "$@" >& $(NULLDEV)
++	$(MY_COPY) $< "$@"
+ 
+ $(DESTDIREXAMPLES)$/%.xba : $(PRJ)$/examples$/%.xba 
+-	+-rm -f $@ >& $(NULLDEV)
+-	$(MY_TEXTCOPY) $(MY_TEXTCOPY_SOURCEPRE) $< $(MY_TEXTCOPY_TARGETPRE) $@
++	+-rm -f "$@" >& $(NULLDEV)
++	$(MY_TEXTCOPY) $(MY_TEXTCOPY_SOURCEPRE) $< $(MY_TEXTCOPY_TARGETPRE) "$@"
+ 
+ $(DESTDIREXAMPLES)$/%.cxx : $(PRJ)$/examples$/%.cxx 
+-	+-rm -f $@ >& $(NULLDEV)
+-	$(MY_TEXTCOPY) $(MY_TEXTCOPY_SOURCEPRE) $< $(MY_TEXTCOPY_TARGETPRE) $@
++	+-rm -f "$@" >& $(NULLDEV)
++	$(MY_TEXTCOPY) $(MY_TEXTCOPY_SOURCEPRE) $< $(MY_TEXTCOPY_TARGETPRE) "$@"
+ 
+ $(DESTDIREXAMPLES)$/%.c : $(PRJ)$/examples$/%.c
+-	+-rm -f $@ >& $(NULLDEV)
+-	$(MY_TEXTCOPY) $(MY_TEXTCOPY_SOURCEPRE) $< $(MY_TEXTCOPY_TARGETPRE) $@
++	+-rm -f "$@" >& $(NULLDEV)
++	$(MY_TEXTCOPY) $(MY_TEXTCOPY_SOURCEPRE) $< $(MY_TEXTCOPY_TARGETPRE) "$@"
+ 
+ $(DESTDIREXAMPLES)$/%.hxx : $(PRJ)$/examples$/%.hxx 
+-	+-rm -f $@ >& $(NULLDEV)
+-	$(MY_TEXTCOPY) $(MY_TEXTCOPY_SOURCEPRE) $< $(MY_TEXTCOPY_TARGETPRE) $@
++	+-rm -f "$@" >& $(NULLDEV)
++	$(MY_TEXTCOPY) $(MY_TEXTCOPY_SOURCEPRE) $< $(MY_TEXTCOPY_TARGETPRE) "$@"
+ 
+ $(DESTDIREXAMPLES)$/%.java : $(PRJ)$/examples$/%.java 
+-	+-rm -f $@ >& $(NULLDEV)
+-	$(MY_TEXTCOPY) $(MY_TEXTCOPY_SOURCEPRE) $< $(MY_TEXTCOPY_TARGETPRE) $@
++	+-rm -f "$@" >& $(NULLDEV)
++	$(MY_TEXTCOPY) $(MY_TEXTCOPY_SOURCEPRE) $< $(MY_TEXTCOPY_TARGETPRE) "$@"
+ 
+ $(DESTDIREXAMPLES)$/%.idl : $(PRJ)$/examples$/%.idl 
+-	+-rm -f $@ >& $(NULLDEV)
+-	$(MY_TEXTCOPY) $(MY_TEXTCOPY_SOURCEPRE) $< $(MY_TEXTCOPY_TARGETPRE) $@
++	+-rm -f "$@" >& $(NULLDEV)
++	$(MY_TEXTCOPY) $(MY_TEXTCOPY_SOURCEPRE) $< $(MY_TEXTCOPY_TARGETPRE) "$@"
+ 
+ $(DESTDIREXAMPLES)$/%.dxp : $(PRJ)$/examples$/%.dxp 
+-	+-rm -f $@ >& $(NULLDEV)
+-	$(MY_TEXTCOPY) $(MY_TEXTCOPY_SOURCEPRE) $< $(MY_TEXTCOPY_TARGETPRE) $@
++	+-rm -f "$@" >& $(NULLDEV)
++	$(MY_TEXTCOPY) $(MY_TEXTCOPY_SOURCEPRE) $< $(MY_TEXTCOPY_TARGETPRE) "$@"
+ 
+ $(DESTDIREXAMPLES)$/%.xml : $(PRJ)$/examples$/%.xml 
+-	+-rm -f $@ >& $(NULLDEV)
+-	$(MY_TEXTCOPY) $(MY_TEXTCOPY_SOURCEPRE) $< $(MY_TEXTCOPY_TARGETPRE) $@
++	+-rm -f "$@" >& $(NULLDEV)
++	$(MY_TEXTCOPY) $(MY_TEXTCOPY_SOURCEPRE) $< $(MY_TEXTCOPY_TARGETPRE) "$@"
+ 
+ $(DESTDIREXAMPLES)$/%.xcu : $(PRJ)$/examples$/%.xcu 
+-	+-rm -f $@ >& $(NULLDEV)
+-	$(MY_TEXTCOPY) $(MY_TEXTCOPY_SOURCEPRE) $< $(MY_TEXTCOPY_TARGETPRE) $@
++	+-rm -f "$@" >& $(NULLDEV)
++	$(MY_TEXTCOPY) $(MY_TEXTCOPY_SOURCEPRE) $< $(MY_TEXTCOPY_TARGETPRE) "$@"
+ 
+ $(DESTDIREXAMPLES)$/%.html : $(PRJ)$/examples$/%.html 
+-	+-rm -f $@ >& $(NULLDEV)
+-	$(MY_TEXTCOPY) $(MY_TEXTCOPY_SOURCEPRE) $< $(MY_TEXTCOPY_TARGETPRE) $@
++	+-rm -f "$@" >& $(NULLDEV)
++	$(MY_TEXTCOPY) $(MY_TEXTCOPY_SOURCEPRE) $< $(MY_TEXTCOPY_TARGETPRE) "$@"
+ 
+ $(DESTDIREXAMPLES)$/%.txt : $(PRJ)$/examples$/%.txt 
+-	+-rm -f $@ >& $(NULLDEV)
+-	$(MY_TEXTCOPY) $(MY_TEXTCOPY_SOURCEPRE) $< $(MY_TEXTCOPY_TARGETPRE) $@
++	+-rm -f "$@" >& $(NULLDEV)
++	$(MY_TEXTCOPY) $(MY_TEXTCOPY_SOURCEPRE) $< $(MY_TEXTCOPY_TARGETPRE) "$@"
+ 
+ $(DESTDIREXAMPLES)$/%$/Makefile : $(PRJ)$/examples$/%$/Makefile 
+-	+-rm -f $@ >& $(NULLDEV)
+-	$(MY_TEXTCOPY) $(MY_TEXTCOPY_SOURCEPRE) $< $(MY_TEXTCOPY_TARGETPRE) $@
++	+-rm -f "$@" >& $(NULLDEV)
++	$(MY_TEXTCOPY) $(MY_TEXTCOPY_SOURCEPRE) $< $(MY_TEXTCOPY_TARGETPRE) "$@"
+ 
+ $(DESTDIREXAMPLES)$/%$/README : $(PRJ)$/examples$/%$/README 
+-	+-rm -f $@ >& $(NULLDEV)
+-	$(MY_TEXTCOPY) $(MY_TEXTCOPY_SOURCEPRE) $< $(MY_TEXTCOPY_TARGETPRE) $@
++	+-rm -f "$@" >& $(NULLDEV)
++	$(MY_TEXTCOPY) $(MY_TEXTCOPY_SOURCEPRE) $< $(MY_TEXTCOPY_TARGETPRE) "$@"
+ 
+ $(DESTDIREXAMPLES)$/%.cpp : $(PRJ)$/examples$/%.cpp 
+-	+-rm -f $@ >& $(NULLDEV)
+-	$(MY_TEXTCOPY) $(MY_TEXTCOPY_SOURCEPRE) $< $(MY_TEXTCOPY_TARGETPRE) $@
++	+-rm -f "$@" >& $(NULLDEV)
++	$(MY_TEXTCOPY) $(MY_TEXTCOPY_SOURCEPRE) $< $(MY_TEXTCOPY_TARGETPRE) "$@"
+ 
+ $(DESTDIREXAMPLES)$/%.h : $(PRJ)$/examples$/%.h 
+-	+-rm -f $@ >& $(NULLDEV)
+-	$(MY_TEXTCOPY) $(MY_TEXTCOPY_SOURCEPRE) $< $(MY_TEXTCOPY_TARGETPRE) $@
++	+-rm -f "$@" >& $(NULLDEV)
++	$(MY_TEXTCOPY) $(MY_TEXTCOPY_SOURCEPRE) $< $(MY_TEXTCOPY_TARGETPRE) "$@"
+ 
+ $(DESTDIREXAMPLES)$/%.def : $(PRJ)$/examples$/%.def 
+-	+-rm -f $@ >& $(NULLDEV)
+-	$(MY_TEXTCOPY) $(MY_TEXTCOPY_SOURCEPRE) $< $(MY_TEXTCOPY_TARGETPRE) $@
++	+-rm -f "$@" >& $(NULLDEV)
++	$(MY_TEXTCOPY) $(MY_TEXTCOPY_SOURCEPRE) $< $(MY_TEXTCOPY_TARGETPRE) "$@"
+ 
+ $(DESTDIREXAMPLES)$/%.rc : $(PRJ)$/examples$/%.rc 
+-	+-rm -f $@ >& $(NULLDEV)
+-	$(MY_TEXTCOPY) $(MY_TEXTCOPY_SOURCEPRE) $< $(MY_TEXTCOPY_TARGETPRE) $@
++	+-rm -f "$@" >& $(NULLDEV)
++	$(MY_TEXTCOPY) $(MY_TEXTCOPY_SOURCEPRE) $< $(MY_TEXTCOPY_TARGETPRE) "$@"
+ 
+ $(DESTDIREXAMPLES)$/%.rgs : $(PRJ)$/examples$/%.rgs 
+-	+-rm -f $@ >& $(NULLDEV)
+-	$(MY_TEXTCOPY) $(MY_TEXTCOPY_SOURCEPRE) $< $(MY_TEXTCOPY_TARGETPRE) $@
++	+-rm -f "$@" >& $(NULLDEV)
++	$(MY_TEXTCOPY) $(MY_TEXTCOPY_SOURCEPRE) $< $(MY_TEXTCOPY_TARGETPRE) "$@"
+ 
+ $(DESTDIREXAMPLES)$/%.dpr : $(PRJ)$/examples$/%.dpr 
+-	+-rm -f $@ >& $(NULLDEV)
+-	$(MY_TEXTCOPY) $(MY_TEXTCOPY_SOURCEPRE) $< $(MY_TEXTCOPY_TARGETPRE) $@
++	+-rm -f "$@" >& $(NULLDEV)
++	$(MY_TEXTCOPY) $(MY_TEXTCOPY_SOURCEPRE) $< $(MY_TEXTCOPY_TARGETPRE) "$@"
+ 
+ $(DESTDIREXAMPLES)$/%.res : $(PRJ)$/examples$/%.res 
+-	+-rm -f $@ >& $(NULLDEV)
+-	$(MY_TEXTCOPY) $(MY_TEXTCOPY_SOURCEPRE) $< $(MY_TEXTCOPY_TARGETPRE) $@
++	+-rm -f "$@" >& $(NULLDEV)
++	$(MY_TEXTCOPY) $(MY_TEXTCOPY_SOURCEPRE) $< $(MY_TEXTCOPY_TARGETPRE) "$@"
+ 
+ $(DESTDIREXAMPLES)$/%.pas : $(PRJ)$/examples$/%.pas 
+-	+-rm -f $@ >& $(NULLDEV)
+-	$(MY_TEXTCOPY) $(MY_TEXTCOPY_SOURCEPRE) $< $(MY_TEXTCOPY_TARGETPRE) $@
++	+-rm -f "$@" >& $(NULLDEV)
++	$(MY_TEXTCOPY) $(MY_TEXTCOPY_SOURCEPRE) $< $(MY_TEXTCOPY_TARGETPRE) "$@"
+ 
+ $(DESTDIREXAMPLES)$/%.dfm : $(PRJ)$/examples$/%.dfm 
+-	+-rm -f $@ >& $(NULLDEV)
+-	$(MY_TEXTCOPY) $(MY_TEXTCOPY_SOURCEPRE) $< $(MY_TEXTCOPY_TARGETPRE) $@
++	+-rm -f "$@" >& $(NULLDEV)
++	$(MY_TEXTCOPY) $(MY_TEXTCOPY_SOURCEPRE) $< $(MY_TEXTCOPY_TARGETPRE) "$@"
+ 
+ $(DESTDIREXAMPLES)$/%.vbs : $(PRJ)$/examples$/%.vbs 
+-	+-rm -f $@ >& $(NULLDEV)
+-	$(MY_TEXTCOPY) $(MY_TEXTCOPY_SOURCEPRE) $< $(MY_TEXTCOPY_TARGETPRE) $@
++	+-rm -f "$@" >& $(NULLDEV)
++	$(MY_TEXTCOPY) $(MY_TEXTCOPY_SOURCEPRE) $< $(MY_TEXTCOPY_TARGETPRE) "$@"
+ 
+ $(DESTDIREXAMPLES)$/%.vb : $(PRJ)$/examples$/%.vb 
+-	+-rm -f $@ >& $(NULLDEV)
+-	$(MY_TEXTCOPY) $(MY_TEXTCOPY_SOURCEPRE) $< $(MY_TEXTCOPY_TARGETPRE) $@
++	+-rm -f "$@" >& $(NULLDEV)
++	$(MY_TEXTCOPY) $(MY_TEXTCOPY_SOURCEPRE) $< $(MY_TEXTCOPY_TARGETPRE) "$@"
+ 
+ $(DESTDIREXAMPLES)$/%.cs : $(PRJ)$/examples$/%.cs 
+-	+-rm -f $@ >& $(NULLDEV)
+-	$(MY_TEXTCOPY) $(MY_TEXTCOPY_SOURCEPRE) $< $(MY_TEXTCOPY_TARGETPRE) $@
++	+-rm -f "$@" >& $(NULLDEV)
++	$(MY_TEXTCOPY) $(MY_TEXTCOPY_SOURCEPRE) $< $(MY_TEXTCOPY_TARGETPRE) "$@"
+ 
+ $(DESTDIREXAMPLES)$/%.mk : $(PRJ)$/examples$/%.mk 
+-	+-rm -f $@ >& $(NULLDEV)
+-	$(MY_TEXTCOPY) $(MY_TEXTCOPY_SOURCEPRE) $< $(MY_TEXTCOPY_TARGETPRE) $@
++	+-rm -f "$@" >& $(NULLDEV)
++	$(MY_TEXTCOPY) $(MY_TEXTCOPY_SOURCEPRE) $< $(MY_TEXTCOPY_TARGETPRE) "$@"
+ 
+ $(DESTDIREXAMPLES)$/%.ini : $(PRJ)$/examples$/%.ini
+-	+-rm -f $@ >& $(NULLDEV)
+-	$(MY_TEXTCOPY) $(MY_TEXTCOPY_SOURCEPRE) $< $(MY_TEXTCOPY_TARGETPRE) $@
++	+-rm -f "$@" >& $(NULLDEV)
++	$(MY_TEXTCOPY) $(MY_TEXTCOPY_SOURCEPRE) $< $(MY_TEXTCOPY_TARGETPRE) "$@"
+ 
+ $(DESTDIREXAMPLES)$/%.bas : $(PRJ)$/examples$/%.bas
+-	+-rm -f $@ >& $(NULLDEV)
+-	$(MY_TEXTCOPY) $(MY_TEXTCOPY_SOURCEPRE) $< $(MY_TEXTCOPY_TARGETPRE) $@
++	+-rm -f "$@" >& $(NULLDEV)
++	$(MY_TEXTCOPY) $(MY_TEXTCOPY_SOURCEPRE) $< $(MY_TEXTCOPY_TARGETPRE) "$@"
+ 
+ $(DESTDIREXAMPLES)$/%.mf : $(PRJ)$/examples$/%.mf
+-	+-rm -f $@ >& $(NULLDEV)
+-	$(MY_TEXTCOPY) $(MY_TEXTCOPY_SOURCEPRE) $< $(MY_TEXTCOPY_TARGETPRE) $@
++	+-rm -f "$@" >& $(NULLDEV)
++	$(MY_TEXTCOPY) $(MY_TEXTCOPY_SOURCEPRE) $< $(MY_TEXTCOPY_TARGETPRE) "$@"
+ 
+ $(DESTDIRCLASSES)$/oosupport.nbm : $(OUT)$/class$/oosupport.nbm
+-	+-rm -f $@ >& $(NULLDEV)
+-	$(MY_COPY) $< $@
++	+-rm -f "$@" >& $(NULLDEV)
++	$(MY_COPY) $< "$@"
+ 
+ $(DESTDIRSETTINGS)$/%.mk : $(PRJ)$/settings$/%.mk
+-	+-rm -f $@ >& $(NULLDEV)
++	+-rm -f "$@" >& $(NULLDEV)
+ .IF "$(COMEX)"=="7"
+-	$(MY_TEXTCOPY) $(MY_TEXTCOPY_SOURCEPRE) $< | $(SED) -e 's/stlport_vc7/stlport_vc6/' $(MY_TEXTCOPY_TARGETPRE) $@
++	$(MY_TEXTCOPY) $(MY_TEXTCOPY_SOURCEPRE) $< | $(SED) -e 's/stlport_vc7/stlport_vc6/' $(MY_TEXTCOPY_TARGETPRE) "$@"
+ .ELSE
+-	$(MY_TEXTCOPY) $(MY_TEXTCOPY_SOURCEPRE) $< $(MY_TEXTCOPY_TARGETPRE) $@
++	$(MY_TEXTCOPY) $(MY_TEXTCOPY_SOURCEPRE) $< $(MY_TEXTCOPY_TARGETPRE) "$@"
+ .ENDIF
+ 
+ $(DESTDIRCOMMONDOCU)$/spec$/xml_format$/xml_specification.pdf : xml_specification.pdf
+-	+-rm -f $@ >& $(NULLDEV)
+-	$(GNUCOPY) xml_specification.pdf $@
++	+-rm -f "$@" >& $(NULLDEV)
++	$(GNUCOPY) xml_specification.pdf "$@"
+         
+ $(DESTDIRXML)$/module-description.dtd : $(XMLOUT)$/module-description.dtd
+-	+-rm -f $@ >& $(NULLDEV)
+-	$(MY_TEXTCOPY) $(MY_TEXTCOPY_SOURCEPRE) $(XMLOUT)$/module-description.dtd $(MY_TEXTCOPY_TARGETPRE) $@  
++	+-rm -f "$@" >& $(NULLDEV)
++	$(MY_TEXTCOPY) $(MY_TEXTCOPY_SOURCEPRE) $(XMLOUT)$/module-description.dtd $(MY_TEXTCOPY_TARGETPRE) "$@"  
+ $(DESTDIRXML)$/%.xml : $(XMLOUT)$/%.xml
+-	+-rm -f $@ >& $(NULLDEV)
+-	$(MY_TEXTCOPY) $(MY_TEXTCOPY_SOURCEPRE) $< $(MY_TEXTCOPY_TARGETPRE) $@
++	+-rm -f "$@" >& $(NULLDEV)
++	$(MY_TEXTCOPY) $(MY_TEXTCOPY_SOURCEPRE) $< $(MY_TEXTCOPY_TARGETPRE) "$@"
+ 
+ $(DESTDIRBIN)$/%$(EXEPOSTFIX) : $(BINOUT)$/%$(EXEPOSTFIX)
+-	+-rm -f $@ >& $(NULLDEV)
+-	$(GNUCOPY) $(BINOUT)$/$(@:f) $@
++	+-rm -f "$@" >& $(NULLDEV)
++	$(GNUCOPY) $(BINOUT)$/$(@:f) "$@"
+ .IF "$(GUI)"=="UNX"
+-	+-strip $@    
++	+-strip "$@"    
+ .ENDIF
+ 
+ $(DESTDIRBIN)$/%.bin : $(BINOUT)$/%.bin
+-	+-rm -f $@ >& $(NULLDEV)
+-	$(GNUCOPY) $(BINOUT)$/$(@:f) $@
++	+-rm -f "$@" >& $(NULLDEV)
++	$(GNUCOPY) $(BINOUT)$/$(@:f) "$@"
+ .IF "$(GUI)"=="UNX"
+-	+-strip $@    
++	+-strip "$@"    
+ .ENDIF
+ 
+ $(DESTDIRBIN)$/regcomp : $(BINOUT)$/regcomp
+-	+-rm -f $@ >& $(NULLDEV)
+-	$(MY_TEXTCOPY) $(MY_TEXTCOPY_SOURCEPRE) $< $(MY_TEXTCOPY_TARGETPRE) $@
++	+-rm -f "$@" >& $(NULLDEV)
++	$(MY_TEXTCOPY) $(MY_TEXTCOPY_SOURCEPRE) $< $(MY_TEXTCOPY_TARGETPRE) "$@"
+ .IF "$(GUI)"=="UNX" || "$(USE_SHELL)"!="4nt"
+-	+-chmod 755 $@
++	+-chmod 755 "$@"
+ .ENDIF
+ 
+ $(DESTDIRBIN)$/unoapploader$(EXEPOSTFIX) : $(BIN)$/unoapploader$(EXEPOSTFIX)
+-	+-rm -f $@ >& $(NULLDEV)
+-	$(GNUCOPY) $(BIN)$/$(@:f) $@
++	+-rm -f "$@" >& $(NULLDEV)
++	$(GNUCOPY) $(BIN)$/$(@:f) "$@"
+ .IF "$(GUI)"=="UNX"
+-	+-strip $@    
++	+-strip "$@"    
+ .ENDIF
+ 
+ # special rule for special Java UNO native library
+ # (used for all platforms but built only under windows)
+ $(DESTDIRJAR)$/win$/unowinreg.dll : $(PRJ)$/bin$/win$/unowinreg.dll
+-	+-rm -f $@ >& $(NULLDEV)
+-	$(GNUCOPY) $< $@
++	+-rm -f "$@" >& $(NULLDEV)
++	$(GNUCOPY) $< "$@"
+     
+ $(DESTDIRDLL)$/%$(MY_DLLPOSTFIX) : $(DLLOUT)$/%$(MY_DLLPOSTFIX)
+-	+-rm -f $@ >& $(NULLDEV)
+-	$(GNUCOPY) $(DLLOUT)$/$(@:f) $@
++	+-rm -f "$@" >& $(NULLDEV)
++	$(GNUCOPY) $(DLLOUT)$/$(@:f) "$@"
+ 
+ $(DESTDIRJAR)$/com$/sun$/star$/lib$/loader$/%.class : $(CLASSDIR)$/com$/sun$/star$/lib$/loader$/%.class
+ 	+-$(RM) $(@:db)*.class >& $(NULLDEV)
+ 	+$(COPY) $(<:db)*.class $(@:d)
+     
+ $(DESTDIRIDL)$/% : $(IDLOUT)$/%
+-	$(MY_TEXTCOPY) $(MY_TEXTCOPY_SOURCEPRE) $< $(MY_TEXTCOPY_TARGETPRE) $@
++	$(MY_TEXTCOPY) $(MY_TEXTCOPY_SOURCEPRE) $< $(MY_TEXTCOPY_TARGETPRE) "$@"
+ 
+ $(DESTDIRINC)$/udkversion.mk :
+-	+-rm -f $@ >& $(NULLDEV)
+-	@echo #UDK version number > $@
+-	@echo #major >> $@
+-	@echo UDK_MAJOR=$(UDK_MAJOR) >> $@
+-	@echo #minor >> $@
+-	@echo UDK_MINOR=$(UDK_MINOR) >> $@
+-	@echo #micro >> $@
+-	@echo UDK_MICRO=$(UDK_MICRO) >> $@
++	+-rm -f "$@" >& $(NULLDEV)
++	@echo #UDK version number > "$@"
++	@echo #major >> "$@"
++	@echo UDK_MAJOR=$(UDK_MAJOR) >> "$@"
++	@echo #minor >> "$@"
++	@echo UDK_MINOR=$(UDK_MINOR) >> "$@"
++	@echo #micro >> "$@"
++	@echo UDK_MICRO=$(UDK_MICRO) >> "$@"
+     
+ $(DESTDIRINC)$/% : $(INCOUT)$/%
+-	$(MY_TEXTCOPY) $(MY_TEXTCOPY_SOURCEPRE) $< $(MY_TEXTCOPY_TARGETPRE) $@
++	$(MY_TEXTCOPY) $(MY_TEXTCOPY_SOURCEPRE) $< $(MY_TEXTCOPY_TARGETPRE) "$@"
+ 
+ $(DESTDIRLIB)$/%.lib : $(LIBOUT)$/%.lib
+-	+-rm -f $@ >& $(NULLDEV)
+-	$(GNUCOPY) $(LIBOUT)$/$(@:f) $@
++	+-rm -f "$@" >& $(NULLDEV)
++	$(GNUCOPY) $(LIBOUT)$/$(@:f) "$@"
+ 
+ $(DIR_CREATE_FLAG) :
+ .IF "$(USE_SHELL)" != "4nt"
+-    +$(TYPE) $(mktmp $(DIR_DIRECTORY_LIST)) | xargs -n 20 $(MKDIRHIER) && echo "dirs created" > $@ && touch $@
++    +$(TYPE) $(mktmp $(DIR_DIRECTORY_LIST)) | xargs -n 20 $(MKDIRHIER) && echo "dirs created" > "$@" && touch "$@"
+ .ELSE
+-    +$(TYPE) $(mktmp $(DIR_DIRECTORY_LIST:s/\/\\/)) | xargs -n 10 $(COMSPEC) -c $(PERL) $(SOLARENV)$/bin/mkdir.pl && echo "dirs created" > $@ && touch $@
++    +$(TYPE) $(mktmp $(DIR_DIRECTORY_LIST:s/\/\\/)) | xargs -n 10 $(COMSPEC) -c $(PERL) $(SOLARENV)$/bin/mkdir.pl && echo "dirs created" > "$@" && touch "$@"
+ .ENDIF
+     
+ $(DIR_FILE_LIST) : $(DIR_CREATE_FLAG)
+     
+ $(DIR_FILE_FLAG) : $(DIR_FILE_LIST)
+-    @echo "must be zipped" > $@
++    @echo "must be zipped" > "$@"
+ 
+ 
+ $(DESTDIRSETTINGS)$/component.uno.def : $(PRJ)$/settings$/component.uno.def
+-	+-rm -f $@ >& $(NULLDEV)
+-	$(MY_TEXTCOPY) $(MY_TEXTCOPY_SOURCEPRE) $< $(MY_TEXTCOPY_TARGETPRE) $@
++	+-rm -f "$@" >& $(NULLDEV)
++	$(MY_TEXTCOPY) $(MY_TEXTCOPY_SOURCEPRE) $< $(MY_TEXTCOPY_TARGETPRE) "$@"
+ 
+ $(DESTDIRSETTINGS)$/component.uno.map : $(SOLARENV)$/bin$/addsym.awk $(SOLARENV)$/src$/component.map
+-	@+-$(RM) -f $@ >& $(NULLDEV)
++	@+-$(RM) -f "$@" >& $(NULLDEV)
+ .IF "$(COMID)"=="gcc3"
+-	+tr -d "\015" < $(SOLARENV)$/src$/component.map | sed -e 's/component_getDescriptionFunc;//' | $(AWK) -f $(SOLARENV)$/bin$/addsym.awk > $@
++	+tr -d "\015" < $(SOLARENV)$/src$/component.map | sed -e 's/component_getDescriptionFunc;//' | $(AWK) -f $(SOLARENV)$/bin$/addsym.awk > "$@"
+ .ELSE           # "$(COMID)"=="gcc3"
+-	+tr -d "\015" < $(SOLARENV)$/src$/component.map | sed -e 's/component_getDescriptionFunc;//' > $@
++	+tr -d "\015" < $(SOLARENV)$/src$/component.map | sed -e 's/component_getDescriptionFunc;//' > "$@"
+ .ENDIF          # "$(COMID)"=="gcc3"
+-	@+chmod a+w $@
++	@+chmod a+w "$@"
++
