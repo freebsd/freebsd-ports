@@ -1,5 +1,5 @@
---- configure.orig	Thu Feb 10 06:09:57 2000
-+++ configure	Mon Apr 24 14:58:01 2000
+--- configure.orig	Mon May  1 10:07:11 2000
++++ configure	Mon May  1 10:08:59 2000
 @@ -4902,7 +4902,7 @@
  	    LDFLAGS="-Wl,-Bexport"
  	    LD_SEARCH_FLAGS=""
@@ -9,24 +9,23 @@
  	    # Not available on all versions:  check for include file.
  	    ac_safe=`echo "dlfcn.h" | sed 'y%./+-%__p_%'`
  echo $ac_n "checking for dlfcn.h""... $ac_c" 1>&6
-@@ -4986,19 +4986,9 @@
+@@ -4986,18 +4986,8 @@
  	    # FreeBSD doesn't handle version numbers with dots.
  
  	    UNSHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}\$\{DBGX\}.a'
 +	    SHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}\$\{DBGX\}.so.1'
  	    TCL_LIB_VERSIONS_OK=nodots
- 	    ;;
+-	    ;;
 -	FreeBSD-*)
 -	    # FreeBSD 3.* and greater have ELF.
 -	    SHLIB_CFLAGS="-fPIC"
 -	    SHLIB_LD="ld -Bshareable -x"
 -	    SHLIB_LD_LIBS=""
 -	    SHLIB_SUFFIX=".so"
--	    DL_OBJS="tclLoadDl.o"
+-	    DL_OBJS=""
 -	    DL_LIBS=""
 -	    LDFLAGS="-export-dynamic"
 -	    LD_SEARCH_FLAGS=""
--	    ;;
+ 	    ;;
  	NEXTSTEP-*)
  	    SHLIB_CFLAGS=""
- 	    SHLIB_LD="cc -nostdlib -r"

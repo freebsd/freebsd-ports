@@ -5,6 +5,7 @@ include/tcl%%TCL_VER%%/generic/regex.h
 include/tcl%%TCL_VER%%/generic/regguts.h
 include/tcl%%TCL_VER%%/generic/tcl.h
 include/tcl%%TCL_VER%%/generic/tclCompile.h
+include/tcl%%TCL_VER%%/generic/tclCompileDecls.h
 include/tcl%%TCL_VER%%/generic/tclDecls.h
 include/tcl%%TCL_VER%%/generic/tclInitScript.h
 include/tcl%%TCL_VER%%/generic/tclInt.h
@@ -57,12 +58,14 @@ lib/tcl%%TCL_VER%%/encoding/cp936.enc
 lib/tcl%%TCL_VER%%/encoding/cp949.enc
 lib/tcl%%TCL_VER%%/encoding/cp950.enc
 lib/tcl%%TCL_VER%%/encoding/dingbats.enc
+lib/tcl%%TCL_VER%%/encoding/ebcdic.enc
 lib/tcl%%TCL_VER%%/encoding/euc-cn.enc
 lib/tcl%%TCL_VER%%/encoding/euc-jp.enc
 lib/tcl%%TCL_VER%%/encoding/euc-kr.enc
 lib/tcl%%TCL_VER%%/encoding/gb12345.enc
 lib/tcl%%TCL_VER%%/encoding/gb1988.enc
 lib/tcl%%TCL_VER%%/encoding/gb2312.enc
+lib/tcl%%TCL_VER%%/encoding/ibm1047.enc
 lib/tcl%%TCL_VER%%/encoding/iso2022-jp.enc
 lib/tcl%%TCL_VER%%/encoding/iso2022-kr.enc
 lib/tcl%%TCL_VER%%/encoding/iso2022.enc
@@ -80,6 +83,7 @@ lib/tcl%%TCL_VER%%/encoding/jis0208.enc
 lib/tcl%%TCL_VER%%/encoding/jis0212.enc
 lib/tcl%%TCL_VER%%/encoding/koi8-r.enc
 lib/tcl%%TCL_VER%%/encoding/ksc5601.enc
+lib/tcl%%TCL_VER%%/encoding/latin.enc
 lib/tcl%%TCL_VER%%/encoding/macCentEuro.enc
 lib/tcl%%TCL_VER%%/encoding/macCroatian.enc
 lib/tcl%%TCL_VER%%/encoding/macCyrillic.enc
