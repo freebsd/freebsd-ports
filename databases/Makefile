@@ -74,6 +74,7 @@
     SUBDIR += ruby-dbd_mysql
     SUBDIR += ruby-dbd_odbc
     SUBDIR += ruby-dbd_pg
+    SUBDIR += ruby-dbd_proxy
     SUBDIR += ruby-dbd_sybase
     SUBDIR += ruby-dbi
     SUBDIR += ruby-gdbm
