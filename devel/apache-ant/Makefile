@@ -18,8 +18,6 @@ DISTNAME=	${PORTNAME}-${ANT_VERSION}-bin
 MAINTAINER=	znerd@FreeBSD.org
 COMMENT=	Java- and XML-based build tool, conceptually similar to make
 
-RUN_DEPENDS=	${LOCALBASE}/share/java/classes/crimson.jar:${PORTSDIR}/textproc/crimson
-
 USE_BZIP2=	yes
 USE_JAVA=	1.2+
 
