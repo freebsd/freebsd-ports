@@ -35,4 +35,13 @@ CONFIGURE_ARGS=	--enable-nospoof \
 		--with-fd-setsize=1024 \
 		--enable-dynamic-linking
 
+.if defined(WITH_IPV6)
+CONFIGURE_ARGS+=	--enable-inet6
+.endif
+
+.if defined(WITH_SSL)
+CONFIGURE_ARGS+=	--enable-ssl
+USE_OPENSSL=	yes
+.endif
+
 .include <bsd.port.mk>
