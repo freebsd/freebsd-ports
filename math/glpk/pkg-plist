@@ -1,0 +1,16 @@
+include/glpapi.h
+include/glpavl.h
+include/glpduff.h
+include/glpefi.h
+include/glpeta.h
+include/glpgel.h
+include/glphbsm.h
+include/glpimg.h
+include/glpk.h
+include/glpmat.h
+include/glpmps.h
+include/glprfi.h
+include/glprsm.h
+include/glpset.h
+include/glpstr.h
+lib/libglpk.a
