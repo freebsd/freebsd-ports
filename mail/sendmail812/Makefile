@@ -39,7 +39,6 @@ MAN8=		sendmail.8 mailstats.8 makemap.8 praliases.8 smrsh.8 \
 SENDMAIL=	${PREFIX}/sbin/sendmail
 BASEMAIL=	/usr/libexec/sendmail/sendmail
 PLIST_SUB+=	PREFIX=${PREFIX:S=${PREFIX}/==}
-LDAP_PORT?=	net/openldap21-client
 PKGMESSAGE=	${WRKSRC}/pkg-message
 
 # Options to define Features:
@@ -73,8 +72,13 @@ CONFLICTS+=	sendmail+tls-8.* \
 		sendmail+sasl1-8.* \
 		sendmail+sasl2-8.*
 CONFLICTS+=	sendmail-sasl-8.* sendmail-sasl2-8.* sendmail-tls-8.*
-LIB_DEPENDS+=	ldap.2:${PORTSDIR}/${LDAP_PORT}
-LIB_DEPENDS+=	lber.2:${PORTSDIR}/${LDAP_PORT}
+.if defined(LDAP_PORT)
+OPENLDAP_LIB?=	libldap.so.2
+BUILD_DEPENDS+=	${LOCALBASE}/lib/${OPENLDAP_LIB}:${PORTSDIR}/${LDAP_PORT}
+RUN_DEPENDS+=	${LOCALBASE}/lib/${OPENLDAP_LIB}:${PORTSDIR}/${LDAP_PORT}
+.else
+USE_OPENLDAP_VER?=	21
+.endif
 .else
 CONFLICTS+=	sendmail*+ldap*-8.*
 .endif

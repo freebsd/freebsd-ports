@@ -31,7 +31,6 @@ MAN1=		mailq.1 newaliases.1 vacation.1
 MAN5=		aliases.5
 MAN8=		sendmail.8 mailstats.8 makemap.8 praliases.8 smrsh.8 \
 		mail.local.8 rmail.8
-LDAP_PORT?=	net/openldap21-client
 
 # Options to define Features:
 # SENDMAIL_WITHOUT_IPV6=yes
@@ -51,8 +50,13 @@ CONFLICTS+=	sendmail+tls-8.* \
 		sendmail+sfio+sasl-8.* \
 		sendmail+sasl-8.*
 CONFLICTS+=	sendmail-sasl-8.* sendmail-tls-8.*
-LIB_DEPENDS+=	ldap.2:${PORTSDIR}/${LDAP_PORT}
-LIB_DEPENDS+=	lber.2:${PORTSDIR}/${LDAP_PORT}
+.if defined(LDAP_PORT)
+OPENLDAP_LIB?=	libldap.so.2
+BUILD_DEPENDS+=	${LOCALBASE}/lib/${OPENLDAP_LIB}:${PORTSDIR}/${LDAP_PORT}
+RUN_DEPENDS+=	${LOCALBASE}/lib/${OPENLDAP_LIB}:${PORTSDIR}/${LDAP_PORT}
+.else
+USE_OPENLDAP_VER?=	21
+.endif
 .endif
 .if defined(SENDMAIL_WITH_SASL)
 SASL_SUFFIX?=	+sasl
