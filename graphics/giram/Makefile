@@ -17,10 +17,14 @@ LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12 \
 		GL:${PORTSDIR}/graphics/Mesa3
 RUN_DEPENDS=	povray:${PORTSDIR}/graphics/povray31
 
+GTK_CONFIG?=    ${X11BASE}/bin/gtk12-config
+
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	GTK_CONFIG="${X11BASE}/bin/gtk12-config" \
-		CFLAGS="-I${LOCALBASE}/include ${CFLAGS}"
+CONFIGURE_ENV=  CPPFLAGS="-I${LOCALBASE}/include" \
+		GTK_CONFIG="${GTK_CONFIG}" \
+		LIBS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS= --disable-gnome
 
 post-install:
 	@${MKDIR} ${PREFIX}/share/doc/giram/SampleScenes
