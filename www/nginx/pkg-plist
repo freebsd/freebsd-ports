@@ -6,7 +6,7 @@ etc/nginx/mime.types-dist
 @unexec if cmp -s %D/etc/nginx/nginx.conf %D/etc/nginx/nginx.conf-dist; then rm -f %D/etc/nginx/nginx.conf; fi
 etc/nginx/nginx.conf-dist
 @exec [ -f %B/nginx.conf ] || cp %B/%f %B/nginx.conf
-@unexec rmdir $D/etc/nginx 2>/dev/null || true
+@unexec rmdir %D/etc/nginx 2>/dev/null || true
 %%WWWDATA%%@exec mkdir -p -m 755 www/nginx-dist
 @comment @unexec chmod u+w www/nginx-dist
 %%WWWDATA%%www/nginx-dist/EXAMPLE_DIRECTORY-DONT_ADD_OR_TOUCH_ANYTHING
