@@ -3,11 +3,11 @@
 # Date created:         31 Aug 1995
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.8 1996/09/01 13:47:03 ache Exp $
+# $Id: Makefile,v 1.9 1996/10/07 14:34:58 ache Exp $
 #
 
 DISTNAME=       xrus-2.0-bin
-PKGNAME=        ru-X11-3.1.2
+PKGNAME=        ru-X11-3.2
 CATEGORIES+=    russian x11
 MASTER_SITES=   ftp://ftp.relcom.ru/misc/fonts/cyrillic/xwindows/
 EXTRACT_SUFX=   .tgz
@@ -47,29 +47,7 @@ do-install:
 			rm -f /tmp/ed.$$$$; \
 		}; \
 	fi
-	${INSTALL_DATA} ${FILESDIR}/xmodmap ${XLIB}/xinit/.Xmodmap
-	if [ -d ${XLIB}/locale ] ; then \
-		if [ ! -d ${XLIB}/locale/koi8-r ] ; then \
-			mkdir ${XLIB}/locale/koi8-r; \
-			chown ${BINOWN}.${BINGRP} ${XLIB}/locale/koi8-r; \
-			chmod 755 ${XLIB}/locale/koi8-r; \
-		fi; \
-		if [ ! -f ${XLIB}/locale/koi8-r/XLC_LOCALE ] ; then \
-			${INSTALL_DATA} ${FILESDIR}/koi8-r ${XLIB}/locale/koi8-r/XLC_LOCALE; \
-		fi; \
-		if [ ! -f ${XLIB}/locale/tbl_data/tabkoi8-r ] ; then \
-			${INSTALL_DATA} ${FILESDIR}/tabkoi8-r ${XLIB}/locale/tbl_data; \
-		fi; \
-		grep -q KOI8-R ${XLIB}/locale/locale.alias || { \
-			cp ${XLIB}/locale/locale.alias ${XLIB}/locale/locale.alias.bak; \
-			grep -v -f ${FILESDIR}/replace_alias_list < ${XLIB}/locale/locale.alias.bak > ${XLIB}/locale/locale.alias; \
-			cat ${FILESDIR}/locale_alias_list >> ${XLIB}/locale/locale.alias; \
-		}; \
-		grep -q KOI8-R ${XLIB}/locale/locale.dir || { \
-			cp ${XLIB}/locale/locale.dir ${XLIB}/locale/locale.dir.bak; \
-			cat ${FILESDIR}/locale_dir_list >> ${XLIB}/locale/locale.dir; \
-		}; \
-	fi
+#       ${INSTALL_DATA} ${FILESDIR}/xmodmap ${XLIB}/xinit/.Xmodmap
 	if [ ! -d ${XLIB}/nls ] ; then \
 		mkdir ${XLIB}/nls; \
 		chown ${BINOWN}.${BINGRP} ${XLIB}/nls; \
