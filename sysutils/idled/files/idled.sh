@@ -1,9 +1,5 @@
 #!/bin/sh
 case "$1" in
-	start)
-		/usr/local/libexec/idled
-		echo -n ' idled'
-		;;
 	stop)
 		killall -TERM idled
 		echo "idled stopped"
@@ -16,7 +12,7 @@ case "$1" in
 	-h)
 		echo "Usage: `basename $0` { start | stop | restart }"
 		;;
-	*)
+	*)				# includes start
 		/usr/local/libexec/idled
 		echo -n ' idled'
 		;;
