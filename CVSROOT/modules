@@ -3132,6 +3132,10 @@ integrit	ports/security/integrit
 intel2gas	ports/lang/intel2gas
 intercal	ports/lang/intercal
 interchange	ports/www/interchange
+inti		ports/x11-toolkits/inti
+inti-gconf	ports/x11-toolkits/inti-gconf
+inti-gl		ports/x11-toolkits/inti-gl
+inti-sourceview	ports/x11-toolkits/inti-sourceview
 intlfonts	ports/x11-fonts/intlfonts
 intltool	ports/textproc/intltool
 inventor	ports/graphics/inventor
