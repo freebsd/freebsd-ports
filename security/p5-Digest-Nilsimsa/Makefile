@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	Digest
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	leeym@FreeBSD.org
-COMMENT=	Perl version of Nilsimsa code 
+COMMENT=	Perl version of Nilsimsa code
 
 PERL_CONFIGURE=	yes
 
