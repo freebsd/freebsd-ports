@@ -66,6 +66,14 @@ CONFIGURE_ARGS+=--with-mysqld-ldflags=-all-static
 .if defined(BUILD_OPTIMIZED)
 CFLAGS+=	-mcpu=i686
 .endif
+.if defined(WITH_LINUXTHREADS)
+CONFIGURE_ARGS+=--with-named-thread-libs='-DHAVE_GLIBC2_STYLE_GETHOSTBYNAME_R
+CONFIGURE_ARGS+=-D_THREAD_SAFE -I${LOCALBASE}/include/pthread/linuxthreads
+CONFIGURE_ARGS+=-L${LOCALBASE}/lib -llthread -llgcc_r'
+CFLAGS+=	-D__USE_UNIX98 -D_REENTRANT -D_THREAD_SAFE
+CFLAGS+=	-I${LOCALBASE}/include/pthread/linuxthreads
+LIB_DEPENDS+=	lthread.2:${PORTSDIR}/devel/linuxthreads
+.endif
 .if defined(THREAD_SAFE_CLIENT)
 CONFIGURE_ARGS+=--enable-thread-safe-client
 .endif
@@ -102,6 +110,7 @@ pre-fetch:
 	@${ECHO} "	WITH_OPENSSL=yes	Enable secure connections."
 	@${ECHO} "	DB_DIR=directory	Set alternate directory for database files"
 	@${ECHO} "				(default is /var/db/mysql)."
+	@${ECHO} "      WITH_LINUXTHREADS=yes	Use the linuxthreads pthread library."
 	@${ECHO} "	OVERWRITE_DB=yes	Re-initialize default databases"
 	@${ECHO} "	SKIP_DNS_CHECK=yes	Don't run resolveip to do an additional"
 	@${ECHO} "				DNS check before inserting local hostname to"
