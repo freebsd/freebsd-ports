@@ -6,11 +6,12 @@
 #
 
 PORTNAME=	q3ded
-PORTVERSION=	1.29h
+PORTVERSION=	1.30
 CATEGORIES=	games linux
 MASTER_SITES=	http://fileplanet.games-world.net/dl/ftp1.gamespy.com/fpnew/action/quake3/official/ \
-		ftp://ftp.idsoftware.com/idstuff/quake3/linux/
-DISTNAME=	linuxq3apoint-${PORTVERSION}-beta.x86
+		ftp://ftp.idsoftware.com/idstuff/quake3/linux/ \
+		ftp://ftp.bluesnews.com/idstuff/quake3/linux/
+DISTNAME=	linuxq3apoint-${PORTVERSION}.x86
 EXTRACT_SUFX=	.run
 
 MAINTAINER=	pat@databits.net
