@@ -34,6 +34,12 @@ USE_PHP+=	gd
 
 DEST=	${PREFIX}/www/data-dist/egroupware
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 600000
+BROKEN=		"Broken pkg-plist on FreeBSD >= 6.x"
+.endif
+
 post-extract:
 	@${FIND} ${WRKSRC} -name CVS -type d | ${XARGS} ${RM} -rf
 
@@ -58,4 +64,4 @@ do-install:
 #
 # Open http://localhost/egroupware/setup/index.php
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
