@@ -12,7 +12,7 @@
            owner; <host> is a host there bugzilla is being setup;
            <password> is a database owner's password;
 
-  2. Change working directory to %%PREFIX%%/www/data.default
+  2. Change working directory to %%PREFIX%%/www/data.default/bugzilla
   3. Run "./checksetup.pl" script as root user
   4. Read output carefully and follow all instructions
 
