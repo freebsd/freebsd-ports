@@ -23,21 +23,17 @@ MAN1=		abut.1 anova.1 calc.1 colex.1 contab.1 desc.1 dm.1 dprime.1 \
 		rankrel.1 ranksort.1 regress.1 repeat.1 reverse.1 series.1 \
 		stats.1 transpose.1 ts.1 unixstat.1 validata.1
 
-do-fetch:
-	@if [ ! -f ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} ]; then \
-	  ${ECHO} ""; \
-	  ${ECHO} "Gary Perlman requires that users agree to his license"; \
-	  ${ECHO} "before he will allow access to the dist file."; \
-	  ${ECHO} "See his web site at http://www.acm.org/~perlman/stat/ for"; \
-	  ${ECHO} "details.  Then put ${DISTNAME}${EXTRACT_SUFX} in"; \
-	  ${ECHO} "${DISTDIR} and run make again."; \
-	  ${ECHO} ""; \
-	  exit 1;\
-	fi
+.if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}) && !defined(PACKAGE_BUILDING)
+IGNORE="Gary Perlman requires that users agree to his license"\
+"before he will allow access to the distfile."\
+"See his web site at http://www.acm.org/~perlman/stat/ for"\
+"details.  Then put ${DISTNAME}${EXTRACT_SUFX} in"\
+"${DISTDIR} and run make again"
+.endif
 
 post-patch:
-	@mv ${WRKSRC}/man/intro.1 ${WRKSRC}/man/unixstat.1
-	@rm ${WRKSRC}/man/cat.1
+	@{MV} ${WRKSRC}/man/intro.1 ${WRKSRC}/man/unixstat.1
+	@{RM} ${WRKSRC}/man/cat.1
 
 do-build:
 	@(cd ${WRKSRC}/src; ${SETENV} ${MAKE_ENV} make ${MAKE_ARGS})
