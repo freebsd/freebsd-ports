@@ -1,9 +1,15 @@
---- patch-1.5.1.tt.ja.1.orig	Sun May 19 14:43:49 2002
-+++ patch-1.5.1.tt.ja.1	Sun May 19 14:44:07 2002
-@@ -2350,5 +2350,5 @@
- +#endif
- --- mutt-dev-ja/PATCHES~    Tue Nov  6 19:59:33 2001
- +++ mutt-dev-ja/PATCHES     Tue Nov  6 19:59:42 2001
--@@ -1,0 +1 @@
-+@@ -0,0 +1 @@
- +patch-1.5.1.tt.ja.1
+*** patch-1.5.3.tt.ja.1.orig	Sun Jan  5 19:40:23 2003
+--- patch-1.5.3.tt.ja.1	Thu Feb 13 16:54:34 2003
+***************
+*** 2395,2399 ****
+   
+  --- mutt-devel-ja/PATCHES~    Tue Nov  6 19:59:33 2001
+  +++ mutt-devel-ja/PATCHES     Tue Nov  6 19:59:42 2001
+! @@ -1,0 +1 @@
+  +patch-1.5.3.tt.ja.1
+--- 2395,2399 ----
+   
+  --- mutt-devel-ja/PATCHES~    Tue Nov  6 19:59:33 2001
+  +++ mutt-devel-ja/PATCHES     Tue Nov  6 19:59:42 2001
+! @@ -0,0 +1 @@
+  +patch-1.5.3.tt.ja.1

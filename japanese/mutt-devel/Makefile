@@ -11,16 +11,16 @@ PORTNAME=	mutt
 PORTVERSION=	${VERSION}.j${JP_VERSION}
 CATEGORIES=	japanese mail
 MASTER_SITES=	http://www.emaillab.org/mutt/1.5/ \
-		http://www5.xdsl.ne.jp/~shuna/mutt/distfiles/ \
+		http://my.reset.jp/~iwashita/mutt/distfiles/ \
 		http://ha4.seikyou.ne.jp/home/Kohtaro.Hitomi/mutt/ \
 		ftp://ftp.mutt.org/pub/mutt/devel/
 DISTNAME=	${PORTNAME}-${VERSION}i
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		${DISTNAME}-ja.${JP_VERSION}${EXTRACT_SUFX} \
-		manual_ja-${MANUALVERSION}i-0${EXTRACT_SUFX}
+		manual_ja-${MANUALVERSION}i-1${EXTRACT_SUFX}
 DIST_SUBDIR=	mutt
 
-MAINTAINER=	shuna@pop16.odn.ne.jp
+MAINTAINER=	iwashita@cqmail.net
 
 LIB_DEPENDS=	slang.2:${PORTSDIR}/japanese/libslang \
 		iconv.3:${PORTSDIR}/converters/libiconv
@@ -34,7 +34,7 @@ LIB_DEPENDS+=	sasl.8:${PORTSDIR}/security/cyrus-sasl
 .endif
 RUN_DEPENDS=	urlview:${PORTSDIR}/textproc/urlview
 
-VERSION=	1.5.1
+VERSION=	1.5.3
 JP_VERSION=	1
 MANUALVERSION=	1.4
 
@@ -94,13 +94,10 @@ post-configure:
 post-install:
 	${INSTALL_DATA} ${DIFFDIR}/INSTALL.JA-PATCH.ja ${DOCSDIR}
 	${INSTALL_DATA} ${DIFFDIR}/README.JA-PATCH.ja ${DOCSDIR}
-	${INSTALL_DATA} ${DIFFDIR}/html/INSTALL.JA-PATCH.en.html ${DOCSDIR}/html
 	${INSTALL_DATA} ${DIFFDIR}/html/INSTALL.JA-PATCH.ja.html ${DOCSDIR}/html
-	${INSTALL_DATA} ${DIFFDIR}/html/README.JA-PATCH.en.html ${DOCSDIR}/html
 	${INSTALL_DATA} ${DIFFDIR}/html/README.JA-PATCH.ja.html ${DOCSDIR}/html
 	${INSTALL_DATA} ${DIFFDIR}/html/manual-ja-patch.en.html ${DOCSDIR}/html
 	${INSTALL_DATA} ${DIFFDIR}/html/manual-ja-patch.ja.html ${DOCSDIR}/html
-	${INSTALL_DATA} ${DIFFDIR}/html/usage-japanese.en.html ${DOCSDIR}/html
 	${INSTALL_DATA} ${DIFFDIR}/html/usage-japanese.ja.html ${DOCSDIR}/html
 	${INSTALL_DATA} ${DIFFDIR}/samples/mutt-en.rc ${DOCSDIR}/samples
 	${INSTALL_DATA} ${DIFFDIR}/samples/mutt-ja.rc ${DOCSDIR}/samples
