@@ -6,6 +6,7 @@
 
 PORTNAME=		SSLtelnet
 PORTVERSION=		0.13
+PORTREVISION=		1
 CATEGORIES=		net security
 MASTER_SITES=		${MASTER_SITE_LOCAL} \
 			ftp://ftp.psy.uq.oz.au/pub/Crypto/SSLapps/
