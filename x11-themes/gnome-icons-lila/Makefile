@@ -15,7 +15,7 @@ CATEGORIES=	x11-themes gnome
 MASTER_SITES=	http://lila-theme.uni.cc/files/tarballs/
 DISTNAME=	${PORTNAME}-gnome-${PORTVERSION}
 
-MAINTAINER=	filippo@widestore.net
+MAINTAINER=	filippo.natali@gmail.com
 COMMENT=	Lila Icons for Gnome
 
 NO_PACKAGE=	${REASON}

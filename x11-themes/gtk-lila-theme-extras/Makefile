@@ -11,7 +11,7 @@ CATEGORIES=	x11-themes gnome
 MASTER_SITES=	http://lila-theme.uni.cc/files/tarballs/
 DISTNAME=	lila-gtk-extras-${PORTVERSION}
 
-MAINTAINER=	filippo@widestore.net
+MAINTAINER=	filippo.natali@gmail.com
 COMMENT=	GTK+ 2.0 Lila additional themes
 
 WRKSRC=		${WRKDIR}/lila-gtk-extras

@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.zope.org/Members/vladap/${ZOPEPRODUCTNAME}/release-${PO
 PKGNAMEPREFIX=	zope-
 DISTNAME=	${ZOPEPRODUCTNAME}-${PORTVERSION}
 
-MAINTAINER=	filippo@widestore.net
+MAINTAINER=	filippo.natali@gmail.com
 COMMENT=	A Zope user folder which uses MySQL database to store user information
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/MySQLdb/__init__.py:${PORTSDIR}/databases/py-MySQLdb
