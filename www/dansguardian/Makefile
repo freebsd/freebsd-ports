@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dansguardian
-PORTVERSION=	2.6.1.13
+PORTVERSION=	2.8.0.0
 CATEGORIES=	www
 MASTER_SITES=	# empty, see below
 DISTNAME=	DansGuardian-${PORTVERSION:R}-${PORTVERSION:E}.source
@@ -20,10 +20,10 @@ RUN_DEPENDS=	${LOCALBASE}/sbin/squid:${PORTSDIR}/www/squid \
 USE_RC_SUBR=	yes
 RC_SCRIPTS_SUB=PREFIX=${PREFIX} RC_SUBR=${RC_SUBR}
 
-CONFLICTS=	dansguardian-2.7*
+CONFLICTS=	dansguardian-2.[67]*
 LATEST_LINK=	dansguardian
 
-WRKSRC=		${WRKDIR}/DansGuardian-${PORTVERSION:R}
+WRKSRC=		${WRKDIR}/DansGuardian-${PORTVERSION:R}-${PORTVERSION:E}
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--bindir=/sbin/ \
 		--sysconfdir=/etc/dansguardian/ \
@@ -34,8 +34,8 @@ CONFIGURE_ARGS=	--bindir=/sbin/ \
 		--piddir=/var/run/
 MAN8=		dansguardian.8
 
-OPTIONS=	DG_GCC3 "Compile using GCC 3.x on FreeBSD 4.x." off \
-		DG_PHRASELISTS "Install new phraselists." off
+OPTIONS=	DG_GCC3 "Compile using GCC 3.3 on FreeBSD 4.x." off \
+		DG_PHRASELISTS "Install new phraselists. (Overwrites existing.)" off
 
 DG_URL=		http://dansguardian.org/index.php?page=copyright2
 CONFDIR=	${PREFIX}/etc/dansguardian
@@ -48,15 +48,15 @@ RESTRICTED=	${NO_PACKAGE}
 
 # On FreeBSD 4.x, user can choose which GCC version to use
 .if ${OSVERSION} > 500000 || defined(WITH_DG_GCC3)
-USE_GCC=	3
 CONFIGURE_ARGS+=	--gccver=3
+USE_GCC=		3.3
 .else
 CONFIGURE_ARGS+=	--gccver=2
 .endif
 
 # User needs to manually download the distfile
-.if !(exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}))
-IGNORE=	"Commercial source download is restricted.  Please visit and read ${DG_URL} and download ${DISTNAME}${EXTRACT_SUFX} into ${DISTDIR} before running make"
+.if !(exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})) && !defined(PACKAGE_BUILDING)
+IGNORE="Commercial source download is restricted.  Please visit and read ${DG_URL} and download ${DISTNAME}${EXTRACT_SUFX} into ${DISTDIR} before running make"
 .endif
 
 post-extract:

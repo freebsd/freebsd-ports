@@ -6,5 +6,5 @@
        page for instructions on setting up log rotation and compression.
 
        WARNING:  This port uses RCng.  Please read the comments in the startup
-       script.
+       script for instructions on enabling the daemon.
 *******************************************************************************
