@@ -6,27 +6,25 @@
 #
 
 PORTNAME=	getmail
-PORTVERSION=	3.2.0
+PORTVERSION=	3.2.1
 CATEGORIES=	mail python
 MASTER_SITES=	http://www.qcc.ca/~charlesc/software/getmail-3.0/%SUBDIR%/
 MASTER_SITE_SUBDIR=	. old-versions
 
 MAINTAINER=	sergei@FreeBSD.org
-COMMENT=	POP3 mail retriever with reliable Maildir and command delivery
+COMMENT=	POP3 mail retriever with reliable Maildir/command delivery
 
 USE_PYTHON=	yes
 USE_REINPLACE=	yes
-NO_BUILD=	yes
 
 SCRIPTS=	getmail getmail_maildir getmail_mbox
 MAN1=		getmail.1
 DOCS=		CHANGELOG THANKS TODO docs.txt faq.txt getmail.txt \
 		docs.html faq.html
 
-post-patch:
-	@cd ${WRKSRC} && \
+do-build:
+	cd ${WRKSRC} && \
 		${REINPLACE_CMD} -e 's!/usr/lib/getmail!${DATADIR}!' \
-		-e 's!`which python`!${PYTHON_CMD}!' \
 		-e 's!/usr/bin/python!${PYTHON_CMD}!' ${SCRIPTS} *.py
 
 do-install:
