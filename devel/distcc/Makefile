@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	distcc
-PORTVERSION=	2.2
+PORTVERSION=	2.3
 CATEGORIES=	devel
 MASTER_SITES=	http://distcc.samba.org/ftp/distcc/
 
@@ -25,7 +25,7 @@ MAN1=	distcc.1 distccd.1
 DOC_FILES=	AUTHORS COPYING COPYING.FDL NEWS README \
 		linuxdoc/distcc.sgml
 HTML_DOC_FILES=	distcc.html distcc-1.html distcc-2.html distcc-3.html \
-		distcc-4.html distcc-5.html distcc-6.html
+		distcc-4.html distcc-5.html
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/distcc ${PREFIX}/bin
