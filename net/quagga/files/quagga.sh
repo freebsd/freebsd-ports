@@ -7,13 +7,16 @@
 # KEYWORD: FreeBSD NetBSD
 
 #
-# Add the following lines to /etc/rc.conf to enable quagga:
-#
+# Add the following line to /etc/rc.conf to enable quagga:
 #quagga_enable="YES"
 #
-# You may also use next flags to tune startup
+# You may also wish to use the following variables to fine-tune startup:
 #quagga_flags="-d"
 #quagga_daemons="zebra ripd ripng ospfd ospf6d bgpd isisd"
+#
+# If the quagga daemons require additional shared libraries to start,
+# use the following variable to run ldconfig(8) in advance:
+#quagga_extralibs_path="/usr/local/lib ..."
 #
 
 . %%RC_SUBR%%
@@ -35,6 +38,7 @@ quagga_enable=${quagga_enable:-"NO"}
 quagga_flags=${quagga_flags:-"-d"}
 quagga_daemons=${quagga_daemons:-"zebra ripd ripng ospfd ospf6d bgpd isisd"}
 load_rc_config $name
+quagga_extralibs_path=${quagga_extralibs_path:-""}
 
 quagga_cmd=$1
 
@@ -47,9 +51,16 @@ case "$1" in
 	;;
 esac
 
-if [ ${quagga_cmd} = "stop" ]; then
-    quagga_daemons=$(reverse_list ${quagga_daemons})
-fi
+case "${quagga_cmd}" in
+    start)
+	if [ ! -z ${quagga_extralibs_path} ]; then
+	    /sbin/ldconfig -m ${quagga_extralibs_path}
+	fi
+	;;
+    stop)
+	quagga_daemons=$(reverse_list ${quagga_daemons})
+	;;
+esac
 
 for daemon in ${quagga_daemons}; do
     command=%%PREFIX%%/sbin/${daemon}
