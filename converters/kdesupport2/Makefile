@@ -32,8 +32,8 @@ CONFIGURE_ARGS+=--with-qt-dir=${X11BASE} \
 		--without-odbc --without-audiofile \
 		--with-extra-libs=${LOCALBASE}/lib
 CONFIGURE_ENV+= LIBQT="-lqt2" MOC="${MOC}" LIBQTFILE="libqt2" \
-		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
-		LIBS="-Wl,-export-dynamic -L${LOCALBASE}/lib -L${X11BASE}/lib -lqt2 -ljpeg -lstdc++ -lgcc"
+		CPPFLAGS="-I${LOCALBASE}/include" \
+		LIBS="-Wl,-export-dynamic -L${LOCALBASE}/lib -lqt2 -ljpeg -lstdc++ -lgcc"
 USE_GMAKE=	yes
 PLIST_SUB+=	LIBVER="${SOMAJOR}"
 

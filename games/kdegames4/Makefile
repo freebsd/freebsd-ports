@@ -25,8 +25,8 @@ CONFIGURE_ARGS+=--with-qt-dir=${X11BASE} \
 		--with-qt-libraries=${X11BASE}/lib \
 		--with-extra-libs=${LOCALBASE}/lib
 CONFIGURE_ENV+=	MOC="${MOC}" LIBQT="-lqt2" LIBQTFILE="libqt2" \
-		LIBS="-Wl,-export-dynamic -L${X11BASE}/lib -lqt2 -L${LOCALBASE}/lib -ljpeg -lgcc -lstdc++" \
-		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include"
+		LIBS="-Wl,-export-dynamic -lqt2 -L${LOCALBASE}/lib -ljpeg -lgcc -lstdc++" \
+		CPPFLAGS="-I${LOCALBASE}/include"
 USE_GMAKE=	yes
 
 .include <bsd.port.mk>
