@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	seti
-PORTVERSION=	0.2
-PORTREVISION=	1
+PORTVERSION=	0.3.0
 CATEGORIES=	astro gnome
-MASTER_SITES=	http://www.webonaut.com/distfiles/
+MASTER_SITES=	http://gdesklets.gnomedesktop.org/files/
 PKGNAMEPREFIX=	gdesklets-
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
@@ -39,7 +38,6 @@ do-install:
 
 post-install:
 	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${PREFIX}/share/gnome/gdesklets/Sensors/${NAME}
-	@${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py ${PREFIX}/share/gnome/gdesklets/Sensors/${NAME}
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
