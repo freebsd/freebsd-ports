@@ -8,14 +8,10 @@
 MASTERDIR=	${.CURDIR}/../../misc/magicpoint
 COMMENT=	An X11-based presentation tool, configured with vflib support
 
-LIB_DEPENDS=	VFlib2.24:${PORTSDIR}/japanese/vflib
-
 CATEGORIES=	japanese
 
 MAINTAINER=	mita@jp.FreeBSD.org
 
-# dirty, but this is required for version independent-ness
-CONFIGURE_ARGS=		--with-vfontcap=`${LS} -1 ${LOCALBASE}/share/VFlib/*/vfontcap | tail -1`
-CONFIGURE_ARGS+=	--enable-freetype-charset16
+WITH_JAPANESE=yes
 
 .include "${MASTERDIR}/Makefile"
