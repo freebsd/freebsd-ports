@@ -12,8 +12,6 @@ MASTER_SITES=	http://dllab.caltech.edu/avida/versions/
 
 MAINTAINER=	karlj000@unbc.ca
 
-BROKEN=		"Does not build"
-
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:C/\.[[:alnum:]]+$//}
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
