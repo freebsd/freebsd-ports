@@ -37,6 +37,10 @@ share/ptkei/src/MapWin.py
 share/ptkei/src/MapWin.pyc
 share/ptkei/src/OutWin.py
 share/ptkei/src/OutWin.pyc
+share/ptkei/src/Pmw.py 
+share/ptkei/src/Pmw.pyc
+share/ptkei/src/PmwBlt.py
+share/ptkei/src/PmwBlt.pyc
 share/ptkei/src/TeleWin.py
 share/ptkei/src/TeleWin.pyc
 share/ptkei/src/Tk_List.py
