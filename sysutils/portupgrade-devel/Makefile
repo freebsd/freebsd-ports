@@ -7,6 +7,7 @@
 
 PORTNAME=	portupgrade
 PORTVERSION=	20020220.1
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		http://www.iDaemons.org/distfiles/
@@ -53,6 +54,9 @@ INSTALL_TARGET=		install
 .if !defined(NOPORTDOCS)
 INSTALL_TARGET+=	install-doc
 .endif
+
+post-patch:
+	${RUBY} -i.orig -pe '$$. == 85 and sub(/_freebsd_pkgtools_which_files/, "_freebsd_pkgtools_ports")' ${WRKSRC}/misc/zsh/_pkgtools
 
 post-install:
 	if [ ! -f ${PREFIX}/etc/pkgtools.conf ]; then \
