@@ -1,0 +1,8 @@
+share/pysol/music/Astral_Dreams.COPYRIGHT
+share/pysol/music/Astral_Dreams.it
+share/pysol/music/Past_and_Future.COPYRIGHT
+share/pysol/music/Past_and_Future.it
+share/pysol/music/Subsequential.COPYRIGHT
+share/pysol/music/Subsequential.mod
+@unexec rmdir %D/share/pysol/music 2>/dev/null || true
+@unexec rmdir %D/share/pysol 2>/dev/null || true
