@@ -2,10 +2,10 @@ Index: interface/cooked_interface.c
 ===================================================================
 RCS file: /home/cvs/cdparanoia/interface/cooked_interface.c,v
 retrieving revision 1.1.1.1
-retrieving revision 1.7
-diff -u -r1.1.1.1 -r1.7
+retrieving revision 1.8
+diff -u -r1.1.1.1 -r1.8
 --- interface/cooked_interface.c	2003/01/05 09:46:26	1.1.1.1
-+++ interface/cooked_interface.c	2003/01/07 00:49:01	1.7
++++ interface/cooked_interface.c	2003/01/11 08:58:45	1.8
 @@ -1,6 +1,8 @@
  /******************************************************************
   * CopyPolicy: GNU Public License 2 applies
@@ -75,9 +75,9 @@ diff -u -r1.1.1.1 -r1.7
 +	d->disc_toc[i - hdr.starting_track].bTrack = entry.entry.track;
 +	d->disc_toc[i - hdr.starting_track].dwStartSector = be32_to_cpu(entry.entry.addr.lba);
 +	
-+	d->cd_extra = FixupTOC(d, hdr.ending_track - hdr.starting_track + 1);
++	d->cd_extra = FixupTOC(d, hdr.ending_track - hdr.starting_track + 2);	/* with TOC */
 +
-+	return hdr.ending_track - hdr.starting_track;;
++	return hdr.ending_track - hdr.starting_track + 1;
 +}
 +
 +static int

@@ -7,6 +7,7 @@
 
 PORTNAME=	cdparanoia
 PORTVERSION=	3.9.8
+PORTREVISION=	1
 CATEGORIES=	audio sysutils
 MASTER_SITES=	http://www.xiph.org/paranoia/download/
 DISTNAME=	${PORTNAME}-${PORTVERSION:C/^3\./III-alpha/}
