@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	penv
-PORTVERSION=	1.2.b1
+PORTVERSION=	1.2.b2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://devel.ringlet.net/sysutils/penv/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.b/pre/}
@@ -29,10 +29,7 @@ DBDIR?=		/var/db/${PORTNAME}
 
 PLIST_SUB+=	DBDIR=${DBDIR}
 
-HTMLDOCS=	docbook.css index.html penv-compat.html penv-history.html \
-		penv-install.html penv-src.html penv-usage.html penv.html
-HTMLCDOCS=	changes.html changes.txt
-TXTDOCS=	penv.txt
+DOCS=		html txt
 
 post-install:
 		${MKDIR} ${PREFIX}/etc
@@ -43,12 +40,8 @@ post-install:
 				${PREFIX}/etc/penv.conf; \
 		fi
 .if !defined(NOPORTDOCS)
-		${MKDIR} ${DOCSDIR}/html
-		${INSTALL_DATA} ${HTMLDOCS:S,^,${WRKSRC}/doc/html/,} ${DOCSDIR}/html
-		${MKDIR} ${DOCSDIR}/html/changes
-		${INSTALL_DATA} ${HTMLCDOCS:S,^,${WRKSRC}/doc/html/changes/,} ${DOCSDIR}/html/changes
-		${MKDIR} ${DOCSDIR}/txt
-		${INSTALL_DATA} ${TXTDOCS:S,^,${WRKSRC}/doc/txt/,} ${DOCSDIR}/txt
+		${MKDIR} ${DOCSDIR}
+		cd ${WRKSRC}/doc && ${TAR} -cpf - ${DOCS} | ${TAR} -xpf - -C ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
