@@ -3,12 +3,14 @@
 # Date created:		Jun 23 1997
 # Whom:			Vanilla I. Shu <vanilla@MinJe.com.TW>
 #
-# $Id: Makefile,v 1.2 1997/09/03 08:35:30 max Exp $
+# $Id: Makefile,v 1.3 1997/11/30 19:34:51 vanilla Exp $
 #
 
 DISTNAME=	amp-0.7.6
 CATEGORIES=	audio
-MASTER_SITES=	ftp://ftp.rasip.fer.hr/pub/mpeg/
+#MASTER_SITES=	ftp://ftp.rasip.fer.hr/pub/mpeg/
+# the author's site seems dead.
+MASTER_SITES=	ftp://ftp.clara.net/pub/unix/Audio/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	vanilla@FreeBSD.ORG
