@@ -1,37 +1,12 @@
-Stella is a usable, and highly addictive, emulator of the Atari 2600
-VCS system with sound support. 
+From the documentation:  
+  Stella is a freely distributed multi-platform Atari 2600 VCS emulator;
+  originally developed for Linux by Bradford W. Mott. Stella allows you
+  to enjoy all of your favorite 2600 games once again by emulating the
+  2600's hardware with software. Stella is written in C++, which allows
+  it to be ported to other operating systems and architectures. Since
+  its original release Stella has been ported to AcronOS, AmigaOS, DOS,
+  FreeBSD, IRIX, Linux, MacOS, OpenStep, OS/2, Unix, and Windows.
 
-Please refer to /usr/local/share/doc/stella (or equivalent on your
-system) for the distribution documents and instructions. This package
-contains no man page so this will be your only reference. 
+See also: http://www4.ncsu.edu/~bwmott/www/2600/
 
-If you're at all serious about your emulator then you SHOULD check out
-these URL's in the order they're written:
-
-  http://www4.ncsu.edu/~bwmott/www/2600/
-  http://www.general.uwa.edu.au/u/darrins/2600/roms.html
-  ftp://ftp.hackerz.com/hackerz/atari/web/index.html
-
-This should get you started and provide you with numerous links to
-other web sites. 
-
-Most ROM's for the Atari 2600 VCS are, unfortunately,
-copyright. Fortunately two ROM's have been included in this package
-which are in the public domain. Two shell scripts, elk and okiedoke,
-are included which start up the emulator with these ROM's
-loaded. Numerous ROM's are also available on the net (see URL's
-above). 
-
-If you have any general Atari VCS questions then you might get a more
-fruitful response by posting them to the stella mailing list (see
-stella.txt), as the emulation and questions mailing list won't be
-up-to-date with all things Atari. However the FreeBSD emulation
-mailing list is dedicated to discussing the emulation of other systems
-so don't be shy. Please check Section 25 of the handbook for
-information on the FreeBSD mailing lists.
-
-Share and enjoy,
-
-Joel...
-:->
-sutton@aardvark.apana.org.au
+Jacques Vidrine <nectar@FreeBSD.ORG>

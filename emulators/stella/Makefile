@@ -1,67 +1,50 @@
-# New ports collection makefile for:   stella-0.6
-# Version required:	0.6
-# Date created:		1st May, 1997
-# Whom:			Joel Sutton <sutton@aardvark.apana.org.au>
+# New ports collection makefile for:   	stella-1.1
+# Version required:			1.1
+# Date created:				March 4, 1999
+# Whom:					Jacques Vidrine <nectar@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.3 1998/04/29 09:56:44 asami Exp $
+# $Id: Makefile,v 1.4 1998/12/01 09:36:33 obrien Exp $
 #
 
-DISTNAME=	stella-0.6-src
-PKGNAME=	stella-0.6
+DISTNAME=	stella-1.1-src
+PKGNAME=	stella-1.1
 CATEGORIES=	emulators
-MASTER_SITES=	ftp://ftp.ucpel.tche.br/pub/msdos/emulator/atari/
+MASTER_SITES=	ftp://ftp.eos.ncsu.edu/pub/bsvc/stella/1.1/ \
+		http://www.nectar.com/distfiles/
 
-MAINTAINER=	sutton@aardvark.apana.org.au
+MAINTAINER=	nectar@FreeBSD.ORG
 
-BROKEN="fetch"
-
-MANUAL_PACKAGE_BUILD=	installs bin/elk
-
-DIST_SUBDIR=	atari
-WRKSRC=		${WRKDIR}/${PKGNAME}/src
+PORTTOP=	${WRKDIR}/${PKGNAME}
+WRKSRC=		${PORTTOP}/src/build
 MAKEFILE=	makefile
-ALL_TARGET=	freebsd-oss
+ALL_TARGET=	freebsd-x
 
-# Directories and extra files
-#
-STELLA_DOC=	${PREFIX}/share/doc/stella
-STELLA_LIB=	${PREFIX}/lib/stella
-STELLA_ROM=	ELK.BIN OKIEDOKE.BIN TEST.BIN
-STELLA_SH=	elk okiedoke
-SED_CONFIG=	${STELLA_LIB:S/\//\\\//g}
-DOC_FILES= 	Announce.txt Stella.txt Todo.txt doc/elk.doc doc/okiedoke.doc
+ROMSDIR=	${PREFIX}/share/stella/roms
+ROMS=		ELK.BIN OKIEDOKE.BIN OYSTR29.BIN TEST.BIN TPS.BIN
+DOCSDIR=	${PREFIX}/share/doc/stella
+DOCS=		docs/Stella.pdf games/docs/elk.doc games/docs/okiedoke.doc \
+		games/docs/oystron.doc games/docs/tps.doc
 
-post-configure:
-	@${ECHO_MSG} "===>  Processing shell scripts"
-	for file in ${STELLA_SH} ; do \
-	   ${SED} "s/GUMBY/${SED_CONFIG}/g" < ${FILESDIR}/$$file.sh \
-		   > ${WRKSRC}/$$file ;\
-	done
+post-build:
+	@(cd ${PORTTOP}/src/ui/sound && \
+		${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} \
+		${MAKE_ARGS} oss)
 
 do-install:
-	@${ECHO_MSG} "===>  Installing binaries"
-	${INSTALL_PROGRAM} ${WRKSRC}/xstella ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/sound/stella-sound ${PREFIX}/bin
-	@${ECHO_MSG} "===>  Installing ROM files"
-	-${MKDIR} ${STELLA_LIB}
-	for file in ${STELLA_ROM} ; do \
-		${INSTALL_DATA} ${WRKSRC}/../ROMS/$$file ${STELLA_LIB}/ ;\
-	done
-	@${ECHO_MSG} "===>  Installing vcs files"
-	for file in ${WRKSRC}/../vcs/* ; do \
-		${INSTALL_DATA} $$file ${STELLA_LIB}/ ;\
-	done
-	@${ECHO_MSG} "===>  Installing scripts"
-	for file in ${STELLA_SH} ; do \
-		${INSTALL_SCRIPT} ${WRKSRC}/$$file ${PREFIX}/bin ;\
-	done
+.for exe in src/build/xstella src/ui/sound/stella-sound
+	${INSTALL_PROGRAM} ${PORTTOP}/${exe} ${PREFIX}/bin/
+.endfor
+	${MKDIR} ${ROMSDIR}
+.for rom in ${ROMS}
+	${INSTALL_DATA} ${PORTTOP}/games/ROMS/${rom} ${ROMSDIR}/
+.endfor
+	${INSTALL_DATA} ${PORTTOP}/src/emucore/stella.pro \
+		${PREFIX}/share/stella/
 .if !defined(NOPORTDOCS)
-	@${ECHO_MSG} "===>  Installing distribution document files"
-	-${MKDIR} ${STELLA_DOC}
-	for file in ${DOC_FILES} ; do \
-		${INSTALL_DATA} ${WRKSRC}/../$$file ${STELLA_DOC}/ ;\
-	done
-	${INSTALL_DATA} ${PKGDIR}/DESCR ${STELLA_DOC}/README.FreeBSD
+	${MKDIR} ${DOCSDIR}
+.for doc in ${DOCS}
+	${INSTALL_DATA} ${PORTTOP}/${doc} ${DOCSDIR}/
+.endfor
 .endif
 
 .include <bsd.port.mk>
