@@ -23,8 +23,8 @@ PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	sf@FreeBSD.org
 
+BUILD_DEPENDS=	msgfmt-new:${PORTSDIR}/devel/gettext-devel
 LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext
-BUILD_DEPENDS=	giconv:${PORTSDIR}/converters/libiconv
 
 .if !defined(WITHOUT_SSL)
 USE_OPENSSL=	yes
@@ -33,21 +33,15 @@ CONFIGURE_ARGS=	--with-ssl=${OPENSSLBASE}
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	CPPFLAGS=-I${LOCALBASE}/include \
-		LIBS=-L${LOCALBASE}/lib
+		LIBS=-L${LOCALBASE}/lib \
+		MSGFMT=${LOCALBASE}/bin/msgfmt-new \
+		XGETTEXT=${LOCALBASE}/bin/xgettext-new
 
 MAN1=		wget.1
 
 post-patch:
 # made by broken KAME patch. Already contacted.
 	@${RM} -f ${WRKSRC}/po/zh.po*
-# convert utf-8 to Big5 for FreeBSD's default old fashioned gettext.
-	(cd ${WRKSRC}; \
-	${MV} po/zh_TW.po po/zh_TW.po.utf-8; \
-	${LOCALBASE}/bin/giconv -f UTF-8 -t BIG5 po/zh_TW.po.utf-8 |\
-		${SED} -e 's/utf-8/big5/' |\
-		${PERL} -p -e 's{([\x81-\xfe])\\}{$$1\\\\}g' |\
-		${PERL} -p -e 's,\\\\([nt\"]),\\$$1,g' \
-		> po/zh_TW.po)
 
 pre-build:
 	@${RM} -f ${WRKSRC}/doc/wget.info*
