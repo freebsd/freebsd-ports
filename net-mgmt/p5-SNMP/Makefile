@@ -6,27 +6,27 @@
 #
 
 PORTNAME=	SNMP
-PORTVERSION=	4.2.0
+PORTVERSION=	4.2.6
 CATEGORIES=	net-mgmt perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	SNMP
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
+		ftp://ucd-snmp.ucdavis.edu/ \
+		ftp://sunsite.cnlab-switch.ch/mirror/ucd-snmp/ \
+		ftp://ftp.win.ne.jp/pub/network/snmp/ucd-snmp/
+MASTER_SITE_SUBDIR=	net-snmp
 PKGNAMEPREFIX=	p5-
+DISTNAME=	ucd-snmp-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A perl5 module for interfacing with the CMU SNMP library
 
 LIB_DEPENDS=	snmp.4:${PORTSDIR}/net-mgmt/net-snmp4
 
+WRKSRC=		${WRKDIR}/${DISTNAME}/perl/SNMP
+
 PERL_CONFIGURE=	yes
-
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} >= 500800
-BROKEN=		"Does not build with perl >=5.8"
-.endif
 
 post-install:
 		@${INSTALL_DATA} ${WRKSRC}/README \
 			${PREFIX}/lib/perl5/site_perl/README.SNMP
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
