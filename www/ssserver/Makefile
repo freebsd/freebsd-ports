@@ -12,17 +12,15 @@ MASTER_SITES=	http://www.kryltech.com/download/FreeBSD.x86.3/
 
 MAINTAINER=	support@kryltech.com
 
-RUN_DEPENDS=	${LOCALBASE}/sbin/httpd:${PORTSDIR}/www/apache13
-
 ONLY_FOR_ARCHS=	i386
 NO_BUILD=	yes
 
 INSTALL_RWDATA=	${INSTALL} ${COPY} -o ${SHAREOWN} -g ${SHAREGRP} -m 666
 
 do-install:
+	@${MKDIR} ${PREFIX}/www/cgi-bin/ssserverdata
 	@${INSTALL_PROGRAM} ${WRKSRC}/ssserver ${PREFIX}/www/cgi-bin
 	@${INSTALL_PROGRAM} ${WRKSRC}/image ${PREFIX}/www/cgi-bin
-	@${MKDIR} ${PREFIX}/www/cgi-bin/ssserverdata
 	@${INSTALL_PROGRAM} ${WRKSRC}/ssserverdata/sssconf ${PREFIX}/www/cgi-bin/ssserverdata/sssconf
 	@${INSTALL_DATA} ${WRKSRC}/ssserverdata/Afrikaans.ssl ${PREFIX}/www/cgi-bin/ssserverdata
 	@${INSTALL_DATA} ${WRKSRC}/ssserverdata/Bulgarian.ssl ${PREFIX}/www/cgi-bin/ssserverdata
