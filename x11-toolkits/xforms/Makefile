@@ -6,8 +6,8 @@
 # $Id: Makefile,v 1.7 1996/11/18 14:17:09 asami Exp $
 #
 
-DISTNAME=	bxform084-freebsd
-PKGNAME=	xforms-0.84
+DISTNAME=	bxform-081
+PKGNAME=	xforms-0.81
 CATEGORIES=	graphics x11
 MASTER_SITES=	ftp://laue.phys.uwm.edu/pub/xforms/freeBSD/
 EXTRACT_SUFX=	.tgz
