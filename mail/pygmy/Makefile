@@ -12,11 +12,12 @@ MASTER_SITES=	http://www.cs.uit.no/~kjetilja/Pygmy/
 
 MAINTAINER=	sobomax@FreeBSD.org
 
-BUILD_DEPENDS=	python:${PORTSDIR}/lang/python \
-		${LOCALBASE}/lib/python1.5/site-packages/_gnomemodule.so:${PORTSDIR}/x11-toolkits/py-gnome
-RUN_DEPENDS=	python:${PORTSDIR}/lang/python \
-		${LOCALBASE}/lib/python1.5/site-packages/_gnomemodule.so:${PORTSDIR}/x11-toolkits/py-gnome
+BUILD_DEPENDS=	${LOCALBASE}/lib/${PYTHON_VERSION}/site-packages/_gnomemodule.so:${PORTSDIR}/x11-toolkits/py-gnome
+RUN_DEPENDS=	${LOCALBASE}/lib/${PYTHON_VERSION}/site-packages/_gnomemodule.so:${PORTSDIR}/x11-toolkits/py-gnome
 
+USE_PYTHON=	yes
+
+MAKE_ENV=	PYTHON_VERSION="${PYTHON_VERSION}"
 ALL_TARGET=	pythonprogs
 
 do-configure:
