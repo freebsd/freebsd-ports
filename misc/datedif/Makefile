@@ -9,7 +9,7 @@
 PORTNAME=	datedif
 PORTVERSION=	0.9.1.4
 CATEGORIES=	misc
-MASTER_SITES=	http://buschencrew.hypermart.net/software/datedif/
+MASTER_SITES=	# none
 DISTNAME=	${PORTNAME}-0.9.1-4
 
 MAINTAINER=	ports@FreeBSD.org
