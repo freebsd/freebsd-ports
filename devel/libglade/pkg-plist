@@ -24,6 +24,3 @@ libdata/pkgconfig/libglade.pc
 share/aclocal/libglade.m4
 @dirrm include/libglade-1.0/glade
 @dirrm include/libglade-1.0
-@exec /bin/rm -rf %D/include/glade
-@exec /bin/ln -sf libglade-1.0/glade %D/include/glade
-@unexec /bin/rm -f %D/include/glade

@@ -48,7 +48,6 @@ include/gnome-vfs-1.0/libgnomevfs/gnome-vfs-uri.h
 include/gnome-vfs-1.0/libgnomevfs/gnome-vfs-utils.h
 include/gnome-vfs-1.0/libgnomevfs/gnome-vfs-xfer.h
 include/gnome-vfs-1.0/libgnomevfs/gnome-vfs.h
-include/libgnomevfs
 lib/libgnomevfs-pthread.so
 lib/libgnomevfs.a
 lib/libgnomevfs.so
