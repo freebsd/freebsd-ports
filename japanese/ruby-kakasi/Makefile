@@ -7,6 +7,7 @@
 
 PORTNAME=	kakasi
 PORTVERSION=	000124
+PORTREVISION=	1
 CATEGORIES=	japanese ruby
 MASTER_SITES=	http://www.notwork.org/~gotoken/ruby/p/kakasi/
 DIST_SUBDIR=	ruby
