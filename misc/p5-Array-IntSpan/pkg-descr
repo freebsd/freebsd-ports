@@ -1,0 +1,14 @@
+`Array::IntSpan' brings the speed advantages of `Set::IntSpan'
+(written by Steven McDougall) to arrays. Uses include
+manipulating grades, routing tables, or any other situation
+where you have mutually exclusive ranges of integers that map to
+given values.
+
+`Array::IntSpan::IP' is also provided with the distribution. It
+lets you use IP addresses in any of three forms (dotted decimal,
+network string, and integer) for the indices into the array. See
+the POD for that module for more information.
+
+WWW: http://search.cpan.org/search?dist=Array-IntSpan
+
+Seamus Venasse <svenasse@polaris.ca>
