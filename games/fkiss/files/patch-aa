@@ -1,0 +1,11 @@
+--- sound.c.orig	Sat Sep  7 16:49:25 2002
++++ sound.c	Sat Sep  7 16:49:46 2002
+@@ -40,7 +40,7 @@
+ #ifdef __FreeBSD__
+ # define USE_DSP
+ # define DEV_SOUND	"/dev/dsp"
+-# include <machine/soundcard.h>
++# include <sys/soundcard.h>
+ #endif
+ 
+ #ifndef DEV_SOUND
