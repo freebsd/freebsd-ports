@@ -1,13 +1,11 @@
 bin/cons-test
-
-share/doc/%%CONS_TEST%%/CHANGES
-share/doc/%%CONS_TEST%%/COPYING
-share/doc/%%CONS_TEST%%/COPYRIGHT
-share/doc/%%CONS_TEST%%/README
-share/doc/%%CONS_TEST%%/TODO
-share/doc/%%CONS_TEST%%/Tests.txt
-@dirrm share/doc/%%CONS_TEST%%
-
+%%PORTDOCS%%share/doc/%%CONS_TEST%%/CHANGES
+%%PORTDOCS%%share/doc/%%CONS_TEST%%/COPYING
+%%PORTDOCS%%share/doc/%%CONS_TEST%%/COPYRIGHT
+%%PORTDOCS%%share/doc/%%CONS_TEST%%/README
+%%PORTDOCS%%share/doc/%%CONS_TEST%%/TODO
+%%PORTDOCS%%share/doc/%%CONS_TEST%%/Tests.txt
+%%PORTDOCS%%@dirrm share/doc/%%CONS_TEST%%
 lib/%%CONS_TEST%%/t/t0001.t
 lib/%%CONS_TEST%%/t/t0002.t
 lib/%%CONS_TEST%%/t/t0003.t
@@ -140,8 +138,8 @@ lib/%%CONS_TEST%%/t/t0146.t
 lib/%%CONS_TEST%%/t/t0147.t
 lib/%%CONS_TEST%%/Test/Cmd.pm
 lib/%%CONS_TEST%%/Test/Cmd/Cons.pm
-
 @dirrm lib/%%CONS_TEST%%/Test/Cmd
 @dirrm lib/%%CONS_TEST%%/Test
 @dirrm lib/%%CONS_TEST%%/t
 @dirrm lib/%%CONS_TEST%%
+@dirrm lib/cons-%%CONS_VER%%
