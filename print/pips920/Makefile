@@ -8,5 +8,6 @@
 PORTVERSION=	2.1
 MASTERDIR=	${.CURDIR}/../pips800
 PRTYPE=		920
+FORBIDDEN=	Momentally. Because of copyright violation noted by EPkowa co.
 
 .include "${MASTERDIR}/Makefile"
