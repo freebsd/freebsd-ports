@@ -19,6 +19,7 @@ LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
 RUN_DEPENDS=	${X11BASE}/lib/${MOZILLA}/libgtkembedmoz.so:${PORTSDIR}/www/${MOZILLA}
 
 WITH_FULL_MOZILLA=	"Problems with SSL, general performance, and usability"
+FORBIDDEN=	"Contains privacy leak documented at http://www.mozillazine.org/talkback.html?article=2467"
 
 .if defined(WITH_MOZILLA_DEVEL)
 HEADERS_SUFX=	-devel
