@@ -13,6 +13,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	nakai@FreeBSD.org
 
+BROKEN=		"Fails with new devel/bonobo"
+
 LIB_DEPENDS=	glade.4:${PORTSDIR}/devel/libglade \
 		gnomeprint.13:${PORTSDIR}/print/gnomeprint \
 		bonobo.2:${PORTSDIR}/devel/bonobo \
