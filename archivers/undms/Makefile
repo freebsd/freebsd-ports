@@ -1,0 +1,30 @@
+# New ports collection makefile for:	undms
+# Date created:				Sat 3 June 2000
+# Whom:					will
+#
+# $FreeBSD$
+#
+
+PORTNAME=	undms
+PORTVERSION=	1.3
+CATEGORIES=	archivers
+MASTER_SITES=	ftp://de.aminet.net/pub/aminet/misc/unix/ \
+		ftp://us.aminet.net/pub/aminet/misc/unix/
+DISTNAME=	${PORTNAME}-${PORTVERSION}.c
+EXTRACT_SUFX=	.Z
+
+MAINTAINER=	will@FreeBSD.org
+
+NO_WRKSUBDIR=	yes
+
+do-extract:
+	${MKDIR} ${WRKDIR}
+	${GZCAT} ${DISTDIR}/${DISTFILES} > ${WRKDIR}/${DISTNAME}
+
+do-build:
+	cd ${WRKSRC} && ${CC} ${CFLAGS} -o undms undms-1.3.c
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/undms ${PREFIX}/bin/
+
+.include <bsd.port.mk>

@@ -25,6 +25,7 @@
     SUBDIR += rar
     SUBDIR += unace
     SUBDIR += unarj
+    SUBDIR += undms
     SUBDIR += unlzx
     SUBDIR += unrar
     SUBDIR += unzip
