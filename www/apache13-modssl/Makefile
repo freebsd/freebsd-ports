@@ -14,14 +14,18 @@ DISTNAME=	apache_${VERSION_APACHE}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		mod_ssl-${VERSION_MODSSL}-${VERSION_APACHE}${EXTRACT_SUFX}:modssl
 
-.if defined(APACHE_WITH_MODSNMP)
+.if defined(APACHE_WITH_MODSNMP) || make(makesum) || defined(FETCH_ALL)
 PATCH_SITES=	http://www.simpleweb.org/software/packages/mod-snmp/distr/
 PATCHFILES=	mod_snmp_${VERSION_MODSNMP}.tar.gz
 EXTRA_PATCH=	${WRKSRC}/src/module/snmp_agt/mod_snmp.patch
 .endif
+.if defined(APACHE_WITH_IPV6) || make(makesum) || defined(FETCH_ALL)
+PATCH_SITES+=	ftp://ftp.42.org/pub/orphan/
+PATCHFILES+=	apache-1.3.29modssl-v6-20031204.diff.gz
+.endif
 
 MAINTAINER=	dinoex@FreeBSD.org
-COMMENT=	The Apache 1.3 webserver with SSL/TLS functionality
+COMMENT?=	The Apache 1.3 webserver with SSL/TLS functionality
 
 LIB_DEPENDS=	mm.13:${PORTSDIR}/devel/mm
 PATCH_DEPENDS=	${BUILD_DEPENDS}
@@ -134,6 +138,13 @@ PLIST_SUB+=	WITHSNMP=""
 PLIST_SUB+=	WITHSNMP="@comment "
 .endif
 
+.if defined(APACHE_WITH_IPV6)
+CONFIGURE_ARGS+=	--enable-rule=INET6
+PLIST_SUB+=	WITHIPV6=""
+.else
+PLIST_SUB+=	WITHIPV6="@comment "
+.endif
+
 CONFIGURE_ENV=	CFLAGS='${CFLAGS}' \
 		OPTIM='${OPTIM}' \
 		SSL_BASE='${OPENSSLBASE}' \
@@ -186,6 +197,10 @@ pre-fetch:
 	@${ECHO_MSG} "  APACHE_PERF_TUNING=yes	CFLAGS optimization."
 	@${ECHO_MSG} "				This setting may produce broken code and thus"
 	@${ECHO_MSG} "				is not recommended for production servers."
+	@${ECHO_MSG} "				[default is no]"
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "  APACHE_WITH_IPV6=yes		IPv6 support."
+	@${ECHO_MSG} "				This setting turns IPv6 support on."
 	@${ECHO_MSG} "				[default is no]"
 	@${ECHO_MSG} ""
 
