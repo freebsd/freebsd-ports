@@ -1,6 +1,6 @@
 --- ../solenv/inc/unxfbsdi.mk.orig	Wed Oct 24 19:21:47 2001
-+++ ../solenv/inc/unxfbsdi.mk	Wed May 29 14:32:50 2002
-@@ -1,84 +1,148 @@
++++ ../solenv/inc/unxfbsdi.mk	Sun Jun  2 11:20:10 2002
+@@ -1,84 +1,139 @@
 -
  # mak file fuer unxfbsdi
  
@@ -55,10 +55,6 @@
 +# Compiler flags for compiling static object in multi threaded
 +# environment with graphical user interface
 +CFLAGSOBJGUIMT=-fPIC
-+
-+# Compiler flags for compiling static object in multi threaded
-+# environment with character user interface
-+CFLAGSOBJCUIMT=-fPIC
  
 -cc=				gcc
 -CC=				g++
@@ -78,6 +74,10 @@
 -CFLAGSSLOCUIMT=	-fPIC
 -CFLAGSPROF=     -pg
 -CFLAGSDEBUG=	-g
++# Compiler flags for compiling static object in multi threaded
++# environment with character user interface
++CFLAGSOBJCUIMT=-fPIC
++
 +# Compiler flags for compiling shared object in multi threaded
 +# environment with graphical user interface
 +CFLAGSSLOGUIMT=-fPIC
@@ -166,15 +166,6 @@
 +# STLport always needs pthread.
 +LIBSTLPORT=$(DYNAMIC) -lstlport_gcc $(PTHREAD_LIBS)
 +LIBSTLPORTST=$(STATIC) -lstlport_gcc $(DYNAMIC) $(PTHREAD_LIBS)
-+
-+.IF "$(CVER)"=="C300"
-+STDLIBGUIMT+= -lsupc++
-+STDLIBCUIMT+= -lsupc++
-+STDSHLGUIMT+= -lsupc++
-+STDSHLCUIMT+= -lsupc++
-+LIBSTLPORT+= -lsupc++
-+LIBSTLPORTST+= -lsupc++
-+.ENDIF
  
 +# default objectfilenames to lin
  STDOBJGUI=
@@ -198,7 +189,7 @@
  
  IMPLIB=
  IMPLIBFLAGS=
-@@ -87,12 +151,12 @@
+@@ -87,12 +142,12 @@
  MAPSYMFLAGS=
  
  RC=irc
