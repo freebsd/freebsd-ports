@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	putty
-PORTVERSION=	0.54
-PORTREVISION=	1
+PORTVERSION=	0.55
 CATEGORIES=	security ipv6
 MASTER_SITES=	http://the.earth.li/~sgtatham/putty/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTVERSION}
@@ -25,7 +24,7 @@ CFLAGS+=	-DIPV6
 .endif
 
 PLIST_FILES=	bin/plink bin/pscp bin/psftp
-MAN1=		plink.1
+MAN1=		plink.1 pscp.1 psftp.1
 
 .ifndef WITHOUT_GTK
 USE_GNOME=	gtk12
