@@ -16,4 +16,4 @@ MASTERDIR=	${.CURDIR}/../../editors/flim
 # emacs port setup
 EMACS_PORT_NAME=	emacs20
 
-.include <${MASTERDIR}/Makefile>
+.include "${MASTERDIR}/Makefile"

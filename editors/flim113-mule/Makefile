@@ -16,4 +16,4 @@ MASTERDIR=	${.CURDIR}/../../editors/flim113
 # emacs port setup
 EMACS_PORT_NAME=	mule
 
-.include <${MASTERDIR}/Makefile>
+.include "${MASTERDIR}/Makefile"
