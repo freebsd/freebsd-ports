@@ -1,0 +1,15 @@
+libmsn is a C++ library for Microsoft's MSN Messenger service. It provides a
+high-level interface that allows an application to access instant messaging
+features with ease.
+
+libmsn currently supports version 8 of the MSN Messenger protocol. This means
+that it supports the following features:
+   * Login and logout.
+   * Buddy presence notifications.
+   * Buddy list management.
+   * Privacy settings.
+   * Conversations.
+   * Typing notifications.
+   * File transfers.
+
+WWW: http://libmsn.bdash.net.nz/

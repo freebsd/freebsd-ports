@@ -292,6 +292,7 @@
     SUBDIR += libicq
     SUBDIR += libicq2000
     SUBDIR += libmms
+    SUBDIR += libmsn
     SUBDIR += libnet
     SUBDIR += libnet-devel
     SUBDIR += libnetdude
