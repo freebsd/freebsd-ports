@@ -7,6 +7,7 @@ bin/xmms-config
 include/xmms/configfile.h
 include/xmms/dga.h
 include/xmms/dirbrowser.h
+include/xmms/formatter.h
 include/xmms/fullscreen.h
 include/xmms/plugin.h
 include/xmms/util.h
@@ -39,6 +40,7 @@ share/locale/ca/LC_MESSAGES/xmms.mo
 share/locale/cs/LC_MESSAGES/xmms.mo
 share/locale/da/LC_MESSAGES/xmms.mo
 share/locale/de/LC_MESSAGES/xmms.mo
+share/locale/el_GR/LC_MESSAGES/xmms.mo
 share/locale/eo/LC_MESSAGES/xmms.mo
 share/locale/es/LC_MESSAGES/xmms.mo
 share/locale/fr/LC_MESSAGES/xmms.mo
@@ -49,6 +51,7 @@ share/locale/ko/LC_MESSAGES/xmms.mo
 share/locale/lt/LC_MESSAGES/xmms.mo
 share/locale/nl/LC_MESSAGES/xmms.mo
 share/locale/no/LC_MESSAGES/xmms.mo
+share/locale/pl/LC_MESSAGES/xmms.mo
 share/locale/pt_BR/LC_MESSAGES/xmms.mo
 share/locale/ro/LC_MESSAGES/xmms.mo
 share/locale/ru/LC_MESSAGES/xmms.mo
