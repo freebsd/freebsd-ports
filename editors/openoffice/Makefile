@@ -149,85 +149,85 @@ CONFIGURE_ARGS+=	--enable-gcc3
 .endif
 
 pre-fetch:
+.if !defined(USE_GCC) || !defined(WITH_DEBUG)
+	@${ECHO}
+	@${ECHO} "OPTIONS:"
+.endif
+.if !defined(USE_GCC)
+	@${ECHO}
+	@${ECHO} "You can compile OO with different"
+	@${ECHO} "gcc compiler versions:"
+	@${ECHO}
+	@${ECHO} "Add USE_GCC=2.95 or USE_GCC=3.1"
+	@${ECHO} "to compile openoffice with your"
+	@${ECHO} "prefered compiler."
+.endif
+.if !defined(WITH_DEBUG)
+	@${ECHO}
+	@${ECHO} "You can compile OO with debug symbols"
+	@${ECHO} "if you call make with WITH_DEBUG=YES"
+.endif
+.if ${OSVERSION} < 450002
+	@${ECHO}
+	@${ECHO} "OS-VERSION ${OSVERSION} too low"
+	@${ECHO}
+	@${ECHO} "OO need some important libc_r and"
+	@${ECHO} "gcc fixes to build. Please upgrade to 4.6"
+	@${ECHO} "RELEASE or 4.6 STABLE."
+	@${FALSE}
+.endif
+	@${ECHO}
+	@${ECHO} "NOTICE:"
+	@${ECHO}
+	@${ECHO} "To build Openoffice, you should have a lot"
+.if defined(WITH_DEBUG)
+	@${ECHO} "of free diskspace (~ 8GB) and you should"
+.else
+	@${ECHO} "of free diskspace (~ 4GB) and you should"
+.endif
+	@${ECHO} "be an experienced port builder. This port"
+	@${ECHO} "has beta quality and does not yet work as"
+	@${ECHO} "stable as it should."
+	@${ECHO}
+.if (defined(USE_GCC) && ${USE_GCC} == 2.95) || \
+    (${OSVERSION} < 500000 && !defined(USE_GCC))
+	@${ECHO} "KERNEL CONFIGURATION:"
+	@${ECHO}
+	@${ECHO} "Openoffice needs a larger stack- and"
+	@${ECHO} "datasize to build. Check your limit"
+	@${ECHO} "settings and and put this in /boot/loader.conf"
+	@${ECHO} "if neccessary:"
+	@${ECHO} 
+	@${ECHO} "kern.maxdsiz=\"1073741824\""
+	@${ECHO} "kern.maxssiz=\"268435456\""
+.endif
 .if ${OSVERSION} < 460001
+	@${ECHO} "SYSTEM PATCHES:"
 	@${ECHO}
-	@${ECHO} OO setup is broken on STABLE < 4.6
-	@${ECHO} including 4.6 RELEASE.
-	@${ECHO} You'll need a system patch to solve
+	@${ECHO} "OO setup is broken on STABLE < 4.6"
+	@${ECHO} "including 4.6 RELEASE."
+	@${ECHO} "You'll need a system patch to solve"
 	@${ECHO}
-	@${ECHO} this problem:
+	@${ECHO} "this problem:"
 	@${ECHO}
-	@${ECHO} http://people.freebsd.org/~mbr/patches/rtld-elf.diff
+	@${ECHO} "http://people.freebsd.org/~mbr/patches/rtld-elf.diff"
 	@${ECHO}
 .endif
 .if ${OSVERSION} < 500000 
 	@${ECHO}
-	@${ECHO} OO.org build and also OO.org itself
-	@${ECHO} can deadlock. You can work around
-	@${ECHO} this problem with this patch:
+	@${ECHO} "OO.org build and also OO.org itself"
+	@${ECHO} "can deadlock. You can work around"
+	@${ECHO} "this problem with this patch:"
 	@${ECHO}
-	@${ECHO} http://people.freebsd.org/~mbr/patches/rtld-elf-patch2.diff
+	@${ECHO} "http://people.freebsd.org/~mbr/patches/rtld-elf-patch2.diff"
 	@${ECHO}
-	@${ECHO}
-.endif
-.if !defined(USE_GCC) || !defined(WITH_DEBUG)
-	@${ECHO}
-	@${ECHO} OPTIONS:
-.endif
-.if !defined(USE_GCC)
-	@${ECHO}
-	@${ECHO} You can compile OO with different
-	@${ECHO} gcc compiler versions:
-	@${ECHO}
-	@${ECHO} Add USE_GCC=2.95 or USE_GCC=3.1
-	@${ECHO} to compile openoffice with your
-	@${ECHO} prefered compiler.
-.endif
-.if !defined(WITH_DEBUG)
-	@${ECHO}
-	@${ECHO} You can compile OO with debug symbols
-	@${ECHO} if you call make with WITH_DEBUG=YES
-.endif
-.if ${OSVERSION} < 450002
-	@${ECHO}
-	@${ECHO} OS-VERSION ${OSVERSION} too low
-	@${ECHO}
-	@${ECHO} OO need some important libc_r and
-	@${ECHO} gcc fixes to build. Please upgrade to 4.6
-	@${ECHO} RELEASE or 4.6 STABLE.
-	@${FALSE}
-.endif
-	@${ECHO}
-	@${ECHO} NOTICE:
-	@${ECHO}
-	@${ECHO} To build Openoffice, you should have a lot
-.if defined(WITH_DEBUG)
-	@${ECHO} of free diskspace \(~ 8GB\) and you should
-.else
-	@${ECHO} of free diskspace \(~ 4GB\) and you should
-.endif
-	@${ECHO} be an experienced port builder. This port
-	@${ECHO} has beta quality and does not yet work as
-	@${ECHO} stable as it should.
-	@${ECHO}
-.if (defined(USE_GCC) && ${USE_GCC} == 2.95) || \
-    (${OSVERSION} < 500000 && !defined(USE_GCC))
-	@${ECHO} KERNEL CONFIGURATION:
-	@${ECHO}
-	@${ECHO} Openoffice needs a larger stack- and
-	@${ECHO} datasize to build. Check your limit
-	@${ECHO} settings and and put this in /boot/loader.conf
-	@${ECHO} if neccessary:
-	@${ECHO} 
-	@${ECHO} kern.maxdsiz=\"1073741824\"
-	@${ECHO} kern.maxssiz=\"268435456\"
 .endif
 .if !exists(/usr/include/langinfo.h)
 	@${ECHO}
-	@${ECHO} langinfo.h is missing !
+	@${ECHO} "langinfo.h is missing !"
 	@${ECHO}
-	@${ECHO} Please upgrade to 4.6 RELEASE or
-	@${ECHO} 4.6 STABLE.
+	@${ECHO} "Please upgrade to 4.6 RELEASE or"
+	@${ECHO} "4.6 STABLE."
 	@${ECHO}
 	@${FALSE}
 .endif
