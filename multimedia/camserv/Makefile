@@ -21,6 +21,8 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		freetype.9:${PORTSDIR}/print/freetype2 \
 		ltdl.4:${PORTSDIR}/devel/libltdl
 
+ONLY_FOR_ARCHS=	i386 alpha
+
 USE_X_LIB=	yes
 GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
