@@ -4,10 +4,10 @@ lib/dovecot/imap
 lib/dovecot/imap-auth
 lib/dovecot/imap-login
 sbin/imap-master
-%%DOCS%%share/doc/dovecot/auth.txt
-%%DOCS%%share/doc/dovecot/design.txt
-%%DOCS%%share/doc/dovecot/nfs.txt
-%%DOCS%%share/doc/dovecot/index.txt
-%%DOCS%%share/doc/dovecot/multiaccess.txt
-%%DOCS%%@dirrm share/doc/dovecot
+%%PORTDOCS%%share/doc/dovecot/auth.txt
+%%PORTDOCS%%share/doc/dovecot/design.txt
+%%PORTDOCS%%share/doc/dovecot/nfs.txt
+%%PORTDOCS%%share/doc/dovecot/index.txt
+%%PORTDOCS%%share/doc/dovecot/multiaccess.txt
+%%PORTDOCS%%@dirrm share/doc/dovecot
 @dirrm lib/dovecot

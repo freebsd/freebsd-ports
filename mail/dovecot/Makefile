@@ -17,12 +17,6 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--disable-shadow --enable-ipv6 \
 		--localstatedir=/var/dovecot
 
-.if !defined(NOPORTDOCS)
-PLIST_SUB+=	DOCS=""
-.else
-PLIST_SUB+=	DOCS="@comment "
-.endif
-
 pre-build:
 	@${REINPLACE_CMD} -e 's,%%PREFIX%%,${PREFIX},' \
 		${WRKSRC}/dovecot-example.conf
@@ -37,7 +31,7 @@ post-install:
 	@${MKDIR} /var/dovecot/login
 	@${CHOWN} imapd:imapd /var/dovecot
 	@if [ ! -f ${PREFIX}/etc/rc.d/dovecot-imapd.sh ]; then \
-		${ECHO} "Installing dovecot-imapd.sh startup file.";
+		${ECHO} "Installing dovecot-imapd.sh startup file."; \
 		${INSTALL_SCRIPT} -m 751 ${FILESDIR}/dovecot-imapd.sh \
 			${PREFIX}/etc/rc.d/dovecot-imapd.sh; \
 	fi
