@@ -6,36 +6,31 @@
 #
 
 PORTNAME=	boaconstructor
-PORTVERSION=	0.0.5
+PORTVERSION=	0.2.3
 CATEGORIES=	devel python
-MASTER_SITES=	http://ftp1.sourceforge.net/${MASTER_SITE_SUBDIR}/ \
-		${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	boa-constructor
-DISTNAME=	Boa-${PORTVERSION}
+DISTNAME=	boa-constructor-${PORTVERSION}.src
 
-MAINTAINER=	sobomax@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A cross platform RAD GUI Building IDE for wxPython
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/wxPython/wxc.so:${PORTSDIR}/x11-toolkits/py-wxPython
 
-WRKSRC=		${WRKDIR}/Boa-${PORTVERSION}
+WRKSRC=		${WRKDIR}/boa-constructor-${PORTVERSION}
 
 USE_ZIP=	yes
 USE_PYTHON=	yes
-
-do-configure:
-	@${PERL} -pi -e 's|%%PYTHON_SITELIBDIR%%|${PYTHON_SITELIBDIR}|' \
-		${WRKSRC}/Explorer.gtk.cfg
+DATADIR=	${PREFIX}/share/Boa
 
 do-build:
 	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}
 	@${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}
 
 do-install:
-	@${MKDIR} ${PREFIX}/share/Boa
-	@(cd ${WRKSRC} && ${TAR} --exclude .cvsignore --exclude "*.orig" -c -f - .) \
-		| (cd ${PREFIX}/share/Boa && ${TAR} --unlink -x -f -)
-	@printf "#!/bin/sh\n${PYTHON_CMD} ${PREFIX}/share/Boa/Boa.py\n" \
+	@${MKDIR} ${DATADIR}
+	@${TAR} cCf ${WRKSRC} - --exclude "*.orig" . | ${TAR} xUCf ${DATADIR} -
+	@printf "#!/bin/sh\n${PYTHON_CMD} ${DATADIR}/Boa.py\n" \
 		> ${WRKDIR}/Boa.sh
 	@${INSTALL_SCRIPT} ${WRKDIR}/Boa.sh ${PREFIX}/bin/Boa
 
