@@ -1022,6 +1022,7 @@
     SUBDIR += py_otp_interface
     SUBDIR += pychecker
     SUBDIR += pyrex
+    SUBDIR += pyumlgraph
     SUBDIR += qextmdi
     SUBDIR += qmake
     SUBDIR += qssl
