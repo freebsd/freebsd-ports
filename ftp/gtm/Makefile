@@ -13,7 +13,8 @@ MASTER_SITES=	http://www.rnl.ist.utl.pt/~bapm/gtm/files/     \
 
 MAINTAINER=	nectar@FreeBSD.org
 
-LIB_DEPENDS=	capplet.4:${PORTSDIR}/sysutils/gnomecontrolcenter
+LIB_DEPENDS=	capplet.4:${PORTSDIR}/sysutils/gnomecontrolcenter \
+		panel_applet.4:${PORTSDIR}/x11/gnomecore
 BUILD_DEPENDS=	wget:${PORTSDIR}/ftp/wget
 RUN_DEPENDS=	wget:${PORTSDIR}/ftp/wget
 
