@@ -10,7 +10,7 @@ PORTVERSION=	1.0.6
 CATEGORIES=	java
 MASTER_SITES=	ftp://ftp.kaffe.org/pub/kaffe/
 
-MAINTAINER=	xaa@xaa.iae.nl
+MAINTAINER=	xaa+ports@madison-gurkha.com
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		ungif.5:${PORTSDIR}/graphics/libungif \
