@@ -504,6 +504,7 @@ bforce		ports/comms/bforce
 bforce-kst	ports/comms/bforce-kst
 bftpd		ports/ftp/bftpd
 bg-ooodict-BG	ports/editors/ooodict-bg_BG
+bglibs		ports/devel/bglibs
 bgpq		ports/net/bgpq
 bgrab		ports/news/bgrab
 bgrot		ports/x11/bgrot
