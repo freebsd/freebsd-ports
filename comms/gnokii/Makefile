@@ -6,13 +6,11 @@
 #
 
 PORTNAME=	gnokii
-PORTVERSION=	0.4.0.p20
+PORTVERSION=	0.4.3
 PORTEPOCH=	1
 CATEGORIES=	comms
-MASTER_SITES=	ftp://ftp.gnokii.org/pub/gnokii/pre/ \
-		ftp://urtica.linuxnews.pl/pub/people/pkot/gnokii/ \
+MASTER_SITES=	ftp://ftp.gnokii.org/pub/gnokii/ \
 		http://freesoftware.fsf.org/download/gnokii/
-DISTNAME=	${PORTNAME}-0.4.0pre20
 
 MAINTAINER=	anders@FreeBSD.org
 

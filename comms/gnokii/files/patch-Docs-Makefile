@@ -1,5 +1,5 @@
---- Docs/Makefile.orig	Fri May 10 00:31:47 2002
-+++ Docs/Makefile	Wed May 22 03:09:44 2002
+--- Docs/Makefile.orig	Thu Aug  8 23:07:58 2002
++++ Docs/Makefile	Thu Aug  8 23:08:44 2002
 @@ -32,19 +32,20 @@
  	@echo
  
