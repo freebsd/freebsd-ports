@@ -3312,6 +3312,7 @@ jx		ports/x11-toolkits/jx
 jython		ports/lang/jython
 jzip		ports/games/jzip
 kaffe		ports/java/kaffe
+kaffeine	ports/multimedia/kaffeine
 kallery		ports/graphics/kallery
 kannel		ports/www/kannel
 kappdock	ports/x11-wm/kappdock
