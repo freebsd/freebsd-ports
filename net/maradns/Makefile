@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	maradns
-PORTVERSION=	0.6.18
+PORTVERSION=	0.7.13
 CATEGORIES=	net
 MASTER_SITES=	http://www.maradns.org/download/ \
 		ftp://ftp.nuug.no/pub/anders/distfiles/
@@ -31,9 +31,9 @@ DOCS=	RFC1035.compliance csv1.format draft-skwan-utf8-dns-05.txt \
 	example_csv1 example_mararc faq.txt handling.compression \
 	mararc.format multiple.qdcount recursive.algorithm \
 	resolution.algorithm rfc2044.txt rtest.output www.monty.de \
-	../00QuickStart ../CHANGELOG ../ROADMAP
+	../00QuickStart ../CHANGELOG.html ../ROADMAP ../CREDITS
 
-FIXPREFIX=	00QuickStart CHANGELOG doc/man/maradns.8 doc/faq.txt \
+FIXPREFIX=	00QuickStart CHANGELOG.html doc/man/maradns.8 doc/faq.txt \
 		parse/ParseMaraRc.c doc/example_mararc
 
 post-patch:
