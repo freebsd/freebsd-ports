@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	ctags
-PORTVERSION=	4.0.2
+PORTVERSION=	4.0.3
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_SUNSITE}\
+MASTER_SITES=	http://ctags.sourceforge.net/archives/ \
+		${MASTER_SITE_SUNSITE} \
 		http://fly.hiwaay.net/~darren/archives/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	devel/lang/c jkoshy
