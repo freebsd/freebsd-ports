@@ -1,29 +1,30 @@
 # New ports collection makefile for:    Jed text editor
-# Version required:     0.98-4
+# Version required:     0.98-7
 # Date created:         22 APR 1997
 # Whom:                 eric
 #
-# $Id: Makefile,v 1.2 1997/06/08 12:55:02 asami Exp $
+# $Id: Makefile,v 1.3 1998/04/01 01:50:02 asami Exp $
 #
 
-DISTNAME=       jed0.98-4
-PKGNAME=        jed-0.98.4
+DISTNAME=       jed0.98-7
+PKGNAME=        jed-0.98.7
 CATEGORIES=	editors
 MASTER_SITES=   ftp://space.mit.edu/pub/davis/jed/
 
 PATCH_SITES=   ftp://space.mit.edu/pub/davis/jed/
 PATCHFILES=    BUGS
-PATCH_DIST_STRIP= -p1
+PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=     eric@cybernut.com
 
-LIB_DEPENDS=	slang\\.0\\.993[6-9]:${PORTSDIR}/devel/libslang
+LIB_DEPENDS=	slang\\.1:${PORTSDIR}/devel/libslang
 
 # comment out the next line if you don't want the X version of JED.
 XJED=	xjed
 
 DIST_SUBDIR=	jed
 GNU_CONFIGURE=  yes
+PATCH_DIST_ARGS=	-d ${WRKSRC}/src --quiet -E ${PATCH_DIST_STRIP}
 CONFIGURE_ENV=	JED_ROOT=${PREFIX}/lib/jed
 ALL_TARGET=     all getmail ${XJED}
 INSTALL_TARGET= install
@@ -40,7 +41,7 @@ post-install:
 .if defined(XJED)
 	strip ${PREFIX}/bin/xjed
 .endif
-	${INSTALL_DATA} ${WRKSRC}/lib/* ${PREFIX}/lib/jed/lib 
+	${CP} -R ${WRKSRC}/lib/* ${PREFIX}/lib/jed/lib
 	${INSTALL_DATA} ${WRKSRC}/info/jed.* ${PREFIX}/info
 	-${RMDIR} ${PREFIX}/lib/jed/info
 .if !defined(NOPORTDOCS)
@@ -48,7 +49,7 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/README ${WRKSRC}/doc/*.txt \
 		${PREFIX}/share/doc/jed
 	if [ ! -f ${PREFIX}/info/dir ]; then \
-	  sed -ne '1,/Menu:/p' /usr/share/info/dir > ${PREFIX}/info/dir; \
+	  ${SED} -ne '1,/Menu:/p' /usr/share/info/dir > ${PREFIX}/info/dir; \
 	fi
 	install-info --section="Miscellaneous" \
 		--entry="* JED: (jed).			JED editor documentation." \

@@ -23,6 +23,7 @@ lib/jed/lib/bytecomp.sl
 lib/jed/lib/cal.sl
 lib/jed/lib/cmisc.sl
 lib/jed/lib/cmode.sl
+lib/jed/lib/compat.sl
 lib/jed/lib/compile.sl
 lib/jed/lib/cpright.hlp
 lib/jed/lib/ctags.sl
@@ -46,6 +47,7 @@ lib/jed/lib/fortran.sl
 lib/jed/lib/generic.hlp
 lib/jed/lib/help.sl
 lib/jed/lib/html.sl
+lib/jed/lib/ide.sl
 lib/jed/lib/idl.sl
 lib/jed/lib/info.sl
 lib/jed/lib/isearch.sl
@@ -56,7 +58,6 @@ lib/jed/lib/ispell.sl
 lib/jed/lib/javamode.sl
 lib/jed/lib/jed.hlp
 lib/jed/lib/jed.rc
-lib/jed/lib/jed_funs.hlp
 lib/jed/lib/jedhelp.sl
 lib/jed/lib/keycode.sl
 lib/jed/lib/krconv.sl
@@ -70,6 +71,7 @@ lib/jed/lib/macro.sl
 lib/jed/lib/mail.sl
 lib/jed/lib/mailalias.sl
 lib/jed/lib/man.sl
+lib/jed/lib/maple.sl
 lib/jed/lib/menu.sl
 lib/jed/lib/mime.sl
 lib/jed/lib/mini.sl
@@ -109,9 +111,12 @@ lib/jed/lib/spicemod.sl
 lib/jed/lib/srchmisc.sl
 lib/jed/lib/syntax.sl
 lib/jed/lib/tabs.sl
+lib/jed/lib/tclmode.sl
 lib/jed/lib/tex.sl
 lib/jed/lib/texcom.sl
 lib/jed/lib/textmac.sl
+lib/jed/lib/tm/linuxdoc.tm
+lib/jed/lib/tm2sgml.sl
 lib/jed/lib/tmisc.sl
 lib/jed/lib/tpascal.sl
 lib/jed/lib/untab.sl
@@ -122,10 +127,13 @@ lib/jed/lib/vms_shell.com
 lib/jed/lib/vmshelp.sl
 lib/jed/lib/wmark.sl
 lib/jed/lib/wmenu.sl
+lib/jed/lib/wordstar.hlp
 lib/jed/lib/wordstar.sl
 lib/jed/lib/yankpop.sl
 man/man1/jed.1.gz
 man/man1/rgrep.1.gz
 @dirrm lib/jed/bin
+@dirrm lib/jed/lib/tm
 @dirrm lib/jed/lib
+@dirrm lib/jed/doc
 @dirrm lib/jed
