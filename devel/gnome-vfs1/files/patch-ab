@@ -1,7 +1,14 @@
---- Makefile.in.orig	Tue Feb 22 01:45:45 2000
-+++ Makefile.in	Wed Jun 28 14:08:43 2000
-@@ -143,7 +143,7 @@
- EXTRA_DIST =  	HACKING						TODO						autogen.sh					vfsConf.sh.in					vfscorbaConf.sh.in				vfspthreadConf.sh.in
+--- Makefile.in.orig	Mon Jul  3 19:33:07 2000
++++ Makefile.in	Wed Jul  5 15:43:12 2000
+@@ -162,13 +162,13 @@
+ @HAVE_GCONF_TRUE@SUBDIRS_GCONF = mime-type-capplet
+ @HAVE_GCONF_FALSE@SUBDIRS_GCONF = 
+ 
+-SUBDIRS =  	libgnomevfs					libgnomevfs-pthread				$(SUBDIRS_OAF)					idl						modules						data						man						devel-docs					$(SUBDIRS_GCONF)				test						po
++SUBDIRS =  	libgnomevfs					libgnomevfs-pthread				$(SUBDIRS_OAF)					idl						modules						data						man										$(SUBDIRS_GCONF)				test						po
+ 
+ 
+ EXTRA_DIST =  	HACKING						TODO						autogen.sh					gnome-vfs.spec					vfsConf.sh.in					vfscorbaConf.sh.in				vfspthreadConf.sh.in
  
  
 -confexecdir = $(libdir)

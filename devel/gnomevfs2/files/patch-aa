@@ -1,6 +1,6 @@
---- configure.orig	Tue Feb 22 01:04:03 2000
-+++ configure	Wed Jun 28 16:08:33 2000
-@@ -2120,7 +2120,7 @@
+--- configure.orig	Mon Jul  3 19:03:42 2000
++++ configure	Wed Jul  5 14:42:17 2000
+@@ -2204,7 +2204,7 @@
  # Check whether --enable-gconf or --disable-gconf was given.
  if test "${enable_gconf+set}" = set; then
    enableval="$enable_gconf"
@@ -8,8 +8,8 @@
 +  gconf_enabled="$enableval"
  fi
  
- # Check whether --with-default-backend or --without-default-backend was given.
-@@ -4772,7 +4772,7 @@
+ # Check whether --enable-libefs or --disable-libefs was given.
+@@ -4862,7 +4862,7 @@
    cat conftest.$ac_ext >&5
    rm -rf conftest*
    CATOBJEXT=.mo
@@ -18,24 +18,24 @@
  fi
  rm -f conftest*
  		INSTOBJEXT=.mo
-@@ -5545,7 +5545,7 @@
+@@ -5924,7 +5924,7 @@
  VFSPTHREAD_LIBDIR='-L${libdir}'
- VFSPTHREAD_INCLUDEDIR='-I${includedir}'
+ VFSPTHREAD_INCLUDEDIR='-I${includedir} -I${libdir}/vfs/include'
  VFSPTHREAD_INCLUDEDIR="$VFSPTHREAD_INCLUDEDIR `gnome-config --cflags gnome`"
 -VFSPTHREAD_LIBS="-lgnomevfs -lgnomevfs-pthread `gnome-config --libs gnome` `glib-config --libs gthread`"
 +VFSPTHREAD_LIBS="-lgnomevfs -lgnomevfs-pthread `gnome-config --libs gnome` `$GLIB_CONFIG --libs gthread`"
  
  
  
-@@ -5558,9 +5558,9 @@
+@@ -5937,9 +5937,9 @@
  EOF
  
  
 -VFS_LIBS="-lgnomevfs `glib-config --libs gthread gmodule`"
 +VFS_LIBS="-lgnomevfs `$GLIB_CONFIG --libs gthread gmodule`"
  VFS_LIBDIR='-L${libdir}'
--VFS_INCLUDEDIR='-I${includedir}'" `glib-config --cflags gthread gmodule`"
-+VFS_INCLUDEDIR='-I${includedir}'" `$GLIB_CONFIG --cflags gthread gmodule`"
+-VFS_INCLUDEDIR='-I${includedir} -I${libdir}/vfs/include'" `glib-config --cflags gthread gmodule`"
++VFS_INCLUDEDIR='-I${includedir} -I${libdir}/vfs/include'" `$GLIB_CONFIG --cflags gthread gmodule`"
  
  
  
