@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	DBIx-SQLEngine
-PORTVERSION=	0.009
+PORTVERSION=	0.010
 CATEGORIES=	databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	DBIx
@@ -20,22 +20,23 @@ BUILD_DEPENDS=	${SITE_PERL}/DBIx/AnyDBD.pm:${PORTSDIR}/databases/p5-DBIx-AnyDBD 
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
+WRKSRC=		${WRKDIR}/DBIx-SQLEngine-0.01
 
 MAN3=	DBIx::SQLEngine::Criteria::StringEquality.3\
-		DBIx::Changes.3\
 		DBIx::SQLEngine::Criteria::Or.3\
 		DBIx::SQLEngine::Criteria::And.3\
-		DBIx::SQLEngine::ToDo.3\
-		DBIx::SQLEngine::ReadMe.3\
 		DBIx::SQLEngine::Criteria.3\
 		DBIx::SQLEngine::Criteria::Compound.3\
+		DBIx::SQLEngine::Docs::Changes.3\
 		DBIx::SQLEngine::Criteria::NumericLesser.3\
-		DBIx::SQLEngine::Criteria::Comparison.3\
 		DBIx::SQLEngine::Criteria::Not.3\
-		DBIx::SQLEngine::Changes.3\
+		DBIx::SQLEngine::Criteria::Comparison.3\
 		DBIx::SQLEngine::Criteria::LiteralSQL.3\
+		DBIx::SQLEngine::Docs::ToDo.3\
+		DBIx::SQLEngine::Docs::ReadMe.3\
 		DBIx::SQLEngine::Mixin::SeqTable.3\
 		DBIx::SQLEngine.3
 
+MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.mk>
