@@ -13,7 +13,7 @@ MASTER_SITES=	http://mysql.paco.net/Downloads/MyODBC3/ \
 		ftp://ftp.sunet.se/pub/unix/databases/relational/mysql/Downloads/MyODBC/
 DISTNAME=	MyODBC-${PORTVERSION}
 
-MAINTAINER=	ebakke@trolltech.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ODBC driver for MySQL
 
 USE_MYSQL=	yes
