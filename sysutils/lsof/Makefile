@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	lsof
-PORTVERSION=	4.60
+PORTVERSION=	4.61
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://vic.cc.purdue.edu/pub/tools/unix/lsof/  \
 		ftp://vic.cc.purdue.edu/pub/tools/unix/lsof/NEW/ \
@@ -21,12 +21,12 @@ MASTER_SITES=	ftp://vic.cc.purdue.edu/pub/tools/unix/lsof/  \
 #DISTNAME=	${PORTNAME}_4.59B.freebsd
 #FIXUP_RELEASE=	yes
 .if !defined(FIXUP_RELEASE)
-DISTNAME=	${PORTNAME}_${PORTVERSION}_W
+DISTNAME=	${PORTNAME}_${PORTVERSION}
 .endif
 
 MAINTAINER=	obrien@FreeBSD.org
 
-WRKSRC=		${WRKDIR}/${SRCBALL_NAME}
+WRKSRC=		${WRKDIR}/${DISTNAME}/${SRCBALL_NAME}
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	Configure
 CONFIGURE_ARGS=	-n freebsd
@@ -34,12 +34,12 @@ CONFIGURE_ENV=	LSOF_CC="${CC}"
 FREEBSD_SYS?=	/usr/src/sys
 MAN8=		lsof.8
 
-SRCBALL_NAME=	${DISTNAME:S/_W$//}
+SRCBALL_NAME=	${DISTNAME:S/_W$//}_src
 
 .if !defined(FIXUP_RELEASE)
 post-extract:
-	@( cd ${WRKDIR} ; \
-	EXPMD5=`${GREP} MD5 README.${SRCBALL_NAME} | ${SED} 's/^[ ]*//'` ; \
+	@( cd ${WRKDIR}/${DISTNAME} ; \
+	EXPMD5=`${GREP} MD5 README.${DISTNAME} | ${SED} 's/[ 	]*//'` ; \
 	CALCMD5=`${MD5} ${SRCBALL_NAME}.tar` ; \
 	if [ "$${EXPMD5}"X != "$${CALCMD5}"X ]; then \
 		${ECHO} "Expected and calculated MD5 signatures don't agree." ; \
