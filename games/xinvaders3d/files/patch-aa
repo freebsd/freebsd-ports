@@ -1,5 +1,5 @@
---- Makefile.orig	Sat Jan 29 02:59:52 2000
-+++ Makefile	Sat Feb  5 06:35:28 2000
+--- Makefile.orig	Sat Feb  5 01:10:42 2000
++++ Makefile	Sun Feb  6 20:33:42 2000
 @@ -1,18 +1,18 @@
  all: game
  
@@ -10,9 +10,9 @@
  OBJS = game.o aliens.o player.o effects.o \
  object.o camera.o main-x11.o vec4x1.o mat4x4.o
  DEPENDS = 
- #CFLAGS = -pg -Wall -pedantic -ansi
+ #CFLAGS = -g -Wall -pedantic -ansi
 -CFLAGS = -ansi
-+#CFLAGS = -ansi
++CFLAGS+= -ansi
  #OPTIONS = -D_GNU_SOURCE -DGAME_LINUX_X11 -DGAME_DEBUG
  OPTIONS= -DGAME_LINUX_X11
  
