@@ -8,8 +8,8 @@
 
 DISTNAME=	xchat-1.3.8
 CATEGORIES=	irc
-MASTER_SITES=	http://xchat.org/files/v1.3/ \
-		http://xchat.linuxpower.org/files/v1.3/
+MASTER_SITES=	http://xchat.org/files/source/1.3/ \
+		http://xchat.linuxpower.org/files/source/1.3/
 
 MAINTAINER=	jim@FreeBSD.org
 
