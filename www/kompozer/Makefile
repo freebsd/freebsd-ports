@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	nvu
-PORTVERSION=	0.81
+DISTVERSION=	0.90rc1
 CATEGORIES=	www
-MASTER_SITES=	http://cvs.nvu.com/download/
-DISTNAME=	${PORTNAME}-${PORTVERSION}-sources
+MASTER_SITES=	http://nvu.viapanda.com/0.90RC1/source/
+#MASTER_SITES=	http://cvs.nvu.com/download/
+DISTNAME=	${PORTNAME}-${DISTVERSION}-sources
 
 MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	A complete Web Authoring System similar to Dreamweaver or Frontpage
@@ -34,7 +35,8 @@ OPTIONS=	XFT "Enable Xft font anti-aliasing" on \
 		DEBUG "Enable debugging (i.e. gdb) support" off \
 		OPTIMIZED_CFLAGS "Enable -O2 optimizations" off
 
-NVU=		${PORTNAME}-${PORTVERSION}
+#NVU=		${PORTNAME}-${PORTVERSION}
+NVU=		${PORTNAME}-0.90-RC1
 FAKEDIR=	${WRKDIR}/FAKE
 WRKSRC=		${WRKDIR}/mozilla
 PLIST=		${WRKDIR}/plist
