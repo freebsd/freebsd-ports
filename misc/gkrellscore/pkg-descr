@@ -1,0 +1,12 @@
+This is a plugin for gkrellm that watches sports scores of current
+games, and shows them in a panel in a form like atl 11-3 cin (Atlanta
+11, Cincinatti 3). When you put the mouse over the panel for a
+second, the tooltip that comes up shows the full names of both
+teams, their scores, the period of the game (if applicable), the
+time that it will start if it hasn't yet, the date of the game,
+etc.
+
+WWW: http://ssl.usu.edu/paul/gkrellscore/
+Author: Paul Cannon <paul@cannon.cs.usu.edu>
+
+- Patrick Li <pat@databits.net>
