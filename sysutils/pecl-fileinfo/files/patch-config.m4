@@ -5,7 +5,7 @@
      AC_MSG_ERROR([wrong magic lib version or lib not found])
    ],[
 -    -L$FILEINFO_DIR/lib -lm -ldl
-+    -L$FILEINFO_DIR/lib -lm
++    -L$FILEINFO_DIR/lib -lm -lz
    ])
  
    MAGIC_MIME_LOCATIONS="/usr/local/share/file/magic /usr/share/file/magic /etc/magic"
