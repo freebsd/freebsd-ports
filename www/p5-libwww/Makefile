@@ -1,14 +1,14 @@
 # New ports collection makefile for:	p5-libwww
 # http://www.sn.no/libwww-perl/
-# Version required:                     5.32
+# Version required:                     5.33
 # Date created:				September 30th 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-# $Id: Makefile,v 1.16 1998/04/26 07:30:06 vanilla Exp $
+# $Id: Makefile,v 1.17 1998/04/28 14:45:37 vanilla Exp $
 #
 
-DISTNAME=       libwww-perl-5.32
-PKGNAME=        p5-libwww-5.32
+DISTNAME=       libwww-perl-5.33
+PKGNAME=        p5-libwww-5.33
 CATEGORIES=     www perl5 devel
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	URI
