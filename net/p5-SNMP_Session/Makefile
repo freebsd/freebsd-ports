@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	SNMP_Session
-PORTVERSION=	0.88
+PORTVERSION=	0.89
 CATEGORIES=	net perl5
 MASTER_SITES=	ftp://ftp.switch.ch/software/sources/network/snmp/perl/%SUBDIR%/
 MASTER_SITE_SUBDIR=	. old
@@ -18,10 +18,10 @@ PERL_CONFIGURE=	yes
 
 post-install:
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/p5-SNMP_Session
-	${INSTALL_DATA} ${WRKSRC}/README.SNMP_util \
-		${PREFIX}/share/doc/p5-SNMP_Session
-	${INSTALL_DATA} ${WRKSRC}/index.html ${PREFIX}/share/doc/p5-SNMP_Session
+	@${MKDIR} ${DOCSDIR}
+.for file in README README.SNMP_util index.html
+	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+.endfor
 .endif
 
 .include <bsd.port.mk>
