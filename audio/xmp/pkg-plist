@@ -2,3 +2,4 @@ bin/xmp
 bin/xxmp
 etc/xmp.conf
 etc/xmp-modules.conf
+@unexec rm %D/lib/xmms/Input/xmp-plugin.so 2>/dev/null || true
