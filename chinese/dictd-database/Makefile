@@ -18,6 +18,8 @@ COMMENT=	A Chinese <-> English dictd words database
 BUILD_DEPENDS=	${LOCALBASE}/bin/dictfmt:${PORTSDIR}/textproc/dictfmt \
 		${LOCALBASE}/bin/dictzip:${PORTSDIR}/net/dictd
 
+BROKEN=		Does not build
+
 USE_LIBTOOL_VER=	13
 USE_GMAKE=	yes
 USE_PERL5_BUILD=yes
