@@ -20,7 +20,7 @@ COMMENT=	XFce 4 graphical frontend for printing
 
 BUILD_DEPENDS=	xfce-mcs-manager:${PORTSDIR}/sysutils/xfce4-mcs-manager
 LIB_DEPENDS=	xfce4util.1:${PORTSDIR}/x11/libxfce4util \
-		xfcegui4.3:${PORTSDIR}/x11-toolkits/libxfce4gui \
+		xfcegui4.3:${PORTSDIR}/x11-toolkits/libxfce4gui
 RUN_DEPENDS=	xfce-mcs-manager:${PORTSDIR}/sysutils/xfce4-mcs-manager
 
 USE_GETTEXT=	yes
