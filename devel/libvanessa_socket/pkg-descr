@@ -3,6 +3,6 @@ operations. It includes code to open a socket to a server as a client, to
 listen on sockets for clients as a server and to pipe information between
 sockets.
 
-WWW: http://vanessa.sourceforge.net/
+WWW: http://www.vergenet.net/linux/vanessa/
 
 -- K. Konstantinidis <kkonstan@daemon.gr>

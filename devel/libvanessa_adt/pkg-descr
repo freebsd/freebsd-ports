@@ -1,6 +1,6 @@
 libvanessa_adt is a library that provides Abstract Data Types (ADTs).
 It includes queues, dynamic arrays and key values.
 
-WWW: http://vanessa.sourceforge.net/
+WWW: http://www.vergenet.net/linux/vanessa/
 
 -- K. Konstantinidis <kkonstan@daemon.gr>

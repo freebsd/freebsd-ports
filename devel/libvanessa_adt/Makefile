@@ -8,11 +8,7 @@
 PORTNAME=	libvanessa_adt
 PORTVERSION=	0.0.2
 CATEGORIES=	devel
-MASTER_SITES=	ftp://vanessa.sourceforge.net/pub/vanessa/%SUBDIR%/ \
-		ftp://ftp.au.vergenet.net/pub/vanessa/%SUBDIR%/ \
-		ftp://ftp.nl.vergenet.net/pub/vanessa/%SUBDIR%/ \
-		ftp://ftp.jp.vergenet.net/pub/vanessa/%SUBDIR%/ \
-		ftp://ftp.us.vergenet.net/pub/vanessa/%SUBDIR%/
+MASTER_SITES=	http://www.vergenet.net/linux/vanessa/download/%SUBDIR%/
 MASTER_SITE_SUBDIR=	vanessa_adt/${PORTVERSION}
 DISTNAME=	vanessa_adt-${PORTVERSION}
 
