@@ -47,7 +47,8 @@ pre-extract:
 
 post-configure:
 	${PERL} -pi.bak -e 's,^(TARGET_CONFIGDIRS\s*=),\1#,' ${WRKSRC}/Makefile
-	${PERL} -pi.bak -e 's,^(install-info:),\1\ndonot-\1,' \
+	${PERL} -pi.bak -e 's,^(install-info:),\1\ndonot-\1,; \
+	    s,\$$\(bindir\)/(\$$\(DEMANGLER_CROSS_NAME\)),./\1,' \
 	    ${WRKSRC}/gcc/Makefile
 
 post-install:
