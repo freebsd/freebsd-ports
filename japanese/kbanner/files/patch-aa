@@ -1,0 +1,28 @@
+--- Makefile.orig	Sat Jun 15 18:02:42 1991
++++ Makefile	Fri Feb 26 00:29:15 1999
+@@ -1,21 +1,19 @@
+ SHELL = /bin/sh
+-DESTDIR = /usr/local/bin
+-MANUAL = /usr/local/man/man1/kbanner.1
+ CFLAGS = -O
+ OBJ = kbanner.o font1.o font2.o font3.o
+ 
+ .SUFFIXES: .c .o
+ 
+ .c.o:
+-	cc -c $(CFLAGS) $<
++	${CC} -c $(CFLAGS) $<
+ 
+ kbanner: $(OBJ)
+-	cc $(OBJ) -o kbanner
++	${CC} $(OBJ) -o kbanner
+ 	strip kbanner
+ 
+ clean:
+ 	rm -f *.o core
+ 
+ install: kbanner
+-	cp kbanner $(DESTDIR)/
+-	cp kbanner.1 $(MANUAL)
++	${BSD_INSTALL_PROGRAM} kbanner ${PREFIX}/bin
++	${BSD_INSTALL_MAN} kbanner.1 ${PREFIX}/man/man1
