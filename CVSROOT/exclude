@@ -1,10 +1,10 @@
 # Exclusions list for header checking.
 # $FreeBSD$
 #
-^src/sys/boot/common/help.common
 ^src/contrib/.*/FREEBSD-Xlist
-^src/usr.bin/more/more.help
 ^src/etc/motd
-^src/share/man/man0
-^src/share/info/dir-tmpl
 ^src/lib/libc_r/test/.*\.exp
+^src/share/info/dir-tmpl
+^src/share/man/man0
+^src/sys/boot/common/help.common
+^src/usr.bin/more/more.help
