@@ -1,3 +1,4 @@
+# ex:ts=18
 # New ports collection makefile for:  numlockx
 # Whom:                               Jean-Baptiste Quenot <jb.quenot@caraldi.com>
 # Date Created:                       2003-09-09 16:05:29
@@ -23,5 +24,3 @@ USE_X_PREFIX=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include"
 
 .include <bsd.port.mk>
-
-# ex:ts=18
