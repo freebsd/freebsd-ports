@@ -1,0 +1,14 @@
+# Replace jsp-hostname with the hostname of your JSP server, as
+# specified in workers.properties.
+#
+<IfModule mod_jk.c>
+	JkWorkersFile %%APACHE_CONF%%/workers.properties
+	JkLogFile  logs/jk.log
+	JkLogLevel warn
+
+	# Sample JkMounts.  Replace these with the paths you would
+	# like to mount from your JSP server.
+	JkMount /*.jsp jsp-hostname
+	JkMount /servlet/* jsp-hostname
+	JkMount /examples/* jsp-hostname
+</IfModule>

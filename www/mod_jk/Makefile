@@ -6,46 +6,45 @@
 #
 
 PORTNAME=	mod_jk
-PORTVERSION=	3.3.1
-PORTREVISION=	2
+PORTVERSION=	1.2.3
+PORTEPOCH=	1
 CATEGORIES=	www
-MASTER_SITES=	http://jakarta.apache.org/builds/jakarta-tomcat/release/v${PORTVERSION}/src/ \
-		http://www.metaverse.nl/~ernst/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	znerd
-DISTNAME=	jakarta-tomcat-${PORTVERSION}-src
+MASTER_SITES=	${MASTER_SITE_APACHE_JAKARTA}
+MASTER_SITE_SUBDIR=	jakarta-tomcat-connectors/jk/release/v${PORTVERSION}/src
+DISTNAME=	jakarta-tomcat-connectors-jk-${PORTVERSION}-src
 
 MAINTAINER=	parv_fm@emailgroups.net
-COMMENT=	Apache module for Tomcat 3
-
-BROKEN=		"Broken dependency"
+COMMENT=	Apache JK module for Tomcat
 
 BUILD_DEPENDS=	${APXS}:${APACHE_PORT}
-RUN_DEPENDS=	${APXS}:${APACHE_PORT} \
-		${TOMCAT_HOME}/lib/tomcat.jar:${PORTSDIR}/www/jakarta-tomcat3
+RUN_DEPENDS=	${APXS}:${APACHE_PORT}
+
+APXS=		${LOCALBASE}/sbin/apxs
+APACHE_PORT?=	${PORTSDIR}/www/apache13
+APACHE_CONF=	${LOCALBASE}/etc/apache${APACHE2}
+WRKSRC=		${WRKDIR}/jakarta-tomcat-connectors-jk-${PORTVERSION}-src/jk/native
 
 USE_GMAKE=	YES
-USE_JAVA=	1.2+
-MAKEFILE=	Makefile.freebsd
-WRKSRC=		${WRKDIR}/jakarta-tomcat-${PORTVERSION}-src/src/native/mod_jk/apache1.3
-
-APXS?=		${LOCALBASE}/sbin/apxs
-APACHE_PORT?=	${PORTSDIR}/www/apache13
-TOMCAT_HOME?=	${LOCALBASE}/jakarta-tomcat${PORTVERSION}
-
-post-extract:
-	${MV} ${WRKSRC}/Makefile.freebsd ${WRKSRC}/Makefile.freebsd.orig
+USE_LIBTOOL=	YES
+USE_AUTOCONF_VER=	253
+USE_AUTOMAKE_VER=	15
+AUTOMAKE_ARGS=	--add-missing
+GNU_CONFIGURE=	YES
+CONFIGURE_ARGS+=	--with-apxs=${APXS}
+APACHE2?=
+APACHE_VER?=	1.3
+PLIST_SUB=	APACHE2=${APACHE2}
 
 post-patch:
-	${SED} \
-	-e "s#%%APXS%%#${APXS}#g" \
-	-e "s#%%JAVA_HOME%%#${JAVA_HOME}#g" \
-	${FILESDIR}/Makefile.freebsd \
-	> ${WRKSRC}/Makefile.freebsd
+	cd ${WRKSRC}; ${ACLOCAL}; ${LOCALBASE}/bin/libtoolize
 
 do-install:
-	${APXS} -i -A -n jk ${WRKSRC}/mod_jk.so
-	${SED} -e "s#%%TOMCAT_HOME%%#${TOMCAT_HOME}#g" ${FILESDIR}/mod_jk.conf > ${WRKDIR}/mod_jk.conf
-	${INSTALL_DATA} ${WRKDIR}/mod_jk.conf ${PREFIX}/etc/apache
+	${APXS} -i -A -n jk ${WRKSRC}/apache-${APACHE_VER}/mod_jk.so
+	${SED} -e "s#%%APACHE_CONF%%#${APACHE_CONF}#g" ${FILESDIR}/mod_jk.conf.sample > ${WRKDIR}/mod_jk.conf.sample
+	${INSTALL_DATA} ${WRKDIR}/mod_jk.conf.sample ${APACHE_CONF}
+	${INSTALL_DATA} ${FILESDIR}/workers.properties.sample ${APACHE_CONF}
+
+post-install:
+	${CAT} ${PKGMESSAGE} | ${SED} "s|/usr/local|${PREFIX}|g"
 
 .include <bsd.port.mk>
