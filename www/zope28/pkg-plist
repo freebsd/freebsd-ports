@@ -616,6 +616,9 @@ etc/rc.d/zope.sh
 %%ZOPEBASEDIR%%/lib/python/Products/ExternalMethod/help/ExternalMethod.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/ExternalMethod/version.txt
 %%ZOPEBASEDIR%%/lib/python/Products/ExternalMethod/www/function.gif
+%%ZOPEBASEDIR%%/lib/python/Products/Hotfix_2001-02-23/README.txt
+%%ZOPEBASEDIR%%/lib/python/Products/Hotfix_2001-02-23/__init__.py
+%%ZOPEBASEDIR%%/lib/python/Products/Hotfix_2001-02-23/__init__.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/MIMETools/MIMETag.py
 %%ZOPEBASEDIR%%/lib/python/Products/MIMETools/MIMETag.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/MIMETools/README.txt
