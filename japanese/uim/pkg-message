@@ -1,0 +1,17 @@
+UIM configuration changed after uim-0.4.4.
+
+# Before 0.4.4:
+GTK_IM_MODULE=uim-anthy; export GTK_IM_MODULE
+XMODIFIERS=@im=uim-anthy; export XMODIFIERS
+# After 0.4.4:
+GTK_IM_MODULE=uim; export GTK_IM_MODULE
+XMODIFIERS=@im=uim; export XMODIFIERS
+
+And specify your favorite input method to your ~/.uim
+(define default-im-name 'anthy)
+
+SEE ALSO:
+in English:
+http://freedesktop.org/pipermail/uim/2004-October/000659.html
+in Japanese:
+http://lists.sourceforge.jp/mailman/archives/anthy-dev/2004-October/001135.html

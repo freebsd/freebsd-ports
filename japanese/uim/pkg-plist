@@ -2,12 +2,19 @@ bin/uim-fep
 bin/uim-fep-tick
 bin/uim-helper-server
 bin/uim-sh
+%%GTK%%bin/uim-candwin-gtk
 %%GTK%%bin/uim-helper-candwin-gtk
 %%GTK%%bin/uim-helper-toolbar-gtk
 %%GTK%%bin/uim-helper-toolbar-gtk-systray
+%%GTK%%bin/uim-im-switcher
+%%GTK%%bin/uim-input-pad-ja
+%%GTK%%bin/uim-toolbar-gtk
+%%GTK%%bin/uim-toolbar-gtk-systray
 bin/uim-xim
 include/uim/uim-helper.h
+include/uim/uim-im-switcher.h
 include/uim/uim-scm.h
+include/uim/uim-util.h
 include/uim/uim.h
 %%GNOME%%libdata/bonobo/servers/GNOME_UimApplet.server
 %%GTK%%lib/gtk-2.0/2.4.0/immodules/im-uim.so
@@ -24,12 +31,15 @@ share/uim/anthy.scm
 share/uim/canna.scm
 share/uim/custom.scm
 share/uim/default.scm
+share/uim/default-im.scm
 share/uim/generic-key.scm
 share/uim/generic.scm
 share/uim/hangul.scm
 share/uim/hangul2.scm
 share/uim/hangul3.scm
 share/uim/hk.scm
+share/uim/i18n.scm
+share/uim/icons/alphabet_a.png
 share/uim/im.scm
 share/uim/ipa.scm
 share/uim/japanese-azik.scm
@@ -65,6 +75,7 @@ share/uim/zaurus.scm
 %%PORTDOCS%%@dirrm %%DOCSDIR_JA%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm share/uim/tables
+@dirrm share/uim/icons
 @dirrm share/uim
 %%GTK%%@exec gtk-query-immodules-2.0 > %D/etc/gtk-2.0/gtk.immodules
 %%GTK%%@unexec gtk-query-immodules-2.0 > %D/etc/gtk-2.0/gtk.immodules

@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	uim
-PORTVERSION=	0.4.2.1
-PORTREVISION=	1
+PORTVERSION=	0.4.5
 CATEGORIES=	japanese x11
 MASTER_SITES=	http://freedesktop.org/Software/UimDownload/
 
@@ -57,6 +56,7 @@ post-install:
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README.ja ${DOCSDIR_JA}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+	${CAT} ${PKGMESSAGE}
 .endif
 
 .include <bsd.port.post.mk>
