@@ -1,0 +1,45 @@
+--- Fontmap.orig	Mon Jan 25 12:39:01 1999
++++ Fontmap	Fri Jul 23 16:48:39 1999
+@@ -400,0 +401,42 @@
++
++% Cyrrillic koi8 fonts/aliases
++
++/ArialCyrMT				(arial8.pfb)	;
++/Arial			/ArialCyrMT			;
++/Helvetica		/ArialCyrMT			;
++/ArialCyrMT-Bold			(arialbd8.pfb)	;
++/Arial-Bold		/ArialCyrMT-Bold		;
++/Helvetica-Bold	/ArialCyrMT-Bold		;
++/ArialCyrMT-Italic			(ariali8.pfb)	;
++/Arial-Italic		/ArialCyrMT-Italic		;
++/Helvetica-Oblique	/ArialCyrMT-Italic		;
++/ArialCyrMT-BoldItalic			(arialbi8.pfb)	;
++/Arial-BoldItalic	/ArialCyrMT-BoldItalic		;
++/Helvetica-BoldOblique	/ArialCyrMT-BoldItalic	;
++
++/CourierCyrPS				(cour8.pfb)	;
++% /Courier		/CourierCyrPS			;
++/CourierCyrPS-Bold			(courbd8.pfb)	;
++% /Courier-Bold		/CourierCyrPS-Bold		;
++/CourierCyrPS-Inclined			(couri8.pfb)	;
++% /Courier-Oblique	/CourierCyrPS-Inclined		;
++/CourierCyrPS-BoldInclined		(courbi8.pfb)	;
++% /Courier-BoldOblique	/CourierCyrPS-BoldInclined	;
++
++/TimesNRCyrMT				(times8.pfb)	;
++/Times-Roman		/TimesNRCyrMT			;
++/TimesNRCyrMT-Bold			(timesbd8.pfb)	;
++/Times-Bold		/TimesNRCyrMT-Bold		;
++/TimesNRCyrMT-Inclined			(timesi8.pfb)	;
++/Times-Italic		/TimesNRCyrMT-Inclined		;
++/TimesNRCyrMT-BoldInclined		(timesbi8.pfb)	;
++/Times-BoldItalic	/TimesNRCyrMT-BoldInclined	;
++
++/ERKurierKOI8RRegular			(cokoi8n.pfb)	;
++/Courier		/ERKurierKOI8RRegular		;
++/ERKurierKOI8RBold			(cokoi8b.pfb)	;
++/Courier-Bold		/ERKurierKOI8RBold		;
++/ERKurierKOI8RItalic			(cokoi8i.pfb)	;
++/Courier-Oblique	/ERKurierKOI8RItalic		;
++/ERKurierKOI8RBoldItalic 		(cokoi8bi.pfb)	;
++/Courier-BoldOblique	/ERKurierKOI8RBoldItalic	;
