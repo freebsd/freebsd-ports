@@ -1,0 +1,7 @@
+lib/aspell-%%VER%%/de-alt.dat
+lib/aspell-%%VER%%/de-alt_affix.dat
+lib/aspell-%%VER%%/de-alt_phonet.dat
+share/aspell/de-alt.multi
+share/aspell/de-alt.rws
+share/aspell/deutsch-alt.alias
+share/aspell/german-old.alias

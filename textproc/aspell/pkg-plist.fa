@@ -1,0 +1,7 @@
+lib/aspell-%%VER%%/fa.dat
+lib/aspell-%%VER%%/l-fa.cmap
+lib/aspell-%%VER%%/l-fa.cset
+share/aspell/fa.multi
+share/aspell/fa.rws
+share/aspell/farsi.alias
+share/aspell/persian.alias

@@ -71,9 +71,10 @@ DESCR=		${.CURDIR}/pkg-descr
 
 CONF_DICT_ENV=	ASPELL="${PREFIX}/bin/aspell"	\
 		WORD_LIST_COMPRESS="${PREFIX}/bin/word-list-compress"
-AVAIL_DICT=	af az be bg bn br ca cs cy da de el en eo es et fi fo fr ga gd gl \
-		gv he hr hsb hu ia id is it la lt lv mi mk mn ms mt nb nl nn ny pl \
-		pt qu ro ru rw sc sk sl sv sw ta tet tl tn tr uk uz vi wa yi zu
+AVAIL_DICT=	af az be bg bn br ca cs cy da de de-alt el en eo es et fa fi fo fr \
+		ga gd gl gv he hr hsb hu ia id is it la lt lv mi mk mn ms mt nb nl \
+		nn ny pl pt qu ro ru rw sc sk sl sv sw ta tet tl tn tr uk uz vi wa \
+		yi zu
 DICT_SUFFIX=	.tar.bz2
 
 .include <bsd.port.pre.mk>
@@ -140,6 +141,7 @@ DICTS+=		${LG}
 	@${ECHO_MSG} '*  - French                       ASPELL_FR=yes         *'
 	@${ECHO_MSG} '*  - Galician                     ASPELL_GL=yes         *'
 	@${ECHO_MSG} '*  - German                       ASPELL_DE=yes         *'
+	@${ECHO_MSG} '*  - German (orig spelling rules) ASPELL_DE-ALT=yes     *'
 	@${ECHO_MSG} '*  - Greek                        ASPELL_EL=yes         *'
 	@${ECHO_MSG} '*  - Hebrew                       ASPELL_HE=yes         *'
 	@${ECHO_MSG} '*  - Hungarian                    ASPELL_HU=yes         *'
@@ -161,6 +163,7 @@ DICTS+=		${LG}
 	@${ECHO_MSG} '*  - Norwegian Bokmal             ASPELL_NB=yes         *'
 	@${ECHO_MSG} '*  - Norwegian Nynorsk            ASPELL_NN=yes         *'
 	@${ECHO_MSG} '*  - Nyanja (Chichewa)            ASPELL_NY=yes         *'
+	@${ECHO_MSG} '*  - Persian (Farsi)              ASPELL_FA=yes         *'
 	@${ECHO_MSG} '*  - Polish                       ASPELL_PL=yes         *'
 	@${ECHO_MSG} '*  - Portuguese                   ASPELL_PT=yes         *'
 	@${ECHO_MSG} '*  - Quechua                      ASPELL_QU=yes         *'
@@ -197,9 +200,10 @@ DICTS=	${LG}
 .  endif
 . endfor
 .endif
+
 .for DICO in ${DICTS}
-MASTER_SITES+=	ftp://ftp.gnu.org/gnu/aspell/dict/${DICO}/:dict${DICO}
-DISTFILES+=	aspell${VERDICT_${DICO:U}}${DICT_SUFFIX}:dict${DICO}
+MASTER_SITES+=	ftp://ftp.gnu.org/gnu/aspell/dict/${DICO:S/-alt//}/:dict${DICO:S/-//}
+DISTFILES+=	aspell${VERDICT_${DICO:U}}${DICT_SUFFIX}:dict${DICO:S/-//}
 .endfor
 
 post-extract:
