@@ -175,7 +175,9 @@ SGML_USED=	no
 SGML_USED=	no
 .endif
 
+.if !defined(WITHOUT_NLS)
 LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext
+.endif
 
 .if defined(NOPORTDOCS)
 SGML_USED=	no
@@ -215,6 +217,9 @@ CONFIGURE_ARGS+=	--with-slang=${PREFIX}
 .endif
 .if defined(WITH_MUTT_CYRUS_SASL)
 CONFIGURE_ARGS+=	--with-sasl=${LOCALBASE}
+.endif
+.if defined(WITHOUT_NLS)
+CONFIGURE_ARGS+=	--disable-nls
 .endif
 
 PATCH_DIST_STRIP=	-p1
@@ -291,6 +296,9 @@ SCRIPTS_ENV+=	MUTT_PGP_PATCH="yes"
 .endif
 .if ! defined(WITHOUT_MUTT_HTML)
 SCRIPTS_ENV+=	MUTT_HTML="yes"
+.endif
+.if !defined(WITHOUT_NLS)
+SCRIPTS_ENV+=	MUTT_NLS="yes"
 .endif
 
 .if !defined(NOPORTDOCS)
