@@ -23,8 +23,8 @@ COMMENT=	Apache-SSL: Apache secure webserver integrating OpenSSL
 
 APACHE_VERSION=		1.3.27
 APACHE_SSL_VERSION=	1.48
-USE_OPENSSL=	YES
-USE_PERL5=	YES
+USE_OPENSSL=	yes
+USE_PERL5=	yes
 HAS_CONFIGURE=	yes
 MAN1=		dbmmanage.1 htdigest.1 htpasswd.1
 MAN8=		ab.8 httpsdctl.8 apxs.8 httpsd.8 logresolve.8 rotatelogs.8
