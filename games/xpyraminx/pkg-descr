@@ -1,0 +1,20 @@
+   The  original  puzzle has 9 triangles per face (size = 3) and
+has period 3 turning (i.e. the face or points turn in 120 degree
+intervals).  The  puzzle  was designed by Uwe Meffert and called
+the Pyraminx.  This  has  2^5*3^8*6!/2  or  75,582,720 different 
+combinations.
+   Another puzzle Senior Pyraminx 3x3x3 exists only on paper, it
+has period 2 turning (i.e. edges turn with 180 degree intervals)
+but   the   corners  would  fall  off  unless it had some tricky
+mechanism.  (This  may  be the same as the Master Pyraminx which 
+has 446,965,972,992,000 different combinations).
+   Another puzzle (which was not widely distributed), the Junior
+Pyraminx  (and similarly  the Junior Pyraminx Star, a octahedron
+formed by two tetrahedra, this has 7!*3^6 or 3,674,160 different
+combinations), has  4  triangles  (size = 2) per face and at the
+time  I  designed  this computer puzzle thought that it had only
+period 2 turning (i.e the edges rotate). It turns out the puzzle
+has a period  4  turning  (edges  turn with 90 degree intervals)
+which makes it analogous to the 2x2x2 Rubik's cube.  This puzzle
+makes various non-tetrahedral shapes.  The puzzle contained here
+has no period 4 turning flexability.
