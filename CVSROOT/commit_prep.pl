@@ -25,6 +25,7 @@
 
 require 5.003;	# to be sure.  log_accum needs perl5
 
+use strict;
 use lib $ENV{CVSROOT};
 use CVSROOT::cfg;
 
@@ -37,19 +38,20 @@ use CVSROOT::cfg;
 # Check each file (except dot files) for our RCS header keyword.
 # (defined in the constants section.)
 #
-$check_id = 0;
+my $check_id = 0;
 
 ############################################################
 #
 # Constants
 #
 ############################################################
-$ENTRIES       = "CVS/Entries";
+my $ENTRIES       = "CVS/Entries";
 
 
 # The "Id" header to check for.
 my $HEADER	= $cfg::IDHEADER;
 
+my $cvsroot= $ENV{'CVSROOT'} || "/home/ncvs";
 
 ############################################################
 #
@@ -96,8 +98,17 @@ sub write_line {
 }
 
 sub check_version {
-	local($id, $rname, $version, $bareid, $exclude, $path);
-	local($filename, $directory, $hastag, %cvsversion) = @_;
+	my $filename = shift;
+	my $directory = shift;
+	my $hastag = shift;
+	my %cvsversion = @_;
+
+	my $bareid;
+	my $exclude;
+	my $id;
+	my $path;
+	my $rname;
+	my $version;
 
 	if (! -f $filename) {
 		return(0);	# not present - either removed or let
@@ -106,6 +117,8 @@ sub check_version {
 
 	open FILE, $filename or die "Cannot open $filename, stopped\n";
 	# requiring the header within the first 'n' lines isn't useful.
+	my $pos;
+	my $line;
 	while (1) {
 		$pos = -1;
 		last if eof(FILE);
@@ -119,10 +132,8 @@ sub check_version {
 		$path = $directory . "/" . $filename;
 		open(EX, "<$exclude") || die("cannot open $exclude: $!");
 		while (<EX>) {
-			local($line);
-
 			chop;
-			$line = $_;
+			my $line = $_;
 
 			if ($line =~ /^#/) {
 				next;
@@ -197,6 +208,8 @@ sub check_version {
 #
 # Suck in the Entries file
 #
+my %cvsversion;
+my %cvstag;
 open ENTRIES, $ENTRIES or die "Cannot open $ENTRIES.\n";
 while (<ENTRIES>) {
 	chomp;
@@ -209,10 +222,9 @@ while (<ENTRIES>) {
 }
 close ENTRIES;
 
-$directory = $ARGV[0];
+my $directory = $ARGV[0];
 shift @ARGV;
 
-$cvsroot=$ENV{'CVSROOT'} || "/home/ncvs";
 $directory =~ s,^$cvsroot[/]+,,;
 
 if ($directory =~ /^src/) {
@@ -238,9 +250,9 @@ if ($directory =~ /^src\/etc/) {
 # are considered to be administrative files by this script.
 #
 if ($check_id != 0) {
-	$failed = 0;
-	foreach $arg (@ARGV) {
-		local($hastag) = ($cvstag{$arg} ne '');
+	my $failed = 0;
+	foreach my $arg (@ARGV) {
+		my $hastag = ($cvstag{$arg} ne '');
 		next if (index($arg, ".") == 0);
 		next if ($check_id == 2 && $arg ne "Makefile");
 		next if ($check_id == 3 && $hastag);
