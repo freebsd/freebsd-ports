@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	mwavem-fbsd
-PORTVERSION=	1.1
-PORTREVISION=	1
+PORTVERSION=	1.2
+PORTREVISION=	0
 CATEGORIES=	comms
 MASTER_SITES=	http://www.escape.com/~simonw/ \
-		http://home.pacbell.net/simonw2/src/ \
-		${MASTER_SITE_LOCAL}
+		http://home.pacbell.net/simonw2/src/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	oberman@es.net
@@ -20,6 +19,7 @@ LIB_DEPENDS=	lthread.2:${PORTSDIR}/devel/linuxthreads
 
 ONLY_FOR_ARCHS=	i386
 
+GNU_CONFIGURE=	yes
 STARTUP=	mwavem.sh
 USE_GMAKE=	yes
 SLEEP=		/bin/sleep
@@ -27,12 +27,11 @@ SLEEP=		/bin/sleep
 .include <bsd.port.pre.mk>
 
 pre-build:
-	${PERL} -pi.orig -e "s@f /etc@f ${PREFIX}/etc@g;s@install -c -m -755@install -s -c -m 755@g" ${WRKSRC}/Makefile
 	${PERL} -pi.orig -e "s@/etc/mwavem@${PREFIX}/etc/mwavem@g" ${WRKSRC}/modem.c
 	${PERL} -pi.orig -e "s@ko /modules@ko ${PREFIX}/share/mwave@g" ${WRKSRC}/drivers/Makefile
 
 pre-install:
-	${MKDIR} ${PREFIX}/share/mwave
+	${MKDIR} ${DATADIR}
 
 post-install:
 	@${RM} -f /dev/mwave
