@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	swish-e
-PORTVERSION=	2.4.2
+PORTVERSION=	2.4.3
 CATEGORIES=	www textproc
-MASTER_SITES=	http://swish-e.org/Download/
+MASTER_SITES=	http://swish-e.org/distribution/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple web indexing for humans - enhanced
