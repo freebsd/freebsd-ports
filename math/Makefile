@@ -55,6 +55,7 @@
     SUBDIR += rng
     SUBDIR += ruby-bigfloat
     SUBDIR += sc
+    SUBDIR += scigraphica
     SUBDIR += siag
     SUBDIR += simpack
     SUBDIR += slsc

@@ -1,0 +1,20 @@
+SciGraphica is a scientific application for data analysis and technical
+graphics. It pretends to be a clone of the popular commercial (and expensive)
+application "Microcal Origin". Although it is in a very early development
+stage, it fully supplies plotting features for 2D charts. The aim is to obtain
+a fully-featured, cross-plattform, user-friendly, self-growing scientific
+application. It is free and open-source, released under the GPL license.
+
+Main features:
+--------------
+ o You can open several worksheets and plots and work with them at the same
+   time.
+ o The plots are fully configurable using a control panel dialog.
+ o The look and feel is completely WYSIWYG.
+ o Publication quality PostScript output. 
+ o You can interact with the plots double-clicking, dragging and moving objects
+   with the mouse.
+ o Import/Export features in XML format.
+ o You can insert Python expressions in the worksheets.
+
+WWW: http://magnet.fsu.edu/~feiguin/scigraphica/
