@@ -1,0 +1,28 @@
+# New ports collection makefile for:	service-config
+# Date created:				2 July 2001
+# Whom:					petef@databits.net
+#
+# $FreeBSD$
+#
+
+PORTNAME=	service-config
+PORTVERSION=	0.51
+CATEGORIES=	sysutils
+MASTER_SITES=	http://www.superscript.com/service-config/
+
+MAINTAINER=	petef@databits.net
+
+RUN_DEPENDS=	supervise:${PORTSDIR}/sysutils/daemontools
+
+ALL_TARGET=	it
+INSTALL_TARGET=	setup check
+
+NO_PACKAGE=	A possibly inherited DJB-style license would prohibit \
+		distribution of modified binary packages
+
+post-patch:
+	@${ECHO} "${CC} ${CFLAGS}" > ${WRKSRC}/conf-cc
+	@${ECHO} "${CC} ${CFLAGS} ${STRIP}" > ${WRKSRC}/conf-ld
+	@${PERL} -pi -e 's!/usr/local!${PREFIX}!g' ${WRKSRC}/conf-home
+
+.include <bsd.port.mk>
