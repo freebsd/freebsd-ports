@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	nikto
-PORTVERSION= 	1.30
-PORTREVISION=	1
+PORTVERSION= 	1.31
 CATEGORIES= 	security www
 
 MAINTAINER=	jan@atstake.com
