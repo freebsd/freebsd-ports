@@ -13,8 +13,7 @@ MASTER_SITES=	http://www.maxmind.com/download/geoip/api/c/
 MAINTAINER=	seanc@FreeBSD.org
 COMMENT=	Find the country that any IP address or hostname originates from
 
-USE_LIBTOOL_VER=13
-CONFIGURE_ARGS=	--with-gnu-ld=yes
+GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 
 MAN1=		geoiplookup.1 geoipupdate.1
