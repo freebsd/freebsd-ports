@@ -3,7 +3,7 @@
 # Date created:		7 July 1997
 # Whom:			doconnor@ist.flinders.edu.au
 #
-# $Id: Makefile,v 1.8 1998/07/14 23:39:38 jseger Exp $
+# $Id: Makefile,v 1.9 1998/08/07 23:56:11 asami Exp $
 #
 
 DISTNAME=	xmp3_1.0.0
@@ -21,7 +21,7 @@ WRKSRC=		${WRKDIR}/xmpeg3
 NO_BUILD=	yes
 
 post-patch:
-	@/usr/bin/perl -pi -e "s|@@PREFIX@@|${PREFIX}|;" ${WRKSRC}/xmpeg3
+	@/usr/bin/perl -pi -e "s|\@\@PREFIX\@\@|${PREFIX}|;" ${WRKSRC}/xmpeg3
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/xmpeg3 ${PREFIX}/bin
