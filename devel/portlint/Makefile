@@ -20,6 +20,12 @@ SRC=		${.CURDIR}/src
 
 MAN1=		portlint.1
 
+# didn't use post/pre-fetch because of some weird error where the message
+# shows up twice
+pre-configure:
+	@${ECHO_MSG} "Warning: portlint does not yet support the PORTNAME/PORTVERSION Makefile format"
+	@sleep 2
+
 do-fetch:
 	@${DO_NADA}
 
