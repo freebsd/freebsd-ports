@@ -1,0 +1,11 @@
+--- doc/Makefile.in.orig	Mon Nov 25 04:31:16 2002
++++ doc/Makefile.in	Mon Jan  6 17:31:57 2003
+@@ -105,7 +105,7 @@
+ am__quote = @am__quote@
+ install_sh = @install_sh@
+ 
+-docdir = $(prefix)/doc
++docdir = $(prefix)/share/doc
+ pkgdocdir = $(docdir)/@PACKAGE@
+ 
+ MAINTAINERCLEANFILES = Makefile.in

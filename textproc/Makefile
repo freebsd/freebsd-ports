@@ -144,6 +144,7 @@
     SUBDIR += no-ispell
     SUBDIR += openjade
     SUBDIR += opensched
+    SUBDIR += opensp
     SUBDIR += orchard-c
     SUBDIR += p5-Apache-ParseLog
     SUBDIR += p5-CSS-SAC
