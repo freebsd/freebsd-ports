@@ -19,7 +19,7 @@
  #define RUNNING_WINDOWS false
  #define RUNNING_SOLARIS false
  #define RUNNING_IRIX    false
-+#define DATADIR		"/usr/local/share"
++#define DATADIR		"%%PREFIX%%/share"
  #endif
  
  
