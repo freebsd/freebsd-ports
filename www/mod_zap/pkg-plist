@@ -13,4 +13,6 @@ share/mod_zap/testutf8.zap
 share/mod_zap/thesaurus.zap
 share/mod_zap/try.html
 share/mod_zap/wincgi.html
+@exec %D/sbin/apxs -e -a -n zap %D/libexec/apache/mod_zap.so
+@unexec %D/sbin/apxs -e -A -n zap %D/libexec/apache/mod_zap.so
 @dirrm share/mod_zap
