@@ -7,4 +7,4 @@ lib/libGeoIP.la
 lib/libGeoIP.so
 lib/libGeoIP.so.1
 share/GeoIP/GeoIP.dat
-@dirrm share/GeoIP
+@unexec rmdir %D/share/GeoIP 2>/dev/null || true

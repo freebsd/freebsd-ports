@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	GeoIP
-PORTVERSION=	1.0.5
+PORTVERSION=	1.0.8
 CATEGORIES=	misc
 MASTER_SITES=	http://maxmind.com/download/geoip/api/c/
 
-MAINTAINER=	leeym@FreeBSD.org
+MAINTAINER=	seanc@FreeBSD.org
 
 LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
 
