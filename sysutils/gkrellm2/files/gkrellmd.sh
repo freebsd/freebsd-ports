@@ -3,22 +3,34 @@
 # Start or stop gkrellmd
 # $FreeBSD$
 
-PREFIX=%%PREFIX%%
+# PROVIDE: gkrellmd
+# REQUIRE: DAEMON
+# BEFORE: LOGIN
+# KEYWORD: FreeBSD shutdown
+#
+# NOTE for FreeBSD 5.0+:
+# If you want this script to start with the base rc scripts
+# move imapd.sh to /etc/rc.d/gkrellmd
 
-case "$1" in
-start)
-	if [ -x ${PREFIX}/sbin/gkrellmd -a \
-	     -f ${PREFIX}/etc/gkrellmd.conf ]; then
-		${PREFIX}/sbin/gkrellmd -d
-		echo -n ' gkrellmd'
-	fi
-	;;
-stop)
-	killall gkrellmd && echo -n ' gkrellmd'
-	;;
-*)
-	echo "Usage: `basename $0` {start|stop}" >&2
-	;;
-esac
+prefix=%%PREFIX%%
 
-exit 0
+# Define these imapd_* variables in one of these files:
+#	/etc/rc.conf
+#	/etc/rc.conf.local
+#	/etc/rc.conf.d/gkrellmd
+#
+# DO NOT CHANGE THESE DEFAULT VALUES HERE 
+#
+gkrellmd_enable="NO"				# Enable gkrellmd
+#gkrellmd_program="${prefix}/cyrus/bin/master"	# Location of gkrellmd
+gkrellmd_flags="-d"				# Flags to gkrellmd program
+
+. %%RC_SUBR%%
+
+name="gkrellmd"
+rcvar=`set_rcvar`
+command="${prefix}/sbin/${name}"
+required_files="${prefix}/etc/${name}.conf"
+
+load_rc_config $name
+run_rc_command "$1"

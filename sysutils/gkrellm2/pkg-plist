@@ -7,7 +7,7 @@ sbin/gkrellmd
 @unexec if cmp -s %D/etc/gkrellmd.conf %D/etc/gkrellmd.conf.sample; then rm -f %D/etc/gkrellmd.conf; fi
 etc/gkrellmd.conf.sample
 @exec [ -f %B/gkrellmd.conf ] || cp %B/%f %B/gkrellmd.conf
-etc/rc.d/gkrellmd.sh.sample
+etc/rc.d/gkrellmd.sh
 %%CLIENT%%@cwd %%X11BASE%%
 %%CLIENT%%man/man1/gkrellm.1.gz
 %%CLIENT%%bin/gkrellm

@@ -16,6 +16,8 @@ MASTER_SITE_SUBDIR=	ume
 MAINTAINER=	ume@FreeBSD.org
 COMMENT=	A GTK based system monitor
 
+USE_RC_SUBR=	YES
+
 WRKSRC=		${WRKDIR}/${DISTNAME:C/[a-z]$//}
 
 .if defined(GKRELLM_SERVER_ONLY)
@@ -62,6 +64,9 @@ CFLAGS+=	-DSYSTEM_THEMES_DIR='\"${X11BASE}/share/gkrellm2/themes\"' \
 		-DSYSTEM_PLUGINS_DIR='\"${X11BASE}/libexec/gkrellm2/plugins\"' \
 		-DGKRELLMD_SYS_ETC='\"${PREFIX}/etc\"'
 
+RC_SCRIPTS_SUB=	PREFIX=${PREFIX} \
+		RC_SUBR=${RC_SUBR}
+
 pre-everything::
 .if !defined(GKRELLM_SERVER_ONLY)
 	@${ECHO} ""
@@ -77,9 +82,9 @@ post-install:
 	@${CHMOD} 2511 ${X11BASE}/bin/gkrellm
 .endif
 	@${CHMOD} 2511 ${PREFIX}/sbin/gkrellmd
-	@${SED} -e "s;%%PREFIX%%;${PREFIX};g" \
-		${FILESDIR}/gkrellmd.sh > ${PREFIX}/etc/rc.d/gkrellmd.sh.sample
-	@${CHMOD} ${BINMODE} ${PREFIX}/etc/rc.d/gkrellmd.sh.sample
+	@${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
+		${FILESDIR}/gkrellmd.sh > ${PREFIX}/etc/rc.d/gkrellmd.sh
+	@${CHMOD} ${BINMODE} ${PREFIX}/etc/rc.d/gkrellmd.sh
 	${INSTALL_DATA} ${WRKSRC}/server/gkrellmd.conf \
 		${PREFIX}/etc/gkrellmd.conf.sample
 	if [ ! -f ${PREFIX}/etc/gkrellmd.conf ]; then \
