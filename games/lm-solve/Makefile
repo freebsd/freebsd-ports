@@ -7,10 +7,11 @@
 #
 
 PORTNAME=	lm-solve
-PORTVERSION=	0.6.0
+PORTVERSION=	0.8.1
 CATEGORIES=	games
-MASTER_SITES=	http://vipe.technion.ac.il/~shlomif/lm-solve/
-DISTNAME=	LM-Solve-${PORTVERSION}
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
+MASTER_SITE_SUBDIR=	Games
+DISTNAME=	Games-LMSolve-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Computerized Solver for Logic Mazes
@@ -18,5 +19,6 @@ COMMENT=	A Computerized Solver for Logic Mazes
 PERL_CONFIGURE=	yes
 
 MAN1=	lm-solve.1
+MAN3=	Games::LMSolve.3 Games::LMSolve::Base.3 Games::LMSolve::Input.3
 
 .include <bsd.port.mk>

@@ -1,18 +1,22 @@
 bin/lm-solve
-%%SITE_PERL%%/Shlomif/LMSolver/Alice.pm
-%%SITE_PERL%%/Shlomif/LMSolver/Base.pm
-%%SITE_PERL%%/Shlomif/LMSolver/Input.pm
-%%SITE_PERL%%/Shlomif/LMSolver/Minotaur.pm
-%%SITE_PERL%%/Shlomif/LMSolver/Numbers.pm
-%%SITE_PERL%%/Shlomif/LMSolver/Plank/Base.pm
-%%SITE_PERL%%/Shlomif/LMSolver/Tilt/RedBlue.pm
-%%SITE_PERL%%/Shlomif/LMSolver/Tilt/Single.pm
-%%SITE_PERL%%/Shlomif/LMSolver/Tilt/Multi.pm
-%%SITE_PERL%%/Shlomif/LMSolver/Tilt/Base.pm
-@dirrm %%SITE_PERL%%/Shlomif/LMSolver/Plank
-@dirrm %%SITE_PERL%%/Shlomif/LMSolver/Tilt
-@dirrm %%SITE_PERL%%/Shlomif/LMSolver
-@dirrm %%SITE_PERL%%/Shlomif
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Shlomif/LMSolver/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Shlomif/LMSolver
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Shlomif
+%%SITE_PERL%%/Games/LMSolve/Alice.pm
+%%SITE_PERL%%/Games/LMSolve/Base.pm
+%%SITE_PERL%%/Games/LMSolve/Input.pm
+%%SITE_PERL%%/Games/LMSolve/Minotaur.pm
+%%SITE_PERL%%/Games/LMSolve/Numbers.pm
+%%SITE_PERL%%/Games/LMSolve/Plank/Base.pm
+%%SITE_PERL%%/Games/LMSolve/Plank/Hex.pm
+%%SITE_PERL%%/Games/LMSolve/Registry.pm
+%%SITE_PERL%%/Games/LMSolve/Tilt/Base.pm
+%%SITE_PERL%%/Games/LMSolve/Tilt/Multi.pm
+%%SITE_PERL%%/Games/LMSolve/Tilt/RedBlue.pm
+%%SITE_PERL%%/Games/LMSolve/Tilt/Single.pm
+%%SITE_PERL%%/Games/LMSolve.pm
+%%SITE_PERL%%/Games/get-version.pl
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Games/LMSolve/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Games/LMSolve
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Games
+@dirrm %%SITE_PERL%%/Games/LMSolve/Tilt
+@dirrm %%SITE_PERL%%/Games/LMSolve/Plank
+@dirrm %%SITE_PERL%%/Games/LMSolve
+@unexec rmdir %D/%%SITE_PERL%%/Games 2>/dev/null || true
