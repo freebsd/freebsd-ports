@@ -420,6 +420,7 @@ audio_muse	ports/audio/muse
 audit		ports/security/audit
 august		ports/www/august
 aumix		ports/audio/aumix
+aunit		ports/devel/aunit
 aureal-kmod	ports/audio/aureal-kmod
 auth_ldap	ports/www/auth_ldap
 authforce	ports/security/authforce
