@@ -1,0 +1,7 @@
+bin/podviewer
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Gtk2/PodViewer/.packlist
+%%SITE_PERL%%/Gtk2/PodViewer.pm
+%%SITE_PERL%%/Gtk2/PodViewer/Parser.pm
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Gtk2/PodViewer
+@dirrm %%SITE_PERL%%/Gtk2/PodViewer
+@unexec rmdir %D/%%SITE_PERL%%/Gtk2 2> /dev/null || true
