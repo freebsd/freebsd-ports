@@ -1,0 +1,10 @@
+
+dvi file previewer for X.
+
+    1. require METAFONT
+    2. require kpathsearch libraries version 3.0 (search library)
+    3. built-in EPS preview(need to any ghostscript)
+    4. print out from this program(use lpr).
+
+- Kentarou Inagaki
+JBD01226@niftyserve.ne.jp
