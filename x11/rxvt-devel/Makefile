@@ -20,7 +20,7 @@ PATCH_SITES=	ftp://ftp.rxvt.org/pub/rxvt/
 PATCHFILES=	rxvt-2.7.3.patch1.gz
 PATCH_DIST_STRIP+=      -p1
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	lioux@linf.unb.br
 
 LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
 
