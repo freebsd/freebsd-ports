@@ -1,0 +1,13 @@
+include/FamppEvents.hh
+include/FamppExceptions.hh
+include/fam.hh
+include/famStatic.hh
+include/handle.hh
+include/private/FamppEventModel.hh
+include/private/FamppModel.hh
+share/fampp/examples/gtk-main.cpp
+share/fampp/examples/simple-main.cpp
+share/fampp/examples/singleton-main.cpp
+@dirrm include/private
+@dirrm share/fampp/examples
+@dirrm share/fampp

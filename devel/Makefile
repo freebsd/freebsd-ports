@@ -92,6 +92,7 @@
     SUBDIR += entity
     SUBDIR += f77flow
     SUBDIR += fam
+    SUBDIR += fampp
     SUBDIR += fastcrc
     SUBDIR += ffcall
     SUBDIR += fhist
