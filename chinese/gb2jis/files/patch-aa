@@ -1,0 +1,12 @@
+*** Makefile.orig	Sat Sep 16 14:28:25 2000
+--- Makefile	Sat Sep 16 14:28:48 2000
+***************
+*** 24,29 ****
+--- 24,30 ----
+  install: gb2jis gb2jis.1
+  	cp gb2jis /usr/local/bin/gb2jis
+  	cp gb2jis.1 /usr/local/man/man1/gb2jis.1
++ 	cp gb2jis.el /usr/local/share/emacs/site-lisp/gb2jis.el
+  #	nroff -man gb2jis.1 > /usr/local/catman/C/u_man/cat1/gb2jis.1
+  
+  clean:
