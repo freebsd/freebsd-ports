@@ -1,0 +1,27 @@
+# New ports collection makefile for:	pyx12
+# Date created:		29 Jan 2004
+# Whom:			john@zoner.org
+#
+# $FreeBSD$
+#
+
+PORTNAME=	pyx12
+PORTVERSION=	1.0.1.b3
+CATEGORIES=	textproc python
+MASTER_SITES=	http://osdn.dl.sourceforge.net/sourceforge/pyx12/
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	pyx12-${PORTVERSION:S/.b/b/}
+
+MAINTAINER=	john@zoner.org
+COMMENT=	Validate HIPAA X12 documents
+
+BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/libxml2.py:${PORTSDIR}/textproc/libxml2
+
+USE_PYTHON=	yes
+USE_PYDISTUTILS=	yes
+USE_PYTHON_PREFIX=	yes
+
+post-install:
+	${WRKSRC}/bin/x12_build_pkl.py ${PREFIX}/share/pyx12/map/
+
+.include <bsd.port.mk>
