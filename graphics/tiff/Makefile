@@ -5,7 +5,7 @@
 #			Mikhail Teterin <mi@aldan.ziplink.net>
 #			Jun-ichiro itojun Itoh <itojun@itojun.org>
 #
-# $Id: Makefile,v 1.10 1998/09/18 22:04:16 smace Exp $
+# $Id: Makefile,v 1.11 1998/11/25 05:06:25 jseger Exp $
 #
 
 DISTNAME=	tiff-v3.4
@@ -61,12 +61,17 @@ MAN3=	TIFFCheckTile.3t TIFFClose.3t TIFFComputeStrip.3t TIFFComputeTile.3t \
 
 DOCDIR=	${PREFIX}/share/doc/tiff
 
+.include <bsd.port.pre.mk>
+
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCDIR}/images
 	${INSTALL_DATA} ${WRKSRC}/html/*.html ${DOCDIR}
 	${INSTALL_DATA} ${WRKSRC}/html/images/* ${DOCDIR}/images
 .endif
+.if ${PORTOBJFORMAT} == "aout"
+	${LN} -sf libtiff.so.1.0 ${PREFIX}/lib/libtiff.so
+.endif
 	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
