@@ -1,8 +1,6 @@
-# $Id: Makefile,v 1.13 1995/05/14 03:29:18 asami Exp $
+# $Id: Makefile,v 1.14 1995/05/30 10:04:07 asami Exp $
 #
 # RESTRICTED: rzsz
-#
-# BROKEN: flexfax
 #
 
 SUBDIR= ecu hylafax kermit mgetty+sendfax seyon
