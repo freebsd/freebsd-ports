@@ -22,7 +22,6 @@
     SUBDIR += ish
     SUBDIR += konwert
     SUBDIR += ktextdecode
-    SUBDIR += ktnef
     SUBDIR += libiconv
     SUBDIR += libutf-8
     SUBDIR += mimelib
