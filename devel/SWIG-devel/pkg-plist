@@ -5,6 +5,9 @@ lib/libswigpl.so
 lib/libswigpy.a
 lib/libswigpy.la
 lib/libswigpy.so
+lib/libswigrb.a
+lib/libswigrb.la
+lib/libswigrb.so
 lib/libswigtcl8.a
 lib/libswigtcl8.la
 lib/libswigtcl8.so
