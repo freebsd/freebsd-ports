@@ -10718,6 +10718,7 @@ teamspeak_server	ports/audio/teamspeak_server
 teapop		ports/mail/teapop
 teapop-devel	ports/mail/teapop-devel
 teapot		ports/deskutils/teapot
+tecnoballz	ports/games/tecnoballz
 ted		ports/editors/ted
 teddy		ports/graphics/teddy
 teg		ports/games/teg
