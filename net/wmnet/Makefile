@@ -7,10 +7,11 @@
 
 PORTNAME=	wmnet
 PORTVERSION=	1.2
+PORTREVISION=	1
 CATEGORIES=	net windowmaker
 MASTER_SITES=	ftp://ftp.enteract.com/users/rneswold/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bogorodskiy@inbox.ru
 COMMENT=	A network bandwidth monitor intended for the WindowMaker dock
 
 USE_XPM=	yes
