@@ -8,7 +8,7 @@
 PORTNAME=	jbigkit
 PORTVERSION=	1.2
 CATEGORIES=	graphics
-MASTER_SITES=	ftp://ftp.informatik.uni-erlangen.de/pub/doc/ISO/JBIG/
+MASTER_SITES=	http://www.cl.cam.ac.uk/~mgk25/download/
 
 MAINTAINER=	mi@aldan.algebra.com
 
