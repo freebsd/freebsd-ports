@@ -40,7 +40,8 @@ CONFIGURE_ARGS+=	--enable-multiharmonic
 NOPORTDOCS=	yes
 . else
 ALL_TARGET=	all doc
-BUILD_DEPENDS+=	texi2pdf:${PORTSDIR}/print/teTeX-base
+BUILD_DEPENDS+=	texi2pdf:${PORTSDIR}/print/teTeX-base	\
+		dvips:${PORTSDIR}/print/dvipsk-tetex
 USE_PERL5_BUILD=	yes
 . endif
 .endif
