@@ -1,0 +1,7 @@
+The "Deep Forest" is a simple compress utilty.
+
+Note that both converters/deepforest and japanese/deepforest are mutually
+exclusive and SHOULD NOT BE INSTALLED SIMULTANEOUSLY!
+
+-KIRIYAMA Kazuhiko
+<kiri@pis.toba-cmt.ac.jp>

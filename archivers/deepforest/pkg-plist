@@ -1,0 +1,16 @@
+JDE/DeepForest/DeepForest.app
+JDE/DeepForest/docs/COPYING
+JDE/DeepForest/docs/DeepForest.xpm
+JDE/DeepForest/docs/English/INSTALL.tk.en
+JDE/DeepForest/docs/English/README.en
+JDE/DeepForest/docs/Japanese/INSTALL.tk.ja
+JDE/DeepForest/docs/Japanese/INSTALL.tk.sjis
+JDE/DeepForest/docs/Japanese/README.ja
+JDE/DeepForest/docs/Japanese/README.sjis
+JDE/DeepForest/install.sh
+bin/DeepForest.app
+%%PIXMAP_PATH%%/DeepForest.xpm
+@dirrm JDE/DeepForest/docs/English
+@dirrm JDE/DeepForest/docs/Japanese
+@dirrm JDE/DeepForest/docs
+@dirrm JDE/DeepForest
