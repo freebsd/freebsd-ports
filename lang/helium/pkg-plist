@@ -16,6 +16,8 @@ helium/lib/Maybe.lvm
 helium/lib/Prelude.hs
 helium/lib/Prelude.lvm
 helium/lib/PreludePrim.lvm
+%%HINT%%share/java/helium/Hint.jar
+%%HINT%%@dirrm share/java/helium
 @dirrm helium/demo
 @dirrm helium/lib
 @dirrm helium
