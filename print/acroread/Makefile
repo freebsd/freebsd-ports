@@ -32,8 +32,10 @@ NO_FILTER_SHLIBS=	yes
 
 .if ${ARCH} == "i386"
 WRKSRC=		${WRKDIR}/ILINXR.install
+PLIST_SUB=	"ARCHDIR=intellinux"
 .elif ${ARCH} == "alpha"
 WRKSRC=		${WRKDIR}/AOSFR.install
+PLIST_SUB=	"ARCHDIR=alphaosf"
 .endif
 
 pre-configure:
