@@ -8,14 +8,15 @@
 PORTNAME=	tkstep
 PORTVERSION=	8.0.5
 CATEGORIES=	japanese tk80
-MASTER_SITES=	ftp://ftp.scriptics.com/pub/tcl/tcl8_0/
+MASTER_SITES=	${MASTER_SITE_TCLTK}
+MASTER_SITE_SUBDIR=	tcl8_0
 DISTNAME=	tk${PORTVERSION}
 
 PATCH_SITES=	ftp://ftp.sra.co.jp/pub/lang/tcl/jp/ \
 		http://www.aaa-int.or.jp/~jfactory/Factory/TkStep/dist/
 PATCHFILES=	tk${PORTVERSION}jp1.6.patch.gz 2Step-${PORTVERSION}pl1-patch.gz
 
-MAINTAINER=	kiri@pis.toba-cmt.ac.jp
+MAINTAINER=	kiri@FreeBSD.org
 COMMENT=	The Tk toolkit with a NeXTSTEP look and more
 
 LIB_DEPENDS=	tcl80jp.1:${PORTSDIR}/japanese/tcl80
