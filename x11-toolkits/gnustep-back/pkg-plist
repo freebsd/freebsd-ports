@@ -8,19 +8,14 @@ System/Headers/gnustep/xlib/XGContext.h
 System/Headers/gnustep/xlib/XGGState.h
 System/Headers/gnustep/xlib/XGGeometry.h
 System/Headers/gnustep/xlib/XGPrivate.h
-System/Library/Bundles/libgnustep-back.bundle/Contents/Info.plist
 System/Library/Bundles/libgnustep-back.bundle/Resources/Info-gnustep.plist
-System/Library/Bundles/libgnustep-back.bundle/Resources/Info.plist
 System/Library/Bundles/libgnustep-back.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/libgnustep-back
 System/Tools/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/font_cacher
 System/Tools/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/gpbs
-@exec ln -sf ../Resources %D/System/Library/Bundles/libgnustep-back.bundle/Contents/Resources
-@unexec rm -f %D/System/Library/Bundles/libgnustep-back.bundle/Contents/Resources
 @dirrm System/Library/Bundles/libgnustep-back.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
 @dirrm System/Library/Bundles/libgnustep-back.bundle/%%GNU_ARCH%%/%%OPSYS%%
 @dirrm System/Library/Bundles/libgnustep-back.bundle/%%GNU_ARCH%%
 @dirrm System/Library/Bundles/libgnustep-back.bundle/Resources
-@dirrm System/Library/Bundles/libgnustep-back.bundle/Contents
 @dirrm System/Library/Bundles/libgnustep-back.bundle
 @dirrm System/Headers/gnustep/gsc
 @dirrm System/Headers/gnustep/x11
