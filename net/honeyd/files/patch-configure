@@ -1,0 +1,17 @@
+--- configure	Wed Apr 17 17:43:14 2002
++++ /home/dom/configure	Sat May  4 15:05:43 2002
+@@ -2432,11 +2432,11 @@
+   *)
+      echo "$as_me:2433: result: $withval" >&5
+ echo "${ECHO_T}$withval" >&6
+-     if test -f $withval/event.h -a -f $withval/libevent.a; then
++     if test -f $withval/include/event.h -a -f $withval/lib/libevent.a; then
+         owd=`pwd`
+         if cd $withval; then withval=`pwd`; cd $owd; fi
+-        EVENTINC="-I$withval"
+-        EVENTLIB="-L$withval -levent"
++        EVENTINC="-I$withval/include"
++        EVENTLIB="-L$withval/lib -levent"
+      else
+         { { echo "$as_me:2441: error: event.h or libevent.a not found in $withval" >&5
+ echo "$as_me: error: event.h or libevent.a not found in $withval" >&2;}

@@ -170,6 +170,7 @@
     SUBDIR += hagelslag
     SUBDIR += hesiod
     SUBDIR += hlmaster
+    SUBDIR += honeyd
     SUBDIR += host
     SUBDIR += http_ping
     SUBDIR += hx
