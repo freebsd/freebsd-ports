@@ -1,0 +1,30 @@
+bin/semCor17Freq.pl
+bin/brownFreq.pl
+bin/rawtextFreq.pl
+bin/BNCFreq.pl
+bin/semTagFreq.pl
+bin/similarity.pl
+bin/wordVectors.pl
+bin/treebankFreq.pl
+bin/compounds.pl
+%%SITE_PERL%%/dbInterface.pm
+%%SITE_PERL%%/get_wn_info.pm
+%%SITE_PERL%%/stem.pm
+%%SITE_PERL%%/string_compare.pm
+%%SITE_PERL%%/WordNet/Similarity.pm
+%%SITE_PERL%%/WordNet/infocontent.dat
+%%SITE_PERL%%/WordNet/relation.dat
+%%SITE_PERL%%/WordNet/Similarity/edge.pm
+%%SITE_PERL%%/WordNet/Similarity/hso.pm
+%%SITE_PERL%%/WordNet/Similarity/random.pm
+%%SITE_PERL%%/WordNet/Similarity/lesk.pm
+%%SITE_PERL%%/WordNet/Similarity/lin.pm
+%%SITE_PERL%%/WordNet/Similarity/jcn.pm
+%%SITE_PERL%%/WordNet/Similarity/lch.pm
+%%SITE_PERL%%/WordNet/Similarity/res.pm
+%%SITE_PERL%%/WordNet/Similarity/vector.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/WordNet/Similarity/.packlist
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/WordNet/Similarity 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/WordNet 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/WordNet/Similarity 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/WordNet 2>/dev/null || true
