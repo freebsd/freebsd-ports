@@ -25,7 +25,7 @@
 
 PORTNAME=	vlc
 PORTVERSION=	0.7.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia
 MASTER_SITES=	http://download.videolan.org/pub/videolan/vlc/${PORTVERSION}/
 
@@ -248,7 +248,8 @@ pre-everything::
 	@${ECHO_MSG} "For example, make WITH_AUTODETECT=yes"
 
 post-patch:
-	@${REINPLACE_CMD} -e 's/-lc_r/${PTHREAD_LIBS}/' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's/-lpthread/-lpthread-broken/' \
+		-e 's/-lc_r/${PTHREAD_LIBS}/' ${WRKSRC}/configure
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/vlc.1 ${MANPREFIX}/man/man1/
