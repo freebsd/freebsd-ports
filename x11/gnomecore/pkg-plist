@@ -103,7 +103,7 @@ share/gnome/apps/Graphics/GIMP.desktop
 share/gnome/apps/Graphics/xbmbrowser.desktop
 share/gnome/apps/Graphics/xv.desktop
 share/gnome/apps/Internet/.directory
-share/gnome/apps/Internet/Netscape.desktop
+share/gnome/apps/Internet/Browser.desktop
 share/gnome/apps/Internet/TkSETI.desktop
 share/gnome/apps/Internet/Tkrat.desktop
 share/gnome/apps/Internet/lynx.desktop
@@ -861,6 +861,7 @@ share/gnome/help/tasklist_applet/eu/topic.dat
 share/gnome/hints/panel.hints
 share/gnome/idl/Terminal.idl
 share/gnome/idl/help-browser.idl
+share/gnome/mc/templates/Browser.desktop
 share/gnome/mc/templates/Emacs.desktop
 share/gnome/mc/templates/Eterm.desktop
 share/gnome/mc/templates/FileRunner.desktop
@@ -869,7 +870,6 @@ share/gnome/mc/templates/GXanim.desktop
 share/gnome/mc/templates/Gmc.desktop
 share/gnome/mc/templates/Imlib_config.desktop
 share/gnome/mc/templates/Kterm.desktop
-share/gnome/mc/templates/Netscape.desktop
 share/gnome/mc/templates/TkSETI.desktop
 share/gnome/mc/templates/Tkrat.desktop
 share/gnome/mc/templates/UNIX-regular.desktop
