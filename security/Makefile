@@ -208,6 +208,7 @@
     SUBDIR += srm
     SUBDIR += srp
     SUBDIR += ssh
+    SUBDIR += ssh-gui
     SUBDIR += ssh-multiadd
     SUBDIR += ssh2
     SUBDIR += sslproxy
