@@ -3,13 +3,13 @@
 # Date created:        30 August 1997
 # Whom:                Brion Moss <brion@queeg.com>
 #
-# $Id: Makefile,v 1.1.1.1 1997/11/28 20:44:17 fenner Exp $
+# $Id: Makefile,v 1.2 1997/11/29 00:58:08 asami Exp $
 #
 
 DISTNAME=	xtide-1.6.2
 CATEGORIES=	astro
 MASTER_SITES=	http://www.universe.digex.net/~dave/files/
-DISTFILES=	xtide-1.6.2.tgz harmonics.gz
+DISTFILES=	xtide-1.6.2.tar.gz harmonics.gz
 
 MAINTAINER=	brion@queeg.com
 
