@@ -1,0 +1,29 @@
+--- Makefile.orig	Sat Jan  5 07:07:48 2002
++++ Makefile	Sat Jan  5 07:08:24 2002
+@@ -1,7 +1,6 @@
+ #
+ # Auther: HYD, 1995 summer vacation wrote, 1997 modified
+ #
+-CC	= gcc
+ #
+ ###############################################
+ #
+@@ -21,8 +20,8 @@
+ ###############################################
+ #
+ #FreeBSD
+-#OS 	= -DBSD
+-# LIBS	= -DLOG -DSYSVIPC
++OS 	= -DBSD
++LIBS	= -DLOG -DSYSVIPC
+ #
+ ###############################################
+ #
+@@ -37,7 +36,6 @@
+ #
+ ###############################################
+ 
+-CFLAGS	= -O2 -s -Wall
+ PROGRAM	= bbsnet twbbs2data
+ 
+ # For Private

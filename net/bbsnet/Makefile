@@ -6,13 +6,20 @@
 #
 
 PORTNAME=	bbsnet
-PORTVERSION=	2.7
+PORTVERSION=	2.8
 CATEGORIES=	net
 MASTER_SITES=	http://linux.ee.tku.edu.tw/~kids/resource/ \
-		http://freebsd.sinica.edu.tw/~statue/
+		ftp://freebsd.sinica.edu.tw/pub/statue/bbsnet/
 
 MAINTAINER=	statue@freebsd.sinica.edu.tw
 
 WRKSRC=		${WRKDIR}/bbsnet
+
+do-install:
+	@${INSTALL_PROGRAM} ${WRKSRC}/bbsnet ${PREFIX}/bin
+	@${MKDIR} ${PREFIX}/etc/${PORTNAME}
+.for data in bbsdata Help Welcome
+	@${INSTALL_DATA} ${WRKSRC}/${data} ${PREFIX}/etc/${PORTNAME}
+.endfor
 
 .include <bsd.port.mk>
