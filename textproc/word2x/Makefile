@@ -8,7 +8,8 @@
 PORTNAME=	word2x
 PORTVERSION=	0.005
 CATEGORIES=	textproc
-MASTER_SITES=	http://word2x.alcom.co.uk/download/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	word2x
 
 MAINTAINER=	billf@FreeBSD.org
 COMMENT=	Converter from MS Word to text, HTML or LaTeX
