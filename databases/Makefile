@@ -4,6 +4,7 @@
     SUBDIR += db
     SUBDIR += dbview
     SUBDIR += dbf2mysql
+    SUBDIR += freetds
     SUBDIR += gadfly
     SUBDIR += gdbm
     SUBDIR += gmysql
