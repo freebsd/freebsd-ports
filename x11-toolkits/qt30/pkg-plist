@@ -233,7 +233,6 @@ include/qt2/qtoolbar.h
 include/qt2/qtoolbutton.h
 include/qt2/qtooltip.h
 include/qt2/qtranslator.h
-include/qt2/qtranslatordialog.h
 include/qt2/qtstream.h
 include/qt2/qurl.h
 include/qt2/qurlinfo.h
@@ -274,6 +273,7 @@ share/doc/qt2/LICENSE.QPL
 share/doc/qt2/PORTING
 share/doc/qt2/README
 share/doc/qt2/README.QT
+share/doc/qt2/changes-2.1.0
 share/doc/qt2/html/aboutqt.html
 share/doc/qt2/html/abstractwidgets.html
 share/doc/qt2/html/accelerators.html
@@ -557,6 +557,9 @@ share/doc/qt2/html/qdropsite.html
 share/doc/qt2/html/qeucjpcodec-h.html
 share/doc/qt2/html/qeucjpcodec-members.html
 share/doc/qt2/html/qeucjpcodec.html
+share/doc/qt2/html/qeuckrcodec-h.html
+share/doc/qt2/html/qeuckrcodec-members.html
+share/doc/qt2/html/qeuckrcodec.html
 share/doc/qt2/html/qevent-h.html
 share/doc/qt2/html/qevent-members.html
 share/doc/qt2/html/qevent.html
@@ -1188,6 +1191,9 @@ share/doc/qt2/html/qwizard.html
 share/doc/qt2/html/qwmatrix-h.html
 share/doc/qt2/html/qwmatrix-members.html
 share/doc/qt2/html/qwmatrix.html
+share/doc/qt2/html/qworkspace-h.html
+share/doc/qt2/html/qworkspace-members.html
+share/doc/qt2/html/qworkspace.html
 share/doc/qt2/html/qxt-h.html
 share/doc/qt2/html/qxtapplication-members.html
 share/doc/qt2/html/qxtapplication.html
@@ -1209,7 +1215,6 @@ share/doc/qt2/html/shclass.html
 share/doc/qt2/html/showimg-main-cpp.html
 share/doc/qt2/html/signalsandslots.html
 share/doc/qt2/html/simple-application.html
-share/doc/qt2/html/sound.html
 share/doc/qt2/html/splitter-splitter-cpp.html
 share/doc/qt2/html/splitter-views-m.png
 share/doc/qt2/html/splitter-views-w.png
