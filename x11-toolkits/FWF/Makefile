@@ -3,11 +3,11 @@
 # Date created:		14 July 1995
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.10 1997/11/22 21:42:31 jseger Exp $
+# $Id: Makefile,v 1.11 1998/04/26 12:50:24 jseger Exp $
 #
 
 DISTNAME=	fwf-4.0
-CATEGORIES=	x11
+CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_SUNSITE}	\
 		ftp://ftp.let.rug.nl/pub/FWF/
 MASTER_SITE_SUBDIR=libs/X/fwf

@@ -3,11 +3,11 @@
 # Date created:		30 Jul 1996
 # Whom:			searle@longacre.demon.co.uk
 #
-# $Id: Makefile,v 1.19 1998/07/21 14:05:32 asami Exp $
+# $Id: Makefile,v 1.20 1998/08/05 09:31:46 asami Exp $
 #
 
 DISTNAME=	qt-${MAJ}.${MIN}
-CATEGORIES=	x11
+CATEGORIES=	x11-toolkits
 MASTER_SITES=	ftp://ftp.troll.no/qt/source/
 
 MAINTAINER=	andreas@FreeBSD.ORG

@@ -1,17 +1,13 @@
-# $Id: Makefile,v 1.224 1998/08/07 22:33:01 asami Exp $
+# $Id: Makefile,v 1.225 1998/08/07 22:42:53 asami Exp $
 #
 
-    SUBDIR += FWF
     SUBDIR += XFree86
     SUBDIR += XFree86-contrib
-    SUBDIR += Xaw3d
     SUBDIR += afterstep
     SUBDIR += afterstep-devel
     SUBDIR += amiwm
-    SUBDIR += auis
     SUBDIR += blackbox
     SUBDIR += blast
-    SUBDIR += blt
     SUBDIR += bricons
     SUBDIR += camltk41
     SUBDIR += ctwm
@@ -27,20 +23,17 @@
     SUBDIR += gtk
     SUBDIR += gwm
     SUBDIR += icewm
-    SUBDIR += iv
     SUBDIR += kb2mb2
     SUBDIR += kde
     SUBDIR += kdebase
     SUBDIR += kdelibs
     SUBDIR += kworldwatch
-    SUBDIR += lesstif
     SUBDIR += libdnd
     SUBDIR += libhelp
     SUBDIR += libsx
     SUBDIR += lupe
     SUBDIR += lwm
     SUBDIR += mlvwm
-    SUBDIR += neXtaw
     SUBDIR += offix-clipboard
     SUBDIR += offix-execute
     SUBDIR += olvwm
@@ -48,27 +41,14 @@
     SUBDIR += p5-Tcl-Tk
     SUBDIR += p5-Tk
     SUBDIR += piewm
-    SUBDIR += pmw
     SUBDIR += props
-    SUBDIR += pygtk
     SUBDIR += pythonqt
-    SUBDIR += qt
-    SUBDIR += qt133
-    SUBDIR += qt140
     SUBDIR += qvwm
     SUBDIR += rxvt
-    SUBDIR += slingshot
     SUBDIR += sxpc
-    SUBDIR += tix
-    SUBDIR += tk41
-    SUBDIR += tk42
-    SUBDIR += tk80
-    SUBDIR += tk81
     SUBDIR += tkgoodstuff
-    SUBDIR += tkstep80
     SUBDIR += tvtwm
     SUBDIR += tycoon
-    SUBDIR += v
     SUBDIR += windowmaker
     SUBDIR += wm2
     SUBDIR += wmx
@@ -76,7 +56,6 @@
     SUBDIR += xaniroc
     SUBDIR += xantfarm
     SUBDIR += xautolock
-    SUBDIR += xbae
     SUBDIR += xcb
     SUBDIR += xco
     SUBDIR += xcoloredit
@@ -85,7 +64,6 @@
     SUBDIR += xfce
     SUBDIR += xfedor
     SUBDIR += xfishtank
-    SUBDIR += xforms
     SUBDIR += xgrab
     SUBDIR += xkeycaps
     SUBDIR += xloadimage
@@ -101,9 +79,6 @@
     SUBDIR += xtattr
     SUBDIR += xtestpicture
     SUBDIR += xtoolwait
-    SUBDIR += xview-clients
-    SUBDIR += xview-config
-    SUBDIR += xview-lib
     SUBDIR += xwit
     SUBDIR += xzoom
 

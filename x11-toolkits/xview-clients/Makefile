@@ -3,16 +3,16 @@
 # Date created:         22 November 1994
 # Whom:                 ljo
 #
-# $Id: Makefile,v 1.11 1996/11/16 10:49:52 asami Exp $
+# $Id: Makefile,v 1.12 1998/08/05 09:31:52 asami Exp $
 #
 
 DISTNAME=	xview-clients
 PKGNAME=	xview-clients-3.2.1
-CATEGORIES=	x11
+CATEGORIES=	x11-toolkits
 
-DEPENDS=        ${PORTSDIR}/x11/xview-lib
+DEPENDS=        ${PORTSDIR}/x11-toolkits/xview-lib
 
-WRKSRC=      	${PORTSDIR}/x11/xview-config/work/xview3.2p1-X11R6/clients
+WRKSRC=      	${PORTSDIR}/x11-toolkits/xview-config/work/xview3.2p1-X11R6/clients
 NO_WRKDIR=	yes
 USE_X_PREFIX=	yes
 

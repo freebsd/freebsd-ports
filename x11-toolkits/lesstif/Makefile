@@ -3,11 +3,11 @@
 # Date created:		December 10, 1996
 # Whom:			1wardd@airmail.net
 #
-# $Id: Makefile,v 1.20 1998/07/01 11:35:32 tg Exp $
+# $Id: Makefile,v 1.21 1998/08/05 09:31:43 asami Exp $
 #
 
 DISTNAME=	lesstif-0.85
-CATEGORIES=	x11
+CATEGORIES=	x11-toolkits
 MASTER_SITES=	ftp://ftp.lesstif.org/pub/hungry/lesstif/srcdist/  \
 		ftp://ftp.hungry.com/pub/hungry/lesstif/srcdist/
 

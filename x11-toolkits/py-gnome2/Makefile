@@ -3,12 +3,12 @@
 # Date created:		30 May 1998
 # Whom:			Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.6 1998/08/07 07:48:15 tg Exp $
+# $Id: Makefile,v 1.7 1998/08/07 19:20:19 asami Exp $
 #
 
 DISTNAME=	pygtk-0.4.5
 PKGNAME=	py-gtk-0.4.5
-CATEGORIES=	x11 python
+CATEGORIES=	x11-toolkits python
 MASTER_SITES=	ftp://ftp.daa.com.au/pub/james/python/ \
 		ftp://ftp.gimp.org/pub/gtk/python/ \
 		ftp://infosoc.uni-koeln.de/pub/ftp.gimp.org/pub/gtk/python/ \

@@ -3,12 +3,12 @@
 # Date created:		28 March 1997
 # Whom:			gena
 #
-# $Id: Makefile,v 1.16 1998/05/12 06:34:18 tg Exp $
+# $Id: Makefile,v 1.17 1998/08/05 09:31:50 asami Exp $
 #
 
 DISTNAME=	bxform-088
 PKGNAME=	xforms-0.88.1
-CATEGORIES=	graphics x11
+CATEGORIES=	graphics x11-toolkits
 MASTER_SITES=	ftp://bragg.phys.uwm.edu/pub/xforms/freeBSD/ \
 		ftp://ftp.via.ecp.fr/pub2/xforms/freeBSD/ \
 		ftp://ftp.st.ryukoku.ac.jp/pub/X11/xforms/freeBSD/
