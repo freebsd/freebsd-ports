@@ -6,15 +6,19 @@
 #
 
 PORTNAME=	ddclient
-PORTVERSION=	3.6.3
+PORTVERSION=	3.6.4
 CATEGORIES=	dns
-MASTER_SITES=	http://members.rogers.com/ddclient/pub/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	ddclient
+DISTNAME=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	radek@raadradd.com
 COMMENT=	Update dynamic DNS entries
 
 USE_PERL5=	yes
 NO_BUILD=	yes
+
+USE_RC_SUBR=	yes
 
 do-install:
 	@${PERL} -pi -e 's|%%PREFIX%%|${PREFIX}|g; s|%%PERL%%|${PERL}|g' ${WRKSRC}/ddclient
@@ -27,8 +31,9 @@ do-install:
 	@${PERL} -pe 's|%%PREFIX%%|${PREFIX}|g' < ${WRKSRC}/$i > ${WRKDIR}/$i
 	@${INSTALL_DATA} ${WRKDIR}/$i ${PREFIX}/share/ddclient
 .endfor
-	@${PERL} -pe 's|%%PREFIX%%|${PREFIX}|g' < ${FILESDIR}/ddclient.sh.sample > ${WRKDIR}/ddclient.sh.sample
-	@${INSTALL_SCRIPT} ${WRKDIR}/ddclient.sh.sample ${PREFIX}/etc/rc.d
+	@${PERL} -pe 's|%%PREFIX%%|${PREFIX}|g; s|%%RC_SUBR%%|${RC_SUBR}|g' \
+		< ${FILESDIR}/ddclient.sh > ${WRKDIR}/ddclient.sh
+	@${INSTALL_SCRIPT} ${WRKDIR}/ddclient.sh ${PREFIX}/etc/rc.d/
 
 	@${PERL} -pe 's|/usr/local|${PREFIX}|g' < ${PKGMESSAGE}
 
