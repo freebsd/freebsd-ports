@@ -83,6 +83,10 @@ REMOVE_FILES=		/bin/df /bin/su /etc/exports /etc/group \
 			/etc/localtime /etc/motd /etc/passwd /etc/printcap \
 			/etc/services /etc/protocols
 
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not install (attempts to overwrite something in /proc)"
+.endif
+
 .if ${OSVERSION} <= 320001
 #
 # Hack to let the rpm installer run.  The actual kernel change occurred after
