@@ -12,7 +12,7 @@ CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	dannyboy
 
-MAINTAINER=	anttik@iki.fi
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	CD-player with text-based user interface
 
 MAN1=		cdplay.1
