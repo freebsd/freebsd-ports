@@ -32,9 +32,11 @@ CONFLICTS=	apache+ipv6-1.* apache+modssl-1.* apache+ssl-1.* apache-1.* apache_fp
 # patch files
 PATCH_SITES+=		${MASTER_SITE_LOCAL:S/$/:clement/}
 PATCH_SITE_SUBDIR=	clement/:clement
-PATCHFILES+=		httpd-2.0.48-buildconf.patch:clement \
-			httpd-2.0.48-ldap-fix.patch:clement
-PATCH_DIST_STRIP+=	-p1:apache-clem
+PATCHFILES+=		httpd-2.0.48-buildconf.patch:clement
+PATCH_DIST_STRIP+=	-p1:clement
+.if defined (WITH_LDAPFIX)
+PATCHFILES+=		httpd-2.0.48-ldap-fix.patch:clement
+.endif
 SCRIPTS_ENV+=		LIBTOOL=${LIBTOOL} LIBTOOLIZE=${LIBTOOLIZE} \
 			LIBTOOL_VERSION=${LIBTOOL_VERSION}
 
@@ -112,6 +114,7 @@ BROKEN=				"apr is installed and may conflict with apache one\
 .endif
 
 WITH_PTHREAD_LIBS?=	${PTHREAD_LIBS:S/-l//}
+WITH_PTHREAD_CFLAGS?=	${PTHREAD_CFLAGS}
 
 .include "${APACHEDIR}/Makefile.doc"
 .include "${APACHEDIR}/Makefile.modules"

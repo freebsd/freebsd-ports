@@ -13,7 +13,7 @@
 #
 
 .if defined(SLAVE_DESIGNED_FOR) && ${PORTVERSION} != ${SLAVE_DESIGNED_FOR}
-BROKEN=		"Sorry, ${SLAVENAME} and ${PORTNAME} versionsq are out of sync"
+BROKEN=		"Sorry, ${SLAVENAME} and ${PORTNAME} versions are out of sync"
 .endif
 
 # MPM section:
@@ -172,8 +172,9 @@ _APACHE_MODULES+=	${LDAP_MODULES}
 .if defined(WITH_THREADS)
 CONFIGURE_ARGS+=	--enable-threads
 CFLAGS+=		-DFREEBSD_THREAD_HACK
-.   if defined(WITH_EXPERIMENTAL_THREADS)
-CONFIGURE_ARGS+=	ac_cv_pthreads_lib=${WITH_PTHREAD_LIBS}
+.   if ${WITH_PTHREAD_LIBS} != "c_r" && ${OSVERSION} > 500023
+CONFIGURE_ENV+=		ac_cv_pthreads_lib=${WITH_PTHREAD_LIBS} \
+			ac_cv_pthreads_cflags=${WITH_PTHREAD_CFLAGS}
 .   endif
 .   if !defined(WITH_CUSTOM_THREADS)
 _APACHE_MODULES+=	${THREAD_MODULES}
