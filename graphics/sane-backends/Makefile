@@ -1,30 +1,40 @@
 # New ports collection makefile for:	sane
-# Version required:     0.74
-# Date created:         Sat Jul 19 16:23:10 MET DST 1997
-# Whom:                 gary@hotlava.com
-#			obrien@FreeBSD.org
+# Version required:		1.00
+# Date created:			Sat Jul 19 16:23:10 MET DST 1997
+# Whom:				gary@hotlava.com
+#				obrien@FreeBSD.org
 #
-# $Id: Makefile,v 1.10 1998/10/05 03:04:00 steve Exp $
+# $Id: Makefile,v 1.11 1998/10/05 03:04:39 steve Exp $
 #
 
-DISTNAME=       sane-0.74
+DISTNAME=       sane-1.00
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.mostang.com/pub/sane/ \
 		ftp://ftp.lahn.de/pub/platforms/linux/libs/
 
 MAINTAINER=	gary@hotlava.com
 
-BROKEN_ELF=	build
+LIB_DEPENDS=	gtk.1:${PORTSDIR}/x11-toolkits/gtk \
+		jpeg.9:${PORTSDIR}/graphics/jpeg
 
-LIB_DEPENDS=	gtk11.1:${PORTSDIR}/x11-toolkits/gtk11
+VERSION!=	sysctl -n kern.osreldate
 
-GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
+.if ${VERSION} < 300000
+CONFIGURE_ENV=	CPPFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
+		LIBS="-L${LOCALBASE}/lib"
+.else
+CONFIGURE_ENV=	CPPFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
+		LIBS="-L${LOCALBASE}/lib -lcam"
+.endif
 
 MAN1=		scanimage.1 \
 		xscanimage.1 \
 		saned.1
-MAN5=		sane-apple.5 \
+MAN5=		sane-abaton.5 \
+		sane-agfafocus.5 \
+		sane-apple.5 \
 		sane-dc25.5 \
 		sane-dll.5 \
 		sane-dmc.5 \
