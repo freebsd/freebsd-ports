@@ -14,7 +14,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	svmohr@red-mercury.de
 COMMENT=	A graphical frontend for scmxx
 
-RUN_DEPENDS=	${SITE_PERL}/mach/Gtk:${PORTSDIR}/x11-toolkits/p5-Gtk
+RUN_DEPENDS=	${SITE_PERL}/Image/Size.pm:${PORTSDIR}/graphics/p5-Image-Size \
+		${SITE_PERL}/mach/Gtk:${PORTSDIR}/x11-toolkits/p5-Gtk
 BUILD_DEPENDS=	${SITE_PERL}/Image/Size.pm:${PORTSDIR}/graphics/p5-Image-Size \
 		${SITE_PERL}/mach/Gtk:${PORTSDIR}/x11-toolkits/p5-Gtk \
 		scmxx:${PORTSDIR}/comms/scmxx \
