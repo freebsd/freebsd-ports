@@ -1,0 +1,16 @@
+cflowd is a flow analysis tool currently used for analyzing Cisco's
+NetFlow enabled switching method.
+
+The current release includes the collections, storage, and basic
+analysis modules for cflowd and for arts++ libraries.
+
+This analysis package permits data collection and analysis by ISPs
+and network engineers in support of capacity planning, trends analysis,
+and characterization of workloads in a network service provider environment.
+
+Other areas where cflowd may prove useful include usage tracking for Web
+hosting, accounting and billing, network planning and analysis, network
+monitoring, developing user profiles, data warehousing and mining,
+as well as security-related investigations.
+
+WWW:	http://www.caida.org/tools/measurement/cflowd/

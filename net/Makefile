@@ -25,6 +25,7 @@
     SUBDIR += brouted
     SUBDIR += cap
     SUBDIR += centericq
+    SUBDIR += cflowd
     SUBDIR += choparp
     SUBDIR += cidr
     SUBDIR += ciscoconf
