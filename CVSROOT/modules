@@ -6162,6 +6162,7 @@ psmisc		ports/sysutils/psmisc
 pspell		ports/textproc/pspell
 pspell-ispell	ports/textproc/pspell-ispell
 pspp		ports/math/pspp
+pstack		ports/sysutils/pstack
 pstat		src/usr.sbin/pstat
 pstoedit	ports/graphics/pstoedit
 pstoepsi	ports/graphics/pstoepsi
