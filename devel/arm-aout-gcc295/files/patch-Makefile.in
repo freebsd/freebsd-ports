@@ -1,0 +1,55 @@
+--- gcc/Makefile.in.orig	Fri Aug 13 02:46:55 1999
++++ gcc/Makefile.in	Fri Aug 25 20:43:36 2000
+@@ -167,7 +167,7 @@
+ # The GCC to use for compiling libgcc2.a, enquire, and libgcc1-test.
+ # Usually the one we just built.
+ # Don't use this as a dependency--use $(GCC_PASSES) or $(GCC_PARTS).
+-GCC_FOR_TARGET = ./xgcc -B$(build_tooldir)/bin/ -B./ -I$(build_tooldir)/include
++GCC_FOR_TARGET = ./xgcc -B./ -I./target/include
+ 
+ # This is used instead of ALL_CFLAGS when compiling with GCC_FOR_TARGET.
+ # It omits XCFLAGS, and specifies -B./.
+@@ -190,31 +190,10 @@
+ # objdir is set by configure.
+ objdir = @objdir@
+ 
+-AR_FOR_TARGET = ` \
+-  if [ -f $(objdir)/../binutils/ar ] ; then \
+-    echo $(objdir)/../binutils/ar ; \
+-  else \
+-    if [ "$(host_canonical)" = "$(target)" ] ; then \
+-      echo ar; \
+-    else \
+-       t='$(program_transform_name)'; echo ar | sed -e $$t ; \
+-    fi; \
+-  fi`
++AR_FOR_TARGET = $(prefix)/bin/arm-aout-ar
+ AR_FLAGS_FOR_TARGET = rc
+-RANLIB_FOR_TARGET = ` \
+-  if [ -f $(objdir)/../binutils/ranlib ] ; then \
+-    echo $(objdir)/../binutils/ranlib ; \
+-  else \
+-    if [ "$(host_canonical)" = "$(target)" ] ; then \
+-      echo ranlib; \
+-    else \
+-       t='$(program_transform_name)'; echo ranlib | sed -e $$t ; \
+-    fi; \
+-  fi`
+-RANLIB_TEST_FOR_TARGET = \
+-  [ -f $(RANLIB_FOR_TARGET) ] \
+-  || ( [ "$(host_canonical)" = "$(target)" ] \
+-       && [ -f /usr/bin/ranlib -o -f /bin/ranlib ] )
++RANLIB_FOR_TARGET = $(prefix)/bin/arm-aout-ranlib
++RANLIB_TEST_FOR_TARGET = [ -f $(RANLIB_FOR_TARGET) ]
+ 
+ # Dir to search for system headers.  Overridden by cross-make.
+ SYSTEM_HEADER_DIR = /usr/include
+@@ -2433,7 +2412,7 @@
+ # Install the driver last so that the window when things are
+ # broken is small.
+ install-normal: install-common $(INSTALL_HEADERS) $(INSTALL_LIBGCC) \
+-    $(INSTALL_CPP) install-man install-info intl.install lang.install-normal \
++    $(INSTALL_CPP) lang.install-normal \
+     install-driver
+ 
+ # Do nothing while making gcc with a cross-compiler. The person who
