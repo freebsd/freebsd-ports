@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	boehm-gc
-PORTVERSION=	6.2.a3
+PORTVERSION=	6.2.a4
 CATEGORIES=	devel
 MASTER_SITES=	http://www.hpl.hp.com/personal/Hans_Boehm/gc/gc_source/
 DISTNAME=	gc${PORTVERSION:S/.a/alpha/}
@@ -26,9 +26,6 @@ post-patch:
 	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/doc/gc.man
 
 post-install:
-	${INSTALL_DATA} ${WRKSRC}/include/gc.h ${PREFIX}/include
-	${INSTALL_DATA} ${WRKSRC}/include/gc_backptr.h ${PREFIX}/include
-	${INSTALL_DATA} ${WRKSRC}/include/gc_cpp.h ${PREFIX}/include
 	${INSTALL_MAN} ${WRKSRC}/doc/gc.man ${PREFIX}/man/man3/gc.3
 
 .include <bsd.port.mk>
