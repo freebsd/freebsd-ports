@@ -83,7 +83,6 @@
     SUBDIR += demoroniser
     SUBDIR += dhttpd
     SUBDIR += dillo
-    SUBDIR += drivel
     SUBDIR += drupal
     SUBDIR += dtse
     SUBDIR += dummyflash
