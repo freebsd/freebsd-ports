@@ -53,10 +53,6 @@ GCC_VER=	${PORTVERSION:C/\.0$//}
 SRCDIR=		${WRKDIR}/gcc-${VERSIONSTRING}
 WRKSRC=		${WRKDIR}/build
 TARGLIB=	${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${GCC_VER}
-GCJINC=		${PREFIX}/include/gcj
-GNUINC=		${PREFIX}/include/gnu
-JAVAINC=	${PREFIX}/include/java
-JAVAINC2=	${PREFIX}/include/javax
 PLIST_SUB=	GCC_VER=${GCC_VER} GNU_HOST=${CONFIGURE_TARGET}
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
@@ -181,30 +177,15 @@ post-install:
 	    ${FIND} ${TARGLIB:S/^${PREFIX}\///} -type d \
 	    	| sort -r | ${SED} -e 's/^/@dirrm /g' >>${WRKDIR}/PLIST.gcc-lib
 	(${ECHO_CMD} "@unexec rmdir %D/lib/gcc-lib/${CONFIGURE_TARGET} 2>&1 || true" ; ${ECHO_CMD} "@unexec rmdir %D/lib/gcc-lib 2>&1 || true") >> ${WRKDIR}/PLIST.gcc-lib
+	# Handle GCJ include files.
+	${RM} -f ${WRKDIR}/PLIST.gcj-inc
+.for inc in ${PREFIX}/include/gcj ${PREFIX}/include/gnu ${PREFIX}/include/java ${PREFIX}/include/javax
 	cd ${PREFIX} ;\
-	    ${FIND} ${GCJINC:S/^${PREFIX}\///} -type f -o -type l	\
-	    	>${WRKDIR}/PLIST.gcj-inc
-	cd ${PREFIX} ;\
-	    ${FIND} ${GNUINC:S/^${PREFIX}\///} -type f -o -type l	\
-	    	>>${WRKDIR}/PLIST.gcj-inc
-	cd ${PREFIX} ;\
-	    ${FIND} ${JAVAINC:S/^${PREFIX}\///} -type f -o -type l	\
-	    	>>${WRKDIR}/PLIST.gcj-inc
-	cd ${PREFIX} ;\
-	    ${FIND} ${JAVAINC2:S/^${PREFIX}\///} -type f -o -type l	\
-	    	>>${WRKDIR}/PLIST.gcj-inc
-	cd ${PREFIX} ;\
-	    ${FIND} ${GCJINC:S/^${PREFIX}\///} -type d \
+	    ${FIND} ${inc:S/^${PREFIX}\///} -type f -o -type l	\
+	    	>>${WRKDIR}/PLIST.gcj-inc ;\
+	    ${FIND} ${inc:S/^${PREFIX}\///} -type d \
 	    	| sort -r | ${SED} -e 's/^/@dirrm /g' >>${WRKDIR}/PLIST.gcj-inc
-	cd ${PREFIX} ;\
-	    ${FIND} ${GNUINC:S/^${PREFIX}\///} -type d \
-	    	| sort -r | ${SED} -e 's/^/@dirrm /g' >>${WRKDIR}/PLIST.gcj-inc
-	cd ${PREFIX} ;\
-	    ${FIND} ${JAVAINC:S/^${PREFIX}\///} -type d \
-	    	| sort -r | ${SED} -e 's/^/@dirrm /g' >>${WRKDIR}/PLIST.gcj-inc
-	cd ${PREFIX} ;\
-	    ${FIND} ${JAVAINC2:S/^${PREFIX}\///} -type d \
-	    	| sort -r | ${SED} -e 's/^/@dirrm /g' >>${WRKDIR}/PLIST.gcj-inc
+.endfor
 	${ECHO_CMD} "r ${TMPPLIST}"		> ${WRKDIR}/ex.script
 	${ECHO_CMD} "/Insert PLIST.gcc-lib"	>> ${WRKDIR}/ex.script
 	${ECHO_CMD} "d"				>> ${WRKDIR}/ex.script
