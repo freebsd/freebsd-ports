@@ -1,0 +1,10 @@
+#!/bin/sh
+cat <<EOF
+---------------------------------------------------------------------
+Notice: The gnokii software is currently configured to build for the
+3810/3110/8110 cellular phones.  If you want to compile it for the
+6110 (not yet implemented, but might be good for testers), edit the
+file work/gnokii-0.2.3/gnokii.c and change the #define for MODEL to
+reflect this.
+---------------------------------------------------------------------
+EOF
