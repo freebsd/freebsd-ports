@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.154 1998/07/12 23:49:40 steve Exp $
+# $Id: Makefile,v 1.155 1998/07/12 23:53:47 steve Exp $
 #
 
     SUBDIR += 3dc
@@ -104,6 +104,7 @@
     SUBDIR += xlines
     SUBDIR += xmahjongg
     SUBDIR += xmastermind
+    SUBDIR += xmball
     SUBDIR += xmemory
     SUBDIR += xmille
     SUBDIR += xmine
