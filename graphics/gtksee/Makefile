@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gtksee
-PORTVERSION=	0.5.2
+PORTVERSION=	0.5.3
 CATEGORIES=	graphics
 MASTER_SITES=	http://download.berlios.de/gtksee/
 
@@ -26,6 +26,8 @@ USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+
+MAN1=		gtksee.1
 
 post-patch:
 	@${REINPLACE_CMD} -e \
