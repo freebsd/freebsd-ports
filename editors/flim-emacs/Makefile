@@ -40,7 +40,7 @@ ALL_TARGET?=	elc
 
 .if defined(EMACS_PORT)
 PKGNAME=	flim-${EMACS_PORT}-${FLIM_VER}
-EMACS_CMD=	${PREFIX}/bin/${EMACS_NAME}-${EMACS_VER}
+EMACS_CMD?=	${PREFIX}/bin/${EMACS_NAME}-${EMACS_VER}
 BUILD_DEPENDS+=	${EMACS_CMD}:${PORTSDIR}/editors/${EMACS_PORT}
 .if defined(HAS_COMMON_PORT) && (${HAS_COMMON_PORT} == "YES")
 RUN_DEPENDS+=	${EMACS_CMD}:${PORTSDIR}/editors/${EMACS_PORT}-common
@@ -95,6 +95,10 @@ MAKEINFO=		makeinfo --no-split --no-validate
 MAKEINFO_EMACS=		${EMACS_CMD} -no-site-file -no-init-file -batch
 MAKEINFO_EMACS_FLAGS=	-e texinfo-format-buffer -f save-buffer
 
+pre-build:
+.if defined(EMACS_PACKAGESDIR) && defined(XEMACS_PKGNAME)
+	@${MAKE} pkg-el-copy
+.endif
 
 post-build:
 .if defined(BUILD_INFO_BY_EMACS) && (${BUILD_INFO_BY_EMACS} == "YES")
@@ -106,6 +110,9 @@ post-build:
 pre-install:
 .if defined(EMACS_PACKAGESDIR) && defined(EMACS_PACKAGES_SUBDIRS)
 	@${MAKE} mkdir-site-packages
+.endif
+.if defined(EMACS_PACKAGESDIR) && defined(XEMACS_PKGNAME)
+	@${MAKE} pkg-el-install
 .endif
 
 post-install:
@@ -162,6 +169,18 @@ mkdir-site-packages:
 	@(for i in ${EMACS_PACKAGES_SUBDIRS} ; do \
 		${MKDIR} ${PREFIX}/${EMACS_PACKAGESDIR}/$${i} ; \
 	done)
+
+pkg-el-copy:
+	@(if [ -f ${FILESDIR}/_pkg.el ] ; then \
+	${CP} ${FILESDIR}/_pkg.el ${WRKSRC}/_pkg.el ;\
+	fi)
+
+pkg-el-install:
+	@(if [ -f ${FILESDIR}/_pkg.el ] ; then \
+	${MKDIR} ${PREFIX}/${EMACS_PACKAGESDIR}/lisp/${XEMACS_PKGNAME} ;\
+	${INSTALL_DATA} ${FILESDIR}/_pkg.el \
+		${PREFIX}/${EMACS_PACKAGESDIR}/lisp/${XEMACS_PKGNAME}/_pkg.el ;\
+	fi)
 
 doc-install:
 	@${MKDIR} ${PREFIX}/${FLIMDOCDIR}
