@@ -76,6 +76,6 @@ pre-build:
 	@(cd ${WRKSRC}; ${MAKE} distclean)
 
 post-install:
-	[ -e ${PREFIX}/bin/gvim ] || (cd ${PREFIX}/bin ; ${LN} -s vim gvim)
+	[ -e ${PREFIX}/bin/gvim ] || (cd ${PREFIX}/bin ; ${LN} -sf vim gvim)
 
 .include <bsd.port.post.mk>
