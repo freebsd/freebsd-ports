@@ -6,6 +6,7 @@ lib/vile/atr2html
 lib/vile/atr2text
 lib/vile/vile-as-filt
 lib/vile/vile-asm-filt
+lib/vile/vile-au3-filt
 lib/vile/vile-basic-filt
 lib/vile/vile-c-filt
 lib/vile/vile-crypt
@@ -106,6 +107,7 @@ share/vile/digraphs.rc
 share/vile/gnugpg.rc
 share/vile/loaderrs.rc
 share/vile/manpage.rc
+share/vile/modes.rc
 share/vile/palettes.rc
 share/vile/pictmode.rc
 share/vile/search.rc
@@ -116,6 +118,7 @@ share/vile/vile.hlp
 share/vile/as.keywords
 share/vile/as386.keywords
 share/vile/asm.keywords
+share/vile/au3.keywords
 share/vile/basic.keywords
 share/vile/c.keywords
 share/vile/cpp.keywords
@@ -181,6 +184,7 @@ share/vile/macros/digraphs.rc
 share/vile/macros/gnugpg.rc
 share/vile/macros/loaderrs.rc
 share/vile/macros/manpage.rc
+share/vile/macros/modes.rc
 share/vile/macros/palettes.rc
 share/vile/macros/pictmode.rc
 share/vile/macros/search.rc
