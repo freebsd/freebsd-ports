@@ -31,12 +31,12 @@ lib/mmucl/lib/tkconf.tcl
 @dirrm lib/mmucl/lib
 lib/mmucl/.tkconf
 @dirrm lib/mmucl
-share/doc/mmucl-1.4.0/examples/Arithon
-share/doc/mmucl-1.4.0/examples/edit.tcl
-share/doc/mmucl-1.4.0/examples/map.tcl
-share/doc/mmucl-1.4.0/examples/mmucl.rc
-@dirrm share/doc/mmucl-1.4.0/examples
-share/doc/mmucl-1.4.0/CHANGES
-share/doc/mmucl-1.4.0/FAQ
-share/doc/mmucl-1.4.0/README
-@dirrm share/doc/mmucl-1.4.0
+share/doc/mmucl-1.4.1/examples/Arithon
+share/doc/mmucl-1.4.1/examples/edit.tcl
+share/doc/mmucl-1.4.1/examples/map.tcl
+share/doc/mmucl-1.4.1/examples/mmucl.rc
+@dirrm share/doc/mmucl-1.4.1/examples
+share/doc/mmucl-1.4.1/CHANGES
+share/doc/mmucl-1.4.1/FAQ
+share/doc/mmucl-1.4.1/README
+@dirrm share/doc/mmucl-1.4.1
