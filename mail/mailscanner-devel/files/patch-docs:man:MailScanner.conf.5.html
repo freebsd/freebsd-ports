@@ -1,9 +1,194 @@
---- ../MailScanner-4.25-14.orig/docs/man/MailScanner.conf.5.html	Tue Dec  2 22:22:27 2003
-+++ docs/man/MailScanner.conf.5.html	Tue Dec  2 22:23:08 2003
+--- ../MailScanner-4.26.5.orig/docs/man/MailScanner.conf.5.html	Mon Jan 26 16:20:56 2004
++++ docs/man/MailScanner.conf.5.html	Mon Jan 26 16:21:58 2004
 @@ -1,5 +1,5 @@
  <!-- Creator     : groff version 1.19 -->
 -<!-- CreationDate: Wed Nov 26 20:07:41 2003 -->
-+<!-- CreationDate: Tue Dec  2 22:22:45 2003 -->
++<!-- CreationDate: Mon Jan 26 16:21:15 2004 -->
  <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
  "http://www.w3.org/TR/html4/loose.dtd">
  <html>
+@@ -3780,6 +3780,51 @@
+ file it or delete it.</p>
+ </td>
+ </table>
++<!-- INDENTATION -->
++<table width="100%" border=0 rules="none" frame="void"
++       cols="2" cellspacing="0" cellpadding="0">
++<tr valign="top" align="left">
++<td width="11%"></td>
++<td width="89%">
++<p><b>Rebuild Bayes Every</b></p></td>
++</table>
++<!-- INDENTATION -->
++<table width="100%" border=0 rules="none" frame="void"
++       cols="2" cellspacing="0" cellpadding="0">
++<tr valign="top" align="left">
++<td width="22%"></td>
++<td width="78%">
++<p>Default: 0</p>
++<!-- INDENTATION -->
++<p>If you are using the Bayesian statistics engine on a busy
++server, you may well need to force a Bayesian database
++rebuild and expiry at regular intervals. This is measures in
++seconds. 24 hours = 86400 seconds. To disable this feature
++set this to 0.</p>
++</td>
++</table>
++<!-- INDENTATION -->
++<table width="100%" border=0 rules="none" frame="void"
++       cols="2" cellspacing="0" cellpadding="0">
++<tr valign="top" align="left">
++<td width="11%"></td>
++<td width="89%">
++<p><b>Wait During Bayes Rebuild</b></p></td>
++</table>
++<!-- INDENTATION -->
++<table width="100%" border=0 rules="none" frame="void"
++       cols="2" cellspacing="0" cellpadding="0">
++<tr valign="top" align="left">
++<td width="22%"></td>
++<td width="78%">
++<p>Default: no</p>
++<!-- INDENTATION -->
++<p># The Bayesian database rebuild and expiry may take a 2
++or 3 minutes # to complete. During this time you can either
++wait, or simply # disable SpamAssassin checks until it has
++completed. WaitDuringBayesRebuild = no</p>
++</td>
++</table>
+ <a name="What to do with spam"></a>
+ <h2>What to do with spam</h2>
+ <!-- INDENTATION -->
+@@ -3810,12 +3855,14 @@
+ <p>&quot;store&quot; &minus; the message is stored in the
+ quarantine</p>
+ <!-- INDENTATION -->
+-<p>&quot;bounce&quot; &minus; a rejection message is sent
+-back to the sender</p>
+-<!-- INDENTATION -->
+ <p>&quot;forward&quot; &minus; an email address is supplied,
+ to which the message is forwarded</p>
+ <!-- INDENTATION -->
++<p>&quot;notify&quot; &minus; Send the recipients a short
++notification that spam addressed to them was not delivered.
++They can then take action to request retrieval of the
++orginal message if they think it was not spam.</p>
++<!-- INDENTATION -->
+ <p>&quot;striphtml&quot; &minus; convert all in&minus;line
+ HTML content in the message to be stripped to plain text,
+ which removes all images and scripts and so can be used to
+@@ -3888,14 +3935,9 @@
+ <tr valign="top" align="left">
+ <td width="22%"></td>
+ <td width="78%">
+-<p>Default:
+-/opt/MailScanner/etc/reports/en/sender.spam.report.txt<br>
+-Default Linux:
+-/etc/MailScanner/reports/en/sender.spam.report.txt<br>
+-Default FreeBSD:
+-/usr/local/share/MailScanner/reports/en/sender.spam.report.txt</p>
++<p>Default: %reports&minus;dir%/sender.spam.report.txt</p>
+ <!-- INDENTATION -->
+-<p>hen the &quot;bounce&quot; spam action is applied to a
++<p>When the &quot;bounce&quot; spam action is applied to a
+ message that triggered both a &quot;Spam List&quot; check
+ and SpamAssassin, this file gives the text to put in that
+ message.</p>
+@@ -3916,11 +3958,7 @@
+ <td width="22%"></td>
+ <td width="78%">
+ <p>Default:
+-/opt/MailScanner/etc/reports/en/sender.spam.rbl.report.txt<br>
+-Default Linux:
+-/etc/MailScanner/reports/en/sender.spam.rbl.report.txt<br>
+-Default FreeBSD:
+-/usr/local/share/MailScanner/reports/en/sender.spam.rbl.report.txt</p>
++%reports&minus;dir%/sender.spam.rbl.report.txt</p>
+ <!-- INDENTATION -->
+ <p>When the &quot;bounce&quot; spam action is applied to a
+ message that triggered a &quot;Spam List&quot; check, this
+@@ -3942,11 +3980,7 @@
+ <td width="22%"></td>
+ <td width="78%">
+ <p>Default:
+-/opt/MailScanner/etc/reports/en/sender.spam.sa.report.txt<br>
+-Default Linux:
+-/etc/MailScanner/reports/en/sender.spam.sa.report.txt<br>
+-Default FreeBSD:
+-/usr/local/share/MailScanner/reports/en/sender.spam.sa.report.txt</p>
++%reports&minus;dir%/sender.spam.sa.report.txt</p>
+ <!-- INDENTATION -->
+ <p>When the &quot;bounce&quot; spam action is applied to a
+ message that triggered SpamAssassin, this file gives the
+@@ -3967,18 +4001,36 @@
+ <tr valign="top" align="left">
+ <td width="22%"></td>
+ <td width="78%">
+-<p>Default:
+-/opt/MailScanner/etc/reports/en/inline.spam.warning.txt<br>
+-Default Linux:
+-/etc/MailScanner/reports/en/inline.spam.warning.txt<br>
+-Default FreeBSD:
+-/usr/local/share/MailScanner/reports/en/inline.spam.warning.txt</p>
++<p>Default: %reports&minus;dir%/inline.spam.warning.txt</p>
+ <!-- INDENTATION -->
+ <p>If you use the &rsquo;attachment&rsquo; Spam Action or
+ High Scoring Spam Action then this is the location of inline
+ spam report that is inserted at the top of the message.</p>
+ </td>
+ </table>
++<!-- INDENTATION -->
++<table width="100%" border=0 rules="none" frame="void"
++       cols="2" cellspacing="0" cellpadding="0">
++<tr valign="top" align="left">
++<td width="11%"></td>
++<td width="89%">
++<p><b>Recipient Spam Report</b></p></td>
++</table>
++<!-- INDENTATION -->
++<table width="100%" border=0 rules="none" frame="void"
++       cols="2" cellspacing="0" cellpadding="0">
++<tr valign="top" align="left">
++<td width="22%"></td>
++<td width="78%">
++<p>Default:
++%reports&minus;dir%/recipient.spam.report.txt</p>
++<!-- INDENTATION -->
++<p>If you use the &rsquo;notify&rsquo; Spam Action or High
++Scoring Spam Action then this is the location of the
++notification message that is sent to the original recipients
++of the message.</p>
++</td>
++</table>
+ <a name="System logging"></a>
+ <h2>System logging</h2>
+ <!-- INDENTATION -->
+@@ -4047,6 +4099,28 @@
+ off. But if you are having trouble with spam detection,
+ setting this to &quot;yes&quot; temporarily can provide
+ useful debugging output.</p>
++</td>
++</table>
++<!-- INDENTATION -->
++<table width="100%" border=0 rules="none" frame="void"
++       cols="2" cellspacing="0" cellpadding="0">
++<tr valign="top" align="left">
++<td width="11%"></td>
++<td width="89%">
++<p><b>Log Non Spam</b></p></td>
++</table>
++<!-- INDENTATION -->
++<table width="100%" border=0 rules="none" frame="void"
++       cols="2" cellspacing="0" cellpadding="0">
++<tr valign="top" align="left">
++<td width="22%"></td>
++<td width="78%">
++<p>Default: no</p>
++<!-- INDENTATION -->
++<p>Do you want all non&minus;spam to be logged? Useful if
++you want to see all the SpamAssassin reports of mail that
++was marked as non&minus;spam. Note: It will generate a lot
++of log traffic.</p>
+ </td>
+ </table>
+ <!-- INDENTATION -->

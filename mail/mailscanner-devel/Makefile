@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	MailScanner
-PORTVERSION=	4.26.4
+PORTVERSION=	4.26.5
 CATEGORIES=	mail
 MASTER_SITES=	http://www.sng.ecs.soton.ac.uk/mailscanner/files/4/tar/
 PKGNAMESUFFIX=	-devel
-DISTNAME=	MailScanner-${PORTVERSION:C/\.([0-9]+)$/-\1/}
+DISTNAME=	${PORTNAME}-${PORTVERSION}-${PATCHLEVEL}
 
 MAINTAINER=	j.koopmann@seceidos.de
-COMMENT=	Powerful virus/spam scanning framework for Sendmail/Exim
+COMMENT=	Powerful virus/spam scanning framework for mail gateways
 
 BUILD_DEPENDS=	\
 	${SITE_PERL}/IO/Stringy.pm:${PORTSDIR}/devel/p5-IO-stringy \
@@ -34,8 +34,11 @@ RUN_DEPENDS=	${BUILD_DEPENDS} \
 
 CONFLICTS=	MailScanner-[0-9]*
 
+PATCHLEVEL=	1
+
 USE_PERL5=	yes
 
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 MAN8=		MailScanner.8
@@ -54,6 +57,12 @@ DOC_FILES=	INSTALL INSTALL.FreeBSD INSTALL.OpenBSD README
 ETC_FILES=	MailScanner.conf filename.rules.conf \
 		filetype.rules.conf spam.assassin.prefs.conf \
 		spam.lists.conf virus.scanners.conf
+USRLOCAL_FILES_LIB=	\
+		bitdefender-autoupdate f-prot-autoupdate \
+		f-secure-wrapper inoculan-autoupdate \
+		kavdaemonclient-wrapper mcafee-autoupdate \
+		nod32-autoupdate rav-autoupdate \
+		rav-wrapper sophos-autoupdate
 
 do-build:
 	${PERL} -pi -e \
@@ -81,8 +90,8 @@ do-build:
 		s,/opt/MailScanner/etc/reports,${DATADIR}/reports,g; \
 		s,/opt/MailScanner/etc,${PREFIX}/etc/MailScanner,g;' \
 		${WRKSRC}/lib/MailScanner/ConfigDefs.pl
-	${PERL} -pi \
-		-e 's,/bin/sed,/usr/bin/sed,g;' ${WRKSRC}/lib/MailScanner/SystemDefs.pm
+	${PERL} -pi -e \
+		's,/bin/sed,/usr/bin/sed,g;' ${WRKSRC}/lib/MailScanner/SystemDefs.pm
 	${PERL} -pi -e \
 		's,/usr/bin/clamscan,${LOCALBASE}/bin/clamscan,g;' \
 		${WRKSRC}/lib/clamav-wrapper
@@ -92,6 +101,11 @@ do-build:
 	${PERL} -pi -e \
 		's,/usr/bin/unzip,${LOCALBASE}/bin/unzip,g;' \
 		${WRKSRC}/lib/sophos-autoupdate
+.for FILE in ${USRLOCAL_FILES_LIB}
+	${PERL} -pi -e \
+		's,/usr/local,${LOCALBASE},g;' \
+		${WRKSRC}/lib/${FILE}
+.endfor
 
 do-install:
 	# Step 1: Install libexec files
@@ -160,6 +174,10 @@ do-install:
 		${INSTALL_MAN} ${MAN8} ${MAN8PREFIX}/man/man8
 	# Sophos install script
 	${INSTALL_SCRIPT} ${FILESDIR}/Sophos.install.freebsd ${DOCSDIR}
+	${PERL} -pi -e \
+		's,%%LOCALBASE%%,${LOCALBASE},g; \
+		s,%%PREFIX%%,${PREFIX},g;' \
+		${DOCSDIR}/Sophos.install.freebsd
 .if exists(${PREFIX}/etc/MailScanner/MailScanner.conf)
 	# Upgrading MailScanner.conf file... Please wait
 	@${WRKSRC}/bin/upgrade_MailScanner_conf \
