@@ -3,7 +3,7 @@
 # Date created:         2 Dec 1996
 # Whom:                 nsayer@quack.kfu.com
 #
-# $Id: Makefile,v 1.5 1998/08/07 23:56:47 asami Exp $
+# $Id: Makefile,v 1.6 1998/09/21 22:15:58 steve Exp $
 #
 
 DISTNAME=	contool-3.3a
@@ -17,6 +17,8 @@ LIB_DEPENDS=	xview.3:${PORTSDIR}/x11-toolkits/xview-lib
 NO_CDROM=	"source code cannot be sold, nor can you incorporate the source code into a product which is subsequently sold"
 NO_WRKSUBDIR=	yes
 USE_IMAKE=	yes
+
+MAN1=		contool.1
 
 pre-install:
 	@${MKDIR} ${PREFIX}/lib/help

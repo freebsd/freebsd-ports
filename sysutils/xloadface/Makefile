@@ -3,7 +3,7 @@
 # Date created:		4 February 1998
 # Whom:			FURUSAWA,Kazuhisa <kazu@jp.freebsd.org>
 #
-# $Id: Makefile,v 1.1.1.1 1996/12/04 02:04:57 obrien Exp $
+# $Id: Makefile,v 1.2 1998/02/07 19:53:25 fenner Exp $
 #
 
 DISTNAME=	xloadface-1.6.1
@@ -17,6 +17,8 @@ BUILD_DEPENDS=	nkf:${PORTSDIR}/japanese/nkf
 PATCH_STRIP= 	-p1
 USE_IMAKE=	yes
 XLOADFACEDIR=	$(X11BASE)/lib/X11/xloadface
+
+MAN1=		xloadface.1
 
 pre-install:
 	@nkf -e ${WRKSRC}/xloadface.1 > ${WRKSRC}/xloadface.man

@@ -1,5 +1,4 @@
 bin/xloadface
-man/man1/xloadface.1.gz
 lib/X11/xloadface/README
 lib/X11/xloadface/host_org.sample
 lib/X11/xloadface/bigfaces/busy.icon
@@ -24,3 +23,7 @@ lib/X11/xloadface/catfaces/fever.icon
 lib/X11/xloadface/catfaces/heavy.icon
 lib/X11/xloadface/catfaces/idle.icon
 lib/X11/xloadface/catfaces/run.icon
+@dirrm lib/X11/xloadface/bigfaces
+@dirrm lib/X11/xloadface/bitmap
+@dirrm lib/X11/xloadface/catfaces
+@dirrm lib/X11/xloadface
