@@ -7,6 +7,7 @@ bin/wmf2svg
 %%X11%%bin/wmf2x
 include/libwmf/api.h
 include/libwmf/color.h
+include/libwmf/canvas.h
 include/libwmf/defs.h
 include/libwmf/eps.h
 include/libwmf/fig.h
@@ -115,6 +116,7 @@ lib/libwmflite.so.2
 %%PORTDOCS%%share/doc/libwmf/html/api_8c.html
 %%PORTDOCS%%share/doc/libwmf/html/api_8h.html
 %%PORTDOCS%%share/doc/libwmf/html/bbuf_8c.html
+%%PORTDOCS%%share/doc/libwmf/html/canvas_8h.html
 %%PORTDOCS%%share/doc/libwmf/html/classes.html
 %%PORTDOCS%%share/doc/libwmf/html/clip_8h.html
 %%PORTDOCS%%share/doc/libwmf/html/coord_8h.html
@@ -163,6 +165,7 @@ lib/libwmflite.so.2
 %%PORTDOCS%%share/doc/libwmf/html/magick_8h.html
 %%PORTDOCS%%share/doc/libwmf/html/meta_8c.html
 %%PORTDOCS%%share/doc/libwmf/html/meta_8h.html
+%%PORTDOCS%%share/doc/libwmf/html/metadefs_8h.html
 %%PORTDOCS%%share/doc/libwmf/html/player_2region_8h.html
 %%PORTDOCS%%share/doc/libwmf/html/player_8c.html
 %%PORTDOCS%%share/doc/libwmf/html/plot_2bmp_8h.html
@@ -171,6 +174,8 @@ lib/libwmflite.so.2
 %%PORTDOCS%%share/doc/libwmf/html/plot_8c.html
 %%PORTDOCS%%share/doc/libwmf/html/plot_8h.html
 %%PORTDOCS%%share/doc/libwmf/html/record_8h.html
+%%PORTDOCS%%share/doc/libwmf/html/recorder_8c.html
+%%PORTDOCS%%share/doc/libwmf/html/recorder_8h.html
 %%PORTDOCS%%share/doc/libwmf/html/src_2font_8h.html
 %%PORTDOCS%%share/doc/libwmf/html/src_2ipa_2fig_2color_8h.html
 %%PORTDOCS%%share/doc/libwmf/html/src_2ipa_2fig_2font_8h.html
@@ -189,7 +194,11 @@ lib/libwmflite.so.2
 %%PORTDOCS%%share/doc/libwmf/html/struct__wmfBMP__Draw__t.html
 %%PORTDOCS%%share/doc/libwmf/html/struct__wmfBMP__Read__t.html
 %%PORTDOCS%%share/doc/libwmf/html/struct__wmfBrush.html
+%%PORTDOCS%%share/doc/libwmf/html/struct__wmfCanvasBrush.html
+%%PORTDOCS%%share/doc/libwmf/html/struct__wmfCanvasFont.html
+%%PORTDOCS%%share/doc/libwmf/html/struct__wmfCanvasPen.html
 %%PORTDOCS%%share/doc/libwmf/html/struct__wmfColorData.html
+%%PORTDOCS%%share/doc/libwmf/html/struct__wmfConstruct.html
 %%PORTDOCS%%share/doc/libwmf/html/struct__wmfDC.html
 %%PORTDOCS%%share/doc/libwmf/html/struct__wmfD__Coord.html
 %%PORTDOCS%%share/doc/libwmf/html/struct__wmfD__Rect.html
@@ -220,6 +229,7 @@ lib/libwmflite.so.2
 %%PORTDOCS%%share/doc/libwmf/html/struct__wmfPolyRectangle__t.html
 %%PORTDOCS%%share/doc/libwmf/html/struct__wmfRGB.html
 %%PORTDOCS%%share/doc/libwmf/html/struct__wmfROP__Draw__t.html
+%%PORTDOCS%%share/doc/libwmf/html/struct__wmfRecordBox.html
 %%PORTDOCS%%share/doc/libwmf/html/struct__wmfStream.html
 %%PORTDOCS%%share/doc/libwmf/html/struct__wmfUserData__t.html
 %%PORTDOCS%%share/doc/libwmf/html/struct__wmfWriteFileInfo.html

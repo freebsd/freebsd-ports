@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libwmf
-PORTVERSION=	0.2.6
+PORTVERSION=	0.2.7
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	wvware
@@ -21,7 +21,7 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-sys-gd=no \
 		--with-png=${LOCALBASE} --with-jpeg=${LOCALBASE} \
 		--with-gsfontdir=${LOCALBASE}/share/ghostscript/fonts
@@ -36,7 +36,7 @@ USE_XLIB=	yes
 PLIST_SUB+=	X11=''
 .endif
 
-pre-patch:
+post-patch:
 	@${REINPLACE_CMD} -e 's|src include fonts doc|src include fonts|g' \
 		${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's|\@LT_CURRENT\@|2|g ; \
