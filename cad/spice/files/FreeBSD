@@ -3,7 +3,6 @@
 MAKE		= /usr/bin/make
 INTERFACE_OPTS  = -DWANT_X11
 CC		= cc
-CC_OPT          = -O2 -pipe
-CC_OPT_SAFE     = -O2 -fno-strength-reduce -pipe
+CC_OPT_SAFE     += -O2
 LDFLAGS		= -L$(X11BASE)/lib -lm -ltermcap
 SYS_CFLAGS	= -Dbsd
