@@ -1,0 +1,23 @@
+--- Imakefile.orig	Fri Dec 29 16:39:19 1995
++++ Imakefile	Sat Oct 14 06:14:22 2000
+@@ -2,12 +2,7 @@
+ 
+ XCOMM   Use the C++ compiler of your choice.
+ 
+-CC = g++
+-
+-XCOMM   Suffix rule for ".cc" files
+-
+-.cc.o:
+-	$(CC) $(CFLAGS) -c $<
++CC = $(CXX)
+ 
+ LOCAL_LIBRARIES = XawClientLibs
+ SYS_LIBRARIES = -lm
+@@ -26,4 +21,5 @@
+       draw_summary.o draw_intro.o draw_mission.o draw_orientation.o \
+       draw_winlose.o
+ 
+-ComplexProgramTarget(xspacewarp)
++ComplexProgramTargetNoMan(xspacewarp)
++InstallAppDefaults(XSpacewarp)
