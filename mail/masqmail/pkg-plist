@@ -3,14 +3,14 @@ etc/masqmail/masqmail.conf-dist
 etc/masqmail/masqmail.get-dist
 etc/masqmail/masqmail.route-dist
 sbin/masqmail
-%%DOCSDIR%%/AUTHORS
-%%DOCSDIR%%/COPYING
-%%DOCSDIR%%/INSTALL
-%%DOCSDIR%%/NEWS
-%%DOCSDIR%%/README
-%%DOCSDIR%%/THOUGHTS
-%%DOCSDIR%%/TODO
-%%DOCSDIR%%/install.html
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/THOUGHTS
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%%%DOCSDIR%%/install.html
 @dirrm etc/masqmail
-@dirrm %%DOCSDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @unexec rmdir /var/log/masqmail 2>/dev/null || true
