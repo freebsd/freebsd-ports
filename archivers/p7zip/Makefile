@@ -42,8 +42,8 @@ IGNORE=		requires wchar functions (mbrtowc(3) etc.) for compilation
 
 post-patch:
 	${SED} -e 's/-O2/${CFLAGS} ${PTHREAD_CFLAGS}/' \
-	       -e 's/g\+\+/${CXX}/' \
-	       -e 's/gcc/${CC}/' \
+	       -e 's!g\+\+!${CXX}!' \
+	       -e 's!gcc!${CC}!' \
 	       -e '/LITTLE_ENDIAN/d' \
 	       -e 's/-lc_r/${PTHREAD_LIBS}/' \
 	       ${WRKSRC}/makefile.freebsd_x86 > ${WRKSRC}/makefile.machine
