@@ -19,8 +19,10 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_gtkmodule.so:${PORTSDIR}/x11-toolkits/py-gtk
 
 USE_GMAKE=	yes
 USE_PYTHON=	yes
-USE_GNOME=	yes
-GNU_CONFIGURE=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gtkhtml
+USE_LIBTOOL=	yes
+LIBTOOLFILES=	configure pygtk/configure
 CONFIGURE_ARGS=	--with-python=${PYTHON_CMD}				\
 		--with-gnome-config=${X11BASE}/bin/gnome-config		\
 		--with-gtkhtml
