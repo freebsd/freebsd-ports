@@ -1,0 +1,29 @@
+#!/bin/sh
+
+# $FreeBSD$
+
+case $1 in
+
+	start)
+		LD_PRELOAD=/usr/lib/libpam.so.1
+		export LD_PRELOAD
+		if [ -x !!PREFIX!!/etc/usermin/start ]; then
+			!!PREFIX!!/etc/usermin/start >/dev/null
+			echo -n ' usermin'
+		fi
+		exit 0
+		;;
+
+	stop)
+		if [ -x !!PREFIX!!/etc/usermin/stop ]; then
+			!!PREFIX!!/etc/usermin/stop >/dev/null
+			echo -n ' usermin'
+		fi
+		exit 0
+		;;
+
+	*)
+		echo "usage: `basename $0` {start|stop}" >&2
+		exit 64
+		;;
+esac

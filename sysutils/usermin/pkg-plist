@@ -1,0 +1,10 @@
+@comment stop service at deinstall time
+@unexec [ -n "$BATCH" ] || ([ ! -d %D/etc/usermin ] || [ ! -x %D/etc/rc.d/usermin.sh ] || %D/etc/rc.d/usermin.sh stop >/dev/null )
+etc/rc.d/usermin.sh-dist
+@comment Insert PLIST.lib-usermin here
+@comment -=[ begin PLIST.lib-usermin ]=-
+@comment -=[ end PLIST.lib-usermin ]=-
+@comment upgrade configuration if etc/usermin exists
+@exec [ ! -d %D/etc/usermin ] || echo | nostart=Y %D/lib/usermin/setup.sh
+@comment run interactive setup if not in BATCH mode and no configuration exists
+@exec [ -n "$BATCH" ] || ([ -d %D/etc/usermin ] || nostart=Y %D/lib/usermin/setup.sh)

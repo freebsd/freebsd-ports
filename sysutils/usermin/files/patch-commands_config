@@ -1,0 +1,8 @@
+
+$FreeBSD$
+
+--- commands/config.orig	Mon Nov  4 00:55:32 2002
++++ commands/config	Sun Nov 10 15:41:55 2002
+@@ -1 +1 @@
+-webmin_config=/etc/webmin/custom
++webmin_config=/usr/local/etc/webmin/custom

@@ -1,0 +1,11 @@
+===================================
+
+To reconfigure usermin you should
+run the following command as root:
+
+  ${LOCALBASE}/lib/usermin/setup.sh
+
+You won't have to perform this step
+after every usermin upgrade.
+
+===================================

@@ -1,0 +1,15 @@
+#! /bin/sh
+
+perl -pi -e "s=!!PREFIX!!=$PREFIX=" ${WRKSRC}/setup.sh
+
+if [ -x /usr/bin/perl5 ]; then
+	PERL5=/usr/bin/perl
+elif [ -x $PREFIX/bin/perl ]; then
+	PERL5=$PREFIX/bin/perl
+fi
+
+perl -pi -e "s=!!PERL5!!=$PERL5=" ${WRKSRC}/setup.sh
+
+sed -e "s=!!PREFIX!!=$PREFIX=" < ${FILESDIR}/usermin.sh.sample > ${WRKDIR}/usermin.sh
+
+exit 0
