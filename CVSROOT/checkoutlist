@@ -33,6 +33,8 @@
 #
 access
 access.master
+approvecheck
+approvers
 avail
 cfg.pm
 cfg_local.pm
@@ -46,4 +48,5 @@ options
 rcstemplate
 tagcheck
 unwrap
+verifymsgcheck
 wrap
