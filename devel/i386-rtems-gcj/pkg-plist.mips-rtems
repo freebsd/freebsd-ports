@@ -4,5 +4,5 @@ bin/mips-rtems-gcj
 bin/mips-rtems-gcjh
 bin/mips-rtems-jv-scan
 bin/mips-rtems-jcf-dump
-lib/gcc-lib/mips-rtems/3.2.1/jc1
-lib/gcc-lib/mips-rtems/3.2.1/jvgenmain
+lib/gcc-lib/mips-rtems/%%GCCVERSION%%/jc1
+lib/gcc-lib/mips-rtems/%%GCCVERSION%%/jvgenmain

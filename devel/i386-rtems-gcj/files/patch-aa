@@ -1,5 +1,5 @@
---- gcc-3.2.1/Makefile.in.orig	Mon Oct  7 16:47:05 2002
-+++ gcc-3.2.1/Makefile.in	Sun Feb  2 20:20:51 2003
+--- gcc-3.2.3/Makefile.in.orig	Mon Oct  7 16:47:05 2002
++++ gcc-3.2.3/Makefile.in	Sun Feb  2 20:20:51 2003
 @@ -678,9 +678,7 @@
  	install-autoconf \
  	install-automake \
