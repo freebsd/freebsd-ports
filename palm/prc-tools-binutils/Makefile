@@ -8,9 +8,9 @@
 PORTNAME=	prc-tools-binutils
 PORTVERSION=	2.0
 CATEGORIES=	palm
-MASTER_SITES=	http://www.palmos.com/dev/tech/tools/gcc/ \
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		${MASTER_SITE_SOURCEWARE}
-MASTER_SITE_SUBDIR=	binutils/old-releases
+MASTER_SITE_SUBDIR=	prc-tools binutils/old-releases
 DISTNAME=	prc-tools-${PORTVERSION}
 DISTFILES=	${DISTNAME}.tar.gz binutils-2.9.1.tar.bz2
 

@@ -8,7 +8,8 @@
 PORTNAME=	prc-tools
 PORTVERSION=	2.0
 CATEGORIES=	palm
-MASTER_SITES=	http://www.palmos.com/dev/tech/tools/gcc/dist/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	prc-tools
 
 MAINTAINER=	kuriyama@FreeBSD.org
 
