@@ -136,7 +136,7 @@ PLIST_SUB+=		PGSQL="@comment "
 
 .if defined(WITH_OPENLDAP)
 CONFIGURE_ARGS+=	--enable-ldap --with-ldap-schema-directory=${LOCALBASE}/etc/openldap/schema/
-LIB_DEPENDS+=		ldap.2:${PORTSDIR}/net/openldap${LDAP_VER}
+LIB_DEPENDS+=		ldap.2:${PORTSDIR}/net/openldap${LDAP_VER}-client
 PLIST_SUB+=		OPENLDAP=""
 MAN8+=			perditiondb_ldap_makedb.8
 .else
