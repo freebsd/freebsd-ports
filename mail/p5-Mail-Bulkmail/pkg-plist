@@ -1,10 +1,10 @@
-lib/perl5/site_perl/%%PERL_VER%%/Mail/Bulkmail.pm
-lib/perl5/site_perl/%%PERL_VER%%/Mail/Bulkmail/Dynamic.pm
-lib/perl5/site_perl/%%PERL_VER%%/Mail/Bulkmail/Object.pm
-lib/perl5/site_perl/%%PERL_VER%%/Mail/Bulkmail/Server.pm
-lib/perl5/site_perl/%%PERL_VER%%/Mail/Bulkmail/DummyServer.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Mail/Bulkmail/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Mail/Bulkmail
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Mail 2>/dev/null || true
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Mail/Bulkmail
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Mail 2>/dev/null || true
+%%SITE_PERL%%/Mail/Bulkmail.pm
+%%SITE_PERL%%/Mail/Bulkmail/Dynamic.pm
+%%SITE_PERL%%/Mail/Bulkmail/Object.pm
+%%SITE_PERL%%/Mail/Bulkmail/Server.pm
+%%SITE_PERL%%/Mail/Bulkmail/DummyServer.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/Bulkmail/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/Bulkmail
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail 2>/dev/null || true
+@dirrm %%SITE_PERL%%/Mail/Bulkmail
+@unexec rmdir %D/%%SITE_PERL%%/Mail 2>/dev/null || true

@@ -6,18 +6,17 @@
 #
 
 PORTNAME=	Mail-Bulkmail
-PORTVERSION=	3.05
+PORTVERSION=	3.07
 CATEGORIES=	mail perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Mail
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	Perl module for mailing lists
 
 PERL_CONFIGURE=	yes
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Mail::Bulkmail.3 Mail::Bulkmail::Dynamic.3 \
 		Mail::Bulkmail::Server.3 Mail::Bulkmail::Object.3 \
 		Mail::Bulkmail::DummyServer.3
