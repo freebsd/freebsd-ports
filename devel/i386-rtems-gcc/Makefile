@@ -27,7 +27,8 @@ NEWLIBNAME=	newlib-1.8.2
 MASTERDIR=	${.CURDIR}/../i386-rtems-gcc
 PLIST=		${PKGDIR}/PLIST.${LCLTARGET}
 
-BUILD_DEPENDS=	${LCLTARGET}-as:${PORTSDIR}/devel/${LCLTARGET}-binutils \
+BUILD_DEPENDS=	autoheader:${PORTSDIR}/devel/autoconf \
+		${LCLTARGET}-as:${PORTSDIR}/devel/${LCLTARGET}-binutils \
 		${LCLTARGET}-ld:${PORTSDIR}/devel/${LCLTARGET}-binutils
 RUN_DEPENDS=	${LCLTARGET}-as:${PORTSDIR}/devel/${LCLTARGET}-binutils \
 		${LCLTARGET}-ld:${PORTSDIR}/devel/${LCLTARGET}-binutils
