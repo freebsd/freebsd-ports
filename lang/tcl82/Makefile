@@ -27,7 +27,6 @@ PKGINSTALL=	${PKGDIR}/pkg-install.tclsh
 PKGDEINSTALL=	${PKGDIR}/pkg-deinstall.tclsh
 NOPRECIOUSMAKEVARS=	yes # Otherwise 'make readmes' is broken
 USE_REINPLACE=	YES
-
 PLIST_SUB=	TCL_VER=8.2 SHORT_TCL_VER=82
 
 MAN1=	tclsh.1
@@ -370,15 +369,16 @@ MLINKS=	Access.3 Tcl_Access.3 \
 	pkgMkIndex.n pkg_mkIndex.n \
 	safe.n Safe\Base.n
 
-post-configure:
-	${REINPLACE_CMD} -e 's=${WRKDIRPREFIX}${PORTSDIR}=$${WRKDIRPREFIX}${PORTSDIR}=' \
-		${WRKSRC}/tclConfig.sh
-
 .include <bsd.port.pre.mk>
 
 post-extract:
 	${MV} ${WRKDIR}/${DISTNAME}/doc/InitStubs.3 \
 	      ${WRKDIR}/${DISTNAME}/doc/Tcl_InitStubs.3
+
+post-configure:
+	${REINPLACE_CMD} -e 's=${WRKDIRPREFIX}${PORTSDIR}=$${WRKDIRPREFIX}${PORTSDIR}=' \
+		${WRKSRC}/tclConfig.sh
+
 post-install:
 .if exists(${PKGINSTALL})
 	${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL}
