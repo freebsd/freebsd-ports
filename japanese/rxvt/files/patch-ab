@@ -1,5 +1,5 @@
-*** doc/Makefile.in.orig	Thu Oct 22 12:02:09 1998
---- doc/Makefile.in	Thu Nov  5 17:21:57 1998
+*** doc/Makefile.in.orig	Wed Nov 18 16:20:14 1998
+--- doc/Makefile.in	Thu Nov 19 00:22:01 1998
 ***************
 *** 37,43 ****
   
@@ -24,7 +24,7 @@
   
 ! alldoc:	$(basedir)/$(VERNAME).lsm rxvt.1 rxvt.html rxvtRef.html rxvtRef.txt
   
-  $(basedir)/$(VERNAME).lsm: LSM.in ../autoconf/Make.common.in
+  $(basedir)/$(VERNAME).lsm: LSM.in $(srcdir)/../autoconf/Make.common.in $(srcdir)/../src/version.h
   	$(SED) $(SEDREPLACE) < $(srcdir)/LSM.in > $@
 --- 55,61 ----
   
@@ -32,7 +32,7 @@
   
 ! alldoc:	rxvt.1
   
-  $(basedir)/$(VERNAME).lsm: LSM.in ../autoconf/Make.common.in
+  $(basedir)/$(VERNAME).lsm: LSM.in $(srcdir)/../autoconf/Make.common.in $(srcdir)/../src/version.h
   	$(SED) $(SEDREPLACE) < $(srcdir)/LSM.in > $@
 ***************
 *** 63,70 ****
@@ -48,7 +48,7 @@
   rxvt.tbl: yodl/rxvt.yo $(YODL_RXVT) yodl/versioninfo.yo yodl/masonyodl.yo
   	yodl2man -orxvt.tbl yodl/rxvt.yo
   
-! rxvt.1: 
+! rxvt.1:
   
   rxvt.html: yodl/rxvt.yo $(YODL_RXVT) yodl/versioninfo.yo yodl/masonyodl.yo
   	yodl2html -o$@ yodl/rxvt.yo
