@@ -12,7 +12,7 @@
 # SQLITE_WITH_TCL83 and SQLITE_WITH_TCL84.
 
 PORTNAME=	sqlite
-PORTVERSION=	2.8.3
+PORTVERSION=	2.8.6
 PORTREVISION=	0
 CATEGORIES=	databases
 MASTER_SITES=	http://www.hwaci.com/sw/sqlite/
@@ -22,8 +22,8 @@ MAINTAINER=	gh@ghaering.de
 COMMENT=	An SQL database engine in a C library, including a Tcl wrapper
 
 # Defaults, for building the docs:
-TCL_V=		8.3
-TCL_SHORT_V=	83
+TCL_V=		8.4
+TCL_SHORT_V=	84
 
 .if defined(SQLITE_WITH_TCL83)
 CATEGORIES+=	tcl83
@@ -33,6 +33,7 @@ WITH_TCL=	YES
 .endif
 
 .if defined(SQLITE_WITH_TCL84)
+CATEGORIES+=	tcl84
 TCL_V=		8.4
 TCL_SHORT_V=	84
 WITH_TCL=	YES
