@@ -10,7 +10,7 @@
 # The hugin port is a gui interface to interact with panorama tools.
 
 PORTNAME=	vigra
-PORTVERSION=	1.2.0
+PORTVERSION=	1.3.0
 CATEGORIES=	graphics
 MASTER_SITES=	http://kogs-www.informatik.uni-hamburg.de/~koethe/vigra/
 DISTNAME=	${PORTNAME}${PORTVERSION}
@@ -36,17 +36,5 @@ USE_GMAKE=	yes
 INSTALLS_SHLIB= yes
 
 .include <bsd.port.pre.mk>
-
-.if ${ARCH} == "alpha"
-BROKEN=		"Broken pkg-plist on alpha 4.x"
-.endif
-
-.if ${OSVERSION} >= 503000
-BROKEN=		"Does not build on FreeBSD >= 5.x"
-.endif
-
-.if ${ARCH} == "amd64" || ${ARCH} == "ia64"
-BROKEN=		"Configure fails on amd64 and ia64"
-.endif
 
 .include <bsd.port.post.mk>
