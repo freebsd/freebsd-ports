@@ -22,6 +22,11 @@ INSTALLS_SHLIB=	yes
 
 DOC_FILES=	AUTHORS COPYING NEWS README TODO
 
+# allow build with more warnings enabled
+.if defined(NO_WERROR)
+CONFIGURE_ARGS+=	--disable-warnings
+.endif
+
 # ugly hack to have libdvdread directly depend on libdvdcss since
 # it already does for practical reasons even though not for compile
 # time ones

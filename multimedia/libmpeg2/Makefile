@@ -40,6 +40,11 @@ CONFIGURE_ARGS+=	--enable-sdl
 CONFIGURE_ARGS+=	--disable-sdl
 .endif
 
+# allow build with more warnings enabled
+.if defined(NO_WERROR)
+CONFIGURE_ARGS+=	--disable-warnings
+.endif
+
 pre-everything::
 	@${ECHO_MSG} "====>"
 .ifndef(WITH_SDL)
