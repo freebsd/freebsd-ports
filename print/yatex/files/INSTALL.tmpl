@@ -1,0 +1,66 @@
+#!/bin/sh
+
+pkgname=$1
+
+BASENAME=${BASENAME:-%BASENAME%}
+CP=${CP:-%CP%}
+ECHO=${ECHO:-%ECHO%}
+GREP=${GREP:-%GREP%}
+SED=${SED:-%SED%}
+TOUCH=${TOUCH:-%TOUCH%}
+DO_NADA=${DO_NADA:-%DO_NADA%}
+
+infodir=${INFODIR:-%INFODIR%}
+infofiles=${INFOFILES:-%INFOFILES%}
+infonodes=${INFONODES:-%INFONODES%}
+infonodeexps=${INFONODEEXPS:-%INFONODEEXPS%}
+elispdir=${ELISPDIR:-%ELISPDIR%}
+dirsection=${DIRSECTION:-%DIRSECTION%}
+
+OptionStart=";;; configuration options for ${pkgname}"
+OptionEnd=";;; End of configuration options for ${pkgname}"
+
+if [ "X$2" = X"POST-INSTALL" ]; then
+	if [ ! -f ${elispdir}/site-start.el ]; then 
+		 ${TOUCH} ${elispdir}/site-start.el
+	fi
+	count=1
+	# For example, the result of `cut ttt -d : -f 2` is ttt. Why?
+	infofiles=${infofiles}:
+	while ${DO_NADA}; do
+	    if [ X`${ECHO} ${infofiles} | cut -d : -f $count` = X ]; then
+		break
+	    fi
+	    file=`${ECHO} ${infofiles} | cut -d : -f $count`
+	    nodename=`${ECHO} ${infonodes} | cut -d : -f $count`
+	    nodeexp=`${ECHO} ${infonodeexps} | cut -d : -f $count`
+	    if [ ! "`${GREP} \"START-INFO-DIR-ENTRY\" ${infodir}/${file}`" ]; then
+		${ECHO} "INFO-DIR-SECTION ${dirsection}" \
+						>> ${infodir}/${file}
+		${ECHO} "START-INFO-DIR-ENTRY"	>> ${infodir}/${file}
+		${ECHO} "* ${nodename}: (`${BASENAME} ${file}`).		${nodeexp}" \
+						>> ${infodir}/${file}
+		${ECHO} "END-INFO-DIR-ENTRY"	>> ${infodir}/${file}
+	    fi
+	    count=`expr $count + 1`
+	done
+	${ECHO} "Adding entry for \"${pkgname}\" to ${infodir}/dir"
+	for file in `${ECHO}  ${infofiles} | ${SED} "s,:, ,g"`; do
+		install-info ${infodir}/${file} ${infodir}/dir
+	done
+	if [ X'%ADDSITESTART%' != X ]; then
+	if  [ "`${GREP} \"^${OptionStart}\"  ${elispdir}/site-start.el`" ]; then 
+		${SED} -e "/^${OptionStart}/,/^${OptionEnd}/d" \
+		  ${elispdir}/site-start.el > ${elispdir}/site-start.el.bak
+		${CP} ${elispdir}/site-start.el.bak ${elispdir}/site-start.el
+	fi
+	${ECHO} "Adding entry for \"${pkgname}\" to ${elispdir}/site-start.el"
+	${ECHO} "${OptionStart}" >> ${elispdir}/site-start.el
+	/usr/bin/printf "%ADDSITESTART%" | \
+	    ${SED} "s/^ //" >> ${elispdir}/site-start.el
+	${ECHO} "${OptionEnd}" >> ${elispdir}/site-start.el
+	fi
+	exit 0
+else
+	exit 0
+fi
