@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.alphaworks.ibm.com/formula/lotusxsl/
 DISTNAME=	${PORTNAME}_0_18_4
 EXTRACT_SUFX=	.zip
 
-MAINTAINER=	kuriyama@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 RUN_DEPENDS=	${LOCALBASE}/share/java/classes/xml4j.jar:${PORTSDIR}/textproc/xml4j

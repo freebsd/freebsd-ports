@@ -11,7 +11,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	http://apps.alphaworks.ibm.com/technologies/xml4j/
 DISTNAME=	XML4J-J-bin.${PORTVERSION}
 
-MAINTAINER=	kuriyama@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/XML4J-3_1_1
 NO_BUILD=	YES
