@@ -1,0 +1,12 @@
+**********************************************************
+* To display images in proper positions,                 *
+* you should set font size of your terminal emulator to  *
+* "# of pixels per character" and "# of pixels per line" *
+* in Option Setting Panel.                               *
+*                                                        *
+* For example, if you use 14 pixel fonts, the values     *
+* should be these.                                       *
+*                                                        *
+* # of pixels per character = 7                          *
+* # of pixels per line = 14                              *
+**********************************************************

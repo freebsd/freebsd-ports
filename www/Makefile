@@ -291,7 +291,7 @@
     SUBDIR += w3-4
     SUBDIR += w3c-httpd
     SUBDIR += w3m
-    SUBDIR += w3m-image
+    SUBDIR += w3m-img
     SUBDIR += w3mir
     SUBDIR += wb0
     SUBDIR += wcol

@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	w3m
-PORTVERSION=	0.2.1
-PORTREVISION=	1
+PORTVERSION=	${W3M_VERSION}
 CATEGORIES+=	www ipv6
 MASTER_SITES=	ftp://ei5nazha.yz.yamagata-u.ac.jp/w3m/ \
 		http://mi.med.tohoku.ac.jp/~satodai/w3m/src/ \
@@ -15,10 +14,21 @@ MASTER_SITES=	ftp://ei5nazha.yz.yamagata-u.ac.jp/w3m/ \
 		ftp://ftp.umlauf.de/pub/w3m/ \
 		http://www.instinct.org/w3m/ \
 		http://grilli.net/mirrors/w3m/download/
+DISTNAME=	${PORTNAME}-${W3M_VERSION}
 
 MAINTAINER?=	nobutaka@nobutaka.com
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libgc.a:${PORTSDIR}/devel/boehm-gc
+
+W3M_VERSION=	0.2.1
+IMG_VERSION=	1.10
+PORTREVISION?=	1
+
+.if defined(INLINE_IMAGE)
+PORTVERSION:=	${PORTVERSION}+${IMG_VERSION}
+.else
+PORTREVISION=	1
+.endif
 
 MAN1=		w3m.1
 MANLANG=	""
@@ -66,26 +76,28 @@ MAKE_FLAGS+=	DEFS="-I${LOCALBASE}/include" LIBS="-L${LOCALBASE}/lib"
 
 .if defined(INLINE_IMAGE)
 PATCH_SITES=	http://www2u.biglobe.ne.jp/~hsaka/w3m/patch/
-PATCHFILES=	w3m-0.2.1-img-1.3.patch
+PATCHFILES=	${DISTNAME}-img-${IMG_VERSION}.patch
+PATCH_DIST_STRIP=	-p1
 EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-XMakefile
 
 USE_IMLIB=	yes
 
+DOCS+=		README.img
 DOCS_JP+=	README.img
 PLIST_SUB+=	INLINE_IMAGE_ONLY=""
+
+PKGMESSAGE=	${MASTERDIR}/pkg-message
 .else
 EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-XMakefile.noimg
 PLIST_SUB+=	INLINE_IMAGE_ONLY="@comment "
+
+# Don't use pkg-message
+PKGMESSAGE=	${NONEXISTENT}
 .endif
 
 pre-extract:
 .if !defined(WITHOUT_SSL)
 	@${ECHO_MSG} "You can disable support for SSL by defining WITHOUT_SSL."
-.endif
-
-.if defined(INLINE_IMAGE)
-post-patch:
-	@${CP} ${WRKSRC}/README.img ${WRKSRC}/doc-jp/
 .endif
 
 post-configure:
@@ -112,6 +124,9 @@ post-install:
 	@${INSTALL_MAN} ${WRKSRC}/doc/w3m.1 ${PREFIX}/man/man1
 .if defined(JAPANESE)
 	@${INSTALL_MAN} ${WRKSRC}/doc-jp/w3m.1 ${PREFIX}/man/ja/man1
+.endif
+.if defined(INLINE_IMAGE)
+	@${CAT} ${PKGMESSAGE}
 .endif
 
 .include <bsd.port.post.mk>

@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PKGNAMESUFFIX=	-image
+PKGNAMESUFFIX=	-img
 
 MASTERDIR=	${.CURDIR}/../../www/w3m
 PKGDIR=		${.CURDIR}
