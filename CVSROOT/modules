@@ -2232,6 +2232,7 @@ hotjava		ports/www/hotjava
 hp2xx		ports/print/hp2xx
 hp48cc		ports/devel/hp48cc
 hpack.non-usa.only	ports/archivers/hpack.non-usa.only
+hpijs		ports/print/hpijs
 hping		ports/security/hping
 hppsmtools	ports/graphics/hppsmtools
 hsftp		ports/ftp/hsftp
