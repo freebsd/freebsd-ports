@@ -6,16 +6,21 @@
 #
 
 PORTNAME=	phylip
-PORTVERSION=	3.6.a2.1
+PORTVERSION=	3.6.a3
 CATEGORIES=	biology
 MASTER_SITES=	ftp://evolution.genetics.washington.edu/pub/phylip/phylip36/
 DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.tar.Z
+DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	dbader@eece.unm.edu
 
 USE_XLIB=	yes
 BUILD_WRKSRC=	${WRKSRC}/src
+
+MAKE_ARGS=	CC="${CC} ${CFLAGS}" \
+		DC="${CC} -DX -I${X11BASE}/include ${CFLAGS}" \
+		GLIBS="-L${X11BASE}/lib -lX11 -lm"
 
 BINARIES=	clique consense contml contrast dnacomp dnadist dnainvar \
 		dnaml dnamlk dnamove dnapars dnapenny dollop dolmove \
