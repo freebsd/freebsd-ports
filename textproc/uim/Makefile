@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	uim
-PORTVERSION=	0.2.8
+PORTVERSION=	0.3.1
 CATEGORIES=	japanese x11
 MASTER_SITES=	http://freedesktop.org/Software/UimDownload/
 
@@ -15,6 +15,7 @@ COMMENT=	Input method library
 
 LIB_DEPENDS=	anthy.0:${PORTSDIR}/japanese/anthy
 
+USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 USE_PERL5_BUILD=yes
 INSTALLS_SHLIB=	yes
@@ -44,6 +45,9 @@ PLIST_SUB+=	GNOME=""
 .else
 PLIST_SUB+=	GNOME="@comment "
 .endif
+
+post-patch:
+	${REINPLACE_CMD} -e 's,/usr,${LOCALBASE},' ${WRKSRC}/scm/skk.scm
 
 .if !defined(NOPORTDOCS)
 post-install:

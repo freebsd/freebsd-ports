@@ -1,8 +1,13 @@
+bin/screen-tick
+bin/screen-uim
 bin/uim-helper-server
 %%GTK%%bin/uim-helper-candwin-gtk
 %%GTK%%bin/uim-helper-toolbar-gtk
 %%GTK%%bin/uim-helper-toolbar-gtk-systray
 bin/uim-xim
+etc/backtick-setup
+etc/newscreen-bind
+etc/screenrc-uim
 include/uim/uim-helper.h
 include/uim/uim.h
 %%GNOME%%libdata/bonobo/servers/GNOME_UimApplet.server
@@ -27,12 +32,16 @@ share/uim/hangul3.scm
 share/uim/hk.scm
 share/uim/im.scm
 share/uim/ipa.scm
+share/uim/japanese-azik.scm
+share/uim/japanese-kana.scm
 share/uim/japanese.scm
 share/uim/key.scm
 share/uim/latin.scm
 share/uim/loader.scm
 share/uim/prime.scm
+share/uim/pyunihan.scm
 share/uim/rk.scm
+share/uim/romaja.scm
 share/uim/skk-editor.scm
 share/uim/skk.scm
 share/uim/spellcheck.scm
@@ -47,6 +56,7 @@ share/uim/tcode.scm
 share/uim/tutcode.scm
 share/uim/util.scm
 share/uim/viqr.scm
+share/uim/zaurus.scm
 @dirrm include/uim
 %%PORTDOCS%%@dirrm %%DOCSDIR_JA%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
