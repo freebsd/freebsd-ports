@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	vbsfilter
-PORTVERSION=	1.9
+PORTVERSION=	1.11
 CATEGORIES=	mail
 MASTER_SITES=	http://aeschi.ch.eu.org/milter/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
