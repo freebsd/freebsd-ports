@@ -25,6 +25,7 @@
     SUBDIR += scrollz
     SUBDIR += sic
     SUBDIR += sirc
+    SUBDIR += slirc
     SUBDIR += tirc
     SUBDIR += tircproxy
     SUBDIR += tkirc

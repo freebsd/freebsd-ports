@@ -1,0 +1,29 @@
+--- Makefile.orig	Tue Aug 24 05:42:02 1999
++++ Makefile	Sat Jan  6 08:50:21 2001
+@@ -1,10 +1,10 @@
+ #!/bin/make -f
+ 
+-CC=gcc
+-CFLAGS:=-Wall -Wmissing-declarations -Wstrict-prototypes -O2 -Iinclude
++CC?=cc
++CFLAGS+=-Wall -Wmissing-declarations -Wstrict-prototypes -I$(SLANG_INCDIR) $(KANJI)
+ SOFLAGS:=-shared -fPIC -Wl,-export-dynamic
+ LDFLAGS:=-s
+-LIBS:=-ldl -lm -Llib -lslang
++LIBS:=-lm -ltermcap -L$(SLANG_LIBDIR) -lslang
+ 
+ pwd:=$(shell pwd)
+ 
+@@ -45,9 +45,9 @@
+ 	[ -d $(lib_dir) ] || mkdir -p $(lib_dir)
+ 	[ -d $(CFG_DIR) ] || mkdir -p $(CFG_DIR)
+ 	[ -d $(script_dir) ] || mkdir -p $(script_dir)
+-	install -p -o root -g root -m755 slirc $(bin_dir)
+-	install -p -o root -g root -m755 $(MODULES) $(CFG_DIR)
+-	install -p -o root -g root -m644 scripts/*.sl $(script_dir)
++	install -p -o root -g wheel -m755 slirc $(bin_dir)
++	install -p -o root -g wheel -m755 $(MODULES) $(CFG_DIR)
++	install -p -o root -g wheel -m644 scripts/*.sl $(script_dir)
+ endif
+ 
+ slirc: slirc.o lru.o slload.o windoze.o

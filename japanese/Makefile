@@ -287,6 +287,7 @@
     SUBDIR += skkfep
     SUBDIR += skkinput
     SUBDIR += skkserv
+    SUBDIR += slirc
     SUBDIR += slrn
     SUBDIR += srd-fpw
     SUBDIR += srd-fpw-package

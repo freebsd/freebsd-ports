@@ -1,0 +1,5 @@
+--- sldocs/VFile.txt.orig	Sun Aug 22 00:40:49 1999
++++ sldocs/VFile.txt	Sat Jan  6 20:26:41 2001
+@@ -213 +213 @@
+-	O_SYNC
++	O_FSYNC
