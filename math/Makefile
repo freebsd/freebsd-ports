@@ -31,6 +31,7 @@
     SUBDIR += djbfft
     SUBDIR += drgeo
     SUBDIR += eispack
+    SUBDIR += emc2
     SUBDIR += entropy
     SUBDIR += eukleides
     SUBDIR += eval
