@@ -379,6 +379,7 @@
     SUBDIR += wml
     SUBDIR += wmnetselect
     SUBDIR += wn
+    SUBDIR += wsmake
     SUBDIR += wwwcount
     SUBDIR += wwwoffle
     SUBDIR += wwwstat
