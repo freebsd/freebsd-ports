@@ -3,13 +3,13 @@
 # Date created:         Mon Aug 28 13:35:31 CDT 1995
 # Whom:                 erich@rrnet.com
 #
-# $Id: Makefile,v 1.6 1996/11/18 11:27:41 asami Exp $
+# $Id: Makefile,v 1.7 1997/08/11 15:16:10 erich Exp $
 #
 
-DISTNAME=	aero_1.5.2_src
-PKGNAME=	aero-1.5.2
+DISTNAME=	aero_1.7.0_src
+PKGNAME=	aero-1.7.0
 CATEGORIES=	graphics
-MASTER_SITES=	ftp://ftp.povray.org/pub/povray/utilities/modellers/aero/
+MASTER_SITES=	ftp://ftp.ee.uwa.edu.au/users/braunl/aero/
 
 MAINTAINER=	erich@FreeBSD.org
 
@@ -18,6 +18,7 @@ RUN_DEPENDS=	povray:${PORTSDIR}/graphics/povray
 LIB_DEPENDS=    Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
 
 USE_X11=	yes
-WRKSRC=		work/aero/src
+WRKSRC=		${WRKDIR}/aero/src
+MAKEFILE=	Makefile.linux
 
 .include <bsd.port.mk>
