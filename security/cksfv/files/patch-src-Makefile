@@ -1,11 +1,12 @@
 --- src/Makefile.orig	Fri Dec 29 02:34:33 2000
-+++ src/Makefile	Wed Jan  3 11:28:07 2001
++++ src/Makefile	Mon Jun  4 10:01:32 2001
 @@ -17,14 +17,15 @@
  # Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
  
  PROG=		cksfv
+-CFLAGS+=	-Wall -Werror -O2 -g
 +CC?=		gcc
- CFLAGS+=	-Wall -Werror -O2 -g
++CFLAGS+=	-Wall -O2 -g
  SRCS=		cksfv.c print.c crc32.c readsfv.c newsfv.c
  
  cksfv: $(SRCS)
