@@ -1,0 +1,15 @@
+--- src/system/installml.orig	Tue May 11 21:20:17 2004
++++ src/system/installml	Thu Aug  5 22:17:28 2004
+@@ -11,8 +11,10 @@
+ twoup=`pwd`
+ cd $here
+ 
+-MAIN_HEAP_DIR=$twoup/bin/.heap
+-MAIN_LIB_DIR=$twoup/lib
++INSTALLROOT=${INSTALLROOT:-$twoup}
++
++MAIN_HEAP_DIR=$INSTALLROOT/bin/.heap
++MAIN_LIB_DIR=$INSTALLROOT/lib
+ 
+ if [ $# -gt 0 ] ; then
+     STEM=$1
