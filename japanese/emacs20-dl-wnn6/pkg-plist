@@ -15,7 +15,7 @@ share/emacs/site-lisp/egg/wnn-client.el
 share/emacs/site-lisp/egg/eggrc-sj3
 share/emacs/site-lisp/egg/eggrc-v41
 share/emacs/site-lisp/egg/eggrc-wnn
-@exec ln -sf %D/%F share/emacs/site-lisp/egg/.eggrc
+@exec ln -sf %D/%F %D/share/emacs/site-lisp/egg/.eggrc
 @unexec rm -f %D/share/emacs/site-lisp/egg/.eggrc
 share/emacs/site-lisp/egg/its/han-kata.el
 share/emacs/site-lisp/egg/its/han-kata.elc
