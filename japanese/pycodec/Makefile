@@ -7,6 +7,7 @@
 
 PORTNAME=	pycodec
 PORTVERSION=	1.4.9
+PORTREVISION=	1
 CATEGORIES=	japanese python converters
 MASTER_SITES=	http://www.python.jp/Zope/download/JapaneseCodecs/ \
 		http://www.asahi-net.or.jp/~rd6t-kjym/python/JapaneseCodecs/dist/
@@ -17,7 +18,12 @@ COMMENT=	Python Unicode codecs for Japanese charsets
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
+USE_REINPLACE=	yes
 DOCSDIR=	${PREFIX}/share/doc/ja-pycodec
+
+post-patch:
+	${REINPLACE_CMD} -e 's,^static,static const,g' \
+		${WRKSRC}/src/_japanese_codecs.h
 
 post-install:
 .if !defined(NOPORTDOCS)
