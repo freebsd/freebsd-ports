@@ -21,35 +21,38 @@ rm -f $F
 
 # Tk detection
 tkversion=
-###### only tk 4.2/tcl 7.6 is known to work
-for v in 2; do
-  if [ -f /usr/local/lib/libtk4$v.a ]; then
+for v in 42 80; do
+  if [ -f /usr/local/lib/libtk$v.a ]; then
     tkversion=$v
+    case $tkversion in
+      42)
+        tclversion=76
+        tclLversion=7.6
+        tkLversion=4.2
+        ;;
+      80)
+        tclversion=80
+        tclLversion=8.0
+        tkLversion=8.0
+        ;;
+    esac
   fi
 done
 if [ X$tkversion != X ]; then
-  echo "Using tk-4.$tkversion"
+  echo "Using tk-$tkLversion"
   echo "#define HasTk			YES" >>$F
   echo "#define TkLibDir		/usr/local/lib" >>$F
-  echo "#define TkIncDir		/usr/local/include/tk4.$tkversion" >>$F
-  echo "#define TkLibName		tk4$tkversion" >>$F
+  echo "#define TkIncDir		/usr/local/include/tk$tkLversion" >>$F
+  echo "#define TkLibName		tk$tkversion" >>$F
   echo "#define HasTcl			YES" >>$F
   echo "#define TclLibDir		/usr/local/lib" >>$F
-  case $tkversion in
-    1)
-      tclversion=5
-      ;;
-    2)
-      tclversion=6
-      ;;
-  esac
-  echo "#define TclIncDir		/usr/local/include/tcl7.$tclversion" >>$F
-  echo "#define TclLibName		tcl7$tclversion" >>$F
+  echo "#define TclIncDir		/usr/local/include/tcl$tclLversion" >>$F
+  echo "#define TclLibName		tcl$tclversion" >>$F
 else
 cat <<EOF
-*** I don't see the static library for tk version 4.2 in /usr/local/lib.
+*** I don't see the static library for tk version $tkversion in /usr/local/lib.
 *** XF86Setup will not be installed. If you want to build this program
-*** install tk 4.2 first.
+*** install tk 4.2 or 8.0 first.
 
 EOF
 fi
@@ -168,6 +171,20 @@ yesno "Build static libraries in addition to shared libraries? [YES] "
 if [ $answ = YES ]; then
   echo "#define ForceNormalLib		YES" >> $F
 fi
+
+cat <<'END'
+
+ FreeBSD-3.x has support for Secure RPC. DO NOT ENABLE THIS ON FreeBSD-2.* !!
+
+ While this scheme is not used for general purpose encryption, 
+ some countries restrict the use of strong cryptography.
+
+END
+yesno "Build with Secure RPC? [YES] "
+if [ $answ = YES ]; then
+  echo "#define HasSecureRPC		YES" >> $F
+fi
+
 cat <<'END'
 
  MIT supplies an authentication mechanism that relies upon DES, this is
@@ -212,6 +229,43 @@ if [ $cpwh != NO ]; then
   echo "#define	HasXdmAuth		$answ"	>> $F
 fi
 
+cat <<'END'
+
+ XDM can be built so that it will get a KerberosIV TGT for your users
+ when they log in. This requires that you have Kerberos on your system
+ when you do this build.
+
+ Source code for this authentication mechanism may not be exported from
+ the United States, however, there are compatible replacements for this
+ mechanism available elsewhere.  Also, while this scheme is not used for
+ general purpose encryption,  some countries restrict the use of strong
+ cryptography.
+
+ Even if you answer YES to the following question, KerberosIV support
+ will not be enabled if the kerberos libraries are unavailable.
+
+END
+yesno "Do you want to enable KerberosIV support? [YES] "
+cpkb=NO
+if [ $answ = YES ]; then
+    LIBKRB=/usr/lib/libkrb.a
+    K4PATCH=$FILESDIR/kerberos4.diffs
+    K4XDM="$FILESDIR/krb4auth.c $FILESDIR/krb4auth.h"
+    XDMDIR=$WRKDIR/xc/programs/xdm/
+
+    if [ -f $LIBKRB ] ; then
+      echo "==> KerberosIV found in system libraries."
+      cpkb=YES
+    else
+      echo "==> Kerberos libraries not found on system."
+      echo "==> KerberosIV support NOT enabled."
+      cpkb=NO
+    fi
+fi
+if [ $cpkb != NO ]; then
+  echo "#define	HasKrb4		$answ"	>> $F
+fi
+
 echo
 echo "End of configuration questions. No more user input required"
 echo
@@ -223,6 +277,12 @@ if [ X$cpwh != XNO ]; then
   cp $cpwh $WH
 fi
 
-cat $F >>  $WRKSRC/config/cf/xf86site.def
+if [ X$cpkb != XNO ]; then
+  cp $K4XDM $XDMDIR
+  echo "===>  Applying KerberosIV patches"
+  patch -s -d $WRKDIR/xc -E -p0 < $K4PATCH
+fi
+
+cat $F >>  $WRKDIR/xc/config/cf/xf86site.def
 
 exit 0
