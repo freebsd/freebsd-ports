@@ -28,7 +28,7 @@ CONFIGURE_ARGS+= --with-itcl=${LOCALBASE}/lib/itcl3.2
 MAN1=		tkdesk.1 cd-tkdesk.1 ed-tkdesk.1 od-tkdesk.1
 
 pre-install:
-	@find ${WRKSRC} -type f -name '*.orig' -exec ${RM} -f {} ';'
+	@${FIND} ${WRKSRC} -type f -name '*.orig' -exec ${RM} -f {} ';'
 
 post-install:
 	${STRIP_CMD} ${PREFIX}/bin/tkdesksh

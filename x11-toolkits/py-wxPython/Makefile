@@ -29,7 +29,7 @@ DEMO_DIR=	${PYTHONPREFIX_SITELIBDIR}/wxPython/demo
 post-build:
 	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}/demo
 .if !defined(DEBUG_FLAGS)
-	@find ${WRKSRC} -name "*.so" | xargs strip
+	@${FIND} ${WRKSRC} -name "*.so" | ${XARGS} strip
 .endif
 
 post-install:

@@ -52,7 +52,7 @@ INSTALLS_SHLIB=	yes
 .endif
 
 post-patch:
-	@find ${WRKSRC}/src -name \*.h ! -name y.tab.h \
+	@${FIND} ${WRKSRC}/src -name \*.h ! -name y.tab.h \
 		| ${SED} -e "s,${WRKSRC},..," \
 		| eval `${AWK} '{print "ln -sf",$$1,"${WRKSRC}/include"}'`
 
