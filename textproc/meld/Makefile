@@ -24,6 +24,9 @@ USE_REINPLACE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|os.path.dirname(sys.argv\[0\])|"${PYTHON_SITELIBDIR}/meldapp"|' ${WRKSRC}/misc.py
 	@${REINPLACE_CMD} -e 's|/"+os.path.abspath(misc.appdir("manual/index.html") )|${PREFIX}/share/doc/meld/index.html"|' ${WRKSRC}/meldapp.py
+	@${REINPLACE_CMD} \
+		-e 's|/usr/share/pixmaps|${X11BASE}/share/gnome/pixmaps|' \
+		${WRKSRC}/cvsview.py
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/meld ${PREFIX}/bin
