@@ -6,41 +6,68 @@
 #
 
 PORTNAME=	dbskkd-cdb
-PORTVERSION=	1.01
-PORTREVISION=	1
+PORTVERSION=	1.71
 CATEGORIES=	japanese
 MASTER_SITES=	http://www.ne.jp/asahi/bdx/info/software/
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		${CDB_DISTNAME}${EXTRACT_SUFX}
+DISTNAME=	${PORTNAME}-${PORTVERSION}dev
 
 MAINTAINER=	matusita@FreeBSD.org
 COMMENT=Yet another dictionary server for SKK
 
-RUN_DEPENDS=	${LOCALBASE}/${SKKDIR}/SKK-JISYO.${SKKJISYO_TYPE}.cdb:${PORTSDIR}/japanese/skk-jisyo-cdb
-
-CDB_DISTNAME=	cdb-0.55
+BUILD_DEPENDS=	${NONEXISTENT}:${CDBPORTSDIR}:build
+RUN_DEPENDS=	${INSTALLEDJISYO}:${PORTSDIR}/japanese/skk-jisyo-cdb
 
 SKKDIR?=	share/skk
 SKKJISYO_TYPE?=	L
-DOCS=		Release-Notes.English Release-Notes.Japanese LICENSE
+SKKJISYOCDB?=	/SKK-JISYO.${SKKJISYO_TYPE}.cdb
+SERVER_DIR?=	${LOCALBASE}/${SKKDIR}
 
-MAKE_ENV+=	SKKDIR=${SKKDIR} SKKJISYO=SKK-JISYO.${SKKJISYO_TYPE}
+CDBPORTSDIR=	${PORTSDIR}/databases/cdb
+INSTALLEDJISYO=	${LOCALBASE}/${SKKDIR}/SKK-JISYO.${SKKJISYO_TYPE}.cdb
+MAKE_ENV+=	SERVER_DIR=${SERVER_DIR} SKKJISYOCDB=${SKKJISYOCDB}
+.if !defined(NOPORTDOCS)
+PORTDOCS=	${PORTDOCS_FILE} ${PORTDOCS_SH}
+PORTDOCS_FILE=	CHANGES LICENSE READMEJP run.example run.log.example
+PORTDOCS_SH=	makeskkcdb.sh skktocdbm.sh
+.endif
+
+.include <bsd.port.pre.mk>
+
+CDBDIR!=	cd ${CDBPORTSDIR}; ${MAKE} -V WRKSRC
+
+pre-fetch:
+	@${ECHO_CMD} ""
+	@${ECHO_CMD} "Note:"
+	@${ECHO_CMD} "    This daemon does chroot(2) to ${SERVER_DIR}, then"
+	@${ECHO_CMD} "    use ${SKKJISYOCDB} as a dictionary file."
+	@${ECHO_CMD} "    Please set SERVER_DIR/SKKJISYOCDB variables if you don't like much."
+	@${ECHO_CMD} ""
 
 post-patch:
-.for docs in ${DOCS}
-	${SED} -e "s!%%PREFIX%%!${PREFIX}!g" -e "s!%%SKKDIR%%!${SKKDIR}!g" -e "s!%%JISYONAME%%!SKK-JISYO.${SKKJISYO_TYPE}!g" < ${WRKSRC}/${docs} > ${WRKSRC}/.tmp
-	${MV} -f ${WRKSRC}/.tmp ${WRKSRC}/${docs}
+.for f in READMEJP copyfromcdb.sh
+	${SED} -e "s!%%PREFIX%%!${PREFIX}!g" -e "s!%%SKKDIR%%!${SKKDIR}!g" -e "s!%%JISYONAME%%!SKK-JISYO.${SKKJISYO_TYPE}!g" -e "s!%%CDBDIR%%!${CDBDIR}!g" < ${WRKSRC}/${f} > ${WRKSRC}/.tmp
+	${MV} -f ${WRKSRC}/.tmp ${WRKSRC}/${f}
 .endfor
+	${CHMOD} +x ${WRKSRC}/copyfromcdb.sh
 
-post-install:
-	${MKDIR} ${PREFIX}/share/doc/dbskkd-cdb
-.for docs in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/${docs} ${PREFIX}/share/doc/dbskkd-cdb
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/dbskkd-cdb ${PREFIX}/libexec
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+.for docs in ${PORTDOCS_FILE}
+	${INSTALL_DATA} ${WRKSRC}/${docs} ${DOCSDIR}
 .endfor
+.for docs in ${PORTDOCS_SH}
+	${INSTALL_SCRIPT} ${WRKSRC}/${docs} ${DOCSDIR}
+.endfor
+.endif
+	@${ECHO_CMD} ""
+	@${ECHO_CMD} "Note for inetd users:"
+	@${ECHO_CMD} ""
+	@${ECHO_CMD} "Add following line to /etc/inetd.conf"
+	@${ECHO_CMD} "   skkserv stream tcp nowait root ${PREFIX}/libexec/dbskkd-cdb dbskkd-cdb"
+	@${ECHO_CMD} ""
+	@${ECHO_CMD} "If dbskkd-cdb 1.01 was running, please update your /etc/inetd.conf line."
+	@${ECHO_CMD} ""
 
-pre-build::
-	(cd ${WRKDIR}/${CDB_DISTNAME}; make it)
-	${CP} ${WRKDIR}/${CDB_DISTNAME}/libcdb.a ${WRKSRC}
-	${CP} ${WRKDIR}/${CDB_DISTNAME}/cdbmake ${WRKSRC}
-
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
