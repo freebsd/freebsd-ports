@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	swfdec
-PORTVERSION=	0.3.3
+PORTVERSION=	0.3.4
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.schleef.org/swfdec/download/
 
@@ -55,5 +55,6 @@ post-patch:
 	@${REINPLACE_CMD} -e "s,int16_t,__int16_t," ${WRKSRC}/libswfdec/swfdec_shape.c
 	@${REINPLACE_CMD} -e 's|libdir)/gimp/1.3|prefix)/libexec/gimp/2.2|g' ${WRKSRC}/gimp-loader/Makefile.in
 	@${REINPLACE_CMD} -e 's|plugin||g' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e "s|sdl-config|${SDL_CONFIG:T}|g" ${WRKSRC}/configure
 
 .include <bsd.port.mk>
