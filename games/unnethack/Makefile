@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	slashem
-PORTVERSION=	0.0.6E.4F.6
+PORTVERSION=	0.0.6E.4F.7
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 PKGNAMESUFFIX=	-tty
 DISTNAME=	se${PORTVERSION:S/.//g:L}
 
-MAINTAINER=	adam@blacktabby.org
+MAINTAINER=	adam-ports@blacktabby.org
 
 USE_GMAKE=	yes
 MAN6=		dgn_comp.6 dlb.6 lev_comp.6 slashem-tty.6 recover.6
