@@ -1,0 +1,9 @@
+--- nls/Makefile.old	Fri Sep  7 10:03:11 2001
++++ nls/Makefile	Fri Sep  7 10:03:21 2001
+@@ -1,5 +1,5 @@
+ 
+-SUBDIRS=	C et finnish french german greek italian ja pl russian \
++SUBDIRS=	C et finnish french german greek italian ja russian \
+ 		spanish ukrainian
+ #GENCAT=	gencat -new
+ GENCAT=		gencat

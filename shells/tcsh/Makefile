@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	tcsh
-PORTVERSION=	6.10.00
+PORTVERSION=	6.11.00
 CATEGORIES=	shells
-MASTER_SITES=	http://www2.wbs.ne.jp/~znc/tcsh/
+MASTER_SITES=	ftp://ftp.astron.com/pub/tcsh/
 DISTNAME=	${PORTNAME}-${PORTVERSION:R}
 
 MAINTAINER=	ports@FreeBSD.org
@@ -19,7 +19,6 @@ DISTFILES=	# empty
 NO_BUILD=	yes
 PLIST=		${PKGDIR}/pkg-plist.nobuild
 .else
-EXTRA_PATCHES=	${FILESDIR}/extra-patch-host.defs
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 GNU_CONFIGURE=	yes
 ALL_TARGET=	all catalogs
