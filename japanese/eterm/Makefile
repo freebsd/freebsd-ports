@@ -12,15 +12,12 @@ MASTERDIR=      ${.CURDIR}/../../x11/eterm
 MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT=	X11 terminal emulator based on rxvt/xterm that supports Japanese
 
-EXTRA_PATCHES=	${.CURDIR}/files/extra-patch-configure.in \
+EXTRA_PATCHES=	${.CURDIR}/files/extra-patch-configure \
 		${.CURDIR}/files/extra-patch-src:command.c \
 		${.CURDIR}/files/extra-patch-src:defaultfont.h \
 		${.CURDIR}/files/extra-patch-src:feature.h \
 		${.CURDIR}/files/extra-patch-src:options.c
 
-BROKEN=		Incomplete pkg-plist
-
-USE_AUTOCONF_VER=	213
 CONFIGURE_ARGS=	--enable-trans --enable-utmp \
 		--enable-xim --with-theme-update \
 		--with-backspace=bs --without-terminfo \
