@@ -3,6 +3,7 @@
 
     SUBDIR += 2bsd-diff
     SUBDIR += Ebnf2ps
+    SUBDIR += af-aspell
     SUBDIR += aft
     SUBDIR += agrep
     SUBDIR += align
