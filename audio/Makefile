@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.22 1995/07/12 04:19:15 asami Exp $
+# $Id: Makefile,v 1.23 1995/10/03 11:45:05 asami Exp $
 #
 
     BROKEN += gmod
@@ -12,6 +12,7 @@
     SUBDIR += s3mod
     SUBDIR += sox
     SUBDIR += tracker
+    SUBDIR += workman
     SUBDIR += xcd
     SUBDIR += xcdplayer
 RESTRICTED += xmcd       # needs Motif, xmcd itself isn't restricted
