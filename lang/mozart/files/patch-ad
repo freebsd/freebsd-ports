@@ -1,0 +1,29 @@
+--- mozart-orig/platform/emulator/urlc.cc	Wed Jun 21 15:24:22 2000
++++ platform/emulator/urlc.cc	Wed Jun 21 15:26:54 2000
+@@ -331,6 +331,8 @@
+     // save local address for later use (esp. ftp PORT)
+ #if __GLIBC__ == 2
+     unsigned int lin_len = sizeof(lin);
++#elif __FreeBSD__ > 2
++    socklen_t lin_len = sizeof(lin);
+ #else
+     int lin_len = sizeof(lin);
+ #endif
+@@ -993,6 +995,8 @@
+     struct sockaddr_in rem_addr;
+ #if __GLIBC__ == 2
+     unsigned int local_addr_len = sizeof(local_addr);
++#elif __FreeBSD__ > 2
++    socklen_t local_addr_len = sizeof(local_addr);    
+ #else
+     int local_addr_len = sizeof(local_addr);
+ #endif
+@@ -1049,6 +1053,8 @@
+     struct sockaddr_in pcin; // peer control connection address
+ #if __GLIBC__ == 2
+     unsigned int pcin_len = sizeof(pcin);
++#elif __FreeBSD__ > 2
++    socklen_t  pcin_len = sizeof(pcin);
+ #else
+     int pcin_len = sizeof(pcin);
+ #endif

@@ -1,0 +1,11 @@
+--- mozart-orig/platform/emulator/libdp/network.cc	Wed Jun 21 15:24:16 2000
++++ platform/emulator/libdp/network.cc	Wed Jun 21 15:33:49 2000
+@@ -2357,6 +2357,8 @@
+   struct sockaddr_in addr1;
+ #if __GLIBC__ == 2
+   unsigned int length = sizeof(addr1);
++#elif __FreeBSD__ > 2
++  socklen_t length = sizeof(addr1);
+ #else
+   int length = sizeof(addr1);
+ #endif

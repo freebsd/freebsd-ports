@@ -1,0 +1,14 @@
+--- mozart-orig/platform/emulator/os.cc	Wed Jun 21 15:24:20 2000
++++ platform/emulator/os.cc	Wed Jun 21 15:25:14 2000
+@@ -1399,8 +1399,10 @@
+ {
+ #if __GLIBC__ == 2
+   int ret = accept(s,addr,(unsigned int*)addrlen);
++#elif __FreeBSD__ > 2
++  int ret = accept(s,addr,(socklen_t*) addrlen);
+ #else
+-  int ret = accept(s,addr,addrlen);
++  int ret = accept(s,addr,(socklen_t*) addrlen);
+ #endif
+   if (ret >= 0) 
+     registerSocket(ret);

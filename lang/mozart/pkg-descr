@@ -1,0 +1,19 @@
+The Mozart system provides state-of-the-art support in two areas: open
+distributed computing and constraint-based inference. Mozart
+implements Oz, a concurrent object-oriented language with dataflow
+synchronization. Oz combines concurrent and distributed programming
+with logical constraint-based inference, making it a unique choice for
+developing multi-agent systems. Mozart is an ideal platform for both
+general-purpose distributed applications as well as for hard problems
+requiring sophisticated optimization and inferencing abilities. We
+have developed applications in scheduling and time-tabling, in
+placement and configuration, in natural language and knowledge
+representation, multi-agent systems and sophisticated collaborative
+tools.
+
+For more check the excellent documentation at:
+
+WWW: http://www.mozart-oz.org/
+
+- Mathias
+mathiasp@virtual-earth.de
