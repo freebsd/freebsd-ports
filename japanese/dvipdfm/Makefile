@@ -27,17 +27,11 @@ RUN_DEPENDS=		kpsewhich:${PORTSDIR}/japanese/ptex-base \
 MAN1=			dvipdfm.1
 
 WRKSRC=			${WRKDIR}/${PORTNAME}
-GNU_CONFIGURE=		yes
+USE_AUTOCONF=		yes
 CONFIGURE_ENV+=		CPPFLAGS="${CXXFLAGS} -I${PREFIX}/include" \
 			CFLAGS="${CFLAGS} -I${PREFIX}/include" \
 			LDFLAGS=-L${PREFIX}/lib
 CONFIGURE_ARGS+=	--datadir=${PREFIX}/share
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502102
-BROKEN=			"Configure fails"
-.endif
 
 pre-install:
 	PKG_PREFIX=${PREFIX} ${SH} pkg-install ${PKGNAME} PRE-INSTALL
@@ -62,4 +56,4 @@ post-install:
 .endif
 	${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
