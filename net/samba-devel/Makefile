@@ -7,7 +7,7 @@
 
 PORTNAME=		samba
 PORTVERSION=		3.0.4
-PORTREVISION?=		1
+PORTREVISION?=		2
 PORTEPOCH?=		1
 CATEGORIES?=		net
 MASTER_SITES=		${MASTER_SITE_SAMBA}
@@ -70,7 +70,8 @@ OPTIONS=	LDAP		"With LDAP support" on \
 		SAM_PGSQL	"With PostgreSQL smbpasswd backend" off \
 		SAM_OLD_LDAP	"With Samba2.x LDAP smbpasswd backend" off \
 		PAM_SMBPASS	"With SMB PAM module" off \
-		POPT		"With installed POPT library" on
+		POPT		"With installed POPT library" on \
+		I18N		"With i18n patch" off
 .endif
 
 .include <bsd.port.pre.mk>
@@ -245,6 +246,17 @@ MAN8+=		winbindd.8
 WINBIND_FILTER=		${SED} -e 's|%%WINBIND%%||g'
 .else
 WINBIND_FILTER=		${GREP} -v '^%%WINBIND%%'
+.endif
+
+.if defined(WITH_I18N)
+# Based on patch from miraclelinux.com.
+# http://www.miraclelinux.com/english/technet/samba30/index.html
+PATCH_SITES=	http://dist.bsdlab.org/
+PATCHFILES=	samba-${PORTVERSION}-i18n-20040521.bz2
+PATCH_DIST_STRIP=	-p1
+PLIST_SUB+=		I18N=""
+.else
+PLIST_SUB+=		I18N="@comment "
 .endif
 
 PLIST_SUB+=		RC_DIR=${RC_DIR} \
