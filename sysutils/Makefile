@@ -176,6 +176,7 @@
     SUBDIR += rclean
     SUBDIR += rdate
     SUBDIR += readlink
+    SUBDIR += rlogview
     SUBDIR += rmonitor
     SUBDIR += roottail
     SUBDIR += rotate
