@@ -3,7 +3,7 @@
 # Date created:		1999-04-22
 # Whom:			Ryo MIYAMOTO <rmiya@cc.hirosaki-u.ac.jp>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/05/07 06:56:51 taoka Exp $
 #
 
 DISTNAME=	platon
@@ -23,6 +23,15 @@ SAMPLES=	azt.dat bucky.spf c476.spf c540.cart3d check.def cubane.spf \
 TESTDATADIR=	ABSORB_EXAMPLE ABSTOMPA_EXAMPLE ABSTOMPA_TEST ADDSYM_EXAMPLE \
 		ASYM_EXAMPLE DELABS_EXAMPLE MULABS_EXAMPLE PSICOR_EXAMPLE \
 		SQUEEZE_EXAMPLE
+
+.if ${MACHINE_ARCH} == "alpha"
+BROKEN=	"/usr/libexec/elf/ld: platon.o: .got subsegment exceeds 64K (size 88552)"
+.endif
+
+.include <bsd.port.pre.mk>
+.if ${OSVERSION} >= 400004
+MAKE_ENV+=	HAVE_G2C=yes
+.endif
 
 pre-patch:
 	(cd ${WRKDIR}/${DISTNAME} && ${GUNZIP_CMD} platon.f.Z)
@@ -55,4 +64,4 @@ do-install:
 			${PREFIX}/share/doc/platon/TEST/$${dirs} ; \
 	done
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
