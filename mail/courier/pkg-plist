@@ -130,7 +130,6 @@ etc/courier/webmail.authpam
 @unexec rmdir %D/etc/courier/webadmin 2>/dev/null || true
 @unexec rmdir %D/etc/courier 2>/dev/null || true
 etc/rc.d/courier.sh
-lib/charset.alias
 libexec/authlib/authdaemon
 libexec/authlib/authdaemond
 %%SUB_LDAP%%libexec/authlib/authdaemond.ldap
@@ -303,8 +302,6 @@ share/courier/esmtpd-ssl
 share/courier/filterctl
 share/courier/imapd
 share/courier/imapd-ssl
-share/courier/locale/locale.alias
-@dirrm share/courier/locale
 share/courier/makeacceptmailfor
 share/courier/makealiases
 share/courier/makedat
