@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.39 1999/01/18 05:04:04 steve Exp $
+# $Id: Makefile,v 1.40 1999/01/27 14:30:52 kuriyama Exp $
 #
 
     SUBDIR += agrep
@@ -31,6 +31,7 @@
     SUBDIR += par
     SUBDIR += prag
     SUBDIR += rman
+    SUBDIR += sar
     SUBDIR += sgmlformat
     SUBDIR += sgrep
     SUBDIR += sp
