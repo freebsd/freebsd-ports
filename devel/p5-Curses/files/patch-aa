@@ -1,0 +1,11 @@
+--- Makefile.PL.orig	Tue Mar 25 08:06:16 1997
++++ Makefile.PL	Tue Mar 25 08:09:06 1997
+@@ -64,7 +64,7 @@
+   'freebsd'   =>
+   { 'bsd'     => [ ''                       => '-lcurses -ltermcap' ],
+     'ncurses' => [ ''                       => '-lncurses' ],
+-    'default' => 'bsd'
++    'default' => 'ncurses'
+   },
+   'hpux'      => [ ''                       => '-lcurses -ltermcap' ],
+   'irix'      => [ ''                       => '-lcurses -ltermcap' ],   ##
