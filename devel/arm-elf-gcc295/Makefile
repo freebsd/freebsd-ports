@@ -58,9 +58,11 @@ pre-extract:
 post-configure:
 	${REINPLACE_CMD} -Ee 's,^(TARGET_CONFIGDIRS\s*=),\1#,' \
 	    ${WRKSRC}/Makefile
-	${REINPLACE_CMD} -Ee 's,^(install-info:),\1\ndonot-\1,; \
-	    s,\$$\(bindir\)/(\$$\(DEMANGLER_CROSS_NAME\)),./\1,' \
+	${PERL} -i -ne 's/^(install-info:)/\1\ndonot-\1/; print' ${WRKSRC}/gcc/Makefile
+	${REINPLACE_CMD} -Ee 's,\$$\(bindir\)/(\$$\(DEMANGLER_CROSS_NAME\)),./\1,' \
 	    ${WRKSRC}/gcc/Makefile
+	${REINPLACE_CMD} -Ee 's/^(TARGET_CONFIGDIRS =)/\1#/' \
+	    ${WRKSRC}/Makefile
 
 post-install:
 	@${MV} ${PREFIX}/bin/cpp ${PREFIX}/bin/${PKGNAMEPREFIX}cpp
