@@ -295,6 +295,7 @@
     SUBDIR += stvef-paks
     SUBDIR += stvef-server
     SUBDIR += sxsame
+    SUBDIR += tads
     SUBDIR += taipan
     SUBDIR += tank
     SUBDIR += teg

@@ -1,0 +1,17 @@
+TADS is a set of programming tools specially designed for writing
+adventure games. TADS consists of:
+    * A programming language, which resembles C and Java.
+    * A compiler, which reads a set of source files written in the
+TADS programming language and produces a portable binary game
+file.
+    * A library, which provides a set of generic adventure game
+definitions.
+    * An interactive debugger, which lets you examine
+your program's execution in order to find and fix programming
+errors.
+    * An interpreter, which a player uses to run your game.
+
+See http://www.plover.net/~textfire/raiffaq/ifaq/ for more
+information about obtaining game files.
+
+WWW:	http://www.tads.org/
