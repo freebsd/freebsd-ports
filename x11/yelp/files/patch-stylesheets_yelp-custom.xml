@@ -1,0 +1,9 @@
+--- stylesheets/yelp-custom.xsl.orig	Mon Jan  5 22:58:54 2004
++++ stylesheets/yelp-custom.xsl	Mon Jan  5 22:59:07 2004
+@@ -1,5 +1,6 @@
+ <?xml version='1.0'?>
+ <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
++    		xmlns:doc="http://nwalsh.com/xsl/documentation/1.0"
+                 version='1.0'
+                 xmlns="http://www.w3.org/TR/xhtml1/transitional"
+                 exclude-result-prefixes="#default">
