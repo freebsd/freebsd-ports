@@ -4668,6 +4668,7 @@ nic		ports/net/nic
 nicetext	ports/textproc/nicetext
 nickle		ports/lang/nickle
 nicmond		ports/net/nicmond
+nicotine	ports/net/nicotine
 nightfall	ports/astro/nightfall
 nighthawk	ports/games/nighthawk
 nil		ports/games/nil
