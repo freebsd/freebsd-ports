@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	emboss
-PORTVERSION=	2.0.1
+PORTVERSION=	2.2.0
 CATEGORIES=	biology
 MASTER_SITES=	ftp://ftp.uk.embnet.org/pub/EMBOSS/ \
-		ftp://ftp.no.embnet.org/pub/EMBOSS/ \
 		ftp://ftp.es.embnet.org/pub/software/emboss/EMBOSS/ \
 		ftp://ftp.ebi.ac.uk/pub/software/unix/EMBOSS/
 DISTFILES=	${PORTNAME:U}-${PORTVERSION}${EXTRACT_SUFX}
@@ -21,7 +20,7 @@ MAINTAINER=	wjv@FreeBSD.org
 LIB_DEPENDS=	gd.2:${PORTSDIR}/graphics/gd
 
 USE_GMAKE=	yes
-USE_LIBTOOL=	yes
+GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 USE_XLIB=	yes
 USE_MOTIF=	yes
@@ -38,7 +37,7 @@ SCRIPTS_ENV+=	WRKDIRPREFIX="${WRKDIRPREFIX}" \
 
 WRKSRC=		${WRKDIR}/${PORTNAME:U}-${PORTVERSION}
 EMBASSY_WRKDIR=	${WRKSRC}/EMBASSY
-EMNU_VERSION=	1.0.4
+EMNU_VERSION=	1.0.5
 HMMER_VERSION=	2.1.1
 MEME_VERSION=	2.3.1
 MSE_VERSION=	0.0.4
@@ -111,9 +110,9 @@ post-install:
 	  ${CONFIG_FILE} > ${PREFIX}/etc/emboss.default.sample && \
 	  ${CHOWN} ${SHAREOWN}:${SHAREGRP} \
 	  ${PREFIX}/etc/emboss.default.sample
-.if !defined(BATCH)
 	@ ${PERL} -pe 's#%%PREFIX%%#${PREFIX}#' \
 	  pkg-message > ${PKGMESSAGE}
+.if !defined(BATCH)
 	@ ${CAT} ${PKGMESSAGE}
 .endif
 
