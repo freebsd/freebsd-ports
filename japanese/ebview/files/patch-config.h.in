@@ -1,0 +1,12 @@
+--- config.h.in.orig	Sun Apr 13 13:02:31 2003
++++ config.h.in	Fri May  2 19:58:33 2003
+@@ -77,6 +77,9 @@
+ /* Define to 1 if you have the `getgid' function. */
+ #undef HAVE_GETGID
+ 
++/* Define to 1 if you have the `getopt_long' function. */
++#undef HAVE_GETOPT_LONG
++
+ /* Define to 1 if you have the `getpagesize' function. */
+ #undef HAVE_GETPAGESIZE
+ 

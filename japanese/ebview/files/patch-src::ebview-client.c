@@ -1,13 +1,11 @@
---- src/ebview-client.c.orig	Sat Nov 16 15:33:47 2002
-+++ src/ebview-client.c	Sat Nov 30 09:49:47 2002
-@@ -1,8 +1,8 @@
- #include <stdio.h>
--#include <sys/socket.h>
-+#include <unistd.h>
- #include <sys/un.h>
- #include <sys/types.h>
--#include <unistd.h>
-+#include <sys/socket.h>
+--- src/ebview-client.c.orig	Sat Apr 26 21:59:23 2003
++++ src/ebview-client.c	Fri May  2 20:14:43 2003
+@@ -30,7 +30,7 @@
+ 	/* The total length of the address includes the sun_family 
+ 	   element */
  
- #include "../config.h"
- 
+-#ifdef __FreeBSD__
++#ifndef HAVE_GETOPT_LONG
+         addrLength = sizeof(address.sun_len) + sizeof(address.sun_family) + strlen(address.sun_path) + 1;
+         address.sun_len = addrLength;
+ #else
