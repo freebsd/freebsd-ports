@@ -3,7 +3,7 @@
 # Date created:				7 March 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/03/27 14:29:36 tg Exp $
 #
 
 DISTNAME=	workplace-1.0.a1
@@ -14,6 +14,8 @@ MASTER_SITES=	http://www2.osk.3web.ne.jp/~hideki70/
 MAINTAINER=	andy@icc.surw.chel.su
 
 LIB_DEPENDS=	gtk\\.1\\.:${PORTSDIR}/x11/gtk
+
+BROKEN=		build
 
 GNU_CONFIGURE=	yes
 USE_X11=	yes
