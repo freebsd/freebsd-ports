@@ -3,7 +3,7 @@
 # Date created:				4 November 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.5 1999/01/17 20:03:29 vanilla Exp $
+# $Id: Makefile,v 1.6 1999/04/26 19:35:56 mharo Exp $
 #
 
 DISTNAME=	gtksamba-0.3.2pl1
@@ -12,10 +12,12 @@ MASTER_SITES=	http://www.open-systems.com/gtksamba/
 
 MAINTAINER=	andy@icc.surw.chel.su
 
-LIB_DEPENDS=	gnomeui.1:${PORTSDIR}/x11/gnomelibs
+LIB_DEPENDS=	gnomeui.2:${PORTSDIR}/x11/gnomelibs
+
+GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
 
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	GTK_CONFIG="${X11BASE}/bin/gtk12-config"
+CONFIGURE_ENV=	GTK_CONFIG="${GTK_CONFIG}"
 
 .include <bsd.port.mk>
