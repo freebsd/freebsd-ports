@@ -5,15 +5,14 @@
 # $FreeBSD$
 #
 
-PORTVERSION=	9388
+PORTVERSION=	9575
 PORTREVISION=	0
 MASTER_SITES=	http://p4.elixus.org/hist/
 PKGNAMESUFFIX=	-elixus
-DISTNAME=	sympa-${PORTVERSION}
 
 COMMENT=	An electronic mailing list manager with elixus.org patches
 
-BUILD_DEPENDS+=	${SITE_PERL}/Locale/Maketext/Lexicon.pm:${PORTSDIR}/devel/p5-Locale-Maketext-Lexicon \
+BUILD_DEPENDS=	${SITE_PERL}/Locale/Maketext/Lexicon.pm:${PORTSDIR}/devel/p5-Locale-Maketext-Lexicon \
 		${SITE_PERL}/${PERL_ARCH}/Template.pm:${PORTSDIR}/www/p5-Template-Toolkit
 
 MASTERDIR=	${.CURDIR}/../../mail/sympa
