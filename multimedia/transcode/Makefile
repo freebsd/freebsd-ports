@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	transcode
-PORTVERSION=	0.6.3
+PORTVERSION=	0.6.4
 CATEGORIES=	multimedia
-MASTER_SITES=	http://www.theorie.physik.uni-goettingen.de/~ostreich/transcode/pre/
+MASTER_SITES=	http://www.zebra.fh-weingarten.de/~transcode/pre/
+DISTNAME=	${PORTNAME}-${PORTVERSION}.20030325
 
 MAINTAINER=	hendrik@scholz.net
 COMMENT=	A text-console utility for video stream processing
@@ -89,7 +90,7 @@ WITH_LAME=	yes
 WITH_OGG=	yes
 .endif
 
-.if exists(${LOCALBASE}/lib/liblavplay.so)
+.if exists(${LOCALBASE}/include/mjpegtools/yuv4mpeg.h)
 WITH_MJPEG=	yes
 .endif
 
@@ -104,6 +105,9 @@ PLIST_SUB+=	WITH_IMAGEMAGICK="@comment "
 .if defined(WITH_NASM)
 BUILD_DEPENDS+=	${LOCALBASE}/bin/nasm:${PORTSDIR}/devel/nasm
 ONLY_FOR_ARCHS=	i386
+PLIST_SUB+=	WITH_NASM=""
+.else
+PLIST_SUB+=	WITH_NASM="@comment"
 .endif
 
 .if defined(WITH_AVIFILE)
@@ -202,6 +206,12 @@ PLIST_SUB+=	WITH_MJPEG=""
 PLIST_SUB+=	WITH_MJPEG="@comment "
 .endif
 
+.if defined(WITH_SUBRIP)
+PLIST_SUB+=	WITH_SUBRIP=""
+.else
+PLIST_SUB+=	WITH_SUBRIP="@comment "
+.endif
+
 pre-everything::
 .if !defined(WITH_OPTIMIZED_CFLAGS)
 	@${ECHO_MSG}
@@ -273,7 +283,11 @@ pre-everything::
 .endif
 .if !defined(WITH_MJPEG)
 	@${ECHO_MSG}
-	@${ECHO_MSG} "You can enable support for the MJPEG toolkit by defining WITH_MJPEG"
+	@${ECHO_MSG} "You can enable support for the MJPEG toolkit by defining WITH_MJPEG."
+.endif
+.if !defined(WITH_SUBRIP)
+	@${ECHO_MSG}
+	@${ECHO_MSG} "You can enable compilation of subtitleripper by defining WITH_SUBRIP."
 .endif
 
 post-patch:
@@ -301,6 +315,12 @@ post-install:
 	@${LN} -sf ${LOCALBASE}/lib/libxvidcore.so \
 		${PREFIX}/lib/transcode/libxvidcore.so
 .endif
+
+.if defined(WITH_SUBRIP)
+	@cd ${WRKSRC}/contrib/subrip; ${GMAKE} clean all; \
+		${INSTALL_PROGRAM} srttool subtitle2pgm subtitle2vobsub ${PREFIX}/bin
+.endif
+
 	@${RM} ${PREFIX}/lib/transcode/*.la
 
 .include <bsd.port.post.mk>
