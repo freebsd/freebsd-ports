@@ -9,7 +9,9 @@ share/gnome/help/teg/C/book1.html
 share/gnome/help/teg/C/cbugs.html
 share/gnome/help/teg/C/chistory.html
 share/gnome/help/teg/C/cintro.html
+share/gnome/help/teg/C/commands.html
 share/gnome/help/teg/C/connect.png
+share/gnome/help/teg/C/crisk.html
 share/gnome/help/teg/C/crules.html
 share/gnome/help/teg/C/dices.png
 share/gnome/help/teg/C/docbook.css
@@ -19,6 +21,8 @@ share/gnome/help/teg/C/mission.html
 share/gnome/help/teg/C/mission.png
 share/gnome/help/teg/C/newturn.html
 share/gnome/help/teg/C/selectcolor.png
+share/gnome/help/teg/C/server.html
+share/gnome/help/teg/C/server.png
 share/gnome/help/teg/C/starting.html
 share/gnome/help/teg/C/stylesheet-images/caution.gif
 share/gnome/help/teg/C/stylesheet-images/home.gif
