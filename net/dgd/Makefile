@@ -17,6 +17,7 @@ PATCH_SITES=	${MASTER_SITE_LOCAL:S|%SUBDIR%|glewis/dgd/patches|} \
 		ftp://ftp.imaginary.com/pub/LPC/servers/DGD/patches/
 
 MAINTAINER=	glewis@FreeBSD.org
+COMMENT=	Dworkin's Generic Driver (network server)
 
 NO_CDROM=	"no distribution to corporate environment"
 RESTRICTED=	"license required for commercial use"
