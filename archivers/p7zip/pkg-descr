@@ -1,0 +1,14 @@
+p7zip is a port of 7z.exe and 7za.exe for Unix.
+
+7z and 7za are command line version of 7-zip, see http://www.7-zip.org/.
+
+7-Zip is a file archiver with highest compression ratio.
+
+Currently, p7zip (like 7-zip) supports only little-endian machine.
+
+7z uses shared libraries and supports more archive formats, otherwise
+7z and 7za work the same.  They didn't come with a manpage, html
+commandline documentation will be installed in %%PREFIX%%/share/doc/p7zip/
+
+
+WWW: http://p7zip.sourceforge.net/

@@ -1,0 +1,12 @@
+Index: myWindows/makefile
+@@ -1,8 +1,8 @@
+ PROG=all.so
+ 
+-LOCAL_FLAGS=-I. -I.. -I../include_windows
++LOCAL_FLAGS=-I. -I.. -I../include_windows ${PTHREAD_CFLAGS}
+ 
+-LOCAL_SHARED=-lpthread -lm
++LOCAL_SHARED=${PTHREAD_LIBS}
+ 
+ OBJS=myEvents.o myFiles.o myFindFile.o myDirectoryAndPath.o \
+ 	myLastError.o myModuleFileName.o my_itow.o \

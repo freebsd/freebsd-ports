@@ -48,6 +48,7 @@
     SUBDIR += p5-Compress-Zlib
     SUBDIR += p5-IO-Zlib
     SUBDIR += p5-Mac-Macbinary
+    SUBDIR += p7zip
     SUBDIR += par2cmdline
     SUBDIR += parchive
     SUBDIR += pear-Archive_Tar
