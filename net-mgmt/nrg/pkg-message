@@ -1,0 +1,11 @@
+
+************************************************************
+
+For configuration and upgrade, please read file located at:
+%%PREFIX%%/nrg/html/index.html
+
+Afer configuration add the next line to crontab:
+*/5 * * * * %%PREFIX%%/nrg/run-nrg.sh
+
+************************************************************
+

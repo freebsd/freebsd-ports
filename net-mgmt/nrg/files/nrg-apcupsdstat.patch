@@ -1,0 +1,186 @@
+--- collectors/nrg-apcupsdstat.in.orig	Fri Mar  5 18:13:13 2004
++++ collectors/nrg-apcupsdstat.in	Fri Mar  5 18:13:13 2004
+@@ -0,0 +1,146 @@
++#!@PERL@
++#
++# nrg-apcupsdstat - a nrg collector for reporting apcupsd statistics
++#
++# options: temp and battery
++#
++# michael ranner <mranner@inode.at>
++#
++# $Id$
++#
++
++$mode = 'battery';
++$server = 'localhost';
++$port = '7000';
++$stamp = '0';
++$stat = '0';
++$apcnisclient = "/usr/local/bin/apcnisclient";
++
++#------------------------------------------------------------------
++# parse argv...
++
++while ( $ARGV[0] =~ /^-/ ) {
++  $arg = $ARGV[0];
++  if ( $arg =~ /^-d/ ) {
++    $debug = 1;
++    shift @ARGV;
++  } elsif ( $arg =~ /^-p/ ) {
++    $port = $ARGV[1];
++    shift @ARGV; shift @ARGV;
++  } elsif ( $arg =~ /^-m/ ) {
++    $mode = $ARGV[1];
++    shift @ARGV; shift @ARGV;
++  } else {
++    print "unknown option: \"$arg\"\n";
++    &usage;
++    exit 1;
++  }
++  $i++;
++}
++
++if ( $#ARGV != 0 ) { 
++  print "usage: nrg-apcupsdstat [args] apc_server\n";
++  exit;
++}
++$server = $ARGV[0];
++
++if ( $debug ) {
++  $date = `date`; chop $date;
++  print "nrg-apcupsdstat: started in debug mode at $date\n";
++  print "nrg-apcupsdstat: contacting $server at $port\n";
++}
++
++if ( $mode ne 'load' && $mode ne 'temp' && $mode ne 'battery'
++  && $mode ne 'inv' && $mode ne 'outv' && $mode ne 'battv' ) {
++  print "unknown mode: \"$mode\"\n";
++  &usage;
++  exit 1;
++}
++
++#------------------------------------------------------------------
++# get the stats from apc nis client...
++
++if ( $port !~ /^\d+$/ ) {
++  $port = getservbyname($port,'tcp') || &abend;
++}
++
++open(CLIENT, "$apcnisclient $server:$port status|");
++
++while(<CLIENT>) {
++  push(@details, $_);
++}
++close(CLIENT);
++
++if ( ! @details ) { &abend; }
++
++#------------------------------------------------------------------
++# parse the stats...
++
++foreach $_ (@details) {
++  ($n, $stamp) = split(": ") if /^DATE/;
++
++  if ($mode eq "battery") {
++    next if !/^BCHARGE/;
++    ($k, $n, $stat) = split;
++    last;
++  } elsif ($mode eq "battv") {
++    next if !/^BATTV/;
++    ($k, $n, $stat) = split;
++    last;
++  } elsif ($mode eq "inv") {
++    next if !/^LINEV/;
++    ($k, $n, $stat) = split;
++    last;
++  } elsif ($mode eq "load") {
++    next if !/^LOADPCT/;
++    ($k, $n, $stat) = split;
++    last;
++  } elsif ($mode eq "temp") {
++    next if !/^ITEMP/;
++    ($k, $n, $stat) = split;
++    last;
++  } elsif ($mode eq "outv") {
++    next if !/^OUTPUTV/;
++    ($k, $n, $stat) = split;
++    last;
++  }
++
++}
++
++$stamp = time;
++
++#------------------------------------------------------------------
++# print out nrg collector format output...
++
++if ( ! $stamp || ! $stat ) {
++  #print "nrg-apcupsdstat: could not get stats from $server!\n";
++  $stamp = time;
++  $details = "no stats from $server";
++} else {
++  $details = "$stat $mode GAUGE";
++}
++
++$localtime = scalar localtime($stamp);
++print "$stamp $localtime\n";
++print "INF uptime\n"; # FIXME
++print "$details\n";
++
++exit;
++
++#==================================================================
++
++sub usage {
++  print "usage: nrg-apcupsdstat [-d] [-p port] [-m mode] apc_server\n";
++}
++
++#------------------------------------------------------------------
++
++sub abend {
++  if ( $debug) {"nrg-sendmail: connection to $server:$port failed\n";}
++  $stamp = time;
++  $localtime = scalar localtime($stamp);
++  print "$stamp $localtime\n";
++  print "INF uptime\n";
++  print "connection to $server port $port failed\n";
++  exit;
++}
+--- Makefile.in.orig	Fri Jul 23 21:42:58 2004
++++ Makefile.in	Fri Jul 23 21:43:11 2004
+@@ -19,7 +19,7 @@
+ CONTRIB_DIR = ${prefix}/contrib
+ 
+ BIN_FILES = \
+-  dsreport mrtg2nrg nrg-apachestat nrg-autoconf \
++  dsreport mrtg2nrg nrg-apachestat nrg-apcupsdstat nrg-autoconf \
+   nrg-bindresponse nrg-bindstat nrg-bindstatd \
+   nrg-cgikeeper nrg-discover-apache nrg-discover-bind \
+   nrg-discover-errors nrg-discover-ifaces nrg-discover-netdev \
+--- configure.orig	Fri Jul 23 21:44:13 2004
++++ configure	Fri Jul 23 21:38:18 2004
+@@ -2019,6 +2019,7 @@
+   Makefile \
+   collectors/nrg-apmstat \
+   collectors/nrg-apachestat \
++  collectors/nrg-apcupsdstat \
+   collectors/nrg-bindresponse \
+   collectors/nrg-bindstat \
+   collectors/nrg-bindstatd \
+@@ -2189,6 +2190,7 @@
+   Makefile \
+   collectors/nrg-apmstat \
+   collectors/nrg-apachestat \
++  collectors/nrg-apcupsdstat \
+   collectors/nrg-bindresponse \
+   collectors/nrg-bindstat \
+   collectors/nrg-bindstatd \
+@@ -2312,6 +2314,7 @@
+ 
+ for f in \
+   collectors/nrg-apachestat \
++  collectors/nrg-apcupsdstat \
+   collectors/nrg-bindresponse \
+   collectors/nrg-bindstat \
+   collectors/nrg-bindstatd \

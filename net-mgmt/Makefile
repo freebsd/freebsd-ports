@@ -89,6 +89,7 @@
     SUBDIR += netwox
     SUBDIR += nitpicker
     SUBDIR += nocol
+    SUBDIR += nrg
     SUBDIR += nrpe
     SUBDIR += nrpep
     SUBDIR += nsc
