@@ -1,6 +1,6 @@
---- configure.in.orig	Fri Feb 22 15:50:26 2002
-+++ configure.in	Fri Feb 22 15:55:10 2002
-@@ -35,18 +35,26 @@
+--- configure.in.orig	Wed Apr 10 16:53:13 2002
++++ configure.in	Wed Apr 10 16:54:43 2002
+@@ -36,18 +36,26 @@
  dnl A case that the LEIM package does not exist.
  dnl
    locallisppath='${datadir}/emacs/${version}$(EMACS_POSTFIX)/site-lisp:'\
@@ -31,3 +31,35 @@
  docdir='${datadir}/emacs/${version}$(EMACS_POSTFIX)/etc'
  
  AC_ARG_WITH(gcc,
+@@ -224,6 +232,15 @@
+ machine='' opsys='' unported=no
+ case "${canonical}" in
+ 
++  ## FreeBSD ports
++  *-*-freebsd* )
++    opsys=freebsd
++    case "${canonical}" in
++      alpha*-*-freebsd*)       machine=alpha ;;
++      i[3456]86-*-freebsd*)    machine=intel386 ;;
++    esac
++  ;;
++
+   ## NetBSD ports
+   *-*-netbsd* )
+     opsys=netbsd
+@@ -1069,7 +1086,6 @@
+ 				;;
+       *-sysv4.2uw* )	  	opsys=unixware; NON_GNU_CPP=/lib/cpp ;;
+       *-386bsd* )	        opsys=386bsd ;;
+-      *-freebsd* )	        opsys=freebsd ;;
+       *-nextstep* )             opsys=nextstep ;;
+       ## Otherwise, we'll fall through to the generic opsys code at the bottom.
+     esac
+@@ -2095,6 +2111,7 @@
+ # Solaris requires -lintl if you want strerror (which calls dgettext)
+ # to return localized messages.
+ AC_CHECK_LIB(intl, dgettext)
++AC_CHECK_LIB(xpg4, _xpg4_setrunelocale)
+ 
+ AC_MSG_CHECKING(whether localtime caches TZ)
+ AC_CACHE_VAL(emacs_cv_localtime_cache,

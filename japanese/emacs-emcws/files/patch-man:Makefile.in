@@ -1,0 +1,11 @@
+--- man/Makefile.in.orig	Thu Apr 26 02:17:33 2001
++++ man/Makefile.in	Mon Oct 22 20:43:45 2001
+@@ -31,7 +31,7 @@
+ 
+ 
+ # The makeinfo program is part of the Texinfo distribution.
+-MAKEINFO = makeinfo
++MAKEINFO = makeinfo --no-split
+ INFO_TARGETS = ../info/emacs ../info/ccmode ../info/cl \
+ 	        ../info/dired-x ../info/ediff ../info/forms ../info/gnus \
+ 		../info/info ../info/message ../info/mh-e ../info/reftex \

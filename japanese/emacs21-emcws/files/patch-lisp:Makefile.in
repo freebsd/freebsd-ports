@@ -1,0 +1,29 @@
+--- lisp/Makefile.in.orig	Wed Apr 10 17:50:14 2002
++++ lisp/Makefile.in	Wed Apr 10 17:53:38 2002
+@@ -91,7 +91,25 @@
+ 	$(lisp)/term/vt420.el \
+ 	$(lisp)/term/wyse50.el \
+ 	$(lisp)/term/xterm.el \
+-	$(lisp)/version.el
++	$(lisp)/version.el \
++	$(lisp)/busyu.el \
++	$(lisp)/can-n-egg.el \
++	$(lisp)/canna.el \
++	$(lisp)/egg-jsymbol.el \
++	$(lisp)/egg-keymap.el \
++	$(lisp)/egg.el \
++	$(lisp)/isearch-ext.el \
++	$(lisp)/its/han-kata.el \
++	$(lisp)/its/hankaku.el \
++	$(lisp)/its/hira.el \
++	$(lisp)/its/kanainput.el \
++	$(lisp)/its/kata.el \
++	$(lisp)/its/zenkaku.el \
++	$(lisp)/mule-inst.el \
++	$(lisp)/sj3-client.el \
++	$(lisp)/sj3-egg.el \
++	$(lisp)/wnn-client.el \
++	$(lisp)/wnn-egg.el
+ 
+ # Files to compile before others during a bootstrap.  This is done to
+ # speed up the bootstrap process.  The CC files are compiled first
