@@ -11,6 +11,7 @@ bin/dnsname
 bin/dnsq
 bin/dnsqr
 bin/dnstrace
+bin/dnstracesort
 bin/dnstxt
 bin/pickdns
 bin/pickdns-conf
