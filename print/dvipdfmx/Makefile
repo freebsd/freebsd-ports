@@ -7,6 +7,7 @@
 
 PORTNAME=	dvipdfmx
 PORTVERSION=	20040411
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	http://project.ktug.or.kr/dvipdfmx/snapshot/current/
 
@@ -30,7 +31,7 @@ PLIST_SUB=	TEXMFLOCAL=${TEXMFLOCAL} \
 TEXMFLOCAL=	share/texmf-local
 MKTEXLSR=	${LOCALBASE}/bin/mktexlsr
 DVIPDFMCMAPDIR=	${LOCALBASE}/${TEXMFLOCAL}/dvipdfm/CMap
-ADOBECMAPDIR=	${LOCALBASE}/share/fonts/adobe-cmaps
+ADOBECMAPDIR=	${LOCALBASE}/share/ghostscript/Resource
 
 post-install:
 	${LN} -s -f ${ADOBECMAPDIR} ${DVIPDFMCMAPDIR}/adobe-cmaps
