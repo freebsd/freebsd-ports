@@ -7,6 +7,7 @@ bin/lwp-request
 bin/lwp-rget
 lib/perl5/site_perl/%%PERL_VER%%/Bundle/LWP.pm
 lib/perl5/site_perl/%%PERL_VER%%/File/Listing.pm
+lib/perl5/site_perl/%%PERL_VER%%/HTML/Form.pm
 lib/perl5/site_perl/%%PERL_VER%%/HTTP/Cookies.pm
 lib/perl5/site_perl/%%PERL_VER%%/HTTP/Daemon.pm
 lib/perl5/site_perl/%%PERL_VER%%/HTTP/Date.pm
@@ -48,6 +49,7 @@ lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/libwww-perl/.packlist
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/HTTP/Headers
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/HTTP/Request
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/HTTP
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/HTML
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/LWP/Authen
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/LWP/Protocol
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/LWP

@@ -7,8 +7,8 @@
 # $FreeBSD$
 #
 
-DISTNAME=       libwww-perl-5.44
-PKGNAME=        p5-libwww-5.44
+DISTNAME=       libwww-perl-5.47
+PKGNAME=        p5-libwww-5.47
 CATEGORIES=     www perl5 devel
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=     LWP
@@ -19,7 +19,7 @@ BUILD_DEPENDS=  ${PREFIX}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Digest.pm
 		${PREFIX}/lib/perl5/site_perl/${PERL_VER}/URI.pm:${PORTSDIR}/net/p5-URI \
 		${PREFIX}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Net/FTP.pm:${PORTSDIR}/net/p5-Net \
 		${PREFIX}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64 \
-		${PREFIX}/lib/perl5/site_perl/${PERL_VER}/HTML/Parser.pm:${PORTSDIR}/www/p5-HTML-Parser
+		${PREFIX}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/HTML/Parser.pm:${PORTSDIR}/www/p5-HTML-Parser
 
 USE_PERL5=	YES
 
@@ -29,6 +29,7 @@ MAN1=           lwp-download.1 \
 		lwp-rget.1
 MAN3=           Bundle::LWP.3 \
 		File::Listing.3 \
+		HTML::Form.3 \
 		HTTP::Cookies.3 \
 		HTTP::Daemon.3 \
 		HTTP::Date.3 \
