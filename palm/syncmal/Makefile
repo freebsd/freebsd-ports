@@ -15,7 +15,7 @@ MAINTAINER=	fenner@FreeBSD.Org
 
 BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/palm/jpilot:patch \
 		${NONEXISTENT}:${PORTSDIR}/palm/malsync:patch
-RUN_DEPENDS=	jpilot:${PORTSDIR}/palm/jpilot
+RUN_DEPENDS=	${PREFIX}/bin/jpilot:${PORTSDIR}/palm/jpilot
 
 PREFIX=		${LOCALBASE}/pilot
 USE_GMAKE=	YES
