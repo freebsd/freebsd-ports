@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	icc
-PORTVERSION=	8.1.024
+PORTVERSION=	8.1.026
 CATEGORIES=	lang linux devel
 MASTER_SITES=
-DISTNAME=	l_cc_pu_${PORTVERSION:C/p.+$//}
+DISTNAME=	l_cc_pc_${PORTVERSION:C/p.+$//}
 
 MAINTAINER=	netchild@FreeBSD.org
 COMMENT=	Intels C/C++ compiler, set up to produce native FreeBSD binaries
