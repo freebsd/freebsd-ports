@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	rvm
-PORTVERSION=	0.90.b
+PORTVERSION=	0.90.2.b
 CATEGORIES=	archivers
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -19,10 +19,11 @@ COMMENT=	An archive manager that uses rsync to manage backups
 BUILD_DEPENDS=	rsync:${PORTSDIR}/net/rsync
 RUN_DEPENDS=	rsync:${PORTSDIR}/net/rsync
 
+NO_LATEST_LINK=	yes
+
 USE_GNOME=	gnometarget
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-default-config-file=${PREFIX}/etc/rvm.conf
-NO_LATEST_LINK=	YES
 
 MAN1=		rvm.1
 PLIST_FILES=	bin/rvm
