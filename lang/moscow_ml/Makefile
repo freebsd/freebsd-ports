@@ -3,7 +3,7 @@
 # Date created:         2 August 1998
 # Whom:                 chuckr
 #
-# $Id: Makefile,v 1.8 1997/12/02 04:46:09 asami Exp $
+# $Id: Makefile,v 1.9 1998/08/02 17:38:18 chuckr Exp $
 #
 
 DISTNAME=       mos14src
@@ -15,7 +15,6 @@ MASTER_SITES=	ftp://ftp.dina.kvl.dk/pub/mosml/ \
 
 MAINTAINER=	chuckr@freefall.FreeBSD.org
 
-#BROKEN=		install
 ALL_TARGET=	world MOSMLHOME=$(PREFIX)/moscow_ml
 INSTALL_TARGET=	install MOSMLHOME=$(PREFIX)/moscow_ml
 WRKSRC=		${WRKDIR}/mosml/src
