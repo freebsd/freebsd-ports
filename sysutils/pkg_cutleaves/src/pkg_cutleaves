@@ -30,8 +30,9 @@
 # Interactive script for deinstalling "leaf" packages;
 # requires the portupgrade tools
 #
-# Syntax: pkg_cutleaves [-l] [-x] [-R]
+# Syntax: pkg_cutleaves [-c] [-l] [-x] [-R]
 # Options:
+#   -c: Show comments, too; only works with '-l' (ignored otherwise)
 #   -l: List leaf packages only, don't ask if they should be deinstalled
 #   -x: Honor exclude list in $excludefile
 #   -R: Run 'pkg_deinstall -R' instead of plain 'pkg_deinstall'
@@ -41,7 +42,7 @@ use strict;
 my $dbdir = "/var/db/pkg";
 my $excludefile = "/usr/local/etc/pkg_leaves.exclude";
 my $pkgdeinstall = "/usr/local/sbin/pkg_deinstall";
-my ($opt_listonly, $opt_excludelist, $opt_recursive);
+my ($opt_comments, $opt_listonly, $opt_excludelist, $opt_recursive);
 my $exclpattern;
 
 # Read the exclude list if the file exists
@@ -71,26 +72,36 @@ sub get_excl_pattern {
 	return $excl_pattern;
 }
 
-# Get a list of all leaves
+# Get a hash (name => comment) of all leaves
 sub get_leaves {
 	my $db_dir = $_[0];
 	my $excl_pattern = $_[1];
-	my @pkgdirs;
+	my %leaves;
 	opendir(DBDIR, $db_dir)
 		or die "Can't open package db directory $db_dir!";
 	while(defined(my $file = readdir(DBDIR))) {
 		my $path = $db_dir . '/' . $file;
 		my $reqlist = $path . '/+REQUIRED_BY';
+		my $commentfile = $path . '/+COMMENT';
 		# Exclude non-directories, "." and ".."
-		if (($file ne ".") && ($file ne "..") && (-d $path) && (!-s $reqlist)) {
+		if (($file ne ".") && ($file ne "..") && (-d $path) && (!-e $reqlist)) {
 			# Exclude packages matching exclude pattern, if requested
 			unless ($file =~ m/$excl_pattern/) {
-				@pkgdirs = (@pkgdirs, $file);
+				# Read package's short description/comment
+				my $comment;
+				if ((-s $commentfile) && (open(COMMENT, $commentfile))) {
+					$comment = <COMMENT>;
+					chomp($comment);
+					close(COMMENT);
+				} else {
+					$comment = "No short description";
+				}
+				$leaves{$file} = $comment;
 			}
 		}
 	}
 	closedir(DBDIR);
-	return @pkgdirs;
+	return %leaves;
 }
 
 # Examine command line arguments
@@ -102,8 +113,13 @@ while(@ARGV) {
 	elsif ($arg eq "-l") {
 		$opt_listonly = 1;
 	}
+	elsif ($arg eq "-c") {
+		$opt_comments = 1;
+	}
 	elsif ($arg eq "-R") {
 		$opt_recursive = 1;
+	} else {
+		warn "Unrecognized command line argument $arg ignored.\n";
 	}
 }
 
@@ -118,9 +134,13 @@ if ($opt_excludelist) {
 
 if ($opt_listonly) {
 	# Just print out the list of leaves, one per line
-	my @leaveslist = get_leaves($dbdir, $exclpattern);
-	foreach my $leaf (sort @leaveslist) {
-		print "$leaf\n";
+	my %leaves = get_leaves($dbdir, $exclpattern);
+	foreach my $leaf (sort keys %leaves) {
+		if ($opt_comments) {
+			print "$leaf - $leaves{$leaf}\n";
+		} else {
+			print "$leaf\n";
+		}
 	}
 } else {
 	my %leavestokeep;
@@ -130,9 +150,10 @@ if ($opt_listonly) {
 	my $again = "y";
 	ROUND: while($again eq "y") {
 		# Get list of packages and put them into an array
-		my @leaves = get_leaves($dbdir, $exclpattern);
-		LEAVESLOOP: foreach my $leaf (sort @leaves) {
+		my %leaves = get_leaves($dbdir, $exclpattern);
+		LEAVESLOOP: foreach my $leaf (sort keys %leaves) {
 			if (!$leavestokeep{$leaf}) {
+				print "$leaf - $leaves{$leaf}\n";
 				print "$leaf - [keep]/(d)elete/(f)lush marked pkgs/(a)bort? ";
 				my $answer = substr(lc(<STDIN>), 0, 1);
 
@@ -177,9 +198,9 @@ if ($opt_listonly) {
 		print "\n";
 	} # ROUND
 
-	# print list of removed packages
+	# print list of removed packages, sorted lexically
 	print "** Deinstalled packages:\n";
-	foreach my $cutleaf (@cutleaves) {
+	foreach my $cutleaf (sort @cutleaves) {
 		print "$cutleaf\n";
 	}
 }
