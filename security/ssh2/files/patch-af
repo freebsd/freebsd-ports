@@ -1,0 +1,19 @@
+*** pty.c.bak	Fri Oct  4 17:00:42 1996
+--- pty.c	Tue Nov 12 03:00:54 1996
+***************
+*** 306,314 ****
+--- 306,319 ----
+  #else			/* not SCO UNIX */
+    char buf[64];
+    int i;
++ #ifdef __FreeBSD__
++   const char *ptymajors = "pqrsPQRS";
++   const char *ptyminors = "0123456789abcdefghijklmnopqrstuv";
++ #else
+    const char *ptymajors = 
+      "pqrstuvwxyzabcdefghijklmnoABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    const char *ptyminors = "0123456789abcdef";
++ #endif
+    int num_minors = strlen(ptyminors);
+    int num_ptys = strlen(ptymajors) * num_minors;
+  
