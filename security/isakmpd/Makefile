@@ -9,12 +9,12 @@
 #
 
 PORTNAME=	isakmpd
-PORTVERSION= 	20020104
+PORTVERSION= 	20020203
 CATEGORIES=	security net
 MASTER_SITES=	${MASTER_SITE_NETBSD}
 MASTER_SITE_SUBDIR=	LOCAL_PORTS
 
-MAINTAINER=	anders@hack.org
+MAINTAINER=	ports@FreeBSD.org
 
 # this is not compatible with cross build - there's no other way
 .if !exists(/usr/include/netinet6/ipsec.h)
