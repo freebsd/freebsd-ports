@@ -7,7 +7,7 @@
 
 PORTNAME=	dkftpbench
 PORTVERSION=	0.45
-CATEGORIES=	benchmarks
+CATEGORIES=	benchmarks ftp
 MASTER_SITES=	http://www.kegel.com/dkftpbench/
 
 MAINTAINER=	bogorodskiy@inbox.ru
