@@ -1,7 +1,7 @@
-Flawfinder searches through source code looking for poten- tial security
-flaws. Flawfinder uses an internal database called  the  ``ruleset''; the
+Flawfinder searches through source code looking for potential security
+flaws. Flawfinder uses an internal database called the ``ruleset''; the
 ruleset identifies functions that are common causes of security flaws.
-Every potential security  flaw found in a given source code file (matching
+Every potential security flaw found in a given source code file (matching
 an entry in the ruleset) is called a ``hit,'' and the set of hits found
 during any particular run is called the ``hitlist.''
 
