@@ -1,41 +1,31 @@
 # New ports collection makefile for:    python
-# Version required:     1.5
+# Version required:     1.5.2
 # Date created:         08 August 1995
 # Whom:                 jkh
 #
-# $Id: Makefile,v 1.45 1999/02/22 19:06:06 nectar Exp $
+# $Id: Makefile,v 1.46 1999/04/11 00:38:09 nectar Exp $
 #
 
-DISTNAME=       pyth151
-PKGNAME=        python-1.5.1
+DISTNAME=       py152
+PKGNAME=        python-1.5.2
 CATEGORIES=	lang python tk80
 MASTER_SITES=	ftp://www.python.org/pub/python/src/ \
 		ftp://ftp.cwi.nl/pub/python/src/
 EXTRACT_SUFX=	.tgz
-
-PATCH_SITES=	http://www.python.org/1.5/patches-1.5.1/
-PATCHFILES=	_tkinter.1.txt SocketServer.1.txt bltinmodule.1.txt \
-		bltinmodule.2.txt bltinmodule.3.txt \
-		ceval.1.txt classobject.1.txt configure.2.txt fileobject.1.txt \
-		freeze.1.txt \
-		gzip.1.txt imaplib.1.txt imaplib.2.txt imaplib.3.txt \
-		import.1.txt longobject.1.txt object.1.txt \
-		parsermodule.1.txt pcre.1.txt sgmllib.1.txt sgmllib.2.txt \
-		string.1.txt stringobject.1.txt stropmodule.1.txt \
-		timemodule.1.txt urllib.1.txt urllib.2.txt zlibmodule.1.txt
 
 MAINTAINER=	tg@FreeBSD.ORG
 
 LIB_DEPENDS=	${TK_DEPENDS}
 
 DIST_SUBDIR=	python
-WRKSRC=		${WRKDIR}/Python-1.5.1
+WRKSRC=		${WRKDIR}/Python-1.5.2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-fpectl
 MAKE_FLAGS=	'OPT=${CFLAGS}'
 INSTALL_TARGET=	install
 PLIST=		${WRKDIR}/PLIST
 MAN1=		python.1
+NO_LATEST_LINK=	yes
 
 #
 # The standard setup file
@@ -75,9 +65,7 @@ PLIST_GMP=	lib/python1.5/lib-dynload/mpzmodule.so
 .endif
 
 post-extract:
-	cd ${WRKSRC}/Lib; ${SH} ${FILESDIR}/plat-freebsd2.sh; \
-		${SH} ${FILESDIR}/plat-freebsd3.sh;	      \
-		${SH} ${FILESDIR}/plat-freebsd4.sh
+	cd ${WRKSRC}/Lib && ${SH} ${FILESDIR}/plat-freebsd4.sh
 
 post-configure:
 	${CP} ${FILESDIR}/${SETUP_FILE} ${WRKSRC}/Modules/Setup
@@ -87,29 +75,23 @@ post-configure:
 
 .include <bsd.port.pre.mk>
 
-.if ${PORTOBJFORMAT} == elf
-LDFLAGS+=	-rdynamic
-CONFIGURE_ENV?=	LDFLAGS="${LDFLAGS}"
-.endif
-
 .if ${OSVERSION} >= 400000
 PLATFORMS=plat-freebsd2 plat-freebsd3
 .elif ${OSVERSION} >= 300000
 PLATFORMS=plat-freebsd2 plat-freebsd4
-.else	
+.else   
 PLATFORMS=plat-freebsd3 plat-freebsd4
 .endif
 
 pre-install:
-	for platform in ${PLATFORMS}; do                     \
-		${MKDIR} ${PREFIX}/lib/python1.5/$$platform; \
-		${INSTALL_DATA} ${WRKSRC}/Lib/$$platform/*   \
-			${PREFIX}/lib/python1.5/$$platform/; \
-	done
+.for platform in ${PLATFORMS}
+	${MKDIR} ${PREFIX}/lib/python1.5/${platform}
+	${INSTALL_DATA} ${WRKSRC}/Lib/${platform}/*                    \
+		${PREFIX}/lib/python1.5/${platform}/
+.endfor
 	@${ECHO} ${PLIST_GMP} | sort -r -o ${PLIST} - ${PKGDIR}/PLIST
 
 post-install:
-	${INSTALL_SCRIPT} ${PREFIX}/lib/python1.5/plat-freebsd2/regen ${PREFIX}/lib/python1.5/plat-freebsd3
 	strip ${PREFIX}/bin/python
 	@${MKDIR} ${PREFIX}/share/doc/python
 	${INSTALL_DATA} ${WRKSRC}/Misc/COPYRIGHT ${PREFIX}/share/doc/python

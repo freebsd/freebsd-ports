@@ -1,8 +1,10 @@
 bin/python1.5
 bin/python
+share/doc/python/COPYRIGHT
 include/python1.5/Python.h
 include/python1.5/abstract.h
 include/python1.5/bitset.h
+include/python1.5/bufferobject.h
 include/python1.5/cStringIO.h
 include/python1.5/ceval.h
 include/python1.5/classobject.h
@@ -48,6 +50,7 @@ include/python1.5/pyerrors.h
 include/python1.5/pyfpe.h
 include/python1.5/pystate.h
 include/python1.5/pythonrun.h
+include/python1.5/pythread.h
 include/python1.5/rangeobject.h
 include/python1.5/rename2.h
 include/python1.5/sliceobject.h
@@ -97,6 +100,12 @@ lib/python1.5/aifc.pyo
 lib/python1.5/anydbm.py
 lib/python1.5/anydbm.pyc
 lib/python1.5/anydbm.pyo
+lib/python1.5/asynchat.py
+lib/python1.5/asynchat.pyc
+lib/python1.5/asynchat.pyo
+lib/python1.5/asyncore.py
+lib/python1.5/asyncore.pyc
+lib/python1.5/asyncore.pyo
 lib/python1.5/audiodev.py
 lib/python1.5/audiodev.pyc
 lib/python1.5/audiodev.pyo
@@ -130,6 +139,9 @@ lib/python1.5/cmpcache.pyo
 lib/python1.5/code.py
 lib/python1.5/code.pyc
 lib/python1.5/code.pyo
+lib/python1.5/codeop.py
+lib/python1.5/codeop.pyc
+lib/python1.5/codeop.pyo
 lib/python1.5/colorsys.py
 lib/python1.5/colorsys.pyc
 lib/python1.5/colorsys.pyo
@@ -372,6 +384,9 @@ lib/python1.5/lib-tk/Dialog.pyo
 lib/python1.5/lib-tk/FileDialog.py
 lib/python1.5/lib-tk/FileDialog.pyc
 lib/python1.5/lib-tk/FileDialog.pyo
+lib/python1.5/lib-tk/FixTk.py
+lib/python1.5/lib-tk/FixTk.pyc
+lib/python1.5/lib-tk/FixTk.pyo
 lib/python1.5/lib-tk/ScrolledText.py
 lib/python1.5/lib-tk/ScrolledText.pyc
 lib/python1.5/lib-tk/ScrolledText.pyo
@@ -396,6 +411,9 @@ lib/python1.5/lib-tk/tkCommonDialog.pyo
 lib/python1.5/lib-tk/tkFileDialog.py
 lib/python1.5/lib-tk/tkFileDialog.pyc
 lib/python1.5/lib-tk/tkFileDialog.pyo
+lib/python1.5/lib-tk/tkFont.py
+lib/python1.5/lib-tk/tkFont.pyc
+lib/python1.5/lib-tk/tkFont.pyo
 lib/python1.5/lib-tk/tkMessageBox.py
 lib/python1.5/lib-tk/tkMessageBox.pyc
 lib/python1.5/lib-tk/tkMessageBox.pyo
@@ -438,6 +456,9 @@ lib/python1.5/multifile.pyo
 lib/python1.5/mutex.py
 lib/python1.5/mutex.pyc
 lib/python1.5/mutex.pyo
+lib/python1.5/netrc.py
+lib/python1.5/netrc.pyc
+lib/python1.5/netrc.pyo
 lib/python1.5/nntplib.py
 lib/python1.5/nntplib.pyc
 lib/python1.5/nntplib.pyo
@@ -502,9 +523,6 @@ lib/python1.5/plat-freebsd4/TERMIOS.py
 lib/python1.5/plat-freebsd4/TERMIOS.pyc
 lib/python1.5/plat-freebsd4/TERMIOS.pyo
 lib/python1.5/plat-freebsd4/regen
-lib/python1.5/poly.py
-lib/python1.5/poly.pyc
-lib/python1.5/poly.pyo
 lib/python1.5/popen2.py
 lib/python1.5/popen2.pyc
 lib/python1.5/popen2.pyo
@@ -575,6 +593,9 @@ lib/python1.5/sgmllib.pyo
 lib/python1.5/shelve.py
 lib/python1.5/shelve.pyc
 lib/python1.5/shelve.pyo
+lib/python1.5/shlex.py
+lib/python1.5/shlex.pyc
+lib/python1.5/shlex.pyo
 lib/python1.5/shutil.py
 lib/python1.5/shutil.pyc
 lib/python1.5/shutil.pyo
@@ -593,6 +614,9 @@ lib/python1.5/stat.pyo
 lib/python1.5/statcache.py
 lib/python1.5/statcache.pyc
 lib/python1.5/statcache.pyo
+lib/python1.5/statvfs.py
+lib/python1.5/statvfs.pyc
+lib/python1.5/statvfs.pyo
 lib/python1.5/string.py
 lib/python1.5/string.pyc
 lib/python1.5/string.pyo
@@ -619,6 +643,7 @@ lib/python1.5/test/autotest.py
 lib/python1.5/test/autotest.pyc
 lib/python1.5/test/autotest.pyo
 lib/python1.5/test/greyrgb.uue
+lib/python1.5/test/output/test_MimeWriter
 lib/python1.5/test/output/test_al
 lib/python1.5/test/output/test_array
 lib/python1.5/test/output/test_audioop
@@ -628,6 +653,7 @@ lib/python1.5/test/output/test_builtin
 lib/python1.5/test/output/test_cd
 lib/python1.5/test/output/test_cl
 lib/python1.5/test/output/test_cmath
+lib/python1.5/test/output/test_cpickle
 lib/python1.5/test/output/test_crypt
 lib/python1.5/test/output/test_dbm
 lib/python1.5/test/output/test_dl
@@ -638,23 +664,30 @@ lib/python1.5/test/output/test_gdbm
 lib/python1.5/test/output/test_gl
 lib/python1.5/test/output/test_grammar
 lib/python1.5/test/output/test_grp
+lib/python1.5/test/output/test_gzip
 lib/python1.5/test/output/test_imageop
 lib/python1.5/test/output/test_imgfile
+lib/python1.5/test/output/test_long
 lib/python1.5/test/output/test_math
 lib/python1.5/test/output/test_md5
 lib/python1.5/test/output/test_new
 lib/python1.5/test/output/test_nis
+lib/python1.5/test/output/test_ntpath
 lib/python1.5/test/output/test_opcodes
 lib/python1.5/test/output/test_operations
 lib/python1.5/test/output/test_operator
+lib/python1.5/test/output/test_pickle
 lib/python1.5/test/output/test_pkg
+lib/python1.5/test/output/test_popen2
 lib/python1.5/test/output/test_pow
 lib/python1.5/test/output/test_pwd
 lib/python1.5/test/output/test_re
 lib/python1.5/test/output/test_regex
+lib/python1.5/test/output/test_rfc822
 lib/python1.5/test/output/test_rgbimg
 lib/python1.5/test/output/test_rotor
 lib/python1.5/test/output/test_select
+lib/python1.5/test/output/test_sha
 lib/python1.5/test/output/test_signal
 lib/python1.5/test/output/test_socket
 lib/python1.5/test/output/test_strftime
@@ -667,6 +700,8 @@ lib/python1.5/test/output/test_timing
 lib/python1.5/test/output/test_tokenize
 lib/python1.5/test/output/test_types
 lib/python1.5/test/output/test_unpack
+lib/python1.5/test/output/test_userdict
+lib/python1.5/test/output/test_userlist
 lib/python1.5/test/output/test_xmllib
 lib/python1.5/test/output/test_zlib
 lib/python1.5/test/pystone.py
@@ -681,6 +716,15 @@ lib/python1.5/test/regex_tests.pyo
 lib/python1.5/test/regrtest.py
 lib/python1.5/test/regrtest.pyc
 lib/python1.5/test/regrtest.pyo
+lib/python1.5/test/reperf.py
+lib/python1.5/test/reperf.pyc
+lib/python1.5/test/reperf.pyo
+lib/python1.5/test/sortperf.py
+lib/python1.5/test/sortperf.pyc
+lib/python1.5/test/sortperf.pyo
+lib/python1.5/test/test_MimeWriter.py
+lib/python1.5/test/test_MimeWriter.pyc
+lib/python1.5/test/test_MimeWriter.pyo
 lib/python1.5/test/test_al.py
 lib/python1.5/test/test_al.pyc
 lib/python1.5/test/test_al.pyo
@@ -714,6 +758,9 @@ lib/python1.5/test/test_cl.pyo
 lib/python1.5/test/test_cmath.py
 lib/python1.5/test/test_cmath.pyc
 lib/python1.5/test/test_cmath.pyo
+lib/python1.5/test/test_cpickle.py
+lib/python1.5/test/test_cpickle.pyc
+lib/python1.5/test/test_cpickle.pyo
 lib/python1.5/test/test_crypt.py
 lib/python1.5/test/test_crypt.pyc
 lib/python1.5/test/test_crypt.pyo
@@ -744,12 +791,18 @@ lib/python1.5/test/test_grammar.pyo
 lib/python1.5/test/test_grp.py
 lib/python1.5/test/test_grp.pyc
 lib/python1.5/test/test_grp.pyo
+lib/python1.5/test/test_gzip.py
+lib/python1.5/test/test_gzip.pyc
+lib/python1.5/test/test_gzip.pyo
 lib/python1.5/test/test_imageop.py
 lib/python1.5/test/test_imageop.pyc
 lib/python1.5/test/test_imageop.pyo
 lib/python1.5/test/test_imgfile.py
 lib/python1.5/test/test_imgfile.pyc
 lib/python1.5/test/test_imgfile.pyo
+lib/python1.5/test/test_long.py
+lib/python1.5/test/test_long.pyc
+lib/python1.5/test/test_long.pyo
 lib/python1.5/test/test_math.py
 lib/python1.5/test/test_math.pyc
 lib/python1.5/test/test_math.pyo
@@ -762,6 +815,9 @@ lib/python1.5/test/test_new.pyo
 lib/python1.5/test/test_nis.py
 lib/python1.5/test/test_nis.pyc
 lib/python1.5/test/test_nis.pyo
+lib/python1.5/test/test_ntpath.py
+lib/python1.5/test/test_ntpath.pyc
+lib/python1.5/test/test_ntpath.pyo
 lib/python1.5/test/test_opcodes.py
 lib/python1.5/test/test_opcodes.pyc
 lib/python1.5/test/test_opcodes.pyo
@@ -771,9 +827,15 @@ lib/python1.5/test/test_operations.pyo
 lib/python1.5/test/test_operator.py
 lib/python1.5/test/test_operator.pyc
 lib/python1.5/test/test_operator.pyo
+lib/python1.5/test/test_pickle.py
+lib/python1.5/test/test_pickle.pyc
+lib/python1.5/test/test_pickle.pyo
 lib/python1.5/test/test_pkg.py
 lib/python1.5/test/test_pkg.pyc
 lib/python1.5/test/test_pkg.pyo
+lib/python1.5/test/test_popen2.py
+lib/python1.5/test/test_popen2.pyc
+lib/python1.5/test/test_popen2.pyo
 lib/python1.5/test/test_pow.py
 lib/python1.5/test/test_pow.pyc
 lib/python1.5/test/test_pow.pyo
@@ -786,6 +848,9 @@ lib/python1.5/test/test_re.pyo
 lib/python1.5/test/test_regex.py
 lib/python1.5/test/test_regex.pyc
 lib/python1.5/test/test_regex.pyo
+lib/python1.5/test/test_rfc822.py
+lib/python1.5/test/test_rfc822.pyc
+lib/python1.5/test/test_rfc822.pyo
 lib/python1.5/test/test_rgbimg.py
 lib/python1.5/test/test_rgbimg.pyc
 lib/python1.5/test/test_rgbimg.pyo
@@ -795,6 +860,9 @@ lib/python1.5/test/test_rotor.pyo
 lib/python1.5/test/test_select.py
 lib/python1.5/test/test_select.pyc
 lib/python1.5/test/test_select.pyo
+lib/python1.5/test/test_sha.py
+lib/python1.5/test/test_sha.pyc
+lib/python1.5/test/test_sha.pyo
 lib/python1.5/test/test_signal.py
 lib/python1.5/test/test_signal.pyc
 lib/python1.5/test/test_signal.pyo
@@ -834,6 +902,12 @@ lib/python1.5/test/test_types.pyo
 lib/python1.5/test/test_unpack.py
 lib/python1.5/test/test_unpack.pyc
 lib/python1.5/test/test_unpack.pyo
+lib/python1.5/test/test_userdict.py
+lib/python1.5/test/test_userdict.pyc
+lib/python1.5/test/test_userdict.pyo
+lib/python1.5/test/test_userlist.py
+lib/python1.5/test/test_userlist.pyc
+lib/python1.5/test/test_userlist.pyo
 lib/python1.5/test/test_xmllib.py
 lib/python1.5/test/test_xmllib.pyc
 lib/python1.5/test/test_xmllib.pyo
@@ -852,9 +926,6 @@ lib/python1.5/test/tokenize_tests.pyo
 lib/python1.5/threading.py
 lib/python1.5/threading.pyc
 lib/python1.5/threading.pyo
-lib/python1.5/threading_api.py
-lib/python1.5/threading_api.pyc
-lib/python1.5/threading_api.pyo
 lib/python1.5/toaiff.py
 lib/python1.5/toaiff.pyc
 lib/python1.5/toaiff.pyo
@@ -870,6 +941,9 @@ lib/python1.5/traceback.pyo
 lib/python1.5/tty.py
 lib/python1.5/tty.pyc
 lib/python1.5/tty.pyo
+lib/python1.5/turtle.py
+lib/python1.5/turtle.pyc
+lib/python1.5/turtle.pyo
 lib/python1.5/types.py
 lib/python1.5/types.pyc
 lib/python1.5/types.pyo
@@ -894,9 +968,6 @@ lib/python1.5/uu.pyo
 lib/python1.5/wave.py
 lib/python1.5/wave.pyc
 lib/python1.5/wave.pyo
-lib/python1.5/whatsound.py
-lib/python1.5/whatsound.pyc
-lib/python1.5/whatsound.pyo
 lib/python1.5/whichdb.py
 lib/python1.5/whichdb.pyc
 lib/python1.5/whichdb.pyo
@@ -909,20 +980,17 @@ lib/python1.5/xdrlib.pyo
 lib/python1.5/xmllib.py
 lib/python1.5/xmllib.pyc
 lib/python1.5/xmllib.pyo
-lib/python1.5/zmod.py
-lib/python1.5/zmod.pyc
-lib/python1.5/zmod.pyo
-share/doc/python/COPYRIGHT
-@exec mkdir -p %D/lib/python1.5/site-packages
-@dirrm share/doc/python
-@dirrm lib/python1.5/test/output
-@dirrm lib/python1.5/test
+@dirrm include/python1.5
+@dirrm lib/python1.5/config
+@dirrm lib/python1.5/lib-dynload
+@dirrm lib/python1.5/lib-stdwin
+@dirrm lib/python1.5/lib-tk
 @dirrm lib/python1.5/plat-freebsd2
 @dirrm lib/python1.5/plat-freebsd3
-@dirrm lib/python1.5/lib-tk
-@dirrm lib/python1.5/lib-stdwin
-@dirrm lib/python1.5/lib-dynload
-@dirrm lib/python1.5/config
+@dirrm lib/python1.5/plat-freebsd4
 @dirrm lib/python1.5/site-packages
+@dirrm lib/python1.5/test/output
+@dirrm lib/python1.5/test
 @dirrm lib/python1.5
-@dirrm include/python1.5
+@exec mkdir -p %D/lib/python1.5/site-packages
+@dirrm share/doc/python
