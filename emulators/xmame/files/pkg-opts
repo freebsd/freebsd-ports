@@ -1,0 +1,30 @@
+# Variable|Default value|Short description
+# 	Multi-line/long description (optional).
+# 	Multi-line/long description lines must start with whitespace!
+#
+DISPLAY_TARGET|sdl|Set this to one of the following:
+		sdl	Uses the SDL library to be able to play fullscreen
+			games without having to have root rights.
+		opengl	Uses OpenGL libraries for hardware accelerrated screen
+			scaling.
+		x11	Use the standard X11 libraries. Need to be root to
+			play fullscreen games.
+		svgalib	Uses the svgalib library for console play. This
+			target is not working yet; patches to make it work
+			most warmly welcomed.
+WITH_ASM68K|no|If set to 'yes', this will enable the speedier but buggy
+	assembler 68x00 CPU emulation cores. This will only work on x86.
+	Note that some games are known to break with this option, among
+	them pbobble2.
+WITH_OPTIMIZATION|no|If set to 'yes', this will enable maximum C compiler
+	optimization. Due to the fact that these optimization levels
+	sometimes uncover hidden GCC bugs, this is disabled by default.
+	Enable at your own risk.
+WITH_ESOUND|no|If set to 'yes', compile with the esound libraries for
+	nice behaviour in a GNOME environment.
+WITH_DATFILES|yes|If set to 'yes', this installs additional information
+	with MAME, including cheats, history of games, and highscores.
+	This is a MAME-only option.
+WITH_NETWORK|yes|If set to 'yes', include support for network play.
+	This can be disabled because there might be a speed increase
+	without it.

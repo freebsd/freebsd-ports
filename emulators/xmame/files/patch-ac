@@ -1,9 +1,9 @@
---- src/unix/unix.mak.orig	Thu Nov 15 07:15:47 2001
-+++ src/unix/unix.mak	Thu Nov 22 11:11:35 2001
-@@ -45,20 +45,20 @@
+--- src/unix/unix.mak.orig	Mon Mar 18 02:41:37 2002
++++ src/unix/unix.mak	Tue Mar 19 18:05:20 2002
+@@ -50,20 +50,20 @@
  
  # svga and ggi also use $(X11LIB) since that's where zlib often is
- LIBS.x11        = $(X11LIB) $(JOY_X11_LIBS) -lX11 -lXext 
+ LIBS.x11        = $(X11LIB) $(JOY_X11_LIBS) $(XINPUT_DEVICES_LIBS) -lX11 -lXext
 -LIBS.svgalib    = $(X11LIB) -lvga -lvgagl
 +LIBS.svgalib    = -L$(LOCALBASE)/lib -lvga -lvgagl
  LIBS.ggi        = $(X11LIB) -lggi
@@ -16,17 +16,17 @@
 +LIBS.SDL	= `$(SDL_CONFIG) --libs`
  LIBS.photon2	= -L/usr/lib -lph -lphrender
  
- CFLAGS.x11      = $(X11INC) $(JOY_X11_CFLAGS)
+ CFLAGS.x11      = $(X11INC) $(JOY_X11_CFLAGS) $(XINPUT_DEVICES_CFLAGS)
 -CFLAGS.xgl      = $(X11INC) $(JOY_X11_CFLAGS) $(GLCFLAGS)
 +CFLAGS.xgl      = -DGLU_VERSION_1_2 $(X11INC) $(JOY_X11_CFLAGS) $(GLCFLAGS) -I$(LOCALBASE)/include $(PTHREAD_CFLAGS)
  CFLAGS.xfx      = $(X11INC) $(JOY_X11_CFLAGS) -I/usr/include/glide
  CFLAGS.svgafx   = -I/usr/include/glide
 -CFLAGS.SDL      = -D_REENTRANT
-+CFLAGS.SDL      = `$(SDL_CONFIG) --cflags`
++CFLAGS.SDL      = $(X11INC) `$(SDL_CONFIG) --cflags`
  CFLAGS.photon2	=
  
  INST.x11        = doinstall
-@@ -340,7 +340,7 @@
+@@ -357,7 +357,7 @@
  	
  doc/x$(TARGET)rc.dist: all src/unix/xmamerc-keybinding-notes.txt
  	./x$(TARGET).$(DISPLAY_METHOD) -noloadconfig -showconfig | \
@@ -35,7 +35,7 @@
  	cat src/unix/xmamerc-keybinding-notes.txt >> doc/x$(TARGET)rc.dist
  	
  doc/gamelist.$(TARGET): all
-@@ -349,7 +349,8 @@
+@@ -366,7 +366,8 @@
  
  doc/x$(TARGET).6: all src/unix/xmame.6-1 src/unix/xmame.6-3
  	cat src/unix/xmame.6-1 > doc/x$(TARGET).6

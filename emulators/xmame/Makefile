@@ -6,7 +6,7 @@
 #
 
 PORTNAME?=	xmame
-PORTVERSION?=	0.58.1
+PORTVERSION?=	0.58.3
 CATEGORIES=	emulators
 MASTER_SITES=	http://x.mame.net/download/ \
 		http://www.mame.net/zips/ \
@@ -23,11 +23,6 @@ USE_GMAKE=	yes
 MAN6=		x${MAMEMESS}.6
 
 XMAMEVERSION?=	${PORTVERSION}
-
-.if !defined(WITH_SVGALIB) || ${WITH_SVGALIB} != "yes"
-USE_XPM=	yes
-USE_X_PREFIX=	yes
-.endif
 
 # Are we building MAME, MESS or PinMAME? (also set by slave ports)
 MAMEMESS?=	mame
@@ -103,9 +98,20 @@ ALLDOCS=	${GENERALDOCS} ${PINMAMEDOCS}
 .endif
 .endif
 
-# Datfiles - for history/bugs/cheats/highscores in MAME
+PKGOPTS=	${FILESDIR}/pkg-opts
+
+#
+# Various options are processed here. Note that due to a bug in make(1), at
+# present the conditionals are suboptimal. See PR bin/34032.
+#
+
+# Option WITH_DATFILES
 .if ${MAMEMESS} == "mame"
-.if defined(WITH_DATFILES) && ${WITH_DATFILES} == "yes"
+.if !defined(WITH_DATFILES)
+WITH_DATFILES=	yes
+.endif
+
+.if ${WITH_DATFILES:L} != "no"
 PLIST_SUB+=	DATFILES=""
 
 BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
@@ -125,52 +131,35 @@ post-extract:
 		unzip -q ${DISTDIR}/${DIST_SUBDIR}/cheat.zip cheat.dat
 .else
 PLIST_SUB+=	DATFILES="@comment "
-.if !defined(WITH_DATFILES)
-pre-everything::
-	@${ECHO_MSG} "===> If you want to install additional information with MAME (such as game"
-	@${ECHO_MSG} "     history, cheats, and highscores) use \"make WITH_DATFILES=yes\""
-.endif
 .endif
 .endif
 
-# ASM 68k cores - disabled by default, because they break things (pbobble2
-# being a prime example). These also only work on i386. Should be enabled
-# by default when ready for prime time.
-.if defined(WITH_ASM68K) && ${WITH_ASM68K} == "yes"
+# Option WITH_ASM68K
+.if !defined(WITH_ASM68K)
+WITH_ASM68K=	no
+.endif
+
+.if ${WITH_ASM68K:L} == "yes"
 ASM_COMMENT=
 .else
 ASM_COMMENT=\#
 .endif
 
-# Heavy optimization - disabled by default because it breaks things. It's
-# still available because it enables considerable speedup.
-.if defined(WITH_OPTIMIZATION) && ${WITH_OPTIMIZATION} == "yes"
+# Option WITH_OPTIMIZATION
+.if defined(WITH_OPTIMIZATION)
+.if ${WITH_OPTIMIZATION:L} == "yes"
 CFLAGS+=	-O3 -Wall -Wno-unused -funroll-loops \
 		-fstrength-reduce -fomit-frame-pointer -ffast-math \
 		-malign-functions=4 -malign-jumps=4 -malign-loops=4
-.else
-.if !defined(WITH_OPTIMIZATION)
-pre-everything::
-	@${ECHO_MSG} "===> If you want to enable high optimization levels, use "
-	@${ECHO_MSG} "     \"make WITH_OPTIMIZATION=yes\". Be warned that this is known to"
-	@${ECHO_MSG} "     break some games though."
 .endif
 .endif
 
-# Choose one of several display targets:
-#  WITH_GL	OpenGL based, displays vector games with hardware
-#		acceleration
-#  WITH_SDL	Uses the SDL library to be able to play fullscreen
-#		without root rights
-#  WITH_SVGALIB	Uses the svgalib library to allow playing without X. This
-#		has not been extensively tested; patches welcome to make
-#		this actually work.
-#  WITH_X11	The standard display target, should work without
-#		dependancies other than X
-#
-# WITH_SDL is enabled by default because x{mame,mess} can run full
-# screen without having to be setuid root.
-.if defined(WITH_GL) && ${WITH_GL} == "yes"
+# Option DISPLAY_TARGET
+.if !defined(DISPLAY_TARGET)
+DISPLAY_TARGET=sdl
+.endif
+
+.if ${DISPLAY_TARGET:L} == "opengl"
 CFLAGS+=	${PTHREAD_CFLAGS}
 USE_MESA=	yes
 DISPLAY_METHOD=	xgl
@@ -178,32 +167,65 @@ PLIST_SUB+=	OPENGL=""
 ALL_DOCS+=	${GLDOCS}
 .else
 PLIST_SUB+=	OPENGL="@comment "
-.if defined(WITH_SVGALIB) && ${WITH_SVGALIB} == "yes"
+
+.if ${DISPLAY_TARGET:L} == "svgalib"
 LIB_DEPENDS=	vga.1:${PORTSDIR}/graphics/svgalib
 CFLAGS+=	-I${LOCALBASE}/include
 MAKE_ENV+=	LOCALBASE=${LOCALBASE}
 DISPLAY_METHOD=	svgalib
 .else
-.if !defined(WITH_SDL) || ${WITH_SDL} != "no"
+
+.if ${DISPLAY_TARGET:L} == "x11"
+DISPLAY_METHOD=	x11
+.else
+
+.if ${DISPLAY_TARGET:L} != "sdl"
+pre-everything::
+	@${ECHO_MSG} "You must select a valid DISPLAY_TARGET. Refer to"
+	@${ECHO_MSG} "'make options' for more information."
+	@exit 1
+.endif
 LIB_DEPENDS=    SDL-1.1.3:${PORTSDIR}/devel/sdl12
 SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
 MAKE_ENV+=	SDL_CONFIG=${SDL_CONFIG}
 DISPLAY_METHOD=	SDL
-.if !defined(WITH_SDL)
-pre-everything::
-	@${ECHO_MSG} "===> If you don't want ${MAMEMESS:U} to be built with SDL support,"
-	@${ECHO_MSG} "     use \"make WITH_SDL=no\""
-	@${ECHO_MSG} "===> If you want to build ${MAMEMESS:U} with OpenGL support for vector games,"
-	@${ECHO_MSG} "     use \"make WITH_GL=yes\""
-.endif
-.else
-DISPLAY_METHOD=	x11
 .endif
 .endif
 .endif
+
+.if ${DISPLAY_TARGET:L} != "svgalib"
+USE_XPM=	yes
+USE_X_PREFIX=	yes
+.endif
+
 PKGNAMESUFFIX=-${DISPLAY_METHOD:L}
 
-# USB joysticks - only enabled on -STABLE because of conflicting USB
+# Option WITH_ESOUND
+.if !defined(WITH_ESOUND)
+WITH_ESOUND=	no
+.endif
+
+.if ${WITH_ESOUND:L} == "yes"
+ESOUNDCOMMENT=
+USE_ESOUND=	yes
+.else
+ESOUNDCOMMENT=\#\ 
+.endif
+
+# Option WITH_NETWORK
+.if ${MAMEMESS} == "mame"
+.if !defined(WITH_NETWORK)
+WITH_NETWORK=	yes
+.endif
+
+.if ${WITH_NETWORK:L} != "no"
+NETWORK=
+.else
+NETWORK=\#\ 
+.endif
+.endif
+
+# USB joysticks are only enabled on -STABLE because of conflicting USB
 # prototypes in -STABLE & -CURRENT.
 .include <bsd.port.pre.mk>
 
@@ -213,34 +235,22 @@ JOYUSBCOMMENT=\#\
 JOYUSBCOMMENT=
 .endif
 
-# Esound audio - handy for a GNOME environment
-.if defined(WITH_ESOUND) && ${WITH_ESOUND} == "yes"
-ESOUNDCOMMENT=
-USE_ESOUND=	yes
-.else
-ESOUNDCOMMENT=\#\ 
-.if !defined(WITH_ESOUND)
-pre-everything::
-	@echo "===> If you want to build ${MAMEMESS:U} with support for ESound,"
-	@echo "     use \"make WITH_ESOUND=yes\""
-.endif
-.endif
+#
+# Regular targets
+#
 
-.if ${MAMEMESS} == "mame"
-# Network support - enabled by default because the penalty is low. There might
-# be a speedup without it though, so I've made it (yet another) option.
-.if !defined(WITH_NETWORK) || ${WITH_NETWORK} != "no"
-NETWORK=
-.else
-NETWORK=\#\ 
-.endif
-.if !defined(WITH_NETWORK)
+options:
+	@(${ECHO_MSG} "===>  Build options for ${PKGNAME}:"; \
+	  ${PERL} -ne '/^#/ || /^\s/ && print || \
+	    print sprintf "* %s [%s]\n	%s", split(/\|/)' ${PKGOPTS}) | \
+	  $${PAGER:-/usr/bin/more}
+
 pre-everything::
-	@echo "===> If you want to build ${MAMEMESS:U} without network support,"
-	@echo "     use \"make WITH_NETWORK=no\""
-.endif
-.else
-NETWORK=\#\ 
+.if !defined(BATCH)
+	@${TEST} -r ${PKGOPTS} && \
+	  (${ECHO_MSG} '-------------------------------------------------------------------------'; \
+	  ${ECHO_MSG} 'Perform a "make options" to see a list of available installation options.'; \
+	  ${ECHO_MSG} '-------------------------------------------------------------------------';)
 .endif
 
 # Some simple patches that don't warrant a separate patch
