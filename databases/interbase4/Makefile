@@ -37,13 +37,13 @@ do-install:
 	@[ -d ${PREFIX}/lib/aout ] || ${MKDIR} ${PREFIX}/lib/aout
 	@${CHMOD} 777 ${IB_PATH}
 	@(cd ${IB_PATH}; tar xfv ${ARCHIVE})
-	@ln -sf ${IB_PATH}/include/gds.h   ${PREFIX}/include/gds.h
-	@ln -sf ${IB_PATH}/include/ibase.h ${PREFIX}/include/ibase.h
+	@${LN} -sf ${IB_PATH}/include/gds.h   ${PREFIX}/include/gds.h
+	@${LN} -sf ${IB_PATH}/include/ibase.h ${PREFIX}/include/ibase.h
 .for file in gds.a gds_pyxis.a gdslib.so.0.1 gdslib.so.1.0 gdsflib.so.0.0
-	@ln -sf ${IB_PATH}/lib/${file}     ${PREFIX}/lib/aout/lib${file}
+	@${LN} -sf ${IB_PATH}/lib/${file}     ${PREFIX}/lib/aout/lib${file}
 .endfor
-	@ln -sf ${IB_PATH}/lib/gdsintl     ${PREFIX}/lib/aout/libgdsintl.so
-	@ln -sf libgdslib.so.1.0	   ${PREFIX}/lib/aout/libgdslib.so
+	@${LN} -sf ${IB_PATH}/lib/gdsintl     ${PREFIX}/lib/aout/libgdsintl.so
+	@${LN} -sf libgdslib.so.1.0	   ${PREFIX}/lib/aout/libgdslib.so
 	@${TOUCH} ${IB_PATH}/isc_event.gbl.localhost
 	@${CHMOD} 777 ${IB_PATH}/isc_event.gbl.localhost
 	@${ECHO} "Building Interbase sample databases."
@@ -51,6 +51,6 @@ do-install:
 .for file in isc4.gdb help/help.gdb examples/v3/atlas.gdb examples/v3/emp.gdb examples/v4/employee.gdb examples/v4/intlemp.gdb
 	@${CHMOD} uog=rw ${IB_PATH}/${file}
 .endfor
-	@ln -sf ${IB_PATH} /usr/interbase
+	@${LN} -sf ${IB_PATH} /usr/interbase
 
 .include <bsd.port.mk>

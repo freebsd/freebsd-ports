@@ -21,6 +21,6 @@ ALL_TARGET=	libs all
 INSTALL_TARGET=	install install-pf
 
 post-extract:
-	( cd ${WRKDIR}/netmaj; /bin/ln -s ../xui )
+	( cd ${WRKDIR}/netmaj; ${LN} -s ../xui )
 
 .include <bsd.port.mk>

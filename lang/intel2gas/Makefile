@@ -49,7 +49,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/g2i/${f} ${PREFIX}/share/intel2gas/g2i
 .endfor
 .for f in ${I2G2I}
-	ln -fs ${PREFIX}/share/intel2gas/i2g/${f} \
+	${LN} -fs ${PREFIX}/share/intel2gas/i2g/${f} \
 		${PREFIX}/share/intel2gas/g2i/${f}
 .endfor
 

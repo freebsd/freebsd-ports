@@ -63,8 +63,8 @@ post-install:
 	${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/2.8.1/cpp ; \
 		do strip $$prog ; \
 		done)
-	ln -f ${PREFIX}/bin/gcc ${PREFIX}/bin/gcc28
-	ln -f ${PREFIX}/bin/g++ ${PREFIX}/bin/g++28
+	${LN} -f ${PREFIX}/bin/gcc ${PREFIX}/bin/gcc28
+	${LN} -f ${PREFIX}/bin/g++ ${PREFIX}/bin/g++28
 	@${MV} ${PREFIX}/man/man1/cccp.1 ${PREFIX}/man/man1/cccp28.1
 	@${MV} ${PREFIX}/man/man1/g++.1 ${PREFIX}/man/man1/g++28.1
 	@${MV} ${PREFIX}/man/man1/gcc.1 ${PREFIX}/man/man1/gcc28.1

@@ -3,7 +3,7 @@
 # Date created:         2 October 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.14 1999/02/01 22:11:18 asami Exp $
+# $Id: Makefile,v 1.15 1999/08/22 18:59:47 mharo Exp $
 #
 
 DISTNAME=	texinfo
@@ -36,6 +36,6 @@ do-install:
 	  ${INSTALL_DATA} ${WRKDIR}/lcircle10.tfm \
 				${PREFIX}/share/texmf/fonts/tfm/;\
 	 fi
-	@(cd ${PREFIX}/bin/; ${RM} -f texinfo; ln -s virtex texinfo)
+	@(cd ${PREFIX}/bin/; ${RM} -f texinfo; ${LN} -s virtex texinfo)
 
 .include <bsd.port.mk>

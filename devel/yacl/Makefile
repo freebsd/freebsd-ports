@@ -41,8 +41,8 @@ do-install:
 	@${CP} ${WRKSRC}/ui/*.h ${PREFIX}/include/yacl/ui
 	@${CP} ${WRKSRC}/apps/bmpview/bmpview ${WRKSRC}/apps/dlged/dlged \
 	${PREFIX}/share/yacl/apps
-	@( cd ${PREFIX}/share/yacl; ln -s ${PREFIX}/lib/yacl lib; \
-	ln -s ${PREFIX}/include/yacl/io; ln -s ${PREFIX}/include/yacl/ui )
+	@( cd ${PREFIX}/share/yacl; ${LN} -s ${PREFIX}/lib/yacl lib; \
+	${LN} -s ${PREFIX}/include/yacl/io; ${LN} -s ${PREFIX}/include/yacl/ui )
 	@${ECHO} "Done. Don't forget to set your YACLPATH environment "
 	@${ECHO} -n "variable to ${PREFIX}/share/yacl!"
 

@@ -40,9 +40,9 @@ do-extract:
 do-install:
 	(cd ${PREFIX}/bin ; ${RM} -f mmv mad mcp mln ; \
 	 ${INSTALL_PROGRAM} ${WRKSRC}/mmv ${PREFIX}/bin ; \
-	 ln -fs ${PREFIX}/bin/mmv ${PREFIX}/bin/mad ; \
-	 ln -fs ${PREFIX}/bin/mmv ${PREFIX}/bin/mcp ; \
-	 ln -fs ${PREFIX}/bin/mmv ${PREFIX}/bin/mln ; \
+	 ${LN} -fs ${PREFIX}/bin/mmv ${PREFIX}/bin/mad ; \
+	 ${LN} -fs ${PREFIX}/bin/mmv ${PREFIX}/bin/mcp ; \
+	 ${LN} -fs ${PREFIX}/bin/mmv ${PREFIX}/bin/mln ; \
 	 ${INSTALL_MAN} ${WRKSRC}/mmv.1 ${PREFIX}/man/man1 ; )
 
 .include <bsd.port.mk>

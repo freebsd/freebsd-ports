@@ -23,7 +23,7 @@ MAN1=           funzip.1 unzip.1 unzipsfx.1 zipgrep.1 zipinfo.1
 do-install:
 	cd ${WRKSRC} && \
 		${INSTALL_PROGRAM} unzip funzip unzipsfx ${PREFIX}/bin
-	ln -sf unzip ${PREFIX}/bin/zipinfo
+	${LN} -sf unzip ${PREFIX}/bin/zipinfo
 	cd ${WRKSRC}/unix && \
 		${INSTALL_SCRIPT} zipgrep ${PREFIX}/bin
 	cd ${WRKSRC}/unix && \

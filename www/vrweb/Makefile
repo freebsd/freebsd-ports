@@ -3,7 +3,7 @@
 # Date created:        20 June 1997
 # Whom:                Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.8 1998/10/01 02:17:48 jseger Exp $
+# $Id: Makefile,v 1.9 1999/01/12 16:51:14 vanilla Exp $
 #
 
 DISTNAME=	vrweb-1.5
@@ -22,7 +22,7 @@ USE_X_PREFIX=	yes
 
 do-configure:
 	(cd ${WRKSRC}; \
-	ln -s `which ${GMAKE}` ${WRKSRC}/config/scripts/make; \
+	${LN} -s `which ${GMAKE}` ${WRKSRC}/config/scripts/make; \
 	${WRKSRC}/makeall -r; \
 	${WRKSRC}/makeall -m; )
 

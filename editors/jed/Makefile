@@ -34,7 +34,7 @@ WRKSRC=         ${WRKDIR}/jed
 MAN1=		jed.1 rgrep.1
 
 pre-install:
-	ln -sf ${WRKSRC}/autoconf/mkinsdir.sh  ${WRKSRC}/
+	${LN} -sf ${WRKSRC}/autoconf/mkinsdir.sh  ${WRKSRC}/
 
 post-install:
 	strip ${PREFIX}/bin/jed

@@ -3,7 +3,7 @@
 # Date created:		16 January 1997
 # Whom:			Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.10 1998/11/14 09:43:30 asami Exp $
+# $Id: Makefile,v 1.11 1999/06/22 17:03:43 steve Exp $
 #
 
 DISTNAME=	neXtaw-0.5.1
@@ -28,7 +28,7 @@ post-configure:
 	@${ECHO_MSG} "*********************************************************************"
 	@${ECHO_MSG} "* Don't worry about the warning messages above, the port will build *"
 	@${ECHO_MSG} "*********************************************************************"
-	@cd ${WRKSRC}/exports/include/X11/neXtaw; ln -sf ../../../../*.h .
+	@cd ${WRKSRC}/exports/include/X11/neXtaw; ${LN} -sf ../../../../*.h .
 
 post-install:
 .if !defined(NOPORTDOCS)

@@ -3,7 +3,7 @@
 # Date created:		10 April 1996
 # Whom:			Brian Somers <brian@Awfulhak.org>
 #
-# $Id: Makefile,v 1.5 1999/03/22 01:25:41 brian Exp $
+# $Id: Makefile,v 1.6 1999/04/04 22:48:29 brian Exp $
 #
 
 DISTNAME=	leafnode-1.9.2
@@ -23,6 +23,6 @@ MAN8=		fetch.8 applyfilter.8 leafnode.8 texpire.8 checkgroups.8
 MLINKS+=	fetch.8 fetch-news.8
 
 post-install:
-	/bin/ln -sf fetch ${PREFIX}/sbin/fetch-news
+	${LN} -sf fetch ${PREFIX}/sbin/fetch-news
 
 .include <bsd.port.mk>

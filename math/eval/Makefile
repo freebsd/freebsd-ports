@@ -24,7 +24,7 @@ EXTRACT_AFTER_ARGS=	| lha x -
 WRKSRC=		${WRKDIR}/Eval/source
 
 post-extract:
-	-ln -s Makefile.unx ${WRKSRC}/Makefile
+	-${LN} -s Makefile.unx ${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/Eval ${PREFIX}/bin

@@ -97,7 +97,7 @@ do-install:
 		(cd ${PREFIX}; xargs ${SH} ${SCRIPTDIR}/maybe-strip)
 	@cd ${PREFIX}/lib/m3/FreeBSD2; strip m3 m3cgc1 m3mkdir
 	@cd ${PREFIX}/bin; \
-	    ln -f m3build m3build-${major}
+	    ${LN} -f m3build m3build-${major}
 	@${ECHO_MSG} "Fixing file permissions"
 	@cd ${PREFIX}; \
 	    sed -e "/^@/d" -e "s/\.gz$$//" ${PLIST}.real |\

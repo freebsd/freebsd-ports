@@ -37,6 +37,6 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/*.tex ${TEXMF}/tex/platex209/general
 	@${INSTALL_DATA} ${WRKSRC}/*.sty ${TEXMF}/tex/platex209/sty
 	@${INSTALL_DATA} ${WRKSRC}/plplain.fmt ${TEXMF}/web2c/platex209.fmt
-	ln -fs ptex ${PREFIX}/bin/platex209
+	${LN} -fs ptex ${PREFIX}/bin/platex209
 
 .include <bsd.port.mk>

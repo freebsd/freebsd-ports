@@ -4,7 +4,7 @@
 # Date created:			  Mon Feb 03, 1997
 # Whom:				  David O'Brien (obrien@NUXI.com)
 #
-# $Id: Makefile,v 1.2 1998/11/21 23:05:10 obrien Exp $
+# $Id: Makefile,v 1.3 1999/04/16 10:21:50 kris Exp $
 #
 
 DISTNAME=	nat10
@@ -20,8 +20,8 @@ MAN1=		nat.1 nbaudit.1
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/nat ${PREFIX}/bin
-	@ln -f ${PREFIX}/bin/nat ${PREFIX}/bin/nbaudit
+	@${LN} -f ${PREFIX}/bin/nat ${PREFIX}/bin/nbaudit
 	@${INSTALL_MAN} ${WRKSRC}/nat.1 ${PREFIX}/man/man1
-	@ln -f ${PREFIX}/man/man1/nat.1 ${PREFIX}/man/man1/nbaudit.1
+	@${LN} -f ${PREFIX}/man/man1/nat.1 ${PREFIX}/man/man1/nbaudit.1
 
 .include <bsd.port.mk>

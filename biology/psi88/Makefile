@@ -21,7 +21,7 @@ pre-build:
 	${CP} ${FILESDIR}/Makefile.top ${WRKSRC}/Makefile
 
 post-install:
-	ln -s ${PREFIX}/bin/PSI2PS ${PREFIX}/bin/PSI2
+	${LN} -s ${PREFIX}/bin/PSI2PS ${PREFIX}/bin/PSI2
 	${INSTALL_SCRIPT} ${WRKDIR}/${DISTNAME}/unix/preplot ${PREFIX}/bin/
 	${INSTALL_SCRIPT} ${WRKDIR}/${DISTNAME}/unix/rpsi1 ${PREFIX}/bin/
 	${INSTALL_SCRIPT} ${WRKDIR}/${DISTNAME}/unix/rpsi2 ${PREFIX}/bin/

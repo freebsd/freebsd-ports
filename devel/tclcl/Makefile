@@ -24,5 +24,5 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/otcldoc ${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/*.h ${PREFIX}/include
 	${INSTALL_DATA} ${WRKSRC}/libtclcl.a ${PREFIX}/lib
-	@ln -sf ${PREFIX}/lib/libtclcl.a ${PREFIX}/lib/libTcl.a
+	@${LN} -sf ${PREFIX}/lib/libtclcl.a ${PREFIX}/lib/libTcl.a
 .include <bsd.port.mk>

@@ -3,7 +3,7 @@
 # Date created:         20 Sep 1994
 # Whom:                 adam
 #
-# $Id: Makefile,v 1.21 1999/08/22 23:33:28 mharo Exp $
+# $Id: Makefile,v 1.22 1999/08/27 22:30:22 mharo Exp $
 #
 
 DISTNAME=       gn-2.24
@@ -22,8 +22,8 @@ INETD_CONF=	/etc/inetd.conf
 CONF=	'	stream	tcp	nowait	nobody	${PREFIX}/libexec/gn	gn'
 
 pre-build:
-	@ln -fs ${WAISDIR}/include ${WRKSRC}/waisgn/ir
-	@ln -fs ${WAISDIR}/bin ${WRKSRC}/waisgn
+	@${LN} -fs ${WAISDIR}/include ${WRKSRC}/waisgn/ir
+	@${LN} -fs ${WAISDIR}/bin ${WRKSRC}/waisgn
 
 pre-install:
 	@${MKDIR} ${WRKSRC}/etc ${WRKSRC}/libexec ${WRKSRC}/gnroot

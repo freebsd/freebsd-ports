@@ -44,8 +44,8 @@ do-install:
 		${LCCBUILDDIR}/bprint \
 		${LCCBUILDDIR}/bbexit.o \
 		${PREFIX}/${LCCDESTDIR}
-	@/bin/ln -sf ${PREFIX}/${LCCDESTDIR}/lcc ${PREFIX}/bin
-	@/bin/ln -sf ${PREFIX}/${LCCDESTDIR}/bprint ${PREFIX}/bin
+	@${LN} -sf ${PREFIX}/${LCCDESTDIR}/lcc ${PREFIX}/bin
+	@${LN} -sf ${PREFIX}/${LCCDESTDIR}/bprint ${PREFIX}/bin
 	@${INSTALL_MAN} ${WRKSRC}/doc/lcc.1 ${WRKSRC}/doc/bprint.1 \
 		${PREFIX}/man/man1
 

@@ -22,7 +22,7 @@ mandir=		${PREFIX}/man/${LANG}
 manpages=	manpages-de
 
 do-build:
-	ln -s ${WRKSRC}/${manpages} ${WRKSRC}/de-man
+	${LN} -s ${WRKSRC}/${manpages} ${WRKSRC}/de-man
 	makewhatis ${WRKSRC}/de-man
 .if !defined(NOMANCOMPRESS)
 	${GZIP_CMD} -r ${WRKSRC}/${manpages}/man* || exit 0

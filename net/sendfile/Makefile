@@ -3,7 +3,7 @@
 # Date created:         30 Oct 1997
 # Whom:                 sec@42.org
 #
-# $Id: Makefile,v 1.9 1999/02/28 07:15:05 obrien Exp $
+# $Id: Makefile,v 1.10 1999/03/02 21:18:43 billf Exp $
 #
 
 DISTNAME=	sendfile-19990215
@@ -26,6 +26,6 @@ MAN7=		fetchfile.7
 MAN8=		sendfiled.8
 
 post-install:
-	@(cd ${PREFIX}/man/man1; ln -sf utf7encode.1.gz utf7decode.1.gz)
+	@(cd ${PREFIX}/man/man1; ${LN} -sf utf7encode.1.gz utf7decode.1.gz)
 
 .include <bsd.port.mk>

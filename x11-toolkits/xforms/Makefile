@@ -3,7 +3,7 @@
 # Date created:		28 March 1997
 # Whom:			gena
 #
-# $Id: Makefile,v 1.23 1999/01/07 08:19:54 simokawa Exp $
+# $Id: Makefile,v 1.24 1999/05/30 02:44:11 steve Exp $
 #
 
 USE_X_PREFIX=	yes
@@ -39,7 +39,7 @@ post-install:
 	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 .if !defined(NOMANCOMPRESS)
 	@${RM} ${PREFIX}/man/man5/forms.5
-	@ln -fs xforms.5.gz ${PREFIX}/man/man5/forms.5.gz
+	@${LN} -fs xforms.5.gz ${PREFIX}/man/man5/forms.5.gz
 .endif
 
 .include <bsd.port.post.mk>

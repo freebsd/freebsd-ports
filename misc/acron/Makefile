@@ -21,7 +21,7 @@ post-patch:
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/whats ${PREFIX}/bin
-	ln -sf ${PREFIX}/bin/whats ${PREFIX}/bin/acron
+	${LN} -sf ${PREFIX}/bin/whats ${PREFIX}/bin/acron
 	${INSTALL_DATA} ${WRKSRC}/acron ${PREFIX}/share/misc
 
 .include <bsd.port.mk>
