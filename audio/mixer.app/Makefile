@@ -3,11 +3,11 @@
 # Date created:		16 April 1999
 # Whom:			Chris Piazza <cpiazza@home.net>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/04/16 12:11:47 flathill Exp $
 #
 
-DISTNAME=	Mixer.app-1.3.1
-PKGNAME=	mixer.app-1.3.1
+DISTNAME=	Mixer.app-1.3.2
+PKGNAME=	mixer.app-1.3.2
 CATEGORIES=	audio
 MASTER_SITES=	http://www.student.hk-r.se/~pt96pli/mixer/
 
