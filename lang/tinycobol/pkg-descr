@@ -1,0 +1,8 @@
+TinyCOBOL is a COBOL compiler for use with the GNU gcc package.
+It generates GNU assembler code, and then links it into an executable
+binary.  The long term goal is to comply with the COBOL 85 standard.
+
+WWW: http://tiny-cobol.sourceforge.net/
+
+- patrick
+patrick@freebsd.org

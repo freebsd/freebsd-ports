@@ -1,0 +1,12 @@
+bin/htcobol
+bin/htcobpp
+lib/libhtcobol.a
+share/htcobol/cobopt
+@dirrm share/htcobol
+share/doc/tinycobol/Comments.old.txt
+share/doc/tinycobol/ProgramHeaders.Info.txt
+share/doc/tinycobol/Compiler-Overview.txt
+share/doc/tinycobol/VarStructure.Info.txt
+share/doc/tinycobol/GAS.asm-i386.Info.txt
+share/doc/tinycobol/compiler-design-future.txt
+@dirrm share/doc/tinycobol
