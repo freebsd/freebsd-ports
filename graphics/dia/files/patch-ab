@@ -1,20 +1,11 @@
---- Makefile.in.orig	Tue Dec 21 21:11:10 1999
-+++ Makefile.in	Tue Dec 21 21:12:32 1999
-@@ -114,13 +114,14 @@
- pkgdata_DATA = dia_logo.png
- man_MANS = dia.1
- 
--pixmapdir = $(datadir)/pixmaps
-+gnomedatadir = $(datadir)/gnome
-+pixmapdir = $(gnomedatadir)/pixmaps
+--- Makefile.in.orig	Sat Feb 12 23:33:35 2000
++++ Makefile.in	Sat Feb 12 23:33:53 2000
+@@ -119,7 +119,7 @@
+ pixmapdir = $(gnomedatadir)/pixmaps
  pixmap_DATA = dia_gnome_icon.png dia-diagram.png
  
--Applicationsdir = $(datadir)/gnome/apps/Applications
+-Applicationsdir = $(gnomedatadir)/gnome/apps/Applications
 +Applicationsdir = $(gnomedatadir)/apps/Applications
  Applications_DATA = dia.desktop
  
--mimedir = $(datadir)/mime-info
-+mimedir = $(gnomedatadir)/mime-info
- mime_DATA = dia.mime dia.keys
- 
- EXTRA_DIST = dia.xpm dia_gnome_icon.png dia_gnome_menu_icon.png 	dia.desktop dia.spec KNOWN_BUGS $(pkgdata_DATA) $(man_MANS) 	dia-diagram.png dia.mime dia.keys.in diagram.dtd
+ mimedir = $(gnomedatadir)/mime-info
