@@ -31,6 +31,7 @@ post-install:
 	  ${ECHO} @dirrm $$dir >> ${TMPPLIST} ;\
 	done ;\
 	${ECHO} @dirrm share/doc/postgresql/html >> ${TMPPLIST} ;\
+	${ECHO} @dirrm share/doc/postgresql >> ${TMPPLIST} ;\
 	${ECHO} '@unexec rmdir %D/share/postgresql 2> /dev/null || true' >> ${TMPPLIST}
 
 .include <bsd.port.mk>
