@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	ply
-PORTVERSION=	1.1
+PORTVERSION=	1.3.1
 CATEGORIES=	devel python
 MASTER_SITES=	http://systems.cs.uchicago.edu/ply/
 
@@ -24,6 +24,7 @@ do-install:
 .if !defined(NOPORTDOCS)
 post-install:
 	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/ply.html ${DOCSDIR}
 	@${MKDIR} ${EXAMPLESDIR}
 	${CP} -R ${WRKSRC}/example/ ${EXAMPLESDIR}
