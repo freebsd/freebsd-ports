@@ -1,57 +1,74 @@
 bin/kwappen
-share/applnk/Applications/kwappen.desktop
-share/apps/kwappen/pictures/background.jpg
-share/apps/kwappen/pictures/baden_wuerttemberg.jpg
-share/apps/kwappen/pictures/bayern.jpg
-share/apps/kwappen/pictures/berlin.jpg
-share/apps/kwappen/pictures/brandenburg.jpg
-share/apps/kwappen/pictures/bremen.jpg
-share/apps/kwappen/pictures/hamburg.jpg
-share/apps/kwappen/pictures/hessen.jpg
-share/apps/kwappen/pictures/mecklenburg_vorpommern.jpg
-share/apps/kwappen/pictures/niedersachsen.jpg
-share/apps/kwappen/pictures/nordrhein_westfalen.jpg
-share/apps/kwappen/pictures/rheinland_pfalz.jpg
-share/apps/kwappen/pictures/saarland.jpg
-share/apps/kwappen/pictures/sachsen.jpg
-share/apps/kwappen/pictures/sachsen_anhalt.jpg
-share/apps/kwappen/pictures/schleswig_holstein.jpg
-share/apps/kwappen/pictures/thueringen.jpg
-share/apps/kwappen/pictures/wappen.png
-share/doc/HTML/de/kwappen/index.docbook
-share/doc/HTML/de/kwappen/index.cache.bz2
+share/applnk/Utilities/kwappen.desktop
+share/apps/kwappen/background.jpg
+share/apps/kwappen/background_2.jpg
+share/apps/kwappen/baden_wuerttemberg.jpg
+share/apps/kwappen/bayern.jpg
+share/apps/kwappen/berlin.jpg
+share/apps/kwappen/brandenburg.jpg
+share/apps/kwappen/bremen.jpg
+share/apps/kwappen/hamburg.jpg
+share/apps/kwappen/hessen.jpg
+share/apps/kwappen/kwappenui.rc
+share/apps/kwappen/mecklenburg_vorpommern.jpg
+share/apps/kwappen/niedersachsen.jpg
+share/apps/kwappen/nordrhein_westfalen.jpg
+share/apps/kwappen/rheinland_pfalz.jpg
+share/apps/kwappen/saarland.jpg
+share/apps/kwappen/sachsen.jpg
+share/apps/kwappen/sachsen_anhalt.jpg
+share/apps/kwappen/schleswig_holstein.jpg
+share/apps/kwappen/thueringen.jpg
+share/apps/kwappen/wappen.png
 share/doc/HTML/de/kwappen/common
-share/doc/HTML/en/kwappen/index.docbook
-share/doc/HTML/en/kwappen/index.cache.bz2
+share/doc/HTML/de/kwappen/index.cache.bz2
+share/doc/HTML/de/kwappen/index.docbook
 share/doc/HTML/en/kwappen/common
-share/doc/HTML/pt/kwappen/index.docbook
-share/doc/HTML/pt/kwappen/index.cache.bz2
+share/doc/HTML/en/kwappen/index.cache.bz2
+share/doc/HTML/en/kwappen/index.docbook
 share/doc/HTML/pt/kwappen/common
-share/doc/HTML/pt_BR/kwappen/index.docbook
-share/doc/HTML/pt_BR/kwappen/index.cache.bz2
+share/doc/HTML/pt/kwappen/index.cache.bz2
+share/doc/HTML/pt/kwappen/index.docbook
 share/doc/HTML/pt_BR/kwappen/common
-share/icons/locolor/32x32/apps/kwappen.png
-share/icons/locolor/16x16/apps/kwappen.png
+share/doc/HTML/pt_BR/kwappen/index.cache.bz2
+share/doc/HTML/pt_BR/kwappen/index.docbook
 share/icons/hicolor/16x16/apps/kwappen.png
 share/icons/hicolor/22x22/apps/kwappen.png
 share/icons/hicolor/32x32/apps/kwappen.png
 share/icons/hicolor/48x48/apps/kwappen.png
 share/icons/hicolor/64x64/apps/kwappen.png
+share/icons/locolor/16x16/apps/kwappen.png
+share/icons/locolor/32x32/apps/kwappen.png
 share/locale/de/LC_MESSAGES/kwappen.mo
 share/locale/pt/LC_MESSAGES/kwappen.mo
 share/locale/pt_BR/LC_MESSAGES/kwappen.mo
-@dirrm share/doc/HTML/de/kwappen
-@dirrm share/doc/HTML/en/kwappen
-@dirrm share/doc/HTML/pt/kwappen
-@dirrm share/doc/HTML/pt_BR/kwappen
-@dirrm share/apps/kwappen/pictures
-@dirrm share/apps/kwappen
-@unexec rmdir %D/share/doc/HTML/de 2>/dev/null || true
-@unexec rmdir %D/share/doc/HTML/pt 2>/dev/null || true
-@unexec rmdir %D/share/doc/HTML/pt_BR 2>/dev/null || true
-@unexec rmdir %D/share/applnk/Applications 2>/dev/null || true
-@unexec rmdir %D/share/icons/hicolor/16x16 2>/dev/null || true
-@unexec rmdir %D/share/icons/hicolor/32x32 2>/dev/null || true
-@unexec rmdir %D/share/icons/hicolor/48x48 2>/dev/null || true
-@unexec rmdir %D/share/icons/hicolor/64x64 2>/dev/null || true
+@unexec rmdir %D/share/icons/locolor/32x32/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/locolor/32x32 2>/dev/null || true
+@unexec rmdir %D/share/icons/locolor/16x16/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/locolor/16x16 2>/dev/null || true
 @unexec rmdir %D/share/icons/locolor 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/64x64/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/64x64 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/48x48/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/48x48 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/32x32/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/32x32 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/22x22/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/22x22 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/16x16/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/16x16 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor 2>/dev/null || true
+@unexec rmdir %D/share/icons 2>/dev/null || true
+@dirrm share/doc/HTML/pt_BR/kwappen
+@unexec rmdir %D/share/doc/HTML/pt_BR 2>/dev/null || true
+@dirrm share/doc/HTML/pt/kwappen
+@unexec rmdir %D/share/doc/HTML/pt 2>/dev/null || true
+@dirrm share/doc/HTML/en/kwappen
+@unexec rmdir %D/share/doc/HTML/en 2>/dev/null || true
+@dirrm share/doc/HTML/de/kwappen
+@unexec rmdir %D/share/doc/HTML/de 2>/dev/null || true
+@unexec rmdir %D/share/doc/HTML 2>/dev/null || true
+@dirrm share/apps/kwappen
+@unexec rmdir %D/share/apps 2>/dev/null || true
+@unexec rmdir %D/share/applnk/Utilities 2>/dev/null || true
+@unexec rmdir %D/share/applnk 2>/dev/null || true
