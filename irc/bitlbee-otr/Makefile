@@ -20,6 +20,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS= --prefix=${PREFIX} --mandir=${PREFIX}/man --config=${PREFIX}/etc/bitlbee
 USE_GMAKE=	yes
 USE_GNOME=	glib20
+PKGMESSAGE=	${WRKDIR}/pkg-message
 
 .if defined(WITH_MSN)
 LIB_DEPENDS=	soup-2.0.0:${PORTSDIR}/devel/libsoup
@@ -29,6 +30,9 @@ pre-configure:
 pre-configure:
 	@${ECHO_CMD} "Type \"make -DWITH_MSN\" if you want enable MSN support."
 .endif
+
+post-build:
+	@${CAT} pkg-message | ${SED} -e 's|%%PREFIX%%|${PREFIX}|' > ${PKGMESSAGE}
 
 pre-install:
 	@mkdir -p -m 700 ${PREFIX}/etc/bitlbee
