@@ -1,5 +1,5 @@
 # Creator:  Jordan Hubbard
-# $Id: LEGAL,v 1.68 1997/03/12 04:43:40 adam Exp $
+# $Id: LEGAL,v 1.69 1997/05/19 22:55:57 asami Exp $
 
 Some of the ports in this directory have restrictive copyrights prohibiting
 their actual redistribution on mass media.  When creating compilations
@@ -21,6 +21,8 @@ bzip-*			ports/archivers/bzip	Some algorithms used may
 						Opinions differ. Commercial 
 						use could render you liable 
 						to unfriendly legal action.
+camediaplay-*		ports/graphics/camediaplay No redistribution due to
+						beta status
 cap60/*			ports/net/cap		Don't sell for profit
 cku190.tar.gz		ports/comms/kermit	Restrictive copyright
 contool-*		ports/sysutils/contool	Don't incorporate the source
@@ -61,6 +63,8 @@ mutt/* (without `e')    ports/mail/mutt.with_pgp ITAR export-controlled
 netscape-*		ports/net/netscape	Commercial product
 nte-1.5a23		ports/mbone/nte		Crypto; export-controlled
 pgp262s.zip		ports/security/pgp*	Various locality restrictions
+qvplay-*		ports/graphics/qvplay	No redistribution due to
+						beta status
 quake101.zip		ports/games/quakeserver	Shareware
 radius-2.4.21		ports/net/radius	Restrictive copyright in
 						src/rlmadmin.c
