@@ -15,8 +15,9 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		mod_ssl-${VERSION_MODSSL}-${VERSION_APACHE}${EXTRACT_SUFX}:modssl
 
 .if defined(APACHE_WITH_MODSNMP) || make(makesum) || defined(FETCH_ALL)
-PATCH_SITES=	http://www.mod-snmp.com/distr/:snmp
-PATCHFILES=	mod_snmp_${VERSION_MODSNMP}.tar.gz:snmp
+PATCH_SITES=	http://www.mod-snmp.com/distr/:modsnmp
+MODSNMP_FILE=	mod_snmp_${VERSION_MODSNMP}.tar.gz
+PATCHFILES=	${MODSNMP_FILE}:modsnmp
 EXTRA_PATCH=	${WRKSRC}/src/module/snmp_agt/mod_snmp.patch
 .endif
 .if defined(APACHE_WITH_IPV6) || make(makesum) || defined(FETCH_ALL)
@@ -208,7 +209,7 @@ post-extract:
 	@${SED} -e "s=%%PREFIX%%=${PREFIX}=g" ${FILESDIR}/apache.sh \
 		> ${WRKSRC}/apache.sh
 .if defined(APACHE_WITH_MODSNMP)
-	(cd ${WRKSRC}; ${TAR} xfz  ${DISTDIR}/${PATCHFILES})
+	(cd ${WRKSRC}; ${TAR} xfz  ${DISTDIR}/${MODSNMP_FILE})
 .endif
 
 pre-patch:
