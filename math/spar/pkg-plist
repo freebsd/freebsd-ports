@@ -1,25 +1,27 @@
 bin/spar
-include/sl/sl.h
-include/sl/sl_chartype.h
-include/sl/sl_conf.h
-include/sl/sl_constant.h
-include/sl/sl_error.h
-include/sl/sl_function.h
-include/sl/sl_init.h
-include/sl/sl_input.h
-include/sl/sl_memory.h
-include/sl/sl_module.h
-include/sl/sl_module_loader.h
-include/sl/sl_module_manager.h
-include/sl/sl_parser.h
-include/sl/sl_util.h
-include/sl/sl_variable.h
-include/sl/sl_writer.h
-include/sl_math.h
-include/sl_math_library.h
-include/sl_poly.h
-include/sl_sort.h
-include/sl_table.h
+include/spar/sl.h
+include/spar/sl_btree.h
+include/spar/sl_chartype.h
+include/spar/sl_conf.h
+include/spar/sl_constant.h
+include/spar/sl_errno.h
+include/spar/sl_error.h
+include/spar/sl_function.h
+include/spar/sl_init.h
+include/spar/sl_input.h
+include/spar/sl_math.h
+include/spar/sl_math_library.h
+include/spar/sl_memory.h
+include/spar/sl_module.h
+include/spar/sl_module_loader.h
+include/spar/sl_module_manager.h
+include/spar/sl_parser.h
+include/spar/sl_poly.h
+include/spar/sl_sort.h
+include/spar/sl_table.h
+include/spar/sl_util.h
+include/spar/sl_variable.h
+include/spar/sl_writer.h
 lib/libspar.a
 lib/libspar.la
 lib/libspar.so
@@ -30,6 +32,6 @@ lib/spar/solve_q.a
 lib/spar/solve_q.la
 lib/spar/solve_q.so
 share/spar/modules_config
-@dirrm include/sl
+@dirrm include/spar
 @dirrm lib/spar
 @dirrm share/spar
