@@ -138,3 +138,5 @@
 %%GCC28SUBDIR%%/include/g++/vector.h
 i386-unknown-freebsd%%OSREL%%/include/_G_config.h
 i386-unknown-freebsd%%OSREL%%/lib/libiberty.a
+@dirrm %%GCC28SUBDIR%%/include/g++/std
+@dirrm %%GCC28SUBDIR%%/include/g++
