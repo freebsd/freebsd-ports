@@ -84,7 +84,7 @@ while ($j >= 0  and  my $header = $log_in[$j]) {
 		}
 
 		# Filter out the template header if it's blank.
-		unless ($value) {
+		if ($value eq "") {
 			splice(@log_in, $j + 1, 1);
 			next;
 		}
