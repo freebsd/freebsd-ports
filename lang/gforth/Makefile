@@ -13,7 +13,6 @@ MASTER_SITE_SUBDIR=	gforth
 
 MAINTAINER=	clefevre@citeweb.net
 
-#
 # Global variables
 #
 
@@ -23,14 +22,11 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 ALL_TARGET=	all info
 
-.if make(do-install)
-# DESTDIR isn't honored. fake it w/ prefix.
+# PREFIX isn't honored. force it w/ prefix.
 MAKE_ARGS=	prefix=${PREFIX}
-.endif
 
 MAN1=		gforth.1
 
-#
 # Local variables
 #
 
@@ -49,7 +45,6 @@ EMPTY_DIRS=	4stack 6502 8086 avr c165 generic h8 \
 		hppa ia64 m68k misc power shboom sparc
 ARCH_DIR=	${DATADIR}/${PORTVERSION}/arch
 
-#
 # Post-extract
 #
 
@@ -60,7 +55,6 @@ remove-info-files:
 	@${RM} -f ${WRKSRC}/doc/${file}*
 .endfor
 
-#
 # Post-patch
 #
 
