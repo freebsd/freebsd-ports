@@ -2,4 +2,7 @@
 
 Dict client could be found within ports/textproc/dict.
 
+Don't forget to install ports/net/dictd-database. After that, you
+could run your own dictd server without pain.
+
 ==================================================================
