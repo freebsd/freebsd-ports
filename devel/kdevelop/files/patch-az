@@ -1,0 +1,12 @@
+--- kdevelop/dbg/stty.cpp	Wed May  3 14:20:39 2000
++++ kdevelop/dbg/stty.cpp.new	Fri May 12 18:15:57 2000
+@@ -45,7 +45,9 @@
+ #ifdef TIME_WITH_SYS_TIME
+ #include <sys/time.h>
+ #endif
++#ifndef __FreeBSD__
+ #include <sys/resource.h>
++#endif
+ #include <grp.h>
+ 
+ #if defined (_HPUX_SOURCE)
