@@ -1,14 +1,13 @@
---- romio/adio/common/ad_fstype.c.orig	Mon Jun 15 13:45:25 1998
-+++ romio/adio/common/ad_fstype.c	Mon Oct 19 16:23:55 1998
-@@ -91,7 +91,11 @@
- 
-     if (err) *error_code = MPI_ERR_UNKNOWN;
-     else {
-+#if (__FreeBSD_version>300004)
-+	if ( !strncmp("nfs",fsbuf.f_fstypename,3) ) *fstype = ADIO_NFS;
-+#else
- 	if (fsbuf.f_type == MOUNT_NFS) *fstype = ADIO_NFS;
+--- romio/adio/common/ad_fstype.c-orig	Wed Jul 19 16:38:31 2000
++++ romio/adio/common/ad_fstype.c	Thu Sep  7 18:47:44 2000
+@@ -26,8 +26,10 @@
+ #ifdef SX4
+ #include <sys/stat.h>
+ #endif
++#ifndef FREEBSD
+ #ifdef PVFS
+ #include "pvfs_config.h"
 +#endif
- 	else *fstype = ADIO_UFS;
- 	*error_code = MPI_SUCCESS;
-     }
+ #endif
+ 
+ void ADIO_FileSysType(char *filename, int *fstype, int *error_code)

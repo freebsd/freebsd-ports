@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	mpich
-PORTVERSION=	1.2.0
+PORTVERSION=	1.2.1
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.mcs.anl.gov/pub/mpi/
 
-PATCH_SITES=	ftp://ftp.mcs.anl.gov/pub/mpi/patch/1.2.0/
-PATCHFILES=	4885 4889 4959 4992 4997 5226 r157 rpvfs
+PATCH_SITES=	ftp://ftp.mcs.anl.gov/pub/mpi/patch/1.2.1/
+#PATCHFILES=	this-space-reserved-for-future-use
 
 MAINTAINER=	dbader@eece.unm.edu
 
@@ -35,7 +35,7 @@ CONFIGURE_ARGS+= -rsh="${LOCALBASE}/bin/ssh"
 
 ALL_TARGET=
 MANPREFIX=	${PREFIX}/mpich
-MAN1=		Jumpshot.1 MPI.1 chp4_servs.1 cleanipcs.1 mpiCC.1 mpicc.1 \
+MAN1=		Jumpshots.1 MPI.1 chp4_servs.1 cleanipcs.1 mpiCC.1 mpicc.1 \
 		mpif77.1 mpif90.1 mpiman.1 mpireconfig.1 mpirun.1 \
 		tstmachines.1
 MAN3=		Constants.3 MPI_2COMPLEX.3 MPI_2DOUBLE_COMPLEX.3 \
@@ -112,7 +112,7 @@ MAN3=		Constants.3 MPI_2COMPLEX.3 MPI_2DOUBLE_COMPLEX.3 \
 		MPI_Scatter.3 MPI_Scatterv.3 MPI_Send.3 MPI_Send_init.3 \
 		MPI_Sendrecv.3 MPI_Sendrecv_replace.3 MPI_Ssend.3 \
 		MPI_Ssend_init.3 MPI_Start.3 MPI_Startall.3 MPI_Status_c2f.3 \
-		MPI_Status_f2c.3 MPI_Status_set_cancelled.3 \
+		MPI_Status_set_cancelled.3 \
 		MPI_Status_set_elements.3 MPI_TAG.3 MPI_TAG_UB.3 MPI_Test.3 \
 		MPI_Test_cancelled.3 MPI_Testall.3 MPI_Testany.3 \
 		MPI_Testsome.3 MPI_Topo_test.3 MPI_Type_commit.3 \
@@ -156,13 +156,14 @@ MAN3=		Constants.3 MPI_2COMPLEX.3 MPI_2DOUBLE_COMPLEX.3 \
 		MPIO_Request_f2c.3 MPI_File_get_position.3 \
 		MPI_File_preallocate.3 MPI_File_read_at_all_begin.3 \
 		MPI_File_set_size.3 MPI_File_write_at_all_begin.3 \
-		MPI_Info_get_nthkey.3 MPI_Type_create_subarray.3
+		MPI_Info_get_nthkey.3 MPI_Type_create_subarray.3 \
+		MPI_File_get_errhandler.3 MPI_File_set_errhandler.3
 MAN4=		CLOG_Finalize.4 CLOG_Init.4 CLOG_Output.4 CLOG_commtype.4 \
 		CLOG_cput.4 CLOG_csync.4 CLOG_get_new_event.4 \
 		CLOG_get_new_state.4 CLOG_init_buffers.4 \
-		CLOG_init_tmpfilename.4 CLOG_mergelogs.4 CLOG_mergend.4 \
+		CLOG_mergelogs.4 CLOG_mergend.4 CLOG_nodebuffer2disk.4 \
 		CLOG_msgtype.4 CLOG_newbuff.4 CLOG_procbuf.4 CLOG_reclen.4 \
-		CLOG_rectype.4 CLOG_reinit_buff.4 CLOG_temp_log.4 \
+		CLOG_rectype.4 CLOG_reinit_buff.4 \
 		CLOG_treesetup.4 MPE.4 MPE_Add_RGB_color.4 MPE_CaptureFile.4 \
 		MPE_Close_graphics.4 MPE_Comm_global_rank.4 \
 		MPE_Counter_create.4 MPE_Counter_free.4 MPE_Counter_nxtval.4 \
