@@ -106,8 +106,8 @@ while [ "$1" ]; do
 			SUB_PGSQL=""
 			;;
 		OpenLDAP)
-			echo "LIB_DEPENDS+=	ldap.2:\${PORTSDIR}/net/openldap20-client"
-			echo "CONFIGURE_ARGS+=	--enable-ldap"
+			echo "USE_OPENLDAP=	yes"
+			echo "CONFIGURE_ARGS+=  --enable-ldap"
 			SUB_LDAP=""
 			;;
 		*)
