@@ -53,12 +53,15 @@ post-patch:
 	@${FIND} ${DEMOS_SRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|^install-data-am: |install-data-am: # |g'
 # fix sections
-	@${REINPLACE_CMD} -e 's|user cmd|1|' ${WRKSRC}/doc/man/man1/*.1
-	@${REINPLACE_CMD} -e 's|library call|3|' ${WRKSRC}/doc/man/man3/*.3
+	@${FIND} ${WRKSRC}/doc/man/man1 -name '*.1' -maxdepth 1 | \
+		${XARGS} ${REINPLACE_CMD} -e 's|user cmd|1|'
+	@${FIND} ${WRKSRC}/doc/man/man3 -name '*.3' -maxdepth 1 | \
+		${XARGS} ${REINPLACE_CMD} -e 's|library call|3|'
 # mwmrc is not a kernel interface!!
 	@cd ${WRKSRC}/doc/man && ${CP} -f man4/mwmrc.4 man5/mwmrc.5
-	@${REINPLACE_CMD} -e 's|special file|5| ; \
-		 s|file formats|5|' ${WRKSRC}/doc/man/man5/*.5
+	@${FIND} ${WRKSRC}/doc/man/man5 -name '*.5' -maxdepth 1 | \
+		${XARGS} ${REINPLACE_CMD} -e 's|special file|5| ; \
+		 s|file formats|5|'
 
 post-install:
 .if !defined(WITHOUT_OPENMOTIF_DEMOS)
