@@ -113,7 +113,6 @@
     SUBDIR += rblsmtpd
     SUBDIR += rftp
     SUBDIR += rlytest
-    SUBDIR += ruby-net-imap
     SUBDIR += ruby-tmail
     SUBDIR += sendmail
     SUBDIR += serialmail
