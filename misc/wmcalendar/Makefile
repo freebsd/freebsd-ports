@@ -6,26 +6,30 @@
 #
 
 PORTNAME=	wmcalendar
-PORTVERSION=	0.3.6
+PORTVERSION=	0.5.0
 CATEGORIES=	misc windowmaker
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
-		http://freebsd.nsu.ru/distfiles/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	danfe@regency.nsu.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A dockable calendar with interface to iCalendar based calendars
 
 LIB_DEPENDS=	ical.0:${PORTSDIR}/devel/libical
 
-BUILD_WRKSRC=	${WRKSRC}/Src
+WRKSRC=		${WRKDIR}/${DISTNAME}/Src
 
-USE_GNOME=	gtk12
 USE_X_PREFIX=	yes
 USE_XPM=	yes
+USE_GNOME=	gtk20
+MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" \
+		INCDIR="`pkg-config --cflags gtk+-2.0`" \
+		LIBDIR="`pkg-config --libs gtk+-2.0`" \
+		LIBS="-lical -lXpm"
 
 MAN1=		wmCalendar.1
 
 do-install:
-	@${INSTALL_PROGRAM} ${BUILD_WRKSRC}/wmCalendar ${PREFIX}/bin
-	@${INSTALL_MAN} ${BUILD_WRKSRC}/wmCalendar.1 ${MANPREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/wmCalendar ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/wmCalendar.1 ${MANPREFIX}/man/man1
 
 .include <bsd.port.mk>
