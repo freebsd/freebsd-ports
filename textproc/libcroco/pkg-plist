@@ -28,7 +28,7 @@ include/libcroco/libcroco/libcroco-config.h
 include/libcroco/libcroco/libcroco.h
 lib/libcroco.a
 lib/libcroco.so
-lib/libcroco.so.2
+lib/libcroco.so.3
 libdata/pkgconfig/libcroco.pc
 @dirrm include/libcroco/libcroco
 @dirrm include/libcroco
