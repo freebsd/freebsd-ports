@@ -125,6 +125,7 @@
     SUBDIR += py-tkinter
     SUBDIR += py-wxPython
     SUBDIR += py-xlib
+    SUBDIR += qt-bluecurve-theme
     SUBDIR += qt145
     SUBDIR += qt2-static
     SUBDIR += qt23
