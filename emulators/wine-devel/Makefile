@@ -26,6 +26,7 @@ MAN1=		wine.1 winebuild.1 winemaker.1 wmc.1 wrc.1
 MAN5=		wine.conf.5
 ONLY_FOR_ARCHS=	i386
 USE_XPM=	yes
+USE_BISON=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 
