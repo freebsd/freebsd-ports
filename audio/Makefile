@@ -178,6 +178,7 @@
     SUBDIR += mziq
     SUBDIR += napster
     SUBDIR += nas
+    SUBDIR += net-rhythmbox
     SUBDIR += nogger
     SUBDIR += normalize
     SUBDIR += nosefart
