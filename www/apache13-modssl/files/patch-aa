@@ -1,0 +1,11 @@
+--- configure.orig	Sat Aug 14 10:29:05 1999
++++ configure	Fri Aug 20 19:59:53 1999
+@@ -1084,7 +1084,7 @@
+ ##  UID/GID as production oriented as a web server in NIS anyway.
+ ##
+ conf_user="nobody"
+-conf_group="#-1"
++conf_group="nobody"
+ conf_port="80"
+ conf_serveradmin="you@your.address"
+ conf_servername="new.host.name"
