@@ -11,6 +11,6 @@ libexec/bjfilters600/scripts/ja.lc
 usr/lib/bjlib/cnb_1040.tbl
 usr/lib/libcnbpo104.so
 usr/lib/libcnbpo104.so.1.0.0
-@dirrm usr/lib/bjlib
+@unexec rmdir %D/usr/lib/bjlib 2>/dev/null || true
 @exec /compat/linux/sbin/ldconfig ; true
 @unexec /compat/linux/sbin/ldconfig ; true

@@ -7,7 +7,7 @@
 
 PORTNAME?=	bjfiltercom
 PORTVERSION?=	1.3
-#PORTREVISION=	1
+PORTREVISION=	1
 CATEGORIES=	print linux
 MASTER_SITES=	ftp://download.canon.jp/pub/driver/bj/linux/
 DISTFILES=	${RPMFILE}
@@ -16,12 +16,8 @@ DISTFILES+=	${DOC_DISTFILES}
 .endif
 EXTRACT_ONLY=	${RPMFILE}
 
-MAINTAINER=	taoka@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT?=	Canon Bubble Jet Print Filter for Linux -- Common files
-
-BROKEN=		"Checksum mismatch"
-EXPIRATION_DATE=2004-08-20
-DEPRECATED=	${BROKEN}
 
 EXTRACT_DEPENDS=	rpm2cpio.pl:${PORTSDIR}/archivers/rpm2cpio
 .if defined(SLAVE_PORT)
@@ -50,7 +46,7 @@ MD5_FILE=	${.CURDIR}/distinfo
 ONLY_FOR_ARCHS=	i386
 NO_FILTER_SHLIBS=	yes
 NO_MTREE=	yes
-RPMREVISION=	0
+RPMREVISION=	1
 .if defined(SLAVE_PORT)
 PAPERSIZE?=	a4
 .else

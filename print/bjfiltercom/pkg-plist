@@ -22,10 +22,11 @@ share/doc/bjfiltercom-%%PORTVERSION%%/html/IMAGE016.JPG
 share/doc/bjfiltercom-%%PORTVERSION%%/html/INDEX.HTM
 share/doc/bjfiltercom-%%PORTVERSION%%/html/NOTE.HTM
 share/doc/bjfiltercom-%%PORTVERSION%%/html/PRINT.HTM
-share/doc/bjfiltercom-%%PORTVERSION%%/html/README.HTM
 share/doc/bjfiltercom-%%PORTVERSION%%/html/SWITCHES.HTM
 share/doc/bjfiltercom-%%PORTVERSION%%/html/UTILITY.HTM
 share/doc/bjfiltercom-%%PORTVERSION%%/html/WELCOME.HTM
+share/doc/bjfiltercom-%%PORTVERSION%%/html/readme-1.3-1/README.HTM
+@dirrm share/doc/bjfiltercom-%%PORTVERSION%%/html/readme-1.3-1
 @dirrm share/doc/bjfiltercom-%%PORTVERSION%%/html
 @dirrm share/doc/bjfiltercom-%%PORTVERSION%%
 @cwd /compat/linux
@@ -82,16 +83,16 @@ usr/local/share/stsmon/pixmaps/Inkg_pc.xpm
 usr/local/share/stsmon/pixmaps/Inkg_pm.xpm
 usr/local/share/stsmon/pixmaps/Inkg_sp.xpm
 usr/local/share/stsmon/pixmaps/Inkg_ye.xpm
-@dirrm usr/local/share/printui
-@dirrm usr/local/share/locale/ja/LC_MESSAGES
-@dirrm usr/local/share/locale/ja
-@dirrm usr/local/share/locale
 @dirrm usr/local/share/stsmon/pixmaps
 @dirrm usr/local/share/stsmon
-@dirrm usr/local/share
-@dirrm usr/local
-@dirrm usr/lib/bjlib
-@dirrm usr/lib
-@dirrm usr
+@unexec rmdir %D/usr/local/share/printui 2>/dev/null || true
+@unexec rmdir %D/usr/local/share/locale/ja/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/usr/local/share/locale/ja 2>/dev/null || true
+@unexec rmdir %D/usr/local/share/locale 2>/dev/null || true
+@unexec rmdir %D/usr/local/share 2>/dev/null || true
+@unexec rmdir %D/usr/local 2>/dev/null || true
+@unexec rmdir %D/usr/lib/bjlib 2>/dev/null || true
+@unexec rmdir %D/usr/lib 2>/dev/null || true
+@unexec rmdir %D/usr 2>/dev/null || true
 @exec /compat/linux/sbin/ldconfig ; true
 @unexec /compat/linux/sbin/ldconfig ; true
