@@ -12,6 +12,8 @@ CATEGORIES=	www linux
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
 MASTER_SITE_SUBDIR=	mozilla/releases/mozilla${PORTVERSION}/linux-xpi
 
+FORBIDDEN=	"http://vuxml.freebsd.org/a4fd8f53-05eb-11d9-b45d-000c41e2cdad.html (security)"
+
 PKGNAMEPREFIX=	linux-
 PKGNAMESUFFIX=	-devel
 DIST_SUBDIR=	linux-mozilla/${PORTVERSION}
