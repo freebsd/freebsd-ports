@@ -1,7 +1,7 @@
 EPIC4 is a new direction in ircII development. No longer is EPIC 100% 
-backwards compatable with ircII, but instead those things where 
-compatability is undesirable have been found and fixed. No gratuitous 
-incompatabilities have been added, but lots of new code has been added to 
+backwards compatible with ircII, but instead those things where 
+compatibility is undesirable have been found and fixed. No gratuitous 
+incompatibilities have been added, but lots of new code has been added to 
 make EPIC the best ircII client available.
 
 EPIC no longer shares any file names with ircII, so they should happily
@@ -10,6 +10,6 @@ co-exist.
 WWW: http://www.epicsol.org/
 
 Japanese support patch was originally done by Atsushi Tagami
-<tagami@pp.iij4u.or.jp> and made available at the following website.
+<tagami@pp.iij4u.or.jp> and made available at the following web site.
 
 http://www2.freeweb.ne.jp/~atsu/epic/index.html
