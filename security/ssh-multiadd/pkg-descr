@@ -1,0 +1,13 @@
+ssh-multiadd adds multiple ssh keys to the ssh authentication agent.
+These may use the same passphrase. When run without arguments, it
+adds $HOME/.ssh/identity and $HOME/.ssh/id_dsa.  Alternative file
+names can be given on the command line or in the configuration
+file. It uses ssh-askpass if necessary. Unlike ssh-add, if any of
+the keys use the same passphrase, you will only need to enter each
+unique passphrase once, and keys that are already added will not
+be prompted for again.
+
+WWW: http://www.azstarnet.com/~donut/programs/index_s.html#ssh-multiadd
+
+- Pete
+petef@databits.net

@@ -151,6 +151,7 @@
     SUBDIR += snort
     SUBDIR += srm
     SUBDIR += ssh
+    SUBDIR += ssh-multiadd
     SUBDIR += ssh2
     SUBDIR += sslproxy
     SUBDIR += sslwrap
