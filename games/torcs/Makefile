@@ -50,6 +50,12 @@ EXTRADIST=	${DATANAME}${EXTRACT_SUFX}			\
 		${DATANAME}-cars-Patwo-Design${EXTRACT_SUFX}
 INSTDIR=	${PREFIX}/share/games/${PORTNAME}
 
+.include <bsd.port.pre.mk>
+
+.if (${ARCH} == "amd64") || (${ARCH} == "ia64")
+BROKEN=		"does not build on ${ARCH}"
+.endif
+
 .if !defined(WITHOUT_BERNIW)
 DISTFILES+=	${DISTNAME}-robots-berniw${EXTRACT_SUFX}
 EXTRACT_ONLY+=	${DISTNAME}-robots-berniw${EXTRACT_SUFX}
@@ -116,4 +122,4 @@ post-install:
 	@${ECHO_MSG} "*****************************************************************************"
 	@${ECHO_MSG} ""
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
