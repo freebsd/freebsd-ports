@@ -123,8 +123,7 @@ ORBit2		ports/devel/ORBit2
 OpenEXR		ports/graphics/OpenEXR
 PDL		ports/math/PDL
 PicMonger	ports/news/PicMonger
-R-a4		ports/math/R-a4
-R-letter	ports/math/R-letter
+R-project	ports/math/R-project
 SETIsupport	ports/astro/SETIsupport
 SSLtelnet	ports/net/SSLtelnet
 STk		ports/lang/STk
