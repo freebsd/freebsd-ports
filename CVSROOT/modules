@@ -4514,6 +4514,7 @@ p5-File-BasicFlock	ports/devel/p5-File-BasicFlock
 p5-File-Binary	ports/devel/p5-File-Binary
 p5-File-Cache	ports/devel/p5-File-Cache
 p5-File-CounterFile	ports/misc/p5-File-CounterFile
+p5-File-FTS	ports/devel/p5-File-FTS
 p5-File-Lock	ports/devel/p5-File-Lock
 p5-File-MMagic	ports/devel/p5-File-MMagic
 p5-File-ReadBackwards	ports/devel/p5-File-ReadBackwards
