@@ -1,5 +1,4 @@
-@unexec if cmp -s %D/etc/sudoers %%EXAMPLESDIR%%/sudoers; then rm -f %D/etc/sudoers; fi
+@unexec if cmp -s %D/etc/sudoers %D/etc/sudoers.sample; then rm -f %D/etc/sudoers; fi
 bin/sudo
+etc/sudoers.sample
 sbin/visudo
-%%EXAMPLESDIR%%/sudoers
-@dirrm %%EXAMPLESDIR%%
