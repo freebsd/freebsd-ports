@@ -19,7 +19,7 @@ DISTFILES+=	jabber-1.4.1.tar.gz \
 		msn-transport-1.1.tar.gz \
 		yahoo-transport-0.8-1.4.linux.tar.gz
 
-MAINTAINER=	joe@FreeBSD.org
+MAINTAINER=	sean@chittenden.org
 
 LIB_DEPENDS=	pth:${PORTSDIR}/devel/pth
 
