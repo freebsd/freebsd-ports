@@ -1,24 +1,17 @@
 bin/nethirc
-bin/nhirc
-share/nethirc/HACKING
-share/nethirc/INSTALL
-share/nethirc/LICENSE
-share/nethirc/README
-share/nethirc/TODO
-share/nethirc/channel_mode
-share/nethirc/classes
-share/nethirc/commands
-share/nethirc/commands.pl
-share/nethirc/complaints
-share/nethirc/ctcp
-share/nethirc/deities
-share/nethirc/disasters
-share/nethirc/formats
-share/nethirc/handlers
-share/nethirc/handlers.pl
-share/nethirc/helpers.pl
-share/nethirc/monsters
-share/nethirc/nhircrc
-share/nethirc/scrolls
-share/nethirc/self_mode
-@dirrm share/nethirc
+bin/nethirc.pl
+%%SITE_PERL%%/NetHirc/Channel.pm
+%%SITE_PERL%%/NetHirc/Handlers.pm
+%%SITE_PERL%%/NetHirc/Helpers.pm
+%%SITE_PERL%%/NetHirc/State.pm
+%%SITE_PERL%%/NetHirc/Terminal.pm
+%%SITE_PERL%%/NetHirc/Formats.pm
+%%SITE_PERL%%/NetHirc/Server.pm
+%%SITE_PERL%%/NetHirc/StatsDB.pm
+%%SITE_PERL%%/NetHirc/TerminalEvent.pm
+%%SITE_PERL%%/NetHirc/BigBrother.pm
+%%SITE_PERL%%/NetHirc.pm
+%%SITE_PERL%%/nethirc.pl
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/NetHirc/.packlist
+@dirrm %%SITE_PERL%%/NetHirc
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/NetHirc

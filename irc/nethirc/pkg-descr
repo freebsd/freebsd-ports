@@ -1,7 +1,4 @@
-Interesting Perl-based IRC client with some
-NetHack flavor that spices up the interface.
-
+Console IRC client written in Perl, based on widely popular NetHack game.
+ 
 WWW: http://www.nog.net/~tony/
 Author: Tony Monroe <tony@nog.net>
-
---Will <andrews@technologist.com>
