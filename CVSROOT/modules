@@ -4386,7 +4386,6 @@ monop		src/games/monop
 moonshine	ports/devel/moonshine
 mopac		ports/biology/mopac
 mopd		ports/net/mopd
-more		src/usr.bin/more
 morpheus	ports/graphics/morpheus
 morse		src/games/morse
 mosaic		ports/www/Mosaic
