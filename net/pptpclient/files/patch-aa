@@ -1,19 +1,19 @@
-diff -ur dist/pptp-linux-1.0.3/Makefile work/pptp-linux-1.0.3/Makefile
---- dist/pptp-linux-1.0.3/Makefile	Mon May  7 05:19:34 2001
-+++ Makefile	Thu May 10 00:43:58 2001
-@@ -11,12 +11,12 @@
+--- Makefile.orig	Mon Mar 11 09:36:52 2002
++++ Makefile	Thu Jun 13 15:20:18 2002
+@@ -2,14 +2,14 @@
+ 
  #################################################################
  # CHANGE THIS LINE to point to the location of your pppd binary.
- 
--CFLAGS += '-DPPPD_BINARY="/usr/sbin/pppd"'
-+CFLAGS += '-DPPPD_BINARY="/usr/sbin/ppp"' -DUSER_PPP
+-PPPD = /usr/sbin/pppd
++PPPD = /usr/sbin/ppp
  #################################################################
  
- PPTP_BIN = pptp
--PPTP_OBJS = pptp.o pptp_gre.o ppp_fcs.o pty.o \
-+PPTP_OBJS = pptp.o pptp_gre.o ppp_fcs.o \
-             pptp_ctrl.o dirutil.o vector.o \
-             inststr.o util.o version.o
--PPTP_DEPS = pptp_callmgr.h pptp_gre.h ppp_fcs.h pty.h util.h
-+PPTP_DEPS = pptp_callmgr.h pptp_gre.h ppp_fcs.h util.h
+ CC	= gcc
+ RM	= rm -f
+ DEBUG	= -g
+ INCLUDE =
+-CFLAGS  = -Wall -O1 $(DEBUG) $(INCLUDE)
++CFLAGS  = -Wall -O1 $(DEBUG) $(INCLUDE) -DUSER_PPP
+ LIBS	=
+ LDFLAGS	= -lutil
  
