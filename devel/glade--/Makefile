@@ -14,7 +14,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/5./5_/}
 MAINTAINER=	fujie@tk.elec.waseda.ac.jp
 
 RUN_DEPENDS=	glade:${PORTSDIR}/devel/glade
-LIB_DEPENDS=	gtkmm.1:${PORTSDIR}/x11-toolkits/gtk--
+LIB_DEPENDS=	gtkmm.2:${PORTSDIR}/x11-toolkits/gtk--
 
 USE_X_PREFIX=	yes
 USE_PERL5=	yes
