@@ -720,6 +720,10 @@ http_access deny Gopher</pre>
 	<name>linux-tiff</name>
 	<range><lt>3.7.1</lt></range>
       </package>
+      <package>
+	<name>pdflib</name>
+	<range><ge>0</ge></range>
+      </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
@@ -747,7 +751,7 @@ http_access deny Gopher</pre>
     <dates>
       <discovery>2004-12-17</discovery>
       <entry>2005-01-06</entry>
-      <modified>2005-01-11</modified>
+      <modified>2005-01-18</modified>
     </dates>
   </vuln>
 
@@ -4067,6 +4071,10 @@ http_access deny Gopher</pre>
 	<name>linux-tiff</name>
 	<range><le>3.6.1_2</le></range>
       </package>
+      <package>
+	<name>pdflib</name>
+	<range><lt>6.0.1</lt></range>
+      </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
@@ -4084,7 +4092,7 @@ http_access deny Gopher</pre>
     <dates>
       <discovery>2004-10-13</discovery>
       <entry>2004-10-13</entry>
-      <modified>2005-01-13</modified>
+      <modified>2005-01-18</modified>
     </dates>
   </vuln>
 
@@ -4152,6 +4160,10 @@ http_access deny Gopher</pre>
 	<name>linux-tiff</name>
 	<range><le>3.6.1_1</le></range>
       </package>
+      <package>
+	<name>pdflib</name>
+	<range><lt>6.0.1</lt></range>
+      </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
@@ -4169,7 +4181,7 @@ http_access deny Gopher</pre>
     <dates>
       <discovery>2004-10-13</discovery>
       <entry>2004-10-13</entry>
-      <modified>2005-01-08</modified>
+      <modified>2005-01-18</modified>
     </dates>
   </vuln>
 
