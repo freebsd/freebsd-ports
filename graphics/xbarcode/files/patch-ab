@@ -1,0 +1,10 @@
+--- bar.c~	Tue Sep 13 18:25:32 1994
++++ bar.c	Sun Oct  1 02:35:31 2000
+@@ -40,6 +40,7 @@
+   ywert=100;
+   xwert=100;
+   strcpy(Wert,"");
++  if(argc<2) { fprintf(stderr,"%s",ErrText4); exit(-1); }
+   if (strcmp(argv[1],"-HELP")==0)
+     {
+      help();

@@ -1,0 +1,18 @@
+--- Makefile	Tue Sep 13 19:15:08 1994
++++ Makefile	Sun Oct  1 02:21:12 2000
+@@ -4,13 +4,12 @@
+ #
+ 
+ OBJ = mainbarcode.o barcode.o fileio.o help.o
+-OPTIONS = 
+-LIBPATH = /usr/openwin/lib           # Pfad fuer XVIEW Library angeben !!!
++OPTIONS = -I${X11BASE}/include
++LIBPATH = ${X11BASE}/lib           # Pfad fuer XVIEW Library angeben !!!
+ 
+ XBarcode: $(OBJ)
+ 	gcc $(OPTIONS) bar.o fileio.o help.o barcode.o -o bar
+ 	gcc -o XBarcode $(OBJ) -lxview -lolgx -lX11 -L$(LIBPATH) 
+-	cp XBarcode.1 /usr/man/cat1/XBarcode.1
+ 
+ mainbarcode.o: mainbarcode.c barcode.h german.h
+ 	gcc $(OPTIONS) -c mainbarcode.c
