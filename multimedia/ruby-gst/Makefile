@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gst
-PORTVERSION=	0.1.0
+PORTVERSION=	0.1.1
 CATEGORIES=	multimedia ruby
 MASTER_SITES=	http://savannah.nongnu.org/download/ruby-gst/unstable.pkg/${PORTVERSION}/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -24,7 +24,7 @@ USE_RUBY_EXTCONF=	yes
 
 INSTALL_TARGET=	site-install
 
-DOCS=		AUTHORS doc/api
+DOCS=		AUTHORS CHANGES TODO doc/api
 
 post-install:
 .if !defined(NOPORTDOCS)
