@@ -18,6 +18,7 @@
 %%PYTHON_SITELIBDIR%%/cjkcodecs/_iso_2022_jp_1.so
 %%PYTHON_SITELIBDIR%%/cjkcodecs/_iso_2022_jp_2.so
 %%PYTHON_SITELIBDIR%%/cjkcodecs/_iso_2022_jp_3.so
+%%PYTHON_SITELIBDIR%%/cjkcodecs/_iso_2022_jp_ext.so
 %%PYTHON_SITELIBDIR%%/cjkcodecs/_iso_2022_kr.so
 %%PYTHON_SITELIBDIR%%/cjkcodecs/_johab.so
 %%PYTHON_SITELIBDIR%%/cjkcodecs/_shift_jis.so
@@ -76,6 +77,9 @@
 %%PYTHON_SITELIBDIR%%/cjkcodecs/iso_2022_jp_3.py
 %%PYTHON_SITELIBDIR%%/cjkcodecs/iso_2022_jp_3.pyc
 %%PYTHON_SITELIBDIR%%/cjkcodecs/iso_2022_jp_3.pyo
+%%PYTHON_SITELIBDIR%%/cjkcodecs/iso_2022_jp_ext.py
+%%PYTHON_SITELIBDIR%%/cjkcodecs/iso_2022_jp_ext.pyc
+%%PYTHON_SITELIBDIR%%/cjkcodecs/iso_2022_jp_ext.pyo
 %%PYTHON_SITELIBDIR%%/cjkcodecs/iso_2022_kr.py
 %%PYTHON_SITELIBDIR%%/cjkcodecs/iso_2022_kr.pyc
 %%PYTHON_SITELIBDIR%%/cjkcodecs/iso_2022_kr.pyo

@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	cjkcodecs
-PORTVERSION=	1.0.2
+PORTVERSION=	1.0.3
 CATEGORIES=	converters python
 MASTER_SITES=	http://download.berlios.de/cjkpython/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
