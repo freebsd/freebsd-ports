@@ -15,6 +15,7 @@ bin/exiftool
 %%SITE_PERL%%/Image/ExifTool/GeoTiff.pm
 %%SITE_PERL%%/Image/ExifTool/ICC_Profile.pm
 %%SITE_PERL%%/Image/ExifTool/IPTC.pm
+%%SITE_PERL%%/Image/ExifTool/Jpeg2000.pm
 %%SITE_PERL%%/Image/ExifTool/MakerNotes.pm
 %%SITE_PERL%%/Image/ExifTool/Minolta.pm
 %%SITE_PERL%%/Image/ExifTool/Nikon.pm
@@ -29,6 +30,7 @@ bin/exiftool
 %%SITE_PERL%%/Image/ExifTool/Sigma.pm
 %%SITE_PERL%%/Image/ExifTool/Sony.pm
 %%SITE_PERL%%/Image/ExifTool/TagLookup.pm
+%%SITE_PERL%%/Image/ExifTool/TagNames.pod
 %%SITE_PERL%%/Image/ExifTool/Unknown.pm
 %%SITE_PERL%%/Image/ExifTool/WriteCanonRaw.pl
 %%SITE_PERL%%/Image/ExifTool/WriteExif.pl

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Image-ExifTool
-PORTVERSION=	4.53
+PORTVERSION=	4.64
 CATEGORIES=	graphics perl5
 MASTER_SITES=	http://www.sno.phy.queensu.ca/~phil/exiftool/
 PKGNAMEPREFIX=	p5-
@@ -30,6 +30,7 @@ MAN3=		File::RandomAccess.3 \
 		Image::ExifTool::GeoTiff.3 \
 		Image::ExifTool::ICC_Profile.3 \
 		Image::ExifTool::IPTC.3 \
+		Image::ExifTool::Jpeg2000.3 \
 		Image::ExifTool::MakerNotes.3 \
 		Image::ExifTool::Minolta.3 \
 		Image::ExifTool::Nikon.3 \
@@ -43,6 +44,7 @@ MAN3=		File::RandomAccess.3 \
 		Image::ExifTool::Sigma.3 \
 		Image::ExifTool::Sony.3 \
 		Image::ExifTool::TagLookup.3 \
+		Image::ExifTool::TagNames.3 \
 		Image::ExifTool::Unknown.3 \
 		Image::ExifTool::WriteCanonRaw.3 \
 		Image::ExifTool::WriteExif.3 \
