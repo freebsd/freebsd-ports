@@ -82,3 +82,4 @@ share/pixmaps/kino.png
 @dirrm share/kino/scripts/publish
 @dirrm share/kino/scripts
 @dirrm share/kino
+@unexec rmdir %D/share/applications 2>/dev/null || true
