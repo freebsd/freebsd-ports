@@ -1806,6 +1806,7 @@ ftp-tls		ports/ftp/ftp-tls
 ftp4all		ports/ftp/ftp4all
 ftpcopy		ports/ftp/ftpcopy
 ftpcube		ports/ftp/ftpcube
+ftpd-tls	ports/ftp/ftpd-tls
 ftpfind		ports/ftp/ftpfind
 ftplocate	ports/ftp/ftplocate
 ftpmap		ports/security/ftpmap
