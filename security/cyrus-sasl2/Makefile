@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cyrus-sasl
-PORTVERSION=	2.1.8
+PORTVERSION=	2.1.9
 #PORTREVISION=	0
 CATEGORIES=	security ipv6
 MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/ \
@@ -123,7 +123,6 @@ post-patch:
 	@${SED} -e "s;%%PWCHECK_METHOD%%;${PWCHECK_METHOD};g" \
 		-e "s;%%PREFIX%%;${PREFIX};g" \
 		${.CURDIR}/pkg-message > ${PKGMESSAGE}
-	@${CP} ${FILESDIR}/staticopen.h ${WRKSRC}/lib
 
 # Create Cyrus user and group
 pre-install:
