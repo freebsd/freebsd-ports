@@ -1,0 +1,9 @@
+This module is a better way of putting 'hello there' trace messages in
+your code.  It lets you turn tracing on and off without commenting out
+trace statements, and provides other useful things like HTML-ified
+trace messages for CGI scripts and an easy way to trace out data
+structures using Data::Dumper.
+
+WWW: http://search.cpan.org/search?dist=Log-TraceMessages
+
+Seamus Venasse <svenasse@polaris.ca>

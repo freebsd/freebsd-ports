@@ -1,0 +1,8 @@
+lib/perl5/site_perl/%%PERL_VER%%/Log/TraceMessages.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Log/TraceMessages/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/auto/Log/TraceMessages/autosplit.ix
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/auto/Log/TraceMessages
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/auto/Log 2>/dev/null || true
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Log/TraceMessages
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Log 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Log 2>/dev/null || true
