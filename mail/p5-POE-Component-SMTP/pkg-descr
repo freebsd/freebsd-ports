@@ -4,6 +4,3 @@ implement it yourself, and define it in your InlineStates,
 PackageStates, or ObjectStates.
 
 WWW: http://search.cpan.org/dist/POE-Component-SMTP/
-
--- Sergey Skvortsov
-skv@FreeBSD.org
