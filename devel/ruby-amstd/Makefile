@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	amstd
-PORTVERSION=	1.9.5
+PORTVERSION=	1.9.6
 CATEGORIES=	devel ruby
 MASTER_SITES=	http://www1.u-netsurf.ne.jp/~brew/mine/soft/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -19,10 +19,11 @@ USE_RUBY=	yes
 NO_BUILD=	yes
 
 DOCS_EN=	README.en
-DOCS_JA=	README.ja
+DOCS_JA=	README.ja amstd-ja.rd
 MODULES=	bench.rb \
 		bug.rb \
 		collfrom.rb \
+		constdef.rb \
 		dispatch.rb \
 		errutil.rb \
 		extmod.rb \
