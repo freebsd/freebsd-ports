@@ -6,26 +6,23 @@
 # $FreeBSD$
 #
 
-SNAPDATE=	2003-10-13
-#CVS_DATE=	${SNAPDATE} 18:53:04 EDT
+SNAPDATE=
 
 PORTNAME=	gcc
-PORTVERSION=	3.3.1
+PORTVERSION=	3.3.2
 PORTREVISION=	${SNAPDATE:S/-//g}
 CATEGORIES=	lang java
-VERSIONSTRING=	${PORTREVISION}
+VERSIONSTRING=	3.3.2
 MASTER_SITES=	${MASTER_SITE_GCC} \
 		http://web.inter.NL.net/hcc/Haj.Ten.Brugge/:bc
-MASTER_SITE_SUBDIR=	snapshots/3.3-${PORTREVISION}
-.if !defined(CVS_DATE)
+MASTER_SITE_SUBDIR=	releases/gcc-${VERSIONSTRING}
 DISTFILES=	\
-		gcc-core-3.3-${VERSIONSTRING}${EXTRACT_SUFX} \
-		gcc-g++-3.3-${VERSIONSTRING}${EXTRACT_SUFX} \
-		gcc-g77-3.3-${VERSIONSTRING}${EXTRACT_SUFX} \
-		gcc-java-3.3-${VERSIONSTRING}${EXTRACT_SUFX} \
-		gcc-objc-3.3-${VERSIONSTRING}${EXTRACT_SUFX} \
-		gcc-testsuite-3.3-${VERSIONSTRING}${EXTRACT_SUFX}
-.endif
+		gcc-core-${VERSIONSTRING}${EXTRACT_SUFX} \
+		gcc-g++-${VERSIONSTRING}${EXTRACT_SUFX} \
+		gcc-g77-${VERSIONSTRING}${EXTRACT_SUFX} \
+		gcc-java-${VERSIONSTRING}${EXTRACT_SUFX} \
+		gcc-objc-${VERSIONSTRING}${EXTRACT_SUFX} \
+		gcc-testsuite-${VERSIONSTRING}${EXTRACT_SUFX}
 
 MAINTAINER?=	ports@FreeBSD.org
 COMMENT?=	GNU Compiler Collection 3.3
@@ -53,7 +50,7 @@ NOMANCOMPRESS=	yes	# too hard to deal with differences on 5-cur and releng4
 CONFIGURE_TARGET=	${ARCH}-portbld-freebsd${OSREL}
 
 GCC_VER=	${PORTVERSION:C/\.0$//}
-SRCDIR=		${WRKDIR}/gcc-3.3-${VERSIONSTRING}
+SRCDIR=		${WRKDIR}/gcc-${VERSIONSTRING}
 WRKSRC=		${WRKDIR}/build
 TARGLIB=	${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${GCC_VER}
 GCJINC=		${PREFIX}/include/gcj
@@ -98,34 +95,6 @@ pre-everything::
 	@${ECHO_MSG} "by defining WITH_BOUNDSCHECKING.  Compile and link with \"-fbounds-checking\""
 	@${ECHO_MSG} "to use."
 .endif
-
-.if defined(CVS_DATE)
-NO_CHECKSUM=	yes
-DIST_SUBDIR=	${PKGNAME}
-CVS_CMD?=	cvs -z3 -qR
-CVSROOT=	:pserver:anoncvs@subversions.gnu.org:/cvsroot/gcc
-STAMPFILE=	${DISTDIR}/${DIST_SUBDIR}/.timestamp
-do-fetch:
-	@if [ ! -e ${STAMPFILE} ] || \
-	    [ "X${CVS_DATE}" != "X$$(${CAT} ${STAMPFILE})" ]; then \
-		${MKDIR} ${DISTDIR}/${DIST_SUBDIR} && \
-		cd ${DISTDIR}/${DIST_SUBDIR} ; \
-		unset CVS_RSH CVS_SERVER || ${TRUE} ; \
-		${ECHO_MSG} ">> Attempting to CVS checkout from ${CVSROOT}." ;\
-		if ${CVS_CMD} -d ${CVSROOT} co -D "${CVS_DATE}" gcc ; \
-		then \
-			( ${ECHO_CMD} -n "${CVS_DATE}" > ${STAMPFILE} ) ; \
-			exit ; \
-		fi ; \
-		${ECHO_MSG} ">> Couldn't CVS checkout ${PKGNAME}." ; \
-		${ECHO_MSG} ">> Please try again later."; \
-		exit 1; \
-	fi
-
-do-extract:
-	${MKDIR} ${SRCDIR}
-	cd ${DISTDIR}/${DIST_SUBDIR}/${DIST_SUBDIR ; pax -pe -rwt . ${SRCDIR}
-.endif	# CVS_DATE
 
 .if defined(WITH_BOUNDSCHECKING)
 # Extract bounds-checking patch, removing the ada parts of the patch with sed.
