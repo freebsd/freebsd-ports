@@ -9,7 +9,6 @@ PORTNAME=	picasm
 PORTVERSION=	1.12b
 CATEGORIES=	devel
 MASTER_SITES=	http://www.co.jyu.fi/~trossi/pic/ \
-		http://www.iki.fi/hyvatti/pic/	\
 		http://hyvatti.iki.fi/~jaakko/pic/
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//g}
 
