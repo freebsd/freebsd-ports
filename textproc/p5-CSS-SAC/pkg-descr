@@ -1,0 +1,13 @@
+SAC (Simple API for CSS) is an event-based API much like SAX for XML.
+If you are familiar with the latter, you should have little trouble
+getting used to SAC.  More information on SAC can be found online at
+http://www.w3.org/TR/SAC.
+
+CSS having more constructs than XML, core SAC is still more complex than
+core SAX.  However, if you need to parse a CSS style sheet, SAC probably
+remains the easiest way to get it done.
+
+WWW: http://search.cpan.org/search?dist=CSS-SAC
+
+-- Sergey Skvortsov
+skv@FreeBSD.org

@@ -1,0 +1,30 @@
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/CSS/SAC/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/CSS/SAC.pm
+lib/perl5/site_perl/%%PERL_VER%%/CSS/SAC/Condition.pm
+lib/perl5/site_perl/%%PERL_VER%%/CSS/SAC/Condition/Attribute.pm
+lib/perl5/site_perl/%%PERL_VER%%/CSS/SAC/Condition/Combinator.pm
+lib/perl5/site_perl/%%PERL_VER%%/CSS/SAC/Condition/Content.pm
+lib/perl5/site_perl/%%PERL_VER%%/CSS/SAC/Condition/Lang.pm
+lib/perl5/site_perl/%%PERL_VER%%/CSS/SAC/Condition/Negative.pm
+lib/perl5/site_perl/%%PERL_VER%%/CSS/SAC/Condition/Positional.pm
+lib/perl5/site_perl/%%PERL_VER%%/CSS/SAC/ConditionFactory.pm
+lib/perl5/site_perl/%%PERL_VER%%/CSS/SAC/LexicalUnit.pm
+lib/perl5/site_perl/%%PERL_VER%%/CSS/SAC/Selector.pm
+lib/perl5/site_perl/%%PERL_VER%%/CSS/SAC/Selector/CharacterData.pm
+lib/perl5/site_perl/%%PERL_VER%%/CSS/SAC/Selector/Conditional.pm
+lib/perl5/site_perl/%%PERL_VER%%/CSS/SAC/Selector/Descendant.pm
+lib/perl5/site_perl/%%PERL_VER%%/CSS/SAC/Selector/Element.pm
+lib/perl5/site_perl/%%PERL_VER%%/CSS/SAC/Selector/Negative.pm
+lib/perl5/site_perl/%%PERL_VER%%/CSS/SAC/Selector/ProcessingInstruction.pm
+lib/perl5/site_perl/%%PERL_VER%%/CSS/SAC/Selector/Sibling.pm
+lib/perl5/site_perl/%%PERL_VER%%/CSS/SAC/Selector/Simple.pm
+lib/perl5/site_perl/%%PERL_VER%%/CSS/SAC/SelectorFactory.pm
+lib/perl5/site_perl/%%PERL_VER%%/CSS/SAC/SelectorList.pm
+lib/perl5/site_perl/%%PERL_VER%%/CSS/SAC/TestWriter.pm
+lib/perl5/site_perl/%%PERL_VER%%/CSS/SAC/Writer.pm
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/CSS/SAC/Condition
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/CSS/SAC/Selector
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/CSS/SAC
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/CSS/SAC
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/CSS 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/CSS 2>/dev/null || true
