@@ -1,5 +1,5 @@
 --- src/device/k3bscsicommand.cpp.orig	Wed Jan 21 11:20:11 2004
-+++ src/device/k3bscsicommand.cpp	Mon May 24 23:32:04 2004
++++ src/device/k3bscsicommand.cpp	Sun Jul 11 12:24:22 2004
 @@ -58,13 +58,14 @@
  
  

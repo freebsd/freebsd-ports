@@ -1,6 +1,6 @@
---- src/rip/k3bdvdrippingprocess.cpp.orig	Wed Jan 21 11:20:20 2004
-+++ src/rip/k3bdvdrippingprocess.cpp	Tue May 11 22:57:03 2004
-@@ -278,10 +278,13 @@
+--- src/rip/k3bdvdrippingprocess.cpp.orig	Wed Jun  2 11:31:41 2004
++++ src/rip/k3bdvdrippingprocess.cpp	Sun Jul 11 12:24:22 2004
+@@ -285,10 +285,13 @@
  void K3bDvdRippingProcess::slotPreProcessingDvd() {
      QString video;
      QDir video_ts( m_mountPoint + "/VIDEO_TS");

@@ -3,10 +3,10 @@ Notes:
    drives, use them through the cam system. See Chapter 12.5.9 of the handbook
    (http://www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/creating-cds.html#ATAPICAM)
 2. Your CD and DVD drives must have a mount point in /etc/fstab. They have
-   to be accessed through their atapicam device. I.e. the drives
-   have to be adressed by e.g. /dev/cd0c instead of /dev/acd0c.
+   to be accessed through their atapicam device if possible. I.e. the drives
+   have to be adressed by e.g. /dev/cd0c instead of /dev/acd0c (/dev/cd0 on FreeBSD 5.x).
 3. k3b has to be started from a root console, which is not recommended.
-   Alternatively do all of the following:
+   Alternatively do ALL of the following:
 3a. set the suid flag on cdrecord and cdrdao. The 'Notes' the chapter of
     'man cdrecord' discusses this.
 3b. - For every user who should be able to use k3b and for every CD or DVD
@@ -16,6 +16,8 @@ Notes:
         /dev/cd0c  /usr/home/XXX/cdrom  cd9660  ro,noauto,nodev,nosuid  0  0
       Furthermore allow user mounts as described in topic 9.22 of the FAQ:
       http://www.freebsd.org/doc/en_US.ISO8859-1/books/faq/disks.html#USER-FLOPPYMOUNT
+      Note: If you are using FreeBSD 5.x you might want to edit your /etc/devfs.conf.
+      See http://sig9.com/archive/articles/HOWTO-mount-fs.html for details.
     - or just give mount and umount the suid flag, which is a security leak.
 3c. - Every user who should be able to use k3b must have read and write access
       to all pass through devices connected with CD and DVD drives and to the /dev/xpt0 

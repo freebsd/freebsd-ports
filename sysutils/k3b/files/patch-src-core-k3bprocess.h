@@ -1,5 +1,5 @@
 --- src/core/k3bprocess.h.orig	Tue Jan 27 09:19:13 2004
-+++ src/core/k3bprocess.h	Tue May 11 22:57:03 2004
++++ src/core/k3bprocess.h	Sun Jul 11 12:24:22 2004
 @@ -194,4 +194,21 @@
    KProcess* m_process;
  };
