@@ -14,14 +14,18 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2
+LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext \
+		xml2.5:${PORTSDIR}/textproc/libxml2
 
 USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
-USE_GNOME=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gnomelibs bonobo gnomeprefix
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--with-libiconv-prefix="${LOCALBASE}"
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|intl||g' ${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>
