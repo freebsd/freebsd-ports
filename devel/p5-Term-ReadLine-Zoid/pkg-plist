@@ -1,0 +1,56 @@
+%%SITE_PERL%%/Term/ReadLine/Zoid.pm
+%%SITE_PERL%%/Term/ReadLine/Zoid/Base.pm
+%%SITE_PERL%%/Term/ReadLine/Zoid/Emacs.pm
+%%SITE_PERL%%/Term/ReadLine/Zoid/FileBrowse.pm
+%%SITE_PERL%%/Term/ReadLine/Zoid/ISearch.pm
+%%SITE_PERL%%/Term/ReadLine/Zoid/ViCommand.pm
+%%SITE_PERL%%/auto/Term/ReadLine/Zoid/ViCommand/_do_motion.al
+%%SITE_PERL%%/auto/Term/ReadLine/Zoid/ViCommand/_get_chr.al
+%%SITE_PERL%%/auto/Term/ReadLine/Zoid/ViCommand/_parse_chrs.al
+%%SITE_PERL%%/auto/Term/ReadLine/Zoid/ViCommand/alias.al
+%%SITE_PERL%%/auto/Term/ReadLine/Zoid/ViCommand/ascii.al
+%%SITE_PERL%%/auto/Term/ReadLine/Zoid/ViCommand/autosplit.ix
+%%SITE_PERL%%/auto/Term/ReadLine/Zoid/ViCommand/bindchr.al
+%%SITE_PERL%%/auto/Term/ReadLine/Zoid/ViCommand/bindkey.al
+%%SITE_PERL%%/auto/Term/ReadLine/Zoid/ViCommand/bsearch.al
+%%SITE_PERL%%/auto/Term/ReadLine/Zoid/ViCommand/eval.al
+%%SITE_PERL%%/auto/Term/ReadLine/Zoid/ViCommand/fsearch.al
+%%SITE_PERL%%/auto/Term/ReadLine/Zoid/ViCommand/quit.al
+%%SITE_PERL%%/auto/Term/ReadLine/Zoid/ViCommand/set.al
+%%SITE_PERL%%/auto/Term/ReadLine/Zoid/ViCommand/shell.al
+%%SITE_PERL%%/auto/Term/ReadLine/Zoid/ViCommand/testchr.al
+%%SITE_PERL%%/auto/Term/ReadLine/Zoid/ViCommand/vi_B.al
+%%SITE_PERL%%/auto/Term/ReadLine/Zoid/ViCommand/vi_C.al
+%%SITE_PERL%%/auto/Term/ReadLine/Zoid/ViCommand/vi_D.al
+%%SITE_PERL%%/auto/Term/ReadLine/Zoid/ViCommand/vi_E.al
+%%SITE_PERL%%/auto/Term/ReadLine/Zoid/ViCommand/vi_F.al
+%%SITE_PERL%%/auto/Term/ReadLine/Zoid/ViCommand/vi_G.al
+%%SITE_PERL%%/auto/Term/ReadLine/Zoid/ViCommand/vi_J.al
+%%SITE_PERL%%/auto/Term/ReadLine/Zoid/ViCommand/vi_K.al
+%%SITE_PERL%%/auto/Term/ReadLine/Zoid/ViCommand/vi_N.al
+%%SITE_PERL%%/auto/Term/ReadLine/Zoid/ViCommand/vi_P.al
+%%SITE_PERL%%/auto/Term/ReadLine/Zoid/ViCommand/vi_S.al
+%%SITE_PERL%%/auto/Term/ReadLine/Zoid/ViCommand/vi_U.al
+%%SITE_PERL%%/auto/Term/ReadLine/Zoid/ViCommand/vi_V.al
+%%SITE_PERL%%/auto/Term/ReadLine/Zoid/ViCommand/vi_W.al
+%%SITE_PERL%%/auto/Term/ReadLine/Zoid/ViCommand/vi_X.al
+%%SITE_PERL%%/auto/Term/ReadLine/Zoid/ViCommand/vi_Y.al
+%%SITE_PERL%%/auto/Term/ReadLine/Zoid/ViCommand/vi_c_repeat.al
+%%SITE_PERL%%/auto/Term/ReadLine/Zoid/ViCommand/vi_case.al
+%%SITE_PERL%%/auto/Term/ReadLine/Zoid/ViCommand/vi_comment.al
+%%SITE_PERL%%/auto/Term/ReadLine/Zoid/ViCommand/vi_complete.al
+%%SITE_PERL%%/auto/Term/ReadLine/Zoid/ViCommand/vi_cursor.al
+%%SITE_PERL%%/auto/Term/ReadLine/Zoid/ViCommand/vi_home.al
+%%SITE_PERL%%/auto/Term/ReadLine/Zoid/ViCommand/vi_increment.al
+%%SITE_PERL%%/auto/Term/ReadLine/Zoid/ViCommand/vi_macro.al
+%%SITE_PERL%%/auto/Term/ReadLine/Zoid/ViCommand/vi_mini_buffer.al
+%%SITE_PERL%%/auto/Term/ReadLine/Zoid/ViCommand/vi_r.al
+%%SITE_PERL%%/auto/Term/ReadLine/Zoid/ViCommand/vi_repeat.al
+%%SITE_PERL%%/auto/Term/ReadLine/Zoid/ViCommand/vi_topic.al
+@dirrm %%SITE_PERL%%/Term/ReadLine/Zoid
+@dirrm %%SITE_PERL%%/auto/Term/ReadLine/Zoid/ViCommand
+@dirrm %%SITE_PERL%%/auto/Term/ReadLine/Zoid
+@unexec rmdir %D/%%SITE_PERL%%/Term/ReadLine 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Term 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/auto/Term/ReadLine 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/auto/Term 2>/dev/null || true
