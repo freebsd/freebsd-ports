@@ -21,14 +21,14 @@ OVERRIDABLE_VARS=	SRC_FILE MODULENAME SHORTMODNAME WRKSRC \
 WITH_APACHE2=	YES
 .   if defined (WANT_APACHE)
 .     if ${WANT_APACHE} == 13
-BROKEN=		"This module require apache13 and you have apache2 installed"
+IGNORE=		"This module require apache13 and you have apache2 installed"
 .     endif
 .   endif
 .elif exists(${LOCALBASE}/include/apache/http_core.h)
 WITH_APACHE13=	YES
 .   if defined (WANT_APACHE)
 .     if ${WANT_APACHE} == 2
-BROKEN=		"This module require apache2 and you have apache13 installed"
+IGNORE=		"This module require apache2 and you have apache13 installed"
 .     endif
 .   endif
 .   ifdef(WITH_APACHE2)
@@ -42,7 +42,7 @@ WITH_APACHE13=		YES
 .  elif ${WANT_APACHE} == 2
 WITH_APACHE2=		YES
 .  else
-BROKEN=		"Unknown apache version"
+IGNORE=		"Unknown apache version"
 .  endif
 .endif
 
