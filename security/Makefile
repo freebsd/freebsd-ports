@@ -320,6 +320,7 @@
     SUBDIR += pktsuckers
     SUBDIR += poc
     SUBDIR += portaudit
+    SUBDIR += portaudit-db
     SUBDIR += portscanner
     SUBDIR += portsentry
     SUBDIR += ppgen

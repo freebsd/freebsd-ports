@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is in the public domain.
+  $FreeBSD$
+-->
+<!DOCTYPE vuxml PUBLIC "-//vuxml.org//DTD VuXML 1.1//EN" "http://www.vuxml.org/dtd/vuxml-1/vuxml-11.dtd">
+<vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+
+  <vuln vid="42e330ab-82a4-11d8-868e-000347dd607f">
+    <topic>MPlayer remotely exploitable buffer overflow in the ASX parser</topic>
+    <affects>
+      <package>
+        <name>mplayer</name>
+        <name>mplayer-esound</name>
+        <name>mplayer-gtk</name>
+        <name>mplayer-gtk-esound</name>
+        <range><lt>0.92</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>A remotely exploitable buffer overflow vulnerability was found in
+          MPlayer. A malicious host can craft a harmful ASX header,
+          and trick MPlayer into executing arbitrary code upon parsing that header.</p>
+      </body>
+    </description>
+    <references>
+      <url>http://www.mplayerhq.hu/</url>
+      <url>http://www.securityfocus.com/archive/1/339330</url>
+      <url>http://www.securityfocus.com/archive/1/339193</url>
+      <cvename>CAN-2003-0835</cvename>
+      <bid>8702</bid>
+    </references>
+    <dates>
+      <discovery>2003-09-24</discovery>
+      <entry>2004-03-30</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="d8c46d74-8288-11d8-868e-000347dd607f">
+    <topic>MPlayer remotely exploitable buffer overflow in the HTTP parser</topic>
+    <affects>
+      <package>
+        <name>mplayer</name>
+        <name>mplayer-esound</name>
+        <name>mplayer-gtk</name>
+        <name>mplayer-gtk-esound</name>
+        <range><lt>0.92.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>A remotely exploitable buffer overflow vulnerability was found in
+          MPlayer. A malicious host can craft a harmful HTTP header (&quot;Location:&quot;),
+          and trick MPlayer into executing arbitrary code upon parsing that header.</p>
+      </body>
+    </description>
+    <references>
+      <url>http://www.mplayerhq.hu/</url>
+      <url>http://www.securityfocus.com/archive/1/359029</url>
+      <url>http://www.securityfocus.com/archive/1/359025</url>
+    </references>
+    <dates>
+      <discovery>2004-03-29</discovery>
+      <entry>2004-03-30</entry>
+    </dates>
+  </vuln>
+
+</vuxml>

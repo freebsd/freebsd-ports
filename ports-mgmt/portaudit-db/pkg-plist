@@ -1,0 +1,7 @@
+bin/packaudit
+etc/packaudit.conf.sample
+%%DATADIR%%/vuxml2html.xslt
+%%DATADIR%%/vuxml2portaudit.xslt
+@dirrm %%DATADIR%%
+@exec mkdir -p %%DATABASEDIR%%
+@unexec rmdir %%DATABASEDIR%% 2>/dev/null || true
