@@ -7,7 +7,7 @@
 
 PORTNAME=	staroffice
 PORTVERSION=	5.2
-CATEGORIES=	editors linux
+CATEGORIES=	german editors linux
 MASTER_SITES=	ftp://ftp.hu-berlin.de/pub/linux/staroffice/german/ \
 		ftp://ftp.software-engineering.org/pub/mirrors/staroffice/5.2/ \
 		ftp://ftp.uni-linz.ac.at/pub/staroffice_5.2/ \
@@ -21,8 +21,7 @@ EXTRACT_ONLY=
 
 MAINTAINER=	mb@imp.ch
 
-DEPENDS=	${PORTSDIR}/emulators/linux_base
-RUN_DEPENDS=	/compat/linux/lib/libc.so.6:${PORTSDIR}/emulators/linux_base
+FETCH_DEPENDS=	${LINUXBASE}/lib/libc.so.6:${PORTSDIR}/emulators/linux_base
 
 ONLY_FOR_ARCHS=	i386
 NO_CDROM=	'Sie muessen StarOffice manuell via WWW-Interface herunterladen.'
@@ -31,7 +30,7 @@ NO_BUILD=	yes
 DIST_SUBDIR=	staroffice52
 WRKSRC=		${WRKDIR}/office52
 TMPDIR=		${WRKDIR}/tmp
-LD_PATH=	${TMPDIR}:${WRKSRC}:/compat/linux/lib:/compat/linux/usr/lib
+LD_PATH=	${TMPDIR}:${WRKSRC}:${LINUXBASE}/lib:${LINUXBASE}/usr/lib
 
 .include <bsd.port.pre.mk>
 
@@ -94,11 +93,11 @@ do-install:
 	@ ${ECHO}
 	@ ${FALSE}
 .else
-.if exists(/compat/linux/${PREFIX})
-	@${LN} -fs /compat/linux/${PREFIX}/office52 ${PREFIX}/office52
+.if exists(${LINUXBASE}/${PREFIX})
+	@${LN} -fs ${LINUXBASE}/${PREFIX}/office52 ${PREFIX}/office52
 .endif
 	@${CAT} ${PKGDIR}/MESSAGE
-	@-SAL_IGNOREXERRORS=1 TEMP=${TMPDIR} LD_LIBRARY_PATH=${LD_PATH} /compat/linux/bin/sh -c '${WRKSRC}/setup /net'
+	@-SAL_IGNOREXERRORS=1 TEMP=${TMPDIR} LD_LIBRARY_PATH=${LD_PATH} ${LINUXBASE}/bin/sh -c '${WRKSRC}/setup /net'
 	@if [ -f ${PREFIX}/office52/program/setup ]; then \
 		${ECHO} ; \
 		${ECHO} Ignorieren Sie die Fehlermeldung. StarOffice5.2 wurde erfolgreich ; \
