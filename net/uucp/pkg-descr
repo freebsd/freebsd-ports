@@ -1,7 +1,0 @@
-This is a port of the Taylor UUCP Unix-to-Unix Copy Program suite
-of utilities.
-
-- no scripts in etc/periodic/daily/
-- no scripts in etc/periodic/weekly/
-- no program libexec/uucpd
-- info/uucp not compressed
