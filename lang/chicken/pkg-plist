@@ -1,5 +1,6 @@
 bin/chicken
 bin/chicken-config
+bin/chicken-setup
 bin/chicken-static
 bin/csc
 bin/csi
@@ -32,6 +33,8 @@ lib/libusrfi-chicken.so.0
 lib/libustuffed-chicken.a
 lib/libustuffed-chicken.so
 lib/libustuffed-chicken.so.0
+%%DATADIR%%/banner.scm
+%%DATADIR%%/default-entry-points.scm
 %%DATADIR%%/highlevel-macros.scm
 %%DATADIR%%/match.scm
 %%DATADIR%%/moremacros.scm
@@ -130,6 +133,7 @@ lib/libustuffed-chicken.so.0
 %%PORTDOCS%%%%DOCSDIR%%/manual/manual.hlog
 %%PORTDOCS%%%%DOCSDIR%%/manual/manual.html
 %%PORTDOCS%%%%DOCSDIR%%/tex2page
+%%PORTDOCS%%%%DOCSDIR%%/tinyclos-examples.scm
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/manual
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%PORTDOCS%%%%EXAMPLESDIR%%/README
