@@ -13,6 +13,8 @@ DISTNAME=	${PORTNAME}-stable-${PORTVERSION}
 
 MAINTAINER=	nbm@FreeBSD.org
 
+BROKEN=		"Does not fetch"
+
 RUN_DEPENDS=	${LOCALBASE}/libexec/apache/libphp4.so:${PORTSDIR}/www/mod_php4
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
