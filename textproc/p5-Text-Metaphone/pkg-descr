@@ -1,0 +1,8 @@
+Metaphone() is a function whereby a string/word is broken down into
+a rough approximation of its english phonetic pronunciation. Very
+similar in concept and purpose to soundex, but much more comprehensive
+in its approach.
+
+WWW: http://search.cpan.org/search?dist=Text-Metaphone
+
+Seamus Venasse <svenasse@polaris.ca>
