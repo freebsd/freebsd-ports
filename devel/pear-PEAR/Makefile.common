@@ -7,7 +7,9 @@ PKGNAMEPREFIX=	pear-
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	PEAR
 
+.if !defined(USE_PHPIZE)
 NO_BUILD=	yes
+.endif
 
 .if exists(${LOCALBASE}/bin/php-config)
 PHP_BASE!=	${LOCALBASE}/bin/php-config --prefix
