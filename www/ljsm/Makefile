@@ -8,8 +8,7 @@
 PORTNAME=	ljsm
 PORTVERSION=    2.5
 CATEGORIES=	www perl5
-MASTER_SITES=   http://www.offtopia.net/~ati/ljsm/ \
-		http://ryzh.kiev.ua/ljsm/
+MASTER_SITES=	http://ryzh.kiev.ua/ljsm/
 EXTRACT_SUFX=	.zip
 
 MAINTAINER=	ports@freebsd.org
