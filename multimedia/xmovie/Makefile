@@ -12,7 +12,7 @@ CATEGORIES=	graphics linux
 MASTER_SITES=	http://heroines.sourceforge.net/
 DISTFILES=	${PORTNAME}-${PORTVERSION:R}-${PORTVERSION:E}.i386.rpm
 
-MAINTAINER=	sanpei@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 BUILD_DEPENDS=	rpm2cpio:${PORTSDIR}/archivers/rpm
 RUN_DEPENDS=	${LINUX_BASE}/lib/libc.so.6:${PORTSDIR}/emulators/linux_base \
