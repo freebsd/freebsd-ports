@@ -16,9 +16,10 @@ DISTNAME=		nrpe-${PORTVERSION}
 MAINTAINER=		paul@nerdlabs.com
 COMMENT=		Nagios Remote Plugin Executor
 
-RUN_DEPENDS=	${LOCALBASE}/libexec/nagios/check_nagios:${PORTSDIR}/net-mgmt/nagios-plugins
+RUN_DEPENDS=		${LOCALBASE}/libexec/nagios/check_nagios:${PORTSDIR}/net-mgmt/nagios-plugins
 
-GNU_CONFIGURE=	yes
+GNU_CONFIGURE=		yes
+USE_PERL5_BUILD=	yes
 
 CONFIGURE_ARGS+=	--libexecdir=${PREFIX}/libexec/nagios --bindir=${PREFIX}/sbin --sysconfdir=${PREFIX}/etc
 
