@@ -1,5 +1,5 @@
 --- set_soenv.1.orig	Tue Nov 20 18:26:33 2001
-+++ set_soenv.1	Fri Mar  8 22:33:35 2002
++++ set_soenv.1	Sat Mar  9 00:32:14 2002
 @@ -40,7 +40,7 @@
  #
  # Set this value equal to the corresponding amount of
@@ -35,7 +35,17 @@
  } 
  elsif ( $platform eq "$Linux" ) 
  {
-@@ -954,7 +955,7 @@
+@@ -857,7 +858,8 @@
+                         $D.$OS.
+                         $D.$CPUNAME;
+ if  ($platform eq "$FreeBSD")
+-{  $SOLARDEF         .= $D."X86";
++{  $SOLARDEF         .= $D."X86".
++                        $D."OSVERSION=$OSVERSION";
+ }
+ $SOLARDEF            .= $D."_REENTRANT".
+                         $D."_POSIX_PTHREAD_SEMANTICS";
+@@ -954,7 +956,7 @@
                          $ps.$USR.$LIB.
                          $ps.$USR_LOCAL.$BIN;
  }
@@ -44,7 +54,7 @@
  {  $PATH              = $cur_dir.
                          $ps.'$SOLARVER'.$ds.'$UPD'.$ds.'$INPATH'.$BIN.
                          $ps.'$SOLARENV'.$ds.'$OUTPATH'.$BIN.
-@@ -968,6 +969,22 @@
+@@ -968,6 +970,22 @@
                          $ps.$USR.$BIN.$ds."X11".
                          $ps.$USR.$LIB;
  }
@@ -67,7 +77,7 @@
  elsif ($platform eq "$Winnt")
  {  $COMPATH_ROOT      = $COMPATH;
     $COMPATH_ROOT      =~ s/\/vc98$//;
-@@ -1067,25 +1084,19 @@
+@@ -1067,25 +1085,19 @@
  {
  $SOLARINC            .= $I.$USR.$INCLUDE.
  			$STLPORT_stlport;
@@ -97,7 +107,7 @@
  $SOLARINC            .= $I.'$SOLARENV'.$INC.$ds."Xp31".
                          $I.'$JAVA_HOME'.$INCLUDE;
  
-@@ -1273,6 +1284,7 @@
+@@ -1273,6 +1285,7 @@
  ToFile( "GUIENV",            $GUIENV,            "e" );
  ToFile( "GVER",              $GVER,              "e" );
  ToFile( "OS",                $OS,                "e" );
