@@ -10,7 +10,7 @@ PORTVERSION=	0.12
 CATEGORIES=	devel python
 MASTER_SITES=	http://www.river-bank.demon.co.uk/software/
 
-MAINTAINER=	adsharma@home.com
+MAINTAINER=	adsharma@sharmas.dhs.org
 
 BUILD_DEPENDS=	${LOCALBASE}/include/python1.5/Python.h:${PORTSDIR}/lang/python15
 
