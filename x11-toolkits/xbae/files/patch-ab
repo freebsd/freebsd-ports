@@ -1,0 +1,357 @@
+diff -bru acconfig.h acconfig.h
+--- acconfig.h	Thu Aug 16 12:35:43 2001
++++ acconfig.h	Sat Nov 23 15:52:20 2002
+@@ -6,3 +6,6 @@
+ #undef HAVE_LIB_XP
+ 
+ #undef HAVE_MOTIF
++
++/* Build a production version of the library */
++#undef XBAE_PRODUCTION
+diff -bru configure configure
+--- configure	Wed Oct 16 13:56:36 2002
++++ configure	Sat Nov 23 15:52:48 2002
+@@ -1002,6 +1002,7 @@
+   --disable-libtool-lock  avoid locking (might break parallel builds)
+   --enable-maintainer-mode enable make rules and dependencies not useful
+                           (and sometimes confusing) to the casual installer
++  --enable-production     build a production version
+ 
+ Optional Packages:
+   --with-PACKAGE[=ARG]    use PACKAGE [ARG=yes]
+@@ -4694,7 +4695,7 @@
+ case $host in
+ *-*-irix6*)
+   # Find out which ABI we are using.
+-  echo '#line 4697 "configure"' > conftest.$ac_ext
++  echo '#line 4698 "configure"' > conftest.$ac_ext
+   if { (eval echo "$as_me:$LINENO: \"$ac_compile\"") >&5
+   (eval $ac_compile) 2>&5
+   ac_status=$?
+@@ -5230,7 +5231,7 @@
+ save_CFLAGS="$CFLAGS"
+ CFLAGS="$CFLAGS -o out/conftest2.$ac_objext"
+ compiler_c_o=no
+-if { (eval echo configure:5233: \"$ac_compile\") 1>&5; (eval $ac_compile) 2>out/conftest.err; } && test -s out/conftest2.$ac_objext; then
++if { (eval echo configure:5234: \"$ac_compile\") 1>&5; (eval $ac_compile) 2>out/conftest.err; } && test -s out/conftest2.$ac_objext; then
+   # The compiler can only warn and ignore the option if not recognized
+   # So say no if there are warnings
+   if test -s out/conftest.err; then
+@@ -7023,7 +7024,7 @@
+     lt_dlunknown=0; lt_dlno_uscore=1; lt_dlneed_uscore=2
+   lt_status=$lt_dlunknown
+   cat > conftest.$ac_ext <<EOF
+-#line 7026 "configure"
++#line 7027 "configure"
+ #include "confdefs.h"
+ 
+ #if HAVE_DLFCN_H
+@@ -7121,7 +7122,7 @@
+     lt_dlunknown=0; lt_dlno_uscore=1; lt_dlneed_uscore=2
+   lt_status=$lt_dlunknown
+   cat > conftest.$ac_ext <<EOF
+-#line 7124 "configure"
++#line 7125 "configure"
+ #include "confdefs.h"
+ 
+ #if HAVE_DLFCN_H
+@@ -9611,6 +9612,19 @@
+ echo "$as_me:$LINENO: result: libraries $motif_libraries_result, headers $motif_includes_result" >&5
+ echo "${ECHO_T}libraries $motif_libraries_result, headers $motif_includes_result" >&6
+ 
++
++# Check whether --enable-production or --disable-production was given.
++if test "${enable_production+set}" = set; then
++  enableval="$enable_production"
++
++fi;
++
++if test "x$enable_production" = "xyes" ; then
++	cat >>confdefs.h <<\_ACEOF
++#define XBAE_PRODUCTION 1
++_ACEOF
++
++fi
+ 
+ if (aclocal --print-ac-dir) </dev/null >/dev/null 2>&1 && test -w `aclocal --print-ac-dir`; then
+     ACLOCALDIR=`aclocal --print-ac-dir`
+diff -bru configure.in configure.in
+--- configure.in	Wed Oct 16 13:44:30 2002
++++ configure.in	Sat Nov 23 15:52:20 2002
+@@ -98,6 +98,20 @@
+ dnl
+ AC_FIND_MOTIF
+ 
++dnl
++dnl Build a production version of the library
++dnl This will compile out XdbDebug statements
++dnl (the libraries itself remain binary compatible, you can
++dnl  link against a debug version, run with a production version 
++dnl  and vice versa!)
++dnl
++AC_ARG_ENABLE(production,
++[  --enable-production     build a production version])
++
++if test "x$enable_production" = "xyes" ; then
++	AC_DEFINE(XBAE_PRODUCTION)
++fi
++
+ dnl Run test in a subshell; some versions of sh will print an error if
+ dnl an executable is not found, even if stderr is redirected.
+ dnl Redirect stdin to placate older versions of autoconf.  Sigh.
+diff -bru include/XbaeDebug.h include/XbaeDebug.h
+--- include/XbaeDebug.h	Sat Apr  6 10:01:19 2002
++++ include/XbaeDebug.h	Sat Nov 23 15:52:20 2002
+@@ -136,7 +136,7 @@
+ void _XbaeDebugAction(const char *fn, Widget w, const String action,
+ 		const String *params, const Cardinal *num_params);
+ 
+-#ifdef LESSTIF_PRODUCTION
++#ifdef XBAE_PRODUCTION
+ #define	_XbaeDebugInDebug(x, y)	False
+ #define DEBUGOUT(x)
+ 
+@@ -146,7 +146,7 @@
+ #else
+ Boolean _XbaeDebugInDebug(const char *fn, Widget w);
+ #define DEBUGOUT(x)	x
+-#endif /* LESSTIF_PRODUCTION */
++#endif /* XBAE_PRODUCTION */
+ 
+ /*
+  * Some stuff to produce sensible tracing with dmalloc.
+diff -bru src/DebugUtil.c src/DebugUtil.c
+--- src/DebugUtil.c	Thu Jul 25 16:37:10 2002
++++ src/DebugUtil.c	Sat Nov 23 15:52:20 2002
+@@ -77,7 +77,7 @@
+ Boolean _XbaeDebugInDebug(const char *fn, Widget w);
+ 
+ 
+-#ifndef LESSTIF_PRODUCTION
++#ifndef XBAE_PRODUCTION
+ /* All external interfaces need to be in place for both, 
+    debug and production build. We may just reduce them
+    to empty stubs ... */
+@@ -130,16 +130,16 @@
+  *      enabled or disabled upon program start. Valid Values are on/off.
+  *      e.g. XBAE_DEBUG_TOGGLE=off
+  *
+- * If the C macro LESSTIF_PRODUCTION is defined, then _XbaeDebug etc. don't
++ * If the C macro XBAE_PRODUCTION is defined, then _XbaeDebug etc. don't
+  *      work. Note: this is a compile time option.
+  * To have maximum performance, sequences of _XbaeDebug statements should be
+  *      surrounded by an if (_XbaeDebugInDebug(__FILE__, w)) statement.
+- *      _XbaeDebugInDebug is False when LESSTIF_PRODUCTION is defined.
++ *      _XbaeDebugInDebug is False when XBAE_PRODUCTION is defined.
+  */
+ 
+ 
+ 
+-#ifndef LESSTIF_PRODUCTION
++#ifndef XBAE_PRODUCTION
+ static Boolean _XbaeDebugFlag = True;
+ static FILE *_XbaeDebugFile = NULL;
+ typedef void (*sighandler_t)(int);
+@@ -638,7 +638,7 @@
+ 
+ 
+ 
+-#ifndef LESSTIF_PRODUCTION
++#ifndef XBAE_PRODUCTION
+ /* catches the signal defined by XBAE_DEBUG_SIGNAL and toggles the
+    global debugging flag.
+    Avoid calling C-runtime functions from within here if possible 
+@@ -719,7 +719,7 @@
+          return True;
+     } /* signo != NOSIG */
+ }		/* siginstall() */
+-#endif /* LESSTIF_PRODUCTION */
++#endif /* XBAE_PRODUCTION */
+ 
+ 
+ /* some initialization.
+@@ -727,7 +727,7 @@
+    is en- or disabled currently */
+ extern Boolean
+ _XbaeDebugInit(void) {
+-#ifdef LESSTIF_PRODUCTION
++#ifdef XBAE_PRODUCTION
+     return False;
+ #else
+     static Boolean init=False;
+@@ -751,7 +751,7 @@
+ #endif
+ }
+ 
+-#ifndef LESSTIF_PRODUCTION
++#ifndef XBAE_PRODUCTION
+ static void 
+ _XbaeDebugOpenFile(void)
+ {
+@@ -1009,13 +1009,13 @@
+       }
+ } /* ValidateSource() */
+ 
+-#endif /* !LESSTIF_PRODUCTION */
++#endif /* !XBAE_PRODUCTION */
+ 
+ 
+ extern void 
+ _XbaeDebug(const char *fn, Widget w, const char *fmt, ...)
+ {
+-#ifndef LESSTIF_PRODUCTION
++#ifndef XBAE_PRODUCTION
+     va_list ap;
+ 
+ #ifdef DEBUGVALIDATE
+@@ -1049,14 +1049,14 @@
+ 
+ 	fflush(_XbaeDebugFile);
+     }
+-#endif /* !LESSTIF_PRODUCTION */
++#endif /* !XBAE_PRODUCTION */
+ }
+ 
+ 
+ extern void 
+ _XbaeDebug2(const char *fn, Widget w, Widget c, const char *fmt, ...)
+ {
+-#ifndef LESSTIF_PRODUCTION
++#ifndef XBAE_PRODUCTION
+     va_list ap;
+ 
+     if (_XbaeDebugInit() && ValidateSource(fn))
+@@ -1100,14 +1100,14 @@
+ 	vfprintf(_XbaeDebugFile, fmt, ap);
+ 	va_end(ap);
+     }
+-#endif /* !LESSTIF_PRODUCTION */
++#endif /* !XBAE_PRODUCTION */
+ }
+ 
+ 
+ extern void 
+ _XbaeDebug0(const char *fn, Widget w, const char *fmt, ...)
+ {
+-#ifndef LESSTIF_PRODUCTION
++#ifndef XBAE_PRODUCTION
+     va_list ap;
+     
+     if (_XbaeDebugInit() && ValidateSource(fn))
+@@ -1116,7 +1116,7 @@
+ 	vfprintf(_XbaeDebugFile, fmt, ap);
+ 	va_end(ap);
+     }
+-#endif /* !LESSTIF_PRODUCTION */
++#endif /* !XBAE_PRODUCTION */
+ }
+ 
+ 
+@@ -1125,7 +1125,7 @@
+ extern Boolean 
+ _XbaeDebugInDebug(const char *fn, Widget w)
+ {
+-#ifdef LESSTIF_PRODUCTION
++#ifdef XBAE_PRODUCTION
+     return False;
+ #else
+     return ValidateSource(fn);
+@@ -1165,7 +1165,7 @@
+ extern void
+ _XbaeDebugSet(Boolean flag)
+ {
+-#ifndef LESSTIF_PRODUCTION
++#ifndef XBAE_PRODUCTION
+   if (flag)
+      _XbaeDebugFlag = True;
+   else
+@@ -1180,7 +1180,7 @@
+ extern void
+ _XbaeDebugToggle(void)
+ {
+-#ifndef LESSTIF_PRODUCTION
++#ifndef XBAE_PRODUCTION
+    _XbaeDebugFlag = !_XbaeDebugFlag;
+ #endif
+ }
+@@ -1190,7 +1190,7 @@
+ extern Boolean
+ _XbaeDebugQueryState(void)
+ {
+-#ifndef LESSTIF_PRODUCTION
++#ifndef XBAE_PRODUCTION
+   return _XbaeDebugFlag;
+ #else
+   return False;
+@@ -1198,7 +1198,7 @@
+ }
+ 
+ 
+-#ifndef LESSTIF_PRODUCTION
++#ifndef XBAE_PRODUCTION
+ static Boolean
+ __XbaeDebugPrintWidgetID(void)
+ {
+@@ -1263,7 +1263,7 @@
+ extern void 
+ _XbaeDebugPrintTree(Widget w)
+ {
+-#ifndef LESSTIF_PRODUCTION
++#ifndef XBAE_PRODUCTION
+     __XbaeDebugPrintTree(w, 0);
+ #endif
+ }
+@@ -1272,7 +1272,7 @@
+ extern void 
+ _XbaeDebugPrintCompleteTree(Widget w)
+ {
+-#ifndef LESSTIF_PRODUCTION
++#ifndef XBAE_PRODUCTION
+     Widget ww = w;
+ 
+     while (ww)
+@@ -1303,7 +1303,7 @@
+ extern void
+ _XbaeDebugPrintArgList(const char *fn, Widget w, ArgList al, int n, Boolean Get)
+ {
+-#ifndef LESSTIF_PRODUCTION
++#ifndef XBAE_PRODUCTION
+     int i;
+     unsigned num;
+ 
+@@ -1483,7 +1483,7 @@
+ 	    }
+ 	}
+     }
+-#endif/* !LESSTIF_PRODUCTION */
++#endif/* !XBAE_PRODUCTION */
+ }
+ 
+ 
+@@ -1493,7 +1493,7 @@
+ extern void
+ _XbaeDebugPrintString(const char *s)
+ {
+-#ifndef LESSTIF_PRODUCTION
++#ifndef XBAE_PRODUCTION
+     _XbaeDebugOpenFile();
+     fprintf(_XbaeDebugFile, "%s", s);
+ #endif
+@@ -2382,7 +2382,7 @@
+ _XbaeDebugAction(const char *fn, Widget w, const String action,
+ 		const String *params, const Cardinal *num_params)
+ {
+-#ifndef LESSTIF_PRODUCTION
++#ifndef XBAE_PRODUCTION
+ 
+ 	if (_XbaeDebugInit() && ValidateSource(fn)) {
+   		int	i;
+@@ -2411,7 +2411,7 @@
+ 
+ 		fflush(_XbaeDebugFile);
+ 	}
+-#endif /* !LESSTIF_PRODUCTION */
++#endif /* !XBAE_PRODUCTION */
+ }
+ 
+ /*
