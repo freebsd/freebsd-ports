@@ -11,7 +11,7 @@ CATEGORIES=	lang haskell
 MASTER_SITES=	http://www.math.chalmers.se/~nordland/ohugs/
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
 
-MAINTAINER=	steffen.mazanek@unibw-muenchen.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Interpreter for Haskell with object-oriented features
 
 .if !defined(WITHOUT_X11)
