@@ -1,14 +1,14 @@
 # New ports collection makefile for:    ripit
-# Version required:     1.4
+# Version required:     1.5
 # Date created:         2 May 1999
 # Whom:                 oyvindmo@initio.no
 #
 # $FreeBSD$
 #
 
-DISTNAME=	ripit-1.4
+DISTNAME=	ripit-1.5
 CATEGORIES=	audio
-MASTER_SITES=	http://www.netcomuk.co.uk/~squinn/
+MASTER_SITES=	http://www.initio.no/~oyvindmo/distfiles/
 
 MAINTAINER=	oyvindmo@initio.no
 
