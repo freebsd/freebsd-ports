@@ -15,7 +15,8 @@ MASTER_SITES=	http://www.openssl.org/source/ \
 
 MAINTAINER=	dirk@FreeBSD.org
 
-.if exists(/usr/bin/openssl) && exists(/usr/lib/libcrypto.so) && exists(/usr/lib/libssl.so)
+.include <bsd.port.pre.mk>
+.if ${OSVERSION} >= 400014
 FORBIDDEN=	"OpenSSL is already in the base system"
 .endif
 
@@ -57,4 +58,4 @@ post-install:
 .endif
 	@${SED} -e 's#/usr/local#${PREFIX}#g' ${PKGDIR}/MESSAGE
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
