@@ -7,7 +7,13 @@
 PORTNAME=		apache-forrest
 PORTVERSION=		0.5.1
 CATEGORIES=		www
-MASTER_SITES=		http://www.apache.inetcosmos.org/dist/xml/forrest/source/
+MASTER_SITES=		${MASTER_SITE_APACHE} \
+			http://mirror.tomato.it/apache/forrest/ \
+			http://mirrors.publicshout.org/apache/forrest/ \
+			http://mirror.nohup.it/apache/forrest/ \
+			http://www.apache.inetcosmos.org/dist/forrest/ \
+			ftp://mirror.nohup.it/apache/forrest/
+MASTER_SITE_SUBDIR=	forrest
 DISTNAME=		${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=		nivit@users.sourceforge.net
