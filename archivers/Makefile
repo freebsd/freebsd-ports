@@ -10,6 +10,7 @@
     SUBDIR += fastjar
     SUBDIR += freeze
     SUBDIR += gshar+gunshar
+    SUBDIR += gtar
     SUBDIR += ha
     SUBDIR += hpack.non-usa.only
     SUBDIR += lha
