@@ -1,0 +1,11 @@
+--- twhttpd.c.orig	Sat Aug 31 05:16:35 2002
++++ twhttpd.c	Wed Sep 25 12:02:49 2002
+@@ -33,7 +33,7 @@
+ #include <signal.h>
+ #include <time.h>
+ #include <unistd.h>
+-#include <wait.h>
++#include <sys/wait.h>
+ #include <netinet/in.h>
+ #include <sys/socket.h>
+ #include <sys/types.h>
