@@ -6,13 +6,11 @@
 #
 
 PORTNAME=	ntalk
-PORTVERSION=	0.4
+PORTVERSION=	0.6.3
 CATEGORIES=	net
-MASTER_SITES=	http://kab.w.interia.pl/
+MASTER_SITES=	http://network.terramail.pl/files/
 
 MAINTAINER=	gslin@ccca.nctu.edu.tw
-
-WRKSRC=		${WRKDIR}/${PORTNAME}
 
 ALL_TARGET=	${PORTNAME}
 
