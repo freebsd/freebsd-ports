@@ -255,7 +255,6 @@
     SUBDIR += p5-Business-UPS
     SUBDIR += p5-Chatbot-Eliza
     SUBDIR += p5-Data-Buffer
-    SUBDIR += p5-DataCash
     SUBDIR += p5-File-CounterFile
     SUBDIR += p5-File-Sort
     SUBDIR += p5-Finance-Currency-Convert
