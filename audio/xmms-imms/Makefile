@@ -20,7 +20,7 @@ LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms \
 		sqlite3:${PORTSDIR}/databases/sqlite3 \
 		pcre.0:${PORTSDIR}/devel/pcre \
 		fftw3.3:${PORTSDIR}/math/fftw3 \
-		tag.3:${PORTSDIR}/audio/taglib
+		tag.4:${PORTSDIR}/audio/taglib
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
