@@ -1,4 +1,3 @@
-B
 # New ports collection makefile for:	gnustep-back
 # Date created:				27.October 2002
 # Whom:					dirk.meyer@dinoex.sub.org
