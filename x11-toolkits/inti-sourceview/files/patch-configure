@@ -1,0 +1,11 @@
+--- configure.old	Fri Mar 26 10:21:01 2004
++++ configure	Fri Mar 26 10:21:13 2004
+@@ -8558,7 +8558,7 @@
+ if test "x$GCC" = "xyes"; then
+   case " $CXXFLAGS " in
+   *[\ \	]-Wall[\ \	]*) ;;
+-  *) CXXFLAGS="$CXXFLAGS -Wall -ansi -pedantic-errors" ;;
++  *) CXXFLAGS="$CXXFLAGS -Wall -ansi" ;;
+   esac
+ fi
+ 
