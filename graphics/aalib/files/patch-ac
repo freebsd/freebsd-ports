@@ -1,0 +1,60 @@
+--- configure.orig	Sat Mar 28 18:48:24 1998
++++ configure	Sat Mar 28 18:50:43 1998
+@@ -687,57 +687,10 @@
+ test "$program_transform_name" = "" && program_transform_name="s,x,x,"
+ 
+ missing_dir=`cd $ac_aux_dir && pwd`
+-echo $ac_n "checking for working aclocal""... $ac_c" 1>&6
+-echo "configure:692: checking for working aclocal" >&5
+-# Run test in a subshell; some versions of sh will print an error if
+-# an executable is not found, even if stderr is redirected.
+-# Redirect stdin to placate older versions of autoconf.  Sigh.
+-if (aclocal --version) < /dev/null > /dev/null 2>&1; then
+-   ACLOCAL=aclocal
+-   echo "$ac_t""found" 1>&6
+-else
+    ACLOCAL="$missing_dir/missing aclocal"
+-   echo "$ac_t""missing" 1>&6
+-fi
+-
+-echo $ac_n "checking for working autoconf""... $ac_c" 1>&6
+-echo "configure:705: checking for working autoconf" >&5
+-# Run test in a subshell; some versions of sh will print an error if
+-# an executable is not found, even if stderr is redirected.
+-# Redirect stdin to placate older versions of autoconf.  Sigh.
+-if (autoconf --version) < /dev/null > /dev/null 2>&1; then
+-   AUTOCONF=autoconf
+-   echo "$ac_t""found" 1>&6
+-else
+    AUTOCONF="$missing_dir/missing autoconf"
+-   echo "$ac_t""missing" 1>&6
+-fi
+-
+-echo $ac_n "checking for working automake""... $ac_c" 1>&6
+-echo "configure:718: checking for working automake" >&5
+-# Run test in a subshell; some versions of sh will print an error if
+-# an executable is not found, even if stderr is redirected.
+-# Redirect stdin to placate older versions of autoconf.  Sigh.
+-if (automake --version) < /dev/null > /dev/null 2>&1; then
+-   AUTOMAKE=automake
+-   echo "$ac_t""found" 1>&6
+-else
+    AUTOMAKE="$missing_dir/missing automake"
+-   echo "$ac_t""missing" 1>&6
+-fi
+-
+-echo $ac_n "checking for working autoheader""... $ac_c" 1>&6
+-echo "configure:731: checking for working autoheader" >&5
+-# Run test in a subshell; some versions of sh will print an error if
+-# an executable is not found, even if stderr is redirected.
+-# Redirect stdin to placate older versions of autoconf.  Sigh.
+-if (autoheader --version) < /dev/null > /dev/null 2>&1; then
+-   AUTOHEADER=autoheader
+-   echo "$ac_t""found" 1>&6
+-else
+    AUTOHEADER="$missing_dir/missing autoheader"
+-   echo "$ac_t""missing" 1>&6
+-fi
+ 
+ echo $ac_n "checking for working makeinfo""... $ac_c" 1>&6
+ echo "configure:744: checking for working makeinfo" >&5
