@@ -9656,6 +9656,7 @@ uppc-kmod	ports/palm/uppc-kmod
 ups-debug	ports/devel/ups-debug
 upsd		ports/sysutils/upsd
 upsmon		ports/sysutils/upsmon
+uptimec		ports/sysutils/uptimec
 uptimed		ports/sysutils/uptimed
 upx		ports/archivers/upx
 uqm		ports/games/uqm
