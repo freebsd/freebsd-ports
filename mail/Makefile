@@ -164,6 +164,7 @@
     SUBDIR += pgp4pine
     SUBDIR += pgpsendmail
     SUBDIR += pine4
+    SUBDIR += pm-lib
     SUBDIR += pmail
     SUBDIR += pop3gwd
     SUBDIR += pop3lite
