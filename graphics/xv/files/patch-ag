@@ -1,0 +1,47 @@
+--- xvmisc.c.orig	Fri Jan 13 23:41:34 1995
++++ xvmisc.c	Sat Mar  8 16:05:19 1997
+@@ -97,10 +97,18 @@
+   if (!usesize || !(i&WidthValue))  w = defw;
+   if (!usesize || !(i&HeightValue)) h = defh;
+ 
+-  hints.flags |= USSize;
++  hints.flags |= USSize | PWinGravity;
+ 
+-  if (i&XValue && i&XNegative) x = dispWIDE - w - abs(x);
+-  if (i&YValue && i&YNegative) y = dispHIGH - h - abs(y);
++  hints.win_gravity = NorthWestGravity;
++  if (i&XValue && i&XNegative) {
++    hints.win_gravity = NorthEastGravity;
++    x = dispWIDE - (w + 2 * bwidth) - abs(x);
++  }
++  if (i&YValue && i&YNegative) {
++    hints.win_gravity = (hints.win_gravity == NorthWestGravity) ?
++	SouthWestGravity : SouthEastGravity;
++    y = dispHIGH - (h + 2 * bwidth) - abs(y);
++  }
+ 
+ 
+ #define VROOT_TRANS
+@@ -136,19 +144,18 @@
+   if (!win) return(win);   /* leave immediately if couldn't create */
+ 
+ 
+-  XSetStandardProperties(theDisp, win, name, name, None, NULL, 0, &hints);
+-
+   xwmh.input = True;
+   xwmh.flags = InputHint;
+   if (iconPix) { xwmh.icon_pixmap = iconPix;  xwmh.flags |= IconPixmapHint; }
+-  XSetWMHints(theDisp, win, &xwmh);
+ 
+   if (clname && strlen(clname)) {
+     classh.res_name = "xv";
+     classh.res_class = clname;
+-    XSetClassHint(theDisp, win, &classh);
+     StoreDeleteWindowProp(win);
+   }
++
++  XmbSetWMProperties(theDisp, win, name, name, NULL, 0, &hints, &xwmh,
++      clname ? &classh : NULL);
+ 
+   return(win);
+ }
