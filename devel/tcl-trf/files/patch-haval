@@ -52,7 +52,7 @@
 - *
   *	MDHaval_Update --
   *
-@@ -145,63 +116,2 @@
+@@ -145,63 +116,3 @@
    haval_hash ((CTX_TYPE*) context, &buf, 1);
  }
 -
@@ -115,4 +115,4 @@
 - * External code from here on.
 - */
 -
--#include "haval.1996/haval.c" /* THREADING: import of one constant var, read-only => safe */
+ #include "haval.1996/haval.c" /* THREADING: import of one constant var, read-only => safe */
