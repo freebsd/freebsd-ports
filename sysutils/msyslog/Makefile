@@ -28,6 +28,7 @@ AUTOCONF=	${LOCALBASE}/bin/autoconf
 GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
+USE_PERL5=	yes
 .if !defined(WITH_MYSQL)
 CONFIGURE_ARGS+=	--without-mysql
 .endif
