@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	GraphViz-DBI
-PORTVERSION=	0.01
+PORTVERSION=	0.02
 CATEGORIES=	databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	GraphViz
@@ -15,13 +15,12 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	GraphViz::DBI - graph database tables and relations
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/GraphViz.pm:${PORTSDIR}/graphics/p5-GraphViz
+BUILD_DEPENDS=	${SITE_PERL}/GraphViz.pm:${PORTSDIR}/graphics/p5-GraphViz
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
 MAN3=		GraphViz::DBI.3
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 post-patch:
 	${PERL} -pi -e 's/^our\s+([\$$\@\%]\w+)/use vars qw($$1);$$1/;' \
