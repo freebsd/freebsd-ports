@@ -22,7 +22,7 @@ NO_BUILD=	YES
 
 WRKSRC=		${WRKDIR}/commapi
 DISTDESCR=	"the Java Communications API ${PORTVERSION} for Solaris/SPARC archive"
-DOWNLOAD_URL=	"http://java.sun.com/Download4?config-file=javacomm-${PORTVERSION:S/./_/g}.config&platform=solsparc&button=continue"
+DOWNLOAD_URL=	"http://java.sun.com/Download4?config-file=javacomm-${PORTVERSION:S/./_/g}.config\&platform=solsparc\&button=continue"
 PORTDESTDIR=	${PREFIX}/jdk1.3.1/jre/lib/ext
 DISTFILE=	${DISTNAME}${EXTRACT_SUFX}
 DISTPATH=	${DISTDIR}/${DISTFILE}
