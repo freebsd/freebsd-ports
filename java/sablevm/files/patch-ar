@@ -1,0 +1,15 @@
+--- work/sablevm-class-library-1.0.6/src/java/lang/ClassLoader.java.orig	Wed Mar 19 16:28:55 2003
++++ work/sablevm-class-library-1.0.6/src/java/lang/ClassLoader.java	Wed Mar 19 16:13:56 2003
+@@ -913,9 +913,12 @@
+       try
+       {
+         // Give the new system class loader a null parent.
++    /***********
+         Constructor c = Class.forName(loader).getConstructor
+                         ( new Class[] { ClassLoader.class } );
+         return (ClassLoader) c.newInstance(new Object[1]);
++    ***********/
++	return new gnu.java.lang.SystemClassLoader(null);
+       }
+       catch (Exception e)
+       {
