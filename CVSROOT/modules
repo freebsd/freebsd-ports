@@ -6149,6 +6149,7 @@ p5-Tie-DNS	ports/dns/p5-Tie-DNS
 p5-Tie-DxHash	ports/misc/p5-Tie-DxHash
 p5-Tie-EncryptedHash	ports/security/p5-Tie-EncryptedHash
 p5-Tie-File	ports/devel/p5-Tie-File
+p5-Tie-FileLRUCache	ports/devel/p5-Tie-FileLRUCache
 p5-Tie-IxHash	ports/devel/p5-Tie-IxHash
 p5-Tie-NetAddr-IP	ports/net/p5-Tie-NetAddr-IP
 p5-Tie-Syslog	ports/sysutils/p5-Tie-Syslog
