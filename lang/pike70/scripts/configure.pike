@@ -50,6 +50,9 @@ while [ "$1" ]; do
 			threads=1
 			;;
 		\"gmp\")
+			echo ".if ${OSVERSION} >= 500000" >> ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
+			echo "LIB_DEPENDS+=	gmp.6:${PORTSDIR}/math/libgmp4" >> ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
+			echo ".endif" >> ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
 			echo "CONFIGURE_ARGS+=	--with-gmp" >> ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
 			gmp=1
 			;;
@@ -87,7 +90,7 @@ while [ "$1" ]; do
 			mSQL=1
 			;;
 		\"ssl\")
-			echo "CONFIGURE_ARGE+= --with-ssleay" >> ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
+			echo "CONFIGURE_ARGS+= --with-ssleay" >> ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
 			ssl=1
 			;;
 	esac
