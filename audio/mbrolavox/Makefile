@@ -8,7 +8,7 @@
 PORTNAME=	mbrolavox
 PORTVERSION=	3.0.1
 CATEGORIES=	audio accessibility
-MASTER_SITES=
+MASTER_SITES=	# filled in later after the configure script has run
 DIST_SUBDIR=	mbrolavox
 
 MAINTAINER=	trevor@FreeBSD.org
@@ -33,22 +33,28 @@ pre-everything::
 	${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/configure
 .endif
 .endif
-DISTFILES?=	us1-980512.zip
+
+.if defined(PACKAGE_BUILDING)
+.BEGIN:
+	${MKDIR} ${WRKDIR}
+	${CP} ${FILESDIR}/default-voices.conf ${WRKDIR}/voices.conf
+	${CP} ${FILESDIR}/default-fetchdirs.conf ${WRKDIR}/fetchdirs.conf
+.endif
 
 .if exists(${WRKDIRPREFIX}${.CURDIR}/work/voices.conf)
 DISTFILES!=${CAT} ${WRKDIRPREFIX}${.CURDIR}/work/voices.conf
 PATCHDIRS!=${CAT} ${WRKDIRPREFIX}${.CURDIR}/work/fetchdirs.conf
 .endif
 .for ii in ${PATCHDIRS}
-MASTER_SITES+=	http://www.festvox.org/mbrola/dba/${ii}/ \
-	http://mambo.ucsc.edu/psl/mbrola/dba/${ii}/ \
-	ftp://ftp.loria.fr/pub/pc/mbrpsola/${ii}/ \
-	ftp://tcts.fpms.ac.be/pub/mbrola/VOICES/${ii}/
+MASTER_SITES+=	http://www.festvox.org/mbrola/dba/${ii}/:${ii} \
+	http://mambo.ucsc.edu/psl/mbrola/dba/${ii}/:${ii} \
+	ftp://ftp.loria.fr/pub/pc/mbrpsola/${ii}/:${ii} \
+	ftp://tcts.fpms.ac.be/pub/mbrola/VOICES/${ii}/:${ii}
 .endfor
 
 do-extract:
 .for ii in ${DISTFILES}
-	@unzip -qo ${DISTDIR}/${DIST_SUBDIR}/${ii} -d ${WRKSRC}
+	@${UNZIP_CMD} -qo ${DISTDIR}/${DIST_SUBDIR}/${ii} -d ${WRKSRC}
 .endfor
 
 do-patch:
