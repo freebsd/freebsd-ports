@@ -3,7 +3,9 @@
 # $FreeBSD$
 #
 # If you want to only have the command-line client even if gtk is already
-# installed define:
+# installed define one of these:
+#  WITHOUT_GNOME
+#  WITHOUT_GTK
 #  WITHOUT_NESSUS_GTK
 
 PORTNAME=	nessus-devel
@@ -30,15 +32,13 @@ WRKSRC=		${WRKDIR}/nessus-core
 USE_LIBTOOL_VER=13
 USE_REINPLACE=	YES
 USE_RC_SUBR=	YES
-.if !defined(WITHOUT_NESSUS_GTK)
 WANT_GNOME=	yes
+.if defined(WITHOUT_NESSUS_GTK) || defined(WITHOUT_GTK)
+WITHOUT_GNOME=	yes
 .endif
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITHOUT_NESSUS_GTK)
-CONFIGURE_ARGS+=--disable-gtk
-.else
 .if ${HAVE_GNOME:Mgtk20}!=""
 USE_GNOME+=	gtk20
 PKGNAMESUFFIX=	-gtk2
@@ -47,7 +47,6 @@ USE_GNOME+=	gtk12
 PKGNAMESUFFIX=	-gtk
 .else
 CONFIGURE_ARGS+=--disable-gtk
-.endif
 .endif
 
 MAN1=		nessus.1 nessus-mkrand.1 nessus-mkcert-client.1
