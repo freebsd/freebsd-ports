@@ -37,6 +37,7 @@
     SUBDIR += vice
     SUBDIR += vMac
     SUBDIR += vmsbackup
+    SUBDIR += vmware
     SUBDIR += vpce
     SUBDIR += wine
     SUBDIR += x48
