@@ -1,9 +1,9 @@
---- etc/drweb_smf.conf.orig	Mon Oct 28 15:05:35 2002
-+++ etc/drweb_smf.conf	Thu Oct 31 03:40:19 2002
-@@ -14,14 +14,14 @@
- #   Address = inet:3000@localhost
+--- etc/drweb_smf.conf.orig	Fri Feb 14 17:06:02 2003
++++ etc/drweb_smf.conf	Tue Feb 18 06:36:20 2003
+@@ -17,14 +17,14 @@
  #   Address = local:/usr/local/drweb/run/drwebd.skt
  #   Address = pid:/usr/local/drweb/run/drwebd.pid
+ #   Address = pid:/var/drweb/run/drwebd.pid, inet:3000@backup_server.example.com
 -Address = inet:3000@localhost
 +Address = local:%PREFIX%/drweb/run/drwebd.sock
  
@@ -17,7 +17,7 @@
  
  ########################
  # Scan options section #
-@@ -61,10 +61,10 @@
+@@ -72,10 +72,10 @@
  DenyOnOne = yes
  
  # List with rules for users or domains to block scanning 
@@ -30,16 +30,24 @@
  
  # Permissions for created spool files
  SpoolFilesMode = 0600
-@@ -147,16 +147,16 @@
+@@ -179,22 +179,22 @@
  ProcessingErrors = reject
  
  # Admin mail address (may be unix-local address)
--AdminMail = av-admin@example.com
+-AdminMail = av-master@example.com
 +AdminMail = postmaster
  
  # Filter address, that be used in From:
--FilterMail = DrWeb-DAEMON@example.com
+-FilterMail = DrWEB-DAEMON@example.com
 +FilterMail = DrWeb-DAEMON@%HOSTNAME%
+ 
+ # List of unnotificable viruses
+-UnnotificableVirusesList = /etc/drweb/viruses.conf
++UnnotificableVirusesList = %PREFIX%/etc/drweb/viruses.conf
+ 
+ # List of unnotificable addresses
+-UnnotificableAddressesList = /etc/drweb/addresses.conf
++UnnotificableAddressesList = %PREFIX%/etc/drweb/addresses.conf
  
  # Quarantine directory. 
  # The infected files could be moved in that dir 
@@ -50,48 +58,49 @@
  
  # Permissions for quarantined files
  QuarantineFilesMode = 0660
-@@ -185,32 +185,32 @@
+@@ -223,9 +223,9 @@
  RcptsNotify = yes
  
  # Files with notification templates
 -AdminTemplate = /etc/drweb/templates/en-ru/sendmail/virus-admin.msg
--SenderTemplate = /etc/drweb/templates/en-ru/sendmail/virus-sender.msg
 -RcptsTemplate = /etc/drweb/templates/en-ru/sendmail/virus-rcpts.msg
+-SenderTemplate = /etc/drweb/templates/en-ru/sendmail/virus-sender.msg
 +AdminTemplate = %PREFIX%/etc/drweb/templates/en-ru/sendmail/virus-admin.msg
-+SenderTemplate = %PREFIX%/etc/drweb/templates/en-ru/sendmail/virus-sender.msg
 +RcptsTemplate = %PREFIX%/etc/drweb/templates/en-ru/sendmail/virus-rcpts.msg
++SenderTemplate = %PREFIX%/etc/drweb/templates/en-ru/sendmail/virus-sender.msg
  
  [SkipNotifications]
- AdminNotify = no
  SenderNotify = yes
+@@ -233,23 +233,23 @@
  RcptsNotify = no
  AdminTemplate = 
+ RcptsTemplate = 
 -SenderTemplate = /etc/drweb/templates/en-ru/sendmail/skip-sender.msg
 +SenderTemplate = %PREFIX%/etc/drweb/templates/en-ru/sendmail/skip-sender.msg
- RcptsTemplate = 
  
- [MailbombNotifications]
- AdminNotify = yes
+ [ArchiveRestrictionNotifications]
  SenderNotify = yes
+ AdminNotify = yes
  RcptsNotify = no
--AdminTemplate = /etc/drweb/templates/en-ru/sendmail/mailbomb-admin.msg
--SenderTemplate = /etc/drweb/templates/en-ru/sendmail/mailbomb-sender.msg
-+AdminTemplate = %PREFIX%/etc/drweb/templates/en-ru/sendmail/mailbomb-admin.msg
-+SenderTemplate = %PREFIX%/etc/drweb/templates/en-ru/sendmail/mailbomb-sender.msg
+-AdminTemplate = /etc/drweb/templates/en-ru/sendmail/archive-admin.msg
++AdminTemplate = %PREFIX%/etc/drweb/templates/en-ru/sendmail/archive-admin.msg
  RcptsTemplate = 
+-SenderTemplate = /etc/drweb/templates/en-ru/sendmail/archive-sender.msg
++SenderTemplate = %PREFIX%/etc/drweb/templates/en-ru/sendmail/archive-sender.msg
  
  [ErrorNotifications]
- AdminNotify = yes
  SenderNotify = yes
+ AdminNotify = yes
  RcptsNotify = no
 -AdminTemplate = /etc/drweb/templates/en-ru/sendmail/error-admin.msg
--SenderTemplate = /etc/drweb/templates/en-ru/sendmail/error-sender.msg
 +AdminTemplate = %PREFIX%/etc/drweb/templates/en-ru/sendmail/error-admin.msg
-+SenderTemplate = %PREFIX%/etc/drweb/templates/en-ru/sendmail/error-sender.msg
  RcptsTemplate = 
+-SenderTemplate = /etc/drweb/templates/en-ru/sendmail/error-sender.msg
++SenderTemplate = %PREFIX%/etc/drweb/templates/en-ru/sendmail/error-sender.msg
  
  ###################
-@@ -239,7 +239,7 @@
+ # Logging section #
+@@ -277,7 +277,7 @@
  # Definition of Sendmail Milter Address according to sendmail.cf 
  # Note: FAMILY pid is not valid
  # MilterAddress = local:/usr/local/drweb/run/drweb-smf.skt
