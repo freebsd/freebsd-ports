@@ -368,9 +368,10 @@
   
 ***************
 *** 143,148 ****
---- 143,149 ----
+--- 143,150 ----
   	do \
   	echo "installing $$i"; \
++ 	$(RM) $(DESTDIR)$(MANDIR)/`basename $$i .man`.$(MANSUFFIX)* ; \
   	$(INSTALL) -c $(INSTMANFLAGS) $$i $(DESTDIR)$(MANDIR)/`basename $$i .man`.$(MANSUFFIX) ; \
 + 	$(COMPRESSMANCMD) $(DESTDIR)$(MANDIR)/`basename $$i .man`.$(MANSUFFIX) ; \
   	done
