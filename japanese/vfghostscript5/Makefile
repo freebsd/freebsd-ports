@@ -3,7 +3,7 @@
 # Date created:		23 Nov 1996
 # Whom:			Mita Yoshio <mita@jp.FreeBSD.org>
 #
-# $Id: Makefile,v 1.2 1996/12/30 21:12:51 max Exp $
+# $Id: Makefile,v 1.3 1997/01/01 15:40:14 torstenb Exp $
 #
 
 DISTNAME=	ghostscript-4.03
@@ -34,6 +34,10 @@ GS_DRIVERS=	gs4.03-vflib.tar.gz
 GS_DRIVERS+=	gdevlips4-1.0.1.tar.gz
 GS_DRIVERS+=	gdevbitps-1.0.tar.gz
 GS_DRIVERS+=	gdevmjc-0.7.tar.gz
+#  Note: the following two are real files that have symlinks with
+#  later version numbers pointing to them.  To avoid unnecessarily
+#  downloading distfiles, do not change these when upgrading the port
+#  unless the files really change.
 GS_FONTS_STD=	ghostscript-fonts-std-4.0.tar.gz
 GS_FONTS_OTHER=	ghostscript-fonts-other-3.0.tar.gz
 
