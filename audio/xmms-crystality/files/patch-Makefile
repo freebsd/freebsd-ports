@@ -13,7 +13,7 @@
 +STDIO_LIBS=	${PTHREAD_LIBS} `${GTK_CONFIG} --libs`
  
 -CFLAGS= -s -mpentium -O6 -Wall -ffast-math -fomit-frame-pointer -finline-functions -fexpensive-optimizations $(GTK_CFLAGS)
-+CFLAGS+=	-Wall $(GTK_CFLAGS) ${PTHREAD_CFLAGS}
++CFLAGS+=	-Wall $(GTK_CFLAGS) ${PTHREAD_CFLAGS} -fPIC
  
  
  TARGETS=	$(XMMS_PLUGIN) $(STDIO_PLUGIN)
