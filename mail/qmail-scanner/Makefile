@@ -7,6 +7,7 @@
 
 PORTNAME=	qmail-scanner
 PORTVERSION=	1.22
+PORTREVISION=	1
 CATEGORIES=	mail security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,8 +18,8 @@ MAINTAINER=	freebsd@simplerezo.com
 COMMENT=	Content/Anti-virus Scanner for qmail
 
 BUILD_DEPENDS=	${QMAIL_QUEUE}:${PORTSDIR}/mail/qmail \
-		${SITE_PERL}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes \
 		reformime:${PORTSDIR}/mail/maildrop
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
 # A normal qmail installation puts everything into /var/qmail/.
 # Must match your qmail installation
@@ -113,8 +114,8 @@ pre-configure:
 	@${ECHO_MSG} ""
 	@PKG_PREFIX=${PREFIX} ${SH} ${PKGDIR}/pkg-install ${PKGNAME} PRE-INSTALL
 	@if ! ${TEST} -f ${QMAIL_QUEUE}; then \
-		@${ECHO_MSG} "Unable to found qmail-queue binary trying '${QMAIL_QUEUE}'.";  \
-		@${ECHO_MSG} "Please set QMAIL_DIR to your qmail installation directory !"; \
+		${ECHO_MSG} "Unable to found qmail-queue binary trying '${QMAIL_QUEUE}'.";  \
+		${ECHO_MSG} "Please set QMAIL_DIR to your qmail installation directory !"; \
 		exit 1; \
 	fi
 
@@ -144,4 +145,10 @@ post-deinstall:
 test:
 	@${WRKSRC}/contrib/test_installation.sh -doit
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500800
+BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes
+.endif
+
+.include <bsd.port.post.mk>
