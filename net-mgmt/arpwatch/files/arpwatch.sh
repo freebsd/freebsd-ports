@@ -23,7 +23,7 @@ start)
 		if [ -e "$PREFIX"/arpwatch/arp.dat- ]; then
 			cp "$PREFIX"/arpwatch/arp.dat- "$PREFIX"/arpwatch/arp.dat	
 		else
-			touch "$PREFIX"/arpwarch/arp.dat
+			touch "$PREFIX"/arpwatch/arp.dat
 		fi
 	fi
 
