@@ -100,6 +100,7 @@
 %%PORTDOCS%%share/examples/py-xml/demo/xmlproc/xbel2html.py
 %%PORTDOCS%%share/examples/py-xml/demo/xmlproc/xpcmd.py
 %%PORTDOCS%%share/examples/py-xml/demo/xmlproc/xvcmd.py
+%%PORTDOCS%%share/examples/py-xml/test/doc.xml
 %%PORTDOCS%%share/examples/py-xml/test/dom/TestSuite.py
 %%PORTDOCS%%share/examples/py-xml/test/dom/borrowed/TestSuite.py
 %%PORTDOCS%%share/examples/py-xml/test/dom/borrowed/af_20000919.py
@@ -201,27 +202,14 @@
 %%PORTDOCS%%share/examples/py-xml/test/dom/test_struct.py
 %%PORTDOCS%%share/examples/py-xml/test/dom/test_text.py
 %%PORTDOCS%%share/examples/py-xml/test/dom/test_treewalker.py
-%%PORTDOCS%%share/examples/py-xml/test/domapi/Base.py
-%%PORTDOCS%%share/examples/py-xml/test/domapi/CoreLvl1.py
-%%PORTDOCS%%share/examples/py-xml/test/domapi/CoreLvl2.py
-%%PORTDOCS%%share/examples/py-xml/test/domapi/CoreLvl3.py
-%%PORTDOCS%%share/examples/py-xml/test/domapi/Load3.py
-%%PORTDOCS%%share/examples/py-xml/test/domapi/TraversalLvl2.py
-%%PORTDOCS%%share/examples/py-xml/test/domapi/XMLLvl1.py
-%%PORTDOCS%%share/examples/py-xml/test/domapi/XMLLvl2.py
-%%PORTDOCS%%share/examples/py-xml/test/domapi/__init__.py
 %%PORTDOCS%%share/examples/py-xml/test/enc_test.xml
-%%PORTDOCS%%share/examples/py-xml/test/output/.#test_c14n.1.1
 %%PORTDOCS%%share/examples/py-xml/test/output/test_c14n
 %%PORTDOCS%%share/examples/py-xml/test/output/test_dom
-%%PORTDOCS%%share/examples/py-xml/test/output/test_domu
 %%PORTDOCS%%share/examples/py-xml/test/output/test_encodings
 %%PORTDOCS%%share/examples/py-xml/test/output/test_howto
 %%PORTDOCS%%share/examples/py-xml/test/output/test_htmlb
 %%PORTDOCS%%share/examples/py-xml/test/output/test_javadom
 %%PORTDOCS%%share/examples/py-xml/test/output/test_marshal
-%%PORTDOCS%%share/examples/py-xml/test/output/test_marshal.orig
-%%PORTDOCS%%share/examples/py-xml/test/output/test_marshal.rej
 %%PORTDOCS%%share/examples/py-xml/test/output/test_minidom
 %%PORTDOCS%%share/examples/py-xml/test/output/test_parsers
 %%PORTDOCS%%share/examples/py-xml/test/output/test_pyexpat
@@ -231,13 +219,13 @@
 %%PORTDOCS%%share/examples/py-xml/test/output/test_sax_xmlproc
 %%PORTDOCS%%share/examples/py-xml/test/output/test_saxdrivers
 %%PORTDOCS%%share/examples/py-xml/test/output/test_utils
+%%PORTDOCS%%share/examples/py-xml/test/output/test_xmlproc
 %%PORTDOCS%%share/examples/py-xml/test/quotes.xml
 %%PORTDOCS%%share/examples/py-xml/test/regrtest.py
 %%PORTDOCS%%share/examples/py-xml/test/test.xml
 %%PORTDOCS%%share/examples/py-xml/test/test.xml.out
 %%PORTDOCS%%share/examples/py-xml/test/test_c14n.py
 %%PORTDOCS%%share/examples/py-xml/test/test_dom.py
-%%PORTDOCS%%share/examples/py-xml/test/test_domu.py
 %%PORTDOCS%%share/examples/py-xml/test/test_encodings.py
 %%PORTDOCS%%share/examples/py-xml/test/test_howto.py
 %%PORTDOCS%%share/examples/py-xml/test/test_htmlb.py
@@ -252,6 +240,7 @@
 %%PORTDOCS%%share/examples/py-xml/test/test_sax_xmlproc.py
 %%PORTDOCS%%share/examples/py-xml/test/test_saxdrivers.py
 %%PORTDOCS%%share/examples/py-xml/test/test_utils.py
+%%PORTDOCS%%share/examples/py-xml/test/test_xmlproc.py
 %%PORTDOCS%%share/examples/py-xml/test/testxml.py
 %%PORTDOCS%%share/examples/py-xml/test/unittest.py
 %%PORTDOCS%%share/examples/py-xml/test/xmlval_illformed.dtd
@@ -263,9 +252,6 @@ lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/FtCore.pyo
 lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/__init__.py
 lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/__init__.pyc
 lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/__init__.pyo
-lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/_checkversion.py
-lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/_checkversion.pyc
-lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/_checkversion.pyo
 lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/dom/Attr.py
 lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/dom/Attr.pyc
 lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/dom/Attr.pyo
@@ -343,6 +329,9 @@ lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/dom/domreg.py
 lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/dom/domreg.pyc
 lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/dom/domreg.pyo
 lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/dom/en_US/LC_MESSAGES/4Suite.mo
+lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/dom/ext/Dom2Sax.py
+lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/dom/ext/Dom2Sax.pyc
+lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/dom/ext/Dom2Sax.pyo
 lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/dom/ext/Printer.py
 lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/dom/ext/Printer.pyc
 lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/dom/ext/Printer.pyo
@@ -1011,7 +1000,6 @@ lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/xslt/minisupport.pyo
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/dom/de
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/dom
 %%PORTDOCS%%@dirrm share/examples/py-xml/test/output
-%%PORTDOCS%%@dirrm share/examples/py-xml/test/domapi
 %%PORTDOCS%%@dirrm share/examples/py-xml/test/dom/html
 %%PORTDOCS%%@dirrm share/examples/py-xml/test/dom/ext
 %%PORTDOCS%%@dirrm share/examples/py-xml/test/dom/borrowed
