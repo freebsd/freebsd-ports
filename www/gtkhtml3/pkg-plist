@@ -85,7 +85,7 @@ include/libgtkhtml-%%VERSION%%/gtkhtml/htmlundo.h
 lib/gtkhtml/libgnome-gtkhtml-editor-%%VERSION%%.so
 lib/libgtkhtml-%%VERSION%%.a
 lib/libgtkhtml-%%VERSION%%.so
-lib/libgtkhtml-%%VERSION%%.so.11
+lib/libgtkhtml-%%VERSION%%.so.12
 libdata/bonobo/servers/GNOME_GtkHTML_Editor-%%VERSION%%.server
 libdata/pkgconfig/libgtkhtml-%%VERSION%%.pc
 share/gnome/gtkhtml-%%VERSION%%/Editor.idl
@@ -179,6 +179,7 @@ share/locale/he/LC_MESSAGES/gtkhtml-%%VERSION%%.mo
 share/locale/hi/LC_MESSAGES/gtkhtml-%%VERSION%%.mo
 share/locale/hr/LC_MESSAGES/gtkhtml-%%VERSION%%.mo
 share/locale/hu/LC_MESSAGES/gtkhtml-%%VERSION%%.mo
+share/locale/id/LC_MESSAGES/gtkhtml-%%VERSION%%.mo
 share/locale/it/LC_MESSAGES/gtkhtml-%%VERSION%%.mo
 share/locale/ja/LC_MESSAGES/gtkhtml-%%VERSION%%.mo
 share/locale/ko/LC_MESSAGES/gtkhtml-%%VERSION%%.mo
