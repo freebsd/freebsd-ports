@@ -7,7 +7,7 @@
 
 PORTNAME=	s10sh
 PORTVERSION=	0.2.0
-PORTREVISION=   2
+PORTREVISION=   3
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.reynoldsnet.org/s10sh/ \
 		http://www.edwinh.org/s10sh/ \
@@ -23,7 +23,7 @@ MAKEFILE=	${FILESDIR}/Makefile.bsd
 .if defined(NOUSB) || defined(WITHOUT_USB)
 MAKE_ENV+=	WITHOUT_USB=YES
 .else
-LIB_DEPENDS=	usb-0.1.5:${PORTSDIR}/devel/libusb
+LIB_DEPENDS=	usb-0.1.7:${PORTSDIR}/devel/libusb
 .endif
 
 .if !defined(NOPORTDOCS)

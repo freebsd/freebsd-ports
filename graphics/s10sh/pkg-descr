@@ -5,6 +5,7 @@ PowerShot camera. The interface is quite similar to DOS's command.com.
 S10sh supports the following PowerShot models: 
 
       G1 (works with USB, not reported if works with the serial interface) 
+      G3 (from local patches, perhaps needs further testing/debug)
       S10 (serial and USB) 
       S20 (serial and USB) 
       S100 aka Digital Ixus (USB only, since it lacks the serial interface) 
