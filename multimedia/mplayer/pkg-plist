@@ -7,6 +7,7 @@ lib/mplayer/vidix/mach64_vid.so
 lib/mplayer/vidix/mga_crtc2_vid.so
 lib/mplayer/vidix/mga_vid.so
 lib/mplayer/vidix/nvidia_vid.so
+lib/mplayer/vidix/pm3_vid.so
 lib/mplayer/vidix/radeon_vid.so
 lib/mplayer/vidix/rage128_vid.so
 %%PORTDOCS%%share/doc/mplayer/DVB
