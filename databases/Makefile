@@ -15,6 +15,8 @@
     SUBDIR += db4
     SUBDIR += db41
     SUBDIR += db41-nocrypto
+    SUBDIR += db42
+    SUBDIR += db42-nocrypto
     SUBDIR += dbXML
     SUBDIR += dbconnect
     SUBDIR += dbf
