@@ -18,6 +18,7 @@ USE_BZIP2=	yes
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
+USE_PERL5=	yes
 
 MAN1=		kdoc.1 qt2kdoc.1 makekdedoc.1
 
