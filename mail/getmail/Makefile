@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	getmail
-PORTVERSION=	2.3.9
-PORTREVISION=	1
+PORTVERSION=	2.3.11
 CATEGORIES=	mail python
-MASTER_SITES=	http://www.qcc.sk.ca/~charlesc/software/getmail-2.0/%SUBDIR%/
-MASTER_SITE_SUBDIR=	. old-versions
+MASTER_SITES=	http://www.qcc.ca/~charlesc/software/getmail-2.0/%SUBDIR%/
 
 MAINTAINER=	anders@hack.org
 

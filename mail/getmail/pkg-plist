@@ -6,6 +6,7 @@ bin/getmail
 share/examples/getmail/getmailrc-example
 share/getmail/ConfParser.py
 share/getmail/getmail.py
+share/getmail/getmail_classes.py
 share/getmail/timeoutsocket.py
 @dirrm share/getmail
 @dirrm share/examples/getmail
