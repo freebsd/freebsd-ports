@@ -25,7 +25,7 @@ diff -u aclocal.m4.orig aclocal.m4
    if test "$with_ucdsnmp" != no; then
      AC_DEFINE(HAVE_UCDSNMP,1,[Do we have SNMP support?])
 -    LIB_UCDSNMP="-lucdagent -lucdmibs -lsnmp"
-+    LIB_UCDSNMP="-lucdagent -lucdmibs -lsnmp -lkvm"
++    LIB_UCDSNMP="-lucdagent -lucdmibs -lsnmp -lkvm -ldevstat -lwrap"
      AC_CHECK_LIB(rpm, rpmdbOpen,
  		 LIB_UCDSNMP="${LIB_UCDSNMP} -lrpm -lpopt",,-lpopt)
    fi

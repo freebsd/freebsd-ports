@@ -111,10 +111,11 @@ CONFIGURE_ARGS+=--with-drac=${LOCALBASE}
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libdrac.a:${PORTSDIR}/mail/drac
 .endif
 
+.include <bsd.port.pre.mk>
+
 .if defined(WITH_SNMP)
-# It seems not compilable due to lack of auto_nlist_value() in libucdagent.
-LIB_DEPENDS+=	netsnmp.5:${PORTSDIR}/net/net-snmp
-#CONFIGURE_ENV=	LIBS=-lkvm
+LIB_DEPENDS+=	snmp.4:${PORTSDIR}/net/net-snmp4
+CONFIGURE_ARGS+=--with-ucdsnmp=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=--with-ucdsnmp=no
 .endif
@@ -145,8 +146,6 @@ DOCSDIR=	${PREFIX}/share/doc/cyrus-imapd22
 
 PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
 PKGINSTALL=	${WRKDIR}/pkg-install
-
-.include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500800
 RUN_DEPENDS+=	${SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp

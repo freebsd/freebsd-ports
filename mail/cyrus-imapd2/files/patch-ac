@@ -16,7 +16,7 @@ diff -u configure.orig configure
  EOF
  
 -    LIB_UCDSNMP="-lucdagent -lucdmibs -lsnmp"
-+    LIB_UCDSNMP="-lucdagent -lucdmibs -lsnmp -lkvm"
++    LIB_UCDSNMP="-lucdagent -lucdmibs -lsnmp -lkvm -ldevstat -lwrap"
      echo $ac_n "checking for rpmdbOpen in -lrpm""... $ac_c" 1>&6
  echo "configure:6763: checking for rpmdbOpen in -lrpm" >&5
  ac_lib_var=`echo rpm'_'rpmdbOpen | sed 'y%./+-%__p_%'`

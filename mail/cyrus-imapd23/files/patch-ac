@@ -30,7 +30,7 @@ diff -u configure.orig configure
  _ACEOF
  
 -    LIB_UCDSNMP="-lucdagent -lucdmibs -lsnmp"
-+    LIB_UCDSNMP="-lucdagent -lucdmibs -lsnmp -lkvm"
++    LIB_UCDSNMP="-lucdagent -lucdmibs -lsnmp -lkvm -ldevstat -lwrap"
      echo "$as_me:$LINENO: checking for rpmdbOpen in -lrpm" >&5
  echo $ECHO_N "checking for rpmdbOpen in -lrpm... $ECHO_C" >&6
  if test "${ac_cv_lib_rpm_rpmdbOpen+set}" = set; then
