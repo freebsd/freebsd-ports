@@ -803,7 +803,6 @@
     SUBDIR += ruby-slang
     SUBDIR += ruby-strongtyping
     SUBDIR += ruby-sysvipc
-    SUBDIR += ruby-testunit
     SUBDIR += ruby-textbuf
     SUBDIR += ruby-tzfile
     SUBDIR += ruby-yaml
