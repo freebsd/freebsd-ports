@@ -7,26 +7,33 @@
 #
 
 PORTNAME=	gl-117
-PORTVERSION=	0.6
+PORTVERSION=	0.6.5
 CATEGORIES=	games
-MASTER_SITES=	http://home.t-online.de/home/Primetime./gl-117/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	SDL-1.1:${PORTSDIR}/devel/sdl12 \
-		SDL_mixer:${PORTSDIR}/audio/sdl_mixer
+LIB_DEPENDS=	SDL_mixer.2:${PORTSDIR}/audio/sdl_mixer \
+		SDL-1.1.4:${PORTSDIR}/devel/sdl12
 
-USE_REINPLACE=	yes
+SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
+
 USE_MESA=	yes
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
-CFLAGS+=	${PTHREAD_CFLAGS} -I${LOCALBASE}/include -I${X11BASE}/include
-CONFIGURE_ENV=	CPPFLAGS="${CXXFLAGS}" \
-		LDFLAGS="${PTHREAD_LIBS} -L${LOCALBASE}/lib -L${X11BASE}/lib -lGL -lGLU -lglut -lstdc++"
+CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+
+CPPFLAGS=	`${SDL_CONFIG} --cflags` -I${X11BASE}/include
+LDFLAGS=	`${SDL_CONFIG} --libs` -L${X11BASE}/lib
 
 post-patch:
-.for file in configure src/audio.h src/main.h src/net.h
-	@${REINPLACE_CMD} -e "s|SDL/|SDL11/|g" -e "s|-lSDL |-lSDL-1.1 |g" \
-		-e "s|-lSDLmain|-lSDLmain-1.1|g" ${WRKSRC}/${file}
+.for file in configure src/audio.h src/glland.h src/main.h src/net.h
+	@${REINPLACE_CMD} -e 's|^CPPFLAGS="-D|CPPFLAGS="\$$CPPFLAGS -D|g ; \
+		 s|SDL/||g ; \
+		 s|-lSDL |-lSDL-1.1 |g ; \
+		 s|-lSDLmain|-lSDLmain-1.1|g' ${WRKSRC}/${file}
 .endfor
 
 .include <bsd.port.mk>
