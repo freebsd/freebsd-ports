@@ -1,5 +1,5 @@
 *** src/Makefile.orig	Mon Apr  8 17:29:08 1996
---- src/Makefile	Wed May 29 10:50:48 1996
+--- src/Makefile	Tue Nov 26 11:41:31 1996
 ***************
 *** 32,38 ****
   #   SONY_FSLIB = -L/usr/sony/lib -lFSlib
@@ -51,3 +51,146 @@
   
   
   
+***************
+*** 82,102 ****
+  #endif
+  
+  default:
+! 	make libVFlib.a ttindex bdfindex
+  all:
+! 	make libVFlib.a ttindex bdfindex
+  
+  install:
+  	-$(RM) -f $(INSTALL_LIBDIR)/VFlib.a $(INSTALL_LIBDIR)/libVFlib.a
+  	$(CP) VFlib.a $(INSTALL_LIBDIR)/VFlib.a
+  	-$(RANLIB) $(INSTALL_LIBDIR)/VFlib.a
+  	$(LN) $(INSTALL_LIBDIR)/VFlib.a $(INSTALL_LIBDIR)/libVFlib.a
+  	$(CP) VF.h $(INSTALL_INCDIR)/VF.h
+  	$(CP) ttindex $(INSTALL_BINDIR)/ttindex
+  	$(CP) bdfindex $(INSTALL_BINDIR)/bdfindex
+  
+  clean:
+! 	-$(RM) -rf VFlib.a libVFlib.a ttindex bdfindex bdfjpindex *.o core
+  veryclean:
+  	-$(RM) -rf VFlib.a libVFlib.a ttindex bdfindex bdfjpindex\
+  	           *.o core *~ \#tz* 
+--- 82,104 ----
+  #endif
+  
+  default:
+! 	make libVFlib.a libVFlib.so.2.22 ttindex bdfindex
+  all:
+! 	make libVFlib.a libVFlib.so.2.22 ttindex bdfindex
+  
+  install:
+  	-$(RM) -f $(INSTALL_LIBDIR)/VFlib.a $(INSTALL_LIBDIR)/libVFlib.a
+  	$(CP) VFlib.a $(INSTALL_LIBDIR)/VFlib.a
+  	-$(RANLIB) $(INSTALL_LIBDIR)/VFlib.a
++ 	$(INSTALL) -c -m 644 libVFlib.so.2.22 $(INSTALL_LIBDIR)/libVFlib.so.2.22
+  	$(LN) $(INSTALL_LIBDIR)/VFlib.a $(INSTALL_LIBDIR)/libVFlib.a
+  	$(CP) VF.h $(INSTALL_INCDIR)/VF.h
+  	$(CP) ttindex $(INSTALL_BINDIR)/ttindex
+  	$(CP) bdfindex $(INSTALL_BINDIR)/bdfindex
+  
+  clean:
+! 	-$(RM) -rf VFlib.a libVFlib.a ttindex bdfindex bdfjpindex *.o core \
+! 		*.so libVFlib.so.2.22
+  veryclean:
+  	-$(RM) -rf VFlib.a libVFlib.a ttindex bdfindex bdfjpindex\
+  	           *.o core *~ \#tz* 
+***************
+*** 106,111 ****
+--- 108,121 ----
+  DRV_OBJ=  VF_Sony.o VF_Zeit.o VF_Jg.o VF_TT.o VF_Bdf.o VF_Hbf.o hbf.o \
+  	  VF_Comp.o VF_BitOp.o VF_Null.o
+  
++ DRV_SOBJ=  VF_Sony.so VF_Zeit.so VF_Jg.so VF_TT.so VF_Bdf.so VF_Hbf.so hbf.so \
++ 	   VF_Comp.so VF_BitOp.so VF_Null.so
++ 
++ 
++ # VFlib
++ libVFlib.so.2.22:	VFlib.so VFenc.so VFEtable.so VFcap.so fn2ent.so fman.so $(DRV_SOBJ)
++ 	$(LD) -x -Bshareable -o libVFlib.so.2.22 \
++ 		VFlib.so VFenc.so VFEtable.so VFcap.so fn2ent.so fman.so $(DRV_SOBJ)
+  
+  # VFlib
+  libVFlib.a:	VFlib.o VFenc.o VFEtable.o VFcap.o fn2ent.o fman.o $(DRV_OBJ)
+***************
+*** 168,173 ****
+--- 178,253 ----
+  # Null font driver
+  VF_Null.o:  	VF_Null.c
+  	$(CC) $(CFLAGS)  -c VF_Null.c
++ 
++ # VFlib
++ VFlib.so:  	VFlib.c
++ 	$(CC) -fpic -DPIC $(CFLAGS) $(USEFSLIB)  -c VFlib.c -o $(.TARGET)
++ 	$(LD) -O $(.TARGET) -x -r $(.TARGET)
++ 
++ # font capability database 
++ VFcap.so:	VFcap.c
++ 	$(CC) -fpic -DPIC $(CFLAGS) $(VFCAP) -c VFcap.c -o $(.TARGET)
++ 	$(LD) -O $(.TARGET) -x -r $(.TARGET)
++ 
++ # handling of font encodings
++ VFenc.so:	VFenc.c
++ 	$(CC) -fpic -DPIC $(CFLAGS) -c VFenc.c -o $(.TARGET)
++ 	$(LD) -O $(.TARGET) -x -r $(.TARGET)
++ 
++ # font encoding and character set tables
++ VFEtable.so:	VFEtable.c
++ 	$(CC) -fpic -DPIC $(CFLAGS) -c VFEtable.c -o $(.TARGET)
++ 	$(LD) -O $(.TARGET) -x -r $(.TARGET)
++ 
++ # conv font name to font entry name
++ fn2ent.so:	fn2ent.c
++ 	$(CC) -fpic -DPIC $(CFLAGS)  -c fn2ent.c -o $(.TARGET)
++ 	$(LD) -O $(.TARGET) -x -r $(.TARGET)
++ 
++ # dynamic file stream manager
++ fman.so:		fman.c
++ 	$(CC) -fpic -DPIC $(CFLAGS) $(OPENFILES) -c fman.c -o $(.TARGET)
++ 	$(LD) -O $(.TARGET) -x -r $(.TARGET)
++ 
++ # Sony Font driver
++ VF_Sony.so:  	VF_Sony.c
++ 	$(CC) -fpic -DPIC $(CFLAGS) $(USEFSLIB) -c VF_Sony.c -o $(.TARGET)
++ 	$(LD) -O $(.TARGET) -x -r $(.TARGET)
++ # Zeit Syotai-Club Font driver
++ VF_Zeit.so:  	VF_Zeit.c
++ 	$(CC) -fpic -DPIC $(CFLAGS)  -c VF_Zeit.c -o $(.TARGET)
++ 	$(LD) -O $(.TARGET) -x -r $(.TARGET)
++ # Zeit JG Font driver
++ VF_Jg.so:  	VF_Jg.c
++ 	$(CC) -fpic -DPIC $(CFLAGS)  -c VF_Jg.c -o $(.TARGET)
++ 	$(LD) -O $(.TARGET) -x -r $(.TARGET)
++ # TrueType Driver
++ VF_TT.so:  	VF_TT.c
++ 	$(CC) -fpic -DPIC $(CFLAGS)  -c VF_TT.c -o $(.TARGET)
++ 	$(LD) -O $(.TARGET) -x -r $(.TARGET)
++ # BDF Driver
++ VF_Bdf.so:  	VF_Bdf.c
++ 	$(CC) -fpic -DPIC $(CFLAGS)  -c VF_Bdf.c -o $(.TARGET)
++ 	$(LD) -O $(.TARGET) -x -r $(.TARGET)
++ # HBF Driver
++ VF_Hbf.so:	VF_Hbf.c
++ 	$(CC) -fpic -DPIC $(CFLAGS) -D$(FS) -c VF_Hbf.c -o $(.TARGET)
++ 	$(LD) -O $(.TARGET) -x -r $(.TARGET)
++ hbf.so:	hbf.c
++ 	$(CC) -fpic -DPIC $(CFLAGS) -D$(FS) -DNO_STRDUP -c hbf.c -o $(.TARGET)
++ 	$(LD) -O $(.TARGET) -x -r $(.TARGET)
++ # Composite font driver
++ VF_Comp.so:  	VF_Comp.c
++ 	$(CC) -fpic -DPIC $(CFLAGS)  -c VF_Comp.c -o $(.TARGET)
++ 	$(LD) -O $(.TARGET) -x -r $(.TARGET)
++ # Bit-Operated font driver
++ VF_BitOp.so:  	VF_BitOp.c
++ 	$(CC) -fpic -DPIC $(CFLAGS)  -c VF_BitOp.c -o $(.TARGET)
++ 	$(LD) -O $(.TARGET) -x -r $(.TARGET)
++ # Null font driver
++ VF_Null.so:  	VF_Null.c
++ 	$(CC) -fpic -DPIC $(CFLAGS)  -c VF_Null.c -o $(.TARGET)
++ 	$(LD) -O $(.TARGET) -x -r $(.TARGET)
+  
+  # Index generator for TrueType font
+  ttindex:	ttindex.c 

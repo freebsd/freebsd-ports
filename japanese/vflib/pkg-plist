@@ -1,5 +1,6 @@
 lib/VFlib.a
 lib/libVFlib.a
+lib/libVFlib.so.2.22
 lib/VFlib/COPYING
 lib/VFlib/README.txt.JP_EUC
 lib/VFlib/bdfindex
@@ -416,3 +417,4 @@ share/fonts/watanabe_font/README
 share/fonts/watanabe_font/dviprt.vfn
 share/fonts/watanabe_font/mincho.vf1
 share/fonts/watanabe_font/mincho.vf2
+@exec /sbin/ldconfig -m %D/lib
