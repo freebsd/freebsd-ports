@@ -10,7 +10,7 @@ PORTVERSION=	2.88
 CATEGORIES=	databases
 MASTER_SITES=	http://www.garret.ru/~knizhnik/
 
-MAINTAINER=	osa@FreeBSD.org.ru
+MAINTAINER=	osa@FreeBSD.org
 COMMENT=	Object-Relational Database Management System
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
