@@ -1,5 +1,7 @@
 sbin/delegated
 share/examples/delegate/delegated.sh
 %%PORTDOCS%%share/doc/delegate/Manual.htm
+%%PORTDOCS%%share/doc/delegate/tutor-jp.htm
+%%PORTDOCS%%share/doc/delegate/tutor-en.htm
 %%PORTDOCS%%@dirrm share/doc/delegate
 @dirrm share/examples/delegate

@@ -6,14 +6,15 @@
 #
 
 PORTNAME=	delegate
-PORTVERSION=	7.7.0
+PORTVERSION=	7.9.4
 CATEGORIES=	net www
 MASTER_SITES=	ftp://ftp.delegate.org/pub/DeleGate/ \
-		ftp://ftp.etl.go.jp/pub/DeleGate/
+		http://www.delegate.org/pub/DeleGate/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	max@FreeBSD.org
 
+USE_BZIP2=	YES
 NO_PACKAGE=	"Insecure program."
 IS_INTERACTIVE=	YES
 
@@ -53,8 +54,9 @@ do-install:
 	   ${PREFIX}/share/examples/delegate
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/delegate
-	${INSTALL_DATA} ${WRKSRC}/doc/Manual.htm \
-	  ${PREFIX}/share/doc/delegate
+.for f in Manual.htm tutor-jp.htm tutor-en.htm
+	${INSTALL_DATA} ${WRKSRC}/doc/$f ${PREFIX}/share/doc/delegate
+.endfor
 .endif
 	@${CAT} ${PKGMESSAGE}
 
