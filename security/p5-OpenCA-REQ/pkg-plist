@@ -1,0 +1,5 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/OpenCA/REQ/.packlist
+%%SITE_PERL%%/OpenCA/REQ.pm
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/OpenCA/REQ
+@unexec rmdir %D/%%SITE_PERL%%/OpenCA 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/OpenCA 2>/dev/null || true
