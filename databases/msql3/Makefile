@@ -10,7 +10,7 @@ PORTVERSION=	3.5
 PORTREVISION=	1
 CATEGORIES=	databases
 
-MAINTAINER=	vasallia@ukr.net
+MAINTAINER=	anray@inet.ua
 COMMENT=	Version 3 of the Mini SQL relational database system
 
 CONFLICTS=	msql-2*

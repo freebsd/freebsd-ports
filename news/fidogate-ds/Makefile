@@ -12,7 +12,7 @@ MASTER_SITE_SUBDIR=	rusfidogate
 PKGNAMESUFFIX=		-ds
 DISTNAME=		fidogate${PORTVERSION}ds
 
-MAINTAINER=		vasallia@ukr.net
+MAINTAINER=		anray@inet.ua
 COMMENT=		Fido-Internet Gateway and Tosser
 
 .if !defined(WITHOUT_INN)

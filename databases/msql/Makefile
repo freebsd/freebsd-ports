@@ -10,7 +10,7 @@ PORTVERSION=	2.0.12
 PORTREVISION=	4
 CATEGORIES=	databases
 
-MAINTAINER=	vasallia@ukr.net
+MAINTAINER=	anray@inet.ua
 COMMENT=	The Mini SQL server, version 2
 
 CONFLICTS=	msql-3*
