@@ -116,15 +116,7 @@ CFLAGS+=	-O6 -funroll-loops -fstrength-reduce -fomit-frame-pointer \
 		-fexpensive-optimizations -ffast-math
 .endif
 
-.if ${OSVERSION} < 430000 || exists(${LOCALBASE}/lib/libcrypto.so.3)
-OPENSSLBASE=	${LOCALBASE}
-OPENSSLDIR=	${OPENSSLBASE}/openssl
-LIB_DEPENDS+=	crypto.3:${PORTSDIR}/security/openssl
-OPENSSLLIB=	${OPENSSLBASE}/lib
-OPENSSLINC=	${OPENSSLBASE}/include
-MAKE_ENV+=	OPENSSLLIB=${OPENSSLLIB} OPENSSLINC=${OPENSSLINC} \
-		OPENSSLBASE=${OPENSSLBASE} OPENSSLDIR=${OPENSSLDIR}
-.endif
+.include "${PORTSDIR}/security/openssl/Makefile.ssl"
 
 CONFIGURE_ENV=	CFLAGS='${CFLAGS}' \
 		OPTIM='${OPTIM}' \
