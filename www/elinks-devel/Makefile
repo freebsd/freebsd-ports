@@ -8,7 +8,8 @@
 PORTNAME=	elinks
 PORTVERSION=	0.3.2
 CATEGORIES=	www
-MASTER_SITES=	http://elinks.pld.org.pl/download/
+MASTER_SITES=	http://elinks.or.cz/download/
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}${EXTRACT_SUFX}.asc
 
 MAINTAINER=	jharris@widomaker.com
 
