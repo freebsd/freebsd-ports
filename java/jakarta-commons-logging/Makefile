@@ -43,13 +43,11 @@ BUILD_DEPENDS+=	${JAVALIBDIR}/logkit.jar:${PORTSDIR}/java/avalon-logkit
 ALL_TARGET=	compile
 .if !defined(NOPORTDOCS)
 ALL_TARGET+=	javadoc
-PORTDOCS=	api LICENSE
+OTHERDOCS=	LICENSE.txt NOTICE.txt RELEASE-NOTES.txt
+PORTDOCS=	api ${OTHERDOCS}
 .endif
 JARFILE=	${PORTNAME}.jar
 PLIST_FILES=	%%JAVAJARDIR%%/${JARFILE}
-
-post-extract:
-	@${CP} ${PORTSDIR}/java/jakarta-commons-beanutils/files/LICENSE ${WRKSRC}/
 
 do-install:
 	@${ECHO_MSG} -n ">> Installing JAR as ${JAVAJARDIR}/${JARFILE}..."
@@ -61,7 +59,7 @@ do-install:
 	@cd ${WRKSRC}/dist/docs \
 	  && ${FIND} api -type d -exec ${MKDIR} ${DOCSDIR}/{} \; \
 	  && ${FIND} api -type f -exec ${INSTALL_DATA} {} ${DOCSDIR}/{} \;
-	@${INSTALL_DATA} ${WRKSRC}/LICENSE ${DOCSDIR}/
+	@${INSTALL_DATA} ${OTHERDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}/
 	@${ECHO_MSG} " ${PORTDOCS} [ DONE ]"
 .endif
 
