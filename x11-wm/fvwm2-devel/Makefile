@@ -6,60 +6,75 @@
 #
 
 PORTNAME=	fvwm
-PORTVERSION=	2.3.33
+PORTVERSION=	2.5.0
 CATEGORIES=	x11-wm
 MASTER_SITES=	ftp://ftp.fvwm.org/pub/fvwm/version-2/ \
 		http://www.fvwm.org/generated/icon_download/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} fvwm_icons.tgz
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
+USE_BZIP2=	yes
 
-MAINTAINER=	Cy.Schubert@uumail.gov.bc.ca
+MAINTAINER=	cy@FreeBSD.org
 
-BROKEN=		"No development versions, go to the stable version"
-
-BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 RUN_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 
-USE_X_PREFIX=	yes
-USE_XPM=	yes
-WANT_GTK=	yes
-GNU_CONFIGURE=	yes
+.if defined(WITH_STROKE)
+LIB_DEPENDS+=	stroke.0:${PORTSDIR}/devel/libstroke
+.endif
+
 USE_GMAKE=	yes
-PLIST_SUB=	VER=${PORTVERSION}
-CONFIGURE_ARGS=	--enable-gnome
+USE_GTK=	yes
+USE_IMLIB=	yes
+USE_XPM=	yes
+USE_X_PREFIX=	yes
+WANT_GNOME=	yes
+
+GNU_CONFIGURE=	yes
+
+.if defined(WITH_STROKE)
+CONFIGURE_ARGS+=	--with-stroke --with-stroke-library=${LOCALBASE}/lib \
+			--with-stroke-includes=${LOCALBASE}/include
+.endif
+
+PLIST_SUB+=	FVWM_VERSION="${PORTVERSION}"
+
+.include <bsd.port.pre.mk>
+
+.if defined(HAVE_GNOME)
+USE_GNOME=	yes
+PLIST_SUB+=	GNOMEDATADIR="share/gnome/fvwm"
+.else
+CONFIGURE_ARGS+=	--without-gnome
+PLIST_SUB+=	GNOMEDATADIR="share/fvwm"
+.endif
 
 MAN1=	FvwmAnimate.1 FvwmAuto.1 FvwmBacker.1 FvwmBanner.1 FvwmButtons.1 \
 	FvwmCommand.1 FvwmConsole.1 FvwmConsoleC.pl.1 FvwmCpp.1 FvwmDebug.1 \
 	FvwmDragWell.1 FvwmEvent.1 FvwmForm.1 FvwmGtk.1 FvwmIconBox.1 \
 	FvwmIconMan.1 FvwmIdent.1 FvwmM4.1 FvwmPager.1 FvwmRearrange.1 \
 	FvwmSave.1 FvwmSaveDesk.1 FvwmScript.1 FvwmScroll.1 FvwmTaskBar.1 \
-	FvwmTheme.1 FvwmWharf.1 FvwmWinList.1 \
-	fvwm-menu-desktop.1 fvwm-menu-directory.1 fvwm-menu-headlines.1 \
-	fvwm-menu-xlock.1 fvwm2.1 fvwm24_convert.1 fvwmbug.1 fvwmrc_convert.1 \
-	xpmroot.1
-
-.include <bsd.port.pre.mk>
-
-.if defined(HAVE_GTK) && !defined(WITHOUT_GTK)
-USE_GTK=	yes
-PLIST_SUB+=	GTK=""
-.else
-PLIST_SUB+=	GTK="@comment "
-.endif
+	FvwmTheme.1 FvwmWharf.1 FvwmWinList.1 fvwm-menu-desktop.1 \
+	fvwm-menu-directory.1 fvwm-menu-headlines.1 fvwm-menu-xlock.1 \
+	fvwm2.1 fvwm24_convert.1 fvwmbug.1 fvwmrc_convert.1 xpmroot.1 \
+	fvwm-config.1
 
 post-extract:
-	@if ! (cd ${WRKDIR}/${DISTNAME} && ${MKDIR} icons && cd icons && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/fvwm_icons.tgz ${EXTRACT_AFTER_ARGS}); then \
-		exit 1; \
-	fi
+	@${MKDIR} ${WRKDIR}/icons
+	@${TAR} -xzf ${DISTDIR}/fvwm_icons.tgz -C ${WRKDIR}/icons
+
+post-patch:
+	@${PERL} -pi -e 's,%%LOCALBASE%%,${LOCALBASE},' \
+		${WRKSRC}/modules/FvwmM4/FvwmM4.c
 
 post-install:
-	@${MKDIR} ${PREFIX}/etc
-	@${CP} ${WRKSRC}/sample.fvwmrc/system.fvwm2rc ${PREFIX}/etc/system.fvwm2rc.dist
+	@${INSTALL_DATA} ${WRKSRC}/sample.fvwmrc/system.fvwm2rc \
+		${PREFIX}/etc/system.fvwm2rc.dist
 	@if [ ! -e ${PREFIX}/etc/system.fvwm2rc ]; then \
-		${CP} ${WRKSRC}/sample.fvwmrc/system.fvwm2rc ${PREFIX}/etc/system.fvwm2rc; \
+		${INSTALL_DATA} ${WRKSRC}/sample.fvwmrc/system.fvwm2rc \
+			${PREFIX}/etc/system.fvwm2rc; \
 	fi
-	@${MKDIR} ${PREFIX}/lib/X11/fvwm2/pixmaps
-	${INSTALL_DATA} ${WRKSRC}/icons/*.xpm \
-		${PREFIX}/lib/X11/fvwm2/pixmaps
+	@${MKDIR} ${PREFIX}/share/fvwm2/pixmaps
+	${INSTALL_DATA} ${WRKDIR}/icons/fvwm_icons/*.xpm \
+		${PREFIX}/share/fvwm2/pixmaps
 
 .include <bsd.port.post.mk>
