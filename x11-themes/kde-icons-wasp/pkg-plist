@@ -8,12 +8,15 @@ share/icons/%%DIRNAME%%/128x128/actions/cdinfo.png
 share/icons/%%DIRNAME%%/128x128/actions/cdrwblank.png
 share/icons/%%DIRNAME%%/128x128/actions/connect_creating.png
 share/icons/%%DIRNAME%%/128x128/actions/domtreeviewer.png
+share/icons/%%DIRNAME%%/128x128/actions/exit.alt.png
+share/icons/%%DIRNAME%%/128x128/actions/exit.png
 share/icons/%%DIRNAME%%/128x128/actions/fileexport.png
 share/icons/%%DIRNAME%%/128x128/actions/fileimport.png
 share/icons/%%DIRNAME%%/128x128/actions/filepreviewprint.png
 share/icons/%%DIRNAME%%/128x128/actions/filequickprint.png
 share/icons/%%DIRNAME%%/128x128/actions/filesave.png
 share/icons/%%DIRNAME%%/128x128/actions/filesaveas.png
+share/icons/%%DIRNAME%%/128x128/actions/folder_new.png
 share/icons/%%DIRNAME%%/128x128/actions/fork.png
 share/icons/%%DIRNAME%%/128x128/actions/frameprint.png
 share/icons/%%DIRNAME%%/128x128/actions/gear.png
@@ -171,6 +174,7 @@ share/icons/%%DIRNAME%%/128x128/apps/password.png
 share/icons/%%DIRNAME%%/128x128/apps/personal.png
 share/icons/%%DIRNAME%%/128x128/apps/personal2.png
 share/icons/%%DIRNAME%%/128x128/apps/realplayer.png
+share/icons/%%DIRNAME%%/128x128/apps/roxcd.png
 share/icons/%%DIRNAME%%/128x128/apps/samba.png
 share/icons/%%DIRNAME%%/128x128/apps/sodipodi.png
 share/icons/%%DIRNAME%%/128x128/apps/window_list.png
@@ -299,12 +303,15 @@ share/icons/%%DIRNAME%%/16x16/actions/connect_creating.png
 share/icons/%%DIRNAME%%/16x16/actions/domtreeviewer.png
 share/icons/%%DIRNAME%%/16x16/actions/edit_add.png
 share/icons/%%DIRNAME%%/16x16/actions/edit_remove.png
+share/icons/%%DIRNAME%%/16x16/actions/exit.alt.png
+share/icons/%%DIRNAME%%/16x16/actions/exit.png
 share/icons/%%DIRNAME%%/16x16/actions/fileexport.png
 share/icons/%%DIRNAME%%/16x16/actions/fileimport.png
 share/icons/%%DIRNAME%%/16x16/actions/filepreviewprint.png
 share/icons/%%DIRNAME%%/16x16/actions/filequickprint.png
 share/icons/%%DIRNAME%%/16x16/actions/filesave.png
 share/icons/%%DIRNAME%%/16x16/actions/filesaveas.png
+share/icons/%%DIRNAME%%/16x16/actions/folder_new.png
 share/icons/%%DIRNAME%%/16x16/actions/fork.png
 share/icons/%%DIRNAME%%/16x16/actions/frameprint.png
 share/icons/%%DIRNAME%%/16x16/actions/gear.png
@@ -494,6 +501,7 @@ share/icons/%%DIRNAME%%/16x16/apps/penguin.png
 share/icons/%%DIRNAME%%/16x16/apps/personal.png
 share/icons/%%DIRNAME%%/16x16/apps/personal2.png
 share/icons/%%DIRNAME%%/16x16/apps/realplayer.png
+share/icons/%%DIRNAME%%/16x16/apps/roxcd.png
 share/icons/%%DIRNAME%%/16x16/apps/samba.png
 share/icons/%%DIRNAME%%/16x16/apps/sodipodi.png
 share/icons/%%DIRNAME%%/16x16/apps/window_list.png
@@ -630,16 +638,25 @@ share/icons/%%DIRNAME%%/22x22/actions/edit_add.png
 share/icons/%%DIRNAME%%/22x22/actions/edit_group.png
 share/icons/%%DIRNAME%%/22x22/actions/edit_remove.png
 share/icons/%%DIRNAME%%/22x22/actions/edit_user.png
+share/icons/%%DIRNAME%%/22x22/actions/exit.alt.png
+share/icons/%%DIRNAME%%/22x22/actions/exit.png
 share/icons/%%DIRNAME%%/22x22/actions/fileexport.png
 share/icons/%%DIRNAME%%/22x22/actions/fileimport.png
 share/icons/%%DIRNAME%%/22x22/actions/filepreviewprint.png
 share/icons/%%DIRNAME%%/22x22/actions/filequickprint.png
 share/icons/%%DIRNAME%%/22x22/actions/filesave.png
 share/icons/%%DIRNAME%%/22x22/actions/filesaveas.png
+share/icons/%%DIRNAME%%/22x22/actions/folder_new.png
 share/icons/%%DIRNAME%%/22x22/actions/frameprint.png
 share/icons/%%DIRNAME%%/22x22/actions/gear.png
 share/icons/%%DIRNAME%%/22x22/actions/inbox.png
 share/icons/%%DIRNAME%%/22x22/actions/kde.png
+share/icons/%%DIRNAME%%/22x22/actions/kde1.png
+share/icons/%%DIRNAME%%/22x22/actions/kde2.png
+share/icons/%%DIRNAME%%/22x22/actions/kde3.png
+share/icons/%%DIRNAME%%/22x22/actions/kde4.png
+share/icons/%%DIRNAME%%/22x22/actions/kde5.png
+share/icons/%%DIRNAME%%/22x22/actions/kde6.png
 share/icons/%%DIRNAME%%/22x22/actions/klipper_dock.png
 share/icons/%%DIRNAME%%/22x22/actions/kr_arc_pack.png
 share/icons/%%DIRNAME%%/22x22/actions/kr_arc_unpack.png
@@ -812,6 +829,7 @@ share/icons/%%DIRNAME%%/22x22/apps/penguin.png
 share/icons/%%DIRNAME%%/22x22/apps/personal.png
 share/icons/%%DIRNAME%%/22x22/apps/personal2.png
 share/icons/%%DIRNAME%%/22x22/apps/realplayer.png
+share/icons/%%DIRNAME%%/22x22/apps/roxcd.png
 share/icons/%%DIRNAME%%/22x22/apps/samba.png
 share/icons/%%DIRNAME%%/22x22/apps/sodipodi.png
 share/icons/%%DIRNAME%%/22x22/apps/window_list.png
@@ -939,17 +957,26 @@ share/icons/%%DIRNAME%%/32x32/actions/connect_creating.png
 share/icons/%%DIRNAME%%/32x32/actions/domtreeviewer.png
 share/icons/%%DIRNAME%%/32x32/actions/edit_add.png
 share/icons/%%DIRNAME%%/32x32/actions/edit_remove.png
+share/icons/%%DIRNAME%%/32x32/actions/exit.alt.png
+share/icons/%%DIRNAME%%/32x32/actions/exit.png
 share/icons/%%DIRNAME%%/32x32/actions/fileexport.png
 share/icons/%%DIRNAME%%/32x32/actions/fileimport.png
 share/icons/%%DIRNAME%%/32x32/actions/filepreviewprint.png
 share/icons/%%DIRNAME%%/32x32/actions/filequickprint.png
 share/icons/%%DIRNAME%%/32x32/actions/filesave.png
 share/icons/%%DIRNAME%%/32x32/actions/filesaveas.png
+share/icons/%%DIRNAME%%/32x32/actions/folder_new.png
 share/icons/%%DIRNAME%%/32x32/actions/fork.png
 share/icons/%%DIRNAME%%/32x32/actions/frameprint.png
 share/icons/%%DIRNAME%%/32x32/actions/gear.png
 share/icons/%%DIRNAME%%/32x32/actions/inbox.png
 share/icons/%%DIRNAME%%/32x32/actions/kde.png
+share/icons/%%DIRNAME%%/32x32/actions/kde1.png
+share/icons/%%DIRNAME%%/32x32/actions/kde2.png
+share/icons/%%DIRNAME%%/32x32/actions/kde3.png
+share/icons/%%DIRNAME%%/32x32/actions/kde4.png
+share/icons/%%DIRNAME%%/32x32/actions/kde5.png
+share/icons/%%DIRNAME%%/32x32/actions/kde6.png
 share/icons/%%DIRNAME%%/32x32/actions/klipper_dock.png
 share/icons/%%DIRNAME%%/32x32/actions/kr_arc_pack.png
 share/icons/%%DIRNAME%%/32x32/actions/kr_arc_unpack.png
@@ -1114,6 +1141,7 @@ share/icons/%%DIRNAME%%/32x32/apps/penguin.png
 share/icons/%%DIRNAME%%/32x32/apps/personal.png
 share/icons/%%DIRNAME%%/32x32/apps/personal2.png
 share/icons/%%DIRNAME%%/32x32/apps/realplayer.png
+share/icons/%%DIRNAME%%/32x32/apps/roxcd.png
 share/icons/%%DIRNAME%%/32x32/apps/samba.png
 share/icons/%%DIRNAME%%/32x32/apps/sodipodi.png
 share/icons/%%DIRNAME%%/32x32/apps/window_list.png
@@ -1246,12 +1274,15 @@ share/icons/%%DIRNAME%%/48x48/actions/connect_creating.png
 share/icons/%%DIRNAME%%/48x48/actions/domtreeviewer.png
 share/icons/%%DIRNAME%%/48x48/actions/edit_add.png
 share/icons/%%DIRNAME%%/48x48/actions/edit_remove.png
+share/icons/%%DIRNAME%%/48x48/actions/exit.alt.png
+share/icons/%%DIRNAME%%/48x48/actions/exit.png
 share/icons/%%DIRNAME%%/48x48/actions/fileexport.png
 share/icons/%%DIRNAME%%/48x48/actions/fileimport.png
 share/icons/%%DIRNAME%%/48x48/actions/filepreviewprint.png
 share/icons/%%DIRNAME%%/48x48/actions/filequickprint.png
 share/icons/%%DIRNAME%%/48x48/actions/filesave.png
 share/icons/%%DIRNAME%%/48x48/actions/filesaveas.png
+share/icons/%%DIRNAME%%/48x48/actions/folder_new.png
 share/icons/%%DIRNAME%%/48x48/actions/fork.png
 share/icons/%%DIRNAME%%/48x48/actions/frameprint.png
 share/icons/%%DIRNAME%%/48x48/actions/gear.png
@@ -1422,6 +1453,7 @@ share/icons/%%DIRNAME%%/48x48/apps/penguin.png
 share/icons/%%DIRNAME%%/48x48/apps/personal.png
 share/icons/%%DIRNAME%%/48x48/apps/personal2.png
 share/icons/%%DIRNAME%%/48x48/apps/realplayer.png
+share/icons/%%DIRNAME%%/48x48/apps/roxcd.png
 share/icons/%%DIRNAME%%/48x48/apps/samba.png
 share/icons/%%DIRNAME%%/48x48/apps/sodipodi.png
 share/icons/%%DIRNAME%%/48x48/apps/window_list.png
@@ -1554,12 +1586,15 @@ share/icons/%%DIRNAME%%/64x64/actions/connect_creating.png
 share/icons/%%DIRNAME%%/64x64/actions/domtreeviewer.png
 share/icons/%%DIRNAME%%/64x64/actions/edit_add.png
 share/icons/%%DIRNAME%%/64x64/actions/edit_remove.png
+share/icons/%%DIRNAME%%/64x64/actions/exit.alt.png
+share/icons/%%DIRNAME%%/64x64/actions/exit.png
 share/icons/%%DIRNAME%%/64x64/actions/fileexport.png
 share/icons/%%DIRNAME%%/64x64/actions/fileimport.png
 share/icons/%%DIRNAME%%/64x64/actions/filepreviewprint.png
 share/icons/%%DIRNAME%%/64x64/actions/filequickprint.png
 share/icons/%%DIRNAME%%/64x64/actions/filesave.png
 share/icons/%%DIRNAME%%/64x64/actions/filesaveas.png
+share/icons/%%DIRNAME%%/64x64/actions/folder_new.png
 share/icons/%%DIRNAME%%/64x64/actions/fork.png
 share/icons/%%DIRNAME%%/64x64/actions/frameprint.png
 share/icons/%%DIRNAME%%/64x64/actions/gear.png
@@ -1725,6 +1760,7 @@ share/icons/%%DIRNAME%%/64x64/apps/password.png
 share/icons/%%DIRNAME%%/64x64/apps/personal.png
 share/icons/%%DIRNAME%%/64x64/apps/personal2.png
 share/icons/%%DIRNAME%%/64x64/apps/realplayer.png
+share/icons/%%DIRNAME%%/64x64/apps/roxcd.png
 share/icons/%%DIRNAME%%/64x64/apps/samba.png
 share/icons/%%DIRNAME%%/64x64/apps/sodipodi.png
 share/icons/%%DIRNAME%%/64x64/apps/window_list.png
@@ -1850,14 +1886,22 @@ share/icons/%%DIRNAME%%/README
 share/icons/%%DIRNAME%%/extras/EXTRA.SPECS
 share/icons/%%DIRNAME%%/extras/IMPORTANT
 share/icons/%%DIRNAME%%/extras/SUSE9.README
-share/icons/%%DIRNAME%%/extras/color-scheme/Gonx Dark.kcsrc
-share/icons/%%DIRNAME%%/extras/color-scheme/Gonx Green.kcsrc
-share/icons/%%DIRNAME%%/extras/color-scheme/Gonx.kcsrc
 share/icons/%%DIRNAME%%/extras/color-scheme/README
-share/icons/%%DIRNAME%%/extras/color-scheme/Wasp.kcsrc
-share/icons/%%DIRNAME%%/extras/color-scheme/thinkeramik_gonx.kcmrc
-share/icons/%%DIRNAME%%/extras/color-scheme/thinkeramik_gonx_green.kcmrc
-share/icons/%%DIRNAME%%/extras/color-scheme/thinkeramik_wasp.kcmrc
+share/icons/%%DIRNAME%%/extras/color-scheme/activeheart/activeheart_blush_blue.kcmrc
+share/icons/%%DIRNAME%%/extras/color-scheme/activeheart/activeheart_blush_darkblue.kcmrc
+share/icons/%%DIRNAME%%/extras/color-scheme/activeheart/activeheart_blush_green.kcmrc
+share/icons/%%DIRNAME%%/extras/color-scheme/kde/Blush.Blue.kcsrc
+share/icons/%%DIRNAME%%/extras/color-scheme/kde/Blush.Darkblue.kcsrc
+share/icons/%%DIRNAME%%/extras/color-scheme/kde/Blush.kcsrc
+share/icons/%%DIRNAME%%/extras/color-scheme/kde/Gonx Dark.kcsrc
+share/icons/%%DIRNAME%%/extras/color-scheme/kde/Gonx Green.kcsrc
+share/icons/%%DIRNAME%%/extras/color-scheme/kde/Gonx.kcsrc
+share/icons/%%DIRNAME%%/extras/color-scheme/kde/Wasp.kcsrc
+share/icons/%%DIRNAME%%/extras/color-scheme/thinkeramik/thinkeramik_blush.kcmrc
+share/icons/%%DIRNAME%%/extras/color-scheme/thinkeramik/thinkeramik_blush_darkblue.kcmrc
+share/icons/%%DIRNAME%%/extras/color-scheme/thinkeramik/thinkeramik_gonx.kcmrc
+share/icons/%%DIRNAME%%/extras/color-scheme/thinkeramik/thinkeramik_gonx_green.kcmrc
+share/icons/%%DIRNAME%%/extras/color-scheme/thinkeramik/thinkeramik_wasp.kcmrc
 share/icons/%%DIRNAME%%/extras/emoticons/Gossip/angry.png
 share/icons/%%DIRNAME%%/extras/emoticons/Gossip/big_smile.png
 share/icons/%%DIRNAME%%/extras/emoticons/Gossip/confused.png
@@ -2117,9 +2161,6 @@ share/icons/%%DIRNAME%%/scalable/actions/editdelete.svg
 share/icons/%%DIRNAME%%/scalable/actions/editpaste.svg
 share/icons/%%DIRNAME%%/scalable/actions/edittrash.svg
 share/icons/%%DIRNAME%%/scalable/actions/encrypted.svg
-share/icons/%%DIRNAME%%/scalable/actions/exit.old.svg
-share/icons/%%DIRNAME%%/scalable/actions/exit.orig.svg
-share/icons/%%DIRNAME%%/scalable/actions/exit.svg
 share/icons/%%DIRNAME%%/scalable/actions/fileclose.svg
 share/icons/%%DIRNAME%%/scalable/actions/filecloseall.svg
 share/icons/%%DIRNAME%%/scalable/actions/filefind.svg
@@ -2210,13 +2251,13 @@ share/icons/%%DIRNAME%%/scalable/actions/viewmagfit.svg
 share/icons/%%DIRNAME%%/scalable/apps/Hardware.svg
 share/icons/%%DIRNAME%%/scalable/apps/acroread.svg
 share/icons/%%DIRNAME%%/scalable/apps/agent.svg
-share/icons/%%DIRNAME%%/scalable/apps/aim.svg
 share/icons/%%DIRNAME%%/scalable/apps/bluefish.svg
 share/icons/%%DIRNAME%%/scalable/apps/calc.svg
 share/icons/%%DIRNAME%%/scalable/apps/camera.svg
 share/icons/%%DIRNAME%%/scalable/apps/cdplayer.svg
 share/icons/%%DIRNAME%%/scalable/apps/display.svg
 share/icons/%%DIRNAME%%/scalable/apps/file-roller.svg
+share/icons/%%DIRNAME%%/scalable/apps/firefox.svg
 share/icons/%%DIRNAME%%/scalable/apps/gaim.svg
 share/icons/%%DIRNAME%%/scalable/apps/gdm.svg
 share/icons/%%DIRNAME%%/scalable/apps/gedit.svg
@@ -2247,6 +2288,7 @@ share/icons/%%DIRNAME%%/scalable/apps/klpq.svg
 share/icons/%%DIRNAME%%/scalable/apps/kmenu.svg
 share/icons/%%DIRNAME%%/scalable/apps/kmrml.svg
 share/icons/%%DIRNAME%%/scalable/apps/knetconfig.svg
+share/icons/%%DIRNAME%%/scalable/apps/korganizer_todo.svg
 share/icons/%%DIRNAME%%/scalable/apps/kpackage.svg
 share/icons/%%DIRNAME%%/scalable/apps/kpdf.svg
 share/icons/%%DIRNAME%%/scalable/apps/krdc.svg
@@ -2376,6 +2418,9 @@ share/icons/%%DIRNAME%%/scalable/mimetypes/zip.svg
 @dirrm share/icons/%%DIRNAME%%/extras/evolution
 @dirrm share/icons/%%DIRNAME%%/extras/emoticons/Gossip
 @dirrm share/icons/%%DIRNAME%%/extras/emoticons
+@dirrm share/icons/%%DIRNAME%%/extras/color-scheme/thinkeramik
+@dirrm share/icons/%%DIRNAME%%/extras/color-scheme/kde
+@dirrm share/icons/%%DIRNAME%%/extras/color-scheme/activeheart
 @dirrm share/icons/%%DIRNAME%%/extras/color-scheme
 @dirrm share/icons/%%DIRNAME%%/extras
 @dirrm share/icons/%%DIRNAME%%/64x64/mimetypes
