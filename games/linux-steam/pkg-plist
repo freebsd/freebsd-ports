@@ -1,2 +1,2 @@
-steam/steam
-@dirrm steam
+%%INSTALLDIR%%/steam
+@dirrm %%INSTALLDIR%%

@@ -1,19 +1,27 @@
 ##################################################################
-# To get started goto %%PREFIX%%/steam                           #
+# To get started goto %%PREFIX%%/%%INSTALLDIR%%                             #
 # and type the following to create a steam-user.                 #
-# ./steam -create <username> <password> <question> <answer>      #
+# ./steam -command create -username <username> \                 #
+# -email <emailaddress> -password <password> \                   #
+# -question <question> -answer <answer>                          #
+#                                                                #
 # Example                                                        #
-# ./steam -create johndoe l337cr3w nameofmygun M4A1              #
+# ./steam -command create -username johndoe \                    #
+# -email johndoe@mydomain.com -password 12345678 \               #
+# -question nameofmygun -answer M4A1                             #
 #                                                                #
 # Once you have a steam-user account or if you have a registered #
 # account already type the following to start updating your HLDS #
-# ./steam -update <game> <installdir> <username> [<password> [Y]]#
-# example                                                        #
-# ./steam -update cstrike . johndoe l337cr3w Y                   #
+# ./steam -command update -game <game> -dir <steamdir> \         #
+# -username <username> -password <password> -remember_password   #
+#                                                                #
+# Example                                                        #
+# ./steam -command update -game cstrike -dir %%PREFIX%%/steam \  #
+# -username johndoe -password 12345678 -remember_password        #
 #                                                                #
 # Once your server has been updated type the following           #
 # to test your server.                                           #
-# ./hlds_run -game cstrike +maxplayers 10 +map de_dust           #
+# ./hlds_run -game cstrike +map de_dust -maxplayers 16           #
 #                                                                #
 # For instructions on configuring your server goto               #
 # http://server.counter-strike.net                               #
