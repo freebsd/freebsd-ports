@@ -1,0 +1,8 @@
+sbin/frox
+etc/frox.conf.sample
+etc/rc.d/frox.sh
+%%PORTDOCS%%share/doc/frox/FAQ
+%%PORTDOCS%%share/doc/frox/SECURITY
+%%PORTDOCS%%share/doc/frox/CREDITS
+%%PORTDOCS%%share/doc/frox/ChangeLog
+%%PORTDOCS%%@dirrm share/doc/frox
