@@ -7,6 +7,7 @@
 
 PORTNAME=	mod_dav
 PORTVERSION=	1.0.3
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.webdav.org/mod_dav/
 DISTNAME=	mod_dav-${PORTVERSION}-${APACHE_VERSION}
@@ -31,6 +32,16 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} \
 
 CONFIGURE_ENV=	CFLAGS='${CFLAGS}' \
 		PATH="${PREFIX}/bin:${PREFIX}/sbin:${PATH}"
+
+.if defined(WITH_SYMLINK_PATCH)
+EXTRA_PATCHES=	${FILESDIR}/SYMLINK-mod_dav.h ${FILESDIR}/SYMLINK-dav_fs_repos.c
+.endif
+
+.if !defined(WITH_SYMLINK_PATCH)
+pre-everything::
+	@${ECHO_MSG} "Use WITH_SYMLINK_PATCH=yes to let mod_dav follow symlinks."
+	@/bin/sleep 5
+.endif
 
 post-install:
 	${INSTALL_DATA} ${FILESDIR}/apache.conf.mod_dav ${PREFIX}/etc/apache
