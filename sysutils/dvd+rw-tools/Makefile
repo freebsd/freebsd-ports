@@ -6,6 +6,7 @@
 
 PORTNAME=	dvd+rw-tools
 PORTVERSION=	5.12.4.7.4
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.pkix.net/mirror/fy.chalmers.se/ \
 		http://fy.chalmers.se/~appro/linux/DVD+RW/tools/
@@ -22,5 +23,9 @@ INSTALL_TARGET=		BIN_MODE=00755 install
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/growisofs.1 ${MANPREFIX}/man/man1/
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/index.html ${DOCSDIR}/
+.endif
 
 .include <bsd.port.mk>

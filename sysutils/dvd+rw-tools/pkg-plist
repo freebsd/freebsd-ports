@@ -2,3 +2,5 @@ bin/growisofs
 bin/dvd+rw-format
 bin/dvd+rw-booktype
 bin/dvd+rw-mediainfo
+%%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
