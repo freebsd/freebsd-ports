@@ -21,6 +21,6 @@ MAN1=		xfractint.1
 
 pre-patch:
 	@${FIND} ${WRKSRC} -name "*.c" | ${XARGS} ${PERL} -pi -e \
-		's|malloc.h|stdlib.h|'
+		's|malloc\.h|stdlib.h|'
 
 .include <bsd.port.mk>
