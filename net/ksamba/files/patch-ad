@@ -1,0 +1,13 @@
+--- ksamba/Makefile.am.orig	Tue Oct 19 16:53:55 1999
++++ ksamba/Makefile.am	Thu Feb  1 22:16:01 2001
+@@ -208,10 +208,6 @@
+ newserviceData.moc:newserviceData.h
+ 	$(MOC) newserviceData.h -o newserviceData.moc
+ 
+-install-data-local: 
+-	$(mkinstalldirs) $(APPSDIR)
+-	$(INSTALL_DATA) ksamba.kdelnk $(APPSDIR)
+-
+ 
+ 
+ 

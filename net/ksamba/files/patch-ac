@@ -1,0 +1,20 @@
+--- configure.in.orig	Tue Oct 19 17:06:17 1999
++++ configure.in	Thu Feb  1 21:41:32 2001
+@@ -44,7 +44,6 @@
+ AC_PATH_KDE dnl check X, Qt and KDE
+ AC_CHECK_LIB(compat, main, [LIBCOMPAT="-lcompat"]) dnl for FreeBSD
+ AC_SUBST(LIBCOMPAT)
+-AC_FIND_GIF dnl only needed, if you need gif, but doesn't hurt
+ AC_FIND_JPEG dnl only needed, if you need jpeg, but doesn't hurt
+ 
+ AC_CHECK_RPATH
+@@ -74,4 +73,9 @@
+ dnl add here all your Makefiles
+ AC_OUTPUT(Makefile \
+ 	ksamba/Makefile \
++	ksamba/doc/Makefile \
++	ksamba/doc/de/Makefile \
++	ksamba/doc/en/Makefile \
++	ksamba/pics/Makefile \
++	ksamba/pics/icons/Makefile \
+ 	po/Makefile)
