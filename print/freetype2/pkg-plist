@@ -4,8 +4,8 @@ include/freetype2/freetype/cache/ftccmap.h
 include/freetype2/freetype/cache/ftcglyph.h
 include/freetype2/freetype/cache/ftcimage.h
 include/freetype2/freetype/cache/ftcmanag.h
+include/freetype2/freetype/cache/ftcmru.h
 include/freetype2/freetype/cache/ftcsbits.h
-include/freetype2/freetype/cache/ftlru.h
 include/freetype2/freetype/config/ftconfig.h
 include/freetype2/freetype/config/ftheader.h
 include/freetype2/freetype/config/ftmodule.h
@@ -23,6 +23,7 @@ include/freetype2/freetype/ftgzip.h
 include/freetype2/freetype/ftimage.h
 include/freetype2/freetype/ftincrem.h
 include/freetype2/freetype/ftlist.h
+include/freetype2/freetype/ftlzw.h
 include/freetype2/freetype/ftmac.h
 include/freetype2/freetype/ftmm.h
 include/freetype2/freetype/ftmodapi.h
@@ -48,6 +49,7 @@ include/freetype2/freetype/internal/ftdriver.h
 include/freetype2/freetype/internal/ftgloadr.h
 include/freetype2/freetype/internal/ftmemory.h
 include/freetype2/freetype/internal/ftobjs.h
+include/freetype2/freetype/internal/ftrfork.h
 include/freetype2/freetype/internal/ftserv.h
 include/freetype2/freetype/internal/ftstream.h
 include/freetype2/freetype/internal/fttrace.h
@@ -64,6 +66,7 @@ include/freetype2/freetype/internal/svpostnm.h
 include/freetype2/freetype/internal/svpscmap.h
 include/freetype2/freetype/internal/svpsinfo.h
 include/freetype2/freetype/internal/svsfnt.h
+include/freetype2/freetype/internal/svttcmap.h
 include/freetype2/freetype/internal/svwinfnt.h
 include/freetype2/freetype/internal/svxf86nm.h
 include/freetype2/freetype/internal/t1types.h

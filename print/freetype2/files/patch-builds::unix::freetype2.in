@@ -1,0 +1,8 @@
+--- builds/unix/freetype2.in.orig	Wed Mar  2 20:22:23 2005
++++ builds/unix/freetype2.in	Wed Mar  2 20:22:53 2005
+@@ -8,4 +8,4 @@
+ Version: @ft_version@
+ Requires:
+ Libs: -L${libdir} -lfreetype @LIBZ@
+-Cflags: -I${includedir}/freetype2
++Cflags: -I${includedir}/freetype2 -I${includedir}
