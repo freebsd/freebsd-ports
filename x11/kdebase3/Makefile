@@ -16,7 +16,8 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Basic applications for the KDE system
 
-BUILD_DEPENDS=	mkfontdir:${X_CLIENTS_PORT}
+BUILD_DEPENDS=	mkfontdir:${X_CLIENTS_PORT} \
+		xmkmf:${X_IMAKE_PORT}
 LIB_DEPENDS=	smbclient:${PORTSDIR}/net/samba-libsmbclient
 
 CONFLICTS=	kdeutils-3.[0-2] kdeutils-3.0.* kdeutils-3.1.* kdeutils-3.2.*
