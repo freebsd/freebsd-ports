@@ -33,7 +33,7 @@ IGNORE=		This port requires perl 5.6.0 or later. Install lang/perl5 then try aga
 .endif
 
 .if ${PERL_LEVEL} >= 500800
-#BROKEN=		"Build fails"
+BROKEN=		"Build fails"
 .endif
 
 .include <bsd.port.post.mk>
