@@ -1,9 +1,12 @@
 bin/crank
-lib/crank/monoalphabetic.hillclimb-cracker.so
-lib/crank/monoalphabetic.key-controls.so
-lib/crank/statistics.n-grams.so
-lib/crank/steganalysis.word-gaps.so
-lib/crank/text.simple-filters.so
-lib/crank/transpositions.grid-controls.so
-lib/crank/utilities.notepad.so
+lib/crank/plugins/fitness.word-count.so
+lib/crank/plugins/monoalphabetic.hillclimb-cracker.so
+lib/crank/plugins/monoalphabetic.key-controls.so
+lib/crank/plugins/statistics.n-grams.so
+lib/crank/plugins/steganalysis.word-gaps.so
+lib/crank/plugins/text.simple-filters.so
+lib/crank/plugins/transpositions.grid-brute-force.so
+lib/crank/plugins/transpositions.grid-controls.so
+lib/crank/plugins/utilities.notepad.so
+@dirrm lib/crank/plugins
 @dirrm lib/crank
