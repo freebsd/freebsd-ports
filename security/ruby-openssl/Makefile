@@ -8,7 +8,7 @@
 PORTNAME=	openssl
 PORTVERSION=	0.1.2a
 CATEGORIES=	security ruby
-MASTER_SITES=	http://freesoftware.fsf.org/download/rubypki/
+MASTER_SITES=	http://savannah.nongnu.org/download/rubypki/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	ossl-${PORTVERSION}
 DIST_SUBDIR=	ruby

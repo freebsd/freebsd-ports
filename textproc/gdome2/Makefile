@@ -8,7 +8,7 @@
 PORTNAME=	gdome2
 PORTVERSION=	0.7.2
 CATEGORIES=	textproc
-MASTER_SITES=	http://phd.cs.unibo.it/gdome2/tarball/
+MASTER_SITES=	http://gdome2.cs.unibo.it/tarball/
 
 MAINTAINER=	knu@FreeBSD.org
 
