@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	dirmngr
-PORTVERSION=	0.4.3
-PORTREVISION=	1
+PORTVERSION=	0.4.5
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_GNUPG} \
 		http://tigress.com/lofi/:lofi/
