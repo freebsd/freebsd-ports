@@ -32,8 +32,8 @@ PATCH_DIST_ARGS=-d ${TOPDIR} -E ${PATCH_DIST_STRIP}
 .else
 PATCH_DIST_ARGS=-d ${TOPDIR} --forward --quiet -E ${PATCH_DIST_STRIP}
 .endif
-PKGINSTALL=	${PORTSDIR}/x11-toolkits/tk82/pkg/INSTALL.wish
-PKGDEINSTALL=	${PORTSDIR}/x11-toolkits/tk82/pkg/DEINSTALL.wish
+PKGINSTALL=	${PORTSDIR}/x11-toolkits/tk82/pkg-install.wish
+PKGDEINSTALL=	${PORTSDIR}/x11-toolkits/tk82/pkg-deinstall.wish
 INSTALLS_SHLIB=	yes
 
 TCLVERSION=	8.0
