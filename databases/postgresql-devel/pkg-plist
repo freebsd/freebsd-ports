@@ -380,6 +380,7 @@ include/pg_config.h
 include/pg_config_os.h
 include/libpq/libpq-fs.h
 @dirrm include/libpq
+include/compatlib.h
 include/datetime.h
 include/decimal.h
 include/ecpg_informix.h
@@ -395,6 +396,7 @@ include/pgtypes_timestamp.h
 include/sql3types.h
 include/sqlca.h
 include/sqltypes.h
+include/sqlda.h
 lib/libpq.so
 lib/libpq.a
 lib/libpq.so.3
@@ -471,18 +473,27 @@ share/postgresql/post-install-notes
 %%GETTEXT%%share/locale/de/LC_MESSAGES/psql.mo
 %%GETTEXT%%share/locale/es/LC_MESSAGES/libpq.mo
 %%GETTEXT%%share/locale/es/LC_MESSAGES/pg_controldata.mo
+%%GETTEXT%%share/locale/es/LC_MESSAGES/pg_dump.mo
+%%GETTEXT%%share/locale/es/LC_MESSAGES/pg_resetxlog.mo
+%%GETTEXT%%share/locale/es/LC_MESSAGES/pgscripts.mo
 %%GETTEXT%%share/locale/es/LC_MESSAGES/postgres.mo
 %%GETTEXT%%share/locale/es/LC_MESSAGES/psql.mo
 %%GETTEXT%%share/locale/fr/LC_MESSAGES/libpq.mo
 %%GETTEXT%%share/locale/fr/LC_MESSAGES/pg_controldata.mo
 %%GETTEXT%%share/locale/fr/LC_MESSAGES/psql.mo
 %%GETTEXT%%share/locale/hr/LC_MESSAGES/postgres.mo
+%%GETTEXT%%share/locale/hr/LC_MESSAGES/libpq.mo
 %%GETTEXT%%share/locale/hu/LC_MESSAGES/pg_controldata.mo
 %%GETTEXT%%share/locale/hu/LC_MESSAGES/pg_resetxlog.mo
 %%GETTEXT%%share/locale/hu/LC_MESSAGES/postgres.mo
 %%GETTEXT%%share/locale/hu/LC_MESSAGES/psql.mo
 %%GETTEXT%%share/locale/it/LC_MESSAGES/pg_controldata.mo
 %%GETTEXT%%share/locale/it/LC_MESSAGES/postgres.mo
+%%GETTEXT%%share/locale/it/LC_MESSAGES/psql.mo
+%%GETTEXT%%share/locale/it/LC_MESSAGES/libpq.mo
+%%GETTEXT%%share/locale/it/LC_MESSAGES/pg_dump.mo
+%%GETTEXT%%share/locale/it/LC_MESSAGES/pgscripts.mo
+%%GETTEXT%%share/locale/it/LC_MESSAGES/pg_resetxlog.mo
 %%GETTEXT%%share/locale/nb/LC_MESSAGES/postgres.mo
 %%GETTEXT%%share/locale/nb/LC_MESSAGES/libpq.mo
 %%GETTEXT%%share/locale/nb/LC_MESSAGES/pg_dump.mo
@@ -493,6 +504,8 @@ share/postgresql/post-install-notes
 %%GETTEXT%%share/locale/pt_BR/LC_MESSAGES/pg_controldata.mo
 %%GETTEXT%%share/locale/pt_BR/LC_MESSAGES/pg_dump.mo
 %%GETTEXT%%share/locale/pt_BR/LC_MESSAGES/pg_resetxlog.mo
+%%GETTEXT%%share/locale/pt_BR/LC_MESSAGES/psql.mo
+%%GETTEXT%%share/locale/pt_BR/LC_MESSAGES/pgscripts.mo
 %%GETTEXT%%share/locale/ru/LC_MESSAGES/libpq.mo
 %%GETTEXT%%share/locale/ru/LC_MESSAGES/pg_controldata.mo
 %%GETTEXT%%share/locale/ru/LC_MESSAGES/pg_dump.mo
@@ -500,6 +513,11 @@ share/postgresql/post-install-notes
 %%GETTEXT%%share/locale/ru/LC_MESSAGES/pgscripts.mo
 %%GETTEXT%%share/locale/ru/LC_MESSAGES/postgres.mo
 %%GETTEXT%%share/locale/ru/LC_MESSAGES/psql.mo
+%%GETTEXT%%share/locale/sl/LC_MESSAGES/psql.mo
+%%GETTEXT%%share/locale/sl/LC_MESSAGES/libpq.mo
+%%GETTEXT%%share/locale/sl/LC_MESSAGES/pgscripts.mo
+%%GETTEXT%%share/locale/sl/LC_MESSAGES/pg_controldata.mo
+%%GETTEXT%%share/locale/sl/LC_MESSAGES/pg_resetxlog.mo
 %%GETTEXT%%share/locale/sv/LC_MESSAGES/libpq.mo
 %%GETTEXT%%share/locale/sv/LC_MESSAGES/pg_controldata.mo
 %%GETTEXT%%share/locale/sv/LC_MESSAGES/pg_dump.mo
