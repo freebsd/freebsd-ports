@@ -6,21 +6,24 @@
 #
 
 PORTNAME=	xmms-tfmx
-PORTVERSION=	0.3
-PORTREVISION=	1
+PORTVERSION=	0.5
 CATEGORIES=	audio
-MASTER_SITES=	ftp://ftp.nuug.no/pub/anders/distfiles/ \
-		http://atreides.freenix.no/~anders/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XMMS Input plugin for playing TFMX tunes
 
 LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms
 
-PLIST_FILES=	lib/xmms/Input/libtfmx.so
 USE_X_PREFIX=	yes
+USE_GNOME=	gnometarget gtk12 lthack
 USE_GMAKE=	yes
-USE_GNOME=	gtk12
 USE_INC_LIBTOOL_VER=	13
+
+PLIST_FILES=	lib/xmms/Input/libtfmx.so
+
+do-install:
+	${INSTALL_DATA} ${WRKSRC}/src/.libs/libtfmx.so ${PREFIX}/lib/xmms/Input
 
 .include <bsd.port.mk>
