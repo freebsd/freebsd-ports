@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.143 1997/07/01 22:39:08 max Exp $
+# $Id: Makefile,v 1.144 1997/07/08 06:26:59 max Exp $
 #
 
     SUBDIR += FWF
@@ -76,6 +76,7 @@
     SUBDIR += xloadimage
     SUBDIR += xlockmore
     SUBDIR += xmascot
+    SUBDIR += xmbdfed
     SUBDIR += xmold
     SUBDIR += xpostit
     SUBDIR += xprompt
