@@ -1,0 +1,6 @@
+This is a WindowMaker dockapp which displays a graphical representation of
+the phase of the moon, plus additional astronomical data such as
+rise/set times, orbital data, orbital elements, etc (if you click on the
+image multiple times).
+
+Probably most of the data is not that useful, but what the heck :)
