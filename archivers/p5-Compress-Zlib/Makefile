@@ -3,7 +3,7 @@
 # Date created:				October 20th 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#   $Id: Makefile,v 1.8 1997/05/24 13:16:58 jfitz Exp $
+# $Id: Makefile,v 1.9 1997/06/24 18:43:07 jfitz Exp $
 #
 
 DISTNAME=	Compress-Zlib-0.50
