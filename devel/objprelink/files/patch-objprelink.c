@@ -1,7 +1,5 @@
-$FreeBSD$
-
---- objprelink.c.orig	Tue Dec  4 14:01:10 2001
-+++ objprelink.c	Tue Dec  4 14:01:49 2001
+--- objprelink-1.c.orig	Tue Dec  4 14:01:10 2001
++++ objprelink-1.c	Tue Dec  4 14:01:49 2001
 @@ -239,12 +239,12 @@
  is_vt_section(bfd *abfd, asection *p)
  {
