@@ -6,54 +6,67 @@
 #
 
 PORTNAME=	biojava
-PORTVERSION=	1.01
+PORTVERSION=	1.30
 CATEGORIES=	biology java
 MASTER_SITES=	http://www.biojava.org/download/source/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	whitekid@gmail.com
 COMMENT=	Open-source java tools for processing biological data
 
-BUILD_DEPENDS=	${JAVA_COMMAND}:${PORTSDIR}/java/linux-sun-jdk12
+RUN_DEPENDS=	${JAVAJARDIR:S,^${PREFIX},${LOCALBASE},}/xml-apis.jar:${PORTSDIR}/textproc/xerces-j \
+		${JAVAJARDIR:S,^${PREFIX},${LOCALBASE},}/jakarta-regexp.jar:${PORTSDIR}/java/jakarta-regexp
 
-JDK_VERSION=	1.2.2
-JAVAVERSION=	linux-sun-jdk${JDK_VERSION}
-JAVADIR=	${PREFIX}/${JAVAVERSION}
-JAVA_COMPILE=	${JAVADIR}/bin/javac
-JAVA_COMMAND=	${JAVADIR}/bin/java
+USE_JAVA=	yes
+JAVA_VERSION=	1.3+
+USE_ANT=	yes
 
-do-build:
-	@(cd ${WRKSRC}; \
-		${JAVA_COMPILE} build/Builder.java; \
-		${SETENV} PATH=${PATH}:${JAVADIR}/bin \
-		${JAVA_COMMAND} build.Builder all;)
+JARFILES=	biojava.jar bytecode.jar
+PORTDOCS=	api
+SAMPLES=	demos demos-1.4 demos-obsolete
 
+post-build:
 .if !defined(NOPORTDOCS)
-	@(cd ${WRKSRC}; ${SETENV} PATH=${PATH}:${JAVADIR}/bin \
-	${JAVA_COMMAND} build.Builder docs;)
+	@${ECHO_MSG} -n ">> Build javadocs..."
+	@cd ${WRKSRC} && ant javadocs
 .endif
 
+# from textproc/xerces-j
 do-install:
-	@(cd ${WRKSRC}; \
-		${MKDIR} ${PREFIX}/share/java/classes/; \
-		${CP} ${WRKSRC}/biojava.jar ${PREFIX}/share/java/classes/; \
-		${CP} ${WRKSRC}/xml.jar ${PREFIX}/share/java/classes/; \
-		${MKDIR} ${PREFIX}/share/java/${PKGNAME}/; \
-		${CP} -R README LICENSE ${PREFIX}/share/java/${PKGNAME}/; \
-		${CP} -R ${WRKSRC}/demos ${PREFIX}/share/java/${PKGNAME}/;)
-
+	@${ECHO_MSG} -n ">> Installing JAR files in ${JAVAJARDIR}..."
+	@${MKDIR} ${JAVAJARDIR}
+.for JARFILE in ${JARFILES}
+	@cd ${WRKSRC}/ant-build && ${INSTALL_DATA} ${JARFILE} ${JAVAJARDIR}/${JARFILE}
+	@${ECHO_MSG} -n " ${JARFILE}"
+.endfor
+	@${ECHO_MSG} " [ DONE ]"
 .if !defined(NOPORTDOCS)
-	@(${CP} -R ${WRKSRC}/docs ${PREFIX}/share/doc/${PKGNAME})
-.endif)
+	@${ECHO_MSG} -n ">> Installing documentation in ${DOCSDIR}..."
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/LICENSE ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+	@cd ${WRKSRC}/ant-build/docs && \
+		${FIND} ${PORTDOCS} -type d -exec ${MKDIR} "${DOCSDIR}/{}" \; && \
+		${FIND} ${PORTDOCS} -not -type d -exec ${INSTALL_DATA} "{}" "${DOCSDIR}/{}" \;
+	@${ECHO_MSG} " [ DONE ]"
+.endif
+
+.if !defined(WITHOUT_SAMPLES)
+	@${ECHO_MSG} -n ">> Installing demos in ${EXAMPLESDIR}..."
+	cd ${WRKSRC} && \
+		${FIND} ${SAMPLES} -type d -exec ${MKDIR} "${EXAMPLESDIR}/{}" \; && \
+		${FIND} ${SAMPLES} -not -type d -exec ${INSTALL_DATA} "{}" "${EXAMPLESDIR}/{}" \;
+	@${ECHO_MSG} " [ DONE ]"
+.endif
 
 post-install:
 .if !defined(BATCH)
 	@${ECHO_MSG} ""
-	@${ECHO_MSG} "Libraries installed at: ${PREFIX}/share/java/classes/"
+	@${ECHO_MSG} "Libraries installed at: ${JAVAJARDIR}"
 	@${ECHO_MSG} "You should edit your CLASSPATH to include the jar files"
 	@${ECHO_MSG} "in this directory."
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "Docs and demos are installed in:"
-	@${ECHO_MSG} "${PREFIX}/share/java/${PKGNAME}"
+	@${ECHO_MSG} "${DOCSDIR}"
 	@${ECHO_MSG} ""
 .endif
 
