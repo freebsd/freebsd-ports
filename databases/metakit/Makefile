@@ -46,6 +46,7 @@ TCL_SHORT_V=	83
 .endif
 
 .if defined(METAKIT_WITH_TCL84)
+CATEGORIES+=	tcl84
 TCL_V=		8.4
 TCL_SHORT_V=	84
 .endif

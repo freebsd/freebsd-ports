@@ -8,7 +8,7 @@
 PORTNAME=	frodo
 PORTVERSION=	4.1a
 PORTREVISION=	1
-CATEGORIES=	emulators
+CATEGORIES=	emulators tk84
 MASTER_SITES=	ftp://metalab.unc.edu/pub/micro/commodore/crossplatform/emulators/Frodo/ \
 		ftp://ftp.funet.fi/pub/cbm/crossplatform/emulators/Frodo/
 DISTNAME=	FrodoV4_1a.Src
