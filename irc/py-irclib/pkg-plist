@@ -1,7 +1,8 @@
 %%PYTHON_SITELIBDIR%%/irclib.py
 %%PYTHON_SITELIBDIR%%/irclib.pyc
 %%PYTHON_SITELIBDIR%%/irclib.pyo
-%%PORTDOCS%%%%EXAMPLESDIR%%/ircbot.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/dccreceive
+%%PORTDOCS%%%%EXAMPLESDIR%%/dccsend
 %%PORTDOCS%%%%EXAMPLESDIR%%/irccat
 %%PORTDOCS%%%%EXAMPLESDIR%%/irccat2
 %%PORTDOCS%%%%EXAMPLESDIR%%/servermap

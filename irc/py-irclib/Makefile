@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	irclib
-PORTVERSION=	0.3.4
+PORTVERSION=	0.4.0
 CATEGORIES=	irc python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	python-irclib
@@ -17,17 +17,11 @@ MAINTAINER=	perky@FreeBSD.org
 COMMENT=	IRC protocol client library for Python
 
 USE_PYTHON=	yes
+USE_PYDISTUTILS=yes
+EXAMPLEFILES=	irccat irccat2 servermap testbot.py \
+		dccreceive dccsend
 
-PLIST_SUB+=	PYTHON_SITELIBDIR=lib/${PYTHON_VERSION}/site-packages \
-		EXAMPLESDIR=${EXAMPLESDIR:S,^${PREFIX}/,,g}
-EXAMPLEFILES=	ircbot.py irccat irccat2 servermap testbot.py
-
-do-build:
-	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}
-	@${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}
-
-do-install:
-	@${INSTALL_DATA} ${WRKSRC}/irclib.py* ${PREFIX}/lib/${PYTHON_VERSION}/site-packages/
+post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/examples/${PORTNAME}
 .for file in ${EXAMPLEFILES}
