@@ -1,5 +1,5 @@
 --- configure.in.orig	Wed Apr 17 22:37:42 2002
-+++ configure.in	Tue Jun  4 12:09:37 2002
++++ configure.in	Tue Jun  4 12:36:50 2002
 @@ -103,6 +103,12 @@
  
                            Usage: --with-asm-home=<path to ml.exe directory>
@@ -188,7 +188,7 @@
  # Executing the set_soenv script to setup the environment variables.
  if test -z "$enable_check_only"; then
 -   './set_soenv' $COMPATH $_gcc_include_path $_gxx_include_path $JAVA_HOME $TCSH $PERL $x_libraries $x_includes $_LOCAL_SOLENV $_LOCAL_SOLVER $upd $CYGWIN $STLPORT4 $enable_xprint $with_lang $with_asm_home $with_unzip_home $WITH_MINGWIN $with_use_shell $USE_GCC3
-+   './set_soenv' $COMPATH $_gcc_include_path $_gxx_include_path $JAVA_HOME $TCSH $PERL $x_libraries $x_includes $_LOCAL_SOLENV $_LOCAL_SOLVER $upd $CYGWIN $STLPORT4 $enable_xprint $with_lang $with_asm_home $with_unzip_home $WITH_MINGWIN $with_use_shell $USE_GCC3 $with_os_version $PTHREAD_CFLAGS $PTHREAD_LIBS $CC $CXX
++   './set_soenv' $COMPATH $_gcc_include_path $_gxx_include_path $JAVA_HOME $TCSH $PERL $x_libraries $x_includes $_LOCAL_SOLENV $_LOCAL_SOLVER $upd $CYGWIN $STLPORT4 $enable_xprint $with_lang $with_asm_home $with_unzip_home $WITH_MINGWIN $with_use_shell $USE_GCC3 $with_os_version $PTHREAD_CFLAGS $PTHREAD_LIBS $CC $CXX $exceptions_type
  else
     echo
     echo Test Complete
