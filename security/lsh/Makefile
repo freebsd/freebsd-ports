@@ -49,4 +49,8 @@ post-install:
 	install-info ${PREFIX}/info/lsh.info ${PREFIX}/info/dir
 	install-info ${PREFIX}/info/nettle.info ${PREFIX}/info/dir
 
+test:
+	(cd ${WRKSRC}/src/testsuite && ${SETENV} ${MAKE_ENV} \
+	${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} check)
+
 .include <bsd.port.post.mk>
