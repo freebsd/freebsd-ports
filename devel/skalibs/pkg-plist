@@ -1,13 +1,23 @@
+@comment $FreeBSD$
 include/skalibs/alloc.h
 include/skalibs/allreadwrite.h
+include/skalibs/avlnode.h
+include/skalibs/avlnodealloc.h
+include/skalibs/avlnodebunch.h
+include/skalibs/avltree.h
 include/skalibs/biguint.h
+include/skalibs/bitarray.h
 include/skalibs/bufalloc.h
 include/skalibs/buffer.h
 include/skalibs/bytestr.h
 include/skalibs/caltimedate.h
 include/skalibs/cdb.h
 include/skalibs/cdb_make.h
+include/skalibs/datastruct.h
 include/skalibs/direntry.h
+include/skalibs/diuint.h
+include/skalibs/diuintalloc.h
+include/skalibs/diuintbunch.h
 include/skalibs/djbunix.h
 include/skalibs/dns.h
 include/skalibs/dns_helper.h
@@ -19,9 +29,11 @@ include/skalibs/error.h
 include/skalibs/fmtscan.h
 include/skalibs/gccattributes.h
 include/skalibs/gen_alloc.h
+include/skalibs/gen_bunch.h
 include/skalibs/intalloc.h
 include/skalibs/iobuffer.h
 include/skalibs/iopause.h
+include/skalibs/list1.h
 include/skalibs/md5.h
 include/skalibs/netstring.h
 include/skalibs/random.h
@@ -49,15 +61,14 @@ include/skalibs/uint64.h
 include/skalibs/uint64alloc.h
 include/skalibs/uintalloc.h
 include/skalibs/webipc.h
-@dirrm include/skalibs
 lib/skalibs/libbiguint.a
+lib/skalibs/libdatastruct.a
 lib/skalibs/libdns.a
 lib/skalibs/librandom.a
 lib/skalibs/libstdcrypto.a
 lib/skalibs/libstddjb.a
 lib/skalibs/libttymodes.a
 lib/skalibs/libwebipc.a
-@dirrm lib/skalibs
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/THANKS
@@ -67,6 +78,7 @@ lib/skalibs/libwebipc.a
 %%PORTDOCS%%%%DOCSDIR%%/index.html
 %%PORTDOCS%%%%DOCSDIR%%/install.html
 %%PORTDOCS%%%%DOCSDIR%%/libbiguint.html
+%%PORTDOCS%%%%DOCSDIR%%/libdatastruct.html
 %%PORTDOCS%%%%DOCSDIR%%/libdns.html
 %%PORTDOCS%%%%DOCSDIR%%/librandom.html
 %%PORTDOCS%%%%DOCSDIR%%/libstdcrypto.html
@@ -75,3 +87,5 @@ lib/skalibs/libwebipc.a
 %%PORTDOCS%%%%DOCSDIR%%/libwebipc.html
 %%PORTDOCS%%%%DOCSDIR%%/upgrade.html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm include/skalibs
+@dirrm lib/skalibs

@@ -6,19 +6,25 @@
 #
 
 PORTNAME=	skalibs
-PORTVERSION=	0.33
+PORTVERSION=	0.35
 CATEGORIES=	devel
 MASTER_SITES=	http://www.skarnet.org/software/${PORTNAME}/
 
 MAINTAINER=	sergei@FreeBSD.org
 COMMENT=	General purpose C libraries used by skarnet.org software
 
+LDFLAGS?=	-s
+STRIPFLAGS?=	-x
+
 WRKSRC=		${WRKDIR}/prog/${DISTNAME}
 
 DOCS=		package/CHANGES package/README package/THANKS doc/*.html
 
 do-configure:
-	${ECHO_CMD} "${CC} ${CFLAGS}" > ${WRKSRC}/conf-compile/conf-cc
+	${ECHO_CMD} "${CC} ${CFLAGS}"	> ${WRKSRC}/conf-compile/conf-cc
+	${ECHO_CMD} "${CC} ${LDFLAGS}"	> ${WRKSRC}/conf-compile/conf-ld
+	${ECHO_CMD} "${STRIP_CMD} ${STRIPFLAGS}" \
+					> ${WRKSRC}/conf-compile/conf-striplibs
 
 do-build:
 	cd ${WRKSRC} && package/compile
