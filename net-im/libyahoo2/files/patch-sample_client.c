@@ -16,12 +16,3 @@
  
  static char * get_local_addresses()
  {
-@@ -577,7 +575,7 @@
- 	if(tm) {
- 		char timestr[255];
- 
--		strncpy(timestr, ctime(&tm), sizeof(timestr));
-+		strncpy(timestr, ctime((time_t *)&tm), sizeof(timestr));
- 		timestr[strlen(timestr) - 1] = '\0';
- 
- 		print_message(("[Offline message at %s from %s]: %s", 
