@@ -11,7 +11,6 @@
     SUBDIR += blackbox
     SUBDIR += ctwm
     SUBDIR += enlightenment
-    SUBDIR += enlightenment-conf
     SUBDIR += epplets
     SUBDIR += flwm
     SUBDIR += fvwm
