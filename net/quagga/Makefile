@@ -135,29 +135,20 @@ CONFIGURE_ARGS+=--enable-tcp-signature
 EXTRA_PATCHES+=${PATCHDIR}/extra-tcpmd5-patch-bgpd::bgp_network.c ${PATCHDIR}/extra-tcpmd5-patch-bgpd::bgp_vty.c ${PATCHDIR}/extra-tcpmd5-patch-bgpd::bgpd.c ${PATCHDIR}/extra-tcpmd5-patch-bgpd::bgpd.h ${PATCHDIR}/extra-tcpmd5-patch-configure.ac ${PATCHDIR}/extra-tcpmd5-patch-lib::sockopt.c ${PATCHDIR}/extra-tcpmd5-patch-lib::sockopt.h
 .endif
 
-.if ${OSVERSION} >= 500038
-RC_SUBR?=	${DESTDIR}/etc/rc.subr
-RC_DIR=		${DESTDIR}/etc/rc.d
-RC_SUFX=
+USE_RC_SUBR=	watchquagga.sh
+.if ${OSVERSION} < 500000
+USE_RC_SUBR+=	quagga.sh
 .else
-USE_RC_SUBR=	yes
-RC_DIR=		${PREFIX}/etc/rc.d
-RC_SUFX=	.sh
+USE_RCORDER=	quagga.sh
 .endif
 
-SED_SCRIPT=	-e 's,%%PREFIX%%,${PREFIX},g' \
-		-e 's,%%SYSCONF_DIR%%,${SYSCONF_DIR},g' \
-		-e 's,%%LOCALSTATE_DIR%%,${LOCALSTATE_DIR},g' \
-		-e 's,%%RC_SUBR%%,${RC_SUBR},g' \
-		-e 's,%%RC_DIR%%,${RC_DIR},g' \
-		-e 's,%%RC_SUFX%%,${RC_SUFX},g'
+SUB_LIST+=	LOCALSTATE_DIR=${LOCALSTATE_DIR} \
+		SYSCONF_DIR=${SYSCONF_DIR}
 
-PLIST_SUB+=	RC_DIR=${RC_DIR} \
-		RC_SUFX=${RC_SUFX} \
-		LOCALSTATE_DIR=${LOCALSTATE_DIR} \
+PLIST_SUB+=	LOCALSTATE_DIR=${LOCALSTATE_DIR} \
+		SYSCONF_DIR=${SYSCONF_DIR} \
 		ENABLE_USER=${ENABLE_USER} \
-		ENABLE_GROUP=${ENABLE_GROUP} \
-		CWD_TRICK=${PREFIX}
+		ENABLE_GROUP=${ENABLE_GROUP}
 
 pre-everything::
 	@${ECHO} "============================================================="
@@ -180,15 +171,9 @@ pre-everything::
 	@${ECHO} "   WITH_TCPSOCKETS       Use TCP/IP sockets for protocol daemons"
 	@${ECHO} "   WITH_TCPMD5           Use experimental MD5 patch for BGP"
 
-post-build:
-	@${SED} ${SED_SCRIPT} ${FILESDIR}/quagga.sh > ${WRKDIR}/quagga.sh
-	@${SED} ${SED_SCRIPT} ${FILESDIR}/watchquagga.sh > ${WRKDIR}/watchquagga.sh
-
 post-install:
 	@${SETENV} ${SCRIPTS_ENV} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	@${ECHO} "===>     installing ${PORTNAME} startup file..."
-	@${INSTALL_SCRIPT} ${WRKDIR}/quagga.sh ${RC_DIR}/quagga${RC_SUFX}
-	@${INSTALL_SCRIPT} ${WRKDIR}/watchquagga.sh ${RC_DIR}/watchquagga${RC_SUFX}
 	@${ECHO} "Add the following lines to /etc/rc.conf to enable quagga:"
 	@${ECHO} ""
 	@${ECHO} "defaultrouter=\"NO\""
@@ -216,6 +201,16 @@ post-install:
 	@${ECHO} "  options FAST_IPSEC"
 	@${ECHO} "  device crypto"
 	@${ECHO} "  device cryptodev"
+	@${ECHO} ""
+.endif
+.if ${OSVERSION} < 500000
+	@${ECHO} "Warning: You are running 4.x version of FreeBSD. To properly start"
+	@${ECHO} "         quagga on your system please rename"
+	@${ECHO} "         ${PREFIX}/etc/rc.d/quagga.sh to something like"
+	@${ECHO} "         ${PREFIX}/etc/rc.d/010.quagga.sh or even You"
+	@${ECHO} "         should write your own startup script and use it with"
+	@${ECHO} "         router_enable=\"YES\""
+	@${ECHO} "         router=\"your_startup_script_here\" in your rc.conf"
 	@${ECHO} ""
 .endif
 
