@@ -14,6 +14,9 @@ MASTER_SITE_SUBDIR=	sobomax
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A library for arbitrary precision arithmetic
 
+DEPRECATED=	"superseded by math/libgmp4"
+EXPIRATION_DATE=	2004-07-01
+
 NO_LATEST_LINK=	yes
 CONFLICTS=	libgmp-4*
 ONLY_FOR_ARCHS=	alpha i386
