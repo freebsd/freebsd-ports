@@ -88,6 +88,9 @@ lib/%%PYTHON_VERSION%%/site-packages/twisted/internet/main.pyo
 lib/%%PYTHON_VERSION%%/site-packages/twisted/internet/passport.py
 lib/%%PYTHON_VERSION%%/site-packages/twisted/internet/passport.pyc
 lib/%%PYTHON_VERSION%%/site-packages/twisted/internet/passport.pyo
+lib/%%PYTHON_VERSION%%/site-packages/twisted/internet/poll.py
+lib/%%PYTHON_VERSION%%/site-packages/twisted/internet/poll.pyc
+lib/%%PYTHON_VERSION%%/site-packages/twisted/internet/poll.pyo
 lib/%%PYTHON_VERSION%%/site-packages/twisted/internet/process.py
 lib/%%PYTHON_VERSION%%/site-packages/twisted/internet/process.pyc
 lib/%%PYTHON_VERSION%%/site-packages/twisted/internet/process.pyo
@@ -407,6 +410,9 @@ lib/%%PYTHON_VERSION%%/site-packages/twisted/test/test_irc.pyo
 lib/%%PYTHON_VERSION%%/site-packages/twisted/test/test_jelly.py
 lib/%%PYTHON_VERSION%%/site-packages/twisted/test/test_jelly.pyc
 lib/%%PYTHON_VERSION%%/site-packages/twisted/test/test_jelly.pyo
+lib/%%PYTHON_VERSION%%/site-packages/twisted/test/test_manhole.py
+lib/%%PYTHON_VERSION%%/site-packages/twisted/test/test_manhole.pyc
+lib/%%PYTHON_VERSION%%/site-packages/twisted/test/test_manhole.pyo
 lib/%%PYTHON_VERSION%%/site-packages/twisted/test/test_observable.py
 lib/%%PYTHON_VERSION%%/site-packages/twisted/test/test_observable.pyc
 lib/%%PYTHON_VERSION%%/site-packages/twisted/test/test_observable.pyo
@@ -554,9 +560,6 @@ lib/%%PYTHON_VERSION%%/site-packages/twisted/words/ui/gtkim.pyo
 lib/%%PYTHON_VERSION%%/site-packages/twisted/words/ui/im.py
 lib/%%PYTHON_VERSION%%/site-packages/twisted/words/ui/im.pyc
 lib/%%PYTHON_VERSION%%/site-packages/twisted/words/ui/im.pyo
-lib/%%PYTHON_VERSION%%/site-packages/twisted/words/ui/im2.py
-lib/%%PYTHON_VERSION%%/site-packages/twisted/words/ui/im2.pyc
-lib/%%PYTHON_VERSION%%/site-packages/twisted/words/ui/im2.pyo
 lib/%%PYTHON_VERSION%%/site-packages/twisted/words/ui/tkim.py
 lib/%%PYTHON_VERSION%%/site-packages/twisted/words/ui/tkim.pyc
 lib/%%PYTHON_VERSION%%/site-packages/twisted/words/ui/tkim.pyo
