@@ -13,10 +13,7 @@ MASTER_SITES=	ftp://egcs.cygnus.com/pub/egcs/releases/%SUBDIR%/  \
 		${MASTER_SITE_SOURCEWARE}
 MASTER_SITE_SUBDIR=	gcc/releases/${PKGNAME}
 DISTFILES=	gcc-core-${GCC_REV}${EXTRACT_SUFX} \
-		gcc-g++-${GCC_REV}${EXTRACT_SUFX} \
-		gcc-g77-${GCC_REV}${EXTRACT_SUFX} \
-		gcc-java-${GCC_REV}${EXTRACT_SUFX} \
-		gcc-objc-${GCC_REV}${EXTRACT_SUFX}
+		gcc-g++-${GCC_REV}${EXTRACT_SUFX}
 
 MAINTAINER=	obrien@FreeBSD.org
 
@@ -41,7 +38,8 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 CONFIGURE_ARGS=	--with-gnu-as --with-gnu-ld \
 		--with-gxx-include-dir=${TARGLIB}/include/g++
-#CONFIGURE_ARGS+=	--program-suffix=-2.95.3
+#CONFIGURE_ARGS+=	--program-suffix=-295
+CONFIGURE_ENV=	MAKEINFO="makeinfo --no-split"
 .if defined(WANT_SHAREDLIBS)
 CONFIGURE_ARGS+= --enable-shared
 .endif
@@ -50,7 +48,7 @@ CONFIGURE_ARGS+= --enable-shared
 CONFIGURE_ARGS+= --enable-threads=posix
 .endif
 ALL_TARGET=	bootstrap
-MAN1=		cccp.1 g++295.1 g77.1 gcc295.1
+MAN1=		cccp.1 g++295.1 gcc295.1
 
 pre-patch:
 	@${MV} ${WRKSRC}/gcc/config/i386/freebsd.h ${WRKSRC}/gcc/config/i386/freebsd-aout.h
@@ -73,33 +71,30 @@ post-install:
 	@${RM} -f ${PREFIX}/bin/c++
 	@${MV} -f ${PREFIX}/bin/c++filt ${PREFIX}/bin/g++filt
 	@(for prog in ${PREFIX}/bin/gcc ${PREFIX}/bin/g++ \
-		${PREFIX}/bin/g++filt ${PREFIX}/bin/g77 ${PREFIX}/bin/gcov \
+		${PREFIX}/bin/g++filt ${PREFIX}/bin/gcov \
 		${PREFIX}/bin/protoize ${PREFIX}/bin/unprotoize \
 		${PREFIX}/bin/${CONFIGURE_TARGET}-gcc \
 		${TARGLIB}/cc1 \
-		${TARGLIB}/cc1obj \
 		${TARGLIB}/cc1plus \
 		${TARGLIB}/cpp0 \
 		${TARGLIB}/collect2 \
-		${TARGLIB}/f771 ; \
-	do \
+	; do \
 		strip $$prog ; \
 	done)
 	${MV} ${PREFIX}/bin/gcc ${PREFIX}/bin/gcc295
 	${MV} ${PREFIX}/bin/g++ ${PREFIX}/bin/g++295
-	${MV} ${PREFIX}/bin/g77 ${PREFIX}/bin/g77
+	${MV} ${PREFIX}/bin/protoize ${PREFIX}/bin/protoize295
+	${MV} ${PREFIX}/bin/unprotoize ${PREFIX}/bin/unprotoize295
 	${MV} ${PREFIX}/bin/g++filt ${PREFIX}/bin/g++filt295
-	${RM} -f ${PREFIX}/bin/cpp
-	${MV} ${PREFIX}/lib/libiberty.a ${TARGLIB}
+	${RM} -f ${PREFIX}/bin/cpp ${PREFIX}/lib/libiberty.a
 	${MV} -f ${PREFIX}/lib/libstdc++.a.${LIBSTDCPP_REV}  \
 		${TARGLIB}/libstdc++.a
 	${MV} ${PREFIX}/man/man1/gcc.1 ${PREFIX}/man/man1/gcc295.1
 	${MV} ${PREFIX}/man/man1/g++.1 ${PREFIX}/man/man1/g++295.1
-	${MV} ${PREFIX}/man/man1/g77.1 ${PREFIX}/man/man1/g77.1
 .if defined(WANT_SHAREDLIBS)
 	${MV} -f ${PREFIX}/lib/libstdc++.so* ${TARGLIB}
 .endif
-.for info in cpp g77 gcc
+.for info in cpp gcc
 	install-info ${PREFIX}/info/${info}.info ${PREFIX}/info/dir
 .endfor
 	cd ${PREFIX} ;\
