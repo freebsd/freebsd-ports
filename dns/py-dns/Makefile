@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	pydns-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	linimon@lonesome.com
+MAINTAINER=	linimon@FreeBSD.org
 COMMENT=	DNS (Domain Name Service) library for Python
 
 USE_PYTHON=	yes

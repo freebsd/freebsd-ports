@@ -14,7 +14,7 @@ CATEGORIES=	net perl5
 # FreeBSD build machines.
 MASTER_SITES=	http://www.lonesome.com/FreeBSD/distfiles/
 
-MAINTAINER=	linimon@lonesome.com
+MAINTAINER=	linimon@FreeBSD.org
 COMMENT=	Utility primarily designed to find the owner of an IP block
 
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Net/DNS.pm:${PORTSDIR}/dns/p5-Net-DNS \
