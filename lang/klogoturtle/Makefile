@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	klogoturtle
-PORTVERSION=	0.4
+PORTVERSION=	0.5
 CATEGORIES=	lang kde
 MASTER_SITES=	http://klogoturtle.sourceforge.net/
 
