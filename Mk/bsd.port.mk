@@ -10,14 +10,13 @@
 # Please view me with 4 column tabs!
 
 # There are two different types of "maintainers" in the whole ports
-# framework concept.  The maintainer of the bsd.port*.mk files
-# is listed below in the ${OPSYS}_MAINTAINER entries (this file
-# is used by multiple *BSD flavors).  You should consult him
-# if you have any questions/suggestions regarding this file.
+# framework concept.  The maintainer alias of the bsd.port.mk file is
+# listed below in the FreeBSD_MAINTAINER entry.  You should consult
+# them if you have any questions/suggestions regarding this file.
 #
 # DO NOT COMMIT CHANGES TO THIS FILE BY YOURSELF!
 
-FreeBSD_MAINTAINER=	asami@FreeBSD.org
+FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 
 # For each port, the MAINTAINER variable is what you should consult for
 # contact information on the person(s) to contact if you have questions/
@@ -771,7 +770,7 @@ USE_NEWGCC=	yes
 .endif
 
 .if defined(USE_QT2)
-LIB_DEPENDS+=	qt2.4:${PORTSDIR}/x11-toolkits/qt22
+LIB_DEPENDS+=	qt2.4:${PORTSDIR}/x11-toolkits/qt23
 USE_NEWGCC=	yes
 .endif
 
@@ -947,6 +946,14 @@ MD5_FILE?=		${MASTERDIR}/distinfo
 MAKE_FLAGS?=	-f
 MAKEFILE?=		Makefile
 MAKE_ENV+=		PREFIX=${PREFIX} LOCALBASE=${LOCALBASE} X11BASE=${X11BASE} MOTIFLIB="${MOTIFLIB}" LIBDIR="${LIBDIR}" CFLAGS="${CFLAGS}" CXXFLAGS="${CXXFLAGS}"
+
+.if ${OSVERSION} < 500016
+PTHREAD_CFLAGS=	-D_THREAD_SAFE
+PTHREAD_LIBS=		"-pthread"
+.else
+PTHREAD_CFLAGS=	""
+PTHREAD_LIBS=		"-lc_r"
+.endif
 
 .if exists(/usr/bin/fetch)
 # avoid -A for 2.2 -- it's not ported to that branch
@@ -1224,10 +1231,10 @@ VALID_CATEGORIES+=	afterstep archivers astro audio benchmarks biology \
 	hebrew ipv6 irc japanese java kde korean lang linux \
 	mail math mbone misc net news \
 	offix palm perl5 plan9 print python ruby russian \
-	security shells sysutils \
+	science security shells sysutils \
 	tcl76 tcl80 tcl81 tcl82 tcl83 textproc \
 	tk42 tk80 tk82 tk83 tkstep80 \
-	vietnamese windowmaker www \
+	ukrainian vietnamese windowmaker www \
 	x11 x11-clocks x11-fm x11-fonts x11-servers x11-toolkits x11-wm zope
 check-categories:
 .for cat in ${CATEGORIES}
