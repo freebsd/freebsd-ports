@@ -12,10 +12,10 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 .if !defined(WITHOUT_OPENSSL)
-PATCH_SITES=		${MASTER_SITE_LOCAL} \
+PATCH_SITES+=		${MASTER_SITE_LOCAL} \
 			http://people.FreeBSD.org/~marcus/
-PATCH_SITE_SUBDIR=	marcus
-PATCHFILES=		${DISTNAME}-openssl.patch.gz
+PATCH_SITE_SUBDIR+=	marcus
+PATCHFILES+=		${DISTNAME}-openssl.patch.gz
 PATCH_DIST_STRIP=	-p1
 .endif
 
@@ -23,6 +23,8 @@ MAINTAINER?=	marcus@FreeBSD.org
 COMMENT=	Gtk+-2.0 open-source 'clone' of AOL's Instant Messenger client
 
 LIB_DEPENDS=	startup-notification-1.0:${PORTSDIR}/x11/startup-notification
+
+CONFLICTS?=	ja-gaim-*
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
