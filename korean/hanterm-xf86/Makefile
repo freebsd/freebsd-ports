@@ -1,13 +1,13 @@
 # New ports collection makefile for:	hanterm-xf86
-# Version required:     hanterm-xf331-p11a
+# Version required:     hanterm-xf331-p12
 # Date created:		22 Mar 1997
 # Whom:			CHOI Junho <junker@jazz.snu.ac.kr>
 #
-# $Id: Makefile,v 1.2 1997/09/22 16:21:51 max Exp $
+# $Id: Makefile,v 1.3 1998/03/16 07:29:00 steve Exp $
 #
 
-DISTNAME=	hanterm-xf331-p11a
-PKGNAME=	ko-hanterm-xf-3.3.1.11a
+DISTNAME=	hanterm-xf331-p12
+PKGNAME=	ko-hanterm-xf-3.3.1.12
 CATEGORIES=	korean x11
 MASTER_SITES=	ftp://ftp.kaist.ac.kr/pub/hangul/incoming/
 
@@ -15,11 +15,9 @@ MAINTAINER=	junker@jazz.snu.ac.kr
 
 RUN_DEPENDS=	${PREFIX}/lib/X11/fonts/korean/johab:${PORTSDIR}/korean/johabfonts
 
-WRKSRC=		${WRKDIR}/hanterm-xf331-p11
-
-USE_X11=	yes
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-x --build=i386--freebsd --prefix=${PREFIX}
+USE_X11=		yes
+GNU_CONFIGURE=		yes
+CONFIGURE_ARGS=		--with-x --build=i386--freebsd --prefix=${PREFIX}
 NO_INSTALL_MANPAGES=	yes
 
 post-install:
