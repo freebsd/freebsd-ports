@@ -7,18 +7,14 @@
 
 PORTNAME=	kde
 PORTVERSION=	3.11.3
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits kde python
 MASTER_SITES=	http://www.river-bank.demon.co.uk/download/PyKDE2/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	PyKDE-${PORTVERSION}
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	danny@ricin.com
 COMMENT=	Python Bindings for KDE3
-
-BROKEN=		"Does not compile with KDE >= 3.3.1"
-EXPIRATION_DATE=2005-02-18
-DEPRECATED=	"${BROKEN}"
 
 BUILD_DEPENDS=	pyuic:${PORTSDIR}/x11-toolkits/py-qt
 RUN_DEPENDS=	${BUILD_DEPENDS}
@@ -32,10 +28,21 @@ EXAMPLESDIR=	${PREFIX}/share/examples/${PKGBASE}
 
 NO_FILTER_SHLIBS=	yes
 
+MODULES=	kdecore kdefx kdeui kio kfile kparts kspell kdeprint kmdi
+
 .include <bsd.port.pre.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -e 's#/usr/bin/python#${PYTHON_CMD}#' ${WRKSRC}/postproc
+	@( cd ${WRKSRC} && \
+		ver=`${ECHO} ${KDE_VERSION} | ${SED} -e 's/\.//g'` && \
+		if [ "$${ver}" -gt "330" ]; then \
+			( ${MV} extra/kde330 extra/kde$${ver} && \
+			for i in ${MODULES}; do \
+				${MV} sip/$${i}/$${i}-kde330.diff \
+					sip/$${i}/$${i}-kde$${ver}.diff; \
+			done ) \
+		fi )
 
 do-configure:
 	@( cd ${WRKSRC} && ${PYTHON_CMD} configure.py -c \
