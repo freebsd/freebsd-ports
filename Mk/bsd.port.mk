@@ -9,6 +9,10 @@
 #
 # Please view me with 4 column tabs!
 
+# This is the master file for the most common elements to all port
+# Makefile in the ports system.  For a more general overview of its
+# use and importance, see the Porter's Handbook.
+
 # There are two different types of "maintainers" in the ports framework.
 # The maintainer alias of the bsd.port.mk file is listed below in the
 # FreeBSD_MAINTAINER entry.  You should consult them if you have any
@@ -30,7 +34,8 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  (default: ports@FreeBSD.org).
 #
 # These are meta-variables that are automatically set to the system
-# you are running on.
+# you are running on.  These are provided in case you need to take
+# different actions for different values.
 # 
 # ARCH			- The architecture, as returned by "uname -p".
 # OPSYS			- Portability clause.  This is the operating system the
@@ -40,12 +45,27 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # OSVERSION		- The value of __FreeBSD_version.
 # PORTOBJFORMAT	- The object format ("aout" or "elf").
 #
+# This is the beginning of the list of all variables that need to be
+# defined in a port, listed in order that they should be included
+# to fit in with existing conventions.  (Exception: MAINTAINER actually
+# should appear after EXTRACT_ONLY and before MASTER_SITE_BACKUP).
+#
 # These variables are used to identify your port.
 #
-# PORTNAME		- Name of software.
-# PORTVERSION	- Version of software.
+# PORTNAME		- Name of software.  Mandatory.
+# PORTVERSION	- Version of software.  Mandatory.
+# PORTREVISION	- Version of port.  Optional.  Commonly used to indicate
+#				  that an update has happened that affects the port
+#				  framework itself, but not the distributed software
+#				  (e.g., local patches or Makefile changes).
+# PORTEPOCH		- Optional.  In certain odd cases, the PORTREVISION logic
+#				  can be fooled by ports that appear to go backwards
+#				  numerically (e.g. if port-0.3 is newer than port-1998).
+#				  In this case, incrementing PORTEPOCH forces the revision.
+#				  Default: 0 (no effect).
 # PKGNAMEPREFIX	- Prefix to specify that port is language-specific, etc.
-# PKGNAMESUFFIX	- Suffix to specify compilation options.
+#				  Optional.
+# PKGNAMESUFFIX	- Suffix to specify compilation options.  Optional.
 # PKGNAME		- Always defined as
 #				  ${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}.
 #				  Do not define this in your Makefile.
@@ -53,6 +73,7 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  WRKSRC and DISTFILES below (default:
 #				  ${PORTNAME}-${PORTVERSION}).
 # CATEGORIES	- A list of descriptive categories into which this port falls.
+#				  Mandatory.
 #
 # These variable describe how to fetch files required for building the port.
 #
@@ -63,7 +84,12 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  is set, .zip if USE_ZIP is set, .tar.gz otherwise).  
 #				  You never have to set both DISTFILES and EXTRACT_SUFX.
 # MASTER_SITES	- Primary location(s) for distribution files if not found
-#				  locally.
+#				  locally.  See bsd.sites.mk for common choices for
+#				  MASTER_SITES.
+# MASTER_SITE_SUBDIR	- Subdirectory of MASTER_SITES (default: empty).
+#				  Will sometimes need to be set to ${PORTNAME} for (e.g.)
+#				  MASTER_SITE_SOURCEFORGE.  Only guaranteed to work for 
+#				  choices of ${MASTER_SITES} defined in bsd.sites.mk.
 # PATCHFILES	- Name(s) of additional files that contain distribution
 #				  patches (default: none).  make will look for them at
 #				  PATCH_SITES (see below).  They will automatically be
@@ -71,18 +97,21 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  ".gz", ".bz2" or ".Z".
 # PATCH_SITES	- Primary location(s) for distribution patch files
 #				  if not found locally.
-# DIST_SUBDIR	- Suffix to ${DISTDIR}.  If set, all ${DISTFILES} 
-#				  and ${PATCHFILES} will be put in this subdirectory of
-#				  ${DISTDIR} (see below).  Also they will be fetched in
-#				  this subdirectory from FreeBSD mirror sites.
+# DIST_SUBDIR	- Suffix to ${DISTDIR} (default: none).  If set, all
+#				  ${DISTFILES} and ${PATCHFILES} will be put in this
+#				  subdirectory of ${DISTDIR} (see below).  Also they will
+#				  be fetched in this subdirectory from FreeBSD mirror sites.
 # ALLFILES		- All of ${DISTFILES} and ${PATCHFILES}.
 # IGNOREFILES	- If some of the ${ALLFILES} are not checksum-able, set
-#				  this variable to their names.
+#				  this variable to their names (default: empty).
 # EXTRACT_ONLY	- If defined, a subset of ${DISTFILES} you want to
-#			  	  actually extract.
+#			  	  actually extract (default: none).
+#
+# (NOTE: by convention, the MAINTAINER entry (see above) should go here.)
 #
 # These variables are typically set in /etc/make.conf to indicate
-# the user's preferred location to fetch files from.
+# the user's preferred location to fetch files from.  You should
+# rarely need to set these.
 #
 # MASTER_SITE_BACKUP - Backup location(s) for distribution files and patch
 #				  files if not found locally and ${MASTER_SITES}/${PATCH_SITES}
@@ -127,27 +156,30 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  (default: "${DISTFILES} ${PATCHFILES}" if RESTRICTED
 #				  or NO_CDROM is set, empty otherwise).
 #
-# This variable is a boolean, so you don't need to set it to the reason.
+# These variables are booleans, so you don't need to set them to the reason.
 #
 # IS_INTERACTIVE - Set this if your port needs to interact with the user
 #				  during any step in a package build.  User can then decide
 #				  to skip this port by setting ${BATCH}, or compiling only
 #				  the interactive ports by setting ${INTERACTIVE}.
+#				  (Default: not set.)
 # USE_SUBMAKE	- Set this if you want that each of the port's main 6 targets
 #				  (extract, patch, configure, build, install and package) to be
 #				  executed in a separate make(1) process. Useful when one of
 #				  the stages needs to influence make(1) variables of the later
 #				  stages using ${WRKDIR}/Makefile.inc generated on the fly.
+#				  (Default: not set.)
 #
 # Set these if your port only makes sense to certain architectures.
 # They are lists containing names for them (e.g., "alpha i386").
+# (Defaults: not set.)
 #
 # ONLY_FOR_ARCHS - Only build ports if ${ARCH} matches one of these.
 # NOT_FOR_ARCHS  - Only build ports if ${ARCH} doesn't match one of these.
 #
 # Use these if your port uses some of the common software packages. By
 # convention these should be set to 'yes', although they only need to be
-# defined.
+# defined.  (Defaults: not set, unless explicitly indicated below.)
 #
 # USE_BZIP2		- Says that the port tarballs use bzip2, not gzip, for
 #				  compression.
@@ -242,6 +274,7 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  USE_AUTOCONF is set, "configure" otherwise).
 # LIBTOOLFLAGS	- Additional flags to pass to ltconfig
 #				  (default: --disable-ltlibs)
+##
 # USE_PERL5		- Says that the port uses perl5 for building and running.
 # USE_PERL5_BUILD	- Says that the port uses perl5 for building.
 # USE_PERL5_RUN		- Says that the port uses perl5 for running.
@@ -262,18 +295,83 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  (value: ${ARCH}-freebsd).
 # SITE_PERL		- Directory name where site specific perl packages go.
 #					This value is added to PLIST_SUB.
+##
 # USE_BISON		- Says that the port uses bison for building.
+##
 # USE_IMAKE		- Says that the port uses imake.  Implies USE_X_PREFIX.
 # XMKMF			- Set to path of `xmkmf' if not in $PATH (default: xmkmf -a ).
-# NO_INSTALL_MANPAGES - For imake ports that don't like the install.man
-#						target.
 # USE_X_PREFIX	- Says that the port installs in ${X11BASE}.  Implies USE_XLIB.
-# USE_XLIB		- Says that the port uses X libraries.
+# USE_XLIB		- Says that the port uses the X libraries.
+#
+# USE_DGS		- Says that the port uses the dgs X11 libraries.
+# USE_FREETYPE	- Says that the port uses the freetype print libraries.
+# USE_MESA		- Says that the port uses the Mesa libraries.
 # USE_MOTIF		- Says that the port uses the Motif toolkit.  Implies USE_XPM.
+# USE_XPM		- Says that the port uses the xpm graphics libraries.
+##
+# USE_OPENSSL	- Says that the port relies on the OpenSSL package.
+#				  Default: not set.
+##
+# USE_JAVA		- Says that the port relies on the Java language.
+#				  Implies inclusion of bsd.java.mk.  (Also see
+#				  that file for more information on USE_JAVA_*).
+#				  Default: not set.
+# USE_PYTHON	- Says that the port relies on the Python language.
+#				  Implies inclusion of bsd.python.mk. (Also see
+#				  that file for more information on USE_PYTHON_*
+#				  and USE_PYDISTUTILS).
+#				  Default: not set.
+# USE_RUBY		- Says that the port relies on the Ruby language.
+#				  Implies inclusion of bsd.ruby.mk.  (Also see
+#				  that file for more information on USE_RUBY_*).
+#				  Default: not set.
+##
+# USE_GNOME		- A list of the Gnome dependencies the port has (e.g.,
+#				  glib12, gtk12).  Implies that the port needs Gnome.
+#				  Implies inclusion of bsd.gnome.mk or bsd.gnomeng.mk.
+#				  (Also see those files for more information about
+#				  USE_GNOMELIBS, USE_GLIB, and USE_GTK).
+#				  Default: not set.
+# USE_GNOMENG	- Set to yes to use bsd.gnomeng.mk, otherwise, the
+#				  older bsd.gnome.mk is used.  The former is preferred
+#				  for new work.  Meaningless without USE_GNOME.
+#				  Default: not set.
+#
+# USE_KDEBASE_VER	- Set to either 2 or 3 to use the KDE windowing system.
+#					  (Only 3 is currently supported).  Implies inclusion
+#					  of bsd.kde.mk.  Default: not set.
+# USE_KDELIBS_VER	- Set to either 2 or 3 to use the KDE libraries.
+#					  (Only 3 is currently supported).  Implies inclusion
+#					  of bsd.kde.mk.  Default: not set.
+# USE_QT_VER		- Set to either 2 or 3 to use the QT libraries.
+#					  (Only 3 is currently supported).  Implies inclusion
+#					  of bsd.kde.mk.  Default: not set.
+#
+# USE_LINUX			- Set to yes to say the port needs emulators/linux_base.
+#					  Default: not set.
+# USE_LINUX_PREFIX	- controls the action of PREFIX (see above).
 #
 # Dependency checking.  Use these if your port requires another port
-# not in the list above.
+# not in the list above.  (Default: empty.)
 #
+# EXTRACT_DEPENDS - A list of "path:dir[:target]" tuples of other ports this
+#				  package depends on in the "extract" stage.  "path" is
+#				  the name of a file if it starts with a slash (/), an
+#				  executable otherwise.  make will test for the existence
+#				  (if it is a full pathname) or search for it in your
+#				  $PATH (if it is an executable) and go into "dir" to do
+#				  a "make all install" if it's not found.  If the third
+#				  field ("target") exists, it will be used instead of
+#				  ${DEPENDS_TARGET}.
+# PATCH_DEPENDS - A list of "path:dir[:target]" tuples of other ports this
+#				  package depends on in the "patch" stage.  "path" is the
+#				  name of a file if it starts with a slash (/), an
+#				  executable otherwise.  make will test for the existence
+#				  (if it is a full pathname) or search for it in your
+#				  $PATH (if it is an executable) and go into "dir" to do
+#				  a "make all install" if it's not found.  If the third
+#				  field ("target") exists, it will be used instead of
+#				  ${DEPENDS_TARGET}.
 # FETCH_DEPENDS - A list of "path:dir[:target]" tuples of other ports this
 #				  package depends in the "fetch" stage.  "path" is the
 #				  name of a file if it starts with a slash (/), an
@@ -349,10 +447,19 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # Variables that serve as convenient "aliases" for your *-install targets.
 # Use these like: "${INSTALL_PROGRAM} ${WRKSRC}/prog ${PREFIX}/bin".
 #
-# INSTALL_PROGRAM - A command to install binary executables.
-# INSTALL_SCRIPT - A command to install executable scripts.
-# INSTALL_DATA	- A command to install sharable data.
-# INSTALL_MAN	- A command to install manpages (doesn't compress).
+# INSTALL_PROGRAM - A command to install binary executables.  (By
+#					default, also strips them, unless ${STRIP} is
+#					overridden to be the empty string).
+# INSTALL_SCRIPT  - A command to install executable scripts.
+# INSTALL_DATA	  - A command to install sharable data.
+# INSTALL_MAN	  - A command to install manpages.  May or not compress,
+#					depending on the value of MANCOMPRESSED (see below).
+#
+# Boolean to control whether manpages are installed.
+#
+# NO_INSTALL_MANPAGES - Says that the port doesn't want to install any
+#						manpages (default: not set, i.e. manpages
+#						are installed by default).
 #
 # Set the following to specify all manpages that your port installs.
 # These manpages will be automatically listed in ${PLIST}.  Depending
@@ -390,6 +497,11 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  for port and dependencies into ${DISTDIR} as necessary.
 # fetch-recursive-list  - Show list of files that would be retrieved by
 #				  fetch-recursive.
+# fetch-required-list - Show list of files that would be retrieved by
+#				  fetch-required.
+# fetch-required - Retrieves ${DISTFILES} (and ${PATCHFILES} if defined),
+#				  for port and dependencies that are not already installed
+#				  into ${DISTDIR}.
 # extract		- Unpacks ${DISTFILES} into ${WRKDIR}.
 # patch			- Apply any provided patches to the source.
 # configure		- Runs either GNU configure, one or more local configure
@@ -413,7 +525,7 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #
 # Default sequence for "all" is:  fetch checksum extract patch configure build
 #
-# Please read the comments in the targets section below, you
+# Please read the comments in the targets section below; you
 # should be able to use the pre-* or post-* targets/scripts
 # (which are available for every stage except checksum) or
 # override the do-* targets to do pretty much anything you want.
@@ -499,6 +611,7 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #
 # For build and install:
 #
+# MAKEFILE		- Name of the makefile (default: Makefile).
 # ALL_TARGET	- Default target for sub-make in build stage (default: all).
 # BUILD_WRKSRC  - Directory to do build in (default: ${WRKSRC}).
 # MAKE_ENV		- Additional environment vars passed to sub-make in build
@@ -580,6 +693,12 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  when you noticed the distfile you just fetched has
 #				  a different checksum and you intend to verify if
 #				  the port still works with it.
+# USE_PACKAGE_DEPENDS - Install dependencies from existing packages instead
+#				  of building the port from scratch.
+#
+# End of the list of all variables that need to be defined in a port.
+# Most port authors should not need to understand anything after this point.
+#
 
 # Start of pre-makefile section.
 .if !defined(AFTERPORTMK)
@@ -938,15 +1057,18 @@ MANCOMPRESSED?=	no
 
 .if defined(PATCHFILES)
 .if ${PATCHFILES:M*.bz2}x != x
-HAVE_BZIP2_PATCHES=	yes
+PATCH_DEPENDS+=		bzip2:${PORTSDIR}/archivers/bzip2
+.endif
+.if ${PATCHFILES:M*.zip}x != x
+PATCH_DEPENDS+=		unzip:${PORTSDIR}/archivers/unzip
 .endif
 .endif
 
-.if (defined(USE_BZIP2) || defined(HAVE_BZIP2_PATCHES)) && !exists(/usr/bin/bzip2)
-BUILD_DEPENDS+=		bzip2:${PORTSDIR}/archivers/bzip2
+.if defined(USE_BZIP2) && !exists(/usr/bin/bzip2)
+EXTRACT_DEPENDS+=	bzip2:${PORTSDIR}/archivers/bzip2
 .endif
 .if defined(USE_ZIP)
-BUILD_DEPENDS+=		unzip:${PORTSDIR}/archivers/unzip
+EXTRACT_DEPENDS+=	unzip:${PORTSDIR}/archivers/unzip
 .endif
 .if defined(USE_GMAKE)
 BUILD_DEPENDS+=		gmake:${PORTSDIR}/devel/gmake
@@ -1213,6 +1335,7 @@ PLIST_SUB+=		PERL_VERSION=${PERL_VERSION} \
 
 .if defined(PERL_CONFIGURE)
 USE_PERL5=	yes
+USE_REINPLACE=yes
 .endif
 
 .if exists(/usr/bin/perl5) && ${OSVERSION} >= 300000 && ${OSVERSION} < 500036
@@ -1452,6 +1575,7 @@ PKGORIGIN?=		${PKGCATEGORY}/${PORTDIRNAME}
 .endif
 
 PKG_CMD?=		/usr/sbin/pkg_create
+PKG_ADD?=	/usr/sbin/pkg_add
 PKG_DELETE?=	/usr/sbin/pkg_delete
 PKG_INFO?=		/usr/sbin/pkg_info
 .if !defined(PKG_ARGS)
@@ -1968,6 +2092,7 @@ PKGLATESTFILE=		${PKGLATESTREPOSITORY}/${LATEST_LINK}${PKG_SUFX}
 CONFIGURE_ARGS+=	CC="${CC}" CCFLAGS="${CFLAGS}" PREFIX="${PREFIX}" \
 			INSTALLPRIVLIB="${PREFIX}/lib" INSTALLARCHLIB="${PREFIX}/lib"
 CONFIGURE_SCRIPT?=	Makefile.PL
+MAN3PREFIX?=		${PREFIX}/lib/perl5/${PERL_VERSION}
 .undef HAS_CONFIGURE
 .endif
 
@@ -2596,6 +2721,8 @@ do-configure:
 	@cd ${CONFIGURE_WRKSRC} && \
 		${SETENV} ${CONFIGURE_ENV} \
 		${PERL5} ./${CONFIGURE_SCRIPT} ${CONFIGURE_ARGS}
+	@cd ${CONFIGURE_WRKSRC} && \
+		${REINPLACE_CMD} -e 's/perllocal.pod/&-${PORTNAME}/' Makefile
 .endif
 .if defined(USE_IMAKE)
 	@(cd ${CONFIGURE_WRKSRC}; ${SETENV} ${MAKE_ENV} ${XMKMF})
@@ -2796,7 +2923,7 @@ security-check:
 		stupid_functions_regexp=' (gets|mktemp|tempnam|tmpnam)$$'; \
 	fi; \
 	for i in `${GREP} -v '^@' ${TMPPLIST}`; do \
-		if [ ! -L ${PREFIX}/$$i -a -f ${PREFIX}/$$i ]; then \
+		if [ ! -L "${PREFIX}/$$i" -a -f "${PREFIX}/$$i" ]; then \
 			/usr/bin/objdump -R ${PREFIX}/$$i > \
 				${WRKDIR}/.PLIST.objdump 2> /dev/null; \
 			if [ -s ${WRKDIR}/.PLIST.objdump ] ; then \
@@ -2877,16 +3004,16 @@ security-check:
 _FETCH_SEQ=		pre-everything fetch-depends pre-fetch pre-fetch-script \
 				do-fetch post-fetch post-fetch-script
 _EXTRACT_DEP=	fetch
-_EXTRACT_SEQ=	extract-message checksum build-depends lib-depends \
-				misc-depends pre-extract pre-extract-script do-extract \
+_EXTRACT_SEQ=	extract-message checksum extract-depends pre-extract \
+				pre-extract-script do-extract \
 				post-extract post-extract-script
 _PATCH_DEP=		extract
-_PATCH_SEQ=		patch-message pre-patch pre-patch-script do-patch \
-				post-patch post-patch-script
+_PATCH_SEQ=		patch-message patch-depends pre-patch pre-patch-script \
+				do-patch post-patch post-patch-script
 _CONFIGURE_DEP=	patch
-_CONFIGURE_SEQ=	configure-message patch-libtool pre-configure \
-				pre-configure-script do-configure post-configure \
-				post-configure-script
+_CONFIGURE_SEQ=	configure-message patch-libtool build-depends lib-depends \
+				misc-depends pre-configure pre-configure-script \
+				do-configure post-configure post-configure-script
 _BUILD_DEP=		configure
 _BUILD_SEQ=		build-message pre-build pre-build-script do-build \
 				post-build post-build-script
@@ -3219,7 +3346,7 @@ fetch-list:
 .if !target(makesum)
 makesum:
 	@cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} fetch NO_CHECKSUM=yes
-	@if [ -f ${MD5_FILE} ]; then ${RM} -f ${MD5_FILE}; fi
+	@if [ -f ${MD5_FILE} ]; then ${CAT} /dev/null > ${MD5_FILE}; fi
 	@(cd ${DISTDIR}; \
 	 for file in ${_CKSUMFILES}; do \
 		${MD5} $$file >> ${MD5_FILE}; \
@@ -3313,7 +3440,7 @@ package-noinstall:
 ################################################################
 
 .if !target(depends)
-depends: lib-depends misc-depends fetch-depends build-depends run-depends
+depends: extract-depends patch-depends lib-depends misc-depends fetch-depends build-depends run-depends
 
 .if defined(ALWAYS_BUILD_DEPENDS)
 _DEPEND_ALWAYS=	1
@@ -3321,7 +3448,7 @@ _DEPEND_ALWAYS=	1
 _DEPEND_ALWAYS=	0
 .endif
 
-.for deptype in FETCH BUILD RUN
+.for deptype in EXTRACT PATCH FETCH BUILD RUN
 ${deptype:L}-depends:
 .if defined(${deptype}_DEPENDS)
 .if !defined(NO_DEPENDS)
@@ -3368,6 +3495,15 @@ ${deptype:L}-depends:
 				${ECHO_MSG} "     >> No directory for $$prog.  Skipping.."; \
 			else \
 				(cd $$dir; ${MAKE} -DINSTALLS_DEPENDS $$target $$depends_args) ; \
+				if [ X${USE_PACKAGE_DEPENDS} != "X" ]; then \
+					subpkgfile=`(cd $$dir; ${MAKE} $$depends_args -V PKGFILE)`; \
+					if [ -r "$${subpkgfile}" ]; then \
+						${ECHO_MSG} "===>   Installing existing package $${subpkgfile}"; \
+						${PKG_ADD} $${subpkgfile}; \
+					fi; \
+				else \
+					(cd $$dir; ${MAKE} -DINSTALLS_DEPENDS $$target $$depends_args) ; \
+				fi ; \
 				${ECHO_MSG} "===>   Returning to build of ${PKGNAME}"; \
 			fi; \
 		fi; \
@@ -3458,7 +3594,7 @@ all-depends-list:
 
 ALL-DEPENDS-LIST= \
 	checked="${PARENT_CHECKED}"; \
-	for dir in $$(${ECHO_CMD} "${FETCH_DEPENDS} ${BUILD_DEPENDS} ${LIB_DEPENDS} ${RUN_DEPENDS}" | ${TR} '\040' '\012' | ${SED} -e 's/^[^:]*://' -e 's/:.*//') $$(${ECHO_CMD} ${DEPENDS} | ${TR} '\040' '\012' | ${SED} -e 's/:.*//'); do \
+	for dir in $$(${ECHO_CMD} "${EXTRACT_DEPENDS} ${PATCH_DEPENDS} ${FETCH_DEPENDS} ${BUILD_DEPENDS} ${LIB_DEPENDS} ${RUN_DEPENDS}" | ${TR} '\040' '\012' | ${SED} -e 's/^[^:]*://' -e 's/:.*//') $$(${ECHO_CMD} ${DEPENDS} | ${TR} '\040' '\012' | ${SED} -e 's/:.*//'); do \
 		if [ -d $$dir ]; then \
 			if (${ECHO_CMD} $$checked | ${GREP} -qwv "$$dir"); then \
 				child=$$(cd $$dir; ${MAKE} PARENT_CHECKED="$$checked" all-depends-list); \
@@ -3500,6 +3636,29 @@ fetch-recursive-list:
 	done
 .endif
 
+.if !target(fetch-required)
+fetch-required:
+	@${ECHO_MSG} "===> Fetching all required distfiles for ${PKGNAME} and dependencies"
+	@for dir in ${.CURDIR} $$(${ALL-DEPENDS-LIST}); do \
+		(cd $$dir; \
+		tmp=`${MAKE} -V PKGNAME`; \
+		if [ ! -d ${PKG_DBDIR}/$${tmp} ]; then \
+			${MAKE} fetch; \
+		fi );  \
+	done
+.endif
+
+.if !target(fetch-required-list)
+fetch-required-list:
+	@for dir in ${.CURDIR} $$(${ALL-DEPENDS-LIST}); do \
+		(cd $$dir; \
+		tmp=`${MAKE} -V PKGNAME`; \
+		if [ ! -d ${PKG_DBDIR}/$${tmp} ]; then \
+			${MAKE} fetch-list; \
+		fi );  \
+	done
+.endif
+
 .if !target(checksum-recursive)
 checksum-recursive:
 	@${ECHO_MSG} "===> Fetching and checking checksums for ${PKGNAME} and dependencies"
@@ -3514,7 +3673,7 @@ build-depends-list:
 	@${BUILD-DEPENDS-LIST}
 
 BUILD-DEPENDS-LIST= \
-	for dir in $$(${ECHO_CMD} "${FETCH_DEPENDS} ${BUILD_DEPENDS} ${LIB_DEPENDS}" | ${TR} '\040' '\012' | ${SED} -e 's/^[^:]*://' -e 's/:.*//' | sort -u) $$(${ECHO_CMD} ${DEPENDS} | ${TR} '\040' '\012' | ${SED} -e 's/:.*//' | sort -u); do \
+	for dir in $$(${ECHO_CMD} "${EXTRACT_DEPENDS} ${PATCH_DEPENDS} ${FETCH_DEPENDS} ${BUILD_DEPENDS} ${LIB_DEPENDS}" | ${TR} '\040' '\012' | ${SED} -e 's/^[^:]*://' -e 's/:.*//' | sort -u) $$(${ECHO_CMD} ${DEPENDS} | ${TR} '\040' '\012' | ${SED} -e 's/:.*//' | sort -u); do \
 		if [ -d $$dir ]; then \
 			${ECHO_CMD} $$dir; \
 		else \
@@ -3610,7 +3769,7 @@ describe: generate-commentfile
 			print q{|/dev/null}; \
 		} \
 		print q{|${MAINTAINER}|${CATEGORIES}|}; \
-		@bdirs = map((split /:/)[1], split(q{ }, q{${FETCH_DEPENDS} ${BUILD_DEPENDS}})); \
+		@bdirs = map((split /:/)[1], split(q{ }, q{${EXTRACT_DEPENDS} ${PATCH_DEPENDS} ${FETCH_DEPENDS} ${BUILD_DEPENDS}})); \
 		@rdirs = map((split /:/)[1], split(q{ }, q{${RUN_DEPENDS}})); \
 		@mdirs = ( \
 			map((split /:/)[0], split(q{ }, q{${DEPENDS}})), \
@@ -3689,7 +3848,8 @@ ${.CURDIR}/README.html:	generate-commentfile
 
 .if !target(pretty-print-build-depends-list)
 pretty-print-build-depends-list:
-.if defined(FETCH_DEPENDS) || defined(BUILD_DEPENDS) || \
+.if defined(EXTRACT_DEPENDS) || defined(PATCH_DEPENDS) || \
+	defined(FETCH_DEPENDS) || defined(BUILD_DEPENDS) || \
 	defined(LIB_DEPENDS) || defined(DEPENDS)
 	@${ECHO_CMD} -n 'This port requires package(s) "'
 	@${ECHO_CMD} -n `${GREP} '^${PKGNAME}|' ${PORTSDIR}/${INDEXFILE} | awk -F\| '{print $$8;}'`
