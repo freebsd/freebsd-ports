@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tmda
-PORTVERSION=	0.86
+PORTVERSION=	0.87
 CATEGORIES=	mail python
 MASTER_SITES=	http://www.tmda.net/releases/%SUBDIR%/ \
 		http://www.us.tmda.net/releases/%SUBDIR%/ \
@@ -25,7 +25,7 @@ COMMENT=	Python-based SPAM reduction system
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/cdbmodule.so:${PORTSDIR}/databases/py-cdb
 .endif
 
-USE_PYTHON=	yes
+USE_PYTHON=	2.1+
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
@@ -35,12 +35,6 @@ SCRIPTS=	collectaddys def2html printcdb printdbm sendit.sh \
 	 	smtp-check-sender tofmipd.init tofmipd.sysconfig \
 		update-internaldomains vadduser-tmda vmailmgr-vdir.sh \
 		vpopmail-vdir.sh wrapfd3.sh
-
-.include <bsd.port.pre.mk>
-
-.if ${PYTHON_REL} < 210
-BROKEN=		"TMDA requries Python 2.1 or greater"
-.endif
 
 do-build:
 	cd ${WRKSRC} && ${PYTHON_CMD} ./compileall
@@ -65,4 +59,4 @@ do-install:
 	       > ${PKGMESSAGE}
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
