@@ -93,6 +93,7 @@
     SUBDIR += mgp-mode.el
     SUBDIR += mmv
     SUBDIR += most
+    SUBDIR += moviedb
     SUBDIR += mshell
     SUBDIR += muuz
     SUBDIR += numchar

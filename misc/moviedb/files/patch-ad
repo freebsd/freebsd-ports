@@ -1,0 +1,10 @@
+--- dbs/Makefile.orig	Mon Mar  8 14:26:31 1999
++++ dbs/Makefile	Tue Aug 15 01:25:10 2000
+@@ -328,6 +328,7 @@
+ 	-[ -s genres.data ] && $(ZDBSCOMPRESS) genres.data	
+ 	-[ -s keywords.data ] && $(ZDBSCOMPRESS) keywords.data	
+ 	-[ -s goofs.data ] && $(ZDBSCOMPRESS) goofs.data	
++	-[ -s language.data ] && $(ZDBSCOMPRESS) language.data
+ 	-[ -s laserdisc.data ] && $(ZDBSCOMPRESS) laserdisc.data	
+ 	-[ -s literature.data ] && $(ZDBSCOMPRESS) literature.data	
+ 	-[ -s locations.data ] && $(ZDBSCOMPRESS) locations.data	

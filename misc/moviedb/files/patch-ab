@@ -1,0 +1,22 @@
+--- etc/lfetch.orig	Sun Mar  7 20:23:33 1999
++++ etc/lfetch	Sun Aug 13 19:33:32 2000
+@@ -80,8 +80,8 @@
+ #
+ ftpcmd=ftp                           # ftp command (eg ftp, gate-ftp)
+ ftpopts="-i -n -v"                   # ftp options 
+-ftphost=uiarchive.cso.uiuc.edu       # ftp host
+-ftpdir=pub/info/imdb                 # lists directory on host
++ftphost=ftp.imdb.com                 # ftp host
++ftpdir=pub/interfaces                # lists directory on host
+ ftpuser=anonymous                    # ftp userid
+ #
+ #-----------------------------------------------------------------------------
+@@ -91,7 +91,7 @@
+ # temporary files
+ if [ -z "$MOVIESTMPDIR" ]; then
+   if [ -z "$TMPDIR" ]; then
+-    MOVIESTMPDIR="."
++    MOVIESTMPDIR="/tmp"
+   else
+     MOVIESTMPDIR="$TMPDIR"
+   fi
