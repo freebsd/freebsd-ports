@@ -7,6 +7,7 @@
 
 PORTNAME=	tcl
 PORTVERSION=	8.3.5
+PORTREVISION=	1
 CATEGORIES=	lang tcl83
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	tcl
@@ -27,6 +28,7 @@ PKGINSTALL=	${PKGDIR}/pkg-install.tclsh
 PKGDEINSTALL=	${PKGDIR}/pkg-deinstall.tclsh
 TCL_VER=	8.3
 NOPRECIOUSMAKEVARS=	yes # Otherwise 'make readmes' is broken
+USE_REINPLACE=	YES
 
 PLIST_SUB=	TCL_VER=${TCL_VER} SHORT_TCL_VER=83
 
@@ -419,6 +421,10 @@ MLINKS=	Access.3 Tcl_Access.3 \
 	pkgMkIndex.n pkg_mkIndex.n \
 	safe.n Safe\Base.n \
 	tcltest.n Tcltest.n
+
+post-configure:
+	${REINPLACE_CMD} -e 's=${WRKDIRPREFIX}=$${WRKDIRPREFIX}=' \
+		${WRKSRC}/tclConfig.sh
 
 .include <bsd.port.pre.mk>
 
