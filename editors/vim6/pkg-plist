@@ -1,8 +1,6 @@
 @comment $FreeBSD$
 bin/vim
 bin/vimtutor
-bin/ctags
-bin/etags
 bin/xxd
 @comment bin/ex
 @comment bin/gex
