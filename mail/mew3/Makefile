@@ -8,7 +8,7 @@
 PORTNAME=	mew
 PORTVERSION=	${MEW_VER}
 CATEGORIES=	mail elisp
-MASTER_SITES=	ftp://ftp.mew.org/pub/Mew/ \
+MASTER_SITES=	ftp://ftp.mew.org/pub/Mew/release/ \
 		${MASTER_SITE_PORTS_JP}
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 
