@@ -3565,6 +3565,7 @@ libusb		src/lib/libusb
 libuta		ports/devel/libuta
 libutf-8	ports/converters/libutf-8
 libutil		src/lib/libutil
+libutils	ports/lang/libutils
 libvanessa_adt	ports/devel/libvanessa_adt
 libvanessa_logger	ports/devel/libvanessa_logger
 libvanessa_socket	ports/devel/libvanessa_socket
