@@ -805,6 +805,7 @@ chbg		ports/graphics/chbg
 cheatah		ports/misc/cheatah
 checkbot	ports/www/checkbot
 checkpassword	ports/security/checkpassword
+checkpassword-pam	ports/security/checkpassword-pam
 checkrdf	ports/deskutils/checkrdf
 checkservice	ports/sysutils/checkservice
 cheesetracker	ports/audio/cheesetracker
