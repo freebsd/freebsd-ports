@@ -1,0 +1,6 @@
+Originally, the etherx daemon routed XML streams among agents.
+Now the etherx daemon has morphed into a library that allows any agent
+to become the daemon if the daemon is not found.
+
+You can learn more about Etherx at
+WWW: http://etherx.jabber.org/
