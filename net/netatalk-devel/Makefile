@@ -7,6 +7,7 @@
 
 PORTNAME=	netatalk
 PORTVERSION=	1.6.0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	net print
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -36,7 +37,7 @@ PLIST_SUB+=	NETATALKPAM="@comment "
 # pickup afpd servers in the network.
 CONFIGURE_ARGS+=	--enable-srvloc=${LOCALBASE}
 .endif
-.if !defined(WITHOUT_CNID)
+.if defined(WITHOUT_CNID)
 # Configure old LAST DID support.  By default, the new CNID persistent DID
 # calculation scheme is used.  However, if you wish to revert back to the old
 # 1.5.x default scheme, specify WITHOUT_CNID
