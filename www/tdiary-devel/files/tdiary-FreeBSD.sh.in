@@ -56,10 +56,12 @@ install)
 #	HOMEGRP=$GROUP
 #	HOMEDIR=$HOME
 	echo "HOME Directory : " ${HOMEDIR}
+	USERNAME=$USER
 	;;
 *)
 	echo "HOME Directory : " ${HOMEDIR}	
 	echo "USERNAME       : " ${USERNAME}
+	USERNAME=$USER
 	;;
 esac
 
@@ -88,7 +90,7 @@ if [ -x ${HOMEDIR} ]; then
 		echo "Copy tDiary ..." ${EXAMPLES}/tdiary/
 		echo "            to " ${HOMEDIR}/${PUBLICHTML}/${DIARYDIR}/
 		cp -pR ${EXAMPLES}/tdiary/ ${HOMEDIR}/${PUBLICHTML}/${DIARYDIR}/
-		chown -R ${HOMEOWN}:${HOMEGRP} ${HOMEDIR}/${PUBLICHTML}/
+		chown -R ${HOMEOWN}:${HOMEGRP} ${HOMEDIR}/${PUBLICHTML}/${DIARYDIR}/
 		chmod o+rwx ${HOMEDIR}/${PUBLICHTML}/${DIARYDIR}
 		echo "Done"
 		if [ -e ${HOMEDIR}/${PUBLICHTML}/${DIARYDIR}/tdiary.conf ]; then
@@ -128,6 +130,10 @@ else
 	exit 1 
 fi
 echo ""
+echo ""
+echo "***"
+echo "You have to execute the following commands:"
+echo "      % /usr/local/sbin/htpasswd -c" ${HOMEDIR}/.htpasswd ${USERNAME}
 echo "" 
 echo "Be sure to read the ${HOMEDIR}/${PUBLICHTML}/${DIARYDIR}/README"
 echo "    file for additional information."
