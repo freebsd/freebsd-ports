@@ -1,1 +1,1 @@
-Runs a specified command over and over
+Runs command repeatedly; shows output (can conflict with ImageMagick)
