@@ -1,15 +1,16 @@
 @comment Package is not complete without minimal /var/news installation :-(
 @comment Basically just in.* and out.*    /var/news might be a symbolic link
 @comment and it might not exist yet :-(
-@exec ln -sf /usr/local/newsspool /var/news
-@unexec rm -f /usr/local/newsspool
-@exec mkdir -p /usr/local/newsspool/in.coming/bad
-@exec cd /usr/local/newsspool; mkdir -p out.going out.master out.nntp
-@dirrm /usr/local/newsspool/in.coming/bad
-@dirrm /usr/local/newsspool/in.coming
-@dirrm /usr/local/newsspool/out.going
-@dirrm /usr/local/newsspool/out.master
-@dirrm /usr/local/newsspool/out.nntp
+@exec ln -sf %D/newsspool /var/news
+@exec mkdir -p %D/newsspool/in.coming/bad
+@exec cd %D/newsspool; mkdir -p out.going out.master out.nntp
+@dirrm newsspool/in.coming/bad
+@dirrm newsspool/in.coming
+@dirrm newsspool/out.going
+@dirrm newsspool/out.master
+@dirrm newsspool/out.nntp
+@unexec if [ -h %D/newsspool ]; then rm -f %D/newsspool; fi
+@unexec if [ -d %D/newsspool ]; then rmdir %D/newsspool; fi
 bin/checknews
 bin/cnewsdo
 bin/inews
