@@ -6,7 +6,7 @@
 # $FreeBSD$
 #
 
-DISTNAME=	autoconvert-0.3.3
+DISTNAME=	autoconvert-0.3.4
 CATEGORIES=	chinese
 MASTER_SITES=	http://www.linuxfocus.org/~yu.guanghui/ \
 		ftp://ftp.dlut.edu.cn/pub/PEOPLE/saka/
@@ -19,7 +19,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/autob5 ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/autogb ${PREFIX}/bin
 	${MKDIR} ${PREFIX}/share/autoconvert
-.for i in ChangeLog LICENSE Readme TODO Version big5.txt gb.txt hz.txt procmailrc.example
+.for i in ChangeLog GPL LICENSE Readme TODO Version hz.txt procmailrc.example shed.big5 shed.gb
 	${INSTALL_DATA} ${WRKSRC}/$i ${PREFIX}/share/autoconvert
 .endfor
 
