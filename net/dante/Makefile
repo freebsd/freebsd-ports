@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.inet.no/pub/socks/ \
 		ftp://ftp.nuug.no/pub/anders/distfiles/ \
 		http://www.freenix.no/~anders/
 
-MAINTAINER=	anders@fix.no
+MAINTAINER=	ports@FreeBSD.org
 
 USE_LIBTOOL=	yes
 CONFIGURE_ARGS=	--with-socks-conf=${PREFIX}/etc/socks.conf \

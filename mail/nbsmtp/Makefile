@@ -12,7 +12,7 @@ MASTER_SITES=	http://www2.fastdial.net/~drysdam/software/ \
 		ftp://ftp.nuug.no/pub/anders/distfiles/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	anders@fix.no
+MAINTAINER=	ports@FreeBSD.org
 
 NO_WRKSUBDIR=	yes
 

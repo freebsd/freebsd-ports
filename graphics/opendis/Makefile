@@ -11,7 +11,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	http://ods.sourceforge.net/dl/ \
 		ftp://ftp.nuug.no/pub/anders/distfiles/
 
-MAINTAINER=	anders@fix.no
+MAINTAINER=	ports@FreeBSD.org
 
 USE_AUTOCONF=	yes
 GNU_CONFIGURE=	yes

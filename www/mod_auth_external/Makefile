@@ -11,7 +11,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://www.wwnet.net/~janc/software/ \
 		ftp://ftp.nuug.no/pub/anders/distfiles/
 
-MAINTAINER=	anders@fix.no
+MAINTAINER=	ports@FreeBSD.org
 
 BUILD_DEPENDS=	${APXS}:${PORTSDIR}/www/apache13
 RUN_DEPENDS=	${APXS}:${PORTSDIR}/www/apache13

@@ -11,7 +11,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://www.maradns.org/download/ \
 		ftp://ftp.nuug.no/pub/anders/distfiles/
 
-MAINTAINER=	anders@fix.no
+MAINTAINER=	ports@FreeBSD.org
 
 USE_BZIP2=	yes
 

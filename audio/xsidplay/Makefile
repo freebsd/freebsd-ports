@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.geocities.com/SiliconValley/Lakes/5147/sidplay/packages
 		http://www.freenix.no/~anders/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	anders@fix.no
+MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	sidplay.1:${PORTSDIR}/audio/libsidplay
 

@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.fred.net/brv/chart/ \
 		ftp://ftp.nuug.no/pub/anders/distfiles/
 DISTNAME=	${PORTNAME}${PORTVERSION}dev
 
-MAINTAINER=	anders@fix.no
+MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	gd.2:${PORTSDIR}/graphics/gd
 

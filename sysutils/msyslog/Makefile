@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.core-sdi.com/soft/ \
 DISTNAME=	${PORTNAME}-v${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	anders@fix.no
+MAINTAINER=	ports@FreeBSD.org
 
 .if defined(WITH_MYSQL)
 LIB_DEPENDS+=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client

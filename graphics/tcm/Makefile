@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.cs.utwente.nl/pub/tcm/ \
 		ftp://ftp.nuug.no/pub/anders/distfiles/
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
 
-MAINTAINER=	anders@fix.no
+MAINTAINER=	ports@FreeBSD.org
 
 USE_BISON=	yes
 USE_MOTIF=	yes

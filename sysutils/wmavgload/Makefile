@@ -11,7 +11,7 @@ CATEGORIES=	sysutils windowmaker
 MASTER_SITES=	${MASTER_SITE_WINDOWMAKER}
 MASTER_SITE_SUBDIR=	contrib/srcs/utils
 
-MAINTAINER=	anders@fix.no
+MAINTAINER=	ports@FreeBSD.org
 
 USE_IMAKE=	yes
 USE_XPM=	yes

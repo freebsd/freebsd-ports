@@ -12,7 +12,7 @@ MASTER_SITES=	http://xmp.helllabs.org/pkg/%SUBDIR%/ \
 		http://xmp.linuxave.net/pkg/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTVERSION}
 
-MAINTAINER=	anders@fix.no
+MAINTAINER=	ports@FreeBSD.org
 
 USE_BZIP2=	yes
 USE_XLIB=	yes

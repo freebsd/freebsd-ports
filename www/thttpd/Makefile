@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.acme.com/software/thttpd/ \
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} notes.html
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	anders@fix.no
+MAINTAINER=	ports@FreeBSD.org
 
 IGNOREFILES=	notes.html
 

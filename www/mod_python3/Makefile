@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.modpython.org/dist/ \
 DIST_SUBDIR=	python
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	anders@fix.no
+MAINTAINER=	ports@FreeBSD.org
 
 BUILD_DEPENDS=	${LOCALBASE}/sbin/apxs:${PORTSDIR}/www/apache13
 RUN_DEPENDS=	${LOCALBASE}/sbin/apxs:${PORTSDIR}/www/apache13
