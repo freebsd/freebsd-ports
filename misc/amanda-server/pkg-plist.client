@@ -1,8 +1,8 @@
-lib/libamanda-2.4.4p2.so
+lib/libamanda-2.4.4p4.so
 lib/libamanda.so
 lib/libamanda.la
 lib/libamanda.a
-lib/libamclient-2.4.4p2.so
+lib/libamclient-2.4.4p4.so
 lib/libamclient.so
 lib/libamclient.la
 lib/libamclient.a
