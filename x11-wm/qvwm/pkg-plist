@@ -1,5 +1,7 @@
 bin/qvwm
 lib/X11/qvwm/kanji.qvwmrc
+lib/X11/qvwm/sample.qvwm-theme
+lib/X11/qvwm/system.qvwmrc
 lib/X11/qvwm/pixmaps/emacs.xpm
 lib/X11/qvwm/pixmaps/emacs_s.xpm
 lib/X11/qvwm/pixmaps/exit.xpm
@@ -19,7 +21,6 @@ lib/X11/qvwm/pixmaps/xterm.xpm
 lib/X11/qvwm/pixmaps/xterm_s.xpm
 lib/X11/qvwm/pixmaps/xv.xpm
 lib/X11/qvwm/pixmaps/xv_s.xpm
-lib/X11/qvwm/system.qvwmrc
 share/doc/qvwm/BUGS.en
 share/doc/qvwm/CHANGES.en
 share/doc/qvwm/FAQ.en
