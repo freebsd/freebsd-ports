@@ -7,6 +7,7 @@
 
 PORTNAME=	pekwm
 PORTVERSION=	20050227
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://bsd-unix.org/downloads/ \
 		http://pekwm.org/files/
@@ -15,7 +16,7 @@ DISTNAME=	${PORTNAME}-dev-${PORTVERSION}
 MAINTAINER=	xcas@cox.net
 COMMENT=	A windowmanager based on aewm++
 
-LIB_DEPENDS=	Imlib2.2:${PORTSDIR}/graphics/imlib2 \
+LIB_DEPENDS=	Imlib2.3:${PORTSDIR}/graphics/imlib2 \
 		Xft.2:${PORTSDIR}/x11-fonts/libXft
 
 USE_BZIP2=	yes
