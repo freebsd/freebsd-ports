@@ -63,6 +63,7 @@ share/latex2html/changebar/chbar.sh
 share/latex2html/changebar/manifest.txt
 share/latex2html/changebar/update.txt
 share/latex2html/configure-pstoimg
+share/latex2html/configure-pstoimg.bak
 share/latex2html/cweb2html/Makefile
 share/latex2html/cweb2html/README
 share/latex2html/cweb2html/cweb.perl
@@ -236,12 +237,15 @@ share/latex2html/icons.png/whiteball.png
 share/latex2html/icons.png/yellowball.png
 share/latex2html/install-test
 share/latex2html/latex2html
+share/latex2html/latex2html.bak
 share/latex2html/latex2html.config
+share/latex2html/latex2html.config.bak
 share/latex2html/local.pm
 share/latex2html/makemap
 share/latex2html/makeseg/makeseg
 share/latex2html/makeseg/makeseg.tex
 share/latex2html/ps2img-n
+share/latex2html/ps2img-n.bak
 share/latex2html/psfiles/HTMLtab.ps
 share/latex2html/psfiles/dn.gif
 share/latex2html/psfiles/eform.ps
@@ -259,7 +263,9 @@ share/latex2html/psfiles/figure.ps
 share/latex2html/psfiles/table.ps
 share/latex2html/psfiles/up.gif
 share/latex2html/pstoimg
+share/latex2html/pstoimg.bak
 share/latex2html/pstoimg_nopipes
+share/latex2html/pstoimg_nopipes.bak
 share/latex2html/readme.hthtml
 share/latex2html/styles/CJK.perl
 share/latex2html/styles/TEMPLATE.perl
@@ -374,6 +380,7 @@ share/latex2html/tests/pages.tex
 share/latex2html/tests/pages1.eps
 share/latex2html/tests/rrm-col.tex
 share/latex2html/texexpand
+share/latex2html/texexpand.bak
 share/latex2html/texinputs/floatflt.ins
 share/latex2html/texinputs/frames.sty
 share/latex2html/texinputs/heqn.sty
@@ -412,6 +419,7 @@ share/texmf/tex/latex/latex2html/justify.sty
 share/texmf/tex/latex/latex2html/ldump.sty
 share/texmf/tex/latex/latex2html/url.sty
 share/texmf/tex/latex/latex2html/verbatimfiles.sty
+@dirrm share/texmf/tex/latex/latex2html/
 @dirrm share/latex2html/IndicTeX-HTML
 @dirrm share/latex2html/XyMTeX-HTML
 @dirrm share/latex2html/changebar
@@ -433,4 +441,3 @@ share/texmf/tex/latex/latex2html/verbatimfiles.sty
 @dirrm share/latex2html/texinputs
 @dirrm share/latex2html/versions
 @dirrm share/latex2html
-@dirrm share/texmf/tex/latex/latex2html/
