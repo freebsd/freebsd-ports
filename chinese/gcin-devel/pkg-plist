@@ -31,10 +31,12 @@ lib/menu/gcin-setup
 %%DATADIR%%/table/tsin.idx
 %%DATADIR%%/table/zo.kbm
 %%DATADIR%%/table/zo-asdf.kbm
+%%DOCSDIR%%/README
 share/icons/gcin.png
 share/icons/gcin/pin-fixed24.png
 share/icons/gcin/pin-float16.png
 @dirrm lib/menu
+@dirrm %%DOCSDIR%%
 @dirrm share/icons/gcin
 @unexec rmdir %D/share/icons 2>/dev/null || true
 @dirrm %%DATADIR%%/table
