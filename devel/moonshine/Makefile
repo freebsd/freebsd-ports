@@ -11,7 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.suite3220.com/pub/Moonshine/1.1/src/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
-MAINTAINER=	sobomax@altavista.net
+MAINTAINER=	sobomax@FreeBSD.org
 
 USE_QT2=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
