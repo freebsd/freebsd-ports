@@ -1,8 +1,6 @@
 etc/rc.d/000.pkgtools.sh
 @exec /bin/mkdir -p %D/lib/compat/pkg
 @unexec /bin/rmdir %D/lib/compat/pkg 2>/dev/null || true
-sbin/make_describe_pass1
-sbin/make_describe_pass2
 sbin/pkg_deinstall
 sbin/pkg_fetch
 sbin/pkg_glob
