@@ -1,27 +1,25 @@
 # New ports collection makefile for:	gview
-# Version required:			0.1.4
+# Version required:			0.1.5
 # Date created:				30 April 1999
 # Whom:					Andrey Zakhvatov
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/05/03 04:21:32 steve Exp $
 #
 
-DISTNAME=	gview-0.1.4
+DISTNAME=	gview-0.1.5
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.geocities.com/ResearchTriangle/Facility/1468/sg/
 
 MAINTAINER=	andy@icc.surw.chel.su
 
-LIB_DEPENDS=	gdk_imlib:${PORTSDIR}/graphics/imlib \
-		gdk12:${PORTSDIR}/x11-toolkits/gtk12 \
-		glib12:${PORTSDIR}/devel/glib12 \
-		gmodule12:${PORTSDIR}/devel/glib12 \
-		gtk12:${PORTSDIR}/x11-toolkits/gtk12 \
-		intl:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=	gdk_imlib.4:${PORTSDIR}/graphics/imlib \
+		intl.1:${PORTSDIR}/devel/gettext
+
+GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
 
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	GTK_CONFIG="${X11BASE}/bin/gtk12-config"
+CONFIGURE_ENV=	GTK_CONFIG="${GTK_CONFIG}"
 
 post-install:
 .if !defined(NOPORTDOCS)
