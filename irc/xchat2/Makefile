@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xchat2
-PORTVERSION=	1.9.4
-PORTREVISION=	1
+PORTVERSION=	1.9.8
 CATEGORIES=	irc gnome ipv6
 MASTER_SITES=	http://xchat.org/files/source/1.9/ \
 		http://xchat.linuxpower.org/files/source/1.9/
@@ -23,7 +22,7 @@ USE_GMAKE=	yes
 USE_PERL5=	yes
 USE_GNOMENG=	yes
 USE_GNOME=	gnomeprefix gnomehack
-GNU_CONFIGURE=	yes
+USE_LIBTOOL=	yes
 USE_REINPLACE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
@@ -38,10 +37,7 @@ BUILD_DEPENDS+=	${LOCALBASE}/lib/libsocks5.a:${PORTSDIR}/net/socks5
 CONFIGURE_ARGS+=	--enable-socks
 .endif
 
-.if defined(WITH_SSL)
-USE_OPENSSL=	yes
-CONFIGURE_ARGS+=	--enable-openssl
-.endif
+# openssl in now default in configure
 
 .if defined(WITH_PYTHON)
 USE_PYTHON=    yes
@@ -53,15 +49,12 @@ PLIST_SUB=	PYTHON="@comment "
 .endif
 
 pre-everything::
-.if !defined(WITH_PYTHON) || !defined(WITH_SSL) || !defined(WITH_SOCKS)
+.if !defined(WITH_PYTHON) || !defined(WITH_SOCKS)
 	@${ECHO_MSG} "You may specify the following on the command line:"
 	@${ECHO_MSG} ""
 .endif
 .if !defined(WITH_PYTHON)
 	@${ECHO_MSG} "WITH_PYTHON=yes for Python support"
-.endif
-.if !defined(WITH_SSL)
-	@${ECHO_MSG} "WITH_SSL=yes for OpenSSL support"
 .endif
 .if !defined(WITH_SOCKS)
 	@${ECHO_MSG} "WITH_SOCKS=yes for SOCKS5 proxy support"
