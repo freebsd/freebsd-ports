@@ -1,20 +1,12 @@
 bin/archive-generator
-bin/gdialog
 bin/gdict-applet
 bin/gnome-calculator
 bin/gnome-character-map
 bin/gnome-dictionary
-bin/gnome-exe-handler
 bin/gnome-search-tool
 bin/gnome-system-log
-etc/gconf/gconf.xml.defaults/apps/gcharmap/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/gdict/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gcharmap/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gdict/%gconf.xml
-etc/gconf/schemas/gcharmap.schemas
 etc/gconf/schemas/gdict.schemas
 libdata/bonobo/servers/GNOME_GDictApplet.server
-share/gnome/application-registry/gnome-exe.applications
 share/gnome/applications/archive-generator.desktop
 share/gnome/applications/gnome-calculator.desktop
 share/gnome/applications/gnome-character-map.desktop
@@ -25,11 +17,11 @@ share/gnome/gnome-2.0/ui/GNOME_GDictApplet.xml
 share/gnome/gnome-system-log/gnome-system-log-actions.db
 share/gnome/gnome-system-log/gnome-system-log-descript.db
 share/gnome/gnome-system-log/gnome-system-log-regexp.db
-share/gnome/help/gdialog/C/figures/example-dialog.png
-share/gnome/help/gdialog/C/figures/gdialog-msgbox.png
-share/gnome/help/gdialog/C/figures/gdialog-yesno.png
-share/gnome/help/gdialog/C/gdialog.xml
-share/gnome/help/gdialog/C/legal.xml
+share/gnome/help/archive-generator/C/archive-generator.xml
+share/gnome/help/archive-generator/C/figures/archive-generator-addfile.png
+share/gnome/help/archive-generator/C/figures/archive-generator-contents.png
+share/gnome/help/archive-generator/C/figures/archive-generator.png
+share/gnome/help/archive-generator/C/legal.xml
 share/gnome/help/gnome-calculator/C/figures/gcalc_window.png
 share/gnome/help/gnome-calculator/C/gnome-calculator.xml
 share/gnome/help/gnome-calculator/C/legal.xml
@@ -49,19 +41,13 @@ share/gnome/help/gnome-search-tool/C/legal.xml
 share/gnome/help/gnome-system-log/C/figures/gnome-system-log.png
 share/gnome/help/gnome-system-log/C/gnome-system-log.xml
 share/gnome/help/gnome-system-log/C/legal.xml
-share/gnome/help/meat-grinder/C/figures/meat-grinder-main-full.png
-share/gnome/help/meat-grinder/C/figures/meat-grinder-main.png
-share/gnome/help/meat-grinder/C/legal.xml
-share/gnome/help/meat-grinder/C/meat-grinder.xml
 share/gnome/idl/gsu.idl
-share/gnome/mime-info/gnome-exe.keys
-share/gnome/omf/gnome-utils/gdialog-C.omf
+share/gnome/omf/gnome-utils/archive-generator-C.omf
 share/gnome/omf/gnome-utils/gnome-calculator-C.omf
 share/gnome/omf/gnome-utils/gnome-character-map-C.omf
 share/gnome/omf/gnome-utils/gnome-dictionary-C.omf
 share/gnome/omf/gnome-utils/gnome-search-tool-C.omf
 share/gnome/omf/gnome-utils/gnome-system-log-C.omf
-share/gnome/omf/gnome-utils/meat-grinder-C.omf
 share/gnome/pixmaps/gdict.png
 share/gnome/pixmaps/gnome-character-map.png
 share/gnome/pixmaps/gnome-searchtool.png
@@ -75,6 +61,7 @@ share/locale/el/LC_MESSAGES/gnome-utils-2.0.mo
 share/locale/en_GB/LC_MESSAGES/gnome-utils-2.0.mo
 share/locale/es/LC_MESSAGES/gnome-utils-2.0.mo
 share/locale/et/LC_MESSAGES/gnome-utils-2.0.mo
+share/locale/eu/LC_MESSAGES/gnome-utils-2.0.mo
 share/locale/fi/LC_MESSAGES/gnome-utils-2.0.mo
 share/locale/fr/LC_MESSAGES/gnome-utils-2.0.mo
 share/locale/ga/LC_MESSAGES/gnome-utils-2.0.mo
@@ -100,14 +87,12 @@ share/locale/sv/LC_MESSAGES/gnome-utils-2.0.mo
 share/locale/ta/LC_MESSAGES/gnome-utils-2.0.mo
 share/locale/tr/LC_MESSAGES/gnome-utils-2.0.mo
 share/locale/uk/LC_MESSAGES/gnome-utils-2.0.mo
+share/locale/vi/LC_MESSAGES/gnome-utils-2.0.mo
 share/locale/wa/LC_MESSAGES/gnome-utils-2.0.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-utils-2.0.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-utils-2.0.mo
 @dirrm share/gnome/pixmaps/gnome-system-log
 @dirrm share/gnome/omf/gnome-utils
-@dirrm share/gnome/help/meat-grinder/C/figures
-@dirrm share/gnome/help/meat-grinder/C
-@dirrm share/gnome/help/meat-grinder
 @dirrm share/gnome/help/gnome-system-log/C/figures
 @dirrm share/gnome/help/gnome-system-log/C
 @dirrm share/gnome/help/gnome-system-log
@@ -122,11 +107,4 @@ share/locale/zh_TW/LC_MESSAGES/gnome-utils-2.0.mo
 @dirrm share/gnome/help/gnome-calculator/C/figures
 @dirrm share/gnome/help/gnome-calculator/C
 @dirrm share/gnome/help/gnome-calculator
-@dirrm share/gnome/help/gdialog/C/figures
-@dirrm share/gnome/help/gdialog/C
-@dirrm share/gnome/help/gdialog
 @dirrm share/gnome/gnome-system-log
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gdict
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gcharmap
-@dirrm etc/gconf/gconf.xml.defaults/apps/gdict
-@dirrm etc/gconf/gconf.xml.defaults/apps/gcharmap

@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	gnomeutils2
-PORTVERSION=	1.104.0
+PORTVERSION=	1.5.0
+PORTEPOCH=	1
 CATEGORIES=	misc gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	pre-gnome2/releases/gnome-2.0-desktop-20020501
+MASTER_SITE_SUBDIR=	pre-gnome2/releases/gnome-2.0-desktop-20020509
 DISTNAME=	gnome-utils-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
@@ -27,9 +28,9 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 
-MAN1=	archive-generator.1 gdialog.1 gnome-calculator.1 \
+MAN1=	archive-generator.1 gnome-calculator.1 \
 	gnome-character-map.1 gnome-dictionary.1 \
-	gnome-exe-handler.1 gnome-search-tool.1 gnome-system-log.1
+	gnome-search-tool.1 gnome-system-log.1
 
 pre-patch:
 	@${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS}|g ; \

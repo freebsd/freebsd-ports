@@ -203,6 +203,10 @@ share/gnome/gnome-2.0/ui/GNOME_MixerApplet.xml
 share/gnome/gnome-2.0/ui/GNOME_ModemlightsApplet.xml
 share/gnome/gnome-2.0/ui/GNOME_MultiloadApplet.xml
 share/gnome/gweather/Locations
+share/gnome/help/cdplayer/C/cdplayer.xml
+share/gnome/help/cdplayer/C/figures/cdplayer_applet.png
+share/gnome/help/cdplayer/C/legal.xml
+share/gnome/help/cdplayer/C/topic.dat
 share/gnome/help/char-palette/C/char-palette.xml
 share/gnome/help/char-palette/C/figures/charpick_applet.png
 share/gnome/help/char-palette/C/figures/charpick_characters.png
@@ -211,8 +215,16 @@ share/gnome/help/char-palette/C/legal.xml
 share/gnome/help/command-line/C/command-line.xml
 share/gnome/help/command-line/C/figures/command-line.png
 share/gnome/help/command-line/C/legal.xml
+share/gnome/help/gweather/C/figures/gweather_applet.png
+share/gnome/help/gweather/C/figures/gweather_settings.png
+share/gnome/help/gweather/C/figures/gweather_weather.png
+share/gnome/help/gweather/C/gweather.xml
+share/gnome/help/gweather/C/legal.xml
+share/gnome/help/gweather/C/topic.dat
+share/gnome/omf/gnome-applets/cdplayer_applet-C.omf
 share/gnome/omf/gnome-applets/char-palette-C.omf
 share/gnome/omf/gnome-applets/command-line-C.omf
+share/gnome/omf/gnome-applets/gweather_applet-C.omf
 share/gnome/pixmaps/battstat.png
 share/gnome/pixmaps/charpick.png
 share/gnome/pixmaps/drivemount-applet.png
