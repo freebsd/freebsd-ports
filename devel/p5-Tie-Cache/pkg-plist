@@ -1,4 +1,5 @@
 lib/perl5/site_perl/%%PERL_VER%%/Tie/Cache.pm
+lib/perl5/site_perl/%%PERL_VER%%/Tie/bench.pl
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tie/Cache/.packlist
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tie/Cache
 @unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tie 2>/dev/null || true
