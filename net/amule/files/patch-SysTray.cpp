@@ -1,6 +1,6 @@
---- src/SysTray.cpp.orig	Tue Feb 17 16:43:12 2004
-+++ src/SysTray.cpp	Tue Feb 17 16:43:53 2004
-@@ -22,8 +22,8 @@
+--- src/SysTray.cpp.orig	Tue Jul  6 07:32:56 2004
++++ src/SysTray.cpp	Tue Jul  6 07:33:44 2004
+@@ -23,8 +23,8 @@
  #include "sys.h"
  #include <libintl.h>
  #include <clocale>		// Needed for setlocale(3)
