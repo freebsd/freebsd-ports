@@ -3,7 +3,7 @@
 # Date created:		20 April 1997
 # Whom:			Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.5 1998/01/21 13:07:44 tg Exp $
+# $Id: Makefile,v 1.6 1998/04/08 11:13:37 tg Exp $
 #
 
 DISTNAME=	NumPy-11
@@ -32,6 +32,7 @@ do-configure:
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/Lib/* ${NUMPYDIR}
 	@${PREFIX}/bin/python -O ${PYTHONSCRIPTDIR}/compileall.py ${NUMPYDIR}
+	${INSTALL_DATA} ${WRKSRC}/Include/*object.h ${PREFIX}/include/python1.5
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCDIR}
 	${INSTALL_DATA} ${WRKSRC}/Doc/*.html ${DOCDIR}
