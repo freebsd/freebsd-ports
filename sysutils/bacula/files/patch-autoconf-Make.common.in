@@ -1,0 +1,19 @@
+--- autoconf/Make.common.in.orig	Thu Jan 23 23:28:18 2003
++++ autoconf/Make.common.in	Mon Feb 24 14:16:07 2003
+@@ -30,6 +30,7 @@
+ sbindir = @sbindir@
+ sysconfdir = @sysconfdir@
+ mandir = @mandir@/man1
++datadir = @datadir@
+ manext = 1
+ 
+ # Tools & program stuff
+@@ -49,7 +50,7 @@
+ RANLIB = @RANLIB@
+ INSTALL = @INSTALL@
+ # add the -s to the following in PRODUCTION mode
+-INSTALL_PROGRAM = @INSTALL@ -m 755
++INSTALL_PROGRAM = @INSTALL@ -s -m 755
+ INSTALL_DATA = @INSTALL@ -m 644
+ INSTALL_SCRIPT = @INSTALL@ -m 755
+ INSTALL_CONFIG = @INSTALL@ -m 640
