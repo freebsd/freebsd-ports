@@ -1,0 +1,34 @@
+--- tcp_subr.c.orig	Fri Dec 29 15:45:51 1995
++++ tcp_subr.c	Fri Apr 16 09:03:57 1999
+@@ -238,14 +238,14 @@
+  * then send a RST to peer.
+  */
+ struct tcpcb *
+-tcp_drop(tp, errno)
++tcp_drop(tp, err)
+ 	register struct tcpcb *tp;
+-	int errno;
++	int err;
+ {
+ 
+ 	DEBUG_CALL("tcp_drop");
+ 	DEBUG_ARG("tp = %lx", (long)tp);
+-	DEBUG_ARG("errno = %d", errno);
++	DEBUG_ARG("err = %d", err);
+ 	
+ 	if (TCPS_HAVERCVDSYN(tp->t_state)) {
+ 		tp->t_state = TCPS_CLOSED;
+@@ -253,10 +253,10 @@
+ 		tcpstat.tcps_drops++;
+ 	} else
+ 		tcpstat.tcps_conndrops++;
+-/*	if (errno == ETIMEDOUT && tp->t_softerror)
+- *		errno = tp->t_softerror;
++/*	if (err == ETIMEDOUT && tp->t_softerror)
++ *		err = tp->t_softerror;
+  */
+-/*	so->so_error = errno; */
++/*	so->so_error = err; */
+ 	return (tcp_close(tp));
+ }
+ 

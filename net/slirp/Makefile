@@ -3,7 +3,7 @@
 # Date created:		25 Aug 1995
 # Whom:			Alain Kalker <A.C.P.M.Kalker@student.utwente.nl>
 #
-# $Id: Makefile,v 1.9 1998/10/14 01:18:49 jseger Exp $
+# $Id: Makefile,v 1.10 1998/11/11 05:37:30 asami Exp $
 #
 
 DISTNAME=	slirp-1.0c
@@ -12,14 +12,8 @@ MASTER_SITES=	ftp://blitzen.canberra.edu.au/pub/slirp/
 
 MAINTAINER=	A.C.P.M.Kalker@student.utwente.nl
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 300000
-BROKEN=         tcp_subr.c
-.endif
-
 WRKSRC=		${WRKDIR}/slirp-1.0c/src
-HAS_CONFIGURE=	yes
+GNU_CONFIGURE=	yes
 MAN1=		slirp.1
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
