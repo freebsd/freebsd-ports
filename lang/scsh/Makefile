@@ -3,7 +3,7 @@
 # Date created:         Jul, 15, 1997
 # Whom:                 cracauer@cons.org "Martin Cracauer"
 #
-# $Id: Makefile,v 1.5 1998/09/29 02:37:14 jseger Exp $
+# $Id: Makefile,v 1.6 1998/12/02 23:50:37 cracauer Exp $
 #
 
 DISTNAME=	scsh-0.5.1
@@ -14,13 +14,17 @@ MASTER_SITES=	ftp://ftp-swiss.ai.mit.edu/pub/su/scsh/ \
 
 MAINTAINER= 	cracauer@cons.org
 
+.include <bsd.port.pre.mk>
+
 GNU_CONFIGURE=	yes
+
+.if $(PORTOBJFORMAT) == elf
+CONFIGURE_ENV+=	LDFLAGS="-Wl,-E"
+.endif
 
 ALL_TARGET=	enough
 MAN1=		scsh.1
 STRIP=
-
-BROKEN_ELF=	build
 
 post-install:
 	@strip ${PREFIX}/bin/scsh
@@ -29,4 +33,4 @@ post-install:
 	${RM} -f ${PREFIX}/share/doc/scsh
 	ln -fs ${PREFIX}/lib/scsh/doc ${PREFIX}/share/doc/scsh
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
