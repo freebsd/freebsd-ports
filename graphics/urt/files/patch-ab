@@ -58,45 +58,6 @@ diff -ur ../urt-3.1b-orig/makefile.src ./makefile.src
  	done
  
  
-diff -ur ../urt-3.1b-orig/makefile.tlr ./makefile.tlr
---- ../urt-3.1b-orig/makefile.tlr	Tue Aug  4 13:17:57 1992
-+++ ./makefile.tlr	Sat Sep 16 10:35:58 1995
-@@ -7,7 +7,7 @@
- 	@sh -c "if test 'x$(DIRS)' != x ; then eval \
- 		'set -e ; for dir in $(DIRS) ; do \
- 			(cd \$$dir ; echo Make ${HERE}\$$dir ; \
--			 	make $(MFLAGS) $(DIRMFLAGS) ) ; \
-+			 	$(MAKE) $(MFLAGS) $(DIRMFLAGS) ) ; \
- 		done' ; \
- 	  else \
- 		true ; \
-@@ -46,7 +46,7 @@
- 	@sh -c "if test 'x$(DIRS)' != x  ; then eval \
- 		'for dir in $(DIRS) ; do \
- 			(cd \$$dir ; echo Install ${HERE}\$$dir ; \
--			 make $(MFLAGS) $(DIRMFLAGS) install) ; \
-+			 $(MAKE) $(MFLAGS) $(DIRMFLAGS) install) ; \
- 		done' ; \
- 	  else \
- 		true ; \
-@@ -105,7 +105,7 @@
- 	    'for dir in $(ALLDIRS); do \
- 		if test -d $$dir ; then \
- 			(cd $$dir; echo Make ${HERE}$$dir pristine ; \
--			 make $(MFLAGS) pristine); \
-+			 $(MAKE) $(MFLAGS) pristine); \
- 		else \
- 			true; \
- 		fi; \
-@@ -124,7 +124,7 @@
- 	    'for dir in $(ALLDIRS); do \
- 		if test -d $$dir ; then \
- 			(cd $$dir; echo Clean ${HERE}$$dir ; \
--			 make $(MFLAGS) clean); \
-+			$(MAKE) $(MFLAGS) clean); \
- 		else \
- 			true; \
- 		fi; \
 diff -ur ../urt-3.1b-orig/tools/into.c ./tools/into.c
 --- ../urt-3.1b-orig/tools/into.c	Thu Apr 30 10:10:15 1992
 +++ ./tools/into.c	Sat Sep 16 10:32:26 1995

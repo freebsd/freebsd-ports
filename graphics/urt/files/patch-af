@@ -1,0 +1,10 @@
+--- include/makefile.src.orig	Sun Oct  4 23:45:39 1998
++++ include/makefile.src	Sun Oct  4 23:45:50 1998
+@@ -44,7 +44,6 @@
+ 	else \
+ 		true ; \
+ 	fi"
+-	touch install
+ 
+ # Nothing to clean
+ clean:
