@@ -1,3 +1,2 @@
-MD5 (ghc-5.04-src.tar.bz2) = e2abcdfdc7bc6d6ec46c7f7a57fff819
-MD5 (ghc-5.04-i386-unknown-freebsd-boot.tar.bz2) = 9ff2ebddaefb5565634a5da9d9306e23
-MD5 (ghc-5.04-i386-unknown-freebsd5-boot.tar.bz2) = 982b6ab064e287d097eda37f70415dbb
+MD5 (ghc-5.04.1-src.tar.bz2) = 00135ff5b11f1e9aef63f6974922023c
+MD5 (ghc-5.04.1-i386-unknown-freebsd-boot.tar.bz2) = f11782fa81b20c597b722a3de5fe172a
