@@ -1,6 +1,6 @@
---- src/gcompris/log.c.orig	Sun Mar  7 17:36:34 2004
-+++ src/gcompris/log.c	Sun Mar  7 17:35:56 2004
-@@ -137,6 +137,7 @@
+--- src/gcompris/log.c.orig	Wed May 12 18:42:15 2004
++++ src/gcompris/log.c	Fri Sep 24 23:34:23 2004
+@@ -150,6 +150,7 @@
  void gcompris_log_end (GcomprisBoard *gcomprisBoard, gchar *status) {
    FILE *flog;
    gchar *file;
@@ -8,11 +8,14 @@
  
    /* Prepare our log */
  
-@@ -153,7 +154,6 @@
+@@ -162,9 +163,7 @@
+   time_t end_time = time(NULL);
+   double duration = difftime(end_time,start_time);
+ 
+-  struct tm *tp;
+-
+-  if(gcomprisBoard_set != gcomprisBoard)
++    if(gcomprisBoard_set != gcomprisBoard)
      return;
  
    /* and convert it to UTC or local time representation */
--  struct tm *tp;
-   if (USE_UTC)
-     tp = gmtime(&start_time);
-   else
