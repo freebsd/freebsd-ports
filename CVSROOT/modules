@@ -8706,6 +8706,7 @@ zh-kde3-i18n-CN	ports/chinese/kde3-i18n-zh_CN
 zh-kde3-i18n-TW	ports/chinese/kde3-i18n-zh_TW
 zh-kde3-i18n-zh_CN	ports/chinese/kde3-i18n-zh_CN
 zh-kde3-i18n-zh_TW	ports/chinese/kde3-i18n-zh_TW
+zh-kon2		ports/chinese/kon2
 zh-libtabe	ports/chinese/libtabe
 zh-links	ports/chinese/links
 zh-linux-gtk	ports/chinese/linux-gtk
