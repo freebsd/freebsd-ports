@@ -1,0 +1,30 @@
+# New ports collection makefile for:	wmMand
+# Version required:     1.0
+# Date created:		16 April 1999
+# Whom:			Chris Piazza <cpiazza@home.net>
+#
+# $Id$
+
+DISTNAME=	wmMand-1.0
+PKGNAME=	wmmand-1.0
+CATEGORIES=	misc windowmaker
+MASTER_SITES=	http://nis-www.lanl.gov/~mgh/WindowMaker/
+
+MAINTAINER=	cpiazza@home.net
+
+LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
+
+WRKSRC=		${WRKDIR}/${DISTNAME}/wmMand
+
+USE_GMAKE=	yes
+USE_XLIB=	yes
+USE_X_PREFIX=	yes
+ALL_TARGET=	clean all
+
+MAN1=		wmMand.1
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/wmMand ${PREFIX}/bin/
+	${INSTALL_MAN} ${WRKSRC}/wmMand.1 ${PREFIX}/man/man1/
+
+.include <bsd.port.mk>
