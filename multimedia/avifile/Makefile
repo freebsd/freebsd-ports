@@ -17,7 +17,7 @@ BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
 LIB_DEPENDS=	SDL-1.1.3:${PORTSDIR}/devel/sdl12
 .if !defined(WITHOUT_VORBIS)
 LIB_DEPENDS+=	ogg.2:${PORTSDIR}/audio/libogg \
-		vorbis.0:${PORTSDIR}/audio/libvorbis
+		vorbis.1:${PORTSDIR}/audio/libvorbis
 .endif
 RUN_DEPENDS=	${CODEC_DETECTION_FILE}:${CODEC_PORT}
 

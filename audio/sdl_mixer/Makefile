@@ -15,7 +15,7 @@ MAINTAINER=	sobomax@FreeBSD.org
 
 LIB_DEPENDS=  	SDL-1.1.3:${PORTSDIR}/devel/sdl12 \
 		smpeg.1:${PORTSDIR}/graphics/smpeg \
-		vorbis.0:${PORTSDIR}/audio/libvorbis
+		vorbis.1:${PORTSDIR}/audio/libvorbis
 
 SDL_CONFIG=	${LOCALBASE}/bin/sdl11-config
 
