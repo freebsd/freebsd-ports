@@ -5428,6 +5428,7 @@ newfile		ports/devel/newfile
 newmail		ports/mail/newmail
 newmat		ports/math/newmat
 newpg		ports/security/newpg
+newsbot		ports/net/newsbot
 newscache	ports/news/newscache
 newsfetch	ports/news/newsfetch
 newsfish	ports/news/newsfish
