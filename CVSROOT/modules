@@ -3900,6 +3900,7 @@ linux_mesa	ports/graphics/linux_mesa
 linux_mesa3	ports/graphics/linux_mesa3
 linux_rar	ports/archivers/linux_rar
 linuxdoc	ports/textproc/linuxdoc
+linuxigd	ports/net/linuxigd
 linuxthreads	ports/devel/linuxthreads
 listar		ports/mail/listar
 listmanager	ports/mail/listmanager
