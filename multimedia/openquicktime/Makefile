@@ -27,6 +27,12 @@ USE_SIZE=	yes
 INSTALL_SHLIBS=	yes
 PKGDEINSTALL=	${PKGINSTALL}
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "sparc64"
+BROKEN=		"Does not build on sparc64"
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e "s/xCC/xc/" ${WRKSRC}/configure
 
@@ -34,4 +40,4 @@ post-install:
 	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} \
 		${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

@@ -28,6 +28,12 @@ CONFIGURE_ARGS=	--without-bfd
 
 MAN1=		lush.1
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "sparc64"
+BROKEN=		"Does not build on sparc64"
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -E -e \
 		's|opt=.+$$||; \
@@ -42,4 +48,4 @@ post-patch:
 		's|SDL/SDL|SDL11/SDL|; \
 		s|"libSDL"|\"libSDL-1.1.so.5\"|'
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
