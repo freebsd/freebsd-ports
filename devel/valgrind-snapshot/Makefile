@@ -7,7 +7,7 @@
 
 PORTNAME=	valgrind
 PORTVERSION=	352
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	http://www.rabson.org/
 PKGNAMESUFFIX=	-snapshot
@@ -31,6 +31,14 @@ CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500000 
+PLIST_SUB+=	RELENG_4="@comment "
+PLIST_SUB+=	RELENG_5=""
+.else
+PLIST_SUB+=	RELENG_4=""
+PLIST_SUB+=	RELENG_5="@comment "
+.endif
 
 .if ${PERL_LEVEL} < 500601
 IGNORE=		"can\'t be built. Your Perl version is too old. Please use lang/perl5.8 port to upgrade your Perl"
@@ -62,7 +70,36 @@ pre-patch:
 .endif
 
 post-install:
-	${INSTALL_DATA} ${WRKSRC}/coregrind/vg_unistd.h \
+	@${INSTALL_DATA} ${WRKSRC}/coregrind/vg_unistd.h \
 		${PREFIX}/include/valgrind
+
+# Check if kernel is built with USER_LDT option (FreeBSD 4 only)
+.if ${OSVERSION} < 500000
+	@${PREFIX}/bin/valgrind --tool=memcheck true 2> ${WRKDIR}/ldt.test
+	@${GREP} i386_set_ldt ${WRKDIR}/ldt.test >/dev/null &&\
+	${ECHO_CMD} !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! && \
+	${ECHO_CMD} Please rebuild your kernel with ``options USER_LDT''! && \
+	${ECHO_CMD} Otherwise, valgrind will not be able to perform pointer analysis! && \
+	${ECHO_CMD} !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! || true
+.endif
+
+# Generate suppression files
+	@yes | ${PREFIX}/bin/valgrind --tool=memcheck --gen-suppressions=yes true \
+		| ${SED} -e 's,.*{$$,{,'  \
+		| ${GREP} -v '^=' \
+		> ${WRKDIR}/freebsd-default.supp || \
+		${RM} ${WRKDIR}/freebsd-default.supp
+
+.if exists(${WRKDIR}/freebsd-default.supp)
+	@${INSTALL_DATA} ${WRKDIR}/freebsd-default.supp \
+		${PREFIX}/lib/valgrind
+PLIST_SUB+=	VALGRIND_SUPPFILE=""
+	@${ECHO} ""
+	@${ECHO} ""
+	@${CAT} ${PKGMESSAGE} | ${SED} -e 's,%%PREFIX%%,${PREFIX},g'
+	@${ECHO} ""
+.else
+PLIST_SUB+=	VALGRIND_SUPPFILE="@comment "
+.endif
 
 .include <bsd.port.post.mk>

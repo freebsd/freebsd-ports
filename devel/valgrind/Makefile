@@ -7,7 +7,7 @@
 
 PORTNAME=	valgrind
 PORTVERSION=	352
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	http://www.rabson.org/
 DISTNAME=	${PORTNAME}-stable-${PORTVERSION}
@@ -66,12 +66,36 @@ pre-patch:
 .endif
 
 post-install:
-	${INSTALL_DATA} ${WRKSRC}/coregrind/vg_unistd.h \
+	@${INSTALL_DATA} ${WRKSRC}/coregrind/vg_unistd.h \
 		${PREFIX}/include/valgrind
+
+# Check if kernel is built with USER_LDT option (FreeBSD 4 only)
+.if ${OSVERSION} < 500000
+	@${PREFIX}/bin/valgrind --tool=memcheck true 2> ${WRKDIR}/ldt.test
+	@${GREP} i386_set_ldt ${WRKDIR}/ldt.test >/dev/null &&\
+	${ECHO_CMD} !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! && \
+	${ECHO_CMD} Please rebuild your kernel with ``options USER_LDT''! && \
+	${ECHO_CMD} Otherwise, valgrind will not be able to perform pointer analysis! && \
+	${ECHO_CMD} !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! || true
+.endif
+
+	@yes | ${PREFIX}/bin/valgrind --tool=memcheck --gen-suppressions=yes true \
+		| ${SED} -e 's,.*{$$,{,'  \
+		| ${GREP} -v '^=' \
+		> ${WRKDIR}/freebsd-default.supp || \
+		${RM} ${WRKDIR}/freebsd-default.supp
 
 	@${ECHO} ""
 	@${ECHO} ""
-	@${CAT} ${PKGMESSAGE}
+	@${CAT} ${PKGMESSAGE} | ${SED} -e 's,%%PREFIX%%,${PREFIX},g'
 	@${ECHO} ""
+
+.if exists(${WRKDIR}/freebsd-default.supp)
+	@${INSTALL_DATA} ${WRKDIR}/freebsd-default.supp \
+		${PREFIX}/lib/valgrind
+PLIST_SUB+=	VALGRIND_SUPPFILE=""
+.else
+PLIST_SUB+=	VALGRIND_SUPPFILE="@comment "
+.endif
 
 .include <bsd.port.post.mk>
