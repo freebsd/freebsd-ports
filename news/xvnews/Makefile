@@ -1,9 +1,9 @@
 # New ports collection makefile for:	xvnews
 # Version required:	2.3.2
 # Date created:		31 Jul 1996
-# Whom:			shanee@rabbit.augusta.de
+# Whom:			shanee@augusta.de
 #
-# $Id: Makefile,v 1.1.1.1 1996/11/25 09:52:55 tg Exp $
+# $Id: Makefile,v 1.2 1996/11/26 07:57:46 asami Exp $
 #
 
 DISTNAME=	xvnews-2.3.2
@@ -11,7 +11,7 @@ CATEGORIES=	news
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	applications
 
-MAINTAINER=	shanee@rabbit.augusta.de
+MAINTAINER=	shanee@augusta.de
 
 LIB_DEPENDS=	xview\\.3\\.:${PORTSDIR}/x11/xview-lib
 
