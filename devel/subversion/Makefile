@@ -5,10 +5,9 @@
 # $FreeBSD$
 
 PORTNAME=	subversion
-PORTVERSION=	0.20.1
-PORTREVISION=	1
+PORTVERSION=	0.21.0
 CATEGORIES=	devel
-MASTER_SITES=	http://subversion.tigris.org/files/documents/15/3440/
+MASTER_SITES=	http://subversion.tigris.org/files/documents/15/3712/
 MASTER_SITES+=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=		bmah
 

@@ -1,6 +1,7 @@
 bin/svn
 bin/svn-config
 bin/svnadmin
+bin/svndumpfilter
 bin/svnlook
 bin/svnserve
 bin/svnversion
@@ -43,10 +44,6 @@ info/svn-design.info-1
 info/svn-design.info-2
 info/svn-design.info-3
 @exec install-info %D/info/svn-design.info %D/info/dir
-lib/libsvn_auth-1.a
-lib/libsvn_auth-1.la
-lib/libsvn_auth-1.so
-lib/libsvn_auth-1.so.0
 lib/libsvn_client-1.a
 lib/libsvn_client-1.la
 lib/libsvn_client-1.so
