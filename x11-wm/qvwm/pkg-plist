@@ -27,3 +27,6 @@ share/doc/qvwm/README.en
 share/doc/qvwm/TODO.en
 share/doc/qvwm/TECH.en
 man/man1/qvwm.1.gz
+@dirrm share/doc/qvwm
+@dirrm lib/X11/qvwm/pixmaps
+@dirrm lib/X11/qvwm
