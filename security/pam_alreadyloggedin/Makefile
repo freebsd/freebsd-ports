@@ -12,6 +12,9 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}					\
 		http://green.bikeshed.org/~green/
 MASTER_SITE_SUBDIR=	green
 
+MAINTAINER=	green@FreeBSD.org
+COMMENT=	PAM module based on whether a user is already logged in
+
 MANCOMPRESSED=	yes
 
 .include <bsd.port.pre.mk>
@@ -19,8 +22,10 @@ MANCOMPRESSED=	yes
 .if ${OSVERSION} < 500000
 BROKEN=	"only works on systems with OpenPAM (5.0-CURRENT)"
 .endif
-MAINTAINER=	green@FreeBSD.org
-COMMENT=	PAM module based on whether a user is already logged in
+
+.if ${OSVERSION} >= 500113
+BROKEN=		"Does not compile on FreeBSD ${OSVERSION}"
+.endif
 
 .if defined(NOPROFILE)
 PLIST_SUB+=	PROFILE="@comment "
