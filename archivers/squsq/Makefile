@@ -8,7 +8,7 @@
 PORTNAME=	squsq
 PORTVERSION=	3.3
 CATEGORIES=	archivers
-MASTER_SITES=	${MASTER_SITES_NETBSD} \
+MASTER_SITES=	${MASTER_SITE_NETBSD} \
 		http://freebsd.nsu.ru/distfiles/
 DISTNAME=	t20-squsq-3.3
 
