@@ -1,0 +1,103 @@
+*** tkcvs/doinstall.orig	Tue Jan  9 22:17:52 1996
+--- tkcvs/doinstall	Fri Aug  2 13:16:24 1996
+***************
+*** 7,35 ****
+  
+  INSTALLDIR=/usr/local/lib
+  BINDIR=/usr/local/bin
+! MANDIR=/usr/local/man/mann
+  
+  INSTALL_PROG=./install-sh
+  
+  # This must be an X based editor -- do NOT use vi except via an xterm
+  # or shelltool.
+  
+! EDITOR=nedit
+  
+  # Find a Tk interpreter.
+   
+! WISH=`which wish4.0`
+  if [ ! -f $WISH ]; then
+!   WISH=`which wish4.1`
+  fi
+  if [ ! -f $WISH ]; then
+!   echo "I cant find a Tk interpreter on your system"
+    exit 1
+  fi
+  
+  # Find where the global bitmaps are.
+  
+! for GDIR in /usr/include/X11/bitmaps /usr/openwin/include/X11/bitmaps /usr/X11/include/bitmaps /usr/include/bitmaps /usr/local/include/bitmaps
+  do
+    if [ -d "$GDIR" ]; then
+      break
+--- 7,35 ----
+  
+  INSTALLDIR=/usr/local/lib
+  BINDIR=/usr/local/bin
+! MANDIR=/usr/local/man/man1
+  
+  INSTALL_PROG=./install-sh
+  
+  # This must be an X based editor -- do NOT use vi except via an xterm
+  # or shelltool.
+  
+! EDITOR="xedit"
+  
+  # Find a Tk interpreter.
+   
+! WISH=`which wish4.1`
+  if [ ! -f $WISH ]; then
+!   WISH=`which wish4.0`
+  fi
+  if [ ! -f $WISH ]; then
+!   echo "I cant find a usefull Tk interpreter on your system"
+    exit 1
+  fi
+  
+  # Find where the global bitmaps are.
+  
+! for GDIR in /usr/X11R6/include/X11/bitmaps /usr/openwin/include/X11/bitmaps /usr/X11/include/bitmaps /usr/include/bitmaps /usr/local/include/bitmaps
+  do
+    if [ -d "$GDIR" ]; then
+      break
+***************
+*** 62,71 ****
+  
+  # Some directories we have to create.
+  
+- LDIR=${INSTALLDIR}/bitmaps
+  TCDIR=${INSTALLDIR}/tkcvs
+! mkdir -p $LDIR $TCDIR
+! for dir in $LDIR $TCDIR
+  do
+    if [ ! -d $dir ]; then
+      echo "I cant create the directory $dir"
+--- 62,71 ----
+  
+  # Some directories we have to create.
+  
+  TCDIR=${INSTALLDIR}/tkcvs
+! LDIR=${TCDIR}/bitmaps
+! mkdir -p $LDIR $TCDIR 
+! for dir in $TCDIR $LDIR
+  do
+    if [ ! -d $dir ]; then
+      echo "I cant create the directory $dir"
+***************
+*** 99,105 ****
+    fi
+  done
+  
+! for f in *.n ../tkdiff/*.n
+  do
+          $INSTALL_PROG -m 444 $f $MANDIR
+  done
+--- 99,105 ----
+    fi
+  done
+  
+! for f in *.1 ../tkdiff/*.1
+  do
+          $INSTALL_PROG -m 444 $f $MANDIR
+  done

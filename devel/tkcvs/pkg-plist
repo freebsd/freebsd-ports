@@ -1,8 +1,8 @@
+@cwd /usr/local
 bin/tkcvs
 bin/tkdiff
 lib/tkcvs/README.tkcvs
 lib/tkcvs/README.tkdiff
-lib/tkcvs/tclIndex
 lib/tkcvs/bindings.tcl
 lib/tkcvs/checkout.tcl
 lib/tkcvs/commit.tcl
@@ -18,6 +18,7 @@ lib/tkcvs/reports.tcl
 lib/tkcvs/search.tcl
 lib/tkcvs/static.tcl
 lib/tkcvs/tag.tcl
+lib/tkcvs/tclIndex
 lib/tkcvs/tkcvs_def.tcl
 lib/tkcvs/tooltips.tcl
 lib/tkcvs/update.tcl
@@ -40,5 +41,5 @@ lib/tkcvs/bitmaps/tkcvs32.xbm
 lib/tkcvs/bitmaps/tkcvs32_mask.xbm
 lib/tkcvs/bitmaps/tree16.xbm
 lib/tkcvs/bitmaps/update.xbm
-man/mann/tkcvs.n.gz
-man/mann/tkdiff.n.gz
+man/man1/tkcvs.1.gz
+man/man1/tkdiff.1.gz
