@@ -35,10 +35,15 @@ USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 
 WRKSRC=		${WRKDIR}/kawari-${PORTVERSION:S/.//g}
-CFLAGS+=	${PTHREAD_CFLAGS}
+CFLAGS+=	${PTHREAD_CFLAGS} -fPIC
+
+.include <bsd.port.pre.mk>
+.if ${ARCH} == "amd64"
+CFLAGS+=	-fPIC
+.endif
 
 do-build:
-	(cd ${WRKSRC}/build/src; ${GMAKE} -f gcc.mak PYTHONBASE=${PYTHONBASE} PYTHON_VERSION=${PYTHON_VERSION} PTHREAD_LIBS=${PTHREAD_LIBS})
+	(cd ${WRKSRC}/build/src; CFLAGS="${CFLAGS}" ${GMAKE} -f gcc.mak PYTHONBASE=${PYTHONBASE} PYTHON_VERSION=${PYTHON_VERSION} PTHREAD_LIBS=${PTHREAD_LIBS})
 
 do-install:
 	${MKDIR} ${PREFIX}/share/kawari
@@ -47,4 +52,4 @@ do-install:
 	${MKDIR} ${PREFIX}/libexec/ninix
 	${INSTALL_PROGRAM} ${WRKSRC}/build/mach/freebsd/_kawari8.so ${PREFIX}/libexec/ninix
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
