@@ -1,9 +1,11 @@
 bin/svscan
+bin/svscanboot
 bin/supervise
 bin/svc
 bin/svok
 bin/svstat
 bin/fghack
+bin/pgrphack
 bin/multilog
 bin/tai64n
 bin/tai64nlocal
@@ -12,3 +14,4 @@ bin/setuidgid
 bin/envuidgid
 bin/envdir
 bin/setlock
+bin/readproctitle
