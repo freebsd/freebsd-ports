@@ -736,6 +736,7 @@ checkpassword	ports/security/checkpassword
 checkservice	ports/sysutils/checkservice
 cheesetracker	ports/audio/cheesetracker
 cheetah		ports/www/cheetah
+chef		ports/misc/chef
 chemeq		ports/biology/chemeq
 chemtool	ports/science/chemtool
 chess		src/gnu/games/chess
