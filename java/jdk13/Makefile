@@ -110,11 +110,14 @@ PLIST_SUB+=    HOTSPOT:="@comment "
 .include <bsd.port.pre.mk>
 
 .if !defined(JDK13DIR)
-.if defined(WITH_LINUX_BOOTSTRAP) || !exists(${PREFIX}/jdk${JDK_VERSION}/bin/javac)
+.if defined(WITH_LINUX_BOOTSTRAP)
 JDK13DIR=	${LOCALBASE}/linux-blackdown-jdk${JDK_VERSION}
 BUILD_DEPENDS+=	${JDK13DIR}/bin/javac:${PORTSDIR}/java/linux-blackdown-jdk13
-.else
+.elif exists(${PREFIX}/jdk${JDK_VERSION}/bin/javac)
 JDK13DIR=	${LOCALBASE}/jdk${JDK_VERSION}
+.else
+JDK13DIR=	${LOCALBASE}/diablo-jdk${JDK_VERSION}
+BUILD_DEPENDS+=	${JDK13DIR}/bin/javac:${PORTSDIR}/java/diablo-jdk13
 .endif
 .endif
 
@@ -193,7 +196,7 @@ post-patch:
 .endif
 .endif
 
-.if defined(WITH_LINUX_BOOTSTRAP) || !exists(${PREFIX}/jdk${JDK_VERSION}/bin/javac)
+.if defined(WITH_LINUX_BOOTSTRAP)
 # Some checks for bootstrapping with a Linux JDK
 pre-build:
 	@if [ `${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/check_wrkdir_links.sh "${WRKDIRPREFIX}" "${LINUXBASE}" 2>/dev/null` ]; \
