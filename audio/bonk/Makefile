@@ -7,13 +7,10 @@
 #
 
 PORTNAME=	bonk
-PORTVERSION=	0.4
+PORTVERSION=	0.5
 CATEGORIES=	audio
 MASTER_SITES=	http://yoyo.cc.monash.edu.au/~pfh/bonk/
 
-MAINTAINER=	ijliao@FreeBSD.org
-
-post-patch:
-	@${PERL} -pi -e "s,%%INSTALL_PROGRAM%%,${INSTALL_PROGRAM},g" ${WRKSRC}/Makefile
+MAINTAINER=	ports@FreeBSD.org
 
 .include <bsd.port.mk>
