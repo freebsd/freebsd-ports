@@ -3,6 +3,7 @@
 # Date created:         27. April 1996
 # Whom:                 Ronald Kuehn <kuehn@rz.tu-clausthal.de>
 #
+# $Id$
 #
 
 DISTNAME=       imaze
