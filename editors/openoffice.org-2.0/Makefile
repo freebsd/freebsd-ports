@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	openoffice
-PORTVERSION=	644
-PORTREVISION=	2
-SNAPDATE=	20030601
+PORTVERSION=	645
+SNAPDATE=	20030712
 CATEGORIES+=	editors
 MASTER_SITES+=	http://projects.imp.ch/openoffice/%SUBDIR%/ \
+		http://people.freebsd.org/~maho/files/ \
 		http://ny1.mirror.openoffice.org/developer/%SUBDIR%/ \
 		http://ftp.gwdg.de/pub/misc/openoffice/developer/%SUBDIR%/ \
 		${MASTER_SITE_RINGSERVER:S,developer/%SUBDIR%,misc/openoffice/&,} \
@@ -20,7 +20,7 @@ MASTER_SITES+=	http://projects.imp.ch/openoffice/%SUBDIR%/ \
 MASTER_SITE_SUBDIR=	${PORTVERSION}
 DISTFILES+=	oo_${PORTVERSION}_src_${SNAPDATE}.tar.bz2 \
 		gpc231.tar.Z:gpc patch-openoffice-mozilla101-2002-10-14:moz \
-		http://people.freebsd.org/~mbr/ooo/:moz
+		mozilla-vendor-1.0.2.tgz:moz
 .if defined(L10NHELP)
 DISTFILES+=	${L10NHELP:S/$/:help/}
 .endif
@@ -128,6 +128,7 @@ BUILD_DEPENDS+= ${JAVAVM}:${PORTSDIR}/java/jdk14
 BUILD_DEPENDS+= zip:${PORTSDIR}/archivers/zip
 BUILD_DEPENDS+=	unzip:${PORTSDIR}/archivers/unzip
 BUILD_DEPENDS+=	${ANT}:${PORTSDIR}/devel/jakarta-ant
+BUILD_DEPENDS+=	${X11BASE}/lib/libgdk-x11-2.0.so:${PORTSDIR}/x11-toolkits/gtk20
 BUILD_DEPENDS+= ${X11BASE}/lib/libX11.so:${PORTSDIR}/x11/XFree86-4-libraries
 .if !defined(DISPLAY)
 BUILD_DEPENDS+= Xvfb:${PORTSDIR}/x11-servers/XFree86-4-VirtualFramebufferServer
@@ -153,8 +154,6 @@ JDKDIR?=	${LOCALBASE}/jdk1.4.1
 JAVAVM=		${JDKDIR}/bin/java
 
 GNU_CONFIGURE=	yes
-USE_AUTOCONF=	yes
-WANT_AUTOCONF_VER= 253
 WRKDIR=		${WRKDIRPREFIX}${.CURDIR}/work
 WRKSRC=		${WRKDIR}/oo_${PORTVERSION}_src/config_office
 LD_PATH1=	${WRKSRC}/../vos/unxfbsd.pro/lib/:${WRKSRC}/../ucbhelper/unxfbsd.pro/lib/
@@ -533,7 +532,7 @@ pre-install:
 	@${SED} -i orig -e 's#%%PREFIX%%#${PREFIX}#g' \
 	-e 's#%%PORTVERSION%%#${BUILD_NR}#g' \
 	${WRKSRC}/../instsetoo/unxfbsd.pro/${LANG_EXT}/normal/oo_setup.resp
-	@${MKDIR} -p ${WRKSRC}/../solver/644/unxfbsd.pro/bin/${LANG_EXT}/osl/
+	@${MKDIR} -p ${WRKSRC}/../solver/${PORTVERSION}/unxfbsd.pro/bin/${LANG_EXT}/osl/
 
 do-install:
 .if !defined(DISPLAY)
