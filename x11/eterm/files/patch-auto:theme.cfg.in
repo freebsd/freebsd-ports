@@ -1,0 +1,11 @@
+--- themes/auto/theme.cfg.in.orig	Sat Sep 22 16:17:07 2001
++++ themes/auto/theme.cfg.in	Sat Sep 22 16:16:09 2001
+@@ -1,7 +1,7 @@
+ <Eterm-0.9.1>
+ 
+ begin color
+-    foreground #aaaaaa
++    foreground #ffffff
+     background black
+     cursor #ffff00
+     cursor_text #880000
