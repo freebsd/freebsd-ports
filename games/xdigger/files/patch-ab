@@ -1,11 +1,11 @@
---- sound.c	Thu Jan  1 00:06:00 1998
-+++ /home/andy/tmp/wrk/sound.c	Sat Jun 29 23:19:09 1996
+--- sound.c.orig	Sun Jul  4 02:52:36 1999
++++ sound.c	Sun Sep  8 01:51:39 2002
 @@ -39,6 +39,9 @@
  #ifdef linux
  #include <linux/soundcard.h>
  #endif
 +#ifdef __FreeBSD__
-+#include <machine/soundcard.h>
++#include <sys/soundcard.h>
 +#endif
  #ifdef SOUND_RPLAY
  #include <rplay.h>
