@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	DBD
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	nork@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Provides access to SQLite2 databases through the DBI
 
 PERL_CONFIGURE=	yes

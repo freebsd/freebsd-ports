@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Crypt
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	nork@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl implementation of the Twofish encryption algorithm
 
 PERL_CONFIGURE=	yes

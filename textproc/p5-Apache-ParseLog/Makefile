@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Apache
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	nork@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl5 module to parse Apache log files
 
 PERL_CONFIGURE=	yes
