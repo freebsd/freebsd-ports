@@ -3808,6 +3808,8 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
+      <cvename>CAN-2004-1487</cvename>
+      <cvename>CAN-2004-1488</cvename>
       <bid>11871</bid>
       <mlist msgid="20041209091438.GA15010@kontryhel.haltyr.dyndns.org">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=110269474112384</mlist>
       <url>http://bugs.debian.org/261755</url>
@@ -3815,6 +3817,7 @@ http_access deny Gopher</pre>
     <dates>
       <discovery>2004-12-09</discovery>
       <entry>2004-12-14</entry>
+      <modified>2005-02-23</modified>
     </dates>
   </vuln>
 
