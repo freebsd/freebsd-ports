@@ -1,0 +1,13 @@
+lib/perl5/site_perl/%%PERL_VER%%/Crypt/CAST5_PP.pm
+lib/perl5/site_perl/%%PERL_VER%%/Crypt/CAST5_PP/Tables.pm
+lib/perl5/site_perl/%%PERL_VER%%/auto/Crypt/CAST5_PP/autosplit.ix
+lib/perl5/site_perl/%%PERL_VER%%/auto/Crypt/CAST5_PP/decrypt.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/Crypt/CAST5_PP/encrypt.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/Crypt/CAST5_PP/init.al
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Crypt/CAST5_PP/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Crypt/CAST5_PP
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Crypt 2>/dev/null || true
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/auto/Crypt/CAST5_PP
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/auto/Crypt 2>/dev/null || true
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Crypt/CAST5_PP
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Crypt 2>/dev/null || true
