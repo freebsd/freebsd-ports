@@ -36,9 +36,6 @@ lib/scwm-modules/app/scwm/libxpm-menus.so
 lib/scwm-modules/app/scwm/libxpm-menus.so.0
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
-man/man1/scwm.1.gz
-man/man1/scwmexec.1.gz
-man/man1/scwmrepl.1.gz
 share/scwm-modules/app/scwm/advice.scm
 share/scwm-modules/app/scwm/animation.scm
 share/scwm-modules/app/scwm/auto-raise.scm
