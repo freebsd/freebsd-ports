@@ -240,6 +240,7 @@
     SUBDIR += rxp
     SUBDIR += sablotron
     SUBDIR += sarep
+    SUBDIR += saxon
     SUBDIR += scr2txt
     SUBDIR += scrollkeeper
     SUBDIR += sdf

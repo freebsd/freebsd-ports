@@ -1,0 +1,15 @@
+The SAXON package is a collection of tools for processing XML
+documents. The main components are:
+
+  - An XSLT processor, which implements the Version 1.0 XSLT and XPath
+    Recommendations with a number of powerful extensions.
+
+  - A Java library, which supports a similar processing model to XSL,
+    but allows full programming capability.
+
+  - A slightly improved version of the Alfred parser from Microstar.
+
+WWW: http://saxon.sourceforge.net/
+
+- Kimura Fuyuki
+fuyuki@mj.0038.net
