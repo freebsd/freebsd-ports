@@ -14,7 +14,6 @@ bin/jv-scan32
 bin/jcf-dump32
 bin/jar32
 bin/grepjar32
-@comment not needed post-libstdc++-v3:	%%GNU_HOST%%/include/_G_config.h
 @comment Insert PLIST.gcc-lib here
 @comment -=[ begin PLIST.gcc-lib ]=-
 @comment -=[ end PLIST.gcc-lib ]=-
@@ -36,5 +35,3 @@ info/gcj.info
 @exec install-info %D/info/gcc.info %D/info/dir
 @exec install-info %D/info/gccint.info %D/info/dir
 @exec install-info %D/info/gcj.info %D/info/dir
-@comment @dirrm %%GNU_HOST%%/include
-@comment @dirrm %%GNU_HOST%%
