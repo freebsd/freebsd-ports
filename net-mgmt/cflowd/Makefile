@@ -26,6 +26,7 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libArts.a:${PORTSDIR}/net-mgmt/arts++
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_BISON=	yes
+USE_REINPLACE=	yes
 
 CONFIGURE_ARGS+=--enable-shared --with-artspp=${PREFIX}
 
@@ -34,9 +35,8 @@ MANL=		cfdases.l cfdifmatrix.l cfdnets.l cfdnexthops.l \
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 502102
-BROKEN=		"Does not compile on >= 5.x"
-.endif
+post-patch:
+	cd ${WRKSRC}; ${FIND} . -type f | ${XARGS} ${GREP} -l '<strstream.h>' | ${XARGS} ${REINPLACE_CMD} -e 's/<strstream.h>/<strstream>/'
 
 .if !defined(CFLOWD_FLOWSCAN_PATCH)
 pre-everything::
