@@ -297,6 +297,7 @@
     SUBDIR += stlport
     SUBDIR += str
     SUBDIR += swarm
+    SUBDIR += swigruby
     SUBDIR += t1lib
     SUBDIR += tcl-memchan
     SUBDIR += tclcheck

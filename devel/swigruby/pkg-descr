@@ -1,0 +1,7 @@
+Ruby module for SWIG. 
+
+SWIG (http://www.swig.org/) is an interface compiler that connects
+programs written in C and C++ with scripting languages. This module
+extends SWIG to produce wrapper code for Ruby.
+
+WWW:	http://www.goto.info.waseda.ac.jp/~fukusima/ruby/swig-e.html
