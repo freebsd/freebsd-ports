@@ -12,7 +12,7 @@ CVS: Reviewed by:     Fill this in if someone else reviewed your modification.
 CVS: Approved by:     Fill this in if you needed approval for this commit.
 CVS: Obtained from:   Fill this in if the change is from third party software.
 CVS:
-CVS: MFC after:	XXX [day[s]|week[s]]
+CVS: MFC after:	XXX [day[s]|week[s]|month[s]]
 CVS:	Fill this in if you want to get MFC notification later.  XXX is a
-CVS:	number of days or weeks after which MFC is planned. If no day[s]
-CVS:	or week[s] suffix was specified then days assumed.
+CVS:	number of days, weeks or months after which MFC is planned.
+CVS:	If no suffix is specified then days is assumed.
