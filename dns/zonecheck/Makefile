@@ -6,9 +6,11 @@
 #
 
 PORTNAME=	zonecheck
-PORTVERSION=	2.0.0b9
+PORTVERSION=	2.0.0
+PORTEPOCH=	1
 CATEGORIES=	dns ipv6 ruby
-MASTER_SITES=	${MASTER_SITE_SAVANNAH}
+MASTER_SITES=	ftp://ftp.nic.fr/pub/mirror/zonecheck/src/ \
+		${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	${PORTNAME}/src
 EXTRACT_SUFX=	.tgz
 
@@ -29,6 +31,23 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 MAN1=		zonecheck.1
 DOCS=		BUGS INSTALL README TODO
+
+ZONECHECK_TARGET=	common cli
+
+.if defined(WITH_ZONECHECK_CGI)
+ZONECHECK_TARGET+=	cgi
+PLIST_SUB+=	ZONECHECK_CGI=""
+.else
+PLIST_SUB+=	ZONECHECK_CGI="@comment "
+
+pre-everything::
+	@${ECHO_MSG} "Use WITH_ZONECHECK_CGI=yes to install with CGI support"
+.endif
+
+do-install:
+	@cd ${INSTALL_WRKSRC} && \
+		${RUBY} ./installer.rb ${ZONECHECK_TARGET} \
+		-DETCDIST='-dist' -DRUBY="${RUBY}" -DPREFIX="${PREFIX}"
 
 .if !defined(NOPORTDOCS)
 post-install:
