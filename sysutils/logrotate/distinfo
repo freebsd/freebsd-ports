@@ -1,4 +1,4 @@
-MD5 (logrotate_3.6.5-2.diff.gz) = 6cce85b7af50e3c2a226d6f0539abe08
-SIZE (logrotate_3.6.5-2.diff.gz) = 10766
-MD5 (logrotate_3.6.5.orig.tar.gz) = 1c707f826f783ffc461a32b34cba5056
-SIZE (logrotate_3.6.5.orig.tar.gz) = 32086
+MD5 (logrotate_3.7.orig.tar.gz) = bf0de3a495294300f32e71f136119c41
+SIZE (logrotate_3.7.orig.tar.gz) = 35737
+MD5 (logrotate_3.7-1.diff.gz) = 3d74ebcb63731d2afa4f97438af5f4bb
+SIZE (logrotate_3.7-1.diff.gz) 12739
