@@ -14,6 +14,8 @@ DISTNAME=	Code_Medic_source-${PORTVERSION}
 
 MAINTAINER=	lioux@FreeBSD.org
 
+BROKEN=		Needs further patching
+
 BUILD_DEPENDS=	${NONEXISTENT}:${JXPORT}:configure \
 		makemake:${JXPORT}
 LIB_DEPENDS=	jx-1_5_3.1:${JXPORT} \
