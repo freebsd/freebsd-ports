@@ -5,19 +5,12 @@ bin/ldapmodrdn
 bin/ldappasswd
 bin/ldapsearch
 bin/ud
-etc/openldap/ldap.conf
 etc/openldap/ldap.conf.default
-etc/openldap/ldapfilter.conf
 etc/openldap/ldapfilter.conf.default
-etc/openldap/ldapsearchprefs.conf
 etc/openldap/ldapsearchprefs.conf.default
-etc/openldap/ldaptemplates.conf
 etc/openldap/ldaptemplates.conf.default
-etc/openldap/slapd.at.conf
 etc/openldap/slapd.at.conf.default
-etc/openldap/slapd.conf
 etc/openldap/slapd.conf.default
-etc/openldap/slapd.oc.conf
 etc/openldap/slapd.oc.conf.default
 include/disptmpl.h
 include/lber.h
@@ -49,5 +42,4 @@ sbin/ldif2ldbm
 share/openldap/go500gw.help
 share/openldap/ldapfriendly
 share/openldap/rcpt500.help
-@dirrm etc/openldap
 @dirrm share/openldap
