@@ -3,7 +3,7 @@
 # Date created:				18th July 1998
 # Whom:					Gary Palmer <gpalmer@freebsd.org>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/07/19 02:37:30 gpalmer Exp $
 #
 
 DISTNAME=	cdb-0.55
@@ -12,7 +12,6 @@ MASTER_SITES=	ftp://koobera.math.uic.edu/www/software/
 
 MAINTAINER=	ports@FreeBSD.ORG
 
-NO_PACKAGE=	"Very unclear copyright information"
 ALL_TARGET=	it
 
 .include <bsd.port.mk>
