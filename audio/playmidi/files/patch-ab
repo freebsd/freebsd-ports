@@ -1,96 +1,108 @@
-*** Makefile.orig	Sat Feb 24 17:00:00 1996
---- Makefile	Fri Nov 15 09:38:06 1996
+*** Makefile.orig	Thu Oct  1 11:39:18 1998
+--- Makefile	Wed Jan  5 06:38:01 2000
 ***************
-*** 28,34 ****
+*** 12,50 ****
   
   # ncurses usually /usr/lib, -L/usr/local/lib doesn't hurt
   # unless there's more than one ncurses floating around on your system
 ! LIBNC	= -L/usr/local/lib -lncurses
   
   ######### NOTE:  X11R6 or newer REQUIRED
-  LIBX11	= -L/usr/X11R6/lib -lXaw -lXmu -lXt -lX11 -lXext -lSM -lICE
---- 28,34 ----
-  
-  # ncurses usually /usr/lib, -L/usr/local/lib doesn't hurt
-  # unless there's more than one ncurses floating around on your system
-! LIBNC   = -lncurses -lmytinfo
-  
-  ######### NOTE:  X11R6 or newer REQUIRED
-  LIBX11	= -L/usr/X11R6/lib -lXaw -lXmu -lXt -lX11 -lXext -lSM -lICE
-***************
-*** 36,60 ****
+! LIBX11	= -L/usr/X11R6/lib -lXaw -lXmu -lXt -lX11 -lXext -lSM -lICE
+! LIBGTK	= -L/usr/X11R6/lib -lgtk-1.1 -lgdk-1.1 -lglib-1.1 -lX11 -lXext -lm
+! LIBVGA	= -L/usr/local/lib -lvgagl -lvga
   
   # ncurses is usually in /usr/include/ncurses, but you may need
   # to use /usr/local/include/ncurses depending on your setup.
 ! INCNC	= -I/usr/include/ncurses
   
   # just in case you keep your X includes in an odd location.
-  INCX11	= -I/usr/X11R6/include -DNARROWPROTO
+! INCX11	= -I/usr/X11R6/include -DNARROWPROTO
+  
+  # stuff for sound blaster awe32
+  INCAWE  = -DVOXWARE_CONTROLLER_7_WORKING
+  # awe_voice.h path
+! INCAWE  += -I/usr/lib/oss/include/sys
   
   # usually in /usr/include, but -I/usr/local/include doesn't hurt
   # unless there's more than one svgalib floating around your system.
 ! INCVGA	= -I/usr/local/include
   
   # Directory where application defaults files are stored for X11 version
-  XAPPDEFAULTS = /usr/X11R6/lib/X11/app-defaults
+! XAPPDEFAULTS = /usr/X11R6/lib/X11/app-defaults
   
-  INCLUDES= $(INCNC) $(INCX11) $(INCVGA)
-! INSTALLDIR = /usr/local/bin
+  INCLUDES= $(INCNC) $(INCX11) $(INCVGA) $(INCAWE)
+! INSTALLDIR = /usr/bin
 ! INSTALL = install -s
   
   # if you are using the GUS Ultra driver module, add -DULTRA_DRIVER
-! CFLAGS	= -Wall -pipe -fomit-frame-pointer -O2 -m486
+! CFLAGS	= -Wall -pipe -fomit-frame-pointer -O2 -m486 $(INCAWE)
 ! LDFLAGS =
   
   OBJECTS = playmidi.o readmidi.o playevents.o \
   	  patchload.o emumidi.o io_ncurses.o
---- 36,62 ----
+--- 12,53 ----
+  
+  # ncurses usually /usr/lib, -L/usr/local/lib doesn't hurt
+  # unless there's more than one ncurses floating around on your system
+! LIBNC	= -lncurses -lmytinfo
+  
+  ######### NOTE:  X11R6 or newer REQUIRED
+! #LIBX11	= -L/usr/X11R6/lib -lXaw -lXmu -lXt -lX11 -lXext -lSM -lICE
+! #LIBGTK	= -L/usr/X11R6/lib -lgtk-1.1 -lgdk-1.1 -lglib-1.1 -lX11 -lXext -lm
+! #LIBVGA	= -L/usr/local/lib -lvgagl -lvga
   
   # ncurses is usually in /usr/include/ncurses, but you may need
   # to use /usr/local/include/ncurses depending on your setup.
-! INCNC   = #-I/usr/include/ncurses
+! #INCNC	= -I/usr/include/ncurses
   
   # just in case you keep your X includes in an odd location.
-  INCX11	= -I/usr/X11R6/include -DNARROWPROTO
+! #INCX11	= -I/usr/X11R6/include -DNARROWPROTO
+  
+  # stuff for sound blaster awe32
+  INCAWE  = -DVOXWARE_CONTROLLER_7_WORKING
+  # awe_voice.h path
+! INCAWE  += -I.
   
   # usually in /usr/include, but -I/usr/local/include doesn't hurt
   # unless there's more than one svgalib floating around your system.
-! INCVGA  = #-I/usr/local/include
+! #INCVGA	= -I/usr/local/include
   
   # Directory where application defaults files are stored for X11 version
-  XAPPDEFAULTS = /usr/X11R6/lib/X11/app-defaults
+! #XAPPDEFAULTS = /usr/X11R6/lib/X11/app-defaults
   
-  INCLUDES= $(INCNC) $(INCX11) $(INCVGA)
+  INCLUDES= $(INCNC) $(INCX11) $(INCVGA) $(INCAWE)
 ! INSTALLDIR = ${PREFIX}/bin
+! LIBDATADIR = ${PREFIX}/libdata/midi
+! #INSTALL = install -s
   
   # if you are using the GUS Ultra driver module, add -DULTRA_DRIVER
-! #CFLAGS  = -Wall -pipe -fomit-frame-pointer -O2 -m486
-! CFLAGS += -DPREFIX=\"$(PREFIX)\"
+! CFLAGS	+= -DPREFIX=\"$(PREFIX)\" $(INCAWE)
 ! #LDFLAGS =
-! INSTALL_BIN = $(INSTALL) -s -c -o $(BINOWN) -g $(BINGRP) -m 755
-! INSTALL_DAT = $(INSTALL) -c -o $(BINOWN) -g $(BINGRP) -m 644
+! INSTALL_BIN = ${BSD_INSTALL_PROGRAM}
+! INSTALL_DAT = ${BSD_INSTALL_DATA}
   
   OBJECTS = playmidi.o readmidi.o playevents.o \
   	  patchload.o emumidi.o io_ncurses.o
 ***************
-*** 65,71 ****
-  SOBJECTS= playmidi.o readmidi.o playevents.o \
-  	  patchload.o emumidi.o io_svgalib.o
+*** 58,64 ****
+  GOBJECTS= playmidi.o readmidi.o playevents.o \
+  	  patchload.o emumidi.o io_gtk.o
   
-! all: playmidi splaymidi xplaymidi
+! all: playmidi xplaymidi 
   
   config:
   playmidi.h: playmidi.h-dist
---- 67,73 ----
-  SOBJECTS= playmidi.o readmidi.o playevents.o \
-  	  patchload.o emumidi.o io_svgalib.o
+--- 61,67 ----
+  GOBJECTS= playmidi.o readmidi.o playevents.o \
+  	  patchload.o emumidi.o io_gtk.o
   
-! all: playmidi #splaymidi xplaymidi
+! all: playmidi #xplaymidi 
   
   config:
   playmidi.h: playmidi.h-dist
 ***************
-*** 80,137 ****
+*** 73,136 ****
   io_svgalib.o: io_svgalib.c
   	$(CC) $(CFLAGS) $(INCVGA) -c io_svgalib.c -o io_svgalib.o
   
@@ -100,6 +112,9 @@
 ! xplaymidi: .depend $(XOBJECTS)
   	$(CC) $(LDFLAGS) -o xplaymidi $(XOBJECTS) $(LIBX11)
   
+! gtkplaymidi: .depend $(GOBJECTS)
+  	$(CC) $(LDFLAGS) -o gtkplaymidi $(GOBJECTS) $(LIBGTK)
+  
 ! splaymidi: .depend $(SOBJECTS)
   	$(CC) $(LDFLAGS) -o splaymidi $(SOBJECTS) $(LIBVGA)
   
@@ -108,6 +123,9 @@
   
   $(INSTALLDIR)/xplaymidi: xplaymidi
 ! 	$(INSTALL) xplaymidi $(INSTALLDIR)
+  
+  $(INSTALLDIR)/gtkplaymidi: gtkplaymidi
+! 	$(INSTALL) gtkplaymidi $(INSTALLDIR)
   
   $(INSTALLDIR)/splaymidi: splaymidi
 ! 	$(INSTALL) splaymidi $(INSTALLDIR)
@@ -120,27 +138,27 @@
   
 ! /etc/std.sb:
 ! 	cp -i std.sb /etc
-  
+! 
 ! /etc/drums.sb:
 ! 	cp -i drums.sb /etc
   
   $(XAPPDEFAULTS)/XPlaymidi:
 ! 	cp -i XPlaymidi.ad $(XAPPDEFAULTS)/XPlaymidi
-  
+! 
 ! install: $(INSTALLDIR)/playmidi $(INSTALLDIR)/splaymidi \
 ! 	 $(INSTALLDIR)/xplaymidi /etc/std.o3 /etc/drums.o3 \
 ! 	 /etc/std.sb /etc/drums.sb $(XAPPDEFAULTS)/XPlaymidi
-  
+! 
 ! install.novga: $(INSTALLDIR)/playmidi \
 ! 	 $(INSTALLDIR)/xplaymidi /etc/std.o3 /etc/drums.o3 \
 ! 	 /etc/std.sb /etc/drums.sb $(XAPPDEFAULTS)/XPlaymidi
   
 ! install.noX11: $(INSTALLDIR)/playmidi $(INSTALLDIR)/splaymidi \
 ! 	 /etc/std.o3 /etc/drums.o3 /etc/std.sb /etc/drums.sb
-  
+! 
 ! install.Xonly: $(INSTALLDIR)/xplaymidi /etc/std.o3 /etc/drums.o3 \
 ! 	 /etc/std.sb /etc/drums.sb $(XAPPDEFAULTS)/XPlaymidi
-  
+! 
 ! install.lame: $(INSTALLDIR)/playmidi \
 ! 	 /etc/std.o3 /etc/drums.o3 /etc/std.sb /etc/drums.sb
   
@@ -148,8 +166,8 @@
 ! 	 cp playmidi.1 /usr/man/man1/
   
   clean:
-  	rm -f *.o playmidi splaymidi xplaymidi a.out
---- 82,143 ----
+  	rm -f *.o playmidi splaymidi xplaymidi a.out toy seq2mid beat
+--- 76,146 ----
   io_svgalib.o: io_svgalib.c
   	$(CC) $(CFLAGS) $(INCVGA) -c io_svgalib.c -o io_svgalib.o
   
@@ -158,6 +176,9 @@
   
 ! xplaymidi: $(XOBJECTS)
   	$(CC) $(LDFLAGS) -o xplaymidi $(XOBJECTS) $(LIBX11)
+  
+! gtkplaymidi: $(GOBJECTS)
+  	$(CC) $(LDFLAGS) -o gtkplaymidi $(GOBJECTS) $(LIBGTK)
   
 ! splaymidi: $(SOBJECTS)
   	$(CC) $(LDFLAGS) -o splaymidi $(SOBJECTS) $(LIBVGA)
@@ -168,52 +189,58 @@
   $(INSTALLDIR)/xplaymidi: xplaymidi
 ! 	$(INSTALL_BIN) xplaymidi $(INSTALLDIR)
   
+  $(INSTALLDIR)/gtkplaymidi: gtkplaymidi
+! 	$(INSTALL_BIN) gtkplaymidi $(INSTALLDIR)
+  
   $(INSTALLDIR)/splaymidi: splaymidi
 ! 	$(INSTALL_BIN) splaymidi $(INSTALLDIR)
   
-! ${PREFIX}/lib/midi/std.o3:
-! 	$(INSTALL_DAT) std.o3 $@
+! $(LIBDATADIR)/std.o3:
+! 	$(INSTALL_DAT) std.o3 $(LIBDATADIR)       
+!   
+! $(LIBDATADIR)/drums.o3:
+! 	$(INSTALL_DAT) drums.o3 $(LIBDATADIR)
   
-! ${PREFIX}/lib/midi/drums.o3:
-! 	$(INSTALL_DAT) drums.o3 $@
+! $(LIBDATADIR)/std.sb:
+! 	$(INSTALL_DAT) std.sb $(LIBDATADIR)       
   
-! ${PREFIX}/lib/midi/std.sb:
-! 	$(INSTALL_DAT) std.sb $@
-  
-! ${PREFIX}/lib/midi/drums.sb:
-! 	$(INSTALL_DAT) drums.sb $@
+! $(LIBDATADIR)/drums.sb:
+! 	$(INSTALL_DAT) drums.sb $(LIBDATADIR)
   
   $(XAPPDEFAULTS)/XPlaymidi:
 ! 	$(INSTALL_DAT) XPlaymidi.ad $(XAPPDEFAULTS)/XPlaymidi
   
 ! dirs:
-! 	-@mkdir -p $(PREFIX)/lib/midi
-! 	-@mkdir -p $(PREFIX)/lib/Plib
-  
+! 	-@mkdir -p $(LIBDATADIR)
+! 	-@mkdir -p ${PREFIX}/lib/Plib
+! 
 ! install: dirs $(INSTALLDIR)/playmidi $(INSTALLDIR)/splaymidi \
-! 	 $(INSTALLDIR)/xplaymidi ${PREFIX}/lib/midi/std.o3 ${PREFIX}/lib/midi/drums.o3 \
-! 	 ${PREFIX}/lib/midi/std.sb ${PREFIX}/lib/midi/drums.sb $(XAPPDEFAULTS)/XPlaymidi
-  
+! 	 $(INSTALLDIR)/xplaymidi $(LIBDATADIR)/std.o3 $(LIBDATADIR)/drums.o3 \
+! 	 $(LIBDATADIR)/std.sb $(LIBDATADIR)/drums.sb $(XAPPDEFAULTS)/XPlaymidi
+! 
 ! install.novga: dirs $(INSTALLDIR)/playmidi \
-! 	 $(INSTALLDIR)/xplaymidi ${PREFIX}/lib/midi/std.o3 ${PREFIX}/lib/midi/drums.o3 \
-! 	 ${PREFIX}/lib/midi/std.sb ${PREFIX}/lib/midi/drums.sb $(XAPPDEFAULTS)/XPlaymidi
-  
+! 	 $(INSTALLDIR)/xplaymidi $(LIBDATADIR)/std.o3 $(LIBDATADIR)/drums.o3 \
+! 	 $(LIBDATADIR)/std.sb $(LIBDATADIR)/drums.sb $(XAPPDEFAULTS)/XPlaymidi
+! 
 ! install.noX11: dirs $(INSTALLDIR)/playmidi $(INSTALLDIR)/splaymidi \
-! 	 ${PREFIX}/lib/midi/std.o3 ${PREFIX}/lib/midi/drums.o3 ${PREFIX}/lib/midi/std.sb ${PREFIX}/lib/midi/drums.sb
-  
-! install.Xonly: dirs $(INSTALLDIR)/xplaymidi ${PREFIX}/lib/midi/std.o3 ${PREFIX}/lib/midi/drums.o3 \
-! 	 ${PREFIX}/lib/midi/std.sb ${PREFIX}/lib/midi/drums.sb $(XAPPDEFAULTS)/XPlaymidi
+! 	 $(LIBDATADIR)/std.o3 $(LIBDATADIR)/drums.o3 \
+! 	 $(LIBDATADIR)/std.sb $(LIBDATADIR)/drums.sb
+! 
+! install.Xonly: dirs $(INSTALLDIR)/xplaymidi \
+! 	 $(LIBDATADIR)/std.o3 $(LIBDATADIR)/drums.o3 \
+! 	 $(LIBDATADIR)/std.sb $(LIBDATADIR)/drums.sb $(XAPPDEFAULTS)/XPlaymidi
 ! 
 ! install.lame: dirs $(INSTALLDIR)/playmidi \
-! 	 ${PREFIX}/lib/midi/std.o3 ${PREFIX}/lib/midi/drums.o3 ${PREFIX}/lib/midi/std.sb ${PREFIX}/lib/midi/drums.sb
+! 	 $(LIBDATADIR)/std.o3 $(LIBDATADIR)/drums.o3 \
+! 	 $(LIBDATADIR)/std.sb $(LIBDATADIR)/drums.sb
   
   install.man:
-! 	${INSTALL_DAT} playmidi.1 ${PREFIX}/man/man1
+! 	 ${BSD_INSTALL_MAN} playmidi.1 ${PREFIX}/man/man1/
   
   clean:
-  	rm -f *.o playmidi splaymidi xplaymidi a.out
+  	rm -f *.o playmidi splaymidi xplaymidi a.out toy seq2mid beat
 ***************
-*** 139,160 ****
+*** 138,159 ****
   distclean: clean
   	rm -f .depend  *~ *.bak playmidi.h config.sed
   
@@ -236,4 +263,4 @@
 - 	@echo "Successful.  Trying to make again"
 - 	@exit 0
 - endif
---- 145,147 ----
+--- 148,150 ----
