@@ -8,7 +8,7 @@
 PORTNAME=	xdms
 PORTVERSION=	1.3
 CATEGORIES=	archivers
-MASTER_SITES=	http://www.ee.tut.fi/~orsila/xdms/
+MASTER_SITES=	http://www.ee.tut.fi/~heikki/xdms/
 DISTNAME=	xdms
 
 MAINTAINER=	markp@FreeBSD.org
