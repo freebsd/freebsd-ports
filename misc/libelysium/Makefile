@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libelysium
-PORTVERSION=	0.2.6
+PORTVERSION=	0.3.5
 CATEGORIES=	misc gnome
 MASTER_SITES=	http://elysium.zoned.net/${PORTNAME}/
 
@@ -14,7 +14,7 @@ MAINTAINER=	sobomax@FreeBSD.org
 
 USE_GLIB=	yes
 INSTALLS_SHLIB=	yes
-GNU_CONFIGURE=	yes
+USE_LIBTOOL=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 

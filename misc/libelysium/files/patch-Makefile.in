@@ -1,14 +1,14 @@
 
 $FreeBSD$
 
---- Makefile.in	2001/12/10 09:35:00	1.1
-+++ Makefile.in	2001/12/10 09:35:18
-@@ -85,7 +85,7 @@
- EXTRA_DIST = libelysium.spec.in 	libelysiumConf.sh.in
+--- Makefile.in.orig	Tue May 14 11:35:40 2002
++++ Makefile.in	Tue May 14 11:38:15 2002
+@@ -83,7 +83,7 @@
+ EXTRA_DIST = libelysium.spec.in libelysium.pc.in
  
- 
--confexecdir = $(libdir)
-+confexecdir = $(sysconfdir)
- confexec_DATA = libelysiumConf.sh
- 
- CLEANFILES = libelysiumConf.sh
+ pkgconf_DATA = libelysium.pc
+-pkgconfdir = $(libdir)/pkgconfig
++pkgconfdir = $(prefix)/libdata/pkgconfig
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_CLEAN_FILES =  libelysium.pc libelysium.spec
