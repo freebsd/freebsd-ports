@@ -4483,6 +4483,7 @@ ocaml-jabbr	ports/net/ocaml-jabbr
 ocaml-lablgl	ports/graphics/ocaml-lablgl
 ocaml-lablgtk	ports/x11-toolkits/ocaml-lablgtk
 ocaml-mode.el	ports/lang/ocaml-mode.el
+ocaml-net	ports/www/ocaml-net
 ocaml-pcre	ports/devel/ocaml-pcre
 ocaml-yaxpo	ports/textproc/ocaml-yaxpo
 ocamlweb	ports/devel/ocamlweb
