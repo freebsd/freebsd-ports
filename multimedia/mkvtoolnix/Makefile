@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	mkvtoolnix
-PORTVERSION=	0.9.4
+PORTVERSION=	0.9.6
 CATEGORIES=	multimedia audio
-MASTER_SITES=	http://www.bunkus.org/videotools/mkvtoolnix/sources/old/
+MASTER_SITES=	http://www.bunkus.org/videotools/mkvtoolnix/sources/ \
+		http://www.bunkus.org/videotools/mkvtoolnix/sources/old/
 
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	Tools to extract from/get info about/create Matroska media streams
