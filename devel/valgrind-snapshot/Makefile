@@ -22,6 +22,7 @@ LATEST_LINK=	valgrind-snapshot
 ONLY_FOR_ARCHS=	i386
 
 USE_GMAKE=	yes
+USE_GNOME=	pkgconfig
 USE_PERL5_BUILD=yes
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
