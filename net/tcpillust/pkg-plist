@@ -1,0 +1,12 @@
+bin/tcpillust
+lib/X11/tcpillust/tcpillust.tcl
+lib/X11/tcpillust/back.xbm
+lib/X11/tcpillust/forward.xbm
+lib/X11/tcpillust/zoomin.xbm
+lib/X11/tcpillust/zoomout.xbm
+share/doc/tcpillust/sample/tcpclient.log
+share/doc/tcpillust/sample/tcpserver.log
+share/doc/tcpillust/README
+@dirrm lib/X11/tcpillust
+@dirrm share/doc/tcpillust/sample
+@dirrm share/doc/tcpillust
