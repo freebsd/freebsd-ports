@@ -19,6 +19,7 @@ share/icons/hicolor/32x32/apps/kaffeine.png
 share/icons/hicolor/48x48/apps/kaffeine.png
 share/icons/hicolor/64x64/apps/kaffeine.png
 share/locale/de/LC_MESSAGES/kaffeine.mo
+share/locale/pl/LC_MESSAGES/kaffeine.mo
 @dirrm share/apps/kaffeine
 @dirrm share/doc/HTML/en/kaffeine
 @dirrm share/doc/HTML/de/kaffeine
