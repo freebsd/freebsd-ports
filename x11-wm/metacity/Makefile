@@ -17,7 +17,7 @@ COMMENT=	A window manager for the adult in you
 
 LIB_DEPENDS=	startup-notification-1.0:${PORTSDIR}/x11/startup-notification
 
-CONFLICTS=	expocity*
+CONFLICTS=	expocity-[0-9]*
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
