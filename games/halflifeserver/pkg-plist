@@ -382,7 +382,9 @@
 %%HLDSDIR%%dmc/sprites/yelflare2.spr
 %%HLDSDIR%%dmc/sprites/zerogxplode.spr
 %%HLDSDIR%%dmc/titles.txt
+%%BOOSTER%%%%HLDSDIR%%booster.so
 %%HLDSDIR%%engine_i386.so
+%%BOOSTER%%%%HLDSDIR%%hlds_boost
 %%HLDSDIR%%hlds_run
 %%HLDSDIR%%hlds_run.dat
 %%HLDSDIR%%hltv
