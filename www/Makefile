@@ -13,6 +13,7 @@
     SUBDIR += apache13-modssl
     SUBDIR += apache13-ssl
     SUBDIR += apache13+ipv6
+    SUBDIR += apache2
     SUBDIR += apache-contrib
     SUBDIR += apache-jserv
     SUBDIR += arena
