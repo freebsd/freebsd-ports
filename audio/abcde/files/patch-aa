@@ -1,0 +1,116 @@
+--- abcde.orig	Mon Aug  5 16:56:33 2002
++++ abcde	Mon Aug  5 16:53:52 2002
+@@ -534,7 +534,7 @@
+ 				;;
+ 				12|13|14)
+ 					# no match found in database,
+-					# wget error, or user requested not to use CDDB
++					# fetch error, or user requested not to use CDDB
+ 					# Make up an error code (503) that abcde
+ 					# will recognize in do_cddbread
+ 					# and compensate by making a template
+@@ -574,7 +574,7 @@
+ 			fi
+ 			# List out disc title/author and contents
+ 			echo ---- "$(cut '-d ' -f4- "$ABCDETEMPDIR/cddbquery")" ---- >> "$ABCDETEMPDIR/cddbchoices"
+-			for TRACK in $(seq 1 $TRACKS)
++			for TRACK in $(jot $TRACKS)
+ 			do
+ 				echo $TRACK: "$(grep ^TTITLE$(expr $TRACK - 1)= "$ABCDETEMPDIR/cddbread.1" | cut -f2- -d= | tr -d \\r\\n)" >> "$ABCDETEMPDIR/cddbchoices"
+ 			done
+@@ -590,7 +590,7 @@
+ 			$CDDBTOOL template $(cat "$ABCDETEMPDIR/discid") > "$ABCDETEMPDIR/cddbread.1"
+ 			# List out disc title/author and contents of template
+ 			echo ---- Unknown Artist / Unknown Album ---- >> "$ABCDETEMPDIR/cddbchoices"
+-			for TRACK in $(seq 1 $TRACKS)
++			for TRACK in $(jot $TRACKS)
+ 			do
+ 				echo $TRACK: "$(grep ^TTITLE$(expr $TRACK - 1)= "$ABCDETEMPDIR/cddbread.1" | cut -f2- -d= | tr -d \\r\\n)" >> "$ABCDETEMPDIR/cddbchoices"
+ 			done
+@@ -620,7 +620,7 @@
+ 				fi
+ 				# List out disc title/author and contents
+ 				echo \#$X: ---- "$DISCINFO" ---- >> "$ABCDETEMPDIR/cddbchoices"
+-				for TRACK in $(seq 1 $TRACKS)
++				for TRACK in $(jot $TRACKS)
+ 				do
+ 					echo $TRACK: "$(grep ^TTITLE$(expr $TRACK - 1)= "$ABCDETEMPDIR/cddbread.$X" | cut -f2- -d= | tr -d \\r\\n)" >> "$ABCDETEMPDIR/cddbchoices"
+ 				done
+@@ -866,7 +866,8 @@
+ 	case "$CDROMREADERSYNTAX" in
+ 		cdparanoia) nice $READNICE $CDROMREADER -d $CDROM $UTRACKNUM "$WAVDATA" >&2 ;;
+ 		cdda2wav) nice $READNICE $CDROMREADER -H -D $CDROM -t $UTRACKNUM "$WAVDATA" >&2 ;;
+-		debug) nice $READNICE $CDROMREADER -d $CDROM -w $UTRACKNUM-[:1] "$WAVDATA" >&2 ;;
++		dagrab) nice $READNICE $CDROMREADER -d $CDROM -f $WAVDATA -v $UTRACKNUM >&2 ;;
++        debug) nice $READNICE $CDROMREADER -d $CDROM -w $UTRACKNUM-[:1] "$WAVDATA" >&2 ;;
+ 	esac
+ 	RETURN=$?
+ 	if [ "$RETURN" != "0" ]; then
+@@ -886,7 +887,7 @@
+ CDDBSUBMIT=freedb-submit@freedb.org
+ HELLOINFO="$(whoami)@$(hostname)"
+ INTERACTIVE=y
+-CDROMREADERSYNTAX=cdparanoia
++CDROMREADERSYNTAX=dagrab
+ OUTPUTTYPE=ogg
+ ENCODERSYNTAX=default
+ OUTPUTFORMAT='${ARTISTFILE}/${TRACKFILE}.$OUTPUTTYPE'
+@@ -913,7 +914,8 @@
+ ID3V2=id3v2
+ CDPARANOIA=cdparanoia
+ CDDA2WAV=cdda2wav
+-WGET=wget
++DAGRAB=dagrab
++FETCH=fetch
+ CDDISCID=cd-discid
+ CDDBTOOL=cddb-tool
+ EJECT=eject
+@@ -933,7 +935,8 @@
+ ID3V2OPTS=
+ CDPARANOIAOPTS=
+ CDDA2WAVOPTS=
+-WGETOPTS=
++DAGRABOPTS=
++FETCHOPTS=
+ CDDBTOOLOPTS=
+ EJECTOPTS=
+ DISTMP3OPTS=
+@@ -1010,7 +1013,7 @@
+ 	if [ "$RSTART" = "$REND" ]; then 
+ 		NEWTRACKS="$RSTART"
+ 	else
+-		NEWTRACKS=$(seq -s ' ' $RSTART $REND)
++		NEWTRACKS=$(jot -s ' ' $(($REND - $RSTART + 1)) $RSTART $REND``)
+ 	fi
+ 	TRACKQUEUE=$(echo "$TRACKQUEUE" "$NEWTRACKS")
+ 
+@@ -1027,6 +1030,9 @@
+ 		CDROMREADER="$CDDA2WAV"
+ 		CDROMREADEROPTS="$CDDA2WAVOPTS"
+ 		;;
++    dagrab)
++        CDROMREADER="$DAGRAB"
++        CDROMREADEROPTS="$DAGRABOPTS"
+ esac
+ 
+ # If nothing has been specified, use oggenc for oggs and lame for mp3s
+@@ -1100,8 +1106,8 @@
+ if [ "$OUTPUTTYPE" = "ogg" ]; then NEEDCOMMENTER=y; fi
+ 
+ # Make sure a buncha things exist
+-for X in $CDROMREADER $CDDISCID ${NEEDTAGGER+$TAGGER} $ENCODER $WGET \
+-	${NEEDDISTMP3+$DISTMP3} ${NEEDCOMMENTER+$VORBISCOMMENT} seq
++for X in $CDROMREADER $CDDISCID ${NEEDTAGGER+$TAGGER} $ENCODER $FETCH \
++	${NEEDDISTMP3+$DISTMP3} ${NEEDCOMMENTER+$VORBISCOMMENT} jot
+ do
+ 	# Cut off the command-line options we just added in
+ 	X=$(echo $X | cut -d' ' -f2)
+@@ -1191,7 +1197,7 @@
+ # Figure out where each track is going to be encoded
+ ENCODELOCATIONS="$(echo $REMOTEHOSTS | tr , ' ')"
+ if [ "$MAXPROCS" != "0" ]; then
+-	for NUM in $(seq 1 "$MAXPROCS")
++	for NUM in $(jot "$MAXPROCS")
+ 	do
+ 		ENCODELOCATIONS="$ENCODELOCATIONS %local$NUM%"
+ 	done
