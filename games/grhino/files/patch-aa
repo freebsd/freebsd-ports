@@ -1,0 +1,10 @@
+--- pattern.cc.orig	Thu Aug  1 23:10:02 2002
++++ pattern.cc	Tue Aug 20 23:34:37 2002
+@@ -25,6 +25,7 @@
+ #include <fcntl.h>
+ #include <sys/stat.h>
+ #include <sys/types.h>
++#include <string.h>
+ 
+ // These are not correct in terms of symmetry but provide better
+ // opening moves

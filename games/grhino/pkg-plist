@@ -1,0 +1,14 @@
+bin/grhino
+share/gnome/grhino/%%VERSION%%/row1.bin
+share/gnome/grhino/%%VERSION%%/row2.bin
+share/gnome/grhino/%%VERSION%%/row3.bin
+share/gnome/grhino/%%VERSION%%/row4.bin
+share/gnome/grhino/%%VERSION%%/diag1.bin
+share/gnome/grhino/%%VERSION%%/diag2.bin
+share/gnome/grhino/%%VERSION%%/diag3.bin
+share/gnome/grhino/%%VERSION%%/diag4.bin
+share/gnome/grhino/%%VERSION%%/diag5.bin
+share/gnome/grhino/%%VERSION%%/corner5x2.bin
+share/gnome/grhino/%%VERSION%%/book.bin
+@dirrm share/gnome/grhino/%%VERSION%%
+@dirrm share/gnome/grhino
