@@ -20,4 +20,10 @@ MAN3=	add.3 balloc.3 bitblt.3 cachechars.3 event.3 frame.3 graphics.3 rgbpix.3 r
 MAN4=	font.4 keyboard.4 utf.4
 MAN6=	bitmap.6 regexp.6
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "alpha" || ${ARCH} == "amd64"
+BROKEN=		"Does not compile on alpha or amd64"
+.endif
+
+.include <bsd.port.post.mk>
