@@ -177,6 +177,7 @@
     SUBDIR += opendx-samples
     SUBDIR += opengl-man
     SUBDIR += openquicktime
+    SUBDIR += oqtencoder
     SUBDIR += oqtplayer
     SUBDIR += osg
     SUBDIR += p5-Chart-PNGgraph
