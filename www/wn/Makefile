@@ -3,7 +3,7 @@
 # Date created:         4 May 1995
 # Whom:                 adam
 #
-# $Id: Makefile,v 1.29 1999/08/22 23:33:35 mharo Exp $
+# $Id: Makefile,v 1.30 1999/08/27 22:30:34 mharo Exp $
 #
 
 DISTNAME=       wn-1.18.6
@@ -24,26 +24,26 @@ pre-patch:
 post-install:
 	@${MKDIR} ${PREFIX}/wn/wnlogs ${PREFIX}/wn/bin
 	@${CP} -PR ${WRKSRC}/docs ${PREFIX}/wn
-	@install -c -o bin -g bin  ${WRKSRC}/bin/wn ${PREFIX}/libexec
-	@install -c -o bin -g bin  ${WRKSRC}/bin/swn ${PREFIX}/sbin
-	@install -c -o bin -g bin  ${WRKSRC}/bin/wndex ${PREFIX}/bin
-	@install -c -o bin -g bin  ${WRKSRC}/bin/mkwnpasswd ${PREFIX}/wn/bin
-	@install -c -o bin -g bin  ${WRKSRC}/bin/authwn ${PREFIX}/wn/bin
+	@${INSTALL_PROGRAM} ${WRKSRC}/bin/wn ${PREFIX}/libexec
+	@${INSTALL_PROGRAM} ${WRKSRC}/bin/swn ${PREFIX}/sbin
+	@${INSTALL_PROGRAM} ${WRKSRC}/bin/wndex ${PREFIX}/bin
+	@${INSTALL_PROGRAM} ${WRKSRC}/bin/mkwnpasswd ${PREFIX}/wn/bin
+	@${INSTALL_PROGRAM} ${WRKSRC}/bin/authwn ${PREFIX}/wn/bin
 	@if [ -s ${PREFIX}/etc/wn_mime.types ]; then \
 	    cmp -s ${PREFIX}/etc/wn_mime.types ${WRKSRC}/lib/mime.types || { \
 		${ECHO_MSG} Warning: new mime.types installed as ${PREFIX}/etc/wn_mime.types-dist; \
-		install -c -o bin -g bin -m 644 ${WRKSRC}/lib/mime.types \
+		${INSTALL_DATA} ${WRKSRC}/lib/mime.types \
 					${PREFIX}/etc/wn_mime.types-dist; } \
 	else \
-	    install -c -o bin -g bin -m 644 ${WRKSRC}/lib/mime.types \
-	                                     ${PREFIX}/etc/wn_mime.types; \
+	    ${INSTALL_DATA} ${WRKSRC}/lib/mime.types \
+			${PREFIX}/etc/wn_mime.types; \
 	fi
 	@if [ -s ${PREFIX}/wn/index ]; then \
 	    cmp -s ${PREFIX}/wn/index ${WRKDIR}/index || { \
 		${ECHO_MSG} Warning: new index installed as ${PREFIX}/wn/index-dist; \
-		install -c -o bin -g bin -m 644 ${WRKDIR}/index ${PREFIX}/wn/index-dist; } \
+		${INSTALL_DATA} ${WRKDIR}/index ${PREFIX}/wn/index-dist; } \
 	else \
-	    install -c -o bin -g bin -m 644 ${WRKDIR}/index ${PREFIX}/wn; \
+	    ${INSTALL_DATA} ${WRKDIR}/index ${PREFIX}/wn; \
 	fi
 	@cd ${PREFIX}/wn; ../bin/wndex -r
 
