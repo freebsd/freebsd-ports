@@ -16,6 +16,23 @@ bin/mtools
 @exec ln -fs %D/%F %B/mtype
 @exec ln -fs %D/%F %B/mwrite
 @exec ln -fs %D/%F %B/mttest
+@unexec rm %B/mattrib
+@unexec rm %B/mcd
+@unexec rm %B/mcopy
+@unexec rm %B/mdel
+@unexec rm %B/mdeltree
+@unexec rm %B/mdir
+@unexec rm %B/mformat
+@unexec rm %B/mlabel
+@unexec rm %B/mmd
+@unexec rm %B/mmount
+@unexec rm %B/mmove
+@unexec rm %B/mrd
+@unexec rm %B/mread
+@unexec rm %B/mren
+@unexec rm %B/mtype
+@unexec rm %B/mwrite
+@unexec rm %B/mttest
 bin/mkmanifest
 bin/mcheck
 bin/mxtar
