@@ -8,7 +8,7 @@ PORTNAME=	calcoo
 PORTVERSION=	1.3.13
 CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
-		http://www.physics.umn.edu/~kaminski/calcoo/
+		http://webusers.physics.umn.edu/~kaminski/calcoo/
 MASTER_SITE_SUBDIR=	calcoo
 
 MAINTAINER=	naddy@FreeBSD.org
