@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	text-format
-PORTVERSION=	0.52.1
+PORTVERSION=	0.52.2
 CATEGORIES=	textproc ruby
 MASTER_SITES=	http://www.halostatue.ca/files/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -23,7 +23,7 @@ do-install:
 	cd ${WRKSRC}; ${RUBY} install.rb
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_MODDOCDIR}
-	${CP} -R ${WRKSRC}/doc/* ${RUBY_MODDOCDIR}/
+	${CP} -R ${WRKSRC}/Changelog ${WRKSRC}/doc/* ${RUBY_MODDOCDIR}/
 .endif
 
 .include <bsd.port.mk>
