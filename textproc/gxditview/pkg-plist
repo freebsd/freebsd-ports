@@ -1,0 +1,3 @@
+bin/gxditview
+lib/X11/app-defaults/GXditview
+man/man1/gxditview.1.gz
