@@ -1,24 +1,22 @@
 # New ports collection makefile for:    sudo
-# Version required:     1.5.6.3
+# Version required:     1.5.6.4
 # Date created:         Sun Aug 13 12:36:14 CDT 1995
 # Whom:                 erich@rrnet.com
 #
-# $Id: Makefile,v 1.11 1998/10/23 14:29:31 vanilla Exp $
+# $Id: Makefile,v 1.12 1998/10/26 08:58:30 asami Exp $
 #
 
-DISTNAME=	cu-sudo.v1.5.6p3
-PKGNAME=	sudo-1.5.6.3
+DISTNAME=	cu-sudo.v1.5.6p4
+PKGNAME=	sudo-1.5.6.4
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.cs.colorado.edu/pub/sysadmin/sudo/
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	erich@FreeBSD.ORG
 
-BROKEN=		fetch
-
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-C2 --with-skey --with-fbsdops
-WRKSRC=		${WRKDIR}/sudo.v1.5.6p3
+WRKSRC=		${WRKDIR}/sudo.v1.5.6p4
 MAN5=		sudoers.5
 MAN8=		sudo.8 visudo.8
 
