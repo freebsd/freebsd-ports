@@ -6,7 +6,7 @@
 # $FreeBSD$
 #
 
-DISTNAME=	sr
+DISTNAME=	sr231
 PKGNAME=	sr-2.3.1
 CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.cs.arizona.edu/sr/
