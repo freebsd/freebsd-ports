@@ -16,7 +16,7 @@ libdata/pkgconfig/vorbisenc.pc
 libdata/pkgconfig/vorbisfile.pc
 share/aclocal/vorbis.m4
 %%PORTDOCS%%%%DOCSDIR%%/components.png
-%%PORTDOCS%%%%DOCSDIR%%/draft-kerr-avt-vorbis-rtp-02.txt
+%%PORTDOCS%%%%DOCSDIR%%/draft-kerr-avt-vorbis-rtp-03.txt
 %%PORTDOCS%%%%DOCSDIR%%/eightphase.png
 %%PORTDOCS%%%%DOCSDIR%%/evenlsp.png
 %%PORTDOCS%%%%DOCSDIR%%/floor1-1.png

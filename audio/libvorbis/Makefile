@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	libvorbis
-PORTVERSION=	1.0.1
+PORTVERSION=	1.1.0
 PORTEPOCH=	3
 CATEGORIES=	audio
-MASTER_SITES=	http://www.vorbis.com/files/1.0.1/unix/
+MASTER_SITES=	http://downloads.xiph.org/releases/vorbis/
 
 MAINTAINER=	naddy@FreeBSD.org
 COMMENT=	Audio compression codec library
@@ -18,7 +18,7 @@ LIB_DEPENDS=	ogg.5:${PORTSDIR}/audio/libogg
 
 CONFLICTS=	libvorbis-aotuv-[0-9]*
 
-USE_INC_LIBTOOL_VER=	13
+USE_INC_LIBTOOL_VER=	15
 USE_GNOME=	gnomehack
 CONFIGURE_ARGS=	--with-ogg=${LOCALBASE}
 INSTALLS_SHLIB=	yes
