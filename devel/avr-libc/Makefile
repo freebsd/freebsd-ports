@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	avr-libc
-PORTVERSION=	2002.11.24
+PORTVERSION=	2003.01.08
 CATEGORIES=	devel
-# There are currently no official master sites for it.  Everything is
-# in savannah.gnu.org's CVS only.
-#MASTER_SITES=	http://www.amelek.gda.pl/avr/libc/
+# Currently still snapshots, not yet officially released again.
+#MASTER_SITES=	http://savannah.nongnu.org/download/avr-libc/
 MASTER_SITES=	http://people.freebsd.org/~joerg/
 
 MAINTAINER=	joerg@freebsd.org
@@ -42,10 +41,10 @@ do-install:
 		${MKDIR} ${PREFIX}/share/doc/avr-libc
 		${MKDIR} ${PREFIX}/share/doc/avr-libc/examples
 		${MKDIR} ${PREFIX}/share/doc/avr-libc/examples/demo
+		${MKDIR} ${PREFIX}/share/doc/avr-libc/examples/twitest
 		${INSTALL_DATA} \
 			${WRKDIR}/${DISTNAME}/LICENSE \
 			${WRKDIR}/${DISTNAME}/AUTHORS \
-			${WRKDIR}/${DISTNAME}/doc/avr-libc-reference.html \
 			${PREFIX}/share/doc/avr-libc
 		@for f in avr-recv.c io.c prg printf.h progmem.c \
 			send_byte.s signal.c;\
@@ -58,6 +57,11 @@ do-install:
 		do \
 			${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/doc/examples/demo/$$f \
 				${PREFIX}/share/doc/avr-libc/examples/demo; \
+		done
+		@for f in Makefile twitest.c;\
+		do \
+			${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/doc/examples/twitest/$$f \
+				${PREFIX}/share/doc/avr-libc/examples/twitest; \
 		done
 
 .include <bsd.port.mk>
