@@ -3335,6 +3335,7 @@ libz		src/lib/libz
 licq		ports/net/licq
 licq-console	ports/net/licq-console
 licq-qt-gui	ports/net/licq-qt-gui
+liece		ports/irc/liece
 liece-dcc	ports/irc/liece-dcc
 liece-emacs20	ports/irc/liece-emacs20
 liece-xemacs21-mule	ports/irc/liece-xemacs21-mule
