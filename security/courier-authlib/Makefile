@@ -7,6 +7,7 @@
 
 PORTNAME=	courier-authlib
 PORTVERSION=	0.54
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	courier
@@ -118,7 +119,7 @@ CONFIGURE_ARGS+=--with-mailgroup=${WITH_MAILGROUP}
 
 
 .include <bsd.port.pre.mk>
-++ pkg-plist   Fri Feb  4 02:29:24 2005
+
 RC_SCRIPTS_SUB=PREFIX=${PREFIX} RC_SUBR=${RC_SUBR}
 
 MAN1=		courierlogger.1

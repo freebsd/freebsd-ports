@@ -60,6 +60,9 @@ sbin/courierlogger
 %%PORTDOCS%%%%DOCSDIR%%/README.ldap
 %%PORTDOCS%%%%DOCSDIR%%/README_authlib.html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@exec mkdir -p %D/var/spool/authdaemon 2>/dev/null || true
+@unexec rmdir %D/var/spool/authdaemon 2>/dev/null || true
+@unexec rmdir %D/var/spool 2>/dev/null || true
 @unexec rmdir %D/var/authdaemon 2>/dev/null || true
 @unexec rmdir %D/var 2>/dev/null || true
 @unexec rmdir %D/etc/authlib 2>/dev/null || true
