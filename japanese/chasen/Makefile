@@ -9,8 +9,7 @@
 PORTNAME=	chasen
 PORTVERSION=	2.02
 CATEGORIES=	japanese
-MASTER_SITES=	ftp://ftp.aist-nara.ac.jp/pub/lab/nlp/tools/chasen/ \
-		http://cactus.aist-nara.ac.jp/~akira-k/cha/arc/
+MASTER_SITES=	ftp://ftp.aist-nara.ac.jp/pub/lab/nlp/tools/chasen/
 DISTNAME=	${PORTNAME}-sys${PORTVERSION}-ipadic2.1
 
 MAINTAINER=	kuriyama@FreeBSD.org
