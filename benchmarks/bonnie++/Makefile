@@ -8,6 +8,7 @@
 
 PORTNAME=	bonnie++
 PORTVERSION=	1.93.03		# a=01, b=02, c=03, ..., z=26, etc...
+PORTREVISION=	1
 CATEGORIES=	benchmarks
 MASTER_SITES=	http://www.coker.com.au/bonnie++/experimental/
 DISTNAME=	${PORTNAME}-1.93c
