@@ -5,6 +5,7 @@
     SUBDIR += imm
     SUBDIR += nte
     SUBDIR += rat
+    SUBDIR += rat30
     SUBDIR += rqm
     SUBDIR += rtpmon
     SUBDIR += rtptools
