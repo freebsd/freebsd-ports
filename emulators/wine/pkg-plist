@@ -42,11 +42,14 @@ include/wine/initguid.h
 include/wine/instance.h
 include/wine/lmcons.h
 include/wine/lzexpand.h
+include/wine/mapi.h
 include/wine/mapidefs.h
 include/wine/mcx.h
 include/wine/mmreg.h
 include/wine/mmsystem.h
 include/wine/msacm.h
+include/wine/msacmdlg.h
+include/wine/nspapi.h
 include/wine/ntsecapi.h
 include/wine/oaidl.h
 include/wine/objbase.h
@@ -59,6 +62,7 @@ include/wine/olectl.h
 include/wine/oledlg.h
 include/wine/oleidl.h
 include/wine/poppack.h
+include/wine/process.h
 include/wine/prsht.h
 include/wine/psapi.h
 include/wine/pshpack1.h
@@ -111,6 +115,8 @@ include/wine/winuser.h
 include/wine/winver.h
 include/wine/wownt32.h
 include/wine/wnaspi32.h
+include/wine/wshisotp.h
+include/wine/wsipx.h
 include/wine/wtypes.h
 include/wine/zmouse.h
 include/wine/wine/exception.h
@@ -187,6 +193,7 @@ lib/wine/libgdi.so
 lib/wine/libgdi32.so
 lib/wine/libicmp.so
 lib/wine/libimagehlp.so
+lib/wine/libimm.so
 lib/wine/libimm32.so
 lib/wine/libjoystick.drv.so
 lib/wine/libkernel.so
@@ -207,6 +214,7 @@ lib/wine/libmsacm.drv.so
 lib/wine/libmsacm.so
 lib/wine/libmsacm32.so
 lib/wine/libmsnet32.so
+lib/wine/libmsvcrt.so
 lib/wine/libmsvfw32.so
 lib/wine/libmsvideo.so
 lib/wine/libntdll.so
@@ -233,6 +241,7 @@ lib/wine/librpcrt4.so
 lib/wine/libserialui.so
 lib/wine/libsetupapi.so
 lib/wine/libsetupx.so
+lib/wine/libshdocvw.so
 lib/wine/libshell.so
 lib/wine/libshell32.so
 lib/wine/libshfolder.so
@@ -258,14 +267,20 @@ lib/wine/libwinaspi.so
 lib/wine/libwindebug.so
 lib/wine/libwine.so
 lib/wine/libwine.so.1
+lib/wine/libwine_tsx11.so
+lib/wine/libwine_tsx11.so.1
 lib/wine/libwine_unicode.so
 lib/wine/libwine_unicode.so.1
+lib/wine/libwine_uuid.a
+lib/wine/libwinedos.so
 lib/wine/libwineoss.drv.so
 lib/wine/libwineps.so
 lib/wine/libwineps16.so
 lib/wine/libwing.so
 lib/wine/libwininet.so
 lib/wine/libwinmm.so
+lib/wine/libwinnls.so
+lib/wine/libwinnls32.so
 lib/wine/libwinsock.so
 lib/wine/libws2_32.so
 lib/wine/libwinspool.drv.so
