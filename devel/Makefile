@@ -1005,6 +1005,7 @@
     SUBDIR += p5-Test-Inline
     SUBDIR += p5-Test-Manifest
     SUBDIR += p5-Test-MockObject
+    SUBDIR += p5-Test-NoWarnings
     SUBDIR += p5-Test-Pod
     SUBDIR += p5-Test-Reporter
     SUBDIR += p5-Test-Simple
