@@ -7859,6 +7859,7 @@ wmcpuload	ports/sysutils/wmcpuload
 wmcube		ports/sysutils/wmcube
 wmcube-gdk	ports/sysutils/wmcube-gdk
 wmdate		ports/x11-clocks/wmdate
+wmdrawer	ports/x11/wmdrawer
 wmessage	ports/misc/wmessage
 wmeyes		ports/games/wmeyes
 wmfire		ports/sysutils/wmfire
