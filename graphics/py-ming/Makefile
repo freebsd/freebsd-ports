@@ -19,6 +19,7 @@ EXTRACT_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/graphics/ming:patch
 LIB_DEPENDS=	ming.3:${PORTSDIR}/graphics/ming
 
 USE_PYTHON=	yes
+USE_PERL5_BUILD=yes
 
 MD5_FILE=	${.CURDIR}/../ming/distinfo
 
