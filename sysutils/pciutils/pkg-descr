@@ -6,5 +6,3 @@ device drivers) and `setpci' for manual configuration of PCI
 devices.
 
  WWW: http://atrey.karlin.mff.cuni.cz/~mj/pciutils.html
-
-- Samy Al Bahra <samy@kerneled.com>

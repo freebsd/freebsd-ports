@@ -1,6 +1,6 @@
 # New ports collection makefile for:	pciutils
 # Date created:				June 12, 2003
-# Whom:					Samy Al Bahra <samy@kerneled.com>
+# Whom:					Samy Al Bahra <samy@kerneled.org>
 #
 # $FreeBSD$
 #
@@ -9,11 +9,11 @@ PORTNAME=	pciutils
 PORTVERSION=	2.1.11
 PORTREVISION=	1
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.kerneled.com/freebsd/ports/ \
+MASTER_SITES=	http://www.kerneled.org/files/FreeBSD-ports/ \
 		ftp://atrey.karlin.mff.cuni.cz/pub/linux/pci/ \
 		ftp://ftp.kernel.org/pub/software/utils/pciutils/
 
-MAINTAINER=	samy@kerneled.com
+MAINTAINER=	samy@kerneled.org
 COMMENT=	PCI configuration utilities
 
 USE_BZIP2=	yes
