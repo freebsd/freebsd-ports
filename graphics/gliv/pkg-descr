@@ -1,0 +1,3 @@
+An Image viewer that uses Imlib2 to load images, and OpenGL to render them.
+
+WWW: http://glive.tuxfamily.org/
