@@ -1,0 +1,11 @@
+--- config/PostSession.orig	Wed Dec  4 14:05:13 2002
++++ config/PostSession	Wed Dec  4 14:05:34 2002
+@@ -2,7 +2,7 @@
+ 
+ PATH=/usr/bin/X11:/usr/X11R6/bin:/opt/X11R6/bin:$PATH
+ 
+-if command -v sessreg > /dev/null 2>&1; then
++if /usr/bin/which -s sessreg > /dev/null 2>&1; then
+ 	sessreg -d -w /var/log/wtmp -u /var/run/utmp -x "$X_SERVERS" -h "$REMOTE_HOST" -l $DISPLAY $USER
+ fi
+ exit 0

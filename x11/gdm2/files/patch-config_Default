@@ -1,0 +1,20 @@
+--- config/Default.orig	Mon Dec 23 23:53:42 2002
++++ config/Default	Mon Dec 23 23:54:11 2002
+@@ -7,7 +7,7 @@
+ 
+ sysmodmap=/etc/X11/Xmodmap
+ 
+-if command -v xmodmap > /dev/null 2>&1; then
++if /usr/bin/which -s xmodmap > /dev/null 2>&1; then
+   if [ -z "$GDM_PARENT_DISPLAY" ]; then
+     if [ -f $sysmodmap ]; then
+       xmodmap $sysmodmap
+@@ -17,7 +17,7 @@
+   fi
+ fi
+ 
+-if command -v setxkbmap > /dev/null 2>&1; then
++if /usr/bin/which -s setxkbmap > /dev/null 2>&1; then
+   # FIXME: is this all right?  Is this completely on crack?
+   # What this does is move the xkb configuration from the GDM_PARENT_DISPLAY
+   # FIXME: This should be done in code.  Or there must be an easier way ...

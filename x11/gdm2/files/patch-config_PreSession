@@ -1,0 +1,16 @@
+--- config/PreSession.orig	Wed Dec  4 14:05:38 2002
++++ config/PreSession	Wed Dec  4 14:06:04 2002
+@@ -8,11 +8,11 @@
+ #
+ PATH=/usr/bin/X11:/usr/X11R6/bin:/opt/X11R6/bin:$PATH
+ 
+-if command -v xsetroot > /dev/null 2>&1; then
++if /usr/bin/which -s xsetroot > /dev/null 2>&1; then
+ 	xsetroot -cursor_name left_ptr -solid "#363047"
+ fi
+ 
+-if command -v sessreg > /dev/null 2>&1; then
++if /usr/bin/which -s sessreg > /dev/null 2>&1; then
+ 	# some output for easy debugging
+ 	echo "$0: Registering your session with wtmp and utmp"
+ 	echo "$0: running: sessreg -a -w /var/log/wtmp -u /var/run/utmp -x \"$X_SERVERS\" -h \"$REMOTE_HOST\" -l $DISPLAY $USER"
