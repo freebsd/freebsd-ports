@@ -1,14 +1,13 @@
-%%HLDSDIR%%Adminmod/.UPdt
 %%HLDSDIR%%Adminmod/.amdd/.clean.cfg.sed
 %%HLDSDIR%%Adminmod/.amdd/.delete.cfg.sed
 %%HLDSDIR%%Adminmod/.amdd/.instscr.sed
 %%HLDSDIR%%Adminmod/.amdd/.instscrDOS.sed
 %%HLDSDIR%%Adminmod/.amdd/.xdbbase
 %%HLDSDIR%%Adminmod/.amdd/versions
-%%PORTDOCS%%%%HLDSDIR%%Adminmod/CHANGES
+%%PORTDOCS%%%%HLDSDIR%%Adminmod/HISTORY
 %%PORTDOCS%%%%HLDSDIR%%Adminmod/LICENSE
+%%PORTDOCS%%%%HLDSDIR%%Adminmod/NEWS
 %%PORTDOCS%%%%HLDSDIR%%Adminmod/README
-%%HLDSDIR%%Adminmod/config/Legacy/admin_help.cfg
 %%HLDSDIR%%Adminmod/config/Samples/ips.ini
 %%HLDSDIR%%Adminmod/config/Samples/maps.ini
 %%HLDSDIR%%Adminmod/config/Samples/models.ini
@@ -31,7 +30,6 @@
 %%PORTDOCS%%%%HLDSDIR%%Adminmod/docs/html/Admin_Etc/Admin_Mod_Erata.htm
 %%PORTDOCS%%%%HLDSDIR%%Adminmod/docs/html/Admin_Mod_Plugins/Downloading_and_Installing_Additional_Plugins.htm
 %%PORTDOCS%%%%HLDSDIR%%Adminmod/docs/html/Admin_Mod_Plugins/The_Admin_Mod_Default_Plugins.htm
-%%PORTDOCS%%%%HLDSDIR%%Adminmod/docs/html/Admin_Mod_Reference/.#Admin_Mod_Configuration_Variables_CVARs.htm.1.10
 %%PORTDOCS%%%%HLDSDIR%%Adminmod/docs/html/Admin_Mod_Reference/Access_Levels_and_Respective_Admin_Commands.htm
 %%PORTDOCS%%%%HLDSDIR%%Adminmod/docs/html/Admin_Mod_Reference/Admin_Mod_Commands.htm
 %%PORTDOCS%%%%HLDSDIR%%Adminmod/docs/html/Admin_Mod_Reference/Admin_Mod_Configuration_Variables_CVARs.htm
@@ -42,6 +40,7 @@
 %%PORTDOCS%%%%HLDSDIR%%Adminmod/docs/html/Admin_Mod_Reference/Half_Life_Sounds.htm
 %%PORTDOCS%%%%HLDSDIR%%Adminmod/docs/html/Admin_Mod_Reference/M00s_Access_Guide.htm
 %%PORTDOCS%%%%HLDSDIR%%Adminmod/docs/html/Admin_Mod_Reference/Materials_for_reference_when_installing,_configring_and_using_Admin_Mod.htm
+%%PORTDOCS%%%%HLDSDIR%%Adminmod/docs/html/Admin_Mod_Reference/Materials_for_reference_when_installing,_configuring_and_using_Admin_Mod.htm
 %%PORTDOCS%%%%HLDSDIR%%Adminmod/docs/html/Admin_Mod_Reference/Original Admin_Mod_Configuration_Variables_CVARs.htm
 %%PORTDOCS%%%%HLDSDIR%%Adminmod/docs/html/Admin_Mod_Reference/Plugin_Change_Log.htm
 %%PORTDOCS%%%%HLDSDIR%%Adminmod/docs/html/Admin_Mod_Reference/Spawning_Items_Reference.htm
@@ -49,7 +48,6 @@
 %%PORTDOCS%%%%HLDSDIR%%Adminmod/docs/html/Before_You_Start/Introductory_Information.htm
 %%PORTDOCS%%%%HLDSDIR%%Adminmod/docs/html/Before_You_Start/License_and_Copyright_Information.htm
 %%PORTDOCS%%%%HLDSDIR%%Adminmod/docs/html/Before_You_Start/What_this_document_covers.htm
-%%PORTDOCS%%%%HLDSDIR%%Adminmod/docs/html/Configuration/.#Setting_up_your_server.cfg_file.htm.1.11
 %%PORTDOCS%%%%HLDSDIR%%Adminmod/docs/html/Configuration/How_to_Use_Bots_with_MetaMod_AM_2.50_and_up.htm
 %%PORTDOCS%%%%HLDSDIR%%Adminmod/docs/html/Configuration/Linux_Passwords.htm
 %%PORTDOCS%%%%HLDSDIR%%Adminmod/docs/html/Configuration/MySQL_Setup.htm
@@ -61,6 +59,10 @@
 %%PORTDOCS%%%%HLDSDIR%%Adminmod/docs/html/Configuration/Setting_up_your_server.cfg_file.htm
 %%PORTDOCS%%%%HLDSDIR%%Adminmod/docs/html/Configuration/Setting_up_your_users.ini_file.htm
 %%PORTDOCS%%%%HLDSDIR%%Adminmod/docs/html/Configuration/The_Admin_Mod_Configuration_Files.htm
+%%PORTDOCS%%%%HLDSDIR%%Adminmod/docs/html/HowTo/Check_If_Admin_Mod_is_Loaded.htm
+%%PORTDOCS%%%%HLDSDIR%%Adminmod/docs/html/HowTo/Check_Which_Plugins_Are_Loaded.htm
+%%PORTDOCS%%%%HLDSDIR%%Adminmod/docs/html/HowTo/Force_Admin_Mod_To_Load_When_The_Map_Starts.htm
+%%PORTDOCS%%%%HLDSDIR%%Adminmod/docs/html/HowTo/Use_Admin_Mod_Commands_On_Dedicated_Servers.htm
 %%PORTDOCS%%%%HLDSDIR%%Adminmod/docs/html/Images/image1.jpg
 %%PORTDOCS%%%%HLDSDIR%%Adminmod/docs/html/Images/image10.gif
 %%PORTDOCS%%%%HLDSDIR%%Adminmod/docs/html/Images/image11.gif
@@ -178,7 +180,6 @@
 %%HLDSDIR%%Adminmod/scripting/compiler/sc
 %%HLDSDIR%%Adminmod/scripting/examples/compile
 %%HLDSDIR%%Adminmod/scripting/examples/compile_all
-%%HLDSDIR%%Adminmod/scripting/examples/legacy/admin.sma
 %%HLDSDIR%%Adminmod/scripting/examples/plugin_CS.sma
 %%HLDSDIR%%Adminmod/scripting/examples/plugin_TFC.sma
 %%HLDSDIR%%Adminmod/scripting/examples/plugin_antiflood.sma
@@ -199,12 +200,11 @@
 %%HLDSDIR%%Adminmod/scripting/include/string.inc
 %%HLDSDIR%%Adminmod/scripting/myscripts/compile
 %%HLDSDIR%%Adminmod/scripting/myscripts/compile_all
-%%HLDSDIR%%Adminmod/tools/make_pass
+%%HLDSDIR%%Adminmod/tools/encrypt
 @dirrm %%HLDSDIR%%Adminmod/tools
 @dirrm %%HLDSDIR%%Adminmod/scripting/myscripts
 @dirrm %%HLDSDIR%%Adminmod/scripting/mybinaries
 @dirrm %%HLDSDIR%%Adminmod/scripting/include
-@dirrm %%HLDSDIR%%Adminmod/scripting/examples/legacy
 @dirrm %%HLDSDIR%%Adminmod/scripting/examples
 @dirrm %%HLDSDIR%%Adminmod/scripting/compiler
 @dirrm %%HLDSDIR%%Adminmod/scripting/binaries
@@ -213,6 +213,7 @@
 %%PORTDOCS%%@dirrm %%HLDSDIR%%Adminmod/docs/html/Scripting_Basics
 %%PORTDOCS%%@dirrm %%HLDSDIR%%Adminmod/docs/html/Installing
 %%PORTDOCS%%@dirrm %%HLDSDIR%%Adminmod/docs/html/Images
+%%PORTDOCS%%@dirrm %%HLDSDIR%%Adminmod/docs/html/HowTo
 %%PORTDOCS%%@dirrm %%HLDSDIR%%Adminmod/docs/html/Configuration
 %%PORTDOCS%%@dirrm %%HLDSDIR%%Adminmod/docs/html/Before_You_Start
 %%PORTDOCS%%@dirrm %%HLDSDIR%%Adminmod/docs/html/Admin_Mod_Reference
@@ -223,7 +224,6 @@
 %%PORTDOCS%%@dirrm %%HLDSDIR%%Adminmod/docs
 @dirrm %%HLDSDIR%%Adminmod/dlls
 @dirrm %%HLDSDIR%%Adminmod/config/Samples
-@dirrm %%HLDSDIR%%Adminmod/config/Legacy
 @dirrm %%HLDSDIR%%Adminmod/config
 @dirrm %%HLDSDIR%%Adminmod/.amdd
 @dirrm %%HLDSDIR%%Adminmod
