@@ -6,23 +6,29 @@
 #
 
 PORTNAME=	qico
-PORTVERSION=	0.48.1
+PORTVERSION=	0.48.2
 CATEGORIES=	comms
 MASTER_SITES=	http://lev.serebryakov.spb.ru/download/0.48/
 
 MAINTAINER=	dsh@vlink.ru
 
 USE_GMAKE=	yes
-MAKE_ENV+=	SH=${SH} AWK=${AWK} DEFS="${DEFS}"
+MAKE_ENV+=	SH=${SH} AWK=${AWK} MORDA="${MORDA}" DEFS="${DEFS}"
 
 .if defined(WITH_AMIGA4D)
 DEFS+=		-DAMIGA4D
 .endif
 
+.if !defined(WITHOUT_MORDA)
+MORDA=		1
+.endif
+
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/qico.conf.sample ${PREFIX}/etc/
 	${INSTALL_PROGRAM} ${WRKSRC}/src/qico ${PREFIX}/libexec/
+.if !defined(WITHOUT_MORDA)
 	${INSTALL_PROGRAM} ${WRKSRC}/src/qcc ${PREFIX}/bin/
+.endif
 
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/qico
