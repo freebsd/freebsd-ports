@@ -2279,48 +2279,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
   </vuln>
 
   <vuln vid="3362f2c1-8344-11d8-a41f-0020ed76ef5a">
-    <topic>apache 2 denial-of-service attack (does not affect FreeBSD)</topic>
-    <affects>
-      <package>
-	<name>apache</name>
-	<range><lt>0</lt></range>
-      </package>
-    </affects>
-    <description>
-      <body xmlns="http://www.w3.org/1999/xhtml">
-	<p><em>NOTE WELL:</em> This issue does not affect any FreeBSD
-	  platform.  It is recorded only for reference.</p>
-	<p>A denial-of-service issue was reported by Jeff Trawick.  From
-	   the CVS commit log for the fix:</p>
-	<blockquote cite="">
-	  <p>Fix starvation issue on listening sockets where a
-	    short-lived connection on a rarely-accessed listening
-	    socket will cause a child to hold the accept mutex and
-	    block out new connections until another connection arrives
-	    on that rarely-accessed listening socket.  With Apache
-	    2.x there is no performance concern about enabling the
-	    logic for platforms which don't need it, so it is enabled
-	    everywhere except for Win32.</p>
-	</blockquote>
-	<p>It was determined that this issue does not affect
-	  FreeBSD systems. From the Apache security advisory:</p>
-	<blockquote cite="http://www.apacheweek.com/features/security-20">
-	    <p>This issue is known to affect some versions of AIX,
-	      Solaris, and Tru64; it is known to not affect FreeBSD or
-	      Linux.</p>
-	</blockquote>
-      </body>
-    </description>
-    <references>
-      <cvename>CAN-2004-0174</cvename>
-      <url>http://marc.theaimsgroup.com/?l=bugtraq&amp;m=107973894328806</url>
-      <url>http://marc.theaimsgroup.com/?l=apache-cvs&amp;m=107969495524201</url>
-      <url>http://www.apacheweek.com/features/security-20</url>
-    </references>
-    <dates>
-      <discovery>2004-03-19</discovery>
-      <entry>2004-03-31</entry>
-    </dates>
+    <cancelled />
   </vuln>
 
   <vuln vid="5e7f58c3-b3f8-4258-aeb8-795e5e940ff8">
