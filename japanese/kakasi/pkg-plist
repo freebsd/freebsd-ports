@@ -8,5 +8,6 @@ man/ja_JP.EUC/man1/kakasi.1.gz
 share/doc/kakasi/README
 share/doc/kakasi/README.jpn
 share/doc/kakasi/kakasi-ext.doc
+share/doc/kakasi/JISYO
 @dirrm share/doc/kakasi
 @dirrm lib/kakasi

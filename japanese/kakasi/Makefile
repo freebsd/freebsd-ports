@@ -3,7 +3,7 @@
 # Date created:			26 Mar. 1996
 # Whom:				Masafumi NAKANE <max@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.11 1997/07/06 17:47:44 max Exp $
+# $Id: Makefile,v 1.12 1997/09/14 21:34:43 max Exp $
 #
 
 DISTNAME=	kakasi-2.2.5
@@ -33,9 +33,13 @@ pre-patch:
 	@${PATCH} ${PATCH_DIST_ARGS} < ${WRKDIR}/kakasi-ext/patch.kakasi-2.2.5
 
 post-install:
+.for f in mkkanwa atoc-conv rdic-conv
+	@/usr/bin/strip ${PREFIX}/lib/kakasi/$f
+.endfor
 	${INSTALL_MAN} ${WRKSRC}/kakasi.1 ${PREFIX}/man/${MANLANG}/man1
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/kakasi
+	${INSTALL_DATA} ${WRKSRC}/JISYO ${PREFIX}/share/doc/kakasi
 	${INSTALL_DATA} ${WRKSRC}/../README* ${PREFIX}/share/doc/kakasi
 	${INSTALL_DATA} ${WRKDIR}/kakasi-ext/KAKASI.DOC \
 	  ${PREFIX}/share/doc/kakasi/kakasi-ext.doc
