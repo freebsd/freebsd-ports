@@ -9,7 +9,7 @@ PORTNAME=	cadaver
 PORTVERSION=	0.22.2
 CATEGORIES=	www
 MASTER_SITES=	http://www.webdav.org/cadaver/ \
-		http://keyserver.kjsl.com/~jharris/distfiles/
+		http://www.tcbug.org/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}${EXTRACT_SUFX}.asc
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
@@ -33,7 +33,7 @@ PLIST_FILES=	bin/cadaver
 # script breaks if it can not find the Makefile* in them. Exclude
 # them to be sure, a stray .h is not included instead of what's
 # found under PREFIX (installed by the neon port):
-EXTRACT_AFTER_ARGS=       | ${TAR} -xf - \
+EXTRACT_AFTER_ARGS=	| ${TAR} -xf - \
 		--exclude '${PORTNAME}-${PORTVERSION}/expat/*.[ch]' \
 		--exclude '${PORTNAME}-${PORTVERSION}/libneon/*.[ch]'
 
