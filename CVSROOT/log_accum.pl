@@ -418,7 +418,8 @@ sub do_changes_file {
 			my $changes = "$CVSROOT/CVSROOT/commitlogs/$category";
 			open CHANGES, ">>$changes"
 				or die "Cannot open $changes.\n";
-			print CHANGES join("\n", @text), "\n\n";
+			print CHANGES map { "$_\n" } @text;
+			print CHANGES "\n\n\n";
 			close CHANGES;
 		}
 	}
@@ -778,8 +779,6 @@ for (my $i = 0; ; $i++) {
 		push @log_msg, "  ", map {"  $_"}
 		    format_summaries("$SUMMARY_FILE.$i");
 	}
-
-	push @log_msg, "", "";
 }
 #
 # Put the log message at the beginning of the Changes file
