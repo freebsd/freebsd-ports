@@ -16,6 +16,8 @@ MAINTAINER=	avh4@usa.net
 LIB_DEPENDS=	guile.9:${PORTSDIR}/lang/guile
 
 GNU_CONFIGURE=	yes
+USE_XPM=	yes
+USE_XLIB=	yes
 
 pre-patch:
 	${CP} ${WRKSRC}/getopt/getopt.h ${WRKSRC}/include
