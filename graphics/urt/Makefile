@@ -7,6 +7,7 @@
 
 PORTNAME=	urt
 PORTVERSION=	3.1b1
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.cs.utah.edu/pub/dept/OLD/pub/
 DISTNAME=	urt
