@@ -110,6 +110,7 @@
     SUBDIR += lookout
     SUBDIR += mahogany
     SUBDIR += mail2procmailrc
+    SUBDIR += mail2sms
     SUBDIR += mailagent
     SUBDIR += mailcrypt
     SUBDIR += maildirsync
