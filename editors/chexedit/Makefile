@@ -8,8 +8,8 @@
 PORTNAME=	chexedit
 PORTVERSION=	0.9.7
 CATEGORIES=	editors
-MASTER_SITES=	http://ccwf.cc.utexas.edu/~apoc/programs/c/hexedit/
-DISTNAME=	hexedit-0.9.7
+MASTER_SITES=	http://www.rogoyski.com/adam/programs/hexedit/
+DISTNAME=	hexedit-${PORTVERSION}
 
 MAINTAINER=	roman@xpert.com
 COMMENT=	Full screen text mode Hex editor using the [n]curses library
