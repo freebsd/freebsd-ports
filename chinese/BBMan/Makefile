@@ -22,10 +22,16 @@ USE_ZIP=	yes
 WRKSRC=		${WRKDIR}/BBMan
 USE_X_PREFIX=	yes
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502126
+BROKEN=		"Does not compile on FreeBSD >= 5.x"
+.endif
+
 do-build:
 		cd ${WRKSRC} && g++ main.cpp `wxgtk2-2.4-config --libs --cxxflags` -I${LOCALBASE}/include -O2 -o BBMan
 
 do-install:
 		${INSTALL_PROGRAM} ${WRKSRC}/BBMan ${PREFIX}/bin/BBMan
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
