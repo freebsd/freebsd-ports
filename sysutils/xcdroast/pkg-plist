@@ -1,4 +1,5 @@
 bin/xcdroast
+lib/charset.alias
 lib/xcdroast-0.98/bin/cddbtool
 lib/xcdroast-0.98/bin/rmtool
 lib/xcdroast-0.98/bin/vrfytool
@@ -12,15 +13,37 @@ lib/xcdroast-0.98/icons/dialog_information.png
 lib/xcdroast-0.98/icons/dialog_question.png
 lib/xcdroast-0.98/icons/dialog_warning.png
 lib/xcdroast-0.98/icons/xcdricon.gif
+lib/xcdroast-0.98/icons/xcdricon.png
 lib/xcdroast-0.98/icons/xcdrlogo.gif
-lib/xcdroast-0.98/icons/xcdrlogo2.gif
-lib/xcdroast-0.98/lang/lang_extract.sh
-lib/xcdroast-0.98/lang/langhelp.def
-lib/xcdroast-0.98/lang/language.def
 lib/xcdroast-0.98/sound/test.wav
+share/locale/bg/LC_MESSAGES/xcdroast.mo
+share/locale/ca/LC_MESSAGES/xcdroast.mo
+share/locale/cs/LC_MESSAGES/xcdroast.mo
+share/locale/da/LC_MESSAGES/xcdroast.mo
+share/locale/de/LC_MESSAGES/xcdroast.mo
+share/locale/es/LC_MESSAGES/xcdroast.mo
+share/locale/et/LC_MESSAGES/xcdroast.mo
+share/locale/fi/LC_MESSAGES/xcdroast.mo
+share/locale/fr/LC_MESSAGES/xcdroast.mo
+share/locale/gl/LC_MESSAGES/xcdroast.mo
+share/locale/hr/LC_MESSAGES/xcdroast.mo
+share/locale/hu/LC_MESSAGES/xcdroast.mo
+share/locale/id/LC_MESSAGES/xcdroast.mo
+share/locale/it/LC_MESSAGES/xcdroast.mo
+share/locale/ja/LC_MESSAGES/xcdroast.mo
+share/locale/locale.alias
+share/locale/nl/LC_MESSAGES/xcdroast.mo
+share/locale/no/LC_MESSAGES/xcdroast.mo
+share/locale/pl/LC_MESSAGES/xcdroast.mo
+share/locale/pt_BR/LC_MESSAGES/xcdroast.mo
+share/locale/ru/LC_MESSAGES/xcdroast.mo
+share/locale/sk/LC_MESSAGES/xcdroast.mo
+share/locale/sv/LC_MESSAGES/xcdroast.mo
+share/locale/tr/LC_MESSAGES/xcdroast.mo
+share/locale/zh_CN.GB2312/LC_MESSAGES/xcdroast.mo
+share/locale/zh_TW.Big5/LC_MESSAGES/xcdroast.mo
 @dirrm lib/xcdroast-0.98/bin
 @dirrm lib/xcdroast-0.98/icons
-@dirrm lib/xcdroast-0.98/lang
 @dirrm lib/xcdroast-0.98/sound
 @dirrm lib/xcdroast-0.98
 @unexec if pw groupshow -n xcdwrite 2>/dev/null 1>&2; then pw groupdel -n xcdwrite; fi
