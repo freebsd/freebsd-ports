@@ -9,7 +9,7 @@
 PORTNAME=	images
 PORTVERSION=	2.10
 CATEGORIES=	graphics
-MASTER_SITES=	ftp://ftp.inria.fr/lang/caml-light/bazar-ocaml/
+MASTER_SITES=	ftp://ftp.inria.fr/INRIA/Projects/cristal/caml-light/bazar-ocaml/
 PKGNAMEPREFIX=	ocaml-
 DISTNAME=	camlimages-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
