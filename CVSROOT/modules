@@ -11619,6 +11619,7 @@ wminet		ports/sysutils/wminet
 wminfo		ports/misc/wminfo
 wmitime		ports/x11-clocks/wmitime
 wmix		ports/audio/wmix
+wmjsql		ports/databases/wmjsql
 wmjulia		ports/misc/wmjulia
 wmjupiter	ports/astro/wmjupiter
 wml		ports/www/wml
