@@ -1,2 +1,3 @@
 sbin/tcpreplay
-sbin/tcpprep
+bin/capinfo
+bin/tcpprep
