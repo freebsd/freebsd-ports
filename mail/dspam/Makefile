@@ -355,6 +355,7 @@ post-install:
 	cd ${WRKSRC}/tools.mysql_drv && \
 		${INSTALL_DATA} README *.sql* ${EXAMPLESDIR}/mysql
 	${INSTALL_DATA} ${FILESDIR}/mysql.data ${EXAMPLESDIR}/mysql
+	${INSTALL_DATA} ${FILESDIR}/2x_to_3x_db.sql ${EXAMPLESDIR}/mysql
 .endif
 .if defined(WITH_POSTGRESQL73) || defined(WITH_POSTGRESQL74)
 	${MKDIR} ${EXAMPLESDIR}/pgsql

@@ -25,6 +25,7 @@ libdata/pkgconfig/dspam.pc
 %%PORTDOCS%%%%DOCSDIR%%/RELEASE.NOTES
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%MYSQL%%%%EXAMPLESDIR%%/mysql/README
+%%MYSQL%%%%EXAMPLESDIR%%/mysql/2x_to_3x_db.sql
 %%MYSQL%%%%EXAMPLESDIR%%/mysql/mysql.data
 %%MYSQL%%%%EXAMPLESDIR%%/mysql/mysql_objects.sql.space.optimized
 %%MYSQL%%%%EXAMPLESDIR%%/mysql/mysql_objects.sql.speed.optimized
