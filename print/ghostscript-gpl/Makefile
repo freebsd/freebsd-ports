@@ -175,7 +175,7 @@ EPAG_SRCS=	${EPAG_NAME}.tar.gz
 # EPLASER - additional driver for ESC/Page printers (Epson Kowa developed)
 # http://www.epkowa.co.jp/english/linux_e/index.html
 EPLASER=	eplaser
-EPLASER_VERS=	3.1.3
+EPLASER_VERS=	3.1.4
 EPLASER_NAME=	${EPLASER}-${EPLASER_VERS}
 EPLASER_SRCS=	${EPLASER_NAME}-705.tgz
 
@@ -225,7 +225,7 @@ post-extract:
 	${ECHO_MSG} ">>> in post-extract ..."
 # ** 3rd party driver **
 # Note: don't forget to add those devices in scripts/configure,
-# which update unix-gcc.mak to build gs with these new devices !
+# which update unix-gcc.mak to build gs with these new devices!
 #
 # for HP8XX driver
 	${ECHO_MSG} ">>>   extracting ${HP8XX_SRCS} ..."
@@ -431,7 +431,7 @@ pre-build:
 		${WRKSRC}/freetype/objs/freetype214MT_D.a
 .endif
 
-pre-install:
+pre-su-install:
 	${ECHO_MSG} ">>> in pre-install ..."
 	${ECHO_MSG} ">>>   creating ghostscript destdir ..."
 	${MKDIR} ${DATADIR}
