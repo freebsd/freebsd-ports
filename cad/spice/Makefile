@@ -3,7 +3,7 @@
 # Date created:         26 Mar 96
 # Whom:                 Julian Jenkins <kaveman@magna.com.au>
 #
-# $Id: Makefile,v 1.6 1996/12/23 07:26:16 tg Exp $
+# $Id: Makefile,v 1.7 1996/12/24 07:31:49 asami Exp $
 #
 
 DISTNAME=       sp3f4.kit
@@ -18,7 +18,6 @@ EXTRACT_SUFX=   .tar.Z
 
 MAINTAINER=	kaveman@magna.com.au
 
-RESTRICTED=	"export restrictions"
 NO_WRKSUBDIR=	yes
 MAN1=		sconvert.1 nutmeg.1 spice.1
 MAN3=		mfb.3
