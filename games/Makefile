@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.39 1996/09/21 17:25:01 max Exp $
+# $Id: Makefile,v 1.40 1996/10/12 00:14:34 chuckr Exp $
 #
 
     SUBDIR += acm
@@ -7,6 +7,8 @@
     SUBDIR += jetpack
     SUBDIR += nethack
     SUBDIR += oneko
+    SUBDIR += qcc
+    SUBDIR += quakeserver
     SUBDIR += spider
     SUBDIR += tksol
     SUBDIR += xasteroids
