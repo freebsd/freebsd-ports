@@ -1,8 +1,9 @@
 bin/aumix
 bin/xaumix
 share/aumix/ansi
-share/aumix/aumix-mini.xpm
 share/aumix/aumix.xpm
+share/aumix/fadein.set
+share/aumix/fadeout.set
 share/aumix/vt100
 share/aumix/xterm
 share/locale/de/LC_MESSAGES/aumix.mo
