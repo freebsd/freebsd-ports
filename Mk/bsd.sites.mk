@@ -57,7 +57,7 @@ MASTER_SITE_GNOME+=	\
 	ftp://sunsite.uio.no/pub/GNOME/%SUBDIR%/ \
 	ftp://ftp.dataplus.se/pub/linux/gnome/%SUBDIR%/ \
 	ftp://ftp.mirror.ac.uk/sites/ftp.gnome.org/pub/GNOME/%SUBDIR%/ \
-	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,X/gnome/&,} \
+	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,X/gnome/&,}
 
 MASTER_SITE_GNU+=	\
 	ftp://ftp.gnu.org/gnu/%SUBDIR%/ \
@@ -86,7 +86,8 @@ MASTER_SITE_KDE+=	\
 	ftp://ftp.synesis.net/pub/mirrors/kde/%SUBDIR%/ \
 	ftp://ftp.twoguys.org/pub/kde/%SUBDIR%/ \
 	ftp://ftp.mirror.ac.uk/sites/ftp.kde.org/pub/kde/%SUBDIR%/ \
-	ftp://ftp.dataplus.se/pub/linux/kde/%SUBDIR%/
+	ftp://ftp.dataplus.se/pub/linux/kde/%SUBDIR%/ \
+	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,X/kde/&,}
 
 MASTER_SITE_MOZILLA+= \
 	ftp://ftp.mozilla.org/pub/%SUBDIR%/ \
