@@ -1,10 +1,8 @@
 bin/kcdmain
 bin/kcdscr
 share/doc/kcd/CHANGES
-share/doc/kcd/COPYING
-share/doc/kcd/INSTALL
 share/doc/kcd/README
 share/examples/kcd/kcd.csh.init
 share/examples/kcd/kcd.sh.init
-@dirrm share/doc/kcd
 @dirrm share/examples/kcd
+@dirrm share/doc/kcd

@@ -18,4 +18,4 @@ kcd allows user to change directory by using various methods:
 	  directories with newer modified/changed time are scanned.
 	- Sorted directory tree listing.
 
-WWW: http://www-scf.usc.edu/~lerdsuwa/util/kcd.html
+WWW: http://kcd.sourceforge.net/

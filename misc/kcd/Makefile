@@ -5,36 +5,38 @@
 # $FreeBSD$
 #
 
-PORTNAME=		kcd
-PORTVERSION=		4.11.1
-CATEGORIES=		misc
-MASTER_SITES=		${MASTER_SITE_SUNSITE} \
-			http://www-scf.usc.edu/~lerdsuwa/util/
-MASTER_SITE_SUBDIR=	utils/shell
+PORTNAME=	kcd
+PORTVERSION=	4.11.2
+CATEGORIES=	misc
+MASTER_SITES=	http://download.sourceforge.net/kcd/
 
-MAINTAINER=		ports@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=		ncurses.4:${PORTSDIR}/devel/ncurses
-
-GNU_CONFIGURE=		yes
-CONFIGURE_ENV=		CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include/ncurses -I${LOCALBASE}/include" \
-			LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
-MAN1=			kcd.1
-
-do-install:
-	@ ${INSTALL_PROGRAM} ${WRKSRC}/kcdmain ${PREFIX}/bin
-	@ ${INSTALL_SCRIPT} ${WRKSRC}/kcdscr ${PREFIX}/bin
-	@ ${INSTALL_MAN} ${WRKSRC}/kcd.1 ${PREFIX}/man/man1
-	@ ${MKDIR} ${PREFIX}/share/examples/kcd
-	@ ${INSTALL_DATA} ${WRKSRC}/kcd.csh.init ${PREFIX}/share/examples/kcd
-	@ ${INSTALL_DATA} ${WRKSRC}/kcd.sh.init ${PREFIX}/share/examples/kcd
-
-post-install:
-.if !defined(NOPORTDOCS)
-	@ ${MKDIR} ${PREFIX}/share/doc/kcd
-.for file in CHANGES COPYING INSTALL README
-	@ ${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/kcd
-.endfor
+.include <bsd.port.pre.mk>
+.if ${OSVERSION} < 400010
+LIB_DEPENDS=	ncurses.4:${PORTSDIR}/devel/ncurses
 .endif
 
-.include <bsd.port.mk>
+USE_NEWGCC=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/ncurses -I${LOCALBASE}/include" \
+		LIBS="-L${LOCALBASE}/lib"
+MAN1=		kcd.1
+
+post-patch:
+	@${PERL} -pi -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/*.cc
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/kcdmain ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/kcdscr ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/kcd.1 ${PREFIX}/man/man1
+	@${MKDIR} ${PREFIX}/share/examples/kcd
+	${INSTALL_DATA} ${WRKSRC}/kcd.csh.init ${PREFIX}/share/examples/kcd
+	${INSTALL_DATA} ${WRKSRC}/kcd.sh.init ${PREFIX}/share/examples/kcd
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${PREFIX}/share/doc/kcd
+	${INSTALL_DATA} ${WRKSRC}/CHANGES ${PREFIX}/share/doc/kcd
+	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/kcd
+.endif
+
+.include <bsd.port.post.mk>
