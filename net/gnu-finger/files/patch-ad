@@ -1,0 +1,13 @@
+--- Makefile.in.orig	Thu Oct 22 08:59:40 1992
++++ Makefile.in	Mon Jul  8 19:44:26 1996
+@@ -51,8 +51,8 @@
+ 	false
+ 	
+ server: $(AUXOBJS) $(EXECUTABLES)
+-	(cd $(SRC); $(MAKE) $(MFLAGS) $(CC)="$(CC)" server)
+-	(cd targets; $(MAKE) $(MFLAGS) $(CC)="$(CC)" server)
++	(cd $(SRC); $(MAKE) $(MFLAGS) CC="$(CC)" server)
++	(cd targets; $(MAKE) $(MFLAGS) CC="$(CC)" server)
+ 
+ client:	$(AUXOBJS) $(EXECUTABLES)
+ 	(cd $(SRC); $(MAKE) $(MFLAGS) CC="$(CC)" client)

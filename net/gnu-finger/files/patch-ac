@@ -1,0 +1,44 @@
+--- src/finger.c.org	Sat Jul  6 14:31:03 1996
++++ src/finger.c	Sat Jul  6 16:23:39 1996
+@@ -107,7 +107,6 @@
+   char *arg, *port;
+   int optc;
+ 
+-  
+   default_error_handling (argv[0]);
+ 
+   /* Parse the arguments passed on the command line. */
+@@ -192,6 +191,7 @@
+   long addr;
+   char *finger_server = NULL;
+   int suppress_hostname = 0;
++  int malloc_flag = 0;
+ 
+ 
+   username = savestring (arg);
+@@ -204,7 +204,7 @@
+   hostname = NULL;
+ 
+   if ((!username || !*username)
+-      && (finger_server = getservhost ()))
++      && (finger_server = getservhost (stderr)))
+     {
+       hostname = finger_server;
+       suppress_hostname = 1;
+@@ -237,6 +237,7 @@
+ 	{
+ 	  host = (struct hostent *) xmalloc (sizeof (struct hostent));
+ 	  host->h_name = hostname;
++	  malloc_flag = 1;
+ 	}
+     }
+   else
+@@ -296,6 +297,7 @@
+   if (finger_server)
+     free (finger_server);
+ 
+-  if (host)
++  if (malloc_flag) {
+     free (host);
++    }
+ }

@@ -1,0 +1,28 @@
+--- src/Makefile.in.org	Sat Jul  6 17:57:18 1996
++++ src/Makefile.in	Sat Jul  6 18:04:43 1996
+@@ -85,18 +85,18 @@
+ server: $(EXECUTABLES) .fingerdir .etcdir .bindir
+ 	-if [ ! -r `cat .etcdir` ]; then mkdir `cat .etcdir`; fi
+ 	-if [ ! -r `cat .fingerdir` ]; then mkdir `cat .fingerdir`; fi
+-	cp finger `cat .bindir`; chmod a+rx `cat .bindir`/finger
+-	cp fingerd `cat .etcdir`; chmod a+rx `cat .etcdir`/fingerd
+-	cp in.fingerd `cat .etcdir`; chmod a+rx `cat .etcdir`/in.fingerd
+-	cp in.cfingerd `cat .etcdir`; chmod a+rx `cat .etcdir`/in.cfingerd
++	install -c -m 755 -s finger `cat .bindir`/finger
++	install -c -m 744 -o root -s fingerd `cat .etcdir`/fingerd
++	install -c -m 744 -o nobody -s in.fingerd `cat .etcdir`/in.fingerd
++	install -c -m 744 -o nobody -s in.cfingerd `cat .etcdir`/in.cfingerd
+ 	(cd ../lib/site; make install)
+ 
+ client: $(EXECUTABLES) .etcdir .fingerdir .bindir
+ 	-if [ ! -r `cat .etcdir` ]; then mkdir `cat .etcdir`; fi
+ 	-if [ ! -r `cat .fingerdir` ]; then mkdir `cat .fingerdir`; fi
+-	cp finger `cat .bindir`; chmod a+rx `cat .bindir`/finger
+-	cp in.fingerd `cat .etcdir`; chmod a+rx `cat .etcdir`/in.fingerd
+-	cp in.cfingerd `cat .etcdir`; chmod a+rx `cat .etcdir`/in.cfingerd
++	install -c -m 755 -s finger `cat .bindir`/finger
++	install -c -m 744 -o nobody -s in.fingerd `cat .etcdir`/in.fingerd
++	install -c -m 744 -o nobody -s in.cfingerd `cat .etcdir`/in.cfingerd
+ 	touch `cat .fingerdir`/ttylocs
+ 
+ clean:

@@ -1,0 +1,26 @@
+--- configure.orig	Fri Oct 16 06:49:05 1992
++++ configure	Mon Jul  8 19:39:32 1996
+@@ -1041,8 +1041,10 @@
+ 
+ 		
+ 		echo checking for /proc file system
+-		if test -r /proc ; then DEFS="$DEFS -DHAVE_PROC_FS=1"
+-		fi
++#		if test -r /proc ; then DEFS="$DEFS -DHAVE_PROC_FS=1"
++#		fi
++
++		DEFS="$DEFS -D_ANSI_SOURCE"
+ 	
+ 
+ 		
+@@ -1071,8 +1073,9 @@
+ 		
+ 
+ 		
+-		echo checking for /usr/mail or /usr/spool/mail
++		echo checking for /usr/mail, /var/mail or /usr/spool/mail
+ 		if test -d /usr/mail ; then MAILDIR=/usr/mail
++		elif test -d /var/mail ; then MAILDIR=/var/mail
+ 		else MAILDIR=/usr/spool/mail
+ 		fi
+ 		
