@@ -37,6 +37,10 @@ IGNORE=		"requires Perl 5.6.0 or greater. Please install lang/perl5 and retry, o
 PLIST_SUB+=	SSLPERL="@comment "
 .endif
 
+.if ${OSVERSION} >= 502112
+BROKEN=		"Does not compile on FreeBSD >= 5.x"
+.endif
+
 do-build:
 .if defined(WITHOUT_SSLPERL)
 	cd ${WRKSRC} && package/compile https@ sslcat sslconnect sslclient sslserver
