@@ -5,7 +5,7 @@
   * All rights reserved.  See Legal.htm for full text and disclaimer. */
  #include "Python.h"
 -#include "arrayobject.h"
-+#include "numerical/arrayobject.h"
++#include "Numeric/arrayobject.h"
  /*#include "hlevel.h"*/
  #include <stdio.h>
  #include <stdlib.h>

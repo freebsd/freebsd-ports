@@ -30,7 +30,7 @@ MAKE_FLAGS+=	'OPT=${CFLAGS}'
 
 PYTHONSCRIPTDIR=	${PREFIX}/lib/python1.5
 GISTDIR=	${PYTHONSCRIPTDIR}/site-packages/PyGist
-NUMPYDIR=	${PYTHONSCRIPTDIR}/site-packages/numerical
+NUMPYDIR=	${PYTHONSCRIPTDIR}/site-packages/Numeric
 RNGDIR=		${PYTHONSCRIPTDIR}/site-packages/RNG
 EXAMPLEDIR=	${PREFIX}/share/examples/PyGist
 

@@ -5,7 +5,7 @@
  
  #include "Python.h"
 -#include "arrayobject.h"
-+#include "numerical/arrayobject.h"
++#include "Numeric/arrayobject.h"
  #include "hlevel.h"
  #ifndef NO_XLIB
  #  include "dispas.h"
