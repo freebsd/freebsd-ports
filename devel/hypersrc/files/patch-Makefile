@@ -1,6 +1,6 @@
---- Makefile.orig	Wed Sep  5 13:10:43 2001
-+++ Makefile	Sat Sep  8 03:47:05 2001
-@@ -6,11 +6,7 @@
+--- GNUmakefile.orig	Wed Jan 30 14:07:54 2002
++++ GNUmakefile	Sat Jun  8 13:43:27 2002
+@@ -8,11 +8,7 @@
  
  # Where to install.
  #
@@ -11,9 +11,9 @@
 -endif
 +		INSTALL_DIR=${PREFIX}/bin
  
- C_SRCS_		=	main.c		\
- 				widgets.c	\
-@@ -59,7 +55,7 @@
+ C_SRCS_		=	main.c			\
+ 				widgets.c		\
+@@ -71,7 +67,7 @@
  else
  
  ifndef DEBUG
@@ -22,22 +22,22 @@
  else
  C_OPTIMIZE = -O
  endif
-@@ -112,10 +108,10 @@
+@@ -137,10 +133,10 @@
  
  # -----	editing the rest should usually be unnecessary ------------------------
  
 -CC			= gcc -c
--CC_FLAGS	= $(PROF_OPTS) $(C_DEBUG) $(C_OPTIMIZE) $(C_OPTS) $(C_WARNINGS) -ansi -pipe `gtk-config --cflags` `gnome-config --cflags gnomeui` -Isrc
+-CC_FLAGS	= -I$(INC_DIR) $(PROF_OPTS) $(C_DEBUG) $(C_OPTIMIZE) $(C_OPTS) $(C_WARNINGS) -pipe `$(GTK_CONFIG) --cflags` `gnome-config --cflags gnomeui`
 -LD			= gcc
--LD_FLAGS	= $(PROF_OPTS) -pipe `gtk-config --libs` `gnome-config --libs gnomeui`
-+#CC		= gcc -c
-+CC_FLAGS	= $(PROF_OPTS) $(C_DEBUG) $(C_OPTS) $(C_WARNINGS) `gnome-config --cflags gnomeui` $(C_OPTIMIZE) -Isrc
+-LD_FLAGS	= $(PROF_OPTS) -pipe `$(GTK_CONFIG) --libs` `gnome-config --libs gnomeui`
++#CC			= gcc -c
++CC_FLAGS	= -I$(INC_DIR) $(PROF_OPTS) $(C_DEBUG) $(C_OPTIMIZE) $(C_OPTS) $(C_WARNINGS) `gnome-config --cflags gnomeui`
 +LD			= $(CC)
-+LD_FLAGS	= $(PROF_OPTS) `gnome-config --libs gnomeui`
++LD_FLAGS	= $(PROF_OPTS) -pipe `gnome-config --libs gnomeui`
  C_SRCS		= $(addprefix src/,$(C_SRCS_))
  C_OBJS_		= $(C_SRCS_:.c=.o)
  C_OBJS		= $(addprefix $(OUT)/,$(C_OBJS_))
-@@ -144,7 +140,7 @@
+@@ -172,7 +168,7 @@
  		$(LD) -o $(OUT)/hypersrc $(C_OBJS) $(LD_FLAGS) $(LIBS) $(OUT)/libparser.a
  
  $(OUT)/%.o:     src/%.c
@@ -46,7 +46,7 @@
  
  # -----------------------------------------------------------------------------
  # parser (lex/yacc code that builds func graph/tree)
-@@ -179,13 +175,13 @@
+@@ -210,13 +206,13 @@
  		mv  y.tab.[cho] $(OUT)
  
  $(OUT)/y.tab.o:  $(OUT)/y.tab.c
@@ -57,18 +57,17 @@
 -		$(CC) -o $@ $(CC_FLAGS_PARSER) $(OUT)/lex.yy.c
 +		$(CC) -c -o $@ $(CC_FLAGS_PARSER) $(OUT)/lex.yy.c
  
- $(OUT)/str_heap.o:  src/str_heap.c  src/str_heap.h
+ $(OUT)/str_heap.o:  src/str_heap.c  $(INC_DIR)/str_heap.h
 -		$(CC) -o $@ $(CC_FLAGS_PARSER) src/str_heap.c
 +		$(CC) -c -o $@ $(CC_FLAGS_PARSER) src/str_heap.c
  
  # -----------------------------------------------------------------------------
  
-@@ -204,11 +200,11 @@
+@@ -235,10 +231,11 @@
  		@
  		cat  Hypersrc.pl  \
  		| sed 's|\$hypersrc = "hypersrc"|\$hypersrc = "${INSTALL_DIR}/hypersrc"|'  \
 -		| sed 's|\$ctags_pl = "ctags.pl"|\$ctags_pl = "${INSTALL_DIR}/ctags.pl"|'  >  $(INSTALL_DIR)/Hypersrc.pl
--		chmod  +x  $(INSTALL_DIR)/Hypersrc.pl
 +		| sed 's|\$ctags_pl = "ctags.pl"|\$ctags_pl = "${INSTALL_DIR}/ctags.pl"|'  >  $(OUT)/Hypersrc.pl
 +		${BSD_INSTALL_SCRIPT}  $(OUT)/Hypersrc.pl  $(INSTALL_DIR)
  		@
@@ -76,6 +75,6 @@
 -		cp  ctags.pl  $(INSTALL_DIR)
 +		${BSD_INSTALL_PROGRAM}  $(OUT)/hypersrc  $(INSTALL_DIR)
 +		${BSD_INSTALL_SCRIPT}  ctags.pl  $(INSTALL_DIR)
- 
- $(INSTALL_DIR):
- 		mkdir -p $(INSTALL_DIR)
+ 		@
+ 		chmod  +rx  $(INSTALL_DIR)/hypersrc
+ 		chmod  +rx  $(INSTALL_DIR)/Hypersrc.pl
