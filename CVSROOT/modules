@@ -8322,6 +8322,7 @@ wmtop		ports/sysutils/wmtop
 wmtune		ports/audio/wmtune
 wmtunlo		ports/misc/wmtunlo
 wmtz		ports/x11-clocks/wmtz
+wmupmon		ports/sysutils/wmupmon
 wmusic		ports/audio/wmusic
 wmwave		ports/net/wmwave
 wmweather	ports/misc/wmweather
