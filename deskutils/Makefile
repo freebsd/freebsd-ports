@@ -39,6 +39,7 @@
     SUBDIR += gnotime
     SUBDIR += goats
     SUBDIR += gtimer
+    SUBDIR += gtkjournal
     SUBDIR += gtodo
     SUBDIR += gucharmap
     SUBDIR += gworkspace
