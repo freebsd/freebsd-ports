@@ -1,0 +1,128 @@
+--- src/xitk/skins/xinetic/skinconfig.orig	Thu Dec 30 03:33:25 2004
++++ src/xitk/skins/xinetic/skinconfig	Thu Dec 30 04:35:46 2004
+@@ -243,7 +243,7 @@
+ 	  color = #9fa4ad
+ 	  color_focus = #081e2f
+ 	  color_click = #081e2f
+-	  font = *-helvetica-*-i-*-*-12-*-*-*-*-*-*-*
++	  font = -*-*-bold-r-normal-*-12-*-*-*-*-*-*-*
+ 	}
+ 	max_buttons = 7
+ }
+@@ -303,7 +303,7 @@
+ 	  color = #9fa4ad
+ 	  color_focus = #081e2f
+ 	  color_click = #081e2f
+-	  font = *-helvetica-*-i-*-*-12-*-*-*-*-*-*-*
++	  font = -*-*-bold-r-normal-*-12-*-*-*-*-*-*-*
+ 	}
+ }
+ 
+@@ -317,7 +317,7 @@
+ 	  color = #9fa4ad
+ 	  color_focus = #081e2f
+ 	  color_click = #081e2f
+-	  font = *-helvetica-*-i-*-*-12-*-*-*-*-*-*-*
++	  font = -*-*-bold-r-normal-*-12-*-*-*-*-*-*-*
+ 	}
+ }
+ 
+@@ -331,7 +331,7 @@
+ 	  color = #9fa4ad
+ 	  color_focus = #081e2f
+ 	  color_click = #081e2f
+-	  font = *-helvetica-*-i-*-*-12-*-*-*-*-*-*-*
++	  font = -*-*-bold-r-normal-*-12-*-*-*-*-*-*-*
+ 	}
+ }
+ 
+@@ -349,7 +349,7 @@
+ 	  color = #a4abb0
+ 	  color_focus = #a4abb0
+ 	  color_click = #081e2f
+-	  font = *-helvetica-*-i-*-*-12-*-*-*-*-*-*-*
++	  font = -*-*-bold-r-normal-*-12-*-*-*-*-*-*-*
+ 	}
+ }
+ 
+@@ -403,7 +403,7 @@
+ 	  color = #9fa4ad
+ 	  color_focus = #081e2f
+ 	  color_click = #081e2f
+-	  font = *-helvetica-*-i-*-*-12-*-*-*-*-*-*-*
++	  font = -*-*-bold-r-normal-*-12-*-*-*-*-*-*-*
+ 	}
+ }
+ 
+@@ -487,7 +487,7 @@
+ 	  color = #9fa4ad
+ 	  color_focus = #081e2f
+ 	  color_click = #081e2f
+-	  font = *-helvetica-*-i-*-*-12-*-*-*-*-*-*-*
++	  font = -*-*-bold-r-normal-*-12-*-*-*-*-*-*-*
+ 	}
+ 	max_buttons = 6
+ }
+@@ -502,7 +502,7 @@
+ 	  color = #9fa4ad
+ 	  color_focus = #9fa4ad
+ 	  color_click = #081e2f
+-	  font = *-helvetica-*-i-*-*-12-*-*-*-*-*-*-*
++	  font = -*-*-bold-r-normal-*-12-*-*-*-*-*-*-*
+ 	}
+ }
+ 
+@@ -693,7 +693,7 @@
+ 	  color = #a4aab4
+ 	  color_focus = #a4aab4
+ 	  color_click = #081e2f
+-	  font = *-helvetica-*-i-*-*-12-*-*-*-*-*-*-*
++	  font = -*-*-bold-r-normal-*-12-*-*-*-*-*-*-*
+ 	}
+ }
+ 
+@@ -707,7 +707,7 @@
+ 	  color = #9fa4ad
+ 	  color_focus = #081e2f
+ 	  color_click = #081e2f
+-	  font = *-helvetica-*-i-*-*-12-*-*-*-*-*-*-*
++	  font = -*-*-bold-r-normal-*-12-*-*-*-*-*-*-*
+ 	}
+ }
+ 
+@@ -734,7 +734,7 @@
+ 	  color = #a4aab4
+ 	  color_focus = #a4aab4
+ 	  color_click = #081e2f
+-	  font = *-helvetica-*-i-*-*-12-*-*-*-*-*-*-*
++	  font = -*-*-bold-r-normal-*-12-*-*-*-*-*-*-*
+ 	}
+ }
+ 
+@@ -748,7 +748,7 @@
+ 	  color = #9fa4ad
+ 	  color_focus = #081e2f
+ 	  color_click = #081e2f
+-	  font = *-helvetica-*-i-*-*-12-*-*-*-*-*-*-*
++	  font = -*-*-bold-r-normal-*-12-*-*-*-*-*-*-*
+ 	}
+ }
+ 
+@@ -770,7 +770,7 @@
+ 	  color = #9fa4ad
+ 	  color_focus = #081e2f
+ 	  color_click = #081e2f
+-	  font = *-helvetica-*-i-*-*-12-*-*-*-*-*-*-*
++	  font = -*-*-bold-r-normal-*-12-*-*-*-*-*-*-*
+ 	}
+ }
+ 
+@@ -854,7 +854,7 @@
+ 	  color = #9fa4ad
+ 	  color_focus = #081e2f
+ 	  color_click = #081e2f
+-	  font = *-helvetica-*-i-*-*-12-*-*-*-*-*-*-*
++	  font = -*-*-bold-r-normal-*-12-*-*-*-*-*-*-*
+ 	}
+ 	max_buttons = 8
+ }
