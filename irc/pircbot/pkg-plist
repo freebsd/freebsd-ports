@@ -1,49 +1,49 @@
 share/java/classes/pircbot.jar
-%%PORTDOCS%%share/doc/pircbot/constant-values.html
-%%PORTDOCS%%share/doc/pircbot/org/jibble/pircbot/class-use/NickAlreadyInUseException.html
-%%PORTDOCS%%share/doc/pircbot/org/jibble/pircbot/class-use/DccChat.html
-%%PORTDOCS%%share/doc/pircbot/org/jibble/pircbot/class-use/DccFileTransfer.html
-%%PORTDOCS%%share/doc/pircbot/org/jibble/pircbot/class-use/DccManager.html
-%%PORTDOCS%%share/doc/pircbot/org/jibble/pircbot/class-use/IdentServer.html
-%%PORTDOCS%%share/doc/pircbot/org/jibble/pircbot/class-use/InputThread.html
-%%PORTDOCS%%share/doc/pircbot/org/jibble/pircbot/class-use/IrcException.html
-%%PORTDOCS%%share/doc/pircbot/org/jibble/pircbot/class-use/OutputThread.html
-%%PORTDOCS%%share/doc/pircbot/org/jibble/pircbot/class-use/PircBot.html
-%%PORTDOCS%%share/doc/pircbot/org/jibble/pircbot/class-use/Queue.html
-%%PORTDOCS%%share/doc/pircbot/org/jibble/pircbot/class-use/Colors.html
-%%PORTDOCS%%share/doc/pircbot/org/jibble/pircbot/class-use/ReplyConstants.html
-%%PORTDOCS%%share/doc/pircbot/org/jibble/pircbot/class-use/User.html
-%%PORTDOCS%%share/doc/pircbot/org/jibble/pircbot/package-use.html
-%%PORTDOCS%%share/doc/pircbot/org/jibble/pircbot/package-frame.html
-%%PORTDOCS%%share/doc/pircbot/org/jibble/pircbot/package-summary.html
-%%PORTDOCS%%share/doc/pircbot/org/jibble/pircbot/package-tree.html
-%%PORTDOCS%%share/doc/pircbot/org/jibble/pircbot/DccChat.html
-%%PORTDOCS%%share/doc/pircbot/org/jibble/pircbot/DccFileTransfer.html
-%%PORTDOCS%%share/doc/pircbot/org/jibble/pircbot/DccManager.html
-%%PORTDOCS%%share/doc/pircbot/org/jibble/pircbot/IdentServer.html
-%%PORTDOCS%%share/doc/pircbot/org/jibble/pircbot/InputThread.html
-%%PORTDOCS%%share/doc/pircbot/org/jibble/pircbot/OutputThread.html
-%%PORTDOCS%%share/doc/pircbot/org/jibble/pircbot/PircBot.html
-%%PORTDOCS%%share/doc/pircbot/org/jibble/pircbot/Queue.html
-%%PORTDOCS%%share/doc/pircbot/org/jibble/pircbot/IrcException.html
-%%PORTDOCS%%share/doc/pircbot/org/jibble/pircbot/NickAlreadyInUseException.html
-%%PORTDOCS%%share/doc/pircbot/org/jibble/pircbot/Colors.html
-%%PORTDOCS%%share/doc/pircbot/org/jibble/pircbot/ReplyConstants.html
-%%PORTDOCS%%share/doc/pircbot/org/jibble/pircbot/User.html
-%%PORTDOCS%%share/doc/pircbot/overview-tree.html
-%%PORTDOCS%%share/doc/pircbot/index-all.html
-%%PORTDOCS%%share/doc/pircbot/deprecated-list.html
-%%PORTDOCS%%share/doc/pircbot/allclasses-frame.html
-%%PORTDOCS%%share/doc/pircbot/allclasses-noframe.html
-%%PORTDOCS%%share/doc/pircbot/index.html
-%%PORTDOCS%%share/doc/pircbot/packages.html
-%%PORTDOCS%%share/doc/pircbot/serialized-form.html
-%%PORTDOCS%%share/doc/pircbot/package-list
-%%PORTDOCS%%share/doc/pircbot/help-doc.html
-%%PORTDOCS%%share/doc/pircbot/pircbot-style.css
-%%PORTDOCS%%share/doc/pircbot/stylesheet.css
-%%PORTDOCS%%@dirrm share/doc/pircbot/org/jibble/pircbot/class-use
-%%PORTDOCS%%@dirrm share/doc/pircbot/org/jibble/pircbot
-%%PORTDOCS%%@dirrm share/doc/pircbot/org/jibble
-%%PORTDOCS%%@dirrm share/doc/pircbot/org
-%%PORTDOCS%%@dirrm share/doc/pircbot
+%%PORTDOCS%%%%DOCSDIR%%/constant-values.html
+%%PORTDOCS%%%%DOCSDIR%%/org/jibble/pircbot/class-use/NickAlreadyInUseException.html
+%%PORTDOCS%%%%DOCSDIR%%/org/jibble/pircbot/class-use/DccChat.html
+%%PORTDOCS%%%%DOCSDIR%%/org/jibble/pircbot/class-use/DccFileTransfer.html
+%%PORTDOCS%%%%DOCSDIR%%/org/jibble/pircbot/class-use/DccManager.html
+%%PORTDOCS%%%%DOCSDIR%%/org/jibble/pircbot/class-use/IdentServer.html
+%%PORTDOCS%%%%DOCSDIR%%/org/jibble/pircbot/class-use/InputThread.html
+%%PORTDOCS%%%%DOCSDIR%%/org/jibble/pircbot/class-use/IrcException.html
+%%PORTDOCS%%%%DOCSDIR%%/org/jibble/pircbot/class-use/OutputThread.html
+%%PORTDOCS%%%%DOCSDIR%%/org/jibble/pircbot/class-use/PircBot.html
+%%PORTDOCS%%%%DOCSDIR%%/org/jibble/pircbot/class-use/Queue.html
+%%PORTDOCS%%%%DOCSDIR%%/org/jibble/pircbot/class-use/Colors.html
+%%PORTDOCS%%%%DOCSDIR%%/org/jibble/pircbot/class-use/ReplyConstants.html
+%%PORTDOCS%%%%DOCSDIR%%/org/jibble/pircbot/class-use/User.html
+%%PORTDOCS%%%%DOCSDIR%%/org/jibble/pircbot/package-use.html
+%%PORTDOCS%%%%DOCSDIR%%/org/jibble/pircbot/package-frame.html
+%%PORTDOCS%%%%DOCSDIR%%/org/jibble/pircbot/package-summary.html
+%%PORTDOCS%%%%DOCSDIR%%/org/jibble/pircbot/package-tree.html
+%%PORTDOCS%%%%DOCSDIR%%/org/jibble/pircbot/DccChat.html
+%%PORTDOCS%%%%DOCSDIR%%/org/jibble/pircbot/DccFileTransfer.html
+%%PORTDOCS%%%%DOCSDIR%%/org/jibble/pircbot/DccManager.html
+%%PORTDOCS%%%%DOCSDIR%%/org/jibble/pircbot/IdentServer.html
+%%PORTDOCS%%%%DOCSDIR%%/org/jibble/pircbot/InputThread.html
+%%PORTDOCS%%%%DOCSDIR%%/org/jibble/pircbot/OutputThread.html
+%%PORTDOCS%%%%DOCSDIR%%/org/jibble/pircbot/PircBot.html
+%%PORTDOCS%%%%DOCSDIR%%/org/jibble/pircbot/Queue.html
+%%PORTDOCS%%%%DOCSDIR%%/org/jibble/pircbot/IrcException.html
+%%PORTDOCS%%%%DOCSDIR%%/org/jibble/pircbot/NickAlreadyInUseException.html
+%%PORTDOCS%%%%DOCSDIR%%/org/jibble/pircbot/Colors.html
+%%PORTDOCS%%%%DOCSDIR%%/org/jibble/pircbot/ReplyConstants.html
+%%PORTDOCS%%%%DOCSDIR%%/org/jibble/pircbot/User.html
+%%PORTDOCS%%%%DOCSDIR%%/overview-tree.html
+%%PORTDOCS%%%%DOCSDIR%%/index-all.html
+%%PORTDOCS%%%%DOCSDIR%%/deprecated-list.html
+%%PORTDOCS%%%%DOCSDIR%%/allclasses-frame.html
+%%PORTDOCS%%%%DOCSDIR%%/allclasses-noframe.html
+%%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/packages.html
+%%PORTDOCS%%%%DOCSDIR%%/serialized-form.html
+%%PORTDOCS%%%%DOCSDIR%%/package-list
+%%PORTDOCS%%%%DOCSDIR%%/help-doc.html
+%%PORTDOCS%%%%DOCSDIR%%/pircbot-style.css
+%%PORTDOCS%%%%DOCSDIR%%/stylesheet.css
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/org/jibble/pircbot/class-use
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/org/jibble/pircbot
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/org/jibble
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/org
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

@@ -20,20 +20,20 @@ NO_BUILD=	yes
 USE_JAVA=	1.1+
 
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/pircbot.jar ${PREFIX}/share/java/classes
+	${INSTALL_DATA} ${WRKSRC}/pircbot.jar ${JAVAJARDIR}
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/pircbot
-	(cd ${WRKSRC}/javadocs && ${TAR} -cf - . | ${TAR} -xf - -C ${PREFIX}/share/doc/pircbot)
+	${MKDIR} ${DOCSDIR}
+	(cd ${WRKSRC}/javadocs && ${TAR} -cf - . | ${TAR} -xf - -C ${DOCSDIR})
 .endif
 
 post-install:
 	@echo "    ---------------------------------------------------------------"
-	@echo "    To use pircbot add ${PREFIX}/share/java/classes/pircbot.jar to"
+	@echo "    To use pircbot add ${JAVAJARDIR}/pircbot.jar to"
 	@echo "    your classpath. A short tutorial can be found here:"
 	@echo "        http://www.jibble.org/pircbot.php"
 .if !defined(NOPORTDOCS)
 	@echo "    pircbot javadoc documentation has also been installed in:"
-	@echo "        ${PREFIX}/share/doc/pircbot"
+	@echo "        ${DOCSDIR}"
 .endif
 	@echo "    ---------------------------------------------------------------"
 
