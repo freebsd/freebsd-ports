@@ -27,7 +27,7 @@
     SUBDIR += fwtk
     SUBDIR += gag
     SUBDIR += gnupg
-    SUBDIR += gnupg-rsa
+    SUBDIR += gnupg-idea
     SUBDIR += gpa
     SUBDIR += gpasman
     SUBDIR += gtkportscan
