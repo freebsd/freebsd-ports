@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.201 1999/04/27 03:25:14 taoka Exp $
+# $Id: Makefile,v 1.202 1999/05/01 02:28:58 taoka Exp $
 #
 
     SUBDIR += 3dc
@@ -13,6 +13,7 @@
     SUBDIR += antipolix
     SUBDIR += awele
     SUBDIR += battalion
+    SUBDIR += battleball
     SUBDIR += blackjack
     SUBDIR += block
     SUBDIR += blue
