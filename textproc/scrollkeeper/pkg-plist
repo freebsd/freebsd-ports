@@ -24,15 +24,20 @@ share/gnome/scrollkeeper/Templates/de/scrollkeeper_cl.xml
 share/gnome/scrollkeeper/Templates/el/scrollkeeper_cl.xml
 share/gnome/scrollkeeper/Templates/es/scrollkeeper_cl.xml
 share/gnome/scrollkeeper/Templates/hu/scrollkeeper_cl.xml
+share/gnome/scrollkeeper/Templates/it/scrollkeeper_cl.xml
 share/gnome/scrollkeeper/Templates/ja/scrollkeeper_cl.xml
 share/gnome/scrollkeeper/Templates/ko/scrollkeeper_cl.xml
 share/gnome/scrollkeeper/Templates/nl/scrollkeeper_cl.xml
+share/gnome/scrollkeeper/Templates/nb/scrollkeeper_cl.xml
 share/gnome/scrollkeeper/Templates/no/scrollkeeper_cl.xml
+share/gnome/scrollkeeper/Templates/pl/scrollkeeper_cl.xml
 share/gnome/scrollkeeper/Templates/pt_BR/scrollkeeper_cl.xml
 share/gnome/scrollkeeper/Templates/ru/scrollkeeper_cl.xml
+share/gnome/scrollkeeper/Templates/sl/scrollkeeper_cl.xml
 share/gnome/scrollkeeper/Templates/sk/scrollkeeper_cl.xml
 share/gnome/scrollkeeper/Templates/sv/scrollkeeper_cl.xml
 share/gnome/scrollkeeper/Templates/tr/scrollkeeper_cl.xml
+share/gnome/scrollkeeper/Templates/vi/scrollkeeper_cl.xml
 share/gnome/scrollkeeper/Templates/zh_TW/scrollkeeper_cl.xml
 share/gnome/scrollkeeper/doc/writing_scrollkeeper_omf_files/C/legal.xml
 share/gnome/scrollkeeper/doc/writing_scrollkeeper_omf_files/C/writing_scrollkeeper_omf_files.xml
@@ -63,6 +68,7 @@ share/locale/sl/LC_MESSAGES/scrollkeeper.mo
 share/locale/sv/LC_MESSAGES/scrollkeeper.mo
 share/locale/tr/LC_MESSAGES/scrollkeeper.mo
 share/locale/uk/LC_MESSAGES/scrollkeeper.mo
+share/locale/vi/LC_MESSAGES/scrollkeeper.mo
 share/locale/zh_TW/LC_MESSAGES/scrollkeeper.mo
 @dirrm share/gnome/xml/scrollkeeper/dtds
 @dirrm share/gnome/xml/scrollkeeper
@@ -72,6 +78,7 @@ share/locale/zh_TW/LC_MESSAGES/scrollkeeper.mo
 @dirrm share/gnome/scrollkeeper/doc/writing_scrollkeeper_omf_files
 @dirrm share/gnome/scrollkeeper/doc
 @dirrm share/gnome/scrollkeeper/Templates/zh_TW
+@dirrm share/gnome/scrollkeeper/Templates/vi
 @dirrm share/gnome/scrollkeeper/Templates/uk
 @dirrm share/gnome/scrollkeeper/Templates/tr
 @dirrm share/gnome/scrollkeeper/Templates/sv
