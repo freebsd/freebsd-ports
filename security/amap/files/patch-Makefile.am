@@ -1,7 +1,7 @@
---- Makefile.am.orig	Mon Jul 14 17:38:18 2003
-+++ Makefile.am	Tue Jul 29 13:58:40 2003
-@@ -1,8 +1,8 @@
- CC=gcc
+--- Makefile.am.orig	Mon Jul 14 21:38:18 2003
++++ Makefile.am	Wed Aug 13 15:14:22 2003
+@@ -1,8 +1,7 @@
+-CC=gcc
  LIB=-lpcre -L./pcre-3.9/ -I./pcre-3.9/
 -OPT=-O2
 +OPT=${CFLAGS}
