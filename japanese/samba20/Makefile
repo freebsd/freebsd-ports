@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	samba
-PORTREVISION=	1
 PORTVERSION=	${SAMBA_VERSION}.j${SAMBA_JA_VERSION}
+PORTREVISION=	1
 CATEGORIES=	japanese net
 MASTER_SITES=	ftp://ftp.samba.gr.jp/pub/samba-jp/%SUBDIR%/ \
 		ftp://ftp.iij.ad.jp/pub/SAMBA/samba-jp/%SUBDIR%/ \
@@ -19,6 +19,8 @@ DISTNAME=	${PORTNAME}-${SAMBA_VERSION}-ja-${SAMBA_JA_VERSION}
 
 MAINTAINER=	nakaji@jp.FreeBSD.org
 COMMENT=	A free SMB and CIFS client and server for UNIX
+
+FORBIDDEN=	"There is a flaw in the Samba main smbd code which could allow an external attacker to remotely and anonymously gain Super User (root) privileges on a server running a Samba server. For more information, see http://www.samba.gr.jp/news-release/2003/20030317-1.html"
 
 BUILD_DEPENDS=	msgfmt:${PORTSDIR}/devel/gettext
 
