@@ -6346,6 +6346,7 @@ p5-Class-Singleton	ports/devel/p5-Class-Singleton
 p5-Class-Tangram	ports/devel/p5-Class-Tangram
 p5-Class-Tom	ports/devel/p5-Class-Tom
 p5-Class-Trigger	ports/devel/p5-Class-Trigger
+p5-Class-Virtual	ports/devel/p5-Class-Virtual
 p5-Class-WhiteHole	ports/devel/p5-Class-WhiteHole
 p5-Class-XPath	ports/devel/p5-Class-XPath
 p5-Clone	ports/devel/p5-Clone
