@@ -8664,6 +8664,7 @@ py-rxp		ports/textproc/py-rxp
 py-samba	ports/net/py-samba
 py-scgi		ports/www/py-scgi
 py-scientific	ports/math/py-scientific
+py-scipy	ports/science/py-scipy
 py-serial	ports/comms/py-serial
 py-sgflib	ports/games/py-sgflib
 py-sgfsummary	ports/games/py-sgfsummary
