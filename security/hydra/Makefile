@@ -8,6 +8,7 @@
 
 PORTNAME=	hydra
 PORTVERSION=	2.2
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.thc.org/releases/ \
 		${MASTER_SITE_PACKETSTORM}
@@ -16,17 +17,15 @@ MASTER_SITE_SUBDIR=	groups/thc
 MAINTAINER=	llevier@argosnet.com
 COMMENT=	Bruce Force Attack Utility working on multiple network services
 
-.include <bsd.port.pre.mk>
-
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 
-.if ${OSVERSION} >= 501000
-BROKEN=		"Does not compile"
-.endif
+post-patch:
+	@${REINPLACE_CMD} -e 's|CC = gcc||; \
+		s|-O2|${CFLAGS}|' \
+		${WRKSRC}/Makefile.am
 
-.if !target(post-install) && (${PORTNAME} == "hydra")
-post-install:
-	@${STRIP_CMD} ${PREFIX}/bin/hydra
-.endif
+do-install:
+	@${INSTALL_PROGRAM} ${WRKSRC}/hydra ${PREFIX}/bin
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
