@@ -17,7 +17,6 @@ MASTER_SITES=	ftp://samba.anu.edu.au/pub/rsync/  \
 
 MAINTAINER=	obraun@informatik.unibw-muenchen.de
 
-BUILD_DEPENDS=	perl:${PORTSDIR}/lang/perl5
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
 
 GNU_CONFIGURE=	yes
