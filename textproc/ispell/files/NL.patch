@@ -1,0 +1,11 @@
+--- ispell-nl-1.0.0/Makefile.orig	Tue Jan  9 16:50:24 2001
++++ ispell-nl-1.0.0/Makefile	Tue Jan  9 16:50:41 2001
+@@ -9,7 +9,7 @@
+ 	install -o root -g root -m 0644 nederlands.aff $(installdir)
+ 
+ nederlands.hash: nederlands.aff words-nl.ispell
+-	buildhash words-nl.ispell nederlands.aff nederlands.hash
++	${BUILDHASH} words-nl.ispell nederlands.aff nederlands.hash
+ 
+ clean:
+ 	rm -f words-nl.ispell.stat nederlands.hash words-nl.ispell.cnt *~
