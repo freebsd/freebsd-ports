@@ -8,7 +8,8 @@
 PORTNAME=	disco
 PORTVERSION=	1.2
 CATEGORIES=	net-mgmt
-MASTER_SITES=	http://www.altmode.com/disco/
+MASTER_SITES=	http://voodoo.oberon.net/download/ \
+		http://www.altmode.com/disco/
 
 MAINTAINER=	krion@FreeBSD.org
 COMMENT=	IP discovery and fingerprinting utility
