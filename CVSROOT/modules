@@ -7440,6 +7440,7 @@ xmix		ports/audio/xmix
 xmixer		ports/audio/xmixer
 xmj		ports/games/xmj
 xml-i18n-tools	ports/textproc/xml-i18n-tools
+xml-lite.el	ports/textproc/xml-lite.el
 xml4j		ports/textproc/xml4j
 xmlink		ports/games/xmlink
 xmlpp		ports/textproc/xmlpp
