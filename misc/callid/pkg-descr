@@ -1,0 +1,5 @@
+Callid is a tool to be be able to show incoming calls in a web-based interface.
+the calls are logged through the ISDN D-Channel.
+
+- M. Possamai
+possamai@xs4all.nl
