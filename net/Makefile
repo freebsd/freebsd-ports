@@ -341,6 +341,7 @@
     SUBDIR += nc6
     SUBDIR += ncp
     SUBDIR += ncplib
+    SUBDIR += nefu
     SUBDIR += nemesis
     SUBDIR += net-http
     SUBDIR += net-snmp
