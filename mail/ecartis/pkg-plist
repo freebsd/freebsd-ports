@@ -1,5 +1,8 @@
 ecartis/ecartis
 ecartis/banned
+ecartis/documentation/Makefile
+ecartis/documentation/ecartis.sty
+ecartis/documentation/ecartis.tex
 ecartis/queue/README
 ecartis/modules/README
 ecartis/modules/bouncer.lpm
