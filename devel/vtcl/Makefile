@@ -8,7 +8,7 @@
 PORTNAME=	vtcl
 PORTVERSION=	1.2.0
 CATEGORIES=	devel tk82
-MASTER_SITES=	ftp://ftp.neuron.com/pub/vtcl/development/1.2/
+MASTER_SITES=	http://vtcl.sourceforge.net/dload/
 
 MAINTAINER=	vanilla@FreeBSD.org
 
