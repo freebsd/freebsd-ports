@@ -885,6 +885,7 @@ cmp3		ports/audio/cmp3
 cmpsfont	ports/print/cmpsfont
 cmt		ports/audio/cmt
 cmucl		ports/lang/cmucl
+cmucl-extra	ports/lang/cmucl-extra
 cn2jp		ports/converters/cn2jp
 cnet		ports/net/cnet
 cnews		ports/news/cnews
