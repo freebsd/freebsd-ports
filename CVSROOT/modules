@@ -892,6 +892,7 @@ cnews		ports/news/cnews
 coalesce	ports/biology/coalesce
 coco		ports/textproc/coco
 cocoon		ports/textproc/cocoon
+cocor		ports/lang/cocor
 coda		src/sys/coda
 coda5_client	ports/net/coda5_client
 coda5_doc	ports/net/coda5_doc
