@@ -17,6 +17,7 @@ COMMENT=	A Free Gerber Viewer
 
 USE_GNOME=	gdkpixbuf
 USE_REINPLACE=	yes
+USE_GETOPT_LONG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--enable-exportpng
@@ -25,13 +26,6 @@ MAN1=	gerbv.1
 
 CPPFLAGS=	-I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500041
-LIB_DEPENDS+=   gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
-LDFLAGS+=       -lgnugetopt
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|malloc.h|stdlib.h|g" ${WRKSRC}/src/amacro.c
@@ -46,4 +40,4 @@ post-install:
 		cpio -pdm -L -R ${SHAREOWN}:${SHAREGRP} ${EXAMPLESDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
