@@ -9,9 +9,9 @@
 PORTNAME=	linux_rar
 PORTVERSION=	2.80
 CATEGORIES=	archivers linux
-MASTER_SITES=	ftp://ftp.download.com/pub/linux/ \
-		ftp://ftp.netlab.sk/public/rarsoft/rar/ \
-		ftp://rarsoft.ti.sk/pub/rar/
+MASTER_SITES=	ftp://ftp.download.com/pub/linux/utilities/
+#		ftp://ftp.netlab.sk/public/rarsoft/rar/ \
+#		ftp://rarsoft.ti.sk/pub/rar/
 DISTNAME=	rarlnx${PORTVERSION:S/0//S/.//}
 EXTRACT_SUFX=	.sfx
 
