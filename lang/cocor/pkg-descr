@@ -1,0 +1,14 @@
+Coco/R combines the functionality of the well-known UNIX tools lex and yacc,
+to form an extremely easy to use compiler generator that generates recursive
+descent parsers, their associated scanners, and (in some versions) a driver
+program, from attributed grammars (written using EBNF syntax with attributes
+and semantic actions) which conform to the restrictions imposed by LL(1)
+parsing (rather than LALR parsing, as allowed by yacc). The user has to add
+modules for symbol table handling, optimization, and code generation in
+order to get a running compiler. Coco/R can also be used to construct other
+syntax-based applications that have less of a "compiler" flavour.
+
+Coco/R is available in Oberon, Modula-2, Pascal, Delphi, C, Java and C#
+versions.  This port only builds the C/C++ version.
+
+WWW: http://cs.ru.ac.za/homes/cspt/cocor.htm
