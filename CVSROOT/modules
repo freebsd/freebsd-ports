@@ -8032,6 +8032,7 @@ pinentry-gtk	ports/security/pinentry-gtk
 pinentry-qt	ports/security/pinentry-qt
 pinfo		ports/misc/pinfo
 pinstall	ports/devel/pinstall
+pipe		ports/misc/pipe
 pipebench	ports/benchmarks/pipebench
 pipemeter	ports/sysutils/pipemeter
 pipenightdreams	ports/games/pipenightdreams
