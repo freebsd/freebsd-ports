@@ -62,6 +62,7 @@
     SUBDIR += fspclient
     SUBDIR += gaim
     SUBDIR += gated
+    SUBDIR += gatekeeper
     SUBDIR += generic-nqs
     SUBDIR += ggsd
     SUBDIR += gicq
