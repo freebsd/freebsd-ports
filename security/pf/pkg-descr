@@ -1,6 +1,6 @@
 This is a port of OpenBSD's pf (packet filter) to FreeBSD as a loadable
 kernel module ported by Pyun YongHyeon. Information about pf can be found 
-at: http://www.benzendrine.cx/pf.html the website of Daniel Hartmeier the
+at: http://www.benzedrine.cx/pf.html the website of Daniel Hartmeier the
 original author of pf.
 You have to have:
 =========================================================================
