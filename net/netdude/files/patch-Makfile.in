@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Fri Oct 11 23:49:30 2002
++++ Makefile.in	Fri Oct 11 23:49:41 2002
+@@ -106,7 +106,7 @@
+ install_sh = @install_sh@
+ td = @td@
+ 
+-SUBDIRS = libltdl src plugins protocols intl po pixmaps doc
++SUBDIRS = src plugins protocols intl po pixmaps doc
+ 
+ MAINTAINERCLEANFILES = Makefile.in aclocal.m4 config.guess \
+                        config.h.in config.sub configure install-sh \

@@ -1,0 +1,19 @@
+--- src/Makefile.in.orig	Sat Oct 12 00:09:46 2002
++++ src/Makefile.in	Sat Oct 12 00:10:15 2002
+@@ -177,7 +177,7 @@
+ 	gtkhex.c gtkhex.h
+ 
+ 
+-netdude_LDADD = $(top_builddir)/libltdl/libltdlc.la @gtk_libs@ @glib_libs@
++netdude_LDADD = @gtk_libs@ @glib_libs@
+ subdir = src
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = $(top_builddir)/config.h
+@@ -197,7 +197,6 @@
+ 	nd_trace_registry.$(OBJEXT) callbacks.$(OBJEXT) \
+ 	interface.$(OBJEXT) support.$(OBJEXT) gtkhex.$(OBJEXT)
+ netdude_OBJECTS = $(am_netdude_OBJECTS)
+-netdude_DEPENDENCIES = $(top_builddir)/libltdl/libltdlc.la
+ netdude_LDFLAGS =
+ 
+ DEFS = @DEFS@
