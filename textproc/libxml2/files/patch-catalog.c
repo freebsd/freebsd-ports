@@ -1,5 +1,9 @@
---- catalog.c.orig	Mon Jun  3 15:28:28 2002
-+++ catalog.c	Mon Jun  3 15:29:03 2002
+Note the second chunk in this patch can be removed on the next release.  It
+was added to crrect GNOME Bug#96963 which broke the 
+SGML_CATALOG_FILES variable.
+
+--- catalog.c.orig	Sat Oct  5 04:35:13 2002
++++ catalog.c	Thu Nov 14 01:41:06 2002
 @@ -56,10 +56,10 @@
  #define XML_URN_PUBID "urn:publicid:"
  #define XML_CATAL_BREAK ((xmlChar *) -1)
@@ -13,3 +17,21 @@
  #endif
  
  static int xmlExpandCatalog(xmlCatalogPtr catal, const char *filename);
+@@ -2938,7 +2938,7 @@
+ 	while (IS_BLANK(*cur)) cur++;
+ 	if (*cur != 0) {
+ 	    paths = cur;
+-	    while ((*cur != 0) && (!IS_BLANK(*cur)))
++	    while ((*cur != 0) && (*cur != ':') && (!IS_BLANK(*cur)))
+ 		cur++;
+ 	    path = xmlStrndup((const xmlChar *)paths, cur - paths);
+ 	    if (path != NULL) {
+@@ -2946,6 +2946,8 @@
+ 		xmlFree(path);
+ 	    }
+ 	}
++	while(*cur == ':')
++	  cur++;
+     }
+ }
+ 
