@@ -4,10 +4,10 @@
 # Date created:			  Tue Aug 04, 1998
 # Whom:				  David O'Brien (obrien@NUXI.com)
 #
-# $Id: Makefile,v 1.6 1998/12/17 13:26:17 obrien Exp $
+# $Id: Makefile,v 1.7 1998/12/26 22:05:56 asami Exp $
 #
 
-DISTNAME=	nmap-2.01
+DISTNAME=	nmap-2.02
 CATEGORIES=	security net
 MASTER_SITES=	http://www.insecure.org/nmap/  \
 		ftp://relay.nuxi.com/pub/misc/
