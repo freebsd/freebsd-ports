@@ -1,8 +1,8 @@
 
 $FreeBSD$
 
---- ltmain.sh.orig	Wed Jan 23 11:38:40 2002
-+++ ltmain.sh	Sun Feb  3 01:44:17 2002
+--- scripts/ltmain.sh.orig	Wed Jan 23 11:38:40 2002
++++ scripts/ltmain.sh	Sun Feb  3 01:44:17 2002
 @@ -1037,8 +1037,16 @@
  	continue
  	;;
