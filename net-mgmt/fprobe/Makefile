@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fprobe
-PORTVERSION=	1.0.5
+PORTVERSION=	1.0.6
 CATEGORIES=	net-mgmt
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,6 +15,7 @@ MAINTAINER=	krion@FreeBSD.org
 COMMENT=	Tool that collects network traffic data
 
 GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_BZIP2=	yes
 USE_REINPLACE=	yes
 
