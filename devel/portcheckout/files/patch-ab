@@ -1,0 +1,12 @@
+--- portcheckout.pl.old	Thu Jul 31 02:23:39 2003
++++ portcheckout.pl	Thu Jul 31 02:24:54 2003
+@@ -328,7 +328,8 @@
+ #print qq{DISTDIR="/usr/ports/distfiles"; export DISTDIR\n};
+ 
+ print "\n# checkout FreeBSD ports system Makefiles\n";
+-print "cvs checkout -P $release ports/Mk\n\n";
++print "cvs checkout -P $release ports/Mk\n";
++print "cvs checkout -P $release ports/Templates\n\n";
+ 
+ 
+ # list of dependings ports
