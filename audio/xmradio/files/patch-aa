@@ -1,8 +1,8 @@
---- Imakefile.orig      Wed Nov  1 09:53:30 2000
-+++ Imakefile   Wed Nov  1 09:54:05 2000
+--- Imakefile.orig	Wed Nov 14 01:33:48 2001
++++ Imakefile	Tue Jul 27 10:25:29 2004
 @@ -4,9 +4,10 @@
  #endif
-
+ 
  #ifdef NetBSDArchitecture
 -LOCAL_LIBRARIES = XmClientLibs ${XMULIB} -lXpm -lossaudio -lm
 +LOCAL_LIBRARIES = ${MOTIFLIB} ${XTOOLLIB} $(XPLIB) ${XLIB} ${XMULIB} -lXpm -los
@@ -10,7 +10,15 @@
  #else
 -LOCAL_LIBRARIES = XmClientLibs ${XMULIB} -lXpm -lm
 +LOCAL_LIBRARIES = ${MOTIFLIB} ${XTOOLLIB} $(XPLIB) ${XLIB} ${XMULIB} -lXpm -lm
-
+ 
  EXTRA_LDOPTIONS = -L/usr/local/lib -Wl,-R/usr/local/lib
  INCLUDES = -I/usr/local/include
-
+@@ -15,7 +16,7 @@
+ SRCS = radio.c remote.c analyzer.c sample.c misc.c config.c version_check.c LiteClue.c lcd_net.c
+ OBJS = radio.o remote.o analyzer.o sample.o misc.o config.o version_check.o LiteClue.o lcd_net.o
+ 
+-CDEBUGFLAGS = -O2 -g -Wall
++#CDEBUGFLAGS = -O2 -g -Wall
+ 
+ XCOMM CCOPTIONS= -DJUHA_DRIVER -DHAS_XPM
+ CCOPTIONS= -DHAS_XPM

@@ -21,6 +21,8 @@ USE_IMAKE=	yes
 USE_XPM=	yes
 USE_MOTIF=	yes
 
+PLIST_FILES=	bin/xmradio lib/X11/app-defaults/XMradio
+
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
