@@ -29,6 +29,9 @@ post-patch:
 		${WRKSRC}/src/sighandler.c
 
 post-install:
+.if !exists(${PREFIX}/bin/licq)
+	@${INSTALL_PROGRAM} ${WRKSRC}/src/licq ${PREFIX}/bin
+.endif
 	@${CAT} ${PKGMESSAGE}
 
 .include "${.CURDIR}/Makefile.inc"
