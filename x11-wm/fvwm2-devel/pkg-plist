@@ -344,6 +344,7 @@ libexec/fvwm/%%VER%%/FvwmDebug
 libexec/fvwm/%%VER%%/FvwmDragWell
 libexec/fvwm/%%VER%%/FvwmEvent
 libexec/fvwm/%%VER%%/FvwmForm
+%%GTK%%libexec/fvwm/%%VER%%/FvwmGtk
 libexec/fvwm/%%VER%%/FvwmIconBox
 libexec/fvwm/%%VER%%/FvwmIconMan
 libexec/fvwm/%%VER%%/FvwmIdent
