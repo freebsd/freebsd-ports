@@ -1,0 +1,71 @@
+--- 9wm.c~	Mon Oct 21 09:26:24 1996
++++ 9wm.c	Mon Oct 21 09:27:19 1996
+@@ -471,7 +471,7 @@
+     case NormalState:
+         XMapRaised(dpy, c->parent);
+         XMapWindow(dpy, c->window);
+-        setstate(c, NormalState);
++        _setstate(c, NormalState);
+         if (c->trans != None && current && c->trans == current->window)
+                 active(c);
+         break;
+--- fns.h~	Mon Oct 21 09:26:25 1996
++++ fns.h	Mon Oct 21 09:27:31 1996
+@@ -31,7 +31,7 @@
+ Window  getwprop();
+ int     getiprop();
+ int     getstate();
+-void    setstate();
++void    _setstate();
+ void    setlabel();
+ void    getproto();
+ void    gettrans();
+--- manage.c~	Mon Oct 21 09:26:24 1996
++++ manage.c	Mon Oct 21 09:27:49 1996
+@@ -131,7 +131,7 @@
+             active(c);
+         else
+             setactive(c, 0);
+-        setstate(c, NormalState);
++        _setstate(c, NormalState);
+     }
+     if (current != c)
+         cmapfocus(current);
+@@ -161,7 +161,7 @@
+     XReparentWindow(dpy, c->window, root, c->x, c->y);
+     gravitate(c, 0);
+     XRemoveFromSaveSet(dpy, c->window);
+-    setstate(c, WithdrawnState);
++    _setstate(c, WithdrawnState);
+ 
+     /* flush any errors */
+     ignore_badwindow = 1;
+@@ -417,7 +417,7 @@
+ }
+ 
+ void
+-setstate(c, state)
++_setstate(c, state)
+ Client *c;
+ int state;
+ {
+--- menu.c~	Mon Oct 21 09:26:24 1996
++++ menu.c	Mon Oct 21 09:27:45 1996
+@@ -179,7 +179,7 @@
+     }
+     XUnmapWindow(dpy, c->parent);
+     XUnmapWindow(dpy, c->window);
+-    setstate(c, IconicState);
++    _setstate(c, IconicState);
+     if (c == current)
+         nofocus();
+     hiddenc[numhidden] = c;
+@@ -210,7 +210,7 @@
+     if (map) {
+         XMapWindow(dpy, c->window);
+         XMapRaised(dpy, c->parent);
+-        setstate(c, NormalState);
++        _setstate(c, NormalState);
+         active(c);
+     }
+ 
