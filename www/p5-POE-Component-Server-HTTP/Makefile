@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	POE-Component-Server-HTTP
-PORTVERSION=	0.06
+PORTVERSION=	0.07
 CATEGORIES=	www devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	POE
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	lin-chi@lastamericanempire.com
+MAINTAINER=	hideo@lastamericanempire.com
 COMMENT=	POE Component to create HTTP Servers
 
 BUILD_DEPENDS=	${SITE_PERL}/POE.pm:${PORTSDIR}/devel/p5-POE \
