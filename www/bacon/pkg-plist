@@ -1,5 +1,0 @@
-www/cgi-bin/bacon.pl
-%%PORTDOCS%%share/doc/bacon/INSTALL
-%%PORTDOCS%%@dirrm share/doc/bacon
-@unexec rmdir %D/www/cgi-bin 2>/dev/null || true
-@unexec rmdir %D/www 2>/dev/null || true
