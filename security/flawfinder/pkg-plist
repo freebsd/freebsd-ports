@@ -1,7 +1,11 @@
+@comment $FreeBSD$
 bin/flawfinder
-%%PORTDOCS%%share/doc/flawfinder/README
-%%PORTDOCS%%share/doc/flawfinder/flawfinder.pdf
-%%PORTDOCS%%share/doc/flawfinder/flawfinder.ps
-%%PORTDOCS%%share/doc/flawfinder/index.html
-%%PORTDOCS%%share/doc/flawfinder/test.c
-%%PORTDOCS%%@dirrm share/doc/flawfinder
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/flawfinder.pdf
+%%PORTDOCS%%%%DOCSDIR%%/flawfinder.ps
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%EXAMPLESDIR%%/correct-results.html
+%%EXAMPLESDIR%%/correct-results.txt
+%%EXAMPLESDIR%%/test.c
+@dirrm %%EXAMPLESDIR%%
