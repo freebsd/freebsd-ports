@@ -398,6 +398,9 @@ mindfocus-*		games/mindfocus		Contains commercial
 						character data
 mindterm-*		security/mindterm-binary Do not sell for profit
 mingw/OPENGL95.EXE	devel/mingw-opengl-headers Not sure if we can redistribute it freely
+miracl			math/miracl		Free for non-profit
+						use but a commercial license is
+						required for all other usages
 mMosaic*		www/mmosaic		Do not sell (per NCSA).  Do not
 						distribute binary (GPL/BSD
 						conflict)
