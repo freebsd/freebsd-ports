@@ -1,1 +1,1 @@
-lib/php/extensions/dbg.so
+%%PHPEXTENSIONS%%/dbg.so
