@@ -1,8 +1,9 @@
-# $Id: Makefile,v 1.55 1995/03/28 04:41:43 gpalmer Exp $
+# $Id: Makefile,v 1.56 1995/03/28 04:45:39 gpalmer Exp $
 #
 SUBDIR= Xaw3d color_xterm ctwm emu fvwm g3view olvwm piewm \
 	rxvt sxpc tk tkhfs tkman tvtwm  xdaliclock xearth xfed xfm \
-	xkeycaps xlockmore xphoon xsnow xview-config xview-lib xview-clients
+	xkeycaps xlockmore xperfmon xphoon xsnow xview-config xview-lib \
+	xview-clients
 
 #
 # These depend on tk, so might as well build tk first...
