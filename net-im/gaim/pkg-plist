@@ -131,7 +131,6 @@ share/gnome/pixmaps/gaim/smileys/default/yahoo_chicken.gif
 share/gnome/pixmaps/gaim/smileys/default/yahoo_clap.gif
 share/gnome/pixmaps/gaim/smileys/default/yahoo_clown.gif
 share/gnome/pixmaps/gaim/smileys/default/yahoo_coffee.gif
-share/gnome/pixmaps/gaim/smileys/default/yahoo_confused.gif
 share/gnome/pixmaps/gaim/smileys/default/yahoo_cry.gif
 share/gnome/pixmaps/gaim/smileys/default/yahoo_dance.gif
 share/gnome/pixmaps/gaim/smileys/default/yahoo_devil.gif
@@ -184,6 +183,7 @@ share/gnome/pixmaps/gaim/status/default/aim.png
 share/gnome/pixmaps/gaim/status/default/aol.png
 share/gnome/pixmaps/gaim/status/default/away.png
 share/gnome/pixmaps/gaim/status/default/dnd.png
+share/gnome/pixmaps/gaim/status/default/extendedaway.png
 share/gnome/pixmaps/gaim/status/default/freeforchat.png
 share/gnome/pixmaps/gaim/status/default/gadu-gadu.png
 share/gnome/pixmaps/gaim/status/default/game.png
@@ -196,6 +196,7 @@ share/gnome/pixmaps/gaim/status/default/logout.png
 share/gnome/pixmaps/gaim/status/default/msn.png
 share/gnome/pixmaps/gaim/status/default/na.png
 share/gnome/pixmaps/gaim/status/default/napster.png
+share/gnome/pixmaps/gaim/status/default/notauthorized.png
 share/gnome/pixmaps/gaim/status/default/occupied.png
 share/gnome/pixmaps/gaim/status/default/offline.png
 share/gnome/pixmaps/gaim/status/default/wireless.png
