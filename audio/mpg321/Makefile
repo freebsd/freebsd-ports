@@ -7,12 +7,12 @@
 #
 
 PORTNAME=	mpg321
-PORTVERSION=	0.0.5
+PORTVERSION=	0.0.5.1
 CATEGORIES=	audio
 MASTER_SITES=	http://gemini.woot.net/~hosehead/packages/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	ijliao@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	smpeg.1:${PORTSDIR}/graphics/smpeg \
 		ao.1:${PORTSDIR}/audio/libao \
