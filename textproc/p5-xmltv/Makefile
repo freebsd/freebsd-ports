@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xmltv
-PORTVERSION=	0.5.2
+PORTVERSION=	0.5.3
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	xmltv
@@ -28,10 +28,12 @@ BUILD_DEPENDS+=	 \
 	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Lingua/Preferred.pm:${PORTSDIR}/textproc/p5-Lingua-Preferred \
 	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Memoize.pm:${PORTSDIR}/devel/p5-Memoize \
 	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Compress/Zlib.pm:${PORTSDIR}/archivers/p5-Compress-Zlib \
+	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Lingua/EN/Numbers/Ordinate.pm:${PORTSDIR}/textproc/p5-Lingua-EN-Numbers-Ordinate \
 	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Unicode/CharName.pm:${PORTSDIR}/converters/p5-Unicode-String
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 IS_INTERACTIVE=	yes
+USE_BZIP2=	yes
 USE_REINPLACE=	yes
 PERL_CONFIGURE=	yes
 PLIST_SUB=	VERSION="${PORTVERSION}"
