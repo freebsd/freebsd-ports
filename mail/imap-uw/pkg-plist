@@ -1,4 +1,4 @@
-lib/libc-client.so.2.0
+lib/libc-client.so.2.1
 lib/libc-client.a
 @exec /sbin/ldconfig -m %B
 libexec/imapd
