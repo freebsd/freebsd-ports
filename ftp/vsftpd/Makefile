@@ -7,14 +7,14 @@
 
 PORTNAME=	vsftpd
 PORTVERSION=	1.2.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	ftp
 MASTER_SITES=	ftp://vsftpd.beasts.org/users/cevans/
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	A FTP daemon that aims to be "very secure"
 
-USE_PERL5=	yes
+USE_REINPLACE=	yes
 ALL_TARGET=	vsftpd
 MAN5=		vsftpd.conf.5
 MAN8=		vsftpd.8
@@ -24,17 +24,13 @@ DOCFILES=	AUDIT BENCHMARKS BUGS Changelog FAQ INSTALL LICENSE \
 .include <bsd.port.pre.mk>
 
 do-configure:
-	@${MV} ${WRKSRC}/defs.h ${WRKSRC}/defs.h.sed
-	${SED} -e "s=/etc/vsftpd.conf=${PREFIX}/etc/vsftpd.conf=" \
-		${WRKSRC}/defs.h.sed > ${WRKSRC}/defs.h
-	@${MV} ${WRKSRC}/Makefile ${WRKSRC}/Makefile.sed
-	${SED} -e "s/^CFLAGS	=/CFLAGS	+=/" \
-		${WRKSRC}/Makefile.sed > ${WRKSRC}/Makefile
-	@${MV} ${WRKSRC}/builddefs.h ${WRKSRC}/builddefs.h.sed
-	${SED} -e "s/#undef VSF_BUILD_TCPWRAPPERS/#define VSF_BUILD_TCPWRAPPERS 1/" \
-		${WRKSRC}/builddefs.h.sed > ${WRKSRC}/builddefs.h
-	${SED} -e "s/^CFLAGS	=/CFLAGS	+=/" \
-		${WRKSRC}/Makefile.sed > ${WRKSRC}/Makefile
+	${REINPLACE_CMD} -e "s=/etc/vsftpd.conf=${PREFIX}/etc/vsftpd.conf=" \
+		${WRKSRC}/defs.h
+	${REINPLACE_CMD} -e "s/^CFLAGS	=/CFLAGS	+=/" \
+		${WRKSRC}/Makefile
+	${REINPLACE_CMD} -e \
+		"s/#undef VSF_BUILD_TCPWRAPPERS/#define VSF_BUILD_TCPWRAPPERS 1/" \
+		${WRKSRC}/builddefs.h
 	${ECHO_CMD} "secure_chroot_dir=${PREFIX}/share/vsftpd/empty" >> \
 		${WRKSRC}/vsftpd.conf
 
@@ -52,7 +48,7 @@ do-install:
 	@for i in ${MAN5} ; do \
 		${INSTALL_MAN} -m 644 ${WRKSRC}/$${i} ${MANPREFIX}/man/man5/ ; \
 		done
-	${PERL5} ${PKGINSTALL}
+	${SH} ${PKGINSTALL}
 	${MKDIR} /var/ftp
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
