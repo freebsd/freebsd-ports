@@ -16,7 +16,7 @@ WITH_XIM=	xlib
 BUILD_INPUT_METHOD=	xcin2.5:${PORTSDIR}/chinese/xcin25
 
 # xemacs21-mule-common needs this.
-WRKDIR=		${.CURDIR}/../../editors/xemacs21-mule/work
+WRKDIR=		${WRKDIRPREFIX}${.CURDIR}/../../editors/xemacs21-mule/work
 
 # Fix mule-init.el
 post-patch::
