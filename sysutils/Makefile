@@ -21,6 +21,7 @@
     SUBDIR += cpbk
     SUBDIR += cpdup
     SUBDIR += daemontools
+    SUBDIR += detach
     SUBDIR += diskusage
     SUBDIR += doconfig
     SUBDIR += ffsrecov
