@@ -1,4 +1,4 @@
-Device::SerialPort is a perl module that provides a simple interface to serial
-ports and their settings (baud rate, word length, etc).
+Device::SerialPort is a perl module that provides a simple interface to
+serial ports and their settings (baud rate, word length, etc).
 
-WWW: http://sendpage.org/device-serialport/
+WWW: http://search.cpan.org/dist/Device-SerialPort/
