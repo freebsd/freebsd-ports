@@ -1,0 +1,300 @@
+--- tgdgd.c.orig	Sat Apr  3 11:44:32 1999
++++ tgdgd.c	Sat Apr  3 12:02:18 1999
+@@ -16,8 +16,10 @@
+  */
+ 
+ #include <stdio.h>
++#include <stdlib.h>
+ #include "gd.h"
+ #include "tgd.h"
++#include "tgdgd.h"
+ 
+ static char SCCS[] = "@(#)tgdgd.c	1.4 10/7/96 tgd";
+ 
+@@ -32,7 +34,7 @@
+ /* --
+  *	... handle  cx cy w h start_degrees end_degrees color
+  */
+-imagearc( argc, argv )
++void imagearc( argc, argv )
+ int argc;
+ char *argv[];
+ {
+@@ -56,7 +58,7 @@
+ /* --
+  *  handle color
+  */
+-imageblue( argc, argv )
++void imageblue( argc, argv )
+ int argc;
+ char *argv[];
+ {
+@@ -96,7 +98,7 @@
+  *	... handle font x y c color
+  *     (not sure whether char should be an integer, string for now.)
+  */
+-imagechar( argc, argv )
++void imagechar( argc, argv )
+ int argc;
+ char *argv[];
+ {
+@@ -119,7 +121,7 @@
+ /* --
+  *	... handle font x y c color
+  */
+-imagecharup( argc, argv )
++void imagecharup( argc, argv )
+ int argc;
+ char *argv[];
+ {
+@@ -142,7 +144,7 @@
+ /* --
+  *  ... handle colorname red green blue
+  */
+-imagecolorallocate( argc, argv )
++void imagecolorallocate( argc, argv )
+ int argc;
+ char *argv[];
+ {
+@@ -171,7 +173,7 @@
+  *	Prints closest user colorname to specified rgb.
+  *	... handle r g b
+  */
+-imagecolorclosest( argc, argv )
++void imagecolorclosest( argc, argv )
+ int argc;
+ char *argv[];
+ {
+@@ -217,7 +219,7 @@
+  *	Prints color name matching r g b,
+  *	or "-1" if no match.
+  */
+-imagecolorexact( argc, argv )
++void imagecolorexact( argc, argv )
+ int argc;
+ char *argv[];
+ {
+@@ -246,7 +248,7 @@
+ /* --
+  *	... handle color
+  */
+-imagecolortransparent( argc, argv )
++void imagecolortransparent( argc, argv )
+ int argc;
+ char *argv[];
+ {
+@@ -310,7 +312,7 @@
+ /* --
+  *	... handle x y
+  */
+-imagecreate( argc, argv )
++void imagecreate( argc, argv )
+ int argc;
+ char *argv[];
+ {
+@@ -323,7 +325,7 @@
+ /* --
+  *   ... handle filename
+  */
+-imagecreatefromgd( argc, argv )
++void imagecreatefromgd( argc, argv )
+ int argc;
+ char *argv[];
+ {
+@@ -345,7 +347,7 @@
+ /* --
+  *   ... handle filename
+  */
+-imagecreatefromgif( argc, argv )
++void imagecreatefromgif( argc, argv )
+ int argc;
+ char *argv[];
+ {
+@@ -367,7 +369,7 @@
+  *	... handle filename.xbm
+  *	XXX Not working?
+  */
+-imagecreatefromxbm( argc, argv )
++void imagecreatefromxbm( argc, argv )
+ int argc;
+ char *argv[];
+ {
+@@ -388,7 +390,7 @@
+ /* --
+  *	... handle
+  */
+-imagecolorstotal( argc, argv )
++void imagecolorstotal( argc, argv )
+ int argc;
+ char *argv[];
+ {
+@@ -403,7 +405,7 @@
+ /* --
+  * supposedly defunct in 1.1.1 kept for backwards compatibility
+  */
+-imagedashedline( argc, argv )
++void imagedashedline( argc, argv )
+ int argc;
+ char *argv[];
+ {
+@@ -426,7 +428,7 @@
+ /* --
+  *	... handle
+  */
+-imagedestroy( argc, argv )
++void imagedestroy( argc, argv )
+ int argc;
+ char *argv[];
+ {
+@@ -490,7 +492,7 @@
+ /* --
+  *	... handle x1, y1, x2, y2, color
+  */
+-imagefilledrectangle( argc, argv )
++void imagefilledrectangle( argc, argv )
+ int argc;
+ char *argv[];
+ {
+@@ -511,7 +513,7 @@
+ /* --
+  * 	... handle filename
+  */
+-imagegd( argc, argv )
++void imagegd( argc, argv )
+ int argc;
+ char *argv[];
+ {
+@@ -537,7 +539,7 @@
+  *	... handle
+  *	print 1 if interlaced 0 otherwise
+  */
+-imagegetinterlaced( argc, argv )
++void imagegetinterlaced( argc, argv )
+ int argc;
+ char *argv[];
+ {
+@@ -553,7 +555,7 @@
+ /* --
+  * ... handle x y
+  */
+-imagegetpixel( argc, argv )
++void imagegetpixel( argc, argv )
+ int argc;
+ char *argv[];
+ {
+@@ -561,7 +563,6 @@
+ 	int x, y;
+ 	int cdex;
+ 	COLOUR *color;
+-	char buf[100];
+ 	if ( NULL == ( tim = timbyname( argv[1] ) ) )
+ 		die( argv[1] );
+ 	x = atoi( argv[2] );
+@@ -577,7 +578,7 @@
+ /* --
+  * Print user name for color which is transparent for this image.
+  */
+-imagegettransparent( argc, argv )
++void imagegettransparent( argc, argv )
+ int argc;
+ char *argv[];
+ {
+@@ -600,7 +601,7 @@
+ /*
+  *  imagegif handle filename
+  */
+-imagegif( argc, argv )
++void imagegif( argc, argv )
+ int argc;
+ char *argv[];
+ {
+@@ -625,7 +626,7 @@
+ /* --
+  * 	...  handle color
+  */
+-imagegreen( argc, argv )
++void imagegreen( argc, argv )
+ int argc;
+ char *argv[];
+ {
+@@ -664,7 +665,7 @@
+ /* --
+  *	... handle x1 y1 x2 y2 color
+  */
+-imageline( argc, argv )
++void imageline( argc, argv )
+ int argc;
+ char *argv[];
+ {
+@@ -686,7 +687,7 @@
+ /* --
+  *	handle x1 y1 ... xn yn n color
+  */
+-imagefilledpolygon( argc, argv )
++void imagefilledpolygon( argc, argv )
+ int argc;
+ char *argv[];
+ {
+@@ -760,7 +761,7 @@
+ /* --
+  *	... handle color
+  */
+-imagered( argc, argv )
++void imagered( argc, argv )
+ int argc;
+ char *argv[];
+ {
+@@ -779,7 +780,7 @@
+ /* --
+  *	... handle
+  */
+-imagesx( argc, argv )
++void imagesx( argc, argv )
+ int argc;
+ char *argv[];
+ {
+@@ -796,7 +797,7 @@
+ /* --
+  *	... handle
+  */
+-imagesy( argc, argv )
++void imagesy( argc, argv )
+ int argc;
+ char *argv[];
+ {
+@@ -815,7 +816,7 @@
+  * ... handle brush_handle
+  * Set a special color as the brush
+  */
+-imagesetbrush( argc, argv )
++void imagesetbrush( argc, argv )
+ int argc;
+ char *argv[];
+ {
+@@ -894,7 +895,7 @@
+ /* --
+  * 	handle tile_handle
+  */
+-imagesettile( argc, argv )
++void imagesettile( argc, argv )
+ int argc;
+ char *argv[];
+ {
+@@ -910,7 +911,7 @@
+ /* --
+  *	... handle font x y s color
+  */
+-imagestring( argc, argv )
++void imagestring( argc, argv )
+ int argc;
+ char *argv[];
+ {
+@@ -934,7 +935,7 @@
+ /* --
+  *	... handle font x y s color
+  */
+-imagestringup( argc, argv )
++void imagestringup( argc, argv )
+ int argc;
+ char *argv[];
+ {
