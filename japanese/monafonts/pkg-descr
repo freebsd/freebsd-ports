@@ -1,0 +1,12 @@
+X11 12,16-dot kanji propotional fonts that have same metric and order as 
+Japanese Windows font. This is named after ascii art 'mona' used in 
+'2 channel' ,notrious huge Web BBS. 
+
+
+  Bitmap font is installed the following directory tree:
+        ${X11BASE}/lib/X11/fonts/local/
+
+WWW: http://members.tripod.co.jp/s42335/mona/
+
+--
+MANTANI Nobutaka <nobutaka@nobutaka.com>
