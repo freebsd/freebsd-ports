@@ -31,6 +31,8 @@ Python_Include_MAINTAINER=	perky@FreeBSD.org
 #					are built from sources contained in the Python
 #					distribution.
 #
+# PYTHON_SITE_SUBDIR:	The ${MASTER_SITE_SUBDIR} for your python version.
+#
 # PYTHON_INCLUDEDIR:	Location of the Python include files.
 #						default: ${PYTHONBASE}/include/${PYTHON_VERSION}
 #
@@ -106,7 +108,6 @@ Python_Include_MAINTAINER=	perky@FreeBSD.org
 #				default: setup.py
 
 _PYTHON_PORTBRANCH=		2.3
-_PYTHON_PORTVERSION=	2.3.2
 _PYTHON_ALLBRANCHES=	2.3 2.2 2.1 2.0 1.5 2.4 # preferred first
 
 .if defined(USE_ZOPE)
@@ -174,49 +175,46 @@ PYTHON_VERSION?=	python${_PYTHON_VERSION}
 PYTHON_CMD?=		${_PYTHON_CMD}
 PYTHONBASE!=		(${PYTHON_CMD} -c 'import sys; print sys.prefix') \
 						2> /dev/null || echo ${LOCALBASE}
-PYTHON_PORTVERSION!=(${PYTHON_CMD} -c 'import string, sys; \
-							print string.split(sys.version)[0]') 2> /dev/null \
-					|| echo ${_PYTHON_PORTVERSION}
+_PYTHON_PORTVERSION!=	(${PYTHON_CMD} -c 'import string, sys; \
+							print string.split(sys.version)[0]') 2> /dev/null || ${TRUE}
+.if !empty(_PYTHON_PORTVERSION)
+PYTHON_PORTVERSION=	${_PYTHON_PORTVERSION}
+.endif
 
 # Python-2.4
 .if ${PYTHON_VERSION} == "python2.4"
-PYTHON_DISTFILE=	Python-2.4a0-20030801.tgz
+PYTHON_PORTVERSION?=2.4.a0-20030801
 PYTHON_PORTSDIR=	${PORTSDIR}/lang/python-devel
 PYTHON_REL=			240
 PYTHON_SUFFIX=		24
-PYTHON_WRKSRC=		${WRKDIR}/Python-2.4a0-20030801
 
 # Python-2.3
 .elif ${PYTHON_VERSION} == "python2.3"
-PYTHON_DISTFILE=	Python-${_PYTHON_PORTVERSION}.tgz
+PYTHON_PORTVERSION?=2.3.2
 PYTHON_PORTSDIR=	${PORTSDIR}/lang/python
 PYTHON_REL=			232
 PYTHON_SUFFIX=		23
-PYTHON_WRKSRC=		${WRKDIR}/Python-${_PYTHON_PORTVERSION}
 
 # Python-2.2
 .elif ${PYTHON_VERSION} == "python2.2"
-PYTHON_DISTFILE=	Python-2.2.3.tgz
+PYTHON_PORTVERSION?=2.2.3
 PYTHON_PORTSDIR=	${PORTSDIR}/lang/python22
 PYTHON_REL=			223
 PYTHON_SUFFIX=		22
-PYTHON_WRKSRC=		${WRKDIR}/Python-2.2.3
 
 # Python-2.1
 .elif ${PYTHON_VERSION} == "python2.1"
-PYTHON_DISTFILE=	Python-2.1.3.tgz
+PYTHON_PORTVERSION?=2.1.3
 PYTHON_PORTSDIR=	${PORTSDIR}/lang/python21
 PYTHON_REL=			213
 PYTHON_SUFFIX=		21
-PYTHON_WRKSRC=		${WRKDIR}/Python-2.1.3
 
 # Python-2.0
 .elif ${PYTHON_VERSION} == "python2.0"
-PYTHON_DISTFILE=	Python-2.0.1.tgz
+PYTHON_PORTVERSION?=2.0.1
 PYTHON_PORTSDIR=	${PORTSDIR}/lang/python20
 PYTHON_REL=			201
 PYTHON_SUFFIX=		20
-PYTHON_WRKSRC=		${WRKDIR}/Python-2.0.1
 
 # Python-1.6
 # ${PYTHON_PORTSDIR} is not set because we don't support building 
@@ -224,30 +222,26 @@ PYTHON_WRKSRC=		${WRKDIR}/Python-2.0.1
 # latest version in ${PORTSDIR}/lang/python. The definitions here
 # are for those who still have 1.6 as their default version.
 .elif ${PYTHON_VERSION} == "python1.6"
-PYTHON_DISTFILE=	Python-1.6.tar.gz
+PYTHON_PORTVERSION?=1.6
 PYTHON_PORTSDIR=	# empty
 PYTHON_REL=			160
 PYTHON_SUFFIX=		16
-PYTHON_WRKSRC=		${WRKDIR}/Python-1.6
 
 # Python-1.5
 .elif ${PYTHON_VERSION} == "python1.5"
-PYTHON_DISTFILE=	py152.tgz
+PYTHON_PORTVERSION?=1.5.2
 PYTHON_PORTSDIR=	${PORTSDIR}/lang/python15
 PYTHON_REL=			152
 PYTHON_SUFFIX=		15
-PYTHON_WRKSRC=		${WRKDIR}/Python-1.5.2
 
 # Python versions in development
 .elif defined(FORCE_PYTHON_VERSION)
-PYTHON_DISTFILE=	# empty
 PYTHON_PORTSDIR=	# empty
 PYTHON_NO_DEPENDS=	YES
 PYTHON_REL!=		${PYTHON_CMD} -c 'import sys; h = "%x" % sys.hexversion; \
 						print h[0]+h[2]+h[4]'
 PYTHON_SUFFIX!=		${PYTHON_CMD} -c 'import sys; h = "%x" % sys.hexversion; \
 						print h[0]+h[2]'
-PYTHON_WRKSRC=		${WRKDIR}/Python-${_PYTHON_PORTVERSION}
 
 .else
 .BEGIN:
@@ -262,6 +256,15 @@ PYTHON_WRKSRC=		${WRKDIR}/Python-${_PYTHON_PORTVERSION}
 	@${ECHO} "  python2.4"
 	@${FALSE}
 .endif
+
+.if defined(PYTHON_REL) && ${PYTHON_REL} < 160
+PYTHON_DISTFILE=	py152.tgz
+PYTHON_SITE_SUBDIR=	ftp/python/src
+.else
+PYTHON_DISTFILE=	Python-${PYTHON_PORTVERSION}.tgz
+PYTHON_SITE_SUBDIR=	ftp/python/${PYTHON_PORTVERSION}
+.endif
+PYTHON_WRKSRC=		${WRKDIR}/Python-${PYTHON_PORTVERSION}
 
 PYTHON_INCLUDEDIR=		${PYTHONBASE}/include/${PYTHON_VERSION}
 PYTHON_LIBDIR=			${PYTHONBASE}/lib/${PYTHON_VERSION}
