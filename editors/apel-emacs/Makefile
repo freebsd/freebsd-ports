@@ -1,5 +1,5 @@
 # New ports collection makefile for:	apel for emacs
-# Version required:	9.20
+# Version required:	9.22
 # Date created:		23 September 1998
 # Whom:			Shigeyuki FUKUSHIMA <shige@FreeBSD.org>
 #
@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://ftp.etl.go.jp/pub/mule/apel/ \
 MAINTAINER?=	shige@FreeBSD.org
 
 # distfile version
-APEL_VER=	9.20
+APEL_VER=	9.22
 # setupel filename
 APEL_SETUPEL=	apel-setupel.el
 # document install directory by install-doc target
@@ -61,7 +61,7 @@ PLIST_SUB+=	EMACS_LIBDIR=${EMACS_LIBDIR} EMACS_VER=${EMACS_VER} \
 		EMACS_LIBDIR_WITH_VER=${EMACS_LIBDIR_WITH_VER} \
 		EMACS_PACKAGESDIR=${EMACS_PACKAGESDIR} \
 		APELDOCDIR=${APELDOCDIR} APEL_SETUPEL=${APEL_SETUPEL}
-MAKE_FLAGS+=	EMACS=${EMACS_CMD}
+MAKE_FLAGS+=	EMACS=${EMACS_CMD} XEMACS=${EMACS_CMD}
 .else
 .BEGIN:
 	@${ECHO} "Error: Bad port."
