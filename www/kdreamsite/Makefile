@@ -12,7 +12,7 @@ MASTER_SITES=	http://neptune.spaceports.com/%7Eatnet/files/
 
 MAINTAINER=	andrews@technologist.com
 
-LIB_DEPENDS=	kdeui.2:${PORTSDIR}/x11/kdelibs11/
+LIB_DEPENDS=	kdeui.3:${PORTSDIR}/x11/kdelibs11/
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes

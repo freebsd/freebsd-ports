@@ -18,7 +18,7 @@ MASTER_SITES=	ftp://fara.cs.uni-potsdam.de/pub/kdevelop/ \
 
 MAINTAINER=	andrews@technologist.com
 
-LIB_DEPENDS=	kdeui.2:${PORTSDIR}/x11/kdelibs11
+LIB_DEPENDS=	kdeui.3:${PORTSDIR}/x11/kdelibs11
 RUN_DEPENDS=	autoconf:${PORTSDIR}/devel/autoconf
 
 GNU_CONFIGURE=	yes

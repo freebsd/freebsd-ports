@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.slac.com/pilone/kpilot_home/download/
 MAINTAINER=	dima@freebsd.org
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
-		kdecore.2:${PORTSDIR}/x11/kdelibs11
+		kdecore.3:${PORTSDIR}/x11/kdelibs11
 
 USE_QT=		yes
 KDEDIR?=	$(PREFIX)

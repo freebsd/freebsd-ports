@@ -1,5 +1,5 @@
 # New ports collection makefile for:   kdebase
-# Version required:    1.0
+# Version required:    1.1.2
 # Date created:        28 October 1997
 # Whom:                Stefan Eßer <se@freebsd.org>
 #
@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR= stable/1.1.2/distribution/tar/generic/source/bz2
 MAINTAINER=	se@freebsd.org
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
-		kdecore.2:${PORTSDIR}/x11/kdelibs11 \
+		kdecore.3:${PORTSDIR}/x11/kdelibs11 \
 		Xpm.4:${PORTSDIR}/graphics/xpm \
 		intl.1:${PORTSDIR}/devel/gettext
 

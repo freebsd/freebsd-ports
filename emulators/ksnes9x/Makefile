@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.esquadro.com.br/~ismore/
 
 MAINTAINER=	andrews@technologist.com
 
-LIB_DEPENDS=	kdeui.2:${PORTSDIR}/x11/kdelibs11
+LIB_DEPENDS=	kdeui.3:${PORTSDIR}/x11/kdelibs11
 RUN_DEPENDS=	snes9x:${PORTSDIR}/emulators/snes9x
 
 GNU_CONFIGURE=	yes

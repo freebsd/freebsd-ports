@@ -14,7 +14,7 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	hanspb@persbraten.vgs.no
 
-LIB_DEPENDS=	kdecore.2:${PORTSDIR}/x11/kdelibs11
+LIB_DEPENDS=	kdecore.3:${PORTSDIR}/x11/kdelibs11
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CXXFLAGS="$(CXXFLAGS)" \

@@ -12,7 +12,7 @@ MASTER_SITES=	http://members.xoom.com/kplot3d/
 
 MAINTAINER=	jedgar@FreeBSD.org
 
-LIB_DEPENDS=	kdecore.2:${PORTSDIR}/x11/kdelibs11
+LIB_DEPENDS=	kdecore.3:${PORTSDIR}/x11/kdelibs11
 
 FETCH_BEFORE_ARGS=	-b  # members.xoom.com is broken
 USE_QT=		yes

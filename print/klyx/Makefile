@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR= unstable/apps/office
 
 MAINTAINER=	tom@eborcom.com
 
-LIB_DEPENDS=	kdecore.2:${PORTSDIR}/x11/kdelibs11
+LIB_DEPENDS=	kdecore.3:${PORTSDIR}/x11/kdelibs11
 
 USE_QT=		yes
 GNU_CONFIGURE=	yes

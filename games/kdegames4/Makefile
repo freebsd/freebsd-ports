@@ -14,8 +14,8 @@ MASTER_SITE_SUBDIR= stable/1.1.2/distribution/tar/generic/source/bz2
 MAINTAINER=	se@freebsd.org
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
-		kdecore.2:${PORTSDIR}/x11/kdelibs11 \
-		QwSpriteField.6:${PORTSDIR}/converters/kdesupport11
+		kdecore.3:${PORTSDIR}/x11/kdelibs11 \
+		QwSpriteField.7:${PORTSDIR}/converters/kdesupport11
 
 USE_BZIP2=	yes
 USE_QT=		yes

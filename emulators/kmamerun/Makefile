@@ -14,8 +14,8 @@ MASTER_SITES=	ftp://ftp.sad.it/pub/kde/local/
 MAINTAINER=	nsayer@freebsd.org
 
 RUN_DEPENDS=	xmame:${PORTSDIR}/emulators/xmame
-LIB_DEPENDS=	kdecore.2:${PORTSDIR}/x11/kdelibs11 \
-		kdeui.2:${PORTSDIR}/x11/kdelibs11
+LIB_DEPENDS=	kdecore.3:${PORTSDIR}/x11/kdelibs11 \
+		kdeui.3:${PORTSDIR}/x11/kdelibs11
 
 GNU_CONFIGURE=	yes
 USE_QT=		yes

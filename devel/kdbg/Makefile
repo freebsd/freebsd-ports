@@ -14,7 +14,7 @@ MASTER_SITES=	http://members.telecom.at/~johsixt/ \
 MAINTAINER=	jedgar@FreeBSD.org
 
 BUILD_DEPENDS=	libtool:${PORTSDIR}/devel/libtool
-LIB_DEPENDS=	kdecore.2:${PORTSDIR}/x11/kdelibs11
+LIB_DEPENDS=	kdecore.3:${PORTSDIR}/x11/kdelibs11
 RUN_DEPENDS=	kdehelp:${PORTSDIR}/x11/kdebase11
 
 GNU_CONFIGURE=	yes

@@ -12,7 +12,7 @@ MASTER_SITES=	http://wwwiti.cs.uni-magdeburg.de/~sattler/pub/killustrator/
 
 MAINTAINER=	jedgar@FreeBSD.org
 
-LIB_DEPENDS=	kdecore.2:${PORTSDIR}/x11/kdelibs11 \
+LIB_DEPENDS=	kdecore.3:${PORTSDIR}/x11/kdelibs11 \
 		intl.1:${PORTSDIR}/devel/gettext \
 		gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
 RUN_DEPENDS=	${LOCALBASE}/bin/kdehelp:${PORTSDIR}/x11/kdebase11
