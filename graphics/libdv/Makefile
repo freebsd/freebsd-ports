@@ -19,6 +19,7 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 
 USE_GNOMELIBS=	yes
 USE_XLIB=	yes
+XFREE86_VERSION=	4
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 
@@ -36,6 +37,11 @@ CONFIGURE_ENV+=	SDL_CONFIG="${SDL_CONFIG}"
 .endif
 
 pre-everything::
+	@${ECHO_MSG} '===>'
+	@${ECHO_MSG} '===>           ATTENTION          <==='
+	@${ECHO_MSG} '===> YOU NEED XFREE86 Version 4.0 <==='
+	@${ECHO_MSG} '===> or above to run this         <==='
+	@${ECHO_MSG} '===> SINCE IT REQUIRES XV         <==='
 	@${ECHO_MSG} '===>'
 .ifndef(WITHOUT_SDL)
 	@${ECHO_MSG} '===> Define WITHOUT_SDL to disable SDL support'
