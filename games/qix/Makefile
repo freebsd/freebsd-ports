@@ -26,6 +26,10 @@ BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11/XFree86-4-clients
 RUN_DEPENDS=	mkfontdir:${PORTSDIR}/x11/XFree86-4-clients
 .endif
 
+.if !defined(DISPLAY) || ${DISPLAY} == ""
+BROKEN=		"Requires an active X session (and DISPLAY variable) to run xrdb.  Please compile this while running X."
+.endif
+
 MAN1=		qix.1
 
 FONTSDIR=	lib/X11/fonts/local
