@@ -3,11 +3,11 @@
 # Date created:		6 May 1995
 # Whom:			asami
 #
-# $Id: Makefile,v 1.2 1995/05/14 06:08:08 asami Exp $
+# $Id: Makefile,v 1.3 1995/07/13 01:09:09 asami Exp $
 #
 
 DISTNAME=	lmbench-1.0
-CATEGORIES+=	benchmarking
+CATEGORIES+=	benchmarks
 MASTER_SITES=	ftp://forte.mathematik.uni-bremen.de/pub/unix/benchmarks/
 
 MAINTAINER=	asami@FreeBSD.ORG
