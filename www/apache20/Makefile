@@ -111,6 +111,7 @@ BROKEN=			"You can't set WITH_BDB or WITH_BERKELEYDB when WITH_APR_FROM_PORTS is
 LIB_DEPENDS+=		apr-0.9:${PORTSDIR}/devel/apr
 CONFIGURE_ARGS+=	--with-apr=${LOCALBASE}/bin/apr-config \
 			--with-apr-util=${LOCALBASE}/bin/apu-config
+CONFIGURE_ENV+=		LTFLAGS="--tag=CXX"
 PLIST_SUB+=	PORTS_APR="@comment "
 .else
 .   if exists(${LOCALBASE}/lib/libapr-0.so)
@@ -169,6 +170,8 @@ post-patch:
 	@${SED} ${RC_SUB} ${FILESDIR}/apache.sh >${WRKDIR}/apache2.sh
 	@${SED} ${RC_SUB} ${FILESDIR}/config.layout >>${WRKSRC}/config.layout
 	@${RM} -f ${WRKSRC}/docs/manual/index.html.ko.euc-kr
+	@${REINPLACE_CMD} -e 's," PLATFORM ",FreeBSD,' \
+			${WRKSRC}/server/core.c
 
 pre-install:
 	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
