@@ -6,20 +6,23 @@
 #
 
 PORTNAME=	gtkglarea
-PORTVERSION=	1.2.2
-PORTREVISION=	2
+PORTVERSION=	1.2.3
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	http://www.student.oulu.fi/~jlof/gtkglarea/download/
+MASTER_SITES=	${MASTER_SITE_DEBIAN_POOL}
+DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An OpenGL widget for the GTK+ GUI toolkit
 
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+
 USE_X_PREFIX=	yes
 USE_GL=		yes
-USE_GNOME=	gtk12
-USE_LIBTOOL_VER=13
-INSTALLS_SHLIB=	yes
+USE_GNOME=	gnometarget gtk12 lthack
+USE_LIBTOOL_VER=	13
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
+		LDFLAGS="-L${LOCALBASE}/lib -lstdc++ ${PTHREAD_LIBS}"
 CONFIGURE_ARGS=	--with-lib-GL
-CONFIGURE_ENV=	LIBS="${PTHREAD_LIBS} -lstdc++"
+INSTALLS_SHLIB=	yes
 
 .include <bsd.port.mk>
