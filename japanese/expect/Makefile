@@ -3,11 +3,11 @@
 # Date created:		17 Oct 1997
 # Whom:			taguchi
 #
-# $Id: Makefile,v 1.5 1998/02/17 15:13:00 steve Exp $
+# $Id: Makefile,v 1.6 1998/02/18 06:28:23 asami Exp $
 #
 
 PKGNAME=	ja-expect-5.25
-CATEGORIES=	japanese lang
+CATEGORIES=	japanese lang tk42
 
 MAINTAINER=	taguchi@tohoku.iij.ad.jp
 

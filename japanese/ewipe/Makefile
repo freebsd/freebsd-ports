@@ -3,7 +3,7 @@
 # Date created:		17 October 1997
 # Whom:			itojun@itojun.org
 #
-# $Id: Makefile,v 1.8 1998/02/13 02:47:38 itojun Exp $
+# $Id: Makefile,v 1.9 1998/02/17 12:58:39 itojun Exp $
 #
 
 # can't use PORTSDIR here, since we haven't included bsd.port.mk
@@ -16,7 +16,7 @@ PKGNAME=	ja-ewipe-0.7.0
 
 .include <${.CURDIR}/../../misc/ewipe/Makefile>
 
-CATEGORIES=	japanese misc
+CATEGORIES=	japanese misc tk42
 
 MAINTAINER=	itojun@itojun.org
 

@@ -3,11 +3,11 @@
 # Date created:		11 Dez 1997
 # Whom:			dirk.meyer@dinoex.sub.org
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/02/21 21:24:35 steve Exp $
 
 DISTNAME=	FrodoV4_1a.Src
 PKGNAME=	frodo-4.1
-CATEGORIES=	emulators
+CATEGORIES=	emulators tk80
 MASTER_SITES=	ftp://sunsite.unc.edu/pub/micro/commodore/crossplatform/emulators/unix/
 
 MAINTAINER=	dirk.meyer@dinoex.sub.org
