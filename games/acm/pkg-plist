@@ -46,3 +46,4 @@ games/acm/omarker.au
 games/acm/rwr.au
 games/acm/screetch.au
 games/acm/stall.au
+@dirrm games/acm
