@@ -21,7 +21,10 @@ LIB_DEPENDS=	tcl82:${PORTSDIR}/lang/tcl82 \
 GNU_CONFIGURE=	yes
 
 CONFIGURE_ARGS=	--with-tcl-config=${PREFIX}/lib/tcl8.2 \
-		--with-tk-config=${PREFIX}/lib/tk8.2
+		--with-tk-config=${PREFIX}/lib/tk8.2 \
+		--with-tcl-include=${PREFIX}/include/tcl8.2 \
+		--with-tk-include=${PREFIX}/include/tk8.2
+		
 
 DOCFILES=	CONFIGURATION COPYRIGHT README doc/interface doc/userprocs \
 		doc/userproc.example
