@@ -7,7 +7,7 @@
 
 PORTNAME=	ffmpeg
 PORTVERSION=	0.4.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia audio net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	ffmpeg
@@ -264,9 +264,5 @@ post-install:
 .for file in ${LIB_FILES}
 	@${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/lib/${file:T}
 .endfor
-
-# add shared lib link
-	@${LN} -sf libavcodec.so \
-	${PREFIX}/lib/libavcodec.so.${SHLIB_VERSION}
 
 .include <bsd.port.post.mk>
