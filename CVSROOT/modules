@@ -8839,6 +8839,7 @@ xmlppm		ports/textproc/xmlppm
 xmlrpc-c	ports/net/xmlrpc-c
 xmlsec		ports/security/xmlsec
 xmltex		ports/print/xmltex
+xmlwrapp	ports/textproc/xmlwrapp
 xmmix		ports/audio/xmmix
 xmms		ports/multimedia/xmms
 xmms-a52dec	ports/audio/xmms-a52dec
