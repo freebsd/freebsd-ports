@@ -1,5 +1,8 @@
---- timebomb.c.old	Tue Jan 18 20:02:14 2000
-+++ timebomb.c	Tue Jan 18 20:05:03 2000
+
+$FreeBSD$
+
+--- timebomb.c.orig	Mon Nov 16 16:42:54 1998
++++ timebomb.c	Tue Aug 14 12:30:44 2001
 @@ -94,7 +94,7 @@
  XpmIcon rbuttonb;
  XpmIcon id;
@@ -9,7 +12,128 @@
  XpmIcon title;
  XpmIcon about;
  int abouttick;
-@@ -1049,9 +1049,9 @@
+@@ -340,73 +340,65 @@
+ 		WMProcessEvent(app,&ev);
+ 		yy=0;
+ 		if(iconswitch[SW_GETNAME]){
+-			if(panel[2]->done){
+-				iconswitch[SW_GETNAME]=0;
+-				if(panel[2]->result == WAPRDefault){
+-					pointman= WMGetTextFieldText(panel[2]->text);
+-					while(*pointman==' ')pointman++;
+-					if(!*pointman) pointman= NULL;
+-				}
+-				else
+-					pointman= NULL;
+-				if(pointman)history_add(pointman,clockn);
+-				WMDestroyInputPanel(panel[2]);
++			iconswitch[SW_GETNAME]=0;
++			if(panel[2]->result == WAPRDefault){
++				pointman= WMGetTextFieldText(panel[2]->text);
++				while(*pointman==' ')pointman++;
++				if(!*pointman) pointman= NULL;
+ 			}
++			else
++				pointman= NULL;
++			if(pointman)history_add(pointman,clockn);
++			WMDestroyInputPanel(panel[2]);
+ 		}
+ 		if(iconswitch[SW_SETBOMB] && !iconswitch[SW_GETNAME]){
+-			if(panel[0]->done){
+-				iconswitch[SW_SETBOMB]=0;
+-				if(panel[0]->result == WAPRDefault)
+-					pointman= WMGetTextFieldText(panel[0]->text);
+-				else
+-					pointman= NULL;
+-				if(pointman){
+-					tb.bs=atoi(pointman);
+-					if(tb.bs>=tb.x*tb.y)tb.bs=tb.x*tb.y-2;
+-					if(tb.bs<0)tb.bs=0;
+-					reinit(tb.x,tb.y,tb.bs,tb.clock);
+-				}
+-				WMDestroyInputPanel(panel[0]);
++			iconswitch[SW_SETBOMB]=0;
++			if(panel[0]->result == WAPRDefault)
++				pointman= WMGetTextFieldText(panel[0]->text);
++			else
++				pointman= NULL;
++			if(pointman){
++				tb.bs=atoi(pointman);
++				if(tb.bs>=tb.x*tb.y)tb.bs=tb.x*tb.y-2;
++				if(tb.bs<0)tb.bs=0;
++				reinit(tb.x,tb.y,tb.bs,tb.clock);
+ 			}
++			WMDestroyInputPanel(panel[0]);
+ 		}
+ 		if(iconswitch[SW_SETSIZE] && !iconswitch[SW_GETNAME]){
+-			if(panel[3]->done){
+-				iconswitch[SW_SETSIZE]=0;
+-				if(panel[3]->result == WAPRDefault)
+-					pointman= WMGetTextFieldText(panel[3]->text);
+-				else
+-					pointman= NULL;
+-				if(pointman){
+-					tb.x=atoi(pointman);
+-					if(tb.x>MAXWIDTH)tb.x=MAXWIDTH;
+-					if(tb.x<3)tb.x=3;
+-					while(*pointman){
+-						if(*pointman==' ')break;
+-						if(*pointman=='x')break;
+-						pointman++;
+-					}
++			iconswitch[SW_SETSIZE]=0;
++			if(panel[3]->result == WAPRDefault)
++				pointman= WMGetTextFieldText(panel[3]->text);
++			else
++				pointman= NULL;
++			if(pointman){
++				tb.x=atoi(pointman);
++				if(tb.x>MAXWIDTH)tb.x=MAXWIDTH;
++				if(tb.x<3)tb.x=3;
++				while(*pointman){
++					if(*pointman==' ')break;
++					if(*pointman=='x')break;
+ 					pointman++;
+-					tb.y=atoi(pointman);
+-					if(tb.y>MAXHEIGHT||tb.y<=0)tb.y=MAXHEIGHT;
+ 				}
+-				WMDestroyInputPanel(panel[3]);
+-				reinit(tb.x,tb.y,tb.bs,tb.clock);
++				pointman++;
++				tb.y=atoi(pointman);
++				if(tb.y>MAXHEIGHT||tb.y<=0)tb.y=MAXHEIGHT;
+ 			}
++			WMDestroyInputPanel(panel[3]);
++			reinit(tb.x,tb.y,tb.bs,tb.clock);
+ 		}
+ 		if(iconswitch[SW_SETTIME] && !iconswitch[SW_GETNAME]){
+-			if(panel[1]->done){
+-				iconswitch[SW_SETTIME]=0;
+-				if(panel[1]->result == WAPRDefault)
+-					pointman= WMGetTextFieldText(panel[1]->text);
+-				else
+-					pointman= NULL;
+-				if(pointman){
+-					tb.clock=atoi(pointman);
+-					if(tb.clock>999||tb.clock<0)tb.clock=999;
+-					reinit(tb.x,tb.y,tb.bs,tb.clock);
+-				}
+-				WMDestroyInputPanel(panel[1]);
++			iconswitch[SW_SETTIME]=0;
++			if(panel[1]->result == WAPRDefault)
++				pointman= WMGetTextFieldText(panel[1]->text);
++			else
++				pointman= NULL;
++			if(pointman){
++				tb.clock=atoi(pointman);
++				if(tb.clock>999||tb.clock<0)tb.clock=999;
++				reinit(tb.x,tb.y,tb.bs,tb.clock);
+ 			}
++			WMDestroyInputPanel(panel[1]);
+ 		}
+ 		switch(ev.type){
+ 			case NoExpose:
+@@ -1049,9 +1041,9 @@
  	about.attributes.width=256;
  	about.attributes.height=256;
  	about.attributes.valuemask=(XpmSize);
@@ -22,7 +146,7 @@
  	countbar.attributes.width=160;
  	countbar.attributes.height=BS;
  	countbar.attributes.valuemask=XpmSize;
-@@ -1081,7 +1081,7 @@
+@@ -1081,7 +1073,7 @@
  	XpmCreatePixmapFromData(display,window, rbuttonb_xpm,
  			&rbuttonb.pixmap, &rbuttonb.mask, &rbuttonb.attributes);
  	XpmCreatePixmapFromData(display,window, clock_xpm,
@@ -31,7 +155,7 @@
  	XpmCreatePixmapFromData(display,window, countbar_xpm,
  			&countbar.pixmap, &countbar.mask, &countbar.attributes);
  
-@@ -1175,27 +1175,27 @@
+@@ -1175,27 +1167,27 @@
  }
  
  void redraw_iconwin(){
@@ -72,7 +196,7 @@
  	}
  	if(!(iconswitch[SW_RESTART]||iconswitch[SW_RESETTIME]||iconswitch[SW_CHEAT])){
  	XCopyArea(display,sbutton.pixmap,iconwin,igc,0,0,BS,BS,0,0);
-@@ -1210,21 +1210,21 @@
+@@ -1210,21 +1202,21 @@
  	if(windowswitch[1]){
  		XCopyArea(display,title.pixmap,window,gc,(tb.x-4)*BS,0,BSx3,BS,(tb.x-4)*BS,0);
  		if(bombcount/1000){
@@ -104,4 +228,3 @@
  	}
  	redraw_iconwin();
  }
-
