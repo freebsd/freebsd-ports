@@ -25,7 +25,7 @@ post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/netperf
 	${MINSTALL} ${WRKSRC}/netperf.ps ${PREFIX}/share/doc/netperf
-	gzip -9nf ${PREFIX}/share/doc/netperf/netperf.ps
+	${GZIP_CMD} ${PREFIX}/share/doc/netperf/netperf.ps
 .endif
 
 .include <bsd.port.mk>

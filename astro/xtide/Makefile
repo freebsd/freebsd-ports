@@ -23,7 +23,7 @@ MAN1=		xtide.1
 MANCOMPRESSED=	no
 
 post-extract:
-	@gzip -dc ${DISTDIR}/harmonics.gz > ${WRKSRC}/harmonics
+	@${GZCAT} ${DISTDIR}/harmonics.gz > ${WRKSRC}/harmonics
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/xtide ${PREFIX}/bin

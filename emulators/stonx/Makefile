@@ -64,7 +64,7 @@ do-install:
 	@${ECHO_MSG} "===> Installing fonts"
 .for f in ${FONTS}
 	@${INSTALL_DATA} ${WRKSRC}/data/$f ${FNTDIR}
-	@gzip -f ${FNTDIR}/$f
+	@${GZIP_CMD} ${FNTDIR}/$f
 .endfor
 	@mkfontdir ${FNTDIR}
 

@@ -38,7 +38,7 @@ post-install:
 	@${CP} ${FILESDIR}/Changes.FreeBSD.port ${PREFIX}/share/doc/gn-gnspool
 .endif
 .if !defined(NOMANCOMPRESS)
-	@gzip -9nf ${PREFIX}/man/ja/cat1/gn.1 \
+	@${GZIP_CMD} ${PREFIX}/man/ja/cat1/gn.1 \
 	${PREFIX}/man/ja/cat1/gnspool.1 ${PREFIX}/man/ja/cat1/gnloops.1
 .endif
 	@${MKDIR} ${PREFIX}/share/examples/gn-gnspool
