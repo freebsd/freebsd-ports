@@ -7,7 +7,7 @@
 
 PORTNAME=	libid3tag
 PORTVERSION=	0.15.0b
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://ftp.mars.org/pub/mpeg/
@@ -16,6 +16,7 @@ MASTER_SITE_SUBDIR=	mad
 MAINTAINER=	asa@gascom.ru
 COMMENT=	ID3 tags library (part of MAD project)
 
+USE_GNOME=	pkgconfig
 USE_INC_LIBTOOL_VER=	13
 INSTALLS_SHLIB=	yes
 
