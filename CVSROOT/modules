@@ -1523,6 +1523,7 @@ frontpage-ja	ports/www/frontpage-ja
 frontpage-ko	ports/www/frontpage-ko
 frontpage-nl	ports/www/frontpage-nl
 frontpage-pt_BR	ports/www/frontpage-pt_BR
+frontpage-sv	ports/www/frontpage-sv
 frotz		ports/games/frotz
 fsck		src/sbin/fsck
 fsck_ext2fs	ports/sysutils/fsck_ext2fs
