@@ -11,7 +11,7 @@ CATEGORIES=     www
 MASTER_SITES=   ftp://ftp-eu.w3.org/pub/Arena/beta-3/
 DISTNAME=	arena-CJK-beta3a
 
-MAINTAINER=     ache@FreeBSD.org
+MAINTAINER=     ports@FreeBSD.org
 
 LIB_DEPENDS+=   jpeg.9:${PORTSDIR}/graphics/jpeg
 LIB_DEPENDS+=   png.3:${PORTSDIR}/graphics/png
