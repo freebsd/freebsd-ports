@@ -10,6 +10,7 @@ CC = gcc
 # Assembly language object files.
 
 Aruntime = x86.o 
+SAruntime = x86.so
 
 # Profiled library
 
@@ -18,10 +19,14 @@ Plib = libsc_p.a
 # Installation tools
 
 RANLIB = ranlib
+AS = as
+CPP = cpp
 
 # X library
 
 XLIB = -lX11
 XLIBCFLAGS =
+PICFLAGS = -fpic -DPIC
+
 
 # End of FREEBSD header.

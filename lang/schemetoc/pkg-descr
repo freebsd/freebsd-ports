@@ -6,6 +6,8 @@ This implementation has certain extensions to the language which
 allows Scheme to be compiled to C into standalone programs, combined
 with other languages, or compiled into the interpreter itself.
 
-Scheme->C also includes an X interface library.
+Scheme->C also includes an X interface library.  
+
+This port includes shared libs.
 
 Ported to FreeBSD by Josh MacDonald, jmacd@uclink.berkeley.edu
