@@ -2,7 +2,7 @@ diff -Nru a/PATCHES b/PATCHES
 --- a/PATCHES
 +++ b/PATCHES
 @@ -0,0 +1 @@
-+patch-1.5.6.tg.hcache.10
++patch-1.5.6.tg.hcache.11
 diff -Nru a/configure.in b/configure.in
 --- a/configure.in	2004-08-18 09:43:09 +02:00
 +++ b/configure.in	2004-10-14 07:21:52 +02:00
@@ -131,8 +131,8 @@ diff -Nru a/globals.h b/globals.h
  WHERE char *MhUnseen;
 diff -Nru a/hcache.c b/hcache.c
 --- /dev/null	Wed Dec 31 16:00:00 196900
-+++ b/hcache.c	2004-09-28 19:57:45 +02:00
-@@ -0,0 +1,856 @@
++++ b/hcache.c	2004-11-09 00:09:22 +01:00
+@@ -0,0 +1,880 @@
 +/*
 + * Copyright (C) 2004 Thomas Glanzmann <sithglan@stud.uni-erlangen.de>
 + * Copyright (C) 2004 Tobias Werth <sitowert@stud.uni-erlangen.de>
@@ -200,10 +200,34 @@ diff -Nru a/hcache.c b/hcache.c
 +        unsigned long long uid_validity;
 +} validate;
 +
++static void *
++lazy_malloc(size_t siz)
++{
++	if (0 < siz && siz < 4096) {
++		siz = 4096;
++	}
++
++	return safe_malloc(siz);
++}
++
++static void
++lazy_realloc(void *ptr, size_t siz)
++{
++	void **p = (void **)ptr;
++
++	if ( p != NULL
++	&&   0 < siz
++	&& siz < 4096) {
++		return;
++	}
++
++	safe_realloc(ptr, siz);
++}
++
 +static unsigned char *
 +dump_int(unsigned int i, unsigned char *d, int *off)
 +{
-+	safe_realloc(&d, *off + sizeof(int));
++	lazy_realloc(&d, *off + sizeof(int));
 +	memcpy(d + *off, &i, sizeof(int));
 +	(*off) += sizeof(int);
 +
@@ -230,7 +254,7 @@ diff -Nru a/hcache.c b/hcache.c
 +
 +	size = mutt_strlen(c) + 1;
 +	d = dump_int(size, d, off);
-+	safe_realloc(&d, *off + size);
++	lazy_realloc(&d, *off + size);
 +	memcpy(d + *off, c, size);
 +	*off += size;
 +
@@ -247,7 +271,7 @@ diff -Nru a/hcache.c b/hcache.c
 +	}
 +
 +	d = dump_int(size, d, off);
-+	safe_realloc(&d, *off + size);
++	lazy_realloc(&d, *off + size);
 +	memcpy(d + *off, c, size);
 +	*off += size;
 +
@@ -430,7 +454,7 @@ diff -Nru a/hcache.c b/hcache.c
 +static unsigned char *
 +dump_body(BODY *c, unsigned char *d, int *off)
 +{
-+	safe_realloc(&d, *off + sizeof(BODY));
++	lazy_realloc(&d, *off + sizeof(BODY));
 +	memcpy(d + *off, c, sizeof(BODY));
 +	*off += sizeof(BODY);
 +
@@ -542,7 +566,7 @@ diff -Nru a/hcache.c b/hcache.c
 +{
 +	int crc = 0;
 +
-+	crc = crc32(crc, (unsigned char const *) "sithglan@stud.uni-erlangen.de[sithglan]|hcache.c|20040928175752|08278", mutt_strlen("sithglan@stud.uni-erlangen.de[sithglan]|hcache.c|20040928175752|08278"));
++	crc = crc32(crc, (unsigned char const *) "sithglan@stud.uni-erlangen.de[sithglan]|hcache.c|20041108231548|29613", mutt_strlen("sithglan@stud.uni-erlangen.de[sithglan]|hcache.c|20041108231548|29613"));
 +
 +#if HAVE_LANGINFO_CODESET
 +	crc = crc32(crc, (unsigned char const *) Charset, mutt_strlen(Charset));
@@ -629,7 +653,7 @@ diff -Nru a/hcache.c b/hcache.c
 +	unsigned char *d = NULL;
 +	*off             = 0;
 +
-+	d = safe_malloc(sizeof(validate));
++	d = lazy_malloc(sizeof(validate));
 +
 +	if (uid_validity) {
 +		memcpy(d, &uid_validity, sizeof(long long));
@@ -642,7 +666,7 @@ diff -Nru a/hcache.c b/hcache.c
 +
 +	d = dump_int(db->crc, d, off);
 +
-+	safe_realloc(&d, *off + sizeof(HEADER));
++	lazy_realloc(&d, *off + sizeof(HEADER));
 +	memcpy(d + *off, h, sizeof(HEADER));
 +	*off += sizeof(HEADER);
 +

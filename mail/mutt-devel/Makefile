@@ -66,6 +66,12 @@
 # define
 #  WITH_MUTT_CYRUS_SASL2
 #
+# If you want mutt to use the GNU aspell spelling checker define:
+#  WITH_MUTT_ASPELL
+#
+# If you want mutt to use the ispell spelling checker define:
+#  WITH_MUTT_ISPELL
+#
 # If you want to use the rethreading functions define:
 #  WITH_MUTT_EDIT_THREADS
 #
@@ -84,7 +90,7 @@
 
 PORTNAME=	mutt-devel
 PORTVERSION=	1.5.6
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES+=	mail ipv6
 .if defined(WITH_MUTT_NNTP)
 CATEGORIES+=	news
@@ -165,10 +171,24 @@ pre-build:
 			-e "s|^(AUTOHEADER = ).+|\1${AUTOHEADER}|" \
 		${BUILD_WRKSRC}/Makefile
 
-.if defined(PACKAGE_BUILDING)
+.if exists(${LOCALBASE}/bin/aspell) && !defined(WITH_MUTT_ISPELL)
+WITH_MUTT_ASPELL=	yes
+.elif exists(${LOCALBASE}/bin/ispell) && !defined(WITH_MUTT_ASPELL)
+WITH_MUTT_ISPELL=	yes
+.endif
+.if defined(PACKAGE_BUILDING) && !defined(WITH_MUTT_ASPELL) && \
+	!defined(WITH_MUTT_ISPELL)
+WITH_MUTT_ASPELL=	yes
+.endif
+.if defined(WITH_MUTT_ASPELL)
+BUILD_DEPENDS+=	aspell:${PORTSDIR}/textproc/aspell
+RUN_DEPENDS+=	aspell:${PORTSDIR}/textproc/aspell
+.elif defined(WITH_MUTT_ISPELL)
 BUILD_DEPENDS+=	ispell:${PORTSDIR}/textproc/ispell
-RUN_DEPENDS=	ispell:${PORTSDIR}/textproc/ispell \
-		urlview:${PORTSDIR}/textproc/urlview
+RUN_DEPENDS+=	ispell:${PORTSDIR}/textproc/ispell
+.endif
+.if defined(PACKAGE_BUILDING)
+RUN_DEPENDS+=	urlview:${PORTSDIR}/textproc/urlview
 .endif
 
 .if defined(WITH_MUTT_NCURSES_PORT)
@@ -200,7 +220,7 @@ SGML_USED=	no
 .endif
 .if defined(MUTT_USES_NCURSES) && ${OSVERSION} < 400000
 LIB_DEPENDS+=	ncurses.5:${PORTSDIR}/devel/ncurses
-CFLAGS+=	-I${PREFIX}/include/ncurses -I${PREFIX}/include
+CFLAGS+=	-I${LOCALBASE}/include/ncurses -I${LOCALBASE}/include
 .elif defined(MUTT_USES_SLANG)
 LIB_DEPENDS+=	slang.1:${PORTSDIR}/devel/libslang
 .endif
@@ -209,13 +229,13 @@ LIB_DEPENDS+=	sasl2.2:${PORTSDIR}/security/cyrus-sasl2
 .endif
 .if defined(WITH_MUTT_MAILDIR_HEADER_CACHE)
 LIB_DEPENDS+=	db-4.2.2:${PORTSDIR}/databases/db42
-CFLAGS+=	-I${PREFIX}/include/db42
+CFLAGS+=	-I${LOCALBASE}/include/db42
 .endif
 .if exists(${LOCALBASE}/lib/libidn.so)
 WITH_MUTT_IDN=	yes
 .endif
 .if defined(WITH_MUTT_IDN)
-LIB_DEPENDS+=	idn.16:${PORTSDIR}/devel/libidn
+LIB_DEPENDS+=	idn:${PORTSDIR}/devel/libidn
 .endif
 .if ! defined(WITHOUT_MUTT_SMIME_OUTLOOK_COMPAT)
 pre-configure::
@@ -249,13 +269,18 @@ pre-configure::
 	@${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-edit-threads
 .endif
 
+.if defined(WITH_MUTT_ASPELL)
+pre-configure::
+	@${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-aspell
+.endif
+
 .if defined(WITH_MUTT_LOCALES_FIX)
 CONFIGURE_ARGS+=	--enable-locales-fix
 .endif
 .if defined(MUTT_USES_NCURSES) && ${OSVERSION} < 400000
-CONFIGURE_ARGS+=	--with-curses=${PREFIX}
+CONFIGURE_ARGS+=	--with-curses=${LOCALBASE}
 .elif defined(MUTT_USES_SLANG)
-CONFIGURE_ARGS+=	--with-slang=${PREFIX}
+CONFIGURE_ARGS+=	--with-slang=${LOCALBASE}
 PATCHFILES+=	patch-${VVV_PATCH_VERSION}.vvv.slang.gz:vvv
 .endif
 .if defined(WITH_MUTT_CYRUS_SASL2)
@@ -267,7 +292,7 @@ CONFIGURE_ARGS+=	--disable-nls
 .if defined(WITHOUT_MUTT_ICONV)
 CONFIGURE_ARGS+=	--disable-iconv
 .else
-CONFIGURE_ARGS+=	--with-libiconv-prefix=${PREFIX}
+CONFIGURE_ARGS+=	--with-libiconv-prefix=${LOCALBASE}
 .endif
 .if defined(WITH_MUTT_IDN)
 CONFIGURE_ARGS+=	--with-idn
