@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	migemo
-PORTVERSION=	0.21
-PORTREVISION=	1
+PORTVERSION=	0.22
 CATEGORIES=	japanese elisp
 MASTER_SITES=   http://migemo.namazu.org/stable/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
