@@ -892,6 +892,7 @@ compat4x	ports/misc/compat4x
 compupic	ports/graphics/compupic
 comserv		ports/comms/comserv
 concorde	ports/math/concorde
+cone		ports/mail/cone
 confregdecode	ports/net/confregdecode
 conglomerate	ports/editors/conglomerate
 connect4	ports/games/connect4
