@@ -16,8 +16,7 @@ COMMENT=	Xlib implementation of an attractive, configurable clock
 
 WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-BROKEN=		Build fails
-
+USE_BISON=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
