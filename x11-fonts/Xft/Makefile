@@ -8,7 +8,7 @@
 PORTNAME=	Xft
 PORTVERSION=	2.1.2
 CATEGORIES=	x11-fonts
-MASTER_SITES=	http://fontconfig.org/fontconfig/release/
+MASTER_SITES=	http://pdx.freedesktop.org/software/fontconfig/releases/
 DISTNAME=	xft-${PORTVERSION}
 
 MAINTAINER=	gnome@FreeBSD.org
