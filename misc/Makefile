@@ -184,6 +184,7 @@
     SUBDIR += libmcal
     SUBDIR += lifelines
     SUBDIR += lile
+    SUBDIR += lingoteach
     SUBDIR += logsurfer
     SUBDIR += lr
     SUBDIR += lv
