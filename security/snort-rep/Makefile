@@ -12,7 +12,7 @@ MASTER_SITES=	http://people.ee.ethz.ch/~dws/software/snort-rep/pub/
 
 MAINTAINER=	markp@FreeBSD.org
 
-USE_PERL=	yes
+USE_PERL5=	yes
 MAN1=		snort-rep.1
 
 post-patch:

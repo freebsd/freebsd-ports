@@ -16,7 +16,7 @@ MAINTAINER=	znerd@FreeBSD.org
 BUILD_DEPENDS=	jikes:${PORTSDIR}/java/jikes
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-USE_PERL=	yes
+USE_PERL5=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 NO_BUILD=	yes
