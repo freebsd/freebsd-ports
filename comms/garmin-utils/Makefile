@@ -7,6 +7,7 @@
 
 PORTNAME=	garmin-utils
 PORTVERSION=	1.93
+PORTREVISION=	1
 CATEGORIES=	comms
 MASTER_SITES=	ftp://ftp.snafu.org/pub/
 
