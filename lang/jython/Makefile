@@ -34,6 +34,7 @@ do-install:
 
 	# symbolic links for convenience
 	-${LN} -sf ${JYTHON_PREFIX}/jython ${PREFIX}/bin/jython
+	-${LN} -sf ${JYTHON_PREFIX}/jythonc ${PREFIX}/bin/jythonc
 	-${LN} -sf ${JYTHON_PREFIX}/registry ${PREFIX}/etc/jython.reg
 
 .include <bsd.port.mk>
