@@ -10,7 +10,7 @@ CATEGORIES=	dns ipv6
 MASTER_SITES=	http://downloads.powerdns.com/releases/
 DISTNAME=	pdns-${PORTVERSION}
 
-MAINTAINER=	freebsd@signout.dk
+MAINTAINER=	tremere@cainites.net
 COMMENT=	An advanced DNS server with SQL backend
 
 USE_GMAKE=	YES
@@ -83,7 +83,7 @@ PLIST_SUB+=		RECURSOR="@comment "
 .if defined(POWERDNS_WITH_RECURSOR)
 .if exists(/usr/include/ucontext.h)
 UCONTEXT!=	${AWK} '/setcontext/ { print "YES" }' \
-                /usr/include/ucontext.h
+		/usr/include/ucontext.h
 .if ${UCONTEXT} == ""
 BROKEN=		setcontext for recursor not found
 .endif
