@@ -418,6 +418,7 @@ autodia		ports/devel/autodia
 autogen		ports/devel/autogen
 automake	ports/devel/automake
 automake14	ports/devel/automake14
+autools		ports/audio/autools
 autorespond	ports/mail/autorespond
 autosig		ports/mail/autosig
 autotrace	ports/graphics/autotrace
