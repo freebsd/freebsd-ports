@@ -7,6 +7,7 @@
 
 PORTNAME=	teamspeak_server
 PORTVERSION=	2.0.19.40
+PORTREVISION=1
 CATEGORIES=	audio net
 MASTER_SITES=	http://www.teamspeak.org/files/ \
 		ftp://ftp.ngz-network.de/pub/11/4/releases/ \
@@ -25,7 +26,8 @@ NO_FILTER_SHLIBS=yes
 do-install:
 	${MKDIR} ${PREFIX}/lib/teamspeak_server
 	${TAR} -C ${WRKSRC} -cf - . | ${TAR} -C ${PREFIX}/lib/teamspeak_server -xf -
-	${CHMOD} -R u+w ${PREFIX}/lib/teamspeak_server
+	${CHOWN} -R nobody:nobody ${PREFIX}/lib/teamspeak_server
+	${CHMOD} -R u+w,o-rx ${PREFIX}/lib/teamspeak_server
 	${SED} -e 's#%%TSHOME%%#${PREFIX}/lib/teamspeak_server#' <${FILESDIR}/teamspeak_server.sh >${WRKSRC}/teamspeak_server.sh
 	${INSTALL_SCRIPT} ${WRKSRC}/teamspeak_server.sh ${PREFIX}/etc/rc.d/
 	${RM} ${WRKSRC}/teamspeak_server.sh
