@@ -843,6 +843,7 @@
     SUBDIR += templ
     SUBDIR += terminality
     SUBDIR += tide
+    SUBDIR += tinyq
     SUBDIR += titano
     SUBDIR += tkcon
     SUBDIR += tkcvs
