@@ -30,7 +30,7 @@ patch-makefile:
 	@${CAT} ${WRKSRC}/Makefile >> ${WRKSRC}/Makefile.tmp
 	@${MV} ${WRKSRC}/Makefile.tmp ${WRKSRC}/Makefile
 
-patch-message:
+pre-patch:
 	@${SED} -e 's,%%LOCALBASE%%,${LOCALBASE},' ${MESSAGE} > ${PKGMESSAGE}
 
 do-install:
