@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	gimp-print
-PORTVERSION=	4.2.6
-PORTREVISION=	2
+PORTVERSION=	4.2.7
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -18,7 +17,7 @@ USE_GETTEXT=	yes
 USE_GETOPT_LONG=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
-USE_INC_LIBTOOL_VER=13
+USE_LIBTOOL_VER=	15
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--with-gimp=no
 INSTALLS_SHLIB=	yes
@@ -71,6 +70,8 @@ post-patch:
 		 s|$${CFLAGS:=} -O|$${CFLAGS}|g' ${WRKSRC}/configure
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|$$(PACKAGE)/doc|doc/$$(PACKAGE)|g ; \
+		 s|LANGUAGE=|LANG=|g ; \
+		 s|: install-gimp_plug_inPROGRAMS|:|g ; \
 		 s|$$(RM) -r|$$(RM) -f -r|g'
 
 .include <bsd.port.mk>
