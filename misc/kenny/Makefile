@@ -10,7 +10,8 @@
 PORTNAME=	kenny
 PORTVERSION=	1.7
 CATEGORIES=	misc perl5
-MASTER_SITES=	http://www.h.shuttle.de/mitch/stuff/
+MASTER_SITES=	http://www.h.shuttle.de/mitch/stuff/ \
+		http://home.t-online.de/home/dietmar.garbs/download/kenny/
 DISTNAME=	kenny.pl-${PORTVERSION}
 EXTRACT_SUFX=	.gz
 EXTRACT_ONLY=
