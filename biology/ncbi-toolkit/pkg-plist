@@ -1,3 +1,45 @@
+%%PORTDOCS%%share/doc/ncbi-toolkit/FAQ.txt
+%%PORTDOCS%%share/doc/ncbi-toolkit/README.asn2xml
+%%PORTDOCS%%share/doc/ncbi-toolkit/README.bcl
+%%PORTDOCS%%share/doc/ncbi-toolkit/README.bls
+%%PORTDOCS%%share/doc/ncbi-toolkit/README.formatdb
+%%PORTDOCS%%share/doc/ncbi-toolkit/README.imp
+%%PORTDOCS%%share/doc/ncbi-toolkit/README.mbl
+%%PORTDOCS%%share/doc/ncbi-toolkit/README.nbl
+%%PORTDOCS%%share/doc/ncbi-toolkit/README.pbl
+%%PORTDOCS%%share/doc/ncbi-toolkit/README.rps
+%%PORTDOCS%%share/doc/ncbi-toolkit/README.sdk
+%%PORTDOCS%%share/doc/ncbi-toolkit/fa2htgs/README
+%%PORTDOCS%%share/doc/ncbi-toolkit/fa2htgs/updateHtgsDoc
+%%PORTDOCS%%share/doc/ncbi-toolkit/firedialog.gif
+%%PORTDOCS%%share/doc/ncbi-toolkit/firewall.html
+%%PORTDOCS%%share/doc/ncbi-toolkit/firewall.txt
+%%PORTDOCS%%share/doc/ncbi-toolkit/fwd_check.sh
+%%PORTDOCS%%share/doc/ncbi-toolkit/images/ncbi_sequin.css
+%%PORTDOCS%%share/doc/ncbi-toolkit/images/seqn01.gif
+%%PORTDOCS%%share/doc/ncbi-toolkit/images/seqn02.gif
+%%PORTDOCS%%share/doc/ncbi-toolkit/images/seqn03.gif
+%%PORTDOCS%%share/doc/ncbi-toolkit/images/seqn04.gif
+%%PORTDOCS%%share/doc/ncbi-toolkit/images/seqn05.gif
+%%PORTDOCS%%share/doc/ncbi-toolkit/images/seqn06.gif
+%%PORTDOCS%%share/doc/ncbi-toolkit/images/seqn07.gif
+%%PORTDOCS%%share/doc/ncbi-toolkit/images/seqn08.gif
+%%PORTDOCS%%share/doc/ncbi-toolkit/images/seqn09.gif
+%%PORTDOCS%%share/doc/ncbi-toolkit/images/seqn10.gif
+%%PORTDOCS%%share/doc/ncbi-toolkit/images/seqn11.gif
+%%PORTDOCS%%share/doc/ncbi-toolkit/images/seqn12.gif
+%%PORTDOCS%%share/doc/ncbi-toolkit/images/seqn13.gif
+%%PORTDOCS%%share/doc/ncbi-toolkit/images/seqn14.gif
+%%PORTDOCS%%share/doc/ncbi-toolkit/images/seqn15.gif
+%%PORTDOCS%%share/doc/ncbi-toolkit/images/seqn16.gif
+%%PORTDOCS%%share/doc/ncbi-toolkit/images/seqn17.gif
+%%PORTDOCS%%share/doc/ncbi-toolkit/images/seqn18.gif
+%%PORTDOCS%%share/doc/ncbi-toolkit/images/seqn19.gif
+%%PORTDOCS%%share/doc/ncbi-toolkit/images/seqn20.gif
+%%PORTDOCS%%share/doc/ncbi-toolkit/images/seqn21.gif
+%%PORTDOCS%%share/doc/ncbi-toolkit/ncbixml.txt
+%%PORTDOCS%%share/doc/ncbi-toolkit/sdk.doc
+%%PORTDOCS%%share/doc/ncbi-toolkit/sequin.htm
 bin/Nentrez
 bin/Psequin
 bin/asn2fast
@@ -45,24 +87,26 @@ bin/testval
 bin/udv
 bin/vecscreen
 lib/ncbi/libncbi.a
-lib/ncbi/libncbicdr.a
-lib/ncbi/libncbimla.a
-lib/ncbi/libncbitxc2.a
-lib/ncbi/libnetentr.a
 lib/ncbi/libncbiCacc.a
-lib/ncbi/libncbicn3d.a
-lib/ncbi/libncbimmdb.a
-lib/ncbi/libnetblast.a
-lib/ncbi/libvibgif.a
 lib/ncbi/libncbiNacc.a
-lib/ncbi/libncbidesk.a
-lib/ncbi/libncbiobj.a
-lib/ncbi/libnetcli.a
-lib/ncbi/libvibnet.a
 lib/ncbi/libncbiacc.a
+lib/ncbi/libncbicdr.a
+lib/ncbi/libncbicn3d.a
+lib/ncbi/libncbidesk.a
 lib/ncbi/libncbiid1.a
+lib/ncbi/libncbimla.a
+lib/ncbi/libncbimmdb.a
+lib/ncbi/libncbiobj.a
 lib/ncbi/libncbitool.a
+lib/ncbi/libncbitxc2.a
+lib/ncbi/libnetblast.a
+lib/ncbi/libnetcli.a
 lib/ncbi/libnetcli_.a
+lib/ncbi/libnetentr.a
+lib/ncbi/libvibgif.a
+lib/ncbi/libvibnet.a
 lib/ncbi/libvibrant.a
-@unexec rmdir %D/lib/ncbi
-@unexec rm -rf %D/include/ncbi
+@dirrm lib/ncbi
+%%PORTDOCS%%@dirrm share/doc/ncbi-toolkit/images
+%%PORTDOCS%%@dirrm share/doc/ncbi-toolkit/fa2htgs
+%%PORTDOCS%%@dirrm share/doc/ncbi-toolkit
