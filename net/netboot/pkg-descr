@@ -1,0 +1,13 @@
+This code produces bootloaders for many cards that can be loaded
+from a floppy disk or burnt into an EEPROM as raw or hex
+
+Netboot uses standard DOS drivers (either Packet or NDIS-2), all
+network cards can be used for which those drivers exist, even PCI
+and 100MBps cards. In case no such driver has been delivered with
+a network card it can usually be downloaded from an FTP server of
+the manufacturer
+
+WWW: http://netboot.sourceforge.net/
+
+- David
+dyeske@yahoo.com

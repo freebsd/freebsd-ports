@@ -1,0 +1,41 @@
+--- misc/instdrv.orig	Sun Dec 15 05:50:10 2002
++++ misc/instdrv	Mon Mar 17 01:12:06 2003
+@@ -48,13 +48,8 @@
+ # Get name of driver subdirectory, name of driver file and check for MD5
+ # checksum file
+ #
+-MD5FILE="`echo "$DRVFILE" | sed 's,\.[^/]\+$,\.md5,'`"
+-SUBDIR="`echo "$ABSDRVFILE" | sed 's,^.*netdrvr/\([^/]\+\)/.*$,\1,'`"
++SUBDIR="`echo "$ABSDRVFILE" | sed 's,^.*netdrvr/\([^/].*\)/.*$,\1,'`"
+ DRVNAME="`echo "$ABSDRVFILE" | sed 's,^.*/\([^/]\+\.[^/]\+\)$,\1,'`"
+-if [ ! -r "$MD5FILE" ]; then
+-	echo "$0: unable to read MD5 file $MD5FILE"
+-	exit 1
+-fi
+ 
+ 
+ #
+@@ -68,12 +63,6 @@
+ 	echo $INSTPROG -d $INSTDIR/netdrvr
+ 	$INSTPROG -d $INSTDIR/netdrvr
+ fi
+-SUMFILE="$INSTDIR/netdrvr/MD5SUMS"
+-if [ ! -f $SUMFILE ]; then
+-	echo "# MD5 checksum file" > $SUMFILE
+-fi
+-TMPFILE="${TEMP-/tmp}/MD5SUMS.$$"
+-trap "rm -f $TMPFILE" 0
+ 
+ 
+ #
+@@ -91,10 +80,5 @@
+ # Install MD5 checksum into checksum database. This involves to first
+ # remove the old entry from the file, and then to append the new entry
+ #
+-echo "Installing MD5 checksum into $SUMFILE"
+-MD5="`cat $MD5FILE | sed 's,^\(.\+[ 	]\+[ *]\)[^ *].*$,\1,'`"
+-sed "/^.*$DRVNAME\$/d;\$a\\
+-$MD5$SUBDIR/$DRVNAME" $SUMFILE >$TMPFILE
+-$INSTPROG -m 644 $TMPFILE $SUMFILE
+ exit 0
+ 

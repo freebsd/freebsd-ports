@@ -335,6 +335,7 @@
     SUBDIR += net-snmp4
     SUBDIR += netams
     SUBDIR += netatalk
+    SUBDIR += netboot
     SUBDIR += netcat
     SUBDIR += netdude
     SUBDIR += netmap
