@@ -24,6 +24,7 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USE_AUTOCONF=	yes
+USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 USE_XPM=	yes
 USE_BISON=	yes
@@ -33,8 +34,7 @@ USE_GMAKE=	yes
 MAKE_ARGS=	CC="${CC}" CXX="${CXX}" \
 		CFLAGS="${CFLAGS}" CXXFLAGS="${CXXFLAGS}"
 MAKE_ENV=	JX_INSTALL_ROOT="${PREFIX}/bin" \
-		JX_LIB_ROOT="${PREFIX}/lib" \
-		PATH="${WRKSRC}/programs/makemake:${PATH}"
+		JX_LIB_ROOT="${PREFIX}/lib"
 PLIST_SUB=	LIBACE="${LIBACE}" \
 		LIBJTOOL="${LIBJTOOL}" \
 		LIBJX="${LIBJX}"
@@ -73,7 +73,7 @@ EXTRALIBFILES_JXLAYOUT=		class_map need_font_list option_map
 EXTRALIBFILES_MAKE_WRKSRC=	include/make
 EXTRALIBFILES_MAKE_DIR=		. sys
 # odd behavior
-POSTBUILD_WRKSRC=	makemake jxlayout
+POSTBUILD_WRKSRC=	jxlayout
 # post patch preprocessing
 POSTPATCH_FILES=	post-patch-aa
 # post configure placement directory
@@ -100,7 +100,30 @@ LIBJX=		1.5
 BROKEN=	Does not work with gcc 3.x
 .endif
 
-post-patch:
+# wrapper to allow makemake to work during build time
+# it requires some libs which are not available in build time
+makemake-extract-wrapper:
+	@${SED} \
+		-e 's|%libdir%|${WRKSRC}/lib|' \
+		-e 's|%makemake%|${WRKSRC}/programs/makemake/makemake|' \
+		${FILESDIR}/makemake-template \
+		> ${WRKDIR}/makemake
+	@${CHMOD} u+rx ${WRKDIR}/makemake
+
+# have all relevant places point to location of the makemake wrapper
+makemake-patch-path:
+	@${FIND} ${WRKSRC}/libjx ${WRKSRC}/libjcore
+		-name "Make*" \
+		-exec ${REINPLACE_CMD} -E \
+		-e 's|makemake;|${WRKDIR}/makemake;|' \
+		{} \;
+	@${REINPLACE_CMD} -E \
+		-e 's|; makemake;|; ${WRKDIR}/makemake;|' \
+		${WRKSRC}/lib/Makefile
+
+post-extract: makemake-extract-wrapper
+
+post-patch: makemake-patch-path
 .for i in ${CONFIGURE_PREPROCESSING_FILES}
 	@${CP} ${WRKSRC}/${POSTCONFIGURE_WRKSRC}/${i} ${WRKDIR}/${i}.in
 	@cd ${WRKDIR}; ${PATCH} -s ${i}.in < ${PATCHDIR}/${POSTPATCH_FILES}
