@@ -1,19 +1,19 @@
 @comment $FreeBSD$
-bin/cpp31
-bin/g++filt31
-bin/g++31
-bin/g77-31
-bin/gcc31
-bin/gcov31
-bin/%%GNU_HOST%%-gcc31
-bin/%%GNU_HOST%%-g++31
+bin/cpp32
+bin/g++filt32
+bin/g++32
+bin/g77-32
+bin/gcc32
+bin/gcov32
+bin/%%GNU_HOST%%-gcc32
+bin/%%GNU_HOST%%-g++32
 bin/gccbug-%%SNAPVER%%
-bin/gcj31
-bin/gcjh31
-bin/jv-scan31
-bin/jcf-dump31
-bin/jar31
-bin/grepjar31
+bin/gcj32
+bin/gcjh32
+bin/jv-scan32
+bin/jcf-dump32
+bin/jar32
+bin/grepjar32
 @comment not needed post-libstdc++-v3:	%%GNU_HOST%%/include/_G_config.h
 @comment Insert PLIST.gcc-lib here
 @comment -=[ begin PLIST.gcc-lib ]=-
