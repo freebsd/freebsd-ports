@@ -1,0 +1,32 @@
+--- configure.ori	Sat Mar 30 20:59:41 2002
++++ configure	Sat Mar 30 21:03:14 2002
+@@ -5564,7 +5564,7 @@
+   if test "x$kde_use_qt_emb" = "xyes"; then
+     qtlib="qte"
+   else
+-    qtlib="qt"
++    qtlib="qt2"
+   fi
+  
+   LIBQT="-l$qtlib"
+@@ -6003,16 +6003,16 @@
+ 	IFS=$kde_save_IFS
+ 
+         for dir in $dirs; do
+-	  if test -x "$dir/moc"; then
++	  if test -x "$dir/moc2"; then
+ 	    if test -n ""
+ 	    then
+-              evalstr="$dir/moc  2>&1 "
++              evalstr="$dir/moc2  2>&1 "
+ 	      if eval $evalstr; then
+-                kde_cv_path="$dir/moc"
++                kde_cv_path="$dir/moc2"
+                 break
+ 	      fi
+             else
+-		kde_cv_path="$dir/moc"
++		kde_cv_path="$dir/moc2"
+                 break
+ 	    fi
+           fi

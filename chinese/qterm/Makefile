@@ -6,17 +6,15 @@
 #
 
 PORTNAME=	qterm
-PORTVERSION=	0.1.3
+PORTVERSION=	0.1.4
 CATEGORIES=	chinese
-MASTER_SITES=	http://qterm.gnuchina.org/qterm-0.1.3/ \
+MASTER_SITES=	http://qterm.gnuchina.org/qterm-${PORTVERSION}/ \
 		ftp://freebsd.sinica.edu.tw/pub/statue/qterm/
-DISTNAME=	${PORTNAME}-${PORTVERSION}-1
 
 MAINTAINER=	statue@freebsd.sinica.edu.tw
 
 USE_QT_VER=	2
 USE_GMAKE=	yes
-
-WRKSRC=		${WRKDIR}/qterm-${PORTVERSION}/src
+HAS_CONFIGURE=	yes
 
 .include <bsd.port.mk>

@@ -1,0 +1,11 @@
+--- qterm/Makefile.in.ori	Sat Mar 30 21:38:05 2002
++++ qterm/Makefile.in	Sat Mar 30 21:38:11 2002
+@@ -142,7 +142,7 @@
+ LIB_KSPELL = @LIB_KSPELL@
+ LIB_KSYCOCA = @LIB_KSYCOCA@
+ LIB_KWRITE = @LIB_KWRITE@
+-LIB_QT = @LIB_QT@
++LIB_QT = -lqt2 @LIB_QT@
+ LIB_SMB = @LIB_SMB@
+ LIB_X11 = @LIB_X11@
+ LIB_XEXT = @LIB_XEXT@
