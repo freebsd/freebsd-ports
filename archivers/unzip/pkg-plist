@@ -6,3 +6,4 @@ bin/zipgrep
 share/doc/unzip/README
 share/doc/unzip/COPYING
 share/doc/unzip/WHERE
+@dirrm share/doc/unzip
