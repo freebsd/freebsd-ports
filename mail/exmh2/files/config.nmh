@@ -15,7 +15,9 @@ set faces(set,unknown) {domains unknown}
 set faces(set,news) {news}
 set faces(defaultDomain) !!DOMAIN!!
 set faces(suffix) {xpm gif xbm}
+set gpg(path) !!GPG!!
 set pgp(path) !!PGP!!
+set pgp5(path) !!PGP5!!
 set glimpse(path) !!GLIMPSE!!
 set sound(cmd) !!PLAY!!
 set exmh(library) !!PREFIX!!/lib/exmh-!!VERSION!!

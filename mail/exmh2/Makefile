@@ -1,41 +1,17 @@
 # New ports collection Makefile for:    exmh2
-# Version required:		2.0.2
-# Date released:		1 Jan 97
+# Version required:		2.1.0
+# Date created:			1 Jan 97
 # Whom:				Peter Wemm <peter@freebsd.org>
 #
 # $FreeBSD$
 #
 
 # "?=" lines are for sharing this Makefile with japanese/exmh2.
-DISTNAME=	exmh-2.0.2
+DISTNAME=	exmh-2.1.0
 CATEGORIES?=	mail tk80
 MASTER_SITES=	ftp://ftp.scriptics.com/pub/tcl/exmh/
-EXTRACT_SUFX=	.tar.Z
-
-PATCH_SITES=	http://www.beedub.com/exmh/patches/2.0.2/ \
-		http://www.beedub.com/exmh/patches/2.0.1/
-#PATCHFILES=	utils.patch folderNew.patch extrasInit.patch exec.patch \
-#		app-defaults.patch pgpMisc.patch seditMime.patch mime.patch \
-#		bindings.patch html_bindings.patch find.patch mh.patch \
-#		pgp.patch
-
-# User contributed and "new features".  Some not useable as-is.
-PATCHFILES+=	seditpost.patch inc.patch next.patch \
-		uri.patch extrasInit.patch folder.patch seditExtras.patch
-# XXX pgpExec.patch has got confused paths	(supplied as patch-as)
-# XXX newsgroups.patch is relative to a different directory (patch-at)
-# XXX MDN.patch doesn't apply			(patch-au)
-# XXX post.from.patch doesn't apply		(patch-av)
-# XXX date.patch doesn't apply (spammed whitespace) (patch-ax)
-.if defined(PATCH_DEBUG)
-PATCH_DIST_ARGS= -d ${WRKSRC}/lib -E ${PATCH_DIST_STRIP}
-.else
-PATCH_DIST_ARGS= -d ${WRKSRC}/lib --forward --quiet -E ${PATCH_DIST_STRIP}
-.endif
 
 MAINTAINER?=	peter@FreeBSD.org
-
-DIST_SUBDIR=	${DISTNAME}
 
 .if defined(JAPANESE_EXMH)
 RUN_DEPENDS=	wish8.0jp:${PORTSDIR}/japanese/tk80
@@ -67,7 +43,9 @@ RUN_DEPENDS+=	mmencode:${PORTSDIR}/mail/metamail
 # Additionally, exmh will use the following ports if present:
 # lang/expect
 # misc/glimpse
+# security/gnupg
 # security/pgp
+# security/pgp5
 # mail/faces
 # audio/rplay
 

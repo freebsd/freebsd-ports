@@ -23,7 +23,7 @@ then
 	mkdir ${PREFIX}/lib/exmh-${VERSION}
 fi
 
-LIBFILES='lib/*.tcl lib/*.bitmap lib/help.* lib/tclIndex lib/app-defaults lib/app-defaults-* lib/*.mask lib/*.exp lib/mime.types lib/*.au lib/PgpDecryptExpect'
+LIBFILES='lib/*.tcl lib/*.bitmap lib/*.gif lib/*.ppm lib/help.* lib/tclIndex lib/app-defaults lib/app-defaults-* lib/*.mask lib/*.exp lib/mime.types lib/*.au lib/PgpDecryptExpect'
 
 echo "install -c -o bin -g bin -m 444 ${LIBFILES} ${PREFIX}/lib/exmh-${VERSION}"
 install -c -o bin -g bin -m 444 ${LIBFILES} ${PREFIX}/lib/exmh-${VERSION}
@@ -35,4 +35,4 @@ then
 fi
 
 echo "install -c -o bin -g bin -m 444 lib/html/* ${PREFIX}/lib/exmh-${VERSION}/html"
-install -c -o bin -g bin -m 444 lib/html/* ${PREFIX}/lib/exmh-${VERSION}/html
+install -c -o bin -g bin -m 444 lib/html/*.html lib/html/*.gif ${PREFIX}/lib/exmh-${VERSION}/html
