@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mod_dav
-PORTVERSION=	1.0.2
+PORTVERSION=	1.0.3
 CATEGORIES=	www
 MASTER_SITES=	http://www.webdav.org/mod_dav/
 DISTNAME=	mod_dav-${PORTVERSION}-${APACHE_VERSION}
