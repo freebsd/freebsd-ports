@@ -25,7 +25,7 @@ CFLAGS+=	-DLATIN1=1
 
 .include <bsd.port.pre.mk>
 
-.for i in 0 1 2 3
+.for i in 0 1 2 3 4
 .if exists(${LOCALBASE}/bin/wish8.${i})
 CONFIGURE_ARGS=	--with-wish=${LOCALBASE}/bin/wish8.${i}
 RUN_DEPENDS=	${LOCALBASE}/bin/wish8.${i}:${PORTSDIR}/x11-toolkits/tk8${i}
