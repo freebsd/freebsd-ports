@@ -516,10 +516,7 @@ jdk%%JDK_VERSION%%/README
 jdk%%JDK_VERSION%%/README.FreeBSD
 jdk%%JDK_VERSION%%/CHANGES
 jdk%%JDK_VERSION%%/index.html
-@exec mkdir -p %D/share/java/classes
 @exec mkdir -p %D/share/doc/java
-@unexec rmdir %D/share/java/classes
-@unexec rmdir %D/share/java
 @unexec rmdir %D/share/doc/java
 @exec %D/bin/registervm "%D/jdk%%JDK_VERSION%%/bin/java # JDK%%JDK_VERSION%%"
 @unexec %D/bin/unregistervm JDK%%JDK_VERSION%%
