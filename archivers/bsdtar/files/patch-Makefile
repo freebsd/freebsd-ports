@@ -1,0 +1,17 @@
+--- Makefile.orig	Thu Jun  3 23:46:09 2004
++++ Makefile	Sun Jul 18 10:58:12 2004
+@@ -4,12 +4,8 @@
+ SRCS=	bsdtar.c matching.c read.c util.c write.c
+ WARNS?=	6
+ DPADD=	${LIBARCHIVE} ${LIBBZ2} ${LIBZ}
+-LDADD=	-larchive -lbz2 -lz
+-
+-.if defined(WITH_BSDTAR)
+-SYMLINKS=	${BINDIR}/bsdtar ${BINDIR}/tar
+-MLINKS=	bsdtar.1 tar.1
+-.endif
++LDADD=	-L%%LOCALBASE%%/lib/ %%LOCALBASE%%/lib/libarchive.a -lbz2 -lz
++CFLAGS+=-I%%LOCALBASE%%/include
+ 
+ .include <bsd.prog.mk>
+ 

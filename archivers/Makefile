@@ -9,6 +9,7 @@
     SUBDIR += arc
     SUBDIR += arj
     SUBDIR += bicom
+    SUBDIR += bsdtar
     SUBDIR += bzip
     SUBDIR += bzip2
     SUBDIR += cabextract

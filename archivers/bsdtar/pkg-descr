@@ -1,0 +1,4 @@
+The bsdtar program creates and manipulates streaming archive files.
+It has a number of advantages over previous tar implementations.
+
+WWW: http://people.freebsd.org/~kientzle/libarchive/
