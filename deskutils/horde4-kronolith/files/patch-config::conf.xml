@@ -1,0 +1,14 @@
+--- config/conf.xml.orig	Sun Oct  3 15:24:09 2004
++++ config/conf.xml	Mon Nov 29 21:48:21 2004
+@@ -13,9 +13,9 @@
+      <configstring name="driver" desc="What MCAL driver is being
+       used?">mstore</configstring>
+      <configstring name="username" desc="Connect to MCAL
+-      as">horde</configstring>
++      as">www</configstring>
+      <configstring name="password" required="false" desc="Password to connect
+-      with">****</configstring>
++      with">%%PASSCAL%%</configstring>
+     </configsection>
+    </case>
+ 
