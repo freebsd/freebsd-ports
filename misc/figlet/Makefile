@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://wuarchive.wustl.edu/graphics/graphics/misc/figlet/program/un
 		ftp://ftp.funet.fi/pub/unix/tools/figlet/program/unix/ \
 		ftp://ftp.internexus.net/pub/figlet/program/unix/ \
 		http://people.FreeBSD.org/~obrien/Distfiles/ \
-		ftp://ftp.nuxi.com/pub/misc/
+		ftp://nuxi.ucdavis.edu/pub/misc/
 
 MAINTAINER=	obrien@FreeBSD.org
 
