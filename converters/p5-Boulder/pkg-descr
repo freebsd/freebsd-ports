@@ -1,0 +1,12 @@
+Boulder IO is a simple TAG=VALUE data format designed for sharing
+data between programs connected via a pipe.  It is also simple
+enough to use as a common data exchange format between databases,
+Web pages, and other data representations.
+
+The basic data format is very simple.  It consists of a series of
+TAG=VALUE pairs separated by newlines.  It is record-oriented.
+The end of a record is indicated by an empty delimiter alone on a
+line.  The delimiter is "=" by default, but can be adjusted by the
+user.
+
+WWW: http://search.cpan.org/search?dist=Boulder
