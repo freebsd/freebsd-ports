@@ -352,6 +352,7 @@
     SUBDIR += phpSysInfo
     SUBDIR += phpbb
     SUBDIR += phpnuke
+    SUBDIR += plone
     SUBDIR += plugger
     SUBDIR += postnuke
     SUBDIR += pound
