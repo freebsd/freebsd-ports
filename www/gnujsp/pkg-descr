@@ -1,8 +1,0 @@
-GNUJSP is a free implementation of Sun's Java Server Pages. Once the
-GNUJSP servlet is correctly installed, files with the extension .jsp
-are translated into java source files, compiled, and run.
-
-WWW: http://www.klomp.org/gnujsp/
-
-- Palle Girgensohn
-girgen@partitur.se
