@@ -46,4 +46,25 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+# FreeBSD byteswap optimized routines
+.if ${ARCH} == "i386"
+. if (defined(MACHINE_CPU) && ${MACHINE_CPU:Mi486} == "i486")
+WITH_OPTIMIZED_BYTESWAP=yes
+. endif
+
+. if defined(WITH_OPTIMIZED_BYTESWAP)
+EXTRA_PATCHES=	${FILESDIR}/extra-patch-dvdread::bswap.h
+. endif
+.endif
+
+pre-everything::
+.ifndef(WITH_OPTIMIZED_BYTESWAP)
+	@${ECHO_MSG} '===>'
+	@${ECHO_MSG} '===> Define WITH_OPTIMIZED_BYTESWAP to use optimized byteswap'
+	@${ECHO_MSG} '===> routines. This works only in the i386 architecture, and'
+	@${ECHO_MSG} '===> only with 486 processors and above.'
+.endif
+
+.include <bsd.port.post.mk>
