@@ -5,7 +5,7 @@ bin/zsh-%%ZSH_VER%%
 @unexec install-info --delete %D/info/zsh.info %D/info/dir
 info/zsh.info
 @exec install-info %D/info/zsh.info %D/info/dir
-%%LIBZSH%%
+lib/zsh/libzsh-%%ZSH_VER%%.so
 lib/zsh/%%ZSH_VER%%/cap.so
 lib/zsh/%%ZSH_VER%%/clone.so
 lib/zsh/%%ZSH_VER%%/compctl.so
