@@ -4845,7 +4845,6 @@ log_analysis	ports/sysutils/log_analysis
 logcheck	ports/security/logcheck
 login.app	ports/x11/login.app
 logjam		ports/deskutils/logjam
-logjam2		ports/deskutils/logjam2
 logmon		ports/sysutils/logmon
 logo		ports/lang/logo
 logrotate	ports/sysutils/logrotate
