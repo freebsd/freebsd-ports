@@ -15,6 +15,10 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}
 MAINTAINER=	shoesoft@gmx.net
 COMMENT=	Command-line player/decoder for musepack audio
 
+DEPRECATED=	"Newer version in audio/musepack"
+EXPIRATION_DATE=2004-07-18
+IGNORE=		${DEPRECATED}
+
 LIB_DEPENDS=	esd.2:${PORTSDIR}/audio/esound
 
 MAKEFILE=	Makefile.bsd
