@@ -368,3 +368,4 @@ audio/xnap|net/xnap|2003-06-02|accurate category
 x11-wm/bbrun|x11/bbrun|2003-06-03|accurate category
 x11-wm/bbapm|sysutils/bbapm|2003-06-03|accurate category
 x11-wm/icemc|misc/icemc|2003-06-03|accurate category
+net/bittorrent|net/py-bittorrent|2003-06-06|duplicate entry
