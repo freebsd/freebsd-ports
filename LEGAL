@@ -24,13 +24,13 @@ Such ports are listed below:
 Dist			Port			Why
 ------------------------------------------------------------------------------
 112887-04.tar		editors/staroffice60	Must be bought and downloaded
-						direct from Sun via WWW
+						directly from Sun via WWW
 						interface
 116518-03.tar		editors/staroffice70	Must be bought and downloaded
-						direct from Sun via WWW
+						directly from Sun via WWW
 						interface
 116518-03.tar		german/staroffice70	Must be bought and downloaded
-						direct from Sun via WWW
+						directly from Sun via WWW
 						interface
 5400s_fbsd_cli_v10.zip	sysutils/aaccli		May not be redistributed in
 						binary form
@@ -68,7 +68,7 @@ bicom*			archivers/bicom		Contact author personally
 bk-*-x86-freebsd*	devel/bitkeeper		Redistribution is not permitted
 blast-freebsd*		biology/blast		Must be downloaded from vendor site
 bnetd			games/bnetd		Has been disabled for legal issue
-bomb.tar.gz		games/bomb		Mixture of GPL and X license
+bomb.tar.gz		games/bomb		Mixture of GPL and X11 license
 boodler-*		audio/boodler		Not for commercial use
 BMRT*.tar.gz		graphics/linux-bmrt	License restrictions
 boodler-*		audio/boodler		No commercial use
@@ -501,11 +501,11 @@ simpjava.tar.gz		java/simplicity		Restrictive license
 ski-*.i386.rpm		emulators/ski		Restrictive license
 skype_ver-*		net/skype		Not for redistribution
 so-*-ga-bin-linux-en.*	editors/staroffice60	Must be bought and downloaded
-						direct from Sun via WWW interface
+						directly from Sun via WWW interface
 so-7-ga-bin-linux-de.*	german/staroffice70	Must be bought and downloaded
-						direct from Sun via WWW interface
+						directly from Sun via WWW interface
 so-7-ga-bin-linux-en.*	editors/staroffice70	Must be bought and downloaded
-						direct from Sun via WWW interface
+						directly from Sun via WWW interface
 socks5-*		net/socks5		No commercial use
 SpaceAryarya-KXL-*	games/spacearyarya	Possible copyright infringement
 speedmgmt*		net/pppoa		Not for redistribution -- see
