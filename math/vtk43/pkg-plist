@@ -1,9 +1,60 @@
 bin/vtk
 lib/libVTKCommon.so
 lib/libVTKCommonTcl.so
+lib/libVTKCommonPython.so
 lib/libVTKGraphics.so
 lib/libVTKGraphicsTcl.so
+lib/libVTKGraphicsPython.so
 lib/libVTKImaging.so
 lib/libVTKImagingTcl.so
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
+lib/libVTKImagingPython.so
+lib/libVTKContrib.so
+lib/libVTKContribTcl.so
+lib/libVTKContribPython.so
+lib/vtk/python/VTK.py
+lib/vtk/python/VTK.pyc
+lib/vtk/python/VTK.pyo
+lib/vtk/python/libVTKCommonPython.py
+lib/vtk/python/libVTKCommonPython.pyc
+lib/vtk/python/libVTKCommonPython.pyo
+lib/vtk/python/libVTKContribPython.py
+lib/vtk/python/libVTKContribPython.pyc
+lib/vtk/python/libVTKContribPython.pyo
+lib/vtk/python/libVTKGraphicsPython.py
+lib/vtk/python/libVTKGraphicsPython.pyc
+lib/vtk/python/libVTKGraphicsPython.pyo
+lib/vtk/python/libVTKImagingPython.py
+lib/vtk/python/libVTKImagingPython.pyc
+lib/vtk/python/libVTKImagingPython.pyo
+lib/vtk/python/libVTKLocalPython.py
+lib/vtk/python/libVTKLocalPython.pyc
+lib/vtk/python/libVTKLocalPython.pyo
+lib/vtk/python/libVTKPatentedPython.py
+lib/vtk/python/libVTKPatentedPython.pyc
+lib/vtk/python/libVTKPatentedPython.pyo
+lib/vtk/python/vtkConstants.py
+lib/vtk/python/vtkConstants.pyc
+lib/vtk/python/vtkConstants.pyo
+lib/vtk/python/vtkImageExportToArray.py
+lib/vtk/python/vtkImageExportToArray.pyc
+lib/vtk/python/vtkImageExportToArray.pyo
+lib/vtk/python/vtkImageImportFromArray.py
+lib/vtk/python/vtkImageImportFromArray.pyc
+lib/vtk/python/vtkImageImportFromArray.pyo
+lib/vtk/python/vtkImageViewerWidget.py
+lib/vtk/python/vtkImageViewerWidget.pyc
+lib/vtk/python/vtkImageViewerWidget.pyo
+lib/vtk/python/vtkImageWindowWidget.py
+lib/vtk/python/vtkImageWindowWidget.pyc
+lib/vtk/python/vtkImageWindowWidget.pyo
+lib/vtk/python/vtkRenderWidget.py
+lib/vtk/python/vtkRenderWidget.pyc
+lib/vtk/python/vtkRenderWidget.pyo
+lib/vtk/python/vtkpython.so                          
+lib/vtk/python/vtkTkImageViewerWidget                
+lib/vtk/python/vtkTkImageWindowWidget                
+lib/vtk/python/vtkTkRenderWidget                     
+@dirrm lib/vtk/python
+@dirrm lib/vtk
+@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %D/lib
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
