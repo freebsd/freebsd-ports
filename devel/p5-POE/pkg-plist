@@ -34,44 +34,43 @@ lib/perl5/site_perl/%%PERL_VER%%/POE/Wheel/ReadLine.pm
 lib/perl5/site_perl/%%PERL_VER%%/POE/Wheel/ReadWrite.pm
 lib/perl5/site_perl/%%PERL_VER%%/POE/Wheel/Run.pm
 lib/perl5/site_perl/%%PERL_VER%%/POE/Wheel/SocketFactory.pm
-%%PORTDOCS%%share/examples/p5-POE/create.perl
-%%PORTDOCS%%share/examples/p5-POE/fakelogin.perl
-%%PORTDOCS%%share/examples/p5-POE/filterchange.perl
-%%PORTDOCS%%share/examples/p5-POE/followtail.perl
-%%PORTDOCS%%share/examples/p5-POE/forkbomb.perl
-%%PORTDOCS%%share/examples/p5-POE/httpd.perl
-%%PORTDOCS%%share/examples/p5-POE/names.perl
-%%PORTDOCS%%share/examples/p5-POE/neural-net.perl
-%%PORTDOCS%%share/examples/p5-POE/objmaps.perl
-%%PORTDOCS%%share/examples/p5-POE/objsessions.perl
-%%PORTDOCS%%share/examples/p5-POE/packagesessions.perl
-%%PORTDOCS%%share/examples/p5-POE/preforkedserver.perl
-%%PORTDOCS%%share/examples/p5-POE/proxy.perl
-%%PORTDOCS%%share/examples/p5-POE/queue.perl
-%%PORTDOCS%%share/examples/p5-POE/readline.perl
-%%PORTDOCS%%share/examples/p5-POE/ref-type.perl
-%%PORTDOCS%%share/examples/p5-POE/refsender.perl
-%%PORTDOCS%%share/examples/p5-POE/refserver.perl
-%%PORTDOCS%%share/examples/p5-POE/selects.perl
-%%PORTDOCS%%share/examples/p5-POE/sessions.perl
-%%PORTDOCS%%share/examples/p5-POE/signals.perl
-%%PORTDOCS%%share/examples/p5-POE/socketfactory.perl
-%%PORTDOCS%%share/examples/p5-POE/thrash.perl
-%%PORTDOCS%%share/examples/p5-POE/tk.perl
-%%PORTDOCS%%share/examples/p5-POE/tutorial-chat.perl
-%%PORTDOCS%%share/examples/p5-POE/udp.perl
-%%PORTDOCS%%share/examples/p5-POE/watermarks.perl
-%%PORTDOCS%%share/examples/p5-POE/wheels.perl
-%%PORTDOCS%%share/examples/p5-POE/wheels2.perl
-%%PORTDOCS%%@dirrm share/examples/p5-POE
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/POE/Component/Client
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/POE/Component/Server
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/POE/Component
+%%PORTDOCS%%%%EXAMPLESDIR%%/create.perl
+%%PORTDOCS%%%%EXAMPLESDIR%%/fakelogin.perl
+%%PORTDOCS%%%%EXAMPLESDIR%%/filterchange.perl
+%%PORTDOCS%%%%EXAMPLESDIR%%/followtail.perl
+%%PORTDOCS%%%%EXAMPLESDIR%%/forkbomb.perl
+%%PORTDOCS%%%%EXAMPLESDIR%%/httpd.perl
+%%PORTDOCS%%%%EXAMPLESDIR%%/names.perl
+%%PORTDOCS%%%%EXAMPLESDIR%%/neural-net.perl
+%%PORTDOCS%%%%EXAMPLESDIR%%/objmaps.perl
+%%PORTDOCS%%%%EXAMPLESDIR%%/objsessions.perl
+%%PORTDOCS%%%%EXAMPLESDIR%%/packagesessions.perl
+%%PORTDOCS%%%%EXAMPLESDIR%%/preforkedserver.perl
+%%PORTDOCS%%%%EXAMPLESDIR%%/proxy.perl
+%%PORTDOCS%%%%EXAMPLESDIR%%/queue.perl
+%%PORTDOCS%%%%EXAMPLESDIR%%/readline.perl
+%%PORTDOCS%%%%EXAMPLESDIR%%/ref-type.perl
+%%PORTDOCS%%%%EXAMPLESDIR%%/refsender.perl
+%%PORTDOCS%%%%EXAMPLESDIR%%/refserver.perl
+%%PORTDOCS%%%%EXAMPLESDIR%%/selects.perl
+%%PORTDOCS%%%%EXAMPLESDIR%%/sessions.perl
+%%PORTDOCS%%%%EXAMPLESDIR%%/signals.perl
+%%PORTDOCS%%%%EXAMPLESDIR%%/socketfactory.perl
+%%PORTDOCS%%%%EXAMPLESDIR%%/thrash.perl
+%%PORTDOCS%%%%EXAMPLESDIR%%/tk.perl
+%%PORTDOCS%%%%EXAMPLESDIR%%/tutorial-chat.perl
+%%PORTDOCS%%%%EXAMPLESDIR%%/udp.perl
+%%PORTDOCS%%%%EXAMPLESDIR%%/watermarks.perl
+%%PORTDOCS%%%%EXAMPLESDIR%%/wheels.perl
+%%PORTDOCS%%%%EXAMPLESDIR%%/wheels2.perl
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/POE/Component/Client 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/POE/Component/Server 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/POE/Component 2>/dev/null || true
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/POE/Driver
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/POE/Filter
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/POE/Filter 2>/dev/null || true
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/POE/Kernel
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/POE/Pipe
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/POE/Wheel
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/POE
 @unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/POE 2>/dev/null || true
 @unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/POE 2>/dev/null || true
