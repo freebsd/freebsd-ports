@@ -14,8 +14,6 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}.20030325
 MAINTAINER=	hendrik@scholz.net
 COMMENT=	A text-console utility for video stream processing
 
-BROKEN=		"Broken pkg-plist"
-
 LIB_DEPENDS=	dvdread.3:${PORTSDIR}/multimedia/libdvdread \
 		gnugetopt.1:${PORTSDIR}/devel/libgnugetopt \
 		jpeg.9:${PORTSDIR}/graphics/jpeg

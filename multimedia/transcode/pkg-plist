@@ -37,7 +37,7 @@ lib/transcode/export_mjpeg.so
 %%WITH_MJPEG%%lib/transcode/export_mp2enc.so
 lib/transcode/export_net.so
 lib/transcode/export_null.so
-%%WITH_OGG%%lib/transcode/export_ogg.so
+lib/transcode/export_ogg.so
 lib/transcode/export_pcm.so
 lib/transcode/export_ppm.so
 lib/transcode/export_raw.so
@@ -70,7 +70,7 @@ lib/transcode/filter_mask.so
 lib/transcode/filter_normalize.so
 lib/transcode/filter_null.so
 %%WITH_SDL%%lib/transcode/filter_preview.so
-lib/transcode/filter_pv.so
+%%WITH_LIBDV%%lib/transcode/filter_pv.so
 lib/transcode/filter_resample.so
 lib/transcode/filter_skip.so
 lib/transcode/filter_smartdeinter.so
@@ -104,7 +104,7 @@ lib/transcode/import_net.so
 lib/transcode/import_null.so
 lib/transcode/import_nuv.so
 lib/transcode/import_nvrec.so
-%%WITH_OGG%%lib/transcode/import_ogg.so
+lib/transcode/import_ogg.so
 lib/transcode/import_raw.so
 lib/transcode/import_rawlist.so
 lib/transcode/import_vdrac3.so
