@@ -1,7 +1,10 @@
 
 Assuming you have changed to /usr/local, please copy
-www/aolserver/nsd.tcl.sample to www/aolserver/nsd.tcl and season to
-taste.  An example server is in at www/aolserver/servers/server1, and
+aolserver/nsd.tcl.sample to aolserver/nsd.tcl and season to
+taste.  An example server is in at aolserver/servers/server1, and
 you should similarly copy the contents of this directory to, e.g.,
-www/aolserver/servers/www.mydomain.com before modifying them.
+aolserver/servers/www.mydomain.com before modifying them.  
+
+These files are examples only and will be deleted if you remove this
+port.
 

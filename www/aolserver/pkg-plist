@@ -1,129 +1,44 @@
-etc/rc.d/aolserver.sh
-www/aolserver/nsd.tcl.sample
-www/aolserver/modules/tcl/nsssl/admin.tcl
-www/aolserver/modules/tcl/nsssl/certs.tcl
-www/aolserver/modules/tcl/nsssl/keys.tcl
-www/aolserver/modules/tcl/nsssl/osi.tcl
-www/aolserver/modules/tcl/nsssl/util.tcl
-www/aolserver/modules/tcl/admin.tcl
-www/aolserver/modules/tcl/debug.tcl
-www/aolserver/modules/tcl/fastpath.tcl
-www/aolserver/modules/tcl/file.tcl
-www/aolserver/modules/tcl/form.tcl
-www/aolserver/modules/tcl/http.tcl
-www/aolserver/modules/tcl/init.tcl
-www/aolserver/modules/tcl/modlog.tcl
-www/aolserver/modules/tcl/namespace.tcl
-www/aolserver/modules/tcl/nsdb.tcl
-www/aolserver/modules/tcl/prodebug.tcl
-www/aolserver/modules/tcl/sendmail.tcl
-www/aolserver/modules/tcl/unsupp.tcl
-www/aolserver/modules/tcl/about.tcl
-www/aolserver/modules/tcl/util.tcl
-www/aolserver/modules/tcl/nsperm/compat.tcl
-www/aolserver/modules/tcl/nsperm/init.tcl
-include/aolserver/ns.h
-include/aolserver/nsextmsg.h
-include/aolserver/nspd.h
-include/aolserver/nsthread.h
-include/aolserver/tcl.h
-include/aolserver/tcl76.h
-include/aolserver/tcl82.h
-include/aolserver/tclDecls.h
-include/aolserver/nsd.h
-info/dir
-lib/libnspd.a
-libexec/aolserver/nscgi.so
-libexec/aolserver/nscp.so
-libexec/aolserver/nsext.so
-libexec/aolserver/nslog.so
-libexec/aolserver/nsperm.so
-libexec/aolserver/nssock.so
-libexec/aolserver/nsunix.so
-libexec/aolserver/nsvhr.so
-sbin/nsd76
-sbin/nsd82
-sbin/nsd
-sbin/translate-ini
-sbin/translate-tcl
-share/doc/aolserver/asem.html
-share/doc/aolserver/urlspace.txt
-share/doc/aolserver/CHANGES.b5
-share/doc/aolserver/CHANGES.b6
-share/doc/aolserver/INSTALL
-share/doc/aolserver/README
-share/doc/aolserver/README.NSV
-share/examples/aolserver/c/alias/alias.c
-share/examples/aolserver/c/alias/makefile
-share/examples/aolserver/c/alias/nsd.tcl
-share/examples/aolserver/c/counter/counter.c
-share/examples/aolserver/c/counter/makefile
-share/examples/aolserver/c/counter/nsd.tcl
-share/examples/aolserver/c/logrefer/logrefer.c
-share/examples/aolserver/c/logrefer/makefile
-share/examples/aolserver/c/logrefer/nsd.tcl
-share/examples/aolserver/c/makefile
-share/examples/aolserver/c/nscommdrv/makefile
-share/examples/aolserver/c/nscommdrv/nscommdrv.c
-share/examples/aolserver/c/nscommdrv/nsd.tcl
-share/examples/aolserver/c/nshello/makefile
-share/examples/aolserver/c/nshello/nsd.tcl
-share/examples/aolserver/c/nshello/nshello.c
-share/examples/aolserver/c/nsproxy/display.c
-share/examples/aolserver/c/nsproxy/display.h
-share/examples/aolserver/c/nsproxy/makefile
-share/examples/aolserver/c/nsproxy/nsd.tcl
-share/examples/aolserver/c/nsproxy/nsproxy.c
-share/examples/aolserver/c/postgres/makefile
-share/examples/aolserver/c/postgres/nsd.tcl
-share/examples/aolserver/c/postgres/postgres.c
-share/examples/aolserver/c/stats/makefile
-share/examples/aolserver/c/stats/nsd.tcl
-share/examples/aolserver/c/stats/stats.c
-share/examples/aolserver/c/tclcs/makefile
-share/examples/aolserver/c/tclcs/nsd.tcl
-share/examples/aolserver/c/tclcs/tclcs.c
-share/examples/aolserver/c/tclhello/makefile
-share/examples/aolserver/c/tclhello/nsd.tcl
-share/examples/aolserver/c/tclhello/tclhello.c
-share/examples/aolserver/c/tests/makefile
-share/examples/aolserver/c/tests/nsd.tcl
-share/examples/aolserver/c/tests/tests.c
-www/aolserver/servers/server1/pages/index.html
-www/aolserver/servers/server1/modules/nsperm/perms
-www/aolserver/servers/server1/modules/nsperm/hosts.deny
-www/aolserver/servers/server1/modules/nsperm/hosts.allow
-www/aolserver/servers/server1/modules/nsperm/group
-www/aolserver/servers/server1/modules/nsperm/passwd
-@dirrm include/aolserver
-@dirrm libexec/aolserver
-@dirrm share/doc/aolserver
-@dirrm share/examples/aolserver/c/alias
-@dirrm share/examples/aolserver/c/counter
-@dirrm share/examples/aolserver/c/logrefer
-@dirrm share/examples/aolserver/c/nscommdrv
-@dirrm share/examples/aolserver/c/nshello
-@dirrm share/examples/aolserver/c/nsproxy
-@dirrm share/examples/aolserver/c/postgres
-@dirrm share/examples/aolserver/c/stats
-@dirrm share/examples/aolserver/c/tclcs
-@dirrm share/examples/aolserver/c/tclhello
-@dirrm share/examples/aolserver/c/tests
-@dirrm share/examples/aolserver/c
-@dirrm share/examples/aolserver
-@dirrm www/aolserver/modules/tcl/nsssl
-@dirrm www/aolserver/modules/tcl/nsperm
-@dirrm www/aolserver/modules/tcl
-@dirrm www/aolserver/modules/nsunix
-@dirrm www/aolserver/modules
-@dirrm www/aolserver/servers/server1/modules/tcl
-@dirrm www/aolserver/servers/server1/modules/nscp
-@dirrm www/aolserver/servers/server1/modules/nsperm
-@dirrm www/aolserver/servers/server1/modules/nslog
-@dirrm www/aolserver/servers/server1/modules
-@dirrm www/aolserver/servers/server1/pages
-@dirrm www/aolserver/servers/server1
-@dirrm www/aolserver/servers
-@dirrm www/aolserver/log
-@dirrm www/aolserver
-@unexec rmdir %D/www 2>/dev/null || true
+aolserver/bin/translate-ini
+aolserver/bin/translate-tcl
+aolserver/bin/nsd8x
+aolserver/bin/nsd76
+aolserver/bin/nsd
+aolserver/bin/nssock.so
+aolserver/bin/nscgi.so
+aolserver/bin/nscp.so
+aolserver/bin/nslog.so
+aolserver/bin/nsperm.so
+aolserver/bin/nsext.so
+aolserver/modules/tcl/util.tcl
+aolserver/modules/tcl/fastpath.tcl
+aolserver/modules/tcl/file.tcl
+aolserver/modules/tcl/form.tcl
+aolserver/modules/tcl/http.tcl
+aolserver/modules/tcl/init.tcl
+aolserver/modules/tcl/modlog.tcl
+aolserver/modules/tcl/namespace.tcl
+aolserver/modules/tcl/nsdb.tcl
+aolserver/modules/tcl/prodebug.tcl
+aolserver/modules/tcl/sendmail.tcl
+aolserver/modules/tcl/debug.tcl
+aolserver/modules/tcl/nsperm/compat.tcl
+aolserver/modules/tcl/nsperm/init.tcl
+aolserver/servers/server1/modules/nsperm/perms
+aolserver/servers/server1/modules/nsperm/hosts.deny
+aolserver/servers/server1/modules/nsperm/hosts.allow
+aolserver/servers/server1/modules/nsperm/group
+aolserver/servers/server1/modules/nsperm/passwd
+aolserver/servers/server1/pages/index.html
+aolserver/nsd.tcl.sample
+@dirrm aolserver/bin
+@dirrm aolserver/log
+@dirrm aolserver/modules/tcl/nsperm
+@dirrm aolserver/modules/tcl
+@dirrm aolserver/modules
+@dirrm aolserver/servers/server1/modules/nslog
+@dirrm aolserver/servers/server1/modules/nsperm
+@dirrm aolserver/servers/server1/modules
+@dirrm aolserver/servers/server1/pages
+@dirrm aolserver/servers/server1
+@dirrm aolserver/servers
+@dirrm aolserver
