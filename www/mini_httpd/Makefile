@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	mini_httpd
-PORTVERSION=	1.17b1
+PORTVERSION=	1.18
 CATEGORIES=	www
 MASTER_SITES=	http://www.acme.com/software/mini_httpd/
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/b/beta/}
+DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	se@FreeBSD.org
 COMMENT=	Small HTTP server with support for GET, HEAD, POST, CGI, SSL, IPv6

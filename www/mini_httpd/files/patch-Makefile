@@ -1,5 +1,5 @@
---- Makefile.orig	Thu Jan  3 00:07:27 2002
-+++ Makefile	Tue Jul 30 13:38:04 2002
+--- Makefile.orig	Thu Oct 30 22:53:07 2003
++++ Makefile	Thu Oct 30 23:03:24 2003
 @@ -14,17 +14,18 @@
  # http://www.openssl.org/  Make sure the SSL_TREE definition points to the
  # tree with your OpenSSL installation - depending on how you installed it,
@@ -24,3 +24,13 @@
  #CFLAGS =	-g ${CDEFS}
  LDFLAGS =	-s
  #LDFLAGS =	-g
+@@ -76,9 +77,7 @@
+ 	-mkdir -p ${BINDIR}
+ 	cp mini_httpd htpasswd ${BINDIR}
+ 	rm -f ${MANDIR}/man8/mini_httpd.8 ${MANDIR}/man1/htpasswd.1
+-	-mkdir -p ${MANDIR}/man8
+ 	cp mini_httpd.8 ${MANDIR}/man8
+-	-mkdir -p ${MANDIR}/man1
+ 	cp htpasswd.1 ${MANDIR}/man1
+ 
+ clean:
