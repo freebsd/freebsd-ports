@@ -22,7 +22,7 @@ DISTFILES=	\
 		mule-base-1.34-pkg.tar.gz \
 		skk-1.15-pkg.tar.gz
 
-MAINTAINER=	KIRIYAMA Kazuhiko<kiri@pis.toba-cmt.ac.jp>
+MAINTAINER=	kiri@pis.toba-cmt.ac.jp
 
 DIST_SUBDIR=	xemacs
 MASTER_SITE_SUBDIR=${DIST_SUBDIR}

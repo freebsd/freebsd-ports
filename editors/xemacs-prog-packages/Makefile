@@ -25,7 +25,7 @@ DISTFILES=	\
 		vc-cc-1.13-pkg.tar.gz \
 		vhdl-1.10-pkg.tar.gz
 
-MAINTAINER=	KIRIYAMA Kazuhiko<kiri@pis.toba-cmt.ac.jp>
+MAINTAINER=	kiri@pis.toba-cmt.ac.jp
 
 DIST_SUBDIR=	xemacs
 MASTER_SITE_SUBDIR=${DIST_SUBDIR}

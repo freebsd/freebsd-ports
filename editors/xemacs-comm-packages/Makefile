@@ -29,7 +29,7 @@ DISTFILES=	\
 		vm-1.22-pkg.tar.gz \
 		zenirc-1.07-pkg.tar.gz
 
-MAINTAINER=	KIRIYAMA Kazuhiko<kiri@pis.toba-cmt.ac.jp>
+MAINTAINER=	kiri@pis.toba-cmt.ac.jp
 
 DIST_SUBDIR=	xemacs
 MASTER_SITE_SUBDIR=${DIST_SUBDIR}

@@ -20,7 +20,7 @@ DISTFILES=	\
 		leim-1.15-pkg.tar.gz \
 		lookup-1.04-pkg.tar.gz
 
-MAINTAINER=	KIRIYAMA Kazuhiko<kiri@pis.toba-cmt.ac.jp>
+MAINTAINER=	kiri@pis.toba-cmt.ac.jp
 
 DIST_SUBDIR=	xemacs
 MASTER_SITE_SUBDIR=${DIST_SUBDIR}
