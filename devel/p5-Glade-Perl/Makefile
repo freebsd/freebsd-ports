@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	Glade-Perl
-PORTVERSION=	0.60
+PORTVERSION=	0.61
 CATEGORIES=	devel perl5 gnome
-MASTER_SITES=	http://www.glade.perl.connectfree.co.uk/ \
-		${MASTER_SITE_PERL_CPAN}
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Glade
 PKGNAMEPREFIX=	p5-
 
@@ -20,7 +19,8 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Gnome.p
 RUN_DEPENDS=	${BUILD_DEPENDS} \
 		glade:${PORTSDIR}/devel/glade
 
-USE_GNOME=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gnomeprefix
 PERL_CONFIGURE=	yes
 
 MAN3PREFIX=     ${LOCALBASE}/lib/perl5/${PERL_VERSION}
