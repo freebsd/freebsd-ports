@@ -1,8 +1,0 @@
-bin/gettext-old
-bin/gettextize-old
-bin/msgcmp-old
-bin/msgcomm-old
-bin/msgfmt-old
-bin/msgmerge-old
-bin/msgunfmt-old
-bin/xgettext-old

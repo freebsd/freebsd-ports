@@ -1978,7 +1978,6 @@ getfacl		src/bin/getfacl
 getmail		ports/mail/getmail
 getopt		src/usr.bin/getopt
 gettext		ports/devel/gettext
-gettext-old	ports/devel/gettext-old
 getty		src/libexec/getty
 getxml		ports/devel/getxml
 gevas		ports/x11-toolkits/gevas
