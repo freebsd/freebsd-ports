@@ -1,0 +1,15 @@
+NOTES:
+
+Please copy /var/spool/wwwoffle/wwwoffle.conf.install to
+/var/spool/wwwoffle/wwwoffle.conf, and edit the copy as needed.
+
+If you are upgrading from an old version of wwwoffle, you may need to
+convert the cache directory structure to work with the new version.  You
+can find programs in the WWWOFFLE distribution tarball to do this, along
+with instructions about what is needed.  A more common requirement is to run
+the `upgrade-config.pl' script, so you will find a copy of this in
+/var/spool/wwwoffle/upgrade-config.pl.  You should run this on your
+configuration file, e.g.:
+
+     $ perl /var/spool/wwwoffle/upgrade-config.pl \
+            /var/spool/wwwoffle/wwwoffle.conf

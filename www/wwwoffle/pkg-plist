@@ -1,5 +1,3 @@
-bin/endian-cache
-bin/upgrade-cache
 bin/wwwoffle
 bin/wwwoffle-ls
 bin/wwwoffle-mv
@@ -7,125 +5,24 @@ bin/wwwoffle-read
 bin/wwwoffle-rm
 bin/wwwoffle-tools
 bin/wwwoffle-write
-doc/wwwoffle/CHANGES.CONF
-doc/wwwoffle/CONVERT
-doc/wwwoffle/COPYING
-doc/wwwoffle/FAQ
-doc/wwwoffle/INSTALL
-doc/wwwoffle/NEWS
-doc/wwwoffle/README
-doc/wwwoffle/README.1st
-doc/wwwoffle/README.CONF
-doc/wwwoffle/README.PWD
-doc/wwwoffle/README.htdig
-doc/wwwoffle/UPGRADE
-@dirrm doc/wwwoffle
 etc/rc.d/wwwoffled.sh
 sbin/wwwoffled
+share/doc/wwwoffle/CHANGES.CONF
+share/doc/wwwoffle/CONVERT
+share/doc/wwwoffle/COPYING
+share/doc/wwwoffle/FAQ
+share/doc/wwwoffle/INSTALL
+share/doc/wwwoffle/NEWS
+share/doc/wwwoffle/README
+share/doc/wwwoffle/README.1st
+share/doc/wwwoffle/README.CONF
+share/doc/wwwoffle/README.PWD
+share/doc/wwwoffle/README.htdig
+share/doc/wwwoffle/README.lang
+share/doc/wwwoffle/README.win32
+share/doc/wwwoffle/UPGRADE
+@dirrm share/doc/wwwoffle
 @cwd /var/spool
-wwwoffle/hold/html/FAQ.html
-wwwoffle/hold/html/Welcome.html
-wwwoffle/hold/html/fixup-install.sh
-wwwoffle/hold/html/htdig/button1.gif
-wwwoffle/hold/html/htdig/button10.gif
-wwwoffle/hold/html/htdig/button2.gif
-wwwoffle/hold/html/htdig/button3.gif
-wwwoffle/hold/html/htdig/button4.gif
-wwwoffle/hold/html/htdig/button5.gif
-wwwoffle/hold/html/htdig/button6.gif
-wwwoffle/hold/html/htdig/button7.gif
-wwwoffle/hold/html/htdig/button8.gif
-wwwoffle/hold/html/htdig/button9.gif
-wwwoffle/hold/html/htdig/buttonl.gif
-wwwoffle/hold/html/htdig/buttonr.gif
-wwwoffle/hold/html/htdig/conf/CONFIG
-wwwoffle/hold/html/htdig/conf/htdig-full.conf
-wwwoffle/hold/html/htdig/conf/htdig-incr.conf
-wwwoffle/hold/html/htdig/conf/htfuzzy.conf
-wwwoffle/hold/html/htdig/conf/htmerge.conf
-wwwoffle/hold/html/htdig/conf/htsearch.conf
-wwwoffle/hold/html/htdig/htdig.gif
-wwwoffle/hold/html/htdig/index.html
-wwwoffle/hold/html/htdig/scripts/wwwoffle-htdig-full
-wwwoffle/hold/html/htdig/scripts/wwwoffle-htdig-incr
-wwwoffle/hold/html/htdig/scripts/wwwoffle-htsearch
-wwwoffle/hold/html/htdig/search.html
-wwwoffle/hold/html/htdig/star.gif
-wwwoffle/hold/html/htdig/star_blank.gif
-wwwoffle/hold/html/htdig/start1.html
-wwwoffle/hold/html/htdig/start2.html
-wwwoffle/hold/html/htdig/start3.html
-wwwoffle/hold/html/htdig/start4.html
-wwwoffle/hold/html/index.html
-wwwoffle/hold/html/local/images/trans-1x1.gif
-wwwoffle/hold/html/messages/AddCacheInfo.html
-wwwoffle/hold/html/messages/CantRefreshPosted.html
-wwwoffle/hold/html/messages/ConfigEditPage-Body.html
-wwwoffle/hold/html/messages/ConfigEditPage-Head.html
-wwwoffle/hold/html/messages/ConfigEditPage-Tail.html
-wwwoffle/hold/html/messages/ConfigError.html
-wwwoffle/hold/html/messages/ConfigUpdate.html
-wwwoffle/hold/html/messages/ConfirmRequest.html
-wwwoffle/hold/html/messages/ControlAuthFail.html
-wwwoffle/hold/html/messages/ControlDelete.html
-wwwoffle/hold/html/messages/ControlIllegal.html
-wwwoffle/hold/html/messages/ControlPage.html
-wwwoffle/hold/html/messages/ControlWWWOFFLE-Head.html
-wwwoffle/hold/html/messages/ControlWWWOFFLE-Tail.html
-wwwoffle/hold/html/messages/FTPDir-Head.html
-wwwoffle/hold/html/messages/FTPDir-Tail.html
-wwwoffle/hold/html/messages/FTPDirRedirect.html
-wwwoffle/hold/html/messages/FileLocked.html
-wwwoffle/hold/html/messages/HostNotGot.html
-wwwoffle/hold/html/messages/IllegalProtocol.html
-wwwoffle/hold/html/messages/Index-Head.html
-wwwoffle/hold/html/messages/Index-Tail.html
-wwwoffle/hold/html/messages/IndexError-Body.html
-wwwoffle/hold/html/messages/IndexHost-Body.html
-wwwoffle/hold/html/messages/IndexHost-Head.html
-wwwoffle/hold/html/messages/IndexHost-Tail.html
-wwwoffle/hold/html/messages/IndexIllegal.html
-wwwoffle/hold/html/messages/IndexLastTime-Body.html
-wwwoffle/hold/html/messages/IndexLastTime-Head.html
-wwwoffle/hold/html/messages/IndexLastTime-Tail.html
-wwwoffle/hold/html/messages/IndexLatest-Body.html
-wwwoffle/hold/html/messages/IndexLatest-Head.html
-wwwoffle/hold/html/messages/IndexLatest-Tail.html
-wwwoffle/hold/html/messages/IndexMonitor-Body.html
-wwwoffle/hold/html/messages/IndexMonitor-Head.html
-wwwoffle/hold/html/messages/IndexMonitor-Tail.html
-wwwoffle/hold/html/messages/IndexOutgoing-Body.html
-wwwoffle/hold/html/messages/IndexOutgoing-Head.html
-wwwoffle/hold/html/messages/IndexOutgoing-Tail.html
-wwwoffle/hold/html/messages/IndexProtocol-Body.html
-wwwoffle/hold/html/messages/IndexProtocol-Head.html
-wwwoffle/hold/html/messages/IndexProtocol-Tail.html
-wwwoffle/hold/html/messages/IndexRedirect.html
-wwwoffle/hold/html/messages/IndexRoot-Body.html
-wwwoffle/hold/html/messages/IndexSeparator-Body.html
-wwwoffle/hold/html/messages/IndexURLRedirect.html
-wwwoffle/hold/html/messages/LocalDirRedirect.html
-wwwoffle/hold/html/messages/MethodUnsupported.html
-wwwoffle/hold/html/messages/MonitorFormError.html
-wwwoffle/hold/html/messages/MonitorIllegal.html
-wwwoffle/hold/html/messages/MonitorPage.html
-wwwoffle/hold/html/messages/MonitorWillGet.html
-wwwoffle/hold/html/messages/PageNotFound.html
-wwwoffle/hold/html/messages/ProxyAuthFail.html
-wwwoffle/hold/html/messages/README
-wwwoffle/hold/html/messages/RefreshFormError.html
-wwwoffle/hold/html/messages/RefreshIllegal.html
-wwwoffle/hold/html/messages/RefreshPage.html
-wwwoffle/hold/html/messages/RefreshRedirect.html
-wwwoffle/hold/html/messages/RefreshWillGet.html
-wwwoffle/hold/html/messages/RefusedRequest.html
-wwwoffle/hold/html/messages/RemoteHostError.html
-wwwoffle/hold/html/messages/ServerError.html
-wwwoffle/hold/html/messages/UserNeedsPass.html
-wwwoffle/hold/html/messages/WillGet.html
-wwwoffle/hold/html/robots.txt
-wwwoffle/hold/html/wwwoffle.pac
-@comment wwwoffle/hold/upgrade-config.pl
 wwwoffle/html/FAQ.html
 wwwoffle/html/Welcome.html
 wwwoffle/html/htdig/button1.gif
@@ -140,9 +37,9 @@ wwwoffle/html/htdig/button8.gif
 wwwoffle/html/htdig/button9.gif
 wwwoffle/html/htdig/buttonl.gif
 wwwoffle/html/htdig/buttonr.gif
-wwwoffle/html/htdig/conf/CONFIG
 wwwoffle/html/htdig/conf/htdig-full.conf
 wwwoffle/html/htdig/conf/htdig-incr.conf
+wwwoffle/html/htdig/conf/htdig-lasttime.conf
 wwwoffle/html/htdig/conf/htfuzzy.conf
 wwwoffle/html/htdig/conf/htmerge.conf
 wwwoffle/html/htdig/conf/htsearch.conf
@@ -150,10 +47,15 @@ wwwoffle/html/htdig/htdig.gif
 wwwoffle/html/htdig/index.html
 wwwoffle/html/htdig/scripts/wwwoffle-htdig-full
 wwwoffle/html/htdig/scripts/wwwoffle-htdig-incr
+wwwoffle/html/htdig/scripts/wwwoffle-htdig-lasttime
+wwwoffle/html/htdig/scripts/wwwoffle-htfuzzy
 wwwoffle/html/htdig/scripts/wwwoffle-htsearch
 wwwoffle/html/htdig/search.html
 wwwoffle/html/htdig/star.gif
 wwwoffle/html/htdig/star_blank.gif
+wwwoffle/html/htdig/start-lt2.html
+wwwoffle/html/htdig/start-lt3.html
+wwwoffle/html/htdig/start-lt4.html
 wwwoffle/html/htdig/start1.html
 wwwoffle/html/htdig/start2.html
 wwwoffle/html/htdig/start3.html
@@ -169,7 +71,9 @@ wwwoffle/html/messages/ConfigError.html
 wwwoffle/html/messages/ConfigUpdate.html
 wwwoffle/html/messages/ConfirmRequest.html
 wwwoffle/html/messages/ControlAuthFail.html
-wwwoffle/html/messages/ControlDelete.html
+wwwoffle/html/messages/ControlDelete-Body.html
+wwwoffle/html/messages/ControlDelete-Head.html
+wwwoffle/html/messages/ControlDelete-Tail.html
 wwwoffle/html/messages/ControlIllegal.html
 wwwoffle/html/messages/ControlPage.html
 wwwoffle/html/messages/ControlWWWOFFLE-Head.html
@@ -177,6 +81,7 @@ wwwoffle/html/messages/ControlWWWOFFLE-Tail.html
 wwwoffle/html/messages/FTPDir-Head.html
 wwwoffle/html/messages/FTPDir-Tail.html
 wwwoffle/html/messages/FTPDirRedirect.html
+wwwoffle/html/messages/FTPPut.html
 wwwoffle/html/messages/FileLocked.html
 wwwoffle/html/messages/HostNotGot.html
 wwwoffle/html/messages/IllegalProtocol.html
@@ -227,30 +132,23 @@ wwwoffle/html/messages/UserNeedsPass.html
 wwwoffle/html/messages/WillGet.html
 wwwoffle/html/robots.txt
 wwwoffle/html/wwwoffle.pac
-@unexec rm -rf %D/wwwoffle/http
 wwwoffle/outgoing/Owwwoffle-browser
 wwwoffle/outgoing/Owwwoffle-user
 wwwoffle/outgoing/Uwwwoffle-browser
 wwwoffle/outgoing/Uwwwoffle-user
-wwwoffle/wwwoffle.conf
+wwwoffle/upgrade-config.pl
 wwwoffle/wwwoffle.conf.install
-@dirrm wwwoffle/hold/html/htdig/conf
-@dirrm wwwoffle/hold/html/htdig/scripts
-@dirrm wwwoffle/hold/html/htdig
-@dirrm wwwoffle/hold/html/local/images
-@dirrm wwwoffle/hold/html/local
-@dirrm wwwoffle/hold/html/messages
-@dirrm wwwoffle/hold/html
-@dirrm wwwoffle/hold
 @dirrm wwwoffle/html/htdig/conf
+@dirrm wwwoffle/html/htdig/db
+@dirrm wwwoffle/html/htdig/db-lasttime
 @dirrm wwwoffle/html/htdig/scripts
 @dirrm wwwoffle/html/htdig
 @dirrm wwwoffle/html/local/images
 @dirrm wwwoffle/html/local
 @dirrm wwwoffle/html/messages
 @dirrm wwwoffle/html
-@dirrm wwwoffle/prevtime1
+@dirrm wwwoffle/http
 @dirrm wwwoffle/lasttime
 @dirrm wwwoffle/monitor
 @dirrm wwwoffle/outgoing
-@dirrm wwwoffle
+@dirrm wwwoffle/prevtime1
