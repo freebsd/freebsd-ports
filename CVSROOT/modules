@@ -5293,6 +5293,7 @@ p5-File-Tail	ports/devel/p5-File-Tail
 p5-File-Temp	ports/devel/p5-File-Temp
 p5-File-Which	ports/sysutils/p5-File-Which
 p5-Filesys-DiskSpace	ports/sysutils/p5-Filesys-DiskSpace
+p5-Filesys-SmbClient	ports/net/p5-Filesys-SmbClient
 p5-Filter	ports/devel/p5-Filter
 p5-Filter-CBC	ports/devel/p5-Filter-CBC
 p5-Finance-Currency-Convert	ports/misc/p5-Finance-Currency-Convert
