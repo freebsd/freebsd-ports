@@ -7035,6 +7035,7 @@ p5-HTTPD-User-Manage	ports/www/p5-HTTPD-User-Manage
 p5-Hash-Merge	ports/textproc/p5-Hash-Merge
 p5-Heap		ports/devel/p5-Heap
 p5-Heap-Simple	ports/devel/p5-Heap-Simple
+p5-Heap-Simple-Perl	ports/devel/p5-Heap-Simple-Perl
 p5-Heap-Simple-XS	ports/devel/p5-Heap-Simple-XS
 p5-Hook-LexWrap	ports/devel/p5-Hook-LexWrap
 p5-I18N-Charset	ports/misc/p5-I18N-Charset
