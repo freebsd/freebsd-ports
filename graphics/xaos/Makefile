@@ -3,7 +3,7 @@
 # Date created:				24 February 1996
 # Whom:					Joseph Koshy <koshy@india.hp.com>
 #
-# $Id: Makefile,v 1.7 1998/09/15 11:57:43 asami Exp $
+# $Id: Makefile,v 1.8 1998/09/17 00:50:49 asami Exp $
 #
 
 DISTNAME=	XaoS-3.0
@@ -17,6 +17,8 @@ MASTER_SITE_SUBDIR=	graphics
 MAINTAINER=	jkoshy@freebsd.org
 
 LIB_DEPENDS=	png.2:${PORTSDIR}/graphics/png
+
+USE_XLIB=	yes
 
 # This port will benefit from all-stops-out optimization of the code
 

@@ -3,7 +3,7 @@
 # Date created:        20 June 1997
 # Whom:                Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.1.1.1 1998/02/28 03:41:46 itojun Exp $
+# $Id: Makefile,v 1.2 1998/08/05 09:31:20 asami Exp $
 #
 
 DISTNAME=	netmaj
@@ -13,6 +13,8 @@ MASTER_SITES=	http://www.sfc.wide.ad.jp/~kusune/netmaj/files/
 DISTFILES=	netmaj-2.0.7.tar.gz netmaj-xui-2.0.7.tar.gz
 
 MAINTAINER=	Nakai@Mlab.t.u-tokyo.ac.jp
+
+LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
 
 USE_X_PREFIX=	yes
 ALL_TARGET=	libs all

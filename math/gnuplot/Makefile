@@ -3,7 +3,7 @@
 # Date created:         19 April 1998
 # Whom:                 chuckr
 #
-# $Id: Makefile,v 1.18 1998/09/15 11:57:46 asami Exp $
+# $Id: Makefile,v 1.19 1998/09/17 00:50:50 asami Exp $
 #
 
 DISTNAME=	gnuplot-beta340
@@ -16,6 +16,7 @@ MAINTAINER=	chuckr@FreeBSD.org
 LIB_DEPENDS=    png.2:${PORTSDIR}/graphics/png
 BUILD_DEPENDS=	$(PREFIX)/lib/libgd.a:${PORTSDIR}/graphics/gd
 
+USE_XLIB=	yes
 WRKSRC=		${WRKDIR}/gnuplot
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--exec-prefix=${PREFIX} \

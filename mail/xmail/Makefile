@@ -3,7 +3,7 @@
 # Date created:		15 July 1997
 # Whom:			Stephen Roznowski <sjr1@flash.net>
 #
-# $Id: Makefile,v 1.2 1998/01/09 04:59:36 andreas Exp $
+# $Id: Makefile,v 1.3 1998/08/25 00:44:27 asami Exp $
 #
 
 DISTNAME=	xmail_1.6
@@ -13,6 +13,8 @@ MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	applications
 
 MAINTAINER=	andreas@FreeBSD.ORG
+
+LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
 
 USE_IMAKE=	yes
 MAN1=		xmail.1

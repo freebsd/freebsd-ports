@@ -3,7 +3,7 @@
 # Date created:	16 July 1998
 # Whom:		Bill Fumerola <billf@chc-chimes.com>
 #
-# $Id: Makefile,v 1.1.1.1 1998/08/10 00:12:43 steve Exp $
+# $Id: Makefile,v 1.2 1998/11/09 01:17:11 steve Exp $
 #
 
 DISTNAME=	g2-0.30
@@ -15,6 +15,7 @@ MAINTAINER=	billf@chc-chimes.com
 
 BUILD_DEPENDS=  ${PREFIX}/lib/libgd.a:${PORTSDIR}/graphics/gd
 
+USE_XLIB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=  CFLAGS="${CFLAGS} -I${PREFIX}/include/gd"
 

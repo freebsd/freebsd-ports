@@ -3,7 +3,7 @@
 # Date created:         22 June 1995
 # Whom:                 asami
 #
-# $Id: Makefile,v 1.3 1997/12/25 22:29:22 asami Exp $
+# $Id: Makefile,v 1.4 1998/09/28 02:25:32 steve Exp $
 #
 
 DISTNAME=       xtic1.12
@@ -13,6 +13,8 @@ MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	games
 
 MAINTAINER=	ports@FreeBSD.ORG
+
+LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
 
 USE_IMAKE=      yes
 MAN1=		xtic.1
