@@ -12,9 +12,11 @@
 %%WEBFRONTDIR%%/header.php
 %%WEBFRONTDIR%%/host_view.php
 %%WEBFRONTDIR%%/index.php
+%%WEBFRONTDIR%%/info.php
 %%WEBFRONTDIR%%/meta_view.php
 %%WEBFRONTDIR%%/node_legend.html
 %%WEBFRONTDIR%%/physical_view.php
+%%WEBFRONTDIR%%/pie.php
 %%WEBFRONTDIR%%/private_clusters
 %%WEBFRONTDIR%%/show_node.php
 %%WEBFRONTDIR%%/styles.css
@@ -41,12 +43,15 @@
 %%WEBFRONTDIR%%/templates/default/images/grid_75-100.jpg
 %%WEBFRONTDIR%%/templates/default/images/grid_overloaded.jpg
 %%WEBFRONTDIR%%/templates/default/images/grid_private.jpg
+%%WEBFRONTDIR%%/templates/default/cluster_extra.tpl
 %%WEBFRONTDIR%%/templates/default/cluster_view.tpl
 %%WEBFRONTDIR%%/templates/default/footer.tpl
 %%WEBFRONTDIR%%/templates/default/header-nobanner.tpl
 %%WEBFRONTDIR%%/templates/default/header.tpl
+%%WEBFRONTDIR%%/templates/default/host_extra.tpl
 %%WEBFRONTDIR%%/templates/default/host_view.tpl
 %%WEBFRONTDIR%%/templates/default/meta_view.tpl
+%%WEBFRONTDIR%%/templates/default/node_extra.tpl
 %%WEBFRONTDIR%%/templates/default/physical_view.tpl
 %%WEBFRONTDIR%%/templates/default/show_node.tpl
 %%WEBFRONTDIR%%/templates/default/grid_tree.tpl

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ganglia-webfrontend
-PORTVERSION=	2.5.3
+PORTVERSION=	2.5.4
 CATEGORIES=	sysutils net parallel www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	ganglia
@@ -33,7 +33,7 @@ WWWGRP?=	www
 #
 WEBFRONTDIR=	${WWWDOCROOT}/${WEBFRONTURL}
 PKGOPTS=	${FILESDIR}/pkg-opts
-EXCEPTFILES=	AUTHORS ChangeLog COPYING
+EXCEPTFILES=	AUTHORS ChangeLog COPYING webfrontend.spec
 
 options:
 	@ ${ECHO_MSG} "===>  Build options for ${PKGNAME}:"
