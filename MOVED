@@ -1243,3 +1243,4 @@ x11-toolkits/notif2|x11-themes/notif2|2004-08-20|Better category
 www/apache13-fp||2004-08-20|Obsolete and unfixed security vulnerabilities
 www/mod_csacek||2004-08-20|Obsolete and broken
 archivers/linux-unace||2004-08-20|Segfaults on startup
+misc/cheatah||2004-08-20|Abandoned by the upstream authors
