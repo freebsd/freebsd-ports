@@ -128,4 +128,3 @@ share/examples/actx/sample.Xdefaults
 share/doc/ja/actx/README.jis
 share/doc/ja/actx/ForDevelloper.jis
 @dirrm share/doc/ja/actx
-@dirrm share/doc/ja
