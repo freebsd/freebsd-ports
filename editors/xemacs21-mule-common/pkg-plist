@@ -1,14 +1,20 @@
+@exec mkdir -p %D/lib/xemacs/site-packages/etc
 @exec mkdir -p %D/lib/xemacs/site-packages/info
+@exec mkdir -p %D/lib/xemacs/site-packages/lisp
+@exec mkdir -p %D/lib/xemacs/site-packages/man
+@exec mkdir -p %D/lib/xemacs/site-packages/pkginfo
+@exec mkdir -p %D/lib/xemacs/mule-packages/etc
 @exec mkdir -p %D/lib/xemacs/mule-packages/info
+@exec mkdir -p %D/lib/xemacs/mule-packages/lisp
+@exec mkdir -p %D/lib/xemacs/mule-packages/man
+@exec mkdir -p %D/lib/xemacs/mule-packages/pkginfo
+@exec mkdir -p %D/lib/xemacs/xemacs-packages/etc
 @exec mkdir -p %D/lib/xemacs/xemacs-packages/info
-@exec [ -f %D/lib/xemacs/site-packages/info/dir ] || sed -ne '1,/Menu:/p' /usr/share/info/dir-tmpl > %D/lib/xemacs/site-packages/info/dir
-@exec [ -f %D/lib/xemacs/mule-packages/info/dir ] || sed -ne '1,/Menu:/p' /usr/share/info/dir-tmpl > %D/lib/xemacs/mule-packages/info/dir
-@exec [ -f %D/lib/xemacs/xemacs-packages/info/dir ] || sed -ne '1,/Menu:/p' /usr/share/info/dir-tmpl > %D/lib/xemacs/xemacs-packages/info/dir
+@exec mkdir -p %D/lib/xemacs/xemacs-packages/lisp
+@exec mkdir -p %D/lib/xemacs/xemacs-packages/man
+@exec mkdir -p %D/lib/xemacs/xemacs-packages/pkginfo
 @exec mkdir -p %D/lib/xemacs/site-lisp
 @exec mkdir -p /var/run/emacs/lock ; chmod 1777 /var/run/emacs/lock
-@comment
-@comment XEmacs etc
-@comment
 etc/rc.d/xemacs-mule.sh
 lib/%%XEMACS_DIR%%/etc/BETA
 lib/%%XEMACS_DIR%%/etc/CHARSETS
@@ -370,9 +376,6 @@ lib/%%XEMACS_DIR%%/etc/xemacs-ja.1
 lib/%%XEMACS_DIR%%/etc/xemacs.1
 lib/%%XEMACS_DIR%%/etc/xemacs.xbm
 lib/%%XEMACS_DIR%%/etc/xemacs.xpm
-@comment
-@comment XEmacs infos
-@comment
 lib/%%XEMACS_DIR%%/info/cl.info
 lib/%%XEMACS_DIR%%/info/cl.info-1
 lib/%%XEMACS_DIR%%/info/cl.info-2
@@ -392,6 +395,7 @@ lib/%%XEMACS_DIR%%/info/internals.info-4
 lib/%%XEMACS_DIR%%/info/internals.info-5
 lib/%%XEMACS_DIR%%/info/internals.info-6
 lib/%%XEMACS_DIR%%/info/internals.info-7
+lib/%%XEMACS_DIR%%/info/internals.info-8
 lib/%%XEMACS_DIR%%/info/lispref.info
 lib/%%XEMACS_DIR%%/info/lispref.info-1
 lib/%%XEMACS_DIR%%/info/lispref.info-10
@@ -492,9 +496,6 @@ lib/%%XEMACS_DIR%%/info/xemacs.info-6
 lib/%%XEMACS_DIR%%/info/xemacs.info-7
 lib/%%XEMACS_DIR%%/info/xemacs.info-8
 lib/%%XEMACS_DIR%%/info/xemacs.info-9
-@comment
-@comment XEmacs lisp
-@comment
 lib/%%XEMACS_DIR%%/lisp/.cvsignore
 lib/%%XEMACS_DIR%%/lisp/ChangeLog
 lib/%%XEMACS_DIR%%/lisp/ChangeLog.1
@@ -923,20 +924,18 @@ lib/%%XEMACS_DIR%%/lisp/x-win-sun.el
 lib/%%XEMACS_DIR%%/lisp/x-win-sun.elc
 lib/%%XEMACS_DIR%%/lisp/x-win-xfree86.el
 lib/%%XEMACS_DIR%%/lisp/x-win-xfree86.elc
-@comment
-@comment dirrm
-@comment
-@dirrm lib/%%XEMACS_DIR%%/etc/custom
-@dirrm lib/%%XEMACS_DIR%%/etc/eos
-@dirrm lib/%%XEMACS_DIR%%/etc/idd
-@dirrm lib/%%XEMACS_DIR%%/etc/photos
-@dirrm lib/%%XEMACS_DIR%%/etc/sparcworks
+lib/%%XEMACS_DIR%%/lisp/xpm-button.el
+lib/%%XEMACS_DIR%%/lisp/xpm-button.elc
+@dirrm lib/%%XEMACS_DIR%%/lisp/term
+@dirrm lib/%%XEMACS_DIR%%/lisp/mule
+@dirrm lib/%%XEMACS_DIR%%/lisp
+@dirrm lib/%%XEMACS_DIR%%/info
+@dirrm lib/%%XEMACS_DIR%%/etc/toolbar
 @dirrm lib/%%XEMACS_DIR%%/etc/tests/external-widget
 @dirrm lib/%%XEMACS_DIR%%/etc/tests
-@dirrm lib/%%XEMACS_DIR%%/etc/toolbar
+@dirrm lib/%%XEMACS_DIR%%/etc/sparcworks
+@dirrm lib/%%XEMACS_DIR%%/etc/photos
+@dirrm lib/%%XEMACS_DIR%%/etc/idd
+@dirrm lib/%%XEMACS_DIR%%/etc/eos
+@dirrm lib/%%XEMACS_DIR%%/etc/custom
 @dirrm lib/%%XEMACS_DIR%%/etc
-@dirrm lib/%%XEMACS_DIR%%/info
-@dirrm lib/%%XEMACS_DIR%%/lisp/mule
-@dirrm lib/%%XEMACS_DIR%%/lisp/term
-@dirrm lib/%%XEMACS_DIR%%/lisp
-@dirrm lib/%%XEMACS_DIR%%

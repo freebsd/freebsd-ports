@@ -1,0 +1,7 @@
+#!/bin/sh
+if [ "$2" != "POST-INSTALL" ]; then exit 0; fi
+echo "################################################################"
+echo "You must install one of packages, xemacs-mule and "
+echo " ja-xemacs-*-%%XEMACS_VER%% (ja-xemacs-%%XEMACS_VER%%, ja-xemacs-canna-%%XEMACS_VER%%, etc.)"
+echo ", each of which contains only the executables for xemacs-%%XEMACS_VER%%"
+echo "################################################################"

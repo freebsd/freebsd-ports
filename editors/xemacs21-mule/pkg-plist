@@ -7,26 +7,9 @@ bin/gnudoit
 bin/ootags
 bin/pstogif
 bin/rcs-checkin
-bin/xemacs-21.1.6
+bin/%%XEMACS_DIR%%
 @exec ln -sf %D/%F %B/xemacs
 @unexec rm %B/xemacs
 lib/%%XEMACS_DIR%%/%%ARCH_SUBDIR%%/DOC
-lib/%%XEMACS_DIR%%/%%ARCH_SUBDIR%%/add-big-package.sh
 lib/%%XEMACS_DIR%%/%%ARCH_SUBDIR%%/config.values
-lib/%%XEMACS_DIR%%/%%ARCH_SUBDIR%%/cvtmail
-lib/%%XEMACS_DIR%%/%%ARCH_SUBDIR%%/digest-doc
-lib/%%XEMACS_DIR%%/%%ARCH_SUBDIR%%/fakemail
-lib/%%XEMACS_DIR%%/%%ARCH_SUBDIR%%/gnuserv
-lib/%%XEMACS_DIR%%/%%ARCH_SUBDIR%%/gzip-el.sh
-lib/%%XEMACS_DIR%%/%%ARCH_SUBDIR%%/hexl
-lib/%%XEMACS_DIR%%/%%ARCH_SUBDIR%%/make-docfile
-lib/%%XEMACS_DIR%%/%%ARCH_SUBDIR%%/make-path
-lib/%%XEMACS_DIR%%/%%ARCH_SUBDIR%%/mmencode
-lib/%%XEMACS_DIR%%/%%ARCH_SUBDIR%%/movemail
-lib/%%XEMACS_DIR%%/%%ARCH_SUBDIR%%/profile
-lib/%%XEMACS_DIR%%/%%ARCH_SUBDIR%%/rcs2log
-lib/%%XEMACS_DIR%%/%%ARCH_SUBDIR%%/sorted-doc
-lib/%%XEMACS_DIR%%/%%ARCH_SUBDIR%%/vcdiff
-lib/%%XEMACS_DIR%%/%%ARCH_SUBDIR%%/wakeup
-lib/%%XEMACS_DIR%%/%%ARCH_SUBDIR%%/yow
 @dirrm lib/%%XEMACS_DIR%%/%%ARCH_SUBDIR%%
