@@ -21,6 +21,10 @@ lib/%%PYTHON_VERSION%%/site-packages/wxPython/demo/ActiveXWrapper_IE.py
 lib/%%PYTHON_VERSION%%/site-packages/wxPython/demo/ActiveXWrapper_IE.pyc
 lib/%%PYTHON_VERSION%%/site-packages/wxPython/demo/ColorPanel.py
 lib/%%PYTHON_VERSION%%/site-packages/wxPython/demo/ColorPanel.pyc
+lib/%%PYTHON_VERSION%%/site-packages/wxPython/demo/ColourDB.py
+lib/%%PYTHON_VERSION%%/site-packages/wxPython/demo/ColourDB.pyc
+lib/%%PYTHON_VERSION%%/site-packages/wxPython/demo/ColourSelect.py
+lib/%%PYTHON_VERSION%%/site-packages/wxPython/demo/ColourSelect.pyc
 lib/%%PYTHON_VERSION%%/site-packages/wxPython/demo/CustomDragAndDrop.py
 lib/%%PYTHON_VERSION%%/site-packages/wxPython/demo/CustomDragAndDrop.pyc
 lib/%%PYTHON_VERSION%%/site-packages/wxPython/demo/DialogUnits.py
@@ -47,6 +51,8 @@ lib/%%PYTHON_VERSION%%/site-packages/wxPython/demo/GridSimple.py
 lib/%%PYTHON_VERSION%%/site-packages/wxPython/demo/GridSimple.pyc
 lib/%%PYTHON_VERSION%%/site-packages/wxPython/demo/GridStdEdRend.py
 lib/%%PYTHON_VERSION%%/site-packages/wxPython/demo/GridStdEdRend.pyc
+lib/%%PYTHON_VERSION%%/site-packages/wxPython/demo/ImageBrowser.py
+lib/%%PYTHON_VERSION%%/site-packages/wxPython/demo/ImageBrowser.pyc
 lib/%%PYTHON_VERSION%%/site-packages/wxPython/demo/LayoutAnchors.py
 lib/%%PYTHON_VERSION%%/site-packages/wxPython/demo/LayoutAnchors.pyc
 lib/%%PYTHON_VERSION%%/site-packages/wxPython/demo/Layoutf.py
@@ -57,6 +63,8 @@ lib/%%PYTHON_VERSION%%/site-packages/wxPython/demo/MDISashDemo.py
 lib/%%PYTHON_VERSION%%/site-packages/wxPython/demo/MDISashDemo.pyc
 lib/%%PYTHON_VERSION%%/site-packages/wxPython/demo/Main.py
 lib/%%PYTHON_VERSION%%/site-packages/wxPython/demo/Main.pyc
+lib/%%PYTHON_VERSION%%/site-packages/wxPython/demo/OOR.py
+lib/%%PYTHON_VERSION%%/site-packages/wxPython/demo/OOR.pyc
 lib/%%PYTHON_VERSION%%/site-packages/wxPython/demo/PrintFramework.py
 lib/%%PYTHON_VERSION%%/site-packages/wxPython/demo/PrintFramework.pyc
 lib/%%PYTHON_VERSION%%/site-packages/wxPython/demo/PyShell.py
@@ -77,8 +85,16 @@ lib/%%PYTHON_VERSION%%/site-packages/wxPython/demo/demo.py
 lib/%%PYTHON_VERSION%%/site-packages/wxPython/demo/demo.pyc
 lib/%%PYTHON_VERSION%%/site-packages/wxPython/demo/demoMainLoop.py
 lib/%%PYTHON_VERSION%%/site-packages/wxPython/demo/demoMainLoop.pyc
+lib/%%PYTHON_VERSION%%/site-packages/wxPython/demo/encode_bitmaps.py
+lib/%%PYTHON_VERSION%%/site-packages/wxPython/demo/encode_bitmaps.pyc
 lib/%%PYTHON_VERSION%%/site-packages/wxPython/demo/hangman.py
 lib/%%PYTHON_VERSION%%/site-packages/wxPython/demo/hangman.pyc
+lib/%%PYTHON_VERSION%%/site-packages/wxPython/demo/images.py
+lib/%%PYTHON_VERSION%%/site-packages/wxPython/demo/images.pyc
+lib/%%PYTHON_VERSION%%/site-packages/wxPython/demo/infoframe.py
+lib/%%PYTHON_VERSION%%/site-packages/wxPython/demo/infoframe.pyc
+lib/%%PYTHON_VERSION%%/site-packages/wxPython/demo/joystick_wdr.py
+lib/%%PYTHON_VERSION%%/site-packages/wxPython/demo/joystick_wdr.pyc
 lib/%%PYTHON_VERSION%%/site-packages/wxPython/demo/pyTree.py
 lib/%%PYTHON_VERSION%%/site-packages/wxPython/demo/pyTree.pyc
 lib/%%PYTHON_VERSION%%/site-packages/wxPython/demo/redemo.py
@@ -133,6 +149,8 @@ lib/%%PYTHON_VERSION%%/site-packages/wxPython/demo/wxHtmlWindow.py
 lib/%%PYTHON_VERSION%%/site-packages/wxPython/demo/wxHtmlWindow.pyc
 lib/%%PYTHON_VERSION%%/site-packages/wxPython/demo/wxImage.py
 lib/%%PYTHON_VERSION%%/site-packages/wxPython/demo/wxImage.pyc
+lib/%%PYTHON_VERSION%%/site-packages/wxPython/demo/wxJoystick.py
+lib/%%PYTHON_VERSION%%/site-packages/wxPython/demo/wxJoystick.pyc
 lib/%%PYTHON_VERSION%%/site-packages/wxPython/demo/wxLayoutConstraints.py
 lib/%%PYTHON_VERSION%%/site-packages/wxPython/demo/wxLayoutConstraints.pyc
 lib/%%PYTHON_VERSION%%/site-packages/wxPython/demo/wxListBox.py
@@ -197,6 +215,8 @@ lib/%%PYTHON_VERSION%%/site-packages/wxPython/demo/wxTextEntryDialog.py
 lib/%%PYTHON_VERSION%%/site-packages/wxPython/demo/wxTextEntryDialog.pyc
 lib/%%PYTHON_VERSION%%/site-packages/wxPython/demo/wxTimer.py
 lib/%%PYTHON_VERSION%%/site-packages/wxPython/demo/wxTimer.pyc
+lib/%%PYTHON_VERSION%%/site-packages/wxPython/demo/wxToggleButton.py
+lib/%%PYTHON_VERSION%%/site-packages/wxPython/demo/wxToggleButton.pyc
 lib/%%PYTHON_VERSION%%/site-packages/wxPython/demo/wxToolBar.py
 lib/%%PYTHON_VERSION%%/site-packages/wxPython/demo/wxToolBar.pyc
 lib/%%PYTHON_VERSION%%/site-packages/wxPython/demo/wxTreeCtrl.py
@@ -205,6 +225,8 @@ lib/%%PYTHON_VERSION%%/site-packages/wxPython/demo/wxVTKRenderWindow.py
 lib/%%PYTHON_VERSION%%/site-packages/wxPython/demo/wxVTKRenderWindow.pyc
 lib/%%PYTHON_VERSION%%/site-packages/wxPython/demo/wxValidator.py
 lib/%%PYTHON_VERSION%%/site-packages/wxPython/demo/wxValidator.pyc
+lib/%%PYTHON_VERSION%%/site-packages/wxPython/demo/wxWave.py
+lib/%%PYTHON_VERSION%%/site-packages/wxPython/demo/wxWave.pyc
 lib/%%PYTHON_VERSION%%/site-packages/wxPython/events.py
 lib/%%PYTHON_VERSION%%/site-packages/wxPython/events.pyc
 lib/%%PYTHON_VERSION%%/site-packages/wxPython/filesys.py
@@ -238,6 +260,10 @@ lib/%%PYTHON_VERSION%%/site-packages/wxPython/lib/buttons.py
 lib/%%PYTHON_VERSION%%/site-packages/wxPython/lib/buttons.pyc
 lib/%%PYTHON_VERSION%%/site-packages/wxPython/lib/calendar.py
 lib/%%PYTHON_VERSION%%/site-packages/wxPython/lib/calendar.pyc
+lib/%%PYTHON_VERSION%%/site-packages/wxPython/lib/colourdb.py
+lib/%%PYTHON_VERSION%%/site-packages/wxPython/lib/colourdb.pyc
+lib/%%PYTHON_VERSION%%/site-packages/wxPython/lib/colourselect.py
+lib/%%PYTHON_VERSION%%/site-packages/wxPython/lib/colourselect.pyc
 lib/%%PYTHON_VERSION%%/site-packages/wxPython/lib/dialogs.py
 lib/%%PYTHON_VERSION%%/site-packages/wxPython/lib/dialogs.pyc
 lib/%%PYTHON_VERSION%%/site-packages/wxPython/lib/editor/__init__.py
@@ -256,6 +282,10 @@ lib/%%PYTHON_VERSION%%/site-packages/wxPython/lib/floatbar.py
 lib/%%PYTHON_VERSION%%/site-packages/wxPython/lib/floatbar.pyc
 lib/%%PYTHON_VERSION%%/site-packages/wxPython/lib/grids.py
 lib/%%PYTHON_VERSION%%/site-packages/wxPython/lib/grids.pyc
+lib/%%PYTHON_VERSION%%/site-packages/wxPython/lib/imagebrowser.py
+lib/%%PYTHON_VERSION%%/site-packages/wxPython/lib/imagebrowser.pyc
+lib/%%PYTHON_VERSION%%/site-packages/wxPython/lib/infoframe.py
+lib/%%PYTHON_VERSION%%/site-packages/wxPython/lib/infoframe.pyc
 lib/%%PYTHON_VERSION%%/site-packages/wxPython/lib/layoutf.py
 lib/%%PYTHON_VERSION%%/site-packages/wxPython/lib/layoutf.pyc
 lib/%%PYTHON_VERSION%%/site-packages/wxPython/lib/mvctree.py

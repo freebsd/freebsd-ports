@@ -1,6 +1,9 @@
---- Makefile.in.orig	Mon May  7 07:14:03 2001
-+++ Makefile.in	Mon May  7 07:14:46 2001
-@@ -365,39 +365,23 @@
+
+$FreeBSD$
+
+--- Makefile.in.orig	Fri May 25 05:55:33 2001
++++ Makefile.in	Mon May 28 19:47:06 2001
+@@ -379,39 +379,23 @@
  
  CREATE_LINKS: @WX_LIBRARY_NAME_SHARED@
  	@$(RM) ./lib/@WX_LIBRARY_LINK1@
@@ -44,7 +47,24 @@
  
  $(OBJECTS):	$(WXDIR)/include/wx/defs.h $(WXDIR)/include/wx/object.h
  
-@@ -499,13 +483,9 @@
+@@ -461,11 +445,11 @@
+ 	cd $(bindir) && rm -f wx-config && $(LN_S) wx@TOOLKIT_NAME@-config wx-config
+ 	$(INSTALL_PROGRAM) $(top_builddir)/lib/@WX_TARGET_LIBRARY@ $(libdir)/@WX_TARGET_LIBRARY@
+ 
+-	$(INSTALL) -d $(libdir)/wx
+-	$(INSTALL) -d $(libdir)/wx/include
+-	$(INSTALL) -d $(libdir)/wx/include/wx
+-	$(INSTALL) -d $(libdir)/wx/include/wx/@TOOLKIT_NAME@
+-	$(INSTALL_DATA) $(top_builddir)/include/wx/@TOOLKIT_DIR@/setup.h $(libdir)/wx/include/wx/@TOOLKIT_NAME@/setup.h
++#	$(INSTALL) -d $(libdir)/wx
++#	$(INSTALL) -d $(libdir)/wx/include
++	$(INSTALL) -d $(prefix)/include/wx
++	$(INSTALL) -d $(prefix)/include/wx/@TOOLKIT_NAME@
++	$(INSTALL_DATA) $(top_builddir)/include/wx/@TOOLKIT_DIR@/setup.h $(prefix)/include/wx/@TOOLKIT_NAME@/setup.h
+ 
+ 	$(INSTALL) -d $(includedir)/wx
+ 	@if test "$(USE_GUI)" = 1; then $(INSTALL) -d $(includedir)/wx/@TOOLKIT_DIR@; fi
+@@ -513,13 +497,9 @@
  	@echo " Removing library..."
  	@$(RM) $(libdir)/@WX_TARGET_LIBRARY@
  	@$(RM) $(libdir)/@WX_LIBRARY_LINK1@
