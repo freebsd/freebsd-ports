@@ -1,11 +1,17 @@
-bin/au2h
 bin/gaim
 %%GNOME:%%bin/gaim_applet
 %%GNOME:%%etc/CORBA/servers/gaim_applet.gnorba
 %%GNOME:%%etc/sound/events/gaim.soundlist
 lib/gaim/autorecon.so
 lib/gaim/iconaway.so
+lib/gaim/irc.so
 lib/gaim/lagmeter.so
+lib/gaim/libgaimicq.a
+lib/gaim/libgaimicq.so
+lib/gaim/libgaimicq.so.0
+lib/gaim/libyahoo.a
+lib/gaim/libyahoo.so
+lib/gaim/libyahoo.so.0
 lib/gaim/notify.so
 lib/gaim/spellchk.so
 %%DATADIR%%/pixmaps/gaim/about_small.xpm
@@ -95,6 +101,7 @@ lib/gaim/spellchk.so
 %%DATADIR%%/pixmaps/gaim/save.xpm
 %%DATADIR%%/pixmaps/gaim/scream.xpm
 %%DATADIR%%/pixmaps/gaim/search_small.xpm
+%%DATADIR%%/pixmaps/gaim/send_small.xpm
 %%DATADIR%%/pixmaps/gaim/signing_on.xpm
 %%DATADIR%%/pixmaps/gaim/small.xpm
 %%DATADIR%%/pixmaps/gaim/smile.xpm
