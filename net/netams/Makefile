@@ -7,10 +7,10 @@
 
 PORTNAME=	netams
 PORTVERSION=	3.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	http://www.netams.com/files/
-DISTNAME=	${PORTNAME}-${PORTVERSION}.1770
+DISTNAME=	${PORTNAME}-${PORTVERSION}.1790
 
 MAINTAINER=	jura@netams.com
 COMMENT=	Network Traffic Accounting and Monitoring Software
