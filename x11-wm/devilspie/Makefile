@@ -6,18 +6,29 @@
 #
 
 PORTNAME=		devilspie
-PORTVERSION=		0.7
+PORTVERSION=		0.8
 CATEGORIES=		x11-wm
 MASTER_SITES=		http://www.burtonini.com/computing/
 
 MAINTAINER=		jylefort@brutele.be
 COMMENT=		A window manipulation tool
 
+LIB_DEPENDS=		popt:${PORTSDIR}/devel/popt
+BUILD_DEPENDS=		xsltproc:${PORTSDIR}/textproc/libxslt
+
 USE_X_PREFIX=		yes
-USE_GNOME=		libwnck libglade2
+USE_GNOME=		libwnck libxml2
+USE_REINPLACE=		yes
 GNU_CONFIGURE=		yes
+USE_GMAKE=		yes
+CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
+			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 
 MAN1=			devilspie.1
+
+post-patch:
+	@${FIND} ${WRKSRC}/src -name '*.c' | ${XARGS} ${REINPLACE_CMD} -e \
+		's/G_PARAM_WRITABLE/& | G_PARAM_CONSTRUCT/'
 
 post-install:
 	${MKDIR} ${DATADIR}
@@ -31,6 +42,7 @@ post-install:
 		${WRKSRC}/NEWS \
 		${WRKSRC}/README \
 		${WRKSRC}/TODO \
+		${WRKSRC}/devilspie-reference.html \
 		${DOCSDIR}
 .endif
 
