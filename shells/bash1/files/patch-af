@@ -1,0 +1,14 @@
+--- support/mksysdefs.orig	Fri Aug 29 11:26:47 2003
++++ support/mksysdefs	Fri Aug 29 11:27:59 2003
+@@ -415,7 +415,10 @@
+   echo "#endif /* HAVE_STRING_H */"		>>$sysdefs
+ fi
+ 
+-file=varargs.h
++# varargs.h and it's var args support is deprecated in GCC 3.3,
++# and has been obsolete for a while.  Assume VARARGS means 
++# STDARG elsewhere in the code.
++file=stdarg.h
+ eval $findf
+ if [ -n "$found" ]; then
+   echo ""					>>$sysdefs
