@@ -6,15 +6,15 @@
 #
 
 PORTNAME=	nslint
-PORTVERSION=	2.0.1
+PORTVERSION=	2.0.2a2
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.ee.lbl.gov/
-EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	dglo@SSEC.WISC.EDU
+MAINTAINER=	petef@databits.net
 
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	--quiet
+CONFIGURE_ARGS=	--quiet --mandir=${MANPREFIX}/man --prefix=${PREFIX}
+ALL_TARGET=	nslint
 INSTALL_TARGET=	install install-man
 MAN8=		nslint.8
 
