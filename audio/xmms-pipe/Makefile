@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xmms-pipe
-PORTVERSION=	0.5.2
+PORTVERSION=	0.5.4
 PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://rooster.stanford.edu/~ben/xmmspipe/
@@ -22,8 +22,9 @@ RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
+ALL_TARGET=	target
 
-DOC_FILES=	HISTORY README LICENSE
+DOC_FILES=	HISTORY README LICENSE COMMANDS
 
 post-patch:
 	@${REINPLACE_CMD} -E -e 's|gcc|${CC}|; \
