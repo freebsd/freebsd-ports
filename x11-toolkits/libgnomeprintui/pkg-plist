@@ -19,7 +19,6 @@ share/doc/libgnomeprintui/libgnomeprintui-gnome-print-dialog.html
 share/doc/libgnomeprintui/libgnomeprintui-gnome-print-job-preview.html
 share/doc/libgnomeprintui/libgnomeprintui-gnome-print-paper-selector.html
 share/doc/libgnomeprintui/libgnomeprintui-gnome-print-preview.html
-share/doc/libgnomeprintui/libgnomeprintui-gnome-printer-dialog.html
 share/doc/libgnomeprintui/libgnomeprintui-gnome-printer-selector.html
 share/doc/libgnomeprintui/libgnomeprintui.html
 share/doc/libgnomeprintui/right.png
@@ -70,6 +69,7 @@ share/locale/ro/LC_MESSAGES/libgnomeprintui-2.2.mo
 share/locale/ru/LC_MESSAGES/libgnomeprintui-2.2.mo
 share/locale/sk/LC_MESSAGES/libgnomeprintui-2.2.mo
 share/locale/sl/LC_MESSAGES/libgnomeprintui-2.2.mo
+share/locale/sq/LC_MESSAGES/libgnomeprintui-2.2.mo
 share/locale/sr/LC_MESSAGES/libgnomeprintui-2.2.mo
 share/locale/sr@Latn/LC_MESSAGES/libgnomeprintui-2.2.mo
 share/locale/sv/LC_MESSAGES/libgnomeprintui-2.2.mo
