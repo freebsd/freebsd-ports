@@ -1,0 +1,14 @@
+*** src/common/utils/unixsocket.C.orig	Mon Jun 23 02:12:28 1997
+--- src/common/utils/unixsocket.C	Mon Jun 23 02:17:04 1997
+***************
+*** 67,72 ****
+--- 67,75 ----
+  #if defined(BSDI)
+  #  define DONT_HAVE_SENDFD
+  #endif
++ #if defined(FreeBSD)
++ #  define DONT_HAVE_SENDFD
++ #endif
+  
+  #if ! (defined HAVE_SENDFD || defined DONT_HAVE_SENDFD)
+  #error SEND_FD
