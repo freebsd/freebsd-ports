@@ -34,6 +34,7 @@ lib/X11/xcircuit/lgf.lps
 lib/X11/xcircuit/musiclib.lps
 lib/X11/xcircuit/signal.lps
 lib/X11/xcircuit/xcircps2.pro
+share/examples/xcircuit/.xcircuitrc
 share/examples/xcircuit/USAflag.ps
 share/examples/xcircuit/analog1.ps
 share/examples/xcircuit/analog2.ps
