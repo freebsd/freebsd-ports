@@ -10,7 +10,7 @@ PORTNAME=	jewel
 PORTVERSION=	0.12.40
 PORTREVISION=	1
 CATEGORIES=	x11-wm
-MASTER_SITES=	http://www.mjr.dsl.pipex.com/comp/
+MASTER_SITES=	http://mjr.towers.org.uk/comp/
 
 MAINTAINER=	trevor@FreeBSD.org
 COMMENT=	Window manager based on aewm++
