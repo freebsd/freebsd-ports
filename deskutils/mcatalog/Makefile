@@ -7,7 +7,7 @@
 
 PORTNAME=	mcatalog
 PORTVERSION=	0.0.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	mcatalog
@@ -16,7 +16,7 @@ MAINTAINER=	bsd-sharp-list@forge.novell.com
 COMMENT=	An application for catalogue films and books
 
 BUILD_DEPENDS=	gapi-fixup:${PORTSDIR}/x11-toolkits/gtk-sharp
-LIB_DEPENDS=	sqlite.2:${PORTSDIR}/databases/sqlite
+LIB_DEPENDS=	sqlite.2:${PORTSDIR}/databases/sqlite2
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_GNOME=	gnomeprefix gnomehack gconf2
