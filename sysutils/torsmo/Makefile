@@ -7,7 +7,7 @@
 
 PORTNAME=	torsmo
 PORTVERSION=	0.18
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,14 +17,21 @@ COMMENT=	System monitor that renders text on desktop
 
 GNU_CONFIGURE=	yes
 USE_X_PREFIX=	yes
-MAN1=	torsmo.1
+MAN1=		torsmo.1
 
 PLIST_FILES=	bin/torsmo \
 		%%EXAMPLESDIR%%/torsmorc.sample
 PLIST_DIRS=	%%EXAMPLESDIR%%
 PORTDOCS=	AUTHORS ChangeLog NEWS README
 
+OPTIONS=	XFT "Enable XFT support" on
+
 .include <bsd.port.pre.mk>
+
+.if defined(WITH_XFT)
+LIB_DEPENDS+=		Xft.2:${PORTSDIR}/x11-fonts/libXft
+CONFIGURE_ARGS+=	--enable-xft
+.endif
 
 post-install:
 .if !defined(NOPORTDOCS)
