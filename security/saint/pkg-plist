@@ -134,6 +134,7 @@ saint/html/dots/purpledot.gif
 saint/html/dots/reddot.gif
 saint/html/dots/whitedot.gif
 saint/html/dots/yellowdot.gif
+saint/html/images/sans.gif
 saint/html/images/checkmark.gif
 saint/html/images/top10.jpg
 saint/html/images/long_bottom_border.gif
@@ -198,6 +199,10 @@ saint/html/tutorials/first_time/learning_to_use.html
 saint/html/tutorials/first_time/make.html
 saint/html/tutorials/first_time/scanning.html
 saint/html/tutorials/first_time/template.html
+saint/html/tutorials/vulnerability/Cisco_Catalyst_access.html
+saint/html/tutorials/vulnerability/Lotus_Domino_vulnerability.html
+saint/html/tutorials/vulnerability/Microsoft_Terminal_Server.html
+saint/html/tutorials/vulnerability/iPlanet_vulnerabilities.html
 saint/html/tutorials/vulnerability/HP_Openview_vulnerabilities.html
 saint/html/tutorials/vulnerability/JetAdmin_vulnerabilities.html
 saint/html/tutorials/vulnerability/http_Cmail_access.html
