@@ -1,0 +1,10 @@
+Fancy biff program under X11 environment. 
+
+Hbiff is a replacement for xbiff that flashes when new mail arrives like the
+traditional xbiff.  In addition, if you click on the hbiff icon, a window
+will popup showing the mail headers.  This makes hbiff better than xlbiff
+where privacy is an issue since the headers are only displayed when you
+request.  hbiff can also run the MUA for you.
+
+-- David O'Brien
+   (obrien@nuxi.com)
