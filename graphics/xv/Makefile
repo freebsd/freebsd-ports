@@ -3,7 +3,7 @@
 # Date created:		30 October 1994
 # Whom:			smace
 #
-# $Id: Makefile,v 1.6 1995/04/01 12:46:17 jkh Exp $
+# $Id: Makefile,v 1.7 1995/04/09 07:09:55 asami Exp $
 #
 
 DISTNAME=	xv-3.10a
@@ -14,5 +14,8 @@ LIB_DEPENDS=	jpeg\\.5\\.:${PORTSDIR}/graphics/jpeg \
 		tiff\\.3\\.:${PORTSDIR}/graphics/tiff
 
 USE_IMAKE=	yes
+
+# Restrictive copyright
+NO_PACKAGE=	yes
 
 .include <bsd.port.mk>
