@@ -7,7 +7,7 @@
 #
 
 DISTNAME=	emacs-20.6
-CATEGORIES=	editors
+CATEGORIES=	editors ipv6
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	emacs
 
