@@ -9,8 +9,11 @@ PORTNAME=	elmo
 PORTVERSION=	0.8.3
 PORTREVISION=	2
 CATEGORIES=	mail
-MASTER_SITES=	\
-	http://savannah.nongnu.org/download/elmo/unstable.pkg/${PORTVERSION}/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S/$/:sf/} \
+		${MASTER_SITE_SAVANNAH:S/$/:sav/}
+MASTER_SITE_SUBDIR=	${PORTNAME}/:sf \
+			${PORTNAME}/unstable.pkg/${PORTVERSION}/:sav
+DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}:sf,sav
 
 MAINTAINER=	trevor@FreeBSD.org
 COMMENT=	Receive, filter, read, compose and send mail at the text console
