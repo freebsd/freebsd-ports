@@ -402,6 +402,7 @@
     SUBDIR += timelimit
     SUBDIR += tmpwatch
     SUBDIR += top
+    SUBDIR += torsmo
     SUBDIR += toshctl
     SUBDIR += tree
     SUBDIR += ttyload

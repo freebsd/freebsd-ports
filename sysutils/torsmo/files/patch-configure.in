@@ -1,0 +1,35 @@
+--- configure.in.orig	Thu Jul 29 08:30:12 2004
++++ configure.in	Thu Jul 29 08:30:23 2004
+@@ -9,7 +9,9 @@
+   Linux*)
+     WANT_SYSINFO=yes
+     ;;
+-
++  FreeBSD*)
++    WANT_KVM=yes
++    ;;
+ # Solaris doesn't work at all right now
+ #  SunOS*)
+ #    WANT_KSTAT=yes
+@@ -24,6 +26,8 @@
+ 
+ AM_CONDITIONAL(BUILD_LINUX, test x$uname = xLinux)
+ AM_CONDITIONAL(BUILD_SOLARIS, test x$uname = xSunOS)
++AM_CONDITIONAL(BUILD_FREEBSD, test x$uname = xFreeBSD)
++
+ 
+ dnl OWN_WINDOW option
+ 
+@@ -108,6 +112,12 @@
+   fi
+ fi
+ 
++if test x$WANT_KVM = xyes; then
++	AC_CHECK_LIB(kvm, kvm_open, 
++		     LIBS="$LIBS -lkvm",
++		     AC_MSG_ERROR([Could not find kvm_open in -lkvm.])
++	)
++fi
+ dnl Check getloadavg
+ 
+ AC_MSG_CHECKING(for getloadavg)
