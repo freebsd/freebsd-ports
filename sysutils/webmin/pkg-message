@@ -1,8 +1,7 @@
 ===================================
 
-To configure webmin for the first 
-time you should run the following
-command as root:
+To reconfigure webmin you should
+run the following command as root:
 
   ${LOCALBASE}/lib/webmin/setup.sh
 
