@@ -7,7 +7,7 @@
 
 PORTNAME=	fftw3
 PORTVERSION=	3.0.1
-PORTREVISION?=	3
+PORTREVISION?=	4
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.fftw.org/pub/fftw/ 		\
 		http://www.fftw.org/ 			\
@@ -24,7 +24,7 @@ FFTW3_FLAVOR?=	default
 FFTW3_SUFX=
 
 USE_GMAKE=	yes
-USE_LIBTOOL_VER=15
+USE_INC_LIBTOOL_VER=15
 USE_GNOME=	gnomehack gnometarget pkgconfig
 USE_REINPLACE=	yes
 USE_PERL5_BUILD=yes
@@ -73,6 +73,9 @@ CONFIGURE_ENV+=	CFLAGS="${CFLAGS:N-O:N-O*} -O3 -fomit-frame-pointer -fno-schedul
 
 .if defined(WITH_SMP_THREADS)
 CONFIGURE_ARGS+=--enable-threads
+PLIST_SUB+=	THREADS=""
+.else
+PLIST_SUB+=	THREADS="@comment "
 .endif
 
 .if defined(FFTW3_FLAVOR)
