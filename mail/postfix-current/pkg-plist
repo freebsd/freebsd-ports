@@ -49,6 +49,7 @@ libexec/postfix/smtpd
 libexec/postfix/spawn
 %%SUB_TLS%%libexec/postfix/tlsmgr
 libexec/postfix/trivial-rewrite
+libexec/postfix/virtual
 sbin/postalias
 sbin/postcat
 sbin/postconf
