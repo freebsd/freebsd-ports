@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	kbiff
-PORTVERSION=	3.6.1
-PORTREVISION=	1
+PORTVERSION=	3.6.3
 CATEGORIES=	mail kde
 MASTER_SITES=	http://devel-home.kde.org/~granroth/kbiff/
 
@@ -21,9 +20,5 @@ GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=
 CONFIGURE_ARGS+=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL} \
 		--disable-fast-perl
-USE_REINPLACE=	yes
-
-post-patch:
-	${REINPLACE_CMD} 's,de en es fr,en,' ${WRKSRC}/doc/Makefile.in
 
 .include <bsd.port.mk>
