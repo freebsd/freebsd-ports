@@ -33,9 +33,6 @@ DOCS= CHANGES.TXT index.shtml style.css mailto.js \
       license-body.html LICENSE.TXT milter-sender.mc responses.txt
 
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-
-.include <bsd.port.pre.mk>
-
 CFLAGS+= ${PTHREAD_CFLAGS}
 CONFIGURE_ENV+=  LIBS="${PTHREAD_LIBS}"
 CONFIGURE_ARGS+= --localstatedir=${PREFIX} --with-db
@@ -69,4 +66,4 @@ post-deinstall:
 	@${ECHO_MSG} "and rebuild sendmail.cf file!"
 	@${ECHO_MSG} ""
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
