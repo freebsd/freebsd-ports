@@ -6,17 +6,17 @@
 #
 
 PORTNAME=	binutils
-PORTVERSION=	2.11.90
+PORTVERSION=	2.11.92
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	mingw
 PKGNAMEPREFIX=	mingw-
-DISTNAME=	${PORTNAME}-${PORTVERSION}-20010705-src${EXTRACT_SUFFIX}
+DISTNAME=	${PORTNAME}-${PORTVERSION}-20011113-src${EXTRACT_SUFFIX}
 DIST_SUBDIR=	mingw
 
 MAINTAINER=	doc@hisio.safenet.pl
 
-NO_WRKSUBDIR=	yes
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-20011113
 
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
@@ -25,6 +25,7 @@ CONFIGURE_ARGS=	--target=i386-mingw32msvc
 MAN1=	i386-mingw32msvc-addr2line.1 \
 	i386-mingw32msvc-ar.1        \
 	i386-mingw32msvc-as.1        \
+	i386-mingw32msvc-dlltool.1   \
 	i386-mingw32msvc-c++filt.1   \
 	i386-mingw32msvc-ld.1        \
 	i386-mingw32msvc-nlmconv.1   \
@@ -32,9 +33,11 @@ MAN1=	i386-mingw32msvc-addr2line.1 \
 	i386-mingw32msvc-objcopy.1   \
 	i386-mingw32msvc-objdump.1   \
 	i386-mingw32msvc-ranlib.1    \
+	i386-mingw32msvc-readelf.1   \
 	i386-mingw32msvc-size.1      \
 	i386-mingw32msvc-strings.1   \
-	i386-mingw32msvc-strip.1
+	i386-mingw32msvc-strip.1     \
+	i386-mingw32msvc-windres.1
 
 post-install:
 	@for file in \

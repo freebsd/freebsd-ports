@@ -1,23 +1,51 @@
-i386-mingw32msvc/bin/ar
-i386-mingw32msvc/bin/as
-i386-mingw32msvc/bin/dlltool
-i386-mingw32msvc/bin/ld
+bin/i386-mingw32msvc-size
+bin/i386-mingw32msvc-objdump
+bin/i386-mingw32msvc-ar
+bin/i386-mingw32msvc-strings
+bin/i386-mingw32msvc-ranlib
+bin/i386-mingw32msvc-objcopy
+bin/i386-mingw32msvc-dlltool
+bin/i386-mingw32msvc-windres
+bin/i386-mingw32msvc-addr2line
+bin/i386-mingw32msvc-readelf
+bin/i386-mingw32msvc-dllwrap
+bin/i386-mingw32msvc-nm
+bin/i386-mingw32msvc-strip
+bin/i386-mingw32msvc-c++filt
+bin/i386-mingw32msvc-as
+bin/i386-mingw32msvc-gasp
+bin/i386-mingw32msvc-ld
 i386-mingw32msvc/bin/nm
-i386-mingw32msvc/bin/ranlib
 i386-mingw32msvc/bin/strip
-@dirrm i386-mingw32msvc/bin
+i386-mingw32msvc/bin/ar
+i386-mingw32msvc/bin/ranlib
+i386-mingw32msvc/bin/dlltool
+i386-mingw32msvc/bin/as
+i386-mingw32msvc/bin/ld
 i386-mingw32msvc/lib/ldscripts/i386pe.x
 i386-mingw32msvc/lib/ldscripts/i386pe.xbn
 i386-mingw32msvc/lib/ldscripts/i386pe.xn
 i386-mingw32msvc/lib/ldscripts/i386pe.xr
 i386-mingw32msvc/lib/ldscripts/i386pe.xu
-@dirrm i386-mingw32msvc/lib/ldscripts
-@unexec rmdir -p %D/i386-mingw32msvc/lib 2>/dev/null || true
-include/ansidecl.h
 include/bfd.h
+include/ansidecl.h
+include/symcat.h
 include/bfdlink.h
-lib/libbfd.a
-lib/libbfd.la
 lib/libiberty.a
-lib/libopcodes.a
+lib/libbfd.la
+lib/libbfd.a
 lib/libopcodes.la
+lib/libopcodes.a
+share/locale/fr/LC_MESSAGES/bfd.mo
+share/locale/fr/LC_MESSAGES/opcodes.mo
+share/locale/fr/LC_MESSAGES/binutils.mo
+share/locale/fr/LC_MESSAGES/gas.mo
+share/locale/fr/LC_MESSAGES/ld.mo
+share/locale/sv/LC_MESSAGES/opcodes.mo
+share/locale/sv/LC_MESSAGES/ld.mo
+share/locale/tr/LC_MESSAGES/opcodes.mo
+share/locale/tr/LC_MESSAGES/binutils.mo
+@dirrm i386-mingw32msvc/lib/ldscripts
+@dirrm i386-mingw32msvc/lib
+@dirrm i386-mingw32msvc/bin
+@dirrm i386-mingw32msvc
