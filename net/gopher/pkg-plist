@@ -3,10 +3,4 @@ bin/gophfilt
 etc/gopher/gopher.rc
 etc/gopher/gopherremote.rc
 etc/gopher/gopher.hlp
-etc/gopherd/gopherd.conf
-etc/gopherd/gopherdlocal.conf
-sbin/gindexd
-sbin/gopherd
-sbin/gopherls
 @dirrm etc/gopher
-@dirrm etc/gopherd
