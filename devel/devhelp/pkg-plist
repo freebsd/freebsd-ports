@@ -1,6 +1,27 @@
 bin/devhelp
-lib/devhelp/libdevhelp.so
+bin/devhelp-bin
+etc/gconf/schemas/devhelp.schemas
+etc/gconf/gconf.xml.defaults/apps/devhelp/ui/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/devhelp/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/devhelp/ui/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/devhelp/%gconf.xml
+include/devhelp-1.0/devhelp/dh-base.h
+include/devhelp-1.0/devhelp/dh-book-tree.h
+include/devhelp-1.0/devhelp/dh-error.h
+include/devhelp-1.0/devhelp/dh-html.h
+include/devhelp-1.0/devhelp/dh-keyword-model.h
+include/devhelp-1.0/devhelp/dh-link.h
+include/devhelp-1.0/devhelp/dh-parser.h
+include/devhelp-1.0/devhelp/dh-preferences.h
+include/devhelp-1.0/devhelp/dh-search.h
+include/devhelp-1.0/devhelp/dh-util.h
+include/devhelp-1.0/devhelp/dh-window.h
+lib/libdevhelp-1.a
+lib/libdevhelp-1.so
+lib/libdevhelp-1.so.0
+libdata/pkgconfig/libdevhelp-1.0.pc
 share/gnome/applications/devhelp.desktop
+share/gnome/devhelp/devhelp.glade
 share/gnome/devhelp/dtd/devhelp-1.dtd
 share/gnome/devhelp/images/book_closed.png
 share/gnome/devhelp/images/book_open.png
@@ -12,35 +33,49 @@ share/gnome/pixmaps/devhelp.png
 share/locale/am/LC_MESSAGES/devhelp.mo
 share/locale/az/LC_MESSAGES/devhelp.mo
 share/locale/be/LC_MESSAGES/devhelp.mo
+share/locale/ca/LC_MESSAGES/devhelp.mo
 share/locale/cs/LC_MESSAGES/devhelp.mo
 share/locale/da/LC_MESSAGES/devhelp.mo
 share/locale/de/LC_MESSAGES/devhelp.mo
 share/locale/el/LC_MESSAGES/devhelp.mo
 share/locale/es/LC_MESSAGES/devhelp.mo
+share/locale/fi/LC_MESSAGES/devhelp.mo
 share/locale/fr/LC_MESSAGES/devhelp.mo
 share/locale/he/LC_MESSAGES/devhelp.mo
 share/locale/hi/LC_MESSAGES/devhelp.mo
+share/locale/hr/LC_MESSAGES/devhelp.mo
 share/locale/is/LC_MESSAGES/devhelp.mo
 share/locale/it/LC_MESSAGES/devhelp.mo
 share/locale/ja/LC_MESSAGES/devhelp.mo
 share/locale/kn/LC_MESSAGES/devhelp.mo
 share/locale/ko/LC_MESSAGES/devhelp.mo
 share/locale/lv/LC_MESSAGES/devhelp.mo
+share/locale/ml/LC_MESSAGES/devhelp.mo
 share/locale/ms/LC_MESSAGES/devhelp.mo
 share/locale/nl/LC_MESSAGES/devhelp.mo
 share/locale/no/LC_MESSAGES/devhelp.mo
+share/locale/pa/LC_MESSAGES/devhelp.mo
 share/locale/pl/LC_MESSAGES/devhelp.mo
 share/locale/pt/LC_MESSAGES/devhelp.mo
 share/locale/pt_BR/LC_MESSAGES/devhelp.mo
 share/locale/ru/LC_MESSAGES/devhelp.mo
 share/locale/sk/LC_MESSAGES/devhelp.mo
+share/locale/sq/LC_MESSAGES/devhelp.mo
+share/locale/sr/LC_MESSAGES/devhelp.mo
+share/locale/sr@Latn/LC_MESSAGES/devhelp.mo
 share/locale/sv/LC_MESSAGES/devhelp.mo
+share/locale/tr/LC_MESSAGES/devhelp.mo
 share/locale/uk/LC_MESSAGES/devhelp.mo
 share/locale/vi/LC_MESSAGES/devhelp.mo
 share/locale/zh_CN/LC_MESSAGES/devhelp.mo
 share/locale/zh_TW/LC_MESSAGES/devhelp.mo
+@dirrm etc/gconf/gconf.xml.defaults/apps/devhelp/ui
+@dirrm etc/gconf/gconf.xml.defaults/apps/devhelp
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/devhelp/ui
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/devhelp
 @dirrm share/gnome/devhelp/ui
 @dirrm share/gnome/devhelp/images
 @dirrm share/gnome/devhelp/dtd
 @dirrm share/gnome/devhelp
-@dirrm lib/devhelp
+@dirrm include/devhelp-1.0/devhelp
+@dirrm include/devhelp-1.0
