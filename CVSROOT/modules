@@ -7541,6 +7541,7 @@ quat-gui	ports/graphics/quat-gui
 quelcom		ports/audio/quelcom
 queso		ports/net/queso
 queue-repair	ports/mail/queue-repair
+quftp		ports/ftp/quftp
 quick-lounge-applet	ports/misc/quick-lounge-applet
 quickpics	ports/graphics/quickpics
 quintuple-agent	ports/security/quintuple-agent
