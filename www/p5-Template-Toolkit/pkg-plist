@@ -25,9 +25,11 @@ lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Manual/Intro.pod
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Manual/Plugins.pod
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Manual/Refs.pod
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Manual/Syntax.pod
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Manual/VMethods.pod
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Manual/Variables.pod
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Manual/Views.pod
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Modules.pod
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Namespace/Constants.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Parser.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Plugin.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Plugin/Autoformat.pm
@@ -101,6 +103,7 @@ share/tt2/docs/html/Manual/Intro.html
 share/tt2/docs/html/Manual/Plugins.html
 share/tt2/docs/html/Manual/Refs.html
 share/tt2/docs/html/Manual/Syntax.html
+share/tt2/docs/html/Manual/VMethods.html
 share/tt2/docs/html/Manual/Variables.html
 share/tt2/docs/html/Manual/Views.html
 share/tt2/docs/html/Manual/index.html
@@ -113,6 +116,7 @@ share/tt2/docs/html/Modules/Template/Document.html
 share/tt2/docs/html/Modules/Template/Exception.html
 share/tt2/docs/html/Modules/Template/Filters.html
 share/tt2/docs/html/Modules/Template/Iterator.html
+share/tt2/docs/html/Modules/Template/Namespace/Constants.html
 share/tt2/docs/html/Modules/Template/Parser.html
 share/tt2/docs/html/Modules/Template/Plugin.html
 share/tt2/docs/html/Modules/Template/Plugin/Autoformat.html
@@ -202,6 +206,7 @@ share/tt2/docs/src/Manual/Intro.html
 share/tt2/docs/src/Manual/Plugins.html
 share/tt2/docs/src/Manual/Refs.html
 share/tt2/docs/src/Manual/Syntax.html
+share/tt2/docs/src/Manual/VMethods.html
 share/tt2/docs/src/Manual/Variables.html
 share/tt2/docs/src/Manual/Views.html
 share/tt2/docs/src/Manual/index.html
@@ -214,6 +219,7 @@ share/tt2/docs/src/Modules/Template/Document.html
 share/tt2/docs/src/Modules/Template/Exception.html
 share/tt2/docs/src/Modules/Template/Filters.html
 share/tt2/docs/src/Modules/Template/Iterator.html
+share/tt2/docs/src/Modules/Template/Namespace/Constants.html
 share/tt2/docs/src/Modules/Template/Parser.html
 share/tt2/docs/src/Modules/Template/Plugin.html
 share/tt2/docs/src/Modules/Template/Plugin/Autoformat.html
@@ -1365,6 +1371,7 @@ share/tt2/templates/splash/ttpower
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Stash
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Library
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Tutorial
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Namespace
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Manual
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Plugin/XML
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Plugin/GD/Text
@@ -1384,6 +1391,7 @@ share/tt2/templates/splash/ttpower
 @dirrm share/tt2/docs/html/Modules/Template/Plugin/GD/Graph
 @dirrm share/tt2/docs/html/Modules/Template/Plugin/GD
 @dirrm share/tt2/docs/html/Modules/Template/Plugin
+@dirrm share/tt2/docs/html/Modules/Template/Namespace
 @dirrm share/tt2/docs/html/Modules/Template
 @dirrm share/tt2/docs/html/Modules
 @dirrm share/tt2/docs/html
@@ -1404,6 +1412,7 @@ share/tt2/templates/splash/ttpower
 @dirrm share/tt2/docs/src/Modules/Template/Plugin/GD/Graph
 @dirrm share/tt2/docs/src/Modules/Template/Plugin/GD
 @dirrm share/tt2/docs/src/Modules/Template/Plugin
+@dirrm share/tt2/docs/src/Modules/Template/Namespace
 @dirrm share/tt2/docs/src/Modules/Template
 @dirrm share/tt2/docs/src/Modules
 @dirrm share/tt2/docs/src
