@@ -1,0 +1,6 @@
+#!/bin/sh
+# installation script for Wnn4.2
+if [ "$2" != "POST-INSTALL" ]; then
+  exit 0
+fi
+${PKG_PREFIX}/bin/Wnn4/wnntouch ${PKG_PREFIX}/lib/wnn/ja_JP/dic/pubdic/*
