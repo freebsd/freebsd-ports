@@ -3,7 +3,7 @@
 # Date created:         2 Apr 1997
 # Whom:                 Choi Jun Ho <junker@jazz.snu.ac.kr>
 #
-# $Id: Makefile,v 1.3 1997/07/18 05:04:12 asami Exp $
+# $Id: Makefile,v 1.4 1997/09/22 16:22:05 max Exp $
 #
 
 DISTNAME=	linuxdoc-sgml-1.6bh2
@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://jazz.snu.ac.kr/pub/unix/util/tools/
 
 MAINTAINER=	junker@jazz.snu.ac.kr
 
-RUN_DEPENDS=	perl5.00401:${PORTSDIR}/lang/perl5
+RUN_DEPENDS=	perl5:${PORTSDIR}/lang/perl5
 
 MAN1=		sgml2html.1 sgml2latex.1 sgml2rtf.1 sgmls.1 \
 		sgml2info.1 sgml2lyx.1   sgml2txt.1 sgmlsasp.1
