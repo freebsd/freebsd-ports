@@ -68,7 +68,7 @@
     SUBDIR += gma
     SUBDIR += gno3dtet
     SUBDIR += gnocatan
-    SUBDIR += gnome-breakout
+    SUBDIR += gnomebreakout
     SUBDIR += gnomechess
     SUBDIR += gnomegames
     SUBDIR += gnomememoryblocks
