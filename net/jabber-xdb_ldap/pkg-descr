@@ -1,0 +1,6 @@
+The Jabber server (jabberd) is a daemon for Jabber clients to connect
+and communicate with. xdb_ldap allows you to store the jabber data in
+an LDAP directory
+
+You can learn more about Jabber at:
+WWW: http://www.jabber.org/

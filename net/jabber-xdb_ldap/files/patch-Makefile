@@ -1,0 +1,13 @@
+--- Makefile.orig	Wed Jul 24 17:42:25 2002
++++ Makefile	Sat Nov 29 18:35:35 2003
+@@ -1,7 +1,7 @@
+-include ../../platform-settings
++include ${JABBER_SRC}/platform-settings
+ 
+-CFLAGS:=$(CFLAGS) -I../../jabberd -I../include
+-LIBS:=$(LIBS) -lresolv -lldap -llber 
++CFLAGS:=$(CFLAGS) -I${JABBER_SRC}/jabberd -I../include -I/usr/local/include
++LIBS:=$(LIBS) -L/usr/local/lib  -lldap -llber 
+ xdb_ldap_OBJECTS = xdb_ldap.o \
+ 		xdb_ldap_common.o \
+ 		xdb_ldap_auth.o \
