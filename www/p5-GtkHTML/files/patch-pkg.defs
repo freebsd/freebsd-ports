@@ -1,0 +1,10 @@
+--- pkg.defs.orig	Sun Dec  1 21:05:22 2002
++++ pkg.defs	Sun Dec  1 21:05:33 2002
+@@ -61,7 +61,6 @@
+   (remove-link GTK_HTML_COMMAND_REMOVE_LINK)
+   (delete GTK_HTML_COMMAND_DELETE)
+   (delete-back GTK_HTML_COMMAND_DELETE_BACK)
+-  (set-mark GTK_HTML_COMMAND_SET_MARK)
+   (disable-selection GTK_HTML_COMMAND_DISABLE_SELECTION)
+   (bold-on GTK_HTML_COMMAND_BOLD_ON)
+   (bold-off GTK_HTML_COMMAND_BOLD_OFF)
