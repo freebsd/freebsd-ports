@@ -1,12 +1,12 @@
 # New ports collection makefile for:	mod_perl
-# Version required:			1.21
+# Version required:			1.21_02
 # Date created:				November 5th 1999
 # Whom:	      				Sheldon Hearn <sheldonh@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	mod_perl-1.21
+DISTNAME=	mod_perl-1.21_02
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Apache
@@ -19,7 +19,7 @@ RUN_DEPENDS=	${LOCALBASE}/sbin/apxs:${PORTSDIR}/www/apache13
 USE_PERL5=	YES
 
 MAN3=		Apache.3 Apache::Constants.3  Apache::ExtUtils.3 \
-		Apache::FakeRequest.3 Apache::Leak.3 \
+		Apache::FakeRequest.3 Apache::File.3 Apache::Leak.3 \
 		Apache::Log.3 Apache::Options.3 \
 		Apache::PerlRun.3 Apache::PerlRunXS.3 \
 		Apache::RedirectLogFix.3 \
@@ -34,7 +34,11 @@ MAN3=		Apache.3 Apache::Constants.3  Apache::ExtUtils.3 \
 		mod_perl_tuning.3
 MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 400000
 BROKEN=		"see PR 14924; use p5-Apache instead"
+.endif
 
 do-configure:
 	@ cd ${WRKSRC}; \
@@ -48,4 +52,4 @@ post-install:
 	    ${PREFIX}/include/apache/modules/perl
 	${SH} ${PKGINSTALL}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
