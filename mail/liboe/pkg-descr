@@ -1,0 +1,8 @@
+liboe is a C library that reads Outlook Express 4 and 5.x mailboxes and
+returns a standard Unix mailbox to a function specified as a parameter to
+the converter
+
+oe2mbx is a C program using liboe to convert Outlook Express messages to
+the Unix mailbox format 
+
+WWW: http://www.gpl.no/liboe/
