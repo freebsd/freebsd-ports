@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xerces-j
-PORTVERSION=	2.0.2
+PORTVERSION=	2.1.0
 CATEGORIES=	textproc java
 MASTER_SITES=	http://xml.apache.org/dist/xerces-j/
 DISTNAME=	xerces-${PORTVERSION:S/./_/g}
