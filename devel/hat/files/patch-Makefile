@@ -1,6 +1,6 @@
---- Makefile.orig	Thu Oct  4 10:21:53 2001
-+++ Makefile	Thu Oct  4 10:22:02 2001
-@@ -148,14 +148,14 @@
+--- Makefile.orig	Fri Mar 15 20:32:19 2002
++++ Makefile	Fri Mar 15 20:33:50 2002
+@@ -143,15 +143,15 @@
  
  TARGDIR= targets
  TARGETS= runtime prelude greencard hp2graph hattools \
@@ -13,16 +13,17 @@
 -	 compiler-nhc compiler-hbc compiler-ghc compiler-$(CC) \
 -	 hmake-nhc hmake-hbc hmake-ghc hmake-$(CC) \
 -	 greencard-nhc greencard-hbc greencard-ghc greencard-$(CC) \
--	 prelude-$(CC) pragma-$(CC)
 +	 traceruntime traceprelude traceprelude-gcc \
 +	 compiler-nhc compiler-hbc compiler-ghc compiler-gcc \
 +	 hmake-nhc hmake-hbc hmake-ghc hmake-gcc \
 +	 greencard-nhc greencard-hbc greencard-ghc greencard-gcc \
+ 	 hat-nhc hat-ghc \
+-	 prelude-$(CC) pragma-$(CC)
 +	 prelude-gcc pragma-gcc
  
- .PHONY: default basic all tracer compiler help config install hattools
+ .PHONY: default basic all tracer compiler help config install hat hattools
  
-@@ -188,8 +188,8 @@
+@@ -185,8 +185,8 @@
  basic-nhc: $(PRAGMA) runtime hmake-nhc greencard-nhc compiler-nhc prelude
  basic-hbc: $(PRAGMA) runtime hmake-hbc greencard-hbc compiler-hbc prelude
  basic-ghc: $(PRAGMA) runtime hmake-ghc greencard-ghc compiler-ghc prelude
@@ -31,10 +32,10 @@
 +basic-gcc:   runtime prelude-gcc pragma-gcc compiler-gcc \
 +		 greencard-gcc hmake-gcc
  
- all-$(BUILDCOMP): basic-$(BUILDCOMP) heapprofile timeprofile tracer lib/hood.jar
+ all-$(BUILDCOMP): basic-$(BUILDCOMP) heapprofile timeprofile tracer hoodui
  
-@@ -209,9 +209,9 @@
- 		compiler-ghc traceruntime traceprelude hattools
+@@ -206,9 +206,9 @@
+ 		compiler-ghc traceruntime traceprelude hattools hat-ghc
  tracer-hbc: $(PRAGMA) runtime hmake-hbc greencard-hbc \
  		compiler-hbc traceruntime traceprelude hattools
 -tracer-$(CC): runtime prelude-$(CC) pragma-$(CC) compiler-$(CC) \
@@ -46,7 +47,7 @@
  timetraceprofile: timetraceruntime timetraceprelude
  
  $(TARGETS): % : $(TARGDIR)/$(MACHINE)/%
-@@ -324,44 +324,44 @@
+@@ -328,44 +328,44 @@
  	touch $(TARGDIR)/$(MACHINE)/timeprelude
  
  
@@ -100,7 +101,7 @@
 -$(TARGDIR)/$(MACHINE)/hmake-$(CC): $(HMAKEC)
 +	touch $(TARGDIR)/$(MACHINE)/pragma-gcc
 +$(TARGDIR)/$(MACHINE)/hmake-gcc: $(HMAKEC)
- 	cd src/hmake;          $(MAKE) fromC
+ 	cd src/hmake;          $(MAKE) fromC config
  	cd src/interpreter;    $(MAKE) fromC
 -	touch $(TARGDIR)/$(MACHINE)/hmake-$(CC)
 +	touch $(TARGDIR)/$(MACHINE)/hmake-gcc

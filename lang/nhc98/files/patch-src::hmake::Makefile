@@ -1,7 +1,6 @@
-diff -ruN src.bak/hmake/Makefile src/hmake/Makefile
---- src.bak/hmake/Makefile	Tue May 29 16:29:07 2001
-+++ src/hmake/Makefile	Mon Jun 18 16:32:21 2001
-@@ -48,7 +48,7 @@
+--- src/hmake/Makefile.orig	Fri Mar 15 21:04:20 2002
++++ src/hmake/Makefile	Fri Mar 15 21:07:06 2002
+@@ -63,7 +63,7 @@
  	strip $@
  
  $(OBJDIR):
@@ -9,4 +8,4 @@ diff -ruN src.bak/hmake/Makefile src/hmake/Makefile
 +	mkdir -p $(OBJDIR) || /usr/bin/true
  $(OBJS): $(OBJDIR)/%.$O : %.hs
  	$(HC) $(HFLAGS) -c -o $@ $<
- $(CPPOBJS) $(OBJDIR)/Older.$O: $(OBJDIR)/%.$O : %.hs
+ $(CPPOBJS) $(OBJDIR)/Older.$O $(OBJDIR)/MkConfig.$O: $(OBJDIR)/%.$O : %.hs

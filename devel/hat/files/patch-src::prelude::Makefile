@@ -1,7 +1,6 @@
-diff -ruN src.bak/prelude/Makefile src/prelude/Makefile
---- src.bak/prelude/Makefile	Mon Jun  4 12:40:41 2001
-+++ src/prelude/Makefile	Mon Jun 18 16:31:24 2001
-@@ -80,7 +80,7 @@
+--- src/prelude/Makefile.orig	Fri Mar 15 21:03:48 2002
++++ src/prelude/Makefile	Fri Mar 15 21:06:41 2002
+@@ -79,7 +79,7 @@
  	mkdir -p ${OBJDIR}
  
  ${OBJDIRS}: ${OBJDIR}/% :
@@ -10,7 +9,7 @@ diff -ruN src.bak/prelude/Makefile src/prelude/Makefile
  
  
  ifeq "${TPROF}" ""
-@@ -326,9 +326,9 @@
+@@ -328,9 +328,9 @@
  
  
  ${OBJDIR}:
@@ -20,5 +19,5 @@ diff -ruN src.bak/prelude/Makefile src/prelude/Makefile
 -	mkdir -p $@ || /bin/true
 +	mkdir -p $@ || /usr/bin/true
  
- ${ARCHIVE}: ${OBJDIR} ${OBJDIRS} ${SUBDIRSMK}
- 	rm -f $@
+ ifeq "${TPROF}" ""
+ 
