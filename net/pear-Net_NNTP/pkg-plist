@@ -3,6 +3,11 @@
 %%PEARDIR%%/Net/NNTP/Header.php
 %%PEARDIR%%/Net/NNTP/Message.php
 %%PKGREGDIR%%/package.xml
+%%PORTDOCS%%%%EXAMPLESDIR%%/README
+%%PORTDOCS%%%%EXAMPLESDIR%%/read.php
+%%PORTDOCS%%%%EXAMPLESDIR%%/group.php
+%%PORTDOCS%%%%EXAMPLESDIR%%/index.php
 @dirrm %%PEARDIR%%/Net/NNTP
 @dirrm %%PKGREGDIR%%
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
 @unexec rmdir %D/share/pear/Net 2> /dev/null || true
