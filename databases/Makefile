@@ -245,7 +245,6 @@
     SUBDIR += usogres
     SUBDIR += wfb2sql
     SUBDIR += xmbase-grok
-    SUBDIR += xmysql
     SUBDIR += xmysqladmin
     SUBDIR += zodb
     SUBDIR += zodb3
