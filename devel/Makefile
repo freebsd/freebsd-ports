@@ -226,6 +226,7 @@
     SUBDIR += hs-haddock
     SUBDIR += hs-happy
     SUBDIR += hs-hat
+    SUBDIR += hs-hdoc
     SUBDIR += hs-hmake
     SUBDIR += hs-hpl
     SUBDIR += hs-popenhs
