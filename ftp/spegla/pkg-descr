@@ -1,0 +1,52 @@
+Spegla is a mirror program for FTP sites.  It was written because I
+couldn't find any fast mirroring program for big mirrors. It makes a
+complete mirror of a FTP area.
+
+Spegla only take one command-line parameter, the config file.  These
+parameters can be specified in it:
+
+ - localdir   where the mirror should go on your machine.
+
+ - remotedir  directory at the FTP server.
+
+ - username   user to log in as i.e. anonymous.
+
+ - password   password to use i.e. your email address.
+
+ - host       FTP server.
+
+ - retries    how many retries before quit. Defaults to 20.
+
+ - retrytime  how many seconds to wait before log in again after
+              a timeout. Defaults to 150.
+
+ - timeout    how many seconds to wait to timeout. Defaults to 150.
+
+ - skipdir    which directories to ignore remote and local, can be
+              several but only one per row.
+
+ - dirlink    not used for now.
+
+ - logfile    logfile, can be a file, stdout or stderr. Defaults
+              to stdout.
+
+Blank lines and text after '#' are ignored.
+
+This is what's in the config file I use for the FreeBSD mirror of
+Walnut Creek's FreeBSD area.
+
+localdir  = /ftp/pub/FreeBSD
+remotedir = /pub/FreeBSD
+username  = anonymous
+password  = jnilsson@ludd.luth.se
+host      = ftp.freebsd.org
+timeout   = 120
+retries   = 300       # busy ftp server and lots of files.
+                      # Takes lots of hours to complete
+                      # and don't want to quit when we are
+                      # almost finished.
+retrytime = 120       # if network goes down don't consume
+                      # all retries to fast.
+logfile   = freebsd.org.log
+skipdir   = distfiles # don't have room for this yet.
+skipdir   = incoming  # no need for this.
