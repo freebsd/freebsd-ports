@@ -8,8 +8,10 @@
 PORTNAME=	stuffit
 PORTVERSION=	5.2.0.611
 CATEGORIES=	archivers linux
-MASTER_SITES=	ftp://ftp.aladdinsys.com/pub/linux/StuffIt_for_Linux/ \
-		ftp://ftp2.aladdinsys.com/pub/linux/StuffIt_for_Linux/
+MASTER_SITES=	ftp://ftp.aladdinsys.com/pub/linux/StuffIt/ \
+		ftp://ftp2.aladdinsys.com/pub/linux/StuffIt/ \
+		ftp://ftp3.aladdinsys.com/pub/linux/StuffIt/ \
+		ftp://ftp4.aladdinsys.com/pub/linux/StuffIt/
 DISTNAME=	stuffit520.611linux-i386
 EXTRACT_SUFX=	.tgz
 
