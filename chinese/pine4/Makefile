@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	pine
-PORTVERSION=	4.60
+PORTVERSION=	4.61
 PORTREVISION=	0
 CATEGORIES=	chinese mail news
 MASTER_SITES=	ftp://ftp.cac.washington.edu/pine/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
-PATCH_SITES=	ftp://freebsd.ntu.edu.tw/OS/FreeBSD/taiwan/users/benedick/patch/pine/
+PATCH_SITES=	ftp://freebsd.ntu.edu.tw/Upload/FBSD-taiwan/users/benedick/patch/pine/
 PATCHFILES=	${PORTNAME}${PORTVERSION}.patch.gz
 
 MAINTAINER=	avatar@mmlab.cse.yzu.edu.tw
