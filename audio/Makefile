@@ -363,6 +363,7 @@
     SUBDIR += xmradio
     SUBDIR += xsidplay
     SUBDIR += xtuner
+    SUBDIR += xvmixer
     SUBDIR += xwave
     SUBDIR += yamt
     SUBDIR += zinf

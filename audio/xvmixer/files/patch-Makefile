@@ -1,0 +1,25 @@
+--- Makefile.orig	Mon Mar 17 04:43:11 1997
++++ Makefile	Wed Jul 23 17:00:50 2003
+@@ -1,17 +1,12 @@
+-#CC	= gcc
+-CC = cc
+-#LD	= gcc
+-LD = cc
+-CFLAGS	= -pipe -O2 -DUSE_XBM_ICON
+-#LDFLAGS =
+-LIBRARIES=	-L/usr/X11R6/lib -L/usr/openwin/lib -lxview -lolgx -lX11
+-
+-#.c.o:		$(CC) -c $(CFLAGS) $@ 
++CC?=		cc
++INCLUDES=	-I. -I%%X11BASE%%/include
++CFLAGS+=	-DUSE_XBM_ICON $(INCLUDES)
++LIBRARIES=	-L%%X11BASE%%/lib -L/usr/lib -lxview -lolgx -lX11
+ 
+ all:	xvmixer
+ 
+ xvmixer:	xvmixer.o
+-		$(LD) $(LDFLAGS) -o $@ xvmixer.o $(LIBRARIES)
++		$(CC) -o $@ xvmixer.o $(LIBRARIES)
+ 
+ xvmixer.o:	locked.bit unlocked.bit rec.bit
+ 
