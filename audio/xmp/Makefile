@@ -6,7 +6,7 @@
 # $FreeBSD$
 #
 
-DISTNAME=	xmp-2.0.0-pre
+DISTNAME=	xmp-2.0.0
 PKGNAME=	xmp-2.0.0
 CATEGORIES=	audio
 MASTER_SITES=	http://xmp.helllabs.org/pkg/2.0.0/ \
