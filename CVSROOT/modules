@@ -6183,6 +6183,7 @@ rboot		ports/net/rboot
 rbootd		src/libexec/rbootd
 rbot		ports/irc/rbot
 rc		ports/shells/rc
+rc5pipe		ports/security/rc5pipe
 rcalc		ports/math/rcalc
 rclean		ports/sysutils/rclean
 rclock		ports/x11-clocks/rclock
