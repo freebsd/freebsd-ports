@@ -60,6 +60,7 @@ include/%%PYTHON_VERSION%%/pystate.h
 include/%%PYTHON_VERSION%%/pythonrun.h
 include/%%PYTHON_VERSION%%/pythread.h
 include/%%PYTHON_VERSION%%/rangeobject.h
+include/%%PYTHON_VERSION%%/setobject.h
 include/%%PYTHON_VERSION%%/sliceobject.h
 include/%%PYTHON_VERSION%%/stringobject.h
 include/%%PYTHON_VERSION%%/structmember.h
