@@ -394,6 +394,7 @@
     SUBDIR += xqf
     SUBDIR += xquarto
     SUBDIR += xracer
+    SUBDIR += xrick
     SUBDIR += xripple
     SUBDIR += xrisk
     SUBDIR += xroach

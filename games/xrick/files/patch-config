@@ -1,0 +1,40 @@
+--- config.orig	Mon Apr 15 22:08:26 2002
++++ config	Mon Apr 15 22:33:35 2002
+@@ -46,31 +46,20 @@
+ CFLAGS="$CFLAGS -DVERSION=\\\"$VERSION\\\""
+ 
+ # SDL
+-SDLVER=`sdl-config --version 2>&1`
++SDLVER=`sdl11-config --version 2>&1`
+ if [ $? -ne 0 ]; then
+   echo "Error: SDL not found"
+   echo "Abort"
+   exit 1
+ else
+   echo "SDL version $SDLVER detected"
+-  CFLAGS="$CFLAGS `sdl-config --cflags`"
+-  LDFLAGS="$LDFLAGS `sdl-config --libs`"
++  CFLAGS="$CFLAGS `sdl11-config --cflags`"
++  LDFLAGS="$LDFLAGS `sdl11-config --libs`"
+ fi
+ 
+-POSDOT=`expr index $SDLVER '.'`
+-POSDOTp=`expr $POSDOT - 1`
+-POSDOTn=`expr $POSDOT + 1`
+-SDL_MAJ=`expr substr $SDLVER 1 $POSDOTp`
+-LEN=`expr length $SDLVER`
+-LEN=`expr $LEN - $POSDOT`
+-SDLVER=`expr substr $SDLVER $POSDOTn $LEN`
+-POSDOT=`expr index $SDLVER '.'`
+-POSDOTp=`expr $POSDOT - 1`
+-POSDOTn=`expr $POSDOT + 1`
+-SDL_MIN=`expr substr $SDLVER 1 $POSDOTp`
+-LEN=`expr length $SDLVER`
+-LEN=`expr $LEN - $POSDOT`
+-SDL_MIC=`expr substr $SDLVER $POSDOTn $LEN`
++SDL_MAJ=`echo $SDLVER | awk -F '.' '{print $1}'`
++SDL_MIN=`echo $SDLVER | awk -F '.' '{print $2}'`
++SDL_MIC=`echo $SDLVER | awk -F '.' '{print $3}'`
+ 
+ case "$TARGET" in
+   cygwin* | CYGWIN*)
