@@ -3,7 +3,7 @@
 # Date created:		23 Jan 1998
 # Whom:			taguchi@tohoku.iij.ad.jp
 #
-# $Id: Makefile,v 1.4 1998/07/27 00:14:52 steve Exp $
+# $Id: Makefile,v 1.5 1998/09/27 11:17:06 kuriyama Exp $
 #
 
 DISTNAME=	tcl8.0.3
@@ -47,6 +47,9 @@ post-install:
 	 )
 .endif
 	@${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
+	if [ "${PORTOBJFORMAT}" = "aout" ]; then \
+		${LN} -sf libtcl80jp.so.1.2 ${PREFIX}/lib/libtcl80jp.so; \
+	fi
 	@${CAT}	${PKGDIR}/MESSAGE
 
 test:
