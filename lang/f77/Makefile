@@ -1,0 +1,48 @@
+# Ports collection makefile for:	f77-freebsd
+# Version required: 			0.3
+# Date created:				19 JAN 1999
+# Whom:					Steven G. Kargl
+#
+# $Id$
+#
+
+DISTNAME=	f77-freebsd.0.3
+PKGNAME=	f77-0.3
+CATEGORIES=	lang
+MASTER_SITES=	ftp://troutmask.apl.washington.edu/pub/
+
+MAINTAINER=	kargl@troutmask.apl.washington.edu
+
+.ifdef GNU_CPP
+RUN_DEPENDS=	${PREFIX}/bin/f2c:${PORTSDIR}/lang/f2c
+.else
+RUN_DEPENDS=	${PREFIX}/bin/fpp:${PORTSDIR}/devel/fpp \
+		${PREFIX}/bin/f2c:${PORTSDIR}/lang/f2c
+.endif
+
+# Set F77NAME to the name of the Fortran 77 wrapper.
+F77NAME=	fc
+
+.ifdef GNU_CPP
+MAKE_ARGS=	"CFLAGS= ${CFLAGS} -DPP_COMMAND='\"/usr/bin/cpp\"' \
+		-DF2C_COMMAND='\"${PREFIX}/bin/f2c\"'"
+.else
+MAKE_ARGS=	"CFLAGS= ${CFLAGS} -DSUN_FPP \
+		-DPP_COMMAND='\"${PREFIX}/bin/fpp\"' \
+		-DF2C_COMMAND='\"${PREFIX}/bin/f2c\"'"
+.endif
+
+.include <bsd.port.pre.mk>
+
+ALL_TARGET=   depend all
+
+MAN1=		${F77NAME}.1
+
+do-install:
+	@echo 'bin/${F77NAME}' > ${PKGDIR}/PLIST
+	${INSTALL_PROGRAM} ${WRKSRC}/f77 ${PREFIX}/bin/${F77NAME}
+	@${SED} -e 's/F77/${F77NAME}/g' -e 's/f77/${F77NAME}/g' \
+	${WRKSRC}/f77.1  > ${WRKSRC}/${F77NAME}.1
+	${INSTALL_MAN} ${WRKSRC}/${F77NAME}.1 ${PREFIX}/man/man1
+
+.include <bsd.port.post.mk>
