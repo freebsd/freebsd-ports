@@ -15,7 +15,7 @@ MAINTAINER=	matt@mattsnetwork.co.uk
 COMMENT=	Amateur Radio DX cluster monitor
 
 USE_X_PREFIX=	yes
-USE_GNOME=	pkgconfig gtk20
+USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 
