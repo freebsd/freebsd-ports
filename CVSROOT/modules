@@ -8072,6 +8072,7 @@ portell		ports/misc/portell
 portfwd		ports/net/portfwd
 portindex	ports/sysutils/portindex
 portlint	ports/devel/portlint
+portmanager	ports/sysutils/portmanager
 portmk		ports/devel/portmk
 portmon		ports/net-mgmt/portmon
 portoseguro	ports/x11/portoseguro
