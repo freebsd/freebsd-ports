@@ -1654,6 +1654,7 @@ lib/X11/doc/html/glXWaitGL.3.html
 lib/X11/doc/html/glXWaitX.3.html
 lib/X11/doc/html/glint.4.html
 lib/X11/doc/html/i740.4.html
+lib/X11/doc/html/i810.4.html
 lib/X11/doc/html/iceauth.1.html
 lib/X11/doc/html/ico.1.html
 lib/X11/doc/html/imake.1.html
@@ -3234,6 +3235,7 @@ lib/modules/drivers/cyrix_drv.o
 lib/modules/drivers/fbdev_drv.o
 lib/modules/drivers/glint_drv.o
 lib/modules/drivers/i740_drv.o
+lib/modules/drivers/i810_drv.o
 lib/modules/drivers/mga_drv.o
 lib/modules/drivers/neomagic_drv.o
 lib/modules/drivers/nv_drv.o
@@ -4412,6 +4414,7 @@ man/man4/elographics.4.gz
 man/man4/fbdev.4.gz
 man/man4/glint.4.gz
 man/man4/i740.4.gz
+man/man4/i810.4.gz
 man/man4/keyboard.4.gz
 man/man4/mga.4.gz
 man/man4/microtouch.4.gz
