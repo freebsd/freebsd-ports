@@ -8,9 +8,7 @@
 PORTNAME=	startup-notification
 PORTVERSION=	0.8
 CATEGORIES=	x11 gnome
-MASTER_SITES=	http://www.freedesktop.org/software/startup-notification/releases/ \
-		${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.8
+MASTER_SITES=	http://www.freedesktop.org/software/startup-notification/releases/
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
