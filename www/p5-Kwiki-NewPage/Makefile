@@ -1,0 +1,34 @@
+# New ports collection makefile for:	p5-Kwiki-NewPage
+# Date created:		2004-08-28
+# Whom:			Elvis Chiang <elvis@sslab.cs.ccu.edu.tw>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	Kwiki-NewPage
+PORTVERSION=	0.11
+CATEGORIES=	www perl5
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
+MASTER_SITE_SUBDIR=	Kwiki
+PKGNAMEPREFIX=	p5-
+
+MAINTAINER=	elvis@sslab.cs.ccu.edu.tw
+COMMENT=	Kwiki New Page Plugin
+
+BUILD_DEPENDS=	${SITE_PERL}/Kwiki.pm:${PORTSDIR}/www/p5-Kwiki
+RUN_DEPENDS=	${BUILD_DEPENDS}
+
+PERL_CONFIGURE=	yes
+
+MAN3=		Kwiki::NewPage.3
+
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500601
+IGNORE=		This port requires perl 5.6.x or later. Install lang/perl5 then try again
+.endif
+
+post-install:
+	@${CAT} ${PKGMESSAGE}
+
+.include <bsd.port.post.mk>

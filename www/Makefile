@@ -483,6 +483,7 @@
     SUBDIR += p5-Kwiki
     SUBDIR += p5-Kwiki-Archive-Rcs
     SUBDIR += p5-Kwiki-Archive-SVK
+    SUBDIR += p5-Kwiki-NewPage
     SUBDIR += p5-Kwiki-RecentChanges
     SUBDIR += p5-Kwiki-RecentChangesRSS
     SUBDIR += p5-Kwiki-Revisions
