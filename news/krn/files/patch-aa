@@ -1,0 +1,15 @@
+--- krn/groupdlg.cpp-	Wed Feb  9 02:52:56 2000
++++ krn/groupdlg.cpp	Sat Apr 15 23:14:32 2000
+@@ -1132,9 +1132,11 @@
+             return true;
+         }
+ 
++	QStrList filesCopy = QStrList(*files);
++
+         debug ("%d files waiting",files->count());
+         int c=1;
+-        for (char *fname=files->first();fname!=0;fname=files->next(),c++)
++        for (char *fname= filesCopy.first();fname!=0; fname=filesCopy.next(),c++)
+         {
+             debug ("Sending %s, %d of %d",fname,c,files->count());
+             updateCounter(QString("Sending ")+fname);
