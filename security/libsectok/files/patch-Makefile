@@ -1,7 +1,8 @@
---- Makefile.orig	Thu Jan  3 20:26:00 2002
-+++ Makefile	Fri Aug 23 13:12:59 2002
+--- Makefile.orig	Thu Jun 19 22:02:19 2003
++++ Makefile	Fri Jan 14 12:58:03 2005
 @@ -1,10 +1,10 @@
- VERSION=	3.1
+-VERSION=	3.1
++VERSION=	3
  TARGETS=	libsectok.a libsectok.so.$(VERSION) 
 -PREFIX=		/usr/local
 +PREFIX?=	/usr/local
@@ -12,13 +13,4 @@
 +LDFLAGS=	-shared -x --whole-archive
  
  # You may have to add getopt.c to SRC if your getopt doesn't have optreset
- SRC=		atr.c cmdtab.c cyberflex.c input.c r1r2.c readers.c sc7816.c sectok.c
-@@ -47,6 +47,8 @@
- install :
- 	$(INSTALL) -m 755 sectok.h $(PREFIX)/include
- 	$(INSTALL) -m 755 $(TARGETS) $(PREFIX)/lib
-+	ln -s $(PREFIX)/lib/libsectok.so.${VERSION} $(PREFIX)/lib/libsectok.so.3
-+	$(INSTALL) -m 644 sectok.3 $(PREFIX)/man/man3
- 
- release :
- 	rm -rf $(RELEASE)
+ SRC=		atr.c cmdtab.c cyberflex.c ifdwrapper.c input.c r1r2.c \
