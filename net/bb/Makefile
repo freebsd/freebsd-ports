@@ -35,8 +35,11 @@ do-install:
 	@cd ${WRKDIR} && find . -name "*.orig" | xargs ${RM}
 	@cd ${WRKDIR}; tar --exclude 'src' -c -f - bb \
 		| ( cd ${PREFIX}; tar xpf - )
-	@${LN} -fs ${PREFIX}/bb/www ${PREFIX}/share/apache/htdocs/bb
+	@${RM} -f ${PREFIX}/share/doc/apache/manual/bb
+	@${MKDIR} ${PREFIX}/share/doc/apache/manual
+	@${LN} -fs ${PREFIX}/bb/www ${PREFIX}/share/doc/apache/manual/bb
 	@${LN} -fs bb.html ${PREFIX}/bb/www/index.html
+	@${MKDIR} ${PREFIX}/share/apache/cgi-bin
 	@${LN} -fs ${PREFIX}/bb/web/bb-ack.sh ${PREFIX}/share/apache/cgi-bin
 	@${MV} -f ${PREFIX}/bb/doc/bbclient ${PREFIX}/bb/bin
 	@${MV} -f ${PREFIX}/bb/doc/bbconfig ${PREFIX}/bb/bin

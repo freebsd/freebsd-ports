@@ -106,8 +106,9 @@ share/doc/bb/FAQ
 share/doc/bb/README
 share/doc/bb/README.SMS
 share/doc/bb/STRUCTURE
-@exec ln -fs %D/bb/www %D/share/apache/htdocs/bb
-@unexec rm %D/share/apache/htdocs/bb
+@exec rm -f %D/share/doc/apache/manual/bb
+@exec ln -fs %D/bb/www %D/share/doc/apache/manual/bb
+@unexec rm %D/share/doc/apache/manual/bb
 @dirrm bb/bin
 @dirrm bb/etc
 @dirrm bb/ext
