@@ -1,11 +1,11 @@
---- Makefile.in.orig	Fri Jun 15 15:56:52 2001
-+++ Makefile.in	Sun Aug 12 19:03:22 2001
-@@ -23,7 +23,7 @@
- VERSION  = 0.06
+--- Makefile.in.orig	Thu Sep 20 00:20:54 2001
++++ Makefile.in	Thu Sep 20 00:21:03 2001
+@@ -27,7 +27,7 @@
+ 
  
  rlwrap: $(OBJECTS)
--	$(CC) -o rlwrap $(OBJECTS)  @READLINELIB@ @READLINE_SUPPLIB@
-+	$(CC) -o rlwrap $(OBJECTS)  @READLINELIB@ @READLINE_SUPPLIB@ @LDFLAGS@
+-	$(CC)  -o rlwrap $(OBJECTS)  @READLINELIB@ @READLINE_SUPPLIB@
++	$(CC)  -o rlwrap $(OBJECTS)  @READLINELIB@ @READLINE_SUPPLIB@ @LDFLAGS@
  
  $(OBJECTS) : rlwrap.h 
  
