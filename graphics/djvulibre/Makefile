@@ -15,8 +15,6 @@ MAINTAINER=	coop9211@uidaho.edu
 
 COMMENT=	DjVu viewers, encoders, browser plugin, and utilities
 
-BROKEN=		"Broken pkg-plist, will be removed after Feb 2"
-
 LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg \
 		iconv.3:${PORTSDIR}/converters/libiconv
 .ifndef WITHOUT_X11

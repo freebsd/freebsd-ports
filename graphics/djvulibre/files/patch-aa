@@ -21,7 +21,7 @@ diff -ur gui/nsdejavu/Makefile.in.ori gui/nsdejavu/Makefile.in
  libdir = @libdir@
  mandir = @mandir@
 -plugindir = ${libdir}/netscape/plugins
-+plugindir = ${libdir}/browser_plugins/plugins
++plugindir = ${libdir}/browser_plugins
  
  CC = @CC@
  CXX = @CXX@
