@@ -1,0 +1,17 @@
+--- doc/Makefile.in.orig	Tue Jan 28 15:54:39 1997
++++ doc/Makefile.in	Sat Oct 31 18:42:26 1998
+@@ -4,13 +4,13 @@
+ top_srcdir = @top_srcdir@
+ VPATH = @srcdir@
+ 
+-INFOOBJ = skk.info-1 skk.info-2 skk.info-3 skk.info-4 skk.info-5 skk.info-6
++INFOOBJ = skk.info skk.info-1 skk.info-2 skk.info-3 skk.info-4 skk.info-5 skk.info-6
+ 
+ INSTALL = @INSTALL@
+ INSTALL_DATA = @INSTALL_DATA@
+ 
+ prefix = @prefix@
+ infodir = $(prefix)/info
+ 
+ TEXI2DVI = texi2dvi
+ 

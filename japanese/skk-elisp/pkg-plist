@@ -1,0 +1,49 @@
+%%ELISPSUBDIR%%/avltree.el
+%%ELISPSUBDIR%%/avltree.elc
+%%ELISPSUBDIR%%/elib-node.el
+%%ELISPSUBDIR%%/elib-node.elc
+%%ELISPSUBDIR%%/queue-m.el
+%%ELISPSUBDIR%%/queue-m.elc
+%%ELISPSUBDIR%%/skk-auto.el
+%%ELISPSUBDIR%%/skk-auto.elc
+%%ELISPSUBDIR%%/skk-comp.el
+%%ELISPSUBDIR%%/skk-comp.elc
+%%ELISPSUBDIR%%/skk-e19.el
+%%ELISPSUBDIR%%/skk-e19.elc
+%%ELISPSUBDIR%%/skk-gadget.el
+%%ELISPSUBDIR%%/skk-gadget.elc
+%%ELISPSUBDIR%%/skk-isearch.el
+%%ELISPSUBDIR%%/skk-isearch.elc
+%%ELISPSUBDIR%%/skk-kakasi.el
+%%ELISPSUBDIR%%/skk-kakasi.elc
+%%ELISPSUBDIR%%/skk-kcode.el
+%%ELISPSUBDIR%%/skk-kcode.elc
+%%ELISPSUBDIR%%/skk-num.el
+%%ELISPSUBDIR%%/skk-num.elc
+%%ELISPSUBDIR%%/skk-server.el
+%%ELISPSUBDIR%%/skk-server.elc
+%%ELISPSUBDIR%%/skk-tree.el
+%%ELISPSUBDIR%%/skk-tree.elc
+%%ELISPSUBDIR%%/skk-tut.el
+%%ELISPSUBDIR%%/skk-tut.elc
+%%ELISPSUBDIR%%/skk-vip.el
+%%ELISPSUBDIR%%/skk-vip.elc
+%%ELISPSUBDIR%%/skk.el
+%%ELISPSUBDIR%%/skk.elc
+%%ELISPSUBDIR%%/stack-m.el
+%%ELISPSUBDIR%%/stack-m.elc
+%%ELISPSUBDIR%%/string.el
+%%ELISPSUBDIR%%/string.elc
+@dirrm %%ELISPSUBDIR%%
+share/skk/SKK.tut
+share/skk/SKK.tut.E
+@unexec install-info --delete %D/info/skk.info %D/info/dir
+info/skk.info
+info/skk.info-1
+info/skk.info-2
+info/skk.info-3
+info/skk.info-4
+info/skk.info-5
+info/skk.info-6
+@exec [ -f %D/info/dir ] || sed -ne '1,/Menu:/p' /usr/share/info/dir > %D/info/dir
+@exec install-info %D/info/skk.info %D/info/dir

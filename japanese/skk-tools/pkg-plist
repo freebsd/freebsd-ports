@@ -1,0 +1,5 @@
+bin/skkdic-count
+bin/skkdic-expr
+bin/skkdic-sort
+share/doc/skk/README.skktools
+@dirrm share/doc/skk

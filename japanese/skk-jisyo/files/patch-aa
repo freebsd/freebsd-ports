@@ -1,0 +1,45 @@
+--- Makefile.in.orig	Mon Feb  3 18:21:39 1997
++++ Makefile.in	Sun Nov  1 17:20:47 1998
+@@ -19,10 +19,10 @@
+ 
+ prefix = @prefix@
+ exec_prefix = @exec_prefix@
+-bindir = $(exec_prefix)/bin
+-libexecdir = $(exec_prefix)/libexec
+-datadir = $(prefix)/share
+-infodir = $(prefix)/info
++bindir = @bindir@
++libexecdir = @libexec@
++datadir = @datadir@
++infodir = @infodir@
+ 
+ EMACS = @EMACS@
+ TEXI2DVI = texi2dvi
+@@ -32,12 +32,16 @@
+ ## SKK JISYO which skkserv uses
+ JISYO = @JISYO@
+ JISYODIR = $(datadir)/skk
++SERVERDIR = $(prefix)/sbin
+ 
+ SUBDIRS = lisp skkserv jisyo-tools doc etc
+ 
+ MDEFINES = CC='$(CC)' CFLAGS='$(CFLAGS)' LDFLAGS='$(LDFLAGS)' \
++	prefix='$(prefix)' exec_prefix='$(exec_prefix)' bindir='$(bindir)' \
++	libexecdir='$(libexec)' datadir='$(datadir)' infodir='$(infodir)' \
+ 	EMACS='$(EMACS)' JISYO='$(JISYO)' JISYODIR='$(JISYODIR)' \
+-	ELISPDIR='$(ELISPDIR)' TEXI2DVI='$(TEXI2DVI)'
++	ELISPDIR='$(ELISPDIR)' SKKDIR='$(SKKDIR)' SERVERDIR='$(SERVERDIR)' \
++	TEXI2DVI='$(TEXI2DVI)'
+ 
+ all: config.h
+ 	for subdir in $(SUBDIRS); do \
+@@ -50,6 +54,9 @@
+ 	  echo making $@ in $$subdir; \
+ 	  (cd $$subdir && $(MAKE) $(MDEFINES) $@) || exit 1; \
+ 	done
++
++install-jisyo:
++	[ -d $(JISYODIR) ] || mkdir $(JISYODIR)
+ 	$(INSTALL_DATA) jisyo/$(JISYO) $(JISYODIR)/$(JISYO)
+ 
+ clean:

@@ -1,0 +1,14 @@
+--- jisyo-tools/skkdic-sort.c.orig	Tue Dec 17 14:51:28 1996
++++ jisyo-tools/skkdic-sort.c	Sat Oct 31 19:07:33 1998
+@@ -23,7 +23,11 @@
+ 
+ #include <stdio.h>
+ #ifndef NO_MALLOC_H
++#ifdef __FreeBSD__
++#include <stdlib.h>
++#else
+ #include <malloc.h>
++#endif
+ #endif
+ 
+ /* このプログラムでは辞書をすべてメモリの中に読み込みます。

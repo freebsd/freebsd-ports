@@ -1,0 +1,13 @@
+--- doc/skk.info.orig	Tue Feb 11 19:58:25 1997
++++ doc/skk.info	Sun Nov  1 18:14:15 1998
+@@ -3,6 +3,10 @@
+ from file `skk.texi'
+ using `texinfmt.el' version 2.32 of 19 November 1993.
+ 
++INFO-DIR-SECTION The Emacs editor and associated tools
++START-INFO-DIR-ENTRY
++* Skk: (skk).			Yet another Japanese Input Method. (Japanese)
++END-INFO-DIR-ENTRY
+ 
+ 
+ 

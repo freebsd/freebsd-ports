@@ -1,0 +1,11 @@
+--- jisyo-tools/Makefile.in.orig	Sun Nov  1 17:54:33 1998
++++ jisyo-tools/Makefile.in	Sun Nov  1 17:53:29 1998
+@@ -63,6 +63,8 @@
+              $(INSTALL_PROGRAM) $$p $(bindir)/; \
+           else :; fi; \
+         done
++	$(top_srcdir)/mkinstalldirs $(prefix)/share/doc/skk
++	$(INSTALL_DATA) README $(prefix)/share/doc/skk/README.skktools
+ 
+ clean:
+ 	rm -f $(TARGETS) core
