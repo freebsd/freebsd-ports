@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ns
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.2
 MASTER_SITES=	http://gwforum.net/mirror/ns/ \
 		http://files.games.eftel.com/halflife/ns/ \
 		http://www.jetstreamgames.co.nz/files/pub/halflife/NaturalSelection/ \
@@ -21,7 +21,7 @@ MASTER_SITES=	http://gwforum.net/mirror/ns/ \
 		http://gamefiles.blueyonder.co.uk/blueyondergames/halflife/modifications/naturalselection/server/win32/:PATCH \
 		ftp://gaming.stny.com/files/:PATCH
 DISTFILES=	ns_v1_linux_dedicated_server.tar.gz \
-		ns-101.zip:PATCH
+		ns-102.zip:PATCH
 EXTRACT_ONLY=	ns_v1_linux_dedicated_server.tar.gz
 
 BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
@@ -31,7 +31,7 @@ MAINTAINER=	lioux@FreeBSD.org
 UNZIP?=		${LOCALBASE}/bin/unzip
 
 slaveport-post-extract:
-	@cd ${WRKSRC} && ${UNZIP} -a -o -qq ${DISTDIR}/ns-101.zip
+	@cd ${WRKSRC} && ${UNZIP} -a -o -qq ${DISTDIR}/ns-102.zip
 
 HALFLIFE_COUNTERSTRIKE_MASTER=	${.CURDIR}/../hlserver-cs
 
