@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	sdl_ttf
-PORTVERSION=	2.0.4
-PORTREVISION=	1
+PORTVERSION=	2.0.5
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.libsdl.org/projects/SDL_ttf/release/
 DISTNAME=	SDL_ttf-${PORTVERSION}
@@ -15,7 +14,7 @@ DISTNAME=	SDL_ttf-${PORTVERSION}
 MAINTAINER=	sobomax@FreeBSD.org
 
 BUILD_DEPENDS=	freetype-config:${PORTSDIR}/print/freetype2
-LIB_DEPENDS=	SDL-1.1.3:${PORTSDIR}/devel/sdl12 \
+LIB_DEPENDS=	SDL-1.1.4:${PORTSDIR}/devel/sdl12 \
 		freetype.9:${PORTSDIR}/print/freetype2
 
 SDL_CONFIG=	${LOCALBASE}/bin/sdl11-config
