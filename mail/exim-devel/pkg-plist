@@ -11,7 +11,7 @@ sbin/exicyclog
 sbin/exigrep
 sbin/eximstats
 sbin/exiqsumm
-etc/exim/configure
+etc/exim/configure.sample
 @unexec install-info --delete %D/info/exim_overview.info %D/info/dir
 @unexec install-info --delete %D/info/exim.info %D/info/dir
 @unexec install-info --delete %D/info/exim_filter.info %D/info/dir
@@ -19,6 +19,6 @@ info/exim_overview.info
 info/exim.info
 info/exim_filter.info
 @exec [ -f %D/info/dir ] || sed -ne '1,/Menu:/p' /usr/share/info/dir > %D/info/dir
-@exec install-info %D/info/exim_overview.info %D/info/dir
-@exec install-info %D/info/exim.info %D/info/dir
-@exec install-info %D/info/exim_filter.info %D/info/dir
+@exec install-info --section="Exim" --entry "* Overview: (exim_overview).    Overview of the Exim system" %D/info/exim_overview.info %D/info/dir
+@exec install-info --section="Exim" --entry "* User guide: (exim).           Exim manual" %D/info/exim.info %D/info/dir
+@exec install-info --section="Exim" --entry "* Filtering: (exim_filter).     Filtering mail with Exim" %D/info/exim_filter.info %D/info/dir

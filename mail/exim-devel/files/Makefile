@@ -34,14 +34,41 @@
 # default it assumes ndbm; this often works with gdbm or db, provided they
 # are correctly installed, via their compatibility interfaces. However, Exim
 # can also be configured to use the native calls for Berkeley db 1.85, and
-# there are some locking actions that can be varied by changing the
-# configuration. The defaults are set in OS/Makefile-Default, and can be
-# changed by putting things into an OS-specific Makefile, or indeed into the
-# main Local/Makefile if Exim is being compiled for a single OS only.
+# this is defaulted for some operating systems. There are some locking actions
+# that can be varied by changing the configuration. The defaults are set in
+# OS/Makefile-Default, and can be changed by putting things into an OS-specific
+# Makefile, or indeed into the main Local/Makefile if Exim is being compiled
+# for a single OS only.
 
 # See also the file doc/dbm.discuss.txt for discussion about different dbm
 # libraries.
 ###############################################################################
+
+
+# /bin/sh is normally used as the shell in which to run commands that are
+# defined in the makefiles. This can be changed if necessary, but note that
+# a Bourne-compatible shell is expected.
+
+# MAKE_SHELL=/bin/sh
+
+
+# The following commands live in different places in some OS. The OS-specific
+# files should normally point to the right place, but they can be overridden
+# here if necessary. Perl is not necessary for running Exim, but there are
+# some Perl utilities for processing log files. If you haven't got Perl,
+# Exim will still build and run; you just won't be able to run those utilities.
+
+# CHOWN_COMMAND=/usr/bin/chown
+# CHGRP_COMMAND=/usr/bin/chgrp
+# MV_COMMAND=/bin/mv
+# RM_COMMAND=/bin/rm
+# PERL_COMMAND=/usr/bin/perl
+
+
+# The following macro can be used to change the command for building a library
+# of functions. By default the "ar" command is used, with options "cq".
+
+# AR=ar cq
 
 
 # The binary directory: This variable defines where the exim binary will be
@@ -51,26 +78,13 @@
 # installed in this directory. There is no default for this variable built into
 # the source files; it must be set in one of the local configuration files.
 
-BIN_DIRECTORY=/usr/local/sbin
+BIN_DIRECTORY=XX_PREFIX_XX/sbin
 
 
 # The info directory: This variable defines where the exim info file will be
 # installed by "make install" or "exim_intall".
 
-INFO_DIRECTORY=/usr/local/info
-
-
-# The following commands live in different places in some OS. The OS-specific
-# files should normally point to the right place, but they can be overridden
-# here if necessary. Perl is not necessary for running Exim, but there are
-# some Perl utilities for processing log files. If you haven't got Perl,
-# Exim will still build and run; you just won't be able to run those utilities.
-
-CHOWN_COMMAND=/usr/sbin/chown
-CHGRP_COMMAND=/usr/sbin/chgrp
-MV_COMMAND=/bin/mv
-RM_COMMAND=/bin/rm
-PERL_COMMAND=/usr/local/bin/perl
+INFO_DIRECTORY=XX_PREFIX_XX/info
 
 
 # The compress command is used by the exicyclog script to compress old log
@@ -87,7 +101,7 @@ COMPRESS_SUFFIX=gz
 # location of all other runtime files and directories can be changed in the
 # runtime configuration file.
 
-CONFIGURE_FILE=/usr/local/etc/exim/configure
+CONFIGURE_FILE=XX_PREFIX_XX/etc/exim/configure
 
 
 # In some installations there may be multiple machines sharing file systems,
@@ -140,26 +154,26 @@ DIRECTOR_SMARTUSER=yes
 # determines the mode of the created directory. The default value in the
 # source is 0750.
 
-DB_DIRECTORY_MODE=0750
+# DB_DIRECTORY_MODE=0750
 
 
 # Database file mode: The mode of files created in the "db" directory defaults
 # to 0640 in the source, and can be changed here.
 
-DB_MODE=0640
+# DB_MODE=0640
 
 
 # Database lock file mode: The mode of zero-length files created in the "db"
 # directory to use for locking purposes defaults to 0640 in the source, and
 # can be changed here.
 
-DB_LOCKFILE_MODE=0640
+# DB_LOCKFILE_MODE=0640
 
 
 # Cycling log files: this variable specifies the maximum number of old
 # log files that are kept by the exicyclog log-cycling script.
 
-EXICYCLOG_MAX=7
+EXICYCLOG_MAX=10
 
 
 # Running Exim not as root: A uid and gid for Exim can be specified here. These
@@ -196,14 +210,14 @@ EXIM_MONITOR=eximon.bin
 # the SMTP port, start off a header line, and then just pump junk for ever
 # at it. The default is 8192.
 
-HEADER_MAXLENGTH=8192
+# HEADER_MAXLENGTH=8192
 
 
 # The mode of the input directory: The input directory is where messages are
 # kept while awaiting delivery. Exim creates it if necessary, using a mode
 # which can be defined here (default 0750).
 
-INPUT_DIRECTORY_MODE=0750
+# INPUT_DIRECTORY_MODE=0750
 
 
 # Exim log directory and files: Exim creates several log files inside a
@@ -244,14 +258,17 @@ LOG_FILE_PATH=/var/log/exim_%slog
 # LOG_MODE=0640
 
 
-# Included file and database lookup methods. DBM and lsearch (linear search)
+# Included file and database lookup methods. See the manual chapter entitled
+# "File and database lookups" for discussion. DBM and lsearch (linear search)
 # are included by default. LOOKUP_DNSDB does *not* refer to general mail
 # routing using the DNS. It is for the specialist case of using the DNS as
-# a general database facility (not common).
+# a general database facility (not common). For details of cdb files and the
+# tools to build them, see http://www.pobox.com/~djb/cdb.html.
 
 LOOKUP_DBM=yes
 LOOKUP_LSEARCH=yes
 
+# LOOKUP_CDB=yes
 # LOOKUP_DNSDB=yes
 # LOOKUP_LDAP=yes
 # LOOKUP_NIS=yes
@@ -272,7 +289,7 @@ LOOKUP_LSEARCH=yes
 # transports for returning data to a message's sender (see the "return_output"
 # option for transports).
 
-MSGLOG_DIRECTORY_MODE=0750
+# MSGLOG_DIRECTORY_MODE=0750
 
 
 # Identifying the daemon: When an Exim daemon starts up, it writes its pid to
@@ -285,7 +302,7 @@ MSGLOG_DIRECTORY_MODE=0750
 # the file name, allowing sites that run two separate daemons to distinguish
 # them. Some installations may want something like this
 
-PID_FILE_PATH=/var/run/exim%s.pid
+# PID_FILE_PATH=/var/lock/exim%s.pid
 
 # If PID_FILE_PATH is not defined, Exim writes a file in its spool directory
 # (see SPOOL_DIRECTORY below) with the name "exim-daemon.pid" for the standard
@@ -350,7 +367,7 @@ SPOOL_DIRECTORY=/var/spool/exim
 # If Exim creates the spool directory, it is given this mode, defaulting in the
 # source to 0750.
 
-SPOOL_DIRECTORY_MODE=0750
+# SPOOL_DIRECTORY_MODE=0750
 
 
 # The mode of files on the input spool which hold the contents of message can
@@ -359,7 +376,7 @@ SPOOL_DIRECTORY_MODE=0750
 # member of the Exim group, change the value to 0640. This is particularly
 # relevant if you are going to run the Exim monitor.
 
-SPOOL_MODE=0600
+# SPOOL_MODE=0600
 
 
 # If STDERR_FILE is defined then the -df command line option causes Exim to
@@ -367,6 +384,14 @@ SPOOL_MODE=0600
 # output when starting Exim via inetd.
 
 # STDERR_FILE=
+
+
+# The appendfile transport can write messages as individual files in a number
+# of formats. The code for two specialist formats, maildir and mailstore,
+# is included only when requested by the following settings:
+
+# SUPPORT_MAILDIR=yes
+# SUPPORT_MAILSTORE=yes
 
 
 # Included transports: These variables determine which individual transport
@@ -388,5 +413,10 @@ TRANSPORT_SMTP=yes
 # a given file.
 
 # TRANSPORT_DEBUG=
+
+
+# TCP wrappers:
+
+# USE_TCP_WRAPPERS=yes
 
 # End of EDITME

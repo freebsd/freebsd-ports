@@ -1,5 +1,5 @@
---- scripts/exim_install.orig	Wed Apr 29 10:55:08 1998
-+++ scripts/exim_install	Thu May 21 16:14:48 1998
+--- scripts/exim_install.orig	Mon Aug  3 12:27:33 1998
++++ scripts/exim_install	Wed Oct  7 11:49:23 1998
 @@ -8,6 +8,8 @@
  # This script also installs a default configuration file in CONFIGURE_FILE
  # if there is no configuration file there.
@@ -51,10 +51,12 @@
  # If no arguments, install everything
  
  if [ $# -gt 0 ]; then
-@@ -179,12 +198,39 @@
+@@ -179,23 +198,44 @@
    fi
  done
  
+-# If there is no configuration file, install the default,
+-# building the lib directory if necessary.
 +echo $com ""
 +echo $com Installation directory is ${INFO_DIRECTORY}
 +echo $com ""
@@ -63,31 +65,48 @@
 +    makeinfo --no-split --output exim_overview.info ../doc/oview.texinfo
 +    echo ${CP} exim_overview.info ${INFO_DIRECTORY}
 +    ${real} ${CP} exim_overview.info ${INFO_DIRECTORY}
-+    install-info --section="EXIM" \
-+        --entry "* Overview: (exim_overview).    Overview of the EXIM system" \
++    install-info --section="Exim" \
++        --entry "* Overview: (exim_overview).    Overview of the Exim system" \
 +        ${INFO_DIRECTORY}/exim_overview.info ${INFO_DIRECTORY}/dir
 +    makeinfo --no-split --output exim.info ../doc/spec.texinfo
 +    echo ${CP} exim.info ${INFO_DIRECTORY}
 +    ${real} ${CP} exim.info ${INFO_DIRECTORY}
-+    install-info --section="EXIM" \
++    install-info --section="Exim" \
 +        --entry "* User guide: (exim).           Exim manual" \
 +        ${INFO_DIRECTORY}/exim.info ${INFO_DIRECTORY}/dir
 +    makeinfo --no-split --output exim_filter.info ../doc/filter.texinfo
 +    echo ${CP} exim_filter.info ${INFO_DIRECTORY}
 +    ${real} ${CP} exim_filter.info ${INFO_DIRECTORY}
-+    install-info --section="EXIM" \
-+        --entry "* Filtering: (exim_filter).     Filtering mail with EXIM" \
++    install-info --section="Exim" \
++        --entry "* Filtering: (exim_filter).     Filtering mail with Exim" \
 +        ${INFO_DIRECTORY}/exim_filter.info ${INFO_DIRECTORY}/dir
 +fi
 +
- # If there is no configuration file, install the default,
- # building the lib directory if necessary.
++# Install a sample configuration file
  
  echo $com ""
  
- if [ ! -f ${CONFIGURE_FILE} ]; then
-+  echo mkdir -p `dirname ${CONFIGURE_FILE}`
-+  ${real} mkdir -p `dirname ${CONFIGURE_FILE}`
-   echo $com Installing default configuration in ${CONFIGURE_FILE}
-   echo $com because there is no existing configuration file.
-   echo ${CP} ../src/configure.default ${CONFIGURE_FILE}
+-if [ ! -f ${CONFIGURE_FILE} ]; then
+-  echo $com Installing default configuration in ${CONFIGURE_FILE}
+-  echo $com because there is no existing configuration file.
+-  echo ${CP} ../src/configure.default ${CONFIGURE_FILE}
+-  ${real} ${CP} ../src/configure.default ${CONFIGURE_FILE}
+-  if [ $? -ne 0 ]; then
+-    echo $com ""
+-    echo $com "**** Exim installation ${ver}failed ****"
+-    exit 1
+-  fi
+-else
+-  echo $com Configuration file ${CONFIGURE_FILE} already exists
++echo mkdir -p `dirname ${CONFIGURE_FILE}`
++${real} mkdir -p `dirname ${CONFIGURE_FILE}`
++echo $com Installing a sample configuration in ${CONFIGURE_FILE}.sample
++echo ${CP} ../src/configure.default ${CONFIGURE_FILE}.sample
++${real} ${CP} ../src/configure.default ${CONFIGURE_FILE}.sample
++if [ $? -ne 0 ]; then
++  echo $com ""
++  echo $com "**** Exim installation ${ver}failed ****"
++  exit 1
+ fi
+ 
+ echo $com ""
