@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	gdis
-PORTVERSION=	0.84
+PORTVERSION=	0.86
 CATEGORIES=	science
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -24,7 +24,7 @@ USE_REINPLACE=	yes
 
 CFLAGS+=	-DINSTALL=\"\\\"${DATADIR}\\\"\"
 
-PORTDOCS=	CHANGELOG README TODO
+PORTDOCS=	CHANGELOG README TODO gdis_manual.txt
 PLIST_FILES=	bin/gdis %%DATADIR%%/gdis.elements
 PLIST_DIRS=	%%DATADIR%%
 
@@ -50,7 +50,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/gdis.elements ${DATADIR}
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for file in CHANGELOG README TODO
+.for file in CHANGELOG README TODO gdis_manual.txt
 	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
 .endif
