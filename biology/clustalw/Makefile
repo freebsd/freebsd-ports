@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	clustalw
-PORTVERSION=	1.82
-PORTREVISION=	2
+PORTVERSION=	1.83
 CATEGORIES=	biology
 MASTER_SITES=	ftp://ftp-igbmc.u-strasbg.fr/pub/ClustalW/
 DISTNAME=	${PORTNAME}${PORTVERSION}.UNIX
 
 MAINTAINER=	dbader@eece.unm.edu
+COMMENT=	CLUSTAL W Multiple Sequence Alignment Program
 
 WRKSRC=		${WRKDIR}/${PORTNAME}${PORTVERSION}
 

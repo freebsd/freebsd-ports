@@ -1,6 +1,15 @@
---- makefile.orig	Wed Jun  7 16:55:06 2000
-+++ makefile	Tue Aug  8 02:30:53 2000
-@@ -10,9 +10,9 @@
+--- makefile.orig	Thu Feb 13 15:17:25 2003
++++ makefile	Thu Feb 13 15:15:48 2003
+@@ -4,15 +4,15 @@
+ 	rm *.o
+ 
+ OBJECTS = interface.o sequence.o showpair.o malign.o \
+-  	util.o trees.o gcgcheck.o prfalign.o pairalign.o \
+-  	calcgapcoeff.o calcprf1.o calcprf2.o calctree.o \
+-        readmat.o alnscore.o random.o 
++	util.o trees.o gcgcheck.o prfalign.o pairalign.o \
++	calcgapcoeff.o calcprf1.o calcprf2.o calctree.o \
++	readmat.o alnscore.o random.o 
  
  HEADERS = general.h clustalw.h
  
