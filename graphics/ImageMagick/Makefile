@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ImageMagick
-PORTVERSION=	5.4.4
+PORTVERSION=	5.4.4.5
 CATEGORIES=	graphics perl5
 MASTER_SITES=	http://imagemagick.sourceforge.net/http/ \
 		ftp://ftp.yggdrasil.com/mirrors/site/ftp.simplesystems.org/pub/%SUBDIR%/ \
@@ -26,30 +26,34 @@ MASTER_SITES=	http://imagemagick.sourceforge.net/http/ \
 		ftp://ftp.fifi.org/pub/%SUBDIR%/ \
 		ftp://ftp.simplesystems.org/pub/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTNAME}
+DISTNAME=	${PORTNAME}-${PORTVERSION:R}-${PORTVERSION:E}
 
 MAINTAINER=	ports@FreeBSD.org
 
 BUILD_DEPENDS=	freetype-config:${PORTSDIR}/print/freetype2	# XXX
-LIB_DEPENDS=	fpx:${PORTSDIR}/graphics/libfpx \
-		jbig:${PORTSDIR}/graphics/jbigkit \
-		jpeg:${PORTSDIR}/graphics/jpeg \
-		lcms:${PORTSDIR}/graphics/lcms \
-		png:${PORTSDIR}/graphics/png \
+LIB_DEPENDS=	fpx.1:${PORTSDIR}/graphics/libfpx \
+		jbig.1:${PORTSDIR}/graphics/jbigkit \
+		jpeg.9:${PORTSDIR}/graphics/jpeg \
+		lcms.1:${PORTSDIR}/graphics/lcms \
+		png.5:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff \
-		freetype:${PORTSDIR}/print/freetype2 \
-		xml2:${PORTSDIR}/textproc/libxml2
+		freetype.9:${PORTSDIR}/print/freetype2 \
+		xml2.5:${PORTSDIR}/textproc/libxml2
 .if !exists(/usr/bin/bzip2)
-LIB_DEPENDS+=	bz2:${PORTSDIR}/archivers/bzip2
+LIB_DEPENDS+=	bz2.1:${PORTSDIR}/archivers/bzip2
 .endif
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
 
 USE_GCC295=	yes
 USE_PERL5=	yes
 USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
+USE_LIBTOOL=	yes
+LIBTOOLFLAGS=	# none
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--enable-shared --with-perl=${PERL5} \
-		--without-gslib --without-jp2
+		--without-gslib --without-hdf --without-jp2
 INSTALLS_SHLIB=	yes
 
 MAN1=		ImageMagick.1 Magick++-config.1 Magick-config.1 \
@@ -92,12 +96,6 @@ PLIST_SUB+=	MODULES=''
 PLIST_SUB+=	MODULES='@comment '
 .endif
 
-.if defined(WITH_HDF)
-CONFIGURE_ARGS+=	--with-hdf 
-.else
-CONFIGURE_ARGS+=	--without-hdf 
-.endif
-
 .if defined(WITHOUT_X11)
 PKGNAMESUFFIX+=	-nox11
 BUILD_DEPENDS+=	gs:${PORTSDIR}/print/ghostscript-gnu-nox11
@@ -105,7 +103,7 @@ RUN_DEPENDS+=	gs:${PORTSDIR}/print/ghostscript-gnu-nox11
 CONFIGURE_ARGS+=	--without-x --without-mpeg2 --without-wmf
 PLIST_SUB+=	X11='@comment '
 .else
-LIB_DEPENDS+=	mpeg2:${PORTSDIR}/graphics/libmpeg2 \
+LIB_DEPENDS+=	mpeg2.0:${PORTSDIR}/graphics/libmpeg2 \
 		wmf.2:${PORTSDIR}/graphics/libwmf
 BUILD_DEPENDS+=	gs:${PORTSDIR}/print/ghostscript-gnu
 RUN_DEPENDS+=	gs:${PORTSDIR}/print/ghostscript-gnu
@@ -126,7 +124,7 @@ pre-patch:
 		s|INCLTDL=.*$$|INCLTDL=|g ; \
 		s|lcms/lcms.h|lcms.h|g ; \
 		s|lcms_lcms_h|lcms_h|g' ${WRKSRC}/configure
-	@find ${WRKSRC} -name "Makefile.in" | ${XARGS} ${PERL} -pi -e \
+	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${PERL} -pi -e \
 		's|top_builddir\)/ltdl/libltdlc.la|LIBLTDL\)|g ; \
 		 s|pkgdocdir =.*$$|pkgdocdir = ${DOCSDIR}/|g ; \
 		 s| install-data-html||g'
