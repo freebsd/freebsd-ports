@@ -11,7 +11,7 @@ CATEGORIES=	net irc
 MASTER_SITES=	http://shell.n.ml.org/n/naim/
 
 MAINTAINER=	tlp@LiquidX.org
-COMMENT=	Curses based AOL Instant Messager implementation
+COMMENT=	Console ncurses-based AIM, ICQ, IRC, and Lily client
 
 USE_BZIP2=		yes
 GNU_CONFIGURE=		yes
