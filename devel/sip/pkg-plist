@@ -1,0 +1,9 @@
+bin/sip
+lib/libsip.so.2
+lib/libsip.so
+lib/libsip.a
+include/sip/sip.h
+include/sip/sipQt.h
+@dirrm include/sip
+@exec /sbin/ldconfig -m %D/lib
+@unexec /sbin/ldconfig -R
