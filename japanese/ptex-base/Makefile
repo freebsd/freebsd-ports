@@ -9,7 +9,8 @@ PORTNAME=	ptex
 PORTVERSION=	2.1.11
 PORTREVISION=	2
 CATEGORIES=	japanese print
-MASTER_SITES=	ftp://ftp.ascii.co.jp/pub/TeX/ascii-ptex/tetex/
+MASTER_SITES=	ftp://ftp.ascii.co.jp/pub/TeX/ascii-ptex/tetex/ \
+		ftp://ftp.ascii.co.jp/pub/TeX/ascii-ptex/dvips/
 PKGNAMEPREFIX=	ja-
 PKGNAMESUFFIX=	-common
 DISTFILES=	${TETEX_SRC} ${TETEX_TEXMF} ${PTEX_TEXMF} ${DVIPSK_JPATCH}
