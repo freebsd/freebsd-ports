@@ -1,7 +1,7 @@
 bin/plan
+bin/pland
 bin/netplan
 bin/notifier
-bin/pland
 bin/Killpland
 share/doc/plan/Mkdoc
 share/doc/plan/Mkdoc.nawk
@@ -9,8 +9,10 @@ share/doc/plan/plan.help
 share/doc/plan/plan_cal.ps
 share/doc/plan/examples/holiday_australia
 share/doc/plan/examples/holiday_bavarian
+share/doc/plan/examples/holiday_belgium
 share/doc/plan/examples/holiday_canada
 share/doc/plan/examples/holiday_dutch
+share/doc/plan/examples/holiday_finnish
 share/doc/plan/examples/holiday_french
 share/doc/plan/examples/holiday_frswiss
 share/doc/plan/examples/holiday_german
@@ -27,6 +29,7 @@ share/doc/plan/README
 man/man1/netplan.1.gz
 man/man1/plan.1.gz
 man/man4/plan.4.gz
+@exec /bin/mkdir -p share/netplan.dir
 @dirrm share/netplan.dir
 @dirrm share/doc/plan/examples
 @dirrm share/doc/plan
