@@ -6,13 +6,15 @@
 #
 
 PORTNAME=	glabels
-PORTVERSION=	1.93.0
+PORTVERSION=	1.93.1
 CATEGORIES=	deskutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A programm to create labels and business cards
+
+LIB_DEPENDS=	paper.2:${PORTSDIR}/print/libpaper
 
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomehack gnomeprefix gnometarget libgnomeui libgnomeprintui
