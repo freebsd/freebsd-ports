@@ -3694,6 +3694,7 @@ libksba		ports/security/libksba
 liblrdf		ports/textproc/liblrdf
 liblug		ports/graphics/liblug
 libmal		ports/palm/libmal
+libmatroska	ports/multimedia/libmatroska
 libmba		ports/devel/libmba
 libmcal		ports/misc/libmcal
 libmcrypt	ports/security/libmcrypt
