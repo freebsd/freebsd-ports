@@ -5,7 +5,6 @@ include/glib.h
 include/glibconfig.h
 lib/libgdk.la
 lib/libgdk.so.1.0
-lib/libgdk.la
 lib/libgdk.a
 include/gdk/gdk.h
 include/gdk/gdkcursors.h
@@ -22,7 +21,6 @@ include/gdk/gxid_proto.h
 include/gdk/gdkx.h
 lib/libgtk.la
 lib/libgtk.so.1.0
-lib/libgtk.la
 lib/libgtk.a
 include/gtk/gtk.h
 include/gtk/gtkaccelerator.h
@@ -113,3 +111,5 @@ info/gtk.info-1
 info/gtk.info-2
 info/gtk.info-3
 info/gtk.info-4
+@dirrm include/gtk
+@dirrm include/gdk
