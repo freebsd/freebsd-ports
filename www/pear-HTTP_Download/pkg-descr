@@ -7,7 +7,7 @@ It features:
 - Basic throttling mechanism
 - On-the-fly gzip-compression
 - Ranges (partial downloads and resuming)
-- Delivery of on-the-fly generated archives through Archive_Tar and
-Archive_Zip
+- Delivery of on-the-fly generated archives through Archive_Tar and Archive_Zip
+- Sending of PgSQL LOBs without the need to read all data in prior to sending
 
 WWW: http://pear.php.net/package/HTTP_Download/
