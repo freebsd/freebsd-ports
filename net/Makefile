@@ -24,6 +24,7 @@
     SUBDIR += asfrecorder
     SUBDIR += balance
     SUBDIR += bbsnet
+    SUBDIR += bgpq
     SUBDIR += bind8
     SUBDIR += bind9
     SUBDIR += bing
