@@ -13,12 +13,23 @@
 		setenv LANG C
 		setenv DISPLAY localhost:0.0
 
-	    when start oleo, X11 is too heavy load to operate X clients.
+	    when start oleo, X11 is too heavy to operate X clients.
 
-	    ---- please use under.... -----
-		o set enviroment variable LANG ja_JP.EUC
+	  ---- So, please use under.... -----
+		A) set enviroment variable LANG ja_JP.EUC and also
+		  need /usr/share/locale/ja_JP.EUC/LC_TIME,LC_COLLATE
+		  file.
+		   If you use before 19971219-version of FreeBSD,
+	  	     1) get these file from current/releng SNAPSHOT
+		     or
+		     2) create symbolic-links as below:
+			cd /usr/share/locale/ja_JP.EUC
+			ln -s /usr/share/locale/lt_LN.ISO_8859-1/LC_COLLATE
+			ln -s /usr/share/locale/en_US.ISO_8859-1/LC_TIME
 	     or
-		o non window client mode(unset DISPLAY variable)
+		B. non window client mode(unset DISPLAY variable)
+
+	o Output PostScript file has some problems.
 
 * Tips
 	  Oleo default editing mode is like Emacs(Ctrl-h is call
