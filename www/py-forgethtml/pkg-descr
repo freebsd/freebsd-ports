@@ -1,0 +1,6 @@
+forgetHTML is a Python module providing a totally object-oriented way of
+writing HTML. Each element is a object which may contain other HTML elements
+(ie. objects). Only those elements allowed in HTML to contain each other are
+allowed to be inserted.
+
+WWW: http://forgethtml.sourceforge.net/
