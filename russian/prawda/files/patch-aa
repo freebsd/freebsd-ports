@@ -126,16 +126,6 @@
  # include <stdlib.h>
  
  # define Err_Memory -2
---- src/trans/slowo3.cpp.orig	Wed Jul 28 19:36:02 2004
-+++ src/trans/slowo3.cpp	Wed Jul 28 19:38:33 2004
-@@ -7,7 +7,6 @@
- /***************************************************************************/
- 
- # include <stdio.h>
--# include <malloc.h>
- # include <string.h>
- # include <stdlib.h>
- 
 --- src/utils/kod.c.orig	Wed Jul 28 19:36:02 2004
 +++ src/utils/kod.c	Wed Jul 28 19:54:22 2004
 @@ -3,7 +3,6 @@
