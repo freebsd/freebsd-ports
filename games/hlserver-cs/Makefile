@@ -23,6 +23,7 @@ DISTNAME?=	${PORTNAME}_${PORTVERSION:S/.//}_full
 
 MAINTAINER?=	pat@databits.net
 
+BUILD_DEPENDS=	${NONEXISTENT}:${HALFLIFESERVER_PORT}:patch
 RUN_DEPENDS=	${LINUXBASE}${HLDSDIR}${HL_PROGRAM}:${HALFLIFESERVER_PORT}
 
 ONLY_FOR_ARCHS=	i386
@@ -30,6 +31,7 @@ USE_LINUX_PREFIX=	yes
 NO_CDROM=	"Size; the data set is much too big"
 NO_BUILD=	yes
 .if (${PORTNAME}==cs)
+PORTREVISION=	1
 WRKSRC?=		${WRKDIR}/cstrike
 .else
 WRKSRC?=		${WRKDIR}/${PORTNAME}
@@ -44,6 +46,20 @@ HLDSDIR!=	cd ${HALFLIFESERVER_PORT} && ${MAKE} -V HLDSDIR
 HL_PROGRAM!=	cd ${HALFLIFESERVER_PORT} && ${MAKE} -V HL_PROGRAM
 PLIST_SUB_MASTER!=	cd ${HALFLIFESERVER_PORT} && ${MAKE} -V PLIST_SUB_FOR_THIS_PORT
 PKGMESSAGE!=	cd ${HALFLIFESERVER_PORT} && ${MAKE} -V PKGMESSAGE
+
+# 3.1.0.8 Beta A patch
+HALFLIFESERVER_PORT_WRKSRC!=	cd ${HALFLIFESERVER_PORT} && ${MAKE} -V WRKSRC
+
+.if !target(post-extract)
+post-extract:
+.if exists(${HALFLIFESERVER_PORT_WRKSRC}/cstrike)
+	${CP} -Rp ${HALFLIFESERVER_PORT_WRKSRC}/cstrike ${WRKDIR}
+.else
+	@${ECHO_MSG} "Please update your ports tree, it is not syncronized to the latest tree"
+	@${ECHO_MSG} "This port will not work. Check the FreeBSD Handbook on how to update"
+	@${FALSE}
+.endif
+.endif
 
 pre-patch:
 # remove trailing ^M
