@@ -9,12 +9,3 @@
                  }
                  g_strfreev (gnome_dirs);
                  g_string_append_c (real_od_source_dir, ':');
-@@ -197,6 +197,8 @@
-          * terminal, etc.
-          */
-         setsid ();
-+
-+	unsetenv ("SESSION_MANAGER");
-         
- 	/* internationalization. */
- 	setlocale (LC_ALL, "");
