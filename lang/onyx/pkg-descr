@@ -1,0 +1,5 @@
+Onyx is an embeddable stack-based threaded interpreted language.  This port
+contains both a stand alone interpreter and libraries that can be used to embed
+Onyx in an application.  Extensive documentation is included.
+
+WWW: http://www.canonware.com/
