@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.105 1996/11/07 12:28:22 asami Exp $
+# $Id: Makefile,v 1.106 1996/11/09 02:05:45 asami Exp $
 #
 
     SUBDIR += FWF
@@ -20,6 +20,7 @@
     SUBDIR += fvwm2
     SUBDIR += fvwm95
     SUBDIR += getbdf
+    SUBDIR += gwm
     SUBDIR += iv
     SUBDIR += olvwm
     SUBDIR += piewm
