@@ -1,9 +1,7 @@
 bin/gnome-vfs-config
-bin/gnome-vfs-slave
 etc/gnome-vfs-mime-magic
 etc/vfs/modules/default-modules.conf
 etc/vfsConf.sh
-etc/vfscorbaConf.sh
 etc/vfspthreadConf.sh
 include/libgnomevfs/gnome-vfs-application-registry.h
 include/libgnomevfs/gnome-vfs-async-ops.h
@@ -47,9 +45,6 @@ include/libgnomevfs/gnome-vfs-uri.h
 include/libgnomevfs/gnome-vfs-utils.h
 include/libgnomevfs/gnome-vfs-xfer.h
 include/libgnomevfs/gnome-vfs.h
-lib/libgnomevfs-corba.a
-lib/libgnomevfs-corba.so
-lib/libgnomevfs-corba.so.0
 lib/libgnomevfs-pthread.a
 lib/libgnomevfs-pthread.so
 lib/libgnomevfs-pthread.so.0
