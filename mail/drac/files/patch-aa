@@ -1,0 +1,49 @@
+--- Makefile.old	Mon Nov 20 16:35:16 2000
++++ Makefile	Sun Jan 14 20:06:47 2001
+@@ -5,9 +5,10 @@
+ 
+ # Paths
+ 
+-INSTALL = /usr/ucb/install
+-EBIN = /usr/local/sbin
+-MAN = /usr/local/man/man
++INSTALL = install
++EBIN = ${PREFIX}/sbin
++MAN = ${PREFIX}/man/man
++ETC_DIR = ${PREFIX}/etc
+ 
+ # OS-Dependant settings
+ 
+@@ -33,20 +34,26 @@
+ # -DCIDR_KEY	# keys in CIDR format
+ # -DTERM_KD	# keys and data nul-terminated
+ 
+-DEFS = -DTI_RPC -DFCNTL_LOCK -DSYSINFO
++.if defined(WITH_POSTFIX)
++DEFS=	-DSOCK_RPC -DFLOCK_LOCK -DGETHOST -DDASH_C -DTERM_KD
++.elif defined(WITH_EXIM)
++DEFS=	-DSOCK_RPC -DFLOCK_LOCK -DGETHOST -DDASH_C -DTERM_KD -DREQ_HASH -DCIDR_KEY
++.else
++DEFS=	-DSOCK_RPC -DFLOCK_LOCK -DGETHOST -DDASH_C 
++.endif
+ 
+ # Compiler flags 
+ CC = cc
+ RANLIB = :
+-CFLAGS = $(DEFS) -g -I/usr/local/src/db/db-3.1.17/build_unix
++CFLAGS = $(DEFS) -g -I${PREFIX}/include -DDBFILE=\"$(ETC_DIR)/dracd.db\" -DALFILE=\"$(ETC_DIR)/dracd.allow\"
+ #CFLAGS = $(DEFS) -g -I/usr/local/src/db/db-2.4.14/Unix
+ #CFLAGS = $(DEFS) -g -I/usr/local/src/db/db.1.85/PORT/sunos.5.2/include
+-LDLIBS = -L/usr/local/src/db/db-3.1.17/build_unix -lnsl -ldb
++LDLIBS =
+ #LDLIBS = -L/usr/local/src/db/db-2.4.14/Unix -lnsl -ldb
+ #LDLIBS = -L/usr/local/src/db/db.1.85/PORT/sunos.5.2 -lnsl -ldb
+-TSTLIBS = -L. -ldrac -lnsl
+-RPCGENFLAGS = 
+-#RPCGENFLAGS = -C
++TSTLIBS = -L. -ldrac
++#RPCGENFLAGS = 
++RPCGENFLAGS = -C
+ 
+ # Man sections
+ MANLIB = 3

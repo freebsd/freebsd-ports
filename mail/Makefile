@@ -18,6 +18,7 @@
     SUBDIR += cvsmail
     SUBDIR += cyrus
     SUBDIR += distribute
+    SUBDIR += drac
     SUBDIR += elm
     SUBDIR += elm+ME
     SUBDIR += emil

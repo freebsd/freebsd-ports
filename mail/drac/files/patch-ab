@@ -1,0 +1,31 @@
+--- rpc.dracd.1m.old	Sun Jan 14 19:18:52 2001
++++ rpc.dracd.1m	Sun Jan 14 19:19:28 2001
+@@ -16,13 +16,13 @@
+ \f4rpc.dracd\f1
+ is the Dynamic Relay Authorization Control server.
+ It uses the Berkeley db package to maintain a relay authorization
+-map for sendmail, by default \f4/etc/mail/dracd.db\f1.
++map for sendmail, by default \f4%%PREFIX%%/etc/dracd.db\f1.
+ POP and IMAP mail servers make an RPC call to add an entry to the
+ authorization cache after they have authenticated each user.
+ The daemon, rpc.dracd, adds or updates entries in the cache, and
+ periodically expires old entries.
+ Only trusted mail servers are permitted to communicate with rpc.dracd,
+-as controlled by \f4/etc/mail/dracd.allow\f1.
++as controlled by \f4%%PREFIX%%/etc/dracd.allow\f1.
+ If this file does not exist, all local IP addresses are permitted.
+ .SS Allow File Format
+ The Allow File file consists of entries of the form:
+@@ -58,10 +58,10 @@
+ .SH FILES
+ .PD 0
+ .TP 30
+-.B /etc/mail/dracd.db
++.B %%PREFIX%%/etc/dracd.db
+ default database file
+ .TP
+-.B /etc/mail/dracd.allow
++.B %%PREFIX%%/etc/dracd.allow
+ default allow file.
+ .PD
+ .SH SEE ALSO
