@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	qconfirm
-PORTVERSION=	0.11.0
+PORTVERSION=	0.12.0
 CATEGORIES=	mail
 MASTER_SITES=	http://smarden.org/qconfirm/
 
@@ -19,7 +19,8 @@ ALL_TARGET=	default
 MAN1=		qconfirm.1 qconfirm-accept.1 qconfirm-check.1 \
 		qconfirm-check-mid.1 qconfirm-conf.1 \
 		qconfirm-cdb-check.1 qconfirm-cdb-update.1 \
-		qconfirm-control.1 qconfirm-return.1
+		qconfirm-control.1 qconfirm-inject.1 \
+		qconfirm-notice.1 qconfirm-return.1
 DOCS=		package/CHANGES package/COPYING package/README doc/*.html
 
 do-configure:
