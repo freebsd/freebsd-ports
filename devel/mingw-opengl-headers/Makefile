@@ -14,7 +14,7 @@ DISTNAME=	OPENGL95
 EXTRACT_SUFX=	.EXE
 DIST_SUBDIR=	mingw
 
-MAINTAINER=	dotz@irc.pl
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OpenGL headers from Microsoft(TM) for Windows development with Mingw
 
 BUILD_DEPENDS=	mingwm10.dll:${PORTSDIR}/devel/mingw-bin-msvcrt

@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	wxwindows
 DISTNAME=	wxWindows-${PORTVERSION}-HTML
 
-MAINTAINER=	dotz@irc.pl
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	wxWindows documentation in HTML
 
 NO_BUILD=	YES
