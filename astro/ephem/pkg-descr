@@ -3,4 +3,4 @@ two additional objects.  The additional objects may be fixed or specified
 via heliocentric elliptical, hyperbolic or parabolic orbital elements to
 accommodate solar system objects such as asteroids or comets.
 
-Unlike xephem, ephem is working on a plain ascii terminal.
+Unlike xephem, ephem works on a plain ascii terminal.
