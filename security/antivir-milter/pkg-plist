@@ -1,9 +1,9 @@
 @exec install -d -o daemon -g daemon -m 755 %D/AntiVir
-@unexec if cmp -s %D/AntiVir/antivir-dist %D/AntiVir/antivir; then rm -f %D/AntiVir/antivir; fi
-AntiVir/antivir-dist
+@unexec if cmp -s %D/AntiVir/antivir-dist_avfbmlt %D/AntiVir/antivir; then rm -f %D/AntiVir/antivir; fi
+AntiVir/antivir-dist_avfbmlt
 @exec [ -f %B/antivir ] || cp -p %B/%f %B/antivir
-@unexec if cmp -s %D/AntiVir/antivir.vdf-dist %D/AntiVir/antivir.vdf; then rm -f %D/AntiVir/antivir.vdf; fi
-AntiVir/antivir.vdf-dist
+@unexec if cmp -s %D/AntiVir/antivir.vdf-dist_avfbmlt %D/AntiVir/antivir.vdf; then rm -f %D/AntiVir/antivir.vdf; fi
+AntiVir/antivir.vdf-dist_avfbmlt
 @exec [ -f %B/antivir.vdf ] || cp -p %B/%f %B/antivir.vdf
 @unexec rmdir %D/AntiVir 2> /dev/null || echo "If permanently deleting this package, %D/AntiVir and its contents must be removed manually."
 bin/avq
