@@ -23,6 +23,7 @@
     SUBDIR += antlr
     SUBDIR += apr
     SUBDIR += arch
+    SUBDIR += argouml
     SUBDIR += arm-aout-binutils
     SUBDIR += arm-elf-binutils
     SUBDIR += arm-elf-gcc295
