@@ -3092,7 +3092,6 @@ im-ja		ports/japanese/im-ja
 imageindex	ports/graphics/imageindex
 imagesort	ports/graphics/imagesort
 imageviewer	ports/graphics/imageviewer
-imake		ports/devel/imake
 imake-4		ports/devel/imake-4
 imap-uw		ports/mail/imap-uw
 imapfilter	ports/mail/imapfilter
