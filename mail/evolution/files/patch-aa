@@ -1,57 +1,46 @@
---- configure.orig	Wed Nov  6 16:01:40 2002
-+++ configure	Tue Nov 12 00:12:54 2002
-@@ -7260,7 +7260,7 @@
- fi
- rm -f conftest*
- 
--ALL_LINGUAS="az bg ca cs da de el en_AU en_GB es et eu fi fr ga gl hu it ja ko lt lv nl nn no pl pt pt_BR ro ru sk sl sv tr uk vi zh_CN zh_TW"
-+ALL_LINGUAS="az bg ca cs da de el en_AU en_GB es et eu fi fr ga gl hu it ja ko lt lv nl nn no pl pt pt_BR ro ru sk sl sv tr uk vi zh_CN"
- # Extract the first word of "ranlib", so it can be a program name with args.
- set dummy ranlib; ac_word=$2
- echo $ac_n "checking for $ac_word""... $ac_c" 1>&6
-@@ -9636,7 +9636,7 @@
- 
- CPPFLAGS_save="$CPPFLAGS"
+--- configure.orig	Mon Mar 10 12:01:16 2003
++++ configure	Thu Mar 13 01:31:35 2003
+@@ -11148,7 +11148,7 @@
  CPPFLAGS="$DB3_CFLAGS $CPPFLAGS"
--for ac_hdr in db.h db3/db.h
-+for ac_hdr in db3/db.h
+ 
+ 
+-for ac_header in db.h db3/db.h
++for ac_header in db3/db.h
  do
- ac_safe=`echo "$ac_hdr" | sed 'y%./+-%__p_%'`
- echo $ac_n "checking for $ac_hdr""... $ac_c" 1>&6
-@@ -9710,7 +9710,7 @@
-   echo "configure: failed program was:" >&5
-   cat conftest.$ac_ext >&5
-   rm -rf conftest*
--  { echo "configure: error: Found db.h is not version $evolution_db_version" 1>&2; exit 1; }
-+#  { echo "configure: error: Found db.h is not version $evolution_db_version" 1>&2; exit 1; }
+ as_ac_Header=`echo "ac_cv_header_$ac_header" | $as_tr_sh`
+ if eval "test \"\${$as_ac_Header+set}\" = set"; then
+@@ -11341,9 +11341,9 @@
+   echo "$as_me: failed program was:" >&5
+ sed 's/^/| /' conftest.$ac_ext >&5
+ 
+-{ { echo "$as_me:$LINENO: error: Found db.h is not version $evolution_db_version" >&5
+-echo "$as_me: error: Found db.h is not version $evolution_db_version" >&2;}
+-   { (exit 1); exit 1; }; }
++#{ { echo "$as_me:$LINENO: error: Found db.h is not version $evolution_db_version" >&5
++#echo "$as_me: error: Found db.h is not version $evolution_db_version" >&2;}
++#   { (exit 1); exit 1; }; }
  fi
- rm -f conftest*
+ rm -f conftest.$ac_objext conftest.$ac_ext
  
-@@ -12054,10 +12054,10 @@
- 				     Please specify the path to libnspr4.a
- 				     Example: --with-nspr-libs=/usr/lib" 1>&2; exit 1; }
-        		    else
--               		nsprlibs="-ldl $with_nspr_libs/libplc4.a $with_nspr_libs/libplds4.a $with_nspr_libs/libnspr4.a $PTHREAD_LIB"
-+               		nsprlibs="$with_nspr_libs/libplc4.a $with_nspr_libs/libplds4.a $with_nspr_libs/libnspr4.a $PTHREAD_LIB"
-       		    fi
- 		else
--               	    nsprlibs="-ldl -lplc4 -lplds4 -lnspr4 $PTHREAD_LIB"
-+               	    nsprlibs="-lplc4 -lplds4 -lnspr4 $PTHREAD_LIB"
- 		fi
+@@ -13495,10 +13495,10 @@
+ Example: --with-nspr-libs=/usr/lib" >&2;}
+    { (exit 1); exit 1; }; }
+        				else
+-	       				nsprlibs="-ldl $with_nspr_libs/libplc4.a $with_nspr_libs/libplds4.a $with_nspr_libs/libnspr4.a $PTHREAD_LIB"
++				    nsprlibs="$with_nspr_libs/libplc4.a $with_nspr_libs/libplds4.a $with_nspr_libs/libnspr4.a $PTHREAD_LIB"
+ 				fi
+ 			else
+-				nsprlibs="-ldl -lplc4 -lplds4 -lnspr4 $PTHREAD_LIB"
++			    nsprlibs="-lplc4 -lplds4 -lnspr4 $PTHREAD_LIB"
+ 			fi
  
- 		echo $ac_n "checking for Mozilla nspr libraries""... $ac_c" 1>&6
-@@ -13857,10 +13857,10 @@
-       *) # Relative path.
-         ac_sub_cache_file="$ac_dots$cache_file" ;;
-       esac
--  case "$ac_given_INSTALL" in
--        [/$]*) INSTALL="$ac_given_INSTALL" ;;
--        *) INSTALL="$ac_dots$ac_given_INSTALL" ;;
--        esac
-+#  case "$ac_given_INSTALL" in
-+#        [/$]*) INSTALL="$ac_given_INSTALL" ;;
-+#        *) INSTALL="$ac_dots$ac_given_INSTALL" ;;
-+#        esac
+ 			echo "$as_me:$LINENO: checking for Mozilla nspr libraries" >&5
+@@ -16710,7 +16710,7 @@
+ idldir="$datadir/idl/evolution-$BASE_VERSION"
  
-       echo "running ${CONFIG_SHELL-/bin/sh} $ac_sub_configure $ac_sub_configure_args --cache-file=$ac_sub_cache_file --srcdir=$ac_sub_srcdir"
-       # The eval makes quoting arguments work.
+ 
+-serverdir="$libdir/bonobo/servers"
++serverdir="$prefix/libdata/bonobo/servers"
+ 
+ 
+ evolutionuidir="$privdatadir/ui"
