@@ -1,11 +1,11 @@
 # New ports collection Makefile for:	libgcrypt
 # Date created:				July 17 2002
-# Whom:					Tilman Linneweh <tilman@arved.de>
+# Whom:					Tilman Linneweh <arved@FreeBSD.org>
 #
 # $FreeBSD$
 
 PORTNAME=	libgcrypt
-PORTVERSION=	1.1.10
+PORTVERSION=	1.1.11
 CATEGORIES=	security
 MASTER_SITES=	http://gd.tuwien.ac.at/privacy/gnupg/alpha/libgcrypt/ \
 		ftp://ftp.gnupg.org/gcrypt/alpha/libgcrypt/ \
@@ -13,12 +13,11 @@ MASTER_SITES=	http://gd.tuwien.ac.at/privacy/gnupg/alpha/libgcrypt/ \
 		http://www.mirrors.wiretapped.net/security/cryptography/apps/pgp/GnuPG/alpha/libgcrypt/  \
 		${MASTER_SITE_RINGSERVER}/net/gnupg/alpha/libgcrypt/ \
 
-MAINTAINER=	freebsdports@arved.de
-
-BUILD_DEPENDS=	autoconf:${PORTSDIR}/devel/autoconf
+MAINTAINER=	arved@FreeBSD.org
 
 USE_REINPLACE=	yes
 USE_PERL5=	yes
+USE_AUTOCONF_VER=	253
 USE_LIBTOOL=	yes
 CONFIGURE_ENV=	MAKEINFO="makeinfo --no-split"
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
@@ -30,6 +29,5 @@ post-patch:
 
 pre-configure:
 	@${RM} -f ${WRKSRC}/doc/gcrypt.info*
-	@cd ${WRKSRC}; ${LOCALBASE}/bin/autoconf
 
 .include <bsd.port.mk>

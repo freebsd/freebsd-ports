@@ -6,5 +6,5 @@ info/gcrypt.info
 lib/libgcrypt.a
 lib/libgcrypt.la
 lib/libgcrypt.so
-lib/libgcrypt.so.5
+lib/libgcrypt.so.6
 share/aclocal/libgcrypt.m4
