@@ -1,56 +1,29 @@
-*** Makefile.in.bak	Tue Nov 29 00:07:26 1994
---- Makefile.in	Tue Nov 29 06:30:34 1994
+*** Makefile.in.bak	Mon Jan 16 17:59:20 1995
+--- Makefile.in	Wed Jan 18 04:13:40 1995
 ***************
-*** 19,33 ****
-  
+*** 20,26 ****
   ETCSCREENRC = `sed < config.h -n -e '/define ETCSCREENRC/s/^.*"\([^"]*\)"/\1/p'`
   
-! CC = @CC@
-! CFLAGS = -O
-! LDFLAGS =
-! LIBS = @LIBS@
+  CC = @CC@
+- CFLAGS = -O
+  LDFLAGS =
+  LIBS = @LIBS@
   
-  CPP_DEPEND=/lib/cpp -MM
-  
-! INSTALL = @INSTALL@
-! INSTALL_PROGRAM = @INSTALL_PROGRAM@
-  INSTALL_DATA = @INSTALL_DATA@
-  
-  AWK = @AWK@
---- 19,30 ----
-  
-  ETCSCREENRC = `sed < config.h -n -e '/define ETCSCREENRC/s/^.*"\([^"]*\)"/\1/p'`
-  
-! LIBS = -ltermcap -lutil -lcrypt
-  
-  CPP_DEPEND=/lib/cpp -MM
-  
-! INSTALL = @INSTALL@ -o bin -g bin
-! INSTALL_PROGRAM = @INSTALL_PROGRAM@ -s
-  INSTALL_DATA = @INSTALL_DATA@
-  
-  AWK = @AWK@
+--- 20,25 ----
 ***************
-*** 136,145 ****
+*** 79,85 ****
   
   install: install_bin
-  	-$(INSTALL_DATA) $(srcdir)/doc/screen.1 $(mandir)/man1/screen.1
+  	cd doc ; $(MAKE) install
 ! 	-tic ${srcdir}/terminfo/screeninfo.src
   # Better do this by hand. E.g. under RCS...
   #	cat ${srcdir}/terminfo/screencap >> /etc/termcap
-! 	@echo "termcap entry (${srcdir}/terminfo/screencap) should be installed manually."
-  
-  installdirs: mkinstalldirs
-  # Path leading to ETCSCREENRC and Socketdirectory not checked.
---- 133,143 ----
+  	@echo "termcap entry (${srcdir}/terminfo/screencap) should be installed manually."
+--- 78,84 ----
   
   install: install_bin
-  	-$(INSTALL_DATA) $(srcdir)/doc/screen.1 $(mandir)/man1/screen.1
+  	cd doc ; $(MAKE) install
 ! #       -tic ${srcdir}/terminfo/screeninfo.src
   # Better do this by hand. E.g. under RCS...
   #	cat ${srcdir}/terminfo/screencap >> /etc/termcap
-! #       @echo "termcap entry (${srcdir}/terminfo/screencap) should be installed manually."
-! 	@echo "look at global and local screenrc examples in etc subdir"
-  
-  installdirs: mkinstalldirs
-  # Path leading to ETCSCREENRC and Socketdirectory not checked.
+  	@echo "termcap entry (${srcdir}/terminfo/screencap) should be installed manually."
