@@ -10,7 +10,7 @@ PORTVERSION=	2.0
 CATEGORIES=	audio
 MASTER_SITES=	ftp://svr-ftp.eng.cam.ac.uk/pub/comp.speech/synthesis/
 
-MAINTAINER=	faulkner@mpd.tandem.com
+MAINTAINER=	ports@FreeBSD.org
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libgdbm.a:${PORTSDIR}/databases/gdbm \
 		${X11BASE}/include/audio/audiolib.h:${PORTSDIR}/audio/nas
