@@ -327,9 +327,9 @@ do-configure:
 post-build:
 	( cd ${WRKSRC}/doc/op && ${MAKE} op.txt )
 .if !defined(SENDMAIL_WITHOUT_MILTER)
-	( cd ${WRKSRC}/libmilter && ${MAKE} )
+	@(cd ${BUILD_WRKSRC}/libmilter; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${ALL_TARGET})
 .if defined(SENDMAIL_WITH_SHARED_MILTER)
-	( cd ${WRKSRC}/libsharedmilter && ${MAKE} )
+	@(cd ${BUILD_WRKSRC}/libsharedmilter; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${ALL_TARGET})
 .endif
 .endif
 
