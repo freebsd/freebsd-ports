@@ -137,6 +137,7 @@
     SUBDIR += rsaref
     SUBDIR += ruby-acl
     SUBDIR += ruby-blowfish
+    SUBDIR += ruby-pam
     SUBDIR += ruby-sha1
     SUBDIR += ruby-ssl
     SUBDIR += ruby-tcpwrap
