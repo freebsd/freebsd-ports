@@ -11508,6 +11508,7 @@ vsound		ports/audio/vsound
 vstr		ports/devel/vstr
 vtcl		ports/devel/vtcl
 vte		ports/x11-toolkits/vte
+vtiger		ports/www/vtiger
 vtk		ports/math/vtk
 vtk-data	ports/math/vtk-data
 vtk-examples	ports/math/vtk-examples
