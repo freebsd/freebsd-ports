@@ -1,4 +1,5 @@
-Alex is a Lex-like package for generating Haskell scanners
-by Chris Dornan.
+Alex is a tool for generating lexical analysers in Haskell, given a description
+of the tokens to be recognised in the form of regular expressions. It is similar
+to the tool lex or flex for C/C++ by Chris Dornan and Simon Marlow.
 
-WWW: http://www.syntaxpolice.org/~ijones/alex/
+WWW: http://www.haskell.org/alex/
