@@ -6,16 +6,15 @@
 #
 
 PORTNAME=	afsp
-PORTVERSION=	6.6a
+PORTVERSION=	6.7b
 CATEGORIES=	audio
 MASTER_SITES=	ftp://ftp.tsp.ece.mcgill.ca/pub/AFsp/
-DISTNAME=	AFsp-v6r6a
+DISTNAME=	AFsp-v6r7b
 
 MAINTAINER=	ginga-freebsd@ginganet.org
 COMMENT=	Audio file conversion utilities and library
 
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 
 MAN1=	AFsp.1audio CompAudio.1audio CopyAudio.1audio FiltAudio.1audio \
 	GenNoise.1audio GenTone.1audio InfoAudio.1audio LPanal.1audio \
@@ -24,13 +23,9 @@ MAN3=	AFclose.3tsp AFopenRead.3tsp AFopenWrite.3tsp AFreadData.3tsp \
 	AFsetFileType.3tsp AFsetHinfo.3tsp AFsetNHpar.3tsp \
 	AFwriteData.3tsp AFsetSpeaker.3tsp
 
-MAKE_ENV=	COPTS="${CFLAGS}"
+MAKE_ARGS=	COPTS="${CFLAGS}"
 
 post-extract:
 	@${CP} -f ${FILESDIR}/Makefile ${WRKSRC}
-
-post-patch:
-	cd ${WRKSRC} && find . -name Makefile | \
-		xargs -n10 ${REINPLACE_CMD} -e 's/^(COPTS)/#$$1/'
 
 .include <bsd.port.mk>
