@@ -1,0 +1,20 @@
+--- configure.orig	Wed Jan 21 11:43:15 2004
++++ configure	Wed Jan 21 11:43:47 2004
+@@ -6150,17 +6150,6 @@
+ 
+ 
+ 
+-echo $ac_n "ordering crap from http://www.amazon.com/exec/obidos/wishlist/296ST2NHEBO0Z $ac_c" 1>&6
+-sleep 1
+-echo $ac_n ".$ac_c" 1>&6
+-sleep 1
+-echo $ac_n ".$ac_c" 1>&6
+-sleep 1
+-echo $ac_n ".$ac_c" 1>&6
+-sleep 1
+-echo $ac_n ".$ac_c" 1>&6
+-sleep 1
+-echo "$as_me:$LINENO: result:  complete!" >&5
+ echo "${ECHO_T} complete!" >&6
+ 
+                                         ac_config_files="$ac_config_files Makefile src/Makefile bin/Makefile src/snipe2d"

@@ -1,0 +1,85 @@
+--- src/Makefile.in.orig	Wed Jan 21 12:10:25 2004
++++ src/Makefile.in	Wed Jan 21 12:25:03 2004
+@@ -52,7 +52,7 @@
+ install_sh_SCRIPT = $(install_sh) -c
+ INSTALL_SCRIPT = @INSTALL_SCRIPT@
+ INSTALL_HEADER = $(INSTALL_DATA)
+-transform = @program_transform_name@
++transform =
+ NORMAL_INSTALL = :
+ PRE_INSTALL = :
+ POST_INSTALL = :
+@@ -87,7 +87,7 @@
+ am__include = @am__include@
+ am__quote = @am__quote@
+ install_sh = @install_sh@
+-pkgdata_PROGRAMS = snipe2d.@CPU_IS@.dynamic snipe2d.@CPU_IS@.static
++pkgdata_PROGRAMS = snipe2d-bin
+ BUILT_SOURCES = snipe2d
+ bin_SCRIPTS = snipe2d
+ snipe2d_common = \
+@@ -118,7 +118,7 @@
+  sexpr/parser.c
+ 
+ 
+-snipe2d_@CPU_IS@_dynamic_SOURCES = $(snipe2d_common)
++snipe2d_bin_SOURCES = $(snipe2d_common)
+ 
+ #snipe2d_@CPU_IS@_static_LDFLAGS = -static
+ snipe2d_@CPU_IS@_static_SOURCES = $(snipe2d_common)
+@@ -126,8 +126,8 @@
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = $(top_builddir)/config.h
+ CONFIG_CLEAN_FILES = snipe2d
+-pkgdata_PROGRAMS = snipe2d.@CPU_IS@.dynamic$(EXEEXT) \
+-	snipe2d.@CPU_IS@.static$(EXEEXT)
++pkgdata_PROGRAMS = snipe2d-bin$(EXEEXT)
++
+ PROGRAMS = $(pkgdata_PROGRAMS)
+ 
+ am__objects_1 = ai.$(OBJEXT) binds.$(OBJEXT) gameover.$(OBJEXT) \
+@@ -136,12 +136,12 @@
+ 	snipe2d.$(OBJEXT) target.$(OBJEXT) ui.$(OBJEXT) zooms.$(OBJEXT) \
+ 	sexp.$(OBJEXT) sexp_ops.$(OBJEXT) faststack.$(OBJEXT) \
+ 	io.$(OBJEXT) parser.$(OBJEXT)
+-am_snipe2d_@CPU_IS@_dynamic_OBJECTS = $(am__objects_1)
+-snipe2d_@CPU_IS@_dynamic_OBJECTS = \
+-	$(am_snipe2d_@CPU_IS@_dynamic_OBJECTS)
+-snipe2d_@CPU_IS@_dynamic_LDADD = $(LDADD)
+-snipe2d_@CPU_IS@_dynamic_DEPENDENCIES =
+-snipe2d_@CPU_IS@_dynamic_LDFLAGS =
++am_snipe2d_bin_OBJECTS = $(am__objects_1)
++snipe2d_bin_OBJECTS = \
++	$(am_snipe2d_bin_OBJECTS)
++snipe2d_bin_LDADD = $(LDADD)
++snipe2d_bin_DEPENDENCIES =
++snipe2d_bin_LDFLAGS =
+ am_snipe2d_@CPU_IS@_static_OBJECTS = $(am__objects_1)
+ snipe2d_@CPU_IS@_static_OBJECTS = $(am_snipe2d_@CPU_IS@_static_OBJECTS)
+ snipe2d_@CPU_IS@_static_LDADD = $(LDADD)
+@@ -177,10 +177,10 @@
+ CXXLINK = $(CXXLD) $(AM_CXXFLAGS) $(CXXFLAGS) $(AM_LDFLAGS) $(LDFLAGS) \
+ 	-o $@
+ CXXFLAGS = @CXXFLAGS@
+-DIST_SOURCES = $(snipe2d_@CPU_IS@_dynamic_SOURCES) \
++DIST_SOURCES = $(snipe2d_bin_SOURCES) \
+ 	$(snipe2d_@CPU_IS@_static_SOURCES)
+ DIST_COMMON = Makefile.am Makefile.in snipe2d.in
+-SOURCES = $(snipe2d_@CPU_IS@_dynamic_SOURCES) $(snipe2d_@CPU_IS@_static_SOURCES)
++SOURCES = $(snipe2d_bin_SOURCES) $(snipe2d_@CPU_IS@_static_SOURCES)
+ 
+ all: $(BUILT_SOURCES)
+ 	$(MAKE) $(AM_MAKEFLAGS) all-am
+@@ -223,9 +223,9 @@
+ faststack.$(OBJEXT): sexpr/faststack.c
+ io.$(OBJEXT): sexpr/io.c
+ parser.$(OBJEXT): sexpr/parser.c
+-snipe2d.@CPU_IS@.dynamic$(EXEEXT): $(snipe2d_@CPU_IS@_dynamic_OBJECTS) $(snipe2d_@CPU_IS@_dynamic_DEPENDENCIES) 
+-	@rm -f snipe2d.@CPU_IS@.dynamic$(EXEEXT)
+-	$(CXXLINK) $(snipe2d_@CPU_IS@_dynamic_LDFLAGS) $(snipe2d_@CPU_IS@_dynamic_OBJECTS) $(snipe2d_@CPU_IS@_dynamic_LDADD) $(LIBS)
++snipe2d-bin$(EXEEXT): $(snipe2d_bin_OBJECTS) $(snipe2d_bin_DEPENDENCIES) 
++	@rm -f snipe2d-bin$(EXEEXT)
++	$(CXXLINK) $(snipe2d_bin_LDFLAGS) $(snipe2d_bin_OBJECTS) $(snipe2d_bin_LDADD) $(LIBS)
+ binSCRIPT_INSTALL = $(INSTALL_SCRIPT)
+ install-binSCRIPTS: $(bin_SCRIPTS)
+ 	@$(NORMAL_INSTALL)
