@@ -14,7 +14,7 @@
 +#define FBSD_LIB_SPEC "							\
 +  %{!shared:								\
 +    %{!pg: %{pthread:-lpthread} -lc}					\
-+    %{pg:  %{pthread:-lpthread} -lc_p}					\
++    %{pg:  %{pthread:-lpthread_p} -lc_p}					\
 +  }"
 +#endif	/* deal with FreeBSD 5.0 - 5.2.1 */
  #else
