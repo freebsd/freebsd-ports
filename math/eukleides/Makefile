@@ -7,10 +7,10 @@
 #
 
 PORTNAME=	eukleides
-PORTVERSION=	0.9.2.2
+PORTVERSION=	1.0.0
 CATEGORIES=	math
 MASTER_SITES=	http://perso.wanadoo.fr/obrecht/download/
-DISTNAME=	${PORTNAME}.${PORTVERSION:R}rev${PORTVERSION:E}
+DISTNAME=	${PORTNAME}.${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Euclidean geometry drawing language
