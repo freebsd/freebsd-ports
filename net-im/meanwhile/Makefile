@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	meanwhile
-PORTVERSION=	0.3
-PORTREVISION=	4
+PORTVERSION=	0.4.0
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -20,10 +19,4 @@ USE_GNOME=	gnomehack glib20
 INSTALLS_SHLIB=	yes
 USE_LIBTOOL_VER=15
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} != "i386"
-IGNORE=		Does not build on 64-bit platforms, but new release is imminent
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
