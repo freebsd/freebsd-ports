@@ -14,7 +14,7 @@ MASTER_SITES=	http://www4.vmware.com/software/ \
 		${FREEBSD_MODULE_SITES} \
 		${VMWARE_MIRROR_SITES}
 DISTFILES=	VMware-workstation-${PORTVERSION:R}-${PORTVERSION:E}${EXTRACT_SUFX}:vmware \
-		vmmon-only-${PORTVERSION:R}-20031009${EXTRACT_SUFX}:patch \
+		vmmon-only-${PORTVERSION:R}-20031118${EXTRACT_SUFX}:patch \
 		vmnet-only-${PORTVERSION:R}-20030412${EXTRACT_SUFX}:patch
 
 # Feel free to post your questions/reports/suggestions on this port to
@@ -33,7 +33,7 @@ VMWARE_MIRROR_SITES=	\
 		http://vmware.wespe.de/software/:vmware \
 		ftp://vmware.wespe.de/pub/software:vmware
 FREEBSD_MODULE_SITES=	\
-		http://people.freebsd.org/~mbr/vmware/:patch \
+		http://bag.ieo-research.it/~nextie/vmware3/:patch \
 
 USE_SUBMAKE=	yes
 USE_LINUX=	yes
