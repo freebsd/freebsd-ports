@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	ploticus
-PORTVERSION=	2.03
+PORTVERSION=	2.04
 CATEGORIES=	math
 MASTER_SITES=	http://ploticus.sourceforge.net/download/
 DISTNAME=	plsrc${PORTVERSION:S/.//}
@@ -27,9 +27,7 @@ MAKE_ENV=	LIBS="-L${LOCALBASE}/lib"
 MAN1=	pl.1
 
 post-patch:
-	@${PERL} -pi -e "s,%%X11BASE%%,${X11BASE},g ; \
-		s,%%LOCALBASE%%,${LOCALBASE},g ; \
-		s,^CC,#CC,g" ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e "s,^CC,#CC,g" ${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/pl ${PREFIX}/bin

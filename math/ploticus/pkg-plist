@@ -2,6 +2,8 @@ bin/pl
 share/ploticus/README
 share/ploticus/chron.pl
 share/ploticus/chunk_area
+share/ploticus/chunk_logstubs
+share/ploticus/chunk_logtics
 share/ploticus/chunk_read
 share/ploticus/chunk_setstd
 share/ploticus/chunk_title
@@ -10,6 +12,7 @@ share/ploticus/chunk_yaxis
 share/ploticus/dist.pl
 share/ploticus/draw.pl
 share/ploticus/lines.pl
+share/ploticus/multidist.pl
 share/ploticus/pie.pl
 share/ploticus/scat.pl
 share/ploticus/stack.pl
@@ -48,6 +51,7 @@ share/ploticus/vbars.pl
 %%PORTDOCS%%share/doc/ploticus/dates.html
 %%PORTDOCS%%share/doc/ploticus/defineunits.html
 %%PORTDOCS%%share/doc/ploticus/drawcommands.html
+%%PORTDOCS%%share/doc/ploticus/dynamic.html
 %%PORTDOCS%%share/doc/ploticus/endproc.html
 %%PORTDOCS%%share/doc/ploticus/fonts.html
 %%PORTDOCS%%share/doc/ploticus/functions.html
@@ -85,12 +89,14 @@ share/ploticus/vbars.pl
 %%PORTDOCS%%share/doc/ploticus/prefab_dist.html
 %%PORTDOCS%%share/doc/ploticus/prefab_draw.html
 %%PORTDOCS%%share/doc/ploticus/prefab_lines.html
+%%PORTDOCS%%share/doc/ploticus/prefab_multidist.html
 %%PORTDOCS%%share/doc/ploticus/prefab_pie.html
 %%PORTDOCS%%share/doc/ploticus/prefab_scat.html
 %%PORTDOCS%%share/doc/ploticus/prefab_stack.html
 %%PORTDOCS%%share/doc/ploticus/prefab_stdparms.html
 %%PORTDOCS%%share/doc/ploticus/prefab_vbars.html
 %%PORTDOCS%%share/doc/ploticus/prefabs.html
+%%PORTDOCS%%share/doc/ploticus/prepress.html
 %%PORTDOCS%%share/doc/ploticus/print.html
 %%PORTDOCS%%share/doc/ploticus/processdata.html
 %%PORTDOCS%%share/doc/ploticus/rangebar.html

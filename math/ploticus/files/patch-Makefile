@@ -1,6 +1,6 @@
---- Makefile.orig	Thu Mar  7 16:10:46 2002
-+++ Makefile	Thu Mar  7 16:10:50 2002
-@@ -22,14 +22,14 @@
+--- Makefile.orig	Fri Jun 14 21:58:53 2002
++++ Makefile	Mon Jun 17 00:12:22 2002
+@@ -23,14 +23,14 @@
  ######## Choose one of the following.   All others should be commented out.
  
  #### For Solaris 2.x uncomment the following..
@@ -12,30 +12,24 @@
  #### For Linux and FreeBSD uncomment the following..
 -# XLIBS = -L/usr/X11R6/lib -lX11
 -# XINCLUDEDIR = -I/usr/X11R6/include
-+XLIBS = -L%%X11BASE%%/lib -lX11
-+XINCLUDEDIR = -I%%X11BASE%%/include
++XLIBS = -L${X11BASE}/lib -lX11
++XINCLUDEDIR = -I${X11BASE}/include
  #### For FreeBSD uncomment the following and find GD16H or GD18H below and set to -I/usr/local/include
 -# ADDLIBS = -L/usr/local/lib
-+ADDLIBS = -L%%LOCALBASE%%/lib
++ADDLIBS = -L${LOCALBASE}/lib
  
  #### For Cygwin uncomment the following..
  # PLATFORM = WIN32
-@@ -87,11 +87,11 @@
- # ZFLAG = -DWZ
+@@ -78,7 +78,7 @@
+ ######## Choose ONE of the following.  All others should be commented out.
  
- #### For both pseudo-GIF & PNG uncomment the following..  (you must have libpng and zlib)
--ploticus: pl plpng 
-+#ploticus: pl plpng 
- # GD16LIBS = -lpng -lz
- # GD16H = 
--GD16LIBS = /home/scg/lib/libpng.a /home/scg/lib/libz.a
--GD16H = -I/home/scg/lib
-+#GD16LIBS = /home/scg/lib/libpng.a /home/scg/lib/libz.a
-+#GD16H = -I/home/scg/lib
+ #### For pseudo-GIF uncomment the following..  (no libs required)
+-ploticus: pl 
++#ploticus: pl 
  
- #### For JPEG, WBMP, and PNG using your copy of GD 1.84+ uncomment the following.. 
- #### (you must have gd 1.84+, libpng, zlib, libjpeg)
-@@ -104,11 +104,11 @@
+ #### For PNG uncomment the following.. (you must have libpng and zlib)
+ # ploticus: plpng 
+@@ -103,11 +103,11 @@
  #### For JPEG, WBMP, and PNG & FreeType2 using your copy of GD 1.84+ uncomment the following..
  #### (you must have gd 1.84+, libpng, zlib, libjpeg, libfreetype)
  #### Before using set environment var GDFONTPATH to directory containing .ttf files
@@ -46,18 +40,18 @@
 -# ZFLAG = -DWZ
 +ploticus: plgd18 
 +GD18LIBS = -lgd -lpng -lz -ljpeg -lfreetype
-+GD18H = -I%%LOCALBASE%%/include -I%%LOCALBASE%%/include/gd -I%%LOCALBASE%%/include/freetype2
++GD18H = -I${LOCALBASE}/include/gd
 +GDFREETYPE = -DGDFREETYPE
 +ZFLAG = -DWZ
  
  #### To disable GD image support (no GIF, PNG, JPEG, etc) uncomment the following..
  # ploticus: plnogd 
-@@ -122,11 +122,11 @@
+@@ -125,11 +125,11 @@
  #### To set a hard-coded directory for prefabs files, uncomment & edit the following.. 
  #### If done, users won't be required to have PLOTICUS_PREFABS environment variable defined.
  #### This option not available for win32
 -# PREFABS_DIR = "/usr/lib/ploticus"
-+PREFABS_DIR = "%%LOCALBASE%%/share/ploticus"
++PREFABS_DIR = "${LOCALBASE}/share/ploticus"
  
  #### For LOCALE support (non-roman alphabets & collation), uncomment the following..
 -# LOCALEOBJ = localef.o
@@ -67,7 +61,7 @@
  
  #### If you want compressed svg (.svgz), and you selected "GIF only", "GIF & PNG", or "disable GD" above, 
  #### uncomment the following.  You need to have zlib.  If necessary change -lz to location of zlib.
-@@ -154,9 +154,9 @@
+@@ -156,9 +156,9 @@
  GD = gdfontg.o gdfontl.o gdfontmb.o gdfonts.o gdfontt.o
  
  
