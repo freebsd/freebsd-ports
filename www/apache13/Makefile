@@ -37,13 +37,16 @@ EXPAT_CONF+=    --enable-rule=EXPAT
 APACHE_SUEXEC_DOCROOT?=${DOCUMENT_ROOT}
 APACHE_SUEXEC_LOG?=/var/log/httpd-suexec.log
 APACHE_SUEXEC_USERDIR?=public_html
+APACHE_SUEXEC_UIDMIN?=1000
+APACHE_SUEXEC_GIDMIN?=1000
+APACHE_SUEXEC_CALLER?=www
 
 SUEXEC_CONF= \
 	--enable-suexec \
 	--suexec-docroot=${APACHE_SUEXEC_DOCROOT} \
-	--suexec-caller=www \
-	--suexec-uidmin=1000 \
-	--suexec-gidmin=1000 \
+	--suexec-caller=${APACHE_SUEXEC_CALLER} \
+	--suexec-uidmin=${APACHE_SUEXEC_UIDMIN} \
+	--suexec-gidmin=${APACHE_SUEXEC_GIDMIN} \
 	--suexec-logfile=${APACHE_SUEXEC_LOG} \
 	--suexec-userdir=${APACHE_SUEXEC_USERDIR} \
 	--suexec-safepath=${DEFAULT_PATH}
