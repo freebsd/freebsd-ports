@@ -8,6 +8,7 @@
 %%T%%/build.xml
 %%T%%/build/apidocs/AllNames.html
 %%T%%/build/apidocs/Package-org.jdom.adapters.html
+%%T%%/build/apidocs/Package-org.jdom.filter.html
 %%T%%/build/apidocs/Package-org.jdom.html
 %%T%%/build/apidocs/Package-org.jdom.input.html
 %%T%%/build/apidocs/Package-org.jdom.output.html
@@ -38,6 +39,9 @@
 %%T%%/build/apidocs/org.jdom.adapters.ProjectXDOMAdapter.html
 %%T%%/build/apidocs/org.jdom.adapters.XML4JDOMAdapter.html
 %%T%%/build/apidocs/org.jdom.adapters.XercesDOMAdapter.html
+%%T%%/build/apidocs/org.jdom.filter.ContentFilter.html
+%%T%%/build/apidocs/org.jdom.filter.ElementFilter.html
+%%T%%/build/apidocs/org.jdom.filter.Filter.html
 %%T%%/build/apidocs/org.jdom.input.BuilderErrorHandler.html
 %%T%%/build/apidocs/org.jdom.input.DOMBuilder.html
 %%T%%/build/apidocs/org.jdom.input.DefaultJDOMFactory.html
@@ -83,6 +87,9 @@
 %%T%%/samples/Count.java
 %%T%%/samples/DOMBuilderDemo.java
 %%T%%/samples/SAXBuilderDemo.java
+%%T%%/samples/SAXBuilderTestEntity.dtd
+%%T%%/samples/SAXBuilderTestEntity.xml
+%%T%%/samples/SAXBuilderTestEntity2.xml
 %%T%%/samples/TestXMLOutputter.java
 %%T%%/samples/WarReader.java
 %%T%%/samples/XSLTransform.java
@@ -95,16 +102,21 @@
 %%T%%/samples/namespaces.xml
 %%T%%/samples/sax/DataFormatFilter.java
 %%T%%/samples/sax/DataUnformatFilter.java
+%%T%%/samples/sax/DocumentReader.java
 %%T%%/samples/sax/FilterTest.java
+%%T%%/samples/sax/ReaderTest.java
 %%T%%/samples/sax/XMLFilterBase.java
+%%T%%/samples/sax/XMLReaderBase.java
 %%T%%/samples/sax/XMLWriter.java
 %%T%%/samples/sax/test1.xml
 %%T%%/samples/sax/test2.xml
 %%T%%/samples/testNamespaces.xml
 %%T%%/samples/web.xml
 %%T%%/src/java/org/jdom/Attribute.java
+%%T%%/src/java/org/jdom/AttributeList.java
 %%T%%/src/java/org/jdom/CDATA.java
 %%T%%/src/java/org/jdom/Comment.java
+%%T%%/src/java/org/jdom/ContentList.java
 %%T%%/src/java/org/jdom/DataConversionException.java
 %%T%%/src/java/org/jdom/DocType.java
 %%T%%/src/java/org/jdom/Document.java
@@ -116,7 +128,6 @@
 %%T%%/src/java/org/jdom/IllegalTargetException.java
 %%T%%/src/java/org/jdom/JDOMException.java
 %%T%%/src/java/org/jdom/Namespace.java
-%%T%%/src/java/org/jdom/PartialList.java
 %%T%%/src/java/org/jdom/ProcessingInstruction.java
 %%T%%/src/java/org/jdom/Text.java
 %%T%%/src/java/org/jdom/Verifier.java
@@ -129,6 +140,9 @@
 %%T%%/src/java/org/jdom/adapters/ProjectXDOMAdapter.java
 %%T%%/src/java/org/jdom/adapters/XML4JDOMAdapter.java
 %%T%%/src/java/org/jdom/adapters/XercesDOMAdapter.java
+%%T%%/src/java/org/jdom/filter/ContentFilter.java
+%%T%%/src/java/org/jdom/filter/ElementFilter.java
+%%T%%/src/java/org/jdom/filter/Filter.java
 %%T%%/src/java/org/jdom/input/BuilderErrorHandler.java
 %%T%%/src/java/org/jdom/input/DOMBuilder.java
 %%T%%/src/java/org/jdom/input/DefaultJDOMFactory.java
@@ -151,6 +165,7 @@
 @dirrm %%T%%/samples/sax
 @dirrm %%T%%/samples
 @dirrm %%T%%/src/java/org/jdom/adapters
+@dirrm %%T%%/src/java/org/jdom/filter
 @dirrm %%T%%/src/java/org/jdom/input
 @dirrm %%T%%/src/java/org/jdom/output
 @dirrm %%T%%/src/java/org/jdom/transform
