@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	elm+ME
-PORTVERSION=	${ELM_VERSION}.${ELM_REVISION}${ELM_PATCHLEVEL}
+PORTVERSION=	${ELM_VERSION}.${ELM_REVISION}${ELM_PATCHLEVEL:S/_//}
 CATEGORIES=	mail
 DISTNAME=	elm-${ELM_VERSION}ME+${ELM_REVISION}
 
@@ -45,6 +45,7 @@ LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
 WRKSRC=		${WRKDIR}/${DISTNAME:S/-//:S/ME+/.ME+./}
 
 HAS_CONFIGURE=	yes
+USE_REINPLACE=	yes
 
 CONFIGURE_SCRIPT=	Configure
 SCRIPTS_ENV=	CFLAGS="${CFLAGS}" ${PLIST_SUB} PREFIX="${PREFIX}" \
@@ -61,21 +62,22 @@ PLIST_SUB=	SO_REV="${SO_REV}" DOC_SUBDIR="${DOC_SUBDIR}" \
 		LIB_SUBDIR="${LIB_SUBDIR}" SHLIB_SUBDIR="${SHLIB_SUBDIR}"
 
 MAN1=		answer.1 checkalias.1 elm.1 elmalias.1 elmcharset.1 \
-		elmrc-write.1 elmterminal.1 elmunidata.1 fastmail.1 frm.1 \
-		listalias.1 messages.1 newalias.1 newmail.1 printmail.1 \
-		readmsg.1
+		elmrc-write.1 elmstringconvert.1 elmterminal.1 \
+		elmunidata.1 fastmail.1 frm.1 listalias.1 messages.1 \
+		newalias.1 newmail.1 printmail.1 readmsg.1
 MLINKS=		frm.1 nfrm.1	newmail.1 wnewmail.1
 
 # Local variables
 #
 
 ELM_VERSION=	2.4
-ELM_REVISION=	98
-ELM_PATCHLEVEL=	b
+ELM_REVISION=	99
+ELM_PATCHLEVEL=	_
 
 ELM_PATCHDONE=	false
-.for level in a b c d e f
-.if ${ELM_PATCHDONE} == false
+.for level in _ a b c d e f
+_level=${level}
+.if ${_level} != _ && ${ELM_PATCHDONE} == false
 PATCHFILES+=	${DISTNAME:S/+/+PL/}${level}.patch.gz
 .endif
 .if ${ELM_PATCHLEVEL} == ${level}
@@ -121,12 +123,12 @@ patch-install-script:
 # will probably be fixed in a next release, for instance, fake a patch.
 # the alternative would be to disable this option in pre-configure script.
 patch-setgid:
-	@${PERL} -pi.fbsd -e 's,setgid,setegid,' \
+	@${REINPLACE_CMD} -e 's|setgid|setegid|' \
 		${WRKSRC}/lib/localmbx.c \
 		${WRKSRC}/src/init.c ${WRKSRC}/src/lock.c
 
 patch-nls-files:
-	@${PERL} -pi.fbsd -e 's,/usr/local,${PREFIX},' ${WRKSRC}/nls/LANGS
+	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|' ${WRKSRC}/nls/LANGS
 
 # Pre-install
 #
