@@ -25,6 +25,12 @@ INSTALLS_SHLIB=	yes
 
 DOCS=		HISTORY README doc/*
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} > 502000
+BROKEN=		"Does not compile"
+.endif
+
 pre-build:
 	${CP} ${FILESDIR}/${MAKEFILE} ${WRKSRC}/
 
@@ -38,4 +44,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
