@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	gdis
-PORTVERSION=	0.77.1
+PORTVERSION=	0.77.3
 CATEGORIES=	science
 MASTER_SITES=	ftp://ftp.seul.org/pub/gdis/
 EXTRACT_SUFX=	.tgz
