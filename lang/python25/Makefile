@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	python
-PORTVERSION=	2.4.a1
-PORTREVISION=	1
+PORTVERSION=	2.4.a2
 CATEGORIES=	lang python ipv6
 MASTER_SITES=	${PYTHON_MASTER_SITES}
 MASTER_SITE_SUBDIR=	${PYTHON_MASTER_SITE_SUBDIR}
@@ -40,7 +39,8 @@ TOOLSDIR=	${PREFIX}/share/${PYTHON_VERSION}
 OPTIONS=	THREADS "Enable thread support" on \
 		HUGE_STACK_SIZE "Use a larger thread stack" off \
 		UCS4 "Use UCS4 for unicode support" on \
-		PYMALLOC "Uses python's internal malloc" on
+		PYMALLOC "Use python's internal malloc" on \
+		IPV6 "Enable IPv6 support" on
 
 .include <bsd.port.pre.mk>
 
@@ -95,7 +95,7 @@ CONFIGURE_ARGS+=	--with-libs='-lxpg4'
 CONFIGURE_ARGS+=	--with-libs='-lxpg4'
 .endif
 
-.if ${OSVERSION} >= 400014
+.if !defined(WITHOUT_IPV6) && ${OSVERSION} >= 400014
 CONFIGURE_ARGS+= --enable-ipv6
 .else
 CONFIGURE_ARGS+= --disable-ipv6

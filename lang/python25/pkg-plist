@@ -98,9 +98,6 @@ lib/%%PYTHON_VERSION%%/Cookie.pyo
 lib/%%PYTHON_VERSION%%/DocXMLRPCServer.py
 lib/%%PYTHON_VERSION%%/DocXMLRPCServer.pyc
 lib/%%PYTHON_VERSION%%/DocXMLRPCServer.pyo
-lib/%%PYTHON_VERSION%%/FCNTL.py
-lib/%%PYTHON_VERSION%%/FCNTL.pyc
-lib/%%PYTHON_VERSION%%/FCNTL.pyo
 lib/%%PYTHON_VERSION%%/HTMLParser.py
 lib/%%PYTHON_VERSION%%/HTMLParser.pyc
 lib/%%PYTHON_VERSION%%/HTMLParser.pyo
@@ -150,6 +147,9 @@ lib/%%PYTHON_VERSION%%/__phello__.foo.pyo
 lib/%%PYTHON_VERSION%%/_strptime.py
 lib/%%PYTHON_VERSION%%/_strptime.pyc
 lib/%%PYTHON_VERSION%%/_strptime.pyo
+lib/%%PYTHON_VERSION%%/_threading_local.py
+lib/%%PYTHON_VERSION%%/_threading_local.pyc
+lib/%%PYTHON_VERSION%%/_threading_local.pyo
 lib/%%PYTHON_VERSION%%/aifc.py
 lib/%%PYTHON_VERSION%%/aifc.pyc
 lib/%%PYTHON_VERSION%%/aifc.pyo
@@ -658,6 +658,9 @@ lib/%%PYTHON_VERSION%%/encodings/base64_codec.pyo
 lib/%%PYTHON_VERSION%%/encodings/big5.py
 lib/%%PYTHON_VERSION%%/encodings/big5.pyc
 lib/%%PYTHON_VERSION%%/encodings/big5.pyo
+lib/%%PYTHON_VERSION%%/encodings/big5hkscs.py
+lib/%%PYTHON_VERSION%%/encodings/big5hkscs.pyc
+lib/%%PYTHON_VERSION%%/encodings/big5hkscs.pyo
 lib/%%PYTHON_VERSION%%/encodings/bz2_codec.py
 lib/%%PYTHON_VERSION%%/encodings/bz2_codec.pyc
 lib/%%PYTHON_VERSION%%/encodings/bz2_codec.pyo
@@ -772,6 +775,9 @@ lib/%%PYTHON_VERSION%%/encodings/cp949.pyo
 lib/%%PYTHON_VERSION%%/encodings/cp950.py
 lib/%%PYTHON_VERSION%%/encodings/cp950.pyc
 lib/%%PYTHON_VERSION%%/encodings/cp950.pyo
+lib/%%PYTHON_VERSION%%/encodings/euc_jis_2004.py
+lib/%%PYTHON_VERSION%%/encodings/euc_jis_2004.pyc
+lib/%%PYTHON_VERSION%%/encodings/euc_jis_2004.pyo
 lib/%%PYTHON_VERSION%%/encodings/euc_jisx0213.py
 lib/%%PYTHON_VERSION%%/encodings/euc_jisx0213.pyc
 lib/%%PYTHON_VERSION%%/encodings/euc_jisx0213.pyo
@@ -793,6 +799,9 @@ lib/%%PYTHON_VERSION%%/encodings/gbk.pyo
 lib/%%PYTHON_VERSION%%/encodings/hex_codec.py
 lib/%%PYTHON_VERSION%%/encodings/hex_codec.pyc
 lib/%%PYTHON_VERSION%%/encodings/hex_codec.pyo
+lib/%%PYTHON_VERSION%%/encodings/hp_roman8.py
+lib/%%PYTHON_VERSION%%/encodings/hp_roman8.pyc
+lib/%%PYTHON_VERSION%%/encodings/hp_roman8.pyo
 lib/%%PYTHON_VERSION%%/encodings/hz.py
 lib/%%PYTHON_VERSION%%/encodings/hz.pyc
 lib/%%PYTHON_VERSION%%/encodings/hz.pyo
@@ -808,6 +817,9 @@ lib/%%PYTHON_VERSION%%/encodings/iso2022_jp_1.pyo
 lib/%%PYTHON_VERSION%%/encodings/iso2022_jp_2.py
 lib/%%PYTHON_VERSION%%/encodings/iso2022_jp_2.pyc
 lib/%%PYTHON_VERSION%%/encodings/iso2022_jp_2.pyo
+lib/%%PYTHON_VERSION%%/encodings/iso2022_jp_2004.py
+lib/%%PYTHON_VERSION%%/encodings/iso2022_jp_2004.pyc
+lib/%%PYTHON_VERSION%%/encodings/iso2022_jp_2004.pyo
 lib/%%PYTHON_VERSION%%/encodings/iso2022_jp_3.py
 lib/%%PYTHON_VERSION%%/encodings/iso2022_jp_3.pyc
 lib/%%PYTHON_VERSION%%/encodings/iso2022_jp_3.pyo
@@ -910,6 +922,9 @@ lib/%%PYTHON_VERSION%%/encodings/rot_13.pyo
 lib/%%PYTHON_VERSION%%/encodings/shift_jis.py
 lib/%%PYTHON_VERSION%%/encodings/shift_jis.pyc
 lib/%%PYTHON_VERSION%%/encodings/shift_jis.pyo
+lib/%%PYTHON_VERSION%%/encodings/shift_jis_2004.py
+lib/%%PYTHON_VERSION%%/encodings/shift_jis_2004.pyc
+lib/%%PYTHON_VERSION%%/encodings/shift_jis_2004.pyo
 lib/%%PYTHON_VERSION%%/encodings/shift_jisx0213.py
 lib/%%PYTHON_VERSION%%/encodings/shift_jisx0213.pyc
 lib/%%PYTHON_VERSION%%/encodings/shift_jisx0213.pyo
@@ -1211,30 +1226,12 @@ lib/%%PYTHON_VERSION%%/keyword.py
 lib/%%PYTHON_VERSION%%/keyword.pyc
 lib/%%PYTHON_VERSION%%/keyword.pyo
 lib/%%PYTHON_VERSION%%/lib-dynload/_bisect.so
-lib/%%PYTHON_VERSION%%/lib-dynload/_codecs_big5.so
-lib/%%PYTHON_VERSION%%/lib-dynload/_codecs_cp932.so
-lib/%%PYTHON_VERSION%%/lib-dynload/_codecs_cp949.so
-lib/%%PYTHON_VERSION%%/lib-dynload/_codecs_cp950.so
-lib/%%PYTHON_VERSION%%/lib-dynload/_codecs_euc_jisx0213.so
-lib/%%PYTHON_VERSION%%/lib-dynload/_codecs_euc_jp.so
-lib/%%PYTHON_VERSION%%/lib-dynload/_codecs_euc_kr.so
-lib/%%PYTHON_VERSION%%/lib-dynload/_codecs_gb18030.so
-lib/%%PYTHON_VERSION%%/lib-dynload/_codecs_gb2312.so
-lib/%%PYTHON_VERSION%%/lib-dynload/_codecs_gbk.so
-lib/%%PYTHON_VERSION%%/lib-dynload/_codecs_hz.so
-lib/%%PYTHON_VERSION%%/lib-dynload/_codecs_iso2022_jp.so
-lib/%%PYTHON_VERSION%%/lib-dynload/_codecs_iso2022_jp_1.so
-lib/%%PYTHON_VERSION%%/lib-dynload/_codecs_iso2022_jp_2.so
-lib/%%PYTHON_VERSION%%/lib-dynload/_codecs_iso2022_jp_3.so
-lib/%%PYTHON_VERSION%%/lib-dynload/_codecs_iso2022_jp_ext.so
-lib/%%PYTHON_VERSION%%/lib-dynload/_codecs_iso2022_kr.so
-lib/%%PYTHON_VERSION%%/lib-dynload/_codecs_johab.so
-lib/%%PYTHON_VERSION%%/lib-dynload/_codecs_mapdata_ja_JP.so
-lib/%%PYTHON_VERSION%%/lib-dynload/_codecs_mapdata_ko_KR.so
-lib/%%PYTHON_VERSION%%/lib-dynload/_codecs_mapdata_zh_CN.so
-lib/%%PYTHON_VERSION%%/lib-dynload/_codecs_mapdata_zh_TW.so
-lib/%%PYTHON_VERSION%%/lib-dynload/_codecs_shift_jis.so
-lib/%%PYTHON_VERSION%%/lib-dynload/_codecs_shift_jisx0213.so
+lib/%%PYTHON_VERSION%%/lib-dynload/_codecs_cn.so
+lib/%%PYTHON_VERSION%%/lib-dynload/_codecs_hk.so
+lib/%%PYTHON_VERSION%%/lib-dynload/_codecs_iso2022.so
+lib/%%PYTHON_VERSION%%/lib-dynload/_codecs_jp.so
+lib/%%PYTHON_VERSION%%/lib-dynload/_codecs_kr.so
+lib/%%PYTHON_VERSION%%/lib-dynload/_codecs_tw.so
 lib/%%PYTHON_VERSION%%/lib-dynload/_csv.so
 lib/%%PYTHON_VERSION%%/lib-dynload/_curses.so
 lib/%%PYTHON_VERSION%%/lib-dynload/_curses_panel.so
@@ -1689,6 +1686,36 @@ lib/%%PYTHON_VERSION%%/test/cfgparser.1
 lib/%%PYTHON_VERSION%%/test/cjkencodings_test.py
 lib/%%PYTHON_VERSION%%/test/cjkencodings_test.pyc
 lib/%%PYTHON_VERSION%%/test/cjkencodings_test.pyo
+lib/%%PYTHON_VERSION%%/test/decimaltestdata/abs.decTest
+lib/%%PYTHON_VERSION%%/test/decimaltestdata/add.decTest
+lib/%%PYTHON_VERSION%%/test/decimaltestdata/base.decTest
+lib/%%PYTHON_VERSION%%/test/decimaltestdata/clamp.decTest
+lib/%%PYTHON_VERSION%%/test/decimaltestdata/compare.decTest
+lib/%%PYTHON_VERSION%%/test/decimaltestdata/decimal64.decTest
+lib/%%PYTHON_VERSION%%/test/decimaltestdata/divide.decTest
+lib/%%PYTHON_VERSION%%/test/decimaltestdata/divideint.decTest
+lib/%%PYTHON_VERSION%%/test/decimaltestdata/inexact.decTest
+lib/%%PYTHON_VERSION%%/test/decimaltestdata/integer.decTest
+lib/%%PYTHON_VERSION%%/test/decimaltestdata/max.decTest
+lib/%%PYTHON_VERSION%%/test/decimaltestdata/min.decTest
+lib/%%PYTHON_VERSION%%/test/decimaltestdata/minus.decTest
+lib/%%PYTHON_VERSION%%/test/decimaltestdata/multiply.decTest
+lib/%%PYTHON_VERSION%%/test/decimaltestdata/normalize.decTest
+lib/%%PYTHON_VERSION%%/test/decimaltestdata/plus.decTest
+lib/%%PYTHON_VERSION%%/test/decimaltestdata/power.decTest
+lib/%%PYTHON_VERSION%%/test/decimaltestdata/quantize.decTest
+lib/%%PYTHON_VERSION%%/test/decimaltestdata/randomBound32.decTest
+lib/%%PYTHON_VERSION%%/test/decimaltestdata/randoms.decTest
+lib/%%PYTHON_VERSION%%/test/decimaltestdata/remainder.decTest
+lib/%%PYTHON_VERSION%%/test/decimaltestdata/remainderNear.decTest
+lib/%%PYTHON_VERSION%%/test/decimaltestdata/rescale.decTest
+lib/%%PYTHON_VERSION%%/test/decimaltestdata/rounding.decTest
+lib/%%PYTHON_VERSION%%/test/decimaltestdata/samequantum.decTest
+lib/%%PYTHON_VERSION%%/test/decimaltestdata/squareroot.decTest
+lib/%%PYTHON_VERSION%%/test/decimaltestdata/subtract.decTest
+lib/%%PYTHON_VERSION%%/test/decimaltestdata/testall.decTest
+lib/%%PYTHON_VERSION%%/test/decimaltestdata/tointegral.decTest
+lib/%%PYTHON_VERSION%%/test/decimaltestdata/trim.decTest
 lib/%%PYTHON_VERSION%%/test/double_const.py
 lib/%%PYTHON_VERSION%%/test/double_const.pyc
 lib/%%PYTHON_VERSION%%/test/double_const.pyo
@@ -1747,6 +1774,9 @@ lib/%%PYTHON_VERSION%%/test/output/xmltests
 lib/%%PYTHON_VERSION%%/test/pickletester.py
 lib/%%PYTHON_VERSION%%/test/pickletester.pyc
 lib/%%PYTHON_VERSION%%/test/pickletester.pyo
+lib/%%PYTHON_VERSION%%/test/pyclbr_input.py
+lib/%%PYTHON_VERSION%%/test/pyclbr_input.pyc
+lib/%%PYTHON_VERSION%%/test/pyclbr_input.pyo
 lib/%%PYTHON_VERSION%%/test/pydocfodder.py
 lib/%%PYTHON_VERSION%%/test/pydocfodder.pyc
 lib/%%PYTHON_VERSION%%/test/pydocfodder.pyo
@@ -1893,6 +1923,9 @@ lib/%%PYTHON_VERSION%%/test/test_codeccallbacks.pyo
 lib/%%PYTHON_VERSION%%/test/test_codecencodings_cn.py
 lib/%%PYTHON_VERSION%%/test/test_codecencodings_cn.pyc
 lib/%%PYTHON_VERSION%%/test/test_codecencodings_cn.pyo
+lib/%%PYTHON_VERSION%%/test/test_codecencodings_hk.py
+lib/%%PYTHON_VERSION%%/test/test_codecencodings_hk.pyc
+lib/%%PYTHON_VERSION%%/test/test_codecencodings_hk.pyo
 lib/%%PYTHON_VERSION%%/test/test_codecencodings_jp.py
 lib/%%PYTHON_VERSION%%/test/test_codecencodings_jp.pyc
 lib/%%PYTHON_VERSION%%/test/test_codecencodings_jp.pyo
@@ -1905,6 +1938,9 @@ lib/%%PYTHON_VERSION%%/test/test_codecencodings_tw.pyo
 lib/%%PYTHON_VERSION%%/test/test_codecmaps_cn.py
 lib/%%PYTHON_VERSION%%/test/test_codecmaps_cn.pyc
 lib/%%PYTHON_VERSION%%/test/test_codecmaps_cn.pyo
+lib/%%PYTHON_VERSION%%/test/test_codecmaps_hk.py
+lib/%%PYTHON_VERSION%%/test/test_codecmaps_hk.pyc
+lib/%%PYTHON_VERSION%%/test/test_codecmaps_hk.pyo
 lib/%%PYTHON_VERSION%%/test/test_codecmaps_jp.py
 lib/%%PYTHON_VERSION%%/test/test_codecmaps_jp.pyc
 lib/%%PYTHON_VERSION%%/test/test_codecmaps_jp.pyo
@@ -1974,6 +2010,9 @@ lib/%%PYTHON_VERSION%%/test/test_dbm.pyo
 lib/%%PYTHON_VERSION%%/test/test_decimal.py
 lib/%%PYTHON_VERSION%%/test/test_decimal.pyc
 lib/%%PYTHON_VERSION%%/test/test_decimal.pyo
+lib/%%PYTHON_VERSION%%/test/test_decorators.py
+lib/%%PYTHON_VERSION%%/test/test_decorators.pyc
+lib/%%PYTHON_VERSION%%/test/test_decorators.pyo
 lib/%%PYTHON_VERSION%%/test/test_deque.py
 lib/%%PYTHON_VERSION%%/test/test_deque.pyc
 lib/%%PYTHON_VERSION%%/test/test_deque.pyo
@@ -2517,6 +2556,12 @@ lib/%%PYTHON_VERSION%%/test/test_threadedtempfile.pyo
 lib/%%PYTHON_VERSION%%/test/test_threading.py
 lib/%%PYTHON_VERSION%%/test/test_threading.pyc
 lib/%%PYTHON_VERSION%%/test/test_threading.pyo
+lib/%%PYTHON_VERSION%%/test/test_threading_local.py
+lib/%%PYTHON_VERSION%%/test/test_threading_local.pyc
+lib/%%PYTHON_VERSION%%/test/test_threading_local.pyo
+lib/%%PYTHON_VERSION%%/test/test_threadsignals.py
+lib/%%PYTHON_VERSION%%/test/test_threadsignals.pyc
+lib/%%PYTHON_VERSION%%/test/test_threadsignals.pyo
 lib/%%PYTHON_VERSION%%/test/test_time.py
 lib/%%PYTHON_VERSION%%/test/test_time.pyc
 lib/%%PYTHON_VERSION%%/test/test_time.pyo
@@ -2535,6 +2580,9 @@ lib/%%PYTHON_VERSION%%/test/test_trace.pyo
 lib/%%PYTHON_VERSION%%/test/test_traceback.py
 lib/%%PYTHON_VERSION%%/test/test_traceback.pyc
 lib/%%PYTHON_VERSION%%/test/test_traceback.pyo
+lib/%%PYTHON_VERSION%%/test/test_transformer.py
+lib/%%PYTHON_VERSION%%/test/test_transformer.pyc
+lib/%%PYTHON_VERSION%%/test/test_transformer.pyo
 lib/%%PYTHON_VERSION%%/test/test_tuple.py
 lib/%%PYTHON_VERSION%%/test/test_tuple.pyc
 lib/%%PYTHON_VERSION%%/test/test_tuple.pyo
@@ -3264,6 +3312,7 @@ lib/%%PYTHON_VERSION%%/zipfile.pyo
 @dirrm lib/%%PYTHON_VERSION%%/xml/dom
 @dirrm lib/%%PYTHON_VERSION%%/xml
 @dirrm lib/%%PYTHON_VERSION%%/test/output
+@dirrm lib/%%PYTHON_VERSION%%/test/decimaltestdata
 @dirrm lib/%%PYTHON_VERSION%%/test
 @dirrm lib/%%PYTHON_VERSION%%/site-packages
 @dirrm lib/%%PYTHON_VERSION%%/plat-freebsd5
