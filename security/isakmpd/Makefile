@@ -21,7 +21,7 @@ MAINTAINER=	ports@FreeBSD.org
 BROKEN=		"requires IPsec support"
 .endif
 
-USE_SSL=	yes
+USE_OPENSSL=	yes
 WRKSRC=		${WRKDIR}/isakmpd
 MAKE_ENV+=	BINDIR=${PREFIX}/sbin MANDIR=${PREFIX}/man/man
 
