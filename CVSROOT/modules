@@ -5334,6 +5334,7 @@ py-reportlab	ports/print/py-reportlab
 py-rijndael	ports/security/py-rijndael
 py-scientific	ports/math/py-scientific
 py-sgrep	ports/textproc/py-sgrep
+py-smb		ports/net/py-smb
 py-soap		ports/net/py-soap
 py-sqlrelay	ports/databases/py-sqlrelay
 py-tkinter	ports/x11-toolkits/py-tkinter
