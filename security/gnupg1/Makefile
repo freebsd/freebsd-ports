@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnupg
-PORTVERSION=	1.2.0
+PORTVERSION=	1.2.1
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.gnupg.org/gcrypt/%SUBDIR%/ \
 		http://ftp.planetmirror.com/pub/gnupg/%SUBDIR%/ \
