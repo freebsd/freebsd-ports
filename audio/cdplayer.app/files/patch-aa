@@ -1,14 +1,12 @@
---- Makefile.orig	Thu Mar  9 07:14:23 2000
-+++ Makefile	Wed Sep 13 21:09:34 2000
-@@ -1,8 +1,8 @@
+--- Makefile.orig	Mon Jan  1 23:42:19 2001
++++ Makefile	Tue Apr 10 15:09:51 2001
+@@ -1,8 +1,6 @@
 -PREFIX = /usr/local
--CFLAGS = `get-wraster-flags --cflags` `libcdaudio-config --cflags`
-+#PREFIX = /usr/local
-+CFLAGS += `get-wraster-flags --cflags` `libcdaudio-config --cflags` -I${X11BASE}/include/WINGs
- LDFLAGS = `get-wraster-flags --ldflags` `libcdaudio-config --ldadd`
- LIBS = `get-wraster-flags --libs` `libcdaudio-config --libs`
+-CFLAGS = `get-wings-flags --cflags` `libcdaudio-config --cflags`
++CFLAGS += `get-wings-flags --cflags` `libcdaudio-config --cflags`
+ LDFLAGS = `get-wings-flags --ldflags` `libcdaudio-config --ldadd`
+ LIBS = `get-wings-flags --libs` `libcdaudio-config --libs`
 -CC = gcc -O2
-+#CC = gcc -O2
  
  all: CDPlayer
  
