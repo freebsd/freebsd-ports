@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gmake
-PORTVERSION=	3.79.1
-PORTREVISION=	3
+PORTVERSION=	3.80
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	make
@@ -15,17 +14,21 @@ DISTNAME=	make-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
+USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-prefix=g \
 		--with-included-gettext
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -DHAVE_LOCALE_H -DHAVE_LC_MESSAGES" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib" MAKEINFO="/usr/bin/makeinfo"
 
 MAN1=		gmake.1
 
 .ifdef USE_GMAKE
 .error You have `USE_GMAKE' variable defined either in environment or in make(1) arguments. Please undefine and try again.
 .endif
+
+post-patch:
+	${RM} ${WRKSRC}/doc/make.info*
 
 # joerg@freebsd.org says our getloadavg() no longer requires setgid kmem
 
