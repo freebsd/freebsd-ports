@@ -1,10 +1,12 @@
 This is the BINARY (statically linked) version of the CVSup server.
 
 CVSup is a software package for distributing and updating collections
-of files across a network.  CVSup is specifically tailored to
-distributing CVS repositories.  By taking advantage of the special
-properties of the files contained in CVS repositories, CVSup is
-able to perform updates much faster than traditional systems.  It
-is especially valuable for people with slow Internet connections.
+of files across a network.  It can efficiently and accurately mirror
+all types of files, including sources, binaries, hard links, symbolic
+links, and even device nodes.  CVSup's streaming communication
+protocol and multithreaded architecture make it most likely the
+fastest mirroring tool in existence today.  In addition to being
+a great general-purpose mirroring tool, CVSup includes special
+features and optimizations specifically tailored to CVS repositories.
 
 jdp@polstra.com
