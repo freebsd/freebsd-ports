@@ -7,14 +7,14 @@
 
 PORTNAME=	instant-workstation
 PORTVERSION=	1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.lemis.com/pub/
 
 MAINTAINER=	grog@lemis.com
 COMMENT=	Instant workstation installs a typical set of ports for a workstation
 
-RUN_DEPENDS=	acroread:${PORTSDIR}/print/acroread4 \
+RUN_DEPENDS=	acroread:${PORTSDIR}/print/acroread5 \
 		bash:${PORTSDIR}/shells/bash2 \
 		cdrecord:${PORTSDIR}/sysutils/cdrtools \
 		dos2unix:${PORTSDIR}/converters/unix2dos \
