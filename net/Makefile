@@ -67,6 +67,7 @@
     SUBDIR += coda5_client
     SUBDIR += coda5_doc
     SUBDIR += coda5_server
+    SUBDIR += coda6_client
     SUBDIR += coda6_server
     SUBDIR += coda_doc
     SUBDIR += coda_intro
