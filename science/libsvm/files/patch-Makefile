@@ -1,16 +1,9 @@
---- Makefile.orig	Sat Sep 22 23:04:16 2001
-+++ Makefile	Fri May 10 14:40:09 2002
-@@ -1,5 +1,5 @@
+--- Makefile.orig	Tue Nov 16 00:45:06 2004
++++ Makefile	Tue Nov 16 00:46:01 2004
+@@ -1,5 +1,4 @@
 -CXXC = g++
--CFLAGS = -Wall -O3 -g
-+CXXC = ${CXX}
-+CFLAGS += -g
+-CFLAGS = -Wall -O3 
++CXXC = $(CXX)
  
  all: svm-train svm-predict svm-scale
  
-@@ -13,3 +13,5 @@
- 	$(CXXC) $(CFLAGS) -c svm.cpp
- clean:
- 	rm -f *~ svm.o svm-train svm-predict svm-scale
-+py:
-+	cd python; $(MAKE) PYTHON_INCLUDEDIR=${PYTHON_INCLUDEDIR}
