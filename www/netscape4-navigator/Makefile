@@ -3,7 +3,7 @@
 # Date created:         24 Feb 1997
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.26 1998/10/09 11:19:33 obrien Exp $
+# $Id: Makefile,v 1.27 1998/11/19 05:17:44 obrien Exp $
 #
 
 DISTNAME=       netscape-navigator-4.07
@@ -11,7 +11,7 @@ CATEGORIES=	www
 MASTER_SITES=   ftp://ftp.netscape.com/pub/communicator/4.07/development/english/unix/freebsd/navigator_standalone/
 DISTFILES=      navigator-v407-export.x86-unknown-freebsd.tar.gz
 
-MAINTAINER=     asami@FreeBSD.ORG
+MAINTAINER=     sada@FreeBSD.ORG
 
 WRKSRC=		${WRKDIR}/navigator-v407.x86-unknown-freebsd
 NO_BUILD=       Yes
