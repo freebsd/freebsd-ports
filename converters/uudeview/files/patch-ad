@@ -1,0 +1,12 @@
+--- ./man/uuenview.1	Sat Jul 20 16:38:46 1996
++++ /usr/devel/ports/uudeview/src/man/uuenview.1	Thu Aug  1 18:04:22 1996
+@@ -145,6 +145,8 @@
+ .BR uudecode (1),
+ .BR mail (1),
+ .BR inews (1),
++.BR mpack (1),
++.BR metamail (1),
+ .PD 0
+ .PP
+ The
+diff -ud --recursive ./unix/Makefile.in /usr/devel/ports/uudeview/src/unix/Makefile.in

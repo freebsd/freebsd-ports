@@ -3,7 +3,7 @@
 # Date Created:		04 Aug 1996
 # Whom:			Tim Vanderhoek <ac199@freenet.hamilton.on.ca>
 #
-# $Id: Makefile,v 1.7 1997/03/29 22:19:11 obrien Exp $
+# $Id: Makefile,v 1.8 1997/03/30 18:44:18 obrien Exp $
 #
 
 DISTNAME=       uudeview-0.5.13
@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.uni-frankfurt.de/~fp/uudeview/Apps/frank/  \
 
 MAINTAINER=	ac199@freenet.hamilton.on.ca
 
-BUILD_DEPENDS=	${PREFIX}/lib/libuu.a:${PORTSDIR}/devel/uulib
+LIB_DEPENDS=	uu\\.1\\.:${PORTSDIR}/devel/uulib
 
 FILESDIR=	${.CURDIR}/../../devel/uulib/files
 GNU_CONFIGURE=	Yes
