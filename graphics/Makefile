@@ -46,6 +46,7 @@
     SUBDIR += cqcam
     SUBDIR += crw
     SUBDIR += cthumb
+    SUBDIR += curator
     SUBDIR += dataplot
     SUBDIR += dc20ctrl
     SUBDIR += dc20pack

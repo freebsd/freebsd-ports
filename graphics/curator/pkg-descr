@@ -1,0 +1,11 @@
+Curator is a powerful script that allows one to generate web page image
+galleries with the intent of displaying photographic images on the Web, or for
+a CD-ROM presentation or archiving.
+
+It generates static web pages only - no special configuration or running
+scripts are required on the server. The script supports many file formats,
+hierarchical directories, thumbnail generation and update, per-image
+description file with any attributes, and 'tracks' of images spanning multiple
+directories.
+
+WWW:	http://curator.sourceforge.net/
