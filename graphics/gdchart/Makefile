@@ -14,7 +14,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION}dev
 
 MAINTAINER=	knu@FreeBSD.org
 
-LIB_DEPENDS=	gd.2:${PORTSDIR}/graphics/gd \
+LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd2 \
 		jpeg:${PORTSDIR}/graphics/jpeg \
 		freetype:${PORTSDIR}/print/freetype2
 
