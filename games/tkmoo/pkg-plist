@@ -9,6 +9,7 @@ share/tkmoo/plugins/search_macro.tcl
 share/tkmoo/plugins/serverinfo.tcl
 share/tkmoo/plugins/simpleedit.tcl
 share/tkmoo/plugins/status.tcl
+share/tkmoo/plugins/timezone.tcl
 share/tkmoo/plugins/url_trigger.tcl
 share/tkmoo/plugins/webbrowser.tcl
 @dirrm share/tkmoo/plugins
