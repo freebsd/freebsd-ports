@@ -1,0 +1,11 @@
+--- lib/mc.ext.in.orig	Sun Jun 27 00:55:29 2004
++++ lib/mc.ext.in	Sun Jun 27 00:56:01 2004
+@@ -388,7 +388,7 @@
+ 	# Open=%cd %p#utar
+ 	View=%view{ascii} bzip -dc %f 2>/dev/null | tar tvvf -
+ 
+-regex/\.tar\.bz2$
++regex/\.t(bz|ar\.bz2)$
+ 	Open=%cd %p#utar
+ 	View=%view{ascii} bzip2 -dc %f 2>/dev/null | tar tvvf -
+ 
