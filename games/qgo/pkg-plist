@@ -1,11 +1,15 @@
-bin/qgo
-share/qgo/sounds/stone.au
+bin/qGo
+share/qgo/sounds/enter.wav
+share/qgo/sounds/match.wav
+share/qgo/sounds/leave.wav
+share/qgo/sounds/say.wav
+share/qgo/sounds/gameend.wav
+share/qgo/sounds/pass.wav
 share/qgo/sounds/stone.wav
+share/qgo/sounds/talk.wav
+share/qgo/sounds/tictoc.wav
 share/qgo/translations/qgo_de.qm
 share/qgo/translations/qgo_fr.qm
-@dirrm share/qgo/sounds
-@dirrm share/qgo/translations
-@dirrm share/qgo
 share/doc/qgo/html/images/note.png
 share/doc/qgo/html/images/tip.png
 share/doc/qgo/html/images/warning.png
@@ -24,3 +28,6 @@ share/doc/qgo/html/pr01.html
 @dirrm share/doc/qgo/html/images
 @dirrm share/doc/qgo/html
 @dirrm share/doc/qgo
+@dirrm share/qgo/sounds
+@dirrm share/qgo/translations
+@dirrm share/qgo

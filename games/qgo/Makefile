@@ -7,23 +7,23 @@
 #
 
 PORTNAME=	qgo
-PORTVERSION=	0.0.11
+PORTVERSION=	0.0.14
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	kde@freebsd.org
+MAINTAINER=	ports@freebsd.org
 
 USE_REINPLACE=	yes
-USE_QT_VER=	2
+USE_QT_VER=	3
 GNU_CONFIGURE=	yes
 QTCPPFLAGS+=	-DDONT_USE_GETOPT
 CONFIGURE_ENV=	QTDIR=${X11BASE}
 USE_GMAKE=	yes
 
 post-patch:
-	@${REINPLACE_CMD} -e "s,qt.so,qt2.so,g ; \
-		s,/moc,/moc2,g" ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e "s,-lqt,-lqt2,g" ${WRKSRC}/src/Makefile.in
+	${REINPLACE_CMD} -e "s,libqt.so,libqt-mt.so,; \
+		s,-O2, ${CFLAGS} ${PTHREAD_CFLAGS}," ${WRKSRC}/configure
+	${REINPLACE_CMD} -e "s,-lqt,-lqt-mt ${PTHREAD_LIBS}," ${WRKSRC}/src/Makefile.in
 
 .include <bsd.port.mk>
