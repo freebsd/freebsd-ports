@@ -1,0 +1,11 @@
+From Web Page:
+	OpenVerse is a visual chat program written in Tcl/Tk. The program
+	connects to any OpenVerse server (server and client code included).
+
+	The OpenVerse is similar to other graphical chat systems like The
+	Palace and Microsoft Chat with the main difference being that it
+	is much more OPEN and also runs on a variety of systems including
+	Windows, *nix (Yes Linux too), Macintosh OS/2 you name it! Anything
+	which Tcl/Tk is available for should run OpenVerse just fine!
+
+WWW: http://openverse.org/END-of-OpenVerse/pkg-descr
