@@ -6,24 +6,22 @@
 #
 
 PORTNAME=	glpk
-PORTVERSION=	3.2
+PORTVERSION=	3.2.1
 CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	glpk
 
 MAINTAINER=	demon@FreeBSD.org
 
-BROKEN=		"Does not install"
-
 GNU_CONFIGURE=	yes
 
-DOCFILES=	lang refman
+DOCFILES=	lang.ps refman.ps bench.txt brcut.txt
 
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	for file in ${DOCFILES} ; do \
-		${INSTALL_DATA} ${WRKSRC}/$$file.ps ${DOCSDIR} ; \
+		${INSTALL_DATA} ${WRKSRC}/doc/$$file ${DOCSDIR} ; \
 	done
 .endif
 
