@@ -4,8 +4,8 @@
  exec_prefix = @exec_prefix@
  install_lib_dir = @libdir@
  install_include_dir = @includedir@
--install_doc_dir = $(prefix)/doc/slang/@slang_version@
-+install_doc_dir = $(prefix)/share/doc/slang/@slang_version@
+-install_doc_dir = $(prefix)/doc/slang
++install_doc_dir = $(prefix)/share/doc/slang
  DOC_FILES = ../changes.txt ../COPY* ../doc/slangdoc.html ../doc/text/*.txt
  #---------------------------------------------------------------------------
  # Misc commands (safe to leave these untouched)
