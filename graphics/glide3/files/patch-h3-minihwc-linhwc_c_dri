@@ -1,0 +1,10 @@
+--- h3/minihwc/linhwc.c.dri.orig	Tue Jan 18 21:29:49 2005
++++ h3/minihwc/linhwc.c.dri	Tue Jan 18 21:30:23 2005
+@@ -91,6 +91,7 @@
+ static FxU32 calcBufferSize(FxU32 xres, FxU32 yres, FxBool tiled);
+ static FxU32 calcBufferSizeInTiles(FxU32 xres, FxU32 yres);
+ static FxU32 calcBufferHeightInTiles(FxU32 yres);
++static FxU32 hwcBufferLfbAddr(const hwcBoardInfo *bInfo, FxU32 physAddress);
+ 
+ typedef struct envitem_t {
+   char *env;
