@@ -10188,6 +10188,7 @@ zope-archetypes	ports/www/zope-archetypes
 zope-cmf	ports/www/zope-cmf
 zope-cmf13	ports/www/zope-cmf13
 zope-cmfforum	ports/www/zope-cmfforum
+zope-cmfphoto	ports/www/zope-cmfphoto
 zope-exuserfolder	ports/www/zope-exuserfolder
 zope-formulator	ports/www/zope-formulator
 zope-guf	ports/www/zope-guf
