@@ -6,17 +6,20 @@
 #
 
 PORTNAME=	fspclient
-PORTVERSION=	0.0.h
+PORTVERSION=	0.0.6
 CATEGORIES=	net
-MASTER_SITES=	${MASTER_SITE_SUNSITE}
-MASTER_SITE_SUBDIR=	system/network/file-transfer
-DISTNAME=	fspclient
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	hsn@netmag.cz
 COMMENT=	A client for the fsp service
 
-WRKSRC=		${WRKDIR}/fspclient
 GNU_CONFIGURE=	yes
+USE_BZIP2=	yes
+USE_GETOPT_LONG=	yes
+
+CFLAGS+=	-I${LOCALBASE}/include
+
 MAN1=		fsp.1
 
 .include <bsd.port.mk>
