@@ -1,4 +1,3 @@
-bin/blog_applet.py
 bin/gnome-blog-poster
 %%PYTHON_SITELIBDIR%%/gnomeblog/MetaWeblog.py
 %%PYTHON_SITELIBDIR%%/gnomeblog/MetaWeblog.pyc
@@ -40,10 +39,17 @@ bin/gnome-blog-poster
 %%PYTHON_SITELIBDIR%%/gnomeblog/html_converter.py
 %%PYTHON_SITELIBDIR%%/gnomeblog/html_converter.pyc
 %%PYTHON_SITELIBDIR%%/gnomeblog/html_converter.pyo
+%%PYTHON_SITELIBDIR%%/gnomeblog/livejournal.py
+%%PYTHON_SITELIBDIR%%/gnomeblog/livejournal.pyc
+%%PYTHON_SITELIBDIR%%/gnomeblog/livejournal.pyo
+%%PYTHON_SITELIBDIR%%/gnomeblog/proxy.py
+%%PYTHON_SITELIBDIR%%/gnomeblog/proxy.pyc
+%%PYTHON_SITELIBDIR%%/gnomeblog/proxy.pyo
 %%PYTHON_SITELIBDIR%%/gnomeblog/rich_entry.py
 %%PYTHON_SITELIBDIR%%/gnomeblog/rich_entry.pyc
 %%PYTHON_SITELIBDIR%%/gnomeblog/rich_entry.pyo
 libdata/bonobo/servers/GNOME_BlogApplet.server
+libexec/blog_applet.py
 share/gnome/applications/gnome-blog.desktop
 share/gnome/gnome-2.0/ui/GNOME_BlogApplet.xml
 share/gnome/pixmaps/gnome-blog.png
