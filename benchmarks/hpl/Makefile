@@ -25,11 +25,6 @@ FC=		${LOCALBASE}/bin/mpicc
 
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-.if ${MACHINE_ARCH} == "amd64"
-# math/atlas is currently broken on amd64
-WITH_BLAS=	yes
-.endif
-
 .if defined(WITH_BLAS)
 LIB_DEPENDS+=	blas.1:${PORTSDIR}/math/blas
 .else
