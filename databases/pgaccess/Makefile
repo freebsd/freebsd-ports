@@ -18,7 +18,7 @@ LIB_DEPENDS=	pgtcl:${PORTSDIR}/databases/postgresql-tcltk
 
 USE_REINPLACE=	yes
 
-TCL_VERSION?=	8.4
+TCL_VERSION?=	8.3
 PGACCESSDOCDIR=	${PREFIX}/share/doc/postgresql/pgaccess
 PGACCESSDIR=	${PREFIX}/share/postgresql/pgaccess
 
@@ -27,12 +27,12 @@ post-patch:
 	@${RM} ${WRKSRC}/lib/mainlib.tcl.bak
 
 do-build:
-.for file in pgaccess.tcl pgmonitor
+.for targetfile in pgaccess.tcl pgmonitor
 	@ ${SED} -e "s,%%LOCALBASE%%,${LOCALBASE},g; \
 		     s,%%TCL_VERSION%%,${TCL_VERSION},g; \
 		     s,%%PREFIX%%,${PREFIX},g; \
-		     s,%%PROGRAM%%,${file},g" \
-		< ${FILESDIR}/run-tcl-file > ${WRKDIR}/${file:R}.sh
+		     s,%%PROGRAM%%,${targetfile},g" \
+		< ${FILESDIR}/run-tcl-file > ${WRKDIR}/${targetfile:R}.sh
 .endfor
 
 do-install:
@@ -41,8 +41,8 @@ do-install:
 	 ${TAR} cf - `${FIND} * ! \( -path win32\* -o -path doc\* \)` | \
 	 ( cd ${PGACCESSDIR}; ${TAR} xf - ) ; \
 	 ${CHOWN} -R 0:0 ${PGACCESSDIR}
-.for file in pgaccess pgmonitor
-	${INSTALL_SCRIPT} ${WRKDIR}/${file}.sh ${PREFIX}/bin/${file}
+.for targetfile in pgaccess pgmonitor
+	${INSTALL_SCRIPT} ${WRKDIR}/${targetfile}.sh ${PREFIX}/bin/${targetfile}
 .endfor
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PGACCESSDOCDIR} ; \
