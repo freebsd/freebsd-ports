@@ -4,7 +4,7 @@
  #include <stdio.h>       // to get sprintf()
  #include <string.h>      // to get strncpy()
  #include <time.h>        // to get time(time_t *)
-+#if defined(__FreeBSD__) && !defined(__alpha__)
++#if defined(__FreeBSD__) && !defined(__alpha__) && !defined(__amd64__)
 +#include <floatingpoint.h>
 +#endif
  #include "bb.h"
@@ -14,7 +14,7 @@
  /*=========================================================================*/
  // A long and complicated main() function!
  main (int argc, char *argv[]) {
-+#if defined(__FreeBSD__) && !defined(__alpha__)
++#if defined(__FreeBSD__) && !defined(__alpha__) && !defined(__amd64__)
 +  fpsetmask(0);
 +#endif
    bb= new battleBall(argc,argv);
