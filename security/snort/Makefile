@@ -12,7 +12,7 @@ CATEGORIES=	security
 MASTER_SITES=	http://snort.sourcefire.com/releases/ \
 DISTNAME=	${PORTNAME}-1.8.1-RELEASE
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	kris@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/snort-1.8.1-RELEASE
 GNU_CONFIGURE=	yes
