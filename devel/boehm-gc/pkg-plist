@@ -1,6 +1,9 @@
 include/gc.h
 include/gc_backptr.h
 include/gc_cpp.h
+include/gc_local_alloc.h
+include/leak_detector.h
+include/gc_typed.h
 lib/libgc.a
 lib/libgc.so
 lib/libgc.so.1
