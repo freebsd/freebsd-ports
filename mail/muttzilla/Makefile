@@ -9,9 +9,11 @@
 PORTNAME=	muttzilla
 PORTVERSION=	0.40
 CATEGORIES=	mail www
-MASTER_SITES=	http://www3.bc.sympatico.ca/brian_winters/mutt/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Mutt MUA plugin for Netscape for use on "mailto:" URLs
 
 USE_REINPLACE=	yes
 
@@ -23,8 +25,8 @@ pre-configure:
 
 post-install:
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/muttzilla
-	@${INSTALL_DATA} ${WRKSRC}/INSTALL ${PREFIX}/share/doc/muttzilla
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/INSTALL ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
