@@ -20,7 +20,7 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 PLIST_SUB+=	WEBFRONTDIR="${WEBFRONTDIR}"
 NO_BUILD=	yes
 USE_REINPLACE=	yes
-USE_PHP=	yes
+USE_PHP=	gd
 WANT_PHP_MOD=	yes
 
 # The Ganglia Web Frontend port supports a number of options that may be
@@ -34,16 +34,6 @@ WWWGRP?=	www
 #
 PKGOPTS=	${FILESDIR}/pkg-opts
 EXCEPTFILES=	AUTHORS ChangeLog COPYING addons webfrontend.spec
-
-pre-everything::
-	@${ECHO} ""
-	@${ECHO} "You have to configure PHP with GD support to allow "
-	@${ECHO} "the Ganglia Webfrontend draw some standard graphs.
-	@${ECHO} ""
-	@${ECHO} "If you have already compiled PHP without GD,"
-	@${ECHO} "press CTRL+C now and rebuild it before installing"
-	@${ECHO} "the Ganglia Webfrontend."
-	@${ECHO} ""
 
 pre-patch:
 	@${SED} -e 's|%%PREFIX%%|${PREFIX}|g' \
