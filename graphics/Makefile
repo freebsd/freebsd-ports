@@ -82,6 +82,7 @@
     SUBDIR += netpbm
     SUBDIR += netshow
     SUBDIR += opendx
+    SUBDIR += opendx-samples
     SUBDIR += opengl-man
     SUBDIR += p5-GD
     SUBDIR += p5-Image-Size
