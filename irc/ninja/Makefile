@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	ninja
-PORTVERSION=	1.5.2
+PORTVERSION=	1.5.3
 CATEGORIES=	irc
 MASTER_SITES=	ftp://ninja.qoop.org/ninja/sources/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	anders@codefactory.se
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
