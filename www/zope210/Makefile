@@ -11,7 +11,7 @@ CATEGORIES=	www python
 MASTER_SITES=	http://www.zope.org/Products/Zope/${VERSION}/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.ORG
+MAINTAINER=	ports@FreeBSD.org
 
 BUILD_DEPENDS=	python1.5:${PORTSDIR}/lang/python
 RUN_DEPENDS=	${PREFIX}/sbin/apache:${PORTSDIR}/www/apache13-modssl

@@ -10,7 +10,7 @@ CATEGORIES=	russian x11
 MASTER_SITES=	ftp://ftp.yars.free.net/pub/software/unix/X11/xruskb-old/ \
 		# ftp://ftp.kiae.su/pub/x11/cyrillic/
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 
 USE_X_PREFIX=	yes
 
