@@ -2,6 +2,7 @@ bin/glimpseindex
 bin/agrep
 bin/glimpseserver
 bin/glimpse
+bin/wgconvert
 man/man1/glimpse.1.gz
 man/man1/glimpseindex.1.gz
 man/man1/glimpseserver.1.gz
