@@ -3,7 +3,7 @@
 # Date created:		19 Aug 1995
 # Whom:			jkh / pst
 #
-# $Id: Makefile,v 1.6 1995/11/27 04:06:03 asami Exp $
+# $Id: Makefile,v 1.7 1996/08/16 12:24:55 peter Exp $
 #
 
 DISTNAME=	zircon-1.17p3
@@ -15,7 +15,7 @@ MASTER_SITES=	ftp://catless.ncl.ac.uk/pub/
 # tcl7.3/tk3.6/tclDP code.  The author strongly reccomends using
 # tcl7.5/tk4.1 instead, and the tclDP wont be supported for long.
 #
-.if defined(USE_DPWISH) && ${USE_DPWISH} == YES && exists(${PREFIX}/bin/dpwish)
+.if defined(USE_DPWISH) && ${USE_DPWISH} == YES
 BUILD_DEPENDS=	dpwish:${PORTSDIR}/net/tclDP
 RUN_DEPENDS=	dpwish:${PORTSDIR}/net/tclDP
 MAKE_ENV=	WISH=${PREFIX}/bin/dpwish
@@ -23,6 +23,14 @@ MAKE_ENV=	WISH=${PREFIX}/bin/dpwish
 BUILD_DEPENDS=	wish4.1:${PORTSDIR}/x11/tk41
 RUN_DEPENDS=	wish4.1:${PORTSDIR}/x11/tk41
 MAKE_ENV=	WISH=${PREFIX}/bin/wish4.1
+.endif
+
+# In case the port is built not on FreeBSD-2.2+ (which has tcl standard)
+.if exists(/usr/bin/tclsh)
+MAKE_ENV+=	TCLSH=tclsh
+.else
+BUILD_DEPENDS+=	tclsh7.5:${PORTSDIR}/lang/tcl75
+MAKE_ENV+=	TCLSH=tclsh7.5
 .endif
 
 MAKEFILE=	Makefile.FreeBSD
