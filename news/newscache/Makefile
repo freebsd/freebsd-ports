@@ -7,11 +7,12 @@
 
 PORTNAME=	newscache
 PORTVERSION=	1.2.r.6
+PORTREVISION=	1
 CATEGORIES=	news
 MASTER_SITES=	http://www.linuxhacker.at/linux/downloads/src/
 DISTNAME=	NewsCache-${PORTVERSION:S/.r./rc/}
 
-MAINTAINER=	arved@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	NewsCache is a free cache server for USENET News
 
 LIB_DEPENDS=	socket[+][+].1:${PORTSDIR}/net/libsocket++
@@ -23,6 +24,7 @@ USE_REINPLACE=		yes
 AUTOMAKE_ARGS=		--add-missing
 CONFIGURE_ENV=	CPPFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
+CONFIGURE_ARGS+=	--sysconfdir=${PREFIX}/etc
 
 MAN5=	newscache.conf.5
 MAN8=	newscache.8 newscacheclean.8 updatenews.8
