@@ -35,7 +35,7 @@ post-patch:
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_FLAC)
-LIB_DEPENDS+=	FLAC.4:${PORTSDIR}/audio/flac
+LIB_DEPENDS+=	FLAC.5:${PORTSDIR}/audio/flac
 .else
 CONFIGURE_ARGS+=	--disable-flac
 .endif
