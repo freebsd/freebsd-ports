@@ -295,10 +295,6 @@ sbin/rotatelogs
 %%DOCSDIR%%/manual/bind.html.fr
 %%DOCSDIR%%/manual/bind.html.html
 %%DOCSDIR%%/manual/bind.html.ja.jis
-%%DOCSDIR%%/manual/cgi_path.html.en
-%%DOCSDIR%%/manual/cgi_path.html.fr
-%%DOCSDIR%%/manual/cgi_path.html.html
-%%DOCSDIR%%/manual/cgi_path.html.ja.jis
 %%DOCSDIR%%/manual/configuring.html.en
 %%DOCSDIR%%/manual/configuring.html.fr
 %%DOCSDIR%%/manual/configuring.html.html
@@ -314,6 +310,7 @@ sbin/rotatelogs
 %%DOCSDIR%%/manual/dns-caveats.html.en
 %%DOCSDIR%%/manual/dns-caveats.html.fr
 %%DOCSDIR%%/manual/dns-caveats.html.html
+%%DOCSDIR%%/manual/dns-caveats.html.ja.jis
 %%DOCSDIR%%/manual/dso.html
 %%DOCSDIR%%/manual/ebcdic.html
 %%DOCSDIR%%/manual/env.html.en
@@ -357,6 +354,7 @@ sbin/rotatelogs
 %%DOCSDIR%%/manual/invoking.html.en
 %%DOCSDIR%%/manual/invoking.html.fr
 %%DOCSDIR%%/manual/invoking.html.html
+%%DOCSDIR%%/manual/invoking.html.ja.jis
 %%DOCSDIR%%/manual/keepalive.html.en
 %%DOCSDIR%%/manual/keepalive.html.html
 %%DOCSDIR%%/manual/keepalive.html.ja.jis
@@ -507,7 +505,6 @@ sbin/rotatelogs
 %%DOCSDIR%%/manual/new_features_1_3.html.en
 %%DOCSDIR%%/manual/new_features_1_3.html.html
 %%DOCSDIR%%/manual/new_features_1_3.html.ja.jis
-%%DOCSDIR%%/manual/new_features_2_0.html
 %%DOCSDIR%%/manual/process-model.html.en
 %%DOCSDIR%%/manual/process-model.html.html
 %%DOCSDIR%%/manual/process-model.html.ja.jis
