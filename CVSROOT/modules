@@ -4404,6 +4404,7 @@ libmcal		ports/misc/libmcal
 libmcrypt	ports/security/libmcrypt
 libmcve		ports/devel/libmcve
 libmikmod	ports/audio/libmikmod
+libmimedir	ports/devel/libmimedir
 libmng		ports/graphics/libmng
 libmorph	ports/graphics/libmorph
 libmovtar	ports/multimedia/libmovtar
