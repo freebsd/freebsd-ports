@@ -6,7 +6,7 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
-20040721:
+20040723:
   AFFECTS: users of FreeBSD-current, users of xorg
   AUTHOR: anholt@FreeBSD.org
 
