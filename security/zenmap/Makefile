@@ -4,11 +4,11 @@
 # Date created:			  Tue Aug 04, 1998
 # Whom:				  David O'Brien (obrien@NUXI.com)
 #
-# $Id: Makefile,v 1.2 1997/01/25 18:08:40 obrien Exp $
+# $Id: Makefile,v 1.1.1.1 1998/08/04 17:59:51 obrien Exp $
 #
 
 DISTNAME=	nmap-1.51
-CATEGORIES=	security
+CATEGORIES=	security net
 MASTER_SITES=	http://www.insecure.org/nmap/
 
 MAINTAINER=     obrien@FreeBSD.org
