@@ -1,0 +1,5 @@
+sbin/bitlbee
+share/bitlbee/help.txt
+@exec mkdir -p -m 700 %D/etc/bitlbee
+@dirrm share/bitlbee
+@dirrm etc/bitlbee

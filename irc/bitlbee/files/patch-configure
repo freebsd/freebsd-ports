@@ -1,0 +1,25 @@
+--- configure.orig	Sat Apr 12 10:30:35 2003
++++ configure	Fri Aug 29 23:00:20 2003
+@@ -22,7 +22,7 @@
+ cpu=`uname -m`
+ 
+ while [ -n "$1" ]; do
+-	e="`expr "$1" : '--\(.*=.*\)'`"
++	e="`EXPR_COMPAT=yes expr "$1" : '--\(.*=.*\)'`"
+ 	if [ -z "$e" ]; then
+ 		cat<<EOF
+ BitlBee configure
+@@ -108,10 +108,10 @@
+ 	exit 1;
+ fi
+ 
+-if type glib-config > /dev/null 2> /dev/null; then
++if type glib12-config > /dev/null 2> /dev/null; then
+ 	cat<<EOF>>Makefile.settings
+-LFLAGS+=`glib-config --libs`
+-CFLAGS+=`glib-config --cflags`
++LFLAGS+=`glib12-config --libs`
++CFLAGS+=`glib12-config --cflags`
+ EOF
+ else
+ 	echo 'Cannot find glib development libraries, aborting. (Install libglib-dev?)'
