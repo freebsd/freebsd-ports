@@ -26,6 +26,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 MAN1=		gqview.1
 
 CONFLICTS=	gqview-[0-9]*
+LATEST_LINK=	gqview-devel
 
 .if defined(WITHOUT_NLS)
 CONFIGURE_ARGS+=--disable-nls

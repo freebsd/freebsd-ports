@@ -15,6 +15,7 @@ MAINTAINER=	martin@tradex.sk
 COMMENT=	Unique standard tape archiver with many enhancements
 
 CONFLICTS=	star-1.4*
+LATEST_LINK=	star-devel
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:C/.a.*//g}
 

@@ -16,5 +16,6 @@ MASTERDIR=	${.CURDIR}/../openwebmail
 MD5_FILE=	${.CURDIR}/distinfo
 
 CONFLICTS=	${PORTNAME}-[0-9].[0-9][0-9]
+LATEST_LINK=	openwebmail-devel
 
 .include "${MASTERDIR}/Makefile"
