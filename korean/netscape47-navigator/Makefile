@@ -1,15 +1,11 @@
 # New ports collection makefile for: Netscape browser with Korean resources
 # Date created:		14 Jun 1999
-# Whom:			cjh@kr.freebsd.org
+# Whom:			CHOI Junho <cjh@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-MAINTAINER=	cjh@kr.freebsd.org
-
-FILESDIR=	${BASEDIR}/files
-
-BASEDIR=	${.CURDIR}/../netscape47-communicator
+MASTERDIR=	${.CURDIR}/../netscape47-communicator
 BROWSER=	navigator
 
-.include	"${BASEDIR}/Makefile"
+.include	"${MASTERDIR}/Makefile"
