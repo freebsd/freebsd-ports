@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mozilla
-PORTVERSION= 	M16
+PORTVERSION= 	M17
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.mozilla.org/pub/mozilla/releases/${PORTVERSION:S/M/m/}/src/
 DISTNAME=	${PORTNAME}-source-${PORTVERSION}
@@ -57,7 +57,8 @@ post-build:
 		${FILESDIR}/mozilla.sh >${WRKSRC}/mozilla
 	@${CHMOD} 555 ${WRKSRC}/mozilla
 	@(cd ${WRKSRC}/dist/bin; \
-	  ${ENV} LD_LIBRARY_PATH=. MOZILLA_FIVE_HOME=. ./regxpcom)
+	  ${ENV} LD_LIBRARY_PATH=. MOZILLA_FIVE_HOME=. ./regxpcom; \
+	  ${ENV} LD_LIBRARY_PATH=. MOZILLA_FIVE_HOME=. ./regchrome)
 
 do-install:
 	${MKDIR} ${PREFIX}/lib/mozilla
