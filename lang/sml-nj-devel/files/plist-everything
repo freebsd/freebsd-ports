@@ -11,12 +11,6 @@ smlnj/lib/c/CM/%%MLARCH%%-unix/c.cm
 smlnj/lib/c/internals/CM/%%MLARCH%%-unix/c-int.cm
 smlnj/lib/c/memory/CM/%%MLARCH%%-unix/memory.cm
 smlnj/lib/ckit-lib.cm/CM/%%MLARCH%%-unix/ckit-lib.cm
-smlnj/lib/cml/CM/%%MLARCH%%-unix/basis.cm
-smlnj/lib/cml/CM/%%MLARCH%%-unix/cml-internal.cm
-smlnj/lib/cml/CM/%%MLARCH%%-unix/cml.cm
-smlnj/lib/cml/CM/%%MLARCH%%-unix/core-cml.cm
-smlnj/lib/cml-lib/CM/%%MLARCH%%-unix/smlnj-lib.cm
-smlnj/lib/cml-lib/CM/%%MLARCH%%-unix/trace-cml.cm
 smlnj/lib/eXene.cm/CM/%%MLARCH%%-unix/eXene.cm
 smlnj/lib/mlrisc-tools/CM/%%MLARCH%%-unix/match-compiler.cm
 smlnj/lib/mlrisc-tools/CM/%%MLARCH%%-unix/parser.cm
@@ -25,12 +19,6 @@ smlnj/lib/mlrisc-tools/CM/%%MLARCH%%-unix/prec-parser.cm
 smlnj/lib/mlrisc-tools/CM/%%MLARCH%%-unix/sml-ast.cm
 smlnj/lib/mlrisc-tools/CM/%%MLARCH%%-unix/source-map.cm
 smlnj/lib/pgraph-util.cm/CM/%%MLARCH%%-unix/pgraph-util.cm
-@dirrm smlnj/lib/cml/CM/%%MLARCH%%-unix
-@dirrm smlnj/lib/cml/CM
-@dirrm smlnj/lib/cml
-@dirrm smlnj/lib/cml-lib/CM/%%MLARCH%%-unix
-@dirrm smlnj/lib/cml-lib/CM
-@dirrm smlnj/lib/cml-lib
 @dirrm smlnj/lib/eXene.cm/CM/%%MLARCH%%-unix
 @dirrm smlnj/lib/eXene.cm/CM
 @dirrm smlnj/lib/eXene.cm

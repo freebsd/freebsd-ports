@@ -1,6 +1,6 @@
---- config/_arch-n-opsys.orig	Fri Apr 20 15:26:43 2001
-+++ config/_arch-n-opsys	Thu Sep 27 16:50:33 2001
-@@ -96,6 +96,7 @@
+--- config/_arch-n-opsys.orig	Thu Oct 10 22:18:48 2002
++++ config/_arch-n-opsys	Sun Nov 10 23:59:17 2002
+@@ -100,6 +100,7 @@
        i486) ARCH=x86;;
        i586) ARCH=x86;;
        i686) ARCH=x86;;
