@@ -1,0 +1,33 @@
+--- Makefile.orig	Thu Apr 18 20:39:26 2002
++++ Makefile	Fri Sep 20 21:16:25 2002
+@@ -1,10 +1,11 @@
+ #Adjust this directory for installation
+-LIBDIR=`ocamlc -where`
++LIBDIR=$(PREFIX)/lib/ocaml/site-lib/classes
+ COMPILER=ocamlc -c
+ LIBRARIAN=ocamlc -a
+ OPTCOMP=ocamlopt -c
+ OPTLIB=ocamlopt -a
+-INSTALL=cp
++INSTALL=install -o root -g wheel -m 644
++INSTALLDIR=install -d -o root -g wheel -m 755
+ 
+ OBJECTS=obuffer.cmo	ohashtbl.cmo	oqueue.cmo	ostack.cmo \
+ 	omap.cmo	oset.cmo	ostream.cmo	omapping.cmo
+@@ -43,12 +44,15 @@
+ 	@$(MAKE) real-install LIBDIR=$(LIBDIR)
+ 
+ real-install:
++	$(INSTALLDIR) $(LIBDIR)
+ 	$(INSTALL) stdclass.cma *.cmi *.mli $(LIBDIR)
+ 	if test -f stdclass.cmxa; \
+ 	then $(INSTALL) stdclass.cmxa stdclass.a *.cmx $(LIBDIR); fi
++	if test -f META; \
++	then $(INSTALL) META $(LIBDIR); fi
+ 
+ clean:
+-	rm -f *.cm* *.o *.a *~ #*
++	rm -f *.cm* *.o *.a *~
+ 
+ depend:
+ 	ocamldep *.ml *.mli > .depend

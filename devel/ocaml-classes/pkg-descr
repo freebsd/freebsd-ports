@@ -1,0 +1,10 @@
+The library is composed of 9 modules, each containing a single class,
+and eventually some creation functions. Each of theses classes
+corresponds almost exactly to a module in the standard library, and only
+makes it object-oriented. Only Ogenlex adds a new feature, indexing on
+the input stream.
+
+WWW: http://wwwfun.kurims.kyoto-u.ac.jp/soft/olabl/classes/
+
+- Michael Grunewald
+michaelgrunewald@yahoo.fr

@@ -1,0 +1,6 @@
+name="classes"
+version="3.05"
+description="Object interface for standard library modules"
+requires=""
+archive(byte)="stdclass.cma"
+archive(native)="stdclass.cmxa"
