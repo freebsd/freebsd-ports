@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sed_inplace
-PORTVERSION=	2002.06.17
+PORTVERSION=	2002.06.28
 CATEGORIES=	textproc
 MASTER_SITES=	#
 DISTFILES=	#
@@ -21,7 +21,7 @@ MAKE_ENV=	PKGDIR="${PKGDIR}"
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} > 500033
-IGNORE=		"is in the base system"
+#IGNORE=		"is in the base system"
 .endif
 
 do-install:
