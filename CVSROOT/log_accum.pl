@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 #
-# $Id: log_accum.pl,v 1.44 1995/11/02 09:10:23 peter Exp $
+# $Id: log_accum.pl,v 1.15 1995/11/27 08:28:42 peter Exp $
 #
 # Perl filter to handle the log messages from the checkin of files in
 # a directory.  This script will group the lists of files by log
@@ -241,8 +241,7 @@ sub build_header {
 
 # !!! Mailing-list and history file mappings here !!!
 sub mlist_map {
-    local($dir);
-    $dir = @_;		# perl warns unless we do this....
+    local($dir) = @_;		# perl warns about this....
    
     return 'cvs-CVSROOT'      if($dir =~ /^CVSROOT/);
     return 'cvs-ports'        if($dir =~ /^ports/);
