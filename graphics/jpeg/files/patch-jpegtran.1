@@ -1,0 +1,44 @@
+--- jpegtran.1.exif	1997-08-03 22:01:01.000000000 +0200
++++ jpegtran.1	2003-09-30 14:35:36.000000000 +0200
+@@ -161,6 +161,14 @@
+ Copy all extra markers.  This setting preserves miscellaneous markers
+ found in the source file, such as JFIF thumbnails and Photoshop settings.
+ In some files these extra markers can be sizable.
++See 'EXIF FILES' for special tratement of EXIF markers.
++.TP
++.B \-copy exif
++This setting preserves the EXIF marker, commonly found in JPEG files produced
++by digital cameras, in addition to any comment markers.  If there is an EXIF
++marker it is copied and the JFIF marker (incompatible with EXIF) is
++omitted. If there is no EXIF marker a JFIF one is emitted as usual.  See 'EXIF
++FILES' for special tratement of EXIF markers.
+ .PP
+ The default behavior is
+ .BR "\-copy comments" .
+@@ -189,6 +197,26 @@
+ .B \-debug
+ Same as
+ .BR \-verbose .
++.SH EXIF FILES
++The EXIF variety of JPEG files, which are often produced by digital cameras,
++are recognized by jpegtran as EXIF files (i.e. not as JFIF, the
++usual variety of JPEG files). If the input file is recognized as EXIF (i.e.,
++there is an EXIF marker and no JFIF marker) the '-copy exif' option is
++automatically turned on if '-copy comments', or no '-copy' option, was
++specified. Thus, unless '-copy none' is specified an EXIF file is kept as EXIF
++and not converted to JFIF.
++.PP
++If a geometrical transformation is applied (e.g., rotate, transpose) the EXIF
++width and height fields are set to the width and height of the output
++image. Furthermore, the orientation field is reset to one, meaning tha the
++orientation of the output image is upright (i.e. normal).
++.PP
++Note that an explicitely given '-copy exif' option will output an EXIF file if
++the input is an EXIF file that was saved as JFIF, and that the EXIF marker is
++still present. This option is useful for recovering EXIF files that where
++converted to JFIF by a non EXIF-aware software. Note however, that the data in
++the EXIF marker is not validated, unless a geometrical transformation is
++applied.
+ .SH EXAMPLES
+ .LP
+ This example converts a baseline JPEG file to progressive form:

@@ -1,9 +1,6 @@
 The Independent JPEG Group's JPEG software
 ==========================================
 
-README for release 6 of 2-Aug-95
-================================
-
 This distribution contains the sixth public release of the Independent JPEG
 Group's free JPEG software.  You are welcome to redistribute this software and
 to use it for any purpose, subject to the conditions under LEGAL ISSUES, below.
@@ -18,5 +15,9 @@ Boucher, Lee Crocker, Julian Minguillon, George Phillips, Davide Rossi,
 Ge' Weijers, and other members of the Independent JPEG Group.
 
 IJG is not affiliated with the official ISO JPEG standards committee.
+
+Includes EXIF patches from:
+http://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=106060
+http://sylvana.net/jpegcrop/exifpatch.html
 
 WWW: http://www.ijg.org/

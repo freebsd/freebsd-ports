@@ -9,11 +9,15 @@
 
 PORTNAME=	jpeg
 PORTVERSION=	6b
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.ijg.org/files/ \
-		ftp://ftp.uu.net/graphics/jpeg/
+		ftp://ftp.uu.net/graphics/jpeg/ \
+		http://sylvana.net/jpegcrop/:exif
 DISTNAME=	jpegsrc.v${PORTVERSION}
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
+		jpegexiforient.c:exif exifautotran.txt:exif
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	IJG's jpeg compression utilities
@@ -33,6 +37,13 @@ CONFIGURE_ARGS+=	--enable-maxmem=${J_MAXMEM}
 
 MAN1=		cjpeg.1 djpeg.1 jpegtran.1 rdjpgcom.1 wrjpgcom.1
 
+post-extract:
+	@${CP} ${DISTDIR}/jpegexiforient.c ${WRKSRC}/
+	@${CP} ${DISTDIR}/exifautotran.txt ${WRKSRC}/exifautotran
+
+post-build:
+	@cd ${WRKSRC} && ${CC} ${CFLAGS} -o jpegexiforient jpegexiforient.c
+
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/jpeg
@@ -42,5 +53,7 @@ post-install:
 .for header in ${ADDITIONAL_HEADER}
 	@${INSTALL_DATA} ${WRKSRC}/${header} ${PREFIX}/include
 .endfor
+	${INSTALL_PROGRAM} ${WRKSRC}/jpegexiforient ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/exifautotran ${PREFIX}/bin
 
 .include <bsd.port.mk>

@@ -1,2 +1,6 @@
 MD5 (jpegsrc.v6b.tar.gz) = dbd5f3b47ed13132f04c685d608a7547
 SIZE (jpegsrc.v6b.tar.gz) = 613261
+MD5 (jpegexiforient.c) = ff4657764cb885b9aec06449507bf29d
+SIZE (jpegexiforient.c) = 8192
+MD5 (exifautotran.txt) = c1cd9c876f900601682cf9db8d232386
+SIZE (exifautotran.txt) = 684
