@@ -1,0 +1,13 @@
+--- Makefile.PL.orig	Thu Oct 17 17:17:45 1996
++++ Makefile.PL	Thu Oct 17 17:17:59 1996
+@@ -11,8 +11,8 @@
+ # If none, pick one set and change it to the correct values.
+ 
+ # AIX, HP-UX, Linux BSD, NETBSD, NeXT, SunOS BSD, FreeBSD BSD libcurses
+-# $inc  = "";
+-# $libs = "-lcurses -ltermcap";
++$inc  = "";
++$libs = "-lcurses -ltermcap";
+ 
+ # [Courtesy of "Andrew V. Stesin" <stesin@elvisti.kiev.ua>]
+ # FreeBSD-2.0.5 ncurses + mytinfo	NOTE! Straight curses works much
