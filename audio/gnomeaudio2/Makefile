@@ -14,14 +14,10 @@ DISTNAME=	gnome-audio-${PORTVERSION}
 
 MAINTAINER=	vanilla@FreeBSD.org
 
-BUILD_DEPENDS=	gnome-config:${PORTSDIR}/x11/gnomelibs
-RUN_DEPENDS=	gnome-config:${PORTSDIR}/x11/gnomelibs
-
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
+USE_GNOMELIBS=	yes
 NO_BUILD=	yes
-
-INSTALL_TARGET=	INSTALL_DATA="${INSTALL_DATA}" install
 
 post-extract:
 	@${RM} -fr ${WRKSRC}/sounds/sounds

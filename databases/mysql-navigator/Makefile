@@ -13,10 +13,10 @@ DISTNAME=	mysql_navigator_ver_${PORTVERSION}
 
 MAINTAINER=	sobomax@FreeBSD.org
 
-LIB_DEPENDS=	gnome.4:${PORTSDIR}/x11/gnomelibs \
-		mysqlclient.6:${PORTSDIR}/databases/mysql322-client
+LIB_DEPENDS=	mysqlclient.6:${PORTSDIR}/databases/mysql322-client
 
 USE_X_PREFIX=	yes
+USE_GNOME=	yes
 
 ALL_TARGET=
 

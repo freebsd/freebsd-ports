@@ -13,14 +13,19 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	will@FreeBSD.org
 
-LIB_DEPENDS=	gnome.4:${PORTSDIR}/x11/gnomelibs
-
-GNOME_CONFIG?=	${X11BASE}/bin/gnome-config
-GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
-GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	GNOME_CONFIG=${GNOME_CONFIG} GTK_CONFIG=${GTK_CONFIG}
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
+USE_GNOME=	yes
+USE_LIBTOOL=	yes
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LIBS="-L${LOCALBASE}/lib"
+
+pre-patch:
+	@${PERL} -pi -e 's|-lpthread|-pthread|g ; \
+		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
+	@find ${WRKSRC} -name "Makefile.in" | xargs ${PERL} -pi -e \
+		's|\$$\(datadir\)/gnome/|\$$\(datadir\)/|g ; \
+		 s|\$$\(datadir\)/locale|\$$\(prefix\)/share/locale|g'
 
 pre-configure:
 	@${RM} -f ${WRKSRC}/config.cache
@@ -28,7 +33,7 @@ pre-configure:
 post-install:
 	${CHOWN} root:games ${PREFIX}/bin/gno3dtet
 	${CHMOD} 2555 ${PREFIX}/bin/gno3dtet
-	${CHOWN} root:games ${PREFIX}/var/games/gno3dtet.hof
-	${CHMOD} 664 ${PREFIX}/var/games/gno3dtet.hof
+	${CHOWN} root:games ${PREFIX}/share/gnome/games/gno3dtet.hof
+	${CHMOD} 664 ${PREFIX}/share/gnome/games/gno3dtet.hof
 
 .include <bsd.port.mk>

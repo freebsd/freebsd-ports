@@ -1,16 +1,16 @@
 bin/gcompris
 etc/sound/events/gcompris.soundlist
-share/gcompris/data/wordsgame/wordslevel1.en
-share/gcompris/data/wordsgame/wordslevel1.es
-share/gcompris/data/wordsgame/wordslevel1.fr
-share/gcompris/data/wordsgame/wordslevel2.en
-share/gcompris/data/wordsgame/wordslevel2.es
-share/gcompris/data/wordsgame/wordslevel2.fr
-share/gcompris/data/wordsgame/wordslevelmax.en
-share/gcompris/data/wordsgame/wordslevelmax.es
-share/gcompris/data/wordsgame/wordslevelmax.fr
-share/gcompris/data/wordsgame/wordslevelmax.nl
 share/gnome/apps/Games/gcompris.desktop
+share/gnome/gcompris/data/wordsgame/wordslevel1.en
+share/gnome/gcompris/data/wordsgame/wordslevel1.es
+share/gnome/gcompris/data/wordsgame/wordslevel1.fr
+share/gnome/gcompris/data/wordsgame/wordslevel2.en
+share/gnome/gcompris/data/wordsgame/wordslevel2.es
+share/gnome/gcompris/data/wordsgame/wordslevel2.fr
+share/gnome/gcompris/data/wordsgame/wordslevelmax.en
+share/gnome/gcompris/data/wordsgame/wordslevelmax.es
+share/gnome/gcompris/data/wordsgame/wordslevelmax.fr
+share/gnome/gcompris/data/wordsgame/wordslevelmax.nl
 share/gnome/pixmaps/gcompris/animals/baby-elephant.png
 share/gnome/pixmaps/gcompris/animals/baby-gorilla.png
 share/gnome/pixmaps/gcompris/animals/bat.png
@@ -156,6 +156,6 @@ share/locale/nl/LC_MESSAGES/gcompris.mo
 @dirrm share/gnome/pixmaps/gcompris/buttons
 @dirrm share/gnome/pixmaps/gcompris/animals
 @dirrm share/gnome/pixmaps/gcompris
-@dirrm share/gcompris/data/wordsgame
-@dirrm share/gcompris/data
-@dirrm share/gcompris
+@dirrm share/gnome/gcompris/data/wordsgame
+@dirrm share/gnome/gcompris/data
+@dirrm share/gnome/gcompris

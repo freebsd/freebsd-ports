@@ -15,22 +15,15 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	sobomax@FreeBSD.org
 
 BUILD_DEPENDS=	automake:${PORTSDIR}/devel/automake
-LIB_DEPENDS=	panel_applet.4:${PORTSDIR}/x11/gnomecore \
-		gnome.4:${PORTSDIR}/x11/gnomelibs
 
 WRKSRC=		${WRKDIR}/BitNotes
 
 USE_X_PREFIX=	yes
 USE_AUTOCONF=	yes
 USE_GMAKE=	yes
-
-GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
-
-CONFIGURE_ARGS=	--localstatedir=${PREFIX}/share/gnome \
-		--datadir=${PREFIX}/share/gnome
+USE_GNOME=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib" \
-		GTK_CONFIG="${GTK_CONFIG}"
+		LIBS="-L${LOCALBASE}/lib"
 
 AUTOCONF=	autoconf && \
 			${PERL} -pi -e 's|-lpthread|-pthread|g ; \

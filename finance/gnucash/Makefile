@@ -19,30 +19,34 @@ MAINTAINER=     ade@FreeBSD.org
 BUILD_DEPENDS=	swig:${PORTSDIR}/devel/SWIG \
 		g-wrap:${PORTSDIR}/devel/g-wrap \
 		eperl:${PORTSDIR}/lang/eperl
-LIB_DEPENDS=	panel_applet.4:${PORTSDIR}/x11/gnomecore \
-		guile.9:${PORTSDIR}/lang/guile
+LIB_DEPENDS=	guile.9:${PORTSDIR}/lang/guile
 RUN_DEPENDS=	slib48:${PORTSDIR}/lang/slib \
 		gnuplot:${PORTSDIR}/math/gnuplot \
 		${site_perl}/HTML/Base.pm:${PORTSDIR}/www/p5-HTML \
 		${site_perl}/LWP.pm:${PORTSDIR}/www/p5-libwww
 
 site_perl=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}
+
+USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_XPM=	yes
-USE_X_PREFIX=	yes
 USE_PERL5=	yes
+USE_GNOME=	yes
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
-GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
-GLIB_CONFIG?=	${LOCALBASE}/bin/glib12-config
-CONFIGURE_ENV=	MAKE=gmake \
-		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
-		LIBS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
-		GTK_CONFIG="${GTK_CONFIG}" \
-		GLIB_CONFIG="${GLIB_CONFIG}"
 CONFIGURE_ARGS=	--with-glib-config=${GLIB_CONFIG}
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
+		LIBS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
+
 MAN1=		gnc-prices.1 gnucash.1
 
+pre-patch:
+	@${PERL} -pi -e 's^-l(pthread|c_r)^-pthread^g ; \
+		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
+	@find ${WRKSRC} -name "Makefile.in" | xargs ${PERL} -pi -e \
+		's^\$\{datadir\}/gnome/^\$\(datadir\)/^g ; \
+		 s^\$\{datadir\}/aclocal^\$\(prefix\)/share/aclocal^g ; \
+		 s^\$\{datadir\}/locale^\$\(prefix\)/share/locale^g'
 
 post-install:
 	@strip ${PREFIX}/bin/gnucash

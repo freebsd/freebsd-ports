@@ -14,22 +14,14 @@ DISTNAME=	gnome-chess-${PORTVERSION}
 
 MAINTAINER=	reg@FreeBSD.org
 
-LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext
-BUILD_DEPENDS=	panel:${PORTSDIR}/x11/gnomecore \
-		crafty:${PORTSDIR}/games/crafty
-RUN_DEPENDS=	panel:${PORTSDIR}/x11/gnomecore \
-		crafty:${PORTSDIR}/games/crafty
-
-GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
+BUILD_DEPENDS=	crafty:${PORTSDIR}/games/crafty
+RUN_DEPENDS=	crafty:${PORTSDIR}/games/crafty
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
+USE_GNOME=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--localstatedir=${PREFIX}/share/gnome \
-		--datadir=${PREFIX}/share/gnome \
-		--with-gnome=${PREFIX}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		GTK_CONFIG="${GTK_CONFIG}" \
 		LIBS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>

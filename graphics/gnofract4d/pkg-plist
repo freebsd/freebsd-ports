@@ -86,6 +86,7 @@ share/gnome/pixmaps/gnofract4d/gnofract4d-logo.png
 share/locale/fr/LC_MESSAGES/gnofract4d.mo
 @dirrm share/gnome/pixmaps/gnofract4d
 @dirrm share/gnome/maps/gnofract4d
+@dirrm share/gnome/maps
 @dirrm share/gnome/help/gnofract4d/C/images
 @dirrm share/gnome/help/gnofract4d/C
 @dirrm share/gnome/help/gnofract4d

@@ -1,28 +1,13 @@
 bin/gnofin
-lib/gnofin/plugins/libqif.so.0
-lib/gnofin/plugins/libqif.so
-lib/gnofin/plugins/libqif.a
-lib/gnofin/plugins/libhtml.so.0
-lib/gnofin/plugins/libhtml.so
-lib/gnofin/plugins/libhtml.a
-lib/gnofin/plugins/liblatex.so.0
-lib/gnofin/plugins/liblatex.so
-lib/gnofin/plugins/liblatex.a
-lib/gnofin/plugins/libtext.so.0
-lib/gnofin/plugins/libtext.so
-lib/gnofin/plugins/libtext.a
-lib/gnofin/plugins/libcbb.so.0
 lib/gnofin/plugins/libcbb.so
-lib/gnofin/plugins/libcbb.a
-lib/gnofin/plugins/libfind.so.0
 lib/gnofin/plugins/libfind.so
-lib/gnofin/plugins/libfind.a
-lib/gnofin/plugins/libreconcile.so.0
+lib/gnofin/plugins/libhtml.so
+lib/gnofin/plugins/liblatex.so
+lib/gnofin/plugins/libqif.so
 lib/gnofin/plugins/libreconcile.so
-lib/gnofin/plugins/libreconcile.a
-lib/gnofin/plugins/libsched.so.0
 lib/gnofin/plugins/libsched.so
-lib/gnofin/plugins/libsched.a
+lib/gnofin/plugins/libtext.so
 share/gnome/apps/Applications/gnofin.desktop
+share/locale/fr/LC_MESSAGES/gnofin.mo
 @dirrm lib/gnofin/plugins
 @dirrm lib/gnofin

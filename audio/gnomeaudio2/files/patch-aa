@@ -12,7 +12,7 @@
 -		install -d $(prefix)/share/sounds/`dirname $$I`; \
 -		install -m444 $$I $(prefix)/share/sounds/$$I; \
 +		mkdir -p $(PREFIX)/share/gnome/sounds/`dirname $$I`; \
-+		${INSTALL_DATA} $$I $(PREFIX)/share/gnome/sounds/$$I; \
++		${BSD_INSTALL_DATA} $$I $(PREFIX)/share/gnome/sounds/$$I; \
  	done
  
  install-default-links:
