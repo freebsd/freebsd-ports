@@ -1,44 +1,44 @@
-# New ports collection makefile for:	SmallEiffel
+# New ports collection makefile for:	SmartEiffel
 # Date created:				Wed Dec 22 18:20:05 CET 1999
 # Whom:					berend@pobox.com
 #
 # $FreeBSD$
 #
 
-PORTNAME=	smalleiffel
-PORTVERSION=	0.76
-PORTEPOCH=	1	# Version numbering is negative
+PORTNAME=	smarteiffel
+PORTVERSION=	1.0
 CATEGORIES=	lang
-MASTER_SITES=	ftp://ftp.loria.fr/pub/loria/genielog/SmallEiffel/Oldies/
+MASTER_SITES=	ftp://ftp.loria.fr/pub/loria/SmartEiffel/Oldies/
 DISTNAME=	se-${PORTVERSION}
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	berend@pobox.com
 
-WRKSRC=		${WRKDIR}/SmallEiffel
+WRKSRC=		${WRKDIR}/SmartEiffel
 
 # We install in this directory
 SEDIR=		${PREFIX}/${PORTNAME}-${PORTVERSION}
 
 # We alias a directory to the installation directory
 # so it is possible to easily switch between different builds
-ALIASDIR=	${PREFIX}/SmallEiffel
+ALIASDIR=	${PREFIX}/SmartEiffel
 
-# SmallEiffel needs this to find system.se
-MAKE_ENV+=	SmallEiffel=${WRKSRC}/sys/system.se
+# SmartEiffel needs this to find system.se
+MAKE_ENV+=	SmartEiffel=${WRKSRC}/sys/system.se
 ALL_TARGET=
+USE_BZIP2=	yes
+PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 
 PKGMESSAGE=	${WRKDIR}/MESSAGE
 PKGINSTALL=	${WRKDIR}/INSTALL
 
-# Make sure we can set the symbolic link SmallEiffel
+# Make sure we can set the symbolic link SmartEiffel
 # to the actual release directory.
 do-install:
 	@(if ${TEST} -e ${ALIASDIR} ; then \
 	    if ! ${TEST} -L ${ALIASDIR} ; then \
 		${ECHO} "Make sure ${ALIASDIR} is a symbolic link"; \
 		${ECHO} "or does not exist. This directory will point to "; \
-		${ECHO} "the actual SmallEiffel installation directory."; \
+		${ECHO} "the actual SmartEiffel installation directory."; \
 		exit 1; \
 	    fi; \
 	    ${RM} ${ALIASDIR}; \
