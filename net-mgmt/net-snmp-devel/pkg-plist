@@ -34,10 +34,12 @@ include/ucd-snmp/header_complex.h
 include/ucd-snmp/int64.h
 include/ucd-snmp/keytools.h
 include/ucd-snmp/mib.h
+include/ucd-snmp/mib_module_config.h
 include/ucd-snmp/mibincl.h
 include/ucd-snmp/parse.h
 include/ucd-snmp/read_config.h
 include/ucd-snmp/scapi.h
+include/ucd-snmp/snmp-tc.h
 include/ucd-snmp/snmp.h
 include/ucd-snmp/snmp_agent.h
 include/ucd-snmp/snmp_alarm.h
