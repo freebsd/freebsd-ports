@@ -1,0 +1,582 @@
+diff -bBdruN --exclude=.svn --exclude=.private --exclude=PRIVATE --exclude=HTML --exclude=Makefile --exclude=Makefile.in --exclude=Makefile.am --exclude=STABLE-sysutils::Makefile --exclude=aclocal.m4 --exclude=configure --exclude=configure.ac THANKS 0.2.6_5/THANKS
+--- THANKS	Wed Feb  9 11:25:58 2005
++++ 0.2.6_5/THANKS	Mon Feb 14 09:45:49 2005
+@@ -6,6 +6,9 @@
+ 
+ Date of entry
+ 
++Feb 14, 2005	Third time Bart Silverstrim's feedback has led to a useful portmanager improvement,
++		he is now promoted to "official portmanager beta tester", congradulations! :)
++
+ Feb 01, 2005	Bart Silverstrim for reporting "/usr/local/binportmanager -u" bug.
+ 
+ Jan 26, 2005	Bart Silverstrim <bsilverstrim@athensasd.org> for identifying a looping problem
+diff -bBdruN --exclude=.svn --exclude=.private --exclude=PRIVATE --exclude=HTML --exclude=Makefile --exclude=Makefile.in --exclude=Makefile.am --exclude=STABLE-sysutils::Makefile --exclude=aclocal.m4 --exclude=configure --exclude=configure.ac TeamMembers 0.2.6_5/TeamMembers
+--- TeamMembers	Wed Dec 31 16:00:00 1969
++++ 0.2.6_5/TeamMembers	Mon Feb 14 10:01:20 2005
+@@ -0,0 +1,5 @@
++Beta tester:
++	Bart Silverstrim <bsilver@chrononomicon.com>	
++
++Developer:
++	Michael C. Shultz <reso3w83@verizon.net>
+diff -bBdruN --exclude=.svn --exclude=.private --exclude=PRIVATE --exclude=HTML --exclude=Makefile --exclude=Makefile.in --exclude=Makefile.am --exclude=STABLE-sysutils::Makefile --exclude=aclocal.m4 --exclude=configure --exclude=configure.ac libMG/src/MGdbDestroy.c 0.2.6_5/libMG/src/MGdbDestroy.c
+--- libMG/src/MGdbDestroy.c	Wed Feb  9 11:25:57 2005
++++ 0.2.6_5/libMG/src/MGdbDestroy.c	Sun Feb 13 09:22:44 2005
+@@ -70,8 +70,6 @@
+ 
+ 	/*zzzzzzzzzzzzzz*/
+ 	db->parent.mallocIdx--;
+-	free(db);
+-	/*zzzzzzzzzzzzzz*/
+ 
+ 	if(db->parent.fopenIdx || db->parent.mallocIdx)
+ 	{
+@@ -79,5 +77,9 @@
+ 			id, db->parent.fopenIdx, db->parent.mallocIdx );
+ 		assert(0);
+ 	}
++
++	free(db);
++	/*zzzzzzzzzzzzzz*/
++
+ 	return(errorCode);
+ }
+diff -bBdruN --exclude=.svn --exclude=.private --exclude=PRIVATE --exclude=HTML --exclude=Makefile --exclude=Makefile.in --exclude=Makefile.am --exclude=STABLE-sysutils::Makefile --exclude=aclocal.m4 --exclude=configure --exclude=configure.ac libPMGR/src/PMGRrAddDependencies.c 0.2.6_5/libPMGR/src/PMGRrAddDependencies.c
+--- libPMGR/src/PMGRrAddDependencies.c	Fri Feb 11 12:19:17 2005
++++ 0.2.6_5/libPMGR/src/PMGRrAddDependencies.c	Mon Feb 14 03:39:37 2005
+@@ -46,7 +46,7 @@
+ 
+ 	/*zzzzzzzzzzzzzz*/
+ 	mallocIdx++;
+-	contentsFileName	= (char*)malloc(stringSize);
++	contentsFileName	= malloc(stringSize);
+ 	/*zzzzzzzzzzzzzz*/
+ 
+ 	if(!contentsFileName)
+@@ -55,7 +55,7 @@
+ 		return(1);
+ 	}
+ 	contentsFileName[0]	= 0;
+-	strcpy(contentsFileName, PKGDBDIR);
++	strcat(contentsFileName, PKGDBDIR);
+ 	strcat(contentsFileName, "/");
+ 	strcat(contentsFileName, portName);
+ 	strcat(contentsFileName, "/");
+@@ -80,7 +80,7 @@
+ 
+ 	/*zzzzzzzzzzzzzz*/
+ 	mallocIdx++;
+-	buffer		= ( char* )malloc(bufferSize);
++	buffer		= malloc( bufferSize + 1 );
+ 	/*zzzzzzzzzzzzzz*/
+ 	if(!buffer)
+ 	{
+@@ -91,6 +91,7 @@
+ 	buffer[0]	= 0;
+ 	fread(buffer, 1, bufferSize, contentsFileStream );
+ 	buffPtr	= buffer;
++	portDependency	= buffer;
+ 	while( ( portDependency = strnstr( buffPtr, "@pkgdep ", bufferSize - (buffPtr - buffer) ) ) )
+ 	{
+ 		portDependency			+= strlen( "@pkgdep " ); 
+diff -bBdruN --exclude=.svn --exclude=.private --exclude=PRIVATE --exclude=HTML --exclude=Makefile --exclude=Makefile.in --exclude=Makefile.am --exclude=STABLE-sysutils::Makefile --exclude=aclocal.m4 --exclude=configure --exclude=configure.ac libPMGR/src/PMGRrDoUpgrade.c 0.2.6_5/libPMGR/src/PMGRrDoUpgrade.c
+--- libPMGR/src/PMGRrDoUpgrade.c	Wed Feb  9 11:25:58 2005
++++ 0.2.6_5/libPMGR/src/PMGRrDoUpgrade.c	Mon Feb 14 10:13:41 2005
+@@ -42,6 +42,7 @@
+ 		property->portManagerUpdated	= 1;
+ 	}
+ 	fprintf( stdout, "%s\n", SINGLE_LINES );
++	while( fflush( stdout ) );
+ 
+ 	MGdbGoTop( property->outOfDatePortsDb );
+ 	oldPortDir	= MGdbSeek( property->outOfDatePortsDb, property->fieldOldPortName, oldPortName,
+@@ -50,6 +51,7 @@
+ 	{
+ 		fprintf( stderr, "%s %s error(52): oldPortName %s not found in outOfDatePortsDb\n",
+ 			id, VERSION, oldPortName );
++			while( fflush( stderr ) );
+ 		return(9);
+ 	}
+ 
+@@ -66,6 +68,7 @@
+ 
+ 	fprintf( stdout, "UPGRADING %s reason %s %s\n", oldPortName, reason, reasonPortName  );
+ 	fprintf( stdout, "%s\n", SINGLE_LINES );
++	while( fflush( stdout ) );
+ 	/************************************************************************/
+ 	/*			Command "1" " make clean "			*/
+ 	/************************************************************************/
+@@ -116,6 +119,7 @@
+ 	fprintf( stdout, "intitial clean of work directories \n" );
+ 	fprintf( stdout, "%s %s command: #1 of 8  %s\n", id, VERSION, command );
+ 	fprintf( stdout, "%s\n", SINGLE_LINES );
++	while( fflush( stdout ) );
+ 
+ 	errorCode = system(command);
+ 
+@@ -127,6 +131,8 @@
+ 	if(errorCode)
+ 	{
+ 		fprintf( stderr, "%s %s error: make clean returned an error, cannot continue\n", id, VERSION );
++		while( fflush( stderr ) );
++
+ 		return(1);
+ 	}
+ 
+@@ -178,14 +184,17 @@
+ 	fprintf( stdout, "update %s \n", oldPortName );
+ 	fprintf( stdout, "%s %s command: #2 of 8  %s\n", id, VERSION, command );
+ 	fprintf( stdout, "%s\n", SINGLE_LINES );
++	while( fflush( stdout ) );
+ 
+ 	errorCode = system(command);
+ 	mallocIdx--;
+ 	free( command );
+ 	if(errorCode)
+ 	{
+-		fprintf( stderr, "%s %s error: make returned an error, adding %s to ignore.db\n",
++		fprintf( stdout, "%s %s error: make returned an error, adding %s to ignore.db\n",
+ 			id, VERSION, oldPortDir );
++		while( fflush( stdout ) );
++
+ 		MGdbAdd( property->ignoreDb, oldPortDir, "failed during (2) make", NULL );
+ 
+ 		if( mallocIdx || fopenCount )
+@@ -218,6 +227,7 @@
+ 	fprintf( stdout, "backing up installed %s before removing it \n", oldPortName );
+ 	fprintf( stdout, "%s %s command: #3 of 8 %s\n", id, VERSION, command );
+ 	fprintf( stdout, "%s\n", SINGLE_LINES );
++	while( fflush( stdout ) );
+ 	system(command);
+ 	/*
+ 	An error here is no big deal, if for example the port is not installed it will not be able
+@@ -243,7 +253,7 @@
+ 	fprintf( stdout, "removing old %s \n", oldPortName );
+ 	fprintf( stdout, "%s %s command: #4 of 8 %s\n", id, VERSION, command );
+ 	fprintf( stdout, "%s\n", SINGLE_LINES );
+-
++	while( fflush( stdout ) );
+ 	errorCode	= system(command);
+ 	/*zzzzzzzzzzzzz*/
+ 	mallocIdx--;
+@@ -273,7 +283,7 @@
+ 		fprintf( stdout, "trying one more way to remove %s...\n", oldPortName );
+ 		fprintf( stdout, "%s %s command: #4 of 8  %s\n", id, VERSION, command );
+ 		fprintf( stdout, "%s\n", SINGLE_LINES );
+-
++		while( fflush( stdout ) );
+ 		system(command);
+ 
+ 		/*zzzzzzzzzzzzz*/
+@@ -330,7 +340,7 @@
+ 	fprintf( stdout, "installing updated %s \n", oldPortDir );
+ 	fprintf( stdout, "%s %s command: #5 of 8 %s\n", id, VERSION, command );
+ 	fprintf( stdout, "%s\n", SINGLE_LINES );
+-
++	while( fflush( stdout ) );
+ 	errorCode = system(command);
+ 	/*zzzzzzzzzzzzz*/
+ 	mallocIdx--;
+@@ -356,6 +366,7 @@
+ 		fprintf( stderr, "restoring original port from backup \n" );
+ 		fprintf( stderr, "%s %s command: #5!! ***Emergancy restore***  %s\n", id, VERSION, command );
+ 		fprintf( stdout, "%s\n", SINGLE_LINES );
++		while( fflush( stdout ) );
+ 		errorCode = system(command);
+ 		/*zzzzzzzzzzzzz*/
+ 		mallocIdx--;
+@@ -363,9 +374,10 @@
+ 		/*zzzzzzzzzzzzz*/
+ 		if(errorCode)
+ 		{
+-			fprintf( stderr, "%s %s error: FAILED TO RESTORE BACKUP COPY, really sorry ! \n",
++			fprintf( stdout, "%s %s error: FAILED TO RESTORE BACKUP COPY, really sorry ! \n",
+ 					id, VERSION );
+-			fprintf( stderr, "%s %s info: adding %s to ignore.db\n", id, VERSION, oldPortDir );
++			fprintf( stdout, "%s %s info: adding %s to ignore.db\n", id, VERSION, oldPortDir );
++			while( fflush( stdout ) );
+ 			MGdbAdd( property->ignoreDb, oldPortDir, "failed during (5) emergancy restore", NULL );
+ 
+ 			if( mallocIdx || fopenCount )
+@@ -376,10 +388,11 @@
+ 		}
+ 
+ 		fprintf( stdout, "%s\n", SINGLE_LINES );
+-		fprintf( stderr, "%s %s error: RESTORED BACKUP COPY\n",	id, VERSION );
+-		fprintf( stderr, "%s %s info: adding %s to ignore.db\n", id, VERSION, oldPortDir );
++		fprintf( stdout, "%s %s error: RESTORED BACKUP COPY\n",	id, VERSION );
++		fprintf( stdout, "%s %s info: adding %s to ignore.db\n", id, VERSION, oldPortDir );
+ 		MGdbAdd( property->ignoreDb, oldPortDir, "performed (5) emergancy restore", NULL );
+ 		fprintf( stdout, "%s\n", SINGLE_LINES );
++		while( fflush( stdout ) );
+ 		if( mallocIdx || fopenCount )
+ 		{
+ 			assert(0);
+@@ -408,6 +421,7 @@
+ 		fprintf( stderr, "deleting backup copy, installation of updated %s successful\n", oldPortDir );
+ 		fprintf( stdout, "%s %s command: #6 of 8 %s\n", id, VERSION, command );
+ 		fprintf( stdout, "%s\n", SINGLE_LINES );
++		while( fflush( stdout ) );
+ 		system(command);
+ 		/*
+ 		error is no big deal here, if the backup package wasn't made it can't be deleted...
+@@ -466,7 +480,7 @@
+ 	fprintf( stderr, "making package of updated %s \n", oldPortDir );
+ 	fprintf( stdout, "%s %s command: #7 of 8 %s\n", id, VERSION, command );
+ 	fprintf( stdout, "%s\n", SINGLE_LINES );
+-
++	while( fflush( stdout ) );
+ 	system(command);
+ 	/*zzzzzzzzzzzzz*/
+ 	mallocIdx--;
+@@ -520,7 +534,7 @@
+ 	fprintf( stderr, "terminal clean of work directories\n" );
+ 	fprintf( stdout, "%s %s command: #8 of 8 %s\n", id, VERSION, command );
+ 	fprintf( stdout, "%s\n", SINGLE_LINES );
+-
++	while( fflush( stdout ) );
+ 	errorCode = system(command);
+ 
+ 	/*zzzzzzzzzzzzz*/
+@@ -535,6 +549,7 @@
+         if(errorCode)
+         {
+                 fprintf( stderr, "%s %s error: make clean returned an error, cannot continue\n", id, VERSION );
++		while( fflush( stderr ) );
+ 		assert(0);
+         }
+ 	return(0);
+diff -bBdruN --exclude=.svn --exclude=.private --exclude=PRIVATE --exclude=HTML --exclude=Makefile --exclude=Makefile.in --exclude=Makefile.am --exclude=STABLE-sysutils::Makefile --exclude=aclocal.m4 --exclude=configure --exclude=configure.ac libPMGR/src/PMGRrInitialize.c 0.2.6_5/libPMGR/src/PMGRrInitialize.c
+--- libPMGR/src/PMGRrInitialize.c	Wed Feb  9 11:25:58 2005
++++ 0.2.6_5/libPMGR/src/PMGRrInitialize.c	Sun Feb 13 07:58:29 2005
+@@ -24,7 +24,6 @@
+ 
+ int	PMGRrInitialize( structProperty* property, int argc, char** argv )
+ {
+-	char	id[]		= "PMGRrInitialize";
+ 	char*	commandLineKey	= NULL;
+ 	int	errorCode	= 0;
+ 	int	idx		= 0;	
+diff -bBdruN --exclude=.svn --exclude=.private --exclude=PRIVATE --exclude=HTML --exclude=Makefile --exclude=Makefile.in --exclude=Makefile.am --exclude=STABLE-sysutils::Makefile --exclude=aclocal.m4 --exclude=configure --exclude=configure.ac libPMGR/src/PMGRrMakeDescribe.c 0.2.6_5/libPMGR/src/PMGRrMakeDescribe.c
+--- libPMGR/src/PMGRrMakeDescribe.c	Wed Feb  9 11:25:58 2005
++++ 0.2.6_5/libPMGR/src/PMGRrMakeDescribe.c	Sun Feb 13 11:23:33 2005
+@@ -196,10 +196,8 @@
+ 
+ 	/*zzzzzzzzzzzzzz*/
+ 	mallocIdx++;
+-	cacheRecord	= (char* )malloc( cacheRecordSize );
++	cacheRecord	= calloc( cacheRecordSize, 1 );
+ 	/*zzzzzzzzzzzzzz*/
+-
+-	cacheRecord[cacheRecordSize]	= 0;
+ 
+ 	while( idx < MGdbGetRecordQty( property->configDb ) )
+ 	{
+diff -bBdruN --exclude=.svn --exclude=.private --exclude=PRIVATE --exclude=HTML --exclude=Makefile --exclude=Makefile.in --exclude=Makefile.am --exclude=STABLE-sysutils::Makefile --exclude=aclocal.m4 --exclude=configure --exclude=configure.ac libPMGR/src/PMGRrReadConfigure.c 0.2.6_5/libPMGR/src/PMGRrReadConfigure.c
+--- libPMGR/src/PMGRrReadConfigure.c	Wed Feb  9 11:25:58 2005
++++ 0.2.6_5/libPMGR/src/PMGRrReadConfigure.c	Sun Feb 13 08:17:43 2005
+@@ -151,14 +151,15 @@
+ 			+ strlen( ";awk 'BEGIN{ FS = \"|\" } NF == 3 && $1 !~ /#/  && $1 !~ /CATEGORY\\/PORT/ && $2 !~ /#/ {print \"/\" $1 \"zzNULLzz\" $2 \"zzNULLzz\"}' " )
+ 			+ strlen( property->configConfFileName )
+ 			+ strlen( " >> " )
+-			+ strlen( property->configDbFileName );
++			+ strlen( property->configDbFileName )
++			+ 1;
+ 
+ 	/*zzzzzzzzzzzzzz*/
+ 	mallocIdx++;
+-	command		= (char*)malloc( stringSize );
++	command		= malloc( stringSize );
+ 	/*zzzzzzzzzzzzzz*/
+ 	command[0]	= 0;
+-	strcpy( command, "echo \"" );
++	strcat( command, "echo \"" );
+ 	strcat( command, property->fieldKey );
+ 	strcat( command, "zzNULLzz" );
+ 	strcat( command, property->fieldValue );	
+@@ -179,7 +180,7 @@
+ 
+ 	/*zzzzzzzzzzzzzz*/
+ 	mallocIdx++;
+-	buffer			= (char*)malloc(configDbFileSize);
++	buffer			= malloc( configDbFileSize + 1 );
+ 	/*zzzzzzzzzzzzzz*/
+ 
+ 	/*zzzzzzzzzzzzzz*/
+@@ -200,7 +201,7 @@
+ 		nullBase	= strstr( buffer + bufferIdx,  "zzNULLzz" );
+ 		nullBase[0]	= 0;
+ 		nullBase[1]	= 0;
+-		strcpy( nullBase+1, nullBase+8 );
++		strcat( nullBase+1, nullBase+8 );
+ 		bufferIdx	= (nullBase+1) - buffer;
+ 		configDbFileSize	-= 7;
+ 	}
+diff -bBdruN --exclude=.svn --exclude=.private --exclude=PRIVATE --exclude=HTML --exclude=Makefile --exclude=Makefile.in --exclude=Makefile.am --exclude=STABLE-sysutils::Makefile --exclude=aclocal.m4 --exclude=configure --exclude=configure.ac libPMGR/src/PMGRrStatus.c 0.2.6_5/libPMGR/src/PMGRrStatus.c
+--- libPMGR/src/PMGRrStatus.c	Wed Feb  9 11:25:58 2005
++++ 0.2.6_5/libPMGR/src/PMGRrStatus.c	Mon Feb 14 09:16:58 2005
+@@ -47,6 +47,7 @@
+ 	fprintf( stdout,"%s\n", SINGLE_LINES );
+ 	fprintf( stdout,"%s %s info: Creating inital data bases\n", id, VERSION );
+ 	fprintf( stdout,"%s\n", SINGLE_LINES );
++	while( fflush( stdout ) );
+ 
+ 	errorCode		= PMGRrDbCreate(property);	/* create/open initial databases */
+ 	if(errorCode)
+@@ -58,6 +59,8 @@
+ 	fprintf( stdout,"%s %s info: looking for missing dependent ports\n", id, VERSION );
+ 	fprintf( stdout,"%s\n", SINGLE_LINES );
+ 
++	while( fflush( stdout ) );
++
+ 	errorCode		= PMGRrMissingDependencies( property );
+ 	if(errorCode)
+ 	{
+@@ -68,6 +71,8 @@
+ 	fprintf( stdout,"%s %s info: looking for old installed ports\n", id, VERSION );
+ 	fprintf( stdout,"%s\n", SINGLE_LINES );
+ 
++	while( fflush( stdout ) );
++
+ 	/* compare installedPortsDb records to "make describe" of each installed port  */
+ 	/* remove ports that no longer have a Makefile (deleted by CVSand in /usr/ports/MOVED hopefully ) */
+ 	/* add ports whose installedPortsDb names do not match their "make describe" name to outOfDatePortsDb */
+@@ -100,6 +105,9 @@
+ 				"%s is no longer in the ports collection, see /usr/ports/MOVED\nis it OK to remove %s from your system? [y/n]\n",
+ 				installedPortDir, installedPortName );
+ 			answer	= getc(stdin);
++
++			while( fflush( stdout ) );
++
+ 			if( answer != 89 && answer != 121 )
+ 			{
+ 				fprintf( stdout, "answer	= %d\n", answer );
+@@ -122,6 +130,7 @@
+ 			property->installedPortsDb	= MGdbDelete( property->installedPortsDb, IDX_installedPortsDb );
+ 			QTY_installedPortsDb	= MGdbGetRecordQty( property->installedPortsDb );
+ 			IDX_installedPortsDb	= 1;
++			while( fflush( stdout ) );
+ 			continue;
+ 		}
+ 
+@@ -135,11 +144,14 @@
+ 		{
+ 			fprintf( stdout,"have:%-25s status: OLD available:%-25s %-25s\n",
+ 				installedPortName, available, installedPortDir );
++			while( fflush( stdout ) );
++
+ 			MGdbAdd( property->outOfDatePortsDb, installedPortDir, installedPortName, "OLD", available, NULL );
+ 			IDX_installedPortsDb++;
+ 			continue;
+ 		}		
+ 		fprintf( stdout,"have:%-25s status: CURRENT: %-25s\n", installedPortName, installedPortDir );
++		while( fflush( stdout ) );
+ 		IDX_installedPortsDb++;
+ 	}
+ 
+@@ -147,12 +159,14 @@
+ 	fprintf( stdout,"%s\n", SINGLE_LINES );
+ 	fprintf( stdout,"%s %s info: looking for installed ports built with old dependencies\n", id, VERSION );
+ 	fprintf( stdout,"%s\n", SINGLE_LINES );
++	while( fflush( stdout ) );
+ 	/****************************************************************************/
+ 	/* add any DependencyDir == installedDir && dependencyName != installedName */
+ 	/* to outOfDatePortsDb                                                      */
+ 	/****************************************************************************/
+ 	IDX_dependencyPortsDb	= 1;
+ 	fprintf( stdout,"%s\n", SINGLE_LINES );
++	while( fflush( stdout ) );
+ 	QTY_dependencyPortsDb	= MGdbGetRecordQty( property->dependencyPortsDb);
+ 	while( IDX_dependencyPortsDb < QTY_dependencyPortsDb )
+ 	{
+@@ -220,6 +234,7 @@
+ 
+ 						MGdbAdd( property->outOfDatePortsDb, oldPortDir, oldPortName,
+ 							"OLD dependency", dependencyPortName, NULL );
++						while( fflush( stdout ) );
+ 					}
+ 				}
+ 			}
+@@ -229,10 +244,13 @@
+ 	fprintf( stdout,"%s\n", SINGLE_LINES );
+ 	fprintf( stdout,"status report finished\n" ); 
+ 	fprintf( stdout,"%s\n", DOUBLE_LINES );
++	while( fflush( stdout ) );
++
+ 	if( fopenIdx || mallocIdx != 0)
+ 	{
+ 		fprintf( stdout, "%s error: fopenIdx = %d mallocIdx = %d\n",
+ 			id, fopenIdx, mallocIdx );
++		while( fflush( stdout ) );
+ 		assert(0);
+ 	}
+ 	PMGRrDbDestroy( property );
+diff -bBdruN --exclude=.svn --exclude=.private --exclude=PRIVATE --exclude=HTML --exclude=Makefile --exclude=Makefile.in --exclude=Makefile.am --exclude=STABLE-sysutils::Makefile --exclude=aclocal.m4 --exclude=configure --exclude=configure.ac libPMGR/src/PMGRrUpgrade.c 0.2.6_5/libPMGR/src/PMGRrUpgrade.c
+--- libPMGR/src/PMGRrUpgrade.c	Fri Feb 11 03:44:54 2005
++++ 0.2.6_5/libPMGR/src/PMGRrUpgrade.c	Mon Feb 14 09:23:31 2005
+@@ -69,6 +69,7 @@
+ 		if( QTY_outOfDatePortsDb < 2 )
+ 		{
+ 			fprintf( stdout, "%s %s INFO: all ports are up to date\n", id, VERSION );
++			while( fflush( stdout ) );
+ 			return(0);
+ 		}
+ 
+@@ -86,7 +87,7 @@
+ 			fprintf(stdout,	"portmanager just updated itself, executing: portmanager -u \n");
+ 			fprintf(stdout, "sorry:automatic restart is broken for now, restart manually please\n" );
+ 			fprintf(stdout, "%s\n", SINGLE_LINES);
+-			fflush(stdout);
++			while( fflush( stdout ) );
+ 			
+ 			/********************************/
+ 			/* reconstruct the command line */
+@@ -147,6 +148,7 @@
+ 				IDX_commandLineDb++;
+ 			}
+ 			fprintf( stdout, "executing: %s\n", command );
++			while( fflush( stdout ) );
+ 			system( command );
+ 			exit(1);
+ 		}
+@@ -208,6 +210,7 @@
+ 				fprintf( stdout, "%s %s info: ignoring %s, reason: %s\n",
+ 					id, VERSION, oldPortName, ignoreReason );
+ 				IDX_outOfDatePortsDb++;
++				while( fflush( stdout ) );
+ 				continue;
+ 			}	
+ 			if( !strcmp( oldPortName, "portmanager" ) )
+@@ -237,6 +240,7 @@
+ 					fprintf( stdout,
+ 					 "%s %s WARNING: This is the second time %s is being built,\none more attempt and it will be marked as ignore.\n\n",
+ 					id, VERSION, oldPortName );
++					while( fflush( stdout ) );
+ 						
+ 					property->strikesDb = MGdbDelete( property->strikesDb, 
+ 									MGdbGetRecno( property->strikesDb ) - 1 );
+@@ -263,6 +267,7 @@
+ 						fprintf( stderr,
+ 							"%s not found in dependencyPortsDb property->fieldChildPortName\n",
+ 							oldPortName );
++						while( fflush( stdout ) );
+ 						assert(0);
+ 					}
+ printf( "%s %s DEBUG: get looping port's +CONTENTS file dependency name = %s\n", id, VERSION, dependencyPortName );									
+@@ -287,13 +292,16 @@
+ 						fprintf( stderr,
+ 							"%s not found in installedPortsDb property->fieldInstalledPortName\n",
+ 							dependencyPortName );
+-						assert(0);
++						while( fflush( stdout ) );
++						break;
++						/* assert(0); */
+ 					}
+ 
+ printf( "%s %s DEBUG: get looping port's +CONTENTS file dependency actual point of ORIGIN dir = %s\n",
+ 	id, VERSION, origDir );
+ 
+ 					fprintf( stdout, "analysing problem:\n" );
++					while( fflush( stdout ) );
+ 					while( dependencyPortName )
+ 					{
+ 						fprintf( stdout,
+@@ -302,7 +310,7 @@
+ 
+ 						fprintf( stdout, "\tin %s/+CONTENTS ORIG dir = %s \n\n",
+ 								dependencyPortName, origDir );
+-
++						while( fflush( stdout ) );
+ 						dependencyPortName	= MGdbSeek( property->dependencyPortsDb,
+ 										property->fieldChildPortName,
+ 										oldPortName,
+@@ -328,10 +336,12 @@
+ 								fprintf( stderr, 
+ 									"%s is not located in property->installedPortsDb!\n",
+ 									dependencyPortName );
++								while( fflush( stdout ) );
+ 								continue;
+ 							}
+ 							fprintf( stdout, "\tin %s/+CONTENTS ORIG dir = %s \n\n",
+ 								dependencyPortName, origDir );
++							while( fflush( stdout ) );
+ 							if( strcmp( dependencyPortDir, origDir ) )
+ 							{
+ 								fprintf( stdout, "%s\n", SINGLE_LINES );
+@@ -351,6 +361,7 @@
+ 								fprintf( stdout, 
+ 									"\twill try to fix by doing the following:\n\n" );
+ 								fprintf( stdout, "\t%s\n\n", command );
++								while( fflush( stdout ) );
+ 								system( command );
+ 								free(command);
+ 
+@@ -371,6 +382,7 @@
+ 								system( command );
+ 								free(command);
+ 								fprintf( stdout, "%s\n", SINGLE_LINES );
++								while( fflush( stdout ) );
+ 							}
+ 						}
+ 					}
+@@ -411,6 +423,7 @@
+ 		fprintf( stdout, "%s\n", SINGLE_LINES );
+ 		fprintf(stdout, "update of ports collection complete with either some errors, ignored ports or both\n" );
+ 		fprintf( stdout, "%s\n", DOUBLE_LINES );
++		while( fflush( stdout ) );
+ 		exit(0); 
+ 	}
+ 	return(0);
+@@ -438,6 +451,7 @@
+ 		{
+ 			fprintf( stdout, "%s %s skip: %s has a dependency %s that needs to be updated first\n",
+ 				id, VERSION, oldPortName, dependencyPortName );
++			while( fflush( stdout ) );
+ 			skip=1;
+ 			return(skip);
+ 		}
+diff -bBdruN --exclude=.svn --exclude=.private --exclude=PRIVATE --exclude=HTML --exclude=Makefile --exclude=Makefile.in --exclude=Makefile.am --exclude=STABLE-sysutils::Makefile --exclude=aclocal.m4 --exclude=configure --exclude=configure.ac portmanager/portmanager.c 0.2.6_5/portmanager/portmanager.c
+--- portmanager/portmanager.c	Fri Feb 11 04:06:15 2005
++++ 0.2.6_5/portmanager/portmanager.c	Sun Feb 13 09:30:49 2005
+@@ -32,8 +32,16 @@
+ 
+ int	rPkgAdd( char* port );
+ void	rHelp( char* id );
++int	portmanager( int argc, char** argv );
++
+ int	main( int argc, char** argv )
+ {
++	portmanager( argc, (char**)argv );
++	exit(0);
++}
++
++int	portmanager( int argc, char** argv )
++{
+ 	char	h[]		= "-h";
+ 	char	help[]		= "--help";
+ 	char	id[]		= "portmanager";
+@@ -47,8 +55,6 @@
+ 	char	upgrade[]	= "--upgrade";
+ 	char	v[]		= "-v";
+ 	char	version[]	= "--version";
+-	char*	buffer		= NULL;
+-	char*	bufferIdx	= NULL;
+ 	char*	command		= NULL;
+ 	char	ignorePortDir[80];
+ 	int	errorCode	= 0;
+@@ -180,10 +186,11 @@
+ 		if( !strcmp( argv[idx], upgrade ) || !strcmp( argv[idx], u ) )
+ 		{
+ 			stringSize	= strlen( "rm -f " )
+-					+ strlen( property.cacheDbFileName );
+-			command		= (char*)malloc( stringSize );
++					+ strlen( property.cacheDbFileName )
++					+ 1;
++			command		= malloc( stringSize );
+ 			command[0]	= 0;
+-			strcpy( command, "rm -f " );
++			strcat( command, "rm -f " );
+ 			strcat( command, property.cacheDbFileName );
+ 			fprintf( stdout, "%s %s info: executing %s\n", id, VERSION, command );
+ 			system( command );
