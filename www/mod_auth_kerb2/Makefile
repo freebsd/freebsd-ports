@@ -29,12 +29,10 @@ USE_APACHE=	yes
 WRKSRC=		${WRKDIR}/src/modules/kerberos
 
 KRB5_HOME?=	${LOCALBASE}
+USE_REINPLACE=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502000
-BROKEN=		"Does not compile"
-.endif
+post-patch:
+	@${REINPLACE_CMD} '379N;s/\n/ /' ${WRKSRC}/mod_auth_kerb.c
 
 do-build:
 	cd ${WRKSRC} && \
@@ -49,4 +47,4 @@ do-build:
 do-install:
 	${APXS} -i -A -n ${PORTNAME:S/mod_//g} ${WRKSRC}/${PORTNAME}.so
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
