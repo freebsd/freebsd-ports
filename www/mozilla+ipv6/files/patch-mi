@@ -1,5 +1,7 @@
---- nsprpub/config/FreeBSD.mk.orig	Wed Oct 20 14:19:53 1999
-+++ nsprpub/config/FreeBSD.mk	Thu Feb  3 03:48:20 2000
+Index: nsprpub/config/FreeBSD.mk
+diff -u nsprpub/config/FreeBSD.mk.orig nsprpub/config/FreeBSD.mk
+--- nsprpub/config/FreeBSD.mk.orig	Thu Oct 21 06:19:53 1999
++++ nsprpub/config/FreeBSD.mk	Fri Apr 28 21:01:01 2000
 @@ -21,14 +21,16 @@
  
  include $(MOD_DEPTH)/config/UNIX.mk
@@ -20,3 +22,20 @@
  CPU_ARCH		= x86
  endif
  CPU_ARCH_TAG		= _$(CPU_ARCH)
+@@ -61,3 +63,16 @@
+ MKSHLIB			= $(LD) $(DSO_LDOPTS)
+ 
+ G++INCLUDES		= -I/usr/include/g++
++
++# IPv6 support part of the standard FreeBSD 4.0 release.
++ifneq (,$(filter-out 2.0 2.1 2.2 3,$(basename $(OS_RELEASE))))
++USE_IPV6		= 1
++endif
++
++# IPv6 support part of the KAME.
++ifeq ($(shell test -f /usr/local/v6/lib/libinet6.a && echo kame),kame)
++USE_IPV6		= 1
++OS_LIBS			+= -L/usr/local/v6/lib -linet6
++endif
++
++OS_LIBS			+= -lxpg4
