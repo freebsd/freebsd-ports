@@ -1,0 +1,10 @@
+bin/webtidy
+%%SITE_PERL%%/%%PERL_ARCH%%/HTML/Tidy.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/HTML/Tidy/Message.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Tidy/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Tidy/Tidy.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Tidy/Tidy.so
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Tidy
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML 2>/dev/null || true
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/HTML/Tidy
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/HTML 2>/dev/null || true
