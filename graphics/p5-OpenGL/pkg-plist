@@ -1,0 +1,6 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/OpenGL/OpenGL.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/OpenGL/OpenGL.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/OpenGL/autosplit.ix
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/OpenGL/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenGL.pm
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/OpenGL
