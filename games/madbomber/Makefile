@@ -1,5 +1,5 @@
 # New ports collection makefile for:	madbomber
-# Date created:				13 May 1998
+# Date created:				28 September 2000
 # Whom:					Maxim Sobolev <sobomax@FreeBSD.org>
 #
 # $FreeBSD$
