@@ -10,7 +10,7 @@ name="xbms"
 case "$1" in
 	start)
 		echo -n " xbms"
-		if [ -f /usr/local/etc/xbms.conf.sample ]; then
+		if [ -f /usr/local/etc/xbms.conf ]; then
 			/usr/local/bin/xbms
 		fi
 		;;
