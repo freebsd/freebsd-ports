@@ -117,6 +117,12 @@ else
       reason="depend object"; tag="dependobj"
     elif grep -q "error in dependency .*, exiting" $1; then
       reason="depend package"; tag="dependpkg"
+    elif grep -q "#error \"<malloc.h> has been replaced by <stdlib.h>\"" $1; then
+      reason="malloc.h"; tag="malloc.h"
+    elif grep -q "core dumped" $1; then
+      reason="coredump"; tag="coredump"
+    elif grep -q "Segmentation fault" $1; then
+      reason="segfault"; tag="segfault"
     else
       reason="???"; tag="unknown"
     fi
