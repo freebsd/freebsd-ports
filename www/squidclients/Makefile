@@ -3,7 +3,7 @@
 # Date created:		05 January 1999
 # Whom:			Dima Sivachenko
 #
-# $Id: Makefile,v 1.1.1.1 1999/01/28 23:35:37 billf Exp $
+# $Id: Makefile,v 1.2 1999/02/12 11:18:25 flathill Exp $
 #
 
 DISTNAME=	squidclients-1.6-freebsd.bin
@@ -21,9 +21,8 @@ EXTRACT_CMD=	${CP}
 EXTRACT_BEFORE_ARGS=
 EXTRACT_AFTER_ARGS=	.
 
-STRIP=
 do-install:
-		@ ${INSTALL_PROGRAM} ${WRKDIR}/${DISTNAME} ${PREFIX}/bin/squidclients
+		@ ${INSTALL_SCRIPT} ${WRKDIR}/${DISTNAME} ${PREFIX}/bin/squidclients
 
 post-install:
 		@ ${CAT} ${PKGDIR}/MESSAGE
