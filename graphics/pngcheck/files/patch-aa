@@ -1,0 +1,21 @@
+--- Makefile.unx	Thu Nov 18 22:39:03 1999
++++ Makefile.unx.new	Tue Jul  4 01:47:15 2000
+@@ -23,13 +23,13 @@
+ #ZLIB = -L$(ZPATH) -lz
+ ZLIB = $(ZPATH)/libz.a
+ 
+-INCS = $(ZINC)
+-LIBS = $(ZLIB)
++INCS =
++LIBS = -lz
+ 
+-CC = gcc
+-LD = gcc
++CC ?= gcc
++LD ?= $(CC)
+ RM = rm
+-CFLAGS = -O3 -Wall $(INCS) -DUSE_ZLIB
++CFLAGS += -Wall $(INCS) -DUSE_ZLIB
+ # [note that -Wall is a gcc-specific compilation flag ("all warnings on")]
+ O = .o
+ E =
