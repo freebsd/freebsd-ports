@@ -1,6 +1,6 @@
 # New ports collection makefile for:	atlas
 # Date created:		12 February 2001
-# Whom:			Nakata Maho <chat95@mbox.kyoto-inet.or.jp>
+# Whom:			Nakata Maho <maho@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -9,15 +9,14 @@
 #       Program and compiler flags are finetuned to gcc 2.95/3.1.
 
 PORTNAME=	atlas
-PORTVERSION=	3.4.1
-PORTREVISION=	1
+PORTVERSION=	3.5.1
 CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	math-atlas
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
-MAINTAINER=	chat95@mbox.kyoto-inet.or.jp
-COMMENT=	Automatically Tuned Linear Algebra Software (ATLAS)
+MAINTAINER=	maho@FreeBSD.org
+COMMENT=        Automatically Tuned Linear Algebra Software (ATLAS)
 
 LIB_DEPENDS=    lapack:${PORTSDIR}/math/lapack
 
