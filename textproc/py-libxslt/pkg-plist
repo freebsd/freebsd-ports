@@ -1,0 +1,14 @@
+lib/%%PYTHON_VERSION%%/site-packages/libxslt.py
+lib/%%PYTHON_VERSION%%/site-packages/libxslt.pyc
+lib/%%PYTHON_VERSION%%/site-packages/libxslt.pyo
+lib/%%PYTHON_VERSION%%/site-packages/libxsltmod.so
+%%DOCSDIR%%/TODO
+%%EXAMPLESDIR%%/basic.py
+%%EXAMPLESDIR%%/exslt.py
+%%EXAMPLESDIR%%/extelem.py
+%%EXAMPLESDIR%%/extfunc.py
+%%EXAMPLESDIR%%/pyxsltproc.py
+%%EXAMPLESDIR%%/test.xml
+%%EXAMPLESDIR%%/test.xsl
+@dirrm %%EXAMPLESDIR%%
+@dirrm %%DOCSDIR%%
