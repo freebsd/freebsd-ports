@@ -8,7 +8,7 @@
 PORTNAME=	neXtaw
 PORTVERSION=	0.9
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	http://siag.nu/neXtaw/
+MASTER_SITES=	http://siag.nu/pub/neXtaw/
 
 MAINTAINER=	tg@FreeBSD.org
 COMMENT=	Athena Widgets with N*XTSTEP appearance
