@@ -1,0 +1,4 @@
+lib/X11/enlightenment/im_palette.pal
+lib/X11/enlightenment/imrc
+lib/libIm.a
+lib/libIm.so.1.0
