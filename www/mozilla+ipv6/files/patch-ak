@@ -17,16 +17,15 @@
  #if !defined(_PR_PTHREADS)
  /*
   * libc_r doesn't have poll().  Although libc has poll(), it is not
-@@ -61,6 +62,12 @@
+@@ -61,6 +62,11 @@
  #endif
  #define _PR_HAVE_SYSV_SEMAPHORES
  #define PR_HAVE_SYSV_NAMED_SHARED_MEMORY
 +
-+#ifdef _PR_INET6
++#define _PR_INET6
 +#define _PR_HAVE_GETIPNODEBYNAME
 +#define _PR_HAVE_GETIPNODEBYADDR
 +#define _PR_INET6_PROBE
-+#endif
  
  #define USE_SETJMP
  
