@@ -60,6 +60,7 @@ PLIST_SUB+=             NETATALKCNID="@comment "
 .endif
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+USE_PERL5=	yes
 FILES=		AppleVolumes.default AppleVolumes.system afpd.conf \
 		atalkd.conf papd.conf
 LINKS=		unbin unhex unsingle hqx2bin single2bin macbinary \
