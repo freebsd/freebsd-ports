@@ -19,7 +19,7 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
 MAINTAINER=	ale@FreeBSD.org
 COMMENT?=	A GnuPG extension for the Mozilla mail client
 
-EXTRACT_DEPENDS?=	${LOCAL_SRCDIR}/work/mozilla/Makefile:${LOCAL_SRCDIR}:configure
+EXTRACT_DEPENDS?=	${WRKDIRPREFIX}${LOCAL_SRCDIR}/work/mozilla/Makefile:${LOCAL_SRCDIR}:configure
 RUN_DEPENDS?=	mozilla:${LOCAL_SRCDIR}
 
 USE_X_PREFIX=	yes
@@ -38,7 +38,7 @@ PLIST_SUB=	LOCAL_SUBDIR=${LOCAL_SUBDIR}
 do-extract:
 	@${RM} -rf ${WRKDIR}
 	@${MKDIR} ${WRKDIR}
-	@${CP} -R ${LOCAL_SRCDIR}/work/mozilla ${WRKSRC}
+	@${CP} -R ${WRKDIRPREFIX}${LOCAL_SRCDIR}/work/mozilla ${WRKSRC}
 	@for file in ${EXTRACT_ONLY}; do \
 		cd ${WRKSRC}/extensions && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/$$file ${EXTRACT_AFTER_ARGS}; \
 	done
