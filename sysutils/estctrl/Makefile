@@ -26,6 +26,12 @@ PLIST_FILES=	sbin/estctrl		\
 
 MAKE_ENV=	BINDIR=${PREFIX}/sbin
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} > 600015
+IGNORE=		"estctrl now contained in the base system (see powerd(8))"
+.endif
+
 post-extract:
 	${SED}	${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/}	\
 		${FILESDIR}/estctrl.sh > ${WRKDIR}/estctrl.sh
@@ -34,4 +40,4 @@ post-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/estctrl.sh ${PREFIX}/etc/rc.d/estctrl.sh
 	${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

@@ -23,6 +23,12 @@ RC_SCRIPTS_SUB=	PREFIX=${PREFIX} RC_SUBR=${RC_SUBR}
 PLIST_FILES=	modules/est.ko			\
 		etc/rc.d/est.sh
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} > 600015
+IGNORE=		"est now contained in the base system (see cpufreq(4))"
+.endif
+
 post-extract:
 	${SED}	${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/}	\
 		${FILESDIR}/est.sh > ${WRKDIR}/est.sh
@@ -34,4 +40,4 @@ post-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/est.sh ${PREFIX}/etc/rc.d/est.sh
 	${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
