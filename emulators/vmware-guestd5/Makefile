@@ -24,8 +24,8 @@ NO_BUILD=	yes
 
 RESTRICTED=	"Not sure if we can redistribute this."
 
-VMWARE_VER=	3.0.0
-BUILD_VER=	1455
+VMWARE_VER=	3.1.1
+BUILD_VER=	1790
 
 MOUNT_DEV?=	/dev/acd0c
 MOUNT_PT?=	/mnt
