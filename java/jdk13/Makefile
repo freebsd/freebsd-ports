@@ -128,8 +128,8 @@ HOTSPOT_BUILD=	../ext/plugin/build/solaris/GNUmakefile \
 .endif
 
 .if ${OSVERSION} < 460101 || ( ${OSVERSION} >= 500000 && ${OSVERSION} < 500038 )
-BUILD_DEPENDS+=	gtar:${PORTSDIR}/archivers/gtar
-TAR=		gtar	# Necessary for proper extraction of sources
+EXTRACT_DEPENDS+=	gtar:${PORTSDIR}/archivers/gtar
+TAR=			gtar	# Necessary for proper extraction of sources
 .endif
 
 # Check for patchset
