@@ -7,36 +7,44 @@
 
 PORTNAME=	sane-frontends
 PORTVERSION=	1.0.4
+PORTREVISION=	1
 CATEGORIES=	graphics
-MASTER_SITES=	${MASTER_SITE_SUNSITE} \
-		ftp://ftp.mostang.com/pub/sane/
-MASTER_SITE_SUBDIR=	apps/graphics/capture
+MASTER_SITES=	ftp://ftp.mostang.com/pub/sane/ \
+		ftp://ftp.de.mostang.com/pub/sane/ \
+		ftp://ftp.no.mostang.com/pub/sane/
 
 MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	sane.1:${PORTSDIR}/graphics/sane-backends
 
-USE_GMAKE=	yes
+PKGMESSAGE=	${WRKDIR}/pkg-message
+
 USE_GTK=	yes
+USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 
+MAN1=		xcam.1 xscanimage.1
+
 .if defined(WITH_GIMP)
-LIB_DEPENDS+=	gimp.1:${PORTSDIR}/graphics/gimp1
+LIB_DEPENDS+=	gimp:${PORTSDIR}/graphics/gimp1
 CONFIGURE_ARGS+=	--enable-gimp
 .else
 CONFIGURE_ARGS+=	--disable-gimp
 .endif
 
-MAN1=	xcam.1 xscanimage.1
-
-pre-configure:
+pre-everything:
 .if !defined(WITH_GIMP)
 	@${ECHO_MSG} "*** Note: xscanimage can be built with a standalone"
 	@${ECHO_MSG} "*** X scanner interface as well as a GIMP plug-in."
 	@${ECHO_MSG} "*** If you wish to do this, hit Ctrl-C now and use"
 	@${ECHO_MSG} "*** \"WITH_GIMP=yes\""
 .endif
+
+post-patch:
+	@${SED} -e 's:%%PREFIX%%:${PREFIX}:' -e 's:%%X11BASE%%:${X11BASE}:' \
+		${PKGDIR}/pkg-message > ${PKGMESSAGE}
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
