@@ -229,6 +229,7 @@
     SUBDIR += timidity++-tcltk
     SUBDIR += timidity++-xaw
     SUBDIR += timidity++-xskin
+    SUBDIR += toolame
     SUBDIR += tosha
     SUBDIR += tracker
     SUBDIR += umix
