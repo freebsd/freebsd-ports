@@ -1,5 +1,5 @@
 @cd /usr/local
-@mode u+rw,a+r
+@mode 644
 man/man6/jetpack.6
 lib/jetpack/jetpack.lev000
 @owner bin
