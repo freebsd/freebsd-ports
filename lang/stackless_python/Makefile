@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	python
-PORTVERSION=	2.2.1
+PORTVERSION=	2.2.2
 PORTREVISION=	${CVSDATE}0
 CATEGORIES=	lang python
 MASTER_SITES=	#
@@ -21,7 +21,7 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	perky@FreeBSD.org
 
 ONLY_FOR_ARCHS=	i386 powerpc
-CVSDATE=	020918
+CVSDATE=	021026
 MASTERDIR=	${.CURDIR}/../../lang/python
 
 COMMENT=	${.CURDIR}/pkg-comment
@@ -31,7 +31,8 @@ PLIST=		${WRKDIR}/pkg-plist
 
 post-patch:
 	@${FIND} ${WRKSRC} -name '*.orig' -exec ${RM} -f {} \;
-	@${RM} -rf ${WRKSRC}/Demo/extend
+	@${RM} -rf ${WRKSRC}/Lib/test/output/test_atexit \
+			${WRKSRC}/Lib/test/output/test_minidom
 	@${ECHO} "lib/%%PYTHON_VERSION%%/lib-dynload/stackless.so" >${PLIST}
 	@${CAT} ${MASTERDIR}/pkg-plist >>${PLIST}
 
