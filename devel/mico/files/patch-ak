@@ -18,6 +18,6 @@
 +      CONF_SOEXE=so.1
 +    else
 +      CONF_SOEXT=so.1.0
-     fi
++    fi
      ;;
    *cygwin32*)
