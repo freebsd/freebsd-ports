@@ -23,7 +23,7 @@ NO_BUILD=	yes
 BINARY_NAME=	ed2k_urlslave
 
 post-extract:
-	@${GREP} '#' ${WRKSRC}/${BINARY_NAME} > ${WRKDIR}/README
+	@${GREP} '^#' ${WRKSRC}/${BINARY_NAME} | ${GREP} -v '/usr/bin/perl' > ${WRKDIR}/README
 
 post-patch:
 	@${PERL} -pi -e 's|/usr/bin/perl|${PERL}|' ${WRKSRC}/${BINARY_NAME}
@@ -35,5 +35,8 @@ do-install:
 	@${INSTALL_DATA} ${WRKDIR}/README ${PREFIX}/share/doc/${PORTNAME}${PKGNAMESUFFIX}
 .endif
 	@${INSTALL_SCRIPT} ${WRKSRC}/${BINARY_NAME} ${PREFIX}/bin
+
+post-install:
+	@${SED} -e 's|/usr/local/|${PREFIX}/|' ${PKGMESSAGE}
 
 .include <bsd.port.mk>
