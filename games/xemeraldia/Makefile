@@ -8,7 +8,7 @@
 PORTNAME=	xemeraldia
 PORTVERSION=	0.31
 CATEGORIES=	games
-MASTER_SITES=	http://www.rarf.riken.go.jp/archives/Linux/jg/JG-1.0/other-sources/jp/
+MASTER_SITES=	http://his.luky.org/ftp/mirrors/JG/JG-1.0/other-sources/jp/
 DISTNAME=	xemeraldia-0.3
 
 PATCH_SITES=	${MASTER_SITES}
