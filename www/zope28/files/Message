@@ -1,0 +1,57 @@
+
+Welcome to Zope.
+
+The basic installation process for FreeBSD now has been done. To have a
+quick look, cd to your Zope base directory (see below) and start Zope
+with:
+
+./start -w <web port> -f <ftp port>
+
+where <web port> is the port where to http-access Zope with your browser
+(try http://localhost:<web port>). It defaults to 80. <ftp-port> is the
+same thing for ftp (upload) access, it defaults to 21. Obviously, you will
+have to specify these if you already use these ports. The user/password
+pair for access to the management screens has been preset to
+zopemaster/test, respectively. 
+
+PLEASE NOTE that the above only is for a quick check only, BUT IT WILL
+LEAVE YOUR ZOPE PROCESS WIDE OPEN TO HACKING SINCE THERE'S NO SECURITY
+WHATSOEVER. Therefore, PLEASE do incorporate the suggested changes (see
+below) to your apache-SSL web server and only start Zope WITHOUT ANY open
+<web port> or <ftp port>. This can be done, also from the Zope base dir,
+by:
+
+./start -w '' -f '' -m '' -p <path to Zope.cgi>/Zope.cgi
+
+where <path to Zope.cgi> is the (full) path to where Zope.cgi lives (see
+below). There now also should be a file in ${PREFIX}/etc/rc.d/ (most
+probably /usr/local/etc/rc.d/) named zope.sh that does the startup for you
+after a reboot.
+
+Also, it might be a good idea now to change the password. You can do that
+with (again, in the Zope base directory):
+
+python zpasswd.py -u <username> -p <passwd> -e CLEARTEXT access
+
+The -e CLEARTEXT presently is *mandatory*, otherwise authentication
+through apache will not work.
+
+You will probably already have gone through Apache's ssl certificate
+generation process. If not, please do so now, if you don't already have a
+certificate. If only a few well known people will have access to your
+management screens, a self-signed one probably will suffice. Please refer
+to the Apache and the Apache-SSL documentation for further information. 
+Use a sufficiently "long" key. Don't forget the https://... when trying to
+access the management pages.
+
+Apache will communicate with Zope through the so-called persistent cgi
+interface (aka pcgi). There's links to more information on the Zope web
+site at http://www.zope.org. Also, this is the best (and only) source of
+help end information on Zope itself.
+
+Zope is Copyrighted (C) by Digital Creations. All rights reserved.
+Please thouroughly read the license (see below) before employing Zope.
+
+Good business,				Peter Cornelius. <pcc@gmx.net>
+
+Please remember these files and directories:
