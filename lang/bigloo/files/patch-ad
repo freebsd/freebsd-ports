@@ -1,0 +1,30 @@
+--- runtime/Clib/cdate.c.orig
++++ runtime/Clib/cdate.c
+@@ -22,7 +22,7 @@
+    date = GC_MALLOC_ATOMIC( BGL_DATE_SIZE );
+    date->date_t.header = MAKE_HEADER( DATE_TYPE, 0 );
+ 
+-   date->date_t.timezone = timezone;
++   date->date_t.timezone = tm->tm_gmtoff;
+       
+    date->date_t.sec = tm->tm_sec;
+    date->date_t.min = tm->tm_min;
+@@ -46,7 +46,7 @@
+ BGL_RUNTIME_DEF
+ obj_t
+ bgl_seconds_to_date( long sec ) {
+-   return tm_to_date( localtime( (time_t *)&sec ), &sec );
++   return tm_to_date( localtime( (time_t *)&sec ), (time_t *)&sec );
+ }
+ 
+ /*---------------------------------------------------------------------*/
+@@ -115,7 +115,7 @@
+    struct tm *t;
+    char *s;
+ 
+-   t = gmtime( &((time_t)sec) );
++   t = gmtime( (time_t *)&sec );
+    s = asctime( t );
+ 
+    return string_to_bstring_len( s, (int)strlen( s ) - 1 );
+
