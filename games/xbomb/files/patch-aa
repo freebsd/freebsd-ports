@@ -1,5 +1,5 @@
---- Makefile.orig	Sat Jan 20 15:02:46 1996
-+++ Makefile	Sun Sep 27 03:06:34 1998
+--- Makefile.orig	Sun Jan 21 06:02:46 1996
++++ Makefile	Tue Jan 18 00:00:00 2000
 @@ -12,33 +12,30 @@
  # for conditions under which this file may be redistributed.
  #
@@ -42,15 +42,21 @@
  xbomb.o   : xbomb.c   xbomb.h
  xwindow.o : xwindow.c xbomb.h icon.h
  hiscore.o : hiscore.c xbomb.h
-@@ -54,7 +51,7 @@
- 	strip xbomb
- 	install -d $(INSTDIR)/bin
- 	install -d $(INSTDIR)/man/man6
+@@ -51,10 +48,10 @@
+ ########
+ 
+ install :
+-	strip xbomb
+-	install -d $(INSTDIR)/bin
+-	install -d $(INSTDIR)/man/man6
 -	install -d $(INSTDIR)/lib/app-defaults
 -	install -m 755 xbomb $(INSTDIR)/bin
 -	install -m 644 xbomb.6 $(INSTDIR)/man/man6
 -	install -m 644 xbomb.ad $(INSTDIR)/lib/app-defaults/XBomb
-+	install -d $(INSTDIR)/lib/X11/app-defaults
++#	strip xbomb
++#	install -d $(INSTDIR)/bin
++#	install -d $(INSTDIR)/man/man6
++#	install -d $(INSTDIR)/lib/app-defaults
 +	${BSD_INSTALL_PROGRAM} xbomb $(INSTDIR)/bin
 +	${BSD_INSTALL_MAN} xbomb.6 $(INSTDIR)/man/man6
-+	${BSD_INSTALL_SCRIPT} xbomb.ad $(INSTDIR)/lib/X11/app-defaults/XBomb
++	${BSD_INSTALL_DATA} xbomb.ad $(INSTDIR)/lib/X11/app-defaults/XBomb
