@@ -27,7 +27,7 @@ post-build:
 	cd ${WRKSRC}; \
 		${MAKE} nxml-mode.info
 
-pre-install:
+pre-su-install:
 	@${MKDIR} ${NXML_LISPDIR}
 
 do-install:
