@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.mysql.com/Downloads/Contrib/ \
 
 MAINTAINER=	dirk@FreeBSD.org
 
-LIB_DEPENDS=	xforms.0:${PORTSDIR}/x11-toolkits/xforms \
+LIB_DEPENDS=	forms.0:${PORTSDIR}/x11-toolkits/xforms \
 		mysqlclient.10:${PORTSDIR}/databases/mysql323-client
 
 USE_X_PREFIX=	yes
