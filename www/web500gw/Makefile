@@ -16,7 +16,7 @@ MASTER_SITES=	ftp://ftp.tu-chemnitz.de/pub/Local/urz/web500gw/ \
 PATCH_SITES=	http://www.tu-chemnitz.de/~fri/web500gw/
 PATCHFILES=	modtmpl.patch
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	HTTP gateway to LDAP-based directories
 
 BROKEN=		"Depends on net/openldap12, which is no more"

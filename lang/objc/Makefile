@@ -11,7 +11,7 @@ CATEGORIES=	lang
 MASTER_SITES=	http://users.pandora.be/stes/
 DISTFILES=	objc-bootstrap-${PORTVERSION}.tar.gz objc-${PORTVERSION}.tar.gz
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Portable Object Compiler
 
 HAS_CONFIGURE=	yes

@@ -10,7 +10,7 @@ PORTVERSION=	0.1.0
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.mavetju.org/download/adopted/
 
-MAINTAINER=	ports@FreeBSD.Org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X app to list current users logged into the system
 
 GTK_CONFIG=${X11BASE}/bin/gtk12-config

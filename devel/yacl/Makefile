@@ -11,7 +11,7 @@ CATEGORIES=		devel
 MASTER_SITES=		ftp://ftp.cs.sc.edu/pub/yacl/
 DISTNAME=		yacl-0170-beta
 
-MAINTAINER=		ports@freebsd.org
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=	Portable programming library for C++
 
 NO_WRKSUBDIR=		yes
