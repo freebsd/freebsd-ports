@@ -8,7 +8,7 @@
 PORTNAME=	pstotext
 PORTVERSION=	1.8g
 CATEGORIES=	print
-MASTER_SITES=	http://www.research.digital.com/SRC/virtualpaper/cgi-bin/nph-download.tcl/pstotext.tar.Z?object=pstotext
+MASTER_SITES=	http://www.breuninger.org/files/distfiles/
 DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.tar.Z
 
