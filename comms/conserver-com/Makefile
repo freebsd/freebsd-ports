@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	conserver
-PORTVERSION=	7.2.7
+PORTVERSION=	8.0.4
 CATEGORIES=	comms
 MASTER_SITES=	ftp://ftp.conserver.com/conserver/
 PKGNAMESUFFIX=	-com
@@ -15,9 +15,9 @@ MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Application that allows multiple users to watch serial consoles
 
 GNU_CONFIGURE=	YES
-USE_REINPLACE=	yes
 CONFIGURE_ARGS=	--with-master=${DEFAULTHOST} --with-port=${DEFAULTPORT} \
 		--with-libwrap
+USE_RC_SUBR=	yes
 
 MAN1=	console.1
 MAN5=	conserver.cf.5 conserver.passwd.5
@@ -26,15 +26,13 @@ MAN8=	conserver.8
 DEFAULTPORT?=	782
 DEFAULTHOST?=	localhost
 
-.include <bsd.port.pre.mk>
+SED_SCRIPT=	-e 's,%%PREFIX%%,${PREFIX},g' \
+		-e 's,%%RC_SUBR%%,${RC_SUBR},g'
 
-.if ${ARCH} != "i386"
-CONFIGURE_ARGS+=--with-64bit
-.endif
+post-build:
+	${SED} ${SED_SCRIPT} ${FILESDIR}/conserver.sh >${WRKDIR}/conserver.sh
 
-post-patch:
-	${REINPLACE_CMD} \
-		-e 's@/usr/local/bin@${PREFIX}/sbin@' \
-		${WRKSRC}/conserver/conserver.rc.in
+post-install:
+	${INSTALL_SCRIPT} ${WRKDIR}/conserver.sh ${PREFIX}/etc/rc.d/conserver.sh
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
