@@ -26,6 +26,8 @@ COMMENT=	Japanese-English edict UTF-8 dictionaries
 
 BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 
+BROKEN=		Install fails
+
 USE_ICONV=	yes
 ICONV?=		iconv
 CONVERT_CMD=	${ICONV} -c -f EUC-JP -t UTF-8
