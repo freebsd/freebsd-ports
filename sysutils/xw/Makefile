@@ -10,7 +10,7 @@ PORTVERSION=	0.1.0
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.spot.org/pub/xw/
 
-MAINTAINER=	dan@BSDpro.com
+MAINTAINER=	ports@FreeBSD.Org
 
 GTK_CONFIG=${X11BASE}/bin/gtk12-config
 
