@@ -19,6 +19,7 @@ ONLY_FOR_ARCHS=	i386
 
 EXTRACT_ONLY=	${DISTNAME}.tgz
 USE_REINPLACE=	yes
+REINPLACE_ARGS=	# empty
 
 # With the help from pa@freebsd.ee.ntu.edu.tw
 # +0.92d use kc-fonts, whcih can be included in cdrom, instead of taipei-fonts.
@@ -31,7 +32,10 @@ USE_REINPLACE=	yes
 .include <bsd.port.pre.mk>
 post-patch:
 .if ${OSVERSION} > 500012
-	@${REINPLACE_CMD} -e 's,machine/console.h>,sys/consio.h>\n#include\t<sys/kbio.h>\n,' ${WRKSRC}/include/* ${WRKSRC}/src/*
+.for i in include/ksymdef.h src/term.c src/vc.c src/vga.c
+	@${REINPLACE_CMD} 's,machine/console.h>,sys/consio.h>@#include <sys/kbio.h>@,' ${WRKSRC}/${i} | tr '@' '\n' > ${WRKSRC}/${i}.bak && \
+	${MV} ${WRKSRC}/${i}.bak ${WRKSRC}/${i}
+.endfor
 .endif
 pre-install:
 	@if [ ! -f ${PREFIX}/lib/fonts/kc16.smf ]; then \
