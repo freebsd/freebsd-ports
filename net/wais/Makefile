@@ -16,7 +16,6 @@ MASTER_SITES=	ftp://ftp.cnidr.org/software/freewais/ \
 		ftp://ftp.gu.net/pub/unix/wais/ \
 		ftp://ftp.uni-stuttgart.de/pub/unix/comm/infosystems/wais/ \
 		ftp://ftp.cuhk.edu.hk/pub/unix/ \
-		ftp://ftp.ptb.de/pub/infosystems/ \
 		ftp://ftp.uni-koeln.de/net/inet/wais/freeWAIS-sf-old/ \
 		ftp://ftp.netsw.org/infosys/wais/freewais/
 
