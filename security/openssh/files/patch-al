@@ -21,7 +21,7 @@
 +#define HOST_CONFIG_FILE	"__PREFIX__/etc/ssh_config"
  
 -#define SSH_PROGRAM		"/usr/bin/ssh"
-+#define SSH_PROGRAM		"__PREFIX__/usr/bin/ssh"
++#define SSH_PROGRAM		"__PREFIX__/bin/ssh"
  
  /* The process id of the daemon listening for connections is saved
     here to make it easier to kill the correct daemon when necessary. */
