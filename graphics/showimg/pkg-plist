@@ -71,6 +71,33 @@ share/apps/showimg/pics/layout4.png
 share/apps/showimg/pics/logo.png
 share/apps/showimg/showimgui.rc
 share/apps/showimg/tips
+share/doc/HTML/da/showimg/but-back.png
+share/doc/HTML/da/showimg/but-copy.png
+share/doc/HTML/da/showimg/but-cut.png
+share/doc/HTML/da/showimg/but-forward.png
+share/doc/HTML/da/showimg/but-fullscreen.png
+share/doc/HTML/da/showimg/but-go_up.png
+share/doc/HTML/da/showimg/but-home.png
+share/doc/HTML/da/showimg/but-horizontal_flip.png
+share/doc/HTML/da/showimg/but-next_image.png
+share/doc/HTML/da/showimg/but-original_size.png
+share/doc/HTML/da/showimg/but-paste.png
+share/doc/HTML/da/showimg/but-previous_image.png
+share/doc/HTML/da/showimg/but-refresh.png
+share/doc/HTML/da/showimg/but-rotate_left.png
+share/doc/HTML/da/showimg/but-rotate_right.png
+share/doc/HTML/da/showimg/but-slide_show.png
+share/doc/HTML/da/showimg/but-stop.png
+share/doc/HTML/da/showimg/but-toggle_thumbnails.png
+share/doc/HTML/da/showimg/but-vertical_flip.png
+share/doc/HTML/da/showimg/but-zoom_in.png
+share/doc/HTML/da/showimg/but-zoom_out.png
+share/doc/HTML/da/showimg/but-zoom_to_fit.png
+share/doc/HTML/da/showimg/common
+share/doc/HTML/da/showimg/comparison.png
+share/doc/HTML/da/showimg/index.cache.bz2
+share/doc/HTML/da/showimg/index.docbook
+share/doc/HTML/da/showimg/main-window.png
 share/doc/HTML/de/showimg/but-back.png
 share/doc/HTML/de/showimg/but-copy.png
 share/doc/HTML/de/showimg/but-cut.png
@@ -93,7 +120,6 @@ share/doc/HTML/de/showimg/but-vertical_flip.png
 share/doc/HTML/de/showimg/but-zoom_in.png
 share/doc/HTML/de/showimg/but-zoom_out.png
 share/doc/HTML/de/showimg/but-zoom_to_fit.png
-share/doc/HTML/de/showimg/common
 share/doc/HTML/de/showimg/comparison.png
 share/doc/HTML/de/showimg/index.cache.bz2
 share/doc/HTML/de/showimg/index.docbook
@@ -105,43 +131,166 @@ share/doc/HTML/en/showimg/but-forward.png
 share/doc/HTML/en/showimg/but-fullscreen.png
 share/doc/HTML/en/showimg/but-go_up.png
 share/doc/HTML/en/showimg/but-home.png
-share/doc/HTML/en/showimg/but-horiz-flip.png
 share/doc/HTML/en/showimg/but-horizontal_flip.png
-share/doc/HTML/en/showimg/but-next-image.png
 share/doc/HTML/en/showimg/but-next_image.png
 share/doc/HTML/en/showimg/but-original_size.png
 share/doc/HTML/en/showimg/but-paste.png
-share/doc/HTML/en/showimg/but-prev-image.png
 share/doc/HTML/en/showimg/but-previous_image.png
 share/doc/HTML/en/showimg/but-refresh.png
-share/doc/HTML/en/showimg/but-reload.png
-share/doc/HTML/en/showimg/but-rotate-left.png
-share/doc/HTML/en/showimg/but-rotate-right.png
 share/doc/HTML/en/showimg/but-rotate_left.png
 share/doc/HTML/en/showimg/but-rotate_right.png
-share/doc/HTML/en/showimg/but-slide-show.png
 share/doc/HTML/en/showimg/but-slide_show.png
-share/doc/HTML/en/showimg/but-stop-thumbs.png
 share/doc/HTML/en/showimg/but-stop.png
-share/doc/HTML/en/showimg/but-toggle-thumbs.png
 share/doc/HTML/en/showimg/but-toggle_thumbnails.png
-share/doc/HTML/en/showimg/but-vert-flip.png
 share/doc/HTML/en/showimg/but-vertical_flip.png
-share/doc/HTML/en/showimg/but-zoom-fit-screen.png
-share/doc/HTML/en/showimg/but-zoom-in.png
-share/doc/HTML/en/showimg/but-zoom-original.png
-share/doc/HTML/en/showimg/but-zoom-out.png
 share/doc/HTML/en/showimg/but-zoom_in.png
 share/doc/HTML/en/showimg/but-zoom_out.png
 share/doc/HTML/en/showimg/but-zoom_to_fit.png
-share/doc/HTML/en/showimg/common
 share/doc/HTML/en/showimg/comparison.png
 share/doc/HTML/en/showimg/index.cache.bz2
 share/doc/HTML/en/showimg/index.docbook
 share/doc/HTML/en/showimg/main-window.png
+share/doc/HTML/es/showimg/but-back.png
+share/doc/HTML/es/showimg/but-copy.png
+share/doc/HTML/es/showimg/but-cut.png
+share/doc/HTML/es/showimg/but-forward.png
+share/doc/HTML/es/showimg/but-fullscreen.png
+share/doc/HTML/es/showimg/but-go_up.png
+share/doc/HTML/es/showimg/but-home.png
+share/doc/HTML/es/showimg/but-horizontal_flip.png
+share/doc/HTML/es/showimg/but-next_image.png
+share/doc/HTML/es/showimg/but-original_size.png
+share/doc/HTML/es/showimg/but-paste.png
+share/doc/HTML/es/showimg/but-previous_image.png
+share/doc/HTML/es/showimg/but-refresh.png
+share/doc/HTML/es/showimg/but-rotate_left.png
+share/doc/HTML/es/showimg/but-rotate_right.png
+share/doc/HTML/es/showimg/but-slide_show.png
+share/doc/HTML/es/showimg/but-stop.png
+share/doc/HTML/es/showimg/but-toggle_thumbnails.png
+share/doc/HTML/es/showimg/but-vertical_flip.png
+share/doc/HTML/es/showimg/but-zoom_in.png
+share/doc/HTML/es/showimg/but-zoom_out.png
+share/doc/HTML/es/showimg/but-zoom_to_fit.png
+share/doc/HTML/es/showimg/comparison.png
+share/doc/HTML/es/showimg/index.cache.bz2
+share/doc/HTML/es/showimg/index.docbook
+share/doc/HTML/es/showimg/main-window.png
+share/doc/HTML/et/showimg/but-back.png
+share/doc/HTML/et/showimg/but-copy.png
+share/doc/HTML/et/showimg/but-cut.png
+share/doc/HTML/et/showimg/but-forward.png
+share/doc/HTML/et/showimg/but-fullscreen.png
+share/doc/HTML/et/showimg/but-go_up.png
+share/doc/HTML/et/showimg/but-home.png
+share/doc/HTML/et/showimg/but-horizontal_flip.png
+share/doc/HTML/et/showimg/but-next_image.png
+share/doc/HTML/et/showimg/but-original_size.png
+share/doc/HTML/et/showimg/but-paste.png
+share/doc/HTML/et/showimg/but-previous_image.png
+share/doc/HTML/et/showimg/but-refresh.png
+share/doc/HTML/et/showimg/but-rotate_left.png
+share/doc/HTML/et/showimg/but-rotate_right.png
+share/doc/HTML/et/showimg/but-slide_show.png
+share/doc/HTML/et/showimg/but-stop.png
+share/doc/HTML/et/showimg/but-toggle_thumbnails.png
+share/doc/HTML/et/showimg/but-vertical_flip.png
+share/doc/HTML/et/showimg/but-zoom_in.png
+share/doc/HTML/et/showimg/but-zoom_out.png
+share/doc/HTML/et/showimg/but-zoom_to_fit.png
+share/doc/HTML/et/showimg/comparison.png
+share/doc/HTML/et/showimg/index.cache.bz2
+share/doc/HTML/et/showimg/index.docbook
+share/doc/HTML/et/showimg/main-window.png
+share/doc/HTML/fr/showimg/but-back.png
+share/doc/HTML/fr/showimg/but-copy.png
+share/doc/HTML/fr/showimg/but-cut.png
+share/doc/HTML/fr/showimg/but-forward.png
+share/doc/HTML/fr/showimg/but-fullscreen.png
+share/doc/HTML/fr/showimg/but-go_up.png
+share/doc/HTML/fr/showimg/but-home.png
+share/doc/HTML/fr/showimg/but-horizontal_flip.png
+share/doc/HTML/fr/showimg/but-next_image.png
+share/doc/HTML/fr/showimg/but-original_size.png
+share/doc/HTML/fr/showimg/but-paste.png
+share/doc/HTML/fr/showimg/but-previous_image.png
+share/doc/HTML/fr/showimg/but-refresh.png
+share/doc/HTML/fr/showimg/but-rotate_left.png
+share/doc/HTML/fr/showimg/but-rotate_right.png
+share/doc/HTML/fr/showimg/but-slide_show.png
+share/doc/HTML/fr/showimg/but-stop.png
+share/doc/HTML/fr/showimg/but-toggle_thumbnails.png
+share/doc/HTML/fr/showimg/but-vertical_flip.png
+share/doc/HTML/fr/showimg/but-zoom_in.png
+share/doc/HTML/fr/showimg/but-zoom_out.png
+share/doc/HTML/fr/showimg/but-zoom_to_fit.png
+share/doc/HTML/fr/showimg/comparison.png
+share/doc/HTML/fr/showimg/index.cache.bz2
+share/doc/HTML/fr/showimg/index.docbook
+share/doc/HTML/fr/showimg/main-window.png
+share/doc/HTML/it/showimg/but-back.png
+share/doc/HTML/it/showimg/but-copy.png
+share/doc/HTML/it/showimg/but-cut.png
+share/doc/HTML/it/showimg/but-forward.png
+share/doc/HTML/it/showimg/but-fullscreen.png
+share/doc/HTML/it/showimg/but-go_up.png
+share/doc/HTML/it/showimg/but-home.png
+share/doc/HTML/it/showimg/but-horizontal_flip.png
+share/doc/HTML/it/showimg/but-next_image.png
+share/doc/HTML/it/showimg/but-original_size.png
+share/doc/HTML/it/showimg/but-paste.png
+share/doc/HTML/it/showimg/but-previous_image.png
+share/doc/HTML/it/showimg/but-refresh.png
+share/doc/HTML/it/showimg/but-rotate_left.png
+share/doc/HTML/it/showimg/but-rotate_right.png
+share/doc/HTML/it/showimg/but-slide_show.png
+share/doc/HTML/it/showimg/but-stop.png
+share/doc/HTML/it/showimg/but-toggle_thumbnails.png
+share/doc/HTML/it/showimg/but-vertical_flip.png
+share/doc/HTML/it/showimg/but-zoom_in.png
+share/doc/HTML/it/showimg/but-zoom_out.png
+share/doc/HTML/it/showimg/but-zoom_to_fit.png
+share/doc/HTML/it/showimg/comparison.png
+share/doc/HTML/it/showimg/index.cache.bz2
+share/doc/HTML/it/showimg/index.docbook
+share/doc/HTML/it/showimg/main-window.png
+share/doc/HTML/sv/showimg/but-back.png
+share/doc/HTML/sv/showimg/but-copy.png
+share/doc/HTML/sv/showimg/but-cut.png
+share/doc/HTML/sv/showimg/but-forward.png
+share/doc/HTML/sv/showimg/but-fullscreen.png
+share/doc/HTML/sv/showimg/but-go_up.png
+share/doc/HTML/sv/showimg/but-home.png
+share/doc/HTML/sv/showimg/but-horizontal_flip.png
+share/doc/HTML/sv/showimg/but-next_image.png
+share/doc/HTML/sv/showimg/but-original_size.png
+share/doc/HTML/sv/showimg/but-paste.png
+share/doc/HTML/sv/showimg/but-previous_image.png
+share/doc/HTML/sv/showimg/but-refresh.png
+share/doc/HTML/sv/showimg/but-rotate_left.png
+share/doc/HTML/sv/showimg/but-rotate_right.png
+share/doc/HTML/sv/showimg/but-slide_show.png
+share/doc/HTML/sv/showimg/but-stop.png
+share/doc/HTML/sv/showimg/but-toggle_thumbnails.png
+share/doc/HTML/sv/showimg/but-vertical_flip.png
+share/doc/HTML/sv/showimg/but-zoom_in.png
+share/doc/HTML/sv/showimg/but-zoom_out.png
+share/doc/HTML/sv/showimg/but-zoom_to_fit.png
+share/doc/HTML/sv/showimg/comparison.png
+share/doc/HTML/sv/showimg/index.cache.bz2
+share/doc/HTML/sv/showimg/index.docbook
+share/doc/HTML/sv/showimg/main-window.png
+share/doc/HTML/de/showimg/common
+share/doc/HTML/en/showimg/common
+share/doc/HTML/es/showimg/common
+share/doc/HTML/et/showimg/common
+share/doc/HTML/fr/showimg/common
+share/doc/HTML/it/showimg/common
+share/doc/HTML/sv/showimg/common
 share/icons/hicolor/32x32/apps/showimg.png
 share/icons/hicolor/48x48/apps/showimg.png
 share/icons/hicolor/64x64/apps/showimg.png
+share/locale/cs/LC_MESSAGES/showimg.mo
 share/locale/da/LC_MESSAGES/showimg.mo
 share/locale/de/LC_MESSAGES/showimg.mo
 share/locale/en_GB/LC_MESSAGES/showimg.mo
@@ -175,8 +324,20 @@ share/mimelnk/image/x-sia.desktop
 @unexec rmdir %D/share/icons 2>/dev/null || true
 @dirrm share/doc/HTML/en/showimg
 @unexec rmdir %D/share/doc/HTML/en 2>/dev/null || true
+@dirrm share/doc/HTML/da/showimg
+@unexec rmdir %D/share/doc/HTML/da 2>/dev/null || true
 @dirrm share/doc/HTML/de/showimg
 @unexec rmdir %D/share/doc/HTML/de 2>/dev/null || true
+@dirrm share/doc/HTML/es/showimg
+@unexec rmdir %D/share/doc/HTML/es>/dev/null || true
+@dirrm share/doc/HTML/et/showimg
+@unexec rmdir %D/share/doc/HTML/et>/dev/null || true
+@dirrm share/doc/HTML/fr/showimg
+@unexec rmdir %D/share/doc/HTML/fr>/dev/null || true
+@dirrm share/doc/HTML/it/showimg
+@unexec rmdir %D/share/doc/HTML/it>/dev/null || true
+@dirrm share/doc/HTML/sv/showimg
+@unexec rmdir %D/share/doc/HTML/sv>/dev/null || true
 @unexec rmdir %D/share/doc/HTML 2>/dev/null || true
 @dirrm share/apps/showimg/pics
 @dirrm share/apps/showimg/icons/hicolor/64x64/mimetypes
