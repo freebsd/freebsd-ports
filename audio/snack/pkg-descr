@@ -1,0 +1,16 @@
+The Snack Sound Toolkit is designed to be used with a scripting language
+such as Tcl/Tk or Python. Using Snack you can create powerful multi-platform
+audio applications with just a few lines of code. Snack has commands for
+basic sound handling, e.g. sound card and disk I/O. Snack also has primitives
+for sound visualization, e.g. waveforms and spectrograms. It was developed
+mainly to handle digital recordings of speech, but is just as useful for
+general audio. Snack has also successfully been applied to other one-
+dimensional signals.
+
+The combination of Snack and a scripting language makes it possible to create
+sound tools and applications with a minimum of effort. This is due to the
+rapid development nature of scripting languages. As a bonus you get an
+application that is cross-platform from start. It is also easy to integrate
+Snack based applications with existing sound analysis software.
+
+WWW: http://www.speech.kth.se/snack/

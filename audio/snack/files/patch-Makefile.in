@@ -1,0 +1,15 @@
+--- Makefile.in.orig	Sat Nov 24 13:05:13 2001
++++ Makefile.in	Sat Nov 24 13:07:42 2001
+@@ -1,10 +1,10 @@
+ # The path to the tcl.h header file
+ 
+-TCL_INCPATH = @TCL_SRC_DIR@/generic
++TCL_INCPATH = %%LOCALBASE%%/include/tcl8.3/generic
+ 
+ # The path to the tk.h header file
+ 
+-TK_INCPATH  = @TK_SRC_DIR@/generic
++TK_INCPATH  = %%LOCALBASE%%/include/tk8.3/generic
+ 
+ # The path to the X11 include files
+ 
