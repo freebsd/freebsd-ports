@@ -345,11 +345,11 @@ Index: src/structs.h
 *** src/structs.h.orig	Wed Oct  6 00:56:14 2004
 --- src/structs.h	Mon Oct 18 20:23:13 2004
 ***************
-*** 606,611 ****
---- 606,616 ----
-  	int request_entities;
-  	int detect_broken_server_pconns;
-  	int balance_on_multiple_ip;
+*** 609,614 ****
+--- 609,619 ----
+  	int relaxed_header_parser;
+  	int accel_uses_host_header;
+  	int accel_no_pmtu_disc;
 + #if FOLLOW_X_FORWARDED_FOR
 + 	int acl_uses_indirect_client;
 + 	int delay_pool_uses_indirect_client;
