@@ -61,6 +61,7 @@ lib/%%PYTHON_VERSION%%/site-packages/TMDA/__init__.pyc
 %%PORTDOCS%%share/doc/tmda/htdocs/trouble.html
 share/tmda/confirm_accept.txt
 share/tmda/confirm_request.txt
+share/tmda/bounce.txt
 @dirrm share/tmda
 %%PORTDOCS%%@dirrm share/doc/tmda/contrib
 %%PORTDOCS%%@dirrm share/doc/tmda/htdocs
