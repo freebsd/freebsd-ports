@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	chicken
-PORTVERSION=	1.50
+PORTVERSION=	1.56
 CATEGORIES=	lang scheme
 MASTER_SITES=	http://www.call-with-current-continuation.org/
 
@@ -18,7 +18,7 @@ USE_LIBTOOL_VER=	15
 INSTALLS_SHLIB=	yes
 
 MAN1=		chicken-config.1 chicken-profile.1 chicken-setup.1 chicken.1 \
-		csc.1 csi.1 rcsi.1
+		csc.1 csi.1
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	FAQ.html format.txt README LICENSE chicken.html chicken.pdf
@@ -35,6 +35,8 @@ BROKEN=		"Coredump during build on amd64 and ia64"
 .if defined(WITH_PCRE)
 LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
+.else
+CONFIGURE_ENV+=	ac_cv_header_pcre_h=no
 .endif
 
 post-patch:
