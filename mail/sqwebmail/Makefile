@@ -39,6 +39,8 @@ IMAGEURL?=	${WEBDATASUBDIR}
 # set WITH_VCHKPW for vpopmail authentication
 # set WITH_ISPELL to provide spell-checking
 # set WITH_MIMETYPES to enable the search for a mime.types file
+# set WITH_TIMEOUTHARD to something other than 7200 seconds (2hr)
+# set WITH_TIMEOUTSOFT to something other than 1200 seconds (20m)
 # set VCHKPW to the home of the vpopmail user, if necessary
 #
 
@@ -115,6 +117,14 @@ CONFIGURE_ARGS+=	--without-ispell
 
 .if !defined(WITH_MIMETYPES)
 CONFIGURE_ARGS+=	--disable-mimetypes
+.endif
+
+.if defined(WITH_TIMEOUTHARD)
+CONFIGURE_ARGS+=	--enable-hardtimeout=${WITH_TIMEOUTHARD}
+.endif
+
+.if defined(WITH_TIMEOUTSOFT)
+CONFIGURE_ARGS+=	--enable-softtimeout=${WITH_TIMEOUTSOFT}
 .endif
 
 MANPREFIX=	${PREFIX}/share/sqwebmail
