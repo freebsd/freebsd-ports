@@ -19,7 +19,7 @@ lib/libsane-hpoj.so
 lib/libsane-hpoj.so.1
 include/hpojip.h
 include/ptal.h
-etc/rc.d/ptal-init.sh.sample
+etc/rc.d/020.ptal-init.sh.sample
 %%CUPS%%libexec/cups/backend/ptal
 %%PORTDOCS%%share/doc/hpoj/COPYING
 %%PORTDOCS%%share/doc/hpoj/LICENSE
