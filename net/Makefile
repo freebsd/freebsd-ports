@@ -130,6 +130,7 @@
     SUBDIR += h2n
     SUBDIR += hagelslag
     SUBDIR += hesiod
+    SUBDIR += hlmaster
     SUBDIR += host
     SUBDIR += hx
     SUBDIR += icb
