@@ -8,7 +8,6 @@
 #
 
 COMMENT=	Catalan MySpell dictionary for OpenOffice.org
-CATEGORIES=	editors
 
 LANGPREFIX=	ca
 LANGSUFFIX=	ES

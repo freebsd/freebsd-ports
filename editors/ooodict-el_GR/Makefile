@@ -8,7 +8,6 @@
 #
 
 COMMENT=	Greek (Greece) MySpell dictionary for OpenOffice.org
-CATEGORIES=	editors
 
 LANGPREFIX=	el
 LANGSUFFIX=	GR

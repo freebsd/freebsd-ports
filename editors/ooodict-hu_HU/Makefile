@@ -7,7 +7,6 @@
 # $FreeBSD$
 #
 
-CATEGORIES=	editors
 COMMENT=	Hungarian (Hungary) Myspell dictionary for OpenOffice.org
 
 LANGPREFIX=	hu

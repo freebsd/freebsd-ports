@@ -5,8 +5,6 @@
 # $FreeBSD$
 #
 
-CATEGORIES=	editors
-
 LANG_PKGNAME=	ca
 LANG_EXT=	37
 LANG_CONFIGURE_ARG=	CAT

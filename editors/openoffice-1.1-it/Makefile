@@ -5,8 +5,6 @@
 # $FreeBSD$
 #
 
-CATEGORIES=	editors
-
 LANG_PKGNAME=	it
 LANG_EXT=	39
 L10NHELP=	helpcontent_${LANG_EXT}_unix.tgz

@@ -8,7 +8,6 @@
 #
 
 COMMENT=	Croatian (Croatia) Myspell dictionary for OpenOffice.org
-CATEGORIES=	editors
 
 LANGPREFIX=	hr
 LANGSUFFIX=	HR

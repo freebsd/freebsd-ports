@@ -8,7 +8,6 @@
 #
 
 COMMENT=	Dutch (Netherland) MySpell dictionary for OpenOffice.org
-CATEGORIES=	editors
 
 LANGPREFIX=	nl
 LANGSUFFIX=	NL

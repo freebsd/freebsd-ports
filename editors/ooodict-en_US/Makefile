@@ -8,7 +8,6 @@
 #
 
 COMMENT=	English (United States) MySpell dictionary for OpenOffice.org
-CATEGORIES=	editors
 
 LANGPREFIX=	en
 LANGSUFFIX=	US
