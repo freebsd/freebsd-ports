@@ -17,7 +17,7 @@
 # OpenBSD and NetBSD will be accepted.
 #
 # $FreeBSD$
-# $Id: portlint.pl,v 1.6 2003/07/28 20:20:38 marcus Exp $
+# $Id: portlint.pl,v 1.8 2003/08/15 04:59:05 marcus Exp $
 #
 
 use vars qw/ $opt_a $opt_A $opt_b $opt_c $opt_h $opt_t $opt_v $opt_M $opt_N $opt_B $opt_V /;
@@ -30,7 +30,7 @@ my ($err, $warn);
 my ($extrafile, $parenwarn, $committer, $verbose, $usetabs, $newport);
 my $contblank;
 my $portdir;
-my $makeenv;
+my $makeenv = "";
 
 $err = $warn = 0;
 $extrafile = $parenwarn = $committer = $verbose = $usetabs = $newport = 0;
@@ -40,7 +40,7 @@ $portdir = '.';
 # version variables
 my $major = 2;
 my $minor = 4;
-my $micro = 1;
+my $micro = 2;
 
 sub l { '[{(]'; }
 sub r { '[)}]'; }
@@ -60,6 +60,7 @@ my $mancompress = 1;
 my $manstrict = 0;
 my $newxdef = 1;
 my $automan = 1;
+my $autoinfo = 1;
 my $manchapters = '123456789ln';
 my $localbase = '/usr/local';
 
@@ -115,15 +116,15 @@ $verbose = 1 if $opt_v;
 $newport = 1 if $opt_N || $opt_A;
 $usetabs = 1 if $opt_t || $opt_A;
 $contblank = $opt_B if $opt_B;
-$makeenv = $opt_M;
+$makeenv = $opt_M if $opt_M;
 
 $portdir = $ARGV[0] ? $ARGV[0] : '.';
 
 # OS dependent configs
-# os	portsdir	rcsid		mplist	ldcfg	plist-rcsid mancompresss strict	localbase	newxdef	automan
+# os	portsdir	rcsid		mplist	ldcfg	plist-rcsid mancompresss strict	localbase	newxdef	automan	autoinfo
 my @osdep = split(/\n/, <<EOF);
-FreeBSD	/usr/ports	FreeBSD		0	0	0		1	0	/usr/local	1	1
-NetBSD	/usr/pkgsrc	NetBSD		1	1	1		0	1	/usr/pkg	0	0
+FreeBSD	/usr/ports	FreeBSD		0	0	0		1	0	/usr/local	1	1	1
+NetBSD	/usr/pkgsrc	NetBSD		1	1	1		0	1	/usr/pkg	0	0	0
 EOF
 my $osname = `uname -s`;
 $osname =~ s/\n$//;
@@ -132,7 +133,7 @@ foreach my $i (@osdep) {
 		print "OK: found OS config for $osname.\n" if ($verbose);
 		($portsdir, $rcsidstr, $multiplist, $ldconfigwithtrue,
 			$rcsidinplist, $mancompress, $manstrict, $localbase,
-			$newxdef, $automan)
+			$newxdef, $automan, $autoinfo)
 				= split(/\t+/, $1);
 		last;
 	}
@@ -452,17 +453,21 @@ sub checkplist {
 				my $ot = $1;
 				$ot =~ s/^\%D\///;
 				$omfinstallseen{$ot} = $.;
-			} elsif ($_ =~ /^\@exec[ \t]+install-info\s+(.+)\s+(.+)$/) {
+			} elsif (!$autoinfo && $_ =~ /^\@exec[ \t]+install-info\s+(.+)\s+(.+)$/) {
 				$infoinstallseen = $.;
 				push(@exec_info, $1);
+			} elsif ($autoinfo && $_ =~ /^\@exec[ \t]+install-info\s+(.+)\s+(.+)$/) {
+				&perror("WARN: \@exec install-info is deprecated in favor of adding info files into the Makefile using the INFO macro.");
 			} elsif ($_ =~ /^\@unexec[ \t]+scrollkeeper-uninstall[ \t]+-q\s+(\S+)\s+.+$/) {
 				push(@unexec_omf, $1);
 				my $ot = $1;
 				$ot =~ s/^\%D\///;
 				$omfremoveseen{$ot} = $.;
-			} elsif ($_ =~ /^\@unexec[ \t]+install-info[ \t]+--delete\s+(.+)\s+(.+)$/) {
+			} elsif (!$autoinfo && $_ =~ /^\@unexec[ \t]+install-info[ \t]+--delete\s+(.+)\s+(.+)$/) {
 				$inforemoveseen = $.;
 				push(@unexec_info, $1);
+			} elsif ($autoinfo && $_ =~ /^\@unexec[ \t]+install-info[ \t]+--delete\s+(.+)\s+(.+)$/) {
+				&perror("WARN: \@unexec install-info is deprecated in favor of adding info files into the Makefile using the INFO macro.");
 			} elsif ($_ =~ /^\@(exec|unexec)/) {
 				if (/ldconfig/) {
 					if ($ldconfigwithtrue
@@ -504,6 +509,14 @@ sub checkplist {
 				"please define INSTALLS_SHLIB as appropriate");
 		}
 
+		if ($autoinfo && $_ =~ /\.info$/) {
+			&perror("WARN: $file $.: enumerating info files in the plist is deprecated in favor of adding info files into the Makefile using the INFO macro.");
+		}
+
+		if ($autoinfo && $_ =~ /\.info-\d+$/) {
+			&perror("FATAL: $file $.: numbered info files are no longer supported; add info files using the INFO macro in the Makefile.");
+		}
+
 		if ($_ =~ /.*\.omf$/) {
 			$omfseen{$_} = $.;
 			$omfafterinstall{$_}++ if ($omfinstallseen{$_});
@@ -511,18 +524,20 @@ sub checkplist {
 			push(@omffile, $_);
 		}
 
-		if ($_ =~ /^info\/.*info(-[0-9]+)?$/) {
-			$infoseen = $.;
-			$infoafterinstall++ if ($infoinstallseen);
-			$infobeforeremove++ if (!$inforemoveseen);
-			push(@infofile, $_);
-		}
+		if (!$autoinfo) {
+			if ($_ =~ /^info\/.*info(-[0-9]+)?$/) {
+				$infoseen = $.;
+				$infoafterinstall++ if ($infoinstallseen);
+				$infobeforeremove++ if (!$inforemoveseen);
+				push(@infofile, $_);
+			}
 
-		if ($_ =~ /^info\/dir$/) {
-			&perror("FATAL: \"info/dir\" should not be listed in ".
-				"$file. use install-info to add/remove ".
-				"an entry.");
-			$infooverwrite++;
+			if ($_ =~ /^info\/dir$/) {
+				&perror("FATAL: \"info/dir\" should not be listed in ".
+					"$file. use install-info to add/remove ".
+					"an entry.");
+				$infooverwrite++;
+			}
 		}
 
 		if ($_ =~ /^(\%\%PORTDOCS\%\%)?share\/doc\//) {
@@ -585,19 +600,21 @@ sub checkplist {
 		}
 	}
 
+	if (!$autoinfo) {
 # check that every infofile has an exec install-info and unexec install-info
-	my $exec_install = join(" ", @exec_info);
-	$exec_install .= ' ';
-	my $unexec_install = join(" ", @unexec_info);
-	$unexec_install .= ' ';
+		my $exec_install = join(" ", @exec_info);
+		$exec_install .= ' ';
+		my $unexec_install = join(" ", @unexec_info);
+		$unexec_install .= ' ';
 
-	foreach my $if (@infofile) {
-		next if ($if =~ m/info-/);
-		if ($exec_install !~ m/\%D\/\Q$if\E/) {
-			&perror("FATAL: you need an '\@exec install-info \%D/$if \%D/info/dir' line in your pkg-plist");
-		}
-		if ($unexec_install !~ m/\%D\/$if/) {
-			&perror("FATAL: you need an '\@unexec install-info --delete \%D/$if \%D/info/dir' line in your pkg-plist");
+		foreach my $if (@infofile) {
+			next if ($if =~ m/info-/);
+			if ($exec_install !~ m/\%D\/\Q$if\E/) {
+				&perror("FATAL: you need an '\@exec install-info \%D/$if \%D/info/dir' line in your pkg-plist");
+			}
+			if ($unexec_install !~ m/\%D\/$if/) {
+				&perror("FATAL: you need an '\@unexec install-info --delete \%D/$if \%D/info/dir' line in your pkg-plist");
+			}
 		}
 	}
 
@@ -606,7 +623,7 @@ sub checkplist {
 			"in $file as \@comment.")
 	}
 
-	if (!$infoseen && !scalar(keys %omfseen)) {
+	if (((!$autoinfo && !$infoseen) || $autoinfo) && !scalar(keys %omfseen)) {
 		close(IN);
 		return 1;
 	}
@@ -639,7 +656,7 @@ sub checkplist {
 		}
 	}
 
-	if ($infoseen) {
+	if (!$autoinfo && $infoseen) {
 		if (!$infoinstallseen) {
 			if ($infooverwrite) {
 				&perror("FATAL: install-info must be used to ".
@@ -870,7 +887,7 @@ sub checkmakefile {
 	print "OK: checking direct use of command names.\n" if ($verbose);
 	foreach my $i (qw(
 awk basename cat chmod chown cp echo expr false file find gmake grep gzcat
-ldconfig ln md5 mkdir mv patch rm rmdir sed sh touch tr which xargs xmkmf
+ldconfig ln md5 mkdir mv patch perl rm rmdir ruby sed sh touch tr which xargs xmkmf
 	)) {
 		$cmdnames{$i} = "\$\{\U$i\E\}";
 	}
@@ -878,7 +895,11 @@ ldconfig ln md5 mkdir mv patch rm rmdir sed sh touch tr which xargs xmkmf
 	$cmdnames{'gunzip'} = '${GUNZIP_CMD}';
 	$cmdnames{'gzip'} = '${GZIP_CMD}';
 	$cmdnames{'install'} = '${INSTALL_foobaa}';
+	$cmdnames{'python'} = '${PYTHON_CMD}';
 	$cmdnames{'strip'} = '${STRIP_CMD}';
+	foreach my $i (qw(aclocal autoconf autoheader automake autoreconf autoupdate autoscan ifnames libtool libtoolize)) {
+		$autocmdnames{$i} = "\$\{" . ( ( $i !~ /auto|aclocal/ ) ? "AUTO" : "" ) . "\U$i\E\}";
+	}
 	#
 	# ignore parameter string to echo command.
 	# note that we leave the command as is, since we need to check the
@@ -892,6 +913,16 @@ ldconfig ln md5 mkdir mv patch rm rmdir sed sh touch tr which xargs xmkmf
 			&perror("WARN: possible direct use of command \"$i\" ".
 				"found. use $cmdnames{$i} instead.");
 		}
+	}
+
+	foreach my $i (keys %autocmdnames) {
+		if ($j =~ /[\s\/]($i\d*)[\s;]/
+			&& $j !~ /\n[A-Z]+_TARGET[?+]?=[^\n]+($i\d*)/
+			&& $j !~ /^COMMENT(.)?=/) {
+				&perror("WARN: possible direct use of command \"$1\" ".
+					"found. Use $autocmdnames{$i} instead and ".
+					"set according USE_*_VER= flag");
+			}
 	}
 
 	#
@@ -1568,7 +1599,7 @@ FETCH_DEPENDS DEPENDS DEPENDS_TARGET
 	}
 	foreach my $i (split(//, $manchapters)) {
 		if ($tmp =~ /MAN\U$i\E=\s*([^\n]*)\n/) {
-			print "OK: Makefile MAN$i=$1\n" if ($verbose);
+			print "OK: Makefile MAN\U$i\E=$1\n" if ($verbose);
 		}
 	}
 	foreach my $i (split(//, $manchapters)) {
@@ -1583,18 +1614,18 @@ FETCH_DEPENDS DEPENDS DEPENDS_TARGET
 				if ($automan && grep($_ eq $j, @pman)) {
 					&perror("FATAL: duplicated manpage ".
 						"entry $j: content of ".
-						"MAN$i will be automatically ".
+						"MAN\U$i\E will be automatically ".
 						"added to pkg-plist.");
 				} elsif (!$automan && !grep($_ eq $j, @pman)) {
 					&perror("WARN: manpage $j in $file ".
-						"MAN$i but not in pkg-plist.");
+						"MAN\U$i\E but not in pkg-plist.");
 				}
 			}
 			foreach my $j (@pman) {
 				print "OK: checking $j (pkg-plist)\n" if ($verbose);
 				if (!grep($_ eq $j, @mman)) {
 					&perror("WARN: manpage $j in pkg-plist ".
-						"but not in $file MAN$i.");
+						"but not in $file MAN\U$i\E.");
 				}
 			}
 		} else {
@@ -1628,6 +1659,18 @@ FETCH_DEPENDS DEPENDS DEPENDS_TARGET
 			"designating manual language, such as \"$i\"?");
 	}
 
+	# check INFO
+	print "OK: checking INFO.\n" if ($verbose);
+	if ($autoinfo && $tmp =~ /\nINFO=\s*([^\n]*)\n/) {
+		my @minfo = grep($_ !~ /^\s*$/, split(/\s+/, $1));
+		foreach $i (@minfo) {
+			if ($i =~ /\.info(-\d+)?$/) {
+				&perror("FATAL: do not include the .info extension ".
+					"on files listed in the INFO macro.");
+			}
+		}
+	}
+
 	# check USE_X11 and USE_IMAKE
 	if ($tmp =~ /\nUSE_IMAKE[?+]?=/
 	 && $tmp =~ /\n(USE_X11)[?+]?=/) {
@@ -1644,7 +1687,7 @@ FETCH_DEPENDS DEPENDS DEPENDS_TARGET
 	# check USE_X11 and USE_X_PREFIX
 	if ($newxdef && $tmp =~ /\nUSE_X11[?+]?=/
 	 && $tmp !~ /\nUSE_X_PREFIX[?+]?=/) {
-		&perror("FATAL: meaning of USE_X11 is changed in Aug 1998. ".
+		&perror("FATAL: meaning of USE_X11 was changed in Aug 1998. ".
 			"use USE_X_PREFIX instead.");
 	}
 
