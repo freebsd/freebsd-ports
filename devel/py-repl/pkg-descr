@@ -1,0 +1,13 @@
+Pyrepl is a neat replacement for python readline module.
+
+Features: 
+ - sane multi-line editing 
+ - history, with incremental search 
+ - completion, including displaying of available options 
+ - a fairly large subset of the readline emacs-mode key bindings
+   (adding more is mostly just a matter of typing) 
+ - Deliberately liberal, Python-style license 
+ - no global variables, so you can run two independent readers
+   without having their histories interfering. 
+
+WWW: http://starship.python.net/crew/mwh/hacks/pyrepl.html

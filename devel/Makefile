@@ -614,6 +614,7 @@
     SUBDIR += py-period
     SUBDIR += py-plex
     SUBDIR += py-pqueue
+    SUBDIR += py-repl
     SUBDIR += py-reverse
     SUBDIR += py-ro
     SUBDIR += py-spark
