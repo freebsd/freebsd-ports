@@ -6,7 +6,7 @@
 # $FreeBSD$
 #
 
-DISTNAME=	im-130
+DISTNAME=	im-140
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.mew.org/pub/Mew/ \
 		ftp://ftp.kyushu-u.ac.jp/pub/Misc/mew/ \
@@ -34,5 +34,10 @@ post-install:
 	${INSTALL_DATA} man/* ${PORTDOCDIR}/man; \
 	${INSTALL_DATA} dot.im/* ${SAMPLEDIR}
 .endif
+
+## for make PLIST (only maintainer use)
+#arrange:
+#	${MAKE} -DPLIST_OVERRIDE \
+#	DIRRMDEPTH=1 plist
 
 .include <bsd.port.mk>
