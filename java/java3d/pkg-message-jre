@@ -1,0 +1,8 @@
+The Java3D libraries are not installed in JRE, so you have to add
+  %%TARGET_DIR%%/jar/j3daudio.jar
+  %%TARGET_DIR%%/jar/j3dcore.jar
+  %%TARGET_DIR%%/jar/j3dutils.jar
+  %%TARGET_DIR%%/jar/vecmath.jar
+to the CLASSPATH environment variable, and add
+  %%TARGET_DIR%%/lib
+to the LD_LIBRARY_PATH environment variable.

@@ -432,13 +432,20 @@
 %%PORTDOCS%%%%T%%/demo/images/stone.jpg
 %%PORTDOCS%%%%T%%/demo/images/ttimage.jpg
 %%PORTDOCS%%%%T%%/demo/index.html
-%%INSTALL_IN_JRE%%%%JAVA_HOME%%/jre/lib/ext/j3daudio.jar
-%%INSTALL_IN_JRE%%%%JAVA_HOME%%/jre/lib/ext/j3dcore.jar
-%%INSTALL_IN_JRE%%%%JAVA_HOME%%/jre/lib/ext/j3dutils.jar
-%%INSTALL_IN_JRE%%%%JAVA_HOME%%/jre/lib/ext/vecmath.jar
-%%INSTALL_IN_JRE%%%%JAVA_HOME%%/jre/lib/i386/libJ3D.so
-%%INSTALL_IN_JRE%%%%JAVA_HOME%%/jre/lib/i386/libJ3DUtils.so
-%%INSTALL_IN_JRE%%%%JAVA_HOME%%/jre/lib/i386/libj3daudio.so
+%%INSTALL_IN_JRE%%@exec /bin/ln -sf %D/%%T%%/jar/j3daudio.jar %D/%%JAVA_HOME%%/jre/lib/ext
+%%INSTALL_IN_JRE%%@exec /bin/ln -sf %D/%%T%%/jar/j3dcore.jar %D/%%JAVA_HOME%%/jre/lib/ext
+%%INSTALL_IN_JRE%%@exec /bin/ln -sf %D/%%T%%/jar/j3dutils.jar %D/%%JAVA_HOME%%/jre/lib/ext
+%%INSTALL_IN_JRE%%@exec /bin/ln -sf %D/%%T%%/jar/vecmath.jar %D/%%JAVA_HOME%%/jre/lib/ext
+%%INSTALL_IN_JRE%%@exec /bin/ln -sf %D/%%T%%/lib/libJ3D.so %D/%%JAVA_HOME%%/jre/lib/i386
+%%INSTALL_IN_JRE%%@exec /bin/ln -sf %D/%%T%%/lib/libJ3DUtils.so %D/%%JAVA_HOME%%/jre/lib/i386
+%%INSTALL_IN_JRE%%@exec /bin/ln -sf %D/%%T%%/lib/libj3daudio.so %D/%%JAVA_HOME%%/jre/lib/i386
+%%INSTALL_IN_JRE%%@unexec /bin/rm -f %D/%%JAVA_HOME%%/jre/lib/ext/j3daudio.jar
+%%INSTALL_IN_JRE%%@unexec /bin/rm -f %D/%%JAVA_HOME%%/jre/lib/ext/j3dcore.jar
+%%INSTALL_IN_JRE%%@unexec /bin/rm -f %D/%%JAVA_HOME%%/jre/lib/ext/j3dutils.jar
+%%INSTALL_IN_JRE%%@unexec /bin/rm -f %D/%%JAVA_HOME%%/jre/lib/ext/vecmath.jar
+%%INSTALL_IN_JRE%%@unexec /bin/rm -f %D/%%JAVA_HOME%%/jre/lib/i386/libJ3D.so
+%%INSTALL_IN_JRE%%@unexec /bin/rm -f %D/%%JAVA_HOME%%/jre/lib/i386/libJ3DUtils.so
+%%INSTALL_IN_JRE%%@unexec /bin/rm -f %D/%%JAVA_HOME%%/jre/lib/i386/libj3daudio.so
 %%PORTDOCS%%@dirrm %%T%%/demo/images
 %%PORTDOCS%%@dirrm %%T%%/demo/geometry
 %%PORTDOCS%%@dirrm %%T%%/demo/VirtualInputDevice
