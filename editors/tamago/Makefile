@@ -6,16 +6,16 @@
 #
 
 PORTNAME=	tamago
-PORTVERSION=	4.0.6.0.20020909.6
+PORTVERSION=	4.0.6.0.20041122.1
 CATEGORIES=	editors elisp
 MASTER_SITES=	${MASTER_SITE_DEBIAN}
 MASTER_SITE_SUBDIR=	pool/main/e/egg
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
-DISTNAME=	egg_4.0.6+0.20020909cvs.orig
+DISTNAME=	egg_4.0.6+0.20041122cvs.orig
 
 PATCH_SITES=	${MASTER_SITE_DEBIAN:S,%SUBDIR%,pool/main/e/egg,} \
 		${MASTER_SITE_LOCAL:S,%SUBDIR%,nork,}
-PATCHFILES=	egg_4.0.6+0.20020909cvs-6.diff.gz
+PATCHFILES=	egg_4.0.6+0.20041122cvs-1.diff.gz
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER?=	ports@FreeBSD.org
@@ -27,7 +27,7 @@ GNU_CONFIGURE=	yes
 
 EMACS_PORT_NAME?=	emacs21
 
-WRKSRC=		${WRKDIR}/egg-4.0.6+0.20020909cvs.orig
+WRKSRC=		${WRKDIR}/egg-4.0.6+0.20041122cvs
 ELISPDIR=	${PREFIX}/${EMACS_LIBDIR_WITH_VER}/site-lisp
 PLIST_SUB=	ELISPDIR="${EMACS_LIBDIR_WITH_VER}/site-lisp"
 
@@ -42,7 +42,6 @@ pre-configure:
 	    ${WRKSRC}/configure
 
 post-install:
-	${TOUCH} ${ELISPDIR}/egg/egg/.nosearch
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
