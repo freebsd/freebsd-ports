@@ -1,0 +1,8 @@
+
+	For  your X-server  to use  the fonts,  you have  to add
+	the  ${X11BASE}/lib/X11/fonts/koi8u-monaco (X11BASE  is,
+	usually,  /usr/X11R6)  to  the server's  font-path.  Use
+	``xset fp+''  to do this  for the current  X-session and
+	consult  your  X-server's  documentation  to  make  this
+	permanent.
+
