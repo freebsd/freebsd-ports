@@ -1,6 +1,12 @@
 --- type1inst.orig	Thu Jul 24 13:53:19 2003
-+++ type1inst	Sat Jul 26 14:51:56 2003
-@@ -83,10 +83,12 @@
++++ type1inst	Sat Jul 26 20:57:53 2003
+@@ -78,15 +78,18 @@
+ @foundries = (
+ 	      "Adobe:adobe",
+               "Allied Corporation:allied",
++              "American Mathematical Society:ams",
+ 	      "Publishers' Paradise:paradise",
+ 	      "PUBLISHERS' PARADISE:paradise",
  	      "Bigelow & Holmes:b&h",
  	      "Bitstream:bitstream",
  	      "Corel Corporation:corel",
@@ -13,7 +19,7 @@
  	      "SoftMaker:softmaker",
  	      "URW:urw",
  	      "Jonathan Brecher:brecher",
-@@ -103,6 +105,7 @@
+@@ -103,6 +106,7 @@
  	      "Reasonable Solutions:reasonable",
  	      "Southern Software:southern",
  	      "Title Wave:titlewave",
@@ -21,7 +27,7 @@
  	      "ZSoft:zsoft",
  	      "Digiteyes Multimedia:digiteyes",
  	      "MWSoft:mwsoft",
-@@ -110,7 +113,8 @@
+@@ -110,7 +114,8 @@
  	      "Three Islands Press:3ip",
  	      "Hank Gillette:gillette",
  	      "Doug Miles:miles",
@@ -31,7 +37,7 @@
  
  # Note: Hershey is the public Hershey fonts which come with Ghostscript.
  # These cause no end of problems since they look inside like funny PS
-@@ -337,7 +341,7 @@
+@@ -337,7 +342,7 @@
        # I think that we should accept the manufacturers classification.
        # Try to extract this from FontName only if it's missing.
        # (It shouldn't. There are other reasons why this won't work, though.)
@@ -40,7 +46,7 @@
  	  $familyname = $1;
  
  	  # Convert to lower case (because case is insignificant).
-@@ -348,7 +352,7 @@
+@@ -348,7 +353,7 @@
        # a little cluttered, though. Perhaps it would be better to map it
        # to standard strings like you do. It's named $weight_add because
        # you already used $weight...
@@ -49,7 +55,7 @@
  	  $weight_add = $1;
  
  	  # Convert to lower case. Spaces are acceptable according to XLFD?
-@@ -374,7 +378,7 @@
+@@ -374,7 +379,7 @@
        }
        # FullName might contain useful information in determining
        # the properties of a font.
@@ -58,7 +64,7 @@
  	  $fullname = $1;
  
  	  # Convert to lower case
-@@ -385,7 +389,7 @@
+@@ -385,7 +390,7 @@
        }
        # Note : some fonts have a suspect /FontName declaration where there
        # is no space between /FontName and the name of the font itself....
@@ -67,7 +73,7 @@
  	  $fontname = $1;
  
  	  # Remove any embedded spaces
-@@ -515,8 +519,8 @@
+@@ -515,8 +520,8 @@
        if (/\/BlendAxisTypes\s+\[([^\]]+)\]\s*def/) {
  	  $axis = $1;
  	  # Remove axises we don't need
@@ -78,7 +84,7 @@
  	  # Are there still some axises left?
  	  if ($axis =~ /\//) {
  	      # Remove trailing spaces
-@@ -784,7 +788,7 @@
+@@ -784,7 +789,7 @@
      log_only_msg("Reading Fontmap ....\n");
  
      while (<FONTMAP>) {
@@ -87,7 +93,7 @@
  	    chop;
  	    $fontname = $1;
  	    $filename = $2;
-@@ -1183,10 +1187,17 @@
+@@ -1183,10 +1188,17 @@
      }
  }
  
