@@ -58,6 +58,7 @@
     SUBDIR += p5-GdkPixbuf
     SUBDIR += p5-Glade
     SUBDIR += p5-Gnome
+    SUBDIR += p5-GnomeApplet
     SUBDIR += p5-Gtk
     SUBDIR += p5-GtkGLArea
     SUBDIR += p5-GtkXmHTML
