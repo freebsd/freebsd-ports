@@ -8767,6 +8767,7 @@ sash		ports/shells/sash
 satellite	ports/net-mgmt/satellite
 sather		ports/lang/Sather
 sattrack	ports/astro/sattrack
+savelogs	ports/sysutils/savelogs
 sawfish2	ports/x11-wm/sawfish2
 saxon		ports/textproc/saxon
 sb16config	ports/sysutils/sb16config
