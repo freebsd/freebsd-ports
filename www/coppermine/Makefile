@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	coppermine
-PORTVERSION=	1.2.1
+PORTVERSION=	1.3.2
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,15 +15,21 @@ DISTNAME=	cpg${PORTVERSION}
 MAINTAINER=	brooks@FreeBSD.org
 COMMENT=	Coppermine is a web picture gallery script
 
-USE_PHP=	yes
+USE_PHP=	mysql
 WANT_PHP_MOD=	yes
 USE_ZIP=	yes
 
+.if defined (WITH_IMAGEMAGICK)
+RUN_DEPENDS+=	${LOCALBASE}/bin/convert:${PORTSDIR}/graphics/ImageMagick
+.else
+USE_PHP+=	gd
+.endif
+
 PKGMESSAGE=	${WRKDIR}/pkg-message
 NO_BUILD=	yes
-WRKSRC=		${WRKDIR}/${DISTNAME}_standalone
+WRKSRC=		${WRKDIR}/cpg132
 DOCFILES=	CHANGELOG
-EXCEPTFILES=	${DOCFILES} doc/COPYING
+EXCEPTFILES=	${DOCFILES} COPYING docs/COPYING
 CPIOARGS=	--quiet -pdum -R
 PLIST_SUB=	CPGDIR=${CPGDIR}
 
@@ -32,9 +38,13 @@ pre-fetch:
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "Define CPGDIR to override default of 'www/coppermine'."
 	@${ECHO_MSG} ""
-	@${ECHO_MSG} "You must either install PHP with GD support or ImageMagick."
+	@${ECHO_MSG} "By default, coppermine depends on PHP with GD support."
+	@${ECHO_MSG} "You may define WITH_IMAGEMAGICK to depend on ImageMagick instead of GD."
 	@${ECHO_MSG} ""
 .endif
+
+post-extract:
+	@${CHMOD} -R o-w ${WRKSRC}
 
 pre-patch:
 	@${SED} -e 's|%%PREFIX%%|${PREFIX}|g' \
