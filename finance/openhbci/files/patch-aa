@@ -1,0 +1,56 @@
+*** src/openhbci/core/posix/directory.cpp	Mon Sep  9 15:52:41 2002
+***************
+*** 117,123 ****
+  
+  
+  string Directory::workingDirectory(){
+!     char buffer[PATH_MAX];
+  
+      if (!getcwd(buffer,sizeof(buffer)))
+          throw Error("Directory::workingDirectory()",
+--- 117,123 ----
+  
+  
+  string Directory::workingDirectory(){
+!     char buffer[MAXNAMLEN];
+  
+      if (!getcwd(buffer,sizeof(buffer)))
+          throw Error("Directory::workingDirectory()",
+*** src/openhbci/core/posix/inetaddress.h	Mon Sep  9 15:52:41 2002
+***************
+*** 31,38 ****
+  #define C_INEDADDRESS_H
+  
+  #include <string>
+- #include <sys/socket.h>
+  #include <sys/types.h>
+  #include <sys/time.h>
+  #include <netinet/in.h>
+  #include <netdb.h>
+--- 31,38 ----
+  #define C_INEDADDRESS_H
+  
+  #include <string>
+  #include <sys/types.h>
++ #include <sys/socket.h>
+  #include <sys/time.h>
+  #include <netinet/in.h>
+  #include <netdb.h>
+*** src/openhbci/core/posix/socket.cpp	Mon Sep  9 15:52:41 2002
+***************
+*** 453,459 ****
+      p=data.c_str();
+      i=data.length();
+      while(i) {
+!         j=send(_sock,p,i,MSG_NOSIGNAL);
+          if (j<=0)
+              return Error("Socket::writeData",
+                               ERROR_LEVEL_NORMAL,
+--- 453,459 ----
+      p=data.c_str();
+      i=data.length();
+      while(i) {
+!         j=send(_sock,p,i,MSG_EOF);
+          if (j<=0)
+              return Error("Socket::writeData",
+                               ERROR_LEVEL_NORMAL,
