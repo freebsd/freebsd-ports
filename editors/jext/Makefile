@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	jext
-PORTVERSION=	2.8.0.2
+PORTVERSION=	2.8.0.3
 CATEGORIES=	editors java
 MASTER_SITES=	http://members.xoom.com/romainguy/
 DISTFILES=	${PORTNAME}${EXTRACT_SUFX} swingall.jar
