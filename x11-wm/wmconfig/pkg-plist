@@ -39,5 +39,6 @@ etc/wmconfig/confs/qvwmrc
 etc/wmconfig/confs/twmrc
 etc/wmconfig/confs/uderc
 etc/wmconfig/confs/vtwmrc
+etc/wmconfig/confs/xfcerc
 @dirrm etc/wmconfig/confs
 @dirrm etc/wmconfig
