@@ -1,14 +1,15 @@
---- Makefile	Sun Feb 13 15:39:40 2000
-+++ Makefile.new	Tue Jul  4 02:51:02 2000
+--- Makefile.orig	Mon Feb 14 05:39:40 2000
++++ Makefile	Tue Jul  4 19:29:41 2000
 @@ -2,9 +2,9 @@
  # Copyright (C) 1996 Willem van Schaik
  
  #CC=cc
 -CC=gcc
-+CC?=gcc
- OPTIMFLAGS = -O3 
+-OPTIMFLAGS = -O3 
 -DEBUGFLAGS = -g -Wall -W
-+DEBUGFLAGS = -Wall -W
++#CC=gcc
++#OPTIMFLAGS = -O3 
++#DEBUGFLAGS = -g -Wall -W
  #COPY=cp
  COPY=/bin/cp -p
  DEL=/bin/rm -f
@@ -33,8 +34,8 @@
 -	-L$(ZLIB)/ \
 -	-lpng -lz -ltiff -ljpeg -lm
 +CFLAGS+=$(TIFF_VERSION) -DFAXPECT $(MIN_INVERT) $(OPTIMFLAGS) $(DEBUGFLAGS) \
-+	-I$(INSTALL)/include
-+LDFLAGS=-L. -L$(INSTALL)/lib -lpng -lz -ltiff -ljpeg -lm
++	-I${LOCALBASE}/include
++LDFLAGS=-L. -L${LOCALBASE}/lib -lpng -lz -ltiff -ljpeg -lm
  SLDFLAGS=-L. \
  	$(LIBTIFF)/libtiff.a $(LIBJPEG)/libjpeg.a \
  	$(LIBPNG)/libpng.a \
