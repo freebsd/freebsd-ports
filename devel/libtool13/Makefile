@@ -7,6 +7,7 @@
 
 PORTNAME=	libtool
 PORTVERSION=	1.3.5
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	libtool
@@ -22,6 +23,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-ltdl-install \
 		--program-suffix=${BUILD_VERSION}
 CONFIGURE_ENV=	PREFIX=${PREFIX} PACKAGE=libtool${BUILD_VERSION}
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_REINPLACE=	yes
 
 .if defined(USE_LIBTOOL) || defined(USE_LIBTOOL_VER)
@@ -34,12 +36,13 @@ pre-everything:
 	@${FALSE}
 .endif # defined(USE_LIBTOOL) || defined(USE_LIBTOOL_VER)
 
-post-extract:
+post-patch:
+	@(cd ${WRKSRC}/doc && \
+		${RM} -f *.info* && \
+		${MV} libtool.texi libtool${BUILD_VERSION}.texi && \
+		${REINPLACE_CMD} -E 's,(libtool|libtoolize)\),\1${BUILDVERSION}\),g' libtool${BUILD_VERSION}.texi)
 	@${MV} -f ${WRKSRC}/libtool.m4 ${WRKSRC}/libtool${BUILD_VERSION}.m4
-	@${REINPLACE_CMD} -e 's|libtool.m4|libtool${BUILD_VERSION}.m4|g' \
-			  ${WRKSRC}/Makefile.in
-	@${MV} -f ${WRKSRC}/doc/libtool.info ${WRKSRC}/doc/libtool${BUILD_VERSION}.info
-	@${MV} -f ${WRKSRC}/doc/libtool.texi ${WRKSRC}/doc/libtool${BUILD_VERSION}.texi
+	@${REINPLACE_CMD} -e 's|libtool.m4|libtool${BUILD_VERSION}.m4|g' ${WRKSRC}/Makefile.in
 
 post-install:
 	@-${RM} -fr ${PREFIX}/libexec/libtool${BUILD_VERSION}

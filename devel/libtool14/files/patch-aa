@@ -1,15 +1,19 @@
---- doc/libtool14.info.orig	Wed Oct 23 02:26:36 2002
-+++ doc/libtool14.info	Mon Feb 17 01:46:42 2003
-@@ -3,5 +3,5 @@
- 
--INFO-DIR-SECTION GNU programming tools
-+INFO-DIR-SECTION Programming & development tools
- START-INFO-DIR-ENTRY
+--- doc/libtool.texi.orig	Mon Jan 14 19:04:40 2002
++++ doc/libtool.texi	Wed Jul  2 18:11:10 2003
+@@ -2,4 +2,4 @@
+ @c %**start of header
+-@setfilename libtool.info
+-@settitle Libtool
++@setfilename libtool14.info
++@settitle Libtool14
+ @c For double-sided printing, uncomment:
+@@ -15,3 +15,3 @@
+ @direntry
 -* Libtool: (libtool).           Generic shared library support script.
-+* Libtool: (libtool14).           Generic shared library support script.
- END-INFO-DIR-ENTRY
-@@ -10,3 +10,3 @@
- START-INFO-DIR-ENTRY
++* Libtool14: (libtool14).           Generic shared library support script.
+ @end direntry
+@@ -20,3 +20,3 @@
+ @direntry
 -* libtoolize: (libtool)Invoking libtoolize.     Adding libtool support.
-+* libtoolize: (libtool14)Invoking libtoolize.     Adding libtool support.
- END-INFO-DIR-ENTRY
++* libtoolize14: (libtool14)Invoking libtoolize.     Adding libtool support.
+ @end direntry
