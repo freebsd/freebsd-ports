@@ -49,15 +49,6 @@
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/hello.rbx
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/mailtest.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/reqnora.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rinda/a.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rinda/b.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rinda/echo_service.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rinda/gateway.cgi
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rinda/gateway.fcgi
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rinda/gateway.rbx
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rinda/rinda_tuplespace.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rinda/test.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rinda/test_service.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rinda_ts.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rindagw.cgi
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/simplebbs/simplebbs.cgi
@@ -78,6 +69,7 @@
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/testapp/testapp.cgi
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/testapp/testapp.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/testcgi.html
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/testfcgi.html
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/testrbx.html
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/testapp
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/simplebbs/simplebbs/view/board
@@ -85,5 +77,4 @@
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/simplebbs/simplebbs/database
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/simplebbs/simplebbs
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/simplebbs
-%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/rinda
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%
