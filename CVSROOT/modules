@@ -3525,6 +3525,7 @@ jwhois		ports/net/jwhois
 jx		ports/x11-toolkits/jx
 jython		ports/lang/jython
 jzip		ports/games/jzip
+k3b		ports/sysutils/k3b
 kacst_fonts	ports/x11-fonts/kacst_fonts
 kadu		ports/polish/kadu
 kaffe		ports/java/kaffe
