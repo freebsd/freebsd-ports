@@ -31,6 +31,10 @@ PATCH_WRKSRC=	${WRKSRC}/cgi-bin/openwebmail
 PATCH_STRIP=	-p1
 PLIST=		${WRKDIR}/.PLIST.${PKGNAME}
 
+.if ${PERL_LEVEL} > 500800
+WITHOUT_SPEEDYCGI=yes
+.endif
+
 .if !defined(WITHOUT_SPEEDYCGI)
 BUILD_DEPENDS+=	speedy_suid:${PORTSDIR}/www/p5-CGI-SpeedyCGI
 RUN_DEPENDS+=	speedy_suid:${PORTSDIR}/www/p5-CGI-SpeedyCGI
@@ -132,4 +136,5 @@ do-install:
 	@${PERL} ${OWCGIDIR}/uty/wrapsuid.pl ${OWCGIDIR}
 .endif
 	@${OWCGIDIR}/openwebmail-tool.pl --init --no
+
 .include <bsd.port.post.mk>
