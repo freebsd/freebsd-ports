@@ -14,7 +14,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 MAINTAINER=	janek@gaja.ipan.lublin.pl
 
 .if ${MACHINE_ARCH} == "alpha"
-PLIST=		${PKGDIR}/PLIST.alpha
+PLIST=		${PKGDIR}/pkg-plist.alpha
 .endif
 
 USE_IMAKE=	yes
