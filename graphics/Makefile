@@ -37,6 +37,7 @@
     SUBDIR += camediaplay
     SUBDIR += cbview
     SUBDIR += chbg
+    SUBDIR += cimg
     SUBDIR += cinepaint
     SUBDIR += claraocr
     SUBDIR += compupic

@@ -1,0 +1,24 @@
+CImg stands for Cool Image: it is simple to use and efficient.
+
+. The CImg Library is a free C++ toolkit providing simple classes and functions
+  to load, save, process and display images in your own C++ code.
+. It is highly portable and fully works on Unix/X11, Windows and MacOS X
+  operating systems. It should compile on other systems as well (eventually
+  without display capabilities).
+. It consists only of a single header file CImg.h that must be included in
+  your program source.
+. It contains useful image processing algorithms for loading/saving, resizing/
+  rotating, filtering, object drawing (text, lines, faces, ellipses,..), etc.
+. Images are instancied by a class able to represent images up to 4-dimension
+  wide (from 1-D scalar signals to 3-D volumes of vector-valued pixels), with
+  template pixel types.
+. It depends on a minimal number of libraries: you can compile it with only
+  standard C libraries. No need for exotic libraries and complex dependencies.
+. Additional features appear with the use of ImageMagick: install the
+  ImageMagick package to be able to load and save compressed image formats
+  (GIF,BMP,TIF,JPG,PNG,...).
+. Additional features appear with the use of LAPACK: link your code with the
+  lapack library to be able to compute eigenvalues or eigenvectors of big
+  matrices.
+
+WWW:	http://cimg.sourceforge.net/
