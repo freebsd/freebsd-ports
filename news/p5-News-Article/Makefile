@@ -5,12 +5,14 @@
 # $FreeBSD$
 #
 
-PORTNAME=	p5-News-Article
+PORTNAME=	News-Article
 PORTVERSION=	1.21
 CATEGORIES=	news perl5
 MASTER_SITES=	http://www.erlenstar.demon.co.uk/perl/ \
 		http://www.gelemna.org/ports/
-DISTNAME=	News-Article-1.21
+PKGNAMEPREFIX=	p5-
+
+BROKEN=		unfetchable distfile
 
 MAINTAINER=	croyle@gelemna.org
 

@@ -5,21 +5,20 @@
 # $FreeBSD$
 #
 
-PORTNAME=	p5-HTML-Summary
+PORTNAME=	HTML-Summary
 PORTVERSION= 	0.017
 CATEGORIES=     www perl5
 MASTER_SITES=   ${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	HTML
-DISTNAME=	HTML-Summary-0.017
+PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	dima@Chg.RU
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/HTML/TreeBuilder.pm:${PORTSDIR}/www/p5-HTML-Tree
 
-USE_PERL5=	YES
+USE_PERL5=	yes
 
 MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
-
 MAN3=		HTML::Summary.3 Text::Sentence.3 Lingua::JA::Jtruncate.3
 
 do-configure:

@@ -5,12 +5,12 @@
 # $FreeBSD$
 #
 
-PORTNAME=	p5-Apache-ASP
+PORTNAME=	Apache-ASP
 PORTVERSION=	0.18
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Apache
-DISTNAME=	Apache-ASP-0.18
+PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	igor@zynaps.ru
 
@@ -20,7 +20,7 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/mod_per
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/HTTP/Date.pm:${PORTSDIR}/www/p5-libwww \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Devel/Symdump.pm:${PORTSDIR}/devel/p5-Devel-Symdump
 
-USE_PERL5=	YES
+USE_PERL5=	yes
 
 MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Apache::ASP.3

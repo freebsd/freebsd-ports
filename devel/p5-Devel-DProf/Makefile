@@ -14,8 +14,7 @@ PKGNAMEPREFIX=	p5-Devel-
 
 MAINTAINER=	jfitz@FreeBSD.org
 
-CONFIGURE_ARGS=	PREFIX=${PREFIX}
-USE_PERL5=	YES
+USE_PERL5=	yes
 
 MAN1PREFIX=	${PREFIX}
 MAN1=		dprofpp.1
@@ -23,6 +22,7 @@ MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Devel::DProf.3
 
 do-configure:
-		@cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PERL5} Makefile.PL ${CONFIGURE_ARGS}
+		@cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PERL5} Makefile.PL \
+			PREFIX="${PREFIX}" CC="${CC}" CCFLAGS="${CFLAGS}"
 
 .include <bsd.port.mk>

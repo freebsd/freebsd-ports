@@ -5,12 +5,12 @@
 # $FreeBSD$
 #
 
-PORTNAME=	p5-SyslogScan
+PORTNAME=	SyslogScan
 PORTVERSION=	0.32
 CATEGORIES=	sysutils perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	SyslogScan
-DISTNAME=	SyslogScan-${PORTVERSION}
+PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	dima@Chg.RU
 
@@ -25,6 +25,6 @@ MAN3=		SyslogScan::ByGroup.3 SyslogScan::Delivery.3 \
 		SyslogScan::Usage.3 SyslogScan::WhereIs.3 read_mail_log.3
 
 do-configure:
-		@cd ${WRKSRC}; ${SETENV} ${CONFIGURE_ENV} ${PERL5} Makefile.PL
+		@cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PERL5} Makefile.PL
 
 .include <bsd.port.mk>

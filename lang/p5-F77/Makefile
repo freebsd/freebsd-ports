@@ -5,16 +5,16 @@
 # $FreeBSD$
 #
 
-PORTNAME=	p5-ExtUtils-F77
+PORTNAME=	ExtUtils-F77
 PORTVERSION=	1.12
 CATEGORIES=	lang perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	ExtUtils
-DISTNAME=	ExtUtils-F77-1.12
+PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	jmz@FreeBSD.org
 
-USE_PERL5=	YES
+USE_PERL5=	yes
 
 MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		ExtUtils::F77.3
@@ -27,10 +27,10 @@ F2CLIB= -lf2c
 .endif
 
 post-patch:
-	@(cd ${WRKSRC}; ${MV} -f F77.pm F77.pm~; \
-	${PERL5} -e  'while(<>){s/(.*Freebsd.*lib )(-lf2c)(.*)/$$1 ${F2CLIB} $$3/;print $$_;}' < F77.pm~ > F77.pm)
+	@cd ${WRKSRC}; ${PERL5} -i.orig -pe \
+		's/(.*Freebsd.*lib )(-lf2c)(.*)/$$1 ${F2CLIB} $$3/' F77.pm
 
 do-configure:
-		@ cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PERL5} Makefile.PL
+	@cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PERL5} Makefile.PL
 
 .include <bsd.port.post.mk>

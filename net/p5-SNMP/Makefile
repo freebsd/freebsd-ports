@@ -5,23 +5,25 @@
 # $FreeBSD$
 #
 
-PORTNAME=	p5-SNMP
+PORTNAME=	SNMP
 PORTVERSION=	1.8.1
 CATEGORIES=	net perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	SNMP
-DISTNAME=	SNMP-${PORTVERSION}
+PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	jfitz@FreeBSD.org
 
 LIB_DEPENDS= 	snmp.4:${PORTSDIR}/net/ucd-snmp
 
-USE_PERL5=	YES
+USE_PERL5=	yes
 
 do-configure:
-		@ cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PERL5} Makefile.PL
+		@cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PERL5} Makefile.PL \
+			CC="${CC}" CCFLAGS="${CFLAGS}"
 
 post-install:
-		@ ${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/lib/perl5/site_perl/README.SNMP
+		@${INSTALL_DATA} ${WRKSRC}/README \
+			${PREFIX}/lib/perl5/site_perl/README.SNMP
 
 .include <bsd.port.mk>

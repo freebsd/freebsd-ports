@@ -5,12 +5,12 @@
 # $FreeBSD$
 #
 
-PORTNAME=	p5-pRPC-modules
+PORTNAME=	pRPC-modules
 PORTVERSION=	0.1005
 CATEGORIES=	net perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	RPC
-DISTNAME=	pRPC-modules-0.1005
+PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	vanilla@FreeBSD.org
 
@@ -24,6 +24,6 @@ MAN3=		Bundle::pRPC-modules.3 \
 MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 do-configure:
-		@cd ${WRKSRC}; ${SETENV} ${CONFIGURE_ENV} ${PERL5} Makefile.PL
+		@cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PERL5} Makefile.PL
 
 .include <bsd.port.mk>

@@ -5,19 +5,20 @@
 # $FreeBSD$
 #
 
-PORTNAME=	p5-Archie
+PORTNAME=	Archie
 PORTVERSION=	1.5
 CATEGORIES=	net perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Archie
-DISTNAME=	perl_archie.1.5
+DISTNAME=	perl_archie.${PORTVERSION}
+PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	jfitz@FreeBSD.org
 
-USE_PERL5=	YES
+USE_PERL5=	yes
 
-NO_WRKSUBDIR=	YES
-NO_BUILD=	YES
+NO_WRKSUBDIR=	yes
+NO_BUILD=	yes
 
 do-install:
 		@ ${CP} ${WRKDIR}/Archie.pm ${WRKDIR}/Archie-1.5.pm

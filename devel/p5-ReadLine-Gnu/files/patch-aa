@@ -1,0 +1,11 @@
+--- Makefile.PL.orig	Mon Jun 12 23:43:42 2000
++++ Makefile.PL	Mon Jun 12 23:45:21 2000
+@@ -76,7 +76,7 @@
+ close(F);
+ 
+ # compile it
+-$comp_cmd = "$Config{cc} $RLINC $Config{ccflags} $defs $frlver -o rlver $RLLIB $Config{ldflags} $libs";
++$comp_cmd = "$Config{cc} $RLINC $Config{ccflags} $defs $frlver -o rlver $RLLIB $libs";
+ print $comp_cmd, "\n";
+ system($comp_cmd);
+ if ($?) {

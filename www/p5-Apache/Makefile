@@ -5,12 +5,13 @@
 # $FreeBSD$
 #
 
-PORTNAME=	p5-Apache
+PORTNAME=	Apache
 PORTVERSION=	1.24
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Apache
 DISTNAME=	mod_perl-${PORTVERSION}
+PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	jfitz@FreeBSD.org
 
@@ -20,7 +21,7 @@ APACHE_PORT=apache13
 BUILD_DEPENDS=	${PREFIX}/sbin/apxs:${PORTSDIR}/www/${APACHE_PORT} \
 		${PREFIX}/bin/lwp-download:${PORTSDIR}/www/p5-libwww
 
-USE_PERL5=	YES
+USE_PERL5=	yes
 MAN3=		Apache.3 \
 		Apache::Constants.3 \
 		Apache::Debug.3 \
@@ -59,7 +60,13 @@ MAN3=		Apache.3 \
 MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 do-configure:
-		@ cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${CONFIGURE_ENV} ${PERL5} Makefile.PL USE_APXS=1 WITH_APXS=${PREFIX}/sbin/apxs EVERYTHING=1
+		@cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PERL5} Makefile.PL \
+			CC="${CC}" CCFLAGS="${CFLAGS}" \
+			USE_APXS=1 WITH_APXS=${PREFIX}/sbin/apxs EVERYTHING=1
+		@${PERL} -i -p \
+			-e 's/^(CC = ).*/$$1 ${CC}/;' \
+			-e 's/^(CCFLAGS = ).*/$$1 ${CFLAGS}/' \
+                	${WRKSRC}/Leak/Makefile ${WRKSRC}/Symbol/Makefile
 
 post-install:
 		${MKDIR} ${PREFIX}/include/apache/modules/perl

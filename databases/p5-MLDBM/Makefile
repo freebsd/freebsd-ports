@@ -5,19 +5,19 @@
 # $FreeBSD$
 #
 
-PORTNAME=	p5-MLDBM
+PORTNAME=	MLDBM
 PORTVERSION=	2.00
 CATEGORIES=	databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=     MLDBM
-DISTNAME=       MLDBM-${PORTVERSION}
+PKGNAMEPREFIX=	p5-
 
 MAINTAINER=     ports@FreeBSD.org
 
 BUILD_DEPENDS= 	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/FreezeThaw.pm:${PORTSDIR}/devel/p5-FreezeThaw \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Storable.pm:${PORTSDIR}/devel/p5-Storable
 
-USE_PERL5=	YES
+USE_PERL5=	yes
 
 MAN3=           MLDBM.3
 MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}

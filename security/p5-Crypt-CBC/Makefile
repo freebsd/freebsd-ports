@@ -5,12 +5,12 @@
 # $FreeBSD$
 #
 
-PORTNAME=	p5-Crypt-CBC
+PORTNAME=	Crypt-CBC
 PORTVERSION=	1.23
 CATEGORIES=	security perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Crypt
-DISTNAME=	Crypt-CBC-1.23
+PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	markm@FreeBSD.org
 
@@ -18,7 +18,7 @@ RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/5.005/i386-freebsd/MD5.pm:${PORTSD
 
 RESTRICTED=	"Crypto; export-controlled"
 
-USE_PERL5=	YES
+USE_PERL5=	yes
 
 MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Crypt::CBC.3

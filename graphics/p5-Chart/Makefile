@@ -5,26 +5,23 @@
 # $FreeBSD$
 #
 
-PORTNAME=	chart
+PORTNAME=	Chart
 PORTVERSION=	0.99b
 CATEGORIES=	graphics perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Chart
 PKGNAMEPREFIX=	p5-
-DISTNAME=	Chart-${PORTVERSION}
 
 MAINTAINER=	dan@trinsec.com
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/i386-freebsd/GD.pm:${PORTSDIR}/graphics/p5-GD
 
-WRKSRC=		${WRKDIR}/Chart-0.99b
-
-USE_PERL5=	YES
+USE_PERL5=	yes
 
 MAN3=		Chart.3
 MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 do-configure:
-		@ cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PERL5} Makefile.PL
+		@cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PERL5} Makefile.PL
 
 .include <bsd.port.mk>
