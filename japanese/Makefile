@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.73 1997/07/10 13:14:49 max Exp $
+# $Id: Makefile,v 1.74 1997/07/20 16:45:39 max Exp $
 #
 
     SUBDIR += Canna
@@ -58,6 +58,7 @@
     SUBDIR += nvi-iso-2022-jp
     SUBDIR += nvi-sjis
     SUBDIR += okphone
+    SUBDIR += oleo
     SUBDIR += perl5
     SUBDIR += pine
     SUBDIR += pkfonts
