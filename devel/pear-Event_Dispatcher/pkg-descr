@@ -1,0 +1,10 @@
+The Event_Dispatcher acts as a notification dispatch table.
+It is used to notify other objects of interesting things. This
+information is encapsulated in Event_Notification objects. Client
+objects register themselves with the Event_Dispatcher as observers of
+specific notifications posted by other objects. When an event occurs,
+an object posts an appropriate notification to the Event_Dispatcher.
+The Event_Dispatcher dispatches a message to each registered
+observer, passing the notification as the sole argument.
+
+WWW: http://pear.php.net/package/Event_Dispatcher/
