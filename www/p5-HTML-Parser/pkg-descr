@@ -1,0 +1,10 @@
+This is a collection of modules that parse HTML text documents. These
+modules used to be part of the libwww-perl distribution, but are now
+unbundled in order to facilitate a separate development track.  Bug
+reports and discussions about these modules can still be sent to the
+<libwww-perl@ics.uci.edu> mailing list.  Remember to also take a look at
+the HTML-Tree module collection that create and extract information from
+HTML syntax trees.
+
+- Vanilla
+vanilla@FreeBSD.ORG
