@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.31 1997/01/03 12:25:31 asami Exp $
+# $Id: Makefile,v 1.32 1997/01/04 18:55:57 andreas Exp $
 #
 
     SUBDIR += Mosaic         # requires Motif
@@ -34,7 +34,7 @@
     SUBDIR += squid11
     SUBDIR += w3
     SUBDIR += w3-msql
-    SUBDIR += w3c_httpd
+    SUBDIR += w3c-httpd
     SUBDIR += webcopy
     SUBDIR += weblint
     SUBDIR += wn
