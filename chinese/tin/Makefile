@@ -3,7 +3,7 @@
 # Date created:		2 Dec 1997
 # Whom:			Yen-Shuo Su <yssu@CCCA.NCTU.edu.tw>
 #
-# $Id: Makefile,v 1.7 1998/02/04 16:17:17 vanilla Exp $
+# $Id: Makefile,v 1.8 1998/03/03 03:29:32 vanilla Exp $
 #
 
 DISTNAME=       tinpre-1.4-980226
@@ -18,13 +18,16 @@ MAINTAINER=     yssu@CCCA.NCTU.edu.tw
 
 WRKSRC=         ${WRKDIR}/${DISTNAME:S/pre-1.4//}
 GNU_CONFIGURE=	yes
+
+# Curses sypport too buggy to activate
+#		 --enable-curses \
+#		 --with-ncurses \
+#
 CONFIGURE_ARGS=  --with-nntp-default-server=news  \
 		 --with-spooldir=/var/news  \
 		 --with-libdir=${PREFIX}/news/lib \
 		 --with-mime-default-charset=ISO-8859-1 \
 		 --enable-forgery \
-		 --enable-curses \
-		 --with-ncurses \
 		 --enable-break-long-lines \
 		 --with-pgp=${PREFIX}/bin/pgp \
 		 --with-ispell=${PREFIX}/bin/ispell \
