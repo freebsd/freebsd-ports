@@ -76,14 +76,21 @@ EOF
     # add an account 'wnn' to this system
     echo ""
     echo "You need an account 'wnn' whose ID number is 69"
-    if yesno "Would you like to create it automatically?" y; then
-	# We need a command 'pw(8)'
+    if [ -z "${BATCH}" ]; then
+	if yesno "Would you like to create it automatically?" y; then
+	    # We need a command 'pw(8)'
+	    check_pw
+	    pw useradd wnn -u 69 -g 7 -h - -d /nonexistent \
+		    -s /nonexistent -c Wnn || exit
+	else
+	    echo "Please create it, and try again."
+	    exit 1
+	fi
+    else
+	echo "Create it automatically!"
 	check_pw
 	pw useradd wnn -u 69 -g 7 -h - -d /nonexistent \
-		-s /nonexistent -c Wnn || exit
-    else
-	echo "Please create it, and try again."
-	exit 1
+	    -s /nonexistent -c Wnn || exit
     fi
     ;;
 

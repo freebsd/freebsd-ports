@@ -3,7 +3,7 @@
 # Date created:		20 July 1997
 # Whom:			Satoshi Taoka <taoka@infonets.hiroshima-u.ac.jp>
 #
-# $Id: Makefile,v 1.21 1999/02/03 11:11:48 asami Exp $
+# $Id: Makefile,v 1.22 1999/02/10 14:31:58 kuriyama Exp $
 #
 
 DISTNAME=	Wnn4.2
@@ -26,6 +26,10 @@ WRKSRC=		${WRKDIR}/Xsi
 
 WNN_EXTRA_PATCH= Wnn4.2.patch-981201.tar.gz
 MAKE_ENV+=	 PATH=/usr/bin:$${PATH} PORT_IMAKE_DEFINES='${WNN_DEF}'
+
+.if defined(BATCH)
+BATCH=	yes	# make sure it's not empty
+.endif
 
 .if (${PKGNAME} == ja-Wnn-4.2)
 DISTFILES+=	pubdic+.tar.gz pubdic+-fix01.gz pubdic+.diff pubdic+.special.diff
@@ -134,7 +138,8 @@ post-build:
 .endif
 
 pre-install:
-	@${SH} ${PKGDIR}/INSTALL ${PKGNAME} PRE-INSTALL
+	@${SETENV} BATCH=${BATCH} \
+		${SH} ${PKGDIR}/INSTALL ${PKGNAME} PRE-INSTALL
 
 post-install:
 #### gerodic
