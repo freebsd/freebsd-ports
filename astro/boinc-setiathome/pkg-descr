@@ -1,0 +1,18 @@
+SETI - Search for Extra-Terrestrial Intelligence
+
+Use your unused CPU cycles to aid in computations analyzing radio
+telescope information for possible signs of ET.
+
+This version of SETI@home is based on BOINC (Berkeley Open
+Infrastructure for Network Computing).  Several other projects
+besides SETI@home are using BOINC.  BOINC lets you participate in
+more than one project, and it lets you specify what fraction of
+your computer time should go to each project.
+
+This port requires net/boinc-client and together these supersede
+the astro/setiathome port which is now known as SETI-Classic.
+
+Be sure to join the "FreeBSD" team on the SETI website once you're
+up and running.
+
+WWW: http://setiweb.ssl.berkeley.edu/

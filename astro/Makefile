@@ -5,6 +5,7 @@
 
     SUBDIR += SETIsupport
     SUBDIR += accrete
+    SUBDIR += boinc-setiathome
     SUBDIR += celestia
     SUBDIR += cfitsio
     SUBDIR += dgpsip

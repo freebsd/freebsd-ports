@@ -1,0 +1,7 @@
+@comment @unexec %D/boinc/boinc_client -detach_project %%SETI_SITE%%
+boinc/projects/%%SETI_SITE%%/app_info.xml
+boinc/projects/%%SETI_SITE%%/%%SETI_BINARY%%
+@dirrm boinc/projects/%%SETI_SITE%%
+@cd %%BOINC_HOME%%
+projects/%%SETI_SITE%%/app_info.xml
+projects/%%SETI_SITE%%/%%SETI_BINARY%%
