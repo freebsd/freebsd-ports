@@ -20,6 +20,7 @@
     SUBDIR += muttprint
     SUBDIR += ooodict-ru_RU
     SUBDIR += openoffice-1.0
+    SUBDIR += openoffice-1.1
     SUBDIR += p5-Lingua-RU-Charset
     SUBDIR += p5-XML-Parser-encodings
     SUBDIR += p5-cyrillic
