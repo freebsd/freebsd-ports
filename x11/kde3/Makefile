@@ -15,7 +15,7 @@ DISTFILES=	# none
 EXTRACT_ONLY=	# empty
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	The "meta-port" for KDE
+COMMENT?=	The "meta-port" for KDE
 
 # This port conflicts with the kde-lite port, so make it known.
 .if defined(IS_INTERACTIVE)
