@@ -9,7 +9,8 @@ PORTVERSION=	1.11
 PORTREVISION=	1
 CATEGORIES=	textproc haskell
 MASTER_SITES=	http://www.haskell.org/HaXml/ \
-		ftp://ftp.cs.york.ac.uk/pub/haskell/HaXml/
+		ftp://ftp.cs.york.ac.uk/pub/haskell/HaXml/ \
+		http://www.mirror.ac.uk/sites/www.haskell.org/HaXml/ \
 PKGNAMEPREFIX=	hs-
 DISTNAME=	HaXml-${PORTVERSION}
 
