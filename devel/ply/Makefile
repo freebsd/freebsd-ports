@@ -7,11 +7,11 @@
 #
 
 PORTNAME=	ply
-PORTVERSION=	1.0
+PORTVERSION=	1.1
 CATEGORIES=	devel python
 MASTER_SITES=	http://systems.cs.uchicago.edu/ply/
 
-MAINTAINER=	ijliao@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 USE_PYTHON=	yes
 NO_BUILD=	yes
@@ -24,7 +24,8 @@ do-install:
 post-install:
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/ply.html ${DOCSDIR}
-	${CP} -R ${WRKSRC}/example ${DOCSDIR}
+	@${MKDIR} ${EXAMPLESDIR}
+	${CP} -R ${WRKSRC}/example/ ${EXAMPLESDIR}
 .endif
 
 .include <bsd.port.mk>
