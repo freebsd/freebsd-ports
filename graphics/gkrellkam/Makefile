@@ -19,6 +19,8 @@ COMMENT=	GKrellM plugin that display thumbnails of periodically updated images
 BUILD_DEPENDS=	${X11BASE}/include/gkrellm/gkrellm.h:${PORTSDIR}/sysutils/gkrellm
 RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm
 
+NO_LATEST_LINK=	yes
+
 WRKSRC=		${WRKDIR}/${DISTNAME:S/_/-/}
 USE_X_PREFIX=	yes
 USE_GNOME=	imlib
