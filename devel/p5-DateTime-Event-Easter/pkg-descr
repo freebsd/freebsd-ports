@@ -1,0 +1,11 @@
+The DateTime::Event::Easter module returns Easter events for DateTime objects.
+From a given datetime, it can tell you the previous, the following and the
+closest Easter event. The 'is' method will tell you if the given DateTime is an
+Easter Event.
+
+Easter Events can be Palm Sunday, Maundy Thursday, Good Friday, Black Saturday
+and Easter Sunday. If that's not enough, the module will also accept an offset
+so you can get the date for Pentecost (49 days after Easter Sunday) by passing
+49. 
+
+WWW: http://datetime.perl.org/
