@@ -1,5 +1,5 @@
---- Imakefile.orig	Tue Apr 27 12:27:54 1999
-+++ Imakefile	Tue Apr 27 12:28:19 1999
+--- Imakefile.orig	Tue Sep 23 08:50:46 1997
++++ Imakefile	Thu Oct 26 03:46:58 2000
 @@ -11,7 +11,7 @@
  
  DEFINES = -DSHAPE
@@ -9,3 +9,10 @@
  DEPLIBS = 
  
  SRCS =	account.c askuser.c calendar.c color.c drawing.c \
+@@ -25,5 +25,5 @@
+ 	util.o xinvest.o xutil.o
+ 
+ 
+-ComplexProgramTarget(Xinvest)
++ComplexProgramTargetNoMan(Xinvest)
+ InstallAppDefaults(Xinvest)
