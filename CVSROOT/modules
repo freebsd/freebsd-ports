@@ -2829,6 +2829,7 @@ keyadmin	src/usr.sbin/keyadmin
 keychain	ports/security/keychain
 keyinfo		src/usr.bin/keyinfo
 keyinit		src/usr.bin/keyinit
+keylaunch	ports/x11/keylaunch
 keylogin	src/usr.bin/keylogin
 keylogout	src/usr.bin/keylogout
 keynote		ports/security/keynote
