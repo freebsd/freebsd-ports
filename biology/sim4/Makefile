@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sim4
-PORTVERSION=	2002.03.03
+PORTVERSION=	2003.09.21
 CATEGORIES=	biology
 MASTER_SITES=	http://globin.cse.psu.edu/ftp/dist/sim4/
 DISTNAME=	${PORTNAME}.${PORTVERSION:S/./-/g}
@@ -16,8 +16,14 @@ COMMENT=	An algorithm for aligning expressed DNA with genomic sequences
 
 WRKSRC=		${WRKDIR}/sim4.${PORTVERSION:S/./-/g}
 
+USE_REINPLACE=	yes
+
 ALL_TARGET=	sim4
 PLIST_FILES=	bin/sim4
+
+post-patch:
+	${REINPLACE_CMD} -e 's|^CC=|CC?=|g ; \
+		s|^CFLAGS=|CFLAGS+=|g' ${WRKSRC}/Makefile
 
 do-install:
 	@ ${INSTALL_PROGRAM} ${WRKSRC}/sim4 ${PREFIX}/bin
