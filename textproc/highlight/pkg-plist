@@ -1,9 +1,12 @@
 bin/highlight
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
-%%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
 %%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%EXAMPLESDIR%%/cgi/perl/README_CGI
+%%PORTDOCS%%%%EXAMPLESDIR%%/cgi/perl/highlight.cgi
+%%PORTDOCS%%%%EXAMPLESDIR%%/cgi/php/CodeHighLight.php
+%%PORTDOCS%%%%EXAMPLESDIR%%/frontend/highlight-pyqt-GUI-0.1-1.tar.gz
 %%DATADIR%%/extensions.conf
 %%DATADIR%%/helpmsg/de.help
 %%DATADIR%%/helpmsg/en.help
@@ -13,7 +16,9 @@ bin/highlight
 %%DATADIR%%/langDefs/agda.lang
 %%DATADIR%%/langDefs/ampl.lang
 %%DATADIR%%/langDefs/amtrix.lang
+%%DATADIR%%/langDefs/as.lang
 %%DATADIR%%/langDefs/asm.lang
+%%DATADIR%%/langDefs/asp.lang
 %%DATADIR%%/langDefs/aspect.lang
 %%DATADIR%%/langDefs/avenue.lang
 %%DATADIR%%/langDefs/awk.lang
@@ -30,11 +35,14 @@ bin/highlight
 %%DATADIR%%/langDefs/e.lang
 %%DATADIR%%/langDefs/euphoria.lang
 %%DATADIR%%/langDefs/exp.lang
+%%DATADIR%%/langDefs/flx.lang
 %%DATADIR%%/langDefs/fortran.lang
+%%DATADIR%%/langDefs/frink.lang
 %%DATADIR%%/langDefs/haskell.lang
 %%DATADIR%%/langDefs/httpd.lang
 %%DATADIR%%/langDefs/idl.lang
 %%DATADIR%%/langDefs/ini.lang
+%%DATADIR%%/langDefs/io.lang
 %%DATADIR%%/langDefs/j.lang
 %%DATADIR%%/langDefs/java.lang
 %%DATADIR%%/langDefs/js.lang
@@ -45,10 +53,15 @@ bin/highlight
 %%DATADIR%%/langDefs/m.lang
 %%DATADIR%%/langDefs/make.lang
 %%DATADIR%%/langDefs/mel.lang
+%%DATADIR%%/langDefs/ml.lang
 %%DATADIR%%/langDefs/mo.lang
 %%DATADIR%%/langDefs/mod3.lang
+%%DATADIR%%/langDefs/ms.lang
+%%DATADIR%%/langDefs/nas.lang
 %%DATADIR%%/langDefs/nice.lang
 %%DATADIR%%/langDefs/nut.lang
+%%DATADIR%%/langDefs/oberon.lang
+%%DATADIR%%/langDefs/os.lang
 %%DATADIR%%/langDefs/pas.lang
 %%DATADIR%%/langDefs/php.lang
 %%DATADIR%%/langDefs/pike.lang
@@ -62,6 +75,7 @@ bin/highlight
 %%DATADIR%%/langDefs/rexx.lang
 %%DATADIR%%/langDefs/rnc.lang
 %%DATADIR%%/langDefs/sc.lang
+%%DATADIR%%/langDefs/sml.lang
 %%DATADIR%%/langDefs/sh.lang
 %%DATADIR%%/langDefs/sma.lang
 %%DATADIR%%/langDefs/spn.lang
@@ -134,4 +148,9 @@ bin/highlight
 @dirrm %%DATADIR%%/langDefs
 @dirrm %%DATADIR%%/helpmsg
 @dirrm %%DATADIR%%
-@dirrm %%DOCSDIR%%
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/frontend
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/cgi/php
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/cgi/perl
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/cgi
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
