@@ -1,0 +1,7 @@
+The X Printing Panel (XPP) is a completely free (GPL) tool for easy choosing of
+the desired printer out of a list of all available printers and for setting
+printer options by an easy-to-use graphical user interface. One simply calls the
+program (xpp) instead of the usual utilities (lpr or lp) at the command line or
+out of applications.
+
+WWW: http://cups.sourceforge.net/xpp/

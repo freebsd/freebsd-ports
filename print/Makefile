@@ -144,6 +144,7 @@
     SUBDIR += xdvi
     SUBDIR += xdvik
     SUBDIR += xmbibtex
+    SUBDIR += xpp
     SUBDIR += xtem
     SUBDIR += yatex
     SUBDIR += yatex-mule
