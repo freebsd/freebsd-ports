@@ -7,9 +7,10 @@
 #
 
 PORTNAME=	gps
-PORTVERSION=	0.9.1
+PORTVERSION=	0.9.3
 CATEGORIES=	net
 MASTER_SITES=	http://gps.sourceforge.net/release/
+DISTNAME=	${PORTNAME}-${PORTVERSION}-FRC
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ghost Port Scan
