@@ -1,14 +1,14 @@
 bin/gts-config
 bin/gts2oogl
-bin/gtscompare
 bin/gtscheck
+bin/gtscompare
 bin/gtstemplate
 bin/transform
 include/gts.h
 include/gtsconfig.h
-lib/libgts-0.6.so.0
 lib/libgts.a
 lib/libgts.so
+lib/libgts.so.0
 share/aclocal/gts.m4
 %%PORTDOCS%%share/doc/gts/book1.html
 %%PORTDOCS%%share/doc/gts/c10143.html
