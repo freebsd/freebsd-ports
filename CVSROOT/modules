@@ -6933,6 +6933,7 @@ phpSysInfo	ports/www/phpSysInfo
 php_doc		ports/lang/php_doc
 phpbb		ports/www/phpbb
 phpeclipse	ports/java/phpeclipse
+phpeclipse_tidy	ports/java/phpeclipse_tidy
 phpgroupware	ports/deskutils/phpgroupware
 phplot		ports/graphics/phplot
 phpmyadmin	ports/databases/phpmyadmin
