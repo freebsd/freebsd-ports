@@ -7,6 +7,7 @@
 
 PORTNAME=	fox
 PORTVERSION?=	0.99.174
+PORTREVISION?=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://www.fox-toolkit.org/ftp/ \
 		ftp://ftp.fox-toolkit.org/pub/ \
@@ -29,7 +30,7 @@ PATCH_DIST_STRIP=	-p1
 
 BUILD_DEPENDS=	${X11BASE}/include/xunicode/xunicode.h:${PORTSDIR}/converters/xunicode
 
-CONFIGURE_ENV=	X_CFLAGS=-DUSE_XUNICODE
+CONFIGURE_ENV=	X_CFLAGS=-DUSE_UNICODE
 
 PLIST_SUB=	NEWFILE="@comment "
 .else
@@ -38,7 +39,9 @@ PLIST_SUB=	NEWFILE=""
 
 USE_MESA=	yes
 INSTALLS_SHLIB=	yes
-CONFIGURE_ENV+=	CXXFLAGS="${CXXFLAGS}"
+CONFIGURE_ENV+=	CXXFLAGS="${CXXFLAGS}" \
+		CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS+=--with-opengl=mesa --with-x
 .if defined(NO_SHM)
 CONFIGURE_ARGS+=--with-shm=no
