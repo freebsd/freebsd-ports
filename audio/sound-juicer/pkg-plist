@@ -29,6 +29,7 @@ share/locale/gu/LC_MESSAGES/sound-juicer.mo
 share/locale/hi/LC_MESSAGES/sound-juicer.mo
 share/locale/hr/LC_MESSAGES/sound-juicer.mo
 share/locale/hu/LC_MESSAGES/sound-juicer.mo
+share/locale/id/LC_MESSAGES/sound-juicer.mo
 share/locale/it/LC_MESSAGES/sound-juicer.mo
 share/locale/ja/LC_MESSAGES/sound-juicer.mo
 share/locale/ko/LC_MESSAGES/sound-juicer.mo
@@ -44,7 +45,9 @@ share/locale/pa/LC_MESSAGES/sound-juicer.mo
 share/locale/pl/LC_MESSAGES/sound-juicer.mo
 share/locale/pt/LC_MESSAGES/sound-juicer.mo
 share/locale/pt_BR/LC_MESSAGES/sound-juicer.mo
+share/locale/ro/LC_MESSAGES/sound-juicer.mo
 share/locale/ru/LC_MESSAGES/sound-juicer.mo
+share/locale/rw/LC_MESSAGES/sound-juicer.mo
 share/locale/sq/LC_MESSAGES/sound-juicer.mo
 share/locale/sr/LC_MESSAGES/sound-juicer.mo
 share/locale/sr@Latn/LC_MESSAGES/sound-juicer.mo
@@ -52,6 +55,7 @@ share/locale/sv/LC_MESSAGES/sound-juicer.mo
 share/locale/th/LC_MESSAGES/sound-juicer.mo
 share/locale/tr/LC_MESSAGES/sound-juicer.mo
 share/locale/uk/LC_MESSAGES/sound-juicer.mo
+share/locale/xh/LC_MESSAGES/sound-juicer.mo
 share/locale/zh_CN/LC_MESSAGES/sound-juicer.mo
 share/locale/zh_TW/LC_MESSAGES/sound-juicer.mo
 @dirrm share/gnome/sound-juicer
