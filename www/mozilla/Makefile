@@ -3,12 +3,12 @@
 # Date created:         24 Feb 1997
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.3 1997/06/01 00:06:17 ache Exp $
+# $Id: Makefile,v 1.4 1997/08/04 00:04:22 ache Exp $
 #
 
 DISTNAME=       netscape-4.02b7
 CATEGORIES=	www
-MASTER_SITES=   ftp://ftp.netscape.com//pub/communicator/4.02/4.02b7/english/unix/freebsd/base_install/
+MASTER_SITES=   ftp://ftp23.netscape.com/pub/communicator/4.02/4.02b7/english/unix/freebsd/base_install/
 DISTFILES=      communicator-v402b7-export.x86-unknown-freebsd.tar.gz
 NO_WRKSUBDIR=   Yes
 NO_BUILD=       Yes
