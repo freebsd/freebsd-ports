@@ -7,8 +7,9 @@
 
 PORTNAME=	Atlas
 PORTVERSION=	0.4.6
+PORTREVISION=	1
 CATEGORIES=	devel
-MASTER_SITES=	ftp://ftp.lyx.org/pub/worldforge/libs/Atlas-C++/ \
+MASTER_SITES=	ftp://ftp.worldforge.org/pub/worldforge/libs/Atlas-C++/ \
 		ftp://victor.worldforge.org/pub/worldforge/libs/Atlas-C++/
 DISTNAME=	${PORTNAME}-C++-${PORTVERSION}
 
@@ -18,6 +19,7 @@ COMMENT=	A C++ reference implementation of the Atlas protocol
 USE_REINPLACE=	YES
 USE_LIBTOOL=	YES
 GNU_CONFIGURE=	YES
+INSTALLS_SHLIB=	YES
 
 post-patch:
 	@${REINPLACE_CMD} -e 's| install-data-local||g' \
@@ -27,8 +29,8 @@ post-patch:
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for file in README COPYING AUTHORS THANKS NEWS
-	@${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+.for docfile in README COPYING AUTHORS THANKS NEWS
+	@${INSTALL_DATA} ${WRKSRC}/${docfile} ${DOCSDIR}
 .endfor
 .endif
 
