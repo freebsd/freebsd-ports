@@ -1,22 +1,20 @@
-# New ports collection makefile for:   macutils
+# New ports collection makefile for:	macutils
 # Date created:		14th April 1997
 # Whom:			Joel Sutton <jsutton@bbcon.com.au>
-# FreeBSD Version:	2.1.5-RELEASE
 #
 # $FreeBSD$
 #
 
 PORTNAME=	macutils
 PORTVERSION=	2.0b3
-CATEGORIES=	emulators
-MASTER_SITES=	ftp://sunsite.unc.edu/pub/Linux/distributions/debian/main/source/otherosfs/
-DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
-# ${MASTER_SITE_SUNSITE} isn't appropriate because distributions/ isn't
-# mirrored.
+CATEGORIES=	archivers emulators
+MASTER_SITES=	${MASTER_SITE_SUNSITE}
+MASTER_SITE_SUBDIR=	utils/compress
+DISTNAME=	${PORTNAME}
 
 MAINTAINER=	jsutton@bbcon.com.au
 
-WRKSRC=		${WRKDIR}/macutils
+WRKSRC=		${WRKDIR}/${PORTNAME}
 MAKEFILE=	makefile
 
 MAN1=		macunpack.1 hexbin.1 macsave.1 macstream.1 binhex.1 tomac.1 \
@@ -51,10 +49,10 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/man/macutil.1 ${MANPREFIX}/man/man1
 .if !defined(NOPORTDOCS)
 	@${ECHO_MSG} "===>  Installing supplementary documents..."
-	-${MKDIR} ${DOCDIR}/
-	for file in ${DOCFILES} ; do \
-	  ${INSTALL_DATA} ${WRKSRC}/doc/$$file ${DOCDIR}/ ;\
-	done
+	-${MKDIR} ${DOCDIR}
+.for file in ${DOCFILES}
+	${INSTALL_DATA} ${WRKSRC}/doc/${file} ${DOCDIR}/
+.endfor
 .endif
 
 .include <bsd.port.mk>

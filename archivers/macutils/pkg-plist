@@ -1,10 +1,10 @@
-bin/macunpack
+bin/binhex
+bin/frommac
 bin/hexbin
 bin/macsave
 bin/macstream
-bin/binhex
+bin/macunpack
 bin/tomac
-bin/frommac
 share/doc/macutils/README
 share/doc/macutils/README.crc
 share/doc/macutils/README.crc.orig
