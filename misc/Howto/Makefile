@@ -9,9 +9,8 @@
 
 DISTNAME=	Howto-1.0
 CATEGORIES=	misc
-MASTER_SITES=	ftp://sunsite.unc.edu/pub/Linux/docs/HOWTO/other-formats/sgml/ \
-		ftp://sunsite.unc.edu/pub/Linux/docs/HOWTO/mini/other-formats/sgml/  \
-		http://sunsite.unc.edu/mdw/HOWTO/
+MASTER_SITES=	ftp://metalab.unc.edu/pub/Linux/docs/HOWTO/other-formats/sgml/ \
+		ftp://metalab.unc.edu/pub/Linux/docs/HOWTO/mini/other-formats/sgml/
 DISTFILES=	Linux+FreeBSD.sgml.gz  \
 		DNS-HOWTO.sgml.gz  \
 		NFS-HOWTO.sgml.gz  \
