@@ -81,6 +81,7 @@
     SUBDIR += lambda
     SUBDIR += lapack
     SUBDIR += lapack++
+    SUBDIR += lapack95
     SUBDIR += libRmath
     SUBDIR += libgmp4
     SUBDIR += libmath++

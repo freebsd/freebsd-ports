@@ -1,0 +1,11 @@
+LAPACK95 is a Fortran 95 interface to the Fortran 77 LAPACK library.
+It improves upon the original user-interface to the LAPACK package,
+taking advantage of the considerable simplifications which
+Fortran 95 allows. The design of LAPACK95 exploits assumed-shape arrays,
+optional arguments, and generic interfaces. The Fortran 95 interface
+has been implemented by writing Fortran 95 ``wrappers'' to call
+existing routines from the LAPACK package. This interface can persist
+unchanged even if the underlying Fortran 77 LAPACK code is rewritten to
+take advantage of the new features of Fortran 95. 
+
+WWW: http://www.netlib.org/lapack95/
