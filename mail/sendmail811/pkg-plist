@@ -1,0 +1,12 @@
+bin/hoststat
+bin/mailq
+bin/newaliases
+bin/purgestat
+bin/rmail
+bin/vacation
+libexec/mail.local
+libexec/smrsh
+sbin/mailstats
+sbin/makemap
+sbin/praliases
+sbin/sendmail
