@@ -1,12 +1,25 @@
---- Imakefile.orig	Thu Dec  4 16:59:35 1997
-+++ Imakefile	Thu Dec  4 17:01:47 1997
-@@ -9,7 +9,8 @@
+--- Imakefile.orig	Tue Jul  6 07:48:28 1999
++++ Imakefile	Mon Aug 23 11:36:22 1999
+@@ -64,7 +64,7 @@
  
  # RasMol's on-line help direcory
  #   e.g. /usr/local/lib/rasmol/rasmol.hlp
 -RASMOLDIR = $(USRLIBDIR)/rasmol/
-+#RASMOLDIR = $(USRLIBDIR)/rasmol/
-+RASMOLDIR = $(X11BASE)/lib/X11/rasmol/
++RASMOLDIR = $(PREFIX)/lib/X11/rasmol/
  
  
  
+@@ -104,8 +104,9 @@
+ ComplexProgramTarget(rasmol)
+ MakeDirectories(install,$(RASMOLDIR))
+ InstallNonExec(rasmol.hlp,$(RASMOLDIR))
+-InstallNonExec(data/1crn.pdb,$(RASMOLDIR))
+-InstallNonExec(data/3cro.pdb,$(RASMOLDIR))
++InstallNonExec(../data/1crn.pdb,$(RASMOLDIR))
++InstallNonExec(../data/3cro.pdb,$(RASMOLDIR))
+ 
+-rasmol.man::	doc/rasmol.1
+-		ln -s doc/rasmol.1 rasmol.man
++rasmol.man::
++		gunzip ../doc/rasmol.1.gz
++		ln -s ../doc/rasmol.man rasmol.man 
