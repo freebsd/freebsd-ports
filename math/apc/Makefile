@@ -7,10 +7,10 @@
 
 PORTNAME=	apc
 PORTVERSION=	1.0
-CATEGORIES= 	math
+CATEGORIES=	math
 MASTER_SITES= 	http://members.global2000.net/~eagriff/
 
-MAINTAINER= 	eagriff@global2000.net
+MAINTAINER=	eagriff@global2000.net
 
 LIB_DEPENDS=	xforms.0:${PORTSDIR}/x11-toolkits/xforms
 
