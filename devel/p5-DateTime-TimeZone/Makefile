@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	DateTime-TimeZone
-PORTVERSION=	0.20
+PORTVERSION=	0.23
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	DateTime
@@ -15,16 +15,11 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	m@absolight.net
 COMMENT=	Time zone object base class and factory
 
-BUILD_DEPENDS=	${SITE_PERL}/Class/Singleton.pm:${PORTSDIR}/devel/p5-Class-Singleton \
+RUN_DEPENDS=	${SITE_PERL}/Class/Singleton.pm:${PORTSDIR}/devel/p5-Class-Singleton \
 		${SITE_PERL}/${PERL_ARCH}/Params/Validate.pm:${PORTSDIR}/devel/p5-Params-Validate
-RUN_DEPENDS=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS} \
+		${SITE_PERL}/Module/Build.pm:${PORTSDIR}/devel/p5-Module-Build
 
 PERL_CONFIGURE=	yes
-
-MAN3=		DateTime::TimeZone.3 \
-		DateTime::TimeZone::UTC.3 \
-		DateTime::TimeZoneCatalog.3 \
-		DateTime::TimeZone::OlsonDB.3 \
-		DateTime::TimeZone::Floating.3
 
 .include <bsd.port.mk>

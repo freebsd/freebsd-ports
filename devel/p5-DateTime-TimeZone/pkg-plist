@@ -369,8 +369,6 @@
 %%SITE_PERL%%/DateTime/TimeZone/Pacific/Yap.pm
 %%SITE_PERL%%/DateTime/TimeZone/UTC.pm
 %%SITE_PERL%%/DateTime/TimeZoneCatalog.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/DateTime/TimeZone/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/DateTime/TimeZone
 @dirrm %%SITE_PERL%%/DateTime/TimeZone/Pacific
 @dirrm %%SITE_PERL%%/DateTime/TimeZone/Indian
 @dirrm %%SITE_PERL%%/DateTime/TimeZone/Europe
@@ -384,5 +382,4 @@
 @dirrm %%SITE_PERL%%/DateTime/TimeZone/America
 @dirrm %%SITE_PERL%%/DateTime/TimeZone/Africa
 @dirrm %%SITE_PERL%%/DateTime/TimeZone
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/DateTime 2>/dev/null || true
 @unexec rmdir %D/%%SITE_PERL%%/DateTime 2>/dev/null || true
