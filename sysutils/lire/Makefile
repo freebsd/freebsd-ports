@@ -13,7 +13,7 @@
 
 PORTNAME=	lire
 PORTVERSION=	1.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://download.logreport.org/pub/archive/
 
@@ -23,7 +23,7 @@ COMMENT=	Logfile analyse toolkit for multiple applications
 LIB_DEPENDS=	\
 	expat.4:${PORTSDIR}/textproc/expat2 \
 	xml2.5:${PORTSDIR}/textproc/libxml2 \
-	xslt.1:${PORTSDIR}/textproc/libxslt
+	xslt.2:${PORTSDIR}/textproc/libxslt
 BUILD_DEPENDS=	\
 	${LOCALBASE}/share/xml/docbook/4.2/docbookx.dtd:${PORTSDIR}/textproc/docbook-xml \
 	${LOCALBASE}/share/sgml/docbook/dsssl/modular/catalog:${PORTSDIR}/textproc/dsssl-docbook-modular \

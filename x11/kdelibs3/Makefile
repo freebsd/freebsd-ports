@@ -8,6 +8,7 @@
 
 PORTNAME=	kdelibs
 PORTVERSION=	${KDE_VERSION}
+PORTREVISION=	1
 CATEGORIES=	x11 kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${KDE_VERSION}/src
@@ -21,7 +22,7 @@ LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
 		artsc.0:${PORTSDIR}/audio/arts \
 		fam.0:${PORTSDIR}/devel/fam \
 		xml2.5:${PORTSDIR}/textproc/libxml2 \
-		xslt.1:${PORTSDIR}/textproc/libxslt \
+		xslt.2:${PORTSDIR}/textproc/libxslt \
 		pcre.0:${PORTSDIR}/devel/pcre \
 		intl.5:${PORTSDIR}/devel/gettext \
 		art_lgpl_2.5:${PORTSDIR}/graphics/libart_lgpl2 \
