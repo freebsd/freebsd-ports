@@ -1,0 +1,6 @@
+       This module provides you with an object-oriented (and
+       subclassable) way of outputting HTML.  Basically, you open
+       up an "HTML stream" on an existing filehandle, and then do
+       all of your output to the HTML stream (you can intermix
+       HTML-stream-output and ordinary-print-output, if you
+       like).
