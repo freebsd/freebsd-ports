@@ -1,5 +1,5 @@
 # Creator:  Jordan Hubbard
-# $Id: LEGAL,v 1.38 1996/07/10 21:59:52 asami Exp $
+# $Id: LEGAL,v 1.39 1996/08/14 18:57:57 jdp Exp $
 
 Some of the ports in this directory have restrictive copyrights prohibiting
 their actual redistribution on mass media.  When creating compilations
@@ -39,6 +39,7 @@ SSLeay-0.5.1b.tar.gz	ports/security/SSLeay	Crypto; export-controlled
 spice-3f4		ports/cad/spice		Export restrictions
 tkman-1.7.3.tar.Z	ports/x11/tkman		Restrictive copyright
 uzap.tar.gz             ports/editors/uzap      Restrictive copyright
+webcopy.tgz		ports/www/webcopy	Don't sell for profit
 xrisk-2.13.tar.Z	ports/games/xrisk	Copyright/trademark violation?
 xtetris-2.5.2.tar.gz	ports/games/xtetris	Possible trademark violation
 xinvaders-*		ports/games/xinvaders	Don't sell for profit
