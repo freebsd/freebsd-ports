@@ -1,0 +1,5 @@
+%%SITE_PERL%%/DNS/ZoneParse.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/DNS/ZoneParse/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/DNS/ZoneParse
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/DNS 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/DNS 2>/dev/null || true

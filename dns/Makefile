@@ -51,6 +51,7 @@
     SUBDIR += p5-BIND-Conf_Parser
     SUBDIR += p5-DNS-Config
     SUBDIR += p5-DNS-Zone
+    SUBDIR += p5-DNS-ZoneParse
     SUBDIR += p5-Net-DNS
     SUBDIR += p5-Net-DNS-SEC
     SUBDIR += p5-Net-DNS-ZoneFile
