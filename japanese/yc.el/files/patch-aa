@@ -1,0 +1,46 @@
+--- Makefile.orig	Sun Nov  9 16:18:10 2003
++++ Makefile	Fri Nov 21 12:59:50 2003
+@@ -1,10 +1,10 @@
+-prefix = /usr/local
++prefix = $(PREFIX)
+ #exesuffix = .exe # for Windows
+ 
+-EMACS = emacs
++#EMACS = emacs
+ #EMACS = xemacs
+ 
+-elispdir = $(prefix)/share/emacs/site-lisp
++elispdir = $(LISPDIR)
+ #elispdir = $(prefix)/lib/$(EMACS)/site-lisp
+ #elispdir = $(prefix)/lib/emacs
+ 
+@@ -12,8 +12,10 @@
+ elc = yc.elc
+ PROGRAM = icanna$(exesuffix)
+ OBJS = icanna.o
+-CC = gcc
+-INSTALL = install
++#CC = gcc
++#INSTALL = install
++
++.SUFFIXES: .el .elc
+ 
+ all: $(PROGRAM) $(elc)
+ 
+@@ -29,11 +31,13 @@
+ install: install-bin install-el
+ 
+ install-bin: $(PROGRAM)
+-	$(INSTALL) -m 755 -s $(PROGRAM) $(INSTALL_PATH)/$(PROGRAM)
++	test -f $(INSTALL_PATH) || mkdir -p $(INSTALL_PATH)
++	$(INSTALL_PROGRAM) $(PROGRAM) $(INSTALL_PATH)/$(PROGRAM)
+ 
+ install-el: $(ELCS) $(SRCS)
+-	$(INSTALL) -m 755 $(elc) $(elispdir)/$(elc)
+-	$(INSTALL) -m 755 $(elc:.elc=.el) $(elispdir)/$(elc:.elc=.el)
++	test -f $(elispdir) || mkdir -p $(elispdir)
++	$(INSTALL_SCRIPT) $(elc) $(elispdir)/$(elc)
++	$(INSTALL_SCRIPT) $(elc:.elc=.el) $(elispdir)/$(elc:.elc=.el)
+ 
+ uninstall: uninstall-bin uninstall-el
+ 
