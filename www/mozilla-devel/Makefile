@@ -199,10 +199,6 @@ FAKEDIR=	${WRKDIR}/fake
 CONFIGURE_ARGS+=	--enable-reorder
 .endif
 
-.if ${OSVERSION} < 500035 && !defined(WITH_CAIRO_RENDER)
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-nsSVGLibartGlyphMetricsFT.cpp
-.endif
-
 .if defined(WITH_SMB)
 USE_GNOME+=	gnomevfs2
 .else
