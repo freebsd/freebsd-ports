@@ -3,7 +3,7 @@
 # Date created:				31 March 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.4 1998/08/07 23:56:23 asami Exp $
+# $Id: Makefile,v 1.5 1998/09/26 23:18:05 steve Exp $
 #
 
 DISTNAME=	xothello
@@ -13,8 +13,6 @@ MASTER_SITES=	http://makosteszta.sote.hu/linux/othello/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	andy@icc.surw.chel.su
-
-BROKEN_ELF=	xforms is a.out only
 
 LIB_DEPENDS=	xforms.0:${PORTSDIR}/x11-toolkits/xforms
 

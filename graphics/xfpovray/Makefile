@@ -3,7 +3,7 @@
 # Date created:         20 Sep 1997
 # Whom:                 Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.5 1998/08/07 23:56:27 asami Exp $
+# $Id: Makefile,v 1.6 1998/09/26 23:18:06 steve Exp $
 #
 
 DISTNAME=       xfpovray-1.3.1
@@ -14,8 +14,6 @@ MASTER_SITE_SUBDIR=	apps/graphics/rays/pov
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.ORG
-
-BROKEN_ELF=	xforms is a.out only
 
 LIB_DEPENDS=	xforms.0:${PORTSDIR}/x11-toolkits/xforms
 RUN_DEPENDS=	povray:${PORTSDIR}/graphics/povray

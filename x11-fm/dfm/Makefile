@@ -3,7 +3,7 @@
 # Date created:				25 May 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.7 1998/09/17 00:32:54 asami Exp $
+# $Id: Makefile,v 1.8 1998/09/26 23:18:10 steve Exp $
 #
 
 DISTNAME=	dfm-0.9.10
@@ -11,8 +11,6 @@ CATEGORIES=	x11-fm
 MASTER_SITES=	http://www-c.informatik.uni-hannover.de/~kaiser/dfm/
 
 MAINTAINER=	andy@icc.surw.chel.su
-
-BROKEN_ELF=	xforms is a.out only
 
 LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm \
 		xforms.0:${PORTSDIR}/x11-toolkits/xforms
