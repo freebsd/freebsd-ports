@@ -450,6 +450,7 @@
     SUBDIR += trafcount
     SUBDIR += trafd
     SUBDIR += trafshow
+    SUBDIR += tramp
     SUBDIR += tridiavnc
     SUBDIR += ttcp
     SUBDIR += ttt
