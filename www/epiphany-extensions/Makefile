@@ -29,12 +29,16 @@ HEADERS_SUFX=
 MOZILLA=	mozilla
 HEADERS_SUFX=
 .else
+.if ${WITH_MOZILLA}=="firefox"
+MOZILLA=	firefox
+.else
 .if ${WITH_MOZILLA}=="mozilla-devel" || ${WITH_MOZILLA}=="mozilla-devel-gtk2"
 MOZILLA=	mozilla-devel
 HEADERS_SUFX=	-devel
 .else
 MOZILLA=	mozilla
 HEADERS_SUFX=
+.endif
 .endif
 .endif
 
@@ -45,7 +49,8 @@ USE_LIBTOOL_VER=15
 USE_GMAKE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include ${PTHREAD_CFLAGS}" \
 		LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
-CONFIGURE_ARGS=	--with-extensions="all"
+CONFIGURE_ARGS=	--with-extensions="all" \
+		--with-mozilla=${MOZILLA}
 
 PLIST_SUB=	VERSION="1.6" EPHY_VERSION="1.6"
 
@@ -77,6 +82,7 @@ pre-everything::
 	@${ECHO_MSG} " By default epiphany-extensions builds with www/mozilla support, but you can"
 	@${ECHO_MSG} " change this by defining WITH_MOZILLA to one of the following values:"
 	@${ECHO_MSG}
+	@${ECHO_MSG} "  firefox       "
 	@${ECHO_MSG} "  mozilla-devel "
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "Epiphany-extensions also supports the following tunable option(s):"
