@@ -309,6 +309,7 @@ share/xfce/locale/ca/LC_MESSAGES/xfce.mo
 share/xfce/locale/da/LC_MESSAGES/xfce.mo
 share/xfce/locale/de/LC_MESSAGES/xfce.mo
 share/xfce/locale/es/LC_MESSAGES/xfce.mo
+share/xfce/locale/et/LC_MESSAGES/xfce.mo
 share/xfce/locale/fi/LC_MESSAGES/xfce.mo
 share/xfce/locale/fr/LC_MESSAGES/xfce.mo
 share/xfce/locale/gl/LC_MESSAGES/xfce.mo
@@ -334,6 +335,7 @@ share/xfce/palettes/Golden
 share/xfce/palettes/Grayscale
 share/xfce/palettes/Ground
 share/xfce/palettes/HiContrast
+share/xfce/palettes/HiTech
 share/xfce/palettes/Iceland
 share/xfce/palettes/Mauve
 share/xfce/palettes/Metal
@@ -430,6 +432,7 @@ share/xfce/system.xfwmrc
 share/xfce/textures/cheese.xpm
 share/xfce/textures/craters.xpm
 share/xfce/textures/ground.xpm
+share/xfce/textures/hitech.xpm
 share/xfce/textures/metal.xpm
 share/xfce/textures/military.xpm
 share/xfce/textures/oldwood.xpm
@@ -446,6 +449,8 @@ share/xfce/xfdefs.py
 @dirrm share/xfce/locale/de
 @dirrm share/xfce/locale/es/LC_MESSAGES
 @dirrm share/xfce/locale/es
+@dirrm share/xfce/locale/et/LC_MESSAGES
+@dirrm share/xfce/locale/et
 @dirrm share/xfce/locale/fi/LC_MESSAGES
 @dirrm share/xfce/locale/fi
 @dirrm share/xfce/locale/fr/LC_MESSAGES
