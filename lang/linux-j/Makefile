@@ -14,9 +14,7 @@ DIST_SUBDIR=    ${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	js@jeannot.org
 
-RUN_DEPENDS=    /compat/linux/lib/ld.so:${PORTSDIR}/emulators/linux_base
-
-USE_LINUX_LIB=  yes
+USE_LINUX=	yes
 
 ONLY_FOR_ARCHS= i386
 
