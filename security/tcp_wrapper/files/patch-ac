@@ -1,0 +1,42 @@
+*** hosts_access.5.orig	Tue Aug  5 10:14:41 1997
+--- hosts_access.5	Tue Aug  5 10:15:08 1997
+***************
+*** 21,30 ****
+  at the first match:
+  .IP \(bu
+  Access will be granted when a (daemon,client) pair matches an entry in
+! the \fI/etc/hosts.allow\fR file.
+  .IP \(bu
+  Otherwise, access will be denied when a (daemon,client) pair matches an
+! entry in the \fI/etc/hosts.deny\fR file.
+  .IP \(bu
+  Otherwise, access will be granted.
+  .PP
+--- 21,30 ----
+  at the first match:
+  .IP \(bu
+  Access will be granted when a (daemon,client) pair matches an entry in
+! the \fI!!PREFIX!!/etc/hosts.allow\fR file.
+  .IP \(bu
+  Otherwise, access will be denied when a (daemon,client) pair matches an
+! entry in the \fI!!PREFIX!!/etc/hosts.deny\fR file.
+  .IP \(bu
+  Otherwise, access will be granted.
+  .PP
+***************
+*** 268,274 ****
+  file:
+  .PP
+  .ne 2
+! /etc/hosts.deny: 
+  .in +3
+  ALL: ALL
+  .PP
+--- 268,274 ----
+  file:
+  .PP
+  .ne 2
+! !!PREFIX!!/etc/hosts.deny: 
+  .in +3
+  ALL: ALL
+  .PP

@@ -1,0 +1,14 @@
+#!/bin/sh
+#
+# $Id$
+#
+
+FILES="hosts_access.3 hosts_access.5 tcpd.8 tcpdchk.8 tcpdmatch.8"
+
+cd ${WRKSRC}
+
+for f in $FILES; do
+	mv $f $f.bak &&
+	sed <$f.bak >$f s+!!PREFIX!!+$PREFIX+g
+done
+

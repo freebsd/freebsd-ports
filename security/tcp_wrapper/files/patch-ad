@@ -1,0 +1,86 @@
+*** tcpd.8.orig	Tue Aug  5 10:15:53 1997
+--- tcpd.8	Tue Aug  5 10:18:01 1997
+***************
+*** 88,99 ****
+  .sp
+  .in +5
+  # mkdir /other/place
+! # mv /usr/etc/in.fingerd /other/place
+! # cp tcpd /usr/etc/in.fingerd
+  .fi
+  .PP
+! The example assumes that the network daemons live in /usr/etc. On some
+! systems, network daemons live in /usr/sbin or in /usr/libexec, or have
+  no `in.\' prefix to their name.
+  .SH EXAMPLE 2
+  This example applies when \fItcpd\fR expects that the network daemons
+--- 88,99 ----
+  .sp
+  .in +5
+  # mkdir /other/place
+! # mv /usr/libexec/fingerd /other/place
+! # cp tcpd /usr/libexec/fingerd
+  .fi
+  .PP
+! The example assumes that the network daemons live in /usr/libexec. On some
+! systems, network daemons live in /usr/sbin or in /usr/etc, or have
+  no `in.\' prefix to their name.
+  .SH EXAMPLE 2
+  This example applies when \fItcpd\fR expects that the network daemons
+***************
+*** 105,111 ****
+  .nf
+  .sp
+  .ti +5
+! finger  stream  tcp  nowait  nobody  /usr/etc/in.fingerd  in.fingerd
+  .sp
+  becomes:
+  .sp
+--- 105,111 ----
+  .nf
+  .sp
+  .ti +5
+! finger  stream  tcp  nowait  nobody  /usr/libexec/fingerd  fingerd
+  .sp
+  becomes:
+  .sp
+***************
+*** 114,121 ****
+  .sp
+  .fi
+  .PP
+! The example assumes that the network daemons live in /usr/etc. On some
+! systems, network daemons live in /usr/sbin or in /usr/libexec, the
+  daemons have no `in.\' prefix to their name, or there is no userid
+  field in the inetd configuration file.
+  .PP
+--- 114,121 ----
+  .sp
+  .fi
+  .PP
+! The example assumes that the network daemons live in /usr/libexec. On some
+! systems, network daemons live in /usr/sbin or in /usr/etc, the
+  daemons have no `in.\' prefix to their name, or there is no userid
+  field in the inetd configuration file.
+  .PP
+***************
+*** 158,166 ****
+  .PP
+  The default locations of the host access control tables are:
+  .PP
+! /etc/hosts.allow
+  .br
+! /etc/hosts.deny
+  .SH SEE ALSO
+  .na
+  .nf
+--- 158,166 ----
+  .PP
+  The default locations of the host access control tables are:
+  .PP
+! !!PREFIX!!/etc/hosts.allow
+  .br
+! !!PREFIX!!/etc/hosts.deny
+  .SH SEE ALSO
+  .na
+  .nf
