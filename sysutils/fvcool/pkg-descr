@@ -1,0 +1,16 @@
+FVCool is the FreeBSD version of the famous VCool software
+(http://vcool.occludo.net) which changes the PCI configuration data
+of some chipsets and thus allows AMD Athlon/Duron CPUs to go into
+power-save mode. This makes the CPU consume a lot less electric
+energy, and it produces a lot less heat as well. This trick is not
+a secret - on FreeBSD, you can actually achieve the same effect
+which this software has using the "pciconf" command.
+
+Please note that this software may have a negative impact on the
+system's stability and thus should not be employed in production
+or mission-critical environments.
+
+WWW: http://www.nt.phys.kyushu-u.ac.jp/shimizu/
+
+- Frerich Raabe
+frerich.raabe@gmx.de
