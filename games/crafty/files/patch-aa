@@ -1,80 +1,38 @@
---- Makefile.orig	Sun Jan 30 20:43:42 2000
-+++ Makefile	Tue May 16 11:06:31 2000
-@@ -23,7 +23,7 @@
- #     SGI      {SGI Workstation running Irix (SYSV/R4) Unix}
- #     SUN      {Sun SparcStation running Solaris (SYSV/R4) Unix}
- #     SUN_BSD  {Sun SparcStation running SunOS (BSD) Unix}
--#     FreeBSD  {80X86 architecture running FreeBSD (unix)}
-+#     FreeBSD  {80X86/Alpha architecture running FreeBSD (unix)}
+--- Makefile.orig	Tue Apr  3 12:43:10 2001
++++ Makefile	Tue Apr  3 12:45:43 2001
+@@ -21,7 +21,7 @@
+ #     SGI        {SGI Workstation running Irix (SYSV/R4) Unix}
+ #     SUN        {Sun SparcStation running Solaris (SYSV/R4) Unix}
+ #     SUN_GCC    {Sun SparcStation running Solaris but using gcc
+-#     FreeBSD    {80X86 architecture running FreeBSD (Unix)}
++#     FreeBSD    {80X86/Alpha architecture running FreeBSD (Unix)}
+ #     NetBSD     {multi-architecture running NetBSD (Unix)}
+ #     Cygwin     {80X86 running Cygwin under Win32 (Unix)}
  #   
- #   The next options are optimizations inside Crafty that you will have
- #   test to see if they help.  on some machines, these will slow things
-@@ -83,13 +83,17 @@
- # asm     = X86.o
+@@ -142,14 +142,23 @@
+ 		asm='X86.o' \
+ 		crafty-make
  
- # FreeBSD (gcc 2.6.3)
--#target  = FreeBSD
-+target  = FreeBSD
- #CC      = gcc
- #CFLAGS  = -fomit-frame-pointer -m486 -O3 -Wall
--#CPP	 = $(CC)
--#LDFLAGS = 
--#opt     = -DCOMPACT_ATTACKS -DUSE_ATTACK_FUNCTIONS \
--#          -DUSE_ASSEMBLY_A -DUSE_ASSEMBLY_B -DFAST
-+CPP	 = $(CXX)
-+LDFLAGS = 
-+.if ${MACHINE_ARCH} == "i386"
-+opt     = -DCOMPACT_ATTACKS -DUSE_ATTACK_FUNCTIONS \
-+          -DUSE_ASSEMBLY_A -DUSE_ASSEMBLY_B -DFAST
-+.else
-+opt     = -DCOMPACT_ATTACKS -DUSE_ATTACK_FUNCTIONS -DFAST
-+.endif
- 
- # FreeBSD (pgcc)
- #target  = FreeBSD
-@@ -111,20 +115,27 @@
-  
- # LINUX (gcc 2.95)
- # Note: You have to uncomment exactly ONE of the `asm' lines below.
--target  = LINUX
--CC      = gcc
--CPP	= g++
--CFLAGS  = -Wall -pipe -D_REENTRANT -march=i686 -O -fforce-mem \
--          -fomit-frame-pointer -mpreferred-stack-boundary=2
--LDFLAGS = -lpthread
--opt     = -DCOMPACT_ATTACKS -DUSE_ATTACK_FUNCTIONS \
--          -DUSE_ASSEMBLY_A -DUSE_ASSEMBLY_B -DFAST -DSMP -DCPUS=4 -DDGT
-+#target  = LINUX
-+#CC      = gcc
-+#CPP	= g++
-+#CFLAGS  = -Wall -pipe -D_REENTRANT -march=i686 -O -fforce-mem \
-+#          -fomit-frame-pointer -mpreferred-stack-boundary=2
-+#LDFLAGS = -lpthread
-+#opt     = -DCOMPACT_ATTACKS -DUSE_ATTACK_FUNCTIONS \
-+#          -DUSE_ASSEMBLY_A -DUSE_ASSEMBLY_B -DFAST -DSMP -DCPUS=4 -DDGT
+-freebsd:
++freebsd-i386:
+ 	$(MAKE) target=FreeBSD \
+-		CC=gcc CXX='$$(CC)' \
+-		CFLAGS='$(CFLAGS) -fomit-frame-pointer -m486 -O3 -Wall' \
++		CC='$(CC)' CXX='$(CXX)' \
++		CFLAGS='$(CFLAGS)' \
+ 		LDFLAGS='$(LDFLAGS)' \
+ 		opt='$(opt) -DCOMPACT_ATTACKS -DUSE_ATTACK_FUNCTIONS \
+ 		     -DUSE_ASSEMBLY_A -DUSE_ASSEMBLY_B -DFAST' \
+ 		asm=X86-elf.o \
++		crafty-make
 +
++# This should work for non-i386 FreeBSD (e.g. Alpha)
++freebsd-generic:
++	$(MAKE) target=FreeBSD \
++		CC='$(CC) CXX='$(CXX)' \
++		CFLAGS='$(CFLAGS)' \
++		LDFLAGS='$(LDFLAGS)' \
++		opt='$(opt) -DCOMPACT_ATTACKS -DUSE_ATTACK_FUNCTIONS -DFAST' \
+ 		crafty-make
  
- # Uncomment the FIRST `asm' line for a.out systems.
- # Uncomment the SECOND `asm' line for ELF systems.
- #
--#asm     = X86-aout.o
-+.if ${MACHINE_ARCH} == "i386"
-+.if ${PORTOBJFORMAT} == "aout"
-+asm     = X86-aout.o
-+.else
- asm     = X86-elf.o
-+.endif
-+.endif
-+
-  
- # NEXT
- #target  = NEXT
-@@ -169,7 +180,7 @@
- 
- # Do not change anything below this line!
- 
--opts = $(opt) -D$(target)
-+CFLAGS += $(opt) -D$(target)
- 
- objects = searchr.o search.o thread.o searchmp.o repeat.o next.o nexte.o      \
-        nextr.o history.o quiesce.o evaluate.o movgen.o make.o unmake.o hash.o \
+ freebsd-pgcc:
