@@ -10,7 +10,7 @@ DISTNAME=	tkgnats-3.0.14
 CATEGORIES=	databases tk82
 MASTER_SITES=	http://www.cuug.ab.ca/~macdonal/tkgnats/
 
-MAINTAINER=	andreas@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 BUILD_DEPENDS=	nedit-pr:${PORTSDIR}/databases/gnats
 LIB_DEPENDS=	tk82.1:${PORTSDIR}/x11-toolkits/tk82

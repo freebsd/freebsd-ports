@@ -10,7 +10,7 @@ DISTNAME=	majorcool-1.3.2
 CATEGORIES=	mail
 MASTER_SITES=	http://people.FreeBSD.org/~andreas/download/
 
-MAINTAINER=	andreas@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 NO_BUILD=	yes
 NO_PACKAGE=	"Too many questions"

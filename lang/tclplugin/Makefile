@@ -11,7 +11,7 @@ PKGNAME=	tclplugin-2.0
 CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.scriptics.com/pub/tcl/plugin/
 
-MAINTAINER=	andreas@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 BROKEN_ELF=	yes
 

@@ -17,7 +17,7 @@ MASTER_SITES=	http://people.FreeBSD.org/~andreas/download/ \
 DISTFILES=	${CF_SOURCES} ${CF_DOC} ${CF_MAPS} ${CF_SOUNDS} \
 		${CF_ARCH} ${CF_CLSERV}
 
-MAINTAINER=	andreas@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 BUILD_DEPENDS=	rplay:${PORTSDIR}/audio/rplay
 LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
