@@ -7,7 +7,7 @@
 
 PORTNAME=	ifc
 PORTVERSION=	6.0.159
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang devel emulators linux
 MASTER_SITES=#
 DISTNAME=	l_fc_pu_6.0.159
@@ -34,7 +34,7 @@ IFC_SITE=	http://www.intel.com/software/products/compilers/
 .include <bsd.port.pre.mk>
 
 .if !exists(${DISTDIR}/${DIST_SUBDIR}/${DISTNAME}${EXTRACT_SUFX})
-IGNORE=	"Please manually download ${DISTFILES} from ${IFC_SITE}, e.g. from https://premier.intel.com/. Registration is required!! Put it into ${DISTDIR} and run make again."
+IGNORE=	"Please manually download ${DISTFILES} from ${IFC_SITE}, e.g. from ${IFC_SITE}f60l/noncom.htm or from https://premier.intel.com/. Registration is required!! Put it into ${DISTDIR} and run make again."
 .endif
 
 post-extract:
@@ -63,8 +63,8 @@ pre-patch:
 post-patch:
 # Correct some paths and patch some files
 .for i in ia32/bin/ifcvars.csh ia32/bin/ifcvars.sh \
-	ia32/bin/ifc #ia32/bin/ifc.pcl
-	@${SED} 's@\<INSTALLDIR\>@${PREFIX}/intel@g; s@-tp p6@@; s@man -w@manpath@ ; s@/bin/sh@${LINUXBASE}/bin/bash@' \
+	ia32/bin/ifc docs/fsupport
+	@${SED} 's+\<INSTALLDIR\>+${PREFIX}/intel+g; s+man -w+manpath+g; s+@LINUXBASE@+${LINUXBASE}+g; s+/bin/sh+${LINUXBASE}/bin/bash+g s+<INSTALLTIMECOMBOPACKAGEID>+${DISTNAME}+g' \
 		${WRKSRC}/opt/intel/compiler60/${i} \
 		>${WRKSRC}/opt/intel/compiler60/${i}.seded
 	@${MV} -f ${WRKSRC}/opt/intel/compiler60/${i}.seded \
