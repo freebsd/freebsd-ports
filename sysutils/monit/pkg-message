@@ -1,0 +1,5 @@
+===> USAGE:
+        To enable monit you need to add monit_enable="YES" to rc.conf file.
+	Before running monit you have to configure monitrc file. There is
+	example configuration file monitrc.sample, you can find many
+	samples for particular services in examples.html:

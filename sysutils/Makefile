@@ -270,6 +270,7 @@
     SUBDIR += mkfile
     SUBDIR += mksunbootcd
     SUBDIR += mktool
+    SUBDIR += monit
     SUBDIR += monitord
     SUBDIR += mount.app
     SUBDIR += msyslog

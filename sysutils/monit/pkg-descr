@@ -1,0 +1,24 @@
+Monit is a utility for managing and monitoring processes,
+files, directories, devices and network services on a Unix system.
+Monit conducts automatic maintenance and repair and can execute
+meaningful causal actions in error situations.
+
+monit supports:                                        
+ * Daemon mode - poll services at a specified interval
+ * Group and manage groups of services, service dependencies
+ * Logging - syslog or own logfile
+ * Alert, start, stop and restart of services based on it's characteristics
+ * MD5 and SHA1 checksums
+ * Runtime Unix socket and TCP/IP port checking (tcp and udp)
+ * Process status, timeout, memory and cpu usage, etc.
+ * Device usage monitoring (inodes and space)
+ * File monitoring (timestamp, checksum, permission, owner, etc.)
+ * Directory monitoring (timestamp, permission, owner, etc.)
+ * Remote network services monitoring (ping, response time, protocol, etc.)
+ * System load average monitoring
+ * Flexible and customizable email alert messages and notifications
+ * Protocol verification such as HTTP, FTP, SMTP, POP, IMAP, NNTP, etc.
+ * A HTTP interface with XML output option
+ and many more features :)
+
+WWW: http://www.tildeslash.com/monit/
