@@ -1,0 +1,19 @@
+lib/pike/modules/GTKSupport.pmod/CVS/Root
+lib/pike/modules/GTKSupport.pmod/CVS/Repository
+lib/pike/modules/GTKSupport.pmod/CVS/Entries
+lib/pike/modules/GTKSupport.pmod/Alert.pike
+lib/pike/modules/GTKSupport.pmod/MenuFactory.pmod
+lib/pike/modules/GTKSupport.pmod/SClist.pike
+lib/pike/modules/GTKSupport.pmod/Util.pmod
+lib/pike/modules/GTKSupport.pmod/pDrawingArea.pike
+lib/pike/modules/GDKSupport.pmod/CVS/Root
+lib/pike/modules/GDKSupport.pmod/CVS/Repository
+lib/pike/modules/GDKSupport.pmod/CVS/Entries
+lib/pike/modules/GDKSupport.pmod/README
+lib/pike/modules/GTK.pmod
+lib/pike/modules/GDK.pmod
+lib/pike/modules/GTK.so
+@dirrm lib/pike/modules/GTKSupport.pmod/CVS/
+@dirrm lib/pike/modules/GTKSupport.pmod/
+@dirrm lib/pike/modules/GDKSupport.pmod/CVS/
+@dirrm lib/pike/modules/GDKSupport.pmod/
