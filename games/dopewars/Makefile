@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dopewars
-PORTVERSION=	1.5.6
+PORTVERSION=	1.5.7
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://bellatrix.pcl.ox.ac.uk/~ben/dopewars/
@@ -18,8 +18,9 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_GTK=	yes
 USE_X_PREFIX=	yes
+USE_REINPLACE=	yes
 
-CONFIGURE_ARGS+=	--enable-nls --enable-networking
+CONFIGURE_ARGS+=	--enable-nls --enable-networking --disable-plugins
 
 .if defined(NOPORTDOCS)
 MAKE_ENV+=	NOPORTDOCS=yes
@@ -30,11 +31,11 @@ PLIST_SUB=	DOPEWARS=${PKGNAME}
 MAN6=	dopewars.6
 
 post-patch:
-	@${PERL} -pi -e 's!/pixmaps!/dopewars/pixmaps!' \
+	@${REINPLACE_CMD} -e 's!/pixmaps!/dopewars/pixmaps!' \
 		${WRKSRC}/src/Makefile.in
-	@${PERL} -pi -e 's!dopewars.sco!dopewars/dopewars.sco!g' \
+	@${REINPLACE_CMD} -e 's!dopewars.sco!dopewars/dopewars.sco!g' \
 		${WRKSRC}/src/dopewars.c ${WRKSRC}/Makefile.in
-	@${PERL} -pi -e 's!^CFLAGS =!CFLAGS = \@GLIB_CFLAGS\@!' \
+	@${REINPLACE_CMD} -e 's!^CFLAGS =!CFLAGS = \@GLIB_CFLAGS\@!' \
 		${WRKSRC}/src/gui_client/Makefile.in \
 		${WRKSRC}/src/curses_client/Makefile.in
 
