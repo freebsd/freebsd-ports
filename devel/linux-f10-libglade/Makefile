@@ -13,6 +13,8 @@ PORTVERSION=	0.7
 .endif
 CATEGORIES=	devel linux
 
+MAINTAINER=	taoka@FreeBSD.org
+
 RPM_SET=	libglade-${PORTVERSION}-1.${MACHINE_ARCH}.rpm
 
 .include "../../x11-toolkits/linux-gtk/Makefile"

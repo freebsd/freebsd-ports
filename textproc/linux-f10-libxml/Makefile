@@ -13,6 +13,8 @@ PORTVERSION=	1.7.3
 .endif
 CATEGORIES=	textproc linux
 
+MAINTAINER=	taoka@FreeBSD.org
+
 RPM_SET=	libxml-${PORTVERSION}-1.${MACHINE_ARCH}.rpm
 
 .include "../../x11-toolkits/linux-gtk/Makefile"
