@@ -23,6 +23,7 @@
     SUBDIR += gdict
     SUBDIR += glimpse
     SUBDIR += grap
+    SUBDIR += gtkdiff
     SUBDIR += gxditview
     SUBDIR += hevea
     SUBDIR += htdig
