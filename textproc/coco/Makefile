@@ -3,7 +3,7 @@
 # Date created:		7 July 1997
 # Whom:			Satoshi Taoka <taoka@FreeBSD.org>
 #
-# $Id: Makefile,v 1.40 1999/05/01 04:00:14 taoka Exp $
+# $Id: Makefile,v 1.41 1999/06/05 22:29:22 mharo Exp $
 #
 
 DISTNAME=	mule-2.3
@@ -21,6 +21,10 @@ PATCH_DIST_STRIP= -p1
 
 MAINTAINER=	taoka@FreeBSD.org
 
+.include <bsd.port.pre.mk>
+
+WRKDIRBASE!=	${ECHO} ${WRKDIRPREFIX}${.CURDIR} | sed s:/editors/mule-common$$::
+
 .for dir in 	chinese/mule-wnn4 \
 		editors/mule \
 		japanese/mule-canna+sj3+wnn4 \
@@ -35,10 +39,10 @@ MAINTAINER=	taoka@FreeBSD.org
 		japanese/mule-wnn4 \
 		japanese/mule-wnn6 \
 		korean/mule-wnn4
-.if exists(${WRKDIRPREFIX}${.CURDIR}/../../${dir}/work/.install_done)
-WRKDIR=		${WRKDIRPREFIX}${.CURDIR}/../../${dir}/work
-.elif exists(${WRKDIRPREFIX}${.CURDIR}/../../${dir}/work/.build_done)
-WRKDIR?=	${WRKDIRPREFIX}${.CURDIR}/../../${dir}/work
+.if exists(${WRKDIRBASE}/${dir}/work/.install_done)
+WRKDIR=		${WRKDIRBASE}/${dir}/work
+.elif exists(${WRKDIRBASE}/${dir}/work/.build_done)
+WRKDIR?=	${WRKDIRBASE}/${dir}/work
 .endif
 .endfor
 WRKSRC= ${WRKDIR}/emacs-19.34
@@ -47,7 +51,7 @@ STARTUP_SCRIPT=	${PREFIX}/etc/rc.d/mule.sh
 .if !defined(WRKDIR)
 .if defined(PACKAGE_BUILDING)
 # XXX
-WRKDIR=	${WRKDIRPREFIX}${.CURDIR}/../mule/work
+WRKDIR=	${WRKDIRBASE}/editors/mule/work
 pre-build:
 	@cd ${.CURDIR}/../mule; make
 .else
@@ -158,4 +162,4 @@ post-install:
 post-package:
 	@${TOUCH} ${TOUCH_FLAGS} ${PACKAGE_COOKIE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
