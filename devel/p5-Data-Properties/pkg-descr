@@ -1,0 +1,4 @@
+This class is a Perl version of Java's java.util.Properties and aims
+to be format-compatible with that class.
+
+Author:	Brian Moseley <bcm@maz.org>
