@@ -2742,28 +2742,6 @@ diff -c /var/tmp/sup/supmsg.h sup/supmsg.h
   EXTERN	long	scantime;		/* time that collection was scanned */
   
   /* msgneed */
-diff -c /var/tmp/sup/vprintf.c sup/vprintf.c
-*** vprintf.c	Fri Aug 20 17:46:35 1993
---- sup/vprintf.c	Thu Apr  6 15:26:03 1995
-***************
-*** 118,126 ****
---- 118,133 ----
-  {
-  	FILE fakebuf;
-  
-+ #ifdef __hpux
-+ 	fakebuf._flag = _IODUMMY+_IOWRT;/* no _IOWRT: avoid stdio bug */
-+ 	fakebuf._base = fakebuf._ptr = s;
-+ 	fakebuf._cnt = n-1;
-+ 	fakebuf.__fileL = fakebuf.__fileH = 0xff;
-+ #else
-  	fakebuf._flag = _IOSTRG+_IOWRT;	/* no _IOWRT: avoid stdio bug */
-  	fakebuf._ptr = s;
-  	fakebuf._cnt = n-1;
-+ #endif
-  	_doprnt(fmt, args, &fakebuf);
-  	fakebuf._cnt++;
-  	putc('\0', &fakebuf);
 *** /dev/null	Sun Aug 13 11:14:38 1995
 --- daemon.c	Sun Aug 13 19:59:10 1995
 ***************
