@@ -3,20 +3,20 @@
 # Date created:         17 November 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.6 1995/07/13 01:13:13 asami Exp $
+# $Id: Makefile,v 1.7 1995/11/22 11:48:10 asami Exp $
 #
 
 DISTNAME=	hfs0_37
 PKGNAME=	hfs-0.37
-CATEGORIES+=	emulators
+CATEGORIES=	emulators
 MASTER_SITES=	ftp://ftp.obs-besancon.fr/pub/outgoing/
 
 MAINTAINER=	jmz@FreeBSD.org
 
 USE_GMAKE=	yes
 
-.include <bsd.port.mk>
-
 pre-install:
-	@mkdir -p ${PREFIX}/bin
-	@mkdir -p ${PREFIX}/man/man1
+	@${MKDIR} ${PREFIX}/bin
+	@${MKDIR} ${PREFIX}/man/man1
+
+.include <bsd.port.mk>

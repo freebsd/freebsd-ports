@@ -3,12 +3,12 @@
 # Date created:         31 Dec 1994
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.2 1995/04/01 12:43:14 jkh Exp $
+# $Id: Makefile,v 1.3 1995/04/12 04:48:15 asami Exp $
 #
 
 DISTNAME=       arc521e.pl8
 PKGNAME=        arc-5.21e
-CATEGORIES+=	archivers
+CATEGORIES=	archivers
 MASTER_SITES=   ftp://ftp.kiae.su/unix/arcers/
 EXTRACT_SUFX=   .tar.Z
 

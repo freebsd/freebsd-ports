@@ -3,11 +3,11 @@
 # Date Created:		04 Aug 1996
 # Whom:			Tim Vanderhoek <ac199@freenet.hamilton.on.ca>
 #
-# $Id: Makefile,v 1.2 1996/08/23 09:04:06 asami Exp $
+# $Id: Makefile,v 1.3 1996/10/15 08:24:22 asami Exp $
 #
 
 DISTNAME=	uudeview-0.5.4
-CATEGORIES+=	archivers mail
+CATEGORIES=	archivers mail
 MASTER_SITES=	http://www.uni-frankfurt.de/~fp/uudeview/Apps/frank/
 
 MAINTAINER=	ac199@freenet.hamilton.on.ca
@@ -33,7 +33,7 @@ DOCFILES+=	HOWTO
 post-patch:
 	@${ECHO_MSG} "===>  Adding extra files";
 	@for l in ${EXTRAFILES}; do \
-		cp ${FILESDIR}/$${l} ${WRKSRC}/$${l}; \
+		${CP} ${FILESDIR}/$${l} ${WRKSRC}/$${l}; \
 	done
 
 # Maybe we should pay attention to DOCOWN, DOCGRP, and DOCMODE, set in 
@@ -44,10 +44,10 @@ post-install:
 	then \
 		${ECHO_MSG} "===>  Copying documents to ${PREFIX}/${PORTDOCDIR}"; \
 	fi;
-	mkdir -p ${PREFIX}/${PORTDOCDIR};
+	${MKDIR} ${PREFIX}/${PORTDOCDIR};
 	@for l in ${DOCFILES}; \
 	do \
-		cp ${WRKSRC}/$$l ${PREFIX}/${PORTDOCDIR}; \
+		${CP} ${WRKSRC}/$$l ${PREFIX}/${PORTDOCDIR}; \
 	done
 .else
 	@if [ 'x${DOCFILES}' != x ] ; \

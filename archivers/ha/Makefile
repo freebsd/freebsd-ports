@@ -3,12 +3,12 @@
 # Date created:         24 Jan 1995
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.5 1995/04/16 00:18:36 asami Exp $
+# $Id: Makefile,v 1.6 1995/04/24 10:58:46 asami Exp $
 #
 
 DISTNAME=       ha0999
 PKGNAME=        ha-0.999b
-CATEGORIES+=	archivers
+CATEGORIES=	archivers
 MASTER_SITES=   ftp://ftp.kiae.su/unix/arcers/
 EXTRACT_SUFX=   .tgz
 

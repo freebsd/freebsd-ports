@@ -2,12 +2,12 @@
 # Version required:	3.0
 # Date created:		18 Apr 1994
 # Whom:			Jonathan M. Bresler (jmb)
-#
+# $Id$
 #
 
 DISTNAME=	vmsbackup
 PKGNAME=	vmsbackup-3.0
-CATEGORIES+=	emulators sysutils
+CATEGORIES=	emulators sysutils
 MASTER_SITES=	ftp://ftp.cs.uni-sb.de/pub/utils/
 # slightly different version
 # MASTER_SITES+=	ftp://ftp.uni-passau.de/pub/unix/system/backup/

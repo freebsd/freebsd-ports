@@ -3,11 +3,11 @@
 # Date created:		09 Feb 1995
 # Whom:			gpalmer
 #
-# $Id: Makefile,v 1.8 1996/06/03 00:27:35 jraynard Exp $
+# $Id: Makefile,v 1.9 1996/06/05 17:35:13 jraynard Exp $
 #
 
 DISTNAME=	smalltalk-1.1.1
-CATEGORIES+=	lang
+CATEGORIES=	lang
 MASTER_SITES=	ftp://prep.ai.mit.edu/pub/gnu/
 
 MAINTAINER=	jraynard@FreeBSD.ORG
@@ -16,17 +16,17 @@ IS_INTERACTIVE=	yes
 NO_PACKAGE=yes
 
 pre-configure:
-	@cp ${FILESDIR}/m-fbsd-2.h ${WRKSRC}/config/m-fbsd-2.h
+	@{CP} ${FILESDIR}/m-fbsd-2.h ${WRKSRC}/config/m-fbsd-2.h
 	@(cd ${WRKSRC} ; ./config.mst fbsd-2)
 	@${TOUCH} ${TOUCH_FLAGS} ${CONFIGURE_COOKIE}
 
 do-build:
-	if [ -d ${X11BASE} ]; then (cd ${WRKSRC}/stix; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${ALL_TARGET}; cp mst *.st ${WRKSRC}); else (cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${ALL_TARGET}); fi;
+	if [ -d ${X11BASE} ]; then (cd ${WRKSRC}/stix; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${ALL_TARGET}; ${CP} mst *.st ${WRKSRC}); else (cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${ALL_TARGET}); fi;
 
 do-install:
 	@echo "Installing method definitions..."
-	@ if [ ! -d ${PREFIX}/lib/smalltalk ]; then mkdir -p ${PREFIX}/lib/smalltalk; fi
-	@(cd ${WRKSRC}; cp *.st ${PREFIX}/lib/smalltalk)
+	@ if [ ! -d ${PREFIX}/lib/smalltalk ]; then ${MKDIR} ${PREFIX}/lib/smalltalk; fi
+	@(cd ${WRKSRC}; ${CP} *.st ${PREFIX}/lib/smalltalk)
 	@(cd ${PREFIX}/lib/smalltalk ; chmod +r *.st)
 	@echo
 	@echo

@@ -3,11 +3,11 @@
 # Date created:         2 Jan 1995
 # Whom:                 jmacd@uclink.berkeley.edu
 #
-# $Id: Makefile,v 1.5 1995/04/24 22:31:59 asami Exp $
+# $Id: Makefile,v 1.6 1995/11/22 13:13:09 asami Exp $
 #
 
 DISTNAME=	scheme48-0.36
-CATEGORIES+=	lang
+CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp-swiss.ai.mit.edu/pub/s48/
 
 MAINTAINER= 	jmacd@FreeBSD.ORG

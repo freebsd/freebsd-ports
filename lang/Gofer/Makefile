@@ -3,19 +3,21 @@
 # Date created:         Wed Feb  1 01:51:59 PST 1995
 # Whom:                 hsu
 #
-# $Id: Makefile,v 1.7 1996/10/19 05:56:26 max Exp $
+# $Id: Makefile,v 1.8 1996/10/27 00:20:27 max Exp $
 #
 
 DISTNAME =	gofer230a
 PKGNAME =	gofer-2.30a
-CATEGORIES+=	lang
+CATEGORIES=	lang
 MASTER_SITES =	ftp://cs.nott.ac.uk/nott-fp/languages/haskell/gofer/
+
+MAINTAINER=	hsu@FreeBSD.org
 
 WRKSRC = ${WRKDIR}/src
 LIBDIR = ${PREFIX}/lib/Gofer
 
 do-install:
-	${MKDIR} -p ${LIBDIR}
+	${MKDIR} ${LIBDIR}
 	${INSTALL_DATA} ${WRKDIR}/*.prelude ${LIBDIR}
 	${INSTALL_DATA} ${WRKDIR}/src/prelude.h ${LIBDIR}
 	${INSTALL_DATA} ${WRKDIR}/src/gofc.h ${LIBDIR}
@@ -29,7 +31,7 @@ do-install:
 .if !defined(NOMANCOMPRESS)
 	gzip -9nf ${PREFIX}/man/man1/gofer.1
 .endif
-	${MKDIR} -p ${LIBDIR}/docs
+	${MKDIR} ${LIBDIR}/docs
 	${INSTALL_DATA} ${WRKDIR}/docs/* ${LIBDIR}/docs
 
 .include <bsd.port.mk>

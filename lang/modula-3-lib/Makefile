@@ -3,11 +3,11 @@
 # Date created:		28 Oct 1996
 # Whom:			John Polstra <jdp@polstra.com>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1996/10/29 23:01:51 jdp Exp $
 #
 
 DISTNAME=	modula-3-lib-3.6
-CATEGORIES+=	lang
+CATEGORIES=	lang
 MASTER_SITES=	ftp://freefall.FreeBSD.ORG/pub/FreeBSD/LOCAL_PORTS/
 DISTFILES=	m3-fbsd-src-3.6.tar.gz m3-fbsd-m3cc-3.6.tar.gz
 # Note: Depending on what is already installed on the system, the code
@@ -73,34 +73,34 @@ post-extract:
 	    chmod +x config.sub configure move-if-change
 
 do-build:
-	@test -d ${temp_prefix}/bin || mkdir -p ${temp_prefix}/bin
-	@test -d ${temp_prefix}/man/man1 || mkdir -p ${temp_prefix}/man/man1
+	@test -d ${temp_prefix}/bin || ${MKDIR} ${temp_prefix}/bin
+	@test -d ${temp_prefix}/man/man1 || ${MKDIR} ${temp_prefix}/man/man1
 	@test -d ${temp_prefix}/lib/m3/pkg/m3build/templates || \
-	    mkdir -p ${temp_prefix}/lib/m3/pkg/m3build/templates
+	    ${MKDIR} ${temp_prefix}/lib/m3/pkg/m3build/templates
 	@echo "++++++++++ quake ++++++++++"
 	@test -d ${WRKSRC}/m3/quake/FreeBSD2 || \
-	    mkdir -p ${WRKSRC}/m3/quake/FreeBSD2
+	    ${MKDIR} ${WRKSRC}/m3/quake/FreeBSD2
 	@cd ${WRKSRC}/m3/quake/FreeBSD2; \
 	    make -f ../src/makefile TARGET=FreeBSD2 COPT=-O CDEBUG= ; \
-	    cp -p quake ${temp_prefix}/bin; \
-	    cp -p ../src/quake.1 ${temp_prefix}/man/man1
+	    ${CP} -p quake ${temp_prefix}/bin; \
+	    ${CP} -p ../src/quake.1 ${temp_prefix}/man/man1
 	@echo "++++++++++ m3build ++++++++++"
 	@cd ${WRKSRC}/m3/m3build; \
 	    PATH=${temp_prefix}/bin:$$PATH ./build FreeBSD2; \
-	    cp -p FreeBSD2/m3build FreeBSD2/m3ship FreeBSD2/m3where \
+	    ${CP} -p FreeBSD2/m3build FreeBSD2/m3ship FreeBSD2/m3where \
 		${temp_prefix}/bin; \
-	    cp -p FreeBSD2/m3mkdir ${temp_prefix}/lib/m3/FreeBSD2; \
-	    cp -p templates/CLEANUP templates/COMMON templates/COMMON.BOOT \
+	    ${CP} -p FreeBSD2/m3mkdir ${temp_prefix}/lib/m3/FreeBSD2; \
+	    ${CP} -p templates/CLEANUP templates/COMMON templates/COMMON.BOOT \
 		templates/FreeBSD2 templates/PLATFORMS templates/POSIX \
 		${temp_prefix}/lib/m3/pkg/m3build/templates; \
-	    cp -p FreeBSD2/m3build.1 FreeBSD2/m3ship.1 FreeBSD2/m3where.1 \
+	    ${CP} -p FreeBSD2/m3build.1 FreeBSD2/m3ship.1 FreeBSD2/m3where.1 \
 		${temp_prefix}/man/man1
 	@echo "++++++++++ m3cc ++++++++++"
-	@test -d ${WRKSRC}/m3cc/FreeBSD2 || mkdir -p ${WRKSRC}/m3cc/FreeBSD2
+	@test -d ${WRKSRC}/m3cc/FreeBSD2 || ${MKDIR} ${WRKSRC}/m3cc/FreeBSD2
 	@cd ${WRKSRC}/m3cc/FreeBSD2; \
 	    ../gcc/configure i486-unknown-freebsd; \
 	    make m3cgc1 CC=cc CFLAGS=-O; \
-	    cp -p m3cgc1 ${temp_prefix}/lib/m3/FreeBSD2
+	    ${CP} -p m3cgc1 ${temp_prefix}/lib/m3/FreeBSD2
 	@echo "++++++++++ everything else ++++++++++"
 	@cd ${WRKSRC}/m3; \
 	    LD_LIBRARY_PATH=${temp_prefix}/lib/m3/FreeBSD2:$$LD_LIBRARY_PATH; \
@@ -117,14 +117,14 @@ do-install:
 	@cd ${temp_prefix}; \
 	    umask 022; \
 	    grep '^lib/m3/' ${PKGDIR}/PLIST | \
-		cpio -dump -R ${BINOWN}.${BINGRP} ${PREFIX}
+		${CP} -dump -R ${BINOWN}.${BINGRP} ${PREFIX}
 	@cd ${PREFIX}; \
 	    grep '^lib/m3/' ${PKGDIR}/PLIST | xargs chmod go=u-w; \
 	    find -X lib/m3 -type d | xargs chown ${BINOWN}.${BINGRP}; \
 	    find -X lib/m3 -type d | xargs chmod 755
 	@if [ ! -f ${startup_script} ]; then \
 	    echo "Installing ${startup_script} file"; \
-	    test -d ${startup_dir} || mkdir -p ${startup_dir}; \
+	    test -d ${startup_dir} || ${MKDIR} ${startup_dir}; \
 	    echo "#!/bin/sh" > ${startup_script}; \
 	    echo "echo -n ' Modula-3'" >> ${startup_script}; \
 	    echo "/sbin/ldconfig -m ${PREFIX}/lib/m3/FreeBSD2" \

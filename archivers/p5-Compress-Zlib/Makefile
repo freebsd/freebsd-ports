@@ -3,12 +3,12 @@
 # Date created:				October 20th 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#   $Id: Makefile,v 1.1.1.1 1996/10/23 23:51:34 jfitz Exp $
+#   $Id: Makefile,v 1.2 1996/10/24 09:58:05 jfitz Exp $
 #
 
 DISTNAME=	Compress-Zlib-0.4
 PKGNAME=	p5-Compress-Zlib-0.4
-CATEGORIES+=	archivers
+CATEGORIES=	archivers
 MASTER_SITES=	ftp://ftp.digital.com/pub/plan/perl/CPAN/modules/by-module/Compress/ \
 		ftp://ftp.cdrom.com/pub/perl/CPAN/modules/by-module/Compress/ \
 		ftp://ftp.cis.ufl.edu/pub/perl/CPAN/modules/by-module/Compress/ \

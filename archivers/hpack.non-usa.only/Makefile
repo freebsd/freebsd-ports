@@ -3,12 +3,12 @@
 # Date created:         7 Jan 1995
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.4 1995/04/12 04:53:57 asami Exp $
+# $Id: Makefile,v 1.5 1996/04/12 08:16:45 asami Exp $
 #
 
 DISTNAME=       hpack79src
 PKGNAME=        hpack-0.79a
-CATEGORIES+=	archivers
+CATEGORIES=	archivers
 MASTER_SITES=   ftp://src.doc.ic.ac.uk/packages/hpack/
 EXTRACT_SUFX=   .tar.Z
 

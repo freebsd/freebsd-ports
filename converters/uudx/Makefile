@@ -2,13 +2,12 @@
 # Version required:	2.99
 # Date created:		2 June 1996
 # Whom:			ABURAYER Rewsirow <pcs51674@asciinet.or.jp>
-#
-#
+# $Id$
 #
 
 DISTNAME=	uudx_299
 PKGNAME=	uudx-2.99
-CATEGORIES+=	archivers
+CATEGORIES=	archivers
 MASTER_SITES=	ftp://ftp.ae.keio.ac.jp/pub/msdos/archivers/uu/
 
 MAINTAINER=	pcs51674@asciinet.or.jp
@@ -23,6 +22,6 @@ PATCH_STRIP=	-p1
 
 pre-patch:
 	@echo "===>  Installing custom Makefile for ${DISTNAME}"
-	@(cp ${FILESDIR}/Makefile ${WRKSRC})
+	@(${CP} ${FILESDIR}/Makefile ${WRKSRC})
 
 .include <bsd.port.mk>

@@ -3,12 +3,12 @@
 # Date created:         28 Dec 1994
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.5 1996/05/15 04:59:28 ache Exp $
+# $Id: Makefile,v 1.6 1996/05/16 08:59:57 asami Exp $
 #
 
 DISTNAME=       unrar101
 PKGNAME=        unrar-1.01a
-CATEGORIES+=	archivers
+CATEGORIES=	archivers
 MASTER_SITES=   ftp://ftp.relcom.ru/unix/arcers/
 EXTRACT_SUFX=   .tgz
 

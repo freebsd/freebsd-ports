@@ -3,11 +3,11 @@
 # Date created:         17 October 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.4 1995/04/15 04:45:17 asami Exp $
+# $Id: Makefile,v 1.5 1996/05/04 12:30:40 ache Exp $
 #
 
 DISTNAME=       unzip-5.2
-CATEGORIES+=	archivers
+CATEGORIES=	archivers
 MASTER_SITES=   ftp://quest.jpl.nasa.gov/pub/
 DISTFILES=      unzip52.tar.Z
 

@@ -3,12 +3,12 @@
 # Date created:         Sun Aug 13 12:36:14 CDT 1995
 # Whom:                 erich@rrnet.com
 #
-# $Id: Makefile,v 1.1.1.1 1995/08/14 04:08:00 asami Exp $
+# $Id: Makefile,v 1.2 1995/10/28 20:35:56 erich Exp $
 #
 
 DISTNAME=	sam
 PKGNAME=	sam-4.3
-CATEGORIES+=	plan9
+CATEGORIES=	plan9
 MASTER_SITES=	ftp://ftp.ecf.toronto.edu/pub/plan9/matty/
 EXTRACT_SUFX=	.msg.gz
 

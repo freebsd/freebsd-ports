@@ -3,12 +3,12 @@
 # Date created:         29 Aug 1995
 # Whom:                 jkh@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.3 1995/11/22 13:12:49 asami Exp $
+# $Id: Makefile,v 1.5 1996/06/16 06:52:22 jkh Exp $
 #
 
 DISTNAME= 	guile-iii
 PKGNAME=	guile-iii
-CATEGORIES+=	lang
+CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.cygnus.com/pub/lord/guile-iii/
 
 MAINTAINER=	jkh@FreeBSD.ORG

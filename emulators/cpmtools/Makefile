@@ -3,12 +3,12 @@
 # Date created:		25 December 1994
 # Whom:			joerg
 #
-# $Id: Makefile,v 1.12 1995/11/22 11:48:07 asami Exp $
+# $Id: Makefile,v 1.13 1996/06/03 02:17:05 asami Exp $
 #
 
 DISTNAME=	cpm-1.1
 PKGNAME=	cpmtools-1.1
-CATEGORIES+=	emulators
+CATEGORIES=	emulators
 MASTER_SITES=	ftp://freefall.freebsd.org/pub/FreeBSD/LOCAL_PORTS/
 MAINTAINER=	joerg@FreeBSD.org
 

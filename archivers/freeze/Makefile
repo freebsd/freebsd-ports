@@ -3,11 +3,11 @@
 # Date created:         20 Jul 1996
 # Whom:                 lukin@okbmei.msk.su
 #
-# $Id: Makefile,v 1.1 1996/07/20 00:17:21 lukin Exp $
+# $Id: Makefile,v 1.1.1.1 1996/08/09 08:16:16 asami Exp $
 #
 
 DISTNAME=       freeze-2.5
-CATEGORIES+=	archivers
+CATEGORIES=	archivers
 MASTER_SITES=	ftp://lupin.csv.warwick.ac.uk/pub/compression/
 
 MAINTAINER=     lukin@okbmei.msk.su
