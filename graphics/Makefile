@@ -230,6 +230,7 @@
     SUBDIR += povray31
     SUBDIR += ppm2fli
     SUBDIR += ppmcaption
+    SUBDIR += proj
     SUBDIR += pstoedit
     SUBDIR += pvmpov
     SUBDIR += py-gdchart
