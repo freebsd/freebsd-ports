@@ -20,6 +20,8 @@ DIST_SUBDIR=	acroread
 MAINTAINER=	trevor@FreeBSD.org
 COMMENT=	View, distribute and print PDF documents
 
+FORBIDDEN=	arbitrary command execution http://vuxml.freebsd.org/78348ea2-ec91-11d8-b913-000c41e2cdad.html
+
 ONLY_FOR_ARCHS=	i386
 
 USE_LINUX=	yes
