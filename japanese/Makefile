@@ -113,6 +113,7 @@
     SUBDIR += jisx0213-fonts
     SUBDIR += jls
     SUBDIR += jmode
+    SUBDIR += jmode-skk
     SUBDIR += jpilot
     SUBDIR += jvim
     SUBDIR += jvim-canna
