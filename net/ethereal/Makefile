@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ethereal
-PORTVERSION=	0.9.9
+PORTVERSION=	0.9.10
 CATEGORIES=	net ipv6
 MASTER_SITES=	ftp://ftp.ethereal.com/pub/ethereal/%SUBDIR%/ \
 		ftp://gd.tuwien.ac.at/infosys/security/ethereal/%SUBDIR%/ \
@@ -43,12 +43,13 @@ PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 
 .if !defined(WITHOUT_SNMP)
 CONFIGURE_ARGS+=	--enable-snmp=yes \
-			--with-net-snmp=${LOCALBASE}/lib
+			--with-net-snmp=${LOCALBASE}/lib \
+			--without-ucdsnmp
 .if exists(/usr/include/openssl/crypto.h)
 CONFIGURE_ARGS+=	--with-ssl=/usr
 .endif
 .else
-CONFIGURE_ARGS+=	--enable-snmp=no
+CONFIGURE_ARGS+=	--enable-snmp=no --without-ucdsnmp --without-net-snmp
 .endif
 
 MAN1+=		editcap.1 idl2eth.1 mergecap.1 tethereal.1 text2pcap.1
