@@ -9,7 +9,8 @@ PORTNAME=	bind
 PORTVERSION=	9.1.1rc3
 CATEGORIES=	net ipv6
 MASTER_SITES=	ftp://ftp.isc.org/isc/bind9/${PORTVERSION}/ \
-		ftp://ftp.sunet.se/pub/network/isc/bind9/${PORTVERSION}/
+		ftp://ftp.sunet.se/pub/network/isc/bind9/${PORTVERSION}/ \
+		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/bind9/${PORTVERSION}/,}
 
 MAINTAINER=	DougB@FreeBSD.org
 
