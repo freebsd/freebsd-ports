@@ -141,6 +141,7 @@
     SUBDIR += gxmlviewer
     SUBDIR += hevea
     SUBDIR += hgrep
+    SUBDIR += hhm
     SUBDIR += highlight
     SUBDIR += hr-aspell
     SUBDIR += hs-haxml
