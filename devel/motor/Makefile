@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	motor
-PORTVERSION=	2.20.14
+PORTVERSION=	3.0.0
 CATEGORIES=	devel
 MASTER_SITES=	http://konst.org.ua/download/ \
 		${MASTER_SITE_LOCAL}
