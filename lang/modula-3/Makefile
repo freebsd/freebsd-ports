@@ -3,7 +3,7 @@
 # Date created:		18 Mar 1996
 # Whom:			John Polstra <jdp@polstra.com>
 #
-# $Id: Makefile,v 1.8 1996/11/01 20:27:12 jdp Exp $
+# $Id: Makefile,v 1.9 1996/11/12 02:18:37 obrien Exp $
 #
 
 DISTNAME=	modula-3-3.6
@@ -15,7 +15,7 @@ MAINTAINER=	jdp@polstra.com
 DEPENDS=	${PORTSDIR}/lang/modula-3-lib
 
 WRKSRC=		${PORTSDIR}/lang/modula-3-lib/work
-NO_WRKDIR=	yes
+NO_CHECKSUM=	yes
 NO_CONFIGURE=	yes
 NO_BUILD=	yes
 
@@ -29,12 +29,6 @@ minor=		0
 # to do the entire build as root, we arrange for everything to first
 # be "installed" into the following directory, which we own.
 temp_prefix=	${WRKSRC}/installed
-
-do-extract:
-	@${DO_NADA}
-
-checksum:
-	@${DO_NADA}
 
 do-install:
 	@echo "Deleting extraneous cruft"
