@@ -1,0 +1,7 @@
+Class::DBI::Pg automate the setup of Class::DBI columns and primary key for
+Postgres. 
+
+select Postgres system catalog and find out all columns, primary key and SERIAL
+type column. 
+
+WWW: http://search.cpan.org/dist/Class-DBI-Pg/
