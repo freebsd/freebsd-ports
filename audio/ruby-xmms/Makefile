@@ -7,6 +7,7 @@
 
 PORTNAME=	xmms
 PORTVERSION=	0.1.1
+PORTREVISION=	1
 CATEGORIES=	audio ruby
 MASTER_SITES=	http://www.pablotron.org/download/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -22,7 +23,7 @@ USE_RUBY_EXTCONF=	yes
 
 INSTALL_TARGET=	site-install
 
-DOCS=		AUTHORS ChangeLog README doc
+DOCS=		AUTHORS COPYING ChangeLog README doc
 
 post-install:
 .if !defined(NOPORTDOCS)
