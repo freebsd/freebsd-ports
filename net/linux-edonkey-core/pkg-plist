@@ -1,0 +1,4 @@
+bin/donkey
+bin/donkey-real
+%%PORTDOCS%%share/doc/edonkey-core/README.FreeBSD
+%%PORTDOCS%%@dirrm share/doc/edonkey-core

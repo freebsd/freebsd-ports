@@ -92,6 +92,7 @@
     SUBDIR += domtools
     SUBDIR += easysoap
     SUBDIR += echoping
+    SUBDIR += edonkey-core
     SUBDIR += ehnt
     SUBDIR += etherape
     SUBDIR += etherboot

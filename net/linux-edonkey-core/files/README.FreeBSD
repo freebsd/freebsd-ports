@@ -1,0 +1,92 @@
+[ HELP file resumed from FAQ at
+  http://users.aber.ac.uk/tpm01/ed2k_tools/faq.html ]
+
+	Read the aforementioned FAQ for complete instructions.
+
+	1) You have to configure the 'core' client and add a password
+
+	Install the "net/edonkey-core" port and type 'donkey'
+from the command line and then typing 'pass username password' (and
+hitting ENTER). Once you are finished, type 'q' (ENTER) and 'y'
+(ENTER) to quit and make the core save its preferences.
+
+	Of course, username must be a username you desire; and,
+password, a password you want to use. These are for connecting to
+the 'core' client, not for anything else. Therefore, unless you
+want someone mischiefly connecting to your client, choose both
+carefully. :)
+
+	2) Start 'core' client prior to running any of the GUIs
+after you have setup a password
+
+	To start the core client to make it controllable via a GUI,
+type 'donkey - !' from the command line.
+
+	3) Run the GUI and connect to the core client
+
+	Install the port "net/edonkey-gui-gtk" or "net/edonkey-gui-java",
+whichever one you prefer. Next run 'ed2k_gui' (if you chose the GTK
+gui client) or 'edonkey2000-gui-java' (if you chose the Java gui
+client). The Java GUI still lacks many features but it can modify
+configuration parameters whereas the GTK has many features but
+cannot modify anything. Therefore, I would advise using both, each
+for what it is strong. The java one to configure and the GTK one
+for normal use.
+
+	Okay, the GUI starts and there is that 'connect to' dialog,
+now what do I do?
+
+	First of all, you'll need an edonkey core running somewhere.
+Usually this will be the computer you're running the GUI on. There
+should be a status message above the buttons that tell you if there
+is already a core running locally or not. If not, hit the 'spawn
+local donkey' button to start the edonkey2000 core program. Now the
+status message should change. If not, you'll have to start the core
+client manually (Refer to step #2).
+
+	Second, if you spawned the donkey core alright, you enter
+the admin username and password into the appropriate fields in the
+'connect to' dialog and hit the 'connect' button. Now the 'connect
+to' dialog should disappear and the GUI should be connected to the
+core. If this does not happen, there could be the following problems
+(also check the statusbar of the GUI main window for messages):
+
+  (a) If you have started the core manually, you forgot the '-'
+  option. Start it with 'donkey - !' from the command line.
+
+  (b) You're connecting to the wrong computer ('host'). This should
+  be 'localhost' by default.
+
+  (c) You're connecting to the wrong port on your computer. The
+  default GUI port can be set in the command line 'core' client via
+  the 'aport' command, but should be 4663 by default.
+
+  (d) You haven't set a username and/or password with the core
+  manually (Refer to step #1).
+
+  (e) Your username/password are wrong (run the core manually and
+  type the 'vo' command to see what they are set to).
+
+  (f) The 'connect to' dialog disappears, but nothing seems to
+  happen. Most notably, the options page shows 'pleasewait' as a
+  nickname: This happens if you connect to the core on the wrong
+  port, namely on the port the core uses as its _data_ port. Start
+  the core manually and type 'vo' to see what the admin port is.
+  Make sure the 'admin port' is different from the 'door port'
+  (=data port). If in doubt, type 'netstat -l' from the command
+  line to see on what ports the donkey is listening. It should be
+  one of those.
+
+  (g) If you're trying to control a GUI on a remote host, chances
+  are that there is a firewall between you and the remote host that
+  blocks all TCP connections on the admin port. If this is the case,
+  you have to check your firewall settings and allow these connections
+  or try a different port as an admin port.
+
+	Third, you're connected, and the options page does NOT show
+'pleasewait' as a nickname. This is a very good sign, meaning that
+the GUI and the core can actually talk to each other. Now you should
+be able to do whatever you want: Go to the servers page and connect
+to a server first. Then you can search and start to download things.
+If you right-click on the list-entries you'll get all the available
+actions. Don't forget to share! :)
