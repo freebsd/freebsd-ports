@@ -390,6 +390,7 @@
     SUBDIR += quixote
     SUBDIR += reportmagic
     SUBDIR += retawq
+    SUBDIR += roundup
     SUBDIR += roxen
     SUBDIR += rt2
     SUBDIR += ruboard
