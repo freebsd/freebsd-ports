@@ -1,0 +1,10 @@
+FICL is an extremely lightweight, fast, portable implementation of FORTH
+which can be bound to C functions or even embedded within C/assembler
+programs. This is a port for the current version of FICL. Older versions
+can typically be found in /usr/src/sys/boot/ficl on FreeBSD with the
+bindings needed by the OS loader.
+
+WWW: http://ficl.sourceforge.net/
+
+Bruce
+bms@spc.org

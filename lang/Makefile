@@ -50,6 +50,7 @@
     SUBDIR += fbbi
     SUBDIR += ferite
     SUBDIR += fesi
+    SUBDIR += ficl-devel
     SUBDIR += forth
     SUBDIR += fpc
     SUBDIR += fpl
