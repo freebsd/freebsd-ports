@@ -30,4 +30,9 @@ MAN3=		ScriptCommand.3cc ScriptImage.3cc ScriptInterp.3cc \
 		ScriptModule.3cc ScriptSymbol.3cc Script_Locks.3cc \
 		Script_Package.3cc Script_Property.3cc Script_Session.3cc
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 503001
+BROKEN=		"Does not compile on FreeBSD >= 5.x"
+.endif
+.include <bsd.port.post.mk>
