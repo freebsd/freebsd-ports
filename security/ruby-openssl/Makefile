@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	openssl
-PORTVERSION=	0.1.2a
+PORTVERSION=	0.1.3
 CATEGORIES=	security ruby
 MASTER_SITES=	http://savannah.nongnu.org/download/rubypki/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -19,6 +19,7 @@ USE_OPENSSL=	yes
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
 
+WRKSRC=		${WRKDIR}/ossl
 CONFIGURE_ARGS=	--with-openssl-include="${OPENSSLBASE}/include/openssl" \
 		--with-openssl-lib="${OPENSSLBASE}/lib"
 INSTALL_TARGET=	site-install
