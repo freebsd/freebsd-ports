@@ -1,5 +1,5 @@
---- src/imapd/Makefile.ORIG	Thu Jan 22 15:42:52 1998
-+++ src/imapd/Makefile	Sun Feb 22 20:59:41 1998
+--- src/imapd/Makefile.orig	Wed Apr 15 01:41:45 1998
++++ src/imapd/Makefile	Sun May 24 10:46:34 1998
 @@ -31,8 +31,8 @@
  # WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  
@@ -20,8 +20,8 @@
  
  all:	imapd
  
---- src/ipopd/Makefile.ORIG	Thu Mar 14 13:18:17 1996
-+++ src/ipopd/Makefile	Sun Feb 22 20:58:29 1998
+--- src/ipopd/Makefile.orig	Wed Apr 15 01:41:55 1998
++++ src/ipopd/Makefile	Sun May 24 10:46:34 1998
 @@ -39,7 +39,7 @@
  
  CC = `cat $C/CCTYPE`
@@ -31,8 +31,8 @@
  
  ipopd: ipop2d ipop3d
  
---- src/mtest/Makefile.ORIG	Thu Jan 22 15:41:45 1998
-+++ src/mtest/Makefile	Sun Feb 22 20:58:56 1998
+--- src/mtest/Makefile.orig	Wed Apr 15 01:42:04 1998
++++ src/mtest/Makefile	Sun May 24 10:46:34 1998
 @@ -39,7 +39,7 @@
  
  CC = `cat $C/CCTYPE`

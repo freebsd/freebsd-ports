@@ -1,5 +1,5 @@
---- src/osdep/unix/Makefile.orig	Thu Dec  4 17:54:13 1997
-+++ src/osdep/unix/Makefile	Sat Dec  6 16:30:32 1997
+--- src/osdep/unix/Makefile.orig	Tue May 12 01:35:34 1998
++++ src/osdep/unix/Makefile	Sun May 24 10:46:34 1998
 @@ -94,7 +94,7 @@
   dummy.o pseudo.o netmsg.o flstring.o fdstring.o \
   rfc822.o nntp.o smtp.o imap4r1.o pop3.o \
@@ -35,25 +35,25 @@
  	 BASELDFLAGS="-lcrypt"
  
  bsi:	# BSD/i386
-@@ -553,10 +558,17 @@
+@@ -564,10 +569,17 @@
  	$(ARRC) $(ARCHIVE) $(BINARIES)
  	$(RANLIB) $(ARCHIVE)
  
 +$(SHLIB): $(SOFILES)
 +	ld -Bshareable -x -o $(SHLIB) $(SOFILES)
 +
-+.c.so:	osdep.h
++.c.so:		osdep.h   
 +	$(CC) -fpic -DPIC -c $(CFLAGS) ${@:.so=.c} -o $@
 +
  # Cleanup
  
  clean:
- 	$(RM) *.o linkage.[ch] auths.c $(ARCHIVE) osdep.* *TYPE *FLAGS
+ 	$(RM) *.o linkage.[ch] auths.c $(ARCHIVE) osdep.* *TYPE *FLAGS || true
 +	$(RM) *.so $(SHLIB)
  
  
  # Dependencies
-@@ -590,7 +602,7 @@
+@@ -601,7 +613,7 @@
  
  # OS-dependent
  
@@ -62,7 +62,7 @@
  	osdep.h env_unix.h tcp_unix.h \
  	osdep.c env_unix.c fs_unix.c ftl_unix.c nl_unix.c tcp_unix.c \
  	auths.c flock.c fsync.c gethstid.c \
-@@ -602,7 +614,12 @@
+@@ -613,7 +625,12 @@
  	write.c \
  	strerror.c strpbrk.c strstr.c strtok.c strtoul.c \
  	OSCFLAGS
@@ -74,4 +74,4 @@
 +	$(CC) $(CFLAGS) `cat OSCFLAGS` -c osdep.c -o $@ -fpic -DPIC
  
  osdep.c: osdepbas.c osdepckp.c osdeplog.c
- 	$(RM) osdep.c
+ 	$(RM) osdep.c || true
