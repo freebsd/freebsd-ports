@@ -29,6 +29,7 @@
     SUBDIR += ffsrecov
     SUBDIR += flexbackup
     SUBDIR += gcombust
+    SUBDIR += gkrellm
     SUBDIR += glload
     SUBDIR += gnomeadmin
     SUBDIR += gnomecontrolcenter
