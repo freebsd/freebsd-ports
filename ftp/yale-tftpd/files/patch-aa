@@ -1,22 +1,14 @@
-*** Makefile	Thu Oct  6 17:41:10 1994
---- Makefile	Mon Mar 20 12:39:08 1995
-***************
-*** 4,11 ****
-  PROG=	tftpd
-  MAN8=	tftpd.8
-  
-! ETCDIR?=${DESTDIR}/etc
-! BINDIR?=${DESTDIR}/usr/libexec
-  
-  CFLAGS+=-DCONFIGFILE='"${ETCDIR}/tftpd.conf"'
-  
---- 4,12 ----
-  PROG=	tftpd
-  MAN8=	tftpd.8
-  
-! ETCDIR=${DESTDIR}/usr/local/etc
-! BINDIR=${DESTDIR}/usr/local/libexec
-! MANDIR=${DESTDIR}/usr/local/man/man
-  
-  CFLAGS+=-DCONFIGFILE='"${ETCDIR}/tftpd.conf"'
-  
+--- Makefile.orig	Thu Oct  6 19:41:10 1994
++++ Makefile	Fri Aug 27 13:05:53 1999
+@@ -4,8 +4,9 @@
+ PROG=	tftpd
+ MAN8=	tftpd.8
+ 
+-ETCDIR?=${DESTDIR}/etc
+-BINDIR?=${DESTDIR}/usr/libexec
++ETCDIR=${PREFIX}/etc
++BINDIR=${PREFIX}/libexec
++MANDIR=${PREFIX}/man/man
+ 
+ CFLAGS+=-DCONFIGFILE='"${ETCDIR}/tftpd.conf"'
+ 
