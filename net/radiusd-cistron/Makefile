@@ -9,8 +9,7 @@ PORTNAME=	radiusd-cistron
 PORTVERSION=	1.6.7
 PORTREVISION=	3
 CATEGORIES=	net
-MASTER_SITES=	ftp://ftp.cistron.nl/pub/people/miquels/radius/ \
-		ftp://ftp.freeradius.org/pub/radius/
+MASTER_SITES=	ftp://ftp.cistron.nl/pub/people/miquels/radius/
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	A RADIUS-compliant remote authentication and accouting server

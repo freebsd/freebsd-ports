@@ -12,8 +12,7 @@ CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://twtelecom.dl.sourceforge.net/sourceforge/lesstif/ \
 		http://umn.dl.sourceforge.net/sourceforge/lesstif/ \
 		http://umn.dl.sourceforge.net/sourceforge/lesstif/ \
-		http://gd.tuwien.ac.at/hci/lesstif/srcdist/ \
-		ftp://linux.sarang.net/mirror/development/widget/lesstif/srcdist/
+		http://gd.tuwien.ac.at/hci/lesstif/srcdist/
 
 MAINTAINER=	dinoex@freebsd.org
 COMMENT=	API compatible clone of the Motif toolkit
