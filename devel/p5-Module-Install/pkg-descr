@@ -1,0 +1,7 @@
+Module::Install is a a standalone, extensible installer for Perl modules.
+It is designed to be a drop-in replacement for ExtUtils::MakeMaker, and is a
+descendent of CPAN::MakeMaker.
+Please type "perldoc Module::Install" after installation to see the
+module usage information.
+
+WWW: http://search.cpan.org/dist/Module-Install/
