@@ -1,12 +1,12 @@
 # New ports collection makefile for:   icewm
-# Version required:    0.9.22
+# Version required:    0.9.26
 # Date created:        10 August 1997
 # Whom:                Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.25 1998/12/23 10:48:49 vanilla Exp $
+# $Id: Makefile,v 1.26 1998/12/26 05:58:33 vanilla Exp $
 #
 
-DISTNAME=	icewm-0.9.22
+DISTNAME=	icewm-0.9.26
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://www.kiss.uni-lj.si/~k4fr0235/icewm/devel/ \
 		http://www.freebsd.org/~vanilla/
