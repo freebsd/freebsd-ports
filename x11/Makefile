@@ -33,7 +33,6 @@
     SUBDIR += gnomelibs
     SUBDIR += gnomeres_applet
     SUBDIR += gswitchit_applet
-    SUBDIR += gtik
     SUBDIR += gtk-theme-switch
     SUBDIR += gvid
     SUBDIR += gyroscope
