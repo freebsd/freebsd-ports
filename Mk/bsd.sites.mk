@@ -727,17 +727,25 @@ MASTER_SITE_SAVANNAH+= \
 	http://savannah.nongnu.org/download/%SUBDIR%/ \
 	ftp://ftp.gnu.org/pub/savannah/files/%SUBDIR%/
 
+# currently belnet has corrupted distfiles, add when the problems have gone away
+.for mirror in heanet aleron unc umn
 MASTER_SITE_SOURCEFORGE+= \
-	http://eu.dl.sourceforge.net/%SUBDIR%/ \
-	http://us.dl.sourceforge.net/%SUBDIR%/ \
-	ftp://ftp.kddlabs.co.jp/sourceforge/%SUBDIR%/ \
-	ftp://ftp.chg.ru/pub/sourceforge/%SUBDIR%/ \
-	ftp://us.dl.sourceforge.net/pub/sourceforge/%SUBDIR%/
+	http://${mirror}.dl.sourceforge.net/sourceforge/%SUBDIR%/
+.endfor
 
+# official sf.net mirrors that don't mirror all projects, check
+# http://prdownloads.sourceforge.net/%SUBDIR%/
+.for mirror in easynews cesnet switch keihanna twtelecom
+MASTER_SITE_SOURCEFORGE_EXTENDED+= \
+	http://${mirror}.dl.sourceforge.net/sourceforge/%SUBDIR%/
+.endfor
+MASTER_SITE_SOURCEFORGE_EXTENDED+= \
+	${MASTER_SITE_SOURCEFORGE}
+
+.for mirror in osdn kyushu-u keihanna
 MASTER_SITE_SOURCEFORGE_JP+= \
-	http://osdn.dl.sourceforge.jp/%SUBDIR%/ \
-	http://kyushu-u.dl.sourceforge.jp/%SUBDIR%/ \
-	http://keihanna.dl.sourceforge.jp/%SUBDIR%/
+	http://${mirror}.dl.sourceforge.jp/%SUBDIR%/
+.endfor
 
 MASTER_SITE_SOURCEWARE+= \
 	http://mirrors.rcn.net/pub/sourceware/%SUBDIR%/ \
