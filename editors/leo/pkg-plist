@@ -1,16 +1,8 @@
 @comment $FreeBSD$
 bin/leo
 %%PYTHON_SITELIBDIR%%/leo/Icons/LeoWin.gif
-%%PYTHON_SITELIBDIR%%/leo/Icons/Leodoc.gif
-%%PYTHON_SITELIBDIR%%/leo/Icons/Lt_arrow_disabled.gif
-%%PYTHON_SITELIBDIR%%/leo/Icons/Lt_arrow_enabled.gif
-%%PYTHON_SITELIBDIR%%/leo/Icons/Rt_arrow_disabled.gif
-%%PYTHON_SITELIBDIR%%/leo/Icons/Rt_arrow_enabled.gif
-%%PYTHON_SITELIBDIR%%/leo/Icons/ie screenshot.gif
-%%PYTHON_SITELIBDIR%%/leo/Icons/minusnode.gif
-%%PYTHON_SITELIBDIR%%/leo/Icons/plusnode.gif
-%%PYTHON_SITELIBDIR%%/leo/Icons/section_icon.gif
 %%PYTHON_SITELIBDIR%%/leo/Icons/Leoapp.GIF
+%%PYTHON_SITELIBDIR%%/leo/Icons/Leodoc.gif
 %%PYTHON_SITELIBDIR%%/leo/Icons/box00.GIF
 %%PYTHON_SITELIBDIR%%/leo/Icons/box01.GIF
 %%PYTHON_SITELIBDIR%%/leo/Icons/box02.GIF
@@ -27,6 +19,14 @@ bin/leo
 %%PYTHON_SITELIBDIR%%/leo/Icons/box13.GIF
 %%PYTHON_SITELIBDIR%%/leo/Icons/box14.GIF
 %%PYTHON_SITELIBDIR%%/leo/Icons/box15.GIF
+%%PYTHON_SITELIBDIR%%/leo/Icons/ie screenshot.gif
+%%PYTHON_SITELIBDIR%%/leo/Icons/lt_arrow_disabled.gif
+%%PYTHON_SITELIBDIR%%/leo/Icons/lt_arrow_enabled.gif
+%%PYTHON_SITELIBDIR%%/leo/Icons/minusnode.gif
+%%PYTHON_SITELIBDIR%%/leo/Icons/plusnode.gif
+%%PYTHON_SITELIBDIR%%/leo/Icons/rt_arrow_disabled.gif
+%%PYTHON_SITELIBDIR%%/leo/Icons/rt_arrow_enabled.gif
+%%PYTHON_SITELIBDIR%%/leo/Icons/section_icon.gif
 @dirrm %%PYTHON_SITELIBDIR%%/leo/Icons
 %%PYTHON_SITELIBDIR%%/leo/config/leoConfig.leo
 %%PYTHON_SITELIBDIR%%/leo/config/leoConfig.txt
@@ -45,11 +45,14 @@ bin/leo
 %%PYTHON_SITELIBDIR%%/leo/plugins/french_fm.py
 %%PYTHON_SITELIBDIR%%/leo/plugins/image.py
 %%PYTHON_SITELIBDIR%%/leo/plugins/import_cisco_config.py
+%%PYTHON_SITELIBDIR%%/leo/plugins/leoPlugins.leo
 %%PYTHON_SITELIBDIR%%/leo/plugins/mod_spelling.ini
 %%PYTHON_SITELIBDIR%%/leo/plugins/mod_spelling.py
 %%PYTHON_SITELIBDIR%%/leo/plugins/mod_spelling.txt
+%%PYTHON_SITELIBDIR%%/leo/plugins/mod_spelling.wl
 %%PYTHON_SITELIBDIR%%/leo/plugins/mod_test.ini
 %%PYTHON_SITELIBDIR%%/leo/plugins/nav_buttons.py
+%%PYTHON_SITELIBDIR%%/leo/plugins/open_shell.py
 %%PYTHON_SITELIBDIR%%/leo/plugins/open_with.py
 %%PYTHON_SITELIBDIR%%/leo/plugins/outline_export.py
 %%PYTHON_SITELIBDIR%%/leo/plugins/override_commands.py
