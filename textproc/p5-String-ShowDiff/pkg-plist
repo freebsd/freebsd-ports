@@ -1,5 +1,5 @@
-lib/perl5/site_perl/%%PERL_VER%%/String/ShowDiff.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/String/ShowDiff/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/String/ShowDiff/
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/String
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/String
+%%SITE_PERL%%/String/ShowDiff.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/String/ShowDiff/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/String/ShowDiff
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/String 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/String 2>/dev/null || true
