@@ -1,5 +1,5 @@
 --- knemod/interfaceupdater.cpp.orig	Fri Aug 20 20:26:41 2004
-+++ knemod/interfaceupdater.cpp	Sat Jan 22 00:56:21 2005
++++ knemod/interfaceupdater.cpp	Sat Jan 22 13:34:49 2005
 @@ -17,6 +17,24 @@
     Boston, MA 02111-1307, USA.
  */
@@ -66,7 +66,7 @@
          connect( mRouteProcess,  SIGNAL( receivedStdout( KProcess*, char*, int ) ),
                   this, SLOT( routeProcessStdout( KProcess*, char*, int ) ) );
          connect( mRouteProcess,  SIGNAL( receivedStderr( KProcess*, char*, int ) ),
-@@ -131,6 +157,137 @@
+@@ -131,6 +157,140 @@
          }
      }
  #endif
@@ -152,8 +152,6 @@
 +                            
 +                            close(s);
 +                        }
-+
-+                        interface->activateMonitor();
 +                    }
 +                    break;
 +                 
@@ -200,11 +198,16 @@
 +        }
 +        freeifaddrs(ifap);
 +    }
++
++    // Update the display
++    for ( ifIt.toFirst(); ifIt.current(); ++ifIt )
++        ifIt.current()->activateMonitor();
++
 +#endif // Q_OS_FREEBSD
  }
  
  void InterfaceUpdater::routeProcessExited( KProcess* process )
-@@ -180,6 +337,7 @@
+@@ -180,6 +340,7 @@
  
  void InterfaceUpdater::parseIfconfigOutput()
  {
@@ -212,7 +215,7 @@
      /* mIfconfigStdout contains the complete output of 'ifconfig' which we
       * are going to parse here.
       */
-@@ -235,10 +393,12 @@
+@@ -235,10 +396,12 @@
          }
          interface->activateMonitor();
      }
@@ -225,7 +228,7 @@
      QRegExp regExp( ".*RX.*:(\\d+).*:\\d+.*:\\d+.*:\\d+" );
      if ( regExp.search( config ) > -1 )
          data.rxPackets = regExp.cap( 1 ).toULong();
-@@ -318,10 +478,12 @@
+@@ -318,10 +481,12 @@
          if ( regExp.search( config ) > -1 )
              data.ptpAddress = regExp.cap( 2 );
      }
@@ -238,7 +241,7 @@
      /* mIwconfigStdout contains the complete output of 'iwconfig' which we
       * are going to parse here.
       */
-@@ -364,10 +526,12 @@
+@@ -364,10 +529,12 @@
              updateWirelessData( configs[key], interface->getWirelessData() );
          }
      }
@@ -251,7 +254,7 @@
      QRegExp regExp( "ESSID:\"?([^\"]*)\"?" );
      if ( regExp.search( config ) > -1 )
          data.essid = regExp.cap( 1 );
-@@ -401,6 +565,7 @@
+@@ -401,6 +568,7 @@
      regExp.setPattern( "Link Quality:([\\d/]*)" );
      if ( regExp.search( config ) > -1 )
          data.linkQuality = regExp.cap( 1 );
@@ -259,7 +262,7 @@
  }
  
  void InterfaceUpdater::parseRouteOutput()
-@@ -409,18 +574,26 @@
+@@ -409,16 +577,25 @@
       * are going to parse here.
       */
      QMap<QString, QStringList> configs;
@@ -284,7 +287,5 @@
          configs[routeParameter[7]] = routeParameter;
 +#endif
      }
--
+ 
      /* We loop over the interfaces the user wishs to monitor.
-      * If we find the interface in the output of 'route' we update
-      * the data of the interface.
