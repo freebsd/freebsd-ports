@@ -70,6 +70,7 @@ Have fun with this new configuration style !     -andreas \n\n\
   "pjxl300"  "HP PaintJet XL300, DeskJet 1200C color printer, HP CopyJet" ON \
   "pxlmono"  "HP PCL XL black-and-white printers (LaserJet 5 and 6 family)" ON \
   "pxlcolor" "HP PCL XL color printers (none available yet)" ON \
+  "hpdj"     "HP PCL 3+ (DeskJet 500/500C/510/520/540/550C/560C/850C/855C)" ON \
   "ibmpro"   "IBM 9-pin Proprinter" OFF \
   "jetp3852" "IBM Jetprinter ink-jet color (Model #3852)" OFF \
   "imagen"   "Imagen ImPress printers" OFF \
