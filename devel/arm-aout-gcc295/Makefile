@@ -6,27 +6,37 @@
 # $FreeBSD$
 #
 
-PORTNAME=	arm-aout-gcc295
-PORTVERSION=	2.95.2
+PORTNAME=	gcc
+PORTVERSION=	2.95.3
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEWARE}
 MASTER_SITE_SUBDIR=	gcc/releases/${DISTNAME}
-DISTNAME=	gcc-2.95.2
+PKGNAMEPREFIX=	arm-aout-
+PKGNAMESUFFIX=	295
+DISTFILES=	gcc-core-${PORTVERSION}${EXTRACT_SUFX} \
+		gcc-g++-${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	pbecke@javagear.com
 
-EXTRACT_AFTER_ARGS=	| ${TAR} -xf - -T ${FILESDIR}/tlist -X ${FILESDIR}/xlist
-
+GCC_REV=	${DISTNAME:S/gcc-//g}
+PLIST_SUB+=	GCC_REV=${GCC_REV}
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--target=arm-aout --with-gnu-as --with-gnu-ld --with-newlib
+CONFIGURE_ARGS=	--target=arm-aout --with-gnu-as --with-gnu-ld --with-newlib \
+		--enable-languages="c,c++"
+.if defined(DEFAULT_CPU)
+CONFIGURE_ARGS+=--with-cpu="${DEFAULT_CPU}"
+.endif
 MAKE_FLAGS=	LANGUAGES="c c++"
-MAN1=		arm-aout-addr2line.1 arm-aout-ar.1 arm-aout-as.1	\
-		arm-aout-c++filt.1 arm-aout-ld.1 arm-aout-nlmconv.1	\
-		arm-aout-nm.1 arm-aout-objcopy.1 arm-aout-objdump.1	\
-		arm-aout-ranlib.1 arm-aout-size.1 arm-aout-strings.1	\
-		arm-aout-strip.1
+
+.if !defined(DEFAULT_CPU)
+pre-extract:
+	@${ECHO}
+	@${ECHO} "You can specify a default cpu target for gcc by setting DEFAULT_CPU to the"
+	@${ECHO} "appropriate target (e.g., strongarm1100)."
+	@${ECHO}
+.endif
 
 post-extract:
 	${MKDIR} ${WRKSRC}/gcc/target
@@ -44,7 +54,7 @@ do-install:
 	cd ${WRKSRC}/gcc ; ${GMAKE} install
 	${LN} -f ${PREFIX}/bin/arm-aout-g++ ${PREFIX}/arm-aout/bin/g++
 	${LN} -f ${PREFIX}/bin/arm-aout-c++filt ${PREFIX}/arm-aout/bin/c++filt
-	cd ${PREFIX}/lib ; ${MV} -f libbfd.* libiberty.* libopcodes.*  \
-		${PREFIX}/lib/gcc-lib/arm-aout/${PORTVERSION}
+	@${MV} ${PREFIX}/bin/cpp ${PREFIX}/bin/${PKGNAMEPREFIX}cpp
+	@${MV} ${PREFIX}/bin/gcov ${PREFIX}/bin/${PKGNAMEPREFIX}gcov
 
 .include <bsd.port.mk>

@@ -1,1 +1,3 @@
-MD5 (gcc-2.95.2.tar.bz2) = 7caa851b4a360b6ff027897f455348d5
+MD5 (gcc-core-2.95.3.tar.bz2) = 56dc4de966a54e4c511f65e525f9c0fe
+MD5 (gcc-g++-2.95.3.tar.bz2) = ce600888f39443a25ad325cc886e7d16
+MD5 (gcc-objc-2.95.3.tar.bz2) = be118925cd045d0d6d294c27ddb09647
