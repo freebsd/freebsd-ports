@@ -1,4 +1,5 @@
 bin/jabberd
+@unexec if cmp -s %D/etc/jabber.xml.sample %D/etc/jabber.xml; then rm -f %D/etc/jabber.xml; fi
 etc/jabber.xml.sample
 etc/rc.d/jabberd.sh
 lib/jabber/aim-transport/aimtrans.so
