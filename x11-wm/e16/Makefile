@@ -9,13 +9,9 @@ PORTNAME=	enlightenment
 PORTVERSION=	0.16.5
 PORTREVISION=	5
 CATEGORIES=	x11-wm
-MASTER_SITES=	ftp://ftp.enlightenment.org/enlightenment/enlightenment/ \
-		ftp://ftp.dti.ad.jp/pub/X/enlightenment/enlightenment/ \
-		ftp://ftp.enlighte.nu/pub/Enlightenment/Enlightenment/ \
-		ftp://beaver.its.vu.edu.au/pub/enlightenment/ \
-		ftp://freebsd.sinica.edu.tw/pub/clive/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	vanilla
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
+		ftp://freebsd.sinica.edu.tw/pub/clive/
+MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		Marble.etheme \
 		BlueSteel.etheme.zh_TW.Big5 \
