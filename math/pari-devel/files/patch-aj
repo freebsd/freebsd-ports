@@ -1,0 +1,10 @@
+--- config/TOP_Make.SH.orig	Thu Jan  8 01:42:56 2004
++++ config/TOP_Make.SH	Thu Jan  8 01:43:11 2004
+@@ -37,7 +37,6 @@
+ 	@echo "Available extra tests: $top_test_extra"
+ 
+ all::
+-	@-cd doc && \$(MAKE) doc
+ 	@\$(MAKE) gp
+ 
+ gp bench test-kernel $top_test_extra $top_dotest_extra install cleanobj cleantest install-bin install-doc install-data install-lib-sta install-bin-sta dobench tune::
