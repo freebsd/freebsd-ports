@@ -1,0 +1,16 @@
+#!/bin/sh
+
+cd $WRKSRC || exit 1;
+
+cat >> Makefile << END
+
+BINDIR=$PREFIX/bin
+LIBDIR=$PREFIX/lib/fudgit
+MANDIR=$PREFIX/man/man1
+DLLRL = -Duse-dll-readline
+
+all: freebsd
+
+END
+
+exit 0;

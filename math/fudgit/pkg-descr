@@ -1,0 +1,48 @@
+FUDGIT is a double-precision multi-purpose fitting program.
+It can manipulate complete columns of numbers in the form
+of vector arithmetic. FUDGIT is also an expression language
+interpreter understanding most of C grammar except pointers.
+Morever, FUDGIT is a front end for any plotting program supporting
+commands from stdin. It is a nice mathematical complement to
+GNUPLOT, for example.
+
+The main features of FUDGIT are:
+   - Command shell including history;
+   - Possible abbreviation of all the ``fitting mode'' commands;
+   - Possible plural when it makes sense too;
+   - Interactive shell supporting flow control (while,
+     if-else-endif, foreach);
+   - User definable macros;
+   - User definable aliases;
+   - On-line help;
+   - On-line loadable procedure- or function-objects;
+   - On-line selectable plotting program;
+   - Fourier transforms;
+   - Spline interpolation;
+   - Smoothing;
+   - Double-precision built-in calculator;
+   - Built-in interpreter supporting most of C language including
+     flow control (if, else, while, for, break, continue);
+   - User definable functions and procedures;
+   - Double-precision vector arithmetic;
+   - Access to the complete C math library;
+   - Access to any external C or FORTRAN routines/libraries
+     through dynamic loading;
+   - Built-in fitting series such as:
+       + power series (polynomial);
+       + sine series;
+       + cosine series;
+       + Legendre polynomials;
+       + series of Gaussians;
+       + series of exponentials;
+       + series of lorentzian;
+   - User definable fitting functions;
+   - Totally dynamical allocation of variables and parameters;
+   - Possible selection of fitting ranges;
+
+FUDGIT has a collection of fitting routines including:
+   - straight line (linear) least squares;
+   - straight line (linear) least absolute deviation;
+   - general linear least squares using QR decomposition;
+   - general linear least squares using singular value decomposition;
+   - nonlinear Marquardt-Levenberg method;

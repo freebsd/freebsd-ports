@@ -1,0 +1,35 @@
+*** Makefile.in.orig	Wed Nov  9 17:20:09 1994
+--- Makefile.in	Sat Nov 12 02:58:47 1994
+***************
+*** 89,94 ****
+--- 89,105 ----
+  @	endif
+  CHECK = @echo "Building FUDGIT for datagen..."
+  @ endif
++ @ 	comment ==================================================== 386bsd
++ @ if freebsd 
++ # This Makefile was generated for freebsd
++ OPTIONS = -DNOTRUNC  -DNOMALLINFO -DVOID_SIGHANDLER  -DWAIT3_INT \
++ -DNOMALLOC_H -DHAVE_UNISTD_H -DHAVE_STDLIB_H
++ CFLAGS = $(OPTIONS) $(DLOPTIONS) -pipe -O2 -fomit-frame-pointer
++ LDFLAGS = -L../libs $(DLLIB) $(DLDLIB) -lreadline -ltermcap -lm
++ LLFLAGS = -ll
++ CC = cc
++ CHECK = @echo "Building FUDGIT for freebsd..."
++ @ endif
+  @ 	comment ==================================================== hpux
+  @ if hpux
+  # This Makefile was generated for HPUX
+***************
+*** 311,315 ****
+  	cp docs/fudgit.help $(LIBDIR)
+  	chmod 444 $(LIBDIR)/fudgit.help
+  	cp docs/fudgit.1 $(MANDIR)
+! 	chmod 444 $(LIBDIR)/fudgit.1
+  
+--- 322,326 ----
+  	cp docs/fudgit.help $(LIBDIR)
+  	chmod 444 $(LIBDIR)/fudgit.help
+  	cp docs/fudgit.1 $(MANDIR)
+! 	chmod 444 $(MANDIR)/fudgit.1
+  
