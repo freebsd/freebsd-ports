@@ -1,0 +1,3 @@
+bin/xdir
+man/man1/xdir.1x
+lib/X11/app-defaults/XDir
