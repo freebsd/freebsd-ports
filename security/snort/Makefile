@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	snort
-PORTVERSION=	2.2.0
+PORTVERSION=	2.3.0
 CATEGORIES=	security
 MASTER_SITES=	http://www.snort.org/dl/
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	sergei@FreeBSD.org
 COMMENT=	Lightweight network intrusion detection system
@@ -18,7 +19,8 @@ LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
 OPTIONS=	FLEXRESP "Flexible response to events" off \
 		MYSQL "Enable MySQL support" off \
 		ODBC "Enable ODBC support" off \
-		POSTGRESQL "Enable PostgreSQL support" off
+		POSTGRESQL "Enable PostgreSQL support" off \
+		PRELUDE "Enable patch for Prelude integration" off
 
 USE_GPG=	yes
 SIG_SUFFIX=	.asc
@@ -30,8 +32,8 @@ CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 MAN8=		snort.8
-DOCS=		ChangeLog doc/AUTHORS doc/BUGS doc/CREDITS doc/FAQ doc/NEWS \
-		doc/README* doc/TODO doc/USAGE doc/snort_manual.pdf
+DOCS=		ChangeLog doc/AUTHORS doc/BUGS doc/CREDITS doc/NEWS \
+		doc/README* doc/TODO doc/USAGE doc/*.pdf
 
 .include <bsd.port.pre.mk>
 
@@ -67,6 +69,27 @@ LDFLAGS+=		-lssl -lcrypto
 CONFIGURE_ARGS+=	--with-postgresql=no
 .endif
 
+.if defined(WITH_PRELUDE)
+#BROKEN=			Prelude reporting patch have not been updated for Snort 2.2.0
+PRELUDE_PATCH=		0.3.6
+MASTER_SITES+=		http://prelude-ids.org/download/releases/:prelude
+SIGNED_FILES=		${DISTNAME}${EXTRACT_SUFX}
+DISTFILES+=		snort-prelude-reporting-patch-${PRELUDE_PATCH}.tar.gz:prelude
+EXTRA_PATCHES+=		${WRKDIR}/snort-2.2.0-prelude-${PRELUDE_PATCH}.diff
+USE_AUTOMAKE_VER=	19
+USE_AUTOCONF_VER=	259
+LIB_DEPENDS+=		prelude.1:${PORTSDIR}/security/libprelude
+CONFIGURE_ARGS+=	--with-prelude=yes
+PLIST_SUB+=		PRELUDE=""
+
+pre-configure:
+	cd ${WRKSRC} && ${ACLOCAL} && ${AUTOMAKE} && ${AUTOCONF}
+	${RM} ${WRKSRC}/doc/README.Prelude.orig
+.else
+CONFIGURE_ARGS+=	--with-prelude=no
+PLIST_SUB+=		PRELUDE="@comment "
+.endif
+
 post-patch:
 	${REINPLACE_CMD} "s,%%PREFIX%%,${PREFIX}," ${WRKSRC}/src/snort.c
 	@${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
@@ -91,6 +114,13 @@ post-install:
 	[ -f ${PREFIX}/etc/${f} ] || \
 	    ${INSTALL_DATA} ${WRKSRC}/etc/${f} ${PREFIX}/etc/${f}
 .endfor
+.if defined(WITH_PRELUDE)
+.for f in prelude-classification.config
+	${INSTALL_DATA} ${WRKSRC}/etc/${f} ${PREFIX}/etc/${f}-sample
+	[ -f ${PREFIX}/etc/${f} ] || \
+	    ${INSTALL_DATA} ${WRKSRC}/etc/${f} ${PREFIX}/etc/${f}
+.endfor
+.endif
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
