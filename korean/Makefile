@@ -34,10 +34,6 @@
     SUBDIR += hlatex-psfonts-wansung
     SUBDIR += hlatex-wansung
     SUBDIR += hlatexfonts-ocf
-    SUBDIR += hlatexp
-    SUBDIR += hlatexp-pkfonts1200
-    SUBDIR += hlatexp-pkfonts300
-    SUBDIR += hlatexp-pkfonts600
     SUBDIR += hmconv
     SUBDIR += hpscat
     SUBDIR += imhangul

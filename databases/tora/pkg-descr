@@ -1,9 +1,0 @@
-TOra is a well-featured QT based GUI database administration toolkit for
-Oracle. It has some, limited support for MySQL. Due to the lack of native
-Oracle libraries for FreeBSD, this port only supports MySQL (and a limited set
-of features). It's still a very polished application with a lot of
-potential.
-
-WWW: http://www.globecom.se/tora/
-
-- Anders Nordby <anders@fix.no>

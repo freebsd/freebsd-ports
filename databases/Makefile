@@ -315,7 +315,6 @@
     SUBDIR += tdb
     SUBDIR += tinycdb
     SUBDIR += tkgnats
-    SUBDIR += tora
     SUBDIR += typhoon
     SUBDIR += unixODBC
     SUBDIR += useracc

@@ -236,7 +236,6 @@
     SUBDIR += mpg321
     SUBDIR += mpiosh
     SUBDIR += mpmf20
-    SUBDIR += mppdec
     SUBDIR += mt-daapd
     SUBDIR += muine
     SUBDIR += muse

@@ -1,5 +1,0 @@
-bin/telnet
-libexec/telnetd
-@exec mkdir %%OPENSSLDIR%%/certs
-@exec if [ ! -f $(OPENSSLDIR)/certs/telnetd.pem ]; then cd %%OPENSSLDIR%%/certs; openssl req -new -x509 -nodes -days 365 -out telnetd.pem -keyout telnetd.pem; ln -s telnetd.pem `openssl x509 -noout -hash < telnetd.pem`.0 ; chmod 600 $(OPENSSLDIR)/certs/telnetd.pem; fi
-@unexec rmdir %%OPENSSLDIR%%/certs 2>/dev/null || true

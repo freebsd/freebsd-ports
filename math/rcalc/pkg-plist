@@ -1,9 +1,0 @@
-bin/rcalc
-share/gnome/apps/Utilities/rCalc.desktop
-share/gnome/help/rCalc/C/index.html
-share/gnome/help/rCalc/C/behave.png
-share/gnome/help/rCalc/C/appear.png
-share/gnome/help/rCalc/C/calculate.png
-share/gnome/help/rCalc/C/topic.dat
-@dirrm share/gnome/help/rCalc/C
-@dirrm share/gnome/help/rCalc

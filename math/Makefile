@@ -185,7 +185,6 @@
     SUBDIR += qhull
     SUBDIR += qscanplot
     SUBDIR += rascal
-    SUBDIR += rcalc
     SUBDIR += rpc
     SUBDIR += rpy
     SUBDIR += ruby-algebra

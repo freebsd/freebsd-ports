@@ -302,7 +302,6 @@
     SUBDIR += nethack33
     SUBDIR += nethack33-gnome
     SUBDIR += nethack33-nox11
-    SUBDIR += nethack33-qt
     SUBDIR += nethack34
     SUBDIR += nethack34-gnome
     SUBDIR += nethack34-nox11
