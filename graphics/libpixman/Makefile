@@ -8,8 +8,7 @@
 PORTNAME=	libpixman
 PORTVERSION=	0.1.2
 CATEGORIES=	graphics
-MASTER_SITES=	http://cairographics.org/snapshots/ \
-		${MASTER_SITE_LOCAL}
+MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	ahze
 
 MAINTAINER=	ahze@FreeBSD.org

@@ -8,8 +8,7 @@
 PORTNAME=	libsvg-cairo
 PORTVERSION=	0.1.4
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.cairographics.org/snapshots/ \
-		${MASTER_SITE_LOCAL}
+MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	ahze
 
 MAINTAINER=	ahze@FreeBSD.org
