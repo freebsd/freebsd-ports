@@ -6,22 +6,28 @@
 #
 
 PORTNAME=	pure-ftpd
-PORTVERSION=	0.99
+PORTVERSION=	0.99.1
 CATEGORIES=	ftp ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	pureftpd
 
-MAINTAINER=	j@4u.net
+MAINTAINER=	j@pureftpd.org
 
 .if defined(WITH_DMALLOC)
 LIB_DEPENDS+=	dmalloc.1:${PORTSDIR}/devel/dmalloc
 .endif
 
+.if defined(WITH_LDAP)
+LIB_DEPENDS+=	ldap:${PORTSDIR}/net/openldap2
+.endif
+
+.if defined(WITH_MYSQL)
+LIB_DEPENDS+=	mysqlclient:${PORTSDIR}/databases/mysql323-client
+.endif
+
+
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=	--with-pam --with-cookie --with-throttling \
-			--with-ratios --with-ftpwho --with-largefile \
-			--with-uploadscript --with-virtualhosts \
-			--with-altlog --with-paranoidmsg
+CONFIGURE_ARGS+=	--with-pam --with-everything --with-paranoidmsg
 # language support requested?
 .if defined(WITH_LANG)
 CONFIGURE_ARGS+=	--with-language="${WITH_LANG}"
@@ -50,19 +56,22 @@ PAM_TARGET?=	pure-ftpd
 
 DOCS=		AUTHORS CONTACT COPYING HISTORY NEWS \
 		README README.Configuration-File README.Contrib README.LDAP \
-		README.Netfilter \
+		README.Netfilter README.MySQL \
 		THANKS
 
 CONTRIB=	xml_python_processors.txt
 
 pre-fetch:
 	@${ECHO} "You can use the following additional options:"
-	@${ECHO} "WITH_DMALLOC	- enable use of the dmalloc library;"
+	@${ECHO} "WITH_DMALLOC=1	- enable use of the dmalloc library;"
+	@${ECHO} "WITH_LDAP=1		- Store users in LDAP directories;"	
+	@${ECHO} "WITH_MYSQL=1		- Store users in MySQL databases;"		
 	@${ECHO} "WITH_LANG=lang	- enable compilation of language support, lang is one of"
-	@${ECHO} "		  english, german, romanian, french, polish, spanish or danish."
+	@${ECHO} "  english, german, romanian, french, polish, spanish or danish."
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/pureftpd-ldap.conf ${PREFIX}/etc/pureftpd-ldap.conf.sample
+	${INSTALL_DATA} ${WRKSRC}/pureftpd-mysql.conf ${PREFIX}/etc/pureftpd-mysql.conf.sample
 	${INSTALL_DATA} ${WRKSRC}/configuration-file/pure-ftpd.conf ${PREFIX}/etc/pure-ftpd.conf.sample
 	${INSTALL_DATA} ${WRKSRC}/configuration-file/pure-config.pl ${PREFIX}/sbin/
 	${MKDIR} ${PREFIX}/share/examples/pure-ftpd

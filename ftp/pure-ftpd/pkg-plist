@@ -4,6 +4,7 @@ sbin/pure-ftpwho
 sbin/pure-uploadscript
 sbin/pure-config.pl
 etc/pureftpd-ldap.conf.sample
+etc/pureftpd-mysql.conf.sample
 etc/pure-ftpd.conf.sample
 %%PORTDOCS%%share/doc/pure-ftpd/AUTHORS
 %%PORTDOCS%%share/doc/pure-ftpd/CONTACT
@@ -14,6 +15,7 @@ etc/pure-ftpd.conf.sample
 %%PORTDOCS%%share/doc/pure-ftpd/README.Configuration-File
 %%PORTDOCS%%share/doc/pure-ftpd/README.Contrib
 %%PORTDOCS%%share/doc/pure-ftpd/README.LDAP
+%%PORTDOCS%%share/doc/pure-ftpd/README.MySQL
 %%PORTDOCS%%share/doc/pure-ftpd/README.Netfilter
 %%PORTDOCS%%share/doc/pure-ftpd/THANKS
 %%PORTDOCS%%@dirrm share/doc/pure-ftpd
