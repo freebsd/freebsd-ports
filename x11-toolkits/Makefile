@@ -10,6 +10,7 @@
     SUBDIR += colorstep
     SUBDIR += engradient
     SUBDIR += fltk
+    SUBDIR += fltk-xunicode
     SUBDIR += fox
     SUBDIR += gnome--
     SUBDIR += gnome-look
