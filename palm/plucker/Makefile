@@ -17,7 +17,7 @@ BUILD_DEPENDS=	ppmtoTbmp:${PORTSDIR}/palm/ppmtoTbmp \
 		convert:${PORTSDIR}/graphics/ImageMagick \
 		ppmtogif:${PORTSDIR}/graphics/netpbm \
 		cjpeg:${PORTSDIR}/graphics/jpeg \
-		${LOCALBASE}/pilot/bin/pilot-xfer:${PORTSDIR}/palm/pilot-link
+		${LOCALBASE}/bin/pilot-xfer:${PORTSDIR}/palm/pilot-link
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_PYTHON=	yes
