@@ -10,6 +10,4 @@ second layer it provides a high-level malloc(3)-style API for a
 convenient and well known way to work with data-structures inside
 those shared memory segments. 
 
-The documentation and latest release can be found on
-http://www.engelschall.com/sw/mm/
- ftp://ftp.engelschall.com/sw/mm/
+WWW: http://www.engelschall.com/sw/mm/
