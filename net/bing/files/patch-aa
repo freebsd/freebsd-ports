@@ -1,0 +1,19 @@
+--- bing.c.orig	Thu Jul 20 16:45:32 1995
++++ bing.c	Sat Mar  4 16:13:05 2000
+@@ -718,13 +718,13 @@
+ 	u_long l;
+ {
+ 	struct hostent *hp;
+-	static char buf[80];
++	static char buf[MAXHOSTNAMELEN+19];
+ 
+ 	if ((options & F_NUMERIC) ||
+ 	    !(hp = gethostbyaddr((char *)&l, 4, AF_INET)))
+-		(void)sprintf(buf, "%s", inet_ntoa(*(struct in_addr *)&l));
++		(void)snprintf(buf, sizeof(buf), "%s", inet_ntoa(*(struct in_addr *)&l));
+ 	else
+-		(void)sprintf(buf, "%s (%s)", hp->h_name,
++		(void)snprintf(buf, sizeof(buf), "%s (%s)", hp->h_name,
+ 		    inet_ntoa(*(struct in_addr *)&l));
+ 	return(buf);
+ }
