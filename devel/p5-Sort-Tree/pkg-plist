@@ -1,0 +1,5 @@
+%%SITE_PERL%%/Sort/Tree.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Sort/Tree/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sort/Tree
+@unexec rmdir %D/%%SITE_PERL%%/Sort 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Sort 2>/dev/null || true
