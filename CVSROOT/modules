@@ -1759,6 +1759,7 @@ fudgit		ports/math/fudgit
 fugu		ports/net/fugu
 fuhquake	ports/games/fuhquake
 fujiplay	ports/graphics/fujiplay
+fung-calc	ports/math/fung-calc
 funktrackergold	ports/audio/funktrackergold
 funnelweb	ports/devel/funnelweb
 fuzz		ports/security/fuzz
