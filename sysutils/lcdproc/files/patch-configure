@@ -1,0 +1,19 @@
+--- configure.orig	Fri Oct 18 20:16:40 2002
++++ configure	Fri Oct 18 20:23:32 2002
+@@ -886,7 +886,7 @@
+ if test $debug = "yes"; then
+ 	CFLAGS="-g -O"
+ else
+-	CFLAGS="-O3"
++	
+ fi
+ CFLAGS="-Wall $CFLAGS"
+ export CFLAGS
+@@ -2902,6 +2902,7 @@
+ 
+ 	echo $ac_n "checking for your mounted filesystem table""... $ac_c" 1>&6
+ echo "configure:2905: checking for your mounted filesystem table" >&5
++ac_cv_mtab_file=/etc/fstab
+ if eval "test \"`echo '$''{'ac_cv_mtab_file'+set}'`\" = set"; then
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
