@@ -1,0 +1,12 @@
+This is a small, simple window manager, contributed to X11R3 by DEC.
+
+The behavior of uwm can be customized by configuration files.
+
+Since uwm does not decorate windows, it may not be obvious that it has started.
+By default, middle-clicking on the root window with the middle mouse button
+will bring up a menu of window operations.  Pressing a mouse button while
+holding an Alt key will raise or lower the window under the pointer, or (when
+done on the root window) circulate windows up or down.
+
+Trevor Johnson
+trevor@FreeBSD.org

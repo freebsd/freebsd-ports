@@ -42,6 +42,7 @@
     SUBDIR += toolbox
     SUBDIR += tvtwm
     SUBDIR += ude
+    SUBDIR += uwm
     SUBDIR += vtwm
     SUBDIR += windowmaker
     SUBDIR += windowmaker-i18n

@@ -1,0 +1,33 @@
+$NetBSD: patch-aj,v 1.1 2000/01/19 07:24:07 itohy Exp $
+
+--- Menu.c.orig	Sat Oct  1 09:41:13 1988
++++ Menu.c	Mon Oct 16 09:10:20 2000
+@@ -84,6 +84,14 @@
+ 	char **oldenviron;
+ 	extern char **environ, **newenviron;
+ 
++#ifdef SIGCHLD
++	/*
++	 * Children are now handled in uvm.c, but make sure
++	 * uwm blocks :-) for compatibility with other systems.
++	 */
++
++	signal(SIGCHLD, SIG_DFL);
++#endif
+ 	oldenviron = environ;
+ 	environ = newenviron;
+ 	if ((pid = vfork()) == 0) {
+@@ -105,8 +113,11 @@
+ 		;
+ 	if (w == -1)
+ 		status = -1;
+-	signal(SIGINT, istat);
+-	signal(SIGQUIT, qstat);
++	signal(SIGINT, (void *)istat);
++	signal(SIGQUIT, (void *)qstat);
++#ifdef SIGCHLD
++	clear_children();
++#endif
+ 	return(status);
+ }
+ 

@@ -1,0 +1,25 @@
+$NetBSD: patch-ag,v 1.1.1.1 1999/12/23 03:10:59 itohy Exp $
+
+--- Restart.c.orig	Sat Feb 27 07:38:11 1988
++++ Restart.c	Thu Dec 23 00:39:16 1999
+@@ -46,6 +46,8 @@
+     XButtonEvent button_event;
+     int percentage;
+     int i;
++    extern char **environ;
++    char **oenv;
+ 
+     percentage = VOLUME_PERCENTAGE(Volume);
+     XBell(dpy, percentage);
+@@ -55,7 +57,10 @@
+      * Gag, rely on operating system to close connection because we don't
+      * to mess ourselves up in case the exec fails.
+      */
+-    execvp(*Argv, Argv, Environ);
++    oenv = environ;
++    environ = Environ;
++    execvp(*Argv, Argv);
++    environ = oenv;
+     for (i = 0; i < 4; i++) {
+ 	XBell(dpy, percentage);
+ 	percentage += 10;

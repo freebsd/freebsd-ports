@@ -1,0 +1,23 @@
+$NetBSD: patch-ai,v 1.1.1.1 1999/12/23 03:10:59 itohy Exp $
+
+--- Bindings.c.orig	Fri Sep 23 23:08:11 1988
++++ Bindings.c	Thu Dec 23 07:59:56 1999
+@@ -63,7 +63,6 @@
+ "f.circleup=m:r:r d",
+ "f.circledown=m|s::l d",
+ "f.menu=:r:m d:\"WindowOps\"",
+-"f.menu=m|s::m d:\"WindowOps\"",
+ "f.menu=m|s::m d:\"Preferences\"",
+ "f.circleup=m|s::r d",
+ "f.iconify=m|c:w|i:l d",
+@@ -102,8 +101,8 @@
+ "Click Loud:!\"xset c 8&\"",
+ "Click Soft:!\"xset c on&\"",
+ "Click Off:!\"xset c off&\"",
+-"Lock On:!\"xset l on&\"",
+-"Lock Off:!\"xset l off&\"",
++"Lock On:!\"xset led on&\"",
++"Lock Off:!\"xset led off&\"",
+ "Mouse Fast:!\"xset m 4 2&\"",
+ "Mouse Normal:!\"xset m 2 5&\"",
+ "Mouse Slow:!\"xset m 1 1&\"",
