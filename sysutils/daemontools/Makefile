@@ -8,7 +8,8 @@
 PORTNAME=	daemontools
 PORTVERSION=	0.70
 CATEGORIES=	sysutils
-MASTER_SITES=	http://cr.yp.to/daemontools/
+MASTER_SITES=	http://cr.yp.to/daemontools/ \
+		ftp://cr.yp.to/daemontools/
 
 MAINTAINER=	nbm@FreeBSD.org
 
