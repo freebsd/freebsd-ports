@@ -43,7 +43,6 @@
     SUBDIR += gtk20
     SUBDIR += gtk20-apireference
     SUBDIR += gtkada
-    SUBDIR += gtkbe
     SUBDIR += gtkdatabox
     SUBDIR += gtkextra
     SUBDIR += gtkextra--
@@ -55,8 +54,6 @@
     SUBDIR += gtkmathview
     SUBDIR += gtkscintilla
     SUBDIR += gtksourceview
-    SUBDIR += gtkstep
-    SUBDIR += gtkstep-pastel
     SUBDIR += gtoolkit
     SUBDIR += guile-gnome
     SUBDIR += guile-gtk

@@ -1129,3 +1129,6 @@ x11-wm/qinx|x11-themes/qinx|2004-06-02|new category
 x11-wm/qnxstyle|x11-themes/qnxstyle|2004-06-02|new category
 x11-wm/sapphire-themes|x11-themes/sapphire-themes|2004-06-02|new category
 x11-toolkits/gtk-qt-engine|x11-themes/gtk-qt-engine|2004-06-02|new category
+x11-toolkits/gtkbe|x11-themes/gtkbe|2004-06-02|new category
+x11-toolkits/gtkstep|x11-themes/gtkstep|2004-06-02|new category
+x11-toolkits/gtkstep-pastel|x11-themes/gtkstep-pastel|2004-06-02|new category
