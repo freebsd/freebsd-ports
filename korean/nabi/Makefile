@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nabi
-PORTVERSION=	0.9
+PORTVERSION=	0.10
 CATEGORIES=	korean gnome x11
 MASTER_SITES=	http://download.kldp.net/nabi/
 
@@ -15,7 +15,7 @@ COMMENT=	Hangul X Input Method for Everywhere
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomeprefix gnomehack gnomepanel
+USE_GNOME=	gnomeprefix gnomehack gtk20
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LIBS="-L${LOCALBASE}/lib"
