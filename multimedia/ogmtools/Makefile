@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ogmtools
-PORTVERSION=	0.9.73
+PORTVERSION=	1.0.1
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://www.bunkus.org/videotools/ogmtools/
 DISTNAME=	${PORTNAME}-${PORTVERSION:C/\.(.{2})$/\1/}
