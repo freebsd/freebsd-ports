@@ -8,7 +8,7 @@
 CATEGORIES=	japanese mail
 
 PATCH_SITES=	http://mm.tkikuchi.net/:japanese
-PATCHFILES=	mailman-${PORTVERSION}+patch.20040123:japanese
+PATCHFILES=	mailman-${PORTVERSION}+patch.20040516.gz:japanese
 
 MAINTAINER=	koj@ofug.net
 COMMENT=	Japanized mailman which is a mailing list manager with a web front-end
