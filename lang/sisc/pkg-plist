@@ -1,0 +1,8 @@
+bin/sisc
+share/java/classes/sisc-lib.jar
+share/java/classes/sisc-opt.jar
+share/java/classes/sisc.jar
+share/java/classes/sisc.shp
+%%DOCSDIR%%/COPYING
+%%DOCSDIR%%/README
+@dirrm %%DOCSDIR%%
