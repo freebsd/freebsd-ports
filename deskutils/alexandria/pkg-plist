@@ -1,0 +1,75 @@
+bin/alexandria
+%%RUBY_SITELIBDIR%%/alexandria.rb
+%%RUBY_SITELIBDIR%%/alexandria/book.rb
+%%RUBY_SITELIBDIR%%/alexandria/book_providers.rb
+%%RUBY_SITELIBDIR%%/alexandria/book_providers/amazon.rb
+%%RUBY_SITELIBDIR%%/alexandria/book_providers/bn.rb
+%%RUBY_SITELIBDIR%%/alexandria/book_providers/mcu.rb
+%%RUBY_SITELIBDIR%%/alexandria/book_providers/proxis.rb
+%%RUBY_SITELIBDIR%%/alexandria/config.rb
+%%RUBY_SITELIBDIR%%/alexandria/execution_queue.rb
+%%RUBY_SITELIBDIR%%/alexandria/export_library.rb
+%%RUBY_SITELIBDIR%%/alexandria/import_library.rb
+%%RUBY_SITELIBDIR%%/alexandria/web_themes.rb
+%%RUBY_SITELIBDIR%%/alexandria/library.rb
+%%RUBY_SITELIBDIR%%/alexandria/preferences.rb
+%%RUBY_SITELIBDIR%%/alexandria/ui.rb
+%%RUBY_SITELIBDIR%%/alexandria/ui/about_dialog.rb
+%%RUBY_SITELIBDIR%%/alexandria/ui/alert_dialog.rb
+%%RUBY_SITELIBDIR%%/alexandria/ui/book_properties_dialog.rb
+%%RUBY_SITELIBDIR%%/alexandria/ui/book_properties_dialog_base.rb
+%%RUBY_SITELIBDIR%%/alexandria/ui/export_dialog.rb
+%%RUBY_SITELIBDIR%%/alexandria/ui/glade_base.rb
+%%RUBY_SITELIBDIR%%/alexandria/ui/icons.rb
+%%RUBY_SITELIBDIR%%/alexandria/ui/import_dialog.rb
+%%RUBY_SITELIBDIR%%/alexandria/ui/main_app.rb
+%%RUBY_SITELIBDIR%%/alexandria/ui/new_book_dialog.rb
+%%RUBY_SITELIBDIR%%/alexandria/ui/new_book_dialog_manual.rb
+%%RUBY_SITELIBDIR%%/alexandria/ui/preferences_dialog.rb
+%%RUBY_SITELIBDIR%%/alexandria/version.rb
+%%DATADIR%%/COPYING
+%%DATADIR%%/glade/book_properties_dialog.glade
+%%DATADIR%%/glade/main_app.glade
+%%DATADIR%%/glade/new_book_dialog.glade
+%%DATADIR%%/glade/preferences_dialog.glade
+%%DATADIR%%/icons/alexandria.png
+%%DATADIR%%/icons/alexandria_small.png
+%%DATADIR%%/icons/book.png
+%%DATADIR%%/icons/cuecat.png
+%%DATADIR%%/icons/cuecat_inactive.png
+%%DATADIR%%/icons/library.png
+%%DATADIR%%/icons/library_small.png
+%%DATADIR%%/icons/star_set.png
+%%DATADIR%%/icons/star_unset.png
+%%DATADIR%%/ui/menus.xml
+%%DATADIR%%/ui/popups.xml
+%%DATADIR%%/web-themes/clean/clean.css
+%%DATADIR%%/web-themes/clean/preview.jpg
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/NEWS
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/README
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/TODO
+share/locale/cy/LC_MESSAGES/alexandria.mo
+share/locale/de/LC_MESSAGES/alexandria.mo
+share/locale/es/LC_MESSAGES/alexandria.mo
+share/locale/fr/LC_MESSAGES/alexandria.mo
+share/locale/ja/LC_MESSAGES/alexandria.mo
+share/locale/sv/LC_MESSAGES/alexandria.mo
+@dirrm %%RUBY_SITELIBDIR%%/alexandria/book_providers
+@dirrm %%RUBY_SITELIBDIR%%/alexandria/ui
+@dirrm %%RUBY_SITELIBDIR%%/alexandria
+@dirrm %%DATADIR%%/glade
+@dirrm %%DATADIR%%/icons
+@dirrm %%DATADIR%%/ui
+@dirrm %%DATADIR%%/web-themes/clean
+@dirrm %%DATADIR%%/web-themes
+@dirrm %%DATADIR%%
+@dirrm %%PORTDOCS%%%%RUBY_MODDOCDIR%%
+@cwd %%X11BASE%%
+etc/gconf/gconf.xml.defaults/schemas/apps/alexandria/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/alexandria/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/%gconf.xml
+@dirrm etc/gconf/gconf.xml.defaults/apps/alexandria
+@dirrm etc/gconf/gconf.xml.defaults/apps
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/alexandria
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps
