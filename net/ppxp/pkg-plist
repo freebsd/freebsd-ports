@@ -27,12 +27,15 @@ etc/ppxp/ip/hrouteup
 etc/ppxp/keybind
 etc/ppxp/modem/3c563
 etc/ppxp/modem/aterm
+etc/ppxp/modem/atermIT21L
 etc/ppxp/modem/default
 etc/ppxp/modem/dn1280
 etc/ppxp/modem/ex336
 etc/ppxp/modem/generic
+etc/ppxp/modem/kx-ph405
 etc/ppxp/modem/mc6500
 etc/ppxp/modem/mc6530
+etc/ppxp/modem/mc6550
 etc/ppxp/modem/mn128
 etc/ppxp/modem/mn7650
 etc/ppxp/modem/ms288af
@@ -47,7 +50,10 @@ etc/ppxp/modem/ta777
 etc/ppxp/modem/td503a
 etc/ppxp/modem/tmad1280@128
 etc/ppxp/modem/tmad1280@64
+etc/ppxp/modem/to_tac@128
+etc/ppxp/modem/to_tac@64
 etc/ppxp/modem/v34es2
+etc/ppxp/modem/v3dsu
 etc/ppxp/modem/xj2144
 etc/ppxp/rc/fetchmail.rc
 etc/ppxp/rc/sendmail.rc
