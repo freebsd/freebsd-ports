@@ -37,6 +37,12 @@ CXXFLAGS+=	-mcpu=i686 -march=i686 -mfancy-math-387
 .endif # i386
 .endif
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502103
+BROKEN=		"Install fails on FreeBSD >= 5.x"
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g ; \
 	s|%%X11BASE%%|${X11BASE}|g ; \
@@ -66,4 +72,4 @@ do-install:
 	@${FIND} ${EXAMPLESDIR} -type f | ${XARGS} ${CHMOD} ${SHAREMODE}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
