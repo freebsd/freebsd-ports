@@ -1,0 +1,17 @@
+
+$FreeBSD$
+
+--- po/it.po	2002/09/25 06:29:46	1.1
++++ po/it.po	2002/09/25 06:30:15
+@@ -200,11 +200,6 @@
+ msgid "Go Back"
+ msgstr "Indietro"
+ 
+-#: src/toolbar.c:133
+-#, fuzzy
+-msgid "Forward"
+-msgstr "Avanti"
+-
+ #: src/toolbar.c:144
+ msgid "Stop loading"
+ msgstr "Arresta il caricamento"
