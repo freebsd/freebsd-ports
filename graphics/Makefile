@@ -4,6 +4,7 @@
 
     SUBDIR += 4va
     SUBDIR += Cgraph
+    SUBDIR += Coin
     SUBDIR += EZWGL
     SUBDIR += GIFgraph
     SUBDIR += Hermes
