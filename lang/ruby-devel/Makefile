@@ -7,7 +7,6 @@
 
 PORTNAME=	ruby
 PORTVERSION=	${RUBY_PORTVERSION}
-PORTREVISION=	1
 CATEGORIES=	lang ruby ipv6
 MASTER_SITES=	http://www.ruby-lang.org/~knu/	# ${MASTER_SITE_RUBY}
 MASTER_SITE_SUBDIR=	${RUBY_VER}
@@ -33,8 +32,8 @@ CONFIGURE_ARGS=	--enable-shared
 MAN1=		ruby${_RUBY_SUFFIX}.1
 MLINKS=		ruby${_RUBY_SUFFIX}.1 ruby.1
 
-.if !defined(WITH_LIBC_R)
-CONFIGURE_ARGS+=	--with-libc_r=no
+.if defined(WITH_LIBC_R)
+CONFIGURE_ARGS+=	--with-libc_r=yes
 .endif
 
 .include <bsd.port.pre.mk>

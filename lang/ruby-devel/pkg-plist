@@ -72,6 +72,8 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%RUBY_LIBDIR%%/pstore.rb
 %%RUBY_LIBDIR%%/rational.rb
 %%RUBY_LIBDIR%%/readbytes.rb
+%%RUBY_LIBDIR%%/resolv-replace.rb
+%%RUBY_LIBDIR%%/resolv.rb
 %%RUBY_LIBDIR%%/shell.rb
 %%RUBY_LIBDIR%%/shellwords.rb
 %%RUBY_LIBDIR%%/singleton.rb
