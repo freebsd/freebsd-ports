@@ -101,6 +101,8 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/ext/pty/README* ${RUBY_DOCDIR}/pty
 	${MKDIR} ${RUBY_DOCDIR}/readline
 	${INSTALL_DATA} ${WRKSRC}/ext/readline/README ${RUBY_DOCDIR}/readline
+	${MKDIR} ${RUBY_DOCDIR}/sha1
+	${INSTALL_DATA} ${WRKSRC}/ext/sha1/sha1.txt* ${RUBY_DOCDIR}/sha1
 	${CP} -R ${WRKSRC}/doc/* ${RUBY_DOCDIR}/
 .endif
 	@${CAT} ${PKGMESSAGE}

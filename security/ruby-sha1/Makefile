@@ -21,10 +21,18 @@ USE_RUBY_EXTCONF=	yes
 
 INSTALL_TARGET=	site-install
 
+RUBY_REQUIRE=	Ruby < 170
+
+.include <bsd.port.pre.mk>
+
+.if !defined(RUBY_PROVIDED)
+BROKEN=		"ruby-sha1 is included as a standard module in Ruby >= 1.7.0"
+.endif
+
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_DOCDIR}/sha1
 	${INSTALL_DATA} ${WRKSRC}/README ${RUBY_DOCDIR}/sha1/
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

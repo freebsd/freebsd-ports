@@ -26,6 +26,7 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%RUBY_ARCHLIBDIR%%/rubyio.h
 %%RUBY_ARCHLIBDIR%%/rubysig.h
 %%RUBY_ARCHLIBDIR%%/sdbm.so
+%%RUBY_ARCHLIBDIR%%/sha1.so
 %%RUBY_ARCHLIBDIR%%/socket.so
 %%RUBY_ARCHLIBDIR%%/st.h
 %%RUBY_ARCHLIBDIR%%/util.h
@@ -71,6 +72,7 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%RUBY_LIBDIR%%/pstore.rb
 %%RUBY_LIBDIR%%/rational.rb
 %%RUBY_LIBDIR%%/readbytes.rb
+%%RUBY_LIBDIR%%/shell.rb
 %%RUBY_LIBDIR%%/shellwords.rb
 %%RUBY_LIBDIR%%/singleton.rb
 %%RUBY_LIBDIR%%/sync.rb
@@ -110,6 +112,13 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%RUBY_LIBDIR%%/net/protocol.rb
 %%RUBY_LIBDIR%%/net/smtp.rb
 %%RUBY_LIBDIR%%/net/telnet.rb
+%%RUBY_LIBDIR%%/shell/builtin-command.rb
+%%RUBY_LIBDIR%%/shell/command-processor.rb
+%%RUBY_LIBDIR%%/shell/error.rb
+%%RUBY_LIBDIR%%/shell/filter.rb
+%%RUBY_LIBDIR%%/shell/process-controller.rb
+%%RUBY_LIBDIR%%/shell/system-command.rb
+%%RUBY_LIBDIR%%/shell/version.rb
 @exec /bin/mkdir -p %D/%%RUBY_SITEARCHLIBDIR%%
 @dirrm %%RUBY_SITEARCHLIBDIR%%
 @dirrm %%RUBY_SITELIBDIR%%
@@ -120,6 +129,7 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 @dirrm %%RUBY_LIBDIR%%/irb/lc
 @dirrm %%RUBY_LIBDIR%%/irb
 @dirrm %%RUBY_LIBDIR%%/net
+@dirrm %%RUBY_LIBDIR%%/shell
 @dirrm %%RUBY_LIBDIR%%
 @unexec rmdir %D/lib/ruby 2>/dev/null || true
 %%PORTDOCS%%%%RUBY_DOCDIR%%/README
@@ -128,6 +138,8 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%PORTDOCS%%%%RUBY_DOCDIR%%/README.EXT.jp
 %%PORTDOCS%%%%RUBY_DOCDIR%%/forwardable.rd
 %%PORTDOCS%%%%RUBY_DOCDIR%%/forwardable.rd.jp
+%%PORTDOCS%%%%RUBY_DOCDIR%%/shell.rd
+%%PORTDOCS%%%%RUBY_DOCDIR%%/shell.rd.jp
 %%PORTDOCS%%%%RUBY_DOCDIR%%/etc/etc.txt
 %%PORTDOCS%%%%RUBY_DOCDIR%%/etc/etc.txt.jp
 %%PORTDOCS%%%%RUBY_DOCDIR%%/irb/irb-tools.rd.jp
@@ -140,11 +152,14 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%PORTDOCS%%%%RUBY_DOCDIR%%/pty/README.expect
 %%PORTDOCS%%%%RUBY_DOCDIR%%/pty/README.expect.jp
 %%PORTDOCS%%%%RUBY_DOCDIR%%/readline/README
+%%PORTDOCS%%%%RUBY_DOCDIR%%/sha1/sha1.txt
+%%PORTDOCS%%%%RUBY_DOCDIR%%/sha1/sha1.txt.jp
 %%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/etc
 %%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/irb
 %%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/md5
 %%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/pty
 %%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/readline
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/sha1
 %%PORTDOCS%%@unexec rmdir %D/%%RUBY_DOCDIR%% 2>/dev/null || true
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/README
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/biorhythm.rb
