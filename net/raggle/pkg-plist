@@ -4,7 +4,7 @@ bin/raggle
 %%DOCSDIR%%/COPYING
 %%DOCSDIR%%/ChangeLog
 %%DOCSDIR%%/README
-%@dirrm %DOCSDIR%%
+@dirrm %%DOCSDIR%%
 %%DATADIR%%/extras/feed_dump.rb
 %%DATADIR%%/extras/feed_sizes.rb
 %%DATADIR%%/extras/rss_dir_list.rb
