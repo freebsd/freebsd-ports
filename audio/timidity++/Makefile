@@ -4,12 +4,12 @@
 # Date created:         17 Nov 1996
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.4 1997/06/14 11:04:19 jkh Exp $
+# $Id: Makefile,v 1.5 1997/09/07 22:08:13 ache Exp $
 #
 
 DISTNAME=       timidity-0.2i
 CATEGORIES=     audio
-MASTER_SITES=   ftp://ftp.cdrom.com/pub/demos/music/samples/ \
+MASTER_SITES=   ftp://ftp.planix.com/pub/misc/ \
 		http://www.cgs.fi/~tt/timidity/
 TIINS=          dgguspat.zip
 DISTFILES=      ${TIINS} ${DISTNAME}.tar.gz
