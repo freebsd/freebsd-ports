@@ -1,0 +1,31 @@
+*** Makefile.in.orig	Wed Dec 14 17:08:44 1994
+--- Makefile.in	Wed Dec 14 17:23:38 1994
+***************
+*** 52,55 ****
+--- 52,56 ----
+  #have-cxx#C++ = cxx -g3
+  #have-cxx#STATIC = -non_shared
++ #have-c++#C++ = c++ -g
+  #have-gcc#CC = gcc -g
+  #have-gcc#C++ = g++ -g -Wall
+***************
+*** 68,71 ****
+--- 69,73 ----
+  TARCMD = tar cfh
+  CCOPT = -O2
++ MANDIR = /usr/man/man1
+  
+  #have-vpix#VPIX_DIR = /usr/src/local/vfc-1.0
+***************
+*** 368,372 ****
+  	install -c vic /usr/local/bin/vic
+  	install -c histtolut /usr/local/bin/histtolut
+! 	install -c vic.1 /usr/man/manl/vic.l
+  
+  clean:
+--- 370,374 ----
+  	install -c vic /usr/local/bin/vic
+  	install -c histtolut /usr/local/bin/histtolut
+! 	install -c vic.1 $(MANDIR)/vic.l
+  
+  clean:
