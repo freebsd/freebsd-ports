@@ -1,0 +1,14 @@
+--- ../../bjorb-0.5.3p1/doc/sample/bjorb.conf.sample	Thu May 21 10:16:37 1998
++++ doc/sample/bjorb.conf.sample	Wed Jun  3 02:29:29 1998
+@@ -55,8 +55,9 @@
+ spare_servers   2
+ do_fork	        true
+ deny_wait       0
+-CA_cert_file    /usr/local/etc/bjorb.pem
+-CA_cert_path    /usr/local/etc/CA
++#CA_cert_file    /usr/local/certs/bjorb.pem
++#CA_cert_path    /usr/local/etc/CA
++CA_make		"FreeBSD Bjorb", 365, 1024
+ 
+ # TAG: accept [<interface>:]<port> [with <options>]
+ #      options := SSL, VERIFY

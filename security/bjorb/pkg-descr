@@ -1,0 +1,11 @@
+Bjorb is secure TCP relay software. Bjorb provides you, secure end-to-end
+connection over insecure network such as Internet.
+
+Features:
+  1. Encrypt/decrypt any "static port" TCP connection with SSL.
+  2. Restrcit access by IP address.
+  3. Server side certification.
+  4. Client side certification.
+
+Bjorb is written by Kenkichi Mahara <mahara@hitachi-ms.co.jp> and bjorb
+Web page is available at: http://www.hitachi-ms.co.jp/bjorb/
