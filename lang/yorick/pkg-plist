@@ -154,14 +154,6 @@ share/yorick/i0/paths.i
 share/yorick/i0/std.i
 share/yorick/i0/stdx.i
 share/yorick/yorick.el
-%%PORTDOCS%%@unexec install-info --delete %D/info/yorick.info.gz %D/info/dir
-%%PORTDOCS%%info/yorick.info.gz
-%%PORTDOCS%%info/yorick.info-1.gz
-%%PORTDOCS%%info/yorick.info-4.gz
-%%PORTDOCS%%info/yorick.info-2.gz
-%%PORTDOCS%%info/yorick.info-5.gz
-%%PORTDOCS%%info/yorick.info-3.gz
-%%PORTDOCS%%@exec install-info %D/info/yorick.info.gz %D/info/dir
 @dirrm share/yorick/i0
 @dirrm share/yorick/i
 @dirrm share/yorick/g
