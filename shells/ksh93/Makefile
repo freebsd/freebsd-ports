@@ -26,7 +26,7 @@ MAKE_ENV+=	LDFLAGS=-static
 MAN1=		ksh93.1
 
 do-build:
-	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ./bin/package make
+	@cd ${WRKSRC} && env -i ${MAKE_ENV} ./bin/package make
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/arch/freebsd.${ARCH}/bin/ksh \
