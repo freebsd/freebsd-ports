@@ -3,7 +3,7 @@
 # Date created:		07 Jan 1997
 # Whom:			Hung-Chi Chu <hcchu@r350.ee.ntu.edu.tw>
 #
-# $Id: Makefile,v 1.7 1998/10/07 17:57:50 vanilla Exp $
+# $Id: Makefile,v 1.8 1998/10/08 15:29:40 vanilla Exp $
 #
 
 DISTNAME=	big5con-0.92d
@@ -18,6 +18,8 @@ MASTER_SITES=	ftp://freebsd.ntu.edu.tw/freebsd/woju/source/ \
 DISTFILES=	big5con-0.92d.tgz b5cbin-pa.tgz
 
 MAINTAINER=	woju@freebsd.ee.ntu.edu.tw
+
+ONLY_FOR_ARCHS=	i386
 
 EXTRACT_ONLY=	${DISTNAME}.tgz
 
