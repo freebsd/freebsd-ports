@@ -571,6 +571,58 @@ PREFIX?=		${X11BASE}
 PREFIX?=		${LOCALBASE}
 .endif
 
+.if defined(USE_OPENSSL)
+.if ${OSVERSION} >= 400014
+.if !exists(/usr/lib/libcrypto.a)
+	@${ECHO} "This port requires the OpenSSL library, which is part of"
+	@${ECHO} "the FreeBSD crypto distribution but not installed on your
+	@${ECHO} "machine. Please see Chapter 6.5 in the handbook for"
+	@${ECHO} "instructions on how to obtain and install the FreeBSD"
+	@${ECHO} "OpenSSL distribution."
+	@${FALSE}
+.else
+.if ${USE_OPENSSL} == RSA
+_HASRSA= "`/usr/bin/nm /usr/lib/libcrypto.a | /usr/bin/grep RSA_free`"
+.if empty(_HASRSA)
+.BEGIN:
+	@${ECHO} "This port requires RSA crypto, which is not present in your"
+	@${ECHO} "version of OpenSSL. Please see Chapter 6.5 in the handbook"
+	@${ECHO} "for a description of the problem and alternative solutions."
+	@${FALSE}
+.endif
+.endif
+OPENSSLBASE=	/usr
+OPENSSLDIR=		/etc/ssl
+# OpenSSL in the base system doesn't include IDEA for patent reasons.
+OPENSSL_IDEA=	no
+# XXX This is a hack to work around the fact that /etc/make.conf clobbers
+#     our CFLAGS. It might not be enough for all future ports.
+.if defined(HAS_CONFIGURE)
+CFLAGS+=		-DNO_IDEA
+.else
+OPENSSL_CFLAGS+=-DNO_IDEA
+MAKE_ARGS+=		OPENSSL_CFLAGS="${OPENSSL_CFLAGS}"
+.endif
+.endif
+.else
+LIB_DEPENDS+=	crypto.1:${PORTSDIR}/security/openssl
+OPENSSLBASE?=	${LOCALBASE}
+OPENSSLDIR?=	${OPENSSLBASE}/openssl
+.endif
+.if ${USE_OPENSSL} == RSA && defined(USA_RESIDENT) && ${USA_RESIDENT} == YES
+LIB_DEPENDS+=	rsaref.2:${PORTSDIR}/security/rsaref
+# We set this so ports can decide whether or not to link against librsaref
+# and libRSAglue
+OPENSSL_RSAREF=	yes
+MAKE_ENV+=		EXTRA_SSL_LIBS="-L${OPENSSLBASE}/lib -L${LOCALBASE}/lib -lRSAglue -lrsaref"
+.endif
+OPENSSLLIB=		${OPENSSLBASE}/lib
+OPENSSLINC=		${OPENSSLBASE}/include
+MAKE_ENV+=		OPENSSLLIB=${OPENSSLLIB} OPENSSLINC=${OPENSSLINC} \
+				OPENSSLBASE=${OPENSSLBASE} OPENSSLDIR=${OPENSSLDIR}
+RESTRICTED=		"Contains cryptography."
+.endif
+
 .endif
 # End of pre-makefile section.
 
@@ -961,10 +1013,10 @@ MASTER_SITE_COMP_SOURCES+=	\
 	ftp://rtfm.mit.edu/pub/usenet/comp.sources.%SUBDIR%/
 
 MASTER_SITE_GNOME+=	\
-	ftp://gnomeftp.wgn.net/pub/gnome/%SUBDIR%/ \
-	ftp://server.ph.ucla.edu/pub/mirror/ftp.gnome.org/%SUBDIR%/ \
-	ftp://ftp.snoopy.net/pub/mirrors/GNOME/%SUBDIR%/ \
-	ftp://ftp.gnome.org/pub/GNOME/%SUBDIR%/
+	ftp://ftp.gnome.org/pub/GNOME/%SUBDIR%/ \
+	ftp://download.sourceforge.net/pub/mirrors/gnome/%SUBDIR%/ \
+	ftp://ftp.cybertrails.com/pub/gnome/%SUBDIR%/ \
+	ftp://ftp.snoopy.net/pub/mirrors/GNOME/%SUBDIR%/
 
 MASTER_SITE_AFTERSTEP+=	\
 	ftp://ftp.afterstep.org/%SUBDIR%/ \
