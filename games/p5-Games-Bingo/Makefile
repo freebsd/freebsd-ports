@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Games-Bingo
-PORTVERSION=	0.09
+PORTVERSION=	0.10
 CATEGORIES=	games perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Games
@@ -23,6 +23,17 @@ MAN3=		Games::Bingo.3 \
 		Games::Bingo::ColumnCollection.3 \
 		Games::Bingo::Constants.3
 
+.include <bsd.port.pre.mk>
+
+post-patch:
+	@${FIND} ${WRKSRC} -name \*.orig -delete
+
+.if ${PERL_LEVEL} < 500601
+# damn old MakeMaker...
+post-configure:
+	${PERL} -pi -e 's,/usr/local/,\$$(PREFIX)/,g' ${WRKSRC}/Makefile
+.endif
+
 post-install:
 .ifndef(NOPORTDOCS)
 	@${ECHO_MSG} "===>   Installing example for ${PKGNAME}"
@@ -30,4 +41,4 @@ post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/bingo.pl ${EXAMPLESDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
