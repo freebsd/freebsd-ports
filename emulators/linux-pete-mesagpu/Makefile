@@ -5,12 +5,12 @@
 # $FreeBSD$
 #
 
-PORTNAME=	mesagpu
-PORTVERSION=	1.68
+PORTNAME=	pete-mesagpu
+PORTVERSION=	1.75
 CATEGORIES=	emulators linux
 MASTER_SITES=	http://home.t-online.de/home/PeteBernert/
-PKGNAMEPREFIX=	linux-pete-
-DISTNAME=	gpupetemesagl168
+PKGNAMEPREFIX=	linux-
+DISTNAME=	gpupetemesagl175
 
 MAINTAINER=	jylefort@brutele.be
 COMMENT=	A PSEmu Pro GPU plugin using an OpenGL renderer (Linux version)
@@ -29,15 +29,13 @@ STRIP=
 
 .include <bsd.port.pre.mk>
 
-DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
-
-PSEMUPRO_PLUGINS_DIR=	${LOCALBASE}/lib/linux-psemupro/plugins
-PSEMUPRO_CFGBINS_DIR=	${LOCALBASE}/libexec/linux-psemupro/cfg
-PSEMUPRO_CFGFILES_DIR=	${LOCALBASE}/share/linux-psemupro/cfg
+PSEMUPRO_PLUGINS_DIR=	${LOCALBASE}/lib/psemupro/plugins
+PSEMUPRO_CFGBINS_DIR=	${LOCALBASE}/libexec/psemupro/cfg
+PSEMUPRO_CFGFILES_DIR=	${LOCALBASE}/share/psemupro/cfg
 
 do-install:
 	${MKDIR} ${PSEMUPRO_PLUGINS_DIR}
-	${INSTALL_PROGRAM} ${WRKSRC}/libgpuPeteMesaGL.so.1.0.68 ${PSEMUPRO_PLUGINS_DIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/libgpuPeteMesaGL.so.1.0.75 ${PSEMUPRO_PLUGINS_DIR}
 
 	${MKDIR} ${PSEMUPRO_CFGBINS_DIR}
 	${INSTALL_PROGRAM} ${WRKSRC}/cfgPeteMesaGL ${PSEMUPRO_CFGBINS_DIR}
