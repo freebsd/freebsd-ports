@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ogle
-PORTVERSION=	0.8.2
-PORTREVISION=	3
+PORTVERSION=	0.8.3
 CATEGORIES=	graphics gnome
 MASTER_SITES=	http://www.dtek.chalmers.se/groups/dvd/dist/
 PKGNAMESUFFIX=	-gui
@@ -15,7 +14,7 @@ DISTNAME=	${PORTNAME}_gui-${PORTVERSION}
 
 MAINTAINER=	lioux@FreeBSD.org
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/ogle/libdvdcontrol.so.5:${PORTSDIR}/graphics/ogle
+BUILD_DEPENDS=	${LOCALBASE}/lib/ogle/libdvdcontrol.so.6:${PORTSDIR}/graphics/ogle
 LIB_DEPENDS=	intl.2:${PORTSDIR}/devel/gettext \
 		glade.4:${PORTSDIR}/devel/libglade \
 		xml2.5:${PORTSDIR}/textproc/libxml2
@@ -26,13 +25,13 @@ USE_GTK=	yes
 USE_XPM=	yes
 WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
-USE_LIBTOOL=	yes
 CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include -L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--with-dvd-includes=${LOCALBASE}/include \
 		--with-dvdcontrol=${LOCALBASE} \
 		--without-included-gettext \
 		--with-gtk-prefix=${X11BASE} \
 		--with-libiconv-prefix=${LOCALBASE} \
+		--with-libintl-prefix=${LOCALBASE} \
 		--with-libglade-config=${X11BASE}/bin/libglade-config \
 		--with-xml-prefix=${LOCALBASE}
 
@@ -53,11 +52,7 @@ post-patch:
 		s!(CONFIG_FILE(\s|=)\")[^/]+?/!\1${LOCALBASE}/!; \
 		s|(CONFIG_FILE_DTD=\")[^/]+?/|\1${LOCALBASE}/|g; \
 		s|(PACKAGE_PIXMAPS_DIR=\").+\"|\1${PREFIX}/${SHARE_DATADIR}/ogle_gui/\"|; \
-		s|%%LOCALBASE%%|${LOCALBASE}|; \
-		s|(xmlversion.h>)|libxml/\1|" \
+		s|%%LOCALBASE%%|${LOCALBASE}|" \
 			${CONFIGURE_WRKSRC}/configure
-
-post-configure:
-	@${LN} -sf ${LOCALBASE}/bin/libtool ${WRKSRC}
 
 .include <bsd.port.post.mk>
