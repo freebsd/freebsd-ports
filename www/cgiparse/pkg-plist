@@ -1,6 +1,7 @@
 include/cgi.h
 lib/libcgiparse.a
-lib/libcgiparse.so.1.0
+lib/libcgiparse.so.1
+lib/libcgiparse.so
 man/man3/cgigetvalue.3.gz
 man/man3/cgiclose.3.gz
 man/man3/cginewquerystr.3.gz
