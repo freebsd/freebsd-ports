@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	zimg
-PORTVERSION=	4.5.0
-PORTREVISION=	1
+PORTVERSION=	4.19.1
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.zellner.org/zimg/download/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
@@ -20,7 +20,9 @@ LIB_DEPENDS=	gd.2:${PORTSDIR}/graphics/gd
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	-with-gd-includes=${LOCALBASE}/include/gd
+CONFIGURE_ARGS=	--with-dynaload-cc="${CC}" \
+		--with-dynaload-cflags="${CFLAGS} -shared" \
+		--with-gd-includes=${LOCALBASE}/include/gd
 
 MAN1=		zimg.1
 
