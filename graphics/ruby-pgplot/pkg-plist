@@ -1,0 +1,19 @@
+%%RUBY_SITEARCHLIBDIR%%/pgplot.so
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/pgplot/pgdemo1.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/pgplot/pgdemo3.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/pgplot/pgdemo4.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/pgplot/pgdemo9.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/pgplot/pgdemo15.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/pgplot/pgband.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/pgplot/pgcurs.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/pgplot/pggray.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/pgplot/pglcur.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/pgplot/pgline.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/pgplot/pgncur.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/pgplot/pgolin.rb
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/pgplot
+%%PORTDOCS%%%%RUBY_DOCDIR%%/pgplot/FuncUsage
+%%PORTDOCS%%%%RUBY_DOCDIR%%/pgplot/README.en
+%%PORTDOCS%%%%RUBY_DOCDIR%%/pgplot/ja/README.jp
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/pgplot/ja
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/pgplot
