@@ -19,6 +19,7 @@
     SUBDIR += avltree
     SUBDIR += avr-binutils
     SUBDIR += avr-gcc
+    SUBDIR += avr-libc
     SUBDIR += bcc
     SUBDIR += bin86
     SUBDIR += binutils-m68k

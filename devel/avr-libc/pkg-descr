@@ -1,0 +1,10 @@
+avr-libc -- a C and math library for the Atmel AVR controller family
+
+This library implements a subset of common C library functions, some
+Atmel AVR specific additions (like handling AVR's IO facilities,
+EEPROM etc.), as well as a 32-bit floating point math library (-lm).
+
+Everything is designed and implemented to cooperate with avr-gcc and
+avr-binutils.
+
+WWW: http://www.gwdg.de/~mrickma/avr/snapshot/
