@@ -61,93 +61,69 @@ System/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/libProjectCenter.so
 System/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/libProjectCenter.so.0
 System/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/libProjectCenter.so.%%VERSION%%
 System/Library/ProjectCenter/PCAppProj.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/PCAppProj
-System/Library/ProjectCenter/PCAppProj.bundle/Contents/Info.plist
-System/Library/ProjectCenter/PCAppProj.bundle/Contents/Resources
 System/Library/ProjectCenter/PCAppProj.bundle/Resources/AppController.h
 System/Library/ProjectCenter/PCAppProj.bundle/Resources/AppController.m
 System/Library/ProjectCenter/PCAppProj.bundle/Resources/Info-gnustep.plist
 System/Library/ProjectCenter/PCAppProj.bundle/Resources/Info-project.plist
-System/Library/ProjectCenter/PCAppProj.bundle/Resources/Info.plist
 System/Library/ProjectCenter/PCAppProj.bundle/Resources/PC.proj
 System/Library/ProjectCenter/PCAppProj.bundle/Resources/main.m
 System/Library/ProjectCenter/PCBaseFileTypes.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/PCBaseFileTypes
-System/Library/ProjectCenter/PCBaseFileTypes.bundle/Contents/Info.plist
-System/Library/ProjectCenter/PCBaseFileTypes.bundle/Contents/Resources
 System/Library/ProjectCenter/PCBaseFileTypes.bundle/Resources/Info-gnustep.plist
-System/Library/ProjectCenter/PCBaseFileTypes.bundle/Resources/Info.plist
 System/Library/ProjectCenter/PCBaseFileTypes.bundle/Resources/cfile.template
 System/Library/ProjectCenter/PCBaseFileTypes.bundle/Resources/cheader.template
 System/Library/ProjectCenter/PCBaseFileTypes.bundle/Resources/class.template
 System/Library/ProjectCenter/PCBaseFileTypes.bundle/Resources/header.template
 System/Library/ProjectCenter/PCBaseFileTypes.bundle/Resources/protocol.template
 System/Library/ProjectCenter/PCBundleProj.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/PCBundleProj
-System/Library/ProjectCenter/PCBundleProj.bundle/Contents/Info.plist
-System/Library/ProjectCenter/PCBundleProj.bundle/Contents/Resources
 System/Library/ProjectCenter/PCBundleProj.bundle/Resources/Info-gnustep.plist
-System/Library/ProjectCenter/PCBundleProj.bundle/Resources/Info.plist
 System/Library/ProjectCenter/PCBundleProj.bundle/Resources/PC.proj
 System/Library/ProjectCenter/PCBaseFileTypes.bundle/Resources/nsviewclass.template
 System/Library/ProjectCenter/PCBaseFileTypes.bundle/Resources/nsviewheader.template
 System/Library/ProjectCenter/PCGormProj.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/PCGormProj
-System/Library/ProjectCenter/PCGormProj.bundle/Contents/Info.plist
-System/Library/ProjectCenter/PCGormProj.bundle/Contents/Resources
 System/Library/ProjectCenter/PCGormProj.bundle/Resources/Info-gnustep.plist
 System/Library/ProjectCenter/PCGormProj.bundle/Resources/Info-project.plist
-System/Library/ProjectCenter/PCGormProj.bundle/Resources/Info.plist
 System/Library/ProjectCenter/PCGormProj.bundle/Resources/PC.proj
 System/Library/ProjectCenter/PCGormProj.bundle/Resources/baseInterface.classes
 System/Library/ProjectCenter/PCGormProj.bundle/Resources/baseInterface.gorm
 System/Library/ProjectCenter/PCGormProj.bundle/Resources/main.m
 System/Library/ProjectCenter/PCLibProj.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/PCLibProj
-System/Library/ProjectCenter/PCLibProj.bundle/Contents/Info.plist
-System/Library/ProjectCenter/PCLibProj.bundle/Contents/Resources
 System/Library/ProjectCenter/PCLibProj.bundle/Resources/Info-gnustep.plist
-System/Library/ProjectCenter/PCLibProj.bundle/Resources/Info.plist
 System/Library/ProjectCenter/PCLibProj.bundle/Resources/PC.proj
 System/Library/ProjectCenter/PCLibProj.bundle/Resources/Version
 System/Library/ProjectCenter/PCToolProj.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/PCToolProj
-System/Library/ProjectCenter/PCToolProj.bundle/Contents/Info.plist
-System/Library/ProjectCenter/PCToolProj.bundle/Contents/Resources
 System/Library/ProjectCenter/PCToolProj.bundle/Resources/Info-gnustep.plist
 System/Library/ProjectCenter/PCToolProj.bundle/Resources/Info-project.plist
-System/Library/ProjectCenter/PCToolProj.bundle/Resources/Info.plist
 System/Library/ProjectCenter/PCToolProj.bundle/Resources/PC.proj
 System/Library/ProjectCenter/PCToolProj.bundle/Resources/main.m
 @dirrm System/Library/ProjectCenter/PCToolProj.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
 @dirrm System/Library/ProjectCenter/PCToolProj.bundle/%%GNU_ARCH%%/%%OPSYS%%
 @dirrm System/Library/ProjectCenter/PCToolProj.bundle/%%GNU_ARCH%%
 @dirrm System/Library/ProjectCenter/PCToolProj.bundle/Resources
-@dirrm System/Library/ProjectCenter/PCToolProj.bundle/Contents
 @dirrm System/Library/ProjectCenter/PCToolProj.bundle
 @dirrm System/Library/ProjectCenter/PCLibProj.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
 @dirrm System/Library/ProjectCenter/PCLibProj.bundle/%%GNU_ARCH%%/%%OPSYS%%
 @dirrm System/Library/ProjectCenter/PCLibProj.bundle/%%GNU_ARCH%%
 @dirrm System/Library/ProjectCenter/PCLibProj.bundle/Resources
-@dirrm System/Library/ProjectCenter/PCLibProj.bundle/Contents
 @dirrm System/Library/ProjectCenter/PCLibProj.bundle
 @dirrm System/Library/ProjectCenter/PCGormProj.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
 @dirrm System/Library/ProjectCenter/PCGormProj.bundle/%%GNU_ARCH%%/%%OPSYS%%
 @dirrm System/Library/ProjectCenter/PCGormProj.bundle/%%GNU_ARCH%%
 @dirrm System/Library/ProjectCenter/PCGormProj.bundle/Resources
-@dirrm System/Library/ProjectCenter/PCGormProj.bundle/Contents
 @dirrm System/Library/ProjectCenter/PCGormProj.bundle
 @dirrm System/Library/ProjectCenter/PCBundleProj.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
 @dirrm System/Library/ProjectCenter/PCBundleProj.bundle/%%GNU_ARCH%%/%%OPSYS%%
 @dirrm System/Library/ProjectCenter/PCBundleProj.bundle/%%GNU_ARCH%%
 @dirrm System/Library/ProjectCenter/PCBundleProj.bundle/Resources
-@dirrm System/Library/ProjectCenter/PCBundleProj.bundle/Contents
 @dirrm System/Library/ProjectCenter/PCBundleProj.bundle
 @dirrm System/Library/ProjectCenter/PCBaseFileTypes.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
 @dirrm System/Library/ProjectCenter/PCBaseFileTypes.bundle/%%GNU_ARCH%%/%%OPSYS%%
 @dirrm System/Library/ProjectCenter/PCBaseFileTypes.bundle/%%GNU_ARCH%%
 @dirrm System/Library/ProjectCenter/PCBaseFileTypes.bundle/Resources
-@dirrm System/Library/ProjectCenter/PCBaseFileTypes.bundle/Contents
 @dirrm System/Library/ProjectCenter/PCBaseFileTypes.bundle
 @dirrm System/Library/ProjectCenter/PCAppProj.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
 @dirrm System/Library/ProjectCenter/PCAppProj.bundle/%%GNU_ARCH%%/%%OPSYS%%
 @dirrm System/Library/ProjectCenter/PCAppProj.bundle/%%GNU_ARCH%%
 @dirrm System/Library/ProjectCenter/PCAppProj.bundle/Resources
-@dirrm System/Library/ProjectCenter/PCAppProj.bundle/Contents
 @dirrm System/Library/ProjectCenter/PCAppProj.bundle
 @dirrm System/Library/ProjectCenter
 @dirrm System/Headers/ProjectCenter
