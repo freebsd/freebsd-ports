@@ -2,11 +2,12 @@
 # Date created:        22 July 2002
 # Whom:                Yukihiro Nakai <nakai@FreeBSD.org>
 #
+# $Id: Makefile,v 1.16 2004/12/10 07:09:02 tmclau02 Exp $
 # $FreeBSD$
 #
 
 PORTNAME=	mono
-PORTVERSION=	1.0.4
+PORTVERSION=	1.0.5
 CATEGORIES=	lang
 MASTER_SITES=	http://www.go-mono.com/archive/${PORTVERSION}/
 
@@ -33,6 +34,8 @@ MAN1=		cert2spc.1 certmgr.1 chktrust.1 cilc.1 disco.1 gacutil.1 \
 MAN5=		mono-config.5
 
 ONLY_FOR_ARCHS=	i386
+
+MAKE_ENV=MONO_SHARED_DIR=${WRKDIR}
 
 .include <bsd.port.pre.mk>
 

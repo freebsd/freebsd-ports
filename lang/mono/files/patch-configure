@@ -1,13 +1,37 @@
---- configure.orig	Wed Aug  4 17:42:34 2004
-+++ configure	Sun Aug 29 02:39:35 2004
-@@ -14148,8 +14148,8 @@
- ACCESS_UNALIGNED="yes"
- 
- JIT_SUPPORTED=no
--LIBC="libc.so.6"
--INTL="libc.so.6"
-+LIBC="libc.so"
-+INTL="libintl.so"
- 
- jit_wanted=false
- case "$host" in
+--- configure.orig	Sun Dec  5 22:51:07 2004
++++ configure	Sun Dec  5 22:55:18 2004
+@@ -2180,6 +2180,34 @@
+ 		with_nptl=no
+ 		with_tls=pthread
+ 		;;
++	*-*-*freebsd6*)
++		platform_win32=no
++		if test "x$PTHREAD_CFLAGS" = "x"; then
++		    	CPPFLAGS="$CPPFLAGS -DGC_FREEBSD_THREADS"
++			libmono_cflags=
++		else
++		    CPPFLAGS="$CPPFLAGS $PTHREAD_CFLAGS -DGC_FREEBSD_THREADS"
++		    libmono_cflags="$PTHREAD_CFLAGS"
++		fi
++		if test "x$PTHREAD_LIBS" = "x"; then
++		    	LDFLAGS="$LDFLAGS -pthread"
++			libmono_ldflags="-pthread"
++		else
++		    	LDFLAGS="$LDFLAGS $PTHREAD_LIBS"
++			libmono_ldflags="$PTHREAD_LIBS"
++		fi
++		need_link_unlink=yes
++		cat >>confdefs.h <<\_ACEOF
++#define PTHREAD_POINTER_ID 1
++_ACEOF
++		libdl=
++		libgc_threads=pthreads
++# TLS is only partially implemented on -CURRENT (compiler support
++# but NOT library support)
++#
++		with_nptl=no
++		with_tls=pthread
++		;;
+ 	*-*-*openbsd*)
+ 		platform_win32=no
+ 		CPPFLAGS="$CPPFLAGS -D_THREAD_SAFE -DGC_FREEBSD_THREADS"

@@ -7,6 +7,7 @@ lib/mono/gtk-sharp/monodoc.dll
 @exec gacutil /i monodoc.dll /f /package monodoc /root %D/lib /gacdir %D/lib > /dev/null || /usr/bin/true
 lib/monodoc/assembler.exe
 lib/monodoc/browser.exe
+lib/monodoc/cs2ecma.exe
 lib/monodoc/mod.exe
 lib/monodoc/monodoc.xml
 lib/monodoc/normalize.exe
