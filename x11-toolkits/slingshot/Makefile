@@ -24,6 +24,12 @@ INSTALLS_SHLIB=	yes
 USE_GMAKE=	yes
 MAKE_ENV=	OPENWINHOME=${X11BASE}
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64"
+BROKEN=		"Does not compile on amd64 (missing -fPIC)"
+.endif
+
 pre-patch:
 	${CP} ${WRKSRC}/config.sunos4x ${WRKSRC}/config.fbsd
 
@@ -34,4 +40,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/*.ps ${PREFIX}/share/doc/SlingShot
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
