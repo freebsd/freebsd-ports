@@ -1,16 +1,16 @@
+.PATH:	${.CURDIR}/generic
+
 LIB	=	mysqltcl
-SHLIB_MAJOR=	1
-SHLIB_MINOR=	0
+SHLIB_MAJOR=	2
+SHLIB_MINOR=	14
 
 SRCS	=	mysqltcl.c
 CFLAGS +=	-I${PREFIX}/include/${TCL_VERSION}/
 CFLAGS +=	-I${PREFIX}/include/mysql/ -Wall
 LDADD  +=	-L${PREFIX}/lib -l${TCL_NODOT}
 LDADD  +=	-L${PREFIX}/lib/mysql -lmysqlclient
+CFLAGS +=	-DVERSION='"${SHLIB_MAJOR}.${SHLIB_MINOR}"'
 
 all: ${SHLIB_NAME}
-
-printname:
-	@echo ${SHLIB_NAME}
 
 .include <bsd.lib.mk>
