@@ -1,0 +1,41 @@
+AS offers the possibility to generate code for totally different
+processors. At the moment the following processor families are
+implemented:
+
+ - Motorola 68000..68030,683xx inkl. Koprozessor und MMU
+ - Motorola DSP56000
+ - Motorola/IBM MPC601/MPC505/PPC403
+ - Motorola 6800, 6805, 6809, 68(HC)11 sowie Hitachi 6301
+ - Hitachi 6309
+ - Hitachi H8
+ - Hitachi SH7000/7600
+ - Rockwell 6502 und 65(S)C02
+ - CMD 65816
+ - Mitsubishi MELPS-740
+ - Mitsubishi MELPS-7700
+ - Mitsubishi MELPS-4500
+ - Mitsubishi M16
+ - Intel MCS-48/41
+ - Intel MCS-51
+ - Intel MCS-96
+ - Intel 8080/8085
+ - AMD 29K
+ - Siemens 80C166/167
+ - Zilog Z80, Z180, Z380
+ - Zilog Z8
+ - Toshiba TLCS-900(L)
+ - Toshiba TLCS-90
+ - Toshiba TLCS-870
+ - Toshiba TLCS-47
+ - Toshiba TLCS-9000
+ - Microchip PIC16C54..16C57
+ - Microchip PIC16C84/PIC16C64
+ - Microchip PIC17C42
+ - SGS-Thomson ST62xx
+ - SGS-Thomson 6804
+ - Texas Instruments TMS32010/32015
+ - Texas Instruments TMS3202x
+ - Texas Instruments TMS320C3x
+ - Texas Instruments TMS370xxx
+ - NEC uPD 78(C)1x
+ - NEC uPD 75xxx (alias 75K0)
