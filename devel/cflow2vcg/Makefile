@@ -16,4 +16,12 @@ MAINTAINER=	ports@FreeBSD.org
 
 GNU_CONFIGURE=	yes
 
+post-install:
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+.for ext in cflow html jpg rtf txt vcg
+	${INSTALL_DATA} ${WRKSRC}/doc/*.${ext} ${DOCSDIR}
+.endfor
+.endif
+
 .include <bsd.port.mk>
