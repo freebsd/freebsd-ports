@@ -10,13 +10,13 @@ PORTVERSION=	1.15
 CATEGORIES=     sysutils
 MASTER_SITES=   http://www.isi.edu/~johnh/SOFTWARE/LAVAPS/
 
-MAINTAINER=     johnh@isi.edu
+MAINTAINER=     johann@egenetics.com
 
-LIB_DEPENDS=	tk82.1:${PORTSDIR}/x11-toolkits/tk82
+LIB_DEPENDS=	tk83.1:${PORTSDIR}/x11-toolkits/tk83
 
 GNU_CONFIGURE=  yes
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" CPPFLAGS="-I${LOCALBASE}/include"
-CONFIGURE_ARGS=	--with-tcl-ver=8.2 --with-tk-ver=8.2
+CONFIGURE_ARGS=	--with-tcl-ver=8.3 --with-tk-ver=8.3
 USE_NEWGCC=	yes
 MAN1=           lavaps.1
 
