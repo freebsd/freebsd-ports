@@ -1,0 +1,8 @@
+For those either needing a dummy PostgreSQL database full of real
+facts and data, or those who make frequent use of the CIA's World Fact
+Book, this is the port for you: wfb2sql converts the WFB into SQL
+inserts.  Act now and get your copy of the WFB for free now!  The
+WFB is a public domain document that may disappear as fast as you do
+after the black helicopters lock in on your location!!!!
+
+WWW: http://wfb2sql.sf.net/

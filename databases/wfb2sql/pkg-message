@@ -1,0 +1,31 @@
+Before being able to run wfb2sql, you need to obtain a copy of the
+CIA's World Fact Book.  A copy of the WFB can be found here:
+
+*) http://www.cia.gov/cia/download.html
+
+The WFB's homepage can be found:
+
+*) http://www.cia.gov/cia/publications/factbook/
+
+Example usage:
+
+% wfb2sql --man
+% wfb2sql --database=postgresql --directory=$PWD/factbook | psql factbook
+
+NOTE: wfb2sql inserts data into the wfb schema!
+
+   ______________________________________ 
+  / BEWARE OF BLACK HELICOPTERS AFTER    \
+  \ DOWNLOADING YOUR COPY OF THE WFB!!!  /
+   -------------------------------------- 
+      \
+       \
+                                     .::!!!!!!!:.
+    .!!!!!:.                        .:!!!!!!!!!!!!
+    ~~~~!!!!!!.                 .:!!!!!!!!!UWWW$$$ 
+        :$$NWX!!:           .:!!!!!!XUWW$$$$$$$$$P 
+        $$$$$##WX!:      .<!!!!UW$$$$"  $$$$$$$$# 
+        $$$$$  $$$UX   :!!UW$$$$$$$$$   4$$$$$* 
+        ^$$$B  $$$$\     $$$$$$$$$$$$   d$$R" 
+          "*$bd$$$$      '*$$$$$$$$$$$o+#" 
+               """"          """"""" 
