@@ -1,4 +1,3 @@
-@cd /usr/local
 @owner bin
 @mode 755
 bin/latex
@@ -18,6 +17,7 @@ lib/texmf/fonts/tfm/cmmib6.tfm
 lib/texmf/fonts/tfm/cmmib7.tfm
 lib/texmf/fonts/tfm/cmmib8.tfm
 lib/texmf/fonts/tfm/cmmib9.tfm
+lib/texmf/fonts/tfm/dummy.tfm
 lib/texmf/fonts/tfm/icmcsc10.tfm
 lib/texmf/fonts/tfm/icmex10.tfm
 lib/texmf/fonts/tfm/icmmi8.tfm
@@ -41,8 +41,8 @@ lib/texmf/fonts/tfm/lcmssb8.tfm
 lib/texmf/fonts/tfm/lcmssi8.tfm
 lib/texmf/fonts/tfm/line10.tfm
 lib/texmf/fonts/tfm/linew10.tfm
-lib/texmf/mf/cmex9.mf
 lib/texmf/mf/circle.mf
+lib/texmf/mf/cmex9.mf
 lib/texmf/mf/cmbsy5.mf
 lib/texmf/mf/cmbsy6.mf
 lib/texmf/mf/cmbsy7.mf
@@ -92,6 +92,7 @@ lib/texmf/tex/nfssfont.tex
 lib/texmf/tex/small2e.tex
 lib/texmf/tex/sample2e.tex
 lib/texmf/tex/docstrip.tex
+lib/texmf/tex/hyphen.tex
 lib/texmf/tex/article.cls
 lib/texmf/tex/book.cls
 lib/texmf/tex/letter.cls
@@ -134,7 +135,6 @@ lib/texmf/tex/slides.sty
 lib/texmf/tex/syntonly.sty
 lib/texmf/tex/t1enc.sty
 lib/texmf/tex/tracefnt.sty
-lib/texmf/tex/OMLccm.fd
 lib/texmf/tex/OMLcmm.fd
 lib/texmf/tex/OMLcmr.fd
 lib/texmf/tex/OMLlcmm.fd
@@ -166,9 +166,13 @@ lib/texmf/tex/OMLenc.def
 lib/texmf/tex/OMSenc.def
 lib/texmf/tex/OT1enc.def
 lib/texmf/tex/T1enc.def
+lib/texmf/tex/applemac.def
 lib/texmf/tex/ascii.def
+lib/texmf/tex/cp437.def
+lib/texmf/tex/cp850.def
 lib/texmf/tex/latex209.def
 lib/texmf/tex/latin1.def
+lib/texmf/tex/latin2.def
 lib/texmf/tex/sfonts.def
 lib/texmf/tex/slides.def
 lib/texmf/tex/texsys.cfg
@@ -249,7 +253,11 @@ lib/texmf/documentation/ltfiles.dtx
 lib/texmf/documentation/ltfinal.dtx
 lib/texmf/documentation/ltfloat.dtx
 lib/texmf/documentation/ltfntcmd.dtx
-lib/texmf/documentation/ltfss.dtx
+lib/texmf/documentation/ltfssbas.dtx
+lib/texmf/documentation/ltfsscmp.dtx
+lib/texmf/documentation/ltfssdcl.dtx
+lib/texmf/documentation/ltfssini.dtx
+lib/texmf/documentation/ltfsstrc.dtx
 lib/texmf/documentation/lthyphen.dtx
 lib/texmf/documentation/ltidxglo.dtx
 lib/texmf/documentation/ltlength.dtx
@@ -259,6 +267,7 @@ lib/texmf/documentation/ltmath.dtx
 lib/texmf/documentation/ltmiscen.dtx
 lib/texmf/documentation/ltnews01.tex
 lib/texmf/documentation/ltnews02.tex
+lib/texmf/documentation/ltnews03.tex
 lib/texmf/documentation/ltoutenc.dtx
 lib/texmf/documentation/ltoutput.dtx
 lib/texmf/documentation/ltpage.dtx
@@ -271,9 +280,11 @@ lib/texmf/documentation/ltspace.dtx
 lib/texmf/documentation/lttab.dtx
 lib/texmf/documentation/ltthm.dtx
 lib/texmf/documentation/ltvers.dtx
+lib/texmf/documentation/ltx3info.tex
 lib/texmf/documentation/ltxdoc.dtx
 lib/texmf/documentation/ltxref.dtx
 lib/texmf/documentation/makeindx.dtx
+lib/texmf/documentation/modguide.tex
 lib/texmf/documentation/multicol.dtx
 lib/texmf/documentation/newlfont.dtx
 lib/texmf/documentation/oldlfont.dtx
