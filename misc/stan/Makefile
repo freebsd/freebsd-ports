@@ -7,11 +7,11 @@
 #
 
 PORTNAME=	stan
-PORTVERSION=	0.2
+PORTVERSION=	0.3
 CATEGORIES=	misc
 MASTER_SITES=	http://www.r0q.cx/stan/
 
-MAINTAINER=	ijliao@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 GNU_CONFIGURE=	yes
 
