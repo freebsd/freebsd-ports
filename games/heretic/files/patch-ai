@@ -1,0 +1,11 @@
+--- i_ipx.c	Sat Oct 23 05:02:21 1999
++++ i_ipx.c.new	Sun Feb 13 03:59:27 2000
+@@ -20,7 +20,7 @@
+ #include <netipx/ipx.h>
+ #else
+ #define MYSOCKLEN_T int
+-#include <linux/ipx.h>
++#include <netipx/ipx.h>
+ #endif /* __GLIBC__ */
+ 
+ #define IPXSETUP_COMPAT    /* be compatible with ipxsetup.exe */

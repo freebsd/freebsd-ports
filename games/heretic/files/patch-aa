@@ -1,0 +1,117 @@
+--- Makefile	Thu Feb  3 17:56:16 2000
++++ Makefile.new	Sun Feb 13 04:15:18 2000
+@@ -1,24 +1,24 @@
+ # Makefile for Linux Heretic/GLHeretic
+ 
+ # Comment the line below if you don't want to build GLHeretic.
+-WANT_OGL = yes
++WANT_OGL ?= yes
+ 
+ # Comment the line below if you don't want fullscreen 
+ # support under GLHeretic.
+ # (Only if you have WANT_OGL !)
+-WANT_OGL_FULLSCREEN = yes
++WANT_OGL_FULLSCREEN ?= yes
+ 
+ # Comment this if you don't want to build GLHeretic 
+ # with highest quality options.
+ # (Only if you have WANT_OGL !)
+-WANT_NICE_OGL = yes
++WANT_NICE_OGL ?= yes
+ 
+ 
+ # Uncomment the line below if you want to use GSI for sound.
+ # (doesn't really work yet. :-()
+ #WANT_GSI = yes
+ 
+-CC = gcc
++CC ?= gcc
+ 
+ #
+ # For old SVGALIB, comment out -D__NEWVGALIB__
+@@ -26,7 +26,7 @@
+ CDEFS.ipx = -DUNIX -DHAVE_USLEEP -DHAVE_MATH_H -DHAVE_VALUES_H -DLINUX_MOUSE \
+ 	-DIPX_PROTOCOL -DI_GGI_HERETIC -DNEED_SHMGETEVENTBASE \
+ 	-D__NEWVGALIB__ # -DIPX_DEBUG -DEXTRA_WADS
+-CDEFS.udp = -DUNIX -DHAVE_USLEEP -DHAVE_MATH_H -DHAVE_VALUES_H -DLINUX_MOUSE \
++CDEFS.udp = -DUNIX -DHAVE_USLEEP -DHAVE_MATH_H -DLINUX_MOUSE -DHOMEDIR="\"/usr/X11R6/share/heretic\"" \
+ 	-DUDP_PROTOCOL -DI_GGI_HERETIC -DNEED_SHMGETEVENTBASE \
+ 	-D__NEWVGALIB__ # -DEXTRA_WADS
+ 
+@@ -61,11 +61,11 @@
+ endif
+ 
+ # Change this to change the platform
+-COPT.arch = $(COPT.x86)
++COPT.arch = $(COPT.FreeBSD)
+ 
+ # If you want IPX-netcode compiled, replace $(CDEFS.udp) with $(CDEFS.ipx)
+ 
+-CFLAGS = -Wall $(CDEFS.udp) $(COPT.arch) \
++CFLAGS = $(PCFLAGS) -Wall $(CDEFS.udp) $(COPT.arch) \
+ 	 -I. -I.. -I/usr/X11R6/include $(COPT.sound) $(COPT.opengl)
+ 
+ # Uncomment the line below if you want to use original "[" and "]" keys
+@@ -94,10 +94,10 @@
+ 
+ endif
+ 
+-X_LDFLAGS = -L/usr/X11R6/lib
++X_LDFLAGS = -L$(X11BASE)/lib
+ 
+ X11LIBS = -lXext -lX11
+-GLLIBS  = -lXmu -lXi -lm -ldl
++GLLIBS  = -lXmu -lXi -lm -lGL -lGLU
+ GGILIBS = -lggi -lm
+ VGALIBS = -lvga
+ SDLLIBS = -lSDL -lpthread 
+@@ -108,7 +108,7 @@
+ 	p_spec.o p_switch.o p_telept.o  p_tick.o p_user.o r_bsp.o r_data.o \
+ 	r_draw.o r_plane.o r_segs.o r_things.o r_main.o mn_menu.o sb_bar.o \
+ 	tables.o v_video.o w_wad.o z_zone.o in_lude.o \
+-	info.o i_net.o i_system.o i_udp.o i_ipx.o i_main.o $(SOUND_OBJS)
++	info.o i_net.o i_system.o i_udp.o i_main.o $(SOUND_OBJS)
+ 
+ GLOBJS = opengl/gl_effects.o opengl/gl_floorceil.o opengl/gl_fonts.o \
+ 	 opengl/gl_func.o opengl/gl_init.o opengl/gl_lights.o \
+@@ -184,17 +184,17 @@
+ 	$(CC) -E -M $(CFLAGS) $(X_LDFLAGS) *.c $(SOUND_REFS) \
+ 	graphics/i_sdl.c > .depend                                                               
+ 
+-x11:	depx11 $(OBJS) graphics/i_x11.o $(MUSSERV) $(SNDSERV)
++x11:	depx11 $(OBJS) graphics/i_x11.o
+ 	$(CC) $(CFLAGS) $(X_LDFLAGS) $(X11LIBS) $(OBJS) \
+ 	graphics/i_x11.o -o xheretic
+ 
+-fastx11:depx11f $(OBJS) graphics/i_x11_fast.o $(MUSSERV) $(SNDSERV)
+-	$(CC) $(CFLAGS) $(X_LDFLAGS) $(X11LIBS) $(OBJS) \
++fastx11:depx11f $(OBJS) graphics/i_x11_fast.o
++	$(CC) $(CFLAGS) $(X_LDFLAGS) $(GLLIBS) $(X11LIBS) $(OBJS) \
+ 	graphics/i_x11_fast.o -o xaheretic
+ 
+ 
+ glheretic:depx11ogl $(OBJS) $(GLOBJS) graphics/i_x11_ogl.o \
+-	$(MUSSERV) $(SNDSERV) sgi-libtess
++	  sgi-libtess
+ ifeq ($(WANT_OGL_FULLSCREEN),yes)
+ 	$(CC) $(CFLAGS) $(X_LDFLAGS) $(X11LIBS) $(GLLIBS) \
+ 	$(OBJS) $(GLOBJS) /usr/X11R6/lib/libXxf86vm.a \
+@@ -205,15 +205,15 @@
+ endif
+ 
+ 
+-ggi:	depggi $(OBJS) graphics/i_ggi.o $(MUSSERV) $(SNDSERV)
++ggi:	depggi $(OBJS) graphics/i_ggi.o
+ 	$(CC) $(CFLAGS) $(GGILIBS) $(OBJS) \
+ 	graphics/i_ggi.o -o ggiheretic
+ 
+-vga:	depvga $(OBJS) graphics/i_vga.o $(MUSSERV) $(SNDSERV)
++vga:	depvga $(OBJS) graphics/i_vga.o
+ 	$(CC) $(CFLAGS) $(VGALIBS) $(OBJS) \
+ 	graphics/i_vga.o -o vgaheretic
+ 
+-sdl:    depsdl $(OBJS) graphics/i_sdl.o $(MUSSERV) $(SNDSERV)
++sdl:    depsdl $(OBJS) graphics/i_sdl.o
+ 	$(CC) $(CFLAGS) $(X_LDFLAGS) $(SDLLIBS) $(OBJS) \
+ 	graphics/i_sdl.o -o sdlheretic
+ 
