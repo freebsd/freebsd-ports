@@ -3,8 +3,8 @@ etc/ezbounce.conf.default
 @exec if [ ! -f %D/etc/ezbounce.conf ] ; then cp -p %D/%F %B/ezbounce.conf; fi
 sbin/ezbounce
 sbin/mdidentd
-share/doc/ezbounce/CHANGES
-share/doc/ezbounce/README
-share/doc/ezbounce/TODO
-share/doc/ezbounce/mdidentd.README
-@dirrm share/doc/ezbounce
+%%PORTDOCS%%share/doc/ezbounce/CHANGES
+%%PORTDOCS%%share/doc/ezbounce/README
+%%PORTDOCS%%share/doc/ezbounce/TODO
+%%PORTDOCS%%share/doc/ezbounce/mdidentd.README
+%%PORTDOCS%%@dirrm share/doc/ezbounce
