@@ -3,7 +3,7 @@
 # Date created:		22 November 1994
 # Whom:			Satoshi Asami (asami)
 #
-# $Id: Makefile,v 1.5 1994/12/23 06:56:00 asami Exp $
+# $Id: Makefile,v 1.6 1995/01/03 14:16:51 asami Exp $
 #
 
 DISTNAME=	mule-2.2
@@ -11,6 +11,7 @@ DISTFILES=	emacs-19.28.tar.gz
 MASTER_SITES=	ftp://prep.ai.mit.edu/pub/gnu/
 USE_GMAKE=	yes
 HAS_CONFIGURE=	yes
+STRIP=
 CONFIGURE_ARGS=	i386--freebsd --prefix=${PREFIX} --with-x-toolkit \
 		  --wnn --wnn-libraries=/usr/X11R6/lib \
 		  --wnn-includes=/usr/X11R6/include/wnn --terminal-face
