@@ -25,7 +25,7 @@ COMMENT?=	Donate idle cycles to the search for space aliens
 IS_INTERACTIVE=	yes
 .endif
 
-ONLY_FOR_ARCHS?= i386 # alpha
+ONLY_FOR_ARCHS?=	i386 # alpha
 
 NO_BUILD=	binary distribution
 NO_CDROM=	interactive install

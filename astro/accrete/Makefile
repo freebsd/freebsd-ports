@@ -4,14 +4,14 @@
 #
 # $FreeBSD$
 
-PORTNAME= 	accrete
+PORTNAME=	accrete
 PORTVERSION=	1.0
 CATEGORIES=	astro
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR= ${PORTNAME}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	chuck@pkix.net
-COMMENT= Accrete is a physical simulation of solar system planet formation
+COMMENT=	Accrete is a physical simulation of solar system planet formation
 
 USE_REINPLACE=	yes
 
