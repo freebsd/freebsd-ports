@@ -4,4 +4,6 @@ This package does not contain anything by itself -- it is a
 "meta-port" that depends on other KDE packages.  Its sole purpose is
 to require dependencies so users can install this package only and
 have all the KDE stuff pulled in by the port/package dependency
-mechanism.
+mechanism.  This meta-port installs KDE version 2.
+
+WWW: http://www.kde.org/
