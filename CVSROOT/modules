@@ -1250,6 +1250,7 @@ dasher		ports/accessibility/dasher
 datapipe	ports/net/datapipe
 dataplot	ports/graphics/dataplot
 datedif		ports/misc/datedif
+dazuko		ports/security/dazuko
 db		ports/databases/db
 db2		ports/databases/db2
 db2latex	ports/textproc/db2latex
