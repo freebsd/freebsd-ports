@@ -1,0 +1,38 @@
+CAL is a nicely-enhanced version of the unix `cal' command.
+Features:
+
+ * Hilights today's date when displaying a monthly calendar.
+
+ * Displays an optional user-definable list of `special day'
+   descriptions (like appointments) to the right of the monthly
+   calendar display.  Cal can be set optionally to ignore appointments
+   older than the current day.  Next month's appointments are shown if
+   there is room to do so.  Multiple appointment data files may also
+   be specified on the commandline.
+   
+ * You can specify your own appointment and color definition files on the
+   commandline, or use the defaults.
+
+ * Date descriptions can display "years since" a given year, useful for
+   birthdays and anniversaries.
+
+ * Completely configurable colors -- eight separate color attributes.
+
+ * No ANSI driver needed for colors, and the output may be redirected
+   anywhere, just like the unix version.  However, ANSI color control may
+   be enabled (e.g. for unix) with a #define in the source code.
+
+ * Commandline-compatible with unix `cal' command, but with several
+   enhanced switch settings.
+
+Requests, bug reports, suggestions, donations, proposals for
+contract work, and so forth may be sent to:
+
+        Attn:  Alex Matulich
+        Unicorn Research Corporation
+        4621 N. Landmark Drive
+        Orlando, FL 32817-1235
+        USA
+        407-657-4974  FAX 407-657-6149
+
+or send e-mail to matulich_a@seaa.navsea.navy.mil.

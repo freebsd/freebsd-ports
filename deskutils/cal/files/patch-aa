@@ -1,0 +1,16 @@
+*** Makefile	Thu Dec 28 05:29:16 1995
+--- /home/andy/ports/cal/src/source/Makefile	Thu Jun 13 23:33:23 1996
+***************
+*** 7,13 ****
+--- 7,17 ----
+  # To use, enter "make -f makefile.unx"
+  
+  CC=gcc
++ .ifdef PREFIX
++ CFLAGS+=-DUNIX -DPREFIX="\"${PREFIX}\""
++ .else
+  CFLAGS=-DUNIX
++ .endif
+  
+  default: cal
+  
