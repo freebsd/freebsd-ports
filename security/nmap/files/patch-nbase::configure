@@ -9,3 +9,12 @@
  do
  as_ac_Header=`echo "ac_cv_header_$ac_header" | $as_tr_sh`
  if eval "test \"\${$as_ac_Header+set}\" = set"; then
+@@ -5908,7 +5908,7 @@
+     ;;
+   *)
+     specialssldir="$with_openssl"
+-    CXXFLAGS="-I$with_openssl/include $CXXFLAGS"
++    CFLAGS="-I$with_openssl/include $CFLAGS"
+     ;;
+   esac
+
