@@ -1,0 +1,14 @@
+--- testdtcl.c.orig	Mon Oct 18 10:29:02 1999
++++ testdtcl.c	Sun Jan  9 19:13:53 2000
+@@ -14,4 +14,5 @@
+ #include <tcl.h>
+ #include <unistd.h>
++#include <stdlib.h> /* In older FreeBSD, this is where getopt(3) lives */
+ 
+ #ifndef DEBUG_SCRIPT_DIR
+@@ -229,4 +230,5 @@
+ 	}
+     }
++    return 0;
+ }
+ 

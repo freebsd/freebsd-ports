@@ -1,0 +1,11 @@
+libexec/apache/mod_dtcl.so
+share/doc/mod_dtcl/INSTALL.html
+share/doc/mod_dtcl/benchmark.html
+share/doc/mod_dtcl/dtcl-tcl.html
+share/doc/mod_dtcl/dtcl.gif
+share/doc/mod_dtcl/dtcl.tcl
+share/doc/mod_dtcl/examples.ttml
+share/doc/mod_dtcl/readme.html
+share/doc/mod_dtcl/table.html
+share/doc/mod_dtcl/use.html
+@dirrm share/doc/mod_dtcl
