@@ -8,13 +8,14 @@
 PORTNAME=	ghostscript
 PORTVERSION=	5.50
 PORTREVISION=	1
-PKGNAMESUFFIX=	-httf
 CATEGORIES=	korean print
 MASTER_SITES=	ftp://ftp.cs.wisc.edu/ghost/aladdin/gs550/ \
 		http://www.erdw.ethz.ch/~bonk/ftp/gs-driver-distrib/ \
 		http://www.ozemail.com.au/~geoffk/pdfencrypt/
+PKGNAMESUFFIX=	-httf
 DISTFILES=	${GS_SOURCES} ${GS_FONTS_STD} ${GS_FONTS_OTHER} \
 		${HP850_DRV} ${DECRYPT_PDF}
+DIST_SUBDIR=	ghostscript
 
 PATCH_SITES=	ftp://ftp.kr.FreeBSD.org/pub/users/cjh/gs-ko/
 PATCHFILES=	gs5.50-httf-19990114_1.diff.gz
@@ -64,7 +65,7 @@ post-extract:
 	${LN} -s ${WRKDIRPREFIX}${.CURDIR}/../../graphics/jpeg/work/jpeg-* ${WRKSRC}/jpeg
 	${LN} -s ${WRKDIRPREFIX}${.CURDIR}/../../graphics/png/work/libpng-* ${WRKSRC}/libpng
 	${MV} ${WRKSRC}/devs.mak ${WRKSRC}/devs.mak.bak
-	cd ${WRKSRC} && unzip -Lao ${DISTDIR}/${HP850_DRV}
+	cd ${WRKSRC} && unzip -Lao ${_DISTDIR}/${HP850_DRV}
 	${MV} ${WRKSRC}/devs.mak.bak ${WRKSRC}/devs.mak
 
 do-configure:
@@ -83,9 +84,9 @@ pre-build:
 pre-install:
 	@${MKDIR} ${PREFIX}/share/ghostscript ${PREFIX}/bin ${PREFIX}/man/man1
 	(cd ${PREFIX}/share/ghostscript ; \
-			${TAR} -xzf ${DISTDIR}/${GS_FONTS_STD})
+			${TAR} -xzf ${_DISTDIR}/${GS_FONTS_STD})
 	(cd ${PREFIX}/share/ghostscript/fonts ; \
-			${TAR} -xzf ${DISTDIR}/${GS_FONTS_OTHER})
+			${TAR} -xzf ${_DISTDIR}/${GS_FONTS_OTHER})
 
 # install the readme and license file of the hp8xxx driver as well
 post-install:
@@ -98,7 +99,7 @@ post-install:
 		${PREFIX}/share/ghostscript/5.50httf/doc
 	${RMDIR} ${PREFIX}/share/ghostscript/5.50httf/hangul/fonts
 .if defined(PDFENCRYPT)
-	${INSTALL_DATA} ${DISTDIR}/pdf_sec.ps ${PREFIX}/share/ghostscript/5.50httf
+	${INSTALL_DATA} ${_DISTDIR}/pdf_sec.ps ${PREFIX}/share/ghostscript/5.50httf
 .endif
 
 # encrypted PDF support.  can't be packaged due to export control issues.
