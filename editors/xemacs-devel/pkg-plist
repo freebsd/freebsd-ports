@@ -779,7 +779,6 @@ lib/xemacs-%%XEMACS_VER%%/lisp/obsolete.elc
 lib/xemacs-%%XEMACS_VER%%/lisp/package-admin.el
 lib/xemacs-%%XEMACS_VER%%/lisp/package-admin.elc
 lib/xemacs-%%XEMACS_VER%%/lisp/package-get.el
-lib/xemacs-%%XEMACS_VER%%/lisp/package-get.el.orig
 lib/xemacs-%%XEMACS_VER%%/lisp/package-get.elc
 lib/xemacs-%%XEMACS_VER%%/lisp/package-info.el
 lib/xemacs-%%XEMACS_VER%%/lisp/package-info.elc
