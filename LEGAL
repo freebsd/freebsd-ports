@@ -172,6 +172,7 @@ homard-*		ports/french/homard	Only free for use in conjunction with
 hptools*		ports/devel/hptools	Not made or distributed for resale
 ICON-*			ports/x11-themes/gnome-icons-*	Author rights unclear
 flashplugin/6.*/*	ports/www/linux-flashplugin6	License forbids redistribution
+flashplugin/7.*/*	ports/www/linux-flashplugin7	License forbids redistribution
 invitationtoruby.tgz	ports/devel/invitation_to_ruby	no commercial use
 j2sdkee-*		ports/java/j2sdkee	For development and testing use
 						only; redistribution prohibited
