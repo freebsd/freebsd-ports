@@ -40,7 +40,7 @@ if [ "X$2" = X"POST-INSTALL" ]; then
 	fi
 	count=`${EXPR} $count + 1`
     done
-    if [ %%EMACS%% != xemacs ]; then
+    if [ X%%EMACS%% != Xxemacs ]; then
 	${ECHO} "Adding entry for \"${pkgname}\" to ${infodir}/dir"
 	for file in `${ECHO}  ${infofiles} | ${SED} "s,:, ,g"`; do
 		install-info ${infodir}/${file} ${infodir}/dir
