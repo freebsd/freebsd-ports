@@ -6,29 +6,26 @@
 #
 
 PORTNAME=	dtdinst
-PORTVERSION=	2002.07.24
+PORTVERSION=	2003.01.22
 CATEGORIES=	textproc
-MASTER_SITES=	http://www.thaiopensource.com/dtdinst/
+MASTER_SITES=	http://www.thaiopensource.com/relaxng/dtdinst/
 DISTNAME=	${PORTNAME}
-DISTFILES=	${JARFILE} dtdinst2rng.xsl index.html copying.txt
-DIST_SUBDIR=	${PORTNAME}
+DISTFILES=	dtdinst.jar dtdinst2rng.xsl index.html copying.txt
+DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 EXTRACT_ONLY=
 
-MAINTAINER=	fuyuki@hadaly.org
+MAINTAINER=	ports@FreeBSD.org
 
 USE_JAVA=	1.1+
-NO_BUILD_DEPENDS_JAVA=	yes
 NO_BUILD=	yes
 
-JARFILE=	${DISTNAME}.jar
-JAVALIBDIR=	${PREFIX}/share/java/classes
-XMLDIR=		${PREFIX}/share/xml/${PORTNAME}
+NO_BUILD_DEPENDS_JAVA=	yes
 
 do-install:
-	${MKDIR} ${JAVALIBDIR}
-	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/${JARFILE} ${JAVALIBDIR}
-	${MKDIR} ${XMLDIR}
-	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/*.xsl ${XMLDIR}
+	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/*.jar ${JAVAJARDIR}
+	${MKDIR} ${PREFIX}/share/xsl/${PORTNAME}
+	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/*.xsl \
+		${PREFIX}/share/xsl/${PORTNAME}
 
 post-install:
 	${MKDIR} ${DOCSDIR}
