@@ -1,5 +1,5 @@
-*** Imakefile.orig	Wed Feb 14 04:52:30 2001
---- Imakefile	Wed Feb 14 05:17:11 2001
+*** Imakefile.orig	Wed May 16 02:27:29 2001
+--- Imakefile	Sat May 26 05:53:06 2001
 ***************
 *** 28,46 ****
   #CCOPTIONS = -O2
@@ -14,8 +14,8 @@
   #------------------------------------------------------------------------
   #
 ! PREFIX = /usr/local
-  # XCIRCUIT_LIB_DIR = $(PREFIX)/src/xcircuit-2.2.0/psfiles
-! XCIRCUIT_LIB_DIR = $(PREFIX)/lib/xcircuit-2.2
+  # XCIRCUIT_LIB_DIR = $(PREFIX)/src/xcircuit-2.3.0/psfiles
+! XCIRCUIT_LIB_DIR = $(PREFIX)/lib/xcircuit-2.3
 ! XCIRCUIT_BIN_DIR = $(PREFIX)/bin
 ! XCIRCUIT_MAN_DIR = $(PREFIX)/man/man1
   
@@ -35,7 +35,7 @@
   #------------------------------------------------------------------------
   #
 ! #PREFIX = /usr/local
-  # XCIRCUIT_LIB_DIR = $(PREFIX)/src/xcircuit-2.2.0/psfiles
+  # XCIRCUIT_LIB_DIR = $(PREFIX)/src/xcircuit-2.3.0/psfiles
 ! XCIRCUIT_LIB_DIR = $(LIBDIR)/xcircuit
 ! XCIRCUIT_BIN_DIR = $(BINDIR)
 ! XCIRCUIT_MAN_DIR = $(MANDIR)
@@ -66,13 +66,13 @@
   #
 ! #define HAVE_PYTHON
   
-  #------------------------------------------------------------------------
-  #
+  PYTHON_VERSION=2.0
+  PYTHON_LIB_DIR=/usr/local/lib
 --- 86,92 ----
   #------------------------------------------------------------------------
   # Support for embedded Python interpreter (requires libpython2.0.a)
   #
 ! /* #define HAVE_PYTHON */
   
-  #------------------------------------------------------------------------
-  #
+  PYTHON_VERSION=2.0
+  PYTHON_LIB_DIR=/usr/local/lib
