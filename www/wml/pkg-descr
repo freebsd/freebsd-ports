@@ -1,0 +1,20 @@
+  __        ____  __ _     
+  \ \      / /  \/  | |    
+   \ \ /\ / /| |\/| | |    
+    \ V  V / | |  | | |___ 
+     \_/\_/  |_|  |_|_____|
+                         
+  WML -- Website META Language
+
+  Version 1.1.0 (19-08-1997)
+
+  WML is a HTML generation toolkit consisting of 9 independent languages.  The
+  main idea of WML is a sequential filtering scheme where each language
+  provides one of 9 processing passes. So WML reads an input file, applies
+  passes 1-9 (or optionally only the passes specified) and finally produces
+  one or more output files. It operates as a powerful offline HTML generation
+  toolkit for webmasters. While not trivial and idiot proof it provides most
+  of the features real hackers always wanted for HTML generation. 
+
+  The documentation and latest release can be found on
+  http://www.engelschall.com/sw/wml/
