@@ -97,6 +97,7 @@ Mesa3		ports/graphics/Mesa3
 NeTraMet	ports/net/NeTraMet
 ORBacus		ports/devel/ORBacus
 ORBit		ports/devel/ORBit
+ORBit2		ports/devel/ORBit2
 PDL		ports/math/PDL
 PicMonger	ports/news/PicMonger
 R-a4		ports/math/R-a4
