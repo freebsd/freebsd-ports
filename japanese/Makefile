@@ -82,6 +82,7 @@
     SUBDIR += gxditview
     SUBDIR += hex
     SUBDIR += hns
+    SUBDIR += ical
     SUBDIR += ircII
     SUBDIR += iv
     SUBDIR += japaneseAFM

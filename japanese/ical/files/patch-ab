@@ -1,0 +1,10 @@
+--- itemwindow.tcl.org	Wed Jan 31 22:10:06 2001
++++ itemwindow.tcl	Wed Jan 31 22:10:18 2001
+@@ -67,7 +67,6 @@
+ 			-anchor nw\
+ 			-fill [pref itemFg]\
+ 			-font $font\
+-			-kanjifont [pref itemKanjiFont]\
+ 			-width 0\
+ 			-text ""\
+ 			-tags [list item $self text.$self click.$self vis.$self]]

@@ -1,0 +1,12 @@
+--- itemlist.tcl.org	Wed Jan 31 22:09:52 2001
++++ itemlist.tcl	Wed Jan 31 22:10:30 2001
+@@ -49,8 +49,7 @@
+     bind .$self.display <Triple-1> [list $self null]
+ 
+     # Tag displays
+-    .$self.display tag configure -date -font [pref smallHeadingFont]\
+-			       	-kanjifont [pref smallHeadingKanjiFont]
++    .$self.display tag configure -date -font [pref smallHeadingFont]
+ 
+     # Disallow edits
+     .$self.display configure -state disabled
