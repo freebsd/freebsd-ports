@@ -28,6 +28,7 @@ include/mpeg4ip_getopt.h
 include/rtp_plugin.h
 include/sdp.h
 include/sdp_error.h
+lib/libhttp.a
 lib/libhttp.so
 lib/libhttp.so.0
 lib/libmp4.a
@@ -41,7 +42,7 @@ lib/libmp4util.so
 lib/libmp4util.so.0
 lib/libmpeg4ipSDL-1.2.so
 lib/libmpeg4ipSDL-1.2.so.7
-lib/libmpeg4ipSDL.a
+lib/libmpeg4ipSDL.la
 lib/libmpeg4ipSDL.so
 lib/libmsg_queue.a
 lib/libmsg_queue.so
