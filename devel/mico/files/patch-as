@@ -1,0 +1,21 @@
+--- include/mico/os-math.h.orig	Mon May 26 14:55:46 2003
++++ include/mico/os-math.h	Sun Jun 22 13:16:51 2003
+@@ -275,6 +275,18 @@
+ };
+ 
+ #else // neither _WIN32 nor _POCKET_PC
++#ifndef fpclassify
++#define	fpclassify(x) \
++    ((sizeof (x) == sizeof (float)) ? __fpclassifyf(x) \
++    : (sizeof (x) == sizeof (double)) ? __fpclassifyd(x) \
++    : __fpclassifyl(x))
++#endif
++#ifndef isinf
++#define	isinf(x)	(fpclassify(x) == FP_INFINITE)
++#endif
++#ifndef isnan
++#define	isnan(x)	(fpclassify(x) == FP_NAN)
++#endif
+ 
+ #include <unistd.h>
+ #include <signal.h>
