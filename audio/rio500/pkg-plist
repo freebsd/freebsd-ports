@@ -11,9 +11,6 @@ include/libfon.h
 include/libpsf.h
 include/librio500.h
 include/librio500_api.h
-include/rio500_usb.h
-include/usbdevfs.h
-include/usbdevice_fs.h
 lib/librio500.a
 lib/librio500_api.a
 share/rio500/fonts/6581.fon
