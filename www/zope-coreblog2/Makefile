@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	coreblog
-PORTVERSION=	1.1
+PORTVERSION=	1.11
 CATEGORIES=	www zope
 MASTER_SITES=	http://coreblog.org/junk/ \
-		http://zope.org/Members/ats/COREBlog/COREBlog1.1/
+		http://www.zope.org/Members/ats/COREBlog/COREBlog1.11/
 PKGNAMEPREFIX=	zope-
-DISTNAME=	COREBlog11
+DISTNAME=	COREBlog111
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	yasi@yasi.to
