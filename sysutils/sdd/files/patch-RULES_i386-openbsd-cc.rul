@@ -1,5 +1,8 @@
---- RULES/i386-freebsd-cc.rul.orig	Sun Apr 27 01:46:00 1997
-+++ RULES/i386-freebsd-cc.rul	Thu May  6 02:12:08 1999
+
+$FreeBSD$
+
+--- RULES/i386-openbsd-cc.rul.orig	Sun Aug 29 16:09:56 1999
++++ RULES/i386-openbsd-cc.rul	Fri Jul 20 00:51:13 2001
 @@ -24,7 +24,7 @@
  ###########################################################################
  
@@ -34,6 +37,6 @@
  TSORT=		tsort
  
  RMDEP=		:
--MKDEP=		@echo "	==> MAKE DEPENDENCIES \"$@\""; $(RMDEP); gcc -M
+-MKDEP=		@echo "	==> MAKING DEPENDENCIES \"$@\""; $(RMDEP); gcc -M
 +MKDEP=		@echo "	==> MAKE DEPENDENCIES \"$@\""; $(RMDEP); ${CCOM} -M
  MKDEP_OUT=
