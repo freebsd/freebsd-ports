@@ -1,0 +1,38 @@
+--- Makefile.orig	Fri Dec  7 03:35:14 2001
++++ Makefile	Sat Dec 29 23:02:58 2001
+@@ -1,30 +1,15 @@
+-LIBDIR = -L/usr/X11R6/lib
+-MANDIR = /usr/local/man/man1/
+-INSTALL = install
++LIBDIR = -L${X11BASE}/lib
+ LIBS   = -lXpm -lXext -lX11
++CFLAGS += -I${X11BASE}/include
+ OBJS =	wmq3.o \
+ 		../wmgeneral/wmgeneral.o \
+ 		../wmgeneral/misc.o \
+ 		../wmgeneral/list.o
+ 
+-
+ .c.o:
+-	cc -c -O2 -Wall $< -o $*.o
++	${CC} -c $< -o $*.o $(CFLAGS)
+ 
+ wmq3: $(OBJS)
+-	cc -o wmq3 $^ -lXext $(LIBDIR) $(LIBS)
+-
+-all:: wmifs
+-
+-clean::
+-	for i in $(OBJS) ; do \
+-		rm $$i ; \
+-	done
+-	rm wmq3
++	${CC} -o wmq3 $^ -lXext $(LIBDIR) $(LIBS)
+ 
+-install::
+-	cp -f wmq3 /usr/local/bin/
+-	cp -f wmq3rc /etc/
+-	chmod 755 /usr/local/bin/wmq3
+-	chown root:root /usr/local/bin/wmq3
+-	$(INSTALL) -m 644 -o root -g root ./wmq3.1 $(MANDIR)
++all: wmq3
