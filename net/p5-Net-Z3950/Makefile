@@ -6,12 +6,13 @@
 #
 
 PORTNAME=	Net-Z3950
-PORTVERSION=	0.31
+PORTVERSION=	0.32
 CATEGORIES=	net perl5
 MASTER_SITES=	http://perl.z3950.org/download/
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	demon@FreeBSD.org
+COMMENT=	A perl interface to the Z39.50 information retrieval protocol
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Event.pm:${PORTSDIR}/devel/p5-Event
 LIB_DEPENDS=	yaz.1:${PORTSDIR}/net/yaz
