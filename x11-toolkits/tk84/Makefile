@@ -1,28 +1,29 @@
 # New ports collection makefile for:	tk
-# Version required:	8.2.3
+# Version required:	8.3.b1
 # Date created:		19 August 1997
 # Whom:			jkh
 #
 # $FreeBSD$
 #
 
-DISTNAME=	tk8.2.3
-PKGNAME=	tk-8.2.3
-CATEGORIES=	x11-toolkits tk82
-MASTER_SITES=	ftp://ftp.scriptics.com/pub/tcl/tcl8_2/
+DISTNAME=	tk8.3b1
+PKGNAME=	tk-8.3.b1
+CATEGORIES=	x11-toolkits #tk83
+MASTER_SITES=	ftp://ftp.scriptics.com/pub/tcl/tcl8_3/
 
 MAINTAINER=	jseger@FreeBSD.org
 
-LIB_DEPENDS=	tcl82.1:${PORTSDIR}/lang/tcl82
+LIB_DEPENDS=	tcl83.1:${PORTSDIR}/lang/tcl83
 
 USE_XLIB=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}/unix
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-shared --with-tcl=${PREFIX}/lib/tcl8.2
-CONFIGURE_ENV=  PORTSDIR=${PORTSDIR} TK_LIB_FILE=libtk82.so.1
+CONFIGURE_ARGS=	--enable-shared --with-tcl=${PREFIX}/lib/tcl8.3
+CONFIGURE_ENV=  PORTSDIR=${PORTSDIR} TK_LIB_FILE=libtk83.so.1
+MAKE_ENV=	SHORT_TK_VER=83
 PKGINSTALL=     ${PKGDIR}/INSTALL.wish
 
-PLIST_SUB=	TK_VER=8.2 SHORT_TK_VER=82
+PLIST_SUB=	TK_VER=8.3 SHORT_TK_VER=83
 
 MANCOMPRESSED=	no
 
@@ -49,6 +50,7 @@ MANN=	bell.n bind.n bindtags.n bitmap.n button.n canvas.n checkbutton.n \
 	pack-old.n pack.n palette.n photo.n place.n popup.n radiobutton.n \
 	raise.n scale.n scrollbar.n selection.n send.n text.n tk.n tkerror.n \
 	tkvars.n tkwait.n toplevel.n winfo.n wm.n
+
 # MLINKS generated via  awk '/ln/ {print "\t" $2,$3,"\\"}' unix/mkLinks
 MLINKS=	3DBorder.3 Tk_Alloc3DBorderFromObj.3 \
 	3DBorder.3 Tk_Get3DBorder.3 \
@@ -91,6 +93,7 @@ MLINKS=	3DBorder.3 Tk_Alloc3DBorderFromObj.3 \
 	Clipboard.3 Tk_ClipboardAppend.3 \
 	ClrSelect.3 Tk_ClearSelection.3 \
 	ConfigWidg.3 Tk_ConfigureWidget.3 \
+	ConfigWidg.3 Tk_Offset.3 \
 	ConfigWidg.3 Tk_ConfigureInfo.3 \
 	ConfigWidg.3 Tk_ConfigureValue.3 \
 	ConfigWidg.3 Tk_FreeOptions.3 \
@@ -171,6 +174,7 @@ MLINKS=	3DBorder.3 Tk_Alloc3DBorderFromObj.3 \
 	GetCursor.3 Tk_NameOfCursor.3 \
 	GetCursor.3 Tk_FreeCursorFromObj.3 \
 	GetCursor.3 Tk_FreeCursor.3 \
+	GetDash.3 Tk_GetDash.3 \
 	GetFont.3 Tk_AllocFontFromObj.3 \
 	GetFont.3 Tk_GetFont.3 \
 	GetFont.3 Tk_GetFontFromObj.3 \
@@ -245,7 +249,6 @@ MLINKS=	3DBorder.3 Tk_Alloc3DBorderFromObj.3 \
 	SetOptions.3 Tk_GetOptionValue.3 \
 	SetOptions.3 Tk_GetOptionInfo.3 \
 	SetOptions.3 Tk_FreeConfigOptions.3 \
-	SetOptions.3 Tk_Offset.3 \
 	SetVisual.3 Tk_SetWindowVisual.3 \
 	StrictMotif.3 Tk_StrictMotif.3 \
 	TextLayout.3 Tk_ComputeTextLayout.3 \
@@ -257,6 +260,7 @@ MLINKS=	3DBorder.3 Tk_Alloc3DBorderFromObj.3 \
 	TextLayout.3 Tk_DistanceToTextLayout.3 \
 	TextLayout.3 Tk_IntersectTextLayout.3 \
 	TextLayout.3 Tk_TextLayoutToPostscript.3 \
+	TkInitStubs.3 Tk_InitStubs.3 \
 	WindowId.3 Tk_WindowId.3 \
 	WindowId.3 Tk_Parent.3 \
 	WindowId.3 Tk_Display.3 \
