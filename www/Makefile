@@ -61,7 +61,7 @@
     SUBDIR += netscape4-communicator
     SUBDIR += netscape4-communicator.us
     SUBDIR += netscape4-navigator
-    SUBDIR += netscape46-communicator.us
+    SUBDIR += netscape47-communicator.us
     SUBDIR += netscape46-communicator
     SUBDIR += netscape46-navigator
     SUBDIR += npc
