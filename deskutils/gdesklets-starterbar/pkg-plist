@@ -13,6 +13,12 @@ share/gnome/gdesklets/Displays/StarterBar/gfx/waterbath.png
 share/gnome/gdesklets/Displays/StarterBar/starterbar.display
 share/gnome/gdesklets/Sensors/StarterBar/.order
 share/gnome/gdesklets/Sensors/StarterBar/ChangeLog
+share/gnome/gdesklets/Sensors/StarterBar/FileWatcher.py
+share/gnome/gdesklets/Sensors/StarterBar/FileWatcher.pyc
+share/gnome/gdesklets/Sensors/StarterBar/FileWatcher.pyo
+share/gnome/gdesklets/Sensors/StarterBar/GConfWatcher.py
+share/gnome/gdesklets/Sensors/StarterBar/GConfWatcher.pyc
+share/gnome/gdesklets/Sensors/StarterBar/GConfWatcher.pyo
 share/gnome/gdesklets/Sensors/StarterBar/Icon.py
 share/gnome/gdesklets/Sensors/StarterBar/Icon.pyc
 share/gnome/gdesklets/Sensors/StarterBar/Icon.pyo
