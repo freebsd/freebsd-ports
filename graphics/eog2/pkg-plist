@@ -4,10 +4,12 @@ etc/gconf/gconf.xml.defaults/apps/eog/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/eog/full_screen/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/eog/view/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/eog/window/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/eog/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/eog/full_screen/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/eog/view/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/eog/window/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/%gconf.xml
 etc/gconf/schemas/eog.schemas
 share/gnome/apps/Graphics/eog.desktop
 share/gnome/eog/glade/preferences-dialog.glade
