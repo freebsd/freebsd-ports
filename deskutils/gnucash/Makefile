@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gnucash
-PORTVERSION=	1.6.2
-PORTREVISION=	1
+PORTVERSION=	1.6.4
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	http://www.gnucash.org/pub/gnucash/sources/stable/ \
 		ftp://ftp.gnucash.org/pub/gnucash/sources/stable/ \
@@ -20,7 +19,7 @@ MAINTAINER=	gnome@FreeBSD.org
 BUILD_DEPENDS=	swig:${PORTSDIR}/devel/SWIG \
 		eperl:${PORTSDIR}/lang/eperl
 LIB_DEPENDS=	guile.9:${PORTSDIR}/lang/guile \
-		guppi.13:${PORTSDIR}/math/guppi \
+		guppi.15:${PORTSDIR}/math/guppi \
 		popt.0:${PORTSDIR}/devel/popt \
 		g-wrap-runtime-guile.2:${PORTSDIR}/devel/g-wrap
 RUN_DEPENDS=	${LOCALBASE}/share/slib/Template.scm:${PORTSDIR}/lang/slib \
@@ -51,8 +50,5 @@ pre-patch:
 		's^\$\{datadir\}/gnome/^\$\(datadir\)/^g ; \
 		 s^\$\{datadir\}/aclocal^\$\(prefix\)/share/aclocal^g ; \
 		 s^\$\{datadir\}/locale^\$\(prefix\)/share/locale^g'
-
-post-install:
-	@strip ${PREFIX}/bin/gnucash
 
 .include <bsd.port.mk>
