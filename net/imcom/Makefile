@@ -12,7 +12,8 @@ MASTER_SITES=	http://nafai.dyndns.org/files/
 MAINTAINER=	martijn@pacno.net
 COMMENT=	IMCom is a command-line Jabber client written in Python
 
-RUN_DEPENDS=	${LOCALBASE}/lib/python2.2/xml/parsers/expat.py:${PORTSDIR}/textproc/py-expat
+BUILD_DEPENDS=	${PYTHONPREFIX_SITELIBDIR}/pyexpat.so:${PORTSDIR}/textproc/py-expat
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
 GNU_CONFIGURE=	yes
 USE_PYTHON=	yes
