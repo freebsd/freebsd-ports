@@ -13,7 +13,7 @@
     SUBDIR += CaribbeanStud
     SUBDIR += HeroesOfMightAndMagic
     SUBDIR += KnightCap
-    SUBDIR += QNetChess
+    SUBDIR += qnetchess
     SUBDIR += abridge
     SUBDIR += abuse
     SUBDIR += abuse_sdl
