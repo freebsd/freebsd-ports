@@ -24,6 +24,8 @@ portsearch - A utility for searching the ports tree. It allows more detailed
              search criteria than ``make search key=<string>'' and accepts
              all perl(1) regular expressions.
 
+update-patches - generates updated patches.
+
 ----------------------------------------------------------------------
 
 consistency-check gives output like:
@@ -139,6 +141,22 @@ See the file README.portsearch for further information.
 
 ----------------------------------------------------------------------
 
+The update-patches script looks for files in $WRKSRC (if unset, this defaults
+to the work/ subdirectory of the current directory) which have a matching .orig
+file.  It also looks in $PATCHDIR (if unset, this defaults to the files/
+subdirectory of the current directory) for patches that correspond to the first
+set.  If the changes in an existing patch do not reflect the changes in the
+files in $WRKSRC, the script renames the existing patch by adding the suffix
+.orig and generates a new patch in its place.  If no patch existed, the new one
+is created with a name that contains the path and filename of the file being
+patched, except that "/" separators and "." characters are replaced by
+underscores:  for example, a new patch to $WRKSRC/foo/bar.c would be created as
+$PATCHDIR/patch-foo_bar_c.  If you save a .orig backup of a file, but don't
+change the file, update-patches will generate an empty patch.
+
+----------------------------------------------------------------------
+
 NOTE: These scripts need work and are *NOT* safe to use unless you know
       what they do.  Use at your own risk.  Patches would be great, but
-      it is prefered they pass through maintainer of each particular script.
+      it is preferred they pass through the maintainer of each particular
+      script.
