@@ -10,7 +10,7 @@ CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	phpsysinfo
 
-MAINTAINER=	bob@fly.homeunix.org
+MAINTAINER=	alane@freebsd.org
 
 RUN_DEPENDS=	${LOCALBASE}/libexec/apache/libphp4.so:${PORTSDIR}/www/mod_php4
 
