@@ -8,7 +8,7 @@
 
 PORTNAME=	hydra
 PORTVERSION=	0.1.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.hellug.gr/pub/software/hydra/ \
 		http://hydra.hellug.gr/download/ \
@@ -17,7 +17,7 @@ MASTER_SITES=	ftp://ftp.hellug.gr/pub/software/hydra/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A high performance multi-threaded web server
 
-LIB_DEPENDS=	gnutls.13:${PORTSDIR}/security/gnutls
+LIB_DEPENDS=	gnutls.12:${PORTSDIR}/security/gnutls
 
 NO_LATEST_LINK=	yes
 USE_REINPLACE=	yes
