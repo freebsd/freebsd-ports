@@ -17,21 +17,29 @@ if [ $phase = 1 ]; then
     echo "adding dependencies"
     for i in *.tgz; do
       echo "pkg_add -f $i"
-      if ! pkg_add -f $i; then
-	echo "error in dependency $i, exiting"
-        echo "1" > /tmp/status
-	exit 1
+      base=$(basename $i .tgz)
+      if pkg_info -q -e $base; then
+	echo "skipping $base, already added"
+      else
+	if ! pkg_add -f $i; then
+	  echo "error in dependency $i, exiting"
+	  echo "1" > /tmp/status
+	  exit 1
+        fi
       fi
     done
   fi
 
   cd $dir || exit 1
+  pkgname=$(make package-name)
   echo "================================================================"
   echo "====================<phase 1: make checksum>===================="
 
-  if make checksum; then
+  if /pnohang $TIMEOUT /tmp/make.log1 ${pkgname} make checksum; then
+    cat /tmp/make.log1
     echo "0" > /tmp/status
   else
+    cat /tmp/make.log1
     echo "1" > /tmp/status
     echo "================================================================"
     echo -n "build ended at "
@@ -52,9 +60,10 @@ else
   fi
   
   cd $dir || exit 1
-  if make package; then
+  pkgname=$(make package-name)
+  if /pnohang $TIMEOUT /tmp/make.log2 ${pkgname} make package; then
+    cat /tmp/make.log2
     echo "0" > /tmp/status
-    pkgname=$(make package-name)
     prefix=$(make -V PREFIX)
     mtreefile=$(make -V MTREE_FILE)
     echo "================================================================"
@@ -109,6 +118,7 @@ else
       fi
     fi
   else
+    cat /tmp/make.log2
     echo "1" > /tmp/status
   fi
 
