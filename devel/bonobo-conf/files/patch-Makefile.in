@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- Makefile.in	2001/08/03 07:37:16	1.1
++++ Makefile.in	2001/08/03 07:38:38
+@@ -144,7 +144,7 @@
+ EXTRA_DIST =  	xml-i18n-extract.in 		xml-i18n-merge.in 		xml-i18n-update.in 		bonobo_confConf.sh.in   	bonobo-conf.spec
+ 
+ 
+-confexecdir = $(libdir)
++confexecdir = $(sysconfdir)
+ confexec_DATA = bonobo_confConf.sh
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs

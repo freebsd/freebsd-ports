@@ -1,22 +1,22 @@
 
 $FreeBSD$
 
---- monikers/Makefile.in.orig	Mon Jul  9 09:57:09 2001
-+++ monikers/Makefile.in	Mon Jul  9 09:58:25 2001
-@@ -185,10 +185,10 @@
+--- monikers/Makefile.in.orig	Fri Aug  3 10:29:46 2001
++++ monikers/Makefile.in	Fri Aug  3 10:30:33 2001
+@@ -189,10 +189,10 @@
  DEFS = @DEFS@ -I. -I$(srcdir) -I..
  CPPFLAGS = @CPPFLAGS@
  LDFLAGS = @LDFLAGS@
 -libmoniker_config_la_LDFLAGS = 
 +libmoniker_config_la_LDFLAGS = -avoid-version
- libmoniker_config_la_LIBADD = 
+ libmoniker_config_la_DEPENDENCIES =  ../bonobo-conf/libbonobo_conf.la
  libmoniker_config_la_OBJECTS =  bonobo-moniker-config.lo
 -libmoniker_gconf_la_LDFLAGS = 
 +libmoniker_gconf_la_LDFLAGS = -avoid-version
- libmoniker_gconf_la_LIBADD = 
+ @ENABLE_GCONF_TRUE@libmoniker_gconf_la_DEPENDENCIES = 
  @ENABLE_GCONF_TRUE@libmoniker_gconf_la_OBJECTS =  \
  @ENABLE_GCONF_TRUE@bonobo-moniker-gconf.lo bonobo-config-gconfdb.lo
-@@ -199,11 +199,11 @@
+@@ -203,11 +203,11 @@
  bonobo_moniker_xmldb_OBJECTS =  bonobo-config-xmldb.$(OBJEXT) \
  bonobo-config-dirdb.$(OBJEXT) bonobo-moniker-xmldb.$(OBJEXT)
  bonobo_moniker_xmldb_DEPENDENCIES =  ../bonobo-conf/libbonobo_conf.la
