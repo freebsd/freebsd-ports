@@ -38,6 +38,12 @@ DISTFILES+=	okinawa-20041220.t:odic
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 .endif
 
+.if defined(WITH_GSKKDIC)
+MASTER_SITES+=	http://www.ohnolab.org/~kimoto/:gskk
+DISTFILES+=	gskk-20041208.t.gz:gskk
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
+.endif
+
 post-extract:
 .if defined(WITH_2CHDIC)
 	@${CP} ${DISTDIR}/${DIST_SUBDIR}/2ch.t ${WRKSRC}/mkanthydic
@@ -49,6 +55,14 @@ post-extract:
 	@${CP} ${DISTDIR}/${DIST_SUBDIR}/okinawa-20041220.t ${WRKSRC}/mkanthydic
 	@${REINPLACE_CMD} -e \
 		's/base.t extra.t/base.t extra.t okinawa-20041220.t/' \
+		${WRKSRC}/mkanthydic/Makefile.in
+.endif
+
+.if defined(WITH_GSKKDIC)
+	${CP} ${DISTDIR}/${DIST_SUBDIR}/gskk-20041208.t.gz ${WRKSRC}/mkanthydic
+	${GUNZIP_CMD} ${WRKSRC}/mkanthydic/gskk-20041208.t.gz
+	@${REINPLACE_CMD} \
+		-e 's/base.t extra.t/base.t extra.t gskk-20041208.t/' \
 		${WRKSRC}/mkanthydic/Makefile.in
 .endif
 
