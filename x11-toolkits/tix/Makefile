@@ -21,6 +21,7 @@ LIB_DEPENDS=	tk84.1:${PORTSDIR}/x11-toolkits/tk84
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/unix/tk8.4
 INSTALLS_SHLIB=	yes
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared --enable-sam \
 		--with-tclconfig="${PREFIX}/lib/tcl8.4" \
@@ -53,6 +54,11 @@ TK84_PORT?=	x11-toolkits/tk84
 
 .include <bsd.port.pre.mk>
 
+TCLBASE!=	( cd ${PORTSDIR}/${TCL84_PORT} && make -V TCLBASE )
+TCLWRK!=	( cd ${PORTSDIR}/${TCL84_PORT} && make -V WRKDIR )
+TKBASE!=	( cd ${PORTSDIR}/${TK84_PORT} && make -V TKBASE )
+TKWRK!=		( cd ${PORTSDIR}/${TK84_PORT} && make -V WRKDIR )
+
 pre-configure:
 	@(cd ${WRKSRC}/.. && \
 	    CC="${CC}" ac_cv_path_CC="${CC}" CFLAGS="${CFLAGS}" \
@@ -60,6 +66,16 @@ pre-configure:
 	    INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
 	    INSTALL_SCRIPT="${INSTALL_SCRIPT}" \
 	    ${CONFIGURE_ENV} ./${CONFIGURE_SCRIPT} ${CONFIGURE_ARGS})
+	${REINPLACE_CMD} \
+		-e 's|$${WRKDIRPREFIX}${TCLBASE}/work|${TCLWRK}|g' \
+		-e 's|$${WRKDIRPREFIX}${TKBASE}/work|${TKWRK}|g' \
+		${WRKSRC}/../Makefile
+
+post-configure:
+	${REINPLACE_CMD} \
+		-e 's|$${WRKDIRPREFIX}${TCLBASE}/work|${TCLWRK}|g' \
+		-e 's|$${WRKDIRPREFIX}${TKBASE}/work|${TKWRK}|g' \
+		${WRKSRC}/Makefile
 
 post-install:
 	@(cd ${WRKSRC}/.. && \
