@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	frotz
-PORTVERSION=	2.42
+PORTVERSION=	2.43
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.ifarchive.org/if-archive/infocom/interpreters/frotz/ \
 		http://wuarchive.wustl.edu/doc/misc/if-archive/infocom/interpreters/frotz/ \
