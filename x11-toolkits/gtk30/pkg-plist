@@ -454,6 +454,7 @@ share/themes/Emacs/gtk-2.0-key/gtkrc
 @dirrm share/themes/Default/gtk-2.0
 @dirrm share/gtk-2.0/demo
 @dirrm share/gtk-2.0
+@dirrm lib/gtk-2.0/%%GTK_VERSION%%/modules
 @dirrm lib/gtk-2.0/%%GTK_VERSION%%/loaders
 @dirrm lib/gtk-2.0/%%GTK_VERSION%%/immodules
 @dirrm lib/gtk-2.0/%%GTK_VERSION%%
@@ -464,5 +465,6 @@ share/themes/Emacs/gtk-2.0-key/gtkrc
 @dirrm include/gtk-2.0/gdk
 @dirrm include/gtk-2.0
 @dirrm etc/gtk-2.0
+@exec /bin/mkdir -p %D/lib/gtk-2.0/modules
 @unexec /bin/rmdir %D/share/themes/Default 2>/dev/null || /usr/bin/true
 @unexec /bin/rmdir %D/share/themes 2>/dev/null || /usr/bin/true
