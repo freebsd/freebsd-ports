@@ -31,6 +31,7 @@
     SUBDIR += cymbaline
     SUBDIR += dagrab
     SUBDIR += dap
+    SUBDIR += darkice
     SUBDIR += denemo
     SUBDIR += easytag
     SUBDIR += ecasound
