@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	uppc
-PORTVERSION=	0.5
+PORTVERSION=	0.6
 CATEGORIES=	palm
 MASTER_SITES=	http://sam.stral.net/freebsd/
 PKGNAMESUFFIX=	-kmod
