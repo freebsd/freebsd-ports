@@ -25,14 +25,14 @@ pre-everything::
 .endif
 
 post-patch:
-	${MV} ${WRKSRC}/Makefile ${WRKSRC}/Makefile.orig
-	${SED} -e "s:-lpthread:${PTHREAD_LIBS}:g; \
+	@${MV} ${WRKSRC}/Makefile ${WRKSRC}/Makefile.orig
+	@${SED} -e "s:-lpthread:${PTHREAD_LIBS}:g; \
 	s:-I/usr/src/gnu/usr.sbin/sendmail/include:${PTHREAD_CFLAGS}:g; \
 	s/-Werror//g" < ${WRKSRC}/Makefile.orig > ${WRKSRC}/Makefile
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/milter-regex ${PREFIX}/libexec
-	${INSTALL_MAN} ${WRKSRC}/milter-regex.8 ${PREFIX}/man/man8
+	@${INSTALL_PROGRAM} ${WRKSRC}/milter-regex ${PREFIX}/libexec
+	@${INSTALL_MAN} ${WRKSRC}/milter-regex.8 ${PREFIX}/man/man8
 	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.mk>
