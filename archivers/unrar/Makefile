@@ -1,5 +1,4 @@
 # New ports collection makefile for:    unrar
-# http://www.rarsoft.com/
 # Date created:         28 Dec 1994
 # Whom:                 ache
 #
@@ -9,7 +8,8 @@
 PORTNAME=	unrar
 PORTVERSION=	2.50
 CATEGORIES=	archivers
-MASTER_SITES=	ftp://ftp.kiarchive.ru/pub/unix/arcers/
+MASTER_SITES=        ${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=  ache
 
 MAINTAINER=	ache@FreeBSD.org
 
