@@ -3,7 +3,7 @@
 # Date created:		03 Jul 1995
 # Whom:			torstenb@FreeBSD.ORG
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1995/07/15 22:46:25 torstenb Exp $
 #
 
 DISTNAME=	rkive3.1
@@ -13,8 +13,7 @@ EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	torstenb@FreeBSD.ORG
 
-# restrictive copyright
-NO_PACKAGE=yes
+NO_CDROM=	yes	# don't make money from it
 
 pre-patch:
 	@cp ${WRKSRC}/Makefile.dst ${WRKSRC}/Makefile
