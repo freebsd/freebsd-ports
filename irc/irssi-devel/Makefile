@@ -6,18 +6,16 @@
 #
 
 PORTNAME=	irssi
-PORTVERSION=	0.8.0-20020217
+PORTVERSION=	0.8.1
 PORTREVISION?=	0
 CATEGORIES+=	irc ipv6	# `+=' is for slave ports
-MASTER_SITES=	http://irssi.org/files/snapshots/
-DISTFILES=	${PORTNAME}-20020217${EXTRACT_SUFX}
+MASTER_SITES=	http://irssi.org/files/
 
 MAINTAINER?=	vanilla@FreeBSD.org
 
 LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-0.8.0
-#USE_BZIP2=	yes
+USE_BZIP2=	yes
 USE_PERL5=	yes
 USE_GLIB=	yes
 GNU_CONFIGURE=	yes
