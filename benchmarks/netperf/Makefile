@@ -6,15 +6,14 @@
 #
 
 PORTNAME=	netperf
-PORTVERSION=	2.1.3
-PORTREVISION=	1
+PORTVERSION=	2.2.2
 CATEGORIES=	benchmarks ipv6
 MASTER_SITES=	ftp://ftp.cup.hp.com/dist/networking/benchmarks/netperf/%SUBDIR%/
 MASTER_SITE_SUBDIR=. archive
-DISTNAME=	netperf-2.1pl3
+DISTNAME=	netperf-2.2pl2
 
 PATCH_SITES=	ftp://ftp.kame.net/pub/kame/misc/
-PATCHFILES=	netperf-21pl3-20010302.diff.gz
+PATCHFILES=	netperf-22pl2-v6-20030121.diff.gz
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	sumikawa@FreeBSD.org
@@ -22,15 +21,12 @@ MAINTAINER=	sumikawa@FreeBSD.org
 MAKEFILE=	makefile
 MAN1=		netperf.1 netserver.1
 
-SCRIPTS=	arr_script snapshot_script tcp_range_script tcp_rr_script \
+SCRIPTS=		arr_script snapshot_script tcp_range_script tcp_rr_script \
 		tcp_stream_script udp_rr_script udp_stream_script
 
 .include <bsd.port.pre.mk>
 
 BUILD_DEFS+=	USE_INET6
-.if ${OSVERSION} >= 400014
-CFLAGS+=	-DDO_IPV6
-.endif
 
 post-patch:
 .for i in ${SCRIPTS}
