@@ -6,6 +6,7 @@
 
 PORTNAME=	setiathome
 PORTVERSION?=	3.08
+PORTREVISION?=	2
 CATEGORIES?=	astro
 MASTER_SITES=	ftp://ftp.cdrom.com/pub/setiathome/ \
 		ftp://alien.ssl.berkeley.edu/pub/
@@ -24,7 +25,7 @@ COMMENT?=	Donate idle cycles to the search for space aliens
 IS_INTERACTIVE=	yes
 .endif
 
-ONLY_FOR_ARCHS?= alpha i386
+ONLY_FOR_ARCHS?= i386
 
 NO_BUILD=	binary distribution
 NO_CDROM=	interactive install
@@ -105,6 +106,11 @@ X11PORTS=
 X11PORTS=	"@comment "
 .endif
 
+
+post-extract:
+	@${SED} -e "s=%%PREFIX%%=${PREFIX}=" ${FILESDIR}/setiathome.sh \
+		> ${WRKSRC}/setiathome.sh
+
 # Post-patch
 #
 
@@ -168,7 +174,7 @@ install-startup-files:
 	-@${CHMOD} -x ${RC_DIR}/*${file}*.sh 2> /dev/null
 .endif
 .if exists(${FILESDIR}/${file}.sh)
-	@${INSTALL_SCRIPT} ${FILESDIR}/${file}.sh \
+	@${INSTALL_SCRIPT} ${WRKSRC}/${file}.sh \
 		${RC_DIR}/${PKGNAMEPREFIX}${file}${PKGNAMESUFFIX}.sh
 .endif
 .if exists(${FILESDIR}/${file}.bin)

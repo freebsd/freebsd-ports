@@ -29,11 +29,7 @@ seti_maxprocs=$(sysctl -n hw.ncpu)	# max. number of processes to start
 seti_sleep_time=21600			# time to sleep between restarts
 set +a
 
-if ! PREFIX=$(expr ${rc_path} : "\(/.*\)/etc/rc\.d/${rc_file}\$"); then
-	echo "${rc_file}: Cannot determine PREFIX." >&2
-	echo "Please use the complete pathname." >&2
-	exit 64
-fi
+PREFIX=%%PREFIX%%
 
 rcconf_dir=${PREFIX}/etc
 rcconf_file=rc.${rc_file%.sh}.conf
@@ -97,7 +93,7 @@ start)
 			exit 72
 		fi
 	done
-	if ps axo comm | egrep ${program_file}; then
+	if ps axo command | egrep ${wrapper_path}; then
 		logger -sp ${syslog_facility} -t ${program_file} \
 		"unable to start: ${program_file} is already running."
 		exit 72
