@@ -9,7 +9,7 @@ PORTNAME=	cups-base
 PORTVERSION=	${CUPS_PORTVER}
 CATEGORIES=	french print
 
-MAINTAINER=	jah4007@cs.rit.edu
+MAINTAINER=	ports@geeksrus.net
 
 CUPS_FR=	yes
 MASTERDIR=	${.CURDIR}/../../print/cups-base
