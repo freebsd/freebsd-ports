@@ -1,8 +1,8 @@
 Tha^n cha`o ca'c ba.n,
 
 vnxterm is a xterm replacement with Vietnamese VIQR 1.1 (7-bit VIetnamese
-Quoted Readable/Viet-Net) support.  This version of vnterm is derived from the
-X11R6.5.1 xterm, and thus has simular capabilities.
+Quoted Readable/Viet-Net, RFC 1456) support.  This version of vnterm is
+derived from the X11R6.5.1 xterm, and thus has simular capabilities.
 
 Please see the README file in the share/doc/vnterm directory.
 

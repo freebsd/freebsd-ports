@@ -1,5 +1,5 @@
-VNroff converts VIQR format Vietnamese characters into troff format so
-groff/troff can print it out.
+VNroff converts VIQR format (RFC 1456) Vietnamese characters into troff
+format so groff/troff can print it out.
 
    To use this program:
 

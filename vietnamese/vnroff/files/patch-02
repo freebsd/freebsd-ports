@@ -1,5 +1,5 @@
---- vnroff.1.orig	Sat May 20 11:32:08 2000
-+++ vnroff.1	Sat May 20 11:54:33 2000
+--- vnroff.1.orig	Tue Nov 27 17:28:57 2001
++++ vnroff.1	Tue Nov 27 17:29:35 2001
 @@ -1,21 +1,21 @@
  .TH vnroff 1
  .SH NAME
@@ -38,7 +38,7 @@
  .sp
  .SH SPELLING RULES
  Only one diacritical mark: 
-@@ -34,16 +34,22 @@
+@@ -34,16 +34,31 @@
  .br
  	vowel followed by Dau_Mu, Dau_Trang, Dau_Rau then other symbols.
  .sp
@@ -61,6 +61,15 @@
 +.SH STANDARDS
 +Vietnamese Standard Code for Information Interchange (VISCII version 1.1, 1992)
 +<Viet-Std@Haydn.Stanford.EDU> http://www.vietstd.org/.
++.PP
++RFC 1456 Vietnamese Standardization Working Group,
++"Conventions for Encoding the Vietnamese Language
++.br
++VISCII: VIetnamese Standard Code for Information Interchange
++.br
++VIQR: VIetnamese Quoted-Readable Specification Revision 1.1",
++.br
++May 1993.
  .SH AUTHORS
  Written in Pascal by Hu+~u (University of California at Berkeley).
  Converted to C & modified by Tra^`n H. Nha^n (Concurrent Computer).   
