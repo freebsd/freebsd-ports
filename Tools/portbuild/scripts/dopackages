@@ -10,7 +10,7 @@ shift
 . ${pb}/scripts/buildenv
 
 # packages that take very long to build -- try to start building these first
-quickports="lang/ghc games/civ2demo games/rt2-demo x11/XFree86-4 editors/openoffice-1.1 games/hlserver-cs misc/heyu x11/gnome x11/kde3"
+quickports="lang/ghc games/civ2demo games/rt2-demo x11/XFree86-4 editors/openoffice-1.1 games/hlserver-cs misc/heyu x11/gnome2 x11/kde3"
 
 status=${pb}/${arch}/status
 
