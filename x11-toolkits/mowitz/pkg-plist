@@ -1,3 +1,4 @@
+bin/mowitz-config
 include/Mowitz/Mowitz.h
 include/Mowitz/MwAnimator.h
 include/Mowitz/MwAnimatorP.h
