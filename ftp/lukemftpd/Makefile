@@ -12,7 +12,7 @@ CATEGORIES=	ftp ipv6
 MASTER_SITES=	ftp://ftp.netbsd.org/pub/NetBSD/misc/lukemftp/ \
 		ftp://ftp.nuug.no/pub/anders/distfiles/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	debolaz@debolaz.com
 
 GNU_CONFIGURE=	yes
 
