@@ -16,6 +16,8 @@ EXTRACT_SUFX=		.zip
 MAINTAINER=		ports@FreeBSD.org
 COMMENT=		A powerful security programming toolkit
 
+ONLY_FOR_ARCHS=		i386
+
 USE_ZIP=		yes
 EXTRACT_BEFORE_ARGS=	-aq
 NO_WRKSUBDIR=		yes
