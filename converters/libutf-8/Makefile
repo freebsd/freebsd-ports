@@ -10,8 +10,7 @@ PORTVERSION=	1.0
 PORTEPOCH=	1
 CATEGORIES=	converters
 MASTER_SITES=	http://www.whizkidtech.redprince.net/i18n/ \
-		ftp://ftp.whizkidtech.redprince.net/unix/ \
-		http://www.whizkidtech.net/ISO-8859-2/
+		ftp://ftp.whizkidtech.redprince.net/unix/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Unicode conversion routines between UCS-4 and UTF-8
