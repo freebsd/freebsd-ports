@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.237 1998/11/08 15:11:58 kuriyama Exp $
+# $Id: Makefile,v 1.238 1998/11/18 20:03:34 billf Exp $
 #
 
     SUBDIR += XFree86
@@ -62,6 +62,7 @@
     SUBDIR += xkeycaps
     SUBDIR += xloadimage
     SUBDIR += xlockmore
+    SUBDIR += xlogout
     SUBDIR += xmascot
     SUBDIR += xmold
     SUBDIR += xmove
