@@ -1,0 +1,11 @@
+--- Bundles/PGP/GNUmakefile.orig	Thu Aug 29 01:20:04 2002
++++ Bundles/PGP/GNUmakefile	Mon Jan 20 05:43:35 2003
+@@ -3,7 +3,7 @@
+ BUNDLE_NAME = PGP
+ BUNDLE_EXTENSION = .bundle
+ 
+-BUNDLE_INSTALL_DIR = $(GNUSTEP_USER_ROOT)/Library/GNUMail
++BUNDLE_INSTALL_DIR = $(GNUSTEP_INSTALLATION_DIR)/Library/GNUMail
+ 
+ PGP_RESOURCE_FILES = *.tiff
+ 

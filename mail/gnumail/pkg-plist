@@ -82,6 +82,52 @@ Local/Applications/GNUMail.app/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/library_paths.
 Local/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/libGNUMail.so
 Local/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/libGNUMail.so.1
 Local/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/libGNUMail.so.1.0.0
+Local/Library/GNUMail/Clock.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/Clock
+Local/Library/GNUMail/Clock.bundle/Resources/Info-gnustep.plist
+Local/Library/GNUMail/Clock.bundle/Resources/Date-0.tiff
+Local/Library/GNUMail/Clock.bundle/Resources/Date-1.tiff
+Local/Library/GNUMail/Clock.bundle/Resources/Date-2.tiff
+Local/Library/GNUMail/Clock.bundle/Resources/Date-3.tiff
+Local/Library/GNUMail/Clock.bundle/Resources/Date-4.tiff
+Local/Library/GNUMail/Clock.bundle/Resources/Date-5.tiff
+Local/Library/GNUMail/Clock.bundle/Resources/Date-6.tiff
+Local/Library/GNUMail/Clock.bundle/Resources/Date-7.tiff
+Local/Library/GNUMail/Clock.bundle/Resources/Date-8.tiff
+Local/Library/GNUMail/Clock.bundle/Resources/Date-9.tiff
+Local/Library/GNUMail/Clock.bundle/Resources/LED-0.tiff
+Local/Library/GNUMail/Clock.bundle/Resources/LED-1.tiff
+Local/Library/GNUMail/Clock.bundle/Resources/LED-10.tiff
+Local/Library/GNUMail/Clock.bundle/Resources/LED-11.tiff
+Local/Library/GNUMail/Clock.bundle/Resources/LED-12.tiff
+Local/Library/GNUMail/Clock.bundle/Resources/LED-2.tiff
+Local/Library/GNUMail/Clock.bundle/Resources/LED-3.tiff
+Local/Library/GNUMail/Clock.bundle/Resources/LED-4.tiff
+Local/Library/GNUMail/Clock.bundle/Resources/LED-5.tiff
+Local/Library/GNUMail/Clock.bundle/Resources/LED-6.tiff
+Local/Library/GNUMail/Clock.bundle/Resources/LED-7.tiff
+Local/Library/GNUMail/Clock.bundle/Resources/LED-8.tiff
+Local/Library/GNUMail/Clock.bundle/Resources/LED-9.tiff
+Local/Library/GNUMail/Clock.bundle/Resources/Mask.tiff
+Local/Library/GNUMail/Clock.bundle/Resources/Month-1.tiff
+Local/Library/GNUMail/Clock.bundle/Resources/Month-10.tiff
+Local/Library/GNUMail/Clock.bundle/Resources/Month-11.tiff
+Local/Library/GNUMail/Clock.bundle/Resources/Month-12.tiff
+Local/Library/GNUMail/Clock.bundle/Resources/Month-2.tiff
+Local/Library/GNUMail/Clock.bundle/Resources/Month-3.tiff
+Local/Library/GNUMail/Clock.bundle/Resources/Month-4.tiff
+Local/Library/GNUMail/Clock.bundle/Resources/Month-5.tiff
+Local/Library/GNUMail/Clock.bundle/Resources/Month-6.tiff
+Local/Library/GNUMail/Clock.bundle/Resources/Month-7.tiff
+Local/Library/GNUMail/Clock.bundle/Resources/Month-8.tiff
+Local/Library/GNUMail/Clock.bundle/Resources/Month-9.tiff
+Local/Library/GNUMail/Clock.bundle/Resources/Weekday-0.tiff
+Local/Library/GNUMail/Clock.bundle/Resources/Weekday-1.tiff
+Local/Library/GNUMail/Clock.bundle/Resources/Weekday-2.tiff
+Local/Library/GNUMail/Clock.bundle/Resources/Weekday-3.tiff
+Local/Library/GNUMail/Clock.bundle/Resources/Weekday-4.tiff
+Local/Library/GNUMail/Clock.bundle/Resources/Weekday-5.tiff
+Local/Library/GNUMail/Clock.bundle/Resources/Weekday-6.tiff
+Local/Library/GNUMail/Clock.bundle/Resources/Weekday.tiff
 Local/Library/GNUMail/Compose.prefs/Resources/Info-gnustep.plist
 Local/Library/GNUMail/Compose.prefs/Resources/MailIcon_create.tiff
 Local/Library/GNUMail/Compose.prefs/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/Compose
@@ -154,6 +200,11 @@ Local/Library/GNUMail/Viewing.prefs/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/Viewing
 @dirrm Local/Library/GNUMail/Compose.prefs/%%GNU_ARCH%%
 @dirrm Local/Library/GNUMail/Compose.prefs/Resources
 @dirrm Local/Library/GNUMail/Compose.prefs
+@dirrm Local/Library/GNUMail/Clock.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
+@dirrm Local/Library/GNUMail/Clock.bundle/%%GNU_ARCH%%/%%OPSYS%%
+@dirrm Local/Library/GNUMail/Clock.bundle/%%GNU_ARCH%%
+@dirrm Local/Library/GNUMail/Clock.bundle/Resources
+@dirrm Local/Library/GNUMail/Clock.bundle
 @dirrm Local/Library/GNUMail
 @dirrm Local/Applications/GNUMail.app/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
 @dirrm Local/Applications/GNUMail.app/%%GNU_ARCH%%/%%OPSYS%%
