@@ -34,18 +34,3 @@
  	seteuid(0);
  	if (bind(pdata, pasv_addr, socket_sockaddr_size (pasv_addr)) < 0) {
  		seteuid(pw->pw_uid);
-@@ -2165,7 +2171,13 @@
-   char buf[MaxPathLen];
- 
-   if (strpbrk(whichf, "~{[*?") != NULL) {
--    int flags = GLOB_BRACE|GLOB_NOCHECK|GLOB_QUOTE|GLOB_TILDE|GLOB_LIMIT;
-+    int flags = GLOB_BRACE|GLOB_NOCHECK|GLOB_QUOTE|GLOB_TILDE|
-+#ifdef GLOB_MAXPATH
-+	GLOB_MAXPATH
-+#else
-+	GLOB_LIMIT
-+#endif
-+	;
- 
-     memset(&gl, 0, sizeof(gl));
-     freeglob = 1;
