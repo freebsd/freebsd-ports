@@ -6,10 +6,13 @@
 # $FreeBSD$
 #
 
-DISTNAME=	ami-0.5.2
-PKGNAME=	ko-ami-0.5.2
+DISTNAME=	ami-${AMI_VER}
+PKGNAME=	ko-ami-${AMI_VER}
 CATEGORIES=	korean x11
-MASTER_SITES=	http://www.kr.freebsd.org/~hwang/ami/
+MASTER_SITES=	http://www.kr.freebsd.org/~hwang/ami/ \
+		http://adam.kaist.ac.kr/~cwryu/archive/misc/
+DISTFILES=	${DISTNAME}.tar.gz hanja.dic.gz ami.dic
+EXTRACT_ONLY=	${DISTNAME}.tar.gz
 
 MAINTAINER=	cjh@kr.freebsd.org
 
@@ -19,6 +22,22 @@ USE_X_PREFIX=	YES
 GNU_CONFIGURE=	YES
 CONFIGURE_ENV=	GLIB_CONFIG=${LOCALBASE}/bin/glib12-config \
 		GTK_CONFIG=${X11BASE}/bin/gtk12-config
+CONFIGURE_ARGS+= --with-hangul-keyboard=2
+
+AMI_VER=	1.0.4
+
+# Korean input in dvorak keyboard
+.if defined(WITH_DVORAK)
+CONFIGURE_ARGS+= --with-english-keyboard=dvorak
+.endif
+
+# gnome support
+.if defined(WITH_GNOME_APPLET)
+PKGNAME=	ko-ami-gnome-${AMI_VER}
+RUN_DEPENDS+=	panel:${PORTSDIR}/x11/gnomecore
+LIB_DEPENDS+=	gnome.3:${PORTSDIR}/x11/gnomelibs
+CONFIGURE_ARGS+= --enable-gnome-applet
+.endif
 
 post-build:
 	@cd ${WRKSRC}/hanjadic; \
@@ -39,9 +58,14 @@ post-install:
 	${INSTALL_DATA} ${FILESDIR}/XLC_LOCALE \
 		${PREFIX}/share/doc/ami
 
-.for NAME in AUTHORS README NEWS COPYING ChangeLog gtkrc
+.for NAME in AUTHORS README NEWS COPYING ChangeLog
 	${INSTALL_DATA} ${WRKSRC}/${NAME} \
 		${PREFIX}/share/doc/ami
 .endfor
+
+	# dic
+	${GUNZIP_CMD} -cd ${_DISTDIR}/hanja.dic.gz > \
+			${PREFIX}/share/ami/hanja.dic
+	${CAT} ${_DISTDIR}/ami.dic >> ${PREFIX}/share/ami/hanja.dic
 
 .include <bsd.port.mk>
