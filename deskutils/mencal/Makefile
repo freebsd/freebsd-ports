@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	mencal
-PORTVERSION=	2.0
+PORTVERSION=	2.1
 CATEGORIES=	deskutils
 MASTER_SITES=	http://mencal.kyberdigi.cz/ \
 		http://unixpages.org/distfiles/
 
 MAINTAINER=	chris@unixpages.org
 
-USE_PERL=	yes
+USE_PERL5=	yes
 NO_BUILD=	yes
 
 do-install:
