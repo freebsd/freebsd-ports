@@ -10,4 +10,5 @@ PORTNAME=	gcc
 MAINTAINER=	jeh@FreeBSD.org
 
 LCLTARGET=	arm-rtems
+
 .include "${.CURDIR}/../i386-rtems-gcc/Makefile"

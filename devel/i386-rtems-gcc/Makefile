@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gcc
-PORTVERSION=	2.95.3
+PORTVERSION=	3.2.1
 PORTREVISION=	0
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEWARE} \
@@ -15,8 +15,8 @@ MASTER_SITE_SUBDIR=	newlib \
 			releases/${GCCNAME}/:gcc
 DISTFILES=		${NEWLIBNAME}.tar.gz \
 			${GCCNAME}.tar.gz:gcc
-PATCHFILES=	${GCCNAME}-rtems-20010622a.diff \
-		${NEWLIBNAME}-rtems-20010622.diff
+PATCHFILES=	${GCCNAME}-rtems-20021209.diff \
+		${NEWLIBNAME}-rtems-20030120.diff
 PATCH_SITES=	ftp://ftp.oarcorp.com/pub/rtems/snapshots/c_tools/source/ \
 		http://rtems.thehousleys.net/
 
@@ -24,8 +24,8 @@ MAINTAINER=	jeh@FreeBSD.org
 
 LCLTARGET?=	i386-rtems
 
-GCCNAME=	gcc-2.95.3
-NEWLIBNAME=	newlib-1.9.0
+GCCNAME=	gcc-3.2.1
+NEWLIBNAME=	newlib-1.11.0
 MASTERDIR=	${.CURDIR}/../i386-rtems-gcc
 PLIST=		${PKGDIR}/pkg-plist.${LCLTARGET}
 
@@ -51,7 +51,10 @@ PATCH_STRIP=		-p
 
 MAKE_FLAGS=	LANGUAGES="c c++"
 
-MAN1=		${LCLTARGET}-gcc.1 cccp.1 ${LCLTARGET}-g++.1
+MAN1=		${LCLTARGET}-gcc.1 ${LCLTARGET}-g++.1 \
+		cpp.1 gcov.1 
+MAN7=		fsf-funding.7 gfdl.7 gpl.7
+
 
 pre-configure:
 	@(cd ${WRKDIR} ; \
