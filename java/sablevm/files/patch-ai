@@ -1,0 +1,16 @@
+--- work.orig/sablevm-native-library-1.0.3/src/fdlibm/mprec.h.orig	Thu Aug 22 21:32:46 2002
++++ work/sablevm-native-library-1.0.3/src/fdlibm/mprec.h	Thu Aug 22 21:35:34 2002
+@@ -57,11 +57,11 @@
+ 
+ /* ISO C99 int type declarations */
+ 
+-#if !defined HAVE_INT32_DEFINED && defined HAVE_BSD_INT32_DEFINED
++#if 0
+   typedef u_int32_t uint32_t;
+ #endif
+ 
+-#if !defined HAVE_BSD_INT32_DEFINED && !defined HAVE_INT32_DEFINED
++#if 0
+ // FIXME -- this could have problems with systems that don't define SI to be 4
+   typedef int int32_t __attribute__ ((mode (SI)));
+ 

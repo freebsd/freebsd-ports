@@ -1,0 +1,11 @@
+--- work/sablevm-native-library-1.0.3/src/fdlibm/strtod.c.orig	Thu Aug 22 21:54:29 2002
++++ work/sablevm-native-library-1.0.3/src/fdlibm/strtod.c	Thu Aug 22 21:54:38 2002
+@@ -98,7 +98,7 @@
+  */
+ 
+ #include <string.h>
+-#include <float.h>
++#include <machine/float.h>
+ #include <errno.h>
+ #include "mprec.h"
+ 
