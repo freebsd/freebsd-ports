@@ -12,8 +12,11 @@
     SUBDIR += bricons
     SUBDIR += dgs
     SUBDIR += dxpc
+    SUBDIR += ebuttons
+    SUBDIR += efancylauncher
     SUBDIR += emu
     SUBDIR += eterm
+    SUBDIR += eweather
     SUBDIR += fbsd-icons
     SUBDIR += gmessage
     SUBDIR += gnome
