@@ -24,8 +24,4 @@ USE_GMAKE=	yes
 USE_LIBTOOL=	yes
 CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|X11/Xft/Xft\.h|X11/Xft/Xft2.h|g' \
-		${WRKSRC}/src/font-view.c
-
 .include <bsd.port.mk>
