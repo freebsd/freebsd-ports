@@ -1,0 +1,10 @@
+Conglomerate is a free, user-friendly XML editor, aimed at providing
+a comfortable DocBook editor for the masses that's nicely integrated
+into GNOME.
+
+Conglomerate is still fairly unstable when doing editing work,
+and will crash from time to time. However, it is becoming usable
+for viewing DocBook and other XML formats, for creating new documents,
+and making simple changes to existing documents.
+
+WWW: http://www.conglomerate.org/
