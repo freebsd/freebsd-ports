@@ -6,16 +6,19 @@
 #
 
 PORTNAME=	testdisk
-PORTVERSION=	5.1
+PORTVERSION=	5.2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.cgsecurity.org/
 
 MAINTAINER=	flz@xbsd.org
 COMMENT=	Tool to check and undelete partitions
 
-WRKSRC=		${WRKDIR}/${PORTNAME}/src
+GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
-PLIST_FILES=	bin/testdisk
+MAN1=		testdisk.1
+
+CONFIGURE_ENV=	CPPFLAGS="-I${PREFIX}/include" \
+		LDFLAGS="-L${PREFIX}/lib"
 
 .if defined(WITH_E2FSPROGS)
 BUILD_DEPENDS+=	ext2fs.2:${PORTSDIR}/sysutils/e2fsprogs
@@ -39,16 +42,8 @@ pre-everything::
 .endif
 
 post-patch:
-.if defined(WITH_E2FSPROGS)
-	@${REINPLACE_CMD} -e 's|-DHAVE_PROGSREISERFS31.*||' ${WRKSRC}/Makefile
-	@${REINPLACE_CMD} -e 's|^\(LIBS=\).*|\1${PREFIX}/lib/libext2fs.a|' ${WRKSRC}/Makefile
-.else
-	@${REINPLACE_CMD} -e 's|-DHAVE_E2FSPROGS.*||' ${WRKSRC}/Makefile
-.endif
-	@${REINPLACE_CMD} -e 's|^bsd:|all:|' ${WRKSRC}/Makefile
-	@${REINPLACE_CMD} -e 's|^\(LIBSA=\).*|\1|' ${WRKSRC}/Makefile
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/testdisk ${PREFIX}/bin
+	${REINPLACE_CMD} -e 's|^transform.*||' ${WRKSRC}/Makefile.in \
+					       ${WRKSRC}/src/Makefile.in
+	${REINPLACE_CMD} -e 's|/doc/.(PACKAGE)-.(VERSION)|/doc/${PORTNAME}|' ${WRKSRC}/Makefile.in
 
 .include <bsd.port.post.mk>
