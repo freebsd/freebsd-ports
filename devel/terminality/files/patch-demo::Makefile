@@ -1,6 +1,6 @@
---- demo/Makefile.orig	Fri Jul 26 20:54:10 2002
-+++ demo/Makefile	Thu Aug  8 02:35:57 2002
-@@ -8,23 +8,22 @@
+--- demo/Makefile.orig	Fri Jul 26 04:54:10 2002
++++ demo/Makefile	Sun Sep  8 14:22:34 2002
+@@ -8,33 +8,32 @@
  # Description: Terminality demos Makefile (Unix/ncurses)
  # Author: Emil Mikulic, Michal Safranek
  
@@ -26,11 +26,14 @@
  
  demo3d:	demo3d.o ../libtn.a precalc.o Makefile
 -	$(CC) -o demo3d demo3d.o precalc.o $(CFLAGS) $(LIBS) -lstdc++
-+	$(CC) -o demo3d demo3d.o precalc.o $(CFLAGS) $(LIBS)
++	$(CXX) -o demo3d demo3d.o precalc.o $(CFLAGS) $(LIBS)
  
  demoansi: demoansi.o ../libtn.a precalc.o Makefile
- 	$(CC) -o demoansi demoansi.o precalc.o $(CFLAGS) $(LIBS)
-@@ -34,7 +33,7 @@
+-	$(CC) -o demoansi demoansi.o precalc.o $(CFLAGS) $(LIBS)
++	$(CXX) -o demoansi demoansi.o precalc.o $(CFLAGS) $(LIBS)
+ 	rm -f precalc.dat
+ 
+ .c.o:
  	$(CC) $(CFLAGS) -c $<
  
  .cpp.o:
