@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	vdk
-PORTVERSION=	1.0.6
+PORTVERSION=	1.2.1
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	http://www.programmers.net/artic/Motta/vdk/
+MASTER_SITES=	http://download.sourceforge.net/vdkbuilder/
 
 MAINTAINER=	nakai@FreeBSD.org
 

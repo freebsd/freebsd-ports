@@ -58,6 +58,9 @@ include/vdk/scrolled.h
 include/vdk/scrolledForm.h
 include/vdk/separator.h
 include/vdk/sigc_addon.h
+include/vdk/sigc_events.h
+include/vdk/sigc_eventsignals.h
+include/vdk/sigc_eventtraits.h
 include/vdk/siglisthandle.h
 include/vdk/slider.h
 include/vdk/spins.h
@@ -103,14 +106,16 @@ include/vdk/widcontain.h
 lib/libvdk.a
 lib/libvdk.la
 lib/libvdk.so
-lib/libvdk.so.1
+lib/libvdk.so.3
 lib/libvdkcompo.a
 lib/libvdkcompo.la
 lib/libvdkcompo.so
-lib/libvdkcompo.so.1
+lib/libvdkcompo.so.3
 lib/libvdkgnome.a
 lib/libvdkgnome.la
 lib/libvdkgnome.so
-lib/libvdkgnome.so.1
+lib/libvdkgnome.so.3
+@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
+@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 share/aclocal/vdk.m4
 @dirrm include/vdk

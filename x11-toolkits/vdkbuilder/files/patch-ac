@@ -1,0 +1,13 @@
+--- vdkbuilder/vdkb.cc.orig	Tue Jun 27 08:08:49 2000
++++ vdkbuilder/vdkb.cc	Tue Jun 27 08:09:27 2000
+@@ -55,6 +55,10 @@
+ #include <stdlib.h>
+ #include <sys/param.h>
+ 
++#if ENABLE_NLS
++#include <libintl.h>
++#endif
++
+ 
+ //////////////////////////////
+ #include "./pixmaps/cube.xpm"

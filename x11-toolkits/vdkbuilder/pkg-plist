@@ -4,19 +4,11 @@ include/vdkb/customcombo.h
 include/vdkb/databox.h
 include/vdkb/gtkcolorcombo.h
 include/vdkb/gtkcombobox.h
-include/vdkb/gtkeditor-regex.h
-include/vdkb/gtkeditor.h
-include/vdkb/gtkhint.h
-include/vdkb/gtksctext.h
+include/vdkb/gtkextext.h
+include/vdkb/highlight.h
 include/vdkb/input.h
-include/vdkb/internal.h
-include/vdkb/parent.h
-include/vdkb/regex.h
-include/vdkb/sctext.h
-include/vdkb/syntaxtable.h
 include/vdkb/vdkb.h
 include/vdkb/vdkb_about.h
-include/vdkb/vdkb_actstack.h
 include/vdkb/vdkb_calendar.h
 include/vdkb/vdkb_cbuttdlg.h
 include/vdkb/vdkb_checkbutton.h
@@ -53,7 +45,6 @@ include/vdkb/vdkb_grep.h
 include/vdkb/vdkb_grid.h
 include/vdkb/vdkb_guicanvas.h
 include/vdkb/vdkb_handlebox.h
-include/vdkb/vdkb_hilite.h
 include/vdkb/vdkb_ide_def.h
 include/vdkb/vdkb_interface.h
 include/vdkb/vdkb_labelbutton.h
@@ -107,9 +98,16 @@ include/vdkb/vdkb_unit.h
 include/vdkb/vdkb_utils.h
 include/vdkb/vdkb_widclip.h
 include/vdkb/vdkb_widpopmenu.h
+include/vdkb/vdkb_xcheckbutton.h
+include/vdkb/vdkb_xcustomlist.h
+include/vdkb/vdkb_xentry.h
+include/vdkb/vdkb_xmemo.h
+include/vdkb/vdkb_xtDlg.h
 include/vdkb/vdkcalendar.h
 include/vdkb/vdkdclock.h
 include/vdkb/vdkeditor.h
+include/vdkb/vdkextext.h
+include/vdkb/vdksynted.h
 include/vdkb/vdkxpmbrowser.h
 include/vdkb/waitcursor.h
 lib/libvdkbcalendar.a
@@ -132,11 +130,11 @@ lib/libvdkdclock.a
 lib/libvdkdclock.la
 lib/libvdkdclock.so
 lib/libvdkdclock.so.1
-share/vdkb/lang/de.lan
-share/vdkb/lang/en.lan
-share/vdkb/lang/it.lan
-share/vdkb/lang/vdkhints.en
-share/vdkb/lang/~.vdk
+@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
+@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
+share/locale/da/LC_MESSAGES/vdkbuilder.mo
+share/locale/de/LC_MESSAGES/vdkbuilder.mo
+share/locale/it/LC_MESSAGES/vdkbuilder.mo
 share/vdkb/res/AUTHORS
 share/vdkb/res/COPYING
 share/vdkb/res/ChangeLog
@@ -169,13 +167,14 @@ share/vdkb/res/vdkapp.htm
 share/vdkb/res/vdkbide.defaults
 share/vdkb/res/vdkbmaker.gif
 share/vdkb/res/vdkbrc
+share/vdkb/res/vdkcanvas.htm
+share/vdkb/res/vdkchkbut.htm
 share/vdkb/res/vdkform.htm
 share/vdkb/res/vdklogo.gif
+share/vdkb/res/vdkobjcont.htm
 share/vdkb/res/vdkobject.htm
 share/vdkb/res/vdkpaned.htm
 share/vdkb/res/vdkscrolled.htm
 share/vdkb/res/wi1.gif
 @dirrm include/vdkb
-@dirrm share/vdkb/lang
 @dirrm share/vdkb/res
-@dirrm share/vdkb
