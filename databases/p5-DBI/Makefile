@@ -3,7 +3,7 @@
 # Date created:				October 17th 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-# $Id: Makefile,v 1.17 1998/10/12 04:04:28 jseger Exp $
+# $Id: Makefile,v 1.18 1998/11/11 05:37:09 asami Exp $
 #
 
 DISTNAME=	DBI-1.02
@@ -17,12 +17,7 @@ MAINTAINER=	vanilla@FreeBSD.ORG
 BUILD_DEPENDS=	${PREFIX}/lib/perl5/site_perl/${PERL_VER}/RPC/pServer.pm:${PORTSDIR}/net/p5-pRPC
 
 USE_PERL5=	YES
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 300000
-BROKEN=         perl
-.endif
+CONFIGURE_ARGS=	PREFIX=${PREFIX}
 
 MAN1=		dbiproxy.1 \
 		dbish.1
@@ -30,12 +25,13 @@ MAN3=		DBD::Proxy.3 \
 		DBI.3 \
 		DBI::DBD.3 \
 		DBI::FAQ.3 \
+		DBI::Format.3 \
 		DBI::ProxyServer.3 \
 		DBI::Shell.3 \
 		DBI::W32ODBC.3
 MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 do-configure:
-		@ cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PERL5} Makefile.PL
+		@ cd ${WRKSRC}; ${SETENV} ${CONFIGURE_ENV} ${PERL5} Makefile.PL ${CONFIGURE_ARGS}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
