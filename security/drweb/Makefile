@@ -16,6 +16,8 @@ MAINTAINER=	anton@urc.ac.ru
 
 NO_BUILD=	YES
 
+RUN_DEPENDS=    ${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/mach/String/CRC32.pm:${PORTSDIR}/devel/p5-String-CRC32
+
 DRWEB_PREFIX=	${PREFIX}/${PORTNAME}
 
 do-install:
@@ -23,6 +25,7 @@ do-install:
 	${TAR} -xzf ${WRKSRC}/${DISTNAME}.tar.gz -C ${DRWEB_PREFIX} --exclude *.ini
 	${TAR} -xzOf ${WRKSRC}/${DISTNAME}.tar.gz drweb32.ini >${DRWEB_PREFIX}/drweb32.ini.sample
 	${SED} 's#!!PREFIX!!#${DRWEB_PREFIX}#' < ${FILESDIR}/drwebd.sh >${WRKSRC}/drwebd.sh
+	cd ${DRWEB_PREFIX}/update; patch < ${FILESDIR}/update-patch
 	${INSTALL_SCRIPT} ${WRKSRC}/drwebd.sh ${PREFIX}/etc/rc.d
 
 .include <bsd.port.mk>
