@@ -113,6 +113,7 @@
     SUBDIR += pgp6
     SUBDIR += pgpdump
     SUBDIR += pgpgpg
+    SUBDIR += pgpin
     SUBDIR += pidentd
     SUBDIR += pks
     SUBDIR += pktsuckers

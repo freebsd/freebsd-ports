@@ -1,0 +1,12 @@
+bin/pgpin
+lib/pgpin/CHANGES
+lib/pgpin/pgp.hlp
+lib/pgpin/pgpdoc1.txt
+lib/pgpin/pgpdoc2.txt
+@unexec if cmp -s %D/lib/pgpin/language.txt %D/lib/pgpin/language.txt-dist; then rm -f %D/lib/pgpin/language.txt; fi
+lib/pgpin/language.txt-dist
+@exec [ ! -f %B/language.txt ] && cp %B/%f %B/language.txt
+@unexec if cmp -s %D/lib/pgpin/config.txt %D/lib/pgpin/config.txt-dist; then rm -f %D/lib/pgpin/config.txt; fi
+lib/pgpin/config.txt-dist
+@exec [ ! -f %B/config.txt ] && cp %B/%f %B/config.txt
+@dirrm lib/pgpin
