@@ -1,5 +1,11 @@
-       NcFTP is a user interface to the  Internet  standard  File
-       Transfer Protocol.  This program allows a user to transfer
-       files to and from a remote network site, and offers  addi-
-       tional  features that are not found in the standard inter-
-       face, ftp.
+NcFTP is a free set of programs that use the File Transfer Protocol.
+The main program is simply called "ncftp".  There are also separate
+utility programs for one-shot FTP operations (i.e. for shell scripts
+and command line junkies);  these include "ncftpget", "ncftpput",
+and "ncftpls".  Also included is a batch processing daemon,
+"ncftpbatch", which is invoked by the "bgget" command from "ncftp"
+and also the "-b" flag of "ncftpput" and "ncftpget".  Lastly, the
+"ncftpbookmarks" program is a full-screen utility program to
+manipulate user's FTP bookmarks.
+
+WWW: http://www.ncftp.com/ncftp/

@@ -29,11 +29,6 @@ MAN3=		Strn.3
 LIBNCFTP=	libncftp.so.2
 LIBSTRN=	libStrn.so.1
 
-post-patch:
-	@${MV} ${WRKSRC}/ncftp/pref.h ${WRKSRC}/ncftp/pref.h.in
-	@${SED} -e 's:/etc/ncftp.firewall:${PREFIX}/etc/ncftp.firewall:' \
-		${WRKSRC}/ncftp/pref.h.in > ${WRKSRC}/ncftp/pref.h
-
 pre-build:
 	cd ${WRKSRC}/Strn ; make so
 	cd ${WRKSRC}/libncftp ; make so
