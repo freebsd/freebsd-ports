@@ -157,6 +157,7 @@
     SUBDIR += qpopper
     SUBDIR += qtools
     SUBDIR += rblcheck
+    SUBDIR += regm
     SUBDIR += rftp
     SUBDIR += ripmime
     SUBDIR += rlytest
