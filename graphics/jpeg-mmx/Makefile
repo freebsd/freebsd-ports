@@ -17,7 +17,7 @@ COMMENT=	IJG's jpeg compression utilities with MMX optimization
 BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
 RUN_DEPENDS=	cjpeg:${PORTSDIR}/graphics/jpeg
 
-ONLY_FOR_ARCHS=	i386
+ONLY_FOR_ARCHS=	i386 amd64
 
 USE_LIBTOOL_VER=15
 USE_GMAKE=	yes
