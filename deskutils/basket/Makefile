@@ -7,7 +7,7 @@
 PORTNAME=		basket
 PORTVERSION=		0.4.0d
 CATEGORIES=		deskutils kde
-MASTER_SITES=		http://les83plus.free.fr/sebastien.laout/basket/downloads/
+MASTER_SITES=		http://www.hitnet.rwth-aachen.de/~brueffer/distfiles/
 
 MAINTAINER=		markus@FreeBSD.org
 COMMENT=		Desktop organization tool
