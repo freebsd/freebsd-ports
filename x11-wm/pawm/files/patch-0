@@ -1,8 +1,8 @@
 $FreeBSD$
 
---- 0.orig	Tue Aug 19 21:13:14 2003
-+++ 0	Fri Aug 22 04:49:07 2003
-@@ -31,8 +31,8 @@
+--- 0.orig	Thu Sep 11 13:37:45 2003
++++ 0	Sat Oct 18 14:55:36 2003
+@@ -31,8 +31,8 @@ AUTHOR="David Gómez <david@pleyades.net>
  #   LDIRS: A *space separated* list of additional library or .o search dirs.
  #   LIBES: A *space separated* list of additional library names to link,
  ########################################
@@ -10,6 +10,6 @@ $FreeBSD$
 -LDIRS="/usr/X11R6/lib /usr/lib/X11R6"
 +IDIRS="/usr/X11R6/include/"
 +LDIRS="/usr/X11R6/lib"
- LIBES="libX11 libXext libXpm libm"
+ LIBES="libX11 libXpm libXext libm"
  
  ########################################
