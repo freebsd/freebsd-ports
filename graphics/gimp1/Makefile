@@ -3,7 +3,7 @@
 # Date created:         Mon Nov 18 21:28:43 CST 1996
 # Whom:                 erich@FreeBSD.org
 #
-# $Id: Makefile,v 1.21 1998/03/17 22:52:36 erich Exp $
+# $Id: Makefile,v 1.22 1998/03/21 09:26:10 asami Exp $
 #
 
 MAJOR=	0
@@ -22,8 +22,6 @@ MASTER_SITES=   ftp://ftp.gimp.org/pub/gimp/v${MAJOR}.${MINOR}/v${VERSION}/ \
                 ftp://ftp.cs.umn.edu/pub/gimp/gimp/v${MAJOR}.${MINOR}/v${VERSION}/ \
 
 MAINTAINER=     erich@FreeBSD.org
-
-BROKEN=		fetch
 
 LIB_DEPENDS+=	gtk\\.1\\.0:${PORTSDIR}/x11/gtk
 LIB_DEPENDS+=	png\\.0\\.[7-9]:${PORTSDIR}/graphics/png
