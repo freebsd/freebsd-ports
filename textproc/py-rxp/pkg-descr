@@ -1,0 +1,11 @@
+RXP is a very fast validating XML parser written by Richard Tobin
+of the University of Edinburgh. It complies fully with the W3C test
+suites (although we have compiled it without Unicode support for
+the time being). pyRXP is a wrapper around this which constructs a
+lightweight in-memory "tuple tree" in a single call. This structure
+is the lightest one we could define in Python, and it is constructed
+entirely in C code, resulting in unprecedented speed. It is a core
+part of ReportLab's forthcoming XML toolkit, which aims to offer
+simple, fast and pythonic tools for common XML processing tasks. 
+
+WWW: http://www.reportlab.com/xml/pyrxp.html
