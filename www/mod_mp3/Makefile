@@ -26,6 +26,11 @@ APXS?=		${LOCALBASE}/sbin/apxs
 APACHE_PORT?=	${PORTSDIR}/www/apache13
 DOCS=		ChangeLog README TODO faq.html
 
+.if defined(WITH_MYSQL)
+LIB_DEPENDS+=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client 
+CONFIGURE_ARGS+=	--with-mysql
+.endif
+
 do-install:
 	${APXS} -i -A -n mp3 ${WRKSRC}/src/mod_mp3.so
 .if !defined(NOPORTDOCS)
