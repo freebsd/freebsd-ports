@@ -15,14 +15,14 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	alex@kapranoff.ru
 COMMENT=	Easy, automatic, specification-based tests
 
+BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Filter/Util/Call.pm:${PORTSDIR}/devel/p5-Filter
+RUN_DEPENDS=	${BUILD_DEPENDS}
+
 PERL_MODBUILD=	yes
 
 MAN3=		Test::LectroTest.3 Test::LectroTest::Generator.3 \
 		Test::LectroTest::Property.3 Test::LectroTest::TestRunner.3 \
 		Test::LectroTest::Tutorial.3
-
-BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Filter/Util/Call.pm:${PORTSDIR}/devel/p5-Filter
-RUN_DEPENDS=	${BUILD_DEPENDS}
 
 .include <bsd.port.pre.mk>
 
