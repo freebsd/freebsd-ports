@@ -28,6 +28,8 @@ CONFIGURE_ARGS=	--with-libjpeg=${LOCALBASE} \
 MAKE_ENV=	SDL_CONFIG=${SDL_CONFIG}
 INSTALLS_SHLIB=	yes
 
+CUT?=	/usr/bin/cut
+
 MAN1=	ogle.1
 MAN5=	oglerc.5
 
@@ -37,10 +39,11 @@ post-patch:
 .ifdef(WITH_DVD_DEVICE)
 	@${PERL} -pi.orig -e \
 		"s|(DEFAULT_DVD_DEVICE=\")/dev/acd0c(\")|\1${WITH_DVD_DEVICE}\2|" \
-		${WRKSRC}/configure.in
+		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 .endif
 	@${PERL} -pi -e "s|%%X11BASE%%|${X11BASE}|" ${WRKSRC}/scripts/ogle.in
-	@${PERL} -pi -e 's|(xmlversion.h>)|libxml/\1|' \
+	@${PERL} -pi -e 's|(xmlversion.h>)|libxml/\1|; \
+		s|(-la52)|\1 ${LIBA52_DEP_LIBS}|' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 
 pre-configure:
@@ -54,6 +57,9 @@ post-install:
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.pre.mk>
+
+# hack to make ogle work with liba52 + djbfft
+LIBA52_DEP_LIBS!=	${GREP} dependency_libs ${LOCALBASE}/lib/liba52.la | ${CUT} -d \' -f 2
 
 .if ${ARCH} == "i386"
 . if (defined(MACHINE_CPU) && ${MACHINE_CPU:Mi486} == "i486")
