@@ -1,0 +1,5 @@
+bin/bison2py
+%%PYTHON_SITELIBDIR%%/bison.py
+%%PYTHON_SITELIBDIR%%/bison.pyc
+%%PYTHON_SITELIBDIR%%/bison.pyo
+%%PYTHON_SITELIBDIR%%/bison_.so

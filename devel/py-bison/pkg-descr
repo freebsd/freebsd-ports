@@ -1,0 +1,24 @@
+PyBison is a Python binding to the Bison (yacc) and Flex (lex)
+parser-generator utilities.
+
+It allows parsers to be quickly and easily developed as Python class
+declarations, and for these parsers to take advantage of the fast and
+powerful C-based Bison/Flex.
+
+Users write a subclass of a basic Parser object, containing a set of methods
+and attributes specifying the grammar and lexical analysis rules, and taking
+callbacks for providing parser input, and receiving parser target events.
+
+Features
+     * Runs at near the speed of C-based parsers, due to direct hooks into
+       bison-generated C code
+     * Full LALR(1) grammar support
+     * Includes a utility to convert your legacy grammar (.y) and scanner (.l)
+       scripts into python modules compatible with PyBison
+     * Easy to understand - the walkthrough and the examples will have you
+       writing your own parsers in minutes
+     * Comfortable and intuitive callback mechanisms
+     * Can export parse tree to XML with a simple method call
+     * Can reconstitute a parse tree from XML
+
+WWW: http://www.freenet.org.nz/python/pybison/
