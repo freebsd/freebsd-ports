@@ -3,8 +3,8 @@ bin/bookview
 @unexec install-info --delete %D/info/bookview.info %D/info/dir
 info/bookview-ja.info
 info/bookview.info
-@exec install-info %B/bookview-ja.info %B/dir
-@exec install-info %B/bookview.info %B/dir
+@exec install-info %D/info/bookview-ja.info %D/info/dir
+@exec install-info %D/info/bookview.info %D/info/dir
 share/bookview/arrow.xbm
 share/bookview/copyright.gif
 share/bookview/find.gif

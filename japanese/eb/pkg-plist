@@ -34,16 +34,16 @@ info/ebrefile.info
 info/ebzip-ja.info
 info/ebzip.info
 @exec [ -f %D/info/dir ] || cp -p /usr/share/info/dir-tmpl %D/info/dir
-@exec install-info %B/eb-ja.info %B/dir
-@exec install-info %B/eb.info %B/dir
-@exec install-info %B/ebfont-ja.info %B/dir
-@exec install-info %B/ebfont.info %B/dir
-@exec install-info %B/ebinfo-ja.info %B/dir
-@exec install-info %B/ebinfo.info %B/dir
-@exec install-info %B/ebrefile-ja.info %B/dir
-@exec install-info %B/ebrefile.info %B/dir
-@exec install-info %B/ebzip-ja.info %B/dir
-@exec install-info %B/ebzip.info %B/dir
+@exec install-info %D/info/eb-ja.info %D/info/dir
+@exec install-info %D/info/eb.info %D/info/dir
+@exec install-info %D/info/ebfont-ja.info %D/info/dir
+@exec install-info %D/info/ebfont.info %D/info/dir
+@exec install-info %D/info/ebinfo-ja.info %D/info/dir
+@exec install-info %D/info/ebinfo.info %D/info/dir
+@exec install-info %D/info/ebrefile-ja.info %D/info/dir
+@exec install-info %D/info/ebrefile.info %D/info/dir
+@exec install-info %D/info/ebzip-ja.info %D/info/dir
+@exec install-info %D/info/ebzip.info %D/info/dir
 lib/libeb.a
 lib/libeb.so
 lib/libeb.so.3

@@ -4,8 +4,8 @@ etc/rc.d/ndtpd.sh.sample
 @unexec install-info --delete %D/info/ndtpd.info %D/info/dir
 info/ndtpd-ja.info
 info/ndtpd.info
-@exec install-info %B/ndtpd-ja.info %B/dir
-@exec install-info %B/ndtpd.info %B/dir
+@exec install-info %D/info/ndtpd-ja.info %D/info/dir
+@exec install-info %D/info/ndtpd.info %D/info/dir
 libexec/ndtpstat
 sbin/ndtpcheck
 sbin/ndtpcontrol
