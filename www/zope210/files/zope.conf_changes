@@ -1,0 +1,10 @@
+--- zope.conf.sample.orig	Mon Nov  3 11:04:10 2003
++++ zope.conf.sample	Mon Nov  3 11:04:50 2003
+@@ -137,6 +137,7 @@
+ # Example:
+ #
+ #    effective-user chrism
++effective-user @@@ZOPE_USER@@@
+ 
+ 
+ # Directive: enable-product-installation

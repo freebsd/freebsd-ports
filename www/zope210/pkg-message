@@ -1,0 +1,17 @@
+**********************************************************************
+
+Zope 2.7 Successfull installed.
+
+To create an instance of Zope please run
+
+make instance
+
+to create an instance in %%ZOPEBASEDIR%%. To create an instance in a
+diffrent location run
+
+make instance ZOPEBASEDIR=<instance_home>
+
+Files installed by make instance will NOT be deleted when Zope is
+deinstalled. You have to delete them yourself
+
+**********************************************************************
