@@ -1,0 +1,28 @@
+--- Makefile.orig	Tue Jun  3 14:56:23 2003
++++ Makefile	Tue Jun  3 14:58:39 2003
+@@ -1,19 +1,19 @@
+ TARGET=wmDeskGuide
+ SRC= gstc.c gwmh.c gwmthumbnail.c gwmdesktop.c gwmtaskview.c deskguide_applet.c
+ OBJ= gstc.o gwmh.o gwmthumbnail.o gwmdesktop.o gwmtaskview.o deskguide_applet.o
+-INCLUDES= -I. `gnome-config gnomeui gnome --cflags` `gdk-pixbuf-config --cflags` -I/usr/X11/include
+-CFLAGS=-Wall -O2 -c
++INCLUDES= -I. `${GNOME_CONFIG} gnomeui gnome --cflags` `${GDK_PIXBUF_CONFIG} --cflags` -I${X11BASE}/include
++#CFLAGS=-Wall -O2 -c
+ HDR= pixmaps.h gstc.h gwmh.h gwmdesktop.h gwmtaskview.h gwmthumbnail.h deskguide_applet.h config.h
+-CPFLAGS=-Wall -O2 
+-LIBS=`gnome-config gnomeui gnome --libs` `gdk-pixbuf-config --libs`
++#CPFLAGS=-Wall -O2 
++LIBS=`${GNOME_CONFIG} gnomeui gnome --libs` `${GDK_PIXBUF_CONFIG} --libs`
+ 
+ all: $(TARGET)
+ 
+ $(TARGET): $(OBJ)
+-	gcc $(CPFLAGS) -o $(TARGET) $(OBJ) $(LIBS)
++	${CC} $(CPFLAGS) -o $(TARGET) $(OBJ) $(LIBS)
+ 
+ %.o: %.c $(HDR)
+-	gcc $(CFLAGS) $(INCLUDES) -c $(*F).c 
++	${CC} $(CFLAGS) $(INCLUDES) -c $(*F).c 
+ 
+ 
+ EXTRA_DIST = \

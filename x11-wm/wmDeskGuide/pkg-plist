@@ -1,0 +1,3 @@
+bin/wmDeskGuide
+%%PORTDOCS%%share/doc/wmDeskGuide/README
+%%PORTDOCS%%@dirrm share/doc/wmDeskGuide
