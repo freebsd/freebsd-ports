@@ -11,6 +11,7 @@ PORTVERSION=	0.9.7
 PORTREVISION!=	date -v-1d +%Y%m%d
 .else
 PORTVERSION=	0.9.7d
+PORTREVISION=	1
 .endif
 CATEGORIES=	security devel
 MASTER_SITES=	http://www.openssl.org/%SUBDIR%/ \
