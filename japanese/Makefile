@@ -275,6 +275,7 @@
     SUBDIR += onew-wnn6
     SUBDIR += onew-wnn7
     SUBDIR += openoffice
+    SUBDIR += otojiro-fpw
     SUBDIR += p5-Date-Japanese-Era
     SUBDIR += p5-Jcode
     SUBDIR += p5-Text-ChaSen
