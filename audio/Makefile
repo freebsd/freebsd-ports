@@ -69,8 +69,9 @@
     SUBDIR += timidity++
     SUBDIR += timidity++-emacs
     SUBDIR += timidity++-gtk
-    SUBDIR += timidity++-slang
     SUBDIR += timidity++-motif
+    SUBDIR += timidity++-slang
+    SUBDIR += timidity++-tcltk
     SUBDIR += timidity++-xaw
     SUBDIR += timidity++-xskin
     SUBDIR += tosha
