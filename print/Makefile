@@ -22,6 +22,7 @@
     SUBDIR += c2ps-letter
     SUBDIR += cdlabelgen
     SUBDIR += cjk-lyx
+    SUBDIR += clibpdf
     SUBDIR += cmpsfont
     SUBDIR += detex
     SUBDIR += dvi2tty

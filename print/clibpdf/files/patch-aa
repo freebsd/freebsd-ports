@@ -1,0 +1,22 @@
+--- Makefile.FreeBSD.orig	Sun Nov 21 14:54:44 1999
++++ Makefile.FreeBSD	Tue Aug 22 22:23:03 2000
+@@ -1,8 +1,8 @@
+ # Makefile for ClibPDF library - FreeBSD/gcc
+ # make lib; make install    OR   make shlib; make shinstall
+ 
+-LIB_FILE=libcpdfm.a
+-SHLIB_FILE=libcpdfm.sl
++LIB_FILE=libcpdf.a
++SHLIB_FILE=libcpdf.so
+ # LIB_FILE=libcpdfpm.a
+ # SHLIB_FILE=libcpdfpm.sl
+ 
+@@ -75,7 +75,7 @@
+ 
+ $(SHLIB_FILE):  $(OBJS) $(POBJS) $(ZOBJS) Makefile
+ 	rm -f $(SHLIB_FILE)
+-	ld -b -o $(SHLIB_FILE) $(OBJS) $(POBJS) $(ZOBJS)
++	ld -shared -o $(SHLIB_FILE) $(OBJS) $(POBJS) $(ZOBJS)
+ 
+ install: lib
+ #	mkdir -p $(LIB_DIR)

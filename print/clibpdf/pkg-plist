@@ -1,0 +1,98 @@
+include/cpdflib.h
+lib/libcpdf.a
+lib/libcpdf.so
+lib/libcpdf.so.%%SHLIB_VER%%
+share/examples/clibpdf/CJK/Chinese/cn-test.c
+share/examples/clibpdf/CJK/Chinese/monkey.txt
+share/examples/clibpdf/CJK/Japanese/jpntest.c
+share/examples/clibpdf/CJK/Korean/kr-test.c
+share/examples/clibpdf/Makefile.Cygwin
+share/examples/clibpdf/Makefile.irix62gcc
+share/examples/clibpdf/arc/Arcs.c
+share/examples/clibpdf/barcode/README.barcode
+share/examples/clibpdf/barcode/barcode.c
+share/examples/clibpdf/barcode/fontmap.lst
+share/examples/clibpdf/bezier/beziertest.c
+share/examples/clibpdf/blank/blank.c
+share/examples/clibpdf/charwidth/charwidth.c
+share/examples/clibpdf/cover/cover.c
+share/examples/clibpdf/cover/page2.txt
+share/examples/clibpdf/dash/dashtest.c
+share/examples/clibpdf/domain/DomainDemo.c
+share/examples/clibpdf/filltest/filltest.c
+share/examples/clibpdf/fontlist/fontlist.c
+share/examples/clibpdf/hello/helloworld.c
+share/examples/clibpdf/landscape/landscape.c
+share/examples/clibpdf/landscape/landscape2.c
+share/examples/clibpdf/linkpdfpage/linkembed.html
+share/examples/clibpdf/linkpdfpage/linkpdfpage.c
+share/examples/clibpdf/marker/MarkerTest.c
+share/examples/clibpdf/minimal/Minimal.c
+share/examples/clibpdf/outline/domain.pdf
+share/examples/clibpdf/outline/outline.c
+share/examples/clibpdf/pdfclock/pdfclock.c
+share/examples/clibpdf/shiplabel/image1.jpg
+share/examples/clibpdf/shiplabel/shiplabel.c
+share/examples/clibpdf/shiplabel/shiplabel.html
+share/examples/clibpdf/text/textalign.c
+share/examples/clibpdf/text2pdf/text2pdf.c
+share/examples/clibpdf/textbox/textMac.txt
+share/examples/clibpdf/textbox/textUnix.txt
+share/examples/clibpdf/textbox/textWindows.txt
+share/examples/clibpdf/textbox/textbox.c
+share/examples/clibpdf/textboxfit/textboxfit.c
+share/examples/clibpdf/timeaxis/timeaxis.c
+share/examples/clibpdf/unicode/annotcr.txt
+share/examples/clibpdf/unicode/annotcr.u16
+share/examples/clibpdf/unicode/content1.txt
+share/examples/clibpdf/unicode/content1.u16
+share/examples/clibpdf/unicode/hex.c
+share/examples/clibpdf/unicode/shiori1.txt
+share/examples/clibpdf/unicode/shiori1.u16
+share/examples/clibpdf/unicode/shiori2.txt
+share/examples/clibpdf/unicode/shiori2.u16
+share/examples/clibpdf/unicode/title.txt
+share/examples/clibpdf/unicode/title.u16
+share/examples/clibpdf/unicode/unicode.c
+share/examples/clibpdf/weather/OAK.wdat
+share/examples/clibpdf/weather/weather.c
+share/examples/clibpdf/weather/weatherj.c
+@dirrm share/examples/clibpdf/CJK/Chinese
+@dirrm share/examples/clibpdf/CJK/Japanese
+@dirrm share/examples/clibpdf/CJK/Korean
+@dirrm share/examples/clibpdf/CJK
+@dirrm share/examples/clibpdf/arc
+@dirrm share/examples/clibpdf/barcode
+@dirrm share/examples/clibpdf/bezier
+@dirrm share/examples/clibpdf/blank
+@dirrm share/examples/clibpdf/charwidth
+@dirrm share/examples/clibpdf/cover
+@dirrm share/examples/clibpdf/dash
+@dirrm share/examples/clibpdf/domain
+@dirrm share/examples/clibpdf/filltest
+@dirrm share/examples/clibpdf/fontlist
+@dirrm share/examples/clibpdf/hello
+@dirrm share/examples/clibpdf/landscape
+@dirrm share/examples/clibpdf/linkpdfpage
+@dirrm share/examples/clibpdf/marker
+@dirrm share/examples/clibpdf/minimal
+@dirrm share/examples/clibpdf/outline
+@dirrm share/examples/clibpdf/pdfclock
+@dirrm share/examples/clibpdf/shiplabel
+@dirrm share/examples/clibpdf/text
+@dirrm share/examples/clibpdf/text2pdf
+@dirrm share/examples/clibpdf/textbox
+@dirrm share/examples/clibpdf/textboxfit
+@dirrm share/examples/clibpdf/timeaxis
+@dirrm share/examples/clibpdf/unicode
+@dirrm share/examples/clibpdf/weather
+@dirrm share/examples/clibpdf
+share/doc/clibpdf/BenchMarks.txt
+share/doc/clibpdf/ClibPDF-FAQ.txt
+share/doc/clibpdf/FormIssues.txt
+share/doc/clibpdf/cpdfAdd202.pdf
+share/doc/clibpdf/cpdfman200.pdf
+share/doc/clibpdf/usingMemStream.txt
+share/doc/clibpdf/LICENSE.pdf
+share/doc/clibpdf/LICENSEP.pdf
+@dirrm share/doc/clibpdf
