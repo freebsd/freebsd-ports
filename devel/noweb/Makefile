@@ -1,14 +1,14 @@
 # New ports collection makefile for:	noweb
-# Version required:	noweb-2.7a
+# Version required:	noweb-2.7d
 # Date created:		29 July 1995
 # Whom:			thomas@ghpc8.ihf.rwth-aachen.de
 #
 # $Id: Makefile,v 1.4 1995/11/26 11:29:17 asami Exp $
 #
 
-DISTNAME=	noweb-2.7a
+DISTNAME=	noweb-2.7d
 CATEGORIES+=	devel
-MASTER_SITES=	ftp://bellcore.com/pub/norman/
+MASTER_SITES=	ftp://ftp.cs.purdue.edu/pub/nr/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	thomas@ghpc8.ihf.rwth-aachen.de
@@ -20,7 +20,7 @@ WRKSRC=		${WRKDIR}/src
 
 .if !defined(NOMANCOMPRESS)
 post-install:
-	for i in nodefs noindex noroots notangle noweb cpif sl2h nowebstyle nuweb2noweb nowebfilters; \
+	for i in htmltoc nodefs noindex noroots notangle noweb cpif sl2h nowebstyle nuweb2noweb nowebfilters; \
 	do \
 		gzip -9nf ${PREFIX}/man/man1/$$i.1; \
 	done
