@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	soundtracker
-PORTVERSION=	0.6.6
+PORTVERSION=	0.6.7
 CATEGORIES=	audio gnome
 MASTER_SITES=	http://www.soundtracker.org/dl/%SUBDIR%/
 MASTER_SITE_SUBDIR=	v${PORTVERSION:R}
@@ -14,29 +14,24 @@ MASTER_SITE_SUBDIR=	v${PORTVERSION:R}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mod player/tracking tool which supports XM and MOD formats
 
+LIB_DEPENDS=	sndfile.1:${PORTSDIR}/audio/libsndfile
+
 USE_X_PREFIX=	yes
 WANT_GNOME=	yes
-USE_GNOME=	esound gdkpixbuf
-USE_REINPLACE=	yes
+USE_GNOME=	esound gdkpixbuf gnomehack gnometarget
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} > 500034
-CONFIGURE_ARGS+=	--disable-asm
-.endif
-
 .if ${HAVE_GNOME:Mgnomelibs}!=""
 PKGNAMESUFFIX=	-gnome
-USE_GNOME+=	gnomelibs gnomeprefix gnomehack
+USE_GNOME+=	gnomelibs gnomeprefix
 CONFIGURE_ARGS+=	--enable-gnome
-PLIST_SUB+=	DATADIR="share/gnome"
+DATADIR=	${PREFIX}/share/gnome/${PORTNAME}
 .else
 CONFIGURE_ARGS+=	--disable-gnome
-PLIST_SUB+=	DATADIR="share"
 .endif
 
 post-patch:
