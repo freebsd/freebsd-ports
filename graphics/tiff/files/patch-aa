@@ -17,12 +17,12 @@
 +FREEBSD_AOUTdso: ${OBJS}
 +	${LD} -Bshareable -x ${LIBDIR}/c++rt0.o -o libtiff.@DSOSUF_VERSION@ \
 +		${OBJS} @LIBJPEG@ @LIBGZ@
-+	@LN@ @LN_S@ libtiff.@DSOSUF_VERSION@ libtiff.@DSOSUF@
++	@LN@ -sf libtiff.@DSOSUF_VERSION@ libtiff.@DSOSUF@
 +	touch $@
 +FREEBSD_ELFdso: ${OBJS}
 +	${CC} -shared -Wl,-soname,libtiff.@DSOSUF_VERSION@ -o libtiff.@DSOSUF_VERSION@ \
 +		${OBJS} @LIBJPEG@ @LIBGZ@
-+	@LN@ @LN_S@ libtiff.@DSOSUF_VERSION@ libtiff.@DSOSUF@
++	@LN@ -sf libtiff.@DSOSUF_VERSION@ libtiff.@DSOSUF@
 +	touch $@
  
  ${OBJS}: ${SRCDIR}/tiffio.h ${SRCDIR}/tiff.h ${SRCDIR}/tif_dir.h
