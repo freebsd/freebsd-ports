@@ -3,10 +3,10 @@
 # Date created:			21 Sept 1996
 # Whom:				giffunip
 #
-# $Id: Makefile,v 1.6 1998/05/03 20:42:14 steve Exp $
+# $Id: Makefile,v 1.7 1998/10/13 23:51:41 jseger Exp $
 #
 
-DISTNAME=	cim-2.10
+DISTNAME=	cim-3.29
 CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.ifi.uio.no/pub/cim/  \
 		ftp://ftp.fenk.wau.nl/pub/lang/simula/compilers/cim/ \
@@ -14,9 +14,6 @@ MASTER_SITES=	ftp://ftp.ifi.uio.no/pub/cim/  \
 MASTER_SITE_SUBDIR=	devel/lang/simula
 
 MAINTAINER=	ports@FreeBSD.ORG
-
-
-BROKEN_ELF=	bad library version number
 
 GNU_CONFIGURE= 	yes
 MAN1=		cim.1
