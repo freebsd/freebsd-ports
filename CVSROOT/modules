@@ -8432,6 +8432,7 @@ whitespace.el	ports/textproc/whitespace.el
 who		src/usr.bin/who
 whois		src/usr.bin/whois
 whowatch	ports/sysutils/whowatch
+whups		ports/devel/whups
 wicontrol	src/usr.sbin/wicontrol
 wide-dhcp	ports/net/wide-dhcp
 wily		ports/editors/wily
