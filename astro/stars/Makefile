@@ -17,10 +17,13 @@ MAINTAINER=	jseger@FreeBSD.org
 USE_X_PREFIX=	yes
 WRKSRC=		$(WRKDIR)/$(PKGNAME)
 
+CC?=		cc
+CFLAGS?=	-O2
+
 do-build:
-	cc -I$(PREFIX)/include -O2 -c $(WRKSRC)/xwin.c -o $(WRKSRC)/xwin.o
-	cc -I$(PREFIX)/include -O2 -c $(WRKSRC)/main.c -o $(WRKSRC)/main.o
-	cc $(WRKSRC)/main.o $(WRKSRC)/xwin.o -L$(PREFIX)/lib -lX11 -lm -o $(WRKSRC)/stars
+	$(CC) -I$(PREFIX)/include $(CFLAGS) -c $(WRKSRC)/xwin.c -o $(WRKSRC)/xwin.o
+	$(CC) -I$(PREFIX)/include $(CFLAGS) -c $(WRKSRC)/main.c -o $(WRKSRC)/main.o
+	$(CC) $(WRKSRC)/main.o $(WRKSRC)/xwin.o -L$(PREFIX)/lib -lX11 -lm -o $(WRKSRC)/stars
 
 do-install:
 	$(INSTALL_PROGRAM) $(WRKSRC)/stars $(PREFIX)/bin/stars
