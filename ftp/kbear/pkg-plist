@@ -87,8 +87,10 @@ lib/kde3/libkbearlocalfilesyspart.so
 lib/kde3/libkbearremotefilesyspart.la
 lib/kde3/libkbearremotefilesyspart.so
 lib/libkbearcore.la
+lib/libkbearcore.so
 lib/libkbearcore.so.3
 lib/libkbearqextmdi.la
+lib/libkbearqextmdi.so
 lib/libkbearqextmdi.so.3
 share/applnk/Internet/kbear.desktop
 share/apps/kbear/detailview_thumb.jpg
@@ -193,6 +195,7 @@ share/servicetypes/kbearsiteimportfilterplugin.desktop
 @dirrm share/doc/HTML/cs/kbear
 @dirrm share/apps/kbearfilediff
 @dirrm share/apps/kbearlocalfilesyspart
+@dirrm share/apps/kbearrecentconnections
 @dirrm share/apps/kbearremotefilesyspart
 @dirrm share/apps/kbearsitemanager
 @dirrm share/apps/kbearsystemtraydock
