@@ -1509,6 +1509,7 @@ echat		ports/net/echat
 echolot		ports/net/echolot
 echoping	ports/net/echoping
 eclipse		ports/java/eclipse
+eclipse-emf	ports/java/eclipse-emf
 eclipse-examples	ports/java/eclipse-examples
 eclipse-gef	ports/java/eclipse-gef
 eclipse-gef-examples	ports/java/eclipse-gef-examples
