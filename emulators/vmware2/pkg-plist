@@ -119,7 +119,7 @@ share/doc/vmware/SAMBA-LICENSE
 @exec chmod 666 %%LINUXBASE%%/dev/null
 @exec mknod %%LINUXBASE%%/dev/hda b 0 0x00010002
 @exec mknod %%LINUXBASE%%/dev/hdb b 0 0x0001000a
-@exec ln -s %D/etc/vmware /etc/vmware
+@exec ln -sf %D/etc/vmware /etc/
 @exec mknod %%LINUXBASE%%/dev/vmmon c 200 0
 @exec mknod %%LINUXBASE%%/dev/vmnet1 c 149 65537
 @unexec rm -f /etc/vmware %%LINUXBASE%%/dev/vmmon %%LINUXBASE%%/dev/vmnet1 %%LINUXBASE%%/bin/df %%LINUXBASE%%/dev/tty[0-9]* %%LINUXBASE%%/dev/hd? %%LINUXBASE%%/dev/null
