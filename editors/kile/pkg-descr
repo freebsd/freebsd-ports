@@ -2,11 +2,11 @@ Kile (f/k/a Ktexmaker2) is a LaTeX source editor,
 TeX shell and GnuPlot frontend. It is not (and will
 never be) a WYSIWYG (what you see is what you get)
 interface for LaTeX; instead, its aim is to simplify
-the edition of LaTeX source code and the use of the
+editing LaTeX source code and the use of
 LaTeX-related programs for users who want to retain
 control over their LaTeX documents.
 
-WWW: http://soliton.science.uva.nl/~wijnhout/Kite/
+WWW: http://kile.sourceforge.net
 
 - Stefan Jahn
 stefan.jahn@nemesis-sektor.de

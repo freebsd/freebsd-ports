@@ -1,20 +1,5 @@
 bin/kile
 share/applnk/Applications/kile.desktop
-share/apps/kile/doc/doc1.png
-share/apps/kile/doc/doc10.png
-share/apps/kile/doc/doc11.png
-share/apps/kile/doc/doc12.png
-share/apps/kile/doc/doc2.png
-share/apps/kile/doc/doc3.png
-share/apps/kile/doc/doc4.png
-share/apps/kile/doc/doc5.png
-share/apps/kile/doc/doc6.png
-share/apps/kile/doc/doc7.png
-share/apps/kile/doc/doc8.png
-share/apps/kile/doc/doc9.png
-share/apps/kile/doc/latexhelp.html
-share/apps/kile/doc/logo.png
-share/apps/kile/doc/usermanual.html
 share/apps/kile/kileui.rc
 share/apps/kile/mathsymbols/img1.png
 share/apps/kile/mathsymbols/img10.png
@@ -439,7 +424,6 @@ share/apps/kile/pics/dot.png
 share/apps/kile/pics/dvipdf.png
 share/apps/kile/pics/dvips.png
 share/apps/kile/pics/dvisearch.png
-share/apps/kile/pics/empty.png
 share/apps/kile/pics/enumerate.png
 share/apps/kile/pics/errornext.png
 share/apps/kile/pics/errorprev.png
@@ -449,6 +433,7 @@ share/apps/kile/pics/include.png
 share/apps/kile/pics/indice.png
 share/apps/kile/pics/item.png
 share/apps/kile/pics/itemize.png
+share/apps/kile/pics/kile_splash.png
 share/apps/kile/pics/l2h.png
 share/apps/kile/pics/latex.png
 share/apps/kile/pics/master.png
@@ -461,6 +446,7 @@ share/apps/kile/pics/mathmode.png
 share/apps/kile/pics/metapost.png
 share/apps/kile/pics/modified.png
 share/apps/kile/pics/newline.png
+share/apps/kile/pics/output_win.png
 share/apps/kile/pics/part.png
 share/apps/kile/pics/ps2pdf.png
 share/apps/kile/pics/puissance.png
@@ -472,6 +458,13 @@ share/apps/kile/pics/structure.png
 share/apps/kile/pics/subsection.png
 share/apps/kile/pics/subsubsection.png
 share/apps/kile/pics/tilde.png
+share/apps/kile/pics/type_Article.png
+share/apps/kile/pics/type_Book.png
+share/apps/kile/pics/type_Default.png
+share/apps/kile/pics/type_Empty.png
+share/apps/kile/pics/type_Letter.png
+share/apps/kile/pics/type_Project.png
+share/apps/kile/pics/type_Report.png
 share/apps/kile/pics/vec.png
 share/apps/kile/pics/viewdvi.png
 share/apps/kile/pics/viewhtml.png
@@ -481,13 +474,48 @@ share/apps/kile/pics/viewps.png
 share/apps/kile/pics/watchfile.png
 share/apps/kile/pics/xfig.png
 share/apps/kile/pics/xgfe.png
-share/doc/HTML/en/kile/index.html
+share/apps/kile/templates/template_Article.tex
+share/apps/kile/templates/template_Book.tex
+share/apps/kile/templates/template_Letter.tex
+share/apps/kile/templates/template_Report.tex
+share/doc/HTML/en/kile/TODO
+share/doc/HTML/en/kile/common
+share/doc/HTML/en/kile/doc1.png
+share/doc/HTML/en/kile/doc10.png
+share/doc/HTML/en/kile/doc11.png
+share/doc/HTML/en/kile/doc12.png
+share/doc/HTML/en/kile/doc2.png
+share/doc/HTML/en/kile/doc3.png
+share/doc/HTML/en/kile/doc4.png
+share/doc/HTML/en/kile/doc5.png
+share/doc/HTML/en/kile/doc6.png
+share/doc/HTML/en/kile/doc7.png
+share/doc/HTML/en/kile/doc8.png
+share/doc/HTML/en/kile/doc9.png
+share/doc/HTML/en/kile/enc1.png
+share/doc/HTML/en/kile/index.cache.bz2
+share/doc/HTML/en/kile/index.docbook
+share/doc/HTML/sv/kile/common
+share/doc/HTML/sv/kile/doc1.png
+share/doc/HTML/sv/kile/doc10.png
+share/doc/HTML/sv/kile/doc11.png
+share/doc/HTML/sv/kile/doc12.png
+share/doc/HTML/sv/kile/doc2.png
+share/doc/HTML/sv/kile/doc3.png
+share/doc/HTML/sv/kile/doc5.png
+share/doc/HTML/sv/kile/doc6.png
+share/doc/HTML/sv/kile/doc9.png
+share/doc/HTML/sv/kile/enc1.png
+share/doc/HTML/sv/kile/index.cache.bz2
+share/doc/HTML/sv/kile/index.docbook
 share/icons/hicolor/16x16/apps/kile.png
 share/icons/hicolor/22x22/apps/kile.png
 share/icons/hicolor/32x32/apps/kile.png
 share/icons/hicolor/48x48/apps/kile.png
+share/locale/bg/LC_MESSAGES/kile.mo
 share/locale/ca/LC_MESSAGES/kile.mo
 share/locale/cs/LC_MESSAGES/kile.mo
+share/locale/da/LC_MESSAGES/kile.mo
 share/locale/de/LC_MESSAGES/kile.mo
 share/locale/el/LC_MESSAGES/kile.mo
 share/locale/es/LC_MESSAGES/kile.mo
@@ -497,13 +525,72 @@ share/locale/hu/LC_MESSAGES/kile.mo
 share/locale/it/LC_MESSAGES/kile.mo
 share/locale/ja/LC_MESSAGES/kile.mo
 share/locale/nl/LC_MESSAGES/kile.mo
+share/locale/pt/LC_MESSAGES/kile.mo
 share/locale/pt_BR/LC_MESSAGES/kile.mo
 share/locale/ru/LC_MESSAGES/kile.mo
 share/locale/sk/LC_MESSAGES/kile.mo
-share/locale/zh_CN.GB2312/LC_MESSAGES/kile.mo
-share/locale/zh_TW.Big5/LC_MESSAGES/kile.mo
+share/locale/sv/LC_MESSAGES/kile.mo
+share/locale/tr/LC_MESSAGES/kile.mo
+@unexec rmdir %D/share/nls/en_US.US-ASCII 2>/dev/null || true
+@unexec rmdir %D/share/nls/POSIX 2>/dev/null || true
+@unexec rmdir %D/share/locale/tr/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/tr 2>/dev/null || true
+@unexec rmdir %D/share/locale/sv/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/sv 2>/dev/null || true
+@unexec rmdir %D/share/locale/sk/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/sk 2>/dev/null || true
+@unexec rmdir %D/share/locale/ru/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/ru 2>/dev/null || true
+@unexec rmdir %D/share/locale/pt_BR/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/pt_BR 2>/dev/null || true
+@unexec rmdir %D/share/locale/pt/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/pt 2>/dev/null || true
+@unexec rmdir %D/share/locale/nl/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/nl 2>/dev/null || true
+@unexec rmdir %D/share/locale/ja/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/ja 2>/dev/null || true
+@unexec rmdir %D/share/locale/it/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/it 2>/dev/null || true
+@unexec rmdir %D/share/locale/hu/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/hu 2>/dev/null || true
+@unexec rmdir %D/share/locale/fr/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/fr 2>/dev/null || true
+@unexec rmdir %D/share/locale/eu/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/eu 2>/dev/null || true
+@unexec rmdir %D/share/locale/es/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/es 2>/dev/null || true
+@unexec rmdir %D/share/locale/el/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/el 2>/dev/null || true
+@unexec rmdir %D/share/locale/de/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/de 2>/dev/null || true
+@unexec rmdir %D/share/locale/da/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/da 2>/dev/null || true
+@unexec rmdir %D/share/locale/cs/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/cs 2>/dev/null || true
+@unexec rmdir %D/share/locale/ca/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/ca 2>/dev/null || true
+@unexec rmdir %D/share/locale/bg/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/bg 2>/dev/null || true
+@unexec rmdir %D/share/locale 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/48x48/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/48x48 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/32x32/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/32x32 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/22x22/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/22x22 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/16x16/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/16x16 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor 2>/dev/null || true
+@unexec rmdir %D/share/icons 2>/dev/null || true
+@dirrm share/doc/HTML/sv/kile
+@unexec rmdir %D/share/doc/HTML/sv 2>/dev/null || true
 @dirrm share/doc/HTML/en/kile
+@unexec rmdir %D/share/doc/HTML/en 2>/dev/null || true
+@unexec rmdir %D/share/doc/HTML 2>/dev/null || true
+@dirrm share/apps/kile/templates
 @dirrm share/apps/kile/pics
 @dirrm share/apps/kile/mathsymbols
-@dirrm share/apps/kile/doc
 @dirrm share/apps/kile
+@unexec rmdir %D/share/apps 2>/dev/null || true
+@unexec rmdir %D/share/applnk/Applications 2>/dev/null || true
+@unexec rmdir %D/share/applnk 2>/dev/null || true

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	kile
-PORTVERSION=	1.5
+PORTVERSION=	1.5.2
 CATEGORIES=	editors kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=stable/apps/KDE3.x/office
@@ -19,7 +19,11 @@ RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX
 USE_KDELIBS_VER=3
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+USE_REINPLACE=	yes
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/x11/kde3/Makefile.kde"
-.include <bsd.port.post.mk>
+CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+
+post-extract:
+	@${REINPLACE_CMD} -e 's|-pedantic ||g' ${WRKSRC}/configure
+
+.include <bsd.port.mk>
