@@ -113,7 +113,6 @@ EXTRA_PATCHES+=		${FILESDIR}/extrapatch-Makefile.in
 
 CONFIGURE_ARGS+=	--localstatedir=${LOCALSTATEDIR} \
 			--enable-ldbm \
-			--with-ldbm-api=berkeley \
 			--enable-crypt \
 			--enable-lmpasswd \
 			--enable-ldap \
@@ -123,6 +122,12 @@ CONFIGURE_ARGS+=	--localstatedir=${LOCALSTATEDIR} \
 			--enable-monitor
 
 WITH_BDB_VER?=		42
+
+.if defined(WITHOUT_BDB)
+CONFIGURE_ARGS+=	--with-ldbm-api=bcompat \
+			--disable-bdb
+.else
+CONFIGURE_ARGS+=	--with-ldbm-api=berkeley
 
 .if ${WITH_BDB_VER} == 42
 LIB_DEPENDS+=		db-4.2.2:${PORTSDIR}/databases/db42
@@ -145,6 +150,7 @@ LIBS+=			-ldb-4.2
 LIBS+=			-ldb${WITH_BDB_VER}
 .endif
 CPPFLAGS+=		-I${LOCALBASE}/include/db${WITH_BDB_VER}
+.endif
 
 .if defined(WITH_SHELL)
 CONFIGURE_ARGS+=	--enable-shell
@@ -238,6 +244,7 @@ pre-everything::
 	@${ECHO} "WITH_ODBC_TYPE        select ODBC interface (iODBC or unixODBC)"
 	@${ECHO} "WITH_SLAPI            with Netscape SLAPI plugin API
 	@${ECHO} "WITHOUT_TCP_WRAPPERS  without tcp wrapper support"
+	@${ECHO} "WITHOUT_BDB           without BerkeleyDB support"
 .endif
 	@${ECHO}
 	@${ECHO} "============================================================="
