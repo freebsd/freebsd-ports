@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 #
-# This port recognizes the following non-binary tunables:
+# This port recognizes the following non-boolean tunables:
 #
 # WITH_RUNAS_USER:
 #	Whe building with "WITH_SERVER" defined, the username of the
@@ -17,7 +17,7 @@
 #
 
 PORTNAME=	samhain
-PORTVERSION=	1.8.10b
+PORTVERSION=	1.8.11
 CATEGORIES=	security
 MASTER_SITES=	http://la-samhna.de/archive/ \
 		http://cold.darkambient.net/
@@ -26,7 +26,7 @@ DISTFILES=	samhain_signed-${PORTVERSION}.tar.gz
 MAINTAINER=	lx@redundancy.redundancy.org
 COMMENT=	The Samhain Intrusion Detection System
 
-OPTIONS=	KCHECK "Enable rogue KLD detection" on \
+OPTIONS=	KCHECK "Enable rogue KLD detection" off \
 		GPG "Enable GnuPG support" off \
 		MYSQL "Enable MySQL logging" off \
 		POSTGRESQL "Enable PostgreSQL logging" off \
@@ -115,9 +115,9 @@ pre-everything::
 
 .if !defined(WITHOUT_KCHECK)
 	@${ECHO_MSG}
-	@${ECHO_MSG} "Building with kernel checking requires reading /dev/kmem."
-	@${ECHO_MSG} "If you're not building as root, please hit Control-C and"
-	@${ECHO_MSG} "restart the build as root."
+	@${ECHO_MSG} "Building with kernel checking requires reading /dev/kmem"
+	@${ECHO_MSG} "and /dev/mem. If you're not building as root, please hit 
+	@${ECHO_MSG} "Control-C and restart the build as root."
 	@${ECHO_MSG}
 .endif
 
