@@ -959,6 +959,7 @@ clo++		ports/devel/clo++
 clockspeed	ports/sysutils/clockspeed
 clockspeed-conf	ports/sysutils/clockspeed-conf
 clog		ports/net/clog
+cloop-utils	ports/sysutils/cloop-utils
 clustalw	ports/biology/clustalw
 clusterit	ports/net/clusterit
 cmail		ports/mail/cmail
