@@ -6,9 +6,10 @@
 #
 
 PORTNAME=		kgamma
-PORTVERSION=		0.9.2
+PORTVERSION=		0.9.9.p.1
 CATEGORIES=		x11 kde
 MASTER_SITES=		http://download.berlios.de/kgamma/
+DISTNAME=		${PORTNAME}-${PORTVERSION:S/.p./_pre/}
 
 MAINTAINER=		arved@FreeBSD.org
 
