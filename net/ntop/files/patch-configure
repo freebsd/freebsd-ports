@@ -1,0 +1,11 @@
+--- configure.orig	Sat Nov 22 13:54:32 2003
++++ configure	Sat Nov 22 13:54:48 2003
+@@ -14711,7 +14711,7 @@
+ 
+ 
+ 
+-for ac_header in sched.h sys/sched.h
++for ac_header in sched.h
+ do
+ as_ac_Header=`echo "ac_cv_header_$ac_header" | $as_tr_sh`
+ if eval "test \"\${$as_ac_Header+set}\" = set"; then
