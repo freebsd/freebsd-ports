@@ -1,0 +1,31 @@
+bin/txt2tags
+%%PORTDOCS%%share/doc/txt2tags/ChangeLog.txt
+%%PORTDOCS%%share/doc/txt2tags/README.html
+%%PORTDOCS%%share/doc/txt2tags/README.txt
+%%PORTDOCS%%share/doc/txt2tags/RULES
+%%PORTDOCS%%share/doc/txt2tags/TODO
+%%PORTDOCS%%share/doc/txt2tags/userguide.html
+%%PORTDOCS%%share/doc/txt2tags/userguide.t2t
+%%PORTDOCS%%share/examples/txt2tags/abuseme.html
+%%PORTDOCS%%share/examples/txt2tags/abuseme.t2t
+%%PORTDOCS%%share/examples/txt2tags/photo.jpg
+%%PORTDOCS%%share/examples/txt2tags/pwrbytxt2tags-1.png
+%%PORTDOCS%%share/examples/txt2tags/pwrbytxt2tags-2.png
+%%PORTDOCS%%share/examples/txt2tags/sample.html
+%%PORTDOCS%%share/examples/txt2tags/sample.man
+%%PORTDOCS%%share/examples/txt2tags/sample.mgp
+%%PORTDOCS%%share/examples/txt2tags/sample.moin
+%%PORTDOCS%%share/examples/txt2tags/sample.pm6
+%%PORTDOCS%%share/examples/txt2tags/sample.sgml
+%%PORTDOCS%%share/examples/txt2tags/sample.t2t
+%%PORTDOCS%%share/examples/txt2tags/sample.tex
+%%PORTDOCS%%share/examples/txt2tags/sample.txt
+%%PORTDOCS%%share/txt2tags/pagemaker.vim
+%%PORTDOCS%%share/txt2tags/txt2tags-mode.el
+%%PORTDOCS%%share/txt2tags/txt2tags-reverse_title.patch
+%%PORTDOCS%%share/txt2tags/txt2tags.php
+%%PORTDOCS%%share/txt2tags/txt2tags.vim
+%%PORTDOCS%%share/txt2tags/unhtml.vim
+%%PORTDOCS%%@dirrm share/txt2tags
+%%PORTDOCS%%@dirrm share/examples/txt2tags
+%%PORTDOCS%%@dirrm share/doc/txt2tags
