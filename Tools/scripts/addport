@@ -234,8 +234,8 @@ foreach my $thisdir (@dirs) {
 		# Read COMMENT for part of the commit message.
 		chomp($pkgcomment = `$make $passenv -V COMMENT`);
 		# Change the first character to lowercase to make it fit with the
-		# rest of the commit message.
-		$pkgcomment =~ s/(^.)/\l$1/;
+		# rest of the commit message, only if the second is not upper case.
+		$pkgcomment =~ s/(^.)(?![A-Z])/\l$1/;
 		# Read Makefile to find necessary variables.
 		open(MAKEFILE, "Makefile") or die("Can't open Makefile for reading: $!");
 		while(<MAKEFILE>) {
