@@ -28,6 +28,7 @@
     SUBDIR += fxtv
     SUBDIR += g2
     SUBDIR += gd
+    SUBDIR += gdk-pixbuf
     SUBDIR += geomview
     SUBDIR += gfont
     SUBDIR += gif2png
