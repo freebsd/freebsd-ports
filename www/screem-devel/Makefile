@@ -18,6 +18,7 @@ LIB_DEPENDS=	glade.3:${PORTSDIR}/devel/libglade
 LIBGLADE_CONFIG?=	${LOCALBASE}/bin/libglade-config
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+USE_LIBTOOL=	yes
 USE_X_PREFIX=	yes
 CONFIGURE_ENV=	GTK_CONFIG="${X11BASE}/bin/gtk12-config"
 CONFIGURE_ARGS=	--with-gnome=${PREFIX}/include --prefix=${PREFIX} \
