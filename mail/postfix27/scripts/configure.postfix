@@ -1,5 +1,5 @@
 #!/bin/sh
-# $FreeBSD: /tmp/pcvs/ports/mail/postfix27/scripts/Attic/configure.postfix,v 1.33 2003-05-12 21:02:53 obraun Exp $
+# $FreeBSD: /tmp/pcvs/ports/mail/postfix27/scripts/Attic/configure.postfix,v 1.34 2003-06-02 15:32:39 naddy Exp $
 
 if [ -f ${WRKDIRPREFIX}${CURDIR}/Makefile.inc ]; then
 	exit
@@ -29,7 +29,8 @@ DB3		"Berkeley DB3 (required if SASL also built with DB3)" "$status_DB3" \
 DB40		"Berkeley DB4.0 (required if SASL also built with DB4.0)" "$status_DB40" \
 DB41		"Berkeley DB4.1 (required if SASL also built with DB4.1)" "$status_DB41" \
 MySQL		"MySQL map lookups" "$status_MySQL" \
-PgSQL		"PostgreSQL map lookups" "$status_PgSQL" \
+PgSQL		"PostgreSQL v7.3 map lookups" "$status_PgSQL" \
+PgSQL72		"PostgreSQL v7.2 map lookups" "$status_PgSQL72" \
 OpenLDAP12	"OpenLDAP 1.2 map lookups" "$status_OpenLDAP" \
 OpenLDAP20	"OpenLDAP 2.0 map lookups" "$status_OpenLDAP" \
 OpenLDAP21	"OpenLDAP 2.1 map lookups" "$status_OpenLDAP" \
@@ -163,6 +164,16 @@ while [ "$1" ]; do
 		PgSQL)
 			echo "POSTGRESQL_PORT?=	databases/postgresql7"
 			echo "LIB_DEPENDS+=	pq.3:\${PORTSDIR}/\${POSTGRESQL_PORT}"
+			echo "POSTFIX_CCARGS+=	-DHAS_PGSQL -I\${LOCALBASE}/include  -I\${LOCALBASE}/pgsql/include"
+			echo "POSTFIX_AUXLIBS+=	-L\${LOCALBASE}/lib -L\${LOCALBASE}/pgsql/lib -lpq -lcrypt"
+			echo "PATCH_SITES+=	http://mat.cc/postfix/"
+			echo "PATCHFILES+=	postfix-pg.postfix-2.0.0.2.patch"
+			echo "PATCH_DIST_STRIP= -p1"
+			echo "PGSQL_SUFFIX=	+pgsql"
+			;;
+		PgSQL72)
+			echo "POSTGRESQL_PORT?=	databases/postgresql72"
+			echo "LIB_DEPENDS+=	pq.2:\${PORTSDIR}/\${POSTGRESQL_PORT}"
 			echo "POSTFIX_CCARGS+=	-DHAS_PGSQL -I\${LOCALBASE}/include  -I\${LOCALBASE}/pgsql/include"
 			echo "POSTFIX_AUXLIBS+=	-L\${LOCALBASE}/lib -L\${LOCALBASE}/pgsql/lib -lpq -lcrypt"
 			echo "PATCH_SITES+=	http://mat.cc/postfix/"
