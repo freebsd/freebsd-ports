@@ -1,0 +1,3 @@
+bin/gnoclip_applet
+etc/CORBA/servers/gnoclip.gnorba
+share/gnome/applets/Utility/gnoclip.desktop

@@ -34,6 +34,7 @@
     SUBDIR += gdkxft
     SUBDIR += gdm
     SUBDIR += gmessage
+    SUBDIR += gnoclip
     SUBDIR += gnome
     SUBDIR += gnome-fifth-toe
     SUBDIR += gnomeapplets

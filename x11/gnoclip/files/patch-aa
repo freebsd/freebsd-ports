@@ -1,0 +1,9 @@
+--- Makefile.orig	Tue Apr  9 02:17:21 2002
++++ Makefile	Wed Apr 10 18:26:50 2002
+@@ -1,5 +1,5 @@
+ gnoclip_applet: gnoclip_applet.c stph-0.5/stph.c screen_names.c properties.c xosd.c
+-	gcc -Wall -g `gnome-config --cflags applets` `gnome-config --libs applets` -I/usr/X11R6/include -L/usr/X11R6/lib -lX11 -lXext -lpthread -lXt -lm stph-0.5/stph.c gnoclip_applet.c screen_names.c properties.c xosd.c -o gnoclip_applet  
++	gcc $(CFLAGS) $(PTHREAD_CFLAGS) `gnome-config --cflags gnome` `gnome-config --libs gnome` `gnome-config --cflags applets` `gnome-config --libs applets` `orbit-config --cflags client` `orbit-config --libs client` -I/usr/X11R6/include -L/usr/X11R6/lib -lX11 -lXext  $(PTHREAD_LIBS) -lXt -lm stph-0.5/stph.c gnoclip_applet.c screen_names.c properties.c xosd.c -o gnoclip_applet  
+ install:
+ 	cp gnoclip_applet /usr/bin; cp gnoclip.desktop /usr/share/applets/Utility; cp gnoclip.gnorba /etc/CORBA/servers
+ uninstall:
