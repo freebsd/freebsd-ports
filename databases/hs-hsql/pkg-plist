@@ -1,7 +1,13 @@
-lib/HSsql.o
-lib/imports/Database/PostgreSQL/HSQL.hi
-lib/libHSsql.a
-%%PORTDOCS%%%%DOCSDIR%%/Database.PostgreSQL.HSQL.html
+lib/ghc-%%GHC_VERSION%%/HSsql.o
+lib/ghc-%%GHC_VERSION%%/imports/Database/HSQL/PostgreSQL.hi
+lib/ghc-%%GHC_VERSION%%/imports/Database/HSQL/Types.hi
+lib/ghc-%%GHC_VERSION%%/imports/Database/HSQL.hi
+lib/ghc-%%GHC_VERSION%%/libHSsql.a
+%%HUGS%%lib/hugs/libraries/Database/HSQL/PostgreSQL.hs
+%%HUGS%%lib/hugs/libraries/Database/HSQL/PostgreSQL.so
+%%HUGS%%lib/hugs/libraries/Database/HSQL/Types.hs
+%%HUGS%%lib/hugs/libraries/Database/HSQL.hs
+%%HUGS%%lib/hugs/libraries/Database/HSQL.so
 %%PORTDOCS%%%%DOCSDIR%%/doc-index-B.html
 %%PORTDOCS%%%%DOCSDIR%%/doc-index-C.html
 %%PORTDOCS%%%%DOCSDIR%%/doc-index-D.html
@@ -11,7 +17,6 @@ lib/libHSsql.a
 %%PORTDOCS%%%%DOCSDIR%%/doc-index-H.html
 %%PORTDOCS%%%%DOCSDIR%%/doc-index-I.html
 %%PORTDOCS%%%%DOCSDIR%%/doc-index-L.html
-%%PORTDOCS%%%%DOCSDIR%%/doc-index-M.html
 %%PORTDOCS%%%%DOCSDIR%%/doc-index-O.html
 %%PORTDOCS%%%%DOCSDIR%%/doc-index-P.html
 %%PORTDOCS%%%%DOCSDIR%%/doc-index-Q.html
@@ -21,11 +26,14 @@ lib/libHSsql.a
 %%PORTDOCS%%%%DOCSDIR%%/haddock.css
 %%PORTDOCS%%%%DOCSDIR%%/haskell_icon.gif
 %%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/Database.HSQL.PostgreSQL.html
+%%PORTDOCS%%%%DOCSDIR%%/Database.HSQL.html
 %%DATADIR%%/hsql.pkg
+@dirrm lib/ghc-%%GHC_VERSION%%/imports/Database/HSQL
+@dirrm lib/ghc-%%GHC_VERSION%%/imports/Database
+%%HUGS%%@dirrm lib/hugs/libraries/Database/HSQL
+%%HUGS%%@dirrm lib/hugs/libraries/Database
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm lib/imports/Database/PostgreSQL
-@dirrm lib/imports/Database
-@dirrm lib/imports
 @dirrm %%DATADIR%%
 @exec %D/bin/ghc-pkg -u -g -i %D/share/hsql/hsql.pkg
 @exec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
