@@ -699,6 +699,7 @@
     SUBDIR += siproxd
     SUBDIR += sipsak
     SUBDIR += sixxs-heartbeatd
+    SUBDIR += skstream
     SUBDIR += skype
     SUBDIR += sl2tps
     SUBDIR += slirp
