@@ -14,7 +14,7 @@ MASTER_SITES= 	ftp://ucd-snmp.ucdavis.edu/ \
 
 MAINTAINER=	billf@FreeBSD.org
 
-GNU_CONFIGURE=	YES
+USE_AUTOCONF=	YES
 CONFIGURE_ARGS+= --enable-shared
 .if defined(BATCH)
 CONFIGURE_ARGS+= --with-defaults --with-sys-contact=nobody@no.where
@@ -70,6 +70,5 @@ post-install:
 		${CHMOD} 751 ${STARTUP_FILE}; \
 	 fi
 	${SETENV} OBJFORMAT="${PORTOBJFORMAT}" ${LDCONFIG} -m ${PREFIX}/lib
-
 
 .include <bsd.port.post.mk>

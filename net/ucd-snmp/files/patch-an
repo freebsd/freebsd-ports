@@ -1,0 +1,12 @@
+--- agent/mibgroup/ucd-snmp/memory_freebsd2.c~	Tue Mar 14 06:27:00 2000
++++ agent/mibgroup/ucd-snmp/memory_freebsd2.c	Wed May 17 11:19:23 2000
+@@ -10,6 +10,9 @@
+ #include <sys/time.h>
+ #include <sys/proc.h>
+ #include <sys/dkstat.h>
++#ifdef freebsd5
++#include <sys/bio.h>
++#endif
+ #include <sys/buf.h>
+ #include <sys/uio.h>
+ #include <sys/namei.h>
