@@ -3,7 +3,7 @@
 # Date created:				September 10th 1997
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-# $Id: Makefile,v 1.4 1998/08/12 09:57:47 asami Exp $
+# $Id: Makefile,v 1.5 1998/09/15 21:31:33 asami Exp $
 #
 
 DISTNAME=	Data-ShowTable-3.3
@@ -15,6 +15,11 @@ MASTER_SITE_SUBDIR=	Data
 MAINTAINER=	jfitz@FreeBSD.ORG
 
 USE_PERL5=	YES
+
+OSVERSION!=     sysctl -n kern.osreldate
+.if ${OSVERSION} >= 300000
+BROKEN=         perl
+.endif
 
 MAN1=		showtable.1
 MAN3=		Data::ShowTable.3
