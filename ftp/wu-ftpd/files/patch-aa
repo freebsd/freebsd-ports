@@ -1,6 +1,5 @@
-----------------------------------------------------------
-*** src/ftpd.c.orig	Wed Apr 13 23:17:18 1994
---- src/ftpd.c	Fri Jan 13 01:26:40 1995
+*** src/ftpd.c.orig	Wed Apr 13 22:17:18 1994
+--- src/ftpd.c	Fri Jan 13 20:22:05 1995
 ***************
 *** 139,146 ****
    *freopen(const char *, const char *, FILE *);
@@ -24,43 +23,27 @@
   
 ***************
 *** 237,242 ****
---- 239,254 ----
+--- 239,250 ----
   
   #endif /* SETPROCTITLE */
   
 + #ifdef SKEY
-+ #include <skey.h>
 + int	pwok = 0;
-+ char	addr_string[20];
-+ /*
 + char	*skey_challenge();
 + char	*skey_crypt();
-+ */
 + #endif
 + 
   #ifdef KERBEROS
   void init_krb();
   void end_krb();
 ***************
-*** 279,284 ****
---- 291,299 ----
-          exit(1);
-  #endif
-      }
-+ #ifdef SKEY
-+     strcpy(addr_string, inet_ntoa(his_addr.sin_addr));
-+ #endif
-      addrlen = sizeof(ctrl_addr);
-      if (getsockname(0, (struct sockaddr *) &ctrl_addr, &addrlen) < 0) {
-          syslog(LOG_ERR, "getsockname (%s): %m", argv[0]);
-***************
 *** 878,884 ****
---- 893,904 ----
+--- 886,897 ----
       } else
           acl_setfunctions();
   
 + #ifdef SKEY
-+     pwok = skeyaccess(name, NULL, remotehost, addr_string);
++     pwok = skeyaccess(name, NULL, remotehost);
 +     reply(331, "%s", skey_challenge(name, pw, pwok));
 + #else
       reply(331, "Password required for %s.", name);
@@ -70,7 +53,7 @@
        * passwd-guessing programs. */
 ***************
 *** 1007,1014 ****
---- 1027,1039 ----
+--- 1020,1032 ----
   #ifdef KERBEROS
           xpasswd = crypt16(passwd, salt);
   #else
@@ -85,22 +68,75 @@
   #ifdef ULTRIX_AUTH
           if ((numfails = ultrix_check_pass(passwd, xpasswd)) < 0) {
 ***************
+*** 1095,1101 ****
+      (void) initgroups(pw->pw_name, pw->pw_gid);
+  
+      /* open wtmp before chroot */
+!     (void) sprintf(ttyline, "ftp%d", getpid());
+      logwtmp(ttyline, pw->pw_name, remotehost);
+      logged_in = 1;
+  
+--- 1113,1119 ----
+      (void) initgroups(pw->pw_name, pw->pw_gid);
+  
+      /* open wtmp before chroot */
+!     (void) sprintf(ttyline, "ftp%ld", getpid());
+      logwtmp(ttyline, pw->pw_name, remotehost);
+      logged_in = 1;
+  
+***************
 *** 1422,1428 ****
---- 1447,1457 ----
           for (loop = 0; namebuf[loop]; loop++)
               if (isspace(namebuf[loop]) || iscntrl(namebuf[loop]))
                   namebuf[loop] = '_';
-+ #if (defined(BSD) && (BSD >= 199306))
-+         sprintf(msg, "%.24s %d %s %qd %s %c %s %c %c %s ftp %d %s\n",
-+ #else
-          sprintf(msg, "%.24s %d %s %d %s %c %s %c %c %s ftp %d %s\n",
-+ #endif
+!         sprintf(msg, "%.24s %d %s %d %s %c %s %c %c %s ftp %d %s\n",
                   ctime(&curtime),
                   xfertime,
                   remotehost,
-diff -c -r src/realpath.c.orig src/realpath.c
-*** src/realpath.c.orig	Fri Apr  1 21:03:45 1994
---- src/realpath.c	Tue Oct 18 17:48:34 1994
+--- 1440,1446 ----
+          for (loop = 0; namebuf[loop]; loop++)
+              if (isspace(namebuf[loop]) || iscntrl(namebuf[loop]))
+                  namebuf[loop] = '_';
+!         sprintf(msg, "%.24s %d %s %qd %s %c %s %c %c %s ftp %d %s\n",
+                  ctime(&curtime),
+                  xfertime,
+                  remotehost,
+***************
+*** 1610,1616 ****
+          for (loop = 0; namebuf[loop]; loop++)
+              if (isspace(namebuf[loop]) || iscntrl(namebuf[loop]))
+                  namebuf[loop] = '_';
+!         sprintf(msg, "%.24s %d %s %d %s %c %s %c %c %s ftp %d %s\n",
+                  ctime(&curtime),
+                  xfertime,
+                  remotehost,
+--- 1628,1634 ----
+          for (loop = 0; namebuf[loop]; loop++)
+              if (isspace(namebuf[loop]) || iscntrl(namebuf[loop]))
+                  namebuf[loop] = '_';
+!         sprintf(msg, "%.24s %d %s %qd %s %c %s %c %c %s ftp %d %s\n",
+                  ctime(&curtime),
+                  xfertime,
+                  remotehost,
+***************
+*** 1699,1705 ****
+      file_size = size;
+      byte_count = 0;
+      if (size != (off_t) - 1)
+!         (void) sprintf(sizebuf, " (%ld bytes)", size);
+      else
+          (void) strcpy(sizebuf, "");
+      if (pdata >= 0) {
+--- 1717,1723 ----
+      file_size = size;
+      byte_count = 0;
+      if (size != (off_t) - 1)
+!         (void) sprintf(sizebuf, " (%qd bytes)", size);
+      else
+          (void) strcpy(sizebuf, "");
+      if (pdata >= 0) {
+*** src/realpath.c.orig	Fri Apr  1 20:03:45 1994
+--- src/realpath.c	Fri Jan 13 01:09:30 1995
 ***************
 *** 29,36 ****
 --- 29,39 ----
@@ -122,3 +158,39 @@ diff -c -r src/realpath.c.orig src/realpath.c
       return (result);
   }
 + #endif
+*** src/extensions.c.orig	Fri Jan 13 20:26:26 1995
+--- src/extensions.c	Fri Jan 13 20:29:39 1995
+***************
+*** 103,109 ****
+      if (st->st_mtime > newer_time) {
+          if (show_fullinfo != 0) {
+              if (flag == FTW_F || flag == FTW_D) {
+!                 fprintf(dout, "%s %d %d %s", flag == FTW_F ? "F" : "D",
+                          st->st_size, st->st_mtime, path);
+              }
+          } else if (flag == FTW_F)
+--- 103,109 ----
+      if (st->st_mtime > newer_time) {
+          if (show_fullinfo != 0) {
+              if (flag == FTW_F || flag == FTW_D) {
+!                 fprintf(dout, "%s %qd %ld %s", flag == FTW_F ? "F" : "D",
+                          st->st_size, st->st_mtime, path);
+              }
+          } else if (flag == FTW_F)
+***************
+*** 524,530 ****
+          if (fp == NULL)
+              return (0);
+          fgets(buf, sizeof(buf), fp);
+!         if (sscanf(buf, "%d %d %d %d %d %d %d", &tmbuf.tm_year, &tmbuf.tm_mon,
+          &tmbuf.tm_mday, &tmbuf.tm_hour, &tmbuf.tm_min, &deny, &disc) != 7) {
+              return (0);
+          }
+--- 524,530 ----
+          if (fp == NULL)
+              return (0);
+          fgets(buf, sizeof(buf), fp);
+!         if (sscanf(buf, "%d %d %d %d %d %ld %ld", &tmbuf.tm_year, &tmbuf.tm_mon,
+          &tmbuf.tm_mday, &tmbuf.tm_hour, &tmbuf.tm_min, &deny, &disc) != 7) {
+              return (0);
+          }
