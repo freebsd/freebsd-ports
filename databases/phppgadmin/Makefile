@@ -15,7 +15,11 @@ DISTNAME=	phpPgAdmin_${PORTVERSION:S/./-/g}
 MAINTAINER=	nbm@FreeBSD.org
 
 .if !defined(WITH_PHP3)
+if defined(WITH_APACHE2)
+RUN_DEPENDS+=	${LOCALBASE}/libexec/apache2/libphp4.so:${PORTSDIR}/www/mod_php4
+.else
 RUN_DEPENDS+=	${LOCALBASE}/libexec/apache/libphp4.so:${PORTSDIR}/www/mod_php4
+.endif
 .else
 RUN_DEPENDS+=	${LOCALBASE}/libexec/apache/libphp3.so:${PORTSDIR}/www/mod_php3
 .endif
