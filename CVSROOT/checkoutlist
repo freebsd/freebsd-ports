@@ -20,7 +20,6 @@ avail
 commit_prep.pl
 commitcheck
 cvs_acls.pl
-cvsedit
 cvswrappers
 exclude
 log_accum.pl

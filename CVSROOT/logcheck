@@ -18,10 +18,10 @@ $filename = $ARGV[0];
 $tmpfile = $filename . "tmp";
 
 open(IN, "< $filename") ||
-	die "cvsedit: Cannot open for reading: $filename: $!\n";
+	die "logcheck: Cannot open for reading: $filename: $!\n";
 
 open(OUT, "> $tmpfile") ||
-	die "cvsedit: Cannot open for writing: $tmpfile: $!\n";
+	die "logcheck: Cannot open for writing: $tmpfile: $!\n";
 
 # In-place edit the result of the user's edit on the file.
 $blank = 0;	# true if the last line was blank
@@ -46,6 +46,7 @@ while(<IN>) {
 		if (/^Reviewed by:$/i ||
 		    /^Submitted by:$/i ||
 		    /^Obtained from:$/i ||
+		    /^Approved by:$/i ||
 		    /^PR:$/i) {
 			next;
 		}

@@ -30,5 +30,3 @@
 # Note there is no "edit" example script currently available....
 #
 #DEFAULT		$CVSROOT/CVSROOT/edit "%s"
-# peter's edit post-processor.. (see verifymsg/logcheck now)
-#DEFAULT			$CVSROOT/CVSROOT/cvsedit

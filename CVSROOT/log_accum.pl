@@ -530,7 +530,8 @@ while (<STDIN>) {
 	if (/^PR:$/i ||
 	    /^Reviewed by:$/i ||
 	    /^Submitted by:$/i ||
-	    /^Obtained from:$/i) {
+	    /^Obtained from:$/i ||
+	    /^Approved by:$/i) {
 	    next;
 	}
 	push (@log_lines,     $_);
