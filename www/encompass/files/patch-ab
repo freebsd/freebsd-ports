@@ -1,6 +1,6 @@
---- config.h.orig	Wed Jul 26 14:50:21 2000
-+++ config.h	Wed Jul 26 14:50:25 2000
-@@ -7,6 +7,9 @@
+--- config.h.orig	Fri Aug 25 09:40:37 2000
++++ config.h	Fri Sep 15 08:57:40 2000
+@@ -6,6 +6,9 @@
  
  #include <sys/stat.h>
  #include <netdb.h>
@@ -10,3 +10,12 @@
  #include <arpa/inet.h>
  
  #include <libgnomeprint/gnome-print.h>
+@@ -24,7 +27,7 @@
+ #include <WWWStream.h>
+ #include <WWWInit.h>
+ 
+-#include <glibwww2/glibwww.h>
++#include <glibwww/glibwww.h>
+ 
+ #include "html.h"
+ #include "menu.h"

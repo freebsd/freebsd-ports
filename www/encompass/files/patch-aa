@@ -1,5 +1,5 @@
---- Makefile.orig	Fri Aug  4 03:36:56 2000
-+++ Makefile	Fri Aug  4 10:14:58 2000
+--- Makefile.orig	Fri Aug 25 09:40:37 2000
++++ Makefile	Fri Sep 15 08:56:07 2000
 @@ -1,11 +1,11 @@
 -CC = gcc
 +#CC = gcc
@@ -7,13 +7,13 @@
 -CFLAGS = -g `gnome-config --cflags gtk gnome gnomeui gtkhtml glibwww oaf` \
 -  `libwww-config --cflags`
 +CFLAGS += `$(X11BASE)/bin/gnome-config --cflags gtk gnome gnomeui gtkhtml glibwww oaf` \
-+  `$(LOCALBASE)/bin/libwww-config --cflags` `$(X11BASE)/bin/gconf-config --cflags gconf`
++  `$(LOCALBASE)/bin/libwww-config --cflags`
  LDFLAGS = 
 -LIBS = `gnome-config --libs gtk gnome gnomeui gtkhtml glibwww oaf` \
--  `libwww-config --libs` `gconf-config --libs gconf`
+-  `libwww-config --libs`
 -prefix = `gnome-config --prefix`
 +LIBS = `$(X11BASE)/bin/gnome-config --libs gtk gnome gnomeui gtkhtml glibwww oaf` \
-+  `$(LOCALBASE)/bin/libwww-config --libs` `$(X11BASE)/bin/gconf-config --libs gconf`
++  `$(LOCALBASE)/bin/libwww-config --libs`
 +prefix = $(PREFIX)
  INSTALL = $(prefix)/bin/install -c
  exec_prefix = ${prefix}
