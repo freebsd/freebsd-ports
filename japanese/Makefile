@@ -230,6 +230,7 @@
     SUBDIR += timidity++-tcltk
     SUBDIR += tk42
     SUBDIR += tk80
+    SUBDIR += tkdesk
     SUBDIR += tkstep80
     SUBDIR += today
     SUBDIR += truetypefonts
