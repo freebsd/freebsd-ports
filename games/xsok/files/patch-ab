@@ -1,0 +1,11 @@
+--- lib/Makefile.orig	Thu Nov 24 12:00:00 1994
++++ lib/Makefile	Sat Feb  7 15:22:11 1998
+@@ -3,7 +3,7 @@
+ XSOKZIP = gzip -f -9
+ 
+ TARGETS = Sokoban.def.gz Xsok.def.gz Cyberbo.def.gz \
+-	floor.xpm.gz objects.xpm.gz
++	floor.xpm objects.xpm
+ 
+ all: $(TARGETS)
+ 

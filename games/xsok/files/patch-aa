@@ -1,0 +1,43 @@
+--- src/Imakefile.orig	Sun Mar 17 12:54:27 1996
++++ src/Imakefile	Sat Feb  7 15:31:54 1998
+@@ -46,17 +46,17 @@
+ # BINDIR and LIBDIR should be predefined by the templates
+ # BINDIR = /usr/bin/X11
+ # LIBDIR = /usr/lib/X11
+-XSOKLIBDIR = /usr/games/lib/xsok
+-APPDEFSDIR = $(LIBDIR)
+-XSOKMANDIR = /usr/man/man6
+-XSOKDOCDIR = /usr/doc/xsok
++XSOKLIBDIR = $(LIBDIR)/xsok
++APPDEFSDIR = $(LIBDIR)/app-defaults
++XSOKMANDIR = $(MANDIR)/../man6
++XSOKDOCDIR = $(X11BASE)/share/doc/xsok
+ 
+ # This is the name of the save directory, where solved games are stored:
+ # an alternative path would be $(XSOKLIBDIR)/save
+ # The directory XSOKSAVEDIR must have permissions rwx for world, else
+ # xsok must be installed suid, and XSOKDIR must have write permissions for
+ # the owner of xsok
+-XSOKSAVEDIR = /var/games/xsok
++XSOKSAVEDIR = $(XSOKLIBDIR)
+ 
+ # paths for installation in user's home-directory.
+ LXSOKBINDIR = $(HOME)/bin
+@@ -65,7 +65,7 @@
+ 
+ # xsok needs to know where the xpm library resides
+ XPMLIB 			= -L$(USRLIBDIR) -lXpm
+-XPMINCLUDE		= -I $(INCDIR)
++XPMINCLUDE		= -I$(INCDIR)/X11
+ 
+ # *****************************************************************************
+ # I hope you don't need to change anything below this point
+@@ -109,7 +109,7 @@
+ # *.c  require  version.h xsok.h
+ # X*.c additionally require X-sok.h and Tableau.h
+ # X-widget.c additionally requires TableauP.h
+-LIBCONTS = *.gz *.help keys
++LIBCONTS = *.xpm *.gz *.help keys
+ 
+ all::	$(ALLTARGETS)
+ 

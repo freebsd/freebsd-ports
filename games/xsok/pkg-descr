@@ -1,0 +1,4 @@
+xsok is a generalization of the standard Sokoban game.
+All original Sokoban levels may be played with xsok (again, using the same
+format for the level definition files). Some levels of a similar MSDOS game,
+Cyberbox, may be played also.
