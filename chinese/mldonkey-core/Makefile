@@ -17,6 +17,16 @@ WITHOUT_GUI=	yes
 MASTERDIR=	${.CURDIR}/../../net/mldonkey
 EXTRA_PATCHES=	${.CURDIR}/files/patch-driverControlers.ml
 
+WRAPPERPREFIX=  ${.CURDIR}/files/wrapper-prefix
+WRAPPER= 	${WRKDIR}/wrapper.sh
+
+# build our own wrapper script
+post-patch-script:
+	@${MV} -f ${WRAPPER} ${WRAPPER}.orig
+	@${CAT} ${WRAPPERPREFIX} ${WRAPPER}.orig > ${WRAPPER}
+
 .include "${MASTERDIR}/Makefile"
 
+# I know this will lead portlint to fail,
+# but we have to do so.
 PKGNAMEPREFIX:= ${PKGNAMEPREFIX}tw-
