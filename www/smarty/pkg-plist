@@ -81,6 +81,7 @@
 %%PORTDOCS%%share/doc/smarty/manual/language.function.popup.init.html
 %%PORTDOCS%%share/doc/smarty/manual/language.function.section.html
 %%PORTDOCS%%share/doc/smarty/manual/language.function.strip.html
+%%PORTDOCS%%share/doc/smarty/manual/language.function.textformat.html
 %%PORTDOCS%%share/doc/smarty/manual/language.modifier.count.characters.html
 %%PORTDOCS%%share/doc/smarty/manual/language.modifier.count.paragraphs.html
 %%PORTDOCS%%share/doc/smarty/manual/language.modifier.count.sentences.html
@@ -94,6 +95,7 @@
 %%PORTDOCS%%share/doc/smarty/manual/language.modifier.replace.html
 %%PORTDOCS%%share/doc/smarty/manual/language.modifier.spacify.html
 %%PORTDOCS%%share/doc/smarty/manual/language.modifier.string.format.html
+%%PORTDOCS%%share/doc/smarty/manual/language.modifier.strip.html
 %%PORTDOCS%%share/doc/smarty/manual/language.modifier.strip.tags.html
 %%PORTDOCS%%share/doc/smarty/manual/language.modifier.truncate.html
 %%PORTDOCS%%share/doc/smarty/manual/language.modifier.upper.html
@@ -203,6 +205,7 @@ share/smarty/Config_File.class.php
 share/smarty/Smarty.class.php
 share/smarty/Smarty_Compiler.class.php
 share/smarty/debug.tpl
+share/smarty/plugins/block.textformat.php
 share/smarty/plugins/function.assign.php
 share/smarty/plugins/function.assign_debug_info.php
 share/smarty/plugins/function.counter.php
@@ -231,6 +234,7 @@ share/smarty/plugins/modifier.regex_replace.php
 share/smarty/plugins/modifier.replace.php
 share/smarty/plugins/modifier.spacify.php
 share/smarty/plugins/modifier.string_format.php
+share/smarty/plugins/modifier.strip.php
 share/smarty/plugins/modifier.strip_tags.php
 share/smarty/plugins/modifier.truncate.php
 share/smarty/plugins/modifier.upper.php
