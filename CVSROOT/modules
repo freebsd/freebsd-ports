@@ -5523,7 +5523,6 @@ nettest		ports/net/nettest
 nettle		ports/security/nettle
 nettoe		ports/games/nettoe
 neverball	ports/games/neverball
-neverputt	ports/games/neverputt
 newfile		ports/devel/newfile
 newmail		ports/mail/newmail
 newmat		ports/math/newmat
