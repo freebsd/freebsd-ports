@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net-Z3950
-PORTVERSION=	0.44
+PORTVERSION=	0.46
 CATEGORIES=	net perl5
 MASTER_SITES=	http://perl.z3950.org/download/
 PKGNAMEPREFIX=	p5-
@@ -16,7 +16,7 @@ COMMENT=	A perl interface to the Z39.50 information retrieval protocol
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Event.pm:${PORTSDIR}/devel/p5-Event
 LIB_DEPENDS=	yaz.2:${PORTSDIR}/net/yaz
-RUN_DEPENDS=	${SITE_PERL}/MARC.pm:${PORTSDIR}/textproc/p5-MARC \
+RUN_DEPENDS=	${SITE_PERL}/MARC/Record.pm:${PORTSDIR}/textproc/p5-MARC-Record \
 		${SITE_PERL}/${PERL_ARCH}/Event.pm:${PORTSDIR}/devel/p5-Event
 
 PERL_CONFIGURE=	yes
