@@ -1,5 +1,5 @@
 This code produce bootloaders for a number of cards that can be
-loaded from from raw or DOS-formatted floppy/hard disks and ROMs
+loaded from raw or DOS-formatted floppy/hard disks and ROMs
 to boot ELF/aout kernels over NFS or TFTP.
 Edit work/etherboot/src/Config to see/set the desired features.
 
