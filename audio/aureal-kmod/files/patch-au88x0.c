@@ -21,6 +21,15 @@ $FreeBSD$
  #include <sys/queue.h>
  
  SND_DECLARE_FILE("$FreeBSD$");
+@@ -573,7 +579,7 @@
+ 	ch->channel = c;
+ 	ch->buffer = b;
+ 	ch->run = 0;
+-	if (sndbuf_alloc(ch->buffer, au->parent_dmat, AU_BUFFSIZE) == -1) {
++	if (sndbuf_alloc(ch->buffer, au->parent_dmat, AU_BUFFSIZE) != 0) {
+ 		printf("sndbuf_alloc failed\n");
+ 		return NULL;
+ 	}
 @@ -852,7 +858,11 @@
  		/*highaddr*/BUS_SPACE_MAXADDR,
  		/*filter*/NULL, /*filterarg*/NULL,
