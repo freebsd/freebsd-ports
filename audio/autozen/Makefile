@@ -7,6 +7,7 @@
 
 PORTNAME=	autozen
 PORTVERSION=	1.3.1
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://www.linuxlabs.com/software/download/
 DISTNAME=	AutoZen-${PORTVERSION}
@@ -18,7 +19,6 @@ WRKSRC=		${WRKDIR}/AutoZen-${PORTVERSION}
 
 MAKE_ENV+=	PTHREAD_CFLAGS=${PTHREAD_CFLAGS} PTHREAD_LIBS=${PTHREAD_LIBS}
 
-BROKEN=		"on certain audio hardware, does not produce sound"
 USE_GNOME=	gtk12
 USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
