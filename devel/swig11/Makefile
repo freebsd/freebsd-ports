@@ -30,9 +30,11 @@ INSTALLS_SHLIB=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME:U}${PORTVERSION}
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CFLAGS="${CFLAGS} -fpic -DPIC"
+CONFIGURE_ENV=	CFLAGS="${CFLAGS} -fpic -DPIC" PYTHON_VERSION=${PYTHON_VERSION}
 CONFIGURE_ARGS=	--with-tclincl=${LOCALBASE}/include/tcl8.3/ \
-		--with-tcllib=${LOCALBASE}/lib/tcl8.3/
+		--with-tcllib=${LOCALBASE}/lib/tcl8.3/ \
+		--with-pyincl=${PYTHONPREFIX_INCLUDEDIR} \
+		--with-pylib=${LOCALBASE}/lib
 ALL_TARGET=	all runtime
 
 MAN1=		swig.1
