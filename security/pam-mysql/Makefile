@@ -9,7 +9,7 @@ PORTNAME=	pam_mysql
 PORTVERSION=	0.5
 CATEGORIES=	security databases
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITE_SUBDIR=	${PORTNAME:S/_/-/}
 
 MAINTAINER=	anders@FreeBSD.org
 COMMENT=	A pam module for authenticating with MySQL
