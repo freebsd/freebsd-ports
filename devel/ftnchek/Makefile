@@ -5,22 +5,22 @@
 # $FreeBSD$
 
 PORTNAME=	ftnchek
-PORTVERSION=	3.1.2
+PORTVERSION=	3.2.0
 CATEGORIES=	devel
-MASTER_SITES=	ftp://ftp.netlib.org/fortran/
-DISTFILES=	${PORTNAME}.tgz
+MASTER_SITES=	${MASTER_SITE_SUNSITE} \
+		http://www.dsm.fordham.edu/~ftnchek/download/
+MASTER_SITE_SUBDIR=	devel/lang/fortran
 
 MAINTAINER=	ports@FreeBSD.org
 
 MAN1=		dcl2inc.1 ftnchek.1
 
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	ac_cv_dir_lispdir=${PREFIX}/share/emacs/site-lisp
+CONFIGURE_ARGS=	--libdir=${PREFIX}/share
 
-pre-install:
-	${MKDIR} ${PREFIX}/share/emacs/site-lisp
-
-post-install:
-	strip ${PREFIX}/bin/ftnchek
+post-patch:
+	@${REINPLACE_CMD} -e \
+		's|^CFLAGS=.*$$|CFLAGS="-DUNIX \$$CFLAGS"|g' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
