@@ -308,6 +308,7 @@
     SUBDIR += oops
     SUBDIR += openvrml
     SUBDIR += opera
+    SUBDIR += opera-devel
     SUBDIR += orion
     SUBDIR += oscommerce
     SUBDIR += p5-Apache-ASP
