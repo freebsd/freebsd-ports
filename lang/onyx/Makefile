@@ -6,22 +6,26 @@
 #
 
 PORTNAME=	onyx
-PORTVERSION=	2.3.1
+PORTVERSION=	3.0.0
 CATEGORIES=	lang
 MASTER_SITES=	http://www.canonware.com/download/onyx/
 
 MAINTAINER=	jasone@FreeBSD.org
 
 BUILD_DEPENDS=	cook:${PORTSDIR}/devel/cook
+LIB_DEPENDS=	edit.5:${PORTSDIR}/devel/libedit
 
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--with-libedit-prefix=${PREFIX}
 INSTALLS_SHLIB=	yes
 
 MAN1=		onyx.1
 MANCOMPRESSED=	no
 
+PLIST_SUB=	ONYX_VERSION=${PORTVERSION}
+
 do-build:
-	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} cook libs mods bins)
+	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} cook)
 
 do-install:
 	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} cook install)
