@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	pfinger
-PORTVERSION=	0.7.6
+PORTVERSION=	0.7.7
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.xelia.ch/pub/unix/ \
 		http://www.xelia.ch/unix/pfinger/
