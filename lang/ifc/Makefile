@@ -9,7 +9,7 @@ PORTNAME=	ifc
 PORTVERSION=	8.0.046p049.1
 CATEGORIES=	lang linux devel
 MASTER_SITES=
-DISTNAME=	l_fc_pc_${PORTVERSION:C/\.p.+$//}
+DISTNAME=	l_fc_pc_${PORTVERSION:C/p.+$//}
 
 MAINTAINER=	maho@FreeBSD.org
 COMMENT=	Intel's Fortran compiler, set up to produce native FreeBSD binaries
