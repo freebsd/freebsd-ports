@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	amaya
-PORTVERSION=	3.1
+PORTVERSION=	3.2
 CATEGORIES= 	www
 MASTER_SITES=	http://www.w3.org/Amaya/Distribution/ \
-		ftp://ftp.w3.org/pub/amaya/ \
-		ftp://mirror.aarnet.edu.au/pub/amaya/
+		ftp://ftp.w3.org/pub/amaya/
 DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
