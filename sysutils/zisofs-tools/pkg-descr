@@ -1,0 +1,9 @@
+The zisofs filesystem is an extension to the ISO9660 filesystem that allows
+files, on a file-by-file basis, to be stored compressed and decompressed in
+real time. The zisofs filesystem is supported by recent versions of Linux
+(2.4.14 or later).
+
+mkzftree - creates a zisofs/RockRidge compressed file tree
+
+- Nosov Artem
+chip-set@mail.ru
