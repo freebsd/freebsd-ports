@@ -7,7 +7,7 @@
 # REMINDER: to use ftpaccess(5) you need to specify -a in command line,
 # it is changed from previous versions
 
-PORTNAME=	wu-ftpd
+PORTNAME=	wu-ftpd+ipv6
 PORTVERSION=    2.6.2
 CATEGORIES=	ftp ipv6
 MASTER_SITES=	ftp://ftp.wu-ftpd.org/pub/wu-ftpd/
