@@ -1,9 +1,9 @@
 # New ports collection makefile for:	teTeX
 # Version required:	0.3.3
 # Date created:		30 Dec 1995
-# Whom:			Bernd Rosauer <br@netland.sub.de>
+# Whom:			Bernd Rosauer <br@netland.inka.de>
 #
-# $Id: Makefile,v 1.3 1996/03/10 09:12:07 asami Exp $
+# $Id: Makefile,v 1.4 1996/04/09 04:17:56 asami Exp $
 #
 
 DISTNAME=	teTeX-src-0.3.3
@@ -13,7 +13,7 @@ MASTER_SITES=	${TETEX_SITE}/distrib/sources/ ${TETEX_SITE}/updates/texmf/
 DISTFILES=	teTeX-src-0.3.3.tar.gz teTeX-lib-0.3.3.tar.gz \
 		koma-script-2.3d.sh mflogo-1.5b.sh mathppl.sh \
 		foiltex-2.0.1.sh dec-95pl1-update-u2.tar \
-		apr-96-update.tar
+		apr-96-update.tar update-96-05-01.sh
 
 PATCH_SITES=	${TETEX_SITE}/distrib/sources/
 PATCHFILES=	teTeX-src-0.3.3-patch-001.gz teTeX-src-0.3.3-patch-002.gz \
