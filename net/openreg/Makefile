@@ -29,6 +29,8 @@ USE_PERL5=	YES
 GNU_CONFIGURE=	YES
 PERL_LEVEL=	500800
 
+BROKEN=		Broken pkg-plist
+
 post-install:
 	@${MKDIR} ${DOCSDIR} ;\
 	${CP} -r ${WRKSRC}/doc/ ${DOCSDIR} ;\
