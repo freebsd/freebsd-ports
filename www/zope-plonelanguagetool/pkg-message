@@ -1,0 +1,24 @@
+To complete the installation of PloneLanguageTool:
+
+- Restart Zope.  This may be done from the Zope Control Panel.
+
+With Plone (optional)
+
+- Use Plone Setup, to install PloneLanguageTool product.
+
+With CMFQuickInstaller (optional)
+
+- Use the QuickInstaller tool to register PloneLanguageTool in your portal
+  instance
+
+Without CMFQuickInstaller
+
+    - Create an ExternalMethod object inside your portal object with the
+      following data:
+
+      Id: install_PloneLanguageTool
+      Title: installs PloneLanguageTool to this portal
+      Module Name: PloneLanguageTool.Install
+      Function Name: install
+
+    - Run this newly created ExternalMethod by clicking on the test tab.
