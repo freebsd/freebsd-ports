@@ -1,0 +1,6 @@
+This package contains most of the items you'll need to run 
+Return to Castle Wolfenstein for Linux under FreeBSD.  You
+still need to install some files from the retail CD.  See the
+INSTALL file, and the rtcw-paks port for an easy way to do this.
+
+- Nik Clayton <nik@FreeBSD.org>

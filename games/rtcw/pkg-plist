@@ -1,0 +1,21 @@
+%%RTCWDIR%%/CHANGES
+%%RTCWDIR%%/INSTALL
+%%RTCWDIR%%/QUICKSTART
+%%RTCWDIR%%/WolfMP.xpm
+%%RTCWDIR%%/WolfSP.xpm
+%%RTCWDIR%%/main/cgame.mp.i386.so
+%%RTCWDIR%%/main/cgamei386.so
+%%RTCWDIR%%/main/mp_pakmaps0.pk3
+%%RTCWDIR%%/main/qagame.mp.i386.so
+%%RTCWDIR%%/main/qagamei386.so
+%%RTCWDIR%%/main/rotate.cfg
+%%RTCWDIR%%/main/scripts/translation.cfg
+%%RTCWDIR%%/main/ui.mp.i386.so
+%%RTCWDIR%%/main/uii386.so
+%%RTCWDIR%%/openurl.sh
+%%RTCWDIR%%/wolf.x86
+%%RTCWDIR%%/wolfded.x86
+%%RTCWDIR%%/wolfsp.x86
+@unexec rmdir %D/%%RTCWDIR%%/main/scripts 2>/dev/null || true
+@unexec rmdir %D/%%RTCWDIR%%/main 2>/dev/null || true
+@unexec rmdir %D/%%RTCWDIR%%/ 2>/dev/null || echo "If you are permanently removing this port, you should do a ``rm -Rf ${PKG_PREFIX}/%%RTCWDIR%%/`` to remove any configuration files, *.pk3 files, and mods left." | fmt
