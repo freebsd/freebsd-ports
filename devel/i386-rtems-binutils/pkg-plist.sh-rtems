@@ -9,16 +9,49 @@ bin/sh-rtems-readelf
 bin/sh-rtems-nm
 bin/sh-rtems-strip
 bin/sh-rtems-as
-bin/sh-rtems-gasp
 bin/sh-rtems-ld
-include/bfd.h
-include/ansidecl.h
-include/bfdlink.h
+@unexec install-info --delete %D/info/bfd.info %D/info/dir
+@unexec install-info --delete %D/info/binutils.info %D/info/dir
+@unexec install-info --delete %D/info/as.info %D/info/dir
+@unexec install-info --delete %D/info/ld.info %D/info/dir
+info/bfd.info
+info/bfd.info-1
+info/bfd.info-2
+info/bfd.info-3
+info/bfd.info-4
+info/bfd.info-5
+info/bfd.info-6
+info/bfd.info-7
+info/bfd.info-8
+info/bfd.info-9
+info/binutils.info
+info/binutils.info-1
+info/binutils.info-2
+info/binutils.info-3
+info/as.info
+info/as.info-1
+info/as.info-2
+info/as.info-3
+info/as.info-4
+info/as.info-5
+info/as.info-6
+info/as.info-7
+info/as.info-8
+info/as.info-9
+info/as.info-10
+info/as.info-11
+info/ld.info
+info/ld.info-1
+info/ld.info-2
+info/ld.info-3
+info/ld.info-4
+info/ld.info-5
+info/ld.info-6
+@exec install-info %D/info/ld.info %D/info/dir
+@exec install-info %D/info/as.info %D/info/dir
+@exec install-info %D/info/binutils.info %D/info/dir
+@exec install-info %D/info/bfd.info %D/info/dir
 lib/libiberty.a
-lib/libbfd.la
-lib/libbfd.a
-lib/libopcodes.la
-lib/libopcodes.a
 sh-rtems/bin/nm
 sh-rtems/bin/strip
 sh-rtems/bin/ar
@@ -35,6 +68,50 @@ sh-rtems/lib/ldscripts/shl.xbn
 sh-rtems/lib/ldscripts/shl.xn
 sh-rtems/lib/ldscripts/shl.xr
 sh-rtems/lib/ldscripts/shl.xu
+share/locale/fr/LC_MESSAGES/bfd.mo
+share/locale/fr/LC_MESSAGES/opcodes.mo
+share/locale/fr/LC_MESSAGES/binutils.mo
+share/locale/fr/LC_MESSAGES/gas.mo
+share/locale/fr/LC_MESSAGES/ld.mo
+share/locale/tr/LC_MESSAGES/bfd.mo
+share/locale/tr/LC_MESSAGES/opcodes.mo
+share/locale/tr/LC_MESSAGES/binutils.mo
+share/locale/tr/LC_MESSAGES/gas.mo
+share/locale/tr/LC_MESSAGES/ld.mo
+share/locale/ja/LC_MESSAGES/bfd.mo
+share/locale/ja/LC_MESSAGES/binutils.mo
+share/locale/es/LC_MESSAGES/bfd.mo
+share/locale/es/LC_MESSAGES/opcodes.mo
+share/locale/es/LC_MESSAGES/binutils.mo
+share/locale/es/LC_MESSAGES/gas.mo
+share/locale/es/LC_MESSAGES/ld.mo
+share/locale/sv/LC_MESSAGES/bfd.mo
+share/locale/sv/LC_MESSAGES/opcodes.mo
+share/locale/sv/LC_MESSAGES/binutils.mo
+share/locale/sv/LC_MESSAGES/ld.mo
+share/locale/da/LC_MESSAGES/opcodes.mo
+share/locale/de/LC_MESSAGES/opcodes.mo
+share/locale/id/LC_MESSAGES/opcodes.mo
+share/locale/pt_BR/LC_MESSAGES/opcodes.mo
+@dirrm share/locale/fr/LC_MESSAGES
+@dirrm share/locale/fr
+@dirrm share/locale/tr/LC_MESSAGES
+@dirrm share/locale/tr
+@dirrm share/locale/ja/LC_MESSAGES
+@dirrm share/locale/ja
+@dirrm share/locale/es/LC_MESSAGES
+@dirrm share/locale/es
+@dirrm share/locale/sv/LC_MESSAGES
+@dirrm share/locale/sv
+@dirrm share/locale/da/LC_MESSAGES
+@dirrm share/locale/da
+@dirrm share/locale/de/LC_MESSAGES
+@dirrm share/locale/de
+@dirrm share/locale/id/LC_MESSAGES
+@dirrm share/locale/id
+@dirrm share/locale/pt_BR/LC_MESSAGES
+@dirrm share/locale/pt_BR
+@dirrm share/locale
 @dirrm sh-rtems/lib/ldscripts
 @dirrm sh-rtems/lib
 @dirrm sh-rtems/bin
