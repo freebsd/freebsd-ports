@@ -7,8 +7,8 @@
 
 PORTNAME=	mozilla
 PORTVERSION=	1.0
-PORTEPOCH=	1
 PORTREVISION=	1
+PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_MOZILLA} \
 		http://people.FreeBSD.org/~sobomax/:local
@@ -21,8 +21,7 @@ MAINTAINER=	gnome@FreeBSD.org
 
 BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip \
 		freetype-config:${PORTSDIR}/print/freetype2
-LIB_DEPENDS=	ORBit.2:${PORTSDIR}/devel/ORBit \
-		jpeg.9:${PORTSDIR}/graphics/jpeg \
+LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
 		mng.1:${PORTSDIR}/graphics/libmng \
 		freetype.9:${PORTSDIR}/print/freetype2
@@ -36,7 +35,8 @@ EXTRACT_AFTER_ARGS=	| tar -xf - -X ${FILESDIR}/tar-exclude
 USE_X_PREFIX=	yes
 USE_PERL5=	yes
 USE_GMAKE=	yes
-USE_GTK=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	orbit gtk12
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=					\
 		--disable-auto-deps		\
@@ -54,7 +54,6 @@ CONFIGURE_ARGS=					\
 		--disable-optimize		\
 		--disable-pedantic		\
 		--disable-plaintext-editor-only	\
-		--enable-reorder		\
 		--enable-strip			\
 		--enable-svg			\
 		--disable-tests			\
@@ -97,6 +96,14 @@ CONFIGURE_ENV=	MOZ_INTERNAL_LIBART_LGPL=1
 MAKE_ENV=	LD_LIBRARY_PATH=${WRKSRC}/dist/bin \
 		MOZ_INTERNAL_LIBART_LGPL=1
 ALL_TARGET=	default
+
+.if ${ARCH} == "i386"
+CONFIGURE_ARGS+=	--enable-reorder
+.endif
+
+.if ${ARCH} == "alpha"
+BROKEN=	"core dumps on alpha during post-build"
+.endif
 
 .if exists(${LOCALBASE}/include/freetype/freetype.h)
 BROKEN="You must upgrade your freetype port to 1.3.1_2 or higher before installing Mozilla.  If you have 1.3.1_2 installed, please remove ${LOCALBASE}/include/freetype, then build Mozilla"
