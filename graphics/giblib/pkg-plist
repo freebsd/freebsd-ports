@@ -14,9 +14,10 @@ include/giblib/giblib_config.h
 lib/libgiblib.a
 lib/libgiblib.so
 lib/libgiblib.so.1
-%%PORTDOCS%%share/doc/giblib/AUTHORS
-%%PORTDOCS%%share/doc/giblib/ChangeLog
-%%PORTDOCS%%share/doc/giblib/README
-%%PORTDOCS%%share/doc/giblib/TODO
+libdata/pkgconfig/giblib.pc
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm include/giblib
-%%PORTDOCS%%@dirrm share/doc/giblib
