@@ -1057,3 +1057,4 @@ lib/libgnarl-%%LIBRARY_VERSION%%.so.%%SHARED_MAJOR%%
 @dirrm lib/gcc-lib/%%GNUHOST%%
 @dirrm lib/gcc-lib
 @dirrm %%GNUHOST%%/include
+@dirrm %%GNUHOST%%
