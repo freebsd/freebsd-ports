@@ -8,7 +8,7 @@
 PORTNAME=	hpack
 PORTVERSION=	0.79a
 CATEGORIES=	archivers
-MASTER_SITES=	ftp://src.doc.ic.ac.uk/packages/hpack/
+MASTER_SITES=   ftp://src.doc.ic.ac.uk/Mirrors/sunsite.doc.ic.ac.uk/hpack/
 DISTNAME=	hpack79src
 
 MAINTAINER=	ache@FreeBSD.org
