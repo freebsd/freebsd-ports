@@ -1,0 +1,56 @@
+# New ports collection makefile for:	qmailanalog
+# Version required:     0.70
+# Date created:		29 November 1998
+# Whom:			Neil Blakey-Milner <nbm@rucus.ru.ac.za>
+#
+# $Id$
+
+DISTNAME=	qmailanalog-0.70
+CATEGORIES=	mail
+MASTER_SITES=	ftp://ftp.qmail.org/pub/software/
+
+MAINTAINER=	ports@freebsd.org
+
+RUN_DEPENDS=	${QMAIL_DIR}/bin/qmail-send:${PORTSDIR}/mail/qmail
+
+ALL_TARGET=	it
+INSTALL_TARGET=	setup
+
+MANPREFIX=	${QMPREFIX}
+MAN1=		matchup.1 xqp.1 xsender.1 xrecipient.1 columnt.1
+
+PLIST_SUB+=	MYSUBDIR=${MYSUBDIR}
+
+DIFF_MSG=	Cannot Make and Install with different PREFIX or QMAIL_DIR
+
+.if exists(${PREFIX}/qmail/bin/qmail-send)
+QMAIL_DIR?=	${PREFIX}/qmail
+.else
+QMAIL_DIR?=	/var/qmail
+.endif
+
+.if !defined(NOSUBDIR)
+MYSUBDIR?=	qmailanalog/
+.else
+MYSUBDIR?=	
+.endif
+
+QMPREFIX?=	${PREFIX}/${MYSUBDIR}
+
+NO_MTREE=       yes
+
+post-patch:
+	@perl -pi.bak -e "s|.usr.local.qmailanalog|${QMPREFIX}|" ${WRKSRC}/conf-home
+	@perl -pi.bak -e "s|-O2|${CFLAGS}|" ${WRKSRC}/conf-cc
+	@perl -pi.bak -e '$$_ = "" if /cat/' ${WRKSRC}/hier.c
+	@echo ${PREFIX} > ${WRKDIR}/.PPREFIX
+	@echo ${QMAIL_DIR} >> ${WRKDIR}/.PPREFIX
+
+pre-install:
+	@echo ${PREFIX} > ${WRKDIR}/.IPREFIX
+	@echo ${QMAIL_DIR} >> ${WRKDIR}/.IPREFIX
+	@diff ${WRKDIR}/.[PI]PREFIX > /dev/null \
+	|| (echo ${DIFF_MSG} && exit 1)
+	@mkdir -p ${QMPREFIX}
+
+.include <bsd.port.mk>
