@@ -23,6 +23,7 @@ bin/molden
 %%PORTDOCS%%share/molden/test/gaussian.input
 %%PORTDOCS%%share/molden/test/gaussian.test
 %%PORTDOCS%%share/molden/test/jaguar.cube
+%%PORTDOCS%%share/molden/test/molden.ogl
 %%PORTDOCS%%share/molden/test/mopac.freq
 %%PORTDOCS%%share/molden/test/mopac.test
 %%PORTDOCS%%share/molden/test/pdb.test
