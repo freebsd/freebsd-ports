@@ -6,17 +6,20 @@
 #
 
 PORTNAME=	links
-PORTVERSION=	0.96
+PORTVERSION=	0.97.p6
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	http://artax.karlin.mff.cuni.cz/~mikulas/vyplody/links/download/ \
 		http://www.add.com.pl/links/download/ \
 		http://ice.dammit.lt/links/download/ \
 		http://links.sourceforge.net/download/
+DISTNAME=	${PORTNAME}-0.97pre6
 
 MAINTAINER=	demon@FreeBSD.org
 
 GNU_CONFIGURE=	yes
+
+USE_OPENSSL=	yes
 
 MAN1=		links.1
 
