@@ -12,7 +12,7 @@ MASTER_SITES=	http://x3270.bgp.nu/download/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	pdseniura@techie.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Full-screen curses-based remote login to IBM mainframes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:C/([0-9]\.[0-9])(\..*)/\1/}
