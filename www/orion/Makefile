@@ -7,7 +7,7 @@
 
 PORTNAME=	orion
 PORTVERSION=	1.5.2
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	www java
 MASTER_SITES=	http://www.orionserver.com/distributions/ \
 		http://www.atlassian.com/software/orion/downloads/ \
@@ -28,8 +28,6 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 APP_HOME?=	${PREFIX}/${PKGBASE}${PORTVERSION}
 LOG_DIR=	${APP_HOME}/log
 PLIST_SUB+=	T=${APP_HOME:S/^${PREFIX}\///}
-ADMIN_PASSWORD?=	admin
-DEFAULT_USER_PASSWORD?=	passw0rd
 APP_TITLE=	Orion Server
 APP_SHORTNAME=	${PORTNAME}
 CONTROL_SCRIPT_NAME=	${APP_SHORTNAME}ctl
@@ -41,18 +39,24 @@ JAVA_HOME?=	${LOCALBASE}/jdk1.3.1
 JAVA_PORT?=	${PORTSDIR}/java/jdk13
 JIKES_LOCATION=	${LOCALBASE}/bin/jikes
 WITH_JIKES?=	YES
-.if ${WITH_JIKES} == "YES"
+.if ${WITH_JIKES} == "YES" || ${WITH_JIKES} == "yes"
+WITH_JIKES=	"YES"
 RUN_DEPENDS+=	${JIKES_LOCATION}:${PORTSDIR}/java/jikes
 .endif
-USER=	www
-GROUP=	www
+USER=		www
+GROUP=		www
 PW?=		/usr/sbin/pw
 HTTP_PORT?=	8090
 RMI_PORT?=	23791
 STDOUT_LOG=	${LOG_DIR}/stdout.log
 STDERR_LOG=	${LOG_DIR}/stderr.log
 AUTO_START?=	NO
-PID_FILE=	/var/run/orion.pid
+PID_FILE=	/var/run/${APP_SHORTNAME}.pid
+REPLACE_FILES=	${FILESDIR}/${CONTROL_SCRIPT_NAME} \
+		${FILESDIR}/${CONTROL_SCRIPT_NAME}.1 \
+		${FILESDIR}/${STARTUP_SCRIPT_NAME}
+
+.include <bsd.port.pre.mk>
 
 pre-install:
 	@${ECHO_CMD} "Installation settings:"
@@ -65,53 +69,43 @@ pre-install:
 	@${ECHO_CMD} "   Running as (user/group): ${USER}/${GROUP}"
 	@${ECHO_CMD} "   HTTP port:               ${HTTP_PORT}"
 	@${ECHO_CMD} "   RMI port:                ${RMI_PORT}"
+	@${ECHO_CMD} "   Logfile stdout:          ${STDOUT_LOG}"
+	@${ECHO_CMD} "   Logfile stderr:          ${STDERR_LOG}"
 	@${ECHO_CMD} "   Starting after install:  ${AUTO_START}"
-	@${ECHO_CMD} "   Password for 'admin':    ${ADMIN_PASSWORD}"
-	@${ECHO_CMD} "   Password for 'user':     ${DEFAULT_USER_PASSWORD}"
 	@PKG_PREFIX=${PREFIX} ${SH} pkg-install ${PKGNAME} PRE-INSTALL
 
 do-install:
-	@# Remove all .bat and .orig files from the work directory
-	${RM} -f `${FIND} ${WRKSRC} -name '*.bat'`
-	${RM} -f `${FIND} ${WRKSRC} -name '*.orig'`
+	@${ECHO_CMD} -n ">> Removing all .bat and .orig files..."
+	@${RM} -f `${FIND} ${WRKSRC} -name '*.bat'` `${FIND} ${WRKSRC} -name '*.orig'`
+	@${ECHO_CMD} " [ DONE ]"
 
-	@# Create the destination directory
-	${MKDIR} ${APP_HOME}
+	@${ECHO_CMD} -n ">> Creating destination directory..."
+	@${MKDIR} ${APP_HOME}
+	@${MKDIR} ${APP_HOME}/application-deployments
+	@${ECHO_CMD} " [ DONE ]"
 
-	@# Copy all files to the target directory
-	${CP} -R ${WRKSRC}/* ${APP_HOME}
+	@${ECHO_CMD} -n ">> Copying files to destination directory..."
+	@${CP} -R ${WRKSRC}/* ${APP_HOME}
+	@${ECHO_CMD} " [ DONE ]"
 
-	@# Fix the permissions for all directories
-	${CHMOD} 755 `find ${APP_HOME} -type d`
+	@${ECHO_CMD} -n ">> Configuring HTTP server port..."
+	@${SED} -e "/port=\"80\"/s//port=\"${HTTP_PORT}\"/" \
+	${WRKSRC}/config/default-web-site.xml > ${APP_HOME}/config/default-web-site.xml
+	@${ECHO_CMD} " [ DONE ]"
 
-	@# Configure for use of Jikes, if necessary
-.if ${WITH_JIKES} == "YES"
-	${CAT} ${WRKSRC}/config/server.xml \
-	| ${SED} "/\<!-- \<compiler executable=\"jikes\" classpath=\"\/myjdkdir\/jre\/lib\/rt.jar\" \/\> -->/s//\<compiler executable=\"${JIKES_LOCATION:S/\//\\\//g}\" classpath=\"${JAVA_HOME:S/\//\\\//g}\/jre\/lib\/rt.jar\"\/\>/" \
-	> ${APP_HOME}/config/server.xml
-.endif
+	@${ECHO_CMD} -n ">> Configuring RMI server port..."
+	@${SED} -e "/<rmi-server>/s//<rmi-server host=\"\[ALL\]\" port=\"${RMI_PORT}\">/" \
+	${WRKSRC}/config/rmi.xml > ${APP_HOME}/config/rmi.xml
+	@${ECHO_CMD} " [ DONE ]"
 
-	@# Configure the port for the HTTP server
-	${CAT} ${WRKSRC}/config/default-web-site.xml \
-	| ${SED} "/port=\"80\"/s//port=\"${HTTP_PORT}\"/" \
-	> ${APP_HOME}/config/default-web-site.xml
-
-	@# Configure the port for the RMI server
-	${CAT} ${WRKSRC}/config/rmi.xml \
-	| ${SED} "/<rmi-server>/s//<rmi-server host=\"\[ALL\]\" port=\"${RMI_PORT}\">/" \
-	> ${APP_HOME}/config/rmi.xml
-
-	@# Apply all text replacements
-.for f in ${CONTROL_SCRIPT_NAME} ${CONTROL_SCRIPT_NAME}.1 ${STARTUP_SCRIPT_NAME} principals.xml
-	@${ECHO_CMD} -n "Applying text replacements to $f..."
+.for f in ${REPLACE_FILES}
+	@${ECHO_CMD} -n ">> Customizing `basename $f`..."
 	@${SED} \
-	-e "/%%ADMIN_PASSWORD%%/s//${ADMIN_PASSWORD}/" \
 	-e "/%%APP_HOME%%/s//${APP_HOME:S/\//\\\//g}/" \
 	-e "/%%APP_SHORTNAME%%/s//${APP_SHORTNAME}/" \
 	-e "/%%APP_TITLE%%/s//${APP_TITLE}/" \
 	-e "/%%CONTROL_SCRIPT%%/s//${CONTROL_SCRIPT:S/\//\\\//g}/" \
 	-e "/%%CONTROL_SCRIPT_NAME%%/s//${CONTROL_SCRIPT_NAME}/" \
-	-e "/%%DEFAULT_USER_PASSWORD%%/s//${DEFAULT_USER_PASSWORD}/" \
 	-e "/%%GROUP%%/s//${GROUP}/" \
 	-e "/%%JAVA_HOME%%/s//${JAVA_HOME:S/\//\\\//g}/" \
 	-e "/%%LOG_DIR%%/s//${LOG_DIR:S/\//\\\//g}/" \
@@ -123,43 +117,59 @@ do-install:
 	-e "/%%PREFIX%%/s//${PREFIX:S/\//\\\//g}/" \
 	-e "/%%PID_FILE%%/s//${PID_FILE:S/\//\\\//g}/" \
 	-e "/%%USER%%/s//${USER}/" \
-	${FILESDIR}/$f > ${WRKDIR}/$f
+	$f > ${WRKDIR}/`basename $f`
 	@${ECHO_CMD} " [ DONE ]"
 .endfor
 
-	@# Install the control script
-	${CP} ${WRKDIR}/${CONTROL_SCRIPT_NAME} ${CONTROL_SCRIPT}
-	${CHMOD} 0755 ${CONTROL_SCRIPT}
-
-.if !defined(NOPORTDOCS)
-	@# Install the man page
-	${INSTALL_MAN} ${WRKDIR}/${CONTROL_SCRIPT_NAME}.1 ${MANPREFIX}/man/man1
+.if ${WITH_JIKES} == "YES"
+	@${ECHO_CMD} -n ">> Configuring Jikes support..."
+	@${SED} -e "/\<!-- \<compiler executable=\"jikes\" classpath=\"\/myjdkdir\/jre\/lib\/rt.jar\" \/\> -->/s//\<compiler executable=\"${JIKES_LOCATION:S/\//\\\//g}\" classpath=\"${JAVA_HOME:S/\//\\\//g}\/jre\/lib\/rt.jar\"\/\>/" \
+	${WRKSRC}/config/server.xml > ${APP_HOME}/config/server.xml
+	@${ECHO_CMD} " [ DONE ]"
 .endif
 
-	@# Install the startup script
-	${CP} ${WRKDIR}/${STARTUP_SCRIPT_NAME} ${STARTUP_SCRIPT}
-	${CHMOD} 0544 ${STARTUP_SCRIPT}
+	@${ECHO_CMD} -n ">> Installing control script..."
+	@${CP} ${WRKDIR}/${CONTROL_SCRIPT_NAME} ${CONTROL_SCRIPT}
+	@${CHMOD} 6754 ${CONTROL_SCRIPT}
+	@${ECHO_CMD} " [ DONE ]"
 
-	@# Install the principals.xml file
-	${CP} ${WRKDIR}/principals.xml ${APP_HOME}/config/
+.if !defined(NOPORTDOCS)
+	@${ECHO_CMD} -n ">> Installing man pages..."
+	@${INSTALL_MAN} ${WRKDIR}/${CONTROL_SCRIPT_NAME}.1 ${MANPREFIX}/man/man1
+	@${ECHO_CMD} " [ DONE ]"
+.endif
 
-	@# Create any directories the application will create it at the
-	@# first run
-	${MKDIR} ${APP_HOME}/application-deployments
+	@${ECHO_CMD} -n ">> Installing startup script..."
+	@${CP} ${WRKDIR}/${STARTUP_SCRIPT_NAME} ${STARTUP_SCRIPT}
+	@${CHMOD} 0544 ${STARTUP_SCRIPT}
+	@${ECHO_CMD} " [ DONE ]"
 
-	@# Change ownership for the files
-	${CHOWN} -R ${USER}:${GROUP} ${APP_HOME}
+	@${ECHO_CMD} -n ">> Creating log files..."
+	@${INSTALL} /dev/null ${STDOUT_LOG}
+	@${INSTALL} /dev/null ${STDERR_LOG}
+	@${ECHO_CMD} " [ DONE ]"
 
-	@# Link the tools.jar file from the JDK, since it is needed by Orion
-	${LN} -sf ${JAVA_HOME}/lib/tools.jar ${APP_HOME}/tools.jar
+	@${ECHO_CMD} -n ">> Creating symlink to tools.jar..."
+	@${LN} -sf ${JAVA_HOME}/lib/tools.jar ${APP_HOME}/tools.jar
+	@${ECHO_CMD} " [ DONE ]"
 
-	@# Create the PID file
-	${TOUCH} ${PID_FILE}
-	${CHOWN} ${USER}:${GROUP} ${PID_FILE}
-	${CHMOD} 0600 ${PID_FILE}
+	@${ECHO_CMD} -n ">> Fixing ownership settings..."
+	@${CHOWN} -R ${USER}:${GROUP} ${APP_HOME}
+	@${ECHO_CMD} " [ DONE ]"
+
+	@${ECHO_CMD} -n ">> Fixing permissions..."
+	@${CHMOD} 755 `find ${APP_HOME} -type d`
+	@${ECHO_CMD} " [ DONE ]"
+
+	@${ECHO_CMD} -n ">> Creating PID file..."
+	@${TOUCH} ${PID_FILE}
+	@${CHOWN} ${USER}:${GROUP} ${PID_FILE}
+	@${CHMOD} 0600 ${PID_FILE}
+	@${ECHO_CMD} " [ DONE ]"
 
 post-install:
 	@${ECHO_CMD} "${APP_TITLE} ${PORTVERSION} has been installed in ${APP_HOME}."
+	@${ECHO_CMD} "If a user should be able to use ${CONTROL_SCRIPT_NAME}, put it in the group ${GROUP}."
 .if !defined(NOPORTDOCS)
 	@${ECHO_CMD} "Use 'man ${CONTROL_SCRIPT_NAME}' for information about starting and stopping ${APP_TITLE}."
 .endif
@@ -167,4 +177,4 @@ post-install:
 	@${CONTROL_SCRIPT} start || true
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

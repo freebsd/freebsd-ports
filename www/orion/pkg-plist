@@ -287,6 +287,8 @@ bin/orionctl
 %%T%%/demo/ssl/ssl-user-registration.jsp
 %%T%%/demo/messagelogger.ear
 %%T%%/lib/hsql.jar
+%%T%%/log/stdout.log
+%%T%%/log/stderr.log
 %%T%%/loadbalancer.jar
 %%T%%/jta.jar
 %%T%%/jsse.jar
