@@ -1,0 +1,25 @@
+*** mtools.conf~	Wed Jan 31 22:02:11 1996
+--- mtools.conf	Mon May 27 05:03:09 1996
+***************
+*** 2,11 ****
+  drive b: file="/dev/fd1" exclusive
+  
+  # First SCSI hard disk partition
+! drive c: file="/dev/sda1"
+  
+  # First IDE hard disk partition
+! #drive c: file="/dev/hda1"
+  
+  #dosemu floppy image
+  drive m: file="/var/lib/dosemu/diskimage"
+--- 2,11 ----
+  drive b: file="/dev/fd1" exclusive
+  
+  # First SCSI hard disk partition
+! drive c: file="/dev/sd0s1"
+  
+  # First IDE hard disk partition
+! #drive c: file="/dev/wd0s1"
+  
+  #dosemu floppy image
+  drive m: file="/var/lib/dosemu/diskimage"
