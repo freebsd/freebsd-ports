@@ -1,0 +1,19 @@
+--- makefile.in.orig	Fri Jul 31 18:34:41 1998
++++ makefile.in	Mon Aug 10 02:12:53 1998
+@@ -37,7 +37,7 @@
+ libdir= @libdir@
+ 
+ ## Where you want the help-files installed
+-helpdir= @libdir@/lynx_help
++helpdir= $(prefix)/lib/lynx_help
+ 
+ ##set the relative location of the WWW library Implementation directory,
+ ##from this directory
+@@ -257,6 +257,7 @@
+ 	(cd $(srcdir)/lynx_help && tar cf - . ) | ( cd $(helpdir) && tar xf - )
+ 	(cd $(srcdir) && tar cf - C[HO]* PROBLEMS README samples test ) | \
+ 			       ( cd $(helpdir) && tar xf - )
++	cp $(srcdir)/lynx.cfg $(helpdir)/samples/lynx.cfg
+ 	-rm -f $(libdir)/lynx.tmp
+ 	sh -c 'if test -f $(libdir)/lynx.cfg ; then \
+ 		mv $(libdir)/lynx.cfg $(libdir)/lynx.tmp ; \
