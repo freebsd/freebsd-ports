@@ -797,3 +797,4 @@ audio/evilbar||2004-02-01|Port broken for >2 months
 net/platero||2004-02-01|Port broken for >2 months
 math/ruby-gsl||2004-02-01|Port broken for >2 months
 x11-fm/vide||2004-02-01|Port broken for >2 months
+devel/gettext-old|devel/gettext|2004-02-03|Switch to latest stable version of gettext
