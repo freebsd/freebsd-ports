@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	darcs
-PORTVERSION=	1.0.0.r3
+PORTVERSION=	1.0.0.r4
 CATEGORIES=	devel
 MASTER_SITES=	http://www.abridgegame.org/darcs/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.r/rc/}

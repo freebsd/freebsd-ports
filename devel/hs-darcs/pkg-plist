@@ -66,6 +66,7 @@ etc/darcs/bash_completion.d/darcs
 %%PORTDOCS%%%%DOCSDIR%%/manual/prev_g.png
 %%PORTDOCS%%%%DOCSDIR%%/manual/up.png
 %%PORTDOCS%%%%DOCSDIR%%/manual/up_g.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/WARNINGS
 @dirrm etc/darcs/bash_completion.d
 @dirrm etc/darcs
 %%SERVER%%@dirrm share/darcs/xslt
