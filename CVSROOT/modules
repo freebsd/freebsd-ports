@@ -8035,6 +8035,7 @@ pear-Mail_Queue	ports/mail/pear-Mail_Queue
 pear-Net_Cyrus	ports/mail/pear-Net_Cyrus
 pear-Net_DIME	ports/net/pear-Net_DIME
 pear-Net_IMAP	ports/mail/pear-Net_IMAP
+pear-Net_IPv6	ports/net/pear-Net_IPv6
 pear-Net_NNTP	ports/net/pear-Net_NNTP
 pear-Net_POP3	ports/net/pear-Net_POP3
 pear-Net_SMTP	ports/net/pear-Net_SMTP
