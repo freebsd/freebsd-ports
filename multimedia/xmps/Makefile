@@ -34,4 +34,8 @@ pre-patch:
 		 s|\$$\(datadir\)/aclocal|\$$\(prefix\)/share/aclocal|g ; \
 		 s|\$$\(datadir\)/locale|\$$\(prefix\)/share/locale|g'
 
+post-configure:
+	@${PERL} -pi -e 's|^deplibs_check_method=.*|deplibs_check_method=pass_all|' \
+		${WRKSRC}/libtool
+
 .include <bsd.port.mk>
