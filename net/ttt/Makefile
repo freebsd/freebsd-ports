@@ -3,7 +3,7 @@
 # Date created:         22 September 1998
 # Whom:                 Kenjiro Cho <kjc@csl.sony.co.jp>
 #
-# $Id: Makefile,v 1.8 1998/09/22 09:39:55 kjc Exp $
+# $Id: Makefile,v 1.9 1998/09/25 10:05:12 asami Exp $
 #
 
 DISTNAME=       ttt-1.3
@@ -14,7 +14,7 @@ MAINTAINER=     kjc@csl.sony.co.jp
 
 # the tcl/tk LIB_DEPENDS has to match that of ports/x11-toolkits/blt.
 LIB_DEPENDS=	BLT\\.2\\.4:${PORTSDIR}/x11-toolkits/blt \
-		tcl80\\.1:${PORTSDIR}/lang/tcl80 \
+		tcl80.1:${PORTSDIR}/lang/tcl80 \
 		tk80.1:${PORTSDIR}/x11-toolkits/tk80
 
 GNU_CONFIGURE=	yes

@@ -4,7 +4,7 @@
 # Date created:         Sat June 29, 1996
 # Whom:                 David O'Brien (obrien@cs.ucdavis.edu)
 #
-# $Id: Makefile,v 1.27 1998/09/05 03:12:55 obrien Exp $
+# $Id: Makefile,v 1.28 1998/09/06 06:19:01 obrien Exp $
 #
 
 DISTNAME=	vim-5.3
@@ -22,7 +22,7 @@ MAINTAINER=     obrien@FreeBSD.org
 .if defined(BATCH)
 BUILD_DEPENDS=	tclsh8.0:${PORTSDIR}/lang/tcl80 \
 		python:${PORTSDIR}/lang/python
-LIB_DEPENDS=	tcl80\\.1\\.2:${PORTSDIR}/lang/tcl80
+LIB_DEPENDS=	tcl80.1:${PORTSDIR}/lang/tcl80
 RUN_DEPENDS=	python:${PORTSDIR}/lang/python
 USE_PERL5=	yes
 .endif
