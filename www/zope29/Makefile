@@ -14,7 +14,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.ORG
 
 BUILD_DEPENDS=	python1.5:${PORTSDIR}/lang/python
-RUN_DEPENDS=	apache:${PORTSDIR}/www/apache13-modssl
+RUN_DEPENDS=	${PREFIX}/sbin/apache:${PORTSDIR}/www/apache13-modssl
 
 # Build has to be done in the final location after installing the sources
 # there. It were a major action to fix all paths otherwise.
@@ -31,7 +31,6 @@ ZOPEBASEDIR?=	${WEBBASEDIR}/Zope-${VERSION}
 CGI_BIN_DIR?=	${PREFIX}/share/apache/cgi-bin
 APACHE_CONFDIR?=	${PREFIX}/etc/apache
 PYTHON15?=	${PREFIX}/bin/python1.5
-CHMOD=	/bin/chmod
 
 # I decided to consider the whole souce tree to be part of the package
 # since in there, Zope can live on its own. It does leave some *.o files
