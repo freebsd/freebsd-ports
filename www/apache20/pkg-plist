@@ -14,6 +14,7 @@ etc/apache2/mime.types-dist
 @unexec if cmp -s %D/etc/apache2/ssl.conf %D/etc/apache2/ssl-std.conf; then rm -f %D/etc/apache2/ssl.conf; fi
 etc/apache2/ssl-std.conf
 @exec [ -f %B/ssl.conf ] || cp %B/%f %B/ssl.conf
+etc/rc.d/000.apache2libs.sh
 etc/rc.d/apache2.sh
 include/apache2/ap_compat.h
 include/apache2/ap_config.h
