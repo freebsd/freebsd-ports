@@ -9,8 +9,8 @@ PORTNAME=	pppoa
 PORTVERSION=	20010815
 CATEGORIES=	net
 MASTER_SITES=	http://www.xsproject.org/speedtouch/files/ \
-    		http://benoit.papillault.free.fr/speedtouch/ \
-		http://www.alcatel.com/consumer/dsl/
+		http://www.alcatel.com/consumer/dsl/ \
+    		http://benoit.papillault.free.fr/speedtouch/
 DISTFILES=	${SPEEDTOUCH}.tar.gz speedmgmt.tar.gz
 
 MAINTAINER=	brian@Awfulhak.org
