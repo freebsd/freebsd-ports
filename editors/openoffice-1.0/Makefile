@@ -119,12 +119,12 @@ LD_PATH=	${LD_PATH1}:${WRKSRC}/../solver/641/unxfbsd.pro/lib/
 .if defined(WITH_DEBUG)
 CFLAGS+=	-g
 .if ${WITH_DEBUG} == 2
-BUILD=		build debug="true"
+BUILD=		dmake debug="true"
 .else
-BUILD=		build
+BUILD=		dmake
 .endif
 .else
-BUILD=		build strip="true"
+BUILD=		dmake strip="true"
 .endif
 
 .if !defined(DISPLAY)
