@@ -32,3 +32,7 @@ share/xml/misc/docbook/ChangeLog
 share/xml/misc/docbook/test.xml
 @dirrm share/xml/dtd/docbook
 @dirrm share/xml/misc/docbook
+@unexec rmdir %D/share/xml/dtd 2>/dev/null || true
+@unexec rmdir %D/share/xml/misc 2>/dev/null || true
+@unexec rmdir %D/share/xml/entity 2>/dev/null || true
+@unexec rmdir %D/share/xml 2>/dev/null || true
