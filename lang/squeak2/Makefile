@@ -11,7 +11,8 @@ CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.inria.fr/INRIA/Projects/SOR/users/piumarta/squeak/ \
 		ftp://ftp.cs.uni-magdeburg.de/pub/Smalltalk/free/squeak/unix/ \
 		http://www.nectar.com/distfiles/squeak/
-DISTFILES=	Squeak2.7-src${EXTRACT_SUFX} ${SQUEAK_SRC}
+DISTNAME=	Squeak${PORTVERSION}-src
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${SQUEAK_SRC}
 
 MAINTAINER=	jesse@cs.uni-magdeburg.de
 

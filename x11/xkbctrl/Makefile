@@ -26,6 +26,6 @@ do-extract:
 		done
 
 do-install:
-		@${INSTALL_PROGRAM} ${WRKSRC}/${DISTNAME} ${PREFIX}/bin
+		@${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
 
 .include <bsd.port.mk>
