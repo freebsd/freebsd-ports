@@ -2101,6 +2101,7 @@ gnuplot		ports/math/gnuplot
 gnuplot+	ports/math/gnuplot+
 gnurobots	ports/games/gnurobots
 gnus-emacs20	ports/news/gnus-emacs20
+gnuserv		ports/editors/gnuserv
 gnuserv-emacs20	ports/editors/gnuserv-emacs20
 gnushogi	ports/games/gnushogi
 gnustep		ports/devel/gnustep
