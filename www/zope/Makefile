@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	zope
-PORTVERSION=	2.5.1
-PORTREVISION=	2
+PORTVERSION=	2.6.0
 CATEGORIES=	www python zope
 MASTER_SITES=	http://www.zope.org/Products/Zope/${PORTVERSION}/
 DISTNAME=	Zope-${PORTVERSION}-src
@@ -16,7 +15,6 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	alane@FreeBSD.org
 
 USE_PYTHON=	yes
-PYTHON_VERSION=	python2.1
 
 DIST_SUBDIR=	zope
 
@@ -54,14 +52,6 @@ PLIST_SUB=	ZOPEBASEDIR=${SZOPEBASEDIR} \
 # If we have to create it, call it -dist to emphasize that the port
 # set it up. <alane>
 
-pre-everything: 
-	@if test ! -d ${CGIBINDIR}; then \
-		${ECHO_CMD} "The directory for Zope's CGI scripts does"\
-			"not exist, so I will create it.";\
-		${ECHO_CMD} "They will be placed in ${CGIBINDIR}.";\
-		${ECHO_CMD} ;\
-		${MKDIR} ${CGIBINDIR}; ${CHMOD} 0755 ${CGIBINDIR}; fi
-
 pre-install:
 	PKG_PREFIX=${PREFIX} ${SH} pkg-install ${PKGNAME} PRE-INSTALL
 
@@ -69,6 +59,12 @@ pre-install:
 # since in there, Zope can live on its own. I can use Zope's own building
 # mechanism.
 do-install:
+	@if test ! -d ${CGIBINDIR}; then \
+		${ECHO_CMD} "The directory for Zope's CGI scripts does"\
+			"not exist, so I will create it.";\
+		${ECHO_CMD} "They will be placed in ${CGIBINDIR}.";\
+		${ECHO_CMD} ;\
+		${MKDIR} ${CGIBINDIR}; ${CHMOD} 0755 ${CGIBINDIR}; fi
 	@if [ -e ${ZOPEBASEDIR}/var/Data.fs ] ; then \
 		${ECHO} "Saving existing Database to ${ZOPEBASEDIR}/var/Data.fs.preserve." ; \
 		${MV} ${ZOPEBASEDIR}/var/Data.fs ${ZOPEBASEDIR}/var/Data.fs.preserve; \
