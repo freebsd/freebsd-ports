@@ -10,7 +10,7 @@ PORTVERSION=	0.9.9
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.linuxbrit.co.uk/downloads/
 
-MAINTAINER=	ports@FreeBSD.ORG
+MAINTAINER=	ishmael27@home.com
 
 LIB_DEPENDS=	Imlib2.1:${PORTSDIR}/graphics/imlib2-tmp
 
