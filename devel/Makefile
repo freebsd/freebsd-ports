@@ -71,6 +71,7 @@
     SUBDIR += gperf
     SUBDIR += gtksheet
     SUBDIR += id-utils
+    SUBDIR += idle
     SUBDIR += ilu
     SUBDIR += imake
     SUBDIR += jam
