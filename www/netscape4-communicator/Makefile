@@ -3,7 +3,7 @@
 # Date created:         24 Feb 1997
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.40 1999/06/27 18:23:55 sada Exp $
+# $Id: Makefile,v 1.41 1999/07/01 23:36:27 sada Exp $
 #
 
 DISTNAME=	netscape-${BROWSER}-${BROWSER_VER}
@@ -11,7 +11,7 @@ CATEGORIES=	www
 MASTER_SITES?=	ftp://ftp.netscape.com/pub/communicator/4.08/english/unix/unsupported/freebsd/professional_edition/
 DISTFILES?=	communicator-v408-export.x86-unknown-freebsd.tar.gz
 
-MAINTAINER=	sada@FreeBSD.ORG
+MAINTAINER?=	sada@FreeBSD.ORG
 
 Y2K=		http://home.netscape.com/products/year2000/faq/client.html
 
