@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	vym
-PORTVERSION=	1.5.0
+PORTVERSION=	1.6.0
 CATEGORIES=	deskutils
 MASTER_SITES=	http://www.insilmaril.de/vym/download/
 MASTER_SITE_SUBDIR=	${PORTVERSION}
