@@ -1,5 +1,5 @@
 --- makefile.orig	Wed Sep 25 09:32:22 1996
-+++ makefile	Sun Jun 20 13:35:05 1999
++++ makefile	Fri Aug  6 19:37:41 1999
 @@ -1,6 +1,6 @@
  PURIFY   = #purify
  PURELINK = #purelink
@@ -30,7 +30,7 @@
  # F77LIBS  =  -lxlf -lxlf90 -lxlfutil     			# IBM
  # F77LIBS  =  -lfor     			      		# DEC Alpha
 -# F77LIBS  =  -lf2c						# PC LINUX, XFree86 3.1.1
-+.if $(HAVE_G2C)
++.if defined(HAVE_G2C)
 +F77LIBS  =  -lg2c						# PC LINUX, XFree86 3.1.1
 +.else
 +F77LIBS  =  -lf2c						# PC LINUX, XFree86 3.1.1
