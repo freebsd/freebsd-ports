@@ -3,7 +3,7 @@
 # Date created:		29 October 1994
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.28 1997/05/20 10:25:09 asami Exp $
+# $Id: Makefile,v 1.29 1997/07/17 10:38:15 asami Exp $
 #
 
 DISTNAME=	emacs-19.34b
@@ -26,7 +26,7 @@ post-install:
 	if [ ! -f ${PREFIX}/info/dir ]; then \
 	  ${SED} -ne '1,/Menu:/p' /usr/share/info/dir > ${PREFIX}/info/dir; \
 	fi
-.for info in emacs vip viper forms gnus mh-e cl sc dired-x ediff ccmode
+.for info in emacs vip viper forms gnus mh-e cl sc dired-x ediff ccmode message
 	install-info ${PREFIX}/info/${info} ${PREFIX}/info/dir
 .endfor
 
