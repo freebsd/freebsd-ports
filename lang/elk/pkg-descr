@@ -1,5 +1,3 @@
-This is release 2.2 of Elk, the Extension Language Kit.
-
 Elk is a Scheme interpreter intended to be used as a general, reusable
 extension language subsystem for integration into existing and future
 applications.  Elk can also be used as a stand-alone implementation of
