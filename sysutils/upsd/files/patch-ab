@@ -5,7 +5,7 @@
  
  #ifndef DEBUG
 -#define	_PATH_UPSD_CONF	"/etc/upsd.conf"
-+#define	_PATH_UPSD_CONF	"@prefix@/upsd.conf"
++#define	_PATH_UPSD_CONF	"@prefix@/etc/upsd.conf"
  #define	_PATH_UPSD_PID	"/var/run/upsd.pid"
  #else
  #define	_PATH_UPSD_CONF	"sample/upsd.conf"
