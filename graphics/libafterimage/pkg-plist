@@ -1,6 +1,15 @@
 bin/afterimage-libs
+bin/ascompose
+bin/asflip
+bin/asgrad
+bin/asmerge
+bin/asscale
+bin/astext
+bin/astile
+bin/asview
 include/libAfterImage/afterbase.h
 include/libAfterImage/afterimage.h
+include/libAfterImage/ascmap.h
 include/libAfterImage/asfont.h
 include/libAfterImage/asimage.h
 include/libAfterImage/asvisual.h
@@ -8,27 +17,33 @@ include/libAfterImage/blender.h
 include/libAfterImage/config.h
 include/libAfterImage/export.h
 include/libAfterImage/import.h
+include/libAfterImage/transform.h
+include/libAfterImage/ungif.h
 include/libAfterImage/xcf.h
+include/libAfterImage/ximage.h
 include/libAfterImage/xpm.h
-@dirrm include/libAfterImage
 lib/libAfterImage.a
 lib/libAfterImage.so
 lib/libAfterImage.so.0
-share/libAfterImage/doc/html/afterimage.html
-share/libAfterImage/doc/html/asflip.html
-share/libAfterImage/doc/html/asfont.html
-share/libAfterImage/doc/html/asgrad.html
-share/libAfterImage/doc/html/asimage.html
-share/libAfterImage/doc/html/asmerge.html
-share/libAfterImage/doc/html/asscale.html
-share/libAfterImage/doc/html/astext.html
-share/libAfterImage/doc/html/astile.html
-share/libAfterImage/doc/html/asview.html
-share/libAfterImage/doc/html/asvisual.html
-share/libAfterImage/doc/html/blender.html
-share/libAfterImage/doc/html/common.html
-share/libAfterImage/doc/html/export.html
-share/libAfterImage/doc/html/import.html
-@dirrm share/libAfterImage/doc/html
-@dirrm share/libAfterImage/doc
-@dirrm share/libAfterImage
+%%PORTDOCS%%share/doc/libAfterImage/html/afterimage.html
+%%PORTDOCS%%share/doc/libAfterImage/html/ascmap.html
+%%PORTDOCS%%share/doc/libAfterImage/html/ascompose.html
+%%PORTDOCS%%share/doc/libAfterImage/html/asflip.html
+%%PORTDOCS%%share/doc/libAfterImage/html/asfont.html
+%%PORTDOCS%%share/doc/libAfterImage/html/asgrad.html
+%%PORTDOCS%%share/doc/libAfterImage/html/asimage.html
+%%PORTDOCS%%share/doc/libAfterImage/html/asmerge.html
+%%PORTDOCS%%share/doc/libAfterImage/html/asscale.html
+%%PORTDOCS%%share/doc/libAfterImage/html/astext.html
+%%PORTDOCS%%share/doc/libAfterImage/html/astile.html
+%%PORTDOCS%%share/doc/libAfterImage/html/asview.html
+%%PORTDOCS%%share/doc/libAfterImage/html/asvisual.html
+%%PORTDOCS%%share/doc/libAfterImage/html/blender.html
+%%PORTDOCS%%share/doc/libAfterImage/html/common.html
+%%PORTDOCS%%share/doc/libAfterImage/html/export.html
+%%PORTDOCS%%share/doc/libAfterImage/html/import.html
+%%PORTDOCS%%share/doc/libAfterImage/html/transform.html
+%%PORTDOCS%%share/doc/libAfterImage/html/ximage.html
+%%PORTDOCS%%@dirrm share/doc/libAfterImage/html
+%%PORTDOCS%%@dirrm share/doc/libAfterImage
+@dirrm include/libAfterImage
