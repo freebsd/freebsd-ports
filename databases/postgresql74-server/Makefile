@@ -22,10 +22,6 @@ DIST_SUBDIR=	postgresql
 
 MAINTAINER=	andreas@FreeBSD.org
 
-.if ${MACHINE_ARCH} == "alpha"
-BROKEN=		doesn\'t build on the alpha yet
-.endif
-
 Y2K=		http://www.postgresql.org/y2k.html
 
 INSTALLS_SHLIB=	YES
