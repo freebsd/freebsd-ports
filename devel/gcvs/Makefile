@@ -7,6 +7,7 @@
 
 PORTNAME=	gcvs
 PORTVERSION=	1.0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -19,16 +20,16 @@ LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
 BUILD_DEPENDS+=	autoconf213:${PORTSDIR}/devel/autoconf213
 BUILD_DEPENDS+=	automake14:${PORTSDIR}/devel/automake14
 BUILD_DEPENDS+=	glade:${PORTSDIR}/devel/glade
-BUILD_DEPENDS+=	wish8.3:${PORTSDIR}/x11-toolkits/tk83
-RUN_DEPENDS+=	wish8.3:${PORTSDIR}/x11-toolkits/tk83
+BUILD_DEPENDS+=	wish8.4:${PORTSDIR}/x11-toolkits/tk84
+RUN_DEPENDS+=	wish8.4:${PORTSDIR}/x11-toolkits/tk84
 
 USE_X_PREFIX=	yes
 USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 BREAKS_IF_PEDANTIC=	yes
-CONFIGURE_ARGS+=	--with-tclinclude=${LOCALBASE}/include/tcl8.3
-CONFIGURE_ARGS+=	--with-tcllib=${LOCALBASE}/lib/tcl8.3
+CONFIGURE_ARGS+=	--with-tclinclude=${LOCALBASE}/include/tcl8.4
+CONFIGURE_ARGS+=	--with-tcllib=${LOCALBASE}/lib/tcl8.4
 LIBS+=		-lgnugetopt
 CONFIGURE_ENV+=	LIBS="-L${LOCALBASE}/lib/ ${LIBS}"
 CONFIGURE_SCRIPT=	make_configure
