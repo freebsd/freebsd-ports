@@ -13,7 +13,7 @@ DISTNAME=	httpd-${PORTVERSION}
 DISTFILES=	${DISTNAME}.tar.gz powerlogo.gif:freebsd
 EXTRACT_ONLY=	${DISTNAME}.tar.gz
 
-MAINTAINER?=	ports@FreeBSD.org
+MAINTAINER?=	dominic.marks@btinternet.com
 COMMENT?=	Version 2 of the extremely popular Apache http server
 
 LIB_DEPENDS=	expat.4:${PORTSDIR}/textproc/expat2
