@@ -1,31 +1,11 @@
---- src/Makefile.orig	Thu Jun 21 06:55:00 2001
-+++ src/Makefile	Thu Jun 21 06:59:30 2001
-@@ -1,21 +1,21 @@
--PREFIX=/usr/local
-+PREFIX=${X11BASE}
- VERSION = 0.7.3
- 
--MOZILLA_INCLUDES = -I/usr/include/mozilla -I/usr/local/include/mozilla -I/usr/include/nspr -I/usr/local/include/mozilla/nspr -I/usr/include/mozilla/nspr -I/usr/local/include/mozilla/nspr
--MOZILLA_LIBS = -L/usr/lib/mozilla -L/usr/local/lib/mozilla -lgtkembedmoz -lplds4 -lplc4 -lnspr4 -lgtksuperwin -lxpcom
-+MOZILLA_INCLUDES = -I${X11BASE}/include/mozilla -I${X11BASE}/include/mozilla/nspr
-+MOZILLA_LIBS = -L${X11BASE}/lib/mozilla-embedded -lgtkembedmoz -lplds4 -lplc4 -lnspr4 -lgtksuperwin -lxpcom
- 
- #my stuff
- #MOZILLA_INCLUDES = -I/usr/moz/mozilla/dist/include
- #MOZILLA_LIBS = -L/usr/moz/mozilla/dist/bin/ -lgtkembedmoz -lplds4 -lplc4 -lnspr4 -lgtksuperwin -lxpcom
- 
--GTK_LIBS = $(shell gtk-config --libs)
--GTK_INCLUDES = $(shell gtk-config --cflags)
-+GTK_LIBS = $(shell $(GTK_CONFIG) --libs)
-+GTK_INCLUDES = $(shell $(GTK_CONFIG) --cflags)
- 
- SOURCES = main.c go.c callbacks.c moz_callbacks.c support.c ipc.c bookmarks.c interface.c interface-notebook.c history.c crash.c skipstone_config.c context.c skipstone-plugin.c skipstone-print.c mozilla.cpp SkipStonePrompter.cpp PromptService.cpp 
- OBJS = main.o go.o callbacks.o moz_callbacks.o support.o ipc.o bookmarks.o interface.o interface-notebook.o history.o crash.o skipstone-config.o context.o skipstone-plugin.o skipstone-print.o mozilla.o SkipStonePrompter.o PromptService.o 
+--- src/Makefile.orig	Tue Jul 24 06:16:22 2001
++++ src/Makefile	Tue Jul 24 06:16:30 2001
+@@ -7,7 +7,7 @@
  DOWNLOADOBJS = skipdownload.o
--FLAGS = -g -O2 -Wall -I.. $(GTK_INCLUDES) $(MOZILLA_INCLUDES) 
--LIBS = -g $(GTK_LIBS) $(MOZILLA_LIBS) -lpthread
-+FLAGS = -g -O2 -Wall -I.. $(GTK_INCLUDES) $(MOZILLA_INCLUDES) -D_THREAD_SAFE -pthread
-+LIBS = -g $(GTK_LIBS) $(MOZILLA_LIBS)
- CC = gcc $(FLAGS) 
- CXX = c++ -fno-rtti $(FLAGS)
  PROG = skipstone
+ BINARY = skipstone-bin
+-LIBS = $(GTK_LIBS) $(MOZILLA_LIBS) -lpthread
++LIBS = $(GTK_LIBS) $(MOZILLA_LIBS) -pthread
+ 
+ LOCALEDIR ?= /usr/share/locale
+ export LOCALEDIR
