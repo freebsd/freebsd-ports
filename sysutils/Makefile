@@ -145,6 +145,7 @@
     SUBDIR += symlinks
     SUBDIR += syslog-ng
     SUBDIR += tcplist
+    SUBDIR += tdir
     SUBDIR += timelimit
     SUBDIR += truncate
     SUBDIR += tua
