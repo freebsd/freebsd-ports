@@ -510,7 +510,7 @@ sub inq_f {
      the default is YES.", $def_f{'max-tries-continue'});
 
     $settings .= " speed (fax)";
-    $def_f{'speed'} = 38000 if ! $def_f{'speed'};
+    $def_f{'speed'} = 38400 if ! $def_f{'speed'};
     $def_f{'speed'} = &ask ("   - `speed'
      Set the port speed to use for fax send operations. Usually,
      `38400' is a good choice, but a few dumb modems (for example, some
