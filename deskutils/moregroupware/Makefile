@@ -7,6 +7,7 @@
 
 PORTNAME=	moregroupware
 PORTVERSION=	0.7.1
+PORTREVISION=	1
 CATEGORIES=	deskutils www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	moregroupware
@@ -19,10 +20,20 @@ DISTFILES=	${PORTNAME}-core-${PORTVERSION}${EXTRACT_SUFX} \
 MAINTAINER=	rob@debank.tv
 COMMENT=	A web based GroupWare system
 
-.if defined(WITH_APACHE2)
-RUN_DEPENDS=	${LOCALBASE}/libexec/apache2/libphp4.so:${PORTSDIR}/www/mod_php4
+# php extensions
+USE_PHP=	\
+		curl \
+		gd \
+		pcre \
+		session \
+		xml
+# uses apache , php4 port decides if it is apache 1 or 2
+WANT_PHP_MOD=	yes
+
+.if defined(WITH_POSTGRESQL)
+RUN_DEPENDS+=	${LOCALBASE}/bin/psql:${PORTSDIR}/databases/postgresql74-server
 .else
-RUN_DEPENDS=	${LOCALBASE}/libexec/apache/libphp4.so:${PORTSDIR}/www/mod_php4
+RUN_DEPENDS+=	${LOCALBASE}/bin/mysql:${PORTSDIR}/databases/mysql41-server
 .endif
 
 .if defined(WITH_MODULES)
