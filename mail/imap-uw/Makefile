@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	imap
-PORTVERSION=	2004
+PORTVERSION=	2004a
 PORTEPOCH=	1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.cac.washington.edu/imap/%SUBDIR%/ \
@@ -72,9 +72,9 @@ do-install:
 		${WRKSRC}/mlock/mlock ${PREFIX}/libexec
 	${INSTALL_PROGRAM} ${WRKSRC}/mtest/mtest ${PREFIX}/bin/mboxtest
 	${INSTALL_MAN} \
-		${WRKSRC}/src/imapd/imapd.8c ${PREFIX}/man/man8/imapd.8
+		${WRKSRC}/src/imapd/imapd.8 ${PREFIX}/man/man8/imapd.8
 	${INSTALL_MAN} \
-		${WRKSRC}/src/ipopd/ipopd.8c ${PREFIX}/man/man8/ipopd.8
+		${WRKSRC}/src/ipopd/ipopd.8 ${PREFIX}/man/man8/ipopd.8
 	${INSTALL_PROGRAM} ${WRKSRC}/dmail/dmail ${PREFIX}/bin/
 	${INSTALL_PROGRAM} ${WRKSRC}/mailutil/mailutil ${PREFIX}/bin/
 	${INSTALL_PROGRAM} ${WRKSRC}/tmail/tmail ${PREFIX}/bin/
