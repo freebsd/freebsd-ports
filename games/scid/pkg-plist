@@ -8,8 +8,10 @@ bin/sc_remote
 bin/sc_spell
 bin/sc_tree
 bin/scid
+bin/scidlet
 bin/scidpgn
 bin/scmerge
+bin/spliteco
 bin/tcscid
 bin/tkscid
 share/scid/scid.eco
