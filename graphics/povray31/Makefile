@@ -8,9 +8,12 @@
 PORTNAME=	povray
 PORTVERSION=	3.1g
 CATEGORIES=	graphics
-MASTER_SITES=	ftp://ftp.povray.org/pub/povray/Official/Unix/ \
-		ftp://www.hensa.ac.uk/mirrors/povray/Old-Versions/Official-3.0/Unix/ \
-		ftp://ftp.fh-aachen.de/pub/mirror/ftp.povray.org/povray/Old-Versions/Official-3.0/Unix/
+MASTER_SITES=	ftp://ftp.povray.org/pub/povray/%SUBDIR%/ \
+		ftp://ftp.gigabell.net/pub/unix/apps/graphics/povray/%SUBDIR%/ \
+		ftp://www.hensa.ac.uk/mirrors/povray/%SUBDIR%/ \
+		ftp://ftp.fh-aachen.de/pub/mirror/ftp.povray.org/povray/%SUBDIR%/ \
+		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,graphics/povray/%SUBDIR%,}
+MASTER_SITE_SUBDIR=	Official/Unix
 DISTNAME=	povray31
 DISTFILES=	povuni_s.tgz povuni_d.tgz
 
@@ -41,8 +44,8 @@ do-install:
 	@${MKDIR} ${POVLIB}/allscene
 	@${TOUCH} ${POVLIB}/allscene/.bla
 	@${INSTALL_PROGRAM} ${WRKSRC}/source/unix/x-povray ${PREFIX}/bin/povray
-	@(cd ${WRKSRC}; tar cpf - include scenes) | \
-		(cd ${POVLIB}; tar xpf -)
+	@(cd ${WRKSRC}; ${TAR} cpf - include scenes) | \
+		(cd ${POVLIB}; ${TAR} xpf -)
 	@${INSTALL_DATA} ${WRKSRC}/*.ini ${POVLIB}/
 	@${INSTALL_DATA} ${WRKSRC}/*.doc ${POVLIB}/
 	@${INSTALL_DATA} ${WRKSRC}/*.txt ${POVLIB}/
