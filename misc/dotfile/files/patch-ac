@@ -1,7 +1,7 @@
-*** Modules/procmail/configure.in.orig	Sat Feb 21 15:20:04 1998
---- Modules/procmail/configure.in	Sat Feb 21 15:20:19 1998
+*** Modules/procmail/configure.in.orig	Sun Dec 21 07:40:33 1997
+--- Modules/procmail/configure.in	Wed Feb 25 17:24:18 1998
 ***************
-*** 13,19 ****
+*** 13,27 ****
   echo "----------------------------------------------------------------------"
   
   
@@ -9,7 +9,15 @@
   if test "$TCLSH" = no; then
           AC_MSG_ERROR(I couldn't find 'tclsh' please insert it into your pa
   th and try again)
---- 13,19 ----
+- fi
+- 
+- AC_PATH_PROGS(FORMAIL, formail,)
+- if test "$FORMAIL" = ""; then
+-   AC_MSG_ERROR(I couldn't find the program formail, it should be in the procmail distribution. Please insert it into the path.)
+  fi
+  
+  AC_PATH_PROGS(SED,sed,)
+--- 13,22 ----
   echo "----------------------------------------------------------------------"
   
   
@@ -17,3 +25,6 @@
   if test "$TCLSH" = no; then
           AC_MSG_ERROR(I couldn't find 'tclsh' please insert it into your pa
   th and try again)
+  fi
+  
+  AC_PATH_PROGS(SED,sed,)
