@@ -17,12 +17,6 @@ MAINTAINER=	perky@fallin.lv
 
 USE_BZIP2=	yes
 USE_PYTHON=	yes
-SETUP_CMD=	cd ${WRKSRC} && ${PYTHON_CMD} setup.py
-
-do-build:
-	${SETUP_CMD} build
-
-do-install:
-	${SETUP_CMD} install -c -O1 --prefix=${PREFIX}
+USE_PYDISTUTILS=	yes
 
 .include <bsd.port.mk>
