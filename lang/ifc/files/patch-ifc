@@ -1,0 +1,42 @@
+--- opt/intel/compiler60/ia32/bin/ifc.orig	Sun Sep 22 01:03:04 2002
++++ opt/intel/compiler60/ia32/bin/ifc	Sun Sep 22 01:06:31 2002
+@@ -1,29 +1,31 @@
+ #!/bin/sh
+ 
+-INTEL_LICENSE_FILE=<INSTALLDIR>/licenses;
++PREFIX=/usr/local
++export PREFIX
++INTEL_LICENSE_FILE=${PREFIX}/intel/licenses;
+ export INTEL_LICENSE_FILE;
+ 
+ if [ -z LD_LIBRARY_PATH ]
+ then 
+- LD_LIBRARY_PATH=<INSTALLDIR>/compiler60/ia32/lib;
++ LD_LIBRARY_PATH=${PREFIX}/intel/compiler60/ia32/lib;
+ else
+- LD_LIBRARY_PATH=<INSTALLDIR>/compiler60/ia32/lib:$LD_LIBRARY_PATH
++ LD_LIBRARY_PATH=${PREFIX}/intel/compiler60/ia32/lib:$LD_LIBRARY_PATH
+ fi
+ export LD_LIBRARY_PATH;
+ 
+ if [ -z PATH ]
+ then
+- PATH=<INSTALLDIR>/compiler60/ia32/bin;
++ PATH=${PREFIX}/intel/compiler60/ia32/bin;
+ else
+- PATH=<INSTALLDIR>/compiler60/ia32/bin:$PATH;
++ PATH=${PREFIX}/intel/compiler60/ia32/bin:$PATH;
+ fi
+ export PATH;
+ 
+-export -n IA32ROOT; unset IA32ROOT;
++unset IA32ROOT;
+ 
+ if [ $# != 0 ]
+ then
+- exec -a "<INSTALLDIR>/compiler60/ia32/bin/ifc" <INSTALLDIR>/compiler60/ia32/bin/ifcbin "$@";
++ exec ${PREFIX}/intel/compiler60/ia32/bin/ifcbin "$@";
+ else
+- exec -a "<INSTALLDIR>/compiler60/ia32/bin/ifc" <INSTALLDIR>/compiler60/ia32/bin/ifcbin;
++ exec ${PREFIX}/intel/compiler60/ia32/bin/ifcbin;
+ fi
