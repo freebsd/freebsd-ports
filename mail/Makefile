@@ -3,6 +3,7 @@
 
     SUBDIR += adcomplain
     SUBDIR += asmail
+    SUBDIR += arrow
     SUBDIR += autorespond
     SUBDIR += balsa
     SUBDIR += bbmail

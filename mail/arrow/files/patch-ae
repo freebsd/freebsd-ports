@@ -1,0 +1,34 @@
+--- programs/arrow/code/SMTPMessage.cc.orig	Wed Jun 14 14:15:43 2000
++++ programs/arrow/code/SMTPMessage.cc	Wed Jun 14 14:37:44 2000
+@@ -42,7 +42,7 @@
+ #include <ace/LSOCK_Connector.h>
+ #include <ace/LSOCK_Stream.h>
+ 
+-#include <sys/timeb.h>
++#include <sys/time.h>
+ #include <sys/utsname.h>
+ #include <fstream.h>
+ #include <strstream.h>
+@@ -395,9 +395,22 @@
+ 	itsFrom->Print(*itsOutboxStream);
+ 	*itsOutboxStream << " ";
+ 	
++/*	This is obsolete on FreeBSD
++	Try the replacemente below
+ 	struct timeb tp;
+ 	ftime(&tp);
+ 	JString date(ctime(&(tp.time)));
++*/
++
++/* BEGIN of ftime replacement */
++	struct timeval t;
++	struct timezone tz;
++
++	gettimeofday(&t, &tz);
++	JString date(ctime(&(t.tv_sec)));
++
++/* END of ftime replacement */
++	
+ 	date.Print(*itsOutboxStream);
+ 
+ 	jistrstream(is, date.GetCString(), date.GetLength());

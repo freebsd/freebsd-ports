@@ -1,0 +1,28 @@
+--- Makefile.orig	Sat Sep 11 17:44:38 1999
++++ Makefile	Wed Jun 14 01:07:15 2000
+@@ -262,25 +262,11 @@
+ freebsd2.x: prep
+ 	@ln -s sys/FreeBSD-2.x_g++ \
+            include/make/jx_config
+-	@ln -s ../../include/missing_proto/jMissingProto_empty.h \
+-           include/jcore/jMissingProto.h
+-	@ln -s config-freebsd.h \
+-           ACE/ACE_wrappers/ace/config.h
+-	@ln -s platform_freebsd.GNU \
+-           ACE/ACE_wrappers/include/makeinclude/platform_macros.GNU
+-	@${INSTALL_CMD}
+ 
+ .PHONY : freebsd3.x
+ freebsd3.x: prep
+ 	@ln -s sys/FreeBSD-3.x_g++ \
+            include/make/jx_config
+-	@ln -s ../../include/missing_proto/jMissingProto_empty.h \
+-           include/jcore/jMissingProto.h
+-	@ln -s config-freebsd-pthread.h \
+-           ACE/ACE_wrappers/ace/config.h
+-	@ln -s platform_freebsd_pthread.GNU \
+-           ACE/ACE_wrappers/include/makeinclude/platform_macros.GNU
+-	@${INSTALL_CMD}
+ 
+ #
+ # SunOS 4.x

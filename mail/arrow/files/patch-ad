@@ -1,0 +1,46 @@
+--- programs/arrow/Make.header.orig	Mon Oct  4 20:07:33 1999
++++ programs/arrow/Make.header	Wed Jun 14 14:41:40 2000
+@@ -19,7 +19,7 @@
+ 
+ # Directories to search for header files
+ 
+-SEARCHDIRS := -I- \
++SEARCHDIRS = -I- \
+               -I${CODEDIR} \
+               -I${MAILTREE} \
+               -I${ADDBOOKTREE} \
+@@ -29,7 +29,8 @@
+               -I${JXDIR} \
+               -I${MENUIMGDIR} \
+               -I${JSEARCHDIR} \
+-              -I${ACE_ROOT}
++              -I${ACE_ROOT} \
++		${J_X11_INCLUDE_DIR}
+ 
+ # other constants
+ 
+@@ -47,15 +48,6 @@
+ 
+ # library dependencies
+ 
+-ifdef J_BUILD_SHARED_LIB
+-  LIB_DEPS := ${JLIBDIR}/libjtree-${JTREE_LIB_VERSION}.so \
+-              ${JLIBDIR}/libjtoolbar-${JTOOLBAR_LIB_VERSION}.so \
+-              ${JLIBDIR}/libjsearch-${JSEARCH_LIB_VERSION}.so
+-else
+-  LIB_DEPS := ${JLIBDIR}/libjtree-${JTREE_LIB_VERSION}.a \
+-              ${JLIBDIR}/libjtoolbar-${JTOOLBAR_LIB_VERSION}.a \
+-              ${JLIBDIR}/libjsearch-${JSEARCH_LIB_VERSION}.a
+-endif
+ 
+ # make variables
+ 
+@@ -75,7 +67,7 @@
+ #####
+ 
+ .PHONY : default
+-default: libs arrow
++default: arrow
+ 
+ .PHONY : Makefiles
+ Makefiles:
