@@ -7,7 +7,7 @@
 
 PORTNAME=	orion
 PORTVERSION=	1.5.2
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	www java
 MASTER_SITES=	http://www.orionserver.com/distributions/ \
 		http://www.atlassian.com/software/orion/downloads/ \
@@ -41,8 +41,8 @@ WITH_JIKES?=	YES
 .if ${WITH_JIKES} == "YES"
 RUN_DEPENDS+=	${JIKES_LOCATION}:${PORTSDIR}/java/jikes
 .endif
-USER_NAME=	www
-GROUP_NAME=	www
+USER=	www
+GROUP=	www
 PW?=		/usr/sbin/pw
 HTTP_PORT?=	8090
 RMI_PORT?=	23791
@@ -59,7 +59,7 @@ pre-install:
 	@${ECHO} "   Location of JDK:         ${JAVA_HOME}"
 	@${ECHO} "   Location of Java port:   ${JAVA_PORT}"
 	@${ECHO} "   Using Jikes:             ${WITH_JIKES}"
-	@${ECHO} "   Running as (user/group): ${USER_NAME}/${GROUP_NAME}"
+	@${ECHO} "   Running as (user/group): ${USER}/${GROUP}"
 	@${ECHO} "   HTTP port:               ${HTTP_PORT}"
 	@${ECHO} "   RMI port:                ${RMI_PORT}"
 	@${ECHO} "   Starting after install:  ${AUTO_START}"
@@ -102,8 +102,8 @@ do-install:
 	| ${SED} "/%%LOG_DIR%%/s//${LOG_DIR:S/\//\\\//g}/" \
 	| ${SED} "/%%RC_SCRIPT_NAME%%/s//${PORTNAME}.sh/" \
 	| ${SED} "/%%JAVA_HOME%%/s//${JAVA_HOME:S/\//\\\//g}/" \
-	| ${SED} "/%%USER_NAME%%/s//${USER_NAME}/" \
-	| ${SED} "/%%GROUP_NAME%%/s//${GROUP_NAME}/" \
+	| ${SED} "/%%USER%%/s//${USER}/" \
+	| ${SED} "/%%GROUP%%/s//${GROUP}/" \
 	| ${SED} "/%%STDOUT_LOG%%/s//${STDOUT_LOG:S/\//\\\//g}/" \
 	| ${SED} "/%%STDERR_LOG%%/s//${STDERR_LOG:S/\//\\\//g}/" \
 	| ${SED} "/%%PID_FILE%%/s//${PID_FILE:S/\//\\\//g}/" \
@@ -112,7 +112,7 @@ do-install:
 
 	@# Install the startup script
 	${CAT} ${FILESDIR}/${PORTNAME}.sh \
-	| ${SED} "/%%USER_NAME%%/s//${USER_NAME}/" \
+	| ${SED} "/%%USER%%/s//${USER}/" \
 	| ${SED} "/%%APP_SHORTNAME%%/s//${APP_SHORTNAME}/" \
 	| ${SED} "/%%CONTROL_SCRIPT%%/s//${CONTROL_SCRIPT:S/\//\\\//g}/" \
 	> ${STARTUP_SCRIPT}
@@ -126,7 +126,12 @@ do-install:
 	${LN} -sf ${JAVA_HOME}/lib/tools.jar ${APP_HOME}/tools.jar
 
 	@# Change ownership for the files
-	${CHOWN} -R ${USER_NAME}:${GROUP_NAME} ${APP_HOME}
+	${CHOWN} -R ${USER}:${GROUP} ${APP_HOME}
+
+	@# Create the PID file
+	${TOUCH} ${PID_FILE}
+	${CHOWN} ${USER}:${GROUP} ${PID_FILE}
+	${CHMOD} 0600 ${PID_FILE}
 
 	@# Install the man page
 .if !defined(NOPORTDOCS)
