@@ -6,49 +6,47 @@
 #
 
 PORTNAME=	ldapsh
-PORTVERSION=	2.0.b1
+PORTVERSION=	2.00
+PORTEPOCH=	1
 CATEGORIES=	net
-MASTER_SITES=	http://madstop.com/ldapsh/
-DISTNAME=	ldapsh-2.0b1
-EXTRACT_SUFX=	.tgz
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
+MASTER_SITE_SUBDIR=	../../authors/id/L/LO/LOOSIFER/
 
 MAINTAINER=	flz@xbsd.org
 COMMENT=	Interactive shell used to administer ldap directories
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Term/ReadKey.pm:${PORTSDIR}/devel/p5-Term-ReadKey \
+		${SITE_PERL}/Term/ReadLine/Perl.pm:${PORTSDIR}/devel/p5-ReadLine-Perl \
 		${SITE_PERL}/Net/LDAP.pm:${PORTSDIR}/net/p5-perl-ldap \
 		${SITE_PERL}/Date/Manip.pm:${PORTSDIR}/devel/p5-Date-Manip \
 		${SITE_PERL}/Getopt/Long.pm:${PORTSDIR}/devel/p5-Getopt-Long \
-		${SITE_PERL}/Parse/RecDescent.pm:${PORTSDIR}/devel/p5-Parse-RecDescent
+		${SITE_PERL}/Parse/Lex.pm:${PORTSDIR}/devel/p5-ParseLex
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PKGMESSAGE=	${WRKDIR}/pkg-message
+SUB_FILES=	pkg-message
 
-SED_SCRIPT=	-e 's,%%PREFIX%%,${PREFIX},g' \
-		-e 's,%%DOCSDIR%%,${DOCSDIR},g' \
-		-e 's,%%EXAMPLESDIR%%,${EXAMPLESDIR},g'
+MAN1=		ldapsh.1
+MAN3=		Net::LDAP::Shell.3 \
+		Net::LDAP::Shell::Parse.3 Net::LDAP::Shell::Util.3
 
-USE_PERL5=	yes
-NO_BUILD=	yes
 USE_REINPLACE=	yes
-WRKSRC=		${WRKDIR}/ldapsh
+PERL_CONFIGURE=	yes
 
 .include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} > 500600
+MAN3+=		Net::LDAP::Config.3
+.else
+BUILD_DEPENDS+=	${SITE_PERL}/Pod/Usage.pm:${PORTSDIR}/textproc/p5-PodParser
+.endif
 
 post-patch:
 	${REINPLACE_CMD} -e "s,/usr/local/bin/perl,${PERL}," ${WRKSRC}/ldapsh
 
-pre-install:
-	${SED} ${SED_SCRIPT} ${PKGDIR}/pkg-message > ${WRKDIR}/pkg-message
-
-do-install:
-	${MKDIR} ${DOCSDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/COMMANDS ${DOCSDIR}
-	${INSTALL_SCRIPT} ${WRKSRC}/ldapsh ${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/examples/LdapConfig.pl ${EXAMPLESDIR}/LdapConfig.pl
-	${CP} -r ${WRKSRC}/lib/Net ${SITE_PERL}
-
 post-install:
-	${CAT} ${PKGMESSAGE}
+	${MKDIR} ${DOCSDIR} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/COMMANDS ${DOCSDIR}/
+	${INSTALL_DATA} ${WRKSRC}/examples/ldapsh_config ${EXAMPLESDIR}/
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
