@@ -227,6 +227,7 @@
     SUBDIR += qt-mysql-plugin
     SUBDIR += qt-odbc-plugin
     SUBDIR += qt-pgsql-plugin
+    SUBDIR += qt-sqlite-plugin
     SUBDIR += rdb
     SUBDIR += rdfdb
     SUBDIR += ruby-bdb
