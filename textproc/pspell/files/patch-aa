@@ -1,0 +1,26 @@
+--- configure.orig	Sun Jun 11 02:08:24 2000
++++ configure	Tue Jun 13 13:30:58 2000
+@@ -2268,7 +2268,7 @@
+ objext="$OBJEXT" exeext="$EXEEXT" reload_flag="$reload_flag" \
+ deplibs_check_method="$deplibs_check_method" file_magic_cmd="$file_magic_cmd" \
+ ${CONFIG_SHELL-/bin/sh} $ac_aux_dir/ltconfig --no-reexec \
+-$libtool_flags --no-verify --build="$build" $ac_aux_dir/ltmain.sh $lt_target \
++$libtool_flags $ac_aux_dir/ltmain.sh $lt_target \
+ || { echo "configure: error: libtool configure failed" 1>&2; exit 1; }
+ 
+ # Reload cache, that may have been modified by ltconfig
+@@ -2676,10 +2676,10 @@
+       *) # Relative path.
+         ac_sub_cache_file="$ac_dots$cache_file" ;;
+       esac
+-  case "$ac_given_INSTALL" in
+-        [/$]*) INSTALL="$ac_given_INSTALL" ;;
+-        *) INSTALL="$ac_dots$ac_given_INSTALL" ;;
+-        esac
++#  case "$ac_given_INSTALL" in
++#        [/$]*) INSTALL="$ac_given_INSTALL" ;;
++#        *) INSTALL="$ac_dots$ac_given_INSTALL" ;;
++#        esac
+ 
+       echo "running ${CONFIG_SHELL-/bin/sh} $ac_sub_configure $ac_sub_configure_args --cache-file=$ac_sub_cache_file --srcdir=$ac_sub_srcdir"
+       # The eval makes quoting arguments work.
