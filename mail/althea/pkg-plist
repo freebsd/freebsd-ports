@@ -17,6 +17,8 @@ share/althea/server.xpm
 share/doc/althea/help.html
 share/doc/althea/images/althea.png
 share/doc/althea/images/altheaRound.png
+share/doc/althea/images/configServer.png
+share/doc/althea/images/configSession.png
 share/doc/althea/images/fileMenu.png
 share/doc/althea/images/helpMenu.png
 share/doc/althea/images/messageMenu.png

@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	althea
-PORTVERSION=	0.3.4
-PORTREVISION=	1
+PORTVERSION=	0.4.1
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -23,6 +22,7 @@ post-patch:
 	@${PERL} -pi -e "s|/etc|${PREFIX}/etc|g" \
 		${WRKSRC}/Documentation/help.html \
 		${WRKSRC}/load_config.cpp \
-		${WRKSRC}/load_config.h
+		${WRKSRC}/load_config.h \
+		${WRKSRC}/save_config.h
 
 .include <bsd.port.mk>
