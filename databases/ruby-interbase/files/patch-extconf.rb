@@ -8,9 +8,9 @@
 -  have_library("gds", "isc_attach_database")
 +incdir = with_config("interbase-include-dir")
 +if incdir then
-+  $CFLAGS += "-I#{incdir}"
++  $CFLAGS += " -I#{incdir}"
 +else
-+  $CFLAGS = "-I#{INTERBASEDIR}/include"
++  $CFLAGS = " -I#{INTERBASEDIR}/include"
 +end
 +
 +libdir = with_config("interbase-lib-dir")
