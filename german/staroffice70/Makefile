@@ -35,10 +35,10 @@ LD_PATH=	${TMPDIR}:${WRKSRC}:${LINUXBASE}/lib:${LINUXBASE}/usr/lib
 INSTDB.INS=	${PREFIX}/${SOVERSION}/program/instdb.ins
 OPENCONFIG=	${PREFIX}/${SOVERSION}/share/config/registry/cache/instance/org/openoffice
 
+.include <bsd.port.pre.mk>
+
 SIZE!=		/bin/df -k . | ${TAIL} -n 1 | ${AWK} '{print $$4}'
 LINPROCFS!=	/sbin/mount | ${GREP} linprocfs | ${AWK} '{print $1}'
-
-.include <bsd.port.pre.mk>
 
 pre-fetch:
 .if ${LINPROCFS}
