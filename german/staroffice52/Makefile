@@ -23,23 +23,46 @@ NO_BUILD=	yes
 DIST_SUBDIR=	staroffice52
 WRKSRC=		${WRKDIR}/office52
 TMPDIR=		${WRKDIR}/tmp
+ADEBAS=		soa-5_2-ga-bin-linux-de.bin
 
 .include <bsd.port.pre.mk>
 
-#
-# Staroffice benötigt einen System-Patch der erst
-# in FreeBSD 4.1 verfügbar ist. Bitte bringen Sie ihr
-# System auf den neuesten Stand.
-#
+pre-fetch:
 .if ${OSVERSION} < 410000
-BROKEN= YES
+	@${ECHO}
+	@${ECHO} OS-VERSION ${OSVERSION}
+	@${ECHO}
+	@${ECHO} Staroffice benötigt einen System-Patch der erst
+	@${ECHO} seit FreeBSD 4.1 verfügbar ist. Bitte bringen Sie ihr
+	@${ECHO} System auf den neuesten Stand.
+	@${ECHO}
+	@${FALSE}
 .endif
-
 .if defined(WITH_CDROM)
-IGNORE= "Bitte mounten Sie die Sun StarOffice 5.2 CDROM nach /cdrom and starten Sie make erneut."
-.else	# FTP/web download
+	@${ECHO}
+	@${ECHO} Bitte mounten Sie die Sun StarOffice 5.2 CDROM
+	@${ECHO} nach /cdrom and starten Sie make erneut.
+	@${ECHO}
+	@${FALSE}
+.else
+.if !exists(${_DISTDIR})
+	@${MKDIR} ${_DISTDIR}
+.endif
 .if !exists(${_DISTDIR}/${DISTNAME})
-IGNORE="Bitte laden Sie ${DISTNAME} manuell von http://www.sun.com/staroffice herunter. Kopieren Sie ${DISTNAME} in das Verzeichnis ${_DISTDIR} und starten Sie make erneut.  Wenn Sie die StarOffice 5.2 CDROM besitzen, koennen Sie auch 'make WITH_CDROM=yes' ausfuehren."
+	@${ECHO}
+	@${ECHO} Bitte laden Sie ${DISTFILES} manuell
+	@${ECHO} von http://www.sun.com/staroffice herunter.
+	@${ECHO}
+	@${ECHO} ${ADEBAS} ist das Datenbank-Modul für Staroffice.
+	@${ECHO}
+	@${ECHO} Kopieren Sie ${DISTFILES}
+	@${ECHO} in das bereits erstellte Verzeichnis ${_DISTDIR}
+	@${ECHO} und starten Sie make erneut.
+	@${ECHO}
+	@${ECHO} Wenn Sie die StarOffice 5.2 CDROM besitzen,
+	@${ECHO} koennen Sie auch 'make WITH_CDROM=yes' ausfuehren.
+	@${ECHO}
+	@${FALSE}
 .endif
 .endif
 
@@ -65,7 +88,7 @@ do-extract:
 	@${CHMOD} 755 ${WRKSRC}/${DISTNAME}
 	@${CHMOD} 755 ${WRKSRC}/soa-5_2-ga-bin-linux-de.bin
 	@cd ${WRKSRC}
-	@${WRKSRC}/${DISTNAME} -extract ${WRKSRC}
+	@SAL_IGNOREXERRORS=1 ${WRKSRC}/${DISTNAME} -extract ${WRKSRC}
 	@cd ../../
 .endif
 
@@ -85,7 +108,7 @@ do-install:
 	@${LN} -fs /compat/linux/usr/local/office52 ${PREFIX}/office52
 .endif
 	@${CAT} ${PKGDIR}/MESSAGE
-	@-TEMP=${TMPDIR} /compat/linux/bin/sh -c '${WRKSRC}/setup /net'
+	@-SAL_IGNOREXERRORS=1 TEMP=${TMPDIR} /compat/linux/bin/sh -c '${WRKSRC}/setup /net'
 	@ ${ECHO}
 	@ ${ECHO} Ignorieren Sie die Fehlermeldung. StarOffice5.2 wurde erfolgreich
 	@ ${ECHO} auf Ihrem System installiert.
