@@ -1,0 +1,52 @@
+bin/sigc-config
+include/sigc++/adaptor.h
+include/sigc++/basic_signal.h
+include/sigc++/bind.h
+include/sigc++/class_slot.h
+include/sigc++/convert.h
+include/sigc++/func_slot.h
+include/sigc++/generator.h
+include/sigc++/handle.h
+include/sigc++/handle_system.h
+include/sigc++/marshal.h
+include/sigc++/object.h
+include/sigc++/object_slot.h
+include/sigc++/rettype.h
+include/sigc++/scope.h
+include/sigc++/sigc++config.h
+include/sigc++/signal_system.h
+include/sigc++/slot.h
+include/sigc++/thread.h
+include/sigc++/type.h
+lib/libsigc.a
+lib/libsigc.la
+lib/libsigc.so
+lib/libsigc.so.1
+@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
+@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
+share/aclocal/sigc++.m4
+share/doc/libsigc++/API
+share/doc/libsigc++/FAQ
+share/doc/libsigc++/FEATURES
+share/doc/libsigc++/README
+share/doc/libsigc++/UML
+share/doc/libsigc++/conventions
+share/doc/libsigc++/diagrams
+share/doc/libsigc++/marshal
+share/doc/libsigc++/powerusers
+share/doc/libsigc++/requirements
+share/doc/libsigc++/riscos
+share/doc/libsigc++/signals
+share/doc/libsigc++/win32
+share/libsigc++/basic_signal.h.m4
+share/libsigc++/bind.h.m4
+share/libsigc++/class_slot.h.m4
+share/libsigc++/convert.h.m4
+share/libsigc++/func_slot.h.m4
+share/libsigc++/object_slot.h.m4
+share/libsigc++/rettype.h.m4
+share/libsigc++/slot.h.m4
+share/libsigc++/template.macros.m4
+@dirrm include/sigc++
+@dirrm share/doc/libsigc++
+@dirrm share/libsigc++
