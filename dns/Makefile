@@ -1,5 +1,6 @@
 # $FreeBSD$
 #
+    SUBDIR += zonecheck
     SUBDIR += rbldnsd
     SUBDIR += weedns_sc
 

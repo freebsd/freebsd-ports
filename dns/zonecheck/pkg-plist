@@ -1,0 +1,116 @@
+bin/zc
+libexec/zc/lib/address.rb
+libexec/zc/lib/address/common.rb
+libexec/zc/lib/address/ipv4.rb
+libexec/zc/lib/address/ipv6.rb
+libexec/zc/lib/nresolv.rb
+libexec/zc/lib/nresolv/compatibility.rb
+libexec/zc/lib/nresolv/config.rb
+libexec/zc/lib/nresolv/constants.rb
+libexec/zc/lib/nresolv/dbg.rb
+libexec/zc/lib/nresolv/dig_output.rb
+libexec/zc/lib/nresolv/dns.rb
+libexec/zc/lib/nresolv/dns_message.rb
+libexec/zc/lib/nresolv/dns_name.rb
+libexec/zc/lib/nresolv/dns_resource.rb
+libexec/zc/lib/nresolv/host.rb
+libexec/zc/lib/nresolv/resolver.rb
+libexec/zc/lib/nresolv/transport.rb
+libexec/zc/lib/nresolv/wire.rb
+libexec/zc/lib/textfmt.rb
+libexec/zc/lib/whois.rb
+libexec/zc/locale/cgi.en
+libexec/zc/locale/cgi.fr
+libexec/zc/locale/cli.en
+libexec/zc/locale/cli.fr
+libexec/zc/locale/gtk.en
+libexec/zc/locale/gtk.fr
+libexec/zc/locale/test/axfr.en
+libexec/zc/locale/test/axfr.fr
+libexec/zc/locale/test/connectivity.en
+libexec/zc/locale/test/connectivity.fr
+libexec/zc/locale/test/generic.en
+libexec/zc/locale/test/generic.fr
+libexec/zc/locale/test/loopback.en
+libexec/zc/locale/test/loopback.fr
+libexec/zc/locale/test/mail.en
+libexec/zc/locale/test/mail.fr
+libexec/zc/locale/test/misc.en
+libexec/zc/locale/test/misc.fr
+libexec/zc/locale/test/mx.en
+libexec/zc/locale/test/mx.fr
+libexec/zc/locale/test/nameserver.en
+libexec/zc/locale/test/nameserver.fr
+libexec/zc/locale/test/ns.en
+libexec/zc/locale/test/ns.fr
+libexec/zc/locale/test/rootserver.en
+libexec/zc/locale/test/rootserver.fr
+libexec/zc/locale/test/soa.en
+libexec/zc/locale/test/soa.fr
+libexec/zc/locale/zc.en
+libexec/zc/locale/zc.fr
+libexec/zc/test/axfr.rb
+libexec/zc/test/connectivity.rb
+libexec/zc/test/generic.rb
+libexec/zc/test/loopback.rb
+libexec/zc/test/mail.rb
+libexec/zc/test/misc.rb
+libexec/zc/test/mx.rb
+libexec/zc/test/nameserver.rb
+libexec/zc/test/ns.rb
+libexec/zc/test/rootserver.rb
+libexec/zc/test/soa.rb
+libexec/zc/zc/cache.rb
+libexec/zc/zc/cachemanager.rb
+libexec/zc/zc/config.rb
+libexec/zc/zc/config/lexer.rb
+libexec/zc/zc/config/parser.rb
+libexec/zc/zc/config/pos.rb
+libexec/zc/zc/config/token.rb
+libexec/zc/zc/console.rb
+libexec/zc/zc/data/logo.rb
+libexec/zc/zc/data/xpm.rb
+libexec/zc/zc/data/zonecheck.dtd
+libexec/zc/zc/dbg.rb
+libexec/zc/zc/ext/array.rb
+libexec/zc/zc/ext/gtk.rb
+libexec/zc/zc/framework.rb
+libexec/zc/zc/input/cgi.rb
+libexec/zc/zc/input/cli.rb
+libexec/zc/zc/input/gtk.rb
+libexec/zc/zc/instructions.rb
+libexec/zc/zc/mail.rb
+libexec/zc/zc/msgcat.rb
+libexec/zc/zc/param.rb
+libexec/zc/zc/publisher.rb
+libexec/zc/zc/publisher/gtk.rb
+libexec/zc/zc/publisher/html.rb
+libexec/zc/zc/publisher/text.rb
+libexec/zc/zc/publisher/xml.rb
+libexec/zc/zc/report.rb
+libexec/zc/zc/report/byhost.rb
+libexec/zc/zc/report/byseverity.rb
+libexec/zc/zc/testmanager.rb
+libexec/zc/zc/zc.rb
+share/doc/zc/BUGS
+share/doc/zc/INSTALL
+share/doc/zc/README
+share/doc/zc/TODO
+etc/zc.conf-dist
+etc/zc.conf.arpa-dist
+etc/zc.conf.fr-dist
+@dirrm share/doc/zc
+@dirrm libexec/zc/zc/report
+@dirrm libexec/zc/zc/publisher
+@dirrm libexec/zc/zc/input
+@dirrm libexec/zc/zc/ext
+@dirrm libexec/zc/zc/data
+@dirrm libexec/zc/zc/config
+@dirrm libexec/zc/zc
+@dirrm libexec/zc/test
+@dirrm libexec/zc/locale/test
+@dirrm libexec/zc/locale
+@dirrm libexec/zc/lib/nresolv
+@dirrm libexec/zc/lib/address
+@dirrm libexec/zc/lib
+@dirrm libexec/zc
