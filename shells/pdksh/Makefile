@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.cs.mun.ca/pub/pdksh/ \
 		ftp://ftp.lip6.fr/pub/unix/shells/pdksh/ \
 		ftp://ftp.demon.net/pub/mirrors/pdksh/ \
 		ftp://ftp.rge.com/pub/shells/pdksh/
-DISTNAME=	${PORTNAME}-${PORTVERSION:N*p*}${PORTVERSION:M*p*:R}
+DISTNAME=	${PORTNAME}-${PORTVERSION:C/p.*//}
 
 PATCH_SITES=	${MASTER_SITES}
 PATCHFILES=	${DISTNAME}-patches.1 ${DISTNAME}-patches.2
@@ -26,7 +26,7 @@ CONFIGURE_ENV=	LDSTATIC=-static
 MAN1=		ksh.1
 
 post-patch:
-	@(${ECHO_CMD} ",s/v${PORTVERSION:N*p*}${PORTVERSION:M*p*:R} /v${PORTVERSION:S/p//} /"; \
+	@(${ECHO_CMD} ",s/v${PORTVERSION:C/p.*//}/v${PORTVERSION:S/p/./}/"; \
 		${ECHO_CMD} "wq") | ed -s ${WRKSRC}/version.c
 
 post-install:
