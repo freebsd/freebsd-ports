@@ -19,4 +19,4 @@ EMACS_PORT_NAME=	xemacs21-mule
 # pkg-* files in ${.CURDIR} are used
 PKGDIR=		${.CURDIR}
 
-.include <${MASTERDIR}/Makefile>
+.include "${MASTERDIR}/Makefile"
