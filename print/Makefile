@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.76 1998/12/24 12:13:55 jseger Exp $
+# $Id: Makefile,v 1.77 1999/01/01 22:20:14 sada Exp $
 #
 
     SUBDIR += a2ps-a4
@@ -29,6 +29,7 @@
     SUBDIR += ghostscript
     SUBDIR += ghostscript4
     SUBDIR += ghostscript5
+    SUBDIR += ghostscript55
     SUBDIR += ghostview
     SUBDIR += gp
     SUBDIR += gsfonts
