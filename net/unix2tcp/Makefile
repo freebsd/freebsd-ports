@@ -7,18 +7,24 @@
 #
 
 PORTNAME=	unix2tcp
-PORTVERSION=	0.7.2
+PORTVERSION=	0.8.1
 CATEGORIES=	net
 MASTER_SITES=	http://ahriman.bucharest.roedu.net/unix2tcp/
 
 MAINTAINER=	mich@FreeBSD.org
 COMMENT=	A connection forwarder that converts Unix sockets into TCP sockets
 
+CFLAGS+=	-DHAVE_CONFIG_H -I.
+GNU_CONFIGURE=	yes
+
 do-build:
 	cd ${WRKSRC} && \
-	${CC} -I. ${PORTNAME}.c -c &&\
-	${CC} -I. list.c -c && \
-	${CC} ${PORTNAME}.o list.o -o ${PORTNAME}
+	${CC} ${CFLAGS} -c ${PORTNAME}.c -o ${PORTNAME}.o &&\
+	${CC} ${CFLAGS} -c server.c -o server.o &&\
+	${CC} ${CFLAGS} -c mylog.c -o mylog.o &&\
+	${CC} ${CFLAGS} -c list.c -o list.o &&\
+	${CC} ${PORTNAME}.o server.o mylog.o list.o -o ${PORTNAME} && \
+	${CC} ${CFLAGS} -c utelnet.c -o utelnet.o
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/sbin
