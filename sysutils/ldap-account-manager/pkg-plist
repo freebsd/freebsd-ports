@@ -1,0 +1,112 @@
+%%WWWROOT%%/index.html
+%%WWWROOT%%/config/profiles/groups/default.prg
+%%WWWROOT%%/config/profiles/hosts/default.prh
+%%WWWROOT%%/config/profiles/users/default.pru
+%%WWWROOT%%/config/.htaccess
+%%WWWROOT%%/config/lam.conf_sample
+%%WWWROOT%%/config/language
+%%WWWROOT%%/config/config.cfg_sample
+%%WWWROOT%%/config/shells
+%%WWWROOT%%/graphics/banner.jpg
+%%WWWROOT%%/graphics/printLogo.jpg
+%%WWWROOT%%/help/extFileExample.php
+%%WWWROOT%%/help/help_numbers.assign
+%%WWWROOT%%/help/help.inc
+%%WWWROOT%%/lib/font/makefont/cp1250.map
+%%WWWROOT%%/lib/font/makefont/cp1251.map
+%%WWWROOT%%/lib/font/makefont/cp1252.map
+%%WWWROOT%%/lib/font/makefont/cp1253.map
+%%WWWROOT%%/lib/font/makefont/cp1254.map
+%%WWWROOT%%/lib/font/makefont/cp1257.map
+%%WWWROOT%%/lib/font/makefont/iso-8859-1.map
+%%WWWROOT%%/lib/font/makefont/iso-8859-15.map
+%%WWWROOT%%/lib/font/makefont/iso-8859-16.map
+%%WWWROOT%%/lib/font/makefont/iso-8859-2.map
+%%WWWROOT%%/lib/font/makefont/iso-8859-4.map
+%%WWWROOT%%/lib/font/makefont/iso-8859-5.map
+%%WWWROOT%%/lib/font/makefont/iso-8859-7.map
+%%WWWROOT%%/lib/font/makefont/iso-8859-9.map
+%%WWWROOT%%/lib/font/makefont/koi8-r.map
+%%WWWROOT%%/lib/font/makefont/makefont.php
+%%WWWROOT%%/lib/font/courier.php
+%%WWWROOT%%/lib/font/helveticab.php
+%%WWWROOT%%/lib/font/helveticabi.php
+%%WWWROOT%%/lib/font/helveticai.php
+%%WWWROOT%%/lib/font/symbol.php
+%%WWWROOT%%/lib/font/times.php
+%%WWWROOT%%/lib/font/timesb.php
+%%WWWROOT%%/lib/font/timesbi.php
+%%WWWROOT%%/lib/font/timesi.php
+%%WWWROOT%%/lib/font/zapfdingbats.php
+%%WWWROOT%%/lib/font/helvetica.php
+%%WWWROOT%%/lib/account.inc
+%%WWWROOT%%/lib/config.inc
+%%WWWROOT%%/lib/createntlm.pl
+%%WWWROOT%%/lib/fpdf.php
+%%WWWROOT%%/lib/functions.js
+%%WWWROOT%%/lib/lamdaemon.pl
+%%WWWROOT%%/lib/profiles.inc
+%%WWWROOT%%/lib/status.inc
+%%WWWROOT%%/lib/ldap.inc
+%%WWWROOT%%/lib/.htaccess
+%%WWWROOT%%/lib/pdf.inc
+%%WWWROOT%%/locale/de_DE/LC_MESSAGES/messages.mo
+%%WWWROOT%%/locale/de_DE/LC_MESSAGES/messages.po
+%%WWWROOT%%/sess/.htaccess
+%%WWWROOT%%/style/layout.css
+%%WWWROOT%%/templates/lists/listgroups.php
+%%WWWROOT%%/templates/lists/listhosts.php
+%%WWWROOT%%/templates/lists/listusers.php
+%%WWWROOT%%/templates/lists/userlink.php
+%%WWWROOT%%/templates/lists/listdomains.php
+%%WWWROOT%%/templates/profedit/profilecreate.php
+%%WWWROOT%%/templates/profedit/profiledelete.php
+%%WWWROOT%%/templates/profedit/profilehost.php
+%%WWWROOT%%/templates/profedit/profilemain.php
+%%WWWROOT%%/templates/profedit/profileuser.php
+%%WWWROOT%%/templates/config/conflogin.php
+%%WWWROOT%%/templates/config/confmain.php
+%%WWWROOT%%/templates/config/confsave.php
+%%WWWROOT%%/templates/config/profmanage.php
+%%WWWROOT%%/templates/login.php
+%%WWWROOT%%/templates/logout.php
+%%WWWROOT%%/templates/main.php
+%%WWWROOT%%/templates/main_header.php
+%%WWWROOT%%/templates/ou_edit.php
+%%WWWROOT%%/templates/massdetail.php
+%%WWWROOT%%/templates/domain.php
+%%WWWROOT%%/templates/initsuff.php
+%%WWWROOT%%/templates/account.php
+%%WWWROOT%%/templates/masscreate.php
+%%WWWROOT%%/templates/delete.php
+%%WWWROOT%%/templates/help.php
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/HISTORY
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%%%DOCSDIR%%/README.fpdf
+%%PORTDOCS%%%%DOCSDIR%%/README.lamdaemon.pl
+%%PORTDOCS%%%%DOCSDIR%%/README.openldap
+%%PORTDOCS%%%%DOCSDIR%%/README.shells
+@dirrm %%PORTDOCS%%%%DOCSDIR%%
+@dirrm %%WWWROOT%%/graphics
+@dirrm %%WWWROOT%%/help
+@dirrm %%WWWROOT%%/lib/font/makefont
+@dirrm %%WWWROOT%%/lib/font
+@dirrm %%WWWROOT%%/lib
+@dirrm %%WWWROOT%%/locale/de_DE/LC_MESSAGES
+@dirrm %%WWWROOT%%/locale/de_DE
+@dirrm %%WWWROOT%%/locale
+@dirrm %%WWWROOT%%/style
+@dirrm %%WWWROOT%%/templates/lists
+@dirrm %%WWWROOT%%/templates/profedit
+@dirrm %%WWWROOT%%/templates/config
+@dirrm %%WWWROOT%%/templates
+@unexec rmdir %D/%%WWWROOT%%/config/profiles/groups 2>/dev/null || true
+@unexec rmdir %D/%%WWWROOT%%/config/profiles/hosts 2>/dev/null || true
+@unexec rmdir %D/%%WWWROOT%%/config/profiles/users 2>/dev/null || true
+@unexec rmdir %D/%%WWWROOT%%/config/profiles 2>/dev/null || true
+@unexec rmdir %D/%%WWWROOT%%/config 2>/dev/null || true
+@unexec rmdir %D/%%WWWROOT%%/sess || true
+@unexec rmdir %D/%%WWWROOT%% 2>/dev/null || echo "If you are permanently removing this port, you should do a ``rm -rf %D/%%WWWROOT%%`` to remove any files left." | fmt
