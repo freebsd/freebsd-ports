@@ -32,10 +32,6 @@ WANT_GNOME=		yes
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 502102
-BROKEN=			"Install fails"
-.endif
-
 .if ${HAVE_GNOME:Mgnomehier}!=""
 PLIST_SUB+=	GNOME:=""
 .else
