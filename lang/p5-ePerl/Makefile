@@ -8,9 +8,7 @@
 PORTNAME=	eperl
 PORTVERSION=	2.2.14
 CATEGORIES=	lang www perl5
-MASTER_SITES=	http://www.engelschall.com/sw/eperl/distrib/ \
-		ftp://ftp.engelschall.com/sw/eperl/ \
-		ftp://ftp.hyperreal.org/software/engelschall/eperl/ \
+MASTER_SITES=	ftp://ftp.ossp.org/pkg/tool/eperl/ \
 		${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=Parse
 PKGNAMEPREFIX=	p5-
