@@ -1,5 +1,5 @@
---- logtool/Makefile.orig	Sat Jan 13 14:56:21 2001
-+++ logtool/Makefile	Sat Jan 13 14:58:01 2001
+--- logtool/Makefile.orig	Wed Jan 10 08:27:16 2001
++++ logtool/Makefile	Sun Jan 28 22:36:49 2001
 @@ -9,8 +9,8 @@
  	 csv.o html.o raw.o logtool.o main.o
  SRC = logtool.c
@@ -16,7 +16,7 @@
  
  # For RedHat (and most other) Linux'es, this should be ideal
 -CFLAGS= -Wall -O3 -ansi -pedantic -Werror # -DDEBUG -g # uncomment this for debugging stuff's
-+CFLAGS= -I/usr/local/include -Wall -O3 -ansi -pedantic -Werror # -DDEBUG -g # uncomment this for debugging stuff's
++CFLAGS+= -I/usr/local/include -Wall -ansi -pedantic -Werror # -DDEBUG -g # uncomment this for debugging stuff's
 +LIBS=  -L/usr/local/lib -lgnugetopt
  
  # For portability to non-linux'es/non-standard-linux'es, try this

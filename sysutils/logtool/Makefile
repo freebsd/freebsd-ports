@@ -24,7 +24,9 @@ post-patch:
 .for file in logtool/Makefile logtail/Makefile
 	@${PERL} -pi -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/${file}
 .endfor
-	@${PERL} -pi -e "s|/etc|${PREFIX}/etc|g" ${WRKSRC}/logtool/config.h
+.for file in logtool/config.h conf/logtool.conf
+	@${PERL} -pi -e "s|/etc|${PREFIX}/etc|g" ${WRKSRC}/${file}
+.endfor
 
 post-install:
 .if !defined(NOPORTDOCS)
