@@ -20,6 +20,12 @@ RUN_DEPENDS=	${LOCALBASE}/bin/nsgmls:${PORTSDIR}/textproc/sp		\
 		${LOCALBASE}/share/sgml/docbook/3.1/docbook.dtd:${PORTSDIR}/textproc/docbook-310 \
 		gv:${PORTSDIR}/print/gv
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502102
+BROKEN=		"Does not build"
+.endif
+
 post-install:
 	(cd ${WRKSRC}; tar cf - test) | (cd ${LOCALBASE}/share/gmat; tar xvf -)
 # Change the pathnames in CATALOG
@@ -28,4 +34,4 @@ post-install:
 		s:/usr/local/prod:${LOCALBASE}/share/gmat:g" \
 		> ${LOCALBASE}/share/gmat/test/CATALOG )
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
