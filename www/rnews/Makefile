@@ -14,6 +14,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A server-side rss aggregator written in php with mysql
 
+RUN_DEPENDS=	${LOCALBASE}/libexec/apache/libphp4.so:${PORTSDIR}/www/mod_php4
+
 USE_MYSQL=	yes
 
 NO_BUILD=	yes
@@ -21,15 +23,7 @@ MYPORTDOCS=	CHANGELOG INSTALL LICENSE README magpierss/AUTHORS \
 		magpierss/CHANGES magpierss/ChangeLog magpierss/INSTALL \
 		magpierss/NEWS magpierss/README magpierss/TROUBLESHOOTING
 
-OPTIONS=	PHP3 "use RNEWS with PHP3 (Default is PHP4)" off
-
 .include <bsd.port.pre.mk>
-
-.if defined(WITH_PHP3)
-RUN_DEPENDS+=	${LOCALBASE}/libexec/apache/libphp3.so:${PORTSDIR}/www/mod_php3
-.else
-RUN_DEPENDS+=	${LOCALBASE}/libexec/apache/libphp4.so:${PORTSDIR}/www/mod_php4
-.endif
 
 post-patch:
 	@${FIND} ${WRKSRC} -name CVS -type d | ${XARGS} ${RM} -fr

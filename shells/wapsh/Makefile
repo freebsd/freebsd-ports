@@ -15,9 +15,6 @@ DISTNAME=		${PORTNAME}_${PORTVERSION}
 MAINTAINER=		ports@FreeBSD.org
 COMMENT=		A system to allow remote shell logins via a WAP phone or web browser
 
-#RUN_DEPENDS=		${LOCALBASE}/sbin/httpd:${PORTSDIR}/www/apache13 \
-#			${LOCALBASE}/libexec/apache/libphp3.so:${PORTSDIR}/www/mod_php3
-
 WRKSRC=			${WRKDIR}/${DISTNAME:S/_/-/}
 
 USERGUIDEDOCS=		Image10.jpg Image11.jpg Image12.jpg Image13.jpg \
