@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	librsvg2
-PORTVERSION=	2.2.3
-PORTREVISION=	1
+PORTVERSION=	2.2.5
 CATEGORIES=	graphics gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME:S/2$//}/2.2
@@ -42,8 +41,25 @@ PLIST_SUB=	GTK_VERSION="2.2.0"
 
 MAN1=		rsvg.1
 
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_GIMP) || exists (${X11BASE}/libexec/gimp/1.3/plug-ins/AlienMap)
+LIB_DEPENDS+=		gimp-1.3:${PORTSDIR}/graphics/gimp-devel
+CONFIGURE_ARGS+=	--with-gimp
+PLIST_SUB+=		GIMP:=""
+.else
+CONFIGURE_ARGS=		--without-gimp
+PLIST_SUB+=		GIMP:="@comment "
+.endif
+
+pre-everything::
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "Librsvg2 has the following tunable option(s):"
+	@${ECHO_MSG} "	WITH_GIMP=yes	Build an svg plugin for gimp-devel (default: auto)"
+	@${ECHO_MSG} ""
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
 		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
