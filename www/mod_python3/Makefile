@@ -27,6 +27,10 @@ MAKE_ENV=	EXPR_COMPAT=yes
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "ia64" || ${ARCH} == "amd64"
+BROKEN=		"Does not compile on amd64 or ia64"
+.endif
+
 .if ${PYTHON_REL} >= 230
 post-patch:
 	${REINPLACE_CMD} -e 's,LONG_LONG,long long,g' ${WRKSRC}/src/requestobject.c
