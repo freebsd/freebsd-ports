@@ -5,12 +5,11 @@
 # $FreeBSD$
 #
 
-PORTNAME=	prot
-PORTVERSION=	4.3.1
+PORTNAME=	f-prot
+PORTVERSION=	4.3.3
 CATEGORIES=	security
-MASTER_SITES=	http://www.i-scream.org/pub/ftp.f-prot.com/pub/bsd/ \
-		ftp://ftp.i-scream.org/pub/ftp.f-prot.com/pub/bsd/
-PKGNAMEPREFIX=	f-
+MASTER_SITES=	ftp://ftp.i-scream.org/pub/ftp.f-prot.com/pub/bsd/ \
+		http://www.i-scream.org/pub/ftp.f-prot.com/pub/bsd/
 DISTNAME=	fp-freebsd-ws-${PORTVERSION}
 
 MAINTAINER=	tim@bishnet.net
@@ -22,7 +21,7 @@ NO_PACKAGE=	Free for personal use only
 NO_CDROM=	Free for personal use only
 RESTRICTED=	Free for personal use only
 
-WRKSRC=		${WRKDIR}/${PKGNAMEPREFIX}${PORTNAME}
+WRKSRC=		${WRKDIR}/${PORTNAME}
 NO_BUILD=	yes
 
 MAN1=		f-prot.1
