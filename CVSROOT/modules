@@ -4094,7 +4094,6 @@ mailagent	ports/mail/mailagent
 mailcrypt	ports/mail/mailcrypt
 maildirsync	ports/mail/maildirsync
 maildrop	ports/mail/maildrop
-mailfilter	ports/mail/mailfilter
 mailfmt		ports/mail/mailfmt
 mailfront	ports/mail/mailfront
 mailgraph	ports/mail/mailgraph
