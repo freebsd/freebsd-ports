@@ -14,7 +14,7 @@ DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
 
-LIB_DEPENDS=	chasen.0:${PORTSDIR}/japanese/chasen
+LIB_DEPENDS=	chasen.0:${PORTSDIR}/japanese/chasen-base
 
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
