@@ -1,6 +1,7 @@
 lib/libuu.a
-lib/libuu.so.1.0
-@unexec /sbin/ldconfig -R
+lib/libuu.so
+lib/libuu.so.1
+@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 include/uu.h
 share/doc/uulib/Makefile
 share/doc/uulib/README
@@ -13,5 +14,5 @@ share/doc/uulib/td-v3.c
 share/doc/uulib/test.txt
 share/doc/uulib/porting.notes
 share/doc/uulib/HISTORY
-@exec /sbin/ldconfig -m %D/lib
+@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %D/lib
 @dirrm share/doc/uulib
