@@ -35,6 +35,7 @@
     SUBDIR += jdbc-oracle816
     SUBDIR += libdbi
     SUBDIR += libgda
+    SUBDIR += libgnomedb
     SUBDIR += libiodbc
     SUBDIR += libodbc++
     SUBDIR += libsdb
