@@ -1,0 +1,4 @@
+#!/bin/sh
+
+cd /usr/local/share/fmsx || { echo "cannot cd to /usr/local/share/fmsx" ; exit 1; }
+exec /usr/local/bin/fmsx.bin $@
