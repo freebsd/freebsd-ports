@@ -6,86 +6,31 @@ share/doc/qbrew/en/primer-glossary.html
 share/doc/qbrew/en/primer-mashing.html
 share/doc/qbrew/en/primer-recipes.html
 share/doc/qbrew/en/primer.html
-share/doc/qbrew/en/qbrew-build.html
 share/doc/qbrew/en/qbrew-changes.html
-share/doc/qbrew/en/qbrew-characteristics.html
+share/doc/qbrew/en/qbrew-commandline.html
+share/doc/qbrew/en/qbrew-configuration.html
 share/doc/qbrew/en/qbrew-copyright.html
 share/doc/qbrew/en/qbrew-credits.html
 share/doc/qbrew/en/qbrew-faq.html
 share/doc/qbrew/en/qbrew-handbook.html
-share/doc/qbrew/en/qbrew-help.html
 share/doc/qbrew/en/qbrew-hop.html
-share/doc/qbrew/en/qbrew-ingredients.html
 share/doc/qbrew/en/qbrew-install.html
 share/doc/qbrew/en/qbrew-intro.html
-share/doc/qbrew/en/qbrew-menus.html
 share/doc/qbrew/en/qbrew-misc.html
 share/doc/qbrew/en/qbrew-notes.html
-share/doc/qbrew/en/qbrew-options.html
-share/doc/qbrew/en/qbrew-require.html
-share/doc/qbrew/en/qbrew-tools.html
+share/doc/qbrew/en/qbrew-reference.html
 share/doc/qbrew/en/qbrew-using.html
 share/doc/qbrew/en/qbrew.docbook
 share/doc/qbrew/en/qbrew.xsl
-share/doc/qbrew/en/sqa.docbook
+share/doc/qbrew/en/sqa.html
 share/qbrew/ChangeLog
 share/qbrew/LICENSE
 share/qbrew/README
-share/qbrew/icons/16x16/actions/add.png
-share/qbrew/icons/16x16/actions/apply.png
-share/qbrew/icons/16x16/actions/back.png
-share/qbrew/icons/16x16/actions/contents.png
-share/qbrew/icons/16x16/actions/contexthelp.png
-share/qbrew/icons/16x16/actions/down.png
-share/qbrew/icons/16x16/actions/editcopy.png
-share/qbrew/icons/16x16/actions/editcut.png
-share/qbrew/icons/16x16/actions/editpaste.png
-share/qbrew/icons/16x16/actions/exit.png
-share/qbrew/icons/16x16/actions/filenew.png
-share/qbrew/icons/16x16/actions/fileopen.png
-share/qbrew/icons/16x16/actions/fileprint.png
-share/qbrew/icons/16x16/actions/filesave.png
-share/qbrew/icons/16x16/actions/filesaveas.png
-share/qbrew/icons/16x16/actions/find.png
-share/qbrew/icons/16x16/actions/forward.png
-share/qbrew/icons/16x16/actions/gohome.png
-share/qbrew/icons/16x16/actions/redo.png
-share/qbrew/icons/16x16/actions/reload.png
-share/qbrew/icons/16x16/actions/remove.png
-share/qbrew/icons/16x16/actions/undo.png
-share/qbrew/icons/16x16/actions/up.png
-share/qbrew/icons/22x22/actions/add.png
-share/qbrew/icons/22x22/actions/apply.png
-share/qbrew/icons/22x22/actions/back.png
-share/qbrew/icons/22x22/actions/contents.png
-share/qbrew/icons/22x22/actions/contexthelp.png
-share/qbrew/icons/22x22/actions/down.png
-share/qbrew/icons/22x22/actions/editcopy.png
-share/qbrew/icons/22x22/actions/editcut.png
-share/qbrew/icons/22x22/actions/editpaste.png
-share/qbrew/icons/22x22/actions/exit.png
-share/qbrew/icons/22x22/actions/filenew.png
-share/qbrew/icons/22x22/actions/fileopen.png
-share/qbrew/icons/22x22/actions/fileprint.png
-share/qbrew/icons/22x22/actions/filesave.png
-share/qbrew/icons/22x22/actions/filesaveas.png
-share/qbrew/icons/22x22/actions/find.png
-share/qbrew/icons/22x22/actions/forward.png
-share/qbrew/icons/22x22/actions/gohome.png
-share/qbrew/icons/22x22/actions/redo.png
-share/qbrew/icons/22x22/actions/reload.png
-share/qbrew/icons/22x22/actions/remove.png
-share/qbrew/icons/22x22/actions/undo.png
-share/qbrew/icons/22x22/actions/up.png
 share/qbrew/paleale.qbrew
 share/qbrew/qbrew.png
+share/qbrew/qbrew.svg
 share/qbrew/qbrewdata
 share/qbrew/stout.qbrew
+@dirrm share/qbrew
 @dirrm share/doc/qbrew/en
 @dirrm share/doc/qbrew
-@dirrm share/qbrew/icons/16x16/actions
-@dirrm share/qbrew/icons/16x16
-@dirrm share/qbrew/icons/22x22/actions
-@dirrm share/qbrew/icons/22x22
-@dirrm share/qbrew/icons
-@dirrm share/qbrew
