@@ -2,7 +2,7 @@
 #
 # $FreeBSD$
 #
-if [ -f ${WRKDIRPREFIX}${CURDIR}/Makefile.inc ]; then
+if [ -f ${WRKDIRPREFIX}${CURDIR2}/Makefile.inc ]; then
 	exit
 fi
 
@@ -36,8 +36,8 @@ Stub		"Stub driver" OFF \
 	esac
 fi
 
-${MKDIR} ${WRKDIRPREFIX}${CURDIR}
-exec > ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
+${MKDIR} ${WRKDIRPREFIX}${CURDIR2}
+exec > ${WRKDIRPREFIX}${CURDIR2}/Makefile.inc
 
 while [ "$1" ]; do
 	case $1 in
@@ -60,7 +60,7 @@ while [ "$1" ]; do
 			;;
 		*)
 			echo "Invalid option(s): $*" > /dev/stderr
-			rm -f ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
+			rm -f ${WRKDIRPREFIX}${CURDIR2}/Makefile.inc
 			exit 1
 			;;
 	esac

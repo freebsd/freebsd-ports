@@ -67,7 +67,7 @@ EXTRA_PATCHES=	${WRKDIR}/dlz.patch
 PLIST=		${WRKDIR}/.PLIST.more
 
 SCRIPTS_ENV=	WRKDIRPREFIX="${WRKDIRPREFIX}" \
-	        CURDIR="${.CURDIR}" \
+	        CURDIR2="${.CURDIR}" \
 		MKDIR="${MKDIR}" \
 		DISTNAME="${DISTNAME}" \
 		BINDDLZ_OPTIONS="${BINDDLZ_OPTIONS}"
@@ -145,7 +145,7 @@ pre-configure:
 	@${ECHO_CMD} "configure: ${CONFIGURE_ARGS}"
 
 pre-install:
-	${CAT} ${.CURDIR}/pkg-plist >${PLIST}
+	${CAT} ${MASTERDIR}/pkg-plist >${PLIST}
 .if !defined(NOPORTDOCS)
 .for i in ${DOCS}
 	@${ECHO_CMD} `${BASENAME} ${i}` | \
