@@ -1,7 +1,30 @@
-*** makefile.0	Sat Feb 11 18:34:50 1995
---- makefile	Sat Feb 11 18:46:19 1995
+*** makefile.orig	Wed Feb 15 18:46:18 1995
+--- makefile	Wed Feb 15 18:46:51 1995
 ***************
-*** 122,129 ****
+*** 101,108 ****
+  
+  
+  command:
+! 	rm -f xbin/gcl ; echo "#!/bin/sh" > xbin/gcl; \
+! 	echo "${GCLDIR}/unixport/saved_gcl -dir ${GCLDIR}/unixport/ \$$@ " \
+  	>> xbin/gcl
+  	chmod 755 xbin/gcl
+  
+--- 101,108 ----
+  
+  
+  command:
+! 	rm -f xbin/gcl ; echo "#!/bin/csh" > xbin/gcl; \
+! 	echo "${GCLDIR}/unixport/saved_gcl -dir ${GCLDIR}/unixport/ \$$* " \
+  	>> xbin/gcl
+  	chmod 755 xbin/gcl
+  
+***************
+*** 118,129 ****
+  	-if [ -d ${PREFIX_DIR}/lib ] ;then true; else mkdir ${PREFIX_DIR}/lib ; fi
+  	-if [ -d ${PREFIX_DIR}/bin ] ;then true; else mkdir ${PREFIX_DIR}/bin ; fi
+  	-if [ -d ${INSTALL_LIB_DIR} ] ; then true; else mkdir ${INSTALL_LIB_DIR} ;fi 
+! 	(echo      "#!/bin/sh" > ${PREFIX_DIR}/bin/gcl; \
   	echo ${INSTALL_LIB_DIR}/unixport/saved_gcl -dir ${INSTALL_LIB_DIR}/unixport/ -libdir ${INSTALL_LIB_DIR}/ >> \
   	${PREFIX_DIR}/bin/gcl)
   	chmod a+x ${PREFIX_DIR}/bin/gcl
@@ -10,7 +33,11 @@
   	-(cd doc ; make install)
   
   
---- 122,129 ----
+--- 118,129 ----
+  	-if [ -d ${PREFIX_DIR}/lib ] ;then true; else mkdir ${PREFIX_DIR}/lib ; fi
+  	-if [ -d ${PREFIX_DIR}/bin ] ;then true; else mkdir ${PREFIX_DIR}/bin ; fi
+  	-if [ -d ${INSTALL_LIB_DIR} ] ; then true; else mkdir ${INSTALL_LIB_DIR} ;fi 
+! 	(echo      "#!/bin/csh" > ${PREFIX_DIR}/bin/gcl; \
   	echo ${INSTALL_LIB_DIR}/unixport/saved_gcl -dir ${INSTALL_LIB_DIR}/unixport/ -libdir ${INSTALL_LIB_DIR}/ >> \
   	${PREFIX_DIR}/bin/gcl)
   	chmod a+x ${PREFIX_DIR}/bin/gcl
