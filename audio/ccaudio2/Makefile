@@ -13,8 +13,7 @@ MASTER_SITES=	${MASTER_SITE_GNU:S/$/:gnu/} \
 		${MASTER_SITE_SOURCEFORGE:S/$/:sf/}
 MASTER_SITE_SUBDIR=	ccaudio/:gnu \
 			bayonne/:sf
-DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}:gnu \
-		${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}:sf
+DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}:gnu,sf
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ class framework for manipulating audio files
