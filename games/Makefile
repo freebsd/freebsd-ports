@@ -146,6 +146,7 @@
     SUBDIR += gleyes
     SUBDIR += glife
     SUBDIR += glmaze
+    SUBDIR += glob2
     SUBDIR += gltron
     SUBDIR += gma
     SUBDIR += gnarr
