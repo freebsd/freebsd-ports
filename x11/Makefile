@@ -51,6 +51,7 @@
     SUBDIR += gnomecore
     SUBDIR += gnomedesktop
     SUBDIR += gnomelibs
+    SUBDIR += gnomemag
     SUBDIR += gnomepanel
     SUBDIR += gnomeres_applet
     SUBDIR += gnomesession
