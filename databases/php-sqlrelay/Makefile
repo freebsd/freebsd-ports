@@ -17,9 +17,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PHP modules to access to SQL Relay
 
 EXTRACT_DEPENDS=	${NONEXISTENT}:${SQLRELAY_PORTDIR}:patch
-BUILD_DEPENDS=	php-config:${PORTSDIR}/www/mod_php4
 LIB_DEPENDS=	sqlrclient.0:${SQLRELAY_PORTDIR}
-RUN_DEPENDS=	${LOCALBASE}/libexec/apache/libphp4.so:${PORTSDIR}/www/mod_php4
 
 USE_PYTHON=	yes
 
@@ -28,8 +26,12 @@ BUILD_WRKSRC=	${WRKSRC}/src/api/php
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	PTHREADINCLUDES="${PTHREAD_CFLAGS}" \
+		PTHREADLIBS="${PTHREAD_LIBS}"
 CONFIGURE_ARGS=	${SQLRELAY_CONFIGURE_ARGS} \
 		--with-php-prefix="${LOCALBASE}"
+USE_PHP=	yes
+USE_PHP_BUILD=	yes
 
 .include "${.CURDIR}/../sqlrelay/Makefile.common"
 
@@ -49,5 +51,20 @@ post-install:
 	dir=`php-config --extension-dir | ${SED} 's,^${LOCALBASE}/,,'`; \
 	${ECHO_CMD} "$$dir/sql_relay.so" >> ${TMPPLIST}; \
 	${ECHO_CMD} "@unexec rmdir %D/$$dir 2>/dev/null || true" >> ${TMPPLIST}
+	@${MKDIR} ${PREFIX}/etc/php
+	@${ECHO_CMD} extension=sql_relay.so \
+		>> ${PREFIX}/etc/php/extensions.ini
+	@${ECHO_CMD} "@exec echo extension=sql_relay.so >> %D/etc/php/extensions.ini" \
+		>> ${TMPPLIST}
+	@${ECHO_CMD} "@unexec cp %D/etc/php/extensions.ini %D/etc/php/extensions.ini.orig" \
+		>> ${TMPPLIST}
+	@${ECHO_CMD} "@unexec grep -v extension=sql_relay\\\.so %D/etc/php/extensions.ini.orig > %D/etc/php/extensions.ini || true" \
+		>> ${TMPPLIST}
+	@${ECHO_CMD} "@unexec rm %D/etc/php/extensions.ini.orig" \
+		>> ${TMPPLIST}
+	@${ECHO_CMD} "@unexec [ -s %D/etc/php/extensions.ini ] || rm %D/etc/php/extensions.ini" \
+		>> ${TMPPLIST}
+	@${ECHO_CMD} "@unexec rmdir %D/etc/php 2> /dev/null || true" \
+		>> ${TMPPLIST}
 
 .include <bsd.port.post.mk>
