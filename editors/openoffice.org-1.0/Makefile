@@ -13,7 +13,7 @@ MASTER_SITES+=	http://ny1.mirror.openoffice.org/%SUBDIR%/ \
 		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,misc/openoffice/&,} \
 		ftp://ftp.chg.ru/pub/OpenOffice/%SUBDIR%/ \
 		ftp://ftp.cs.man.ac.uk/pub/toby/gpc/:gpc \
-		http://ny1.mirror.openoffice.org/miscellaneous/helpcontent/:help \
+		ftp://ftp.services.openoffice.org/pub/OpenOffice.org/contrib/helpcontent/:help \
 		http://people.freebsd.org/~mbr/ooo/:moz
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION}
 DISTFILES+=	OOo_${PORTVERSION}_source.tar.bz2 \
