@@ -16,7 +16,7 @@ MAINTAINER=	dirk.meyer@dinoex.sub.org
 
 LIB_DEPENDS=	gd.1:${PORTSDIR}/graphics/gd
 
-WEBALIZER_LANG= german
+WEBALIZER_LANG?=	german
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-gdlib=${PREFIX}/lib \
 			--with-gd=${PREFIX}/include/gd \
