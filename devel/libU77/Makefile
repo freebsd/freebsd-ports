@@ -8,7 +8,7 @@
 PORTNAME=	libU77
 PORTVERSION=	2.6
 CATEGORIES=	devel
-MASTER_SITES=	http://flo.mech.eng.usyd.edu.au/~norris/src/
+MASTER_SITES=	http://www.esc.auckland.ac.nz/People/Staff/Norris/src/
 
 MAINTAINER=	ports@FreeBSD.org
 
