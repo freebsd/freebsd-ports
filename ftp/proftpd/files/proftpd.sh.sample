@@ -1,0 +1,18 @@
+#!/bin/sh
+
+case "$1" in
+
+start)
+	if [ -x /usr/local/libexec/proftpd ]; then
+		/usr/local/libexec/proftpd && echo -n ' proftpd'
+	fi
+	;;
+
+stop)
+	killall proftpd
+	;;
+*)
+	echo "$0 start | stop"
+	;;
+
+esac
