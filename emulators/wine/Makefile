@@ -3,12 +3,12 @@
 # Date created:         Sa   9 Nov 1996 00:52:22 MET
 # Whom:			se
 #
-# $Id: Makefile,v 1.45 1997/04/15 20:02:41 se Exp $
+# $Id: Makefile,v 1.46 1997/05/12 11:07:57 se Exp $
 #
 
-DATE=		970509
+DATE=		970525
 DISTNAME=	Wine-${DATE}
-PKGNAME=	wine-97.05.09
+PKGNAME=	wine-97.05.25
 CATEGORIES=	emulators x11
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	ALPHA/wine/development
