@@ -7,7 +7,7 @@
 
 PORTNAME=	prc-tools
 PORTVERSION=	2.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	palm
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} ${MASTER_SITE_SOURCEWARE}
 MASTER_SITE_SUBDIR=	prc-tools binutils/releases \
@@ -22,8 +22,6 @@ EXTRACT_ONLY=	binutils-2.14.tar.bz2 gdb-5.3.tar.bz2 gcc-2.95.3.tar.bz2 \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Collection of tools supporting C and C++ programming for Palm OS
 
-BROKEN=		"Incorrect pkg-plist"
-
 # it is unknown whether it could actually be made to work elsewhere,
 # but right now it does not.
 ONLY_FOR_ARCHS=	i386
@@ -32,16 +30,17 @@ WANT_AUTOCONF_VER=253
 USE_BZIP2=	YES
 USE_BISON=	YES
 USE_GMAKE=	YES
-PREFIX=		${LOCALBASE}/pilot
 WRKSRC=		${WRKDIR}/build
 HAS_CONFIGURE=	YES
 CONFIGURE_SCRIPT=	../prc-tools-${PORTVERSION}/configure
 CONFIGURE_ARGS=	--enable-targets=m68k-palmos,arm-palmos \
 		--enable-languages=c,c++ \
-		--sharedstatedir=${LOCALBASE}/palmdev --prefix=${PREFIX} \
+		--sharedstatedir=${LOCALBASE}/palmdev --prefix=${PREFIX}/pilot \
 		--with-headers=${WRKSRC}/empty --disable-nls
-CONFIGURE_ENV=	PATH=${PATH}:${PREFIX}/bin
-MAKE_ENV=	PATH=${PATH}:${PREFIX}/bin
+CONFIGURE_ENV=	PATH=${PATH}:${PREFIX}/pilot/bin
+MAKE_ENV=	PATH=${PATH}:${PREFIX}/pilot/bin
+
+MANPREFIX=	${PREFIX}/pilot
 MAN1=		cccp.1 m68k-palmos-g++.1 m68k-palmos-gcc.1 \
 		m68k-palmos-addr2line.1 m68k-palmos-ar.1 \
 		m68k-palmos-as.1 m68k-palmos-c++filt.1 \
@@ -115,10 +114,13 @@ pre-configure:
 	 ${LN} -sf ../gcc-2.95.3 gcc295; \
 	 ${LN} -sf ../gcc-3.3.1 gcc; )
 
+post-configure:
+	${RM} ${WRKDIR}/gdb-5.3/bfd/doc/bfd.info*
+
 post-install:
-	${RM} ${PREFIX}/bin/m68k-palmos-c++filt
-	${RM} ${PREFIX}/lib/libiberty.a
-	${RM} -f ${PREFIX}/m68k-palmos/sys-include/COPIED
-	${RM} -f ${PREFIX}/arm-palmos/sys-include/COPIED
+	${RM} ${PREFIX}/pilot/bin/m68k-palmos-c++filt
+	${RM} ${PREFIX}/pilot/lib/libiberty.a
+	${RM} -f ${PREFIX}/pilot/m68k-palmos/sys-include/COPIED
+	${RM} -f ${PREFIX}/pilot/arm-palmos/sys-include/COPIED
 
 .include <bsd.port.post.mk>
