@@ -3,7 +3,7 @@
 # Date created:        02 November 1996
 # Whom:                Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1996/11/15 16:42:50 erich Exp $
 #
 
 DISTNAME=	SMS
@@ -21,8 +21,8 @@ CONFIGURE_ENV+=	X11BASE=${X11BASE}
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/mg ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/dasm ${PREFIX}/bin
-	@mkdir ${PREFIX}/share/mastergear
-	cp ${WRKSRC}/MG.doc ${PREFIX}/share/mastergear
+	@${MKDIR} ${PREFIX}/share/mastergear
+	${INSTALL_DATA} ${WRKSRC}/MG.doc ${PREFIX}/share/mastergear
 
 .include <bsd.port.mk>
 
