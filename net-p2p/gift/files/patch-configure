@@ -1,0 +1,20 @@
+--- configure.orig	Fri Dec 24 04:13:11 2004
++++ configure	Fri Dec 24 04:13:41 2004
+@@ -21401,7 +21401,7 @@
+                                       void f (int i, ...) {
+                                             va_list a1, a2;
+                                             va_start (a1, i);
+-                                            __va_copy (a2, a1);
++                                            a2 = a1;
+                                             if (va_arg (a2, int) != 42 ||
+                                                 va_arg (a1, int) != 42)
+                                                     exit (1);
+@@ -21452,7 +21452,7 @@
+ #define VA_COPY_FUNC __va_copy
+ #endif
+ _ACEOF
+-          else if test "x$libgift_cv_copy_by_val" = "xyes"; then
++          else if test "x$libgift_cv_va_copy_by_val" = "xyes"; then
+                 cat >>gconfdefs.h <<_ACEOF
+ #ifndef VA_COPY_BY_VAL
+ #define VA_COPY_BY_VAL 1

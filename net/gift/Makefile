@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	giFT
-PORTVERSION=	0.11.6
-PORTREVISION=	1
+PORTVERSION=	0.11.8.1
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME:L}
@@ -16,13 +15,9 @@ DISTNAME=	${PORTNAME:L}-${PORTVERSION}
 MAINTAINER=	shoesoft@gmx.net
 COMMENT=	An OpenFT, Gnutella and FastTrack p2p network client
 
-LIB_DEPENDS=	vorbis.3:${PORTSDIR}/audio/libvorbis \
-		Magick.7:${PORTSDIR}/graphics/ImageMagick
-.if defined(WITH_LIBMAGIC)
-BUILD_DEPENDS+=	${LOCALBASE}/include/magic.h:${PORTSDIR}/sysutils/file
-LIB_DEPENDS+=	magic.1:${PORTSDIR}/sysutils/file
-.endif
+LIB_DEPENDS=	vorbis.3:${PORTSDIR}/audio/libvorbis
 
+USE_GNOME=	glib20
 USE_LIBLTDL=	yes
 USE_BZIP2=	yes
 USE_REINPLACE=	yes
@@ -32,10 +27,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" \
 		LDFLAGS="${LDFLAGS}"
-INSTALLS_SHLIB	=yes
-.if defined(WITH_LIBMAGIC)
-CONFIGURE_ARGS=	--enable-libmagic
-.endif
+INSTALLS_SHLIB=	yes
 
 MAN1=	giftd.1
 
