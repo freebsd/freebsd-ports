@@ -1,0 +1,8 @@
+proxy is a transparent TCP/IP proxy that listens for connections and forwards
+bi-directional data with the ability to log the data to stdout or to files
+within a specified directory.
+
+proxy can log the data streams in three formats.  Which format to use (if any)
+should be chosen according to the nature of the data being streamed.
+
+http://www.canonware.com/canonware/
