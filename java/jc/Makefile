@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	jc
-PORTVERSION=	1.0.0
+PORTVERSION=	1.0.1
 CATEGORIES=	java
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://ftp.gnu.org/gnu/classpath/:CLASSPATH
@@ -49,7 +49,7 @@ CLASSPATHDIR=	classpath-${CLASSPATHVERSION}
 CLASSPATHVERSION=0.07
 
 # Jikes version expected
-JIKESVERSION=	1.18
+JIKESVERSION=	1.19
 
 # Configure args
 CLASSPATH_CONF=	--prefix=${PREFIX}/jc --enable-jni --with-jikes
