@@ -96,7 +96,7 @@ MAKEFILE=	makefile
 #  - accept the illegal '_' character in hostnames.
 #CONFIGURE_ARGS+= --enable-underscores
 #  - Enable control of different heap replacement algorithms at runtime.
-#CONFIGURE_ARGS+= --enable-heap-replacement
+#CONFIGURE_ARGS+= --enable-removal-policies='heap lru'
 
 post-extract:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' \
