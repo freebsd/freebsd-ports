@@ -15,7 +15,7 @@ PKGNAMESUFFIX?=	-devel
 
 MAINTAINER=	dinoex@FreeBSD.org
 
-.if defined(GNUSTEP_GUI_DEVEL)
+.if !defined(GNUSTEP_GUI_OLD)
 BUILD_DEPENDS=	${BACKBUNDLEDIR}/libgnustep-back:${PORTSDIR}/x11-toolkits/gnustep-back
 RUN_DEPENDS=	${BACKBUNDLEDIR}/libgnustep-back:${PORTSDIR}/x11-toolkits/gnustep-back
 .else
@@ -27,7 +27,7 @@ PREFIX=		${LOCALBASE}/GNUstep
 WRKSRC=		${WRKDIR}/GShisen
 USE_GMAKE=	yes
 MAKEFILE=
-.if defined(GNUSTEP_GUI_DEVEL)
+.if !defined(GNUSTEP_GUI_OLD)
 MAKE_FLAGS=	GUI_BACKEND_LIB=back
 .else
 MAKE_FLAGS=	GUI_BACKEND_LIB=xgps

@@ -10,14 +10,14 @@ PORTVERSION=	1.0.3
 CATEGORIES=	mail
 MASTER_SITES=	http://www.collaboration-world.com/gnumail.data/releases/Stable/ \
 		ftp://ftp.gnustep.org/pub/gnustep/usr-apps/
-DISTNAME=	GNUMail-${PORTVERSION}
 .if defined(GNUSTEP_GUI_DEVEL)
 PKGNAMESUFFIX?=	-devel
 .endif
+DISTNAME=	GNUMail-${PORTVERSION}
 
 MAINTAINER=	dinoex@FreeBSD.org
 
-.if defined(GNUSTEP_GUI_DEVEL)
+.if !defined(GNUSTEP_GUI_OLD)
 BUILD_DEPENDS=	${BACKBUNDLEDIR}/libgnustep-back:${PORTSDIR}/x11-toolkits/gnustep-back
 RUN_DEPENDS=	${BACKBUNDLEDIR}/libgnustep-back:${PORTSDIR}/x11-toolkits/gnustep-back
 .else
@@ -31,10 +31,10 @@ PREFIX=		${LOCALBASE}/GNUstep
 WRKSRC=		${WRKDIR}/GNUMail
 USE_GMAKE=	yes
 MAKEFILE=
-.if defined(GNUSTEP_GUI_DEVEL)
-MAKE_FLAGS=	GUI_BACKEND_LIB=back
+.if !defined(GNUSTEP_GUI_OLD)
+MAKE_FLAGS+=	GUI_BACKEND_LIB=back
 .else
-MAKE_FLAGS=	GUI_BACKEND_LIB=xgps
+MAKE_FLAGS+=	GUI_BACKEND_LIB=xgps
 .endif
 ALL_TARGET=
 NO_MTREE=	yes
