@@ -8,11 +8,14 @@
 PORTNAME=	libraries
 PORTVERSION=	6.7.0
 CATEGORIES=	x11
-MASTER_SITES=	http://freedesktop.org/~xorg/X11R6.7.0/src/:fdo \
+MASTER_SITES=	http://freedesktop.org/~xorg/X11R6.7.0/src/:xorg \
+		${MASTER_SITE_XORG:S/$/:xorg/} \
 		${MASTER_SITE_LOCAL:S/$/:local/}
+MASTER_SITE_SUBDIR=	R6.7/tars/:xorg \
+			anholt/:local
 PKGNAMEPREFIX=	xorg-
-DISTFILES=	X11R6.7.0-src1.tar.gz:fdo \
-		X11R6.7.0-src3.tar.gz:fdo \
+DISTFILES=	X11R6.7.0-src1.tar.gz:xorg \
+		X11R6.7.0-src3.tar.gz:xorg \
 		Wraphelp2.gz:local
 EXTRACT_ONLY=	X11R6.7.0-src1.tar.gz \
 		X11R6.7.0-src3.tar.gz
