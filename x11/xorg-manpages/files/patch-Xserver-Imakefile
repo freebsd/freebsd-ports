@@ -1,0 +1,18 @@
+--- programs/Xserver/Imakefile.orig	Fri May 28 15:30:31 2004
++++ programs/Xserver/Imakefile	Fri May 28 15:30:46 2004
+@@ -1085,6 +1085,7 @@
+ 	-(cd $(DESTDIR)$(BINDIR); $(RM) X; $(LN) ServerToInstall X)
+ #endif
+ 
++#if 0
+ #define IHaveSubdirs
+ 
+ DependSubdirs($(SUBDIRS))
+@@ -1092,6 +1093,7 @@
+ LintSubdirs($(SUBDIRS))
+ 
+ ForceSubdirs($(DEPDIRS) $(SUBDIRS))
++#endif
+ 
+ DEFAULTFONTPATH = DefaultFontPath
+ EXTRAMANDEFS = -D__default_font_path__="`echo $(DEFAULTFONTPATH) | sed -e 's/,/, /g'`"
