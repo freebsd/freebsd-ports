@@ -7,19 +7,13 @@
 #
 
 PORTNAME=	mozilla
-PORTVERSION=	1.5
+PORTVERSION=	1.7.3
 CATEGORIES=	www linux
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
 MASTER_SITE_SUBDIR=	mozilla/releases/mozilla${PORTVERSION}/linux-xpi
 
-FORBIDDEN=	"http://vuxml.freebsd.org/c1d97a8b-05ed-11d9-b45d-000c41e2cdad.html (security)"
-
 PKGNAMEPREFIX=	linux-
 DIST_SUBDIR=	linux-mozilla/${PORTVERSION}
-
-PATCH_SITES=	${MASTER_SITE_LOCAL}
-PATCH_SITE_SUBDIR=	trevor
-PATCHFILES=	linux-mozilla-${PORTVERSION}-generated-files.tar.bz2
 
 MAINTAINER=	trevor@FreeBSD.org
 COMMENT=Browser, HTML editor, MUA and newsreader for use with Linux plugins
@@ -52,6 +46,7 @@ pre-everything::
 .endif
 .endif
 DISTFILES=	browser.xpi \
+		chatzilla.xpi \
 		deflenus.xpi \
 		inspector.xpi \
 		langenus.xpi \
@@ -59,6 +54,7 @@ DISTFILES=	browser.xpi \
 		psm.xpi \
 		regus.xpi \
 		talkback.xpi \
+		spellcheck.xpi \
 		venkman.xpi \
 		xpcom.xpi
 .if exists(${WRKDIRPREFIX}${.CURDIR}/work/xpi/components.conf)
@@ -71,27 +67,7 @@ do-extract:
 	unzip -qo ${DISTDIR}/${DIST_SUBDIR}/${i} -d ${WRKSRC}
 .endfor
 
-do-patch:
-	${MKDIR} ${WRKSRC}/tmp
-	${BZIP2_CMD} -dc ${DISTDIR}/${DIST_SUBDIR}/${PATCHFILES} | \
-		${TAR} -C ${WRKSRC}/bin -xf -
-	${BZIP2_CMD} -dc ${DISTDIR}/${DIST_SUBDIR}/${PATCHFILES} | \
-		${TAR} -C ${WRKSRC}/tmp -xf -
-	for j in chatzilla cookie inspector messenger pippki venkman; do \
-		if [ ! -e ${WRKSRC}/bin/chrome/$$j.jar ]; then \
-			for i in communicator editor messenger navigator; do \
-				${GREP} -v $$j ${WRKSRC}/tmp/chrome/overlayinfo/$$i/content/overlays.rdf > \
-					${WRKSRC}/bin/chrome/overlayinfo/$$i/content/overlays.rdf; \
-				${CP} ${WRKSRC}/bin/chrome/overlayinfo/$$i/content/overlays.rdf \
-					${WRKSRC}/tmp/chrome/overlayinfo/$$i/content/overlays.rdf; \
-			done; \
-			${RM} -f ${WRKSRC}/bin/chrome/overlayinfo/$$j/content/overlays.rdf; \
-		fi; \
-	done;
-
 do-configure:
-#	- kldload linux
-#	${SETENV} $DISPLAY="NONE" ${WRKSRC}/bin/mozilla file:///dev/null
 	${ECHO_CMD} "#!/bin/sh"		>${WRKDIR}/${STARTUP_CMD}
 	${ECHO_CMD} -n "cd "		>>${WRKDIR}/${STARTUP_CMD}
 	${ECHO_CMD} ${INSTALL_DIR}		>>${WRKDIR}/${STARTUP_CMD}
