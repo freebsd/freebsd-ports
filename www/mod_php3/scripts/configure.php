@@ -86,8 +86,8 @@ while [ "$1" ]; do
 		\"modssl\")
 			cat << EOF >> ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
 PKGNAME=	apache-php3-\${VERSION_APACHE}+mod_ssl-\${VERSION_MODSSL}
-MASTER_SITES+=	http://www.engelschall.com/sw/mod_ssl/distrib/ \\
-		ftp://ftp.engelschall.com/sw/mod_ssl/ \\
+MASTER_SITES+=	http://www.modssl.org/source/ \\
+		ftp://ftp.modssl.org/source/ \\
 		ftp://ftp.ecrc.net/pub/security/mod_ssl/ \\
 		ftp://ftp.nvg.ntnu.no/pub/unix/mod_ssl/ \\
 		ftp://ftp.ulpgc.es/pub/mod_ssl/ \\
