@@ -3,11 +3,11 @@
 # Date created:				29 Dec 1998
 # Whom:					Vanilla I. Shu <vanilla@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.5 1999/01/31 20:48:01 vanilla Exp $
+# $Id: Makefile,v 1.6 1999/03/09 01:09:01 nectar Exp $
 #
 
-DISTNAME=	control-center-1.0.1
-PKGNAME=	gnomecontrolcenter-1.0.1
+DISTNAME=	control-center-1.0.2
+PKGNAME=	gnomecontrolcenter-1.0.2
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	gnome-1.0/sources
