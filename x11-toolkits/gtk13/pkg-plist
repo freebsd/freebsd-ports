@@ -1,12 +1,23 @@
-lib/libglib.la
+info/gdk.info
+info/gtk.info
+@unexec install-info --delete %D/info/gdk.info %D/info/dir
+@unexec install-info --delete %D/info/gtk.info %D/info/dir
+@exec [ -f %D/info/dir ] || sed -ne '1,/Menu:/p' /usr/share/info/dir > %D/info/dir
+@exec install-info %D/info/gtk.info %D/info/dir
+@exec install-info %D/info/gdk.info %D/info/dir
 lib/libglib.so.1.0
-lib/libglib.so
+lib/libglib.la
 lib/libglib.a
-include/glib.h
-lib/libgdk.la
 lib/libgdk.so.1.0
-lib/libgdk.so
+lib/libgdk.la
 lib/libgdk.a
+lib/libgtk.so.1.0
+lib/libgtk.la
+lib/libgtk.a
+@exec /sbin/ldconfig -m %D/lib
+@unexec /sbin/ldconfig -R
+include/glib.h
+include/glibconfig.h
 include/gdk/gdk.h
 include/gdk/gdkcursors.h
 include/gdk/gdki18n.h
@@ -14,10 +25,6 @@ include/gdk/gdkkeysyms.h
 include/gdk/gdkprivate.h
 include/gdk/gdktypes.h
 include/gdk/gdkx.h
-lib/libgtk.la
-lib/libgtk.so.1.0
-lib/libgtk.so
-lib/libgtk.a
 include/gtk/gtk.h
 include/gtk/gtkaccelerator.h
 include/gtk/gtkadjustment.h
@@ -32,19 +39,20 @@ include/gtk/gtkcheckbutton.h
 include/gtk/gtkcheckmenuitem.h
 include/gtk/gtkclist.h
 include/gtk/gtkcolorsel.h
+include/gtk/gtkcombo.h
 include/gtk/gtkcontainer.h
 include/gtk/gtkcurve.h
 include/gtk/gtkdata.h
 include/gtk/gtkdialog.h
 include/gtk/gtkdrawingarea.h
 include/gtk/gtkentry.h
+include/gtk/gtkgc.h
 include/gtk/gtkenums.h
 include/gtk/gtkeventbox.h
 include/gtk/gtkfilesel.h
 include/gtk/gtkfixed.h
 include/gtk/gtkframe.h
 include/gtk/gtkgamma.h
-include/gtk/gtkgc.h
 include/gtk/gtkhandlebox.h
 include/gtk/gtkhbbox.h
 include/gtk/gtkhbox.h
@@ -62,6 +70,7 @@ include/gtk/gtklistitem.h
 include/gtk/gtkmain.h
 include/gtk/gtkmenu.h
 include/gtk/gtkmenubar.h
+include/gtk/gtkrc.h
 include/gtk/gtkmenufactory.h
 include/gtk/gtkmenuitem.h
 include/gtk/gtkmenushell.h
@@ -76,7 +85,6 @@ include/gtk/gtkprogressbar.h
 include/gtk/gtkradiobutton.h
 include/gtk/gtkradiomenuitem.h
 include/gtk/gtkrange.h
-include/gtk/gtkrc.h
 include/gtk/gtkruler.h
 include/gtk/gtkscale.h
 include/gtk/gtkscrollbar.h
@@ -85,6 +93,7 @@ include/gtk/gtkselection.h
 include/gtk/gtkseparator.h
 include/gtk/gtksignal.h
 include/gtk/gtkstyle.h
+include/gtk/gtkstatusbar.h
 include/gtk/gtktable.h
 include/gtk/gtktext.h
 include/gtk/gtktogglebutton.h
@@ -104,14 +113,8 @@ include/gtk/gtkvseparator.h
 include/gtk/gtkwidget.h
 include/gtk/gtkwindow.h
 include/gtk/gtktypebuiltins.h
-@unexec install-info --delete %D/info/gdk.info %D/info/dir
-@unexec install-info --delete %D/info/gtk.info %D/info/dir
-info/gdk.info
-info/gtk.info
-@exec [ -f %D/info/dir ] || sed -ne '1,/Menu:/p' /usr/share/info/dir > %D/info/dir
-@exec install-info %D/info/gtk.info %D/info/dir
-@exec install-info %D/info/gdk.info %D/info/dir
-@dirrm include/gtk
+lib/libglib.so
+lib/libgdk.so
+lib/libgtk.so
 @dirrm include/gdk
-@exec /sbin/ldcoonfig -m %D/lib
-@unexec /sbin/ldcoonfig -R
+@dirrm include/gtk
