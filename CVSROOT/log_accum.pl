@@ -646,9 +646,10 @@ for (my $l = $#log_lines; $l > 0; $l--) {
 #
 # Find the log file that matches this log message
 #
-for ($i = 0; ; $i++) {
-	last if (! -e "$LOG_FILE.$i.$PID");
-	@text = &read_logfile("$LOG_FILE.$i.$PID");
+my $message_index;		# The index of this log message
+for ($message_index = 0; ; $message_index++) {
+	last unless -e "$LOG_FILE.$message_index.$PID";
+	@text = &read_logfile("$LOG_FILE.$message_index.$PID");
 	last if ($#text == -1);
 	last if (join(" ", @log_lines) eq join(" ", @text));
 }
@@ -657,29 +658,32 @@ for ($i = 0; ; $i++) {
 # Spit out the information gathered in this pass.
 #
 foreach my $tag ( keys %added_files ) {
-	&append_names_to_file("$ADDED_FILE.$i.$PID",   $dir, $tag,
+	&append_names_to_file("$ADDED_FILE.$message_index.$PID",   $dir, $tag,
 	    @{ $added_files{$tag} });
 }
 foreach my $tag ( keys %changed_files ) {
-	&append_names_to_file("$CHANGED_FILE.$i.$PID", $dir, $tag,
+	&append_names_to_file("$CHANGED_FILE.$message_index.$PID", $dir, $tag,
 	    @{ $changed_files{$tag} });
 }
 foreach my $tag ( keys %removed_files ) {
-	&append_names_to_file("$REMOVED_FILE.$i.$PID", $dir, $tag,
+	&append_names_to_file("$REMOVED_FILE.$message_index.$PID", $dir, $tag,
 	    @{ $removed_files{$tag} });
 }
-&write_logfile("$LOG_FILE.$i.$PID", @log_lines);
+&write_logfile("$LOG_FILE.$message_index.$PID", @log_lines);
 
+#
+# Save the info for the commit summary.
+#
 foreach my $tag ( keys %added_files ) {
-	&change_summary_added("$SUMMARY_FILE.$i.$PID",
+	&change_summary_added("$SUMMARY_FILE.$message_index.$PID",
 	    @{ $added_files{$tag} });
 }
 foreach my $tag ( keys %changed_files ) {
-	&change_summary_changed("$SUMMARY_FILE.$i.$PID",
+	&change_summary_changed("$SUMMARY_FILE.$message_index.$PID",
 	    @{ $changed_files{$tag} });
 }
 foreach my $tag ( keys %removed_files ) {
-	&change_summary_removed("$SUMMARY_FILE.$i.$PID",
+	&change_summary_removed("$SUMMARY_FILE.$message_index.$PID",
 	    @{ $removed_files{$tag} });
 }
 
