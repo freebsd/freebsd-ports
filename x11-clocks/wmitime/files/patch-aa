@@ -1,32 +1,32 @@
---- Makefile.orig	Thu Apr  1 17:38:14 1999
-+++ Makefile	Thu Apr  1 17:41:17 1999
-@@ -1,7 +1,10 @@
+--- Makefile.orig	Mon Mar 29 12:51:39 1999
++++ Makefile	Sat Aug 12 01:03:21 2000
+@@ -1,7 +1,9 @@
 -#LANG = fr
+-LIBDIR = -L/usr/X11R6/lib
 +CC ?= gcc
 +CFLAGS ?= -O2
-+CFLAGS += -Wall
-+INCDIR = -I/usr/X11R6/include/X11 -I/usr/X11R6/include
-+DESTDIR = /usr/X11R6
- LIBDIR = -L/usr/X11R6/lib
++INCDIR = -I${X11BASE}/include
++DESTDIR = ${PREFIX}
++LIBDIR = -L${X11BASE}/lib
  LIBS   = -lXpm -lXext -lX11 -lm
 -FLAGS = -O2
  OBJS =	wmitime.o \
  		../wmgeneral/wmgeneral.o \
  		../wmgeneral/misc.o \
-@@ -9,10 +12,10 @@
+@@ -9,10 +11,10 @@
  
  
  .c.o:
 -	cc -I/usr/X11R6/share/include $(FLAGS) -D$(LANG) -c -Wall $< -o $*.o
-+	$(CC) $(CFLAGS) -D$(shell echo `uname -s`) -c $< -o $*.o $(INCDIR)
++	$(CC) $(CFLAGS) -D$(OPSYS) -c $< -o $@ $(INCDIR)
  
  wmtime: $(OBJS)
 -	cc $(FLAGS) -D$(LANG) -o wmitime $^ -lXext $(LIBDIR) $(LIBS)
-+	 $(CC) $(CFLAGS) $(SYSTEM) -o wmitime $^ $(INCDIR) $(LIBDIR) $(LIBS)
++	 $(CC) $(CFLAGS) $(SYSTEM) -o wmitime $(OBJS) $(LIBDIR) $(LIBS)
  
  all:: wmtime
  
-@@ -24,24 +27,5 @@
+@@ -24,24 +26,5 @@
  	rm -f *~
  
  install:: wmitime
@@ -37,7 +37,7 @@
 -#	chmod 600 $(HOME)/.wminetrc
 -#	cp wminetrc /etc/wminetrc
 -#	chmod 644 /etc/wminetrc
-+	install -s -m 0755 wmitime $(DESTDIR)/bin
++	${BSD_INSTALL_PROGRAM} wmitime $(DESTDIR)/bin
  	@echo "wmitime Installation finished..."
 -
 -

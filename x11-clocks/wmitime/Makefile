@@ -12,13 +12,9 @@ MASTER_SITES=	http://www.neotokyo.org/illusion/downloads/
 
 MAINTAINER=	jim@FreeBSD.org
 
-USE_GMAKE=	yes
-USE_X_PREFIX=	yes
-USE_XPM=	yes
-
 WRKSRC=		${WRKDIR}/wmitime/wmitime
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/wmitime ${PREFIX}/bin
+USE_X_PREFIX=	yes
+USE_XPM=	yes
 
 .include <bsd.port.mk>
