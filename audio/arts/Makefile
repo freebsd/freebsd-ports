@@ -8,7 +8,7 @@
 
 PORTNAME=	arts
 PORTVERSION=	1.1.4
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	audio kde
 MASTER_SITES=	http://mirrors.isc.org/pub/kde/stable/3.1.4/FreeBSD/patches/ \
@@ -36,6 +36,8 @@ CFLAGS+=	-DHAVE_VASPRINTF
 CONFIGURE_ENV+=	DO_NOT_COMPILE="${DO_NOT_COMPILE}"
 
 .include "${.CURDIR}/../../x11/kde3/Makefile.kde"
-.include <bsd.port.pre.mk>
 
-.include <bsd.port.post.mk>
+post-install:
+	@${CHMOD} 4555 ${PREFIX}/bin/artswrapper	
+
+.include <bsd.port.mk>
