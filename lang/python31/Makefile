@@ -43,7 +43,7 @@ OPTIONS=	THREADS "Enable thread support" on \
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_THREADS)
+.if !defined(WITHOUT_THREADS)
 CONFIGURE_ARGS+=	--with-threads
 CFLAGS+=		${PTHREAD_CFLAGS}
 .if defined(WITHOUT_HUGE_STACK_SIZE)
@@ -57,9 +57,9 @@ CONFIGURE_ARGS+=	--without-threads
 .if defined(LDFLAGS)
 CONFIGURE_ENV+=		LDFLAGS="${LDFLAGS}"
 .endif # defined(LDFLAGS)
-.endif # defined(WITH_THREADS)
+.endif # !defined(WITHOUT_THREADS)
 
-.if defined(WITHOUT_UCS2)
+.if !defined(WITHOUT_UCS4) && !defined(WITH_UCS2)
 CONFIGURE_ARGS+=	--enable-unicode=ucs4
 .endif
 
