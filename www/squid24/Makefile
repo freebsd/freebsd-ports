@@ -10,10 +10,12 @@ PORTVERSION=	2.4
 PORTREVISION=	10
 CATEGORIES=	www
 MASTER_SITES=  \
-	ftp://ftp.squid-cache.org/pub/squid-2/STABLE/ \
-	ftp://www.unimelb.edu.au/pub/cwis/servers/unix/squid/squid-2/STABLE/ \
-	ftp://sunsite.auc.dk/pub/infosystems/squid/squid-2/STABLE/ \
-	ftp://ftp.net.lut.ac.uk/squid/squid-2/STABLE/
+	ftp://ftp.squid-cache.org/pub/%SUBDIR%/ \
+	ftp://www.unimelb.edu.au/pub/cwis/servers/unix/squid/%SUBDIR%/ \
+	ftp://sunsite.auc.dk/pub/infosystems/squid/%SUBDIR%/ \
+	ftp://ftp.net.lut.ac.uk/squid/%SUBDIR%/ \
+	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/www/squid/&,}
+MASTER_SITE_SUBDIR=	squid-2/STABLE
 DISTNAME=	squid-2.4.STABLE7
 EXTRACT_SUFX=	-src.tar.gz
 
