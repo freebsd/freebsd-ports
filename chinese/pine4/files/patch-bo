@@ -1,5 +1,5 @@
---- build.orig	Fri Sep  4 08:01:15 1998
-+++ build	Tue Sep 22 13:21:37 1998
+--- build.orig	Sat Feb 20 07:30:54 1999
++++ build	Thu Oct 14 11:31:12 1999
 @@ -80,8 +80,8 @@
   pine   The Pine mailer. Once compiled this should work just fine on
          your system with no other files than this binary, and no
@@ -11,7 +11,7 @@
   
   pico   The standalone editor similar to the Pine message composer.
          This is a very simple straight forward text editor.
-@@ -274,11 +274,11 @@
+@@ -278,11 +278,11 @@
  
          if [ -s c-client ] ; then rm -f c-client ; fi
          ln -s imap/c-client c-client
@@ -28,14 +28,14 @@
          eval echo make "$makeargs" "$K1" "$K2" $ccltarg
          cd $PHOME/imap
          eval make "$makeargs" "$K1" "$K2" $ccltarg
-@@ -299,14 +299,14 @@
+@@ -303,17 +303,17 @@
          cd $PHOME/bin
          rm -f pine mtest imapd pico pilot
          if [ -s ../pine/pine ] ;      then ln ../pine/pine  pine      ; fi
 -        if [ -s ../mtest/mtest ] ;    then ln ../mtest/mtest mtest ; fi
 -        if [ -s ../imapd/imapd ] ;    then ln ../imapd/imapd imapd    ; fi
-+#       if [ -s ../mtest/mtest ] ;    then ln ../mtest/mtest mtest ; fi
-+#       if [ -s ../imapd/imapd ] ;    then ln ../imapd/imapd imapd    ; fi
++#        if [ -s ../mtest/mtest ] ;    then ln ../mtest/mtest mtest ; fi
++#        if [ -s ../imapd/imapd ] ;    then ln ../imapd/imapd imapd    ; fi
          if [ -s ../pico/pico ] ;      then ln ../pico/pico pico ; fi
          if [ -s ../pico/pilot ] ;     then ln ../pico/pilot pilot ; fi
          cd $PHOME
@@ -43,10 +43,14 @@
          echo "Links to executables are in bin directory:"
 -        size bin/pine bin/mtest bin/imapd bin/pico bin/pilot
 +        size bin/pine bin/pico bin/pilot
+ 	case $maketarg in
+ 	    mnt)    echo "Fixing stacksizes ..."
+-		    fixstk 64K bin/pine bin/pico bin/imapd bin/mtest bin/pilot
++		    fixstk 64K bin/pine bin/pico bin/pilot
+ 	esac
          echo "Done"
          ;;
- 
-@@ -317,10 +317,10 @@
+@@ -325,10 +325,10 @@
  	make clean
          echo "Cleaning Pine"
          cd $PHOME/pine

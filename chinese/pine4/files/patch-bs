@@ -1,5 +1,5 @@
---- pine/mailcap.c.orig	Tue Sep 15 05:31:21 1998
-+++ pine/mailcap.c	Tue Sep 22 14:27:29 1998
+--- pine/mailcap.c.orig	Wed Apr 21 08:13:38 1999
++++ pine/mailcap.c	Thu Oct 14 10:53:45 1999
 @@ -61,7 +61,7 @@
  
     Mime types makes mime assign attachment types according

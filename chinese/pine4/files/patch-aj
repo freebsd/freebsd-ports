@@ -1,5 +1,5 @@
---- pico/composer.c.orig	Thu Dec 24 05:03:58 1998
-+++ pico/composer.c	Wed Feb 24 02:12:51 1999
+--- pico/composer.c.orig	Fri Jun 11 06:55:22 1999
++++ pico/composer.c	Thu Oct 14 10:53:41 1999
 @@ -133,12 +133,12 @@
  
  
@@ -164,7 +164,7 @@
  	    return(0);
  	}
      }
-@@ -1553,7 +1553,7 @@
+@@ -1552,7 +1552,7 @@
  	
  	if (term.t_nrow < 6 && ch != NODATA){
  	    (*term.t_beep)();
@@ -253,7 +253,7 @@
  		 headents[level].name);
      saved_state = save_pico_state();
      (*Pmaster->helper)(headents[level].help, buf, 1);
-@@ -3110,7 +3110,7 @@
+@@ -3114,7 +3114,7 @@
      }
      
      if((sbuf=(char *)malloc((unsigned) i)) == NULL){
@@ -262,7 +262,7 @@
  	return(-1);
      }
      
-@@ -3167,7 +3167,7 @@
+@@ -3171,7 +3171,7 @@
  		if(!arg){
  		    headarg = arg = (BUILDER_ARG *)malloc(sizeof(BUILDER_ARG));
  		    if(!arg){
@@ -271,7 +271,7 @@
  			return(-1);
  		    }
  		    else{
-@@ -3180,7 +3180,7 @@
+@@ -3184,7 +3184,7 @@
  		else{
  		    nextarg = (BUILDER_ARG *)malloc(sizeof(BUILDER_ARG));
  		    if(!nextarg){
@@ -280,7 +280,7 @@
  			return(-1);
  		    }
  		    else{
-@@ -3196,7 +3196,7 @@
+@@ -3200,7 +3200,7 @@
  		if(!e->sticky){
  		    line = e->hd_text;
  		    if(!(arg->tptr=(char *)malloc(strlen(line->text) + 1))){
@@ -289,7 +289,7 @@
  			return(-1);
  		    }
  		    else
-@@ -3213,7 +3213,7 @@
+@@ -3217,7 +3217,7 @@
      if(!headarg){
  	headarg = (BUILDER_ARG *)malloc(sizeof(BUILDER_ARG));
  	if(!headarg){
@@ -298,7 +298,7 @@
  	    return(-1);
  	}
  	else{
-@@ -3522,7 +3522,7 @@
+@@ -3543,7 +3543,7 @@
  
      if(ksize()){
  	if((bp = buf = (char *)malloc(ksize()+5)) == NULL){
@@ -307,7 +307,7 @@
  	    return(FALSE);
  	}
      }
-@@ -3556,7 +3556,7 @@
+@@ -3577,7 +3577,7 @@
  	work_buf_len = strlen(ods.cur_l->text) + buf_len;
  	work_buf = (char *) malloc((work_buf_len + 1) * sizeof(char));
  	if (work_buf == NULL) {
@@ -316,7 +316,7 @@
  	    return(FALSE);
  	}
  
-@@ -3765,9 +3765,9 @@
+@@ -3786,9 +3786,9 @@
      if(Pmaster && Pmaster->exit_label)
        menu_header[SEND_KEY].label = Pmaster->exit_label;
      else if(gmode & (MDVIEW | MDHDRONLY))
@@ -328,7 +328,7 @@
  
      if(gmode & MDVIEW){
  	menu_header[CUT_KEY].name  = NULL;
-@@ -3788,14 +3788,14 @@
+@@ -3809,14 +3809,14 @@
  	menu_header[RICH_KEY].name  = NULL;
      }
      else{
@@ -345,7 +345,7 @@
  	}
  	else
  	  menu_header[PONE_KEY].name  = NULL;
-@@ -3804,7 +3804,7 @@
+@@ -3825,7 +3825,7 @@
      }
      else{
  	menu_header[PONE_KEY].name  = "^O";
@@ -354,7 +354,7 @@
  	KS_OSDATASET(&menu_header[PONE_KEY],KS_OSDATAGET(&headents[ods.cur_e]));
  
  	menu_header[ATT_KEY].name   = "^J";
-@@ -3876,7 +3876,7 @@
+@@ -3897,7 +3897,7 @@
                  *headents[i].realaddr = bufp;
              }
              else{

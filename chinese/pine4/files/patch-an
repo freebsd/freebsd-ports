@@ -1,6 +1,6 @@
---- pico/estruct.h.orig	Fri May 29 06:56:52 1998
-+++ pico/estruct.h	Tue Aug  4 12:42:14 1998
-@@ -125,7 +125,7 @@
+--- pico/estruct.h.orig	Tue Oct  5 04:02:41 1999
++++ pico/estruct.h	Thu Oct 14 10:53:41 1999
+@@ -130,7 +130,7 @@
  #define	LOBIT_CHAR(C)	((C) > 0x1f && (C) < 0x7f)
  #define	HIBIT_CHAR(C)	((C) > 0x7f && (C) <= 0xff)
  #define	HIBIT_OK(C)	(!(gmode & MDHBTIGN))

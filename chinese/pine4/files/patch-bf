@@ -1,6 +1,6 @@
---- pine/other.c.orig	Tue Feb  2 07:32:44 1999
-+++ pine/other.c	Wed Feb 24 02:19:21 1999
-@@ -51,18 +51,18 @@
+--- pine/other.c.orig	Thu Oct 14 13:46:05 1999
++++ pine/other.c	Thu Oct 14 17:02:49 1999
+@@ -53,18 +53,18 @@
  
  #define	BODY_LINES(X)	((X)->ttyo->screen_rows -HEADER_ROWS(X)-FOOTER_ROWS(X))
  
@@ -12,7 +12,7 @@
 -#define	EXIT_PMT "Commit changes (\"Yes\" replaces settings, \"No\" abandons changes)"
 -static char *empty_val  = "Empty Value";
 -static char *empty_val2 = "<Empty Value>";
-+#define	EXIT_PMT "送出改變 (\"是\" 取代設定，\"否\" 放棄改變)"
++#define	EXIT_PMT "送出改變（\"是\" 取代設定，\"否\" 放棄改變）"
 +static char *empty_val  = "空的設定值";
 +static char *empty_val2 = "<空的設定值>";
  #define EMPTY_VAL_LEN     11
@@ -22,12 +22,12 @@
 -static char *fixed_val  = "Value is Fixed";
 +static char *fixed_val  = "設定值已固定";
  
--#define ADD_FIRST_ROLE "Use Add to add a role"
-+#define ADD_FIRST_ROLE "以 \"新增角色\" 來增加一名角色"
+-#define ARB_HELP "HELP FOR ARBITRARY HEADER PATTERNS"
++#define ARB_HELP "任意標頭式樣的輔助說明"
  
- typedef struct conf_line {
-     char	     *varname,			/* alloc'd var name string   */
-@@ -271,16 +271,14 @@
+ typedef struct edit_arb {
+     struct variable *v;
+@@ -344,16 +344,14 @@
  #ifndef NO_KEYBOARD_LOCK
      ClearScreen();
  
@@ -47,7 +47,7 @@
      fflush(stdout);
  #endif
  }
-@@ -292,12 +290,12 @@
+@@ -365,12 +363,12 @@
  #ifndef NO_KEYBOARD_LOCK
      ClearScreen();
  
@@ -63,7 +63,7 @@
      fflush(stdout);
  #endif
  }
-@@ -339,9 +337,9 @@
+@@ -412,9 +410,9 @@
  	    char prompt[50];
  
  	    sprintf(prompt,
@@ -76,7 +76,7 @@
  
  	    flags = OE_PASSWD;
  	    rc =  optionally_enter(pw, -FOOTER_ROWS(ps), 0, 30,
-@@ -350,7 +348,7 @@
+@@ -423,7 +421,7 @@
  	    if(rc == 3)
  	      help = help == NO_HELP ? h_kb_lock : NO_HELP;
  	    else if(rc == 1 || pw[0] == '\0'){
@@ -85,7 +85,7 @@
  		return(-1);
  	    }
  	    else if(rc != 4)
-@@ -361,14 +359,14 @@
+@@ -434,14 +432,14 @@
  	  strcpy(inpasswd, pw);
  	else if(strcmp(inpasswd, pw)){
  	    q_status_message(SM_ORDER, 0, 2,
@@ -103,7 +103,7 @@
  	return(-1);
      }
  
-@@ -382,7 +380,7 @@
+@@ -455,7 +453,7 @@
      while(strcmp(inpasswd, passwd)){
  	if(passwd[0])
  	  q_status_message(SM_ORDER | SM_DING, 3, 3,
@@ -112,7 +112,7 @@
          
          help = NO_HELP;
          while(1){
-@@ -390,7 +388,7 @@
+@@ -463,7 +461,7 @@
  
  	    flags = OE_PASSWD | OE_DISALLOW_CANCEL;
  	    rc =  optionally_enter(passwd, -FOOTER_ROWS(ps), 0, 30,
@@ -121,7 +121,7 @@
  				   help, &flags);
  	    if(rc == 3) {
  		help = help == NO_HELP ? h_oe_keylock : NO_HELP;
-@@ -405,7 +403,7 @@
+@@ -478,7 +476,7 @@
      if(old_suspend)
        F_TURN_ON(F_CAN_SUSPEND, ps_global);
  
@@ -130,7 +130,7 @@
      return(0);
  }
  
-@@ -443,7 +441,7 @@
+@@ -516,7 +514,7 @@
      struct variable *vars = ps_global->vars;
  
      if(!signature_path(sigfile, sig_path, MAXPATH))
@@ -139,7 +139,7 @@
  
      memset(&pbuf, 0, sizeof(PICO));
  
-@@ -519,7 +517,7 @@
+@@ -593,7 +591,7 @@
       * Now alloc and init the text to pass pico
       */
      if(!(msgso = so_get(PicoText, NULL, EDIT_ACCESS))){
@@ -148,7 +148,7 @@
  	dprint(1, (debugfile, "Can't alloc space for signature_edit"));
  	return(ret);
      }
-@@ -530,7 +528,7 @@
+@@ -604,7 +602,7 @@
         && !(tmpso = so_get(FileStar, sig_path, READ_ACCESS))){
  	char *problem = error_description(errno);
  
@@ -157,7 +157,7 @@
  		sig_path, problem ? problem : "<NULL>");
  	ret = cpystr(errbuf);
  
-@@ -543,7 +541,7 @@
+@@ -617,7 +615,7 @@
  	gf_set_so_writec(&pc, msgso);
  	gf_filter_init();		/* no filters needed */
  	if(errstr = gf_pipe(gc, pc)){
@@ -166,7 +166,7 @@
  	    ret = cpystr(errbuf);
  	}
  
-@@ -582,7 +580,7 @@
+@@ -656,7 +654,7 @@
  		gf_set_so_writec(&pc, tmpso);	/* write sig file */
  		gf_filter_init();		/* no filters needed */
  		if(errstr = gf_pipe(gc, pc)){
@@ -175,7 +175,7 @@
  				      errstr);
  		    ret = cpystr(errbuf);
  		}
-@@ -592,7 +590,7 @@
+@@ -666,7 +664,7 @@
  		so_give(&tmpso);
  	    }
  	    else{
@@ -184,7 +184,7 @@
  		ret = cpystr(errbuf);
  		dprint(1, (debugfile, "signature_edit: can't write %s",
  			   sig_path));
-@@ -618,8 +616,8 @@
+@@ -695,8 +693,8 @@
      char     *rstr = NULL;
      void    (*redraw)() = ps_global->redrawer;
      static ESCKEY_S opts[] = {
@@ -195,7 +195,7 @@
  	{-1, 0, NULL, NULL}
      };
  
-@@ -627,18 +625,18 @@
+@@ -704,18 +702,18 @@
      fix_windsize(ps_global);
  
      while(1){
@@ -217,7 +217,7 @@
  	    break;
  	}
      }
-@@ -653,24 +651,24 @@
+@@ -730,28 +728,28 @@
   *  * * * * *    Start of Config Screen Support Code   * * * * * 
   */
  
@@ -231,6 +231,12 @@
  #define TOGGLE_MENU \
 -	{"X", "[Set/Unset]", {MC_TOGGLE,3,{'x',ctrl('M'),ctrl('J')}}, KS_NONE}
 +	{"X", "[設定/解除設定]", {MC_TOGGLE,3,{'x',ctrl('M'),ctrl('J')}}, KS_NONE}
+ #define TOGGLEB_MENU \
+-	{"X", "[Set/Unset]", {MC_TOGGLEB,3,{'x',ctrl('M'),ctrl('J')}}, KS_NONE}
++	{"X", "[設定/解除設定]", {MC_TOGGLEB,3,{'x',ctrl('M'),ctrl('J')}}, KS_NONE}
+ #define TOGGLEC_MENU \
+-	{"X", "[Set/Unset]", {MC_TOGGLEC,3,{'x',ctrl('M'),ctrl('J')}}, KS_NONE}
++	{"X", "[設定/解除設定]", {MC_TOGGLEC,3,{'x',ctrl('M'),ctrl('J')}}, KS_NONE}
  
  static struct key config_text_keys[] = 
         {HELP_MENU,
@@ -249,7 +255,23 @@
  	PRYNTTXT_MENU,
  	WHEREIS_MENU};
  INST_KEY_MENU(config_text_keymenu, config_text_keys);
-@@ -679,13 +677,13 @@
+@@ -760,13 +758,13 @@
+        {HELP_MENU,
+ 	NULL_MENU,
+ 	EXIT_SETUP_MENU,
+-	{"C", "[Change Val]", {MC_EDIT,3,{'c',ctrl('M'),ctrl('J')}}, KS_NONE},
++	{"C", "[改變設定值]", {MC_EDIT,3,{'c',ctrl('M'),ctrl('J')}}, KS_NONE},
+ 	PREV_MENU,
+ 	NEXT_MENU,
+ 	PREVPAGE_MENU,
+ 	NEXTPAGE_MENU,
+ 	NULL_MENU,
+-	{"D", "Delete Val", {MC_DELETE,1,{'d'}}, KS_NONE},
++	{"D", "刪除設定值", {MC_DELETE,1,{'d'}}, KS_NONE},
+ 	PRYNTTXT_MENU,
+ 	WHEREIS_MENU};
+ INST_KEY_MENU(color_pattern_keymenu, color_pattern_keys);
+@@ -775,13 +773,13 @@
         {HELP_MENU,
  	OTHER_MENU,
  	EXIT_SETUP_MENU,
@@ -266,18 +288,18 @@
  	PRYNTTXT_MENU,
  	WHEREIS_MENU,
  
-@@ -693,8 +691,8 @@
+@@ -789,8 +787,8 @@
  	OTHER_MENU,
  	NULL_MENU,
  	NULL_MENU,
 -	{"T", "ToFiles", {MC_CHOICE, 2, {'t', ctrl('T')}}, KS_NONE},
 -	{"F", "editFile", {MC_EDITFILE, 1, {'f'}}, KS_NONE},
-+	{"T", "檔案選單", {MC_CHOICE, 2, {'t', ctrl('T')}}, KS_NONE},
++	{"T", "檔案列表", {MC_CHOICE, 2, {'t', ctrl('T')}}, KS_NONE},
 +	{"F", "編輯檔案", {MC_EDITFILE, 1, {'f'}}, KS_NONE},
  	NULL_MENU,
  	NULL_MENU,
  	NULL_MENU,
-@@ -707,13 +705,13 @@
+@@ -803,13 +801,13 @@
         {HELP_MENU,
  	OTHER_MENU,
  	EXIT_SETUP_MENU,
@@ -294,16 +316,16 @@
  	PRYNTTXT_MENU,
  	WHEREIS_MENU,
  
-@@ -721,7 +719,7 @@
+@@ -817,7 +815,7 @@
  	OTHER_MENU,
  	NULL_MENU,
  	NULL_MENU,
--	{"T", "ToAddrBk", {MC_CHOICEB, 2, {'t', ctrl('T')}}, KS_NONE},
-+	{"T", "地址簿", {MC_CHOICEB, 2, {'t', ctrl('T')}}, KS_NONE},
+-	{"T", "ToFiles", {MC_CHOICE, 2, {'t', ctrl('T')}}, KS_NONE},
++	{"T", "檔案列表", {MC_CHOICE, 2, {'t', ctrl('T')}}, KS_NONE},
  	NULL_MENU,
  	NULL_MENU,
  	NULL_MENU,
-@@ -735,13 +733,13 @@
+@@ -831,13 +829,13 @@
         {HELP_MENU,
  	OTHER_MENU,
  	EXIT_SETUP_MENU,
@@ -320,16 +342,16 @@
  	PRYNTTXT_MENU,
  	WHEREIS_MENU,
  
-@@ -749,7 +747,7 @@
- 	OTHER_MENU,
- 	NULL_MENU,
- 	NULL_MENU,
--	{"T", "ToFldrs", {MC_CHOICEC, 2, {'t', ctrl('T')}}, KS_NONE},
-+	{"T", "檔案列表", {MC_CHOICEC, 2, {'t', ctrl('T')}}, KS_NONE},
+@@ -846,7 +844,7 @@
  	NULL_MENU,
  	NULL_MENU,
  	NULL_MENU,
-@@ -763,13 +761,13 @@
+-	{"X", "eXtraHdr", {MC_ADDHDR, 1, {'x'}}, KS_NONE},
++	{"X", "額外標頭", {MC_ADDHDR, 1, {'x'}}, KS_NONE},
+ 	NULL_MENU,
+ 	NULL_MENU,
+ 	NULL_MENU,
+@@ -859,13 +857,13 @@
         {HELP_MENU,
  	OTHER_MENU,
  	EXIT_SETUP_MENU,
@@ -346,7 +368,143 @@
  	PRYNTTXT_MENU,
  	WHEREIS_MENU,
  
-@@ -777,7 +775,7 @@
+@@ -873,8 +871,8 @@
+ 	OTHER_MENU,
+ 	NULL_MENU,
+ 	NULL_MENU,
+-	{"T", "ToAddrBk", {MC_CHOICEB, 2, {'t', ctrl('T')}}, KS_NONE},
+-	{"X", "eXtraHdr", {MC_ADDHDR, 1, {'x'}}, KS_NONE},
++	{"T", "地址簿", {MC_CHOICEB, 2, {'t', ctrl('T')}}, KS_NONE},
++	{"X", "額外標頭", {MC_ADDHDR, 1, {'x'}}, KS_NONE},
+ 	NULL_MENU,
+ 	NULL_MENU,
+ 	NULL_MENU,
+@@ -887,13 +885,13 @@
+        {HELP_MENU,
+ 	OTHER_MENU,
+ 	EXIT_SETUP_MENU,
+-	{"C", "[Change Val]", {MC_EDIT,3,{'c',ctrl('M'),ctrl('J')}}, KS_NONE},
++	{"C", "[修改設定值]", {MC_EDIT,3,{'c',ctrl('M'),ctrl('J')}}, KS_NONE},
+ 	PREV_MENU,
+ 	NEXT_MENU,
+ 	PREVPAGE_MENU,
+ 	NEXTPAGE_MENU,
+-	{"A", "Add Value", {MC_ADD,1,{'a'}}, KS_NONE},
+-	{"D", "Delete Val", {MC_DELETE,1,{'d'}}, KS_NONE},
++	{"A", "新增設定值", {MC_ADD,1,{'a'}}, KS_NONE},
++	{"D", "刪除設定值", {MC_DELETE,1,{'d'}}, KS_NONE},
+ 	PRYNTTXT_MENU,
+ 	WHEREIS_MENU,
+ 
+@@ -902,10 +900,10 @@
+ 	NULL_MENU,
+ 	NULL_MENU,
+ 	NULL_MENU,
+-	{"X", "eXtraHdr", {MC_ADDHDR, 1, {'x'}}, KS_NONE},
++	{"X", "額外標頭", {MC_ADDHDR, 1, {'x'}}, KS_NONE},
+ 	NULL_MENU,
+ 	NULL_MENU,
+-	{"R", "RemoveHdr", {MC_DELHDR, 1, {'r'}}, KS_NONE},
++	{"R", "移除標頭", {MC_DELHDR, 1, {'r'}}, KS_NONE},
+ 	NULL_MENU,
+ 	NULL_MENU,
+ 	NULL_MENU};
+@@ -915,13 +913,13 @@
+        {HELP_MENU,
+ 	OTHER_MENU,
+ 	EXIT_SETUP_MENU,
+-	{"C", "[Change Val]", {MC_EDIT,3,{'c',ctrl('M'),ctrl('J')}}, KS_NONE},
++	{"C", "[改變設定值]", {MC_EDIT,3,{'c',ctrl('M'),ctrl('J')}}, KS_NONE},
+ 	PREV_MENU,
+ 	NEXT_MENU,
+ 	PREVPAGE_MENU,
+ 	NEXTPAGE_MENU,
+-	{"A", "Add Value", {MC_ADD,1,{'a'}}, KS_NONE},
+-	{"D", "Delete Val", {MC_DELETE,1,{'d'}}, KS_NONE},
++	{"A", "新增設定值", {MC_ADD,1,{'a'}}, KS_NONE},
++	{"D", "刪除設定值", {MC_DELETE,1,{'d'}}, KS_NONE},
+ 	PRYNTTXT_MENU,
+ 	WHEREIS_MENU,
+ 
+@@ -929,7 +927,7 @@
+ 	OTHER_MENU,
+ 	NULL_MENU,
+ 	NULL_MENU,
+-	{"T", "ToAddrBk", {MC_CHOICEC, 2, {'t', ctrl('T')}}, KS_NONE},
++	{"T", "地址簿", {MC_CHOICEC, 2, {'t', ctrl('T')}}, KS_NONE},
+ 	NULL_MENU,
+ 	NULL_MENU,
+ 	NULL_MENU,
+@@ -943,13 +941,13 @@
+        {HELP_MENU,
+ 	OTHER_MENU,
+ 	EXIT_SETUP_MENU,
+-	{"C", "[Change Val]", {MC_EDIT,3,{'c',ctrl('M'),ctrl('J')}}, KS_NONE},
++	{"C", "[改變設定值]", {MC_EDIT,3,{'c',ctrl('M'),ctrl('J')}}, KS_NONE},
+ 	PREV_MENU,
+ 	NEXT_MENU,
+ 	PREVPAGE_MENU,
+ 	NEXTPAGE_MENU,
+-	{"A", "Add Value", {MC_ADD,1,{'a'}}, KS_NONE},
+-	{"D", "Delete Val", {MC_DELETE,1,{'d'}}, KS_NONE},
++	{"A", "新增設定值", {MC_ADD,1,{'a'}}, KS_NONE},
++	{"D", "刪除設定值", {MC_DELETE,1,{'d'}}, KS_NONE},
+ 	PRYNTTXT_MENU,
+ 	WHEREIS_MENU,
+ 
+@@ -957,7 +955,7 @@
+ 	OTHER_MENU,
+ 	NULL_MENU,
+ 	NULL_MENU,
+-	{"T", "ToFldrs", {MC_CHOICED, 2, {'t', ctrl('T')}}, KS_NONE},
++	{"T", "檔案匣列表", {MC_CHOICED, 2, {'t', ctrl('T')}}, KS_NONE},
+ 	NULL_MENU,
+ 	NULL_MENU,
+ 	NULL_MENU,
+@@ -971,13 +969,13 @@
+        {HELP_MENU,
+ 	OTHER_MENU,
+ 	EXIT_SETUP_MENU,
+-	{"C", "[Change Val]", {MC_EDIT,3,{'c',ctrl('M'),ctrl('J')}}, KS_NONE},
++	{"C", "[改變設定值]", {MC_EDIT,3,{'c',ctrl('M'),ctrl('J')}}, KS_NONE},
+ 	PREV_MENU,
+ 	NEXT_MENU,
+ 	PREVPAGE_MENU,
+ 	NEXTPAGE_MENU,
+-	{"A", "Add Value", {MC_ADD,1,{'a'}}, KS_NONE},
+-	{"D", "Delete Val", {MC_DELETE,1,{'d'}}, KS_NONE},
++	{"A", "新增設定值", {MC_ADD,1,{'a'}}, KS_NONE},
++	{"D", "刪除設定值", {MC_DELETE,1,{'d'}}, KS_NONE},
+ 	PRYNTTXT_MENU,
+ 	WHEREIS_MENU,
+ 
+@@ -985,7 +983,7 @@
+ 	OTHER_MENU,
+ 	NULL_MENU,
+ 	NULL_MENU,
+-	{"T", "ToFldrs", {MC_CHOICEE, 2, {'t', ctrl('T')}}, KS_NONE},
++	{"T", "檔案匣列表", {MC_CHOICEE, 2, {'t', ctrl('T')}}, KS_NONE},
+ 	NULL_MENU,
+ 	NULL_MENU,
+ 	NULL_MENU,
+@@ -999,13 +997,13 @@
+        {HELP_MENU,
+ 	OTHER_MENU,
+ 	EXIT_SETUP_MENU,
+-	{"C", "[Change Val]", {MC_EDIT,3,{'c',ctrl('M'),ctrl('J')}}, KS_NONE},
++	{"C", "[改變設定值]", {MC_EDIT,3,{'c',ctrl('M'),ctrl('J')}}, KS_NONE},
+ 	PREV_MENU,
+ 	NEXT_MENU,
+ 	PREVPAGE_MENU,
+ 	NEXTPAGE_MENU,
+-	{"A", "Add Value", {MC_ADD,1,{'a'}}, KS_NONE},
+-	{"D", "Delete Val", {MC_DELETE,1,{'d'}}, KS_NONE},
++	{"A", "新增設定值", {MC_ADD,1,{'a'}}, KS_NONE},
++	{"D", "刪除設定值", {MC_DELETE,1,{'d'}}, KS_NONE},
+ 	PRYNTTXT_MENU,
+ 	WHEREIS_MENU,
+ 
+@@ -1013,7 +1011,7 @@
  	OTHER_MENU,
  	NULL_MENU,
  	NULL_MENU,
@@ -355,7 +513,7 @@
  	NULL_MENU,
  	NULL_MENU,
  	NULL_MENU,
-@@ -806,7 +804,7 @@
+@@ -1072,7 +1070,7 @@
         {HELP_MENU,
  	NULL_MENU,
  	EXIT_SETUP_MENU,
@@ -364,7 +522,7 @@
  	PREV_MENU,
  	NEXT_MENU,
  	PREVPAGE_MENU,
-@@ -821,7 +819,7 @@
+@@ -1087,7 +1085,7 @@
         {HELP_MENU,
  	NULL_MENU,
  	EXIT_SETUP_MENU,
@@ -373,7 +531,89 @@
  	PREV_MENU,
  	NEXT_MENU,
  	PREVPAGE_MENU,
-@@ -1489,14 +1487,14 @@
+@@ -1102,8 +1100,8 @@
+ static struct key color_changing_keys[] = 
+        {HELP_MENU,
+ 	NULL_MENU,
+-	{"E", "To Colors", {MC_EXIT,1,{'e'}}, KS_EXITMODE},
+-	{"*", "[Select]", {MC_CHOICE,3,{'*',ctrl('M'),ctrl('J')}}, KS_NONE},
++	{"E", "修改色彩", {MC_EXIT,1,{'e'}}, KS_EXITMODE},
++	{"*", "[選擇]", {MC_CHOICE,3,{'*',ctrl('M'),ctrl('J')}}, KS_NONE},
+ 	PREV_MENU,
+ 	NEXT_MENU,
+ 	PREVPAGE_MENU,
+@@ -1118,8 +1116,8 @@
+ static struct key custom_color_changing_keys[] = 
+        {HELP_MENU,
+ 	NULL_MENU,
+-	{"E", "To Colors", {MC_EXIT,1,{'e'}}, KS_EXITMODE},
+-	{"*", "[Select]", {MC_CHOICEB,3,{'*',ctrl('M'),ctrl('J')}}, KS_NONE},
++	{"E", "修改色彩", {MC_EXIT,1,{'e'}}, KS_EXITMODE},
++	{"*", "[選擇]", {MC_CHOICEB,3,{'*',ctrl('M'),ctrl('J')}}, KS_NONE},
+ 	PREV_MENU,
+ 	NEXT_MENU,
+ 	PREVPAGE_MENU,
+@@ -1134,8 +1132,8 @@
+ static struct key color_rgb_changing_keys[] = 
+        {HELP_MENU,
+ 	NULL_MENU,
+-	{"E", "To Colors", {MC_EXIT,1,{'e'}}, KS_EXITMODE},
+-	{"*", "[Select]", {MC_CHOICE,3,{'*',ctrl('M'),ctrl('J')}}, KS_NONE},
++	{"E", "修改色彩", {MC_EXIT,1,{'e'}}, KS_EXITMODE},
++	{"*", "[選擇]", {MC_CHOICE,3,{'*',ctrl('M'),ctrl('J')}}, KS_NONE},
+ 	PREV_MENU,
+ 	NEXT_MENU,
+ 	PREVPAGE_MENU,
+@@ -1151,8 +1149,8 @@
+ static struct key custom_rgb_changing_keys[] = 
+        {HELP_MENU,
+ 	NULL_MENU,
+-	{"E", "To Colors", {MC_EXIT,1,{'e'}}, KS_EXITMODE},
+-	{"*", "[Select]", {MC_CHOICEB,3,{'*',ctrl('M'),ctrl('J')}}, KS_NONE},
++	{"E", "修改色彩", {MC_EXIT,1,{'e'}}, KS_EXITMODE},
++	{"*", "[選擇]", {MC_CHOICEB,3,{'*',ctrl('M'),ctrl('J')}}, KS_NONE},
+ 	PREV_MENU,
+ 	NEXT_MENU,
+ 	PREVPAGE_MENU,
+@@ -1168,7 +1166,7 @@
+        {HELP_MENU,
+ 	NULL_MENU,
+ 	EXIT_SETUP_MENU,
+-	{"C", "[Change]", {MC_EDIT,3,{'c',ctrl('M'),ctrl('J')}}, KS_NONE},
++	{"C", "[修改]", {MC_EDIT,3,{'c',ctrl('M'),ctrl('J')}}, KS_NONE},
+ 	PREV_MENU,
+ 	NEXT_MENU,
+ 	PREVPAGE_MENU,
+@@ -1183,7 +1181,7 @@
+        {HELP_MENU,
+ 	OTHER_MENU,
+ 	EXIT_SETUP_MENU,
+-	{"C", "[Change]", {MC_EDIT,3,{'c',ctrl('M'),ctrl('J')}}, KS_NONE},
++	{"C", "[修改]", {MC_EDIT,3,{'c',ctrl('M'),ctrl('J')}}, KS_NONE},
+ 	PREV_MENU,
+ 	NEXT_MENU,
+ 	PREVPAGE_MENU,
+@@ -1197,8 +1195,8 @@
+ 	OTHER_MENU,
+ 	NULL_MENU,
+ 	NULL_MENU,
+-	{"D", "DeleteHdr", {MC_DELETE,1,{'d'}}, KS_NONE},
+-	{"$", "ShuffleHdr", {MC_SHUFFLE,1,{'$'}}, KS_NONE},
++	{"D", "刪除標頭", {MC_DELETE,1,{'d'}}, KS_NONE},
++	{"$", "重整標頭", {MC_SHUFFLE,1,{'$'}}, KS_NONE},
+ 	NULL_MENU,
+ 	NULL_MENU,
+ 	NULL_MENU,
+@@ -1211,7 +1209,7 @@
+        {HELP_MENU,
+ 	NULL_MENU,
+ 	EXIT_SETUP_MENU,
+-	{"*", "[Select]", {MC_CHOICE,3,{'*',ctrl('M'),ctrl('J')}}, KS_NONE},
++	{"*", "[選擇]", {MC_CHOICE,3,{'*',ctrl('M'),ctrl('J')}}, KS_NONE},
+ 	PREV_MENU,
+ 	NEXT_MENU,
+ 	PREVPAGE_MENU,
+@@ -1832,14 +1830,14 @@
         {HELP_MENU,
  	PRYNTTXT_MENU,
  	EXIT_SETUP_MENU,
@@ -383,16 +623,14 @@
  	NEXT_MENU,
  	PREVPAGE_MENU,
  	NEXTPAGE_MENU,
--	{"A", "Add Printer", {MC_ADD,1,{'a'}}, KS_NONE},
--	{"D", "DeletePrint", {MC_DELETE,1,{'d'}}, KS_NONE},
+ 	{"A", "Add Printer", {MC_ADD,1,{'a'}}, KS_NONE},
+ 	{"D", "DeletePrint", {MC_DELETE,1,{'d'}}, KS_NONE},
 -	{"C", "Change", {MC_EDIT,1,{'c'}}, KS_NONE},
-+	{"A", "新增印表機", {MC_ADD,1,{'a'}}, KS_NONE},
-+	{"D", "刪除印表機", {MC_DELETE,1,{'d'}}, KS_NONE},
 +	{"C", "修改", {MC_EDIT,1,{'c'}}, KS_NONE},
  	WHEREIS_MENU};
  INST_KEY_MENU(printer_edit_keymenu, printer_edit_keys);
  
-@@ -1504,7 +1502,7 @@
+@@ -1847,7 +1845,7 @@
         {HELP_MENU,
  	PRYNTTXT_MENU,
  	EXIT_SETUP_MENU,
@@ -401,7 +639,7 @@
  	PREV_MENU,
  	NEXT_MENU,
  	PREVPAGE_MENU,
-@@ -1537,7 +1535,7 @@
+@@ -1880,7 +1878,7 @@
      char *saved_printer;
      OPT_SCREEN_S screen;
  
@@ -410,25 +648,25 @@
        return;
  
      saved_printer = cpystr(ps->VAR_PRINTER);
-@@ -1553,7 +1551,7 @@
+@@ -1896,7 +1894,7 @@
  #ifdef OS2
        = cpystr("\"Select\" a port or |pipe-command as your default printer.");
  #else
 -      = cpystr("You may \"Select\" a print command as your default printer.");
-+      = cpystr("可以 \"選擇\" 一個列印命令為預設印表機。");
++      = cpystr("可以 \"選擇\" 一列印命令做為預設印表機。");
  #endif
  
      new_confline(&ctmpa);
-@@ -1906,7 +1904,7 @@
+@@ -2249,7 +2247,7 @@
  
      vsave = save_config_vars(ps);
      switch(conf_scroll_screen(ps, &screen, start_line,
--			      "SETUP PRINTER", "printer config ", 1)){
-+			      "設定印表機", "printer config ", 1)){
+-			      "SETUP PRINTER", "printer config ", 1, 0)){
++			      "設定印表機", "printer config ", 1, 0)){
        case 0:
  	break;
      
-@@ -1947,8 +1945,8 @@
+@@ -2290,8 +2288,8 @@
        fs_give((void **)def_printer_line);
  
      *def_printer_line = fs_get(36 + strlen(p) + 1);
@@ -439,7 +677,7 @@
  
      fs_give((void **)&nick);
      fs_give((void **)&cmd);
-@@ -1958,7 +1956,7 @@
+@@ -2301,7 +2299,7 @@
  static struct key flag_keys[] = 
         {HELP_MENU,
  	NULL_MENU,
@@ -448,7 +686,7 @@
          TOGGLE_MENU,
  	PREV_MENU,
  	NEXT_MENU,
-@@ -2112,9 +2110,9 @@
+@@ -2455,9 +2453,9 @@
  
  static struct key addr_select_keys[] = 
         {HELP_MENU,
@@ -460,7 +698,7 @@
  	PREV_MENU,
  	NEXT_MENU,
  	PREVPAGE_MENU,
-@@ -2128,29 +2126,29 @@
+@@ -2471,29 +2469,29 @@
  static struct key addr_select_with_goback_keys[] = 
         {HELP_MENU,
  	NULL_MENU,
@@ -481,7 +719,7 @@
  
  static struct key addr_select_with_view_keys[] = 
         {HELP_MENU,
- 	NULL_MENU,
+ 	RCOMPOSE_MENU,
 -        {"<", "AddressBkList", {MC_ADDRBOOK,2,{'<',','}}, KS_NONE},
 -        {">", "[View]",
 +        {"<", "地址簿列表", {MC_ADDRBOOK,2,{'<',','}}, KS_NONE},
@@ -496,10 +734,10 @@
  	FWDEMAIL_MENU,
  	SAVE_MENU,
  	WHEREIS_MENU};
-@@ -2159,14 +2157,14 @@
+@@ -2502,14 +2500,14 @@
  static struct key addr_select_for_url_keys[] = 
         {HELP_MENU,
- 	NULL_MENU,
+ 	RCOMPOSE_MENU,
 -        {"<", "Exit Viewer", {MC_ADDRBOOK,3,{'<',',','e'}}, KS_NONE},
 -        {">", "[View]",
 +        {"<", "離開", {MC_ADDRBOOK,3,{'<',',','e'}}, KS_NONE},
@@ -514,7 +752,7 @@
  	FWDEMAIL_MENU,
  	SAVE_MENU,
  	WHEREIS_MENU};
-@@ -2175,7 +2173,7 @@
+@@ -2518,7 +2516,7 @@
  static struct key addr_select_exit_keys[] = 
         {NULL_MENU,
  	NULL_MENU,
@@ -523,7 +761,7 @@
  	   KS_EXITMODE},
  	NULL_MENU,
  	NULL_MENU,
-@@ -2191,7 +2189,7 @@
+@@ -2534,7 +2532,7 @@
  static struct key addr_select_goback_keys[] = 
         {NULL_MENU,
  	NULL_MENU,
@@ -532,7 +770,16 @@
  	   KS_EXITMODE},
  	NULL_MENU,
  	NULL_MENU,
-@@ -2546,7 +2544,7 @@
+@@ -2617,7 +2615,7 @@
+ 	    char       *dn, *a;
+ 	    char      **cn, **org, **unit, **title, **mail, **sn;
+ 	    BerElement *ber;
+-	    static char no_email[] = "<No Email Address Available>";
++	    static char no_email[] = "<無法取得電子郵件地址>";
+ 	    int         indent, have_mail;
+ 	    
+ 	    dn = NULL;
+@@ -2898,7 +2896,7 @@
  	  sprintf(ee+2, "%s, No Matches Returned",
  		  ldap_err2string(wp_err->ldap_errno));
  	else
@@ -541,7 +788,7 @@
  
  	strcat(ee, " -- Choose Exit ]");
  	ctmpa->value      = cpystr(ee);
-@@ -2644,7 +2642,7 @@
+@@ -2996,7 +2994,7 @@
        case MC_CHOICE :
  	if(flags & CF_PRIVATE){
  	    q_status_message(SM_ORDER | SM_DING, 0, 3,
@@ -550,7 +797,7 @@
  	}
  	else if(some_selectable){
  	    (*cl)->d.a.ac->selected_ld    = (*cl)->d.a.ld;
-@@ -2709,15 +2707,15 @@
+@@ -3064,15 +3062,15 @@
  static struct key direct_config_keys[] = 
         {HELP_MENU,
  	NULL_MENU,
@@ -573,16 +820,16 @@
  	WHEREIS_MENU};
  INST_KEY_MENU(dir_conf_km, direct_config_keys);
  
-@@ -2789,7 +2787,7 @@
+@@ -3148,7 +3146,7 @@
  		     &first_line);
  
      (void)conf_scroll_screen(ps, &screen, first_line,
--			     "SETUP DIRECTORY SERVERS", "servers ", 1);
-+			     "設定地址伺服器", "servers ", 1);
+-			     "SETUP DIRECTORY SERVERS", "servers ", 1, 0);
++			     "設定地址伺服器", "servers ", 1, 0);
      ps->mangled_screen = 1;
  }
  
-@@ -2809,20 +2807,20 @@
+@@ -3168,20 +3166,20 @@
        case MC_DELETE :
  	if(first_one)
  	  q_status_message(SM_ORDER|SM_DING, 0, 3,
@@ -606,7 +853,7 @@
  	    if(first_one)
  	      dir_config_add(ps, cl);
  	    else
-@@ -2832,10 +2830,10 @@
+@@ -3191,10 +3189,10 @@
  	break;
  
        case MC_SHUFFLE :
@@ -619,7 +866,7 @@
  	    else
  	      dir_config_shuffle(ps, cl);
  	}
-@@ -2965,7 +2963,7 @@
+@@ -3328,7 +3326,7 @@
  	    write_pinerc(ps);
  	}
  	else
@@ -628,7 +875,7 @@
      }
  
      free_ldap_server_info(&info);
-@@ -2995,7 +2993,7 @@
+@@ -3358,7 +3356,7 @@
      
      if(cnt < 2){
  	q_status_message(SM_ORDER, 0, 3,
@@ -637,7 +884,7 @@
  	return;
      }
  
-@@ -3006,12 +3004,12 @@
+@@ -3369,12 +3367,12 @@
      opts[i].ch      = 'u';
      opts[i].rval    = 'u';
      opts[i].name    = "U";
@@ -652,7 +899,7 @@
  
      opts[i].ch = -1;
      deefault = 'u';
-@@ -3023,11 +3021,11 @@
+@@ -3386,11 +3384,11 @@
      else if(current_num == cnt - 1)		/* no down */
        opts[1].ch = -2;
  
@@ -667,16 +914,16 @@
      help = (opts[0].ch == -2) ? h_dir_shuf_down
  			      : (opts[1].ch == -2) ? h_dir_shuf_up
  						   : h_dir_shuf;
-@@ -3037,7 +3035,7 @@
+@@ -3400,7 +3398,7 @@
  
      switch(rv){
        case 'x':
--	q_status_message(SM_ORDER, 0, 3, "Shuffle cancelled");
-+	q_status_message(SM_ORDER, 0, 3, "取消重整");
+-	cmd_cancelled("Shuffle");
++	cmd_ cancelled("重整");
  	return;
  
        case 'u':
-@@ -3075,7 +3073,7 @@
+@@ -3438,7 +3436,7 @@
      free_list_array(&new_list);
      if(j){
  	q_status_message(SM_ORDER, 0, 3,
@@ -685,7 +932,7 @@
  	set_current_val((*cl)->var, TRUE, FALSE);
  	return;
      }
-@@ -3127,10 +3125,10 @@
+@@ -3490,10 +3488,10 @@
  	info = break_up_ldap_server(raw_server);
  
  	if(strcmp((*cl)->var->current_val.l[(*cl)->varmem], raw_server) == 0)
@@ -698,7 +945,7 @@
  	else{
  	    char   tmp[900];
  	    char  *subtitle;
-@@ -3967,7 +3965,7 @@
+@@ -4334,7 +4332,7 @@
  	}
  	else
  	  q_status_message(SM_ORDER, 3, 3,
@@ -707,7 +954,7 @@
      }
      else{
  	int cnt, ans = 0;
-@@ -3990,11 +3988,11 @@
+@@ -4357,11 +4355,11 @@
  	 */
  	if(!(*cl)->var->user_val.l && cnt > 1){
  	    static ESCKEY_S opts[] = {
@@ -722,7 +969,7 @@
  				-FOOTER_ROWS(ps), opts, 'i', 'x',
  				h_ab_del_dir_ignore, RB_NORM);
  	}
-@@ -4100,7 +4098,7 @@
+@@ -4467,7 +4465,7 @@
  		    CONF_S   *first_line = NULL;
  
  		    q_status_message(SM_ORDER, 0, 3,
@@ -731,7 +978,7 @@
  		    dir_init_display(ps, cl, servers,
  				   &ps->vars[V_LDAP_SERVERS], &first_line);
  		    *cl = first_line;
-@@ -4140,7 +4138,7 @@
+@@ -4507,7 +4505,7 @@
  	    }
  	}
  	else
@@ -740,7 +987,7 @@
      }
  
      if(rv == 1){
-@@ -4164,7 +4162,7 @@
+@@ -4531,7 +4529,7 @@
      int		   (*tool)();
  {
      new_confline(ctmp);
@@ -749,7 +996,7 @@
      (*ctmp)->value     = cpystr(ADD_FIRST_LDAP_SERVER);
      (*ctmp)->var       = var;
      (*ctmp)->varmem    = 0;
-@@ -4227,7 +4225,7 @@
+@@ -4594,7 +4592,7 @@
  	p->next = b;
      }
  
@@ -758,7 +1005,7 @@
      (*ctmp)->value     = serv;
      (*ctmp)->var       = var;
      (*ctmp)->varmem    = member;
-@@ -4709,7 +4707,7 @@
+@@ -5111,7 +5109,7 @@
  		if(i)
  		  config_scroll_up(i);
  		else
@@ -767,7 +1014,7 @@
  	    }
  
  	    break;
-@@ -4733,7 +4731,7 @@
+@@ -5153,7 +5151,7 @@
  	    }
  	    else
  	      q_status_message(SM_ORDER, 0, 1,
@@ -776,7 +1023,7 @@
  
  	    break;
  
-@@ -4776,7 +4774,7 @@
+@@ -5197,7 +5195,7 @@
  
  		    if(ctmpa == screen->current){
  			q_status_message(SM_ORDER,0,1,
@@ -785,7 +1032,7 @@
  			goto no_down;
  		    }
  
-@@ -4807,7 +4805,7 @@
+@@ -5229,7 +5227,7 @@
  	    if(ctmpa){
  		if(ctmpa == screen->current)
  		  q_status_message(SM_ORDER, 0, 1,
@@ -794,7 +1041,7 @@
  
  		screen->current = ctmpa;
  	    }
-@@ -4965,13 +4963,13 @@
+@@ -5405,13 +5403,13 @@
  	     HelpType help;
  	     static ESCKEY_S ekey[] = {
  		{0, 0, "", ""},
@@ -811,7 +1058,7 @@
  		     (last[0]) ? "[" : "",
  		     (last[0]) ? last : "",
  		     (last[0]) ? "]" : "");
-@@ -5093,7 +5091,7 @@
+@@ -5534,7 +5532,7 @@
  		 result = "Searched to bottom";
  	     }
  	     else
@@ -820,7 +1067,7 @@
  
  	     if((found & FOUND_IT) && ctmpa){
  		 strcpy(last, buf);
-@@ -5112,7 +5110,7 @@
+@@ -5553,7 +5551,7 @@
  		 screen->current = ctmpa;
  	     }
  
@@ -829,7 +1076,7 @@
  	    }
  
  	    break;
-@@ -5128,8 +5126,8 @@
+@@ -5569,8 +5567,8 @@
  	       && (ps_global->restricted || ps_global->readonly_pinerc)){
  		q_status_message1(SM_ORDER, 0, 3,
  		     "%s can't change options or settings",
@@ -840,7 +1087,7 @@
  		if(cmd == MC_EXIT){
  		    retval = 0;
  		    done++;
-@@ -5145,9 +5143,9 @@
+@@ -5586,9 +5584,9 @@
  		    &screen->current, flags)){
  		  case -1:
  		    q_status_message2(SM_ORDER, 0, 2,
@@ -852,7 +1099,7 @@
  		    break;
  
  		  case 0:
-@@ -5495,11 +5493,11 @@
+@@ -5971,11 +5969,11 @@
  	ekey[1].ch    = ctrl('P');
  	ekey[1].rval  = ctrl('P');
  	ekey[1].name  = "^P";
@@ -866,8 +1113,8 @@
  	ekey[3].ch    = KEY_DOWN;
  	ekey[3].rval  = ctrl('P');
  	ekey[3].name  = "";
-@@ -5514,12 +5512,12 @@
-     sval[0] = '\0';
+@@ -5989,12 +5987,12 @@
+ 
      switch(cmd){
        case MC_ADD:				/* add to list */
 -	if(fixed_var((*cl)->var, "add to", NULL)){
@@ -877,11 +1124,11 @@
  	else if(!(*cl)->var->is_list && (*cl)->var->user_val.p){
  	    q_status_message(SM_ORDER, 3, 3,
 -			    "Only single value allowed.  Use \"Change\".");
-+			    "僅允許\單一設定值。請用 \"Change\".");
++			    "僅允許\單一設定值。請用 \"修改\".");
  	}
  	else{
  	    int maxwidth =min(80,ps->ttyo->screen_cols) - 15;
-@@ -5543,7 +5541,7 @@
+@@ -6018,7 +6016,7 @@
  		}
  
  		sprintf(prompt,
@@ -890,7 +1137,7 @@
  	    }
  	    else if((*cl)->var->is_list
  		    && !(*cl)->var->user_val.l
-@@ -5552,13 +5550,13 @@
+@@ -6027,13 +6025,13 @@
  		ekey[0].ch    = 'r';
  		ekey[0].rval  = 'r';
  		ekey[0].name  = "R";
@@ -907,7 +1154,7 @@
  		switch(radio_buttons(prompt, -FOOTER_ROWS(ps), ekey, 'a', 'x',
  				     h_config_replace_add, RB_NORM)){
  		  case 'a':
-@@ -5572,25 +5570,25 @@
+@@ -6047,25 +6045,25 @@
  		    }
  
  add_text:
@@ -927,8 +1174,8 @@
  		    
  		  case 'x':
  		    i = 1;
--		    q_status_message(SM_ORDER,0,3,"Add cancelled");
-+		    q_status_message(SM_ORDER,0,3,"取消新增");
+-		    cmd_cancelled("Add");
++		    cmd_cancelled("新增");
  		    break;
  		}
  	    }
@@ -940,7 +1187,7 @@
  
  	    ps->mangled_footer = 1;
  
-@@ -5607,7 +5605,7 @@
+@@ -6082,7 +6080,7 @@
  		    ekey[0].ch    = ctrl('W');
  		    ekey[0].rval  = 5;
  		    ekey[0].name  = "^W";
@@ -949,7 +1196,7 @@
  		    ekey[1].ch    = -1;
  		}
  		else if(!(flags&CF_NUMBER))
-@@ -5660,7 +5658,7 @@
+@@ -6135,7 +6133,7 @@
  			    }
  			    else{
  				q_status_message1(SM_ORDER, 0, 3,
@@ -958,7 +1205,7 @@
  				rv = ps->mangled_body = 0;
  			    }
  
-@@ -5668,7 +5666,7 @@
+@@ -6143,7 +6141,7 @@
  			}
  			else{
  			    q_status_message1(SM_ORDER, 0, 3,
@@ -967,7 +1214,7 @@
  			}
  		    }
  		    else{
-@@ -5676,7 +5674,7 @@
+@@ -6151,7 +6149,7 @@
  			  && !(isdigit((unsigned char)sval[0])
  			       || sval[0] == '-' || sval[0] == '+')){
  			    q_status_message(SM_ORDER,3,3,
@@ -976,16 +1223,16 @@
  			    i = 3; /* to keep loop going */
  			    continue;
  			}
-@@ -5689,7 +5687,7 @@
+@@ -6164,7 +6162,7 @@
  		    }
  		}
  		else if(i == 1){
--		    q_status_message(SM_ORDER,0,3,"Add cancelled");
-+		    q_status_message(SM_ORDER,0,3,"取消新增");
+-		    cmd_cancelled("Add");
++		    cmd_cancelled("新增");
  		}
  		else if(i == 3){
  		    help = help == NO_HELP ? h_config_add : NO_HELP;
-@@ -5712,8 +5710,8 @@
+@@ -6187,8 +6185,8 @@
  		    }
  
  		    sprintf(prompt,
@@ -996,7 +1243,7 @@
  		    continue;
  		}
  		else if(i == ctrl('P')){
-@@ -5733,7 +5731,7 @@
+@@ -6208,7 +6206,7 @@
  			 */
  			if(++repeat_key > 0){
  			    q_status_message1(SM_ORDER,3,3,
@@ -1005,7 +1252,7 @@
  			    repeat_key = -5;
  			}
  		    }
-@@ -5757,7 +5755,7 @@
+@@ -6232,7 +6230,7 @@
  		    if(numval == hirange){
  			if(++repeat_key > 0){
  			    q_status_message1(SM_ORDER,3,3,
@@ -1014,25 +1261,25 @@
  			    repeat_key = -5;
  			}
  		    }
-@@ -5782,7 +5780,7 @@
+@@ -6257,7 +6255,7 @@
  	    && (*cl)->var->current_val.p){
  	    char pmt[40];
  
 -	    sprintf(pmt, "Override default with %s", empty_val2);
-+	    sprintf(pmt, "以 %s 覆蓋預設值", empty_val2);
++	    sprintf(pmt, "以 %s 覆蓋\預設值", empty_val2);
  	    if(want_to(pmt, 'n', 'n', NO_HELP, WT_FLUSH_IN) == 'y'){
  		sval[0] = '\0';
  		(*cl)->var->user_val.p = cpystr(sval);
-@@ -5795,7 +5793,7 @@
+@@ -6270,7 +6268,7 @@
  		&& (*cl)->var->current_val.l){
  	    char pmt[40];
  
 -	    sprintf(pmt, "Override default with %s", empty_val2);
-+	    sprintf(pmt, "以 %s 覆蓋預設值", empty_val2);
++	    sprintf(pmt, "以 %s 覆蓋\預設值", empty_val2);
  	    if(want_to(pmt, 'n', 'n', NO_HELP, WT_FLUSH_IN) == 'y'){
  		char **ltmp;
  
-@@ -5810,7 +5808,7 @@
+@@ -6285,7 +6283,7 @@
  	}
  	else if(((*cl)->var->is_list && !(*cl)->var->user_val.l)
  		|| (!(*cl)->var->is_list && !(*cl)->var->user_val.p)){
@@ -1041,7 +1288,7 @@
  	}
  	else{
  	    if((*cl)->var->is_fixed)
-@@ -5826,7 +5824,8 @@
+@@ -6301,7 +6299,8 @@
  		 	  : "<NULL VALUE>",
  		    (*cl)->var->name);
  	    else
@@ -1051,7 +1298,7 @@
  		    (*cl)->var->is_list ? "item " : "", 
  		    (*cl)->var->is_list
  		      ? int2string((*cl)->varmem + 1)
-@@ -5834,8 +5833,7 @@
+@@ -6309,8 +6308,7 @@
  			  ? (!*(*cl)->var->user_val.p)
  			      ? empty_val2
  			      : (*cl)->var->user_val.p
@@ -1061,7 +1308,7 @@
  
  	    ps->mangled_footer = 1;
  	    if(want_to(prompt, 'n', 'n', NO_HELP, WT_FLUSH_IN) == 'y'){
-@@ -5850,7 +5848,7 @@
+@@ -6325,7 +6323,7 @@
  		}
  	    }
  	    else
@@ -1070,7 +1317,7 @@
  	}
  
  	break;
-@@ -5978,7 +5976,7 @@
+@@ -6458,7 +6456,7 @@
  			  && !(isdigit((unsigned char)sval[0])
  			       || sval[0] == '-' || sval[0] == '+')){
  			    q_status_message(SM_ORDER,3,3,
@@ -1079,16 +1326,16 @@
  			    continue;
  			}
  
-@@ -5992,7 +5990,7 @@
+@@ -6472,7 +6470,7 @@
  		    }
  		}
  		else if(i == 1){
--		    q_status_message(SM_ORDER,0,3,"Change cancelled");
-+		    q_status_message(SM_ORDER,0,3,"取消修改");
+-		    cmd_cancelled("Change");
++		    cmd_cancelled("改變");
  		}
  		else if(i == 3){
  		    help = help == NO_HELP ? h_config_change : NO_HELP;
-@@ -6010,7 +6008,7 @@
+@@ -6490,7 +6488,7 @@
  			 */
  			if(++repeat_key > 0){
  			    q_status_message1(SM_ORDER,3,3,
@@ -1097,7 +1344,7 @@
  			    repeat_key = -5;
  			}
  		    }
-@@ -6026,7 +6024,7 @@
+@@ -6506,7 +6504,7 @@
  		    if(numval == hirange){
  			if(++repeat_key > 0){
  			    q_status_message1(SM_ORDER,3,3,
@@ -1106,7 +1353,7 @@
  			    repeat_key = -5;
  			}
  		    }
-@@ -6113,15 +6111,15 @@
+@@ -6596,16 +6594,16 @@
      if(flags & CF_CHANGES){
        switch(want_to(EXIT_PMT, 'y', 'x', h_config_undo, WT_FLUSH_IN)){
  	case 'y':
@@ -1120,13 +1367,18 @@
  	  return(10);
  
  	case 'x':  /* ^C */
+ 	default :
 -	  q_status_message(SM_ORDER,3,5,"Changes not yet saved");
 +	  q_status_message(SM_ORDER,3,5,"改變尚未被存檔");
  	  return(0);
        }
      }
-@@ -6413,7 +6411,7 @@
- 	       && want_to("Delete old unused personal option setting",
+@@ -6894,10 +6892,10 @@
+ 
+ 	if(fixed_var((*cl)->var, NULL, NULL)){
+ 	    if((*cl)->var->user_val.p
+-	       && want_to("Delete old unused personal option setting",
++	       && want_to("刪除舊有未使用的個人選項設定",
  			  'y', 'n', NO_HELP, WT_FLUSH_IN) == 'y'){
  		fs_give((void **)&(*cl)->var->user_val.p);
 -		q_status_message(SM_ORDER, 0, 3, "Deleted");
@@ -1134,16 +1386,7 @@
  		rv = 1;
  	    }
  
-@@ -6552,7 +6550,7 @@
- 	       && want_to("Delete old unused personal option setting",
- 			  'y', 'n', NO_HELP, WT_FLUSH_IN) == 'y'){
- 		fs_give((void **)&(*cl)->var->user_val.p);
--		q_status_message(SM_ORDER, 0, 3, "Deleted");
-+		q_status_message(SM_ORDER, 0, 3, "已刪除");
- 		rv = 1;
- 	    }
- 
-@@ -6642,15 +6640,15 @@
+@@ -7175,15 +7173,15 @@
  			fs_give((void **)&q);
  		    }
  
@@ -1162,7 +1405,7 @@
  
  		retval = 1;
  	    }
-@@ -6661,11 +6659,11 @@
+@@ -7194,11 +7192,11 @@
  		    set_variable(V_PERSONAL_PRINT_CATEGORY, 
  			comatose(ps->printer_category), 0);
  		    q_status_message1(SM_ORDER,0,3,
@@ -1176,7 +1419,7 @@
  
  		retval = 1;
  	    }
-@@ -6680,11 +6678,11 @@
+@@ -7213,11 +7211,11 @@
  			set_variable(V_PERSONAL_PRINT_CATEGORY, 
  			    comatose(ps->printer_category), 0);
  			q_status_message1(SM_ORDER,0,3,
@@ -1190,7 +1433,7 @@
  
  		    retval = 1;
  		}
-@@ -6734,23 +6732,23 @@
+@@ -7267,23 +7265,23 @@
      switch(cmd){
        case MC_ADD:				/* add to list */
  	sval[0] = '\0';
@@ -1219,7 +1462,7 @@
  		switch(i = radio_buttons(prompt, -FOOTER_ROWS(ps), ekey, 'a',
  					 'x', h_config_replace_add, RB_NORM)){
  		  case 'a':
-@@ -6766,17 +6764,17 @@
+@@ -7299,17 +7297,17 @@
  		    ltmp[k + 1] = ltmp[k] = NULL;
  
  add_text:
@@ -1231,16 +1474,16 @@
  replace_text:
  		    strcpy(prompt,
 -			"Enter the name for replacement printer : ");
-+			"欲取代的印表機名稱：");
++			"欲取代的印表機名：");
  		    break;
  		    
  		  case 'x':
--		    q_status_message(SM_ORDER,0,3,"Add cancelled");
-+		    q_status_message(SM_ORDER,0,3,"取消新增");
+-		    cmd_cancelled("Add");
++		    cmd_cancelled("新增");
  		    break;
  		}
  
-@@ -6784,7 +6782,7 @@
+@@ -7317,7 +7315,7 @@
  		  break;
  	    }
  	    else
@@ -1249,7 +1492,7 @@
  
  	    ps->mangled_footer = 1;
  	    help = NO_HELP;
-@@ -6796,7 +6794,7 @@
+@@ -7329,7 +7327,7 @@
  		    ekey[0].ch    = ctrl('W');
  		    ekey[0].rval  = 5;
  		    ekey[0].name  = "^W";
@@ -1258,16 +1501,16 @@
  		    ekey[1].ch    = -1;
  		}
  		else
-@@ -6812,7 +6810,7 @@
+@@ -7345,7 +7343,7 @@
  		    removing_leading_and_trailing_white_space(name);
  		}
  		else if(i == 1){
--		    q_status_message(SM_ORDER,0,3,"Add cancelled");
-+		    q_status_message(SM_ORDER,0,3,"取消新增");
+-		    cmd_cancelled("Add");
++		    cmd_cancelled("新增");
  		}
  		else if(i == 3){
  		    help = (help == NO_HELP) ? h_config_insert_after : NO_HELP;
-@@ -6830,7 +6828,7 @@
+@@ -7363,7 +7361,7 @@
  #ifdef OS2
  	    strcpy(prompt, "Enter port or |command : ");
  #else
@@ -1276,7 +1519,7 @@
  #endif
  	    while(i != 0 && i != 1){
  		oeflags = OE_APPEND_CURRENT;
-@@ -6880,10 +6878,10 @@
+@@ -7413,10 +7411,10 @@
  		    }
  		    else
  		      q_status_message1(SM_ORDER, 0, 3,
@@ -1284,12 +1527,12 @@
 +					 "無法將 %s 新增至列表中", empty_val);
  		}
  		else if(i == 1){
--		    q_status_message(SM_ORDER,0,3,"Add cancelled");
-+		    q_status_message(SM_ORDER,0,3,"取消新增");
+-		    cmd_cancelled("Add");
++		    cmd_cancelled("新增");
  		}
  		else if(i == 3){
  		    help = help == NO_HELP ? h_config_print_cmd : NO_HELP;
-@@ -6927,13 +6925,13 @@
+@@ -7460,13 +7458,13 @@
  	    if((*cl)->var->is_fixed){
  		parse_printer((*cl)->var->user_val.l[(*cl)->varmem],
  		    &nick, &p, NULL, NULL, NULL, NULL);
@@ -1305,7 +1548,7 @@
  		    int2string((*cl)->varmem + 1));
  
  	    ps->mangled_footer = 1;
-@@ -6943,7 +6941,7 @@
+@@ -7476,7 +7474,7 @@
  		config_del_list_item(cl, &newval);
  	    }
  	    else
@@ -1314,7 +1557,7 @@
  	}
  
  	break;
-@@ -6954,7 +6952,7 @@
+@@ -7487,7 +7485,7 @@
  	  && !strucmp(ps->VAR_PRINTER,(*cl)->var->current_val.l[(*cl)->varmem]))
  	    changing_selected = 1;
  
@@ -1323,7 +1566,7 @@
  	  break;
  	else if(!(*cl)->var->user_val.l && (*cl)->var->current_val.l)
  	  goto replace_text;
-@@ -6966,22 +6964,22 @@
+@@ -7499,22 +7497,22 @@
  	    ekey[0].ch    = 'n';
  	    ekey[0].rval  = 'n';
  	    ekey[0].name  = "N";
@@ -1341,17 +1584,17 @@
 +	    ekey[2].label = "選項";
  	    ekey[3].ch    = -1;
 -	    strcpy(prompt, "Change Name or Command or Options ? ");
-+	    strcpy(prompt, "修改名稱、命令或選項？");
++	    strcpy(prompt, "修改「名稱」、「命令」或「選項」？");
  	    i = radio_buttons(prompt, -FOOTER_ROWS(ps), ekey, 'c', 'x',
  			      h_config_print_name_cmd, RB_NORM);
  
  	    if(i == 'x'){
--		q_status_message(SM_ORDER,0,3,"Change cancelled");
-+		q_status_message(SM_ORDER,0,3,"取消修改");
+-		cmd_cancelled("Change");
++		cmd_cancelled("修改");
  		break;
  	    } 
  	    else if(i == 'c'){
-@@ -6990,7 +6988,7 @@
+@@ -7523,7 +7521,7 @@
  		parse_printer((*cl)->var->user_val.l[(*cl)->varmem],
  		    NULL, &p, NULL, NULL, NULL, &all_but_cmd);
  		
@@ -1360,7 +1603,7 @@
  		strcpy(sval, p ? p : "");
  		fs_give((void **)&p);
  
-@@ -7028,12 +7026,12 @@
+@@ -7561,12 +7559,12 @@
  			     * Don't allow input of multiple entries at once.
  			     */
  			    q_status_message(SM_ORDER,3,5,
@@ -1370,12 +1613,12 @@
  			}
  		    }
  		    else if(i == 1){
--			q_status_message(SM_ORDER,0,3,"Change cancelled");
-+			q_status_message(SM_ORDER,0,3,"取消修改");
+-			cmd_cancelled("Change");
++			cmd_cancelled("修改");
  		    }
  		    else if(i == 3){
  			help = help == NO_HELP ? h_config_change : NO_HELP;
-@@ -7052,7 +7050,7 @@
+@@ -7585,7 +7583,7 @@
  		parse_printer((*cl)->var->user_val.l[(*cl)->varmem],
  		    &p, NULL, NULL, NULL, &all_but_nick, NULL);
  		
@@ -1384,16 +1627,16 @@
  		strcpy(name, p ? p : "");
  		fs_give((void **)&p);
  
-@@ -7081,7 +7079,7 @@
+@@ -7614,7 +7612,7 @@
  			newval = &(*cl)->value;
  		    }
  		    else if(i == 1){
--			q_status_message(SM_ORDER,0,3,"Change cancelled");
-+			q_status_message(SM_ORDER,0,3,"取消修改");
+-			cmd_cancelled("Change");
++			cmd_cancelled("修改");
  		    }
  		    else if(i == 3){
  			help = help == NO_HELP ? h_config_change : NO_HELP;
-@@ -7102,18 +7100,18 @@
+@@ -7635,18 +7633,18 @@
  		ekey[0].ch    = 'i';
  		ekey[0].rval  = 'i';
  		ekey[0].name  = "I";
@@ -1403,20 +1646,20 @@
  		ekey[1].rval  = 't';
  		ekey[1].name  = "T";
 -		ekey[1].label = "Trailer";
-+		ekey[1].label = "結束";
++		ekey[1].label = "結尾";
  		ekey[2].ch    = -1;
 -		strcpy(prompt, "Change Init string or Trailer string ? ");
-+		strcpy(prompt, "修改初始或結束字串？");
++		strcpy(prompt, "修改「初始」或「結尾」字串？");
  		j = radio_buttons(prompt, -FOOTER_ROWS(ps), ekey, 'i', 'x',
  				  h_config_print_opt_choice, RB_NORM);
  
  		if(j == 'x'){
--		    q_status_message(SM_ORDER,0,3,"Change cancelled");
-+		    q_status_message(SM_ORDER,0,3,"取消修改");
+-		    cmd_cancelled("Change");
++		    cmd_cancelled("修改");
  		    break;
  		} 
  		else{
-@@ -7122,8 +7120,8 @@
+@@ -7655,8 +7653,8 @@
  		    parse_printer((*cl)->var->user_val.l[(*cl)->varmem],
  			&nick, &p, &init, &trailer, NULL, NULL);
  		    
@@ -1427,16 +1670,16 @@
  		    strcpy(sval, (j == 'i') ? init : trailer);
  
  		    tmp = string_to_cstring(sval);
-@@ -7177,7 +7175,7 @@
+@@ -7710,7 +7708,7 @@
  			    newval = &(*cl)->value;
  			}
  			else if(i == 1){
--			    q_status_message(SM_ORDER,0,3,"Change cancelled");
-+			    q_status_message(SM_ORDER,0,3,"取消修改");
+-			    cmd_cancelled("Change");
++			    cmd_cancelled("修改");
  			}
  			else if(i == 3){
  			    help=(help == NO_HELP)?h_config_print_init:NO_HELP;
-@@ -7255,18 +7253,18 @@
+@@ -7788,18 +7786,18 @@
  
        case MC_DELETE :
  	if((*cl)->d.c.ct->use & CNTXT_INCMNG)
@@ -1459,7 +1702,7 @@
  	    context_select_edit(ps, cl);
  	    ps->mangled_screen = 1;
  	}
-@@ -7274,7 +7272,7 @@
+@@ -7807,7 +7805,7 @@
  	break;
  
        case MC_ADD :
@@ -1468,7 +1711,7 @@
  	    context_select_add(ps, cl);
  	    ps->mangled_screen = 1;
  	}
-@@ -7283,9 +7281,9 @@
+@@ -7816,9 +7814,9 @@
  
        case MC_SHUFFLE :
  	if((*cl)->d.c.ct->use & CNTXT_INCMNG)
@@ -1480,7 +1723,7 @@
  	  context_select_shuffle(ps, cl);
  
  	break;
-@@ -7352,7 +7350,7 @@
+@@ -7890,7 +7888,7 @@
      struct key_menu *km;
      CONT_SCR_S	    *cs;
  
@@ -1489,7 +1732,7 @@
  
  	/* create a corresponding new CONF_S */
  	new_ctxt = new_context(raw_ctxt, NULL);
-@@ -7416,7 +7414,7 @@
+@@ -7954,7 +7952,7 @@
  
  	/* Tell the user it was a huge success... */
  	q_status_message(SM_ORDER, 0, 3,
@@ -1498,7 +1741,7 @@
      }
  }
  
-@@ -7435,11 +7433,11 @@
+@@ -7973,11 +7971,11 @@
  
      if(!((*cl)->var->user_val.l && (*cl)->var->user_val.l[0])){
  	q_status_message(SM_ORDER | SM_DING, 3, 3,
@@ -1512,7 +1755,7 @@
  	    old_cl->value);
      if(want_to(tmp, 'n', 'n', NO_HELP, WT_FLUSH_IN) == 'y'){
  	/* Remove from var list */
-@@ -7551,12 +7549,12 @@
+@@ -8089,12 +8087,12 @@
  	ps->mangled_body = 1;
  	q_status_message(SM_ORDER, 0, 3,
  			 (old_cl == *cl)
@@ -1528,7 +1771,7 @@
  }
  
  
-@@ -7578,7 +7576,7 @@
+@@ -8116,7 +8114,7 @@
      if(p = strstr(tpath, "%s"))
        *p = '\0';
  
@@ -1537,7 +1780,7 @@
  				      (*cl)->d.c.ct->server, tpath,
  				      (*cl)->d.c.ct->dir->view.user)){
  
-@@ -7648,7 +7646,7 @@
+@@ -8186,7 +8184,7 @@
  
  	set_current_val((*cl)->var, TRUE, FALSE);
  
@@ -1546,7 +1789,7 @@
      }
  }
  
-@@ -7670,14 +7668,14 @@
+@@ -8208,14 +8206,14 @@
  	ekey[n].ch      = 'u';
  	ekey[n].rval    = 'u';
  	ekey[n].name    = "U";
@@ -1563,7 +1806,7 @@
      }
  
      if(n){
-@@ -7690,7 +7688,7 @@
+@@ -8228,7 +8226,7 @@
  	if((cmd = radio_buttons(prompt, -FOOTER_ROWS(ps), ekey,
  				(n == 1) ? 'd' : 0, 'x',
  				NO_HELP, RB_NORM)) == 'x'){
@@ -1572,7 +1815,7 @@
  	}
  	else if((cmd == 'u' && (ctmp = context_select_prev(*cl)))
  		|| (cmd == 'd' && (ctmp = context_select_next(*cl)))){
-@@ -7789,7 +7787,7 @@
+@@ -8327,7 +8325,7 @@
  	}
      }
      else
@@ -1581,7 +1824,7 @@
  }
  
  
-@@ -8254,7 +8252,7 @@
+@@ -9046,7 +9044,7 @@
  	    if(cl->var->current_val.l){
  		int i, l, l2;
  
@@ -1590,7 +1833,7 @@
  		for(i = 0; cl->var->current_val.l[i]; i++){
  		    if(i)
  		      *p++ = ',';
-@@ -8286,7 +8284,7 @@
+@@ -9078,7 +9076,7 @@
  	sprintf(tmp, cl->var->is_fixed
  			? "<%s%s%s%s>%*s" : "<%s%s%s%s>%*s", 
  		cl->var->is_fixed ? fixed_val : no_val,
@@ -1599,7 +1842,7 @@
  		(cl->var->current_val.p) ? cl->var->current_val.p : "",
  		(cl->var->current_val.p) ? "\"" : "",
  		max(0, ps->ttyo->screen_cols - cl->valoffset - 13
-@@ -8428,7 +8426,7 @@
+@@ -9229,7 +9227,7 @@
  	p = (struncmp(*vp, "no-", 3)) ? *vp : *vp + 3;
  	if(!strucmp(p, f->name) || (og && !strucmp(p, "old-growth"))){
  	    q_status_message(SM_ORDER, 3, 3,
@@ -1608,7 +1851,7 @@
  	    return;
  	}
      }
-@@ -8477,7 +8475,7 @@
+@@ -9278,7 +9276,7 @@
  
        case F_ENABLE_INCOMING :
  	  q_status_message(SM_ORDER | SM_DING, 3, 4,
@@ -1617,7 +1860,7 @@
  
  	break;
  
-@@ -8659,8 +8657,8 @@
+@@ -9464,8 +9462,8 @@
  {
      if(v && v->is_fixed){
  	q_status_message2(SM_ORDER, 3, 3,
@@ -1628,7 +1871,7 @@
  	return(1);
      }
  
-@@ -8963,7 +8961,7 @@
+@@ -9887,7 +9885,7 @@
  	    && var->is_list
  	    && !var->user_val.l
  	    && var->current_val.l)))
@@ -1637,7 +1880,7 @@
  
      if(var == &ps->vars[V_USER_DOMAIN]){
  	char *p, *q;
-@@ -8974,7 +8972,7 @@
+@@ -9898,7 +9896,7 @@
  	    if(*(++p)){
  		if(!revert)
  		  q_status_message2(SM_ORDER, 3, 5,
@@ -1646,7 +1889,7 @@
  		    ps->VAR_USER_DOMAIN, p);
  		q = ps->VAR_USER_DOMAIN;
  		while((*q++ = *p++) != '\0')
-@@ -8983,7 +8981,7 @@
+@@ -9907,7 +9905,7 @@
  	    else{
  		if(!revert)
  		  q_status_message1(SM_ORDER, 3, 5,
@@ -1655,7 +1898,7 @@
  		    ps->VAR_USER_DOMAIN);
  		fs_give((void **)&ps->USR_USER_DOMAIN);
  		set_current_val(&ps->vars[V_USER_DOMAIN], TRUE, TRUE);
-@@ -9043,7 +9041,7 @@
+@@ -9967,7 +9965,7 @@
      else if(var == &ps->vars[V_INIT_CMD_LIST]){
  	if(!revert)
  	  q_status_message(SM_ASYNC, 0, 3,
@@ -1664,7 +1907,7 @@
      }
      else if(var == &ps->vars[V_VIEW_HEADERS]){
  	ps->view_all_except = 0;
-@@ -9115,10 +9113,10 @@
+@@ -10039,10 +10037,10 @@
  	}
  	else if(timeo == 0L && !revert){
  	    q_status_message(SM_ORDER, 4, 6,
@@ -1677,7 +1920,7 @@
  	}
      }
  #if defined(DOS) || defined(OS2)
-@@ -9431,10 +9429,10 @@
+@@ -10500,10 +10498,10 @@
  static struct key role_select_keys[] = 
         {HELP_MENU,
  	NULL_MENU,
@@ -1691,52 +1934,43 @@
  	PREVPAGE_MENU,
  	NEXTPAGE_MENU,
  	NULL_MENU,
-@@ -9475,7 +9473,7 @@
-     new_confline(&ctmp);
-     first_line = ctmp;
- 
--    ctmp->value        = cpystr("Default Role");
-+    ctmp->value        = cpystr("預設角色");
-     ctmp->d.r.selected = &sel_pat;
-     ctmp->d.r.pat      = &local_pat;
-     ctmp->d.r.handle   = pattern_h;
-@@ -9493,7 +9491,7 @@
- 	menu_add_binding(ctmp->keymenu, ctrl('M'), MC_CHOICE);
+@@ -10546,7 +10544,7 @@
+ 	menu_add_binding(&role_select_km, ctrl('M'), MC_CHOICE);
      }
      else{
--	menu_init_binding(ctmp->keymenu, 'S', MC_CHOICE, "S", "[Select]",
-+	menu_init_binding(ctmp->keymenu, 'S', MC_CHOICE, "S", "[選擇]",
+-	menu_init_binding(&role_select_km, 'S', MC_CHOICE, "S", "[Select]",
++	menu_init_binding(&role_select_km, 'S', MC_CHOICE, "S", "[選擇]",
  			  DEFAULT_KEY);
- 	menu_add_binding(ctmp->keymenu, ctrl('J'), MC_CHOICE);
- 	menu_add_binding(ctmp->keymenu, ctrl('M'), MC_CHOICE);
-@@ -9516,7 +9514,7 @@
+ 	menu_add_binding(&role_select_km, ctrl('J'), MC_CHOICE);
+ 	menu_add_binding(&role_select_km, ctrl('M'), MC_CHOICE);
+@@ -10580,7 +10578,7 @@
  	ctmp->valoffset    = 4;
      }
  
 -    (void)conf_scroll_screen(ps, &screen, first_line, "SELECT ROLE",
 +    (void)conf_scroll_screen(ps, &screen, first_line, "選擇角色",
- 			     "roles ", 0);
+ 			     "roles ", 0, 0);
  
      if(sel_pat){
-@@ -9617,23 +9615,23 @@
+@@ -10969,23 +10967,23 @@
  static struct key role_config_keys[] = 
         {HELP_MENU,
  	OTHER_MENU,
 -        {"E", "Exit Setup", {MC_EXIT,1,{'e'}}, KS_EXITMODE},
 -	{"C", "[Change]", {MC_EDIT,3,{'c',ctrl('M'),ctrl('J')}}, KS_NONE},
--	{"P", "PrevRole", {MC_PREVITEM, 1, {'p'}}, KS_NONE},
--	{"N", "NextRole", {MC_NEXTITEM, 2, {'n', TAB}}, KS_NONE},
+-	{"P", "PrevRule", {MC_PREVITEM, 1, {'p'}}, KS_NONE},
+-	{"N", "NextRule", {MC_NEXTITEM, 2, {'n', TAB}}, KS_NONE},
 +        {"E", "離開", {MC_EXIT,1,{'e'}}, KS_EXITMODE},
 +	{"C", "[修改]", {MC_EDIT,3,{'c',ctrl('M'),ctrl('J')}}, KS_NONE},
-+	{"P", "前一角色", {MC_PREVITEM, 1, {'p'}}, KS_NONE},
-+	{"N", "次一角色", {MC_NEXTITEM, 2, {'n', TAB}}, KS_NONE},
++	{"P", "前一規則", {MC_PREVITEM, 1, {'p'}}, KS_NONE},
++	{"N", "次一規則", {MC_NEXTITEM, 2, {'n', TAB}}, KS_NONE},
  	PREVPAGE_MENU,
  	NEXTPAGE_MENU,
--	{"A", "Add Role", {MC_ADD,1,{'a'}}, KS_NONE},
--	{"D", "Del Role", {MC_DELETE,1,{'d'}}, KS_NONE},
+-	{"A", "Add", {MC_ADD,1,{'a'}}, KS_NONE},
+-	{"D", "Delete", {MC_DELETE,1,{'d'}}, KS_NONE},
 -	{"$", "Shuffle", {MC_SHUFFLE,1,{'$'}}, KS_NONE},
-+	{"A", "新增角色", {MC_ADD,1,{'a'}}, KS_NONE},
-+	{"D", "刪除角色", {MC_DELETE,1,{'d'}}, KS_NONE},
++	{"A", "新增", {MC_ADD,1,{'a'}}, KS_NONE},
++	{"D", "刪除", {MC_DELETE,1,{'d'}}, KS_NONE},
 +	{"$", "重新整理", {MC_SHUFFLE,1,{'$'}}, KS_NONE},
  	WHEREIS_MENU,
  
@@ -1751,69 +1985,238 @@
          NULL_MENU,
          NULL_MENU,
          NULL_MENU,
-@@ -9889,7 +9887,7 @@
+@@ -11262,7 +11260,7 @@
        case MC_DELETE :
  	if(first_one)
  	  q_status_message(SM_ORDER|SM_DING, 0, 3,
 -			   "Nothing to Delete, use Add");
 +			   "沒有可供刪除的項目，請用新增");
  	else
- 	  rv = role_config_del(ps, cl);
+ 	  rv = role_config_del(ps, cl, role_global_flags);
  
-@@ -9910,14 +9908,14 @@
+@@ -11283,14 +11281,14 @@
        case MC_SHUFFLE :
  	if(first_one)
  	  q_status_message(SM_ORDER|SM_DING, 0, 3,
 -			   "Nothing to Shuffle, use Add");
-+			   "沒有可供刪除的項目，請用新增");
++			   "沒有可供重整的項目，請用新增");
  	else
  	  rv = role_config_shuffle(ps, cl);
  
  	break;
  
        case MC_EXIT :
--	rv = screen_exit_cmd(flags, "Role Configuration");
-+	rv = screen_exit_cmd(flags, "角色設定");
+-	role_type_print(exitpmt, "%sRule Setup", role_global_flags);
++	role_type_print(exitpmt, "%s規則設定", role_global_flags);
+ 	rv = screen_exit_cmd(flags, exitpmt);
  	break;
  
-       case MC_ADDFILE :
-@@ -10158,7 +10156,7 @@
- 	delete_a_role(cl);
+@@ -11789,7 +11787,7 @@
+ 		       help, RB_NORM);
+ 
+     if(rv == 'x'){
+-	cmd_cancelled("Shuffle");
++	cmd_cancelled("重整");
+ 	return(0);
      }
-     else
--      q_status_message(SM_ORDER, 0, 3, "Role not deleted");
-+      q_status_message(SM_ORDER, 0, 3, "角色未被刪除");
+ 
+@@ -11949,7 +11947,7 @@
+ 	    continue;
+ 	}
+ 	else if(r == 1 || (r == 0 && filename[0] == '\0')){
+-	    cmd_cancelled("IncludeFile");
++	    cmd_cancelled("含括檔案");
+ 	    return(rv);
+ 	}
+ 	else if(r == 4){
+@@ -12684,22 +12682,22 @@
+ 				? cpystr(def->patgrp->nick) : NULL;
+ 
+     nick_var.global_val.p = cpystr(edit_role
+-				    ? "Alternate Role"
++				    ? "替代角色"
+ 				    : (edit_incol
+-					? "Index Color Rule"
++					? "索引色彩規則"
+ 					: (edit_score
+-					    ? "Score Rule"
+-					    : "Filter Rule")));
++					    ? "得分規則"
++					    : "過濾器規則")));
+     set_current_val(&nick_var, FALSE, FALSE);
+ 
+-    to_pat_var.name       = cpystr("To pattern");
++    to_pat_var.name       = cpystr("目的式樣");
+     to_pat_var.is_used    = 1;
+     to_pat_var.is_user    = 1;
+     to_pat_var.user_val.p = (def && def->patgrp)
+ 				? pattern_to_string(def->patgrp->to) : NULL;
+     set_current_val(&to_pat_var, FALSE, FALSE);
+ 
+-    from_pat_var.name       = cpystr("From pattern");
++    from_pat_var.name       = cpystr("來源式樣");
+     from_pat_var.is_used    = 1;
+     from_pat_var.is_user    = 1;
+     from_pat_var.user_val.p = (def && def->patgrp)
+@@ -12707,7 +12705,7 @@
+ 				: NULL;
+     set_current_val(&from_pat_var, FALSE, FALSE);
+ 
+-    sender_pat_var.name       = cpystr("Sender pattern");
++    sender_pat_var.name       = cpystr("寄件者式樣");
+     sender_pat_var.is_used    = 1;
+     sender_pat_var.is_user    = 1;
+     sender_pat_var.user_val.p = (def && def->patgrp)
+@@ -12715,28 +12713,28 @@
+ 				  : NULL;
+     set_current_val(&sender_pat_var, FALSE, FALSE);
+ 
+-    cc_pat_var.name       = cpystr("Cc pattern");
++    cc_pat_var.name       = cpystr("副本式樣");
+     cc_pat_var.is_used    = 1;
+     cc_pat_var.is_user    = 1;
+     cc_pat_var.user_val.p = (def && def->patgrp)
+ 				? pattern_to_string(def->patgrp->cc) : NULL;
+     set_current_val(&cc_pat_var, FALSE, FALSE);
+ 
+-    recip_pat_var.name       = cpystr("Recip pattern");
++    recip_pat_var.name       = cpystr("領受者式樣");
+     recip_pat_var.is_used    = 1;
+     recip_pat_var.is_user    = 1;
+     recip_pat_var.user_val.p = (def && def->patgrp)
+ 				? pattern_to_string(def->patgrp->recip) : NULL;
+     set_current_val(&recip_pat_var, FALSE, FALSE);
+ 
+-    partic_pat_var.name       = cpystr("Partic pattern");
++    partic_pat_var.name       = cpystr("關係者式樣");
+     partic_pat_var.is_used    = 1;
+     partic_pat_var.is_user    = 1;
+     partic_pat_var.user_val.p = (def && def->patgrp)
+ 				? pattern_to_string(def->patgrp->partic) : NULL;
+     set_current_val(&partic_pat_var, FALSE, FALSE);
+ 
+-    news_pat_var.name       = cpystr("News pattern");
++    news_pat_var.name       = cpystr("新聞式樣");
+     news_pat_var.is_used    = 1;
+     news_pat_var.is_user    = 1;
+     news_pat_var.user_val.p = (def && def->patgrp)
+@@ -12744,7 +12742,7 @@
+ 				: NULL;
+     set_current_val(&news_pat_var, FALSE, FALSE);
+ 
+-    subj_pat_var.name       = cpystr("Subject pattern");
++    subj_pat_var.name       = cpystr("主題式樣");
+     subj_pat_var.is_used    = 1;
+     subj_pat_var.is_user    = 1;
+     subj_pat_var.user_val.p = (def && def->patgrp)
+@@ -12752,7 +12750,7 @@
+ 				: NULL;
+     set_current_val(&subj_pat_var, FALSE, FALSE);
+ 
+-    alltext_pat_var.name       = cpystr("AllText pattern");
++    alltext_pat_var.name       = cpystr("所有文字式樣");
+     alltext_pat_var.is_used    = 1;
+     alltext_pat_var.is_user    = 1;
+     alltext_pat_var.user_val.p = (def && def->patgrp)
+@@ -12761,7 +12759,7 @@
+     set_current_val(&alltext_pat_var, FALSE, FALSE);
+ 
+     scorei_pat_global_ptr     = &scorei_pat_var;
+-    scorei_pat_var.name       = cpystr("Score interval");
++    scorei_pat_var.name       = cpystr("得分區間");
+     scorei_pat_var.is_used    = 1;
+     scorei_pat_var.is_user    = 1;
+     if(def && def->patgrp && def->patgrp->do_score)
+@@ -12778,7 +12776,7 @@
      
-     return(rv);
- }
-@@ -10724,7 +10722,7 @@
- 	free_patline(&cur_patline);
-     }
-     else
--      q_status_message(SM_ORDER, 0, 3, "Role file not removed");
-+      q_status_message(SM_ORDER, 0, 3, "角色檔未被移除");
-     
-     return(rv);
- }
-@@ -11084,7 +11082,7 @@
+     pindent += 3;
  
+-    inick_var.name       = cpystr("Initialize settings using role");
++    inick_var.name       = cpystr("使用角色初始化設定");
+     inick_var.is_used    = 1;
+     inick_var.is_user    = 1;
+     inick_var.user_val.p = (def && def->action &&
+@@ -12787,13 +12785,13 @@
+ 			       ? cpystr(def->action->inherit_nick) : NULL;
  
- struct variable *role_rule_ptr;
--#define	 ALT_ROLE     "Alternate Role"
-+#define	 ALT_ROLE     "替代角色"
+     role_fldr_ptr = &fldr_type_var;		/* so radiobuttons can tell */
+-    fldr_type_var.name       = cpystr("Current Folder Type");
++    fldr_type_var.name       = cpystr("目前檔案匣形態");
+     fldr_type_var.is_used    = 1;
+     fldr_type_var.is_user    = 1;
+     fldr_type_var.user_val.p = (f=pat_fldr_types((def && def->patgrp) ? def->patgrp->fldr_type : -1)) ? cpystr(f->name) : NULL;
+     set_current_val(&fldr_type_var, FALSE, FALSE);
  
- CONF_S *inick_confs[5];
- #define INICK_INICK_CONF 0
-@@ -11216,7 +11214,7 @@
- 			    def->action->role->inherit_nick &&
- 			    def->action->role->inherit_nick[0])
- 			       ? cpystr(def->action->role->inherit_nick) : NULL;
--    inick_var.global_val.p = cpystr("Default Role");
-+    inick_var.global_val.p = cpystr("預設角色");
+-    folder_pat_var.name       = cpystr("Folder");
++    folder_pat_var.name       = cpystr("檔案匣");
+     folder_pat_var.is_used    = 1;
+     folder_pat_var.is_user    = 1;
+     folder_pat_var.user_val.p = (def && def->patgrp)
+@@ -12801,7 +12799,7 @@
+ 				: NULL;
+     set_current_val(&folder_pat_var, FALSE, FALSE);
  
-     from_act_var.name       = cpystr("Set From");
+-    from_act_var.name       = cpystr("Set From");
++    from_act_var.name       = cpystr("設定「來源」");
      from_act_var.is_used    = 1;
-@@ -12115,7 +12113,7 @@
+     from_act_var.is_user    = 1;
+     if(def && def->action && def->action->from){
+@@ -12813,7 +12811,7 @@
+     else
+       from_act_var.user_val.p = NULL;
+ 
+-    replyto_act_var.name       = cpystr("Set Reply-To");
++    replyto_act_var.name       = cpystr("設定「回覆至」");
+     replyto_act_var.is_used    = 1;
+     replyto_act_var.is_user    = 1;
+     if(def && def->action && def->action->replyto){
+@@ -12826,26 +12824,26 @@
+     else
+       replyto_act_var.user_val.p = NULL;
+ 
+-    fcc_act_var.name       = cpystr("Set Fcc");
++    fcc_act_var.name       = cpystr("設定「檔案副本」");
+     fcc_act_var.is_used    = 1;
+     fcc_act_var.is_user    = 1;
+     fcc_act_var.user_val.p = (def && def->action && def->action->fcc)
+ 			       ? cpystr(def->action->fcc) : NULL;
+ 
+-    sig_act_var.name       = cpystr("Set Signature");
++    sig_act_var.name       = cpystr("設定「簽名」");
+     sig_act_var.is_used    = 1;
+     sig_act_var.is_user    = 1;
+     sig_act_var.user_val.p = (def && def->action && def->action->sig)
+ 			       ? cpystr(def->action->sig) : NULL;
+ 
+-    templ_act_var.name       = cpystr("Set Template");
++    templ_act_var.name       = cpystr("設定「模版」");
+     templ_act_var.is_used    = 1;
+     templ_act_var.is_user    = 1;
+     templ_act_var.user_val.p = (def && def->action && def->action->template)
+ 			         ? cpystr(def->action->template) : NULL;
+ 
+     score_act_global_ptr     = &score_act_var;
+-    score_act_var.name       = cpystr("Score Value");
++    score_act_var.name       = cpystr("得分值");
+     score_act_var.is_used    = 1;
+     score_act_var.is_user    = 1;
+     if(def && def->action && def->action->scoreval >= SCORE_MIN &&
+@@ -14262,12 +14260,12 @@
+ 	      break;
+ 
+ 	    case 'n':
+-	      q_status_message(SM_ORDER,3,5,"No changes saved");
++	      q_status_message(SM_ORDER,3,5,"修改未被存入");
+ 	      rv = 10;
+ 	      break;
+ 
+ 	    case 'x':  /* ^C */
+-	      q_status_message(SM_ORDER,3,5,"Changes not yet saved");
++	      q_status_message(SM_ORDER,3,5,"修改尚未存入");
+ 	      rv = 0;
+ 	      break;
+ 	  }
+@@ -14396,7 +14394,7 @@
  	    if(file[len=(strlen(file)-1)] == '|')
  	      file[len] = '\0';
  
@@ -1822,3 +2225,92 @@
  	    err = signature_edit(file, title);
  	}
  
+@@ -14434,7 +14432,7 @@
+ 	    if(i == 0)
+ 	      break;
+ 	    else if(i == 1){
+-		cmd_cancelled("eXtraHdr");
++		cmd_cancelled("額外標頭");
+ 		cancel = 1;
+ 		break;
+ 	    }
+@@ -14545,7 +14543,7 @@
+ 	sprintf(tmp, "Really remove \"%s\" pattern from this rule",
+ 		(ea && ea->a && ea->a->field) ? ea->a->field : "this");
+ 	if(want_to(tmp, 'y', 'n', NO_HELP, WT_NORM) != 'y'){
+-	    cmd_cancelled("RemoveHdr");
++	    cmd_cancelled("刪除標頭");
+ 	    return(rv);
+ 	}
+ 
+@@ -14613,8 +14611,8 @@
+ 	    char prompt[60];
+ 
+ 	    rv = 0;
+-	    sprintf(prompt, "%s the interval : ",
+-		    (*cl)->var->user_val.p ? "Change" : "Enter");
++	    sprintf(prompt, "%s區間值：",
++		    (*cl)->var->user_val.p ? "修改" : "輸入");
+ 
+ 	    ps->mangled_footer = 1;
+ 	    help = NO_HELP;
+@@ -14640,7 +14638,7 @@
+ 		    (*cl)->value = pretty_value(ps, *cl);
+ 		}
+ 		else if(i == 1)
+-		  cmd_cancelled(cmd == MC_ADD ? "Add" : "Change");
++		  cmd_cancelled(cmd == MC_ADD ? "新增" : "修改");
+ 		else if(i == 3){
+ 		    help = help == NO_HELP ? h_config_edit_scorei : NO_HELP;
+ 		    continue;
+@@ -14685,12 +14683,12 @@
+ 	      break;
+ 
+ 	    case 'n':
+-	      q_status_message(SM_ORDER,3,5,"No changes saved");
++	      q_status_message(SM_ORDER,3,5,"修改未被存入");
+ 	      rv = 10;
+ 	      break;
+ 
+ 	    case 'x':  /* ^C */
+-	      q_status_message(SM_ORDER,3,5,"Changes not yet saved");
++	      q_status_message(SM_ORDER,3,5,"修改尚未存入");
+ 	      rv = 0;
+ 	      break;
+ 	  }
+@@ -15712,7 +15710,7 @@
+ 	/* First, confirm that user wants to restore all default colors */
+ 	if(want_to("Really restore all colors to default values",
+ 		   'y', 'n', NO_HELP, WT_NORM) != 'y'){
+-	    cmd_cancelled("RestoreDefs");
++	    cmd_cancelled("回存預設值");
+ 	    return(rv);
+ 	}
+ 
+@@ -15768,7 +15766,7 @@
+ 	    if(i == 0)
+ 	      break;
+ 	    else if(i == 1){
+-		cmd_cancelled("Add");
++		cmd_cancelled("新增");
+ 		cancel = 1;
+ 		break;
+ 	    }
+@@ -15857,7 +15855,7 @@
+ 
+ 	sprintf(prompt, "Really delete \"%s\" color from config", header);
+ 	if(want_to(prompt, 'y', 'n', NO_HELP, WT_NORM) != 'y'){
+-	    cmd_cancelled("Delete");
++	    cmd_cancelled("刪除");
+ 	    return(rv);
+ 	}
+ 
+@@ -15989,7 +15987,7 @@
+ 
+ 	switch(i){
+ 	  case 'x':
+-	    cmd_cancelled("Shuffle");
++	    cmd_cancelled("重整");
+ 	    return(rv);
+ 
+ 	  case 'u':

@@ -1,5 +1,5 @@
---- pine/osdep/expnfldr.orig	Tue Sep 22 21:19:44 1998
-+++ pine/osdep/expnfldr	Tue Sep 22 21:20:44 1998
+--- pine/osdep/expnfldr.orig	Tue Dec 12 05:10:01 1995
++++ pine/osdep/expnfldr	Thu Oct 14 10:53:45 1999
 @@ -32,13 +32,13 @@
      } else if(ps_global->restricted
  	        && (strindex("./~", temp_filename[0]) != NULL

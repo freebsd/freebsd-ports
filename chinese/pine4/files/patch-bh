@@ -1,6 +1,6 @@
---- pine/pine.h.orig	Wed Jul 22 06:02:49 1998
-+++ pine/pine.h	Tue Aug  4 12:42:20 1998
-@@ -348,7 +348,7 @@
+--- pine/pine.h.orig	Tue Oct 12 06:14:28 1999
++++ pine/pine.h	Thu Oct 14 12:35:27 1999
+@@ -357,7 +357,7 @@
  			   && (s) && !strucmp((s),"X-VCARD")))
  #define	MIME_VCARD_A(a)	MIME_VCARD((a)->body->type, (a)->body->subtype)
  
@@ -9,7 +9,7 @@
  
  
  /*
-@@ -1582,91 +1582,91 @@
+@@ -1875,94 +1875,94 @@
   * Some standard Key/Command Bindings 
   */
  #define	NULL_MENU	{NULL, NULL, {MC_NONE}, KS_NONE}
@@ -30,7 +30,7 @@
  			 {MC_MAIN, 1, {'m'}}, \
  			 KS_MAINMENU}
 -#define	QUIT_MENU	{"Q", "Quit Pine", \
-+#define	QUIT_MENU	{"Q", "離開 Pine", \
++#define	QUIT_MENU	{"Q", "結束 Pine", \
  			 {MC_QUIT, 1, {'q'}}, \
  			 KS_EXIT}
 -#define	PREVMSG_MENU	{"P", "PrevMsg", \
@@ -77,6 +77,10 @@
 +#define	COMPOSE_MENU	{"C", "編修", \
  			 {MC_COMPOSE,1,{'c'}}, \
  			 KS_COMPOSER}
+-#define	RCOMPOSE_MENU	{"#", "Role", \
++#define	RCOMPOSE_MENU	{"#", "角色", \
+ 			 {MC_ROLE,1,{'#'}}, \
+ 			 KS_NONE}
 -#define	DELETE_MENU	{"D", "Delete", \
 +#define	DELETE_MENU	{"D", "刪除", \
  			 {MC_DELETE,2,{'d',KEY_DEL}}, \
@@ -114,7 +118,7 @@
  			 {MC_FLAG,1,{'*'}}, \
  			 KS_FLAG}
 -#define	PIPE_MENU	{"|", "Pipe", \
-+#define	PIPE_MENU	{"|", "轉向(Pipe)", \
++#define	PIPE_MENU	{"|", "導向(Pipe)", \
  			 {MC_PIPE,1,{'|'}}, \
  			 KS_NONE}
 -#define	BOUNCE_MENU	{"B", "Bounce", \
@@ -130,7 +134,7 @@
  			 {MC_TAB,1,{TAB}}, \
  			 KS_NONE}
  
-@@ -2304,7 +2304,7 @@
+@@ -2819,7 +2819,7 @@
  } ATABLE_S;
  
  

@@ -1,6 +1,6 @@
---- pico/osdep/term.cap.orig	Sat Feb 28 08:14:53 1998
-+++ pico/osdep/term.cap	Tue Jul 28 08:35:00 1998
-@@ -270,7 +270,8 @@
+--- pico/osdep/term.cap.orig	Thu Jul  8 07:25:22 1999
++++ pico/osdep/term.cap	Thu Oct 14 10:53:41 1999
+@@ -272,7 +272,8 @@
      _kppu		= tgetstr("kP", &p);
      _kppd		= tgetstr("kN", &p);
      _kphome		= tgetstr("kh", &p);

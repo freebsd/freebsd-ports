@@ -1,6 +1,6 @@
---- pine/reply.c.orig	Thu Jan 28 06:32:10 1999
-+++ pine/reply.c	Tue Feb 23 15:55:36 1999
-@@ -107,9 +107,9 @@
+--- pine/reply.c.orig	Tue Oct 12 01:30:36 1999
++++ pine/reply.c	Thu Oct 14 15:00:52 1999
+@@ -108,9 +108,9 @@
  /*
   * Little defs to keep the code a bit neater...
   */
@@ -13,16 +13,16 @@
  #define SIGDASHES	"-- "
  
  
-@@ -293,7 +293,7 @@
+@@ -341,7 +341,7 @@
+ 	  role = combine_inherited_role(role);
  	else{				/* cancel reply */
  	    role = NULL;
- 	    close_patterns(&pattern_h);
 -	    cmd_cancelled("Reply");
 +	    cmd_cancelled("回覆");
  	    goto done_early;
  	}
- 
-@@ -558,7 +558,7 @@
+     }
+@@ -603,7 +603,7 @@
  #endif
  
      /* partially formatted outgoing message */
@@ -31,7 +31,7 @@
  	      role, fcc.tptr, &reply, redraft_pos, NULL, NULL, 0);
    done:
      pine_free_body(&body);
-@@ -636,7 +636,7 @@
+@@ -681,7 +681,7 @@
  			 (ADDRESS *) NULL, env->from, 0);
  
      if(ret == 'x') {
@@ -40,7 +40,7 @@
  	return(0);
      }
  
-@@ -685,7 +685,7 @@
+@@ -730,7 +730,7 @@
  	       || (*saved_cc || *saved_resent))){
  	    *flags &= ~RSF_QUERY_REPLY_ALL;
  	    if((ret=want_to(ALL_PMT,'n','x',NO_HELP,WT_SEQ_SENSITIVE)) == 'x'){
@@ -49,7 +49,35 @@
  		return(0);
  	    }
  	    else if(ret == 'y')
-@@ -1406,8 +1406,8 @@
+@@ -830,9 +830,9 @@
+     PAT_S          *curpat, *pat;
+     PAT_STATE       pstate;
+     static ESCKEY_S ekey[] = {
+-	{'y', 'y', "Y", "Yes"},
+-	{'n', 'n', "N", "No Role"},
+-	{ctrl('T'), 2, "^T", "To Select Alternate Role"},
++	{'y', 'y', "Y", "是"},
++	{'n', 'n', "N", "否"},
++	{ctrl('T'), 2, "^T", "選擇替代角色"},
+ 	{-1, 0, NULL, NULL}};
+ 
+     if(!nonempty_patterns() || !role)
+@@ -884,11 +884,11 @@
+       curpat = first_pattern(ROLE_DO_ROLES, &pstate);
+ 
+     if(flags & ROLE_REPLY)
+-      prompt_fodder = "Reply";
++      prompt_fodder = "回覆";
+     else if(flags & ROLE_FORWARD)
+-      prompt_fodder = "Forward";
++      prompt_fodder = "轉寄";
+     else
+-      prompt_fodder = "Compose";
++      prompt_fodder = "編輯";
+ 
+     done = 0;
+     while(!done){
+@@ -1504,8 +1504,8 @@
  {
      int ret, edited = 0;
      static ESCKEY_S rtq_opts[] = {
@@ -60,7 +88,7 @@
  	{-1, 0, NULL, NULL},	                  /* may be overridden below */
  	{-1, 0, NULL, NULL}
      };
-@@ -1417,19 +1417,18 @@
+@@ -1515,19 +1515,18 @@
        return(1);
  
      while(1){
@@ -86,7 +114,7 @@
  	}
  	else
  	  rtq_opts[2].ch    = -1;
-@@ -1440,7 +1439,7 @@
+@@ -1538,7 +1537,7 @@
  				   rtq_opts, edited ? 'y' : 'n',
  				   'x', NO_HELP, RB_SEQ_SENSITIVE)){
  	  case 'x':
@@ -95,7 +123,7 @@
  	    return(-1);
  
  	  case 'r':
-@@ -1459,7 +1458,7 @@
+@@ -1557,7 +1556,7 @@
  
  		    switch(optionally_enter(buf, ps->ttyo->screen_rows > 4
  					    ? -FOOTER_ROWS(ps_global) : -1,
@@ -104,7 +132,7 @@
  					    NULL, NO_HELP, &flags)){
  		      case 0:		/* entry successful, continue */
  			if(flags & OE_USER_MODIFIED){
-@@ -1472,7 +1471,7 @@
+@@ -1570,7 +1569,7 @@
  			break;
  
  		      case 1:
@@ -113,7 +141,7 @@
  
  		      case -1:
  			return(-1);
-@@ -2476,9 +2475,9 @@
+@@ -2579,9 +2578,9 @@
      ENVELOPE *env, *outgoing;
  {
      int    ret = 1;
@@ -126,7 +154,7 @@
  				   {-1, 0, NULL, NULL} };
  
      if(env->newsgroups && *env->newsgroups && !reply_poster_followup(env))
-@@ -2502,7 +2501,7 @@
+@@ -2605,7 +2604,7 @@
  
  	case 'x' :		/* cancel or unknown response */
  	default  :
@@ -135,7 +163,7 @@
  	  ret = 0;
  	  break;
        }
-@@ -2510,7 +2509,7 @@
+@@ -2613,7 +2612,7 @@
      if(ret > 1){
  	if(env->followup_to){
  	    q_status_message(SM_ORDER, 2, 3,
@@ -144,7 +172,7 @@
  	    outgoing->newsgroups = cpystr(env->followup_to);
  	}
  	else if(!outgoing->newsgroups)
-@@ -3148,7 +3147,7 @@
+@@ -3249,7 +3248,7 @@
  	     : 0;
  
      if(ret == 'x'){
@@ -153,16 +181,16 @@
  	so_give((STORE_S **)&msgtext);
  	goto clean;
      }
-@@ -3163,7 +3162,7 @@
+@@ -3263,7 +3262,7 @@
+ 	  role = combine_inherited_role(role);
  	else{				/* cancel reply */
  	    role = NULL;
- 	    close_patterns(&pattern_h);
 -	    cmd_cancelled("Forward");
 +	    cmd_cancelled("轉寄");
  	    so_give((STORE_S **)&msgtext);
  	    goto clean;
  	}
-@@ -3360,7 +3359,7 @@
+@@ -3458,7 +3457,7 @@
        pine_simple_send(outgoing, &body, NULL, NULL, NULL, 1);
      else			/* partially formatted outgoing message */
        pine_send(outgoing, &body,
@@ -171,7 +199,7 @@
  		role, NULL, NULL, redraft_pos, NULL, NULL, FALSE);
  
    clean:
-@@ -3383,7 +3382,7 @@
+@@ -3481,7 +3480,7 @@
      mail_gc(ps->mail_stream, GC_TEXTS);
  #endif
      q_status_message(SM_ORDER | SM_DING, 4, 5,
@@ -180,3 +208,12 @@
      goto clean;
  }
  
+@@ -3861,7 +3860,7 @@
+ 		if(confirm_role(ROLE_COMPOSE, &role))
+ 		  role = combine_inherited_role(role);
+ 		else{			/* cancel */
+-		    cmd_cancelled("Composition");
++		    cmd_cancelled("編輯");
+ 		    display_message('x');
+ 		    mail_free_envelope(&env);
+ 		    pine_free_body(&body);

@@ -1,5 +1,5 @@
---- pico/pilot.c.orig	Thu Jul 16 16:30:46 1998
-+++ pico/pilot.c	Tue Aug  4 12:42:15 1998
+--- pico/pilot.c.orig	Tue Aug 25 01:37:39 1998
++++ pico/pilot.c	Thu Oct 14 10:53:42 1999
 @@ -222,7 +222,7 @@
  	    sup_keyhelp = !sup_keyhelp;
  	    break;

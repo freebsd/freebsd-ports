@@ -1,6 +1,6 @@
---- pine/init.c.orig	Thu Sep  3 01:39:42 1998
-+++ pine/init.c	Tue Sep 22 13:50:07 1998
-@@ -319,7 +319,7 @@
+--- pine/init.c.orig	Sat Oct  2 07:54:14 1999
++++ pine/init.c	Thu Oct 14 13:35:02 1999
+@@ -339,7 +339,7 @@
  
  /*----------------------------------------------------------------------
  These are the variables that control a number of pine functions.  They
@@ -9,9 +9,9 @@
  be set by the user while in Pine.  Eventually all the local ones should
  be so and maybe the global ones too.
  
-@@ -578,6 +578,9 @@
- #ifdef	DF_SMTP_SERVER
-     GLO_SMTP_SERVER		= parse_list(DF_SMTP_SERVER, 1, NULL);
+@@ -660,6 +660,9 @@
+     GLO_NORM_FORE_COLOR		= cpystr(colorx(DEFAULT_NORM_FORE));
+     GLO_NORM_BACK_COLOR		= cpystr(colorx(DEFAULT_NORM_BACK));
  #endif
 +
 +    F_TURN_ON(F_TCAP_WINS,ps);

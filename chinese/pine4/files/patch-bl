@@ -1,6 +1,6 @@
---- pine/signals.c.orig	Tue Jul  7 07:42:45 1998
-+++ pine/signals.c	Tue Aug  4 12:42:21 1998
-@@ -386,7 +386,7 @@
+--- pine/signals.c.orig	Wed Apr 21 08:25:18 1999
++++ pine/signals.c	Thu Oct 14 10:53:45 1999
+@@ -385,7 +385,7 @@
  	ps_global->inbox_stream->rdonly = 1;	/* and become read-only */
  	mail_ping(ps_global->inbox_stream);
  	q_status_message(SM_ASYNC, 3, 7,
@@ -9,7 +9,7 @@
  	dprint(1, (debugfile, "** INBOX went read-only **\n\n"));
      }
  
-@@ -398,7 +398,7 @@
+@@ -397,7 +397,7 @@
  	ps_global->mail_stream->rdonly = 1;	/* and become read-only */
  	mail_ping(ps_global->mail_stream);
  	q_status_message(SM_ASYNC, 3, 7,
@@ -18,7 +18,7 @@
  	dprint(1, (debugfile, "** secondary folder went read-only **\n\n"));
      }
  }
-@@ -536,7 +536,7 @@
+@@ -535,7 +535,7 @@
      int retval = 1;
  
      dprint(9,(debugfile, "busy_alarm(%d, %s, %p, %d)\n",
@@ -27,7 +27,7 @@
  
      /*
       * If we're already busy'ing, and we don't have something special,
-@@ -560,7 +560,7 @@
+@@ -559,7 +559,7 @@
  	    final_message = 1;
  	}
  	else{

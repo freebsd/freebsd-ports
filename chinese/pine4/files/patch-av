@@ -1,5 +1,5 @@
---- pine/addrbook.c.orig	Tue Feb 23 16:21:22 1999
-+++ pine/addrbook.c	Tue Feb 23 18:02:45 1999
+--- pine/addrbook.c.orig	Fri Sep 10 05:35:09 1999
++++ pine/addrbook.c	Thu Oct 14 11:37:56 1999
 @@ -129,14 +129,14 @@
  char	      *pcpine_help_addrbook PROTO((char *));
  #endif
@@ -91,7 +91,7 @@
 -	q_status_message(SM_ORDER, 5, 10, "Resetting address book...");
 +	q_status_message(SM_ORDER, 5, 10, "正在重設地址簿...");
  	dprint(1,
- 	    (debugfile, "RESETTING address book... addr_book_compose_oneaddr!\n"));
+ 	    (debugfile, "RESETTING address book... addr_book_oneaddr!\n"));
  	addrbook_reset();
 @@ -1768,7 +1768,7 @@
  
@@ -102,7 +102,7 @@
  
      if(ab_nesting_level <= 1)
        end_adrbks();
-@@ -1803,7 +1803,7 @@
+@@ -1844,7 +1844,7 @@
      save_nesting_level = cpyint(ab_nesting_level);
      memcpy(save_jmp_buf, addrbook_changed_unexpectedly, sizeof(jmp_buf));
      if(setjmp(addrbook_changed_unexpectedly)){
@@ -111,7 +111,7 @@
  	dprint(1,
  	    (debugfile, "RESETTING address book... addr_book_compose!\n"));
  	addrbook_reset();
-@@ -1812,7 +1812,7 @@
+@@ -1853,7 +1853,7 @@
  
      ab_nesting_level++;
  
@@ -120,7 +120,7 @@
  
      if(ab_nesting_level <= 1)
        end_adrbks();
-@@ -1847,7 +1847,7 @@
+@@ -1888,7 +1888,7 @@
      save_nesting_level = cpyint(ab_nesting_level);
      memcpy(save_jmp_buf, addrbook_changed_unexpectedly, sizeof(jmp_buf));
      if(setjmp(addrbook_changed_unexpectedly)){
@@ -129,7 +129,7 @@
  	dprint(1,
  	    (debugfile, "RESETTING address book... addr_book_compose_lcc!\n"));
  	addrbook_reset();
-@@ -1860,7 +1860,7 @@
+@@ -1901,7 +1901,7 @@
       * We used to use SelectAddrLccCom here but decided it wasn't necessary
       * to restrict the selection to a list.
       */
@@ -138,7 +138,7 @@
  
      if(ab_nesting_level <= 1)
        end_adrbks();
-@@ -1895,7 +1895,7 @@
+@@ -1936,7 +1936,7 @@
      save_nesting_level = cpyint(ab_nesting_level);
      memcpy(save_jmp_buf, addrbook_changed_unexpectedly, sizeof(jmp_buf));
      if(setjmp(addrbook_changed_unexpectedly)){
@@ -147,7 +147,7 @@
  	dprint(1,
  	    (debugfile, "RESETTING address book... addr_book_change_list!\n"));
  	addrbook_reset();
-@@ -1904,7 +1904,7 @@
+@@ -1945,7 +1945,7 @@
  
      ab_nesting_level++;
  
@@ -156,7 +156,7 @@
  		  error);
  
      if(ab_nesting_level <= 1)
-@@ -1937,7 +1937,7 @@
+@@ -1978,7 +1978,7 @@
      save_nesting_level = cpyint(ab_nesting_level);
      memcpy(save_jmp_buf, addrbook_changed_unexpectedly, sizeof(jmp_buf));
      if(setjmp(addrbook_changed_unexpectedly)){
@@ -165,7 +165,7 @@
  	dprint(1,
  	    (debugfile, "RESETTING address book...addr_book_bounce!\n"));
  	addrbook_reset();
-@@ -1946,7 +1946,7 @@
+@@ -1987,7 +1987,7 @@
  
      ab_nesting_level++;
  
@@ -174,7 +174,7 @@
  
      if(ab_nesting_level <= 1)
        end_adrbks();
-@@ -1978,7 +1978,7 @@
+@@ -2019,7 +2019,7 @@
      save_nesting_level = cpyint(ab_nesting_level);
      memcpy(save_jmp_buf, addrbook_changed_unexpectedly, sizeof(jmp_buf));
      if(setjmp(addrbook_changed_unexpectedly)){
@@ -183,7 +183,7 @@
  	dprint(1,
  	    (debugfile, "RESETTING address book...addr_book_takeaddr!\n"));
  	addrbook_reset();
-@@ -1987,7 +1987,7 @@
+@@ -2028,7 +2028,7 @@
  
      ab_nesting_level++;
  
@@ -192,7 +192,7 @@
  
      if(ab_nesting_level <= 1)
        end_adrbks();
-@@ -2023,7 +2023,7 @@
+@@ -2064,7 +2064,7 @@
      save_nesting_level = cpyint(ab_nesting_level);
      memcpy(save_jmp_buf, addrbook_changed_unexpectedly, sizeof(jmp_buf));
      if(setjmp(addrbook_changed_unexpectedly)){
@@ -201,7 +201,7 @@
  	dprint(1,
  	    (debugfile, "RESETTING address book...addr_book_nick_for_edit!\n"));
  	addrbook_reset();
-@@ -2038,7 +2038,7 @@
+@@ -2079,7 +2079,7 @@
       * and this seemed to be the easiest way to accomplish that.
       */
      as.n_serv = 0;
@@ -210,7 +210,7 @@
      as.n_serv = save_n_serv;
  
      if(ab_nesting_level <= 1)
-@@ -2071,7 +2071,7 @@
+@@ -2112,7 +2112,7 @@
      save_nesting_level = cpyint(ab_nesting_level);
      memcpy(save_jmp_buf, addrbook_changed_unexpectedly, sizeof(jmp_buf));
      if(setjmp(addrbook_changed_unexpectedly)){
@@ -219,7 +219,7 @@
  	dprint(1,
  	    (debugfile, "RESETTING address book...addr_book_selnick!\n"));
  	addrbook_reset();
-@@ -2080,7 +2080,7 @@
+@@ -2121,7 +2121,7 @@
  
      ab_nesting_level++;
  
@@ -228,7 +228,7 @@
  
      if(ab_nesting_level <= 1)
        end_adrbks();
-@@ -2103,8 +2103,8 @@
+@@ -2144,8 +2144,8 @@
  	NULL_MENU,
  	NULL_MENU,
  	NULL_MENU,
@@ -239,7 +239,7 @@
  	PREVPAGE_MENU,
  	NEXTPAGE_MENU,
  	NULL_MENU,
-@@ -2127,10 +2127,10 @@
+@@ -2168,10 +2168,10 @@
  
          HELP_MENU,
  	OTHER_MENU,
@@ -254,7 +254,7 @@
  	NULL_MENU,
  	NULL_MENU,
  	NULL_MENU,
-@@ -2259,7 +2259,7 @@
+@@ -2303,7 +2303,7 @@
      if(!init_addrbooks(HalfOpen, 1, !as.config, !are_selecting)){
  	if(are_selecting){
  	    q_status_message(SM_ORDER | SM_DING, 0, 4,
@@ -263,7 +263,7 @@
  	    display_message(c);
  	    sleep(2);
  	    return NULL;
-@@ -2267,7 +2267,7 @@
+@@ -2311,7 +2311,7 @@
  	else if(!as.config){
              ps->next_screen = main_menu_screen;
  	    q_status_message(SM_ORDER | SM_DING, 3, 4,
@@ -272,7 +272,7 @@
  	    ps->mangled_screen = 1;
  	    return NULL;
  	}
-@@ -2277,7 +2277,7 @@
+@@ -2321,7 +2321,7 @@
  	  readonly_warning(NO_DING, NULL);
  	else if(as.adrbks[0].access == NoAccess)
  	  q_status_message(SM_ORDER, 0, 4,
@@ -281,7 +281,7 @@
      }
  
      erase_checks();
-@@ -2422,10 +2422,10 @@
+@@ -2466,10 +2466,10 @@
  
  	    if(style == AddrBookScreen){
  		if(F_ON(F_CMBND_ABOOK_DISP,ps_global))
@@ -295,7 +295,7 @@
  		          is_custom_title ? pab->nickname : "",
  		          is_custom_title ? ">"  : "");
  
-@@ -2490,7 +2490,7 @@
+@@ -2534,7 +2534,7 @@
  		km->how_many = 1;
  
  		clrbitn(OTHER_KEY, bitmap);
@@ -304,7 +304,7 @@
  		KS_OSDATASET(&km->keys[TWO_KEY], KS_EXITMODE);
  
  		/*
-@@ -2503,22 +2503,22 @@
+@@ -2547,22 +2547,22 @@
  		    clrbitn(THREE_KEY, bitmap);
  		    menu_init_binding(km, 'A', MC_ADDABOOK, "A",
  				      add_is_global(as.top_ent+as.cur_row)
@@ -334,7 +334,7 @@
  				      ADD_KEY);
  		}
  	    }
-@@ -2531,7 +2531,7 @@
+@@ -2575,7 +2575,7 @@
  		 * The OTHER_KEY is used as the Exit key in selection mode.
  		 * This is because the TWO_KEY is being used for < actions.
  		 */
@@ -343,7 +343,7 @@
  				  OTHER_KEY);
  		KS_OSDATASET(&km->keys[OTHER_KEY], KS_EXITMODE);
  
-@@ -2551,8 +2551,8 @@
+@@ -2595,8 +2595,8 @@
  		      clrbitn(TWO_KEY, bitmap);
  		    else{
  			menu_init_binding(km, '<', cmd, "<",
@@ -354,7 +354,7 @@
  					  TWO_KEY);
  			menu_add_binding(km, ',', cmd);
  			if(F_ON(F_ARROW_NAV,ps))
-@@ -2563,16 +2563,16 @@
+@@ -2607,16 +2607,16 @@
  		    if(checkedn){
  			if(entry_is_clickable_title(as.top_ent+as.cur_row)){
  			    menu_init_binding(km, 'S', MC_CHOICE, "S",
@@ -374,7 +374,7 @@
  				        TWO_KEY);
  		}
  		else
-@@ -2584,7 +2584,7 @@
+@@ -2628,7 +2628,7 @@
  		 * key becomes the ViewAbook key.
  		 */
  		if(entry_is_askserver(as.top_ent+as.cur_row) && !as.checkboxes){
@@ -383,7 +383,7 @@
  				      THREE_KEY);
  		    menu_add_binding(km, 's', MC_QUERY_SERV);
  		    menu_add_binding(km, '.', MC_QUERY_SERV);
-@@ -2592,7 +2592,7 @@
+@@ -2636,7 +2636,7 @@
  		      menu_add_binding(km, KEY_RIGHT, MC_QUERY_SERV);
  		}
  		else if(entry_is_clickable_title(as.top_ent+as.cur_row)){
@@ -392,7 +392,7 @@
  				      THREE_KEY);
  		    menu_add_binding(km, 'v', MC_OPENABOOK);
  		    menu_add_binding(km, '.', MC_OPENABOOK);
-@@ -2600,7 +2600,7 @@
+@@ -2644,7 +2644,7 @@
  		      menu_add_binding(km, KEY_RIGHT, MC_OPENABOOK);
  		}
  		else if(cur_is_open()){
@@ -401,7 +401,7 @@
  				      THREE_KEY);
  		}
  		else
-@@ -2613,7 +2613,7 @@
+@@ -2657,7 +2657,7 @@
  		 */
  		if(entry_is_clickable(as.top_ent+as.cur_row) &&
  		   !entry_is_clickable_title(as.top_ent+as.cur_row)){
@@ -410,7 +410,7 @@
  				      SENDTO_KEY);
  		    menu_add_binding(km, '.', MC_EXPAND);
  		    if(F_ON(F_ARROW_NAV,ps))
-@@ -2623,12 +2623,12 @@
+@@ -2667,12 +2667,12 @@
  		  clrbitn(SENDTO_KEY, bitmap);
  
  		if(cur_is_open() && as.checkboxes){
@@ -425,7 +425,7 @@
  				      DELETE_KEY);
  		}
  		else
-@@ -2645,7 +2645,7 @@
+@@ -2689,7 +2689,7 @@
  		 * reasonable function call.
  		 */
  		km->keys[OTHER_KEY].name       = "O";
@@ -434,7 +434,7 @@
  		km->keys[OTHER_KEY].bind.cmd   = MC_OTHER;
  		km->keys[OTHER_KEY].bind.ch[0] = 'O';
  		km->keys[OTHER_KEY].bind.nch   = 1;
-@@ -2664,13 +2664,13 @@
+@@ -2708,13 +2708,13 @@
  		    if(F_OFF(F_EXPANDED_DISTLISTS,ps) &&
  		       entry_is_listent(as.top_ent+as.cur_row)){
  			cmd = MC_UNEXPAND;
@@ -450,7 +450,7 @@
  					  TWO_KEY);
  			KS_OSDATASET(&km->keys[TWO_KEY], KS_MAINMENU);
  		    }
-@@ -2679,11 +2679,11 @@
+@@ -2723,11 +2723,11 @@
  			/*
  			 * Add or delete entries from this address book.
  			 */
@@ -464,8 +464,8 @@
 +			menu_init_binding(km, 'C', MC_COMPOSE, "C", "編修",
  					  SENDTO_KEY);
  			KS_OSDATASET(&km->keys[SENDTO_KEY], KS_COMPOSER);
- 		    }
-@@ -2709,7 +2709,7 @@
+ 			menu_init_binding(km, '#', MC_ROLE, "#", "Role",
+@@ -2756,7 +2756,7 @@
  		    if(F_OFF(F_EXPANDED_DISTLISTS,ps) &&
  		       entry_is_listent(as.top_ent+as.cur_row)){
  			cmd = MC_UNEXPAND;
@@ -474,7 +474,7 @@
  					  TWO_KEY);
  			KS_OSDATASET(&km->keys[TWO_KEY], KS_NONE);
  		    }
-@@ -2717,12 +2717,12 @@
+@@ -2764,12 +2764,12 @@
  			if(as.n_addrbk > 1 || as.n_serv){
  			    cmd = MC_POPUP;
  			    menu_init_binding(km, '<', cmd, "<",
@@ -489,7 +489,7 @@
  					      TWO_KEY);
  			    KS_OSDATASET(&km->keys[TWO_KEY], KS_MAINMENU);
  			}
-@@ -2732,9 +2732,9 @@
+@@ -2779,9 +2779,9 @@
  			/*
  			 * Add or delete entries from this address book.
  			 */
@@ -501,7 +501,7 @@
  					  DELETE_KEY);
  		    }
  		    else{
-@@ -2744,14 +2744,14 @@
+@@ -2791,14 +2791,14 @@
  
  		    /* Find someplace to put Main Menu command */
  		    if(cmd == MC_POPUP){
@@ -517,8 +517,8 @@
 +		    menu_init_binding(km, 'C', MC_COMPOSE, "C", "編修",
  				      SENDTO_KEY);
  		    KS_OSDATASET(&km->keys[SENDTO_KEY], KS_COMPOSER);
- 		}
-@@ -2761,7 +2761,7 @@
+ 		    menu_init_binding(km, '#', MC_ROLE, "#", "Role",
+@@ -2810,7 +2810,7 @@
  		     * non-selection mode.
  		     */
  		    cmd = MC_MAIN;
@@ -527,7 +527,7 @@
  				      TWO_KEY);
  		    KS_OSDATASET(&km->keys[TWO_KEY], KS_MAINMENU);
  
-@@ -2800,10 +2800,10 @@
+@@ -2850,10 +2850,10 @@
  		  cmd = MC_VIEW_ENTRY;
  
  		menu_init_binding(km, '>', cmd, ">",
@@ -542,7 +542,7 @@
  				  THREE_KEY);
  
  		if(cmd == MC_QUERY_SERV)
-@@ -2941,13 +2941,13 @@
+@@ -2992,13 +2992,13 @@
  	    }
  
  	    if(as.config)
@@ -559,7 +559,7 @@
  
  	    /*
  	     * Helper() may have a Main Menu key. If user types that
-@@ -3021,7 +3021,7 @@
+@@ -3072,7 +3072,7 @@
  	    }
  	    else
  	      q_status_message(SM_ORDER | SM_DING, 3, 4,
@@ -568,7 +568,7 @@
  
  	    break;
  
-@@ -3057,7 +3057,7 @@
+@@ -3108,7 +3108,7 @@
  	    }
  	    else
  	      q_status_message(SM_ORDER | SM_DING, 3, 4,
@@ -577,7 +577,7 @@
  
  	    break;
  
-@@ -3128,11 +3128,11 @@
+@@ -3179,11 +3179,11 @@
  		}
  		else if(dlc_to_flush->type == DlcTitleNoPerm)
  	          q_status_message(SM_ORDER, 0, 4,
@@ -591,7 +591,7 @@
  
  	    break;
  
-@@ -3178,7 +3178,7 @@
+@@ -3229,7 +3229,7 @@
  	    }
  	    else
  	      q_status_message(SM_ORDER | SM_DING, 3, 4,
@@ -600,7 +600,7 @@
  
  	    break;
  
-@@ -3190,7 +3190,7 @@
+@@ -3241,7 +3241,7 @@
                /* Select an entry to mail to or a nickname to add to */
  	      if(!any_addrs_avail(as.top_ent+as.cur_row)){
  	          q_status_message(SM_ORDER | SM_DING, 0, 4,
@@ -609,7 +609,7 @@
  	          break;
  	      }
  
-@@ -3212,7 +3212,7 @@
+@@ -3263,7 +3263,7 @@
  		  }
  		  else if(as.checkboxes && checkedn <= 0){
  		      q_status_message(SM_ORDER, 0, 1,
@@ -618,7 +618,7 @@
  		      break;
  		  }
  		  else if(as.checkboxes){
-@@ -3296,7 +3296,7 @@
+@@ -3347,7 +3347,7 @@
  		      if(selecting_mult_nicks){
  			if(dl->type != ListHead && style == SelectAddrLccCom){
  			    q_status_message(SM_ORDER, 0, 4,
@@ -627,7 +627,7 @@
  			    break;
  			}
  			else{
-@@ -3358,16 +3358,16 @@
+@@ -3422,16 +3422,16 @@
  		  if(entry_is_clickable(as.top_ent+as.cur_row))
  		    clickable_warning(as.top_ent+as.cur_row);
  		  else if(entry_is_askserver(as.top_ent+as.cur_row))
@@ -647,7 +647,7 @@
  
  	    break;
  
-@@ -3391,7 +3391,7 @@
+@@ -3455,7 +3455,7 @@
  	    if(adrbk_check_all_validity_now()){
  		if(resync_screen(pab, style, checkedn)){
  		    q_status_message(SM_ORDER | SM_DING, 3, 4,
@@ -656,7 +656,7 @@
  		    ps->mangled_screen = 1;
  		    break;
  		}
-@@ -3406,7 +3406,7 @@
+@@ -3470,7 +3470,7 @@
  	    dprint(9, (debugfile,
  		       "Calling edit_entry to add entry manually\n"));
  	    edit_entry(pab->address_book, (AdrBk_Entry *)NULL, NO_NEXT,
@@ -665,7 +665,7 @@
  
  	    /*
  	     * Warped means we got plopped down somewhere in the display
-@@ -3551,7 +3551,7 @@
+@@ -3615,7 +3615,7 @@
  		    }
  		    else{
  			q_status_message1(SM_ORDER|SM_DING, 0, 4,
@@ -674,7 +674,7 @@
  			if(nick)
  			  fs_give((void **)&nick);
  			if(file)
-@@ -3586,7 +3586,7 @@
+@@ -3650,7 +3650,7 @@
  		ps->mangled_screen = 1;
  	    }
  	    else
@@ -683,7 +683,7 @@
  
  	    break;
  
-@@ -3594,7 +3594,7 @@
+@@ -3658,7 +3658,7 @@
              /*---------- Delete an address book -------------------*/
  	  case MC_DELABOOK:
  	    if(as.n_addrbk == 0){
@@ -692,7 +692,7 @@
                  break;
  	    }
  
-@@ -3665,7 +3665,7 @@
+@@ -3729,7 +3729,7 @@
  		start_disp = 0;
  		ps->mangled_body = 1;
  		ps->mangled_footer = 1;
@@ -701,7 +701,7 @@
  	    }
  	    else{
  		if(err){
-@@ -3683,7 +3683,7 @@
+@@ -3747,7 +3747,7 @@
  	  case MC_SHUFFLE:
  	    if(entry_is_addkey(as.top_ent+as.cur_row)){
                  q_status_message(SM_ORDER, 0, 4,
@@ -710,7 +710,7 @@
                  break;
  	    }
  
-@@ -3756,8 +3756,8 @@
+@@ -3820,8 +3820,8 @@
  
  	    q_status_message(SM_ORDER, 0, 3,
  			     msg ? msg :
@@ -721,7 +721,7 @@
  	    if(ret < 0)
  	      dprint(5, (debugfile, "addrbook shuffle failed: %s\n",
  		     msg ? msg : "?"));
-@@ -3784,7 +3784,7 @@
+@@ -3848,7 +3848,7 @@
  
  		if(new_top_ent == as.top_ent ||
  		   (as.cur_row + (as.top_ent-new_top_ent) > as.l_p_page - 1)){
@@ -730,7 +730,7 @@
  		}
  		else{
  		    as.cur_row += (as.top_ent - new_top_ent);
-@@ -3842,7 +3842,7 @@
+@@ -3906,7 +3906,7 @@
  
  		if(new_end_line - as.top_ent <= as.l_p_page - 1 ||
  		   as.cur_row - (new_end_line-as.top_ent-(as.l_p_page-1)) < 0){
@@ -739,7 +739,7 @@
  		}
  		else{
  		    as.cur_row -= (new_end_line-as.top_ent-(as.l_p_page-1));
-@@ -3930,7 +3930,7 @@
+@@ -3994,7 +3994,7 @@
  #endif
  			  default:
  			    q_status_message(SM_INFO, 0, 1,
@@ -748,7 +748,7 @@
  			    break;
  			}
  		    }
-@@ -4037,7 +4037,7 @@
+@@ -4101,7 +4101,7 @@
  		    break;
  
  		if(as.top_ent == new_top_ent && as.cur_row == (fl-as.top_ent)){
@@ -757,7 +757,7 @@
  		    break;
  		}
  
-@@ -4073,7 +4073,7 @@
+@@ -4137,7 +4137,7 @@
  			   as.cur_row -
  			       (new_end_line-as.top_ent-(as.l_p_page-1)) < 0){
  			    q_status_message(SM_INFO, 0, 1,
@@ -766,7 +766,7 @@
  			}
  			else{
  			    as.cur_row -=
-@@ -4122,14 +4122,14 @@
+@@ -4186,14 +4186,14 @@
  	    if(adrbk_check_all_validity_now()){
  		if(resync_screen(pab, style, checkedn)){
  		    q_status_message(SM_ORDER | SM_DING, 3, 4,
@@ -783,7 +783,7 @@
                  break;
  	    }
  
-@@ -4191,7 +4191,7 @@
+@@ -4255,7 +4255,7 @@
  	  case MC_TOGGLE:
  togglex:
  	    if(!any_addrs_avail(as.top_ent+as.cur_row)){
@@ -792,7 +792,7 @@
                  break;
  	    }
  
-@@ -4210,10 +4210,10 @@
+@@ -4274,10 +4274,10 @@
  
  		if(style == SelectAddrLccCom && dl->type == ListEnt)
  		  q_status_message(SM_ORDER, 0, 4,
@@ -805,7 +805,7 @@
  		else if(dl->type == ListHead || dl->type == Simple){
                      current_changed_flag++;
  		    if(entry_is_checked(pab->address_book->checks,
-@@ -4230,11 +4230,11 @@
+@@ -4294,11 +4294,11 @@
  		}
  		else
  		  q_status_message(SM_ORDER, 0, 4,
@@ -819,7 +819,7 @@
  
              break;
  
-@@ -4252,7 +4252,7 @@
+@@ -4316,7 +4316,7 @@
  	    ps->mangled_body = 1;
  	    start_disp  = 0;
              q_status_message(SM_ORDER, 0, 4,
@@ -828,7 +828,7 @@
              break;
  
  
-@@ -4272,13 +4272,13 @@
+@@ -4342,13 +4342,13 @@
  	    if(!directory_ok){
                  q_status_message(SM_ORDER, 0, 4,
  				 (style == SelectAddrLccCom)
@@ -845,7 +845,7 @@
                  break;
  	    }
  
-@@ -4333,14 +4333,14 @@
+@@ -4403,14 +4403,14 @@
              /*----- Select entries to work on --*/
  	  case MC_SELECT:
  	    if(!any_addrs_avail(as.top_ent+as.cur_row)){
@@ -862,7 +862,7 @@
  		else
  		  clickable_warning(as.top_ent+as.cur_row);
  
-@@ -4373,7 +4373,7 @@
+@@ -4443,7 +4443,7 @@
              /*----------- Select current entry ----------*/
  	  case MC_SELCUR:
  	    if(!any_addrs_avail(as.top_ent+as.cur_row)){
@@ -871,7 +871,7 @@
                  break;
  	    }
  
-@@ -4434,7 +4434,7 @@
+@@ -4504,7 +4504,7 @@
  				dlc_restart = *dlc;
  				as.zoomed = 0;
  				q_status_message(SM_ORDER, 0, 2,
@@ -880,7 +880,7 @@
  
  				warp_to_dlc(&dlc_restart, 0L);
  				/* put current entry in middle of screen */
-@@ -4501,11 +4501,11 @@
+@@ -4571,11 +4571,11 @@
  		}
  		else
  		  q_status_message(SM_ORDER, 0, 4,
@@ -894,7 +894,7 @@
  
              break;
  
-@@ -4518,7 +4518,7 @@
+@@ -4588,7 +4588,7 @@
  						 : NULL,
  		      &start_disp);
  	    else{
@@ -903,7 +903,7 @@
  		ab_unzoom(&start_disp);
  	    }
  
-@@ -4560,7 +4560,7 @@
+@@ -4630,7 +4630,7 @@
  	    }
  	    else
  	      q_status_message(SM_ORDER, 0, 2,
@@ -912,7 +912,7 @@
  
              break;
  
-@@ -4606,7 +4606,7 @@
+@@ -4676,7 +4676,7 @@
  	    /*------ Copy entries into an abook ----*/
  	  case MC_SAVE:
  	    if(!any_addrs_avail(as.top_ent+as.cur_row)){
@@ -921,7 +921,7 @@
                  break;
  	    }
  
-@@ -4628,7 +4628,7 @@
+@@ -4698,7 +4698,7 @@
  	    /*------ Forward an entry in mail -----------*/
  	  case MC_FORWARD:
  	    if(!any_addrs_avail(as.top_ent+as.cur_row)){
@@ -930,7 +930,7 @@
                  break;
  	    }
  
-@@ -4643,14 +4643,14 @@
+@@ -4713,14 +4713,14 @@
  	    }
  
  	    if(!is_addr(as.top_ent+as.cur_row)){
@@ -947,7 +947,7 @@
  		break;
  	    }
  
-@@ -4682,18 +4682,18 @@
+@@ -4752,18 +4752,18 @@
  	  case MC_UNKNOWN:
  	    if(c == 'e' && !are_selecting){
  		q_status_message(SM_ORDER | SM_DING, 0, 2,
@@ -969,7 +969,7 @@
  		break;
  	    }
  	    /* else, fall through */
-@@ -4731,7 +4731,7 @@
+@@ -4801,7 +4801,7 @@
      as.zoomed = 1;
  
      if(as.selections){
@@ -978,7 +978,7 @@
  	if(cur_is_open()){
  	    dl = dlist(as.top_ent+as.cur_row);
  	    if((dl->type == ListHead ||
-@@ -4779,7 +4779,7 @@
+@@ -4849,7 +4849,7 @@
      }
      else{
  	as.zoomed = 0;
@@ -987,7 +987,7 @@
      }
  }
  
-@@ -4840,7 +4840,7 @@
+@@ -4910,7 +4910,7 @@
      char      *name;
  {
      q_status_message2(SM_ORDER | (bell ? SM_DING : 0), 0, 4,
@@ -996,7 +996,7 @@
  		      name ? " " : "",
  		      name ? name : "");
  }
-@@ -4861,11 +4861,11 @@
+@@ -4931,11 +4931,11 @@
      dl = dlist(cur_line);
      if(dl->type == NoAbooks)
        q_status_message(SM_ORDER, 0, 4,
@@ -1011,7 +1011,7 @@
  }
  
  
-@@ -4882,9 +4882,9 @@
+@@ -4952,9 +4952,9 @@
      register AddrScrn_Disp *dl;
  
      dl = dlist(cur_line);
@@ -1024,7 +1024,7 @@
  }
  
  
-@@ -4900,7 +4900,7 @@
+@@ -4970,7 +4970,7 @@
      char *what;
  {
      q_status_message1(SM_INFO | (bell ? SM_DING : 0), 0, 2,
@@ -1033,7 +1033,7 @@
  }
  
  
-@@ -4910,7 +4910,7 @@
+@@ -4980,7 +4980,7 @@
  void
  no_tabs_warning()
  {
@@ -1042,7 +1042,7 @@
  }
  
  
-@@ -4929,11 +4929,11 @@
+@@ -4999,12 +4999,12 @@
  {
      int ret = 0;
      static ESCKEY_S opts[] = {
@@ -1051,24 +1051,26 @@
 -	{'%', '%', "%", "Print"},
 -	{'f', 'f', "F", "Forward"},
 -	{'s', 's', "S", "Save"},
+-	{'#', '#', "#", "Role"},
 +	{'c', 'c', "C", "編排"},
 +	{'d', 'd', "D", "刪除"},
 +	{'%', '%', "%", "列印"},
 +	{'f', 'f', "F", "轉寄"},
 +	{'s', 's', "S", "存檔"},
++	{'#', '#', "#", "角色"},
  	{  0, '%',  "",  ""},
  	{-1,   0, NULL, NULL}};
+ #define PHANTOM_PRINT 6
+@@ -5014,7 +5014,7 @@
  
-@@ -4942,7 +4942,7 @@
- 
-     opts[5].ch = (F_ON(F_ENABLE_PRYNT, ps_global)) ? 'y' : -1;
+     opts[PHANTOM_PRINT].ch = (F_ON(F_ENABLE_PRYNT, ps_global)) ? 'y' : -1;
  
 -    switch(radio_buttons("APPLY command : ", command_line, opts, 0, 'z',
 +    switch(radio_buttons("套用命令：", command_line, opts, 0, 'z',
  			 NO_HELP, RB_NORM)){
        case 'c':
- 	ret = ab_compose_to_addr(cur_line, 1);
-@@ -4965,7 +4965,7 @@
+ 	ret = ab_compose_to_addr(cur_line, 1, 0);
+@@ -5041,7 +5041,7 @@
  	break;
  
        case 'z':
@@ -1077,7 +1079,7 @@
  	break;
      }
  
-@@ -4987,22 +4987,22 @@
+@@ -5063,22 +5063,22 @@
      int         *start_disp;
  {
      static ESCKEY_S sel_opts1[] = {
@@ -1109,7 +1111,7 @@
      ESCKEY_S      *sel_opts;
      HelpType       help = NO_HELP;
      adrbk_cntr_t   num, ab_count;
-@@ -5030,8 +5030,8 @@
+@@ -5106,8 +5106,8 @@
  	    if(dl && (dl->type == ListHead || dl->type == Simple)){
  		sel_opts1[1].label = entry_is_selected(abook->selects,
  						       (a_c_arg_t)dl->elnum)
@@ -1120,7 +1122,7 @@
  		sel_opts1[1].ch = 'c';
  	    }
  	    else
-@@ -5053,7 +5053,7 @@
+@@ -5129,7 +5129,7 @@
  
  	      default:
  		q_status_message(SM_ORDER | SM_DING, 3, 3,
@@ -1129,7 +1131,7 @@
  		return;
  	    }
  	}
-@@ -5062,8 +5062,8 @@
+@@ -5138,8 +5138,8 @@
  	   (dl->type == ListHead || dl->type == Simple)){
  	    sel_opts1[1].label = entry_is_selected(abook->selects,
  						   (a_c_arg_t)dl->elnum)
@@ -1140,7 +1142,7 @@
  	    sel_opts1[1].ch = 'c';
  	}
  	else
-@@ -5080,7 +5080,7 @@
+@@ -5156,7 +5156,7 @@
  
  	switch(q){
  	  case 'x':				/* cancel */
@@ -1149,7 +1151,7 @@
  	    break;
  
  	  case 'c':			/* select/unselect current */
-@@ -5092,7 +5092,7 @@
+@@ -5168,7 +5168,7 @@
  		if(as.selections == 0 && as.zoomed){
  		    as.zoomed = 0;
  		    q_status_message(SM_ORDER, 0, 2,
@@ -1158,7 +1160,7 @@
  		    do_warp++;
  		}
  		else if(as.zoomed){
-@@ -5131,17 +5131,17 @@
+@@ -5207,17 +5207,17 @@
  		if(as.selections == 0 && as.zoomed){
  		    as.zoomed = 0;
  		    q_status_message(SM_ORDER, 0, 2,
@@ -1180,7 +1182,7 @@
  		    q_status_message(SM_ORDER, 0, 2, bb);
  		    if(as.zoomed)
  		      do_beginning++;
-@@ -5157,7 +5157,7 @@
+@@ -5233,7 +5233,7 @@
  		    }
  		}
  
@@ -1189,7 +1191,7 @@
  				 comatose(ab_count));
  		if(prevsel == 0 && as.selections > 0 &&
  		   !as.zoomed && F_ON(F_AUTO_ZOOM, ps)){
-@@ -5194,14 +5194,14 @@
+@@ -5270,14 +5270,14 @@
  		  do_beginning++;
  		else{
  		    as.zoomed = 0;
@@ -1206,7 +1208,7 @@
  			     comatose(as.selections));
  
  	    break;
-@@ -5227,7 +5227,7 @@
+@@ -5303,7 +5303,7 @@
  		    if(as.selections == 0){
  			as.zoomed = 0;
  			q_status_message(SM_ORDER, 0, 2,
@@ -1215,7 +1217,7 @@
  			do_warp++;
  		    }
  		    else
-@@ -5246,63 +5246,63 @@
+@@ -5322,63 +5322,63 @@
  		if(prevsel == as.selections && prevsel > 0){
  		    if(as.selections == 1)
  		      q_status_message(SM_ORDER, 0, 2,
@@ -1293,7 +1295,7 @@
  			    comatose(as.selections-prevsel),
  			    comatose(as.selections));
  		}
-@@ -5312,17 +5312,17 @@
+@@ -5388,17 +5388,17 @@
  
  	  default :
  	    q_status_message(SM_ORDER | SM_DING, 3, 3,
@@ -1314,7 +1316,7 @@
  
  	return;
      }
-@@ -5381,11 +5381,11 @@
+@@ -5457,11 +5457,11 @@
      int    narrow;
  {
      static ESCKEY_S ab_sel_type_opt[] = {
@@ -1329,7 +1331,7 @@
      int          type;
      adrbk_cntr_t num, ab_count;
  
-@@ -5403,7 +5403,7 @@
+@@ -5479,7 +5479,7 @@
  	break;
  
        case 'x':
@@ -1338,7 +1340,7 @@
  	return -1;
  
        default:
-@@ -5523,7 +5523,7 @@
+@@ -5599,7 +5599,7 @@
      }
  
      if(type == 'x' || r == 'x'){
@@ -1347,7 +1349,7 @@
  	return -1;
      }
  
-@@ -5606,7 +5606,7 @@
+@@ -5682,7 +5682,7 @@
  	break;
  
        default:
@@ -1356,7 +1358,7 @@
  	return(err);
      }
  
-@@ -5725,18 +5725,18 @@
+@@ -5801,18 +5801,18 @@
      new_top_ent = NO_LINE;
  
      if(rc == -2)
@@ -1379,7 +1381,7 @@
  
  	/* know match is on the same page */
  	if(!*warped &&
-@@ -6378,7 +6378,7 @@
+@@ -6454,7 +6454,7 @@
  
      dprint(7, (debugfile, "- search_book -\n"));
  
@@ -1388,7 +1390,7 @@
      help              = NO_HELP;
      nsearch_string[0] = '\0';
  
-@@ -6390,12 +6390,12 @@
+@@ -6466,12 +6466,12 @@
      ekey[1].ch    = ctrl('Y');
      ekey[1].rval  = 10;
      ekey[1].name  = "^Y";
@@ -1403,7 +1405,7 @@
  
      ekey[3].ch    = -1;
  
-@@ -6412,11 +6412,11 @@
+@@ -6488,11 +6488,11 @@
  	    warp_to_beginning();  /* go to top of addrbooks */
  	    if((nl=first_selectable_line(0L)) != NO_LINE){
  		*new_line = nl;
@@ -1417,7 +1419,7 @@
  		return -1;
  	    }
  	}
-@@ -6425,11 +6425,11 @@
+@@ -6501,11 +6501,11 @@
  	    warp_to_end();  /* go to bottom */
  	    if((nl=first_selectable_line(0L)) != NO_LINE){
  		*new_line = nl;

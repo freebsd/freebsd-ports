@@ -1,5 +1,5 @@
 --- pine/osdep/os-bsf.h.orig	Thu Oct  8 05:51:40 1998
-+++ pine/osdep/os-bsf.h	Mon Feb 22 22:21:57 1999
++++ pine/osdep/os-bsf.h	Thu Oct 14 10:53:42 1999
 @@ -74,7 +74,7 @@
     default-composer-hdrs or customized-hdrs to get at it. Instead of
     defining NEVER_ALLOW_CHANGING_FROM, an easier way of preventing From

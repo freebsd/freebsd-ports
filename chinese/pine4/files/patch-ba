@@ -1,6 +1,6 @@
---- pine/mailcmd.c.orig	Thu Feb  4 10:16:45 1999
-+++ pine/mailcmd.c	Wed Feb 24 21:29:19 1999
-@@ -109,39 +109,39 @@
+--- pine/mailcmd.c.orig	Tue Oct 12 06:13:50 1999
++++ pine/mailcmd.c	Thu Oct 14 13:29:28 1999
+@@ -115,39 +115,39 @@
  /*
   * List of Select options used by apply_* functions...
   */
@@ -61,7 +61,7 @@
      { -1,   0, NULL, NULL},
      { -1,   0, NULL, NULL},
      { -1,   0, NULL, NULL},
-@@ -151,24 +151,24 @@
+@@ -157,24 +157,24 @@
  
  
  static char *sel_flag = 
@@ -96,34 +96,42 @@
      {ctrl('W'), 14, "^W", "Toggle When"},
      {KEY_UP,    12, "", ""},
      {KEY_DOWN,  13, "", ""},
-@@ -178,18 +178,18 @@
+@@ -183,23 +183,23 @@
+ 
  
  static char *sel_text =
- #ifdef	RECIPIENT
 -    "Select based on To, From, Cc, Recip, Subject fields or All message text ? ";
 +    "選擇以 收件人，寄件人，副本，領受者，主題 等欄位為主，或所有的訊息文字？";
- #else	/* RECIPIENT */
--    "Select based on To, From, Cc, Subject fields or All message text ? ";
-+    "選擇以 收件人，寄件人，副本，主題 等欄位為主，或所有的訊息文字？";
- #endif	/* RECIPIENT */
+ static char *sel_not_text =
+-    "Select based on NOT To, From, Cc, Recip, Subject fields or All message text ? ";
++    "選擇「不」以 收件人，寄件人，副本，領受者，主題 等欄位為主，或所有的訊息文字？";
  static ESCKEY_S sel_text_opt[] = {
 -    {'f', 'f', "F", "From"},
 -    {'s', 's', "S", "Subject"},
 -    {'t', 't', "T", "To"},
 -    {'a', 'a', "A", "All Text"},
 -    {'c', 'c', "C", "Cc"},
+-    {'!', '!', "!", "Not"},
+-    {'r', 'r', "R", "Recipient"},
+-    {'p', 'p', "P", "Participant"},
 +    {'f', 'f', "F", "寄件人"},
 +    {'s', 's', "S", "主題"},
 +    {'t', 't', "T", "收件人"},
 +    {'a', 'a', "A", "所有的訊息文字"},
 +    {'c', 'c', "C", "副本"},
- #ifdef	RECIPIENT
--    {'r', 'r', "R", "Recipient"},
++    {'!', '!', "!", "非"},
 +    {'r', 'r', "R", "領受者"},
- #endif	/* RECIPIENT */
++    {'p', 'p', "P", "關係者"},
      {-1, 0, NULL, NULL}
  };
-@@ -243,7 +243,7 @@
+ 
+ static char *select_num =
+-  "Enter comma-delimited list of numbers (dash between ranges): ";
++  "輸入以逗點分隔的數字串列（範圍以破折號區分）：";
+ 
+ 
+ /*----------------------------------------------------------------------
+@@ -248,7 +248,7 @@
        case MC_HELP :
  	if(state->nr_mode) {
  	    q_status_message(SM_ORDER, 0, 3,
@@ -132,7 +140,7 @@
  	    break;
  	}
  
-@@ -272,7 +272,7 @@
+@@ -277,7 +277,7 @@
  
            /*------- View message text --------*/
        case MC_VIEW_TEXT :
@@ -141,7 +149,7 @@
  	    state->next_screen = mail_view_screen;
  #if	defined(DOS) && !defined(WIN32)
  	    flush_index_cache();		/* save room on PC */
-@@ -296,10 +296,10 @@
+@@ -301,10 +301,10 @@
  		mn_dec_cur(stream, msgmap);
  		if(i == mn_get_cur(msgmap))
  		  q_status_message(SM_ORDER, 0, 2,
@@ -154,7 +162,7 @@
  	}
  
  	break;
-@@ -311,7 +311,7 @@
+@@ -316,7 +316,7 @@
  	   && (i = mn_get_cur(msgmap)) < mn_get_total(msgmap)){
  	    mn_inc_cur(stream, msgmap);
  	    if(i == mn_get_cur(msgmap))
@@ -163,7 +171,7 @@
  	}
  	else{
  	    prompt[0] = '\0';
-@@ -328,7 +328,7 @@
+@@ -333,7 +333,7 @@
  		  strcat(prompt, ".  No more folders to TAB to.");
  	    }
  
@@ -172,7 +180,7 @@
  			 prompt[0] ? prompt : NULL);
  
  	    if(!IS_NEWS(stream))
-@@ -475,9 +475,9 @@
+@@ -511,9 +511,9 @@
  			    }
  			}
  			else
@@ -184,7 +192,7 @@
  
  			break;
  		    }
-@@ -494,9 +494,9 @@
+@@ -530,9 +530,9 @@
  		     */
  		    if(F_OFF(F_AUTO_OPEN_NEXT_UNREAD, state)){
  			static ESCKEY_S next_opt[] = {
@@ -197,7 +205,7 @@
  			    {-1, 0, NULL, NULL}
  			};
  
-@@ -522,7 +522,7 @@
+@@ -558,7 +558,7 @@
  	    else
  	      any_messages(NULL,
  			   (mn_get_total(msgmap) > 0L)
@@ -206,7 +214,7 @@
  			     : NULL,
  			   NULL);
  	}
-@@ -540,7 +540,7 @@
+@@ -576,7 +576,7 @@
  	 * global "zoom mode" flag to suppress messags from the index
  	 * should suffice.
  	 */
@@ -215,8 +223,8 @@
  	    if(unzoom_index(state, msgmap)){
  		dprint(4, (debugfile, "\n\n ---- Exiting ZOOM mode ----\n"));
  		q_status_message(SM_ORDER,0,2, "Index Zoom Mode is now off");
-@@ -552,7 +552,7 @@
- 				  comatose(i), plural(i));
+@@ -593,7 +593,7 @@
+ 		     "All messages selected, so not entering Index Zoom Mode");
  	    }
  	    else
 -	      any_messages(NULL, "selected", "to Zoom on");
@@ -224,7 +232,7 @@
  	}
  
  	break;
-@@ -560,7 +560,7 @@
+@@ -601,7 +601,7 @@
  
            /*---------- print message on paper ----------*/
        case MC_PRINTMSG :
@@ -233,7 +241,7 @@
  	  cmd_print(state, msgmap, 0, in_index);
  
  	break;
-@@ -568,7 +568,7 @@
+@@ -609,7 +609,7 @@
  
            /*---------- Take Address ----------*/
        case MC_TAKE :
@@ -242,16 +250,16 @@
  	  cmd_take_addr(state, msgmap, 0);
  
  	break;
-@@ -576,7 +576,7 @@
+@@ -617,7 +617,7 @@
  
            /*---------- Save Message ----------*/
        case MC_SAVE :
 -	if(any_messages(msgmap, NULL, "to Save"))
 +	if(any_messages(msgmap, NULL, "可供存檔"))
- 	  cmd_save(state, msgmap, 0);
+ 	  cmd_save(state, stream, msgmap, 0);
  
  	break;
-@@ -584,7 +584,7 @@
+@@ -625,7 +625,7 @@
  
            /*---------- Export message ----------*/
        case MC_EXPORT :
@@ -260,7 +268,7 @@
  	    cmd_export(state, msgmap, question_line, 0);
  	    state->mangled_footer = 1;
  	}
-@@ -597,9 +597,9 @@
+@@ -638,9 +638,9 @@
  	dprint(2, (debugfile, "\n - expunge -\n"));
  	if(IS_NEWS(stream) && stream->rdonly){
  	    if((del_count = count_flagged(stream, F_DEL)) > 0L){
@@ -273,7 +281,7 @@
  		if(F_ON(F_FULL_AUTO_EXPUNGE, state)
  		   || (F_ON(F_AUTO_EXPUNGE, state)
  		       && (state->context_current
-@@ -621,21 +621,20 @@
+@@ -662,21 +662,20 @@
  
  		    state->mangled_body = 1;
  		    state->mangled_header = 1;
@@ -300,7 +308,7 @@
  	    break;
  	}
  
-@@ -654,7 +653,7 @@
+@@ -695,7 +694,7 @@
  	      ret = 'y';
  
  	    if(ret == 'x')
@@ -309,7 +317,7 @@
  
  	    if(ret != 'y')
  	      break;
-@@ -706,11 +705,11 @@
+@@ -763,11 +762,11 @@
  	if(state->expunge_count <= 0)
  	  if(del_count)
  	    q_status_message1(SM_ORDER, 0, 3,
@@ -323,7 +331,18 @@
  
  	break;
  
-@@ -744,16 +743,15 @@
+@@ -799,8 +798,8 @@
+ 
+ 	    if(del_count > 0L){
+ 		state->mangled_footer = 1;
+-		sprintf(prompt, "UNexclude %ld message%s in %s", del_count,
+-			plural(del_count), pretty_fn(state->cur_folder));
++		sprintf(prompt, "%ld 封信件在信件匣 %s 中被復原排除", del_count,
++			pretty_fn(state->cur_folder));
+ 		if(F_ON(F_FULL_AUTO_EXPUNGE, state)
+ 		   || (F_ON(F_AUTO_EXPUNGE, state)
+ 		       && (state->context_current
+@@ -818,29 +817,28 @@
  		     */
  		    refresh_sort(msgmap, FALSE);
  		    state->mangled_header = 1;
@@ -334,18 +353,24 @@
 +		    q_status_message1(SM_ORDER, 0, 4,
 +				      "%s 封信件被復原排除",
 +				      long2string(del_count));
+ 
+ 		    if(!visible)	/* hilite last message */
+ 		      mn_set_cur(msgmap, mn_get_total(msgmap));
  		}
  		else
 -		  any_messages(NULL, NULL, "UNexcluded");
-+		  any_messages(NULL, NULL, "復原排除");
++		  any_messages(NULL, NULL, "已復原排除");
  	    }
  	    else
 -	      any_messages(NULL, "excluded", "to UNexclude");
-+	      any_messages(NULL, "被排除", "可供復原排除");
++	      any_messages(NULL, "已被排除", "可供復原排除");
  	}
+ 	else
+-	  any_messages(NULL, "excluded", "to UNexclude");
++	  any_messages(NULL, "已被排除", "可供復原排除");
  
  	break;
-@@ -761,7 +759,7 @@
+ 
  
            /*------- Make Selection -----------*/
        case MC_SELECT :
@@ -354,7 +379,7 @@
  	    aggregate_select(state, msgmap, question_line, in_index);
  	    if(in_index && any_lflagged(msgmap, MN_SLCT) > 0L
  	       && !any_lflagged(msgmap, MN_HIDE)
-@@ -793,7 +791,7 @@
+@@ -872,7 +870,7 @@
  		  unzoom_index(state, msgmap);
  	    }
  	    else
@@ -363,7 +388,7 @@
  	}
  
  	break;
-@@ -871,21 +869,21 @@
+@@ -950,21 +948,21 @@
  {
      if(cmd == ctrl('Q') || cmd == ctrl('S'))
        q_status_message1(SM_ASYNC, 0, 2,
@@ -392,7 +417,7 @@
  }
  
  
-@@ -1158,11 +1156,9 @@
+@@ -1237,11 +1235,9 @@
      char *type, *cmd;
  {
      if(mn_get_total(map) <= 0L){
@@ -406,7 +431,7 @@
  	return(FALSE);
      }
  
-@@ -1186,8 +1182,8 @@
+@@ -1265,8 +1261,8 @@
  {
      if(READONLY_FOLDER || state->dead_stream){
  	q_status_message2(SM_ORDER | (state->dead_stream ? SM_DING : 0), 0, 3,
@@ -417,7 +442,7 @@
  	return(FALSE);
      }
  
-@@ -1207,7 +1203,7 @@
+@@ -1286,7 +1282,7 @@
  cmd_cancelled(cmd)
      char *cmd;
  {
@@ -426,7 +451,7 @@
  }
  
  
-@@ -1233,7 +1229,7 @@
+@@ -1312,7 +1308,7 @@
  
      dprint(4, (debugfile, "\n - delete message -\n"));
      if(!(any_messages(msgmap, NULL, "to Delete")
@@ -435,7 +460,7 @@
        return;
  
      if(state->io_error_on_stream) {
-@@ -1243,16 +1239,15 @@
+@@ -1322,16 +1318,15 @@
  
      if(agg){
  	sequence = selected_sequence(state->mail_stream, msgmap, &del_count);
@@ -455,7 +480,18 @@
  		lastmsg ? "" : long2string(msgno));
      }
  
-@@ -1312,7 +1307,7 @@
+@@ -1361,8 +1356,8 @@
+ 	    strcpy(nextfolder, state->cur_folder);
+ 	    strcat(prompt, next_folder(NULL, nextfolder, nextfolder,
+ 				       state->context_current, NULL)
+-			      ? ".  Press TAB for next folder."
+-			      : ".  No more folders to TAB to.");
++			      ? "。 以 TAB 鍵切換至下一信件匣。"
++			      : "。 已無更多信件匣可供切換了。");
+ 	}
+     }
+ 
+@@ -1393,7 +1388,7 @@
  
      dprint(4, (debugfile, "\n - undelete -\n"));
      if(!(any_messages(msgmap, NULL, "to Undelete")
@@ -464,12 +500,14 @@
        return;
  
      if(agg){
-@@ -1332,12 +1327,12 @@
-     if(del_count == 1L){
+@@ -1418,13 +1413,13 @@
  	update_titlebar_status();
  	q_status_message(SM_ORDER, 0, 3,
--			 "Deletion mark removed, message won't be deleted");
-+			 "以移除刪除標記，信件將不會遭刪除");
+ 			wasdeleted
+-			 ? "Deletion mark removed, message won't be deleted"
+-			 : "Message not marked for deletion; no action taken");
++			 ? "已移除刪除標記，信件將不會遭刪除"
++			 : "信件尚未被標示為刪除：沒有採取任何行動");
      }
      else
 -      q_status_message2(SM_ORDER, 0, 3,
@@ -481,7 +519,7 @@
  
      if(state->io_error_on_stream) {
  	state->io_error_on_stream = 0;
-@@ -1401,7 +1396,7 @@
+@@ -1488,7 +1483,7 @@
      };
  
      if(!(any_messages(msgmap, NULL, "to Flag")
@@ -490,8 +528,8 @@
        return;
  
      if(state->io_error_on_stream) {
-@@ -1756,7 +1751,7 @@
-     if(msgno_any_exceptions(state->mail_stream, msgmap)
+@@ -1844,7 +1839,7 @@
+     if(msgno_any_exceptions(stream, msgmap, MSG_EX_DELETE)
         && want_to("Saved copy will NOT include entire message!  Continue",
  		  'y', 'n', NO_HELP, WT_FLUSH_IN | WT_SEQ_SENSITIVE) != 'y'){
 -	cmd_cancelled("Save message");
@@ -499,7 +537,7 @@
  	return;
      }
  
-@@ -1879,32 +1874,32 @@
+@@ -1967,32 +1962,32 @@
      ekey[rc].ch      = ctrl('T');
      ekey[rc].rval    = 2;
      ekey[rc].name    = "^T";
@@ -537,7 +575,7 @@
      }
  
      if(saveable_count > 1){
-@@ -2042,7 +2037,7 @@
+@@ -2129,7 +2124,7 @@
  	    /* else fall thru like they cancelled */
  
  	  case 1 :
@@ -546,7 +584,7 @@
  	    done--;
  	    break;
  
-@@ -3172,16 +3167,16 @@
+@@ -3260,16 +3255,16 @@
  	}
  
  	sprintf(tmp_20k_buf,
@@ -566,7 +604,7 @@
  	return(-1);
      }
  
-@@ -3305,14 +3300,14 @@
+@@ -3395,14 +3390,14 @@
      export_opts[i = 0].ch  = ctrl('T');
      export_opts[i].rval	   = 10;
      export_opts[i].name	   = "^T";
@@ -583,7 +621,7 @@
      }
  #endif	/* !(DOS || MAC) */
  
-@@ -3320,7 +3315,7 @@
+@@ -3410,7 +3405,7 @@
  	export_opts[i].ch      =  ctrl('I');
  	export_opts[i].rval    = 11;
  	export_opts[i].name    = "TAB";
@@ -592,7 +630,7 @@
      }
  
  #if	0
-@@ -3329,7 +3324,7 @@
+@@ -3419,7 +3414,7 @@
  	export_opts[i].ch      = ctrl('X');
  	export_opts[i].rval    = 14;
  	export_opts[i].name    = "^X";
@@ -601,7 +639,7 @@
      }
  #endif
  
-@@ -3343,7 +3338,7 @@
+@@ -3433,7 +3428,7 @@
      if(r < 0){
  	switch(r){
  	  case -1:
@@ -610,7 +648,7 @@
  	    break;
  
  	  case -2:
-@@ -3365,7 +3360,7 @@
+@@ -3455,7 +3450,7 @@
  
  	if(ps_global->restricted){
  	    q_status_message(SM_ORDER | SM_DING, 3, 3,
@@ -619,7 +657,7 @@
  	    goto fini;
  	}
  
-@@ -3384,7 +3379,7 @@
+@@ -3474,7 +3469,7 @@
  		 || !format_message(mn_m2raw(msgmap, mn_get_cur(msgmap)),
  				    env, b, FM_NEW_MESS | FM_NOWRAP, pc)){
  		  q_status_message(SM_ORDER | SM_DING, 3, 3,
@@ -628,7 +666,7 @@
  		  break;
  	      }
  
-@@ -3397,18 +3392,18 @@
+@@ -3487,18 +3482,18 @@
  		  (void) close_system_pipe(&syspipe);
  		else
  		  q_status_message(SM_ORDER | SM_DING, 3, 3,
@@ -650,7 +688,7 @@
  
  	goto fini;
      }
-@@ -3522,7 +3517,7 @@
+@@ -3612,7 +3607,7 @@
      STORE_S *store = NULL;
      struct variable *vars = ps->vars;
      static ESCKEY_S simple_export_opts[] = {
@@ -659,7 +697,7 @@
  	{-1, 0, NULL, NULL},
  	{-1, 0, NULL, NULL}};
  
-@@ -3530,7 +3525,7 @@
+@@ -3620,7 +3615,7 @@
  	simple_export_opts[r].ch    =  ctrl('I');
  	simple_export_opts[r].rval  = 11;
  	simple_export_opts[r].name  = "TAB";
@@ -668,7 +706,7 @@
      }
  
      if(!srctext){
-@@ -3603,7 +3598,7 @@
+@@ -3693,7 +3688,7 @@
  	break;
  
        case -1:
@@ -677,7 +715,7 @@
  	break;
  
        case -2:
-@@ -4192,32 +4187,32 @@
+@@ -4365,32 +4360,32 @@
      ekey[rc].ch	     = (allow_list) ? ctrl('T') : 0 ;
      ekey[rc].rval    = (allow_list) ? 2 : 0;
      ekey[rc].name    = (allow_list) ? "^T" : "";
@@ -715,7 +753,7 @@
      }
  
      if(ps_global->context_list->next){
-@@ -4335,15 +4330,15 @@
+@@ -4508,15 +4503,15 @@
  				    newfolder);
  		else if(tc->use & CNTXT_INCMNG)
  		  q_status_message1(SM_ORDER, 0, 3,
@@ -735,7 +773,7 @@
  				    newfolder);
  
  		return(NULL);
-@@ -4356,7 +4351,7 @@
+@@ -4529,7 +4524,7 @@
  	    /* fall thru like they cancelled */
  
  	  case 1 :				/* o_e says user cancel */
@@ -744,7 +782,7 @@
  	    return(NULL);
  
  	  case 2 :				/* o_e says user wants list */
-@@ -4592,7 +4587,7 @@
+@@ -4762,7 +4757,7 @@
  	else if ((new_context->use & CNTXT_INCMNG)
  		 && (folder_index(newfolder, new_context, FI_FOLDER) < 0)){
  	    q_status_message1(SM_ORDER, 3, 4,
@@ -753,7 +791,7 @@
  	    return(0);
  	}
      }
-@@ -4632,11 +4627,10 @@
+@@ -4802,11 +4797,10 @@
  	clear_index_cache();
          /* MUST sort before restoring msgno! */
  	refresh_sort(ps_global->msgmap, FALSE);
@@ -765,10 +803,10 @@
 -                          long2string(mn_get_total(ps_global->msgmap)),
 -			  plural(mn_get_total(ps_global->msgmap)));
 +                          long2string(mn_get_total(ps_global->msgmap)));
- 	return(1);
-     }
- 
-@@ -4673,7 +4667,7 @@
+ #ifdef	_WINDOWS
+ 	mswin_settitle(ps_global->inbox_name);
+ #endif
+@@ -4846,7 +4840,7 @@
  	}
      }
  
@@ -777,7 +815,7 @@
  	    pretty_fn(newfolder), 70), "\"");
      we_cancel = busy_alarm(1, status_msg, NULL, 1);
  
-@@ -4756,7 +4750,7 @@
+@@ -4930,7 +4924,7 @@
  			 && !mn_get_revsort(ps_global->msgmap)))
  		      refresh_sort(ps_global->msgmap, FALSE);
  
@@ -786,7 +824,7 @@
                                        old_folder);
                  }
              }
-@@ -4837,14 +4831,13 @@
+@@ -5018,13 +5012,13 @@
  
      /* UWIN doesn't want to see this message */
      if(!ps_global->nr_mode)
@@ -797,15 +835,13 @@
 +			  ? "新聞組群" : "信件匣",
  			pretty_fn(newfolder),
  			comatose(mn_get_total(ps_global->msgmap)),
--			plural(mn_get_total(ps_global->msgmap)),
--			READONLY_FOLDER ?" READONLY" : "",
--			NULL, NULL);
-+			READONLY_FOLDER ?" 唯讀" : "",
-+			NULL, NULL, NULL);
+ 			plural(mn_get_total(ps_global->msgmap)),
+-			READONLY_FOLDER ? " READONLY" : "",
++			READONLY_FOLDER ? " 唯讀" : "",
+ 			NULL, NULL);
  
-     sort_folder(ps_global->msgmap, ps_global->def_sort,
- 		ps_global->def_sort_rev, TRUE);
-@@ -5010,9 +5003,9 @@
+ #ifdef	_WINDOWS
+@@ -5191,9 +5185,9 @@
      char ing[4];
  
      if(final_msg)
@@ -817,7 +853,7 @@
  
      buff1[0] = '\0';
      buff2[0] = '\0';
-@@ -5021,7 +5014,7 @@
+@@ -5202,7 +5196,7 @@
                     stream->mailbox));
          if(!stream->rdonly){
  
@@ -825,8 +861,8 @@
 +            q_status_message1(SM_INFO, 0, 1, "正在關閉 \"%s\"...", folder);
  	    flush_status_messages(1);
  
- 	    /* Save read messages? */
-@@ -5061,10 +5054,8 @@
+ 	    /*
+@@ -5255,10 +5249,8 @@
  		}
  		else{
  		    sprintf(prompt_b,
@@ -839,7 +875,7 @@
  		    ret = want_to(prompt_b, 'y', 0, NO_HELP, WT_NORM);
  		}
  
-@@ -5075,13 +5066,10 @@
+@@ -5269,13 +5261,10 @@
  
  		if(ret == 'y'){
  		    sprintf(buff2,
@@ -854,8 +890,8 @@
  			long2string(delete_count));
  		    if(final_msg)
  		      *final_msg = cpystr(buff2);
-@@ -5107,17 +5095,15 @@
- 	    if(ret != 'y'){
+@@ -5348,17 +5337,15 @@
+ 
  		if(stream->nmsgs){
  		    sprintf(buff2,
 -		        "Clos%s folder \"%s\". %s%s%s message%s.",
@@ -876,7 +912,7 @@
  			ing, pretty_fn(folder));
  		}
  
-@@ -5136,7 +5122,7 @@
+@@ -5377,7 +5364,7 @@
  		  q_status_message(SM_ORDER,
  		      F_ON(F_AUTO_READ_MSGS,ps_global) ? 0 : 3, 5, moved_msg);
  
@@ -884,8 +920,8 @@
 +		sprintf(buff2, "%s關閉新聞組群 \"%s\"",
  			ing, pretty_fn(folder));
  
- 		if(F_ON(F_NEWS_CROSS_DELETE, ps_global))
-@@ -5144,7 +5130,7 @@
+ 		if(F_ON(F_NEWS_CATCHUP, ps_global)){
+@@ -5414,7 +5401,7 @@
  	    }
              else
  	      sprintf(buff2,
@@ -894,7 +930,7 @@
  			ing, pretty_fn(folder));
  
  	    if(final_msg)
-@@ -5444,18 +5430,18 @@
+@@ -6033,18 +6020,18 @@
      if(in_index && F_ON(F_PRINT_INDEX, state)){
  	char m[10];
  	static ESCKEY_S prt_opts[] = {
@@ -918,7 +954,7 @@
  	    if(agg)
  	      restore_selected(msgmap);
  
-@@ -5472,11 +5458,11 @@
+@@ -6061,11 +6048,11 @@
      }
  
      if(do_index)
@@ -933,7 +969,7 @@
  
      if(open_printer(prompt) < 0){
  	if(agg)
-@@ -5740,7 +5726,7 @@
+@@ -6329,7 +6316,7 @@
  	    /* else fall thru as if cancelled */
  
  	  case 1 :
@@ -942,7 +978,7 @@
  	    done++;
  	    break;
  
-@@ -5823,7 +5809,7 @@
+@@ -6642,7 +6629,7 @@
      sel_opts = sel_opts2;
      if(old_tot = any_lflagged(msgmap, MN_SLCT)){
  	i = get_lflag(state->mail_stream, msgmap, mn_get_cur(msgmap), MN_SLCT);
@@ -951,7 +987,7 @@
  	sel_opts += 2;			/* disable extra options */
  	switch(q = radio_buttons(sel_pmt1, q_line, sel_opts1, 'c', 'x', help,
  				 RB_NORM)){
-@@ -5867,7 +5853,7 @@
+@@ -6686,7 +6673,7 @@
       */
      switch(q){
        case 'x':				/* cancel */
@@ -960,7 +996,7 @@
  	return;
  
        case 'c' :			/* select/unselect current */
-@@ -6075,14 +6061,14 @@
+@@ -6895,14 +6882,14 @@
  	sel_opts3[i].ch      = '*';
  	sel_opts3[i].rval    = '*';
  	sel_opts3[i].name    = "*";
@@ -977,7 +1013,7 @@
      }
  
      /*
-@@ -6094,7 +6080,7 @@
+@@ -6914,7 +6901,7 @@
  	sel_opts3[i].ch      = 'b';
  	sel_opts3[i].rval    = 'b';
  	sel_opts3[i].name    = "B";
@@ -986,7 +1022,7 @@
      }
  
      if(F_ON(F_ENABLE_PRYNT, state)){
-@@ -6165,7 +6151,7 @@
+@@ -6985,7 +6972,7 @@
  	break;
  
        case 'x' :			/* cancel */
@@ -995,7 +1031,7 @@
  	rv = 0;
  	break;
  
-@@ -6282,7 +6268,7 @@
+@@ -7102,7 +7089,7 @@
  	*t = '\0';
  
          if(r == 1 || numbers[0] == '\0'){
@@ -1004,7 +1040,7 @@
  	    return(1);
          }
  	else
-@@ -6408,7 +6394,7 @@
+@@ -7228,7 +7215,7 @@
  			     prompt, sel_date_opt, help, &flags);
  	switch (r){
  	  case 1 :
@@ -1013,7 +1049,7 @@
  	    return(1);
  
  	  case 3 :
-@@ -6518,15 +6504,15 @@
+@@ -7350,15 +7337,15 @@
  	ekey[0].ch    = ctrl('T');
  	ekey[0].name  = "^T";
  	ekey[0].rval  = 10;
@@ -1032,7 +1068,7 @@
  	break;
  
        case 's' :
-@@ -6534,7 +6520,7 @@
+@@ -7366,7 +7353,7 @@
  	ekey[0].ch    = ctrl('X');
  	ekey[0].name  = "^X";
  	ekey[0].rval  = 13;
@@ -1041,7 +1077,7 @@
  	break;
  
        case 'a' :
-@@ -6633,7 +6619,7 @@
+@@ -7477,7 +7464,7 @@
      }
  
      if(type == 'x' || r == 'x'){
@@ -1050,7 +1086,7 @@
  	return(1);
      }
  
-@@ -6814,7 +6800,7 @@
+@@ -7735,7 +7722,7 @@
  			  NO_HELP, RB_NORM);
  			  
  	if(s == 'x'){
@@ -1059,16 +1095,16 @@
  	    return(1);
  	}
  	else if(s == '!')
-@@ -6911,7 +6897,7 @@
+@@ -7832,7 +7819,7 @@
  
      /*----- String together the prompt ------*/
      tmp[1] = '\0';
 -    strcpy(prompt, "Choose type of sort, or Reverse current sort : ");
 +    strcpy(prompt, "選取排序方式，或反轉目前的排序：");
-     for(i = 0; state->sort_types[i] != EndofList && i < 8; i++) {
+     for(i = 0; state->sort_types[i] != EndofList; i++) {
  	sorts[i].rval	   = i;
  	p = sorts[i].label = sort_name(state->sort_types[i]);
-@@ -6928,7 +6914,7 @@
+@@ -7849,7 +7836,7 @@
      sorts[i].ch     = 'r';
      sorts[i].rval   = 'r';
      sorts[i].name   = cpystr("R");
@@ -1077,7 +1113,7 @@
      sorts[++i].ch   = -1;
      help = h_select_sort;
  
-@@ -6941,7 +6927,7 @@
+@@ -7862,7 +7849,7 @@
      }
      else{
  	retval = 0;

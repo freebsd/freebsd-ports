@@ -1,16 +1,16 @@
---- pine/adrbkcmd.c.orig	Sat Jan 30 03:57:55 1999
-+++ pine/adrbkcmd.c	Mon Feb 22 22:36:14 1999
+--- pine/adrbkcmd.c.orig	Thu Sep 30 07:21:15 1999
++++ pine/adrbkcmd.c	Thu Oct 14 11:42:22 1999
 @@ -112,23 +112,23 @@
  static struct key abook_view_keys[] =
         {HELP_MENU,
  	OTHER_MENU,
 -	{"<","Abook",{MC_EXIT,2,{'<',','}},KS_NONE},
 -	{"U","Update",{MC_EDIT,1,{'u'}},KS_NONE},
+-	{"C","ComposeTo",{MC_COMPOSE,1,{'c'}},KS_COMPOSER},
 +	{"<","地址簿",{MC_EXIT,2,{'<',','}},KS_NONE},
 +	{"U","更新",{MC_EDIT,1,{'u'}},KS_NONE},
- 	NULL_MENU,
--	{"C","ComposeTo",{MC_COMPOSE,1,{'c'}},KS_COMPOSER},
 +	{"C","編修",{MC_COMPOSE,1,{'c'}},KS_COMPOSER},
+ 	RCOMPOSE_MENU,
  	PREVPAGE_MENU,
  	NEXTPAGE_MENU,
  	PRYNTTXT_MENU,
@@ -22,16 +22,16 @@
  	HELP_MENU,
  	OTHER_MENU,
 -	{"V","ViewLink",{MC_VIEW_HANDLE,3,{'v',ctrl('m'),ctrl('j')}},KS_NONE},
-+	{"V","檢視連結",{MC_VIEW_HANDLE,3,{'v',ctrl('m'),ctrl('j')}},KS_NONE},
++	{"V","檢視鏈結",{MC_VIEW_HANDLE,3,{'v',ctrl('m'),ctrl('j')}},KS_NONE},
  	NULL_MENU,
 -	{"^B","PrevLink",{MC_PREV_HANDLE,1,{ctrl('B')}},KS_NONE},
 -	{"^F","NextLink",{MC_NEXT_HANDLE,1,{ctrl('F')}},KS_NONE},
-+	{"^B","前一連結",{MC_PREV_HANDLE,1,{ctrl('B')}},KS_NONE},
-+	{"^F","下一連結",{MC_NEXT_HANDLE,1,{ctrl('F')}},KS_NONE},
++	{"^B","前一鏈結",{MC_PREV_HANDLE,1,{ctrl('B')}},KS_NONE},
++	{"^F","下一鏈結",{MC_NEXT_HANDLE,1,{ctrl('F')}},KS_NONE},
  	NULL_MENU,
  	NULL_MENU,
  	NULL_MENU,
-@@ -144,7 +144,7 @@
+@@ -141,7 +141,7 @@
  static struct key abook_text_keys[] =
         {HELP_MENU,
  	NULL_MENU,
@@ -40,7 +40,7 @@
  	NULL_MENU,
  	NULL_MENU,
  	NULL_MENU,
-@@ -153,7 +153,7 @@
+@@ -150,7 +150,7 @@
  	PRYNTTXT_MENU,
  	WHEREIS_MENU,
  	FWDEMAIL_MENU,
@@ -49,15 +49,21 @@
  INST_KEY_MENU(abook_text_km, abook_text_keys);
  
  #define	VIEW_ABOOK_NONE		0
-@@ -305,15 +305,15 @@
+@@ -303,7 +303,7 @@
  	memset(&sargs, 0, sizeof(SCROLL_S));
  	sargs.text.text	   = so_text(out_store);
  	sargs.text.src	   = CharStar;
 -	sargs.text.desc	   = "expanded entry";
 +	sargs.text.desc	   = "已展開的項目";
  	sargs.text.handles = handles;
+ 
+ 	if(offset){		/* resize?  preserve paging! */
+@@ -312,13 +312,13 @@
+ 	    offset = 0L;
+ 	}
+ 	  
 -	sargs.bar.title	  = "ADDRESS BOOK (View)";
-+	sargs.bar.title	  = "地址簿 (檢視)";
++	sargs.bar.title	  = "地址簿（檢視）";
  	sargs.bar.style	  = TextPercent;
  	sargs.proc.tool	  = process_abook_view_cmd;
  	sargs.proc.data.i = VIEW_ABOOK_NONE;
@@ -68,7 +74,7 @@
  	sargs.keys.menu	  = &abook_view_keymenu;
  	setbitmap(sargs.keys.bitmap);
  
-@@ -421,7 +421,7 @@
+@@ -428,7 +428,7 @@
  	if(adrbk_check_all_validity_now()){
  	    if(resync_screen(pab, AddrBookScreen, 0)){
  		q_status_message(SM_ORDER | SM_DING, 3, 4,
@@ -77,7 +83,7 @@
  		ps_global->mangled_screen = 1;
  		break;
  	    }
-@@ -449,7 +449,7 @@
+@@ -456,7 +456,7 @@
  	    abe_copy = copy_ae(abe);
  	    dprint(9, (debugfile,"Calling edit_entry to edit from view\n"));
  	    edit_entry(pab->address_book, abe_copy, entry,
@@ -86,7 +92,7 @@
  	    /*
  	     * The ABOOK_EDITED case doesn't mean that we necessarily
  	     * changed something, just that we might have but we know
-@@ -494,7 +494,7 @@
+@@ -506,7 +506,7 @@
  			  h_ab_text_or_vcard, RB_NORM);
  	switch(i){
  	  case 'x':
@@ -95,7 +101,7 @@
  	    rv = 0;
  	    break;
  
-@@ -729,8 +729,8 @@
+@@ -741,8 +741,8 @@
      memset(&sargs, 0, sizeof(SCROLL_S));
      sargs.text.text = so_text(store);
      sargs.text.src  = CharStar;
@@ -106,7 +112,7 @@
      sargs.bar.style = TextPercent;
      sargs.keys.menu = &abook_text_km;
      setbitmap(sargs.keys.bitmap);
-@@ -800,8 +800,8 @@
+@@ -812,8 +812,8 @@
      memset(&sargs, 0, sizeof(SCROLL_S));
      sargs.text.text = so_text(store);
      sargs.text.src  = src;
@@ -117,7 +123,7 @@
      sargs.bar.style = TextPercent;
      sargs.keys.menu = &abook_text_km;
      setbitmap(sargs.keys.bitmap);
-@@ -824,19 +824,19 @@
+@@ -836,19 +836,19 @@
  */
  static struct headerentry headents_for_edit[]={
    {"Nickname  : ",  "Nickname",  h_composer_abook_nick, 12, 0, NULL,
@@ -142,7 +148,7 @@
     1, 1, 0, 0, 0, 0, 0, 0, 0, 0, KS_NONE},
    {NULL, NULL, NO_HELP, 0, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, KS_NONE}
-@@ -951,7 +951,7 @@
+@@ -963,7 +963,7 @@
      pbuf.canceltest    = warped ? pico_cancel_for_adrbk_edit
  				: pico_cancel_for_adrbk_take;
      pbuf.expander      = expand_addrs_for_pico;
@@ -151,7 +157,7 @@
      pbuf.resize	       = resize_for_pico;
      pbuf.winch_cleanup = winch_cleanup;
      pbuf.suspend       = do_suspend;
-@@ -967,7 +967,7 @@
+@@ -979,7 +979,7 @@
      pbuf.browse_help   = h_composer_browse;
      pbuf.attach_help   = h_composer_ctrl_j;
      pbuf.composer_help = h_composer;
@@ -160,7 +166,7 @@
  	    readonly ? 'V' : islower((unsigned char)(*cmd))
  				    ? toupper((unsigned char)*cmd)
  				    : *cmd,
-@@ -1559,12 +1559,12 @@
+@@ -1574,12 +1574,12 @@
      ps_global->redrawer = redraw_pico;
      fix_windsize(ps_global);
      
@@ -175,7 +181,7 @@
  	break;
      }
  
-@@ -1588,8 +1588,8 @@
+@@ -1603,8 +1603,8 @@
      char *rstr = NULL;
      void (*redraw)() = ps_global->redrawer;
  
@@ -186,7 +192,7 @@
      ps_global->redrawer = redraw_pico;
      fix_windsize(ps_global);
      
-@@ -1612,7 +1612,7 @@
+@@ -1627,7 +1627,7 @@
  pico_cancel_for_adrbk_take(redraw_pico)
      void (*redraw_pico)();
  {
@@ -195,7 +201,7 @@
  }
  
  
-@@ -1620,7 +1620,7 @@
+@@ -1635,7 +1635,7 @@
  pico_cancel_for_adrbk_edit(redraw_pico)
      void (*redraw_pico)();
  {
@@ -204,7 +210,7 @@
  }
  
  
-@@ -1737,16 +1737,16 @@
+@@ -1752,16 +1752,16 @@
  
      if(ps_global->readonly_pinerc){
  	q_status_message1(SM_ORDER, 0, 3,
@@ -225,7 +231,7 @@
  	
  	return -1;
      }
-@@ -1796,7 +1796,7 @@
+@@ -1811,7 +1811,7 @@
      pbuf.browse_help   = h_composer_browse;
      pbuf.attach_help   = h_composer_ctrl_j;
      pbuf.composer_help = h_composer;
@@ -234,7 +240,7 @@
      pbuf.pine_anchor   = set_titlebar(titlebar,
  				      ps_global->mail_stream,
  				      ps_global->context_current,
-@@ -1916,8 +1916,8 @@
+@@ -1932,8 +1932,8 @@
      if(editor_result & COMP_CANCEL){
  	ret = -1;
  	q_status_message1(SM_ORDER, 0, 3,
@@ -245,7 +251,7 @@
      }
      else if(editor_result & COMP_EXIT){
  	if(!strcmp(server, def_serv ? def_serv : "") &&
-@@ -1925,8 +1925,8 @@
+@@ -1941,8 +1941,8 @@
  	   !strcmp(nickname, def_nick ? def_nick : "")){
  	    ret = -1;
  	    q_status_message1(SM_ORDER, 0, 3,
@@ -256,7 +262,7 @@
  	}
  	else{
  
-@@ -1993,8 +1993,8 @@
+@@ -2009,8 +2009,8 @@
  
  	    if(*tmp == '\0'){
  		q_status_message1(SM_ORDER, 0, 3,
@@ -267,7 +273,7 @@
  		ret = -1;
  		goto get_out;
  	    }
-@@ -2019,8 +2019,8 @@
+@@ -2035,8 +2035,8 @@
  	    if(set_variable_list(global ? V_GLOB_ADDRBOOK : V_ADDRESSBOOK,
  				 new_list, TRUE)){
  		q_status_message1(SM_ORDER, 0, 3,
@@ -278,7 +284,7 @@
  
  		set_current_val(&vars[global ? V_GLOB_ADDRBOOK : V_ADDRESSBOOK],
  				TRUE, FALSE);
-@@ -2191,7 +2191,7 @@
+@@ -2209,7 +2209,7 @@
  
      if(ps_global->readonly_pinerc){
  	if(err)
@@ -287,7 +293,7 @@
  	
  	return -1;
      }
-@@ -2208,10 +2208,10 @@
+@@ -2226,10 +2226,10 @@
  	if(err){
  	    if(pab->type & GLOBAL)
  	      *err =
@@ -300,7 +306,7 @@
  	}
  
  	return -1;
-@@ -2264,8 +2264,8 @@
+@@ -2282,8 +2282,8 @@
  	
  	if(cnt > 1){
  	    static ESCKEY_S opts[] = {
@@ -311,7 +317,7 @@
  		{-1, 0, NULL, NULL}};
  
  	    sprintf(tmp,
-@@ -2283,7 +2283,7 @@
+@@ -2301,7 +2301,7 @@
  		
  	      case 'x':
  		if(err)
@@ -320,7 +326,7 @@
  
  		return -1;
  	    }
-@@ -2294,7 +2294,7 @@
+@@ -2312,7 +2312,7 @@
  	      case 'n':
  	      case 'x':
  	        if(err)
@@ -329,7 +335,7 @@
  
  	        return -1;
  	    
-@@ -2339,7 +2339,7 @@
+@@ -2357,7 +2357,7 @@
  	  case 'x':				/* Cancel */
  	  default:
  	    if(err)
@@ -338,7 +344,7 @@
  
  	    return -1;
  	}
-@@ -2359,7 +2359,7 @@
+@@ -2377,7 +2377,7 @@
            case 'x':
  	  default:
  	    if(err)
@@ -347,7 +353,7 @@
  
  	    return -1;
  	
-@@ -2420,7 +2420,7 @@
+@@ -2438,7 +2438,7 @@
  		  case 'n':
  		  default:
  		    if(err)
@@ -356,7 +362,7 @@
  
  		    return -1;
  		}
-@@ -2559,7 +2559,7 @@
+@@ -2577,7 +2577,7 @@
      /* this also frees old variable contents for us */
      if(set_variable_list(varnum, new_list, TRUE)){
  	if(err)
@@ -365,7 +371,7 @@
  
  	set_current_val(&vars[varnum], TRUE, FALSE);
  	free_list_array(&new_list);
-@@ -2626,7 +2626,7 @@
+@@ -2644,7 +2644,7 @@
  
      if(ps_global->readonly_pinerc){
  	if(msg)
@@ -374,7 +380,7 @@
  	
  	return -1;
      }
-@@ -2636,12 +2636,12 @@
+@@ -2654,12 +2654,12 @@
      opts[i].ch      = 'u';
      opts[i].rval    = 'u';
      opts[i].name    = "U";
@@ -389,7 +395,7 @@
  
      opts[i].ch = -1;
      deefault = 'u';
-@@ -2649,7 +2649,7 @@
+@@ -2667,7 +2667,7 @@
      if(pab->type & GLOBAL){
  	if(vars[V_GLOB_ADDRBOOK].is_fixed){
  	    if(msg)
@@ -398,7 +404,7 @@
  	    
  	    return -1;
  	}
-@@ -2669,7 +2669,7 @@
+@@ -2687,7 +2687,7 @@
      else{
  	if(vars[V_ADDRESSBOOK].is_fixed){
  	    if(msg)
@@ -407,7 +413,7 @@
  	    
  	    return -1;
  	}
-@@ -2708,7 +2708,7 @@
+@@ -2726,7 +2726,7 @@
  
      if(rv == 'x'){
  	if(msg)
@@ -416,7 +422,7 @@
  	
  	return -1;
      }
-@@ -2751,7 +2751,7 @@
+@@ -2769,7 +2769,7 @@
      enum {NotSet, Pers, Glob, Empty} type1, type2;
      int          i, j, retval = -1;
      struct variable *vars = ps_global->vars;
@@ -425,7 +431,7 @@
  
      dprint(5, (debugfile, "- do_the_shuffle(%d, %d) -\n", anum1, anum2));
  
-@@ -2765,7 +2765,7 @@
+@@ -2783,7 +2783,7 @@
      if(type1 == Empty){
  	if(msg)
  	  *msg =
@@ -434,7 +440,7 @@
  
  	return(retval);
      }
-@@ -2782,14 +2782,14 @@
+@@ -2800,14 +2800,14 @@
  
      if((type1 == Pers || type2 == Pers) && vars[V_ADDRESSBOOK].is_fixed){
  	if(msg)
@@ -451,7 +457,7 @@
  
  	return(retval);
      }
-@@ -3261,7 +3261,7 @@
+@@ -3312,7 +3312,7 @@
      AdrBk_Entry *abe;
      VCARD_INFO_S *vinfo;
      static ESCKEY_S ab_export_opts[] = {
@@ -460,7 +466,7 @@
  	{-1, 0, NULL, NULL},
  	{-1, 0, NULL, NULL}};
      static ESCKEY_S vcard_or_addresses[] = {
-@@ -3284,7 +3284,7 @@
+@@ -3335,7 +3335,7 @@
  
      switch(i){
        case 'x':
@@ -469,7 +475,7 @@
  	return(ret);
      
        case 'a':
-@@ -3313,7 +3313,7 @@
+@@ -3364,7 +3364,7 @@
  	ab_export_opts[++r].ch  =  ctrl('I');
  	ab_export_opts[r].rval  = 11;
  	ab_export_opts[r].name  = "TAB";
@@ -478,7 +484,7 @@
      }
  
      ab_export_opts[++r].ch = -1;
-@@ -3326,7 +3326,7 @@
+@@ -3377,7 +3377,7 @@
      if(r < 0){
  	switch(r){
  	  case -1:
@@ -487,7 +493,7 @@
  	    break;
  
  	  case -2:
-@@ -3711,7 +3711,7 @@
+@@ -3787,7 +3787,7 @@
  	    switch(want_to("Expand nicknames", 'y', 'x', h_ab_forward,WT_NORM)){
  	      case 'x':
  		gf_clear_so_writec((STORE_S *) pb->contents.text.data);
@@ -496,16 +502,16 @@
  		goto bomb;
  		
  	      case 'y':
-@@ -3795,7 +3795,7 @@
+@@ -3871,7 +3871,7 @@
  
      gf_clear_so_writec((STORE_S *) pb->contents.text.data);
  
--    pine_send(outgoing, &body, "FORWARDING ADDRESS BOOK ENTRY", NULL, NULL,
-+    pine_send(outgoing, &body, "轉寄地址簿項目", NULL, NULL,
+-    pine_send(outgoing, &body, "FORWARDING ADDRESS BOOK ENTRY", role, NULL,
++    pine_send(outgoing, &body, "轉寄地址簿項目", role, NULL,
   	      NULL, NULL, NULL, NULL, 0);
      
      ps->mangled_screen = 1;
-@@ -4262,8 +4262,8 @@
+@@ -4339,8 +4339,8 @@
      char           tmp[200];
      ACTION_LIST_S *action_list = NULL, *al;
      static ESCKEY_S save_or_export[] = {
@@ -516,7 +522,7 @@
  	{-1, 0, NULL, NULL}};
  
      sprintf(tmp, "Save%s to address book or Export to filesystem ? ",
-@@ -4274,7 +4274,7 @@
+@@ -4351,7 +4351,7 @@
  		      h_ab_save_exp, RB_NORM);
      switch(i){
        case 'x':
@@ -525,7 +531,7 @@
  	return(0);
  
        case 'e':
-@@ -4457,7 +4457,7 @@
+@@ -4534,7 +4534,7 @@
  		if(action_list)
  		  fs_give((void **)&action_list);
  
@@ -534,7 +540,7 @@
  		return(ret);
  	    }
  
-@@ -4638,7 +4638,7 @@
+@@ -4715,7 +4715,7 @@
  	  q_status_message(SM_ORDER | SM_DING, 3, 4,
  			   "Save only partially completed");
  	else
@@ -543,7 +549,7 @@
      }
      else if (how_many_to_copy + how_many_no_action -
  	     (skip_dups ? how_many_dups : 0) > 0){
-@@ -4715,15 +4715,15 @@
+@@ -4792,15 +4792,15 @@
      curopen = cur_is_open();
      if(!agg && curopen){
  	static ESCKEY_S prt[] = {
@@ -562,7 +568,7 @@
  	    ps_global->mangled_footer = 1;
  	    return 0;
  
-@@ -4794,7 +4794,7 @@
+@@ -4871,7 +4871,7 @@
  		    switch(want_to("Expand nicknames", 'y', 'x', h_ab_forward,
  								    WT_NORM)){
  		      case 'x':
@@ -571,7 +577,7 @@
  			ps_global->mangled_footer = 1;
  			return 0;
  			
-@@ -5068,7 +5068,7 @@
+@@ -5145,7 +5145,7 @@
  		    if(F_ON(F_CMBND_ABOOK_DISP,ps_global))
  		      lineno = 0L - XTRA_TITLE_LINES_IN_OLD_ABOOK_DISP;
  		    else{
@@ -580,7 +586,7 @@
  				    as.adrbks[as.cur].nickname);
  			lineno = 0L;
  		    }
-@@ -5134,7 +5134,7 @@
+@@ -5211,7 +5211,7 @@
      dprint(2, (debugfile, "- ab_agg_delete -\n"));
  
      if(agg){
@@ -589,7 +595,7 @@
  	ch = want_to(prompt, 'n', 'n', NO_HELP, WT_NORM);
  	if(ch == 'y'){
  	    adrbk_cntr_t   newelnum, flushelnum = NO_NEXT;
-@@ -5301,7 +5301,7 @@
+@@ -5378,7 +5378,7 @@
  	    }
  	}
  	else
@@ -598,7 +604,7 @@
      }
  
      return(ret);
-@@ -5349,7 +5349,7 @@
+@@ -5426,7 +5426,7 @@
  			? (char *)rfc1522_decode((unsigned char *)tmp_20k_buf,
  						    abe->fullname, NULL)
  			: abe->nickname ? abe->nickname : "";
@@ -607,7 +613,7 @@
          break;
  
        case ListHead:
-@@ -5357,13 +5357,13 @@
+@@ -5434,13 +5434,13 @@
  			? (char *)rfc1522_decode((unsigned char *)tmp_20k_buf,
  						    abe->fullname, NULL)
  			: abe->nickname ? abe->nickname : "";
@@ -623,7 +629,7 @@
          break;
      } 
  
-@@ -5462,7 +5462,7 @@
+@@ -5539,7 +5539,7 @@
  	return 0;
      }
      else{
@@ -632,7 +638,7 @@
  	return 0;
      }
  }
-@@ -5598,7 +5598,7 @@
+@@ -5675,7 +5675,7 @@
      if(r == 1 || r != 10 && fbuf[0] == '\0'){
  	ps->mangled_footer = 1;
  	if(error)
@@ -641,7 +647,7 @@
  
  	return(ret);
      }
-@@ -5638,7 +5638,7 @@
+@@ -5716,7 +5716,7 @@
  	pbuf.browse_help   = h_composer_browse;
  	pbuf.attach_help   = h_composer_ctrl_j;
  	pbuf.composer_help = h_composer;
@@ -650,27 +656,21 @@
  					  ps_global->mail_stream,
  					  ps_global->context_current,
  					  ps_global->cur_folder,
-@@ -5895,14 +5895,14 @@
+@@ -5990,10 +5990,10 @@
  
- static struct key ldap_view_keys[] =
-        {HELP_MENU,
+ 	HELP_MENU,
+ 	OTHER_MENU,
 -	{"V","ViewLink",{MC_VIEW_HANDLE,3,{'v',ctrl('m'),ctrl('j')}},KS_NONE},
--	{"<","Results Index",{MC_EXIT,2,{'<',','}},KS_NONE},
 +	{"V","檢視鏈結",{MC_VIEW_HANDLE,3,{'v',ctrl('m'),ctrl('j')}},KS_NONE},
-+	{"<","結果索引",{MC_EXIT,2,{'<',','}},KS_NONE},
- 	PRYNTTXT_MENU,
+ 	NULL_MENU,
 -	{"^B","PrevLink",{MC_PREV_HANDLE,1,{ctrl('B')}},KS_NONE},
 -	{"^F","NextLink",{MC_NEXT_HANDLE,1,{ctrl('F')}},KS_NONE},
 +	{"^B","前一鏈結",{MC_PREV_HANDLE,1,{ctrl('B')}},KS_NONE},
 +	{"^F","次一鏈結",{MC_NEXT_HANDLE,1,{ctrl('F')}},KS_NONE},
- 	PREVPAGE_MENU,
- 	NEXTPAGE_MENU,
--	{"C", "ComposeTo", {MC_COMPOSE,1,{'c'}}, KS_COMPOSER},
-+	{"C", "編修", {MC_COMPOSE,1,{'c'}}, KS_COMPOSER},
- 	FWDEMAIL_MENU,
- 	SAVE_MENU,
- 	WHEREIS_MENU};
-@@ -5935,13 +5935,13 @@
+ 	NULL_MENU,
+ 	NULL_MENU,
+ 	NULL_MENU,
+@@ -6027,13 +6027,13 @@
  	memset(&sargs, 0, sizeof(SCROLL_S));
  	sargs.text.text	  = so_text(srcstore);
  	sargs.text.src    = srctype;
@@ -687,7 +687,7 @@
  	sargs.keys.menu   = &ldap_view_keymenu;
  	setbitmap(sargs.keys.bitmap);
  
-@@ -6412,7 +6412,7 @@
+@@ -6511,7 +6511,7 @@
      struct headerentry *he;
      void (*redraw_pico)();
  {

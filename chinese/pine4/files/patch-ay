@@ -1,13 +1,13 @@
---- pine/help.c.orig	Thu Jan  7 03:50:55 1999
-+++ pine/help.c	Tue Feb 23 15:27:01 1999
+--- pine/help.c.orig	Wed Sep 15 04:31:21 1999
++++ pine/help.c	Thu Oct 14 11:43:45 1999
 @@ -53,12 +53,12 @@
  	{NULL,NULL,{MC_EXIT,1,{'e'}}, KS_EXITMODE},
  	{NULL,NULL,{MC_EXIT,1,{'e'}}, KS_EXITMODE},
  	{NULL,NULL,{MC_VIEW_HANDLE,3,{'v',ctrl('m'),ctrl('j')}},KS_NONE},
 -	{"^B","PrevLink",{MC_PREV_HANDLE,1,{ctrl('B')}},KS_NONE},
 -	{"^F","NextLink",{MC_NEXT_HANDLE,1,{ctrl('F')}},KS_NONE},
-+	{"^B","前一連結",{MC_PREV_HANDLE,1,{ctrl('B')}},KS_NONE},
-+	{"^F","次一連結",{MC_NEXT_HANDLE,1,{ctrl('F')}},KS_NONE},
++	{"^B","前一鏈結",{MC_PREV_HANDLE,1,{ctrl('B')}},KS_NONE},
++	{"^F","次一鏈結",{MC_NEXT_HANDLE,1,{ctrl('F')}},KS_NONE},
  	PREVPAGE_MENU,
  	NEXTPAGE_MENU,
  	PRYNTMSG_MENU,
@@ -25,16 +25,16 @@
  	NULL_MENU,
  	NULL_MENU,
  	NULL_MENU,
-@@ -262,7 +262,7 @@
+@@ -263,7 +263,7 @@
  		memset(&sargs, 0, sizeof(SCROLL_S));
  		sargs.text.text	   = so_text(store);
  		sargs.text.src	   = CharStar;
 -		sargs.text.desc	   = "help text";
 +		sargs.text.desc	   = "輔助說明文字";
- 		sargs.text.handles = handles;
- 		if(!(sargs.bar.title = title)){
- 		    if(!struncmp(shown_text[0], "<html>", 6)){
-@@ -290,7 +290,7 @@
+ 		if(sargs.text.handles = handles)
+ 		  while(sargs.text.handles->type == URL
+ 			&& !sargs.text.handles->h.url.path
+@@ -296,7 +296,7 @@
  		    }
  
  		    if(!sargs.bar.title)
@@ -43,7 +43,7 @@
  		}
  
  		sargs.bar.style	   = TextPercent;
-@@ -307,18 +307,18 @@
+@@ -313,18 +313,18 @@
  		setbitmap(sargs.keys.bitmap);
  		if(flags & HLPD_FROMHELP){
  		    km.keys[HLP_EXIT_KEY].name	     = "P";
@@ -65,7 +65,7 @@
  		    km.keys[HLP_EXIT_KEY].bind.cmd   = MC_FINISH;
  		    km.keys[HLP_EXIT_KEY].bind.ch[0] = 'p';
  
-@@ -327,12 +327,12 @@
+@@ -333,12 +333,12 @@
  		}
  		else{
  		    km.keys[HLP_EXIT_KEY].name	     = "E";
@@ -80,16 +80,16 @@
  		    km.keys[HLP_SUBEXIT_KEY].bind.cmd   = MC_HELP;
  		    km.keys[HLP_SUBEXIT_KEY].bind.ch[0] = '?';
  		}
-@@ -492,7 +492,7 @@
+@@ -507,7 +507,7 @@
  	}
  
  	sparms->keys.menu->keys[HLP_VIEW_HANDLE].name  = "V";
 -	sparms->keys.menu->keys[HLP_VIEW_HANDLE].label = "[View Link]";
-+	sparms->keys.menu->keys[HLP_VIEW_HANDLE].label = "[檢視連結]";
++	sparms->keys.menu->keys[HLP_VIEW_HANDLE].label = "[檢視鏈結]";
      }
  }
  
-@@ -543,7 +543,7 @@
+@@ -558,7 +558,7 @@
      print_text(NEWLINE);
  
      if(error = gf_pipe(helper_getc, print_char))
@@ -98,7 +98,7 @@
  
      print_char(ctrl('L'));		/* new page. */
  }
-@@ -573,7 +573,7 @@
+@@ -588,7 +588,7 @@
  #endif
  	    if(ps_global->intr_pending){
  		q_status_message(SM_ORDER, 3, 3,
@@ -107,7 +107,7 @@
  		break;
  	    }
  
-@@ -962,7 +962,7 @@
+@@ -977,7 +977,7 @@
      memset(&sargs, 0, sizeof(SCROLL_S));
      sargs.text.text = tmp_text;
      sargs.text.src  = CharStar;
@@ -116,7 +116,7 @@
      sargs.bar.title = title;
      sargs.start.on  = LastPage;
  
-@@ -1321,7 +1321,7 @@
+@@ -1336,7 +1336,7 @@
  #endif
  	    }
  	    else if(ch == 'x'){
@@ -125,7 +125,7 @@
  		return(-1);
  	    }
  	}
-@@ -1448,13 +1448,13 @@
+@@ -1463,13 +1463,13 @@
      if(in_handle){
  	hp_menu[++i].type	= tQueue;
  	hp_menu[i].label.style	= lNormal;
@@ -141,7 +141,7 @@
      hp_menu[i].data.val	    = 'E';
  
      hp_menu[++i].type = tTail;
-@@ -1479,18 +1479,18 @@
+@@ -1494,18 +1494,18 @@
      if(in_handle){
  	hp_menu[++i].type	= tQueue;
  	hp_menu[i].label.style  = lNormal;

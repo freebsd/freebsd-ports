@@ -1,6 +1,6 @@
---- pine/pine.c.orig	Sat Jan 30 01:59:01 1999
-+++ pine/pine.c	Tue Feb 23 15:50:13 1999
-@@ -114,12 +114,12 @@
+--- pine/pine.c.orig	Tue Sep 21 07:17:58 1999
++++ pine/pine.c	Thu Oct 14 12:13:57 1999
+@@ -115,12 +115,12 @@
  	OTHER_MENU,
  	NULL_MENU,
  	NULL_MENU,
@@ -17,7 +17,7 @@
  	NULL_MENU,
  	NULL_MENU,
  
-@@ -129,11 +129,11 @@
+@@ -130,10 +130,10 @@
  	COMPOSE_MENU,
  	LISTFLD_MENU,
  	GOTO_MENU,
@@ -25,16 +25,14 @@
 -	{"J","Journal",{MC_JOURNAL,1,{'j'}},KS_REVIEW},
 -	{"S","Setup",{MC_SETUP,1,{'s'}},KS_NONE},
 -	{"A","AddrBook",{MC_ADDRBOOK,1,{'a'}},KS_ADDRBOOK},
--	{"#","Role",{MC_ROLE,1,{'#'}},KS_NONE},
 +	{"I","索引",{MC_INDEX,1,{'i'}},KS_FLDRINDEX},
 +	{"J","日誌",{MC_JOURNAL,1,{'j'}},KS_REVIEW},
 +	{"S","設定",{MC_SETUP,1,{'s'}},KS_NONE},
 +	{"A","地址簿",{MC_ADDRBOOK,1,{'a'}},KS_ADDRBOOK},
-+	{"#","角色",{MC_ROLE,1,{'#'}},KS_NONE},
+ 	RCOMPOSE_MENU,
  	NULL_MENU};
  INST_KEY_MENU(main_keymenu, main_keys);
- #define MAIN_HELP_KEY		0
-@@ -528,7 +528,7 @@
+@@ -542,7 +542,7 @@
  		static struct key simple_file_keys[] =
  		{HELP_MENU,
  		 NULL_MENU,
@@ -43,7 +41,7 @@
  		 NULL_MENU,
  		 NULL_MENU,
  		 NULL_MENU,
-@@ -537,15 +537,15 @@
+@@ -551,15 +551,15 @@
  		 PRYNTTXT_MENU,
  		 WHEREIS_MENU,
  		 FWDEMAIL_MENU,
@@ -62,7 +60,7 @@
  		sargs.bar.style = FileTextPercent;
  		sargs.keys.menu = &simple_file_keymenu;
  		setbitmap(sargs.keys.bitmap);
-@@ -761,7 +761,7 @@
+@@ -771,7 +771,7 @@
  	    if(!pine_state->VAR_INBOX_PATH || !pine_state->VAR_INBOX_PATH[0]
  	       || strucmp(pine_state->VAR_INBOX_PATH, "inbox") == 0){
  		HelpType help = NO_HELP;
@@ -71,7 +69,7 @@
  					  {-1, 0, NULL, NULL}};
  
  		pine_state->mangled_footer = 1;
-@@ -771,7 +771,7 @@
+@@ -781,7 +781,7 @@
  
          	    rv = optionally_enter(int_mail, -FOOTER_ROWS(pine_state),
  				      0, MAXPATH,
@@ -80,7 +78,7 @@
  				      /* ekey */ NULL, help, &flags);
          	    if(rv == 3){
  			help = (help == NO_HELP) ? h_sticky_inbox : NO_HELP;
-@@ -783,7 +783,7 @@
+@@ -793,7 +793,7 @@
      		}
  
      		if(rv == 1){
@@ -89,7 +87,7 @@
  		    rv = 0;		/* reset rv */
  		} 
  		else if(rv == 2){
-@@ -802,7 +802,7 @@
+@@ -812,7 +812,7 @@
  		    removing_leading_white_space(int_mail);
  		    if((!pine_state->VAR_INBOX_PATH 
  			|| strucmp(pine_state->VAR_INBOX_PATH, "inbox") == 0)
@@ -98,7 +96,7 @@
  				'y', 'n', NO_HELP, WT_NORM) == 'y'){
  			set_variable(V_INBOX_PATH, int_mail, 1);
  		    }
-@@ -949,25 +949,25 @@
+@@ -959,25 +959,25 @@
  		 *news_addition;
      int		  key_index;	  /* index into keymenu array for this cmd */
  } mkeys[] = {
@@ -132,7 +130,7 @@
       NULL, MAIN_QUIT_KEY}
  };
  
-@@ -1295,7 +1295,7 @@
+@@ -1307,7 +1307,7 @@
  		pine_state->mangled_footer = 1;
  	    }
  	    else{
@@ -141,7 +139,7 @@
  		pine_state->mangled_screen = 1;
  	    }
  
-@@ -1323,7 +1323,7 @@
+@@ -1335,7 +1335,7 @@
  		just_a_navigate_cmd++;
  	    }
  	    else
@@ -150,7 +148,7 @@
  
  	    break;
  
-@@ -1339,14 +1339,14 @@
+@@ -1351,14 +1351,14 @@
  		just_a_navigate_cmd++;
  	    }
  	    else
@@ -167,7 +165,7 @@
  	    pine_state->mangled_screen = 1;
  	    break;
  
-@@ -1603,7 +1603,7 @@
+@@ -1615,7 +1615,7 @@
  
      /* paint the titlebar if needed */
      if(ps->mangled_header){
@@ -176,7 +174,7 @@
  		     ps->cur_folder, ps->msgmap, 1, FolderName, 0, 0);
  	ps->mangled_header = 0;
      }
-@@ -1772,14 +1772,14 @@
+@@ -1784,15 +1784,15 @@
  {
      char        prompt[80];
      char        letters[20];
@@ -187,7 +185,8 @@
 -    char	*sigedit  = "Signature";
 -    char	*abooks   = "AddressBooks";
 -    char	*clctns   = "collectionList";
--    char	*roles    = "Roles";
+-    char	*rules    = "Rules";
+-    char	*color    = "Kolor";
 +    char        *printer  = "印表機";
 +    char        *passwd   = "設定新密碼";
 +    char        *config   = "環境設定";
@@ -195,11 +194,12 @@
 +    char	*sigedit  = "編輯簽名檔";
 +    char	*abooks   = "地址簿";
 +    char	*clctns   = "總集列表";
-+    char	*roles    = "角色";
++    char	*rules    = "規則";
++    char	*color    = "色彩";
  #ifdef	ENABLE_LDAP
      char	*dir      = "Directory";
  #endif
-@@ -1864,13 +1864,13 @@
+@@ -1881,13 +1881,13 @@
      }
  
      sprintf(prompt,
@@ -216,7 +216,52 @@
  	s = 'e';
      }
  
-@@ -1996,14 +1996,14 @@
+@@ -2021,7 +2021,7 @@
+ 	opts[ekey_num].ch      = 'a';
+ 	opts[ekey_num].rval    = 'a';
+ 	opts[ekey_num].name    = "A";
+-	opts[ekey_num++].label = "Addrbook";
++	opts[ekey_num++].label = "地址簿";
+     }
+ 
+     if(F_OFF(F_DISABLE_ROLES_SETUP,ps)){ /* roles are allowed */
+@@ -2031,7 +2031,7 @@
+ 	opts[ekey_num].ch      = 'r';
+ 	opts[ekey_num].rval    = 'r';
+ 	opts[ekey_num].name    = "R";
+-	opts[ekey_num++].label = "Roles";
++	opts[ekey_num++].label = "角色";
+     }
+     else if(deefault != 'a')
+       deefault = 's';
+@@ -2039,7 +2039,7 @@
+     opts[ekey_num].ch      = 's';
+     opts[ekey_num].rval    = 's';
+     opts[ekey_num].name    = "S";
+-    opts[ekey_num++].label = "SetScores";
++    opts[ekey_num++].label = "設定得分";
+ 
+ #ifndef	_WINDOWS
+     if(ps->color_style != COL_NONE && pico_hascolor()){
+@@ -2050,7 +2050,7 @@
+ 	opts[ekey_num].ch      = 'i';
+ 	opts[ekey_num].rval    = 'i';
+ 	opts[ekey_num].name    = "I";
+-	opts[ekey_num++].label = "Indexcolor";
++	opts[ekey_num++].label = "索引色彩";
+ #ifndef	_WINDOWS
+     }
+ #endif
+@@ -2058,7 +2058,7 @@
+     opts[ekey_num].ch      = 'f';
+     opts[ekey_num].rval    = 'f';
+     opts[ekey_num].name    = "F";
+-    opts[ekey_num++].label = "Filters";
++    opts[ekey_num++].label = "過濾器";
+ 
+     opts[ekey_num].ch    = -1;
+ 
+@@ -2096,14 +2096,14 @@
      HELP_MENU,
      NULL_MENU,
      {"E",NULL,{MC_EXIT,1,{'e',ctrl('M'),ctrl('J')}},KS_NONE},
@@ -233,7 +278,7 @@
      NULL_MENU};
  INST_KEY_MENU(nuov_keymenu, nuov_keys);
  #define	NUOV_EXIT	2
-@@ -2100,13 +2100,13 @@
+@@ -2202,13 +2202,13 @@
  		memset(&sargs, 0, sizeof(SCROLL_S));
  		sargs.text.text	   = so_text(store);
  		sargs.text.src	   = CharStar;
@@ -250,7 +295,7 @@
  		sargs.resize_exit  = 1;
  		sargs.keys.menu	   = &km;
  		km		   = nuov_keymenu;
-@@ -2116,11 +2116,11 @@
+@@ -2218,11 +2218,11 @@
  		setbitmap(sargs.keys.bitmap);
  
  		if(ps->phone_home){
@@ -264,7 +309,7 @@
  		    km.keys[NUOV_EXIT].bind.nch = 3;
  		    clrbitn(NUOV_VIEW, sargs.keys.bitmap);
  		}
-@@ -2201,7 +2201,7 @@
+@@ -2303,7 +2303,7 @@
  	break;
  
        case MC_RELNOTES :
@@ -273,7 +318,7 @@
  	ps_global->mangled_screen = 1;
  	break;
  
-@@ -2320,7 +2320,7 @@
+@@ -2422,7 +2422,7 @@
      dprint(1, (debugfile, "\n\n    ---- QUIT SCREEN ----\n"));    
  
      if(!pine_state->nr_mode && F_OFF(F_QUIT_WO_CONFIRM,pine_state)

@@ -1,7 +1,7 @@
---- pine/osdep/execview.orig	Tue Sep 22 21:21:12 1998
-+++ pine/osdep/execview	Tue Sep 22 21:22:10 1998
+--- pine/osdep/execview.orig	Fri Nov 13 06:51:20 1998
++++ pine/osdep/execview	Thu Oct 14 10:53:45 1999
 @@ -45,14 +45,14 @@
-     if(syspipe = open_system_pipe(command, r_file_h, NULL, mode)){
+     if(syspipe = open_system_pipe(command, r_file_h, NULL, mode, 0)){
  	close_system_pipe(&syspipe);
  	if(needsterminal == 1)
 -	  q_status_message(SM_ORDER, 0, 4, "VIEWER command completed");
