@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.126 1998/08/09 01:31:31 steve Exp $
+# $Id: Makefile,v 1.127 1998/08/09 01:36:22 steve Exp $
 #
 
     SUBDIR += ElectricFence
@@ -54,6 +54,7 @@
     SUBDIR += m68kbinutils
     SUBDIR += m68kgcc
     SUBDIR += m68kgdb
+    SUBDIR += m68knewlib
     SUBDIR += makedepend
     SUBDIR += mico
     SUBDIR += mico-latest
