@@ -7,14 +7,15 @@
 
 PORTNAME=	Cdk
 PORTVERSION=	4.9.6
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	http://www.vexus.ca/release/
 PKGNAMEPREFIX=	p5-
 DISTNAME=	cdkperl
 
-MAINTAINER=	clkao@clkao.org
+MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	cdk.1:${PORTSDIR}/devel/cdk
+LIB_DEPENDS=	cdk.4:${PORTSDIR}/devel/cdk
 
 WRKSRC=		${WRKDIR}/Cdk
 PERL_CONFIGURE=	yes
