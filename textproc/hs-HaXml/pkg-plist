@@ -9,6 +9,7 @@ bin/Xtract
 %%NHC98%%include/nhc98/HaXml/Text/XML/HaXml/Haskell2Xml.hi
 %%NHC98%%include/nhc98/HaXml/Text/XML/HaXml/Html/Generate.hi
 %%NHC98%%include/nhc98/HaXml/Text/XML/HaXml/Html/Parse.hi
+%%NHC98%%include/nhc98/HaXml/Text/XML/HaXml/Html/Pretty.hi
 %%NHC98%%include/nhc98/HaXml/Text/XML/HaXml/Lex.hi
 %%NHC98%%include/nhc98/HaXml/Text/XML/HaXml/OneOfN.hi
 %%NHC98%%include/nhc98/HaXml/Text/XML/HaXml/Parse.hi
@@ -18,17 +19,17 @@ bin/Xtract
 %%NHC98%%include/nhc98/HaXml/Text/XML/HaXml/Wrappers.hi
 %%NHC98%%include/nhc98/HaXml/Text/XML/HaXml/Xml2Haskell.hi
 %%NHC98%%include/nhc98/HaXml/Text/XML/HaXml.hi
+%%NHC98%%include/nhc98/HaXml/Text/XML/HaXml/Xtract/Combinators.hi
+%%NHC98%%include/nhc98/HaXml/Text/XML/HaXml/Xtract/Lex.hi
+%%NHC98%%include/nhc98/HaXml/Text/XML/HaXml/Xtract/Parse.hi
 %%NHC98%%lib/nhc98/ix86-FreeBSD/libHSHaXml.a
 %%GHC%%lib/ghc-%%GHC_VERSION%%/imports/HaXml/pkg.conf
 %%GHC%%lib/ghc-%%GHC_VERSION%%/imports/HaXml/Text/ParserCombinators/HuttonMeijerWallace.hi
-%%GHC%%lib/ghc-%%GHC_VERSION%%/imports/HaXml/Text/PrettyPrint/HughesPJ.hi
 %%GHC%%lib/ghc-%%GHC_VERSION%%/imports/HaXml/Text/XML/HaXml/Combinators.hi
-%%GHC%%lib/ghc-%%GHC_VERSION%%/imports/HaXml/Text/XML/HaXml/DtdToHaskell/Convert.hi
-%%GHC%%lib/ghc-%%GHC_VERSION%%/imports/HaXml/Text/XML/HaXml/DtdToHaskell/Instance.hi
-%%GHC%%lib/ghc-%%GHC_VERSION%%/imports/HaXml/Text/XML/HaXml/DtdToHaskell/TypeDef.hi
 %%GHC%%lib/ghc-%%GHC_VERSION%%/imports/HaXml/Text/XML/HaXml/Haskell2Xml.hi
 %%GHC%%lib/ghc-%%GHC_VERSION%%/imports/HaXml/Text/XML/HaXml/Html/Generate.hi
 %%GHC%%lib/ghc-%%GHC_VERSION%%/imports/HaXml/Text/XML/HaXml/Html/Parse.hi
+%%GHC%%lib/ghc-%%GHC_VERSION%%/imports/HaXml/Text/XML/HaXml/Html/Pretty.hi
 %%GHC%%lib/ghc-%%GHC_VERSION%%/imports/HaXml/Text/XML/HaXml/Lex.hi
 %%GHC%%lib/ghc-%%GHC_VERSION%%/imports/HaXml/Text/XML/HaXml/OneOfN.hi
 %%GHC%%lib/ghc-%%GHC_VERSION%%/imports/HaXml/Text/XML/HaXml/Parse.hi
@@ -135,13 +136,12 @@ bin/Xtract
 %%NHC98%%@dirrm include/nhc98/HaXml/Text/ParserCombinators
 %%NHC98%%@dirrm include/nhc98/HaXml/Text/PrettyPrint
 %%NHC98%%@dirrm include/nhc98/HaXml/Text/XML/HaXml/Html
+%%NHC98%%@dirrm include/nhc98/HaXml/Text/XML/HaXml/Xtract
 %%NHC98%%@dirrm include/nhc98/HaXml/Text/XML/HaXml
 %%NHC98%%@dirrm include/nhc98/HaXml/Text/XML
 %%NHC98%%@dirrm include/nhc98/HaXml/Text
 %%NHC98%%@dirrm include/nhc98/HaXml
 %%GHC%%@dirrm lib/ghc-%%GHC_VERSION%%/imports/HaXml/Text/ParserCombinators
-%%GHC%%@dirrm lib/ghc-%%GHC_VERSION%%/imports/HaXml/Text/PrettyPrint
-%%GHC%%@dirrm lib/ghc-%%GHC_VERSION%%/imports/HaXml/Text/XML/HaXml/DtdToHaskell
 %%GHC%%@dirrm lib/ghc-%%GHC_VERSION%%/imports/HaXml/Text/XML/HaXml/Html
 %%GHC%%@dirrm lib/ghc-%%GHC_VERSION%%/imports/HaXml/Text/XML/HaXml/Xtract
 %%GHC%%@dirrm lib/ghc-%%GHC_VERSION%%/imports/HaXml/Text/XML/HaXml
