@@ -7,6 +7,7 @@
 
 PORTNAME=	fireflyttf
 PORTVERSION=	1.1.0
+PORTREVISION=	1
 CATEGORIES=	chinese x11-fonts
 MASTER_SITES=	http://www.study-area.org/apt/firefly-font/
 DISTNAME=	fireflysung.ttf
