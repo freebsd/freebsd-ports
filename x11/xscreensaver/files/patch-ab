@@ -1,6 +1,6 @@
---- configure.orig	Thu Nov 18 21:49:08 1999
-+++ configure	Wed Dec  1 10:03:02 1999
-@@ -3153,7 +3153,7 @@
+--- configure.orig	Mon Apr  3 05:03:52 2000
++++ configure	Mon May  8 17:46:15 2000
+@@ -3174,7 +3174,7 @@
  fi
  if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
    echo "$ac_t""yes" 1>&6
@@ -9,16 +9,16 @@
  else
    echo "$ac_t""no" 1>&6
  fi
-@@ -5194,7 +5194,7 @@
- 
- 
+@@ -5267,7 +5267,7 @@
+     PASSWD_LIBS="$PASSWD_LIBS -lkrb4 -ldes425 -lkrb5 -lk5crypto -lcrypt -lcom_err"
+   elif test "$have_kerberos" = yes ; then
      # from Tim Showalter <tjs+@andrew.cmu.edu>
 -    PASSWD_LIBS="$PASSWD_LIBS -lkrb -ldes"
 +    PASSWD_LIBS="$PASSWD_LIBS -lkrb -ldes -lcom_err"
-     echo $ac_n "checking for res_search""... $ac_c" 1>&6
- echo "configure:5211: checking for res_search" >&5
- if eval "test \"`echo '$''{'ac_cv_func_res_search'+set}'`\" = set"; then
-@@ -6241,7 +6241,7 @@
+   fi
+ 
+   if test "$have_kerberos" = yes ; then
+@@ -6485,7 +6485,7 @@
  if eval "test \"`echo '$''{'ac_cv_gtk_version_string'+set}'`\" = set"; then
    echo $ac_n "(cached) $ac_c" 1>&6
  else

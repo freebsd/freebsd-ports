@@ -107,6 +107,7 @@ bin/xmatrix
 bin/xroger
 bin/xscreensaver
 bin/xscreensaver-command
-bin/xscreensaver-demo
+bin/xspirograph
 bin/xsublim
+bin/xteevee
 lib/X11/app-defaults/XScreenSaver
