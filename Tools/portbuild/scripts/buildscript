@@ -17,13 +17,13 @@ if [ $phase = 1 ]; then
   if [ "$(echo $(/bin/ls | wc -c))" != 0 ]; then
     echo "adding dependencies"
     for i in *.t[bg]z; do
-      echo "pkg_add -f $i"
+      echo "pkg_add $i"
       base=$(basename $i .tgz)
       base=$(basename $base .tbz)
       if pkg_info -q -e $base; then
 	echo "skipping $base, already added"
       else
-	if ! pkg_add -f $i; then
+	if ! pkg_add $i; then
 	  echo "error in dependency $i, exiting"
 	  echo "1" > /tmp/status
 	  exit 1
@@ -60,7 +60,7 @@ else
     DISPLAY=:${pid}
     export DISPLAY
   fi
-  
+
   cd $dir || exit 1
   pkgname=$(make package-name)
   if /pnohang $TIMEOUT /tmp/make.log2 ${pkgname} make package; then
