@@ -20,8 +20,8 @@ RUN_DEPENDS=	${SITE_PERL}/RRDp.pm:${PORTSDIR}/net/rrdtool	\
 NO_BUILD=	yes
 
 DATADIR?=	/var/db/mailgraph
-MAILGRAPH_USER?=	www
-MAILGRAPH_GROUP?=	www
+MAILGRAPH_USER?=	${WWWOWN}
+MAILGRAPH_GROUP?=	${WWWGRP}
 
 USE_REINPLACE=	yes
 USE_RC_SUBR=	yes
@@ -37,8 +37,8 @@ pre-everything::
 	@${ECHO_MSG} "You may set following options:"
 	@${ECHO_MSG}
 	@${ECHO_MSG} "DATADIR=/var/db/mailgraph		Where do you put RRD databases?"
-	@${ECHO_MSG} "MAILGRAPH_USER=www			User to run mailgraph"
-	@${ECHO_MSG} "MAILGRAPH_GROUP=www			Group to run mailgraph"
+	@${ECHO_MSG} "MAILGRAPH_USER=www			User to run mailgraph (Default: ${WWWOWN})"
+	@${ECHO_MSG} "MAILGRAPH_GROUP=www			Group to run mailgraph (Default: ${WWWGRP})"
 	@${ECHO_MSG}
 
 post-patch:
