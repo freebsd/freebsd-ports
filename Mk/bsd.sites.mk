@@ -238,7 +238,8 @@ MASTER_SITE_SOURCEFORGE+= \
 	ftp://download.sourceforge.net/pub/sourceforge/%SUBDIR%/ \
 	http://download.sourceforge.net/%SUBDIR%/ \
 	ftp://projects.sourceforge.net/pub/%SUBDIR%/ \
-	ftp://ftp.kddlabs.co.jp/sourceforge/%SUBDIR%/
+	ftp://ftp.kddlabs.co.jp/sourceforge/%SUBDIR%/ \
+	ftp://ftp.mirror.ac.uk/sites/download.sourceforge.net/pub/sourceforge/%SUBDIR%/
 
 MASTER_SITE_RUBY+= \
 	ftp://ftp.netlab.co.jp/pub/lang/ruby/%SUBDIR%/ \
