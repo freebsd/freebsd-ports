@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.71 1996/06/20 18:52:18 jkh Exp $
+# $Id: Makefile,v 1.72 1996/07/06 09:21:52 gpalmer Exp $
 #
 
     SUBDIR += archie
@@ -9,6 +9,7 @@
     SUBDIR += fspclient
     SUBDIR += ftptool
     SUBDIR += gated
+    SUBDIR += gnu-finger
     SUBDIR += gopher
     SUBDIR += imm
     SUBDIR += irc
