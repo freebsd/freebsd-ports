@@ -149,19 +149,16 @@ share/gnome/gthumb/icons/mirror.xpm
 share/gnome/gthumb/icons/rotate.png
 share/gnome/gthumb/icons/rotate.xpm
 share/gnome/help/gthumb/C/figures/comment.png
-share/gnome/help/gthumb/C/figures/dlg-comment.png
-share/gnome/help/gthumb/C/figures/find-images.png
 share/gnome/help/gthumb/C/figures/main-win.png
 share/gnome/help/gthumb/C/figures/nav-button.png
 share/gnome/help/gthumb/C/figures/preferences.png
-share/gnome/help/gthumb/C/figures/search-progress.png
-share/gnome/help/gthumb/C/figures/search-result.png
 share/gnome/help/gthumb/C/gthumb.xml
 share/gnome/help/gthumb/C/legal.xml
 share/gnome/omf/gthumb/gthumb-C.omf
 @exec scrollkeeper-install -q %D/share/gnome/omf/gthumb/gthumb-C.omf 2>/dev/null || /usr/bin/true
 share/gnome/pixmaps/gthumb.png
 share/locale/am/LC_MESSAGES/gthumb.mo
+share/locale/az/LC_MESSAGES/gthumb.mo
 share/locale/be/LC_MESSAGES/gthumb.mo
 share/locale/ca/LC_MESSAGES/gthumb.mo
 share/locale/cs/LC_MESSAGES/gthumb.mo
@@ -170,6 +167,7 @@ share/locale/de/LC_MESSAGES/gthumb.mo
 share/locale/es/LC_MESSAGES/gthumb.mo
 share/locale/fr/LC_MESSAGES/gthumb.mo
 share/locale/ga/LC_MESSAGES/gthumb.mo
+share/locale/hu/LC_MESSAGES/gthumb.mo
 share/locale/it/LC_MESSAGES/gthumb.mo
 share/locale/ja/LC_MESSAGES/gthumb.mo
 share/locale/ko/LC_MESSAGES/gthumb.mo

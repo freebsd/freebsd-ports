@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gthumb2
-PORTVERSION=	2.1.6
-PORTREVISION=	1
+PORTVERSION=	2.1.7
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME:S/2$//}/2.1
@@ -16,6 +15,8 @@ DIST_SUBDIR=	gnome2
 
 MAINTAINER=	pav@oook.cz
 COMMENT=	An image viewer and browser for the GNOME 2 environment
+
+CONFLICTS=	gthumb-*
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
