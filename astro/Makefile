@@ -1,6 +1,7 @@
-# $Id: Makefile,v 1.13 1999/05/14 06:43:24 asami Exp $
+# $Id: Makefile,v 1.14 1999/06/26 08:35:00 cpiazza Exp $
 #
 
+    SUBDIR += dgpsip
     SUBDIR += ephem
     SUBDIR += luna
     SUBDIR += saoimage
