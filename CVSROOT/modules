@@ -4017,14 +4017,12 @@ ksetispy	ports/astro/ksetispy
 ksetiwatch	ports/astro/ksetiwatch
 ksh93		ports/shells/ksh93
 kshowmail	ports/mail/kshowmail
-ksig		ports/mail/ksig
 kslide		ports/games/kslide
 ksmp3play	ports/audio/ksmp3play
 kssh		ports/security/kssh
 ksubeditor	ports/multimedia/ksubeditor
 ktagebuch	ports/deskutils/ktagebuch
 ktextdecode	ports/converters/ktextdecode
-ktnef		ports/converters/ktnef
 ktoblzcheck	ports/finance/ktoblzcheck
 ktritoc		ports/games/ktritoc
 kvirc		ports/irc/kvirc
