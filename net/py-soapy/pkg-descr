@@ -1,0 +1,12 @@
+From the website:
+
+  SOAPy is a SOAP/XML Schema Library for Python.  Given either a WSDL or SDL
+  document, SOAPy discovers the published API for a web service and exposes
+  it to Python applications as transparently as possible.  SOAPy is designed
+  to support WSDL 1.0 and SOAP 1.1, and whatever version of SDL is being used
+  to power Microsoft's TerraService web service.  :)
+
+Author: Adam Elman <aelman@users.sourceforge.net>
+WWW:    http://soapy.sourceforge.net/
+
+-- Johann Visagie <wjv@FreeBSD.org>
