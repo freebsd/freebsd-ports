@@ -1,0 +1,15 @@
+This is a set of True Type fonts available for download from MicroSoft's
+web-site. You can  use them if your X-server supports  .ttf fonts (or if
+you have other  applications for fonts). A good thing  about them is the
+multi-charset support.
+
+You'll  have to  add /usr/local/share/ms-fonts  to your  X font-path  by
+either:
+
+$ xset fp+ /usr/local/share/ms-fonts
+$ xset fp rehash
+
+and/or  by  adding  it  to your  X-server  configuration  file  (usually
+/etc/X11/XF86Config or /etc/Xaccel.ini) and restarting the X-server.
+
+WWW: http://www.microsoft.com/typography/fontpack/
