@@ -1,0 +1,11 @@
+bin/dbfdump
+bin/indexdump
+lib/perl5/site_perl/%%PERL_VER%%/XBase.pm
+lib/perl5/site_perl/%%PERL_VER%%/XBase/Base.pm
+lib/perl5/site_perl/%%PERL_VER%%/XBase/FAQ.pod
+lib/perl5/site_perl/%%PERL_VER%%/XBase/Index.pm
+lib/perl5/site_perl/%%PERL_VER%%/XBase/Memo.pm
+lib/perl5/site_perl/%%PERL_VER%%/XBase/SQL.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/XBase/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/XBase
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/XBase
