@@ -1,0 +1,9 @@
+#! /bin/sh
+
+cd ${WRKSRC}
+
+if [ -f /usr/lib/aout/crt0.o -a ! -f /usr/lib/crt0.o ]; then
+    sed -e "s|/usr/lib/crt0\.o|/usr/lib/aout/crt0.o|g" \
+	src/s/freebsd.h > src/s/freebsd.h.new || exit
+    mv -f src/s/freebsd.h.new src/s/freebsd.h
+fi

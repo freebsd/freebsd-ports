@@ -1,0 +1,16 @@
+--- src/s/freebsd.h.orig	Wed Nov 11 21:22:03 1998
++++ src/s/freebsd.h	Wed Nov 11 21:52:19 1998
+@@ -45,6 +45,13 @@
+ #define LIBS_SYSTEM -lutil
+ #define LIBS_TERMCAP -ltermcap
+ 
++/* Use XPG4 Library for FreeBSD */
++#if __FreeBSD_version >= 220000
++#ifdef USE_XPG
++#define LIBS_XPG -lxpg4
++#endif
++#endif
++
+ #define SYSV_SYSTEM_DIR
+ 
+ /* freebsd has POSIX-style pgrp behavior. */
