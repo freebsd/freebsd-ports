@@ -16,12 +16,13 @@ MAINTAINER=	ports@FreeBSD.org
 
 BUILD_DEPENDS=	libtool:${PORTSDIR}/devel/libtool
 
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-dynamic
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
 
 post-patch:
-	@${PERL} -pi -e "s,-ldl,,g" ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e "s,-ldl,,g" ${WRKSRC}/configure
 
 .include <bsd.port.mk>

@@ -14,13 +14,14 @@ DISTNAME=	tn-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
+USE_REINPLACE=	yes
 USE_GMAKE=	yes
 MAKE_ENV=	CPP=${CXX} INSTALL="${INSTALL}" INSTALL_DATA="${INSTALL_DATA}"
 
 post-patch:
-	@find ${WRKSRC} -name Makefile | xargs \
-		${PERL} -pi -e "s, -lstdc\\+\\+,,g"
-	@${PERL} -pi -e "s,make,gmake,g ; \
+	@${FIND} ${WRKSRC} -name Makefile | ${XARGS} \
+		${REINPLACE_CMD} -e "s, -lstdc\\+\\+,,g"
+	@${REINPLACE_CMD} -e "s,make,gmake,g ; \
 		s,/usr/local,${PREFIX},g" ${WRKSRC}/Makefile
 
 .if !defined(NOPORTDOCS)

@@ -16,11 +16,12 @@ MAINTAINER=	ports@FreeBSD.org
 
 RUN_DEPENDS=	wish8.0:${PORTSDIR}/x11-toolkits/tk80
 
+USE_REINPLACE=	yes
 NO_BUILD=	yes
 
 post-patch:
-	@${PERL} -pi -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/bin/specJava
-	@${PERL} -pi -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/bin/specTcl
+	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/bin/specJava
+	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/bin/specTcl
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/specJava ${PREFIX}/bin

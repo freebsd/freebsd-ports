@@ -14,15 +14,16 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
+USE_REINPLACE=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME=	yes
 
 post-patch:
 	@${GREP} -lR "malloc.h" ${WRKSRC} | ${XARGS} \
-		${PERL} -pi -e "s/malloc.h/stdlib.h/g"
+		${REINPLACE_CMD} -e "s/malloc.h/stdlib.h/g"
 	@${FIND} ${WRKSRC} -name "Makefile*" | ${XARGS} \
-		${PERL} -pi -e "s,^CC,#CC,g ; s,^CFLAGS =,CFLAGS+=,g ; \
+		${REINPLACE_CMD} -e "s,^CC,#CC,g ; s,^CFLAGS =,CFLAGS+=,g ; \
 				s,-Wall -g,,g"
 
 do-install:

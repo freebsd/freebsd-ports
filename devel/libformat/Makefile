@@ -15,6 +15,7 @@ DISTNAME=	Format-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 INSTALLS_SHLIB=	yes
@@ -22,7 +23,7 @@ INSTALLS_SHLIB=	yes
 MAN3=	Format.3
 
 post-patch:
-	@${PERL} -pi -e 's| install-data-local||g' ${WRKSRC}/doc/Makefile.in
+	@${REINPLACE_CMD} -e 's| install-data-local||g' ${WRKSRC}/doc/Makefile.in
 
 post-install:
 .if !defined(NOPORTDOCS)

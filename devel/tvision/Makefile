@@ -15,6 +15,7 @@ MASTER_SITE_SUBDIR=	devel/lang/c++
 
 MAINTAINER=	ports@FreeBSD.org
 
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 INSTALLS_SHLIB=	yes
@@ -23,9 +24,9 @@ post-extract:
 	@${MV} ${WRKSRC}/myendian.h ${WRKSRC}/lib
 
 post-patch:
-	@${PERL} -pi -e 's,myendian.h,tvision/myendian.h,g' \
+	@${REINPLACE_CMD} -e 's,myendian.h,tvision/myendian.h,g' \
 		${WRKSRC}/lib/drawbuf.h ${WRKSRC}/lib/system.h
-	@${PERL} -pi -e 's,menus.h msgbox.h,menus.h msgbox.h myendian.h,' \
+	@${REINPLACE_CMD} -e 's,menus.h msgbox.h,menus.h msgbox.h myendian.h,' \
 		${WRKSRC}/lib/Makefile.in
 
 .include <bsd.port.mk>

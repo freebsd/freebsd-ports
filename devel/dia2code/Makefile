@@ -18,6 +18,7 @@ LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2
 
 XML_CONFIG=	${LOCALBASE}/bin/xml2-config
 
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
@@ -26,7 +27,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 MAN1=		dia2code.1
 
 post-patch:
-	@${PERL} -pi -e 's|#include <malloc.h>||' ${WRKSRC}/dia2code/dia2code.h
+	@${REINPLACE_CMD} -e 's|#include <malloc.h>||' ${WRKSRC}/dia2code/dia2code.h
 
 post-install:
 	@${INSTALL_MAN} ${WRKSRC}/dia2code.1 ${MANPREFIX}/man/man1

@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
+USE_REINPLACE=	yes
 USE_LIBTOOL=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
@@ -21,9 +22,9 @@ INSTALLS_SHLIB=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:
-	@${PERL} -pi -e "s/cfree/free/g" ${WRKSRC}/src/list.c
+	@${REINPLACE_CMD} -e "s/cfree/free/g" ${WRKSRC}/src/list.c
 .if ${OSVERSION} <= 500027
-	@${FIND} ${WRKSRC}/src -type f | ${XARGS} ${PERL} -pi \
+	@${FIND} ${WRKSRC}/src -type f | ${XARGS} ${REINPLACE_CMD} \
 		-e 's|<stdint.h>|<inttypes.h>|'
 .endif
 

@@ -16,6 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 
 RUN_DEPENDS=	${LOCALBASE}/bin/wish8.2:${PORTSDIR}/x11-toolkits/tk82
 
+USE_REINPLACE=	yes
 EXTRACT_CMD=	${CP}
 EXTRACT_BEFORE_ARGS=	# empty
 EXTRACT_AFTER_ARGS=	.
@@ -28,7 +29,7 @@ USE_X_PREFIX=	yes
 WISH=		${LOCALBASE}/bin/wish8.2
 
 do-configure:
-	@${PERL} -pi.dist \
+	@${REINPLACE_CMD} \
 		-e 's|/usr/bin/wish|${WISH}|;' \
 		-e 's|keepnewline wish|keepnewline ${WISH}|' ${WRKSRC}/qtk
 

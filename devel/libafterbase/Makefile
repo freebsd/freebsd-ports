@@ -15,6 +15,7 @@ DISTNAME=	libAfterBase-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
+USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
@@ -22,7 +23,7 @@ CONFIGURE_ARGS=	--enable-sharedlibs --with-x
 INSTALLS_SHLIB=	yes
 
 post-patch:
-	@find ${WRKSRC} -name '*.[ch]' | xargs ${PERL} -pi -e \
+	@${FIND} ${WRKSRC} -name '*.[ch]' | ${XARGS} ${REINPLACE_CMD} -e \
 		's|<malloc.h>|<stdlib.h>|g'
 
 .include <bsd.port.mk>

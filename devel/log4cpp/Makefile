@@ -14,12 +14,13 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 INSTALLS_SHLIB=	yes
 
 post-patch:
-	@${PERL} -pi -e 's, endl, std::endl,g' ${WRKSRC}/tests/Clock.cpp \
+	@${REINPLACE_CMD} -e 's, endl, std::endl,g' ${WRKSRC}/tests/Clock.cpp \
 		${WRKSRC}/tests/testbench.cpp
 
 .include <bsd.port.mk>

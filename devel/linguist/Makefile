@@ -17,6 +17,7 @@ BUILD_DEPENDS=	tmake:${PORTSDIR}/devel/tmake
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+USE_REINPLACE=	yes
 USE_QT_VER=	2
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
@@ -34,14 +35,14 @@ CFLAGS+=	-O0
 .endif
 
 pre-configure:
-	@find ${WRKSRC} -name '*.pro' | xargs ${PERL} -pi -e \
+	@${FIND} ${WRKSRC} -name '*.pro' | ${XARGS} ${REINPLACE_CMD} -E -e \
 		's/(^CONFIG.*)/\1 thread/'
 
 post-configure:
-	@${PERL} -pi -e 's|\$\(SUBDIRS\):.*tmake_all|\$\(SUBDIRS\):|' \
+	@${REINPLACE_CMD} -e 's|\$$(SUBDIRS):.*tmake_all|\$$(SUBDIRS):|' \
 		${WRKSRC}/Makefile
-	@find ${WRKSRC} -name "Makefile" -type f | xargs ${PERL} -pi -e \
-		's|TARGET.*=.*\$\(QTDIR\)/bin/|TARGET=|'
+	@${FIND} ${WRKSRC} -name "Makefile" -type f | ${XARGS} ${REINPLACE_CMD} -e \
+		's|TARGET.*=.*\$$(QTDIR)/bin/|TARGET=|'
 
 do-install:
 .for file in linguist lrelease lupdate qm2ts

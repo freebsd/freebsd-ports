@@ -16,10 +16,11 @@ MAINTAINER=	ports@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/ELFIO/ELFIO
 MAKEFILE=	makefile
+USE_REINPLACE=	yes
 ALL_TARGET=	# empty
 
 post-patch:
-	@${PERL} -pi -e "s,^CXXFLAGS,#CXXFLAGS,g" ${WRKSRC}/makefile
+	@${REINPLACE_CMD} -e "s,^CXXFLAGS,#CXXFLAGS,g" ${WRKSRC}/makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/libELFIO.a ${PREFIX}/lib

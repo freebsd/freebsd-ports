@@ -16,6 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 ONLY_FOR_ARCHS=	i386	# XXX can't figure out whether to define
 #			# XXX SEARCH_FOR_DATA_START on other platforms
 
+USE_REINPLACE=	yes
 HAS_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX}
@@ -23,7 +24,7 @@ CONFIGURE_ARGS=	--prefix=${PREFIX}
 MAN3=		gc.3
 
 post-patch:
-	@${PERL} -pi -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/doc/gc.man
+	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/doc/gc.man
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/include/gc.h ${PREFIX}/include
