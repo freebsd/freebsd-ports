@@ -144,6 +144,7 @@
     SUBDIR += p5-Crypt-OpenPGP
     SUBDIR += p5-Crypt-OpenSSL-RSA
     SUBDIR += p5-Crypt-OpenSSL-Random
+    SUBDIR += p5-Crypt-PGPSimple
     SUBDIR += p5-Crypt-PassGen
     SUBDIR += p5-Crypt-Primes
     SUBDIR += p5-Crypt-RC4
