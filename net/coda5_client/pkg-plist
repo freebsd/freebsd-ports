@@ -2,6 +2,7 @@ bin/cfs
 bin/clog
 bin/cmon
 bin/codacon
+bin/codaconfedit
 bin/cpasswd
 bin/ctokens
 bin/cunlog
