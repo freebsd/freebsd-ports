@@ -1,0 +1,25 @@
+--- Makefile.in.orig	Thu Jan 24 17:01:10 2002
++++ Makefile.in	Wed Jan 30 15:47:31 2002
+@@ -8,11 +8,9 @@
+ 
+ # Compiler and Linker Options
+ #COPTS = -O2 -Wall -g		# old one
+-COPTS = -O2 -Wall -g -ansi	# ANSI compatible
++COPTS = -ansi -I${LOCALBASE}/include	# ANSI compatible
+ 
+-CFLAGS	= $(COPTS)
+-
+-CC	= gcc
++CFLAGS	+= $(COPTS)
+ 
+ #OBJS = ipv6calc.o addr_to_compressed.o addr_to_uncompressed.o addr_to_fulluncompressed.o addr_to_ifinet6.o addr_to_ip6int.o ifinet6_to_compressed.o  libipv6calc.o addr_to_base85.o librfc1924.o base85_to_addr.o librfc1884.o libmac.o libeui64.o mac_to_eui64.o eui64_to_privacy.o librfc3041.o showinfo.o ipv6types.o
+ OBJS = ipv6calc.o addr_to_compressed.o addr_to_uncompressed.o addr_to_fulluncompressed.o addr_to_ifinet6.o addr_to_ip6int.o ifinet6_to_compressed.o  libipv6calc.o addr_to_base85.o librfc1924.o base85_to_addr.o librfc1884.o libmac.o libeui64.o mac_to_eui64.o eui64_to_privacy.o librfc3041.o showinfo.o libipv6addr.o
+@@ -25,7 +23,7 @@
+ $(OBJS):	ipv6calc.h libipv6addr.h librfc1884.h
+ 
+ ipv6calc:	$(OBJS)
+-		$(CC) -o ipv6calc $(OBJS) -lcrypto
++		$(CC) -o ipv6calc $(OBJS) -lcrypto -lgnugetopt -L${LOCALBASE}/lib
+ 
+ distclean:
+ 		make clean
