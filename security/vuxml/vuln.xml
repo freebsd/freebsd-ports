@@ -32,6 +32,35 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="30cea6be-1d0c-11d9-814e-0001020eed82">
+    <topic>CUPS -- local information disclosure</topic>
+    <affects>
+      <package>
+	<name>cups-base</name>
+        <range><lt>1.1.22</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>Certain methods of authenticated remote printing in CUPS
+          can disclose user names and passwords in the log files.</p>
+        <p>A workaround for this problem is to set more strict
+          access permissions on the CUPS logfiles.</p>
+      </body>
+    </description>
+    <references>
+      <url>http://docs.info.apple.com/article.html?artnum=61798</url>
+      <url>http://secunia.com/advisories/12690/</url>
+      <url>http://www.cups.org/str.php?L920</url>
+      <cvename>CAN-2004-0923</cvename>
+      <certvu>557062</certvu>
+    </references>
+    <dates>
+      <discovery>2004-09-23</discovery>
+      <entry>2004-10-13</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="30cf9485-1c2c-11d9-9ecb-000c6e8f12ef">
     <topic>zinf -- potential buffer overflow playlist support</topic>
     <affects>
@@ -102,6 +131,9 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	    of data returned by the wc command is not checked.
 	    Florian Schilhabel discovered another buffer overflow in
 	    unshar.c.</p>
+	  <p>An attacker could exploit these vulnerabilities to
+	    execute arbitrary code as the user running one of the
+	    sharutils programs.</p>
 	</blockquote>
       </body>
     </description>
