@@ -1,0 +1,11 @@
+--- src/plugins/sample/Makefile.in.orig	Sat Sep 14 18:58:54 2002
++++ src/plugins/sample/Makefile.in	Sat Sep 14 18:59:04 2002
+@@ -127,7 +127,7 @@
+ libPsample_la_SOURCES = sample_plugin.c baseplugin.h
+ libPsample_la_LIBADD = 
+ 
+-libPsample_la_LDFLAGS = -module -export-dynamic -version-info 0:0:0
++libPsample_la_LDFLAGS = -module -export-dynamic -avoid-version
+ 
+ # Build a libtool library, libggnomedb.la for installation in libdir.
+ lib_LTLIBRARIES = $(lib_LTLIBRARIES_PLUGIN) 

@@ -1,0 +1,31 @@
+bin/mergeant
+share/doc/mergeant/C/topic.dat
+share/doc/mergeant/fr/topic.dat
+share/gnome/gnome/apps/Applications/mergeant.desktop
+share/gnome/mergeant/dtd/mergeant.dtd
+share/gnome/mergeant/plugins/libPnetaddr.so
+share/gnome/mergeant/plugins/libPpicts.so
+share/gnome/mergeant/plugins/libPsample.so
+share/gnome/pixmaps/mergeant/mergeant.png
+share/gnome/pixmaps/mergeant/mergeant_connect.png
+share/gnome/pixmaps/mergeant/mergeant_connect_small.png
+share/gnome/pixmaps/mergeant/mergeant_disconnect.png
+share/gnome/pixmaps/mergeant/mergeant_disconnect_small.png
+share/gnome/pixmaps/mergeant/mergeant_foot.png
+share/gnome/pixmaps/mergeant/mergeant_forms.png
+share/gnome/pixmaps/mergeant/mergeant_queries.png
+share/gnome/pixmaps/mergeant/mergeant_rels.png
+share/gnome/pixmaps/mergeant/mergeant_rels_small.png
+share/gnome/pixmaps/mergeant/mergeant_sequences.png
+share/gnome/pixmaps/mergeant/mergeant_tables.png
+share/locale/de/LC_MESSAGES/mergeant.mo
+share/locale/fr/LC_MESSAGES/mergeant.mo
+share/locale/it/LC_MESSAGES/mergeant.mo
+share/locale/ru/LC_MESSAGES/mergeant.mo
+share/locale/sk/LC_MESSAGES/mergeant.mo
+share/locale/tr/LC_MESSAGES/mergeant.mo
+@dirrm share/gnome/pixmaps/mergeant
+@dirrm share/gnome/mergeant/plugins
+@dirrm share/gnome/mergeant/dtd
+@dirrm share/gnome/mergeant
+@dirrm share/doc/mergeant

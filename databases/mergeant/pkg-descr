@@ -1,0 +1,9 @@
+mergeant can be considered as an extension of the libgda project.
+
+Its aims are the same: to provide universal data source access for
+client applications, as well as development tools and libraries
+for doing so. mergeant; is an extension to libgda; because it adds
+support to the architecture for the GNOME project.  mergeant was formed
+by merging components from gnome-db and gASQL.
+
+WWW: http://www.gnome-db.org/

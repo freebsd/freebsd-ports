@@ -1,0 +1,11 @@
+--- src/plugins/netaddr/Makefile.in.orig	Sat Sep 14 18:56:12 2002
++++ src/plugins/netaddr/Makefile.in	Sat Sep 14 18:57:13 2002
+@@ -125,7 +125,7 @@
+ lib_LTLIBRARIES_PLUGIN = libPnetaddr.la
+ libPnetaddr_la_SOURCES = netaddr.c baseplugin.h
+ libPnetaddr_la_LIBADD = 
+-libPnetaddr_la_LDFLAGS = -module -export-dynamic -version-info 0:0:0
++libPnetaddr_la_LDFLAGS = -module -avoid-version -export-dynamic
+ 
+ # Build a libtool library, for installation in libdir.
+ lib_LTLIBRARIES = $(lib_LTLIBRARIES_PLUGIN) 
