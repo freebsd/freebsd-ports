@@ -179,6 +179,22 @@ Option "XkbRules" "xfree86"
   Users of -stable or older -current can switch to X.Org by setting
   X_WINDOW_SYSTEM=xorg in make.conf and following the same process.
 
+  Alternately, portupgrade can be used with packages:
+    cd /var/db/pkg
+    portupgrade -o devel/imake-6  imake-4*
+    portupgrade -o x11/xorg-libraries  XFree86-libraries
+    portupgrade -o x11/xorg-clients  XFree86-clients
+    portupgrade -o x11/xorg-manpages  XFree86-manuals
+    portupgrade -o x11/xorg-documents  XFree86-documents
+    portupgrade -o x11-fonts/xorg-fonts-truetype  XFree86-fontScalable
+    portupgrade -o x11-fonts/xorg-fonts-100dpi  XFree86-font100dpi
+    portupgrade -o x11-fonts/xorg-fonts-75dpi  XFree86-font75dpi
+    portupgrade -o x11-fonts/xorg-fonts-type1  XFree86-fontDefaultBitmaps
+    portupgrade -o x11-fonts/xorg-fonts-cyrillic  XFree86-fontCyrillic
+    portupgrade -o x11-fonts/xorg-fonts-encodings  XFree86-fontEncodings
+    portupgrade -o x11-servers/xorg-server  XFree86-Server
+    portupgrade -o x11/xorg -f XFree86 
+
 20040719:
   AFFECTS: users of PHP
   AUTHOR: ale@FreeBSD.org
