@@ -1,5 +1,5 @@
 # ex: ts=8 sts=0 noet
-# New ports collection makefile for:	R (letter)
+# New ports collection makefile for:	R
 # Date created:			Fri Feb  9 10:50:25 EST 2001
 # Whom:				Maurice Castro <maurice@serc.rmit.edu.au>
 #
@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	R
-PORTVERSION=	1.8.1
+PORTVERSION=	1.9.0
 CATEGORIES=	math
 MASTER_SITES=	http://cran.r-project.org/src/base/ \
 		ftp://cran.r-project.org/pub/R/src/base/ \
@@ -27,13 +27,10 @@ MASTER_SITES=	http://cran.r-project.org/src/base/ \
 		http://probability.ca/cran/src/base/ \
 		http://www.ibiblio.org/pub/languages/R/CRAN/src/base/ \
 		http://www.bioconductor.org/CRAN/src/base/
-PKGNAMESUFFIX=	-${PAPERSIZE}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	vangyzen@stat.duke.edu
 COMMENT=	A language for statistical computing and graphics
-
-CONFLICTS?=	R-a4-*
 
 LIB_DEPENDS=	tcl84:${PORTSDIR}/lang/tcl84 \
 		tk84:${PORTSDIR}/x11-toolkits/tk84 \
@@ -49,29 +46,39 @@ LIB_DEPENDS+=	lapack.3:${PORTSDIR}/math/lapack
 CONFIGURE_ARGS=	--with-lapack="-llapack" --with-blas="-lblas"
 .endif
 
+MAN1=		R.1
+
 GNU_CONFIGURE=	yes
 USE_XLIB=	yes
 USE_PERL5=	yes
-CONFIGURE_ENV=	R_PAPERSIZE=${PAPERSIZE} FFLAGS="${FFLAGS}" \
+CONFIGURE_ENV=	FFLAGS="${FFLAGS}" \
 		INSTALL_DATA="${INSTALL} ${COPY} ${_SHROWNGRP} -m 644"
-CONFIGURE_ARGS+=--enable-R-shlib
+CONFIGURE_ARGS+=--enable-R-shlib --with-bzlib --with-pcre --with-zlib
 
-PAPERSIZE?=	letter
-.if ${PAPERSIZE} != letter && ${PAPERSIZE} != a4
-.BEGIN:
-	@${ECHO} "Invalid value for PAPERSIZE: \"${PAPERSIZE}\""
-	@${ECHO} "Possible values are: a4 letter"
-	@${FALSE}
-.endif
-
-MAN1=	R.1
+# NB: R 1.9.0 requires zlib 1.2.1, but the system zlib is currently
+# only 1.1.4.  Thus, R compiles its own bundled version of zlib
+# despite configuring with --with-zlib.
 
 .include <bsd.port.pre.mk>
+
+pre-fetch:
+.if !defined(PAPERSIZE)
+	@${ECHO}
+	@${ECHO} "    The default paper size for printing from R is A4."
+	@${ECHO} "    You can change it by setting the PAPERSIZE"
+	@${ECHO} "    make variable to one of:"
+	@${ECHO} "        a4 letter legal executive"
+	@${ECHO} "    For example:"
+	@${ECHO} "        # make PAPERSIZE=letter install clean"
+	@${ECHO}
+.else
+CONFIGURE_ENV+=	R_PAPERSIZE=${PAPERSIZE} 
+.endif
 
 # Build the four documentation formats sequentially (instead of simultaneously)
 # to prevent perl 5.8 from using too much memory (> 512 MB) and being killed.
 .if ${PERL_LEVEL} >= 500800
-ALL_TARGET=	Makefile Makeconf R help html latex examples stamp-recommended
+ALL_TARGET=	Makefile Makeconf R help html latex examples docs stamp-recommended
 .endif
 
 test check: build
