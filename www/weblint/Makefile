@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.weblint.org/pub/weblint/ \
 		${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=../../authors/id/NEILB
 
-MAINTAINER=	pst@FreeBSD.org
+MAINTAINER=	dinoex@FreeBSD.org
 
 MAN1=		weblint.1
 
