@@ -1,6 +1,7 @@
 bin/apr-config
 bin/apu-config
 include/apr.h
+include/apr_allocator.h
 include/apr_anylock.h
 include/apr_atomic.h
 include/apr_base64.h
@@ -21,7 +22,6 @@ include/apr_hooks.h
 include/apr_inherit.h
 include/apr_ldap.h
 include/apr_lib.h
-include/apr_lock.h
 include/apr_md4.h
 include/apr_md5.h
 include/apr_mmap.h
