@@ -1,5 +1,4 @@
 bin/darcs
-bin/convert-repo
 %%SERVER%%%%CGIDIR%%/darcs
 %%SERVER%%sbin/darcs-createrepo
 %%SERVER%%etc/darcs/cgi.conf.sample
@@ -7,6 +6,7 @@ etc/darcs/bash_completion.d/darcs
 %%PORTDOCS%%%%DOCSDIR%%/examples/zsh_completion_new
 %%PORTDOCS%%%%DOCSDIR%%/examples/zsh_completion_old
 %%PORTDOCS%%%%DOCSDIR%%/manual/contents.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/crossref.png
 %%PORTDOCS%%%%DOCSDIR%%/manual/darcs.css
 %%PORTDOCS%%%%DOCSDIR%%/manual/darcs.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/footnode.html
@@ -29,6 +29,8 @@ etc/darcs/bash_completion.d/darcs
 %%PORTDOCS%%%%DOCSDIR%%/manual/img20.png
 %%PORTDOCS%%%%DOCSDIR%%/manual/img21.png
 %%PORTDOCS%%%%DOCSDIR%%/manual/img22.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/img23.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/img24.png
 %%PORTDOCS%%%%DOCSDIR%%/manual/img3.png
 %%PORTDOCS%%%%DOCSDIR%%/manual/img4.png
 %%PORTDOCS%%%%DOCSDIR%%/manual/img5.png
@@ -43,6 +45,7 @@ etc/darcs/bash_completion.d/darcs
 %%PORTDOCS%%%%DOCSDIR%%/manual/next_g.png
 %%PORTDOCS%%%%DOCSDIR%%/manual/node1.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/node10.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/node11.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/node2.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/node3.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/node4.html

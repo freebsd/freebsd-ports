@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	darcs
-PORTVERSION=	0.9.17
+PORTVERSION=	0.9.20
 CATEGORIES=	devel
 MASTER_SITES=	http://www.abridgegame.org/darcs/
 
@@ -16,6 +16,7 @@ COMMENT=	Yet another replacement for CVS, written in Haskell
 BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc
 LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl
 
+OPTIONS=	SERVER "install server" off
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
@@ -24,10 +25,13 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 USE_GMAKE=	yes
 MAKEFILE=	GNUmakefile
 ALL_TARGET=	darcs darcs.1
+INSTALL_TARGET=	installbin
+
+.include <bsd.port.pre.mk>
 
 .if defined(WITH_SERVER)
 ALL_TARGET+=	darcs_cgi darcs-createrepo
-INSTALL_TARGET=	install installserver
+INSTALL_TARGET+=	installserver
 .if !exists(${PREFIX}/www) && exists(${PREFIX}/share/apache)
 CGIDIR?=	share/apache/cgi-bin
 .else
@@ -37,15 +41,11 @@ PLIST_SUB+=	CGIDIR=${CGIDIR} SERVER=""
 .else
 PLIST_SUB+=	SERVER="@comment "
 .endif
+.if !defined(NOPORTDOCS)
+INSTALL_TARGET+=	installdocs
+.endif
 
 MAN1=	darcs.1
-
-pre-everything::
-.if !defined(WITH_SERVER)
-	@${ECHO_CMD} ""
-	@${ECHO_CMD} "To build and install the server define WITH_SERVER."
-	@${ECHO_CMD} ""
-.endif
 
 post-patch:
 .if defined(WITH_SERVER)
@@ -57,11 +57,9 @@ post-patch:
 .if defined(NOPORTDOCS)
 	@${REINPLACE_CMD} -e '/$$(datadir)/d' ${WRKSRC}/${MAKEFILE}
 .else
-	@${REINPLACE_CMD} -e '/darcs\.ps/d'  ${WRKSRC}/${MAKEFILE}
+	@${REINPLACE_CMD} -e 's/^\(installdocs:.\)darcs.ps/\1/ ; \
+			s/^\(installbin:\).*/\1/ ; /darcs\.ps/d ' \
+		 ${WRKSRC}/${MAKEFILE}
 .endif
 
-post-configure:
-	@${REINPLACE_CMD} -e 's|\(^CURLFLAGS.*\)|\1 -optl-pthread| \
-		; s|all :.*|all::|' ${WRKSRC}/autoconf.mk
-
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

@@ -2,6 +2,3 @@ David's Advanced Revision Control System is yet another replacement for CVS. It
 is written in haskell.
 
 WWW: http://www.abridgegame.org/darcs/
-
--- Oliver Braun
-obraun@FreeBSD.org
