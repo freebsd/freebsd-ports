@@ -11,7 +11,7 @@ CATEGORIES=	net multimedia
 MASTER_SITES=	http://download.videolan.org/pub/videolan/vls/${PORTVERSION}/
 
 MAINTAINER=	ahze@ahze.net
-COMMENT=	An X11 video streaming client/server solution
+COMMENT=	Broadcasts MPEG(1/2/4, PS/TS) video streams
 
 LIB_DEPENDS=	dvbpsi.3:${PORTSDIR}/multimedia/libdvbpsi
 .if !defined(WITHOUT_DVD)
