@@ -8,7 +8,7 @@
 PORTNAME=	wolfpack
 PORTVERSION=	4.2.8
 CATEGORIES=	games
-MASTER_SITES=	ftp://empire.idlpaper.com/pub/empire/server/
+MASTER_SITES=	ftp://ftp.empire.cx/pub/empire/server/oldversions/
 DISTNAME=	empire${PORTVERSION}
 
 MAINTAINER=	darius@dons.net.au
