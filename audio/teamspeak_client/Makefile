@@ -6,11 +6,12 @@
 #
 
 PORTNAME=	teamspeak_client
-PORTVERSION=	2.0.26.27
+PORTVERSION=	2.0.29.47
 CATEGORIES=	audio
-MASTER_SITES=	http://www.teamspeak.org/files/ \
-		http://www.gsoft.com.au/~doconnor/
-DISTNAME=	ts2_client_rc1_2026
+MASTER_SITES=	ftp://ftp.teamspeak.org/releases/ \
+		http://www.gsoft.com.au/~doconnor/ \
+		ftp://teamspeak.krawall.de/releases/
+DISTNAME=	ts2_client_rc2_2029
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} setduplexfake.so.gz
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
@@ -26,12 +27,9 @@ NO_FILTER_SHLIBS=yes
 
 do-install:
 	${MKDIR} ${PREFIX}/lib/teamspeak_client
-	${TAR} -C ${PREFIX}/lib/teamspeak_client -xf ${WRKSRC}/setup.data/files.tar
-	${LN} -fs ${PREFIX}/lib/teamspeak_client/libborqt-6.9.0-qt2.3.so ${PREFIX}/lib/teamspeak_client/libborqt-6.9-qt2.3.so
+	${TAR} -C ${WRKSRC}/setup.data/image -cf ${WRKSRC}/files.tar ./
+	${TAR} -C ${PREFIX}/lib/teamspeak_client -xf ${WRKSRC}/files.tar
 	${GZIP_CMD} -dc ${DISTDIR}/setduplexfake.so.gz >${PREFIX}/lib/teamspeak_client/setduplexfake.so
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/clicense.txt ${DOCSDIR}
 	${SED} -e 's#%%TSHOME%%#${PREFIX}/lib/teamspeak_client#' <${FILESDIR}/TeamSpeak >${WRKSRC}/TeamSpeak
 	${INSTALL_SCRIPT} ${WRKSRC}/TeamSpeak ${PREFIX}/bin/
 
