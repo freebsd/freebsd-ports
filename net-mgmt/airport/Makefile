@@ -14,7 +14,7 @@ DISTFILES=	configurator_${PORTVERSION:S/.//}${EXTRACT_SUFX} \
 		host_monitor_${HOSTMONVERSION:S/.//}${EXTRACT_SUFX} \
 		airportmodemutility_${MODEMVERSION:S/.//}${EXTRACT_SUFX}
 
-MAINTAINER=	nsayer@freebsd.org
+MAINTAINER=	ports@freebsd.org
 
 RUN_DEPENDS=	${LOCALBASE}/jdk${JDK_VERSION}/bin/java:${PORTSDIR}/java/jdk \
 		${LOCALBASE}/share/java/classes/jfc-${JFC_VERSION}/swingall.jar:${PORTSDIR}/java/jfc \
