@@ -139,7 +139,7 @@
 +   }
 +   sprintf(buf, "%cS%c%cS%c", ESC, ESC, ESC, FS); /* ESC/PS -> ESC/P */
 +   sprintf(buf, "%cz%c%c", ESC, NULL, NULL); /* ESC/P -> ESC/Page */
-+   sprintf(buf,"\033\001@EJL \012@EJL ENLA=ESC/PAGE\012\033\001@EJL \012@EJL SE LA=ESC/PAGE\012@EJL SET EC=ON RS=%s PU=%s PS=%s ZO=OFF FO=OFF\012@EJL EN LA=ESC/PAGE\012",
++   sprintf(buf,"\033\001@EJL \012@EJL EN LA=ESC/PAGE\012\033\001@EJL \012@EJL SE LA=ESC/PAGE\012@EJL SET EC=ON RS=%s PU=%s PS=%s ZO=OFF FO=OFF\012@EJL EN LA=ESC/PAGE\012",
 + 	  (ptype==EPAG300)?"QK":"FN",
 + 	  "AU", /* "AU"..auto "2"..tray(maybe) "1"..casette1*/
 + 	  ps
