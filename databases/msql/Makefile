@@ -1,16 +1,15 @@
 # New ports collection makefile for:	msql2
-# Version required:	2.0b7.1
+# Version required:	2.0
 # Date created:		December 17th 1996
 # Whom:			jfitz
 #
 # $Id$
 #
 
-DISTNAME=	msql-2.0-B7.1
-PKGNAME=	msql-2.0b7.1
+DISTNAME=	msql-2.0-rel
+PKGNAME=	msql-2.0
 CATEGORIES=	databases
-MASTER_SITES=	ftp://ftp.worldone.com/pub/msql/ \
-		http://www2.nerosworld.com/msql/ \
+MASTER_SITES=	http://www2.nerosworld.com/msql/ \
 		http://hughes.com.au/software/msql2/
 
 MAINTAINTER=	jfitz@FreeBSD.ORG
@@ -39,6 +38,9 @@ post-install:
 		@${INSTALL_DATA} ${FILESDIR}/post-install-notes ${PREFIX}/share/doc/msql
 		@for file in msql2d msqladmin msqlimport msqlexport; do\
 			/usr/bin/chgrp msql ${PREFIX}/bin/$$file; \
+		done
+		@for file in RELEASE_NOTES MSQL_BOOK INSTALL; do \
+			${INSTALL_DATA} ${WRKSRC}/$$file ${PREFIX}/share/doc/msql; \
 		done
 		@/bin/chmod 751 ${PREFIX}/etc/msql2/
 		@/usr/sbin/chown -R msql.msql ${PREFIX}/etc/msql2/

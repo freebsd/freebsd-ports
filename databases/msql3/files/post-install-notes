@@ -1,17 +1,21 @@
-                  README for Mini SQL Version 2.0 Beta 1
+                     README for Mini SQL Version 2.0
 -------------------------------------------------------------------------------
 
-Welcome to Mini SQL 2!  It's been a long time coming but we hope the
-wait has been worth it.  As the development of mSQL 2 continues, further
-funtionality will be made available.  This release concentrates on
-adding the underlying performance and data handling features to mSQL.
+Welcome to the production release of Mini SQL 2.0!  The 2.0 code has
+been undergoing Beta testing for many months now and has proven to be
+stable enough for a production release.  Development and bug fixing will
+continue as problems are identified so please check our web site
+regularly for upates at http://www.Hughes.com.au/
 
-The software has changed quite a lot since the 1.x version of mSQL.
-Some of the new features are greatly improved support for indexing your
-data, much better performance for complex queries and large data sets,
-the addition of variable length TEXT fields, support for server managed
-numeric sequences, better regular expression handling, and easier
-control over the configuration of the server.
+As the software has now officially left the Beta test stage, it is being
+released as a commercial package.  The software may be evaluated for 14
+days before a license fee is due.  If you continue to use the software
+after 14 days you are required to pay a licnese fee.  To license your
+copy of mSQL 2.0, simply print out the invoice form located in the doc/
+directory of this distribution and return it with payment to us either
+via postal mail or via fax.  Our fax number and postal address has
+changed since the 1.x release so please check the details before sending
+your payment.
 
 
 FreeBSD-specific port notes
