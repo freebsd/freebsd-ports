@@ -1,0 +1,25 @@
+--- ld/Makefile.orig	Sat Jan  6 02:02:20 2001
++++ ld/Makefile	Fri Jul 31 02:01:01 1998
+@@ -21,11 +21,11 @@
+ all: ld86 objchop catimage objdump86
+ 
+ ld86: $(OBJS)
+-	$(CC) $(LDFLAGS) $^ -o $@
++	$(CC) $(LDFLAGS) $(OBJS) -o $@
+ 
+ install: ld86
+ 	install -d $(LIBDIR)
+-	install -m 755 $^ $(LIBDIR)
++	install -m 755 ld86 $(LIBDIR)
+ 
+ clean realclean clobber:
+ 	rm -f *.o ld86 ld86r objchop catimage objdump86
+@@ -39,7 +39,7 @@
+ 	ln ../libc/include/ar.h .
+ 
+ writebin.o: writebin.c
+-	$(CC) $(CFLAGS) $(DEFS) $(NATIVE) -c $<
++	$(CC) $(CFLAGS) $(DEFS) $(NATIVE) -c writebin.c
+ 
+ writerel.o: writebin.c
+ 

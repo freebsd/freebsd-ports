@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bin86
-PORTVERSION=	0.15.4
+PORTVERSION=	0.15.5
 CATEGORIES=	devel
 MASTER_SITES=	http://www.cix.co.uk/~mayday/
 
