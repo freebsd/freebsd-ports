@@ -12,7 +12,7 @@ CATEGORIES=	japanese lang tcl80
 MASTER_SITES=	ftp://ftp.scriptics.com/pub/tcl/tcl8_0/
 
 PATCH_SITES=	ftp://ftp.sra.co.jp/pub/lang/tcl/jp/
-PATCHFILES=	tcl8.0.5jp1.5.patch.gz
+PATCHFILES=	tcl8.0.5jp1.6.patch.gz
 
 MAINTAINER=	taguchi@tohoku.iij.ad.jp
 
@@ -49,7 +49,7 @@ post-install:
 	 )
 .endif
 	@${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
-.if ${PORTOBJFORMAT} == "aout" 
+.if ${PORTOBJFORMAT} == "aout"
 	${LN} -sf libtcl80jp.so.1.5 ${PREFIX}/lib/libtcl80jp.so
 .endif
 	@${CAT}	${PKGDIR}/MESSAGE
