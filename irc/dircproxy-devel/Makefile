@@ -8,7 +8,8 @@
 PORTNAME=	dircproxy
 PORTVERSION=	1.0.5
 CATEGORIES=	irc
-MASTER_SITES=	ftp://ftp.netsplit.com/pub/dircproxy/stable/
+MASTER_SITES=	http://www.securiweb.net/pub/oss/dircproxy/1.0/ \
+		ftp://ftp.netsplit.com/pub/dircproxy/stable/
 
 MAINTAINER=	lesterm@mazpe.net
 COMMENT=	A detachable irc proxy server with many features
