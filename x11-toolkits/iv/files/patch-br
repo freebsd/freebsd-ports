@@ -1,12 +1,14 @@
---- src/lib/IV-2_6/matcheditor.c.orig	Tue Dec 28 23:03:32 1999
-+++ src/lib/IV-2_6/matcheditor.c	Tue Dec 28 23:03:47 1999
-@@ -53,7 +53,8 @@
- }
+--- src/lib/Unidraw/psview.c.org	Fri Sep  4 03:28:12 1992
++++ src/lib/Unidraw/psview.c	Sun Jan 23 19:26:35 2000
+@@ -752,9 +752,10 @@
+ 	if (dashpatsize <= 0) {
+ 	    out << "[] " << dashoffset << " ";
+ 	} else {
++	    int i;
+ 	    out << "[";
  
- void MatchEditor::Match (const char* p, boolean m) {
--    for (char* pp = pattern; *p != '\0'; ++p, ++pp) {
-+    char* pp;
-+    for (pp = pattern; *p != '\0'; ++p, ++pp) {
-         *pp = *p;
-         if (*p == '%') {
-             ++p;
+-	    for (int i = 0; i < dashpatsize - 1; i++) {
++	    for (i = 0; i < dashpatsize - 1; i++) {
+ 		out << dashpat[i] << " ";
+ 	    }
+ 	    out << dashpat[i] << "] " << dashoffset << " ";

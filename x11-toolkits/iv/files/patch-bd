@@ -1,27 +1,16 @@
---- src/lib/Unidraw/catalog.c.orig	Fri Dec 11 22:27:55 1992
-+++ src/lib/Unidraw/catalog.c	Tue Dec 28 22:51:04 1999
-@@ -57,7 +57,9 @@
+--- src/lib/Unidraw/catalog.c.orig	Tue May 25 06:29:33 1993
++++ src/lib/Unidraw/catalog.c	Sun Jan 23 19:23:39 2000
+@@ -58,7 +58,8 @@
  #include <IV-2_6/_enter.h>
  
  #include <ctype.h>
-+#if __FreeBSD_cc_version < 400002
+-#ifndef __DECCXX
++/*#ifndef __DECCXX*/
++#if !defined(__DECCXX) || (__FreeBSD_cc_version < 400002)
  #include <osfcn.h>
-+#endif
- #include <stdio.h>
- #include <stdlib.h>
- #include <string.h>
-@@ -67,6 +69,10 @@
- #include <OS/types.h>
- #include <unistd.h>
  #endif
-+#ifdef __FreeBSD__
-+#include <unistd.h>
-+#endif
-+
- #include <sys/file.h>
- 
- #ifdef __DECCXX
-@@ -1502,7 +1508,8 @@
+ #include <stdio.h>
+@@ -1504,7 +1505,8 @@
              in >> graylevel;
  
          } else if (graylevel == nograylevel) {
@@ -31,7 +20,7 @@
                  if (buf[0] == '>' || sscanf(buf, "%x", &data[i]) != 1) {
                      break;
                  }
-@@ -1609,9 +1616,9 @@
+@@ -1611,9 +1613,9 @@
  
  	} else {
  	    istrstream in(definition, strlen(definition) + 1);

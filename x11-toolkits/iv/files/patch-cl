@@ -1,14 +1,29 @@
---- src/lib/Unidraw/Imakefile.orig	Wed Dec 29 00:22:37 1999
-+++ src/lib/Unidraw/Imakefile	Wed Dec 29 00:25:23 1999
-@@ -5,7 +5,11 @@
- #ifdef InObjectCodeDir
+--- src/bin/idraw/idcatalog.c.org	Tue Sep 29 03:09:01 1992
++++ src/bin/idraw/idcatalog.c	Sun Jan 23 20:29:52 2000
+@@ -658,7 +658,8 @@
+ 		graylevel = CalcGrayLevel(data[0]);
+ 	    }
+ 	} else if (graylevel == -1) {
+-	    for (int i = 0; in >> _buf && i < patternHeight; i++) {
++	    int i;
++	    for (i = 0; in >> _buf && i < patternHeight; i++) {
+ 		if (_buf[0] == '>' || sscanf(_buf, "%x", &data[i]) != 1) {
+ 		    break;
+ 		}
+@@ -730,6 +731,7 @@
+     static int sizepoints = 0;
+     static Coord* xcoords = nil;
+     static Coord* ycoords = nil;
++    int i;
  
- LIB = Unidraw
-+.if defined(PORTOBJFORMAT) && ($(PORTOBJFORMAT) == "elf")
-+VERSION = 3
-+.else
- VERSION = 3.1
-+.endif
+     Skip(in);
+     in >> n;
+@@ -742,7 +744,7 @@
+         ycoords = new Coord[sizepoints];
+     }
  
- MakeLibrary($(LIB),$(VERSION))
- 
+-    for (int i = 0; i < n; i++) {
++    for (i = 0; i < n; i++) {
+         if (_psversion < PSV_NONREDUNDANT) {
+             Skip(in);
+         }

@@ -1,6 +1,6 @@
---- src/bin/iclass/dialogs.c.orig	Wed Sep 23 11:45:09 1992
-+++ src/bin/iclass/dialogs.c	Thu May 27 21:45:37 1999
-@@ -40,12 +40,14 @@
+--- src/bin/iclass/dialogs.c.orig	Tue Aug 24 06:52:20 1993
++++ src/bin/iclass/dialogs.c	Sun Sep  5 13:36:17 1999
+@@ -41,7 +41,9 @@
  
  #include <stdlib.h>
  #include <string.h>
@@ -8,11 +8,5 @@
  #include <osfcn.h>
 +#endif
  
- #if !defined(AIXV3) && !defined(hpux) && !(defined(sun) && OSMajorVersion >= 5)
+ #if !defined(AIXV3) && !defined(hpux) && !defined(sun) && !defined(sgi)
  /* sigh, not all systems have this prototype */
- extern "C" {
--    char* getcwd(char*, int);
-+    char* getcwd(char*, unsigned int);
- }
- #endif
- 

@@ -1,37 +1,37 @@
---- src/config/InterViews/rules.def.orig	Fri Sep 25 07:06:33 1992
-+++ src/config/InterViews/rules.def	Mon Jan 18 21:43:45 1999
+--- src/config/InterViews/rules.def.orig	Wed Aug 25 07:47:08 1993
++++ src/config/InterViews/rules.def	Sun Sep  5 16:21:37 1999
 @@ -399,6 +399,30 @@
  /*
   * Make a shared library.
   */
 +#if defined(FreeBSDArchitecture)
-+#define NormalSunOSSharedLibraryTarget(libname,rev,depobjs,ldobjs)     @@\
-+AOUT = Concat(lib,libname.so.rev)                                      @@\
-+SHARED_CCFLAGS = SharedCCFlags                                         @@\
-+                                                                       @@\
-+AllTarget(Concat(lib,libname.so.rev))                                  @@\
-+                                                                       @@\
-+Concat(lib,libname.so.rev): depobjs                                    @@\
-+	@echo "building $@"                                             @@\
-+	$(RM) $@~                                                       @@\
-+.if defined(PORTOBJFORMAT) && ($(PORTOBJFORMAT) == "elf")              @@\
-+	$(CC) -shared  -Wl,-soname,Concat(lib,libname.so.rev) -o $@~ ldobjs @@\
-+.else                                                                  @@\
-+	$(LD) -o $@~ -Bshareable ldobjs                                 @@\
-+.endif                                                                 @@\
-+	$(RM) $@                                                        @@\
-+	$(MV) $@~ $@                                                    @@\
-+.if defined(PORTOBJFORMAT) && ($(PORTOBJFORMAT) == "elf")              @@\
-+	$(LN) $@ Concat(lib,libname.so)                                 @@\
-+.endif                                                                 @@\
-+                                                                       @@\
-+clean::                                                                        @@\
++#define NormalDynamicSharedLibraryTarget(libname,rev,depobjs,ldobjs)	@@\
++AOUT = Concat(lib,libname.so.rev)					@@\
++SHARED_CCFLAGS = SharedCCFlags						@@\
++									@@\
++AllTarget(Concat(lib,libname.so.rev))					@@\
++									@@\
++Concat(lib,libname.so.rev): depobjs					@@\
++	@echo "building $@"						@@\
++	$(RM) $@~							@@\
++.if defined(PORTOBJFORMAT) && ($(PORTOBJFORMAT) == "elf")		@@\
++	$(CC) -shared  -Wl,-soname,Concat(lib,libname.so.rev) -o $@~ ldobjs	@@\
++.else									@@\
++	$(LD) -o $@~ -Bshareable ldobjs					@@\
++.endif									@@\
++	$(RM) $@							@@\
++	$(MV) $@~ $@							@@\
++.if defined(PORTOBJFORMAT) && ($(PORTOBJFORMAT) == "elf")		@@\
++	$(LN) $@ Concat(lib,libname.so)					@@\
++.endif									@@\
++									@@\
++clean::									@@\
 +	$(RM) Concat(lib,libname.so.rev)
 +#else
- #ifndef NormalSunOSSharedLibraryTarget
- #if OSMajorVersion < 5
- #define NormalSunOSSharedLibraryTarget(libname,rev,depobjs,ldobjs)	@@\
-@@ -434,6 +458,7 @@
+ #ifndef NormalDynamicSharedLibraryTarget
+ #if defined(sun) && OSMajorVersion < 5
+ #define NormalDynamicSharedLibraryTarget(libname,rev,depobjs,ldobjs)	@@\
+@@ -432,6 +456,7 @@
  									@@\
  clean::									@@\
  	$(RM) Concat(lib,libname.so.rev)

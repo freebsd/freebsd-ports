@@ -1,20 +1,24 @@
---- src/bin/dclock/data.c.orig	Tue Dec 28 22:25:29 1999
-+++ src/bin/dclock/data.c	Tue Dec 28 22:25:57 1999
-@@ -109,6 +109,8 @@
- }
+--- src/config/InterViews/cxx.def.orig	Wed Jan 27 07:16:55 1993
++++ src/config/InterViews/cxx.def	Sun Sep  5 16:19:16 1999
+@@ -17,8 +17,8 @@
+  * When dynamic link works, we might want to change that.
+  */
+ #if HasSharedLibraries
+-/*#define HasSunOSSharedLibraries     YES */
+-#define HasSunOSSharedLibraries       NO
++/*#define HasDynamicSharedLibraries     YES */
++#define HasDynamicSharedLibraries       NO
+ #endif
  
- void InitData() {
-+    int i;
-+
-     FadeStep = FadeRate==0 ? 16 : 1;
-     SegCode[9][SegD] = (JohnsFlag)? true : false;
-     Slant = min( max( 0,SlantPC ), 100 )/100.0;
-@@ -149,7 +151,7 @@
+ #undef SharedCCFlags
+@@ -31,8 +31,8 @@
+ #define NonSharedCCLdFlags /**/
+ #endif
  
-     ColonData[0].count = Colon.count;
-     ColonData[1].count = Colon.count;
--    for ( int i=0; i< Colon.count; i++ ) {
-+    for ( i=0; i< Colon.count; i++ ) {
- 	ColonData[0].y[i] = Colon.y[i]+(0.5-2.25*HThick)/height+ALLy;
- 	ColonData[0].x[i] = Colon.x[i]+COLx+ColonData[0].y[i]*Slant/width;
- 	ColonData[1].y[i] = Colon.y[i]+(0.5+0.25*HThick)/height+ALLy;
+-#undef NormalSunOSSharedLibraryTarget
+-#define NormalSunOSSharedLibraryTarget(libname,rev,depobjs,ldobjs)    @@\
++#undef NormalDynamicSharedLibraryTarget
++#define NormalDynamicSharedLibraryTarget(libname,rev,depobjs,ldobjs)    @@\
+ AOUT = Concat(lib,libname.so)                                         @@\
+ SHARED_CCFLAGS = SharedCCFlags					      @@\
+                                                                       @@\

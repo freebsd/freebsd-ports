@@ -1,6 +1,6 @@
---- src/bin/iclass/direct.c.orig	Fri Dec 11 22:40:42 1992
-+++ src/bin/iclass/direct.c	Tue Dec 28 23:16:01 1999
-@@ -30,11 +30,16 @@
+--- src/bin/iclass/direct.c.orig	Sat Dec 12 13:40:42 1992
++++ src/bin/iclass/direct.c	Sun Jan 23 20:25:38 2000
+@@ -30,11 +30,15 @@
  #include <OS/string.h>
  #include <OS/types.h>
  #include <stddef.h>
@@ -11,9 +11,8 @@
  #include <string.h>
  #include <stdlib.h>
  #include <sys/stat.h>
-+#ifdef __FreeBSD__
++#include <sys/types.h>
 +#include <unistd.h>
-+#endif
  
  #ifdef __DECCXX
  extern "C" {

@@ -1,0 +1,35 @@
+--- src/bin/mailbox/main.c.org	Sat Sep 12 01:19:22 1992
++++ src/bin/mailbox/main.c	Sun Jan 23 20:32:57 2000
+@@ -453,7 +453,8 @@
+ 	    if (atp != nil) {
+ 		char* dotp = strchr(atp, '.');
+ 		if (dotp != nil) {
+-		    for (int i = 0; i < strlen(mail_domain); ++i) {
++		    int i;
++		    for (i = 0; i < strlen(mail_domain); ++i) {
+ 			char c = dotp[i];
+ 			c = isupper(c) ? c - 'A' + 'a' : c;
+ 			if (c != mail_domain[i]) {
+@@ -497,8 +498,9 @@
+ 		break;
+ 	    }
+         } else if (*line == '\n' && *mail != '\0') {
++	    int i;
+ 	    delete items[MaxItemCount-1];
+-	    for (int i=MaxItemCount-2; i>=0; --i) {
++	    for (i=MaxItemCount-2; i>=0; --i) {
+ 		items[i+1] = items[i];
+ 	    }
+ 	    items[0] = new char[MaxItemSize];
+@@ -517,9 +519,10 @@
+ 
+ char* MailBox::addressToAlias(char* emailAddress, boolean lookupNames) {
+     lowercasifyString(emailAddress);
++    int i;
+   
+     /* look for a match in the list of aliases */
+-    for (int i = 0; addresses[i]; i++) {
++    for (i = 0; addresses[i]; i++) {
+ 	if (strcmp(emailAddress, addresses[i]) == 0) {
+ 	    emailAddress = strcpy(new char[strlen(aliases[i])+1], aliases[i]);
+ 	    return emailAddress;

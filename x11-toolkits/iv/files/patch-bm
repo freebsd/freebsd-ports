@@ -1,12 +1,14 @@
---- src/bin/mailbox/main.c.orig	Tue Dec 28 22:29:16 1999
-+++ src/bin/mailbox/main.c	Tue Dec 28 22:29:29 1999
-@@ -453,7 +453,8 @@
- 	    if (atp != nil) {
- 		char* dotp = strchr(atp, '.');
- 		if (dotp != nil) {
--		    for (int i = 0; i < strlen(mail_domain); ++i) {
-+		    int i;
-+		    for (i = 0; i < strlen(mail_domain); ++i) {
- 			char c = dotp[i];
- 			c = isupper(c) ? c - 'A' + 'a' : c;
- 			if (c != mail_domain[i]) {
+--- src/lib/InterViews/style.c.org	Tue Mar  9 06:51:05 1993
++++ src/lib/InterViews/style.c	Sun Jan 23 18:44:36 2000
+@@ -420,9 +420,10 @@
+ 
+     long n = path->count();
+     if (e->avail_ <= n) {
++	long i;
+ 	long new_avail = n + 5;
+ 	StyleAttributeList** new_list = new StyleAttributeList*[new_avail];
+-	for (long i = 0; i < e->avail_; i++) {
++	for (i = 0; i < e->avail_; i++) {
+ 	    new_list[i] = e->entries_[i];
+ 	}
+ 	for (i = e->avail_; i < new_avail; i++) {

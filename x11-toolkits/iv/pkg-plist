@@ -1,4 +1,5 @@
 interviews/bin/FREEBSD/alert
+interviews/bin/FREEBSD/bsdinst
 interviews/bin/FREEBSD/cpu
 interviews/bin/FREEBSD/dclock
 interviews/bin/FREEBSD/doc
@@ -14,10 +15,12 @@ interviews/bin/FREEBSD/mailbox
 interviews/bin/FREEBSD/remind
 interviews/config/InterViews/TIFF.def
 interviews/config/InterViews/arch.def
+interviews/config/InterViews/cxx.def
 interviews/config/InterViews/gcc.def
 interviews/config/InterViews/iv-DGUX.cf
 interviews/config/InterViews/iv-Mips.cf
 interviews/config/InterViews/iv-aix.cf
+interviews/config/InterViews/iv-alpha.cf
 interviews/config/InterViews/iv-apollo.cf
 interviews/config/InterViews/iv-att.cf
 interviews/config/InterViews/iv-bsd.cf
@@ -27,6 +30,7 @@ interviews/config/InterViews/iv-freebsd.cf
 interviews/config/InterViews/iv-generic.cf
 interviews/config/InterViews/iv-hp.cf
 interviews/config/InterViews/iv-ibm.cf
+interviews/config/InterViews/iv-linux.cf
 interviews/config/InterViews/iv-luna.cf
 interviews/config/InterViews/iv-m4330.cf
 interviews/config/InterViews/iv-macII.cf
@@ -35,6 +39,7 @@ interviews/config/InterViews/iv-pegasus.cf
 interviews/config/InterViews/iv-sgi.cf
 interviews/config/InterViews/iv-sony.cf
 interviews/config/InterViews/iv-stellar.cf
+interviews/config/InterViews/iv-stratus.cf
 interviews/config/InterViews/iv-sun.cf
 interviews/config/InterViews/iv-ultrix.cf
 interviews/config/InterViews/iv-x386.cf
@@ -395,8 +400,10 @@ interviews/include/Unidraw/umap.h
 interviews/include/Unidraw/unidraw.h
 interviews/include/Unidraw/upage.h
 interviews/include/Unidraw/viewer.h
-interviews/lib/FREEBSD/libIV.so.3.1
-interviews/lib/FREEBSD/libUnidraw.so.3.1
+interviews/lib/FREEBSD/libIV.so
+interviews/lib/FREEBSD/libIV.so.3
+interviews/lib/FREEBSD/libUnidraw.so
+interviews/lib/FREEBSD/libUnidraw.so.3
 interviews/lib/all/app-defaults/Doc
 interviews/lib/all/app-defaults/Idemo
 interviews/lib/all/app-defaults/InterViews
@@ -515,10 +522,6 @@ interviews/lib/all/styles/smallpage.sty
 interviews/lib/all/styles/thesis.sty
 interviews/lib/all/styles/times.sty
 interviews/man/refman.PS
-lib/libIV.so
-lib/libIV.so.3.1
-lib/libUnidraw.so
-lib/libUnidraw.so.3.1
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 @dirrm interviews/bin/FREEBSD

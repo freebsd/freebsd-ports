@@ -1,12 +1,14 @@
---- src/bin/idraw/idcatalog.c.orig	Tue Dec 28 22:55:59 1999
-+++ src/bin/idraw/idcatalog.c	Tue Dec 28 22:56:30 1999
-@@ -658,7 +658,8 @@
- 		graylevel = CalcGrayLevel(data[0]);
- 	    }
- 	} else if (graylevel == -1) {
--	    for (int i = 0; in >> _buf && i < patternHeight; i++) {
-+	    int i;
-+	    for (i = 0; in >> _buf && i < patternHeight; i++) {
- 		if (_buf[0] == '>' || sscanf(_buf, "%x", &data[i]) != 1) {
- 		    break;
- 		}
+--- src/lib/IV-X11/xfont.c.org	Thu Dec  9 14:17:55 1993
++++ src/lib/IV-X11/xfont.c	Sun Jan 23 18:53:44 2000
+@@ -538,8 +538,9 @@
+ static boolean contains(const char* string, const char* substring) {
+     int sublength = strlen(substring);
+     int length = strlen(string) - sublength;
+-    for (int i = 0; i <= length; ++i) {
+-        for (int j = 0; j < sublength; ++j) {
++    int i, j;
++    for (i = 0; i <= length; ++i) {
++        for (j = 0; j < sublength; ++j) {
+             if (string[i+j] != substring[j]) {
+                 break;
+             }

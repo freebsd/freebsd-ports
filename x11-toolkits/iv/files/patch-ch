@@ -1,18 +1,20 @@
---- src/bin/ibuild/ibpanelctrl.c.orig	Wed Dec 29 00:05:10 1999
-+++ src/bin/ibuild/ibpanelctrl.c	Wed Dec 29 00:05:30 1999
-@@ -871,13 +871,13 @@
-     } else if (_emitBSInits) {
-         ButtonStateVar* bsVar = pcComp->GetButtonStateVar();
- 	const char* name = bsVar->GetName();
--        boolean export = bsVar->GetExport();
-+        boolean export_ = bsVar->GetExport();
-         const char* subclass = bsVar->GetSubclassName();
+--- src/bin/ibuild/ibslider.c.org	Tue Jun  9 04:44:50 1992
++++ src/bin/ibuild/ibslider.c	Sun Jan 23 20:20:51 2000
+@@ -416,7 +416,7 @@
+                 strcpy(SliderClass, coreclass);
+                 strcat(SliderClass, "_Slider");
+                 
+-                boolean export = icomp->GetMemberNameVar()->GetExport();
++                boolean exportval = icomp->GetMemberNameVar()->GetExport();
+                 const char* classname = icomp->GetClassNameVar()->GetName();
  
- 	if (!_bsinitslist->Search(name)) {
- 	    _bsinitslist->Append(name);
- 
--            if (export && !_emitMain) {
-+            if (export_ && !_emitMain) {
-                 out << "    " << name;
- 
-             } else {
+ 		int w = icomp->GetCanvasVar()->Width();
+@@ -426,7 +426,7 @@
+                     BeginInstantiate(out);
+                     out << "(";
+                 } else {
+-                    if (export && !_emitMain) {
++                    if (exportval && !_emitMain) {
+                         out << "    " << mname << " = new " << SliderClass;
+                         out << "(";
+                     } else {
