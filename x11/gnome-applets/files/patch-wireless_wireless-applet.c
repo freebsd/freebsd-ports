@@ -242,7 +242,7 @@
 +			}
 +		}
 +		else
-+		if (g_strncasecmp(device, "wi", 2)==0) {
++		if (g_strncasecmp(device, "wi", 2)==0 || g_strncasecmp(device, "ath", 3)==0) {
 +			applet->devices = g_list_prepend (applet->devices, g_strdup (device));
 +			if (g_strcasecmp(applet->device, device)==0) {
 +		    		get_wi_data(applet, device, &level);
