@@ -18,7 +18,7 @@ MAINTAINER=	tg@FreeBSD.org
 DIST_SUBDIR=	python
 WRKSRC=		${WRKDIR}/Python-1.5.2
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-fpectl --with-libs='-lxpg4'
+CONFIGURE_ARGS=	--with-fpectl
 CONFIGURE_ENV=	OPT="${CFLAGS}"
 INSTALL_TARGET=	install
 PLIST=		${WRKDIR}/PLIST
@@ -30,11 +30,8 @@ MAN1=		python.1
 SETUP_FILE=	Setup
 
 #
-# If you want to use Python's thread module, you need to set WITH_THREADS
-# to 'yes', and you must have the FreeBSD threading c library (libc_r)
-# installed. See 'man 3 pthread' for details on libc_r.
-#
-# This option is enabled by default.
+# If you don't want to use Python's thread module, you need to set
+# WITHOUT_THREADS. libc_r should be installed on current systems.
 #
 LIBC_R!=	/sbin/ldconfig -r | grep c_r || true
 .if (${LIBC_R} != "") && !defined(WITHOUT_THREADS)
@@ -71,6 +68,13 @@ post-configure:
 .endfor
 
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500000 && ${OSVERSION} < 500005
+CONFIGURE_ARGS+= --with-libs='-lxpg4'
+.endif
+.if ${OSVERSION} < 400020
+CONFIGURE_ARGS+= --with-libs='-lxpg4'
+.endif
 
 .if ${OSVERSION} >= 500000
 PLATFORMS=plat-freebsd2 plat-freebsd3 plat-freebsd4
