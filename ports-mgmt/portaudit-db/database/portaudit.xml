@@ -91,6 +91,10 @@ This file is in the public domain.
     </description>
     <references>
       <mlist msgid="FB24803D1DF2A34FA59FC157B77C970502D684B7@idserv04.idef.com">http://lists.freebsd.org/pipermail/freebsd-ports/2004-June/013878.html</mlist>
+      <url>http://www.idefense.com/application/poi/display?id=114&amp;type=vulnerabilities</url>
+      <cvename>CAN-2004-0640</cvename>
+      <url>http://www.osvdb.org/7594</url>
+      <url>http://secunia.com/advisories/12032</url>
     </references>
     <dates>
       <discovery>2003-04-03</discovery>
