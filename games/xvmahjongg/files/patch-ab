@@ -1,0 +1,26 @@
+--- Makefile.orig	Fri Dec 20 23:33:15 1991
++++ Makefile	Thu May 14 09:05:45 1998
+@@ -29,12 +29,12 @@
+ 
+ # Root directory of XView developers package
+ # For OpenWindows users, this is the same as $OPENWINHOME.
+-XVIEWROOT = ${OPENWINHOME}
++XVIEWROOT = ${X11BASE}
+ 
+ # If not in OpenWindows, need to specify directory where libxview
+ # and libolgx are.
+ # For OpenWindows users, this is taken care of via $LD_LIBRARY_PATH.
+-XVIEWLIBDIR =
++XVIEWLIBDIR = -L${X11BASE}/lib
+ # e.g., XVIEWLIBDIR = -L/usr/openwin/lib
+ # This -L... stuff may only be appropriate in a SunOS environment,
+ # so do what's appropriate in your environment.  The -L<pathname>
+@@ -45,7 +45,7 @@
+ # currently only necessary when compiling icons.o
+ TARGET=
+ 
+-CFLAGS = -O -I${XVIEWROOT}/include
++CFLAGS+= -I${XVIEWROOT}/include
+ 
+ SWOBJS = icons.o mahjongg.o event.o
+ SWLIBS= ${XVIEWLIBDIR} -lxview -lolgx -lX11
