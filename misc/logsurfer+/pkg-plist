@@ -1,6 +1,0 @@
-bin/logsurfer
-%%PORTDOCS%%share/doc/logsurfer/ChangeLog
-%%PORTDOCS%%share/doc/logsurfer/README
-%%PORTDOCS%%@dirrm share/doc/logsurfer
-share/examples/logsurfer/README
-@dirrm share/examples/logsurfer

@@ -1,7 +1,0 @@
---- Makefile.in.orig	Sun Jan 21 16:37:06 2001
-+++ Makefile.in	Mon Jan 22 14:07:50 2001
-@@ -163,3 +163,3 @@
- 
--confexecdir = $(libdir)
-+confexecdir = $(sysconfdir)
- confexec_DATA = gnomeConf.sh

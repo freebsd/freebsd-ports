@@ -1,8 +1,0 @@
-include/nettle/aes.h
-include/nettle/arcfour.h
-include/nettle/blowfish.h
-@unexec install-info --delete %D/info/nettle.info %D/info/dir
-info/nettle.info
-@exec install-info %D/info/nettle.info %D/info/dir
-lib/libnettle.a
-@dirrm include/nettle

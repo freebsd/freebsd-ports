@@ -1,7 +1,0 @@
-bin/ehnt
-etc/rc.d/ehntserv.sh.sample
-sbin/ehntserv
-%%PORTDOCS%%share/doc/ehnt/README
-share/ehnt/asnc.txt
-@dirrm share/ehnt
-%%PORTDOCS%%@dirrm share/doc/ehnt

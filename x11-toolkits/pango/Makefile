@@ -7,7 +7,7 @@
 
 PORTNAME=	pango
 PORTVERSION=	1.2.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_GNOME:S,%SUBDIR%,sources/${PORTNAME}/1.2,} \
 		ftp://ftp.gtk.org/pub/gtk/v2.0/ \
@@ -57,5 +57,10 @@ PLIST_SUB+=	XFREE4:=""
 post-patch:
 	@${FIND} ${WRKSRC}/pango/opentype -name "*.[ch]" | xargs ${REINPLACE_CMD} -e \
 		's|internal/tterrors\.h|fterrors.h| ; s|TT_Err_|FT_Err_|g'
+	
+post-install:
+.if !defined(PACKAGE_BUILDING)
+	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+.endif
 
 .include <bsd.port.post.mk>

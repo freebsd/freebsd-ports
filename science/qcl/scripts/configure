@@ -1,5 +1,0 @@
-#!/bin/sh
-
-cd $WRKSRC
-rm -f .depend
-make dep

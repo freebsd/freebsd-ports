@@ -1,5 +1,0 @@
-include/cc++2/cc++/audio.h
-lib/libccaudio1.a
-lib/libccaudio1.la
-lib/libccaudio1.so
-lib/libccaudio1.so.0

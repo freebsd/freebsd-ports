@@ -1,4 +1,0 @@
-include/divx4.h
-include/xvid.h
-lib/libxvidcore.so
-lib/libxvidcore.so.0

@@ -1,7 +1,0 @@
-bin/Xinvest
-lib/X11/app-defaults/Xinvest
-%%PORTDOCS%%share/examples/Xinvest/401k.inv
-%%PORTDOCS%%share/examples/Xinvest/mutual.inv
-%%PORTDOCS%%share/examples/Xinvest/stock.inv
-%%PORTDOCS%%share/examples/Xinvest/tbill.inv
-%%PORTDOCS%%@dirrm share/examples/Xinvest

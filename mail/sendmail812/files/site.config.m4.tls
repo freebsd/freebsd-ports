@@ -1,4 +1,0 @@
-APPENDDEF(`conf_sendmail_ENVDEF', `-DSTARTTLS')
-APPENDDEF(`conf_sendmail_ENVDEF', `-D_FFR_TLS_1')
-APPENDDEF(`conf_sendmail_ENVDEF', `-D_FFR_SSL')
-APPENDDEF(`conf_sendmail_LIBS', `-lssl -lcrypto')

@@ -1,3 +1,0 @@
-bin/sipcalc
-%%PORTDOCS%%share/doc/sipcalc/sipcalc.txt
-%%PORTDOCS%%@dirrm share/doc/sipcalc

@@ -1,9 +1,0 @@
---- src/KXLmisc.c.orig	Sun Jan 20 01:10:31 2002
-+++ src/KXLmisc.c	Sat Mar 30 19:26:06 2002
-@@ -1,6 +1,5 @@
- #include <stdio.h>
- #include <stdlib.h>
--#include <malloc.h>
- #include <signal.h>
- #include <sys/time.h>
- #include "KXL.h"

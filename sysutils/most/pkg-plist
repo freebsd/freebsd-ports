@@ -1,8 +1,0 @@
-bin/most
-share/doc/most/README
-share/doc/most/changes.txt
-share/doc/most/lesskeys.rc
-share/doc/most/most-fun.txt
-share/doc/most/most.doc
-share/doc/most/most.rc
-@dirrm share/doc/most

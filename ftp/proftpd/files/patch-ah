@@ -1,9 +1,9 @@
---- modules/mod_unixpw.c.orig  Thu Sep 30 20:33:47 1999
-+++ modules/mod_unixpw.c       Sat Nov 13 13:15:26 1999
-@@ -42,6 +42,7 @@
- #include <sys/security.h>
- #endif
- #ifdef HAVE_PROT_H
+--- modules/mod_auth_unix.c.orig	Thu Mar 13 14:00:00 2003
++++ modules/mod_auth_unix.c	Thu Mar 13 14:04:45 2003
+@@ -58,6 +58,7 @@
+ #endif /* HAVE_HPSECURITY_H or HPUX10 or HPUX11 */
+ 
+ #if defined(HAVE_PROT_H) || defined(COMSEC)
 +#include <krb.h>
  #include <prot.h>
  #endif
