@@ -18,6 +18,7 @@ lib/xemacs/site-packages/pkginfo/MANIFEST.yatex
 lib/xemacs/site-packages/info/yahtmle.info
 lib/xemacs/site-packages/info/yatexe.info
 lib/xemacs/site-lisp/YATEXHLP.eng
+share/doc/yatex/htmlqa.eng
 share/doc/yatex/qanda.eng
 share/doc/yatex/yahtmle.tex
 share/doc/yatex/yatexe.tex
