@@ -1,0 +1,12 @@
+--- Makefile.orig	Sun Jun 16 03:28:47 2002
++++ Makefile	Sun Jun 16 03:29:04 2002
+@@ -22,7 +22,8 @@
+ SHLIB_MAJOR=	1
+ 
+ PREFIX?=	/usr/local
+-INCDIR=	${PREFIX}/include
++INCSDIR=${PREFIX}/include
++INCDIR=	${INCSDIR}		# for 4.x bsd.lib.mk
+ LIBDIR=	${PREFIX}/lib
+ MANDIR= ${PREFIX}/man/man
+ 
