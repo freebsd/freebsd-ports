@@ -21,9 +21,9 @@ PLIST=	${PKGDIR}/pkg-plist.nodocs
 .endif
 
 LEAFLIBDIR?=	${PREFIX}/lib/leafnode
-SPOOLDIR?=	/var/spool/leafnode
+LEAFSPOOLDIR?=	/var/spool/leafnode
 REWRITE=	${SED} -e "s:@LIBDIR@:${LEAFLIBDIR}:g" \
-		-e "s:@SPOOLDIR@:${SPOOLDIR}:g" \
+		-e "s:@SPOOLDIR@:${LEAFSPOOLDIR}:g" \
 		-e "s:@PREFIX@:${PREFIX}:g"
 
 post-patch:

@@ -1,5 +1,5 @@
 --- Makefile.orig	Wed Jun 13 10:53:27 2001
-+++ Makefile	Sat Jul  7 08:06:32 2001
++++ Makefile	Sat Jul  7 11:33:58 2001
 @@ -11,19 +11,19 @@
  #AR = ar
  #RANLIB = ranlib
@@ -36,12 +36,12 @@
  #
  # This is the directory where the news is stored.
 -SPOOLDIR = /var/spool/news
-+#SPOOLDIR = /var/spool/news
++SPOOLDIR = @SPOOLDIR@
  #
  # This is the directory where the configuration and group information is
  # kept.  It should preferably not be on the same partition as spooldir
 -LIBDIR = /usr/lib/leafnode
-+LIBDIR = LEAFLIBDIR
++LIBDIR = @LIBDIR@
  #
  # These are about local library.
  LIBUTIL = libutil.a
