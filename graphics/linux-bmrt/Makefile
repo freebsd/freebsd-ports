@@ -19,6 +19,10 @@ WRKSRC=		${WRKDIR}/BMRT2.5
 NO_BUILD=	yes
 NO_CDROM=	"See the License"
 
+# Linux binary should not be stripped by INSTALL_PROGRAM as it uses
+# /usr/bin/strip which then brands the binary as a FreeBSD ELF one.
+STRIP=
+
 DOC_DIR=	${PREFIX}/share/doc/bmrt
 FETCH_CMD=	/usr/bin/fetch -Ab
 PROGRAM=	composite mkmip mkmosaic rendrib rgl slc slctell
