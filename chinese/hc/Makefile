@@ -21,6 +21,9 @@ EXTRACT_ONLY=	hc-30.tar.gz
 ALL_TARGET=	hc b2g g2b
 MAN1=		hc.1
 
+pre-patch:
+	@${PERL} -pi -e 's|malloc.h|stdlib.h|' ${WRKSRC}/hclib.c
+
 do-install:
 	@${MKDIR} ${PREFIX}/share/chinese
 	${INSTALL_PROGRAM} ${WRKSRC}/hc ${PREFIX}/bin
