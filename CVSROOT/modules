@@ -7703,6 +7703,7 @@ ppm2fli		ports/multimedia/ppm2fli
 ppmcaption	ports/graphics/ppmcaption
 ppmtoTbmp	ports/palm/ppmtoTbmp
 ppower4		ports/textproc/ppower4
+pppd23		ports/net/pppd23
 pppload		ports/net/pppload
 pppoa		ports/net/pppoa
 ppptraf		ports/net/ppptraf
