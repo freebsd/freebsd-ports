@@ -12,7 +12,9 @@ MASTER_SITES=	http://www.veripool.com/ftp/
 DISTNAME=	dinotrace-9.1m
 
 MAINTAINER=	watchman@ludd.luth.se
-COMMENT=	A gaphical signal trace waveform viewer
+COMMENT=	A graphical signal trace waveform viewer
+
+BROKEN=		Size mismatch
 
 GNU_CONFIGURE=	yes
 USE_MOTIF=	yes
