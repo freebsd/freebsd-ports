@@ -1,0 +1,39 @@
+# New ports collection makefile for:    irb
+# Version required:     0.5.1
+# Date created:         19 April 1999
+# Whom:                 Yasuhiro Fukuma <yasuf@big.or.jp>
+#
+# $Id $
+#
+
+DISTNAME=	irb-0.5.1
+CATEGORIES=	lang
+MASTER_SITES=	ftp://ftp.netlab.co.jp/pub/lang/ruby/contrib/ \
+		ftp://ftp.TokyoNet.AD.JP/pub/misc/ruby/contrib/ \
+		ftp://ftp.iij.ad.jp/pub/lang/ruby/contrib/ \
+		ftp://blade.nagaokaut.ac.jp/pub/lang/ruby/contrib/ \
+		ftp://ftp.krnet.ne.jp/pub/ruby/contrib/ \
+		ftp://mirror.nucba.ac.jp/mirror/ruby/contrib/
+EXTRACT_SUFX=	.tgz
+
+MAINTAINER=	yasuf@big.or.jp
+
+RUN_DEPENDS=	ruby:${PORTSDIR}/lang/ruby
+
+WRKSRC=		${WRKDIR}/irb
+
+RUBY=		${LOCALBASE}/bin/ruby
+
+do-build:
+	( cd ${WRKSRC}; \
+	  ${MV} irb.rb irb.tmpl; \
+	  ${SED} -e '1s,^#!.*$$,#!${RUBY},' irb.tmpl > irb )
+
+do-install:
+	${INSTALL_SCRIPT} ${WRKSRC}/irb ${PREFIX}/bin
+	${MKDIR} ${PREFIX}/lib/ruby/irb
+	${INSTALL_DATA} ${WRKSRC}/*.rb ${PREFIX}/lib/ruby/irb
+	${MKDIR} ${PREFIX}/share/doc/ruby/irb
+	${INSTALL_DATA} ${WRKSRC}/README* ${PREFIX}/share/doc/ruby/irb
+
+.include <bsd.port.mk>
