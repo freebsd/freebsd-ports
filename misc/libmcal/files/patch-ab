@@ -9,7 +9,7 @@
  INCLUDE=-I..
 -CFLAGS=-O0 -Wall -g $(INCLUDE)
 -ALLOBJS=icap.o icaproutines.o lex.ical_yy.o lex.icap_yy.o
-+CFLAGS+=-Wall $(INCLUDE)
++CFLAGS+=-Wall $(INCLUDE) -fPIC
 +ALLOBJS=icap.o icaproutines.o lex.icap_yy.o
  TARGET=icap_driver.o
  

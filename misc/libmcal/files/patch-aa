@@ -9,7 +9,7 @@
 -CFLAGS=-O0 -Wall -g $(INCLUDE)
 +FLEX=/usr/bin/flex
 +INCLUDE=-I.. -I/usr/include/rpcsvc/
-+CFLAGS+=-Wall $(INCLUDE)
++CFLAGS+=-Wall $(INCLUDE) -fPIC
  ALLOBJS=mstore.o
  TARGET=mstore_driver.o
  

@@ -12,7 +12,7 @@
  INCLUDE=@DRIVER_INCDIR@  ${OTHERINCDIR} -I.
  
 -CFLAGS=-O0 -Wall -g ${INCLUDE} ${OTHER_CFLAGS}
-+CFLAGS+=-Wall ${INCLUDE} ${OTHER_CFLAGS} -D_REENTRANT
++CFLAGS+=-Wall ${INCLUDE} ${OTHER_CFLAGS} -D_REENTRANT -fPIC
  
  LIBOBJS=mcal.o datetime.o lex.ical_yy.o icalroutines.o cal_misc.o $(DRIVER_LIBS)
  ALLOBJS=${LIBOBJS} tester.o
