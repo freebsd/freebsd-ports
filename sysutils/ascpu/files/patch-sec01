@@ -1,0 +1,21 @@
+--- ascpu_x.c.orig	Thu Dec 16 17:45:26 1999
++++ ascpu_x.c	Wed Dec 29 20:47:32 1999
+@@ -6,6 +6,7 @@
+  * This software is distributed under GPL. For details see LICENSE file.
+  */
+ 
++#include <sys/types.h>
+ #include <stdio.h>
+ #include <errno.h>
+ #include <fcntl.h>
+@@ -585,6 +586,10 @@
+ #ifdef DEBUG
+ 				printf("ascpu: system(%s)\n",Command);
+ #endif
++				if (setgid(getgid()) != 0)
++					err(1, "Can't drop setgid privileges");
++				if (setuid(getuid()) != 0)
++					err(1, "Can't drop setuid privileges");
+ 				system( Command );
+ 			}
+ 			break;
