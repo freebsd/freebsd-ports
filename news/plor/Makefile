@@ -1,37 +1,36 @@
 # New ports collection makefile for:	plor
-# Version Required:	0.1 alpha
+# Version Required:	0.3.0
 # Date Created:		30 Dec 1996
 # Whom:			Tim Vanderhoek <ac199@freenet.hamilton.on.ca>
 #
-# $Id: Makefile,v 1.1.1.1 1997/01/17 14:32:41 max Exp $
+# $Id: Makefile,v 1.2 1997/01/24 10:28:05 asami Exp $
 #
 
-DISTNAME=	plor
-PKGNAME=	plor-0.1
+DISTNAME=	plor-0.3.1
 CATEGORIES=	news
-# supposedly the primary site is sunsite, but the version there is
-# out-of-date, so... sunsite.unc.edu /pub/Linux/system/BBS/mail/ if you 
-# want to try again...
-MASTER_SITES=   ftp://ftp.dei.unipd.it/pub/pluto/developers/
-EXTRACT_SUFX=	.tgz
+MASTER_SITES=	ftp://ftp.psy.unipd.it/pub/pluto/developers/ \
+		ftp://ftp.unipd.it/pub/Linux/pluto/developers/ \
+		ftp://ftp.linux.it/pub/Pluto/developers/
 
-MAINTAINER=	ac199@freenet.hamilton.on.ca
+MAINTAINER=	hoek@FreeBSD.ORG
+
+RUN_DEPENDS=    zip:${PORTSDIR}/archivers/zip
+
+GNU_CONFIGURE=	yes
 
 MAN1=		plor.1
 
-DOCFILES=	BUGS HISTORY PER_ZENO TODO plor-1.html plor-2.html \
+DOCFILES=	../AUTHORS ../NEWS TODO plor-1.html plor-2.html \
 		plor.html plor.txt
 
-do-install:
+post-install:
 .if !defined{NOPORTDOCS}
 	@${MKDIR} ${PREFIX}/share/doc/plor
-	(for f in ${DOCFILES}; do \
-		${INSTALL_DATA} ${WRKSRC}/docs/$$f ${PREFIX}/share/doc/plor; \
-		done)
-	${INSTALL_DATA} ${FILESDIR}/porting.notes ${PREFIX}/share/doc/plor
+.for f in ${DOCFILES}
+	${INSTALL_DATA} ${WRKSRC}/docs/${f} ${PREFIX}/share/doc/plor
+.endfor
 .endif
 	${INSTALL_MAN} ${FILESDIR}/plor.1 ${PREFIX}/man/man1/plor.1
-	perl -pi -e '$$a = '\''${PREFIX}/doc/plor/'\''; $$a =~ s/([^\w\/])/\\$$1/g; s/FUNKYTOKENHERE/$$a/' ${PREFIX}/man/man1/plor.1
-	${INSTALL_PROGRAM} ${WRKSRC}/plor ${PREFIX}/bin
+	perl -pi -e '$$a = '\''${PREFIX}/share/doc/plor/'\''; $$a =~ s/([^\w\/])/\\$$1/g; s/FUNKYTOKENHERE/$$a/' ${PREFIX}/man/man1/plor.1
 
 .include <bsd.port.mk>

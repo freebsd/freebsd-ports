@@ -1,45 +1,12 @@
---- Makefile.orig	Thu Oct 31 06:36:14 1996
-+++ Makefile	Fri Jan 17 22:56:42 1997
-@@ -14,12 +14,12 @@
- INCLUDE = ./include/
- #LIBS =
+diff -ur plor-0.3.1/main.c plor-new/main.c
+--- plor-0.3.1/main.c	Thu May  1 11:38:35 1997
++++ main.c	Thu Jul  3 12:20:45 1997
+@@ -28,7 +28,7 @@
+ #include <stdio.h>
+ #include <string.h>
+ #include <stdlib.h>
+-#include <getopt.h>
++#include <unistd.h>
  
--ifdef DEBUG
-+.ifdef DEBUG
- #CFLAGS = -g -Wall -m486 -O2 -ansi -pedantic -finline-functions
--FLAGS = -g -Wall -m486 -O3 -ansi -pedantic -fomit-frame-pointer 
--else
--FLAGS = -m486 -O3 -fomit-frame-pointer  
--endif
-+FLAGS = -g -Wall -m486 -O3 -ansi -pedantic -fomit-frame-pointer -D_HAVE_PARAM_H
-+.else
-+FLAGS = -m486 -O3 -fomit-frame-pointer -D_HAVE_PARAM_H
-+.endif
- 
- CFLAGS = -I$(INCLUDE) $(FLAGS)
- 
-@@ -28,18 +28,18 @@
- 
- ############# END USER CONFIGURATION ##################
- 
--ifdef DEBUG
-+.ifdef DEBUG
- all: TODO $(OBJECTS) del plor 
--else
-+.else
- all: $(OBJECTS) del plor
--endif
-+.endif
- 
- plor: $(OBJECTS) 
- 	$(CC) $(FLAGS) $(OBJECTS) $(LIBS) -o plor 
--ifdef DEBUG
--else
-+.ifdef DEBUG
-+.else
- 	strip plor
--endif
-+.endif
- 
- # OBJECTS to compile
- main.o: main.c  
+ /* will be included when we will have locale support
+ #include <locale.h>

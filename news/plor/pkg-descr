@@ -1,7 +1,7 @@
 This is a port of plor (which stands for Pluto Offline Linux Reader).
-Plor reads soup and qwk message packets.  It is alpha software, and
-does not yet support the creation of reply packets, nor does it
-support advanced features such as kill-files.
+Plor reads soup and qwk message packets.  It is alpha software.
+
+You can use this as an alternative to the slnr package.
 
 - Tim Vanderhoek
-ac199@freenet.hamilton.on.ca
+hoek@FreeBSD.ORG
